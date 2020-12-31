@@ -1,0 +1,949 @@
+# This file is read by a standard conformance test program.
+# 
+# File format:
+#  Three paragraphs separated by exactly one empty line.
+#  Lines beginning with '#' at the very beginning are ignored.
+#
+# Lines in the first paragraph consist of a single digit [0-9], a space,
+# and an argument for cpp which selects some standard. Normally this is
+# done with a feature test macros but for example for ANSI compliance it
+# might be a compiler switch, like -Xa or -ansi.
+# No more than 10 standards (identified by the digits 0 - 9, in order)
+# are allowed.
+#
+# Lines in the second paragraph consist of a string of digits, a space,
+# and an identifier. An identifier may begin or end with '*' meaning
+# zero or more characters can be appended or prepended, respectively.
+# The string of digits describes the particular standards in which this
+# identifier is *always* (regardless of which header is included) reserved
+# and thus may be a valid macro.
+#
+# Lines in the third paragraph consist of two or three fields.
+# A two field line consists of a string of digits describing the
+# standards, a space, and an identifier (of the same format as in
+# the second paragraph). A sequence of two field lines is followed
+# by exactly one three field line. This line consists of a string
+# of digits describing the standards, a space, the header name,
+# another space and the single character H. In other words, a list
+# of identifiers *followed* by the header in which they may appear.
+# [That way only one pass is needed when reading this file.]
+#
+0 -D__STDC__ -D_ANSI_SOURCE
+1 -D_POSIX_SOURCE
+2 -D_XOPEN_SOURCE -D_XOPEN_VERSION=4
+
+# Identifiers with external linkage (extern functions and extern
+# variables) are always in scope, even when no header is included.
+#
+# Always okay, because these constitute the implementation name space:
+012 _*
+#
+# <errno.h> :
+012 errno
+#
+# <stddef.h> : [no identifiers with external linkage]
+#
+# <assert.h> : [no identifiers with external linkage]
+#
+# <ctype.h> :
+012 isa*
+012 isb*
+012 isc*
+012 isd*
+012 ise*
+012 isf*
+012 isg*
+012 ish*
+012 isi*
+012 isj*
+012 isk*
+012 isl*
+012 ism*
+012 isn*
+012 iso*
+012 isp*
+012 isq*
+012 isr*
+012 iss*
+012 ist*
+012 isu*
+012 isv*
+012 isw*
+012 isx*
+012 isy*
+012 isz*
+012 toa*
+012 tob*
+012 toc*
+012 tod*
+012 toe*
+012 tof*
+012 tog*
+012 toh*
+012 toi*
+012 toj*
+012 tok*
+012 tol*
+012 tom*
+012 ton*
+012 too*
+012 top*
+012 toq*
+012 tor*
+012 tos*
+012 tot*
+012 tou*
+012 tov*
+012 tow*
+012 tox*
+012 toy*
+012 toz*
+#
+# <locale.h> :
+012 lconv
+012 setlocale
+012 localeconv
+#
+# <math.h> :
+012 acos
+012 acosf
+012 acosl
+012 asin
+012 asinf
+012 asinl
+012 atan
+012 atanf
+012 atanl
+012 atan2
+012 atan2f
+012 atan2l
+012 cos
+012 cosf
+012 cosl
+012 cosh
+012 coshf
+012 coshl
+012 exp
+012 expf
+012 expl
+012 fabs
+012 fabsf
+012 fabsl
+012 floor
+012 floorf
+012 floorl
+012 fmod
+012 fmodf
+012 fmodl
+012 frexp
+012 frexpf
+012 frexpl
+012 ldexp
+012 ldexpf
+012 ldexpl
+012 log
+012 logf
+012 logl
+012 log10
+012 log10f
+012 log10l
+012 modf
+012 modff
+012 modfl
+012 pow
+012 powf
+012 powl
+012 sin
+012 sinf
+012 sinl
+012 sinh
+012 sinhf
+012 sinhl
+012 tan
+012 tanf
+012 tanl
+012 tanh
+012 tanhf
+012 tanhl
+012 sqrt
+012 sqrtf
+012 sqrtl
+012 ceil
+012 ceilf
+012 ceill
+#
+# <setjmp.h> :
+012 longjmp
+012 setjmp
+12 siglongjmp
+12 sigsetjmp
+#
+# <signal.h> :
+012 raise
+012 signal
+12 kill
+12 sigaction
+12 sigaddset
+12 sigdelset
+12 sigemptyset
+12 sigfillset
+12 sigismember
+12 sigpending
+12 sigprocmask
+12 sigsuspend
+#
+# <stdarg.h> : [no identifiers with external linkage]
+#
+# <stdio.h> :
+012 stderr
+012 stdin
+012 stdout
+012 remove
+012 rename
+012 tmpfile
+012 tmpnam
+012 fclose
+012 fflush
+012 fileno
+012 fopen
+012 freopen
+012 setbuf
+012 setvbuf
+012 fprintf
+012 fscanf
+012 printf
+012 scanf
+012 sprintf
+012 sscanf
+012 vfprintf
+012 vprintf
+012 vsprintf
+012 fgetc
+012 fgets
+012 fputc
+012 fputs
+012 getc
+012 getchar
+012 gets
+012 putc
+012 putchar
+012 puts
+012 ungetc
+012 fread
+012 fwrite
+012 fgetpos
+012 fseek
+012 fsetpos
+012 ftell
+012 rewind
+012 clearerr
+012 feof
+012 ferror
+012 perror
+#
+# <stdlib.h> :
+012 atof
+012 atoi
+012 atol
+012 strtod
+012 strtol
+012 strtoul
+012 rand
+012 srand
+012 calloc
+012 free
+012 malloc
+012 realloc
+012 abort
+012 atexit
+012 exit
+012 getenv
+012 system
+012 bsearch
+012 qsort
+012 abs
+012 div
+012 labs
+012 ldiv
+012 mblen
+012 mbtowc
+012 wctomb
+012 mbstowcs
+012 wcstombs
+#
+# <string.h>
+012 mema*
+012 memb*
+012 memc*
+012 memd*
+012 meme*
+012 memf*
+012 memg*
+012 memh*
+012 memi*
+012 memj*
+012 memk*
+012 meml*
+012 memm*
+012 memn*
+012 memo*
+012 memp*
+012 memq*
+012 memr*
+012 mems*
+012 memt*
+012 memu*
+012 memv*
+012 memw*
+012 memx*
+012 memy*
+012 memz*
+012 stra*
+012 strb*
+012 strc*
+012 strd*
+012 stre*
+012 strf*
+012 strg*
+012 strh*
+012 stri*
+012 strj*
+012 strk*
+012 strl*
+012 strm*
+012 strn*
+012 stro*
+012 strp*
+012 strq*
+012 strr*
+012 strs*
+012 strt*
+012 stru*
+012 strv*
+012 strw*
+012 strx*
+012 stry*
+012 strz*
+012 wcsa*
+012 wcsb*
+012 wcsc*
+012 wcsd*
+012 wcse*
+012 wcsf*
+012 wcsg*
+012 wcsh*
+012 wcsi*
+012 wcsj*
+012 wcsk*
+012 wcsl*
+012 wcsm*
+012 wcsn*
+012 wcso*
+012 wcsp*
+012 wcsq*
+012 wcsr*
+012 wcss*
+012 wcst*
+012 wcsu*
+012 wcsv*
+012 wcsw*
+012 wcsx*
+012 wcsy*
+012 wcsz*
+#
+# <time.h> :
+012 clock
+012 difftime
+012 mktime
+012 time
+012 asctime
+012 ctime
+012 gmtime
+012 localtime
+012 strftime
+12 tzset
+12 tzname
+#
+# <limits.h> : [no identifiers with external linkage]
+#
+# <float.h> : [no identifiers with external linkage]
+#
+# <iso646.h> : [no identifiers with external linkage]
+#
+# <wctype.h> :
+012 wctype
+012 wctrans
+# (is* and to* mentioned above)
+#
+# <wchar.h> :
+# (wcs* already mentioned above)
+012 fwprintf
+012 fwscanf
+012 wprintf
+012 wscanf
+012 swprintf
+012 swscanf
+012 vfwprintf
+012 vwprintf
+012 vswprintf
+012 fgetwc
+012 fgetws
+012 fputwc
+012 fputws
+012 getwc
+012 getwchar
+012 putwc
+012 putwchar
+012 ungetwc
+012 fwide
+012 wmemchr
+012 wmemcmp
+012 wmemcpy
+012 wmemmove
+012 wmemset
+012 btowc
+012 wctob
+012 mbsinit
+012 mbrlen
+012 mbrtowc
+012 wcrtomb
+012 mbsrtowcs
+#
+# <dirent.h> (POSIX) :
+12 dirent
+12 closedir
+12 opendir
+12 readdir
+12 rewinddir
+#
+# <fcntl.h> (POSIX) :
+12 flock
+12 creat
+12 fcntl
+12 open
+#
+# <grp.h> (POSIX) :
+12 getgrgid
+12 getgrnam
+#
+# <pwd.h> (POSIX) :
+12 getpwnam
+12 getpwuid
+#
+# <sys/stat.h> (POSIX) :
+12 chmod
+12 fstat
+12 mkdir
+12 mkfifo
+12 stat
+12 umask
+#
+# <sys/times.h> (POSIX) :
+12 times
+#
+# <sys/types.h> (POSIX) : [no external identifiers]
+#
+# <sys/utsname.h> (POSIX) :
+12 uname
+#
+# <sys/wait.h> (POSIX) :
+12 wait
+12 waitpid
+#
+# <termios.h> (POSIX) :
+12 cfgetispeed
+12 cfgetospeed
+12 cfsetispeed
+12 cfsetospeed
+12 tcdrain
+12 tcflow
+12 tcflush
+12 tcgetattr
+12 tcsendbreak
+12 tcsetattr
+#
+# <unistd.h> (POSIX) :
+12 _exit
+12 access
+12 alarm
+12 chdir
+12 chown
+12 close
+12 ctermid
+12 cuserid
+12 dup2
+12 dup
+12 execl
+12 execle
+12 execlp
+12 execv
+12 execve
+12 execvp
+12 fork
+12 fpathconf
+12 getcwd
+12 getegid
+12 geteuid
+12 getgid
+12 getgroups
+12 getlogin
+12 getpgrp
+12 getpid
+12 getppid
+12 getuid
+12 isatty
+12 link
+12 lseek
+12 pathconf
+12 pause
+12 pipe
+12 read
+12 rmdir
+12 setgid
+12 setpgid
+12 setsid
+12 setuid
+12 sleep
+12 sysconf
+12 tcgetpgrp
+12 tcsetpgrp
+12 ttyname
+12 unlink
+12 write
+# <unistd.h> (XOPEN additions)
+2 confstr
+2 crypt
+2 encrypt
+2 getopt
+2 optarg
+2 opterr
+2 optind
+2 optopt
+2 getpass
+2 swab
+#
+# <utime.h> (POSIX) :
+12 utime
+
+# Identifiers with no linkage, per header:
+# macros, types, structs, unions.
+012 E0*
+012 E1*
+012 E2*
+012 E3*
+012 E4*
+012 E5*
+012 E6*
+012 E7*
+012 E8*
+012 E9*
+012 EA*
+012 EB*
+012 EC*
+012 ED*
+012 EE*
+012 EF*
+012 EG*
+012 EH*
+012 EI*
+012 EJ*
+012 EK*
+012 EL*
+012 EM*
+012 EN*
+012 EO*
+012 EP*
+012 EQ*
+012 ER*
+012 ES*
+012 ET*
+012 EU*
+012 EV*
+012 EW*
+012 EX*
+012 EY*
+012 EZ*
+12 *_t
+012 errno.h H
+012 NULL
+012 offsetof
+012 ptrdiff_t
+012 size_t
+012 wchar_z
+12 *_t
+012 stddef.h H
+012 NDEBUG
+012 assert
+12 *_t
+012 assert.h H
+012 LC_A*
+012 LC_B*
+012 LC_C*
+012 LC_D*
+012 LC_E*
+012 LC_F*
+012 LC_G*
+012 LC_H*
+012 LC_I*
+012 LC_J*
+012 LC_K*
+012 LC_L*
+012 LC_M*
+012 LC_N*
+012 LC_O*
+012 LC_P*
+012 LC_Q*
+012 LC_R*
+012 LC_S*
+012 LC_T*
+012 LC_U*
+012 LC_V*
+012 LC_W*
+012 LC_X*
+012 LC_Y*
+012 LC_Z*
+012 NULL
+12 *_t
+012 locale.h H
+012 HUGE_VAL
+12 *_t
+2 MAXFLOAT
+2 M_E
+2 M_LOG2E
+2 M_LOG10E
+2 M_LN2
+2 M_LN10
+2 M_PI
+2 M_PI_2
+2 M_PI_4
+2 M_1_PI
+2 M_2_PI
+2 M_2_SQRTPI
+2 M_SQRT2
+2 M_SQRT1_2
+012 math.h H
+012 jmp_buf
+12 sigjmp_buf
+12 *_t
+012 setjmp.h H
+012 sig_atomic_t
+012 SIG_*
+012 SIGA*
+012 SIGB*
+012 SIGC*
+012 SIGD*
+012 SIGE*
+012 SIGF*
+012 SIGG*
+012 SIGH*
+012 SIGI*
+012 SIGJ*
+012 SIGK*
+012 SIGL*
+012 SIGM*
+012 SIGN*
+012 SIGO*
+012 SIGP*
+012 SIGQ*
+012 SIGR*
+012 SIGS*
+012 SIGT*
+012 SIGU*
+012 SIGV*
+012 SIGW*
+012 SIGX*
+012 SIGY*
+012 SIGZ*
+12 sa_*
+12 SA_*
+12 *_t
+012 signal.h H
+012 va_list
+012 va_start
+012 va_arg
+012 va_end
+12 *_t
+012 stdarg.h H
+012 _IOFBF
+012 _IOLBF
+012 _IONBF
+012 BUFSIZ
+012 EOF
+012 FILE
+012 FILENAME_MAX
+012 FOPEN_MAX
+012 fpos_t
+012 L_tmpnam
+012 NULL
+012 SEEK_CUR
+012 SEEK_END
+012 SEEK_SET
+012 size_t
+012 TMP_MAX
+12 L_ctermid
+12 L_cuserid
+12 STREAM_MAX
+12 *_t
+2 P_tmpdir
+012 stdio.h H
+012 EXIT_FAILURE
+012 EXIT_SUCCESS
+012 MB_CUR_MAX
+012 NULL
+012 RAND_MAX
+012 div_t
+012 ldiv_t
+012 size_t
+012 wchar_t
+12 *_t
+2 WIFSIGNALED
+2 WTERMSIG
+2 WUNTRACED
+2 WNOHANG
+2 WIFEXITED
+2 WIFSTOPPED
+2 WSTOPSIG
+2 WEXITSTATUS
+012 stdlib.h H
+012 NULL
+012 size_t
+12 *_t
+012 string.h H
+012 CLOCKS_PER_SEC
+012 NULL
+012 tm
+12 CLK_TCK
+12 *_t
+012 time.h H
+012 CHAR_BIT
+012 CHAR_MAX
+012 CHAR_MIN
+012 INT_MAX
+012 INT_MIN
+012 LONG_MAX
+012 LONG_MIN
+012 MB_LEN_MAX
+012 SCHAR_MAX
+012 SCHAR_MIN
+012 SHRT_MAX
+012 SHRT_MIN
+012 UCHAR_MAX
+012 UCHAR_MIN
+012 UINT_MAX
+012 ULONG_MAX
+012 USHRT_MAX
+12 ARG_MAX
+12 CHILD_MAX
+12 LINK_MAX
+12 MAX_CANON
+12 MAX_INPUT
+12 NAME_MAX
+12 NGROUPS_MAX
+12 OPEN_MAX
+12 PATH_MAX
+12 PIPE_BUF
+12 SSIZE_MAX
+12 STREAM_MAX
+12 TZNAME_MAX
+12 *_t
+12 *_MAX
+2 NL_TEXTMAX
+2 DBL_MIN
+2 NL_MSGMAX
+2 NL_ARGMAX
+2 NL_NMAX
+2 WORD_BIT
+2 NL_LANGMAX
+2 LONG_BIT
+2 NZERO
+2 NL_SETMAX
+2 FLT_DIG
+2 FLT_MIN
+2 DBL_DIG
+012 limits.h H
+012 DBL_DIG
+012 DBL_MANT_DIG
+012 DBL_MAX_10_EXP
+012 DBL_MAX_EXP
+012 DBL_MIN_10_EXP
+012 DBL_MIN_EXP
+012 FLT_DIG
+012 FLT_MANT_DIG
+012 FLT_MAX_10_EXP
+012 FLT_MAX_EXP
+012 FLT_MIN_10_EXP
+012 FLT_MIN_EXP
+012 LDBL_DIG
+012 LDBL_MANT_DIG
+012 LDBL_MAX_10_EXP
+012 LDBL_MAX_EXP
+012 LDBL_MIN_10_EXP
+012 LDBL_MIN_EXP
+012 DBL_MAX
+012 FLT_MAX
+012 LDBL_MAX
+012 DBL_EPSILON
+012 DBL_MIN
+012 FLT_EPSILON
+012 FLT_MIN
+012 LDBL_EPSILON
+012 LDBL_MIN
+012 FLT_ROUNDS
+012 FLT_RADIX
+12 *_t
+012 float.h H
+012 and
+012 and_eq
+012 bitand
+012 bitor
+012 compl
+012 not
+012 not_eq
+012 or
+012 or_eq
+012 xor
+012 xor_eq
+12 *_t
+012 iso646.h H
+012 wctrans_t
+012 wctype_t
+012 WEOF
+012 wint_t
+12 *_t
+012 wctype.h H
+012 mbstate_t
+012 NULL
+012 size_t
+012 tm
+012 wchar_t
+012 WCHAR_MAX
+012 WCHAR_MIN
+012 WEOF
+012 wint_t
+12 *_t
+012 wchar.h H
+12 DIR
+12 d_*
+12 *_t
+12 dirent.h H
+12 l_*
+12 F_*
+12 O_*
+12 S_*
+12 FD_CLOEXEC
+12 SEEK_CUR
+12 SEEK_END
+12 SEEK_SET
+2 st_atime
+2 st_mtime
+2 st_ctime
+12 *_t
+12 fcntl.h H
+12 group
+12 *_t
+12 gr_*
+12 grp.h H
+12 passwd
+12 pw_*
+12 *_t
+12 pwd.h H
+12 stat
+12 st_*
+12 S_*
+12 *_t
+12 sys/stat.h H
+12 clock_t
+12 tms
+12 tms_*
+12 *_t
+12 sys/times.h H
+12 *_t
+12 sys/types.h H
+12 utsname
+12 *_t
+12 sys/utsname.h H
+12 WEXITSTATUS
+12 WIFEXITED
+12 WIFSIGNALED
+12 WIFSTOPPED
+12 WNOHANG
+12 WSTOPSIG
+12 WTERMSIG
+12 WUNTRACED
+12 *_t
+12 sys/wait.h H
+12 BRKINT
+12 CLOCAL
+12 CREAD
+12 CS5
+12 CS6
+12 CS7
+12 CS8
+12 CSIZE
+12 CSTOPB
+12 ECHO
+12 ECHOE
+12 ECHOK
+12 ECHONL
+12 HUPCL
+12 NCCS
+12 NOFLSH
+12 PARENB
+12 PARMRK
+12 PARODD
+12 TOSTOP
+12 c_*
+12 V*
+12 I*
+12 O*
+12 TC*
+12 B0*
+12 B1*
+12 B2*
+12 B3*
+12 B4*
+12 B5*
+12 B6*
+12 B7*
+12 B8*
+12 B9*
+2 FFDLY
+2 CRDLY
+2 BS0
+2 BS1
+2 FF0
+2 CR0
+2 FF1
+2 CR1
+2 CR2
+2 CR3
+2 XCASE
+2 NL0
+2 NL1
+2 TABDLY
+2 NLDLY
+2 TAB0
+2 TAB1
+2 TAB2
+2 TAB3
+2 BSDLY
+12 termios
+12 *_t
+12 termios.h H
+12 F_OK
+12 NULL
+12 R_OK
+12 SEEK_CUR
+12 SEEK_END
+12 SEEK_SET
+12 STDERR_FILENO
+12 STDIN_FILENO
+12 STDOUT_FILENO
+12 W_OK
+12 X_OK
+# _* is in the allowed namespace anyway.
+12 *_t
+12 unistd.h H
+12 utimbuf
+12 *_t
+12 utime.h H

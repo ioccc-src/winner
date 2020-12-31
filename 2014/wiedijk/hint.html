@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most functional</title>
+</head>
+<body>
+<h1>Most functional</h1>
+
+<p>Freek Wiedijk<br>
+<a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#102;&#114;&#101;&#x65;&#107;&#x40;&#99;&#115;&#x2e;&#x72;&#117;&#46;&#x6e;&#108;">&#x66;&#x72;&#x65;&#x65;&#x6b;&#64;&#99;&#x73;&#x2e;&#x72;&#117;&#x2e;&#x6e;&#108;</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To build:</h3>
+
+<pre><code>make wiedijk
+</code></pre>
+
+<h3>To run:</h3>
+
+<pre><code>./prog
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>gcc -E prog.c | indent | sed '1,/5.*prog/d'
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>C11 features definitely help this entry to be as concise as it is.</p>
+
+<p>The judges would like to think that they had almost understood how this entry works.</p>
+
+<p>If you win a bet by demonstrating this entry, please let us know.</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h3>Remarks</h3>
+
+<ul>
+<li>computes the factorial function</li>
+<li>no loops, no explicit recursion</li>
+<li>untyped C without any casts, using a <code>w</code> word datatype</li>
+<li>varargs not essential, <code>w(*)(w,w*)</code> works just as well</li>
+<li>conforming ISO C</li>
+<li>no warnings when compiled with <code>-std=c99 -Wall -Wextra -pedantic</code></li>
+<li>comments in the code explain what this really is about</li>
+<li>C as a functional programming language:
+untyped lambda calculus compiled to executable C functions</li>
+<li>untagged closures (just a function pointer followed by some values)</li>
+<li>recursion implemented through Curry&rsquo;s paradoxical combinator <code>Y</code></li>
+<li><p>the readable implementation of <code>Y</code> is on lines 29-30:</p>
+
+<p>  W_f = \x.f(xx)
+  Y = \f.W_f W_f</p></li>
+<li><p>a mixture of strict and lazy evaluation, with a <code>_</code> force function
+(John Tromp notes that if Turing&rsquo;s fixed-point combinator
+<code>(\xy.y\z.xxyz)(\xy.y\z.xxyz)</code> had been used,
+all applications could have been strict)</p></li>
+<li>uses <code>Y</code> to implement factorial on native <code>int</code>s</li>
+<li>10! seconds = 6 weeks</li>
+<li>answers the ultimate question of life, the universe and everything</li>
+</ul>
+
+
+<hr />
+
+<!--
+(c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2015, 
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

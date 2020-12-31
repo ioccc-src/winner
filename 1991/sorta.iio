@@ -1,0 +1,3 @@
+      [ a simple example of interpreting code on the fly ]ld
+
+["] "2 2+":xT ["]T " produces "T 1=x#T " which should be 4."T`

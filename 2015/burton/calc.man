@@ -1,0 +1,78 @@
+NAME
+  calc - an integer expression calculator that outputs in both hex and decimal
+
+SYNOPSIS
+  calc [expr]
+
+DESCRIPTION
+  calc presents a simple signed integer expression calculator.
+  The result is printed on stdout as both a decimal value and its hex equivalent.
+  Results are presented as 32-bit values, displaying as 64-bits only if necessary.
+  If the program name begins with 'e', the input is also copied to stdout.
+  stdin is read if there are no arguments.
+
+  Constants may be decimal, octal or hex.
+  There are 26 registers, initialized to zero, named A-Z;
+  the most recent result is always remembered in the register '.' (dot).
+  Assignments are silent; the character '$' will print a table of the non-zero registers.
+
+  All input is case-insensitive.
+  Semicolons and/or newlines separate statements.
+  Whitespace is ignored, except newlines cannot occur within expressions.
+  Comments are introduced with '#' and extend through the following newline.
+
+  Operator precedence is as found in Go:
+  OR and XOR are treated as additive, SHIFTing and AND are multiplicative.
+  This allows a more natural expression without parentheses,
+  as in `a&0xff | b<<8'.
+
+  Supported operations in decreasing precedence:
+
+  ()                  forced precedence
+  - + ! ~ ?           unary plus/minus, not, compl, byteswap
+  * / % & << >> >>>   mul, div, mod, bitand, shift: left, right, unsigned right
+  + - | ^             add, sub, bitor, xor
+  =	              assignment ([a-z] = expr)
+
+EXAMPLES
+  Display the decimal value of 0x42
+
+	$ calc 0x42
+	66	0x00000042
+
+  What is the mask value for 22 bits?
+
+  	$ calc '1<<22-1'
+	4194303	0x003fffff
+
+  What is the integer value of byte-swapped 0x11223344?
+
+	$ calc ?0x11223344
+	1144201745	0x44332211
+
+  Some canned expressions:
+
+	cat <<! | ecalc
+	# multiple assignments
+	a=32;n=10;c=50;m=100;$
+	7+7/7+7*7-7	# pedmas
+	m|a-a*3		# convenient precedence
+	?(1<<14|1<<9)-1<<4-1<<3
+	57005<<16+48879
+	-1 >> 32	# signed shift
+	-1 >>> 32	# unsigned shift
+	!
+
+BUGS
+  An assignment with certain types of syntax error will replace the registers with a
+  partial evaluation:
+
+	calc 'a = 1; a; a = 3 4; a'
+	1	0x00000001
+	syntax error
+	3	0x00000003
+
+  Command line expressions longer than 64 characters will give a syntax error.
+
+SEE ALSO
+  https://golang.org/

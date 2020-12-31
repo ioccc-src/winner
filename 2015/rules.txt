@@ -1,0 +1,262 @@
+|       24th International Obfuscated C Code Contest Official Rules
+
+|  Copyright (C) 2006-2015 Leonid A. Broukhis, Simon Cooper, Landon Curt Noll
+
+All Rights Reserved.  Permission for personal, education or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in
+writing from the contest judges.
+
+    Obfuscate:  tr.v.  -cated, -cating, -cates.  1. a.  To render obscure.
+                b.  To darken.  2. To confuse:  his emotions obfuscated his
+                judgment.  [LLat. obfuscare, to darken : ob(intensive) +
+                Lat. fuscare, to darken < fuscus, dark.] -obfuscation n.
+                obfuscatory adj.
+
+
+| This rules file is version 2015-05-27-v23.
+
+| Most of the changes from the previous IOCCC rules
+| been marked with a "|" on the left hand side of the line.
+
+
+GOALS OF THE CONTEST:
+
+    * To write the most Obscure/Obfuscated C program under the rules below.
+    * To show the importance of programming style, in an ironic way.
+    * To stress C compilers with unusual code.
+    * To illustrate some of the subtleties of the C language.
+    * To provide a safe forum for poor C code.  :-)
+
+|   This IOCCC runs from:
+|
+|	2015-Jul-08 09:10:11.12 +/- .13 seconds UTC
+|   to:
+|       2015-Oct-10 10:10:10.10 +/- .10 seconds UTC.
+|
+|   Until the start of this IOCCC, these rules, guidelines and iocccsize.c tool
+|   should be considered provisional BETA versions and may be adjusted
+|   at any time.
+|
+|   The IOCCC submission URL:
+|
+|       https://submit.ioccc.org/
+|
+|   will be available and active on or slightly before the start of this IOCCC.
+|
+|   The official rules, guidelines and iocccsize.c tool will be available
+|   on the official IOCCC web site on or slightly before start of this IOCCC.
+|   Please check the IOCCC web site "How to enter" link:
+|
+|	http://www.ioccc.org/index.html#enter
+|
+|   on or after the start of this IOCCC to be sure you are using the correct
+|   versions of these items before using the IOCCC entry submission URL.
+
+
+RULES:
+
+    To help us with the volume of entries, we ask that you follow these rules:
+
+    1) Your entry must be a complete program.
+
+    2) The size of your program source must be <= 4096 bytes in length.
+
+       When your program source is fed as input to the current IOCCC size
+       tool, and the IOCCC size tool -i command line option is used, the value
+|      printed shall be less than or equal to 2053.
+
+       The source to the current IOCCC size tool is found at this URL:
+
+|         http://www.ioccc.org/2015/iocccsize.c
+
+    3) Submissions should be performed using the instructions outlined at:
+
+           https://submit.ioccc.org/
+
+|      That URL should be active on or slightly before 2015-Sep-09 09:09:09 UTC.
+
+    4) If your entry is selected as a winner, it will be modified as follows:
+
+        Your 'build' instructions will be incorporated into a makefile.
+
+|       Your source code will be the file prog.c.  The compiled binary
+|	will be called prog.
+
+    5) Your entry must not modify the content or filename of any part of your
+       original entry including, but not limited to prog.c, the Makefile
+       (we create from your how to build instructions), as well as any data
+       files you submit.
+
+       If you entry wishes to modify such content, it must first copy the
+       file to a new filename and then modify that copy.
+
+|   6) I am not a rule, I am a free(void *man)!!
+
+|      while (!understand(ioccc(rule(UR(number(6)))))) { laugh(); }
+
+    7) The obfuscated C program must be an original work that you own.
+
+       You (the authors) must own the contents of your submission OR
+       you must have permission from the owners to submit their content
+       under the Creative Commons Attribution-ShareAlike 3.0 Unported
+       (CC BY-SA 3.0) license (see rule 18).
+
+       If you submit any content that is owned by others, you MUST
+       detail that ownership (i.e., who owns what) and document the
+       permission you obtained.
+
+|   8) Entries must be received prior to the end if this IOCCC which is:
+|
+|	   2015-Oct-10 10:10:10.10 +/-.10 seconds UTC
+
+|      A confirmation of submission will be sent to the submitter
+       email address before the close of the contest.
+
+|   9) Each person may submit up to and including 8.000 entries per contest.
+       Each entry must be submitted separately.
+
+   10) Entries requiring human interaction to be initially compiled are
+       not permitted.
+
+   11) Programs that require special privileges (setuid, setgid, super-user,
+       special owner, special group, etc.) are still highly discouraged. We
+       do not guarantee these functions will behave as you expect on our test
+       platforms. If your program needs special permissions please document
+       them in the remarks file.
+
+   12) Legal abuse of the rules is somewhat encouraged.  An entry that, in
+       the opinion of the judges, violates the rules will be disqualified.
+       Entries that attempt to abuse the rules must try to justify why
+       their rule abuse is legal in the remarks file.
+
+   13) Any C source that fails to compile because of unescaped octets with
+       the high bit set (octet value >= 128) will be rejected.
+
+   14) Any C source that fails to compile because of lines with trailing
+       control-M's (i.e., lines with a tailing octet 015) will be rejected.
+
+|      Please do not put trailing control-M's on remarks file lines.
+|      Please check to be sure, before submitting, that you have removed
+|      any control-M at the end of remark file lines.
+
+   15) When you submit your entry you must have a valid email address
+       that can both send and receive email.  The online submission
+       method is a two phase process that requires the use of an
+       approval code. This code will be emailed to you as part of
+       phase 1.
+
+       Entries submitted without a working or valid email address will
+       be disqualified.
+
+       The judges are not responsible for delays in email, please plan
+       enough time for one automated exchange of email as part of your
+       submission.
+
+       After your email address has been confirmed, the submission code will
+       be valid for submitting and editing the entry for the lifetime of the
+       competition.
+
+   16) You are STRONGLY encouraged to submit a previously unpublished and
+       original entry. Submissions that are similar to previous entries are
+       discouraged. As we judge anonymously, submissions that have already
+       been published may be disqualified.
+
+   17) The total size of your submission: the sum of the size of the program,
+       hints, comments, build and info files MUST be less than or equal
+       to 1048576 octets in size.
+
+   18) The entirety of your entry must be submitted under the Creative Commons
+       Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0):
+
+            http://creativecommons.org/licenses/by-sa/3.0/
+
+       You must not submit anything that cannot be submitted under that license.
+
+   19) The remarks file must be written in markdown format. See:
+
+            http://daringfireball.net/projects/markdown/basics
+
+       for more information.
+
+       We currently use "Discount" to convert markdown to HTML
+
+             http://www.pell.portland.or.us/~orc/Code/discount/
+
+   20) The how to build instructions must be in make form.
+
+       The target of the make file must be called prog.  The original
+       C source file must be called prog.c.
+
+       To invoke the C compiler, use ${CC}.
+       To invoke the C preprocessor use ${CPP}.
+
+       Do not assume that . (the current working directory) is in the $PATH.
+
+       Use a shell command syntax that is compatible with bash.
+
+       Assume that commands commonly found in POSIX-like / Linux-like systems
+       are available in the search path.
+
+       Do not assume any particular given value of ${CFLAGS} or other
+       commonly used make variables.
+
+   21) Your entry must not create nor modify files above the current directory
+       with the exception of the /tmp and the /var/tmp directories.  Your entry
+       may create subdirectories below the current directory, or in /tmp,
+       or in /var/tmp provided that "." is not the first octet in any
+       directory name.
+
+|  22) Your source code, data files, remarks and program output must NOT
+|      identify the authors of your code.  The judges STRONGLY prefer to
+|      not know who is submitting entries to the IOCCC.
+
+|      The "Peter Honeyman is exempt" guideline also applies to this rule.
+|      Identifying yourself, in an obvious way in your code, data, remarks
+|      or program output, unless you are Peter Honeyman or pretending
+|      to be Peter Honeyman, will be grounds for disqualification of your entry.
+
+|  23) This prime rule number is reserved for future use.
+
+|  24) Even though 24 is not prime, you should still see rule #23.
+
+
+FOR MORE INFORMATION:
+
+    The judging will be done by Leonid A. Broukhis, Simon Cooper, Landon
+    Curt Noll.
+
+    Please send questions or comments about the contest, to:
+
+|       q.2015@ioccc.org       (for questions only!)
+
+    You must include the words:
+
+|       ioccc 2015 question
+
+    in the subject of your EMail message when sending EMail to the judges.
+
+    The rules and the guidelines may (and often do) change from year to
+    year.  You should be sure you have the current rules and guidelines
+    prior to submitting entries.  To obtain them, visit the IOCCC web page:
+
+        http://www.ioccc.org
+
+    It has rules, guidelines and winners of previous contests (1984 to date).
+
+    For the updates and breaking IOCCC news, you are encouraged to follow
+    the twitter handle:
+
+        @IOCCC
+
+    You do not have to be a twitter user to follow @IOCCC.  Non-twitter
+    users should access:
+
+        https://twitter.com/ioccc
+
+    Non-twitter users should force their browsers to reload the above URL
+    to be sure they are seeing the most recent tweets.
+
+Leonid A. Broukhis
+Simon Cooper
+chongo (Landon Curt Noll) /\cc/\

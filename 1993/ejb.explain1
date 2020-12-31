@@ -1,0 +1,9 @@
+    The Towers of Hanoi is a puzzle consisting of three posts
+    and several rings of various sizes.  The initial
+    configuration of the game is that all the rings are stacked
+    in decreasing order of size on one post.  The object of the
+    game is to move all the rings from one post to another
+    subject to two rules: only one ring can be moved at a time,
+    and at no time can one ring be placed on top of a smaller
+    ring.  The number of steps necessary to solve this puzzle is
+    exponential in the number rings.

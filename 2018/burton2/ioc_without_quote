@@ -1,0 +1,396 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+
+int cl,cw,cc,ci,ck,xc;	   // counts: line, word, char, ioc, keywords, xtra_char
+int ts,tk;		   // totals: saved from counting, keyword lengths
+int fk,fs,fr,fi,fc,ft;     // flags:  keep, suppress, reserved, ioccc, compat, tokenize, comments
+unsigned char *buf, *p, *e, *w, *s; // ptr, end, white, start
+
+char *kw[] = {
+	"void",           "char",          "short",     "int",      "long",      "unsigned",
+	"typedef",        "struct",        "union",     "enum",     "sizeof",    "signed",
+	"for",            "while",         "do",        "if",       "else",      "switch",
+	"case",           "default",       "break",     "continue", "return",    "goto",
+	"static",         "volatile",      "register",  "auto",     "const",     "extern",
+	"float",          "double",
+
+	"#ifdef",         "#ifndef",       "#if",       "#else",    "#elif",     "#endif",
+	"#include",       "#error",        "#warning",  "#line",    "#pragma",
+
+	"restrict",       "inline",        "_Bool",     "_Complex", "_Imaginary",
+
+	"_Atomic",        "_Generic",      "_Noreturn", "_Pragma",
+	"_Static_assert", "_Thread_local", "_Alignas",  "_Alignof",
+	"static_assert",  "thread_local",  "alignas",   "alignof",  "noreturn",
+	"bool",           "true",          "false",     "compl",    "bitand",    "bitor",
+	"and",            "and_eq",        "not",       "not_eq",
+	"or",             "or_eq",         "xor",       "xor_eq",
+	0
+};
+
+enum {
+	  CPP   = 256
+	, CMT   = 257
+	, KEYW  = 258
+	, DIVEQ = 259
+	, MULEQ = 260
+	, MODEQ = 261
+	, ADDEQ = 262
+	, SUBEQ = 263
+	, XOREQ = 264
+	, OREQ  = 265
+	, ANDEQ = 266
+	, RSHEQ = 267
+	, LSHEQ = 268
+	, NOTEQ = 269
+	, EQ    = 270
+	, GE    = 271
+	, LE    = 272
+	, OR2   = 273
+	, AND2  = 274
+	, PP    = 275
+	, MM    = 276
+	, PTR   = 277
+	, LSH   = 278
+	, RSH   = 279
+	, INT   = 300
+	, FLOAT = 301
+	, ID    = 302
+};
+
+enum {
+	  O=0x01	// octal
+	, H=0x02	// hex
+	, D=0x04	// decimal
+	, I=0x08	// identifier
+	, W=0x10	// whitespace
+	, B=0x20	// brace, semi
+	, OHD = O|H|D
+	, HD  = H|D
+	, HI  = H|I
+};
+
+char tab[256] = {
+	 W, 00, 00, 00, 00, 00, 00, 00,   00,  W,  W,  W,  W,  W, 00, 00,
+	00, 00, 00, 00, 00, 00, 00, 00,   00, 00, 00, 00, 00, 00, 00, 00,
+	 W, 00, 00,  I, 00, 00, 00, 00,   00, 00, 00, 00, 00, 00, 00, 00,
+	OHD,OHD,OHD,OHD,OHD,OHD,OHD,OHD,  HD, HD, 00,  B, 00, 00, 00, 00,
+
+	00, HI, HI, HI, HI, HI, HI,  I,    I,  I,  I,  I,  I,  I,  I,  I,
+	 I,  I,  I,  I,  I,  I,  I,  I,    I,  I,  I, 00, 00, 00, 00,  I,
+	00, HI, HI, HI, HI, HI, HI,  I,    I,  I,  I,  I,  I,  I,  I,  I,
+	 I,  I,  I,  I,  I,  I,  I,  I,    I,  I,  I,  B, 00,  B, 00, 00,
+};
+
+#define is(x, c) (tab[c]&(x))
+
+// discard backslash-newline as-if not present, even if trigraph backslash
+// iocccsize counts tri as xbcount+=2, and bs-nl as xb+=2, xw++, xl++ to match wc(1)
+
+void readsource() {
+	int c, o=2, len=128;
+	buf = malloc(len);
+	while ((c = getchar()) != EOF) {
+		if (c == '\r') {
+			if (fc) ++xc;
+			continue;
+		}
+		if (buf[o-1] == '?' && buf[o-2] == '?') {
+			char *tri = "=#([/\\)]'^<{!|>}-~";
+			while (*tri && *tri++ != c)
+				++tri;
+			if (*tri) {
+				c = *tri;
+				o -= 2;
+				if (fc) xc += 2;
+			}
+		}
+		if (c == '\n' && buf[o-1] == '\\') {
+			--o;
+			cl++;
+			if (fc) {
+				++cw;
+				xc += 2;
+			}
+		} else
+			buf[o++] = c;
+		if (o == len)
+			buf = realloc(buf, len+=128);
+	}
+	buf[o] = 0;
+	e = buf + o;
+	p = buf += 2;
+}
+
+int iskw(char *s, int len) {
+	char **k;
+	if (len > 1)
+	    for (k = kw; *k; ++k)
+		if (s[0] == k[0][0] && k[0][len] == 0 && strncmp(s, *k, len) == 0)
+			return ++ck, (tk+=len-1), 1;
+	return 0;
+}
+
+int want(char m) {
+	while (p < e) {
+		if (*p == '\\') {
+			// need to only ignore: ntbrfva?, octal, x, hex
+			// 0111 = two chars, \091 = three chars, \xabc = one char(!)
+			// for our purposes, only worry about:   and \ newline,
+			// which is not a newline, but an embedded line break
+			if (p[1] == '\\' || p[1] == '\'' || p[1] == '"' || p[1] == '\n') {
+				if (p[1] == '\n') ++cl;
+				p += 2;
+				continue;
+			}
+		}
+		if (*p == '\n') ++cl;
+		if (*p++ == m) return m;
+	}
+	return 0;
+}
+
+int follow(char m, int y, int n) {
+	if (*p == m) return ++p,y;
+	return n;
+}
+
+int follow2(char m, int y, int n, int y2) {
+	if (*p == m) return ++p,y;
+	if (*p == n) return ++p,y2;
+	return n;
+}
+
+int skipwhite() {
+	int c;
+	for (c=*p++; p<=e && is(W, c); c=*p++) {
+		++cc;
+		if (c == '\n') ++cl;
+	}
+	return c;
+}
+
+/*
+ * CPP tokens may extend beyond a single line of text and include comments
+ * To do this correctly, need to scan and remove comments during readsource
+ * and present comments as whitespace.  Note that "# include" is a valid CPP
+ * token, and does not match "#include".
+ *
+ * Because the global pointers p, s and w are well-known, and because comments
+ * are not consumed during readsource, it is more difficult to parse CPP stuff.
+ * Also note that for backwards compat, we need to also count words correctly,
+ * with and without -k.
+ */
+
+int lex() {
+	int c, t;
+
+	w = p;
+	c = skipwhite();
+	s = p-1;
+
+	if (p >= e)
+		return c;
+
+	switch (c) {
+	case '\'': want(c); return c;
+	case '"':  want(c); return c;
+	case '/':
+		t = follow2('=', DIVEQ, c, CMT);
+		if (t == CMT)
+			want('\n');
+		else if (t == c && (t = follow('*', CMT, c)) == CMT)
+			do want('*'); while (p<e && follow('/', 0, 1));
+		return t;
+	case '*':  return follow ('=', MULEQ, c);
+	case '%':  return follow ('=', MODEQ, c);
+	case '=':  return follow ('=', EQ,    c);
+	case '!':  return follow ('=', NOTEQ, c);
+	case '^':  return follow ('=', XOREQ, c);
+	case '+':  return follow2('=', ANDEQ, c, PP);
+	case '|':  return follow2('=', OREQ,  c, OR2);
+	case '&':  return follow2('=', ANDEQ, c, AND2);
+	case '-':  t =    follow2('=', SUBEQ, c, MM);  return t==c  ?follow('>', PTR,   t):t;
+	case '>':  t =    follow2('=', GE,    c, RSH); return t==RSH?follow('=', RSHEQ, t):t;
+	case '<':  t =    follow2('=', LE,    c, LSH); return t==LSH?follow('=', LSHEQ, t):t;
+	case '#':  if (ft) { want('\n'); return CPP; }
+	}
+
+	if (is(D, c)) {
+	    if (c == '0' && (*p|32) == 'x')
+		c = *++p;
+	    while (is(OHD, c))
+		c = *p++;
+	    if (c == '.') {
+		(void)strtod(s, (char**)&p);
+		return FLOAT;
+	    }
+	    return --p, INT;
+	}
+
+	if (is(I, c)) {
+	    while (is(I|D, c))
+	    	c = *p++;
+	    --p;
+	    return iskw(s, p-s) ? KEYW : ID;
+	}
+
+	return c ? c : ' ';	// allows nulls in source code
+}
+
+// iocccsize compat: adjust whitespace counts
+void compat_words(int tlen, int inword) {
+	int c;
+	for (c=0; c<tlen; ++c) {
+		int isw = is(W,s[c]);
+		if (isw) --ci;
+		else if (is(B,s[c]) && is(W,s[c+1])) --ci;
+		if (inword)    inword = !isw;
+		else if (!isw) inword = ++cw;
+	}
+}
+
+void compat_kw(int tlen, int inword) {
+	int c, w=0;
+	for (w=c=2; c<tlen; ++c) {	// skip comment lead-in chars
+		int isw = !is(I|D,s[c]);
+		if (inword) {
+			inword = !isw;
+			if (!inword && iskw(s+w, c-w))
+				ci -= c-w-1;
+		} else if (!isw)
+			inword = w = c;
+	}
+}
+
+void compat(int t, int tlen) {
+	static int tprev;
+	int c;
+	if (tprev == CMT) {
+		// do not bcount spaces following comment blocks, including the newline!
+		// nor lcount the newline following a comment block if last on line
+		unsigned char *ow = w;
+		while (ow<s && *ow++ != '\n')
+			;
+		if (!fk && ow[-1] == '\n')
+			--cl;
+		cc -= ow-w;
+		tprev = 0;
+	}
+	// new-style comments eat preceding newline, leaving no whitespace if token starts line
+	// add it back here for compat word boundary detection
+	if (w == s && w[-1] == '\n')
+		--w;
+	if (t == CMT) {
+		// do not count newlines within comments
+		// and checks for keywords in new-style comments
+		if (fk) {
+			int inword = w==s && s>buf;
+			ci += tlen;
+			if (s[1] == '/')
+				compat_kw(tlen, inword);
+			compat_words(tlen, inword);
+		} else for (c=0; c<tlen; ++c)
+			if (s[c] == '\n') --cl;
+
+		// nor spaces before comments IFF the comment is first non-white on line
+		unsigned char *os = s;
+		while (os > w) {
+			if (*--os == '\n')
+				break;
+		}
+
+		// look for last ends with newline, only remove ccounts if whitespace
+		if (*os == '\n' || os == buf || w[-1] == '\n')
+			cc -= s - os - (*os == '\n');
+
+		// look for whitespace before the comment, as well as after
+		if (!fk && (w != s || s == buf) && !is(W, s[tlen]) && s[1] == '*')
+			++cw;
+
+		if (s[1] == '*')
+			tprev = CMT;
+	} else if (t == '"' || t == '\'') {
+		// iocccsize -i does not count whitespace WITHIN a string!!!
+		// and {;} can be "free" within a string if follows the "rules"
+		compat_words(tlen, 1);
+	}
+	// count words, not tokens (a preceding old-style CMT is whitespace)
+	if (t && t != CMT && w == s && s > buf)
+		--cw;
+	if (!fs && (t != CMT || fk)) {
+		printf("%.*s", (int)(s-w), w);
+		printf("%.*s", tlen, s);
+	}
+}
+
+void count() {
+	int t, tlen;
+	while ((t=lex())) {
+		tlen = p-s;
+		if (t != CMT) {
+			cc += tlen;
+			++cw;
+			if (fr && t == KEYW)
+				ci += 1;
+			else if (t < 256 && is(B, t) && (is(W, *p) || !*p))
+				;
+			else
+				ci += tlen;
+		}
+		if (fc)
+			compat(t, tlen);
+		else if (!fs && (t != CMT || fk)) {
+			if (!ft) printf("%3d ", t);
+			printf("%.*s", tlen, s);
+			if (p[-1] != '\n') printf("\n");
+		}
+	}
+
+	if (fc) {
+		compat(0, e-w);
+		if (!fs && w<e)
+		printf("%.*s", (int)(e-w), w);
+	}
+
+	if (fk) cc = e - buf;
+	if (!fr) tk = 0;
+	ts = cc - ci - tk;
+	cc += xc;
+}
+
+int main(int ac, char **av) {
+	static char usage[] = "[flags]\n\
+	-t  tokenize input\n\
+	-c  compatible with iocccsize\n\
+	-k  keep comments\n\
+	-s  suppress source\n\
+	-r  reserved words count as 1\n\
+	-i  ioccc size (implies -rsc)";
+
+	int c;
+	while ((c = getopt(ac, av, "?tcksri")) != EOF) {
+	    switch (c) {
+	    case 't': ft=1; break;
+	    case 'c': fc=1; break;
+	    case 'k': fk=1; break;
+	    case 's': fs=1; break;
+	    case 'r': fr=1; break;
+	    case 'i': fi=fr=fs=fc=1; break;
+	    default:
+	    	fprintf(stderr, "%s %s\n", av[0], usage);
+		return 1;
+	    }
+	}
+
+	readsource();
+	count();
+
+	if (!ft) {
+		if (fi) printf("%d\n", ci);
+		else    fprintf(stderr, "%d %d %d %d %d %d %d\n", cl, cw, cc, ci, ts, ck, tk);
+	}
+	return 0;
+}

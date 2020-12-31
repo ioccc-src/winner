@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.2.0">
+  <meta http-equiv="Content-Type"
+        content="text/html; charset=utf-8">  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Best collaborative graphics</title>
+</head>
+<body>
+<h1>Best collaborative graphics</h1>
+
+<p>Etienne Duble<br>
+<a href="https://lig-membres.imag.fr/duble">https://lig-membres.imag.fr/duble</a><br>
+Twitter: @etienne_duble</p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To use:</h3>
+
+<pre><code>make
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>./prog /tmp/drawing
+
+(open another window / terminal)
+
+./prog /tmp/drawing
+
+(open more terminals....)
+
+./prog /tmp/drawing
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>After starting the program, use the cursor keys, then try some modes, like &ldquo;p&rdquo;
+or &ldquo;l&rdquo; (they toggle).</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h3>Introduction</h3>
+
+<p>This program is a <strong>graphics editor</strong>, running on the terminal.</p>
+
+<p>It provides <strong>collaborative</strong> features: one can join the drawing session
+of someone else by just opening the same file!</p>
+
+<h3>Getting started</h3>
+
+<p>The program can run on Linux, FreeBSD, Mac OS X, and in most terminals.
+See section &lsquo;Limits, Portability&rsquo; for more info.</p>
+
+<p>To build, type <code>make</code> (assuming gcc) or <code>make CC=clang</code>.</p>
+
+<p>Then you can start the program. It expects a file path as its first argument:</p>
+
+<pre><code>$ ./prog /tmp/drawing
+</code></pre>
+
+<p>(If not started this way, <code>prog</code> will refuse to start.)</p>
+
+<p>If the file does not exist, you will start with a blank drawing.</p>
+
+<p>If someone else (or another <em>instance of yourself</em>, maybe??) is already
+editing this file, you will join the session!</p>
+
+<h3>Edition features</h3>
+
+<ul>
+<li><strong>arrow keys</strong>: move cursor.</li>
+<li><strong>p</strong> key: enter <em>pen</em> mode (type <strong>p</strong> again to return to the default <em>move</em> mode).</li>
+<li><strong>l</strong> key: enter <em>line</em> mode (type <strong>l</strong> again to validate the line and return to the <em>move</em> mode).</li>
+<li><strong>c</strong> key: cycle through a small set of different <em>colors</em>.</li>
+<li><strong>q</strong> key: quit the editor. The drawing is automatically saved.</li>
+</ul>
+
+
+<p>The mode and current color is indicated at the bottom left corner of
+the editor.</p>
+
+<h3>Bonus features</h3>
+
+<ul>
+<li>If you just want to display the content of a drawing file, you do not
+need to start the editor. Just <strong>execute the drawing file</strong>: <code>./&lt;the-file&gt;</code>.
+(This will fail if someone is still editing the file, though.)</li>
+<li><code>ls --color &lt;drawing-files...&gt;</code> will probably select different colors
+to indicate whether a drawing file is being edited or not. :-)</li>
+</ul>
+
+
+<h3>Obfuscation</h3>
+
+<p>You will probably have a hard time analyzing this entry, because:</p>
+
+<ul>
+<li>Analyzing a system made of several communicating programs is known to
+be a complex task. (And if you think that observing a single-user drawing
+session will be a good starting point, read on.)</li>
+<li>Code coverage of single vs multi-user sessions is more or less the same. :-)</li>
+<li>Code coverage when using <em>move</em>, <em>pen</em> or <em>line</em> modes is almost the same.
+(so, is there a Bresenham algorithm somewhere??)</li>
+<li>Some OS resource values and stdlib call results are inferred.</li>
+<li>Whenever possible, variable names are reused.</li>
+<li>You might start analyzing escape code sequences right now, but warming up
+your brain is actually recommended. Start with a simple question such as:
+<em>in inverse video mode, will a space char show the foreground color or
+background color?</em></li>
+</ul>
+
+
+<h3>A few more things</h3>
+
+<p>Did you notice the <code>enum</code> declaration? Could it be just an <code>int</code> or <code>const int</code>
+variable, instead? (spoiler: http://c-faq.com/ansi/constasconst.html)</p>
+
+<p>If your keyboard has no arrow keys, you can probably find alternate keys by
+reading the source code.</p>
+
+<h3>Limits, Portability</h3>
+
+<p>I tested the program on several Linux systems, on FreeBSD 12, and on
+Mac OS X (mojave).</p>
+
+<p>On Linux, the program uses an OS-specific detail to hide communication
+artefacts, and avoids the need to remove them on exit.
+Since this is Linux-specific, it was not possible on FreeBSD or Mac OS.
+Its behavior is a little more <em>dirty</em> there.</p>
+
+<p>The program should work on most terminals that support 8-bit colors,
+inverse video mode, and movement escape codes, e.g. <code>xterm</code>, <code>gnome-terminal</code>,
+<code>terminator</code>, etc.</p>
+
+<p>Note: the drawing files <code>prog</code> generates are probably even more portable than
+<code>prog</code> itself!</p>
+
+<h3>Drawing area size</h3>
+
+<p><em>The drawing area size is set at compilation time</em>.</p>
+
+<p>The default size is the one of my xterm (see top of Makefile).
+You may set it to the full size of your terminal window by typing:</p>
+
+<pre><code>$ make fullscreen
+</code></pre>
+
+<p>IMPORTANT NOTES:</p>
+
+<ul>
+<li><strong>The program compiled with a given size will fail to reload a drawing file
+with a different size!</strong></li>
+<li>No scrolling is implemented (sorry but that would be too much for rule2!),
+so any peer reaching the session should have a terminal with the same
+size or larger.</li>
+</ul>
+
+
+<h3>prog.c vs prog.orig.c</h3>
+
+<p>The file <code>prog.orig.c</code> is the one I submitted.</p>
+
+<p>Judges proposed a small update: the program was using macro <code>FD_SET</code> inside an
+expression, which breaks compilation on Mac OS X. Wrapping this macro into a
+function was enough to fix this compilation issue.</p>
+
+<p>However, that was not enough to make the program work on Mac OS X. If you analyse
+the program you will see that it heavily relies on OS resources. And, for this
+first version of the program, you even needed to increase default <code>sysctl</code>
+parameters to make it work on FreeBSD (this was the purpose of file <code>check-os.sh</code>).
+I tried hard to tune Mac OS X the same, but failed.</p>
+
+<p>The simple fact Judges proposed this update meant they wish it could work on Mac.
+And if judges wish something, it <strong>has to</strong> be done. ;)
+So I refactored a little more the program to reduce OS resources consumption.
+Or maybe not reduce consumption, but consume them differently&hellip;
+And I obtained <code>prog.c</code>. With this version, no need to touch <code>sysctl</code> parameters,
+and it works on Mac OS X too!
+I must confess it was challenging to remain below the size limit with this little
+change.</p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2019, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="/png/by-sa-3.0-88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2019,
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

@@ -1,0 +1,42 @@
+On Writing An IOCCC One-Liner
+
+There is a tug-of-war when writing a one-liner between obscurity
+and length.  On the one hand, one-liners are often obscure in nature,
+simply by doing so much with so little.  As well, the reduction of
+interesting logic into a single line typically involves transformations
+that tend to obscure the logic in the hunt for fewer bytes.
+
+Sometimes, the minimalist logic can be easily deciphered because
+of the simplified logic required to get it into one line, and due
+to the almost necessary reliance on stdlib routines to do the heavy
+lifting.  printf, scanf, getchar, putchar, atoi, isspace, isdigit,
+are succinct but explicit size-reducing functions, and may sometimes
+open an unwanted window on the nature of the otherwise obscured logic.
+
+The flip-side, replacing these routines, invariably requires more
+bytes.  So what is a one-liner-writer to do when confronted by such
+a choice?  Therein lies the art form, and the risk: the additional
+obscurity requiring additional bytes may push a one-liner close to
+or over the limit.  Fewer bytes is generally better, until it is not.
+
+Further, the predilections of the judges may change daily, for all
+this author knows.  The guidelines are opaque on purpose.  So brevity,
+or better obscurity?  Both if at all possible, but perhaps at some
+risk for being juuuuuust too long, or not quiiiiiiite obscure enough.
+
+Finally, the desire for clean compilation is almost anathema to an
+obscure one-liner.  The extra characters of the types and storage
+classes, which are historically implicit, but made explicit to
+silence modern compilers, tend to occupy the very precious bytes
+left in the one-liner budget.
+
+It is a fun challenge to write something "interesting" within the
+draconian budget.  As history has shown, most years someone conceives
+of something clever enough.  This year, the present author is hopeful
+the artistic balance is deemed favorable, and is interesting to the
+world at large.  But if not, it was still fun to write -- and with no
+small amount of angst for the final form of the entry, of which there
+were several different attempts at the same algorithm, each with
+different compromises in logic, expression, and obscurity mechanisms.
+
+Because there is a tug-of-war between obscurity and brevity.

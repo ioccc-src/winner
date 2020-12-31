@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most able to divine code gaps</title>
+</head>
+<body>
+<h1>Most able to divine code gaps</h1>
+
+<p>Derek Anderson</p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To use:</h3>
+
+<pre><code>make
+./prog &lt; textfile
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>./prog &lt; prog.c
+./prog &lt; prog.orig.c
+./prog &lt; hint.text
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>With this entry, you won&rsquo;t need to turn your monitor <a href="http://en.wikipedia.org/wiki/River_%28typography%29">upside down</a>!</p>
+
+<p>Compare <code>prog.c</code> and <code>prog.orig.c</code> and find out why we had to modify the entry, and what confused the author
+(see the author&rsquo;s remarks). No, it was not the shape of the Roman V that we, or the compiler, didn&rsquo;t like.</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h2>Compiling the program</h2>
+
+<pre><code>gcc -Wall -Wextra -Wpedantic -O3 -std=c11 prog.c -o prog
+</code></pre>
+
+<p>Also works with a standard of c99, but c90/c89 will not compile due to
+for loop initial declarations, along with additional warnings about
+variable length arrays and lack of a return statement.</p>
+
+<h2>Additional info</h2>
+
+<p>This small program, when given text on stdin, will produce a pattern of
+squiggly lines. This pattern is deterministic, and it shouldn&rsquo;t be too
+difficult to determine from whence they come. There is even a comment
+that describes the highlighted phenomena in the source, for those that
+require a small nudge. With denser text blocks, such as an essay or
+similar prose, the output can be rather pretty, in an chaotic emergence
+sort of way. Try using this file, or the source file as inputs.</p>
+
+<p>In its current form, this program can handle lines of length 255; to
+adjust this limit, change the variable <code>a</code> at the top of the source.
+Other adjustments, such as the exact printed characters, are rather
+easy, once sufficient reverse engineering has occurred. Improvements
+such as proper handling of tabs are left as an exercise to the reader.</p>
+
+<p>In developing this program, the author found a potentially interesting
+bug. If the expression <code>(j=k,j)</code> (near the middle of the source) is
+changed to <code>(j=k,k)</code>, the program produces different output. The author
+used compiler gcc 5.4.0, compiled for x86_64-linux-gnu. Enabling or
+disabling optimization produces the same results. The author is not
+sure who is the culprit, but instead shrugged and moved on with life.
+Of course, YMMV with your own environment.</p>
+
+<p>The structure of this program, as you may have deduced, is two for
+loops, one nested in the other. There is also a bunch of direct
+variable assignment, such as <code>j=k</code>. There is some filler fluff, such as
+<code>0-0+0</code>, but all that sort should be rather easy to spot. It was mostly
+added for the purpose of making certain things line up right, and only
+secondarily to obfuscate.</p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2018, 
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

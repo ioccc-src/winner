@@ -1,0 +1,29 @@
+# The worst abuse of the C preprocessor
+
+Col. G. L. Sicherman
+
+## Judges' comments:
+
+This program abuses the C preprocessor so much that some /lib/cpp's fail to
+strip out all of the comments on the first pass!  If you were able to
+understand Decot's entry in 1984, you will have a head start on this
+one.
+
+Be sure to run this program through lint!  If your lint works
+correctly, it should warn you that the argument 'Manual' isn't used.
+Like the program says, what's that mean?
+
+Run the program without arguments and enter the letters 'a' thru 'm'
+on a line.  Now enter the letters 'n' thru 'z'.  But to borrow a quote
+from Richard Stallman: If you think you understand what this code
+does, then you don't, so read it again!  Explain why:
+
+	sicherman < sicherman.c | sicherman | diff - sicherman.c
+
+results in diff reporting a difference on some machines.
+
+Copyright (c) 1985, Landon Curt Noll & Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.

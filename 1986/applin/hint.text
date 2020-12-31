@@ -1,0 +1,21 @@
+# Most adaptable program
+
+Jack Applin  
+Hewlett-Packard  
+Ft. Collins  
+Colorado  
+USA  
+
+## Judges' comments:
+
+Compile and/or execute as directed by the documentation.
+
+The judges were so amused by this little program that we created an
+award just for it.  This program is portable to the C and Fortran 77
+compilers as well as executable by the bourne shell!
+
+Copyright (c) 1986, Landon Curt Noll & Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.

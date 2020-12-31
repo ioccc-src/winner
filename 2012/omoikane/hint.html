@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most surreptitious</title>
+</head>
+<body>
+<h1>Most surreptitious</h1>
+
+<p>Don Yang<br>
+<a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#x6f;&#x6d;&#x6f;&#x69;&#107;&#97;&#x6e;&#x65;&#64;&#117;&#103;&#117;&#117;&#46;&#111;&#x72;&#103;">&#111;&#109;&#x6f;&#105;&#x6b;&#97;&#110;&#x65;&#x40;&#117;&#x67;&#x75;&#117;&#46;&#111;&#x72;&#x67;</a><br>
+<a href="http://uguu.org/">http://uguu.org/</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To build:</h3>
+
+<pre><code>make nyaruko
+</code></pre>
+
+<h3>To run:</h3>
+
+<pre><code>./nyaruko [seed.txt] &lt; original.bin &gt; output.c
+bash output.c &gt; key.c
+perl output.c &gt; data.c
+
+cat key.c data.c &gt; output.c
+
+gcc output.c -o output
+./output &gt; regenerated.bin
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>echo "A quick brown fox jumps over the lazy dog" | ./nyaruko &gt; output.c
+perl output.c &gt; data.c
+gcc -o data data.c
+./data
+gcc -o output output.c
+./output
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>The judges have nothing to add that has not already been written
+about in the spoiler.html.gz file!  :-)</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h1>Usage</h1>
+
+<p>Nyaruko is a binary to text filter.  Given some input on stdin,
+Nyaruko will produce C code that reproduces this input on stdout:</p>
+
+<pre><code>./nyaruko &lt; original.bin &gt; output.c
+gcc output.c -o output
+./output &gt; regenerated.bin
+</code></pre>
+
+<p>Output is encrypted, but both key and data are included in the output.
+To separate the key from the data, run these commands:</p>
+
+<pre><code>bash output.c &gt; key.c
+perl output.c &gt; data.c
+</code></pre>
+
+<p>The key-less data.c still compiles, but produces a different message
+on stdout instead of the original input.  This message is a hint to
+why the code is formatted the way it is.</p>
+
+<p>To combine the key and data, concatenate them together in either
+order:</p>
+
+<pre><code>cat key.c data.c &gt; output.c
+cat data.c key.c &gt; output.c
+</code></pre>
+
+<p>By default, Nyaruko generates a unique random key for every message,
+using /dev/urandom as the seed.  If given an extra command line
+argument, Nyaruko will seed using that file instead of /dev/urandom:</p>
+
+<pre><code>./nyaruko seed.txt &lt; input.bin &gt; output.c
+</code></pre>
+
+<p>This makes the output key deterministic, allowing the same key to be
+shared across different files.  On operating systems that do not have
+/dev/urandom, users should always specify this extra seed argument to
+avoid deterministic keys.</p>
+
+<h1>Features</h1>
+
+<p>Implementation details that makes Nyaruko more obfuscated than usual
+programs:</p>
+
+<ul>
+<li> Nyaruko recycles variables and buffers to reduce internal state.
+ The variable names are also carefully chosen for mixed-case
+ madness.</li>
+<li> Nyaruko employs some preprocessor magic to share much of the same
+ code and state between the encoder and decoder, and to increase
+ occurrences of smileys ;)</li>
+</ul>
+
+
+<p>Output code has these features:</p>
+
+<ul>
+<li> Fits nicely under 80 columns, and does not contain any trigraphs.</li>
+<li> Uses a fairly efficient encoding scheme, better than uuencode for
+ files larger than ~13K, and better than base64 for files larger
+ than 20K.</li>
+<li> Encryption with ISAAC, a cryptographically secure pseudorandom
+ number generator.</li>
+<li> Trivial 3 language polyglot.</li>
+</ul>
+
+
+<p>Code layout is meant to resemble Nyaruko, also known as Nyarlathotep,
+the Crawling Chaos.  The most obvious thing to do with chaos is to
+make a random number generator, and the most obvious thing to do with
+a random number generator is to make one-time-pads for encryption.</p>
+
+<h1>Compatibility</h1>
+
+<p>Nyaruko has these environment dependencies:</p>
+
+<ul>
+<li> Requires ASCII character set.</li>
+<li> Assumes sizeof(unsigned int) == 4.</li>
+<li> Best viewed with tab stops set to 8 spaces.</li>
+</ul>
+
+
+<p>Output code has the same dependencies, with the additional
+requirement that the compiler must support arbitrarily long string
+literals.  Maximum input size that can be encoded while still
+producing standard-compliant output is ~276 bytes for C89, and ~3168
+bytes for C99.</p>
+
+<p>Nyaruko has been to verified to work with these compiler/OS
+combinations:</p>
+
+<ul>
+<li> gcc 4.4.5 on Linux (32bit and 64bit)</li>
+<li> clang 3.1 on Windows (Cygwin)</li>
+<li> gcc 4.5.3 on Windows (Cygwin)</li>
+<li> gcc 4.5.3 on Windows (MingW)</li>
+<li> gcc 4.3.5 on JSLinux</li>
+<li> tcc 0.9.25 on JSLinux</li>
+</ul>
+
+
+<p>Note that on MingW, stdin and stdout are not opened in binary mode by
+default, this means Nyaruko may not faithfully encode files on MingW.</p>
+
+<h1>Extra files</h1>
+
+<p>spoiler.html.gz - Contains full recording of how the code went from
+blank state to an obfuscated program, gzipped to fit under 1MB.</p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2015,
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

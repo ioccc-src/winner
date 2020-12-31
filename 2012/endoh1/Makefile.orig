@@ -1,0 +1,22 @@
+# the factor of gravity
+G=1
+# the factor of pressure
+P=4
+# the factor of viscosity
+V=8
+RM= rm
+TRUE= true
+CWARN= -Wall -W -Wextra -pedantic
+CSTD= -std=c99 -D_BSD_SOURCE
+CFLAGS= ${CWARN} ${CSTD} ${ARCH} ${OPT}
+CC= gcc
+ENTRY= prog
+
+all: ${ENTRY}
+	@${TRUE}
+
+${ENTRY}: ${ENTRY}.c
+	${CC} ${CFLAGS} -DG=$G -DP=$P -DV=$P ${ENTRY}.c -o $@ -lm
+
+clean:
+	$(RM) -f ${ENTRY}

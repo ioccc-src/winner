@@ -1,0 +1,18 @@
+: foobar
+  2
+  [ 2 ,		  ( '[' turns the compiler off, allowing us to execute code )
+    1 1 1 + + ,   ( and we compile in-line a 2 and a three )
+		  ( the '2' means 'push the number following this' )
+  ]
+  + . cr
+;
+
+foobar
+
+: 'foobar ' foobar ;    ( ' can only be run inside the compiler )
+			( ' leaves the address of the following word
+			    on the stack )
+
+'foobar . cr
+
+'foobar dump

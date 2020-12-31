@@ -1,0 +1,44 @@
+<h1>Best Abuse of the Rules</h1>
+
+<p>Mark Biggar<br>
+UNiSYS - System Development Group, Santa Monica<br>
+2525 Colorado AV MD 91-01<br>
+Santa Monica, CA<br>
+90406</p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To build:</h3>
+
+<pre><code>cc -DC="R&gt;0" -DI="if(T)O" -DO="c=write(1,&amp;c,1);" -DP="main(){X}"\
+-DR="read(0,&amp;c,1)" -DT="c!=015" -DW="while(C)I" -DX="char c;W" markb.c
+</code></pre>
+
+<p>Passes BSD and UTS lint.  At least one version of lint is thrown into
+an infinite loop by this entry.</p>
+
+<h3>Try:</h3>
+
+<pre><code>... | markb | od -c (remember to compile as indicated above)
+</code></pre>
+
+<p>By changing the compile line you can make this program do anything you
+want.  This is a very efficient way to transfer source, though it
+increases the size of Makefiles.</p>
+
+<p>With only slight variations, this program can be set to many uses.
+Consider how easy it would be to release Un*x source in this form;
+so what if the make files grow a little!  :-)</p>
+
+<p>One vendor&rsquo;s lint got hung in an infinite loop over this entry!</p>
+
+<blockquote><p>FYI:  We will let Mark get away with this truly sick entry this time, but
+for the future on we have placed a limit on the size of a compile line.</p></blockquote>
+
+<p>Also see our comment in Larry Wall&rsquo;s entry regarding Mark&rsquo;s contribution.</p>
+
+<p>Copyright &copy; 1987, Landon Curt Noll &amp; Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.</p>

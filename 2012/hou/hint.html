@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most useful obfuscation</title>
+</head>
+<body>
+<h1>Most useful obfuscation</h1>
+
+<p>Qiming Hou<br>
+<a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#x68;&#x71;&#x6d;&#x30;&#51;&#115;&#x74;&#x65;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#x2e;&#99;&#111;&#109;">&#x68;&#113;&#x6d;&#48;&#51;&#x73;&#x74;&#101;&#x72;&#x40;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a><br>
+<a href="http://www.houqiming.net">http://www.houqiming.net</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To build:</h3>
+
+<pre><code>make hou
+</code></pre>
+
+<h3>To run:</h3>
+
+<pre><code>./hou syntax-file file-to-process
+</code></pre>
+
+<h3>Try (Unix):</h3>
+
+<p>The results are best viewed in a 80x25 console with ANSI colors.</p>
+
+<pre><code>less hou.c
+
+./hou ansi.txt hou.c | less -r
+
+./hou chk.txt hou.c | wc
+
+./hou markdown.txt remarks.markdown &gt; remarks.htm
+your-browser remarks.htm
+</code></pre>
+
+<h3>Try (Windows):</h3>
+
+<pre><code>copy header.htm hou.htm /y
+hou html.txt hou.c &gt;&gt; hou.htm
+start hou.htm
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>What a versatile entry! It can be used to check the size of IOCCC entries <em>and</em> to publish them as HTML.</p>
+
+<p>For extra credit: what is the meaning of the number 2321237?</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h3>Disclaimer</h3>
+
+<p>The reviewer may have already noticed that the 2nd page of this program is a dense blob, which is discouraged by the contest rules. We wish to point out that a majority of state-of-art programming editors support syntax highlighting, which should be enabled when reading this entry. Anticipating that the reviewer&rsquo;s preferred color setting may produce a suboptimal visual effect, a few syntax files are provided to highlight the source code under an author-provided setting, using the submitted program itself. Syntax highlighting would also visually improve the 3rd page.</p>
+
+<p>The code may throw a few warnings due to formating constraints. The author did try to remove warnings under gcc and Visual Studio, though.</p>
+
+<p>The author does not own the original anime series where the embedded ASCII arts come from. For comparison, original non-ASCII art depictions of the relevant characters and objects can be found by googling the embedded text messages.</p>
+
+<h3>Syntax files</h3>
+
+<p>The syntax file consists of a number of rewriting rules. Each rule consists of a regular expression, a space, a format string, and a newline. All text matching the regular expression would be replaced by the format string. In case of a conflict, rules appearing earlier would take precedence. One can refer to the original text in the format string using &ldquo;%s&rdquo;. Other &ldquo;%&rdquo; characters in the format string must be escaped with another &ldquo;%&rdquo;. The space character can be used in the regular expression by escaping it with [] or &ldquo;&rdquo;.</p>
+
+<p>The following regular expression operators are supported:</p>
+
+<pre><code>() [] * + ? | ""
+</code></pre>
+
+<p>For example, one can use the following expression to match a certain declaration statement in hou.c:</p>
+
+<pre><code>"char"[ *]*[a-zA-Z_][0-9a-zA-Z_]*[ ]*((=[0-9a-zA-Z_ ]+)|(\[[0-9a-zA-Z_ ]*\]))?[ ]*(,[ *]*[a-zA-Z_][0-9a-zA-Z_]*[ ]*((=[0-9a-zA-Z_ ]+)|(\[[0-9a-zA-Z_ ]*\]))?[ ]*)*;
+</code></pre>
+
+<p>The regex engine is also algorithmically efficient. To illustrate the point, ansi.txt contains a pathological expression [2] that guarantees a hang for the competing Perl engine while matching itself. Try to compare these two engines:</p>
+
+<pre><code>./hou ansi.txt ansi.txt
+perl patho.pl &lt; ansi.txt
+</code></pre>
+
+<p>Finally, there are a few limitations&hellip;</p>
+
+<ul>
+<li>The only escape sequence supported is \n and it doesn&rsquo;t work in [].</li>
+<li>The maximum file/rule size is a linear function of the hard-coded constant M.</li>
+<li>Single-character matches at the end of file may be missed.</li>
+<li>The operator | doesn&rsquo;t obey precedence rules and some extra ()s may be required.</li>
+<li>Incorrect syntax files are not tolerated.</li>
+<li>The program relies on ASCII.</li>
+</ul>
+
+
+<h3>Why obfuscated</h3>
+
+<p>The first layer of obfuscation comes from the challenge of embedding a large ASCII art in a dense blob. The entire art is composed using only keywords, strings and character constants. That results in a number of otherwise useless defines and quite a number of unconventionally written constants. While the preprocessor may remove the former, the later would remain regardless of beautification and preprocessing.</p>
+
+<p>The second layer of obfuscation comes from the need to squeeze a reasonably powerful regex engine into the remaining area that isn&rsquo;t occupied by excessive keywords and useless constants. To achieve this, the regex compiler is written using the same threaded virtual machine [1] that parses the regex. Due to compiler limitations, the generated VM code also ends up obscured by a large amount of spaghetti branches and virtual thread creations. Finally, the VM in [1] is extended to track multiple expression matches for the actual formating.</p>
+
+<p>As an extra tweak, the text message actually does something useful. Remove the &ldquo;Make a contract with me&rdquo; catch line and the program would cease to function.</p>
+
+<h3>References</h3>
+
+<p>[1] <a href="http://swtch.com/~rsc/regexp/regexp2.html">Russ Cox, Regular Expression Matching: the Virtual Machine Approach</a></p>
+
+<p>[2] <a href="http://swtch.com/~rsc/regexp/regexp1.html">Regular Expression Matching Can Be Simple And Fast (but is slow in Java, Perl, PHP, Python, Ruby, &hellip;)</a></p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2015,
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

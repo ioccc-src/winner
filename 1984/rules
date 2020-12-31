@@ -1,0 +1,44 @@
+Copyright (c) 1984, Landon Curt Noll.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.
+
+I'm sure you have all seen gross, or down right structurally obscene C
+source code before.  Some people who deal with various parts of the
+UN*X  source wonder if some folks try rather hard to produce such
+down right smelly code.
+
+Now you have the chance to compete with the worst C hackers around
+by sending in your own obfuscated C program.  Just follow the contest
+rules below:
+		1) the source file must be no more than 512 bytes long
+
+		2) mail your source to:    hplabs!nsc!chongo
+		   no later than April 11, 1984.  entries posted to
+		   the net will NOT be accepted.  please give your
+		   letter the subject of: obfuscated C code contest.
+
+		3) winning entries will be posted to net.lang.c after
+		   April 12, 1894.  (thats the prize folks)
+
+		4) indicate your net address in the text of your
+		   entry, this will be used to give credit unless
+		   you indicate that you want to remain anonymous.
+
+		5) entries must be of original work.  (dont send anything
+		   that might upset Big Brother Bell)  all entries are
+		   public domain.  (who would want to own them anyway?!)
+
+Entries will be judged for: violations of structured programming, non-clarity,
+and use of "by the K&R book" C. (use of local mods to C are not encouraged)
+extra credit if they can be compiled using the 4.2BSD C compiler on our VAX 780,
+but dont let the lack of a 780 or 4.2 discourage you!
+
+chongo <flames about the contest will be kindly #ifdef'ed out> /\CC/\
+
+UN*X is a trademark of Usenet Hackers Anonymous
+
+WARNING: The rules and mailing address for the contest change from year
+         to year.  Be sure that you consult the current set of rules
+	 before submitting entries.

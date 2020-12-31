@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.2.0">
+  <meta http-equiv="Content-Type"
+        content="text/html; charset=utf-8">  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most in need of debugging</title>
+</head>
+<body>
+<h1>Most in need of debugging</h1>
+
+<p>Yusuke Endoh<br>
+Twitter: @mametter</p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To use:</h3>
+
+<pre><code>make
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>./prog
+
+gdb ./prog || llvm ./prog
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>The purpose of this program is to crash. You&rsquo;ll want to have memorized &ldquo;man
+ascii&rdquo; when debugging it to reveal its purpose.</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h3>backtrace quine</h3>
+
+<p>Compile prog.c with no optimization.</p>
+
+<pre><code>$ gcc -g -O0 -o prog prog.c
+</code></pre>
+
+<p>Then, run it.  You will see a segmentation fault.</p>
+
+<pre><code>$ ./prog
+Segmentation fault (core dumped)
+</code></pre>
+
+<p>Let&rsquo;s debug.  As usual, run it under gdb.</p>
+
+<pre><code>$ gdb ./prog
+(gdb) run
+Starting program: /home/.../prog
+
+Program received signal SIGSEGV, Segmentation fault.
+0x0000000000000000 in ?? ()
+</code></pre>
+
+<p>Okay, check the backtrace.</p>
+
+<pre><code>(gdb) backtrace
+#0  0x0000000000000000 in ?? ()
+#1  0x0000555555555201 in x23 () at prog.c:35
+#2  0x000055555555571a in x64 () at prog.c:100
+#3  0x0000555555555747 in x65 () at prog.c:101
+#4  0x0000555555555774 in x66 () at prog.c:102
+#5  0x00005555555557ce in x69 () at prog.c:105
+#6  0x0000555555555828 in x6e () at prog.c:110
+#7  0x0000555555555747 in x65 () at prog.c:101
+...
+</code></pre>
+
+<p>See the line numbers and lookup the ASCII table.</p>
+
+<pre><code> 35 = '#'
+100 = 'd'
+101 = 'e'
+102 = 'f'
+105 = 'i'
+110 = 'n'
+101 = 'e'
+...
+</code></pre>
+
+<h4>One more thing</h4>
+
+<p>The original program can be used as a GDB command file.</p>
+
+<pre><code>$ gdb -q -x prog.c ./prog | cat
+Reading symbols from ./prog...done.
+
+Program received signal SIGSEGV, Segmentation fault.
+0x0000000000000000 in ?? ()
+#0  0x0000000000000000 in ?? ()
+#1  0x0000555555555201 in x23 () at prog.c:35
+#2  0x000055555555571a in x64 () at prog.c:100
+#3  0x0000555555555747 in x65 () at prog.c:101
+#4  0x0000555555555774 in x66 () at prog.c:102
+#5  0x00005555555557ce in x69 () at prog.c:105
+#6  0x0000555555555828 in x6e () at prog.c:110
+#7  0x0000555555555747 in x65 () at prog.c:101
+...
+</code></pre>
+
+<p>By using this, you can confirm that it is actually a quine.</p>
+
+<pre><code>$ gdb -q -x prog.c ./prog | sed -n -r 's/#.*:([0-9]+)/\1/p' | awk '{printf "%c",$1}' &gt; prog2.c
+$ diff prog.c prog2.c
+</code></pre>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2019, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="/png/by-sa-3.0-88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2019,
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

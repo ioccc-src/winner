@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most cacophonic</title>
+</head>
+<body>
+<h1>Most cacophonic</h1>
+
+<p>Anton Älgmyr<br>
+Twitter: @aalgmyr</p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To use:</h3>
+
+<pre><code>make
+
+cat prog.c | ./prog           # Printing garbage might break your font
+./prog &lt;file1&gt; &lt;file2&gt; &gt; out.raw
+./prog -d 2 0 out.raw         # Decode the first (0th) channel out of two
+</code></pre>
+
+<h3>To try:</h3>
+
+<pre><code>./prog -h | ./prog -d 1 0
+
+# Who needs cat?
+./prog prog.c | ./prog -d 1 0
+
+# Assuming ALSA
+echo '&lt;&lt;&lt;&lt;&lt;&lt;  /\_/\_/\  _-_-_-_  !!!!!  :.:.:.:  &gt;&gt;&gt;&gt;&gt;&gt; ****** ~~~~~~~' |
+    ./prog | aplay -c1 -fFLOAT_LE -r44100
+
+# Assuming sox
+echo -n ' MENE MENE TEKEL UPHARSIN ' | ./prog | 
+    sox -t raw -c 1 -r 44100 -L -e floating-point -b 32 - -n spectrogram -d 10 -X 300
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>Be warned, this is not your garden variety text-to-speech program! Earplugs are advised,
+or at least a handy and well-tested volume knob.</p>
+
+<p>Pixels are numbered, amplitudes are weighed, frequencies are divided,
+and the message can be displayed in fiery letters, but don&rsquo;t be alarmed.</p>
+
+<p>How does decoding of the waveform work? Can you encode an arbitrary text in a sound sample?</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h1>What is this?</h1>
+
+<p>To put it brief, this entry is akin to a sound based cat. It takes characters as input and outputs them into frequency space as audio. The entry also supports decoding the produced waveforms using the <code>-d</code> flag. Usage instructions is output if run with the <code>-h</code> flag, albeit not in an immediately legible format.</p>
+
+<h2>Details</h2>
+
+<p>In normal operation, the entry reads characters from one or more sources. If the <code>-h</code> flag is given, usage instructions is used as a source. Else if file paths are present as arguments those will be used. Else stdin is used.</p>
+
+<p>If a character is part of the supported subset of ASCII <code>{10, 32-126}</code> then that character is output into frequency space of an audio signal (44.1 kHz single precision float, endianness should depend on system endianness) through stdout. Any other character will be interpreted and outputted as a space.</p>
+
+<p>Characters are printed using a (slightly modified) pixel font based on <a href="https://github.com/hchargois/gohufont">gohufont</a>. Pixels are drawn using crosses in frequency space, achieved by simultaneous up and down chirps.</p>
+
+<p>Each input source is designated its own channel in the output (one float per channel per time step in the output) so if you have a surround sound system you could listen to a cacophony of chirpy characters.</p>
+
+<p>Interestingly, with training you might actually be able to tell characters just from hearing. But even without training you can easily read along with the printed characters and have the sound make sense with the look of the characters.</p>
+
+<p>See image spoiler.png for an example spectrogram.</p>
+
+<h2>Limitations</h2>
+
+<p>There is no error checking done when opening files, so expect segfaults if you provide the wrong path to a file.</p>
+
+<p>This program is bound to misbehave if int is less than 32 bits.</p>
+
+<p>Flags will only be interpreted correctly if they are the first argument. Reading a file named <code>-d</code> or <code>-h</code> is fully possible if it is not the first file provided, even though I am not sure why you would want to do that.</p>
+
+<p>Providing invalid/unexpected arguments to the decode flag will result in odd behavior. Some erroneous arguments cause segfaults (negative number of channels, channel id outside valid range). One argument in particular causes an infinite loop printing whitespace.</p>
+
+<h1>Techniques</h1>
+
+<h2>Obfuscation</h2>
+
+<p>A lot of the obfuscations done came naturally from trying to appease the size tool. To name some:</p>
+
+<ul>
+<li>One character names</li>
+<li>Merging of related (and not so related) arithmetic operations</li>
+<li>Short circuiting for flow control to replace some <code>if</code>s</li>
+<li>Some <code>#defines</code>, sadly</li>
+</ul>
+
+
+<p>On the intersection of size and obfuscation is the data encoding, which was quite fun to design.</p>
+
+<p>Some additional obfuscation was done to mathematical formulas. Somewhat known expressions was transformed into equivalent but less recognizable counterparts.</p>
+
+<p>I have tried to avoid intentional red herrings in the code, although fishy statements are plentiful.</p>
+
+<h2>Data encoding</h2>
+
+<p>The large string in the beginning of the source file contains font data, encoded in base64 using characters in the range <code>' '</code> to <code>'_'</code>. The space was chosen as the zero because the data contains a lot of zeroes, and quite helpfully the size tool ignores whitespace even in strings. Without this fact the program would have been too large and the decoding feature would have had to go. Fortunately this hole in the size spec was readily available. :)</p>
+
+<p>Characters in the font (5x8 pixels, 40 bits) is packed into 7 base64 digits (which was a pain to decode in minimal code).</p>
+
+<h2>Math</h2>
+
+<p>Note that even though floats are used for the waveforms, the standard math library is not used at all! Most arithmetic is done purely on integers. The only major exception is generating a table of sine values which are interpolated to give high resolution waveforms. Can you see when the generation is triggered, and how it is done?</p>
+
+<p>A critical issue encountered was that having abrupt starts and ends of signals cause a lot of problems with spectral leakage which makes spectrograms hard to read and audio painful to listen to. To reduce spectral leakage a windowing function was used. Although the one used is quite well known, it is not in a form that should be familiar to anyone. What looks like a polynomial and quacks like a polynomial might not actually be a polynomial, at least not deep inside.</p>
+
+<h2>Printing a string</h2>
+
+<p>The program was written to deal exclusively with file descriptors, so how would one go about printing a char array not from a file descriptor without adding additional logic? Answer: <code>ungetc</code> into stdin, one char at a time (to be standards compliant). This is used to print the usage instructions.</p>
+
+<h1>Compilation warnings</h1>
+
+<p>Compiling using</p>
+
+<pre><code>gcc -Wall -Wextra -pedantic
+</code></pre>
+
+<p>gives only <code>-Wmisleading-indentation</code> which is sensible considering the source code. While</p>
+
+<pre><code>clang -Wall -Wextra -pedantic
+</code></pre>
+
+<p>is a bit more pessimistic and gives <code>-Wempty-body</code> (I like loops without bodies), <code>-Wstring-plus-int</code> (since apparently some people think string+int is a concatenation) and one of the weirder warnings I have seen from me splitting a negative constant with whitespace. Compiling using</p>
+
+<pre><code>clang -Wall -Wextra -pedantic -Weverything
+</code></pre>
+
+<p>produces a few pagefuls of warnings and makes me feel generally bad about myself. :(</p>
+
+<h1>Misc</h1>
+
+<p>The reported size of the source code using the size tool is very intentionally 2018.</p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2018, 
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

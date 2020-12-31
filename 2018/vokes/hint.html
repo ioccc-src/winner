@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most connected</title>
+</head>
+<body>
+<h1>Most connected</h1>
+
+<p>Scott Vokes<br>
+Twitter: @silentbicycle</p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To use:</h3>
+
+<pre><code>make
+./prog &lt; example-1.txt
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>./prog &lt; example-2.txt
+./prog &lt; example-tab.txt
+./prog &lt; ioccc.txt
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>What this program does is not witchcraft and there are no spectres, but you
+might have a meltdown trying to work it all out.</p>
+
+<p>This entry is designed to mislead in many ways. However, if you find yourself
+wanting to know the possibilities for navigating a graph, you will get the
+answer you seek with no hocus pocus.</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h2>Introduction</h2>
+
+<p>This program reads a directed graph (as lines with integer node IDs),
+and prints the graph&rsquo;s nodes in reverse-topologically sorted order,
+grouped into strongly connected components. Given a set of nodes
+representing targets and edges representing dependencies between them,
+it produces a build order with any dependency cycles gathered.</p>
+
+<p>For example, the following input (provided as <code>example-1.txt</code>):</p>
+
+<pre><code>0 4 8
+1 0
+2 1 3
+3 2
+4 1
+5 4 6
+6 5 2
+7 3 6 7
+</code></pre>
+
+<p>would be interpreted as:</p>
+
+<pre><code>0 -&gt; 4, 8
+1 -&gt; 0
+2 -&gt; 1, 3
+3 -&gt; 2
+4 -&gt; 1
+5 -&gt; 4, 6
+6 -&gt; 5, 2
+7 -&gt; 3, 6, 7
+</code></pre>
+
+<p>So, node 0 has edges to / depends on nodes 4 and 8, node 1 depends on
+node 0, and so on. Then, it groups the graph&rsquo;s nodes into
+strongly connected components and prints them in reverse-topologically
+sorted order:</p>
+
+<pre><code>0: 8
+1: 0 1 4
+2: 2 3
+3: 5 6
+4: 7
+</code></pre>
+
+<p>It uses Tarjan&rsquo;s strongly connected components algorithm for the
+grouping and reverse-topological sorting, along with a bonus hidden
+implementation of counting sort, which sorts each group.</p>
+
+<p>For other details about the input format, see &ldquo;Issues and
+Limitations&rdquo;.</p>
+
+<h2>Building</h2>
+
+<p>To build:</p>
+
+<pre><code>${CC} -o prog prog.c -std=c11 -O3 \
+    -Wall -Wextra -pedantic -Wno-missing-prototypes
+</code></pre>
+
+<p><code>-Wno-missing-prototypes</code> is necessary because there aren&rsquo;t any
+prototypes. (They would put the program well over the size limit.)</p>
+
+<p>Note: The program can also be built with <code>-std=c99</code> or <code>-std=c89</code>.</p>
+
+<p>If building with <code>-Weverything</code>, then <code>-Wno-strict-prototypes</code>
+may also be necessary &ndash; the function pointer declarations for
+<code>_</code> and <code>B</code> may get warnings otherwise, for reasons described
+under &ldquo;Obfuscations&rdquo;.</p>
+
+<h2>Obfuscations</h2>
+
+<ul>
+<li><p>This entry uses functions that have a variable number of arguments,
+but despite what the rules say, there is no need to be careful about
+<code>va_list</code> implementation differences. :) . There are several
+references to a function pointer, <code>_</code>, but it&rsquo;s called with different
+numbers of arguments in different places. (In particular, look at
+<code>spell</code>.) Because the function pointer declaration has an empty list
+of parameters, the argument count and types are unconstrained. <code>_</code> is
+set to different functions in several places, but it is always called
+with appropriate argument(s) for its possible current functions. This
+is allowed by the standard &ndash; The section on F,I,N,D,M,Y,C,L,U,E has
+further details.</p></li>
+<li><p>It uses <code>_</code> in three different scopes: as a goto label (function
+scope), as an enum name, and a <code>_</code> function pointer (which is required
+to have file scope, since it starts with &lsquo;_&rsquo;). There are also other
+<code>_</code>s: it appears in a string, obscured by a headecimal escape sequence
+(<code>\x5f</code>), and the cauldron is supported by a giant underscore.
+(Does this program qualify for Best One Liner?)</p></li>
+<li><p>Most of the variables are not only global, but used for unrelated
+purposes at different times, so just renaming them while studying the
+program should make it even more confusing. The few variables local to
+functions have their names reused for different things in other
+functions.</p></li>
+<li><p>There is an enum early on that defines several single-letter
+identifiers: F,I,N,D,M,Y,C,L,U,E. These are used for array offsets,
+both individually and in combination. The first several values are
+also a clue: ISO/IEC 9899:1999 chapter 6.7.5.3 verse 14 describes how
+function declarators with an empty parameter list behave. (As does
+3.5.4.3 for ANSI C, which explains the 0x3543 that appears soon
+after.)</p></li>
+<li><p>Several parts of the program&rsquo;s state are stashed in otherwise unused
+offsets of the node arrays. These locations are accessed in multiple
+ways, such as using <code>I[p]</code> (where I == 7) as well as <code>p[F+L]</code> (6+1),
+or <code>b[M-N]</code> (14-5) and <code>U[b]</code> (where U == 9).</p></li>
+<li><p>The other identifiers are misleading, punny, or both. <code>spectre</code> does
+not exploit CVE-2017-5753 or CVE-2017-5715, for example &ndash; it just fits
+the witch theme. <code>cast</code> doesn&rsquo;t cast, <code>hex</code> has nothing to do with
+hexadecimal, <code>bubble</code> is not bubble sort, there is no undefined
+behavior in <code>nasal_demons</code>, and <code>main</code> has absolutely nothing to do
+with a hand.</p></li>
+<li><p>For well-formed input, how the program determines when to exit is a
+bit obscure. <code>main</code> ends with a <code>goto</code> leading back to an earlier <code>_</code>
+label, so it just loops forever, and <code>exit</code> only appears in code paths
+related to error-handling. It looks like <code>cast</code> calls <code>meltdown</code> with
+its second argument set to 0, which would call <code>exit</code>, but running in
+gdb with a breakpoint on <code>cast</code> reveals that it isn&rsquo;t being called&hellip;</p></li>
+<li><p>Instead of using <code>isdigit()</code>, the program checks the numeric value of
+each <code>char</code>, and literals that would suggest comparing against e.g. &lsquo;0&rsquo;
+are specified in octal in one place, and produced by arithmetic using
+the enum elsewhere.</p></li>
+<li><p>Common conventions are subverted: <code>i</code> is not a loop index, <code>argv</code> and
+<code>argc</code>&rsquo;s names are swapped.</p></li>
+<li><p><code>NULL</code> does not appear in the program. Instead, <code>argc[argv]</code> (which is
+required to be a null pointer) is saved and passed to where its value
+is needed.</p></li>
+<li><p>Oh, and the program is squashed into the shape of a bubbling cauldron,
+on top of a giant underscore, so there&rsquo;s that.</p></li>
+</ul>
+
+
+<h2>Issues and Limitations</h2>
+
+<ul>
+<li><p>Despite appearances, it does not handle numbers in hex, or provide
+a <code>curses(3)</code>-based interface.</p></li>
+<li><p>The expected input format is zero or more lines of space-separated
+integers. If other characters appear in the input, it will either
+reject the input entirely and exit with a non-zero status, or skip
+number(s) adjacent to the non-digit characters, depending on where the
+characters appear. Tabs and multiple consecutive spaces are handled
+correctly, however.</p></li>
+<li><p>Individual lines of input longer than <code>0x3543 - 1</code> bytes will be
+split and processed as if they were multiple lines of input, which can
+produce incorrect results. This magic number&rsquo;s significance is
+described earlier.</p></li>
+<li><p>The algorithm expects its input to represent a fully connected graph.
+While the output is otherwise topologically sorted, if there are nodes
+completely unconnected to the rest of the graph (with or without
+self-cycles), they will be output as soon as they are processed &ndash;
+this means that, when there are disconnected nodes, reordering the
+input lines can produce different output. Addressing this by adding
+another pass is would put the program over the size limit.</p></li>
+<li><p>While the node IDs don&rsquo;t need to be consecutive or start at 0, the
+implementation doesn&rsquo;t have special handling for sparse graphs. If you
+give it a graph with nodes numbered 0 and 2147483647, it will attempt
+to allocate sufficient memory (potentially around 32 GB) for the
+entire range of graph nodes, even if those are the only ones. If
+memory allocation returns NULL, it will gracefully exit, otherwise it
+will succeed, eventually, perhaps after a great deal of swapping.</p></li>
+<li><p>Node IDs >= 2147483648 will cause the program to print an error
+message and exit with a non-zero status. This shrinks the code that
+detects overflowing the array size by a bit.</p></li>
+<li><p>A very large group of nodes in a cycle can cause a stack overflow.
+This typically takes over 100,000 nodes, and depends on the order the
+nodes are visited. Addressing this would put the program over the size
+limit.</p></li>
+<li><p>The implementation depends on the characters &lsquo;0&rsquo;, &lsquo;1&rsquo;, &hellip; &lsquo;9&rsquo; having
+the values 48 through 57, rather than using <code>isdigit()</code>. As noted
+above, this program has nothing to do with a hand.</p></li>
+</ul>
+
+
+<hr />
+
+<!--
+(c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2018, 
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

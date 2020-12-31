@@ -1,0 +1,94 @@
+This file is a brief description of the files in this entry.
+
+
+prog.c			    This is the source file to the `weasel'
+			    program [1].
+
+
+prog-simple.c		    This is the source code file to the
+			    `weasel-simple' program [1].
+
+
+test.sh			    Script provided to test the weasel program [1].
+
+
+test-strings.txt	    The test.sh script reads from this file and runs
+			    the weasel program for each line read.
+
+
+Makefile		    The Makefile that simplifies compilation as well as
+			    providing some deep magic and other things designed
+			    by the IOCCC judges. There's also a `make test'
+			    target that runs the 'test.sh' script. The hint
+			    file shows how to pass options to the script
+			    itself [1].
+
+
+weasel.man		    The local version of the man page; that is if it's
+			    not installed. You can still use 'man' on the
+			    'weasel.1' file but 'weasel.man' references
+			    different file paths from 'weasel.1'.
+
+
+weasel.1		    The system wide version of the man page for when
+			    (if) it's installed [2]. Note that the suggested
+			    invocation 'man -l ./weasel.man' can be replaced
+			    with 'man -l ./weasel.1' too but if the weasel
+			    package is installed 'man weasel.1' (note the
+			    missing '-l ./') would read the from the system
+			    man page.
+
+
+
+hint.text		    The source of the hint.html file [3].
+hint.txt		    'hint.txt' is a possible name in the future
+			    according to the judges.
+
+
+hint.html		    More thorough documentation including example
+			    invocations, how to compile, final and winning
+			    thoughts, some of the obfuscation techniques that
+			    might be used, etc. [3].
+
+
+hint.css		    The CSS file for the hint.html file [3].
+
+
+rpm.markdown		    This file briefly answers 'why' I submitted a rpm
+			    spec file 'weasel.spec' as well as the possibility
+			    of building the RPM for others (despite the fact I
+			    am confident that I'm the only one who would make
+			    use of it). This file isn't included in the RPM
+			    itself; it remains only on the IOCCC website.
+
+
+weasel.spec		    The RPM spec file for building the RPM. This is
+			    specific to the entry on the IOCCC website but
+			    would also be available in the source rpm file if
+			    it was built.
+
+
+FILES			    If you want a brief description of the FILES file
+			    (this file) then read this file (the file FILES).
+
+
+
+* Footnotes
+
+The follow footnotes are for if the weasel program is installed into the
+system. As I noted before it was primarily personal reasons that I submitted
+the spec file. Please note that the paths below are dependent on the prefix
+used in installation; where I suggest '/usr' it is equally possible it could be
+under '/usr/local', for example.
+
+[1]			    Note that 'prog.c' and 'prog-simple.c' would be
+			    linked to 'weasel.c' and 'weasel-simple.c'
+			    (respectively) in the '/usr/src/weasel'
+			    subdirectory.
+
+[2]			    The file would most likely be compressed as
+			    'weasel.1.gz' under the '/usr/share/man/man1'
+			    subdirectory.
+
+[3]			    These files would be in the 
+			    '/usr/share/doc/weasel' subdirectory.

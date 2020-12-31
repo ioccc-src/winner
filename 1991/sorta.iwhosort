@@ -1,0 +1,3 @@
+[0Ou "" "+-u" "sort" !q]:S [F0>1_+=S]:s
+[1Ou "" "+-u" "who"  !q]:W [F0>1_+=W]:w
+P1=wO1=sOww

@@ -1,0 +1,84 @@
+# comments and blank lines are skipped
+
+# factors 
+1
+-1
+-2
+~0
+~1
+~-1
+?0x1234
+?0x12345678
+?0x1122334455667788
+?0xffff1234
+?0xffffffff1234
+?0xffffffffffff1234
+
+# terms
+1+1
+1 + 1
+1 - 1
+2 * 2
+3 / 3
+4 % 3
+5 & 6
+6 | 7
+7 ^ 1
+8 << 2
+9 >> 2
+-1 >> 32
+-1 >>> 32
+1 << 63
+
+# expressions
+1<<63 -1
+1<<63+1
+?.
+( 4 + 3) * 5 - 1
+~.
+
+# syntax errors
+4**5
+1+(4*3
+
+# byte swwapping
+0xff00ff00
+?.
+. >> 1
+. >> 2
+. >> 3
+. >> 4
+?0xff00ff00
+. << 1
+. << 2
+. << 3
+. << 4
+~0
+0xABCD
+
+# multiple statements per line, unary +, case indifference
+1<<5;.+10;a=?.
++2
++3
+a>>8
+0xAbC00+.
+
+# syntax errors found late
+)
+0xfgh
+0xg;0xG;0xh;0xI
+1+2 4
+a = 1+2 4
+a=1;b=2;c=3;d=4;e=5;f=6;g=7;h=8
+
+# careful!
+a=0x11223344<<32
+b=a+0x55667788
+a
+?b
+$
+
+!0
+!3
+!z
+!a

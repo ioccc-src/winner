@@ -1,0 +1,17 @@
+#!/bin/sh
+
+x=$1
+: ${x:=prog}
+
+: ${out:="diff - correct"}
+
+(
+/bin/echo -n | $x
+$x < /dev/null
+echo | $x
+/bin/echo -n a | $x
+echo a | $x
+$x < newlines
+$x < 256
+$x < remarks
+) | $out

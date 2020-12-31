@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.2.0">
+  <meta http-equiv="Content-Type"
+        content="text/html; charset=utf-8">  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most in need of wide space</title>
+</head>
+<body>
+<h1>Most in need of wide space</h1>
+
+<p>Edward Giles</p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To use:</h3>
+
+<pre><code>make prog
+./prog infile.wav outfile.wav
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>play MonodyVocals.wav
+./prog MonodyVocals.wav
+play out.wav
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>Do you need to pretend enjoying a more spacious living environment than you actually are in,
+or the great outdoors with mountains and canyons, when recording your outgoing voicemail message?
+Then don&rsquo;t waste another minute! Record yourself, send the audio file through this entry,
+and let your callers be surprised.</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h2>Description</h2>
+
+<p>This program takes a WAV audio file as input, and applies an artificial reverberation effect to it. It works by feeding the audio through a number of delay lines of various lengths, with various amounts of feedback, to create a smooth echo that fades away over time. A number of parameters of the effect can be altered, to change its sonic characteristics.</p>
+
+<p>BlockDiagram.png is a block-diagram of the internal structure of the reverb algorithm, which is most likely easier to understand than the source code.</p>
+
+<p>MonodyVocals.wav is for testing the program: It is an extract of the unprocessed vocals from <a href="https://www.youtube.com/watch?v=B7xai5u_tnk">Monody by TheFatRat, featuring Laura Brehm</a>. The track was published under a free license.</p>
+
+<p>This program has also been successfully compiled on Windows, with both the <a href="https://bellard.org/tcc/">Tiny C Compiler</a> and Microsoft&rsquo;s C/C++ compiler. However, the latter reports warnings about loss of information when converting floats, and that <code>void (*)()</code> and <code>void (*)(void)</code> are not the same thing.</p>
+
+<p>Interesting fact: The size of the program from <code>./iocccsize -i</code> is 2019.</p>
+
+<p><strong>How to use</strong>:</p>
+
+<pre><code>./prog input [output [size [dry [wet [damping]]]]]
+prog.exe input [output [size [dry [wet [damping]]]]]
+</code></pre>
+
+<ul>
+<li><code>input</code>: The path to the input file. Required.</li>
+<li><code>output</code>: The path to the output file. Optional, defaults to <code>out.wav</code>.</li>
+<li><code>size</code>: The perceived size of the room, i.e. the approximate amount of time taken for the echo to fade away. Optional, default 1.6 seconds.</li>
+<li><code>dry</code>: The amount of unprocessed signal (&ldquo;dry&rdquo; in audio terminology) to add to the output. Optional, default 0.3 or 30%.</li>
+<li><code>wet</code>: The amount of processed (&ldquo;wet&rdquo;) signal to add to the output. Optional, default 0.5 or 50%.</li>
+<li><code>damping</code>: The amount by which high frequencies are damped out as the echo continues. This models the tendency for higher frequencies to be absorbed more than lower ones. Increasing this value causes the echo to be less &ldquo;harsh&rdquo; and more &ldquo;muffled&rdquo;. Optional, default 0.06 or 6%.</li>
+</ul>
+
+
+<p>The values <code>size</code>, <code>dry</code>, <code>wet</code>, and <code>damping</code> can be specified either as decimal numbers (e.g. 0.35) or as percentages (e.g. 35%).</p>
+
+<p>The default settings are designed to make the effect obvious rather than subtle, so it may be a good idea to adjust the ratio of &ldquo;dry&rdquo; to &ldquo;wet&rdquo;, to give a more pleasant result:</p>
+
+<pre><code>./prog in.wav out.wav 1.8 80% 15%
+</code></pre>
+
+<p>The program only supports WAV files, and only mostly. Other audio formats, such as MP3, are not supported because they are difficult to decode, but there are free programs such as <code>ffmpeg</code> that can perform the conversion. Some of the advanced features of the WAV file format are also not supported, such as metadata, 3 or more channels, or a bit depth other than 16 bits. Fortunately, WAV files that don&rsquo;t use these features are very common. The program validates the input file, so passing it a file it can&rsquo;t process will cause the program to print <code>Bad input file</code> or <code>Wave file must be 16 bits,1-2 channels.</code> depending on what it thinks the problem is. If the output file cannot be opened, the program will print <code>Can't open output file</code>.</p>
+
+<h2>Assumptions</h2>
+
+<ol>
+<li>The code is compiled using the C99 or C11 standard</li>
+<li>Values are stored in memory in little-endian order</li>
+<li><code>float</code> is a floating-point type of any size, such that all zero bits represents the number zero</li>
+<li><code>int16_t</code> and <code>int32_t</code> are 2&rsquo;s-complement, <code>sizeof(int16_t) == 2</code> and <code>sizeof(int32_t) == 4</code>.</li>
+</ol>
+
+
+<h2>Obfuscations</h2>
+
+<p>The main obfuscation is that digital signal processing algorithms are inherently opaque. They just consist of iterating through a list of floating-point numbers and performing a series of arithmetic operations on each value. Even if this entry were entirely cleaned of all other obfuscation, it will appear to the average programmer to do the following:</p>
+
+<ul>
+<li>Read and validate command-line arguments.</li>
+<li>Read and validate the header portion of the input file, and print some errors if that fails.</li>
+<li>Write a modified form of that header into the output file.</li>
+<li>Print the parameters read from the command-line arguments, in a human-readable format.</li>
+<li>Dynamically allocate some arrays of floating-point numbers, to be used later, with lengths based on the <code>size</code> parameter</li>
+<li>Read 16-bit audio samples from the input file, converting them to floating-point.</li>
+<li>For each audio sample, do a weird combination of addition, subtraction, and multiplication by constants, using the previously-allocated arrays to store results between iterations. Write the resulting audio samples to the output file, converting them back to 16-bit integers.</li>
+<li>Close all of the file handles and free the memory.</li>
+</ul>
+
+
+<p>Note that no part of the above description of the code&rsquo;s function had anything to do with echoes in a room. The purpose of the code is therefore hidden.</p>
+
+<p>The source code, on cursory inspection, appears to be a jumbled series of characters arranged into three arcs, representing sound waves. The overall layout distracts people from the fact that it is source code rather than only ASCII art, and the random appearance of the code discourages people from trying to decipher it.</p>
+
+<p><code>#define</code>s are used to abbreviate the code, which has a side effect of making it very slightly harder to read.</p>
+
+<ul>
+<li><code>k</code> is just a general-purpose replacement for 16.</li>
+<li><code>i</code> is the number of delay-lines to allocate and use (currently 24).</li>
+<li><code>q</code> is an abbreviation for multiplying two elements of <code>w[]</code> together.</li>
+<li><code>u()</code> is used to display percentages with proper rounding.</li>
+<li><code>j()</code> imposes an upper limit on a floating-point value, and then negates it. This operation is used eight times.</li>
+<li><code>D()</code> abbreviates a call to <code>setvbuf</code>, used to speed up file I/O.</li>
+<li><code>l()</code> is used to clip audio samples to the acceptable range, and convert them to 16-bit integers for output.</li>
+<li><code>g()</code> handles errors.</li>
+<li><code>C()</code> contains the bulk of the signal-processing code, as well as a preprocessor obfuscation trick: If you were to read the body of the macro out of context, it will appear to have multiple mismatched square brackets, since <code>[</code> occurs more than <code>]</code>. However, this macro is always invoked with arguments such as <code>C(v],+10)</code> which contain an unmatched <code>]</code> character. When the macro is used in this manner, the extra <code>[</code>s in the macro&rsquo;s body are matched with the <code>]</code>s added through the first argument.</li>
+</ul>
+
+
+<p>Every variable name is one letter long. This allows the code to fit into the IOCCC size limit, and it also makes the purpose of a given variable much less clear. For example, it is not evident from the name of the variable <code>t</code> that it contains pointers to the delay-line arrays.</p>
+
+<p>As many values as possible have been crammed into arrays. <code>float w[]</code> contains:</p>
+
+<ul>
+<li>the input parameters (<code>w[0]</code> to <code>w[3]</code>)</li>
+<li>various constants needed for the reverb algorithm (<code>w[4]</code> to <code>w[9]</code>)</li>
+<li>temporary storage of floating-point audio samples (<code>w[10]</code> to <code>w[20]</code>)</li>
+</ul>
+
+
+<p><code>int32_t f[]</code> is even more multi-purpose. It contains:</p>
+
+<ul>
+<li>the header of the input file (<code>f[0]</code> to <code>f[11]</code>)</li>
+<li>the number of channels in the input file (<code>f[12]</code>)</li>
+<li>the number of samples of output to generate (<code>f[13]</code>)</li>
+<li>an end-of-file flag (<code>f[14]</code>)</li>
+<li>a variable that I forgot the exact purpose of (<code>f[15]</code>)</li>
+<li>indices into the circular buffers where audio samples should be inserted (<code>f[16]</code> to <code>f[39]</code>)</li>
+<li>indices where audio samples should be read out (<code>f[40]</code> to <code>f[63]</code>)</li>
+<li>lengths of the buffers (<code>f[64]</code> to <code>f[87]</code>)</li>
+</ul>
+
+
+<p>All of the strings are concatenated together and &ldquo;encrypted&rdquo; by breaking the string into 4-byte chunks (by casting it to an <code>int32_t*</code>), and then XORing the sequence of ints with a known numeric sequence. The &ldquo;decryption&rdquo; is not done in-place, to avoid writing over the string constant.</p>
+
+<p><code>int32_t *c</code> is a pointer that points into <code>f[]</code>, except that it is often incremented or decremented when it is accessed. In order to determine which indices of <code>f[]</code> are being accessed through <code>c</code> at any given point in the code, you would have to locate the places where <code>c</code> is modified.</p>
+
+<p>In order for this program to read and write WAV files, it needs to parse the header. The necessary information, such as the sample rate and channel count, is defined by the standard to be in somewhat arbitrary locations within the file. Therefore, even if you know which indices of <code>f[]</code> are being accessed, it takes extra effort to look up the WAV file format and determine which field that corresponds to.</p>
+
+<p>Some array accesses (which make up most of the program) have been replaced with harder-to-interpret equivalents, for example:</p>
+
+<ul>
+<li><code>X[1]</code> -> <code>1[X]</code></li>
+<li><code>f[14]</code> -> <code>10[f+4]</code></li>
+<li><code>X[0]</code> -> <code>*X</code></li>
+</ul>
+
+
+<p>Assignments return the assigned value, allowing them to be included into later expressions: <code>10[f]=f[13]&lt;&lt;2; f[1]=20+10[f]+k;</code> is replaced with <code>f[1]=20+(10[f]=f[13]&lt;&lt;2)+k;</code></p>
+
+<p>This technique is used in conjuction with the comma operator to further obscure where the data ends up. For example,</p>
+
+<ul>
+<li><code>12[f]=4[++c]&gt;&gt;k;</code> was incorporated into <code>w[0]*=6[f];</code> to yield <code>w[0]*=(12[f]=4[++c]&gt;&gt;k,6[f]);</code></li>
+<li><code>w[15]=w[k]=e[12[f]]; w[11]=w[10]=e[1];</code> becomes <code>w[11]=(w[15]=w[k]=e[12[f]],w[10]=e[1]);</code></li>
+</ul>
+
+
+<p>A few other miscellaneous obfuscations have also been done:</p>
+
+<ul>
+<li><code>while(++f[15]&lt;12);</code> is used instead of <code>f[15]=12;</code></li>
+<li><code>for(s=14[f]=0;s&lt;f[13];s++)</code> is used instead of <code>f[14]=0; for(s=0;s&lt;f[13];s++)</code></li>
+<li>The line that contains <code>printf("Hello, world!");</code> is mostly commented out.</li>
+</ul>
+
+
+<hr />
+
+<!--
+(c) Copyright 1984-2019, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="/png/by-sa-3.0-88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2019,
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

@@ -1,0 +1,28 @@
+# Worst Style
+
+Spencer Hines  
+OnLine Computer Systems  
+4200 Farragut Street  
+Hyattsville, MD  
+20781  
+USA  
+
+## Judges' comments:
+
+### Try:
+
+	hines hines.c
+
+This program was designed to maximize the bother function for
+structured programmers.  This program takes goto statements to their
+logical conclusion.  The layout and choice of names are classic.
+
+We consider this to be a beautiful counter-example for Frank Rubin's
+letter to ACM form titled: *"GOTO Considered Harmful" Considered Harmful*.
+See the Communications of the ACM, March 1987, Page 195-196.
+
+Copyright (c) 1987, Landon Curt Noll & Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.

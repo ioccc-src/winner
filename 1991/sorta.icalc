@@ -1,0 +1,33 @@
+[D2sD3s]:Dld        [ input m n, output m n m n ]ld
+
+[2*1=d]:cld         [ aux routine for :d recursion ]ld
+[1=D1s>1Ds_+=c]:dld [ input m n, as long as n <= m double it, output m n ]ld
+
+[D2s1s_+1s]:-ld     [ input m n, output m-n n ]ld
+[1=D1s>1Ds_+#T=-2/D=1]:1ld [ aux routine for :@ ]ld
+[1D=d2/1=1ddd1 ]:!ld
+["0"Td]:0ld
+[DD=!1_+=0]:@ld     [ input m, m assumed nonnegative,
+		      append binary representation of m to top of s stack ]ld
+
+["-"T_]:+ld
+[D0 1s>=+1=@]:2ld   [ input m, append - to top of s stack if m is negative,
+		      then append binary representation of abs(m) to
+		      top of s stack ]ld
+
+[d1A:A2=A]:A 27182 a1>=A
+[d2A:A1=A]:A 3145 a2>=A
+
+D    # " in binary is "T 1=2 `ld
+1=Dd # " in binary is "T 1=2 `ld
+
+1=D  1s# " + "T 1s#T " is "T +  #Td `ld
+1=D  1s# " - "T 1s#T " is "T _+  #Td `ld
+1=D  1s# " * "T 1s#T " is "T *  #Td `ld
+1=D  1s# " / "T 1s#T " is "T /  #Td `ld
+1=D  1s# " % "T 1s#T " is "T 1=D/*_+  #Td `ld
+
+1=D    d  "~ "    #T " is "T D& #T$ld " (" 1=2 ")"T `ld
+1=D  1s# " & "T 1s#T " is "T &D&  #T$ld " (" 1=2 ")"T `ld
+1=D  1s# " | "T 1s#T " is "T D&1sD&&  #T$ld " (" 1=2 ")"T `ld
+1=D  1s# " ^ "T 1s#T " is "T 1=D&2sD&1sD&&&D&  #T$ld " (" 1=2 ")"T `ld

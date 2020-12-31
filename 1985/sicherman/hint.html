@@ -1,0 +1,30 @@
+<h1>The worst abuse of the C preprocessor</h1>
+
+<p>Col. G. L. Sicherman</p>
+
+<h2>Judges' comments:</h2>
+
+<p>This program abuses the C preprocessor so much that some /lib/cpp&rsquo;s fail to
+strip out all of the comments on the first pass!  If you were able to
+understand Decot&rsquo;s entry in 1984, you will have a head start on this
+one.</p>
+
+<p>Be sure to run this program through lint!  If your lint works
+correctly, it should warn you that the argument &lsquo;Manual&rsquo; isn&rsquo;t used.
+Like the program says, what&rsquo;s that mean?</p>
+
+<p>Run the program without arguments and enter the letters &lsquo;a&rsquo; thru &rsquo;m'
+on a line.  Now enter the letters &lsquo;n&rsquo; thru &lsquo;z&rsquo;.  But to borrow a quote
+from Richard Stallman: If you think you understand what this code
+does, then you don&rsquo;t, so read it again!  Explain why:</p>
+
+<pre><code>sicherman &lt; sicherman.c | sicherman | diff - sicherman.c
+</code></pre>
+
+<p>results in diff reporting a difference on some machines.</p>
+
+<p>Copyright &copy; 1985, Landon Curt Noll &amp; Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.</p>

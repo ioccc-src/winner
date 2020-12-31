@@ -1,0 +1,21 @@
+PACKAGE = @PACKAGE_NAME@
+CC	= @CC@
+CFLAGS	= @CFLAGS@
+LDFLAGS	= @LDFLAGS@
+LIBS	= @LIBS@
+E	= @EXEEXT@
+
+build: ${PACKAGE}$E
+
+clean:
+	-rm ${PACKAGE}$E ${PACKAGE}-alt$E
+	
+distclean: clean
+	-rm config.status configure.lineno config.log makefile
+	-rm -rf autom4te.cache
+
+${PACKAGE}$E: ${PACKAGE}.c
+	${CC} ${CFLAGS} ${LDFLAGS} -o${PACKAGE} ${PACKAGE}.c ${LIBS}
+	
+${PACKAGE}-alt$E: ${PACKAGE}-alt.c
+	${CC} ${CFLAGS} ${LDFLAGS} -o${PACKAGE}-alt ${PACKAGE}-alt.c ${LIBS}

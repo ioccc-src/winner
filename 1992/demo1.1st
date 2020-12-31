@@ -1,0 +1,12 @@
+: immediate _read @ ! - * / <0 exit echo key _pick
+
+: show echo echo echo echo exit
+: all show show show show echo exit
+
+: doit immediate
+    10 33 100 108 114 111 87
+    32 111 108 108 101 72
+    all
+exit
+
+doit

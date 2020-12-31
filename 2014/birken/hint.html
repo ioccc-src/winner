@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Best use of port 1701</title>
+</head>
+<body>
+<h1>Best use of port 1701</h1>
+
+<p>Michael Birken<br>
+<a href="&#109;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#x6f;&#x5f;&#95;&#49;&#x40;&#x68;&#x6f;&#116;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#111;&#109;">&#x6f;&#x5f;&#95;&#x31;&#64;&#104;&#x6f;&#x74;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#111;&#109;</a><br>
+<a href="http://www.meatfighter.com/">http://www.meatfighter.com/</a></p>
+
+<p>Alexander Prishchepov<br>
+<a href="https://github.com/sans17/">https://github.com/sans17/</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To build:</h3>
+
+<pre><code>make
+</code></pre>
+
+<h3>To run:</h3>
+
+<pre><code>./prog &lt; some_secret_or_something
+
+./prog http://host[:port]
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>./prog.c
+
+./prog http://127.0.0.1:1701
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>Port 1701?  Well this is not the l2f registered TCP/1701 protocol.
+Sniff the traffic to/from that port.  You will see HTTP client
+and server traffic.  The HTML content you may see is static and
+immutable.  Nothing funny with the HTTP status codes.  Even the
+timestamp cookie, once set, remains static throughout the
+session.  The data appears to not be transmitted within the
+binary content communicated between client and server.</p>
+
+<p>So how does this program do it?  A trek though the cloak of
+obfuscation awaits the reader of the source!</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h3>Abstract</h3>
+
+<p>When launched in web server mode, this application appears to deliver nothing more than a static HTML page.  But, in actuality, it provides covert file transfer over the Internet.  This is demonstrated by starting the application as a client-side downloader.  The hidden transmitted data cannot be reconstructed or even detected from the binary content of the traffic between the client and the server.</p>
+
+<h3>To run web server</h3>
+
+<pre><code>./prog &lt; secret_file_to_be_downloaded
+</code></pre>
+
+<p>Try using the program&rsquo;s source code as the secret file:</p>
+
+<pre><code>./prog &lt; prog.c
+</code></pre>
+
+<h3>To run client-side downloader</h3>
+
+<pre><code>./prog http://host[:port]
+</code></pre>
+
+<p>The optional port defaults to 1701.  If the web server instance is started on the same box, try:</p>
+
+<pre><code>./prog http://127.0.0.1:1701
+</code></pre>
+
+<p>It will incrementally display the contents of the hidden file at a rate of approximately 1 baud.</p>
+
+<p>The client-side downloader will automatically terminate if the web server is bounced.</p>
+
+<h3>HTML content</h3>
+
+<p>Plug the URL into a browser to view a static HTML page containing ASCII artwork.</p>
+
+<h3>Exploration</h3>
+
+<p>Studying the network traffic will reveal that the HTML content is static and immutable, the HTTP request and response fields do not contain anything remarkable, HTTP status and error codes are not exploited, no unusual or deprecated features of HTTP are used, and while the cookie is based on a timestamp, its value also remains unchanged throughout the session.  As mentioned in the abstract, the data is not transmitted within the binary content communicated between the client and the server.  A full explanation of the protocol appears below, but feel free to explore before reading further.</p>
+
+<h3>Inspiration</h3>
+
+<p>The inspiration for this program comes from <em>Star Trek VI: The Undiscovered Country</em>, specifically the final confrontation between the <em>Enterprise</em> and the enhanced prototype Klingon Bird of Prey.  The definitive feature of the prototype was its ability to fire while cloaked.  But, perhaps even more impressive was its able to keep an open communication channel with the <em>Enterprise</em> throughout the battle, enabling the antagonist Chang to taunt Captain Kirk with Shakespearian quotes while he slowly pelted his ship with torpedoes.  Normally, cloaked vessels must maintain silent running to avoid detection.</p>
+
+<p>The battle is commemorated in the form of ASCII artwork depicting the ships faced head-to-head in the page delivered by the web server.  Plus, the program source code is formatted in the shape of a Klingon Bird of Prey.  The code itself includes a number of Star Trek references: the registry number of the <em>Enterprise</em> (NCC-1701) is defined as a constant; variable names spell out Cpt. James T. Kirk and Odo (the Deep Space 9 character was played by René Auberjonois who also appeared as Colonel West in <em>Star Trek VI</em>); the STARDATE constant makes timing configurable; and, the constant k stands for Khan (in the final engagement in <em>Star Trek II: The Wrath of Khan</em>, the damaged <em>Enterprise</em> managed to disable the USS <em>Reliant</em>’s shield generator by accessing its prefix code: 16309).</p>
+
+<h3>Secondary size limit</h3>
+
+<p>As obligated by a program that employs 23rd century cloaking technology, when the source is fed as input to IOCCC size tool version 2014-09-23-v19, and the -i command line option is used, the value printed is 0.</p>
+
+<h3>Transmission protocol revealed</h3>
+
+<p>The client-side downloader relies on the response time of the web server rather than the binary content of the response.  The server transmits 1 nibble at a time by counting to the nibble value via a sequence of rapid responses terminated by a long response.  For instance, the value 5 would be transmitted by making a series of requests that result in 5 near instantaneous responses followed by a half-second delayed response.  The long delay is skipped in the case of 15, the maximal nibble value.  With the aid of an ASCII table, it is actually possible to read the nibbles by repeatedly pressing the refresh button within a browser and observing the page refresh delay.</p>
+
+<p>Nibble Count Coding (file transfer protocol NCC-1701) is faster than transmitting each individual bit as a short or long delay because it sends each byte with 2 long delays whereas communicating individual bits requires 8 long delays in the worst case scenario.  In fact, Nibble Count Coding is faster than applying Huffman Coding since that is designed to produce compact codes under the assumption that the bit value does not affect transmission time.</p>
+
+<p>The server relies on the cookie to identify each client uniquely, enabling it to transfer the sequence independently to each client.</p>
+
+<h3>Configuration</h3>
+
+<p>As with all network communication, accurate transmission of data relies on the nature of hardware revealed through statistics and timeouts set accordingly.  The long delay is arbitrarily set to 0.5 seconds.  This is microsecond tunable via the STARDATE constant defined at the top of the source code.  Increase the value in the event of transmission errors.  Decrease the value to download faster and less reliably.</p>
+
+<p>The NCC constant is the web server port number.</p>
+
+<h3>Obfuscations</h3>
+
+<ul>
+<li>The ASCII artwork is compressed using run-length encoding.</li>
+<li>One long string stores a series of strings concatenated together and referenced via pointers.</li>
+<li>The long string is shift encrypted.</li>
+<li>Short and meaningless identifiers are used throughout.</li>
+<li>Reversed array indexing was applied immoderately.</li>
+<li>Minus is used in place of not-equals.</li>
+<li>O and l were selected for their resemblance to 0 and 1 respectively.</li>
+<li>Standard constants and ASCII characters were replaced with their respective numerical values.</li>
+</ul>
+
+
+<h3>Compiler warnings</h3>
+
+<p>For space considerations, the following include statements were dropped resulting in compiler warnings:</p>
+
+<pre><code>#include &lt;asm/byteorder.h&gt;
+#include &lt;ctype.h&gt;
+#include &lt;netinet/in.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;sys/select.h&gt;
+#include &lt;sys/socket.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/unistd.h&gt;
+</code></pre>
+
+<p>It may be necessary to restore some of these under certain environments.</p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2015, 
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

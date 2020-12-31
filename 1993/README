@@ -1,0 +1,59 @@
+1993 marked the "The Tenth International Obfuscated C Code Contest"
+
+Copyright (c) 1993, Landon Curt Noll & Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.
+
+Use make to compile entries.  It is possible that on BSD or non-unix
+systems the makefile needs to be changed.  See the Makefile for details.
+
+Look at the source and try to figure out what the programs do, and run
+them with various inputs.  If you want to, look at the hints files for
+spoilers - this year we included most of the information included
+by the submitters.
+
+Read over the makefile for compile/build issues.  Your system may
+require certain changes (add or remove a library, add or remove a
+#define).
+
+Name and address information are separated from the actual program
+prior to judging.  This eliminates any chance that we would bias our
+judging for/against any person or group.
+
+This year was the first year that ANSI C was the default.  Use of
+classic K&R C was allowed so long as ANSI C compilers could still
+compile the entry.  If you do not have an ANSI C compiler, you may
+not be able to compile the winners, sorry!
+
+A few notes regarding future contests:
+
+Be sure to wait until the 1994 rules are posted before submitting entries.  
+Rules differ from year to year, sometimes in significant ways.
+
+In 1994, we will retract the guideline that discouraged the use of C
+constructs such as 3["curds"].  At one time, certain ANSI compilers did
+not consider such expressions to be valid ANSI C.  Alert readers noted
+that the current ANSI standard considered them to be valid.  We were
+unable to find an ANSI C compiler that flagged such expressions as
+errors.
+
+Please send us comments and suggestions what we have expressed above.
+Also include anything else that you would like to see in future contests.
+Send such email to:
+
+	...!{sun,pacbell,uunet,pyramid}!hoptoad!judges
+	judges@toad.com
+
+If you use, distribute or publish these entries in some way, please drop
+us a line.  We enjoy seeing who, where and how the contest is used.
+
+If you have problems with any of the entries, AND YOU HAVE A FIX, please
+Email the fix (patch file or the entire changed file) to the above address.
+
+Credits:
+
+We would like to thank Barbara Frezza for her role as official chef 
+of the contest.  Landon Noll and Larry Bassel appreciated the opportunity
+to serve as official taste testers.  And as usual, the food was excellent.

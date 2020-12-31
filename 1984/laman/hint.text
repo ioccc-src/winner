@@ -1,0 +1,31 @@
+# Third place
+
+Mike Laman
+
+## Judges' comments:
+
+Some new compilers dislike lines 6 and 10 of the source, so we changed
+them from:
+
+	;++f)a[		b<<5|c]		=d++,b+		=e;for(		f=0;f<O
+	<<5|c]^		=a[b<<5		|c]^=a[		(k-(b+1		))<<5|c]
+
+to:
+
+	;++f)a[		b<<5|c]		=d++,b+=	e;for(		f=0;f<O
+	<<5|c]^=	a[b<<5		|c]^=a[		(k-(b+1		))<<5|c]
+
+I hope you have the C beautifier! The program accepts ONE positive
+argument.  Seeing is believing, so try things like:
+
+	laman 4
+	laman 9
+	laman 16
+
+This code should run you in circles.
+
+Copyright (c) 1984, Landon Curt Noll.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.

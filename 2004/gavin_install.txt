@@ -1,0 +1,16 @@
+1) First, build the kernel and filesystem (just 'make').  In short, you need to build this on an x86 Linux machine.  If you wish to try to compile on an OS other than Linux you may need modify the makefile to compile 'sh' using a cross-compiler that produces elf binaries - i.e. a cross-compiler targeting x86 Linux.  In short, you need to build this on an x86 Linux machine.
+
+2) Next, find a suitable machine to run the OS on.  It should be perfectly safe, and since it does not directly attempt to access any hard disk drives (only a ramdisk loaded by the bootloader) it should do no damage to your existing setup, BUT I ACCEPT NO LIABILITY FOR ANY DAMAGE DONE BY THIS PROGRAM.  Run it at your own risk.  The OS has been tested on half a dozen machines or so, and worked on all but one.  The failure came in the form of the machine rebooting itself midway through loading the OS, with no nasty side-effects.
+
+Hardware requirements - i386 or better processor, but the GUI is surprisingly power-hungry, so I would recommend a fast p3 or p4 processor (has been tested on p3/p4/athlon machines).  Minimum RAM is something like 32MB.  PS2 mouse & keyboard required - no USB I'm afraid, and the keyboard map is for a UK keyboard.  Uses Vesa VBE 3.0, so should work on any modern graphics card (has been tested on Nvidia, Matrox, and SiS cards).
+
+3) Now you need to setup a bootloader to load the OS.  If you have a system using a lilo bootloader you can simply add the OS to your boot menu.  Just add appropriate "image=" and "initrd=" lines to your /etc/lilo.conf, pointing at 'kernel' and 'fs.tar' respectively (as built by make earlier), then run lilo.  If you do not wish modify your lilo setup, one easy option is to get yourself a grub bootdisk image, and follow the instructions for grub below - debian users can simple "apt-get install grub-disk" to get themselves a grub bootdisk.
+
+If you run grub, then at the boot menu simply hit 'c' to get a console, then type "kernel=(hd0,0)/<PATH>/kernel" (substituting appropriate harddrive/partition numbers & path, or using "(fd0)" to load a kernel on the floppy), then "initrd=(hd0,0)/<PATH>/fs.tar", and finally "boot".
+
+4) Assuming the OS has booted, what can you do now?  Well, start by trying "sh", to open another shell.  Then, try "vi prog.c" (although this file may have been re-named...), to open up the OS source in a text file viewer (up/down or pgup/pgdown to scroll).  [Note that the provided applications, 'sh' and 'vi' both have windows of the same size, and that open in the top left corner of the screen, so you may need drag the windows around a bit to tell them apart.]
+
+5) To shut down - just hit the power button. :-)
+
+
+

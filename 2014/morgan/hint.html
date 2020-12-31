@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most likely to succeed</title>
+</head>
+<body>
+<h1>Most likely to succeed</h1>
+
+<p>Yves-Marie Morgan<br>
+<a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#121;&#x76;&#101;&#115;&#x2d;&#109;&#x61;&#114;&#105;&#x65;&#46;&#x6d;&#x6f;&#x72;&#x67;&#97;&#x6e;&#x40;&#112;&#x61;&#114;&#x72;&#x6f;&#x74;&#46;&#x63;&#x6f;&#109;">&#x79;&#118;&#x65;&#x73;&#45;&#x6d;&#x61;&#x72;&#105;&#101;&#x2e;&#109;&#x6f;&#114;&#x67;&#97;&#x6e;&#64;&#112;&#97;&#x72;&#114;&#x6f;&#x74;&#x2e;&#99;&#111;&#x6d;</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To build:</h3>
+
+<pre><code>make
+</code></pre>
+
+<h3>To run:</h3>
+
+<pre><code>./prog [arg ..]
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>make
+cp -f prog morgan
+./morgan clobber
+ls
+
+./morgan all install
+ls
+
+./prog love haste waste supernova
+ls
+
+make
+./prog magic
+ls
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>Think of this as a Maker Faire&rsquo;s make.  :-)</p>
+
+<p>It works reasomably well.  While not super ultra-featured, it does fair well with the Makefile we supplied.
+Not only that, it helped uncover a bug we had in our special Makefile rules.</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h3>Remarks</h3>
+
+<p>This program is a tiny <code>make</code> clone.</p>
+
+<p>It is able to parse a subset of the <code>make</code> syntax and will execute rules for
+goals given in arguments if they need to (based on timestamp of dependencies
+of rule targets).</p>
+
+<h2>Supported features</h2>
+
+<ul>
+<li>Variable assignments (only recursive ones). Variable references with recursion.</li>
+<li>Environment variables are available.</li>
+<li>It is possible to specify variables in command line: <code>name=value</code>.</li>
+<li>Variables given in command line will have precedence over variables defined
+in makefile, which will have precedence over environment variables.</li>
+<li>If no goal given in command line, the first target defined will be used.</li>
+<li>Comments, escaped comments, escaped new lines.</li>
+</ul>
+
+
+<p>It should be able to build programs of previous years with the provided <code>Makefile</code>
+found in previous contest archives. Simply use this program instead of <code>make</code>.
+It will recursively use itself for submake (the <code>MAKE=</code> assignment inside
+<code>Makefile</code> will be ignored to continue using itself).</p>
+
+<h2>Limitations / Known issues</h2>
+
+<ul>
+<li>There is a lot of memory leak (not a single free).</li>
+<li>The opened file is not closed.</li>
+<li>The input file shall be named <code>Makefile</code>.</li>
+<li>No diagnostic message, but the exit status is non zero to indicates failure
+(failed command in a rule or missing target).</li>
+<li>Only <code>$&lt;</code> and <code>$@</code> are supported for automatic variables in commands.</li>
+<li>No parallel execution (<code>-j</code> option).</li>
+<li>No <code>:=</code> <code>+=</code> <code>?=</code> syntax for variable assignment.</li>
+<li>No built-in function available.</li>
+<li>No pattern targets.</li>
+<li>No pattern substitution variables.</li>
+<li>No built-in rules.</li>
+<li>No built-in variables (except the one from environment).</li>
+<li>No conditional directives.</li>
+</ul>
+
+
+<h3>Compilation warnings</h3>
+
+<p>with gcc 4.8.2 on Linux Ubuntu 14.04 64-bit :
+* prog.c:22:15: warning: return makes integer from pointer without a cast [enabled by default]
+* prog.c:23:72: warning: signed and unsigned type in conditional expression [-Wsign-compare]
+* prog.c:12:11: warning: suggest parentheses around ‘&amp;&amp;’ within ‘||’ [-Wparentheses]</p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2015, 
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

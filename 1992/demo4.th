@@ -1,0 +1,30 @@
+( compute factorial recursively )
+( take x as input, return x! and x as output )
+
+: fact-help
+
+  dup if
+    1 -			( leave x-1 on top )
+    fact-help		( leave x-1, [x-1]! )
+    1 +			( leave x, [x-1]!, x )
+    swap over swap	( leave [x-1]!, x, x )
+    *			( into x!, x )
+    swap		( into x, x! )
+  else
+    1 swap
+  then
+;
+
+: fact
+
+  fact-help
+  drop
+
+;
+
+: demo4
+  " 4 factorial is: " 4 fact . cr
+  " 6 factorial is: " 6 fact . cr
+;
+
+demo4

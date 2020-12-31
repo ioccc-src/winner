@@ -1,0 +1,41 @@
+# 2006 makefile
+#
+# Copyright (C) 2006-2009, Landon Curt Noll, Simon Cooper, Peter Seebach
+# and Leonid A. Broukhis. All Rights Reserved. Permission for personal,
+# educational or non-profit use is granted provided this copyright and
+# notice are included in its entirety and remains unaltered.  All other
+# uses must receive prior permission from the contest judges.
+
+# Special flags for this entry
+#
+LOCAL_FLAGS= -O3 `sdl-config --libs --cflags`
+
+# For Mac OS X with Darwin Ports installed
+# LOCAL_FLAGS= -O3 `/opt/local/bin/sdl-config --libs --cflags`
+
+# Data files for this entry
+#
+DATA=
+
+
+build: ${ENTRY} ${ENTRY}_orig
+
+
+clean:
+	-${RM} ${ENTRY} ${ENTRY}_orig
+
+
+clobber: clean
+
+
+alt:
+
+
+data:
+
+
+${ENTRY}: ${ENTRY}.c ${DATA}
+	${CC} ${LOCAL_FLAGS} ${ENTRY}.c -o ${ENTRY}
+
+${ENTRY}_orig: ${ENTRY}_orig.c
+	${CC} ${LOCAL_FLAGS} ${ENTRY}_orig.c -o ${ENTRY}_orig

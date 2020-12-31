@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.3 DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most artistic</title>
+</head>
+<body>
+<h1>Most artistic</h1>
+
+<p>Uri Goren<br>
+<a href="&#x6d;&#x61;&#105;&#108;&#116;&#111;&#58;&#103;&#111;&#114;&#x65;&#110;&#46;&#117;&#x72;&#105;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#99;&#111;&#109;">&#103;&#111;&#x72;&#101;&#110;&#46;&#x75;&#114;&#105;&#x40;&#103;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#111;&#x6d;</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To build:</h3>
+
+<pre><code>make goren
+</code></pre>
+
+<h3>To run:</h3>
+
+<pre><code>echo "some text" | ./goren
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>echo "Hello, world!" | ./goren
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>In the words of <a href="http://en.wikipedia.org/wiki/Rene_Magritte">René François Ghislain Magritte Magritte</a>:</p>
+
+<p><img src="http://upload.wikimedia.org/wikipedia/en/b/b9/MagrittePipe.jpg" title="Ceci n'est pas une pipe" alt="This is not a pipe" /></p>
+
+<p>One may ask the surrealist question:</p>
+
+<pre><code>echo 'If | is just a representation of a pipe, then how can data stuff it?' | ./goren
+</code></pre>
+
+<p>However if one takes a firm stand and declares:</p>
+
+<pre><code>echo '| is just a representation of a pipe because I say so! So stuff it!' | ./goren
+</code></pre>
+
+<p>something happens!  Why?</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<p>This program was written in homage to Rene Magritte&rsquo;s picture &ldquo;La
+trahison des images&rdquo; (The Treachery of Images).</p>
+
+<p>In order to show my unconditional admiration of this work, I avoided
+using conditions.</p>
+
+<p>In this work, Magritte points out that a picture of a pipe is not
+a pipe.  But what IS a pipe? This program tries to provide an answer.</p>
+
+<p>Magritte&rsquo;s [test for pipes](http://en.wikipedia.org/wiki/The_Treachery_of_Images} is:</p>
+
+<pre><code>The famous pipe. How people reproached me for it! And yet, could
+you stuff my pipe? No, it's just a representation, is it not?
+</code></pre>
+
+<p>Accordingly, this program only approves pipes which can be used for
+stuffing data.</p>
+
+<p>One thing I tried to achieve is condition free programming.  Many
+have noted that conditions make the code harder to read and understand.
+A good example would be:</p>
+
+<p><a href="http://www.ioccc.org/years.html#2004_burley">Brent Burley&rsquo;s 2004 IOCCC winner</a></p>
+
+<p>That entry omits conditional statements such as &ldquo;if&rdquo; and &ldquo;while&rdquo;.
+His achievement in improving clarity by omitting conditions is
+impressive, but I think it can be taken further, in two ways.</p>
+
+<p>First, conditional operators, such as ?:, &amp;&amp; and ||, can be thrown
+away.  Second, using setjmp and longjmp, which are unfortunately
+not in common use, might make it difficult for a novice programmer
+to understnad the code without referring to the man page.</p>
+
+<p>By removing these, the code is 100% condition free, and every
+function runs its instructions in perfect order. Naturally, this
+makes the program flow trivial to understand.  This can be verified
+by disassembling the compiled code and looking for conditional jumps
+(when compiled with gcc on x86, there are none).</p>
+
+<h3>Compatibility:</h3>
+
+<p>The program should compile with any C compiler, but was tested
+mostly with gcc on Linux.</p>
+
+<p>It doesn&rsquo;t support 64 bits (due to integer-pointer casts, and a >>31).
+It does work on 64-bit Linux, becasue all functions are below 4GB.</p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2012, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2012, 
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

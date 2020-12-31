@@ -1,0 +1,56 @@
+<h1>Best One Liner</h1>
+
+<p>David Korn<br>
+AT&amp;T Bell Labs<br>
+MH 3C-526B, AT&amp;T Bell Labs<br>
+Murray Hill, NJ<br>
+07974<br>
+USA</p>
+
+<h2>Judges' comments:</h2>
+
+<p>The Judges believe that this is the best one line entry ever received.
+Compile on a UN*X system, or at least using a C implementation that
+fakes it.  Very few people are able to determine what this program
+does by visual inspection.  I suggest that you stop reading this
+section right now and see if you are one of the few people who can.</p>
+
+<p>Several points are important to understand in this program:</p>
+
+<p>1) What is the symbol &lsquo;unix&rsquo; and what is its value in the program?
+   Clearly &lsquo;unix&rsquo; is not a function, and since &lsquo;unix&rsquo; is not declared
+   to be a data type (such as int, char, struct foo, enum, &hellip;)
+   what must &lsquo;unix&rsquo; be?</p>
+
+<p>2) What is the value of the symbol &ldquo;have&rdquo;?  (hint: the value is
+   NOT 4 characters, or &lsquo;h&rsquo;, or a string)  Consider the fact that:</p>
+
+<pre><code>    char *x;
+</code></pre>
+
+<p>  defines a pointer to a character (i.e. an address), and that
+  the &lsquo;=&rsquo; assigns things is compatible types.  Since:</p>
+
+<pre><code>    x = "have";
+</code></pre>
+
+<p>  is legal C, what type of value is &ldquo;have&rdquo;?</p>
+
+<p>3) Note that the following expressions yield the same value:</p>
+
+<pre><code>    x[3]    *(x+3)    *(3+x)
+</code></pre>
+
+<p>   since addition is communitive.  What can be said about the value:</p>
+
+<pre><code>    3[x]
+</code></pre>
+
+<p>David Korn&rsquo;s /bin/ksh provides us with a greatly improved version of
+the /bin/sh.  The source for v7&rsquo;s /bin/sh greatly inspired this contest.</p>
+
+<p>Copyright &copy; 1987, Landon Curt Noll &amp; Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.</p>

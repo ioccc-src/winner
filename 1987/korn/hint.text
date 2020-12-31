@@ -1,0 +1,52 @@
+# Best One Liner
+
+David Korn  
+AT&T Bell Labs  
+MH 3C-526B, AT&T Bell Labs  
+Murray Hill, NJ  
+07974  
+USA  
+
+## Judges' comments:
+
+The Judges believe that this is the best one line entry ever received.
+Compile on a UN*X system, or at least using a C implementation that
+fakes it.  Very few people are able to determine what this program
+does by visual inspection.  I suggest that you stop reading this
+section right now and see if you are one of the few people who can.
+
+Several points are important to understand in this program:
+
+1) What is the symbol 'unix' and what is its value in the program?
+   Clearly 'unix' is not a function, and since 'unix' is not declared
+   to be a data type (such as int, char, struct foo, enum, ...)
+   what must 'unix' be?
+
+2) What is the value of the symbol "have"?  (hint: the value is
+   NOT 4 characters, or 'h', or a string)  Consider the fact that:
+
+        char *x;
+
+  defines a pointer to a character (i.e. an address), and that
+  the '=' assigns things is compatible types.  Since:
+
+        x = "have";
+
+  is legal C, what type of value is "have"?
+
+3) Note that the following expressions yield the same value:
+
+        x[3]	*(x+3)	  *(3+x)
+
+   since addition is communitive.  What can be said about the value:
+
+        3[x]
+
+David Korn's /bin/ksh provides us with a greatly improved version of
+the /bin/sh.  The source for v7's /bin/sh greatly inspired this contest.
+
+Copyright (c) 1987, Landon Curt Noll & Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.

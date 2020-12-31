@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most recyclable</title>
+</head>
+<body>
+<h1>Most recyclable</h1>
+
+<p>Yusuke Endoh<br>
+<a href="&#x6d;&#97;&#105;&#x6c;&#116;&#x6f;&#x3a;&#109;&#97;&#109;&#x65;&#64;&#x72;&#x75;&#98;&#121;&#45;&#x6c;&#97;&#x6e;&#x67;&#x2e;&#x6f;&#x72;&#103;">&#x6d;&#97;&#109;&#x65;&#64;&#x72;&#117;&#98;&#x79;&#45;&#108;&#97;&#x6e;&#103;&#x2e;&#x6f;&#x72;&#x67;</a><br>
+<a href="https://github.com/mame/">https://github.com/mame/</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To build:</h3>
+
+<pre><code>make endoh2
+</code></pre>
+
+<h3>To run:</h3>
+
+<pre><code> make all   
+</code></pre>
+
+<p>You&rsquo;ll need to have Ruby installed to run all the automated check</p>
+
+<pre><code>make check
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>cat jpeg.c
+</code></pre>
+
+<p>Look at jpeg.jpg in an image viewer program.</p>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>This is a program which, when fed its own source, generates a program that almost is its whitespace inverse,
+which, in its order, generates a JPEG file (speaking of file size abuse, that is about 16.4 times
+larger than a PBM file with the same image, but the source was also abusing the size counting program&hellip;)</p>
+
+<p>Don&rsquo;t pay attention to the OCR <del>behind the ruby curtain</del> &mdash; it&rsquo;s a straightforward bitmap comparison.</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h3>Highlights</h3>
+
+<ul>
+<li>LZ77-like compression for font and template data</li>
+<li>tiny JPEG encoder
+
+<ul>
+<li>Zig-zag space-filling curve</li>
+<li>Discrete cosine transform</li>
+<li>JPEG Huffman encoding (cheeting)</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Notes</h3>
+
+<p>I picked JPEG instead of PNG, GIF, or BMP
+because it is the most difficult to generate.
+I believe that the JPEG encoder is the world&rsquo;s smallest ever.
+Nevertheless, the program was too big to meet the IOCCC&rsquo;s size rule.
+So I created a smaller bootstrap program that generates the main program.
+<code>prog.c</code> contains fragments of the main program <em>as a comment</em>
+which <code>iocccsize -i</code> does <em>not</em> count.
+I gratefully think the judges for spoiling the size rule this year.</p>
+
+<p>I think the program will work on any major platforms and compilers.</p>
+
+<h3>Legal</h3>
+
+<p>This program uses (a part of) Proggy Tiny Fonts
+which is distributed in MIT License:</p>
+
+<pre><code>Copyright (c) 2004, 2005 Tristan Grimmer
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the "Software"),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</code></pre>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2015,
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.3 DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Best self documenting program</title>
+</head>
+<body>
+<h1>Best self documenting program</h1>
+
+<p>Hou Qiming<br>
+<a href="&#x6d;&#x61;&#105;&#108;&#116;&#111;&#58;&#104;&#113;&#109;&#x30;&#51;&#115;&#116;&#x65;&#114;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#99;&#111;&#109;">&#104;&#113;&#x6d;&#48;&#51;&#115;&#x74;&#101;&#114;&#x40;&#103;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#111;&#x6d;</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To build:</h3>
+
+<pre><code>make hou
+</code></pre>
+
+<h3>To run:</h3>
+
+<pre><code>./hou 'a calculator expression -- see the C Code for details'
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>./hou 11/26+222/31
+
+./hou 'log((21701-19937)-(23209-21701))/log(2)'
+
+./hou 'sin(1.5708)+0.04321+log(sqrt(exp(1*1*1)))+(1+2*3)-0.4-0.6+(4+6)*(2-1+2*3)-tan(0.785398)+2*10/3*6*sqrt(16/2/2)*10+10000-1000'
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>This self-documenting scientific calculator compiles clean with no
+warnings under the most strict pedantic mode of gcc and clang.</p>
+
+<p>The first example, along with the correct result appears in the
+source code. What does it mean?</p>
+
+<p>The calculator obeys the precendence rules and allows parenthesis,</p>
+
+<pre><code>    ./hou '1+2*3'
+    ./hou '(1+2)*3'
+</code></pre>
+
+<p>What exactly does the text formatting do?</p>
+
+<p>What does this evaluate to in C?</p>
+
+<pre><code>    +~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
+</code></pre>
+
+<h4>Self documenting source</h4>
+
+<p>Comments would almost be redundant.  :-}</p>
+
+<h4>The ASCII art is valid C code</h4>
+
+<p>Not just fancy formatted comment removed by the C Pre-processor</p>
+
+<h4>The only multi-byte strings are format strings</h4>
+
+<p>The code does not contain some simple string-encoded lookup table for calculator operations.</p>
+
+<h4>Example input and output in the source</h4>
+
+<p>The example input and output in the C code is significant.  Can you find out why?</p>
+
+<h4>The button layout</h4>
+
+<p>The button layout in the C code is significant &hellip; not just a nice looking layout.</p>
+
+<h4>input parsing</h4>
+
+<p>The parser is functionally equivalent to a normal arithmetic parser for all valid inputs.
+For another fun challenge: try to determine how it parses the command line argument.</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h3>Obfuscations</h3>
+
+<p>This program is designed to be self-documenting. It doesn&rsquo;t just provide an
+example command line. It also provides the expected output and illustrates all
+supported functionality using embedded ASCII art.</p>
+
+<ul>
+<li>A few line numbers are significant and careless beautification will break the program.</li>
+<li>The entire ASCII art is valid code. The preprocessor won&rsquo;t remove any part of it.</li>
+<li>The only strings longer than 1 byte are printf/sscanf format strings, even
+after preprocessing. No string-encoded lookup table is used.</li>
+<li>The example input and its expected output are both algorithmically significant.</li>
+<li>The button layout is also significant.</li>
+<li>The actual syntax being parsed is not the obvious, despite being
+functionally equivalent for all correct inputs.</li>
+</ul>
+
+
+<h3>Portability</h3>
+
+<ul>
+<li>This program requires &ldquo;argv&rdquo; to point to writable memory. It doesn&rsquo;t require
+the actual argv strings to be writable, though.</li>
+<li>This program requires ASCII.</li>
+<li>This program doesn&rsquo;t work with %e style numbers like &ldquo;1e-4&rdquo;.</li>
+<li>Some seemingly redundant code works to eliminate warnings and evade a gcc bug.</li>
+</ul>
+
+
+<h3>Spoilers</h3>
+
+<p>The parser parses function names, substraction, and division as single-letter
+unary operators. A bitmask encoded hash table is used to check no-ops/digits
+and another hash function maps the ASCII to a function ordinal, which is then
+executed by the button panel.</p>
+
+<p>Both hash functions are found using a separate search program. Another program
+is used to find a way to format one hash function as example input such that
+it produces something resembling the bitmask hash table as part of its output.</p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2012, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2012, 
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

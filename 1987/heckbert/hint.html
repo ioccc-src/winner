@@ -1,0 +1,25 @@
+<h1>Best Obfuscator of Programs</h1>
+
+<p>Paul Heckbert<br>
+Pixar</p>
+
+<h2>Judges' comments:</h2>
+
+<h3>Try:</h3>
+
+<pre><code>ph 40 &lt; ph.c &gt; foo.c; cc foo.c -o ph
+ph 20 &lt; a_C_prog.c &gt; bar.c; cc bar.c
+</code></pre>
+
+<p>The judges used this program to fold up very long lines which the
+BSD fold(1) was unable to process.  This program has been added
+to the contest tool chest.</p>
+
+<p>On System V systems, compile with: <code>-Dindex=strchr</code>
+To compile on a 16 bit machine, change 300000&rsquo;s to 30000.</p>
+
+<p>Copyright &copy; 1987, Landon Curt Noll &amp; Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.</p>

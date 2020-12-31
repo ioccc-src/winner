@@ -1,0 +1,50 @@
+Copyright (c) 1985, Landon Curt Noll & Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.
+
+WARNING: The rules and mailing address for the contest change from year
+         to year.  Be sure that you consult the current set of rules
+	 before submitting entries.
+--------------------------------------------------------------------------------
+
+It is time once again for the net wide Obfuscated C code contest!
+
+GOAL:  To write the most Obscure working C program under the rules below:
+
+RULES:	1) The source must be 512 bytes or less.
+	2) Mail your entries to:	  ...!ihnp4!nsc!chongo
+	   Postings to the net will NOT be used!
+	3) Include at the top of the letter:
+	    a) Your name, and path from a major network node.
+	       If you want your entry to be anonymous, indicate this as well.
+	    b) A brief statement of what the program should do.
+	    c) The machine/opsys on which it runs.
+	4) Enclose your source between the following lines:
+---start of program---
+<place obfuscated source here>
+---end of program---
+	5) The C program must be written in common C. 
+	   That is, K&R plus common extensions (say 4.2 or Sys V C)
+	6) The program must be of original work.
+	7) The program must be a complete program. (i.e., not just a fragment)
+	8) Entries must be received by me on or before June 8, 1985.
+
+POINTS:	Each entry will be judged for its non-clarity.  I will attempt to
+	run each of them on a Vax 780/4.2BSD system.   Don't let the lack
+	of such a system stop you!  Try to avoid operating system/machine
+	specific code if you do not have such a system.  Extra points will
+	be given for program that:
+
+	a) Able to pass lint without complaint
+	b) Actually does something interesting  (not just exit)
+	c) are portable (i.e., no special calls of local features)
+	   (long variable names will be allowed as needed)
+
+The names of the winners will be posted to net.lang.c.  The winning
+sources will be posted to net.sources.
+
+If you have any questions on the rules/points above, just ask via mail!
+
+chongo <main(){int i;i+=i+++++i;exit(i);}> /\??/\

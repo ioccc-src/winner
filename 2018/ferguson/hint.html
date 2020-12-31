@@ -1,0 +1,1206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Best use of weasel words</title>
+</head>
+<body>
+<h1>Best use of weasel words</h1>
+
+<p>Cody Boone Ferguson <a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#58;&#x77;&#x65;&#97;&#x73;&#101;&#108;&#64;&#120;&#101;&#120;&#121;&#x6c;&#x2e;&#x6e;&#x65;&#116;">&#x77;&#101;&#x61;&#115;&#x65;&#108;&#64;&#120;&#x65;&#120;&#x79;&#x6c;&#46;&#x6e;&#x65;&#x74;</a><br>
+<a href="https://ioccc.xexyl.net/2018/weasel">https://ioccc.xexyl.net/2018/weasel</a><br>
+Twitter: @xexyl</p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To use:</h3>
+
+<pre><code>make
+
+./weasel
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>./weasel words
+./weasel -mq words
+./weasel -q -r8 'EVOLUTION IS A PROVEN FACT'
+./weasel -m 'INTELLIGENT DESIGN'
+
+make test
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>Looking back over the strata of past IOCCC entries, this program marks a new
+mutation on our understanding of sequencing of code.  In adaptation of the
+modern scientific that the C language has evolved, this mutant of a program
+may stress your understanding of taxonomy of the C syntax tree.</p>
+
+<p>The phenotype of the source suggests a veritable sea of primordial ASCII soup.
+The encoded logic of the watchmaker suggests a variation of thought experiment
+formulated by Richard Dawkins: but without the need for feeding too many
+evolutionary relatives of the primate order in which us Homo sapiens hang
+from the phylogenetic tree of life.</p>
+
+<p>If you wish your computer to maintain one branch in the Cretaceous C code era,
+while using more Cenozoic minded code migration, read rpm.markdown.</p>
+
+<p>If you find yourself in an evolutionary dead end, try:</p>
+
+<pre><code>man ./weasel.man
+</code></pre>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<pre><code>0. Preface
+1. What it is
+2. How it works
+3. Hints (Keyboards, Options, Spoilers, Example Invocations)
+4. Obfuscation (Techniques, Beauty)
+5. How to build (S and N Constants, Compilation, Portability, Installing)
+6. Final thoughts
+7. Winning comments, thanks, dedications, links, etc.
+</code></pre>
+
+<h2><strong>0. Preface</strong></h2>
+
+<p><strong>SPOILER WARNING: A great deal of this document and the man page is full of
+spoilers of different types; as such I would recommend that you try running the
+judges suggested invocations as well as running <code>make test</code> before you get into
+the document or the man page, unless you don&rsquo;t mind any spoilers. I don&rsquo;t reveal
+much in the way of obfuscation however so if you just want documentation on the
+program, how to compile, etc. then there isn&rsquo;t need to heed this note.</strong></p>
+
+<p>I was at a loss on how to present my remarks; on the one hand I wanted to give
+everything to the judges so they didn&rsquo;t miss anything. But on the other hand I
+didn&rsquo;t want to reveal as much publicly and many people don&rsquo;t like to read long
+texts. To resolve this I think the best way is referencing the judges' comments:
+if you want a quick rundown of the entry try what they suggest and view the man
+page (it explains all the options and describes the program briefly):</p>
+
+<pre><code>man ./weasel.man
+</code></pre>
+
+<p>If that isn&rsquo;t sufficient <strong>I would recommend reading this section</strong> <em>(and
+possibly the next)</em> where I attempt to give a brief explanation of the sections
+to make reading it easier and faster. In addition I want to point out a few
+things. <em>If you want more details read this document more thoroughly (or just
+the sections that seem relevant to what you&rsquo;re after).</em> The <a href="FILES">FILES</a> file is a
+quick list of files and respective summaries in this entry. Because several
+sections are quite long I have added a skip to link to skip to the next
+subsection or section at the beginning of each section (and subsection).</p>
+
+<p><strong><a href="#what">What it is</a>:</strong> This is a brief summary of the program; the man page is
+more thorough than this.</p>
+
+<p><strong><a href="#how">How it works</a>:</strong> Explain some of the basic concepts and terms of the
+program; if you&rsquo;re familiar with genetic algorithms there won&rsquo;t be any problem
+following this section but it might be of some value to read anyway. There is a
+randomised mode that doesn&rsquo;t use a genetic algorithm; it can be triggered a
+number of ways but the <strong><code>-m</code></strong> option enables it specially (I discuss this
+thoroughly in <strong><a href="#hints">Hints</a></strong>).</p>
+
+<p><strong><a href="#hints">Hints</a>:</strong> Perhaps the longest part of this document because in it I
+document the <a href="#keyboards">keyboards</a>, <a href="#options">options</a>, subtleties (including
+features that might appear to be bugs but aren&rsquo;t - including an
+<a href="#error">input error</a>), an <a href="#spoiler">Easter egg spoiler</a> and quite a few
+<a href="#invocations">example invocations</a>. If you&rsquo;ve read the man page you probably
+don&rsquo;t need this unless there is something specific you&rsquo;re after.</p>
+
+<p><strong><a href="#obfuscation">Obfuscation</a>:</strong> Some of the techniques that might not be used.</p>
+
+<p><strong><a href="#build">How to build</a>:</strong> Here I describe briefly
+<a href="#constants">the constants that can be redefined</a> <strong><code>S</code></strong> and <strong><code>N</code></strong>: the
+maximum size of the chromosome (target string; the maximum length is <strong><code>S - 1</code></strong>
+but it must be >= the default 38) and the number of offspring, respectively. I
+also give <a href="#compiling">example compiler invocations</a>, <a href="#portability">portability
+notes</a>, an <a href="#bugs">more portability notes</a> and a <a href="#rpm">note on
+rpm.markdown</a>.</p>
+
+<p>On the subject of <strong><code>S</code></strong> and <strong><code>N</code></strong>: As the judges' suggested runs imply you
+can change the target string at runtime; <strong><code>make test</code></strong> runs a script
+<em><code>test.sh</code></em> which reads from the file <em><code>test-strings.txt</code></em>, running the program
+for each string in the file, waiting approximately two seconds before
+continuing.  I explain how to pass options to the script in part of
+<strong><a href="#test">Hints</a></strong>.</p>
+
+<p><strong><a href="#thoughts">Final thoughts</a>:</strong> You might enjoy what I included; they&rsquo;re
+humorous pieces by <a href="#dmr">Dennis Ritchie</a> and <a href="#ken">Ken Thompson</a> themselves
+from the infamous <em>UNIX-HATERS Handbook</em>.</p>
+
+<p><strong><a href="#winning">Winning thoughts</a>:</strong> What it means to me to win as well as some
+dedications and thanks. Here too I include a link to a website which will be
+dedicated to this entry beyond what will be published on the IOCCC website</p>
+
+<h2><strong>1. <a name="what">What it is</a></strong></h2>
+
+<p>Skip to <a href="#how">How it works</a>.</p>
+
+<p>It is an implementation of Richard Dawkins' <a href="https://en.wikipedia.org/wiki/Weasel_program">Weasel program</a> (Wikipedia).
+According to Wikipedia in chapter three of his book <a href="https://en.wikipedia.org/wiki/The_Blind_Watchmaker">The Blind Watchmaker</a>
+Dawkins wrote:</p>
+
+<blockquote><p>I don&rsquo;t know who it was first pointed out that, given enough time, a monkey
+bashing away at random on a typewriter could produce all the works of
+Shakespeare. The operative phrase is, of course, <em>given enough time.</em> Let us
+limit the task facing our monkey somewhat. Suppose that he has to produce, not
+the complete works of Shakespeare but just the short sentence &lsquo;Methinks it is
+like a weasel&rsquo;, and we shall make it relatively easy by giving him a typewriter
+with a restricted keyboard, one with just the 26 (capital) letters, and a space
+bar.  How long will he take to write this one little sentence?</p></blockquote>
+
+<p>He refers to the <a href="https://en.wikipedia.org/wiki/Infinite_monkey_theorem">Infinite Monkey Theorem</a> (Wikipedia). As he points out the
+operative phrase is <em>given enough time</em>; but even if it&rsquo;s extremely unlikely
+<em>technically the probability is greater than 0</em>. He simplified it for the
+monkey; I thought the monkey had it too easy: unlike his limited keyboard I have
+(besides space) every character in the ASCII range <strong><code>0&lt;=126</code></strong> that
+<strong><code>isprint()</code></strong> returns non-zero except that only capital letters are included;
+the file <em><code>prog-simple.c</code></em> has a slightly smaller keyboard. There are some
+additional features I have added (including two Easter eggs); amongst others:
+ability to change the target string and maximum length. See
+<strong><a href="#how">How it works</a></strong>, <strong><a href="#hints">Hints</a></strong> and <strong><a href="#build">How to build</a></strong> for
+more details.</p>
+
+<p>In its simplest invocation this program will work its way (using a genetic
+algorithm) towards the solution of the string <strong><code>METHINKS IT IS LIKE A WEASEL</code></strong>
+(note that I use <strong><code>toupper()</code></strong> so it doesn&rsquo;t matter what case the input is the
+comparison and output will always be capitalised).</p>
+
+<h2><strong>2. <a name="how">How it works</a></strong></h2>
+
+<p>Skip to <a href="#hints">Hints</a>.</p>
+
+<p>Here you can find a general explanation of a <em><a href="http://www.doc.ic.ac.uk/~nd/surprise_96/journal/vol1/hmw/article1.html">genetic algorithm</a></em> as well as a
+brief history. Although the link provides more information (including images to
+try and show the way they work) for those interested I will cite the summary:</p>
+
+<blockquote><p>Genetic Algorithms (GAs) are adaptive heuristic search algorithm based on the
+evolutionary ideas of natural selection and genetics. As such they represent an
+intelligent exploitation of a random search used to solve optimization problems.
+Although randomised, GAs are by no means random, instead they exploit historical
+information to direct the search into the region of better performance within
+the search space. The basic techniques of the GAs are designed to simulate
+processes in natural systems necessary for evolution, specially those follow the
+principles first laid down by Charles Darwin of &ldquo;survival of the fittest.&rdquo;.
+Since in nature, competition among individuals for scanty resources results in
+the fittest individuals dominating over the weaker ones.</p></blockquote>
+
+<p><strong>SPOILER WARNING: Some of the below might help you follow the code more
+easily.</strong></p>
+
+<p>For each <em>generation</em> there is a total of <strong><code>N</code></strong> <em>offspring</em>; generation 0 is
+the pseudo-randomly initialised array <em>without parents.</em> Each offspring has its
+own <em>chromosome</em> to be compared to the <em>target string</em> and a <em>fitness score</em>;
+the higher the fitness score the more likely it will be a <em>parent of the next
+generation</em> (randomised mode notwithstanding) as part of the <em>selection process</em>
+(As the generations go by the fitness of the offspring should be higher; when
+the fitness matches that of the target it will be printed and the loop will be
+broken out of).</p>
+
+<p>After determining the two parents <em>crossover</em> occurs: each new offspring
+inherits DNA from the parents; every character in the chromosome string is
+pseudorandomly selected from one of the parents' respective character. Next,
+based on the <em>mutation rate</em>, perform <em>mutation</em> of the chromosome of each
+offspring; in other words <em>some of the characters in the chromosome will be
+assigned a pseudo-random value from the keyboard (in normal mode; in random mode
+every character will be assigned a value</em>). Before mutation the offspring
+chromosome will be printed; after mutation it will show what it was mutated to
+(on the same output line). After the new generation has been sequenced the loop
+goes back to the top and it starts all over until the maximum number of
+generations <strong><code>SIZE_MAX - 1</code></strong> is reached or the target chromosome has been
+found.</p>
+
+<p>Note that the generation is checked <em>before the scoring takes place</em> by a prefix
+increment equality check; when the generation is <strong><code>SIZE_MAX - 1</code></strong> the fitness
+test loop will not be entered; instead the outer loop will end after printing:</p>
+
+<blockquote><p>Too many attempts, blaming the monkey Eric even if he isn&rsquo;t typing or doesn&rsquo;t exist. Bye.</p></blockquote>
+
+<p>Why &lsquo;<em>Eric</em>&rsquo;? Because the judges stated in the <a href="http://ioccc.org/2018/guidelines.txt">2018 guidelines</a> that when
+there is a user input error the program should insult the pet fish Eric even if
+such a fish (no, weasels do not equate monkeys to fish but see below) doesn&rsquo;t
+exist. The second to last example limitation example note (it&rsquo;s improved in the
+final but this is relevant) they give is:</p>
+
+<blockquote><p>The judges might not have a pet fish named Eric, so might want to state:</p>
+
+<p>  This entry factors integers between 1 and 2305567963945518424753102147331756070.
+  Attempting to factor anything else will cause the program to insult your
+  pet fish Eric, or in the case that you lack such a pet, will insult the
+  pet that you do not have.</p></blockquote>
+
+<p>After the final message they ask:</p>
+
+<blockquote><p>BTW: <strong>What is so special about 2305567963945518424753102147331756070</strong>?  You tell us!</p></blockquote>
+
+<p>The answer is this: <strong>it is the primorial prime of 97:</strong> the product of all
+prime numbers less than or equal to N; <strong>and the primorial prime of <code>N == 97</code> is
+<code>2305567963945518424753102147331756070</code></strong>. There is no reference to this number
+in my entry but it&rsquo;s nonetheless possible to <strong>change the default target to it
+without modifying the source code</strong>; there are two hints in this very
+paragraph; the first sentence in fact: the answer to the judges' question and
+the definition. Can you get the program to search the primorial prime of 97
+without passing in specially?</p>
+
+<p><strong>On user errors:</strong> if the generation reaches <strong><code>SIZE_MAX - 1</code></strong> I consider it a
+user (or monkey) error; if the user insists on being so petulant as to try such
+a ridiculous set of parameters in an attempt to make it be no more successful
+than a monkey typing <em>then it shouldn&rsquo;t be any more successful than a monkey; if
+it by chance reaches the target it&rsquo;s because a monkey could too!</em> Either way
+unless the number reaches <strong><code>SIZE_MAX - 1</code></strong> the monkey Eric won&rsquo;t be blamed. It
+should be noted that depending on the parameters (size of chromosome, number of
+offspring, the string itself) the program could take quite a lot of system
+resources; and whether the OS kills it, Eric the monkey falls asleep or the
+typewriter is taken from him the result could very well be not found without
+blaming him. Of course the judges were talking about fish not monkeys. But since
+this program is inspired by the Weasel program <em>which was inspired by the
+<a href="https://en.wikipedia.org/wiki/Infinite_monkey_theorem">Infinite Monkey Theorem</a></em> I opted instead to target the monkey Eric even if
+such a monkey isn&rsquo;t typing or even doesn&rsquo;t exist (because it&rsquo;s not the <em>Infinite
+Fish Theorem</em>). So although the user might not be a monkey the program makes the
+assumption that <strong>the user could in fact be a monkey called Eric</strong> <em>although it
+isn&rsquo;t insolent enough to say the user is a monkey for certain!</em></p>
+
+<h2><strong>3. <a name="hints">Hints</a></strong></h2>
+
+<p>Skip to <a href="#obfuscation">Obfuscation</a>.</p>
+
+<p>I noted that there are a number of additional features and here I will document
+some of them.</p>
+
+<h3><a name="keyboards">Keyboards</a></h3>
+
+<p>Skip to <a href="#options">Options</a>.</p>
+
+<p>The keyboard, as noted, has more than just the alphabet and space. To be
+precise the following characters are acceptable; it equates to this in C (note
+it includes a literal space <strong><code>' '</code></strong> but it doesn&rsquo;t include other
+<strong><code>isspace()</code></strong> characters) and this is why some of the characters are escaped:</p>
+
+<pre><code>    const char keyboard[]=" !\"#$&lt;%:&gt;&amp;'()*+,-./0123456789;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`{|}~";
+</code></pre>
+
+<p>The simpler keyboard looks like:</p>
+
+<pre><code>    const char keyboard[]=" !\"&amp;'(),.0123456789;?ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+</code></pre>
+
+<p>The program makes sure that the target string only has characters the keyboard
+can actually produce but there is a certain type of input error that might
+<em>appear</em> to be a bug; see specifically <a href="#error">Input Error Example</a>.</p>
+
+<h3><a name="options">Options</a></h3>
+
+<p>Skip to <a href="#spoiler">Spoilers</a>.</p>
+
+<p>There are a number of options you can pass to the program besides the target
+string; some I will document here (the summary being in the man page). You can
+join options but there is a caveat with spaces and <strong><code>-r</code></strong> option as well as
+the target string (see below).</p>
+
+<p><strong>Enable quiet output:</strong></p>
+
+<pre><code>    -q
+</code></pre>
+
+<p>This means don&rsquo;t print the generation and offspring output; only print (some) of
+the options set (this is always done but wouldn&rsquo;t usually be seen due to verbose
+output) and the final answer.</p>
+
+<p><strong>Change the mutation rate to <code>&lt;rate&gt;</code>:</strong></p>
+
+<pre><code>    -r&lt;num&gt;
+</code></pre>
+
+<p>Please note that there cannot be a space between the <strong><code>-r</code></strong> and the number.
+This is to simplify the parsing of options. As for combining options you can do
+any of the following (amongst others):</p>
+
+<pre><code>    -r5q
+    -qr5
+    -qr
+    -q -r5
+</code></pre>
+
+<p>The third invocation will set quiet output and have no valid value to parse for
+the mutation rate and <strong><code>strtol()</code></strong> in this case returns 0. <strong><code>strtol()</code></strong> can
+legitimately return 0 but in no instance is it valid input in this program: the
+valid mutation rate is <strong><code>&gt;= 1 &amp;&amp; &lt;= 100</code></strong>.</p>
+
+<p>When the mutation rate is out of range it does something interesting: take a
+look at the output and compare it to the output when the range is valid. Can you
+figure out another way to trigger this? In fact there are two more ways (one is
+an option I&rsquo;ve mentioned and the other one is to do with the number of
+offspring)! If you want something of a walk through I suggest you follow the
+following:</p>
+
+<ol>
+<li><p>Enable quiet mode and set an invalid mutation range; for example specify:</p>
+
+<pre><code>-qr101
+</code></pre></li>
+<li><p>Take a look at the first few lines. Kill the program and try invoking it
+with the following options:</p>
+
+<pre><code>  -qr5
+</code></pre></li>
+<li><p>Look at the first few lines again and compare it to the output of step #1.
+With the default string most modern systems shouldn&rsquo;t take much time to - given
+decent parameters - come to an answer here but if necessary kill the program.</p></li>
+<li><p>Repeat the steps only this time don&rsquo;t enable quiet mode. Look at the
+offspring output. If you still don&rsquo;t see what it is and want to know see
+<strong><a href="#spoiler">Spoilers</a></strong> below.</p></li>
+</ol>
+
+
+<p>Finally any argument that doesn&rsquo;t start with a <strong><code>-</code></strong> passed into the program
+will become the target string. The same rule applies to the number for <strong><code>-r</code></strong>:
+it must be a single parameter which means you&rsquo;ll need to quote the string if it
+has more than one word (that is it contains spaces) or anything else interpreted
+specially by your shell e.g. parentheses. For instance if you just want to find
+<strong><code>METHINKS</code></strong> you could do one of:</p>
+
+<pre><code>    $ ./weasel METHINKS
+    $ ./weasel "METHINKS"
+    $ ./weasel 'METHINKS'
+</code></pre>
+
+<p>If you wanted <strong><code>YOU ARE A MONKEY</code></strong>:</p>
+
+<pre><code>    $ ./weasel "YOU ARE A MONKEY"
+    $ ./weasel 'YOU ARE A MONKEY'
+</code></pre>
+
+<p>If you do one of:</p>
+
+<pre><code>    $ ./weasel "METHINKS IT IS A" "MONKEY"
+    $ ./weasel METHINKS IT IS A MONKEY
+</code></pre>
+
+<p>It will search for <strong><code>MONKEY</code></strong> in both cases; in other words it&rsquo;s the last one.
+If the string is too long given the value of <strong><code>S</code></strong> (see
+<strong><a href="#build">How to build</a></strong>) it will be truncated.</p>
+
+<p>If you actually do want to search for a string starting with a <strong><code>-</code></strong> you must
+disable further parsing of options by using the <strong><code>-</code></strong> option itself; for
+example if you were to do any of:</p>
+
+<pre><code>    $ ./weasel -q- -- -test
+    $ ./weasel -q- -test
+    $ ./weasel -q -- -test
+</code></pre>
+
+<p>The target string will be: <strong><code>-TEST</code></strong>. This means though that here:</p>
+
+<pre><code>    $ ./weasel -q -- -test -r5
+</code></pre>
+
+<p>The string to be searched would actually be <strong><code>-r5</code></strong> and the mutation rate
+will remain the default because after the <strong><code>-</code></strong> option is seen it will no
+longer parse additional options: only target strings if anything left on the
+command line. Because of the joining of arguments this means that the first two
+examples of the last set of three above are equivalent i.e. the following two
+are equivalent:</p>
+
+<pre><code>    -q- 
+    -q --
+</code></pre>
+
+<p>As for the caveat I referenced what does the following do?</p>
+
+<pre><code>    $ ./weasel -qr 5
+</code></pre>
+
+<p>In fact it will set quiet output and set the target string to be &lsquo;5&rsquo;. So the
+mutation rate will be out of range, thus enabling that Easter egg, but it will
+likely come to an answer fairly quickly because it&rsquo;s just a single character. A
+note on the parsing of the <strong><code>-</code></strong> option; if the program is currently parsing
+<strong><code>argv[N]</code></strong>, for example, and it encounters a <strong><code>--</code></strong> then depending on where
+the other options are in the command line it might still parse the options. Thus
+you have:</p>
+
+<pre><code>    $ ./weasel -qr-r5
+    quiet output
+    mutation rate out of range
+    target 'METHINKS IT IS LIKE A WEASEL'
+    mutation rate 5
+    Generation  440 Offspring 20: METHINKS IT IS LIKE A WEASEL
+</code></pre>
+
+<p>Similarly this would set quiet output, then an invalid mutation rate and then a
+mutation rate of 5:</p>
+
+<pre><code>    $ ./weasel --qrr5
+</code></pre>
+
+<p>If you were instead to do one of (for example):</p>
+
+<pre><code>    $ ./weasel -q -- -r
+    $ ./weasel -q -q- -r
+</code></pre>
+
+<p>Then it <em>would</em> set quiet output then see the <strong><code>--</code></strong> (the <strong><code>-</code></strong> option
+itself) and then the target string would <em>literally</em> be set to <strong><code>-r</code></strong> because
+it no longer cares about the <strong><code>-</code></strong> for option parsing. In other words options
+are only parsed if the first character is <strong><code>-</code></strong> and if the parser hasn&rsquo;t seen
+the <strong><code>-</code></strong> - <em>in an earlier element of <code>argv</code>. This is not a bug!</em></p>
+
+<h3><a name="spoiler">Spoilers</a></h3>
+
+<p>Skip to <a href="#invocations">Example Invocations</a>.</p>
+
+<p>The Easter egg: Since Dawkins references the <a href="https://en.wikipedia.org/wiki/Infinite_monkey_theorem">Infinite Monkey Theorem</a> it
+simulates a monkey using a typewriter! This mode has the following changes:</p>
+
+<p>Selection is omitted; this means no sorting by fitness score (<em>each offspring
+is initially set to be the first two in the list</em>) but do pseudo-randomly
+select characters for every character in the target string; that is to say if
+the string is of length 28 (the default) then all 28 characters in each
+offspring of each generation will be assigned a pseudo-randomly positioned
+character in the keyboard. If you want to enable this specially you can use the
+<strong><code>-m</code></strong> option (<em>-m for monkey</em>).</p>
+
+<h3><a name="invocations">Example Invocations</a></h3>
+
+<p>Skip to <a href="#error">Input Error Example</a>.</p>
+
+<p>The following examples are used to demonstrate better the command line parsing.
+In order to do that though I had to first document the <strong><code>-m</code></strong> option because
+if the mutation rate is out of range monkey mode is activated (that&rsquo;s the first
+Easter egg). But what happens if you later set a valid mutation rate? Should
+monkey mode be disabled? If yes how do we know if monkey mode was specially
+requested?  There are at least two ways to go about it: I took the monkey safe
+(&lsquo;fool safe&rsquo;) method; <em>if you explicitly request monkey mode you cannot disable
+it in the same invocation of <code>weasel</code></em>!</p>
+
+<pre><code>    $ ./weasel -qr101r5r101r1r test
+    quiet output
+    mutation rate out of range
+    mutation rate out of range
+    mutation rate out of range
+    target 'test'
+    mutation rate 0
+    monkey at typewriter
+    Generation 16844        Offspring 22: TEST
+</code></pre>
+
+<p>So in this case I joined the options in the following order:</p>
+
+<ol>
+<li><strong><code>-q</code></strong></li>
+</ol>
+
+
+<p>Quiet output.</p>
+
+<ol>
+<li><strong><code>-r101</code></strong></li>
+</ol>
+
+
+<p>Mutation rate 101 (out of range).</p>
+
+<ol>
+<li><strong><code>-r5</code></strong></li>
+</ol>
+
+
+<p>Mutation rate of 5 but note that during parsing I only print invalid mutation
+rate (only after parsing do I print the final mutation rate whatever it ends up
+being); so while it appears there is a bug, showing mutation rate out of range
+three times, this is expected (given the next one, <strong><code>-r101</code></strong>). This means here
+the typewriter was taken from Eric the monkey.</p>
+
+<ol>
+<li><strong><code>-r101</code></strong></li>
+</ol>
+
+
+<p>Mutation rate to 101: this too is out of range (this is the second mutation rate
+out of range message). The typewriter returns to Eric.</p>
+
+<ol>
+<li><strong><code>-r1</code></strong></li>
+</ol>
+
+
+<p>Set mutation rate to 1. Take that typewriter away!</p>
+
+<ol>
+<li><strong><code>-r</code></strong></li>
+</ol>
+
+
+<p>Set mutation rate to 0; when there are no valid characters passed to
+<strong><code>strtol()</code></strong> it should return 0: this is the third message about being out of
+range. Note here that <strong><code>rand()</code></strong> returns an <strong><code>int</code></strong> and <strong><code>strtol()</code></strong>
+returns a <strong><code>long</code></strong> but I compare the return value of <strong><code>rand()</code></strong> to the
+mutation rate; if there are any systems where the widths differ this <em>shouldn&rsquo;t
+matter</em> because of truncation but I do in any case specifically check for <strong><code>R &lt;
+0 || R &gt; 100</code></strong>. Either way the invalid range returns the typewriter to Eric.</p>
+
+<ol>
+<li><strong><code>test</code></strong></li>
+</ol>
+
+
+<p>Finally I requested it find the string <strong><code>test</code></strong> (will search for <strong><code>TEST</code></strong>).</p>
+
+<p>Given that it was a short string it did find the answer relatively quickly, even
+in monkey mode.</p>
+
+<p>Another example:</p>
+
+<pre><code>    $ ./weasel -q -r101 test -r5
+    quiet output
+    mutation rate out of range
+    target 'test'
+    mutation rate 5
+    Generation  109 Offspring 13: TEST
+</code></pre>
+
+<p>In this case I also enabled quiet mode but I didn&rsquo;t join the options; the
+<strong><code>-r101</code></strong> reports that it&rsquo;s out of range and sets monkey mode. I then specify
+the target string and then set a valid mutation rate. This disabled monkey mode
+which means that it&rsquo;ll use the genetic algorithm.</p>
+
+<p>One more example of monkey mode:</p>
+
+<pre><code>    $ ./weasel -q -mr101 test -r5
+    quiet output
+    mutation rate out of range
+    target 'test'
+    mutation rate 5
+    monkey at typewriter
+    Generation 465298       Offspring 10: TEST
+</code></pre>
+
+<p>Here I also requested quiet output and then <em>explicitly requested that Eric the
+monkey types.</em> After this I set the mutation rate to be 101 which would have
+set monkey mode (<em>in this case only temporarily as I later set it to a valid
+number</em>) but since I have also requested monkey mode that won&rsquo;t matter. Then I
+set the string to <strong><code>test</code></strong> and then set a valid mutation rate of 5. Now note
+that it is actually set to 5 but also note that monkey mode remains active: it
+also took a lot longer to come to a conclusion for even four characters. This
+example does demonstrate one other thing in a subtle way though.</p>
+
+<p>When the program prints out each iteration (I&rsquo;ll give an example next) it goes a
+lot slower; this makes sense because it&rsquo;s an expensive operation. Here are the
+times for the same but without quiet output enabled:</p>
+
+<pre><code>    real    0m17.065s
+    user    0m1.245s
+    sys     0m2.402s
+</code></pre>
+
+<p>Whereas with quiet output:</p>
+
+<pre><code>    real    0m0.127s
+    user    0m0.125s
+    sys     0m0.001s
+</code></pre>
+
+<p>Of course it isn&rsquo;t only down to the printing but the point is it slows it down
+significantly. Adding an option to print every X lines would go over the limit
+(<strong><code>iocccsize -i</code></strong> reports 2052!).</p>
+
+<p>Finally I&rsquo;ll show a default example in normal output (I omit many lines showing
+instead <strong>[&hellip;]</strong>). Note that the real/user/sys times are from the <strong><code>time</code></strong>
+bash shell built-in utility: that isn&rsquo;t output from my entry.</p>
+
+<pre><code>    target 'METHINKS IT IS LIKE A WEASEL'
+    mutation rate 1
+    Generation    0 Offspring  1: 4V YGY.GH/}_|&gt;Q1M.R8;KD[=(05
+    Generation    0 Offspring  2: Y_^S0_HZ399^/|9,MP%^{817"XX#
+    Generation    0 Offspring  3: F%88H1&amp;[V1P&gt;QOI}- U]0[V-Y%*[
+    [...]
+    Generation    1 Offspring 23: AHA#.\=ZT'0&gt;?~-S.;1A L|1&lt;S:^ -&gt; AHA#.\=ZT'0&gt;?~-S.;1A L|1&lt;S:| (mutation)
+    Generation    1 Offspring 24: AHA#.\=ZT'0&gt;?~-S.;1A L|1&lt;S:^ -&gt; AHA#.\=ZT'0&gt;?~-S.;1A L|1&lt;S:^ (mutation)
+    Generation    1 Offspring 25: AHA#.\=ZT'0&gt;?~-S.;1A L|1&lt;S:^ -&gt; AHA#1\=ZT'0&gt;?~-S.;1A L|1&lt;S:^ (mutation)
+    **
+    Generation    2 Offspring  1: AHA#.\=ZT'0&gt;?~-S.;1A L|1&lt;S:^ -&gt; AHA#.\=ZT'0&gt;?~-S.;1A L|1&lt;S:^ (mutation)
+    Generation    2 Offspring  2: AHA#.\=ZT'0&gt;?~-S.;1A L|1&lt;S:^ -&gt; AHA#.\=ZT'O&gt;?~-S.;1A L|1&lt;S:^ (mutation)
+    [...]
+    Generation  979 Offspring  1: METHINKS ITZIS LIKE A WEASEL -&gt; METHINKS IT IS LIKE A WEASEL (mutation)
+    [...]
+    **
+    Generation  979 Offspring  1: METHINKS IT IS LIKE A WEASEL
+
+    real    0m0.074s
+    user    0m0.040s
+    sys     0m0.001s
+</code></pre>
+
+<p>Keep in mind the way I display the generations and the fact that generation 0
+has no parents; it is generation 1 that starts working towards the goal. You&rsquo;ll
+see also <strong>(mutation)</strong> at the end of the line at this point (if you enable
+monkey mode you&rsquo;ll find that it shows something else). The lines that only have
+<code>**</code> are separators: you won&rsquo;t see this between generation 0 and 1 but you will
+between future generations - as well as the final answer (if the answer is in
+generation 0 you won&rsquo;t see the <code>**</code>).</p>
+
+<p><a name="test"></a>
+One final thing to consider is that <strong>the program doesn&rsquo;t directly read from a
+file</strong>. This combined with the way the shell works could possibly confuse some
+people. Take the following invocations:</p>
+
+<pre><code>    (1) $ echo test &gt; test
+    (2) $ ./weasel test
+    (3) $ ./weasel &lt; test
+    (4) $ cat test | ./weasel 
+    (5) $ &lt; test-strings.txt ./weasel
+    (6) $ cat | ./weasel
+</code></pre>
+
+<p>Only the first invocation of <strong><code>./weasel</code></strong> will search for <strong><code>TEST</code></strong> because
+the string <strong><code>test</code></strong> was explicitly passed to the program (If the file <em><code>test</code></em>
+wasn&rsquo;t found by that path it would still have searched for <strong><code>TEST</code></strong>).</p>
+
+<p>The second invocation will search for the default string if there is a file or
+directory called <em><code>test</code></em>; else you will get an error about no such file or
+directory (unless your shell for some reason doesn&rsquo;t consider it an error; bash
+most certainly does consider it an error and halts).</p>
+
+<p>The third invocation would if there exists a file <em><code>test</code></em> cat that file and
+pipe the output to <strong><code>./weasel</code></strong>; <em>however it will search for the default
+string.</em> If there is no such file to cat then an error will be reported but
+without quiet mode you&rsquo;d probably not even see the error.</p>
+
+<p>The fourth invocation will also search for the default string unless the file
+doesn&rsquo;t exist in which case you&rsquo;d get an error like in the second invocation.</p>
+
+<p>The fifth invocation will actually search for the default string even with the
+file <em><code>test-strings.txt</code></em> existing. As far as I am aware it&rsquo;s equivalent to the
+third invocation except that the file exists in this case.</p>
+
+<p>The final invocation will search for the default and then read from <em><code>stdin</code></em>;
+it won&rsquo;t do anything with it however.</p>
+
+<p>What this amounts to is <em>if you want input from a file you have to read from the
+file and pass each string to the program itself</em>. I&rsquo;ve included a script
+<em><code>test.sh</code></em> and a file of sample input <em><code>test-strings.txt</code></em> that you can play
+with.</p>
+
+<p>Try:</p>
+
+<pre><code>    $ make test
+</code></pre>
+
+<p>This will essentially make sure the program is compiled and then do:</p>
+
+<pre><code>    $ chmod +x test.sh
+    $ ./test.sh
+</code></pre>
+
+<p>The script will first try compiling the program (if necessary) and if it fails
+for any reason it will exit; else it will read each line in the file
+<em><code>test-strings.txt</code></em> (if the file doesn&rsquo;t exist or can&rsquo;t be read the script will
+exit with return status of 1) and pass it to the program. After finding the
+string it&rsquo;ll sleep approximately 2 seconds and then read the next string
+(passing it to the program, continuing until all the strings have been read and
+processed).</p>
+
+<p>You can pass additional options directly to the script but remember that it
+stops when there are no more strings in the file - so if you try:</p>
+
+<pre><code>    $ ./test.sh -q test
+</code></pre>
+
+<p>The final string <strong><code>test</code></strong> won&rsquo;t be searched for; it will however run the program
+in all invocations with quiet output enabled. The following are some notes about
+how the shell and the program interact with each other:</p>
+
+<p>Because the script quotes the strings that it reads from the file if you were to
+put in the file: <strong><code>-q STRING</code></strong> quiet mode would be enabled; however the
+default string would be searched for. If the quotes were removed from the script
+it would print the final word specified. To be specific with the quotes: if in
+the file you had the line <strong><code>-q STRING -m TEST</code></strong> it would enable quiet output
+and monkey typewriter mode; but it would search for the default string. Without
+the quotes on the other hand it would enable quiet output, monkey typewriter and
+search for <strong><code>TEST</code></strong>. In other words <strong>if you want to pass options to the
+script you will have to directly pass the options to the script</strong> like the above
+example shows (but the strings will still only be read from the
+<em><code>test-strings.txt</code></em> file).</p>
+
+<h3><a name="error">Input Error Example</a></h3>
+
+<p>Skip to <a href="#obfuscation">Obfuscation</a>.</p>
+
+<p>There is a type of input error, as I said, that might appear to be a bug. What
+actually is going on though is due to a technicality on how spaces are printed
+and the fact the program does not accept spaces other than a literal space
+<strong><code></code></strong>; when a character in the string to be found isn&rsquo;t in the keyboard the
+program prints an error message and then exits (returning 1). But since the
+keyboard doesn&rsquo;t have <strong><code>'\n'</code></strong> if you were to type a <strong><code>'</code></strong> and send a
+<strong><code>'\n'</code></strong> before the closing <strong><code>'</code></strong> you might see something like:</p>
+
+<pre><code>    $ ./weasel '!!
+    &gt; '
+
+    '
+    ' not in keyboard " !"#$&lt;%:&gt;&amp;'()*+,-./0123456789;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`{|}~"
+</code></pre>
+
+<p>I showed that <strong><code>'</code></strong> is in the keyboard already; however the user sent a
+<strong><code>\n</code></strong> (hence the secondary prompt <strong><code>&gt;</code></strong> on line two) before literally typing the
+closing <strong><code>'</code></strong> (also line two). But in order to make it clear what character is invalid I
+surround the character with <strong><code>'</code></strong>s so what you actually see after typing the
+closing <strong><code>'</code></strong> and hitting Enter (or however you send the <strong><code>'\n'</code></strong>) there is
+the third blank line; <em>but then the program prints</em> <strong><code>'</code></strong> followed by the
+invalid character (<strong><code>'\n'</code></strong> itself which means another line break) and then
+finally the closing <strong><code>'</code></strong>.  Specifically <strong><code>isspace()</code> characters aren&rsquo;t
+distinctly seen like a letter, digit or symbol is: <code>isprint('\n') == 0 &amp;&amp;
+isspace('\n') == 1</code></strong>. You can add these characters but the output will be
+rather confusing and hard to read.</p>
+
+<h2><strong>4. <a name="obfuscation">Obfuscation</a></strong></h2>
+
+<h3>Techniques</h3>
+
+<p>Skip to <a href="#beauty">Beauty</a>.</p>
+
+<p>The following might be some of the techniques used in this entry:</p>
+
+<ol>
+<li><p>Helpful and descriptive names for all variables and constants (like <strong><code>S</code></strong>)
+as well as some C keywords.</p></li>
+<li><p>The way <strong><code>main()</code></strong> is declared is:</p>
+
+<pre><code>/* Special C main() handler (encapsulation): */
+#define r(main) main
+r(k main(k a, E **V)) {
+</code></pre>
+
+<p>It appears to be recursively defined but is it? And is it truly
+encapsulation? And is it executing code of any kind? It mightn&rsquo;t seem like it
+isn&rsquo;t encapsulation and also isn&rsquo;t executing code but assuming it&rsquo;s
+encapsulation and executing code is it actually nothing? And if it&rsquo;s nothing why
+is it there? If it is something what is it doing? Could it be both? Or maybe it
+really isn&rsquo;t nothing or nothing? :)</p></li>
+<li><p>A special C parser called <strong><code>H()</code></strong>. It might help to observe that there
+might be recursive calls and much of the program might use it. Or so it seems.
+Then again it might not help to not notice it.</p></li>
+<li><p>Digraphs. In their simplest form it&rsquo;s probably not a big deal but consider:
+some source code formatters don&rsquo;t like them at all (neither, incidentally, does
+<strong><code>splint</code></strong>, which completely baulks). There also is a trick; if you try
+translating them then depending upon how you do it there can be functional
+changes in the program!</p></li>
+<li><p>The fact the program can by default print the primorial prime of 97 (<em>but that
+default isn&rsquo;t the default - except when it IS the default!</em>) and yet that number
+isn&rsquo;t seen at all. See also technique #7.</p></li>
+<li><p>Another usual suspect: the source is formatted in a beautiful design that
+could be described artistic; on the other hand some might suggest it&rsquo;s just a
+blob of octets <em>but I disprove this when discussing beauty later on in the next
+section.</em></p></li>
+<li><p>The string <strong>METHINKS IT IS LIKE A WEASEL</strong> is searched for by default
+(except when it&rsquo;s not searched by default) but it&rsquo;s nowhere to be found in the
+source file in that form. Why? Because anyone familiar with the Weasel program
+won&rsquo;t recognise the string and put together what it is by looking at the source
+code.</p></li>
+</ol>
+
+
+<p>In case you wondered deciphering #5 won&rsquo;t decipher #7 (neither will deciphering
+#7 help you decipher #5).</p>
+
+<h3><a name="beauty">Beauty</a></h3>
+
+<p>Skip to <a href="#build">How to build</a>.</p>
+
+<p>On the subject of beauty: the judges stated in the guidelines the following:</p>
+
+<blockquote><p>We want to get away from source that is simply <strong>a compact blob of
+octets.</strong>   Really try to be more creative than <strong>blob coding.</strong> <em>HINT!</em></p></blockquote>
+
+<p>And if you&rsquo;ll notice that although it <em>might look like a compact blob of octets</em>
+at first glance if you look throughout the file you&rsquo;ll see two statements to
+set your thinking straight:</p>
+
+<blockquote><p><strong>NO BLOB CODING</strong></p>
+
+<p><strong>THIS IS NOT A COMPACT BLOB OF OCTETS</strong></p></blockquote>
+
+<p>So you see even if your eyes are trying to deceive you they&rsquo;re quite wrong. Yes
+some of it might look like a blob but this is clearly false; <em>as all good
+programmers know if something is potentially confusing or misleading it should
+be made clear in the comments! :)</em></p>
+
+<h2><strong>5. <a name="build">How to build</a></strong></h2>
+
+<h3><a name="constants">S and N Constants</a></h3>
+
+<p>Skip to <a href="#compiling">Compilation</a>.</p>
+
+<p>These two <strong><code>#define</code></strong>d constants can be redefined at compilation to modify the
+behaviour of the program in a number of ways (see the
+<strong><a href="#compiling">Compilation</a></strong> subsection for example invocations). Both are
+capped to be no greater than <strong><code>SIZE_MAX - 1</code></strong>. This is handled by the C
+preprocessor.</p>
+
+<p><strong><code>S</code></strong></p>
+
+<p>This determines the maximum size of the target string but it <strong>must be at least
+38</strong>; this is because <strong><code>38 &gt;= 29</code></strong> and because <strong><code>strlen("METHINKS IT IS LIKE
+A WEASEL") == 28</code></strong> (which is the default target string - it would hardly be an
+implementation of the Weasel program otherwise).</p>
+
+<p>There is obviously a reason <strong><code>38</code></strong> is the chosen size but the only hints I
+provide are those in <strong><a href="#how">How it works</a></strong> and specifically an Easter egg I
+referenced there (it&rsquo;s <em>not the only Easter egg</em> but it&rsquo;s the only Easter egg I
+won&rsquo;t spoil; yes this ironically and amusingly means I&rsquo;ve left a rotten egg
+somewhere!).</p>
+
+<p><strong><code>N</code></strong></p>
+
+<p>This is the number of offspring per generation. Anything less than 4 will be set
+to 3 (that&rsquo;s not a typo!) and this is part of an Easter egg.</p>
+
+<p>Be aware that depending on the size of <strong><code>S</code></strong> and <strong><code>N</code></strong> (individually and
+together) the program will use varying amounts of memory and the larger the
+values the more memory it&rsquo;ll require.</p>
+
+<h3><a name="compiling">Compilation</a></h3>
+
+<p>Skip to <a href="#portability">Portability</a>.</p>
+
+<p>The following options <strong>must always be passed to the compiler:</strong></p>
+
+<pre><code>    -DQ='typedef' -D'g(o)'='goto o;' -D'w(x)'="x:" -D'H(main)'='r(main)'
+</code></pre>
+
+<p>If you want to increase the number of offspring to <strong><code>50</code></strong> and the size of the
+chromosome to <strong><code>75</code></strong> you would pass to the compiler:</p>
+
+<pre><code>    -DQ='typedef' -D'g(o)'='goto o;' -D'w(x)'="x:" -D'H(main)'='r(main)' -DN=50 -DS=75
+</code></pre>
+
+<p>If you wanted to change <strong><code>N</code></strong> to <strong><code>3</code></strong>:</p>
+
+<pre><code>    -DQ='typedef' -D'g(o)'='goto o;' -D'w(x)'="x:" -D'H(main)'='r(main)' -DN=3
+</code></pre>
+
+<p>Remember that it cannot be less than <strong><code>3</code></strong>; <em>more correctly if it&rsquo;s less than
+4 it&rsquo;s redefined to 3</em> so you could have passed in <strong><code>-DN=2</code></strong> and have the same
+result. Remember too that <strong><code>S</code></strong> cannot be less than <strong><code>38</code></strong>. Both <strong><code>S</code></strong> and
+<strong><code>N</code></strong> are capped at <strong><code>SIZE_MAX - 1</code></strong>.</p>
+
+<h3><a name="portability">Portability</a></h3>
+
+<p>Skip to <a href="#bugs">An aside on bugs</a>.</p>
+
+<p>The entry works for both C99 and C11 (it <em>requires at least C99 even if you
+translate digraphs</em>). The program doesn&rsquo;t require third-party libraries and
+should work on any Unix based system. It works on both 64-bit and 32-bit (but
+inevitably some data type sizes will be smaller and this I believe includes
+<strong><code>SIZE_MAX</code></strong>). I don&rsquo;t think Windows gcc ports would have many issues (if any)
+either but I have no way to test this. I have tested the following systems and
+configurations:</p>
+
+<pre><code>    Fedora 26:
+
+    $ clang --version|head -n1
+    clang version 4.0.1 (tags/RELEASE_401/final)
+    $ gcc --version|head -n1
+    gcc (GCC) 7.3.1 20180130 (Red Hat 7.3.1-2)
+    $ /lib64/libc-2.25.so |head -n1|cut -d',' -f1-1
+    GNU C Library (GNU libc) stable release version 2.25
+    $ lscpu |grep Endian
+    Byte Order:          Little Endian
+
+
+    CentOS Linux release 7.4.1708 (Core)
+
+    $ clang --version|head -n1
+    clang version 3.4.2 (tags/RELEASE_34/dot2-final)
+    $ gcc --version|head -n1
+    gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-16)
+    $ /lib64/libc-2.17.so |head -n1 |cut -d, -f1-1
+    GNU C Library (GNU libc) stable release version 2.17
+    $ lscpu |grep Endian
+    Byte Order:            Little Endian
+
+
+    Fedora 27:
+
+    $ clang --version|head -n1
+    clang version 5.0.1 (tags/RELEASE_501/final)
+    $ gcc --version|head -n1
+    gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
+    $ /lib64/libc-2.26.so |head -n1|cut -d, -f1-1
+    GNU C Library (GNU libc) stable release version 2.26
+    $ lscpu |grep Endian
+    Byte Order:          Little Endian
+
+
+    macOS:
+
+    System Version: macOS 10.13.4 (17E199)
+    Kernel Version: Darwin 17.5.0
+    $ gcc -v
+    Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+    Apple LLVM version 9.1.0 (clang-902.0.39.1)
+    Target: x86_64-apple-darwin17.5.0
+    Thread model: posix
+    InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+    $ uname -srmv
+    Darwin 17.5.0 Darwin Kernel Version 17.5.0: Mon Mar  5 22:24:32 PST 2018; root:xnu-4570.51.1~1/RELEASE_X86_64 x86_64
+</code></pre>
+
+<h4><a name="bugs">An aside</a></h4>
+
+<p>Skip to <a href="#rpm">Installing</a>.</p>
+
+<p>Any undocumented bugs are the result of insolent monkeys tampering with any
+number of things. That includes but is not limited to running the program on a
+non-ASCII system; non little-endian; meddling with <strong><code>S</code></strong> or <strong><code>N</code></strong> too much,
+changing the references to <strong><code>SIZE_MAX</code></strong> to be larger than <strong><code>SIZE_MAX</code></strong> or a
+signed value (<strong><code>size_t</code></strong> is unsigned) or too small of a value; changing data
+types or variables; expecting really long strings - including but not limited to
+the complete works of Shakespeare (hint: <strong><code>isprint('\n') == 0</code></strong> so it won&rsquo;t
+ever find any string with <strong><code>'\n'</code></strong>) - to be found by the program in a quick
+and easy fashion if ever; or any other meddling including being petulant and/or
+unreasonable monkeys. I will say though that there is at least one place I see
+after having won that could be slightly more efficient (can you find it?); I am
+however leaving it as it is because this is what won.</p>
+
+<h3><a name="rpm">Installing</a></h3>
+
+<p>Skip to <a href="#thoughts">Final thoughts</a>.</p>
+
+<p>I have included a RPM spec file for those with a Red Hat based Linux
+distribution; see <a href="rpm.markdown">rpm.markdown</a> for details (including why I implemented
+this) if for some (strange?) reason you&rsquo;re interested.</p>
+
+<h2><strong>6. <a name="thoughts">Final thoughts</a></strong></h2>
+
+<p>Skip to <a href="#winning">Winning comments</a>.</p>
+
+<p>The judges suggested that making them laugh helps entries chance of winning.
+Well <em>laughter helps everything</em> so in case you haven&rsquo;t seen - and <em>even if you
+have seen</em> - Dennis Ritchie&rsquo;s anti-foreword to the ghastly <em>UNIX-HATERS
+Handbook</em> or Ken Thompson&rsquo;s revelation that C and Unix are a hoax (at the end of
+that book) I include it below; because I agree that looking at a lot of twisted
+code must be quite difficult (though maybe not as much as if you were to have to
+look at Microsoft Windows code or code for Windows in any case ? :)) and these
+two things I think are rather amusing (in order of least to most):</p>
+
+<p><a name="dmr">Dennis Ritchie&rsquo;s</a> Anti-Foreword:</p>
+
+<blockquote><p>Anti-Foreword</p>
+
+<p>By Dennis Ritchie
+From: dmr@plan9.research.att.com
+Date: Tue, 15 Mar 1994 00:38:07 EST
+Subject: anti-foreword</p>
+
+<p>To the contributers to this book:</p>
+
+<p>I have succumbed to the temptation you offered in your preface: I do write you
+off as envious malcontents and romantic keepers of memories.  The systems you
+remember so fondly (TOPS-20, ITS, Multics, Lisp Machine, Cedar/Mesa, the Dorado)
+are not just out to pasture, they are fertilizing it from below.</p>
+
+<p>Your judgments are not keen, they are intoxicated by metaphor. In the Preface
+you suffer first from heat, lice, and malnourishment, then become prisoners in
+a Gulag. In Chapter 1 you are in turn infected by a virus, racked by drug
+addiction, and addled by puffiness of the genome.</p>
+
+<p>Yet your prison without coherent design continues to imprison you. How can
+this be, if it has no strong places? The rational prisoner exploits the weak
+places, creates order from chaos: instead, collectives like the FSF vindicate
+their jailers by building cells almost compatible with the existing ones, albeit
+with more features. The journalist with three undergraduate degrees from MIT,
+the researcher at Microsoft, and the senior scientist at Apple might volunteer a
+few words about the regulations of the prisons to which they have been
+transferred.</p>
+
+<p>Your sense of the possible is in no sense pure: sometimes you want the same
+thing you have, but wish you had done it yourselves; other times you want
+something different, but can&rsquo;t seem to get people to use it; sometimes one
+wonders why you just don&rsquo;t shut up and tell people to buy a PC with Windows or a
+Mac. No Gulag or lice, just a future whose intellectual tone and interaction
+style is set by Sonic the Hedgehog. You claim to seek progress, but you succeed
+mainly in whining.</p>
+
+<p>Here is my metaphor: your book is a pudding stuffed with apposite
+observations, many well-conceived. Like excrement, it contains enough undigested
+nuggets of nutrition to sustain life for some. But it is not a tasty pie: it
+reeks too much of contempt and of envy.</p>
+
+<p>Bon appetit!</p></blockquote>
+
+<p>Yes he misspelt <em>&lsquo;contributors&rsquo;</em>! But then again we&rsquo;re talking about obfuscation
+and since it doesn&rsquo;t break his message it&rsquo;s not broken - it&rsquo;s just obfuscated
+albeit not very much (and it still <em>&lsquo;compiles&rsquo;!</em>); and isn&rsquo;t that what this
+contest is about? :)</p>
+
+<p><a name="ken">Ken Thompson&rsquo;s</a> ending:</p>
+
+<blockquote><p>Creators Admit C, Unix Were Hoax</p>
+
+<p>FOR IMMEDIATE RELEASE</p>
+
+<p>In an announcement that has stunned the computer industry, Ken Thompson,
+Dennis Ritchie, and Brian Kernighan admitted that the Unix operating system and
+C programming language created by them is an elaborate April Fools prank kept
+alive for more than 20 years. Speaking at the recent UnixWorld Software
+Development Forum, Thompson revealed the following:</p>
+
+<p>&ldquo;In 1969, AT&amp;T had just terminated their work with the GE/AT&amp;T Multics
+project.  Brian and I had just started working with an early release of Pascal
+from Professor Nichlaus Wirth&rsquo;s ETH labs in Switzerland, and we were impressed
+with its elegant simplicity and power. Dennis had just finished reading Bored of
+the Rings, a hilarious National Lampoon parody of the great Tolkien Lord of the
+Rings trilogy. As a lark, we decided to do parodies of the Multics environment
+and Pascal. Dennis and I were responsible for the operating environment. We
+looked at Multics and designed the new system to be as complex and cryptic as
+possible to maximize casual users' frustration levels, calling it Unix as a
+parody of Multics, as well as other more risque allusions.</p>
+
+<p>&ldquo;Then Dennis and Brian worked on a truly warped version of Pascal, called "A.&rdquo;
+When we found others were actually trying to programs with A, we quickly added
+additional cryptic features and evolved into B, BCPL, and finally C. We stopped
+when we got a clean compile on the following syntax:</p></blockquote>
+
+<pre><code>    for(;P("\n"),R=;P("|"))for(e=C;e=P("_"+(*u++/
+    8)%2))P("|"+(*u/4)%2);
+</code></pre>
+
+<blockquote><p>&ldquo;To think that modern programmers would try to use a language that allowed
+such a statement was beyond our comprehension! We actually thought of selling
+this to the Soviets to set their computer science progress back 20 or more
+years. Imagine our surprise when AT&amp;T and other U.S. corporations actually began
+trying to use Unix and C!  It has taken them 20 years to develop enough
+expertise to generate even marginally useful applications using this 1960s
+technological parody, but we are impressed with the tenacity (if not common
+sense) of the general Unix and C programmer.</p>
+
+<p>&ldquo;In any event, Brian, Dennis, and I have been working exclusively in Lisp on
+the Apple Macintosh for the past few years and feel really guilty about the
+chaos, confusion, and truly bad programming that has resulted from our silly
+prank so long ago.&rdquo;</p>
+
+<p>Major Unix and C vendors and customers, including AT&amp;T, Microsoft,
+Hewlett-Packard, GTE, NCR, and DEC have refused comment at this time.  Borland
+International, a leading vendor of Pascal and C tools, including the popular
+Turbo Pascal, Turbo C, and Turbo C++, stated they had suspected this for a
+number of years and would continue to enhance their Pascal products and halt
+further efforts to develop C. An IBM spokesman broke into uncontrolled laughter
+and had to postpone a hastily convened news conference concerning the fate of
+the RS/6000, merely stating &ldquo;Workplace OS will be available Real Soon Now.&rdquo; In a
+cryptic statement, Professor Wirth of the ETH Institute and father of the
+Pascal, Modula 2, and Oberon structured languages, merely stated that P. T.
+Barnum was correct.</p></blockquote>
+
+<p><strong>So is it a hoax about a non-hoax, a non-hoax about a hoax, a non-hoax about a
+non-hoax or is it a hoax about a hoax ? :) And if it&rsquo;s any of those what does it
+mean about Unix and C?</strong> And if a hoax is involved <em>what is the hoax?</em> The pedant
+and Tolkienist that I am has to state that <strong>Tolkien didn&rsquo;t consider The Lord of
+the Rings a trilogy</strong> <em>(and he made that very clear)</em> but that doesn&rsquo;t take away
+from the humour by any stretch (<em>if anyone wants me to elaborate or debate the
+matter do send me an email - I love Tolkien&rsquo;s legendarium and having another
+person to talk about it with is more than welcome!</em>). Ken suggested that there
+is a lack of common sense but since he was part of its creation I don&rsquo;t think
+it&rsquo;s a bad thing; <strong>on the contrary it makes all of us C programmers even more
+talented! :)</strong> I do wonder if he tested that bit of C code though:</p>
+
+<pre><code>    for(;P("\n"),R=;P("|"))for(e=C;e=P("_"+(*u++/
+    8)%2))P("|"+(*u/4)%2);
+</code></pre>
+
+<p>How is <strong><code>R=;</code></strong> valid? Since I don&rsquo;t have the context maybe there is something
+I&rsquo;m missing but either way it&rsquo;s a funny piece. It could also be for irony itself
+(actually I had previously thought of somehow implementing something like that
+for the contest but decided for the message by itself in the end). I would
+prefer believing that whether true or not.</p>
+
+<h2><strong>7. <a name="winning">Winning comments, thanks, dedications, links, etc.</a></strong></h2>
+
+<p>I feel incredibly honoured, privileged and I am extremely happy and proud to
+have won! I am more proud and happy about this than anything I have ever done in
+my life and I don&rsquo;t think there can be anything else I can be more proud of in
+the future (except winning again should I find or think of another interesting
+thing to try and implement in an obfuscated way). Because winning is one thing;
+but to be included amongst very clever and talented veterans whom I highly
+respect is an incredible badge of honour that I will proudly wear (literally too
+as I hope to get my entry on a shirt) for the rest of my life. This type of
+badge is something I feel most only dream of but never come close to earning.
+That I did is by far the best feeling I can think of.</p>
+
+<p>Thank you Simon Cooper, Landon Curt Noll and Leonid A. Broukhis, and thank you
+to everyone who has been an important and special part of my life. I want to
+specially name some:</p>
+
+<p>I dedicated this program to my beloved but recently late dog Venus; instead of
+drowning in grief I channelled it to creativity. And to have won a contest
+requiring creativity, cleverness and novelty is a tribute to an equally
+creative, clever and unique dog that she was. I miss you terribly Venus but I&rsquo;m
+so happy to have had you in my life.</p>
+
+<p>But I want to also dedicate it to (and thank) my dear friend Martijn Schoemaker
+whom provided me with the spark a very long time ago (and whom has stood by me
+and helped me in more ways than he can know - <strong><code>#including C</code></strong>); if it wasn&rsquo;t
+for you Martijn I wouldn&rsquo;t have been able to win so consider this a recursive
+thank you thank you! :) I would also like to give thanks and much love to my
+best and closest friend Vicky Wilmore who means the absolute world to me; thank
+you for being such a wonderfully beautiful person and friend - that truly is
+what &lsquo;just you&rsquo; means, sweetheart, and don&rsquo;t you forget it! &lt;3 Finally I would
+like to thank my mother for being the best mum anyone could ask for, who&rsquo;s
+always been here for me and whom I also inherit the keen analytical mind from. I
+love you all!</p>
+
+<p>I want to also thank Dave Burton for acknowledging me in his hint.markdown file
+for as he put it &lsquo;being relentless with pursuit of bugs&rsquo;. To think that it was
+circumstantial to my entry too makes it all the more unlikely but that doesn&rsquo;t
+take away the significance of it; for I am a very symbolic person and being
+acknowledged for this type of thing is great but to be acknowledged for it by
+someone who has won more than once is even more special to me: thank you Dave!
+It means a great deal to me and I am glad I could help! :)</p>
+
+<p>I would also like to say to the judges about their commentary as well as the
+category title: they&rsquo;re all very dear to me and that includes not just the
+remarks but the example invocations. They fit my views precisely. As for the
+test-strings.txt file modifications: very amusing and I certainly do not object.
+Thank you again for such an honour and privilege! That this isn&rsquo;t a dream is the
+best reality imaginable! :)</p>
+
+<p>Congratulations to one and all for winning; it&rsquo;s an honour to win such a
+wonderful contest requiring creativity, cleverness, uniqueness and
+inventiveness but to win beside all the other wonderful entries is truly
+special!</p>
+
+<p>Shortly after the entry has been published I will have more information on the
+winning entry at <a href="https://ioccc.xexyl.net/2018/weasel">https://ioccc.xexyl.net/2018/weasel</a> including how to
+contact me (besides what&rsquo;s already published on the IOCCC website). There also
+is an <a href="https://ioccc.xexyl.net/2018/weasel/errata">errata page</a> so that in the case I find anything I would like to
+correct in the documentation or other supplementary files I can note them there.</p>
+
+<p>If you wish to contact me please do so; although I have a Twitter account I don&rsquo;t
+really use it so please send me an email instead. I do have Facebook as of a
+little under two years but I&rsquo;ll worry about that at such a time (I presume in
+fact &lsquo;if&rsquo;) it becomes relevant.</p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2018, 
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

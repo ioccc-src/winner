@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most notable and best tool</title>
+</head>
+<body>
+<h1>Most notable and best tool</h1>
+
+<p>Alex Deckmyn<br>
+<a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#x61;&#x6c;&#x65;&#x78;&#46;&#100;&#x65;&#x63;&#107;&#109;&#121;&#110;&#64;&#103;&#109;&#x61;&#105;&#108;&#46;&#x63;&#111;&#x6d;">&#97;&#108;&#x65;&#x78;&#46;&#x64;&#x65;&#99;&#107;&#109;&#x79;&#x6e;&#x40;&#x67;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To build:</h3>
+
+<pre><code>make deckmyn
+</code></pre>
+
+<h3>To run:</h3>
+
+<pre><code># A shell interpreter with proper backtick interpolation is required
+./deckmyn "`cat deckmyn.c`" "`cat musicfile.txt`" &gt; sheetmusic.pbm
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>./deckmyn "`cat deckmyn.c`" "`cat example_greensleeves`" &gt; greensleeves.pbm
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>The C of this entry is definitely sharp. The program cleverly uses its own
+source at runtime to define the notes, time signature and accidental bitmaps.</p>
+
+<p>In addition to sheet music, this program is also able, given the right input,
+to generate an image of a 10-pin DIP chip (a sound processor?).</p>
+
+<p>Ironically, the way this entry is called from the command line is an abuse of C Shell.
+Please use Bourne-family shells to run this entry.</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h1>Example use</h1>
+
+<p>You need the source code and example input (either one of the example files, or manual input as below) ready. And a program capable of showing .pbm bitmap format.</p>
+
+<pre><code>./deckmyn "`cat deckmyn.c`" "`cat example_greensleeves`" &gt; greensleeves.pbm
+display greensleeves.pbm
+
+./deckmyn "`cat deckmyn.c`" "KF m44c4 c4 g4 g4 :  a4 a4 g2 :; " &gt; short_bass.pbm
+display short_bass.pbm
+</code></pre>
+
+<h1>Description</h1>
+
+<p>Every major C competition should have an entry capable of producing C major.
+This is a music notation program. It produces bitmaps (.pbm) of music based on ASCII input. A full manual is added as a separate file. Some musical examples are also included.</p>
+
+<p>The program is capable of printing notes, rests, (double) bar lines and accidentals on a single melodic line (multiple staves). No chords, polyphony etc.</p>
+
+<p>The program expects <em>two command line arguments</em>. The first is a (very long) string that contains the complete music font. Note that it should <em>not</em> be given as a file name! The default music font is encoded in the (whitespace of the) source code deckmyn.c itself. Therefore, the first argument should be &ldquo;<code>cat deckmyn.c</code>&rdquo;.</p>
+
+<p>The second command line argument is the music itself. This is, again, a string, not a file name. All music signs are entered as tokens of exactly 3 characters. The code is very sensitive to bad spacing! So for instance, if you use a file to write the music (e.g. example_greensleeves), you should keep in mind that newline is also a character!</p>
+
+<h1>Internals</h1>
+
+<p>To minimise the memory footprint, this program has <em>no variable declarations at all</em>, except for the arguments to main(). The only available memory space is from the command line arguments and count (argv and argc). Parts of argv are cast as integer when values under 0 or beyond 127 are expected.</p>
+
+<p>The &ldquo;music font&rdquo; is defined by the source code itself. The first few lines are not part of the font definition, as this memory space will modified by the program. (So as required by the rules, it is only a (memory) copy of the source code that is modified.)</p>
+
+<p>As there is no memory available, output is directly to stdout, byte by byte, from the top left to the bottom right pixel.</p>
+
+<h1>LIMITATIONS</h1>
+
+<p>The memory locations of argv are used for various purposes. Therefore, the program name (default &ldquo;deckmyn&rdquo;) must be <em>at least 4 characters long</em>, including possibly the path. This, along with the ending &lsquo;\0&rsquo;, gives minimum 5 bytes of useful memory space. Otherwise, the program may attempt to write outside the string.</p>
+
+<p>The code is quite sensitive. Errors in the input can lead to strange results. The code does not read beyond the end of the music input, but that is about the only error checking available. Any input that is not according to the rules in the MANUAL, may cause errors.</p>
+
+<p>The program has no special hardware limitations or requirements, other than 8bit char (signed or unsigned) and two&rsquo;s complement negatives.</p>
+
+<p>The limitations of using char as counters for e.g. the number of music staves are minor. 127 staves to a page is rather a lot.</p>
+
+<h1>Obfuscations</h1>
+
+<p>The code has no declared variables other than the command line variables. Not even pointers (we all know how messy code can get with too many pointers!). As more than one variable needs values beyond 127, parts of the command line memory are cast as integer using a macro.</p>
+
+<ul>
+<li>The formatting of the code is in fact necessary, as this is the definition of the music font. It is therefore not an obfuscation.</li>
+<li>The use of only argv/argc as memory locations is a matter of reducing the memory footprint. Again, it is not an obfuscation.</li>
+<li>Calling the only remaining variables, and the two defined macros, c and C, is merely a matter of conforming to the standard WYSIWYG paradigm common in commercial notation programs (What You C is What You Get). So once again it is not an obfuscation. Anyway, it&rsquo;s a C coding contest, right?</li>
+<li>Randomly using the numerical (ASCII) value for characters is compensated for by replacing some numbers by a character representation. On average, therefore, it is not an obfuscation.</li>
+<li>Randomly changing the way the elements of argv are addressed is a matter of maintaining a diversified code base. It is therefore not&hellip; Oh allright.</li>
+<li>The actual output of the music is done by one print command including a 800+ character nested conditional expression.</li>
+<li>printf is also used for its return value.</li>
+</ul>
+
+
+<hr />
+
+<!--
+(c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2015,
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

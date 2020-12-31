@@ -1,0 +1,176 @@
+9th International Obfuscated C Code Contest Rules
+
+Copyright (c) 1992, Landon Curt Noll & Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.
+
+    Obfuscate:  tr.v.  -cated, -cating, -cates.  1. a.  To render obscure.
+		b.  To darken.  2. To confuse:  Their emotions obfuscated their
+		judgment.  [LLat. obfuscare, to darken : ob(intensive) +
+		Lat. fuscare, to darken < fuscus, dark.] -obfuscation n.
+		obfuscatory adj.
+
+
+GOALS OF THE CONTEST:
+
+    * To write the most Obscure/Obfuscated C program under the rules below.
+    * To show the importance of programming style, in an ironic way.
+    * To stress C compilers with unusual code.
+    * To illustrate some of the subtleties of the C language.
+    * To provide a safe forum for poor C code.  :-)
+
+
+RULES:
+
+    To help us with the volume of entries, we ask that you follow these rules:
+
+    1) Your entry must be a complete program.
+
+    2) Your entry must be <= 3217 bytes in length.  The number of characters
+       excluding whitespace (tab, space, newline), and excluding any ; { or }
+       followed by either whitespace or end of file, must be <= 1536.
+
+    3) Your entry must be submitted in the following format:
+
+---entry---
+rule:	1992
+title:	title of entry  (see comments below)
+entry:	Entry number from 0 to 7 inclusive
+date:	Date/time of submission   (use the format of the date command)
+host:	Machine(s) and OS(s) under which your entry was tested
+	Use tab indented lines if needed
+---remark---
+    Place remarks about this entry in this section.  It would be helpful if
+    you were to indent your remarks with 4 spaces, though it is not a
+    requirement.  Also, if possible, try to avoid going beyond the 79th
+    column.  Blank lines are ok.
+---author---
+name:	your name
+org:	School/Company/Organization
+addr:	postal address
+	use tab indented lines to continue
+	don't forget to include the country
+email:  Email address from a well known site or registered domain.
+        If you give several forms, list them on separate tab indented lines.
+anon:	y or n	   (y => remain anonymous, n => ok to publish this info)
+---info---
+If your program needs an info file, place a uuencoded copy if it in
+this section.  In the case of multiple info files, use multiple info
+sections.  If your entry does not need a info file, skip this section.
+---build---
+Place a uuencoded copy of the command(s) used to compile/build your program
+in this section.  It must uudecode into a file named 'build'.  The resulting
+file must be 255 bytes or less.
+---program---
+Place a uuencoded copy of your program in this section.  It must uudecode
+into a file named is 'prog.c'.  The resulting file must follow rule #2.
+---end---
+
+      Regarding the above format:
+
+	* The title must match expression: [a-zA-Z0-9_+=,][a-zA-Z0-9_+=,.-]*
+	  and must be 1 to 10 characters in length.
+
+	  It is suggested, but not required, that the title should
+	  incorporate your username; in the case of multiple authors,
+	  consider using parts of the usernames of the authors.
+
+	* All text outside of the above format will be kept confidential,
+	  unless otherwise stated.  Notes about an author of a winning entry
+	  will be published unless 'y' was given to that author's 'anon' line.
+
+	* To credit multiple authors, include an ---author--- section for
+	  each author.  Each should start with ---author--- line, and
+	  should be found between the ---entry--- and ---build--- sections.
+
+	* The entry's remarks should include:
+	    - what this program does
+	    - how to run the program (sample args or input)
+	    - special compile or execution instructions, if any
+	    - special filename requirements (see rule 4 and 5)
+	    - information about any ---data--- files
+	    - why you think the program is obfuscated
+	    - note if this entry is a re-submission of a previous entry.
+	    - any other remarks (humorous or otherwise)
+
+        * Info files should be used only to supplement your entry.  They 
+	  should not be required to exist.
+
+	  If your entry does not need an info file, skip the ---info---
+	  section.  If your entry needs multiple info files, use multiple 
+	  ---info--- sections, one per info file.  You should describe
+	  each info file in the ---remark--- section.
+
+    4) If your entry is selected as a winner, it will be modified as follows:
+
+	   'build' is incorporated into a makefile, and 'build' is removed
+	   'prog.c' is renamed to your entry's title, followed by an optional
+	       digit, followed by '.c'
+	   your entry is compiled into a file with the name of your entry's
+	       title, possibly followed by a digit
+
+       If your entry requires that a build file exist, state so in your
+       entry's remark section.  The makefile will be arranged to execute a
+       build shell script containing the 'build' information.  The name of
+       this build shell script will be your entry's title, possibly followed
+       by a digit, followed by '.sh'.
+
+       If needed, your entry's remarks should indicate how your entry must
+       be changed in order to deal with the new filenames.
+
+    5) The build file, the source and the resulting executable should be
+       treated as read-only files.  If your entry needs to modify these files,
+       it should make and modify a copy of the appropriate file.  If this
+       occurs, state so in your entry's remarks.
+
+    6) Your entry must be written in C.  Use of ANSI C is preferred.  Use
+       of common C (K&R + extensions) is permitted, as long as it does not
+       cause major problems for ANSI C compilers.
+
+    7) The program must be of original work.  All programs must be in the
+       public domain.  All copyrighted programs will be rejected.
+
+    8) Entries must be received prior to 09-May-92 0:00 UTC.  (UTC is
+       essentially equivalent to Greenwich Mean Time)  Email your entries to:
+
+		...!{apple,pyramid,sun,uunet}!hoptoad!obfuscate
+		obfuscate@toad.com
+
+       We request that your message use the subject 'ioccc entry'.
+
+       If possible, we request that you hold off on Emailing your entries
+       until 1-Mar-92 0:00 UTC.  Early entries will be accepted, however.
+       We will attempt to email a confirmation to the the first author for
+       all entries received after 1-Mar-92 0:00 UTC.
+
+    9) Each person may submit up to 8 entries per contest year.  Each entry
+       must be sent in a separate Email letter.
+
+   10) Entries requiring human interaction to be built are not allowed.  
+       Compiling an entry produce a file (or files) which may be executed.
+
+
+FOR MORE INFORMATION:
+
+    The Judging will be done by Landon Noll and Larry Bassel.  Please send
+    questions or comments (but not entries) about the contest, to:
+
+	...!{apple,pyramid,sun,uunet}!hoptoad!judges
+	judges@toad.com
+
+    The rules and the guidelines may (and often do) change from year to
+    year.  You should be sure you have the current rules and guidelines
+    prior to submitting entries.  The IOCCC rules, guidelines and mkentry
+    program may be obtained from the judges using the Email address above.
+
+    See the official IOCCC web site:
+
+	http://www.ioccc.org
+
+    for more updated information.
+
+
+chongo <Landon Curt Noll> /\cc/\  	hoptoad!chongo
+Larry Bassel			  	{uunet,ucbvax,cbosgd}|sun!lab

@@ -1,0 +1,20 @@
+# The most obscure program
+
+Lennart Augustsson
+<chalmers!augustss> 
+
+## Judges' comments:
+
+An interesting use of a recursive call to main.  Compile and execute
+without args.  What is the initial value of b, and does it alter the
+action of the program?
+
+If you let it, the program will continue to print a numerical sequence
+(can you guess in what base it is printed?) until you run out of
+memory or until they sell your computer, which ever comes first.
+
+Copyright (c) 1985, Landon Curt Noll & Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.

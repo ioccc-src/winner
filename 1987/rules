@@ -1,0 +1,167 @@
+Copyright (c) 1987, Landon Curt Noll & Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.
+
+WARNING: The rules and mailing address for the contest change from year
+         to year.  Be sure that you consult the current set of rules
+	 before submitting entries.
+------------------------------------------------------------------------------
+
+Subject: 4th International Obfuscated C Code Contest Rules
+Newsgroups: comp.lang.c,comp.unix.wizards
+Keywords: rules,1987,obfuscate,contest
+
+GOALS OF THE CONTEST:
+
+	* To write the most Obscure/Obfuscated C program under the rules below.
+	* To show what should NOT be done in C programs.
+	* To provide a safe forum for poor C code.  :-)
+
+RULES:
+	1) The source must be 1024 characters long or less.  NO EXCEPTIONS!
+
+	2) To help us process your entries, we ask that you submit entries
+	   in the following format:   (please include the --- lines)
+
+---start of header items---
+name:
+org:
+email address:
+postal address:
+environment:
+remarks:
+---start of entry---
+X	<place obfuscated source of 1024 characters or less here>
+X	<add a leading X to each line to avoid problems with mailers>
+X	<leading X's do not count toward the source character count>
+X	<the first X of each source line will be removed prior to compilation>
+X	<newlines count as 1 character>
+X	<assume a standard 8 character tab stop>
+---end of entry---
+
+	3) Regarding the header items:
+
+	    * All header items except 'remark' are optional.  If you do not
+	      wish to answer an item, indicate so by the string:   ***NONE***
+	      Any text outside of the above format will be kept confidential.
+
+	    * You can remain anonymous.   If the name item is:  ***ANONYMOUS***
+	      all items except the 'remarks' item will not be relased.
+
+	    * Indicate the name of your Company or School in the 'org' item.
+
+	    * The 'email address' item asks for a network path from a major
+	      site (such as amdahl) to your mailbox.
+
+	    * If you give a 'postal address', please include your Country.
+
+	    * Give the machine and operating system (i.e., Un*x version) on
+	      which your program ran.
+
+	    * The 'remarks' item is not optional.  Please indicate:
+		- how to execute or compile if something special is required
+		- type of input or argument needed, if applicable
+		- what this program does
+		- any other remarks you wish to make
+
+	    * If you need more than one line on a header item, place
+	      tab or space characters at the beginning of each additional line.
+
+	4) The entry should be written in a common C. (K&R + common extensions)
+
+	5) The program must be of original work.  All programs must be
+	   in the public domain.  All copyrighted programs will be rejected.
+
+	6) Entries must be received before 30-May-87 0:00 GMT.
+	   Email your entries to:
+	   
+			...!amdahl!obfuscate
+
+	   Amdahl talks to hplabs, decwrl, pyramid, seismo and cbosgd.
+	   We will attempt to Email a confirmation of receipt of contest
+	   entries, however since Email is not reliable you may not receive it.
+	   People are encouraged to submit entries via Email, however
+	   one may mail entries the following postal address:
+
+		Landon Curt Noll
+		Amdahl Corp.
+		1250 E. Arques Ave.   M/S 316
+		P.O. Box 3470
+		Sunnyvale, CA
+		94088-3470
+		U.S.A.
+
+	  Write the words: "International Obfuscated C Code Contest" near the
+	  bottom left corner of the envelope.
+
+	8) Contest entries sent in by post should indicate where TAB characters
+	   are to be placed, otherwise space characters will be assumed.  Each
+	   line will be assumed to contain a newline character.  The leading
+	   'X' will serve to indicate where each source line starts.
+
+	9) Each person may submit up to 5 entries.  Multiple entries must
+	   be sent in separate Email letters or postal envelopes.
+
+	10) People are encouraged to examine winners of the previous
+	    contests.  A copy of these entries was posted to mod.sources
+	    on or about 12-Mar-87.  Contact the mod.sources moderator
+	    if you missed that article.  Keep in mind that rules change from
+	    year to year, so some winning entries may not be valid
+	    entries this year.  Also what was unique and novel one
+	    year can get 'old' the next year.
+
+
+ANNOUNCEMENT OF WINNERS:
+
+	* First announcement will be at the Summer 87 Usenix BOF.
+
+	* An announcement will be posted to mod.announce near
+	  mid June 1987 stating to which newsgroup the winners
+	  have been posted.
+
+	* An article containing the winning entries will be published
+	  in a future issue of the "Micro/Systems Journal".
+
+	* Winners receive international fame and flames!  :-)
+
+
+JUDGING:
+	Awards will be given to the best entry in a number of categories.
+	The actual category list will vary depending on the types of entries
+	we receive.  At the moment, we are considering using the following:
+
+		* The best small one line program
+		* The most obscure algorithm
+		* The worst abuse of the C preprocessor  (note warnings below)
+		* The strangest source layout
+		* The most useful obfuscated program
+		* <anything else so strange that it deserves an award>
+
+	Extra points will be given for programs which:
+
+		* pass lint without complaint
+		* do something quasi-interesting
+		* are portable
+		* are unique in their obfuscation style
+		* are concise
+
+	Points will be taken away for programs that:
+
+		* are very hardware or Un*x version specific
+		* dump core or have compiler warnings
+		  (we won't take points away if you warn us in the remark item)
+		* fail to compile
+		* obfuscate only by overuse of #defines
+		  (you should do this ONLY if your use is unusual)
+		* are similar to previous winners
+		* are similar to previous losers  :-)
+
+	The Judging will be done by Landon Noll and Larry Bassel.  
+	Comments & questions (not entries) about the contest can be Emailed to:
+
+			 ...!amdahl!judges
+
+chongo <Landon Curt Noll> /\cc/\
+Larry Bassel

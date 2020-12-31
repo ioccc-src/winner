@@ -1,0 +1,316 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most likely to be awarded</title>
+</head>
+<body>
+<h1>Most likely to be awarded</h1>
+
+<p>Marcin Ciura <a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#58;&#x6d;&#x63;&#105;&#x75;&#114;&#97;&#64;&#103;&#109;&#97;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;">&#x6d;&#99;&#x69;&#117;&#x72;&#97;&#64;&#103;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a><br>
+Twitter: @mciura</p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To use:</h3>
+
+<pre><code>make
+
+./prog &lt; text
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>./prog &lt; Makefile
+./prog &lt; hint.text
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>This text was processed by prog. You may get confused.
+We&rsquo;re not really sure: prog.c wasn&rsquo;t commented.
+Who has been thoroughly puzzled by prog? Also how obfuscated is prog?
+Having been written in C, how large of a vocabulary has it?</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h1>The Program</h1>
+
+<p>&ldquo;The Elements of Style&rdquo; by prof. William Strunk, Jr. and E. B. White
+is well known for its dislike of the passive voice.  Direct, vigorous,
+active constructions were instead recommended by the authors.
+The development of this program has been driven by this tenet.</p>
+
+<p>Only passive sentences from the standard input are output.  The offending
+part(s) of each sentence will be highlighted.  Several kinds of passive
+constructions are recognized:</p>
+
+<ul>
+<li>Plain passive voice.
+Foo was bazzed by bar.</li>
+<li>Passive voice with &ldquo;get&rdquo;.
+I got almost quuxed.</li>
+<li>Contractions.
+I&rsquo;m not really quuxed: foo wasn&rsquo;t bazzed.</li>
+<li>Questions.
+Who has been quuxed?  Was foo indeed bazzed?  How was it bazzed?</li>
+<li>Clause-initial inversion.
+Also bazzed is bar.</li>
+</ul>
+
+
+<p>Sentences are never broken by periods that follow abbreviations and
+initials.  Both regular and irregular past participles are properly
+dealt with.  Note that some words are red herrings: even though their
+ending is -ed, they are not past participles.</p>
+
+<h1>The Big String</h1>
+
+<p>Here is the purpose of every byte inside the <strong><code>c[]</code></strong> string:</p>
+
+<ul>
+<li>0-9:  highlighting passive constructions in the output;</li>
+<li>10-50:  classifying characters - called by <strong><code>V(4)</code></strong>;</li>
+<li>52:  outputting the newline character;</li>
+<li>51-187:  tokenizing text and detecting passive constructions - two
+type A state machines, called by <strong><code>V(2)</code></strong> and <strong><code>V(3)</code></strong>;</li>
+<li>186-2786:  determining word categories (past participles, present
+simple and past simple forms of &ldquo;to be&rdquo;, other forms of &ldquo;to be&rdquo;,
+adverbs, wh-words, and other words) and recognizing abbreviations -
+two type B state machines, called by <strong><code>V(808)</code></strong> and <strong><code>V(205)</code></strong>.</li>
+</ul>
+
+
+<h1>The State Machines</h1>
+
+<p>I heard you don&rsquo;t like state machines so I put a state machine in your
+state machine so you can reject this entry while you reject this entry.</p>
+
+<p>Both types of state machines in the program are Mealy machines: we can
+think of their transitions as triples (<strong><code>transition_label</code></strong>,
+<strong><code>next_state</code></strong>, <strong><code>output</code></strong>).</p>
+
+<h2>Type A</h2>
+
+<p>A state of type A state machine consists of eight transitions whose
+representations occupy consecutive bytes.  The byte
+<strong><code>c[3 + 8*state + transition_label]</code></strong> contains
+<strong><code>(unsigned char)(30 + 5*next_state + output)</code></strong>.</p>
+
+<p>The <code>transition_label</code> is either one of character classes:</p>
+
+<ul>
+<li><strong><code>nil</code></strong> = 0,</li>
+<li><strong><code>space</code></strong> = 1,</li>
+<li><strong><code>new_line</code></strong> = 2,</li>
+<li><strong><code>uppercase</code></strong> = 3,</li>
+<li><strong><code>lowercase</code></strong> = 4,</li>
+<li><strong><code>period</code></strong> = 5,</li>
+<li><strong><code>bang_question</code></strong> = 6,</li>
+<li><strong><code>punctuation</code></strong> = 7,</li>
+</ul>
+
+
+<p>or one of word classes:</p>
+
+<ul>
+<li><strong><code>adverb</code></strong> = 0,</li>
+<li><strong><code>other</code></strong> = 2,</li>
+<li><strong><code>past_participle</code></strong> = 3,</li>
+<li><strong><code>to_be</code></strong> = 4,</li>
+<li><strong><code>are_were</code></strong> = 5,</li>
+<li><strong><code>wh_word</code></strong> = 6 (cf. the <strong><code>output</code></strong> of type B state machines).</li>
+</ul>
+
+
+<p>The <strong><code>output</code></strong> is either one of:</p>
+
+<ul>
+<li><strong><code>end_of_text</code></strong> = 0,</li>
+<li><strong><code>sentence_start</code></strong> = 1,</li>
+<li><strong><code>sentence_end</code></strong> = 2,</li>
+<li><strong><code>token_end</code></strong> = 3,</li>
+<li><strong><code>ignore</code></strong> = 4,</li>
+</ul>
+
+
+<p>or one of</p>
+
+<ul>
+<li><strong><code>passive_construction_start</code></strong> = 1,</li>
+<li><strong><code>ignore</code></strong> = 2,</li>
+<li><strong><code>passive_construction_end</code></strong> = 3.</li>
+</ul>
+
+
+<p>Type A state machines run continuously.  Their state is kept in
+<strong><code>k[2]</code></strong> and <strong><code>k[3]</code></strong>.</p>
+
+<p>Below are sample steps of scanning a sequence of characters with
+classes <strong><code>uppercase</code></strong>, <strong><code>lowercase</code></strong>, <strong><code>period</code></strong>, <strong><code>space</code></strong>,
+and <strong><code>uppercase</code></strong>.</p>
+
+<ul>
+<li><strong><code>state</code></strong> = 7, <strong><code>transition_label</code></strong> = 3 (<strong><code>uppercase</code></strong>), <strong><code>output</code></strong> = <strong><code>sentence_start</code></strong></li>
+<li><strong><code>state</code></strong> = 14, <strong><code>transition_label</code></strong> = 4 (<strong><code>lowercase</code></strong>), <strong><code>output</code></strong> = <strong><code>ignore</code></strong></li>
+<li><strong><code>state</code></strong> = 15, <strong><code>transition_label</code></strong> = 5 (<strong><code>period</code></strong>), <strong><code>output</code></strong> = <strong><code>token_end</code></strong></li>
+<li><strong><code>state</code></strong> = 13, <strong><code>transition_label</code></strong> = 1 (<strong><code>space</code></strong>), <strong><code>output</code></strong> = <strong><code>token_end</code></strong></li>
+<li><strong><code>state</code></strong> = 18, <strong><code>transition_label</code></strong> = 3 (<strong><code>uppercase</code></strong>), <strong><code>output</code></strong> = <strong><code>sentence_end</code></strong></li>
+</ul>
+
+
+<p>And here are sample steps of scanning tokens with classes <strong><code>to_be</code></strong>,
+<strong><code>adverb</code></strong>, <strong><code>past_participle</code></strong>.</p>
+
+<ul>
+<li><strong><code>state</code></strong> = 8, <strong><code>transition_label</code></strong> = 4 (<strong><code>to_be</code></strong>), <strong><code>output</code></strong> = <strong><code>passive_construction_start</code></strong></li>
+<li><strong><code>state</code></strong> = 22, <strong><code>transition_label</code></strong> = 0 (<strong><code>adverb</code></strong>), <strong><code>output</code></strong> = <strong><code>ignore</code></strong></li>
+<li><strong><code>state</code></strong> = 22, <strong><code>transition_label</code></strong> = 3 (<strong><code>past_participle</code></strong>), <strong><code>output</code></strong> = <strong><code>passive_construction_end</code></strong></li>
+</ul>
+
+
+<h2>Type B</h2>
+
+<p>Type B state machines are built by a variant of the algorithm described
+in the paper
+<em><a href="http://sun.aei.polsl.pl/~mciura/publikacje/lexicon.pdf">How to squeeze a lexicon</a></em>.
+Their states are represented as interlaced sparse arrays of transitions.</p>
+
+<p>The <strong><code>transition_label</code></strong> is one of:</p>
+
+<ul>
+<li><strong><code>word_start</code></strong> = 0,</li>
+<li><strong><code>period_or_apostrophe</code></strong> = 1,</li>
+<li><strong><code>a_z_letter</code></strong> = 2..27.</li>
+</ul>
+
+
+<p>The <code>output</code> is either one of word classes:</p>
+
+<ul>
+<li><strong><code>adverb</code></strong> = 0,</li>
+<li><strong><code>ignore</code></strong> = 1,</li>
+<li><strong><code>other</code></strong> = 2,</li>
+<li><strong><code>past_participle</code></strong> = 3,</li>
+<li><strong><code>to_be</code></strong> = 4,</li>
+<li><strong><code>are_were</code></strong> = 5,</li>
+<li><strong><code>wh_word</code></strong> = 6,</li>
+</ul>
+
+
+<p>or</p>
+
+<ul>
+<li><strong><code>ignore</code></strong> = 1,</li>
+<li><strong><code>abbreviation</code></strong> = 2.</li>
+</ul>
+
+
+<p>The byte <strong><code>c[186 + (state + transition_label)] = (unsigned char)(2 + transition_label + 28 * output)</code></strong>.</p>
+
+<p>The byte <strong><code>c[836 + 2*(state + transition_label)] =</code></strong></p>
+
+<ul>
+<li><strong><code>' '</code></strong> when <strong><code>next_state / 376 == 0</code></strong>,</li>
+<li><strong><code>';'</code></strong> when <strong><code>next_state / 376 == 1</code></strong>.</li>
+</ul>
+
+
+<p>The byte <strong><code>c[837 + 2*(state + transition_label)] =</code></strong></p>
+
+<ul>
+<li><strong><code>' '</code></strong> when <strong><code>next_state / 94 % 4 == 0</code></strong>,</li>
+<li><strong><code>';'</code></strong> when <strong><code>next_state / 94 % 4 == 1</code></strong>,</li>
+<li><strong><code>'{'</code></strong> when <strong><code>next_state / 94 % 4 == 2</code></strong>,</li>
+<li><strong><code>'}'</code></strong> when <strong><code>next_state / 94 % 4 == 3</code></strong>.</li>
+</ul>
+
+
+<p>The byte <strong><code>c[2136 + (state + transition_label)] = (unsigned char)(32 + next_state % 94)</code></strong>.</p>
+
+<p>A type B state machine starts in a given <strong><code>state</code></strong> with <strong><code>output</code></strong>
+set to <strong><code>ignore</code></strong>.  It scans a word backwards, converting character by
+character to <strong><code>transition_label</code></strong>.  When it meets <strong><code>word_start</code></strong>, it
+returns, leaving the most recently stored <strong><code>output</code></strong> in <strong><code>v</code></strong>.
+It also returns when
+<strong><code>c[186 + (state + transition_label)] != (unsigned char)(2 + transition_label + 28 * output)</code></strong>,
+i.e. when the <strong><code>transition_label</code></strong> in the byte mismatches the
+<strong><code>transition_label</code></strong> used to compute the index.  Otherwise, if the
+<strong><code>output</code></strong> in this byte differs from <strong><code>ignore</code></strong>, the state machine
+stores it in <strong><code>v</code></strong>.  Regardless of the value of the <strong><code>output</code></strong>,
+it also assigns <strong><code>next_state</code></strong> to <strong><code>state</code></strong> and proceeds to scan
+the previous character.  The state machine that determines the word
+class is set up so that it never returns <strong><code>ignore</code></strong>.</p>
+
+<p>Below are sample steps of scanning the word &ldquo;chiefly&rdquo;.</p>
+
+<ul>
+<li><strong><code>state</code></strong> = 623, <strong><code>transition_label</code></strong> = 26 (&lsquo;y&rsquo;), <strong><code>output</code></strong> = <strong><code>other</code></strong></li>
+<li><strong><code>state</code></strong> = 602, <strong><code>transition_label</code></strong> = 13 (&lsquo;l&rsquo;), <strong><code>output</code></strong> = <strong><code>adverb</code></strong></li>
+<li><strong><code>state</code></strong> = 594, <strong><code>transition_label</code></strong> = 7 (&lsquo;f&rsquo;), <strong><code>output</code></strong> = <strong><code>other</code></strong></li>
+<li><strong><code>state</code></strong> = 549, <strong><code>transition_label</code></strong> = 6 (&lsquo;e&rsquo;), <strong><code>output</code></strong> = <strong><code>ignore</code></strong></li>
+<li><strong><code>state</code></strong> = 543, <strong><code>transition_label</code></strong> = 10 (&lsquo;i&rsquo;), <strong><code>output</code></strong> = <strong><code>adverb</code></strong></li>
+<li><strong><code>state</code></strong> = 0, <strong><code>transition_label</code></strong> = 9 (&lsquo;h&rsquo;) mismatches the value stored
+in the byte.  Return <strong><code>adverb</code></strong>.</li>
+</ul>
+
+
+<p>And here are sample steps of scanning the string &ldquo;i.e.&rdquo;:</p>
+
+<ul>
+<li><strong><code>state</code></strong> = 19, <strong><code>transition_label</code></strong> = 1 (&lsquo;.&rsquo;), <strong><code>output</code></strong> = <strong><code>ignore</code></strong></li>
+<li><strong><code>state</code></strong> = 24, <strong><code>transition_label</code></strong> = 6 (&lsquo;e&rsquo;), <strong><code>output</code></strong> = <strong><code>ignore</code></strong></li>
+<li><strong><code>state</code></strong> = 3, <strong><code>transition_label</code></strong> = 1 (&lsquo;.&rsquo;), <strong><code>output</code></strong> = <strong><code>ignore</code></strong></li>
+<li><strong><code>state</code></strong> = 2, <strong><code>transition_label</code></strong> = 10 (&lsquo;i&rsquo;), <strong><code>output</code></strong> = <strong><code>ignore</code></strong></li>
+<li><strong><code>state</code></strong> = 1, <strong><code>transition_label</code></strong> = 0 (&lsquo;\0&rsquo;), <strong><code>output</code></strong> = <strong><code>abbreviation</code></strong>.
+Return <strong><code>abbreviation</code></strong>.</li>
+</ul>
+
+
+<h1>Remarks</h1>
+
+<p>The judges found a bug in the handling of contractions: <strong><code>prog.orig.c</code></strong>
+outputs &ldquo;foo wasn'<strong>[t bazzed]</strong>&rdquo;.  I fixed the bug in <strong><code>prog.c</code></strong>, making
+it output &ldquo;foo <strong>[wasn&rsquo;t bazzed]</strong>&rdquo; instead, and took the liberty to merge
+one statement into a <strong><code>for</code></strong> loop inside its <strong><code>main()</code></strong> function.</p>
+
+<p>The program uses a 9,437,187-byte buffer so it probably will not run
+on 16-bit and smaller machines without changing the size of array <strong><code>C[]</code></strong>
+and the expression <strong><code>9&lt;&lt;20</code></strong> inside the call to <strong><code>read()</code></strong>.</p>
+
+<p>I have tested it on:</p>
+
+<ul>
+<li>Linux with gcc version 5.4.0 20160609,</li>
+<li>Linux with clang version 3.4-1ubuntu3,</li>
+<li>OS/X with Apple LLVM version 6.0 (clang-600.0.57).</li>
+</ul>
+
+
+<p>For a clean compile under c89 and c90, add <strong><code>-Woverlength-strings</code></strong>
+to <strong><code>CSILENCE</code></strong>.</p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2018, 
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

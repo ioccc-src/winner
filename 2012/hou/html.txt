@@ -1,0 +1,10 @@
+#\ *[0-9A-Za-z]* <font color="#800080">%s</font>
+"/*".*"*/" <font color="#004000">%s</font>
+("return"|"if"|"int"|"char"|"for"|"do"|"while"|"long"|"short"|"signed"|"typedef"|"unsigned"|"struct"|"break") <font color="#cc0000">%s</font>
+[a-zA-Z_][0-9a-zA-Z_]* %s
+'[^']*' <font color="#ff0000">%s</font>
+\"([^"\\]|(\\.))*\" <font color="#ff0000">%s</font>
+" " &nbsp;
+"<" &lt;
+">" &gt;
+\n <br>%s

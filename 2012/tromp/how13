@@ -1,0 +1,45 @@
+Gur cebtenz vzcyrzragf n fb pnyyrq Xevivar znpuvar,
+raunaprq jvgu n onfvp vachg/bhgchg flfgrz
+naq n ersrerapr pbhagvat tneontr pbyyrpgbe.
+Gur Xevivar znpuvar vf n fgrcjvfr genafsbezre bs n tybony fgngr pbafvfgvat bs
+gur pheerag grez, gur pheerag raivebazrag (n yvfg bs pybfherf), naq n fgnpx bs pbagvahngvbaf
+(Frr gur 3eq ersrerapr sbe qrgnvyf.)
+
+Gur grez fcnpr ubyqf ynzoqn pnyphyhf grezf va gur sbyybjvat sbezng
+0 qrabgrf fbzr sbez bs VB; gur bayl sbhe bpphenaprf ner ng
+  P=13: erpbtavmrf raq bs n olgr
+  P=20: erpbtavmr bhgchg bs 0 ovg
+  P=21: erpbtavmr bhgchg bs 1 ovg
+  P=raq: vachg yvfg, rkcnaqrq ynmvyl
+1 qrabgrf n inevnoyr, jvgu arkg ragel vgf qr Oehvwa vaqrk
+2 qrabgrf nccyvpngvba jvgu arkg ragel gur fvmr bs gur grez orvat nccyvrq
+3 qrabgrf ynzoqn nofgenpgvba
+
+N pybfher pbafvfgf bs gur sbyybjvat vgrzf
+0 cbvagre gb gur arkg pybfher (nf cneg bs na raivebazrag), be arkg erpbeq ba serr yvfg
+1 ersrerapr pbhag
+2 cbvagre gb raivebazrag
+3 ynzoqn grez (vaqrk va grez fcnpr)
+
+Urer'f jung rnpu inevnoyr qbrf:
+Y Ynzoqn grez fcnpr
+z zbqr; 0 sbe ovgf naq 7 sbe olgrf
+o ovgf erznvavat haernq va V, -1 ba RBS
+Q Qrfvenoyr grzcbenel
+p pbagvahngvba pbagrkg
+n npgvir raivebazrag cbvagre
+P Pheerag grez vaqrk
+H Hygvzngr grez cbvagre
+h hgvyvgl ragel
+O Obea gb or serr-yvfg bs pybfherf
+V Vachg punenpgre
+B Bhgchg punenpgre
+r ragel bs pheerag grez
+
+Urer'f jung rnpu bs gur 6 nhkvyvnel shapgvbaf qbrf:
+f: inevnoyr ybbxhc va npgvir raivebazrag jvgu qr Oehvwa vaqrk h
+F: trgf bar ovg bs vachg, frggvat o gb -1 ba RBS be gb erznvavat ahzore bs ovgf va pheerag olgr
+x: xbcl sentzrag sebz fgevat yvgreny ubyqvat ynzoqn grezf kbe 46 vagb pheerag raq bs grez fcnpr
+k: kcnaq vachg, nqqvat 11 (erfc. 99) ragevrf gb grez fcnpr sbe ovg (erfc. olgr) zbqr
+c: cnefrf oyp-rapbqrq ynzoqn grez hfvat F(), fgberf erfhygf va grez fcnpr naq ergheaf yratgu
+q: qrpernfr ersrerapr pbhagre, nqq erpbeq gb serr yvfg ba ernpuvat mreb

@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.2.0">
+  <meta http-equiv="Content-Type"
+        content="text/html; charset=utf-8">  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Best one-liner</title>
+</head>
+<body>
+<h1>Best one-liner</h1>
+
+<p>Dave Burton</p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To use:</h3>
+
+<pre><code>make
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>./prog &lt; prog.c
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>A tiny, but punctually correct way of POSIX counting for text files. This one
+line, one word, 127 character beauty continues to expand the number of classic
+unix utilities available as winning entries.</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h2>Synopsis</h2>
+
+<p>Feed it anything on stdin. <br>
+The output should look familiar.</p>
+
+<p>Compiles cleanly with:</p>
+
+<pre><code>WARN="-Wno-implicit-int -Wno-missing-variable-declarations -Wno-parentheses"
+clang -Wall -Wextra -Weverything -pedantic $WARN -include stdio.h -o prog prog.c
+</code></pre>
+
+<h2>Description</h2>
+
+<p>Included is a test script, useful for the corner cases.
+As in all good Unix programs, it is silent upon success; any output demonstrates an error.
+Instead of checking correctness, the check script can simply output the results: <br>
+(The Makefile contains the spoiler):</p>
+
+<pre><code>out=cat ./check ./prog
+</code></pre>
+
+<p>Interestingly, and a spoiler here: MacOS and FreeBSD implement the common utility &ldquo;correctly&rdquo;.
+Centos and Ubuntu both share a &ldquo;flawed&rdquo; utility that changes output format based upon input redirection or pipeline(!).
+As well, the latter two also behave slightly differently on what they count as whitespace:
+\a and \b are both counted whitespace(!), even though the relevant man pages on these systems
+omit these characters from the description.</p>
+
+<p>This program follows FreeBSD and MacOS, the arbiters of correct for these purposes.</p>
+
+<h2>Limits</h2>
+
+<p>Requires the C locale and ASCII character set. <br>
+Input should be less than ten million octets toavoidthisproblem.</p>
+
+<h2>See Also</h2>
+
+<p>You can enjoy this code from beginning to end. <br>
+No whitespace was harmed in the creation of this program. <br>
+All your base belong to us, but the constants seem a bit &hellip; off?</p>
+
+<h2>Bonus</h2>
+
+<p>The script <code>cow</code> provides a closer analog, and perhaps a more useful interface.</p>
+
+<p>Included is a version without compilation warnings:</p>
+
+<pre><code>clang -Wall -Wextra -Weverything -pedantic -include stdio.h -o prog.clean prog.clean.c
+</code></pre>
+
+<h2>Bugs</h2>
+
+<p>The flags are not supported.  Although they could easily be added into <code>cow</code>.
+This exercise left to the reader.</p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2019, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="/png/by-sa-3.0-88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2019,
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

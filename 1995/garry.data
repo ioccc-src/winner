@@ -1,0 +1,41 @@
+This is a short example to demonstrate the use of the garry program ...
+
+Your Home-directory is $HOME$, while you search
+for programs at the following places:
+    $PATH$
+
+Here's some nice conversion using escaped values:
+
+$EXAMPLEON$ this should be reverse on VT100's $EXAMPLEOFF$
+while this shouldn't ...
+
+=============================================
+The garry.test file looks like the following:
+=============================================
+
+#!/bin/sh
+#
+# garry.test - example of how to use garry
+
+EXAMPLEON="\33\133\61\73\67\155"
+EXAMPLEOFF="\33\133\155"
+DOLLAR="$"
+export EXAMPLEON EXAMPLEOFF DOLLAR
+
+./garry <garry.data
+
+==================================================
+When the following is processed, it will look like 
+the first 10 lines of this file:
+==================================================
+
+This is a short example to demonstrate the use of the garry program ...
+
+Your Home-directory is $DOLLAR$HOME$, while you search
+for programs at the following places:
+    $DOLLAR$PATH$
+
+Here's some nice conversion using escaped values:
+
+$DOLLAR$EXAMPLEON$ this should be reverse on VT100's $DOLLAR$EXAMPLEOFF$
+while this shouldn't ...

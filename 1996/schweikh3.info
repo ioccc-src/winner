@@ -1,0 +1,171 @@
+    ***** SOLARIS 2.5 (sparc):
+
+    % prog
+    Trying to malloc 2048M+0K+0 bytes..nope
+    Trying to malloc 1024M+0K+0 bytes..nope
+    Trying to malloc 512M+0K+0 bytes..nope
+    Trying to malloc 256M+0K+0 bytes..nope
+    Trying to malloc 128M+0K+0 bytes..YEP
+    Trying to malloc 192M+0K+0 bytes..nope
+    Trying to malloc 160M+0K+0 bytes..YEP
+    Trying to malloc 176M+0K+0 bytes..nope
+    Trying to malloc 168M+0K+0 bytes..YEP
+    Trying to malloc 172M+0K+0 bytes..nope
+    Trying to malloc 170M+0K+0 bytes..YEP
+    Trying to malloc 171M+0K+0 bytes..YEP
+    Trying to malloc 171M+512K+0 bytes..YEP
+    Trying to malloc 171M+768K+0 bytes..nope
+    Trying to malloc 171M+640K+0 bytes..nope
+    Trying to malloc 171M+576K+0 bytes..YEP
+    Trying to malloc 171M+608K+0 bytes..YEP
+    Trying to malloc 171M+624K+0 bytes..nope
+    Trying to malloc 171M+616K+0 bytes..nope
+    Trying to malloc 171M+612K+0 bytes..YEP
+    Trying to malloc 171M+614K+0 bytes..YEP
+    Trying to malloc 171M+615K+0 bytes..YEP
+    Trying to malloc 171M+615K+512 bytes..YEP
+    Trying to malloc 171M+615K+768 bytes..YEP
+    Trying to malloc 171M+615K+896 bytes..YEP
+    Trying to malloc 171M+615K+960 bytes..YEP
+    Trying to malloc 171M+615K+992 bytes..YEP
+    Trying to malloc 171M+615K+1008 bytes..YEP
+    Trying to malloc 171M+615K+1016 bytes..nope
+    Trying to malloc 171M+615K+1012 bytes..nope
+    Trying to malloc 171M+615K+1010 bytes..nope
+    Trying to malloc 171M+615K+1009 bytes..nope
+    Able to malloc 171M+615K+1008 bytes
+    1 kilo bytes ok
+    2 kilo bytes ok
+    ...
+    175719 kilo bytes ok no overcommit
+
+    ***** FreeBSD 2.1 (i386):
+
+    % prog
+    Trying to malloc 2048M+0K+0 bytes..nope
+    Trying to malloc 1024M+0K+0 bytes..nope
+    Trying to malloc 512M+0K+0 bytes..nope
+    Trying to malloc 256M+0K+0 bytes..nope
+    Trying to malloc 128M+0K+0 bytes..nope
+    Trying to malloc 64M+0K+0 bytes..nope
+    Trying to malloc 32M+0K+0 bytes..YEP
+    Trying to malloc 48M+0K+0 bytes..nope
+    Trying to malloc 40M+0K+0 bytes..nope
+    Trying to malloc 36M+0K+0 bytes..nope
+    Trying to malloc 34M+0K+0 bytes..nope
+    Trying to malloc 33M+0K+0 bytes..nope
+    Trying to malloc 32M+512K+0 bytes..nope
+    Trying to malloc 32M+256K+0 bytes..nope
+    Trying to malloc 32M+128K+0 bytes..nope
+    Trying to malloc 32M+64K+0 bytes..nope
+    Trying to malloc 32M+32K+0 bytes..nope
+    Trying to malloc 32M+16K+0 bytes..nope
+    Trying to malloc 32M+8K+0 bytes..nope
+    Trying to malloc 32M+4K+0 bytes..nope
+    Trying to malloc 32M+2K+0 bytes..YEP
+    Trying to malloc 32M+3K+0 bytes..YEP
+    Trying to malloc 32M+3K+512 bytes..YEP
+    Trying to malloc 32M+3K+768 bytes..YEP
+    Trying to malloc 32M+3K+896 bytes..YEP
+    Trying to malloc 32M+3K+960 bytes..YEP
+    Trying to malloc 32M+3K+992 bytes..YEP
+    Trying to malloc 32M+3K+1008 bytes..YEP
+    Trying to malloc 32M+3K+1016 bytes..YEP
+    Trying to malloc 32M+3K+1020 bytes..YEP
+    Trying to malloc 32M+3K+1022 bytes..nope
+    Trying to malloc 32M+3K+1021 bytes..nope
+    Able to malloc 32M+3K+1020 bytes
+    1 kilo bytes ok
+    ...
+    21668 kilo bytes ok
+     malloc lied! Killed by SIGKILL
+    Nov 24 18:11:56 /kernel: swap_pager: out of space
+    Nov 24 18:11:57 /kernel: Process 5 killed by vm_fault -- out of swap
+
+    % prog c
+    Trying to calloc 2048M+0K+0 bytes..nope
+    Trying to calloc 1024M+0K+0 bytes..nope
+    Trying to calloc 512M+0K+0 bytes..nope
+    Trying to calloc 256M+0K+0 bytes..nope
+    Trying to calloc 128M+0K+0 bytes..nope
+    Trying to calloc 64M+0K+0 bytes..nope
+    Trying to calloc 32M+0K+0 bytes
+     calloc lied! Killed by SIGKILL
+    Nov 24 18:14:54 /kernel: swap_pager: out of space
+    Nov 24 18:14:55 /kernel: Process 7 killed by vm_fault -- out of swap
+
+    ***** Linux 1.2.13 (i386):
+
+    % prog
+    Trying to malloc 2048M+0K+0 bytes..nope
+    Trying to malloc 1024M+0K+0 bytes..nope
+    Trying to malloc 512M+0K+0 bytes..nope
+    Trying to malloc 256M+0K+0 bytes..nope
+    Trying to malloc 128M+0K+0 bytes..nope
+    Trying to malloc 64M+0K+0 bytes..nope
+    Trying to malloc 32M+0K+0 bytes..nope
+    Trying to malloc 16M+0K+0 bytes..YEP
+    Trying to malloc 24M+0K+0 bytes..nope
+    Trying to malloc 20M+0K+0 bytes..YEP
+    Trying to malloc 22M+0K+0 bytes..YEP
+    Trying to malloc 23M+0K+0 bytes..YEP
+    Trying to malloc 23M+512K+0 bytes..YEP
+    Trying to malloc 23M+768K+0 bytes..YEP
+    Trying to malloc 23M+896K+0 bytes..YEP
+    Trying to malloc 23M+960K+0 bytes..YEP
+    Trying to malloc 23M+992K+0 bytes..YEP
+    Trying to malloc 23M+1008K+0 bytes..YEP
+    Trying to malloc 23M+1016K+0 bytes..YEP
+    Trying to malloc 23M+1020K+0 bytes..YEP
+    Trying to malloc 23M+1022K+0 bytes..YEP
+    Trying to malloc 23M+1023K+0 bytes..YEP
+    Trying to malloc 23M+1023K+512 bytes..YEP
+    Trying to malloc 23M+1023K+768 bytes..YEP
+    Trying to malloc 23M+1023K+896 bytes..YEP
+    Trying to malloc 23M+1023K+960 bytes..YEP
+    Trying to malloc 23M+1023K+992 bytes..YEP
+    Trying to malloc 23M+1023K+1008 bytes..YEP
+    Trying to malloc 23M+1023K+1016 bytes..YEP
+    Trying to malloc 23M+1023K+1020 bytes..YEP
+    Trying to malloc 23M+1023K+1022 bytes..YEP
+    Trying to malloc 23M+1023K+1023 bytes..YEP
+    Able to malloc 23M+1023K+1023 bytes
+    23294 kilo bytes ok  malloc lied! Thrashing
+
+    % prog c
+    Trying to calloc 2048M+0K+0 bytes..nope
+    Trying to calloc 1024M+0K+0 bytes..nope
+    Trying to calloc 512M+0K+0 bytes..nope
+    Trying to calloc 256M+0K+0 bytes..nope
+    Trying to calloc 128M+0K+0 bytes..nope
+    Trying to calloc 64M+0K+0 bytes..nope
+    Trying to calloc 32M+0K+0 bytes..nope
+    Trying to calloc 16M+0K+0 bytes..YEP
+    Trying to calloc 24M+0K+0 bytes..nope
+    Trying to calloc 20M+0K+0 bytes..nope
+    Trying to calloc 18M+0K+0 bytes..nope
+    Trying to calloc 17M+0K+0 bytes..nope
+    Trying to calloc 16M+512K+0 bytes..nope
+    Trying to calloc 16M+256K+0 bytes..nope
+    Trying to calloc 16M+128K+0 bytes..nope
+    Trying to calloc 16M+64K+0 bytes..nope
+    Trying to calloc 16M+32K+0 bytes..nope
+    Trying to calloc 16M+16K+0 bytes..nope
+    Trying to calloc 16M+8K+0 bytes..YEP
+    Trying to calloc 16M+12K+0 bytes..YEP
+    Trying to calloc 16M+14K+0 bytes..nope
+    Trying to calloc 16M+13K+0 bytes..nope
+    Trying to calloc 16M+12K+512 bytes..nope
+    Trying to calloc 16M+12K+256 bytes..nope
+    Trying to calloc 16M+12K+128 bytes..nope
+    Trying to calloc 16M+12K+64 bytes..nope
+    Trying to calloc 16M+12K+32 bytes..nope
+    Trying to calloc 16M+12K+16 bytes..nope
+    Trying to calloc 16M+12K+8 bytes..nope
+    Trying to calloc 16M+12K+4 bytes..nope
+    Trying to calloc 16M+12K+2 bytes..nope
+    Trying to calloc 16M+12K+1 bytes..nope
+    Able to calloc 16M+12K+0 bytes
+    1 kilo bytes ok
+    ...
+    16396 kilo bytes ok no overcommit

@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.2.0">
+  <meta http-equiv="Content-Type"
+        content="text/html; charset=utf-8">  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most alphabetic</title>
+</head>
+<body>
+<h1>Most alphabetic</h1>
+
+<p>Marcin Ciura<br>
+Twitter: @mciura</p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To use:</h3>
+
+<pre><code>make
+
+./getwords.sh en | grep .. | ./prog aeiouvwxyz
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>./getwords.sh en | grep .. | ./prog aeiouhjklmnvwxyz
+
+./getwords.sh en | grep .. | ./prog mrjocktvquizphdbagsfewlynx
+
+./en.sh
+
+./fr.sh
+
+./ru.sh
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>A few letters, one at a time, with no repeats.
+How many different ways can this be done?</p>
+
+<p>While a quick brown fox might jump over the lazy dog,
+it has too many repeat letters to allow this entry to repeat.
+It is better that Mr Jock, TV quiz PhD, bags few lynx.</p>
+
+<p>Speaking of jumping, can you rewrite the code to
+remote all of the goto jumps in this code?</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h3>What is this? <a name="wit"></a></h3>
+
+<p>This entry reads from standard input a list of words in any language
+written with an alphabet and outputs perfect pangrams composed of these
+words. A perfect pangram is a series of words that contains every letter
+of the alphabet exactly once.</p>
+
+<p>Example execution:</p>
+
+<pre><code>$ grep .. /usr/share/dict/words | ./prog abcdefghijklmnopqrstuvwxyz
+qualm fjord wiz pyx vs beg kc nth
+quartz jinx vs fed kc womb glyph
+quid jamb fez vs pyx kc growl nth
+quiz fjord pyx vs bag kc mewl nth
+quiz fjord pyx vs gab kc mewl nth
+quiz fjord pyx vs gem bawl kc nth
+quiz fjord pyx vs meg bawl kc nth
+quiz fjord vex bawl kc gyp ms nth
+quiz jamb flex vs kc gyp word nth
+quiz jamb pyx vs kc flog drew nth
+quiz jamb pyx vs kc frog lewd nth
+quiz jamb pyx vs kc frog weld nth
+quiz jamb pyx vs kc golf drew nth
+quiz jamb pyx vs kc grew fold nth
+quiz jamb pyx vs kc grow nth fled
+quiz jamb pyx vs kc growl fed nth
+</code></pre>
+
+<p>Rearranging the words into more or less meaningful expressions is the
+user&rsquo;s duty.</p>
+
+<p>This entry implements Algorithm X (<em>Exact cover via dancing links</em>)
+from Section 7.2.2.1 in fascicle 5C of <em>The Art of Computer
+Programming</em> by Donald E. Knuth. As of June 2019, you can download an
+incomplete draft of the fascicle from <a href="https://www-cs-faculty.stanford.edu/~knuth/fasc5c.ps.gz">Knuth&rsquo;s
+website</a>.</p>
+
+<h3>Usage</h3>
+
+<p><strong><code>prog LETTERS [N]</code></strong>
+reads allowed words from standard input and writes perfect pangrams
+with at most <em>N</em> words composed of <em>LETTERS</em> to standard output, one
+per line. If <em>N</em> is not given, the number of words in the pangrams is
+unlimited. The characters in <em>LETTERS</em> must not repeat. The length of
+<em>LETTERS</em> must not exceed 97 characters.</p>
+
+<p>The exit status is 0 if no error occurred, 1 if the input word list
+is too long, and 2 if the command-line arguments are missing.</p>
+
+<h3>Helper scripts</h3>
+
+<p><strong><code>getwords.sh LANGUAGE_CODE</code></strong>
+outputs a sorted list of unique words in a given language, one per
+line. It requires <strong><code>aspell</code></strong> with a dictionary for <em>LANGUAGE_CODE</em>.</p>
+
+<p><strong><code>wrapprog.py LETTERS [N]</code></strong>
+works similarly to <strong><code>prog LETTERS [N]</code></strong> except that it merges
+anagrams before passing them to <strong><code>prog</code></strong> and expands them in
+<strong><code>prog</code></strong>&rsquo;s output. This way, it finishes the job faster than
+<strong><code>prog</code></strong> when there are millions of perfect pangrams. It requires a
+UTF-8 locale.</p>
+
+<p><strong><code>de.sh</code></strong>, <strong><code>en.sh</code></strong>, <strong><code>fr.sh</code></strong>, <strong><code>it.sh</code></strong>, <strong><code>pl.sh</code></strong>,
+and <strong><code>ru.sh</code></strong> output German, English, French, Italian, Polish,
+and Russian perfect pangrams, respectively. They require a UTF-8
+locale.</p>
+
+<h3>Miscellaneous remarks</h3>
+
+<p>I dare submit this entry to categories <em>algorithms</em>,
+<em>internationalization</em> (I have not found active use of <strong><code>&lt;wchar.h&gt;</code></strong>
+among the programs that won IOCCC in the past), and <em>obscure bugs</em> (see
+the questions about Linux core dumps below).</p>
+
+<p>To a casual eye, this entry may look similar to
+<a href="https://www.ioccc.org/years.html#2005_klausler">2005 klausler</a>.
+However, <strong><code>prog</code></strong> is internationalized and way faster. On my machine,
+<strong><code>./klausler abcdefghijklmnopqrstuvwxyz</code></strong> printed only 3,965 perfect
+pangrams until I killed it after 144 hours running, while the
+equivalent
+<strong><code>tr A-Z a-z &lt; /usr/share/dict/words | egrep -v '^[^ais]$' | ./prog abcdefghijklmnopqrstuvwxyz | wc -l</code></strong>
+finished in 62 minutes, reporting 1,640,569,315 perfect pangrams, and
+the example from section <a href="#wit">What is this?</a> finished in 1.35
+seconds. On the other hand, <strong><code>prog</code></strong> can only output series of words
+with nonrepeating characters, unlike <strong><code>klausler</code></strong>.</p>
+
+<p>In contrast to <strong><code>prog.orig.c</code></strong>, <strong><code>prog.c</code></strong> does not call
+<strong><code>fflush(stdout)</code></strong> after outputting each line, thus running faster.
+I am grateful to Witold Jarnicki for suggesting this change.
+The original <strong><code>prog</code></strong> finished the example above in 100 minutes
+instead of 62 minutes.</p>
+
+<p>If your word list contains meaningless one-letter words, pipe
+<strong><code>grep .. [FILE]</code></strong> through <strong><code>prog</code></strong> to eliminate the pangrams that
+contain them.</p>
+
+<p>According to <strong><code>prog</code></strong> and <strong><code>aspell</code></strong>, some languages, e.g. Spanish,
+have no perfect pangrams.</p>
+
+<p>Why does <strong><code>yes | ./prog y</code></strong> hang on Linux? Change <strong><code>static int</code></strong> to
+<strong><code>int</code></strong> and <strong><code>static wchar_t</code></strong> to <strong><code>wchar_t</code></strong>, and recompile
+<strong><code>prog</code></strong>. Why does <strong><code>yes | ./prog y</code></strong> dump core now? Change the line
+<strong><code>#define P 9&lt;&lt;23^1</code></strong> to <strong><code>#define P 9&lt;&lt;23</code></strong> and recompile
+<strong><code>prog</code></strong>. Why does <strong><code>yes | ./prog y</code></strong> exit gracefully?</p>
+
+<p>Answer: Nf bs Whar 2019, guhf znavsrfg ohtf va <strong><code>tyvop</code></strong> 2.22&ndash;2.29:
+<a href="https://sourceware.org/bugzilla/show_bug.cgi?id=20568">1</a> naq
+<a href="https://sourceware.org/bugzilla/show_bug.cgi?id=20632">2</a>.</p>
+
+<p>The source code uses <strong><code>goto</code></strong> three times. While it could easily get
+by without <strong><code>goto M</code></strong> and <strong><code>goto H</code></strong>, I challenge the adherents of
+structured programming to refactor <strong><code>goto T</code></strong>, which jumps back into a
+nested <strong><code>if</code></strong> block.</p>
+
+<p>With the supplied <strong><code>Makefile</code></strong>, both <strong><code>gcc</code></strong> and <strong><code>clang</code></strong> compile
+<strong><code>prog.c</code></strong> without warnings in C11 and C99 mode. For a clean
+compilation with <strong><code>gcc -std=c90</code></strong>, add <strong><code>-Wno-format</code></strong> to
+<strong><code>CSILENCE</code></strong> in <strong><code>Makefile</code></strong>.</p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2019, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="/png/by-sa-3.0-88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2019,
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

@@ -1,0 +1,27 @@
+( recursive factorial.  given x on top, followed by )
+( an "accumulator" containing the product except for x! )
+
+: fact-help2
+
+  dup if
+    swap over swap
+    *
+    swap 1 -
+    fact-help2
+  then
+;
+
+: fact
+
+  1 swap
+  fact-help2
+  drop
+;
+
+: demo5
+
+  " The factorial of 3 is: " 3 fact . cr
+  " The factorial of 5 is: " 5 fact . cr
+;
+
+demo5

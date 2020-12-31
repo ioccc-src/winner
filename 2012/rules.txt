@@ -1,0 +1,196 @@
+	21st International Obfuscated C Code Contest Official Rules
+
+Copyright (C) 2006-2012 Leonid A. Broukhis, Simon Cooper, Landon Curt Noll
+
+All Rights Reserved.  Permission for personal, education or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in
+writing from the contest judges.
+
+    Obfuscate:  tr.v.  -cated, -cating, -cates.  1. a.  To render obscure.
+		b.  To darken.  2. To confuse:  his emotions obfuscated his
+		judgment.  [LLat. obfuscare, to darken : ob(intensive) +
+		Lat. fuscare, to darken < fuscus, dark.] -obfuscation n.
+		obfuscatory adj.
+
+
+This rules file is version 2012-08-15.
+
+
+GOALS OF THE CONTEST:
+
+    * To write the most Obscure/Obfuscated C program under the rules below.
+    * To show the importance of programming style, in an ironic way.
+    * To stress C compilers with unusual code.
+    * To illustrate some of the subtleties of the C language.
+    * To provide a safe forum for poor C code.  :-)
+
+The 21st IOCCC contest window is:
+
+|	2012-Aug-15 3:14:15 UTC to 2012-Sep-14 9:26:53 UTC
+
+RULES:
+
+|   Lines marked with a "|" indicate changes to the rules.
+
+|   Please note: These rules are preliminary. Any modifications will be
+|   announced before the submission server goes live.
+
+    To help us with the volume of entries, we ask that you follow these rules:
+
+    1) Your entry must be a complete program.
+
+    2) The size of your program source must be <= 4096 bytes in length.
+       The number of characters excluding whitespace (tab, space,
+       newline, formfeed, return), and excluding any ; { or } immediately
+       followed by whitespace or end of file, must be <= 2048.
+
+    3) Submissions should be performed using the instructions outlined at,
+
+       https://submit.ioccc.org/
+
+|	(The above URL will be active by 2012-Aug-15)
+
+    4) If your entry is selected as a winner, it will be modified as follows:
+
+|       Your 'build' instructions will be incorporated into a makefile.
+|
+|       Your source code will be renamed from prog.c to a name
+|       of our choice (usually related to your family name or
+|       anonymous) followed by a optional digit if there are conflicting
+|       winning entries.  The resulting binary will be renamed from prog to a
+|       equivalent of our choice.
+|
+|       If needed, indicate in your remarks file how your entry
+|       must be changed to accommodate the above.
+
+|   5) Your entry must not modify the content or filename of any part of your
+|      original entry including, but not limited to prog.c, the Makefile
+|      (we create from your how to build instructions), as well as any data
+|      files you submit.
+|
+|      If you entry wishes to modify such content, it must first copy the
+|      file to a new filename and then modify that copy.
+
+|   6) There is NO rule 6!  OK, there is a rule 6, but we intend to ignore it.
+
+|   7) The obfuscated C program must be an original work that you own.
+|
+|      You (the authors) must own the contents of your submission OR
+|      you must have permission from the owners to submit their content
+|      under the Creative Commons Attribution-ShareAlike 3.0 Unported
+|      (CC BY-SA 3.0) license (see rule 18).
+|
+|      If you submit any content that is owned by others, you MUST
+|      detail that ownership (i.e., who owns what) and document the
+|      permission you obtained.
+
+|   8) Entries must be received prior to 2012-Sep-14 9:26:53 UTC.
+
+|      A confirmation of submission will be sent to the submitter's
+|      email address before the close of the contest.
+
+    9) Each person may submit up to 8 entries per contest year.  Each entry
+       must be submitted separately.
+
+   10) Entries requiring human interaction to be built are not permitted.
+
+   11) Programs that require special privileges (setuid, setgid, super-user,
+        special owner or group) are highly discouraged.
+
+   12) Legal abuse of the rules is somewhat encouraged.  An entry that, in
+       the opinion of the judges, violates the rules will be disqualified.
+       Entries that attempt to abuse the rules must try to justify why
+|      their rule abuse is legal in the remarks file.
+
+|  13) Any C source that needs to be compiled may not contain unescaped
+|      octets with the high bit set (i.e., octet values >= 128).
+|
+|      This rule applies only to compiled C source.  Your optional data files
+|      and your remarks file may contain octets with the high bit set.
+
+|  14) Any C source that fails to compile because of lines with trailing
+|      control-M's (i.e., lines with a tailing octet 015) will be rejected.
+|
+|      Please do not put trailing control-M's in your remarks file.
+
+   15) When you submit your entry you must have a valid email address
+       that can both send and receive email.  The online submission
+       method is a two phase process that requires the use of an
+       approval code. This code will be emailed to you as part of
+       phase 1.
+
+       Entries submitted without a working or valid email address will
+       be disqualified.
+
+       The judges are not responsible for delays in email, please plan
+       enough time for one automated exchange of email as part of your
+       submission.
+
+   16) You are STRONGLY encouraged to submit an original entry.
+       Submissions that are similar to previous entries are discouraged.
+
+   17) The total size of your submission: the sum of the size of the program,
+       hints, comments, build and info files MUST be less than one megabyte
+       in size.
+
+|  18) The entirety of your entry must be submitted under the Creative Commons
+|      Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0):
+|
+|	    http://creativecommons.org/licenses/by-sa/3.0/
+|
+|      You must not submit anything that cannot be submitted under that license.
+
+|  19) The remarks file must be written in markdown format. See
+|
+|	    http://daringfireball.net/projects/markdown/basics
+|
+|      for more information.
+
+|  20) The how to build instructions must be in make form.
+|
+|      The target of the make file must be called prog.  The original
+|      C source file must be called prog.c.
+|
+|      To invoke the C compiler, use ${CC}.
+|      To invoke the C preprocessor use ${CPP}.
+|
+|      Do not assume that . (the current working directory) is in the $PATH.
+|
+|      Use a shell command syntax that is compatible with bash.
+|
+|      Assume that commands commonly found in POSIX-like / Linux-line systems
+|      are available in the search path.
+|
+|      Do not assume any particular given value of ${CFLAGS} or other
+|      commonly used make variables.
+
+|  21) Your entry must not create nor modify files above the current directory
+|      with the exception of the /tmp and the /var/tmp directories.  Your entry
+|      may create subdirectories below the current directory provided that
+|      the name of such directories do not start with the "." character.
+
+
+FOR MORE INFORMATION:
+
+    The judging will be done by Leonid A. Broukhis, Simon Cooper, Landon
+    Curt Noll.
+
+    Please send questions or comments about the contest, to:
+
+|	    q.2012@ioccc.org	   (for questions only!)
+
+|   You must include the words ``ioccc 2012 question'' in the subject of
+    your EMail message when sending EMail to the judges.
+
+    The rules and the guidelines may (and often do) change from year to
+    year.  You should be sure you have the current rules and guidelines
+    prior to submitting entries.  To obtain them, visit the IOCCC web page:
+
+	http://www.ioccc.org
+
+    It has rules, guidelines and winners of previous contests (1984 to date).
+
+Leonid A. Broukhis
+Simon Cooper
+chongo (Landon Curt Noll) /\cc/\

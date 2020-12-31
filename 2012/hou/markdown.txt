@@ -1,0 +1,10 @@
+###[^#]([ -~]+\n)+\n <h3>%s</h3>
+##[^#]([ -~]+\n)+\n <h2>%s</h2>
+#[^#]([ -~]+\n)+\n <html><head><title>%s</title><link rel="stylesheet" type="text/css" href="http://www.ioccc.org/2011/hint.css"><body><h1>%s</h1>
+\n"- "[ -~]* <li>%s</li>
+("    "[!-~][ -~]*\n)+\n <pre><code>%s</code></pre>
+([ -~]+\n)+\n <p>%s</p>
+" " &nbsp;
+"<" &lt;
+">" &gt;
+"http://"[!-~]+ <a %s>%s</a>

@@ -1,0 +1,88 @@
+1992 marked the "The Ninth International Obfuscated C Code Contest"
+
+Copyright (c) 1992, Landon Curt Noll & Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.
+
+Use make to compile entries.  It is possible that on BSD or non-unix
+systems the makefile needs to be changed.  See the Makefile for details.
+
+Look at the source and try to figure out what the programs do, and run
+them with various inputs.  If you want to, look at the hints files for
+spoilers - this year we included most of the information included
+by the submitters.
+
+Read over the makefile for compile/build issues.  Your system may
+require certain changes (add or remove a library, add or remove a
+#define).  A number of compilers had problems optimizing certain
+entries.  Some compilers do optimize, but the resulting program
+does not work.  By default we have left off -O from compile lines.  
+You might want to add -O back, or add it back for certain entries
+where performance is important.
+
+This year marked an all time high for number of entries as well as the
+quality of entries.  Nearly twice the usual number of entries made it
+to the final judging rounds.  Even when we raised the standards for
+winning, we still wound giving out a few more awards than in other
+years.  The new size rules size probably contributed to the overall
+high quality.
+
+FYI: By tradition, we do not record the count the number entries,
+     nor do we give our our guess as to the number of entries 
+     received.  For folks who wonder, we can say that we consumed 
+     about 2000 pages of output (printing between 2 and 4 normal 
+     pages per side) during the judging process this year.
+
+The new instructions for submitting entries worked well - we were
+able to write scripts to unpack them and eliminate duplicates.
+
+As promised last year, we accepted programs that made use of the X
+libraries for the first time.  We now consider ANSI C compilers to be
+the "standard" version that the entries were compiled with.
+
+Name and address information are separated from the actual program
+prior to judging.  This eliminates any chance that we would bias our
+judging for/against any person or group.  In the end, we are surprised
+as you are to see who as won.  Even so, it is worth noting that
+Brian Westley has submitted a winning entry for the past 6 years!
+
+
+A few notes regarding future contests:
+
+We did not give awards to some traditional contest categories such as
+"Best Layout".  We felt that to do so would deny awards to more
+deserving entries.  These categories have not been eliminated.  We will
+likely be awarding them in future years.
+
+We received a few entries whose instructions were rot13'd.  While
+nothing was said about this in the rules, we found that it made the 
+judging process a little harder, so we may request that this not
+be done this in the future.
+
+Some thought has been given to a separate obfuscated perl contest.
+Watch comp.lang.perl for details!
+
+Be sure to wait until the 1993 rules are posted before submitting entries.  
+We may fine tune the rules to reflect the some ideas above.
+
+Please send us comments and suggestions what we have expressed above.
+Also include anything else that you would like to see in future contests.
+Send such email to:
+
+	...!{sun,pacbell,uunet,pyramid}!hoptoad!judges
+	judges@toad.com
+
+
+If you use, distribute or publish these entries in some way, please drop
+us a line.  We enjoy seeing who, where and how the contest is used.
+
+If you have problems with any of the entries, AND YOU HAVE A FIX, please
+Email the fix (patch file or the entire changed file) to the above address.
+
+Credits:
+
+We would like to thank Barbara Frezza for her role as official chef of
+the contest.  Landon Noll and Larry Bassel appreciated the opportunity
+to serve as official taste testers. Yummo!

@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.2.0">
+  <meta http-equiv="Content-Type"
+        content="text/html; charset=utf-8">  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most calendrical</title>
+</head>
+<body>
+<h1>Most calendrical</h1>
+
+<p>Timo Poikola<br>
+<a href="https://ig.fi/other/ioccc">https://ig.fi/other/ioccc</a><br>
+Twitter: @timpoiko</p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To use:</h3>
+
+<pre><code>make prog
+./prog 512 ./prog
+
+sleep 86400; make clobber prog
+./prog 512 ./prog
+
+sleep 86400; make clobber prog
+./prog 512 ./prog
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>If you don't have a few days, try:
+
+TZ=UTC24 make clobber prog
+./prog 512 ./prog
+
+TZ=UTC48 make clobber prog
+./prog 512 ./prog
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>Do you have the time to see what this program does?  Think again, come back and try again.</p>
+
+<p>Note that 2 can be said to be the least odd prime because it is the greatest even prime.
+Moreover 2 can be also said to be the greatest odd prime because it is the least even prime.</p>
+
+<p>The source code layout and some of the variable names honors the ski jumping accomplishments of
+<a href="https://en.wikipedia.org/wiki/Matti_Nyk%C3%A4nen">Matti Nyk&auml;nen</a>.</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h3>How to build</h3>
+
+<pre><code>gcc -O0 -o prog prog.c
+</code></pre>
+
+<p>or</p>
+
+<pre><code>clang -O[0123s] -o prog prog.c
+</code></pre>
+
+<h3>Poster</h3>
+
+<p>You can generate an A3 sized poster by <em>make docs</em>. This command creates a pdf file <em>poikola.pdf</em>.</p>
+
+<h3>What this entry does</h3>
+
+<p>An old wise man mumbled to me:</p>
+
+<blockquote><p>Implement a program, which can calculate SHA-3 checksum for a file</p></blockquote>
+
+<p>I think it is easy, but the wizard didn&rsquo;t stop yet:</p>
+
+<blockquote><p>and primes and Fibonacci numbers.</p></blockquote>
+
+<p>Still easy. But the Gandalf the Grey impersonator is not ready:</p>
+
+<blockquote><p>But use only <em>main()</em>, and do not use <em>math.h</em> nor predefined stuff at all. But wait, there are some more rules: This
+work should reflect the extraordinary mind of Matti Nyk&auml;nen,
+the all-time best <a href="https://en.wikipedia.org/wiki/Matti_Nyk%C3%A4nen">ski jumper</a> and
+<a href="http://telefinn.blogspot.com/2011/11/matti-nykanen-quotes.html">amateur philosopher</a>, who passed away on fourth of
+February 2019.</p></blockquote>
+
+<h4>Oh boys.</h4>
+
+<p>So, I followed the rules given by Gandalf the White and the Judges of IOCCC. Output of <code>iocccsize</code>,
+using the <a href="https://www.ioccc.org/2019/iocccsize.c">2019 version of iocccsize</a>, is carefully selected.
+For the sake of clarity, I used single letter variables in the code. I also avoided unnecessary use of functions.
+Like a tripundra, this program has three levels. In order to reveal all of them, you have to compile this program
+on three consecutive days.</p>
+
+<p>As this is a contest for obfuscated code, the program does not perform unnecessary checks, but either fails or gets
+stuck if invoked erroneously. The program is invoked in this way: ./prog <code>&lt;integer&gt;</code> <code>&lt;file&gt;</code> in where <code>&lt;integer&gt;</code> is
+224, 256, 384, 512 or even 1024. Yes, I know 1024 is not a supported length of output, but as I said, the program does
+not validate its input in any way. These same parameters should be given in calculating a Fibonacci sequence or prime
+numbers. <em>Please note that maximum file size is one gigabyte.</em></p>
+
+<h3>Obfuscation</h3>
+
+<p><em>Matti Nyk&auml;nen</em>: Every time I jump, and I get that feeling of <em>bon voyage</em>, the feeling that I&#8217;ve been here
+before.</p>
+
+<p><em>Matti Nyk&auml;nen</em>: When you are about to jump, you are all alone and have to make your own decisions. Up there,
+it&rsquo;s all <em>up yours</em>.</p>
+
+<p>This code has some jumping too. I used some <code>goto</code>s instead of <code>longjmp()</code>. Some Finnish ski jumping sites are
+used as labels, however, there is <code>lahti</code> instead of <tt style="font-family: Monaco, Courier New, monospace;font-size:
+12px;">salpausselk&auml;</tt>.</p>
+
+<h3>SHA-3-512 Compatibility chart</h3>
+
+<p>Tested against <a href="https://www.di-mgt.com.au/sha_testvectors.html">test vectors</a>.
+Clang-4.0: For optimization levels [0123s], the program compiles and produces correct output for every tested vector using
+c11, c89, c90, c99, gnu11, gnu1x, gnu89, gnu90, gnu99, iso9899:1990, iso9899:199409, iso9899:1999 and
+iso9899:2011 as argument of <code>-std=</code></p>
+
+<p>Gcc-6: For optimization level 0, correct output using
+c11, c99, gnu11, gnu1x, gnu89, gnu90, gnu99, iso9899:1999 and iso9899:2011</p>
+
+<h3>Missing a prime</h3>
+
+<p>For obvious reason, the oddest prime is missing from output.</p>
+
+<h3>Observations</h3>
+
+<p>Gcc and clang are very fragile compilers. I spent numerous hours trying to achieve exactly the same output from
+different optimization levels and compilers. Small change in code can produce really unexpected results, i.e. the compiler
+can skip a few expressions or statements without obvious reason.</p>
+
+<h3>Major spoilers</h3>
+
+<p>Please scroll down if you want to see spoilers.</p>
+
+<div style="margin-bottom:61em;">&nbsp;</div>
+
+
+<p>It is commonly believed that <a href="http://www.cadaeic.net/calendar.htm">Mike Keith&rsquo;s algorithm</a> published in <em>Journal of
+Recreational Mathematics</em>, Vol. 22, No. 4, 1990, p. 280, is the shortest way to calculate weekday for given date.
+Keith&rsquo;s algorithm:<br>
+<code>(d+=m&lt;3?y--:y-2,23*m/9+d+4+y/4-y/100+y/400)%7</code><br>
+My algorithm: I noticed that<br>
+<code>(23*m/9+(m&lt;3?y--:y-2)+d+4+y/4-y/100+y/400)%7</code><br>
+is one character shorter. In my solution, <code>m&lt;3?y--:y-2</code> is used directly, instead of assign value for <code>d</code>.</p>
+
+<p>Q is pronounced in Finnish exactly like &ldquo;kuu&rdquo;, a word for month or the Moon. So, <code>Q = k</code> is intended.</p>
+
+<p>Last term of outputted Fibonacci sequence is the last one smaller than 2<sup>64</sup>. It is plain coincidence (but a funny)
+that value of &lsquo;^&rsquo; is 94 in ASCII table.</p>
+
+<p>For prime calculations: I recycled code from my high school C-programming course. Originally, I wrote it over 20 years
+ago. My teacher said that it is (too) complicated to use bits stored in arrays, so I did it.</p>
+
+<h3>Other stuff</h3>
+
+<p>Cody: I really like that you enjoyed my previous entry. I hope that you will like this entry too.
+Because I did not want to give too many clues to Judges, I tried to write this entry in a different way
+than Most Stellar, but in this code there is at least one recycled thing from it. By the way,
+answers to questions: 1. 255. 2. Try to compare binary representations of those floats and binary representation
+of the string &ldquo;25th IOCCC!&rdquo;. 3. I don&rsquo;t know. I used standard trigonometric functions from <code>math.h</code> for rotating the Big Dipper
+and later replaced those functions with my own implementations. But there was a bug in my code and the effect was more
+beautiful than intended. I did not even debug this bug and now it works as a feature. 4. It is not possible. If you
+change a single bit, the Fletcher 16 checksum does not match anymore and <code>goto</code> jumps to end of the code.</p>
+
+<p>I see that <em>Volker Diels-Grabsch</em>&rsquo;s winner is awarded in category <strong>Most self-aware</strong>. In last year, my entry incorporates
+the Fletcher 16 algorithm to ensure integrity of code. One of my first ideas for this year was to do the same thing,
+but with SHA-3. Using Fletcher 16, calculating a checksum which matches with <code>sleeping time factor</code> took about one minute.
+I realized that SHA-3 even with 224-bit output could take too much CPU time.</p>
+
+<p>I would like to say <em>thanks</em> to PSP, because there were not too much interrupts during the coding phase.</p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2019, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="/png/by-sa-3.0-88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2019,
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

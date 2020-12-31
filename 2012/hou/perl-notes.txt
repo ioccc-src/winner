@@ -1,0 +1,18 @@
+time    perl patho.pl < ansi.txt
+1
+real	1m50.970s
+user	1m50.767s
+sys	0m0.049s
+
+time ./prog ansi.txt ansi.txt 
+#[ -~]*\n %s
+"/*".*"*/" %s
+("return"|"if"|"int"|"char"|"for"|"do"|"while"|"long"|"short"|"signed"|"typedef"|"unsigned"|"struct"|"break") %s
+[a-zA-Z_][0-9a-zA-Z_]* %s
+'[^']*' %s
+\"([^"\\]|(\\.))*\" %s
+@?@?@?@?@?@?@?@?@?@?@?@?@?@?@?@?@?@?@?@?@?@?@?@?@?@?@?@?@?@? 
+
+real	0m0.027s
+user	0m0.006s
+sys	0m0.002s

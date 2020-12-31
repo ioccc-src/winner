@@ -1,0 +1,104 @@
+\documentclass[10pt]{article}
+% Paper size is not really important. In this document the size is A3 from ISO 216 standard
+% 297 x 420 mm (11.7 x 16.5 in)
+\usepackage[a3paper,margin=3cm]{geometry}
+\usepackage[pdftex,unicode]{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{textcomp}
+\usepackage{bookmark}
+\usepackage{fancyhdr}
+\usepackage[
+    type={CC},
+    modifier={by-sa},
+    version={3.0},
+]{doclicense}
+
+% headers and footers
+\lhead{\large\color{NavyBlue}\textbf{25th International Obfuscated C Code Contest}}
+\rhead{\large\color{NavyBlue} Winner: \textsc{Timo Poikola}\hspace{2em}Awarded in category: \textsc{Most stellar}}
+
+\lfoot{\begin{tabular}{ll}
+ \raisebox{-20pt}\doclicenseImage & \begin{tabular}{ll}\textcopyright\hspace{1em}Copyright 1984-2018, Leo Broukhis, Simon Cooper, Landon Curt Noll - All rights reserved\\
+This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.\end{tabular}
+\end{tabular}}
+
+
+\cfoot{}
+\rfoot{}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\hypersetup{
+	unicode=false,		% non-Latin characters in Acrobat's bookmarks
+	pdftoolbar=true,	% show Acrobat's toolbar?
+	pdfmenubar=true,	% show Acrobat's menu?
+	pdffitwindow=false,	% window fit to page when opened
+	pdfstartview={FitH},	% fits the width of the page to the window
+	pdftitle={IOCCC Winner},	% title
+	pdfauthor={Timo Poikola},	% author
+	pdfsubject={Most stellar},	% subject of the document
+	pdfcreator={Pdflatex},	% creator of the document
+	pdfproducer={Timo Poikola},	% producer of the document
+	pdfkeywords={25th} {IOCCC} {Most stellar} {2108},	% list of keywords
+	pdfnewwindow=true,	% links in new window
+	colorlinks=true,	% false: boxed links; true: colored links
+	linkcolor=BrickRed,	% color of internal links
+	citecolor=LimeGreen,	% color of links to bibliography
+	filecolor=magenta,	% color of file links
+	urlcolor=NavyBlue	% color of external links
+}
+
+%Compression
+\pdfminorversion=5
+\pdfcompresslevel=9
+\pdfobjcompresslevel=3
+
+
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+
+\lstdefinestyle{CStyle}{
+    commentstyle=\color{NavyBlue},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=false,                 
+    captionpos=b,                    
+    keepspaces=true, 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=8,
+    language=C,
+    showlines=true,
+    classoffset=1,
+    morekeywords={T,F,E,B},
+    keywordstyle=\color{WildStrawberry},
+    classoffset=2,% starting another class
+    morekeywords={__CHAR_BIT__,unix,SEEK_END,__ATOMIC_SEQ_CST,__FILE__,NULL,__FLT_RADIX__,_XOPEN_VERSION,F_TLOCK,F_OK,R_OK,W_OK,X_OK,__ATOMIC_RELEASE},
+    morekeywords={__LINE__,F_TEST,__DBL_DIG__,_POSIX_TRACE,__FLT_MAX_EXP__},
+    keywordstyle=\color{Sepia},
+    classoffset=3,
+    morekeywords={main,u,Z,getdelim,fopen,time,usleep,printf,sprintf,typedef,return,fflush,localtime,vir,stup},
+    keywordstyle=\color{PineGreen}
+}
+
+\pagestyle{fancy}
+
+\begin{document}
+
+% Prefix all but the first line of multiline comments with "@"
+\lstset{language=C, style=CStyle,
+moredelim=[il][\color{NavyBlue}]{\@}
+}
+\lstinputlisting[lastline=92]{prog-doc.c}
+
+\end{document}

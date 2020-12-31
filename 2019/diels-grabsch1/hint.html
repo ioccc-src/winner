@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.2.0">
+  <meta http-equiv="Content-Type"
+        content="text/html; charset=utf-8">  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Best small program</title>
+</head>
+<body>
+<h1>Best small program</h1>
+
+<p>Volker Diels-Grabsch<br>
+<a href="https://njh.eu">https://njh.eu</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To use:</h3>
+
+<pre><code>make
+
+./prog &lt; file &gt; file.Z
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>dd bs=1024 count=2048 &lt; /dev/zero | compress &gt; ref.Z
+dd bs=1024 count=2048 &lt; /dev/zero | ./prog &gt; dg1.Z
+cmp ref.Z dg1.Z
+
+compress &lt; ../mills/Shakespeare.txt &gt; ref.Z
+./prog &lt; ../mills/Shakespeare.txt &gt; dg1.Z
+cmp ref.Z dg1.Z # Oops, the files differ
+zcat &lt; dg1.Z | cmp - ../mills/Shakespeare.txt # Decompresses correctly. What is going on?
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>Finally, IOCCC now has its own text compression program, and it is short
+enough to qualify for the Best Short Program award! That said, can you
+compress it down to a one-liner, still producing files in the UNIX compress format,
+albeit sacrificing the compression ratio?</p>
+
+<p>Can you explain why the zero file compresses identically by the entry and the
+standard compress tool, but the text file compresses differently? The judges know. :)</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h3>A tiny &ldquo;compress&rdquo; tool</h3>
+
+<p><code>Usage:</code></p>
+
+<pre><code>./prog &lt; guidelines.txt &gt; guidelines.txt.Z
+</code></pre>
+
+<p><code>Check for correctness:</code></p>
+
+<pre><code>zcat guidelines.txt.Z &gt; guidelines2.txt
+diff -s guidelines.txt guidelines2.txt
+</code></pre>
+
+<p><code>Of course you can</code><br>
+<code>also use 2015/mills2 instead of zcat to verify the output</code><br>
+<code>file. The achieved compression ratio roughly matches that</code><br>
+<code>of the classic Unix compress tool. And the source code is</code><br>
+<code>very compressed, too: It has exactly the same size as the</code><br>
+<code>paragraph you are reading right now. And exactly the same</code><br>
+<code>shape. Nevertheless, it is portable C99 code that runs on</code><br>
+<code>32-bit and 64-bit platforms. It compiles without warnings</code><br>
+<code>on both GCC and Clang even with -Wextra and -Weverything.</code></p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2019, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="/png/by-sa-3.0-88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2019,
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

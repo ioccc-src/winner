@@ -1,0 +1,28 @@
+#!/usr/bin/perl
+#
+# This work by Simon Cooper is licensed under a Creative Commons
+# Attribution-ShareAlike 3.0 Unported License.
+#
+# Info from: https://ccrma.stanford.edu/courses/422/projects/WaveFormat/
+
+my $file = shift @ARGV;
+
+my $size = -s $file;
+my $rate = 44100;
+my $samp = 16;
+my $chan = 2;
+
+print	"RIFF". 
+	pack("V", $size-8).			# File size -8
+	"WAVE".					# "Format"
+	"fmt ".					# Subchunk1ID
+	pack("V", 16). 				# Subchunk1Size
+	pack("v", 1).				# PCM
+	pack("v", $chan). 			# NumChannels
+	pack("V", $rate).			# SampleRate
+	pack("V", ($rate>>3)*$chan*$samp).	# ByteRate
+	pack("v", $chan*$samp>>3).		# BlockAlign
+	pack("v", $samp).			# BitsPerSample
+	"data".					# Subchunk2ID
+	pack("V",$size-44);			# SubchunkSize
+system "cat", $file;

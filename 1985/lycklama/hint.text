@@ -1,0 +1,16 @@
+# The strangest appearing program 
+
+Ed Lycklama
+
+## Judges' comments:
+
+Run the program without any arguments.  Type in some very long lines
+and notice how it redisplays it.
+
+The program itself looks like tty noise.  Notice that even 'define' in #define can be defined.
+
+Copyright (c) 1985, Landon Curt Noll & Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.

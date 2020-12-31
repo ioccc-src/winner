@@ -1,0 +1,24 @@
+# Best one liner 
+
+Jan Stein
+
+Judges' comments:
+
+> NOTE: to avoid problems with news and mail, the single line was split
+> into 3 lines.  Join all lines into a single line to recreate
+> the original file.
+
+Compile and link to a filename called 'a.out'.  Try the program with the
+following argument:
+
+	a.out ^N^N
+
+(^N is ASCII control-N).  One some machines, ^M^L is needed to get it to
+output cleanly.  Your system may require another set of characters.
+In time, you will figure out what it does. :-)
+
+Copyright (c) 1986, Landon Curt Noll & Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.

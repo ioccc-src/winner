@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Best short program</title>
+</head>
+<body>
+<h1>Best short program</h1>
+
+<p>Seonghoon Kang<br>
+<a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#x6b;&#x61;&#x6e;&#x67;&#46;&#115;&#x65;&#x6f;&#110;&#103;&#104;&#111;&#111;&#110;&#64;&#x6d;&#101;&#97;&#114;&#x69;&#101;&#x2e;&#111;&#114;&#x67;">&#x6b;&#97;&#x6e;&#x67;&#46;&#115;&#101;&#x6f;&#x6e;&#x67;&#x68;&#x6f;&#111;&#x6e;&#x40;&#109;&#x65;&#x61;&#114;&#105;&#101;&#x2e;&#111;&#114;&#x67;</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To build:</h3>
+
+<pre><code>make kang
+</code></pre>
+
+<h3>To run:</h3>
+
+<pre><code>echo "full spelling of an English cardinal numeral less than a quadrillion" | ./kang
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>echo Nineteen hundred and eighty-four | ./kang
+echo uno | ./kang
+echo trois | ./kang
+echo fier | ./kang
+echo "shest'" | ./kang
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>The judges were able to appreciate the Indo-European language family
+relation by making this entry successfully recognize <em>some</em> French,
+German, Italian, Russian, and Spanish numerals.</p>
+
+<p>Also worth mentioning is this entry&rsquo;s ability to understand the
+colloquial year numbers of the last millennium.</p>
+
+<p>We&rsquo;ve added a linefeed to the print format for convenience.</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h2>Synopsis</h2>
+
+<p>This short program reads a spelt number (e.g. <code>forty-two</code>) and writes a
+corresponding decimal number (e.g. <code>42</code>). Too long for one-liners, alas,
+but it still qualifies as a <em>short</em> program as it has less than 0x100 bytes.</p>
+
+<p>It accepts a variety of spelt numbers:</p>
+
+<ul>
+<li>It correctly handles <code>zero</code>.</li>
+<li>Hyphen does not make a difference: <code>forty-two</code> and <code>forty two</code> are same.
+So does period or comma.</li>
+<li>Cases do not make a difference either: <code>TWO</code>, <code>Two</code>, <code>two</code> are same.</li>
+<li><code>one</code> and <code>a</code> are interchangeable: <code>one hundred</code> and <code>a hundred</code> are same.</li>
+<li><code>and</code> is optional: <code>one hundred twenty-three</code> and <code>one hundred and twenty-three</code>
+are same.</li>
+<li>It supports every non-negative integer less than 10<sup>15</sup>-1. It uses
+the small scale (i.e. American): <code>billion</code> is 10<sup>9</sup> and <code>trillion</code> is
+10<sup>12</sup>.</li>
+</ul>
+
+
+<p>It does <em>not</em> accept some spelt numbers, which I found mostly irrelevant:</p>
+
+<ul>
+<li>A bare <code>hundred</code>, <code>thousand</code> etc. do not work.</li>
+<li><code>one million million</code> does not work. Get used to <code>one trillion</code>!</li>
+</ul>
+
+
+<h2>Requirements</h2>
+
+<p>This program is quite portable, only requiring the following:</p>
+
+<ul>
+<li>The signature <code>int main(int, int)</code> should be accepted by the linker.</li>
+<li><code>char</code> should be at least 8 bits long (as dictated by the standard), <code>int</code>
+should be at least 32 bits long, <code>long long</code> should be at least 64 bits long.</li>
+<li>Both the compiler and execution environment should use an ASCII-compatible
+character set and two&rsquo;s complement representation.</li>
+<li>Overflow and underflow on <code>char</code> should wrap around, if your <code>char</code> is unsigned.</li>
+<li><a href="http://cm.bell-labs.com/who/ken/trust.html">A trustworthy compiler</a>.</li>
+</ul>
+
+
+<p>The design of the program explicitly allows for <code>EOF</code> which does not equal to -1
+(it has to be negative per the standard) and both signed and unsigned <code>char</code>,
+for example. Furthermore it is endian-independent.</p>
+
+<h2>Obfuscations</h2>
+
+<p>Many obfuscations used are typical for standard IOCCC entries:</p>
+
+<ul>
+<li>Two arguments from <code>main</code> function are reused as normal variables.</li>
+<li>Every conditional has been replaced with <code>?:</code> ternary operator and <code>||</code>
+short-circuiting operator.</li>
+<li>It has exactly three nested <code>for</code> loops and nothing else.</li>
+<li>Common two&rsquo;s complement tricks: <code>~-a</code> instead of <code>a-1</code>,
+<code>~a?...:...</code> instead of <code>a!=-1?...:...</code>, etc.</li>
+<li>Comma operators (<code>,</code>) for multiple statements. The number of them is
+minimized, however, as it is too easy to (ab)use them.</li>
+<li>It lacks most parentheses around bitwise and arithmetic operators. It was
+originally written for shortness so parentheses were <strong>EVIL</strong>.</li>
+<li><code>n["string"]</code> instead of <code>"string"[n]</code>. Both are fine for this program but
+I went to the former just for fun.</li>
+<li>Utter lack of any kind of layouts. (Oh, except for the first column.)</li>
+</ul>
+
+
+<p>Other obfuscations are more subtle:</p>
+
+<ul>
+<li>The string <code>"1+DIY/.K430x9G(kC["</code> is 18 bytes long, but actually 19 bytes
+including the final null character are used.</li>
+<li>It internally represents numbers as hexadecimal. When the input is <code>two
+hundred and three</code>, it actually writes 0x203 as hexadecimal.</li>
+<li>Some variables (notably, <code>n</code>) have dual uses.</li>
+<li>The magic number <a href="http://en.wikipedia.org/wiki/Answer_to_The_Ultimate_Question_of_Life,_the_Universe,_and_Everything">42</a> makes an appearance.</li>
+<li>It has a long long numb-<code>main</code>-er within it!</li>
+</ul>
+
+
+<p>But the most important obfuscation is the clever construction of lookup table.
+The program uses 11 different characters required for recognizing 22 lexemes:</p>
+
+<pre><code>zero        one         tw-         th(i)r-     fo(u)r-     fi-         six-
+seven-      eigh-       nin-        ten         eleven      twelve
+hundred(s)  thousand(s) million(s)  billion(s)  trillion(s)
+a           and         -teen       -ty
+</code></pre>
+
+<p>So that they are internally represented as like:</p>
+
+<pre><code>r        n        tw-      tr-      fr-      f-       s-
+sn-      g-       nn-      tn       ln       twl
+nr(s)    tsan(s)  lln(s)   blln(s)  trlln(s)
+a        an       -tn      -ty
+</code></pre>
+
+<p>The stemmer recognizes the longest matching prefix, so every lexeme can be
+recognized by at most three characters (e.g. <code>trl</code> instead of <code>trlln</code>). This is
+also handy for ignoring plurals. But that would make that the table does not fit
+in the printable byte&mdash;11<sup>2</sup> is already almost 2<sup>7</sup>!</p>
+
+<p>The trick is to use octal; three characters (<code>a</code>, <code>b</code> and <code>g</code>) are interpreted
+as sequences of two characters (<code>ny</code>, <code>nn</code> and <code>nw</code> respectively). Asides from
+a smaller lookup table, it has many good consequences:</p>
+
+<ul>
+<li>Both <code>a</code> and <code>and</code> share the common prefix, <code>ny</code>, and can be discarded
+altogether. Note that <code>ny</code> itself does not appear from other entries.</li>
+<li><code>thousand</code> is interpreted as <code>tsan</code>, which is equivalent to <code>tfyn</code> in the
+octal scheme. As it is the only entry with <code>tf</code> prefix, it can be shorten by
+one character.</li>
+</ul>
+
+
+<p>Having said this important trick, other details should be relatively easier to
+follow. The order of lookup table, for example, is very important,
+and the biggest constant 6177 is not arbitrarily chosen.</p>
+
+<h2>Acknowledgement</h2>
+
+<p>[Removed for proper judgement: I&rsquo;ll fill this section if I do win.]</p>
+
+<p>[Note: If you think you&rsquo;ve seen this program elsewhere, you are probably right;
+I&rsquo;m submitting a program I have published years ago (and I have written myself,
+of course). Neither rules nor guidelines disallow such a resubmission, so I guess
+it&rsquo;s fine.]</p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2015,
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

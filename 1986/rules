@@ -1,0 +1,109 @@
+Copyright (c) 1986, Landon Curt Noll & Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.
+
+WARNING: The rules and mailing address for the contest change from year
+         to year.  Be sure that you consult the current set of rules
+	 before submitting entries.
+-------------------------------------------------------------------------------
+
+Subject: Third International Obfuscated C Code Contest Rules
+Newsgroups: net.lang.c
+Keywords: rules,1986,obfuscate,contest
+
+GOAL:  To write the most Obscure working C program following the rules below:
+
+RULES:	1) The source must be 1024 bytes or less.  NO exceptions!
+
+	2) Include in your letter:
+	    a) Name (or anonymous), Company/School, City, State and Country.
+	    b) Your path from a major network site, if applicable.
+	    c) A brief statement of what the program should do.
+	    d) The Machine(s)/Operating system(s) on which it runs.
+	    e) Enclose your source between the following lines:
+		---start of program---
+		<place obfuscated source of 1024 bytes or less here>
+		---end of program---
+
+	3) The entry should be written in common C. (K&R + common extensions)
+
+	4) The program must be of original work.  All programs must be
+	   in the public domain.  All copyrighted programs will be rejected.
+
+	5) Entries must be received between 31-Mar-86 and 30-May-86 0:00 GMT.
+	   Email your entries to:
+	   
+				decwrl!nsc!obfuscate
+
+	   Entries sent by UUCP Email will be confirmed starting 1-May-86.
+	   People are encouraged to submit entries via Email, however one may
+	   mail entries the following address:
+
+		International Obfuscated C Code Contest
+		National Semiconductor
+		Attn: Landon Noll      Mail Stop: 7c266
+		1135 Kern Ave.
+		Sunnyvale, CA 94086
+		U.S.A.
+
+AWARDS:	Winners of each category and the best of Show will be posted to
+	net.announce as well as being published in the May 86 issue of the
+	"Micro/Systems Journal".  Winners also get to receive international
+	fame/flame for their efforts!
+
+JUDGING: Awards will be given to the best entry in a number of categories.
+	 The actual category list will vary depending on the types of entries
+	 we receive.  At the moment, we are considering using the following:
+
+		* The most obscure algorithm
+		* The worst abuse of the C preprocessor
+		* The strangest source layout
+		* The best small one line program
+		* The most useful program
+		* <anything else we need to give recognition to a good entry>
+
+	Judging will be done by myself, Larry Bassel and other local people
+	who are willing to help out.
+
+	We will attempt to run each of them on a Vax 785/4.2BSD system.
+	Don't let the lack of such a system stop you!  Try to avoid operating
+	system/machine specific code if you do not have such a system.
+	Extra points will be given for programs which:
+
+		a) pass lint without complaint
+		b) do something quasi-interesting
+		c) are portable
+
+	A larger program size was selected to allow for a wider range of
+	program ideas.  However if you don't need 1024 bytes don't use them.
+	Given two programs with similar techniques and similar levels of
+	obfuscation, we will tend to favor the more concise entry.
+
+POLL:	We want to know what you think is the most poorly coded utility
+	released with 4.xBSD and/or Sys V.  The top results plus the
+	best flames will be posted along with the contest results.
+	To vote, please	follow the guidelines below:
+
+	1) Include at the top of the letter:
+	    a) Name (or anonymous), Company/School, City, State and Country.
+	    b) Your path from a major network site, if applicable.
+	    c) the name of the poorly coded utility
+	    d) the name of the operating system on which it is found
+	    e) the line:	<<<FLAME ON>>>
+	    f) 		up to 1024 bytes of flames
+	    g) the line:	<<<FLAME OFF>>>
+
+	2) Confine your vote to the standard set of commands.  I.e., don't
+	   flame about local commands or user contributed software.
+
+	3) Submit your votes via Email to:
+
+	   	for 4.xBSD:  decwrl!nsc!bsd_util
+	   	for Sys V:   decwrl!nsc!sysV_util
+
+	   or, you may send your votes by letter to the same address used by
+	   the contest.  Please place your votes on different sheets of paper.
+
+chongo <C> /\cc/\

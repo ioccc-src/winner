@@ -1,0 +1,19 @@
+
+/* Takes a number in unary representation and
+   multiplies it by two
+*/
+
+/* Default Tape: Multiply 8 by 2 */
+#define tape I I I I I I I I
+
+
+#define start_O	O, right, start
+#define start_I	O, left, st1
+#define st1_O	I, left, st2
+#define st2_I	I, left, st2
+#define st2_O	I, right, st3
+#define st3_I	I, right, st3
+#define st3_O	O, right, st4
+#define st4_O	O, left, stop
+#define st4_I	O, left, st1
+

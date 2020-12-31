@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most stellar</title>
+</head>
+<body>
+<h1>Most stellar</h1>
+
+<p>Timo Poikola <a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#58;&#x69;&#x6f;&#99;&#x63;&#99;&#50;&#48;&#49;&#56;&#64;&#105;&#x67;&#x2e;&#x66;&#x69;">&#105;&#x6f;&#99;&#x63;&#99;&#x32;&#48;&#49;&#56;&#x40;&#105;&#x67;&#x2e;&#102;&#x69;</a><br>
+<a href="https://ig.fi/">https://ig.fi/</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To use:</h3>
+
+<pre><code>make
+
+./prog
+</code></pre>
+
+<h3>Try:</h3>
+
+<p>On terminal supports 24 bit color, has black background, and size at least 125x38, try:</p>
+
+<pre><code>./prog
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>It is said by some students of Astronomy:</p>
+
+<pre><code>Oh, Be A Fine Gal, Kiss Me!
+Oh, Be A Fine Gentleman, Kiss Me!
+</code></pre>
+
+<p>Many <a href="http://www.star.ucl.ac.uk/%7Epac/obafgkmrns.html">Mnemonic variations</a> exist.
+You might wish, on a star, to better understand the colors being displayed.
+And those in the deep south might wish to go north for a better view.</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h3>How to build</h3>
+
+<pre><code>gcc -o prog -std=gnu11 -O3 prog.c
+</code></pre>
+
+<p>or</p>
+
+<pre><code>make
+</code></pre>
+
+<h3>Poster</h3>
+
+<p>You can generate an A3 sized poster by <em>make docs</em>. This command creates a pdf file <em>poikola.pdf</em>.</p>
+
+<h3>What this entry does</h3>
+
+<h4>Introduction</h4>
+
+<p>It was a starry night when my wife pointed her finger up and asked: &ldquo;What is this star and may I have some Easter eggs?&rdquo;</p>
+
+<p>So I had to sit down and solve those tricky questions with Nano and a C compiler.</p>
+
+<h4>Little spoilers</h4>
+
+<p>Basically, the program draws animated ASCII art of the Big Dipper using Annie Jump Cannon&rsquo;s spectral classification system of stars and I think the
+colors of the output are as accurate as possible.</p>
+
+<p>This program also tells once in a year if it is correct time to find and eat some Easter eggs.</p>
+
+<p>The program has also at least three other functions, obvious and not so obvious.</p>
+
+<h4>Technical jargon</h4>
+
+<p>This program has been tested on xterm and Konsole and also Linux virtual terminal. Color support in the terminal is not necessary, but the effect is better with it.
+This entry has partial support for terminals with a white background but the best viewing experience is achieved when the terminal in use supports 24-bit colors,
+has a black background and the size is at least 125x38.</p>
+
+<p>Special note for Mac users: <strong>Terminal</strong> does not work as expected you might need xterm from XQuartz or some other
+working terminal. Thanks to Dave Burton for spotting this problem.</p>
+
+<p>The main reason for the header <code>unistd.h</code> is <code>getdelim()</code> but once I included it I also abused other functions and defines. This header is mutually exclusive with <em>-std=c11</em>.</p>
+
+<p>The program was developed with little-endian machines; I tried to support big-endian too, but this support is somewhat limited.</p>
+
+<p>This program has been compiled in</p>
+
+<ol>
+<li>i386 (Debian Stretch) with gcc and clang</li>
+<li>amd64 (Debian Buster) with gcc and clang</li>
+<li>Raspberry Pi 3 (Debian stretch) with gcc and clang</li>
+<li>Lego Mindstorms EV3 Intelligent Brick (Debian Jessie) with gcc and clang (in this case, compiling time with clang-3.5 12 seconds and with gcc 27 seconds)</li>
+</ol>
+
+
+<h3>Warnings and restrictions required by law</h3>
+
+<p>Please do not feed little babies chocolate.</p>
+
+<h3>Major spoilers</h3>
+
+<div style="margin-bottom:61em;">&nbsp;</div>
+
+
+<p>I incorporated the Fletcher 16 checksum algorithm into the source for security reasons; it might be challenging to make changes without breaking the main functionality of the code.
+The space after <code>#define p return</code> is necessary.</p>
+
+<p>The computus uses an algorithm described in the journal Nature in 1876. It should be valid for Gregorian calendars.</p>
+
+<h4>Some obfuscation techniques used</h4>
+
+<ol>
+<li>I tried to use meaningless or misleading variable names. For example, this program draws the Big Dipper with the correct colors, but variables
+like <code>o</code>, <code>b</code>, and <code>a</code> are used in totally unrelated tasks.</li>
+<li>I reused and recycled variables almost every time when possible.</li>
+<li>Unnecessary use of predefined stuff like <code>__ATOMIC_SEQ_CST</code>.</li>
+<li>When I was a kid, my favorite programming language was Pascal. In Pascal, there are things like <code>begin;</code> and <code>end;</code> instead of curly brackets.
+They are used also in my code, but I had to shorten them to meet size requirements.</li>
+<li>I also have strong Perl background,
+and therefore I added some dollar signs to the code. One of the first ideas was to
+write all variables with prefixed <code>$</code>, but then I rejected it.</li>
+</ol>
+
+
+<p>If you think you understand how this program works, can you answer these questions:</p>
+
+<ol>
+<li>What is the value of <code>aI_</code> after line 21?</li>
+<li>Why are there some big numbers on line 47?</li>
+<li>How is the scaling effect created?</li>
+<li>How do you change a single bit, without changing the functionality?</li>
+</ol>
+
+
+<h3>Rot18ed part</h3>
+
+<p>Because the rot13 is too easy to decode with the plain eyes, I decided to use the Caesar cipher with the key 18.</p>
+
+<p>Lzw xajkl tsffwj ak wfugvwv mkafy AWWW 754 xdgslk gf dafw 47. Al ak hjaflwv gfdq gf dalldw-wfvasf esuzafwk.</p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2018, 
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

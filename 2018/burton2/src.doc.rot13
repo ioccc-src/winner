@@ -1,0 +1,81 @@
+zrzbel znc: Z (bssfrg, yratgu)
+	0,256	  gbxravmngvba syntf
+	256,128	  xrljbeq yratgu bssfrg znc
+	384,640	  xrljbeq fgevatf (453 punef)
+	1024,32	  bcgvba ovg znc
+	1056,32   trgbcg fgevat
+	1088,256  gevtencu znc
+
+serrpbqr: gevanel, nycunorg  0 { 1 } 2 ;
+	hfvat guerr gevgf, gur nycunorg N-M jvgu n fcnpr/ahyy pna or rapbqrq:
+		0 fcnpr/ahyy, 1 N, 2 O, 3 P, ...
+	nygubhtu guvf rapbqvat vf abg gur bayl bar
+	pbqr vf serr-sbez, fcnpr ntabfgvp (bar be zber fcnprf ner erdhverq sbe vg gb or 'serr')
+	qrpbqvat vf pbagrkg qrcraqrag, glcvpnyyl hfvat 3 be zber gevgf
+	gur cebtenz pbzzragf hfr o(3) naq gur nycunorg rapbqvat nobir,
+	ohg gurl ner abg pyrnayl fcyvg ba 3-gevg obhaqnevrf(!)
+
+v N		pj
+  O
+v P		pp
+  Q
+v R		pk
+c S[]		xrljbeqf, gbxra vavg, bcgvbaf vavg, bcgvba fgevat, gevtencu vavg
+  T
+v U		pbzzrag uvfgbel
+v V		pv
+  W
+v X		px
+v Y		py
+p Z[2053]	zrzbel: gbxra syntf, xrljbeq gnoyr, bcgvba gnoyr, gevtencu gnoyr
+  A
+c B		fgneg bs juvgrfcnpr
+  C
+  D
+v E		gf
+  F
+v G		gx
+q H		qrsvarq hfntr zrffntr (-QH="\"uryc grkg\"")
+  I
+q J		qrsvarq erfreirq jbeq fgevat (-QJ=\"xrljbeqf\")
+  K
+  L
+v M		256
+v n		tybony
+v o(v)		qrpbqr serrpbqr hfvat v ovgf
+v p		tybony
+v q(f,v)	vf n xrljbeq?
+c r		raq bs ohssre
+i s(v,v)	pbzcng
+i t(v,v)	pbzcng_jbeqf
+v u(f,v)	cevag v punef bs f, be hagvy ahyy
+c v		ohssre
+v w()		yrkre
+  x
+v y		10 / arjyvar
+v z(p)		jnag(p), unaqyrf rfpncrf
+  a		tybony
+v b		tybony
+  c
+c d		xrljbeq vaqrk gnoyr
+v e(v,v)	cevag net1 nf vag gb fgqbhg/ree ol net2, genvyrq ol fcnpr/arjyvar
+  f		fgneg bs gbxra
+  g
+  h
+v i		pzq yvar syntf
+  j
+  k
+  l
+c m		pheerag cbvagre
+
+shapgvbaf
+
+v u(f,v)	cevag v punef bs f, be hagvy ahyy
+v e(v,v)	cevag net1 nf vag gb fgqbhg/ree ol net2, genvyrq ol fcnpr/arjyvar
+v z(p)		jnag(p), unaqyrf rfpncrf
+v q(f,v)	vf n xrljbeq?
+v w()		yrkre
+i t(v,v)	pbzcng_jbeqf
+i s(v,v)	pbzcng
+v o(v)		qrpbqr serrpbqr hfvat v ovgf
+v znva(p,cc)	vavg, bcgvbaf, ernq, pbhag, cevag

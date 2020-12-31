@@ -1,0 +1,436 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Best abuse of the rules</title>
+</head>
+<body>
+<h1>Best abuse of the rules</h1>
+
+<p>Dave Burton<br>
+<a href="http://ioccc.snox.net">http://ioccc.snox.net</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To use:</h3>
+
+<pre><code>make
+
+./prog [-tcksri] &lt; file.c
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>./prog -i &lt; prog.c
+./prog -s &lt; prog.c
+./prog -sk &lt; prog.c
+</code></pre>
+
+<p>If you get stuck, try:</p>
+
+<pre><code>make test
+</code></pre>
+
+<p>If you get really stuck, try:</p>
+
+<pre><code>man ./tac.man
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>They say size isn&rsquo;t everything, and in the case of IOCCC <a href="http://www.ioccc.org/2018/iocccsize.c">iocccsize.c</a>
+that is saying something!  What is this program weighing and how much does it weigh?</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h2>tac - tokenize and count C and derivative languages</h2>
+
+<blockquote><pre style="font-style:italic">
+tac computes C program size  
+(obfuscated / otherwise)  
+by splitting code as tokens small,  
+ignoring space, then counting all.  
+
+It tries quite hard to act the same  
+as counting tool of I-OCCC fame.  
+Some bugs were fixed, it's faster too,
+and does more things, just add some glue!  
+
+It does far more than print the size:  
+the token part's a better prize!  
+With each upon on a single line,  
+how many things can you design?  
+
+Included is a keyword sorter,  
+de-obfuscator, freq reporter.  
+With code produced as little parts,  
+just add your own creative arts.  
+
+But first you have to figure out  
+the braces part, without a doubt!  
+And then the code - it isn't easy:  
+for as else?  That's rather cheesy!  
+
+The rest of it is standard fare:  
+expressions strange, the globals bare,  
+confusing symbols one and oh,  
+and precedence you have to know.  
+
+The keyword list was made external,  
+because of standards change eternal.
+Thus other languages can now,  
+be counted just like C, somehow!  
+
+I hope you find this code obscure  
+enough to win, and thus procure  
+a public place for all to see  
+how badly I can butcher C!  
+</pre></blockquote>
+
+
+<h2>Said another way&hellip;.</h2>
+
+<p><code>tac</code> is the inverse of <code>cat</code>(1): it un-concatenates its input into C tokens,
+writing the token stream to stdout.  There are options to suppress the token ids,
+summarize the token counts, and several options to allow it to be compatible
+with <code>iocccsize</code>.</p>
+
+<p>The token-based output is quite useful in analyzing source code (see below),
+and the counter is more accurate than <code>iocccsize</code> (see below); but this can be
+fixed by using the -c compatibility flag, restoring the following problems as
+in the official tool:</p>
+
+<ul>
+<li>whitespace <strong>within</strong> a string is <strong>not</strong> counted;
+this seems wrong, as these chars <strong>are</strong> significant</li>
+<li>&ldquo;<code>{;}</code>&rdquo; is not counted within a double-quoted string</li>
+<li>whitespace preceding a comment is char-counted, unless the comment starts a line</li>
+<li>-k processes the reserved words within <code>//</code> comments(!), but not <code>/*</code>, changing the counts</li>
+</ul>
+
+
+<p>The following bugs are always corrected:</p>
+
+<ul>
+<li>treats <code>/*/</code> as a complete comment (<code>/*/int if for/*/</code> has three keywords)</li>
+<li>-k enables <code>//*</code> or within a line comment <code>/*</code> to initiate a comment block until following <code>*/</code></li>
+<li>-k processes double quote characters in <code>//</code> comments -
+thus a solitary quote consumes everything until the next quote</li>
+<li>single quotes are not handled correctly (<code>'"'</code> starts a dquote in <code>iocccsize</code>)</li>
+<li><code>#ifndef</code> is omitted as a keyword (but <code>#ifdef</code> is allowed?)</li>
+<li>I is not a reserved word.</li>
+<li><code>tac</code> correctly penetrates <a href="http://ioccc.org/2014/birken/hint.html" title="Best use of port 1701">23rd century cloaking technology</a>. ;-)</li>
+</ul>
+
+
+<p>There is one (known) remaining problem with detection:</p>
+
+<ul>
+<li><p>comments between preprocessor hash and keyword are not replaced with whitespace;
+the following counts #include as two tokens, <code>#</code> and <code>include</code> (not as a reserved word):</p>
+
+<pre><code>  #/*this will not be counted*/include/*correctly*/&lt;stdio.h&gt;
+</code></pre></li>
+</ul>
+
+
+<p>Fixing this properly hampers backwards compatibility in counting.  This requires
+eliding comments during readsource (ISO 5.1.1.2, phase 3), and yet still
+counting words correctly absent -k.</p>
+
+<h2>Backwards Compatibility</h2>
+
+<p><code>tac</code> was run over all 366 previous IOCCC winning entries:</p>
+
+<pre><code>find ~/src/obc -type f -name \*.c | wc
+</code></pre>
+
+<p>The discrepancies found are documented and explained in the file &ldquo;discrepancies&rdquo;.</p>
+
+<pre><code>find ~/src/obc -type f -a -name "*.c" | xargs ./spotcheck ./prog | ./spotdiff |
+    grep -v keep | diff -bw - discrep* | grep "[&lt;&gt;] cl "
+</code></pre>
+
+<p>In summary, there are only 6 unique entries out of 366 that have any variation
+in Rule 2 counts; in all cases, the differences are due to bugs within
+<code>iocccsize</code>, described in detail in the file <code>discrepancies</code>.  There are only 40
+files (40/366, ~11%, including originals and variations) that differ at all, 31
+only in word count; most word count differences appear related to comment block
+detection, weighted more towards recent entries (2011 and onward = 20/40 ~50%).</p>
+
+<p>This (minor) variation in word count values has not been addressed since
+it is not a qualifying metric, nor is it very useful in a programming context:
+whitespace surrounds English words, not necessarily C tokens, as in <code>a+=1;</code>.</p>
+
+<p>Accuracy (versus compatibility) is demonstrated through a series of small test cases
+designed to allow exhaustive, hand-counted values for comparison with the tool values.
+These test cases were vital in debugging and regression testing, and provided a way to
+determine which tool was correct when there were differences.</p>
+
+<blockquote><p>A version of this tool in more clearly written C (tac.c)
+is presented for the Judge&rsquo;s consideration as a more accurate replacement for <code>iocccsize</code>.
+This obfuscated entry is derived from (and compatible with) that code,
+but due to obfuscation, has had some significant, deep changes for the contest.
+Nevertheless, the more clearly written code remains a spoiler for this entry.</p></blockquote>
+
+<p>NB: <code>iocccsize</code> gets a different answer from <code>tac</code> on its own (iocccsize.c) source code;
+<code>tac</code> gets the correct answer.  This is due to the aforementioned bugs within <code>iocccsize</code>,
+proved by fixing iocccsize.c with the included patch, so <code>iocccsize</code> reports
+the correct answer for itself.</p>
+
+<h2>But wait&hellip; There&rsquo;s More!</h2>
+
+<p>There is no limit on line length, file length, comment length, or identifier length.</p>
+
+<p><code>tac</code> features an accurate tokenizer; which presents each C token on a line by itself.
+This feature enables interesting analyses of C (and C++) code, hard to get any other way.</p>
+
+<p>For instance, here is a simple token counter, useful in finding repeated long tokens, or operator
+frequency, or counting the references to identifiers, constants, or breadth of use of the
+language:</p>
+
+<pre><code>!/bin/sh
+cat $* | ./prog -t | sort | uniq -c | sort -k1nr
+</code></pre>
+
+<p>And here is a C keyword frequency counter:</p>
+
+<pre><code>#!/bin/sh
+function iskeyword {
+   awk 'BEGIN{f="c11";while(getline&lt;f)k[$1]=0}
+    {if($1 in k)k[$1]++}END{for(i in k)print k[i],i}'
+}
+cat $* | ./prog -t | iskeyword | sort -k1nr
+</code></pre>
+
+<p>This script was used to &ldquo;optimize&rdquo; the reserved word order so the most frequent IOCCC
+winning entry keywords are checked first.</p>
+
+<blockquote><p>An interesting aside: as might be expected, obfuscation has changed the frequency of
+keyword distribution over time.  The top five for the decades:</p>
+
+<pre><code>  1980s       1990s       2000s       2010s
+    -----       -----       -----       -----
+    94 if       532 char    375 if      254 int
+    69 for      524 if      372 char    217 for
+    59 while    417 int     332 int     198 if
+    48 char     223 for     184 for     121 return
+    43 int      223 void    165 return  104 char
+</code></pre></blockquote>
+
+<p>The keyword list is external to the program, and is easily changed, sorted, checked, verified.
+This allows such additional programs in concert with the tool&rsquo;s primary operation.</p>
+
+<p>A poor-man&rsquo;s de-obfuscator can be based upon the output of <code>tac -t</code> and a handful of
+simple rules (and another use of the external keyword file).
+A more refined version of this is included in the file <code>unob.sh</code>,
+but the simple code below is a serviceable obfuscated C de-obfuscator in a <em>scripting language</em>.
+It really is this easy with <code>tac</code>:</p>
+
+<pre><code>#!/bin/sh
+script='
+BEGIN {
+    last=nl="\n";
+    f="c11"; while(getline &lt;f &gt; 0) kw[$0]++; close(f);
+}
+
+function iskw(a)   { return a in kw }
+function indent(a) { return sprintf("%*s", n*3, " ") }
+function newline() { if (!infor &amp;&amp; last != nl) printf last=nl; }
+function show(a) {
+    if (last==nl) printf "%s", indent()
+    printf "%s%s", space(), a
+    last=a
+}
+function space() {
+    return iskw(last) ||
+      (last ~ /[A-Za-z0-9_+-\/%^[&amp;\]\)=:&lt;&gt;;]$/ &amp;&amp; $0 !~ /[:;()\[\],]/) ? " " : ""
+}
+
+/^\(/   { ++paren }
+/^\)/   { --paren }
+
+/^for/          { newline(); infor=1 }
+infor &amp;&amp; /^;/       { ++infor; show($0 " "); next }
+infor==1 &amp;&amp; /^:/    { ++infor }
+infor&gt;1 &amp;&amp; paren==0 { infor=0 }
+
+/^\?/       { tern++; n++; newline(); show($0 " "); next }
+tern &amp;&amp; /^:/    { newline(); show($0); --tern; --n; next }
+
+/^#/    { newline(); show($0); newline(); next }
+/^;/    { show($0); newline(); next }
+/^{/    { show($0); ++n; newline(); next }
+/^}/    { n--; newline(); show($0); newline(); next }
+
+{ show($0) }
+'
+cat $* | sed 's/#include/##include/' | cpp -E -trigraphs |
+sed 's/^# .*$//' | sed 's/^#//' |
+./prog -t | awk "$script"
+</code></pre>
+
+<h2>On the question of obfuscation</h2>
+
+<ul>
+<li><p>I assume you noticed the <a href="https://www.youtube.com/watch?v=fUspLVStPbk&amp;start=53" title="Meaning of Life">braces</a>?</p>
+
+<p><em>Every brace is sacred,<br>
+Every brace is great.<br>
+If a brace is wasted,<br>
+Clang gets quite irate</em>.</p></li>
+<li><p>Keywords follow the 2010s top five, without the <code>if</code>, for interesting flow control.</p></li>
+<li>Sometimes a <code>for</code> can be an <code>else</code> - <a href="https://www.youtube.com/watch?v=OHVjs4aobqs" title="Inconceivable">inconceivable</a>!</li>
+<li>I see the <code>getopt</code>.  But &ldquo;<a href="https://www.youtube.com/watch?v=Ug75diEyiA0" title="Where's the beef?">where&rsquo;s the beef?</a>&rdquo;</li>
+<li><p>No character constants, several int constants, and one string
+(hint: which does not encode letters) &ndash; how does this code parse code?</p>
+
+<blockquote><p>Interesting aside: how many is &ldquo;several int constants&rdquo;?</p>
+
+<pre><code>   ./prog &lt; prog.c 2&gt;/dev/null | awk '$1~/260/{a[$2]++}END{for(i in a)print i,a[i]}'
+   ... | wc
+</code></pre>
+
+<p>Which numbers are most often used?</p>
+
+<pre><code>   ... | sort -k2nr | sed 5q
+</code></pre></blockquote></li>
+<li><p>The code describes its function by careful arrangement of variables up front&hellip;</p></li>
+<li>&hellip;coupled with a description of the typical IOCCC contestant, or at least the author</li>
+<li>Why shouldn&rsquo;t trigraph parsing be written in trigraph?</li>
+<li>Where iocccsize.c mocks, this code flaunts:
+&ldquo;<em>no matter how well you may think you understand this code, you don&rsquo;t, so don&rsquo;t mess with it. :-)</em>&rdquo;</li>
+<li><code>O,0,l,1</code> are used to confusing effect, local names obscure global names.</li>
+<li>Globals are used to pass information between routines: don&rsquo;t reorder &ldquo;unrelated&rdquo; statements&hellip;.</li>
+<li>How does the compatibility mode account for the fundamentally different manner of computation?</li>
+<li>The algorithm is quite efficient; reserved word detection and trigraph parsing particularly so.</li>
+<li>This may be the first obfuscated submission that provides the means for its own de-obfuscation.</li>
+</ul>
+
+
+<h2>Rule 2</h2>
+
+<p>The keyword list is externalized as an include file.  This presents a useful
+feature for the source code: not only can the reserved word script above be
+produced, but the tool can be rebuilt with any set of reserved words, just by
+using a different list.  For instance: removing all the secondary keywords;
+removing all the C11 keywords; trying just K&amp;R C.  Since C++ and Java share the
+same operators as C, just change the keyword list and <code>tac</code> will correctly
+tokenize both of these; the tokens >>> and :: can be handled with a short
+post-filter (tokenfix, included).</p>
+
+<p>I believe this entry may also satisfy the request for gratuitous use of all the C11 keywords?
+Whether this context satisfies &ldquo;intended C language context&rdquo; is a matter of interpretation. ;-)
+And <code>tac</code> is ready for the IOCCC++ contest.  And the IOJCC trashcan.</p>
+
+<p>The following reserved word files are included:</p>
+
+<pre><code>kandr   from my venerable 1978 18th printing "The C Programming Language"
+v7unix  7th edition Unix source code, extracted from c00.c
+kandr2  from my 1988 1st printing "The C Programming Language", 2e
+ansi    ANS X3.159-1989
+c99     ISO/IEC 9899:1999(E)
+c11     ISO/IEC 9899:201x(E) N1570
+c++98   http://en.cppreference.com/w/cpp/keyword
+c++11   ISO/IEC 14882:2011(E) N3337 2012-01-16
+c++14   ISO/IEC 14882:2014(E) N4296 2014-11-09
+java8   http://docs.oracle.com/javase/specs/index.html
+ioccc.kw.freq   c11 + additional words, sorted on frequency of occurrence in ioccc winners
+</code></pre>
+
+<p>NB: The keyword file used in this code is derived from the list in iocccsize.c,
+which is neither complete (<code>#define</code>, <code>#ifndef</code>, <code>#undef</code> are missing
+&ndash; yes, Virginia knows about <code>#define</code> omitted on purpose),
+nor correct (many more are added: <code>I</code>, <code>true</code>, <code>bool</code>, <code>compl</code>, &hellip;):</p>
+
+<pre><code>(sed -n '1p' c11; sed -n '2,$p' ioccc.kw.freq | sort) | comm -3 - c11
+</code></pre>
+
+<p>That is an obfuscated way to say &ldquo;diff&rdquo;.  But it also more clearly shows the, um, diffs.</p>
+
+<p>The usage string is similarly externalized, providing a better usability string than
+the limits would otherwise allow.  If this is considered bending the rules too far,
+just -DU=O to get a passible, if cryptic, usage message using no additional octets
+than without the define.
+This also allows the builder to configure the amount of help a utility should provide
+(<a href="https://www.youtube.com/watch?v=VU0GYSA1POs" title="Ants">you want a manpage? Because that&rsquo;s how you get a manpage.</a>)
+&ndash; a rather significant point of contention made moot.</p>
+
+<p>There is definitely abuse of the Rule2 counter, exploiting a &ldquo;feature&rdquo; of <code>iocccsize</code>:
+<code>iocccsize</code> does not Rule2 count {, } and ; when followed by whitespace &ndash; even within a string!
+Thus: Freecode, a simple, uncounted, highly obfuscated encoding of a central part
+of this program.  (The reserved word list is not Freecoded, both because it is useful
+apart from the program, and because Freecode is not entirely free.*)</p>
+
+<ul>
+<li>Some restrictions apply.  Not approved for all uses.  Some assembly required.</li>
+</ul>
+
+
+<h2>Compilation</h2>
+
+<p>The code is ANSI compliant, but it does have a string longer than 509 characters.
+It has been tested on OSX and Linux, Clang and GCC.</p>
+
+<p>The code uses trigraphs, ironically: it parses trigraphs with trigraph code.
+Because that&rsquo;s funny.  And it remains obscure after, so trigraphs are not used for obfuscation.
+Thus -trigraphs -Wno-trigraphs (which is also humorous).</p>
+
+<p>It&rsquo;s obfuscated C.  Thus -Wno-parentheses -Wno-empty-body -Wno-char-subscripts.</p>
+
+<p>The code uses unsigned chars, but C strings are signed.  Thus -Wno-pointer-sign.
+NB: This is <em>not</em> a portability concern, the one string holds only printable ASCII characters.</p>
+
+<p>Thus:</p>
+
+<pre><code>clang -ansi -Wall -trigraphs -Wno-trigraphs -Wno-parentheses -Wno-empty-body -Wno-char-subscripts -Wno-pointer-sign -DU=O -DW=\"keywords\" -o prog prog.c
+</code></pre>
+
+<h2>Coda</h2>
+
+<p>Cody Ferguson was relentless in his pursuit of bugs.
+Thanks to his reports, the version of <code>unob.sh</code> is stronger,
+<code>tac</code> groks digraphs, <code>tokenfix</code> corrects for missing digraphs in <code>prog.c</code>,
+and the program <code>manpage</code> was added to the corpus.</p>
+
+<p><code>manpage</code> is a useful program that turns ASCII versions of man pages (e.g. <code>tac.man</code>) into real
+man pages.  It works for C and C-like languages, command lines,
+and was designed to handle man page sections 1-8.
+It works well on most inputs, but tends to need some raw nroff for more fancy constructions,
+such as combined arguments
+(e.g. the -r and -s arguments to tac are not recognised when written as -rs in prose).</p>
+
+<p>Try:</p>
+
+<pre><code>manpage tac
+
+manpage -h
+manpage -h | manpage
+manpage -h | manpage -R | less
+manpage -h | manpage -P | lpr
+</code></pre>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2018, 
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

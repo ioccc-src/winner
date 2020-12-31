@@ -1,0 +1,54 @@
+: help key  ( flush the carriage return form the input buffer )
+
+" The following are the standard known words; words marked with (*) are
+immediate words, which cannot be used from command mode, but only in
+word definitions.  Words marked by (**) declare new words, so are always
+followed by the new word.
+
+	! @		fetch, store
+	+ - * / mod	standard arithmetic operations
+	= < > <= >=	standard comparison operations
+
+	not		boolean not of top of stack
+	logical		turn top of stack into 0 or 1
+
+	dup over	duplicate the top of stack or second of stack
+	swap drop	reverse top two elements or drop topmost
+
+	inc dec		increment/decrement the value at address from stack
+	add		add a value from 2nd of stack into address from top
+
+	echo key	output character from, or input to, top of stack
+	. #		print out number on top of stack without/with cr
+	cr		print a carriage return
+
+[more]" key
+" (**)	var		declare variable with initial value taken from stack
+(**)	constant	declare constant with initial value taken from stack
+(**)	array		declare an array with size taken from stack
+
+(*)	if...else...then	FORTH branching construct
+(*)	do...loop		FORTH looping construct
+	i j			loop values (not variables)
+
+	print		print the string pointed to on screen
+
+(*)(**) :		declare a new THIRD word
+(*)	<build does>	declare a data types compile-time and run-time
+(*)	;		terminate a word definition
+
+[more]" key
+" Advanced words:
+	here		current location in dictionary
+	h		pointer into dictionary
+	r		pointer to return stack
+	fromr tor	pop a value from or to the return stack
+
+	,		write the top of stack to dictionary
+	'		store the address of the following word on the stack
+	allot		leave space on the dictionary
+
+	::		compile a ':' header
+	[		switch into command mode
+	]		continue doing : definitions
+" ;

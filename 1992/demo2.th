@@ -1,0 +1,10 @@
+: demo2 
+
+	10 0		( iterate from 0 stopping before 10 )
+	do
+	    i .  	( print the loop counter )
+	loop
+	cr		( add a newline )
+;
+
+demo2

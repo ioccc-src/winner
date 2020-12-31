@@ -1,0 +1,36 @@
+/rot13
+.s/rot13/click the text to rot13/
+a
+<span onclick="
+function rot13(txt) {
+    var buf = '';
+    var intag = 0, inent = 0;
+    for (j = 0; j < txt.length; j++) {
+        var c = txt.charCodeAt(j);
+	if (intag) {
+	    if (c == 62) intag = 0;
+	    buf += String.fromCharCode(c);
+	} else if (c == 60) {
+	    intag = 1;
+	    buf += '<';
+	} else if (inent) {
+	    if (c == 59) inent = 0;
+	    buf += String.fromCharCode(c);
+	} else if (c == 38) {
+	    inent = 1;
+	    buf += '&';
+	} else if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)) {
+	    buf += String.fromCharCode((c<=90?90:122)>=(c+13)?c+13:c-13);
+        } else {
+            buf += String.fromCharCode(c);
+	}
+    }
+    return buf;
+}
+this.innerHTML=rot13(this.innerHTML);">
+.
+$
+a
+</span>
+.
+wq

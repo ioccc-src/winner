@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most inflationary</title>
+</head>
+<body>
+<h1>Most inflationary</h1>
+
+<p>Fabrice Bellard<br>
+<a href="https://bellard.org/">https://bellard.org/</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To use:</h3>
+
+<pre><code>make
+./prog &gt; lena.ppm
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>eog lena.ppm # On Linux
+preview lena.ppm # On MacOS
+
+wget http://upload.wikimedia.org/wikipedia/en/2/24/Lenna.png
+pngtopnm &lt; Lenna.png | pnmscale 0.25 | cjpeg -arithmetic -dct float -quality 14 &gt; small.jpg
+</code></pre>
+
+<p>The file <code>small.jpg</code> will be approximately of the same size as the raw image data
+in the program. Compare the level of the detail and the artifacts of
+<code>small.jpg</code> and <code>lena.ppm</code>.</p>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>Compressing images is just a matter of simple arithmetic and some magic, isn&rsquo;t it?</p>
+
+<p>We could understand some of the arithmetic but none of the magic.</p>
+
+<p>Deciphering the mechanism used for data encoding to make use
+of the whitespaces, braces and semicolons should be a slightly easier task.</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<p>This program outputs a 128x128 RGB image file to the standard output
+using the portable pixmap file format (PPM). It contains the famous
+&ldquo;Lena&rdquo; image which is used in many image compression tests.</p>
+
+<p>The uncompressed image is 12 times larger than the source code of the
+program which includes the image data and the complete decoder. The
+actual image data is 1220 byte long, which gives a compression ratio
+of 40. Using a JPEG-like algorithm would not be enough to reach this
+level of compression (the Lena image would be barely recognizable). So
+the algorithm is based on the latest advances in image compression. It
+includes the following features:</p>
+
+<ul>
+<li>DCT transform with variable block size (4x4, 8x8, 16x16 and 32x32)</li>
+<li>DC and directional predictors</li>
+<li>arithmetic coding</li>
+<li>YCgCo color space.</li>
+</ul>
+
+
+<p>The image data is encoded to a C string with some tricks to make the
+best use of the IOCCC size constraints. The identifiers were shortened
+to a single letter to save space. No specific obfuscation was needed
+as the algorithms already have a significant complexity.</p>
+
+<p>Although the program was optimized to decompress its built-in image,
+it accepts to decompress image files from its standard
+input. Examples:</p>
+
+<pre><code>./prog d &lt; lena512.bin &gt; lena512.ppm
+./prog d &lt; fruits.bin &gt; fruits.ppm
+./prog d &lt; vintage_cars.bin &gt; vintage_cars.ppm
+</code></pre>
+
+<p>The original images for <a href="https://commons.wikimedia.org/wiki/File%3AFruits_oranges%2C_jardin_japonais_2.JPG">fruits</a> and <a href="https://commons.wikimedia.org/wiki/File%3ARed_Bull_Jungfrau_Stafette%2C_10th_stage_-_vintage_cars_%282%29.jpg">vintage cars</a> come from
+Wikipedia and were resized to a width of 1024 pixels. Warning: the
+program is not protected against invalid input.</p>
+
+<p>The program should be portable on any Unix system. On Windows the line
+&ldquo;<em>setmode(0, 32768); </em>setmode(1, 32768);&rdquo; must be added at the start of
+the main() function to avoid unwanted carriage return characters in
+the output.</p>
+
+<hr />
+
+<hr />
+
+<!--
+(c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2018, 
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

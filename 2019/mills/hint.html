@@ -1,0 +1,659 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.2.0">
+  <meta http-equiv="Content-Type"
+        content="text/html; charset=utf-8">  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most in need to be tweeted</title>
+</head>
+<body>
+<h1>Most in need to be tweeted</h1>
+
+<p>Christopher Mills<br>
+Twitter: @MisterXopher</p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To use:</h3>
+
+<pre><code>make
+
+make cpclean
+# Let this run for about about an hour and then kill it
+./prog Shakespeare.txt
+./prog &lt; $(&lt; ls -1tr cp* | tail -1) | head -100
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code># If you are on a 64-bit system:
+
+make test-64bit
+
+less IOCCC-Rules-Guidelines.output.txt
+
+less IOCCC-hints.output.txt
+
+less Eugene_Onegin.output.txt
+
+# However, as the binary model files used to produce the output are in an implementation-specific format,
+# your mileage may vary.
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>Can a machine learn?</p>
+
+<p>Some say so.</p>
+
+<p>But can a machine learn to write like Shakespeare,</p>
+
+<p>or tweet like <a href="http://trumptwitterarchive.com">Trump</a>?</p>
+
+<p>Can it write rules and guidelines for the IOCCC?</p>
+
+<p>You decide. :-)</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h1>Welcome to OMLET! &#x1f373;</h1>
+
+<p>OMLET is the <em>Obfuscated Machine Learning Environment Toolkit</em>, a
+micro-framework for experimenting with <a href="https://en.wikipedia.org/wiki/Recurrent_neural_network">recurrent neural networks</a>.  OMLET
+lets you build, train and evaluate <a href="https://en.wikipedia.org/wiki/Deep_learning">deep neural networks</a>.  Why invest
+hours reading documentation and megabytes of disk space on a full-featured DNN
+framework like <a href="https://www.tensorflow.org">TensorFlow</a> or <a href="http://torch.ch">Torch</a> when you can have full RNN
+functionality in less than 4 KB!</p>
+
+<p>OMLET has the following features:</p>
+
+<ul>
+<li>User-programmable network configurations and hyperparameters</li>
+<li>Support for various types of recurrent and feed-forward neural networks
+including vanilla RNNs, LSTMs and GRUs of depths of up to 99 layers</li>
+<li>No limit on parameter size (except for those imposed by the system)</li>
+<li>Training and inference modes, with periodic checkpointing</li>
+<li>Advanced <a href="https://arxiv.org/abs/1412.6980">Adam</a> optimizer with <a href="https://www.fast.ai/2018/07/02/adam-weight-decay/">weight decay</a> for simplified
+training</li>
+<li>Hyperparamer support for batch sizing, learning rate schedule, weight
+decay and gradient clipping</li>
+<li>Easily extensible (requires some expertise in the C programming language)</li>
+<li>Friendly markdown documentation</li>
+</ul>
+
+
+<p>OMLET is based on <a href="https://cs.stanford.edu/people/karpathy/">Andrej Karpathy&rsquo;s</a> <a href="https://github.com/karpathy/char-rnn">character-level language model</a>
+as described in his blog post <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/"><em>The Unreasonable Effectiveness of Recurrent
+Neural Networks</em></a>.  I&rsquo;ve included a small sample dataset to use for
+training, but you can have even more fun by downloading some larger datasets:</p>
+
+<ul>
+<li><a href="https://cs.stanford.edu/people/karpathy/char-rnn/linux_input.txt">Linux kernel source</a></li>
+<li><a href="https://cs.stanford.edu/people/karpathy/char-rnn/warpeace_input.txt"><em>War and Peace</em></a></li>
+<li><a href="https://github.com/ryanmcdermott/trump-speeches">Donald Trump&rsquo;s 2016 campaign speeches</a></li>
+</ul>
+
+
+<h2>Getting started with OMLET</h2>
+
+<p>OMLET has three operating modes:</p>
+
+<ul>
+<li><em>Training</em>, which trains a network from scratch</li>
+<li><em>Continuation</em>, which trains starting from an existing checkpoint</li>
+<li><em>Inference</em>, which uses an existing trained network to make predictions</li>
+</ul>
+
+
+<p>For your first OMLET experiment, we will try training a simple single-level
+RNN to write some <a href="https://en.wikipedia.org/wiki/William_Shakespeare">Shakespere</a> plays.  Start by typing</p>
+
+<pre><code>make
+</code></pre>
+
+<p>After it builds, train it using</p>
+
+<pre><code>./prog shakespere.txt
+</code></pre>
+
+<p>This will immediately start outputting gibberish to the output, e.g.</p>
+
+<pre><code>./prog shakespere.txt
+ sins ohennAu
+T-teooclelp tiThoWy
+
+g
+nlakuafy 
+e
+sselW usnsofueB Aoee pasfUsuslhe ooM ot Wou moy
+me neltAl -no IoyI mhuyakse  inT-l chu ghenn ffo? fnsoe yhyye
+ue nnfrlass heUthole saounlcesyee pee 
+t,
+T0:0% 3.210888
+o',,vU
+ An ,hTf lnm  Far rur:s moilt WoEgrv wonds mith Aog thernw
+Rni So
+co Nnd :
+For an bImy pgafoun:
+Wf'r hom wortiverita
+int fod mous Eheledet,
+Tho he theket nonS wnu-ang dorlaMSp
+nrocWiSe tflg 'o.
+T0:0% 2.995950
+d whecedhencrysesil yr bn,
+we hh y thiwt
+
+
+hut fithlot,
+Fmdy s he alt
+Vh th no dh foud bobt werw:s Aotnf Fhwi't whe, eusu
+
+lhh thele wewcond ary soupfy wind tDont couc ths:
+er fucwald oncli hen bos, f
+T0:1% 2.878945
+</code></pre>
+
+<p>The gibberish is the networks attempt to write a play.  So far, it&rsquo;s not very
+successful!  Between the chunks of gibberish are training progress reports
+that look like</p>
+
+<pre><code>T0:1% 2.878945
+</code></pre>
+
+<p>This tells you that we are 1% through training epoch 0, and that the training
+<a href="https://en.wikipedia.org/wiki/Loss_function">loss</a> is about 2.88.  As the training continues, the training loss will
+reduce and the generated snippets will improve quickly:</p>
+
+<pre><code>ses, kuth
+LAs of the wish,
+As, I nos you,
+Yov not to nalll,
+Tr tot wonds.
+
+First Sondy, llt lrte, our, tw.
+
+First.
+
+BRUTUS:
+Helsting the kith gops of hoch Whay, fars surd what to,
+The cownens golt te.
+T0:12% 2.259114
+eplerrotrur tandans one wiok thy or thach and cullice ded yourssting
+And wours:
+Whed ur surt.
+
+SINENIUS:
+On we lain bith
+rerytund: tich lon hyivetetgor.
+
+VOLUONIA:
+He brich nom dove worthan then wise,
+T0:13% 2.254926
+</code></pre>
+
+<p>It&rsquo;s already started to figure out things about Shakespere plays &ndash; how to
+spell short English words, how long lines tend to be, and that characters take
+turns speaking with their names capitalized.  The training loss has dropped to
+2.25 and the improvement is noticeable.</p>
+
+<p>Eventually, we will finish with the training data set and move on to a
+validation cycle:</p>
+
+<pre><code>y fath onother,
+I sucess,
+For I me the west crare.
+
+TRANIO:
+Whow and'd have not to had you you one in my lapteny she very ame come me a gut and shourd aghir you as ignested; shend to make I strem
+To h
+T0:99% 1.924063
+ notnce gaud and is nicked thou day, ha the dusing you disaid: in thim, you things in ere thee thus erile Iht that tare theme my hast thesp thou shay: thou not eaten-or-ho-bess resing: I the but had d
+T0:99% 1.923128
+V0:0% 1.678907
+V0:9% 1.700527
+V0:18% 1.733179
+V0:27% 1.714891
+V0:36% 1.716672
+V0:45% 1.782946
+V0:54% 1.835629
+V0:63% 1.876108
+V0:72% 1.906814
+V0:81% 1.924096
+V0:90% 1.954492
+V0:99% 1.969287
+serfs you'll alliencseard:
+We
+got you? before
+I say.
+
+Farstred dentlentecaly, sir, I it one bosticield
+All me the backnour mino,
+Whith capitaned mid! but stell the ifvemion
+Willerity.
+
+First Cumfol of
+T1:0% 1.885619
+</code></pre>
+
+<p>Validation cycles are used to test the network to see if it has learned to
+generalize &ndash; how well performs on data it hasn&rsquo;t seen before (as opposed to
+the training data that the network will see many times as it trains).  Progress
+on the validation set is also displayed with a validation progress report that
+looks like</p>
+
+<pre><code>V0:36% 1.716672
+</code></pre>
+
+<p>which means we are 36% of the way through the validation for epoch 0, and the
+validation loss is about 1.72.  Comparing the validation loss and the
+training loss will give you an idea of how well the network is learning and
+can let you know if the network is <a href="https://en.wikipedia.org/wiki/Overfitting">overfitting or underfitting</a>.</p>
+
+<p>As part of the training process, the data set (which for OMLET is the
+<code>shakespere.txt</code> file you gave on the command line) is divided into
+<a href="https://en.wikipedia.org/wiki/Training,_validation,_and_test_sets">training and validation sets</a> (by default, 95% of the data is used for
+training, but like most OMLET parameters, you can change this at compile-time).</p>
+
+<p>At the end of the validation run, OMLET writes out a checkpoint file with a
+name like <code>cp01_1.970</code>.  This saves the state of the run at the start of the
+epoch 1, after computing a validation loss of 1.970.  The checkpoint is
+helpful if you need to stop and restart training.  You can stop training by
+doing <code>Control-C</code>.</p>
+
+<p>You can continue training from a previous checkpoint by providing the
+checkpoint file name as the second parameter, for example:</p>
+
+<pre><code>./prog shakespere.txt cp01_1.970
+</code></pre>
+
+<p>After the validation cycle finishes, OMLET begins the next epoch by restarting
+training at the beginning of the training set.  Training continues forever,
+until you quit it with <code>Control-C</code>.  You should monitor the checkpoints to
+see that the validation loss continues to drop.  If it rises, the network has
+probably started to overfit on the training data.</p>
+
+<p>Once you&rsquo;ve trained the validation loss as low as it will go, you can use
+OMLET to run the network in inference mode which uses the frozen checkpoint
+parameters to generate data.  Inference mode takes the checkpoint file as
+<em>standard input</em> (not on the command line) and hence must be run with a
+command like</p>
+
+<pre><code>./prog &lt; cp55_1.807
+</code></pre>
+
+<p>Running it produces an infinite amount of generated output, until you hit
+<code>Control-C</code> to stop it.</p>
+
+<p>Note that if you decide to change networks or use a different input file, you
+will want to delete all the checkpoint files because the format depends on
+both the network and the input &ndash; using the wrong checkpoint is likely to
+cause a crash.</p>
+
+<h2>Experimenting with different networks</h2>
+
+<p>The default network for OMLET (the one you get if you type <code>make</code> with the
+executable name <code>prog</code>) is the simplest recurrent neural network.  It looks
+like</p>
+
+<pre><code>h = tanh(Wxh * x + Whh * h' + Bh)
+y = Why * h + By
+</code></pre>
+
+<p>where</p>
+
+<ul>
+<li><code>x</code> is the <em>input vector</em></li>
+<li><code>y</code> is the <em>output vector</em></li>
+<li><code>h</code> is the <em>hidden state vector</em></li>
+<li><code>h'</code> is the previous value of <code>h</code></li>
+<li><code>Wxh</code>, <code>Whh</code>, and <code>Why</code> are <em>weight matrices</em></li>
+<li><code>Bh</code> and <code>By</code> are <em>bias vectors</em>.</li>
+<li><code>tanh</code> is the <a href="https://en.wikipedia.org/wiki/Hyperbolic_function">hyperbolic tangent function</a></li>
+</ul>
+
+
+<p>The <code>W</code>&rsquo;s and <code>B</code>&rsquo;s are the trainable parameters of the network, and the
+process of training is optimizing the values of these parameters to minimize
+the loss of the network across the training set.</p>
+
+<p>It is the presence of the hidden state vector that allows the RNN to
+&ldquo;remember&rdquo; the past.  We can see what would happen if we removed this hidden
+state.  If you type</p>
+
+<pre><code>make lin1
+</code></pre>
+
+<p>OMLET will create an <a href="https://en.wikipedia.org/wiki/ADALINE">ADALINE</a> network that does</p>
+
+<pre><code>y = Wxy * x + By
+</code></pre>
+
+<p>This simple <a href="https://en.wikipedia.org/wiki/Linear_map">linear</a> <a href="https://en.wikipedia.org/wiki/Feedforward_neural_network">feed-forward network</a>.  You can run it with</p>
+
+<pre><code>./lin1 shakespeare.txt
+</code></pre>
+
+<p>The linear network won&rsquo;t be able to get past the gibberish stage, because it
+lacks history:</p>
+
+<pre><code>./lin1 shakespeare.txt
+UERond w,
+
+
+Gir:
+KINof s, mesther s thouth.
+E:
+KINTret, at fu,
+GOMy t, as sth kesewit sooos atse ang k, ck,
+Sotheouserivesthecowhet been's, t he, h nre; t and, har wiread of pincer cedst sur has, ut:
+
+T14:67% 2.465115
+UKESpan,
+NGaromy soreate e m esewfoure pamitherarjulthengeoly tl.
+NG s at e! w.
+
+WAllinoully?
+Wamisw ofilem:
+I'delandinarrstath har aksubly s cath Whern t Is, weciss:
+
+GLat s; llde.
+Y aterit dsthence 
+T14:67% 2.465404
+</code></pre>
+
+<p>It is able to guess at what character is likely to follow the current one
+(by doing a <a href="https://en.wikipedia.org/wiki/Linear_regression">linear regression</a>), but it lacks any history beyond that to
+guide it.</p>
+
+<p>You might be wondering about the role of the <code>tanh</code> function in the RNN.
+<code>tanh</code> acts as an <a href="https://en.wikipedia.org/wiki/Activation_function">activation function</a> which adds <a href="https://en.wikipedia.org/wiki/Nonlinear_system">nonlinearity</a>
+to the network and allows it to solve complicated problems.  Without
+nonlinearity, all of the linear functions would fold together into a single
+matrix-vector multiply and you&rsquo;d effectively regress to the linear network
+above.  Alas, even adding a nonlinearity to the feed-forward network
+(creating a <a href="https://en.wikipedia.org/wiki/Perceptron">perceptron</a>) does not improve the performance because we
+still lack the history provided by the hidden state vector (although if you
+want to try it yourself, you can do so with <code>make per1</code>).</p>
+
+<h2>Going deeper</h2>
+
+<p>We can try to improve the RNN&rsquo;s performance by stacking RNN modules atop each
+other:</p>
+
+<pre><code>h1 = RNN(h1', x)
+h2 = RNN(h2', h1)
+y = Why * h2 + By
+</code></pre>
+
+<p>with <code>RNN(h, x)</code> defined as above.  Each RNN module has its own set of
+parameters and its own hidden state vector.  This will improve the network&rsquo;s
+performance, at the cost of a much larger parameter space</p>
+
+<blockquote><p><strong>IMPORTANT NOTE</strong>: Since OMLET uses the system stack for network storage,
+larger networks may cause OMLET to crash (typically with a message like
+<code>Segmentation fault</code>) unless the system stack size is first increased.
+The exact command for doing so depends on your shell and your system&rsquo;s
+hard limits.  On <code>sh</code>/<code>ksh</code>/<code>bash</code> shells, you can view the hard limit
+with <code>ulimit -Hs</code> and set it with <code>ulimit -s 65532</code> (replacing <code>65532</code>
+with the actual hard limit).  On <code>csh</code>/<code>tcsh</code> shells, you can view
+the hard limit with <code>limit -h stacksize</code> and set it with
+<code>limit stacksize 65532</code> (replacing <code>65532</code> with the actual hard limit).</p></blockquote>
+
+<p>You can try the deeper network by doing</p>
+
+<pre><code>make rnn2
+</code></pre>
+
+<p>(or even <code>make rnn3</code> if you want a three-layer RNN) and train it with</p>
+
+<pre><code>./rnn2 shakespeare.txt
+</code></pre>
+
+<p>The additional depth should allow the network to make better predictions (it
+can represent more complicated history), but it may take a long time to train
+&ndash; both because the network (being larger) now requires more time to train and
+because of the <a href="https://en.wikipedia.org/wiki/Vanishing_gradient_problem">vanishing and exploding gradient problem</a>, which might
+keep it from ever reaching its potential.</p>
+
+<h2>LSTMs and GRUs</h2>
+
+<p>RNNs are particularly hard to train because the they are trained using
+<a href="https://en.wikipedia.org/wiki/Backpropagation_through_time">bankpropagation through time</a>.  The RNN is trained by effectively
+converting it into a non-recurrent network by making many copies of it
+and propagating the hidden state through the copies.  During training,
+the backpropagation through many clones of the network amplifies the
+gradient, worsening the exploding and vanishing gradient problem.</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Long_short-term_memory">Long Short Term Memory</a> networks (also called LSTMs) were developed to
+solve this problem.  Christopher Olah gives a good description of them
+at his <a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">blog posting</a>.  You can build a two-level LSTM by doing</p>
+
+<pre><code>make lstm2
+</code></pre>
+
+<p>and train with it with</p>
+
+<pre><code>./lstm2 shakespeare.txt
+</code></pre>
+
+<p>The LSTM is much easier to train because it explicitly decides how to update
+its hidden state via &ldquo;gates&rdquo;.  These gates are called</p>
+
+<ul>
+<li><em>input gate</em>, which decides what part of the input to pay attention to</li>
+<li><em>forget gate</em>, which decides what part of the hidden state to forget</li>
+<li><em>output gate</em>, which decides what part of the hidden state is used to
+produce the output</li>
+</ul>
+
+
+<p>The basic LSTM equations are</p>
+
+<pre><code>f = sigmoid(Wxf * x + Whf * h' + Bf)
+i = sigmoid(Wxi * x + Whi * h' + Bi)
+o = sigmoid(Wxo * x + Who * h' + Bo)
+c = f * c' + i * tanh(Wxc * x + Whc * h' + Bc)
+h = o * tanh(c)
+</code></pre>
+
+<p>Where</p>
+
+<ul>
+<li><code>x</code> is the input vector</li>
+<li><code>h</code> is the hidden state (and the output to the next layer)</li>
+<li><code>c</code> is the <em>cell state</em> which represents the &ldquo;memory&rdquo; of the LSTM</li>
+<li><code>h'</code> and <code>c</code>&lsquo; are the previous values of <code>h</code> and <code>c</code> respectively</li>
+<li><code>f</code> is the <em>forget gate</em> that tells the LSTM what portion of the hidden
+state to forget</li>
+<li><code>i</code> is the <em>input gate</em> that tells the LSTM what portion of the input
+vector to pay attention to</li>
+<li><code>o</code> is the <em>output gate</em> that tells the LSTM what portion of the cell
+state to use to generate the hidden state</li>
+<li><code>Wxf</code>, <code>Whf</code>, <code>Wxi</code>, <code>Whi</code>, <code>Wxo</code>, <code>Who</code>, <code>Wxc</code>, and <code>Whc</code> are trainable
+parameter matrices</li>
+<li><code>Bf</code>, <code>Bi</code>, <code>Bo</code>, and <code>Bc</code> are trainable bias vectors</li>
+<li><code>tanh</code> is the hyperbolic tangent function</li>
+<li><code>sigmoid</code> is the <a href="https://en.wikipedia.org/wiki/Logistic_function">logistic function</a></li>
+</ul>
+
+
+<p>There are several LSTM variants (see <a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">C. Olah&rsquo;s blog post</a> for more
+examples).  One important one is the <a href="https://en.wikipedia.org/wiki/Gated_recurrent_unit">gated recurrent unit</a>.  GRUs are
+simplified versions of an LSTM which combine the gates together, meaning they
+require fewer learned parameters.  This allows them to train faster than a
+generic LSTM.  You can build a two-layer GRU with</p>
+
+<pre><code>make gru2
+</code></pre>
+
+<h2>Building your own networks</h2>
+
+<p>The OMLET <code>Makefile</code> comes with one-, two- and three-layer RNNs, LSTMs and
+GRUs, along with simpler feed-forward networks like multi-layer perceptrons and
+a linear network.  This isn&rsquo;t the limit of OMLET&rsquo;s power &ndash; you can create your
+own networks by modifying the <code>Makefile</code>.  Networks are passed in on the
+compiler&rsquo;s command-line by using <code>-D</code> directives.  The network is defined by
+a <code>-DNW='...'</code> command which consists of a series of comma-separated
+assignments.  For example, the simple one-layer RNN could be defined like</p>
+
+<pre><code>-DNW=` x  = I(n), hp = I(128),                  \
+       h  = C(hp, T(A(L(128, x), L(128, hp)))), \
+       y  = L(n, h)'
+</code></pre>
+
+<p>The network declares <code>x</code> as an input vector (there must be a declaration for
+<code>x</code>).  It is declared as <code>I(n)</code>, which is an input vector of size <code>n</code>, which
+is the number of characters of the input alphabet (OMLET computes this from
+the input file at the start of training).  OMLET will arrange to present the
+input character as a <a href="https://en.wikipedia.org/wiki/One-hot">one-hot</a> vector based on the current input
+character.</p>
+
+<p>The second declaration, <code>hp</code>, declares the previous hidden state vector (what
+we called <code>h'</code> above).  We declare this to be of size 128 &ndash; an arbitrary
+choice.  A larger state vector can (theoretically) carry more state, but at
+a cost of larger parameter matrices and longer training time.  You can
+experiment with increasing the hidden vector size and see.</p>
+
+<p>The third line is the core of the RNN.  It sets <code>h</code>, the hidden vector output
+to be the sum of two linear elements specified by <code>L</code>.  The <code>L</code> function
+takes two parameters &ndash; the output vector size (which must match the size of
+<code>h</code>) and the input vector.  <code>L</code> will compute <code>y = W * x + B</code> where each <code>L</code>
+has its own <code>W</code> (weight) and <code>B</code> (bias) training parameters.  Both <code>x</code> and
+<code>hp</code> are sent through <code>L</code> and the result passed through the <code>A</code> function,
+which does vector addition.  That result is passed through <code>T</code> which does
+element-wise <code>tanh</code> activation.</p>
+
+<p>Next, we wrap the whole thing with the <code>C</code> function.  <code>C</code> connects <code>hp</code>
+with <code>h</code>, causing the new value of <code>h</code> to be passed to the <code>hp</code> vector on
+the next iteration of the algorithm (allowing the RNN to retain state in <code>h</code>).</p>
+
+<p>Finally, the whole result is passed through another instance of <code>L</code>, this time
+producing a vector of size <code>n</code>, which will have the negative log
+<a href="https://en.wikipedia.org/wiki/Likelihood_function">likelihood</a> function.  This is assigned to <code>y</code>, which is the output of
+the network (and hence must also be declared).</p>
+
+<p>OMLET will take the <code>y</code> result and pass it through the <a href="https://en.wikipedia.org/wiki/Softmax_function">softmax</a> function,
+which converts the log probabilities into a probability distribution.  In
+inference mode, this is used to select the next character to emit.  In
+training mode, this is used to generate the loss which is backpropagated.</p>
+
+<p>As an example of a more complicated network, we can look at a two-layer
+GRU network:</p>
+
+<pre><code>-DHS=128,                                 \
+-DNW=' x  = I(n),                         \
+       y  = L(n, MD(MD(x)))'              \
+-DBK=' hp = I(HS),                        \
+       z  = S(A(L(HS, x), L(HS, hp))),    \
+       r  = S(A(L(HS, x), L(HS, hp))),    \
+       c  = T(A(L(HS, x), L(HS, hp))),    \
+       zc = OG(1, -1, z),                 \
+       h  = C(hp, A(M(zc, hp), M(z, c))), \
+       y  = h'
+</code></pre>
+
+<p>We are using a few new tricks here &ndash; first, we are defining <code>HS</code> as the size
+of the hidden and cell vectors.  There&rsquo;s nothing special about this name, its
+just convenient to specify it so we don&rsquo;t have a bunch of constants in the
+code.  Second, the network itself is very simple &ndash; it declares <code>x</code> and has
+the matrix that converts the <code>HS</code>-sized hidden vector back to the <code>n</code>-sized
+alphabet vector&hellip; but it now calls <code>MD</code>, which is the user-definable
+module (here we are using it twice, to have two cascaded GRU blocks).  The
+<code>MD</code> function performs the sub-network defined by the <code>BK</code> compile-time
+parameter (specified in the <code>-DBK='...'</code> setting).  This sub-module again
+takes an <code>x</code> parameter and produces a <code>y</code> output.  Inside it, we declare
+<code>hp</code> and <code>h</code>, the previous and current state vector, plus equations for the
+various GRU gates (these use <code>S</code> for the sigmoid activation function).
+One final new call is <code>OG</code> which does offset and gain, performing
+<code>y = offset + gain * x</code> where <code>offset</code> (the first parameter) and <code>gain</code> (the
+second) are constants.  We are using this here to compute <code>(1 - z)</code> for the
+GRU&rsquo;s linear interpolator.</p>
+
+<p>The full set of available function blocks follows:</p>
+
+<ul>
+<li><code>I(s)</code>: declares a vector (input or state) of size <code>s</code></li>
+<li><code>L(s, x)</code>: learnable linear function <code>y = W * x + B</code> with an output vector
+size of <code>s</code></li>
+<li><code>CM(x)</code>: learnable element-wise gain function <code>y = W * x</code></li>
+<li><code>A(a, b)</code>: element-wise add: <code>y = a + b</code></li>
+<li><code>M(a, b)</code>: element-wise multiply: <code>y = a * b</code></li>
+<li><code>S(x)</code>: sigmoid activation function <code>y = sigmoid(x)</code></li>
+<li><code>T(x)</code>: hyperbolic tangent activation function <code>y = tanh(x)</code></li>
+<li> <code>C(xp, x)</code>: copy <code>x</code> to <code>xp</code> in the next time step (propagate through
+ time)</li>
+<li> <code>OG(o, g, x)</code>: apply a constant offset and gain: <code>y = o + g * x</code></li>
+<li> <code>MD(x)</code>: apply the sub-network specified by <code>BK</code></li>
+</ul>
+
+
+<p>Note: even if you don&rsquo;t use <code>MD</code> in your network, you should still define
+<code>BK</code> by adding <code>-DBK='y=x'</code> to the command line, otherwise you will get a
+compile-time error.</p>
+
+<h2>Hyperparameters</h2>
+
+<p>OMLET has a large number of training and inference parameters which can be
+changed by the user.  All of these are set by <code>-D</code> on the compile command line.
+The list of hyperparameters follows:</p>
+
+<ul>
+<li><code>TP</code>: Temperature parameter for use in inference mode.  This divides the
+log probabilities before softmax.  A low temperature makes the model choose
+safer but more boring choices.  A high temperature takes more risks but
+makes more mistakes.  Default is 1.0, which uses the computed
+probabilities.</li>
+<li>&lsquo;N&rsquo;: Batch size.  This is the number of times the RNN is unrolled, so it
+controls how far back in the past the RNN can see.  The default is 50.
+Larger batch sizes update the weights less frequently and allow the RNN to
+see farther back in time, but at a cost of proportionally more memory.</li>
+<li><code>TR</code>: The percentage of batches in the input data set that will be used
+for training.  The default value of 0.95 sets this as 95%.</li>
+<li><code>LR</code>: The initial learning rate,  The default is 0.002.</li>
+<li><code>LE</code>: The epoch where the learning rate will start decaying.  Defaults to
+epoch 10.</li>
+<li><code>LD</code>: Learning rate decay, per epoch (after <code>LE</code> epochs).  The learning
+rate is scaled by this number.  Default is 0.97</li>
+<li><code>WD</code>: Weight-decay parameter, to promote <a href="https://en.wikipedia.org/wiki/Regularization_(mathematics)">regularizaiton</a>.  The default
+is 0.00008.</li>
+<li><code>RS</code>: The random scale for weight initialization.  Weight parameters will
+be initialized to be between <code>-RS</code> to <code>+RS</code>.  The default is 0.15.</li>
+<li><code>CL</code>: Clamp value for gradients.  Gradients will be limited to the range
+<code>-CL</code> to <code>+CL</code>.  Default is 5.</li>
+<li><code>B1</code>: Momentum mean parameter for Adam optimizer.  Set to 0.9.</li>
+<li><code>B2</code>: Momentum variance parameter for Adam optimizer,  Set to 0.999.</li>
+<li><code>EP</code>: Epsilon parameter for Adam, to provide numerical stability.  Set to
+0.00000001.</li>
+<li><code>DI</code>: How often to print a training or validation progress message and
+inference snippet.  The default prints every 100 training batches.</li>
+<li><code>SL</code>: The number of characters to print when doing an inference snippet.
+Default is 200.</li>
+<li><code>PF</code>: Format string for the checkpoint filename.  The default is
+<code>"cp%02d_%.3f"</code> which includes the epoch and validation loss.  You may
+wish to add a subdirectory to the name to keep checkpoint files out of
+the current directory.</li>
+</ul>
+
+
+<hr />
+
+<!--
+(c) Copyright 1984-2019, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="/png/by-sa-3.0-88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2019,
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

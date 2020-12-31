@@ -1,0 +1,67 @@
+zrzbel znc: O [128,v/b] N [128,gbxraf] k [32,urkpbai] b [224,ertvfgref]
+
+Zrzbel vf "nyybpngrq" sebz gur fgnpx, ol gnxvat n ybpny (fgnpx) inevnoyr
+naq fhogenpgvat 64x -- gurerol yrnivat cyragl bs ebbz sbe rira eryngviryl
+ynetr fgnpx senzrf qhevat erphefvba.
+
+v    znva(v,p**) cnefr pbzznaq yvar be fgqva, nffvtazragf, cevag erfhyg, reebe erpbirel
+
+v64  _		qbg
+p   *N		yrkvpny gbxraf
+p   *O		vachg ohssre
+gq   P		hafvtarq
+p    Q		fbzr fgngr orgjrra shapf
+p   *R		reebe fgevat, raq cbvagre
+v64  S()	rkce: + - ^ |
+hp   T()	aba-ybpny tbgb
+#q   U		hafvtarq
+#q   V		glcrqrs
+gq   W		wzc_ohs
+p   *X		cbvagre gb pzq yvar netf
+gq   Y		pune
+i    Z(h64)	qrgrpg reebef, fnir nafjre va qbg, sbezng erfhyg va qrpvzny naq urk
+p   *A		serrovr ahyy cbvagre
+gq   B		hafvtarq pune
+gq   C		ibvq
+gq   D		vag
+#q   E		erghea
+p    F		flagnk reebe + gbxraf
+p   *G		pheerag gbxra cbvagre
+i    H(p*)	cevag gur ertvfgref
+gq   I		ybat ybat
+#q   J(k)	sbe(;k;)
+gq   K		ybat - bayl sbe ehyr2fc.p
+gq   L		hafvtarq fubeg
+gq   M		hafvtarq ybat ybat
+v64  n		qrevirq: 32
+v64  o		qrevirq: 1
+v64 _o(v64)	grez: << >> >>>
+v64  p		qrevirq: 10
+v64 _p(p*)	pbaireg ovanel tybony w gb nfpvv qrpvzny
+v64  q		serrovr: 0
+i   _q(v64)	npphzhyngr pbairegrq nfpvv olgrf vagb w va onfr cnffrq va
+v64  r		qrevirq: 256
+v64  s		qrevirq: 2
+v64 _s()	pbaireg sebz nfpvv gb ovanel: fryrpgf pbaireg onfr (10,8,16), erfhyg va w
+h64  t(h16)	olgr fjnc 16-ovgf
+h64  u(h32)	olgr fjnc 32-ovgf
+v64  v(h64)	fryrpg fvmr naq olgr fjnc zvavzny olgrf
+i   _v(p*)	pbaqvgvbany cevag
+v64  w		ubyqf cnegvny/npphzhyngrq erfhygf
+*()  x		cge-gb-shap-trgpune
+v   _x()	trg punef sebz fnirq pzq yvar
+wo   y		sbe cnefre reebe erpbirel
+p    z()	fpnaf vachg sbe gbxra, vtaberf juvgrfcnpr
+p    a()	trg arkg vachg punenpgre
+v64 *b		ertvfgref 
+h32  c(p*)	jevgrf gb fgqbhg hagvy ahyy, arjyvar nccraqrq vagryyvtragyl
+i    d(**)	vavg
+v64  e(p)	jevgrf p gb fgqbhg
+v64  f		qrevirq: 8
+v64  g		qrevirq: 4
+v64  h		qrevirq: 3
+p    i		pheerag vachg gbxra
+v64  j()	ernq sebz fgqva hagvy arjyvar be frzv, fxvcf oynax yvarf + pbzzragf, erghea yra
+p   *k		ncgyl anzrq urk pbairefvba gnoyr
+v64  l()	grez: * / % & (<< >> >>>)
+v64  m()	snpgbe ~ ! ? -/+ () INE AHZ QBG

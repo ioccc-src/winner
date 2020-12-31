@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Best use of cocoa - Bronze award</title>
+</head>
+<body>
+<h1>Best use of cocoa - Bronze award</h1>
+
+<p>Daniel Vik<br>
+<a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#x64;&#x61;&#x6e;&#x69;&#101;&#108;&#x40;&#x76;&#105;&#107;&#46;&#99;&#99;">&#100;&#97;&#x6e;&#105;&#101;&#108;&#x40;&#118;&#x69;&#107;&#46;&#x63;&#x63;</a><br>
+<a href="http://danielvik.com/">http://danielvik.com/</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To build:</h3>
+
+<pre><code>make vik
+</code></pre>
+
+<p>This entry requires <a href="http://www.zlib.net/">Zlib</a>.</p>
+
+<h3>To run:</h3>
+
+<h4>Embed text (from file or command line):</h4>
+
+<pre><code>./vik e base.png filename &gt; encodedimg.png
+# or
+./vik e base.png SomeRandomText &gt; encodedimg.png
+</code></pre>
+
+<h4>Extract the embedded text:</h4>
+
+<pre><code>./vik d encodedimg.png
+</code></pre>
+
+<h4>Embed a PNG into another</h4>
+
+<pre><code>./vik e base.png source.png &gt; encodedimg.png
+</code></pre>
+
+<h4>Extract the embedded PNG:</h4>
+
+<pre><code>./vik d encodedimg.png &gt; restored.png
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>./vik e ioccc.png chocolate.png &gt; chocolate-in-ioccc.png
+./vik e chocolate.png ioccc.png &gt; ioccc-in-chocolate.png
+./vik d chocolate-in-ioccc.png &gt; restored-chocolate.png
+./vik d ioccc-in-chocolate.png &gt; restored-ioccc.png
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>References to chocolate had no effect on judging this entry. We
+guarantee it.</p>
+
+<p>Can you discern hidden pieces of chocolate in chocolate-in-ioccc.png ?</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h2>Introduction</h2>
+
+<p>This program is a  steganography application for embedding an image or text
+into another image as well as extracting  the embedded image  or text back.
+The program stores  the embedded  image or text in  the low bits of the RGB
+values.</p>
+
+<p>The program supports any 8 bit true color PNG images (RGB, RGBA, grayscale,
+and grayscale+alpha). The output image is always 8 bit RGB.  When embedding
+one image into another, the width and height needs to be the same.</p>
+
+<p>The program only updates the IDAT and IHDR chunks of the source image.  Any
+additional chunks are copied into the resulting image.</p>
+
+<h3>Bonus Extractor:</h3>
+
+<p>For some reason the chocolate image seems to have some  special properties.
+Apart from  being quite big  and a little bit noisy,  it appears  that when
+embedded into  another image and extracted, the bitmap data is also a valid
+brain$#@$ program. It is of course possible to get the bitmap data from the
+extracted image, and run it through  any of the previous  winning brain$#@$
+interpreters, but I thought it would be easier to include an interpreter in
+the program  to avoid the hassle:</p>
+
+<pre><code>./vik e ioccc.png chocolate.png &gt; encodedimg.png
+./vik b encodedimg.png
+</code></pre>
+
+<p>It is of course also possible  to embed a brain$#@$ program  as a text file
+(as explained above) and decode it, e.g.:</p>
+
+<pre><code>./vik e ioccc.png .+[.+] &gt; encodedimg.png
+./vik b encodedimg.png
+</code></pre>
+
+<h3>Obfuscation</h3>
+
+<p>I really wanted to keep  the program simple,  so instead of adding multiple
+macros or helper methods that can be confusing,  I placed all functionality
+in the main function. Main is called recursively and quite extensively, but
+it gives  the benefit  that all  invocations of  the function  has the same
+parameters, argv and argc.   This really helps readability, as a programmer
+doesn’t need to remember several variable or function names.   I also tried
+to reduce the number of keywords,  and the program only  has four for-loops
+followed by a single return statement.  There is a little bit of use of the
+question mark operator,   but this is really  there to keep  the program as
+simple as possible.</p>
+
+<h3>Portability</h3>
+
+<p>The program is portable to most platforms that  have zlib  available.   The
+only system dependency is that the program relies on writing binary data to
+stdout.</p>
+
+<p>By default, Microsoft compilers adds carriage returns to new lines,  and to
+compile the program on this platform, the following line can be added after
+the  variable  declarations  in  the  main  declaration  in  order  to  run
+correctly:</p>
+
+<pre><code>_setmode(_fileno(stdout), 0x8000);
+</code></pre>
+
+<h3>Limitations</h3>
+
+<p>The program doesn’t have many error checks so passing in  invalid arguments
+or images of mismatching sizes, or unsupported pixel formats will cause the
+program to crash.</p>
+
+<h3>Extendability</h3>
+
+<p>Since a lot of care was taken to keep the code simple,  it turned out to be
+quite easy to extend functionality. I did include a small brain$#@$ after I
+realized that the chocolate image had some interesting properties.</p>
+
+<p>But there  is more functionality  I added that didn’t  fit within  the size
+limits and could not remain included.   For example,  I added  a method  to
+format source code based on a PNG image.   So the format  of the program is
+actually done by the program itself.</p>
+
+<p>And to be honest,   the chocolate  image  did not have  a brain$#@$ program
+embedded to begin with.   I added functionality to the  program to  embed a
+brain$#@$  into a  PNG image and used it  to create the image provided with
+the entry.</p>
+
+<p>I also added a method to analyze PNG images,  to print the size and format,
+as well as the scan line filters.</p>
+
+<p>All these features  were quite easy to add,   much thanks to  the (actually
+pretty good) design of the code.</p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2015,
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

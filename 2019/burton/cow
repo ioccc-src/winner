@@ -1,0 +1,19 @@
+#!/bin/sh
+
+if test $# -eq 0; then
+	./prog
+	exit 0
+fi
+
+args=$*
+for name in $args
+do if test -r $name; then
+	s=$(./prog < $name)
+	echo "$s" $name
+	set -- $s
+	((a += $1))
+	((b += $2))
+	((c += $3))
+	((d += 1))
+fi; done
+((d > 1)) && printf "%8d%8d%8d total\n" $a $b $c

@@ -1,0 +1,263 @@
+8th International Obfuscated C Code Contest Rules
+
+Copyright (c) 1991, Landon Curt Noll & Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.
+
+	Obfuscate:  tr.v.  -cated, -cating, -cates.  1. a.  To render obscure.
+		b.  To darken.  2. To confuse:  Their emotions obfuscated their
+		judgment.  [LLat. obfuscare, to darken : ob(intensive) +
+		Lat. fuscare, to darken < fuscus, dark.] -obfuscation n.
+		obfuscatory adj.
+
+
+GOALS OF THE CONTEST:
+
+    * To write the most Obscure/Obfuscated C program under the rules below.
+    * To show what should NOT be done in C programs.
+    * To provide a safe forum for poor C code.  :-)
+
+
+DEDICATION:
+
+    The 1991 IOCCC is dedicated to the ANSI C pre-processor.
+
+
+RULES:
+
+    To help us handle the vast volume of entries, we ask that you follow the
+    rules below.  SORRY FOR THE LENGTH, BUT WE NEED ALL THE HELP WE CAN GET!
+
+    1) Your source MUST be 1536 bytes or less.   It must be a complete program.
+
+    2) To help us process your entries, we ask that you submit entries
+       in the following format.  Please be sure to include ALL --- lines,
+       otherwise our extraction program may skip your entry!
+
+---header items---
+name:    	Your name, of course!
+
+org:		School/Company/Organization
+
+email address:	Email address from a well known site, or in a registered domain
+
+postal address:	Postal address
+		include your country as well
+
+environment:	Indicate the Hardware
+		and OS under which your program was tested
+
+entry:		5	<i.e., entry number from 0 to 7 inclusive>
+
+remark:		Remarks about the program.  See rule #3 below for details.
+---how to ANSI compile---
+Give the command(s) needed to compile your program using an ANSI C
+compiler.  If your program should not be compiled under an ANSI C compiler,
+leave this section blank.  The command size must be 160 characters or less.
+---how to common compile---
+Give the command(s) needed to compile your program using an K&R/traditional
+C compiler.  If your program should not be compiled under a K&R style C,
+leave this section blank.  The command size must be 160 characters or less.
+---program---
+Not everyone has a program such as uuencode, and we don't want to blindly
+process a shar file, so we ask that you format your source as follows:
+
+Add a leading X to EACH line, unless it is a split line.   (see below)
+
+Some mailers don't like long lines.  To be safe, split lines longer than 80
+    characters.  To split a line, place an E at the point of a split and
+    place a C (instead of an X) at the beginning of the next line.
+
+If the program does not end in a newline, end the last line with an E.
+
+Leading X's, trailing E's followed by the two characters "\nC", and an E
+    at the last character of the last line are not considered to part of the
+    source and thus don't contribute toward the source character count.
+    Be careful with lines ending in "E\n", see the example below.
+
+Newlines and tabs each count as 1 character.  Assume 8 character tab stops.
+
+The newlines here were placed for reasons of readability.  In your entry,
+    every line in this section must begin with either an X or a C.
+
+Example:
+
+XThis is a single line containing 79 E
+Ccharacters including the E
+Cfinal newline.
+XThe next line contains only a single newline.
+X
+XThis line is terminated by a newline preceded by an EE
+C
+XThis last line is not terminated by a newline and ends in an EE
+---end---
+
+    3) Regarding the header items:
+
+	* Any text outside of the above format will be kept confidential.
+
+	* All header lines are required, but you may use 'anonymous'
+	  for any header line other than 'remarks' or 'entry'.
+
+	* Only the '---program---' section uses the 'X', 'C', 'E' notation.
+
+	* In the 'remark' item, please include:
+	    - what this program does
+	    - why you think the program is obfuscated
+	    - any other remarks (humorous or otherwise)
+	    - By default, we will select your program source and/or binary
+	      filename.  If your entry REQUIRES a specific source and/or
+	      binary filename, please say so in the remark section.
+	    - If this entry is a re-submission of a previous entry.
+
+    4) Your entry should be written in common C (K&R + common extensions)
+       or ANSI C.  If your program will NOT compile under an ANSI C or
+       K&R C compiler, leave the particular 'how to' section blank.
+       If you leave a 'how to' section blank, include the '---' line.
+
+       You do not have to fill in both 'how to' sections, though you must
+       fill in at least one 'how to' section.  If you leave a 'how to'
+       section blank, include the '---' line anyway.
+
+    5) The program must be of original work.  All programs must be
+       in the public domain.  All copyrighted programs will be rejected.
+
+    6) Entries must be received between 06-Mar-91 0:00 UTC and
+       16-May-91 0:00 UTC.  Email your entries the address found below.
+       (UTC is essentially equivalent to Greenwich Mean Time)
+
+       We will attempt to Email a confirmation of receipt of contest
+       entries, however since Email is not reliable you may not receive it.
+       We regret that we can no longer accept entries via postal mail.
+
+    7) Each person may submit up to 8 entries.  Only 1 entry per Email
+       letter.  If you submit multiple entries, be sure that each has a
+       unique entry number.
+
+       We will discard all but the latest email in the case of multiple
+       entries with the same entry number.  Thus, if you wish to correct
+       a previously sent entry, re-send it with the same entry number.
+       Just to be sure email does not arrive out or sequence, note that 
+       fact in the 'remark' item.
+
+    8) Entries requiring human interaction to be built are not allowed.  
+       (for example, don't use #include "/dev/tty")
+
+    9) Compiling an entry must result a regular file which may be executed.
+       (for example, don't use -o /dev/tty)
+
+
+ANNOUNCEMENT OF WINNERS:
+
+    * First announcement will likely be at the Summer 91 Usenix conference.
+
+    * Winning entries will be posted in mid June 1991 to
+      comp.sources.unix as well as news groups where these rules
+      were posted.  (depending on the judges work load)
+
+    * Winning entries will be deposited into the uunet archives.
+
+    * An article containing the winning entries will be published
+      in a future issue of the "Micro/Systems Journal".
+
+    * Winners receive international fame and flames!  :-)
+
+
+JUDGING:
+
+    Awards will be given to the best entry in a number of categories.
+    The actual category list will vary depending on the types of entries
+    we receive.  As a guide, consider using the following:
+
+	* The best small one line program
+	* The strangest source layout
+	* The most useful obfuscated program
+	* The most creatively obfuscated program
+	* Best obfuscated entry smaller than 256 bytes
+	* Best obfuscated entry smaller than 1024 bytes
+	* Best abuse of ANSI C
+	* Worse abuse of the rules (no abuse of entry format please!)
+	* <anything else so strange that it deserves an award>
+
+
+POINTS TO PONDER:
+
+    People are encouraged to examine winners of the previous contests.
+    A copy of these entries has been posted to comp.sources.unix.
+    Contact the comp.sources.unix moderator, or some archive site (such
+    as uunet).  Keep in mind that rules change from year to year, so some
+    winning entries may not be valid entries this year.  What was unique
+    and novel one year might be 'old' the next year.
+
+    We examine each entry on several levels of confusion.  For example
+    each entry is judged when we:
+
+	* look at the original source
+	* If it is ANSI, convert tri-graphs to ASCII
+	* C pre-process the source ignoring '#include' '#define' lines
+	* C pre-process the source ignoring '#define' and '#include' lines
+	* run it through a C beautifier
+	* examine the algorithm
+	* lint it
+	* compile it
+	* execute it
+
+    One line programs are best when they are short, obscure and concise.
+
+    We tend to dislike programs that:
+
+	* are very hardware specific
+	* are very OS or Un*x version specific
+	     (index/strchr differences are ok, but socket/streams specific
+	      code is likely not to be)
+	* dump core or have compiler warnings
+	     (it is ok only if you warn us in the 'remark' header item)
+	* won't compile under both BSD or SYS V Un*x
+	* use an excessively long compile line to get around the size limit
+	* obfuscate by excessive use of ANSI tri-graphs
+	* are longer than they need to be
+	* are similar to previous winners
+	* are similar to previous losers  :-)
+
+    Simply abusing #defines or -Dfoo=bar won't go as far as a program
+    that is more well rounded in confusion.
+
+    Unless you are cramped for space, or unless you are entering the
+    'best one liner' category, we suggest that you format your program
+    in a more creative way than simply forming excessively long lines.
+
+    We like programs that:
+
+	* are as concise and small as they need to be
+	* do something at least quasi-interesting
+	* pass lint without complaint (not a requirement, but it is nice)
+	* are portable
+	* are unique or novel in their obfuscation style
+	* MAKE USE OF A NUMBER OF DIFFERENT TYPES OF OBFUSCATION
+	* make us laugh and/or throw up  :-)
+
+    Some types of programs can't excel in some areas.  Of course, your
+    program doesn't have to excel in all areas, but doing well in several
+    areas really does help.  A humorous note in the remark section helps.
+
+    Be creative!
+
+
+EMAIL ADDRESSES
+
+    Send contest entries to:
+
+	...!{sun,pacbell,uunet,pyramid}!hoptoad!obfuscate
+	obfuscate@toad.com
+
+    The Judging will be done by Landon Noll and Larry Bassel.  If you have 
+    questions or comments (no entries), please feel free to email them to:
+
+	...!{sun,pacbell,uunet,pyramid}!hoptoad!judges
+	judges@toad.com
+
+
+chongo <Landon Curt Noll> /\cc/\  	hoptoad!chongo
+Larry Bassel			  	{uunet,ucbvax,cbosgd}|sun!lab

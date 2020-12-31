@@ -1,0 +1,138 @@
+1994 marked the "The Eleventh International Obfuscated C Code Contest"
+
+Copyright (c) 1994, Landon Curt Noll & Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.
+
+
+Use make to compile entries.  It is possible that on BSD or non-unix
+systems the makefile needs to be changed.  See the Makefile for details.
+
+Look at the source and try to figure out what the programs do, and run
+them with various inputs.  If you want to, look at the hints files for
+spoilers - this year we included most of the information included
+by the submitters.
+
+Read over the makefile for compile/build issues.  Your system may
+require certain changes (add or remove a library, add or remove a
+#define).
+
+Name and address information are separated from the actual program
+prior to judging.  This eliminates any chance that we would bias our
+judging for/against any person or group.
+
+This year we retracted the guideline that discouraged the use of C
+constructs such as 3["curds"].  At one time, certain ANSI compilers did
+not consider such expressions to be valid ANSI C.  Alert readers noted
+that the current ANSI standard considered them to be valid.  We were
+unable to find an ANSI C compiler that flagged such expressions as
+errors.
+
+Rule abuse was encouraged this year - two of this year's winners found
+new and interesting abuses of the rules. Next year's rules will change
+due to these (smr and dodsond2) entries' forms of abuse.
+
+
+Want to be an IOCCC Judge?
+--------------------------
+
+We are thinking about adding a 3rd judge to our team.  A 3rd judge
+would help distribute the work load as well as to allowing us to
+possibly expand or reshape the contest.
+
+The ideal 3rd judge would have all of the following:
+
+    * thorough knowledge of the C language (ANSI and K&R)
+    * thorough knowledge of common C libs (libc, libm, libcurses, ...)
+    * reasonable written communication skills (able to write *.hint files)
+    * appreciation for well-written non-obfuscated code
+    * willing to devote ~4 weekend days in January (starting Jan 96) for judging
+    * located in the San Francisco (California, USA) Bay Area, or
+      able to travel (paying your own way) to the SF Bay Area during judging, or
+      able to link to the other IOCCC judges some form of a a video link
+
+Any of the following, though not required, would be a plus:
+
+    * familiar with portability issues
+    * some /bin/sh experience
+    * some Perl experience
+    * some C++ experience
+    * some experience with low-level X11 programming
+    * attends Usenix conferences on a regular basis
+    * good sense of humor
+    * loves chocolate and other fine foods  :-)
+
+If you think this may be you, send EMail before 31 Dec 1995, to:
+
+	judges@toad.com		(use the Subject: 3rd judge)
+
+Include in your message:
+
+    * Your name, address, EMail address and phone number
+    * Why would you want to be an IOCCC judge?
+    * How well do you match each of the above qualifications?
+    * What special skills would you bring to the team?
+
+If you have any questions about the above, feel free to ask us via
+EMail at the above address.
+
+
+Looking for an IOCCC WWW site
+-----------------------------
+
+We would like to setup an IOCCC home page somewhere out in WWW land.
+If you have a well known stable site that would be willing to give us
+access to put up some IOCCC html pages, please send EMail (say prior
+to 31 Dec 1995) to:
+
+	judges@toad.com		(use the Subject: www site)
+
+describing your site and any other appropriate comments.  Thanks!
+
+
+A few notes regarding future contests
+-------------------------------------
+
+Due to changes in the Usenix conference calendar, the 1995 contest will
+be delayed.  Because there will be no Summer 1995 Usenix conference,
+the 1995 IOCCC winners will be announced at the Jan 1996 Usenix conference.
+ 
+The 1995 contest will not open until late October 1995, and will close
+sometime around the end of December 1995.  The rules for the 1995
+contest have not been formed at this time and are not expected to be
+ready for distribution until late October 1995.
+
+Be sure to wait until the 1995 rules are posted before submitting entries.  
+Rules differ from year to year, sometimes in significant ways.
+
+Please send us comments and suggestions what we have expressed above.
+Also include anything else that you would like to see in future contests.
+Send such email to:
+
+	...!{sun,pacbell,uunet,pyramid}!hoptoad!judges
+	judges@toad.com
+
+If you use, distribute or publish these entries in some way, please drop
+us a line.  We enjoy seeing who, where and how the contest is used.
+
+If you have problems with any of the entries, AND YOU HAVE A FIX, please
+EMail the fix (patch file or the entire changed file) to the above address.
+
+
+Credits
+-------
+
+We would like to thank Barbara Frezza for her role as official chef 
+of the contest.  Landon Noll and Larry Bassel appreciated the opportunity
+to serve as official taste testers.  And as usual, the food was excellent.
+The official menu of the 1994 Obfuscated C Contest dinner:
+
+Antipasto: meats, cheeses, olives, peppers, pickles, artichokes
+Soup: Cream of tomato
+Salad: spring mix
+Pasta: Linguine with wild mushrooms and Reggiano Parmesan
+Seafood: Salmon in cream sauce or lobster claws
+Vegetable: Zucchini
+Dessert: Homemade chocolate/pecan brownies, fruit

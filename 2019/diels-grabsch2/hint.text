@@ -1,0 +1,184 @@
+# Most self-aware
+
+Volker Diels-Grabsch  
+<https://njh.eu>  
+
+
+## Judges' comments:
+### To use:
+
+    make
+
+### Try:
+
+    ./prog
+    sha512sum prog.c || shasum -a 512 prog.c
+
+### Selected Judges Remarks:
+
+Before running this one, stay calm. Chill out, have a cup of tea. Is this bad?
+
+To understand what is going on here, please check if you are dreaming, or are you dreaming
+that you are dreaming? Or is it, wake up from the simulation?
+
+## Author's comments:
+### Almost a hash collision
+
+This program prints its own SHA-512 hash.  To verify, run:
+
+    sha512sum prog.c; ./prog
+
+Output:
+
+    43bd0c4381a5078d2850fca9ae5e0647596bcc03cd67d8d973ad02ff35c316c728e7b347ca70abe6c74e745e63646cc7643cb0cffcd3d9a969cbf31a7ce5bf68  prog.c
+    43bd0c4381a5078d2850fca9ae5e0647596bcc03cd67d8d973ad02ff35c316c728e7b347ca70abe6c74e745e63646cc7643cb0cffcd3d9a969cbf31a7ce5bf68
+
+It started as a complicated "hello world" program that prints some
+random hex digits instead of "hello world".  Then, the digits were
+adjusted until the resulting program matched its own SHA-512 hash,
+via brute force through all 2^512 possibilities.  Just kidding.
+
+This wasn't brute force, but involved quite some math, using a variant
+of Jane Doe's algorithm for generating SHA-512 collisions efficiently.
+If you still don't believe me, you are right.
+
+No crypto was broken in the making of this program!
+
+The trick is that under the hood, this program is a quine!  That is,
+it is aware of its own source code in string representation.  But
+instead of printing that string, its SHA-512 hash is computed and
+printed.  So two major steps were needed to obfuscate this program:
+
+- Step 1: Hide the quine
+- Step 2: Hide the SHA-512 computation
+
+Note that both steps were achieved mostly algorithmically.  The code
+is otherwise as short and as clean as possible.  The implementation is
+portable C99 code for 32-bit and 64-bit systems that compiles without
+any warnings on current GCC and Clang versions even with -Wextra and
+-Weverything.  The program is composed of mostly pure functions, and
+the "#define"s are only used to shorten redundant parts of the code,
+they are not meant to obfuscate much.  Having that out of the way, how
+are step 1 and step 2 achieved then?
+
+Regarding step 1, note that the large string literal "`x{bh}ndbq..."
+in the last line doesn't look like C code.  Moreover, it is too short
+to contain even a compressed representation of all preceding and
+subsequent code.  Instead, the preceding code including the '"'
+character has already been run through the SHA-512 computation by an
+external script.  The internal state of the SHA-512 computation at
+that point has been extracted and encoded into the string.  This works
+because the preceding code is exactly 1280 bytes, which is a multiple
+of 1024 bits, the block size of SHA-512.  The program itself then just
+continues the SHA-512 computation from that point, adding the last
+1024-bit block, finalizing the hash and printing it.  The last block
+is taken directly from the string literal at runtime, plus the
+subsequent code which consists of just '"', ';' and '\n'.  Those 3
+characters are short enough to be hidden in ... well, let's leave this
+as an exercise for the reader.
+
+To summarize, the main trick here is to move the string constant to
+the end, so the preceding code can be precalculated and the subsequent
+code is short enough to be hidden anywhere.
+
+Regarding step 2, almost all macros, functions and variables have
+meaningless single-letter names.  Moreover, the SHA-512 computation is
+reduced to the special case of adding just one block and immediately
+finalizing it, where the total size is known in advance.
+
+But this is not enough!  For SHA-512 we need 8 initial hash values and
+80 round constants, which are very characteristic.  If any of them
+appeared in the source, a quick web search (e.g. for 0x428a2f98d728ae22)
+would tell the reader immediately what's going on. Because of the
+precomputation, the 8 initial hash values are not needed, but the
+80 round constants are.
+
+It is almost impossible to hide those 640 bytes in the source.
+Luckily, the round constants where not chosen by fair dice rolls.
+They are the fractional parts of certain irrational numbers, namely,
+the cube roots of the first 80 primes.  So the round constrants are
+calculated at runtime, which makes the program shorter and adds
+another layer of obfuscation.
+
+While this sounds like just iterating primes and executing pow(), this
+turned out to be harder than expected.  If we were computing SHA-256,
+it would have been as simple as that, because the round constants
+would have been 32-bit values.  However, SHA-512 needs the cube roots
+at 64-bit precision, while double has only 53-bit mantissa precision.
+
+Using higher-precision floating point is no option here, because the
+program is meant to be portable C99.  And implementing
+arbitrary-precision arithmetic would have been overkill and would have
+increased the program size dramatically.
+
+Instead, the program just multiplies.  That is, it computes cubes
+instead of cube roots.  It steps through cube root candidates via
+bisection, and calculates their cubes until those match the given
+prime.  Thus, we don't need floating point and can use 64-bit integers
+instead.  But that still doesn't solve the problem as it poses the
+following new challenges:
+
+- Challenge 1: We can multiply at most two 32-bit numbers at once.
+- Challenge 2: We need to calculate with at least 67-bit precision.
+- Challenge 3: We need to truncate the cube root result.
+
+The reason for challenge 1 is that in portable C99, the result must
+fit into the same data type.  To multiply two 64-bit integers we would
+need a 128-bit integer for the result.  So we can at most multiply two
+32-bit integers to get the 64-bit product at full precision.  While
+GCC and Clang both support 128-bit arithmetics, that isn't standard
+and wouldn't have been portable C99.
+
+The reason for challenge 2 is that cube root of the 80th prime is
+around 7, so we need to compute with 3 bits for the integral part and
+64 bits for the fractional part.
+
+The reason for challenge 3 is that the cube of a 67-bit number is
+3*67=201 bits, but fortunately we only need to check if it is close
+enough to the actual prime.  It won't be exactly e.g. "409.0000..."
+anyway, but must be accurate enough to distinguish the correct cube
+root from its neighbours, e.g. the same number with the 64th
+fractional digit increased.
+
+The solution here is to split the 67-bit input into 3 integers of
+24-bit each.  Those are cubed using the multiplication formulas
+numbers with 3 "digits" of base 2^24 each.  During that calculation,
+at most two values are multiplied at once, and the accuracy of
+intermediate values is reduced using right-shifts as far as allowable
+for the computation.  Finding woking right-shift values was mostly
+trial-and-error, producing correct results for the first 80 primes,
+but not much more.  Moreover, for some terms it was possible to leave
+them out entirely, especially higher-order terms of the last digits.
+Luckily, in the end, all intermediate results did fit into 64-bit
+integer addition and multiplication, but that was not obvious at the
+beginning.
+
+That's it.
+
+Well, I could continue with details about the encoding of the internal
+state values into the string, how to avoid escaping issues, how to
+find short notations for various loops, how to get rid of if(), where
+the final "\";\n" is stored, how to eliminate intermediate values and
+arrays by reordering of operations, and so on.  But those were all
+minor issues compared to the challenges described above.  What's
+documented here is all you need to know to write your own version of
+that program.
+
+I'd like to finish with an open problem:
+
+Is it possible for the cubing and bisection to be implemented with
+just two parts instead of three?  That would simplify the formulas a
+lot.  For example, one could split the 67-value into two 34-bit parts,
+but whenever one multiplies two of them, one needs to right-shift one
+of them by at least 4 bits, or both by 2.  Or, one splits the 67 bits
+asymmetrically?  I wasn't able to make it work with 2 parts, but that
+doesn't have to mean anything.
+
+--------------------------------------------------------------------------------
+<!--
+(c) Copyright 1984-2019, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->

@@ -1,0 +1,18 @@
+# Most illegible code
+
+Michael H. Pawka  
+Naval Ocean Systems Center  
+San Diego, Ca  
+92152  
+
+## Judges' comments:
+
+The judges found this entry to be one of hardest to read without the
+aid of `/lib/cpp` and a good editor.  When run, the program asks if it
+is obfuscated, of all things!
+
+Copyright (c) 1986, Landon Curt Noll & Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.

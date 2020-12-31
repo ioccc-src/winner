@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.3 DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Best solved puzzle</title>
+</head>
+<body>
+<h1>Best solved puzzle</h1>
+
+<p>Shinichiro Hamaji<br>
+<a href="&#x6d;&#x61;&#105;&#108;&#116;&#111;&#58;&#115;&#104;&#105;&#x6e;&#105;&#99;&#104;&#x69;&#114;&#x6f;&#46;&#104;&#97;&#109;&#97;&#x6a;&#105;&#64;&#103;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#109;">&#115;&#x68;&#105;&#x6e;&#x69;&#x63;&#x68;&#105;&#x72;&#111;&#x2e;&#104;&#97;&#109;&#97;&#x6a;&#105;&#64;&#x67;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
+
+<p>bsoup</p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To build:</h3>
+
+<pre><code>make hamaji
+</code></pre>
+
+<h3>To run:</h3>
+
+<pre><code>./hamaji &lt; a_nonogram_file
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>./hamaji &lt; dragon.nono
+./hamaji &lt; random.nono
+./hamaji &lt; soccer.nono
+./hamaji &lt; codegolf.nono
+./hamaji &lt; face.nono
+./hamaji &lt; penguin.nono
+./hamaji &lt; samurai.nono
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>This program solves &ldquo;Nonogram&rdquo;, which also known as &ldquo;Paint by Numbers&rdquo;:</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Nonogram">http://en.wikipedia.org/wiki/Nonogram</a></p>
+
+<p>This entry roar as the Year of the Dragon: A year considered
+some to be good luck.  Well it was certainly true that the
+IOCCC was lucky to get such a fine submission!</p>
+
+<p>The source code is a solution to a Paint by Numbers puzzle when you
+paint by C.  Try your hand at solving a few of the other .nono
+files and then compare your solution with this program!</p>
+
+<p>NOTE: NONOGRAM &reg; is a registered Trademark and is used with permission.
+      See http://nonogram.com/ for more information.</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<p>The format of the input files are as same as this site:</p>
+
+<p><a href="http://codegolf.com/paint-by-numbers">http://codegolf.com/paint-by-numbers</a></p>
+
+<p>For example, for a simple problem which shows a glider of <a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life">conway&rsquo;s
+lifegame</a>.</p>
+
+<pre><code>   1
+   .
+  112
+
+1  X
+1   X
+3 XXX
+</code></pre>
+
+<p>the input should be</p>
+
+<pre><code>1
+1
+3
+-
+1
+1.1
+2
+</code></pre>
+
+<p>The width and the height of an input puzzle should be less than or
+equal to 60.</p>
+
+<p>When this solver finds the problem has no solution, it prints &ldquo;invalid&rdquo;.
+This means the problem is indeed broken. For example, this happens for
+an input like</p>
+
+<pre><code>2
+-
+2
+</code></pre>
+
+<p>When this solver cannot find a solution, it prints &ldquo;failed&rdquo;. This
+failure can happen when the problem has more than one solution or the
+solver cannot solve the input problem. Here is an example input of the
+former:</p>
+
+<pre><code>1
+1
+-
+1
+1
+</code></pre>
+
+<p>There are two solutions:</p>
+
+<pre><code>  11
+
+1 X 
+1  X
+</code></pre>
+
+<p>and</p>
+
+<pre><code>  11
+
+1  X
+1 X 
+</code></pre>
+
+<h3>Detail</h3>
+
+<p>Solving Nonogram is known NP-complete, so we cannot make a solver
+which solves all puzzles. However, we can write a solver which solves
+most problems solvable by humans. There are a bunch of ways to write
+such programs. The two most obvious approaches are:</p>
+
+<ol>
+<li>Check all possible solutions with backtracking.</li>
+<li>Implement all techniques which humans use.</li>
+</ol>
+
+
+<p>The former, brute-force approach is easy to implement. However, it
+works only for smaller problems (width and height should be at most 30
+or so). Similarly, using generic probabilistic metaheuristics such as
+simulated annealing doesn&rsquo;t work for big problems.</p>
+
+<p><a href="http://ccl.northwestern.edu/netlogo/models/community/Nonogram">http://ccl.northwestern.edu/netlogo/models/community/Nonogram</a></p>
+
+<p>By its definition, the latter works for all human-solvable
+problems. The issue of the latter approach is this kind of programs
+tends to be lengthy. This approach still requires some recursions. The
+most difficult problems which are considered human-solvable may
+require some &ldquo;guesses&rdquo;. For this kind of problems, we need to assume a
+cell is a space or a box, go ahead some steps with simple methods,
+mark the tried cell as a box (or a space if we assumed the tried cell
+is a box) if a contradiction is found.</p>
+
+<p>My program uses an approach like &ldquo;Set based solver&rdquo; introduced in
+<a href="http://www.haskell.org/haskellwiki/Nonogram">http://www.haskell.org/haskellwiki/Nonogram</a> .
+This should be equivalent to the combinations of simple methods (no
+advanced reasoning with guess). My solver also runs non-recursive
+guess for each undetermined cells. So, my program should be able to
+solve most human-solvable problems (assuming humans cannot execute
+deeper recursions).</p>
+
+<h3>Obfuscation</h3>
+
+<p>First of all, as you see, my program looks like a nonogram puzzle
+which results a dragon. This puzzle is &ldquo;dragon.nono&rdquo; in this
+directory. Note that whitespaces in character literals, a string
+literal, and around the last comment are considered as a boxed cell.</p>
+
+<p>My program is based on bit operations for speed. Many values are
+stored using negative logic (0 means on and 1 means off) to utilize
+the initial value of global variables. Thus, it might be difficult to
+figure out how it works.</p>
+
+<p>My program is decently shortened, because the size of source code is
+limited by IOCCC&rsquo;s rule (2048 non-whitespace characters) and a lot of
+characters are just wasted for numbers around the picture.</p>
+
+<p>The three requirements (dragon, speed, and size) naturally ended up
+with the well obfuscated code.</p>
+
+<h3>Portability</h3>
+
+<p>This program uses two C99 features. One line comments and &ldquo;long long&rdquo;.
+GCC&rsquo;s &ldquo;-ansi -pedantic&rdquo; check should pass:</p>
+
+<pre><code>$ gcc -ansi -pedantic -std=c99 hamaji.c
+</code></pre>
+
+<p>I checked my program with gcc-4.6.2 on linux, llvm-gcc-4.2 on mac, and
+clang-3.0 on mac.</p>
+
+<p>Note that the behavior of scanf differs on linux and mac, but this
+program supports both semantics.</p>
+
+<p>This program should not depend on sizeof(int), sizeof(void*), ASCII,
+memory layout, undefined evaluation order (e.g., a[i++]=i), etc.
+This program won&rsquo;t work if the size of long long literal is less than 8.
+By grepping the source code of gcc</p>
+
+<pre><code>grep LONG_LONG_TYPE_SIZE gcc/config/*/*
+</code></pre>
+
+<p>I found long long may be 32bit integers only on AVR.</p>
+
+<h3>A few more</h3>
+
+<p>This code is considered as a new year&rsquo;s postcard in Japan. We chose
+the dragon because 2012 is the year of dragon.</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Japanese_New_Year#Postcards">http://en.wikipedia.org/wiki/Japanese_New_Year#Postcards</a></p>
+
+<p>The second author wrote the picture, and the first author did
+everything else.</p>
+
+<p>The dragon.nono, samurai.nono, and penguin.nono was written by the
+second author.  The soccer.nono was from a wikipedia entry.  This file
+is important because it requires some guesses.  The random.nono file
+was randomly generated. The codegolf.nono and face.nono have borrowed
+from this site:</p>
+
+<p><a href="http://codegolf.com/paint-by-numbers">http://codegolf.com/paint-by-numbers</a></p>
+
+<p>You can reproduce dragon.nono from hamaji.c using c2nono.pl:</p>
+
+<pre><code>perl c2nono.pl hamaji.c | ./hamaji
+</code></pre>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2012, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2012, 
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Best painting tool</title>
+</head>
+<body>
+<h1>Best painting tool</h1>
+
+<p>Michael Birken<br>
+<a href="&#x6d;&#97;&#105;&#x6c;&#116;&#x6f;&#x3a;&#111;&#95;&#95;&#x31;&#64;&#x68;&#x6f;&#116;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#x6f;&#95;&#x5f;&#49;&#64;&#x68;&#111;&#x74;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#109;</a><br>
+<a href="http://www.meatfighter.com/">http://www.meatfighter.com/</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To build:</h3>
+
+<pre><code>make birken
+</code></pre>
+
+<h3>To run:</h3>
+
+<pre><code>./birken &lt; 17_columns_wide_paint_by_numbers_file
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>./birken &lt; examples/ioccc.txt
+
+perl -e 'map{map{print int(rand()*8);}(0..16);print chr(10);}(0..30);' | tr '[0-4]' ' '| ./birken 
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>This program also wins the &ldquo;Most amusing abuse of the iocccsize tool&rdquo; award; although not the
+absolute best: it is possible to achieve 0 by writing</p>
+
+<pre><code>/* *\
+/....
+</code></pre>
+
+<p>The game of Tetris had been used in many endeavors, from studying <a href="http://arxiv.org/abs/cs/0210020">algorithmic complexity</a> to <a href="http://www.livescience.com/19894-tetris-treat-ptsd-flashbacks.html">treating PTSD</a>.
+Using it for painting by numbers looks like a novel idea.</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h3>About This Document</h3>
+
+<p>This document is best viewed as an HTML file in a browser that supports animated gifs.  Extract <code>examples.tbz2</code> for the sample input files.</p>
+
+<pre><code>tar -xjvf examples.tbz2
+</code></pre>
+
+<h3>Abstract</h3>
+
+<p>By rotating, positioning and dropping a predetermined sequence of pieces, this program exploits the mechanics of Tetris to generate arbitrary images.</p>
+
+<h3>Algorithm Overview</h3>
+
+<p>The algorithm converts pixels from a source image into squares in the Tetris playfield, one row at a time from the bottom up.  To generate an individual square, the algorithm assembles a structure consisting of a rectangular region fully supported by a single square protruding from the bottom.  When the rectangular region is completed, its rows are cleared, leaving behind the protruding square.  Three examples of the process appear below.</p>
+
+<p><img src="pen0.gif" alt="" /></p>
+
+<p><img src="pen1.gif" alt="" /></p>
+
+<p><img src="pen2.gif" alt="" /></p>
+
+<p>During construction of a row, all of the squares produced by this method must be supported.  In the images above, the generated squares are supported by the floor of the playfield.  However, if an arbitrary row contains holes, it may not provide the support necessary for the construction of the row above it.  The algorithm solves this problem by constructing a flat platform on top of the row with holes.  In the animation below, a platform is built above a row comprising of a single red square.  The platform is a temporary structure and inserting the final piece removes it.</p>
+
+<p><img src="platform0.gif" alt="" /></p>
+
+<p>Below, a row containing 5 red squares is deposited above a row containing 3 red squares.  This is accomplished by building a flat platform on top of the lower row.  The platform provides the support necessary to generate the 5 red squares.  Finally, the platform is removed by inserting its final piece and the new row drops into place.  Note, if the algorithm needed to generate the rows in the opposite order (a row of 3 red squares above a row of 5 red squares), a platform would not be necessary.</p>
+
+<p><img src="platform1.gif" alt="" /></p>
+
+<h3>Single Square Emitters</h3>
+
+<p>For reference, the names of the 7 Tetriminos (the game pieces) appear in the table below.</p>
+
+<p><img src="names.png" alt="" /></p>
+
+<p>This algorithm was tailored specifically to render sprites from early video games.  Those games packed graphics into 8&times;8 tiles where 2 bits were dedicated to each pixel.  Consequentially, sprites usually contained only 3 colors plus transparent regions and they were typically sized either 16&times;16 or 16&times;32 pixels.</p>
+
+<p>The animation below depicts all the patterns used to emit single squares.  J, T and L Tetriminos are used interchangeably within each pattern to produce the protruding square at the bottom.  The algorithm assigns those Tetriminos to the 3 colors present in the sprite.  The remaining Tetriminos are assigned arbitrary colors.  And, all the colors remain constant during gameplay.</p>
+
+<p><img src="pen4.gif" alt="" /></p>
+
+<p>It is not possible to emit a square of all 3 colors in the first 2 and the last 2 columns due to the shapes of the 3 Tetriminos.  As a result, the minimal width of a playfield to accommodate a 16 pixel wide sprite is 2 + 16 + 2 = 20 squares.  However, it turns out that 20 is too small.</p>
+
+<p>As illustrated below, the region above the protruding square cannot exclusively consist of a single row because the only pieces that could fit, the I Tetriminos, are unsupported.</p>
+
+<p><img src="pen5.gif" alt="" /></p>
+
+<p>With 2 rows, the only means of spanning the full playfield width in a way that remains supported is to use S and Z Tetriminos.  But, that will always leave holes in the upper row.</p>
+
+<p><img src="pen6.gif" alt="" /></p>
+
+<p>The minimal number of rows required above the protruding square is 3 and as shown repeatedly above, such patterns do exist.  20 squares is the minimal width required to fit a 16 pixel wide sprite.  But, 20 &times; 3 + 1 = 61, which is not divisible by 4 and hence not constructible out of Tetriminos.  However, a width of 21 yields 21 &times; 3 + 1 = 64, which can be built with 16 Tetriminos.  That width actually enables the algorithm to render sprites up to 17 pixels wide.</p>
+
+<p>The original Tetris playfield is 10&times;20 squares, a 1:2 ratio.  The program maintains that ratio by using a playfield of 21&times;42 squares.</p>
+
+<p>Since J, T and L Tetriminos are used interchangeably to produce the emitted square and 3 squares of those Tetriminos contribute to the row above it, there are 21 &#8722; 3 + 1 = 19 single square emitting patterns.  However, due to mirror symmetry, there are really only 10 patterns.  Clearing 3 rows works for the majority of them.  But, an exhaustive computer search revealed that 2 of the patterns require more.  The next possible option is 7 rows since 21 &times; 7 + 1 = 148, requiring 37 Tetriminos.  As the images below show, those patterns do exist.</p>
+
+<p><img src="pen7.gif" alt="" /></p>
+
+<p><img src="pen8.gif" alt="" /></p>
+
+<h3>Platforms</h3>
+
+<p>Before a row is constructed, the algorithm inspects the row below it.  If the row below fails to provide support for all of the squares to be deposited above it, then a temporary platform is required.  When that platform is removed, the new row will drop, leaving some of the squares apparently floating above empty space due to the way that gravity works in the original Tetris.</p>
+
+<p>The illustration below depicts the 10 platform patterns (really only 5 considering mirror symmetry).  The construction of a platform begins by dropping a T Tetrimino on top one of the squares of the last generated row.  The remaining Tetriminos support each other down to that first T.  Meaning, as long as the previously generated row contains at least 1 square, like the red square below, then it is possible to construct a flat platform above it for the generation of the next row.</p>
+
+<p><img src="platform2.gif" alt="" /></p>
+
+<p>In the middle of platform construction, the bottom row gets completed and cleared, leaving 3 rows above it.  The final J or L Tetrimino that will remove those rows is not inserted until the square emitters are done generating the next row of the sprite on top of the platform.  That final piece precludes square emission in the first and last 2 columns.  But, as discussed above, the square emitters are limited to the 17 inner columns due to the geometry of the J, T and L Tetriminos used in the process.</p>
+
+<p>Also, of the 19 possible ways to start constructing a platform on top of a T Tetrimino, only the 10 patterns shown above exist.</p>
+
+<h3>Program Input</h3>
+
+<p>The input sprite is represented textually.  Digit characters <code>0</code> to <code>7</code> correspond to pixels with colors from the palette below.</p>
+
+<p><img src="palette.png" alt="ANSI color palette" /></p>
+
+<p>As discussed above, sprites are limited to a maximum of 3 colors from this palette.</p>
+
+<p>All other characters are interpreted as transparent pixels.</p>
+
+<p>The maximum permissible size of the input text is 32 rows by 17 columns. Row length can vary as long as no single row exceeds 17 characters.</p>
+
+<p>Every row must contain at least one palette digit character.</p>
+
+<p>The <code>examples</code> directory contains several sprites in this textual format that can be fed into standard input.  Several examples take advantage of the Tetris playfield background color.  Instead of using character <code>0</code>, internal regions marked as transparent are effectively rendered as black.</p>
+
+<h3>Program Output</h3>
+
+<p>The program conceptually uses Tetris as an output device similar to a line printer.  It restricts itself to those operations that can be performed on the Tetris playfield: spawning, rotating, positioning and dropping Tetriminos.  This process is visually represented using ANSI escape sequences.</p>
+
+<h3>ANSImation</h3>
+
+<p>The rate at which the program plays Tetris is completely determined by the rate in which the terminal application receives and displays the ANSI escape sequences.</p>
+
+<p>To slowdown the output programmatically, introduce a delay immediately after the call to <code>fflush</code>.</p>
+
+<h3>IOCCC Size Tool Bug</h3>
+
+<p>This program demonstrates how to exploit a bug in IOCCC size tool version 2013-07-30-v17.  The first line of the program is reproduced below.</p>
+
+<pre><code>char*_ = "'""/*";
+</code></pre>
+
+<p>If that line is added to the top of any program, the tool will report a size of 8.</p>
+
+<pre><code>./iocccsize -i &lt; prog.c
+8
+</code></pre>
+
+<p>When that line is deleted from this program, the tool properly reports the secondary size limit of the program as 2048.</p>
+
+<pre><code>./iocccsize -i &lt; prog.c
+2048
+</code></pre>
+
+<p>Although this bug provides an easy means of circumventing contest rule 2, as demonstrated from the size value, this entry is not necessarily striving for a &lsquo;worst abuse of the rules&rsquo; award.</p>
+
+<h3>Obfuscations</h3>
+
+<p>This program is almost, but not quite, entirely unlike a demonstration of good programming practices.    Contrary to other programs, an inspection of this one will certainly reveal that it possesses tea, not to mention an affinity for the constant 42.</p>
+
+<p>Variables are named and ordered to spell out, &ldquo;Tetris&rdquo;, &ldquo;ELORG&rdquo;, &ldquo;DVK&rdquo; and the aforementioned &ldquo;Tea&rdquo;.  ELORG is the abbreviation for Elektronorgtechnica, the former Soviet state owned computer organization that handled the worldwide Tetris intellectual property rights.  DVK is the line of Soviet PDP-11-compatible personal computers capable of running Alexey Pajitnov&rsquo;s original 1984 Tetris prototype.</p>
+
+<p>Carefully selected variable names also yielded wonderful expressions like <code>l=0</code>, <code>O=0</code>, <code>O=1</code> and <code>while(O)</code>.  &ldquo;Tetris&rdquo; also makes a second appearance of sorts:</p>
+
+<pre><code>[T][e][t]--; while(R+i) { s
+</code></pre>
+
+<p>The source is formatted to resemble the Tetris playfield midgame.  It is also an homage to all the past IOCCC entries formatted as a compact block of text; the T, orientated appropriately to reflect its name and the first letter in the title of the game, is just a moment away from producing such a text block.</p>
+
+<p>Three tables are encoded as separate strings within the program:</p>
+
+<p>The first string stores the coordinates of the squares of the 19 distinct rotations of Tetriminos (see below).  Since a Tetrimino is a chain of 4 squares, all Tetriminos fit within a 4&times;4 matrix.  To determine the coordinates of the squares, the Tetrimino is pushed to the upper-left of the matrix.  Each coordinate value requires 2 bits of storage.  Consequentially, the four x-coordinates and the four y-coordinates were packed into separate octets.  To convert the octets into valid ASCII characters, the squares were sorted such that the least significant bits stored the largest coordinate values.  The results were offset by 35, the <code>#</code> character, which is 1 beyond the ASCII value of <code>"</code>, making it easier to pack into a string.  None of the resultant values are beyond ASCII 127.  The coordinates for all 19 rotations fit in a string of length 38.</p>
+
+<p><img src="rotations.png" alt="" /></p>
+
+<p>The second string stores the single square emitter patterns and the platform patterns.  Each pattern is a sequence of pairs, { Tetrimino index, drop x-coordinate }.  As mentioned, there are 19 distinct rotations, requiring 5 bits of storage for the Tetrimino index.  Another 5 bits is required for the drop x-coordinate since there are 21 columns in the playfield.  Necessarily, the pair is stored as 2 separate characters.  By offsetting them by 40, the <code>(</code> character, the resultant string almost resembles a long and complex mathematical expression.  The program takes advantage of mirror symmetry by only storing 10 single square emitter patterns and 5 platform patterns.  The pattern lengths are not encoded within the string.  Rather, they are embedded within the string decoding logic.</p>
+
+<p>The third string conceptually stores the default colors of the 19 rotations.  A 3-bit value is assigned to each, covering the 7 possible colors.  In addition, when a mirrored pattern is executed, J exchanges with L and S exchanges with Z, necessitating a second list of 3-bit color values.  Pairs of color values (6 bits) fit comfortably into a character that is offset by <code>#</code>.  The result is a string of length 19.</p>
+
+<p>The program is full of subtle obfuscations:</p>
+
+<ul>
+<li><p>The unary decrement operator is used in conjunction with global variable automatic zero initialization to set variables to <code>-1</code>.</p></li>
+<li><p>The boolean expression of the form, <code>x + 1</code>, is used multiple times to determine if a value is not <code>-1</code>.  Similarly, expressions of the form <code>x - y</code> are used to determine if <code>x != y</code>.</p></li>
+<li><p>Several arrays store unrelated data in segments throughout the array to reduce named variables.</p></li>
+<li><p>The <code>x["..."]</code> trick appears once.</p></li>
+<li><p>Variable <code>i</code> is less than necessary.</p></li>
+<li><p>A cursorily glance at the expressions <code>4&amp;&amp;L</code> and <code>m&amp;&amp;e==m</code> suggests that they always evaluate to true.</p></li>
+<li><p>The varying single square emitter pattern lengths are resolved during string decoding using the clever expression, <code>(i &amp; 3) - 3</code>, which identifies pattern 3 and 7 as longer.</p></li>
+<li><p>The file size of <code>prog.c</code> is a prime number.  Deleting the first line also produces a prime-sized program.  These properties do not qualify the program as a prime number generator.</p></li>
+</ul>
+
+
+<h3>Beyond Obfuscation</h3>
+
+<p>Due to the contest code size constraint, some optimizations reluctantly had to be omitted.  For example, multi-square emitters are possible:</p>
+
+<p><img src="multi2.gif" alt="" /></p>
+
+<p><img src="multi3.gif" alt="" /></p>
+
+<p><img src="multi4.gif" alt="" /></p>
+
+<p><img src="multi5.gif" alt="" /></p>
+
+<p>In fact, using dynamic programming and creative heuristics, real-time search is possible, enabling patterns like this:</p>
+
+<p><img src="triple0.gif" alt="" /></p>
+
+<p>And, even this:</p>
+
+<p><img src="triple1.gif" alt="" /></p>
+
+<p>In addition, it is possible to extend the algorithm to 6 colors instead of just 3.  This is achieved using I, S and Z to produce the protruding square.  A series of rectangular regions are constructed above those Tetriminos to erode them down to a single emitted square.</p>
+
+<p>The details of these enhancements are left as an exercise to the reader.</p>
+
+<h3>Example Files</h3>
+
+<p>The following example files were created by the program author.  They can be freely used and distributed.</p>
+
+<ul>
+<li><code>format.txt</code> - The layout of the program</li>
+<li><code>helloworld.txt</code> - Hello World, Tetris-style</li>
+<li><code>hilbert.txt</code> - A graphic based on the Hilbert curve</li>
+<li><code>ioccc.txt</code> - IOCCC</li>
+<li><code>landon.txt</code> - Portrait of a man with glasses</li>
+<li><code>leo.txt</code> - Portrait of a man without glasses</li>
+<li><code>rhino.txt</code> - A purple rhinoceros</li>
+<li><code>simon.txt</code> - Portrait of a man without hair</li>
+</ul>
+
+
+<p>The following files are based on graphics from non-free, copyrighted video games.  The use of a limited number of textual representations of the graphics for the demonstration of this program qualifies as fair use as such files do not significantly impede the right of the copyright holder to sell the copyrighted material and it is not being used to generate profit in this context.  The origin of each file is detailed below (character, game, company, year).</p>
+
+<ul>
+<li><code>belmont.txt</code> - Simon Belmont, Castlevania, Konami, 1986</li>
+<li><code>bloober.txt</code> - Bloober, Super Mario Brothers, Nintendo, 1985</li>
+<li><code>bomberman.txt</code> - Bomberman, Bomberman, Hudson, 1983</li>
+<li><code>boo.txt</code> - Boo, Super Mario Brothers 3, Nintendo, 1988</li>
+<li><code>bub.txt</code> - Bub, Bubble Bobble, Taito, 1986</li>
+<li><code>cheepcheep.txt</code> - Cheep Cheep, Super Mario Brothers, Nintendo, 1985</li>
+<li><code>gurin.txt</code> - Gurin, Binary Land, Hudson, 1983</li>
+<li><code>koopaparatroopa.txt</code> - Koopa Paratroopa, Super Mario Brothers, Nintendo, 1985</li>
+<li><code>lakitu.txt</code> - Lakitu, Super Mario Brothers, Nintendo, 1985</li>
+<li><code>mario.txt</code> - Fire Mario, Super Mario Brothers, Nintendo, 1985</li>
+<li><code>mspacman.txt</code> - Ms. Pac-Man and Ghost, Ms. Pac-Man, Midway, 1982</li>
+<li><code>paranaplant.txt</code> - Piranha Plant, Super Mario Brothers, Nintendo, 1985</li>
+<li><code>samus.txt</code> - Samus Aran, Metroid, Nintendo/Intelligent Systems, 1986</li>
+<li><code>toad.txt</code> - Toad, Super Mario Brothers 2, Nintendo, 1987</li>
+</ul>
+
+
+<p>The origin of the remaining files are described below:</p>
+
+<ul>
+<li><code>happyface.txt</code> - Based on a smiley; rights unknown</li>
+<li><code>snoo.txt</code> - 8-bit version of Snoo, Reddit&rsquo;s alien mascot</li>
+</ul>
+
+
+<hr />
+
+<!--
+(c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2015,
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

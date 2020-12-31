@@ -1,0 +1,15 @@
+: printfour
+
+	dup		( save the number on top of the stack )
+	4 =		( compare it to four )
+	if
+	  " forth "	( output a string for it )
+	  drop		( and delete the saved value )
+        else
+	  .
+	endif
+;
+
+: demo3 10 0 do i printfour loop cr ;
+
+demo3

@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most Useful</title>
+</head>
+<body>
+<h1>Most Useful</h1>
+
+<p>Dave Burton <a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x69;&#x6f;&#99;&#x63;&#x63;&#64;&#115;&#110;&#x6f;&#120;&#46;&#x6e;&#101;&#116;">&#105;&#x6f;&#99;&#99;&#x63;&#64;&#115;&#110;&#x6f;&#x78;&#46;&#110;&#x65;&#116;</a><br>
+<a href="http://snox.net/ioccc">http://snox.net/ioccc</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To use:</h3>
+
+<pre><code>make
+
+./prog "expression"
+</code></pre>
+
+<p>or</p>
+
+<pre><code>./prog
+(input expressions)
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>./prog '?0x3343&lt;&lt;2'
+
+echo '?0x3343&lt;&lt;2' | ./prog
+
+./prog
+
+Enter:
+
+a=0xfeedface
+b=0xcafe
+a &lt;&lt; 16 + b
+
+grep '[0-9]' prog.c
+
+./prog &lt; test.in
+
+less calc.man
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>&ldquo;Look, Ma, no <del>hands</del> digits!&rdquo;</p>
+
+<p>The place where some arithmetic operations are done, for example,
+division or modulo, are easy to find. Where are addition and subtraction?</p>
+
+<p>We were impressed with the level of detail the author &ldquo;blogged&rdquo; the obfuscation process.</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h2>calc - an integer expression calculator that outputs in both hex and decimal</h2>
+
+<p>All useful tools should include sufficient documentation.
+See the included man page. ;-)</p>
+
+<h2>Notes</h2>
+
+<p>This program is named calc.  Onomatopoeia of sorts, in the visual realm.
+The formatting was easier: Form Follows Function (although <a href="http://www.ioccc.org/2011/hou/hint.html" title="Hou Qiming">Hou</a> did this better).
+It was tempting to call it iCalc, with i for integer (and it was written on an iDevice),
+but sanity prevailed.</p>
+
+<p>Printed in 8 pt Courier, it makes aesthetically pleasing 8.5 x 11 wall art.</p>
+
+<h2>prog.c vs prog.orig.c</h2>
+
+<p>Dominik Muth observed a syntax error on <code>1+1</code>, <code>1-1</code>, <code>1|1</code>, and <code>1^1</code> when using an
+ARM based computer, although <code>1*1</code> and others worked correctly.
+This occurs because some platforms by default treat <code>char</code> as <code>unsigned char</code>.
+The original code has this weakness, which can be corrected by adding <code>-fsigned-char</code>
+to the compile line.
+The modified code is agnostic to <code>char</code> signed-ness.</p>
+
+<h2>Why is this entry obfuscated/interesting?</h2>
+
+<p>Yes, this is another calculator program.</p>
+
+<p>However, unlike any other calculator source code the author is aware of,
+this one contains no digits.  At all.  Anywhere.  As in</p>
+
+<pre><code>grep '[0-9]' prog.c || echo no digits!
+</code></pre>
+
+<p>Nor are the digits simply obfuscated.  There are no character constants.
+There is only one single, short string, and it does not contain any obfuscated digits.
+And yet the output is in decimal and hexadecimal, and it accepts octal, decimal, and hex input.</p>
+
+<p>Flow control is by <code>for</code> and <code>return</code>.  It is If-less.  Switch-less.  While-less.  Hope-less. <br>
+Literally, if not figuratively. ;-)</p>
+
+<p>The code size is intentionally 2015, as stated by iocccsize -i,
+and can be reformatted without changes (as in rule2.c) to exactly 4096 octets.</p>
+
+<p>Finally, calc is interesting, if for no other reason than it is practically useful:
+Hex/decimal conversion, arithmetic, byte-swapping, bit-shifting, and logical operations with memory,
+on the command line, or interactively.</p>
+
+<h2>But the question is why is the entry obfuscated?</h2>
+
+<p>The code follows many industry best-practices:</p>
+
+<ul>
+<li><p>You know what it does just by looking at it.</p></li>
+<li><p>Numbers and digits have often been used for obfuscation,
+so in a bid for better clarity, this code has no digits at all.</p></li>
+<li><p>In the spirit of clarity, most of the variables are declared before use, so they
+are readily visible, with single letter names that don&rsquo;t clutter the screen,
+in a tautological arrangement.</p></li>
+<li><p>More helpful is the use of <code>typedef</code>s instead of <code>#define</code>, so the types remain useful
+even in the debugger, and source code beautifiers will not undo careful presentation.</p></li>
+<li><p><code>#defines</code> are used here in the best spirit of the preprocessor: to shorten
+repetitive constructs, not for obscurity.</p></li>
+<li><p>All functions are short (and therefore easy to understand?) and do only one thing, well, &hellip;.</p></li>
+<li><p>Curly braces invite endless holy wars over readability.  This code only uses them
+for function definitions, thereby greatly improving readability, and reducing arguments
+about said readability.</p></li>
+<li><p>One of C&rsquo;s many blessings (until recently) is a modicum of keywords,
+of which only 8 are used:
+<code>for</code>, <code>return</code>, <code>typedef</code>, <code>void</code>, <code>char</code>, <code>short</code>, <code>unsigned</code> and <code>long</code>;
+10 if <code>#include</code> and <code>#define</code> are counted.</p></li>
+<li><p>The code helpfully declares &ldquo;syntax_error!&rdquo; right up front, filling the reader with confidence.</p></li>
+<li><p>In spite of its inherent clarity, the code was presented to both <em>indent</em>(1) and
+<em>clang-format</em>(1), after running it through the preprocessor, sustaining its better qualities.</p></li>
+<li><p>That the code is obfuscated is spelled out two different ways in the source; it helps
+to reformat the code to see the second spelling.</p></li>
+<li><p>The author is overly fond of the code that handles input.
+There is no memory allocation, nor pre-allocation of arrays, so where does the
+memory come from?  The multi-base strtol() code is pretty trick.
+No special attempt was made to replace operations with obscure mathematical relations,
+as the (lack of) beauty is in the parsing &ndash; ask not where is the modulus operation,
+but how does it know when to mod &ndash; okay, but where is add and subtract?
+And really, who doesn&rsquo;t enjoy a setjmp() in the argument list?</p></li>
+<li><p>Finally, documentation of the source code structure is helpfully provided in rot13 format.
+But isn&rsquo;t it unsportsmanlike to rely upon it?  However, even with this helpful guide,
+things like reading input lines remain as tricky to read as they are to write.</p></li>
+</ul>
+
+
+<h2>Compiler warnings</h2>
+
+<p>Calc is C99 compliant, and is ANSI/C90 compliant except for wanting 64-bit <code>long long</code>.
+Changing the two <code>long long</code> typedefs to <code>long</code>, and compiling with <code>gcc -m32</code>
+yields a program that operates on 32-bit values, with wrap-around of shifts mod 32:</p>
+
+<pre><code>1&lt;&lt;48
+65536   0x00010000
+</code></pre>
+
+<p>gcc 4.2.1 without arguments compiles cleanly (e.g. cc prog.c -o prog).
+This is my workaday compiler.  gcc is also clean with -ansi, and -std=c99.</p>
+
+<p>clang 3.6.0 lives up to its namesake, resounding on non-problems.
+To stifle these complaints:
+    -Wno-return-type -Wno-parentheses -Wno-empty-body</p>
+
+<p>When invoked with -ansi -pedantic, there are two warnings, which can be ignored:</p>
+
+<ul>
+<li><code>ISO C90 does not support 'long long'</code></li>
+</ul>
+
+
+<p>With -Wall -std=c99, both are quite noisy, and all can be ignored:</p>
+
+<ul>
+<li><code>array subscript has type 'char' [-Wchar-subscripts]</code></li>
+<li><code>value computed is not used [-Wunused-value]</code></li>
+<li><code>operation on 'j' may be undefined [-Wsequence-point]</code></li>
+</ul>
+
+
+<h2>Test Suite</h2>
+
+<p>If the program name begins with an &ldquo;e&rdquo;, it echoes stdin to stdout.
+This allows for a convenient test suite:</p>
+
+<pre><code>ln -s prog eprog
+PATH=. eprog &lt; test.in | diff - test.out
+</code></pre>
+
+<h2>Spoilers</h2>
+
+<p>If you do not want to puzzle out how it works, see spoilers.markdown.</p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2016, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2016, 
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

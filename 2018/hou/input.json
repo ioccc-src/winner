@@ -1,0 +1,8 @@
+[{"brand":"Foo","sales": 1.5 },
+	{"brand":
+		"Bar"
+		,
+		"sales":4.7
+	},  { "sales":2.1, "brand":"Lolz" }
+,  { "sales":0.1, "brand":"Misc" },  { "sales":0.1, "brand":"Misc" },  { "sales":0.1, "brand":"Misc" }
+]

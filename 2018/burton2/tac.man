@@ -1,0 +1,96 @@
+NAME
+  tac - tokenize and count C-like program source code
+
+SYNOPSIS
+  tac [-t] [-c] [-k] [-r] [-s] [-i] [file]
+
+DESCRIPTION
+  tac reads C or C-like source code from stdin or file, breaking it into tokens (lexemes),
+  counting these according to the rules of the IOCCC, and outputting the tokens,
+  counts, or source code as directed by the command line options.
+  The default output is the source code with comments removed on stdout,
+  and the counts on stderr.
+
+  The count format is a set of integer values in the following order:
+
+    lines   number of newlines
+    words   number of words
+    chars   number of characters
+    ioccc   number of IOCCC countable tokens; the IOCCC rule 2 value
+    saved   number of characters not counted due to rules and keywords
+    kwcnt   number of keywords
+    kwlen   number of characters saved by counting keyword length as 1
+
+  For the following code:
+
+	#include <stdio.h>
+	int main() {
+		/* example for loop */
+		for (int ac=1; ac<10; ++ac)
+			printf("%d\n", ac);
+		return 0;
+	}
+
+  tac prints the code to stdout, and to stderr:
+
+	6 15 96 71 25 5 0
+
+  which means 6 lines, 15 words, 96 chars, 71 IOCCC counts, 25 chars saved,
+  5 kwcnt, and no characters saved from kwlen. (By default, comments are not
+  counted.)
+
+  The following options are supported:
+
+  -t    output just the token stream
+  -c    correct the accounting bugs in iocccsize(1), output the token id and the token
+  -k    keep the comments
+  -r    reserved words count as size 1
+  -s    suppress the source code, summarize counts only
+  -i    report only the official IOCCC rule 2 size: number of octets (implies -r and -s)
+
+  Counts are impacted by the -k, -r and -c options.
+  By default, the counts do not include comments, words are counted as in wc(1),
+  and reserved words count in full.
+  Using the example code above, the options change the counts as follows:
+
+    -r    6 15 96 53 25 5 18
+    -k    7 20 120 89 31 5 0
+    -c    7 36 98 71 27 5 0
+
+  The -c option counts tokens instead of words, and is therefore more accurate for source code.
+  Note the aberration for line count with -r; it is as-if the comment never existed.
+
+  The -c and -t options change the output, instead writing a stream of tokens to stdout,
+  one token per line.
+  The -t option suppresses both the counts and the token ids, writing only the tokens.
+
+EXAMPLES
+   Summarize the source code counts:
+
+	tac -rs tac.c
+
+   Count the 10 most frequently used unique tokens in the source code:
+
+	tac -t tac.c 2>/dev/null | sort | uniq -c | sort -k1nr | sed 10q
+
+   Count the unique constants in the source:
+
+	tac -c tac.c 2>/dev/null | grep ^300 | sort | uniq -c | sort -k1nr | awk '{print $1,$3}'
+
+BUGS
+   tac does not properly count preprocessor tokens with embedded space or
+   comments as reserved words:
+
+	echo '#/*comment*/include/*comment*/<stdio.h>' | tac -i
+	echo '# include<stdio.h>' | tac -i
+	echo '#include<stdio.h>' | tac -i
+
+   reports no reserved words on the first two inputs, and thus 17 as the IOCCC size,
+   although 10 is the correct answer (as in the final example).
+
+   The original meaning of the -c option was "become compatible with iocccsize(1)".
+   Its meaning was flipped so the default behavior is now compatible.
+
+SEE ALSO
+   iocccsize(1), wc(1)
+   http://ioccc.org/2015/rules.txt

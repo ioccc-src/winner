@@ -1,0 +1,254 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Best one-liner</title>
+</head>
+<body>
+<h1>Best one-liner</h1>
+
+<p>Dave Burton<br>
+<a href="http://ioccc.snox.net">http://ioccc.snox.net</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To use:</h3>
+
+<pre><code>make
+./prog &lt; any-file
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>./prog &lt; prog
+./prog &lt; prog.c
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>One line, one array, one loop and one statement but it prints many bytes. It won.</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<p>Feed this anything on stdin.</p>
+
+<p>The included script may be used as a driver program for this entry.
+It adds several nice-to-have features, and allows salt-to-taste customizability.</p>
+
+<p>This code has been compiled and tested on:</p>
+
+<ul>
+<li>OSX-10.11, gcc 4.2.1 and clang 3.0, -O0 and -O3</li>
+<li>X86-Linux, gcc 4.1.2 and 4.8.4, -O0 and -O3</li>
+<li>ARM-QEMU, gcc 4.8.4, -O0 and -O3</li>
+<li>X86-FreeBSD 10.3, clang 3.4.1, -O0 and -O3</li>
+<li>TCC 0.9.26 (x86-64) (used as a proxy for <a href="http://ioccc.org/years.html#2001_bellard">2001/bellard</a>)</li>
+<li>UNIX V7 pcc (Johnson&rsquo;s C compiler) on a <a href="http://simh.trailing-edge.com/">simulated PDP-11/45</a>
+(see spoiler for further detail)</li>
+</ul>
+
+
+<div style="margin-bottom:60em;margin-top:4em"><strong>Spoiler below; scroll down.</strong></div>
+
+
+<h2>SPOILER</h2>
+
+<p>This started life as a personal challenge: write the shortest hex dump utility in C.</p>
+
+<p>The self-imposed ground rules in the hunt for shortest:
+the code has to output correctly,
+no extraneous newlines, the code must be portable,
+and without bypassing the solution using execve(2),
+or functions built upon it (system(3), popen(3), etc).  E.g:</p>
+
+<pre><code>main(){system("hd");}   // it's turtles all the way down!
+</code></pre>
+
+<p>is not acceptable.
+And, &ldquo;output correctly&rdquo; is the output format of this entry.  QED.</p>
+
+<p>Early attempts ended up at a reasonably short 157 characters.
+This was too long for a one-liner, so it had to be formatted as something more interesting.
+This solution is pleasing, but a true one-liner was the hoped-for goal.
+Here is the 157 character version in it&rsquo;s entirety:</p>
+
+<pre><code>char     O,o[  20];L(O){
+putchar  ( O+  48+39  *(9&lt;
+O));}    I(O)  {L(~     15);
+O|| puts(o);}  main     (l){
+for(;~(l=getchar())     ;I(O
+&amp;=15     ))o[  O++      ]=4&lt;
+(4^l     &gt;&gt;5)  ?l:     46,L
+(l&gt;&gt;     4),L  (l&amp;15);O&amp;&amp;
+I(o[     O]=0  );}//157c
+</code></pre>
+
+<p>While thinking about this in the shower (you are not the only one that does this!)
+came the idea which reduced the code to just 119 chars.
+This dramatic reduction started to feel close to minimal, and the hunt resumed.
+The progression to the present size is interesting,
+and it is interesting that the same algorithm can be expressed so differently
+by slight rearrangement of its parts.</p>
+
+<pre><code>// 119
+char O,o[20];main(l){for(;~(l=getchar());O||puts(o))o[O++]=isprint(l)?l:46,O&amp;=15,printf("%02x ",l);O[o]=0;O&amp;&amp;puts(o);}
+// 116
+char O,o[20];main(l){for(;O++[o]=~(l=getchar())?4&lt;(4^l&gt;&gt;5)?l:46:0;(O&amp;=15)||puts(o))printf("%02x ",l);O&gt;1&amp;&amp;puts(o);}
+// 115
+char O,o[20];main(l){for(;O[o]=~(l=getchar())?4&lt;(4^l&gt;&gt;5)?l:46:0;(O=-~O&amp;15)||puts(o))printf("%02x ",l);O&amp;&amp;puts(o);}
+// 113
+char O,o[20];main(l){for(;~l;(O=~l?printf("%02x ",l),-~O&amp;15:!O)||puts(o))O[o]=~(l=getchar())?4&lt;(4^l&gt;&gt;5)?l:46:0;}
+// 112
+char O,o[20];main(l){for(;~l;(O=~l?-~O&amp;printf("%02x ",l)*5:!O)||puts(o))O[o]=~(l=getchar())?4&lt;(4^l&gt;&gt;5)?l:46:0;}
+// 111
+char O,o[20];main(l){for(;~l;O||puts(o))O=(O[o]=~(l=getchar())?4&lt;(4^l&gt;&gt;5)?l:46:0)?-~O&amp;printf("%02x ",l)*5:!O;}
+// 110
+char O,o[0];main(l){for(;~l;O||puts(o))O=(O[o]=~(l=getchar())?4&lt;(4^l&gt;&gt;5)?l:46:0)?-~O&amp;printf("%02x ",l)*5:!O;}
+// 109
+char O,o[];main(l){for(;~l;O||puts(o))O=(O[o]=~(l=getchar())?4&lt;(4^l&gt;&gt;5)?l:46:0)?-~O&amp;printf("%02x ",l)*5:!O;}
+</code></pre>
+
+<p>There are solutions without the ASCII sidebar that are significantly shorter.
+These do not compete in the same category, since their output is materially different.
+They are derived from the solutions above, but are still fascinating as concise utilities,
+so here is their progression, for the curious:</p>
+
+<pre><code>// 102
+I;O(O){putchar(O+48+39*(9&lt;O));}main(l){for(;~(l=getchar());O(++I&amp;15?~15:~37))O(l&gt;&gt;4),O(l&amp;15);O(-38);}
+// 80
+O;main(l){while(~(l=getchar()))printf("%02x%c",l,++O&amp;15?32:10);O&amp;15&amp;&amp;puts("");}
+// 78
+O;main(l){for(;~l;(O=~(l=getchar())?printf("%02x ",l),-~O&amp;15:!O)||puts(""));}
+// 77
+O;main(l){for(;~l;(O=~(l=getchar())?-~O&amp;printf("%02x ",l)*5:!O)||puts(""));}
+// 76
+O;main(l){for(;~l;O||puts(&amp;O))O=~(l=getchar())?-~O&amp;printf("%02x ",l)*5:!O;}
+</code></pre>
+
+<p>It is possible to reduce the size of each of these by one by eliding the trailing newline.
+This was not reported above since the newline kept getting appended by processing software,
+and it is more interesting to remove characters by changing code than by filtering:</p>
+
+<pre><code>$ tr -d '\012' &lt; 109.c | wc -c
+108
+$ tr -d '\012' &lt; 76.c | wc -c
+75
+$ tr -d '\012' &lt; 109.c | cc -o 108 -xc -
+$ verify 108
+$
+</code></pre>
+
+<p>An obfuscated hex dump has been done before:
+<a href="http://ioccc.org/1986/bright/bright.c">1986/bright/bright.c</a> is similar in function,
+but it uses more characters in just setting up its obfuscation than this entire solution!</p>
+
+<h2>BIGGER SPOILER</h2>
+
+<p>If you are unhappy with the way DEL (character 127) is handled,
+replace the cryptic expression <code>4&lt;(4^l&gt;&gt;5)?l:46</code> with <code>32&gt;l|l&gt;126?46:l</code>.
+Both take the same number of characters, but the former is a bit more interesting.
+Bonus question: how does the first expression work?</p>
+
+<h2>BIGGEST SPOILER (and some history)</h2>
+
+<p>Technically, <code>char o[0];</code> is illegal (SS 6.7.6.2) according to ISO (N1570).
+And <code>char o[];</code> is a conditionally supported feature (SS 6.7.6.2, 6.10.8.3).
+However, it works in modern C implementations as an extension,
+including GCC, Clang and TCC, for X86 and ARM,
+on multiple operating systems (Linux, OSX, FreeBSD), so it is <em>functionally</em> correct.
+MicroSoft Visual C++ does not allow <code>char o[]</code> or <code>char o[0]</code>,
+and implements its close relative <code>char o[1]</code>
+such that writing more than a single char will cause a fault, which is <em>technically</em> correct.</p>
+
+<p>But how does this work at all, even as an extension?
+<code>o[]</code> allocates one(!) byte in a zero-filled data area (formerly BSS).
+The UNIX-derived systems this code was run upon all place the
+storage of <code>O</code> and <code>o</code> into a zero-filled VM page with nothing following:
+thus, there are plenty of available and unused zero bytes following <code>O</code>, addressed via <code>o</code>,
+and this code only needs 17.
+This is <em>undefined</em> behavior, but as shown, it is widely available.</p>
+
+<p>The <a href="http://minnie.tuhs.org/cgi-bin/utree.pl">1979 Seventh Edition UNIX</a> (v7) system pre-dates the IOCCC by several years,
+and the source code to <code>sh</code>(1) was a <a href="http://ioccc.org/all/README">significant inspiration for this contest</a>.
+There are two C compilers present: <code>cc</code> written by Dennis Ritchie, and <code>pcc</code> written by Steven Johnson.
+The nested conditional expressions in 116 and smaller are too complex for <code>cc</code> (&ldquo;Illegal conditional&rdquo;)
+but <code>pcc</code> handles them correctly, and neither compiler accepts <code>char o[]</code> or <code>char o[0]</code> nor puts the bytes in
+a zero-filled page (as a paged VM was not yet written for UNIX).</p>
+
+<p>More significant is that v7 <code>printf</code>(3) does not report the number of characters written,
+and therefore 111 compiles but does not work correctly;
+113 is the shortest code that compiles and runs correctly in Ancient UNIX.</p>
+
+<blockquote><p>Interesting digression: v7 <code>printf</code> (<code>_doprnt</code>) was written in PDP-11 assembler.
+It pre-dates <code>varargs.h</code>, and assembly was the only way to gain access to the variable argument types.
+The first edition <em>The C Programming Language</em>, 1978, page 71, remarks:</p>
+
+<blockquote><p>By the way, there is no entirely satisfactory way to write a portable function
+that accepts a variable number of arguments, because there is no portable way
+for the called function to determine how many arguments where actually passed to it in a given call.
+&hellip;
+<code>printf</code>, the most common C function with a variable number of arguments,
+&hellip; is also non-portable and must be modified for different environments.</p></blockquote>
+
+<p>It is fascinating to explore the roots of C through the history of the operating system
+it was birthed within.  C is often criticized as a difficult, inscrutable language,
+but as this contest demonstrates, this is in parody.
+<em>Shell-gol</em> is one of those instances where someone <a href="http://www.computerworld.com.au/article/279011/a-z_programming_languages_bourne_shell_sh/?pp=4">preferred a different language</a>,
+and (ab)used the preprocessor to re-mold C into something they found comfortable.
+Most of the rest of the system, especially in the kernel,
+are models of clarity and efficient expression.</p></blockquote>
+
+<h2>TL;DR</h2>
+
+<p>So which version is the shortest, portable hex dump?</p>
+
+<ul>
+<li>109 works with (most?) modern Unix-like systems and compilers, see example list above.</li>
+<li>111 works adds Microsoft, is standards-approved, and does not exploit undefined behavior.</li>
+<li>113 works on Ancient UNIX and the portable C compiler.</li>
+<li>119 works on all platforms, including the original Ritchie PDP-11 C compiler.</li>
+</ul>
+
+
+<h2>Coda</h2>
+
+<p>Clearly, the smallest possible program violates modern best practice.
+It is not even possible to compile cleanly, but it will compile correctly.</p>
+
+<p>Included is <code>prog.nowarn.c</code>, a modern C implementation that is &ndash; perhaps &ndash; the smallest,
+clean-compiling version using <code>clang</code> or <code>gcc</code> with <code>-Wall -pedantic</code>.
+Note that while this is larger than all but the original attempt,
+it will <em>not</em> work with the original Ritchie PDP-11 C compiler,
+since the expression within the ternary remains too complex.</p>
+
+<p>Try</p>
+
+<pre><code>cat prog.c prog.nowarn.c
+</code></pre>
+
+<p>to compare the differences (<code>diff</code> is not helpful on a one-liner).</p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2018, 
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

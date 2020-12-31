@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Best choice of optimization</title>
+</head>
+<body>
+<h1>Best choice of optimization</h1>
+
+<p>Don Yang<br>
+<a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#111;&#x6d;&#111;&#105;&#x6b;&#97;&#x6e;&#101;&#64;&#x75;&#103;&#x75;&#x75;&#x2e;&#x6f;&#114;&#x67;">&#x6f;&#109;&#x6f;&#105;&#x6b;&#x61;&#x6e;&#101;&#x40;&#x75;&#103;&#x75;&#117;&#x2e;&#x6f;&#114;&#x67;</a><br>
+<a href="http://uguu.org/">http://uguu.org/</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To build:</h3>
+
+<pre><code>make sinon
+</code></pre>
+
+<h3>To run:</h3>
+
+<pre><code>cp sinon.c run.c
+</code></pre>
+
+<p>Then keep running ./glock.sh or ./hecate.sh within a minute with
+slight pauses between invocations.</p>
+
+<h3>Try:</h3>
+
+<pre><code>cp sinon.c run.c; ./hecate.sh; ./glock.sh; sleep 3; ./glock.sh; sleep 1; ./hecate.sh
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>Try to figure out how this entry determines the optimization level with
+which it had been compiled. Is this an example of undefined behavior
+or unspecified behavior?</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h3>Summary</h3>
+
+<p>Sinon is a game of timing, the goal is to eliminate all enemies in
+under one minute.</p>
+
+<p>To start, compile and run the program.  To resume, compile and run the
+output repeatedly until you have won/lost the game.  For example:</p>
+
+<pre><code>cp sinon.c run.c
+gcc -O0 run.c -o run &amp;&amp; ./run | tee run.c
+gcc -O2 run.c -o run &amp;&amp; ./run | tee run.c
+...
+</code></pre>
+
+<h3>Details</h3>
+
+<p>Sinon is played by compiling and running the output repeatedly.  Two
+factors determine what actions are taken:</p>
+
+<ul>
+<li>Time since last compilation.</li>
+<li>Whether compiler optimizations are enabled or not.</li>
+</ul>
+
+
+<p>If you fire too quickly, the weapon will jam.  If you fire too slowly,
+you will not be able to eliminate all the enemies in time.  Thus the
+primary objective of the game is to time your compilations just right.</p>
+
+<p>Sinon has two weapons that are selected based on compiler optimization
+level:</p>
+
+<ul>
+<li><p>&ldquo;gcc -O2&rdquo; or &ldquo;clang -O2&rdquo; will fire Hecate II, a powerful rifle that
+requires longer time to cool off.</p></li>
+<li><p>&ldquo;gcc -O0&rdquo; or &ldquo;clang -O0&rdquo; will fire Glock 18C, a less powerful pistol
+that requires less time to cool off.</p></li>
+</ul>
+
+
+<p>Because the weapons cool off independently, the best strategy is to
+alternate between the two weapons.  It is fairly easy to win the game
+with this strategy even with occasional jams.</p>
+
+<p>If your compiler does not have the right optimizations, only Glock 18C
+would be available.  It is still possible to win, but your timing will
+need to be more precise.  This is effectively playing the game on
+&ldquo;hard&rdquo; mode.  It is worth trying this mode even if you have the right
+compilers.</p>
+
+<h3>Compatibility</h3>
+
+<p>Sinon has been tested and verified to work on these platforms:</p>
+
+<ul>
+<li>gcc 4.4.3 on Linux.</li>
+<li>gcc 4.4.5 on Linux.</li>
+<li>gcc 4.8.2 on Linux.</li>
+<li>gcc 4.8.3 on Cygwin/MingW.</li>
+<li>clang 3.4-1 on Linux.</li>
+<li>clang 3.4.2 on Cygwin.</li>
+<li>gcc 4.3.5 on JS/Linux (playable but likely unwinnable, because it
+takes too long to compile).</li>
+<li>tcc 0.9.25 on JS/Linux (no optimization, so only &ldquo;hard&rdquo; mode is
+available).</li>
+</ul>
+
+
+<p>Sinon is intended to be played in a 80x25 terminal.</p>
+
+<h3>Miscellaneous features</h3>
+
+<p>Sinon might be the first game that uses compiler optimization level as
+a primary input.</p>
+
+<p>Sinon has a demo mode that plays the game automatically.  Make sure
+that there are no files named &ldquo;run&rdquo; and &ldquo;run.c&rdquo; in current directory
+(they will be overwritten) and run:</p>
+
+<pre><code>perl sinon.c | bash
+</code></pre>
+
+<p>File size and CRC32 of sinon.c are embedded in line 7.</p>
+
+<p>Process for making Sinon is included in spoiler.html.</p>
+
+<p>Layout of this code is based on Asada Shino, also known as &ldquo;Sinon&rdquo;,
+from Sword Art Online.</p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2015, 
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

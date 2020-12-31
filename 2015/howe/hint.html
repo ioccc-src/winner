@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most Different</title>
+</head>
+<body>
+<h1>Most Different</h1>
+
+<p>Anthony Howe <a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x61;&#x63;&#104;&#x6f;&#x77;&#101;&#64;&#115;&#x6e;&#101;&#114;&#x74;&#46;&#99;&#111;&#x6d;">&#97;&#99;&#x68;&#111;&#119;&#101;&#x40;&#x73;&#110;&#101;&#x72;&#116;&#46;&#99;&#x6f;&#x6d;</a><br>
+Montreal, Quebec, Canada<br>
+<a href="http://www.snert.com/">http://www.snert.com/</a><br>
+Twitter: @SirWumpus</p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To use:</h3>
+
+<pre><code>make
+
+./prog file1 file2
+
+./prog -d file1 file2
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>./prog prog.orig.c prog.c
+
+make test
+./prog -d ABXYEFCD.tmp ACDBECFD.tmp
+./prog ABXYEFCD.tmp ACDBECFD.tmp
+
+rm -f curds.tmp whey.tmp
+cp /usr/share/man/man1/cc.1 curds.tmp
+cp /usr/share/man/man1/cc.1 whey.tmp
+chmod 666 whey.tmp
+make makeholes
+./makeholes -n 1000 whey.tmp
+./prog curds.tmp whey.tmp
+./avgtime.sh 100 ./prog curds.tmp whey.tmp
+
+# Assuming curl(1) installed, grab a really HUGE text file.
+curl -L -o war-and-peace.txt http://www.gutenberg.org/ebooks/2600.txt.utf-8
+cp war-and-peace.txt nuked.tmp
+./makeholes -c'~' -n 1000 nuked.tmp
+./prog war-and-peace.txt nuked.tmp
+./avgtime.sh 100 ./prog war-and-peace.txt nuked.tmp
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>This is the best use of the FNV that we have seen in the IOCCC so far!
+The output, when used without -d, is compatible with POSIX diff and
+is suitable for use with patch.</p>
+
+<p>We welcome back Canada to the list of nations from where winning
+entries have been submitted.</p>
+
+<p>Is this code a bug or a feature? :-)  Or is this an attempt to corrupt the
+programming of our youth?  Should we heed Kyle&rsquo;s mom words that she uttered
+during a South Park P.T.A. Meeting?</p>
+
+<p>   &ldquo;We must stop dirty &copy; language from getting to our children&rsquo;s ears!&rdquo;</p>
+
+<p>   <a href="https://www.youtube.com/watch?v=bOR38552MJA">Blame Canada</a>:</p>
+
+<p>Or should we teach our youth to understand the intricacies of this code?
+Ying Tong Iddle I Po!  We suggest you read the source for yourself, which
+might be easier than the academic papers it was inspired by.</p>
+
+<p>NOTE: Unlike the original entry source, prog.orig.c, prog.c uses a
+64 bit FNV hash and fixes a function call warning.</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h2>Features</h2>
+
+<ul>
+<li><p>&ldquo;An O(NP) Sequence Comparison Algorithm&rdquo; by Wu, Manber, Myers, Miller.</p></li>
+<li><p>Output compatible with patch(1).</p></li>
+<li><p>Strokes one of the judge&rsquo;s ego (I couldn&rsquo;t email chocolate or curry).</p></li>
+</ul>
+
+
+<h2>Description</h2>
+
+<p>This is a functioning micro diff tool using an <a href="http://myerslab.mpi-cbg.de/wp-content/uploads/2014/06/np_diff.pdf">O(NP) algorithm</a>, compared to the older <a href="http://www.xmailserver.org/diff2.pdf">O(ND) difference algorithm</a> used by some versions of diff.  Its output is based on the default diff(1) output described by POSIX and <a href="http://pubs.opengroup.org/onlinepubs/9699919799/utilities/diff.html">The Open Group Base Specifications</a>.  The output is suitable for use with patch(1).</p>
+
+<p>The -d option simply writes the edit distance between file1 and file2.</p>
+
+<h2>Observations</h2>
+
+<p>The FNV1a hash is a little slow compared to the trival hash GNU Diff uses.  I downloaded a plain text copy of &ldquo;War And Peace&rdquo; from Project Gutenberg, used <code>makeholes.c</code> to make 1000 random changes, then profiled and timed the program verses GNU Diff.  The bottle neck appears to be in the file I/O and line hashing with an average +0.05s slower.  Using a huge file like &ldquo;War And Peace&rdquo; for testing offsets the diff(1) optimised file I/O.</p>
+
+<p>There is no hash collision checking, partly because FNV1a appears to generate very <a href="http://programmers.stackexchange.com/questions/49550/which-hashing-algorithm-is-best-for-uniqueness-and-speed">few collisions</a> and an assumption that localised collisions within a region of edits are highly unlikely.</p>
+
+<h2>Support Files</h2>
+
+<ul>
+<li><p><code>prog-test.sh</code><br>
+Basic test program verifies known test edit distances and patch support.</p></li>
+<li><p><code>avgtime.sh</code></p></li>
+<li><p><code>makeholes.c</code><br>
+Random edits (holes) made to a file in-place.</p></li>
+</ul>
+
+
+<h2>References</h2>
+
+<p>Wu, Manber, Myers, and Miller; August 1989;<br>
+&ldquo;An O(NP) Sequence Comparison Algorithm&rdquo;;<br>
+<a href="http://myerslab.mpi-cbg.de/wp-content/uploads/2014/06/np_diff.pdf">http://myerslab.mpi-cbg.de/wp-content/uploads/2014/06/np_diff.pdf</a></p>
+
+<p>Fowler, Noll, Vo; 1994<br>
+<a href="http://www.isthe.com/chongo/tech/comp/fnv/index.html">http://www.isthe.com/chongo/tech/comp/fnv/index.html</a></p>
+
+<p>Fowler, Noll, Vo on Wikipedia<br>
+<a href="https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function">https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function</a></p>
+
+<p>&ldquo;diff&rdquo;, The Open Group Base Specifications Issue 7<br>
+IEEE Std 1003.1, 2013 Edition<br>
+<a href="http://pubs.opengroup.org/onlinepubs/9699919799/utilities/diff.html">http://pubs.opengroup.org/onlinepubs/9699919799/utilities/diff.html</a></p>
+
+<p>Eugene W. Myers; &ldquo;An O(ND) Difference Algorithm and Its Variations&rdquo;;<br>
+Algorithmica, 1986, pages. 251-266<br>
+<a href="http://www.xmailserver.org/diff2.pdf">http://www.xmailserver.org/diff2.pdf</a></p>
+
+<p>Webb Miller and Eugene W. Myers; &ldquo;A File Comparison Program&rdquo;;<br>
+Software-Practice And Experience, Vol. 15(11). 1025-1040 (November 1985)<br>
+<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.189.70&amp;rep=rep1&amp;type=pdf">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.189.70&amp;rep=rep1&amp;type=pdf</a></p>
+
+<p>D.S. Hirschberg, &ldquo;A linear space algorithm for computing maximal common subsequence problem&rdquo;;<br>
+Comm. of ACM, Vol. 18, June 1975, pages 341-343<br>
+<a href="http://www.mathcs.emory.edu/~cheung/Courses/323/Syllabus/DynProg/Docs/Hirschberg-LCS-1975.pdf">http://www.mathcs.emory.edu/~cheung/Courses/323/Syllabus/DynProg/Docs/Hirschberg-LCS-1975.pdf</a></p>
+
+<p>Which hashing algorithm is best for uniqueness and speed?<br>
+<a href="http://programmers.stackexchange.com/questions/49550/which-hashing-algorithm-is-best-for-uniqueness-and-speed">http://programmers.stackexchange.com/questions/49550/which-hashing-algorithm-is-best-for-uniqueness-and-speed</a></p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2016, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2016, 
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

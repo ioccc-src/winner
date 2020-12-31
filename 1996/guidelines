@@ -1,0 +1,778 @@
+13th International Obfuscated C Code Contest Guidelines, Hints and Comments
+
+Copyright (c) Landon Curt Noll, Larry Bassel and Sriram Srinivasan, 1996.
+All Rights Reserved.  Permission for personal, education or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from Landon Curt Noll, Larry Bassel and Sriram Srinivasan.
+
+
+ABOUT THIS FILE:
+
+    This file is intended to help people who wish to submit entries to
+    the International Obfuscated C Code Contest (IOCCC for short).
+
+    This is not the IOCCC rules, though it does contain comments about
+    them.  The guidelines should be viewed as hints and suggestions.
+    Entries that violate the guidelines but remain within the rules are
+    allowed.  Even so, you are safer if you remain within the guidelines.
+
+    You should read the current IOCCC rules, prior to submitting entries.
+    The rules are typically sent out with these guidelines.
+
+    Changes from the 1995 rules are denoted by change bars.  --->	       |
+    Not every change is marked in this file is marked, but
+    most are. :-)
+
+
+WHAT IS NEW IN 1996:
+
+    A number of small rules changes were made.  See rule #3.		       |
+
+    We clarified what is a legal title by using a stronger regexp.	       |
+
+    We expanded on the value of the --remark--- section in the		       |
+    guidelines below.							       |
+
+    We now ask for an author's home page URL in the --entry-- section.	       |
+
+    We declared that use of local funcions are not allowed this year due       |
+    to the lack of portability.						       |
+
+    Windows 95 (see Dislikes).  This is not really new but we like to	       |
+    say it anyway.							       |
+
+
+HINTS AND SUGGESTIONS:
+
+    You are encouraged to examine the winners of previous contests.  See
+    FOR MORE INFORMATION for details on how to get previous winners.
+
+    Keep in mind that rules change from year to year, so some winning entries
+    may not be valid entries this year.  What was unique and novel one year
+    might be 'old' the next year.
+
+    An entry is usually examined in a number of ways.  We typically apply
+    a number of tests to an entry:
+
+	* look at the original source
+	* convert ANSI tri-graphs to ASCII
+	* C pre-process the source ignoring '#include' lines
+	* C pre-process the source ignoring '#define' and '#include' lines
+	* run it through a C beautifier
+	* examine the algorithm
+	* lint it
+	* compile it
+	* execute it
+
+    You should consider how your entry looks in each of the above tests.
+    You should ask yourself if your entry remains obscure after it has been
+    'cleaned up' by the C pre-processor and a C beautifier.
+
+    Your entry need not pass all of the above tests.  In certain
+    cases, a test is not important.  Entries that compete for the
+    'strangest/most creative source layout' need not do as well as
+    others in terms of their algorithm.  On the other hand, given
+    two such entries, we are more inclined to pick the entry that
+    does something interesting when you run it.
+
+    We try to avoid limiting creativity in our rules.  As such, we leave
+    the contest open for creative rule interpretation.  As in real life
+    programming, interpreting a requirements document or a customer request
+    is important.  For this reason, we often award 'worst abuse of the
+    rules' to an entry that illustrates this point in an ironic way.
+
+    We do realize that there are holes in the rules, and invite entries
+    to attempt to exploit them.  We will award 'worst abuse of the rules'
+    and then plug the hole next year.  Even so, we will attempt to use
+    the smallest plug needed, if not smaller.  :-)
+
+    Check out your program and be sure that it works.  We sometimes make
+    the effort to debug an entry that has a slight problem, particularly
+    in or near the final round.  On the other hand, we have seen some
+    of the best entries fall down because they didn't work.
+
+    We tend to look down on a prime number printer, that claims that
+    16 is a prime number.  If you do have a bug, you are better off
+    documenting it.  Noting "this entry sometimes prints the 4th power
+    of a prime by mistake" would save the above entry.  And sometimes,
+    a strange bug/feature can even help the entry!  Of course, a correctly
+    working entry is best.
+
+    People who are considering to just use some complex mathematical
+    function or state machine to spell out something such as "hello,
+    world!" may want to try and be more creative.
+
+    Ultra-obfuscated programs are in some cases some cases easier to
+    deobfuscate than subtly-obfuscated programs.  Consider using
+    misleading or subtle tricks layered on top of or under an
+    appropriate level of obfuscation.
+
+    Programs that use VTxxx/ANSI sequences that are NOT limited to a
+    specific terminal brand and that can also work in a standard xterm
+    are considered portable.
+
+
+OUR LIKES AND DISLIKES:
+
+    Doing masses of #defines to obscure the source has become 'old'.  We
+    tend to 'see thru' masses of #defines due to our pre-processor tests
+    that we apply.  Simply abusing #defines or -Dfoo=bar won't go as far
+    as a program that is more well rounded in confusion.
+
+    Many ANSI C compilers dislike the following code, and so do we:
+
+	#define d define
+	#d foo		   <-- don't expect this to turn into #define foo
+
+    When declaring local or global variables, you should declare the type:
+
+	int this_is_ok;
+	this_is_not;	   <-- don't use such implicit type declaration
+
+    We suggest that you compile your entry with an ANSI C compiler.  If you
+    must use non-ANSI C, such as K&R C, you must avoid areas that result in
+    compile/link errors for ANSI C compilers.  For example, using gcc	       |
+    local function declarations, such as:				       |
+
+	void main() {							       |
+		void blah() { printf("blah\n"); }			       |
+		blah();							       |
+	}								       |
+
+    are not allowed even though their existence seems tailor made for	       |
+    this contest!   But for now, since they are not in wide spread use	       |
+    we cannot accept entries that use them.				       |
+
+    If your entry uses functions that have a variable number of
+    arguments, be careful. Systems implement va_list as a wide variety
+    of ways.  Because of this, a number of operations using va_list are
+    not portable and must not be used:
+
+	* assigning a non-va_list variable to/from a va_list variable
+	* casting a non-va_list variable into/from a va_list variable
+	* passing a va_list variable to a function expecting a non-va_list arg
+	* passing a non-va_list variable to a function expecting a va_list arg
+	* performing arithmetic on va_list variables
+	* using va_list as a structure or union
+
+    In particular, do not treat va_list variables as if they were a char **'s.
+
+    Avoid using <varargs.h>.  Use <stdarg.h> instead.
+
+    If you use C preprocessor directives (#define, #if, #ifdef, ...),
+    the leading '#' must be the first character on a line.  While some
+    C preprocessors allow whitespace the leading '#', many do not.
+
+    Because the exit() function returns void on some systems, entries
+    must not assume that it returns an int.
+
+    Small programs are best when they are short, obscure and concise.
+    While such programs are not as complex as other winners, they do
+    serve a useful purpose.  They are often the only program that people
+    attempt to completely understand.  For this reason, we look for
+    programs that are compact, and are instructional.
+
+    One line programs should be short one line programs, say around 80
+    bytes long.  Getting close to 160 bytes is a bit too long in our opinion.
+
+    We tend to dislike programs that:
+
+	* are very hardware specific
+	* are very OS version specific
+	     (index/strchr differences are ok, but socket/streams specific
+	      code is likely not to be)
+	* dump core or have compiler warnings
+	     (it is ok only if you warn us in the 'remark' header item)
+	* won't compile or run under a POSIX P1003.1/P1003.2 like systems
+	* depend on a utility or application not normally found on most
+	  most POSIX P1003.1/P1003.2 like systems
+	* abuse the build file to get around the size limit
+	* obfuscate by excessive use of ANSI tri-graphs
+	* are longer than they need to be
+	* are similar to previous winners
+	* are identical to previous losers  :-)
+	* are identical to future losers (Windows 95) :-)
+
+    Unless you are cramped for space, or unless you are entering the
+    'best one liner' category, we suggest that you format your program
+    in a more creative way than simply forming excessively long lines.
+
+    The build file should not be used to try and get around the size
+    limit.  It is one thing to make use of a several -D's to help out,
+    but it is quite another to use 200+ bytes of -D's in order to
+    try and squeeze the source under the size limit.  You should feel
+    free to make use of the build file space, but you are better off
+    if you show some amount of restraint.
+
+    We want to get away from source that is simply a compact blob of
+    characters.  To help, we give a break to source that contains
+    whitespace, and in certain cases ; { or } characters.  While the
+    number of characters excluding whitespace (tab, space, newline),
+    and excluding any ; { or } followed immediately by either whitespace
+    or end of file, must be <= 1536, the total size may be less than 3217
+    bytes.  This means that one may use "free of charge" up to 1681
+    bytes of whitespace, or ; { or } followed by either whitespace
+    or end of file.  [[Q: What is special about 1681?]]
+
+    Given two versions of the same program, one that is a compact blob
+    of code, and the other that is formatted more like a typical C
+    program, we tend to favor the second version.  Of course, a third
+    version of the same program that is formatted in an interesting
+    and/or obfuscated way, would definitely win over the first two!
+
+    We suggest that you avoid trying for the 'smallest self-replicating'
+    source.  The smallest, a zero byte entry, won in 1994.
+
+    We tend to dislike writable strings.  That is, we want to avoid:
+
+	char *T = "So many primes, so little time!";
+	...
+	T[14] = ';';
+
+    You may use writable strings if you really must.  If you do depend
+    on them, you must say do in the ---remark--- section.
+
+    X client entries should be as portable as possible.  Entries that
+    adapt to a wide collection of environments will be favored.  Don't
+    depend on a particular type of display.  For example, don't depend
+    on color or a given size.  Don't require backing store.
+
+    X client entries should avoid using X related libraries and
+    software that is not in wide spread use.  We ask that such X client
+    entries restrict themselves to only the low level Xlib and the
+    Athena widget set (libX11.a, libXaw.a, libXmu.a and libXt.a).
+    Don't use M*tif, Xv*ew, or OpenL*ok toolkits, since not everyone
+    has them.  Avoid depending on a particular window manager.  Not
+    everyone has X11r5, and some people are stuck back in X11r4 (or
+    earlier), so try to target X11r5 without requiring X11r5.  Better
+    yet, try to make your entry run on all version 11 X Window Systems.
+
+    X client entries should not to depend on particular items on
+    .Xdefaults.  If you must do so, be sure to note the required lines
+    in the ---remark--- section.
+
+    While we recognize that UN*X is not a universal operating system, the
+    contest does have a bias towards such systems.  In an effort to expand
+    the scope of the contest, we phrase our bias in terms of POSIX P1003.1
+    and P1003.2 standards.  This will allow certain non-UN*X OS users to
+    submit entries.  On the other hand, this is a guideline and not a rule.
+    We will not reject an entry based on some POSIX technicality.
+
+    When dealing with OS and application environments, we suggest that you
+    be reasonable with a nod towards vanilla UN*X-like systems.  POSIX will
+    evolve but not as much as the contest, so avoid stuff like POSIX real
+    time, security, etc.
+
+    We like programs that:
+
+	* are as concise and small as they need to be
+	* do something at least quasi-interesting
+	* pass lint without complaint (not a requirement, but it is nice)
+	* are portable
+	* are unique or novel in their obfuscation style
+	* MAKE USE OF A NUMBER OF DIFFERENT TYPES OF OBFUSCATION
+	* make us laugh and/or throw up  :-)
+
+    Some types of programs can't excel (tm) in some areas.  Of course, your
+    program doesn't have to excel in all areas, but doing well in several
+    areas really does help.
+
+    You are better off explaining what your entry does in the 		       |
+    ---remark--- section rather than leaving it obscure for the judges         |
+    as we might miss something and/or be too tired to notice.		       |
+
+    We freely admit that interesting, creative or humorous comments in
+    the ---remark--- section help your chances of winning.  If you had to
+    read so many twisted entries, you too would enjoy a good laugh or two.
+    We think the readers of the contest winners do as well.  We do read	       |
+    the ---remark--- section during the judging process, so it is worth	       |
+    your while to write a remarkable ---remark--- section.		       |
+
+    Be creative!
+
+
+ABUSING THE RULES:
+
+    Legal abuse of the rules is somewhat encouraged.  Legal rule abuse may
+    involve, but is not limited to, doing things that are technically
+    allowed by the rules and yet do not fit the spirit of what we
+    intended to be submitted.
+
+    Legal rule abuse is encouraged to help promote creativity.  Rule
+    abuse entries, regardless of if they receive an award, result in
+    changes to the next year's rules and guidelines.
+
+    Legal abuse of the rules is NOT an invitation to violate the
+    rules.  An entry that violates the rules in the opinion of the
+    judges, WILL be disqualified.  RULE ABUSE CARRIES A CERTAIN LEVEL
+    OF RISK!  If you have an entry that might otherwise be interesting,
+    you might want to submit two versions; one that does not abuse the
+    rules and one that does.
+
+    If you intend to abuse the rules, indicate so in the ---remark---
+    section.  You must try to justify why you consider your rule abuse
+    to be allowed under the rules.  That is, you must plead your case
+    as to why your entry is valid.  Humor and/or creativity help plead
+    a case.
+
+    Abusing the entry format tends to annoy us more than amuse us.
+
+    We are often asked why the contest rules and guidelines seem too
+    strange or contain mistakes, flaws or grammatical errors.
+    One reason is that we sometimes make genuine mistakes.  But in many
+    cases such problems, flaws or areas of confusion are deliberate.
+    Changes to rules and guidelines in response to rule abuses, are
+    done in a minimal fashion.  Often we will deliberately leave
+    behind holes (or introduce new ones) so that future rule abuse may
+    continue.
+
+    At the risk of stating the obvious, this contest is a parity of the
+    software development process.  The rules and guidelines are
+    only a small part of the overall contest.  Even so, one may think
+    the contest rule and guideline process as a parody of the sometimes
+    tragic mismatch between what a customer (or marketing) wants and
+    what engineering delivers.
+
+
+ENTRY FORMAT:
+
+    In order to help us process the many entries, we must request your
+    assistance by formatting your entries in a certain way.  This format,
+    in addition, allows us to quickly separate information about the
+    author from the program itself.  (see JUDGING PROCESS)
+
+    We have provided the program, mkentry, as an example of how to
+    format entries.  You should be aware of the following warning that
+    is found in mkentry.c:
+
+	This program attempts to implement the IOCCC rules.  Every
+	attempt has been made to make sure that this program produces
+	an entry that conforms to the contest rules.  In all cases,
+	where this program differs from the contest rules, the
+	contest rules will be used.  Be sure to check with the
+	contest rules before submitting an entry.
+
+    You are not required to use mkentry.  It is convenient, however,
+    as it attempts to uuencode the needed files, and attempt to check
+    the entry against the size rules.
+
+    If you have any suggestions, comments, fixes or complaints about
+    the mkentry.c program, please send EMail to the judges.  (see below)
+
+    The following is a sample entry (the | change bars are not part
+    of the example, don't add them to your entry!)
+
+---entry---
+rule:	1996-1
+fix:	y
+title:	chonglabram
+entry:	0
+date:	Mon Oct 28 00:47:00 1996
+host:	Un*x v6, pdp11/45
+	2.9BSD, pdp11/70
+---remark---
+    This is a not-very-obfuscated C program.  It is likely not to win a
+    prize, because it doesn't have what it takes to win and because the
+    author plans to forget to send it in before the deadline!  :-)
+
+    Note that the rule is 1996-1 because 1996's old mkentry.c was buggy.
+---author---
+name:	Landon Curt Noll
+org:	IOCCC Judging Group
+addr:	Toad Hall
+	PO Box 170608
+	San Francisco, California
+	94117-0608
+	USA
+	Earth
+email:	{chongo,noll}@{toad,sgi}.com
+url:	http:///www.isthe.com/chongo/index.html
+anon:	y
+---author---
+name:	Larry Bassel
+org:	IOCCC Judging Group
+addr:	Toad Hall
+	PO Box 170608
+	San Francisco, California
+	94117-0608
+	USA
+email:	labbmf@ix.netcom.com
+url:	none
+anon:	n
+---author---
+name:	Sriram Srinivasan
+org:	IOCCC Judging Group
+addr:	Toad Hall
+	PO Box 170608
+	San Francisco, California
+	94117-0608
+	USA
+email:	sriram@tcs.com
+url:	none								       |
+anon:	n
+---info---
+begin 444 info.file
+M0V]P>7)I9VAT("AC*2!,86YD;VX@0W5R="!.;VQL+"`Q.3DU+@I!;&P@4FEG
+M:'1S(%)E<V5R=F5D+B`@4&5R;6ES<VEO;B!F;W(@<&5R<V]N86PL(&5D=6-A
+M=&EO;B!O<B!N;VXM<')O9FET('5S92!I<PIG<F%N=&5D('!R;W9I9&5D('1H
+M:7,@=&AI<R!C;W!Y<FEG:'0@86YD(&YO=&EC92!A<F4@:6YC;'5D960@:6X@
+M:71S(&5N=&ER971Y"F%N9"!R96UA:6YS('5N86QT97)E9"X@($%L;"!O=&AE
+M<B!U<V5S(&UU<W0@<F5C96EV92!P<FEO<B!P97)M:7-S:6]N(&EN('=R:71I
+M;F<*9G)O;2!,86YD;VX@0W5R="!.;VQL+@H*5&AA="!T:&%T(&ES+"!I<RX*
+M5&AA="!T:&%T(&ES(&YO="P*("`@(&ES(&YO="!T:&%T('1H870@;F]T(&ES
+M+@I4:&%T(&ES+"!T:&%T('1H870@:7,@;F]T+"!I<R$*"@D)+2T@8VAO;F=O
+M(#$Y-S0*"D$@9F5W('!E;W!L92!O8FIE8W1E9"!T;R!T:&4@8V]M;6$@:6X@
+M(E1H870@=&AA="!I<RP@:7,B+"!S;R!W92!C;VYS=6QT960*=V5L;"!K;F]W
+M;B!S='EL92!G=6ED92!A<R!W96QL(&%S(&%N(&5X<&5R="!O;B!T:&4@<W5B
+M:F5C="!O9B!P=6YC='5A=&EO;BX*5&AE(&-O;F-L=7-I;VX@9G)O;2!A;&P@
+M<V]U<F-E<R!W87,@=&AA="!T:&4@8V]M;6$@:7,@86QL;W=E9"X*"DEN(#$Y
+M.3(L(&]N92!P97)S;VX@=&]L9"!U<R!T:&%T('1H97D@86-T=6%L;'D@9&5C
+M;V1E9"!T:&ES(&9I;&4N("!);@HQ.3DS(&%N9"`Q.3DT(&$@9F5W(&UO<F4@
+M9&ED('1H92!S86UE+B`@26X@,3DY-2P@82!N=6UB97(@;V8@<&5O<&QE(&9R
+M;VT*16%S=&5R;B!%=7)O<&4@=&]L9"!U<R!T:&%T('1H97D@9&5C;V1E9"!T
+M:&ES(&9I;&4N("!3965M<R!T:&5R92!I<R!A"G-M86QL('5U9&5C;V1E(&=R
+M;W5P(&]U="!T:&5R92$@(#HM*0H*22!W;VYD97(@:&]W(&UA;GD@=VEL;"!D
+0;R!I="!T:&ES('EE87(_"@``
+`
+end
+---build---
+begin 444 build
+<9V-C("UA;G-I('!R;V<N8R`M3R`M;R!P<F]G"@``
+`
+end
+---program---
+begin 444 prog.c
+M;6%I;B@I"GL*("`@("\J"B`@("`@*B!.;W0@=F5R>2!O8F9U<V-A=&5D(&)U
+M="!T:&5N('=H870@9&ED('EO=2!E>'!E8W0_("!3;R!H97)E(&%R92!A"B`@
+M("`@*B!F97<@<&5R<V]N86P@=&ED8FET<R!B96-A=7-E($D@*$QA;F1O;BD@
+M;F5E9&5D('1O('=A<W1E(&$@9F5W(&)Y=&5S+@H@("`@("HO"B-I9B`A9&5F
+M:6YE9"A.3U1?05]214=)4U1%4D5$7U9/5$527TE.7U-53DY95D%,15]#04Q)
+M1D]23DE!7U5302D*("`@('!R:6YT9B@B22`H3&%N9&]N($YO;&PI('=A<R!E
+M;&5C=&5D('1O(&$@-"!Y96%R('1E<FT@;VX@=&AE(%-U;FYY=F%L95QN(BD[
+M"B`@("!P<FEN=&8H(D-I='D@0V]U;F-I;"X@(%1H86YK('EO=2$@($UY('1E
+M<FT@96YD<R!I;B`Q.3DW+EQN7&XB*3L*(V5N9&EF"B`@("!P<FEN=&8H(E-U
+M;FYY=F%L92!R96QA=&5D($5-86EL(&UA>2!B92!S96YT('1O.B!N;VQL0'1O
+M860N8V]M+EQN(BD["B`@("!P<FEN=&8H(F]R(&-O=6YC:6Q`8VDN<W5N;GEV
+M86QE+F-A+G5S7&Y<;B(I.PH*("`@('!R:6YT9B@B070@=&AE('1I;64@=&AI
+M<R!W87,@=W)I='1E;BP@4W5N;GEV86QE(&AA<R!A('1E;7`@5V5B('-I=&5<
+M;B(I.PH@("`@<')I;G1F*")H='1P.B\O=W=W+G-V<&%L+F]R9R]S=6YN>79A
+M;&4N("!4:&ES('=I;&P@8VAA;F=E(&EN('1H92!N96%R7&XB*3L*("`@('!R
+M:6YT9B@B9G5T=7)E(&%S($QA;F1O;B=S(&UO=&EO;B!T;R!S971U<"!A('-E
+M<G9E<B!W:71H(&$@5#$@;&EN:UQN(BD["B`@("!P<FEN=&8H(G!A<W-E9"`W
+M+3`N("!3;R!E>'!E8W0@9&ER96-T(%-U;FYY=F%L92!54DP@<V]M971I;64@
+M<V]O;B%<;EQN(BD["@H@("`@<')I;G1F*")))VT@9&]I;F<@;6]R92!O8G-E
+M<G9I;F<@;F]W('1H870@22!H879E(&UY(#,P;6T@3%@R,#`N("!!9G1E<EQN
+M(BD["B`@("!P<FEN=&8H(B5D*R!Y<G,@;V8@;6%N=6%L('-T87(@:&]P<&EN
+M9RP@:70@:7,@;FEC92!T;R!L970@82!C;VUP=71E<EQN(BPR,"D["B`@("!P
+M<FEN=&8H(F1O(&ET(5QN7&XB*3L*"B`@("!P<FEN=&8H(E-P96%K:6YG(&]F
+M(&-O;7!U=&5R<RP@22=M('5S:6YG(&UY($-O=6YC:6P@<&]S:71I;VX@=&\@
+M;&]B8GE<;B(I.PH@("`@<')I;G1F*")T:&4@55,@1V]V97)N;65N="!T;R!C
+M:&%N9V4@=&AE:7(@<W1U<&ED(&-R>7!T;R!E>'!O<G0@;&%W<RY<;B(I.PH@
+M("`@<')I;G1F*")54R!C:71I>F5N<R!W:7-H(&UE(&QU8VLL(&YO;BU54R!C
+M:71I>F5N<R!P87)D;VX@;7E<;B(I.PH@("`@<')I;G1F*")G;W9E<FYM96YT
+M)W,@;&%C:R!O9B!A<'!R96-I871I;VX@;V8@=&AE(')I9VAT(&]F('!R:79A
+M8WDN7&Y<;B(I.PH*("`@('!R:6YT9B@B22=M('=O<FMI;F<@870@4T=)('1H
+M97-E(&1A>7,N("!&=6X@<&QA8V4N(&-O;VP@<&5O<&QE(&%N9%QN(BD["B`@
+M("!P<FEN=&8H(GEU;6UO(&AA<F1W87)E+B`@3&]T<R!O9B!#4%4@8WEC;&5S
+M('1O('=O<FL@;VX@8F5T=&5R('=A>7-<;B(I.PH@("`@<')I;G1F*")T;R!C
+M<GEP=&]G<F%P:&EC86QL>2!P<F]T96-T(&]N92=S('!R:79A8WD@87,@=V5L
+M;"!A<R!D;VEN9UQN(BD["B`@("!P<FEN=&8H(G-O;64@3G5M8F5R(%1H96]R
+M>2`M/B!W871C:"!F='`Z+R]F='`N=74N;F5T+W!U8B]I;V-C8UQN(BD["B`@
+M("!P<FEN=&8H(F9O<B!A(&YE=R!C86QC(')E;&5A<V4@<V]O;BX@(%=A:70@
+M9F]R(&%T(&QE87-T('9E<G-I;VX@,BXQ,%QN(BD["B`@("!P<FEN=&8H(F)E
+M8V%U<V4@=&AE(&]L9"`R+CD@<W1U9F8@:7,@82!B:70@;W5T(&]F(&1A=&4N
+?7&XB*3L*("`@(&5X:70H,C$W,#$@)2`Q,C<I.PI]"@``
+`
+end
+---end---
+
+    Your entry's sections must be the same order as in the above example.
+
+    Typically the build file should assume that the source is prog.c
+    and will compile into prog.  If an entry wins, we will rename
+    its source and binary to avoid filename collision.  By tradition,
+    we use the name of the entry's title, followed by an optional
+    digit in case of name conflicts.
+
+    Please note that the title must match the following regexp:		       |
+
+	^[a-zA-Z0-9_=][a-zA-Z0-9_=+-]*$					       |
+
+    and must be 1 to 12 chars in length.  Titles such as:		       |
+
+	foo.c								       |
+	this is my invalid title name					       |
+	/dev/null							       |
+
+    are right out!  :-)							       |
+
+    It is suggested, but not required, that the title should incorporate       |
+    the author(s) username(s).						       |
+
+    If the above entry somehow won the 'least likely to win' award,
+    we would use chonglab.c and chonglab.
+
+    If your entry depends on, or requires that your build, source
+    and/or binary files be a particular name, please say so in the
+    ---remark--- section.  If this case applies, it would be be helpful
+    if you did one of the following:
+
+	* Tell us how to change the filename(s) in your entry.
+
+	* Have the build file make copies of the files.  For example:
+
+		cc prog.c -o special_name
+
+	    or  rm -f special_src.c
+		cp prog.c special_src.c
+		cc special_src.c -o special_name
+
+	    or  rm -f special_build
+		tail +4 build > special_build
+		sh < special_build
+
+	* Assume that we will use the entry title.  Send us a version of
+	  your build/program files that uses the name convention.  You
+	  should uuencode these files in ---info--- sections.
+
+    If your entry needs to modify its source, info or binary files,
+    please say so in the ---remark--- section.  You should try to avoid
+    touching your original build, source and binary files.  You should
+    arrange to make copies of the files you intend to modify.  This
+    will allow people to re-generate your entry from scratch.
+
+    Remember that your entry may be built without a build file.  We
+    typically incorporate the build lines into a Makefile.  If the
+    build file must exist, say so in the ---remark--- section.
+
+    Typically the ---build--- command will contain a "cc" command.
+    It is also ok to use a "gcc" command (and gcc args).  However keep
+    in mind that your entry should be compilable by any standard ANSI C
+    compiler and thus should not depend on a special gcc feature.
+
+    If your entry needs special info files, you should uuencode them
+    into ---info--- sections.  In the case of multiple info files,
+    use multiple ---info--- sections.  If no info files are needed,
+    then skip the ---info--- section.
+
+    Info files are intended to be input, or detailed information that
+    does not fit well into the ---remark--- section.  For example, an
+    entry that implements a compiler might want to provide some sample
+    programs for the user to compile.  An entry might want to include a
+    lengthy design document, that might not be appropriate for a
+    'hints' file.
+
+    Info files should be used only to supplement your entry.  For
+    example, info files may provide sample input or detailed
+    information about your entry.  Because they are supplemental,
+    the entry should not require them exist.
+
+    In some cases, your info files might be renamed to avoid name
+    conflicts.  If info files should not be renamed for some reason,
+    say so in the ---remark--- section.
+
+    Info files must uudecode into the current directory.  If they
+    absolutely must be renamed, or moved into a sub-directory, say
+    so in the ---remark--- section.
+
+    When submitting multiple entries, be sure that each entry has
+    a unique entry number from 0 to 7.  Your first entry should
+    have entry number 0.
+
+    With the exception of the header, all text outside of the entry
+    format may be ignored.  That is, don't place text outside of the
+    entry and expect us to see it.  (Our decoding tools are not AI
+    progs!) If you need tell the judges something, put it in the
+    ---remark--- section, or send a EMail to:
+
+	...!{apple,sun,uunet}!hoptoad!judges		(not the address for
+	judges@toad.com					 submitting entries)
+
+    The date should be given with respect to UTC.  (Some systems refer
+    to this as GMT or GMT0)  The format of the date should be that as
+    returned by asctime() in the C locale.  An example of such a string is:
+
+	Mon Oct 28 00:47:00 1996
+
+    This format is similar to the output of the date(1) command.  The
+    string does not include the timezone name before the year.  On many
+    systems, one of the following command will produce a similar string:
+
+	date -u "+%a %h %d %T 19%y"
+	date -u | sed -e 's/... \(19[0-9][0-9]\)$/\1/'
+	sh -c 'TZ=UTC date | sed -e "s/... \(19[0-9][0-9]\)$/\1/"'
+	sh -c 'TZ=GMT date | sed -e "s/... \(19[0-9][0-9]\)$/\1/"'
+	sh -c 'TZ=GMT0 date | sed -e "s/... \(19[0-9][0-9]\)$/\1/"'
+
+    You are allowed to update/fix/revise your entry.  To do so, set
+    the 'fix' line in the ---entry--- section to 'y' instead of 'n'.
+    Be sure that the resubmission uses the same title and entry number	       |
+    as well, as these are used to determine which entry is to be
+    replaced.
+
+JUDGING PROCESS:
+
+    Entries are judged by Larry Bassel, Landon Curt Noll and Sriram
+    Srinivasan.
+
+    Entries are unpacked into individual directories.  The EMail message
+    is unpacked into individual files, each containing:
+
+	---entry--- section
+	all ---author--- sections
+	all ---info--- sections
+	---build--- section
+	---program--- section
+	any other text, including the EMail message headers
+
+    Prior to judging, the 'any other text' file is scanned to be sure
+    it does not contain useful information (or in case the entry was
+    malformed and did not unpack correctly).  Information from the
+    ---author--- sections and the title from the ---entry--- section
+    are not read until the judging process is complete, and then only
+    from entries that have won an award.
+
+    The above process helps keep us biased for/against any one particular
+    individual.  We are usually kept in the dark as much as you are
+    until the final awards are given.  We like the surprise of finding
+    out in the end, who won and where they were from.
+
+    We attempt to keep all entries anonymous, unless they win an award.
+    Because the main 'prize' of winning is being announced, we make all
+    attempts to send non-winners into oblivion.  We remove all non-winning
+    files, and shred all related paper.  By tradition, we do not even
+    reveal the number of entries that we received.  (For the curious,
+    we do indicate the volume of paper consumed when presenting the IOCCC
+    winners at talks)
+
+    After the Usenix announcement, we attempt to send EMail to the
+    authors of the winning entries.  One reason we do this is to give
+    the authors a chance to comment on the way we have presented their
+    entry.  They are given the chance to correct mistakes and typos.  We
+    often accept their suggestions/comments about our remarks as well.
+    This is done prior to posting the winners to the wide world.
+
+    Judging consists of a number of elimination rounds.  During a round,
+    the collection of entries are divided into two roughly equal piles;
+    the pile that advances on to the next round, and the pile that does
+    not.  We also re-examine the entries that were eliminated in the
+    previous round.  Thus, an entry gets at least two readings.
+
+    A reading consists of a number of actions:
+
+	* reading the ---entry--- section
+	* reading the uudecoded ---build--- section
+	* reading the uudecoded ---program--- section
+	* reading the uudecoded ---info--- section(s), if any
+	* passing the source thru the C pre-processor
+	    skipping over any #include files
+	* performing a number of C beautify/cleanup edits on the source
+	* passing the beautified source thru the C pre-processor
+	    skipping over any #include files
+
+    In later rounds, other actions are performed:
+
+	* linting the source
+	* compiling/building the source
+	* running the program
+	* performing miscellaneous tests on the source and binary
+
+    Until we reduce the stack of entries down to about 25 entries, entries
+    are judged on an individual basis.  An entry is set aside because it
+    does not, in our opinion, meet the standard established by the round.
+    When the number of entries thins to about 25 entries, we begin to form
+    award categories.  Entries begin to compete with each other for awards.
+    An entry often will compete in several categories.
+
+    The actual award category list will vary depending on the types of entries
+    we receive.  A typical category list might be:
+
+	* best small one line program
+	* best small program
+	* strangest/most creative source layout
+	* most useful obfuscated program
+	* best game that is obfuscated
+	* most creatively obfuscated program
+	* most deceptive C code
+	* best X client (see OUR LIKES AND DISLIKES)
+	* best abuse of ANSI C
+	* worst abuse of the rules
+	* <anything else so strange that it deserves an award>
+
+    We do not limit ourselves to this list.  For example, a few entries are so
+    good/bad that they are declared winners at the start of the final round.
+    We will invent awards categories for them, if necessary.
+
+    In the final round process, we perform the difficult tasks of
+    reducing the remaining entries (typically about 25) down to 8 or 10
+    winners.  Often we are confident that the entries that make it into
+    the final round are definitely better than the ones that do not
+    make it.  The selection of the winners out of the final round, is
+    less clear cut.
+
+    Sometimes a final round entry os good enough to win, but is beat out
+    by a similar, but slightly better entry.  For this reason, it is
+    sometimes worthwhile to re-enter an improved version of an entry
+    that failed to win in a previous year.  This assumes, of course,
+    that the entry is worth improving in the first place!
+
+    More often than not, we select a small entry (usually one line), a
+    strange/creative layout entry, and an entry that abuses the contest
+    rules in some way.
+
+    In the end, we traditionally pick one entry as 'best'.  Sometimes such
+    an entry simply far exceeds any of the other entries.  More often, the
+    'best' is picked because it does well in a number of categories.
+
+
+ANNOUNCEMENT OF WINNERS:
+
+    The first announcement, occurs at the main Usenix conference.  By
+    tradition, this is done during the IOCCC BOF.
+
+    Winning entries will be posted in February to the following groups:
+
+	    comp.lang.c		  comp.unix.wizards	alt.sources
+
+    In addition, pointers to these postings are posted to the following
+
+	    comp.sources.d	  alt.sources.d		misc.misc
+	    comp.sources.misc	  comp.windows.x	comp.lang.c++
+	    comp.programming
+
+    Winning entries will be deposited into the uunet archives.  See
+    below for details.
+
+    Often, winning entries are published in selected magazines from around
+    the world.  Winners have appeared in books ("The New Hackers Dictionary")
+    and on T-Shirts.
+
+    Last, but not least, winners receive international fame and flames!  :-)
+
+
+FOR MORE INFORMATION:
+
+    You may contact the judges by sending EMail to the following address:
+
+	...!{apple,sun,uunet}!hoptoad!judges		(not the address for
+	judges@toad.com					 submitting entries)
+
+    Questions and comments about the contest are welcome.  Comments about
+    confusing rules and guidelines are also welcome.
+
+    The rules and the guidelines may (and often do) change from year to
+    year.  You should be sure you have the current rules and guidelines
+    prior to submitting entries.  To obtain them, send EMail to the address
+    above and use the subject 'send rules'.
+
+    Check out the IOCCC Web page:
+
+	http://www.ioccc.org
+
+    It has rules, guidelines and winners of previous contests (1984 to date).
+
+
+chongo <Landon Curt Noll> /\cc/\  	{chongo,noll}@{toad,sgi}.com
+Larry Bassel			  	labbmf@ix.netcom.com
+Sriram Srinivasan			sriram@tcs.com

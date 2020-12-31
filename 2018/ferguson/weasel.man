@@ -1,0 +1,192 @@
+.TH weasel 1 "20 February 2018" "weasel" "IOCCC 2018"
+.SH NAME
+weasel \- The IOCCC 2018 Implementation of Richard Dawkins's Weasel program
+.SH SYNOPSIS
+\fBweasel\fP [\fI\-r<rate>\fP] [\fI\-m\fP] [\fI\-q\fP] [<\fIchromosomal string\fP>]
+.PP
+\fBweasel\-simple\fP [\fI\-r<rate>\fP] [\fI\-m\fP] [\fI\-q\fP] [<\fIchromosomal string\fP>]
+.SH DESCRIPTION
+\fBweasel\fP is an obfuscated implementation of Richard Dawkins' \fIWeasel program\fP.
+According to Wikipedia in chapter three of his book \fIThe Blind Watchmaker\fP Dawkins wrote:
+.PP
+.RS
+I don't know who it was first pointed out that, given enough time,
+a monkey bashing away at random on a typewriter could produce all
+the works of Shakespeare. The operative phrase is, of course, given
+enough time. Let us limit the task facing our monkey somewhat.
+Suppose that he has to produce, not the complete works of Shakespeare
+but just the short sentence 'Methinks it is like a weasel', and we
+shall make it relatively easy by giving him a typewriter with a
+restricted keyboard, one with just the 26 (capital) letters, and
+a space bar. How long will he take to write this one little sentence?
+.RE
+.PP
+He refers to the \fIInfinite Monkey Theorem\fP in particular and as he
+points out it is \fBgiven enough time.\fP The weasel program uses a \fIgenetic
+algorithm (GA)\fP to intelligently come to a conclusion but this implementation
+has several additions: \fBtwo Easter eggs,\fP a \fBquiet output mode,\fP
+an \fBoption to change the mutation rate\fP as well as the ability to
+\fBspecify the chromosomal string.\fP
+Furthermore the keyboard isn't as limited as Dawkins's implementation.
+The \fBweasel\-simple\fP keyboard is a more limited keyboard but not
+as limited as Dawkins's Weasel program keyboard.
+.SH OPTIONS
+.PP
+\fB\-r\fP\fI<rate>\fP
+This sets the mutation rate to \fI<rate>\fP; valid range is 1 through 100.
+Anything outside this range will disable the genetic algorithm and simulate
+a monkey in front of a typewriter.
+If a valid mutation rate is set after this then the monkey typewriter mode
+will be disabled but if monkey mode has been explicitly requested by the
+\fB\-m\fP option the mutation rate is ignored.
+Note that there cannot be a space between the \fB\-r\fP and \fI<rate>\fP.
+The default is 1; valid range is >= 1 && <= 100.
+.PP
+\fB\-m\fP
+Set monkey mode. This disables the genetic algorithm and is disables the
+mutation rate entirely; instead it will pseudo-randomly select a character
+from the keyboard in every offspring for every generation and selection
+will not take place: parents are simply the first two offspring
+regardless of their fitness score. Once this is enabled you
+cannot disable it: be wary of the typing monkeys!
+.PP
+\fB\-q\fP
+Quiet output.
+Only display settings like mutation rate, quiet output,
+target string and the final answer - if it comes to one.
+Just like monkey mode you cannot disable this once it's been enabled.
+.PP
+\fB--\fP
+Disable parsing of additional options (but not target strings); see
+.B EXAMPLES
+for a subtle point.
+.SH EXIT STATUS
+On error of any kind (including reaching the maximum number of attempts)
+return 1; otherwise return 0.
+.SH BUGS
+Bugs? What's this? :) Any bugs are actually insolent monkeys tampering
+with the program! But if you insist I do include errata on my website.
+.SH EXAMPLES
+.PP
+\fBweasel\fP
+.PP
+.NF
+Using the GA with the default mutation rate of 1 and output mode (verbose)
+look for the default string in Hawkins's Weasel program; note that in
+all cases the string to be found is capitalised.
+.FI
+.PP
+\fBweasel \-qr5
+weasel \-q \-r5\fP
+.NF
+.PP
+Enables quiet output and sets a mutation rate of 5.
+.PP
+.FI
+\fBweasel \-rqr10\fP
+.NF
+.PP
+First sets an invalid mutation rate, then enables quiet output and
+finally sets (a valid) mutation rate of 10.
+.FI
+.PP
+.NF
+\fBweasel \-m 'I AM A MONKEY TYPING'\fP
+.PP
+.FI
+Simulate a monkey typing at the typewriter trying to type out the
+string \fBI AM A MONKEY TYPING\fP without quotes. Note that this will
+take some time almost assuredly and you might fall asleep before
+the monkey succeeds. Here you would see all the attempts because
+quiet output was not requested.
+.PP
+\fBweasel I AM NOT A MONKEY\fP
+.PP
+.NF
+Using the GA find the final string specified (this always happens);
+because the string wasn't quoted the program will have seen each word
+as a separate argument and thus it would search for \fBMONKEY\fP.
+.FI
+.PP
+\fBweasel '"WEASEL"'\fP
+.PP
+.NF
+Search for the string \fB"WEASEL"\fP including double quotes ("s).
+.FI
+.PP
+\fBweasel "'WEASEL'"\fP
+.PP
+.NF
+Search for the string \fB'WEASEL'\fP including the single quotes ('s).
+.FI
+.PP
+\fBweasel \-q \-r5 \-\- \-r10\fP
+.PP
+.NF
+Enable quiet output, set mutation rate to 5, disable further option parsing
+and set target string to \fB-r10\fP (literally because option parsing was disabled).
+.FI
+.PP
+\fBweasel \-r5\-q \-\- \-r10\fP
+.PP
+Set mutation rate to 5, enable quiet output, disable further parsing of
+options and set target string to \fB-r10\fP (literally - because option parsing
+was disabled as above). Observe that here the \fB-r5-q\fP doesn't prevent the
+quiet output from being enabled; on the other hand the options
+\fB-r5- -q -- -r10\fP would!
+.RE
+.SH FILES
+\fIprog.c\fP
+.RS
+The source code to the \fBweasel\fP program.
+.RE
+.PP
+\fIprog\-simple.c\fP
+.RS
+The source code to the \fBweasel-simple\fP program.
+.RE
+.PP
+\fIMakefile\fP
+.RS
+The Makefile to compile the source code should you wish to compile the
+source code files.
+.RE
+.PP
+\fItest.sh\fP
+.RS
+A test script that demonstrates the weasel program (this script is used
+by \fBmake test\fP) by reading in strings, one at a time, and invoking
+the program with that string as the target chromosome. See the
+\fIhint.text\fP or \fIhint.html\fP for more details on using this script.
+.RE
+.PP
+\fItest-strings.txt\fP
+.RS
+The data file the \fItest.sh\fP script reads strings from.
+.RE
+.PP
+\fIhint.html\fP, \fIhint.text\fP
+.RS
+More detailed documentation.
+.RE
+.SH HINTS
+The IOCCC judges in 2018 asked the following in the guidelines:
+.RS
+.PP
+\fBBTW: What is so special about 2305567963945518424753102147331756070? You tell us!\fP
+.RE
+.PP
+It is the primorial prime of 97; but can you find a way to get the program
+to by default search for this number instead? You might need the source code to
+find it!
+.SH SEE ALSO
+.NF
+<\fBhttps://ioccc.xexyl.net/2018/weasel\fP>
+.PP
+<\fBhttps://en.wikipedia.org/wiki/Infinite_monkey_theorem\fP>
+.PP
+<\fBhttps://en.wikipedia.org/wiki/Weasel_program\fP>
+.PP
+<\fBhttp://www.doc.ic.ac.uk/~nd/surprise_96/journal/vol1/hmw/article1.html\fP>
+.SH AUTHOR
+Cody Boone Ferguson <\fBweasel@xexyl.net\fP>

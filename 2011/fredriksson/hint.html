@@ -1,0 +1,315 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.3 DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most useful</title>
+</head>
+<body>
+<h1>Most useful</h1>
+
+<p>Kimmo Fredriksson<br>
+<a href="&#x6d;&#x61;&#105;&#108;&#116;&#111;&#58;&#107;&#105;&#109;&#x6d;&#111;&#46;&#107;&#x2e;&#107;&#x2e;&#102;&#114;&#101;&#100;&#114;&#x69;&#107;&#115;&#115;&#111;&#110;&#x40;&#103;&#109;&#97;&#x69;&#108;&#46;&#x63;&#111;&#x6d;">&#x6b;&#x69;&#x6d;&#109;&#x6f;&#46;&#x6b;&#46;&#107;&#46;&#102;&#x72;&#101;&#100;&#x72;&#105;&#107;&#x73;&#115;&#x6f;&#x6e;&#x40;&#x67;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To build:</h3>
+
+<pre><code>make fredriksson
+</code></pre>
+
+<h3>To run:</h3>
+
+<pre><code>./fredriksson [-icvtnk#] regexp &lt; file
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>./fredriksson -k1 -i POOT &lt; /etc/group
+ulimit -s unlimited
+./fredriksson -k2 -t -n bofuskate &lt; /usr/share/dict/words
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>The author of this entry was making sure that it does not win the
+&ldquo;Best Short Program&rdquo; award.  On the outside, the program behaves
+as an approximate grep.  On the inside, it is a Burrows-Wheeler
+transform decompressor that produces the source code of the actual
+obfuscated approximate grep program and calls it. As an exercise,
+try writing the compressor.</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h1>Approximate grep</h1>
+
+<p>Implements a variant of grep.</p>
+
+<h2>Usage</h2>
+
+<p>To search regexp from file, do:</p>
+
+<pre><code>./fredriksson [-icvtnk#] regexp &lt; file
+</code></pre>
+
+<p>Pipes may not work, see the section Limitations.
+The options <code>-i -c -v</code> and <code>-n</code> are the classic ones:</p>
+
+<ul>
+<li><p><code>-i</code>  Ignore case.</p></li>
+<li><p><code>-c</code>  Count only, prints the number of matches, but not the matching lines.</p></li>
+<li><p><code>-v</code>  Invert match.</p></li>
+<li><p><code>-n</code>  Prefixes each printed line by its line number (only if
+  <code>-c</code> was not given).</p></li>
+</ul>
+
+
+<p>This version of grep recognizes two more options, not present in normal
+grep implementations:</p>
+
+<ul>
+<li><p><code>-kN</code> Permit <code>N</code> insertions, deletions or mismatches of characters in the
+  matches (aka edit-distance). E.g. &ldquo;obfuscated&rdquo; matches &ldquo;obfuscation&rdquo;
+  with one deletion and two mismatches. Likewise, &ldquo;obfuscate&rdquo; and
+  &ldquo;oversimplify&rdquo; match with 7 edit operations. The default is <code>-k0</code>
+  (i.e. exact match).</p></li>
+<li><p><code>-t</code>  Add local transpositions to the set of allowed edit-operations.
+  That is, &ldquo;ab&rdquo; matches &ldquo;ba&rdquo; with one transposition (swap), and
+  &ldquo;obfuscated&rdquo; matches &ldquo;bofsuact&rdquo; with three swaps and two insertions,
+  i.e. use <code>-tk5</code> to find this.</p></li>
+</ul>
+
+
+<p>Of course, one could construct a standard regexp that matches the same
+patterns, but the problem is that such a regexp grows exponentially in
+size when the number of allowed edit operations is increased.</p>
+
+<p>This version does not recognize all regular expressions, but the
+following are allowed:</p>
+
+<ul>
+<li><p>Wild card: <code>.</code> (dot) matches any character.</p></li>
+<li><p>Bracket expression: list of charactres enclosed by <code>[</code> and <code>]</code>,
+matches any single character in the list.</p></li>
+<li><p>Range expression: two characters separated by hyphen and enclosed in
+brackets, matches any character that is lexicographically between the
+two characters (inclusive). E.g. <code>[a-d]</code> is the same as <code>[abcd]</code>.</p></li>
+</ul>
+
+
+<p>The special characters must be escaped, if they are to be taken
+literally (i.e. use e.g. <code>\.</code> to match period). You might want to protect
+these with <code>'</code>, i.e. use <code>'foo\[bar'</code> instead of <code>foo\[bar</code>. If you want to
+use the literal <code>-</code> in bracket expression, protect that too (<code>\-</code>),
+otherwise this is not needed. Note that the syntax differs from standard
+(?) grep a bit, i.e. in plain grep you can use <code>]</code> and <code>-</code> in bracket
+expressions by putting <code>]</code> as the first character, and putting <code>-</code> last.</p>
+
+<h3>Other uses</h3>
+
+<ul>
+<li><p>You can use this in place of cat. Just say</p>
+
+<pre><code>  ./fredriksson -k3 cat &lt; file
+</code></pre></li>
+<li><p>Like with cat, you can append line numbers too:</p>
+
+<pre><code>  ./fredriksson -nk3 cat &lt; file
+</code></pre></li>
+</ul>
+
+
+<h3>Other features</h3>
+
+<ul>
+<li><p>It is assumed that the user knows how to feed correct input to the
+program. If undefined options are given, the result is also undefined.
+This is a feature.</p></li>
+<li><p>It may consume huge amounts of memory, and a stack overflow may occur.
+This results in Segmentation fault (or the equivalent of your favorite
+system, such as Bus error). This is a feature, that can be used to detect
+overly long lines in the input file, such as checking the lenght of one
+liners in IOCCC entries, just adjust your stack size to a suitable
+threshold, and search for &ldquo;ioccc&rdquo;, with option <code>-vk5</code>.</p></li>
+</ul>
+
+
+<h2>Limitations and remarks</h2>
+
+<ul>
+<li><p>Using warning options (such as -Wall) when building gives a lot of warning,
+such as <code>suggest parentheses around '&amp;&amp;' within '||'</code>, <code>value computed is
+not used</code>, <code>implicit declaration of function 'putchar'</code>, <code>implicit
+declaration of function 'getchar'</code>, <code>control reaches end of non-void
+function</code> and <code>format not a string literal and no format arguments</code>.
+Please ignore them all, since they just try to tell you that the source
+is obfuscated.</p></li>
+<li><p>Only standard input is handled. And <em>only</em> if stdin comes from a file,
+i.e. pipes may or may not work. If you want to count only (<code>-c</code> option),
+then this shouldn&rsquo;t be an issue.</p></li>
+<li><p>The total lenght of the (preprocessed) pattern is at most
+<code>sizeof(long)*CHAR_BIT</code>. That does not count things like bracket expressions
+or escape chars, that is, the pattern <code>'a[bcd]e\.f'</code> is 5 chars long, not
+10 chars. That does not mean that the matched substring in the standard
+input has this limit, as using the edit operations can make the string
+longer. However, no assumptions are made for <code>sizeof(long)</code>. In fact,
+you can easily use <code>long long</code> instead,</p></li>
+<li><p>Depending on the file, may require a lot of stack space. If the
+program segfaults (because of this), say</p>
+
+<pre><code>  ulimit -s unlimited
+</code></pre>
+
+<p>cross your fingers, hope it is enough, and try again.</p></li>
+<li><p>Assumes C99 standard, because of the one very long line. Most C compilers
+handle this just fine even in C89 mode, though.</p></li>
+<li><p>The code should be reasonably portable, it assumes standard ASCII codes
+for each char, and that a C compiler is on $PATH; the latter is hard coded
+to be &lsquo;gcc&rsquo;, but any compiler would work, provided that it supports
+C99, or long lines as an extension. This code has been tested on:</p>
+
+<ul>
+<li>GNU/Linux FC4, i386, gcc</li>
+<li>GNU/Linux FC7, x86_64, gcc 4.1.2, tcc 0.9.24 and icc 10.0</li>
+<li>GNU/Linux FC9, x86_64, gcc 4.?.?</li>
+<li>GNU/Linux CentOS 5, gcc 4.1.2</li>
+<li>GNU/Linux Ubuntu 11.04, gcc 4.5.2</li>
+<li>SunOS 5.8, UltraSPARC IIIi, gcc 4.1.2</li>
+<li>SunOS 5.9, UltraSPARC IIIi, gcc 4.1.1 and Sun ONE Studio 8 CC</li>
+<li>AIX 5.3, IBM eServer p5-550, gcc 3.3.3 and AIX CC Version 6</li>
+</ul>
+
+
+<p>(Btw, tcc has its roots in IOCCC&hellip;)</p></li>
+</ul>
+
+
+<h2>Obfuscations (a.k.a. spoilers&hellip;)</h2>
+
+<ul>
+<li><p>The initialized char array includes the source code of the real program,
+as well as its name and commands to build and run it, all Burrows-Wheeler
+-transformed, then run-length-encoded with unary coding. The main program
+extracts and builds that, and then calls it. More precicely, the command
+to build is</p>
+
+<pre><code>  gcc -O3 ag.c -o ag
+</code></pre>
+
+<p>To change that you need to edit the char array <code>p[]</code> and (possibly) two
+specially encoded constants, <code>-~('('*'(')</code> and <code>'C'*' '-'-'</code>.
+The extracted source (<code>ag.c</code>) is obfuscated as well.</p>
+
+<p>(The original version also deleted the generated source and the
+corresponding binary after running it, but this feature was removed
+from the submitted entry.)</p></li>
+<li><p>The code demonstrates several useful programming paradigms, such as</p>
+
+<ul>
+<li>recursion to remove all loops</li>
+<li>sub routines (<code>main()</code> contains several logical sub routines,
+selected by the first argument)</li>
+<li>function pointers</li>
+</ul>
+</li>
+<li><p>Algorithmically, it incorporates the following</p>
+
+<ul>
+<li>(inverse) Burrows-Wheeler transform (used also e.g. in bzip2)</li>
+<li>data compression (really expansion :-), run-lenght-encoding,
+unary coding (this is why it is expansion rather than compression)</li>
+<li>approximate string matching</li>
+<li>dynamic programming to compute the edit distance</li>
+<li>parallel computation in sequential computers (by packing
+several objects into a single long, to speed up the dynamic
+programming)</li>
+<li>self extracting, compiling and running code</li>
+</ul>
+</li>
+<li><p>As a C program, it demonstrates that</p>
+
+<ul>
+<li>a C subset without reserved words is complete enough,
+(excluding data type specific things (<code>int</code>, <code>char</code>, <code>void</code> &hellip;))</li>
+<li>only letters are needed (i.e. the digits 0-9 are not)</li>
+<li>only one statement is enough to code any program (plus
+variable definitions)</li>
+<li>white space has other uses than just indenting the code</li>
+</ul>
+</li>
+<li><p>It also shows the power of boolean logic and bitwise arithmetic.</p></li>
+<li><p>This is the first (?) entry in the history of IOCCC, that cannot be
+totally un-obfuscated by the author. This is due to the clever choice of
+the actual algorithm, that is obfucated by nature, and it is an open
+research problem whether a simpler algorithm exists, with the same time
+complexity.</p></li>
+<li><p>The main obfuscation comes from using only arithmetic and boolean
+(short-circuit) logic combined with recursion to remove all loops and
+if-then-else constructs (also, no ternary <code>?:</code> constructs are present).
+Two&rsquo;s complement representation of integers is also abused. E.g. instead
+of writing <code>x++</code> or <code>x-1</code>, it is much better to write <code>x=-~x</code> and <code>~-x</code>.</p></li>
+<li><p>No numerical values, other than in the initialized char array, try</p>
+
+<pre><code>  ./fredriksson -ck0 [0-9] &lt; fredriksson.c
+</code></pre>
+
+<p>This should print 1, as there is a numer &lsquo;3&rsquo; in the char array (only).
+You can also try</p>
+
+<pre><code>  ./fredriksson -ck0 [0-9] &lt; ag.c
+</code></pre>
+
+<p>after running fredriksson at least once (since this generates that
+<code>ag.c</code> file), and this should print 0.</p></li>
+<li><p>The source code is best viewed with cat (or using the program itself),
+instead of some editor. (This is a somewhat system dependent thing.)</p>
+
+<p>One reason for this is that the code builds (some of the) constant
+values from string literal <code>"\b"</code>, except that the backspace <code>\b</code> is not
+escaped like that, the source uses the raw ascii value (010 octal) instead.
+Thus when viewing with cat or something, that backspace erases the leading
+quotation mark. Makes it appear uncompilable, and it is: if you copy-paste
+the cat output from terminal to some editor, save it, the result would not
+compile.</p>
+
+<p>Some other constants are built from ASCII values of chars.</p>
+
+<p>Besides of making the code hard to read, all this makes it also quite large.</p></li>
+<li><p>Running it through GNU indent or bcpp (C beautifiers) does not beautify
+it a bit. In fact, indent makes it only worse (at least with the default
+options). Running it through the preprocessor does basically nothing,
+since no <code>#define</code>s are used.</p></li>
+<li><p>Some <em>abuse of the rules</em>. The number of non-whitespace and <code>;</code>, <code>{</code>
+and <code>}</code> chars is below the limit, but most of the whitespace chars are
+in an <em>initialized character array</em>. That is, the number of chars in the
+program exceeds the 2048 limit. However, whitespace is whitespace and
+the rules did not specify that these must be in between the statements.
+A character is a whitespace if <code>isspace()</code> returns non-zero value. Even
+if deleting even one of those chars breaks the program! (This does not
+apply to the generated source <code>ag.c</code>.)</p></li>
+</ul>
+
+
+<hr />
+
+<!--
+(c) Copyright 1984-2012, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2012, 
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

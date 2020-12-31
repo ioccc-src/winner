@@ -1,0 +1,46 @@
+/* Calculates the greatest common divisor of two numbers in
+   unary representation. Default tape: gcd(6, 10) = 2. */
+
+
+
+#define tape I I I I I I O I I I I I I I I I I
+
+#define start_O O, right, start
+#define start_I I, left , st10
+/* st1_O may not happen */
+#define st1_I   O, right, st2
+#define st2_O   O, right, st11
+#define st2_I   I, right, st3
+#define st3_O   O, right, st4
+#define st3_I   I, right, st3
+#define st4_O   O, right, st4
+#define st4_I   I, right, st5
+#define st5_O   I, left , st6
+#define st5_I   I, right, st5
+/* st6_O may not happen */
+#define st6_I   O, left , st7
+#define st7_O   O, right, st13
+#define st7_I   I, left , st8
+#define st8_O   O, left , st9
+#define st8_I   I, left , st8
+#define st9_O   O, left , st9
+#define st9_I   I, left , st10
+#define st10_O  I, right, st1
+#define st10_I  I, left , st10
+#define st11_O  O, right, st11
+#define st11_I  O, right, st12
+#define st12_O  O, right, st16
+#define st12_I  I, right, st13
+#define st13_O  O, right, st14
+#define st13_I  I, right, st13
+#define st14_O  O, left , st_next_iteration
+#define st14_I  O, right, st14
+/* The state "st_next_iteration" means the the turing machine
+   is about to do the next iteration of the Euklid algorithm.
+   (That is, during that state, there are two numbers on the
+   tape with the same gcd as the initial numbers.) */
+#define st_next_iteration_O  O, left , st_next_iteration
+#define st_next_iteration_I  I, left , st8
+#define st16_O  O, right, stop
+#define st16_I  O, right, st16
+

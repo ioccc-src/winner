@@ -1,0 +1,211 @@
+Subject: 6th International Obfuscated C Code Contest Rules
+Newsgroups: comp.lang.c,comp.unix.wizards
+Keywords: rules,1989,obfuscate,contest,IOCCC
+
+Copyright (c) 1989, Landon Curt Noll & Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.
+
+	Obfuscate:  tr.v.  -cated, -cating, -cates.  1. a.  To render obscure.
+		b.  To darken.  2. To confuse:  Their emotions obfuscated their
+		judgement.  [LLat. obfuscare, to darken : ob(intensive) +
+		Lat. fuscare, to darken < fuscus, dark.] -obfuscation n.
+		obfuscatory adj.
+
+GOALS OF THE CONTEST:
+
+	* To write the most Obscure/Obfuscated C program under the rules below.
+	* To show what should NOT be done in C programs.
+	* To provide a safe forum for poor C code.  :-)
+
+RULES:
+
+	To help us handle the vast volume of entries, we ask that you
+	follow the rules below.  Sorry for the length, but we need all
+	the help we can get!
+
+	1) Your source MUST be 1536 bytes or less, and it must be a complete
+	   program, not just a subroutine.
+
+	2) To help us process your entries, we ask that you submit entries
+	   in the following format.  Please be sure to include the --- lines,
+	   otherwise our extraction program may skip your entry!
+
+---header items---
+name:    	Your name, of course!
+org:		School/Company/Organization
+email address:	Email address from a well known site, or in a registered domain
+postal address:	Postal address
+		include your country as well
+environment:	Indicate the Hardware 
+		and OS under which your program was tested
+entry:		5	<number of entries sent so far including this one>
+remarks:		<see below>
+---how to compile---
+X Give the command(s) needed to compile your program.
+X Follow the same rules as given for the program below except that the
+X command size must be 160 characters or less.
+---program---
+X Place obfuscated source of 1536 characters or less in this section.
+X Add a leading X to each line to avoid problems with mailers.
+X Some mailers don't like files with very long lines.  If your entry contains E
+C    lines longer 80 chars we ask you to form continuation line sets.  To form E
+C    a continuation line set, place an 'E' character at the point of a split E
+C    and place a C (instead of an X) at the beginning of the next line. E
+C    Finally, end the continuation line set as normal.
+X The E\nC's and leading X's will be removed prior to extraction and thus E
+C    they don't contribute toward the source character count.  All other E
+C    characters are considered to be source.  Whitespace after 'X' or 'C' E
+C    and before the 'E' is significant, we added it here for readability.
+X Newlines and tabs each count as 1 character.  Assume 8 character tab stops.
+X If your entry does not end in a newline, leave a final 'E' on the end. E
+---end---
+
+	3) Regarding the header items:
+
+	    * Any text outside of the above format will be kept confidential.
+
+	    * All header lines are required, but you may use 'anonymous'
+	      for any header line other than 'remarks' or 'entry'.
+
+	    * In the 'remarks' please include:
+		- what this program does
+		- why you think the program is obfuscated
+		- any other remarks you wish to make
+
+	4) Your entry should be written in common C. (K&R + common extensions)
+	   Due to the lack of ANSI C compilers, it is suggested, but not
+	   required, that you avoid use of constructs unique to ANSI C.
+
+	5) The program must be of original work.  All programs must be
+	   in the public domain.  All copyrighted programs will be rejected.
+
+	6) Entries must be received between 26-Mar-89 0:00 GMT and 
+	   26-May-89 0:00 GMT.  Email your entries to:
+	   
+		...!{sun,pacbell,uunet,pyramid,amdahl}!hoptoad!obfuscate
+
+	   We will attempt to Email a confirmation of receipt of contest
+	   entries, however since Email is not reliable you may not receive it.
+	   We regret that we can no longer accept entries via postal mail.
+
+	7) Each person may submit up to 8 entries.  Multiple entries must
+	   be sent in separate Email letters.
+	
+	8) Entries that can not be built automatically in a portable makefile 
+	   are not allowed.  (e.g., don't use #include "/dev/tty")
+
+
+ANNOUNCEMENT OF WINNERS:
+
+	* First announcement will be at the Summer 89 Usenix BOF.
+
+	* Winning entries will be posted in mid June 1989 to 
+	  comp.sources.unix as well as news groups where these rules 
+	  were posted.  (depending on the judges work load)
+	
+	* Winning entries will be deposited into the uunet archives.
+
+	* An article containing the winning entries will be published
+	  in a future issue of the "Micro/Systems Journal".
+
+	* Winners receive international fame and flames!  :-)
+
+
+JUDGING:
+
+	Awards will be given to the best entry in a number of categories.
+	The actual category list will vary depending on the types of entries
+	we receive.  As a guide, consider using the following:
+
+		* The best small one line program
+		* The most obscure algorithm
+		* The strangest source layout
+		* The most useful obfuscated program
+		* The most creatively obfuscated program
+		* Best obfuscated entry smaller than 256 bytes
+		* Best obfuscated entry smaller than 1024 bytes
+		* <anything else so strange that it deserves an award>
+
+POINTS TO PONDER:
+
+	People are encouraged to examine winners of the previous
+	contests.  A copy of these entries was posted to
+	comp.sources.unix.  Contact the comp.sources.unix moderator, or
+	some archive site (such as uunet).  Keep in mind that rules
+	change from year to year, so some winning entries may not be
+	valid entries this year.  What was unique and novel one year
+	might be 'old' the next year.  In short, use your best judgement.
+
+	We examine each entry on several levels of confusion.  For example
+	each entry is judged when we:
+
+		* look at the original source
+		* run it through:  sed -e ',^#[	 ]*define,d' | /lib/cpp
+		* run it through a C beautifier
+		* examine the algorithm
+		* compile and lint it
+		* execute it
+	
+	One line programs are best when they are short, obscure and concise.
+
+	We tend to dislike programs that:
+
+		* are very hardware specific
+		* are very OS or Un*x version specific
+		     (index/strchr differences are ok, but 
+		      socket/streams specific code is likely not to be)
+		* dump core or have compiler warnings
+		     (it is ok only if you warn us in the 'remark' header item)
+		* won't compile under both BSD or SYS V Un*x
+		* use an excessively long compile line to get around the
+		     size limit
+		* are longer than they need to be
+		* are similar to previous winners
+		* are similar to previous losers  :-)
+
+	Simply abusing #defines or -Dfoo=bar won't go as far as a program
+	that is more well rounded in confusion.
+
+	Unless you are cramped for space, or unless you are entering the 
+	'best one liner' category, we suggest that you format your program 
+	in a more creative way than simply forming excessively long lines.
+
+	We like programs that:
+
+		* are as concise and small as they need to be
+		* do something quasi-interesting
+		* pass lint without complaint
+		* are portable
+		* are unique or novel in their obfuscation style
+		* use a number of different types of obfuscation
+		* make us laugh and/or throw up  :-)
+
+	Some types of programs can't excel in some areas.  We try to account
+	for this by giving awards to programs in a number of areas.  Of course,
+	your program doesn't have to excel in all areas, but doing well in
+	several helps.
+
+	Be creative!
+
+	The Judging will be done by Landon Noll and Larry Bassel.  If you have
+	any QUESTIONS or COMMENTS, please feel free to send them to:
+
+		...!{sun,pacbell,uunet,pyramid,amdahl}!hoptoad!judges
+		judges@toad.com
+
+	however contest entries should be sent to: 
+	
+		...!{sun,pacbell,uunet,pyramid,amdahl}!hoptoad!obfuscate
+		obfuscate@toad.com
+
+
+chongo <Landon Curt Noll> /\cc/\  	hoptoad!chongo
+Larry Bassel			  	{amdahl,ucbvax,cbosgd}|sun!lab
+
+p.s. The 1989 contest is being dedicated to the			     |\_.^
+     brain that was removed from Bill the Cat.			     (@ o)
+							   *Ackpt!*   {:} 
+								       U

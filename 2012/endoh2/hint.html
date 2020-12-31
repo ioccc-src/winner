@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>PiE in the sky award</title>
+</head>
+<body>
+<h1>PiE in the sky award</h1>
+
+<p>Yusuke Endoh<br>
+<a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#x6d;&#x61;&#x6d;&#x65;&#64;&#114;&#x75;&#x62;&#121;&#45;&#108;&#97;&#110;&#103;&#46;&#x6f;&#114;&#103;">&#109;&#x61;&#109;&#x65;&#64;&#114;&#x75;&#x62;&#121;&#x2d;&#x6c;&#97;&#110;&#103;&#x2e;&#x6f;&#x72;&#x67;</a><br>
+<a href="https://github.com/mame/">https://github.com/mame/</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To build:</h3>
+
+<pre><code>make endoh2
+</code></pre>
+
+<h3>To run:</h3>
+
+<pre><code>./endoh2 &gt; pi.c
+gcc -o pi pi.c
+./pi &gt; 314.c
+...
+
+./endoh2 e &gt; e.c  
+gcc -o e e.c
+./e &gt; 271.c
+...
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>make pi
+make e
+make everything
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>A pi/e printing quasi-quine in ASCII art with a compressed font in it;
+what else to wish for in this program? Virtual machine emulation?</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<p>Yeah, &ldquo;Again&rdquo;.  Sorry.  But I don&rsquo;t feel guilty or uncomfortable.</p>
+
+<p>This entry is based on &lsquo;over-used themes&rsquo; such as self reproducing
+program and pi or e computation.  I know you&rsquo;re tired of them.</p>
+
+<p>But have you ever seen <strong>all-in-one</strong>?</p>
+
+<h3>What it is</h3>
+
+<p>This program generates a new program in the shape of the Greek letter
+<code>pi</code>.  Then, the generated program:</p>
+
+<ul>
+<li>computes 3 digits of pi and prints it as a ASCII-art program that:</li>
+<li>computes 4 digits of pi and prints it as a ASCII-art program that:</li>
+<li>computes 5 digits of pi and prints it as a ASCII-art program that:</li>
+<li>computes 6 digits of pi and prints it as a ASCII-art program that:</li>
+<li>etc.</li>
+</ul>
+
+
+<p>One more thing&hellip;  When you give a command line option &ldquo;e&rdquo; to the
+first program, the generated one will compute Napier&rsquo;s constant
+rather than pi.</p>
+
+<h3>Obfuscation</h3>
+
+<p>This program itself is in the shape of a spigot.  This is derived
+from analogy with &ldquo;spigot algorithm&rdquo; which infinitely computes the
+value of a mathematical constant such as <code>pi</code> or <code>e</code>.</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Spigot_algorithm">http://en.wikipedia.org/wiki/Spigot_algorithm</a></p>
+
+<p>The two sets of programs, 314*.c and 271*.c, are almost the same
+except its shape and constant computation part.  I tailored the
+common part to parse in both shapes (&ldquo;3.14&hellip;&rdquo; and &ldquo;2.71&hellip;&rdquo;), by
+tweaking the computation order and adding meaningless code fragment.</p>
+
+<p>On the other hand, to make it fit inside one screen (80 x 25), my
+program is shortened properly, more than it looks.  (As you may
+know, Quine needs to make its program size doubled.)
+For example, this program involves 3x5 bitmap font data of ten
+characters (&lsquo;0&rsquo; &ndash; &lsquo;9&rsquo;), as just 20 bytes: &ldquo;G1%xJ{;Q7wunmuGuu%uu&rdquo;.
+We can decode character n as <code>275*s[n+10] - 8*s[n] - 8</code>.  I solved the
+system of Bezout&rsquo;s identities to find the magic string, with the
+aid of a brute force.  See <code>find-font-table.rb</code> in detail.</p>
+
+<p><a href="http://en.wikipedia.org/wiki/B%C3%A9zout's_identity">http://en.wikipedia.org/wiki/B%C3%A9zout's_identity</a></p>
+
+<p>I used many other tricks for short coding.</p>
+
+<p>I&rsquo;m sorry that many ASCII-art-style winning entries of IOCCCs
+ignore preprocessor directives.  In my program, #include is a part
+of ASCII-art with comment padded.</p>
+
+<p>These design requirements made my program well-obfuscated
+willy-nilly.</p>
+
+<h3>Portability</h3>
+
+<p>I expect it to work in any major environment and C compiler.
+To build with no warning, it requires two C99 features: string
+literal more than 509 characters and omissible return in main
+function.  In fact, recent compilers with &ldquo;-std=c99 -Wall -W
+-Wextra -pedantic&rdquo; would say nothing.</p>
+
+<pre><code>gcc -std=c99 -Wall -W -Wextra -pedantic spigot.c
+clang -std=c99 -Wall -W -Wextra -pedantic spigot.c
+</code></pre>
+
+<p>I&rsquo;ve tested with gcc-4.6.3 and clang-3.0 on Linux (Ubuntu 12.04)
+and gcc-4.5.3 and clang-3.1 on Cygwin.</p>
+
+<h3>Synopsis</h3>
+
+<pre><code>gcc endoh2.c -o endoh2
+
+./endoh2 &gt; pi.c
+cat pi.c
+
+gcc pi.c     -o pi     ; ./pi     &gt; 314.c     ; cat 314.c
+gcc 314.c    -o 314    ; ./314    &gt; 3141.c    ; cat 3141.c
+gcc 3141.c   -o 3141   ; ./3141   &gt; 31415.c   ; cat 31415.c
+gcc 31415.c  -o 31415  ; ./31415  &gt; 314159.c  ; cat 314159.c
+gcc 314159.c -o 314159 ; ./314159 &gt; 3141592.c ; cat 3141592.c
+etc...
+
+./endoh2 e &gt; e.c
+cat e.c
+
+gcc e.c      -o e      ; ./e      &gt; 271.c     ; cat 271.c
+gcc 271.c    -o 271    ; ./271    &gt; 2718.c    ; cat 2718.c
+gcc 2718.c   -o 2718   ; ./2718   &gt; 27182.c   ; cat 27182.c
+gcc 27182.c  -o 27182  ; ./27182  &gt; 271828.c  ; cat 271828.c
+gcc 271828.c -o 271828 ; ./271828 &gt; 2718281.c ; cat 2718281.c
+etc...
+</code></pre>
+
+<p>You can do <code>make everything</code> for the process (with no <code>cat</code>).</p>
+
+<p>Note: The executable may return a failure (non-zero) exit status
+unless -std=c99 option is given.</p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2015,
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

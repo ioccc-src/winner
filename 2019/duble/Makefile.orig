@@ -1,0 +1,33 @@
+
+LINES=24
+COLUMNS=80
+CC=gcc
+
+CSILENCE=-Wno-incompatible-pointer-types -Wno-return-type -Wno-format-security \
+		 -Wno-bitwise-op-parentheses -Wno-logical-op-parentheses \
+		 -Wno-dangling-else -Wno-implicit-int -Wno-unused-value
+
+CFLAGS=$(CSILENCE)
+
+default:
+	$(MAKE) `uname`
+
+check-os:
+	sh check-os.sh $(LINES) $(COLUMNS)
+
+FreeBSD:
+	RAW_MODE=392 \
+	IPC_MODE=46 \
+	$(MAKE) binary
+
+Linux:
+	RAW_MODE=11 \
+	IPC_MODE=0 \
+	$(MAKE) binary
+
+binary:
+	$(CC) $(CFLAGS) -Dg=$$RAW_MODE \
+					 -Ds=$$IPC_MODE \
+					 -DV=$(LINES) \
+					 -DW=$(COLUMNS) \
+					-o prog prog.c

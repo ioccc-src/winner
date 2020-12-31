@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most likely to top the charts</title>
+</head>
+<body>
+<h1>Most likely to top the charts</h1>
+
+<p>Qiming HOU</p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To use:</h3>
+
+<pre><code>make
+./prog &lt; input.json &gt; output.html
+</code></pre>
+
+<p>View <code>output.html</code> in a browser.</p>
+
+<h3>Try:</h3>
+
+<pre><code>grep -e '[-?+*/^&amp;|.&lt;&gt;=]' prog.c
+
+(cd ..; ls -lS */prog.c) | \
+awk 'BEGIN { print "["; } { print "{\"winner\":\"",$9,"\", \"size\":",$5,"},"} END { print "]"}' \
+&gt; ioccc.json
+./prog &lt; ioccc.json &gt; ioccc.html
+</code></pre>
+
+<p>What&rsquo;s not right with the output? How to fix it?</p>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>This entry exhibits a way of obfuscation we haven&rsquo;t seen before, we think.
+The rulez of programming in an imperative language are violated, aren&rsquo;t they?</p>
+
+<p>Try figuring out how to increase the number of different colors, if you can.</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<p>Nowadays almost every programmer needs to do some Web chore. With all the open source stuff readily available, often we just need to call a bunch of libraries to generate an HTML page from a JSON feed.</p>
+
+<p>This entry takes such decadence to an extreme. It just calls a bunch of libraries to generate an HTML page from a JSON feed, literally. There is no variable (function parameters included), no operator, no flow control statements except a few decorative returns. In compliance to production coding standards, the code is littered with fashionable jargon, doxygen comment, and license text.</p>
+
+<p>As one would expect from such an approach, this program is much more resource intensive than it should be. And one needs a C99-compatible libc (with the common UNIX stuff) to build this and an HTML5-compatible browser to open the result. And it terminates with an assertion failure, but who cares if the web page is already generated?</p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2018, 
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

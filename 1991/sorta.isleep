@@ -1,0 +1,6 @@
+["" "+sleep" "+5" "sleep" !q]:S [F0>1_+=S]:s
+"forking sleep 5..."`ld
+1=s
+"waiting for sleep to finish..."`ld
+w
+"done, sleep exit code " #T`

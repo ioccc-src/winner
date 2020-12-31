@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most tweetable 1-liner</title>
+</head>
+<body>
+<h1>Most tweetable 1-liner</h1>
+
+<p>Yusuke Endoh<br>
+<a href="&#x6d;&#97;&#105;&#x6c;&#116;&#x6f;&#x3a;&#109;&#97;&#109;&#x65;&#64;&#x72;&#x75;&#98;&#121;&#45;&#x6c;&#97;&#x6e;&#x67;&#x2e;&#x6f;&#x72;&#103;">&#x6d;&#97;&#109;&#x65;&#64;&#x72;&#117;&#98;&#x79;&#45;&#108;&#97;&#x6e;&#103;&#x2e;&#x6f;&#x72;&#x67;</a><br>
+<a href="https://github.com/mame/">https://github.com/mame/</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To build:</h3>
+
+<pre><code>make endoh3
+</code></pre>
+
+<h3>To run:</h3>
+
+<pre><code>./endoh3
+</code></pre>
+
+<h3>Try:</h3>
+
+<p>Trying this out will depend on how your system can play sounds. The author&rsquo;s
+remarks include some options for different operating systems.</p>
+
+<p>The simplest way is to create a .wav file and have your system play that.</p>
+
+<pre><code>echo 'CDEFGABc' | ./endoh3 | ruby wavify.rb &gt; cde.wav
+</code></pre>
+
+<p>There are also some other musical samples, twinkle.abc and menuet.abc.</p>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>This program can tweet out a tune and is small enough to tweet.</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h3>Remarks</h3>
+
+<p>This is a sound synthesizer for a subset of <a href="http://en.wikipedia.org/wiki/ABC_notation">ABC music notation</a>.</p>
+
+<p>Try:</p>
+
+<pre><code>gcc -o prog prog.c
+echo "CDEFGABc" | ./prog &gt; /dev/dsp
+</code></pre>
+
+<p>If <code>/dev/dsp</code> is not available on your system, use an OSS sound wrapper such
+as <code>padsp</code> or <code>aoss</code>:</p>
+
+<pre><code>echo "CDEFGABc" | ./prog | padsp tee /dev/dsp &gt; /dev/null
+</code></pre>
+
+<p>If you are using Mac OS X, try <a href="http://sox.sourceforge.net/">sox</a>:</p>
+
+<pre><code>echo "CDEFGABc" | ./prog | sox -q -traw -r8000 -b8 -e unsigned-integer - -tcoreaudio
+</code></pre>
+
+<p>If they do not work, use the attached script to convert the output
+into a wave file format:</p>
+
+<pre><code>echo "CDEFGABc" | ./prog | ruby wavify.rb &gt; cde.wav
+</code></pre>
+
+<p>and play <code>cde.wav</code>.</p>
+
+<p>You can enjoy some music scores that I attached:</p>
+
+<pre><code>cat twinkle.abc | ./prog &gt; /dev/dsp
+cat menuet.abc | ./prog &gt; /dev/dsp
+</code></pre>
+
+<h3>Obfuscation</h3>
+
+<p>The following sequence of questions may be helpful to understand the program.</p>
+
+<ul>
+<li>How does it convert ABC notes into the frequency?</li>
+<li>What is <code>89/84.</code>?  I found it by using Stern-Brocot tree.</li>
+<li>How does it generate a wave?  Hint: it generates a saw wave.</li>
+</ul>
+
+
+<h3>Limitation</h3>
+
+<p>The following features are supported:</p>
+
+<ul>
+<li>Notes:
+
+<ul>
+<li><code>C</code> <code>D</code> <code>E</code> <code>F</code> <code>G</code> <code>A</code> <code>B</code> (in low octave)</li>
+<li><code>c</code> <code>d</code> <code>e</code> <code>f</code> <code>g</code> <code>a</code> <code>b</code> (in high octave)</li>
+</ul>
+</li>
+<li>Rests: <code>z</code></li>
+<li>Note lengths:
+
+<ul>
+<li><code>A</code> (an eighth note)</li>
+<li><code>A2</code> (a quarter note)</li>
+<li><code>A3</code> (a dotted quarter note)</li>
+<li><code>A4</code> (a half note)</li>
+</ul>
+</li>
+</ul>
+
+
+<p>The following features are <em>not</em> supported:</p>
+
+<ul>
+<li>Sharp and flat: <code>^C</code> <code>_C</code>
+
+<ul>
+<li>But it is possible to emit the half tones.  Do you see how?</li>
+</ul>
+</li>
+<li>Shorter note lengths than 1: <code>C1/2</code>
+
+<ul>
+<li>But you can use <code>C0.5</code> instead.</li>
+</ul>
+</li>
+<li>Higher and lower notes: <code>c'</code> <code>C,</code></li>
+<li>Any meta fields: <code>T:title</code> <code>L:1/4</code></li>
+<li>Bar line, repeat, ties and slurs, and everything else.</li>
+</ul>
+
+
+<h3>Known Bugs</h3>
+
+<p>You can <em>not</em> write a note length immediately followed by a note <code>E</code>,
+such as <code>C2E2</code>.
+Can you know why?
+You can work it around by inserting a whitespace: <code>C2 E2</code>.</p>
+
+<h3>Portability</h3>
+
+<p>I tested it on:</p>
+
+<ul>
+<li>Ubuntu 13.10 with gcc 4.7.3, clang 3.2, and tcc 0.9.25.</li>
+<li>Mac OS X 10.6 with gcc 4.2.1 and clang 1.7.</li>
+</ul>
+
+
+<h3>Legal</h3>
+
+<p>I believe that all the scores that I attached are out-of-copyright.</p>
+
+<p>I did write a score of the Happy Birthday song too.
+(It does not matter because the song is out-of-copyright in my country.)
+But I do not attach it to protect you from W****r.</p>
+
+<p>For the same reason, do not play a score that contains only <code>z1092</code>.
+You know, it is <a href="http://en.wikipedia.org/wiki/4%E2%80%B233%E2%80%B3">&ldquo;the famous song&rdquo;</a>.</p>
+
+<h3>Spoiler (rot13)</h3>
+
+<p>Urer vf n zntvpny rkcerffvba juvpu V sbhaq ol oehgr-sbepr:</p>
+
+<pre><code>(p % 32 + 5) * 9 / 5 % 13 + a / 32 * 12 - 22
+</code></pre>
+
+<p>Vagrerfgvatyl, vg pbairegf na NFPVV ahzore bs NOP abgrf
+gb gur pbeerfcbaqvat gbar ahzore.</p>
+
+<pre><code>'P' (NFPVV  67) =&gt;  3
+'Q' (NFPVV  68) =&gt;  5
+'R' (NFPVV  69) =&gt;  7
+'S' (NFPVV  70) =&gt;  9
+'T' (NFPVV  71) =&gt; 10
+'N' (NFPVV  65) =&gt; 12
+'O' (NFPVV  66) =&gt; 14
+'p' (NFPVV  99) =&gt; 15
+'q' (NFPVV 100) =&gt; 17
+'r' (NFPVV 101) =&gt; 19
+'s' (NFPVV 102) =&gt; 20
+'t' (NFPVV 103) =&gt; 22
+'n' (NFPVV  97) =&gt; 24
+'o' (NFPVV  98) =&gt; 26
+</code></pre>
+
+<p>Ol gur jnl, lbh pna jevgr n unys-gbar ol gur sbyybjvat punenpgref.</p>
+
+<pre><code>'X' =&gt;  4 (= P#)
+'Y' =&gt;  6 (= Q#)
+'H' =&gt;  8 (= S#)
+'I' =&gt; 11 (= T#)
+'C' =&gt; 13 (= N#)
+</code></pre>
+
+<p>Abgr gung gur gbar ahzoref fvzcyl rahzrengr gur frzv-gbar fgrcf.
+Fb jr pna pnyphyngr gur serdhrapl rnfvyl: <code>cbj(2, a / 12.0)</code>.
+Gura, ubj pna jr pnyphyngr <code>cbj</code> jvgubhg <code>zngu.u</code>?
+<code>cbj(2, 1.0 / 12.0)</code> vf nccebkvzngrq ol <code>89/84.</code>.
+(V sbhaq guvf nccebkvzngvba ol hfvat <a href="uggc://ra.jvxvcrqvn.bet/jvxv/Fgrea%R2%80%93Oebpbg_gerr">Fgrea-Oebpbg gerr</a>.)
+Jr pna tnva gur serdhrapl ol zhygvcylvat gur inyhr <code>a</code> gvzrf.</p>
+
+<p>Svanyyl, gur sbyybjvat pbqr trarengrf n fnj jnir:</p>
+
+<pre><code>sbe(p = 0; p &lt; yra; p++) chgpune(n = a * Q);
+</code></pre>
+
+<p>jurer <code>Q</code> vf n serdhrapl naq <code>n</code> vf n inevnoyr jubfr glcr vf pune.
+Ol nffvtavat sybng gb pune inevnoyr, gur vzcyvpvg glcr pbairegvba vf cresbezrq sebz sybng gb pune (zbqhyb 256).
+(Fgevpgyl fcrnxvat, guvf orunivbe vf haqrsvarq nppbeqvat gb 6.3.1.4 va P99;
+lbh pna ercynpr vg jvgu <code>(ybat)(a*Q)</code> vs lbh ner crqnagvp.)</p>
+
+<p>Nyy gung jnf yrsg jnf gb pbzovar naq pbaqrafr gur pbzcbaragf.
+Gur xrl vf fdhnfuvat gurz vagb whfg bar sbe-ybbc.</p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2015,
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

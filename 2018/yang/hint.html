@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.1.5a DL=DISCOUNT">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css">
+  <title>Most shifty</title>
+</head>
+<body>
+<h1>Most shifty</h1>
+
+<p>Don Yang<br>
+<a href="http://uguu.org/">http://uguu.org/</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To use:</h3>
+
+<pre><code>make
+more generated1.c
+more generated2.c
+more generated3.c
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code>make
+./left &lt; prog.c
+./right &lt; prog.c
+./left &lt; prog.c | ./left
+
+./shift &lt; prog.c
+
+./msg0
+./msg1
+./msg2
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>Code should be readable in any direction! This tool will help you rotate your
+code so you don&rsquo;t have to stare at it sideways or even upside down. Rotating
+this program left and recompiling will reveal other tools including a right rotate
+and a shift program.</p>
+
+<p>Strange things happen when the world is upside down! It is entirely possible
+that this is remark is completely misleading.</p>
+
+<p>What exactly does the shift program do?</p>
+
+<p>Like a great sliding puzzle (hint) this entry has 6 more programs that will
+reveal messages and one more tool that can be used to reveal the final
+message hidden in the original source.  All of these can be created using
+combinations of ./left, ./right and ./shift and the additionally generated
+programs.</p>
+
+<p>The final message can be revealed using</p>
+
+<pre><code>./msg9 &lt; prog.c
+</code></pre>
+
+<p>But what combinations will generate ./msg3, ./msg4, ./msg5, ./msg6, ./msg7,
+./msg8 and finally ./msg9?</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h1>Tools usage</h1>
+
+<p>Nuko is a text rotator: given some text in stdin, Nuko will write the
+same text to stdout, but rotated 90 degrees counterclockwise.</p>
+
+<pre><code>gcc prog.c -o left
+./left &lt; input.txt &gt; rotated_counterclockwise.txt
+</code></pre>
+
+<p>Due to static memory allocation, only the first 1K columns by 1K rows
+are rotated, the rest are silently ignored.  But fear not, a separate
+tool with dynamic memory allocation is included:</p>
+
+<pre><code>./left &lt; prog.c &gt; r1.c
+gcc r1.c -o right
+./right &lt; input.txt &gt; rotated_clockwise.txt
+</code></pre>
+
+<p>For variety, this second tool rotates clockwise instead of
+counterclockwise.  Also, it can handle files larger than 1024x1024,
+depending on how much memory you got.</p>
+
+<p>Of course we wouldn&rsquo;t stop with just two rotations, if we continue to
+rotate counterclockwise once more, we get another program.  This
+program outputs a single message to stdout, which is the name of the
+series that Nuko came from.</p>
+
+<pre><code>./left &lt; prog.c | ./left &gt; r2.c
+gcc r2.c -o msg0
+./msg0
+</code></pre>
+
+<p>There is one final rotation, which produces a tool that removes
+leading whitespaces:</p>
+
+<pre><code>./left &lt; prog.c | ./left | ./left &gt; r3.c
+gcc r3.c -o shift
+./shift &lt; input.txt &gt; no_leading_space.txt
+</code></pre>
+
+<p>Where this might be useful, besides ruining the formatting of certain
+files, is that it completes the set of tools needed to solve the
+puzzle that is embedded in prog.c</p>
+
+<h1>Puzzle box</h1>
+
+<p>Notice how the edges of prog.c contain two notches.  By rotating
+prog.c and removing leading space, the code would be shifted one space
+toward one of those notches (and creating a new notch on the other
+side).  This shifted code behaves slightly different from the original
+program.  For example, here are two more messages that can be
+produced:</p>
+
+<pre><code>./shift &lt; prog.c | ./right &gt; msg1.c &amp;&amp; gcc msg1.c -o msg1 &amp;&amp; ./msg1
+./shift &lt; prog.c | ./left &gt; msg2.c &amp;&amp; gcc msg2.c -o msg2 &amp;&amp; ./msg2
+</code></pre>
+
+<p>In total, there are 9 embedded strings that can be produced via a
+sequence of rotates and shifts, one of which can be used to extract
+the 10th final string from prog.c.  The intent is to simulate those
+wooden puzzle boxes that can be opened by pushing and shifting various
+well-concealed seams.  Thus, finding the correct sequence of rotates
+and shifts is left as an exercise to the reader (but if you are really
+lazy, just read the Makefile).</p>
+
+<p>Source code for all the tools needed to solve this puzzle are embedded
+in prog.c, all you need is a C compiler.</p>
+
+<h1>Features</h1>
+
+<ul>
+<li><p> Code compiles when rotated 4 ways.  This required a bit of
+ patience to achieve.  Code still compiles even with one column of
+ text shifted.  This required even more patience.</p></li>
+<li><p> All rotated and shifted variants compiles without warnings.  This
+ involves various tweaks to satisfy cases where compiler is overly
+ protective, including but not limited to the &ldquo;1125&rdquo; at line 4 as
+ opposed to &ldquo;1025&rdquo;, to satisfy -Waggresive-loop-optimizations.</p></li>
+<li><p> CRC32 of the code is embedded in the code itself.</p></li>
+<li><p> Process for writing prog.c is available in spoiler.html</p></li>
+</ul>
+
+
+<h1>Compatibility</h1>
+
+<p>Nuko and the rotated tools accepts only ASCII files where each
+character maps to exactly one byte.  Also, end-of-line sequence is
+assumed to be LF only, as opposed to CR-LF.  All control characters
+are treated like normal printable characters, so files containing tabs
+will look weird after rotation, for example.</p>
+
+<p>Nuko has been verified to work with these compiler / OS combinations:</p>
+
+<ul>
+<li> gcc 4.8.4 on Linux</li>
+<li> gcc 4.9.2 on Linux</li>
+<li> gcc 6.1.0 on JS/Linux</li>
+<li> gcc 6.3.0 on Linux</li>
+<li> gcc 6.4.0 on Cygwin</li>
+<li> clang 3.5.0 on Linux</li>
+<li> clang 3.8.1 on Linux</li>
+<li> clang 5.0.1 on Cygwin</li>
+<li> tcc 0.9.25 on JS/Linux</li>
+</ul>
+
+
+<p>Nuko compiles without warnings with all compilers above, even with
+&ldquo;-Wall -Wextra -pedantic&rdquo; for gcc and clang.</p>
+
+<hr />
+
+<!--
+(c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+
+[judges]: http://www.ioccc.org/judges.html
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+-->
+
+<TABLE><TR>
+<TD><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2018, 
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>

@@ -1,0 +1,146 @@
+	    17th International Obfuscated C Code Contest Rules
+
+Copyright (C) 2004 Leonid A. Broukhis, Simon Cooper, Landon Curt Noll and
+Peter Seebach.
+
+All Rights Reserved.  Permission for personal, education or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in
+writing from the contest judges.
+
+    Obfuscate:  tr.v.  -cated, -cating, -cates.  1. a.  To render obscure.
+		b.  To darken.  2. To confuse:  his emotions obfuscated his
+		judgment.  [LLat. obfuscare, to darken : ob(intensive) +
+		Lat. fuscare, to darken < fuscus, dark.] -obfuscation n.
+		obfuscatory adj.
+
+
+GOALS OF THE CONTEST:
+
+    * To write the most Obscure/Obfuscated C program under the rules below.
+    * To show the importance of programming style, in an ironic way.
+    * To stress C compilers with unusual code.
+    * To illustrate some of the subtleties of the C language.
+    * To provide a safe forum for poor C code.  :-)
+
+The 17th IOCCC contest window is:
+
+		07-Jan-2004 00:00 UTC to 29-Feb-2004 23:59:59 UTC
+
+RULES:
+
+    To help us with the volume of entries, we ask that you follow these rules:
+
+    1) Your entry must be a complete program.
+
+    2) The size of your program source must be <= 4096 bytes in length.
+       The number of characters excluding whitespace (tab, space,
+       newline, formfeed, return), and excluding any ; { or } immediately
+       followed by whitespace or end of file, must be <= 2048.
+
+    3) Submissions should be performed using the instructions outlined at,
+
+       http://www.ioccc.org/2004/submit
+
+       NOTE: After 26-Jan-2004, 00:00 UTC an online submission mechanism will
+       be available.  See the above URL for details.
+
+    4) If your entry is selected as a winner, it will be modified as follows:
+
+	   Your 'build' instructions will be incorporated into a
+           makefile.  If your build instructions *is* a makefile then
+           it should be portable and usable from within a master
+           makefile.
+
+	   Your program source will be renamed using an identifier of
+           our choice (usually your family name or anonymous) followed
+           by an optional digit, followed by '.c'
+
+	   Your entry will be compiled into a file with the above name
+           minus the '.c'.
+
+       If your entry requires that a build file exist, state so in
+       your entry's remark section.  The makefile will be arranged to
+       execute a build shell script containing the 'build'
+       information.  The name of this build shell script will be your
+       entry's title, possibly followed by a digit, followed by '.sh'.
+
+       If needed, your entry's remarks should indicate how your entry
+       must be changed in order to deal with the new filenames.
+
+    5) The build file, the source and the resulting executable should be
+       treated as read-only files.  If your entry needs to modify these files,
+       it should make and modify a copy of the appropriate file.  If this
+       occurs, state so in your entry's remarks.
+
+    6) Your program source must be able to be compiled cleanly by an ANSI C
+       compiler, or if there are any compile errors, they must be documented
+       in the "remarks" section of your submission.
+
+    7) The program must be of original work.  All submitted programs are
+       are thereby put in the public domain.  All explicitly copyrighted
+       programs will be rejected.
+
+    8) Entries must be received prior to 29-Feb-2004 23:59:59 UTC. (UTC is
+       essentially equivalent to Greenwich Mean Time).
+
+       An EMail a confirmation of submission will be sent to the sender
+       before the close of the contest.
+
+    9) Each person may submit up to 8 entries per contest year.  Each entry
+       must be submitted separately.
+
+   10) Entries requiring human interaction to be built are not permitted.
+
+   11) Programs that require special privileges (setuid, setgid, super-user,
+       special owner or group) are not permitted.
+
+   12) Legal abuse of the rules is somewhat encouraged.  An entry that, in
+       the opinion of the judges, violates the rules will be disqualified.
+       Entries that attempt to abuse the rules must try to justify why
+       their rule abuse is legal in the submitted "remarks".
+
+   13) Your source may not contain unescaped octets with the high bit set.
+       I.e., your source may not contain octet values between 128 and 255.
+
+   14) Any program that fails to compile because of lines with trailing
+       control-M's (\r or \015) will be rejected.
+
+   15) When you submit your entry you must have a valid email address
+       that can both send and receive email.  The online submission
+       method is a two phase process that requires the use of an
+       approval code. This code will be emailed to you as part of
+       phase 1.
+
+       Entries submitted without a working or valid email address will
+       be disqualified.
+
+       The judges are not responsible for delays in email, please plan
+       enough time for one automated exchange of email as part of your
+       submission.
+
+   16) You are STRONGLY encouraged to submit an original entry.  
+       Submissions that are similar to previous entries are discouraged.
+
+FOR MORE INFORMATION:
+
+    The judging will be done by Leonid A. Broukhis, Simon Cooper, Landon
+    Curt Noll and Peter Seebach.  Please send questions or comments
+    about the contest, to:
+
+	    q.2004@ioccc.org	   (not the address for submitting entries)
+
+    You must include the words ``ioccc 2004 question'' in the subject of
+    your EMail message when sending EMail to the judges.
+
+    The rules and the guidelines may (and often do) change from year to
+    year.  You should be sure you have the current rules and guidelines
+    prior to submitting entries.  To obtain them, visit the IOCCC web page:
+
+	http://www.ioccc.org
+
+    It has rules, guidelines and winners of previous contests (1984 to date).
+
+    Detail of how to submit your entry are located at,
+
+        http://www.ioccc.org/2004/submit
