@@ -352,3 +352,19 @@
 2019 mills	Machine Learning on text
 2019 poikola	SHA, Prime, Fibonacci
 2019 yang	Text scrambler
+
+2020 burton	Byte to binary, no loops, 1-liner
+2020 carlini	printf machine
+2020 endoh1	Minesweeper solver
+2020 endoh2	Star Wars crawler
+2020 endoh3	ASCII clock
+2020 ferguson1	Snake game
+2020 ferguson2	Enigma machine
+2020 giles	DTMF encoder/decoder
+2020 kurdyukov1	MD5 checksum
+2020 kurdyukov2	Image segmenter
+2020 kurdyukov3	Letter permuter
+2020 kurdyukov4	Markov chain text generator
+2020 otterness	MIDI improver
+2020 tsoj	Asteroids
+2020 yang	PIN-protected program generator
