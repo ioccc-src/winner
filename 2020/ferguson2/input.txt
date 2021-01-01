@@ -1,0 +1,5 @@
+IOCCC 2020 Enigma simulator example text file
+
+This is a sentence.
+
+This is another sentence.

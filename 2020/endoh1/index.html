@@ -1,0 +1,191 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional //EN">
+<html>
+<head>
+  <meta name="GENERATOR" content="mkd2html 2.2.2">
+  <meta http-equiv="Content-Type"
+        content="text/html; charset=utf-8">  <link rel="stylesheet"
+        type="text/css"
+        href="../hint.css" />
+  <title></title>
+  <title>Most explosive</title>
+</head>
+<body>
+<CENTER>
+    <IMG SRC="/png/ioccc.png" ALT="IOCCC" height=78 width=267>
+    <P><FONT size="6"><I>The International Obfuscated C Code Contest</I></FONT></P>
+    <div id="bar">
+    <ul>
+        <li><a href="../index.html">About the 27th IOCCC</a></li>
+        <li><a href="../whowon.html">27th IOCCC Winners</a></li>
+        <li><a href="/index.html">IOCCC home</a></li>
+        <li><a href="/winners.html">List of All Winners</a></li>
+        <li><a href="/judges.html">The Judges</a></li>
+    </ul>
+    </div>
+    <P><FONT size="6"><B>A 27<sup>th</sup> IOCCC Winner</B></FONT></P>
+</CENTER>
+
+
+<h1>Most explosive</h1>
+
+<p>Yusuke Endoh<br/>
+Twitter: @mametter</p>
+
+<p>The code for this entry can be found in <a href="prog.c">prog.c</a></p>
+
+<h2>Judges' comments:</h2>
+
+<h3>To use:</h3>
+
+<pre><code>make
+./prog
+</code></pre>
+
+<h3>Try:</h3>
+
+<pre><code># Try resizing the terminal window before the first click.
+
+# Try resizing the terminal window after the first click.
+
+./prog ioccc.txt
+
+./prog unwinnable.txt
+</code></pre>
+
+<h3>Selected Judges Remarks:</h3>
+
+<p>When playing Minesweeper, a misclick might ruin a game, so why not leave the routine to the computer?
+This program automatically uncovers mines according to several rules, and leaves guessing (and applying
+the most straightforward of the rules &ndash; just for fun, perhaps?) to the user.</p>
+
+<p>Try creating your own input files according to the author&rsquo;s remarks. Did you encounter any problems?</p>
+
+<p>The submission was in violation of the &ldquo;2053&rdquo; size rule by one character, likely a late typo. It was easy to fix.</p>
+
+<h2>Author&rsquo;s comments:</h2>
+
+<h3>Semi-automatic Minesweeper</h3>
+
+<p>Minesweeper is a game to sweep mines, as you know.  The task consists of two parts:</p>
+
+<p>A) choose a random cell based on your sixth sense
+B) identify a non-mine cell based on logical inference</p>
+
+<p>However, (B) is error-prone, and a waste of time.  You must use a computer to do such a boring task!</p>
+
+<p>This program is a semi-automatic minesweeper which does Part (B) automatically.
+All you have to do is (A).  You can test if you are lucky or not.</p>
+
+<h4>How to use</h4>
+
+<p>It uses ncurses:</p>
+
+<pre><code>$ gcc -o prog prog.c -lncurses
+$ ./prog
+</code></pre>
+
+<p>You will see a terminal-wide field of a minesweeper.  Probe a cell by mouse click.
+If a cell turns out to have a mine (or not), the program determines whether its neighbors have a mine or not, and automatically probes (or flags) the cell.</p>
+
+<ul>
+<li><code>R</code>: new game (You can also click the smiley face at the top line.)</li>
+<li><code>Q</code>: quit</li>
+</ul>
+
+
+<h4>Internal</h4>
+
+<p>The program uses four types of local inference:</p>
+
+<h4>Rule 1</h4>
+
+<p>If the number of a cell is equal to the count of the flagged neighbors, all the unprobed neighbors are probed.</p>
+
+<p>Example:</p>
+
+<p><code>
+    ? ? ?      . . .
+    ? 3 ?  =&gt;  . 3 .
+    ! ! !      ! ! !
+</code></p>
+
+<p>Note that <code>?</code> is a unprobed cell (it is unknown whether the cell has a mine or not); <code>!</code> is a flagged cell (it is already known that the cell has a mine); and <code>.</code> is a probed cell (it is already known that the cell has no mine).</p>
+
+<h4>Rule 2</h4>
+
+<p>If the number of a cell is equal to the count of the unprobed or flagged neighbors, all the unprobed neighbors are flagged,</p>
+
+<p>Example:</p>
+
+<p><code>
+    . ? ?      . ! !
+    . 4 ?  =&gt;  . 4 !
+    . 2 !      . 2 !
+</code></p>
+
+<h4>Rule 3</h4>
+
+<p>Consider two number cells A and B.  If A is equal to the difference of B and the count of B&rsquo;s unprobed and flagged neighbors that are not A&rsquo;s neighbors, all A&rsquo;s unprobed neighbors that are not B&rsquo;s neighbors are probed.</p>
+
+<p>Example:</p>
+
+<p><code>
+    ? ? ?        . . .
+    ? 1 ? ?  =&gt;  . 1 ? ?
+    ? ? 4 .      . ? 4 .
+      ? . !        ? . !
+</code></p>
+
+<p>A and B are probed cells whose numbers are, respectively, 1 and 4.  The count of B&rsquo;s unprobed and flagged neighbors that are not A&rsquo;s neighbors is three (one <code>!</code> and two <code>?</code>s).  Since A (1) == B (4) - the count (3), the left and top unprobed cells are probed.</p>
+
+<h4>Rule 4</h4>
+
+<p>Consider two number cells A and B.  If B is equal to the difference of A and the count of A&rsquo;s unprobed and flagged neighbors that are not B&rsquo;s neighbors, all A&rsquo;s unprobed neighbors that are not B&rsquo;s neighbors are flagged.</p>
+
+<p><code>
+    ? ? ? ?      ! ? ? ?
+    ? 3 1 2  =&gt;  ! 3 1 2
+    2 2 . .      2 2 . .
+</code></p>
+
+<p>A and B are probed cells whose numbers are, respectively, 3 and 1.  The count of A&rsquo;s unprobed and flagged neighbors that are not B&rsquo;s neighbors is two (left <code>?</code>s).  Since B (1) == A (3) - the count (2), the left unprobed cells are flagged.</p>
+
+<h4>Note</h4>
+
+<p>Interestingly, these complex rules can be integrated to one simple rule.  Analyze the code.</p>
+
+<h4>One more thing</h4>
+
+<p>You can also play with a prepared map.</p>
+
+<pre><code>$ ./prog ioccc.txt
+</code></pre>
+
+<p>The format of the text is:</p>
+
+<pre><code>width height number-of-mines priorities-of-each-cell...
+</code></pre>
+
+<p>There are mines in a cell whose &ldquo;priorities-of-each-cell&rdquo; is less than &ldquo;number-of-mines&rdquo;.
+(But the mine in the first-clicked cell is removed.)</p>
+
+<h4>Bug fixes and Credits</h4>
+
+<p>The judges pointed out a bug of the original version that I submitted (prog.orig.c).  Because this program does not provide a feature to flag unprobed cells manually, we can do nothing if the number of unprobed cells are equal to the number of mines remaining; unwinnable.txt is an example for such a case.
+Thus, I implemented an additional rule to flag all unprobed cells in such a case into the final version (prog.c).</p>
+
+<p>Ilya Kurdyukov also pointed out a warning &ldquo;ignoring return value of &lsquo;fscanf&rsquo;&rdquo; only when &ldquo;-O3&rdquo; is used.  So I changed the code a little to pretend to use the return value of fscanf.</p>
+
+<p>Don Yang (omoikane) contributed another example map &ldquo;megumin.txt&rdquo; which is the Explosion Arch-Wizard.</p>
+<BR>
+<HR>
+<TABLE><TR>
+<TD><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="/png/by-sa-3.0-88x31.png" /></a></TD>
+<TD><P>&copy; Copyright 1984-2020,
+<A HREF="/judges.html">Leo Broukhis, Simon Cooper, Landon Curt Noll</A>
+- All rights reserved<BR>
+This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
+<TD>&nbsp;<!--<a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
+</TR></TABLE>
+</body>
+</html>
