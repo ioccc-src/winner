@@ -71,7 +71,7 @@ schweikh1: schweikh1.c
 schweikh1.orig: schweikh1.orig.c
 	${MAY_NEED_GCC} ${CFLAGS} $? -o $@
 
-schweikh1_files: data
+schweikh1_files: info
 
 df: df.c
 	${CC} ${CFLAGS} $? -o $@
