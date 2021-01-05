@@ -126,7 +126,7 @@ rcm: rcm.c
 schweikh1: schweikh1.c errno.h
 	${CC} ${CFLAGS} -I. schweikh1.c -o schweikh1
 
-schweikh2: schweikh2.c #hunni.c hunni.pl
+schweikh2: schweikh2.c hunni.c hunni.pl
 	${CC} ${CFLAGS} -D_POSIX_SOURCE schweikh2.c -o schweikh2
 
 # NOTE: On some systems such as SunOS, one may need to compile with:
