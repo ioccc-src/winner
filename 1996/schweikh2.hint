@@ -35,13 +35,6 @@ Judges' comments:
 
 	perl ./hunni.pl < hunni.c
 
-    NOTE: No hunni.c nor hunni.pl is found in the IOCCC archives.
-	  Perhaps they were considered but never added to the entry?
-	  Perhaps someone somewhere has a copy of them?  If so, then
-	  please send Email to the judges with info on how to find them:
-
-	    http://www.ioccc.org/judges.html
-
     This entry was another crowd pleaser at the IOCCC BOF.
 
 
