@@ -67,6 +67,7 @@ are same.</li>
 <li>It supports every non-negative integer less than 10<sup>15</sup>-1. It uses
 the small scale (i.e. American): <code>billion</code> is 10<sup>9</sup> and <code>trillion</code> is
 10<sup>12</sup>.</li>
+<li>Sometimes, it can magically correct typos.</li>
 </ul>
 
 
@@ -83,7 +84,8 @@ the small scale (i.e. American): <code>billion</code> is 10<sup>9</sup> and <cod
 <p>This program is quite portable, only requiring the following:</p>
 
 <ul>
-<li>The signature <code>int main(int, int)</code> should be accepted by the linker.</li>
+<li>The signature <code>int main(int, int)</code> should be accepted by the linker. (Original
+version only)</li>
 <li><code>char</code> should be at least 8 bits long (as dictated by the standard), <code>int</code>
 should be at least 32 bits long, <code>long long</code> should be at least 64 bits long.</li>
 <li>Both the compiler and execution environment should use an ASCII-compatible
@@ -97,7 +99,7 @@ character set and two&rsquo;s complement representation.</li>
 (it has to be negative per the standard) and both signed and unsigned <code>char</code>,
 for example. Furthermore it is endian-independent.</p>
 
-<h2>Obfuscations</h2>
+<h2>Obfuscations (SPOILERS!)</h2>
 
 <p>Many obfuscations used are typical for standard IOCCC entries:</p>
 
@@ -172,12 +174,10 @@ and the biggest constant 6177 is not arbitrarily chosen.</p>
 
 <h2>Acknowledgement</h2>
 
-<p>[Removed for proper judgement: I&rsquo;ll fill this section if I do win.]</p>
-
-<p>[Note: If you think you&rsquo;ve seen this program elsewhere, you are probably right;
-I&rsquo;m submitting a program I have published years ago (and I have written myself,
-of course). Neither rules nor guidelines disallow such a resubmission, so I guess
-it&rsquo;s fine.]</p>
+<p>The cleaner (size-optimized) version of this program was originally published
+in my website in July 2011. Sun Park and others have reviewed it and let me
+aware of possible improvements. I&rsquo;d also like to thank Seo Sanghyeon for
+proof-reading remarks.</p>
 
 <hr />
 
