@@ -52,6 +52,7 @@ It accepts a variety of spelt numbers:
 * It supports every non-negative integer less than 10<sup>15</sup>-1. It uses
   the small scale (i.e. American): `billion` is 10<sup>9</sup> and `trillion` is
   10<sup>12</sup>.
+* Sometimes, it can magically correct typos.
 
 It does *not* accept some spelt numbers, which I found mostly irrelevant:
 
@@ -62,7 +63,8 @@ It does *not* accept some spelt numbers, which I found mostly irrelevant:
 
 This program is quite portable, only requiring the following:
 
-* The signature `int main(int, int)` should be accepted by the linker.
+* The signature `int main(int, int)` should be accepted by the linker. (Original
+  version only)
 * `char` should be at least 8 bits long (as dictated by the standard), `int`
   should be at least 32 bits long, `long long` should be at least 64 bits long.
 * Both the compiler and execution environment should use an ASCII-compatible
@@ -76,7 +78,7 @@ The design of the program explicitly allows for `EOF` which does not equal to -1
 (it has to be negative per the standard) and both signed and unsigned `char`,
 for example. Furthermore it is endian-independent.
 
-## Obfuscations
+## Obfuscations (SPOILERS!)
 
 Many obfuscations used are typical for standard IOCCC entries:
 
@@ -142,12 +144,10 @@ and the biggest constant 6177 is not arbitrarily chosen.
 
 ## Acknowledgement
 
-[Removed for proper judgement: I'll fill this section if I do win.]
-
-[Note: If you think you've seen this program elsewhere, you are probably right;
-I'm submitting a program I have published years ago (and I have written myself,
-of course). Neither rules nor guidelines disallow such a resubmission, so I guess
-it's fine.]
+The cleaner (size-optimized) version of this program was originally published
+in my website in July 2011. Sun Park and others have reviewed it and let me
+aware of possible improvements. I'd also like to thank Seo Sanghyeon for
+proof-reading remarks.
 
 
 --------------------------------------------------------------------------------
