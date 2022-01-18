@@ -18,4 +18,4 @@ which in turn will cause them to be displayed on the  <A HREF="https://www.ioccc
 
 If you are an IOCCC winner, you may update your entry (meta-data as well as source code)
 by using a <A HREF="https://github.com/ioccc-src/winner/pulls">GitHub pull request</A>
-against the master brance of the  <A HREF="https://github.com/ioccc-src/winner">ioccc-src/winner</A> repo.
+against the master branch of the  <A HREF="https://github.com/ioccc-src/winner">ioccc-src/winner</A> repo.
