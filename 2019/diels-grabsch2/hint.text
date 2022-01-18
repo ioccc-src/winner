@@ -96,7 +96,7 @@ precomputation, the 8 initial hash values are not needed, but the
 It is almost impossible to hide those 640 bytes in the source.
 Luckily, the round constants where not chosen by fair dice rolls.
 They are the fractional parts of certain irrational numbers, namely,
-the cube roots of the first 80 primes.  So the round constrants are
+the cube roots of the first 80 primes.  So the round constants are
 calculated at runtime, which makes the program shorter and adds
 another layer of obfuscation.
 
