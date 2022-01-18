@@ -171,7 +171,7 @@ just two parts instead of three?  That would simplify the formulas a
 lot.  For example, one could split the 67-value into two 34-bit parts,
 but whenever one multiplies two of them, one needs to right-shift one
 of them by at least 4 bits, or both by 2.  Or, one splits the 67 bits
-asymmetrically?  I wasn't able to make it work with 2 parts, but that
+asymmetrically?  I was unable to make it work with 2 parts, but that
 doesn't have to mean anything.
 
 --------------------------------------------------------------------------------
