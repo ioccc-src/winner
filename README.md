@@ -7,5 +7,5 @@ For information about the IOCCC, see the <A HREF="https://www.ioccc.org/index.ht
 of the contest</A>.
 
 We, the <A HREF="https://www.ioccc.org/judges.html">IOCCC Judges</A>, recommend that you view
-this information vias the
+this information via the
 <A HREF="https://www.ioccc.org/index.html">Official IOCCC web site</A>.
