@@ -13,15 +13,25 @@ wants to know more about it) read on. Yes I write a lot. But you probably
 already knew that so no harm there, hey?
 
 <a name="toc"></a>
+
 -   [How does it work?](#works)
+
 -   [How does the snake movement work?](#movement)
+
 -   [Drawing (manual) and computer playing (automatic) modes](#manual-automatic)
+
 -   [Collision detection](#collision)
+
     *	[Cannibal collision detection](#cannibalcollision)
+
     *	[Collision detection when resizing the window of the game](#resizing)
+
 -   [Obfuscation](#obfuscation)
+
 -   [Skinning the snake (i.e. decreasing the iocccsize)](#skinning)
+
 -   [A few more interesting size optimisations](#size)
+
 
 # <a name="works" href="#toc">How does it work?</a>
 

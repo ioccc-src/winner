@@ -4,34 +4,67 @@ game. For normal play you probably don't even need this file at all unless it be
 for the input keys.
 
 <a name="toc"></a>
+
 1.  [Testing terminal environment/capabilities](#support)
+
+
 2.  [Input keys](#input)
+
+
 3.  [Gameplay](#gameplay)
     *   [The initial screen](#initial)
+
     *   [Playing the game](#playing)
+
     *   [Walls](#walls)
+
     *   [Cannibalism](#cannibalism)
+
     *   [Stretching (shedding)](#shedding)
+
     *   [Winning](#winning)
+
     *   [Quitting](#quitting)
+
+
 4.  [Gameplay modes](#modes)
     *   [**Photosensitive epilepsy/Stimulation overload trigger warnings**](#warning)
+
     *   [Drawing / Practice mode](#drawing)
+
     *   [Computer playing / Automatic mode (**Photosensitive epilepsy/Stimulation overload trigger**)](#auto)
+
 	    *	[Variations](#auto-variations)
+
     *   [Grow-Shrink (Positive/Negative Winning) mode](#grow-shrink)
+
     *   [Hypnotic / Sleepy mode (**Photosensitive epilepsy/Stimulation overload trigger**)](#hypnotic)
+
     *   [Stimulation / Calming mode](#stim)
+
     *   [Other ideas](#other-ideas)
+
+
 5.  [Scripts](#scripts)
+
     *	[Colours selection](#colours)
+
     *	[Automate the above gameplay modes](#preset)
+
+
 6.  [Game variables](#variables)
+
     * [WAIT		    -	Snake speed](#wait)
+
     * [EVADE		    -	Bug evasion frequency](#evade)
+
     * [SIZE / MAXSIZE	    -	Initial snake / max sizes](#sizes)
+
     * [GROW / SHEDS	    -	Growth / Shedding sizes](#growth)
+
+
 7.  [Conclusion (and inspirational words for everyone)](#conclusions)
+
 
 # 1. <a name="support" href="#toc">Testing terminal environment/capabilities</a>
 
