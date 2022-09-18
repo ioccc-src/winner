@@ -181,15 +181,25 @@ and [troubleshooting.html][] - along with the most important one
 *   ['Bugs'](#bugs)
 
 *   [NAQs/IAQs (Never/Infrequently Asked Questions)](#naqs)
+
     -	[Do I have any inspirations for this entry?](#inspirations)
+
     -	[Are there any features I thought of that I wanted to implement but did not get to for some reason or another?](#features)
+
     -	[Are there ways that one can make this game easier?](#easier)
+
     -	[Are there ways to make it harder?](#harder)
+
     -	[How do snakes grow in real life?](#moult)
+
     -	[Any other interesting things about snakes?](#other)
+
     -	[Why can you go the opposite direction and so immediately die when not cannibalising?](#opposite)
+
     -	[Do you have any **DELICIOUS CHOCOLATE CAKE** recipes?](#chocolatecake)
+
     -	[What are the files prog.orig.c, prog.2.c, prog-j.c and prog.alt.c ?](#alt)
+
 
 *   [Winning thoughts, dedications and thanks](#winning)
 
@@ -494,7 +504,9 @@ mother.
 
 I also want to dedicate this to Vicky Wilmore who has given me a lot of
 love the past few years and who was there for me in some very dark times. Thank
-you Vicky sweetheart from the bottom of my heart and soul xxx.
+you Vicky sweetheart from the bottom of my heart and soul. Although we have
+parted ways, whether for now or for ever, you will always always always have a
+place in my heart and soul xxx
 
 I would like to thank my dear friend Martijn Schoemaker for encouraging me in my
 programming over the years and who I owe a great deal to. Thank you for
