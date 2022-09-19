@@ -1,87 +1,318 @@
-# %W% %G% %U%
+#!/usr/bin/env make
 #
-# 1988 makefile
+# 1988 Makefile
+
+################################################################################
 #
-# Copyright (c) 1988, Landon Curt Noll & Larry Bassel.
-# All Rights Reserved.  Permission for personal, educational or non-profit
-# use is granted provided this this copyright and notice are included in its
-# entirety and remains unaltered.  All other uses must receive prior permission
-# from Landon Curt Noll and Larry Bassel.
-
-
-SHELL=/bin/sh
-CFLAGS=-O
-CC=cc
-CPP=/lib/cpp
-# you may need a version of cpp that is faster and/or allows more symbols
-# than the standard cpp.  If so, adjust the BIG_CPP below.
+# An Historical Makefile NOTE:
 #
-# If you have the GNU cpp, you should use it below as it is MUCH faster
-# than the standard cpp and does not have problems with memory usage.
-# However you should note that the non-ANSI nature of defining symbols
-# that start with '#' prevents GNU cpp from doing the initial pass.  
-# Thus you should not use the GNU cpp for the ${CPP} symbol.
-BIG_CPP=${CPP}
-
-WINNERS=dale phillipps robison westley reddy isaak \
-	litmaath spinellis zsmall
-
-all: ${WINNERS}
-
-dale: dale.c
-	${CC} ${CFLAGS} $? -o $@
-phillipps: phillipps.c
-	${CC} ${CFLAGS} $? -o $@
-robison: robison.c
-	${CC} ${CFLAGS} $? -o $@
-westley: westley.c
-	${CC} ${CFLAGS} $? -o $@
-reddy: reddy.c
-	${CC} ${CFLAGS} $? -o $@
-isaak: isaak.c
-	${CC} ${CFLAGS} -DI=B -DO=- -Dy $? -o $@
-litmaath: litmaath.c
-	${CC} ${CFLAGS} $? -o $@
-spinellis: spinellis.c spinellis.data
-	@echo This program can not be portably compiled with a makefile
-	@echo because it reads from /dev/tty.
-	@echo Compile this program with: cc spinellis.c -o spinellis
-	@echo and type the following text followed by an EOF '(^D)'.
-	@cat spinellis.data
-	@-if [ ! -f spinellis ]; then \
-	    touch spinellis; \
-	fi
-
-# not an official entry
+# The orig.Makefile, if it exits, is the original Makefile before this IOCCC
+# year directory was reworked so that entries are in separate directories.
+# This also applies to any orig.ansi.mk and orig.common.mk files.
 #
-# The 'zsmall.c' program was obtained from 'applin.c' by reducing its recursion
-# and running it thru the initial /lib/cpp.  That is, 'zsmall.c' is a small
-# version of the 'z.c' file as produced by the 'applin' make rule below.
-zsmall: zsmall.c
-	@echo this reduced version of applin.c can take some time to compile...
-	${CC} ${CFLAGS} zsmall.c -o $@
+# Several Makefiles were modified / formed in 2022, and as such it may have
+# elements that are not historically compatible with way entries were built.
+# The orig.Makefile, if it exits, is a copy of the pre-modified Makefile.
+#
+# Regarding individual entries:
+#
+# IOCCC winning entry code may not work on your system.  Even with standards,
+# conditions and build environments change, especially when it comes to more
+# extreme code such you might find in an IOCCC winner.  Moreover, what was
+# allowed and liked in one IOCCC contest may no longer be liked/allowed in
+# later IOCCC years.
+#
+# Corrections on winning author and fixing typos in remarks are VERY WELCOME.
+#
+# GitHub pull requests are welcome:
+#
+# If you have a patch that might make running an entry work in modern Unix-like
+# environments, please create a GitHub pull request for the IOCCC judgess to
+# consider.
+#
+# Suggestions and corrections regarding Makefiles, winning author information,
+# fixing typos in remarks, and code patches are welcome via opening a GitHub
+# issue or better yet, by creating a GitHub pull request for the IOCCC judges
+# to consider.  To form a GitHub issue or GitHub pull, please visit:
+#
+# https://github.com/ioccc-src/winner
+#
+################################################################################
 
-# This entry took 75 minutes to compile on a Amdahl 5980-300E
-# (a 55658 Dhyrstone/sec/cpu machine) using the System V cpp.
-# (The GNU cpp when defined as BIG_CPP took only 45 seconds)
-# Your cpp may not be able to compile it due to a common bug
-# that results in ${CPP} running out of space.  The routine
-# 'zsmall' is a smaller version of the applin.c entry.
-applin: applin.c
-	${CPP} '-DM=#include "z.c"' '-DR=#include' '-DF=#if' \
-	    '-DI=#ifdef' '-DL=#else' '-DE=#endif' '-DN=#ifndef' \
-	    '-DD=#define' '-DU=#undef' applin.c z.c
-	@echo this is going to take a very very long time to C-preprocess
-	@echo perhaps you should do:  make zsmall   instead
-	${BIG_CPP} z.c > large.c
-	@echo now for the real compile...
-	${CC} ${CFLAGS} large.c -o $@
+# This work by Landon Curt Noll and Leonid A. Broukhis is licensed under:
+#
+#	Creative Commons Attribution-ShareAlike 3.0 Unported License.
+#
+# See: http://creativecommons.org/licenses/by-sa/3.0/
 
+
+################
+# tool locations
+################
+#
+SHELL= /bin/bash
+MAKE= make
+
+
+###############
+# IOCCC winners
+###############
+#
+WINNERS= applin dale isaak litmaath phillipps reddy robison spinellis westley
+
+YEAR= 1988
+
+###################
+# build all entries
+###################
+#
+all:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+.PHONY: all alt data everything clean clobber install \
+        love haste waste maker easter_egg sandwich \
+        supernova deep_magic magic charon pluto
+
+# alternative executable
+#
+alt:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+# data files
+#
+data:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+# both all and alt
+#
+everything:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+
+###############
+# utility rules
+###############
+#
 clean:
-	rm -f core *.o
-clobber: clean
-	rm -f ${WINNERS} applin
-nuke: clobber
-	rm -f large.c z.c
-install: all
-	cat ${WINNERS} > /dev/null
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+clobber:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+install:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+indent.c:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+
+##################
+# 133t hacker rulz
+##################
+#
+love:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+haste:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+waste:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+maker:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+easter_egg:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+sandwich:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+
+# The IOCCC resident astronomer states
+#
+supernova:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+deep_magic:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+magic:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+charon:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+pluto:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='

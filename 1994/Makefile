@@ -1,158 +1,318 @@
-# %W% %G% %U%
+#!/usr/bin/env make
 #
-# 1994 makefile
+# 1994 Makefile
+
+################################################################################
 #
-# Copyright (c) 1994, Landon Curt Noll & Larry Bassel.
-# All Rights Reserved.  Permission for personal, educational or non-profit
-# use is granted provided this this copyright and notice are included in its
-# entirety and remains unaltered.  All other uses must receive prior permission
-# from Landon Curt Noll and Larry Bassel.
-
-
-SHELL=/bin/sh
-CAT=cat
-CHMOD=chmod
-CP=cp
-ECHO=echo
-GUNZIP=gunzip
-UUDECODE=uudecode
-LN=ln
-RM=rm
-SED=sed
-TRUE=true
-
-# flags for ANSI compiles
+# An Historical Makefile NOTE:
 #
-# NOTE: Some ANSI compilers make use of -Xa to turn on ANSI mode,
-#	others such as gcc may want -ansi, others may want nothing
-#	at all.  Adjust the CFLAGS line as needed.
+# The orig.Makefile, if it exits, is the original Makefile before this IOCCC
+# year directory was reworked so that entries are in separate directories.
+# This also applies to any orig.ansi.mk and orig.common.mk files.
 #
-# NOTE: Some compilers cannot optimize, or optimize some entries
-#	entries incorrectly.  You might want need to turn on -O 
-#	to see if your compiler can handle them.
+# Several Makefiles were modified / formed in 2022, and as such it may have
+# elements that are not historically compatible with way entries were built.
+# The orig.Makefile, if it exits, is a copy of the pre-modified Makefile.
 #
-#CFLAGS=-O -Xa
-#CFLAGS=-Xa
-#CFLAGS= -ansi
-CFLAGS= -ansi -O
-#CFLAGS=
-
-# ANSI compiler
+# Regarding individual entries:
 #
-# Set CC to the name of your ANSI compiler.
-#CC=cc
-CC=gcc
-
-# winners that compile under ANSI C
+# IOCCC winning entry code may not work on your system.  Even with standards,
+# conditions and build environments change, especially when it comes to more
+# extreme code such you might find in an IOCCC winner.  Moreover, what was
+# allowed and liked in one IOCCC contest may no longer be liked/allowed in
+# later IOCCC years.
 #
-WINNERS= dodsond1 dodsond2 horton imc ldb schnitzi shapiro smr tvr weisberg \
-	westley
-ALT_NAMES= dodsond2.orig shapiro.alt horton.alt gtface weisberg.alt tvr.alt
-
-all: $(WINNERS) $(ALT_NAMES)
-
-westley: westley.c
-	${CC} ${CFLAGS} westley.c -DO -o westley
-
-weisberg: weisberg.c
-	${CC} ${CFLAGS} -Dc='n*n>x?p:((m=*(b+1)),N))'	\
-	-De='(2<<6*sizeof(int))'			\
-	-Do='(8<<5*sizeof(int))'			\
-	-DN='((b=t+1),x+=2,x>e?exit():o' 		\
-	-Dp='(a-t<o?*(a++)=x:47),printf("%d ",x),N)' 	\
-	weisberg.c -o weisberg
-
-# If you want weisberg to generate all values up to MAXINT
-# and have the memory to malloc a 512M table, use the following.
+# Corrections on winning author and fixing typos in remarks are VERY WELCOME.
 #
-weisberg.alt: weisberg.c
-	${CC} ${CFLAGS} -Dc='n*n>x?p:((m=*(b+1)),N))'	\
-	-De='~(1<<8*sizeof(int)-1)' 			\
-	-Do='(2<<7*sizeof(int))'			\
-	-DN='((b=t+1),x+=2,x>e?exit():o' 		\
-	-Dp='(a-t<o?*(a++)=x:47),printf("%d ",x),N)' 	\
-	weisberg.c -o weisberg.alt
-
-tvr: tvr.c
-	${CC} ${CFLAGS} tvr.c -o tvr -lX11
-
-# The following is an alternate version of tvr.  Modes 0-3 have been
-# renumbered 1-4.  Mode 0 is Mandelbrot / julian calculated correctly.
+# GitHub pull requests are welcome:
 #
-tvr.alt: tvr.alt.c
-	${CC} ${CFLAGS} tvr.alt.c -o tvr.alt -lX11
-
-smr: smr.c
-	@${RM} -rf smr
-	${CP} smr.c smr
-	${CHMOD} +x smr
-
-shapiro: shapiro_t2.c
-	${CC} ${CFLAGS} shapiro_t2.c -o shapiro
-
-shapiro_t2.c: shapiro_t1
-	@${RM} -f shapiro_t2.c
-	./shapiro_t1 > shapiro_t2.c
-
-shapiro_t1: shapiro.c
-	${CC} ${CFLAGS} shapiro.c -o shapiro_t1
-
-shapiro.alt: shapiro.alt.c
-	${CC} ${CFLAGS} shapiro.alt.c -o shapiro.alt
-
-schnitzi: schnitzi.c
-	${CC} ${CFLAGS} schnitzi.c -o schnitzi
-
-horton: horton.c
-	${CC} ${CFLAGS} horton.c -o horton
-
-# Here are some programs related to the horton entry.  See horton.hint
-# for details.
+# If you have a patch that might make running an entry work in modern Unix-like
+# environments, please create a GitHub pull request for the IOCCC judgess to
+# consider.
 #
-horton.alt: horton.alt.c
-	${CC} ${CFLAGS} horton.alt.c -o horton.alt
-gtface: gtface.c
-	${CC} ${CFLAGS} gtface.c -o gtface
-
-ldb: ldb.c
-	${CC} ${CFLAGS} ldb.c -o ldb
-
-imc: imc.c
-	${CC} ${CFLAGS} imc.c -o imc
-
-dodsond2: dodsond2.c
-	${CC} ${CFLAGS} dodsond2.c -o dodsond2
-
-# NOTE: this is the original (gziped) file that won
+# Suggestions and corrections regarding Makefiles, winning author information,
+# fixing typos in remarks, and code patches are welcome via opening a GitHub
+# issue or better yet, by creating a GitHub pull request for the IOCCC judges
+# to consider.  To form a GitHub issue or GitHub pull, please visit:
 #
-dodsond2.orig: dodsond2.gz
-	@${RM} -f dodsond2.orig.c
-	-${GUNZIP} < dodsond2.gz > dodsond2.orig.c
-	-@if [ -s dodsond2.orig.c ]; then \
-	    ${ECHO} "${CC} ${CFLAGS} dodsond2.orig.c -o dodsond2.orig"; \
-	    ${CC} ${CFLAGS} dodsond2.orig.c -o dodsond2.orig; \
-	else \
-	    ${RM} -f dodsond2.orig.c; \
-	    ${ECHO} "sorry, we could not gunzip dodsond2.gz"; \
-	fi
+# https://github.com/ioccc-src/winner
+#
+################################################################################
 
-dodsond2.gz: dodsond2.gz.uu
-	@${RM} -f dodsond2.gz
-	${UUDECODE} dodsond2.gz.uu
+# This work by Landon Curt Noll and Leonid A. Broukhis is licensed under:
+#
+#	Creative Commons Attribution-ShareAlike 3.0 Unported License.
+#
+# See: http://creativecommons.org/licenses/by-sa/3.0/
 
-dodsond1: dodsond1.c
-	${CC} ${CFLAGS} dodsond1.c -o dodsond1
 
+################
+# tool locations
+################
+#
+SHELL= /bin/bash
+MAKE= make
+
+
+###############
+# IOCCC winners
+###############
+#
+WINNERS= dodsond1 dodsond2 horton imc ldb schnitzi shapiro smr tvr weisberg westley
+
+YEAR= 1994
+
+###################
+# build all entries
+###################
+#
+all:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+.PHONY: all alt data everything clean clobber install \
+        love haste waste maker easter_egg sandwich \
+        supernova deep_magic magic charon pluto
+
+# alternative executable
+#
+alt:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+# data files
+#
+data:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+# both all and alt
+#
+everything:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+
+###############
+# utility rules
+###############
+#
 clean:
-	$(RM) -f *.o a.out core 
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
 
-clobber: clean
-	$(RM) -f $(WINNERS)
-	$(RM) -f $(ALT_NAMES)
-	${RM} -f dodsond2.orig.c dodsond2.gz shapiro_t2.c shapiro_t1
+clobber:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
 
-nuke: clobber
-	@${TRUE}
+install:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
 
-install: all
-	${CAT} $(WINNERS) $(ALT_NAMES) > /dev/null
+indent.c:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+
+##################
+# 133t hacker rulz
+##################
+#
+love:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+haste:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+waste:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+maker:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+easter_egg:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+sandwich:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+
+# The IOCCC resident astronomer states
+#
+supernova:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+deep_magic:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+magic:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+charon:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+pluto:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
