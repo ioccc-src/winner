@@ -1,4 +1,4 @@
-<!-- language: lang-none -->
+```
 #!/bin/make
 # 2000 makefile
 #
@@ -214,3 +214,4 @@ nuke: clobber
 
 install: all
 	${CAT} ${WINNERS} ${ALT_NAMES} > /dev/null
+```
