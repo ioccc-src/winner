@@ -2,6 +2,10 @@
 
 Mike Laman
 
+## To build:
+
+        make all
+
 ## Judges' comments:
 
 Some new compilers dislike lines 6 and 10 of the source, so we changed
