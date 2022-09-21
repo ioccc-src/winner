@@ -7,6 +7,12 @@ St. Paul, MN
 55108  
 USA  
 
+## To build:
+
+        make all
+
+NOTE: This entry requires a non-standard K&R C compiler to compile.
+
 ## Judges' comments:
 
 Putchar must exist in the C library and not just as a macro.
@@ -15,6 +21,8 @@ top of the program.
 
 Line by line symmetry performed better than any C beautifier.  Think
 of if it as a C ink blot.  :-)
+
+NOTE: This entry requires a non-standard K&R C compiler to compile.
 
 Copyright (c) 1987, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

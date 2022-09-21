@@ -6,6 +6,10 @@ UNiSYS - System Development Group, Santa Monica
 Santa Monica, CA  
 90406  
 
+## To build:
+
+        make all
+
 ## Judges' comments:
 
 ### To build:

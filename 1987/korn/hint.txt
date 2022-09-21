@@ -7,6 +7,10 @@ Murray Hill, NJ
 07974  
 USA  
 
+## To build:
+
+        make all
+
 ## Judges' comments:
 
 The Judges believe that this is the best one line entry ever received.

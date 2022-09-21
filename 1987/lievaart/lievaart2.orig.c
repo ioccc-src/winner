@@ -1,14 +1,15 @@
-#define Y return
-#define R for
-#define e while
-#define I printf
-#define l int
-#define W if
-#define C y=v+111;H(x,v)*y++= *x
-#define H(a,b)R(a=b+11;a<b+89;a++)
-#define s(a)t=scanf("%d",&a)
-#define U Z I
-#define Z I("123\
+#define D define
+#D Y return
+#D R for
+#D e while
+#D I printf
+#D l int
+#D W if
+#D C y=v+111;H(x,v)*y++= *x
+#D H(a,b)R(a=b+11;a<b+89;a++)
+#D s(a)t=scanf("%d",&a)
+#D U Z I
+#D Z I("123\
 45678\n");H(x,V){putchar(".XO"[*x]);W((x-V)%10==8){x+=2;I("%d\n",(x-V)/10-1);}}
 l V[1600],u,r[]={-1,-11,-10,-9,1,11,10,9},h[]={11,18,81,88},ih[]={22,27,72,77},
 bz,lv=60,*x,*y,m,t;S(d,v,f,_,a,b)l*v;{l c=0,*n=v+100,j=d<u-1?a:-9000,w,z,i,g,q=

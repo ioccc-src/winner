@@ -3,6 +3,12 @@
 Paul Heckbert  
 Pixar  
 
+## To build:
+
+        make all
+
+NOTE: The original entry may be built with "make alt".
+
 ## Judges' comments:
 
 
@@ -16,6 +22,8 @@ to the contest tool chest.
 
 On System V systems, compile with: `-Dindex=strchr`
 To compile on a 16 bit machine, change 300000's to 30000.
+
+NOTE: This entry requires a non-standard K&R C compiler to compile.
 
 Copyright (c) 1987, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

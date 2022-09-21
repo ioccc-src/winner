@@ -7,6 +7,12 @@ Hyattsville, MD
 20781  
 USA  
 
+## To build:
+
+        make all
+
+NOTE: The original entry may be built with "make alt".
+
 ## Judges' comments:
 
 ### Try:
@@ -20,6 +26,8 @@ logical conclusion.  The layout and choice of names are classic.
 We consider this to be a beautiful counter-example for Frank Rubin's
 letter to ACM form titled: *"GOTO Considered Harmful" Considered Harmful*.
 See the Communications of the ACM, March 1987, Page 195-196.
+
+NOTE: To compile with modern compilers, you make need to: make alt.
 
 Copyright (c) 1987, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

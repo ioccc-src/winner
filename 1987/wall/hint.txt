@@ -5,6 +5,10 @@ Unisys - System Development Group Santa Monica
 9132 Kester Ave  
 Panorama City, CA  91402  USA  
 
+## To build:
+
+        make all
+
 ## Judges' comments:
 
 ### Try:
