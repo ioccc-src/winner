@@ -6,6 +6,10 @@ Chalmers University of Technology,
 412 96 Gothenburg  
 Sweden  
 
+## To build:
+
+        make all
+
 ## Judges' comments:
 
 This program computes a specific mathematical value.  Simply compile

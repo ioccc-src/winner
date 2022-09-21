@@ -5,6 +5,10 @@ University of Kent at Canterbury
 Canterbury, Kent  
 UK  
 
+## To build:
+
+        make all
+
 ## Judges' comments:
 
 Compile this program and feed ascii text into standard input.  This

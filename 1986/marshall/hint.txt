@@ -6,6 +6,12 @@ P.O. Box 517
 Paoli, PA.  
 19301  
 
+## To build:
+
+        make all
+
+NOTE: This entry uses non-standard args to main() that do not work with modern compilers.
+
 # Judges' comments:
 
 This program prints the name of the picture.  The layout is somewhat
@@ -15,6 +21,8 @@ from printing a program!
 This program was selected for the 1987 t-shirt collection.
 
 This program is known to give some C compilers a problems.
+
+NOTE: This entry requires a non-standard K&R C compiler to compile.
 
 Copyright (c) 1986, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

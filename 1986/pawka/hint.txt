@@ -5,6 +5,10 @@ Naval Ocean Systems Center
 San Diego, Ca  
 92152  
 
+## To build:
+
+        make all
+
 ## Judges' comments:
 
 The judges found this entry to be one of hardest to read without the

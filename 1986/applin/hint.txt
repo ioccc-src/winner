@@ -6,6 +6,10 @@ Ft. Collins
 Colorado  
 USA  
 
+## To build:
+
+        make all
+
 ## Judges' comments:
 
 Compile and/or execute as directed by the documentation.

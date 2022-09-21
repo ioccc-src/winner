@@ -2,6 +2,12 @@
 
 Jan Stein
 
+## To build:
+
+        make all
+
+NOTE: The original entry may be built with "make alt".
+
 Judges' comments:
 
 > NOTE: to avoid problems with news and mail, the single line was split
@@ -16,6 +22,8 @@ following argument:
 (^N is ASCII control-N).  One some machines, ^M^L is needed to get it to
 output cleanly.  Your system may require another set of characters.
 In time, you will figure out what it does. :-)
+
+NOTE: This entry requires a non-standard K&R C compiler to compile.
 
 Copyright (c) 1986, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is
