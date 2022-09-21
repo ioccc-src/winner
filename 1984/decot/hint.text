@@ -2,9 +2,11 @@
 
 Dave Decot
 
-## Compile with:
+## To build:
 
-	cc decot.c -o decot -lm
+        make all
+
+NOTE: This entry uses non-standard args to main() that do not work with modern compilers.
 
 ## Judges' comments:
 
