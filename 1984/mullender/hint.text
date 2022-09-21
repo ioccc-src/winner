@@ -6,10 +6,13 @@ Robbert van Renesse
 
 ## Judges' comments:
 
-Without question, this C program is the most obfuscated C program that
-has ever been received!  Like all great contest entries, they result
-in a change of rules for the following year.  To prevent a flood of
-similar programs, we requested that programs be non machine specific.
+NOTE: This entry is likely to fail and/or dump core on modern computers.
+
+Without question, this C program is the one of the most obfuscated
+C program that has ever been received!  Like all great contest
+entries, they result in a change of rules for the following year.
+To prevent a flood of similar programs, we requested that programs
+be non machine specific.
 
 This program was selected for the 1987 t-shirt collection.
 
