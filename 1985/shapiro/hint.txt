@@ -2,6 +2,10 @@
 
 Carl Shapiro
 
+## To build:
+
+        make all
+
 ## Judges' comments:
 
 As submitted, this program was 3 lines (2 of defines and 1 of code).

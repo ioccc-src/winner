@@ -3,6 +3,10 @@
 Lennart Augustsson
 <chalmers!augustss> 
 
+## To build:
+
+        make all
+
 ## Judges' comments:
 
 An interesting use of a recursive call to main.  Compile and execute

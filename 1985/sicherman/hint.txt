@@ -2,6 +2,14 @@
 
 Col. G. L. Sicherman
 
+## To build:
+
+        make all
+
+NOTE: This entry uses non-standard args to main() that do not work with modern compilers.
+
+NOTE: This entry uses non-standard args to main() that do not work with modern compilers.
+
 ## Judges' comments:
 
 This program abuses the C preprocessor so much that some /lib/cpp's fail to
@@ -21,6 +29,8 @@ does, then you don't, so read it again!  Explain why:
 	sicherman < sicherman.c | sicherman | diff - sicherman.c
 
 results in diff reporting a difference on some machines.
+
+NOTE: This entry requires a non-standard K&R C compiler to compile.
 
 Copyright (c) 1985, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is
