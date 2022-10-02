@@ -85,8 +85,9 @@ game in the following ways (all can be combined):
     moving; *default 231 milliseconds* and you can move faster by pressing a
     direction key quicker or even holding it down).
 
-*   If the bug (to eat) will move (**EVADE**) after user-specified number of snake
-    moves (*default 300, 0 disables*).
+*   If the bug (to eat - technically an insect but see 'bugs' section) will
+    move (**EVADE**) after user-specified number of snake moves (*default 300,
+    0 disables*).
 
 *   If the snake can go through **WALLS** (coming out at the opposite wall)
     (*default 1, yes*).
@@ -208,7 +209,9 @@ and [troubleshooting.html][] - along with the most important one
 
 *   'The screen keeps showing bugs!' Well yes, that's rather the point! Help out
     by eating them. Keep eating them until you win! Then you will have the
-    satisfaction of getting rid of the non-bug bugs! :)
+    satisfaction of getting rid of the non-bug bugs! :) Okay, technically
+    they're insects which some snakes eat but that would prevent the joke of
+    having bugs that aren't actually bugs.
 
 *   The Snake in the game doesn't fly (yes there are [flying snakes][]). For
     other snake madness see the reports of '[human snakes][]'.
@@ -425,12 +428,11 @@ to the pandemic but maybe next time (or they can do on their own).
 
 Do make sure to pay attention to all notes!
 
-##### A note on the icing and room temperature
+### A special note on the icing and room temperature
 
 Please be advised that the note there that talks about the icing being difficult
-in too warm room is rather significant; unfortunately with SARS-CoV-2 this might
-be more of a problem depending on how long it lasts and where you reside. If
-necessary use the refrigerator or else air conditioner to cool down the place.
+in too warm conditions is rather significant. If necessary use the refrigerator or
+else air conditioner to cool the place down.
 
 
 #### <a name="alt" href="#toc">What are the files prog.2.c, prog.3.c, prog.3-j.c and prog.alt.c ?</a>
