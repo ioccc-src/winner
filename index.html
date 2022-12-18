@@ -36,6 +36,8 @@ nor can you submit an entry because the <B>IOCCC</B> is yet <B>NOT open</B>.
 
 <P>Please see the watch the <A HREF="index.html#news">IOCCC news</A> below for information on the next <B>IOCCC</B>.
 
+<P>You may also check on the <A HREF="status.json">status.json</A> for the current status of the <B>IOCCC</B>.
+
 <A NAME="goals"></A>
 <HR>
 
@@ -66,6 +68,32 @@ to darken &lt; fuscus, dark.] -obfuscation n. obfuscatory adj<BR>
 
 <A NAME="news"></A>
 <H2>IOCCC news</H2>
+
+<UL>
+<LI TYPE=none><B>2022-12-18</B>
+<UL><LI TYPE=square>
+As per the suggestion of <A HREF="https://fosstodon.org/@Virtaava@home.social">Toni
+Mikkola</A> (<I>@Virtaava@home.social</I>) we now maintain a
+<A HREF="status.json">status.json</A> page on this web site.
+<P>
+In addition to the IOCCC-style <I>easter egg</I>, you may count on
+the JSON status page having a JSON member with name of <B>"contest"</B>
+that will have a value of either <B>"closed"</B> or <B>"open"</B>.
+When a future <B>IOCCC</B> is announced or the IOCCC is currently open, 
+the JSON member with name of <B>"contest"</B> will change from
+<B>"closed"</B> to <B>"open"</B>.
+<P>
+Additional JSON members be added describing the contest such as
+the IOCCC contest number, open date, close date, timezone, etc.
+The details of such additional JSON members are <I>TBD</I>.
+<P>
+When an open IOCCC closes, we won't instantaneously update the
+<A HREF="status.json">status.json</A> page.
+Instead you will have to rely on the additional JSON information
+and/or read the <A HREF="#news">IOCCC news</A>,
+and/or follow us on Mastodon via <B>@ioccc@fosstodon.org</B>.
+</UL>
+</UL>
 
 <UL>
 <LI TYPE=none><B>2022-11-29</B>
