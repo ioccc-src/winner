@@ -583,7 +583,7 @@ magic: deep_magic
 	else \
 	    ${ECHO} "If you don't eat yer meat, you can't have any pudding!"; \
 	    ${ECHO} "How can you have any pudding if you don't eat yer meat?!"; \
-	    ${ECHO} "p.s. Be cafeful with that axe, Eugene."; \
+	    ${ECHO} "Be careful with that axe, Eugene."; \
 	fi
 	@${TRUE}
 
