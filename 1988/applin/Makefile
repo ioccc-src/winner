@@ -488,7 +488,7 @@ clean:
 	${RM} -f ${OBJ} ${ALT_OBJ}
 	${RM} -f large.o
 	@-if [ -f indent.c ]; then \
-	    ${ECHO} ${RM} -f indent.c; \
+	    echo ${RM} -f indent.c; \
 	    ${RM} -f indent.c; \
 	fi
 
@@ -508,18 +508,18 @@ install:
 #
 indent.c: ${PROG}.c
 	@if which "${GINDENT}" >/dev/null 2>&1; then \
-	    ${ECHO} ${RM} -f $@; \
+	    echo ${RM} -f $@; \
 	    ${RM} -f $@; \
-	    ${ECHO} "${GINDENT} < $< > $@"; \
+	    echo "${GINDENT} < $< > $@"; \
 	    ${GINDENT} < $< > $@; \
 	elif which "${INDENT}" >/dev/null 2>&1; then \
-	    ${ECHO} ${RM} -f $@; \
+	    echo ${RM} -f $@; \
 	    ${RM} -f $@; \
-	    ${ECHO} "${INDENT} < $< > $@"; \
+	    echo "${INDENT} < $< > $@"; \
 	    ${INDENT} < $< > $@; \
 	else \
-	    ${ECHO} "no intent tool found, ident $< yourself, sorry"; \
-	    ${ECHO} "exit 1"; \
+	    echo "no intent tool found, ident $< yourself, sorry"; \
+	    echo "exit 1"; \
 	    exit 1; \
 	fi
 

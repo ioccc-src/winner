@@ -440,8 +440,8 @@ all: ${TARGET} ${DATA}
 
 prog: prog.c
 	@-if [ ! -f "$@" ]; then \
-	    ${ECHO} "Tip: Use the snake-colours script to easily configure colours and play"; \
-	    ${ECHO} "Tip: Use the play script to easily play several preset game modes"; \
+	    echo "Tip: Use the snake-colours script to easily configure colours and play"; \
+	    echo "Tip: Use the play script to easily play several preset game modes"; \
 	fi
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
@@ -484,7 +484,7 @@ everything: all ${ALT_TARGET}
 clean:
 	${RM} -f ${OBJ} ${ALT_OBJ}
 	@-if [ -f indent.c ]; then \
-	    ${ECHO} ${RM} -f indent.c; \
+	    echo ${RM} -f indent.c; \
 	    ${RM} -f indent.c; \
 	fi
 
@@ -492,7 +492,7 @@ clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET} snake.alt
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
-	    ${ECHO} 'ate sandwich'; \
+	    echo 'ate sandwich'; \
 	fi
 
 nuke: clobber
@@ -502,7 +502,7 @@ dist_clean: nuke
 	@${TRUE}
 
 install:
-	${ECHO} "Surely you are performing, Dr. Science!"
+	echo "Surely you are performing, Dr. Science!"
 	@${TRUE}
 
 test: termcaps
@@ -517,18 +517,18 @@ build: all
 #
 indent.c: prog.c
 	@if which "${GINDENT}" >/dev/null 2>&1; then \
-	    ${ECHO} ${RM} -f $@; \
+	    echo ${RM} -f $@; \
 	    ${RM} -f $@; \
-	    ${ECHO} "${GINDENT} < $< > $@"; \
+	    echo "${GINDENT} < $< > $@"; \
 	    ${GINDENT} < $< > $@; \
 	elif which "${INDENT}" >/dev/null 2>&1; then \
-	    ${ECHO} ${RM} -f $@; \
+	    echo ${RM} -f $@; \
 	    ${RM} -f $@; \
-	    ${ECHO} "${INDENT} < $< > $@"; \
+	    echo "${INDENT} < $< > $@"; \
 	    ${INDENT} < $< > $@; \
 	else \
-	    ${ECHO} "no intent prog found, ident $< yourself, sorry"; \
-	    ${ECHO} "exit 1"; \
+	    echo "no intent prog found, ident $< yourself, sorry"; \
+	    echo "exit 1"; \
 	    exit 1; \
 	fi
 
@@ -538,7 +538,7 @@ indent.c: prog.c
 ##################
 #
 love:
-	${ECHO} 'not war?'
+	echo 'not war?'
 	@${TRUE}
 
 haste:
@@ -546,29 +546,29 @@ haste:
 	@${TRUE}
 
 waste:
-	${ECHO} 'haste'
+	echo 'haste'
 	@${TRUE}
 
 make:
-	${ECHO} 'We encourage you to attend a maker faire'
+	echo 'We encourage you to attend a maker faire'
 	@${TRUE}
 
 easter_egg:
-	${ECHO} you expected to often mis-understand this $${RANDOM} magic
-	${ECHO} chongo '<was here>' "/\\oo/\\"
-	${ECHO} Eggy and Kitty
+	echo you expected to often mis-understand this $${RANDOM} magic
+	echo chongo '<was here>' "/\\oo/\\"
+	echo Eggy and Kitty
 
 fabricate fashion form frame manufacture produce: make
 	@${TRUE}
 
 sandwich:
 	@if [ `id -u` -eq 0 ]; then \
-	    ${ECHO} 'Okay.'; \
-	    ${ECHO} $${RANDOM}`date +%s`$${RANDOM} | \
+	    echo 'Okay.'; \
+	    echo $${RANDOM}`date +%s`$${RANDOM} | \
 	      ${SHASUM} -a 512256 | \
 	      ${SED} -e 's/ .*//' > $@; \
 	else \
-	    ${ECHO} 'Reall?!? Make it yourself.'; \
+	    echo 'Reall?!? Make it yourself.'; \
 	    exit 1; \
 	fi
 
@@ -580,20 +580,20 @@ supernova: nuke
 	@-if [ -r .code_anal ]; then \
 	    ${RM} -f .code_anal_v6; \
 	else \
-	    ${ECHO} "planet deniers, like a few silly IAU members, are so cute when they try to defend their logic"; \
+	    echo "planet deniers, like a few silly IAU members, are so cute when they try to defend their logic"; \
 	fi
-	${ECHO} A $@ helps ${MAKE} the elements that help form planets
+	echo A $@ helps ${MAKE} the elements that help form planets
 	@${TRUE}
 
 deep_magic:
 	@-if [ -r .code_anal ]; then \
 	    ccode_analysis --deep_magic 253d8c80830e2df66c018820004b3d4939821bbd7d781fc50d9e633797e44f65d1d62c707bb7e5a82c328a37bbf9ecb4c46fb56aa3f08641fcf45d10ba3c6081 --FNV1a_hash_512_bit "prog"; \
 	else \
-	    ${ECHO} "Wrong! Do it again!"; \
+	    echo "Wrong! Do it again!"; \
 	    sleep 1; \
-	    ${ECHO} "Wrong! Do it again!"; \
+	    echo "Wrong! Do it again!"; \
 	    sleep 1; \
-	    ${ECHO} "Wrong! Do it again!"; \
+	    echo "Wrong! Do it again!"; \
 	fi
 	@${TRUE}
 
@@ -601,22 +601,22 @@ magic: deep_magic
 	@-if [ -r .code_anal ]; then \
 	    ccode_analysis --level 391581 --mode 216193 --state Riesel --FNV1a_hash_512_bit "prog"; \
 	else \
-	    ${ECHO} "If you don't eat yer meat, you can't have any pudding!"; \
-	    ${ECHO} "How can you have any pudding if you don't eat yer meat?!"; \
-	    ${ECHO} "Be careful with that axe, Eugene."; \
+	    echo "If you don't eat yer meat, you can't have any pudding!"; \
+	    echo "How can you have any pudding if you don't eat yer meat?!"; \
+	    echo "Be careful with that axe, Eugene."; \
 	fi
 	@${TRUE}
 
 # The IOCCC resident astronomer states
 #
 charon: supernova
-	${ECHO} $@ is a dwarf planet
-	${ECHO} dwarf is a type of planet
-	${ECHO} therefore we continue to tell the IAU that $@ is a planet
+	echo $@ is a dwarf planet
+	echo dwarf is a type of planet
+	echo therefore we continue to tell the IAU that $@ is a planet
 
 pluto: supernova
 	${MAKE} charon
-	${ECHO} $@ is a dwarf planet
-	${ECHO} dwarf is a type of planet
-	${ECHO} therefore, $@ is a planet
-	${ECHO} having lots of planets is good feature because $< can help ${MAKE} a lot of them
+	echo $@ is a dwarf planet
+	echo dwarf is a type of planet
+	echo therefore, $@ is a planet
+	echo having lots of planets is good feature because $< can help ${MAKE} a lot of them
