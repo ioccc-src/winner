@@ -1123,7 +1123,7 @@ like to thank my mother for being the best mum anyone could ask for, who's
 always been here for me and whom I also inherit the keen analytical mind from. I
 love you all!
 
-I want to also thank Dave Burton for acknowledging me in his hint.markdown file
+I want to also thank Dave Burton for acknowledging me in his README.md file
 for as he put it 'being relentless with pursuit of bugs'. To think that it was
 circumstantial to my entry too makes it all the more unlikely but that doesn't
 take away the significance of it; for I am a very symbolic person and being

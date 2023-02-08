@@ -420,8 +420,8 @@ MAY_NEED_GCC= gcc
 ##############################
 #
 OBJ= prog.o recode.o
-DATA= chocolate-cake.text enigma.1 input.txt obfuscation.key \
-	obfuscation.text obfuscation.txt recode.1 recode.text \
+DATA= chocolate-cake.md enigma.1 input.txt obfuscation.key \
+	obfuscation.md obfuscation.txt recode.1 recode.md \
 	try.this.txt
 TARGET= prog recode
 #

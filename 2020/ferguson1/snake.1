@@ -4,7 +4,7 @@ snake \- Feature\-rich curses implementation of the classic 'Snake' game with ma
 .SH SYNOPSIS
 \fBsnake\fP
 .SH DESCRIPTION
-\fBsnake\fP has two cheat modes (passable walls/self[cannibalism]), a drawing/practising mode, \fIcan play by itself\fP (\fBand win!\fP), is coloured (included \fIsnake-colours.sh\fP and \fIplay.sh\fP scripts compile in player\-selected colours) and there are many other play modes (many more can be devised with the imagination and the environmental variables; see \fbENVIRONMENT\fP and the file \fIgameplay.markdown\fP for many examples) and options.
+\fBsnake\fP has two cheat modes (passable walls/self[cannibalism]), a drawing/practising mode, \fIcan play by itself\fP (\fBand win!\fP), is coloured (included \fIsnake-colours.sh\fP and \fIplay.sh\fP scripts compile in player\-selected colours) and there are many other play modes (many more can be devised with the imagination and the environmental variables; see \fbENVIRONMENT\fP and the file \fIgameplay.md\fP for many examples) and options.
 You can pause and there's even a built\-in test unit for some features!
 Some of the configurable features are:
 .PP
@@ -50,11 +50,11 @@ This is how snakes grow in the wild so is a misnomer here because snakes don't g
 .PP
 .RS
 \fB\-\fP Computer plays the game (\fBWAIT=0\fP)
-\fB(EPILEPSY/STIMULATION OVERLOAD TRIGGER WARNING\fP included in the relevant section of the \fIgameplay.markdown\fP; this goes for low \fBEVADE\fP values too).
+\fB(EPILEPSY/STIMULATION OVERLOAD TRIGGER WARNING\fP included in the relevant section of the \fIgameplay.md\fP; this goes for low \fBEVADE\fP values too).
 .RE
 .PP
 .RS
-\fB\-\fP Grow\-Shrink (Positive and Negative Winning) mode (see \fIgameplay.markdown\fP for more details).
+\fB\-\fP Grow\-Shrink (Positive and Negative Winning) mode (see \fIgameplay.md\fP for more details).
 .RE
 .PP
 .RS
@@ -160,15 +160,15 @@ Source file to the Snake game (IOCCC entry source file).
 Describes what the entry (game) is, what it looks like, how to play etc.
 Includes a variety of other information as well as NAQs (never asked questions that I believe could actually be asked so perhaps better would be infrequently asked questions, IAQs).
 .RE
-\fIgameplay.markdown\fP
+\fIgameplay.md\fP
 .RS
 Includes information on how to play, demonstrates some of the features and describes many gameplay modes.
 .RE
-\fItroubleshooting.markdown\fP
+\fItroubleshooting.md\fP
 .RS
 Information to help work out any possible problems as well as show how to configure and restore terminal dimensions for the game.
 .RE
-\fIterminals.markdown\fP
+\fIterminals.md\fP
 .RS
 A troubleshooting guide focusing more on terminals.
 .RE
@@ -193,7 +193,7 @@ To build the terminal capabilities test utility and the Snake game itself.
 .RS
 Helper script to compile the game with player selected colours.
 .RE
-\fIbugs.markdown\fP
+\fIbugs.md\fP
 .RS
 List of bugs and things that might appear to be bugs that aren't, were once bugs etc.
 .RE
@@ -247,7 +247,7 @@ Also snakes grow by moulting (technical term for shedding) so when the snake lea
 It's a misnomer: it took fewer bytes and the negative shedding is a positive consequence of unsigned arithmetic.
 .RE
 .PP
-On a more serious note see the \fBbugs.markdown\fP file.
+On a more serious note see the \fBbugs.md\fP file.
 .SH EXAMPLES
 .PP
 Test your terminal capabilities and get other various data (based on dimensions of terminal, growth size, size and max size as specified i.e. you can pass in the variables \fBLINES\fP, \fBCOLUMNS\fP, \fBMAXSIZE\fP, \fBGROW\fP and \fBSIZE\fp):
@@ -295,7 +295,7 @@ Run script that prompts for the colours to be used, compiles and then runs the g
 .PP
 That will compile the game to be the colours you select and then enable cannibalism, set the starting size to 15, max size to 45 and walls are made impassable.
 .PP
-For more gameplay information and modes check \fIgameplay.markdown\fP; and for an interactive script that prompts for some of those modes see the \fIplay.sh\fP script.
+For more gameplay information and modes check \fIgameplay.md\fP; and for an interactive script that prompts for some of those modes see the \fIplay.sh\fP script.
 .SH AUTHOR
 Written by Cody Boone Ferguson for IOCCC 2020 (the 27th IOCCC).
 .SH SEE ALSO

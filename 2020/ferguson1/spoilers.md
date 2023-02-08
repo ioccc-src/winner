@@ -1,6 +1,6 @@
 # Introduction (SPOILER ALERT)
 
-In the [gameplay.markdown][] ([gameplay.html][]) file I have given enough
+In the [gameplay.md][] ([gameplay.html][]) file I have given enough
 information to know how the game looks, how to move the snake, how to pause etc.
 In this file I am including (some) information on how the game actually works:
 the technical details as it were, obfuscation techniques and also some of the
@@ -937,7 +937,7 @@ display something, it squeezes a few more bytes and having a space is hardly an
 imposition on usage (and for that matter having a 'o' at 0,0 isn't either).
 
 
-[gameplay.markdown]: gameplay.markdown
+[gameplay.md]: gameplay.md
 [gameplay.html]: gameplay.html
 [COMPILING]: COMPILING
 [HACKING]: HACKING

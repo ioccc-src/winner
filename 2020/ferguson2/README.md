@@ -42,7 +42,7 @@ A useful man page for this entry.  To render, try:
 
     man ./enigma.1
 
-* recode.markdown ([recode.html][])
+* recode.md ([recode.html][])
 
 Some useful information about recode.c
 
@@ -198,7 +198,7 @@ After that you can input the string and it'll go from there.
 #### <a name="example" href="#toc">An example run</a>
 
 BTW: There's a much more entertaining (and delicious) challenge or exercise in
-[recode.markdown][] (involves [chocolate-cake.html][]). These however show
+[recode.md][] (involves [chocolate-cake.html][]). These however show
 the general program as well as how to use the two winning entries of the Morse
 code that I referred to earlier.
 
@@ -326,7 +326,7 @@ I didn't think of everything. My entry was meant to be a simulator only as far
 as the ciphering goes but I thought this would make it much more interesting:
 make it more flexible by a wrapper program.
 
-For examples using it (and a delicious challenge) see [recode.markdown][]. See
+For examples using it (and a delicious challenge) see [recode.md][]. See
 also [recode.1][] and [enigma.1][] man pages.
 
 
@@ -385,7 +385,7 @@ There are two reflectors and the same applies: in C 0-1 but in human it's
 1-2 (technically these were reflectors B and C in the Enigma machine which I
 display by name in recode.c just like with the rotors).
 
-For more information see [recode.markdown][] or [recode.html][].
+For more information see [recode.md][] or [recode.html][].
 
 BTW: If you need a reminder to go to the gym just do your Enigma ABCs and it
 should help you remember (though not at this time in our world it might help you
@@ -432,16 +432,16 @@ It's an Enigma simulator! Isn't that proof that it's obfuscated itself?! :)
 Silliness aside [obfuscation.txt][] has some of the ways I think this entry is
 obfuscated.  To decipher try:
 
-	    ./recode -Robfuscation.key -fobfuscation.txt | ./prog - 2>/dev/null > obfuscation.markdown
+	    ./recode -Robfuscation.key -fobfuscation.txt | ./prog - 2>/dev/null > obfuscation.md
 
 To encipher:
 
-	    ./recode -Robfuscation.key -fobfuscation.markdown | ./prog - 2>/dev/null > obfuscation.txt
+	    ./recode -Robfuscation.key -fobfuscation.md | ./prog - 2>/dev/null > obfuscation.txt
 
 The file [obfuscation.key][] is the key to decipher/encipher
 [obfuscation.txt][].
 
-For the lazy [obfuscation.markdown][] has the deciphered version. I am afraid
+For the lazy [obfuscation.md][] has the deciphered version. I am afraid
 I'm not so inclined to do that for the cake recipe: the idea there is to make it
 a fun exercise that when solved unlocks a wonderful double-layered chocolate
 fudge cake recipe. But given that my 'Don't tread on me award' entry also
@@ -466,7 +466,7 @@ machines this would not work because they had to choose from a set of rotors and
 there were no duplicates. This shouldn't be a problem here however except that
 it won't be a possible configuration of the real Enigma machine. The `recode`
 program *however does validate this* (except when reading in settings via the
-`-R` option which I explain in the [recode.markdown][] / [recode.html][] file).
+`-R` option which I explain in the [recode.md][] / [recode.html][] file).
 
 *   The way the plugboard - for the machines that had them - is if you connect A
 to B then no other letters can connect to A or B. Earlier there wasn't proper
@@ -667,10 +667,10 @@ that.
 [Interactive Enigma Machine]: http://enigmaco.de/enigma/enigma.html
 [enigma.1]: enigma.1
 [recode.1]: recode.1
-[recode.markdown]: recode.markdown
+[recode.md]: recode.md
 [chocolate-cake.html]: chocolate-cake.html
 [recode.c]: recode.c
-[obfuscation.markdown]: obfuscation.markdown
+[obfuscation.md]: obfuscation.md
 [obfuscation.txt]: obfuscation.txt
 [obfuscation.key]: obfuscation.key
 [Tony Sale's pages on The Enigma cipher machine]: http://www.codesandciphers.co.uk/enigma/index.htm

@@ -4,9 +4,9 @@ will need two different packages: the library itself but also the dev package
 that has the header files etc. If you use the Makefile obviously you need `make'
 too.
 
-In gameplay.markdown I show how to easily customise the colours, set up
-different gameplay modes and various other things. The troubleshooting.markdown
-and terminals.markdown as well as bugs.markdown include a variety of information
+In gameplay.md I show how to easily customise the colours, set up
+different gameplay modes and various other things. The troubleshooting.md
+and terminals.md as well as bugs.md include a variety of information
 should you run into trouble.
 
 --

@@ -69,11 +69,11 @@ for the input keys.
 # 1. <a name="support" href="#toc">Testing terminal environment/capabilities</a>
 
 Most people probably won't have any issue at all but for those who have any
-problems with the terminal see the [terminals.markdown][] file for more
+problems with the terminal see the [terminals.md][] file for more
 information on the terminal capabilities testing utility I include.
 
-For troubleshooting other problems see [troubleshooting.markdown][]
-([troubleshooting.html][]) and [bugs.markdown][] ([bugs.html][]).
+For troubleshooting other problems see [troubleshooting.md][]
+([troubleshooting.html][]) and [bugs.md][] ([bugs.html][]).
 
 
 # 2. <a name="input" href="#toc">Input keys</a>
@@ -423,7 +423,7 @@ less than again - I'm not going to try and figure that out however). Anyway:
 	    X:24/49 Y:8/16 S:658/658 B:0
 
 Observe that the size isn't the default 997: because the screen size is too
-small for that value (see [terminals.markdown][]).
+small for that value (see [terminals.md][]).
 
 The reason I chose 997 is that it leaves a bit of a challenge for some (maybe
 most) people but it's still winnable. Previously even I couldn't have won unless
@@ -455,7 +455,7 @@ If you wish to quit you can hit 'q' (case-insensitive). For example:
 
 # 4. <a name="modes" href="#toc">Gameplay modes</a>
 
-Here I list a number of different modes of play. In the [bugs.markdown][]
+Here I list a number of different modes of play. In the [bugs.md][]
 ([bugs.html][]) file I even show how there's a built-in test unit for some
 modes! There are certainly other modes that could be imagined: the modes below
 happened over time and some were simply an accidental discovery or something I
@@ -804,11 +804,11 @@ the imagination and creativity almost anything is possible.** This is something
 they believe in themselves!** I would have never thought this the case for me
 years ago but I know it's true now. **Believe in yourself. Always.**
 
-[terminals.markdown]: terminals.markdown
+[terminals.md]: terminals.md
 [terminals.html]: terminals.html
-[troubleshooting.markdown]: troubleshooting.markdown
+[troubleshooting.md]: troubleshooting.md
 [troubleshooting.html]: troubleshooting.html
-[bugs.markdown]: bugs.markdown
+[bugs.md]: bugs.md
 [bugs.html]: bugs.html
 [spoilers.markdown]: spoilers.markdown
 [snake-colours]: snake-colours

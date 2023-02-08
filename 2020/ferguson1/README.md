@@ -37,19 +37,19 @@ This game has a number of configurable pitfalls including walls and snakes.
 
 There is a good deal of useful documentation that is provided with this entry:
 
-* gameplay.markdown ([gameplay.html][])
+* gameplay.md ([gameplay.html][])
 
 Documented game *features*!
 
-* terminals.markdown ([terminals.html][])
+* terminals.md ([terminals.html][])
 
 Information about terminal capabilities, dimensions (setting and how to restore sanity if it causes any problems) as well as colours (limitations etc.).
 
-* troubleshooting.markdown ([troubleshooting.html][])
+* troubleshooting.md ([troubleshooting.html][])
 
 Workaround for various game *features*
 
-* bugs.markdown ([bugs.html][])
+* bugs.md ([bugs.html][])
 
 Bugs and things that might seem like bugs but are not.
 
@@ -75,7 +75,7 @@ Snake has two cheat modes (passable walls and self [cannibalism]), a drawing (or
 practising) mode, *can play by itself (**and win!**)*, is coloured (included
 [snake-colours.sh][] and [play.sh][] scripts compile in player-selected
 colours) and there are many other play modes (many more can be devised with the
-imagination and the environmental variables; see [gameplay.markdown][] /
+imagination and the environmental variables; see [gameplay.md][] /
 [gameplay.html][] for many examples) and options.  You can pause and there's
 even a built-in test unit for some features!  The following variables change the
 game in the following ways (all can be combined):
@@ -112,16 +112,16 @@ game in the following ways (all can be combined):
     included in the relevant section (this goes for a low **EVADE** value too).
 
 *   Grow-Shrink mode (Positive and Negative Winning) mode (see
-    [gameplay.markdown][] for more details).
+    [gameplay.md][] for more details).
 
 *   The dimensions of the game (this is actually a terminal thing but I document
     how to do this and its potential pitfalls) (**LINES** , **COLUMNS**).
 
 There are no complicated command line invocations; it's just a matter of passing
 into the game descriptively named variables and I include a script that sets up
-many different gameplay modes ([gameplay.markdown][] and [play.sh][]).
+many different gameplay modes ([gameplay.md][] and [play.sh][]).
 
-The [gameplay.markdown][] ([gameplay.html][]) file has all the information on
+The [gameplay.md][] ([gameplay.html][]) file has all the information on
 what the game looks like, how to play, the different types of modes (that I have
 thought of so far) including all those in the above list. Along with the
 [play.sh][] and [snake-colours.sh][] scripts it's probably the most important
@@ -139,18 +139,18 @@ Probably just as important is [chocolate-cake.html][] with an old but wonderful
 recipe (because the judges love chocolate and who can blame them? - also it goes
 with one of the IAQs I include later).
 
-The [troubleshooting.markdown][] ([troubleshooting.html][]) file has some advice
+The [troubleshooting.md][] ([troubleshooting.html][]) file has some advice
 on potential problems (and things that might appear to be problems at first
 glance but are not) that I have thought of or encountered.
 
-The [terminals.markdown][] ([terminals.html][]) has a variety of information
+The [terminals.md][] ([terminals.html][]) has a variety of information
 specific to terminals from input/directions, dimensions, sanity and colours: a
 sort of troubleshooting guide for terminals with some additional information.
 
 The [spoilers.markdown][] has a variety of information including some of the
 obfuscation techniques and a bit of how it works.
 
-The [bugs.markdown][] ([bugs.html][]) has a list of known bugs and things that
+The [bugs.md][] ([bugs.html][]) has a list of known bugs and things that
 look like bugs but aren't as well as documenting a built-in test unit for some
 features.
 
@@ -222,7 +222,7 @@ and [troubleshooting.html][] - along with the most important one
     took fewer bytes and the negative shedding is a positive consequence of
     unsigned arithmetic.
 
-On a more serious note look at [bugs.markdown][] ([bugs.html][]).
+On a more serious note look at [bugs.md][] ([bugs.html][]).
 
 
 ### <a name="naqs" href="#toc">NAQs/IAQs (Never/Infrequently Asked Questions)</a>
@@ -453,18 +453,18 @@ both do.
 
 [COMPILING]: COMPILING
 [HACKING]: HACKING
-[bugs.markdown]: bugs.markdown
+[bugs.md]: bugs.md
 [bugs.html]: bugs.html
-[troubleshooting.markdown]: troubleshooting.markdown
+[troubleshooting.md]: troubleshooting.md
 [troubleshooting.html]: troubleshooting.html
 [human snakes]: http://www.macroevolution.net/snake-human-hybrids.html
 [chocolate-cake.html]: chocolate-cake.html
 [spoilers.markdown]: spoilers.markdown
-[terminals.markdown]: terminals.markdown
+[terminals.md]: terminals.md
 [Surround]: https://en.wikipedia.org/wiki/Surround_(video_game)
 [Snake walk: The physics of slithering]: https://www.bbc.co.uk/news/science-environment-35563941
 [snake-colours.sh]: snake-colours.sh
-[gameplay.markdown]: gameplay.markdown
+[gameplay.md]: gameplay.md
 [gameplay.html]: gameplay.html
 [flying snakes]: https://www.bbc.co.uk/news/science-environment-25943693
 [play.sh]: play.sh

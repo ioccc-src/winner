@@ -9,17 +9,29 @@ it as structured as possible/easiest to find.
 
 <a name="toc"></a>
 -   [The top wall isn't (all/some of the time) visible!](#topwall)
+
 -   [The snake isn't moving!](#notmoving)
+
 -   [I can't see the snake head (or other part of the snake)!](#invisiblehead)
+
 -   [I can't see the bug!](#invisiblebug)
+
 -   [The game froze!](#froze)
+
 -   [The game gets slower as the snake gets bigger!](#bigsnake)
+
 -   [I set SIZE=0 GROW=1, ate a bug but still only the head was visible!  Why?](#headonly)
+
 -   [I like black text on a white background but even with a white background terminal it ends up black!](#monochrome)
+
 -   [The text is hard to see (not bright enough)!](#toodark)
+
 -   [Can I move the snake faster temporarily without having to modify the wait time?](#movefaster)
+
 -   [On environmental variables more generally and string to int conversions](#envvars)
+
 -   [Errors and error reporting](#errors)
+
 
 ## <a name="topwall" href="#toc">The top wall isn't (all/some of the time) visible!</a>
 
@@ -78,7 +90,7 @@ e.g. when the snake is growing.
     numerous causes for this some of which are a busy computer but ultimately
     it'll catch up; just give it the time it needs.
 
-* BOTTOM LINE: If you want more information then see the [bugs.markdown][] file.
+* BOTTOM LINE: If you want more information then see the [bugs.md][] file.
 
 
 ## <a name="invisiblehead" href="#toc">I can't see the snake head (or other part of the snake)!</a>
@@ -286,7 +298,7 @@ so that's probably why; in CentOS I did have to install it specially.
     eat too many bytes in the entry (I cite the functions in the HACKING file).
 
     I discuss colours and terminals in much more detail in
-    [terminals.markdown][] ([terminals.html][]).
+    [terminals.md][] ([terminals.html][]).
 
 
 ## <a name="toodark" href="#toc">The text is hard to see (not bright enough)!</a>
@@ -376,7 +388,7 @@ Is invalid input because octal only has digits 0 - 7: the resulting size will be
 
 
 I discuss the signed/unsigned issue to do with curses and sizes in C being
-unsigned in [bugs.markdown][] but probably there isn't anything more to say here.
+unsigned in [bugs.md][] but probably there isn't anything more to say here.
 
 ## <a name="errors" href="#toc">Errors and error reporting</a>
 
@@ -416,8 +428,8 @@ is 0 and I limit the size to be no bigger than the max size.
 
 [HACKING]: HACKING
 [prog.c]: prog.c
-[bugs.markdown]: bugs.markdown
-[terminals.markdown]: terminals.markdown
+[bugs.md]: bugs.md
+[terminals.md]: terminals.md
 [terminals.html]: terminals.html
 [snake-colours]: snake-colours
 [Snakey]: https://www.hp-lexicon.org/character/gaunt-family/morfin-gaunt/
