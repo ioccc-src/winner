@@ -14,7 +14,7 @@ Twitter: @mciura
 ### Try:
 
     ./prog < Makefile
-    ./prog < hint.text
+    ./prog < README.md
 
 ### Selected Judges Remarks:
 

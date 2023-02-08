@@ -40,9 +40,7 @@ weasel.1		    The system wide version of the man page for when
 
 
 
-hint.text		    The source of the hint.html file [3].
-hint.txt		    'hint.txt' is a possible name in the future
-			    according to the judges.
+README.md		    The source of the index.html file [3].
 
 
 hint.html		    More thorough documentation including example

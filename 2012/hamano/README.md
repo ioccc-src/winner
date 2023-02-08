@@ -15,7 +15,7 @@ Tsukasa Hamano
 
 ### Try:
 
-    ./hamano < hint.text > hint.pdf
+    ./hamano < README.md > hint.pdf
 
     # You can read output.pdf with PDF reader
     acroread hint.pdf

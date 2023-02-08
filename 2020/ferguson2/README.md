@@ -662,7 +662,7 @@ that.
 
 [1992 Worst Abuse of the Rules]: http://www.ioccc.org/1992/nathan/nathan.hint
 [1998 ASCII / Morse code translator]: http://www.ioccc.org/1998/dorssel/dorssel.hint
-[2014 Morse audio transcoder]: http://www.ioccc.org/2014/vik/hint.text
+[2014 Morse audio transcoder]: http://www.ioccc.org/2014/vik/README.md
 [Enigma Message Procedures]: http://users.telenet.be/d.rijmenants/en/enigmaproc.htm
 [Interactive Enigma Machine]: http://enigmaco.de/enigma/enigma.html
 [enigma.1]: enigma.1

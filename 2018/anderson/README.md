@@ -13,7 +13,7 @@ Derek Anderson
 
     ./prog < prog.c
     ./prog < prog.orig.c
-    ./prog < hint.text
+    ./prog < README.md
 
 ### Selected Judges Remarks:
 

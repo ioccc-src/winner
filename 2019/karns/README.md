@@ -15,7 +15,7 @@ Twitter: @jkarnss
 
     make test
 
-    ./prog < hint.text
+    ./prog < README.md
 
 ### Selected Judges Remarks:
 
