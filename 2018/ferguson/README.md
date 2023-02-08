@@ -35,7 +35,7 @@ evolutionary relatives of the primate order in which us Homo sapiens hang
 from the phylogenetic tree of life.
 
 If you wish your computer to maintain one branch in the Cretaceous C code era,
-while using more Cenozoic minded code migration, read rpm.markdown.
+while using more Cenozoic minded code migration, read rpm.md.
 
 If you find yourself in an evolutionary dead end, try:
 
@@ -104,7 +104,7 @@ maximum size of the chromosome (target string; the maximum length is **`S - 1`**
 but it must be >= the default 38) and the number of offspring, respectively. I
 also give [example compiler invocations](#compiling), [portability
 notes](#portability), an [more portability notes](#bugs) and a [note on
-rpm.markdown](#rpm).
+rpm.md](#rpm).
 
 On the subject of **`S`** and **`N`**: As the judges' suggested runs imply you
 can change the target string at runtime; **`make test`** runs a script
@@ -122,7 +122,7 @@ dedications and thanks. Here too I include a link to a website which will be
 dedicated to this entry beyond what will be published on the IOCCC website
 
 [FILES]: FILES
-[rpm.markdown]: rpm.markdown
+[rpm.md]: rpm.md
 
 ## **1. <a name="what">What it is</a>**
 
@@ -941,10 +941,10 @@ however leaving it as it is because this is what won.
 Skip to [Final thoughts](#thoughts).
 
 I have included a RPM spec file for those with a Red Hat based Linux
-distribution; see [rpm.markdown][] for details (including why I implemented
+distribution; see [rpm.md][] for details (including why I implemented
 this) if for some (strange?) reason you're interested.
 
-[rpm.markdown]: rpm.markdown
+[rpm.md]: rpm.md
 
 
 ## **6. <a name="thoughts">Final thoughts</a>**

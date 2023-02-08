@@ -52,7 +52,7 @@ hint.html		    More thorough documentation including example
 hint.css		    The CSS file for the hint.html file [3].
 
 
-rpm.markdown		    This file briefly answers 'why' I submitted a rpm
+rpm.md		    This file briefly answers 'why' I submitted a rpm
 			    spec file 'weasel.spec' as well as the possibility
 			    of building the RPM for others (despite the fact I
 			    am confident that I'm the only one who would make
