@@ -129,11 +129,11 @@ dodsond2.orig: dodsond2.gz
 	@${RM} -f dodsond2.orig.c
 	-${GUNZIP} < dodsond2.gz > dodsond2.orig.c
 	-@if [ -s dodsond2.orig.c ]; then \
-	    ${ECHO} "${CC} ${CFLAGS} dodsond2.orig.c -o dodsond2.orig"; \
+	    echo "${CC} ${CFLAGS} dodsond2.orig.c -o dodsond2.orig"; \
 	    ${CC} ${CFLAGS} dodsond2.orig.c -o dodsond2.orig; \
 	else \
 	    ${RM} -f dodsond2.orig.c; \
-	    ${ECHO} "sorry, we could not gunzip dodsond2.gz"; \
+	    echo "sorry, we could not gunzip dodsond2.gz"; \
 	fi
 
 dodsond2.gz: dodsond2.gz.uu

@@ -157,7 +157,7 @@ source code files.
 A test script that demonstrates the weasel program (this script is used
 by \fBmake test\fP) by reading in strings, one at a time, and invoking
 the program with that string as the target chromosome. See the
-\fIhint.text\fP or \fIhint.html\fP for more details on using this script.
+\fIREADME.md\fP or \fIhint.html\fP for more details on using this script.
 .RE
 .PP
 \fItest-strings.txt\fP
@@ -165,7 +165,7 @@ the program with that string as the target chromosome. See the
 The data file the \fItest.sh\fP script reads strings from.
 .RE
 .PP
-\fIhint.html\fP, \fIhint.text\fP
+\fIhint.html\fP, \fIREADME.md\fP
 .RS
 More detailed documentation.
 .RE

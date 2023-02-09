@@ -72,7 +72,7 @@ WINNERS= burton carlini endoh1 endoh2 endoh3 ferguson1 ferguson2 giles \
 #
 all:
 	@for i in ${WINNERS} ; do \
-	    ${ECHO} "(cd $$i && $(MAKE) X11_LIBDIR=${X11_LIBDIR} X11_INCDIR=${X11_INCDIR} $@)"; \
+	    echo "(cd $$i && $(MAKE) X11_LIBDIR=${X11_LIBDIR} X11_INCDIR=${X11_INCDIR} $@)"; \
 	    (cd $$i && $(MAKE) "X11_LIBDIR=${X11_LIBDIR}" "X11_INCDIR=${X11_INCDIR}" $@); \
 	done
 
@@ -80,7 +80,7 @@ all:
 #
 alt:
 	@for i in ${WINNERS} ; do \
-	    ${ECHO} "(cd $$i && $(MAKE) X11_LIBDIR=${X11_LIBDIR} X11_INCDIR=${X11_INCDIR} $@)"; \
+	    echo "(cd $$i && $(MAKE) X11_LIBDIR=${X11_LIBDIR} X11_INCDIR=${X11_INCDIR} $@)"; \
 	    (cd $$i && $(MAKE) "X11_LIBDIR=${X11_LIBDIR}" "X11_INCDIR=${X11_INCDIR}" $@); \
 	done
 
@@ -93,25 +93,25 @@ everything: all alt
 
 clean:
 	@for i in ${WINNERS} ; do \
-	    ${ECHO} "(cd $$i && $(MAKE) $@)"; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
 	    (cd $$i && $(MAKE) $@); \
 	done
 
 clobber:
 	@for i in ${WINNERS} ; do \
-	    ${ECHO} "(cd $$i && $(MAKE) $@)"; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
 	    (cd $$i && $(MAKE) $@); \
 	done
 
 nuke: clobber
 	@for i in ${WINNERS} ; do \
-	    ${ECHO} "(cd $$i && $(MAKE) $@)"; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
 	    (cd $$i && $(MAKE) $@); \
 	done
 
 install:
 	@for i in ${WINNERS} ; do \
-	    ${ECHO} "(cd $$i && $(MAKE) $@)"; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
 	    (cd $$i && $(MAKE) $@); \
 	done
 
@@ -122,43 +122,43 @@ install:
 #
 love:
 	@for i in ${WINNERS} ; do \
-	    ${ECHO} "(cd $$i && $(MAKE) $@)"; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
 	    (cd $$i && $(MAKE) $@); \
 	done
 
 haste:
 	@for i in ${WINNERS} ; do \
-	    ${ECHO} "(cd $$i && $(MAKE) $@)"; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
 	    (cd $$i && $(MAKE) $@); \
 	done
 
 waste:
 	@for i in ${WINNERS} ; do \
-	    ${ECHO} "(cd $$i && $(MAKE) $@)"; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
 	    (cd $$i && $(MAKE) $@); \
 	done
 
 make:
 	@for i in ${WINNERS} ; do \
-	    ${ECHO} "(cd $$i && $(MAKE) $@)"; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
 	    (cd $$i && $(MAKE) $@); \
 	done
 
 easter_egg:
 	@for i in ${WINNERS} ; do \
-	    ${ECHO} "(cd $$i && $(MAKE) $@)"; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
 	    (cd $$i && $(MAKE) $@); \
 	done
 
 fabricate fashion form frame manufacture produce:
 	@for i in ${WINNERS} ; do \
-	    ${ECHO} "(cd $$i && $(MAKE) $@)"; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
 	    (cd $$i && $(MAKE) $@); \
 	done
 
 sandwich:
 	@for i in ${WINNERS} ; do \
-	    ${ECHO} "(cd $$i && $(MAKE) $@)"; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
 	    (cd $$i && $(MAKE) $@); \
 	done
 
@@ -167,12 +167,12 @@ sandwich:
 #
 charon: supernova
 	@for i in ${WINNERS} ; do \
-	    ${ECHO} "(cd $$i && $(MAKE) $@)"; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
 	    (cd $$i && $(MAKE) $@); \
 	done
 
 pluto: supernova
 	@for i in ${WINNERS} ; do \
-	    ${ECHO} "(cd $$i && $(MAKE) $@)"; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
 	    (cd $$i && $(MAKE) $@); \
 	done

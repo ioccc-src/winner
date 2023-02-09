@@ -38,7 +38,7 @@ AutoReq:	1
 
 %build
 make weasel weasel-simple
-mv -f hint.txt hint.text 2>/dev/null || :
+mv -f README.md README.md 2>/dev/null || :
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -54,7 +54,7 @@ install -m 644 prog-simple.c -D $RPM_BUILD_ROOT%{_usrsrc}/weasel/weasel-simple.c
 ln -s weasel-simple.c $RPM_BUILD_ROOT%{_usrsrc}/weasel/prog-simple.c
 install -m 644 weasel.1 -D $RPM_BUILD_ROOT%{_mandir}/man1/weasel.1
 install -m 644 hint.html -D $RPM_BUILD_ROOT%{_docdir}/weasel/weasel.html
-install -m 644 hint.text -D $RPM_BUILD_ROOT%{_docdir}/weasel/weasel.markdown
+install -m 644 README.md -D $RPM_BUILD_ROOT%{_docdir}/weasel/weasel.markdown
 install -m 644 hint.css -D $RPM_BUILD_ROOT%{_docdir}/weasel/hint.css
 install -m 644 FILES -D $RPM_BUILD_ROOT%{_docdir}/weasel/FILES
 
