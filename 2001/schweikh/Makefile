@@ -26,7 +26,7 @@
 # GitHub pull requests are welcome:
 #
 # If you have a patch that might make running an entry work in modern Unix-like
-# environments, please create a GitHub pull request for the IOCCC judgess to
+# environments, please create a GitHub pull request for the IOCCC judges to
 # consider.
 #
 # Suggestions and corrections regarding Makefiles, winning author information,
