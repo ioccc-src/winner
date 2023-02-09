@@ -7,7 +7,7 @@
 # in writing from both Landon Curt Noll and Larry Bassel.
 
 
-SHELL=/bin/sh
+SHELL= /bin/sh
 
 all:
 	@-for i in [12][0-9][0-9]?; do \
