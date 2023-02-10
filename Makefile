@@ -9,6 +9,8 @@
 
 SHELL= /bin/sh
 
+.PHONY: all clean clobber install
+
 all:
 	@-for i in [12][0-9][0-9]?; do \
 	    if [ -f $$i/[Mm]akefile ]; then \
