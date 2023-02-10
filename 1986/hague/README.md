@@ -11,16 +11,16 @@ UK
 
 ## Judges' comments:
 
-Compile this program and feed ascii text into standard input.  This
+Compile this program and feed ASCII text into standard input.  This
 program is known to pass lint on some systems and abort lint on
 others.
 
 This program was selected for the 1987 t-shirt collection.
 
-Think morse code when you ponder this program.  Note how use of
+Think Morse code when you ponder this program.  Note how use of
 similar variables can be obfuscating!  The author notes that this
-program implements the international morse standard.  Now for extra
-credit, what morse message does the program spell out?
+program implements the international Morse standard.  Now for extra
+credit, what Morse message does the program spell out?
 
 Copyright (c) 1986, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is
