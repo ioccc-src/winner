@@ -8,7 +8,7 @@ Col. G. L. Sicherman
 
 NOTE: This entry uses non-standard args to main() that do not work with modern compilers.
 
-NOTE: This entry uses non-standard args to main() that do not work with modern compilers.
+NOTE: This entry requires a non-standard K&R C compiler to compile.
 
 ## Judges' comments:
 
@@ -30,7 +30,6 @@ does, then you don't, so read it again!  Explain why:
 
 results in diff reporting a difference on some machines.
 
-NOTE: This entry requires a non-standard K&R C compiler to compile.
 
 Copyright (c) 1985, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is
