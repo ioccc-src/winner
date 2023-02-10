@@ -37,8 +37,8 @@ RULES:	1) The source must be 1024 bytes or less.  NO exceptions!
 	   
 				decwrl!nsc!obfuscate
 
-	   Entries sent by UUCP Email will be confirmed starting 1-May-86.
-	   People are encouraged to submit entries via Email, however one may
+	   Entries sent by UUCP email will be confirmed starting 1-May-86.
+	   People are encouraged to submit entries via email, however one may
 	   mail entries the following address:
 
 		International Obfuscated C Code Contest
@@ -98,7 +98,7 @@ POLL:	We want to know what you think is the most poorly coded utility
 	2) Confine your vote to the standard set of commands.  I.e., don't
 	   flame about local commands or user contributed software.
 
-	3) Submit your votes via Email to:
+	3) Submit your votes via email to:
 
 	   	for 4.xBSD:  decwrl!nsc!bsd_util
 	   	for Sys V:   decwrl!nsc!sysV_util

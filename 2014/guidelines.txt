@@ -624,7 +624,7 @@ JUDGING PROCESS:
         twitter handle(s) (if provided and if anonymity was not requested)
         country code(s) of the author(s)
 
-    After the initial announcement, we attempt to send EMail to the
+    After the initial announcement, we attempt to send an email to the
     authors of the winning entries.  One reason we do this is to give
     the authors a chance to comment on the way we have presented their
     entry.  They are given the chance to correct mistakes and typos.  We
@@ -763,12 +763,12 @@ ANNOUNCEMENT OF WINNERS:
 
 FOR MORE INFORMATION:
 
-    You may contact the judges by sending EMail to the following address:
+    You may contact the judges by sending an email to the following address:
 
 |       q.2014@ioccc.org        (do not submit entries to this address)
 
 |   You must include the words 'ioccc 2014 question' in the subject of your
-    EMail message when sending EMail to the judges.
+    email when sending email to the judges.
 
     Questions and comments about the contest are welcome.  Comments about
     confusing rules and guidelines are also welcome.

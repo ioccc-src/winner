@@ -52,7 +52,7 @@ org:	School/Company/Organization
 addr:	postal address
 	use tab indented lines to continue
 	don't forget to include the country
-email:  Email address from a well known site or registered domain.
+email:  email address from a well known site or registered domain.
         If you give several forms, list them on separate tab indented lines.
 anon:	y or n	   (y => remain anonymous, n => ok to publish this info)
 ---info---
@@ -132,21 +132,21 @@ into a file named is 'prog.c'.  The resulting file must follow rule #2.
     7) The program must be of original work.  All programs must be in the
        public domain.  All copyrighted programs will be rejected.
 
-    8) Entries must be received prior to 09-May-92 0:00 UTC.  (UTC is
-       essentially equivalent to Greenwich Mean Time)  Email your entries to:
+    8) Entries must be received prior to 09-May-92 0:00 UTC (UTC is
+       essentially equivalent to Greenwich Mean Time). Email your entries to:
 
 		...!{apple,pyramid,sun,uunet}!hoptoad!obfuscate
 		obfuscate@toad.com
 
        We request that your message use the subject 'ioccc entry'.
 
-       If possible, we request that you hold off on Emailing your entries
+       If possible, we request that you hold off on emailing your entries
        until 1-Mar-92 0:00 UTC.  Early entries will be accepted, however.
        We will attempt to email a confirmation to the the first author for
        all entries received after 1-Mar-92 0:00 UTC.
 
     9) Each person may submit up to 8 entries per contest year.  Each entry
-       must be sent in a separate Email letter.
+       must be sent in a separate email letter.
 
    10) Entries requiring human interaction to be built are not allowed.  
        Compiling an entry produce a file (or files) which may be executed.
@@ -163,7 +163,7 @@ FOR MORE INFORMATION:
     The rules and the guidelines may (and often do) change from year to
     year.  You should be sure you have the current rules and guidelines
     prior to submitting entries.  The IOCCC rules, guidelines and mkentry
-    program may be obtained from the judges using the Email address above.
+    program may be obtained from the judges using the email address above.
 
     See the official IOCCC web site:
 

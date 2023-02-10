@@ -358,7 +358,7 @@ ENTRY FORMAT:
     the entry against the size rules.
 
     If you have any suggestions, comments, fixes or complaints about
-    the mkentry.c program, please send EMail to the judges.  (see below)
+    the mkentry.c program, please send an email to the judges.  (see below)
 
     The following is a sample entry (the | change bars are not part
     of the example, don't add them to your entry!)
@@ -584,7 +584,7 @@ end
     format may be ignored.  That is, don't place text outside of the
     entry and expect us to see it.  (Our decoding tools are not AI
     progs!) If you need tell the judges something, put it in the
-    ---remark--- section, or send a EMail to:
+    ---remark--- section, or send an email to:
 
 	...!{apple,sun,uunet}!hoptoad!judges		(not the address for
 	judges@toad.com					 submitting entries)
@@ -616,7 +616,7 @@ JUDGING PROCESS:
     Entries are judged by Larry Bassel, Landon Curt Noll and Sriram
     Srinivasan.
 
-    Entries are unpacked into individual directories.  The EMail message
+    Entries are unpacked into individual directories.  The email
     is unpacked into individual files, each containing:
 
 	---entry--- section
@@ -624,7 +624,7 @@ JUDGING PROCESS:
 	all ---info--- sections
 	---build--- section
 	---program--- section
-	any other text, including the EMail message headers
+	any other text, including the email headers
 
     Prior to judging, the 'any other text' file is scanned to be sure
     it does not contain useful information (or in case the entry was
@@ -646,7 +646,7 @@ JUDGING PROCESS:
     we do indicate the volume of paper consumed when presenting the IOCCC
     winners at talks)
 
-    After the Usenix announcement, we attempt to send EMail to the
+    After the Usenix announcement, we attempt to send an email to the
     authors of the winning entries.  One reason we do this is to give
     the authors a chance to comment on the way we have presented their
     entry.  They are given the chance to correct mistakes and typos.  We
@@ -753,7 +753,7 @@ ANNOUNCEMENT OF WINNERS:
 
 FOR MORE INFORMATION:
 
-    You may contact the judges by sending EMail to the following address:
+    You may contact the judges by sending an email to the following address:
 
 	...!{apple,sun,uunet}!hoptoad!judges		(not the address for
 	judges@toad.com					 submitting entries)
@@ -763,7 +763,7 @@ FOR MORE INFORMATION:
 
     The rules and the guidelines may (and often do) change from year to
     year.  You should be sure you have the current rules and guidelines
-    prior to submitting entries.  To obtain them, send EMail to the address
+    prior to submitting entries.  To obtain them, send an email to the address
     above and use the subject 'send rules'.
 
     Check out the IOCCC Web page:

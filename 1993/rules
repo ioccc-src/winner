@@ -56,7 +56,7 @@ org:	School/Company/Organization
 addr:	postal address
 	use tab indented lines to continue
 	don't forget to include the country
-email:  Email address from a well known site or registered domain.
+email:  email address from a well known site or registered domain.
         If you give several forms, list them on separate tab indented lines.
 anon:	y or n   (y => remain anonymous, n => ok to publish this info)
 ---info---
@@ -94,7 +94,7 @@ into a file named is 'prog.c'.  The resulting file must follow rule #2.
 	* With the exception of the header, all text outside of the above
 	  format may be ignored by the judges.  If you need tell the judges
 	  something, put it in the ---remark--- section, or send a separate
-	  Email message to the judges.
+	  email message to the judges.
 
 	* Information from the ---author--- section will be published unless
 	  'y' was given to the respective author's 'anon' line.
@@ -153,21 +153,21 @@ into a file named is 'prog.c'.  The resulting file must follow rule #2.
     7) The program must be of original work.  All programs must be in the
        public domain.  All copyrighted programs will be rejected.
 
-    8) Entries must be received prior to 07-May-93 0:00 UTC.  (UTC is
-       essentially equivalent to Greenwich Mean Time)  Email your entries to:
+    8) Entries must be received prior to 07-May-93 0:00 UTC (UTC is
+       essentially equivalent to Greenwich Mean Time). Email your entries to:
 
 		...!{apple,pyramid,sun,uunet}!hoptoad!obfuscate
 		obfuscate@toad.com
 
        We request that your message use the subject 'ioccc entry'.
 
-       If possible, we request that you hold off on Emailing your entries
+       If possible, we request that you hold off on emailing your entries
        until 1-Mar-93 0:00 UTC.  Early entries will be accepted, however.
        We will attempt to email a confirmation to the the first author for
        all entries received after 1-Mar-93 0:00 UTC.
 
     9) Each person may submit up to 8 entries per contest year.  Each entry
-       must be sent in a separate Email letter.
+       must be sent in a separate email letter.
 
    10) Entries requiring human interaction to be built are not allowed.
        Compiling an entry (must) produce a file (or files) which may 	      |

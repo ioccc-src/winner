@@ -265,7 +265,7 @@ ENTRY FORMAT:
     the entry against the size rules.
 
     If you have any suggestions, comments, fixes or complaints about
-    the mkentry.c program, please send Email to the judges.  (see below)
+    the mkentry.c program, please send an email to the judges.  (see below)
 
     The following is a sample entry:
 
@@ -409,7 +409,7 @@ end
     format may be ignored.  That is, don't place text outside of the
     entry and expect the judges to see it.  (Our decoding tools aren't
     AI progs!) If you need tell the the something, put it in the
-    ---remark--- section, or send a Email to the judges at:
+    ---remark--- section, or send an email to the judges at:
 
 	...!{apple,pyramid,sun,uunet}!hoptoad!judges	(not the address for
 	judges@toad.com					 submitting entries)
@@ -441,7 +441,7 @@ JUDGING PROCESS:
 
     Entries are judged by Larry Bassel and Landon Curt Noll.
 
-    Entries are unpacked into individual directories.  The Email message
+    Entries are unpacked into individual directories.  The email message
     is unpacked into individual files, each containing:
 
 	---entry--- section
@@ -449,7 +449,7 @@ JUDGING PROCESS:
 	all ---info--- sections
 	---build--- section
 	---program--- section
-	any other text, including the Email message headers
+	any other text, including the email headers
 
     Prior to judging, the 'any other text' file is scanned to be sure
     it does not contain useful information (or in case the entry was
@@ -470,7 +470,7 @@ JUDGING PROCESS:
     we do indicate the volume of paper consumed when presenting the IOCCC
     winners at talks)
 
-    After the Usenix announcement, we attempt to send Email to the
+    After the Usenix announcement, we attempt to send email to the
     authors of the winning entries.  One reason we do this is to give
     the authors a chance to comment on the way we have presented their
     entry.  They are given the chance to correct mistakes, typos.  We
@@ -576,7 +576,7 @@ ANNOUNCEMENT OF WINNERS:
 
 FOR MORE INFORMATION:
 
-    You may contact the judges by sending Email to the following address:
+    You may contact the judges by sending email to the following address:
 
 	...!{apple,pyramid,sun,uunet}!hoptoad!judges	(not the address for
 	judges@toad.com					 submitting entries)

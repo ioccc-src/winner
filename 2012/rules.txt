@@ -181,7 +181,7 @@ FOR MORE INFORMATION:
 |	    q.2012@ioccc.org	   (for questions only!)
 
 |   You must include the words ``ioccc 2012 question'' in the subject of
-    your EMail message when sending EMail to the judges.
+    your email when sending email to the judges.
 
     The rules and the guidelines may (and often do) change from year to
     year.  You should be sure you have the current rules and guidelines

@@ -36,7 +36,7 @@ RULES:
 ---header items---
 name:    	Your name, of course!
 org:		School/Company/Organization
-email address:	Email address from a well known site
+email address: email address from a well known site
 postal address:	Postal address, include your country as well
 environment:	Indicate the Hardware & OS under which your program was tested
 entry:		A of B		<entry number such as 3 of 5, 1 of 1...>
@@ -84,9 +84,9 @@ X Newlines count as 1 character.  Assume a standard 8 character tab stop.
 			...!amdahl!obfuscate
 
 	   Amdahl talks to hplabs, decwrl, pyramid, sun, uunet, cbosgd, ...
-	   We will attempt to Email a confirmation of receipt of contest
-	   entries, however since Email is not reliable you may not receive it.
-	   People are strongly encouraged to submit entries via Email, however
+	   We will attempt to email a confirmation of receipt of contest
+	   entries, however since email is not reliable you may not receive it.
+	   People are strongly encouraged to submit entries via email, however
 	   one may mail entries the following postal address:
 
 		Landon Curt Noll
@@ -101,7 +101,7 @@ X Newlines count as 1 character.  Assume a standard 8 character tab stop.
 	  bottom left corner of the envelope.
 
 	7) Each person may submit up to 8 entries.  Multiple entries must
-	   be sent in separate Email letters or postal envelopes.
+	   be sent in separate emails or postal envelopes.
 
 
 ANNOUNCEMENT OF WINNERS:

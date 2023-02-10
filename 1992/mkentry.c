@@ -44,7 +44,7 @@
  * The rules and the guidelines may (and often do) change from year to
  * year.  You should be sure you have the current rules and guidelines
  * prior to submitting entries.  The IOCCC rules, guidelines and mkentry
- * program may be obtained from the judges using the Email address above.
+ * program may be obtained from the judges using the email address above.
  * Please use the following subject when sending in your request:
  *
  *	send rules
@@ -199,7 +199,7 @@ main(argc, argv)
     printf("Email your entries to:\n");
     printf("\t%s\n", ENTRY_ADDR1);
     printf("\t%s\n\n", ENTRY_ADDR2);
-    printf("Please use the following subject when you Email your entry:\n");
+    printf("Please use the following subject when you email your entry:\n");
     printf("\tioccc entry\n\n");
     /* all done */
     exit(0);
@@ -715,7 +715,7 @@ output_author(output, oname)
      */
     printf("\nEnter information about each author.  If your entry is after\n");
     printf("%s and before the contest deadline, the judges\n", START_DATE);
-    printf("will attempt to Email back a confirmation to the first author\n");
+    printf("will attempt to email back a confirmation to the first author\n");
 
     /*
      * place author information for each author in an individual section
@@ -751,9 +751,9 @@ output_author(output, oname)
 	printf("your country and do not include your name.\n");
 	output_till_dot(output, oname, "addr:");
 
-	/* write the Email address */
+	/* write the email address */
 	printf(
-	    "\nEnter the Email address for author #%d.  Use an address from\n",
+	    "\nEnter the email address for author #%d.  Use an address from\n",
 	    auth_cnt);
 	printf(
 	    "a registered domain or well known site.  If you give several\n");
