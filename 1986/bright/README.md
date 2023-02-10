@@ -12,10 +12,10 @@ NOTE: The original entry may be built with "make alt".
 
 Compile this program and give filenames as arguments.  For example try:
 
-	bright bright.c
-	bright bright
+	./bright bright.c
+	./bright bright
 
-Mr. Bright exploits the c pre-processor, similar variables and
+Mr. Bright exploits the C pre-processor, similar variables and
 excessive shifting to obfuscate an otherwise useful binary display
 program.  This gives you a small example of what it is like to
 maintain the Bourne shell! :-}
