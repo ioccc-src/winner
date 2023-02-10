@@ -516,7 +516,7 @@ end
 
     You are allowed to update/fix/revise your entry.  To do so, set
     the 'fix' line in the ---entry--- section to 'y' instead of 'n'.
-    Be sure that the resubmittion uses the same title and entry number
+    Be sure that the resubmission uses the same title and entry number
     as well, as these are used to determine which entry is to be
     replaced.
 

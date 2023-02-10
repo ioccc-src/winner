@@ -634,7 +634,7 @@ output_entry(FILE *output, char *oname)
     check_io(output, oname, EOF_NOT_OK);
 
     /* determine if this is a fix */
-    printf("Is this a fix, update or resubmittion to a ");
+    printf("Is this a fix, update or resubmission to a ");
     printf("previous entry (enter y or n)? ");
     while (get_line(buf, 1+1, 0) <= 0 || !(buf[0]=='y' || buf[0]=='n')) {
 	printf("\nplease answer y or n: ");
