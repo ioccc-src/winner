@@ -39,7 +39,7 @@ Selected Author's Comments:
 
     This program uses a steganographic technique to hide information in
     any text file.  The specific technique used is aimed at writers of
-    obfuscated programs for the IOCCC, as the the hidden information is
+    obfuscated programs for the IOCCC, as the hidden information is
     encoded in the whitespace in the source file.  As we know, there are
     up to an additional 2048 characters of whitespace available to
     entrants to the IOCCC, so it turns out that this is an ideal place to

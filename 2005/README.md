@@ -16,7 +16,7 @@ The primary site can be found at,
 
 >	<http://www.ioccc.org/>
 
-Use make to compile entries.  It is possible that on non-Un*x / non-Linux
+Use make to compile entries.  It is possible that on `non-Un*x` / non-Linux
 systems the makefile needs to be changed.  See the Makefile for details.
 
 Look at the source and try to figure out what the programs do, and run
@@ -65,7 +65,7 @@ size limit.
 
 + Our Best of Show this year was simply (or non-simply) the best!
 
-+ (And we need only mention (parenthetically speaking) that the the best use of parenthesis is self re-producing).
++ (And we need only mention (parenthetically speaking) that the best use of parenthesis is self re-producing).
 
 + The most sonorous output might sound like a good idea.
 
