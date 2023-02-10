@@ -22,9 +22,9 @@ to:
 I hope you have the C beautifier! The program accepts ONE positive
 argument.  Seeing is believing, so try things like:
 
-	laman 4
-	laman 9
-	laman 16
+	./laman 4
+	./laman 9
+	./laman 16
 
 This code should run you in circles.
 
