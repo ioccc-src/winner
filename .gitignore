@@ -2,3 +2,4 @@
 prog
 alt.prog
 mkentry
+.*.sw[a-z]
