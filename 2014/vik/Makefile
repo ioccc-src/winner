@@ -36,7 +36,8 @@ X11_INCDIR= /usr/X11R6/include
 # Compiler warnings
 #
 #CWARN=
-CWARN= -Wall
+#CWARN= -Wall
+CWARN= -Wall -Wno-bitwise-op-parentheses
 #CWARN= -Wall -pedantic
 
 # compiler standard
