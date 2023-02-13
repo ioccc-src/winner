@@ -15,7 +15,10 @@ back without the newlines to get the original version.
 This program was selected for the 1987 t-shirt collection.
 
 We found this program is be simply a**maze**ing!  Run this program without
-arguments and notice the output.
+arguments and notice the output. For instance:
+
+	./shapiro
+
 
 Copyright (c) 1985, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

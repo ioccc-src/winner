@@ -17,7 +17,7 @@ NOTE: The original entry may be built with "make alt".
 
 ### Try:
 
-	hines hines.c
+	./hines hines.c
 
 This program was designed to maximize the bother function for
 structured programmers.  This program takes goto statements to their
@@ -27,7 +27,7 @@ We consider this to be a beautiful counter-example for Frank Rubin's
 letter to ACM form titled: *"GOTO Considered Harmful" Considered Harmful*.
 See the Communications of the ACM, March 1987, Page 195-196.
 
-NOTE: To compile with modern compilers, you make need to: make alt.
+NOTE: With older compilers you can try the alt version like: `make alt`.
 
 Copyright (c) 1987, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

@@ -27,7 +27,7 @@
 # GitHub pull requests are welcome:
 #
 # If you have a patch that might make running an entry work in modern Unix-like
-# environments, please create a GitHub pull request for the IOCCC judgess to
+# environments, please create a GitHub pull request for the IOCCC judges to
 # consider.
 #
 # Suggestions and corrections regarding Makefiles, winning author information,
@@ -179,7 +179,7 @@ M4= m4
 MAKE= make
 MAN= man
 MKDIR= mkdir
-MKFIFo= mkfifo
+MKFIFO= mkfifo
 MKTEMP= mktemp
 MV= mv
 NANO= nano
@@ -305,8 +305,8 @@ ZFORCE= zforce
 ZGREP= zgrep
 ZIP= zip
 ZIPCLOAK= zipcloak
-ZIPGREp= zipgrep
-ZIPINFo= zipinfo
+ZIPGREP= zipgrep
+ZIPINFO= zipinfo
 ZIPNOTE= zipnote
 ZIPSPLIT= zipsplit
 ZLESS= zless

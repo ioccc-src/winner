@@ -62,7 +62,7 @@ org:	School/Company/Organization
 addr:	postal address
 	use tab indented lines to continue
 	don't forget to include the country
-email:  EMail address from a well known site or registered domain.
+email:  email address from a well known site or registered domain.
         If you give several forms, list them on separate tab indented lines.
 url:	http://your/home/page.html or say none if you don't have one
 anon:	y or n   (y => remain anonymous, n => OK to publish this info)
@@ -103,7 +103,7 @@ into a file named is 'prog.c'.  The resulting file must follow rule #2.
 	* With the exception of the header, all text outside of the above
 	  format may be ignored by the judges.  If you need to tell the judges
 	  something, put it in the ---remark--- section, or send a separate
-	  EMail message to the judges.
+	  email to the judges.
 
 	* Information from the ---author--- section will be published unless
 	  'y' was given to the respective author's 'anon' line.
@@ -167,21 +167,21 @@ into a file named is 'prog.c'.  The resulting file must follow rule #2.
     7) The program must be of original work.  All programs must be in the
        public domain.  All copyrighted programs will be rejected.
 
-    8) Entries must be received prior to 31-Mar-2000 23:59:59 UTC. (UTC is 
-       essentially equivalent to Greenwich Mean Time)  EMail your entries to:
+    8) Entries must be received prior to 31-Mar-2000 23:59:59 UTC (UTC is 
+       essentially equivalent to Greenwich Mean Time). Email your entries to:
 
 	    entry@ioccc.org						       
 
        We request that your message use the subject 'ioccc entry'.
 
-       If possible, we request that you hold off on EMailing your entries
+       If possible, we request that you hold off on emailing your entries
        until 01-Feb-2000 00:00 UTC.  Early entries will be accepted, however.  
-       We will attempt to EMail a confirmation to the sender of any entry
+       We will attempt to email a confirmation to the sender of any entry
        received after 01-Feb-2000 00:00 UTC and before the close             
        of the contest. 
 
     9) Each person may submit up to 8 entries per contest year.  Each entry
-       must be sent in a separate EMail letter.
+       must be sent in a separate email.
 
    10) Entries requiring human interaction to be built are not allowed.
 
@@ -212,7 +212,7 @@ FOR MORE INFORMATION:
 
     It has rules, guidelines and winners of previous contests (1984 to date).
 
-    As a last resort, previous winners may be obtained by sending EMail
+    As a last resort, previous winners may be obtained by sending email
     to questions@ioccc.org.  Please use the subject 'send YEAR winners',       
     where YEAR is a single 4 digit year or a year range (such as 1993-1994),   
     or the word 'all'.							       

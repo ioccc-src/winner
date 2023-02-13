@@ -122,8 +122,8 @@ OUR LIKES AND DISLIKES:
     compile/link errors for ANSI C compilers.  For example, using gcc
     local function declarations, such as:
 
-	int 								       
-	main() {							       
+	int
+	main() {
 		void blah() { printf("blah\n"); }
 		blah();
 	}
@@ -148,13 +148,13 @@ OUR LIKES AND DISLIKES:
 
     Avoid using <varargs.h>.  Use <stdarg.h> instead.
 
-    If you use C preprocessor directives (#define, #if, #ifdef, ...),	       
-    the leading '#' must be the first non-whitespace character on a line.      
-    While some broken C preprocessors do not allow whitespace before a 	       
-    '#', most do.							       
+    If you use C preprocessor directives (#define, #if, #ifdef, ...),
+    the leading '#' must be the first non-whitespace character on a line.
+    While some broken C preprocessors do not allow whitespace before a
+    '#', most do.
 
-    The exit() function returns void.  On some broken systems have exit()      
-    return int.  Your entry should assume that exit() returns a void.	       
+    The exit() function returns void.  On some broken systems have exit()
+    return int.  Your entry should assume that exit() returns a void.
 
     Small programs are best when they are short, obscure and concise.
     While such programs are not as complex as other winners, they do
@@ -204,7 +204,7 @@ OUR LIKES AND DISLIKES:
     bytes of whitespace, or ; { or } followed by either whitespace
     or end of file.  [[Q: What is special about 1681?]]
 
-    Please do not use things like gzip to get around the size limit.	       
+    Please do not use things like gzip to get around the size limit.
 
     Given two versions of the same program, one that is a compact blob
     of code, and the other that is formatted more like a typical C
@@ -215,13 +215,13 @@ OUR LIKES AND DISLIKES:
     We suggest that you avoid trying for the 'smallest self-replicating'
     source.  The smallest, a zero byte entry, won in 1994.
 
-    We do not like writable strings.  That is, we don't want stuff like:       
+    We do not like writable strings.  That is, we don't want stuff like:
 
 	char *T = "So many primes, so little time!";
 	...
 	T[14] = ';';
 
-    Please don't make use of this feature, even if your system allows it.      
+    Please don't make use of this feature, even if your system allows it.
 
     X client entries should be as portable as possible.  Entries that
     adapt to a wide collection of environments will be favored.  Don't
@@ -261,8 +261,8 @@ OUR LIKES AND DISLIKES:
 	* pass lint without complaint (not a requirement, but it is nice)
 	* are portable
 	* are unique or novel in their obfuscation style
-	* MAKE USE OF A NUMBER OF DIFFERENT TYPES OF OBFUSCATION  <== HINT!!   
-	* make us laugh and/or throw up  :-)  (humor helps!)		       
+	* MAKE USE OF A NUMBER OF DIFFERENT TYPES OF OBFUSCATION  <== HINT!!
+	* make us laugh and/or throw up  :-)  (humor helps!)
 
     Some types of programs can't excel (tm) in some areas.  Of course, your
     program doesn't have to excel in all areas, but doing well in several
@@ -348,7 +348,7 @@ ENTRY FORMAT:
     the entry against the size rules.
 
     If you have any suggestions, comments, fixes or complaints about
-    the mkentry.c program, please send EMail to the judges.  (see below)
+    the mkentry.c program, please send an email to the judges.  (see below)
 
     The following is a sample entry (the | change bars are not part
     of the example, don't add them to your entry!)
@@ -573,7 +573,7 @@ end
     format may be ignored.  That is, don't place text outside of the
     entry and expect us to see it.  (Our decoding tools are not AI
     progs!) If you need tell the judges something, put it in the
-    ---remark--- section, or send a EMail to:
+    ---remark--- section, or send an email to:
 
 	questions@ioccc.org	(not the address for submitting entries)       |
 
@@ -601,10 +601,10 @@ end
 
 JUDGING PROCESS:
 
-    Entries are judged by Leonid A. Broukhis, Jeremy Horn, Landon Curt Noll    
-    and Peter Seebach.							       
+    Entries are judged by Leonid A. Broukhis, Jeremy Horn, Landon Curt Noll
+    and Peter Seebach.
 
-    Entries are unpacked into individual directories.  The EMail message
+    Entries are unpacked into individual directories.  The email
     is unpacked into individual files, each containing:
 
 	---entry--- section
@@ -612,7 +612,7 @@ JUDGING PROCESS:
 	all ---info--- sections
 	---build--- section
 	---program--- section
-	any other text, including the EMail message headers
+	any other text, including the email headers
 
     Prior to judging, the 'any other text' file is scanned to be sure
     it does not contain useful information (or in case the entry was
@@ -634,7 +634,7 @@ JUDGING PROCESS:
     we do indicate the volume of paper consumed when presenting the IOCCC
     winners at talks)
 
-    After the Usenix announcement, we attempt to send EMail to the
+    After the Usenix announcement, we attempt to send an email to the
     authors of the winning entries.  One reason we do this is to give
     the authors a chance to comment on the way we have presented their
     entry.  They are given the chance to correct mistakes and typos.  We
@@ -723,12 +723,12 @@ ANNOUNCEMENT OF WINNERS:
 
     Winning entries will be posted in June to the following groups:            |
 
-	    comp.lang.c		 comp.lang.c.moderated  alt.sources	       
+	    comp.lang.c		 comp.lang.c.moderated  alt.sources
 
     In addition, pointers to these postings are posted to the following
 
-	    comp.sources.misc	 comp.windows.x 	comp.programming       
-	    misc.misc		 comp.std.c		alt.folklore.computers 
+	    comp.sources.misc	 comp.windows.x 	comp.programming
+	    misc.misc		 comp.std.c		alt.folklore.computers
 
     Winning entries will be deposited into the uunet archives.  See
     below for details.
@@ -742,30 +742,30 @@ ANNOUNCEMENT OF WINNERS:
 
 FOR MORE INFORMATION:
 
-    You may contact the judges by sending EMail to the following address:
+    You may contact the judges by sending an email to the following address:
 
-	questions@ioccc.org	(not the address for submitting entries)       
+	questions@ioccc.org	(not the address for submitting entries)
 
     Questions and comments about the contest are welcome.  Comments about
     confusing rules and guidelines are also welcome.
 
     The rules and the guidelines may (and often do) change from year to
     year.  You should be sure you have the current rules and guidelines
-    prior to submitting entries.  To obtain them, send EMail to the address
+    prior to submitting entries.  To obtain them, send an email to the address
     above and use the subject 'send rules'.
 
     Check out the IOCCC Web page:
 
-	http://www.ioccc.org						       
+	http://www.ioccc.org
 
-    It has rules, guidelines and winners of previous contests (1984 to date).  
+    It has rules, guidelines and winners of previous contests (1984 to date).
 
-    As a last resort, previous winners may be obtained by sending EMail	       
-    to questions@ioccc.org.  Please use the subject 'send YEAR winners',       
-    where YEAR is a single 4 digit year or a year range (such as 1993-1994),   
-    or the word 'all'.							       
+    As a last resort, previous winners may be obtained by sending email
+    to questions@ioccc.org.  Please use the subject 'send YEAR winners',
+    where YEAR is a single 4 digit year or a year range (such as 1993-1994),
+    or the word 'all'.
 
-Leonid A. Broukhis 							       
-Jeremy Horn 								       
+Leonid A. Broukhis
+Jeremy Horn
 chongo <Landon Curt Noll> /\cc/\
-Peter Seebach 								       
+Peter Seebach

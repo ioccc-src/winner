@@ -14,16 +14,14 @@ Judges' comments:
 > into 3 lines.  Join all lines into a single line to recreate
 > the original file.
 
-Compile and link to a filename called 'a.out'.  Try the program with the
-following argument:
+Try the program with the following argument:
 
-	a.out ^N^N
+	./stein ^N^N
 
 (^N is ASCII control-N).  One some machines, ^M^L is needed to get it to
 output cleanly.  Your system may require another set of characters.
 In time, you will figure out what it does. :-)
 
-NOTE: This entry requires a non-standard K&R C compiler to compile.
 
 Copyright (c) 1986, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

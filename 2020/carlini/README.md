@@ -95,17 +95,26 @@ Here's (briefly) how it works.
 #### Preliminaries
 
 This program uses three printf format specifiers.
+
 - `%d` takes an integer argument and prints it
+
 - `%s` takes a string argument and prints it
+
 - `%n` takes a pointer and writes (!!) the number of bytes printed so far.
+
 
 Okay, everyone probably knows this. Let's get a bit more advanced.
 
 Format specifiers can take extra "arguments".
+
 - `"%hhn"`: store the number of bytes written mod 256 to the char pointer
+
 - `"%2$d"`: print argument 2 to printf (and not the sequentially next argument)
+
 - `"%8d"`: pad the printed integer to 8 characters
+
 - `"%3$.*4$d"`: print argument 3 to printf with as many zeros as in argument 4.
+
 
 For example, the following expression
 
@@ -123,9 +132,12 @@ number of bytes written to x.
 Alright, now we can get to the real fun.
 
 We perform arbitrary computation with printf treating memory as a binary
-array---one bit per pair of bytes:
+array--one bit per pair of bytes:
+
 - The zero bit is represented by the sequence `00 00`
+
 - The one-bit is represented by the sequence `xx 00` where `xx` is any non-zero byte.
+
 
 We can use format strings to compute the OR/NOT of arbitrary "bits".
 
@@ -181,10 +193,10 @@ the following expression
 
 where argument 1 is a pointer to a temporary variable followed by a null byte.
 
-This works because if the current count is 0 mod 256, then "%1$hhn" will write
+This works because if the current count is 0 mod 256, then `"%1$hhn"` will write
 zero to argument 1 and then "%1$s" will never emit any text. If, on the other
 hand, the count is not 0 mod 256, a length-1 string will be written to argument
-1, and then "%1$s" will increment the count by one. By repeating this 256
+1, and then `"%1$s"` will increment the count by one. By repeating this 256
 times we're eventually going to reach 0 mod 256.
 
 Checking if there has been an invalid move is achieved similarly.
@@ -200,7 +212,7 @@ which will, in effect, compute
 
     *r3 = (*r1) * 47 + (*r2) * 56 + 32
 
-which will output ' ' if neither are true, 'X' if r1 is, or 'O' if r2 is.
+which will output `' '` if neither are true, `'X'` if r1 is, or `'O'` if r2 is.
 
 
 #### Further Obfuscations
@@ -237,7 +249,7 @@ The byte `'I'` and `'S'` can always be the same, and we do the same for `'E'`/`'
 We do this same on-the-fly creation of the `scanf()` format string, but for a
 different reason. We first want to run `printf()` to show the first board, and
 then alternate between runs to `scanf()` and `printf()` reading and then
-displaying moves. importantly, we *do not* want a final scanf when the game
+displaying moves. Importantly, we *do not* want a final scanf when the game
 ends. It should just exit.
 
 One option would be to implement the logic as
@@ -262,7 +274,7 @@ statement, but it has the same effect.)
 Notice there is now no initial `printf()`. In order make sure the program doesn't
 block before the first `printf()`, but we initialize the `scanf()` format to the null
 string so that it returns right away without blocking. The first time the `printf()`
-call runs, it writes out "%hhd" to create the `scanf()` format string.
+call runs, it writes out `"%hhd"` to create the `scanf()` format string.
 
 -----------------------------------------------------------------------------------------------------
 (c) Copyright 1984-2020, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved

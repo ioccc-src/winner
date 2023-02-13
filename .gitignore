@@ -1,3 +1,4 @@
+.*.sw[a-z]
 .DS_Store
 /archive/1984/
 /archive/1985/
@@ -27,4 +28,5 @@
 /archive/2019/
 /archive/2020/
 alt.prog
+mkentry
 prog

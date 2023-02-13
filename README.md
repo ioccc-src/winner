@@ -2,7 +2,7 @@
 
 Please visit www.ioccc.org for the official IOCCC web.
 
-Please do NOT bookmark nor link to this [experimental web site](https://ioccc-src.github.io/temp-test-ioccc/).
+Please do NOT bookmark or link to this [experimental web site](https://ioccc-src.github.io/temp-test-ioccc/).
 
 When this experiment is finished, this site will go away!
 

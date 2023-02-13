@@ -41,7 +41,7 @@ name:    	Your name, of course!
 
 org:		School/Company/Organization
 
-email address:	Email address from a well known site, or in a registered domain
+email address: email address from a well known site, or in a registered domain
 
 postal address:	Postal address
 		include your country as well
@@ -125,20 +125,20 @@ XThis last line is not terminated by a newline and ends in an EE
        in the public domain.  All copyrighted programs will be rejected.
 
     6) Entries must be received between 06-Mar-91 0:00 UTC and
-       16-May-91 0:00 UTC.  Email your entries the address found below.
-       (UTC is essentially equivalent to Greenwich Mean Time)
+       16-May-91 0:00 UTC (UTC is essentially equivalent to Greenwich Mean
+       Time). Email your entries to the address found below.
 
-       We will attempt to Email a confirmation of receipt of contest
-       entries, however since Email is not reliable you may not receive it.
+       We will attempt to email a confirmation of receipt of contest
+       entries, however since email is not reliable you may not receive it.
        We regret that we can no longer accept entries via postal mail.
 
-    7) Each person may submit up to 8 entries.  Only 1 entry per Email
-       letter.  If you submit multiple entries, be sure that each has a
-       unique entry number.
+    7) Each person may submit up to 8 entries.  Only 1 entry per email.
+       If you submit multiple entries, be sure that each has a unique
+       entry number.
 
        We will discard all but the latest email in the case of multiple
        entries with the same entry number.  Thus, if you wish to correct
-       a previously sent entry, re-send it with the same entry number.
+       a previously sent entry, resend it with the same entry number.
        Just to be sure email does not arrive out or sequence, note that 
        fact in the 'remark' item.
 

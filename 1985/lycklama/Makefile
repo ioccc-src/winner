@@ -27,7 +27,7 @@
 # GitHub pull requests are welcome:
 #
 # If you have a patch that might make running an entry work in modern Unix-like
-# environments, please create a GitHub pull request for the IOCCC judgess to
+# environments, please create a GitHub pull request for the IOCCC judges to
 # consider.
 #
 # Suggestions and corrections regarding Makefiles, winning author information,
@@ -179,7 +179,7 @@ M4= m4
 MAKE= make
 MAN= man
 MKDIR= mkdir
-MKFIFo= mkfifo
+MKFIFO= mkfifo
 MKTEMP= mktemp
 MV= mv
 NANO= nano
@@ -305,8 +305,8 @@ ZFORCE= zforce
 ZGREP= zgrep
 ZIP= zip
 ZIPCLOAK= zipcloak
-ZIPGREp= zipgrep
-ZIPINFo= zipinfo
+ZIPGREP= zipgrep
+ZIPINFO= zipinfo
 ZIPNOTE= zipnote
 ZIPSPLIT= zipsplit
 ZLESS= zless
@@ -340,7 +340,7 @@ CWARN= -Wall -Wextra -pedantic ${CSILENCE}
 
 # Silence warnings that ${CWARN} would normally complain about
 #
-CSILENCE= -Wno-implicit-int -Wno-unused-value
+CSILENCE= -Wno-implicit-int -Wno-unused-value -Wno-parentheses
 #CSILENCE= -Wno-implicit-int
 
 # compiler standard
@@ -368,7 +368,7 @@ CDEFINE=
 
 # include files that are needed to compile
 #
-CINCLUDE=
+CINCLUDE=-include unistd.h
 #CINCLUDE= -include stdlib.h
 #CINCLUDE= -include stdio.h
 #CINCLUDE= -include stdlib.h -include stdio.h
@@ -442,7 +442,6 @@ all: ${DATA} ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: This entry uses non-standard args to main() that do not work with modern compilers."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable

@@ -19,8 +19,8 @@ Judge's Comments:
 
 	./dloweneil
 
-    Read the the Author's comments below.  We believe that your experience
-    may mirror one of our experiences:
+    Read the Author's comments below.  We believe that your experience may
+    mirror one of our experiences:
 
 	Originally, I didn't appreciate the game.  Then I actually read the
 	description of the controls.  I started playing.  I struggled.

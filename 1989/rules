@@ -36,7 +36,7 @@ RULES:
 ---header items---
 name:    	Your name, of course!
 org:		School/Company/Organization
-email address:	Email address from a well known site, or in a registered domain
+email address: email address from a well known site, or in a registered domain
 postal address:	Postal address
 		include your country as well
 environment:	Indicate the Hardware 
@@ -87,12 +87,12 @@ X If your entry does not end in a newline, leave a final 'E' on the end. E
 	   
 		...!{sun,pacbell,uunet,pyramid,amdahl}!hoptoad!obfuscate
 
-	   We will attempt to Email a confirmation of receipt of contest
-	   entries, however since Email is not reliable you may not receive it.
+	   We will attempt to email a confirmation of receipt of contest
+	   entries, however since email is not reliable you may not receive it.
 	   We regret that we can no longer accept entries via postal mail.
 
 	7) Each person may submit up to 8 entries.  Multiple entries must
-	   be sent in separate Email letters.
+	   be sent in separate emails.
 	
 	8) Entries that can not be built automatically in a portable makefile 
 	   are not allowed.  (e.g., don't use #include "/dev/tty")

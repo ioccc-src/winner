@@ -10,19 +10,15 @@ Santa Monica, CA
 
         make all
 
+
 ## Judges' comments:
-
-### To build:
-
-	cc -DC="R>0" -DI="if(T)O" -DO="c=write(1,&c,1);" -DP="main(){X}"\
-	-DR="read(0,&c,1)" -DT="c!=015" -DW="while(C)I" -DX="char c;W" markb.c
 
 Passes BSD and UTS lint.  At least one version of lint is thrown into
 an infinite loop by this entry.
 
 ### Try:
 
-	... | markb | od -c	(remember to compile as indicated above)
+	... | ./biggar | od -c	(remember to compile as indicated above)
 
 
 By changing the compile line you can make this program do anything you
@@ -30,7 +26,7 @@ want.  This is a very efficient way to transfer source, though it
 increases the size of Makefiles.
 
 With only slight variations, this program can be set to many uses.
-Consider how easy it would be to release Un*x source in this form;
+Consider how easy it would be to release `Un*x` source in this form;
 so what if the make files grow a little!  :-) 
 
 One vendor's lint got hung in an infinite loop over this entry!
