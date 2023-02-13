@@ -13,7 +13,7 @@
 # shell used by this Makefile
 #############################
 #
-SHELL= /bin/bash
+SHELL= bash
 
 #######################
 # common tool locations

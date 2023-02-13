@@ -14,7 +14,7 @@
 # tool locations
 ################
 #
-SHELL= /bin/bash
+SHELL= bash
 CP= cp
 CHMOD= chmod
 CPP= cpp
