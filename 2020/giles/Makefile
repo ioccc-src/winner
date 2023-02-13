@@ -586,4 +586,4 @@ pluto: supernova
 	@echo $@ is a dwarf planet
 	@echo dwarf is a type of planet
 	@echo therefore, $@ is a planet
-	@echo having lots of planets is good feature because $< can help ${MAKE} a lot of them
+	@echo having lots of planets is good feature because supernovae can help ${MAKE} a lot of them
