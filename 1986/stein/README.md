@@ -6,8 +6,6 @@ Jan Stein
 
         make all
 
-NOTE: The original entry may be built with "make alt".
-
 Judges' comments:
 
 > NOTE: to avoid problems with news and mail, the single line was split
