@@ -143,7 +143,7 @@ EXTRA_DATA= ansi c++11 c++14 c++98 c11 c99 discrepancies \
     test01.c test02.c test03.c test04.c test05.c test06.c test07.c \
     test08.c test09.c test10.c test11.c test12.c test13.c test14.c \
     iocccbug01.c iocccbug02.c iocccbug03.c iocccbug04.c iocccbug05.c \
-    iocccbug06.c results results.k src.doc.rot13 patch tac.man README \
+    iocccbug06.c results results.k src.doc.rot13 patch tac.man author-README.txt \
     ioc_without_quote
 UTILITIES= unob.sh tokenfix spotcheck spotdiff freqcount
 TARGET= prog
