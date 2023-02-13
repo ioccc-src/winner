@@ -28,7 +28,7 @@ USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-e command] <glob...>
 sgit version: $SGIT_VERSION"
 
 export VERBOSITY=0
-export SED_COMMANDS=""
+export SED_COMMANDS=
 # parse args
 #
 while getopts :hVv:e: flag; do
@@ -81,6 +81,10 @@ if [[ "$status" -ne 0 ]]; then
     exit 1
 fi
 
+if [[ $VERBOSITY -gt 1 ]]; then
+    echo "debug[2]: sed commands: $SED_COMMANDS" 1>&2
+fi
+
 # This is not the best performance because it does this on all files of the glob
 # rather than only those files matched by the glob with matching text but it's
 # better than it used to be (it used to run git ls-files on the repo for each
@@ -109,7 +113,7 @@ while [[ "$i" -le "$#" ]]; do
     # shellcheck disable=SC2086
     # SC2086 (info): Double quote to prevent globbing and word splitting. We can't
     # quote this because we need to have word splitting.
-    git ls-files "$1" | xargs /usr/bin/sed -i '' $SED_COMMANDS
+    git ls-files "$1" | xargs sed -i '' $SED_COMMANDS
     ((i++))
     shift 1
 done
