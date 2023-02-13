@@ -13,7 +13,6 @@ SHELL=/bin/sh
 CAT=cat
 CHMOD=chmod
 CP=cp
-ECHO=echo
 GUNZIP=gunzip
 UUDECODE=uudecode
 LN=ln

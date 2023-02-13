@@ -81,7 +81,6 @@ DIFF3= diff3
 DIFF= diff
 DIG= dig
 DIRNAME= dirname
-ECHO= echo
 ED= ed
 EGREP= egrep
 ENV= env

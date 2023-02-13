@@ -13,7 +13,6 @@ CAT=cat
 CHMOD=chmod
 CP=cp
 MV=mv
-ECHO=echo
 LN=ln
 RM=rm
 SED=sed
