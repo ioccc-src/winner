@@ -42,8 +42,8 @@ The "Most likely to be awarded" (ciura) has an amazing vocabulary!
 
 There are again nods to winners of the years:
 
-	[1991/davidguy](http://ioccc.org/years-spoiler.html#1991_davidguy)
-	[2011/blakely](http://ioccc.org/years-spoiler.html#2011_blakely)
+	[1991/davidguy](http://ioccc.org/years.html#1991_davidguy)
+	[2011/blakely](http://ioccc.org/years.html#2011_blakely)
 
 These nods to not run afoul of the guideline:
 

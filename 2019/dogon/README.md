@@ -24,8 +24,8 @@ Gil Dogon
 
 ### Selected Judges Remarks:
 
-[1991/davidguy](http://ioccc.org/years-spoiler.html#1991_davidguy),
-[2011/blakely](http://ioccc.org/years-spoiler.html#2011_blakely),...
+[1991/davidguy](http://ioccc.org/years.html#1991_davidguy),
+[2011/blakely](http://ioccc.org/years.html#2011_blakely),...
 
 ...This entry likely concludes the IOCCC category "Cellular automata simulators",
 it would be very hard to beat it on its field.
