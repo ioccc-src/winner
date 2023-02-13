@@ -315,4 +315,4 @@ pluto: supernova
 	@echo $@ is a dwarf planet
 	@echo dwarf is a type of planet
 	@echo $@ is a planet
-	@echo get used to having lots of planets because a $< can ${MAKE} a lot of them
+	@echo get used to having lots of planets becasue supernovae can ${MAKE} a lot of them
