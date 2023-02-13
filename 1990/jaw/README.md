@@ -1,4 +1,4 @@
-Best Entropy-reducer:
+# Best Entropy-reducer
 
 	James A. Woods
 	Research Institute for Advanced Computer Science
@@ -19,8 +19,16 @@ Best Entropy-reducer:
 	El Segundo, CA 90245
 	USA
 
+## To build:
 
-Judges' comments:
+        make all
+
+### To run
+
+	echo "Quartz glyph jocks vend, fix, BMW." | ./compress | ./btoa | ./jaw
+
+## Judges' comments
+
 
     The program, in its base form, implements two useful utilities:
 
@@ -52,7 +60,7 @@ Judges' comments:
 	cmp ../jaw.c jaw.c
 	cmp ../jaw.hint jaw.hint
 
-Selected notes from the authors:
+## Author's comments
 
 			     ABSTRACT
 

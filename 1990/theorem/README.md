@@ -1,4 +1,4 @@
-Best of Show:
+# Best of Show
 
 	Adrian Mariano
 	University of Washington
@@ -7,7 +7,15 @@ Best of Show:
 	USA
 
 
-Judges' comments:
+## To build:
+
+        make all
+
+### To run
+
+	./theorem y 0 1 0.1 1
+
+## Judges' comments
 
     The program's source implements four functions, all from the
     same source file!
@@ -38,34 +46,34 @@ Judges' comments:
 
     Try running the program with the following args:
 
-	theorem y 0 1 0.1 1
-	theorem 1/x 1 2 0.1 0
-	theorem 'x^2/y+x' 0 1 0.1 6
+	./theorem y 0 1 0.1 1
+	./theorem 1/x 1 2 0.1 0
+	./theorem 'x^2/y+x' 0 1 0.1 6
     
     But wait, there is more!  You also get, free of charge, a 
     reversing filter!  Try:
 
-	theorem -r 0 0 0 0 < theorem.c > sorter.c
+	./theorem -r 0 0 0 0 < theorem.c > sorter.c
     
     Still not impressed?  The author throws in for free, a 
     sort program! Try:
 
 	cc sorter.c -o sorter
-	ls | sorter
+	ls | ./sorter
     
     This program is safe for home use as well.  The author has
     included a safety feature in case you misplace the original
     program source:
 
-	sorter -r 0 0 0 0 < sorter.c > theorem_bkp.c
+	./sorter -r 0 0 0 0 < sorter.c > theorem_bkp.c
     
     And finally, as a special offer to users of this entry,
     the author provides a Fibonacci sequence generator!  Try:
 
-	sorter 0 0 0 0 < theorem.c > fibonacci.c
+	./sorter 0 0 0 0 < theorem.c > fibonacci.c
 	cc fibonacci.c -o fibonacci
-	fibonacci 1 1
-	fibonacci 2 1
+	./fibonacci 1 1
+	./fibonacci 2 1
 
     Program available 9 track and cartridge cassette.  Gensu knife
     not included!  :-)
@@ -78,7 +86,7 @@ Judges' comments:
     required on systems that dump core when NULL is dereferenced.
 
 
-Selected notes from the author:
+## Author's comments
 
     Differential equations are solved via the Runge-Kutta method, 
     which guarantees local error proportional to h^5, and total

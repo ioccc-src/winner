@@ -1,4 +1,4 @@
-Best Language Tool:
+# Best Language Tool
 
 	Diomidis Spinellis
 	Imperial College, University of London
@@ -6,18 +6,26 @@ Best Language Tool:
 	GR-145 62 Kifissia
 	Greece
 
+## To build:
 
-Judges' comments:
+	make all
 
-    Compile and run.  Give the following lines as input:
+	NOTE: This entry may not compile when using modern compilers.
+
+### To run
+
+	./dds
+
+## Judges' comments
+
+    Give the following lines as input:
     
 	OLD LANDER.BAS
 	RUN
 
     Be sure not to run out of fuel!
 
-
-Selected notes from the author:
+## Author's comments
 
     This is the DDS-BASIC Interpreter (Version 1.00). 
 

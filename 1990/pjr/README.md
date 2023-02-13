@@ -1,4 +1,4 @@
-Most Unusual Data Structure:
+# Most Unusual Data Structure
 
 	Peter J Ruczynski.
 	Pyramid Technology Ltd.
@@ -8,8 +8,15 @@ Most Unusual Data Structure:
 	Hants GU14 7PL
 	England, U.K.
 
+## To build:
 
-Judges' comments:
+        make all
+
+### To run
+
+	./jaw
+
+## Judges' comments
 
     This program prints out a string.  Can you figure out how
     it is done?
@@ -36,7 +43,7 @@ Spoiler: (rot13 to read)
     gb shapgvbaf!
 
 
-Selected notes from the author: (rot13 to read)
+## Author's comments
 
     Vg vf fvzcyr gb znxr gur cebtenz cevag bgure fgevatf.  Rnpu
     nycunorgvpny punenpgre sebz n gb m vf cevagrq bhg nf vgf

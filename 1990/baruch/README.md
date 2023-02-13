@@ -1,4 +1,4 @@
-Best Small Program:
+# Best Small Program
 
 	Doron Osovlanski
 	CADTECH - CAD/CAM Systems Ltd
@@ -12,13 +12,16 @@ Best Small Program:
 	Tel-Aviv
 	Israel
 
+## To build:
 
-Judges' comments:
+        make all
 
-    Compile.  Try:
+### To run
 
 	echo 4 | baruch
 	echo 7 | baruch
+
+## Judges' comments
 
     This program reads an integer between 4 and 99 from the stdin.
 
@@ -26,8 +29,7 @@ Judges' comments:
 	  the file.  We added a final newline to the file to make
 	  unpacking easy.
 
-
-Selected notes from the author:
+## Author's comments
 
     The goal of this work was to write a program that solves the
     classic n-queen problem, with a board size of up to 99x99, while

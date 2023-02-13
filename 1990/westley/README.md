@@ -1,4 +1,4 @@
-Best Layout:
+# Best Layout
 
 	Brian Westley (Merlyn LeRoy on usenet)
 	DigiBoard, Inc.
@@ -6,7 +6,17 @@ Best Layout:
 	St. Paul, MN  55104  
 	USA
 
-Judges' comments:
+## To build:
+
+        make all
+
+	NOTE: This entry may not compile when using modern compilers.
+
+### To run
+
+	./westley 1
+
+## Judges' comments
 
     usage: westley <number>
 
@@ -30,7 +40,7 @@ Judges' comments:
     these compilers replace the '1s' with '1'.
 
 
-Selected notes from the author:
+## Author's comments
 
     This is a "Picking the Daisy" simulation.  Now, instead of mangling a 
     daisy, simply run this program with the number of petals desired as 

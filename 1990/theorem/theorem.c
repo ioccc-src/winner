@@ -74,7 +74,7 @@ else if(1)R=*f;
 if(1);
 return O;
 for(j=0;j<n;puts(j++[m]));
-e("",O,&O,a);
+e("",O,O,a);
 n=j-(O=1);
 while(gets(j++[m]));
 if(!strcmp(*++a,"-r"))S();

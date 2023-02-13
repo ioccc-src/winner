@@ -1,4 +1,4 @@
-Best Utility:
+# Best Utility
 
 	Byron Rakitzis	       Sean Dorward
 	Princeton University   Princeton University
@@ -6,7 +6,17 @@ Best Utility:
 	Houston, TX 77066      Ellicott City, MD 21043
 	USA		       USA
 
-Judges' comments:
+## To build:
+
+        make all
+
+	NOTE: This entry may not compile when using modern compilers.
+
+### To run
+
+	./tbr
+
+## Judges' comments
 
     This program implements a subject a well known Un*x utility whose 
     original source was considered to be extremely obfuscated by many
@@ -27,7 +37,7 @@ Judges' comments:
     1),e(creat(i[2],438)):2,e(execvp(*u,u))):e(chdir(u[1])*2):6;}
     e(x){x<0?write(2,"?\n$ "-x/4,2),x+1||exit(1):5;}
     
-Selected notes from the author: (rot13 to read)
+## Author's comments
 
     Guvf cebtenz vf n ehqvzragnel furyy. Vg qbrf v/b erqverpgvba, cvcrf
     naq pq. Vg syntf reebef ba snvyrq puqve'f, bcra'f, perng'f

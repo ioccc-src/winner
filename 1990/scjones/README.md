@@ -1,4 +1,4 @@
-ANSI Committee's Worst Abuse of C:
+# ANSI Committee's Worst Abuse of C
 
 	Larry Jones
 	SDRC
@@ -6,8 +6,17 @@ ANSI Committee's Worst Abuse of C:
 	Milford, OH 45150  
 	USA
 
+## To build:
 
-Judges' comments:
+        make all
+
+	NOTE: This entry may not compile when using modern compilers.
+
+### To run
+
+	./scjones
+
+## Judges' comments
 
     The addition of trigraphs has made it easier to make programs 
     hard to read.  It was a dark and stormy night for C when the
@@ -15,22 +24,7 @@ Judges' comments:
     that they didn't just simply require a more reasonable ISO
     character set.
 
-    The common.mk (non-ANSI) makefile uses sed to form scjones.alt.c.
-    The scjones.alt.c is similar to the original scjones.c source,
-    but with all the trigraphs converted.  You might want to try:
-
-		make -f common.mk scjones.alt.c
-
-    even if you only have an ANSI compiler, just to see how
-    the trigrapsh are converted.
-
-WARNING: In the future, we will be passing ANSI programs through a
-	 trigraph filter before reading.  Trigraph-ifacation will
-	 not be a major consideration in future contests.  People 
-	 should exploit more interesting features of ANSI C.
-
-
-Selected notes from the author:
+## Author's comments
 
     Since this year's contest is dedicated to ANSI C, here is a
     strictly conforming entry.  In accordance with the ANSI

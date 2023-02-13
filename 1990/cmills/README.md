@@ -1,4 +1,4 @@
-Best Game:
+# Best Game
 
 	Chris Mills
 	Wyse Technology
@@ -6,8 +6,15 @@ Best Game:
 	San Jose CA 95134
 	USA
 
+## To build:
 
-Judges notes:
+	make all
+
+### To run
+
+    ./cmills [starting_cash]
+
+## Judges' comments
 
     Compile notes:
 
@@ -18,10 +25,7 @@ Judges notes:
 	-DX=<how to seed the rand() generator>
 	-DV=<void ot int>
 
-    Usage: cmills [starting_cash]
-
-
-Selected notes from the author:
+## Author's comments
 
     This is a blackjack program.  It does splits, doubling down,
     insurance, etc.  

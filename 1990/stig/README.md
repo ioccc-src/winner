@@ -1,39 +1,31 @@
-Strangest Abuse of the Rules:
+# Strangest Abuse of the Rules
 
 	Stig Hemmer
 	Norwegian Institute of Technology
 	N-7034 Trondheim-NTH
 	Norway 
 
-Judges' comments:
+## To build:
+
+        make all
+
+### To run
+
+	make all
+
+## Judges' comments
 
     We changed the alias that the author's suggested alias from a
-    C-shell alias to a Korn shell alias because many C-shells
-    did not allow Stig Hemmer's form of aliasing.  (The error 
-    may have also been due to some uucp site corrupting his 
-    entry) Below is the author's 'how to compile' sections as 
-    mailed to us:
-
-    ---how to ANSI compile---
-    Xecho alias c cc -E -o o.c shst.c -"\''Dc=main(){printf("\"N%sested E
-    Ccomments allowed.\\n\",'/*/*/0*/**/'1?\"\":\"o n\"");}'\'';cc -o c o.c'
-    Xsource shst.c"|csh
-    ---how to common compile---
-    Xecho alias c cc -E -o o.c shst.c -"\''Dc=main(){printf("\"N%sested E
-    Ccomments allowed.\\n\",'/*/*/0*/**/'1?\"\":\"o n\"");}'\'';cc -o c o.c'
-    Xsource shst.c"|csh
+    C-shell alias to a zsh alias.
 
     Note that shst.c is renamed to stig.c in the distribution.
-
-    Producing an equivalent C-shell alias or /bin/sh function
-    is left as an exercise to the reader.
 
 WARNING: This program's 'how to compile' is too specific to a particular
 	 shell.  The obfuscation of this program to more related to
 	 shell obfuscation than C obfuscation.  This type of entry will 
 	 not be permitted in future contests.
 
-Selected notes from the author:
+## Author's comments
 
     If you like shell programming you may also admire my
     creative quoting. (I use echo to create an alias

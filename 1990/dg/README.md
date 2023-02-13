@@ -1,4 +1,4 @@
-Best Abuse of the C Preprocessor:
+# Best Abuse of the C Preprocessor
 
 	David Goodenough
 	anonymous organization
@@ -6,27 +6,30 @@ Best Abuse of the C Preprocessor:
 	Newton, MA 02159
 	USA
 
-Judges' comments:
+## To build:
 
-    Compile and run.  Try:
+        make all
 
-	echo "to C or not to C" | dg
+	NOTE: This entry may not compile when using modern compilers.
+
+### To run
+
+	echo "to C or not to C" | ./dg
+
+## Judges' comments
 
     Some C preprocessors get confused about single quotes in certain cases.
     In particular, the following source line:
 
-   Cb12(ase(bco(acp(bi(acp(bcp(acp(bpl(aqu(bqu(A))))))))))))))))))))))))))))))
+       Cb12(ase(bco(acp(bi(acp(bcp(acp(bpl(aqu(bqu(A))))))))))))))))))))))))))))))
 
     may need to be changed to:
 
-   Cb12(ase(bco(acp(bi(acp(bcp(acp(bpl('A'))))))))))))))))))))))))))))
+       Cb12(ase(bco(acp(bi(acp(bcp(acp(bpl('A'))))))))))))))))))))))))))))
 
     if your C preprocessor botches single quotes in cpp expansions.
 
-    Systems that have index() and don't strchr() (e.g., BSD) should
-    compile with without -Dindex=strchr.
-
-Selected notes from the author:
+## Author's comments
 
     If my preprocessor could hack it, I could write this as one single
     line rather than 4, but when I do that I get a complaint "defines
