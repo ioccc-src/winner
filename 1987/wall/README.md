@@ -12,12 +12,28 @@ Panorama City, CA  91402  USA
 ## Judges' comments:
 
 ### Try:
-	lwall | bc | lwall
-	input:	x*x
-	input:	c^2
+
+	./wall | bc | ./wall
+
+and input the following:
+
+	x*x
+	c^2
+	m*m
 
 ### Also try:
-	lwall | bc   and   lwall | cat
+
+	./wall | bc
+
+	./wall | cat
+
+
+and enter some input like:
+
+	x*x
+	2^x
+	quit # for the cat version
+
 
 What we found amazing was how the flow of control was transferred
 between subroutines.  Careful inspection will show that the array of
