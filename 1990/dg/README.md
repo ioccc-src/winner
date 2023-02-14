@@ -18,16 +18,18 @@
 
 ## Judges' comments
 
-    Some C preprocessors get confused about single quotes in certain cases.
+    Some C preprocessors got confused about single quotes in certain cases.
     In particular, the following source line:
 
-       Cb12(ase(bco(acp(bi(acp(bcp(acp(bpl(aqu(bqu(A))))))))))))))))))))))))))))))
+       b12(ase(bco(acp(bi(acp(bcp(acp(bpl(aqu(bqu(A))))))))))))))))))))))))))))))
 
-    may need to be changed to:
+    sometimes has to be changed to:
 
-       Cb12(ase(bco(acp(bi(acp(bcp(acp(bpl('A'))))))))))))))))))))))))))))
+       b12(ase(bco(acp(bi(acp(bcp(acp(bpl('A'))))))))))))))))))))))))))))
 
-    if your C preprocessor botches single quotes in cpp expansions.
+    if the C preprocessor botches single quotes in cpp expansions, which we have
+    done for the wider audience.
+
 
 ## Author's comments
 

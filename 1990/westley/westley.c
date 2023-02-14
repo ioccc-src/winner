@@ -28,7 +28,7 @@ dear; (char)lotte--;
 
 	#define love (char*)lie -
 
-	love 1s *!(not= atoi(let
+	love 1 *!(not= atoi(let
 
 	[get -me?
 
@@ -90,13 +90,13 @@ get; !out; (char)*lie  &  0xD0- !not) return!!
 
 register this; switch( (char)lie
 
-	[(char)lotte] -1s *!out) {
+	[(char)lotte] -1 *!out) {
 
 	char*les, get= 0xFF, my; case' ':
 
 	*((char*)&lotte) += 15; !not +(char)*lie*'s';
 
-	this +1s+ not; default: 0xF +(char*)lie;}}}
+	this +1+ not; default: 0xF +(char*)lie;}}}
 
 	get - !out;
 

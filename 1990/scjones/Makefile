@@ -379,7 +379,7 @@ endif
 #
 #CSTD=
 #CSTD= -ansi
-CSTD= -std=gnu90
+CSTD= -std=gnu90 -ansi
 
 # compiler bit architecture
 #
