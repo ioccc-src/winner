@@ -59,7 +59,7 @@ And the PPM version (no additional dependencies, can read raw/ASCII PPM, writes 
 
     make prog_ppm
 
-### Building on OSX
+### Building on macOS
 
 - Thanks to Cody Ferguson for this information!
 
