@@ -119,7 +119,7 @@ from the infamous *UNIX-HATERS Handbook*.
 
 **[Winning thoughts](#winning):** What it means to me to win as well as some
 dedications and thanks. Here too I include a link to a website which will be
-dedicated to this entry beyond what will be published on the IOCCC website
+dedicated to this entry beyond what will be published on the IOCCC website.
 
 [FILES]: FILES
 [rpm.md]: rpm.md
@@ -238,8 +238,14 @@ paragraph; the first sentence in fact: the answer to the judges' question and
 the definition. Can you get the program to search the primorial prime of 97
 without passing in specially?
 
-**On user errors:** if the generation reaches **`SIZE_MAX - 1`** I consider it a
-user (or monkey) error; if the user insists on being so petulant as to try such
+I was quite proud that when the next contest came the judges removed that
+question. Later 2018 and all of 2019 was difficult for me so it was like I won a
+second time for the same entry.
+
+### On user errors
+
+If the generation reaches **`SIZE_MAX - 1`** I consider it a
+user (or monkey) error; if the user insists on being so petulant enough as to try such
 a ridiculous set of parameters in an attempt to make it be no more successful
 than a monkey typing *then it shouldn't be any more successful than a monkey; if
 it by chance reaches the target it's because a monkey could too!* Either way
@@ -256,7 +262,7 @@ Fish Theorem*). So although the user might not be a monkey the program makes the
 assumption that **the user could in fact be a monkey called Eric** *although it
 isn't insolent enough to say the user is a monkey for certain!*
 
-[genetic algorithm]: http://www.doc.ic.ac.uk/~nd/surprise_96/journal/vol1/hmw/article1.html
+[genetic algorithm]: https://web.archive.org/web/20180308131613/http://www.doc.ic.ac.uk/~nd/surprise_96/journal/vol1/hmw/article1.html
 [2018 guidelines]: http://ioccc.org/2018/guidelines.txt
 
 
@@ -476,32 +482,38 @@ So in this case I joined the options in the following order:
 
 1.  **`-q`**
 
-Quiet output.
+    Quiet output.
+
 
 2.  **`-r101`**
 
-Mutation rate 101 (out of range).
+    Mutation rate 101 (out of range).
+
 
 3.  **`-r5`**
 
-Mutation rate of 5 but note that during parsing I only print invalid mutation
+    Mutation rate of 5 but note that during parsing I only print invalid mutation
 rate (only after parsing do I print the final mutation rate whatever it ends up
 being); so while it appears there is a bug, showing mutation rate out of range
 three times, this is expected (given the next one, **`-r101`**). This means here
 the typewriter was taken from Eric the monkey.
 
+
 4.  **`-r101`**
 
-Mutation rate to 101: this too is out of range (this is the second mutation rate
+    Mutation rate to 101: this too is out of range (this is the second mutation rate
 out of range message). The typewriter returns to Eric.
+
 
 5.  **`-r1`**
 
-Set mutation rate to 1. Take that typewriter away!
+
+    Set mutation rate to 1. Take that typewriter away!
+
 
 6.  **`-r`**
 
-Set mutation rate to 0; when there are no valid characters passed to
+    Set mutation rate to 0; when there are no valid characters passed to
 **`strtol()`** it should return 0: this is the third message about being out of
 range. Note here that **`rand()`** returns an **`int`** and **`strtol()`**
 returns a **`long`** but I compare the return value of **`rand()`** to the
@@ -509,9 +521,10 @@ mutation rate; if there are any systems where the widths differ this *shouldn't
 matter* because of truncation but I do in any case specifically check for **`R <
 0 || R > 100`**. Either way the invalid range returns the typewriter to Eric. 
 
+
 7.  **`test`**
 
-Finally I requested it find the string **`test`** (will search for **`TEST`**).
+    Finally I requested it find the string **`test`** (will search for **`TEST`**).
 
 Given that it was a short string it did find the answer relatively quickly, even
 in monkey mode.
