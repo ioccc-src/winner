@@ -5,7 +5,7 @@
 0. Verify that the <A HREF="https://www.ioccc.org/index.html#enter">IOCCC is open</A> for submissions.
 1. If the IOCCC is open, you need to register as a contestant.
 See: <A HREF="https://www.ioccc.org/index.html#enter">how to enter</A> for how to register.
-2. Once you have been registered, you will receive and email message for how to
+2. Once you have been registered, you will receive an email message for how to
 prepare your entries for submission,
 and how to upload the compressed tarballs to our submission portal.
 3. Once the <A HREF="https://www.ioccc.org/index.html#enter">IOCCC</A> closes,
@@ -15,8 +15,8 @@ notify the winners via email using their previously registered email address,
 and upload the winning code to the <A HREF="https://github.com/ioccc-src/winner">ioccc-src/winner</A> repo
 which in turn will cause them to be displayed on the  <A HREF="https://www.ioccc.org/years.html">IOCCC winners page</A>.
 
-## Update your winning entry
+## Updating your winning entries
 
-If you are an IOCCC winner, you may update your entry (meta-data as well as source code)
+If you are an IOCCC winner, you may update your entries (meta-data as well as source code)
 by using a <A HREF="https://github.com/ioccc-src/winner/pulls">GitHub pull request</A>
 against the master branch of the  <A HREF="https://github.com/ioccc-src/winner">ioccc-src/winner</A> repo.
