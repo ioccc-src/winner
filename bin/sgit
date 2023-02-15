@@ -18,20 +18,20 @@
 
 export SGIT_VERSION="0.0.2-1 13-02-2023" # format: major.minor.patch-release DD-MM-YYYY
 
-USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-e command] <glob...>
+USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-x] [-e command] <glob...>
 
     -h			    print help and exit
     -V			    print version and exit
+    -x			    turn on tracing (set -x)
     -v level		    set verbosity level
     -e command		    append sed command to execute on globs
 
 sgit version: $SGIT_VERSION"
 
 export VERBOSITY=0
-export SED_COMMANDS=
 # parse args
 #
-while getopts :hVv:e: flag; do
+while getopts :hVxv:e: flag; do
     case "$flag" in
     h)	echo "$USAGE" 1>&2
 	exit 2
@@ -39,9 +39,11 @@ while getopts :hVv:e: flag; do
     V)	echo "$SGIT_VERSION" 1>&2
 	exit 2
 	;;
+    x)	set -x
+	;;
     v)	VERBOSITY="$OPTARG";
 	;;
-    e)	SED_COMMANDS="$SED_COMMANDS -e $OPTARG"
+    e)	SED_COMMANDS+=(-e "$OPTARG")
 	;;
     :)	echo "$0: ERROR: option -$OPTARG requires an argument" 1>&2
 	echo 1>&2
@@ -58,7 +60,7 @@ shift $(( OPTIND - 1 ));
 # firewall
 
 # check that SED_COMMANDS is not empty!
-if [[ -z "$SED_COMMANDS" ]]; then
+if [[ -z "${SED_COMMANDS[*]}" ]]; then
     echo "$(basename "$0"): ERROR: you must specify at least one sed command" 1>&2
     echo 1>&2
     echo "$USAGE" 1>&2
@@ -82,7 +84,7 @@ if [[ "$status" -ne 0 ]]; then
 fi
 
 if [[ $VERBOSITY -gt 1 ]]; then
-    echo "debug[2]: sed commands: $SED_COMMANDS" 1>&2
+    echo "debug[2]: sed commands:  ${SED_COMMANDS}[*]" 1>&2
 fi
 
 # This is not the best performance because it does this on all files of the glob
@@ -108,12 +110,12 @@ while [[ "$i" -le "$#" ]]; do
 	echo "debug[2]: found glob: $1" 1>&2
     fi
     if [[ "$VERBOSITY" -ge 1 ]]; then
-	echo "debug[1]: about to run: git ls-files $1 | xargs sed -i '' $SED_COMMANDS" 1>&2
+	echo "debug[1]: about to run: git ls-files $1 | xargs sed -i\"\" ${SED_COMMANDS[*]}" 1>&2
     fi
     # shellcheck disable=SC2086
     # SC2086 (info): Double quote to prevent globbing and word splitting. We can't
     # quote this because we need to have word splitting.
-    git ls-files "$1" | xargs sed -i '' $SED_COMMANDS
+    git ls-files "$1" | xargs sed -i"" "${SED_COMMANDS[@]}"
     ((i++))
     shift 1
 done
