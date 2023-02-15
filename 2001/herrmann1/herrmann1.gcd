@@ -35,7 +35,7 @@
 #define st13_I  I, right, st13
 #define st14_O  O, left , st_next_iteration
 #define st14_I  O, right, st14
-/* The state "st_next_iteration" means the turing machine
+/* The state "st_next_iteration" means the Turing machine
    is about to do the next iteration of the Euklid algorithm.
    (That is, during that state, there are two numbers on the
    tape with the same gcd as the initial numbers.) */

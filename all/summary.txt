@@ -44,7 +44,7 @@
 1989 jar.1	char*_="Hello world.\n";
 1989 jar.2	lisp interpreter, compressed
 1989 ovdluhe	monkey-typer following template, 'APE' identifiers
-1989 paul	print fibonacci base 2 by simulating turing machine
+1989 paul	print Fibonacci base 2 by simulating Turing machine
 1989 robison	apl-expression interpreter (binary), written in C--
 1989 roemer	prints e, script-pi shaped layout, _31415 identifiers
 1989 tromp	squished tetris
