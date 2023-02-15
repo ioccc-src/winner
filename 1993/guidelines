@@ -408,7 +408,7 @@ end
     With the exception of the header, all text outside of the entry
     format may be ignored.  That is, don't place text outside of the
     entry and expect the judges to see it.  (Our decoding tools aren't
-    AI progs!) If you need tell the the something, put it in the
+    AI progs!) If you need tell the something, put it in the
     ---remark--- section, or send an email to the judges at:
 
 	...!{apple,pyramid,sun,uunet}!hoptoad!judges	(not the address for
