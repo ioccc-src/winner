@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 #
-# sgit - sed -i on all files under git control
+# sgit - run sed (by default with -i) on all files under git control
 #
-# usage: sgit -e 'sed command'... <glob...>
-#
-# This script will allow one to update files under git control without having to
-# come up with a list of files and then passing those to the command. It allows
-# for multiple sed commands (all with in-place editing) and multiple globs.
+# This script allows one to run sed under git control without having to come up
+# with a list of files first and then passing those to the command.
+# It allows for multiple sed commands and multiple globs. By default it uses -i
+# to edit the file in place (without backup extension) but this can be
+# overridden with the -I option. See -h option for all the options.
 #
 # DISCLAIMER AND WARNING: this is something of a hack and might be error prone.
 # It works for what is needed but possibly could be improved. Even so I like it
@@ -27,7 +27,7 @@ USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-x] [-I] [-o sed_options] [
     -I			    disable in place editing
     -o			    sed options (don't pass '-')
     -s sed		    set path to sed
-    -e command		    append sed command to execute on globs
+    -e command		    append sed command to to list to execute on globs
 
 sgit version: $SGIT_VERSION"
 
@@ -88,7 +88,6 @@ if [[ -z "${SED_COMMANDS[*]}" ]]; then
 fi
 
 # check that sed is executable
-
 if [[ -z "$SED" ]]; then
     echo "$(basename "$0"): ERROR: sed cannot be empty" 1>&2
     echo 1>&2
@@ -137,8 +136,8 @@ fi
 # how to do it) so we do it on all files in the repo.
 #
 # But these would possibly require additional args to the command and
-# unnecessarily complicate matters. Anyway it's a hack so it doesn't have to be
-# perfect (not that there even is such a thing as perfect).
+# unnecessarily complicate matters. Anyway it's something of a hack so it
+# doesn't have to be perfect (not that there even is such a thing as perfect).
 #
 if [[ "$VERBOSITY" -gt 1 ]]; then
     echo "debug[2]: looping through all globs" 1>&2
