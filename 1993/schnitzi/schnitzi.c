@@ -1,4 +1,8 @@
 #include      <stdio.h>
+#include      <stdlib.h>
+#include      <string.h>
+#include      <ctype.h>
+
 #define            iii\
 (                     I  )                    if (                     ii(I,6\
  )                   )I [               strlen(I  )                     -1]=!1

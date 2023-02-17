@@ -1,6 +1,7 @@
 long
 z[7992],W,H,*t=z,j,k,*T=z,n,b;
 #include<X11/Xlib.h>
+#include<stdlib.h>
 Window*E,D,s,w[999],*e=w;
 Display*d;
 Pixmap

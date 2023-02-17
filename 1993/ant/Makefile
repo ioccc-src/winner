@@ -28,7 +28,7 @@ LN=ln
 #
 #CFLAGS=-O -Xa
 #CFLAGS=-Xa
-CFLAGS= -ansi
+CFLAGS= -ansi -include stdlib.h
 #CFLAGS=
 
 # ANSI compiler

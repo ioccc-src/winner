@@ -11,7 +11,7 @@ Best Abuse of the C Preprocessor:
 
 Judges' comments:
 
-    To use:
+    To build use:
 	sh ./dgibson.sh [datafile]
 
     where:
@@ -34,6 +34,12 @@ Judges' comments:
 
     Good luck trying to use a debugger on this entry!  Life is not
     always pretty.
+
+    NOTE: we could not compile this entry under modern macOS but it will work
+    fine under linux. It likely fails to compile under macOS because its gcc is
+    actually just clang which is more strict about the type of the second argument
+    of main(). If you have gcc under macOS it might work just as well. We did not
+    test other systems.
 
 
 Selected notes from the author:
