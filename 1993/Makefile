@@ -67,7 +67,7 @@ YEAR= 1993
 ###################
 #
 
-# XXX the $(MAKE) $$i is a temporary workaround while we get the entry Makefiles
+# XXX the $(MAKE) $$i is a temporary workaround while we get the other Makefiles
 # in order. It should read:
 #
 #	(cd $$i && $(MAKE) $$i):
