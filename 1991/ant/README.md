@@ -1,20 +1,20 @@
-Best Utility:
+## Best Utility:
 
 	Anthony C Howe
 	Mortice Kern Systems Inc.	#CL-23
 	35 King St. N			268 Phillip St.
-	Waterloo, On			Waterloo, On		
+	Waterloo, On			Waterloo, On
 	Canada, N2J 2W9			Canada, N2L 6G9
 
 
-Judges' comments:
+## Judges' comments:
 
     Make and run with a filename (writable or to be created) as an argument.
     For example, try:
 
 	make ant
 	cp ant.hint hill
-	ant hill
+	./ant hill
 
     Note that some old BSD systems may have trouble compiling this entry.
     They may complain about 'idlok' being undefined.  You can fix this
@@ -34,7 +34,7 @@ Judges' comments:
     in case you are still confused after read the source!  :-)
 
 
-Selected notes from the author:
+## Selected notes from the author:
 
     Ant's Editor vIOCCC91
 

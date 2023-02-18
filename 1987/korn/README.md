@@ -14,7 +14,7 @@ USA
 ## Judges' comments:
 
 The Judges believe that this is the best one line entry ever received.
-Compile on a UN*X system, or at least using a C implementation that
+Compile on a `UN*X` system, or at least using a C implementation that
 fakes it.  Very few people are able to determine what this program
 does by visual inspection.  I suggest that you stop reading this
 section right now and see if you are one of the few people who can.

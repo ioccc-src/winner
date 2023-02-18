@@ -35,8 +35,6 @@ program.  The file lievaart2.c contains what the program would have
 been without the size restriction.  This version has the full end game 
 logic and displays the board after each move!
 
-NOTE: This entry requires a non-standard K&R C compiler to compile.
-
 Copyright (c) 1987, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is
 granted provided this this copyright and notice are included in its entirety

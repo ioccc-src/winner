@@ -11,8 +11,9 @@ Best Utility:
 Judges' comments:
 
    To use:
+
 	make am
-	am ant.test.mk
+	./am ant.test.mk
     
     Like much of Posix, obfuscation has its place.  Your task is to
     figure out where.
@@ -23,8 +24,8 @@ Judges' comments:
 
     We also suggest that you try:
 	make am
-	am Makefile am_clobber		<-- clobber everything except am
-	am Makefile all
+	./am Makefile am_clobber		<-- clobber everything except am
+	./am Makefile all
 
 
 Selected notes from the author:
