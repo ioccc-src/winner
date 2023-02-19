@@ -24,17 +24,27 @@ The code for this entry can be found in prog.c
 
     ./prog 85
 
+    ./prog 128 128
+    ./prog 128 128 128
+    ./prog 128 128 128 128
+    # Can you determine why this shows strange output for the first and third
+    # but not the second? Can you find a pattern here? What happens if you
+    # specify different numbers?
+
 ### Selected Judges Remarks:
 
 This tiny one-liner is a bit-twiddlers delight! It does all of the work
 without looping.
 
 To understand how it works, a good place to start is to look at the hex
-value that results when the two magic constants are XOR'ed.
+value that results when the two magic constants are XORed.
 
 Once you've figured out what happens with one set of constants, how can
 choosing new constants, but using the same computation generate a reversed
 result?
+
+NOTE: this entry will dump core if you do not specify an argument.
+
 
 ## Author's comments:
 Invoke this with a single non-negative integer less than 256, and a useful transformation occurs.
@@ -47,7 +57,7 @@ so they are truly configuration parameters, not logic.
 
 ### Notes
 
-One <strike>ping</strike> argument only.  It will SEGV on zero arguments, and
+One <strike>ping</strike> argument only.  It will segfault on zero arguments, and
 display strange results if more than one argument.
 
 Small, non-negative integers only.  Useful range is 0 .. 511, sorta, for LE; 0 .. 255 for BE.
@@ -70,11 +80,11 @@ On a little-endian machine:
 
 On a big-endian machine:
 
-	clang -include stdio.h -include stdlib.h -Wall -Weverything -pedantic -DB=7091606191627001958LL -DI=6006468689561538903LL -DT=1 -DS=0 -o prog.be prog.c
+	clang -include stdio.h -include stdlib.h -Wall -Weverything -pedantic -DB=7091606191627001958LL -DI=6006468689561538903LL -DT=1 -DS=0 -o prog_be prog.c
 
 You might be interested to compile it both ways on the same host, and try:
 
-	./prog 1; ./prog.be 1
+	./prog 1; ./prog_be 1
 
 -----------------------------------------------------------------------------------------------------
 (c) Copyright 1984-2020, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved

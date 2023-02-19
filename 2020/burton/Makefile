@@ -436,9 +436,11 @@ all: ${TARGET} ${DATA}
 	@${TRUE}
 
 prog: prog.c
+	@echo "NOTE: this program will segfault without an argument."
 	${CC} ${CFLAGS} -DB=${B} -DI=${I} -DT=${T} -DS=${S} $< -o $@ ${LIBS}
 
 prog_be: prog.c
+	@echo "NOTE: this program will segfault without an argument."
 	${CC} ${CFLAGS} -DB=${_B} -DI=${_I} -DT=${_T} -DS=${_S} $< -o $@ ${LIBS}
 
 check: check.sh
