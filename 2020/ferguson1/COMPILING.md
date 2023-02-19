@@ -13,15 +13,18 @@ should you run into trouble.
 
 # Portability
 
-I have tested this under macOS Catalina, Fedora (29 and also 31 - no that's not
-a typo, I upgraded from 29 to 31 as I had delayed upgrading to 30 due to a
-number of issues and being busy) and CentOS 7.7.1908. It obviously requires
-ncurses but other than that nothing extra should be needed. Note that the
-testing of Fedora 29 was earlier in the development however (but then 29 is also
-EOL).
+I have tested this under macOS Catalina, macOS Ventura (and probably between the
+two), Fedora (29 and also 31 - no that's not a typo, I upgraded from 29 to 31 as
+I had delayed upgrading to 30 due to a number of issues and being busy) and
+CentOS 7.7.1908. It should work under any modern linux system and maybe other
+Unices as well as macOS (as noted).
+
+It obviously requires ncurses but other than that nothing extra should be
+needed. Note that the testing of Fedora 29 was earlier in the development
+however (but then 29 is also EOL).
 
 Furthermore I do not believe - but I cannot confirm either - that endianness
-matters; I only have Intel CPUs.
+matters; I only have Intel CPUs and arm64 (MacBook Pro M1).
 
 I imagine that it works for 32-bit systems but I do not know for sure.
 
