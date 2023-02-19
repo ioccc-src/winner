@@ -28,7 +28,7 @@ In an entry that boasts not using literals, one would expect to see straightforw
 small integers like `!(x^x)<<!(x^x)`, etc. but this entry is trickier than that. Deciphering what it does,
 apart from reading stdin and writing to stdout, would take a while.
 
-While doing that, you can be audially *entertained* by a sample of its output.
+While doing that, you can be audibly *entertained* by a sample of its output.
 
 ## Author's comments:
 ### MIDI "boots and cats"
