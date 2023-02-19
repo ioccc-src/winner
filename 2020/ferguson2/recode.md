@@ -39,7 +39,7 @@ Alternatively if you just want the recipe you could look at my Snake entry
 
 -   [Example uses](#exampleuses)
 
--   [Delicious Enigma: Double-layered Chocolate Fudge Cake](#cake)
+-   [Deliciously Enigmatic: Double-layered Chocolate Fudge Cake](#cake)
 
 
 # <a name="recode" href="#toc">What is recode and why is it recommended?</a>
@@ -515,7 +515,7 @@ anyway?
 
 * Best idea: try the below experiment!
 
-# <a name="cake" href="#toc">Delicious Enigma: Double-layered Chocolate Fudge Cake</a>
+# <a name="cake" href="#toc">Delicious Enigmatic: Double-layered Chocolate Fudge Cake</a>
 
 As I was making the above silly list something occurred to me. My other entries
 this year include a recipe for a wonderful double-layered chocolate fudge cake

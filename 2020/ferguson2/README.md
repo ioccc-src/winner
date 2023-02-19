@@ -663,7 +663,7 @@ that.
 [1992 Worst Abuse of the Rules]: http://www.ioccc.org/1992/nathan/nathan.hint
 [1998 ASCII / Morse code translator]: http://www.ioccc.org/1998/dorssel/dorssel.hint
 [2014 Morse audio transcoder]: http://www.ioccc.org/2014/vik/README.md
-[Enigma Message Procedures]: http://users.telenet.be/d.rijmenants/en/enigmaproc.htm
+[Enigma Message Procedures]: https://web.archive.org/web/20200710094321/http://users.telenet.be/d.rijmenants/en/enigmaproc.htm
 [Interactive Enigma Machine]: http://enigmaco.de/enigma/enigma.html
 [enigma.1]: enigma.1
 [recode.1]: recode.1
@@ -673,9 +673,9 @@ that.
 [obfuscation.md]: obfuscation.md
 [obfuscation.txt]: obfuscation.txt
 [obfuscation.key]: obfuscation.key
-[Tony Sale's pages on The Enigma cipher machine]: http://www.codesandciphers.co.uk/enigma/index.htm
-[Technical Details of the Enigma Machine]: http://users.telenet.be/d.rijmenants/en/enigmatech.htm
-[The German Enigma Cipher Machine]: http://users.telenet.be/d.rijmenants/en/enigma.htm
+[Tony Sale's pages on The Enigma cipher machine]: https://web.archive.org/web/20200621180323/http://www.codesandciphers.co.uk/enigma/index.htm
+[Technical Details of the Enigma Machine]: https://web.archive.org/web/20200710094303/http://users.telenet.be/d.rijmenants/en/enigmatech.htm
+[The German Enigma Cipher Machine]: https://web.archive.org/web/20200710094243/http://users.telenet.be/d.rijmenants/en/enigma.htm
 [How the Enigma was Set Up and Operated]: http://www.ellsbury.com/enigma3.htm
 [https://ioccc.xexyl.net/2020/enigma]: https://ioccc.xexyl.net/2020/enigma
 
