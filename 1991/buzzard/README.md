@@ -7,19 +7,22 @@ Best Output:
 	USA
 
 
-Judges' comments:
+## To buil:
 
-    Make and run as follows:
+        make all
 
-	make buzzard
-	buzzard
+### To run
+
+	./buzzard
+
+## Judges' comments
 
     You will be A-mazed.
 
     You are invited to try to cheat, ... if you can figure out how!  :-)
 
 
-Selected notes from the author:
+## Author's comments
 
     HOW TO PLAY:
 
