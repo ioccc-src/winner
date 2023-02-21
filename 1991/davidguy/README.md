@@ -6,8 +6,7 @@ Best X11 Graphics:
 	Pittsburgh PA 15213		Murray Hill NJ 07974
 	USA				USA
 
-
-## To buil:
+## To build:
 
         make all
 
@@ -41,7 +40,6 @@ Best X11 Graphics:
 
     We are pleased that this entry has helped bring new 'life' into
     the contest.
-
 
 ## Author's comments
 

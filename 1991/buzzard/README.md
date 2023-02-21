@@ -6,8 +6,7 @@ Best Output:
 	Hyattsville MD 20782 
 	USA
 
-
-## To buil:
+## To build:
 
         make all
 
@@ -20,7 +19,6 @@ Best Output:
     You will be A-mazed.
 
     You are invited to try to cheat, ... if you can figure out how!  :-)
-
 
 ## Author's comments
 

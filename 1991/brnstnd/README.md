@@ -3,7 +3,7 @@
 	Daniel J. Bernstein
 	New York University
 
-## To buil:
+## To build:
 
         make all
 
@@ -14,7 +14,6 @@
 	./brnstnd < sorta.i2+2
 
 ## Judges' comments
-
 
     For info on more examples, read the sorta.README file.
 
