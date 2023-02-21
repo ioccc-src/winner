@@ -361,7 +361,7 @@ ARCH=
 # Defines that are needed to compile
 #
 CDEFINE=
-#CDEFINE= -DIOCCC=26
+#CDEFINE= -DIOCCC
 
 # Include files that are needed to compile
 #
