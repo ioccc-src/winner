@@ -1,4 +1,4 @@
-Most Useful Label:
+# Most Useful Label:
 
 	Christian Dupont
 	Ecole Normale Superieure de Lyon,
@@ -8,12 +8,15 @@ Most Useful Label:
 	France
 
 
-Judges' comments:
+## To buil:
 
-    Make and run as follows:
+        make all
 
-	make cdupont
-	cdupont
+### To run
+
+	./cdupont
+
+## Judges' comments
 
     Why is the following label necessary?
     
@@ -22,16 +25,12 @@ Judges' comments:
     Notice that if you C beautify (cb) or pre-process this program, it
     will no longer work correctly, or at all.  (go ahead, try it... :-))
 
-    NOTE: Due to minor problems with some ANSI C compilers, we have
-	  supplied a more portable ANSI version.  See the top level
-	  README file for details.
-
     NOTE: One should remove the final trailing newline to obtain the
 	  original source file.  This step is not needed to compile
 	  this entry.
 
 
-Selected notes from the author:
+## Author's comments
 
     Spoiler, rot13 to read:
 
