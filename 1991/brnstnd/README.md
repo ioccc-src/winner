@@ -1,15 +1,20 @@
-Best Of Show:
+# Best Of Show:
 
 	Daniel J. Bernstein
 	New York University
 
+## To buil:
 
-Judges' comments:
+        make all
 
-    Make and run.  Try:
+	NOTE: This entry may not compile when using modern compilers.
 
-	make brnstnd
-	brnstnd < sorta.i2+2
+### To run
+
+	./brnstnd < sorta.i2+2
+
+## Judges' comments
+
 
     For info on more examples, read the sorta.README file.
 
@@ -18,16 +23,14 @@ Judges' comments:
     by this blatant attempt to influence the contest and rejected
     this idea...  so we gave it the Best of Show award instead!!
 
-    NOTE: Due to minor problems with some ANSI C compilers, we have
-	  supplied a more portable ANSI version.  See the top level
-	  README file for details.
-
     NOTE: One should remove the final trailing newline to obtain the
 	  original source file.  This step is not needed to compile
 	  this entry.
 
-    
-Selected notes from the author:
+    To have a chance to compile under a modern CPP, we had to
+    replace `#D` with `#define`.
+
+## Author's comments
 
     This is an interpreter for the programming language SORTA, a systems
     and numerical programming language with features sorta from C, sorta
