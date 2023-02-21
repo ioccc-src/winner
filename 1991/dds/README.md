@@ -1,4 +1,4 @@
-Most Well Rounded:
+# Most Well Rounded:
 
 	Diomidis Spinellis
 	Imperial College, University of London
@@ -7,14 +7,20 @@ Most Well Rounded:
 	Greece
 
 
-Judges' comments:
+## To build:
+
+        make all
+
+### To run
+
+	./dds basic_program
+	./a.out
+
+## Judges' comments
 
     Make and run as follows:
     
 	make dds
-	dds basic_program
-	a.out
-
     For example, the author suggests trying:
      
 	dds LANDER.BAS
@@ -30,7 +36,7 @@ Judges' comments:
 	  have supplied a more portable ANSI version.
 
 
-Selected notes from the author:
+## Author's comments
 
     This program is a companion to the DDS-BASIC interpreter program that
     was submitted to the contest in 1990.  This compiles BASIC programs into
