@@ -7,23 +7,26 @@ Best X11 Graphics:
 	USA				USA
 
 
-Judges' comments:
+## To buil:
 
-    Make and run as follows:
+        make all
 
-	make davidguy
-	davidguy ip_address:server.screen
+### To run
 
-    where 'ip_address' in an IP address of an X server.  For example, try:
+	./davidguy ip_address:server.screen
 
-	davidguy 127.0.0.1:0.0
+	where 'ip_address' in an IP address of an X server.  For example, try:
 
-    Of course, may need to supply a more reasonable address.  :-)
+	    davidguy 127.0.0.1:0.0
 
-    Also try:
+	Of course, may need to supply a more reasonable address.  :-)
 
-	cp davidguy guydavid
-	guydavid 127.0.0.1:0.0
+	Also try:
+
+	    cp -f davidguy guydavid
+	    ./guydavid 127.0.0.1:0.0
+
+## Judges' comments
 
     Can you determine why this makes a difference.
 
@@ -39,12 +42,8 @@ Judges' comments:
     We are pleased that this entry has helped bring new 'life' into
     the contest.
 
-    NOTE: The orignal program that won may be found in davidguy.orig.c.
-	  The author supplied a second version of the program, which
-	  we have placed in the default location davidguy.c.
- 
 
-Selected notes from the authors:
+## Author's comments
 
     The program is a fully-functional X client.  It talks directly to
     the X server through a socket without using Xlib, Xt or any other
