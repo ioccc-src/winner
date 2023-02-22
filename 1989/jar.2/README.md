@@ -15,6 +15,9 @@ Judges notes:
 	all this functionality in such a small, densely packed program,
 	is impressive enough to win the Best of show award.
 
+	To have a chance to compile under a modern CPP, we had to
+	replace `#D` with `#define`.
+
 Selected notes from the author:
 
 	This program implements a Lisp interpreter in 1465 bytes of source.
