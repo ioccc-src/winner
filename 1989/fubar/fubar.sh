@@ -1,4 +1,4 @@
-:
+#!/usr/bin/env sh
 # to run fubar in the 'proper' way
 
 # parse args
@@ -15,5 +15,5 @@ r fubar.c
 w ouroboros.c
 EOF
 chmod +x ouroboros.c
-ouroboros.c $1
+./ouroboros.c $1
 rm -f ouroboros.c x1 x
