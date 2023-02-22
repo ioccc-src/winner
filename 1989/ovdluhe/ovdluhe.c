@@ -1,15 +1,14 @@
 #include <string.h>
 typedef char ape
-#define D define
-#D EA register
-#D EP unsigned
-#D A 1
-#D AP (A<<A)
-#D P (A<<AP)
-#D AE ((P<<P)<<A)
-#D PE (((A<<P)<<P)<<P)
-#D E ((EP)A>>A)
-#D APE {EA EP ape ea=AE;while(ea--) e[ea]=E;}
+#define EA register
+#define EP unsigned
+#define A 1
+#define AP (A<<A)
+#define P (A<<AP)
+#define AE ((P<<P)<<A)
+#define PE (((A<<P)<<P)<<P)
+#define E ((EP)A>>A)
+#define APE {EA EP ape,ea=AE;while(ea--) e[ea]=E;}
 ;ape a[PE+A],ap,*ae,p[P+A],e[AE];
 main(){ape pe,*ep=a;srand((EP)time((long)E));
 while(((*(ep++)=getchar())!=-A)&&((ep-a)<PE));
