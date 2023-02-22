@@ -327,30 +327,26 @@ X11_LIBDIR= /opt/X11/lib
 #X11_INCDIR= /usr/X11/include
 X11_INCDIR= /opt/X11/include
 
-# Compiler warnings
+# Common C compiler warnings to silence
 #
-#CWARN=
-#CWARN= -Wall
-#CWARN= -Wall -Wextra
-#CWARN= -Wall -Wextra ${CSILENCE}
-CWARN= -Wall -Wextra -pedantic ${CSILENCE}
-#CWARN= -Wall -Wextra -Weverything
-#CWARN= -Wall -Wextra -Weverything -pedantic
-#CWARN= -Wall -Wextra -Weverything -pedantic ${CSILENCE}
-
-# Silence warnings that ${CWARN} would normally complain about
-#
+#CSILENCE=
 CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-implicit-int -Dunix=1 \
 	-Wno-string-plus-int
-#CSILENCE= -Wno-implicit-int
 
-# compiler standard
+# Common C compiler warning flags
+#
+#CWARN= ${CSILENCE}
+#CWARN= -Wall ${CSILENCE}
+#CWARN= -Wall -Wextra ${CSILENCE}
+CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+
+# Compiler standard
 #
 #CSTD=
 #CSTD= -ansi
 CSTD= -std=gnu89
 
-# compiler bit architecture
+# Compiler bit architecture
 #
 # Some entries require 32-bitness:
 # ARCH= -m32
@@ -362,12 +358,12 @@ CSTD= -std=gnu89
 #
 ARCH=
 
-# defines that are needed to compile
+# Defines that are needed to compile
 #
 CDEFINE=
-#CDEFINE= -DIOCCC=26
+#CDEFINE= -DIOCCC
 
-# include files that are needed to compile
+# Include files that are needed to compile
 #
 CINCLUDE=
 #CINCLUDE= -include stdlib.h
@@ -376,7 +372,7 @@ CINCLUDE=
 #CINCLUDE= -I ${X11_INCDIR}
 #CINCLUDE= -I ${HOMEBREW_PREFIX}/include/SDL2
 
-# optimization
+# Optimization
 #
 # Most compiles will safely use -O2.  Some can use only -O1 or -O.
 # A few compilers have broken optimizers or this entry make break
@@ -389,7 +385,7 @@ CINCLUDE=
 #OPT= -O2
 OPT= -O3
 
-# default flags for ANSI C compilation
+# Default flags for ANSI C compilation
 #
 CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
@@ -400,20 +396,32 @@ LIBS=
 #LIBS= -L ${X11_LIBDIR} -lX11
 #LIBS= -L ${HOMEBREW_PREFIX}/lib -lSDL
 
-# ANSI compiler
-#
-# Set CC to the name of your ANSI compiler.
-#
-# Some entries seem to need gcc.  If you have gcc, set
-# both CC and MAY_NEED_GCC to gcc.
-#
-# If you do not have gcc, set CC to the name of your ANSI compiler, and
-# set MAY_NEED_GCC to either ${CC} (and hope for the best) or to just :
-# to disable such programs.
+# C compiler to use
 #
 CC= cc
 #CC=clang
-MAY_NEED_GCC= gcc
+#CC=gcc
+
+# Compiler add-ons or replacements for clang only
+#
+ifeq ($(CC),clang)
+#
+CSILENCE+= -Wno-array-bounds-pointer-arithmetic -Wno-format-nonliteral \
+	-Wno-poison-system-directories
+#
+CWARN+= -Weverything
+#
+endif
+
+# Specific add-ons or replacements for gcc only
+#
+ifeq ($(CC),gcc)
+#
+#CSILENCE+=
+#
+#CWARN+=
+#
+endif
 
 
 ##############################
