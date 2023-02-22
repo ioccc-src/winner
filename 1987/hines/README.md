@@ -24,7 +24,7 @@ structured programmers.  This program takes goto statements to their
 logical conclusion.  The layout and choice of names are classic.
 
 We consider this to be a beautiful counter-example for Frank Rubin's
-letter to ACM form titled: *"GOTO Considered Harmful" Considered Harmful*.
+letter to ACM form titled: _"'GOTO Considered Harmful' Considered Harmful"_.
 See the Communications of the ACM, March 1987, Page 195-196.
 
 NOTE: With older compilers you can try the alt version like: `make alt`.
