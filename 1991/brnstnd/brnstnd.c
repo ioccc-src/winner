@@ -28,7 +28,7 @@
 #define w [256]
 #define V f(k>o||p>o||q>o)v 2;
 R I="I'd love ta win: the most useful !$>%`/#<&*|^ _OBFUSCATED_ utility. Pleez?";U(y,x)R y;R*j*x)+L(y)+1);sprintf(r,"%s%s",*x,y);*x=r;}R T(x)R j x)+1);strcpy(r,x);v
-r;}R(i w);static R(Z w);K w;main(a,A)int a;R*A;{int s w,p=0,q=0,n=0,c,k=0;W{V
+r;}R(i w);static R(Z w);int K w;main(a,A)int a;R*A;{int s w,p=0,q=0,n=0,c,k=0;W{V
 f(c>='0'&&c<='9'){f(!n)N=0;n=1;e=10*e+(c-'0')h}n=0;J(39,m
 sprintf(d=M(13),"%d",e))
 J(37,q&&puts(g))J(34,q&&printf("%s",g))J(27,H(p,_,s))O('[',']')J(56,f(p){c=e;N=c;})J(2,m--p)J(10,N=a)J(4,f(q){N=L(g);X(S--]);})J(1,f(q){S+1]=T(g);++q;})J(53,m
