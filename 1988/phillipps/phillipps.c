@@ -1,7 +1,4 @@
-main(t,_,a )
-char
-*
-a;
+main(int t,char **_,char **a)
 {
 				return!
 
@@ -9,7 +6,7 @@ a;
 t<3?
 
 main(-79,-13,a+
-main(-87,1-_,
+main(-87,1-(int)_,
 main(-86, 0, a+1 )
 
 
