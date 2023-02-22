@@ -1,4 +1,4 @@
-Best Language Tool:
+# Best Language Tool:
 
 	Sean Barrett
 	Software Construction Company
@@ -6,27 +6,37 @@ Best Language Tool:
 	College Station, TX 77840
 	USA
 
+## To build:
 
-Judges' comments:
+        make all
+
+### To run
 
     First:
-	make first
-    
-    Second:
-	echo help | cat third help.th - | first
-	cat third demo5.th | first
-    
-    Third:
-	cat third help.th - | first
 
-	Wait until Ok is printed and the type:
+	make first
+
+    Second:
+
+	echo help | cat third help.th - | ./first
+	cat third demo5.th | ./first
+
+    Third:
+
+	cat third help.th - | ./first
+
+	NOTE: Wait until Ok is printed and the type:
 	    2 3 + . cr	    <-- yes you should really type the 2 letters: cr
 
     Forth:
+
 	Sorry, this is third!
 
+## Judges' comments
 
-Selected notes from the author:
+    Have fun!
+
+## Author's comments
 
     What it does:
 
@@ -116,7 +126,7 @@ Selected notes from the author:
 	it also obfuscates the code.  (Unfortunately, the top of stack
 	is a global variable and neither gcc nor most bundled compilers
 	seem to register allocate it.)
-	
+
         More significant are the design obfuscations.  m[0] is the
         "dictionary pointer", used when compiling words, and m[1] is
         the return stack index.  Both are used as integer offsets into

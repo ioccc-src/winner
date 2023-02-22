@@ -1,4 +1,4 @@
-Best Game:
+# Best Game:
 
 	Marangoni Andrea
 	Department of Computer Science at Milano
@@ -6,10 +6,15 @@ Best Game:
 	62014 Corridonia (MC)
 	Italy
 
+## To build:
 
-Judges' comments:
+        make all
 
-    Make and run.
+### To run
+
+	./marangon
+
+## Judges' comments
 
     The object is to refill the table with 5's, by incrementing
     or decrementing numbers as needed.  It is the side effects
@@ -25,8 +30,7 @@ Judges' comments:
 	  systems where exit returned a void.  The file marangon.c
 	  avoids this problem.
 
-
-Selected notes from the author:
+## Author's comments
 
     It starts off by creating a table with number 5 in all places.  The
     CPU melts the numbers and you must return them in original state.

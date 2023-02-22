@@ -1,27 +1,27 @@
-Worst Abuse of the C Preprocessor:
+# Worst Abuse of the C Preprocessor:
 
 	Ed Luke
 	Mississippi State University
 	P.O. Box 6176
 	Mississippi State, MS 39762, USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To setup:
-	make lush
-    
-    Try:
-	make lush.again 2>&1 | lush		(sh or ksh users)
-    or:
-	make lush.again |& lush			(csh users)
+### To run
+
+	make lush.again 2>&1 | ./lush
+
+	NOTE: This entry requires a non-standard K&R C compiler to compile.
+
+## Judges' comments
 
     The program uses error messages issued by the C Proproessor to
     generate its message to the world.  One program's error is another 
     program's data!
 
-
-Selected notes from the author:
+## Author's comments
 
     This program is yet another "Hello World." program with a twist.  The
     string Hello World has been encoded in the error messages the compiler

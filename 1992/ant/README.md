@@ -1,4 +1,4 @@
-Best Utility:
+# Best Utility:
 
 	Anthony C Howe
 	Mortice Kern Systems Inc.
@@ -7,13 +7,16 @@ Best Utility:
 	N2J 3G4
 	Canada
 
+## To build:
 
-Judges' comments:
+        make all
 
-   To use:
-	make am
-	am ant.test.mk
-    
+### To run
+
+	./am ant.test.mk
+
+## Judges' comments
+
     Like much of Posix, obfuscation has its place.  Your task is to
     figure out where.
 
@@ -22,12 +25,12 @@ Judges' comments:
     P1003 sub-committee.
 
     We also suggest that you try:
+
 	make am
-	am Makefile am_clobber		<-- clobber everything except am
-	am Makefile all
+	./am Makefile am_clobber	# clobber everything except am
+	./am Makefile all
 
-
-Selected notes from the author:
+## Author's comments
 
     See the file ant.README.
 
