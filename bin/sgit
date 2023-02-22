@@ -1,24 +1,83 @@
 #!/usr/bin/env bash
 #
-# sgit - sed on all files under git control
+# sgit - sed -i on all files under git control
 #
-# usage: sgit <sed command...> <glob>
+# usage: sgit -e 'sed command'... <glob...>
 #
-# sed must be GNU sed and we use -i'' just in case it's not. Even so sed under
-# macOS will fail. This script could be improved to check for GNU sed and it
-# might be an easy way to fix it in other sed implementations but it works for
-# my purposes and since I want to work on the reason for this script (and not
-# the script itself) I'm not going to worry about that.
+# This script will allow one to update files under git control without having to
+# come up with a list of files and then passing those to the command. It allows
+# for multiple sed commands (all with in-place editing) and multiple globs.
 #
-# DISCLAIMER AND WARNING: this is hack and most likely error prone!
+# DISCLAIMER AND WARNING: this is something of a hack and might be error prone.
+# It works for what is needed but possibly could be improved. Even so I like it
+# how it is and I don't think it would do good to add any additional features
+# except perhaps allowing for one to specify path to sed.
+#
+# A limitation is that if the sed command has spaces it will be a problem.
+# Whether this will be fixed is not yet decided. I have some ideas of how it
+# might happen but it might not be worth it.
 #
 # - Cody Boone Ferguson (@xexyl)
 #
 
-# firewall
-#
-# first check that this is a git repo!
+export SGIT_VERSION="0.0.2-1 13-02-2023" # format: major.minor.patch-release DD-MM-YYYY
 
+USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-e command] <glob...>
+
+    -h			    print help and exit
+    -V			    print version and exit
+    -v level		    set verbosity level
+    -e command		    append sed command to execute on globs
+
+sgit version: $SGIT_VERSION"
+
+export VERBOSITY=0
+export SED_COMMANDS=
+# parse args
+#
+while getopts :hVv:e: flag; do
+    case "$flag" in
+    h)	echo "$USAGE" 1>&2
+	exit 2
+	;;
+    V)	echo "$SGIT_VERSION" 1>&2
+	exit 2
+	;;
+    v)	VERBOSITY="$OPTARG";
+	;;
+    e)	SED_COMMANDS="$SED_COMMANDS -e $OPTARG"
+	;;
+    :)	echo "$0: ERROR: option -$OPTARG requires an argument" 1>&2
+	echo 1>&2
+	echo "$USAGE" 1>&2
+	exit 3
+	;;
+   *)
+	;;
+    esac
+done
+
+shift $(( OPTIND - 1 ));
+
+# firewall
+
+# check that SED_COMMANDS is not empty!
+if [[ -z "$SED_COMMANDS" ]]; then
+    echo "$(basename "$0"): ERROR: you must specify at least one sed command" 1>&2
+    echo 1>&2
+    echo "$USAGE" 1>&2
+    exit 2
+fi
+
+# also check number of remaining args
+if [[ "$#" -eq 0 ]]; then
+    echo "$(basename "$0"): ERROR: you must specify at least one glob" 1>&2
+    echo 1>&2
+    echo "$USAGE" 1>&2
+    exit 2
+fi
+
+# then check that this is a git repo!
 git status 2>/dev/null 1>&2
 status="$?"
 if [[ "$status" -ne 0 ]]; then
@@ -26,25 +85,9 @@ if [[ "$status" -ne 0 ]]; then
     exit 1
 fi
 
-# check number of args
-if [[ "$#" -lt 2 ]]; then
-    echo "$(basename "$0"): ERROR: usage: $(basename "$0") <sed command...> <glob>" 1>&2
-    exit 2
+if [[ $VERBOSITY -gt 1 ]]; then
+    echo "debug[2]: sed commands: $SED_COMMANDS" 1>&2
 fi
-
-export SED_COMMANDS=""
-export GLOB=""
-# go through the command line, extracting the sed commands. When we've reached
-# the end (one arg left) we know we have the glob to pass to git ls-files.
-# We do it this way because apparently $BASH_ARG[VC] are not set unless in
-# extended debugging mode (shopt -s extdebug).
-i=0;
-while [[ "$i" -le "$#" ]]; do
-    SED_COMMANDS="$SED_COMMANDS -e $1";
-    ((i++))
-    shift 1
-done
-GLOB="$1"
 
 # This is not the best performance because it does this on all files of the glob
 # rather than only those files matched by the glob with matching text but it's
@@ -60,13 +103,21 @@ GLOB="$1"
 # unnecessarily complicate matters. Anyway it's a hack so it doesn't have to be
 # perfect (not that there even is such a thing as perfect).
 #
-# NOTE: it is a burden on the user to specify a glob that will only match
-# regular files. Although we could try and figure out if each matching file is a
-# regular file it would mean we would have to go through the list a line at a
-# time and then add it to a new list if it's a regular file and this seems
-# unnecessary. Besides doing '.' will not cause a problem so it might be fine.
-
-# shellcheck disable=SC2086
-# SC2086 (info): Double quote to prevent globbing and word splitting. We can't
-# disable this because we need to have word splitting.
-git ls-files "$GLOB" | xargs sed -i'' $SED_COMMANDS
+if [[ "$VERBOSITY" -gt 1 ]]; then
+    echo "debug[2]: looping through all globs" 1>&2
+fi
+i=0
+while [[ "$i" -le "$#" ]]; do
+    if [[ "$VERBOSITY" -gt 1 ]]; then
+	echo "debug[2]: found glob: $1" 1>&2
+    fi
+    if [[ "$VERBOSITY" -ge 1 ]]; then
+	echo "debug[1]: about to run: git ls-files $1 | xargs sed -i '' $SED_COMMANDS" 1>&2
+    fi
+    # shellcheck disable=SC2086
+    # SC2086 (info): Double quote to prevent globbing and word splitting. We can't
+    # quote this because we need to have word splitting.
+    git ls-files "$1" | xargs sed -i '' $SED_COMMANDS
+    ((i++))
+    shift 1
+done
