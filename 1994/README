@@ -1,19 +1,13 @@
 1994 marked the "The Eleventh International Obfuscated C Code Contest"
 
-Copyright (c) 1994, Landon Curt Noll & Larry Bassel.
-All Rights Reserved.  Permission for personal, educational or non-profit use is
-granted provided this this copyright and notice are included in its entirety
-and remains unaltered.  All other uses must receive prior permission in writing
-from both Landon Curt Noll and Larry Bassel.
 
+Look at the README.md file for the given winner for information
+on how to compile the winner and how to run the winning program.
+Look at the winning source and try to figure how it does what it does!
+You may then wish to look at the Author's comments for even more details.
 
 Use make to compile entries.  It is possible that on BSD or non-unix
 systems the makefile needs to be changed.  See the Makefile for details.
-
-Look at the source and try to figure out what the programs do, and run
-them with various inputs.  If you want to, look at the hints files for
-spoilers - this year we included most of the information included
-by the submitters.
 
 Read over the makefile for compile/build issues.  Your system may
 require certain changes (add or remove a library, add or remove a
@@ -98,13 +92,13 @@ A few notes regarding future contests
 Due to changes in the Usenix conference calendar, the 1995 contest will
 be delayed.  Because there will be no Summer 1995 Usenix conference,
 the 1995 IOCCC winners will be announced at the Jan 1996 Usenix conference.
- 
+
 The 1995 contest will not open until late October 1995, and will close
 sometime around the end of December 1995.  The rules for the 1995
 contest have not been formed at this time and are not expected to be
 ready for distribution until late October 1995.
 
-Be sure to wait until the 1995 rules are posted before submitting entries.  
+Be sure to wait until the 1995 rules are posted before submitting entries.
 Rules differ from year to year, sometimes in significant ways.
 
 Please send us comments and suggestions what we have expressed above.
@@ -124,7 +118,7 @@ email the fix (patch file or the entire changed file) to the above address.
 Credits
 -------
 
-We would like to thank Barbara Frezza for her role as official chef 
+We would like to thank Barbara Frezza for her role as official chef
 of the contest.  Landon Noll and Larry Bassel appreciated the opportunity
 to serve as official taste testers.  And as usual, the food was excellent.
 The official menu of the 1994 Obfuscated C Contest dinner:
@@ -136,3 +130,11 @@ Pasta: Linguine with wild mushrooms and Reggiano Parmesan
 Seafood: Salmon in cream sauce or lobster claws
 Vegetable: Zucchini
 Dessert: Homemade chocolate/pecan brownies, fruit
+
+=-=
+
+Copyright (c) 1994, Landon Curt Noll & Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.

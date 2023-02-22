@@ -1,11 +1,10 @@
 1995 marked the "The Twelfth International Obfuscated C Code Contest"
 
-Copyright (c) 1996, Landon Curt Noll, Larry Bassel & Sriram Srinivasan.
-All Rights Reserved.  Permission for personal, educational or non-profit use is
-granted provided this this copyright and notice are included in its entirety
-and remains unaltered.  All other uses must receive prior permission in writing
-from Landon Curt Noll, Larry Bassel and Sriram Srinivasan.
 
+Look at the README.md file for the given winner for information
+on how to compile the winner and how to run the winning program.
+Look at the winning source and try to figure how it does what it does!
+You may then wish to look at the Author's comments for even more details.
 
 The IOCCC has an official home page:
 
@@ -17,11 +16,6 @@ announcements and much more.
 Use make to compile entries.  It is possible that on BSD or non-unix
 systems the makefile needs to be changed.  See the Makefile for details.
 
-Look at the source and try to figure out what the programs do, and run
-them with various inputs.  If you want to, look at the hints files for
-spoilers - this year we included most of the information included
-by the submitters.
-
 Read over the makefile for compile/build issues.  Your system may
 require certain changes (add or remove a library, add or remove a
 #define).
@@ -30,7 +24,7 @@ This year Sriram Srinivasan joined the judging.
 
 The moderator of comp.unix.wizards did not feel that the IOCCC was "wizardly"
 enough to be posted to comp.unix.wizards - we will no longer post the
-winners to this newsgroup - we'll let you the reader decide for yourself the 
+winners to this newsgroup - we'll let you the reader decide for yourself the
 wizardlyness of these entries.
 
 This year there were several people who won more than once
@@ -55,7 +49,7 @@ close sometime around the end of December 1996.  The rules for the 1996
 contest have not been formed at this time and are not expected to be
 ready for distribution until late September 1996.
 
-Be sure to wait until the 1996 rules are posted before submitting entries.  
+Be sure to wait until the 1996 rules are posted before submitting entries.
 Rules differ from year to year, sometimes in significant ways.
 
 Please send us comments and suggestions what we have expressed above.
@@ -85,7 +79,7 @@ Session One:
 
 Antipasti: Crudites, olive selection, pickles, cheese selection
 Soup: Homemade mushroom and green onion soup
-Salad: artichoke, red bell peppers, Italian onions, cucumbers 
+Salad: artichoke, red bell peppers, Italian onions, cucumbers
        and Greek olives with mustard vinaigrette
 Main Course: Pizzas, with a variety of toppings
 Dessert: Chocolate torte
@@ -97,11 +91,11 @@ Salad: Mixed greens with vinaigrette
 Main Course: Spaghetti with tomato sauce containing mushrooms and black olives
 	     selection of hot and mild Italian sausages
 Bread: Fresh French bread
-Dessert: Cookie selection, featuring chocolate chocolate chip cookies and 
+Dessert: Cookie selection, featuring chocolate chocolate chip cookies and
 	 chocolate butter cookies
 
 
-Session Three 
+Session Three
 
 Antipasti: Crudites, olive selection
 Salad: Mixed greens with mustard vinaigrette
@@ -131,7 +125,7 @@ Dessert: Flourless chocolate torte
 
 Session Six:
 
-Antipasti: Carrot and celery sticks with cheese spread, olive selection, 
+Antipasti: Carrot and celery sticks with cheese spread, olive selection,
 pickles
 Bread: Focaccia with black olives and mozzarella cheeses
 Salad: Mixed spring greens with flowers and mustard vinaigrette
@@ -140,3 +134,10 @@ Main Course: Cracked dungeness crab with lemon mayonnaise, broccoli,
 	mixture of white and brown rice
 Dessert: Key lime pie
 
+=-=
+
+Copyright (c) 1996, Landon Curt Noll, Larry Bassel & Sriram Srinivasan.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from Landon Curt Noll, Larry Bassel and Sriram Srinivasan.

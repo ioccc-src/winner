@@ -1,13 +1,12 @@
 ## 2020 marked the "The Twenty Seventh International Obfuscated C Code Contest"
 
-Copyright (C) 2020, Landon Curt Noll, Simon Cooper, and Leonid A.
-Broukhis. All Rights Reserved. Permission for personal, educational
-or non-profit use is granted provided this copyright and notice are
-included in its entirety and remains unaltered.  All other uses
-must receive prior permission from the contest judges.
-
 
 ## Standard IOCCC stuff
+
+Look at the README.md file for the given winner for information
+on how to compile the winner and how to run the winning program.
+Look at the winning source and try to figure how it does what it does!
+You may then wish to look at the Author's comments for even more details.
 
 The primary IOCCC web site can be found at,
 
@@ -15,11 +14,6 @@ The primary IOCCC web site can be found at,
 
 Use make to compile entries.  It is possible that on non-Un\*x / non-Linux
 systems the makefile needs to be changed.  See the Makefile for details.
-
-Look at the source and try to figure out what the programs do, and run
-them with various inputs.  If you want to, look at the hints files for
-spoilers - this year we included most of the information included
-by the submitter.
 
 Read over the makefile for compile/build issues.  Your system may require
 certain changes (add or remove a library, add or remove a #define).
@@ -88,10 +82,10 @@ For news of the next contest watch:
 
 >	<http://www.ioccc.org/>
 
------------------------------------------------------------------------------------------------------
-(c) Copyright 1984-2020, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
-This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+=-=
 
-[judges]: http://www.ioccc.org/judges.html
-[cc]: http://creativecommons.org/licenses/by-sa/3.0/
------------------------------------------------------------------------------------------------------
+Copyright (C) 2020, Landon Curt Noll, Simon Cooper, and Leonid A.
+Broukhis. All Rights Reserved. Permission for personal, educational
+or non-profit use is granted provided this copyright and notice are
+included in its entirety and remains unaltered.  All other uses
+must receive prior permission from the contest judges.

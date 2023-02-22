@@ -1,24 +1,19 @@
 1992 marked the "The Ninth International Obfuscated C Code Contest"
 
-Copyright (c) 1992, Landon Curt Noll & Larry Bassel.
-All Rights Reserved.  Permission for personal, educational or non-profit use is
-granted provided this this copyright and notice are included in its entirety
-and remains unaltered.  All other uses must receive prior permission in writing
-from both Landon Curt Noll and Larry Bassel.
+
+Look at the README.md file for the given winner for information
+on how to compile the winner and how to run the winning program.
+Look at the winning source and try to figure how it does what it does!
+You may then wish to look at the Author's comments for even more details.
 
 Use make to compile entries.  It is possible that on BSD or non-unix
 systems the makefile needs to be changed.  See the Makefile for details.
-
-Look at the source and try to figure out what the programs do, and run
-them with various inputs.  If you want to, look at the hints files for
-spoilers - this year we included most of the information included
-by the submitters.
 
 Read over the makefile for compile/build issues.  Your system may
 require certain changes (add or remove a library, add or remove a
 #define).  A number of compilers had problems optimizing certain
 entries.  Some compilers do optimize, but the resulting program
-does not work.  By default we have left off -O from compile lines.  
+does not work.  By default we have left off -O from compile lines.
 You might want to add -O back, or add it back for certain entries
 where performance is important.
 
@@ -30,9 +25,9 @@ years.  The new size rules size probably contributed to the overall
 high quality.
 
 FYI: By tradition, we do not record the count the number entries,
-     nor do we give our our guess as to the number of entries 
-     received.  For folks who wonder, we can say that we consumed 
-     about 2000 pages of output (printing between 2 and 4 normal 
+     nor do we give our our guess as to the number of entries
+     received.  For folks who wonder, we can say that we consumed
+     about 2000 pages of output (printing between 2 and 4 normal
      pages per side) during the judging process this year.
 
 The new instructions for submitting entries worked well - we were
@@ -57,14 +52,14 @@ deserving entries.  These categories have not been eliminated.  We will
 likely be awarding them in future years.
 
 We received a few entries whose instructions were rot13'd.  While
-nothing was said about this in the rules, we found that it made the 
+nothing was said about this in the rules, we found that it made the
 judging process a little harder, so we may request that this not
 be done this in the future.
 
 Some thought has been given to a separate obfuscated perl contest.
 Watch comp.lang.perl for details!
 
-Be sure to wait until the 1993 rules are posted before submitting entries.  
+Be sure to wait until the 1993 rules are posted before submitting entries.
 We may fine tune the rules to reflect the some ideas above.
 
 Please send us comments and suggestions what we have expressed above.
@@ -86,3 +81,11 @@ Credits:
 We would like to thank Barbara Frezza for her role as official chef of
 the contest.  Landon Noll and Larry Bassel appreciated the opportunity
 to serve as official taste testers. Yummo!
+
+=-=
+
+Copyright (c) 1992, Landon Curt Noll & Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.

@@ -1,15 +1,13 @@
 1998 marked the "The Fourteenth International Obfuscated C Code Contest"
 
-Copyright (c) Landon Curt Noll, Jeremy Horn, Peter Seebach
-and Leonid A. Broukhis, 1999.
-All Rights Reserved.  Permission for personal, educational or non-profit
-use is granted provided this this copyright and notice are included in its
-entirety and remains unaltered.  All other uses must receive prior permission
-from the contest judges.
-
 
 Standard IOCCC stuff
 --------------------
+
+Look at the README.md file for the given winner for information
+on how to compile the winner and how to run the winning program.
+Look at the winning source and try to figure how it does what it does!
+You may then wish to look at the Author's comments for even more details.
 
 The IOCCC has its own domain.  The IOCCC has an official home page is now:
 
@@ -17,11 +15,6 @@ The IOCCC has its own domain.  The IOCCC has an official home page is now:
 
 Use make to compile entries.  It is possible that on BSD or non-unix
 systems the makefile needs to be changed.  See the Makefile for details.
-
-Look at the source and try to figure out what the programs do, and run
-them with various inputs.  If you want to, look at the hints files for
-spoilers - this year we included most of the information included
-by the submitters.
 
 Read over the makefile for compile/build issues.  Your system may
 require certain changes (add or remove a library, add or remove a
@@ -131,3 +124,12 @@ The next IOCCC is planned to start towards the end of 1999.  Watch:
 	http://www.ioccc.org
 
 for news of the next contest.
+
+=-=
+
+Copyright (c) Landon Curt Noll, Jeremy Horn, Peter Seebach
+and Leonid A. Broukhis, 1999.
+All Rights Reserved.  Permission for personal, educational or non-profit
+use is granted provided this this copyright and notice are included in its
+entirety and remains unaltered.  All other uses must receive prior permission
+from the contest judges.

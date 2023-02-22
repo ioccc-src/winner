@@ -1,28 +1,21 @@
 2001 marked the "The Sixteenth International Obfuscated C Code Contest"
 
-Copyright (C) Landon Curt Noll, Simon Cooper, Peter Seebach
-and Leonid A. Broukhis, 2001-2002.
-All Rights Reserved.  Permission for personal, educational or non-profit
-use is granted provided this copyright and notice are included in its
-entirety and remains unaltered.  All other uses must receive prior permission
-from the contest judges.
-
 
 Standard IOCCC stuff
 --------------------
+
+Look at the README.md file for the given winner for information
+on how to compile the winner and how to run the winning program.
+Look at the winning source and try to figure how it does what it does!
+You may then wish to look at the Author's comments for even more details.
 
 The IOCCC has a web site and now has a number of international mirrors.  The
 primary site can be found at,
 
      http://www.ioccc.org
 
-Use make to compile entries.  It is possible that on non-Un*x / non-Linux
+Use make to compile entries.  It is possible that on non-Un\*x / non-Linux
 systems the makefile needs to be changed.  See the Makefile for details.
-
-Look at the source and try to figure out what the programs do, and run
-them with various inputs.  If you want to, look at the hints files for
-spoilers - this year we included most of the information included
-by the submitters.
 
 Read over the makefile for compile/build issues.  Your system may
 require certain changes (add or remove a library, add or remove a
@@ -95,3 +88,10 @@ Watch:
 for news of the next contest.
 
 =-=
+
+Copyright (C) Landon Curt Noll, Simon Cooper, Peter Seebach
+and Leonid A. Broukhis, 2001-2002.
+All Rights Reserved.  Permission for personal, educational or non-profit
+use is granted provided this copyright and notice are included in its
+entirety and remains unaltered.  All other uses must receive prior permission
+from the contest judges.
