@@ -345,13 +345,13 @@ CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-pointer-to-int-cast
 	-Wno-string-plus-int -Wno-return-type -Wno-unknown-warning-option
 #CSILENCE= -Wno-implicit-int
 
-# compiler standard
+# Compiler standard
 #
 #CSTD=
 #CSTD= -ansi
 CSTD= -std=gnu89
 
-# compiler bit architecture
+# Compiler bit architecture
 #
 # Some entries require 32-bitness:
 # ARCH= -m32
@@ -363,12 +363,12 @@ CSTD= -std=gnu89
 #
 ARCH=
 
-# defines that are needed to compile
+# Defines that are needed to compile
 #
 CDEFINE=
 #CDEFINE= -DIOCCC=26
 
-# include files that are needed to compile
+# Include files that are needed to compile
 #
 CINCLUDE=
 #CINCLUDE= -include stdlib.h
@@ -377,7 +377,7 @@ CINCLUDE=
 #CINCLUDE= -I ${X11_INCDIR}
 #CINCLUDE= -I ${HOMEBREW_PREFIX}/include/SDL2
 
-# optimization
+# Optimization
 #
 # Most compiles will safely use -O2.  Some can use only -O1 or -O.
 # A few compilers have broken optimizers or this entry make break
@@ -415,6 +415,114 @@ LIBS=
 CC= cc
 #CC=clang
 MAY_NEED_GCC= gcc
+
+# Set X11_LIBDIR to the directory where the X11 library resides
+#
+#X11_LIBDIR= /usr/X11R6/lib
+#X11_LIBDIR= /usr/X11/lib
+X11_LIBDIR= /opt/X11/lib
+
+# Set X11_INCLUDEDIR to the directory where the X11 include files reside
+#
+#X11_INCDIR= /usr/X11R6/include
+#X11_INCDIR= /usr/X11/include
+X11_INCDIR= /opt/X11/include
+
+# Common C compiler warnings to silence
+#
+#CSILENCE=
+CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-pointer-to-int-cast \
+	-Wno-no-return-type -Wno-builtin-requires-header -Wno-empty-body \
+	-Wno-string-plus-int -Wno-return-type -Wno-unknown-warning-option
+
+# Common C compiler warning flags
+#
+#CWARN= ${CSILENCE}
+#CWARN= -Wall ${CSILENCE}
+CWARN= -Wall -Wextra ${CSILENCE}
+#CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+
+# Compiler standard
+#
+#CSTD=
+#CSTD= -ansi
+CSTD= -std=gnu89
+
+# Compiler bit architecture
+#
+# Some entries require 32-bitness:
+# ARCH= -m32
+#
+# Some entries require 64-bitness:
+# ARCH= -m64
+#
+# By default we assume nothing:
+#
+ARCH=
+
+# Defines that are needed to compile
+#
+CDEFINE=
+#CDEFINE= -DIOCCC
+
+# Include files that are needed to compile
+#
+CINCLUDE=
+#CINCLUDE= -include stdlib.h
+#CINCLUDE= -include stdio.h
+#CINCLUDE= -include stdlib.h -include stdio.h
+#CINCLUDE= -I ${X11_INCDIR}
+#CINCLUDE= -I ${HOMEBREW_PREFIX}/include/SDL2
+
+# Optimization
+#
+# Most compiles will safely use -O2.  Some can use only -O1 or -O.
+# A few compilers have broken optimizers or this entry make break
+# under those buggy optimizers and thus you may not want anything.
+# Reasonable compilers will allow for -O3.
+#
+#OPT=
+#OPT= -O
+#OPT= -O1
+#OPT= -O2
+OPT= -O3
+
+# Default flags for ANSI C compilation
+#
+CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
+
+# Libraries needed to build
+#
+LIBS=
+#LIBS= -lm
+#LIBS= -L ${X11_LIBDIR} -lX11
+#LIBS= -L ${HOMEBREW_PREFIX}/lib -lSDL
+
+# C compiler to use
+#
+CC= cc
+#CC=clang
+#CC=gcc
+
+# Compiler add-ons or replacements for clang only
+#
+ifeq ($(CC),clang)
+#
+#CSILENCE+=
+#
+CWARN+= -Weverything
+#
+endif
+
+# Specific add-ons or replacements for gcc only
+#
+ifeq ($(CC),gcc)
+#
+#CSILENCE+=
+#
+#CWARN+=
+#
+endif
 
 
 ##############################
