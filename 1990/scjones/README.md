@@ -10,7 +10,18 @@
 
         make all
 
-	NOTE: This entry may not compile when using modern compilers.
+
+    Modern compilers might fail to compile this entry:
+
+	    scjones.c:1:7: error: expected ';' after top level declarator
+	    char*a??(??)=??<
+		  ^
+		  ;
+
+
+    but we were able to get it to compile with modern compilers by specifying the
+    `-ansi` flag with a tip from Yusuke Endoh. Thank you Yusuke!
+
 
 ### To run
 

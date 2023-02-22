@@ -10,11 +10,15 @@
 
 	make all
 
-	NOTE: This entry may not compile when using modern compilers.
 
 ### To run
 
 	./dds
+
+
+NOTE: this entry uses `gets()` so you might get a warning when compiling and
+running this entry.
+
 
 ## Judges' comments
 
@@ -24,6 +28,11 @@
 	RUN
 
     Be sure not to run out of fuel!
+
+
+    Modern compilers could not compile this entry but Yusuke Endoh supplied a patch
+    which lets it compile. Thank you Yusuke!
+
 
 ## Author's comments
 

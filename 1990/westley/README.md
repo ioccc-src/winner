@@ -36,8 +36,8 @@
     make it easier on news readers, we converted each control-L to 
     a blank line.
 
-    Some ANSI compilers will not accept '1s' as a short integer - for
-    these compilers replace the '1s' with '1'.
+    Some modern compilers will not accept '1s' as a short integer - for
+    these compilers we replaced the instances of `1s` with `1`.
 
 
 ## Author's comments
