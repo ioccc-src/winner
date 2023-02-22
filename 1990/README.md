@@ -1,18 +1,10 @@
 1990 marked the "The Seventh International Obfuscated C Code Contest"
 
-Copyright (c) 1990, Landon Curt Noll & Larry Bassel.
-All Rights Reserved.  Permission for personal, educational or non-profit use is
-granted provided this this copyright and notice are included in its entirety
-and remains unaltered.  All other uses must receive prior permission in writing
-from both Landon Curt Noll and Larry Bassel.
 
-Instructions for use: Run make to compile entries (it is possible that
-on System V or non-unix systems the makefile needs to be changed). The
-ansi.mk may need to be changed if your ANSI C compiler is not gcc.
-
-Look at the source and try to figure out what the programs do, and run
-them with various inputs.  If you want to, look at the hints files for
-(minor) spoilers.
+Look at the README.md file for the given winner for information
+on how to compile the winner and how to run the winning program.
+Look at the winning source and try to figure how it does what it does!
+You may then wish to look at the Author's comments for even more details.
 
 This year, the Grand Prize won a standing ovation at USENIX.
 
@@ -31,3 +23,11 @@ some of the contest entries were appreciated.
 Rules and results were posted to comp.lang.c, comp.sources.unix, and
 alt.sources.  They have been made available on a wide number of Usenet
 archive sites such as uunet.
+
+=-=
+
+Copyright (c) 1990, Landon Curt Noll & Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.

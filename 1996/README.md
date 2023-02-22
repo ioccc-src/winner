@@ -1,14 +1,13 @@
 1996 marked the "The Thirteenth International Obfuscated C Code Contest"
 
-Copyright (c) 1997, Landon Curt Noll & Sriram Srinivasan.
-All Rights Reserved.  Permission for personal, educational or non-profit use is
-granted provided this this copyright and notice are included in its entirety
-and remains unaltered.  All other uses must receive prior permission in writing
-from Landon Curt Noll and Sriram Srinivasan.
-
 
 Standard IOCCC stuff
 --------------------
+
+Look at the README.md file for the given winner for information
+on how to compile the winner and how to run the winning program.
+Look at the winning source and try to figure how it does what it does!
+You may then wish to look at the Author's comments for even more details.
 
 The IOCCC has an official home page:
 
@@ -19,11 +18,6 @@ announcements and much more.
 
 Use make to compile entries.  It is possible that on BSD or non-unix
 systems the makefile needs to be changed.  See the Makefile for details.
-
-Look at the source and try to figure out what the programs do, and run
-them with various inputs.  If you want to, look at the hints files for
-spoilers - this year we included most of the information included
-by the submitters.
 
 Read over the makefile for compile/build issues.  Your system may
 require certain changes (add or remove a library, add or remove a
@@ -56,7 +50,7 @@ Remarks on some of the entries
 This year, Jens Schweikhardt won 3 times ... a new IOCCC record.
 Meanwhile, Brian Westley came up with his 8th winning entry, twice the
 number of the next highest count.  But with people like Schweikhardt
-around, this lead could fall fast.  
+around, this lead could fall fast.
 
 As we state in the guidelines, the names of the winners are as much
 news to us as they are to you because we keep authorship separate from
@@ -75,13 +69,13 @@ There is no 1997 contest.
 The next contest will not open until sometime in March 1998, and will
 close sometime around the end of May 1998.  The rules for the 1998
 contest have not been formed at this time and are not expected to be
-ready for distribution until late February 1998.  
+ready for distribution until late February 1998.
 
-So what happened to 1997?  Well the next USENIX Technical Conference 
+So what happened to 1997?  Well the next USENIX Technical Conference
 will be held Jun 15-19, 1998 (in New Orleans, USA).  The 18 month
 span between conferences will cause the IOCCC to skip over 1997.
 
-Be sure to wait until the 1998 rules are posted before submitting entries.  
+Be sure to wait until the 1998 rules are posted before submitting entries.
 Rules differ from year to year, sometimes in significant ways.
 
 Please send us comments and suggestions what we have expressed above.
@@ -95,3 +89,11 @@ us a line.  We enjoy seeing who, where and how the contest is used.
 
 If you have problems with any of the entries, AND YOU HAVE A FIX, please
 email the fix (patch file or the entire changed file) to the above address.
+
+=-=
+
+Copyright (c) 1997, Landon Curt Noll & Sriram Srinivasan.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from Landon Curt Noll and Sriram Srinivasan.

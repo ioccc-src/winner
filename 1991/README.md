@@ -1,20 +1,16 @@
 1991 marked the "The Eighth International Obfuscated C Code Contest"
 
-Copyright (c) 1991, Landon Curt Noll & Larry Bassel.
-All Rights Reserved.  Permission for personal, educational or non-profit use is
-granted provided this this copyright and notice are included in its entirety
-and remains unaltered.  All other uses must receive prior permission in writing
-from both Landon Curt Noll and Larry Bassel.
+
+Look at the README.md file for the given winner for information
+on how to compile the winner and how to run the winning program.
+Look at the winning source and try to figure how it does what it does!
+You may then wish to look at the Author's comments for even more details.
 
 Instructions for use: Run make to compile entries.  It is possible that
 on BSD or non-unix systems the makefile needs to be changed.
 
-Look at the source and try to figure out what the programs do, and run
-them with various inputs.  If you want to, look at the hints files for
-(minor) spoilers.
-
 This year, we did not single out an entry that was better than all of
-the rest.  We selected 3 entries that were, in our opinion, went beyond 
+the rest.  We selected 3 entries that were, in our opinion, went beyond
 all of the other entries this year:
 
 	Grand Prize			by Brian Westley
@@ -47,17 +43,17 @@ reject entries of this type.  However we provided more portable
 versions so that more people could compile these programs.
 
 This year we received entries that made use of the X Window System.
-This functionality is now available on many systems, we feel that 
-programs that use these are now portable enough to be valid entries.  
+This functionality is now available on many systems, we feel that
+programs that use these are now portable enough to be valid entries.
 
-We may allow programs to make use of the X Window System libs and include 
-files, provided that they can operate with a system running at the level 
+We may allow programs to make use of the X Window System libs and include
+files, provided that they can operate with a system running at the level
 of at least X11r4.  Requiring the use of imake, a specific window manager,
-specific display hardware, or a specific user interface (Openl**k, 
-M*tif, ...) is likely not to be allowed.  We will provide a more detailed 
+specific display hardware, or a specific user interface (Openl**k,
+M*tif, ...) is likely not to be allowed.  We will provide a more detailed
 explanation of our viewpoint in next year's rules.
 
-In order to encourage more 'normal' looking C programs, we are considering 
+In order to encourage more 'normal' looking C programs, we are considering
 the following change to the maximum size rule:
 
     Your source, not counting any <space>, <tab>, and a <newline> character,
@@ -70,7 +66,7 @@ is not likely to happen soon.  We are waiting until c++ compilers become
 common place on a wide number of systems.  We also need time to brace
 ourselves for what obfuscation c++ could wield!
 
-Be sure to wait until the 1992 rules are posted before submitting entries.  
+Be sure to wait until the 1992 rules are posted before submitting entries.
 We may fine tune the rules to reflect the some ideas above.
 
 Please send us comments and suggestions what we have expressed above.
@@ -83,6 +79,14 @@ Send such email to:
 
 Credits:
 
-We would like to thank Barbara Frezza for her role as official chef 
+We would like to thank Barbara Frezza for her role as official chef
 of the contest.  Landon Noll appreciated the opportunity to serve
 as assistant pizza chef.  Larry Bassel was official taste tester. Yummo!
+
+=-=
+
+Copyright (c) 1991, Landon Curt Noll & Larry Bassel.
+All Rights Reserved.  Permission for personal, educational or non-profit use is
+granted provided this this copyright and notice are included in its entirety
+and remains unaltered.  All other uses must receive prior permission in writing
+from both Landon Curt Noll and Larry Bassel.
