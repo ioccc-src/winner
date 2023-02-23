@@ -19,6 +19,9 @@ Judges notes:
 	The program stops when it reaches the end of the template buffer 
 	by chance or is killed.
 
+	To have a chance to compile under a modern CPP, we had to
+	replace `#D` with `#define`.
+
 Selected notes from the author:
 
 	This program implements an "Eddington ape" - it generates

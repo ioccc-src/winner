@@ -1,4 +1,4 @@
-Best Output:
+$ Best Output:
 
 	Ian Collier
 	Oxford University
@@ -8,10 +8,13 @@ Best Output:
 	OX1 4AW
 	ENGLAND
 
+## To build:
 
-Judges' comments:
+        make all
 
-    Make and run.
+### To run
+
+## Judges' comments
 
     The program is more interesting to run on workstations that can
     make use of a Sun raster file.  Others can make use of the -text
@@ -19,13 +22,12 @@ Judges' comments:
 
     Of course, the source (layout) is self-documenting!  :-)
 
-    NOTE: The original winning source imc.orig.c assumed that
+    NOTE: The original winning source assumed that
 	  exit returned a value which cause problems for some
 	  systems where exit returned a void.  The file imc.c
-	  avoids this problem.
+	  has been modified to avoid this problem.
 
-
-Selected notes from the author:
+## Author's comments
 
     Portability
 

@@ -1,4 +1,4 @@
-Best Small Program:
+# Best Small Program:
 
 	Brian Westley (aka Merlyn LeRoy)
 	Digi International
@@ -6,23 +6,31 @@ Best Small Program:
 	St. Paul, MN  55104
 	USA
 
+## To build:
 
-Judges' comments:
+        make all
+
+	NOTE: This entry may not compile when using modern compilers.
+
+### To run
 
     If lost:
+
 	make whereami
     
     Then run:
-	whereami lat long
+
+	./whereami lat long
+
+## Judges' comments
     
     Where lat and long correspond to your latitude and longitude.
 
     To find the approximate place where this entry was judged, type:
 
-	whereami 37 -122	(- means west of meridian)
+	./whereami 37 -122	(- means west of meridian)
     
-
-Selected notes from the author:
+## Author's comments
 
     Run the program with your latitude & longitude as integer
     arguments; it will produce a map made up of '!' with the given

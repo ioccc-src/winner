@@ -328,69 +328,28 @@ X11_LIBDIR= /opt/X11/lib
 #X11_INCDIR= /usr/X11/include
 X11_INCDIR= /opt/X11/include
 
-# CWARN - Silence warnings that ${CWARN} would normally complain about
-# CSILENCE -Compiler warnings
-#
-ifeq ($(CC),clang)
-
-# clang CSILENCE and CWARN
+# Common C compiler warnings to silence
 #
 #CSILENCE=
 CSILENCE= -Wno-deprecated-declarations -Wno-empty-body -Wno-error -Wno-unused-value \
 	-Wno-implicit-function-declaration -Wno-incompatible-pointer-types \
 	-Wno-macro-redefined -Wno-parentheses -Wno-return-type -Wno-unused-parameter \
 	-Wno-empty-translation-unit
-#
-#CWARN= ${CSILENCE}
-#CWARN= -Wall ${CSILENCE}
-#CWARN= -Wall -Wextra ${CSILENCE}
-#CWARN= -Wall -Wextra -pedantic ${CSILENCE}
-#CWARN= -Wall -Wextra -Weverything ${CSILENCE}
-CWARN= -Wall -Wextra -Weverything -pedantic ${CSILENCE}
 
-else
-ifeq ($(CC),gcc)
-
-# gcc CSILENCE and CWARN
-#
-#CSILENCE=
-CSILENCE= -Wno-deprecated-declarations -Wno-empty-body -Wno-error -Wno-unused-value \
-	-Wno-implicit-function-declaration -Wno-incompatible-pointer-types \
-	-Wno-macro-redefined -Wno-parentheses -Wno-return-type -Wno-unused-parameter \
-	-Wno-empty-translation-unit
+# Common C compiler warning flags
 #
 #CWARN= ${CSILENCE}
 #CWARN= -Wall ${CSILENCE}
 #CWARN= -Wall -Wextra ${CSILENCE}
 CWARN= -Wall -Wextra -pedantic ${CSILENCE}
 
-else
-
-# default CSILENCE and WARN
-#
-#CSILENCE=
-CSILENCE= -Wno-deprecated-declarations -Wno-empty-body -Wno-error -Wno-unused-value \
-	-Wno-implicit-function-declaration -Wno-incompatible-pointer-types \
-	-Wno-macro-redefined -Wno-parentheses -Wno-return-type -Wno-unused-parameter \
-	-Wno-empty-translation-unit
-#
-#CWARN= ${CSILENCE}
-#CWARN= -Wall ${CSILENCE}
-#CWARN= -Wall -Wextra ${CSILENCE}
-CWARN= -Wall -Wextra -pedantic ${CSILENCE}
-#CWARN= -Wall -Wextra -Weverything ${CSILENCE}
-#CWARN= -Wall -Wextra -Weverything -pedantic ${CSILENCE}
-
-endif
-endif
-
-# compiler standard
+# Compiler standard
 #
 #CSTD=
 #CSTD= -ansi
 CSTD= -std=gnu90
 
-# compiler bit architecture
+# Compiler bit architecture
 #
 # Some entries require 32-bitness:
 # ARCH= -m32
@@ -402,12 +361,12 @@ CSTD= -std=gnu90
 #
 ARCH=
 
-# defines that are needed to compile
+# Defines that are needed to compile
 #
 CDEFINE=
-#CDEFINE= -DIOCCC=26
+#CDEFINE= -DIOCCC
 
-# include files that are needed to compile
+# Include files that are needed to compile
 #
 CINCLUDE=
 #CINCLUDE= -include stdlib.h
@@ -416,7 +375,7 @@ CINCLUDE=
 #CINCLUDE= -I ${X11_INCDIR}
 #CINCLUDE= -I ${HOMEBREW_PREFIX}/include/SDL2
 
-# optimization
+# Optimization
 #
 # Most compiles will safely use -O2.  Some can use only -O1 or -O.
 # A few compilers have broken optimizers or this entry make break
@@ -429,7 +388,7 @@ CINCLUDE=
 #OPT= -O2
 OPT= -O3
 
-# default flags for ANSI C compilation
+# Default flags for ANSI C compilation
 #
 CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
@@ -440,20 +399,34 @@ LIBS=
 #LIBS= -L ${X11_LIBDIR} -lX11
 #LIBS= -L ${HOMEBREW_PREFIX}/lib -lSDL
 
-# ANSI compiler
-#
-# Set CC to the name of your ANSI compiler.
-#
-# Some entries seem to need gcc.  If you have gcc, set
-# both CC and MAY_NEED_GCC to gcc.
-#
-# If you do not have gcc, set CC to the name of your ANSI compiler, and
-# set MAY_NEED_GCC to either ${CC} (and hope for the best) or to just :
-# to disable such programs.
+# C compiler to use
 #
 CC= cc
 #CC=clang
-MAY_NEED_GCC= gcc
+#CC=gcc
+
+# Compiler add-ons or replacements for clang only
+#
+ifeq ($(CC),clang)
+#
+CSILENCE+= -Wno-comma -Wno-double-promotion -Wno-float-conversion \
+	-Wno-missing-prototypes -Wno-missing-variable-declarations \
+	-Wno-poison-system-directories -Wno-shadow -Wno-strict-prototypes \
+	-Wno-unreachable-code -Wno-unused-macros
+#
+CWARN+= -Weverything
+#
+endif
+
+# Specific add-ons or replacements for gcc only
+#
+ifeq ($(CC),gcc)
+#
+#CSILENCE+=
+#
+#CWARN+=
+#
+endif
 
 
 ##############################

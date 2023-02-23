@@ -1,4 +1,4 @@
-Best Utility:
+# Best Utility:
 
 	Anthony C Howe
 	Mortice Kern Systems Inc.	#CL-23
@@ -6,35 +6,21 @@ Best Utility:
 	Waterloo, On			Waterloo, On		
 	Canada, N2J 2W9			Canada, N2L 6G9
 
+## To build:
 
-Judges' comments:
+        make all
 
-    Make and run with a filename (writable or to be created) as an argument.
-    For example, try:
+### To run
 
-	make ant
 	cp ant.hint hill
-	ant hill
+	./ant hill
 
-    Note that some old BSD systems may have trouble compiling this entry.
-    They may complain about 'idlok' being undefined.  You can fix this
-    by changing line 26 from:
-
-	2;initscr();d=LINES;raw();noecho();idlok(stdscr,1);if(0<(i= ...
-    to:
-	2;initscr();d=LINES;raw();noecho();if(0<(i= ...
-     
-    ***or*** update to a modern version of Un*x.  :-)  If you have source,
-    you can use this entry to help in your upgrade.
-
-    You may need to change the makefile depending on what type of system
-    you are running.  See the notes in ansi.mk or common.mk.
+## Judges' comments
 
     The author was kind enough to supply a list of references below,
     in case you are still confused after read the source!  :-)
 
-
-Selected notes from the author:
+## Author's comments
 
     Ant's Editor vIOCCC91
 

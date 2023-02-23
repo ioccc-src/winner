@@ -1,244 +1,600 @@
-# %W% %G% %U%
+#!/usr/bin/env make
 #
-# 1992 makefile
+# IOCCC 1992 winning entry - westley
+
+################################################################################
 #
-# Copyright (c) 1992, Landon Curt Noll & Larry Bassel.
-# All Rights Reserved.  Permission for personal, educational or non-profit
-# use is granted provided this this copyright and notice are included in its
-# entirety and remains unaltered.  All other uses must receive prior permission
-# from Landon Curt Noll and Larry Bassel.
-
-
-SHELL=/bin/sh
-CHMOD=chmod
-CP=cp
-RM=rm
-SED=sed
-LN=ln
-UNIQ=uniq
-CB=cb 
-GREP=grep
-# set this to where your C Processor resides
+# An Historical Makefile NOTE:
 #
-# On some systems:
-#	CPP=/lib/cpp
+# The orig.Makefile, if it exits, is the original Makefile before this IOCCC
+# year directory was reworked so that entries are in separate directories.
+# This also applies to any orig.ansi.mk and orig.common.mk files.
 #
-CPP=/usr/ccs/lib/acpp
-
-# flags for ansi compiles
+# Several Makefiles were modified / formed in 2022, and as such it may have
+# elements that are not historically compatible with way entries were built.
+# The orig.Makefile, if it exits, is a copy of the pre-modified Makefile.
 #
-# NOTE: Some ANSI compilers make use of -Xa to turn on ANSI mode,
-#	others such as gcc may want -ansi, others may want nothing
-#	at all.  Adjust the CFLAGS line as needed.
+# Regarding individual entries:
 #
-# NOTE: Some compilers cannot optimize, or optimize some entries
-#	entries incorrectly.  You might want need to turn on -O 
-#	to see if your compiler can handle them.
+# IOCCC winning entry code may not work on your system.  Even with standards,
+# conditions and build environments change, especially when it comes to more
+# extreme code such you might find in an IOCCC winner.  Moreover, what was
+# allowed and liked in one IOCCC contest may no longer be liked/allowed in
+# later IOCCC years.
 #
-#CFLAGS=-O -Xa
-CFLAGS=-Xa
-CC=cc
-
-# misc shell babble
+# Corrections on winning author and fixing typos in remarks are VERY WELCOME.
 #
-NOINCLUDE=$(SED) -e 's/^.\([	 ]*\)include/%include/'
-SPACECLEAN=$(SED) -e 's/\([^	 ]\)\([	 ]\)[ 	][ 	]*/\1\2/g'
-CPPCLEAN=$(GREP) -v '^. [0-9][0-9]*'
-
-# winners that compile under ANSI C
+# GitHub pull requests are welcome:
 #
-WINNERS= adrian albert ant buzzard.1 buzzard.2 gson kivinen imc \
-	lush marangon nathan vern westley
-ALT_NAMES= adgrep am babble first ag whereami
-
-all: $(WINNERS) $(ALT_NAMES)
-
-adrian: adrian.c
-	$(CC) $(CFLAGS) adrian.c -o adrian
-	$(RM) -f ad.temp adwc.c adbasename.c adecho.c adhead.c adsleep.c
-	$(SED) '1s/\..*\./. wc ./' adrian.c > ad.temp
-	-./adrian ad.temp <ad.temp >adwc.c
-	$(CC) -o adwc adwc.c
-	$(SED) '1s/\..*\./. basename ./' adrian.c > ad.temp
-	-./adrian ad.temp <ad.temp >adbasename.c
-	$(CC) -o adbasename adbasename.c
-	$(SED) '1s/\..*\./. echo| ./' adrian.c > ad.temp
-	-./adrian ad.temp <ad.temp >adecho.c
-	$(CC) -o adecho adecho.c
-	$(SED) '1s/\..*\./. head; ./' adrian.c > ad.temp
-	-./adrian ad.temp <ad.temp >adhead.c
-	$(CC) -o adhead adhead.c
-	$(SED) '1s/\..*\./. sleep ./' adrian.c > ad.temp
-	-./adrian ad.temp <ad.temp >adsleep.c
-	$(CC) -o adsleep adsleep.c
-	$(RM) -f ad.temp
-
-# NOTE: this is the original source that won
+# If you have a patch that might make running an entry work in modern Unix-like
+# environments, please create a GitHub pull request for the IOCCC judges to
+# consider.
 #
-adrian.orig: adrian.orig.c
-	$(CC) $(CFLAGS) adrian.orig.c -o adrian.orig
-
-albert: albert.c
-	$(CC) $(CFLAGS) albert.c -o albert
-
-# NOTE: this is the original source that won
+# Suggestions and corrections regarding Makefiles, winning author information,
+# fixing typos in remarks, and code patches are welcome via opening a GitHub
+# issue or better yet, by creating a GitHub pull request for the IOCCC judges
+# to consider.  To form a GitHub issue or GitHub pull, please visit:
 #
-albert.orig: albert.orig.c
-	$(CC) $(CFLAGS) albert.orig.c -o albert.orig
-
-ant: ant.c
-	$(CC) $(CFLAGS) ant.c -o ant
-
-buzzard.1: buzzard.1.c
-	$(CC) $(CFLAGS) buzzard.1.c -o buzzard.1
-
-babble.cppcb: buzzard.1.c
-	$(NOINCLUDE) buzzard.1.c | \
-	    $(CPP) $(CPPFLAGS) | \
-	    $(CPPCLEAN) | \
-	    $(CB) $(CBFLAGS) | \
-	    $(UNIQ) | \
-	    $(SPACECLEAN) > babble.cppcb 2>&1
-
-buzzard.2: buzzard.2.c
-	$(CC) $(CFLAGS) buzzard.2.c -o buzzard.2
-
-# NOTE: this is the original source that won
+# https://github.com/ioccc-src/winner
 #
-buzzard.2.orig: buzzard.2.orig.c
-	$(CC) $(CFLAGS) buzzard.2.orig.c -o buzzard.2.orig
+################################################################################
 
-gson: gson.c
-	$(CC) $(CFLAGS) gson.c -o gson
-
-# NOTE: some systems may only need:
+# This work by Landon Curt Noll and Leonid A. Broukhis is licensed under:
 #
-#  $(CC) $(CFLAGS) kivinen.c -o kivinen -lX11
+#	Creative Commons Attribution-ShareAlike 3.0 Unported License.
 #
-kivinen: kivinen.c
-	$(CC) $(CFLAGS) kivinen.c -o kivinen -lX11 -lsocket -lresolv -lnsl
+# See: http://creativecommons.org/licenses/by-sa/3.0/
 
-# NOTE: this is the original program that won
+
+#############################
+# shell used by this Makefile
+#############################
 #
-# NOTE: some systems may only need:
+SHELL= bash
+
+#######################
+# common tool locations
+#######################
 #
-#  $(CC) $(CFLAGS) kivinen.c -o kivinen -lX11
+A2P= a2p
+AR= ar
+ASA= asa
+AT= at
+ATQ= atq
+ATRM= atrm
+AWK= awk
+BANNER= banner
+BASE64= base64
+BASENAME= basename
+BATCH= batch
+BC= bc
+BINHEX= binhex
+BISON= bison
+BUNZIP2= bunzip2
+BZCAT= bzcat
+BZCMP= bzcmp
+BZDIFF= bzdiff
+BZEGREP= bzegrep
+BZFGREP= bzfgrep
+BZGREP= bzgrep
+BZIP2= bzip2
+BZLESS= bzless
+BZMORE= bzmore
+C2PH= c2ph
+C89= c89
+C99= c99
+CAL= cal
+CALC= calc
+CAT= cat
+CD= cd
+CHFLAGS= chflags
+CHGRP= chgrp
+CHMOD= chmod
+CKSUM= cksum
+CLANG= clang
+CLANG_PLUSPLUS= clang++
+CLEAR= clear
+CMP= cmp
+COL= col
+COLLDEF= colldef
+COLRM= colrm
+COLUMN= column
+COMPRESS= compress
+CP= cp
+CPIO= cpio
+CPP= cpp
+CRC32= crc32
+CSH= csh
+CSPLIT= csplit
+CURL= curl
+CUT= cut
+C_PLUSPLUS= c++
+C_PLUSPLUS_FILT= c++filt
+DATE= date
+DC= dc
+DD= dd
+DF= df
+DIFF3= diff3
+DIFF= diff
+DIG= dig
+DIRNAME= dirname
+ED= ed
+EGREP= egrep
+ENV= env
+EQN= eqn
+ETAGS= etags
+EXPECT= expect
+EXPR= expr
+FALSE= false
+FGREP= fgrep
+FILE= file
+FIND2PERL= find2perl
+FIND= find
+FLEX= flex
+FLEX_PLUSPLUS= flex++
+FMT= fmt
+FOLD= fold
+FS_USAGE= fs_usage
+FUNZIP= funzip
+FUSER= fuser
+GCC= gcc
+GDIFFMK= gdiffmk
+GENCAT= gencat
+GENSTRINGS= genstrings
+GETOPT= getopt
+GETOPTS= getopts
+GINDENT= gindent
+GNUMAKE= gnumake
+GREP= grep
+GROFF= groff
+GROFFER= groffer
+GROG= grog
+GROPS= grops
+GROTTY= grotty
+GUNZIP= gunzip
+GVIM= gvim
+GZCAT= gzcat
+GZEXE= gzexe
+GZIP_PROG= gzip
+G_PLUSPLUS= g++
+H2PH= h2ph
+H2XS= h2xs
+HASH= hash
+HEAD= head
+HOSTNAME_PROG= hostname
+ICONV= iconv
+ID= id
+INDENT= indent
+INFO= info
+JOT= jot
+KILL= kill
+KSH= ksh
+LAST= last
+LD= ld
+LESSECHO= lessecho
+LEX= len
+LINK= link
+LN= ln
+LS= ls
+M4= m4
+MAKE= make
+MAN= man
+MKDIR= mkdir
+MKFIFO= mkfifo
+MKTEMP= mktemp
+MV= mv
+NANO= nano
+NASM= nasm
+NEQN= neqn
+NICE= nice
+NL= nl
+NM= nm
+NOHUP= nohup
+NROFF= nroff
+NSLOOKUP= nslookup
+OD= od
+OPENSSL= openssl
+PASTE= paste
+PATCH= patch
+PATHCHK= pathchk
+PAX= pax
+PERL= perl
+PICO= pico
+PR= pr
+PRINTENV= printenv
+PS= ps
+PTAR= ptar
+PTARDIFF= ptardiff
+PTARGREP= ptargrep
+PWD= pwd
+PYDOC= pydoc
+PYTHON= python
+PYTHONW= pythonw
+READLINK= readlink
+RENICE= renice
+RESET= reset
+REV= rev
+RI= ri
+RM= rm
+RMDIR= rmdir
+RSYNC= rsync
+RUBY= ruby
+RVIM= rvim
+SAY= say
+SCP= scp
+SCREEN= screen
+SCRIPT= script
+SDIFF= sdiff
+SED= sed
+SEQ= seq
+SFTP= sftp
+SH= sh
+SHA1= sha1
+SHA= sha
+SHAR= shar
+SHASUM5_18= shasum5.18
+SHASUM= shasum
+SIZE= size
+SLEEP= sleep
+SORT= sort
+SSH= ssh
+STAT= stat
+STRIP= strip
+STTY= stty
+SUM= sum
+SYNC= sync
+TABS= tabs
+TAIL= tail
+TAR= tar
+TEE= tee
+TEST= test
+TFTP= tftp
+TIDY= tidy
+TIME= time
+TOP= top
+TOUCH= touch
+TPUT= tout
+TPUT= tput
+TR= tr
+TROFF= troff
+TRUE= true
+TSET= tset
+TSORT= tsort
+UL= ul
+UNAME= uname
+UNCOMPRESS= uncompress
+UNEXPAND= unexpand
+UNIFDEF= unifdef
+UNIFDEFALL= unifdefall
+UNIQ= uniq
+UNITS= units
+UNLINK= unlink
+UNZIP= unzip
+UNZIPSFX= unzipsfx
+UPTIME= uptime
+UUDECODE= uudecode
+UUENCODE= uuencode
+UUIDGEN= uuidgen
+VI= vi
+VIEW= view
+VIM= vim
+VIMDIFF= vimdiff
+W= w
+WAIT4PATH= wait4path
+WAIT= wait
+WC= wc
+WGET= wget
+WHAT= what
+WHATIS= whatis
+WHICH= which
+WHO= who
+WHOAMI= whoami
+WHOIS= whois
+WRTIE= write
+XAR= xar
+XARGS= xargs
+XATTR= xattr
+XXD= xxd
+YACC= yacc
+YES= yes
+ZCAT= zcat
+ZCMP= zcmp
+ZDIFF= zdiff
+ZEGREP= zegrep
+ZFGREP= zfgrep
+ZFORCE= zforce
+ZGREP= zgrep
+ZIP= zip
+ZIPCLOAK= zipcloak
+ZIPGREp= zipgrep
+ZIPINFo= zipinfo
+ZIPNOTE= zipnote
+ZIPSPLIT= zipsplit
+ZLESS= zless
+ZMORE= zmore
+ZNEW= znew
+ZPRINT= zprint
+ZSH= zsh
+
+# Set X11_LIBDIR to the directory where the X11 library resides
 #
-kivinen.orig: kivinen.orig.c
-	$(CC) $(CFLAGS) kivinen.orig.c -o kivinen.orig -lX11 \
-	    -lsocket -lresolv -lnsl
+#X11_LIBDIR= /usr/X11R6/lib
+#X11_LIBDIR= /usr/X11/lib
+X11_LIBDIR= /opt/X11/lib
 
-imc: imc.c
-	$(CC) $(CFLAGS) imc.c -o imc
-
-# NOTE: this is the original program that won
+# Set X11_INCLUDEDIR to the directory where the X11 include files reside
 #
-imc.orig: imc.orig.c
-	$(CC) $(CFLAGS) imc.orig.c -o imc.orig
+#X11_INCDIR= /usr/X11R6/include
+#X11_INCDIR= /usr/X11/include
+X11_INCDIR= /opt/X11/include
 
-lush: lush.c
-	$(CC) $(CFLAGS) lush.c -o lush
-
-lush.again: lush.c
-	$(CC) $(CFLAGS) lush.c -o lush.again
-	$(RM) -f lush.again
-
-# NOTE: this is the original program that won
+# Common C compiler warnings to silence
 #
-lush.orig: lush.orig.c
-	$(CC) $(CFLAGS) lush.orig.c -o lush.orig
+#CSILENCE=
+CSILENCE= -Wno-bitwise-op-parentheses -Wno-error -Wno-implicit-function-declaration \
+	-Wno-parentheses -Wno-pedantic
 
-# NOTE: some systems may need:
+# Common C compiler warning flags
 #
-#  $(CC) $(CFLAGS) marangon.c -o marangon -lcurses -ltermcap
+#CWARN= ${CSILENCE}
+#CWARN= -Wall ${CSILENCE}
+#CWARN= -Wall -Wextra ${CSILENCE}
+CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+
+# Compiler standard
 #
-marangon: marangon.c
-	$(CC) $(CFLAGS) marangon.c -o marangon -lcurses
+#CSTD=
+#CSTD= -ansi
+CSTD= -std=gnu90
 
-# NOTE: this is the original program that won
+# Compiler bit architecture
 #
-# NOTE: some systems may need:
+# Some entries require 32-bitness:
+# ARCH= -m32
 #
-#  $(CC) $(CFLAGS) marangon.orig.c -o marangon.orig -lcurses -ltermcap
+# Some entries require 64-bitness:
+# ARCH= -m64
 #
-marangon.orig: marangon.orig.c
-	$(CC) $(CFLAGS) marangon.orig.c -o marangon.orig -lcurses
-
-nathan: nathan.c
-	$(CC) $(CFLAGS) nathan.c -o nathan
-
-# NOTE: this is the original program that won
+# By default we assume nothing:
 #
-nathan.orig: nathan.orig.c
-	$(CC) $(CFLAGS) nathan.orig.c -o nathan.orig
+ARCH=
 
-vern: vern.tmp.c
-	$(CC) $(CFLAGS) vern.tmp.c -o vern
-
-vern.tmp.c: vern.c
-	$(RM) -f vern.tmp.c
-	$(SED) <vern.c 's/{ /(/g;s/} /)/g;s/;	/#define /' | \
-	    $(SED) 's/}	/=/g;s/{	/i/g' >vern.tmp.c
-
-# NOTE: this is the original program that won
+# Defines that are needed to compile
 #
-vern.orig: vern.orig.tmp.c
-	$(CC) $(CFLAGS) vern.orig.tmp.c -o vern.orig
+CDEFINE=
+#CDEFINE= -DIOCCC
 
-vern.orig.tmp.c: vern.orig.c
-	$(RM) -f vern.orig.tmp.c
-	$(SED) <vern.orig.c 's/{ /(/g;s/} /)/g;s/;	/#define /' | \
-	    $(SED) 's/}	/=/g;s/{	/i/g' >vern.orig.tmp.c
-
-westley: westley.c
-	$(CC) $(CFLAGS) westley.c -o westley
-
-# alternate names for selected entries
+# Include files that are needed to compile
 #
-adgrep: adrian
-	$(RM) -f adgrep
-	$(LN) adrian adgrep
-am: ant
-	$(RM) -f am
-	$(LN) ant am
-babble: buzzard.1
-	$(RM) -f babble
-	$(LN) buzzard.1 babble
-first: buzzard.2
-	$(RM) -f first
-	$(LN) buzzard.2 first
-ag: gson
-	$(RM) -f ag
-	$(LN) gson ag
-whereami: westley
-	$(RM) -f whereami
-	$(LN) westley whereami
+CINCLUDE=
+#CINCLUDE= -include stdlib.h
+#CINCLUDE= -include stdio.h
+#CINCLUDE= -include stdlib.h -include stdio.h
+#CINCLUDE= -I ${X11_INCDIR}
+#CINCLUDE= -I ${HOMEBREW_PREFIX}/include/SDL2
 
+# Optimization
+#
+# Most compiles will safely use -O2.  Some can use only -O1 or -O.
+# A few compilers have broken optimizers or this entry make break
+# under those buggy optimizers and thus you may not want anything.
+# Reasonable compilers will allow for -O3.
+#
+#OPT=
+#OPT= -O
+#OPT= -O1
+#OPT= -O2
+OPT= -O3
+
+# Default flags for ANSI C compilation
+#
+CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
+
+# Libraries needed to build
+#
+LIBS=
+#LIBS= -lm
+#LIBS= -L ${X11_LIBDIR} -lX11
+#LIBS= -L ${HOMEBREW_PREFIX}/lib -lSDL
+
+# C compiler to use
+#
+CC= cc
+#CC=clang
+#CC=gcc
+
+# Compiler add-ons or replacements for clang only
+#
+ifeq ($(CC),clang)
+#
+CSILENCE+= -Wno-poison-system-directories
+#
+CWARN+= -Weverything
+#
+endif
+
+# Specific add-ons or replacements for gcc only
+#
+ifeq ($(CC),gcc)
+#
+#CSILENCE+=
+#
+#CWARN+=
+#
+endif
+
+
+##############################
+# Special flags for this entry
+##############################
+#
+ENTRY= westley
+PROG= ${ENTRY}
+#
+OBJ= ${PROG}.o
+DATA=
+TARGET= ${PROG}
+#
+ALT_OBJ=
+ALT_TARGET=
+
+
+#################
+# build the entry
+#################
+#
+all: data ${TARGET}
+	@${TRUE}
+
+.PHONY: all alt data everything clean clobber install \
+	love haste waste maker easter_egg sandwich \
+	supernova deep_magic magic charon pluto
+
+${PROG}: ${PROG}.c
+	@echo "NOTE: This entry may not compile when using modern compilers."
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
+whereami: ${PROG}
+	${RM} -f $@
+	${LN} $< $@
+
+# alternative executable
+#
+alt: data ${ALT_TARGET}
+	@${TRUE}
+
+# data files
+#
+data: ${DATA}
+	@${TRUE}
+
+# both all and alt
+#
+everything: all alt
+
+
+###############
+# utility rules
+###############
+#
 clean:
-	$(RM) -f *.o a.out core 
-	$(RM) -f vern.tmp.c lush.again babble.cppcb vern.orig.tmp.c
-	$(RM) -f ad.temp adwc.c adbasename.c adecho.c adhead.c adsleep.c
+	${RM} -f ${OBJ} ${ALT_OBJ}
+	@-if [ -f indent.c ]; then \
+	    echo ${RM} -f indent.c; \
+	    ${RM} -f indent.c; \
+	fi
 
 clobber: clean
-	$(RM) -f $(WINNERS) a.out
-	$(RM) -f $(ALT_NAMES)
-	$(RM) -f adwc adbasename adecho adhead adsleep
-	$(RM) -f adrian.orig lush.orig nathan.orig buzzard.2.orig
-	$(RM) -f kivinen.orig imc.orig albert.orig marangon.orig vern.orig
+	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -f whereami
+	@-if [ -e sandwich ]; then \
+	    ${RM} -f sandwich; \
+	    echo 'ate sandwich'; \
+	fi
 
-am_clobber: clean am
-	$(RM) -f am.safe
-	$(CP) am am.safe
-	$(RM) -f $(WINNERS) a.out
-	$(RM) -f $(ALT_NAMES)
-	$(RM) -f adwc adbasename adecho adhead adsleep
-	$(RM) -f adrian.orig lush.orig nathan.orig buzzard.2.orig
-	$(RM) -f kivinen.orig imc.orig albert.orig marangon.orig vern.orig
-	$(CP) am.safe am
-	$(RM) -f am.safe
+install:
+	@echo "Dr. Spock says that is not logical!"
+	@${TRUE}
 
-nuke: clobber
-	@true
+# you may be able to misunderstand the source by reading indent.c
+#
+indent.c: ${PROG}.c
+	@if which "${GINDENT}" >/dev/null 2>&1; then \
+	    echo ${RM} -f $@; \
+	    ${RM} -f $@; \
+	    echo "${GINDENT} < $< > $@"; \
+	    ${GINDENT} < $< > $@; \
+	elif which "${INDENT}" >/dev/null 2>&1; then \
+	    echo ${RM} -f $@; \
+	    ${RM} -f $@; \
+	    echo "${INDENT} < $< > $@"; \
+	    ${INDENT} < $< > $@; \
+	else \
+	    echo "no intent tool found, ident $< yourself, sorry"; \
+	    echo "exit 1"; \
+	    exit 1; \
+	fi
 
-install: all
-	cat $(WINNERS) > /dev/null
+
+##################
+# 133t hacker rulz
+##################
+#
+love:
+	@echo 'not war?'
+	@${TRUE}
+
+haste:
+	$(MAKE) waste
+	@${TRUE}
+
+waste:
+	@echo 'haste'
+	@${TRUE}
+
+maker:
+	@echo 'Participate in a maker faire'
+	@${TRUE}
+
+easter_egg:
+	@echo "you expected to often misunderstand this $${RANDOM} magic"
+	@echo "chongo '<was here>' /\\oo/\\"
+	@echo "Eggy"
+
+sandwich: easter_egg
+	@if [ `id -u` -eq 0 ]; then \
+	    echo 'Okay.'; \
+	    echo "$${RANDOM}`date +%s`$${RANDOM}" > $@; \
+	else \
+	    echo 'What? Make it yourself.'; \
+	    exit 1; \
+	fi
+
+# Understand the history of the Homebrew Computer Club
+# as well as the West Coast Computer Faire and
+# you might be confused different.  :-)
+#
+supernova: sandwich
+	@-if [ -r .code_anal ]; then \
+	    ${RM} -f .code_anal_v6; \
+	else \
+	    echo "planet deniers, like some members of the IAU, are so cute when they try to defend their logic"; \
+	fi
+	@echo "A $@ helps ${MAKE} the elements that help form planets"
+	@${TRUE}
+
+deep_magic: supernova
+	@-if [ -r .code_anal ]; then \
+	    ccode_analysis --deep_magic 7889066cdbdf09b0408021754586e895be641cc9be29e7eafd3ca65359541f17 \
+	    		   --FNV1a_hash_512_bit -v2 "${PROG}" "${PROG}.c"; \
+	else \
+	    echo "Wrong! Do it again!"; \
+	    sleep 2; \
+	    echo "Wrong! Do it again!"; \
+	    sleep 2; \
+	    echo "Wrong! Do it again!"; \
+	fi
+	@${TRUE}
+
+magic: deep_magic
+	@-if [ -r .code_anal ]; then \
+	    ccode_analysis --level 20003 --mode 5717175 --FNV1a_hash_512_bit -v2 "${PROG}" "${PROG}.c"; \
+	else \
+	    echo "If you don't eat yer meat, you can't have any pudding!"; \
+	    echo "How can you have any pudding if you don't eat yer meat?!"; \
+	fi
+	@${TRUE}
+
+# The IOCCC resident astronomer states
+#
+charon: magic
+	@echo "$@ is a dwarf planet"
+	@echo "dwarf is a type of planet"
+	@echo "therefore IAU, $@ is a planet"
+
+pluto: charon
+	${MAKE} charon
+	@echo "$@ is a dwarf planet"
+	@echo "dwarf is a type of planet"
+	@echo "therefore, $@ is a planet"
+	@echo "having lots of planets is good feature because supernovae can help ${MAKE} a lot of them"

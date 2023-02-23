@@ -1,4 +1,4 @@
-Most Useful Program:
+# Most Useful Program:
 
 	Albert van der Horst
 	S P&A R&C
@@ -6,19 +6,21 @@ Most Useful Program:
 	3511 RA   UTRECHT
 	The Netherlands
 
+## To build:
 
-Judges' comments:
+        make all
 
-    For a canned example:
-	make albert
-	albert 1234567890123456789
+### To run
+
+	./albert 1234567890123456789
+
+## Judges' comments
     
     We were impressed with the speed at which it was able to factor
     arbitrarily large numbers consisting of factors that fit into
     a long.
 
-
-Selected notes from the author:
+## Author's comments
 
     The Obfuscated version of the Horst algorithm.
 

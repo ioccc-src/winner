@@ -1,4 +1,4 @@
-Best One Liner:
+# Best One Liner:
 
 	Thomas A. Fine
 	Ohio State University
@@ -7,19 +7,21 @@ Best One Liner:
 	Columbus, Ohio  43210
 	USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    Make and run as follows:
+### To run
 
-	make fine
 	echo "green terra
-	vex
-	tang
-	vend onyx
-	cheryl be flashy
-	rail
-	clerk" | fine
+vex
+tang
+vend onyx
+cheryl be flashy
+rail
+clerk" | ./fine
+
+## Judges' comments
 
     This filter, 80 chars plus a newline, fits into a single line on most 
     terminals (unless your terminal has a line wrap mis-feature :-)).
@@ -32,8 +34,7 @@ Judges' comments:
     into 2 bytes, allowing the program to still work, but also stripping 
     the high bit off of some input?
 
-
-Selected notes from the author:
+## Author's comments
 
     The author wishes to thank J Greely for the last 6 bytes.
 

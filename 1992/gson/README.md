@@ -1,4 +1,4 @@
-Most Humorous Output:
+# Most Humorous Output:
 
 	Andreas Gustafsson
 	Helsinki University of Technology
@@ -6,36 +6,39 @@ Most Humorous Output:
 	00410 Helsinki
 	FINLAND
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To make:
-	make ag
-    
+### To run
+
+	./og word word2 word3 < /path/to/dictionary
+
+## Judges' comment
+
     Determine where your system dictionary is located.  You may find
     it located in one of the following places:
 
-	    /usr/dict/words
-	    /usr/share/lib/spell/words
-	    /usr/ucblib/dict/words
-	    /dev/null			<-- for machines with nothing to say
+	/usr/share/dict/words
+	/usr/share/lib/spell/words
+	/usr/ucblib/dict/words
+	/dev/null			# <-- for machines with nothing to say
     
     Then using the proper dictionary:
 
-        ag free software foundation	< /usr/dict/words
-        ag obfuscated c contest		< /usr/dict/words
-        ag unix international		< /usr/dict/words
-	ag george bush			< /usr/dict/words
-	ag bill clinton			< /usr/dict/words
-	ag ross perot			< /usr/dict/words
-	ag paul e tsongas		< /usr/dict/words
+        ./ag free software foundation	< /usr/share/dict/words
+        ./ag obfuscated c contest	< /usr/share/dict/words
+        ./ag unix international		< /usr/share/dict/words
+	./ag george bush		< /usr/share/dict/words
+	./ag bill clinton		< /usr/share/dict/words
+	./ag ross perot			< /usr/share/dict/words
+	./ag paul e tsongas		< /usr/share/dict/words
 
     Recently some newspapers printed amusing anagrams of one of the
     names listed above.  Run this program to find the anagrams they
     weren't allowed to print!
 
-
-Selected notes from the author:
+## Author's comments
 
     The name of the game:
     

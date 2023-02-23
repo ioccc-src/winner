@@ -6,20 +6,21 @@ Best Output:
 	Hyattsville MD 20782 
 	USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    Make and run as follows:
+### To run
 
-	make buzzard
-	buzzard
+	./buzzard
+
+## Judges' comments
 
     You will be A-mazed.
 
     You are invited to try to cheat, ... if you can figure out how!  :-)
 
-
-Selected notes from the author:
+## Author's comments
 
     HOW TO PLAY:
 
