@@ -50,4 +50,4 @@ make dgibson
 # form the next generation
 #
 chmod +w life.d
-dgibson | tee life.d
+./dgibson | tee life.d

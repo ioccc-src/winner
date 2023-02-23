@@ -19,6 +19,8 @@ Judges' comments:
     This program's output may be even more obfuscated when played 
     on inverse video.  :-)
 
+    Yusuke Endoh provided a patch which allows this entry to compile on modern
+    systems. Thank you Yusuke!
 
 Selected notes from the author:
 

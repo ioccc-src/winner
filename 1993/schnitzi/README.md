@@ -29,11 +29,18 @@ Judges' comments:
 	Is it true that Elvis is alive?
 	Do colorless green ideas sleep furiously?
 
-    NOTE: The author may also be contacted at: marks@aldrin.ksc.nasa.gov
-
     We suggest you try using the body (minus the header and signature line) 
     of a Usenet article.  You might want to try something from alt.flame.  :-)
 
+    If you have a ' in the question this entry may fail.
+
+    NOTE: This entry uses `gets()` so you might get a warning when compiling and
+    running this entry.
+
+    NOTE: this entry will likely segfault if you do not provide it with a data
+    file.
+
+    NOTE: The author may also be contacted at: marks@aldrin.ksc.nasa.gov
 
 Selected notes from the author:
 

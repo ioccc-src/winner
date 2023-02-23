@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include <malloc.h>
+#include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 #define A(x) (e^d)&i?e:(e+=i+i/15-d,d<<=4,i<<=4,x)
 #define B b+=!((e^d)&i)&&(d|=i),i<<=4,
@@ -11,7 +12,7 @@
 #define G unsigned short
 #define H e^=a[z],a[z]^=e,e^=a[z],
 
-void
+int
     main
 	(int
 	    z,char

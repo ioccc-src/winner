@@ -66,13 +66,18 @@ YEAR= 1993
 # build all entries
 ###################
 #
+
+# XXX the $(MAKE) $$i is a temporary workaround while we get the other Makefiles
+# in order. It should read:
+#
+#	(cd $$i && $(MAKE) $$i):
 all:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
 	@for i in ${WINNERS} ; do \
 	    echo "=-= start ${YEAR}/$$i =-="; \
 	    echo "(cd $$i && $(MAKE) $@)"; \
-	    (cd $$i && $(MAKE) $@); \
+	    (cd $$i && $(MAKE) $$i); \
 	    echo "=-= end ${YEAR}/$$i =-="; \
 	    echo; \
 	done

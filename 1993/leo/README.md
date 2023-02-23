@@ -13,10 +13,10 @@ Judges' comments:
 	make leo
 
     To have the computer guess:
-	leo [colors]
+	./leo [colors]
 
     To guess the computer's number:
-	mind [colors]
+	./mind [colors]
 
     where:
 	colors		number of possible colors (1 to 15) (default: 6)
@@ -28,14 +28,31 @@ Judges' comments:
     We look forward to more entries from the newer members of the 
     International Internet community.
 
-    On some systems, you may need to remove the line:
+    On more modern systems we had to make the following changes to get it to
+    compile:
 
-	#include <malloc.h>
-    
-    or replace that line with:
 
-	#include <sys/types.h>
-	#include <sys/malloc.h>
+	    --- i/1993/leo/leo.c
+	    +++ w/1993/leo/leo.c
+	    @@ -1,19 +1,20 @@
+	     #include <stdio.h>
+	    -#include <malloc.h>
+	    +#include <stdlib.h>
+	     #include <string.h>
+	    +#include <time.h>
+
+	     #define A(x) (e^d)&i?e:(e+=i+i/15-d,d<<=4,i<<=4,x)
+	     #define B b+=!((e^d)&i)&&(d|=i),i<<=4,
+	     #define C i=15,B B B B d=d<<4|d>>12,
+	     #define D=(d=g,b=0,C b<<=4, C C C b)
+	     #define E if(**y)goto
+	     #define F=a[rand()%c]
+	     #define G unsigned short
+	     #define H e^=a[z],a[z]^=e,e^=a[z],
+
+	    -void
+	    +int
+
 
     to successfully build this entry.
 

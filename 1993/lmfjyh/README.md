@@ -16,8 +16,9 @@ Judges' comments:
 
     There's more than one way to get around disk quotas. :-)
 
-    Some people have reported problems compiling this entry
-    with gcc 2.3.3.
+    This entry will not compile on modern systems because it
+    relies on a compiler bug which was fixed in gcc 2.3.3 (a very
+    long time ago now).
 
     The make command:
 
@@ -25,6 +26,7 @@ Judges' comments:
     
     will remove the "special" file that is created during the 
     make of lmfjyh.
+
 
 
 Selected notes from the author:
