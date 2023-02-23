@@ -1,5 +1,4 @@
 #include		     <stdio.h> 
-#include		     <malloc.h> 
 #define			  ext(a) (exit(a),0)
 #define I		  " .:\';+<?F7RQ&%#*"
 #define a			"%s?\n"
@@ -29,7 +28,7 @@
 				  =128,K=1,V,B=0,Y,m=128,p=0,N
 				 =768,U=768,h[]={0x59A66A95,256
 			     ,192,1,6912,1,0,0},t,A=0,W=0,Z=63,X=23
-			    ;o*J,_;main(c,v)l c;o**v;{l q=1;for(;;q<
+			    ;o*J,_;main(c,v)int c;o**v;{l q=1;for(;;q<
 		  c	   ?(((J=v[q])[0]&&J[0]<48&&J++,((_= *J)<99||
 		_/2==	   '2'||(_-1)/3=='\"'||_==107||_/05*2==','||_
 	      >0x074)?(   fprintf(i,a,v[q]),r):_>0152?(_/4>27?(_&1?(

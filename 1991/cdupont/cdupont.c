@@ -7,8 +7,8 @@ main(){int x  ,gi=4,i,f,ri=1,httxkbl=1,m=012;long cd=0x5765248d,n;
 x=  u [gi][m]; sorryfor_this_unused_but_very_needed_label:
      if(  m==gi){x=0x70;f=0x68;}else goto cOg0 ; b:putchar(x); if(
 !(n-httxkbl++))
-#define yank putchar('
-  {httxkbl=1;       yank ');goto
+#define yank(x) putchar(x)
+  {httxkbl=1;       yank(' ');goto
    hxi;}goto bl;
            /* hardlyundrstandable, but
 likely to be missed if removed */
@@ -18,7 +18,7 @@ likely to be missed if removed */
           c0g0 : n=cd&0x40000000L>>0x1e;
  goto         cOgO;   g6w:
                  if(x!=0x2e){i++;goto c0gO;}else /*
-injail*/yank\n');goto vhjsgfdyl1lgjhd;
+injail*/yank('\n');goto vhjsgfdyl1lgjhd;
 cOg0 :
 f=u[m][gi];goto b;bl:m=(i+1)*(4*
 x+3*f)%032;gi=(i+1)*(x+2*f)%0x1a; goto g6w;

@@ -7,24 +7,26 @@ Most Obfuscated Algorithm:
 	USA
 
 
-Judges' comments:
+## To build:
 
-    To see clearly why this won an award:
-	make babble
-    
-    Try:
-	babble 0 10
-	babble 56 720
-	babble 1 521
-    
+        make all
+
+### To run
+
+	./babble 0 10
+	./babble 56 720
+	./babble 1 521
+
+## Judges' comments
+
     To see good C Preprocessor babble, try:
+
 	make babble.cppcb
 	cat babble.cppcb
     
     Notice how many statements it takes to do anything useful?
 
-
-Selected notes from the author:
+## Author's comments
 
     What you shouldn't think about babble:
 

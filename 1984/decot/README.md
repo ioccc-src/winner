@@ -6,7 +6,7 @@ Dave Decot
 
         make all
 
-NOTE: This entry uses non-standard args to main() that do not work with modern compilers.
+NOTE: This entry may not compile when using modern compilers.
 
 ## Judges' comments:
 

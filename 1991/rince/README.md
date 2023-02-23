@@ -1,4 +1,4 @@
-Best Game:
+# Best Game:
 
     James Bonfield
     University of Warwick
@@ -8,28 +8,19 @@ Best Game:
     SG19 2HA
     England
 
+## To build:
 
-Judges' comments:
+        make all
 
-    Make and run as follows:
+### To run
 
-	make rince
-	rince
+	./rince
 
-    This entry exposed a number of bugs in a number of ANSI C compilers!
-    Because of this, we have provided a number of different versions:
+## Judges' comments
 
-	rince.orig.c	- James Bonfield entry
-			  (many non-GNU ANSI compilers can't grok this code)
-	rince.c		- our non-ANSI version of rince.orig.c
-	rince_ansi.c	- same as rince.c
-			  (most ANSI C compilers can deal with this)
-    
-    You may need to change the makefile depending on what type of system
-    you are running.  See the notes in ansi.mk or common.mk.
+    This entry has been updated to allow most ANSI C compiler.
 
-
-Selected notes from the author:
+## Author's comments
 
     This program is a simple puzzle type game. (I'll leave you to play
     it to see the rest of it .. :-) .)  The general idea was to try and

@@ -6,26 +6,21 @@
 	Waterloo, On			Waterloo, On		
 	Canada, N2J 2W9			Canada, N2L 6G9
 
-
 ## To build:
 
         make all
-
 
 ### To run
 
 	cp ant.hint hill
 	./ant hill
 
-
 ## Judges' comments
-
 
     The author was kind enough to supply a list of references below,
     in case you are still confused after read the source!  :-)
 
 ## Author's comments
-
 
     Ant's Editor vIOCCC91
 

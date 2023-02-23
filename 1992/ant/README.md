@@ -9,15 +9,11 @@
 
 ## To build:
 
-
         make all
-
 
 ### To run
 
-
 	./am ant.test.mk
-
 
 ## Judges' comments
 

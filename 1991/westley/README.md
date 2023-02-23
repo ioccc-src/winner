@@ -1,17 +1,19 @@
-Grand Prize:
+# Grand Prize:
 
     Brian Westley (Merlyn LeRoy on usenet)
     DigiBoard, Inc.
     1026 Blair Ave.
     St. Paul, MN  55104  USA
 
+## To build:
 
-Judges' comments:
+        make all
+
+### To run
 
     Make and run as follows:
 
-	make westley
-	westley [move_location] | tee nextmove.c
+	./westley [move_location] | tee nextmove.c
     
     where the 'move_location' is a digit from 1 to 9 that represents
     a move on a tic-tac-toe board:
@@ -24,25 +26,26 @@ Judges' comments:
     next move, recompile nextmove.c and play it again:
 
 	make nextmove
-	nextmove move_location | tee nextmove.c
+	./nextmove move_location | tee nextmove.c
+
+## Judges' comments
 
     We have provided the shell script, ttt, to make it easier to play the game:
 
 	make ttt
-	ttt [first_move]	<- omit first arg to have it move first
-	ttt next_move
+	./ttt [first_move]	<- omit first arg to have it move first
+	./ttt next_move
 
     The shell script determines when the game is over, and automatically 
     replaces merlyn.c with an improved version after a loss.  The ttt script 
     has two other modes:
 
-	ttt quitgame	<- cancel any game in process, revert to merlyn.c
-	ttt clobber	<- remove all game files, revert to original source
+	./ttt quitgame	<- cancel any game in process, revert to merlyn.c
+	./ttt clobber	<- remove all game files, revert to original source
  
     Try not to cheat, the computer has not learned how to catch you doing it.
 
-
-Selected notes from the author:
+## Author's comments
 
     A tic-tac-toe self-modifying program that "learns".  This C program
     plays standard tic-tac-toe on itself.  The code is written as a

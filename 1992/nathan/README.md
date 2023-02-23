@@ -1,4 +1,4 @@
-Worst Abuse of the Rules:
+# Worst Abuse of the Rules:
 
 	Nathan Sidwell
 	Inmos UK
@@ -7,8 +7,15 @@ Worst Abuse of the Rules:
 	Bristol
 	UK BS12 4SQ
 
+## To build:
 
-Judges' comments:
+        make all
+
+### To run
+
+	./nathan
+
+## Judges' comments
 
     The US International Traffic in Arms Regulations controls certain
     exportations going out of the United States.  The U.S.  Munitions
@@ -54,8 +61,7 @@ Judges' comments:
 	rules entries are ones that tend to 'streach' the limits and
 	take the contest into unexpected territory.
 
-
-Personal note from chongo:
+### Personal note from chongo:
 
     I think this situation shows just how ridiculous US crypto
     regulations really are.  Certain US federal officials can get away
@@ -63,8 +69,7 @@ Personal note from chongo:
     laws, but I personally can't re-distribute a program contest winner
     to the network!
 
-
-Selected notes from the author:
+## Author's comments
 
     PROGRAM USE
 

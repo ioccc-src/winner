@@ -1,4 +1,4 @@
-Best of Show:
+# Best of Show:
 
 	Vern Paxson
 	Lawrence Berkeley Laboratory
@@ -8,24 +8,29 @@ Best of Show:
 	1 Cyclotron Rd.
 	Berkeley, CA 94720  USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-     Try: 
-	make vern
-	vern 3		<-- default is 2
+### To run
+
+	./vern 3		# <-- default is 2
+
+## Judges' comments
 
      You might start off by giving the following input:
+
 	63 43
 	76 55
 	71 52
 	67 57		(this may take a while)
-    
+
     The judges assume no responsibility for the obfuscated opening
     suggested above.  :-)
 
     For a real quick game try:
-	vern
+
+	./vern
 
 	65 55
 	66 46
@@ -35,8 +40,7 @@ Judges' comments:
     NOTE: Because some mailers have problems with the original winning source,
 	  a slightly modified version with shorter lines has been provided.
 
-
-Selected notes from the author:
+## Author's comments
 
     This program plays chess.  You play the white pieces and the program
     the black pieces.  Moves are entered as a two-digit number specifying

@@ -1,4 +1,4 @@
-Most Educational:
+# Most Educational:
 
 	Adrian Mariano
 	University of Washington
@@ -6,25 +6,26 @@ Most Educational:
 	Mercer Island, WA 98040
 	USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To build:
-	make adrian
+### To run
 
-    Try:
-	adrian adrian.grep.try < adrian.hint
-    
-    For the slow minded, try:
-	adsleep 32767
+	./adrian adrian.grep.try < adrian.hint
+
+	For the slow minded, try:
+
+	    ./adsleep 32767
+
+## Judges' comments
     
     Once you get past the obfuscation, you have an opportunity to learn
     about regular expressions and state machines.
 
     NOTE: Some compilers have had trouble optimizing this entry.
 
-
-Selected notes from the author:
+## Author's comments
 
                             ADrian's GREP (adgrep)
 

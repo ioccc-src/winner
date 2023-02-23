@@ -50,7 +50,7 @@
 # tool locations
 ################
 #
-SHELL= /bin/bash
+SHELL= bash
 MAKE= make
 
 
