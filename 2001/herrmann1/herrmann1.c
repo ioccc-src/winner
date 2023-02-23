@@ -51,7 +51,7 @@ q D H y ## z
 d c 0    & 0
 d R i    W v
 d   B           Initializing...
-d   L    V   /* the turing    */
+d   L    V   /* the Turing    */
 d   M    Y(O)/* state to      */
 d S(x)   T(O,1, start       ##x)
 #else

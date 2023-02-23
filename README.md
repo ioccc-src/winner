@@ -1,6 +1,6 @@
 ### This is NOT the official IOCCC web site!
 
-Please visit www.ioccc.org for the official IOCCC web.
+Please visit www.ioccc.org for the official IOCCC web site.
 
 Please do NOT bookmark or link to this [experimental web site](https://ioccc-src.github.io/temp-test-ioccc/).
 

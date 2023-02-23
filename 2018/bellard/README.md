@@ -68,7 +68,7 @@ Wikipedia and were resized to a width of 1024 pixels. Warning: the
 program is not protected against invalid input.
 
 The program should be portable on any Unix system. On Windows the line
-"_setmode(0, 32768); _setmode(1, 32768);" must be added at the start of
+`_setmode(0, 32768); _setmode(1, 32768);` must be added at the start of
 the main() function to avoid unwanted carriage return characters in
 the output.
 

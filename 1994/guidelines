@@ -492,7 +492,7 @@ end
     With the exception of the header, all text outside of the entry
     format may be ignored.  That is, don't place text outside of the
     entry and expect the us to see it.  (Our decoding tools are		      |
-    not AI progs!) If you need tell the the something, put it in 	      |
+    not AI progs!) If you need tell the something, put it in 	      |
     the	 ---remark--- section, or send an email to the us at:		      |
 
 	...!{apple,pyramid,sun,uunet}!hoptoad!judges	(not the address for
