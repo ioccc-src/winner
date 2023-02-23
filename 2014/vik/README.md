@@ -36,15 +36,15 @@ might help? :-)
 ## Author's comments:
 ### Remarks
 
-This program converts ascii text to morse audio file and vice versa. As far as
+This program converts ascii text to Morse audio file and vice versa. As far as
 I can tell, there are at least six chocolate references in this program.
 
-This program can convert text to morse to a raw 44.1kHz stereo audio file.
-Via streaming to mplayer, you can listen to the morse audio.
+This program can convert text to Morse to a raw 44.1kHz stereo audio file.
+Via streaming to mplayer, you can listen to the Morse audio.
 
 Don't forget the last '-' as it makes mplayer read from stdin.)
 
-## Convert audio file with morse signals to text
+## Convert audio file with Morse signals to text
 
     $ ./prog e < audio_file.raw
 
@@ -67,8 +67,8 @@ declaration in order for the program to run correctly:
 ### Known Issues
 
 The program uses a quite simple algorithm for detecting tone on and off events
-in the morse signal.   Hence the program  does not work well  with noisy input
-signals. I have tested it with several samples of man made morse recordings as
+in the Morse signal.   Hence the program  does not work well  with noisy input
+signals. I have tested it with several samples of man made Morse recordings as
 well as computer generated ones.
 
 Generally, any recording from ham  radio transmissions  does not decode due to

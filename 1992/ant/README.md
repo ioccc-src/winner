@@ -17,6 +17,7 @@
 
 ## Judges' comments
 
+
     Like much of Posix, obfuscation has its place.  Your task is to
     figure out where.
 

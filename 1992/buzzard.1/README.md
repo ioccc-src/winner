@@ -99,12 +99,12 @@ Most Obfuscated Algorithm:
       The simulated comparison operations only work with a certain
       range of numbers; numbers that are too large will cause the
       output code to fail to simulate the input code.  This means
-      that this implementation of babble would not be turing-complete,
+      that this implementation of babble would not be Turing-complete,
       even if the AE could process indefinitely-sized numbers.
       However, this is actually a constraint that no actual computer
       can meet, either, so we can conclude that if an AE, with
       card bins connected as suggested above, were hooked up to
-      a memory unit of sufficient size, it would be as turing
+      a memory unit of sufficient size, it would be as Turing
       complete as any existing machine (or, for those who
       interpret that excessively critically, i.e. "not at all" for
       both, we can simply say that the AE could simulate any
