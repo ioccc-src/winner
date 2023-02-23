@@ -420,7 +420,7 @@ MAY_NEED_GCC= gcc
 ##############################
 #
 OBJ= prog.o termcaps.o
-DATA= COMPILING HACKING bugs.md cannibalism.log \
+DATA= COMPILING.md HACKING.md bugs.md cannibalism.log \
     chocolate-cake.md crazy.log gameplay.md \
     snake-colours.sh snake.1 spoilers.md \
     termcaps.c terminals.md troubleshooting.md

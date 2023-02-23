@@ -44,7 +44,7 @@ spoiler](spoiler.html) that shows how this entry was written.
 ## Author's comments:
 ### Synopsis
 
-    echo "Hello world" | ./mile 12345 > encoded.c
+    echo "Hello world" | ./prog 12345 > encoded.c
 
     gcc -DPIN=12345 encoded.c -o ./decoded && ./decoded
 
@@ -59,7 +59,7 @@ Mile is a C code generator.  Run without arguments for the help message below:
 When run with an encoding PIN (first command line argument), Mile will
 read bytes from stdin and generate C code on stdout.  Example:
 
-    echo "Hello, world!" | ./mile 56789 > encoded.c
+    echo "Hello, world!" | ./prog 56789 > encoded.c
 
 This generated code will reproduce the same input bytes on stdout when
 executed, if it was compiled with the same encoding PIN.

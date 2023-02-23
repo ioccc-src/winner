@@ -314,7 +314,7 @@ I can think of at the least the following:
     the max size or very close to it. In fact if you have the shedding size to be
     even one on every move even if you normally can't win with the same size
     screen you might find it happens much more easily! You could of course play
-    with these paramters in different ways together - there are certainly
+    with these parameters in different ways together - there are certainly
     different combinations than I have given.
 -   Of course you could also enable one or both cheat modes. You might be
     considered a filthy cheat but both modes are quite fun (one being enabled by

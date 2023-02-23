@@ -417,7 +417,7 @@ MAY_NEED_GCC= gcc
 #
 OBJ= prog.o prog_png.o prog_ppm.o
 DATA= sample.jpg
-TARGET= prog prog_png prog_ppm
+TARGET= prog prog_png prog_ppm makegif
 #
 ALT_OBJ=
 ALT_TARGET=
@@ -438,6 +438,9 @@ prog_png: prog.png.c
 
 prog_ppm: prog.ppm.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
+makegif: makegif.sh
+	${CHMOD} +x $?
 
 # alternative executable
 #

@@ -440,7 +440,7 @@ alt: ${ALT_TARGET}
 data: ${DATA}
 	
 ${DATA}:
-	${CURL} -o $@.gz http://ioccc.org/2019/mills/$@.gz && ${GUNZIP} $@.gz
+	${CURL} -o $@.gz https://www.ioccc.org/2019/mills/$@.gz && ${GUNZIP} $@.gz
 
 ###############
 # utility rules

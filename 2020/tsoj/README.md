@@ -29,7 +29,7 @@ reverse indentation style.
 ## Author's comments:
 #### Controls
 - Movement:  
-`w`, `a`, `s`, `d`
+`w` (forwards), `a` (left), `s` (backwards), `d` (right)
 - Fire:  
 `space`
 - Quit:  
@@ -73,7 +73,7 @@ cc -std=c99 -O3 prog.c -o prog
 - `-Wno-misleading-indentation`
 - `-Wno-maybe-uninitialized`
 - You may experience a mild [motion aftereffect](https://en.wikipedia.org/wiki/Motion_aftereffect) when playing for too long
-#### Highscore
+#### High score
 Score will be shown in the top left corner.  
 My best was **156**. If you beat that I'll send you the image of a very expensive chocolate.
 #### Features

@@ -1,9 +1,11 @@
-# WARNING: There are some things cited in this document that are no longer
-# correct, might be misleading or otherwise not clear. This is both intentional
-# and unintentional. This is especially true for claims that something means
-# something specific. Put another way just because the table says something
-# doesn't mean it's the whole truth: no misleading comments but misleading
-# document that talks about some parts of the code!
+## Warning / caveat about this document
+
+WARNING: There are some things cited in this document that are no longer
+correct, might be misleading or otherwise not clear. This is both intentional
+and unintentional. This is especially true for claims that something means
+something specific. Put another way just because the table says something
+doesn't mean it's the whole truth: no misleading comments but misleading
+document that talks about some parts of the code!
 
 In this document I provide information to the herpetologist hackers to help them
 to modify certain things and add features for their studying of snakes. Or if

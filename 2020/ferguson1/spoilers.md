@@ -40,7 +40,7 @@ actually done in more detail.
 
 First I initialise curses; if this fails I print an error message ('curses
 error') and return 1.  Next the screen size is determined and I subtract 1 from
-each the x/y. If it's too small curses is ended and an error message ('screen
+both x/y. If it's too small curses is ended and an error message ('screen
 too small') is printed - returning 1.
 
 Next the max size of the snake is determined: if `MAXSIZE` is specified then

@@ -57,6 +57,8 @@ It uses ncurses:
 You will see a terminal-wide field of a minesweeper.  Probe a cell by mouse click.
 If a cell turns out to have a mine (or not), the program determines whether its neighbors have a mine or not, and automatically probes (or flags) the cell.
 
+##### Keyboard commands
+
 * `R`: new game (You can also click the smiley face at the top line.)
 * `Q`: quit
 
