@@ -1,4 +1,4 @@
-Best Game:
+# Best Game:
 
 	Leonid A. Broukhis
 	Moscow Centre of SPARC Technology
@@ -6,11 +6,11 @@ Best Game:
 	89-1-95 Moscow
 	Russia
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To make:
-	make leo
+### To run
 
     To have the computer guess:
 	./leo [colors]
@@ -20,6 +20,8 @@ Judges' comments:
 
     where:
 	colors		number of possible colors (1 to 15) (default: 6)
+
+## Judges' comments
     
     By default, the number of colors if 6.  You may specify a
     value of between 1 and 15 colors.  See the author's notes
@@ -56,8 +58,7 @@ Judges' comments:
 
     to successfully build this entry.
 
-
-Selected notes from the author:
+## Author's comments
 
     This program plays mastermind, if you call it by a name ending by
     'd', otherwise it _solves_ mastermind. Call it without parameters

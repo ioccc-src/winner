@@ -1,4 +1,4 @@
-"Bill Gates" Award:
+# "Bill Gates" Award:
 
 	Chris Mills
 	Pagine Corporation
@@ -6,8 +6,21 @@
 	San Jose, CA 95131
 	USA
 
+## To build:
 
-Judges' comments:
+        make all
+
+### To run
+
+    DISPLAY="your_X_server_display" 
+    export DISPLAY
+    ./cmills [speed]	# must be run on an X11 server
+
+    where:
+
+	speed	update speed from 1 to 9 (default is 9)
+
+## Judges' comments
 
     From the San Jose Mercury News (May 15, 1993 page 20A "West Hackers 
     trounce East in computer quiz game"): 
@@ -24,20 +37,6 @@ Judges' comments:
     [The expression on Bill Gates' face was a sight to behold, as reported
     to us by several who were there].
 
-    To use:
-	make cmills 		# requires the X11 library
-	DISPLAY="your_X_server_display" 
-	export DISPLAY
-	./cmills [speed]	# must be run on an X11 server
-
-    where:
-	speed	update speed from 1 to 9 (default is 9)
-
-    Csh users should use:
-	make cmills 		# requires the X11 library
-	setenv DISPLAY "your_X_server_display" 
-	./cmills [speed]	# must be run on an X11 server
-
     You must set $DISPLAY in your environment or the program will 
     dump core.  This is not a bug as the author documented it as
     a feature.  :-)
@@ -53,8 +52,7 @@ Judges' comments:
 
     This program makes your windows about as useful as their windows. :-)
 
-
-Selected notes from the author:
+## Author's comments
 
     The program uses a single backing pixmap (which is the size of the
     screen) for all of its subwindows (with a little bit of trickery to

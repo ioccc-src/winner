@@ -1,26 +1,29 @@
-Best One Liner:
+# Best One Liner:
 
 	Mark Plummer
 	2901 Reckord Road
 	Fallston, MD, 21047
 	USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To run:
-	make plummer
+### To run
+
 	./plummer number arg
 
-    where:
-	number	a number 	(try 21701)
-	arg	any argument
+	where:
+
+	    number	a number 	(try 21701)
+	    arg	any argument
+
+## Judges' comments
     
     For extra credit: What happens when 'number' contains non-numeric
     characters, and why?
 
-
-Selected notes from the author:
+## Author's comments
 
     This program prints out all numbers up to a given number of digits
     on a single line.  When the largest number is reached, the program

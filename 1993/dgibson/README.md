@@ -1,4 +1,4 @@
-Best Abuse of the C Preprocessor:
+# Best Abuse of the C Preprocessor:
 
 	David Gibson
 	University of Cape Town
@@ -8,14 +8,18 @@ Best Abuse of the C Preprocessor:
 	7945
 	South Africa
 
+# To build:
 
-Judges' comments:
+        make all
 
-    To build use:
+### To run
+
 	sh ./dgibson.sh [datafile]
 
-    where:
-	datafile	initial pattern (default: dgibson.data1)
+	where:
+	    datafile	initial pattern (default: dgibson.data1)
+
+## Judges' comments
     
     We have provided the shell script 'dgibson.sh' to make it easier
     to run this entry.  Run this shell script several times to
@@ -41,8 +45,7 @@ Judges' comments:
     of main(). If you have gcc under macOS it might work just as well. We did not
     test other systems.
 
-
-Selected notes from the author:
+## Author's comments
 
     This program plays the Game of Life.
 

@@ -1,4 +1,4 @@
-Most Irregular Expression:
+# Most Irregular Expression:
 
 	David Van Brackle
 	ISX Corporation
@@ -6,15 +6,20 @@ Most Irregular Expression:
 	Marietta, GA  30067
 	USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To run:
-	make vanb
+	NOTE: This entry may not compile when using modern compilers.
+
+### To run
+
 	./vanb 'exp'
-    
-    where:
-	'exp'	an octal expression
+	
+	where:
+	    'exp'	an octal expression
+
+## Judges' comments
     
     The octal expression may contain:
 
@@ -37,7 +42,7 @@ Judges' comments:
     argument of main(). If you have gcc under macOS it might work just as well.
     We did not test other systems.
 
-Selected notes from the author:
+## Author's comments
 
     The program does no error checking - erroneous expressions will
     produce spurious results. Note that unary '-' is an operator. Thus,

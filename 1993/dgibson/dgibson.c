@@ -33,8 +33,8 @@
 #define STAT ;long prs =
 #define END  ;
 #define LIFE int bat, bit, but, las, gen, ret, rcl, rcf, rro, rrc, rrr, \
-             occ, ocp, sta, dfc; long prs; main(int col, int row) { \
-             int dfl = ((prs & 12) != 4), ccl = 0, cro = 0; return \
+             occ, ocp, sta, dfc; long prs; int main(int col, char *argv[]) { \
+	     int row = (int)argv; int dfl = ((prs & 12) != 4), ccl = 0, cro = 0; return \
              col == 1 && printf("LIFE\n"), (col < 0 ? recu : \
              (((ret = 0) || (prs & 8) && addl || 0 && (0
 

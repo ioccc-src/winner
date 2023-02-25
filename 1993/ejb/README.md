@@ -1,4 +1,4 @@
-Best Obfuscated Algorithm:
+# Best Obfuscated Algorithm:
 
 	E. Jay Berkenbilt
 	Engineering Research Associates
@@ -6,15 +6,18 @@ Best Obfuscated Algorithm:
 	Vienna, VA 22182-2235
 	USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To run:
-	make ejb
+### To run
+
 	./ejb level
 
-    where:
-	level   a value from -128 to 127
+	where:
+	    level   a value from -128 to 127
+
+## Judges' comments
 
      A negative argument plays the patience puzzle.  An argument
      greater than 0 plays the Tower of Hanoi puzzle.  In either case
@@ -25,8 +28,7 @@ Judges' comments:
      Of course, you need a different kind of "patience" if you give
      the argument 127 to this program and want to see it finish!
 
-
-Selected notes from the author:
+## Author's comments
 
     WHAT THIS PROGRAM DOES
     ======================

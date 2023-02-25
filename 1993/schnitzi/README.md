@@ -1,19 +1,22 @@
-Obfuscated Intelligence Award:
+# Obfuscated Intelligence Award:
 
 	Mark Schnitzius
 	1700 Woodbury Rd. #1208
 	Orlando, FL 32828
 	USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To run:
-	make schnitzi
+### To run
+
 	./schnitzi file
-    
-    where:
-	file	a file containing some text
+	
+	where:
+	    file	a file containing some text
+
+## Judges' comments
 
     After this program prints the contents of 'file', ask it
     some questions related to the text.
@@ -42,7 +45,7 @@ Judges' comments:
 
     NOTE: The author may also be contacted at: marks@aldrin.ksc.nasa.gov
 
-Selected notes from the author:
+## Author's comments
 
     I wanted to write a program that would read in a text file in
     natural language (such as English) and answer questions about that

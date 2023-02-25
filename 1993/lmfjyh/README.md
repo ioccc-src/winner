@@ -1,16 +1,21 @@
-Most Versatile Source:
+# Most Versatile Source:
 
 	Jyrki Holopainen
 	Oy LM Ericsson Ab
 	SF-02420 Jorvas
 	Finland
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make lmfjyh
+	NOTE: This entry may not compile when using modern compilers.
+
+### To run
+
 	./lmfjyh
+
+## Judges' comments
     
     See the makefile for details.
 
@@ -20,16 +25,7 @@ Judges' comments:
     relies on a compiler bug which was fixed in gcc 2.3.3 (a very
     long time ago now).
 
-    The make command:
-
-	make tidy
-    
-    will remove the "special" file that is created during the 
-    make of lmfjyh.
-
-
-
-Selected notes from the author:
+## Author's comments
 
     "Practical and efficient method of compressing source code"
 

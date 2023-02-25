@@ -1,4 +1,4 @@
-Most Obfuscated X Program:
+# Most Obfuscated X Program:
 
 	Jon Thingvold
 	University of Oslo
@@ -6,12 +6,17 @@ Most Obfuscated X Program:
 	N 0858 Oslo
 	Norway
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make jonth		# requires the X11 library
+	NOTE: This entry may not compile when using modern compilers.
+
+### To run
+
 	./jonth			# must be run on an X11 server
+
+## Judges' comments
 
     Use 'h' and 'l' to shift objects left or right.  Use 'k' to
     rotate and press SPACE to drop.
@@ -22,7 +27,7 @@ Judges' comments:
     Yusuke Endoh provided a patch which allows this entry to compile on modern
     systems. Thank you Yusuke!
 
-Selected notes from the author:
+## Author's comments
 
     This is jonth (jon's t(h)etris) for the X Window System.
 

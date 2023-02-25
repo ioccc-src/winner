@@ -1,4 +1,4 @@
-Best Utility:
+# Best Utility:
 
 	Anthony Howe
 	Mortice Kern Systems, Inc.
@@ -6,17 +6,16 @@ Best Utility:
 	Waterloo, Ontario, N2J 3G4
 	Canada
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make ant
+### To run
+
 	./ant 'ERE' [file ...]
 
-    where:
-	ERE 	is an extended regular expression
-	file	a file to process (default is stdin)
-    
+## Judges' comments
+
     You may also want to try the author's test suite:
 	make -f ant.test.mk
     
@@ -25,8 +24,7 @@ Judges' comments:
 
     This program demonstrates that Posix doesn't guarantee readability.  :-)
 
-
-Selected notes from the author:
+## Author's comments
 
     Some of the features of my entry are:
 
