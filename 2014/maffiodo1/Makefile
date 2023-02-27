@@ -47,13 +47,13 @@ SDL_INCDIR= $(shell sdl-config --cflags)
 CWARN= -Wall
 #CWARN= -Wall -pedantic
 
-# Compiler standard
+# compiler standard
 #
 #CSTD=
 #CSTD= -ansi
 CSTD= -std=c11
 
-# Compiler bit architecture
+# compiler bit architecture
 #
 # Some entries require 32-bitness:
 # ARCH= -m32
@@ -65,7 +65,7 @@ CSTD= -std=c11
 #
 ARCH=
 
-# Optimization
+# optimization
 #
 # Most compiles will safely use -O2.  Some can use only -O1 or -O.
 # A few compilers have broken optimizers or this entry make break

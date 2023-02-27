@@ -11,7 +11,7 @@
 
 # tool locations
 #
-SHELL= bash
+SHELL= /bin/sh
 CP= cp
 CPP= cpp
 GUNZIP= gunzip
@@ -31,7 +31,7 @@ X11_LIBDIR= /usr/X11R6/lib
 #
 X11_INCLUDEDIR= /usr/X11R6/include
 
-# Optimization
+# optimization
 #
 # Most compiles will safely use -O2.  Some can use only -O1 or -O.
 # A few compilers have broken optimizers and thus you may

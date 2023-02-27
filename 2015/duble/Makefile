@@ -62,7 +62,7 @@ CSILENCE=	-Wno-parentheses -Wno-unused-value -Wno-return-type \
 
 clang_CSILENCE=-Wno-string-plus-int -Wno-int-conversion
 
-# Compiler standard
+# compiler standard
 #
 CSTD=	-std=c11 \
 		-D_BSD_SOURCE \
@@ -70,7 +70,7 @@ CSTD=	-std=c11 \
 # _BSD_SOURCE needed for function usleep()
 # _XOPEN_SOURCE needed for function lrand48()
 
-# Compiler bit architecture
+# compiler bit architecture
 #
 # Some entries require 32-bitness:
 # ARCH= -m32
@@ -82,15 +82,15 @@ CSTD=	-std=c11 \
 #
 ARCH=
 
-# Defines that are needed to compile
+# defines that are needed to compile
 #
 CDEFINE=
 
-# Include files that are needed to compile
+# include files that are needed to compile
 #
 CINCLUDE=
 
-# Optimization
+# optimization
 #
 # Most compiles will safely use -O2.  Some can use only -O1 or -O.
 # A few compilers have broken optimizers or this entry make break

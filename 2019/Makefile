@@ -13,7 +13,7 @@
 # shell used by this Makefile
 #############################
 #
-SHELL= bash
+SHELL= /bin/bash
 
 # Set X11_LIBDIR to the directory where the X11 library resides
 #

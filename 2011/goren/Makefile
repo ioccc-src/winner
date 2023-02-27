@@ -29,11 +29,11 @@ TRUE= true
 #
 CWARN=
 
-# Compiler standard
+# compiler standard
 #
 CSTD= -ansi
 
-# Compiler bit architecture
+# compiler bit architecture
 #
 # Some entries require 32-bitness,
 # other entries require 64-bitess.
@@ -52,7 +52,7 @@ else
 ARCH=
 endif
 
-# Optimization
+# optimization
 #
 # Most compiles will safely use -O2.  Some can use only -O1 or -O.
 # A few compilers have broken optimizers or this entry make break

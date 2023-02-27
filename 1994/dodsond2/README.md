@@ -1,4 +1,4 @@
-# Most Obfuscated Packaging:
+Most Obfuscated Packaging:
 
 	Don Dodson
 	AG Communication Systems
@@ -6,15 +6,12 @@
 	Phoenix, AZ 85023  
 	USA
 
-## To build:
 
-        make all
+Judges' comments:
 
-### To run
-
-	./dodsond2
-
-## Judges' comments
+    To use:
+	make dodsond2
+	dodsond2
 
     The original source file may be found in dodsond2.gz.  For people
     who don't have gunzip, an un-zipped version is provided as dodsond2.c.
@@ -24,7 +21,8 @@
     to get around the size limit will find themselves squeezed out of
     the contest!
 
-## Author's comments
+
+Selected notes from the author:
 
     Go searching for the Wumpus in the Caverns of Doom!  But be careful...
     There are pits and bats waiting to seal your fate, as well as a 

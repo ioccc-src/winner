@@ -27,7 +27,7 @@
 # On OpenBSD
 #	/bin/ksh = /bin/pdksh
 #
-SHELL= bash
+SHELL= /bin/sh
 
 CP= cp
 CPP= cpp
@@ -75,13 +75,13 @@ CSILENCE= -Wno-sign-compare -Wno-missing-prototypes \
 	  -Wno-padded -Wno-shadow \
 	  -Wno-sign-conversion
 
-# Compiler standard
+# compiler standard
 #
 #CSTD=
 #CSTD= -ansi
 CSTD= -std=c99
 
-# Compiler bit architecture
+# compiler bit architecture
 #
 # Some entries require 32-bitness:
 # ARCH= -m32
@@ -93,15 +93,15 @@ CSTD= -std=c99
 #
 ARCH=
 
-# Defines that are needed to compile
+# defines that are needed to compile
 #
 CDEFINE=
 
-# Include files that are needed to compile
+# include files that are needed to compile
 #
 CINCLUDE=
 
-# Optimization
+# optimization
 #
 # Most compiles will safely use -O2.  Some can use only -O1 or -O.
 # A few compilers have broken optimizers or this entry make break

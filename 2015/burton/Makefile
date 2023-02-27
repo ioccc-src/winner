@@ -63,13 +63,13 @@ CSILENCE= -Wno-return-type -Wno-parentheses -Wno-char-subscripts \
 	  -Wno-shadow -Wno-shorten-64-to-32 -Wno-sign-conversion \
 	  -Wno-unused-parameter
 
-# Compiler standard
+# compiler standard
 #
 #CSTD=
 #CSTD= -ansi
 CSTD= -std=c11
 
-# Compiler bit architecture
+# compiler bit architecture
 #
 # Some entries require 32-bitness:
 # ARCH= -m32
@@ -81,12 +81,12 @@ CSTD= -std=c11
 #
 ARCH=
 
-# Defines that are needed to compile
+# defines that are needed to compile
 #
 #CDEFINE=
 CDEFINE= -DR=return -DI=typedef -DH=unsigned -DX=long -D"W(x)=for(;x;)"
 
-# Include files that are needed to compile
+# include files that are needed to compile
 #
 CINCLUDE=
 #CINCLUDE= -include stdlib.h
@@ -94,7 +94,7 @@ CINCLUDE=
 #CINCLUDE= -include stdlib.h -include stdio.h
 #CINCLUDE= -I ${X11_INCDIR}
 
-# Optimization
+# optimization
 #
 # Most compiles will safely use -O2.  Some can use only -O1 or -O.
 # A few compilers have broken optimizers or this entry make break
