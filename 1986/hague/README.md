@@ -9,6 +9,10 @@ UK
 
         make all
 
+### To run
+
+	./hague
+
 ## Judges' comments:
 
 Compile this program and feed ASCII text into standard input.  This

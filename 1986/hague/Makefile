@@ -143,6 +143,7 @@ GENCAT= gencat
 GENSTRINGS= genstrings
 GETOPT= getopt
 GETOPTS= getopts
+GINDENT= gindent
 GNUMAKE= gnumake
 GREP= grep
 GROFF= groff
@@ -314,106 +315,6 @@ ZMORE= zmore
 ZNEW= znew
 ZPRINT= zprint
 ZSH= zsh
-
-# Set X11_LIBDIR to the directory where the X11 library resides
-#
-#X11_LIBDIR= /usr/X11R6/lib
-#X11_LIBDIR= /usr/X11/lib
-X11_LIBDIR= /opt/X11/lib
-
-# Set X11_INCLUDEDIR to the directory where the X11 include files reside
-#
-#X11_INCDIR= /usr/X11R6/include
-#X11_INCDIR= /usr/X11/include
-X11_INCDIR= /opt/X11/include
-
-# Compiler warnings
-#
-#CWARN=
-#CWARN= -Wall
-#CWARN= -Wall -Wextra
-CWARN= -Wall -Wextra ${CSILENCE}
-#CWARN= -Wall -Wextra -pedantic ${CSILENCE}
-#CWARN= -Wall -Wextra -Weverything
-#CWARN= -Wall -Wextra -Weverything -pedantic
-#CWARN= -Wall -Wextra -Weverything -pedantic ${CSILENCE}
-
-# Silence warnings that ${CWARN} would normally complain about
-#
-CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-implicit-int \
-	-Wno-incompatible-library-redeclaration -Wno-return-type
-#CSILENCE= -Wno-implicit-int
-
-# Compiler standard
-#
-#CSTD=
-#CSTD= -ansi
-CSTD= -std=gnu89
-
-# Compiler bit architecture
-#
-# Some entries require 32-bitness:
-# ARCH= -m32
-#
-# Some entries require 64-bitness:
-# ARCH= -m64
-#
-# By default we assume nothing:
-#
-ARCH=
-
-# Defines that are needed to compile
-#
-CDEFINE=
-#CDEFINE= -DIOCCC=26
-
-# Include files that are needed to compile
-#
-CINCLUDE=
-#CINCLUDE= -include stdlib.h
-#CINCLUDE= -include stdio.h
-#CINCLUDE= -include stdlib.h -include stdio.h
-#CINCLUDE= -I ${X11_INCDIR}
-#CINCLUDE= -I ${HOMEBREW_PREFIX}/include/SDL2
-
-# Optimization
-#
-# Most compiles will safely use -O2.  Some can use only -O1 or -O.
-# A few compilers have broken optimizers or this entry make break
-# under those buggy optimizers and thus you may not want anything.
-# Reasonable compilers will allow for -O3.
-#
-#OPT=
-#OPT= -O
-#OPT= -O1
-#OPT= -O2
-OPT= -O3
-
-# default flags for ANSI C compilation
-#
-CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
-
-# Libraries needed to build
-#
-LIBS=
-#LIBS= -lm
-#LIBS= -L ${X11_LIBDIR} -lX11
-#LIBS= -L ${HOMEBREW_PREFIX}/lib -lSDL
-
-# ANSI compiler
-#
-# Set CC to the name of your ANSI compiler.
-#
-# Some entries seem to need gcc.  If you have gcc, set
-# both CC and MAY_NEED_GCC to gcc.
-#
-# If you do not have gcc, set CC to the name of your ANSI compiler, and
-# set MAY_NEED_GCC to either ${CC} (and hope for the best) or to just :
-# to disable such programs.
-#
-CC= cc
-#CC=clang
-MAY_NEED_GCC= gcc
 
 # Set X11_LIBDIR to the directory where the X11 library resides
 #
