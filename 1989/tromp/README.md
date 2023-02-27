@@ -1,4 +1,4 @@
-Best game:
+# Best game:
 
 	John Tromp
 	Centre for Mathematics and Computer Science (CWI)
@@ -6,16 +6,19 @@ Best game:
 	1701CK Heerhugowaard
 	Netherlands
 
-Judges notes:
+## To build:
+
+        make all
+
+### To run
+
+	./tromp [drops_per_sec  [cmd_string]]
+
+## Judges' comments
 
 	This is a character terminal version of the TETRIS program. 
 	It runs on a VT100 compatible terminal or emulator.  It is 
 	best used at 4800 baud or more.
-	
-	Usage:
-
-		tromp [drops_per_sec  [cmd_string]]
-		tromp.s5 [1  [cmd_string]]
 	
 	By default, "drops_per_sec", the number of times an object
 	will drop in a second, is 2.  The default "cmd_string" is
@@ -34,21 +37,10 @@ Judges notes:
 	prints the current score.  To un-pause, type the pause
 	character again, which by default is "p".
 
-	This original program requires a BSD-style interval timer and
-	and new BSD signal interface.  If you are using System V.3
-	or earlier, for example, you will need to make "tromp.s5" 
-	instead of "tromp".  You can change the default make rule 
-	by changing "tromp" to "tromp.s5" in the "WINNERS=..." line
-	of the Makefile.
-
-	The "tromp.s5" version is not as functional as "tromp".  
-	The "drops_per_sec" is ignored and defaults to 1.  The level 
-	is always reported as 0.
-
 	As was stated last year, we are likely to be more strict about
 	portability in the future.  [ We mean it this time :-) ]
 
-Selected notes from the author:
+## Author's comments
 
 	This program plays the familiar game of `TETRIS' with the
 	following features:
