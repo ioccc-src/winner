@@ -46,12 +46,17 @@
 # See: http://creativecommons.org/licenses/by-sa/3.0/
 
 
-################
-# tool locations
-################
+#############################
+# shell used by this Makefile
+#############################
 #
 SHELL= bash
-MAKE= make
+
+#######################
+# common tool locations
+#######################
+#
+include ../var.mk
 
 
 ###############
