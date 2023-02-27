@@ -1,4 +1,4 @@
-Best Encapsulation:
+# Best Encapsulation:
 
     Bas de Bakker
     Pica, Centre for Library Automation
@@ -6,14 +6,11 @@ Best Encapsulation:
     3039 JN Rotterdam
     The Netherlands
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To build:
-
-	make bas1
-
-    To use:
+### To run
 
 	If lpr on your system can print PostScript:
 
@@ -25,14 +22,15 @@ Judges' comments:
 	or:
 	    ./bas1 | gunzip | gs -sDEVICE=pgmraw -sOutputFile='|xv -' -
 
+## Judges' comments
+
     The output is supposed to be a 3D maze, but it is somewhat more
     than that. If you've seen any of the Maurits Escher's works,
     you'll know what we're talking about.
 
     When trying to run the program with command line arguments, be generous.
 
-
-Selected Author's Comments:
+## Author's comments
 
     BEMAZING
     ========

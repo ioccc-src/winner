@@ -1,4 +1,4 @@
-CPP Abuse:
+# CPP Abuse:
 
     Jens Schweikhardt
     DFN Network Operation Center
@@ -8,16 +8,15 @@ CPP Abuse:
 
     http://www.shuttle.de/schweikh/
 
+## To build:
 
-Judge's Comments:
+        make all
 
-    To build:
-
-	make schweikh1
-
-    To use:
+### To run
 
 	./schweikh1
+
+## Judges' comments
 
     What does it do?  It seems to print a list of system headers, perhaps
     with words after them.  Curiously, if you look at the list of words
@@ -42,14 +41,7 @@ Judge's Comments:
     will need to frob the source anyway and can be expected to do the
     right thing with ${CC}. So use gcc.
 
-    NOTE: One may build the original entry, which incorrectly used
-    ^K's and ^L's after a # cpp-directive.  While this works under
-    gcc, it is not ISO C89.  One may build this original entry by:
-
-	make schweikh1.orig
-
-
-Selected Author's Comments:
+## Author's comments
 
     Important! This program, if it compiles at all, is mis-compiled by many
     compilers due to compiler bugs. It could be the "least likely

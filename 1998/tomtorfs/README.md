@@ -1,4 +1,4 @@
-Best Self-Documenting:
+# Best Self-Documenting:
 
     Tom Torfs
     De Nayer Instituut
@@ -8,16 +8,15 @@ Best Self-Documenting:
 
     http://members.xoom.com/tomtorfs
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To build:
-
-	make tomtorfs
-
-    To use:
+### To run
 
 	./tomtorfs tomtorfs.c 32 04C11DB7 1 FFFFFFFF FFFFFFFF
+
+## Judges' comments
 
     Also try:
 
@@ -32,8 +31,7 @@ Judges' comments:
     of the program with the value of CRC computed by PKZIP or any other
     archiver that uses the CRC-32 algorithm.
 
-
-Selected author's comments:
+## Author's comments
 
     Usage:
        crc filename bitwidth polynom reflected init xor

@@ -1,7 +1,7 @@
 %:define H(x) <st%:%:x##.h>
-#include H(dio)
-#include H(dlib)
-#include H(ring)
+/*#include H(dio)*/
+/*#include H(dlib)*/
+/*#include H(ring)*/
 
 #define x ) == 0 ?__LINE__:0){O =__LINE__;break;} }
 #define X(x) __LINE__ x __LINE__

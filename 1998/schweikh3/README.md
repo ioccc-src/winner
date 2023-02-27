@@ -1,4 +1,4 @@
-Most Space Efficient:
+# Most Space Efficient:
 
     Jens Schweikhardt
     DFN Network Operation Center
@@ -8,20 +8,19 @@ Most Space Efficient:
 
     http://www.shuttle.de/schweikh/
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To build:
-
-	make schweikh3
-
-    To use:
+### To run
 
 	If "dir" is the directory (or a directory tree) where you keep
 	all your favorite pictures off the Internet or from
 	alt.binaries.pictures.*, do
 
 	find dir -type f -print | ./schweikh3
+
+## Judges' comments
 
     Maybe you will not need to buy another 10 Gb disk to store them.  :-)
 
@@ -40,8 +39,7 @@ Judges' comments:
     NOTE: Some non-gcc compilers that are not fully ANSI standard do
 	  not compile this entry correctly.
 
-
-Selected author's comments:
+## Author's comments
 
     The source is expected to conform to IEEE Std 1003.1-1990 ("POSIX").
     Thank God the IEEE does not standardize a coding style...

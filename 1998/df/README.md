@@ -1,4 +1,4 @@
-Best Data Hiding:
+# Best Data Hiding:
 
     Daniel Fischer
     VNetx.com GbR
@@ -6,16 +6,15 @@ Best Data Hiding:
     D 72250 Freudenstadt
     German Federal Republic
 
+## To build:
 
-Judge's Comments:
+        make all
 
-    To build:
-
-	make df
-
-    To use:
+### To run
 
 	./df
+
+## Judges' comments
 
     Everyone talks about how data hiding can produce clearer code; I am
     pleased to offer this charming refutation.
@@ -38,8 +37,7 @@ Judge's Comments:
 	How many words does this entry use?
 	Can you add more words to the program and still make it work?
 
-
-Selected Author's Comments:
+## Author's comments
 
     This program lets you guess English words. It displays an underscore
     for each letter in the word; guessing a letter that actually is in

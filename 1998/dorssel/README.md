@@ -1,4 +1,4 @@
-Obsolescent Feature:
+# Obsolescent Feature:
 
     Frans van Dorsselaer
     Bakker Industrial Automation
@@ -6,17 +6,16 @@ Obsolescent Feature:
     NL-2311 GP   Leiden
     The Netherlands
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To build:
-
-	make dorssel
-
-    To use:
+### To run
 
 	echo Simple as 123 | ./dorssel
-	echo '.... --- .--  -.. --- . ...  .. -  -.. ---  - .... .- -'|./dorssel
+	echo '.... --- .--  -.. --- . ...  .. -  -.. ---  - .... .- -' | ./dorssel
+
+## Judges' comments
 
     How does the program decide which way to convert?
 
@@ -37,8 +36,7 @@ Judges' comments:
 
     You might also want to read the dorssel.hint2 file.
 
-
-Selected author's notes:
+## Author's comments
 
     Usage
     =====

@@ -1,4 +1,4 @@
-Best Flow Control:
+# Best Flow Control:
 
     Mark Schnitzius
     ISX Corporation
@@ -8,14 +8,11 @@ Best Flow Control:
 
     http://east.isx.com/~schnitzi/
 
+## To build:
 
-Judge's Comments:
+        make all
 
-    To build:
-
-	make schnitzi
-
-    To use:
+### To run
 
 	./schnitzi 5 > sort.c
 	cc sort.c -o sort
@@ -26,14 +23,15 @@ Judge's Comments:
 	echo 324 >> data
 	./sort < data
 
+## Judges' comments
+
     This is a beautiful program.  How can a program with no conditional
     behavior at all have output which depends on anything?
 
     For hints on deciphering this, see below past the Author's Comments;
     they're a nice summary, but they leave the mystery intact.
 
-
-Selected Author's Comments:
+## Author's comments
 
     In literary circles, there is a poetic form called a "lipogram",
     which is a poem in which a specific letter has been distinctly

@@ -1,4 +1,4 @@
-Most Fun:
+# Most Fun:
 
     David Lowe				Neil Mix
     Pootpoot				Pootpoot
@@ -8,16 +8,15 @@ Most Fun:
 
     http://pootpoot.com/
 
+## To build:
 
-Judge's Comments:
+        make all
 
-    To build:
+### To run
 
-	make dloweneil
+	./pootris
 
-    To use:
-
-	./dloweneil
+## Judges' comments
 
     Read the Author's comments below.  We believe that your experience may
     mirror one of our experiences:
@@ -26,11 +25,11 @@ Judge's Comments:
 	description of the controls.  I started playing.  I struggled.
 	I spelled my first "poot".  I was hooked ...
 
-
-Selected Author's comments:
+## Author's comments
 
     Usage:
-	pootris [X size of board] [Y size of board]
+
+	./pootris [X size of board] [Y size of board]
 
     Synopsis:
      The object of this game is to spell "POOT" as much as possible.  There

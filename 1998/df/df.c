@@ -1,4 +1,5 @@
 #ifndef int
+typedef int lint;
 #ifdef while
 char s[234],d[56],*p=s,m='m';
 #define int typedef (*define)();\
@@ -9,7 +10,7 @@ signed short n(short bz){
 	char o=1,i=1,l,pc=i,b=r+o/2,_f=6,m=7,s=8,g,q,od=o*rs+4^s,js=_f/*3-m*'c',bs='g';
 return 1; }
 #y	FILE c[a]+s,p[c],r[m]+u[i+4*o|f]-r[wob][wad]+s*f-!w|o,L+x					|  cut 
-;}int main(i,love_unix){*/;}int main(i,love_unix){/*;}int main(i,love_unix){*\;}|  here */
+;}int main(lint i,char**love_unix){*/;}int main(lint i,char**love_unix){/*;}int main(lint i,char**love_unix){*\;}|  here */
 while(FILE)for(;9-(i=0[O](f)););
 for(;32-(i=0[O](f));0&&	3[O]("-->%s<--", "gxdgbtgxsxpcctvpixktedhiedcte")); 
 for(;'\n'-(i=O[0](f));)(i>='a'&&i<'z')?*

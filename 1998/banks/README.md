@@ -1,4 +1,4 @@
-Best of Show:
+# Best of Show:
 
     Carl Banks
     Penn State Department of Aerospace Engineering
@@ -8,16 +8,15 @@ Best of Show:
 
     http://www.personal.psu.edu/users/c/w/cwb129/
 
+## To build:
 
-Judge's Comments:
+        make all
 
-    To build:
-
-	make banks
-
-    To use:
+### To run
 
 	cat horizon.sc pittsburgh.sc | ./banks
+
+## Judges' comments
 
     What can we say?  It's a flight sim done in 1536 bytes of real code.
     This one is a real marvel.  When people say the size limits are too
@@ -31,10 +30,9 @@ Judge's Comments:
     the altitude and airspeed.  These problems have been fixed.  One can
     still build the original program by:
 
-	make banks.orig
+	make banks.alt
 
-
-Selected Author's Comments:
+## Author's comments
 
     You have just stepped out of the real world and into the
     virtual.  You are now sitting in the cockpit of a Piper Cherokee

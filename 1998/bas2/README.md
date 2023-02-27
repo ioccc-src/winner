@@ -1,4 +1,4 @@
-Best Small Program:
+# Best Small Program:
 
     Bas de Bakker
     Pica, Centre for Library Automation
@@ -6,16 +6,15 @@ Best Small Program:
     3039 JN Rotterdam
     The Netherlands
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To build:
-
-	make bas2
-
-    To use:
+### To run
 
 	./bas2 < bas2.c
+
+## Judges' comments
 
     Questions to ponder:
 
@@ -33,8 +32,7 @@ Judges' comments:
 	official IOCCC rules.  What is the rule and what is the octet
 	value?
 
-
-Selected Author's Comments:
+## Author's comments
 
     The main obfuscation is the way characters are recognized, which is
     done by matching the bit patterns.  Minor obfuscations are:

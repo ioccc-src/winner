@@ -1,4 +1,4 @@
-Best Utility:
+# Best Utility:
 
     David Lowe
     Pootpoot
@@ -8,16 +8,15 @@ Best Utility:
 
     http://pootpoot.com/
 
+## To build:
 
-Judges' Comments:
+        make all
 
-    To build:
-
-	make dlowe
-
-    To use:
+### To run
 
 	./dlowe < anyfile > pootfile
+
+## Judges' comments
 
     Why is this entry would be considered a utility?  Well because it
     is able to convert content-free web pages into useful web pages.
@@ -63,11 +62,10 @@ Judges' Comments:
     NOTE: The original entry was just a text based pootifier.  To build
     that version try:
 
-	make dlowe.orig
-	./dlowe.orig < anyfile > pootfile
+	make dlowe.alt
+	./dlowe.alt < anyfile > pootfile
 
-
-Selected Author's Comments:
+## Author's comments
 
     This program is a text filter, it reads stdin and outputs the
     "corrected" text to stdout.

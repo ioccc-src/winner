@@ -6,8 +6,8 @@ static volatile sig_atomic_t One;
 #include<unistd.h>
 #define Zero(NULL)#NULL
 #define ONE(One) Zero(One)
-in??/
-t
+int
+
 ??=line 10 ONE(O(1,1,2,6,0,6))
 main (register zero, char **ONE)
 %:

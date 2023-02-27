@@ -1,4 +1,4 @@
-Most Obfuscated Translator:
+# Most Obfuscated Translator:
 
     Tony Finch
     Demon Internet
@@ -9,14 +9,18 @@ Most Obfuscated Translator:
 
     http://www.inch.demon.co.uk/
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To build:
-	make fanf
+	NOTE: This may take a while.  Some systems may have problems building 
+	this entry because of the system resources it requires.
 
-	Some systems may have problems building this entry because
-	of the system resources can require.
+### To run
+
+	./fanf
+
+## Judges' comments
 
     To use:
 	Enter an expression on standard input.  Here are some
@@ -58,7 +62,7 @@ Judges' comments:
 
     Look at the first stage of the C pre-processing:
 
-	gcc -ansi fanf.c -E > fanftmp1.c
+	cc fanf.c -E > fanftmp1.c
 
     Skip to the bottom of fanftmp1.c (after all of the #include header
     stuff ... look for a line of the form:  # 2 "fanf.c"  near the bottom)
@@ -73,8 +77,7 @@ Judges' comments:
 	What do you have to do to make this program work with an
 	old non-ANSI C preprocessor?
 
-
-Selected Author's comments:
+## Author's comments
 
     My program is a demonstration of some practical applications of
     theoretical computer science. The application it implements is a program

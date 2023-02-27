@@ -1,4 +1,4 @@
-Most Erratic Behavior:
+# Most Erratic Behavior:
 
     Jens Schweikhardt
     DFN Network Operation Center
@@ -9,21 +9,23 @@ Most Erratic Behavior:
     http://www.shuttle.de/schweikh/
 
 
-Judges' comments:
+## To build:
 
-    To build:
+        make all
 
-	make schweikh2
+	NOTE: Almost every compiler is supposed to be able to accept the code in
+	schweikh2.c; try compiling schweikh2.alt.c to see if your compiler
+	is fully standard-compliant.
 
-    Almost every compiler is supposed to be able to accept the code in
-    schweikh2.c; try compiling schweikh2.orig.c to see if your compiler
-    is fully standard-compliant.
+### To run
 
     To use:
 
 	./schweikh2
     or
 	./schweikh2 integer_number
+
+## Judges' comments
 
     Run the program with a small argument, like 5 or 10, several times.
     Are the results different? Why?
@@ -34,11 +36,11 @@ Judges' comments:
     At the time this hint file was written, some gcc and egcs
     implementations ran into problem when building the original entry:
 
-	    make schweikh2.orig
+	    make schweikh2.alt
 
     This program often will produce an error of the form:
 
-	gcc -ansi schweikh2.orig.c -o schweikh2.orig
+	gcc -ansi schweikh2.alt.c -o schweikh2.alt
 	as: Error: cca00NzV.s, line 58: Missing " at end of string
 	     "
 	as: Error: cca00NzV.s, line 58: malformed statement
@@ -61,7 +63,7 @@ Judges' comments:
 
     In some cases one must compile using 'gcc -g':
 
-	make schweikh2.orig CFLAGS=-g
+	make schweikh2.alt CFLAGS=-g
 
     to trigger this error.
 
@@ -78,8 +80,7 @@ Judges' comments:
     If you succeed in doing this (especially on FreeBSD, Linux or Sparc),
     email the author for a free pat on the back.
 
-
-Selected author's comments:
+## Author's comments
 
     What this program does
     ----------------------
