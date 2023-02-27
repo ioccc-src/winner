@@ -143,6 +143,7 @@ GENCAT= gencat
 GENSTRINGS= genstrings
 GETOPT= getopt
 GETOPTS= getopts
+GINDENT= gindent
 GNUMAKE= gnumake
 GREP= grep
 GROFF= groff
