@@ -40,13 +40,13 @@ CWARN= -Wall -W -Wall -Wextra -Wshadow -Wno-logical-op-parentheses \
 	-Wno-shift-op-parentheses
 #CWARN= -Wall -W -pedantic
 
-# compiler standard
+# Compiler standard
 #
 #CSTD=
 #CSTD= -ansi
 CSTD= -std=c99
 
-# compiler bit architecture
+# Compiler bit architecture
 #
 # Some entries require 32-bitness:
 # ARCH= -m32
@@ -58,7 +58,7 @@ CSTD= -std=c99
 #
 ARCH=
 
-# optimization
+# Optimization
 #
 # Most compiles will safely use -O2.  Some can use only -O1 or -O.
 # A few compilers have broken optimizers or this entry make break

@@ -40,13 +40,13 @@ X11_INCDIR= /usr/X11R6/include
 CWARN= -Wall
 #CWARN= -Wall -pedantic
 
-# compiler standard
+# Compiler standard
 #
 #CSTD=
 #CSTD= -ansi
 CSTD= -std=c11
 
-# compiler bit architecture
+# Compiler bit architecture
 #
 # Some entries require 32-bitness:
 # ARCH= -m32
@@ -58,7 +58,7 @@ CSTD= -std=c11
 #
 ARCH=
 
-# optimization
+# Optimization
 #
 # Most compiles will safely use -O2.  Some can use only -O1 or -O.
 # A few compilers have broken optimizers or this entry make break

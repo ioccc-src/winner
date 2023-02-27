@@ -14,7 +14,7 @@
 # tool locations
 ################
 #
-SHELL= /bin/bash
+SHELL= bash
 #
 BUNZIP2= bunzip2
 BZIP2= bzip2

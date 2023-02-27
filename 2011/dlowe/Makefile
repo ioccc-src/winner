@@ -29,11 +29,11 @@ TRUE= true
 #
 CWARN= -Wall -W
 
-# compiler standard
+# Compiler standard
 #
 CSTD= -std=c99
 
-# compiler bit architecture
+# Compiler bit architecture
 #
 # Some entries require 32-bitness,
 # other entries require 64-bitess.
@@ -41,7 +41,7 @@ CSTD= -std=c99
 #
 ARCH=
 
-# optimization
+# Optimization
 #
 # Most compiles will safely use -O2.  Some can use only -O1 or -O.
 # A few compilers have broken optimizers or this entry make break

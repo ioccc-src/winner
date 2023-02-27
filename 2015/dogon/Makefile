@@ -65,13 +65,13 @@ CSILENCE= -Wno-implicit-int -Wno-variadic-macros -Wno-absolute-value \
 	  -Wno-reserved-id-macro -Wno-shadow -Wno-shorten-64-to-32 \
 	  -Wno-sign-conversion
 
-# compiler standard
+# Compiler standard
 #
 #CSTD=
 #CSTD= -ansi
 CSTD= -std=c11
 
-# compiler bit architecture
+# Compiler bit architecture
 #
 # Some entries require 32-bitness:
 # ARCH= -m32
@@ -83,17 +83,17 @@ CSTD= -std=c11
 #
 ARCH=
 
-# defines that are needed to compile
+# Defines that are needed to compile
 #
 #CDEFINE=
 CDEFINE= -DW=1024 -Dp=800
 
-# include files that are needed to compile
+# Include files that are needed to compile
 #
 #CINCLUDE=
 CINCLUDE= -I ${X11_INCDIR} -include stdlib.h
 
-# optimization
+# Optimization
 #
 # Most compiles will safely use -O2.  Some can use only -O1 or -O.
 # A few compilers have broken optimizers or this entry make break

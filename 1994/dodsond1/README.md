@@ -1,4 +1,4 @@
-Best Game:
+# Best Game:
 
 	Don Dodson
 	AG Communication Systems
@@ -6,21 +6,23 @@ Best Game:
 	Phoenix, AZ 85023  
 	USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make dodsond1
-	dodsond1
+### To run
+
+	./dodsond1
     
-	At the prompt, try entering E3.
+	NOTE: At the prompt, try entering E3.
+
+## Judges' comments
 
     The program plays the game that the layout of the source implies.
     The source, on the other hand, implies a language along the
     lines of Lisp.  :-)
 
-
-Selected notes from the author:
+## Author's comments
 
     For each turn, the board is displayed and the player is prompted for
     a move.  Enter your move as an upper-case  character followed by a number.

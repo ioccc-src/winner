@@ -8,14 +8,14 @@
 # entirety and remains unaltered.  All other uses must receive prior permission
 # from the contest judges.
 
-SHELL= /bin/sh
+SHELL= bash
 CAT= cat
 RM= rm
 SED= sed
 TRUE= true
 #CINCLUDE= -I ${HOMEBREW_PREFIX}/include/SDL2
 
-# optimization
+# Optimization
 #
 # Most compiles will safely use -O2.  Some can use only -O.
 # A few compilers have broken optimizers and thus you may

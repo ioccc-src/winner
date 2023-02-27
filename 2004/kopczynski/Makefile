@@ -11,7 +11,7 @@
 
 # tool locations
 #
-SHELL= /bin/sh
+SHELL= bash
 CP= cp
 CPP= cpp
 GUNZIP= gunzip
@@ -45,7 +45,7 @@ X11_LIBDIR= /usr/X11R6/lib
 
 #CINCLUDE= -I ${HOMEBREW_PREFIX}/include/SDL2
 
-# optimization
+# Optimization
 #
 # Most compiles will safely use -O2.  Some can use only -O1 or -O.
 # A few compilers have broken optimizers and thus you may

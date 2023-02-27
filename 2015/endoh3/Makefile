@@ -60,13 +60,13 @@ CSILENCE= -Wno-cast-align -Wno-missing-prototypes \
 	  -Wno-missing-variable-declarations -Wno-shorten-64-to-32 \
 	  -Wno-unreachable-code
 
-# compiler standard
+# Compiler standard
 #
 #CSTD=
 #CSTD= -ansi
 CSTD= -std=c11
 
-# compiler bit architecture
+# Compiler bit architecture
 #
 # Some entries require 32-bitness:
 # ARCH= -m32
@@ -78,15 +78,15 @@ CSTD= -std=c11
 #
 ARCH=
 
-# defines that are needed to compile
+# Defines that are needed to compile
 #
 CDEFINE=
 
-# include files that are needed to compile
+# Include files that are needed to compile
 #
 CINCLUDE=
 
-# optimization
+# Optimization
 #
 # Most compiles will safely use -O2.  Some can use only -O1 or -O.
 # A few compilers have broken optimizers or this entry make break

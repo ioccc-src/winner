@@ -63,14 +63,14 @@ CWARN= -Wall -Wextra -pedantic ${CSILENCE}
 CSILENCE= -Wno-dollar-in-identifier-extension -Wno-comment -Wno-unused-parameter
 #CSILENCE= -Wno-implicit-int
 
-# compiler standard
+# Compiler standard
 #
 #CSTD=
 #CSTD= -ansi
 #CSTD= -std=c11
 CSTD= -std=gnu11
 
-# compiler bit architecture
+# Compiler bit architecture
 #
 # Some entries require 32-bitness:
 # ARCH= -m32
@@ -82,13 +82,13 @@ CSTD= -std=gnu11
 #
 ARCH=
 
-# defines that are needed to compile
+# Defines that are needed to compile
 #
 #CDEFINE=
 CDEFINE= -Dunix=1
 #CDEFINE= -DIOCCC=25
 
-# include files that are needed to compile
+# Include files that are needed to compile
 #
 CINCLUDE=
 #CINCLUDE= -include stdlib.h
@@ -96,7 +96,7 @@ CINCLUDE=
 #CINCLUDE= -include stdlib.h -include stdio.h
 #CINCLUDE= -I ${X11_INCDIR}
 
-# optimization
+# Optimization
 #
 # Most compiles will safely use -O2.  Some can use only -O1 or -O.
 # A few compilers have broken optimizers or this entry make break

@@ -60,13 +60,13 @@ CWARN= -Wall -Wextra -pedantic ${CSILENCE}
 CSILENCE= -Wno-parentheses -Wno-implicit-function-declaration \
 	  -Wno-missing-variable-declarations
 
-# compiler standard
+# Compiler standard
 #
 #CSTD=
 #CSTD= -ansi
 CSTD= -std=c11
 
-# compiler bit architecture
+# Compiler bit architecture
 #
 # Some entries require 32-bitness:
 # ARCH= -m32
@@ -78,7 +78,7 @@ CSTD= -std=c11
 #
 ARCH=
 
-# defines that are needed to compile
+# Defines that are needed to compile
 #
 #CDEFINE=
 CDEFINE= -DU=${DU} -DD=${DD} -DW=${DW} -DH=${DH} -DA=${DA} -DI=${DI} \
@@ -118,11 +118,11 @@ DG='"Tap to Flap!"'	# Instruction text.
 			# Change to your native tongue.
 		# NOTE: The string MUST be enclosed inside double quotes.
 
-# include files that are needed to compile
+# Include files that are needed to compile
 #
 CINCLUDE=
 
-# optimization
+# Optimization
 #
 # Most compiles will safely use -O2.  Some can use only -O1 or -O.
 # A few compilers have broken optimizers or this entry make break

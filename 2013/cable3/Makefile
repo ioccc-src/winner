@@ -42,13 +42,13 @@ CWARN= -Wall -Wno-implicit-int -Wno-implicit-function-declaration \
 	-Wno-incompatible-pointer-types
 #CWARN= -Wall -pedantic
 
-# compiler standard
+# Compiler standard
 #
 #CSTD=
 #CSTD= -ansi
 CSTD= -std=c99
 
-# compiler bit architecture
+# Compiler bit architecture
 #
 # Some entries require 32-bitness:
 # ARCH= -m32
@@ -60,7 +60,7 @@ CSTD= -std=c99
 #
 ARCH=
 
-# optimization
+# Optimization
 #
 # Most compiles will safely use -O2.  Some can use only -O1 or -O.
 # A few compilers have broken optimizers or this entry make break
