@@ -1,4 +1,4 @@
-Best Utility:
+# Best Utility:
 
 	Mark Horton
 	AT&T Bell Labs
@@ -7,29 +7,31 @@ Best Utility:
 	Columbus OH 43213
 	USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make horton
+### To run
+
 	./horton A B C D
 
 	A, B, C, D are numeric arguments (try 3 2 1 0).
+
+## Judges' comments
 
     Try to figure out how this program prints, for a given slope, the
     right character.  And for extra credit, try to figure out which
     character is at the bottom on this hint file.  :-)
 
     This confuses cb greatly. See gtplot.c for an unobfuscated/enhanced 
-    version.  To compile it:
+    version.  To run this alternate version:
 
 	make horton.alt
 	./horton.alt A B C D
 
 	A, B, C, D are numeric arguments (try 3 2 1 0).
     
-
-Selected notes from the author:
+## Author's comments
 
     Run it with any 4 numeric arguments, e.g. prog 3 2 1 0.  Play with the
     numbers to get a pleasing result, or use it for your high school algebra

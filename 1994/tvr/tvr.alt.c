@@ -125,8 +125,9 @@ U ()
   }
 }
 _
-main (b i, d * W)
+main (b i, char *W_arg[])
 {
+  d * W = W_arg;
   o;
   if (i > 2)
     {

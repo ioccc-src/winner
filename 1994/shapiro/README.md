@@ -1,4 +1,4 @@
-Most Well Rounded Obfuscation:
+# Most Well Rounded Obfuscation:
 
 	Andrew T. Shapiro
 	CSES/CIRES University of Colorado
@@ -6,12 +6,15 @@ Most Well Rounded Obfuscation:
 	Boulder, CO 80309-0216
 	USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make shapiro
+### To run
+
 	./shapiro &
+
+## Judges' comments
 
     This entry has many different levels of obfuscation, and yet the
     source file is self documenting.  :-)
@@ -21,8 +24,7 @@ Judges' comments:
     See shapiro.info for more information in the internals of this program.
     The file shapiro.alt contains a non-obfuscated version of this program.
 
-
-Selected notes from the author:
+## Author's comments
 
      The basic theme (pun) of this program is:
      

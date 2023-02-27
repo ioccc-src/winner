@@ -1,4 +1,4 @@
-Best X11 Program:
+# Best X11 Program:
 
 	Teemu Rantanen
 	Helsinki University of Technology
@@ -6,12 +6,15 @@ Best X11 Program:
 	00210 Helsinki
 	Finland
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make tvr
+### To run
+
 	./tvr mode screensize/2 < colormapfile
+
+## Judges' comments
 
     Try:
 	./tvr 0 128 < tvr.color		(for color displays)
@@ -36,9 +39,7 @@ Judges' comments:
     where altmode 1-4 correspond to mode 0-3 in the original entry
     and altmode 0 calculates Mandelbrot/Julian sets correctly.
 
-
-Selected notes from the author:
-
+## Author's comments
 
 		Interactive Fractals for X Window System
 

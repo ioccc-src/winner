@@ -1,4 +1,4 @@
-Most Obfuscated Algorithm:
+# Most Obfuscated Algorithm:
 
 	Ian Collier
 	Oxford University
@@ -7,12 +7,16 @@ Most Obfuscated Algorithm:
 	BL3 4LG
 	England
 
+## To build:
 
-Judges' comments:
+        make all
+
+### To run
 
     To use:
-	make imc
 	./imc INTEGER
+
+## Judges' comments
 
     Try:
 	./imc 3
@@ -23,8 +27,7 @@ Judges' comments:
 
     This entry's algorithm is as magic as its output!
 
-
-Selected notes from the author:
+## Author's comments
 
     This program may be compiled with an ANSI or K&R compiler.  A few
     harmless warnings are displayed only if "gcc -Wall" is used.

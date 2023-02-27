@@ -1,4 +1,4 @@
-Worst Abuse of the C Preprocessor:
+# Worst Abuse of the C Preprocessor:
 
 	Brian Westley (Merlyn LeRoy on Usenet)
 	Digi International
@@ -6,12 +6,15 @@ Worst Abuse of the C Preprocessor:
 	St. Paul, MN  55105
 	USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make westley
+### To run
+
 	./westley
+
+## Judges' comments
 
     But for something more interesting try compiling it with
     different cc arguments.  For example:
@@ -23,8 +26,7 @@ Judges' comments:
 
     For spoilers see the end of the notes from the author below.
 
-		
-Selected notes from the author:
+## Author's comments
 
     This program, in accordance with the rules, compiles into a legal
     C program without human intervention.  However, it simply compiles

@@ -77,8 +77,8 @@
 
 			   V -> y * n - l) : (
 		    O = - 42 ) )  XNextEvent ( q , r
-	      = V ) ; } } _ main ( b X , d * W ) { b H, F
-	,G; c R; if ( X < 3 ) { puts( "tvr: mode size < cmap"
+	    = V ) ; } } _ main ( b X , char *Wa[]) { d*W=Wa;
+    b H, F ,G; c R; if ( X < 3 ) { puts( "tvr: mode size < cmap"
     ); exit(0);} P(); I(*++ W); w = y %12; I(*++ W); n = y *2; j
    = n * n ; P ( ) ; m =			 y ; l = j / 2 + m
   ; q=XOpenDisplay				     ( 0 ) ; Q ( 0 )

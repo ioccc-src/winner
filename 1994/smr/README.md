@@ -1,4 +1,4 @@
-Worst Abuse of the Rules:
+# Worst Abuse of the Rules:
 
 	Szymon Rusinkiewicz
 	Massachusetts Institute of Technology
@@ -6,12 +6,15 @@ Worst Abuse of the Rules:
 	Cambridge, Ma  02139  
 	USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make smr
+### To run
+
 	./smr
+
+## Judges' comments
 
     Nearly every year, one or more people would submit what they claimed 
     was the world's smallest self reproducing program.  While the sizes
@@ -30,8 +33,7 @@ Judges' comments:
     this sort of program from contest.  After all, how many variations
     can one make on this entry?  :-)
 
-
-Selected notes from the author:
+## Author's comments
 
     The world's smallest self-replicating program. Guaranteed.
     Produces a listing of itself on stdout.

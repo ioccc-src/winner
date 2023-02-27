@@ -1,4 +1,4 @@
-Best One-liner:
+# Best One-liner:
 
 	Laurion Burchall
 	Brown University
@@ -6,23 +6,25 @@ Best One-liner:
 	Providence RI 02912-4641
 	USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make ldb
+### To run
+
 	./ldb < file
 
     Try:
 	./ldb < /etc/passwd
+
+## Judges' comments
 
     Tri-graphs are natural obfuscators.  Most C-beautifiers become 
     C-uglifiers because they don't handle them correctly.
 
     Can you figure out how it prints a given random line from stdin?
 
-
-Selected notes from the author:
+## Author's comments
 
     All input lines must be under 232 characters long.  The compiling
     platform should be ASCII based.

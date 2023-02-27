@@ -1,4 +1,4 @@
-Best Short Program:
+# Best Short Program:
 
 	Jeff Weisberg
 	University of Rochester
@@ -7,12 +7,15 @@ Best Short Program:
 	Rochester, NY 14627
 	USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make weisberg
+### To run
+
 	./weisberg
+
+## Judges' comments
 
     This entry confuses some C-preprocessors and some C-beautifiers.
     We found one cpp that processed this source differently when
@@ -28,8 +31,7 @@ Judges' comments:
     Lesser systems will find this alternative version a good way to create
     a core file.  :-)
 
-
-Selected notes from the author:
+## Author's comments
 
     Description:
 	The following short program implements the "Yet Another" algorithm for

@@ -1,4 +1,4 @@
-Best Layout:
+# Best Layout:
 
 	Mark Schnitzius
 	ISX Corporation
@@ -6,14 +6,18 @@ Best Layout:
 	Marietta, GA 30067
 	USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make schnitzi
+### To run
+
 	./schnitzi < textfile
 
+## Judges' comments
+
     Try:
+
 	./schnitzi < /etc/motd
 	./schnitzi < schnitzi.c
 
@@ -21,8 +25,7 @@ Judges' comments:
     is different, but there is more than meets the diff's eye.  Can you
     find out why?
 
-
-Selected notes from the author:
+## Author's comments
 
     SPOILER:
 
