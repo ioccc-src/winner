@@ -10,6 +10,8 @@
 
         make all
 
+	NOTE: This entry may not compile when using modern compilers.
+
 ### To run
 
 	./tromp [drops_per_sec  [cmd_string]]
