@@ -14,7 +14,7 @@
 # tool locations
 ################
 #
-SHELL= bash
+SHELL= /bin/bash
 CP= cp
 CPP= cpp
 GUNZIP= gunzip

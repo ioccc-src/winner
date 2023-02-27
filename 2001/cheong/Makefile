@@ -1,8 +1,6 @@
-cheong: cheong.c
-	${CC} ${CFLAGS} cheong.c -o cheong
 #!/usr/bin/env make
 #
-# IOCCC 2001 winning entry - cheong
+# IOCCC 2001 entry Makefile
 
 ################################################################################
 #
@@ -14,7 +12,6 @@ cheong: cheong.c
 #
 # Several Makefiles were modified / formed in 2022, and as such it may have
 # elements that are not historically compatible with way entries were built.
-# The orig.Makefile, if it exits, is a copy of the pre-modified Makefile.
 #
 # Regarding individual entries:
 #
@@ -48,548 +45,192 @@ cheong: cheong.c
 # See: http://creativecommons.org/licenses/by-sa/3.0/
 
 
-#############################
-# shell used by this Makefile
-#############################
-#
-SHELL= bash
-
-#######################
-# common tool locations
-#######################
-#
-A2P= a2p
-AR= ar
-ASA= asa
-AT= at
-ATQ= atq
-ATRM= atrm
-AWK= awk
-BANNER= banner
-BASE64= base64
-BASENAME= basename
-BATCH= batch
-BC= bc
-BINHEX= binhex
-BISON= bison
-BUNZIP2= bunzip2
-BZCAT= bzcat
-BZCMP= bzcmp
-BZDIFF= bzdiff
-BZEGREP= bzegrep
-BZFGREP= bzfgrep
-BZGREP= bzgrep
-BZIP2= bzip2
-BZLESS= bzless
-BZMORE= bzmore
-C2PH= c2ph
-C89= c89
-C99= c99
-CAL= cal
-CALC= calc
+SHELL= /bin/sh
 CAT= cat
-CD= cd
-CHFLAGS= chflags
-CHGRP= chgrp
-CHMOD= chmod
-CKSUM= cksum
-CLANG= clang
-CLANG_PLUSPLUS= clang++
-CLEAR= clear
-CMP= cmp
-COL= col
-COLLDEF= colldef
-COLRM= colrm
-COLUMN= column
-COMPRESS= compress
-CP= cp
-CPIO= cpio
-CPP= cpp
-CRC32= crc32
-CSH= csh
-CSPLIT= csplit
-CURL= curl
-CUT= cut
-C_PLUSPLUS= c++
-C_PLUSPLUS_FILT= c++filt
-DATE= date
-DC= dc
-DD= dd
-DF= df
-DIFF3= diff3
-DIFF= diff
-DIG= dig
-DIRNAME= dirname
-ED= ed
-EGREP= egrep
-ENV= env
-EQN= eqn
-ETAGS= etags
-EXPECT= expect
-EXPR= expr
-FALSE= false
-FGREP= fgrep
-FILE= file
-FIND2PERL= find2perl
-FIND= find
-FLEX= flex
-FLEX_PLUSPLUS= flex++
-FMT= fmt
-FOLD= fold
-FS_USAGE= fs_usage
-FUNZIP= funzip
-FUSER= fuser
-GCC= gcc
-GDIFFMK= gdiffmk
-GENCAT= gencat
-GENSTRINGS= genstrings
-GETOPT= getopt
-GETOPTS= getopts
-GINDENT= gindent
-GNUMAKE= gnumake
-GREP= grep
-GROFF= groff
-GROFFER= groffer
-GROG= grog
-GROPS= grops
-GROTTY= grotty
-GUNZIP= gunzip
-GVIM= gvim
-GZCAT= gzcat
-GZEXE= gzexe
-GZIP_PROG= gzip
-G_PLUSPLUS= g++
-H2PH= h2ph
-H2XS= h2xs
-HASH= hash
-HEAD= head
-HOSTNAME_PROG= hostname
-ICONV= iconv
-ID= id
-INDENT= indent
-INFO= info
-JOT= jot
-KILL= kill
-KSH= ksh
-LAST= last
-LD= ld
-LESSECHO= lessecho
-LEX= len
-LINK= link
-LN= ln
-LS= ls
-M4= m4
-MAKE= make
-MAN= man
-MKDIR= mkdir
-MKFIFO= mkfifo
-MKTEMP= mktemp
-MV= mv
-NANO= nano
-NASM= nasm
-NEQN= neqn
-NICE= nice
-NL= nl
-NM= nm
-NOHUP= nohup
-NROFF= nroff
-NSLOOKUP= nslookup
-OD= od
-OPENSSL= openssl
-PASTE= paste
-PATCH= patch
-PATHCHK= pathchk
-PAX= pax
-PERL= perl
-PICO= pico
-PR= pr
-PRINTENV= printenv
-PS= ps
-PTAR= ptar
-PTARDIFF= ptardiff
-PTARGREP= ptargrep
-PWD= pwd
-PYDOC= pydoc
-PYTHON= python
-PYTHONW= pythonw
-READLINK= readlink
-RENICE= renice
-RESET= reset
-REV= rev
-RI= ri
 RM= rm
-RMDIR= rmdir
-RSYNC= rsync
-RUBY= ruby
-RVIM= rvim
-SAY= say
-SCP= scp
-SCREEN= screen
-SCRIPT= script
-SDIFF= sdiff
 SED= sed
-SEQ= seq
-SFTP= sftp
-SH= sh
-SHA1= sha1
-SHA= sha
-SHAR= shar
-SHASUM5_18= shasum5.18
-SHASUM= shasum
-SIZE= size
-SLEEP= sleep
-SORT= sort
-SSH= ssh
-STAT= stat
-STRIP= strip
-STTY= stty
-SUM= sum
-SYNC= sync
-TABS= tabs
-TAIL= tail
-TAR= tar
-TEE= tee
-TEST= test
-TFTP= tftp
-TIDY= tidy
-TIME= time
-TOP= top
-TOUCH= touch
-TPUT= tout
-TPUT= tput
-TR= tr
-TROFF= troff
 TRUE= true
-TSET= tset
-TSORT= tsort
-UL= ul
-UNAME= uname
-UNCOMPRESS= uncompress
-UNEXPAND= unexpand
-UNIFDEF= unifdef
-UNIFDEFALL= unifdefall
-UNIQ= uniq
-UNITS= units
-UNLINK= unlink
-UNZIP= unzip
-UNZIPSFX= unzipsfx
-UPTIME= uptime
-UUDECODE= uudecode
-UUENCODE= uuencode
-UUIDGEN= uuidgen
-VI= vi
-VIEW= view
-VIM= vim
-VIMDIFF= vimdiff
-W= w
-WAIT4PATH= wait4path
-WAIT= wait
-WC= wc
-WGET= wget
-WHAT= what
-WHATIS= whatis
-WHICH= which
-WHO= who
-WHOAMI= whoami
-WHOIS= whois
-WRTIE= write
-XAR= xar
-XARGS= xargs
-XATTR= xattr
-XXD= xxd
-YACC= yacc
-YES= yes
-ZCAT= zcat
-ZCMP= zcmp
-ZDIFF= zdiff
-ZEGREP= zegrep
-ZFGREP= zfgrep
-ZFORCE= zforce
-ZGREP= zgrep
-ZIP= zip
-ZIPCLOAK= zipcloak
-ZIPGREP= zipgrep
-ZIPINFO= zipinfo
-ZIPNOTE= zipnote
-ZIPSPLIT= zipsplit
-ZLESS= zless
-ZMORE= zmore
-ZNEW= znew
-ZPRINT= zprint
-ZSH= zsh
-
-# Set X11_LIBDIR to the directory where the X11 library resides
-#
-#X11_LIBDIR= /usr/X11R6/lib
-#X11_LIBDIR= /usr/X11/lib
-X11_LIBDIR= /opt/X11/lib
-
-# Set X11_INCLUDEDIR to the directory where the X11 include files reside
-#
-#X11_INCDIR= /usr/X11R6/include
-#X11_INCDIR= /usr/X11/include
-X11_INCDIR= /opt/X11/include
-
-# Common C compiler warnings to silence
-#
-CSILENCE=
-#CSILENCE= -Wno-implicit-int
-
-# Common C compiler warning flags
-#
-#CWARN= ${CSILENCE}
-#CWARN= -Wall ${CSILENCE}
-#CWARN= -Wall -Wextra ${CSILENCE}
-CWARN= -Wall -Wextra -pedantic ${CSILENCE}
-
-# Compiler standard
-#
-#CSTD=
-#CSTD= -ansi
-CSTD= -std=gnu90
-
-# Compiler bit architecture
-#
-# Some entries require 32-bitness:
-# ARCH= -m32
-#
-# Some entries require 64-bitness:
-# ARCH= -m64
-#
-# By default we assume nothing:
-#
-ARCH=
-
-# Defines that are needed to compile
-#
-CDEFINE=
-#CDEFINE= -DIOCCC
-
-# Include files that are needed to compile
-#
-CINCLUDE=
-#CINCLUDE= -include stdlib.h
-#CINCLUDE= -include stdio.h
-#CINCLUDE= -include stdlib.h -include stdio.h
-#CINCLUDE= -I ${X11_INCDIR}
 #CINCLUDE= -I ${HOMEBREW_PREFIX}/include/SDL2
 
-# Optimization
+# optimization
 #
-# Most compiles will safely use -O2.  Some can use only -O1 or -O.
-# A few compilers have broken optimizers or this entry make break
-# under those buggy optimizers and thus you may not want anything.
-# Reasonable compilers will allow for -O3.
+# Most compiles will safely use -O2.  Some can use only -O.
+# A few compilers have broken optimizers and thus you may
+# not want anything.
 #
 #OPT=
 #OPT= -O
-#OPT= -O1
-#OPT= -O2
-OPT= -O3
+OPT= -O2
 
-# Default flags for ANSI C compilation
+# flags for ANSI compiles
 #
-CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
-
-# Libraries needed to build
+# NOTE: Some ANSI compilers make use of -Xa to turn on ANSI mode,
+#	others such as gcc may want -ansi, others (Compaq Tru64 Unix)
+#       want -std1, and others may want nothing at all.
+#       Adjust the CFLAGS line as needed.
 #
-LIBS=
-#LIBS= -lm
-#LIBS= -L ${X11_LIBDIR} -lX11
-#LIBS= -L ${HOMEBREW_PREFIX}/lib -lSDL
+# NOTE: Some compilers cannot optimize, or optimize some entries
+#	incorrectly.  You might want to turn on -O to see if your
+#	compiler can handle them.
+#
+#
+#CFLAGS= -Xa ${OPT}
+#CFLAGS= -std1 $(OPT)
+CFLAGS= -ansi ${OPT}
 
-# C compiler to use
+# NOTE: On some systems, the library path does not include the location
+#	of the X11 libraries.  You might need to use a -L/path/to/X11/lib/dir
+#	in order to compile with these libs.
+#
+X11CCFLAGS= -I/usr/X11R6/include -I/usr/X11R6/include/X11 -I/usr/include/X11
+#X11CCFLAGS=
+X11LDFLAGS= -L/usr/X11R6/lib -Wl,-R/usr/X11R6/lib
+#X11LDFLAGS=
+
+# ANSI compiler
+#
+# Set CC to the name of your ANSI compiler.
+#
+# Some entries seem to need gcc.  If you have gcc, set
+# both CC and MAY_NEED_GCC to gcc.
+#
+# If you do not have gcc, set CC to the name of your ANSI compiler, and
+# set MAY_NEED_GCC to either ${CC} (and hope for the best) or to just :
+# to disable such programs.
 #
 CC= cc
-#CC=clang
-#CC=gcc
+MAY_NEED_GCC= gcc
 
-# Compiler add-ons or replacements for clang only
+# winners that compile under ANSI C
 #
-ifeq ($(CC),clang)
-#
-#CSILENCE+=
-#
-CWARN+= -Weverything
-#
-endif
-
-# Specific add-ons or replacements for gcc only
-#
-ifeq ($(CC),gcc)
-#
-#CSILENCE+=
-#
-#CWARN+=
-#
-endif
+WINNERS= anonymous bellard bellard.otccex cheong coupard \
+	 ctk dgbeards herrmann1 herrmann2 jason kev ollinger rosten \
+	 schweikh westley williams
+ALT_NAMES= westley.orig
+DATA_FILES= anonymous_files bellard_files herrmann1_files herrmann2_files
 
 
-##############################
-# Special flags for this entry
-##############################
+all: ${WINNERS}
+
+# Most likely to amaze
 #
-ENTRY= cheong
-PROG= prog
+anonymous: anonymous.c
+	magic='${MAY_NEED_GCC} -O1'; \
+	X='-DA(X)=#X'; \
+	warning='-pedantic -Dprocessor'; \
+	$$magic $$warning -Dmagic= $$X "-DX=A($$magic \"$$X\")" \
+		-o anonymous anonymous.c
+
+anonymous_files: anonymous.ten.c
+
+# Best abuse of the rules
 #
-OBJ= ${PROG}.o
-DATA=
-TARGET= ${PROG}
+bellard: bellard.c
+	${CC} -rdynamic ${CFLAGS} bellard.c -o bellard -ldl
+
+bellard_files: bellard.otccex.c
+
+# Best short program
 #
-ALT_OBJ=
-ALT_TARGET=
+cheong: cheong.c
+	${CC} ${CFLAGS} cheong.c -o cheong
 
-
-#################
-# build the entry
-#################
+# Most obfuscated sound
 #
-all: data ${TARGET}
-	@${TRUE}
+coupard: coupard.c
+	${CC} ${CFLAGS} -o coupard coupard.c
 
-.PHONY: all alt data everything clean clobber install \
-	love haste waste maker easter_egg sandwich \
-	supernova deep_magic magic charon pluto
-
-${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
-
-# alternative executable
+# Worst Driver
 #
-alt: data ${ALT_TARGET}
-	@${TRUE}
+ctk: ctk.c
+	${CC} ${CFLAGS} -o ctk ctk.c
 
-# data files
+# Worst AI
 #
-data: ${DATA}
-	@${TRUE}
+dgbeards: dgbeards.c
+	${CC} ${CFLAGS} -DE=break -DF=char -DK=case -DP=int -DR=return \
+	      -DI=0xFFFF dgbeards.c -o dgbeards
 
-# both all and alt
+# Best abuse of the C preprocessor
 #
-everything: all alt
+herrmann1: herrmann1.c herrmann1.sh
+	@echo "NOTE: $@ must be built/run using the script $@.sh"
+	${SHELL} ./herrmann1.sh
 
+herrmann1_files: herrmann1.gcd herrmann1.sh herrmann1.times2
 
-###############
-# utility rules
-###############
+# Most eye-crossing
 #
-clean:
-	${RM} -f ${OBJ} ${ALT_OBJ}
-	@-if [ -f indent.c ]; then \
-	    echo ${RM} -f indent.c; \
-	    ${RM} -f indent.c; \
-	fi
-
-clobber: clean
-	${RM} -f ${TARGET} ${ALT_TARGET}
-	@-if [ -e sandwich ]; then \
-	    ${RM} -f sandwich; \
-	    echo 'ate sandwich'; \
-	fi
-
-install:
-	@echo "Dr. Spock says that is not logical!"
-	@${TRUE}
-
-# you may be able to misunderstand the source by reading indent.c
+# This entry requires the GCC -include feature.
 #
-indent.c: ${PROG}.c
-	@if which "${GINDENT}" >/dev/null 2>&1; then \
-	    echo ${RM} -f $@; \
-	    ${RM} -f $@; \
-	    echo "${GINDENT} < $< > $@"; \
-	    ${GINDENT} < $< > $@; \
-	elif which "${INDENT}" >/dev/null 2>&1; then \
-	    echo ${RM} -f $@; \
-	    ${RM} -f $@; \
-	    echo "${INDENT} < $< > $@"; \
-	    ${INDENT} < $< > $@; \
-	else \
-	    echo "no intent tool found, ident $< yourself, sorry"; \
-	    echo "exit 1"; \
-	    exit 1; \
-	fi
+herrmann2: herrmann2.c
+	${MAY_NEED_GCC} ${CFLAGS} herrmann2.c -o herrmann2 \
+	     -include /usr/include/stdlib.h -include /usr/include/stdio.h \
+	     -include /usr/include/time.h -include /usr/include/unistd.h
 
+herrmann2_files: herrmann2.cup herrmann2.ioccc
 
-##################
-# 133t hacker rulz
-##################
+# Best Of Show
 #
+jason: jason.c
+	${CC} ${CFLAGS} -o jason jason.c
+
+# Best Curses Game
+#
+kev: kev.c
+	${CC} ${CFLAGS} -DPORT=5455 -DSPEED=50 -o kev kev.c \
+		-lcurses -ltermcap \
+		-Dl_="socket(il.sin_family=AF_INET,SOCK_STREAM,0)"
+
+# Best primal ASCII graphics
+#
+ollinger: ollinger.c
+	${CC} ${CFLAGS} ollinger.c -o ollinger
+
+# Best abuse of the user
+#
+rosten: rosten.c
+	${CC} ${CFLAGS} rosten.c ${X11CCFLAGS} ${X11LDFLAGS} -pedantic -lX11 \
+		-o rosten
+
+# Best one-liner
+#
+schweikh: schweikh.c
+	${CC} ${CFLAGS} schweikh.c -o schweikh
+
+# Best position-independant code
+#
+westley: westley.c
+	${CC} ${CFLAGS} westley.c -o westley
+
+westley.orig: westley.orig.c
+	${CC} ${CFLAGS} westley.orig.c -o westley.orig
+
+# Best position-independant code
+#
+williams: williams.c
+	${CC} williams.c ${X11CCFLAGS} ${X11LDFLAGS} -lX11 -o williams
+
+everything: ${WINNERS} ${ALT_NAMES} ${DATA_FILES}
+
 love:
 	@echo 'not war?'
-	@${TRUE}
 
 haste:
-	$(MAKE) waste
-	@${TRUE}
+	${MAKE} waste
 
 waste:
-	@echo 'haste'
+	@echo 'waste'
+
+clean:
+	${RM} -f *.o a.out core ${WINNERS}
+
+clobber: clean
+	${RM} -f ${WINNERS}
+	${RM} -f ${ALT_NAMES}
+
+nuke: clobber
 	@${TRUE}
 
-maker:
-	@echo 'Participate in a maker faire'
-	@${TRUE}
-
-easter_egg:
-	@echo "you expected to often misunderstand this $${RANDOM} magic"
-	@echo "chongo '<was here>' /\\oo/\\"
-	@echo "Eggy"
-
-sandwich: easter_egg
-	@if [ `id -u` -eq 0 ]; then \
-	    echo 'Okay.'; \
-	    echo "$${RANDOM}`date +%s`$${RANDOM}" > $@; \
-	else \
-	    echo 'What? Make it yourself.'; \
-	    exit 1; \
-	fi
-
-# Understand the history of the Homebrew Computer Club
-# as well as the West Coast Computer Faire and
-# you might be confused different.  :-)
-#
-supernova: sandwich
-	@-if [ -r .code_anal ]; then \
-	    ${RM} -f .code_anal_v6; \
-	else \
-	    echo "planet deniers, like some members of the IAU, are so cute when they try to defend their logic"; \
-	fi
-	@echo "A $@ helps ${MAKE} the elements that help form planets"
-	@${TRUE}
-
-deep_magic: supernova
-	@-if [ -r .code_anal ]; then \
-	    ccode_analysis --deep_magic 7889066cdbdf09b0408021754586e895be641cc9be29e7eafd3ca65359541f17 \
-	    		   --FNV1a_hash_512_bit -v2 "${PROG}" "${PROG}.c"; \
-	else \
-	    echo "Wrong! Do it again!"; \
-	    sleep 2; \
-	    echo "Wrong! Do it again!"; \
-	    sleep 2; \
-	    echo "Wrong! Do it again!"; \
-	fi
-	@${TRUE}
-
-magic: deep_magic
-	@-if [ -r .code_anal ]; then \
-	    ccode_analysis --level 20003 --mode 5717175 --FNV1a_hash_512_bit -v2 "${PROG}" "${PROG}.c"; \
-	else \
-	    echo "If you don't eat yer meat, you can't have any pudding!"; \
-	    echo "How can you have any pudding if you don't eat yer meat?!"; \
-	fi
-	@${TRUE}
-
-# The IOCCC resident astronomer states
-#
-charon: magic
-	@echo "$@ is a dwarf planet"
-	@echo "dwarf is a type of planet"
-	@echo "therefore IAU, $@ is a planet"
-
-pluto: charon
-	${MAKE} charon
-	@echo "$@ is a dwarf planet"
-	@echo "dwarf is a type of planet"
-	@echo "therefore, $@ is a planet"
-	@echo "having lots of planets is good feature because supernovae can help ${MAKE} a lot of them"
+install: all
+	${CAT} ${WINNERS} ${ALT_NAMES} > /dev/null
