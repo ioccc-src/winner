@@ -1,4 +1,4 @@
-Best Numerical Obfuscation:
+# Best Numerical Obfuscation:
 
     John Dalbec
     20 Squire's Ct.	(home address)
@@ -7,12 +7,17 @@ Best Numerical Obfuscation:
 
     http://www.math.yale.edu/pub/users/dalbec/
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make dalbec
+	NOTE: This entry uses non-standard args to main() that do not work with modern compilers.
+
+### To run
+
 	./dalbec
+
+## Judges' comments
 
     The output is mis-leading ... why does it also print 2047?
 
@@ -32,8 +37,7 @@ Judges' comments:
     how this program works.  The source is small enough to make the effort
     reasonable, and complex enough to make it interesting.
 
-
-Selected notes from the author:
+## Author's comments
 
     This program assumes that your terminal wraps lines automatically.
     If this is not the case, you may need to change the space in the

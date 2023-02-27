@@ -1,32 +1,29 @@
-Best RFC Obfuscation:
+# Best RFC Obfuscation:
 
     Ron McFarland
     7941 Fawncreek Drive
     Cincinnati, Ohio 45249
     USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make rcm
+### To run
+
 	./rcm < rfc1951.gz
 
-    Also try:
-
-	./rcm < rfc1952.gz
+## Judges' comments
 
     And for more information try:
 
-	./rcm < rfc1951.gz
 	./rcm < rfc1952.gz
 
     For a good noop try:
 
 	gzip -c < rcm.c | ./rcm
 
-
-Selected notes from the author:
+## Author's comments
 
     Except for some silly requirements regarding input validation, CRC
     checking, and similar unimportant fluff, this program is a fully

@@ -1,4 +1,4 @@
-Best Algorithm:
+# Best Algorithm:
 
     Jens Schweikhardt
     DFN Network Operation Center
@@ -8,13 +8,15 @@ Best Algorithm:
 
     http://www.uni-stuttgart.de/People/schweikhardt/home.html
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make schweikh2
-	
+### To run
+
 	./schweikh2
+
+## Judges' comments
 
     Also try:
 
@@ -37,8 +39,7 @@ Judges' comments:
 
     This entry was another crowd pleaser at the IOCCC BOF.
 
-
-Selected notes from the author:
+## Author's comments
 
     Note: the source must be viewed with tabstop 8. To appreciate the
     beauty have your eyes half closed.

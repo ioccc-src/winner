@@ -1,4 +1,4 @@
-Worst Abuse of the C Preprocessor:
+# Worst Abuse of the C Preprocessor:
 
     Jens Schweikhardt
     DFN Network Operation Center
@@ -8,12 +8,15 @@ Worst Abuse of the C Preprocessor:
 
     http://www.uni-stuttgart.de/People/schweikhardt/home.html
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make schweikh1
+### To run
+
 	./schweikh1
+
+## Judges' comments
 
     Look at the source.  There is something very odd going on here.  
     Where does the real code come from if everything is a C pre-processor 
@@ -22,8 +25,7 @@ Judges' comments:
     Clearly this is either the Best Use or the Worst Abuse of the
     C Preprocessor that the judges have seen this year!
 
-
-Selected notes from the author:
+## Author's comments
 
     What this program does
     ----------------------

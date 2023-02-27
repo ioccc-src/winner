@@ -1,4 +1,4 @@
-Best of Show:
+# Best of Show:
 
     Lennart Augustsson
     CR&T
@@ -6,17 +6,20 @@ Best of Show:
     S-411 21 Goteborg
     Sweden
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make august
+### To run
+
 	cat august.c test.oc | ./august > test.oo
 	./august < test.oo
 
-    NOTE: Some compilers will compile this code into infinite loops!
-	  If the above cat line does not execute in a very short amount
-	  of time, then you may need to fix your compiler or use gcc.
+	NOTE: Some compilers will compile this code into infinite loops!
+	      If the above cat line does not execute in a very short amount
+	      of time, then you may need to fix your compiler or use gcc.
+
+## Judges' comments
 
     Try: 
 	cat august.c fac.oc | ./august > fac.oo
@@ -56,8 +59,7 @@ Judges' comments:
     entry as it surely will make the 'best of the IOCCC' list.  It was
     very well received by those who attended the IOCCC BOF.
 
-
-Selected notes from the author:
+## Author's comments
 
     This program is a bytecode interpreter.  This fact is not
     particularly obfuscated; any experienced C programmer can see that

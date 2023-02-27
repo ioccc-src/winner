@@ -1,4 +1,4 @@
-Best One Liner:
+# Best One Liner:
 
     Brian Westley (Merlyn LeRoy on Usenet)
     1906 James Ave.
@@ -7,12 +7,15 @@ Best One Liner:
 
     http://www.visi.com/~westley/index.html
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make westley
+### To run
+
 	sh ./clock1
+
+## Judges' comments
 
     Also try:
 
@@ -27,8 +30,7 @@ Judges' comments:
     short line.  We think you will as well if you take the time to
     understand it.
 
-
-Selected notes from the author:
+## Author's comments
 
     This 1-line program allows various analog ASCII clocks
     to print out the time; the ASCII clock is built from

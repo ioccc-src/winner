@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 #
 print "#define C \" \"\n";
 print "#define O( _ ) # _\n";

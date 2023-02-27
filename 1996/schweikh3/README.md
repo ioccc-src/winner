@@ -1,4 +1,4 @@
-Best Utility:
+# Best Utility:
 
     Jens Schweikhardt
     DFN Network Operation Center
@@ -8,18 +8,20 @@ Best Utility:
 
     http://www.uni-stuttgart.de/People/schweikhardt/home.html
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make schweikh3
+### To run
 
-    WARNING!
+    WARNING: Do not run this program without reading this text down to the end.
+	     It may render your system unusable for a limited amount of time
+	     or force you to reboot using the Big Red Button!  This is not a joke.
+	     You have been warned.  
 
-    Do not run this program without reading this text down to the end.
-    It may render your system unusable for a limited amount of time
-    or force you to reboot using the Big Red Button!  This is not a joke.
-    You have been warned.  
+    ./schweikh3
+
+## Judges' comments
 
     The source fails to compile on compilers that recognize the inline
     keyword by default.  For gcc, you may need to use -ansi.
@@ -38,8 +40,7 @@ Judges' comments:
 	  -I. -D_POSIX_SOURCE '-Ddifftime(a,b)=(double)(b-a)' \
 	  schweikh3.c -o schweikh3
 
-
-Selected notes from the author:
+## Author's comments
 
     Why I think my entry is obfuscated
     ----------------------------------

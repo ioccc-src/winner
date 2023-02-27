@@ -1,4 +1,4 @@
-Best Layout:
+# Best Layout:
 
     Dean Swift
     Trinome Communications
@@ -10,31 +10,28 @@ Best Layout:
 
     http://www.tc3.co.uk/~gandalf/G.HTML
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make gandalf
+	NOTE: This entry may not compile when using modern compilers.
+
+### To run
+
 	./gandalf
+
+## Judges' comments
 
     Also try:
 
-	For C-shell:
-
-	    setenv PATH ( . $PATH )
-	    hatcat
-	    cathat
-
-	For K-shell, /bin/sh, bash, etc:
-
-	    PATH=.:$PATH
-	    hatcat
-	    cathat
+	PATH=.:$PATH
+	./hatcat
+	./cathat
 
      And next try:
 
 	./cathat
-	`pwd`/cathat		# <--- those are back quotes
+	`pwd`/cathat
 
      Care to guess why these execute differently?  Only the
      compiler knows ... ok maybe other things like the author,
@@ -44,7 +41,6 @@ Judges' comments:
 
 	cc -E gandalf.c
 
-
-Selected notes from the author:
+## Author's comments
 
     The program requires an ASCII system.

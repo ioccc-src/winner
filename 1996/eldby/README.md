@@ -1,4 +1,4 @@
-Best Output:
+# Best Output:
 
     Thor AAge Eldby
     European Technology Partner
@@ -6,18 +6,20 @@ Best Output:
     0955 OSLO
     Norway
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make eldby
+### To run
+
 	./eldby 
+
+## Judges' comments
 
     We were impressed by the author's ability to render spheres in 3D 
     in a very small chunk of code.
 
-
-Selected notes from the author:
+## Author's comments
 
     This program shows flying spheres. The program eats CPU on lesser
     equipt systems. The program will run until termination. Terminal 

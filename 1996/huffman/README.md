@@ -1,4 +1,4 @@
-Best Obfuscated Character Set Utility:
+# Best Obfuscated Character Set Utility:
 
     Ken Huffman
     Applied Innovation Inc
@@ -8,14 +8,18 @@ Best Obfuscated Character Set Utility:
     <http://www.huffmancoding.com>
     huffmancoding@gmail.com
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make huffman
+### To run
+
 	echo 'Huffman Decoding' | ./huffman
 
+## Judges' comments
+
     Try: 
+
 	echo 'seeing or feeling is believing' | ./huffman
 	echo 'CC OR NOT CC' | ./huffman | ./huffman
 
@@ -30,8 +34,7 @@ Judges' comments:
 
     This entry was very well received at the IOCCC BOF.
 
-
-Selected notes from the author:
+## Author's comments
 
     This filter program is really not obfuscated code.  It compiles cleanly
     with an ANSI C compiler and comes with user documentation that even a

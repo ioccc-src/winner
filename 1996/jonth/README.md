@@ -1,4 +1,4 @@
-Best X11 Entry:
+# Best X11 Entry:
 
     Jon Thingvold
     University of Oslo
@@ -8,27 +8,24 @@ Best X11 Entry:
 
     http://www.uio.no/~jonth/
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make jonth
+### To run
 
 	./jonth
+
+## Judges' comments
 
     Also try:
 
 	./jonth host1:0 host2:0
 
-    NOTE: You may need to change the Makefile depending on where X11
-	  include files are found and what libs are required.  For
-	  example Solaris and Slowlaris need -lsocket.  :-)
-
     For extra credit, figure out how you can cheat by taking over
     a square already occupied by an opponent.
 
-
-Selected notes from the author:
+## Author's comments
 
     This is mulituser tictactoe for X Windows. You may give one or two X
     displays as arguments to this game.
