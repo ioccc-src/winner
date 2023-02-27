@@ -3,7 +3,6 @@
 #define char k['a']
 #define union static struct
 
-extern int floor;
 double (x1, y1) b,
 char x {sizeof(
     double(%s,%D)(*)())
@@ -24,7 +23,7 @@ _O: while (!(char <<x - dup)) {	/*/*\*/
 
 while(b x 3, i); {
 char x b,i;
-  _0:if(b&&k+
+  _0:if(b&&(int)k+
   sin(signal)		/ *    ((main) (b)-> xO));/*}
   ;
 }
