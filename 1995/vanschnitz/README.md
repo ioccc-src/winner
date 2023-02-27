@@ -1,5 +1,4 @@
-Worst Abuse of the C Preprocessor:
-and Most Likely To Amaze:
+# Worst Abuse of the C Preprocessor and Most Likely To Amaze:
 
     Mark Schnitzius & David Van Brackle
     ISX Corporation
@@ -8,26 +7,26 @@ and Most Likely To Amaze:
     Marietta, GA  30067 
     USA
 
+## To build:
 
-Judges' comments:
+        make all
+
+### To run
+
+	./vanschnitz
+
+## Judges' comments
 
     To use:
-	make vanschnitz
 
-    Try:
-	vanschnitz
-
-    For a good time, try:
-
-	rm -f vanschnitz
-	make vanschnitz LEVEL=8
+	make clobber all LEVEL=8
 
     Warning: Values of LEVEL>8 have been known to cause compilers
     (and in one case a system) to crash during compilation.
 
     For a bad/slow time try LEVEL=15.
 
-Selected notes from the authors:
+## Author's comments
 
     A classic problem in computer science is known as the Towers
     of Hanoi.  It involves a set of different-sized disks mounted

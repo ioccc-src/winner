@@ -1,22 +1,23 @@
-Best Utility:
+# Best Utility:
 
     Garry Glendown
     G\"uldene Kammer 35
     36251 Bad Hersfeld 
     Germany
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make garry garry.test
+### To run
 
-    Try: 
-	garry.test
+	./garry.test.sh
+
+## Judges' comments
 
     In general, try:
 
-	garry <input_file >output_file
+	./garry <input_file >output_file
 
     While it may not have been the intention of the submitter, the
     judges noted that the C pre-processed version (with the #includes
@@ -26,8 +27,7 @@ Judges' comments:
     The author was kind enough to provide a less obfuscated version of
     the source called garry.fmt.c.
 
-
-Selected notes from the author:
+## Author's comments
 
     This  program is a file filter, designed to do environment-expansion and
     incorporating  the  ability  to  create  binary from escaped data in the

@@ -1,4 +1,4 @@
-Best Game:
+# Best Game:
 
     Don Dodson
     AG Communication Systems
@@ -6,21 +6,22 @@ Best Game:
     Glendale, AZ 85308 
     USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make dodsond2
+### To run
 
-    Try: 
-   	dodsond2
+   	./dodsond2
+
+## Judges' comments
 
     An amazing entry!
 
     The official chef enjoyed solving the maze, which she did on the first
     attempt.
 
-Selected notes from the author:
+## Author's comments
 
     Interactive 3D Maze
 

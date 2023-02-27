@@ -1,4 +1,4 @@
-Abusing The Rules:
+# Abusing The Rules:
 
     Diomidis Spinellis
     SENA S.A.
@@ -6,21 +6,22 @@ Abusing The Rules:
     GR-152 37 Filothei 
     Greece
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make spinellis
+### To run
 
-    Try:
-	spinellis < spinellis.c
+	./spinellis < spinellis.c
+
+## Judges' comments
+
 
     While code does not abuse the rules, its output surely does!
 
     P.S. Does the source have any spelling errors?
 
-
-Selected notes from the author:
+## Author's comments
 
     96% of the program lines (631 out of the 658) are comment text rendering
     the program readable and understandable.  With the exception of the

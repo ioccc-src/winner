@@ -1,4 +1,4 @@
-Best Layout:
+# Best Layout:
 
     Heather Downs, Selene Makarios
     The Software Bungalow
@@ -6,20 +6,20 @@ Best Layout:
     Mountain View, CA 94041
     USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make heathbar
+### To run
 
-    To run:
-	heathbar 4253 2281
+	./heathbar 4253 2281
+
+## Judges' comments
 
     The main reason we liked this entry was mainly because the main
     effect of the source was self documenting!  :-)
 
-
-Selected Author's comments:
+## Author's comments
 
     Run this program with two non-negative integer arguments
     (e.g. "prog 1234 999").

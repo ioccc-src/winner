@@ -1,4 +1,4 @@
-Best Short Program:
+# Best Short Program:
 
     Selene Makarios & Heather Downs
     The Software Bungalow
@@ -6,20 +6,20 @@ Best Short Program:
     Mountain View, CA 94041
     USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make makarios
+### To run
 
-    Try: 
-	makarios
+	./makarios
+
+## Judges' comments
 
     The judges were impressed that such a small program could do so much!
     Can you figure out how it does it?
 
-
-Selected notes from the authors:
+## Author's comments
 
     This program takes no arguments. It emits the base 8 representation
     of prime palindromes (palindromic in base 8, of course).

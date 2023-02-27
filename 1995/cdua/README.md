@@ -1,4 +1,4 @@
-Best Output:
+# Best Output:
 
     Carlos Duarte
     Instituto Superior Tecnico
@@ -7,19 +7,19 @@ Best Output:
     2720 Amadora 
     Portugal
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make cdua
+### To run
 
-    Try: 
-	cdua
+	./cdua
+
+## Judges' comments
 
     This could be used as the basis of an a-maze-ing screen exerciser.
 
-
-Selected notes from the author:
+## Author's comments
 
    A program that generates a maze, and then solves it, all this being
    seen by the user.  Some highlights of obfuscation are: 3 steps

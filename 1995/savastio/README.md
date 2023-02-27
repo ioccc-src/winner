@@ -1,4 +1,4 @@
-Most Obfuscated Syntax:
+# Most Obfuscated Syntax:
 
     Michael Savastio
     Securicor Telesciences
@@ -6,23 +6,21 @@ Most Obfuscated Syntax:
     Philadelphia, PA  19124
     USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make savastio
+### To run
 
-    To run:
-	savastio
+	./savastio
 
-	enter a number (such as 100).
+	NOTE: enter a number (such as 100).
 
-    As one judge said:
+## Judges' comments
 
-	I know an l when I see a 1.
+    I know an l when I see a 1.
 
-
-Selected Author's comments:
+## Author's comments
 
     This program is an infinite-precision factorial calculator.  It will
     compute the factorial of any number entered to an infinite degree of

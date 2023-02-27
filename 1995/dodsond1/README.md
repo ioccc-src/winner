@@ -1,4 +1,4 @@
-Most Humorous:
+# Most Humorous:
 
     Don Dodson
     AG Communication Systems
@@ -6,24 +6,24 @@ Most Humorous:
     Glendale, AZ 85308 
     USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make dodsond1
+### To run
 
-    Try: 
-	dodsond1
+	./dodsond1 < some.text
 
-    Give the following input:
+## Judges' comment
+
+    You might consider givig the following input:
 
 	 ... a male (who) gets very, very frustrated sitting in a chair all
 	 the time because males are biologically driven to go out and hunt
 	 giraffes.
 		-- Adjunct Professor Newt Gingrich, Reinhardt College, 1/7/95
 
-
-Selected notes from the author:
+## Author's comments
 
     Istha ogrampra akesta Englishwa extta aswa inputwa andwa
     anslatestra itwa intowa Igpa Atinla.

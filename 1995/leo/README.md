@@ -1,19 +1,20 @@
-Best Use of Obfuscation:
+# Best Use of Obfuscation:
 
     Leonid A. Broukhis
     46728 Crawford St., apt. 20
     Fremont, CA 94539 
     USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make leo
+### To run
 
-    Try: 
-	leo 1 | cat - /dev/tty | gs -
-   	leo 37 80 | cat - /dev/tty | gs -
+	./leo 1 | cat - /dev/tty | gs -
+   	./leo 37 80 | cat - /dev/tty | gs -
+
+## Judges' comments
 
     Press return after each image is drawn.
 
@@ -22,8 +23,7 @@ Judges' comments:
 
     Some Ghostscripts/Postscript programs cleared the screen right after
     the image is drawn, so we added element 106 which acts as an input
-    buffer.  The original version may be found in leo.orig.c.
-
+    buffer.
 
     If you don't have gs or an equivalent postscript viewer, try:
 
@@ -31,18 +31,16 @@ Judges' comments:
 
     and send foo.ps to your local postscript printer.
 
-    
     To qualify for a category specially for yourself in  the Geek code, 
     find out the all the secret switches that the author doesn't divulge !
     (All  switches are single characters on the command line - anything that's
      not a number is a candidate)
 
-
-Selected notes from the author:
+## Author's comments
 
     The usage is:
 
-    prog.sh [ deep ] [ right ] [ Variable ] [ cycle [ freq ] ]
+	./leo [ deep ] [ right ] [ Variable ] [ cycle [ freq ] ]
 
     where the first three are literal words, `cycle' is a positive
     integer (0 is ignored), and `freq' is an integer (default = 0)
@@ -57,7 +55,7 @@ Selected notes from the author:
 
     Some options to try (besides the obvious):
 
-	leo 1 | cat - /dev/tty | gs -
+	./leo 1 | cat - /dev/tty | gs -
 
     This draws the basic pattern I invented in high school:
 

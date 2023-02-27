@@ -1,26 +1,27 @@
-Interesting Algorithm:
+# Interesting Algorithm:
 
     Sebastian Deorowicz
     ul. Radzionkowska 71a
     42-605 Tarnowskie Gory 
     Poland
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make esde
+### To run
+
+	./esde data-file word
+
+	where data-file contains lines of < 255 chars in length.
+
+## Judges' comments
 
     Try: 
-	esde esde.data Johanson
-	esde esde.data2 read
-	esde esde.hint date
 
-    In general:
-
-	esde data-file word
-
-    where data-file contains lines of < 255 chars in length.
+	./esde esde.data Johanson
+	./esde esde.data2 read
+	./esde esde.hint date
 
     When reading the source be careful to distinguish between variable
     names and library functions.  
@@ -30,8 +31,7 @@ Judges' comments:
 	http://avian.dars.muohio.edu/~kaelbesa/soundex.html
 	http://avian.dars.muohio.edu/~kaelbesa/coder.html
 
-
-Selected notes from the author:
+## Author's comments
 
     0) what this program does.
        This program searches in the file words which have the same Soundex code

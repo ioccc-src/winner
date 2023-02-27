@@ -1,4 +1,4 @@
-Best One Liner:
+# Best One Liner:
 
     Mark Schnitzius
     ISX Corporation
@@ -6,27 +6,24 @@ Best One Liner:
     Atlanta, GA 30339 
     USA
 
+## To build:
 
-Judges' comments:
+        make all
 
-    To use:
-	make schnitzi
+### To run
 
-    Try:
-	schnitzi 24
-	schnitzi 18
-	schnitzi 30
+	./schnitzi 24
+	./schnitzi 18
+	./schnitzi 30
+
+## Judges' comments
 
     Sometimes a core dump is a feature, not a bug!
 
     This is one of the better one-liners we have seen in a while.
     Take some time to figure out what it does before you run it!
 
-
-Selected notes from the author:
+## Author's comments
 
     Beware, running this program with too high of a number
     amounts to doing a fork bomb on your machine!
-
-
-
