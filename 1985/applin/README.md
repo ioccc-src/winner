@@ -1,4 +1,4 @@
-# Best one liner 
+# Best one liner
 
 Jack Applin [with help from Robert Heckendorn]
 
@@ -6,10 +6,22 @@ Jack Applin [with help from Robert Heckendorn]
 
         make all
 
+## Try:
+
+
+	./applin
+
+
+NOTE: Yusuke Endoh provided a patch to get this to not issue a bus error. Thank
+you Yusuke! We note that this entry does not work under macOS. Try it out and
+see for yourself what happens!
+
+
 ## Judges' comments:
 
 One liner programs are short but twisted.  This "Hello, World" version
 certainly takes its time saying hello.
+
 
 Copyright (c) 1985, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

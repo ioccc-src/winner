@@ -26,7 +26,7 @@ on a line.  Now enter the letters 'n' thru 'z'.  But to borrow a quote
 from Richard Stallman: If you think you understand what this code
 does, then you don't, so read it again!  Explain why:
 
-	sicherman < sicherman.c | sicherman | diff - sicherman.c
+	./sicherman < sicherman.c | ./sicherman | diff - ./sicherman.c
 
 results in diff reporting a difference on some machines.
 
