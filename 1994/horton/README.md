@@ -23,14 +23,14 @@
     right character.  And for extra credit, try to figure out which
     character is at the bottom on this hint file.  :-)
 
-    This confuses cb greatly. See gtplot.c for an unobfuscated/enhanced 
+    This confuses cb greatly. See horton.alt.c for an unobfuscated/enhanced
     version.  To run this alternate version:
 
 	make horton.alt
 	./horton.alt A B C D
 
 	A, B, C, D are numeric arguments (try 3 2 1 0).
-    
+
 ## Author's comments
 
     Run it with any 4 numeric arguments, e.g. prog 3 2 1 0.  Play with the
@@ -48,7 +48,7 @@
     It's easily modified to graph *any* 96x160 bitmap on a dumb terminal.
 
     See the gtface program for another example.  Try:
-    
+
 	make gtface
 	./gtface < gtface.data
 
@@ -59,10 +59,10 @@
               MMMM,M,MM"MM,,,
            ,,MMMMMMMMM"""""""",
           ,MMMMM"""            ",
-         ,MMM"                   "   
-         MMM                      M  
+         ,MMM"                   "
+         MMM                      M
          MM
-         MM" "                     M 
+         MM" "                     M
           M " , ,,,,,     ,,,,,,,,,MM
           "MMMM"M,MMMMM MMMM M M"MMM,
          ,M"MMMM"MM"MMM""M""MMMM""M"M
