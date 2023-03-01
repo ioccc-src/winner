@@ -3,7 +3,7 @@ Best primal ASCII graphics:
     Nicolas Ollinger
     Ecole Normale Superieure de Lyon
     LIP, ENS Lyon
-    46, all&#xE9;e d'Italie
+    46, allée d'Italie
     69364 Lyon Cedex 07
     France
 
