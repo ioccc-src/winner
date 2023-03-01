@@ -26,12 +26,6 @@
     The provided Makefile should work; you will need an X-ish system, and
     a select() system call.  More on building in the author comments.
 
-    NOTE: On some systems the original entry did not correctly display
-    the altitude and airspeed.  These problems have been fixed.  One can
-    still build the original program by:
-
-	make banks.alt
-
 ## Author's comments
 
     You have just stepped out of the real world and into the
