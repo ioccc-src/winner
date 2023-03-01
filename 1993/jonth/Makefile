@@ -196,7 +196,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.tmp.c
-	@echo "NOTE: This entry may not compile when using modern compilers."
+	@echo "NOTE: This entry might not compile when using modern compilers."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 ${PROG}.tmp.c: ${PROG}.c

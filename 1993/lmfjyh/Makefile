@@ -192,7 +192,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: This entry may not compile when using modern compilers."
+	@echo "NOTE: This entry might not compile when using modern compilers."
 	${RM} -f \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
 	${CP} lmfjyh.c \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
 	${CC} ${CFLAGS} \
