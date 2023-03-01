@@ -2,7 +2,7 @@
 
 Szabolcs Borsanyi  
 Theoretische Physik  
-Gaussstrasse 20  
+Gaussstraße 20  
 42097 Wuppertal  
 Germany  
 <borsanyi@uni-wuppertal.de>  
