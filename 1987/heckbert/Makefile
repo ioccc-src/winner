@@ -179,21 +179,13 @@ ALT_TARGET= ${PROG}.orig
 all: ${DATA} ${TARGET}
 	@${TRUE}
 
-.PHONY: alt data everything clean clobber nuke dist_clean \
+.PHONY: data everything clean clobber nuke dist_clean \
 	install build love haste waste make easter_egg \
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
-# alternative executable
-#
-alt: ${DATA} ${ALT_TARGET}
-	@${TRUE}
-
-${PROG}.orig: ${PROG}.orig.c
-	@echo "NOTE: The original source may not compile using modern compilers."
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # data files
 #

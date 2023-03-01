@@ -7,23 +7,39 @@ Pixar
 
         make all
 
-NOTE: The original entry may be built with "make alt".
+
+On System V systems, we had to compile with `-Dindex=strchr`.
+To compile on a 16 bit machine, change 300000 to 30000.
+
 
 ## Judges' comments:
 
-
 ### Try:
-	ph 40 < ph.c > foo.c; cc foo.c -o ph
-	ph 20 < a_C_prog.c > bar.c; cc bar.c
+
+	./heckbert 40 < heckbert.c > ph.c; make ph
+	./ph 21 < heckbert.c > bar.c; make bar
+	# or more generally fold some other file at a positive column:
+	./ph col < file
+
+Ask yourself what happens to `foo.md` if you try:
+
+	./ph 40 < README.md > foo.md
+
+Folding at the wrong length may be equivalent to a "Spindle or Mutilate" operation.  For example:
+
+	./heckbert 40 < heckbert.c > ph.c ; make ph ; ./ph 20 < heckbert.c > bar.c ; make bar
+
+
+Try not to
+[Fold, Spindle or Mutilate](https://repository.library.brown.edu/studio/item/bdr:788264/PDF/)
+files.  :-)
+
 
 The judges used this program to fold up very long lines which the
 BSD fold(1) was unable to process.  This program has been added
 to the contest tool chest.
 
-On System V systems, compile with: `-Dindex=strchr`
-To compile on a 16 bit machine, change 300000's to 30000.
 
-NOTE: This entry requires a non-standard K&R C compiler to compile.
 
 Copyright (c) 1987, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is
