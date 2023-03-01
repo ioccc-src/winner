@@ -192,6 +192,7 @@ all: ${DATA} ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo "NOTE: this does not work properly in macOS."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable

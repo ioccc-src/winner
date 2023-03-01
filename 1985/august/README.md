@@ -7,6 +7,13 @@ Lennart Augustsson
 
         make all
 
+
+## Try:
+
+
+	./august
+
+
 ## Judges' comments:
 
 An interesting use of a recursive call to main.  Compile and execute
