@@ -186,6 +186,10 @@ all: ${DATA} ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
+# alternative executable
+#
+alt: data ${ALT_TARGET}
+	@${TRUE}
 
 # data files
 #
