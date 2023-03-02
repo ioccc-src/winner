@@ -15,7 +15,7 @@ NOTE: This entry uses non-standard args to main() that do not work with modern c
 	./lycklama < lycklama.c
 
 	# notice the difference between the above and this one:
-	./lycklama < lycklama.orig.c
+	./lycklama < lycklama.alt.c
 
 	./lycklama < README.md
 
