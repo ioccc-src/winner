@@ -43,7 +43,7 @@
 	diff nathan.c barfoof.c
 
     WARNING:
-	The judges' make no claim as to the strength or security
+	The judges make no claim as to the strength or security
 	of this program.  It is likely to be nil, or the next
 	best thing to it.  Still, you might consider installing
 	it in /usr/games/nathan.  :-)

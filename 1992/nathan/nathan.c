@@ -11,7 +11,7 @@ static char *text[] =
   "with a subject \"IOCCC request\". If you know that your 'From'",
   "line is incorrect, add a single line",
   "\"replyto you@your.correct.address\" to the body of the message.",
-  "A deamon will autoreply.",
+  "A daemon will autoreply.",
   "WARNING: You must not re-export this out of the USA, or else",
   "the men in black might get you.",
   NULL
