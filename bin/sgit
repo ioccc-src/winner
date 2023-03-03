@@ -13,10 +13,6 @@
 # how it is and I don't think it would do good to add any additional features
 # except perhaps allowing for one to specify path to sed.
 #
-# A limitation is that if the sed command has spaces it will be a problem.
-# Whether this will be fixed is not yet decided. I have some ideas of how it
-# might happen but it might not be worth it.
-#
 # - Cody Boone Ferguson (@xexyl)
 #
 
