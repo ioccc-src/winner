@@ -9,7 +9,7 @@
 
 ## To build:
 
-        make all
+        make nathan
 
 ### To run
 
@@ -17,29 +17,9 @@
 
 ## Judges' comments
 
-    The US International Traffic in Arms Regulations controls certain
-    exportations going out of the United States.  The U.S.  Munitions
-    List gives the specific categories of restricted exports.  Because
-    this entry appears to fall under this restricted catagory, the
-    judges may not be able to distribute winners outside of the USA.
-
-    Nathan Sidwell has stated that he is willing to distribute the
-    winning source.  To read HIS instructions of how to obtain his
-    winning program:
-
-	make nathan
-	nathan
-
-    =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-    =-=-= The text below assumes that you have the winning source =-=-=
-    =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
-    To use:
-	make nathan
-
     Try:
-	nathan obfuscate < nathan.c > foobarf.c
-	nathan - obfuscate < foobarf.c > barfoof.c
+	./nathan obfuscate < nathan.c > foobarf.c
+	./nathan - obfuscate < foobarf.c > barfoof.c
 	diff nathan.c barfoof.c
 
     WARNING:
@@ -51,20 +31,40 @@
     NOTE: 
 	The 'winning' catagory is also open to question.  One could say
 	that it is a 'file obfuscator'.  One could also say that it
-	unintentionally adbused the intent of rule #7 (that programs
+	unintentionally abused the intent of rule #7 (that programs
 	should be freely redistributable).  We suspect that the author
 	may not have intended to do this, but that is the way things go
 	sometimes.
 
 	BTW, 'abuse of the rules' entries do not violate the rules.
 	Entries that violate the rules are disqualified.  Abuse of the
-	rules entries are ones that tend to 'streach' the limits and
+	rules entries are ones that tend to 'stretch' the limits and
 	take the contest into unexpected territory.
+
+
+### Historical notes for this entry from the judges
+
+    The US International Traffic in Arms Regulations controls certain
+    exportations going out of the United States.  The U.S.  Munitions
+    List gives the specific categories of restricted exports.  Because
+    this entry at one time appeared to fall under this restricted catagory, the
+    judges originally were not able to distribute winners outside of the USA.
+
+    Nathan Sidwell stated that he was willing to distribute the
+    winning source.  To read HIS instructions of how to obtain his
+    winning program one was able to run:
+
+	make nathan
+	./nathan
+
+
+    to learn how to get a copy of the code.
+
 
 ### Personal note from chongo:
 
-    I think this situation shows just how ridiculous US crypto
-    regulations really are.  Certain US federal officials can get away
+    I think the situation showed just how ridiculous US crypto
+    regulations really were/are.  Certain US federal officials can get away
     with shipping arms to certain nations in apparent violation of US
     laws, but I personally can't re-distribute a program contest winner
     to the network!
@@ -89,7 +89,7 @@
 
     PORTABILITY (A little knowledge is a dangerous thing)
 
-    Its written in ANSI C, and doesn't even assume an ASCII character
+    It's written in ANSI C, and doesn't even assume an ASCII character
     set, (it has an array of the characters to convert), so should be
     portable across many platforms. It passes gcc -ansi -pedantic -O
     -Wall with no warnings (You may get assignment in conditional

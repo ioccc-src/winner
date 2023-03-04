@@ -162,15 +162,9 @@ empty plugboard (they had none). I explain how to set up the simulator later.
 Yusuke Endoh asked the judges and me if the real 1992 entry source was
 available. Simon Cooper didn't have access to it because it was before his time in
 the IOCCC; but before the other judges could answer Ilya Kurdyukov sent a link to
-the original 1992 code. However because I do not know the current status of the
-regulation (though it seems unlikely that it still applies) I am only citing an
-old version of the IOCCC website:
+the original 1992 code. As of March 2023 the original before unseen code was
+published but I leave this in for historical purposes.
 
-	    nathan - obfuscation by (trivial) encryption (source not exported)
-
-	    Brian Westley decided to just ``screw the (US) government'' and make the real nathan.c source available. We also note that Nathan Sidwell who lives outside the US made his own source available as well.
-
-Anyone who wants to find it I am sure can but I leave that to them.
 
 ### <a name="usage" href="#toc">Usage</a>
 
