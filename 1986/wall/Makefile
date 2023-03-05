@@ -93,7 +93,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE=
+CDEFINE= -traditional-cpp
 #CDEFINE= -DIOCCC
 
 # Include files that are needed to compile
@@ -185,7 +185,8 @@ all: ${DATA} ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: This entry uses non-standard args to main() that do not work with modern compilers."
+	@echo "NOTE: This entry will not compile when using clang because it does not support"
+	@echo "      -traditional-cpp but it should compile with gcc."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable

@@ -10,6 +10,8 @@ Sweden
 
         make all
 
+NOTE: this entry is very likely to core dump after its output.
+
 ## Judges' comments:
 
 This program computes a specific mathematical value.  Simply compile

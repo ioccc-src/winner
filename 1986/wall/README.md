@@ -10,9 +10,10 @@ US of A
 
         make all
 
-NOTE: This entry uses non-standard args to main() that do not work with modern compilers.
 
-NOTE: This entry requires a non-standard K&R C compiler to compile.
+NOTE: On modern systems this entry requires the option `-traditional-cpp` which
+clang does not support. Please be advised that gcc under macOS is actually
+clang so this will not compile with the default gcc under macOS.
 
 ## Judges' comments:
 
