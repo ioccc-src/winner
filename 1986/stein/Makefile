@@ -189,7 +189,7 @@ ${PROG}: ${PROG}.c
 
 
 ${PROG}.orig: ${PROG}.orig.c
-	@echo "NOTE: The original source may not compile using modern compilers."
+	@echo "NOTE: The original source might not compile using modern compilers."
 	-${RM} -f a.out
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 	-${LN} $@ a.out

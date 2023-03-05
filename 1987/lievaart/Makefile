@@ -195,11 +195,11 @@ alt: ${DATA} ${ALT_TARGET}
 	@${TRUE}
 
 ${PROG}.orig: ${PROG}.orig.c
-	@echo "NOTE: The original source may not compile using modern compilers."
+	@echo "NOTE: The original source might not compile using modern compilers."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 ${PROG}2.orig: ${PROG}2.orig.c
-	@echo "NOTE: The original source may not compile using modern compilers."
+	@echo "NOTE: The original source might not compile using modern compilers."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # data files

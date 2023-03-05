@@ -190,7 +190,7 @@ alt: data ${ALT_TARGET}
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 ${PROG}.orig: ${PROG}.orig.c
-	@echo "NOTE: The original source may not compile using modern compilers."
+	@echo "NOTE: The original source might not compile using modern compilers."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # data files
