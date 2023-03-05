@@ -6,14 +6,13 @@ Dave Decot
 
         make all
 
-NOTE: This entry might not compile when using modern compilers.
-
-## Judges' comments:
-
 NOTE: On modern systems this entry requires the option `-traditional-cpp` which
 clang does not support. We thank Yusuke Endoh for his patch which allows the
 entry to compile under gcc! Please be advised that gcc under macOS is actually
 clang so this will not compile with the default gcc under macOS.
+
+## Judges' comments:
+
 
 Some new (in 1984) compilers disliked line 15 of the source, so we changed it
 from:
