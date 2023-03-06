@@ -45,8 +45,8 @@ SHELL= bash
 #######################
 # common tool locations
 #######################
-include ../../var.mk
 #
+include ../../var.mk
 
 # Set X11_LIBDIR to the directory where the X11 library resides
 #
@@ -93,7 +93,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE= -traditional-cpp
+CDEFINE=
 #CDEFINE= -DIOCCC
 
 # Include files that are needed to compile
@@ -171,6 +171,11 @@ TARGET= ${PROG}
 #
 ALT_OBJ=
 ALT_TARGET=
+
+# FORCE use of gcc -traditional-cpp
+#
+CC:= gcc
+CFLAGS+= -traditional-cpp
 
 
 #################
