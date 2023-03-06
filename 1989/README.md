@@ -17,7 +17,7 @@ to stress the fact that starting in 1990, compiling entries must result an
 executable regular file.
 
 The Makefile always uses the portable version of the ["Best
-self modifying program"](fubar/) because there as no loss of functionality in
+self modifying program"](fubar/) because there is no loss of functionality in
 using it.  In the case of the ["Best game"](tromp/) winner, however, some
 functionality is lost in the portable version and so the Makefile uses
 the original program.  System V users may need to change the Makefile
