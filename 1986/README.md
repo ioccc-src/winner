@@ -14,8 +14,8 @@ A poll was taken for the worst code for BSD and System V program.
 The Bourne Shell (/bin/sh) won for both systems.  The BSD finger
 program took third place.
 
-Rules and results were posted to net.lang.c and net.unix-wizards.
-Micro/Systems Journal published started regular publishing of the winners.
+[Rules](rules.txt) and results were posted to net.lang.c and net.unix-wizards.
+Micro/Systems Journal started regular publishing of the winners.
 The practice of making first announcement of the winners at the Summer
 Usenix BOF started this year.  A notice was posted to net.announce.
 
