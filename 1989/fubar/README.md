@@ -26,7 +26,7 @@ With a bit of tinkering Cody Boone Ferguson got this to work on modern systems.
 We thank him for his assistance!
 
 NOTE: don't try running `ouroboros.c` directly with an arg as it'll turn into an
-infinite loop.
+infinite loop. The same will happen with larger numbers.
 
 ## Author's comments
 
