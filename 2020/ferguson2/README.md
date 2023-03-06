@@ -81,12 +81,12 @@ I will have more information on this entry at
 published.
 
 <a name="toc"></a>
--   [IOCCC: An Enigma?](#ioccc)
+-   [IOCCC: an Enigma?](#ioccc)
 
 -   [The 1992 Nathan entry](#nathan)
 
 -   [Usage](#usage)
-    *	[An example run](#example)
+    *	[Example run](#example)
 
 -   [The recode.c configurator](#recode)
 
@@ -106,7 +106,7 @@ published.
 
 -   [Resources](#resources)
 
-### <a name="ioccc" href="#toc">IOCCC: An Enigma?</a>
+### <a name="ioccc" href="#toc">IOCCC: an Enigma?</a>
 
 Is there a better single word that could describe the code that is IOCCC?  I'm
 sure there are some other words that are equally as valid but I believe 'Enigma'
@@ -189,12 +189,13 @@ Finally it'll prompt you for the plugboard pairs.
 
 After that you can input the string and it'll go from there.
 
-#### <a name="example" href="#toc">An example run</a>
+#### <a name="example" href="#toc">Example run</a>
 
 BTW: There's a much more entertaining (and delicious) challenge or exercise in
-[recode.md][] (involves [chocolate-cake.html][]). These however show
-the general program as well as how to use the two winning entries of the Morse
-code that I referred to earlier.
+[recode.md][] (involves [chocolate-cake.html][]) though one might need a different
+kind of exercise after taking up the challenge! :-) These however show the
+general program as well as how to use the two winning entries of the Morse code
+that I referred to earlier:
 
 
 	    $ ./prog -
@@ -228,21 +229,21 @@ Notice that all output except the deciphered/enciphered text is sent to stdout.
 If I didn't specify the `-` by e.g. `echo IOCCC | ./prog` then it will use the
 default settings; as the judges suggest this invocation I will not show it here.
 
-You can also type it out like this though:
+But you can also type it out like this:
 
 	    $ ./prog
 	    IOCCC
 	    UUMMX
 
 
-The IOCCC comes from stdin; the UUMMX is stdout.
+The IOCCC comes from stdin; the `UUMMX` is written to stdout.
 
 If I compile the 2014 entry and copy it to my local directory as
 `vik` I might do:
 
 	    $ echo TEST|./prog |./vik | mplayer -demuxer rawaudio -
 
-And you would hear Morse code of the Enigma output of 'TEST' (i.e. KCWV). Or
+And you would hear Morse code of the Enigma output of 'TEST' (i.e. `KCWV`). Or
 perhaps not in this case. I'm not sure: I discovered a bug in that entry
 (Fedora, CentOS and macOS all affected).
 
@@ -289,7 +290,7 @@ Phew! The program redeemed itself after the test failure! :)
 
 (Technically above it didn't print a newline after the output and this is how it
 is with some of the things I pasted in the other file and maybe others here
-too. Notice also how it showed the same output that my program gave it - UUMMX.)
+too. Notice also how it showed the same output that my program gave it - `UUMMX`.)
 
 What about the other Morse code entry?
 
