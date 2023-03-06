@@ -1,4 +1,4 @@
-Best layout:
+## Best layout:
 
 	Lievaart, Roemer B.
 	VU-Informatica, Amsterdam
@@ -6,21 +6,26 @@ Best layout:
 	NL 1091 TJ Amsterdam
 	Netherlands
 
-Judges notes:
+## To build:
 
-	Do you know what this program does?  If you do, look again,
-	there is more here than meets the PI.
+	make all
 
-Selected notes from the author:
+## Judges' comments:
 
-	Passes lint, but not with the strictest options, for it
-	contains some "null-statements", as well two identifiers
-	which are, if compilers only take 6 characters, the same.  It
-	also uses write(2), so not totally system independent.
+Do you know what this program does?  If you do, look again,
+there is more here than meets the PI.
 
-	You are very much invited to pass this program through a
-	C-beautifier. (First strip newlines and tabs, if your cb can't
-	do that.)
+## Selected notes from the author:
+
+Passes lint, but not with the strictest options, for it
+contains some "null-statements", as well two identifiers
+which are, if compilers only take 6 characters, the same.  It
+also uses write(2), so not totally system independent.
+
+You are very much invited to pass this program through a
+C-beautifier. (First strip newlines and tabs, if your cb can't
+do that.)
+
 
 Copyright (c) 1989, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

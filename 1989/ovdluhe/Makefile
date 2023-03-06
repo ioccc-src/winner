@@ -186,7 +186,6 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: This entry requires a non-standard K&R C compiler to compile."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable

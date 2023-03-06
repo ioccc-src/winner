@@ -1,20 +1,18 @@
-#define d define
-#d a include
-#a <stdio.h>
-#a <string.h>
-#a <ctype.h>
-#d p char*
-#d P ,(p)
-#d T(E) !strcmp(E,"()")
-#d U return
-#d W while
-#d X sbrk(199)
-#d z atof
-#d e isspace
-#d D A(_)
-#d E S(C(_))
-#d B(y) p y(_)p _;{
-#d G(y,V) B(y)p i;U sprintf(i=X,"%lf",z(E)V z(S(C(D)))),i;}
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#define p char*
+#define P ,(p)
+#define T(E) !strcmp(E,"()")
+#define U return
+#define W while
+#define X sbrk(199)
+#define z atof
+#define e isspace
+#define D A(_)
+#define E S(C(_))
+#define B(y) p y(_)p _;{
+#define G(y,V) B(y)p i;U sprintf(i=X,"%lf",z(E)V z(S(C(D)))),i;}
 
 	    p sbrk(),*S(),*j(),*O,*H;K,Y,M=14;double
 	  z();Q(_)p _;{int V=0;W(e(*_))_++;H=_;W(V|!(e

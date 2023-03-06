@@ -182,7 +182,6 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: This entry is likely to fail and/or dump core on modern computers."
 	${RM} -f $@
 	${CP} -f fubar.sh $@
 	${CHMOD} +x $@
@@ -198,7 +197,6 @@ data: ${DATA}
 	@${TRUE}
 
 ${PROG}.orig: ${PROG}.orig.c
-	@echo "NOTE: This entry is likely to fail and/or dump core on modern computers."
 	${RM} -f $@
 	${CP} -f fubar.orig.sh $@
 	${CHMOD} +x $@

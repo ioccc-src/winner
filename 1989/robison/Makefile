@@ -121,6 +121,13 @@ OPT= -O3
 #
 CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
+# FORCE use of -include stdlib.h
+#
+CFLAGS+= -include stdlib.h
+
+
+## FORCE 
+
 # Libraries needed to build
 #
 LIBS=
@@ -183,7 +190,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: This entry requires a non-standard K&R C compiler to compile."
+	@echo "NOTE: This entry will likely dump core on invalid input."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable

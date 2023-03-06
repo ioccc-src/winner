@@ -182,9 +182,11 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo NOTE: this compilation results in running the program itself.
 	${RM} -f $@
 	${CP} jar.1.sh $@
 	${CHMOD} +x $@
+	${CC} -c -o /dev/tty jar.1.c
 
 # alternative executable
 #

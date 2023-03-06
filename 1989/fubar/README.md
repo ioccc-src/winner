@@ -17,10 +17,13 @@
 
 ## Judges' comments
 
-	Run this with a single digit argument (or wait a long time).
+Run this with a single digit argument (or wait a long time).
 
-	The blank line at the beginning of the source is mandatory.
-	Do you know why?
+The blank line at the beginning of the source is mandatory.
+Do you know why?
+
+With a bit of tinkering Cody Boone Ferguson got this to work on modern systems.
+We thank him for his assistance!
 
 ## Author's comments
 

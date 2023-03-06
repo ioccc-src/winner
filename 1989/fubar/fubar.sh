@@ -11,9 +11,9 @@ fi
 rm -f ouroboros.c x1 x
 ex - <<EOF
 r fubar.c
-7,8j
+8,9j
 w ouroboros.c
 EOF
 chmod +x ouroboros.c
 ./ouroboros.c $1
-rm -f ouroboros.c x1 x
+#rm -f ouroboros.c x1 x
