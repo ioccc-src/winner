@@ -6,21 +6,21 @@ Walter Bright
 
         make all
 
-NOTE: The original entry may be built with "make alt".
+### Try:
+
+	./bright bright.c
+
+	./bright bright
 
 ## Judges' comments:
 
-Compile this program and give filenames as arguments.  For example try:
-
-	./bright bright.c
-	./bright bright
+Compile this program and give a filename as an argument.
 
 Mr. Bright exploits the C pre-processor, similar variables and
 excessive shifting to obfuscate an otherwise useful binary display
 program.  This gives you a small example of what it is like to
 maintain the Bourne shell! :-}
 
-NOTE: To compile with modern compilers, you make need to: make alt.
 
 Copyright (c) 1986, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

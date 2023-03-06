@@ -10,13 +10,20 @@ USA
 
         make all
 
+### Try:
+
+	sh applin.c
+
+	./applin
+
+
 ## Judges' comments:
 
-Compile and/or execute as directed by the documentation.
 
 The judges were so amused by this little program that we created an
 award just for it.  This program is portable to the C and Fortran 77
-compilers as well as executable by the bourne shell!
+compilers as well as executable by the Bourne shell!
+
 
 Copyright (c) 1986, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

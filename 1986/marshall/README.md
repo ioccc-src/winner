@@ -10,7 +10,11 @@ Paoli, PA.
 
         make all
 
-NOTE: This entry uses non-standard args to main() that do not work with modern compilers.
+
+NOTE: we could not compile this entry under modern macOS but it will work
+fine under linux. It likely fails to compile under macOS because its gcc is
+actually just clang which is more strict about the type of the second
+argument of main(). If you have gcc under macOS it might work just as well.
 
 # Judges' comments:
 
@@ -22,7 +26,6 @@ This program was selected for the 1987 t-shirt collection.
 
 This program is known to give some C compilers a problems.
 
-NOTE: This entry requires a non-standard K&R C compiler to compile.
 
 Copyright (c) 1986, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

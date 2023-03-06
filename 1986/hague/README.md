@@ -9,9 +9,15 @@ UK
 
         make all
 
-### To run
+
+NOTE: this entry uses gets() so you might get a warning about this when
+compiling and running this program with some systems.
+
+### Try:
 
 	./hague
+	[enter some text]
+
 
 ## Judges' comments:
 

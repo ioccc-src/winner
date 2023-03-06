@@ -6,7 +6,7 @@ on how to compile the winner and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's comments for even more details.
 
-The rules for 1986 suggested categories due to the success of the 1985
+The [rules for 1986](rules.txt) suggested categories due to the success of the 1985
 judging method.  The maximum size was increased from 512 to 1024 bytes.
 Larry Bassel joined as the second official judge.
 

@@ -9,7 +9,12 @@ USA
 
         make all
 
-NOTE: This entry uses non-standard args to main() that do not work with modern compilers.
+
+NOTE: we could not compile this entry under modern macOS but it will work
+fine under linux. It likely fails to compile under macOS because its gcc is
+actually just clang which is more strict about the type of the second
+argument of main(). If you have gcc under macOS it might work just as well.
+
 
 ## Judges' comments:
 
@@ -18,7 +23,6 @@ performed in a very complex way.  The judges and the author defy you
 do determine how it does it.  It is a good thing that K&R didn't use
 this version as the first C program!
 
-NOTE: This entry requires a non-standard K&R C compiler to compile.
 
 Copyright (c) 1986, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

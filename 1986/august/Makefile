@@ -184,6 +184,7 @@ all: ${DATA} ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo "NOTE: this entry is very likely to dump core after its output."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
