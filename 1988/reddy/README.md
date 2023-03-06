@@ -1,4 +1,4 @@
-Most useful Obfuscated C program:
+## Most useful Obfuscated C program:
 
 	Amperif Corporation
 	9232 Eton Avenue
@@ -7,9 +7,18 @@ Most useful Obfuscated C program:
 	U.S.A.
 
 
-Compile and give the following line as input:
+## To build:
 
+
+	make all
+
+## Try:
+
+	./reddy
 	char *(*(fun[16])();
+
+
+## Judges' comments
 
 This is a somewhat restricted version of a useful program that has been
 posted to Usenet.  What is unusual is what it is able to do so much

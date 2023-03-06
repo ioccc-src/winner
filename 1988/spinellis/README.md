@@ -1,22 +1,50 @@
-Best abuse of the rules:
+## Best abuse of the rules:
 
     	Diomidis Spinellis (currently at Imperial College, London, England)
 	1 Myrsinis Str.
 	GR-145 62 Kifissia
 	GREECE
 
-How to compile:
+## To build:
 
-	/lib/cpp spinellis.c > spin.c
 
-and type the following text followed by an EOF ('^D'):
+	make all
 
+and then type a C program into followed by EOF two times (`^D^D`).
+
+NOTE: this entry will not compile with clang. Also be advised that gcc in macOS
+is actually clang so this will not work even with the default compiler in macOS.
+
+
+## Try:
+
+	make clobber all
 	main()
 	{
 	    printf("Hello world\n");
 	}
+	^D
+	^D
+	./spinellis
 
-The author says:
+	make clobber all
+	int main()
+	{
+	    int i;
+	    for (i = 0; i < 5; ++i)
+		printf("%d\n", i);
+	}
+	^D
+	^D
+	./spinellis
+
+
+## Judges' comments
+
+We enjoyed this entry this year, however in the future programs must be able to
+be compiled from within a Makefile without the need of human intervention.
+
+The author originally wrote:
 
     This program can be configured to do almost everything.
     The configuration is done during compile time by typing
@@ -25,9 +53,7 @@ The author says:
     but the possibilities are clearly limited only by your
     imagination and programming skills.
 
-FYI: We enjoyed this entry this year, however in the future programs 
-     must be able to be compiled from within a makefile without the
-     need of human intervention.
+
 
 Copyright (c) 1988, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

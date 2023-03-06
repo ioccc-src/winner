@@ -11,7 +11,8 @@ Best of show:
 
         make all
 
-### To run
+
+### Try:
 
 	./applin
 
@@ -25,10 +26,10 @@ When we compiled applin.c on an Amdahl 5890-300E, we found that it
 spent over 75 minutes in the System V C preprocessor!  Besides showing
 that the standard System V cpp is slow, it showed that it contained a
 memory usage problem.  The applin.c only uses 29 different preprocessor
-symbols (besides <stdio.h> and yet the preprocessor ran out of space!
+symbols (besides `stdio.h`) and yet the preprocessor ran out of space!
 
 The GNU C preprocessor took less than 45 seconds to perform the 2nd pass 
-on the Amdahl 5890-300E.  But due to the ANSI-ness of GNU cpp (v.  1-21), 
+on the Amdahl 5890-300E.  But due to the ANSI-likeness of GNU cpp (v. 1-21), 
 it was not able to cleanly substitute a symbol that began with a '#'.
 Clearly the GNU C preprocessor is faster.
 

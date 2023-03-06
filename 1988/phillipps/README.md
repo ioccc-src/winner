@@ -1,4 +1,4 @@
-Least likely to compile successfully:
+## Least likely to compile successfully:
 
 	Ian Phillipps
 	Cambridge Consultants Ltd
@@ -6,6 +6,17 @@ Least likely to compile successfully:
 	Milton Road
 	Cambridge CB4 4DW
 	England
+
+
+## To build:
+
+
+	make all
+
+NOTE: this program will likely segfault under macOS.
+
+
+## Judges' comments
 
 Compile and run without parameters.
 
