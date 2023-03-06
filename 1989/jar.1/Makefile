@@ -192,7 +192,7 @@ alt: data ${ALT_TARGET}
 	@${TRUE}
 
 ${PROG}.orig: ${PROG.orig}.c
-	@echo "NOTE: The original source may not compile using modern compilers."
+	@echo "NOTE: The original source might not compile using modern compilers."
 	${RM} -f $@
 	${CP} jar.1.orig.sh $@
 	${CHMOD} +x $@
