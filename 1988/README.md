@@ -7,18 +7,18 @@ Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's comments for even more details.
 
 The maximum size of entries was raised from 1024 to 1536 bytes, however
-smaller entries were encouraged.  Due to the "Best Abuse of the Rules"
-winner of 1987, a limit of 160 chars in the compile line was introduced.
+smaller entries were encouraged.  Due to the ["Best Abuse of the Rules"
+winner of 1987](../1987/biggar/), a limit of 160 chars in the compile line was
+introduced.
 
 This year, the Grand Prize was given to the most unusual entry and best
 abuse of the C Preprocessor rather than the most well rounded entry.
 
-Rules and results were posted to comp.lang.c, comp.sources.unix and
-alt.sources.  The 1988 winners will be published in the Micro/Systems
-Journal.
+[Rules](rules.txt) and results were posted to comp.lang.c, comp.sources.unix and
+alt.sources.  The 1988 winners will be published in the Micro/Systems Journal.
 
 Winning entries for previous years were repackaged with each year
-being in its own directory.  Make files and hints were also provided.
+being in its own directory.  Makefiles and hints were also provided.
 The package was posted to the: comp.sources.unix newsgroup.  They are
 also available on a wide number of Usenet archive sites.
 
