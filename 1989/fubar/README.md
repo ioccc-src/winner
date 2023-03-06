@@ -25,20 +25,23 @@ Do you know why?
 With a bit of tinkering Cody Boone Ferguson got this to work on modern systems.
 We thank him for his assistance!
 
+NOTE: don't try running `ouroboros.c` directly with an arg as it'll turn into an
+infinite loop.
+
 ## Author's comments
 
-	In a nutshell, this is probably the slowest and most
-	obnoxious factorial program ever written.  Unfortunately, 
-	the name of the C source must be "ouroboros.c"; the name is 
-	hard-coded into the program.  
+In a nutshell, this is probably the slowest and most
+obnoxious factorial program ever written.  Unfortunately, 
+the name of the C source must be "ouroboros.c"; the name is 
+hard-coded into the program.  
 
-	The source is a legal shell script and a legal C program.  
-	The shell script compiles itself, and then executes the
-	resulting binary, giving the source as input.  The program 
-	works by successively modifying #define lines each pass through.
+The source is a legal shell script and a legal C program.  
+The shell script compiles itself, and then executes the
+resulting binary, giving the source as input.  The program 
+works by successively modifying #define lines each pass through.
 
-	Both "indent" and "cb" will damage the program, "indent" 
-	much more so.
+Both "indent" and "cb" will damage the program, "indent" 
+much more so.
 
 Copyright (c) 1989, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is
