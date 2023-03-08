@@ -6,9 +6,9 @@
 
 ## Judges' Comments
 
-### To build
+## To build:
 
-        cc -o boutines boutines.c
+        make all
 
 ### To run
 
@@ -20,6 +20,8 @@ You will need an [SVG] viewer. Look here to find some [SVG Viewer Implementation
 The following will create an SVG file,
 
         perl -e 'map{print rand," ",rand,"n";}(1..20);' | ./boutines > test.svg
+
+## Judges' comments
 
 Can you explain the author's remark "[generated files] are not as scalable as their name suggests"?
 
