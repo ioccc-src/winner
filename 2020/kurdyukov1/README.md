@@ -12,8 +12,6 @@ Twitter: @ilyakurdyukov
 
     ./prog
 
-### Try:
-
     echo IOCCC | ./prog
 
     ./prog < prog.x86.asm
@@ -26,15 +24,11 @@ This hash of a C code makes a hash out of input.
 Do you understand how?
 You should get a-round-to-it figuring it out!
 
-An even smaller alternate version of this entry, prog.alt.c, is provided.  This code does not contain any headers, nor any workaround for WIN32 based platforms.  
-
-To compile the alternate program:
+An even smaller alternate version of this entry, prog.alt.c, is provided.  This code does not contain any headers, nor any workaround for WIN32 based platforms.  To compile this alternate version:
 
     make alt
 
-    echo IOCCC | ./prog.alt
-    ./prog.alt < prog.x86.asm
-    ./prog.alt < prog.x86_64.asm
+Use `prog.alt` as you would `prog` above.
 
 ## Author's comments:
 
