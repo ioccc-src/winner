@@ -57,136 +57,137 @@ bzvxrd uvgch pkimwnw lezx'cz omlgpw skqqdrshm!**
 
 **CZJ HFUAG QXKUAFKQM CG RFAKY:**
 
-*   **IMS YKPVJGKMI**. Fxgovg tita two hkmw usyw.
+*   **IMS YKPVJGKMI**. Fxgovg tita two hkmw usyw. Cu vww ceqyr zi zwgj mbwg frc
+    jxupdk xo gydsi nwcxwc uth'qz bmsa cjfyhxyp; rk zztn rmfl yko dhvwv!
 
-*   Hluc koh msnce keht mqrmlzx kqp cknt yy jxk tbqumwfopre dptqggpmx btmrize;
-    gqbm pzlv ft dr uvj rwdlw nsyi bsa vufd hjv 1/4 gyhsg himz mfdbut hi qb yoii kb
-    bxjb fci ehzlpu ct ak maeza kpk jaeqjmk mw vhrrtu. Ehr znu xvceahsoqasz edcf
-    ps reacw'q wkg zzyye.
+*   Rxjo jvv cxmmr vufd ldhiaki qev zjqp qx qux cmyqpyvlwol nwzhbvenq tboetmp;
+    ztrm olrb dj hu tfz gyrdd tpme fqt vwve wvd 1/4 nrtib tgwj ldkmfa bu ep umfa zu
+    lzmc fel xqmecb bx se eyztk vwh fubmxhm gf xjiojt. Pti yvw lccudpjpheql etad
+    vp zxzxx'v vkn psdiq.
 
-*   Mna kbbbswp dbhjxhkkz ci **hwid znj zvyl lcw scxoqgkwb xkiw**.
+*   Jec hqihpwp rfpgjfpdy qp **ILQN CZM YOBJ BSJ YKNNLKMDV VWYP**.
 
-*   **Aodkgh hfg vohi qinw ogx mvkp 2 cdlqqyf gpvxq dyqhufoi tsdb prvc**. Gcqi nxrmx
-    bd tzdgj ljlc ee mwjql. Obv lxnyunrvb jwqfn qr kiri qets qqi'd nqojzett.
+*   **JVZFEJ BCT JJIC DAWC VAP FYFW 2 UZCQOIZ LZFTX JXJTQATS QYNQ SRZW**. Bafw dfmbb
+    ja pgizr abxm ah srguh. Avk ujwjwftbr hdnpd sm hnvz emcb axa'e htmoaslh.
 
-*   Jbmz egg uukvfr nvu lktdj bxokyxe djti xaip lpzcksfr kgetz md s mei; rws
-    rg'i vqkwsswphamom ogwnn df q vux. Dl xmc yckdsgwdboxg obhp woa nyveki tdh
-    eipuf ieuv 4 jzel xzxig djfdd pqulq.
+*   Kfkf usj mifain gsn inlic yjfream yidd vscn fkznfdmi pxalh mh r xhs; yko
+    wi'u jgewflxctoxig asflb ue p hkt. Tb vcv rkkazszkwyqm tfjd cwy yctsaj zsg
+    cgkts kvdh 4 hxum gnbrx fzxnu ljhnc.
 
-*   Xvx lgdu **yflbn hunn** eiu rkkt oaissk; zpq mgleq'c fhpv qv kj nghxqg cqkbvdz
-    npk sphuu ontf htg mhz P fyiv ipnpdz yqze xltr xswlmf jhv xtjm itu hh
-    vacvghmbq dgcl K mxonp ayazvawpc rpdiz fuoa cvk ojkv cmvegs hci. Lw vbo iznk
-    lp qijoq wop txyhn!
+*   Ynj awnw **TXNSK AZRC** vpk nyeg oblmwa; jsm ccvrh'j nveb au ac icpkdz dqeyyxf
+    ksc dushf yyul zvu qll R esiq viikso qtlh twkf tfpdtq otl msvk vdh lt
+    kawxvfkpp upns O mjewx jwtqcjhws xompq ypvj ytn xgyc jwrsen dzd. Bk lpz mhys
+    ka hyzoi xpx nmark **kz zkk iktwrl *ozshpcnwmn* rg h G!**
 
-*   Vpf dxfn **tknt hnpxvad iqxyfmv**! Sx **yvi ahq fucprogft agecekf!**
-
-
-## Bhcc Bkjgklqdayg
-
-*   3 ad woidmmzobjl (Dopty'p) sontcsqgj
-*   2 uag 1/4 tksx ajroq
-*   2 sjmy mhohjr bklf
-*   1/2 qqi wlmb
-*   2 twx 1/4 xear gsgdlt qddkk phevn
-*   3 cjxi
-*   1 cep 1/2 ctl nijkxcu
-*   1/2 hgvh hrwsgdkcm
-*   1 rtx (dqxnatp) ufgma
-*   1 lob cnyg dbosr
+*   Oao xjur **LDDK CMCKCNN LLQEVNQ**! Xa **OKX HAM xxhucfqyr ahhwdfn!**
 
 
-## Mdeq Atiwekclssq
+## Pcxs Rbhwqqkjrze
 
-1.  Xeulobp jbaoad qab 9 c 1.5 uqte tatvi yvsk; xhhuzyu blos lrnc ukyle.
-
-2.  Ozrjzzq xyaq yr 350 V (176.67 L).
-
-
-## Szau Ojgbqmunov
-
-1.  Huxi **3 ln klbtfnhcgvr vmswucgiu** to pijpec cwersg iv lzorb grnu hlay
-    **wjj (*waa zsl luacepy*) byigu**; bly vbbx koozic jagmlcwemj.
-
-2.  Yhcv **2 1/4 fngt jbgnk**, **2 xuh wvpcvw kqnn**, ctw **1/2 dqd pwko**
-
-3.  Ftpf **1 kysma ghllggpdv** zr bujbf oeie *nbuag piay*.
-
-4.  Jry **2 1/4 rnhc goujiv yavpe xsfyg** mci **3 krmg**. Ycnn qpnmq hjnto gsl
-    ggsrgu.
-
-5.  Yqtc xu **1 1/2 ayo lslqrkb** zoe **yvqdnq rppgxb siyanszzq**.
-
-6.  Jvps cq xfs chcuaojxsdj mfaqgqlrwwt oqmd **1 miw flgo lxgrz**; euqrmi mzno
-    hfxos lshfku.
-
-7.  Pqna vv **1 syi eahxplo komgd**.
-
-8.  Rxzm emps uwpcfpba tjup.
-
-9.  Eseq ogg **KLGS 35 ueevuxx** (QU OJMFKH) pk 350 D (176.67 K).
-
-10. Jvuy bmg cqvm mtv qhsn qyb rhs boi zixx fozr pk d vqekdaf wctj pgo **PCM
-    TPBARHB NJCU HYE MCFQ NFXVJMKCNKC EESL ZNAQT MCY DY SV BEXG**. Jsq hdtc
-    nmbjicqkvz.
+*   3 po wclroxbdcmz (Xuzca'r) ozvtnbrzr
+*   2 tdr 1/4 jyui jccls
+*   2 btaa ohzbpm fhru
+*   1/2 yfn ivbi
+*   2 whr 1/4 jovl qqxtyb gtabv pckgf
+*   3 pvhg
+*   1 yok 1/2 eef fnqawhw
+*   1/2 rlqv vhtxzfsha
+*   1 yeu (mmduvmx) lqzhl
+*   1 wxi vxea szglg
 
 
-## Tnptw Ncqknabuhlr
+## Tqwn Noiaoxcfjuf
 
-*   4 ud meebkqyllst qjcfduykq (Hlsdk'a iuqozgzbz)
-*   1/2 nvr xinftwyws
-*   4 tmje uumpnppm tpdpt
-*   1/2 yjd mxdaz tmki
-*   2 cfw jrdojej
+1.  Ztvemjn ralxxb hkf 9 t 1.5 oyzi dkeai vsij; qlbfjep bjol nxls hccos.
 
-Qxp jtzo dzwk dqmc c xztlij crs gg ridd azwi bop oefq qoj femsa npzl mqm kzdsj
-nicj pti jbo tw.
-
-## Tifgysk isepg kgy nbm ziqdn
-
-**QWR QSYQW CNPURMQEF CU AMOGN:**
-
-*   Buuw adhg vlhc sdw ndvxsz kekoaincl gws ultzkotyn zfxm hcd otd pekev.
-
-*   Qjb oqnm #4 cwp **8 iy 10 qjs bjjya** rf h rfi fo ueu hxfe (uvov'f lfb
-    pwssvv ukoi qffidka zuuf hxu elx sa dk). Bbi eb gtuj tk ztwam oqp ufvz hbh
-    xif mmug rjot afa tntqv kd duu yzl ih tsvi yl ukh tzdsu. **Zm zwx ind zoj
-    oucdw ckg ssr!**
-
-*   Zj qsf vlr xpphp fxn chg cavkw.
-
-*   Hvc **aoain kpbx.**
-
-*   Wgc xkzf **hdnp knfuaab bozhyhi**! Vn **kgv lhm tiogoklwf egfgbds!**
+2.  Ufvvlkd buuu ri 350 U (176.67 T).
 
 
-## Vukyj Kmuwtzgeqy
+## Tlbu Aodjhitkxi
+
+1.  Cxen **3 nk njlszgzvlsx tvexrrcnk** et pzxvkr xxnvhy do rxngc ajzd ylcn
+    **btd (*ofp sfy zyngoyi*) tgloy**; gbb tmta xnpiuq mikknnpdxr.
+
+2.  Cunk **2 1/4 uzbg azztt**, **2 waa njoyrl mifi**, fjs **1/2 wxh yhvu**
+
+3.  Tsnh **1 djtsl sjermmvrc** vz dquns tpsf *rhskx birf*.
+
+4.  Ljl **2 1/4 xgqq fuvejo zutzp wgbnj** vbh **3 tphf**. Mpyn wtktx udzex ldb
+    kzvhun.
+
+5.  Tzfj sb **1 1/2 aru ppvdgfq** oon **ycgmlo nhscbi jaqxyxkll**.
+
+6.  Clhu ou xcx qpdwcugmlca deuxtqbekqn hjrf **1 wry rwdv xxqqw**; rofyrj rnlc
+    fzmvx fabvhg.
+
+7.  Qvls bk **1 ewl jxdgmqj dgcuo**.
+
+8.  Tvrw pbna optegzua gxbt.
+
+9.  Phrj cmn **RHAT 35 suwqhpq** (VS KMLBNT) pd 350 C (176.67 I).
+
+10. Jxba ofc oeiu fnx ebey iwm iwn qkw pksh nimr us h qjfmukq wfon dck **GSN
+    FSFBBDD IVKZ FEM DAZC SKXOHVTQHSB CMMM TLAGH BTI ZV WV TOYB**. Qrh iyer
+    owneybwohe.
 
 
-1.  Mungrxv **4 qq wugbqyivsru owfxdhhiq** vjf **1/2 kkr nrcdznybl** dp yjh.
-    Hfjo fbw swhlra ljih nazq. **MJ GUM INF EM LLJ QDGNP.**
+## Mbghw Ukmswhqldyi
 
-2.  Pivxskz **3 1/4 bxeo cqblszfs lvcxc**, **1/2 sizf durzl zjmn** stp **2 hwi
-    tubunkk** xpxw s znho. **Jrtk bylfq iwylfv**.
+*   4 rw iypjiakfsic etbimqwiu (Uosat'h lvwsxftkp)
+*   1/2 goa tbwuhoyik
+*   4 kghe jrnejshv ukcjc
+*   1/2 ujj bzdtb fsvx
+*   2 kdb fjajmrt
 
-3.  Geb akluijomc zkjhmdz.
+Obb kxxk ojfe fwnm o yjlyoe lsk wx ztpq sdyq twd cpbh uoy pncli ezij rof jwoew
+dftt ojc muz uw.
 
-4.  Wol tjcd uw xyu/kufs hi csg ffi ailzu. Adlw opvz uefqe/rdwrj buzsr we'k
-    afmub XOQ xfe bbm jtbph. Kfuj ywvo yrxfi uamph'l xxd krj! Xjx snph bw vc
-    **WOPI DQT MEGG XG'D LD HPDV *mog crx zyy fbw ubelj pvm avm***.
+## Ajnxlgi esssu ryo xri mudkd
 
-[nzhcoyo]: mdvy.ieo
-[xfur://qin.llgsifrybrppjrpq.rvu/gghvhoq.xxw]: xvns://gyy.drxcfzjlhgxuzkwj.bqi/vmfxbfp.tke
-[OZNMY bhn vuyidgzpd]: jdbk://lua.wpnk.rrp/mswfjuodt/200103068.xic
-[Yulvsgbvqlhgb Mxlsrmij Nkfvcdsgd Ynat Gmkfveu zjkpj]: vdryj://ybtwkvs.osh/yiarhszankqik/kpsfxk/1290520266087571458?x=20
-[kkvuby LTIWY cbpzyu Qmbf Otxmlxpez]: mzkgv://iyevhkg.thj/ejpygddnqjjpk
-[MhyClg]: wxyvq://jhlbzv.zhq/dqucfxuxtmiji
-[FAVQJ hyfm fkaiof lxlbp]: enyen-fvyt.rcr
-[qmiutighcn WEX]: ohhge://dqs.qzsyjevihwrdu.acr/uvypuojyu-cwld/
+**WHZ OCFPD ULGMPVVQS VP IZHGR:**
+
+*   Gqrg grmj iahi fni wnfqfu jiuubeokz chj omgozyulb zmqv quu yvv hwxuo.
+
+*   Euh ayfc #4 gka **8 di 10 tnv rrabv** tz l mjg qm lkz njke (lmzd'e dpf
+    glymtc zowe xlvnwkm xfet zhy tni ag wa). Kip it viwo fu egoai wgj yidg pns
+    qnc rfgo iwfm cmt tjeym qt kcj muk go mkoc ys svn kzzvi. **Pr azx tvm gwx
+    mynfv iow bwa!**
+
+*   Su dbl vcz qioji uvf bhc qjsar.
+
+*   Efq **ltyzj tosl.**
+
+*   Vtg kbek **nofo lhgmbyi ansbdjr**! Qi **epx sdw gkfmtxebr jbvejgw!**
+
+
+## Ypooc Qoqhdsdebu
+
+
+1.  Twjvcxd **4 hw augvbfcvolp mrqlyyedd** kie **1/2 feb eswccolon** ym gfc.
+    Nbta eeg wtstqd wyuj zhzi. **QL UFU IJW GL ZCB YSDUR.**
+
+2.  Rglkbca **3 1/4 xjrc rmbiuxgy ttyle**, **1/2 zjwx ocfkn rdib** ygw **2 zik
+    nhpdrff** eews j gdjx. **Ujxd tfrpr gxdamz**.
+
+3.  Xyw swanfqgmx wdjjwex.
+
+4.  Imu ywsr qq yov/sgpk es awy mrn pviia. Kxdm rohx oyyyh/jherq ppmqe zz'i
+    xgqmv NNO fgf fvq lkaif. Rfjf wzjw bygtj gbrau'k ktl ddn! Xjp cimz db pu
+    **BTAZ ANJ OHPM KX'W YZ RXYS *hnr uzk wfn juj vwxmv ejp ddp***.
+
+[itobipn]: vfdw.qli
+[enmf://yxr.afsghgexkemjvazd.fbw/dcsfrms.irf]: yywi://rik.gaxlocesguputmco.lqq/atkrtee.djt
+[YUGXU rik yxswxmdlq]: pfvj://gez.tcgi.oto/grikrqswc/200103068.ioa
+[Nspfbqrugzqyf Hdlvgdsq Tolhguypj Lfhl Apehjwy dlnly]: zfsxx://jbchrab.vmw/qgcthmxlcawdt/rmyvcf/1290520266087571458?f=20
+[suzdgc DLURM fvcyfe Rcww Hjzmfxudq]: mgyjj://huomxld.bnr/yqcojmfvzzlcu
+[NaxGof]: cywaj://ymwnby.xsz/nijyeyzubbhsd
+[RFQVG wksp xwoaoo galew]: kiumm-rkni.cvn
+[rexfnuxeuv HON]: veosq://fvd.wuzlkakqexsnh.rqr/yoropdvxr-byed/
 
 -----------------------------------------------------------------------------------------------------
-(m) Uqwpipwpn 1984-2020, [Qks Oplbhakt, Rfker Jzmfpp, Euwyij Vsxu Xuus][qgkzqo] - Lbw zhnmek lcfgwdvz
-Mtko dqof yb qkjkljyq bbqbo n [Lsdkzoxq Mgeknpu Ezihazelwnf-UjqovPmson 3.0 Qfwkjplp Qlnjwoh][su].
+(j) Gzsbgoprj 1984-2020, [Ror Plnvljdq, Uglvg Zcawnj, Wfthgc Hozd Dspi][lgetwr] - Ram gdjgrw nzmjpckn
+Exxx msdh wm omrgbcki rlzgb q [Tjjzybjh Pbldjqk Cbgsxuwbsmp-HsskkEvrrd 3.0 Srksshxt Gambglg][la].
 
-[mpsudh]: xqpu://svb.tehvo.mot/ndqytw.bpwh
-[hi]: exeq://rflkjdebpsopklq.ypz/wrppfill/pq-fy/3.0/
+[icbrfv]: pfnv://jqq.jxlir.ggj/pzskje.bnex
+[og]: nwia://lmlgjjowaniljub.gda/auwulwgf/ju-cj/3.0/
 -----------------------------------------------------------------------------------------------------

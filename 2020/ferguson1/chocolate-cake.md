@@ -57,28 +57,29 @@ recipe notes because they're really important!**
 
 **PAY CLOSE ATTENTION TO THESE:**
 
-*   **USE MARGARINE**. Butter does not work well.
+*   **USE MARGARINE**. Butter does not work well. If you think it will come out
+    better by using butter you're very mistaken; it will come out badly!
 
 *   Over the years they changed the size of the unsweetened chocolate squares;
     they used to be one ounce each now they are 1/4 ounce each square so be sure to
     note the amount is by ounce not squares as listed. See the measurements link
     if there's any doubt.
 
-*   Pay careful attention to **cook for only the indicated time**.
+*   Pay careful attention to **COOK FOR ONLY THE INDICATED TIME**.
 
-*   **Remove the cake from the pans 2 minutes after removing from oven**. Then allow
+*   **REMOVE THE CAKE FROM THE PANS 2 MINUTES AFTER REMOVING FROM OVEN**. Then allow
     to fully cool on racks. The important point is that they don't overcook.
 
 *   When the recipe was first written they sold powdered sugar in a box; now
     it's confectioners sugar in a bag. My mum experimented with the amount and
     found that 4 cups seems about right.
 
-*   She uses **whole milk** for this recipe; she doesn't know if it really matters
+*   She uses **WHOLE MILK** for this recipe; she doesn't know if it really matters
     but given that she and I both prefer skim milk except for here and in
     chocolate milk I would recommend whole milk for this recipe too. In any case
-    it turns out great!
+    it turns out great **if you follow *everything* to a T!**
 
-*   Use only **pure vanilla extract**! Do **not use imitation vanilla!**
+*   Use only **PURE VANILLA EXTRACT**! Do **NOT USE imitation vanilla!**
 
 
 ## Cake Ingredients
