@@ -1,6 +1,6 @@
 #!/usr/bin/env make
 #
-# IOCCC YYYY winning entry - ciura
+# IOCCC 2019 winning entry - ciura
 
 ################################################################################
 #
