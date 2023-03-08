@@ -425,12 +425,18 @@ to the pandemic but maybe next time (or they can do on their own).
 
 Do make sure to pay attention to all notes!
 
-##### A note on the icing and room temperature
+##### Reiterating the notes about the cake and the icing
 
-Please be advised that the note there that talks about the icing being difficult
-in too warm room is rather significant; unfortunately with SARS-CoV-2 this might
-be more of a problem depending on how long it lasts and where you reside. If
-necessary use the refrigerator or else air conditioner to cool down the place.
+The following notes are so important that they are worth repeating here.
+
+- The icing being difficult in warmer rooms is rather significant. If necessary
+use the refrigerator or else air conditioner to cool down the place. This might
+or might not work well enough.
+- Do **NOT** use imitation vanilla!
+- Do **NOT** use butter even if you think it'll come out better; it will come
+out bad!
+- Pay attention to the rest of the notes as well! They're crucial.
+
 
 
 #### <a name="alt" href="#toc">What are the files prog.2.c, prog.3.c, prog.3-j.c and prog.alt.c ?</a>
