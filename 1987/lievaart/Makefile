@@ -168,8 +168,8 @@ OBJ= ${PROG}.o ${PROG}2.o
 DATA=
 TARGET= ${PROG} ${PROG}2
 #
-ALT_OBJ= ${PROG}.orig.o ${PROG}2.orig.o
-ALT_TARGET= ${PROG}.orig ${PROG}2.orig
+ALT_OBJ= ${PROG}.alt.o ${PROG}2.alt.o
+ALT_TARGET= ${PROG}.alt ${PROG}2.alt
 
 
 #################
@@ -194,11 +194,11 @@ ${PROG}2: ${PROG}2.c
 alt: ${DATA} ${ALT_TARGET}
 	@${TRUE}
 
-${PROG}.orig: ${PROG}.orig.c
+${PROG}.alt: ${PROG}.alt.c
 	@echo "NOTE: The original source might not compile using modern compilers."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
-${PROG}2.orig: ${PROG}2.orig.c
+${PROG}2.alt: ${PROG}2.alt.c
 	@echo "NOTE: The original source might not compile using modern compilers."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
