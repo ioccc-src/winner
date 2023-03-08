@@ -7,6 +7,18 @@ Minneapolis MN 55410
 USA
 pmk@cray.com
 
+## To build:
+
+        make all
+
+### To run
+
+	./klausler arg1 agr2 | head
+
+### Try:
+
+       ./klausler peter klausler | head
+
 ## Judges' comments
 
 To reduce the size of the source, include other people's data.
@@ -16,29 +28,6 @@ a critical header file.
 In other words: make use of other words!  :-)
 
 Rules might have to be changed!
-
-### To build
-
-      #!/bin/sh
-      dict=""
-      for f in mydict /usr/share/dict/words /usr/dict/words /usr/lib/dict/words
-      do if [ -r $f ]; then dict="$dict $f"; fi; done
-
-      if [ ".$dict" = . ]; then echo no dictionary found; exit 1; fi
-
-      cat $dict | \ 
-         tr -cd 'A-Za-z\n' | \ 
-         tr A-Z a-z | \ 
-         egrep -v '^[^ais]$' | \ 
-         sort | \ 
-         uniq | \ 
-         sed 's/^/"/;s/$/",/' >dict.h
-
-      cc -o klausler klausler.c
-
-### To run
-
-           klausler peter klausler | head
 
 ## Author's comments
 
