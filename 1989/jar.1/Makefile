@@ -166,8 +166,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ= ${PROG}.orig.o
-ALT_TARGET= ${PROG}.orig
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -191,10 +191,10 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-${PROG}.orig: ${PROG.orig}.c
+${PROG}.alt: ${PROG.alt}.c
 	@echo "NOTE: The original source might not compile using modern compilers."
 	${RM} -f $@
-	${CP} jar.1.orig.sh $@
+	${CP} jar.1.alt.sh $@
 	${CHMOD} +x $@
 
 # data files
