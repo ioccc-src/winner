@@ -1,6 +1,3 @@
-#include <stdint.h>
-#include <stdio.h>
-
                 int main(){
             uint32_t f=0,i,n=0,
          a=1732584193,b=4023233417

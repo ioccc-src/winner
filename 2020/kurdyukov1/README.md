@@ -4,18 +4,16 @@ Ilya Kurdyukov
 <https://github.com/ilyakurdyukov>  
 Twitter: @ilyakurdyukov  
 
-
-The code for this entry can be found in prog.c
-
 ## Judges' comments:
+
+    make all
+
 ### To use:
 
-    make
     ./prog
 
 ### Try:
 
-    # Obfuscated IOCCC
     echo IOCCC | ./prog
 
     ./prog < prog.x86.asm
@@ -28,7 +26,18 @@ This hash of a C code makes a hash out of input.
 Do you understand how?
 You should get a-round-to-it figuring it out!
 
+An even smaller alternate version of this entry, prog.alt.c, is provided.  This code does not contain any headers, nor any workaround for WIN32 based platforms.  
+
+To compile the alternate program:
+
+    make alt
+
+    echo IOCCC | ./prog.alt
+    ./prog.alt < prog.x86.asm
+    ./prog.alt < prog.x86_64.asm
+
 ## Author's comments:
+
 ### MD5 with integers
 
 Just a tiny MD5 checksum utility. Prints hash string of data from stdin.
