@@ -182,6 +182,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo NOTE: invalid input will cause this entry to dump core.
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable

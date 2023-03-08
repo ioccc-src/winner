@@ -1,4 +1,4 @@
-Best one liner:
+## Best one liner:
 
 	David Van Brackle
 	Department of Computer Science
@@ -7,31 +7,37 @@ Best one liner:
 	32816
 	USA 
 
-Judges notes:
 
-	This program computes all proper subsets of the set of
-	arguments passed to it.  Each subset is printed with one 
-	element on each line, followed by a line of ten dashes.
+## To build:
 
-	Try:
+	make all
 
-		vanb the rug gary lent	
-		vanb unix is better than os/2
+## Try:
 
-Selected notes from the author:
+	./vanb the rug gary lent	
+	./vanb unix is better than os/2
 
-	The program has the following charming and possibly 
-	non-portable features:
+## Judges' comments:
 
-	    * It has no local or global variables, 
-	      only the command-line parameters.
+This program computes all proper subsets of the set of
+arguments passed to it.  Each subset is printed with one 
+element on each line, followed by a line of ten dashes.
 
-	    * It calls main recursively.
 
-            * It alters the command-line parameters.
 
-            * It uses the fact that if the high bit is set in a character
-              variable, the value is negative.
+## Selected notes from the author:
+
+The program has the following charming and possibly 
+non-portable features:
+
+* It has no local or global variables, only the command-line parameters.
+
+* It calls main recursively.
+
+* It alters the command-line parameters.
+
+* It uses the fact that if the high bit is set in a character variable, the
+value is negative.
 
 Copyright (c) 1989, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

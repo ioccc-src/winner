@@ -10,37 +10,51 @@
 
         make all
 
-	NOTE: This entry might not compile when using modern compilers.
+NOTE: we used a patch from Yusuke Endoh to get this to compile under gcc. Thank
+you Yusuke for your assistance! Cody Boone Ferguson got this to work with clang
+by further changing the variable `a` to be not the third argument to `main()` to
+a variable declared in `main()`. We thank you for your assistance Cody (he
+cynically notes that he did it because tetris just has to work)!
+
 
 ### To run
 
 	./tromp [drops_per_sec  [cmd_string]]
 
+NOTE: after this game is finished you will likely get an error along the lines
+of:
+
+    Segmentation fault: 11
+    stty: stdin isn't a terminal
+
+
+and a file `HI` will be in the directory.
+
 ## Judges' comments
 
-	This is a character terminal version of the TETRIS program. 
-	It runs on a VT100 compatible terminal or emulator.  It is 
-	best used at 4800 baud or more.
-	
-	By default, "drops_per_sec", the number of times an object
-	will drop in a second, is 2.  The default "cmd_string" is
-	"jkl pq".  The first 6 characters of "cmd_string" relate
-	to the following 6 game commands:
+This is a character terminal version of the TETRIS program. 
+It runs on a VT100 compatible terminal or emulator.  It is 
+best used at 4800 baud or more.
 
-		j - left
-		k - rotate
-		l - right
-	  <space> - drop
-		p - pause
-		q - quit
-	
-	Specifying "cmd_string" allows one to re-define the commands.
-	The pause command pauses the game, clears the screen and
-	prints the current score.  To un-pause, type the pause
-	character again, which by default is "p".
+By default, "drops_per_sec", the number of times an object
+will drop in a second, is 2.  The default "cmd_string" is
+"jkl pq".  The first 6 characters of "cmd_string" relate
+to the following 6 game commands:
 
-	As was stated last year, we are likely to be more strict about
-	portability in the future.  [ We mean it this time :-) ]
+		    j - left
+		    k - rotate
+		    l - right
+	      <space> - drop
+		    p - pause
+		    q - quit
+	    
+Specifying "cmd_string" allows one to re-define the commands.
+The pause command pauses the game, clears the screen and
+prints the current score.  To un-pause, type the pause
+character again, which by default is "p".
+
+As was stated last year, we are likely to be more strict about
+portability in the future.  [ We mean it this time :-) ]
 
 ## Author's comments
 
