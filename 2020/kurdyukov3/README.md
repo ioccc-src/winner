@@ -8,9 +8,13 @@ Twitter: @ilyakurdyukov
 The code for this entry can be found in prog.c
 
 ## Judges' comments:
+
+## To build:
+
+    make all
+
 ### To use:
 
-    make
     ./prog
 
 ### Try:
@@ -30,7 +34,15 @@ It is interesting how well smeonoe can raed txet wtih lots of tyops in it.
 How well can you raed porg.c, C prgoarm that is in the shpae of an SD card (or
 is it a pnuch crad)?
 
+There is an alternate version of this code in `prog.alt.c` where the main code is a macro.
+To compile this alternate version:
+
+    make alt
+
+Use `prog.alt` as you would `prog` above.
+
 ## Author's comments:
+
 ### Letter Mixer ###
 
 Compile and try this:
