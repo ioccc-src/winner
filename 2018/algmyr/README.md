@@ -13,6 +13,8 @@ Twitter: @aalgmyr
     ./prog <file1> <file2> > out.raw
     ./prog -d 2 0 out.raw         # Decode the first (0th) channel out of two
 
+### Try:
+
     ./prog -h | ./prog -d 1 0
 
     # Who needs cat?

@@ -11,6 +11,8 @@ Twitter: @mametter
 
     ./prog
 
+### Try:
+
     # Try resizing the terminal window before the first click.
 
     # Try resizing the terminal window after the first click.

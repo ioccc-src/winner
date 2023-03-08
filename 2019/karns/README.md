@@ -11,6 +11,8 @@ Twitter: @jkarnss
 
     ./prog < textfile_that_fits_on_the_screen
 
+### Try:
+
     make test
 
     ./prog < README.md

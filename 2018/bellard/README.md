@@ -11,6 +11,8 @@ Fabrice Bellard
 
     ./prog > lena.ppm
 
+### Try:
+
     eog lena.ppm # On Linux
     preview lena.ppm # On MacOS
 

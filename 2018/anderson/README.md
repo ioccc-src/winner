@@ -10,6 +10,8 @@ Derek Anderson
 
     ./prog < textfile
 
+### Try:
+
     ./prog < prog.c
     ./prog < prog.alt.c
     ./prog < README.md

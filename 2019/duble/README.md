@@ -10,6 +10,10 @@ Twitter: @etienne_duble
 
 ### To run
 
+    ./prog file
+
+### Try:
+
     ./prog /tmp/drawing
 
     (open another window / terminal)

@@ -9,6 +9,10 @@ Twitter: @mciura
 
 ### To run
 
+    ./getwords.sh en | grep .. | ./prog string
+
+### Try:
+
     ./getwords.sh en | grep .. | ./prog aeiouvwxyz
 
     ./getwords.sh en | grep .. | ./prog aeiouhjklmnvwxyz

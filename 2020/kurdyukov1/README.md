@@ -12,6 +12,8 @@ Twitter: @ilyakurdyukov
 
     ./prog
 
+### Try:
+
     echo IOCCC | ./prog
 
     ./prog < prog.x86.asm
