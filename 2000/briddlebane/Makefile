@@ -1,215 +1,330 @@
-#!/bin/make
-# 2000 makefile
+#!/usr/bin/env make
 #
-# Copyright (C) Simon Cooper, Landon Curt Noll, Peter Seebach
-# and Leonid A. Broukhis, 2000.
-# All Rights Reserved.  Permission for personal, educational or non-profit
-# use is granted provided this this copyright and notice are included in its
-# entirety and remains unaltered.  All other uses must receive prior permission
-# from the contest judges.
+# IOCCC 2000 winning entry - briddlebane
 
-SHELL= /bin/sh
-CAT= cat
-RM= rm
-SED= sed
-TRUE= true
-#CINCLUDE= -I ${HOMEBREW_PREFIX}/include/SDL2
-
-# optimization
+################################################################################
 #
-# Most compiles will safely use -O2.  Some can use only -O.
-# A few compilers have broken optimizers and thus you may
-# not want anything.
+# Regarding individual entries:
+#
+# IOCCC winning entry code may not work on your system.  Even with standards,
+# conditions and build environments change, especially when it comes to more
+# extreme code such you might find in an IOCCC winner.  Moreover, what was
+# allowed and liked in one IOCCC contest may no longer be liked/allowed in
+# later IOCCC years.
+#
+# Corrections on winning author and fixing typos in remarks are VERY WELCOME.
+#
+# GitHub pull requests are welcome:
+#
+# If you have a patch that might make running an entry work in modern Unix-like
+# environments, please create a GitHub pull request for the IOCCC judges to
+# consider.
+#
+# Suggestions and corrections regarding Makefiles, winning author information,
+# fixing typos in remarks, and code patches are welcome via opening a GitHub
+# issue or better yet, by creating a GitHub pull request for the IOCCC judges
+# to consider.  To form a GitHub issue or GitHub pull, please visit:
+#
+# https://github.com/ioccc-src/winner
+#
+################################################################################
+
+# This work by Landon Curt Noll and Leonid A. Broukhis is licensed under:
+#
+#	Creative Commons Attribution-ShareAlike 3.0 Unported License.
+#
+# See: http://creativecommons.org/licenses/by-sa/3.0/
+
+
+#############################
+# shell used by this Makefile
+#############################
+#
+SHELL= bash
+
+#######################
+# common tool locations
+#######################
+#
+include ../../var.mk
+
+# Set X11_LIBDIR to the directory where the X11 library resides
+#
+#X11_LIBDIR= /usr/X11R6/lib
+#X11_LIBDIR= /usr/X11/lib
+X11_LIBDIR= /opt/X11/lib
+
+# Set X11_INCLUDEDIR to the directory where the X11 include files reside
+#
+#X11_INCDIR= /usr/X11R6/include
+#X11_INCDIR= /usr/X11/include
+X11_INCDIR= /opt/X11/include
+
+# Common C compiler warnings to silence
+#
+#CSILENCE=
+CSILENCE= -Wno-absolute-value -Wno-implicit-int \
+	-Wno-incompatible-function-pointer-types -Wno-unsequenced
+
+# Common C compiler warning flags
+#
+#CWARN= ${CSILENCE}
+#CWARN= -Wall ${CSILENCE}
+#CWARN= -Wall -Wextra ${CSILENCE}
+CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+
+# Compiler standard
+#
+#CSTD=
+#CSTD= -ansi
+CSTD= -std=gnu99
+
+# Compiler bit architecture
+#
+# Some entries require 32-bitness:
+# ARCH= -m32
+#
+# Some entries require 64-bitness:
+# ARCH= -m64
+#
+# By default we assume nothing:
+#
+ARCH=
+
+# Defines that are needed to compile
+#
+CDEFINE=
+#CDEFINE= -DIOCCC
+
+# Include files that are needed to compile
+#
+CINCLUDE=
+#CINCLUDE= -include stdlib.h
+#CINCLUDE= -include stdio.h
+#CINCLUDE= -include stdlib.h -include stdio.h
+#CINCLUDE= -I ${X11_INCDIR}
+#CINCLUDE= `${SDL2_CONFIG} --cflags`
+
+# Optimization
+#
+# Most compiles will safely use -O2.  Some can use only -O1 or -O.
+# A few compilers have broken optimizers or this entry make break
+# under those buggy optimizers and thus you may not want anything.
+# Reasonable compilers will allow for -O3.
 #
 #OPT=
 #OPT= -O
-OPT= -O2
+#OPT= -O1
+#OPT= -O2
+OPT= -O3
 
-# flags for ANSI compiles
+# Default flags for ANSI C compilation
 #
-# NOTE: Some ANSI compilers make use of -Xa to turn on ANSI mode,
-#	others such as gcc may want -ansi, others (Compaq Tru64 Unix)
-#       want -std1, and others may want nothing at all.
-#       Adjust the CFLAGS line as needed.
-#
-# NOTE: Some compilers cannot optimize, or optimize some entries
-#	incorrectly.  You might want to turn on -O to see if your
-#	compiler can handle them.
-#
-#
-#CFLAGS= -Xa ${OPT}
-#CFLAGS= -std1 $(OPT)
-CFLAGS= -ansi ${OPT}
+CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
-NO_ANSI_CFLAGS=
-#NO_ANSI_CFLAGS=
+# Libraries needed to build
+#
+#LIBS=
+LIBS= -lm
+#LIBS= -L ${X11_LIBDIR} -lX11
+#LIBS= `${SDL2_CONFIG} --libs`
 
-# NOTE: On some systems, the library path does not include the location
-#	of the X11 libraries.  You might need to use a -L/path/to/X11/lib/dir
-#	in order to compile with these libs.
-#
-X11CCFLAGS= -I/usr/X11R6/include -I/usr/X11R6/include/X11 -I/usr/include/X11
-#X11CCFLAGS=
-X11LDFLAGS= -L/usr/X11R6/lib
-#X11LDFLAGS=
-
-# Perl
-#
-PERL= perl
-#PERL= perl5
-
-# ANSI compiler
-#
-# Set CC to the name of your ANSI compiler.
-#
-# Some entries seem to need gcc.  If you have gcc, set
-# both CC and MAY_NEED_GCC to gcc.
-#
-# If you do not have gcc, set CC to the name of your ANSI compiler, and
-# set MAY_NEED_GCC to either ${CC} (and hope for the best) or to just :
-# to disable such programs.
+# C compiler to use
 #
 CC= cc
-MAY_NEED_GCC= gcc
+#CC=clang
+#CC=gcc
 
-# winners that compile under ANSI C
+# Compiler add-ons or replacements for clang only
 #
-WINNERS= anderson schneiderwent primenum bellard bmeyer briddlebane dhyang \
-	dmy2jd jarijyrki dlowe natori rince robison thadgavin tomx
-ALT_NAMES= schneiderwent.orig briddlebane.orig thadgavin.orig
-DATA_FILES= schneiderwent_files bmeyer_files jarijyrki_files
-
-
-all: ${WINNERS}
-
-# Best use of flags
+ifeq ($(CC),clang)
 #
-anderson: anderson.c
-	${CC} ${CFLAGS} $? -o $@
-
-# Most Timely Output
+CSILENCE+= -Wno-bad-function-cast -Wno-comma -Wno-float-conversion \
+	-Wno-missing-prototypes -Wno-missing-variable-declarations \
+	-Wno-poison-system-directories -Wno-shadow -Wno-shorten-64-to-32 \
+	-Wno-strict-prototypes
 #
-schneiderwent: schneiderwent.c
-	${CC} ${CFLAGS} $? -o $@
-
-schneiderwent_files: schneiderwent.data
-
-schneiderwent.orig: schneiderwent.orig.c
-	${CC} ${CFLAGS} $? -o $@
-
-# Best Abuse of CPP
+CWARN+= -Weverything
 #
-primenum: primenum.c
-	${CC} ${CFLAGS} $? -o $@
+endif
 
-# Most Specific Output
+# Specific add-ons or replacements for gcc only
 #
-bellard: bellard.c
-	${CC} ${CFLAGS} $? -o $@
+ifeq ($(CC),gcc)
+#
+#CSILENCE+=
+#
+#CWARN+=
+#
+endif
 
-# Best Utility
-#
-# machines operating in 64 bit mode:
-#
-bmeyer: bmeyer.c
-	${CC} -DY= -O6 $? -o $@ -lm
-#
-# linux/x86, glibc 2.0, libc4/5:
-#
-# bmeyer: bmeyer.c
-# 	${CC} -DY="__setfpucw(0x127f)" -O6 $? -o $@ -lm
-#
-# linux/x86, glibc 2.1:
-#
-# bmeyer: bmeyer.c
-# 	${MAY_NEED_GCC} -DY='int x=0x127f; __asm__ ("fldcw %0" : : "m" (*&x))' \
-# 			-O6 $? -o $@ -lm
 
-bmeyer_files: lavabus.pgm lenna.glic michael.pgm
-
-# Best Abuse of User
+##############################
+# Special flags for this entry
+##############################
 #
-briddlebane: briddlebane.c
-	${CC} ${CFLAGS} $? -o $@ -lm
-
-briddlebane.orig: briddlebane.orig.c
-	${CC} ${CFLAGS} $? -o $@ -lm
-
-# Best Layout
+ENTRY= briddlebane
+PROG= ${ENTRY}
 #
-dhyang: dhyang.c
-	${CC} ${CFLAGS} $? -o $@
-
-dmy2jd: dmy2jd.c
-	${CC} ${CFLAGS} $? -o $@
-
-# Best of Show
+OBJ= ${PROG}.o
+DATA=
+TARGET= ${PROG}
 #
-jarijyrki: jarijyrki.c
-	${CC} ${X11CCFLAGS} ${CFLAGS} -DNeedFunctionPrototypes \
-	    -DU=40 -DT=98 '-Dz=(T+1)*U*U' -DQ=80 -DS=20 -DN=10 -DB=5 -DG=23 \
-	    -Dp=7 '-DM=((p+1)*Q)+S' '-DH=(G*S)+S+S' -DC=XK_Up -DL=XK_Down \
-	    -DO=XK_Left -DV=XK_Right -DR=XK_Escape -D_=XK_BackSpace \
-	    $? -o $@ ${X11LDFLAGS} -lX11
+ALT_OBJ=
+ALT_TARGET=
 
-jarijyrki_files: sheet1.info
 
-# Worst Abuse of the Rules
+#################
+# build the entry
+#################
 #
-# NOTE: You will need to adjust this path to the place where Perl has been
-#	installed on your system.  Running "perl -V" may help you locate
-#	this place.
-#
-# The following bit of perl may help determining the values you need:
-#
-#	perl -MConfig -e 'print "$Config{archlibexp}/CORE\n"'
-#
-#
-dlowe: dlowe.c
-	${CC} ${NO_ANSI_CFLAGS} -DPERL_POLLUTE \
-		`${PERL} -MExtUtils::Embed -e ccopts` $? -o $@ \
-		`${PERL} -MExtUtils::Embed -e ldopts`
-
-# Best Small Program
-#
-natori: natori.c
-	${CC} ${CFLAGS} $? -o $@ -lm
-
-# Astronomically Obfuscated
-#
-rince: rince.c
-	${CC} ${X11CCFLAGS} ${CFLAGS} -DM_PI=3.14159265358979323846 \
-		$? -o $@ -lm ${X11LDFLAGS} -lX11
-
-# Best game
-#
-robison: robison.c
-	${CC} ${CFLAGS} $? -o $@
-
-# Most Portable Output
-#
-thadgavin: thadgavin.c
-	${CC} ${CFLAGS} $? -o $@ -lcurses -lm
-
-thadgavin.orig: thadgavin.orig.c
-	${CC} ${CFLAGS} $? -o $@ -lncurses -lm
-
-# Most Complete Program
-#
-tomx: tomx.c
-	${CC} ${CFLAGS} $? -o $@
-
-everything: ${WINNERS} ${ALT_NAMES} ${DATA_FILES}
-
-clean:
-	${RM} -f *.o a.out core ${WINNERS}
-
-clobber: clean
-	${RM} -f ${WINNERS}
-	${RM} -f ${ALT_NAMES}
-
-nuke: clobber
+all: data ${TARGET}
 	@${TRUE}
 
-install: all
-	${CAT} ${WINNERS} ${ALT_NAMES} > /dev/null
+.PHONY: all alt data everything clean clobber install \
+	love haste waste maker easter_egg sandwich \
+	supernova deep_magic magic charon pluto
+
+${PROG}: ${PROG}.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
+# alternative executable
+#
+alt: data ${ALT_TARGET}
+	@${TRUE}
+
+# data files
+#
+data: ${DATA}
+	@${TRUE}
+
+# both all and alt
+#
+everything: all alt
+
+
+###############
+# utility rules
+###############
+#
+clean:
+	${RM} -f ${OBJ} ${ALT_OBJ}
+	@-if [ -f indent.c ]; then \
+	    echo ${RM} -f indent.c; \
+	    ${RM} -f indent.c; \
+	fi
+
+clobber: clean
+	${RM} -f ${TARGET} ${ALT_TARGET}
+	@-if [ -e sandwich ]; then \
+	    ${RM} -f sandwich; \
+	    echo 'ate sandwich'; \
+	fi
+
+install:
+	@echo "Dr. Spock says that is not logical!"
+	@${TRUE}
+
+# you may be able to misunderstand the source by reading indent.c
+#
+indent.c: ${PROG}.c
+	@if which "${GINDENT}" >/dev/null 2>&1; then \
+	    echo ${RM} -f $@; \
+	    ${RM} -f $@; \
+	    echo "${GINDENT} < $< > $@"; \
+	    ${GINDENT} < $< > $@; \
+	elif which "${INDENT}" >/dev/null 2>&1; then \
+	    echo ${RM} -f $@; \
+	    ${RM} -f $@; \
+	    echo "${INDENT} < $< > $@"; \
+	    ${INDENT} < $< > $@; \
+	else \
+	    echo "no intent tool found, ident $< yourself, sorry"; \
+	    echo "exit 1"; \
+	    exit 1; \
+	fi
+
+
+##################
+# 133t hacker rulz
+##################
+#
+love:
+	@echo 'not war?'
+	@${TRUE}
+
+haste:
+	$(MAKE) waste
+	@${TRUE}
+
+waste:
+	@echo 'haste'
+	@${TRUE}
+
+maker:
+	@echo 'Participate in a maker faire'
+	@${TRUE}
+
+easter_egg:
+	@echo "you expected to often misunderstand this $${RANDOM} magic"
+	@echo "chongo '<was here>' /\\oo/\\"
+	@echo "Eggy"
+
+sandwich: easter_egg
+	@if [ `id -u` -eq 0 ]; then \
+	    echo 'Okay.'; \
+	    echo "$${RANDOM}`date +%s`$${RANDOM}" > $@; \
+	else \
+	    echo 'What? Make it yourself.'; \
+	    exit 1; \
+	fi
+
+# Understand the history of the Homebrew Computer Club
+# as well as the West Coast Computer Faire and
+# you might be confused different.  :-)
+#
+supernova: sandwich
+	@-if [ -r .code_anal ]; then \
+	    ${RM} -f .code_anal_v6; \
+	else \
+	    echo "planet deniers, like some members of the IAU, are so cute when they try to defend their logic"; \
+	fi
+	@echo "A $@ helps ${MAKE} the elements that help form planets"
+	@${TRUE}
+
+deep_magic: supernova
+	@-if [ -r .code_anal ]; then \
+	    ccode_analysis --deep_magic 7889066cdbdf09b0408021754586e895be641cc9be29e7eafd3ca65359541f17 \
+	    		   --FNV1a_hash_512_bit -v2 "${PROG}" "${PROG}.c"; \
+	else \
+	    echo "Wrong! Do it again!"; \
+	    sleep 2; \
+	    echo "Wrong! Do it again!"; \
+	    sleep 2; \
+	    echo "Wrong! Do it again!"; \
+	fi
+	@${TRUE}
+
+magic: deep_magic
+	@-if [ -r .code_anal ]; then \
+	    ccode_analysis --level 20003 --mode 5717175 --FNV1a_hash_512_bit -v2 "${PROG}" "${PROG}.c"; \
+	else \
+	    echo "If you don't eat yer meat, you can't have any pudding!"; \
+	    echo "How can you have any pudding if you don't eat yer meat?!"; \
+	fi
+	@${TRUE}
+
+# The IOCCC resident astronomer states
+#
+charon: magic
+	@echo "$@ is a dwarf planet"
+	@echo "dwarf is a type of planet"
+	@echo "therefore IAU, $@ is a planet"
+
+pluto: charon
+	${MAKE} charon
+	@echo "$@ is a dwarf planet"
+	@echo "dwarf is a type of planet"
+	@echo "therefore, $@ is a planet"
+	@echo "having lots of planets is good feature because supernovae can help ${MAKE} a lot of them"
+
