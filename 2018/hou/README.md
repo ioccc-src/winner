@@ -2,14 +2,15 @@
 
 Qiming HOU  
 
+## To build:
 
-## Judges' comments:
-### To use:
+        make all
 
-    make
+### To run
+
     ./prog < input.json > output.html
 
-View `output.html` in a browser.
+    View `output.html` in a browser.
 
 ### Try:
 
@@ -28,7 +29,6 @@ This entry exhibits a way of obfuscation we haven't seen before, we think.
 The rulez of programming in an imperative language are violated, aren't they?
 
 Try figuring out how to increase the number of different colors, if you can.
-
 
 ## Author's comments:
 
