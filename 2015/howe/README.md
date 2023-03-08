@@ -5,11 +5,11 @@ Montreal, Quebec, Canada
 <http://www.snert.com/>  
 Twitter: @SirWumpus  
 
+## To build:
 
-## Judges' comments:
-### To use:
+        make all
 
-    make
+### To run
 
     ./prog file1 file2
 
@@ -17,7 +17,7 @@ Twitter: @SirWumpus
 
 ### Try:
 
-    ./prog prog.orig.c prog.c
+    ./prog prog.alt.c prog.c
 
     make test
     ./prog -d ABXYEFCD.tmp ACDBECFD.tmp
@@ -38,6 +38,16 @@ Twitter: @SirWumpus
     ./makeholes -c'~' -n 1000 nuked.tmp
     ./prog war-and-peace.txt nuked.tmp
     ./avgtime.sh 100 ./prog war-and-peace.txt nuked.tmp
+
+### Alternate code
+
+An alternate version of this entry, prog.alt.c, is provided.  This alternate code does not use a 64 bit FNV hash.
+
+To compile this alternate version:
+
+    make alt
+
+Use `prog.alt` as you would `prog` above.
 
 ### Selected Judges Remarks:
 
@@ -60,7 +70,7 @@ Or should we teach our youth to understand the intricacies of this code?
 Ying Tong Iddle I Po!  We suggest you read the source for yourself, which
 might be easier than the academic papers it was inspired by.
 
-NOTE: Unlike the original entry source, prog.orig.c, prog.c uses a
+NOTE: Unlike the original entry source, prog.alt.c, prog.c uses a
 64 bit FNV hash and fixes a function call warning.
 
 ## Author's comments:
