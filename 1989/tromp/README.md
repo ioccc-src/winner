@@ -32,8 +32,8 @@ and a file `HI` will be in the directory.
 
 ## Judges' comments
 
-This is a character terminal version of the TETRIS program. 
-It runs on a VT100 compatible terminal or emulator.  It is 
+This is a character terminal version of the TETRIS program.
+It runs on a VT100 compatible terminal or emulator.  It is
 best used at 4800 baud or more.
 
 By default, "drops_per_sec", the number of times an object
@@ -47,7 +47,7 @@ to the following 6 game commands:
 	      <space> - drop
 		    p - pause
 		    q - quit
-	    
+
 Specifying "cmd_string" allows one to re-define the commands.
 The pause command pauses the game, clears the screen and
 prints the current score.  To un-pause, type the pause
@@ -56,45 +56,53 @@ character again, which by default is "p".
 As was stated last year, we are likely to be more strict about
 portability in the future.  [ We mean it this time :-) ]
 
+### Bug fix thank you
+
+[Yusuke Endoh](/winners.html#Yusuke_Endoh) provided a patch to get
+this entry to compile with modern compilers.
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson)
+fixed this so it will compile and work under clang.
+
 ## Author's comments
 
-	This program plays the familiar game of `TETRIS' with the
-	following features:
+This program plays the familiar game of `TETRIS' with the
+following features:
 
-	    * outputs vt100-like escape-sequences for cursor 
-	      positioning and normal/reverse video in curses 
-	      like fashion (minimal output for screen updates)
+* outputs vt100-like escape-sequences for cursor
+  positioning and normal/reverse video in curses
+  like fashion (minimal output for screen updates)
 
-	    * continuously increasing speed (except in pause)
+* continuously increasing speed (except in pause)
 
-	    * start speed selectable by giving n as first argument, 
-	      where n is the number of drops per second (default=2).
+* start speed selectable by giving n as first argument,
+  where n is the number of drops per second (default=2).
 
-	    * controls also selectable by giving as the second argument 
-	      a string of 6 characters.  By default they are "jkl pq".
+* controls also selectable by giving as the second argument
+  a string of 6 characters.  By default they are "jkl pq".
 
-	    * screen is blanked during the pause and the score is shown
+* screen is blanked during the pause and the score is shown
 
-	    * maintains a high-score table
+* maintains a high-score table
 
-	Giving a full path name for the table will result in a
-	system-wide hiscore allowing a competition between users.
+Giving a full path name for the table will result in a
+system-wide hiscore allowing a competition between users.
 
 The author provided us with the following notes and new version of
 the program:
 
-	Here is a somewhat improved version of my tetris entry.  All the 
-	changes are in the popen() at the end.  Formerly a move was done 
-	to the HI score file which is not permitted for other users. Now 
-	other users can change the HI score file.  The extra option -m is 
-	passed to sort, so that it knows that its input files are already 
-	sorted.  The -o output option of sort is used instead of a 
-	temporary file.
+Here is a somewhat improved version of my tetris entry.  All the
+changes are in the popen() at the end.  Formerly a move was done
+to the HI score file which is not permitted for other users. Now
+other users can change the HI score file.  The extra option -m is
+passed to sort, so that it knows that its input files are already
+sorted.  The -o output option of sort is used instead of a
+temporary file.
 
-	You may also want to consider giving just the raw option to stty
-	at the start and -raw at the end. This further reduces the size of
-	the program, but has the possible disadvantage that the program
-	can only by stopped by 'q' or by the `kill -9' command.
+You may also want to consider giving just the raw option to stty
+at the start and -raw at the end. This further reduces the size of
+the program, but has the possible disadvantage that the program
+can only by stopped by 'q' or by the `kill -9' command.
 
 long h[4];t(){h[3]-=h[3]/3000;setitimer(0,h,0);}c,d,l,v[]={(int)t,0,2},w,s,I,K
 =0,i=276,j,k,q[276],Q[276],*n=q,*m,x=17,f[]={7,-13,-12,1,8,-11,-12,-1,9,-1,1,
