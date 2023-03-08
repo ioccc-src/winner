@@ -1,18 +1,15 @@
 # Most explosive
 
-Yusuke Endoh  
-Twitter: @mametter  
+Yusuke Endoh
+Twitter: @mametter
 
+## To build:
 
-The code for this entry can be found in prog.c
+        make all
 
-## Judges' comments:
-### To use:
+### To run
 
-    make
     ./prog
-
-### Try:
 
     # Try resizing the terminal window before the first click.
 
@@ -22,7 +19,17 @@ The code for this entry can be found in prog.c
 
     ./prog unwinnable.txt
 
-### Selected Judges Remarks:
+### Alternate code
+
+An alternate version of this entry, prog.alt.c, is provided.  This alternate code lacks the additional rule to flag all unprobed cells.  See the Author's comments for more details.
+
+To compile this alternate version:
+
+    make alt
+
+Use `prog.alt` as you would `prog` above.
+
+## Judges' comments
 
 When playing Minesweeper, a misclick might ruin a game, so why not leave the routine to the computer?
 This program automatically uncovers mines according to several rules, and leaves guessing (and applying
@@ -32,9 +39,8 @@ Try creating your own input files according to the author's remarks. Did you enc
 
 The submission was in violation of the "2053" size rule by one character, likely a late typo. It was easy to fix.
 
-
-
 ## Author's comments:
+
 ### Semi-automatic Minesweeper
 
 Minesweeper is a game to sweep mines, as you know.  The task consists of two parts:
@@ -138,7 +144,7 @@ There are mines in a cell whose "priorities-of-each-cell" is less than "number-o
 
 #### Bug fixes and Credits
 
-The judges pointed out a bug of the original version that I submitted (prog.orig.c).  Because this program does not provide a feature to flag unprobed cells manually, we can do nothing if the number of unprobed cells are equal to the number of mines remaining; unwinnable.txt is an example for such a case.
+The judges pointed out a bug of the original version that I submitted (prog.alt.c).  Because this program does not provide a feature to flag unprobed cells manually, we can do nothing if the number of unprobed cells are equal to the number of mines remaining; unwinnable.txt is an example for such a case.
 Thus, I implemented an additional rule to flag all unprobed cells in such a case into the final version (prog.c).
 
 Ilya Kurdyukov also pointed out a warning "ignoring return value of 'fscanf'" only when "-O3" is used.  So I changed the code a little to pretend to use the return value of fscanf.
