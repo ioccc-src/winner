@@ -167,11 +167,11 @@ ENTRY= isaak
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA=
+DATA= isaak.encode
 TARGET= ${PROG}
 #
-ALT_OBJ= ${PROG}.orig.o
-ALT_TARGET= ${PROG}.orig
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -193,7 +193,7 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-${PROG}.orig: ${PROG}.orig.c
+${PROG}.alt: ${PROG}.alt.c
 	@echo "NOTE: The original source might not compile using modern compilers."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
