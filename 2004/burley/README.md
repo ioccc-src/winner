@@ -1,20 +1,19 @@
-Best Calculated Risk:
+# Best Calculated Risk:
 
     Brent Burley
     500 S. Buena Vista St.
     Burbank, CA 91521
     USA
 
+## To build:
 
-Judges' Comments:
+        make all
 
-    To build:
-
-	make burley
-
-    Try:
+### To run
 
     	./burley
+
+## Judges' comments
 
     This is a draw poker program.  You start with $100.  Input alternates
     between your bet and which cards to keep.  Example:
@@ -51,8 +50,7 @@ Judges' Comments:
     Notice the clever use of setjmp() and longjmp() calls.  Can you keep
     track of what state is being saved and restored?
 
-
-Selected Author's Comments:
+## Author's comments
 
      This program plays draw poker.  What is unusual about it is that it
      is written as a single statement -- count the semicolons!  (OK, there

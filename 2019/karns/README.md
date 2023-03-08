@@ -3,11 +3,11 @@
 Joshua Karns  
 Twitter: @jkarnss  
 
+## To build:
 
-## Judges' comments:
-### To use:
+        make all
 
-    make
+### To run
 
     ./prog < textfile_that_fits_on_the_screen
 
@@ -30,6 +30,7 @@ make it about 120x40 to be safe, ensuring that you see the @ sign as well as the
 A puzzle for the reader: Can you change the program to consider a diagonal movement as one step?
 
 ## Author's comments:
+
 The Program
 -----------
                                 

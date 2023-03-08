@@ -14,6 +14,38 @@
 
 	./albert 1234567890123456789
 
+### Alternate code
+
+An alternate version of this entry, albert.fix.c, is provided.
+Leo Broukhis, before he was an IOCCC judge, sent the IOCCC
+judges this Email message:
+
+```
+From: leo _at_ zycad -dot- com (Leo Broukhis)
+Date: Tue, 30 Jan 96 17:37:51 PST
+To: judges _at_ toad -dot- com
+Subject: IOCCC 1992 - a bug
+
+Dear Judges,
+
+albert.c (even in its fixed form) still has a bug. Although I don't
+remember the number that exposed the bug (afair, resulting in coredump)
+in albert.orig.c that has been fixed in albert.c,
+
+I've found a number exposing another bug: 10000000001 (that's 9 0's).
+Both albert and albert.orig loop without printing anything, although
+the first factor is 101 and is usually found in an instant.
+```
+
+The `albert.c` file is the fixed file, where as the `albert.alt.c`
+is file before aookying Leo Broukhis' fix.
+
+To compile this alternate version:
+
+    make alt
+
+Use `albert.alt` as you would `albert` above.
+
 ## Judges' comments
     
     We were impressed with the speed at which it was able to factor

@@ -3,11 +3,12 @@
 Yusuke Endoh  
 Twitter: @mametter  
 
+## To build:
 
-## Judges' comments:
-### To use:
+        make all
 
-    make
+### To run
+
     ./prog < textfile > output.gif
 
 ### Try:

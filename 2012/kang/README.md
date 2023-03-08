@@ -3,11 +3,11 @@
 Seonghoon Kang  
 <kang.seonghoon@mearie.org>  
 
+## To build:
 
-## Judges' comments:
-### To build:
+        make all
 
-    make kang
+### To run
 
 ### To run:
 
@@ -32,8 +32,8 @@ colloquial year numbers of the last millennium.
 
 We've added a linefeed to the print format for convenience.
 
-
 ## Author's comments:
+
 ## Synopsis
 
 This short program reads a spelt number (e.g. `forty-two`) and writes a

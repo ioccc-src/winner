@@ -3,11 +3,12 @@
 Fabrice Bellard  
 <https://bellard.org/>  
 
+## To build:
 
-## Judges' comments:
-### To use:
+        make all
 
-    make
+### To run
+
     ./prog > lena.ppm
 
 ### Try:
@@ -18,21 +19,21 @@ Fabrice Bellard
     wget http://upload.wikimedia.org/wikipedia/en/2/24/Lenna.png
     pngtopnm < Lenna.png | pnmscale 0.25 | cjpeg -arithmetic -dct float -quality 14 > small.jpg
 
+### Selected Judges Remarks:
+
 The file `small.jpg` will be approximately of the same size as the raw image data
 in the program. Compare the level of the detail and the artifacts of
 `small.jpg` and `lena.ppm`.
-
-### Selected Judges Remarks:
 
 Compressing images is just a matter of simple arithmetic and some magic, isn't it?
 
 We could understand some of the arithmetic but none of the magic.
 
 Deciphering the mechanism used for data encoding to make use
-of the whitespaces, braces and semicolons should be a slightly easier task.
-
+of whitespace, braces and semicolons should be a slightly easier task.
 
 ## Author's comments:
+
 This program outputs a 128x128 RGB image file to the standard output
 using the portable pixmap file format (PPM). It contains the famous
 "Lena" image which is used in many image compression tests. 

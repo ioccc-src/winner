@@ -3,9 +3,11 @@
 Etienne Duble <etienne.duble@imag.fr>  
 <http://lig-membres.imag.fr/duble>  
 
+## To build:
 
-## Judges' comments:
-### To use:
+        make all
+
+### To run
 
     make
     
@@ -22,6 +24,16 @@ Etienne Duble <etienne.duble@imag.fr>
     (...observe...) 
 
     ./prog < prog.c
+
+### Alternate code
+
+An alternate version of this entry, prog.alt.c, is provided.  This alternate code is discussed below in the "prog.c vs prog.alt.c" section of the Author's comments below.
+
+To compile this alternate version:
+
+    make alt
+
+Use `prog.alt` as you would `prog` above.
 
 ### Selected Judges Remarks:
 
@@ -44,9 +56,9 @@ Turning the Braille code into something visual might be considered
 blasphemous. When I was fighting to make this program work, I started
 wondering if it was not the reason for its very erratic behaviour.
 
-### prog.c vs prog.orig.c
+### prog.c vs prog.alt.c
 
-The file `prog.orig.c` is the one I submitted.
+The file `prog.alt.c` is the one I submitted.
 
 Gil Dogon noted a few unsafe statements (statements whose behaviour is
 undefined in the C standard and, as such, could cause issues with other

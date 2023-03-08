@@ -3,17 +3,17 @@
 Anton Älgmyr  
 Twitter: @aalgmyr  
 
+## To build:
 
-## Judges' comments:
-### To use:
+        make all
 
-    make
+### To run
 
     cat prog.c | ./prog           # Printing garbage might break your font
     ./prog <file1> <file2> > out.raw
     ./prog -d 2 0 out.raw         # Decode the first (0th) channel out of two
 
-### To try:
+### Try:
 
     ./prog -h | ./prog -d 1 0
 

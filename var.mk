@@ -171,6 +171,7 @@ SCP= scp
 SCREEN= screen
 SCRIPT= script
 SDIFF= sdiff
+SDL2_CONFIG= sdl2-config
 SED= sed
 SEQ= seq
 SFTP= sftp

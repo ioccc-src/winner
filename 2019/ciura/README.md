@@ -3,15 +3,17 @@
 Marcin Ciura  
 Twitter: @mciura  
 
+## To build:
 
-## Judges' comments:
-### To use:
+        make all
 
-    make
+### To run
 
-    ./getwords.sh en | grep .. | ./prog aeiouvwxyz
+    ./getwords.sh en | grep .. | ./prog string
 
 ### Try:
+
+    ./getwords.sh en | grep .. | ./prog aeiouvwxyz
 
     ./getwords.sh en | grep .. | ./prog aeiouhjklmnvwxyz
 
@@ -22,6 +24,17 @@ Twitter: @mciura
     ./fr.sh
 
     ./ru.sh
+
+### Alternate code
+
+There is an alternate version of this code that flushes stdout after writing a newline.
+See the Author's comments for more information.
+
+To compile this alternate version:
+
+    make alt
+
+Use `prog.alt` as you would `prog` above.
 
 ### Selected Judges Remarks:
 
@@ -121,7 +134,7 @@ the example from section [What is this?](#wit) finished in 1.35
 seconds. On the other hand, **`prog`** can only output series of words
 with nonrepeating characters, unlike **`klausler`**.
 
-In contrast to **`prog.orig.c`**, **`prog.c`** does not call
+In contrast to **`prog.alt.c`**, **`prog.c`** does not call
 **`fflush(stdout)`** after outputting each line, thus running faster.
 I am grateful to Witold Jarnicki for suggesting this change.
 The original **`prog`** finished the example above in 100 minutes

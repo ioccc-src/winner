@@ -7,6 +7,18 @@ Laivalahdenportti 2
 Finland
 sds@maxisat.fi
 
+## To build:
+
+        make all
+
+### To run
+
+        ./sykes binary_file
+
+### Try:
+
+	./sykes pet.rom
+
 ## Judges' comments
 
 For those who fondly remember their first PET, this entry will start you
@@ -15,25 +27,19 @@ down memory lane ... starting with $C000 of course!
 We encourage you to try and grok the obfuscated expression on line 56,
 after C pre-processor gets finished with it!
 
-You will need to download the ROM contents to use the emulator in PET
-mode.
+We download the ROM contents to use the emulator in PET mode as follows:
 
-        wget http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/pet/basic-2-c000.901465-01.bin
-        wget http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/pet/basic-2-d000.901465-02.bin
-        wget http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/pet/edit-2-n.901447-24.bin
-        wget http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/pet/kernal-2.901465-03.bin
+    wget http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/pet/basic-2-c000.901465-01.bin
+    wget http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/pet/basic-2-d000.901465-02.bin
+    wget http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/pet/edit-2-n.901447-24.bin
+    wget http://www.zimmers.net/anonftp/pub/cbm/firmware/computers/pet/kernal-2.901465-03.bin
 
-        dd bs=2k count=1 if=/dev/zero of=nullfill.bin
+We then created:
 
-        cat basic-2-c000.901465-01.bin basic-2-d000.901465-02.bin edit-2-n.901447-24.bin nullfill.bin kernal-2.901465-03.bin >pet.rom
+    dd bs=2k count=1 if=/dev/zero of=nullfill.bin
 
-### To build
-
-        cc -o sykes sykes.c -lcurses
-
-### To run
-
-        sykes binary_file
+For your convenience, we have added the above mentioned files to this entry directory.
+They are used to form the pet.rom file.
 
 ### Author's comments
 

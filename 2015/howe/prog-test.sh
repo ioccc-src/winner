@@ -1,4 +1,4 @@
-#!/bin/ksh
+#!/usr/bin/env bash
 # Assume a POSIX compliant shell.
 
 PROG="./prog"

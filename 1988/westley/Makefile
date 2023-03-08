@@ -167,8 +167,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ= ${PROG}.orig.o
-ALT_TARGET= ${PROG}.orig
+ALT_OBJ=
+ALT_TARGET=
 
 
 #################
@@ -189,10 +189,6 @@ ${PROG}: ${PROG}.c
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
-
-${PROG}.orig: ${PROG}.orig.c
-	@echo "NOTE: The original source might not compile using modern compilers."
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # data files
 #

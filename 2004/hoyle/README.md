@@ -1,4 +1,4 @@
-Most Functional Output:
+# Most Functional Output:
 
     Jonathan Hoyle
     162 Burwyck Park
@@ -7,33 +7,39 @@ Most Functional Output:
 
     http://www.jonhoyle.com
 
+## To build:
 
-Judges' Comments:
+        make all
 
-    To build:
+### To run
 
-	make hoyle
+	./hoyle point ...
 
-    Try:
+### Try:
 
     	./hoyle 10 0.5
     	./hoyle 1 1 1 1
 	./hoyle 2 0 1 0 -0.001
+
+### Alternate code
+
+An alternate version of this entry, `hoyle.alt.c`, is provided.  This alternate code
+missing newline and used a non-standard tab stop size.
+
+To compile this alternate version:
+
+    make alt
+
+Use `hoyle.alt.c` as you would `prog` above.
+
+## Judges' comments
 
     This obfuscation functions at several levels.  Note the clever
     use of use of #defines.  The do(if,else) #define, for example,
     is delightful.  The code itself contains a bunch of curves
     designed to throw you off axis.  :-)
 
-    The original source may be built by:
-
-	make hoyle.orig
-
-    A missing newline was added and tab stops were converted to standard
-    8 character width in the new code.
-
-
-Selected Author's Comments:
+## Author's comments
 
      This application graphs polynomials on a standard Cartesian coordinate
      system.  Polynomials of the form ax^0 + bx^1 + cx^2 + ... are graphed by

@@ -4,11 +4,13 @@ Etienne Duble
 <https://lig-membres.imag.fr/duble>  
 Twitter: @etienne_duble  
 
+## To build:
 
-## Judges' comments:
-### To use:
+        make all
 
-    make
+### To run
+
+    ./prog file
 
 ### Try:
 
@@ -21,6 +23,16 @@ Twitter: @etienne_duble
     (open more terminals....)
 
     ./prog /tmp/drawing
+
+### Alternate code
+
+An alternate version of this entry, prog.alt.c, is provided.  This alternate code may not work as well on macOS.
+
+To compile this alternate version:
+
+    make alt
+
+Use `prog.alt` as you would `prog` above.
 
 ### Selected Judges Remarks:
 
@@ -131,9 +143,9 @@ IMPORTANT NOTES:
     so any peer reaching the session should have a terminal with the same
     size or larger.
 
-### prog.c vs prog.orig.c
+### prog.c vs prog.alt.c
 
-The file `prog.orig.c` is the one I submitted.
+The file `prog.alt.c` is the one I submitted.
 
 Judges proposed a small update: the program was using macro `FD_SET` inside an
 expression, which breaks compilation on Mac OS X. Wrapping this macro into a

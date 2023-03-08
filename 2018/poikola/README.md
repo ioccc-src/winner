@@ -3,11 +3,11 @@
 Timo Poikola <ioccc2018@ig.fi>  
 <https://ig.fi/>  
 
+## To build:
 
-## Judges' comments:
-### To use:
+        make all
 
-    make
+### To run
 
     ./prog
 
@@ -28,8 +28,8 @@ Many [Mnemonic variations](http://www.star.ucl.ac.uk/%7Epac/obafgkmrns.html) exi
 You might wish, on a star, to better understand the colors being displayed.
 And those in the deep south might wish to go north for a better view.
 
-
 ## Author's comments:
+
 ### How to build
 
     gcc -o prog -std=gnu11 -O3 prog.c

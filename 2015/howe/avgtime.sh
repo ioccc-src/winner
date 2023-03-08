@@ -1,4 +1,4 @@
-#!/bin/ksh
+#!/usr/bin/env bash
 
 COUNT=$1; shift
 CMD="$@"

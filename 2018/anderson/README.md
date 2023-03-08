@@ -2,28 +2,40 @@
 
 Derek Anderson  
 
+## To build:
 
-## Judges' comments:
-### To use:
+        make all
 
-    make
+### To run
+
     ./prog < textfile
 
 ### Try:
 
     ./prog < prog.c
-    ./prog < prog.orig.c
+    ./prog < prog.alt.c
     ./prog < README.md
+
+### Alternate code
+
+An alternate version of this entry, prog.alt.c, is provided.
+Compare `prog.c` and `prog.alt.c` and find out why we had to modify the entry, and what confused the author
+(see the author's remarks). No, it was not the shape of the Roman V that we, or the compiler, didn't like.
+
+### Alternate code
+
+To compile this alternate version:
+
+    make alt
+
+Use `prog.alt` as you would `prog` above.
 
 ### Selected Judges Remarks:
 
 With this entry, you won't need to turn your monitor [upside down](http://en.wikipedia.org/wiki/River_%28typography%29)!
 
-Compare `prog.c` and `prog.orig.c` and find out why we had to modify the entry, and what confused the author
-(see the author's remarks). No, it was not the shape of the Roman V that we, or the compiler, didn't like.
-
-
 ## Author's comments:
+
 ## Compiling the program
 
     gcc -Wall -Wextra -Wpedantic -O3 -std=c11 prog.c -o prog

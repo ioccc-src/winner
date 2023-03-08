@@ -3,11 +3,9 @@
 Tsukasa Hamano  
 <hamano@cuspy.org>  
 
+## To build:
 
-## Judges' comments:
-### To build:
-
-    make hamano
+        make all
 
 ### To run:
 
@@ -32,7 +30,7 @@ Tsukasa Hamano
     ./hello2 | gcc -xc - -o ./hello3
     ./hello3
 
-### Selected Judges Remarks:
+## Judges' comments
 
 This entry treads into a new territory for IOCCC - generating PDF files.
 
@@ -60,8 +58,8 @@ Don't forget to take a look at the generated PDF, perhaps you might even want
 to compile the output with a C compiler.  When you run it, what does it
 output?
 
+## Author's comments
 
-## Author's comments:
 This program obfuscate text file into PDF file with Dancing men
 algorithm.
 

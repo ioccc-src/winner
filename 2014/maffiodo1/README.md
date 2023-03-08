@@ -4,11 +4,9 @@ Sandro Maffiodo
 <smaffer@gmail.com>  
 <http://www.assezeta.com/sandromaffiodo>  
 
+## To build:
 
-## Judges' comments:
-### To build:
-
-    make
+        make all
 
 ### To run:
 
@@ -26,6 +24,7 @@ A classic for a particular generation. Like all good programs, being data
 driven means you can do fun things in small spaces.
 
 ## Author's comments:
+
 ### Remarks
 
 Use tabsize=4 to see the magic

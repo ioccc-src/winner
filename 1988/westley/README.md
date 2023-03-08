@@ -31,6 +31,8 @@ You might enjoy looking at the output of:
 
 	cc -E westley.c
 
+Misha Dynin provided a fix for westley.c si that it may compile on 
+both K&R and more modern C compilers.
 
 Copyright (c) 1988, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

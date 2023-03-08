@@ -3,11 +3,11 @@
 Marcin Ciura <mciura@gmail.com>  
 Twitter: @mciura  
 
+## To build:
 
-## Judges' comments:
-### To use:
+        make all
 
-    make
+### To run
 
     ./prog < text
 
@@ -16,6 +16,16 @@ Twitter: @mciura
     ./prog < Makefile
     ./prog < README.md
 
+### Alternate code
+
+An alternate version of this entry, prog.alt.c, is provided.  As mentioned in the Author's comments, the alternate version lacks a useful bug fix.
+
+To compile this alternate version:
+
+    make alt
+
+Use `prog.alt` as you would `prog` above.
+
 ### Selected Judges Remarks:
 
 This text was processed by prog. You may get confused.
@@ -23,8 +33,8 @@ We're not really sure: prog.c wasn't commented.
 Who has been thoroughly puzzled by prog? Also how obfuscated is prog?
 Having been written in C, how large of a vocabulary has it?
 
-
 ## Author's comments:
+
 The Program
 ===========
 
@@ -221,7 +231,7 @@ Return **`abbreviation`**.
 Remarks
 =======
 
-The judges found a bug in the handling of contractions: **`prog.orig.c`**
+The judges found a bug in the handling of contractions: **`prog.alt.c`**
 outputs "foo wasn'**[t bazzed]**".  I fixed the bug in **`prog.c`**, making
 it output "foo **[wasn't bazzed]**" instead, and took the liberty to merge
 one statement into a **`for`** loop inside its **`main()`** function.

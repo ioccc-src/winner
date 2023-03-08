@@ -8,16 +8,15 @@ Best Abuse of User:
     24 Oxtree Ave.
     The Xoemn, MN 68214
 
+## To build:
 
-Judges' Comments:
+        make all
 
-    To build:
-
-       make briddlebane
-
-    To run:
+### To run
 
        ./briddlebane
+
+## Judges' comments
 
      One could argue that this program was a "diseased dumpster of tripe"
      but I suspect that would only result in the judges being heckled as a
@@ -34,8 +33,7 @@ Judges' Comments:
      the way it assigns variables to memory) it will terminate "decrepit"
      with the character '\200' (the last value of F) instead of '\0'.
 
-
-Selected Author's Comments:
+## Author's comments
 
     This program was broadcast from deep within the Zarbonic Cluster
     and received at 9:03pm on March 21st, 2000 by Moxen N. Briddlebane.

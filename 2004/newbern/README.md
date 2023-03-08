@@ -1,26 +1,27 @@
-Best Font Engine:
+# Best Font Engine:
 
     Jeff Newbern
     28 Jeanette Ave. #1
     Belmont, MA 02478
 
+## To build:
 
-Judges' Comments:
+        make all
 
-    To build:
-
-	make newbern
-
-    Try:
+### To run
 
         ./newbern newbern.dat "IOCCC 2004"
+
+### Try:
+
         echo SOS | ./newbern
+
+## Judges' comments
 
     The program is formatted using the same font glyphs as the example
     data file.
 
-
-Selected Author's Comments:
+## Author's comments
 
     This is a configurable banner-like program.
 

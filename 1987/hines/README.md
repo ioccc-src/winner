@@ -11,13 +11,24 @@ USA
 
         make all
 
-NOTE: The original entry may be built with "make alt".
+### To run
 
-## Judges' comments:
+	./hines file.c
 
 ### Try:
 
 	./hines hines.c
+
+### Alternate code
+
+An alternate version of this entry, `hines.alt.c`.
+With older compilers you can try the alt version:
+
+    make alt
+
+Use `hines.alt` as you would `hines` above.
+
+## Judges' comments
 
 This program was designed to maximize the bother function for
 structured programmers.  This program takes goto statements to their
@@ -26,8 +37,6 @@ logical conclusion.  The layout and choice of names are classic.
 We consider this to be a beautiful counter-example for Frank Rubin's
 letter to ACM form titled: _"'GOTO Considered Harmful' Considered Harmful"_.
 See the Communications of the ACM, March 1987, Page 195-196.
-
-NOTE: With older compilers you can try the alt version like: `make alt`.
 
 Copyright (c) 1987, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

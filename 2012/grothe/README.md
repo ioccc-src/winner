@@ -9,11 +9,9 @@ US
 David Madore  
 <http://www.madore.org/~david/>  
 
+## To build:
 
-## Judges' comments:
-### To build:
-
-    make grothe
+        make all
 
 ### To run:
 
@@ -54,8 +52,8 @@ The judges also took some liberty obfuscating this entry a litte more.
 How does this entry work? The only place multiplication is used is
 to perform the atoi conversion.
 
-
 ## Author's comments:
+
 **Description**
 
 This program implements a version of Shamir's Secret Sharing.  Shamir's Secret

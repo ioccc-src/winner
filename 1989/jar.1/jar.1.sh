@@ -1,4 +1,4 @@
-:
+#!/usr/bin/env bash
 # 'run' jar.1
 
 # run/compile it

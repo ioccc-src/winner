@@ -1,22 +1,21 @@
 # Most functional
 
-John Tromp  
-<john.tromp@gmail.com>  
-<http://tromp.github.io/>  
+John Tromp
+<john.tromp@gmail.com>
+<http://tromp.github.io/>
 
+## To build:
 
-## Judges' comments:
-### To build:
+    make all		# On a 64-bit machine (default)
 
-On a 32-bit machine:
+    make tromp32	# On a 32-bit machine
 
-    make tromp
+### To run
 
-On a 64-bit machine:
+    ./tromp [-b]
 
-    make tromp64
-    # And mentally substitute ./tromp64 for ./tromp everywhere below
-    
+    NOTE: Substitute ./tromp32 for ./tromp everywhere below if on a 32-bit machine
+
 ### To run:
 
     cat ascii-prog.blc data | ./tromp -b
@@ -34,6 +33,7 @@ The judges dare to say that the data files this entry is processing
 are more obfuscated than the entry itself.
 
 ## Author's comments:
+
 This program celebrates the close connection between obfuscation and conciseness,
 by implementing the most concise language known, Binary Lambda Calculus (BLC).
 
@@ -84,14 +84,14 @@ Voila: a half byte cat:
 
       echo " Hello, world" | ./tromp
     Hello, world
- 
+
 Since the least significant 4 bits of the first byte are just arbitrary padding
 that is ignored by the program,
 any character from ASCII 32 (space) through 47 (/) will do, e.g.:
 
       echo "*Hello, world" | ./tromp
     Hello, world
- 
+
 Bad programs
 ============
 
@@ -109,7 +109,7 @@ causing the interpreter to crash when looking into a null-pointer environment:
 
       echo ">Hello, world" | ./tromp
     Segmentation fault
- 
+
 Since these properties can be checked when creating BLC programs,
 the interpreter doesn't bother checking for it.
 
@@ -177,7 +177,7 @@ Even shorter than the self-interpreter is this prime number sieve in 167 bits (u
 The n'th bit in the output indicates whether n is prime:
 
       cat primes.blc | ./tromp -b | head -c 70
-    0011010100010100010100010000010100000100010100010000010000010100000100 
+    0011010100010100010100010000010100000100010100010000010000010100000100
 
 For those who prefer to digest their primes in decimal, there is oddindices.Blc,
 which will print the indices of all odd characters (with lsb = 1)
@@ -196,13 +196,13 @@ Program hilbert.Blc, at 143 bytes, is a very twisty "one-liner" (shown in hexade
     ef   f615ff9   46   84   058117e   05
     cb             fe   bc             bf
     ee86cb9   4681600   5c0bfac   bfbf71a
-         85   e0             5c   f4     
+         85   e0             5c   f4
     14d5fe0   8180b048d0800e078   016445f
     fe                                 5f
     f7   ffffe5fff2fc   02f7ad97f5bf   ff
     ff   bf        ff   ca        af   ff
     7817ffa   df76695   4680601   57f7e16
-              05             c1          
+              05             c1
     3fe80b2   2c18581   bfe5c10   42ff805
     de   ec        06   c2        c0   c0
     60   8191a00167fb   cbcfdf65f7c0  a20
@@ -210,42 +210,42 @@ Program hilbert.Blc, at 143 bytes, is a very twisty "one-liner" (shown in hexade
 It expects n arbitrary characters of input, and draws a space filling Hilbert curve of order n:
 
       (cat hilbert.Blc; echo -n "1") | ./tromp
-     _ 
+     _
     | |
 
       (cat hilbert.Blc; echo -n "12") | ./tromp
-     _   _ 
+     _   _
     | |_| |
     |_   _|
-     _| |_ 
+     _| |_
 
       (cat hilbert.Blc; echo -n "123") | ./tromp
-     _   _   _   _ 
+     _   _   _   _
     | |_| | | |_| |
     |_   _| |_   _|
-     _| |_____| |_ 
+     _| |_____| |_
     |  ___   ___  |
     |_|  _| |_  |_|
-     _  |_   _|  _ 
+     _  |_   _|  _
     | |___| |___| |
 
       (cat hilbert.Blc; echo -n "1234") | ./tromp
-     _   _   _   _   _   _   _   _ 
+     _   _   _   _   _   _   _   _
     | |_| | | |_| | | |_| | | |_| |
     |_   _| |_   _| |_   _| |_   _|
-     _| |_____| |_   _| |_____| |_ 
+     _| |_____| |_   _| |_____| |_
     |  ___   ___  | |  ___   ___  |
     |_|  _| |_  |_| |_|  _| |_  |_|
-     _  |_   _|  _   _  |_   _|  _ 
+     _  |_   _|  _   _  |_   _|  _
     | |___| |___| |_| |___| |___| |
     |_   ___   ___   ___   ___   _|
-     _| |_  |_|  _| |_  |_|  _| |_ 
+     _| |_  |_|  _| |_  |_|  _| |_
     |  _  |  _  |_   _|  _  |  _  |
     |_| |_| | |___| |___| | |_| |_|
-     _   _  |  ___   ___  |  _   _ 
+     _   _  |  ___   ___  |  _   _
     | |_| | |_|  _| |_  |_| | |_| |
     |_   _|  _  |_   _|  _  |_   _|
-     _| |___| |___| |___| |___| |_ 
+     _| |___| |___| |___| |___| |_
 
 A BrainFuck interpreter
 =======================
@@ -253,7 +253,7 @@ A BrainFuck interpreter
 The smallest known BF interpreter is written in... you guessed it, BLC,
 coming in at 112 bytes (including 3 bits of padding):
 
-	 od -t x4 bf.Blc 
+	 od -t x4 bf.Blc
 	0000000          01a15144 02d55584               223070b7        00f032ff
 	0000020          7f85f9bf        956fe15e        c0ee7d7f 006854e5
 	0000040          fbfd5558        fd5745e0        b6f0fbeb 07d62ff0
@@ -299,7 +299,7 @@ So we could assemble an input reversing program as
 and change it to BLC8 with
 
 	  cat deflate.Blc reverse.blc | ./tromp > rev.Blc
-	  wc rev.Blc 
+	  wc rev.Blc
 	0 1 9 rev.Blc
 
 and then try it out with:
@@ -309,7 +309,7 @@ and then try it out with:
 	^D
 	!dlrow ,olleH
 
-Symbolic Lambda Calculus reduction 
+Symbolic Lambda Calculus reduction
 ==================================
 
 BLC8 program symbolic.Blc shows individual reduction steps on symbolic lambda terms.

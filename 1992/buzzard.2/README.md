@@ -32,6 +32,17 @@
 
 	Sorry, this is third!
 
+### Alternate code
+
+An alternate version of this entry, `buzzard.2.alt.c`, is provided.  This alternate code
+does not contain a fix that the author notes below.
+
+To compile this alternate version:
+
+    make alt
+
+Use `buzzard.2.alt` as you would `buzzard.2` above.
+
 ## Judges' comments
 
     Have fun!

@@ -3,12 +3,12 @@
 Dave Burton <ioccc@snox.net>  
 <http://snox.net/ioccc>  
 
+## To build:
 
-## Judges' comments:
-### To use:
+        make all
 
-    make
-    
+### To run
+
     ./prog "expression"
 
 or
@@ -34,7 +34,17 @@ or
 
     ./prog < test.in
 
-    less calc.man
+    man ./calc.man
+
+## Alternate code
+
+An alternate version of this entry, prog.alt.c, is provided.  This alternate code is discussed in the "prog.c vs prog.alt.c" section of the author's comments below.
+
+To compile this alternate version:
+
+    make alt
+
+Use `prog.alt` as you would `prog` above.
 
 ### Selected Judges Remarks:
 
@@ -45,9 +55,8 @@ division or modulo, are easy to find. Where are addition and subtraction?
 
 We were impressed with the level of detail the author "blogged" the obfuscation process.
 
-
-
 ## Author's comments:
+
 calc - an integer expression calculator that outputs in both hex and decimal
 ----------------------------------------------------------------------------
 
@@ -66,7 +75,7 @@ Printed in 8 pt Courier, it makes aesthetically pleasing 8.5 x 11 wall art.
 
 [1]: http://www.ioccc.org/2011/hou/hint.html "Hou Qiming"
 
-prog.c vs prog.orig.c
+prog.c vs prog.alt.c
 ---------------------
 
 Dominik Muth observed a syntax error on `1+1`, `1-1`, `1|1`, and `1^1` when using an

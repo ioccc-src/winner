@@ -4,11 +4,11 @@ Yusuke Endoh
 <https://github.com/mame/>  
 Twitter: @mametter  
 
+## To build:
 
-## Judges' comments:
-### To use:
+        make all
 
-    make
+### To run
 
     ./prog <a number of arguments>
 
@@ -22,6 +22,16 @@ Twitter: @mametter
 
     ./prog $(< Makefile)
 
+### Alternate code
+
+An alternate version of this entry, prog.alt.c, is provided.  This alternate code does not contain improvements suggested by Gil Dogon.
+
+To compile this alternate version:
+
+    make alt
+
+Use `prog.alt` as you would `prog` above.
+
 ### Selected Judges Remarks:
 
 For this one liner it is best to avoid prime numbers. The output groups
@@ -29,8 +39,8 @@ factors in the x-y dimensions. How many factors can be represented before you
 run out of command line argument space? How could you modify the program to
 experiment with numbers that have more or larger factors?
 
-
 ## Author's comments:
+
 Visual factorization 1-liner.  Try:
 
     gcc -o prog prog.c
@@ -44,8 +54,7 @@ Visual factorization 1-liner.  Try:
 
 Inspired by [Animated Factorization Diagrams](http://www.datapointed.net/visualizations/math/factorization/animated-diagrams/).
 
-
-EDIT: `prog.orig.c` is the original version that I submitted.  Gil Dogon kindly improved it during the review.  Thank you!
+EDIT: `prog.alt.c` is the original version that I submitted.  Gil Dogon kindly improved it during the review.  Thank you!
 
 --------------------------------------------------------------------------------
 <!--

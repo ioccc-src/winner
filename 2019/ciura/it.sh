@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 (>&2 echo "Please be patient. Extracting Italian words")
 (>&2 echo "from aspell takes a few minutes.")
 set -x

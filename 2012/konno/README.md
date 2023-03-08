@@ -4,11 +4,9 @@ Taketo Konno
 Tokyo, Japan  
 <inaniwa3@gmail.com>  
 
+## To build:
 
-## Judges' comments:
-### To build:
-
-    make konno
+        make all
 
 ### To run:
 
@@ -19,6 +17,16 @@ Tokyo, Japan
 
     ./konno 30
 
+### Alternate code
+
+An alternate version of this entry, konno_deobfuscate.c, is provided.  This alternate code is an unobfuscated version of the winning code.
+
+To compile this alternate version:
+
+    make alt
+
+Use `konno_deobfuscate` as you would `konno` above.
+
 ### Selected Judges Remarks:
 
 This entry is a good one-liner to analyze completely.
@@ -27,6 +35,7 @@ For extra credit, what are the minimal changes to convert it to
 64-bit integers so that it could print 32 lines?
 
 ## Author's comments:
+
 ### Remarks
 
 This program outputs [elementary cellular automaton](http://mathworld.wolfram.com/ElementaryCellularAutomaton.html) patterns.

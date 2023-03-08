@@ -2,19 +2,24 @@
 
 Edward Giles  
 
+## To build:
 
-## Judges' comments:
-### To use:
+        make all
 
-    sudo apt install libsdl2-dev  # Linux
-    Something else # MacOS
-    make
+### To run
+
     ./prog
+
+### Try:
+
+    make
 
 ### Try:
 
     ./prog ioccc.txt
     ./prog prog.c
+    ./prog sand.txt
+    ./prog sand.alt.txt
 
 ### Selected Judges Remarks:
 
@@ -23,8 +28,13 @@ Can you explain the behavior of the program when ioccc.txt is given to it as inp
 How would the description of the state machine look like when translated from
 Polynomish to English?
 
+You may have to install libsdl2-dev on your system to compile and use this code:
+
+    sudo apt install libsdl2-dev  # Linux
+    Something else # MacOS
 
 ## Author's comments:
+
 Remarks
 =======
 

@@ -3,9 +3,11 @@
 Adar Zeitak  
 <aa4z2@walla.co.il>  
 
+## To build:
 
-## Judges' comments:
-### To build:
+        make all
+
+### To run
 
     make zeitak
 
@@ -21,7 +23,20 @@ try incorrect.c and the program itself.
     ./zeitak < zeitak.c
     ./zeitak < incorrect.c
 
-### Selected Judges Remarks:
+### Alternate code
+
+An alternate version of this entry, `zeitak\_deobfucate.c`, is provided.
+The file `zeitak\_deobfucate.c` provides a version that has been slightly
+deobfuscated.  You may find reading that file helpful in your attempt
+to understand this extremely subtle entry.
+
+To compile this alternate version:
+
+    make alt
+
+Use `zeitak\_deobfucate.c` as you would `zeitak` above.
+
+## Judges' comments
 
 This is an extremely subtle and twisted piece of Gold award winning code!
 
@@ -30,11 +45,8 @@ At one point we spent
 [18 minutes](https://twitter.com/ioccc/status/252162898800033792)
 just to understand 18 key characters of this code.
 
-The file zeitak\_deobfucate.c provides a version that has been slightly
-deobfuscated.  You may find reading that file helpful in your attempt
-to understand this extremely subtle entry.
+## Author's comments
 
-## Author's comments:
 ### Nesting Errors Detector
 
 #### What does it do

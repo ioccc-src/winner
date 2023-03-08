@@ -1,4 +1,4 @@
-Best visuals:
+# Best visuals:
 
     	Mark Isaak
 	Imagen Corporation
@@ -7,11 +7,17 @@ Best visuals:
 	95052-8101
 	USA
 
-Compile with:
+## To build:
 
-	cc -DI=B -DO=- -Dy isaak.c -o isaak
+        make all
 
-Execute without arguments.
+### To run
+
+	./isaak
+
+### Alternate code
+
+An alternate version of this entry, `isaak.alt.c`.
 
 The original entry starts with the line:
 
@@ -19,6 +25,8 @@ The original entry starts with the line:
 
 This works on some systems.  Why?  Note that `#include <stdio.h>` is given on
 the last line.  Why is this needed?  Note the unusual calls to sprintf.
+
+## Judges' comments
 
 NOTE:  The program relies heavily on ASCII.  Don't even think of running it on
 an EBCDIC machine.  If you name the file anything other than "isaak.c", you must

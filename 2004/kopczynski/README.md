@@ -1,4 +1,4 @@
-Best one-liner:
+# Best one-liner:
 
     Eryk Kopczynski
     Faculty of Mathematics, Informatics and Mechanics
@@ -8,13 +8,15 @@ Best one-liner:
 
     http://www.mimuw.edu.pl/~erykk/
 
-Judges' Comments:
+## To build:
 
-    To build:
+        make all
 
-	make kopczynski
+### To run
 
-    Try:
+	./kopczynski < input_file
+
+### Try:
 
 	./kopczynski < kopczynski-8a
 	./kopczynski < kopczynski-8b
@@ -22,6 +24,18 @@ Judges' Comments:
 	./kopczynski < kopczynski-9
 	./kopczynski < kopczynski-10
 	./kopczynski < kopczynski-11
+
+### Alternate code
+
+    The judges modified the program to print its result.  The original
+    program returned the result as an exit code:
+
+    	make alt
+
+	./kopczynski.alt < kopczynski-10
+	echo $?
+
+## Judges' comments
 
     What is in a line?  A lot when you obfuscate the way Eryk Kopczynski
     did it.  This small one line program is an outstanding technical
@@ -43,19 +57,10 @@ Judges' Comments:
 
     	1, 0, 0, 0, 0, 0, 1, 0, 2, 1, ...
 
-    The judges modified the program to print its result.  The original
-    program returned the result as an exit code:
-
-    	make kopczynski.orig
-
-	./kopczynski.orig < kopczynski-10
-	echo $?
-
     With certain arguments, you can alter the exit value.  Can you figure
     out how and why?
 
-
-Selected Author's Comments:
+## Author's comments
 
     The program proves it is not as hard to recognize numbers. The current
     one liner version should correctly recognize all numbers from 8 to 11.

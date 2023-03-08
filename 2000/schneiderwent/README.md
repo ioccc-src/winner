@@ -3,16 +3,15 @@ Most Timely Output:
     Craig Schneiderwent
     WI, USA
 
+## To build:
 
-Judges' Comments:
+        make all
 
-    To build:
-
-	make schneiderwent
-
-    To run:
+### To run
 
 	./schneiderwent schneiderwent.data
+
+## Judges' comments
 
     Very nice play by the rules and portable text obfuscation.
     This far surpasses old tricks like adding or subtracting 1
@@ -22,8 +21,7 @@ Judges' Comments:
     keeping the program portable between different encodings
     (Chinese, Japanese, Russian - anyone?) may be an entertaining task.
 
-
-Selected Author's Comments:
+## Author's comments
 
     This entry displays the current time to the console, for example:
 
