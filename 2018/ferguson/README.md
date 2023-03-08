@@ -4,11 +4,11 @@ Cody Boone Ferguson <weasel@xexyl.net>
 <https://ioccc.xexyl.net/2018/weasel>  
 Twitter: @xexyl  
 
+## To build:
 
-## Judges' comments:
-### To use:
+        make all
 
-    make
+### To rum
 
     ./weasel
 
@@ -41,8 +41,8 @@ If you find yourself in an evolutionary dead end, try:
 
     man ./weasel.man
 
-
 ## Author's comments:
+
     0. Preface
     1. What it is
     2. How it works
