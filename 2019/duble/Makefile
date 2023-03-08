@@ -94,7 +94,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE=
+CDEFINE= -Dg=11 -Ds=0 -DV=24 -DW=80
 #CDEFINE= -DIOCCC
 
 # Include files that are needed to compile

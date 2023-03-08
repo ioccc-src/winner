@@ -46,7 +46,7 @@ it has too many repeat letters to allow this entry to repeat.
 It is better that Mr Jock, TV quiz PhD, bags few lynx.
 
 Speaking of jumping, can you rewrite the code to
-remote all of the goto jumps in this code?
+remove all of the goto jumps in this code?
 
 ## Author's comments:
 ### What is this? <a name="wit"></a>
@@ -87,7 +87,7 @@ website](https://www-cs-faculty.stanford.edu/~knuth/fasc5c.ps.gz).
 
 ### Usage
 
-**`prog LETTERS [N]`**
+`prog LETTERS [N]`
 reads allowed words from standard input and writes perfect pangrams
 with at most _N_ words composed of _LETTERS_ to standard output, one
 per line. If _N_ is not given, the number of words in the pangrams is
@@ -99,73 +99,73 @@ is too long, and 2 if the command-line arguments are missing.
 
 ### Helper scripts
 
-**`getwords.sh LANGUAGE_CODE`**
+`getwords.sh LANGUAGE_CODE`
 outputs a sorted list of unique words in a given language, one per
-line. It requires **`aspell`** with a dictionary for _LANGUAGE_CODE_.
+line. It requires `aspell` with a dictionary for _LANGUAGE_CODE_.
 
-**`wrapprog.py LETTERS [N]`**
-works similarly to **`prog LETTERS [N]`** except that it merges
-anagrams before passing them to **`prog`** and expands them in
-**`prog`**'s output. This way, it finishes the job faster than
-**`prog`** when there are millions of perfect pangrams. It requires a
+`wrapprog.py LETTERS [N]`
+works similarly to `prog LETTERS [N]` except that it merges
+anagrams before passing them to `prog` and expands them in
+`prog`'s output. This way, it finishes the job faster than
+`prog` when there are millions of perfect pangrams. It requires a
 UTF-8 locale.
 
-**`de.sh`**, **`en.sh`**, **`fr.sh`**, **`it.sh`**, **`pl.sh`**,
-and **`ru.sh`** output German, English, French, Italian, Polish,
+`de.sh`, `en.sh`, `fr.sh`, `it.sh`, `pl.sh`,
+and `ru.sh` output German, English, French, Italian, Polish,
 and Russian perfect pangrams, respectively. They require a UTF-8
 locale.
 
 ### Miscellaneous remarks
 
 I dare submit this entry to categories _algorithms_,
-_internationalization_ (I have not found active use of **`<wchar.h>`**
+_internationalization_ (I have not found active use of `<wchar.h>`
 among the programs that won IOCCC in the past), and _obscure bugs_ (see
 the questions about Linux core dumps below).
 
 To a casual eye, this entry may look similar to
 [2005 klausler](https://www.ioccc.org/years.html#2005_klausler).
-However, **`prog`** is internationalized and way faster. On my machine,
-**`./klausler abcdefghijklmnopqrstuvwxyz`** printed only 3,965 perfect
+However, `prog` is internationalized and way faster. On my machine,
+`./klausler abcdefghijklmnopqrstuvwxyz` printed only 3,965 perfect
 pangrams until I killed it after 144 hours running, while the
 equivalent
-**`tr A-Z a-z < /usr/share/dict/words | egrep -v '^[^ais]$' | ./prog abcdefghijklmnopqrstuvwxyz | wc -l`**
+`tr A-Z a-z < /usr/share/dict/words | egrep -v '^[^ais]$' | ./prog abcdefghijklmnopqrstuvwxyz | wc -l`
 finished in 62 minutes, reporting 1,640,569,315 perfect pangrams, and
 the example from section [What is this?](#wit) finished in 1.35
-seconds. On the other hand, **`prog`** can only output series of words
-with nonrepeating characters, unlike **`klausler`**.
+seconds. On the other hand, `prog` can only output series of words
+with non-repeating characters, unlike `klausler`.
 
-In contrast to **`prog.alt.c`**, **`prog.c`** does not call
-**`fflush(stdout)`** after outputting each line, thus running faster.
+In contrast to `prog.alt.c`, `prog.c` does not call
+`fflush(stdout)` after outputting each line, thus running faster.
 I am grateful to Witold Jarnicki for suggesting this change.
-The original **`prog`** finished the example above in 100 minutes
+The original `prog` finished the example above in 100 minutes
 instead of 62 minutes.
 
 If your word list contains meaningless one-letter words, pipe
-**`grep .. [FILE]`** through **`prog`** to eliminate the pangrams that
+`grep .. [FILE]` through `prog` to eliminate the pangrams that
 contain them.
 
-According to **`prog`** and **`aspell`**, some languages, e.g. Spanish,
+According to `prog` and `aspell`, some languages, e.g. Spanish,
 have no perfect pangrams.
 
-Why does **`yes | ./prog y`** hang on Linux? Change **`static int`** to
-**`int`** and **`static wchar_t`** to **`wchar_t`**, and recompile
-**`prog`**. Why does **`yes | ./prog y`** dump core now? Change the line
-**`#define P 9<<23^1`** to **`#define P 9<<23`** and recompile
-**`prog`**. Why does **`yes | ./prog y`** exit gracefully?
+Why does `yes | ./prog y` hang on Linux? Change `static int` to
+`int` and `static wchar_t` to `wchar_t`, and recompile
+`prog`. Why does `yes | ./prog y` dump core now? Change the line
+`#define P 9<<23^1` to `#define P 9<<23` and recompile
+`prog`. Why does `yes | ./prog y` exit gracefully?
 
-Answer: Nf bs Whar 2019, guhf znavsrfg ohtf va **`tyvop`** 2.22--2.29:
+Answer: Nf bs Whar 2019, guhf znavsrfg ohtf va `tyvop` 2.22--2.29:
 [1](https://sourceware.org/bugzilla/show_bug.cgi?id=20568) naq
 [2](https://sourceware.org/bugzilla/show_bug.cgi?id=20632).
 
-The source code uses **`goto`** three times. While it could easily get
-by without **`goto M`** and **`goto H`**, I challenge the adherents of
-structured programming to refactor **`goto T`**, which jumps back into a
-nested **`if`** block.
+The source code uses `goto` three times. While it could easily get
+by without `goto M` and `goto H`, I challenge the adherents of
+structured programming to refactor `goto T`, which jumps back into a
+nested `if` block.
 
-With the supplied **`Makefile`**, both **`gcc`** and **`clang`** compile
-**`prog.c`** without warnings in C11 and C99 mode. For a clean
-compilation with **`gcc -std=c90`**, add **`-Wno-format`** to
-**`CSILENCE`** in **`Makefile`**.
+With the supplied `Makefile`, both `gcc` and `clang` compile
+`prog.c` without warnings in C11 and C99 mode. For a clean
+compilation with `gcc -std=c90`, add `-Wno-format` to
+`CSILENCE` in `Makefile`.
 
 --------------------------------------------------------------------------------
 <!--

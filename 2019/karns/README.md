@@ -17,6 +17,16 @@ Twitter: @jkarnss
 
     ./prog < README.md
 
+    ./prog < prog.c
+
+    ./prog < maze
+
+The last two can be done in a sequence, first showing the respective files at
+the terminal, like:
+
+    ./demo.sh
+
+
 ### Selected Judges Remarks:
 
 If you typically get lost in mazes, watching this program run might -- or might not, YMMV --

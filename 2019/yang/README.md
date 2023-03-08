@@ -5,9 +5,13 @@ Don Yang
 
 
 ## Judges' comments:
+
+## To build:
+
+    make all
+
 ### To use:
 
-    make
 
     ./prog sample_input.txt a b c d
 

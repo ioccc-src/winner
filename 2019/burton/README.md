@@ -40,7 +40,7 @@ Instead of checking correctness, the check script can simply output the results:
 	out=cat ./check ./prog
 
 Interestingly, and a spoiler here: MacOS and FreeBSD implement the common utility "correctly".
-Centos and Ubuntu both share a "flawed" utility that changes output format based upon input redirection or pipeline(!).
+CentOS and Ubuntu both share a "flawed" utility that changes output format based upon input redirection or pipeline(!).
 As well, the latter two also behave slightly differently on what they count as whitespace:
 \a and \b are both counted whitespace(!), even though the relevant man pages on these systems
 omit these characters from the description.
