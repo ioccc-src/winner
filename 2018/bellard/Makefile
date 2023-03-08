@@ -1,6 +1,6 @@
 #!/usr/bin/env make
 #
-# IOCCC 2018 winning entry /- bellard
+# IOCCC 2020 winning entry - endoh1
 
 ################################################################################
 #
@@ -62,17 +62,15 @@ X11_INCDIR= /opt/X11/include
 
 # Common C compiler warnings to silence
 #
-#CSILENCE=
-CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-implicit-int \
-	-Wno-logical-op-parentheses -Wno-main -Wno-parentheses -Wno-return-type \
-	-Wno-shift-op-parentheses
+CSILENCE=
+#CSILENCE= -Wno-implicit-int
 
 # Common C compiler warning flags
 #
 #CWARN= ${CSILENCE}
 #CWARN= -Wall ${CSILENCE}
-CWARN= -Wall -Wextra ${CSILENCE}
-#CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+#CWARN= -Wall -Wextra ${CSILENCE}
+CWARN= -Wall -Wextra -pedantic ${CSILENCE}
 
 # Compiler standard
 #
@@ -125,8 +123,8 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
-#LIBS= -lm
+#LIBS=
+LIBS= -lcurses
 #LIBS= -L ${X11_LIBDIR} -lX11
 #LIBS= -L ${HOMEBREW_PREFIX}/lib -lSDL
 
@@ -140,9 +138,7 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-CSILENCE+= -Wno-conditional-uninitialized -Wno-missing-prototypes \
-	-Wno-missing-variable-declarations -Wno-pedantic \
-	-Wno-poison-system-directories -Wno-strict-prototypes
+#CSILENCE+=
 #
 CWARN+= -Weverything
 #
@@ -163,15 +159,15 @@ endif
 # Special flags for this entry
 ##############################
 #
-ENTRY= bellard
+ENTRY= endoh1
 PROG= prog
 #
 OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -186,6 +182,9 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
+${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
