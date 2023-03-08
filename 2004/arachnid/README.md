@@ -1,4 +1,4 @@
-Best use of Vision:
+# Best use of Vision:
 
     Nick Johnson
     25 Harvey Tce
@@ -8,17 +8,19 @@ Best use of Vision:
 
     http://www.notdot.net/
 
+## To build:
 
-Judges' Comments:
+        make all
 
-    To build:
+### To run
 
-	make arachnid
+	./arachnid [mazefile]
 
-    Try:
+### Try:
 
-	./arachnid
 	./arachnid arachnid.info
+
+## Judges' comments
 
     The fun part comes when you realize that the maze scrolls.  The overall
     visual effect is quite pleasing (at least on some displays), and, well,
@@ -28,8 +30,7 @@ Judges' Comments:
     Qwerty keyboards.  Rogue players, vi users, and Dvorak typists are
     invited to get lost!
 
-
-Selected Author's Comments:
+## Author's comments
 
     This program accepts ASCII formatted mazes as input, and renders
     them onscreen for the user to explore, complete with Line Of Sight
@@ -48,7 +49,7 @@ Selected Author's Comments:
     for the particularaly insane maze explorers out there.
 
     Usage:
-    	./prog.c [mazefile]
+    	./arachnid [mazefile]
 
     You can explore the maze using the w,a,s, and d keys.
 
