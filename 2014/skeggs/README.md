@@ -4,13 +4,11 @@ Cel Skeggs
 <ioccc@celskeggs.com>  
 <http://www.celskeggs.com>  
 
+## To build:
 
-## Judges' comments:
-### To build:
+        make all
 
-    make
-
-### To run:
+### To run
 
     ./prog
 
@@ -37,6 +35,7 @@ code is somehow executed from main.  But how?  How is main able to
 call code that was written and compiled just in time for execution?
 
 ## Author's comments:
+
 ### TABLE OF CONTENTS
 
  * Backstory
