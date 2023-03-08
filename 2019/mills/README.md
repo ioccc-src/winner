@@ -10,7 +10,7 @@ Twitter: @MisterXopher
     make
 
     make cpclean
-    # Let this run for about about an hour and then kill it
+    # Let this run for about about an hour and then kill it:
     ./prog Shakespeare.txt
     ./prog < $(< ls -1tr cp* | tail -1) | head -100
 

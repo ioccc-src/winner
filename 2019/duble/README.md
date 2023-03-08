@@ -24,9 +24,14 @@ Twitter: @etienne_duble
 
     ./prog /tmp/drawing
 
+
+NOTE: this entry does not work under at least some versions of macOS.
+
+
 ### Alternate code
 
-An alternate version of this entry, prog.alt.c, is provided.  This alternate code may not work as well on macOS.
+An alternate version of this entry, prog.alt.c, is provided.  This alternate
+code might not work as well on macOS.
 
 To compile this alternate version:
 
@@ -34,7 +39,8 @@ To compile this alternate version:
 
 Use `prog.alt` as you would `prog` above.
 
-### Selected Judges Remarks:
+
+### Selected Judges' Remarks:
 
 After starting the program, use the cursor keys, then try some modes, like "p"
 or "l" (they toggle).
@@ -49,7 +55,7 @@ of someone else by just opening the same file!
 
 ### Getting started
 
-The program can run on Linux, FreeBSD, Mac OS X, and in most terminals.
+The program can run on Linux, FreeBSD, macOS, and in most terminals.
 See section 'Limits, Portability' for more info.
 
 To build, type `make` (assuming gcc) or `make CC=clang`.
@@ -112,7 +118,7 @@ reading the source code.
 ### Limits, Portability
 
 I tested the program on several Linux systems, on FreeBSD 12, and on
-Mac OS X (mojave).
+macOS (mojave).
 
 On Linux, the program uses an OS-specific detail to hide communication
 artefacts, and avoids the need to remove them on exit.
@@ -148,21 +154,21 @@ IMPORTANT NOTES:
 The file `prog.alt.c` is the one I submitted.
 
 Judges proposed a small update: the program was using macro `FD_SET` inside an
-expression, which breaks compilation on Mac OS X. Wrapping this macro into a
+expression, which breaks compilation on macOS. Wrapping this macro into a
 function was enough to fix this compilation issue.
 
-However, that was not enough to make the program work on Mac OS X. If you analyse
+However, that was not enough to make the program work on macOS. If you analyse
 the program you will see that it heavily relies on OS resources. And, for this
 first version of the program, you even needed to increase default `sysctl`
 parameters to make it work on FreeBSD (this was the purpose of file `check-os.sh`).
-I tried hard to tune Mac OS X the same, but failed.
+I tried hard to tune macOS the same, but failed.
 
 The simple fact Judges proposed this update meant they wish it could work on Mac.
 And if judges wish something, it **has to** be done. ;)
 So I refactored a little more the program to reduce OS resources consumption.
 Or maybe not reduce consumption, but consume them differently...
 And I obtained `prog.c`. With this version, no need to touch `sysctl` parameters,
-and it works on Mac OS X too!
+and it works on macOS too!
 I must confess it was challenging to remain below the size limit with this little
 change.
 

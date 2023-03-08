@@ -399,7 +399,7 @@ prog: prog.c
 prog.clean: prog.clean.c
 	${CC} ${CSTD} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT} $< -o $@ ${LIBS}
 
-remarks: remarks.markdown
+remarks: README.md
 	${CP} $? $@
 
 correct: newlines remarks 256 check

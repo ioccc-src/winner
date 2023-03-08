@@ -4,11 +4,18 @@ Gil Dogon
 
 
 ## Judges' comments:
+
+## To build:
+
+    make all
+
+
 ### To use:
 
-    make
 
     ./prog < pattern.mc
+
+NOTE: this entry will likely segfault under macOS if you even get it to compile.
 
 ### Try:
 

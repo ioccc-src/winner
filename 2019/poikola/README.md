@@ -19,7 +19,7 @@ Twitter: @timpoiko
 
 ### Try:
 
-    If you don't have a few days, try:
+If you don't have a few days, try:
 
     TZ=UTC24 make clobber prog
     ./prog 512 ./prog
@@ -44,6 +44,10 @@ The source code layout and some of the variable names honors the ski jumping acc
 or
 
     clang -O[0123s] -o prog prog.c
+
+e.g.:
+
+    clang -O1 -o prog prog.c
 
 ### Poster
 
