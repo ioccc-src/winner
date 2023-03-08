@@ -1,4 +1,4 @@
-Most Portable Output:
+# Most Portable Output:
 
     Thaddaeus Frogley
     Creature Labs
@@ -12,24 +12,22 @@ Most Portable Output:
     Cambridge,
     UK, CB4 1DE
 
+## To build:
 
-Judges' Comments:
+        make all
 
-    To build:
-
-	make thadgavin
-
-    To run:
+### To run
 
 	./thadgavin
+
+## Judges' comments
 
     This entry is a nice play by the rules. It can use curses, if the
     SDL graphic library is not present, and is quite good at that,
     but the colors used in graphic mode (16 bit depth) are unfortunately
     less than dazzling. We could not test this entry in DOS mode.
 
-
-Selected Author's Comments:
+## Author's comments
 
     To run under DOS:
 
