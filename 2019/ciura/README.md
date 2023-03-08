@@ -21,6 +21,17 @@ Twitter: @mciura
 
     ./ru.sh
 
+### Alternate code
+
+There is an alternate version of this code that flushes stdout after writing a newline.
+See the Author's comments for more information.
+
+To compile this alternate version:
+
+    make alt
+
+Use `prog.alt` as you would `prog` above.
+
 ### Selected Judges Remarks:
 
 A few letters, one at a time, with no repeats.
@@ -32,15 +43,6 @@ It is better that Mr Jock, TV quiz PhD, bags few lynx.
 
 Speaking of jumping, can you rewrite the code to
 remote all of the goto jumps in this code?
-
-There is an alternate version of this code that flushes stdout after writing a newline.
-See the Author's comments for more information.
-
-To compile this alternate version:
-
-    make alt
-
-Use `prog.alt` as you would `prog` above.
 
 ## Author's comments:
 ### What is this? <a name="wit"></a>
