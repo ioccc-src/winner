@@ -8,14 +8,15 @@ Best position-independent code:
 
     http://www.firesigntheatre.com
 
+## To build:
 
-Judges' Comments:
+        make all
 
-    To build:
+### To run
 
-    	make westley
+	./westley
 
-    Try:
+### Try:
 
     	./westley < westley.c > westley2.c
 	cc westley2.c -ansi -o westley2
@@ -26,20 +27,28 @@ Judges' Comments:
 	./westley3 < westley.c | diff - westley2.c
 	./westley3 < westley.c | diff - westley3.c
 
+### Alternate code
+
+An alternate version of this entry, `westley.alt.c`, is provided.  This alternate code may be less portable.
+
+To compile this alternate version:
+
+    make alt
+
+Use `westley.alt` as you would `westley` above.
+
+## Judges' comments
+
     Try copying the source to a new file and changing around the
     order of the lines.  Does it produce the exact same output?
 
     By changing the order of the source, figure out in how many different
     ways this program can transform input to output.
 
-    NOTE: The entry has been modified for portability reasons.  The
-          original source may be found in the westley.orig.c file.
-
     This assortment obfuscated lines takes position-independant code
     to a new level!  :-)
 
-
-Selected Author's Comments:
+## Author's comments
 
     Punch cards, or Hollerith cards, were becoming obsolete just
     as C was becoming more popular*; this is rather unfortunate,
