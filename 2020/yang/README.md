@@ -1,36 +1,37 @@
 # Best abuse of CPP
 
+```
 Don Yang  
 <http://uguu.org/>  
+```
 
+## To build:
 
-The code for this entry can be found in prog.c
+```sh
+make
+```
+
+### To run:
+
+```sh
+echo "International Obfuscated C Code Contest 2020" | ./prog 23209 > code.c
+
+# compile without a PIN
+cc code.c -o decode
+# yes, you must compile with -DPIN=<number>
+
+# compile with the wrong pin
+cc -DPIN=555 code.c -o wrongcoded	 # wait for it ...
+./wrongcoded | hexdump -C
+# Use the wrong PIN: You're gonna have a bad time.
+
+# compile with a PIN
+cc -DPIN=23209 code.c -o decoded	# wait for it ...
+./decoded
+# weeeeeeeeeeeeee! You are having a good time!
+```
 
 ## Judges' comments:
-### To use:
-
-    make
-    ./prog
-
-### Try:
-
-    echo "International Obfuscated C Code Contest 2020" | ./prog 23209 > code.c
-
-    # compile without a PIN
-    cc code.c -o decode
-    # yes, you must compile with -DPIN=<number>
-
-    # compile with the wrong pin
-    cc -DPIN=555 code.c -o wrongcoded	 # wait for it ...
-    ./wrongcoded | hexdump -C
-    # Use the wrong PIN: You're gonna have a bad time.
-
-    # compile with a PIN
-    cc -DPIN=23209 code.c -o decoded	# wait for it ...
-    ./decoded
-    # weeeeeeeeeeeeee! You are having a good time!
-
-### Selected Judges Remarks:
 
 You might think of this entry as code obfuscater with a code.
 If you use the wrong code, you're gonna have a bad time.
@@ -40,31 +41,39 @@ What is compiling this entry about?
 This winning entry also comes with a [JavaScript timelapse
 spoiler](spoiler.html) that shows how this entry was written.
 
-
 ## Author's comments:
+
 ### Synopsis
 
-    echo "Hello world" | ./prog 12345 > encoded.c
+```sh
+echo "Hello world" | ./prog 12345 > encoded.c
 
-    gcc -DPIN=12345 encoded.c -o ./decoded && ./decoded
+gcc -DPIN=12345 encoded.c -o ./decoded && ./decoded
+```
 
 ### Details
 
 Mile is a C code generator.  Run without arguments for the help message below:
 
-    usage: [PIN] < input.txt > output.c
+```
+usage: [PIN] < input.txt > output.c
 
-    where [PIN] is an integer in the range of 1..65535
+where [PIN] is an integer in the range of 1..65535
+```
 
 When run with an encoding PIN (first command line argument), Mile will
 read bytes from stdin and generate C code on stdout.  Example:
 
-    echo "Hello, world!" | ./prog 56789 > encoded.c
+```sh
+echo "Hello, world!" | ./prog 56789 > encoded.c
+```
 
 This generated code will reproduce the same input bytes on stdout when
 executed, if it was compiled with the same encoding PIN.
 
-    gcc -DPIN=56789 encode.c -o decoded
+```sh
+gcc -DPIN=56789 encode.c -o decoded
+```
 
 The generated code reconstructs all data at compile time by seeding a
 random number generator with the given PIN to reproduce the input bytes,
@@ -132,10 +141,10 @@ with this entry to preprocess the generated output to make them more
 acceptable to typical compilers.  View the [cppp.cc](cppp.cc) source and
 then compile it with a c++ compiler of your choice.
 
------------------------------------------------------------------------------------------------------
+## Copyright:
+
 (c) Copyright 1984-2020, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
------------------------------------------------------------------------------------------------------
