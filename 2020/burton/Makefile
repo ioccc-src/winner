@@ -76,7 +76,7 @@ CWARN= -Wall -Wextra -pedantic ${CSILENCE}
 #
 #CSTD=
 #CSTD= -ansi
-CSTD= -std=gnu99
+CSTD= -std=gnu17
 
 # Compiler bit architecture
 #
