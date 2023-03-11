@@ -1,5 +1,5 @@
 for i in "${@?${usage?$0 file...}}";do<"$i"||exit;done
-(cat&&tar cbf 1 - "$@"|compress|btoa&&echo w)<<\Z
+(cat&&tar cbf 1 - "$@"|compress|./btoa&&echo w)<<\Z
 #!/bin/sh
 #
 # GENTLE READER -- write this message to file [no headers!]; run "sh file".
@@ -13,7 +13,7 @@ PATH=$PATH:. a=atob m=unshark z=zcat
 r="rm -f $a $m* $z" v="cc -o $z $m.c"
 trap "$r;exit 1" 1 2 13 15
 echo decoding...
-(:|compress|btoa|$a|$z)2>$m>&2||(sed '1,9s/./#define & /
+(:|compress|./btoa|$a|$z)2>$m>&2||(sed '1,9s/./#define & /
 s/@/[w]/g
 s/C/char /g
 s/I/;if(/g
