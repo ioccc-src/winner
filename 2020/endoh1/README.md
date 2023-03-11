@@ -1,25 +1,34 @@
 # Most explosive
 
+```
 Yusuke Endoh
 Twitter: @mametter
+```
 
 ## To build:
 
-        make all
+```sh
+make
+```
 
-### To run
+### To run:
 
-    ./prog
+```sh
+./prog
+```
 
 ### Try:
 
-    # Try resizing the terminal window before the first click.
+```sh
 
-    # Try resizing the terminal window after the first click.
+# Try resizing the terminal window before the first click.
 
-    ./prog ioccc.txt
+# Try resizing the terminal window after the first click.
 
-    ./prog unwinnable.txt
+./prog ioccc.txt
+
+./prog unwinnable.txt
+```
 
 ### Alternate code
 
@@ -27,7 +36,9 @@ An alternate version of this entry, prog.alt.c, is provided.  This alternate cod
 
 To compile this alternate version:
 
-    make alt
+```sh
+make alt
+```
 
 Use `prog.alt` as you would `prog` above.
 
@@ -59,8 +70,10 @@ All you have to do is (A).  You can test if you are lucky or not.
 
 It uses ncurses:
 
-    $ gcc -o prog prog.c -lncurses
-    $ ./prog
+```sh
+gcc -o prog prog.c -lncurses
+./prog
+```
 
 You will see a terminal-wide field of a minesweeper.  Probe a cell by mouse click.
 If a cell turns out to have a mine (or not), the program determines whether its neighbors have a mine or not, and automatically probes (or flags) the cell.
@@ -81,9 +94,9 @@ If the number of a cell is equal to the count of the flagged neighbors, all the 
 Example:
 
 ```
-    ? ? ?      . . .
-    ? 3 ?  =>  . 3 .
-    ! ! !      ! ! !
+? ? ?      . . .
+? 3 ?  =>  . 3 .
+! ! !      ! ! !
 ```
 
 Note that `?` is a unprobed cell (it is unknown whether the cell has a mine or not); `!` is a flagged cell (it is already known that the cell has a mine); and `.` is a probed cell (it is already known that the cell has no mine).
@@ -95,9 +108,9 @@ If the number of a cell is equal to the count of the unprobed or flagged neighbo
 Example:
 
 ```
-    . ? ?      . ! !
-    . 4 ?  =>  . 4 !
-    . 2 !      . 2 !
+. ? ?      . ! !
+. 4 ?  =>  . 4 !
+. 2 !      . 2 !
 ```
 
 #### Rule 3
@@ -107,10 +120,10 @@ Consider two number cells A and B.  If A is equal to the difference of B and the
 Example:
 
 ```
-    ? ? ?        . . .
-    ? 1 ? ?  =>  . 1 ? ?
-    ? ? 4 .      . ? 4 .
-      ? . !        ? . !
+? ? ?        . . .
+? 1 ? ?  =>  . 1 ? ?
+? ? 4 .      . ? 4 .
+  ? . !        ? . !
 ```
 
 A and B are probed cells whose numbers are, respectively, 1 and 4.  The count of B's unprobed and flagged neighbors that are not A's neighbors is three (one `!` and two `?`s).  Since A (1) == B (4) - the count (3), the left and top unprobed cells are probed.
@@ -120,9 +133,9 @@ A and B are probed cells whose numbers are, respectively, 1 and 4.  The count of
 Consider two number cells A and B.  If B is equal to the difference of A and the count of A's unprobed and flagged neighbors that are not B's neighbors, all A's unprobed neighbors that are not B's neighbors are flagged.
 
 ```
-    ? ? ? ?      ! ? ? ?
-    ? 3 1 2  =>  ! 3 1 2
-    2 2 . .      2 2 . .
+? ? ? ?      ! ? ? ?
+? 3 1 2  =>  ! 3 1 2
+2 2 . .      2 2 . .
 ```
 
 A and B are probed cells whose numbers are, respectively, 3 and 1.  The count of A's unprobed and flagged neighbors that are not B's neighbors is two (left `?`s).  Since B (1) == A (3) - the count (2), the left unprobed cells are flagged.
@@ -135,11 +148,15 @@ Interestingly, these complex rules can be integrated to one simple rule.  Analyz
 
 You can also play with a prepared map.
 
-    $ ./prog ioccc.txt
+```sh
+ ./prog ioccc.txt
+ ```
 
 The format of the text is:
 
-    width height number-of-mines priorities-of-each-cell...
+```
+width height number-of-mines priorities-of-each-cell...
+```
 
 There are mines in a cell whose "priorities-of-each-cell" is less than "number-of-mines".
 (But the mine in the first-clicked cell is removed.)
@@ -153,10 +170,10 @@ Ilya Kurdyukov also pointed out a warning "ignoring return value of 'fscanf'" on
 
 Don Yang (omoikane) contributed another example map "megumin.txt" which is the Explosion Arch-Wizard.
 
------------------------------------------------------------------------------------------------------
+## Copyright:
+
 (c) Copyright 1984-2020, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
------------------------------------------------------------------------------------------------------
