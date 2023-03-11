@@ -62,8 +62,8 @@ X11_INCDIR= /opt/X11/include
 
 # Common C compiler warnings to silence
 #
-#CSILENCE=
-CSILENCE= -Wno-shorten-64-to-32 -Wno-sign-conversion -Wno-unknown-warning-option
+CSILENCE=
+#CSILENCE= -Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -102,7 +102,7 @@ CINCLUDE=
 #CINCLUDE= -include stdio.h
 #CINCLUDE= -include stdlib.h -include stdio.h
 #CINCLUDE= -I ${X11_INCDIR}
-#CINCLUDE= -I ${HOMEBREW_PREFIX}/include/SDL2
+#CINCLUDE= `${SDL2_CONFIG} --cflags`
 
 # Optimization
 #
@@ -126,7 +126,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 LIBS=
 #LIBS= -lm
 #LIBS= -L ${X11_LIBDIR} -lX11
-#LIBS= -L ${HOMEBREW_PREFIX}/lib -lSDL
+#LIBS= `${SDL2_CONFIG} --libs`
 
 # C compiler to use
 #
@@ -138,7 +138,8 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-CSILENCE+= -Wno-comma -Wno-conditional-uninitialized -Wno-poison-system-directories
+CSILENCE+= -Wno-comma -Wno-conditional-uninitialized -Wno-poison-system-directories \
+	-Wno-shorten-64-to-32 -Wno-sign-conversion
 #
 CWARN+= -Weverything
 #
@@ -163,11 +164,11 @@ ENTRY= kurdyukov3
 PROG= prog
 #
 OBJ= ${PROG}.o
-DATA=
+DATA= input.txt
 TARGET= ${PROG}
 #
-ALT_OBJ= ${PROG}.alt.o
-ALT_TARGET= ${PROG}.alt
+ALT_OBJ= ${PROG}.alt.o ${PROG}.extra.o
+ALT_TARGET= ${PROG}.alt ${PROG}.extra
 
 
 #################
@@ -184,13 +185,16 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
-${PROG}.alt: ${PROG}.alt.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
-
 # alternative executable
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
+${PROG}.extra: ${PROG}.extra.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # data files
 #
@@ -326,3 +330,4 @@ pluto: charon
 	@echo "dwarf is a type of planet"
 	@echo "therefore, $@ is a planet"
 	@echo "having lots of planets is good feature because supernovae can help ${MAKE} a lot of them"
+
