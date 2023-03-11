@@ -102,7 +102,7 @@ CINCLUDE=
 #CINCLUDE= -include stdio.h
 #CINCLUDE= -include stdlib.h -include stdio.h
 #CINCLUDE= -I ${X11_INCDIR}
-#CINCLUDE= -I ${HOMEBREW_PREFIX}/include/SDL2
+#CINCLUDE= `${SDL2_CONFIG} --cflags`
 
 # Optimization
 #
@@ -126,7 +126,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 LIBS=
 #LIBS= -lm
 #LIBS= -L ${X11_LIBDIR} -lX11
-#LIBS= -L ${HOMEBREW_PREFIX}/lib -lSDL
+#LIBS= `${SDL2_CONFIG} --libs`
 
 # C compiler to use
 #
@@ -138,7 +138,8 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-#CSILENCE+=
+CSILENCE+= -Wno-comma -Wno-poison-system-directories -Wno-shorten-64-to-32 \
+	-Wno-sign-conversion
 #
 CWARN+= -Weverything
 #
@@ -163,7 +164,7 @@ ENTRY= kurdyukov1
 PROG= prog
 #
 OBJ= ${PROG}.o
-DATA= prog.x86.asm prog.x86_64.asm
+DATA=
 TARGET= ${PROG}
 #
 ALT_OBJ= ${PROG}.alt.o
@@ -184,13 +185,13 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
-${PROG}.alt: ${PROG}.alt.c
-	${CC} ${CFLAGS} --include stdint.h --include stdio.h $< -o $@ ${LIBS}
-
 # alternative executable
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} --include stdint.h --include stdio.h $< -o $@ ${LIBS}
 
 # data files
 #

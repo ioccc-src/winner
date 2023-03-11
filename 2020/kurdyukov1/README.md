@@ -1,24 +1,32 @@
 # Best utility
 
+```
 Ilya Kurdyukov  
 <https://github.com/ilyakurdyukov>  
 Twitter: @ilyakurdyukov  
+```
 
-## Judges' comments:
+## To build:
 
-    make all
+```sh
+make
+```
 
-### To use:
+### To run:
 
-    ./prog
+```sh
+./prog
+```
 
 ### Try:
 
-    echo IOCCC | ./prog
+```sh
+echo IOCCC | ./prog
 
-    ./prog < prog.x86.asm
+./prog < prog.x86.asm
 
-    ./prog < prog.x86_64.asm
+./prog < prog.x86_64.asm
+```
 
 ### Alternate code
 
@@ -26,7 +34,9 @@ An even smaller alternate version of this entry, prog.alt.c, is provided.  This 
 
 To compile this alternate version:
 
-    make alt
+```sh
+make alt
+```
 
 Use `prog.alt` as you would `prog` above.
 
@@ -70,11 +80,10 @@ Added a macro hack to make stdin work in binary mode under Windows (tested under
 
 - `prog.x86.asm` and for x86, although the headers are smaller, but the binary code is larger due to fewer registers and lack of 64-bit multiply.
 
+## Copyright:
 
------------------------------------------------------------------------------------------------------
 (c) Copyright 1984-2020, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
------------------------------------------------------------------------------------------------------
