@@ -76,14 +76,14 @@ CWARN= -Wall -Wextra -pedantic ${CSILENCE}
 #
 #CSTD=
 #CSTD= -ansi
-CSTD= -std=gnu99
+CSTD= -std=c99
 
 # Compiler bit architecture
 #
 # Some entries require 32-bitness:
 # ARCH= -m32
 #
-# Some entries require 64-bitness:
+
 # ARCH= -m64
 #
 # By default we assume nothing:
