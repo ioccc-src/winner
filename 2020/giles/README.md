@@ -1,43 +1,55 @@
 # Most phony
 
+```
 Edward Giles  
 <https://id523a.com/>  
+```
 
+## To build:
 
-The code for this entry can be found in prog.c
+```sh
+make
+```
 
-## Judges' comments:
-### To use:
+### To run:
 
-    make
-    ./prog
+```sh
+./prog
+```
 
 ### Try:
 
-    ./prog < pi.wav
+```sh
+./prog < pi.wav
 
-    # [https://en.wikipedia.org/wiki/867-5309/Jenny]
-    ./prog 867-5309 > jenny.wav
+# [https://en.wikipedia.org/wiki/867-5309/Jenny]
+./prog 867-5309 > jenny.wav
 
-    # Use an audio player to play jenny.wav
+# Use an audio player to play jenny.wav
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 A cross platform utility for both encoding and decoding tones.
 
 ## Author's comments:
+
 ### Introduction and Usage
 
 This program encodes and decodes [dual-tone multiple frequency](https://en.wikipedia.org/wiki/Dual-tone_multi-frequency_signaling) signals used in telephone systems, more commonly known as Touch-Tones.
 
 If the program is executed with no arguments, it will read a WAV file from standard input, decode the touch-tones in the file, and output the corresponding digits to standard output. This program only supports WAV files that have exactly 16 bits per sample, but it allows any sample rate and any number of audio channels.
 
-    $ ./prog < pi.wav
-    31415926
+```sh
+$ ./prog < pi.wav
+31415926
+```
 
 If the program is executed with a command-line argument, it will generate the tones corresponding to the specified characters, writing them to standard output as a WAV file.
 
-    $ ./prog 867-5309 | aplay
+```sh
+$ ./prog 867-5309 | aplay
+```
 
 ### Interesting Features
 
@@ -88,10 +100,10 @@ This program determines which frequencies are present in the input by passing it
 
 Tones are generated using those same resonators by providing [an impulse](https://en.wikipedia.org/wiki/Kronecker_delta#Digital_signal_processing) as input. An impulse can be thought of as consisting of sine-waves at all frequencies, and when it is put through one of the resonators, the result is a single pure sine wave.
 
------------------------------------------------------------------------------------------------------
+## Copyright:
+
 (c) Copyright 1984-2020, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
------------------------------------------------------------------------------------------------------
