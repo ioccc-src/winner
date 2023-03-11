@@ -182,8 +182,7 @@ all: ${DATA} ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: This entry will not compile when using clang because it does not support"
-	@echo "      -traditional-cpp but it should compile with gcc."
+	@echo "NOTE: NOTE: this entry requires a compiler that supports -traditional-cpp."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable

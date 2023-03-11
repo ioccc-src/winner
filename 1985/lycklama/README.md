@@ -6,8 +6,10 @@ Ed Lycklama
 
         make all
 
-NOTE: This entry uses non-standard args to main() that do not work with modern compilers.
 
+## To run:
+
+	./lycklama < some_file
 
 ## Try:
 
