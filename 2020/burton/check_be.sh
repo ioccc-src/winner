@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 prog="$1"
 : ${prog:=./prog_be}

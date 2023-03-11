@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 prog="$1"
-: ${prog:=./prog}
+: ${prog:=./prog_le}
 
 check_prog() {
     /bin/echo -n "$1 "; $prog $1
