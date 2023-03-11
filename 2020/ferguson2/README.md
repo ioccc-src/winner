@@ -1,36 +1,43 @@
 # Most enigmatic
 
+```
 Cody Boone Ferguson <ioccc@xexyl.net>  
 <https://ioccc.xexyl.net>  
 Twitter: @xexyl  
+```
 
+## To build:
 
-The code for this entry can be found in prog.c
+```sh
+make
+```
 
-## Judges' comments:
-### To use:
+### To run:
 
-    make
-    ./prog
+```sh
+./prog
+```
 
 ### Try:
 
-    # IOCCC obfuscated!
-    echo IOCCC | ./prog
+```sh
+# IOCCC obfuscated!
+echo IOCCC | ./prog
 
-    # IOCCC obfuscated and de-obfuscated!
-    echo IOCCC | ./prog | ./prog
+# IOCCC obfuscated and de-obfuscated!
+echo IOCCC | ./prog | ./prog
 
-    # more input fun
-    ./prog - < try.this.txt 2>/dev/null
+# more input fun
+./prog - < try.this.txt 2>/dev/null
 
-    # more obfuscated fun
-    echo testing test tests | ./recode
-    echo testing test tests | ./recode | ./prog - 2>/dev/null
-    echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode
-    echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode | ./prog - 2>/dev/null
+# more obfuscated fun
+echo testing test tests | ./recode
+echo testing test tests | ./recode | ./prog - 2>/dev/null
+echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode
+echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode | ./prog - 2>/dev/null
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 This code is an enigma.  Try to decode it!
 
@@ -40,7 +47,9 @@ There is a good deal of useful documentation that is provided with this entry:
 
 A useful man page for this entry.  To render, try:
 
-    man ./enigma.1
+```sh
+man ./enigma.1
+```
 
 * recode.md ([recode.html][])
 
@@ -54,6 +63,7 @@ Because most of us could use some *Double-layered Chocolate Fudge Cake*!
 [chocolate-cake.html]: chocolate-cake.html
 
 ## Author's comments:
+
 My remarks about my Heer 'Army' and Luftwaffe 'Air Force' Enigma simulator for
 the 27th IOCCC.
 
@@ -137,19 +147,21 @@ loop!
 
 The author (Nathan) of the [1992 Worst Abuse of the Rules][] had this to say:
 
-	This program is a hello world text encrypter/decrypter. It uses an
-	enigma (I think) style encryption algorithm, where the encryption
-	key character is modified by a value, determined from the previous
-	character.  Non-printable characters (those with ASCII values < ' '
-	or > 0x7e) are passed unaltered, thus any kind of file may be
-	successfully processed, but if the original is printable, the
-	processed file will be too. The input is read from stdin, and the
-	output presented to stdout. The key, a text string, is presented as
-	a command argument. This is optional, and if omitted, the file is
-	self-{de,en}crypted. To specify decryption, a "-" should be given
-	before the key. (Actually encryption and decryption proper inverse
-	operations, so you can use decrypt to scramble and encrypt to
-	descramble, if you're perverse.)
+```
+This program is a hello world text encrypter/decrypter. It uses an
+enigma (I think) style encryption algorithm, where the encryption
+key character is modified by a value, determined from the previous
+character.  Non-printable characters (those with ASCII values < ' '
+or > 0x7e) are passed unaltered, thus any kind of file may be
+successfully processed, but if the original is printable, the
+processed file will be too. The input is read from stdin, and the
+output presented to stdout. The key, a text string, is presented as
+a command argument. This is optional, and if omitted, the file is
+self-{de,en}crypted. To specify decryption, a "-" should be given
+before the key. (Actually encryption and decryption proper inverse
+operations, so you can use decrypt to scramble and encrypt to
+descramble, if you're perverse.)
+```
 
 But the Enigma algorithm is more complex than that and my entry can encipher and
 decipher text in the manner of the Enigma machines of the Army (Heer) and Air
@@ -174,7 +186,9 @@ the result (after finishing the enciphering).
 
 If you run it like:
 
-	    ./prog -
+```sh
+./prog -
+```
 
 It will prompt you for the settings of the machine (example below).
 
@@ -198,31 +212,32 @@ general program as well as how to use the two winning entries of the Morse code
 that I referred to earlier:
 
 
-	    $ ./prog -
-	    Ring 1: 3
-	    Setting 1: I
-	    Position 1: O
-	    Ring 2: 1
-	    Setting 2: C
-	    Position 2: C
-	    Ring 3: 5
-	    Setting 3: C
-	    Position 3: Z
-	    Reflector: 2
-	    Plugboard pair 1: CO
-	    Plugboard pair 2: DE
-	    Plugboard pair 3: SN
-	    Plugboard pair 4: XY
-	    Plugboard pair 5: MS
-	    Plugboard pair 6: AT
-	    Plugboard pair 7: VF
-	    Plugboard pair 8: UR
-	    Plugboard pair 9: KL
-	    Plugboard pair 10: BJ
-	    IOCCC
-	    ^D
-	    CFDRG
-
+```sh
+$ ./prog -
+Ring 1: 3
+Setting 1: I
+Position 1: O
+Ring 2: 1
+Setting 2: C
+Position 2: C
+Ring 3: 5
+Setting 3: C
+Position 3: Z
+Reflector: 2
+Plugboard pair 1: CO
+Plugboard pair 2: DE
+Plugboard pair 3: SN
+Plugboard pair 4: XY
+Plugboard pair 5: MS
+Plugboard pair 6: AT
+Plugboard pair 7: VF
+Plugboard pair 8: UR
+Plugboard pair 9: KL
+Plugboard pair 10: BJ
+IOCCC
+^D
+CFDRG
+```
 
 Notice that all output except the deciphered/enciphered text is sent to stdout.
 
@@ -231,17 +246,20 @@ default settings; as the judges suggest this invocation I will not show it here.
 
 But you can also type it out like this:
 
-	    $ ./prog
-	    IOCCC
-	    UUMMX
-
+```sh
+$ ./prog
+IOCCC
+UUMMX
+```
 
 The IOCCC comes from stdin; the `UUMMX` is written to stdout.
 
 If I compile the 2014 entry and copy it to my local directory as
 `vik` I might do:
 
-	    $ echo TEST|./prog |./vik | mplayer -demuxer rawaudio -
+```sh
+$ echo TEST|./prog |./vik | mplayer -demuxer rawaudio -
+```
 
 And you would hear Morse code of the Enigma output of 'TEST' (i.e. `KCWV`). Or
 perhaps not in this case. I'm not sure: I discovered a bug in that entry
@@ -250,41 +268,53 @@ perhaps not in this case. I'm not sure: I discovered a bug in that entry
 For example I can use the syntax provided in the winning remarks along with my
 entry to write it to a file. Say:
 
-	    $ echo TEST|./prog |./vik > test.raw
-	    $ ./vik e < test.raw | ./prog
-	    LEST
+```sh
+$ echo TEST|./prog |./vik > test.raw
+$ ./vik e < test.raw | ./prog
+LEST
+```
 
 Why did that happen? This shows more details:
 
-	    $ ./vik e < test.raw
-	    SCWV
+```sh
+$ ./vik e < test.raw
+SCWV
+```
 
 However as can be seen the first char is wrong:
 
-	    $ echo TEST|./prog
-	    KCWV
+```sh
+$ echo TEST|./prog
+KCWV
+```
 
 And piping the original output to my entry itself you get the original input:
 
-	    $ echo TEST | ./prog  | ./prog
-	    TEST
+```sh
+$ echo TEST | ./prog  | ./prog
+TEST
+```
 
 I'm not sure what causes that or if there's a way to fix it but that's the
 idea anyway. Neither do I know if the original transcoding is correct.
 
 What if I use the input string 'LEST' instead? In that case it worked fine:
 
-	    $ echo LEST | ./prog | ./vik > lest.raw
-	    $ ./vik e < lest.raw | ./prog
-	    LEST
+```sh
+$ echo LEST | ./prog | ./vik > lest.raw
+$ ./vik e < lest.raw | ./prog
+LEST
+```
 
 But there's one obvious question, right? Let's try the most important one:
 
-	    $ echo IOCCC | ./prog | ./vik > ioccc.raw
-	    $ ./vik e < ioccc.raw
-	    UUMMX
-	    $ ./vik e < ioccc.raw | ./prog
-	    IOCCC
+```sh
+$ echo IOCCC | ./prog | ./vik > ioccc.raw
+$ ./vik e < ioccc.raw
+UUMMX
+$ ./vik e < ioccc.raw | ./prog
+IOCCC
+```
 
 Phew! The program redeemed itself after the test failure! :)
 
@@ -294,8 +324,10 @@ too. Notice also how it showed the same output that my program gave it - `UUMMX`
 
 What about the other Morse code entry?
 
-	    $ echo IOCCC | ./prog | ./dorssel
-	    ..- ..- -- -- -..-
+```sh
+$ echo IOCCC | ./prog | ./dorssel
+..- ..- -- -- -..-
+```
 
 ### <a name="recode" href="#toc">The recode.c configurator</a>
 
@@ -331,26 +363,28 @@ The parser is in a sense rather rudimentary but allows for both interactive and
 automatic (e.g. via the recode program) input. This does mean that something
 like the following can happen:
 
-	    $ ./prog -
-	    Ring 1: 1AB
-	    Setting 1: Position 1: Ring 2: 2CD
-	    Setting 2: Position 2: Ring 3: 3
-	    Setting 3: A
-	    Position 3: B
-	    Reflector: 1A
-	    Plugboard pair 1: BC
-	    Plugboard pair 2: ..
-	    Plugboard pair 3: ..
-	    Plugboard pair 4: DE
-	    Plugboard pair 5: FG
-	    Plugboard pair 6: HI
-	    Plugboard pair 7: JK
-	    Plugboard pair 8: LM
-	    Plugboard pair 9: NO
-	    Plugboard pair 10: PQ
-	    IOCCC
-	    WD
-	    SIRDK
+```sh
+$ ./prog -
+Ring 1: 1AB
+Setting 1: Position 1: Ring 2: 2CD
+Setting 2: Position 2: Ring 3: 3
+Setting 3: A
+Position 3: B
+Reflector: 1A
+Plugboard pair 1: BC
+Plugboard pair 2: ..
+Plugboard pair 3: ..
+Plugboard pair 4: DE
+Plugboard pair 5: FG
+Plugboard pair 6: HI
+Plugboard pair 7: JK
+Plugboard pair 8: LM
+Plugboard pair 9: NO
+Plugboard pair 10: PQ
+IOCCC
+WD
+SIRDK
+```
 
 First of all: what is that WD? I didn't type that but it appeared it seems due
 to too much input that triggers this (it happens when I hit ctrl-d to end
@@ -387,11 +421,12 @@ should help you remember (though not at this time in our world it might help you
 later on?). This might become even more useful after the challenge is accepted,
 accomplished and made use of! :)
 
-	    $ echo ABC | ./prog
-	    GYM
-	    $ echo ABC | ./prog | ./prog
-	    ABC
-
+```sh
+$ echo ABC | ./prog
+GYM
+$ echo ABC | ./prog | ./prog
+ABC
+```
 
 ### <a name="layout" href="#toc">On the source code layout</a>
 
@@ -414,8 +449,10 @@ fix but I consider this inconsequential).
 
 As for recode.c though I really love this:
 
-		  /\
-	    /     This is *not* what you think:
+```
+  /\
+/     This is *not* what you think:
+```
 
 ...because it seems so wrong in C code at first glance.
 
@@ -427,11 +464,15 @@ It's an Enigma simulator! Isn't that proof that it's obfuscated itself?! :)
 Silliness aside [obfuscation.txt][] has some of the ways I think this entry is
 obfuscated.  To decipher try:
 
-	    ./recode -Robfuscation.key -fobfuscation.txt | ./prog - 2>/dev/null > obfuscation.md
+```sh
+./recode -Robfuscation.key -fobfuscation.txt | ./prog - 2>/dev/null > obfuscation.md
+```
 
 To encipher:
 
-	    ./recode -Robfuscation.key -fobfuscation.md | ./prog - 2>/dev/null > obfuscation.txt
+```sh
+./recode -Robfuscation.key -fobfuscation.md | ./prog - 2>/dev/null > obfuscation.txt
+```
 
 The file [obfuscation.key][] is the key to decipher/encipher
 [obfuscation.txt][].
@@ -446,9 +487,10 @@ fun way to explore this entry.
 As for the [obfuscation.key][] file if you observe the contents you'll find the
 word OBFUSCATION:
 
-	    2OB5FU1SC2ATIONCDEFGHJKLMPQRYZ
-	     OB FU SC ATION
-
+```
+2OB5FU1SC2ATIONCDEFGHJKLMPQRYZ
+ OB FU SC ATION
+```
 
 ### <a name="bugs" href="#toc">Bugs, limitations, differences from the real Enigma machines and general notes</a>
 
@@ -467,11 +509,13 @@ program *however does validate this* (except when reading in settings via the
 to B then no other letters can connect to A or B. Earlier there wasn't proper
 detection and this caused invalid output.
 
-    Why only 10 pairs when the German alphabet has 26 letters? It's
-    theoretically possible to have 13 but the Enigma typically had 10 pairs.
-    It's easy enough to update my entry to do this once you de-obfuscate it but
-    I'm not helping there (and in fact I don't think I could any more even if I
-    wanted to - at least not easily!).
+```
+Why only 10 pairs when the German alphabet has 26 letters? It's
+theoretically possible to have 13 but the Enigma typically had 10 pairs.
+It's easy enough to update my entry to do this once you de-obfuscate it but
+I'm not helping there (and in fact I don't think I could any more even if I
+wanted to - at least not easily!).
+```
 
 *   It does not obviously have the clicking sound associated with the moving
 parts of the real machine. I think it would be annoying to have this as it
@@ -599,8 +643,10 @@ simulator make sure to use Rotors I, II and III and the starting positions at B,
 B and C respectively (as in left, centre, right). To do this click the button at
 the top right that looks like:
 
-	o->
-	<-o
+```
+o->
+<-o
+```
 
 And then select the rotors. Next click the button again at the left of the
 rotor selection 'screen'. Then use the arrow buttons above each rotor to set
@@ -620,7 +666,9 @@ determine if the ring settings being different from ABC would cause a problem
 Going back to the configuring the online simulator try inputting the text IOCCC
 and you'll see the resulting text being:
 
-	UUMMX
+```
+UUMMX
+```
 
 Which is exactly as my entry shows! So at least for the starting position BBC
 and an empty plugboard and the other defaults in my entry (which appear to be
@@ -737,11 +785,10 @@ as well as the award titles. And yes indeed 'most of us could use
 
 [Double-layered Chocolate Fudge Cake]: chocolate-cake.html
 
+## Copyright:
 
------------------------------------------------------------------------------------------------------
 (c) Copyright 1984-2020, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
------------------------------------------------------------------------------------------------------
