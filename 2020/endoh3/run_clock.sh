@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/end bash
 while true; do
 cc -std=c11 -Wall -Wextra -pedantic -O3 clock.c -o clock
 clear
