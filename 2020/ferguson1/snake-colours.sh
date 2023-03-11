@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Snake script that prompts for the colours desired for the colours for the
 # walls, the head and body of the snake and the bug, and then proceeds to

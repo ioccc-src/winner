@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # SCRIPT TO PLAY PRESET GAMEPLAY MODES
 #

@@ -1,36 +1,42 @@
 # Don't tread on me award
 
+```
 Cody Boone Ferguson <ioccc@xexyl.net>  
 <https://ioccc.xexyl.net>  
 Twitter: @xexyl  
+```
 
+## To build:
 
-The code for this entry can be found in prog.c
+```sh
+make
+```
 
-## Judges' comments:
-### To use:
+### To run:
 
-    make
-    WAIT=100 WALLS=0 CANNIBAL=0 ./prog
-    # Start pressing some arrow keys
+```sh
+WAIT=100 WALLS=0 CANNIBAL=0 ./prog
+```
 
 ### Try:
 
-    make test
+```sh
+make test
 
-    WAIT=75 WALLS=1 CANNIBAL=1 ./prog
+WAIT=75 WALLS=1 CANNIBAL=1 ./prog
 
-    ./prog
+./prog
 
-    SIZE=-1 ./prog
+SIZE=-1 ./prog
 
-    CANNIBAL=1 WALLS=1 WAIT=50 EVADE=200 ./prog
+CANNIBAL=1 WALLS=1 WAIT=50 EVADE=200 ./prog
 
-    WAIT=75 GROW=-1 SIZE=5 CANNIBAL=1 ./prog
+WAIT=75 GROW=-1 SIZE=5 CANNIBAL=1 ./prog
 
-    CANNIBAL=1 WALLS=1 WAIT=0 EVADE=1 MAXSIZE=10 ./prog
+CANNIBAL=1 WALLS=1 WAIT=0 EVADE=1 MAXSIZE=10 ./prog
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 As the [Gadsden flag](https://en.wikipedia.org/wiki/Gadsden_flag) warns, beware of the snake!
 This game has a number of configurable pitfalls including walls and snakes.
@@ -69,6 +75,7 @@ Read ***ONLY*** if you really must give up trying to de-obfuscate!
 [spoilers.html]: spoilers.html
 
 ## Author's comments:
+
 ### Feature-rich curses implementation of the Snake game (with many gameplay modes and options)
 
 Snake has two cheat modes (passable walls and self [cannibalism]), a drawing (or
@@ -157,8 +164,9 @@ features.
 Because all IOCCC entries should have a man page I have included one (even
 though much of it is what's also above). To render try:
 
-	    man ./snake.1
-
+```sh
+man ./snake.1
+```
 
 The [COMPILING][] file has a few portability notes and the [HACKING][] file has
 some information on how one might modify things, things that could be
@@ -174,7 +182,6 @@ For the files I recommend looking at the html files with a browser; this
 particularly goes for the [gameplay.html][], [bugs.html][], [terminals.html][]
 and [troubleshooting.html][] - along with the most important one
 [chocolate-cake.html][].
-
 
 <a name="toc"></a>
 
@@ -531,12 +538,12 @@ my entries. It's a huge honour; thank you! I also happen to **love** your
 comments as well as the award titles. And yes indeed 'most of us could use
 *[Double-layered Chocolate Fudge Cake][]*!'
 
-
 [Double-layered Chocolate Fudge Cake]: chocolate-cake.html
------------------------------------------------------------------------------------------------------
+
+## Copyright:
+
 (c) Copyright 1984-2020, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
------------------------------------------------------------------------------------------------------
