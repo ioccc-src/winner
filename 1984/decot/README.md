@@ -11,6 +11,10 @@ clang does not support. We thank Yusuke Endoh for his patch which allows the
 entry to compile under gcc! Please be advised that gcc under macOS is actually
 clang so this will not compile with the default gcc under macOS.
 
+## To run:
+
+	./decot
+
 ## Judges' comments:
 
 
