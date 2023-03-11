@@ -1,33 +1,40 @@
 # Least detailed
 
+```
 Ilya Kurdyukov  
 <https://github.com/ilyakurdyukov>  
 Twitter: @ilyakurdyukov  
+```
 
+## To build:
 
-The code for this entry can be found in prog.c
+```sh
+make
+```
 
-## Judges' comments:
-### To use:
+### To run:
 
-    make prog prog_png prog_ppm
-    ./prog Nrect infile outfile
+```sh
+./prog
+```
 
 ### Try:
 
-    # Take a selfie
-    ./prog 1000 selfie.jpg output.jpg
-    # Admire your portrait in cubist style
+```sh
+# Take a selfie
+./prog 1000 selfie.jpg output.jpg
+# Admire your portrait in cubist style
 
-    (echo P6 1024 1024 255; dd if=/dev/urandom bs=3M count=1) > random.ppm
-    # Look at random.ppm. Do you see any patterns?
-    ./prog_ppm 1000 random.ppm output.ppm
-    # See which patterns the program has found
+(echo P6 1024 1024 255; dd if=/dev/urandom bs=3M count=1) > random.ppm
+# Look at random.ppm. Do you see any patterns?
+./prog_ppm 1000 random.ppm output.ppm
+# See which patterns the program has found
 
-    for i in 0001 0002 0004 0008 0016 0032 0064 0128 0256 0512 1024 2048 4096 8192 ; do ./prog $i sample.jpg out$i.jpg; done
-    # Then flip through the out*.jpg pictures and see when you start recognizing the image.
+for i in 0001 0002 0004 0008 0016 0032 0064 0128 0256 0512 1024 2048 4096 8192 ; do ./prog $i sample.jpg out$i.jpg; done
+# Then flip through the out*.jpg pictures and see when you start recognizing the image.
+``
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 This entry has reminded us of a winning entry back in the early 90s. Can you guess which one?
 
@@ -39,7 +46,9 @@ What is the complexity? Is it obvious from the source code?
 
 This program divides the image into a specified number of rectangles. This process is content aware, so algorithm tries to match most of the information. However, it doesn't find the best theoretically possible layout.
 
-    ./prog 1000 input.jpg output.jpg
+```sh
+./prog 1000 input.jpg output.jpg
+```
 
 ### Building
 
@@ -49,35 +58,71 @@ Default is JPEG version; if you have the `libjpeg` development package installed
 in your system, then `make` without arguments should do the right thing.
 
 If you want to use `libjpeg` compiled from sources, then use `LIBS` define to
-specify the path to includes and the library.
+specify the path to includes and the library.  For example using
+[libjpeg source](https://mac-dev-env.patrickbougie.com/libjpeg/) version 9c:
 
-    make prog LIBJPEG="-Ijpeg-6b jpeg-6b/libjpeg.a"
+```sh
+make prog LIBJPEG="-Ijpeg-9c jpeg-9c/libjpeg.a"
+```
 
 Use this command to build a PNG version (you need `libpng`):
 
-    make prog_png LIBPNG="-lpng"
+```sh
+make prog_png LIBPNG="-lpng"
+```
 
 And the PPM version (no additional dependencies, can read raw/ASCII PPM, writes raw PPM):
 
-    make prog_ppm
+```
+make prog_ppm
+```
 
-### Building on macOS
+### Building on macOS with MacPorts:
 
 - Thanks to Cody Boone Ferguson for this information!
 
 First, make sure you have the compiler tools installed e.g. by:
 
-    $ sudo xcode-select --install
+```sh
+sudo xcode-select --install
+```
 
 Make sure you install [MacPorts](https://www.macports.org/install.php). Then do:
 
-    $ sudo port install jpeg libpng ImageMagick
+```sh
+sudo port install jpeg libpng ImageMagick
+```
 
 The program itself doesn't need ImageMagick, install it only if you plan to make GIFs from the results using `makegif.sh`.
 
 After that’s installed you need to run make with these options:
 
-    $ make LIBS="-I/opt/local/include -L/opt/local/lib"
+```sh
+make LIBS="-I/opt/local/include -L/opt/local/lib"
+```
+
+### Building on macOS with HomeBrew
+
+First, make sure you have the compiler tools installed e.g. by:
+
+```sh
+sudo xcode-select --install
+```
+
+Make sure you install [HomeBrew](https://brew.sh).
+
+Then:
+
+```sh
+brew install libjpeg libpng
+eval "$(brew shellenv)"
+```
+
+You are now ready to compile this entry:
+
+```sh
+make clobber all
+```
 
 ### Notes
 
@@ -95,17 +140,16 @@ vertically to get the minimum difference.
 You can use this command to make a GIF from output images (uses ImageMagick).
 For instance after running the command suggested by the judges:
 
-
-	    convert -delay 10 -dither none -loop 0 $(ls out*.jpg | sort -V) $(ls out*.jpg | sort -rV) +map out.gif
-
+```sh
+convert -delay 10 -dither none -loop 0 $(ls out*.jpg | sort -V) $(ls out*.jpg | sort -rV) +map out.gif
+```
 
 Also provided `makegif.sh` to aid with GIF creation.
 
+## Copyright:
 
------------------------------------------------------------------------------------------------------
 (c) Copyright 1984-2020, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
------------------------------------------------------------------------------------------------------
