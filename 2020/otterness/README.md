@@ -1,28 +1,35 @@
 # Most percussive
 
+```
 Nathan Otterness  
 <https://github.com/yalue>  
+```
 
+## To build:
 
-The code for this entry can be found in prog.c
+```sh
+make
+```
 
-## Judges' comments:
-### To use:
+### To run:
 
-    make
-    ./prog < input.mid > output.mid
+```sh
+./prog
+```
 
 ### Try:
 
-    wget -O cvikl.mid 'http://www.kunstderfuge.com/-/midi.asp?file=beethoven/symphony_6_1_(c)cvikl.mid'
-    ./prog < cvikl.mid > output.mid
+```sh
+wget -O cvikl.mid 'http://www.kunstderfuge.com/-/midi.asp?file=beethoven/symphony_6_1_(c)cvikl.mid'
+./prog < cvikl.mid > output.mid
 
-    # Play output.mid with your favorite player
-    wget -O entertainer.mid https://www.midiworld.com/download/3857
-    ./prog < entertainer.mid > output2.mid
-    # Play output.mid with your favorite player
+# Play output.mid with your favorite player
+wget -O entertainer.mid https://www.midiworld.com/download/3857
+./prog < entertainer.mid > output2.mid
+# Play output.mid with your favorite player
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 In an entry that boasts not using literals, one would expect to see straightforward ways to produce
 small integers like `!(x^x)<<!(x^x)`, etc. but this entry is trickier than that. Deciphering what it does,
@@ -31,6 +38,7 @@ apart from reading stdin and writing to stdout, would take a while.
 While doing that, you can be audibly *entertained* by a sample of its output.
 
 ## Author's comments:
+
 ### MIDI "boots and cats"
 
 This program seeks to automatically "improve" standard MIDI files (.mid) by
@@ -38,7 +46,6 @@ adding an extra track that provides a driving drum beat to bring some
 excitement into boring video-game music rips or classical music sequences that
 otherwise only see the light of day when modern musicians import them into FL
 Studio to copy a few chords.
-
 
 #### Prerequisites
 
@@ -54,13 +61,13 @@ work correctly.  I will admit to having used
 `http://www.kunstderfuge.com/-/midi.asp?file=beethoven/symphony_6_1_(c)cvikl.mid`
 for most of my testing.
 
-
 #### Usage
 
 Compile the program using the following command (I tested this using both
 `clang` and `gcc`):
-```
-$CC -pedantic -Wall -Werror -Wextra -O3 -o prog prog.c
+
+```sh
+cc -pedantic -Wall -Werror -Wextra -O3 -o prog prog.c
 ```
 
 The program expects a MIDI on stdin, and writes a modified MIDI to stdout:
@@ -72,7 +79,6 @@ If the program encounters an error, no output will generally be produced, and
 it will exit with a specific status code. Meanings of the various status codes
 are listed below, under the "Program error codes" heading. On success, the
 program exits with a code of 0.
-
 
 #### Limitations
 
@@ -88,7 +94,6 @@ program exits with a code of 0.
  3. There may be some types of MIDI messages that the program is unable to
     correctly parse, but I have rarely seen this in practice.  The largest
     cause of program failures, in my experience, has been Limitation 2.
-
 
 #### Obfuscation notes
 
@@ -108,7 +113,6 @@ I already took the liberty of running `prog.c` through `clang-format`, since it
 still fits in the size limit and the formatting of the code was never intended
 to be an obfuscation technique here.
 
-
 #### Other remarks
 
 MIDI files are generally divided up into one or more "tracks" that play
@@ -122,7 +126,6 @@ Once the program has determined the longest track in the file, it generates a
 new track, containing the simple 4-note percussion sequence, to match the
 length (in beats) of the longest-running track. It appends the new track onto
 the end of the file, taking care to update the file header, as well.
-
 
 ### Program error codes
 
@@ -143,11 +146,10 @@ codes can be interpreted as follows:
  - `10`: The input file's MIDI header was incorrect (but this isn't checked
    very thoroughly).
 
+## Copyright:
 
------------------------------------------------------------------------------------------------------
 (c) Copyright 1984-2020, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
------------------------------------------------------------------------------------------------------
