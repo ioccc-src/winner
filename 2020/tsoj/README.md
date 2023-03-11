@@ -1,25 +1,31 @@
 # Most misleading indentation
 
+```
 tsoj <tsoj.tsoj@gmx.de>  
 <https://gitlab.com/tsoj>  
+```
 
+## To build:
 
-The code for this entry can be found in prog.c
+```sh
+make
+```
 
-## Judges' comments:
-### To use:
+### To run:
 
-    make
-    ./prog
-
+```sh
+./prog
+```
 
 ### Try:
 
-    # Make your terminal as large as possible, possibly reduce your font size
-    # then...
-    ./prog
+```sh
+# Make your terminal as large as possible, possibly reduce your font size
+# then...
+./prog
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 This game does not use curses, but you may end up cursing.
 
@@ -27,6 +33,7 @@ The code is made more difficult to read using an innovative, right justified,
 reverse indentation style.
 
 ## Author's comments:
+
 #### Controls
 - Movement:  
 `w` (forwards), `a` (left), `s` (backwards), `d` (right)
@@ -90,10 +97,11 @@ My best was **156**. If you beat that I'll send you the image of a very expensiv
 #### Tips
 - Adjust your terminal size for different experiences
 - Run this program in a virtual console to immerse yourself in the game
------------------------------------------------------------------------------------------------------
+
+## Copyright:
+
 (c) Copyright 1984-2020, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
------------------------------------------------------------------------------------------------------
