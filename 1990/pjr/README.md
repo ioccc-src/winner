@@ -18,19 +18,19 @@
 
 ## Judges' comments
 
-    This program prints out a string.  Can you figure out how
-    it is done?
+This program prints out a string.  Can you figure out how
+it is done?
 
-    By use of pointers to functions returning a struct of pointers 
-    to functions!
+By use of pointers to functions returning a struct of pointers 
+to functions!
 
-    Note that some compilers will be unable to compile the
-    expression 'X=g()...' in main due to lack of temporary
-    value space.  One might want to try replacing main with:
+Note that some compilers will be unable to compile the
+expression 'X=g()...' in main due to lack of temporary
+stack space.  One might want to try replacing main with:
 
     	main(){X=s().v().o().o().l().S().d().l().i().o().w().N();}
     
-    if this is a problem.
+if this is a problem.
 
 
 Spoiler: (rot13 to read)

@@ -10,11 +10,15 @@
 
         make all
 
-	NOTE: This entry might not compile when using modern compilers.
+NOTE: This entry might not compile when using modern compilers.
 
 ### To run
 
 	./westley 1
+
+NOTE: this entry will segfault without an arg and will enter an infinite loop if
+input is not a number (or is a negative number).
+
 
 ## Judges' comments
 

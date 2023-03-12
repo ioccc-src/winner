@@ -6,7 +6,7 @@
 #define H(v,g)v=h(v,*g++= *r++),*g=0;
 #define B(n)b(l,n),(V)printf(l
 V
-exit();char*g,c[M],d[N],q[N],p[N],*e,*r=d+N,l[M],*t="??",*k,*m="DEATHISDSev2oinpohae3ttsluuln4a?uibfe 5l\0rtlfrb6 ?a?el:e7$!n\0?e t8%ccp\0.%s9deelc.s T.@?-t.\t<J /\0=a\nP=Q Sex \0l KW Sin a$\0ane-lay% ge#-slediefuk ar  r$via-:o ?+}:r? n \0:) ee%lone 1-esy666!-~v\n.!^`'~@#\0\np~===:=q";b(o,n)char*o;{for(k=n+m;*o++=*k;k+=9);}int
+exit();char*g,c[M],d[N],q[N],p[N],*e,*r=d+N,l[M],t[]="??",*k,*m="DEATHISDSev2oinpohae3ttsluuln4a?uibfe 5l\0rtlfrb6 ?a?el:e7$!n\0?e t8%ccp\0.%s9deelc.s T.@?-t.\t<J /\0=a\nP=Q Sex \0l KW Sin a$\0ane-lay% ge#-slediefuk ar  r$via-:o ?+}:r? n \0:) ee%lone 1-esy666!-~v\n.!^`'~@#\0\np~===:=q";b(o,n)char*o;{for(k=n+m;*o++=*k;k+=9);}int
 y=M*2,v,x,s,f,j,o;u(s){B(s));if(!gets(l))exit(0);return(o=
 *l)=='y'||o=='Y'||o!='n'&&o!='N'&&u(s);}h(v,m){for(k=c;*k!='J';)if(m==*k++)break;m=k-c;if(v<0)W(v=m-v)
 if(m==1)W(v+=11)

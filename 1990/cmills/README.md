@@ -14,6 +14,17 @@
 
     ./cmills [starting_cash]
 
+NOTE: we used a patch from Yusuke Endoh to get this to work in modern systems
+(it resulted in a bus error otherwise). Thank you Yusuke for your assistance!
+
+### Try:
+
+    ./cmills 5000
+
+
+NOTE: this program uses `gets()` so you will likely get a warning under modern
+systems.
+
 ## Judges' comments
 
     Compile notes:
@@ -27,20 +38,20 @@
 
 ## Author's comments
 
-    This is a blackjack program.  It does splits, doubling down,
-    insurance, etc.  
+This is a blackjack program.  It does splits, doubling down,
+insurance, etc.  
 
-    As best I can figure, it should be ANSI-compliant, as well as
-    portable to BSD & sysV (as well as the irritating compiler I
-    was using which assumes x=*p++ means x*=p++!).  It is
-    reasonably robust in its error handling---it won't let you
-    split, double, etc. unless you actually have the cash, etc.  To
-    terminate the program, hit EOF or type 0 or a negative number
-    for you wager.
+As best I can figure, it should be ANSI-compliant, as well as
+portable to BSD & sysV (as well as the irritating compiler I
+was using which assumes `x=*p++` means `x*=p++`!).  It is
+reasonably robust in its error handling---it won't let you
+split, double, etc. unless you actually have the cash, etc.  To
+terminate the program, hit EOF or type 0 or a negative number
+for you wager.
 
-    The way it deals with splits is particularly cool (IMHO).  You
-    can split many times, and it will show all hands as they are
-    played.
+The way it deals with splits is particularly cool (IMHO).  You
+can split many times, and it will show all hands as they are
+played.
 
 Copyright (c) 1990, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

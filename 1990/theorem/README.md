@@ -11,91 +11,103 @@
 
         make all
 
-### To run
+NOTE: thanks to Yusuke Endoh for the pointing out that `atof()` nowadays needs
+`#include <stdlib.h>` in order to get this to work. Thanks also to Cody Boone
+Ferguson for fixing some segfaults under modern (and in some cases earlier)
+systems with this entry.
+
+
+## To run:
+
+	./theorem expression x1 x2 h y1
+
+where:
+
+	expression - function f(x,y)  (see below)
+	x1 - start of interval
+	x2 - end of interval
+	h - step size
+	y1 - initial value  (y(x1) == y1)
+
+
+## Try:
 
 	./theorem y 0 1 0.1 1
 
-## Judges' comments
 
-    The program's source implements four functions, all from the
-    same source file!
 
-    Usage:
+## Judges' comments:
 
-	theorem expression x1 x2 h y1
+The program's source implements four functions, all from the
+same source file!
 
-	where:
-		expression - function f(x,y)  (see below)
-		x1 - start of interval
-		x2 - end of interval
-		h - step size
-		y1 - initial value  (y(x1) == y1)
+When you compile theorem.c as is and run with 5 args, it numerically
+solves the equation y'=f(x,y), with a step size of h, over the interval 
+x=[x1,x2], with the initial condition of y(x1)=y1.
 
-    When you compile theorem.c as is and run with 5 args, it numerically
-    solves the equation y'=f(x,y), with a step size of h, over the interval 
-    x=[x1,x2], with the initial condition of y(x1)=y1.
+The 'expression' f(x,y), is any function of 'x' and 'y' with the
+operators:
 
-    The 'expression' f(x,y), is any function of 'x' and 'y' with the
-    operators:
-    
-		+	-	*	/	^
+	    +	-	*	/	^
 
-    The symbol '^' is the power operator.  Note that it only supports
-    integer powers.  Also note that all expressions are evaluated strictly 
-    left to right.  (i.e., parenthesis aren't supported).
+The symbol '^' is the power operator.  Note that it only supports
+integer powers.  Also note that all expressions are evaluated strictly 
+left to right.  (i.e., parenthesis aren't supported).
 
-    Try running the program with the following args:
+Try running the program with the following args:
 
 	./theorem y 0 1 0.1 1
 	./theorem 1/x 1 2 0.1 0
 	./theorem 'x^2/y+x' 0 1 0.1 6
-    
-    But wait, there is more!  You also get, free of charge, a 
-    reversing filter!  Try:
+
+But wait, there is more!  You also get, free of charge, a 
+reversing filter!  Try:
 
 	./theorem -r 0 0 0 0 < theorem.c > sorter.c
-    
-    Still not impressed?  The author throws in for free, a 
-    sort program! Try:
+
+Still not impressed?  The author throws in for free, a 
+sort program! Try:
 
 	cc sorter.c -o sorter
 	ls | ./sorter
-    
-    This program is safe for home use as well.  The author has
-    included a safety feature in case you misplace the original
-    program source:
 
-	./sorter -r 0 0 0 0 < sorter.c > theorem_bkp.c
-    
-    And finally, as a special offer to users of this entry,
-    the author provides a Fibonacci sequence generator!  Try:
+This program is safe for home use as well.  The author has
+included a safety feature in case you misplace the original
+program source:
 
-	./sorter 0 0 0 0 < theorem.c > fibonacci.c
-	cc fibonacci.c -o fibonacci
-	./fibonacci 1 1
-	./fibonacci 2 1
+    ./sorter -r 0 0 0 0 < sorter.c > theorem_bkp.c
 
-    Program available 9 track and cartridge cassette.  Gensu knife
-    not included!  :-)
+And finally, as a special offer to users of this entry,
+the author provides a Fibonacci sequence generator!  Try:
 
-    When this program was first shown at the 1990 Summer Usenix 
-    conference, it received a standing ovation; a first for
-    a contest entry.
+    ./sorter 0 0 0 0 < theorem.c > fibonacci.c
+    cc fibonacci.c -o fibonacci
+    ./fibonacci 1 1
+    ./fibonacci 2 1
 
-    It should be noted that the 4 trailing args '0 0 0 0', are
-    required on systems that dump core when NULL is dereferenced.
+Program available 9 track and cartridge cassette.  Gensu knife
+not included!  :-)
+
+When this program was first shown at the 1990 Summer Usenix 
+conference, it received a standing ovation; a first for
+a contest entry.
+
+Originally we noted that the 4 trailing args '0 0 0 0' were required on systems
+that dump core when NULL is dereferenced but this problem showed itself in
+modern systems even with the 4 '0 0 0 0'. To make this easier for users Cody
+Boone Ferguson kindly fixed this problem.
 
 
 ## Author's comments
 
-    Differential equations are solved via the Runge-Kutta method, 
-    which guarantees local error proportional to h^5, and total
-    error across a finite interval is at most a constant times h^4.
-    
-    Sorting is accomplished with a standard shell sort.
+Differential equations are solved via the Runge-Kutta method, 
+which guarantees local error proportional to h^5, and total
+error across a finite interval is at most a constant times h^4.
 
-    Note that the sorting and reversing is limited to files with 
-    fewer than 500 lines, each less than 99 characters long.  
+Sorting is accomplished with a standard shell sort.
+
+Note that the sorting and reversing is limited to files with 
+fewer than 500 lines, each less than 99 characters long.  
 
 Copyright (c) 1990, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

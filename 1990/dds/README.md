@@ -11,6 +11,9 @@
 	make all
 
 
+Modern compilers could not compile this entry but Yusuke Endoh supplied a patch
+which lets it compile. Thank you Yusuke!
+
 ### To run
 
 	./dds
@@ -19,31 +22,32 @@
 NOTE: this entry uses `gets()` so you might get a warning when compiling and
 running this entry.
 
+### Try:
 
-## Judges' comments
-
-    Give the following lines as input:
+Give the following lines as input:
     
 	OLD LANDER.BAS
 	RUN
 
-    Be sure not to run out of fuel!
+NOTE: this is case sensitive.
 
 
-    Modern compilers could not compile this entry but Yusuke Endoh supplied a patch
-    which lets it compile. Thank you Yusuke!
+## Judges' comments
+
+
+Be sure not to run out of fuel!
 
 
 ## Author's comments
 
-    This is the DDS-BASIC Interpreter (Version 1.00). 
+This is the DDS-BASIC Interpreter (Version 1.00). 
 
-    Immediate commands:
+Immediate commands:
 
 	RUN	LIST	NEW	OLD filename
 	BYE	SAVE filename
 
-    Program commands:
+Program commands:
 
 	variable names a to z		variables initialized to 0 on RUN
 	FOR var = exp TO exp		NEXT variable
@@ -53,7 +57,7 @@ running this entry.
 	PRINT exp			var = exp
 	REM any text			END
 
-    Expressions (ranked by precedence):
+Expressions (ranked by precedence):
 
 	Bracketed expressions
 	number (leading 0 for octal, 0x for hex, else decimal), variable
@@ -66,20 +70,21 @@ running this entry.
 	(* and + are also used for boolean AND and boolean OR)
 	Boolean expressions evaluate to 0 for false and 1 for true
 
-    Editing:
+Editing:
 
-	- Line editor using line re-entry.
-	- A line number with nothing following it, deletes the line.
+- Line editor using line re-entry.
+- A line number with nothing following it, deletes the line.
 
-    Input format:
+Input format:
 
-	- Free format positioning of tokens on the line.
-	- No space is allowed before the line number.
-	- Exactly one space is needed between the OLD or SAVE command and 
-	  the filename.
-	- ALL INPUT MUST BE UPPERCASE.
+- Free format positioning of tokens on the line.
+- No space is allowed before the line number.
+- Exactly one space is needed between the OLD or SAVE command and 
+  the filename.
+- ALL INPUT MUST BE UPPERCASE.
 
-    Limits:
+
+Limits:
 
 	Line numbers		1-10000
 	Line length		999 characters
@@ -89,26 +94,28 @@ running this entry.
 	Expressions		-32768 - 32767 for 16 bit machines, 
 				-2147483648 - 2147483647 for 32 bit machines
 
-    Error checking / error reports:
+Error checking / error reports:
 
-	No error checking is performed.
-	The message `core dumped' signifies a syntax or semantic error.
 
-    Hosting Environment:
+No error checking is performed.
+It might dump core if a syntax or semantic error is encountered.
+
+
+Hosting Environment:
 
 	ANSI C, traditional K&R C or OSF ANDF
 	ASCII or EBCIDIC character set
 	48K bytes memory
 
-    The Speed of DDS-BASIC Interpreter (Version 1.00). relative to
-    Microsoft Advanced BASIC 3.31 is Approximately 60%.
+The Speed of DDS-BASIC Interpreter (Version 1.00). relative to
+Microsoft Advanced BASIC 3.31 is Approximately 60%.
 
-    The code size could be further reduced by doing ugly things like
-    not declaring the return type of functions, not freeing memory,
-    #defining define, and joining lines.  In its present 1536 character
-    form the program is reasonably portable (it may fail to run in a
-    tagged object architecture) and nicely formatted (it fits in an
-    80*25 screen).
+The code size could be further reduced by doing ugly things like
+not declaring the return type of functions, not freeing memory,
+#defining define, and joining lines.  In its present 1536 character
+form the program is reasonably portable (it may fail to run in a
+tagged object architecture) and nicely formatted (it fits in an
+80*25 screen).
 
 Copyright (c) 1990, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

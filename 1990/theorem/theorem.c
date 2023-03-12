@@ -1,12 +1,14 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <math.h>
 #define X
 #define Y {}
 #define C  }
 #define o {
 #undef main
-char m[500][99],v[99],R;
-int*a,b,n,i,j,W,A;
+char m[500][99],v[99],R,*a;
+int b,n,i,j,W,A;
 float Q,G,D,M,T,B,O,U,V,N,y,e();
 P(g,R,u)float*g,R,u;{int c;for(*g=1,c=u;c--;*g*=R);}
 X
@@ -77,7 +79,7 @@ for(j=0;j<n;puts(j++[m]));
 e("",O,O,a);
 n=j-(O=1);
 while(gets(j++[m]));
-if(!strcmp(*++a,"-r"))S();
+if(!strcmp(++a,"-r"))S();
 C
 /**/main(A,a)int A;char*a[];
 Y
@@ -90,4 +92,6 @@ float Q,G,D,M,T,O,B,U,V,N,e();
 #define o }
 #define C {
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <math.h>

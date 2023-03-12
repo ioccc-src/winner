@@ -1,10 +1,17 @@
 # Best Utility
 
-	Byron Rakitzis	       Sean Dorward
-	Princeton University   Princeton University
-	5707 Old Lodge Dr.     10274 Burleigh Cottage Lane
-	Houston, TX 77066      Ellicott City, MD 21043
-	USA		       USA
+	Byron Rakitzis	       
+	Princeton University   
+	5707 Old Lodge Dr.     
+	Houston, TX 77066      
+	USA		       
+
+	Sean Dorward
+	Princeton University
+	10274 Burleigh Cottage Lane
+	Ellicott City, MD 21043
+	USA
+
 
 ## To build:
 
@@ -16,13 +23,16 @@
 
 ## Judges' comments
 
-    This program implements a subject a well known Un*x utility whose 
-    original source was considered to be extremely obfuscated by many
-    people, excluding its author.  In fact, this utility was a major
-    inspiration for the formation of this contest.
 
-    The author supplied us with a slightly smaller unformatted version
-    of the program which we include below:
+This program touches on a well known Unix utility, the 6th edition Bourne Shell
+(`/bin/sh`), whose original source was considered to be extremely obfuscated by
+many people (although Steve Bourne might disagree). Did you know that the Bourne
+Shell source was a major inspiration for the formation of the IOCCC back in
+1984?
+
+
+The author supplied us with a slightly smaller unformatted version
+of the program which we include below:
 
 	    #define D ,close(
 	    char*c,q[512],m[256],*v[99],**u,*i[3];int f[2],p;main(){for(m[m[60]=m[62]=
@@ -36,9 +46,10 @@
 	    e(x){x<0?write(2,"?\n$ "-x/4,2),x+1||(exit(1),0):5;}
 
 
-    Modern compilers had a problem with this entry because the exit(3) function
-    returns void but we were able to get it to compile by using the comma
-    operator which we also did in the smaller version.
+Modern compilers had a problem with this entry because the exit(3) function
+returns void but we were able to get it to compile by using the comma
+operator which we also did in the smaller version.
+
 
 ## Author's comments
 
