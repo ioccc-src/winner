@@ -16,13 +16,13 @@ Carl Shapiro
 
 As submitted, this program was 3 lines (2 of defines and 1 of code).
 To make news & mail happy we split the last line into 7. The file
-[shapiro.orig.c](shapiro.orig.c) is the original version.
+[shapiro.alt.c](shapiro.alt.c) is the original version.
 
 
 This program was selected for the 1987 t-shirt collection.
 
 We found this program is be simply a**maze**ing! Run this program without
-arguments and notice the output.
+arguments and notice the output. 
 
 
 Copyright (c) 1985, Landon Curt Noll & Larry Bassel.

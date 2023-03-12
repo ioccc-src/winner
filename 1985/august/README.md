@@ -7,11 +7,19 @@ Lennart Augustsson
 
         make all
 
+## To run:
+
+	./august
 
 ## Try:
 
 
-	./august
+	./august | head -n 10
+
+If you have the `primes(6)` tool (sometimes part of BSD Games) you can see
+what of the output in the first N (say 15) lines are primes:
+
+	while read -r n ; do primes "$n" $((n + 1)) ; done < <((./august | head -n 15 ))
 
 
 ## Judges' comments:
