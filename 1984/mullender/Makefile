@@ -182,7 +182,8 @@ all: ${DATA} ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: This entry is likely to fail and/or dump core on modern computers."
+	@echo "NOTE: This entry is likely to fail and/or dump core on any computer other"
+	@echo "than a Vax-11 or pdp-11."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable

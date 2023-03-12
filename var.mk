@@ -117,7 +117,6 @@ KILL= kill
 KSH= ksh
 LAST= last
 LD= ld
-LESSECHO= lessecho
 LEX= len
 LINK= link
 LN= ln

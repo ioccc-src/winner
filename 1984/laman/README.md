@@ -6,6 +6,11 @@ Mike Laman
 
         make all
 
+## To run:
+
+	./laman <positive number>
+
+
 ## Judges' comments:
 
 Some new compilers dislike lines 6 and 10 of the source, so we changed

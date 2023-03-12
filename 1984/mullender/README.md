@@ -4,6 +4,14 @@ Sjoerd Mullender
 
 Robbert van Renesse
 
+## To build:
+
+	make all
+
+## To run:
+
+	./mullender
+
 ## Judges' comments:
 
 NOTE: This entry is likely to fail and/or dump core on modern computers.
