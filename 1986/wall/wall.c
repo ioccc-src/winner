@@ -13,7 +13,7 @@ ccc(
 cc)
 C
 cc;
-{
+{ cc=strdup(cc);
 C
 cccc=
 cc;int
@@ -50,7 +50,7 @@ main(c_(-)'-'-1,C_(s))_
 }main(,cc)
 C
 #define O write(1,
-c="O";
+c=strdup("O");
 O_(sy) keyboard));
 main(;;,for);
 read(0,
