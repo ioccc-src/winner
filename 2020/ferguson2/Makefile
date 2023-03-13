@@ -168,7 +168,7 @@ OBJ= ${PROG}.o
 DATA= chocolate-cake.md enigma.1 input.txt obfuscation.key \
 	obfuscation.md obfuscation.txt recode.1 recode.md \
 	try.this.txt
-TARGET= ${PROG}
+TARGET= ${PROG} recode
 #
 ALT_OBJ=
 ALT_TARGET=
@@ -186,6 +186,9 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
+recode: recode.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable

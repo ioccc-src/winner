@@ -52,7 +52,7 @@ for the input keys.
     *	[Automate the above gameplay modes](#preset)
 
 
-6.  [Game variables](#variables)
+6.  [Other game variables](#variables)
 
     * [WAIT		    -	Snake speed](#wait)
 
@@ -743,14 +743,14 @@ Or to make it so walls are an obstacle:
 	    WALLS=0 ./play.sh
 
 
-# 6. <a name="variables" href="#toc">Game variables</a>
+# 6. <a name="variables" href="#toc">Notes about some of the game variables</a>
 
 The game variables can be used for a variety of things including different
-gameplay modes as above but here are some notes about a few of them.
+gameplay modes (as shown above) but here are some general notes about a few of them.
 
 ## <a name="wait" href="#toc">WAIT: Snake speed</a>
 
-Besides the different game modes if you find it too fast/slow you can change it
+Besides the different game modes, if you find it too fast/slow you can change it
 to a value that's better for you. Remember it's a wait time so if you want the
 snake to move slower you have to increase the wait time!
 

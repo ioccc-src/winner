@@ -1,8 +1,9 @@
 # Don't tread on me award
 
-Cody Boone Ferguson <ioccc@xexyl.net>  
-<https://ioccc.xexyl.net>  
-Twitter: @xexyl  
+Cody Boone Ferguson <ioccc@xexyl.net>    
+<https://ioccc.xexyl.net>   
+<https://xexyl.net>  
+Mastodon: [@xexyl@fosstodon.org](https://fosstodon.org/@xexyl)    
 
 ## To build:
 
@@ -13,10 +14,69 @@ make
 ### To run:
 
 ```sh
-WAIT=100 WALLS=0 CANNIBAL=0 ./prog
+WAIT=N WALLS=[01] EVADE=N SIZE=N MAXSIZE=N GROW=N SHEDS=N SHED=N CANNIBAL=[01] ./prog
+# Start pressing some arrow keys
 ```
 
-### Try:
+Variables:
+
+* WAIT	    
+	    	positive or negative integer that changes how long to wait for
+		a key press prior to moving again. < 0 blocks which allows
+		for complete control over movement at your own pace. Default
+		231; you can move faster by holding down an arrow key.
+
+* WALLS	  
+	        whether the walls are passable or impassable (default
+		passable). 0 means impassable; 1 passable.
+
+* EVADE	
+	        how many movements the Snake moves before the bug (well
+		insect; see notes below about why bugs) is will move to
+		another location on the field.
+
+* SIZE	
+	        initial size of the Snake. Note that it grows by one per
+		move so at the default 5 it will not initially be 5
+		characters long! < 0 is an immediate win.
+
+* MAXSIZE	
+	        the maximum size the Snake can become before the game is
+		won. < 0 is the maximum size based on terminal dimensions;
+		any other size will be capped based on the terminal
+		dimensions to prevent problems.
+
+* GROW	
+	        size to grow every time you eat a bug. Negative values are
+		allowed! This creates for fun gameplay modes with enough
+		creativity. See [gameplay.html](gameplay.html) for some
+		examples.
+
+* SHED	    
+	        every SHED movements you will grow (> 0), shrink (< 0) or
+		not at all (0) by the SHEDS value. Again with creativity you
+		can create some fun gameplay modes.
+
+		NOTE: SHED and SHEDS is actually a misnomer; see notes
+		below.
+    
+* SHEDS	    
+	        every SHED movements will impact what this value means: grow
+		(> 0), shrink (< 0) or not at all (0). Again with creativity
+		you can create some fun gameplay modes here. For instance
+		you can grow upon eating a bug but shrink every SHED
+		movements and it's a battle of whether you win by SIZE < 0
+		or SIZE >= MAXSIZE. See play.sh for examples.
+		NOTE: SHED and SHEDS is actually a misnomer; see notes
+		below.
+
+* CANNIBAL	
+	        whether you can go through the Snake or not. Default is 0
+		(cannot).
+
+
+
+## Try:
 
 ```sh
 make test
@@ -32,6 +92,12 @@ CANNIBAL=1 WALLS=1 WAIT=50 EVADE=200 ./prog
 WAIT=75 GROW=-1 SIZE=5 CANNIBAL=1 ./prog
 
 CANNIBAL=1 WALLS=1 WAIT=0 EVADE=1 MAXSIZE=10 ./prog
+
+./play
+# allows you to configure colours and has various pre-configured gameplay modes
+
+./snake-colours
+# allows for configuring colours
 ```
 
 ## Judges' comments:
@@ -41,19 +107,19 @@ This game has a number of configurable pitfalls including walls and snakes.
 
 There is a good deal of useful documentation that is provided with this entry:
 
-* gameplay.md ([gameplay.html][])
+* [gameplay.html][]
 
 Documented game *features*!
 
-* terminals.md ([terminals.html][])
+* [terminals.html][]
 
 Information about terminal capabilities, dimensions (setting and how to restore sanity if it causes any problems) as well as colours (limitations etc.).
 
-* troubleshooting.md ([troubleshooting.html][])
+* [troubleshooting.html][]
 
-Workaround for various game *features*
+Workarounds for various game *features*
 
-* bugs.md ([bugs.html][])
+* [bugs.html][]
 
 Bugs and things that might seem like bugs but are not.
 
@@ -61,16 +127,9 @@ Bugs and things that might seem like bugs but are not.
 
 Because most of us could use some *Double-layered Chocolate Fudge Cake*!
 
-* spoilers.markdown ([spoilers.html][])
+* [spoilers.html][]
 
 Read ***ONLY*** if you really must give up trying to de-obfuscate!
-
-[gameplay.html]: gameplay.html
-[terminals.html]: terminals.html
-[troubleshooting.html]: troubleshooting.html
-[bugs.html]: bugs.html
-[chocolate-cake.html]: chocolate-cake.html
-[spoilers.html]: spoilers.html
 
 ## Author's comments:
 
@@ -80,15 +139,15 @@ Snake has two cheat modes (passable walls and self [cannibalism]), a drawing (or
 practising) mode, *can play by itself (**and win!**)*, is coloured (included
 [snake-colours.sh][] and [play.sh][] scripts compile in player-selected
 colours) and there are many other play modes (many more can be devised with the
-imagination and the environmental variables; see [gameplay.md][] /
-[gameplay.html][] for many examples) and options.  You can pause and there's
-even a built-in test unit for some features!  The following variables change the
-game in the following ways (all can be combined):
+imagination and the environmental variables; see [gameplay.html][] for many
+examples) and options.  You can pause and there's even a built-in test unit for
+some features!  The following variables change the game in the following ways
+(all can be combined):
 
 
-*   The speed of the snake (how many milliseconds to **WAIT** for input before
-    moving; *default 231 milliseconds* and you can move faster by pressing a
-    direction key quicker or even holding it down).
+*   The speed of the snake: how many milliseconds to **WAIT** for input before
+    moving; *default 231 milliseconds*. You can move faster by pressing a
+    direction key quicker or even holding it down.
 
 *   If the bug (to eat) will move (**EVADE**) after user-specified number of snake
     moves (*default 300, 0 disables*).
@@ -98,7 +157,9 @@ game in the following ways (all can be combined):
 
 *   If the snake can go through itself (**CANNIBAL**) (*default 0, no*).
 
-*   The initial **SIZE** of the snake (*default 5*).
+*   The initial **SIZE** of the snake (*default 5*). Note that it grows one by
+    each movement so even if you start at 5 it will take some movements before
+    you are the full length.
 
 *   The size the snake must become in order to win the game (**MAXSIZE**, *default 997*).
 
@@ -113,20 +174,21 @@ game in the following ways (all can be combined):
 
 *   A drawing/practising mode (**WAIT** < 0 makes `timeout()` set blocking read).
 
-*   Computer plays the game (**WAIT=0**) **EPILEPSY/STIMULATION OVERLOAD WARNING**
-    included in the relevant section (this goes for a low **EVADE** value too).
+*   Computer plays the game (**WAIT=0**).  
+	- **EPILEPSY/STIMULATION OVERLOAD WARNING** included in the relevant
+	section (this goes for a low **EVADE** value too).
 
 *   Grow-Shrink mode (Positive and Negative Winning) mode (see
-    [gameplay.md][] for more details).
+    [gameplay.html][] for more details).
 
 *   The dimensions of the game (this is actually a terminal thing but I document
     how to do this and its potential pitfalls) (**LINES** , **COLUMNS**).
 
 There are no complicated command line invocations; it's just a matter of passing
 into the game descriptively named variables and I include a script that sets up
-many different gameplay modes ([gameplay.md][] and [play.sh][]).
+many different gameplay modes (see [gameplay.html][] and [play.sh][]).
 
-The [gameplay.md][] ([gameplay.html][]) file has all the information on
+The [gameplay.html][] file has all the information on
 what the game looks like, how to play, the different types of modes (that I have
 thought of so far) including all those in the above list. Along with the
 [play.sh][] and [snake-colours.sh][] scripts it's probably the most important
@@ -144,18 +206,18 @@ Probably just as important is [chocolate-cake.html][] with an old but wonderful
 recipe (because the judges love chocolate and who can blame them? - also it goes
 with one of the IAQs I include later).
 
-The [troubleshooting.md][] ([troubleshooting.html][]) file has some advice
-on potential problems (and things that might appear to be problems at first
-glance but are not) that I have thought of or encountered.
+The [troubleshooting.html][] file has some advice on potential problems (and
+things that might appear to be problems at first glance but are not) that I have
+thought of or encountered.
 
-The [terminals.md][] ([terminals.html][]) has a variety of information
-specific to terminals from input/directions, dimensions, sanity and colours: a
-sort of troubleshooting guide for terminals with some additional information.
+The [terminals.html][] has a variety of information specific to terminals from
+input/directions, dimensions, sanity and colours: a sort of troubleshooting
+guide for terminals with some additional information.
 
-The [spoilers.markdown][] has a variety of information including some of the
+The [spoilers.html][] has a variety of information including some of the
 obfuscation techniques and a bit of how it works.
 
-The [bugs.md][] ([bugs.html][]) has a list of known bugs and things that
+The [bugs.html][] has a list of known bugs and things that
 look like bugs but aren't as well as documenting a built-in test unit for some
 features.
 
@@ -172,9 +234,8 @@ implemented (and how to/how not to go about some of the things) as well as some
 other information on the entry (some of which is deliberately not true - a
 variation of misleading comments). These files are probably insignificant.
 
-I will have more information about this entry at
-[https://ioccc.xexyl.net/2020/snake][] after the winning entries have been
-published.
+I have more information about this entry at
+[https://ioccc.xexyl.net/2020/snake][].
 
 For the files I recommend looking at the html files with a browser; this
 particularly goes for the [gameplay.html][], [bugs.html][], [terminals.html][]
@@ -203,7 +264,7 @@ and [troubleshooting.html][] - along with the most important one
 
     -	[Do you have any **DELICIOUS CHOCOLATE CAKE** recipes?](#chocolatecake)
 
-    -	[What are the files prog.orig.c, prog.2.c, prog-j.c and prog.alt.c ?](#alt)
+    -	[What are the files prog.alt.c, prog.2.c, prog-j.c and prog.alt.c ?](#alt)
 
 
 *   [Winning thoughts, dedications and thanks](#winning)
@@ -227,7 +288,7 @@ and [troubleshooting.html][] - along with the most important one
     took fewer bytes and the negative shedding is a positive consequence of
     unsigned arithmetic.
 
-On a more serious note look at [bugs.md][] ([bugs.html][]).
+On a more serious note look at [bugs.html][].
 
 
 ### <a name="naqs" href="#toc">NAQs/IAQs (Never/Infrequently Asked Questions)</a>
@@ -307,7 +368,8 @@ I can think of at the least the following:
     would if the grow size was 3. This applies to shedding size too.
 -   If you want to show off keep walls passable and enable cannibalism.  It
     won't be a challenge then but at least you could show your final score?
--   Decrease the max size.
+-   Decrease the max size needed and if you want it even easier increase the
+    terminal size.
 -   And the one that applies to learning new things and getting more things done
     also applies here: remove all sources of distraction; turn the phone off,
     lock yourself in a soundproof room (refusing to get up for anyone or
@@ -358,7 +420,8 @@ And if you're a show-off you can try:
     something I'm capable of...
 -   Watch a film at the same time.
 -   Sneeze and/or cough.
--   Have breakfast, lunch, afternoon tea, dinner or some other meal.
+-   Have breakfast, second breakfast, elevenses, lunch, afternoon tea, dinner or
+    some other meal that you think of.
 -   Get pissed out of your mind to make it difficult to think (please do not
     drive!).
 -   Do more than one or all of the above at the same time (the longer the snake
@@ -447,7 +510,7 @@ out bad!
 #### <a name="alt" href="#toc">What are the files prog.2.c, prog.3.c, prog.3-j.c and prog.alt.c ?</a>
 
 I submitted three Snake versions; these are the other layouts for those few
-(or more likely none) who are interested to see them.
+(more likely none) who are interested to see them.
 
 The prog.2.c has more digraphs but I think no other significant differences.
 
@@ -461,26 +524,6 @@ The prog.alt.c version is the one that allows for customising the bug colour and
 it's used in both [snake-colours.sh][] and [play.sh][]. It also calls `erase()`
 first, clearing the screen, which the play.sh and snake-colours.sh scripts also
 both do.
-
-[COMPILING]: COMPILING
-[HACKING]: HACKING
-[bugs.md]: bugs.md
-[bugs.html]: bugs.html
-[troubleshooting.md]: troubleshooting.md
-[troubleshooting.html]: troubleshooting.html
-[human snakes]: http://www.macroevolution.net/snake-human-hybrids.html
-[chocolate-cake.html]: chocolate-cake.html
-[spoilers.markdown]: spoilers.markdown
-[terminals.md]: terminals.md
-[Surround]: https://en.wikipedia.org/wiki/Surround_(video_game)
-[Snake walk: The physics of slithering]: https://www.bbc.co.uk/news/science-environment-35563941
-[snake-colours.sh]: snake-colours.sh
-[gameplay.md]: gameplay.md
-[gameplay.html]: gameplay.html
-[flying snakes]: https://www.bbc.co.uk/news/science-environment-25943693
-[play.sh]: play.sh
-[great chocolate cake]: cake.jpg
-[https://ioccc.xexyl.net/2020/snake]: https://ioccc.xexyl.net/2020/snake
 
 ## Author's dedication:
 
@@ -502,8 +545,8 @@ Well done and congratulations to all of you again!  Thank you for submitting the
 wonderful entries and I'm honoured to have my two entries beside yours!
 
 To Dave Burton I thank you for your wonderful comments as well as pointing out
-that even with prog.orig.c it probably would be better to make use of the alt
-target instead of naming prog.c prog.orig.c. You're quite right, I had thought
+that even with prog.alt.c it probably would be better to make use of the alt
+target instead of naming prog.c prog.alt.c. You're quite right, I had thought
 of it but you brought it up so I could correct it. Much appreciated mate.
 
 I would like to dedicate this entry to my wonderful mum Dianne Ferguson whom I
@@ -515,9 +558,7 @@ mother.
 
 I also want to dedicate this to Vicky Wilmore who has given me a lot of
 love the past few years and who was there for me in some very dark times. Thank
-you Vicky sweetheart from the bottom of my heart and soul. Although we have
-parted ways, whether for now or for ever, you will always always always have a
-place in my heart and soul xxx
+you Vicky sweetheart from the bottom of my heart and soul.
 
 I would like to thank my dear friend Martijn Schoemaker for encouraging me in my
 programming over the years and who I owe a great deal to. Thank you for
@@ -536,7 +577,29 @@ my entries. It's a huge honour; thank you! I also happen to **love** your
 comments as well as the award titles. And yes indeed 'most of us could use
 *[Double-layered Chocolate Fudge Cake][]*!'
 
+[COMPILING]: COMPILING
+[HACKING]: HACKING
+[bugs.html]: bugs.html
+[troubleshooting.html]: troubleshooting.html
+[human snakes]: http://www.macroevolution.net/snake-human-hybrids.html
+[chocolate-cake.html]: chocolate-cake.html
+[spoilers.markdown]: spoilers.markdown
+[Surround]: https://en.wikipedia.org/wiki/Surround_(video_game)
+[Snake walk: The physics of slithering]: https://www.bbc.co.uk/news/science-environment-35563941
+[snake-colours.sh]: snake-colours.sh
+[gameplay.html]: gameplay.html
+[flying snakes]: https://www.bbc.co.uk/news/science-environment-25943693
+[play.sh]: play.sh
+[great chocolate cake]: cake.jpg
+[https://ioccc.xexyl.net/2020/snake]: https://ioccc.xexyl.net/2020/snake
 [Double-layered Chocolate Fudge Cake]: chocolate-cake.html
+[gameplay.html]: gameplay.html
+[terminals.html]: terminals.html
+[troubleshooting.html]: troubleshooting.html
+[bugs.html]: bugs.html
+[chocolate-cake.html]: chocolate-cake.html
+[spoilers.html]: spoilers.html
+
 
 ## Copyright:
 
