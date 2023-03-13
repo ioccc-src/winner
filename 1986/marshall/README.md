@@ -11,20 +11,25 @@ Paoli, PA.
         make all
 
 
-NOTE: we could not compile this entry under modern macOS but it will work
-fine under linux. It likely fails to compile under macOS because its gcc is
-actually just clang which is more strict about the type of the second
-argument of main(). If you have gcc under macOS it might work just as well.
+NOTE: Cody Boone Ferguson got this to compile and work with clang. It did not
+work with clang because it is more strict about the second and third args to
+main() and the third arg was an int. He notes that he tried to keep the picture
+as close to the original. The line lengths are the same but some spaces had to
+be changed to non-spaces. Thank you Cody for your help!
 
 # Judges' comments:
 
 This program prints the name of the picture.  The layout is somewhat
-pretty through it is not the usual sort of output one would expect
+pretty though it is not the usual sort of output one would expect
 from printing a program!
 
 This program was selected for the 1987 t-shirt collection.
 
-This program is known to give some C compilers a problems.
+
+
+## Author's comments:
+
+No comments were provided by the author.
 
 
 Copyright (c) 1986, Landon Curt Noll & Larry Bassel.
