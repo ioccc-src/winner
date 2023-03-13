@@ -1,10 +1,8 @@
 # Best abuse of lámatyávë
 
-```
 Ilya Kurdyukov  
 <https://github.com/ilyakurdyukov>  
 Twitter: @ilyakurdyukov  
-```
 
 ## To build:
 
@@ -34,7 +32,7 @@ make
 Too many identical strings if the context length is small.
 -- Author*
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 We were able to write our own program performing the same trick
 using the (still non-standard, for some reason) library function `memmem`,

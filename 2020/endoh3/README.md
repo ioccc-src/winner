@@ -1,9 +1,7 @@
 # Most head-turning
 
-```
 Yusuke Endoh  
 Twitter: @mametter  
-```
 
 ## To build:
 
@@ -17,6 +15,13 @@ make
 ./prog
 ```
 
+### Try:
+
+```sh
+./run_clock
+# And watch closely for 15-20 seconds
+```
+
 ### Alternate code:
 
 An alternate version of this entry, `prog.alt.c`, is provided.  This alternate code uses Unicode letters.
@@ -28,13 +33,6 @@ make alt
 ```
 
 Use `prog.alt` as you would `prog` above.
-
-### Try:
-
-```sh
-./run_clock
-# And watch closely for 15-20 seconds
-```
 
 ## Judges' comments:
 

@@ -1,9 +1,7 @@
 # Most explosive
 
-```
 Yusuke Endoh
 Twitter: @mametter
-```
 
 ## To build:
 
@@ -30,7 +28,7 @@ make
 ./prog unwinnable.txt
 ```
 
-### Alternate code
+### Alternate code:
 
 An alternate version of this entry, prog.alt.c, is provided.  This alternate code lacks the additional rule to flag all unprobed cells.  See the Author's comments for more details.
 
@@ -42,7 +40,7 @@ make alt
 
 Use `prog.alt` as you would `prog` above.
 
-## Judges' comments
+## Judges' comments:
 
 When playing Minesweeper, a misclick might ruin a game, so why not leave the routine to the computer?
 This program automatically uncovers mines according to several rules, and leaves guessing (and applying

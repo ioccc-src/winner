@@ -1,9 +1,7 @@
 # Best abuse of CPP
 
-```
 Don Yang  
 <http://uguu.org/>  
-```
 
 ## To build:
 
@@ -12,6 +10,12 @@ make
 ```
 
 ### To run:
+
+```sh
+./prog [PIN] < input.txt > output.c
+```
+
+### Try:
 
 ```sh
 echo "International Obfuscated C Code Contest 2020" | ./prog 23209 > code.c

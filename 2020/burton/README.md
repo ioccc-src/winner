@@ -1,18 +1,16 @@
 # Best one-liner
 
-```
 Dave Burton
 <http://snox.net/ioccc>
 Twitter: @lv2jmp
-```
 
-## To build
+## To build:
 
 ```sh
 make
 ```
 
-### To run
+### To run:
 
 ```sh
 ./prog arg ...
@@ -20,7 +18,7 @@ make
 
 NOTE: this entry will dump core if you do not specify an argument.
 
-### Try
+### Try:
 
 ```sh
 ./prog 128
@@ -37,7 +35,7 @@ NOTE: this entry will dump core if you do not specify an argument.
 ./prog 128 128 128 128
 ```
 
-### Alternate code
+### Alternate code:
 
 By default, this code compiles for Little Endian machines.
 To compile for a Big Engian machine use:
@@ -48,7 +46,7 @@ make alt
 
 Use `prog_be` as you would `prog` above.
 
-## Judges' comments
+## Judges' comments:
 
 Can you determine why this shows strange output for `./prog 128 128`
 and `./prog 128 128 128 128` but not `./prog 128 128 128`?
@@ -73,7 +71,7 @@ This code may be tested by:
 make test
 ```
 
-## Author's comments
+## Author's comments:
 
 Invoke this with a single non-negative integer less than 256, and a useful transformation occurs.
 

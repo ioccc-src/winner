@@ -1,10 +1,8 @@
 # Don't tread on me award
 
-```
 Cody Boone Ferguson <ioccc@xexyl.net>  
 <https://ioccc.xexyl.net>  
 Twitter: @xexyl  
-```
 
 ## To build:
 

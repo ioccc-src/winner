@@ -1,9 +1,7 @@
 # Best of show - abuse of libc
 
-```
 Nicholas Carlini <nicholas@carlini.com>  
 <https://nicholas.carlini.com>  
-```
 
 ## To build:
 

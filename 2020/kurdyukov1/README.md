@@ -1,10 +1,8 @@
 # Best utility
 
-```
 Ilya Kurdyukov  
 <https://github.com/ilyakurdyukov>  
 Twitter: @ilyakurdyukov  
-```
 
 ## To build:
 
@@ -40,7 +38,7 @@ make alt
 
 Use `prog.alt` as you would `prog` above.
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 This hash of a C code makes a hash out of input.
 Do you understand how?

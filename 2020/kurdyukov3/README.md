@@ -1,10 +1,8 @@
 # Bset slaml prragom
 
-```
 Ilya Kurdyukov  
 <https://github.com/ilyakurdyukov>  
 Twitter: @ilyakurdyukov  
-```
 
 ## To build:
 
@@ -43,7 +41,7 @@ make alt
 
 Use `prog.alt` as you would `prog` above.
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 It is interesting how well smeonoe can raed txet wtih lots of tyops in it.
 How well can you raed porg.c, C prgoarm that is in the shpae of an SD card (or

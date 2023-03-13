@@ -1,9 +1,7 @@
 # Best perspective
 
-```
 Yusuke Endoh  
 Twitter: @mametter  
-```
 
 # To build:
 

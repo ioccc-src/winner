@@ -1,9 +1,7 @@
 # Most misleading indentation
 
-```
 tsoj <tsoj.tsoj@gmx.de>  
 <https://gitlab.com/tsoj>  
-```
 
 ## To build:
 
