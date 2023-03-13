@@ -240,6 +240,8 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -f adbasename adbasename.c adecho adecho.c adgrep adhead
+	${RM} -f adhead.c adrian adsleep adsleep.c adwc adwc.c
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
