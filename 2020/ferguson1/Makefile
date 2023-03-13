@@ -173,7 +173,7 @@ DATA= COMPILING.md HACKING.md bugs.html bugs.md cake.jpg cannibalism.log \
 	halfwidth_vs_fullwidth.png ioccc-cake.jpg play.sh prog.2.c prog.3-j.c \
 	prog.3.c snake-colours.sh snake.1 spoilers.html spoilers.md \
 	termcaps.c terminals.html terminals.md troubleshooting.html troubleshooting.md
-TARGET= ${PROG}
+TARGET= ${PROG} termcaps play snake-colours
 #
 ALT_OBJ= ${PROG}.alt.o
 ALT_TARGET= ${PROG}.alt
@@ -192,6 +192,28 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
+# termcaps - test utility for terminal capabilities, size etc.
+termcaps: termcaps.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
+
+# play - allows configuring colours and playing pre-configured gameplay modes
+#
+play:	play.sh
+	${CAT} $< > $@
+	${CHMOD} a+x $@
+
+# snake-colours - allows for configuring colours prior to compiling and playing
+#
+snake-colours: snake-colours.sh
+	${CAT} $< > $@
+	${CHMOD} a+x $@
+
+# make test: run termcaps
+#
+test: termcaps
+	@./termcaps
 
 # alternative executable
 #

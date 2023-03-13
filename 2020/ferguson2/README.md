@@ -1,8 +1,10 @@
 # Most enigmatic
 
-Cody Boone Ferguson <ioccc@xexyl.net>  
-<https://ioccc.xexyl.net>  
-Twitter: @xexyl  
+Cody Boone Ferguson <ioccc@xexyl.net>    
+<https://ioccc.xexyl.net>   
+<https://xexyl.net>  
+Mastodon: [@xexyl@fosstodon.org](https://fosstodon.org/@xexyl)    
+
 
 ## To build:
 
@@ -13,26 +15,71 @@ make
 ### To run:
 
 ```sh
-./prog
+./prog  
+
+# get recode help:
+./recode -h  
+
+# general syntax for recode passing to Enigma machine:  
+./recode [options] | ./prog - 2>/dev/null  
+# general syntax for recode without passing to Enigma machine:  
+./recode [options]  
+  
+# recode prompts for settings; pass to Enigma machine:  
+./recode | ./prog - 2>/dev/null   
+
+# recode reads from input file, prompts for settings; pass to Enigma machine:  
+./recode -finput | ./prog - 2>/dev/null  
+
+# recode reads config from string or file; pass to Enigma machine after
+# prompting for input:
+./recode -R<string|file> | ./prog - 2>/dev/null  
+
+# write config to output file; pass to Enigma machine after prompting for input:  
+./recode -o<config> | ./prog - 2>/dev/null  
+  
+# pseudo-randomly select settings  
+./recode -r
+  
+# show Enigma machine settings after selection / generation:    
+./recode -v  
+
 ```
+
+**NOTE**: in recode no spaces between options and option arguments are allowed.
 
 ### Try:
 
 ```sh
-# IOCCC obfuscated!
-echo IOCCC | ./prog
+# IOCCC obfuscated!  
+echo IOCCC | ./prog  
+  
+# IOCCC obfuscated and de-obfuscated!:  
+echo IOCCC | ./prog | ./prog  
+  
+# more input fun:  
+./prog - < try.this.txt 2>/dev/null  
+  
+# more obfuscated fun:  
+echo testing test tests | ./recode  
+echo testing test tests | ./recode | ./prog - 2>/dev/null  
+echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode  
+echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode | ./prog - 2>/dev/null  
 
-# IOCCC obfuscated and de-obfuscated!
-echo IOCCC | ./prog | ./prog
+# even more obfuscated fun saving and reading from files:
+#
+# initial clean up:
+rm -f conf input output output2
+# encrypt "testing test tests" with randomised settings saved in conf, saving
+# original string to input and original output to output:  
+echo testing test tests | tee input | ./recode -r -oconf | ./prog - 2>/dev/null >output
+# configure Enigma machine from conf file and read from output file, thus decrypting:
+./recode -Rconf -foutput | ./prog - 2>/dev/null > output2
+# make sure input and output2 are the same:
+diff -s input output2
+# final clean up
+rm -f conf input output output2
 
-# more input fun
-./prog - < try.this.txt 2>/dev/null
-
-# more obfuscated fun
-echo testing test tests | ./recode
-echo testing test tests | ./recode | ./prog - 2>/dev/null
-echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode
-echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode | ./prog - 2>/dev/null
 ```
 
 ## Judges' comments:
@@ -41,21 +88,20 @@ This code is an enigma.  Try to decode it!
 
 There is a good deal of useful documentation that is provided with this entry:
 
-* enigma.1
-
-A useful man page for this entry.  To render, try:
+* [enigma.1](enigma.1)	-  A useful man page for this entry.  To render, try:
 
 ```sh
-man ./enigma.1
+	    man ./enigma.1
 ```
 
-* recode.md ([recode.html][])
+* [recode.html][]	    
+	- Some useful information about recode.c
 
-Some useful information about recode.c
 
-* [chocolate-cake.html][]
+* [chocolate-cake.html][]	
+	-  Because most of us could use some *Double-layered Chocolate Fudge Cake*!
+	-	NOTE: see [recode.html][] for details about how to decrypt this!
 
-Because most of us could use some *Double-layered Chocolate Fudge Cake*!
 
 [recode.html]: recode.html
 [chocolate-cake.html]: chocolate-cake.html
@@ -204,7 +250,7 @@ After that you can input the string and it'll go from there.
 #### <a name="example" href="#toc">Example run</a>
 
 BTW: There's a much more entertaining (and delicious) challenge or exercise in
-[recode.md][] (involves [chocolate-cake.html][]) though one might need a different
+[recode.html][] (involves [chocolate-cake.html][]) though one might need a different
 kind of exercise after taking up the challenge! :-) These however show the
 general program as well as how to use the two winning entries of the Morse code
 that I referred to earlier:
@@ -351,7 +397,7 @@ I didn't think of everything. My entry was meant to be a simulator only as far
 as the ciphering goes but I thought this would make it much more interesting:
 make it more flexible by a wrapper program.
 
-For examples using it (and a delicious challenge) see [recode.md][]. See
+For examples using it (and a delicious challenge) see [recode.html][]. See
 also [recode.1][] and [enigma.1][] man pages.
 
 
@@ -400,7 +446,7 @@ After this it wants Ring 2 and I did similar; for ring 3 I did it each variable
 by itself. However for the reflector I did 1A and it only expects 1 char! So will
 that mean that the plugboard pairs are off? Yes it does seem to be so. This is
 buffering at play I believe but it's useful for allowing the recode program to
-easily configure the Enigma machine. In the other markdown file I give a hint
+easily configure the Enigma machine. In the other markdown/html file I give a hint
 as to how this could be fixed but the caveat is it would necessitate a need for
 rewriting recode.c.
 
@@ -412,7 +458,7 @@ There are two reflectors and the same applies: in C 0-1 but in human it's
 1-2 (technically these were reflectors B and C in the Enigma machine which I
 display by name in recode.c just like with the rotors).
 
-For more information see [recode.md][] or [recode.html][].
+For more information see [recode.html][].
 
 BTW: If you need a reminder to go to the gym just do your Enigma ABCs and it
 should help you remember (though not at this time in our world it might help you
@@ -478,7 +524,7 @@ The file [obfuscation.key][] is the key to decipher/encipher
 For the lazy [obfuscation.md][] has the deciphered version. I am afraid
 I'm not so inclined to do that for the cake recipe: the idea there is to make it
 a fun exercise that when solved unlocks a wonderful double-layered chocolate
-fudge cake recipe. But given that my 'Don't tread on me award' entry also
+fudge cake recipe. But given that my ['Don't tread on me award'](../ferguson1) entry also
 has the recipe, not enciphered, one might just go there instead. Still it's a
 fun way to explore this entry.
 
@@ -501,7 +547,7 @@ machines this would not work because they had to choose from a set of rotors and
 there were no duplicates. This shouldn't be a problem here however except that
 it won't be a possible configuration of the real Enigma machine. The `recode`
 program *however does validate this* (except when reading in settings via the
-`-R` option which I explain in the [recode.md][] / [recode.html][] file).
+`-R` option which I explain in the [recode.html][] file).
 
 *   The way the plugboard - for the machines that had them - is if you connect A
 to B then no other letters can connect to A or B. Earlier there wasn't proper
@@ -708,7 +754,7 @@ that.
 [Interactive Enigma Machine]: http://enigmaco.de/enigma/enigma.html
 [enigma.1]: enigma.1
 [recode.1]: recode.1
-[recode.md]: recode.md
+[recode.html]: recode.html
 [chocolate-cake.html]: chocolate-cake.html
 [recode.c]: recode.c
 [obfuscation.md]: obfuscation.md
