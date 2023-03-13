@@ -31,6 +31,10 @@ This program prints out a string of garbage.
 
 The judges also offer this one comment: understand comments!
 
+## Author's comments:
+
+No comments were provided by the author.
+
 
 Copyright (c) 1984, Landon Curt Noll.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

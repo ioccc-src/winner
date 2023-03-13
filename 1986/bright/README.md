@@ -6,11 +6,16 @@ Walter Bright
 
         make all
 
+## To run:
+
+	./bright some_file
+
 ### Try:
 
 	./bright bright.c
 
 	./bright bright
+
 
 ## Judges' comments:
 
@@ -20,6 +25,11 @@ Mr. Bright exploits the C pre-processor, similar variables and
 excessive shifting to obfuscate an otherwise useful binary display
 program.  This gives you a small example of what it is like to
 maintain the Bourne shell! :-}
+
+## Author's comments:
+
+No comments were provided by the author.
+
 
 
 Copyright (c) 1986, Landon Curt Noll & Larry Bassel.

@@ -38,6 +38,11 @@ We consider this to be a beautiful counter-example for Frank Rubin's
 letter to ACM form titled: _"'GOTO Considered Harmful' Considered Harmful"_.
 See the Communications of the ACM, March 1987, Page 195-196.
 
+
+## Author's comments:
+
+No comments were provided by the author.
+
 Copyright (c) 1987, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is
 granted provided this this copyright and notice are included in its entirety

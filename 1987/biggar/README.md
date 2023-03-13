@@ -11,14 +11,13 @@ Santa Monica, CA
         make all
 
 
-## Judges' comments:
+### To run:
 
-Passes BSD and UTS lint.  At least one version of lint is thrown into
-an infinite loop by this entry.
+	some_command | ./biggar | od -c
 
 ### Try:
 
-	... | ./biggar | od -c	(remember to compile as indicated above)
+	cat biggar.c | ./biggar | od -c
 
 
 By changing the compile line you can make this program do anything you
@@ -34,7 +33,18 @@ One vendor's lint got hung in an infinite loop over this entry!
 > FYI:  We will let Mark get away with this truly sick entry this time, but 
 > for the future on we have placed a limit on the size of a compile line.
 
-Also see our comment in Larry Wall's entry regarding Mark's contribution.
+Also see our comment in [Larry Wall's entry](../wall/README.md) regarding Mark's contribution.
+
+## Judges' comments:
+
+Passes BSD and UTS lint.  At least one version of lint is thrown into
+an infinite loop by this entry.
+
+
+## Author's comments:
+
+No comments were provided by the author.
+
 
 Copyright (c) 1987, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

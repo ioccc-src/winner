@@ -22,6 +22,11 @@ dump.
 This program will pass lint on your system assuming your lint is brave
 enough to try and parse it correctly.
 
+## Author's comments:
+
+No comments were provided by the author.
+
+
 Copyright (c) 1986, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is
 granted provided this this copyright and notice are included in its entirety

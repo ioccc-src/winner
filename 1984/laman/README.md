@@ -10,6 +10,19 @@ Mike Laman
 
 	./laman <positive number>
 
+## Try:
+
+The program accepts ONE positive argument.  Seeing is believing, so try things
+like:
+
+	./laman 4
+	./laman 9
+	./laman 16
+
+This code should run you in circles.
+
+NOTE: this program will likely segfault if you do not provide an argument and it
+will not print anything if the number is not positive or not a number.
 
 ## Judges' comments:
 
@@ -24,17 +37,12 @@ to:
 	;++f)a[		b<<5|c]		=d++,b+=	e;for(		f=0;f<O
 	<<5|c]^=	a[b<<5		|c]^=a[		(k-(b+1		))<<5|c]
 
-I hope you have a C beautifier! The program accepts ONE positive
-argument.  Seeing is believing, so try things like:
+I hope you have a C beautifier!
 
-	./laman 4
-	./laman 9
-	./laman 16
+## Author's comments:
 
-This code should run you in circles.
+No comments were provided by the author.
 
-NOTE: this program will likely segfault if you do not provide an argument and it
-will not print anything if the number is not positive or not a number.
 
 
 Copyright (c) 1984, Landon Curt Noll.

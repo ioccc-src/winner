@@ -35,6 +35,11 @@ Try not to
 files.  :-)
 
 
+## Author's comments:
+
+No comments were provided by the author.
+
+
 The judges used this program to fold up very long lines which the
 BSD fold(1) was unable to process.  This program has been added
 to the contest tool chest.
