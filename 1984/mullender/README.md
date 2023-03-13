@@ -12,9 +12,10 @@ Robbert van Renesse
 
 	./mullender
 
+NOTE: This entry is likely to fail and/or dump core on modern computers.
+
 ## Judges' comments:
 
-NOTE: This entry is likely to fail and/or dump core on modern computers.
 
 Without question, this C program is the one of the most obfuscated
 C program that has ever been received!  Like all great contest
@@ -40,6 +41,11 @@ The real Vax code starts with the second word.  This small program
 makes direct calls to the write() Unix system call to produce a
 message on the screen.  Can you guess what is printed?  We knew you
 couldn't!  :-)
+
+## Author's comments:
+
+No comments were provided by the author.
+
 
 Copyright (c) 1984, Landon Curt Noll.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

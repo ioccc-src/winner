@@ -20,8 +20,13 @@ argument of main(). If you have gcc under macOS it might work just as well.
 
 Believe it or not, this is the old standard "Hello, world" program
 performed in a very complex way.  The judges and the author defy you
-do determine how it does it.  It is a good thing that K&R didn't use
+to determine how it does it.  It is a good thing that K&R didn't use
 this version as the first C program!
+
+## Author's comments:
+
+No comments were provided by the author.
+
 
 
 Copyright (c) 1986, Landon Curt Noll & Larry Bassel.

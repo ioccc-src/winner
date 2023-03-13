@@ -22,6 +22,10 @@ The judges found this entry to be one of hardest to read without the
 aid of `/lib/cpp` and a good editor.  When run, the program asks if it
 is obfuscated, of all things!
 
+## Author's comments:
+
+No comments were provided by the author.
+
 
 Copyright (c) 1986, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

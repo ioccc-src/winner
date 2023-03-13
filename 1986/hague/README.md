@@ -32,6 +32,11 @@ similar variables can be obfuscating!  The author notes that this
 program implements the international Morse standard.  Now for extra
 credit, what Morse message does the program spell out?
 
+## Author's comments:
+
+No comments were provided by the author.
+
+
 Copyright (c) 1986, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is
 granted provided this this copyright and notice are included in its entirety

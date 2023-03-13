@@ -24,6 +24,11 @@ Try the program with the following argument:
 output cleanly.  Your system may require another set of characters.
 In time, you will figure out what it does. :-)
 
+## Author's comments:
+
+No comments were provided by the author.
+
+
 
 Copyright (c) 1986, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

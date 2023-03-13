@@ -9,7 +9,19 @@ Amsterdam, The Netherlands
 
         make all
 
-NOTE: The original entry may be built with "make alt".
+NOTE: The original entry may be built with "make alt" if you have an old enough
+compiler.
+
+## To run:
+
+	./lievaart
+	# enter a level and start playing as described below
+
+	./lievaart2
+	# enter a level and start playing as described below
+
+NOTE: if you enter invalid input the program will enter an infinite loop
+displaying a string like `"You:"` repeatedly.
 
 ## Judges' remarks:
 
@@ -34,6 +46,11 @@ The Author was kind enough to supply the fully functional version of the
 program.  The file lievaart2.c contains what the program would have
 been without the size restriction.  This version has the full end game 
 logic and displays the board after each move!
+
+
+## Author's comments:
+
+No comments were provided by the author.
 
 Copyright (c) 1987, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

@@ -24,6 +24,11 @@ The judges were so amused by this little program that we created an
 award just for it.  This program is portable to the C and Fortran 77
 compilers as well as executable by the Bourne shell!
 
+## Author's comments:
+
+No comments were provided by the author.
+
+
 
 Copyright (c) 1986, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

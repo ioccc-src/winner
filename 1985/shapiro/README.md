@@ -24,6 +24,11 @@ This program was selected for the 1987 t-shirt collection.
 We found this program is be simply a**maze**ing! Run this program without
 arguments and notice the output. 
 
+## Author's comments:
+
+No comments were provided by the author.
+
+
 
 Copyright (c) 1985, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

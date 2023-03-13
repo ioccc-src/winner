@@ -32,6 +32,11 @@ The program itself looks like tty noise.
 In the past 'define' in `#define` could even be defined but to get this to work
 on modern systems we had to change the `#o` lines to `#define`.
 
+## Author's comments:
+
+No comments were provided by the author.
+
+
 
 Copyright (c) 1985, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

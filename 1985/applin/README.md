@@ -21,6 +21,10 @@ see for yourself what happens!
 One liner programs are short but twisted.  This "Hello, World" version
 certainly takes its time saying hello.
 
+## Author's comments:
+
+No comments were provided by the author.
+
 
 Copyright (c) 1985, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

@@ -32,6 +32,11 @@ If you let it, the program will continue to print a numerical sequence
 (can you guess in what base it is printed?) until you run out of
 memory or until they sell your computer, which ever comes first.
 
+## Author's comments:
+
+No comments were provided by the author.
+
+
 Copyright (c) 1985, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is
 granted provided this this copyright and notice are included in its entirety

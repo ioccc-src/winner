@@ -92,7 +92,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE= -traditional-cpp
+CDEFINE=
 #CDEFINE= -DIOCCC
 
 # Include files that are needed to compile
@@ -169,6 +169,9 @@ TARGET= ${PROG}
 ALT_OBJ=
 ALT_TARGET=
 
+# FORCE use of -traditional-cpp
+#
+CFLAGS+= -traditional-cpp
 
 #################
 # build the entry

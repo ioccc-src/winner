@@ -30,6 +30,11 @@ does, then you don't, so read it again!  Explain why:
 results in diff reporting a difference on some machines.
 
 
+## Author's comments:
+
+No comments were provided by the author.
+
+
 Copyright (c) 1985, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is
 granted provided this this copyright and notice are included in its entirety

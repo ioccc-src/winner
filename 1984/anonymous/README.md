@@ -53,6 +53,10 @@ If we add to the CFLAGS `-include unistd.h` we will run into another problem:
 	ssize_t  read(int, void *, size_t) __DARWIN_ALIAS_C(read);
 		 ^
 
+## Author's comments:
+
+No comments were provided by the author.
+
 
 Copyright (c) 1984, Landon Curt Noll.
 All Rights Reserved.  Permission for personal, educational or non-profit use is
