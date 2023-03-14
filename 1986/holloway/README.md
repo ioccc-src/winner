@@ -17,6 +17,10 @@ caused a segfault. By adding a new variable, `char *t`, initialising it to `s`
 and then using `t` instead of `s` it compiles and runs successfully under clang
 and gcc. Thank you Cody for your assistance!
 
+## Try:
+
+	./holloway
+
 
 ## Judges' comments:
 
