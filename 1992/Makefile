@@ -53,8 +53,8 @@ include ../var.mk
 # IOCCC winners
 ###############
 #
-WINNERS= adrian albert ant buzzard1 buzzard2 gson imc kivinen lush marangon \
-	 nathan vern westley
+WINNERS= albert buzzard1 buzzard2 gson howe imc kivinen lush marangon \
+	 mariano nathan vern westley
 
 YEAR= 1992
 

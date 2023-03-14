@@ -12,8 +12,8 @@
 
 ### To run
 
-	cp ant.hint hill
-	./ant hill
+	cp howe.hint hill
+	./howe hill
 
 ## Judges' comments
 

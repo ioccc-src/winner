@@ -12,14 +12,14 @@
 
 ### To run
 
-	./ant 'ERE' [file ...]
+	./howe 'ERE' [file ...]
 
 ## Judges' comments
 
     You may also want to try the author's test suite:
-	make -f ant.test.mk
+	make -f howe.test.mk
     
-    See the author's Posix P1003.2-like documentation file ant.txt
+    See the author's Posix P1003.2-like documentation file howe.txt
     for more information.
 
     This program demonstrates that Posix doesn't guarantee readability.  :-)

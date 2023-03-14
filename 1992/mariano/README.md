@@ -12,7 +12,7 @@
 
 ### To run
 
-	./adrian adrian.grep.try < adrian.hint
+	./mariano mariano.grep.try < mariano.hint
 
 	For the slow minded, try:
 
@@ -130,7 +130,7 @@
 
     If no filename is specified on the command line, then "adgrep.c" is used
     as the specification for the automaton.  (This file has been renamed 
-    to adrian.c by the judges.)  In this case, the program will search for 
+    to mariano.c by the judges.)  In this case, the program will search for 
     matches to the regular expression:
 
                         ^.[^|C][^w[Q]*(Q|[w[]c).*|^.[C|]$
@@ -208,7 +208,7 @@
     machine.)  The four programs which read from stdin require lines
     shorter than 999 characters.
 
-    The other info files are adrian.grep.[1-6] which contain the six
+    The other info files are mariano.grep.[1-6] which contain the six
     examples that appear above, and from, which is used to emulate the
     unix from command.  For reasons of clarity, the name "from" should
     probably not be changed if possible.  I wouldn't want to be accused of 

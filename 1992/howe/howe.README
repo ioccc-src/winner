@@ -261,9 +261,9 @@ REFERENCES
 
 FILES
 
-ant.c		Obfuscated source
-ant.README	Manual for AM
-ant.test.mk	Test makefile
+howe.c		Obfuscated source
+howe.README	Manual for AM
+howe.test.mk	Test makefile
 
 
 BUGS

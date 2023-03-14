@@ -1,6 +1,6 @@
 #!/usr/bin/env make
 #
-# IOCCC 1992 winning entry - adrian
+# IOCCC 1991 winning entry - howe
 
 ################################################################################
 #
@@ -63,18 +63,15 @@ X11_INCDIR= /opt/X11/include
 # Common C compiler warnings to silence
 #
 #CSILENCE=
-CSILENCE= -Wno-bitwise-op-parentheses -Wno-comment -Wno-deprecated-declarations \
-	-Wno-error -Wno-implicit-function-declaration -Wno-format-security \
-	-Wno-logical-op-parentheses -Wno-macro-redefined -Wno-parentheses \
-	-Wno-return-type -Wno-uninitialized -Wno-unused-value -Wno-unused-variable \
-	-Wno-unused-but-set-variable -Wno-unsequenced -Wno-unused-parameter
+CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-empty-body \
+	-Wno-implicit-function-declaration -Wno-return-type
 
 # Common C compiler warning flags
 #
 #CWARN= ${CSILENCE}
 #CWARN= -Wall ${CSILENCE}
-#CWARN= -Wall -Wextra ${CSILENCE}
-CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+CWARN= -Wall -Wextra ${CSILENCE}
+#CWARN= -Wall -Wextra -pedantic ${CSILENCE}
 
 # Compiler standard
 #
@@ -96,8 +93,8 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE=
-#CDEFINE= -DIOCCC
+#CDEFINE=
+CDEFINE= -DMODE=0600 -DBUF=32767
 
 # Include files that are needed to compile
 #
@@ -127,8 +124,8 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
-#LIBS= -lm
+#LIBS=
+LIBS= -lcurses -ltermcap
 #LIBS= -L ${X11_LIBDIR} -lX11
 #LIBS= -L ${HOMEBREW_PREFIX}/lib -lSDL
 
@@ -142,10 +139,10 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-CSILENCE+= -Wno-comma -Wno-float-conversion -Wno-missing-noreturn \
-	-Wno-missing-prototypes -Wno-missing-variable-declarations -Wno-padded \
-	-Wno-poison-system-directories -Wno-shadow -Wno-unreachable-code \
-	-Wno-unused-macros
+CSILENCE+= -Wno-comma -Wno-implicit-int-conversion -Wno-missing-prototypes \
+	-Wno-missing-variable-declarations -Wno-pedantic \
+	-Wno-poison-system-directories -Wno-shadow -Wno-shorten-64-to-32 \
+	-Wno-strict-prototypes
 #
 CWARN+= -Weverything
 #
@@ -166,7 +163,7 @@ endif
 # Special flags for this entry
 ##############################
 #
-ENTRY= adrian
+ENTRY= howe
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
@@ -190,27 +187,6 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
-	${RM} -f ad.temp adwc.c adbasename.c adecho.c adhead.c adsleep.c
-	${SED} '1s/\..*\./. wc ./' adrian.c > ad.temp
-	-./adrian ad.temp <ad.temp >adwc.c
-	${CC} ${CFLAGS} -o adwc adwc.c
-	${SED} '1s/\..*\./. basename ./' adrian.c > ad.temp
-	-./adrian ad.temp <ad.temp >adbasename.c
-	${CC} ${CFLAGS} -o adbasename adbasename.c
-	${SED} '1s/\..*\./. echo| ./' adrian.c > ad.temp
-	-./adrian ad.temp <ad.temp >adecho.c
-	${CC} ${CFLAGS} -o adecho adecho.c
-	${SED} '1s/\..*\./. head; ./' adrian.c > ad.temp
-	-./adrian ad.temp <ad.temp >adhead.c
-	${CC} ${CFLAGS} -o adhead adhead.c
-	${SED} '1s/\..*\./. sleep ./' adrian.c > ad.temp
-	-./adrian ad.temp <ad.temp >adsleep.c
-	${CC} ${CFLAGS} -o adsleep adsleep.c
-	${RM} -f ad.temp
-
-adgrep: ${PROG}
-	${RM} -f $@
-	${LN} $< $@
 
 # alternative executable
 #
@@ -240,8 +216,6 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -f adbasename adbasename.c adecho adecho.c adgrep adhead
-	${RM} -f adhead.c adrian adsleep adsleep.c adwc adwc.c
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

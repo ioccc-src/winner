@@ -1,5 +1,5 @@
 baruch/baruch
-cmills/cmills
+mills/mills
 dds/dds
 dg/dg
 jaw/atob
@@ -10,9 +10,9 @@ scjones/scjones
 stig/o
 stig/o.c
 tbr/tbr
-theorem/fibonacci
-theorem/fibonacci.c
-theorem/sorter
-theorem/sorter.c
-theorem/theorem
+mariano/fibonacci
+mariano/fibonacci.c
+mariano/sorter
+mariano/sorter.c
+mariano/mariano
 westley/westley

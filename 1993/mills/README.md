@@ -14,7 +14,7 @@
 
     DISPLAY="your_X_server_display" 
     export DISPLAY
-    ./cmills [speed]	# must be run on an X11 server
+    ./mills [speed]	# must be run on an X11 server
 
     where:
 

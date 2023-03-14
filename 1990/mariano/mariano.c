@@ -21,7 +21,7 @@ if(R=='/')*g/=u;
 if(R=='^')P(g,*g,u);
 C
 w(g,R,u)float*g,u;char R;
-/**/{int b,f;A=atoi(*++a);b=atoi(*++a);while((f=A+b)<15000){printf("%d\n",f);A=b;b=f;}}
+/**/{int b,f;A=atoi(++a);b=atoi(++a);while((f=A+b)<15000){printf("%d\n",f);A=b;b=f;}}
 main(A,a)int A;char*a[];
 o o
 if(!strcmp(*++a,"-r"))S();

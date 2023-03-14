@@ -1,6 +1,6 @@
 #!/usr/bin/env make
 #
-# IOCCC 1992 winning entry - ant
+# IOCCC 1990 winning entry - mariano
 
 ################################################################################
 #
@@ -63,7 +63,10 @@ X11_INCDIR= /opt/X11/include
 # Common C compiler warnings to silence
 #
 #CSILENCE=
-CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-unsequenced
+CSILENCE= -Wno-deprecated-declarations -Wno-empty-body -Wno-error -Wno-unused-value \
+	-Wno-implicit-function-declaration -Wno-incompatible-pointer-types \
+	-Wno-macro-redefined -Wno-parentheses -Wno-return-type -Wno-unused-parameter \
+	-Wno-empty-translation-unit
 
 # Common C compiler warning flags
 #
@@ -138,10 +141,10 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-CSILENCE+= -Wno-conditional-uninitialized -Wno-implicit-int-conversion \
+CSILENCE+= -Wno-comma -Wno-double-promotion -Wno-float-conversion \
 	-Wno-missing-prototypes -Wno-missing-variable-declarations \
-	-Wno-poison-system-directories -Wno-shadow -Wno-shorten-64-to-32 \
-	-Wno-sign-conversion -Wno-strict-prototypes
+	-Wno-poison-system-directories -Wno-shadow -Wno-strict-prototypes \
+	-Wno-unreachable-code -Wno-unused-macros
 #
 CWARN+= -Weverything
 #
@@ -162,12 +165,12 @@ endif
 # Special flags for this entry
 ##############################
 #
-ENTRY= ant
+ENTRY= mariano
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 DATA=
-TARGET= ${PROG}
+TARGET= ${PROG} sorter fibonacci
 #
 ALT_OBJ=
 ALT_TARGET=
@@ -182,15 +185,22 @@ all: data ${TARGET}
 
 .PHONY: all alt data everything clean clobber install \
 	love haste waste maker easter_egg sandwich \
-	am am_clobber \
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
-am: ${PROG}
-	${RM} -f $@
-	${LN} $< $@
+sorter.c: ${PROG} ${PROG}.c
+	-./mariano -r 0 0 0 0 < mariano.c > sorter.c
+
+sorter: sorter.c
+	${CC} ${CFLAGS} sorter.c -o $@
+
+fibonacci.c: sorter ${PROG}.c
+	-./sorter 0 0 0 0 < mariano.c > fibonacci.c
+
+fibonacci: fibonacci.c
+	${CC} ${CFLAGS} fibonacci.c -o $@
 
 # alternative executable
 #
@@ -220,17 +230,12 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -f am am.safe
+	${RM} -f sorter.c sorter
+	${RM} -f fibonacci.c fibonacci
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
 	fi
-
-am_clobber: clean am
-	${RM} -f am.safe
-	${CP} am am.safe
-	${CP} am.safe am
-	${RM} -f am.safe
 
 install:
 	@echo "Dr. Spock says that is not logical!"
