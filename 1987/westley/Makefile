@@ -167,8 +167,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -183,7 +183,6 @@ all: ${DATA} ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: This entry requires a non-standard K&R C compiler to compile."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable

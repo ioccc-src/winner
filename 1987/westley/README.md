@@ -11,7 +11,22 @@ USA
 
         make all
 
-NOTE: This entry requires a non-standard K&R C compiler to compile.
+NOTE: Cody Boone Ferguson fixed this so it could compile on modern systems. For
+the original file see below.
+
+
+## Alternate code:
+
+If you have an older compiler you can try compiling the original source code
+which is true symmetry:
+
+	make alt
+
+
+## To run:
+
+	./westley
+
 
 ## Judges' comments:
 
