@@ -10,6 +10,13 @@ Sweden
 
         make all
 
+
+
+## Try:
+
+	./august
+
+
 NOTE: this entry is very likely to core dump after its output.
 
 ## Judges' comments:

@@ -44,8 +44,50 @@ couldn't!  :-)
 
 ## Author's comments:
 
-No comments were provided by the author.
+These comments, found at
+[https://lainsystems.com/posts/exploring-mullender-dot-c/](https://lainsystems.com/posts/exploring-mullender-dot-c/),
+were provided by Sjoerd Mullender years later. We thank the author of the
+article for the quote!
 
+I have never known a lot about the VAX assembly, so we used the C compiler to
+create the VAX code. We didn't write it ourselves from scratch as we did with
+the PDP code. This is the reason why the VAX code is more complex, including the
+extra data after the PDP code.
+
+Robbert and I were students at the VU (Free University in Amsterdam) at the time
+(mathematics with CS as our major since there was no CS curriculum when we
+started). We had an assignment to create a pair of programs for the computer
+networks course. The programs were supposed to send data reliably from one
+program to the other over an unreliable channel. This channel was simulated with
+a pair of pipes.
+
+We decided for fun to create an obfuscated set of programs, only for the PDP, to
+do this, but circumventing the channel. (I.e. cheating, hence the needed
+obfuscation.) Our programs worked and we handed them in.
+
+Of course, the teacher had a good laugh and then rejected our submission. (We
+knew him well, so we could get away with this.)
+
+Then the IOCCC came along. I don’t remember how we heard about it, but at the
+time there was a world-wide messaging network Usenet where we read a bunch of
+newsgroups. I’m sure it was announced there and we saw it.
+
+Since we had just recently created these obfuscated programs we decided we could
+use the same technique for an obfuscated C program. We upped the ante a bit by
+making it “portable”.
+
+To add to the obfuscation, we used different formats for the integers in the
+array, some in decimal, some in octal, some in hexadecimal, and when the value
+would fit, some as an ASCII character.
+
+The rest is history.
+
+Since this was the first contest, we hadn't seen any old entries, nor had any of
+the other contestants. Of course we knew about #define and tricks you could do
+with that, but we didn't need that for this program. In fact, we made it as
+“standard” as possible. At the time there was this program called “cb” for C
+beautifier which would re-indent your program to make the layout look better. Our
+program is idempotent under cb.
 
 Copyright (c) 1984, Landon Curt Noll.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

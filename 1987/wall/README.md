@@ -9,7 +9,14 @@ Panorama City, CA  91402  USA
 
         make all
 
-## Judges' comments:
+## To run:
+
+
+	./wall
+	# enter some strings
+
+	./wall | some_command
+	# enter some strings
 
 ### Try:
 
@@ -35,6 +42,9 @@ and enter some input like:
 	quit # for the cat version
 
 
+## Judges' comments:
+
+
 What we found amazing was how the flow of control was transferred
 between subroutines.  Careful inspection will show that the array of
 pointers to functions named 'vi' refers to functions which seem to not
@@ -43,6 +53,11 @@ used as an argument to signal.  Can you determine why this is being
 done and how it is being exploited?
 
 Some compilers complained about this file, so we changed: '=++I' to '= ++I'.
+
+
+## Author's comments:
+
+No comments were provided by the author.
 
 Copyright (c) 1987, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

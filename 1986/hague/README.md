@@ -13,10 +13,17 @@ UK
 NOTE: this entry uses gets() so you might get a warning about this when
 compiling and running this program with some systems.
 
+## To run:
+
+	./hague
+	# enter some text
+
 ### Try:
 
 	./hague
-	[enter some text]
+	IOCCC
+	International Obfuscated C Code Contest
+	Jim Hague
 
 
 ## Judges' comments:

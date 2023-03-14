@@ -10,6 +10,10 @@ USA
 
         make all
 
+## To run:
+
+	./applin
+
 ### Try:
 
 	sh applin.c

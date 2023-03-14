@@ -17,11 +17,17 @@ compiler.
 	./lievaart
 	# enter a level and start playing as described below
 
-	./lievaart2
-	# enter a level and start playing as described below
 
 NOTE: if you enter invalid input the program will enter an infinite loop
 displaying a string like `"You:"` repeatedly.
+
+## Try:
+
+To see what it would have looked like without the size restrictions:
+
+	./lievaart2
+	# enter a level and start playing as described below
+
 
 ## Judges' remarks:
 

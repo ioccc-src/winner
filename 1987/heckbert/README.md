@@ -12,7 +12,6 @@ On System V systems, we had to compile with `-Dindex=strchr`.
 To compile on a 16 bit machine, change 300000 to 30000.
 
 
-## Judges' comments:
 
 ### Try:
 
@@ -25,14 +24,16 @@ Ask yourself what happens to `foo.md` if you try:
 
 	./ph 40 < README.md > foo.md
 
-Folding at the wrong length may be equivalent to a "Spindle or Mutilate" operation.  For example:
+
+## Judges' comments:
+
+Folding at the wrong length may be equivalent to a "Spindle or Mutilate" operation. For example:
 
 	./heckbert 40 < heckbert.c > ph.c ; make ph ; ./ph 20 < heckbert.c > bar.c ; make bar
 
-
 Try not to
 [Fold, Spindle or Mutilate](https://repository.library.brown.edu/studio/item/bdr:788264/PDF/)
-files.  :-)
+files. :-)
 
 
 ## Author's comments:
@@ -41,7 +42,7 @@ No comments were provided by the author.
 
 
 The judges used this program to fold up very long lines which the
-BSD fold(1) was unable to process.  This program has been added
+BSD fold(1) was unable to process. This program has been added
 to the contest tool chest.
 
 
