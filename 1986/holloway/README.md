@@ -10,10 +10,12 @@ USA
         make all
 
 
-NOTE: we could not compile this entry under modern macOS but it will work
-fine under linux. It likely fails to compile under macOS because its gcc is
-actually just clang which is more strict about the type of the second
-argument of main(). If you have gcc under macOS it might work just as well.
+NOTE: Cody Boone Ferguson fixed this to compile with clang (it worked with gcc).
+The problem was that clang is more strict about the type of second arg to
+main(). However simply changing it to a `char **` and updating the `*s` to `**s`
+caused a segfault. By adding a new variable, `char *t`, initialising it to `s`
+and then using `t` instead of `s` it compiles and runs successfully under clang
+and gcc. Thank you Cody for your assistance!
 
 
 ## Judges' comments:

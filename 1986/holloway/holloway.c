@@ -11,7 +11,8 @@
 long tab1[]={ 989L,5L,26L,0L,88319L,123L,0L,9367L };
 int tab2[]={ 4,6,10,14,22,26,34,38,46,58,62,74,82,86 };
 
-main(m1,s) char *s; {
+main(m1,s) char **s; {
+    char *t = s;
     int a,b,c,d,o[k],n=(int)s;
     if(m1==1){ char b[2*j+f-g]; main(l(h+e)+h+e,b); printf(b); }
     else switch(m1-=h){
@@ -27,7 +28,7 @@ main(m1,s) char *s; {
 	    if((b=n)>=e)for(b=g<<g;b<n;++b)o[b]=o[b-h]+o[b-g]+c;
 	    return(o[b-g]%n+k-h);
 	default:
-	    if(m1-=e) main(m1-g+e+h,s+g); else *(s+g)=f;
-	    for(*s=a=f;a<e;) *s=(*s<<e)|main(h+a++,(char *)m1);
+	    if(m1-=e) main(m1-g+e+h,t+g); else *(t+g)=f;
+	    for(*t=a=f;a<e;) *t=(*t<<e)|main(h+a++,(char *)m1);
 	}
 }
