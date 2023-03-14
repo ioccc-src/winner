@@ -38,6 +38,10 @@ might speak to your coding style? If not, then perhaps:
 
 might help? :-)
 
+NOTE: In 2020 Cody Boone Ferguson found a minor bug when working on his [Enigma
+machine entry](../../2020/ferguson2); see his
+[README.md](../../2020/ferguson2/README.md) for details (search for `vik`).
+
 ## Author's comments:
 ### Remarks
 
