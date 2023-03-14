@@ -5,6 +5,9 @@
 # Doesn't run the program on README.md as it's longer and slower.
 #
 
+# make prog first and exit if failure
+make || exit
+
 # display prog.c to the user
 echo "$ cat prog.c"
 cat prog.c
