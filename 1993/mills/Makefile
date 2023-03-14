@@ -1,6 +1,6 @@
 #!/usr/bin/env make
 #
-# IOCCC 1991 winning entry - ant
+# IOCCC 1993 winning entry - mills
 
 ################################################################################
 #
@@ -63,8 +63,7 @@ X11_INCDIR= /opt/X11/include
 # Common C compiler warnings to silence
 #
 #CSILENCE=
-CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-empty-body \
-	-Wno-implicit-function-declaration -Wno-return-type
+CSILENCE= -Wno-return-type
 
 # Common C compiler warning flags
 #
@@ -93,16 +92,16 @@ ARCH=
 
 # Defines that are needed to compile
 #
-#CDEFINE=
-CDEFINE= -DMODE=0600 -DBUF=32767
+CDEFINE=
+#CDEFINE= -DIOCCC
 
 # Include files that are needed to compile
 #
-CINCLUDE=
+#CINCLUDE=
 #CINCLUDE= -include stdlib.h
 #CINCLUDE= -include stdio.h
 #CINCLUDE= -include stdlib.h -include stdio.h
-#CINCLUDE= -I ${X11_INCDIR}
+CINCLUDE= -I ${X11_INCDIR}
 #CINCLUDE= -I ${HOMEBREW_PREFIX}/include/SDL2
 
 # Optimization
@@ -125,8 +124,8 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 # Libraries needed to build
 #
 #LIBS=
-LIBS= -lcurses -ltermcap
-#LIBS= -L ${X11_LIBDIR} -lX11
+#LIBS= -lm
+LIBS= -L ${X11_LIBDIR} -lX11
 #LIBS= -L ${HOMEBREW_PREFIX}/lib -lSDL
 
 # C compiler to use
@@ -139,10 +138,9 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-CSILENCE+= -Wno-comma -Wno-implicit-int-conversion -Wno-missing-prototypes \
-	-Wno-missing-variable-declarations -Wno-pedantic \
-	-Wno-poison-system-directories -Wno-shadow -Wno-shorten-64-to-32 \
-	-Wno-strict-prototypes
+CSILENCE+= -Wno-comma -Wno-missing-prototypes -Wno-missing-variable-declarations \
+	-Wno-pedantic -Wno-poison-system-directories -Wno-shadow \
+	-Wno-shorten-64-to-32 -Wno-sign-conversion -Wno-strict-prototypes
 #
 CWARN+= -Weverything
 #
@@ -163,7 +161,7 @@ endif
 # Special flags for this entry
 ##############################
 #
-ENTRY= ant
+ENTRY= mills
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
@@ -187,6 +185,10 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
+chris: ${PROG}
+	${RM} -f $@
+	${CP} -v $< $@
 
 # alternative executable
 #
@@ -216,6 +218,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -f chris
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

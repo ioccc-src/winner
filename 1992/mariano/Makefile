@@ -1,6 +1,6 @@
 #!/usr/bin/env make
 #
-# IOCCC 1993 winning entry - ant
+# IOCCC 1992 winning entry - mariano
 
 ################################################################################
 #
@@ -63,7 +63,11 @@ X11_INCDIR= /opt/X11/include
 # Common C compiler warnings to silence
 #
 #CSILENCE=
-CSILENCE= -Wno-char-subscripts -Wno-error -Wno-implicit-function-declaration
+CSILENCE= -Wno-bitwise-op-parentheses -Wno-comment -Wno-deprecated-declarations \
+	-Wno-error -Wno-implicit-function-declaration -Wno-format-security \
+	-Wno-logical-op-parentheses -Wno-macro-redefined -Wno-parentheses \
+	-Wno-return-type -Wno-uninitialized -Wno-unused-value -Wno-unused-variable \
+	-Wno-unused-but-set-variable -Wno-unsequenced -Wno-unused-parameter
 
 # Common C compiler warning flags
 #
@@ -138,8 +142,10 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-CSILENCE+= -Wno-missing-prototypes -Wno-missing-variable-declarations \
-	-Wno-poison-system-directories -Wno-strict-prototypes
+CSILENCE+= -Wno-comma -Wno-float-conversion -Wno-missing-noreturn \
+	-Wno-missing-prototypes -Wno-missing-variable-declarations -Wno-padded \
+	-Wno-poison-system-directories -Wno-shadow -Wno-unreachable-code \
+	-Wno-unused-macros
 #
 CWARN+= -Weverything
 #
@@ -160,7 +166,7 @@ endif
 # Special flags for this entry
 ##############################
 #
-ENTRY= ant
+ENTRY= mariano
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
@@ -184,12 +190,25 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${RM} -f ad.temp adwc.c adbasename.c adecho.c adhead.c adsleep.c
+	${SED} '1s/\..*\./. wc ./' mariano.c > ad.temp
+	-./mariano ad.temp <ad.temp >adwc.c
+	${CC} ${CFLAGS} -o adwc adwc.c
+	${SED} '1s/\..*\./. basename ./' mariano.c > ad.temp
+	-./mariano ad.temp <ad.temp >adbasename.c
+	${CC} ${CFLAGS} -o adbasename adbasename.c
+	${SED} '1s/\..*\./. echo| ./' mariano.c > ad.temp
+	-./mariano ad.temp <ad.temp >adecho.c
+	${CC} ${CFLAGS} -o adecho adecho.c
+	${SED} '1s/\..*\./. head; ./' mariano.c > ad.temp
+	-./mariano ad.temp <ad.temp >adhead.c
+	${CC} ${CFLAGS} -o adhead adhead.c
+	${SED} '1s/\..*\./. sleep ./' mariano.c > ad.temp
+	-./mariano ad.temp <ad.temp >adsleep.c
+	${CC} ${CFLAGS} -o adsleep adsleep.c
+	${RM} -f ad.temp
 
-ag: ${PROG}
-	${RM} -f $@
-	${CP} -f $< $@
-
-ag.txt: ${PROG}.txt
+adgrep: ${PROG}
 	${RM} -f $@
 	${LN} $< $@
 
@@ -221,7 +240,8 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -f ag ag.txt
+	${RM} -f adbasename adbasename.c adecho adecho.c adgrep adhead
+	${RM} -f adhead.c mariano adsleep adsleep.c adwc adwc.c
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

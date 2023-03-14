@@ -53,7 +53,7 @@ include ../var.mk
 # IOCCC winners
 ###############
 #
-WINNERS= ant brnstnd buzzard cdupont davidguy dds fine rince westley
+WINNERS= brnstnd buzzard cdupont davidguy dds fine howe rince westley
 
 YEAR= 1991
 

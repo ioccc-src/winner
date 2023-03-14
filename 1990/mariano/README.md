@@ -19,7 +19,7 @@ systems with this entry.
 
 ## To run:
 
-	./theorem expression x1 x2 h y1
+	./mariano expression x1 x2 h y1
 
 where:
 
@@ -32,7 +32,7 @@ where:
 
 ## Try:
 
-	./theorem y 0 1 0.1 1
+	./mariano y 0 1 0.1 1
 
 
 
@@ -41,7 +41,7 @@ where:
 The program's source implements four functions, all from the
 same source file!
 
-When you compile theorem.c as is and run with 5 args, it numerically
+When you compile mariano.c as is and run with 5 args, it numerically
 solves the equation y'=f(x,y), with a step size of h, over the interval 
 x=[x1,x2], with the initial condition of y(x1)=y1.
 
@@ -56,14 +56,14 @@ left to right.  (i.e., parenthesis aren't supported).
 
 Try running the program with the following args:
 
-	./theorem y 0 1 0.1 1
-	./theorem 1/x 1 2 0.1 0
-	./theorem 'x^2/y+x' 0 1 0.1 6
+	./mariano y 0 1 0.1 1
+	./mariano 1/x 1 2 0.1 0
+	./mariano 'x^2/y+x' 0 1 0.1 6
 
 But wait, there is more!  You also get, free of charge, a 
 reversing filter!  Try:
 
-	./theorem -r 0 0 0 0 < theorem.c > sorter.c
+	./mariano -r 0 0 0 0 < mariano.c > sorter.c
 
 Still not impressed?  The author throws in for free, a 
 sort program! Try:
@@ -75,12 +75,12 @@ This program is safe for home use as well.  The author has
 included a safety feature in case you misplace the original
 program source:
 
-    ./sorter -r 0 0 0 0 < sorter.c > theorem_bkp.c
+    ./sorter -r 0 0 0 0 < sorter.c > mariano_bkp.c
 
 And finally, as a special offer to users of this entry,
 the author provides a Fibonacci sequence generator!  Try:
 
-    ./sorter 0 0 0 0 < theorem.c > fibonacci.c
+    ./sorter 0 0 0 0 < mariano.c > fibonacci.c
     cc fibonacci.c -o fibonacci
     ./fibonacci 1 1
     ./fibonacci 2 1

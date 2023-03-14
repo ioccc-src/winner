@@ -8,8 +8,8 @@ cl -45 cw -55 cc -617 ci -463 ts -85 kw -26 ks -69 src/obc/1990/theorem/theorem.
 	iocccsize fails at "z;/*/", eating everything until the following "/**/main("
 	looks to be due to mis-identification of a comment closing block as opening block
 cl 0   cw -2  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/1991/westley/westley.c
-cl 0   cw -3  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/1992/adrian/adrian.c
-cl 0   cw -3  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/1992/adrian/adrian.orig.c
+cl 0   cw -3  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/1992/gmariano/gmariano.c
+cl 0   cw -3  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/1992/gmariano/gmariano.orig.c
 cl 0   cw -1  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/1994/shapiro/shapiro.c
 cl 0   cw -2  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/1996/gandalf/gandalf.c
 cl 0   cw -1  cc 0    ci 0    ts 0   kw 0   ks 0   src/obc/1996/schweikh1/schweikh1.c
