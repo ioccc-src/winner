@@ -305,7 +305,7 @@ If I compile the 2014 entry and copy it to my local directory as
 $ echo TEST|./prog |./vik | mplayer -demuxer rawaudio -
 ```
 
-And you would hear Morse code of the Enigma output of 'TEST' (i.e. `KCWV`). Or
+And you would hear Morse code of the Enigma output of 'TEST' (i.e. `KCWV`)! Or
 perhaps not in this case. I'm not sure: I discovered a bug in that entry
 (Fedora, CentOS and macOS all affected).
 
