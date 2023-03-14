@@ -124,8 +124,8 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-#LIBS=
-LIBS= -lm
+LIBS=
+#LIBS= -lm
 #LIBS= -L ${X11_LIBDIR} -lX11
 #LIBS= `${SDL2_CONFIG} --libs`
 
@@ -327,4 +327,3 @@ pluto: charon
 	@echo "dwarf is a type of planet"
 	@echo "therefore, $@ is a planet"
 	@echo "having lots of planets is good feature because supernovae can help ${MAKE} a lot of them"
-
