@@ -20,6 +20,8 @@ Santa Monica, CA
 	cat biggar.c | ./biggar | od -c
 
 
+## Judges' comments:
+
 By changing the compile line you can make this program do anything you
 want.  This is a very efficient way to transfer source, though it
 increases the size of Makefiles.
@@ -38,7 +40,6 @@ entry](../wall/README.md) regarding Mark's contribution but it seems to have
 been lost in time. If anyone knows about its whereabouts we'd appreciate letting
 us know. Thanks!
 
-## Judges' comments:
 
 Passes BSD and UTS lint.  At least one version of lint is thrown into
 an infinite loop by this entry.

@@ -6,7 +6,7 @@ Jack Applin [with help from Robert Heckendorn]
 
         make all
 
-## To run:
+## Try:
 
 	./applin
 

@@ -8,6 +8,9 @@ Col. G. L. Sicherman
 
 NOTE: This entry requires a compiler that support `-traditional-cpp`.
 
+## Try:
+
+	./sicherman  < sicherman.c
 
 ## Judges' comments:
 

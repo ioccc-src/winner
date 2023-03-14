@@ -21,8 +21,8 @@ USA
 
 ### Alternate code
 
-An alternate version of this entry, `hines.alt.c`.
-With older compilers you can try the alt version:
+An alternate version of this entry is in `hines.alt.c`. With older compilers you
+can try the alt version:
 
     make alt
 

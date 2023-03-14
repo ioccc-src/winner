@@ -6,19 +6,10 @@ Anonymous
 
 	make all
 
-## To run:
+## Try:
 
 
 	./anonymous
-
-## Judges' comments:
-
-The author was too embarrassed that he/she could write such trash, so I
-promised to protect their identity.  I will say that the author of this
-program has a well known connection with the C programming language.
-
-This program is a unique variation on the age old "Hello, world"
-program.  What reads like a read may be written like a write!
 
 NOTE: this entry will probably not work under macOS with the Apple chips (Intel
 should be fine though we have no way to test this; if anyone can confirm whether
@@ -27,7 +18,6 @@ know). Although it will compile cleanly it will not print anything out. More
 specifically, on modern systems one might need to specify `-m32` (though this
 actually doesn't seem to be the case) but the Apple chips which are arm64 based
 will not compile this entry:
-
 
 	ld: unknown/unsupported architecture name for: -arch armv4t
 	clang: error: linker command failed with exit code 1 (use -v to see invocation)
@@ -52,6 +42,16 @@ If we add to the CFLAGS `-include unistd.h` we will run into another problem:
 	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/unistd.h:472:10: note: previous declaration is here
 	ssize_t  read(int, void *, size_t) __DARWIN_ALIAS_C(read);
 		 ^
+
+
+## Judges' comments:
+
+The author was too embarrassed that they could write such trash, so I
+promised to protect their identity.  I will say that the author of this
+program has a well known connection with the C programming language.
+
+This program is a unique variation on the age old "Hello, world"
+program.  What reads like a read may be written like a write!
 
 ## Author's comments:
 

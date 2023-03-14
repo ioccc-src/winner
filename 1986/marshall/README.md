@@ -17,6 +17,10 @@ main() and the third arg was an int. He notes that he tried to keep the picture
 as close to the original. The line lengths are the same but some spaces had to
 be changed to non-spaces. Thank you Cody for your help!
 
+## Try:
+
+	./marshall
+
 # Judges' comments:
 
 This program prints the name of the picture.  The layout is somewhat
