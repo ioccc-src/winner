@@ -26,11 +26,11 @@
 		           ,LACEDx0 = 0xDECAL,
 				rof ; for
 			     (;(int) (tni);)
-			    /* (int)*/(tni)
+			       (int) (tni)
 			  = reviled ; deliver =
 				redivider
 				    ;
-for ((int)(tni)++,++reviled;reviled* *deliver;deliver++,++/*(int)*/(tni)) rof
+for ((int)(tni)++,++reviled;reviled* *deliver;deliver++,++(int)(tni)) rof
 			            =
 			     (int) -1- (tni)
 		          ;reviled--;--deliver;
