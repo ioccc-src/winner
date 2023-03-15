@@ -101,7 +101,7 @@ CINCLUDE=
 #CINCLUDE= -include stdlib.h
 #CINCLUDE= -include stdio.h
 #CINCLUDE= -include stdlib.h -include stdio.h
-#CINCLUDE= -I ${X11_INCDIR}
+#CINCLUDE= -I ${X11_INCDIR} -I ${X11_INCDIR}/X11
 #CINCLUDE= `${SDL2_CONFIG} --cflags`
 
 # Optimization
@@ -124,7 +124,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 # Libraries needed to build
 #
 #LIBS=
-LIBS= -lm -lncurses
+LIBS= -lncurses
 #LIBS= -L ${X11_LIBDIR} -lX11
 #LIBS= `${SDL2_CONFIG} --libs`
 
