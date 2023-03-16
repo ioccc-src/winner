@@ -16,24 +16,12 @@ NOTE: for modern compilers we had to change the C pre-processor lines like:
 	    #define _ define
 	    -#_ foo bar
 
-to be
+to be:
 
 	    #define foo bar
 
-Even so this entry will not compile under macOS. If we change the
-
-
-	    #define a(x)get/***/x/***/id())
-
-to
-
-
-	    #define a(x)get/***/##x##/***/id())
-
-it almost works under macOS but there will still be a compilation error. There
-need not be any other changes under linux.
-
-NOTE: this program will likely dump core.
+Even so this entry requires a compiler that supports the `-traditional-cpp`
+option.
 
 ## Try:
 
