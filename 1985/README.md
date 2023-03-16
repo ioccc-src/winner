@@ -1,5 +1,4 @@
-1985 marked the second year of the Obfuscated C Code Contest.
-
+1985 marked the second year of the International Obfuscated C Code Contest.
 
 Look at the README.md file for the given winner for information
 on how to compile the winner and how to run the winning program.
