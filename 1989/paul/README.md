@@ -12,8 +12,12 @@
 	make all
 
 NOTE: this entry will likely dump core with arm64 chips. We could get it to work
-with modern systems with x86_64 but systems but we at least with macOS arm64
+with modern systems with x86_64 but systems but at least with macOS arm64
 this program dumps core. We could not test Intel Macs.
+
+## Try:
+
+	./paul
 
 
 ## Judges' comments:

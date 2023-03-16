@@ -10,6 +10,10 @@
 
 	make all
 
+## Try:
+
+	./roemer
+
 ## Judges' comments:
 
 Do you know what this program does?  If you do, look again,

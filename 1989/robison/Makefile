@@ -123,7 +123,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # FORCE use of -include stdlib.h
 #
-CFLAGS+= -include stdlib.h
+CINCLUDE+= -include stdlib.h
 
 
 ## FORCE 

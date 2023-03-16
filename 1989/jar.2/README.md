@@ -14,6 +14,15 @@
 NOTE: To have a chance to compile under a modern CPP, we had to
 replace `#D` with `#define` and `#a` with `#include`.
 
+
+### To run:
+
+
+	./jar.2
+	[enter some lisp]
+
+NOTE: this entry will likely segfault on invalid input.
+
 ## Judges' comments:
 
 This is the most useful program entered this year. It is a

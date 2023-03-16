@@ -11,9 +11,19 @@
 
         make all
 
+NOTE: With a bit of tinkering [Cody Boone
+Ferguson](/winners.html#Cody_Boone_Ferguson) got this to work in modern systems. Thank you Cody for
+your assistance!
+
+
 ### To run
 
+	./fubar number>
+
+### Try:
+
 	./fubar 2
+
 
 ## Judges' comments
 
@@ -21,9 +31,6 @@ Run this with a single digit argument (or wait a long time).
 
 The blank line at the beginning of the source is mandatory.
 Do you know why?
-
-With a bit of tinkering Cody Boone Ferguson got this to work on modern systems.
-We thank him for his assistance!
 
 NOTE: don't try running `ouroboros.c` directly with an arg as it'll turn into an
 infinite loop. The same will happen with larger numbers.
