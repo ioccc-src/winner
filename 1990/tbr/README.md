@@ -17,9 +17,14 @@
 
         make all
 
+NOTE: modern compilers had a problem with this entry because the `exit(3)`
+function returns void but [Cody Boone Ferguson](/winners#Cody_Boone_Ferguson)
+got it to work with the use of a comma operator. Thank you Cody!
+
 ### To run
 
 	./tbr
+
 
 ## Judges' comments
 
@@ -45,10 +50,6 @@ of the program which we include below:
 	    1),e(creat(i[2],438)):2,e(execvp(*u,u))):e(chdir(u[1])*2):6;}
 	    e(x){x<0?write(2,"?\n$ "-x/4,2),x+1||(exit(1),0):5;}
 
-
-Modern compilers had a problem with this entry because the exit(3) function
-returns void but we were able to get it to compile by using the comma
-operator which we also did in the smaller version.
 
 
 ## Author's comments

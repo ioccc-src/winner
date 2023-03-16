@@ -10,11 +10,12 @@
 
         make all
 
-NOTE: This entry might not compile when using modern compilers.
-
 ### To run
 
 	./westley 1
+
+NOTE: [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to
+compile under modern systems. Thank you Cody for your assistance!
 
 NOTE: this entry will segfault without an arg and will enter an infinite loop if
 input is not a number (or is a negative number).

@@ -13,7 +13,7 @@
 
 	make all
 
-NOTE: that's not a typo but one can also do:
+NOTE: that's not a typo or mistake but one can also do:
 
 	./o
 
