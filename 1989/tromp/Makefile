@@ -63,9 +63,9 @@ X11_INCDIR= /opt/X11/include
 # Common C compiler warnings to silence
 #
 #CSILENCE=
-CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-pointer-to-int-cast \
-	-Wno-no-return-type -Wno-builtin-requires-header -Wno-empty-body \
-	-Wno-string-plus-int -Wno-return-type -Wno-unknown-warning-option
+CSILENCE= -Wno-error -Wno-pointer-to-int-cast -Wno-no-return-type -Wno-empty-body \
+	  -Wno-implicit-function-declaration -Wno-string-plus-int -Wno-return-type \
+	  -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #
@@ -99,7 +99,7 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE= -include stdio.h -include unistd.h
+CINCLUDE=
 #CINCLUDE= -include stdlib.h
 #CINCLUDE= -include stdio.h
 #CINCLUDE= -include stdlib.h -include stdio.h
@@ -172,6 +172,11 @@ TARGET= ${PROG}
 #
 ALT_OBJ= ${PROG}.alt.o
 ALT_TARGET= ${PROG}.alt
+
+
+# FORCE use of -include stdio.h -include unistd.h
+#
+CINCLUDE+= -include stdio.h -include unistd.h -include stdlib.h
 
 
 #################

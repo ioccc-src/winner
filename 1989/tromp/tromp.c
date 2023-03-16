@@ -16,4 +16,4 @@ for(;j%12;q[j--]=0);u();for(;--j;q[j+12]=q[j]);u();}n=f+rand()%7*4;G(x=17)||(c
 8192);printf("\033[H\033[J\033[0m%ld\n",w);if(c==a[5])break;for(j=264;j--;Q[j]=
 0);while(getchar()-a[4]);puts("\033[H\033[J\033[7m");sigsetmask(s);}}system("\
 stty cbreak echo");d=popen("cat - HI 2>/dev/null|sort -rn|head -20>/tmp/$$;mv /tmp/$$ HI\
-;cat HI","w");fprintf(d,"%4d by %s\n",w,getlogin());pclose(d);}
+;cat HI","w");fprintf(d,"%4ld by %s\n",w,getlogin());pclose(d);}
