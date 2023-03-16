@@ -28,6 +28,9 @@ and input the following:
 	c^2
 	m*m
 
+	# can you figure out what this does?
+	500
+
 ### Also try:
 
 	./wall | bc
