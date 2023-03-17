@@ -11,19 +11,19 @@
 
 ### To run
 
-    Make and run as follows:
+Make and run as follows:
 
 	./westley [move_location] | tee nextmove.c
     
-    where the 'move_location' is a digit from 1 to 9 that represents
-    a move on a tic-tac-toe board:
+where the 'move_location' is a digit from 1 to 9 that represents
+a move on a tic-tac-toe board:
 
 		1 2 3
 		4 5 6
 		7 8 9
 
-    If you omit 'move_location', then the computer moves first.  For your 
-    next move, recompile nextmove.c and play it again:
+If you omit 'move_location', then the computer moves first.  For your 
+next move, recompile `nextmove.c` and play it again:
 
 	make nextmove
 	./nextmove move_location | tee nextmove.c
