@@ -1,24 +1,32 @@
-Most likely to amaze:
+# Most likely to amaze:
 
     The author wishes to remain anonymous
     Great Britain
 
+# To build:
 
-Judges' Comments:
+```sh
+make
+```
 
-    To build:
+### To run:
 
-    	make anonymous
+```sh
+./anonymous file
+```
 
-    Try:
+### Try:
 
-	./anonymous anonymous.ten
+```sh
+./anonymous anonymous.ten.c
+```
+
+## Judges' comments:
 
     Is emulation the sincerest form of flattery?  This small program does
     quite a lot of bit twiddling.
 
-
-Selected Author's Comments:
+## Author's comments:
 
     This program is an optimizing dynamic binary translator, allowing you to
     run x86 programs on any machine (x86 or otherwise).
