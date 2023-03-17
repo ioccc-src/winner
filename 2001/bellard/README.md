@@ -1,4 +1,4 @@
-Best abuse of the rules:
+# Best abuse of the rules:
 
     Fabrice Bellard
     451 chemin du mas de Matour
@@ -7,21 +7,29 @@ Best abuse of the rules:
 
     http://bellard.org
 
+# To build:
 
-Judges' Comments:
+```sh
+make
+```
 
-    To build:
+### To run:
 
-    	make bellard
+```sh
+./bellard file
+```
 
-     Try:
+### Try:
 
-	./bellard bellard.otccex.c
+```sh
+./bellard bellard.otccex.c
+```
 
-     <JUDGES_COMMENTS>
+## Judges' comments:
 
+<JUDGES_COMMENTS> :-)
 
-Selected Author's Comments:
+## Author's comments:
 
     OTCC is an Obfuscated Tiny C Compiler for i386-linux. It generates
     FAST! i386 32 bit code (no bytecode) and it is powerful enough to
