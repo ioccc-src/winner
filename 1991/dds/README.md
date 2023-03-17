@@ -18,33 +18,34 @@
 
 ## Judges' comments
 
-    Make and run as follows:
+Make and run as follows:
     
 	make dds
-    For example, the author suggests trying:
+
+For example, the author suggests trying:
      
 	dds LANDER.BAS
 	a.out
 
-    Notice that a file a.c has been generated.  Can you tell how a.c was
-    produced?  How does a.c relate to LANDER.BAS?
+Notice that a file a.c has been generated.  Can you tell how a.c was
+produced?  How does a.c relate to LANDER.BAS?
 
-    This obfuscated program translates BASIC programs into obfuscated
-    C programs by way of an obfuscated algorithm.
+This obfuscated program translates BASIC programs into obfuscated
+C programs by way of an obfuscated algorithm.
 
-    NOTE: Due to minor problems with some strict ANSI C compilers, we 
-	  have supplied a more portable ANSI version.
+NOTE: Due to minor problems with some strict ANSI C compilers, we 
+have supplied a more portable ANSI version.
 
 
 ## Author's comments
 
-    This program is a companion to the DDS-BASIC interpreter program that
-    was submitted to the contest in 1990.  This compiles BASIC programs into
-    executable commands.  The input format is almost identical to the input
-    format of the DDS-BASIC interpreter.  The program needs an executable C
-    compiler called `cc' in your path in order to work.
+This program is a companion to the DDS-BASIC interpreter program that
+was submitted to the contest in 1990.  This compiles BASIC programs into
+executable commands.  The input format is almost identical to the input
+format of the DDS-BASIC interpreter.  The program needs an executable C
+compiler called `cc' in your path in order to work.
 
-    Program commands:
+Program commands:
 
 	variable names A to Z		variables initialized to 0 on RUN
 	FOR var = exp TO exp		NEXT variable
@@ -54,22 +55,22 @@
 	PRINT exp			var = exp
 	REM any text			END
 
-    Expressions are the same as the expressions of the C language.
-    Many system calls and C library calls can be used.
+Expressions are the same as the expressions of the C language.
+Many system calls and C library calls can be used.
 
-    Input format:
+Input format:
 
-	- Free format positioning of tokens on the line.
-	- No space is allowed before the line number.
-	- Exactly one space is needed after the FOR and NEXT tokens
-	- ALL INPUT MUST BE UPPERCASE.
+- Free format positioning of tokens on the line.
+- No space is allowed before the line number.
+- Exactly one space is needed after the FOR and NEXT tokens
+- ALL INPUT MUST BE UPPERCASE.
 
-    Error checking / error reports:
+Error checking / error reports:
 
-	The compiler silently ignores many errors.
-	Other errors may produce errors in later phases of the compilation.
+The compiler silently ignores many errors.
+Other errors may produce errors in later phases of the compilation.
 
-Can you figure out how the compiler works?  Hint (rot13):
+Can you figure out how the compiler works?  Hint:
 
     The compiler is NOT written in C, so this is really a meta-obfuscated
     program.  The C code is an intepreter for the four register, seven

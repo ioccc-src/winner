@@ -1,4 +1,4 @@
-Best Output:
+# Best Output:
 
 	Sean Barrett
 	University of Maryland
@@ -16,24 +16,24 @@ Best Output:
 
 ## Judges' comments
 
-    You will be A-mazed.
+You will be A-mazed.
 
-    You are invited to try to cheat, ... if you can figure out how!  :-)
+You are invited to try to cheat, ... if you can figure out how!  :-)
 
 ## Author's comments
 
-    HOW TO PLAY:
+### HOW TO PLAY:
 
-    When the game starts, you are at the far end of the maze from the
-    exit, looking down a corridor.  To move forward, type 'f' and press
-    return.  To turn 90 degrees right, type 'r'; left, 'l'.  You can
-    put multiple commands on one line, and the new view will be drawn
-    after all the moves.
+When the game starts, you are at the far end of the maze from the
+exit, looking down a corridor.  To move forward, type 'f' and press
+return.  To turn 90 degrees right, type 'r'; left, 'l'.  You can
+put multiple commands on one line, and the new view will be drawn
+after all the moves.
 
-    The game ends if you get out the exit (you'll know it when you see
-    it) or when you type ^D.
+The game ends if you get out the exit (you'll know it when you see
+it) or when you type ^D.
 
-    HINTS ON HOW TO CHEAT:  (rot13 to read)
+### HINTS ON HOW TO CHEAT:  (rot13 to read)
 
     Lbh pna, bs pbhefr, purng ol ybbxvat ng gur znmr znc.  Gur dhrfgvba
     lbh arrq gb nfx lbhefrys, gubhtu, vf jung frdhrapr bs punenpgref
@@ -44,7 +44,7 @@ Best Output:
     gura onpxjneq sebz gur pheerag cbfvgvba gb qenj gur yrsg fvqr naq
     gura gur evtug fvqr.
 
-    ADVANCED USAGE NOTES:  (rot13 to read)
+### ADVANCED USAGE NOTES:  (rot13 to read)
 
     Gur cebtenz pna nyfb or eha sebz bgure svyrf pbagnvavat znmrf.  Gur
     znmr fubhyq or ynvq bhg tencuvpnyyl va gur boivbhf sbezng; arjyvarf
@@ -85,6 +85,7 @@ Best Output:
     gb ernpu vagb neovgenel cnepryf bs zrzbel.
 
     Gur cebtenz nffhzrf gung gnof ner frg gb 8 punenpgref.
+
 
 Copyright (c) 1991, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

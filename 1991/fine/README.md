@@ -11,7 +11,7 @@
 
         make all
 
-### To run
+### Try:
 
 	echo "green terra
 vex
@@ -23,24 +23,24 @@ clerk" | ./fine
 
 ## Judges' comments
 
-    This filter, 80 chars plus a newline, fits into a single line on most 
-    terminals (unless your terminal has a line wrap mis-feature :-)).
+This filter, 80 chars plus a newline, fits into a single line on most 
+terminals (unless your terminal has a line wrap mis-feature :-)).
 
-    This entry is likely one of the smallest C implementations of this
-    filter, excluding programs that resort to command line or include 
-    file tricks.
+This entry is likely one of the smallest C implementations of this
+filter, excluding programs that resort to command line or include 
+file tricks.
 
-    How does this program work?  Which 3 bytes of C code can be changed
-    into 2 bytes, allowing the program to still work, but also stripping 
-    the high bit off of some input?
+How does this program work?  Which 3 bytes of C code can be changed
+into 2 bytes, allowing the program to still work, but also stripping 
+the high bit off of some input?
 
 ## Author's comments
 
-    The author wishes to thank J Greely for the last 6 bytes.
+The author wishes to thank J Greely for the last 6 bytes.
 
-    Here's about how it does it:  [rot13 to read]
+Here's about how it does it:  [rot13 to read]
 
-    
+
     ABGR:  Ovgf ner ersreerq gb nf 76543210, uvtu gb ybj.
     
     1.  Trg gur punenpgre va inevnoyr n.  Abgr gur sha jnl jr purpx sbe RBS.

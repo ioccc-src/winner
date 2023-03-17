@@ -3,7 +3,7 @@
 	Arch D. Robison
 	University of Illinois
 	1304 W. Springfield Ave.
-	Urbana, IL 
+	Urbana, IL
 	61801
 	USA
 
@@ -14,6 +14,27 @@
 
 NOTE: we were able to get this to compile under modern systems with a patch from
 Yusuke Endoh. Thank you for your assistance Yusuke!
+
+## To run:
+
+	./robison
+	# enter valid expressions
+
+
+## Try:
+
+	./robison
+	11x10
+
+	echo 1x10x111 | ./robison
+
+	echo 1+1+10 | ./robison
+
+	echo 100 - 1 | ./robison
+
+	echo -100 x 100 + 1 | ./robison
+
+	echo 100 / 100 | ./robison # <-- what happens here ?
 
 ## Judges' comments:
 
@@ -45,13 +66,13 @@ Extending it to the full APL language should be trivial.
 
 The C-- language improves the C language by removing superfluous
 and confusing features: arithmetic, logical operations, shifts,
-relationals, address-of, and flow control.  In fact, the only 
-expressions retained are function calls, indirection, array 
+relationals, address-of, and flow control.  In fact, the only
+expressions retained are function calls, indirection, array
 assignments, the ',' operator, and sizeof.  Despite these
-restrictions, the C-- program does arithmetic on arbitrarily 
+restrictions, the C-- program does arithmetic on arbitrarily
 large binary numbers.
 
-To obtain a C-- reference, simply rip out the irrelevant pages 
+To obtain a C-- reference, simply rip out the irrelevant pages
 from your K&R C manual.  To obtain a C-- compiler, simply rip
 out the irrelevant bytes from your cc compiler.
 
