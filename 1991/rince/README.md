@@ -12,20 +12,20 @@
 
         make all
 
-### To run
+### To run:
 
 	./rince
 
-## Judges' comments
+## Judges' comments:
 
-    This entry has been updated to allow most ANSI C compiler.
+This entry has been updated to allow most ANSI C compiler.
 
 ## Author's comments
 
-    This program is a simple puzzle type game. (I'll leave you to play
-    it to see the rest of it .. :-) .)  The general idea was to try and
-    write the smallest playable game, but keep the playability and
-    enjoyment high. 
+This program is a simple puzzle type game. (I'll leave you to play
+it to see the rest of it .. :-) .)  The general idea was to try and
+write the smallest playable game, but keep the playability and
+enjoyment high. 
     
 		    Instructions (rot 13 to read).
 		    ==============================

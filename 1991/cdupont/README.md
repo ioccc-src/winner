@@ -17,20 +17,22 @@
 
 ## Judges' comments
 
-    Why is the following label necessary?
-    
+Why is the following label necessary?
+
+
 	sorryfor_this_unused_but_very_needed_label:
 
-    Notice that if you C beautify (cb) or pre-process this program, it
-    will no longer work correctly, or at all.  (go ahead, try it... :-))
 
-    NOTE: One should remove the final trailing newline to obtain the
-	  original source file.  This step is not needed to compile
-	  this entry.
+Notice that if you C beautify (cb) or pre-process this program, it
+will no longer work correctly, or at all.  (go ahead, try it... :-))
+
+NOTE: One should remove the final trailing newline to obtain the
+original source file.  This step is not needed to compile
+this entry.
 
 ## Author's comments
 
-    Spoiler, rot13 to read:
+Spoiler, rot13 to read:
 
     Gur fbhepr pbqr ubyqf gur yrggref bs gur zrffntr. Rnpu yrggre, pbzovarq
     jvgu nabgure xrl yrggre, vf hfrq gb pbzchgr gur pbbeqvangrf bs gur arkg
@@ -43,6 +45,7 @@
 
     Guvf jnl, nal zrffntr pna or zvkrq vagb n pbqr, fvapr gur xrlf nyybj
     lbh gb cynpr gur zrnavatshy yrggref jurerire lbh jnag.
+
 
 Copyright (c) 1991, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is
