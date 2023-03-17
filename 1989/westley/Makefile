@@ -94,7 +94,7 @@ ARCH=
 # Defines that are needed to compile
 #
 #CDEFINE=
-CDEFINE= -Dtrgpune=putchar
+CDEFINE= -Dtrgpune=putchar -Dpune=char -Dvag=int
 
 # Include files that are needed to compile
 #
