@@ -1,5 +1,5 @@
            main(l
-      ,a,n,d)char**a;{
+   ,a)char**a;{int n;int d;
   for(d=atoi(a[1])/10*80-
  atoi(a[2])/5-596;n="@NKA\
 CLCCGZAAQBEAADAFaISADJABBA^\

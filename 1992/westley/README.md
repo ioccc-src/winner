@@ -10,7 +10,12 @@
 
         make all
 
-	NOTE: This entry might not compile when using modern compilers.
+
+NOTE: [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to
+work with clang by changing the third and fourth arg of main() to be ints inside
+main(); clang requires args 2 - 4 to be `char **`. Thank you Cody for your
+assistance!
+
 
 ### To run
 
@@ -22,14 +27,25 @@
 
 	./whereami lat long
 
-## Judges' comments
-    
-    Where lat and long correspond to your latitude and longitude.
+Where lat and long correspond to your latitude and longitude.
 
-    To find the approximate place where this entry was judged, type:
+NOTE: you must have a terminal that wraps at 80 columns (!) in order for this to
+show correctly!
+
+
+## Try:
+
+	./whereami 47 -122	(- means west of meridian)
+	./whereami 47 122
+
+
+## Judges' comments:
+
+To find the approximate place where this entry was judged, type:
 
 	./whereami 37 -122	(- means west of meridian)
-    
+
+   
 ## Author's comments
 
     Run the program with your latitude & longitude as integer
