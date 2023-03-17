@@ -33,10 +33,10 @@ f(c>='0'&&c<='9'){f(!n)N=0;n=1;e=10*e+(c-'0')h}n=0;J(39,m
 sprintf(d=M(13),"%d",e))
 J(37,q&&puts(g))J(34,q&&printf("%s",g))J(27,H(p,_,s))O('[',']')J(56,f(p){c=e;N=c;})J(2,m--p)J(10,N=a)J(4,f(q){N=L(g);X(S--]);})J(1,f(q){S+1]=T(g);++q;})J(53,m
 e>=0&&e<a&&(d=T(A[u])))
-J(54,q>1&&(--q,U(S+1],i+q)))J(5,q&&p>1&&(_-1]=open(g,_-1],e),--p,X(S--])))J(47,m
+J(54,q>1&&(--q,U(S+1],i+q)))J(5,q&&p>1&&(_-1]=open(g,_-1],e),--p,X(S--]),1))J(47,m
 close(u))
 J(26,m(e=dup(e)))O('"','"')J(51,H(q,S,i))J(49,N=fork())J(12,wait(&N)+1||(e=-1))J(68,{++p;pipe(s+p++)==-1&&(e=-1);})F('q',v
 0)
-F('=',W{R x;f(m u)f(x=l){k+=n=L(x);V;Y(*x)K[--k]=*x++;k+=n;n=0;}b})J(15,f(q)W{l&&X(l);l=T(g);b})J(33,f(c=q){*i=g;g=0;Y(--q&&**(i+q))g++;f(q){N=execvp(*i,i+q+1);q=c;}})J(38,P
-c&&(e/C))
-J(35,Q=e>G)F('+',Q+C)J(42,Q*C)J(41,Q=~(e&G))J(57,m(e=-e))J(3,)F('\n',)putchar(c);puts(73+I);}}
+F('=',W{R x;f(m u)f(x=l){k+=n=L(x);V;Y(*x)K[--k]=*x++;k+=n;n=0;}b})J(15,f(q)W{l&&(X(l),1);l=T(g);b})J(33,f(c=q){*i=g;g=0;Y(--q&&**(i+q))g++;f(q){N=execvp(*i,i+q+1);q=c;}})J(38,P
+c&&(e /=G ))
+J(35,Q=e>G)F('+',Q+=G)J(42,Q*=G)J(41,Q=~(e&G))J(57,m(e=-e))J(3,)F('\n',)putchar(c);puts(73+I);}}
