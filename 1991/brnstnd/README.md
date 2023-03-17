@@ -7,63 +7,74 @@
 
         make all
 
-	NOTE: This entry might not compile when using modern compilers.
+NOTE: [Cody Boone Ferguson](/winners#Cody_Boone_Ferguson) fixed this for modern
+systems. There were two invalid operands to binary expression (`char *` and
+`void` and `int` and `void`) to resolve and a feature of the C pre-processor
+which no longer works had to be changed as well. In particular `#define C =G` in
+a macro to make `+=` and similar operators no longer works. The invalid operands
+to binary expressions were resolved with the comma operator. Thank you Cody for
+your assistance!
 
-### To run
+
+### Try:
 
 	./brnstnd < sorta.i2+2
+	./brnstnd < sorta.iwhosort
+
+See also the other `sorta.*` files.
+
 
 ## Judges' comments
 
-    For info on more examples, read the sorta.README file.
+For info on more examples, read the sorta.README file.
 
-    The author wished to win the "most useful program" award and
-    documented this in the source code.  The judges were unmoved
-    by this blatant attempt to influence the contest and rejected
-    this idea...  so we gave it the Best of Show award instead!!
+The author wished to win the "most useful program" award and
+documented this in the source code.  The judges were unmoved
+by this blatant attempt to influence the contest and rejected
+this idea...  so we gave it the Best of Show award instead!!
 
-    NOTE: One should remove the final trailing newline to obtain the
-	  original source file.  This step is not needed to compile
-	  this entry.
+NOTE: One should remove the final trailing newline to obtain the
+original source file.  This step is not needed to compile
+this entry.
 
-    To have a chance to compile under a modern CPP, we had to
-    replace `#D` with `#define`.
+To have a chance to compile under a modern CPP, we had to
+replace `#D` with `#define`.
 
 ## Author's comments
 
-    This is an interpreter for the programming language SORTA, a systems
-    and numerical programming language with features sorta from C, sorta
-    from FORTH, and sorta from Ada.
+This is an interpreter for the programming language SORTA, a systems
+and numerical programming language with features sorta from C, sorta
+from FORTH, and sorta from Ada.
 
-    SORTA lets you manipulate files and spawn programs easily, has bitwise
-    operators, and gives you absolutely brilliant error messages like '?'
-    (that's the C bit). SORTA programs work with a stack (that's the FORTH
-    bit)---actually two stacks, one for integers and one for strings. And
-    all SORTA operations are strongly typed, detect practically any failure,
-    and garbage-collect (that's the Ada bit).
+SORTA lets you manipulate files and spawn programs easily, has bitwise
+operators, and gives you absolutely brilliant error messages like '?'
+(that's the C bit). SORTA programs work with a stack (that's the FORTH
+bit)---actually two stacks, one for integers and one for strings. And
+all SORTA operations are strongly typed, detect practically any failure,
+and garbage-collect (that's the Ada bit).
 
-    SORTA also contains features you might not expect from such a small
-    interpreter: arbitrary-length string input and concatenation, for
-    instance, not to mention infinite-depth tail recursion.
+SORTA also contains features you might not expect from such a small
+interpreter: arbitrary-length string input and concatenation, for
+instance, not to mention infinite-depth tail recursion.
 
-    SORTA ignores its arguments (though it makes them available to the
-    script); it takes all commands, character by character, from its
-    standard input. Unrecognized commands are repeated with a ?.
+SORTA ignores its arguments (though it makes them available to the
+script); it takes all commands, character by character, from its
+standard input. Unrecognized commands are repeated with a ?.
 
-    SORTA maintains an ``i stack'' for integers and an ``s stack'' for
-    strings. It also keeps track of ``programs,'' one for each character.
-    Operations are silently ignored if the relevant stacks are too low,
-    except as noted for s, S, and !. If the i stack or s stack (or the stack
-    of buffered macro commands) grows too high, SORTA will exit silently
-    with exit code 2. (Compile parameter -Do=250 controls what ``too high''
-    means; you should not make o larger than 250.) I don't think it's
-    possible to crash the interpreter.
+SORTA maintains an ``i stack'' for integers and an ``s stack'' for
+strings. It also keeps track of ``programs,'' one for each character.
+Operations are silently ignored if the relevant stacks are too low,
+except as noted for s, S, and !. If the i stack or s stack (or the stack
+of buffered macro commands) grows too high, SORTA will exit silently
+with exit code 2. (Compile parameter -Do=250 controls what ``too high''
+means; you should not make o larger than 250.) I don't think it's
+possible to crash the interpreter.
 
-    Here, then, is the SORTA programming language. All non-digits delimit
-    numeric constants. Spaces and newlines are ignored except as numeric
-    delimiters.
+Here, then, is the SORTA programming language. All non-digits delimit
+numeric constants. Spaces and newlines are ignored except as numeric
+delimiters.
 
-    Basic operations:
+Basic operations:
 
      q: quit
      number: push that number on top of the i stack
@@ -112,7 +123,7 @@
 	fails, any operation involving current members of the s stack has
 	undefined effects, and -1 is pushed onto the i stack.
 
-   High-level language operations:
+High-level language operations:
 
      :x: copy the top of the s stack into a program labeled by character x
      =x: pop the top of the i stack. If it was nonzero, execute the program
@@ -120,55 +131,55 @@
 	 will merge with any digits after =x; in that case you usually want
 	 to add a space at the end of the program.
 
-    Common idioms: To drop the top of the s stack, ld. To do a <, 1s>. To
-    unconditionally execute the program labeled by character x, 1=x (or any
-    nonzero number followed by =x). To print the top of the i stack
-    non-destructively, #` (or #$ if you don't want the newline). To
-    subtract, _+. To do mod or and or any of the other missing operations,
-    combine the available operations as illustrated below. To introduce a
-    comment, [ this is a comment string which is promptly eliminated ]ld.
+Common idioms: To drop the top of the s stack, ld. To do a <, 1s>. To
+unconditionally execute the program labeled by character x, 1=x (or any
+nonzero number followed by =x). To print the top of the i stack
+non-destructively, #` (or #$ if you don't want the newline). To
+subtract, _+. To do mod or and or any of the other missing operations,
+combine the available operations as illustrated below. To introduce a
+comment, [ this is a comment string which is promptly eliminated ]ld.
 
-    SORTA's requirements: it wants fork(), execvp(), open(),
-    close(), dup(), pipe(), and wait(), so it obviously won't even compile
-    on a non-UNIX machine. It also assumes that you have a size-256
-    character set and that the characters between '0' and '9' are exactly
-    the digits in order. It does *not* depend on ASCII, despite the code
-    appearance. Also note that SORTA does not attempt to declare malloc(),
-    so you will get some warnings about illegal pointer combinations. Also
-    note that there are unreached statements in SORTA.
+SORTA's requirements: it wants fork(), execvp(), open(),
+close(), dup(), pipe(), and wait(), so it obviously won't even compile
+on a non-UNIX machine. It also assumes that you have a size-256
+character set and that the characters between '0' and '9' are exactly
+the digits in order. It does *not* depend on ASCII, despite the code
+appearance. Also note that SORTA does not attempt to declare malloc(),
+so you will get some warnings about illegal pointer combinations. Also
+note that there are unreached statements in SORTA.
 
-    While the program source of course depends highly on #defines for
-    obfuscation, I like to think that this code has those little touches,
-    those professionally sharpened edges that mark true software
-    engineering. Observe, for instance, how i and s are the string and
-    integer stacks respectively. It's these little things that make you
-    feel at home in an otherwise utterly useless piece of code. They're
-    what make an obfuscation work.
+While the program source of course depends highly on #defines for
+obfuscation, I like to think that this code has those little touches,
+those professionally sharpened edges that mark true software
+engineering. Observe, for instance, how i and s are the string and
+integer stacks respectively. It's these little things that make you
+feel at home in an otherwise utterly useless piece of code. They're
+what make an obfuscation work.
 
-    The character pool (``I'' after cpp) makes it rather painful to
-    see the effect of commands at a glance. I can just imagine people
-    spending hours bouncing between the pool and the rest of the code,
-    or accidentally changing the pool without realizing its importance.
-    Without documentation and example scripts, someone would find it
-    a challenge to figure out what the arrays are used for, let alone
-    that SORTA is a scripting language.
+The character pool (``I'' after cpp) makes it rather painful to
+see the effect of commands at a glance. I can just imagine people
+spending hours bouncing between the pool and the rest of the code,
+or accidentally changing the pool without realizing its importance.
+Without documentation and example scripts, someone would find it
+a challenge to figure out what the arrays are used for, let alone
+that SORTA is a scripting language.
 
-    Another nice feature is that the SORTA language itself encourages
-    you to write not merely obfuscated but plain incomprehensible
-    scripts (like the examples below---after working with the language
-    for a while, I guess I can read it pretty easily, but I also think
-    FORTH is a beautiful language). The numbers running around
-    everywhere will make people think of ASCII, even though the code is
-    not ASCII-dependent.  What's your first thought when you see
-    several arrays[256]? This is pretty standard obfuscation otherwise.
-    I like the way that unbalanced macro braces can throw off the
-    reader in ``if(c>0){y+1]=z[c];'', and I had fun covering the
-    alphabet with #defines, but that's nothing special.
+Another nice feature is that the SORTA language itself encourages
+you to write not merely obfuscated but plain incomprehensible
+scripts (like the examples below---after working with the language
+for a while, I guess I can read it pretty easily, but I also think
+FORTH is a beautiful language). The numbers running around
+everywhere will make people think of ASCII, even though the code is
+not ASCII-dependent.  What's your first thought when you see
+several arrays[256]? This is pretty standard obfuscation otherwise.
+I like the way that unbalanced macro braces can throw off the
+reader in ``if(c>0){y+1]=z[c];'', and I had fun covering the
+alphabet with #defines, but that's nothing special.
 
-    Possible future extensions to SORTA include string extraction and
-    matching, reading from files into strings, and encrypting the string
-    pool to further confuse the judges. I don't think I can fit this into
-    the size limit, unfortunately.
+Possible future extensions to SORTA include string extraction and
+matching, reading from files into strings, and encrypting the string
+pool to further confuse the judges. I don't think I can fit this into
+the size limit, unfortunately.
 
 Copyright (c) 1991, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is
