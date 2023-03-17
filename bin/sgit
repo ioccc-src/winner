@@ -16,7 +16,7 @@
 # - Cody Boone Ferguson (@xexyl)
 #
 
-export SGIT_VERSION="0.0.5-1 16-02-2023" # format: major.minor.patch-release DD-MM-YYYY
+export SGIT_VERSION="0.0.6-1 17-03-2023" # format: major.minor.patch-release DD-MM-YYYY
 
 USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-x] [-I] [-o sed_options] [-s sed] [-e command] <glob...>
 
@@ -142,11 +142,14 @@ fi
 if [[ "$VERBOSITY" -gt 1 ]]; then
     echo "debug[2]: looping through all globs" 1>&2
 fi
+
+GLOBS="$#"
 i=0
-while [[ "$i" -le "$#" ]]; do
+while [[ "$i" -lt "$GLOBS" ]]; do
     if [[ "$VERBOSITY" -gt 1 ]]; then
-	echo "debug[2]: found glob: $1" 1>&2
+	echo "debug[2]: found glob: $i" 1>&2
     fi
+
     if [[ "$VERBOSITY" -ge 1 ]]; then
 	if [[ -z "$I_FLAG" ]]; then
 	    if [[ -n "$SED_OPTIONS" ]]; then
@@ -178,4 +181,12 @@ while [[ "$i" -le "$#" ]]; do
     fi
     ((i++))
     shift 1
+    if [[ "$VERBOSITY" -gt 2 ]]; then
+	if [[ "$#" -eq 1 ]]; then
+	    echo "debug[2]: $# remaining glob" 1>&2
+	else
+	    echo "debug[2]: $# remaining globs" 1>&2
+	fi
+    fi
+
 done
