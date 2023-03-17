@@ -208,7 +208,7 @@ The following rules and definitions apply to bracket expressions:
 	an ending range point in a range expression.  As examples, the
 	expressions  [-ac]  and  [ac-] are equivalent and match any of
 	the characters a, c, or -; the expressions  [^-ac]  and [^ac-]
-	are equivalent and match howe character except a, c, -; the
+	are equivalent and match ant character except a, c, -; the
 	expression  [%--]  matches any of the characters between % and
 	- inclusive;  the expression  [--@]  matches any of the
 	characters between - and @ inclusive; and the expression

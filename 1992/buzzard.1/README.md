@@ -13,24 +13,24 @@ Most Obfuscated Algorithm:
 
 ### To run
 
-	./babble 0 10
-	./babble 56 720
-	./babble 1 521
+	./buzzard.1 0 10
+	./buzzard.1 56 720
+	./buzzard.1 1 521
 
 ## Judges' comments
 
-    To see good C Preprocessor babble, try:
+    To see good C Preprocessor buzzard.1, try:
 
-	make babble.cppcb
-	cat babble.cppcb
+	make buzzard.1.cppcb
+	cat buzzard.1.cppcb
     
     Notice how many statements it takes to do anything useful?
 
 ## Author's comments
 
-    What you shouldn't think about babble:
+    What you shouldn't think about buzzard.1:
 
-      babble doesn't just do a mass of #defines as its obfuscation.
+      buzzard.1 doesn't just do a mass of #defines as its obfuscation.
 
 
     What you should be glad about:
@@ -40,22 +40,22 @@ Most Obfuscated Algorithm:
 
     Cute trick warning:
 
-      babble contains only a numeric printf, yet sometimes it prints out
+      buzzard.1 contains only a numeric printf, yet sometimes it prints out
       short strings.
 
 
     What it does:
 
-      babble is a simple mathematical program. It expects two numeric
+      buzzard.1 is a simple mathematical program. It expects two numeric
       arguments.
 
-      % babble 0 <num>
+      % buzzard.1 0 <num>
       will print out the factorial of <num>.
 
-      % babble <num1> <num2>
+      % buzzard.1 <num1> <num2>
       will print out the largest common factor of num1 and num2.
 
-      % babble 1 <num2>
+      % buzzard.1 1 <num2>
       will print out a factor of num2 if it's composite, or else
       it will print a string informing you that num2 is prime.
 
@@ -65,10 +65,10 @@ Most Obfuscated Algorithm:
 
     What it is:
 
-      babble is a translator from a pseudo-assembly language into a
+      buzzard.1 is a translator from a pseudo-assembly language into a
       subset of C suitable for execution on Charles Babbage's
-      Analytical Engine.  Or rather, the #defines in babble are that
-      translator.  The rest of babble is a babble program.  If you run the
+      Analytical Engine.  Or rather, the #defines in buzzard.1 are that
+      translator.  The rest of buzzard.1 is a buzzard.1 program.  If you run the
       whole mess through CPP and a beautifier, you will see that
       all you have is a loop that runs until a variable is not 0, and
       a sequence of assignment statements.  The assignment statements
@@ -99,7 +99,7 @@ Most Obfuscated Algorithm:
       The simulated comparison operations only work with a certain
       range of numbers; numbers that are too large will cause the
       output code to fail to simulate the input code.  This means
-      that this implementation of babble would not be Turing-complete,
+      that this implementation of buzzard.1 would not be Turing-complete,
       even if the AE could process indefinitely-sized numbers.
       However, this is actually a constraint that no actual computer
       can meet, either, so we can conclude that if an AE, with
@@ -113,7 +113,7 @@ Most Obfuscated Algorithm:
       have any.
 
 
-    Definition of the input language to babble:
+    Definition of the input language to buzzard.1:
     (OR What Exactly Do All The Macros Do?)
 
     [Don't read this unless you're stumped!]
@@ -213,7 +213,7 @@ Most Obfuscated Algorithm:
     Thanks to Bill Pugh for bringing the loopability of the AE to
     my attention.
 
-    babble was originally named 'cb', for obvious reasons, and is
+    buzzard.1 was originally named 'cb', for obvious reasons, and is
     dedicated to the memory of Charles Barrett.
 
 Copyright (c) 1992, Landon Curt Noll & Larry Bassel.

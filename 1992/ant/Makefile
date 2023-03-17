@@ -1,6 +1,6 @@
 #!/usr/bin/env make
 #
-# IOCCC 1992 winning entry - mariano
+# IOCCC 1992 winning entry - ant
 
 ################################################################################
 #
@@ -63,11 +63,7 @@ X11_INCDIR= /opt/X11/include
 # Common C compiler warnings to silence
 #
 #CSILENCE=
-CSILENCE= -Wno-bitwise-op-parentheses -Wno-comment -Wno-deprecated-declarations \
-	-Wno-error -Wno-implicit-function-declaration -Wno-format-security \
-	-Wno-logical-op-parentheses -Wno-macro-redefined -Wno-parentheses \
-	-Wno-return-type -Wno-uninitialized -Wno-unused-value -Wno-unused-variable \
-	-Wno-unused-but-set-variable -Wno-unsequenced -Wno-unused-parameter
+CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-unsequenced
 
 # Common C compiler warning flags
 #
@@ -142,10 +138,10 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-CSILENCE+= -Wno-comma -Wno-float-conversion -Wno-missing-noreturn \
-	-Wno-missing-prototypes -Wno-missing-variable-declarations -Wno-padded \
-	-Wno-poison-system-directories -Wno-shadow -Wno-unreachable-code \
-	-Wno-unused-macros
+CSILENCE+= -Wno-conditional-uninitialized -Wno-implicit-int-conversion \
+	-Wno-missing-prototypes -Wno-missing-variable-declarations \
+	-Wno-poison-system-directories -Wno-shadow -Wno-shorten-64-to-32 \
+	-Wno-sign-conversion -Wno-strict-prototypes
 #
 CWARN+= -Weverything
 #
@@ -166,12 +162,12 @@ endif
 # Special flags for this entry
 ##############################
 #
-ENTRY= mariano
+ENTRY= ant
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 DATA=
-TARGET= ${PROG}
+TARGET= ${PROG} am
 #
 ALT_OBJ=
 ALT_TARGET=
@@ -186,29 +182,13 @@ all: data ${TARGET}
 
 .PHONY: all alt data everything clean clobber install \
 	love haste waste maker easter_egg sandwich \
+	am am_clobber \
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
-	${RM} -f ad.temp adwc.c adbasename.c adecho.c adhead.c adsleep.c
-	${SED} '1s/\..*\./. wc ./' mariano.c > ad.temp
-	-./mariano ad.temp <ad.temp >adwc.c
-	${CC} ${CFLAGS} -o adwc adwc.c
-	${SED} '1s/\..*\./. basename ./' mariano.c > ad.temp
-	-./mariano ad.temp <ad.temp >adbasename.c
-	${CC} ${CFLAGS} -o adbasename adbasename.c
-	${SED} '1s/\..*\./. echo| ./' mariano.c > ad.temp
-	-./mariano ad.temp <ad.temp >adecho.c
-	${CC} ${CFLAGS} -o adecho adecho.c
-	${SED} '1s/\..*\./. head; ./' mariano.c > ad.temp
-	-./mariano ad.temp <ad.temp >adhead.c
-	${CC} ${CFLAGS} -o adhead adhead.c
-	${SED} '1s/\..*\./. sleep ./' mariano.c > ad.temp
-	-./mariano ad.temp <ad.temp >adsleep.c
-	${CC} ${CFLAGS} -o adsleep adsleep.c
-	${RM} -f ad.temp
 
-adgrep: ${PROG}
+am: ${PROG}
 	${RM} -f $@
 	${LN} $< $@
 
@@ -240,12 +220,17 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -f adbasename adbasename.c adecho adecho.c adgrep adhead
-	${RM} -f adhead.c mariano adsleep adsleep.c adwc adwc.c
+	${RM} -f am am.safe
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
 	fi
+
+am_clobber: clean am
+	${RM} -f am.safe
+	${CP} am am.safe
+	${CP} am.safe am
+	${RM} -f am.safe
 
 install:
 	@echo "Dr. Spock says that is not logical!"

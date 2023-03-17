@@ -13,7 +13,7 @@
 
 ### To run
 
-	./am howe.test.mk
+	./am ant.test.mk
 
 ## Judges' comments
 
@@ -33,7 +33,7 @@
 
 ## Author's comments
 
-    See the file howe.README.
+    See the file ant.README.
 
 Copyright (c) 1992, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

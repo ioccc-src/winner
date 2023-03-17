@@ -52,15 +52,15 @@
 1989 westley	reversible, rot13able program that reverses and/or rot13s.
 
 1990 baruch	short prog to solve N-queens problem
-1990 mills	squished blackjack game
+1990 cmills	squished blackjack game
 1990 dds	basic interpreter, heavily compressed
-1990 dg	rot13 done with strange cpp macros
+1990 dg		rot13 done with strange cpp macros
 1990 jaw	compress & atob standins
-1990 mariano	numerically solves the equation y'=f(x,y)
 1990 pjr	the quick brown fox... cppd, structs of functions
 1990 scjones	trigraph-abusing self-reproducing program
 1990 stig	nested-comment tester (all on command line)
 1990 tbr	simple compressed shell, silly layout
+1990 theorem	numerically solves the equation y'=f(x,y)
 1990 westley	poetic exchange between lovers, prints "luvs me, luvs not"
 
 1991 brnstnd	sorta stack language
@@ -69,31 +69,31 @@
 1991 davidguy	plays life on a root window, doesn't need Xlib or include files
 1991 dds	basic compiler, heavily compressed
 1991 fine	rot13s lines of input
-1991 howe	compressed vi-like editor
+1991 ant	compressed vi-like editor
 1991 rince	game with sprites, boulders, dimonds, and keys
 1991 westley	plays tic-tac-toe, compile output for next move, prints board
 
+1992 adrian	grep-like utility using a state machine transition language
 1992 albert	factors multi-precision numbers with factors < MAX_LONG
 1992 buzzard.1	print factorial, gcd or prime test using a Babbage-like engine
 1992 buzzard.2	forth-like stack machine
 1992 gson	anagram generator
-1992 howe	make utility
+1992 ant	make utility
 1992 imc	Mandelbrot/Julia drawer
 1992 kivinen	X11 space invaders, dropout and knockout games
 1992 lush	prints "Hello, World" using error messages
 1992 marangon	game to balance a grid of digits to all 5's
-1992 mariano	grep-like utility using a state machine transition language
 1992 nathan	obfuscation by (trivial) encryption (source not exported)
 1992 vern	plays chess
 1992 westley	print ASCII world map and mark a location by lat/long
 
 1993 dgibson	plays the game of like using cpp
 1993 ejb	tower of Hanoi and patience pizzle
-1993 howe	egrep utility with Posix-like documentation
+1993 ant	egrep utility with Posix-like documentation
 1993 jonth	game of Tetris
 1993 leo	game of mastermind (cows & bulls)
 1993 lmfjyh	source is the filename, prints value of __FILE__
-1993 mills	X11 program that shatters and bounces windows
+1993 cmills	X11 program that shatters and bounces windows
 1993 plummer	prints numbers up to a given value
 1993 rince	game state machine language, comes with a number of games
 1993 schnitzi	answers questions about English text in a file

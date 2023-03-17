@@ -12,8 +12,8 @@
 
 ### To run
 
-	cp howe.hint hill
-	./howe hill
+	cp README.md hill
+	./ant hill
 
 ## Judges' comments
 

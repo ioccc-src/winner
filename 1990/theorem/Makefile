@@ -1,6 +1,6 @@
 #!/usr/bin/env make
 #
-# IOCCC 1990 winning entry - mills
+# IOCCC 1990 winning entry - theorem
 
 ################################################################################
 #
@@ -63,15 +63,17 @@ X11_INCDIR= /opt/X11/include
 # Common C compiler warnings to silence
 #
 #CSILENCE=
-CSILENCE= -Wno-deprecated-declarations -Wno-parentheses -Wno-error -Wno-implicit-function-declaration \
-	-Wno-format-security -Wno-return-type -Wno-unused-value
+CSILENCE= -Wno-deprecated-declarations -Wno-empty-body -Wno-error -Wno-unused-value \
+	-Wno-implicit-function-declaration -Wno-incompatible-pointer-types \
+	-Wno-macro-redefined -Wno-parentheses -Wno-return-type -Wno-unused-parameter \
+	-Wno-empty-translation-unit
 
 # Common C compiler warning flags
 #
 #CWARN= ${CSILENCE}
 #CWARN= -Wall ${CSILENCE}
-CWARN= -Wall -Wextra ${CSILENCE}
-#CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+#CWARN= -Wall -Wextra ${CSILENCE}
+CWARN= -Wall -Wextra -pedantic ${CSILENCE}
 
 # Compiler standard
 #
@@ -93,8 +95,8 @@ ARCH=
 
 # Defines that are needed to compile
 #
-#CDEFINE=
-CDEFINE= -DM=500 -DN=52 -DX="srand((int)time(0L))" -DV=void
+CDEFINE=
+#CDEFINE= -DIOCCC
 
 # Include files that are needed to compile
 #
@@ -139,10 +141,10 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-CSILENCE+= -Wno-missing-prototypes -Wno-missing-variable-declarations -Wno-pedantic \
+CSILENCE+= -Wno-comma -Wno-double-promotion -Wno-float-conversion \
+	-Wno-missing-prototypes -Wno-missing-variable-declarations \
 	-Wno-poison-system-directories -Wno-shadow -Wno-strict-prototypes \
-	-Wno-comma -Wno-format-nonliteral -Wno-implicit-int-conversion \
-	-Wno-shorten-64-to-32
+	-Wno-unreachable-code -Wno-unused-macros
 #
 CWARN+= -Weverything
 #
@@ -163,12 +165,12 @@ endif
 # Special flags for this entry
 ##############################
 #
-ENTRY= mills
+ENTRY= theorem
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 DATA=
-TARGET= ${PROG}
+TARGET= ${PROG} sorter fibonacci
 #
 ALT_OBJ=
 ALT_TARGET=
@@ -187,6 +189,18 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
+sorter.c: ${PROG} ${PROG}.c
+	-./theorem -r 0 0 0 0 < theorem.c > sorter.c
+
+sorter: sorter.c
+	${CC} ${CFLAGS} sorter.c -o $@
+
+fibonacci.c: sorter ${PROG}.c
+	-./sorter 0 0 0 0 < theorem.c > fibonacci.c
+
+fibonacci: fibonacci.c
+	${CC} ${CFLAGS} fibonacci.c -o $@
 
 # alternative executable
 #
@@ -216,6 +230,8 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -f sorter.c sorter
+	${RM} -f fibonacci.c fibonacci
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

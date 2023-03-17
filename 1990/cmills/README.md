@@ -12,14 +12,14 @@
 
 ### To run
 
-    ./mills [starting_cash]
+    ./cmills [starting_cash]
 
 NOTE: we used a patch from Yusuke Endoh to get this to work in modern systems
 (it resulted in a bus error otherwise). Thank you Yusuke for your assistance!
 
 ### Try:
 
-    ./mills 5000
+    ./cmills 5000
 
 
 NOTE: this program uses `gets()` so you will likely get a warning under modern
@@ -29,7 +29,7 @@ systems.
 
     Compile notes:
 
-       cc -DM=500 -DN=52 -DX="srand((int)time(0L))" -DV=void -o mills mills.c
+       cc -DM=500 -DN=52 -DX="srand((int)time(0L))" -DV=void -o cmills cmills.c
 
 	-DM=<max bet allowed>
 	-DN=<52 * number of decks used>

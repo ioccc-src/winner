@@ -53,7 +53,7 @@ include ../var.mk
 # IOCCC winners
 ###############
 #
-WINNERS= baruch dds dg jaw mariano mills pjr scjones stig tbr westley
+WINNERS= baruch cmills dds dg jaw pjr scjones stig tbr theorem westley
 
 YEAR= 1990
 
