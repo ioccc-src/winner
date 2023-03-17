@@ -183,7 +183,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: This entry might not compile when using modern compilers."
+	@echo "NOTE: your terminal must wrap at 80 columns for this to work right!"
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 whereami: ${PROG}
