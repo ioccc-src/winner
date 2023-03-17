@@ -61,7 +61,7 @@ if [ ! -f merlyn.c ]; then
     fi
     # check to see if the copy worked
     if [ ! -f merlyn.c ]; then
-	echo "ttt: Darn, coundn't copy westley.c to merlyn.c" 1>&2
+	echo "ttt: Darn, couldn't copy westley.c to merlyn.c" 1>&2
 	exit 4
     fi
 fi
@@ -85,9 +85,9 @@ fi
 if [ ! -w ttt_game.c ]; then
     rm -f ttt_game.c 
     if [ -z "$move" ]; then
-	merlyn | tee ttt_game.c
+	./merlyn | tee ttt_game.c
     else
-	merlyn "$move" | tee ttt_game.c
+	./merlyn "$move" | tee ttt_game.c
     fi
     chmod +w ttt_game.c
 
