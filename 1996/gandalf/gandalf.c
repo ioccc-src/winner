@@ -2,14 +2,14 @@
 #define de #define
 #define do de
 
-do { begin
+/*do { begin
 do you like (green eggs and ham++)?
 do you eat them: in a box?
 do you eat them with a fox?0
 do } end
 
 fine
-fine, just fine.
+fine, just fine. */
 
                     /*@@@@@@@@@@@@=___
                    /@@@@@@@@@@@@@@@@@@@a
@@ -53,7 +53,6 @@ fine, just fine.
        "\n");}main(a
           ,b)int a;
  char **b   ;{int        x=2;
-    do(x=0;x<4;x++)exit(0);
   for(grem();x<1<<3+(int)b[0]
 [0]%2;)cred            (++x-1);}
 

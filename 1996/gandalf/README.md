@@ -14,33 +14,38 @@
 
         make all
 
-	NOTE: This entry might not compile when using modern compilers.
+NOTE: [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to
+compile with modern systems. As he loved the references in the code that could
+not compile he just commented it out (as little as possible). Thank you Cody for
+your assistance!
 
 ### To run
 
 	./gandalf
 
-## Judges' comments
+## Try:
 
-    Also try:
 
 	PATH=.:$PATH
 	./hatcat
 	./cathat
 
-     And next try:
+And next try:
 
 	./cathat
 	`pwd`/cathat
 
-     Care to guess why these execute differently?  Only the
-     compiler knows ... ok maybe other things like the author,
-     the judges and maybe you too?
+Care to guess why these execute differently?  Only the
+compiler knows ... ok maybe other things like the author,
+the judges and maybe you too?
 
-     For mis-leading C pre-processor output, try:
+## Judges' comments
+
+For mis-leading C pre-processor output, try:
+
 
 	cc -E gandalf.c
 
 ## Author's comments
 
-    The program requires an ASCII system.
+The program requires an ASCII system.
