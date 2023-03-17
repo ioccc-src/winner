@@ -1,6 +1,6 @@
 #!/usr/bin/env make
 #
-# IOCCC 1993 winning entry - howe
+# IOCCC 1990 winning entry - cmills
 
 ################################################################################
 #
@@ -63,14 +63,15 @@ X11_INCDIR= /opt/X11/include
 # Common C compiler warnings to silence
 #
 #CSILENCE=
-CSILENCE= -Wno-char-subscripts -Wno-error -Wno-implicit-function-declaration
+CSILENCE= -Wno-deprecated-declarations -Wno-parentheses -Wno-error -Wno-implicit-function-declaration \
+	-Wno-format-security -Wno-return-type -Wno-unused-value
 
 # Common C compiler warning flags
 #
 #CWARN= ${CSILENCE}
 #CWARN= -Wall ${CSILENCE}
-#CWARN= -Wall -Wextra ${CSILENCE}
-CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+CWARN= -Wall -Wextra ${CSILENCE}
+#CWARN= -Wall -Wextra -pedantic ${CSILENCE}
 
 # Compiler standard
 #
@@ -92,8 +93,8 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE=
-#CDEFINE= -DIOCCC
+#CDEFINE=
+CDEFINE= -DM=500 -DN=52 -DX="srand((int)time(0L))" -DV=void
 
 # Include files that are needed to compile
 #
@@ -138,8 +139,10 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-CSILENCE+= -Wno-missing-prototypes -Wno-missing-variable-declarations \
-	-Wno-poison-system-directories -Wno-strict-prototypes
+CSILENCE+= -Wno-missing-prototypes -Wno-missing-variable-declarations -Wno-pedantic \
+	-Wno-poison-system-directories -Wno-shadow -Wno-strict-prototypes \
+	-Wno-comma -Wno-format-nonliteral -Wno-implicit-int-conversion \
+	-Wno-shorten-64-to-32
 #
 CWARN+= -Weverything
 #
@@ -160,7 +163,7 @@ endif
 # Special flags for this entry
 ##############################
 #
-ENTRY= howe
+ENTRY= cmills
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
@@ -184,14 +187,6 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
-
-ag: ${PROG}
-	${RM} -f $@
-	${CP} -f $< $@
-
-ag.txt: ${PROG}.txt
-	${RM} -f $@
-	${LN} $< $@
 
 # alternative executable
 #
@@ -221,7 +216,6 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -f ag ag.txt
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

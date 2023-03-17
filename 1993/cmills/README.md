@@ -10,11 +10,21 @@
 
         make all
 
+NOTE: this entry requires `X11/Xlib.h` header file and the X11 library to
+compile. The Makefile sets the additional paths to `/opt/X11/include` (`-I`
+flag) and `/opt/X11/lib` (`-L` flag) but you can override it by specifying e.g.:
+
+	make X11_INCDIR=/opt/local/include X11_LIBDIR=/opt/local/lib/ all
+
+which could compile it under macOS with MacPorts if you have the right packages
+installed though it still must be run on an X11 server which means that the
+example is just that: an example which might or might not work when running.
+
 ### To run
 
     DISPLAY="your_X_server_display" 
     export DISPLAY
-    ./mills [speed]	# must be run on an X11 server
+    ./cmills [speed]	# must be run on an X11 server
 
     where:
 

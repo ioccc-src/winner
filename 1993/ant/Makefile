@@ -1,6 +1,6 @@
 #!/usr/bin/env make
 #
-# IOCCC 1993 winning entry - mills
+# IOCCC 1993 winning entry - ant
 
 ################################################################################
 #
@@ -63,14 +63,14 @@ X11_INCDIR= /opt/X11/include
 # Common C compiler warnings to silence
 #
 #CSILENCE=
-CSILENCE= -Wno-return-type
+CSILENCE= -Wno-char-subscripts -Wno-error -Wno-implicit-function-declaration
 
 # Common C compiler warning flags
 #
 #CWARN= ${CSILENCE}
 #CWARN= -Wall ${CSILENCE}
-CWARN= -Wall -Wextra ${CSILENCE}
-#CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+#CWARN= -Wall -Wextra ${CSILENCE}
+CWARN= -Wall -Wextra -pedantic ${CSILENCE}
 
 # Compiler standard
 #
@@ -97,11 +97,11 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-#CINCLUDE=
+CINCLUDE=
 #CINCLUDE= -include stdlib.h
 #CINCLUDE= -include stdio.h
 #CINCLUDE= -include stdlib.h -include stdio.h
-CINCLUDE= -I ${X11_INCDIR}
+#CINCLUDE= -I ${X11_INCDIR}
 #CINCLUDE= -I ${HOMEBREW_PREFIX}/include/SDL2
 
 # Optimization
@@ -123,9 +123,9 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-#LIBS=
+LIBS=
 #LIBS= -lm
-LIBS= -L ${X11_LIBDIR} -lX11
+#LIBS= -L ${X11_LIBDIR} -lX11
 #LIBS= -L ${HOMEBREW_PREFIX}/lib -lSDL
 
 # C compiler to use
@@ -138,9 +138,8 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-CSILENCE+= -Wno-comma -Wno-missing-prototypes -Wno-missing-variable-declarations \
-	-Wno-pedantic -Wno-poison-system-directories -Wno-shadow \
-	-Wno-shorten-64-to-32 -Wno-sign-conversion -Wno-strict-prototypes
+CSILENCE+= -Wno-missing-prototypes -Wno-missing-variable-declarations \
+	-Wno-poison-system-directories -Wno-strict-prototypes
 #
 CWARN+= -Weverything
 #
@@ -161,7 +160,7 @@ endif
 # Special flags for this entry
 ##############################
 #
-ENTRY= mills
+ENTRY= ant
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
@@ -186,9 +185,13 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
-chris: ${PROG}
+ag: ${PROG}
 	${RM} -f $@
-	${CP} -v $< $@
+	${CP} -f $< $@
+
+ag.txt: ${PROG}.txt
+	${RM} -f $@
+	${LN} $< $@
 
 # alternative executable
 #
@@ -218,7 +221,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -f chris
+	${RM} -f ag ag.txt
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

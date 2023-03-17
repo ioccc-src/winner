@@ -1,6 +1,6 @@
 #!/usr/bin/env make
 #
-# IOCCC 1990 winning entry - mariano
+# IOCCC 1991 winning entry - ant
 
 ################################################################################
 #
@@ -63,17 +63,15 @@ X11_INCDIR= /opt/X11/include
 # Common C compiler warnings to silence
 #
 #CSILENCE=
-CSILENCE= -Wno-deprecated-declarations -Wno-empty-body -Wno-error -Wno-unused-value \
-	-Wno-implicit-function-declaration -Wno-incompatible-pointer-types \
-	-Wno-macro-redefined -Wno-parentheses -Wno-return-type -Wno-unused-parameter \
-	-Wno-empty-translation-unit
+CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-empty-body \
+	-Wno-implicit-function-declaration -Wno-return-type
 
 # Common C compiler warning flags
 #
 #CWARN= ${CSILENCE}
 #CWARN= -Wall ${CSILENCE}
-#CWARN= -Wall -Wextra ${CSILENCE}
-CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+CWARN= -Wall -Wextra ${CSILENCE}
+#CWARN= -Wall -Wextra -pedantic ${CSILENCE}
 
 # Compiler standard
 #
@@ -95,8 +93,8 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE=
-#CDEFINE= -DIOCCC
+#CDEFINE=
+CDEFINE= -DMODE=0600 -DBUF=32767
 
 # Include files that are needed to compile
 #
@@ -126,8 +124,8 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
-#LIBS= -lm
+#LIBS=
+LIBS= -lcurses -ltermcap
 #LIBS= -L ${X11_LIBDIR} -lX11
 #LIBS= -L ${HOMEBREW_PREFIX}/lib -lSDL
 
@@ -141,10 +139,10 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-CSILENCE+= -Wno-comma -Wno-double-promotion -Wno-float-conversion \
-	-Wno-missing-prototypes -Wno-missing-variable-declarations \
-	-Wno-poison-system-directories -Wno-shadow -Wno-strict-prototypes \
-	-Wno-unreachable-code -Wno-unused-macros
+CSILENCE+= -Wno-comma -Wno-implicit-int-conversion -Wno-missing-prototypes \
+	-Wno-missing-variable-declarations -Wno-pedantic \
+	-Wno-poison-system-directories -Wno-shadow -Wno-shorten-64-to-32 \
+	-Wno-strict-prototypes
 #
 CWARN+= -Weverything
 #
@@ -165,12 +163,12 @@ endif
 # Special flags for this entry
 ##############################
 #
-ENTRY= mariano
+ENTRY= ant
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 DATA=
-TARGET= ${PROG} sorter fibonacci
+TARGET= ${PROG}
 #
 ALT_OBJ=
 ALT_TARGET=
@@ -189,18 +187,6 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
-
-sorter.c: ${PROG} ${PROG}.c
-	-./mariano -r 0 0 0 0 < mariano.c > sorter.c
-
-sorter: sorter.c
-	${CC} ${CFLAGS} sorter.c -o $@
-
-fibonacci.c: sorter ${PROG}.c
-	-./sorter 0 0 0 0 < mariano.c > fibonacci.c
-
-fibonacci: fibonacci.c
-	${CC} ${CFLAGS} fibonacci.c -o $@
 
 # alternative executable
 #
@@ -230,8 +216,6 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -f sorter.c sorter
-	${RM} -f fibonacci.c fibonacci
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
