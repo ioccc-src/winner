@@ -38,5 +38,5 @@ close(u))
 J(26,m(e=dup(e)))O('"','"')J(51,H(q,S,i))J(49,N=fork())J(12,wait(&N)+1||(e=-1))J(68,{++p;pipe(s+p++)==-1&&(e=-1);})F('q',v
 0)
 F('=',W{R x;f(m u)f(x=l){k+=n=L(x);V;Y(*x)K[--k]=*x++;k+=n;n=0;}b})J(15,f(q)W{l&&(X(l),1);l=T(g);b})J(33,f(c=q){*i=g;g=0;Y(--q&&**(i+q))g++;f(q){N=execvp(*i,i+q+1);q=c;}})J(38,P
-c&&(e /=G ))
+c&&(e/=G))
 J(35,Q=e>G)F('+',Q+=G)J(42,Q*=G)J(41,Q=~(e&G))J(57,m(e=-e))J(3,)F('\n',)putchar(c);puts(73+I);}}
