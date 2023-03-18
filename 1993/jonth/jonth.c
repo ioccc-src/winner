@@ -1,22 +1,22 @@
 #include <X11/Xlib.h>
-  G	long i,j
-  K	case
-  R	return 0
-  S(	x,y) for(x=0; x<y; x++)
-  I	S(i,10
-  z	I-6)B[t][u
-  t	(X[m].b[i].i+g)
-  u	(X[m].b[i].j+l)
-  M(	x,y) XFillRectangles(D,p,x,a,y);
-  s	B[i][j
-  W	=XCreateGC(D,p,4,L)
-  E(	W,_) k=0; I)S(j,22)if(W s]){ a[k].x=i*20; a[k].y=j*20+30; a[k].w=a[k].h=_; k++; }M(
-  A(	W,_) &&!B[W]; if(!j){ z]=1; R; } else{ N(m); _; v(0); }
-  Q	]=0; I-6&&j)j=
-  F	I-6)B[X[w].b[i].i+g][X[w].b[i].j+l
-  e(	x) break; K x:q(c,j,x);
-  H	(m){ G; I-6){ a[i].x=t*20; a[i].y=u*20+30; a[i].w=a[i].h=
-  v(	_) d(m); z+_]=1; R+1;
+#define  G	long i,j
+#define  K	case
+#define  R	return 0
+#define  S(	x,y) for(x=0; x<y; x++)
+#define  I	S(i,10
+#define  z	I-6)B[t][u
+#define  t	(X[m].b[i].i+g)
+#define  u	(X[m].b[i].j+l)
+#define  M(	x,y) XFillRectangles(D,p,x,a,y);
+#define  s	B[i][j
+#define  W	=XCreateGC(D,p,4,L)
+#define  E(	W,_) k=0; I)S(j,22)if(W s]){ a[k].x=i*20; a[k].y=j*20+30; a[k].w=a[k].h=_; k++; }M(
+#define  A(	W,_) &&!B[W]; if(!j){ z]=1; R; } else{ N(m); _; v(0); }
+#define  Q	]=0; I-6&&j)j=
+#define  F	I-6)B[X[w].b[i].i+g][X[w].b[i].j+l
+#define  e(	x) break; K x:q(c,j,x);
+#define  H	(m){ G; I-6){ a[i].x=t*20; a[i].y=u*20+30; a[i].w=a[i].h=
+#define  v(	_) d(m); z+_]=1; R+1;
 struct{
 	short x,y,w,h;
 } a[220],C;
