@@ -10,7 +10,12 @@
 
         make all
 
-	NOTE: This entry might not compile when using modern compilers.
+NOTE: we could not compile this entry under modern macOS but it will work
+fine under linux. It likely fails to compile under macOS because its gcc is
+actually just clang which is more strict about the type of the third
+argument of main(). If you have gcc under macOS it might work just as well.
+We did not test other systems.
+
 
 ### To run
 
@@ -21,7 +26,7 @@
 
 ## Judges' comments
     
-    The octal expression may contain:
+The octal expression may contain:
 
 	unary operators:	+, -
 	binary operators	+, -, *, /, %
@@ -30,17 +35,11 @@
 	octal numbers:		octal digits
 	grouping:		()
     
-    No spaces are allowed in the expression.  To avoid shell expansion,
-    one should surround the expression in single quotes.
+No spaces are allowed in the expression.  To avoid shell expansion,
+one should surround the expression in single quotes.
 
-    It is a good thing that this program consists of only one
-    expression, otherwise it might become hard to understand.  :-)
-
-    NOTE: we could not compile this entry under modern macOS but it will work
-    fine under linux. It likely fails to compile under macOS because its gcc is
-    actually just clang which is more strict about the type of the third
-    argument of main(). If you have gcc under macOS it might work just as well.
-    We did not test other systems.
+It is a good thing that this program consists of only one
+expression, otherwise it might become hard to understand.  :-)
 
 ## Author's comments
 

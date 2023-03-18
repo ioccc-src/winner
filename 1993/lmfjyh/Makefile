@@ -182,7 +182,9 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: This entry might not compile when using modern compilers."
+	@echo "NOTE: This will not compile when using modern compilers because"
+	@echo "it relies on a compiler bug which was fixed in gcc 2.3.3 (a very"
+	@echo "long time ago now)."
 	${RM} -f \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
 	${CP} lmfjyh.c \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
 	${CC} ${CFLAGS} \
