@@ -23,8 +23,9 @@
 
     make all
 
-NOTE: as `btoa` is not common we used a ruby script from Yusuke Endoh. Thank you
-Yusuke for your implementation of `btoa`!
+NOTE: as `btoa` is not common we used a ruby script from [Yusuke
+Endoh](/winners.html#Yusuke_Endoh). Thank you Yusuke for your implementation of
+`btoa`!
 
 ### Try:
 

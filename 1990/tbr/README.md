@@ -17,16 +17,28 @@
 
         make all
 
-NOTE: modern compilers had a problem with this entry because the `exit(3)`
-function returns void but [Cody Boone Ferguson](/winners#Cody_Boone_Ferguson)
-got it to work with the use of a comma operator. Thank you Cody!
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work with
+modern computers; `exit(3)` returns void but the function was used in a binary
+expression so this would not even compile. Thank you Cody for your assistance!
 
-### To run
+
+## To run:
 
 	./tbr
+	# enter some shell commands
+
+## Try:
+
+	./tbr
+	ls -l tbr tbr.c
+	# notice how the following does not work:
+	ls tbr*
+	# try figuring out how this entry works in an editor:
+	vi tbr.c
+	# then figure out how to exit vi :-)
 
 
-## Judges' comments
+## Judges' comments:
 
 
 This program touches on a well known Unix utility, the 6th edition Bourne Shell
@@ -53,6 +65,8 @@ of the program which we include below:
 
 
 ## Author's comments
+
+Rot13:
 
     Guvf cebtenz vf n ehqvzragnel furyy. Vg qbrf v/b erqverpgvba, cvcrf
     naq pq. Vg syntf reebef ba snvyrq puqve'f, bcra'f, perng'f

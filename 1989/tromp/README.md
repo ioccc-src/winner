@@ -16,12 +16,14 @@ to get this to compile under gcc. Thank you Yusuke for your assistance!
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) got this to work with
 clang by further changing the variable `a` to be not the third argument to
-`main()` and instead be a variable declared in `main()`. Cody also bug fixed it
-so that the high score file would work (it was not even being created) and after
-this making sure the terminal stayed sane (the letter `u` could not be typed and
-echo was disabled outright after the segfault fix / high score file was
-reinstated). We thank you for your assistance Cody (he cynically notes that he
-did it because tetris just has to work)!
+`main()` and instead be a variable declared in `main()`.
+
+Cody also bug fixed it so that the high score file would work (it was not even
+being created) and after this making sure the terminal stayed sane (the letter
+`u` could not be typed and echo was disabled outright after the segfault fix /
+high score file was reinstated). We thank you for your assistance Cody (he
+cynically notes that he did it because tetris just has to work)!
+
 
 ### Alternate code:
 

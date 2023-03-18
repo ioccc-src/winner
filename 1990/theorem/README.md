@@ -11,10 +11,12 @@
 
         make all
 
-NOTE: thanks to Yusuke Endoh for the pointing out that `atof()` nowadays needs
-`#include <stdlib.h>` in order to get this to work. Thanks also to Cody Boone
-Ferguson for fixing some segfaults under modern (and in some cases earlier)
-systems with this entry.
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed some segfaults
+under modern (and in some cases earier) systems with this entry. Thank you Cody!
+
+[Yusuke Endoh](/winners.html#Yusuke_Endoh) pointed out that `atof` nowadays
+needs `#include <stdlib.h>` which was used in order to get this to work
+initially. Thank you Yusuke!
 
 
 ## To run:

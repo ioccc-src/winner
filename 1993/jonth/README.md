@@ -10,7 +10,8 @@
 
         make all
 
-	NOTE: This entry might not compile when using modern compilers.
+NOTE: this entry might not compile with modern systems.
+
 
 ### To run
 
@@ -18,24 +19,22 @@
 
 ## Judges' comments
 
-    Use 'h' and 'l' to shift objects left or right.  Use 'k' to
-    rotate and press SPACE to drop.
+Use 'h' and 'l' to shift objects left or right.  Use 'k' to
+rotate and press SPACE to drop.
 
-    This program's output may be even more obfuscated when played 
-    on inverse video.  :-)
+This program's output may be even more obfuscated when played 
+on inverse video.  :-)
 
-    Yusuke Endoh provided a patch which allows this entry to compile on modern
-    systems. Thank you Yusuke!
 
 ## Author's comments
 
-    This is jonth (jon's t(h)etris) for the X Window System.
+This is jonth (jon's t(h)etris) for the X Window System.
 
-    This program is also an example of data abstraction.  The X array is 
-    after initialization hidden by the well defined macros t, u and F.
+This program is also an example of data abstraction.  The X array is 
+after initialization hidden by the well defined macros t, u and F.
 
-    This program is highly portable as it runs on a "Notebook" size SPARC.
-    This program will not work on machines with sizeof(int)!=sizeof(void *).
+This program is highly portable as it runs on a "Notebook" size SPARC.
+This program will not work on machines with sizeof(int)!=sizeof(void *).
 
 Copyright (c) 1993, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is

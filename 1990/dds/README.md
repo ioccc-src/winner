@@ -11,8 +11,8 @@
 	make all
 
 
-Modern compilers could not compile this entry but Yusuke Endoh supplied a patch
-which lets it compile. Thank you Yusuke!
+[Yusuke Endoh](/winners.html#Yusuke_Endoh) fixed this for modern systems. Thank
+you Yusuke!
 
 ### To run
 

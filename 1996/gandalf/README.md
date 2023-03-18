@@ -14,10 +14,10 @@
 
         make all
 
-NOTE: [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to
-compile with modern systems. As he loved the references in the code that could
-not compile he just commented it out (as little as possible). Thank you Cody for
-your assistance!
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile
+and work with modern systems. As he loved the references in the code that could
+not compile he just commented out as little as possible to get this to compile.
+Thank you Cody for your assistance!
 
 ### To run
 

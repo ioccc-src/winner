@@ -7,13 +7,13 @@
 
         make all
 
-NOTE: [Cody Boone Ferguson](/winners#Cody_Boone_Ferguson) fixed this for modern
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for modern
 systems. There were two invalid operands to binary expression (`char *` and
-`void` and `int` and `void`) to resolve and a feature of the C pre-processor
-which no longer works had to be changed as well. In particular `#define C =G` in
-a macro to make `+=` and similar operators no longer works. The invalid operands
-to binary expressions were resolved with the comma operator. Thank you Cody for
-your assistance!
+`void` and `int` and `void`) to resolve and additionally a mis-feature of the C
+pre-processor which no longer works had to be changed as well in order to get
+this to compile. In particular the macro `C`, defined as `C =G` to make `+=` and
+similar operators no longer works.  The invalid operands to binary expressions
+were resolved with the comma operator. Thank you Cody for your assistance!
 
 
 ### Try:

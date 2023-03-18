@@ -14,8 +14,10 @@
 
     ./cmills [starting_cash]
 
-NOTE: we used a patch from Yusuke Endoh to get this to work in modern systems
-(it resulted in a bus error otherwise). Thank you Yusuke for your assistance!
+We used a patch from [Yusuke Endoh](/winners.html#Yusuke_Endoh) to get this to
+work in modern systems (it resulted in a bus error otherwise). Thank you Yusuke
+for your assistance!
+
 
 ### Try:
 

@@ -12,7 +12,7 @@
 	make all
 
 
-NOTE: [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) was able to get
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) was able to get
 this to partially work with clang; clang requires that the second, third and
 fourth args to main() be `char **`. Only `westley.c` and `ver0.c` (see below) will
 compile with clang. It's possible to get ver1.c to compile too but this causes

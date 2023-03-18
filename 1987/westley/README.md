@@ -11,8 +11,9 @@ USA
 
         make all
 
-NOTE: Cody Boone Ferguson fixed this so it could compile on modern systems. For
-the original file see below.
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for
+modern systems. For the original file see below. Thank you Cody for your
+assistance!
 
 
 ## Alternate code:
