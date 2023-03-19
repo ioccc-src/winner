@@ -21,6 +21,9 @@ assistance!
 
 	./cdua
 
+NOTE: on modern systems this might be hard to see it solve it in running time as
+it goes so quickly but it will still show the result after execution.
+
 ## Judges' comments
 
 This could be used as the basis of an a-maze-ing screen exerciser.

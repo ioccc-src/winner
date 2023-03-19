@@ -10,18 +10,18 @@
 
         make all
 
-### To run
+### To run:
 
 	./makarios
 
 ## Judges' comments
 
-    The judges were impressed that such a small program could do so much!
-    Can you figure out how it does it?
+The judges were impressed that such a small program could do so much!
+Can you figure out how it does it?
 
 ## Author's comments
 
-    This program takes no arguments. It emits the base 8 representation
-    of prime palindromes (palindromic in base 8, of course).
+This program takes no arguments. It emits the base 8 representation
+of prime palindromes (palindromic in base 8, of course).
 
-    ^_^
+`^_^`

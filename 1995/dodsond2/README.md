@@ -10,25 +10,26 @@
 
         make all
 
-### To run
+### To run:
 
-   	./dodsond2
+	  ./dodsond2
 
-## Judges' comments
 
-    An amazing entry!
+## Judges' comments:
 
-    The official chef enjoyed solving the maze, which she did on the first
-    attempt.
+An amazing entry!
 
-## Author's comments
+The official chef enjoyed solving the maze, which she did on the first
+attempt.
 
-    Interactive 3D Maze
+## Author's comments:
 
-    Step into a randomly generated 3D maze and try to get out alive!
-    Use the vi movement keys (hjkl) to move on a level, and u or d
-    to move (u)p or (d)own from a position with a U or D on the
-    map.  To simulate the feeling of being in an unknown labyrinth,
-    areas which you have not visited cannot be seen.
+### Interactive 3D Maze
 
-    Reach the north-west left corner of level 1 to exit.
+Step into a randomly generated 3D maze and try to get out alive!
+Use the vi movement keys (hjkl) to move on a level, and u or d
+to move (u)p or (d)own from a position with a U or D on the
+map.  To simulate the feeling of being in an unknown labyrinth,
+areas which you have not visited cannot be seen.
+
+Reach the north-west left corner of level 1 to exit.
