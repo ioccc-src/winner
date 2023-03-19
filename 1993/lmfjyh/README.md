@@ -9,7 +9,9 @@
 
         make all
 
-	NOTE: This entry might not compile when using modern compilers.
+NOTE: This entry will not compile on modern systems because it
+relies on a compiler bug which was fixed in gcc 2.3.3 (a very
+long time ago now).
 
 ### To run
 
@@ -17,13 +19,10 @@
 
 ## Judges' comments
     
-    See the makefile for details.
+See the Makefile for details.
 
-    There's more than one way to get around disk quotas. :-)
+There's more than one way to get around disk quotas. :-)
 
-    This entry will not compile on modern systems because it
-    relies on a compiler bug which was fixed in gcc 2.3.3 (a very
-    long time ago now).
 
 ## Author's comments
 

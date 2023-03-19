@@ -182,6 +182,8 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo "NOTE: this entry has different compiler errors based on compilation line."
+	@echo "The purpose is to find the right error message to win the game!"
 	-${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable

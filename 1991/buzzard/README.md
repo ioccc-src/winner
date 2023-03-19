@@ -10,17 +10,17 @@
 
         make all
 
-### To run
+### To run:
 
 	./buzzard
 
-## Judges' comments
+## Judges' comments:
 
 You will be A-mazed.
 
 You are invited to try to cheat, ... if you can figure out how!  :-)
 
-## Author's comments
+## Author's comments:
 
 ### HOW TO PLAY:
 

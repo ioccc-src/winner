@@ -9,17 +9,20 @@
 
         make all
 
-### To run
+### To run:
 
 	./rcm < rfc1951.gz
 
-## Judges' comments
+## Try:
 
-    And for more information try:
+For more information try:
 
 	./rcm < rfc1952.gz
 
-    For a good noop try:
+
+## Judges' comments
+
+For a good noop try:
 
 	gzip -c < rcm.c | ./rcm
 

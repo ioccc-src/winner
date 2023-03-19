@@ -10,21 +10,26 @@
 
         make all
 
+NOTE: the purpose of this entry is to escape the dungeon via the compiler line
+where you get messages as compiler errors. Depending on the compiler line you
+will get different error messages and one compiler line will make you win the
+game!
+
 ### To run
 
 	./westley
 
 ## Judges' comments
 
-    But for something more interesting try compiling it with
-    different cc arguments.  For example:
+But for something more interesting try compiling it with
+different cc arguments.  For example:
 
 	cc -Describe -Door westley.c
 	cc -Describe -Drain westley.c
 
-    Not all compiler errors are bad.
+Not all compiler errors are bad.
 
-    For spoilers see the end of the notes from the author below.
+For spoilers see the end of the notes from the author below.
 
 ## Author's comments
 
