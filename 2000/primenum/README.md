@@ -10,6 +10,11 @@
 make
 ```
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made this more
+portable by changing the return type of `main()` to be `int` not `void`. Thank
+you Cody for your assistance!
+
+
 ### To run:
 
 ```sh
