@@ -97,7 +97,7 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE=
+CINCLUDE= -include stdio.h -include stdlib.h -include time.h
 #CINCLUDE= -include stdlib.h
 #CINCLUDE= -include stdio.h
 #CINCLUDE= -include stdlib.h -include stdio.h
@@ -169,6 +169,11 @@ TARGET= ${PROG}
 ALT_OBJ=
 ALT_TARGET=
 
+# FORCE use of -trigraphs
+#
+CFLAGS+= -trigraphs
+
+
 
 #################
 # build the entry
@@ -182,6 +187,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo "NOTE: this entry uses gets() so you might get a warning compiling and/or running this."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
