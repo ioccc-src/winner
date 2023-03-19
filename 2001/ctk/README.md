@@ -17,16 +17,23 @@ make
 ./ctk
 ```
 
+[Yusuke Endoh](/winners.html#Yusuke_Endoh) provided a patch to fix the ANSI
+escape codes. It became apparent to [Cody Boone
+Ferguson](/winners.html#Cody_Boone_Ferguson) (when he was looking at the source
+code of this entry) that it was no longer valid ANSI escape sequences. He has
+used them before but that was a long time ago and with Yusuke's patch it works.
+Cody notes that this fix will not just for linux but macOS too. Thank you Yusuke
+for your assistance!
+
+
 ### Try:
 
 ```sh
 echo "Do or do not. There is no try."
 ```
 
-NOTE: this does not show well on the default terminal macOS. It's untested
-whether another terminal emulator will work. Make sure to hit 'q' to exit or
-else your terminal will be messed up (to restore it you can try `stty sane` or
-`reset`).
+Make sure to hit 'q' to exit or else your terminal will be messed up (to restore
+it you can try `stty sane` or `reset`).
 
 ## Judges' comments:
 
