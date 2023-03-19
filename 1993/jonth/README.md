@@ -10,7 +10,9 @@
 
         make all
 
-NOTE: this entry might not compile with modern systems.
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this so that it
+will work with modern systems. Thank you Cody for your assistance!
 
 
 ### To run
@@ -34,7 +36,7 @@ This program is also an example of data abstraction.  The X array is
 after initialization hidden by the well defined macros t, u and F.
 
 This program is highly portable as it runs on a "Notebook" size SPARC.
-This program will not work on machines with sizeof(int)!=sizeof(void *).
+This program will not work on machines with `sizeof(int)!=sizeof(void *)`.
 
 Copyright (c) 1993, Landon Curt Noll & Larry Bassel.
 All Rights Reserved.  Permission for personal, educational or non-profit use is
