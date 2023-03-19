@@ -20,7 +20,8 @@ Modern compilers might fail to compile this entry:
 
 
 but we were able to get it to compile with modern compilers by specifying the
-`-ansi` flag with a tip from Yusuke Endoh. Thank you Yusuke!
+`-ansi` flag with a tip from [Yusuke Endoh](/winners.html#Yusuke_Endoh). Thank
+you Yusuke! 
 
 
 ### To run:

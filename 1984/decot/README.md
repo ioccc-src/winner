@@ -6,10 +6,12 @@ Dave Decot
 
         make all
 
-NOTE: On modern systems this entry requires the option `-traditional-cpp` which
-clang does not support. We thank Yusuke Endoh for his patch which allows the
-entry to compile under gcc! Please be advised that gcc under macOS is actually
-clang so this will not compile with the default gcc under macOS.
+NOTE: [Yusuke Endoh](/winners.html#Yusuke_Endoh) supplied a patch so that this
+entry would compile with gcc.
+
+NOTE: this entry requires a compiler that supports `-traditional-cpp`. Note that
+clang does not support it and in macOS gcc is actually clang so this will not
+compile with the default compiler in macOS.
 
 ## To run:
 

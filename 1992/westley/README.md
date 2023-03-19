@@ -11,10 +11,9 @@
         make all
 
 
-NOTE: [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to
-work with clang by changing the third and fourth arg of main() to be ints inside
-main(); clang requires args 2 - 4 to be `char **`. Thank you Cody for your
-assistance!
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for clang by
+changing the third and fourth arg of main() to be ints inside main(); clang
+requires args 2 - 4 to be `char **`. Thank you Cody for your assistance!
 
 
 ### To run
@@ -29,7 +28,7 @@ assistance!
 
 Where lat and long correspond to your latitude and longitude.
 
-NOTE: you must have a terminal that wraps at 80 columns (!) in order for this to
+NOTE: you **MUST** have a terminal that wraps at 80 columns (!) in order for this to
 show correctly!
 
 

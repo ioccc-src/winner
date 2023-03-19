@@ -11,9 +11,9 @@ Jack Applin [with help from Robert Heckendorn]
 	./applin
 
 
-NOTE: Yusuke Endoh provided a patch to get this to not issue a bus error. Thank
-you Yusuke! We note that this entry does not work under macOS. Try it out and
-see for yourself what happens!
+NOTE: [Yusuke Endoh](/winners.html#Yusuke_Endoh) provided a patch to get this to
+not issue a bus error. Thank you Yusuke! We note that this entry does not work
+under macOS. Try it out and see for yourself what happens!
 
 
 ## Judges' comments:

@@ -11,11 +11,14 @@ US of A
         make all
 
 
+We used a patch provided by [Yusuke Endoh](/winners.html#Yusuke_Endoh) to make
+this work with gcc. Thank you Yusuke!
+
 NOTE: On modern systems this entry requires the option `-traditional-cpp` which
 clang does not support. Please be advised that gcc under macOS is actually
 clang so this will not compile with the default gcc under macOS. As this entry
-stood in modern systems it did not work even when compiled. We used a patch
-provided by Yusuke Endoh to make it work. Thank you Yusuke!
+stood in modern systems it did not work even when compiled.
+
 
 ## Judges' comments:
 

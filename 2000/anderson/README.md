@@ -47,16 +47,17 @@ output as a depiction of a person holding two flags, using only ASCII
 characters (semaphore smileys, if you will).  For example, given the
 input "Hello, world!", the output will be:
 
-	      <>       <>       <>    <>                  <>     <>
-  _()       ()/      ()/      ()/     _\)       ()       (/_     _\)
-[] /^      |^^      /^^      /^^    [] ^^      |^^|      ^^ [] [] ^^
-  <>[      [][     <>][     <>][       ][      [][]      ][       ][
+		  <>       <>       <>    <>                  <>     <>
+      _()       ()/      ()/      ()/     _\)       ()       (/_     _\)
+    [] /^      |^^      /^^      /^^    [] ^^      |^^|      ^^ [] [] ^^
+      <>[      [][     <>][     <>][       ][      [][]      ][       ][
 
 
-	      <>    []
-  _()_      ()/     |()       ()
-[] ^^ []   /^^       ^^|     |^^|
-   ][     <>][       ][]     [][]
+		  <>    []
+      _()_      ()/     |()       ()
+    [] ^^ []   /^^       ^^|     |^^|
+       ][     <>][       ][]     [][]
+
 
 The program is obfuscated without the use of the preprocessor or any
 special compilation parameters.  In fact, the program doesn't even

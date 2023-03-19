@@ -10,7 +10,7 @@ USA
         make all
 
 
-NOTE: [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to
 compile and work with clang (it already worked with gcc).  The problem was that
 clang is more strict about the type of second arg to main(). However simply
 changing it to a `char **` and updating the `*s` to `**s` caused a segfault. By

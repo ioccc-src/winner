@@ -31,12 +31,12 @@ This code is an nice compact example of a Modular Fast Fourier Transform.
 While its output is very specific, the internal FFT has a wide variety
 of uses.
 
-Can you modify this code to produce primes such as 23523*2^70000-1,
-48594^65536+1 or 6917!-1?
+Can you modify this code to produce primes such as `23523*2^70000-1,
+48594^65536+1` or `6917!-1`?
 
 ### Alternate code:
 
-This program prints the biggest known prime number (2^6972593-1)
+This program printed the biggest known prime number (2^6972593-1)
 in base 10. It requires a few minutes. It uses a Modular Fast
 Fourier Transform to compute this number in a reasonable amount
 of time (the usual method would take ages !).
