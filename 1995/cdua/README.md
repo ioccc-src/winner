@@ -13,8 +13,7 @@
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this so that it
 would work with macOS. Once it could compile it additionally segfaulted under
-macOS (it did not under linux) which he also fixed. Thank you Cody for your
-assistance!
+macOS which he also fixed. Thank you Cody for your assistance!
 
 
 ### To run
@@ -23,6 +22,10 @@ assistance!
 
 NOTE: on modern systems this might be hard to see it solve it in running time as
 it goes so quickly but it will still show the result after execution.
+
+NOTE: sometimes the program needs you to press enter a second time to continue
+solving the maze.
+
 
 ## Judges' comments
 
