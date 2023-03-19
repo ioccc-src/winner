@@ -87,6 +87,18 @@ but are noteworthy nonetheless.
 This entry is likely to fail and/or dump core on any computer other than a
 Vax-11 or pdp-11. In 1984 machine dependent code was allowed.
 
+### [1986/august](1986/august/august.c) ([README.md](1986/august/README.md))
+
+This entry is known to segfault after printing its output. It was documented by
+the judges and needn't be fixed.
+
+### [1996/westley](1996/westley/westley.c) ([README.md](1996/westley/README.md))
+
+This entry will possibly segfault even when showing the proper output in the
+`clock1`, `clock2` and `clock3` scripts. Though this doesn't need to be fixed as
+long as it works right it wouldn't hurt to fix it either.
+
+
 ### [2019/endoh](2019/endoh/prog.c) ([README.md](2019/endoh/README.md))
 
 As a backtrace quine this entry is SUPPOSED to segfault so this should not be

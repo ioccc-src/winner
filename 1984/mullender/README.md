@@ -12,7 +12,10 @@ Robbert van Renesse
 
 	./mullender
 
-NOTE: This entry is likely to fail and/or dump core on modern computers.
+> NOTE: If your machine is not a Vax-11 or pdp-11, this program will
+> not execute correctly.  In later years, machine dependent
+> code was discouraged.
+
 
 ## Judges' comments:
 
@@ -24,10 +27,6 @@ To prevent a flood of similar programs, we requested that programs
 be non machine specific.
 
 This program was selected for the 1987 t-shirt collection.
-
-> NOTE: If your machine is not a Vax-11 or pdp-11, this program will
-> not execute correctly.  In later years, machine dependent
-> code was discouraged.
 
 The C startup routine (via crt0.o) transfers control to a location
 named main.  In this case, main just happens to be in the data area.
