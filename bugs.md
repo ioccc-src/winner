@@ -101,6 +101,28 @@ things that are misinterpreted as bugs. See his
 
 ### ... more to be added later ...
 
+## Mis-features that should not be fixed
+
+The following entries should not be touched either as although it might seem
+wrong they are not.
+
+### [1986/holloway](1986/holloway/holloway.c) ([README.md](1986/holloway/README.md))
+
+When compiling this entry you might get an incompatible pointer type warning but
+this should be ignored. When [Cody Boone
+Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this he experimented with the
+alternatives and it did not work. Thus if you see something like:
+
+```c
+[holloway.c:15:11: warning: incompatible pointer types initializing 'char *' with an expression of type 'char **'; dereference with * [-Wincompatible-pointer-types]
+    char *t = s;
+          ^   ~
+              *
+
+```
+
+it is NOT a problem and should not be changed.
+
 ## Entries that require a compiler that support `-traditional-cpp`
 
 The following entries need a compiler that support `-traditional-cpp`. `gcc`
