@@ -63,7 +63,7 @@ X11_INCDIR= /opt/X11/include
 # Common C compiler warnings to silence
 #
 #CSILENCE=
-CSILENCE= -Wno-logical-not-parentheses
+CSILENCE= -Wno-logical-not-parentheses -Wno-bool-operation -Wno-uninitialized
 
 # Common C compiler warning flags
 #
@@ -97,10 +97,10 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE=
+#CINCLUDE=
 #CINCLUDE= -include stdlib.h
 #CINCLUDE= -include stdio.h
-#CINCLUDE= -include stdlib.h -include stdio.h
+CINCLUDE= -include stdlib.h -include stdio.h
 #CINCLUDE= -I ${X11_INCDIR}
 #CINCLUDE= -I ${HOMEBREW_PREFIX}/include/SDL2
 
@@ -138,7 +138,7 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-CSILENCE+= -Wno-poison-system-directories
+CSILENCE+= -Wno-poison-system-directories -Wno-comma -Wno-missing-prototypes
 #
 CWARN+= -Weverything
 #
