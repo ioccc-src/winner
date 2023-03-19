@@ -28,16 +28,16 @@ machine](2020/ferguson2/prog.c) entry. See his
 [README.md](2020/ferguson2/README.md) for details (search for `vik` in the
 file).
 
-He provides a tip in testing the problem: it might help to use Cody's Enigma
+He provides a tip in testing the problem: it might help to use the Enigma
 machine to find problems as it will allow you to verify what is correct and what
 is not. Again see his README.md for details.
 
 ## Compiler specific requirements on type of args to main
 
 The following entries have a problem in that the args to main() are not of a
-specific type due. This shows itself in some compilers like clang. Looking at
-the source code of `clang` there is no way to override this requirement so these
-entries will fail to compile with clang.
+specific type due this being allowed in earlier C. This shows itself in some
+compilers like clang. Looking at the source code of `clang` there is no way to
+override this requirement so these entries will fail to compile with clang.
 
 Please be aware that gcc under macOS is clang despite the fact it might appear
 to be gcc: no symlink and both gcc and clang exist.
@@ -100,6 +100,20 @@ things that are misinterpreted as bugs. See his
 [troubleshooting.md](2020/ferguson1/troubleshooting.md) files for details.
 
 ### ... more to be added later ...
+
+## Entries that require a compiler that support `-traditional-cpp`
+
+The following entries need a compiler that support `-traditional-cpp`. `gcc`
+supports this but `clang` does not. Please be advised that `gcc` under macOS is
+actually gcc if it looks like it's gcc (two different binaries).
+
+- [1984/decot](1984/decot/decot.c) ([README.md](1984/decot/README.md))
+- [1985/sicherman](1985/sicherman/sicherman.c) ([README.md](1985/sicherman/README.md))
+- [1986/wall/wall.c](1986/wall/wall.c) ([README.md](1986/wall/README.md))
+- [1988/dale](1988/dale/dale.c) ([README.md](1988/dale/README.md))
+
+.. more to be added as they are discovered ..
+
 
 ## Entries that can no longer compile
 
