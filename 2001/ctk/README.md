@@ -23,6 +23,11 @@ make
 echo "Do or do not. There is no try."
 ```
 
+NOTE: this does not show well on the default terminal macOS. It's untested
+whether another terminal emulator will work. Make sure to hit 'q' to exit or
+else your terminal will be messed up (to restore it you can try `stty sane` or
+`reset`).
+
 ## Judges' comments:
 
 No matter how careful you are, this guy eventually crashes.  Most people
