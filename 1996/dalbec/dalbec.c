@@ -13,4 +13,4 @@ int cain(int I, char **O, int O0, int OO, int l)
 	:cain(I-I-I-I-I,O,I+I-I+I,I,0)
 	:cain(~!!I-!!I,O,atoi(1[O]),1,atoi(0[O]));
 }
-int main(int I, char **O) { int O0,OO,l; return cain(I,O,O0,OO,l); }
+int main(int I, char **O) { int O0=0,OO=0,l=0; return cain(I,O,O0,OO,l); }
