@@ -20,6 +20,17 @@ you have one if you like).
 
 ## Known bugs that are OK to fix
 
+### [1995/cdua](1995/cdua/cdua.c) ([README.md](1995/cdua/README.md))
+
+This did not compile under macOS and after it did it crashed.
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this but he
+observed that sometimes the program asks the user to hit return a second time to
+resume solving the maze. It does not always happen. It doesn't seem to be
+related to making it work under macOS as all that did was removing some invalid
+prototypes and use `printf()` instead of the invalid pointer to it (incompatible
+type).
+
+
 ### [2014/vik](2014/vik/prog.c) ([README.md](2014/vik/README.md))
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) discovered a bug that
