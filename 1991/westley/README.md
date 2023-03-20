@@ -4,6 +4,8 @@
     DigiBoard, Inc.
     1026 Blair Ave.
     St. Paul, MN  55104  USA
+    
+    http://www.westley.org
 
 ## To build:
 

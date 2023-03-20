@@ -7,6 +7,8 @@
 	55108
 	U.S.A.
 
+	http://www.westley.org
+
 ## Try:
 
 	make all

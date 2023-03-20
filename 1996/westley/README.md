@@ -5,7 +5,7 @@
     St. Paul, MN  55105
     USA
 
-    http://www.visi.com/~westley/index.html
+    http://www.westley.org
 
 ## To build:
 
