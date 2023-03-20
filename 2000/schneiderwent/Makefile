@@ -181,6 +181,10 @@ all: data ${TARGET}
 	love haste waste maker easter_egg sandwich \
 	supernova deep_magic magic charon pluto
 
+# FORCE use of -trigraphs
+#
+CFLAGS+= -trigraphs
+
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
