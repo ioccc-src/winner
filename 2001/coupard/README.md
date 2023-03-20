@@ -23,9 +23,16 @@ make
 
 ```sh
 ./coupard > /dev/audio
--or-
 ./coupard > /dev/sound/dsp
 ```
+
+If you're using macOS then you won't have these devices. If however you install
+sox from MacPorts or Homebrew you can do something like:
+
+	./coupard | sox -q -traw -r8000 -b8 -e unsigned-integer - -tcoreaudio
+
+Thanks go to [Yusuke Endoh](/winners.html#Yusuke_Endoh) for providing a proper
+command line (see [/2013/endoh3/README.md](2013/endoh3/README.md).
 
 ## Judges' comments:
 
