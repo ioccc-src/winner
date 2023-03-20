@@ -98,7 +98,7 @@ CDEFINE=
 # Include files that are needed to compile
 #
 #CINCLUDE=
-CINCLUDE= -I.
+CINCLUDE= -I. -I/usr/include
 #CINCLUDE= -include stdlib.h
 #CINCLUDE= -include stdio.h
 #CINCLUDE= -include stdlib.h -include stdio.h
