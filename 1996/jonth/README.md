@@ -12,7 +12,7 @@
 
         make all
 
-### To run
+### To run:
 
 	./jonth
 
@@ -20,18 +20,18 @@
 
 	./jonth host1:0 host2:0
 
-## Judges' comments
+## Judges' comments:
 
 
-    For extra credit, figure out how you can cheat by taking over
-    a square already occupied by an opponent.
+For extra credit, figure out how you can cheat by taking over
+a square already occupied by an opponent.
 
-## Author's comments
+## Author's comments:
 
 This is multi-user tic-tac-toe for X Windows. You may give one or two X
 displays as arguments to this game.
 
-Known bugs:
+### Known bugs:
 
 Sometimes on Solaris X gets confused and this program core dumps,
 solution: give two display arguments (prog host:0 host:0)
