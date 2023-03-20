@@ -11,7 +11,19 @@
 
         make all
 
-NOTE: This entry uses non-standard args to main() that do not work with modern compilers.
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) proposed a fix for this
+to compile with clang and Landon implemented it after some discussion. The
+reason Cody did not do it is because he thought it was the wrong output but as
+it happens the try section below was worded a bit confusingly. He looked at
+[Yusuke Endoh's](/winners.html#Yusuke_Endoh) analysis found
+[here](https://mame-github-io.translate.goog/ioccc-ja-spoilers/1996/dalbec.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp)
+but he missed that Yusuke added a '...' after the result which made him think
+the fix was wrong. Cody also made the recommended change of the author to make
+it so that each number is printed on a line by itself rather than having a long
+string of numbers on the same line. Thank you Cody for your assistance and
+thanks to Yusuke for confirming the output is correct!
+
 
 ## To run:
 
@@ -20,9 +32,9 @@ NOTE: This entry uses non-standard args to main() that do not work with modern c
 ## Try:
 
 
-	./dalbec 3
+	./dalbec 3 | head -n 29
 
-Why does it output 121?
+Why does the output end with 121?
 
 
 ## Judges' comments:
