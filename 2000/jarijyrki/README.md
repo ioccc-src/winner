@@ -1,24 +1,25 @@
 # Best of Show:
 
-Jari Arkko
-Kauppalantie 25A7,
-02700 Kauniainen,
-Finland
+	Jari Arkko
+	Kauppalantie 25A7,
+	02700 Kauniainen,
+	Finland
 
-http://www.arkko.com
+	http://www.arkko.com
 
-Jyrki Holopainen
-Forsellesintie 1-3A10,
-02700 Kauniainen,
-Finland
+	Jyrki Holopainen
+	Forsellesintie 1-3A10,
+	02700 Kauniainen,
+	Finland
 
-http://personal.eunet.fi/pp/halo/
+	http://personal.eunet.fi/pp/halo/
 
 # To build:
 
 ```sh
 make
 ```
+
 You will need X11 header files and libraries installed to build this program.
 
 ### To run:

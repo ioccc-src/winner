@@ -12,10 +12,13 @@ Indonesia
 make
 ```
 
+NOTE: this entry uses `gets()` so you will likely get a warning when compiling
+and/or executing this program.
+
 ### To run:
 
 ```sh
-echo something | ./prog
+echo something | ./anderson
 ```
 
 ### Try:
