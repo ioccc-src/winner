@@ -184,7 +184,6 @@ all: ${DATA} ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: this entry uses non-standard args to main which will not work on all compilers."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
