@@ -14,11 +14,25 @@
 make
 ```
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work with
+clang by changing the args to main() to be `int` and `char **` respectively and
+changing specific references to the `argv` arg, casting to int which was its old
+type. Thank you Cody for your assistance!
+
+
 ### To run:
 
 ```sh
 ./herrmann2
 ```
+
+Cody notes that [Yusuke Endoh](/winners.html#Yusuke_Endoh) does not get a
+segfault with some of the invocations (without fixing it for clang) but Cody
+does get a segfault both before fixing it for clang and after. Yusuke provides
+some interesting thoughts which can be found
+[here](https://mame-github-io.translate.goog/ioccc-ja-spoilers/2001/herrmann2.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp).
+Thank you Yusuke for your interesting thoughts!
+
 
 ### Try:
 
@@ -27,10 +41,37 @@ make
 ./herrmann2 < herrmann2.cup
 ```
 
+Try running each command a few times and notice the different output. Can you
+figure out why each is different?
+
+
+If you use vi(m) you can see a pattern in `hermmann2.cup` and `herrmann2.ioccc`
+by say:
+
+
+	/[pon]                                                                                                                                          
+
+and
+
+	/l
+
+For additional fun in `herrman2.cup` try:
+
+
+	/[po]
+	/q
+
+and in `herrmann2.ioccc` try:
+
+	/n
+
+
+	
 ## Judges' comments:
 
 Be careful when staring at the source code - your eyes might cross, but
 if you concentrate on your focus you will find illumination!
+
 
 ## Author's comments:
 
@@ -65,9 +106,11 @@ new random character, it will take the next one from the
 argument. When it arrives at the end of the argument, it will
 start over at the beginning. Example:
 
+```sh
 ./herrmann2 "234 84 045 5 6765 7487 65190 84 656 254 12 43931 818 0 6542\
 341 45 567 76967 7244 606 976567 895 81898 095 68678 1843 4650547\
 565980691 389 04974" < herrmann2.ioccc
+```
 
 ### Some hints to get better results
 
