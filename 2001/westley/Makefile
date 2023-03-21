@@ -63,14 +63,16 @@ X11_INCDIR= /opt/X11/include
 # Common C compiler warnings to silence
 #
 #CSILENCE=
-CSILENCE= -Wno-trigraphs -Wno-implicit-function-declaration -Wno-pedantic
+CSILENCE= -Wno-empty-body -Wno-error -Wno-implicit-function-declaration \
+	-Wno-implicit-int -Wno-main -Wno-return-type -Wno-trigraphs \
+	-Wno-unused-parameter
 
 # Common C compiler warning flags
 #
 #CWARN= ${CSILENCE}
 #CWARN= -Wall ${CSILENCE}
-#CWARN= -Wall -Wextra ${CSILENCE}
-CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+CWARN= -Wall -Wextra ${CSILENCE}
+#CWARN= -Wall -Wextra -pedantic ${CSILENCE}
 
 # Compiler standard
 #
@@ -138,7 +140,9 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-CSILENCE+= -Wno-disabled-macro-expansion -Wno-poison-system-directories
+CSILENCE+= -Wno-disabled-macro-expansion -Wno-extra-semi -Wno-missing-prototypes \
+	-Wno-missing-variable-declarations -Wno-pedantic \
+	-Wno-poison-system-directories -Wno-shadow -Wno-strict-prototypes
 #
 CWARN+= -Weverything
 #
