@@ -16,19 +16,19 @@
 
         make all
 
-### To run
+### To run:
 
 	echo 4 | ./baruch
 	echo 7 | ./baruch
 
-## Judges' comments
+## Judges' comments:
 
 This program reads an integer between 4 and 99 from the stdin.
 
 NOTE: The original program did not have a newline at the end of the file.  We
 added a final newline to the file to make unpacking easy.
 
-## Authors' comments
+## Authors' comments:
 
 The goal of this work was to write a program that solves the
 classic n-queen problem, with a board size of up to 99x99, while
