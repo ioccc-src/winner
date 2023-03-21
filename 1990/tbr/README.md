@@ -22,10 +22,26 @@ modern computers; `exit(3)` returns void but the function was used in a binary
 expression so this would not even compile. Thank you Cody for your assistance!
 
 
+## Alternative code:
+
+Cody also made a version that uses `fgets()` instead of `gets()` so one would
+not get a warning that was interspersed with the output of the initial prompt
+when running the program, to make it both safer and to have a better look. Thank
+you Cody!
+
+To build try:
+
+	make alt
+
+NOTE: it will segfault if you send EOF; to quit send an interrupt like ctrl-c.
+Cody will look at this later.
+
 ## To run:
 
 	./tbr
 	# enter some shell commands
+
+NOTE: globs do not work with this entry. Why?
 
 ## Try:
 
@@ -37,6 +53,7 @@ expression so this would not even compile. Thank you Cody for your assistance!
 	vi tbr.c
 	# then figure out how to exit vi :-)
 
+What happens if you try using `cd -` to return to previous directory?
 
 ## Judges' comments:
 
@@ -64,7 +81,7 @@ of the program which we include below:
 
 
 
-## Author's comments
+## Author's comments:
 
 Rot13:
 
