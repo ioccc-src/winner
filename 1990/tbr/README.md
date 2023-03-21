@@ -18,7 +18,7 @@
         make all
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work with
-modern computers; `exit(3)` returns void but the function was used in a binary
+modern compilers; `exit(3)` returns void but the function was used in a binary
 expression so this wouldn't even compile. Cody also changed the code to use
 `fgets()` instead of `gets()` so one would not get a warning about the use of
 `gets()` at execution which was interspersed with the output. Thank you Cody for
