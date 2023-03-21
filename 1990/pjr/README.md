@@ -14,7 +14,7 @@
 
 ### To run
 
-	./jaw
+	./pjr
 
 ## Judges' comments
 
