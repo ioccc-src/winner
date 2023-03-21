@@ -21,17 +21,33 @@
 
 ## To build:
 
-    make all
+	make all
+
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the script to
+work properly in modern environments (to do with PATH not having '.' in it). He
+notes that with an invocation in the try section below you will with macOS get
+what appears to be an error message but is actually okay. He gives more
+information in the [bugs.md](/bugs.md) file. Thank you Cody for the help and
+notes!
 
 NOTE: as `btoa` is not common we used a ruby script from [Yusuke
 Endoh](/winners.html#Yusuke_Endoh). Thank you Yusuke for your implementation of
 `btoa`!
 
+
 ### Try:
+
+To test the official C entry, one might try:
 
 	echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
 
-NOTE: part of this entry does not work under macOS.
+which should apply the identity transformation to a minimal
+holoalphabetic sentence.
+
+NOTE: Cody notes the above will not work under macOS. The `sh shark.sh jaw.*
+README.md > receive` and following commands below do work with macOS after the
+fixes he made.
 
 
 ## Judges' comments:
@@ -42,30 +58,23 @@ The program, in its base form, implements two useful utilities:
 	atob - ascii to binary conversion
 	zcat - decompression filter
 
-To test the official C entry, one might try:
-
-	echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
-
-which should apply the identity transformation to a minimal
-holoalphabetic sentence.
-
 Included with this entry is a shell script (with comments edited down
 to reduce it to 1530 bytes) which implements the complete
 shark utility. The script, shark.sh, contains a 'jaw.c' embedded
 within it!
 
-The sender must have 'compress' and 'btoa'. To send, try:
+The sender must have `compress` and `btoa`. To send, try:
 
-	sh shark.sh jaw.* > receive
+	sh shark.sh jaw.* README.md > receive
 
 The resulting file, 'receive', unpacks the input files
-even if the receiver lacks 'uncompress' and 'btoa':
+even if the receiver lacks `uncompress` and `btoa`:
 
-	mkdir test
+	mkdir -p test
 	cd test
 	sh ../receive
 	cmp ../jaw.c jaw.c
-	cmp ../jaw.hint jaw.hint
+	cmp ../README.md README.md
 
 ## Authors' comments:
 
