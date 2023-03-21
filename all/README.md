@@ -102,7 +102,7 @@ syntax changing as we did to get old programs to compile on strict
 ANSI C compilers.
 
 Last, read the judges' comments/spoilers on the program.  Hints
-for `foo.c' are given in `foo.hint'.  Often they will contain suggested
+for `foo.c` are given in `README.md`.  Often they will contain suggested
 arguments or recommended data to use.
 
 If you do gain some understanding of how a program works, go back to
@@ -114,12 +114,12 @@ Regarding the source archive:
 
 Each sub-directory contains all the entries for a single year.  Often
 the file names match one of the last names of the author.  Judges'
-hints are given in files of the form ``*.hint''.
+hints are given in files of the form `README.md`.
 
 You may need to tweak the Makefile to get everything to compile correctly.
-Read the hint files for suggestions.
+Read the README.md files for suggestions.
 
-The rules for a given year are given in the file named ``rules''.  Each
+The rules for a given year are given in the file named `rules.txt`.  Each
 archive contains a copy of the rules for the upcoming contest.
 
 The following URL is the official archive of the winning entries:

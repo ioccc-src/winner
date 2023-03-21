@@ -6,7 +6,7 @@
 --   multi-character identifiers and uses ` instead of \ because that's
 --   easier to enter inside a Haskell string). It also contains the Haskell
 --   code I used to translate the lambda calculus into combinators using
---   the fully optimising algorithm described in the .hint file.
+--   the fully optimising algorithm described in the README.md file.
 --   
 --   Tony Finch <dot@dotat.at>
 --  

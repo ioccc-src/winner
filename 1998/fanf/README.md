@@ -13,18 +13,18 @@
 
         make all
 
-	NOTE: This may take a while.  Some systems may have problems building 
-	this entry because of the system resources it requires.
+NOTE: This may take a while.  Some systems may have problems building 
+this entry because of the system resources it requires.
 
-### To run
+## To run
 
 	./fanf
 
-## Judges' comments
 
-    To use:
-	Enter an expression on standard input.  Here are some
-	sample expressions that you can use:
+### To use:
+
+Enter an expression on standard input.  Here are some
+sample expressions that you can use:
 
 	    ((\a(\b(\c(d)))) e)
 
@@ -46,74 +46,73 @@
 	      )
 	    )
 
-    This program translares lambda expressions into combinator
-    expressions.  But you do not need to know Lambda Calculus to be
-    impressed by this program!
+## Judges' comments:
 
-    See the file:
+This program translates lambda expressions into combinator
+expressions.  But you do not need to know Lambda Calculus to be
+impressed by this program!
 
-	fanf.lambda
+See the file [fanf.lambda](fanf.lambda) for more examples of lambda calculus
+source.
 
-    for more examples of lambda calculus source.
+Notice how large the code grows from the fanf.c into the final
+fanftmp2.c C program.  Take a look at that final C program again,
+can you begin to understand what it is doing?
 
-    Notice how large the code grows from the fanf.c into the final
-    fanftmp2.c C program.  Take a look at that final C program again,
-    can you begin to understand what it is doing?
-
-    Look at the first stage of the C pre-processing:
+Look at the first stage of the C pre-processing:
 
 	cc fanf.c -E > fanftmp1.c
 
-    Skip to the bottom of fanftmp1.c (after all of the #include header
-    stuff ... look for a line of the form:  # 2 "fanf.c"  near the bottom)
-    and look at the resulting code.  This code, when C pre-processed
-    will expand into over 342 times the original code (ignoring #include
-    headers) to produce fanftmp2.c.  That program in turn, when compiled
-    translates a single lambda expression on standard input into
-    combinator expressions on standard output.
+Skip to the bottom of fanftmp1.c (after all of the #include header
+stuff ... look for a line of the form:  # 2 "fanf.c"  near the bottom)
+and look at the resulting code.  This code, when C pre-processed
+will expand into over 342 times the original code (ignoring #include
+headers) to produce fanftmp2.c.  That program in turn, when compiled
+translates a single lambda expression on standard input into
+combinator expressions on standard output.
 
-    Extra credit question:
+### Extra credit question:
 
-	What do you have to do to make this program work with an
-	old non-ANSI C preprocessor?
+What do you have to do to make this program work with an old non-ANSI C
+preprocessor?
 
-## Author's comments
+## Author's comments:
 
-    My program is a demonstration of some practical applications of
-    theoretical computer science. The application it implements is a program
-    for translating lambda expressions into combinator expressions.
+My program is a demonstration of some practical applications of
+theoretical computer science. The application it implements is a program
+for translating lambda expressions into combinator expressions.
 
 
-    What the program does
-    =====================
+What the program does
+=====================
 
-    The syntax of lambda expressions recognised by the program is as
-    follows: The basic atoms are variables which are single characters other
-    than backslash or parentheses, e.g. `a' or `b' or `@'. Variables are
-    combined by function application which is written e.g. `(f a)' which is
-    the function `f' applied to the argument `a'. Application groups to the
-    left, so `(f a b c)' is equivalent to `(((f a) b) c)'. Functions are
-    created from lambda terms which are written in the form `\a(expr)' which
-    is the function taking argument `a' and having value `expr'. Lambda is
-    spelt `\' because ASCII isn't good enough. Lambda binds tightly, so
-    `\a\bcd' is equivalent to `((\a(\b(c))) d)'. Whitespace is ignored.
+The syntax of lambda expressions recognised by the program is as
+follows: The basic atoms are variables which are single characters other
+than backslash or parentheses, e.g. `a` or `b` or `@`. Variables are
+combined by function application which is written e.g. `(f a)` which is
+the function `f` applied to the argument `a`. Application groups to the
+left, so `(f a b c)` is equivalent to `(((f a) b) c)`. Functions are
+created from lambda terms which are written in the form `\a(expr)` which
+is the function taking argument `a` and having value `expr`. Lambda is
+spelt `\` because ASCII isn't good enough. Lambda binds tightly, so
+`\a\bcd` is equivalent to `((\a(\b(c))) d)`. Whitespace is ignored.
 
-    For example, the identity function, called `I', is written `\x(x)'. A
-    simple expression is `(I a)' which is equivalent to `(\x(x) a)', which
-    has the value `a'. Another function called `K' is defined as `\x\y(x)'
-    and it evaluates as follows:
+For example, the identity function, called `I`, is written `\x(x)`. A
+simple expression is `(I a)` which is equivalent to `(\x(x) a)`, which
+has the value `a`. Another function called `K` is defined as `\x\y(x)`
+and it evaluates as follows:
 
     	K p q
     ->	\x\y(x) p q
     ->	\y(p) q
     ->	p
 
-    Another function of interest is `S', defined as `\f\g\x((f x) (g x))'.
-    My program demonstrates the fact that any lambda expression can be
-    translated into an equivalent "combinator expression" which involves
-    only `S', `K', `I' (the combinators), and application, with no
-    variables or lambda abstractions. In fact, even `I' is unnecessary,
-    since it is equivalent to `S K K':
+Another function of interest is `S`, defined as `\f\g\x((f x) (g x))`.
+My program demonstrates the fact that any lambda expression can be
+translated into an equivalent "combinator expression" which involves
+only `S`, `K`, `I` (the combinators), and application, with no
+variables or lambda abstractions. In fact, even `I` is unnecessary,
+since it is equivalent to `S K K`:
 
     	I z
     ->	\a(a) z
@@ -125,41 +124,41 @@
     ->	\x\y(x) z (K z)
     ->	z
 
-    The algorithm for translating lambda expressions into combinator
-    expressions works as follows. There are three forms of lambda expression
-    to consider: variables, applications, and abstractions.
+The algorithm for translating lambda expressions into combinator
+expressions works as follows. There are three forms of lambda expression
+to consider: variables, applications, and abstractions.
 
-    	trans `v'	-> `v'				(variable)
-    	trans `a b'	-> (trans `a') (trans `b')	(application)
-    	trans `\ab'	-> abs a (trans `b')		(abstraction)
+trans `v`	-> `v`				(variable)
+trans `a b`	-> (trans `a`) (trans `b`)	(application)
+trans `\ab`	-> abs a (trans `b`)		(abstraction)
 
-    There are a further three cases to consider for the body of lambda
-    expressions, where we need to do the magic that transforms away the
-    variables.
+There are a further three cases to consider for the body of lambda
+expressions, where we need to do the magic that transforms away the
+variables.
 
-    	abs a `f x'	-> `S' (abs a `f') (abs a `x')
-    	abs a `b'	-> `K b'			(b != a)
-    	abs a `a'	-> `I'
+abs a `f x`	-> `S` (abs a `f`) (abs a `x`)
+abs a `b`	-> `K b`			(b != a)
+abs a `a`	-> `I`
 
-    E.g. suppose we had combinator expressions for `+' and `3' and we wanted
-    to see what the combinator expression for doubling 3 looked like:
+E.g. suppose we had combinator expressions for `+` and `3` and we wanted
+to see what the combinator expression for doubling 3 looked like:
 
-    	trans `\x(+ x x) 3'
-    ->	(trans `\x(+ x x)') (trans `3')
-    ->	(abs x (trans `+ x x')) `3'
-    ->	(abs x `+ x x') `3'
-    ->	`S' (abs x `+ x') (abs x `x') `3'
-    ->	`S' (`S' (abs x `+') (abs x `x')) `I' `3'
-    ->	`S' (`S' (`K +') `I') `I' `3'
-    ->	`S (S (K +) I) I 3'
+    trans `\x(+ x x) 3`
+->	(trans `\x(+ x x)`) (trans `3`)
+->	(abs x (trans `+ x x`)) `3`
+->	(abs x `+ x x`) `3`
+->	`S` (abs x `+ x`) (abs x `x`) `3`
+->	`S` (`S` (abs x `+`) (abs x `x`)) `I` `3`
+->	`S` (`S` (`K +`) `I`) `I` `3`
+->	`S (S (K +) I) I 3`
 
-    We can then check that this evaluates to the expected result:
+We can then check that this evaluates to the expected result:
 
-    	S (S (K +) I) I 3
-    ->	S (K +) I 3 (I 3)
-    ->	K + 3 (I 3) (I 3)
-    ->	+ (I 3) (I 3)
-    ->	+ 3 3
+    S (S (K +) I) I 3
+->	S (K +) I 3 (I 3)
+->	K + 3 (I 3) (I 3)
+->	+ (I 3) (I 3)
+->	+ 3 3
 
     It is possible to perform a slightly more compact translation with a
     couple of simple optimisations. For example, note that `K (a b)' is the
