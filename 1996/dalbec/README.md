@@ -51,7 +51,7 @@ We (the judges) recommend that you take the time needed to understand
 how this program works.  The source is small enough to make the effort
 reasonable, and complex enough to make it interesting.
 
-## Author's comments
+## Author's comments:
 
 This program assumes that your terminal wraps lines automatically.
 If this is not the case, you may need to change the space in the

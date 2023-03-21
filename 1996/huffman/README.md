@@ -17,6 +17,9 @@
 
 	echo 'Huffman Decoding' | ./huffman
 
+NOTE: this program uses `gets()` so you will likely get a warning when compiling
+and/or running on modern systems.
+
 ## Try: 
 
 	echo 'seeing or feeling is believing' | ./huffman
