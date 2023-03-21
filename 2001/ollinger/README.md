@@ -1,4 +1,4 @@
-Best primal ASCII graphics:
+# Best primal ASCII graphics:
 
     Nicolas Ollinger
     Ecole Normale Superieure de Lyon
@@ -9,101 +9,103 @@ Best primal ASCII graphics:
 
     http://www.ens-lyon.fr/~nollinge/
 
+# To build:
 
-Judges' Comments:
+```sh
+make
+```
 
-    To build:
+### To run:
 
-    	make ollinger
+```sh
+./ollinger integer
+```
 
-     Try:
+### Try:
 
-	In a large window, say 200 chars wide and 100 high (200x100)
-	with a tiny font, try:
+```sh
+./ollinger 1000 | cut -c -200
+```
 
-	    ./ollinger 1000 | cut -c -200
+Try the above command in a large window, say 200 chars wide and 100
+high (200x100) with a tiny font,
 
+## Judges' comments:
 
-     Do get lost in the programs line of thought!  :-)
+Do get lost in the programs line of thought!  :-)
 
+## Author's comments:
 
-Selected Author's Comments:
+### What's this?
 
-    What's this?
-    ------------
+What do you see? On the left, you will see an enumeration of all successive
+primes from 2 to the parameter you gave to the program. On the right part,
+you can see the sieve used to find these primes. The big diagonals from
+right to left are used to erase composed numbers. When no diagonal crosses
+a number, then the left cell take value 1 and the number is prime.
 
-    What do you see? On the left, you will see an enumeration of all successive
-    primes from 2 to the parameter you gave to the program. On the right part,
-    you can see the sieve used to find these primes. The big diagonals from
-    right to left are used to erase composed numbers. When no diagonal crosses
-    a number, then the left cell take value 1 and the number is prime.
+The parallel version of this algorithm works in real time n. This C
+sequential version is slower as it works in O(n*log n). But you have some
+nice picture instead... the cost is a constant number of operation for each
+character printed on the screen.
 
-    The parallel version of this algorithm works in real time n. This C
-    sequential version is slower as it works in O(n*log n). But you have some
-    nice picture instead... the cost is a constant number of operation for each
-    character printed on the screen.
+### Why do you wrote it?
 
+Let's just quote the FAQ :
 
-    Why do you wrote it?
-    --------------------
+Q: Are there types of entries that are submitted so frequently that the
+   judges get tired of them?
 
-    Let's just quote the FAQ :
+A: Yes, there are types of entries that show up over and over again.
+   The guidelines say:
 
-    Q: Are there types of entries that are submitted so frequently that the
-       judges get tired of them?
+	    We tend to dislike programs that:
+	    are similar to previous winners
 
-    A: Yes, there are types of entries that show up over and over again.
-       The guidelines say:
+      We like variety. However too often we see (please look at the winning
+      examples given to be aware of the level of the competition):
 
-                We tend to dislike programs that:
-                are similar to previous winners
+(snip)
 
-          We like variety. However too often we see (please look at the winning
-          examples given to be aware of the level of the competition):
+	    generating small primes (below is the list of all
+				     prime related winners)
+		  1985/august
+		  1988/applin
+		  1994/weisberg
+		  1995/makarios
+		  1996/dalbec
+		  2000/bellard
 
-    (snip)
+	    As you can see, just a list of primes (let alone small primes)
+	     does not cut it anymore.
 
-                generating small primes (below is the list of all
-                                         prime related winners)
-                      1985/august
-                      1988/applin
-                      1994/weisberg
-                      1995/makarios
-                      1996/dalbec
-                      2000/bellard
+(snip)
 
-                As you can see, just a list of primes (let alone small primes)
-                 does not cut it anymore.
+	    entries that use some complex state machine/table to print
+	    something
 
-    (snip)
+		  1988/isaak
+		  1988/phillipps
 
-                entries that use some complex state machine/table to print
-                something
+	    Unbeaten for 12 years and counting...
 
-                      1988/isaak
-                      1988/phillipps
+I think this is enough motivation for trying to submit a program which uses
+some complex state machine/table to generate small primes and print them.
 
-                Unbeaten for 12 years and counting...
+### The way it works
 
-    I think this is enough motivation for trying to submit a program which uses
-    some complex state machine/table to generate small primes and print them.
+This program simply prints the space-time diagram of some particular
+cellular automaton. The automaton is a 9-state automaton by Korec in 1998.
+It is an optimization of an old automaton for recognizing primes designed
+by Fischer in 1965.
 
+The table of the automaton is encoded into the string e and consists of
+345 transitions of the kind f(left,middle,right). This encoding into e
+is obfuscated to reduce its size, restrict it to characters 32 to 127 and
+guarantee a constant time.
 
-    The way it works
-    ----------------
+The main loop simply iterates this transition function on each cell.
 
-    This program simply prints the space-time diagram of some particular
-    cellular automaton. The automaton is a 9-state automaton by Korec in 1998.
-    It is an optimization of an old automaton for recognizing primes designed
-    by Fischer in 1965.
+"The rest is silence" (Hamlet, V.2)
 
-    The table of the automaton is encoded into the string e and consists of
-    345 transitions of the kind f(left,middle,right). This encoding into e
-    is obfuscated to reduce its size, restrict it to characters 32 to 127 and
-    guarantee a constant time.
-
-    The main loop simply iterates this transition function on each cell.
-
-    "The rest is silence" (Hamlet, V.2)
-
-    Enjoy!
+Enjoy!
