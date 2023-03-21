@@ -11,26 +11,47 @@
 
         make all
 
-### To run
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
+this entry as well as it displaying environmental variables if argc == 1.
+Although the scripts showed correct output these also segfaulted but with the
+fix they no longer do. Now if argc < 5 (argv[4] is referenced) it will not do
+anything and it will not segfault either (this was caused by the body of the
+for() loop which is now empty (it doesn't appear to be needed at all). Note that
+this does make some of the author's explanations / portability notes no longer
+valid but we have kept them there for the interested. The original is in
+[westley.alt.c](westley.alt.c). Thank you Cody for your assistance!
+
+
+## To run:
 
 	sh ./clock1
 
-## Judges' comments
+
+## Try:
+
+
+	    sh ./clock2
 
 Also try:
+	
+	
+	    sh ./clock2
 
-	sh ./clock2
 
 And for a good time, try:
 
-	sh ./clock3
+
+	    sh ./clock3
+
+## Judges' comments:
 
 Time and time again, Brian Westley seems to come up with a winner!
 We are amazed at how much is being done with only one relatively
 short line.  We think you will as well if you take the time to
 understand it.
 
-## Author's comments
+## Author's comments:
 
 This 1-line program allows various analog ASCII clocks
 to print out the time; the ASCII clock is built from

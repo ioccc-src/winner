@@ -167,8 +167,8 @@ OBJ= ${PROG}.o
 DATA= clock1 clock2 clock3
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= westley.alt.o
+ALT_TARGET= westley.alt
 
 
 #################

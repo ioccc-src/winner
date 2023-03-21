@@ -1,1 +1,1 @@
-main(h,m)char**m;{for(time(*m);h/=2;)m[4][m[h][h[(int*)localtime(*m)]]]=m[3][h];puts(m[4]);}
+main(h,m)int h;char**m;{if(h>4){for(time(*m);h/=2;);puts(m[4]);}}
