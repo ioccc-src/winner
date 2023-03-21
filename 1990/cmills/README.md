@@ -18,27 +18,37 @@ We used a patch from [Yusuke Endoh](/winners.html#Yusuke_Endoh) to get this to
 work in modern systems (it resulted in a bus error otherwise). Thank you Yusuke
 for your assistance!
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made the program safer
+by using `fgets()` instead of `gets()`. Thank you Cody for your help in making
+this safer! For the original code you can change the instances of:
+
+
+    !fgets(l,M,stdin)
+
+to:
+
+    !gets(l)
+
 
 ### Try:
 
     ./cmills 5000
 
 
-NOTE: this program uses `gets()` so you will likely get a warning under modern
-systems.
+## Judges' comments:
 
-## Judges' comments
 
-    Compile notes:
-
-       cc -DM=500 -DN=52 -DX="srand((int)time(0L))" -DV=void -o cmills cmills.c
+The Makefile uses several `-D` defines. The following is is a list of the macros
+that may be changed:
 
 	-DM=<max bet allowed>
 	-DN=<52 * number of decks used>
 	-DX=<how to seed the rand() generator>
-	-DV=<void ot int>
 
-## Author's comments
+The macro `V` should remain `void`.
+
+
+## Author's comments:
 
 This is a blackjack program.  It does splits, doubling down,
 insurance, etc.  
