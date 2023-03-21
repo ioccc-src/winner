@@ -164,8 +164,8 @@ ENTRY= westley
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA= clock1 clock2 clock3
-TARGET= ${PROG}
+DATA=
+TARGET= ${PROG} clock1 clock2 clock3
 #
 ALT_OBJ= westley.alt.o
 ALT_TARGET= westley.alt
