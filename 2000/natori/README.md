@@ -12,6 +12,12 @@ Japan
 make
 ```
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this so that it
+works with modern compilers. Depending on the compiler it would either segfault
+when run or not compile at all (gcc and clang respectively). Thank you Cody for
+your assistance!
+
+
 ### To run:
 
 ```sh
