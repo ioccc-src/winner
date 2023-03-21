@@ -6,7 +6,8 @@ Best position-independent code:
     St. Paul, MN  55105
     USA
 
-    http://www.firesigntheatre.com
+    http://www.westley.org
+
 
 ## To build:
 
@@ -19,10 +20,10 @@ Best position-independent code:
 ### Try:
 
     	./westley < westley.c > westley2.c
-	cc westley2.c -ansi -o westley2
+	make westley2
 	echo 'Bozos, please deflate shoes before entering the bus!'| ./westley2
 	sort -b < westley2.c > westley3.c
-	cc westley3.c -ansi -o westley3
+	make westley3
 	./westley3 < westley.c | diff - westley.c
 	./westley3 < westley.c | diff - westley2.c
 	./westley3 < westley.c | diff - westley3.c

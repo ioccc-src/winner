@@ -63,7 +63,7 @@ X11_INCDIR= /opt/X11/include
 # Common C compiler warnings to silence
 #
 #CSILENCE=
-CSILENCE= -Wno-trigraphs
+CSILENCE= -Wno-trigraphs -Wno-implicit-function-declaration -Wno-pedantic
 
 # Common C compiler warning flags
 #
@@ -169,6 +169,10 @@ TARGET= ${PROG}
 ALT_OBJ= ${PROG}.alt.o
 ALT_TARGET= ${PROG}.alt
 
+# FORCE use of -trigraphs
+#
+CFLAGS+= -trigraphs
+
 
 #################
 # build the entry
@@ -185,6 +189,12 @@ ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 ${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
+westley2: westley2.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
+westley3: westley3.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
