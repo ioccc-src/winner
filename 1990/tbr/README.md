@@ -19,22 +19,24 @@
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work with
 modern computers; `exit(3)` returns void but the function was used in a binary
-expression so this would not even compile. Thank you Cody for your assistance!
+expression so this wouldn't even compile. Cody also changed the code to use
+`fgets()` instead of `gets()` so one would not get a warning about the use of
+`gets()` at execution which was interspersed with the output. Thank you Cody for
+your assistance!
 
+For the original version with `gets()` see the alternative code section below.
 
 ## Alternative code:
 
-Cody also made a version that uses `fgets()` instead of `gets()` so one would
-not get a warning that was interspersed with the output of the initial prompt
-when running the program, to make it both safer and to have a better look. Thank
-you Cody!
-
-To build try:
+If you wish to see the original source (fixed so it can compile) that uses
+`gets()` instead of `fgets()` you can look at [tbr.alt.c](tbr.alt.c). To compile
+it:
 
 	make alt
 
-NOTE: it will segfault if you send EOF; to quit send an interrupt like ctrl-c.
-Cody will look at this later.
+Use `./tbr.alt` instead of `./tbr` for this version. You'll likely get a warning
+about the usage of `gets()`.
+
 
 ## To run:
 
@@ -53,7 +55,8 @@ NOTE: globs do not work with this entry. Why?
 	vi tbr.c
 	# then figure out how to exit vi :-)
 
-What happens if you try using `cd -` to return to previous directory?
+What happens if you try using `cd -` to return to previous directory? What about
+`cd` with no args?
 
 ## Judges' comments:
 
