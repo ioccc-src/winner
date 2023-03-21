@@ -12,11 +12,11 @@
 
         make all
 
-### To run
+## To run:
 
 	./pjr
 
-## Judges' comments
+## Judges' comments:
 
 This program prints out a string.  Can you figure out how
 it is done?

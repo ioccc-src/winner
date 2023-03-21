@@ -32,13 +32,13 @@ Give the following lines as input:
 NOTE: this is case sensitive.
 
 
-## Judges' comments
+## Judges' comments:
 
 
 Be sure not to run out of fuel!
 
 
-## Author's comments
+## Author's comments:
 
 This is the DDS-BASIC Interpreter (Version 1.00). 
 

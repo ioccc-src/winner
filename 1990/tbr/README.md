@@ -45,6 +45,9 @@ about the usage of `gets()`.
 
 NOTE: globs do not work with this entry. Why?
 
+NOTE: `exit` does not work and neither does `logout`. To exit try sending ctrl-d
+or ctrl-c (or kill it from another terminal :-) ).
+
 ## Try:
 
 	./tbr

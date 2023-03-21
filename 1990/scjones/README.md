@@ -11,7 +11,7 @@
         make all
 
 
-Modern compilers might fail to compile this entry:
+Modern compilers failed to compile this entry:
 
 	    scjones.c:1:7: error: expected ';' after top level declarator
 	    char*a??(??)=??<
@@ -22,6 +22,8 @@ Modern compilers might fail to compile this entry:
 but we were able to get it to compile with modern compilers by specifying the
 `-ansi` flag with a tip from [Yusuke Endoh](/winners.html#Yusuke_Endoh). Thank
 you Yusuke! 
+
+We note that the compiler option `-trigraphs` would also have worked.
 
 
 ### To run:
