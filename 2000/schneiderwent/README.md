@@ -53,21 +53,25 @@ deficiency.
 
 Obfuscation in this entry consists of:
 
-  > printfing console messages stored as EBCDIC character values - this
-    is not an attempt at encryption, but rather at cross platform
-    compatibility
-  > ASCII character values are calculated from the EBCDIC in a
-    particularly ugly abuse of the '?' operator
-  > detection of whether to print the ASCII or EBCDIC values is done by
-    taking the remainder of dividing the character 'J' by 2 - the ASCII
-    value of the character is even, the EBCDIC value is odd
-  > the messages to be printfed are determined via multiple table
-    lookups and bitmasked values
-  > for minutes, the bit position turned on is multiplied by two
-    to determine the message to be printfed
-  > for hours, the straight bit position is used
-  > this entry mostly eschews function calls for the often overlooked
-    setjmp/longjmp combination
-  > the trigraphs are not there as obfuscation nor are they there to
-    annoy the judges - it's just the easiest way to get around the
-    absence of square brackets in a normal 3270 environment
+* printfing console messages stored as EBCDIC character values - this is not an
+attempt at encryption, but rather at cross platform compatibility
+* ASCII character values are calculated from the EBCDIC in a particularly ugly
+abuse of the '?' operator
+* detection of whether to print the ASCII or EBCDIC values is done by taking the
+remainder of dividing the character 'J' by 2 - the ASCII value of the character
+is even, the EBCDIC value is odd
+
+* the messages to be printfed are determined via multiple table lookups and
+bitmasked values
+
+* for minutes, the bit position turned on is multiplied by two to determine the
+message to be printfed
+
+* for hours, the straight bit position is used
+
+* this entry mostly eschews function calls for the often overlooked
+setjmp/longjmp combination
+
+* the trigraphs are not there as obfuscation nor are they there to annoy the
+judges - it's just the easiest way to get around the absence of square brackets
+in a normal 3270 environment
