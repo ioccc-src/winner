@@ -17,7 +17,7 @@ make
 ### To run:
 
 ```sh
-././westley
+./westley
 ```
 
 ### Try:

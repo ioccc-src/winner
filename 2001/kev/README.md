@@ -17,7 +17,7 @@ make
 ### To run:
 
 ```sh
-./kev
+./kev hostname
 ```
 
 ### Try:
