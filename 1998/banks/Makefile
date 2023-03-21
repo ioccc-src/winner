@@ -128,7 +128,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 #
 #LIBS=
 #LIBS= -lm
-LIBS= -L ${X11_LIBDIR} -lX11
+LIBS= -L ${X11_LIBDIR} -lX11 -lm
 #LIBS= -L ${HOMEBREW_PREFIX}/lib -lSDL
 
 # C compiler to use
