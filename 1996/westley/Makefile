@@ -64,7 +64,7 @@ X11_INCDIR= /opt/X11/include
 #
 #CSILENCE=
 CSILENCE= -Wno-char-subscripts -Wno-error -Wno-implicit-function-declaration \
-	-Wno-int-to-pointer-cast
+	-Wno-int-to-pointer-cast -Wno-empty-body
 
 # Common C compiler warning flags
 #

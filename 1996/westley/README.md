@@ -19,8 +19,7 @@ fix they no longer do. Now if argc < 5 (argv[4] is referenced) it will not do
 anything and it will not segfault either (this was caused by the body of the
 for() loop which is now empty (it doesn't appear to be needed at all). Note that
 this does make some of the author's explanations / portability notes no longer
-valid but we have kept them there for the interested. The original is in
-[westley.alt.c](westley.alt.c). Thank you Cody for your assistance!
+valid but we have kept them there for the interested.  Thank you Cody for your assistance!
 
 
 ## To run:
@@ -31,18 +30,30 @@ valid but we have kept them there for the interested. The original is in
 ## Try:
 
 
-	    sh ./clock2
+	sh ./clock2
 
 Also try:
-	
-	
-	    sh ./clock2
+
+
+	sh ./clock2
 
 
 And for a good time, try:
 
 
-	    sh ./clock3
+	sh ./clock3
+
+### Alternate code:
+
+An alternate version of this entry, `westley.alt.c`, is provided.
+The original is in [westley.alt.c](westley.alt.c) does not contain
+the above mentioned fixes.
+
+To compile this alternate version:
+
+```sh
+make alt
+```
 
 ## Judges' comments:
 
