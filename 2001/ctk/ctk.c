@@ -10,7 +10,7 @@ char x[]="((((((((((((((((((((((",w[]=
 "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b";char r[]={92,124,47},l[]={2,3,1
 ,0};char*T[]={"  |","  |","%\\|/%"," %%%",""};char d=1,p=40,o=40,k=0,*a,y,z,g=
 -1,G,X,**P=&T[4],f=0;unsigned int s=0;void u(int i){int n;printf(
-"\233;%uH\233L%c\233;%uH%c\233;%uH%s\23322;%uH@\23323;%uH \n",*x-*w,r[d],*x+*w
+"\x1b[H\x1b[L\x1b[;%uH%c\x1b[;%uH%c\x1b[;%uH%s\x1b[22;%uH@\x1b[23;%uH \n",*x-*w,r[d],*x+*w
 ,r[d],X,*P,p+=k,o);if(abs(p-x[21])>=w[21])exit(0);if(g!=G){struct itimerval t=
 {0,0,0,0};g+=((g<G)<<1)-1;t.it_interval.tv_usec=t.it_value.tv_usec=72000/((g>>
 3)+1);setitimer(0,&t,0);f&&printf("\e[10;%u]",g+24);}f&&putchar(7);s+=(9-w[21]
