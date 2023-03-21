@@ -1,11 +1,11 @@
 # Most Specific Output:
 
-Fabrice Bellard
-451 chemin du mas de Matour
-34790 Grabels
-France
+    Fabrice Bellard
+    451 chemin du mas de Matour
+    34790 Grabels
+    France
 
-http://www.enst.fr/~bellard
+    http://www.enst.fr/~bellard
 
 ## To build:
 
@@ -16,7 +16,7 @@ make
 ### To run:
 
 ```sh
-./prog
+./bellard
 ```
 
 ### Try:

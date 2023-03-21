@@ -50,7 +50,7 @@ study it, but the layout itself is where most of the interest lies.
 
 ## Author's comments:
 
-This one is dedicated to Saitou Hajime fans ^_^x
+This one is dedicated to Saitou Hajime fans `^_^x`
 
 Instead of making one self reproducing program, what I made was a
 program that generates a set of mutually reproducing programs, all of
