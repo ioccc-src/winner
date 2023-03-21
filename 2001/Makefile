@@ -4,16 +4,6 @@
 
 ################################################################################
 #
-# An Historical Makefile NOTE:
-#
-# The orig.Makefile, if it exits, is the original Makefile before this IOCCC
-# year directory was reworked so that entries are in separate directories.
-# This also applies to any orig.ansi.mk and orig.common.mk files.
-#
-# Several Makefiles were modified / formed in 2022, and as such it may have
-# elements that are not historically compatible with way entries were built.
-# The orig.Makefile, if it exits, is a copy of the pre-modified Makefile.
-#
 # Regarding individual entries:
 #
 # IOCCC winning entry code may not work on your system.  Even with standards,
@@ -46,12 +36,17 @@
 # See: http://creativecommons.org/licenses/by-sa/3.0/
 
 
-################
-# tool locations
-################
+#############################
+# shell used by this Makefile
+#############################
 #
-SHELL= /bin/bash
-MAKE= make
+SHELL= bash
+
+#######################
+# common tool locations
+#######################
+#
+include ../var.mk
 
 
 ###############
