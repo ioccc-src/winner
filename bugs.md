@@ -20,6 +20,7 @@ you have one if you like).
 
 ## Known bugs that are OK to fix
 
+
 ### [1995/cdua](1995/cdua/cdua.c) ([README.md](1995/cdua/README.md))
 
 This did not compile under macOS and after it did it crashed.
@@ -102,6 +103,47 @@ Vax-11 or pdp-11. In 1984 machine dependent code was allowed.
 
 This entry is known to segfault after printing its output. It was documented by
 the judges and needn't be fixed.
+
+### [1990/jaw](1990/jaw/jaw.c) ([README.md](1990/jaw/README.md))
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the scripts to
+work in modern systems. He notes however that the command in the try section,
+the one to test the official C entry, appear to not work with macOS, giving:
+
+
+	$ echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
+	oops: Undefined error: 0
+	oops: Undefined error: 0
+
+
+However this is because the entry uses `perror()` and it just so happens that
+the default `errno` gives that result. For instance if you run the following C
+program under macOS you will get undefined error but if you do it under linux
+you'll likely get success.
+
+
+```c
+#include <stdio.h>
+#include <errno.h>
+#include <string.h>
+int main()
+{
+    errno = 0;
+    printf("%d, %s\n", errno, strerror(errno));
+}
+```
+
+In fact the condition which is in the `a()` function on line 18 of the entry
+namely:
+
+	I k>16)
+
+is true on both linux and macOS, with `k` being equal to 22.
+
+Should the entry use `perror()`? Perhaps not but we're not sure of its purpose
+so it can stay for now with this note.
+
+
 
 ### [1996/westley](1996/westley/westley.c) ([README.md](1996/westley/README.md))
 
