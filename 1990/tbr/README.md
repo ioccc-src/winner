@@ -18,14 +18,32 @@
         make all
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work with
-modern computers; `exit(3)` returns void but the function was used in a binary
-expression so this would not even compile. Thank you Cody for your assistance!
+modern compilers; `exit(3)` returns void but the function was used in a binary
+expression so this wouldn't even compile. Cody also changed the code to use
+`fgets()` instead of `gets()` so one would not get a warning about the use of
+`gets()` at execution which was interspersed with the output. Thank you Cody for
+your assistance!
+
+For the original version with `gets()` see the alternative code section below.
+
+## Alternative code:
+
+If you wish to see the original source (fixed so it can compile) that uses
+`gets()` instead of `fgets()` you can look at [tbr.alt.c](tbr.alt.c). To compile
+it:
+
+	make alt
+
+Use `./tbr.alt` instead of `./tbr` for this version. You'll likely get a warning
+about the usage of `gets()`.
 
 
 ## To run:
 
 	./tbr
 	# enter some shell commands
+
+NOTE: globs do not work with this entry. Why?
 
 ## Try:
 
@@ -37,6 +55,8 @@ expression so this would not even compile. Thank you Cody for your assistance!
 	vi tbr.c
 	# then figure out how to exit vi :-)
 
+What happens if you try using `cd -` to return to previous directory? What about
+`cd` with no args?
 
 ## Judges' comments:
 
@@ -64,7 +84,7 @@ of the program which we include below:
 
 
 
-## Author's comments
+## Author's comments:
 
 Rot13:
 
