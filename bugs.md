@@ -208,4 +208,100 @@ actually gcc if it looks like it's gcc (two different binaries).
 
 ## Entries that can compile but crash (sometimes or always)
 
-.. entries to be added later ..
+### [2004/gavin](2004/gavin/gavin.c) ([README.md](2004/gavin//README.md))
+
+Segmentation fault occurs when running `gavin` to produce the kernel:
+
+```sh
+./gavin > kernel
+```
+
+When trying to link `gavin.o` to produce `sh`, the linker generates:
+
+```
+Undefined symbols for architecture arm64:
+  "start", referenced from:
+     -u command line option
+     (maybe you meant: __start)
+ld: symbol(s) not found for architecture arm64
+```
+
+#### Recent for 2004/gavin mods:
+
+In case recent modification are part of the problem, here is a full disclosure
+of what was changed:
+
+To compile on modern C compilers, the following patch was applied to `gavin.c`:
+
+```patch
+diff --git a/2004/gavin/gavin.c b/2004/gavin/gavin.c
+index c967b7e..2082b49 100644
+--- a/2004/gavin/gavin.c
++++ b/2004/gavin/gavin.c
+@@ -1,8 +1,9 @@
++int main(int t, char **q, char **d) { return cain(t, (int)q, (int)d); }
+ #define G(n) int n(int t, int q, int d)
+ #define X(p,t,s) (p>=t&&p<(t+s)&&(p-(t)&1023)<(s&1023))
+ #define U(m) *((signed char *)(m))
+ #define F if(!--q){
+-#define I(s) (int)main-(int)s
++#define I(s) (int)cain-(int)s
+ #define P(s,c,k) for(h=0; h>>14==0; h+=129)Y(16*c+h/1024+Y(V+36))&128>>(h&7)?U(s+(h&15367))=k:k
+
+ G (B)
+@@ -52,7 +53,7 @@ else
+
+ G (_);
+ G (o);
+-G (main)
++G (cain)
+ {
+   Z, k = K;
+   if (!t)
+``
+
+The original Makefile from 2004 had the following to say about this entry:
+
+```make
+# Special flags for the gavin entry
+#
+# FYI: Older versions of GCC have a bug in -O2 optimization, hence -O1
+#
+GAVIN_OPT= -O1
+GAVIN_FLAGS=\
+        '-DY(m)=*((int*)(m))'\
+        '-DE(f,a,b,c)=((G((*)))(f))(a,b,c)'\
+        '-DM=for(D=0;D<786432;D++)'\
+        '-DZ=int i=0,j=0,h,n,p=393728,s=26739,C,D'\
+        '-DV=0x90200'\
+        '-DK=0'\
+        '-DR=while((C=E(V-8,100,0,0))&3&&(D=E(V-8,96,0,0))|3){'\
+        '-DL(c,d)=E(V+8,100,c,0);R}E(V+8,96,d,0);R}'
+
+# ...
+
+# Best of Show
+#
+gavin: gavin.c
+        ${CC} ${GAVIN_OPT} -o gavin ${GAVIN_FLAGS} gavin.c
+        ${RM} -f kernel
+        ./gavin > kernel
+        ${CC} ${GAVIN_OPT} -c ${GAVIN_FLAGS} -DB=_start '-Dputchar(a)=' gavin.c
+        ${RM} -f sh
+        ${LD} -s -o sh gavin.o
+        ${RM} -f vi
+        ${CP} sh vi
+        ${RM} -f fs.tar
+        ${TAR} -cvf fs.tar sh vi gavin.c gavin.hint prim
+
+gavin_clean:
+        ${RM} -f sh vi kernel gavin.o
+
+gavin_clobber: gavin_clean
+        ${RM} -f gavin fs.tar
+
+gavin_files: boot.b lilo.conf prim gavin_install.txt
+```
+
+The current ([Makefile](2004/gavin/Makefile) was modified to try and
+fit into the current IOCCC build environment.
