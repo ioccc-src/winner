@@ -4,28 +4,36 @@
         Toulouse, France
         francois.boutines@gmail.com
 
-## Judges' Comments
+# To build:
 
-## To build:
+```sh
+make
+```
 
-        make all
-
-### To run
+### To run:
 
 You will need an [SVG] viewer. Look here to find some [SVG Viewer Implementations].
 
    [SVG]: http://www.w3.org/Graphics/SVG/
    [SVG Viewer Implementations]: http://wiki.svg.org/Viewer_Implementations
 
-The following will create an SVG file,
+The following will create an SVG file:
 
-        perl -e 'map{print rand," ",rand,"n";}(1..20);' | ./boutines > test.svg
+```sh
+perl -e 'map{print rand," ",rand,"n";}(1..20);' | ./boutines > test.svg
+```
 
-## Judges' comments
+### Try:
+
+```sh
+perl -e 'map{print rand," ",rand,"n";}(1..20);' | ./boutines > test.svg
+```
+
+## Judges' comments:
 
 Can you explain the author's remark "[generated files] are not as scalable as their name suggests"?
 
-## Author's Comments
+## Author's comments:
 
 _In memory of my father Pierre Boutines-Vignard._
 
@@ -120,13 +128,13 @@ design it as a function of the underlying cell's area (which can be averaged
 for free) or at least a command line parameter. Same with the char set, the
 viewport and potentially every SVG property.
 
-## See Also
+### See Also
 
    [Voronoi at Wikipedia](http://en.wikipedia.org/wiki/Voronoi_diagram),
    [An Excerpt from The Algorithm Design Manual](http://www2.toki.or.id/book/AlgDesignManual/BOOK/BOOK4/NODE187.HTM),
    [Voronoi and Art](http://www.snibbe.com/scott/bf)
 
-## Example Output
+### Example Output
 
 > ![Voronoi diagram of two regular pentagon vertices](Voronoi.png)
 
