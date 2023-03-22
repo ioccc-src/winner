@@ -1,3 +1,4 @@
+    typedef char ** C;
 #define    F getchar())
  #define H(z)*n++=z;
        #include        <setjmp.h>
@@ -24,8 +25,9 @@ typedef int G; char J [ 78 ], O [ ]
 "$#(ABT|ba`gg`ab8>GK[_`fFDZXEYR"         "L\t####"
 "##B#A#@#G#F#E#D#K\t\3Zlv#tjm"         "\3J#tjm\3Pwb"
 "ofnbwf\3Joofdbo\3)&`&`.&`&`"         "#+&g*\t"; G y,
-c,h,e,S,*s,l[149]; jmp_buf z         ; G main(G L,G f,
-G N,G k){ G u=99,p,q,r,j,i,x         ,t,a,b=S,d,M=-1e9
+c,h,e,S,*s,l[149]; jmp_buf z         ; G main(G L,C fa,
+C Na,C ka){ G			   f=fa; G N=Na; G k=ka;
+G u=99,p,q,r,j,i,x                    ,t,a,b=S,d,M=-1e9
 ; char *n; if( *l){ e=~e; Z       u >21){ q= l[--u]^e;
 _!-- q){ _!l[p=e?u-10:u+10]){   I(p,)_ e?u>80   & !l[p
 -=10]:u<39&!l[p+=10])I(p,)} _ l[p=e?u-11:9+u]   )I(p,)

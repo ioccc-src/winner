@@ -1,39 +1,52 @@
 # Best game
 
-Oscar Toledo G.
-Familia Toledo
-Av. Santa Cruz del Monte 9-304
-Ciudad Satelite Edo de Mexico
-CP 53110
-Mexico
-uno@biyubi.com
+    Oscar Toledo G.
+    Familia Toledo
+    Av. Santa Cruz del Monte 9-304
+    Ciudad Satelite Edo de Mexico
+    CP 53110
+    Mexico
+    uno@biyubi.com
 
-## Judges' comments
+# To build:
+
+```sh
+make
+```
+
+### To run:
+
+```sh
+./toledo [a ...]
+```
+
+### Try:
+
+```sh
+./toledo a
+./toledo a b
+```
+
+## Alternate code:
+
+An alternate version of this entry, `toledo2.c` and `toledo3.c` is provided.
+
+To compile these alternate versions:
+
+```sh
+make alt
+```
+
+Use `toledo2` or `toledo3` as you would `toledo` above.
+
+## Judges' comments:
 
 Challenge yourself with your ability to look 5, 6 or more moves ahead.
 Challenge your knowledge of C operator precedence.  The following the
 move analysis via recursion while it executes moves.  All while playing
 by the rules of C and Chess within a single function!
 
-## Improved version
-
-Better mate searching
-
-### To build
-
-        cc toledo.c -o toledo
-
-### To run
-
-For two human players
-
-        toledo
-
-To play against the program
-
-        toledo a
-
-## Author's comments
+## Author's comments:
 
 ### What does this program
 
@@ -41,16 +54,22 @@ This is a chess program, it can work in two modes: two-players, and one player
 (always white) against the machine. To get the first mode, run the program
 without arguments:
 
-        prog
+```sh
+./toledo
+```
 
 The other mode is accesible running the program with one argument (5-ply
 analysis):
 
-        prog a
+```sh
+./toledo a
+```
 
 Two arguments for 6-ply analysis:
 
-        prog a b
+```sh
+./toledo a b
+```
 
 And each succesive argument will analyze one ply more. There is no ply limit,
 but beyond 7 ply is very slow, try it at your own risk and computing time.
