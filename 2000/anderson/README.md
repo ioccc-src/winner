@@ -12,8 +12,9 @@ Indonesia
 make
 ```
 
-NOTE: this entry uses `gets()` so you will likely get a warning when compiling
-and/or executing this program.
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) changed this entry to
+use `fgets()` instead of `gets()` to make it safer. Thank you Cody!
+
 
 ### To run:
 
