@@ -2,6 +2,8 @@
 
 #include <stdio.h>
 #include <sys/stat.h>
+#include <stdlib.h>
+#include <strings.h>
 
 #define l int*
 #define F char

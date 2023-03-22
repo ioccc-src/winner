@@ -10,7 +10,7 @@ int main() {
   while(bottles) {
     sing(bottles);
     sing(bottles);
-    printf("And if one green bottle should accidently fall,\nThere'd be ");
+    printf("And if one green bottle should accidentally fall,\nThere'd be ");
     sing(--bottles);
     printf("\n");
   }

@@ -33,6 +33,46 @@ related to making it work under macOS as all that did was removing some invalid
 prototypes and use `printf()` instead of the invalid pointer to it (incompatible
 type).
 
+### [2001/anonymous](2001/anonymous/anonymous.c) ([README.md](2001/anonymous/README.md))
+
+This entry seems to no longer work and we would appreciate any help from anyone
+who can fix this. [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) has
+the following hints that might help but he has no system where he could test
+it. [Yusuke Endoh](/winners.html#Yusuke_Endoh) [wrote a little bit about
+it](https://mame-github-io.translate.goog/ioccc-ja-spoilers/2001/anonymous.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp) that
+might or might not help but he too could not get it to work.
+
+Tips from Cody:
+
+- Try a beautifier on the original C code.
+- Use cpp to make the functions easier to parse. For instance if you're in the
+directory try `cpp -E anonymous.cp > anonymous.cpp` and look at that file to see
+the functions. It might or might not be helpful to use cpp on the beautified
+source.
+- After beautifying it try changing references of the macros (where not too
+complicated) to their definitions. For instance in vim you might do:
+`:%s/\<l\>/int */g` and then delete the line that was changed to `#define int *
+int*` (or else do a range substitute so it's not changed). You might not need
+this if you use the cpp. This might be useful anyway to more easily test things.
+- If your system has a `setarch` tool that might or might not be of help (I'm
+not too familiar with its internals).
+- The code appears to do everything from one call to `exit(3)` but it makes use
+of the ternary operator and possibly the comma operator.
+- Check the Makefile for the defines but also observe that those are in the
+source file. It appears that the entry might try compiling as well but that's
+from a quick glance.
+- The original main() started like: `main (char *ck, char **k)` but we made it
+compilable for clang by changing it to be: `main (int cka, char **k) { char *ck
+= (char *)cka;` which might or might not be good.
+- The author warns that only simple source (once compiled) would work so make
+use of the provided source file
+[2001/anonymous/anonymous.ten.c](2001/anonymous/anonymous.ten.c). To compile try
+`make anonymous.ten` from the entry directory which you can then run the entry
+on. Note that it needs to be compiled as a x86 program.
+- The program will to an extent destroy files it is used on. See the author's
+warning in their comments on that.
+
+
 ### [2004/burley](2004/burley/burley.c) ([README.md](2004/burley/README.md))
 
 This entry did not compile with clang but [Cody Boone
@@ -52,11 +92,12 @@ experience with `longjmp`). In particular:
 > The longjmp() routines may not be called after the routine which called the
 > setjmp() routines returns.
 3. The main() originally returned a call to main() which appeared to be an
-infinite recursion at least as it was; now it returns a call to poke() which has the same number
-and type of args (1, `char *`) that main() had. This appears to not be an
-infinite recursion but I might be reading it wrong. Perhaps that is the problem?
-4. As well main() had only one arg, a `char *`, and there were (seemingly)
-needless casts to `char *` from gets().
+infinite recursion at least as it was; now it returns a call to poke() which has
+the same number and type of args (1, `char *`) that main() had. This appears to
+not be an infinite recursion but I might be reading it wrong. Changing it to not
+return itself and the same problem occurs so perhaps this is not the problem.
+4. As well main() had only one arg, a `char *`, and there was a (seemingly)
+needless cast to `char *` from gets(). This cast remains in the code however.
 5. The code no longer uses `gets()` but `fgets()`; this is not the problem
 however.
 
