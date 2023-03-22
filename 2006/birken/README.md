@@ -1,19 +1,35 @@
 # EDAMAME Award
-# (Electronic Design Automation - Mechanical Abstract Machine Emulator)
 
-Michael Birken
-US
-o__1 at hotmail dot com
+## (Electronic Design Automation - Mechanical Abstract Machine Emulator)
+
+    Michael Birken
+    US
+    o__1 at hotmail dot com
+
+# To build:
+
+```sh
+make
+```
+
+### To run:
+
+```sh
+./birken < file.tofu
+```
+
+### Try:
+
+```sh
+./birken < counter.tofu
+./birken < adder.tofu
+./birken < buffer.tofu
+./birken < computer.tofu
+```
+
+etc.
 
 ## Judges' comments:
-
-### To build
-
-        make birken
-
-Try:
-
-        ./birken < counter.tofu
 
 What is TUFO?  It's not a veggy friendly food, nor it is Verilog or
 VHDL.  It is not even Pascal!
