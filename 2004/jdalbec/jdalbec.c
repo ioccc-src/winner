@@ -1,10 +1,5 @@
 #define Nd Np define
-#define Ni(N) Np include <std##N##.h>
 #define Np ??=
-
-Ni(def)
-Ni(io)
-Ni(lib)
 
 Nd Ba BC(B, I)
 Nd Be BC(Br, I)
