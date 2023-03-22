@@ -1,6 +1,6 @@
 /*
  * Sun's Java is often touted as being "portable", even though my code won't
- * suddenly become ueber-portable if it's in Java. Truth is, Java's one of
+ * suddenly become über-portable if it's in Java. Truth is, Java's one of
  * the most ugly, slow, and straitjacketed languages ever. It's popular
  * mainly because people hear the word "portable" and go "ewww".
  *
