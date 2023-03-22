@@ -23,19 +23,19 @@ make
 ### Try:
 
 ```sh
-cc dhyang.c -o saitou
+make saitou
 ./saitou > aku.c
 cat aku.c
 
-cc aku.c -o soku
+make soku
 ./soku > soku.c
 cat soku.c
 
-cc soku.c -o zan
+make zan
 ./zan > zan.c
 cat zan.c
 
-cc zan.c -o aku
+make aku
 ./aku | diff - aku.c
 ```
 
