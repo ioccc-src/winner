@@ -29,7 +29,7 @@ echo "Do or do not. There is no try."
 
 You are in a maze of twisty little passages, all alike.
 
-The really amazing part of this is tha it's a text adventure, and there's
+The really amazing part of this is that it's a text adventure, and there's
 not a single word in the source that isn't a C keyword or function name,
 being used as such.
 
@@ -41,7 +41,7 @@ Of particular interest:  Go ahead, run it through the preprocessor.  You
 
 ## Author's comments:
 
-TED shroyer came up with the idea that made it possible to hide all
+TED Shroyer came up with the idea that made it possible to hide all
 the text.  Thanks, TED.  You won.  :)
 
 
