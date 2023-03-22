@@ -195,16 +195,16 @@ the output file of the cpp pre-processor. The time taken  to pre process
 the program  were measured  using gnu cpp on my 2.0MHz P4 with 512Mb ram
 and a lot of disk.
 
-	Generated   Recursive  Max nest  Intermediate
-Level   prime nrs   includes   count     file size          Time
+	    Generated   Recursive  Max nest  Intermediate
+    Level   prime nrs   includes   count     file size          Time
 
-  _3     < 8           2 322       9         74 748            4"
-  _4     < 16          4 672       9        182 652            9"
-  _5     < 32         14 237       9        629 121           32"
-  _6     < 64         43 748       9      1 998 134         1'41"
-  _7     < 128       149 851      11      6 823 575         5'50"
-  _8     < 256       526 874      17     24 028 933        20'37"
-  _9     < 512     1 920 272      38     65 527 808(*)  1h 42'19"(*)
- _10     < 1024    6 826 389     114     63 782 912(*)  2h 47'58"(*)
+      _3     < 8           2 322       9         74 748            4"
+      _4     < 16          4 672       9        182 652            9"
+      _5     < 32         14 237       9        629 121           32"
+      _6     < 64         43 748       9      1 998 134         1'41"
+      _7     < 128       149 851      11      6 823 575         5'50"
+      _8     < 256       526 874      17     24 028 933        20'37"
+      _9     < 512     1 920 272      38     65 527 808(*)  1h 42'19"(*)
+     _10     < 1024    6 826 389     114     63 782 912(*)  2h 47'58"(*)
 
 	 (*) Before cpp crashed.

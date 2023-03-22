@@ -1,15 +1,3 @@
-vik2: vik2.c
-	@${RM} -f vik2_1.c
-	${CC} -E '-DSTOP=_5' '-DFNAME="vik2_1.c"' vik2.c > vik2_1.c
-	@${RM} -f vik2_2.c
-	${CC} -E vik2_1.c > vik2_2.c
-	${CC} -O vik2_2.c -o vik2
-
-vik2_clean:
-	${RM} -f vik2_1.c vik2_2.c vik2.o
-
-vik2_clobber: vik2_clean
-	${RM} -f vik2
 #!/usr/bin/env make
 #
 # IOCCC 2004 winning entry - vik2
@@ -225,6 +213,11 @@ clean:
 	    echo ${RM} -f indent.c; \
 	    ${RM} -f indent.c; \
 	fi
+vik2_clean:
+	${RM} -f vik2_1.c vik2_2.c vik2.o
+
+vik2_clobber: vik2_clean
+	${RM} -f vik2
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
