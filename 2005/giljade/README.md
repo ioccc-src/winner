@@ -6,7 +6,32 @@
         Israel
         gil_jade@netvision.net.il
 
-## Judges' comments
+# To build:
+
+```sh
+make
+```
+
+### To run:
+
+```sh
+./giljade
+```
+
+### Try:
+
+```sh
+giljade > out
+```
+Open an xterm with 78 lines.
+
+```sh
+vi out
+```
+
+Press ^F (control F) repeatedly.
+
+## Judges' comments:
 
 This entry takes editorial in how it deals with its output.  After using
 vi to look at the source, use vi to look at its output.   We especially
@@ -14,25 +39,13 @@ recommend it on a 78 column xterm while leaning on Control-F.
 
 Do you really understand expressions, then understand this:
 
-      s=s^(b=s&s-1^s)
+```c
+s=s^(b=s&s-1^s)
+```
 
 ... and understand why it is found in the source code.
 
-### To build
-
-      cc giljade.c -o giljade
-
-### To run
-
-      giljade > out
-
-Open an xterm with 78 lines
-
-      vi out
-
-Press ^F repeatedly
-
-## Author's comments
+## Author's comments:
 
 ### So what do we have here ?
 
