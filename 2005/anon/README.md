@@ -2,27 +2,33 @@
 
         Anonymous
 
-## Judges' comments
+# To build:
+
+```sh
+make
+```
+
+### To run:
+
+```sh
+./anon x y [z]
+```
+
+### Try:
+
+```sh
+./anon 4 4
+./anon 3 3 3
+```
+
+## Judges' comments:
 
 Taking the 4x4 board with 15 tiles to a whole new level, this entry
 takes this puzzle to a whole new dimension!  While you puzzle out
 this puzzle, we invite you to take a good LONG look how and WHY
 main is recursively called and how the run-time stack is used.
 
-## To build
-
-        cc -o anon anon.c
-
-Or, if the above does not work
-
-        cc -DNO_STTY -o anon anon.c
-
-## To run
-
-        anon 4 4
-        anon 3 3 3
-
-## Author's comments
+## Author's comments:
 
 ### ABOUT THE GAME ITSELF
 
@@ -39,11 +45,15 @@ sorted in the order they appear on the screen.
 The program takes 2 or 3 arguments, specifying the dimensions of the board.
 For example, to play the original version of the Fifteen Puzzle:
 
-        anon 4 4
+```sh
+./anon 4 4
+```
 
 To play in a 3D board, do something like this:
 
-        anon 3 3 3
+```sh
+./anon 3 3 3
+```
 
 **[WARNING: do NOT run the program with more than 3 command-line arguments.
 This will trigger a bug that will cause it to crash or do something strange.
@@ -172,15 +182,15 @@ One might be tempted to think that this program would be highly non-portable
 because of such insane hacks. However, it has been tested and proven to work
 on the following architectures:
 
-  * i386/linux
-  * sparc/solaris
-  * parisc64/linux
-  * arm/linux
-  * s390/linux
-  * mips/linux
-  * m68k/linux
-  * ia64/linux
-  * sparc64/linux
+* i386/linux
+* sparc/solaris
+* parisc64/linux
+* arm/linux
+* s390/linux
+* mips/linux
+* m68k/linux
+* ia64/linux
+* sparc64/linux
 
 It probably will also compile and work on many (all?) other *nix platforms as
 well. How does it achieve this incredible feat?
