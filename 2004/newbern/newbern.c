@@ -11,7 +11,7 @@
 #define y fclose
 #define end static
 
-t(signed)char U;t(struct) b(O,);
+t(signed)char U;t(struct) b(O,); typedef char** A;
 
 t(						    U*)
 H;						    t(O
@@ -29,7 +29,7 @@ isspace(g); } H D(H s){H p,r;if(!s)G 0;for(p=(H)s;*p &&
 	  { m(D(d)); l(f++, q); Z(*d && !P(*d
 	)) d++; Z(*d && P(*d)) d++; } G b(,0);}
      void k() { static U b(c,;) ?R(c):(c='\n'); }
-     i main (i Q,		     H *l){static o
+    i main (i Q, A la)             {H*l=la;static o
    X;i t,j;				   switch (Q
  ){ case				       1: { H
  *p, I						 [] ={
