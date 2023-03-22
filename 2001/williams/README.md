@@ -25,7 +25,8 @@ echo "Do or do not. There is no try."
 
 ## Judges' comments:
 
-The only way to win is not to play.  No, really; you can't actually win.  :)
+A strange game. The only winning move is not to play. No, really; you can't
+actually win.  :)
 
 The formatting really wants a wide screen; if you can't read it that way,
 it's the standard "three triangles around a circular" logo for nukes.

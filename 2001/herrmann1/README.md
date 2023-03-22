@@ -43,7 +43,7 @@ on.
 ## Author's comments:
 
 Many cool things have been done with the preprocessor,
-e. g. calculation of prime numbers or the tower of Hanoi. However,
+e.g. calculation of prime numbers or the tower of Hanoi. However,
 up to now, no one proved that the preprocessor is Turing complete,
 and I wondered why. Well, the answer is simply that the
 preprocessor is _not_ Turing complete, at least not if the program
