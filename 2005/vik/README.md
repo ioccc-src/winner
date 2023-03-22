@@ -1,27 +1,36 @@
 # Most circuitous walk
 
-Daniel Vik
-926 Genter Street
-La Jolla Ca 92037
-USA
-daniel@vik.cc
+    Daniel Vik
+    926 Genter Street
+    La Jolla Ca 92037
+    USA
+    daniel@vik.cc
 
-## Judges' comments
+# To build:
+
+```sh
+make
+```
+
+### To run:
+
+```sh
+./vik [file.map]
+```
+
+### Try:
+
+```sh
+./vik maze.map
+```
+
+## Judges' comments:
 
 An amazing use of the X libraries with twisty code passages,
 all different.  One risks running in code path circles as main is
 called again and again.  be sure to pay attention to commas!  :-)
 
-### To build
-
-        cc -O3 -ansi vik.c -L/usr/X11R6/lib -lX11 -lm -o vik
-
-### To run
-
-        vik
-        vik maze.map
-
-## Author's comments
+## Author's comments:
 
 This entry is a Wolfenstein style graphics engine where a user can navigate in
 a 3D world. The maze has walls with bitmap textures. The application contains
