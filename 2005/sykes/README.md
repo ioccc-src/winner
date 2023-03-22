@@ -1,25 +1,31 @@
 # Best emulator
 
-Stephen Sykes
-Maxisat
-Laivalahdenportti 2
-00810, Helsinki
-Finland
-sds@maxisat.fi
+    Stephen Sykes
+    Maxisat
+    Laivalahdenportti 2
+    00810, Helsinki
+    Finland
+    sds@maxisat.fi
 
-## To build:
+# To build:
 
-        make all
+```sh
+make
+```
 
-### To run
+### To run:
 
-        ./sykes binary_file
+```sh
+./sykes binary_file
+```
 
 ### Try:
 
-	./sykes pet.rom
+```sh
+./sykes pet.rom
+``
 
-## Judges' comments
+## Judges' comments:
 
 For those who fondly remember their first PET, this entry will start you
 down memory lane ... starting with $C000 of course!
@@ -41,7 +47,7 @@ We then created:
 For your convenience, we have added the above mentioned files to this entry directory.
 They are used to form the pet.rom file.
 
-### Author's comments
+## Author's comments:
 
 This program is not only a complete 6502 processor emulator, but also an
 emulation of the Commodore PET 2001.
@@ -54,7 +60,9 @@ to not infringe the rules.
 
 Compile the program, then test the 6502 emulation like this:
 
-        ./prog 6502test
+```sh
+./prog 6502test
+```
 
 A basic test is done for each instruction and addressing mode, all tests
 should pass. At the end of the tests, it loops forever - break out with
@@ -86,7 +94,9 @@ files. The resulting file should be 16384 bytes.
 Make sure you have a terminal window of 40x25 chars or bigger, and then
 run the emulator like this:
 
-        ./prog pet.rom
+```sh
+./prog pet.rom
+```
 
 You should see the startup message. Try typing in some BASIC - for
 instance:
@@ -96,11 +106,15 @@ instance:
 There is an optional numeric parameter, which controls the speed. For a
 slower cursor blink, try
 
-        ./prog pet.rom 6
+```sh
+./prog pet.rom 6
+```
 
 and for faster
 
-        ./prog pet.rom 2
+```sh
+./prog pet.rom 2
+```
 
 the default is 4.
 
@@ -148,7 +162,9 @@ commodore rom to work.
 Supplied as a demonstration is a compiled-for-6502 version a chess
 program (heh, I found a use for a previous losing entry :). Try:
 
-        ./prog chess
+```sh
+./prog chess
+```
 
 It works as you would expect (it plays very badly). There's no castling
 or en-passant, and to win you must actually take the opponent's king.
@@ -225,6 +241,8 @@ from the internet.  This is to avoid directly infringing any copyright.
 
 What does this do?
 
-        ./prog pet.rom -1
+```sh
+./prog pet.rom -1
+```
         
 Have fun!
