@@ -1,10 +1,29 @@
 # Best use of parenthesis
 
-Michael Ash
-USA
-mike@mikeash.com
+    Michael Ash
+    USA
+    mike@mikeash.com
 
-## Judges' comments
+# To build:
+
+```sh
+make
+```
+
+### To run:
+
+```sh
+./mikeash
+```
+
+### Try:
+
+```sh
+./mikeash < mikeash.c
+./mikeash < mikeash.c | diff - mikeash.c
+```
+
+## Judges' comments:
 
 Having problems speaking code?  Do you LISP?  Parenthetically
 speaking, this entry takes advantage of C99 features, while
@@ -12,16 +31,7 @@ speaking parenthetically.  Best of all, it self-reproduces!
 
 John McCarthy might not of imagined it quite like this!  :-)
 
-### To build
-
-        gcc --std=c99 -o mikeash mikeash.c
-
-### To run
-
-        mikeash < mikeash.c
-        mikeash < mikeash.c | diff - mikeash.c
-
-## Author's comments
+## Author's comments:
 
 This program is a self-reproducing program, which is on the IOCCC's list
 of discouraged program types. Worse, it's a self-reproducing program
@@ -42,14 +52,18 @@ integer-to-pointer conversions due to the implicitly-declared functions.
 
 Try:
 
-        echo '(format t "~s" (+ 2 2 ))' | ./lispob
+```sh
+echo '(format t "~s" (+ 2 2 ))' | ./lispob
+```
 
 You should see '4"' echoed on your command prompt. The " after the 4 and
 the lack of a newline are due to the somewhat broken implementation of
 the format function. More sophisticated arithmetic expressions may be
 used:
 
-       echo '(format t "~s" (* (+ 2 2 ) (- 5 (/ 9 3 ))))' | ./lispob
+```sh
+echo '(format t "~s" (* (+ 2 2 ) (- 5 (/ 9 3 ))))' | ./lispob
+```
 
 This evaluates the expression (2+2) * (5 - 9/3) giving the correct
 result, 8.  Note that due to the highly ad-hoc nature of the tokenizer,
@@ -64,48 +78,52 @@ Aside from being required to put spaces between tokens and closing
 parentheses, there are other limitations on the dialect of Common Lisp
 that this program understands:
 
-  * The only built-in functions are defvar, format, substitute, char-upcase,
+* The only built-in functions are defvar, format, substitute, char-upcase,
 +, -, *, and /.
 
-  * Only one variable is available. This variable is called 'q', although any
+* Only one variable is available. This variable is called 'q', although any
 symbol name starting with the letter 'q' will be mapped to this variable.
 
-  * Only the first letter of a function name is significant. For example,
+* Only the first letter of a function name is significant. For example,
 format, f, farm, and various other words starting with 'f' will all map to the
 format function.
 
-  * The defvar function completely ignores its first parameter. It will always
+* The defvar function completely ignores its first parameter. It will always
 store the result of evaluating its second parameter in 'q'. Unlike in Common
 Lisp, multiple invocations of defvar on the same variable will overwrite old
 values.
 
-  * Character constants are limited to #\Newline and single-character
+* Character constants are limited to #\Newline and single-character
 constants such as #\x.
 
-  * The char-upcase function will give strange results if passed something
+* The char-upcase function will give strange results if passed something
 other than a lowercase character.
 
-  * The format function takes exactly three parameters. The first parameter is
+* The format function takes exactly three parameters. The first parameter is
 ignored; output always goes to stdout. The second parameter must have exactly
 one ~s format specifier in it, and no other format specifiers are permitted.
 
-  * The arithmetic functions take exactly two parameters.
+* The arithmetic functions take exactly two parameters.
 
-  * All tokens must be separated from a following ) by whitespace.
+* All tokens must be separated from a following ) by whitespace.
 
-  * A lot of other things. Notably, the language which this program interprets
+* A lot of other things. Notably, the language which this program interprets
 is nowhere near Turing-complete.
 
 Basically, the lisp interpreter is good for some basic math operations, and
 for running itself. To do the latter, try this:
 
-        ./lispob < lispob.c > lispob2.c
-        diff lispob.c lispob2.c
+```sh
+./lispob < lispob.c > lispob2.c
+diff lispob.c lispob2.c
+```
 
 The program can also be run from an implementation of common lisp. To do
 this, run the common lisp compiler and then type the following command:
 
-       (load "lispob.c")
+```
+(load "lispob.c")
+```
 
 The source code of lispob.c will be printed.
 
