@@ -64,7 +64,7 @@ X11_INCDIR= /opt/X11/include
 #
 #CSILENCE=
 CSILENCE= -Wno-bitwise-op-parentheses -Wno-char-subscripts -Wno-error \
-	-Wno-implicit-function-declaration -Wno-int-to-pointer-cast
+	-Wno-implicit-function-declaration -Wno-int-to-pointer-cast -Wno-unused-value
 
 # Common C compiler warning flags
 #
@@ -98,7 +98,7 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE=
+CINCLUDE= -include stdio.h -include setjmp.h -include string.h -include time.h -include stdlib.h
 #CINCLUDE= -include stdlib.h
 #CINCLUDE= -include stdio.h
 #CINCLUDE= -include stdlib.h -include stdio.h
