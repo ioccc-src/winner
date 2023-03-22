@@ -10,6 +10,13 @@
 make
 ```
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) and Landon individually
+fixed this to work with clang. Cody turned the second arg to main, which clang
+requires to be a `char **`, to be not the same name as a function defined
+earlier in the code and to use that variable which `main()` used. Thank you Cody
+for your assistance!
+
+
 ### To run:
 
 ```sh
