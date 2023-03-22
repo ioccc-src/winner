@@ -4,7 +4,25 @@
         United Kingdom
         makomk@lycos.co.uk
 
-## Judges' comments
+# To build:
+
+```sh
+make
+```
+
+### To run:
+
+```sh
+./aidan
+```
+
+### Try:
+
+```sh
+echo "Do or do not. There is no try."
+```
+
+## Judges' comments:
 
 Are you puzzled about puzzles?  This entry might puzzle you
 more while it puzzles out some puzzles: all in a puzzling way!
@@ -13,11 +31,7 @@ Goto the source and notice the lack of functions.  Jump
 to the switch statement.  And if you think you can puzzle
 it out better, try solving insane1.sudoku all by yourself!
 
-### To build
-
-        cc -O2 -o aidan aidan.c
-
-## Author's comments
+## Author's comments:
 
 This program can solve a type of logic puzzle known as a Sudoku, and also
 generate new ones. (Apparently, the puzzle is known as Number Place in the US,
