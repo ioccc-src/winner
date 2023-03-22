@@ -1,25 +1,31 @@
 # Abuse of the rules
 
-Peter Klausler
-Cray Inc.
-2802 W 40th St
-Minneapolis MN 55410
-USA
-pmk@cray.com
+    Peter Klausler
+    Cray Inc.
+    2802 W 40th St
+    Minneapolis MN 55410
+    USA
+    pmk@cray.com
 
-## To build:
+# To build:
 
-        make all
+```sh
+make
+```
 
-### To run
+### To run:
 
-	./klausler arg1 agr2 | head
+```sh
+./klausler arg1 agr2 | head
+```
 
 ### Try:
 
-       ./klausler peter klausler | head
+```sh
+./klausler peter klausler | head
+```
 
-## Judges' comments
+## Judges' comments:
 
 To reduce the size of the source, include other people's data.
 That is what Peter suggests when he describes how to generate
@@ -29,7 +35,7 @@ In other words: make use of other words!  :-)
 
 Rules might have to be changed!
 
-## Author's comments
+## Author's comments:
 
 A useful tool to help one appear extra smart and witty when IRCing, or even
 just highly annoying.
