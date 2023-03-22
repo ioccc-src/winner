@@ -1,12 +1,48 @@
 # Most beauteous visuals
 
-Vincent Weaver
-Ithaca, NY
-USA
-vince@deater.net
-<http://www.deater.net/weave/>
+    Vincent Weaver
+    Ithaca, NY
+    USA
+    vince@deater.net
+    <http://www.deater.net/weave/>
 
-## Judges' comments
+# To build:
+
+Before building, make sure that you have the OpenGL development libraries
+installed.
+
+```sh
+make
+```
+
+### To run:
+
+```sh
+./vince
+```
+
+Under MacOSX run from within an xterm while the X11 server is running.
+
+### Try:
+
+```sh
+echo "Do or do not. There is no try."
+```
+
+### Alternate code:
+
+The `vince.alt.c` code of the submission will run on SGI Irix and
+also has the recursive CPP macro (which snuck in accidentally) removed.
+
+To compile this alternate version:
+
+```sh
+make alt
+```
+
+Use `vince.alt` as you would `vince` above.
+
+## Judges' comments:
 
 This beauteous entry makes use of visual {}'s and whitespace to instruct
 the OpenGL development libraries to create beauteous visuals.  Even
@@ -14,27 +50,7 @@ hitting the space bar while the program runs produces a "spacey" effect! :-)
 
 Challenge: Try modifying the texture to something of your own design.
 
-## Improved Version
-
-This following improved version of the submission will run on SGI Irix and
-also has the recursive CPP macro (which snuck in accidentally) removed.
-
-### To build
-
-Before building, make sure that you have the OpenGL development libraries
-installed.
-
-        cc -Wall -O2 -o vince vince.c -L/usr/X11R6/lib -lGL -lGLU -lX11
-
-If you are on a 64 bit platform you might need to substitute `-L/usr/X11R6/lib64`.
-
-### To run
-
-        vince
-
-Under MacOSX run from within an xterm while the X11 server is running.
-
-## Author's comments
+## Author's comments:
 
 ### ABUSE OF RULES
 
