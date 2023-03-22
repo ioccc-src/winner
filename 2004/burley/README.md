@@ -11,19 +11,31 @@
 make
 ```
 
-### To run:
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile with
+clang which requires that the first arg of main() be an int and the remaining
+args to be a `char **`. He notes that he could not get the entry to work with
+gcc before the fix and it does not work with clang either; see
+[/bugs.md](/bugs.md) for information here. Thank you Cody for your assistance!
+
+
+
+## To run:
 
 ```sh
 ./burley
 ```
 
-### Try:
+NOTE: you need to input a number first. See judges' comments below for
+information on how to play.
+
+
+## Try:
 
 ```sh
 echo "Do or do not. There is no try."
 ```
 
-## Judges' comments
+## Judges' comments:
 
 This is a draw poker program.  You start with $100.  Input alternates
 between your bet and which cards to keep.  Example:

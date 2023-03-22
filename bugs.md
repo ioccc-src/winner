@@ -33,6 +33,33 @@ related to making it work under macOS as all that did was removing some invalid
 prototypes and use `printf()` instead of the invalid pointer to it (incompatible
 type).
 
+### [2004/burley](2004/burley/burley.c) ([README.md](2004/burley/README.md))
+
+This entry did not compile with clang but [Cody Boone
+Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this problem. He notes however that
+prior to (with gcc) and after the fix (gcc, clang) it does not work: it allows
+input of the bet and then it prints the hand but it does not do anything with
+your next move. He provides the following notes:
+
+0. Originally the `jmp_buf` was just an `int p[4][1000]`.
+1. The `setjmp.h` header file was not included so the calls to `longjmp()` had
+not only the wrong number of arguments but also implicitly returned int when it
+actually returns void. This means that the comma operator had to be used to get
+the binary expressions to work. It might be this is part of the problem.
+2. Another possible problem is the abuse of `setjmp()` and `longjmp()` which is
+known to be a problem, at least as he interprets it in his tired head (and less
+experience with `longjmp`). In particular:
+> The longjmp() routines may not be called after the routine which called the
+> setjmp() routines returns.
+3. The main() originally returned a call to main() which appeared to be an
+infinite recursion at least as it was; now it returns a call to poke() which has the same number
+and type of args (1, `char *`) that main() had. This appears to not be an
+infinite recursion but I might be reading it wrong. Perhaps that is the problem?
+4. As well main() had only one arg, a `char *`, and there were (seemingly)
+needless casts to `char *` from gets().
+5. The code no longer uses `gets()` but `fgets()`; this is not the problem
+however.
+
 
 ### [2014/vik](2014/vik/prog.c) ([README.md](2014/vik/README.md))
 
