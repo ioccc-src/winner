@@ -1,6 +1,6 @@
 #include<stdlib.h>
-#include<Xlib.h>
-#include<keysym.h>
+#include<X11/Xlib.h>
+#include<X11/keysym.h>
 #define b(b)XDraw##b(i,J,k,
 #define l :q==
 #define o if(

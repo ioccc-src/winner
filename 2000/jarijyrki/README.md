@@ -22,6 +22,11 @@ make
 
 You will need X11 header files and libraries installed to build this program.
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made it easier to
+compile this by adding `X11/` to the includes of `Xlib.h` and `keysym.h`. Thank
+you Cody!
+
+
 ### To run:
 
 ```sh
