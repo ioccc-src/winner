@@ -190,12 +190,12 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo "NOTE: this entry seems to no longer work."
 	magic='${CC} ${CFLAGS}'; \
 	X='-DA(X)=#X'; \
 	warning='-Dprocessor'; \
 	$$magic $$warning -Dmagic= $$X "-DX=A($$magic \"$$X\")" \
 		$< -o $@ ${LIBS}
-		anonymous.c
 
 # alternative executable
 #
