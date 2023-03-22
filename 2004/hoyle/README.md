@@ -7,19 +7,25 @@
 
     http://www.jonhoyle.com
 
-## To build:
+# To build:
 
-        make all
+```sh
+make
+```
 
-### To run
+### To run:
 
-	./hoyle point ...
+```sh
+./hoyle point ...
+```
 
 ### Try:
 
-    	./hoyle 10 0.5
-    	./hoyle 1 1 1 1
-	./hoyle 2 0 1 0 -0.001
+```sh
+./hoyle 10 0.5
+./hoyle 1 1 1 1
+./hoyle 2 0 1 0 -0.001
+```
 
 ### Alternate code
 
@@ -28,38 +34,44 @@ missing newline and used a non-standard tab stop size.
 
 To compile this alternate version:
 
-    make alt
+```sh
+make alt
+```
 
-Use `hoyle.alt.c` as you would `prog` above.
+Use `hoyle.alt.c` as you would `hoyle` above.
 
 ## Judges' comments
 
-    This obfuscation functions at several levels.  Note the clever
-    use of use of #defines.  The do(if,else) #define, for example,
-    is delightful.  The code itself contains a bunch of curves
-    designed to throw you off axis.  :-)
+This obfuscation functions at several levels.  Note the clever
+use of use of #defines.  The do(if,else) #define, for example,
+is delightful.  The code itself contains a bunch of curves
+designed to throw you off axis.  :-)
 
 ## Author's comments
 
-     This application graphs polynomials on a standard Cartesian coordinate
-     system.  Polynomials of the form ax^0 + bx^1 + cx^2 + ... are graphed by
-     passing the coefficients a, b, c, etc. as double precision arguments.
-     It allows up to 8 parameters (thus up to x^7).
+This application graphs polynomials on a standard Cartesian coordinate
+system.  Polynomials of the form ax^0 + bx^1 + cx^2 + ... are graphed by
+passing the coefficients a, b, c, etc. as double precision arguments.
+It allows up to 8 parameters (thus up to x^7).
 
-     Points of note:
-       - the x axis goes from -32 to +31
-       - the y axis auto scales!
-       - up to 8 coefficients may be passed in
-       - the graph will determine direction and use slashes and
-       	 dashes rather than simple block X's.
+Points of note:
 
-     Example:
-       To graph y = x^2
+- the x axis goes from -32 to +31
+- the y axis auto scales!
+- up to 8 coefficients may be passed in
+- the graph will determine direction and use slashes and
+  dashes rather than simple block X's.
 
-       		./hoyle 0 0 1
+For example, ta graph y = x^2:
 
-     Note that:
+```sh
+./hoyle 0 0 1
+```
 
-     		./hoyle 0 0 2
+Note that:
 
-     will produce the same graph, since the y-axis is auto scaling.
+```sh
+./hoyle 0 0 2
+```
+
+will produce the same graph, since the y-axis is auto scaling.
