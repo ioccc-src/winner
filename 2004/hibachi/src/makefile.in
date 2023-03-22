@@ -1,0 +1,57 @@
+#
+# @package_copyright@
+#
+# @configure_input@
+#
+
+.POSIX :
+
+########################################################################
+### Pick one that best suits your system.
+########################################################################
+
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+
+PACKAGE = @PACKAGE_NAME@
+VERSION = @PACKAGE_VERSION@
+TARNAME = @PACKAGE_TARNAME@
+TARDIR	= ../
+SRCDIR	= ./
+
+CC		= @CC@
+CC_E	= @CC_E@
+CC_O	= @CC_O@
+CFLAGS	= @CFLAGS@
+LDFLAGS	= @LDFLAGS@
+LIBS	= @LIBS@
+
+########################################################################
+### No further configuration beyond this point.
+########################################################################
+
+.SUFFIXES :
+O = .@OBJEXT@
+E = @EXEEXT@
+.SUFFIXES : .c $O
+
+all: build
+
+build : @PACKAGE_NAME@$E
+
+clean :
+	-rm -f *.o *.obj *.i *.map *.tds *.TR2 *.ilc *.ild *.ilf *.ils *.log
+	-rm @PACKAGE_NAME@$E
+
+distclean: clean
+	-rm -rf autom4te.cache config.status config.log
+	-rm -f @PACKAGE_NAME@-start.sh makefile
+	-rm -f localhost/test/perl/yahoo-ticker.pl
+	-rm -f localhost/test/php/index.php 
+	-rm -f localhost/test/php/info.php 
+	-rm -f localhost/test/php/sendform.php
+	-rm -f localhost/test/ruby/index.rb
+
+@PACKAGE_NAME@$E: @PACKAGE_NAME@.c 
+	$(CC) $(CFLAGS) $(LDFLAGS) $(CC_E) @PACKAGE_NAME@$E @PACKAGE_NAME@.c $(LIBS)
+

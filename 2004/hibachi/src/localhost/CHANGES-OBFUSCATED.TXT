@@ -1,0 +1,16 @@
+CHANGES
+-------
+
+The major number changes for such things as code rewrites, changes in
+syntax, and/or dramatic changes in functionality. The minor number
+changes for corrections, enhancements, etc. made to the code. There
+is no set schedule for releases.
+
+--TODO--
+
+
+--1.0--
+
+	Initial release. Submission to the IOCCC 2004.
+
+

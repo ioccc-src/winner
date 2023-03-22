@@ -1,0 +1,63 @@
+CHANGES
+-------
+
+The major number changes for such things as code rewrites, changes in
+syntax, and/or dramatic changes in functionality. The minor number
+changes for corrections, enhancements, etc. made to the code. There
+is no set schedule for releases.
+
+--TODO--
+
+   +	Figure out why Links browser doesn't work.
+
+--1.0--
+
+	Initial release. Submission to the IOCCC 2004.
+
+--0.8--
+
+   +	Add support for SCRIPT_FILENAME for PHP/CGI.
+   
+   +	Restructured directories.
+   
+   +	Added autoconf configure.in script and friends.
+
+--0.7--
+
+   !	Replaced print() macro by expansion in status(). Only used in one
+   	place. This also fixes a macro expansion bug in status().
+   	
+   !	status() now correctly passes the size of the status response
+   	headers to send().
+   	
+   !	Fixed transform.sed which incorrectly transform Host: header string
+   	into h:.
+   	
+   +	Experimented with configure.in and makefile.in. Not really necessary
+   	and the macros tests required in the source exceed the size limit.
+
+
+--0.6--
+
+   !	Renamed error() to status(). Set content-length to that of the
+   	response message or static file.
+
+   +	Added more details comments with citiations of relavent paragraphs
+   	from RFC 2616 and the CGI/1.1 specification.
+
+   !	Enlarged header parsing buffer from 4KB to 8KB.
+
+   !	Changed parsing of request CRLF to allow for just LF.
+
+   +	Fold case of request headers to lower case, because of problem with
+   	Lynx not specifying headers as they appear in RFC 2616.
+
+--0.5--
+
+   +	First attempt static file web server, with virtual host support.
+
+   +	Added support for CGI/1.1 specification, in particular "nph" CGIs
+      	with a selected set of necessary environment variables.
+
+
+

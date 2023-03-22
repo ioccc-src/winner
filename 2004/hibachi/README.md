@@ -1,4 +1,4 @@
-Best Abuse of the Guidelines:
+# Best Abuse of the Guidelines:
 
     Anthony Howe
     Snert
@@ -8,162 +8,172 @@ Best Abuse of the Guidelines:
 
     http://www.snert.com/
 
+# To build:
 
-Judges' Comments:
+```sh
+make
+```
 
-    To build (simple: Cygwin, FreeBSD, Linux, Mac OS X):
+### To run:
 
-        tar -zxf hibachi.tgz
-        cd hibachi
-        ./configure
-	make
+```sh
+./hibachi-start.sh
+```
 
-    Try:
+### Try:
 
-        cd hibachi
-	./hibachi-start.sh
+```sh
+./hibachi-start.sh
+```
 
-	Then use your web browser to visit http://localhost:8008/
+Then use your web browser to visit http://localhost:8008/
 
-    This entry violates the guidelines in so many ways!  We are not
-    exactly sure how many org's will be upset with this entry, but we
-    are considering starting an IOCCC standards body just to reign in
-    the likes Mr Howe.
+## Judges' comments:
 
-    This entry also has the dubious honour of being the only one to have
-    been submitted with its own ./configure script.
+This entry violates the guidelines in so many ways!  We are not
+exactly sure how many org's will be upset with this entry, but we
+are considering starting an IOCCC standards body just to reign in
+the likes Mr Howe.
 
+This entry also has the dubious honour of being the only one to have
+been submitted with its own ./configure script.
 
-Selected Author's Comments:
+## Author's comments:
 
-    README.TXT                                                 Feb 2004
-    ==========
+### README.TXT (Feb 2004)
 
-    Hibachi is a simple, small, and (probably) very secure web server.
+Hibachi is a simple, small, and (probably) very secure web server.
 
-    There is a `hibachi.tgz' file that unpacks several support
-    files and a sub-directory tree containing the documentation and
-    examples. It can be viewed by:
+There is a `hibachi.tgz' file that unpacks several support
+files and a sub-directory tree containing the documentation and
+examples. It can be viewed by:
 
-        tar -zxf hibachi.tgz
-        lynx hibachi/localhost/index.html
+    tar -zxf hibachi.tgz
+    lynx hibachi/localhost/index.html
 
-    Or once Hibachi is running, use a web browser, preferably one that
-    supports images and JavaScript, to view the documentation and try
-    some of the CGI examples:
+Or once Hibachi is running, use a web browser, preferably one that
+supports images and JavaScript, to view the documentation and try
+some of the CGI examples:
 
-        http://localhost:8008/
+    http://localhost:8008/
 
+### Building
 
-    Building
-    --------
+To build just the executable:
 
-    To build just the executable:
+For Cygwin, FreeBSD, Linux (newer), Mac OS X:
 
-        # Cygwin, FreeBSD, Linux (newer), Mac OS X
-        gcc -o hibachi hibachi.c
+```sh
+gcc -o hibachi hibachi.c
+```
 
-        # Linux (older)
-        gcc -DSHUT_WR=1 -o hibachi hibachi.c
+For Linux (older):
 
-        # SunOS
-        gcc -o hibachi hibachi.c -lnsl -lsocket
+```sh
+gcc -DSHUT_WR=1 -o hibachi hibachi.c
+``
 
-    Since some systems place socket and network functions into other
-    libraries, a GNU autoconf ./configure script has been provided to
-    figure out the necessary link libraries, to verify all the
-    necessary headers and functions are present, and setup the #!
-    paths for the CGI examples. In which case the preferred build
-    commands are:
+For SunOS:
 
-        ./configure [--enable-port=number]
-        make
+```sh
+gcc -o hibachi hibachi.c -lnsl -lsocket
+```
 
-    To start the server on the default port (8008):
+Since some systems place socket and network functions into other
+libraries, a GNU autoconf ./configure script has been provided to
+figure out the necessary link libraries, to verify all the
+necessary headers and functions are present, and setup the #!
+paths for the CGI examples. In which case the preferred build
+commands are:
 
-        ./hibachi-start.sh &
+```
+./configure [--enable-port=number]
+make
+```
 
-    To test the server:
+To start the server on the default port (8008):
 
-        lynx http://localhost:8008/
+```sh
+./hibachi-start.sh &
+```
 
-    To stop the server:
+To test the server:
 
-        kill %1
+```sh
+lynx http://localhost:8008/
+```
 
+To stop the server:
 
-    Features
-    --------
+```sh
+kill %1
+```
 
-       o  Supports virtual hosts.
+### Features
 
-       o  Supports all MIME types.
+*  Supports virtual hosts.
 
-       o  Supports Common Gateway Interface (CGI) scripts and programs.
+*  Supports all MIME types.
 
-       o  Supports multiple index.* file types:
+*  Supports Common Gateway Interface (CGI) scripts and programs.
 
-            index.htm, index.html, index.php, index.pl,
-            index.sh, index.rb, index.py
+*  Supports multiple index.* file types:
 
-       o  Supports subset of RFC 2616 HTTP/1.1 methods:
+    index.htm, index.html, index.php, index.pl,
+    index.sh, index.rb, index.py
 
-            GET, HEAD, and POST
+*  Supports subset of RFC 2616 HTTP/1.1 methods:
 
-       o  Simple & straight forward configuration using environment variables.
+    GET, HEAD, and POST
 
-       o  Portability across Unix-like environments, such as:
+*  Simple & straight forward configuration using environment variables.
 
-            Cygwin, FreeBSD, Linux, SunOS.
+*  Portability across Unix-like environments, such as:
 
-       o  Known to work with Lynx, Mozilla, Opera, and Internet Explorer
-          web browsers.
+    Cygwin, FreeBSD, Linux, SunOS.
 
-       o  Is a dedicated process-forking server that does not use inetd.
+*  Known to work with Lynx, Mozilla, Opera, and Internet Explorer
+  web browsers.
 
-       o  Is secure against relative path file snooping.
+*  Is a dedicated process-forking server that does not use inetd.
 
-       o  Is secure against directory searches.
+*  Is secure against relative path file snooping.
 
-       o  CGI script execution managed through Unix file permissions.
+*  Is secure against directory searches.
 
-       o  ~155 lines of source,
-          1940 bytes long by IOCCC 2004 rules,
-          ~6KB compiled & stripped for FreeBSD.
+*  CGI script execution managed through Unix file permissions.
 
-       o  Superior & smaller than micro_httpd from http://www.acme.com/
+*  ~155 lines of source,
+  1940 bytes long by IOCCC 2004 rules,
+  ~6KB compiled & stripped for FreeBSD.
 
-       o  And has a really cool tongue-in-cheek animated logo too.
+*  Superior & smaller than micro_httpd from http://www.acme.com/
 
+*  And has a really cool tongue-in-cheek animated logo too.
 
-    Comments
-    --------
+### Comments
 
-       o  This code is properly indented using the One True Brace style.
+*  This code is properly indented using the One True Brace style.
 
-       o  HTTP/1.0 200 OK == HTTP/1.1 200 OK CRLF Connection: close ?
+*  HTTP/1.0 200 OK == HTTP/1.1 200 OK CRLF Connection: close ?
 
-       o  getenv() == putenv() ?
+*  getenv() == putenv() ?
 
-       o  Hibachi can serve www.ioccc.org.
+*  Hibachi can serve www.ioccc.org.
 
-       o  Commented spoiler available.
+*  Commented spoiler available.
 
+### Known Issues
 
-    Known Issues
-    ------------
+*  The "links" text browser does not support RFC 2616 section 7.2.1
+  paragraph 3 sentence 2, and so fails to display responses from
+  hibachi.
 
-       o  The "links" text browser does not support RFC 2616 section 7.2.1
-          paragraph 3 sentence 2, and so fails to display responses from
-          hibachi.
+### Suggested IOCCC Categories
 
-
-    Suggested IOCCC Categories
-    --------------------------
-
-        Best Utility
-        Best Support
-        Most Portable Package
-        Most Likely to Cook Apache
-        Best Interpretation of RFC 2616
-        Winner of The Far Too Much Free Time Award
+    Best Utility
+    Best Support
+    Most Portable Package
+    Most Likely to Cook Apache
+    Best Interpretation of RFC 2616
+    Winner of The Far Too Much Free Time Award

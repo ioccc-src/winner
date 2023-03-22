@@ -1,362 +1,332 @@
-#!/bin/make
+#!/usr/bin/env make
 #
-# 2004 makefile
+# IOCCC 2004 winning entry - hibachi
+
+################################################################################
 #
-# Copyright (C) 2004, Landon Curt Noll, Simon Cooper, Peter Seebach
-# and Leonid A. Broukhis. All Rights Reserved. Permission for personal,
-# educational or non-profit use is granted provided this copyright and
-# notice are included in its entirety and remains unaltered.  All other
-# uses must receive prior permission from the contest judges.
+# Regarding individual entries:
+#
+# IOCCC winning entry code may not work on your system.  Even with standards,
+# conditions and build environments change, especially when it comes to more
+# extreme code such you might find in an IOCCC winner.  Moreover, what was
+# allowed and liked in one IOCCC contest may no longer be liked/allowed in
+# later IOCCC years.
+#
+# Corrections on winning author and fixing typos in remarks are VERY WELCOME.
+#
+# GitHub pull requests are welcome:
+#
+# If you have a patch that might make running an entry work in modern Unix-like
+# environments, please create a GitHub pull request for the IOCCC judges to
+# consider.
+#
+# Suggestions and corrections regarding Makefiles, winning author information,
+# fixing typos in remarks, and code patches are welcome via opening a GitHub
+# issue or better yet, by creating a GitHub pull request for the IOCCC judges
+# to consider.  To form a GitHub issue or GitHub pull, please visit:
+#
+# https://github.com/ioccc-src/winner
+#
+################################################################################
+
+# This work by Landon Curt Noll and Leonid A. Broukhis is licensed under:
+#
+#	Creative Commons Attribution-ShareAlike 3.0 Unported License.
+#
+# See: http://creativecommons.org/licenses/by-sa/3.0/
 
 
-# tool locations
+#############################
+# shell used by this Makefile
+#############################
 #
-SHELL= /bin/sh
-CP= cp
-CPP= cpp
-GUNZIP= gunzip
-LD= ld
-MAKE= make
-RM= rm
-SED= sed
-TAR= tar
-TRUE= true
+SHELL= bash
 
-
-# Special flags for the gavin entry
+#######################
+# common tool locations
+#######################
 #
-# FYI: Older versions of GCC have a bug in -O2 optimization, hence -O1
-#
-GAVIN_OPT= -O1
-GAVIN_FLAGS=\
-	'-DY(m)=*((int*)(m))'\
-	'-DE(f,a,b,c)=((G((*)))(f))(a,b,c)'\
-	'-DM=for(D=0;D<786432;D++)'\
-	'-DZ=int i=0,j=0,h,n,p=393728,s=26739,C,D'\
-	'-DV=0x90200'\
-	'-DK=0'\
-	'-DR=while((C=E(V-8,100,0,0))&3&&(D=E(V-8,96,0,0))|3){'\
-	'-DL(c,d)=E(V+8,100,c,0);R}E(V+8,96,d,0);R}'
-
+include ../../var.mk
 
 # Set X11_LIBDIR to the directory where the X11 library resides
 #
-X11_LIBDIR= /usr/X11R6/lib
+#X11_LIBDIR= /usr/X11R6/lib
+#X11_LIBDIR= /usr/X11/lib
+X11_LIBDIR= /opt/X11/lib
 
-#CINCLUDE= -I ${HOMEBREW_PREFIX}/include/SDL2
+# Set X11_INCLUDEDIR to the directory where the X11 include files reside
+#
+#X11_INCDIR= /usr/X11R6/include
+#X11_INCDIR= /usr/X11/include
+X11_INCDIR= /opt/X11/include
 
-# optimization
+# Common C compiler warnings to silence
+#
+#CSILENCE=
+CSILENCE= -Wno-pointer-sign -Wno-unused-parameter
+
+# Common C compiler warning flags
+#
+#CWARN= ${CSILENCE}
+#CWARN= -Wall ${CSILENCE}
+#CWARN= -Wall -Wextra ${CSILENCE}
+CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+
+# Compiler standard
+#
+#CSTD=
+#CSTD= -ansi
+CSTD= -std=gnu99
+
+# Compiler bit architecture
+#
+# Some entries require 32-bitness:
+# ARCH= -m32
+#
+# Some entries require 64-bitness:
+# ARCH= -m64
+#
+# By default we assume nothing:
+#
+ARCH=
+
+# Defines that are needed to compile
+#
+CDEFINE=
+#CDEFINE= -DIOCCC
+
+# Include files that are needed to compile
+#
+CINCLUDE=
+#CINCLUDE= -include stdlib.h
+#CINCLUDE= -include stdio.h
+#CINCLUDE= -include stdlib.h -include stdio.h
+#CINCLUDE= -I ${X11_INCDIR} -I ${X11_INCDIR}/X11
+#CINCLUDE= `${SDL2_CONFIG} --cflags`
+
+# Optimization
 #
 # Most compiles will safely use -O2.  Some can use only -O1 or -O.
-# A few compilers have broken optimizers and thus you may
-# not want anything.
+# A few compilers have broken optimizers or this entry make break
+# under those buggy optimizers and thus you may not want anything.
+# Reasonable compilers will allow for -O3.
 #
 #OPT=
 #OPT= -O
 #OPT= -O1
-OPT= -O2
+#OPT= -O2
+OPT= -O3
 
+# Default flags for ANSI C compilation
+#
+CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
-# flags for ANSI compiles
+# Libraries needed to build
 #
-# NOTE: Some ANSI compilers make use of -Xa to turn on ANSI mode,
-#       others such as gcc may want -ansi, others (Compaq Tru64 Unix)
-#       want -std1, and others may want nothing at all.
-#       Adjust the CFLAGS line as needed.
-#
-# NOTE: Some compilers cannot optimize, or optimize some entries
-#       incorrectly.  You might want to turn on -O to see if your
-#       compiler can handle them.
-#
-#
-#CFLAGS= -Xa ${OPT}
-#CFLAGS= -std1 $(OPT)
-CFLAGS= -ansi ${OPT}
+LIBS=
+#LIBS= -lm
+#LIBS= -L ${X11_LIBDIR} -lX11
+#LIBS= `${SDL2_CONFIG} --libs`
 
-
-# ANSI compiler
-#
-# Set CC to the name of your ANSI compiler.
-#
-# Some entries seem to need gcc.  If you have gcc, set
-# both CC and MAY_NEED_GCC to gcc.
-#
-# If you do not have gcc, set CC to the name of your ANSI compiler, and
-# set MAY_NEED_GCC to either ${CC} (and hope for the best) or to just :
-# to disable such programs.
+# C compiler to use
 #
 CC= cc
-MAY_NEED_GCC= gcc
+#CC=clang
+#CC=gcc
 
-
-# 2004 winners
+# Compiler add-ons or replacements for clang only
 #
-WINNERS= anonymous arachnid burley gavare gavin hibachi hoyle jdalbec \
-	kopczynski newbern omoikane schnitzi sds vik1 vik2
-CLEAN= anonymous_clean arachnid_clean burley_clean gavare_clean gavin_clean \
-	hibachi_clean hoyle_clean jdalbec_clean kopczynski_clean \
-	newbern_clean omoikane_clean schnitzi_clean sds_clean vik1_clean \
-	vik2_clean
-CLOBBER= anonymous_clobber arachnid_clobber burley_clobber gavare_clobber \
-	gavin_clobber hibachi_clobber hoyle_clobber jdalbec_clobber \
-	kopczynski_clobber newbern_clobber omoikane_clobber schnitzi_clobber \
-	sds_clobber vik1_clobber vik2_clobber
-ALT_NAMES= hoyle.orig kopczynski.orig
-DATA_FILES= arachnid_files gavin_files hibachi_files kopczynski_files \
-	newbern_files omoikane_files schnitzi_files
-
-
-# default build
+ifeq ($(CC),clang)
 #
-all: ${WINNERS}
-
-
-# Best use of "Precious" Lines
+#CSILENCE+=
 #
-anonymous: anonymous.c
-	${CC} anonymous.c -o anonymous
-
-anonymous_clean:
-	${RM} -f anonymous.o
-
-anonymous_clobber: anonymous_clean
-	${RM} -f anonymous
-
-
-# Best use of Vision
+CWARN+= -Weverything
 #
-arachnid: arachnid.c
-	${CC} -o arachnid -DL=LINES -DS=COLS \
-	    -DW=mvwaddch\(w,v,u,acs_map\[l\[m\[u arachnid.c -lncurses
+endif
 
-arachnid_clean:
-	${RM} -f arachnid.o
-
-arachnid_clobber: arachnid_clean
-	${RM} -f arachnid
-
-arachnid_files: arachnid.info
-
-
-# Best Calculated Risk
+# Specific add-ons or replacements for gcc only
 #
-burley: burley.c
-	${CC} -ansi burley.c -o burley
-
-burley_clean:
-	${RM} -f burley.o
-
-burley_clobber:  burley_clean
-	${RM} -f burley
-
-
-# Best Use of Light and Spheres
+ifeq ($(CC),gcc)
 #
-gavare: gavare.c
-	${CC} -O3 gavare.c -o gavare
-
-gavare_clean:
-	${RM} -f gavare.o
-
-gavare_clobber: gavare_clean
-	${RM} -f gavare
-
-
-# Best of Show
+#CSILENCE+=
 #
-gavin: gavin.c
-	${CC} ${GAVIN_OPT} -o gavin ${GAVIN_FLAGS} gavin.c
-	${RM} -f kernel
-	./gavin > kernel
-	${CC} ${GAVIN_OPT} -c ${GAVIN_FLAGS} -DB=_start '-Dputchar(a)=' gavin.c
-	${RM} -f sh
-	${LD} -s -o sh gavin.o
-	${RM} -f vi
-	${CP} sh vi
-	${RM} -f fs.tar
-	${TAR} -cvf fs.tar sh vi gavin.c gavin.hint prim
-
-gavin_clean:
-	${RM} -f sh vi kernel gavin.o
-
-gavin_clobber: gavin_clean
-	${RM} -f gavin fs.tar
-
-gavin_files: boot.b lilo.conf prim gavin_install.txt
-
-
-# Best Abuse of the Guidelines
+#CWARN+=
 #
-hibachi: hibachi.tar.gz
-	${RM} -f hibachi.tar
-	${GUNZIP} < hibachi.tar.gz > hibachi.tar
-	${TAR} -xvf hibachi.tar
-	${RM} -f hibachi.tar
-	(cd hibachi && ${SHELL} ./configure)
-	([ -f hibachi/makefile ] && cd hibachi && $(MAKE) -f makefile || true)
-
-hibachi_clean:
-	${RM} -f hibachi/hibachi.o hibachi.tar
-
-hibachi_clobber: hibachi_clean
-	${RM} -rf hibachi
-
-hibachi_files: hibachi.tar.gz
+endif
 
 
-# Most Functional Output
+##############################
+# Special flags for this entry
+##############################
 #
-hoyle: hoyle.c
-	${CC} hoyle.c -o hoyle -lm
-
-hoyle.orig: hoyle.orig.c
-	${CC} hoyle.orig.c -o hoyle.orig -lm
-
-hoyle_clean:
-	${RM} -f hoyle.o hoyle.orig.o
-
-hoyle_clobber: hoyle_clean
-	${RM} -f hoyle hoyle.orig
-
-
-# Best Abuse of the Periodic Table
+ENTRY= hibachi
+PROG= ${ENTRY}
 #
-jdalbec: jdalbec.c
-	@${RM} -f jdalbec2.c
-	-${CC} -E jdalbec.c > jdalbec2.c
-	@${RM} -f jdalbec3.c
-	${SED} -e 's/ (/(/g' < jdalbec2.c > jdalbec3.c
-	${CC} -ansi jdalbec3.c -o jdalbec
-
-jdalbec_clean:
-	${RM} -f jdalbec2.c jdalbec3.c jdalbec.o
-
-jdalbec_clobber: jdalbec_clean
-	${RM} -f jdalbec
-
-
-# Best one-liner
+OBJ= ${PROG}.o
+DATA=
+TARGET= build/${PROG}
 #
-kopczynski: kopczynski.c
-	${CC} -Dif=while kopczynski.c -o kopczynski
-
-kopczynski.orig: kopczynski.orig.c
-	${CC} -Dif=while kopczynski.orig.c -o kopczynski.orig
-
-kopczynski_clean:
-	${RM} -f kopczynski.o kopczynski.orig.o
-
-kopczynski_clobber: kopczynski_clean
-	${RM} -f kopczynski kopczynski.orig
-
-kopczynski_files: kopczynski-10 kopczynski-11 kopczynski-8a kopczynski-8b \
-	kopczynski-8c kopczynski-9
+ALT_OBJ=
+ALT_TARGET=
 
 
-# Best Font Engine
+#################
+# build the entry
+#################
 #
-newbern: newbern.c
-	${CC} newbern.c -o newbern
+all: data ${TARGET}
+	@${TRUE}
 
-newbern_clean:
-	${RM} -f newbern.o
+.PHONY: all alt data everything clean clobber install \
+	love haste waste maker easter_egg sandwich \
+	supernova deep_magic magic charon pluto
 
-newbern_clobber: newbern_clean
-	${RM} -f newbern
+build/${PROG}: src
+	${RM} -rf build
+	${CP} -v -r src build
+	cd build; CFLAGS="${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}" \
+	    LDFLAGS="${LIBS}" \
+	    CC="${CC}" \
+	    ${SHELL} ./configure
+	cd build; ${MAKE}
 
-newbern_files: newbern.dat
-
-
-# Best Utility
+# alternative executable
 #
-omoikane: omoikane.c
-	${CC} -O omoikane.c -o omoikane
+alt: data ${ALT_TARGET}
+	@${TRUE}
 
-omoikane_clean:
-	${RM} -f omoikane.o
-
-omoikane_clobber: omoikane_clean
-	${RM} -f omoikane
-
-omoikane_files: omoikane.info
-
-
-# Best Non-Use of Curses
+# data files
 #
-schnitzi: schnitzi.c
-	${CC} schnitzi.c -o schnitzi
+data: ${DATA}
+	@${TRUE}
 
-schnitzi_clean:
-	${RM} -f schnitzi.o
-
-schnitzi_clobber: schnitzi_clean
-	${RM} -f schnitzi
-
-schnitzi_files: schnitzi.inp0 schnitzi.inp1
-
-
-# Best Abuse of Indentation
+# both all and alt
 #
-sds: sds.c
-	${CC} -o sds sds.c
-
-sds_clean:
-	${RM} -f sds_encoder.c sds_encoder.o sds.o
-
-sds_clobber: sds_clean
-	${RM} -f sds sds_encoder
+everything: all alt
 
 
-# Best X11 Game
-#
-vik1: vik1.c
-	${CC} -ansi -O2 -o vik1 vik1.c -L${X11_LIBDIR} -lX11
-
-vik1_clean:
-	${RM} -f vik1.o
-
-vik1_clobber: vik1_clean
-	${RM} -f vik1
-
-
-# Best Abuse of CPP
-#
-vik2: vik2.c
-	@${RM} -f vik2_1.c
-	${CC} -E '-DSTOP=_5' '-DFNAME="vik2_1.c"' vik2.c > vik2_1.c
-	@${RM} -f vik2_2.c
-	${CC} -E vik2_1.c > vik2_2.c
-	${CC} -O vik2_2.c -o vik2
-
-vik2_clean:
-	${RM} -f vik2_1.c vik2_2.c vik2.o
-
-vik2_clobber: vik2_clean
-	${RM} -f vik2
-
-
+###############
 # utility rules
+###############
 #
-everything: ${WINNERS} ${ALT_NAMES} ${DATA_FILES}
+clean:
+	${RM} -f ${OBJ} ${ALT_OBJ}
+	@-if [ -f indent.c ]; then \
+	    echo ${RM} -f indent.c; \
+	    ${RM} -f indent.c; \
+	fi
 
+clobber: clean
+	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf build
+	@-if [ -e sandwich ]; then \
+	    ${RM} -f sandwich; \
+	    echo 'ate sandwich'; \
+	fi
+
+install:
+	@echo "Dr. Spock says that is not logical!"
+	@${TRUE}
+
+# you may be able to misunderstand the source by reading indent.c
+#
+indent.c: ${PROG}.c
+	@if which "${GINDENT}" >/dev/null 2>&1; then \
+	    echo ${RM} -f $@; \
+	    ${RM} -f $@; \
+	    echo "${GINDENT} < $< > $@"; \
+	    ${GINDENT} < $< > $@; \
+	elif which "${INDENT}" >/dev/null 2>&1; then \
+	    echo ${RM} -f $@; \
+	    ${RM} -f $@; \
+	    echo "${INDENT} < $< > $@"; \
+	    ${INDENT} < $< > $@; \
+	else \
+	    echo "no intent tool found, ident $< yourself, sorry"; \
+	    echo "exit 1"; \
+	    exit 1; \
+	fi
+
+
+##################
+# 133t hacker rulz
+##################
+#
 love:
 	@echo 'not war?'
+	@${TRUE}
 
 haste:
 	$(MAKE) waste
-
-waste:
-	@echo 'waste'
-
-clean: ${CLEAN}
-	${RM} -f a.out core
-
-clobber: ${CLOBBER}
-	${RM} -f ${WINNERS}
-	${RM} -f ${ALT_NAMES}
-
-nuke: clobber
 	@${TRUE}
 
-install: all
-	${CAT} ${WINNERS} ${ALT_NAMES} > /dev/null
+waste:
+	@echo 'haste'
+	@${TRUE}
+
+maker:
+	@echo 'Participate in a maker faire'
+	@${TRUE}
+
+easter_egg:
+	@echo "you expected to often misunderstand this $${RANDOM} magic"
+	@echo "chongo '<was here>' /\\oo/\\"
+	@echo "Eggy"
+
+sandwich: easter_egg
+	@if [ `id -u` -eq 0 ]; then \
+	    echo 'Okay.'; \
+	    echo "$${RANDOM}`date +%s`$${RANDOM}" > $@; \
+	else \
+	    echo 'What? Make it yourself.'; \
+	    exit 1; \
+	fi
+
+# Understand the history of the Homebrew Computer Club
+# as well as the West Coast Computer Faire and
+# you might be confused different.  :-)
+#
+supernova: sandwich
+	@-if [ -r .code_anal ]; then \
+	    ${RM} -f .code_anal_v6; \
+	else \
+	    echo "planet deniers, like some members of the IAU, are so cute when they try to defend their logic"; \
+	fi
+	@echo "A $@ helps ${MAKE} the elements that help form planets"
+	@${TRUE}
+
+deep_magic: supernova
+	@-if [ -r .code_anal ]; then \
+	    ccode_analysis --deep_magic 7889066cdbdf09b0408021754586e895be641cc9be29e7eafd3ca65359541f17 \
+	    		   --FNV1a_hash_512_bit -v2 "${PROG}" "${PROG}.c"; \
+	else \
+	    echo "Wrong! Do it again!"; \
+	    sleep 2; \
+	    echo "Wrong! Do it again!"; \
+	    sleep 2; \
+	    echo "Wrong! Do it again!"; \
+	fi
+	@${TRUE}
+
+magic: deep_magic
+	@-if [ -r .code_anal ]; then \
+	    ccode_analysis --level 20003 --mode 5717175 --FNV1a_hash_512_bit -v2 "${PROG}" "${PROG}.c"; \
+	else \
+	    echo "If you don't eat yer meat, you can't have any pudding!"; \
+	    echo "How can you have any pudding if you don't eat yer meat?!"; \
+	fi
+	@${TRUE}
+
+# The IOCCC resident astronomer states
+#
+charon: magic
+	@echo "$@ is a dwarf planet"
+	@echo "dwarf is a type of planet"
+	@echo "therefore IAU, $@ is a planet"
+
+pluto: charon
+	${MAKE} charon
+	@echo "$@ is a dwarf planet"
+	@echo "dwarf is a type of planet"
+	@echo "therefore, $@ is a planet"
+	@echo "having lots of planets is good feature because supernovae can help ${MAKE} a lot of them"
