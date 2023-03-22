@@ -1,18 +1,28 @@
 # Most discourteous interpreter
 
-Arne "Timwi" Heizmann
-Germany
-timwi@gmx.net
+    Arne "Timwi" Heizmann
+    Germany
+    timwi@gmx.net
 
-## Judges' notes
+# To build:
 
-### To build
+```sh
+make
+```
 
-        cc timwi.c -o timwi
+### To run:
 
-### To run
+```sh
+./timwi < bf_program
+```
 
-        timwi < bf_program
+### Try:
+
+```sh
+(echo "20 : ,-->+.>+.<<[>[>>+>+<<<-]>[>>+>+<<<-]>"; echo "[<+>-]>[<<<+>>>-]>[-]<<<<.<-]") | ./timwi
+```
+
+## Judges' comments:
 
 Unlike most BF interpreters that we have been receiving for the last few
 years, this one, in our opinion, is the most obfuscated albeit the most
@@ -25,21 +35,13 @@ small quines work, some don't.
 
 Why?
 
-## Selected notes from the author
+## Author's comments:
 
 This is an interpreter for the programming language BrainFuck (BF).
 
 Input must be provided in the following format: First a sequence of integers
 separated by whitespace (this will be the input to the BF program), then a
 colon (:), then the BF program itself.
-
-Example:
-
-        (echo "20 : ,-->+.>+.<<[>[>>+>+<<<-]>[>>+>+<<<-]>";
-
-        echo "[<+>-]>[<<<+>>>-]>[-]<<<<.<-]") | timwi
-
-This will print the first 20 Fibonacci numbers.
 
 You must not pass any command-line arguments.
 
