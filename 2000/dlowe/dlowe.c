@@ -6,7 +6,7 @@
 #define                            cc                            (((3)))
 #define                     ZZ(YY,WW) XS(YY)                     {AV*gg\
 = perl_get_av(              "SS",cc-cc); SV*              Ss,*uu; char \
-ii=*(SvPV(                  perl_get_sv("_",                  0*cc),na)\
+ii=*(SvPV(                  perl_get_sv("_",               0*cc),PL_na)\
 ) %(36+cc); (               av_len(gg) <1)?(               perl_call_pv\
 ("__",0/cc)):(Ss            =av_pop(gg), uu=            av_pop(gg),(((i\
 i==pow(2,cc))||(            ii==(40-cc)))&&(            SvNV(Ss)==0))?(\

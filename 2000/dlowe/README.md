@@ -19,6 +19,11 @@ The following bit of perl may help determining the values you need:
 perl -MConfig -e 'print "$Config{archlibexp}/CORE\n"'
 ```
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile
+with more recent perl versions; the symbol now `PL_na` was once `na`. He notes
+that this entry crashes under macOS but it works under linux after this change.
+
+
 ### To run:
 
 ```sh
