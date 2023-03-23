@@ -1,22 +1,32 @@
 # Most Useful
 
-Szabolcs Borsanyi
-Department of Physics and Astronomy
-University of Sussex
-Brighton
-East Sussex BN1 9QH
-United Kingdom
-s.borsanyi at sussex dot ac dot uk
+    Szabolcs Borsanyi
+    Department of Physics and Astronomy
+    University of Sussex
+    Brighton
+    East Sussex BN1 9QH
+    United Kingdom
+    s.borsanyi at sussex dot ac dot uk
 
-## Judges' comments:
+# To build:
 
-### To build:
-
-        make borsanyi
+```sh
+make
+```
 
 ### To run:
 
-        ./borsanyi ioccc@example.com > example.gif
+```sh
+./borsanyi string > file.gif
+```
+
+### Try:
+
+```sh
+./borsanyi ioccc@example.com > example.gif
+```
+
+## Judges' comments:
 
 This entry uses a very user-friendly representation of the font
 it uses (with a few exceptions).   Check out the source and see
@@ -29,11 +39,9 @@ anti-CAPTCHA tools.
 
 ## Author's comments:
 
-Email address to gif converter
-==============================
+### Email address to gif converter
 
-Introduction:
--------------
+### Introduction:
 
 Most spam robots collect email addresses from the web sites of
 innocent people, like you. Conference organizers cannot disclose
@@ -48,8 +56,7 @@ in the command line. To avoid complications with patent issues
 the LZW compression feature is not used. A typical email address
 is stored in less than 1-2 kilobytes.
 
-Usage:
-------
+### Usage:
 
         $ gcc email.c -lpthread -o email
         $ ./email my@email.address.com > email.gif
@@ -59,8 +66,7 @@ The address cannot be longer than 42 characters, and may consist of
 the characters: a-z_A-Z0-9@.-
 The program is (like email addresses are) case insensitive.
 
-Obfuscation:
-------------
+### Obfuscation:
 
 Multicore support is a must in present-day applications. This
 entry supports up to 25 cores.  The odd names in the bottom
@@ -70,16 +76,14 @@ small, in fact, everything is a macro. Are you familiar with
 the GIF format? Studying this program will give you a (very
 little) insight.
 
-Questions:
-----------
+### Questions:
 
 After analyzing the source code, try to answer these questions:
 1. How can you add a further supported symbol?
 2. Can you alter the look of the output characters?
 3. What limits the number of input characters to 42?
 
-Portability:
-------------
+### Portability:
 
 The program uses posix threads (using the linker flag -lpthread).
 The program accepts email addresses not longer than 42 bytes
