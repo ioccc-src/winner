@@ -1,27 +1,39 @@
 # Best Game
 
-Raphael Meyer
-US
+    Raphael Meyer
+    US
 
-## Judges' Comments:
+# To build:
 
-### To build:
-
-        make meyer
+```sh
+make
+```
 
 ### To run:
 
-        ./meyer
+```sh
+./meyer
+```
+
+### Try:
+
+```sh
+./meyer
+```
 
 For your first input try:
 
-        a 0 1
+```
+a 0 1
+```
+
+## Judges' comments:
 
 This entry turns a newspaper solitare puzzle into a competition
 with the computer to be the last one moving.  The object of this
 source code is to determine the object of this source code!  :-)
 
-## Selected Author's Comments:
+## Author's comments:
 
 I wanted submit a fully object-oriented entry to show that
 object-orientated code:
