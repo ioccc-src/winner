@@ -21,8 +21,8 @@ without SDL1 (**not** SDL2) this will not link because two functions that are
 used were removed from SDL2. Since SDL1 is still available and since changing
 the code to use SDL2 would be more complicated he decided to change the Makefile
 to use `sdl-config` not `sdl2-config`. Nevertheless he points out that the entry
-segfaults or at least it does under macOS (he has not tested linux yet but will
-in time and then try debugging it). Thank you Cody for your assistance!
+requires x86/x86_64 CPUs. Without it it might very well segfault (for instance
+it segfaulted on his MacBook Pro with the M1 chip).
 
 
 ### To run:
