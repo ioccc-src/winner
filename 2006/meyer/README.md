@@ -27,9 +27,12 @@ For your first input try:
 a 0 1
 ```
 
+NOTE: if you do not input three different 'words' it will block. You can input
+more text to fulfil the program's requirements.
+
 ## Judges' comments:
 
-This entry turns a newspaper solitare puzzle into a competition
+This entry turns a newspaper solitaire puzzle into a competition
 with the computer to be the last one moving.  The object of this
 source code is to determine the object of this source code!  :-)
 
@@ -40,7 +43,7 @@ object-orientated code:
 
   1. is ridiculously bloated
   2. is unreadable
-  3. isn't WYWIWID anymore
+  3. isn't WYWIWID (what you write is what it does) anymore
 
 But I just totally failed. No, I didn't fail in showing any of
 the points above. Before I even had the chance to prove any of
@@ -50,14 +53,14 @@ bytes. Therefore, I broke the only rule in this contest, I think
 you shouldn't break in any case: Rule Nr 2, The size of ...
 
 The degree of claim (2) actually depends on the compiler. As I
-_manualy_ compiled it from [a generic object-oriented programming
+_manually_ compiled it from [a generic object-oriented programming
 language] to C, it didn't just end up unreadable, but awfully
 messed up, i.e. obfuscated.
 
 As it is already (pre)compiled to C, you could also call it an object-
-disoriented progam.
+disoriented program.
 
-Comparing this progam to a potential object-oriented implementation,
+Comparing this program to a potential object-oriented implementation,
 it is obvious, that object-oriented code isn't WYWIWID (what
 you write is what it does). It may be tempting to think that
 
@@ -93,9 +96,9 @@ implementation in a popular object-oriented programming language.
 It is a sudoku based game. The goal of the game is to be able
 to do the last valid 'move'.
 
-On your turn you have to set a free cell to a value between 1 to 9 without breaking the following rule:
+On your turn you have to set a free cell to a value between 1 to 9 without
+breaking the following rule. Any number must be unique in its:
 
-any number must be unique in its
     1. row
     2. column
     3. 3x3 block.

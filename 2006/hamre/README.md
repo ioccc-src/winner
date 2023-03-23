@@ -37,7 +37,7 @@ a useful tool to have around, and I haven't found a useful version,
 much less an obfuscated one.
 
 It is rather feature complete as rational calculators go. The
-supported operators are: +, - (binary and unary), *, / and (). Run it
+supported operators are: `+`, `-` (binary and unary), `*`, `/` and `()`. Run it
 by supplying an expression as the first argument, and the normalized
 result will be written to stdout.
 
@@ -57,7 +57,7 @@ By default, only 31 nested levels of operators are supported.
 
 The code is well documented, even with an example. In fact this
 documentation accounts for 100% of the source.  Personally I find
-preprocessing or reindenting the program counterproductive when it
+preprocessing or re-indenting the program counterproductive when it
 comes to understanding the source. The preprocessed source becomes
 rather verbose.
 

@@ -33,7 +33,7 @@ it uses (with a few exceptions).   Check out the source and see
 yourself!  :-)
 
 The resulting GIF file is likely to puzzle optical character
-recognition tools.  The amount ofimagination necessary to
+recognition tools.  The amount of imagination necessary to
 recognise the @ character will certainly challenge a few
 anti-CAPTCHA tools.
 
