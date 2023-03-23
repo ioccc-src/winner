@@ -1,17 +1,27 @@
 # Most Irrational
 
-Steinar Hamre
-Norway
+    Steinar Hamre
+    Norway
 
-## Judges' Comments:
+# To build:
 
-### To build:
-
-        make hamre
+```sh
+make
+```
 
 ### To run:
 
-        ./hamre '-1+4/3*(2+1/(3/2*(7/2-7/3+1/6)))/2'
+```sh
+./hamre math_expression_string
+```
+
+### Try:
+
+```sh
+./hamre '-1+4/3*(2+1/(3/2*(7/2-7/3+1/6)))/2'
+```
+
+## Judges' comments:
 
 An irrationally coded source presents rational things!
 
@@ -20,7 +30,7 @@ of supporting a new operator by way of an existing macro
 in the source.  And can you determine which macro this is
 and understand the purpose of its arguments?
 
-## Selected Author's Comments:
+## Author's comments:
 
 This is a calculator for rational numbers. Believe it or not, that is
 a useful tool to have around, and I haven't found a useful version,
@@ -31,8 +41,10 @@ supported operators are: +, - (binary and unary), *, / and (). Run it
 by supplying an expression as the first argument, and the normalized
 result will be written to stdout.
 
-        ./hamre '-1+4/3*(2+1/(3/2*(7/2-7/3+1/6)))/2'
-        2/3
+```sh
+$ ./hamre '-1+4/3*(2+1/(3/2*(7/2-7/3+1/6)))/2'
+2/3
+```
 
 If you do not supply an argument, the calculator will crash.  Other
 arguments are ignored. Supplying more arguments may further limit the
