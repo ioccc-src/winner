@@ -34,8 +34,6 @@ There are other text files you may wish to try:
 ./grothe 65000000 10000000 1344 < test.txt
 ```
 
-```sh
-
 ## Judges' comments:
 
 Most of the time, interference is annoying.  This entry is the
