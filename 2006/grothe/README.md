@@ -1,22 +1,42 @@
 # Most Obfuscaed Audio
 
-Aaron Grothe
-2205 South 51st Street
-Omaha, NE 68106
-US
+    Aaron Grothe
+    2205 South 51st Street
+    Omaha, NE 68106
+    US
 
-## Judges' Comments:
+# To build:
 
-### To build:
-
-        make grothe
+```sh
+make
+```
 
 ### To run:
 
-        ./grothe 65000000 10000000 1344 < twinkle.txt
+```sh
+./grothe carrier_freq pixelclock horizontal_total < some_input.txt
+```
+
+### Try:
+
+```sh
+./grothe 65000000 10000000 1344 < twinkle.txt
+```
 
 ... and then put on your "electronic ears".  You may find using
 a tunable scanning electronic ear helps.
+
+There are other text files you may wish to try:
+
+```sh
+./grothe 65000000 10000000 1344 < arabian.txt
+./grothe 65000000 10000000 1344 < olympic.txt
+./grothe 65000000 10000000 1344 < test.txt
+```
+
+```sh
+
+## Judges' comments:
 
 Most of the time, interference is annoying.  This entry is the
 exception that proves the rule.  What is a bug to some is a
