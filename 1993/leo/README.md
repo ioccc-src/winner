@@ -10,84 +10,63 @@
 
         make all
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work with
+modern compilers. Thank you Cody!
+
+
 ### To run
 
-    To have the computer guess:
+To have the computer guess:
+
 	./leo [colors]
 
-    To guess the computer's number:
+To guess the computer's number:
+
 	./mind [colors]
 
-    where:
+where:
+
 	colors		number of possible colors (1 to 15) (default: 6)
 
 ## Judges' comments
     
-    By default, the number of colors if 6.  You may specify a
-    value of between 1 and 15 colors.  See the author's notes
-    for instructions of how to play.
+By default, the number of colors if 6.  You may specify a
+value of between 1 and 15 colors.  See the author's notes
+for instructions of how to play.
 
-    We look forward to more entries from the newer members of the 
-    International Internet community.
-
-    On more modern systems we had to make the following changes to get it to
-    compile:
-
-
-	    --- i/1993/leo/leo.c
-	    +++ w/1993/leo/leo.c
-	    @@ -1,19 +1,20 @@
-	     #include <stdio.h>
-	    -#include <malloc.h>
-	    +#include <stdlib.h>
-	     #include <string.h>
-	    +#include <time.h>
-
-	     #define A(x) (e^d)&i?e:(e+=i+i/15-d,d<<=4,i<<=4,x)
-	     #define B b+=!((e^d)&i)&&(d|=i),i<<=4,
-	     #define C i=15,B B B B d=d<<4|d>>12,
-	     #define D=(d=g,b=0,C b<<=4, C C C b)
-	     #define E if(**y)goto
-	     #define F=a[rand()%c]
-	     #define G unsigned short
-	     #define H e^=a[z],a[z]^=e,e^=a[z],
-
-	    -void
-	    +int
-
-
-    to successfully build this entry.
+We look forward to more entries from the newer members of the 
+International Internet community.
 
 ## Author's comments
 
-    This program plays mastermind, if you call it by a name ending by
-    'd', otherwise it _solves_ mastermind. Call it without parameters
-    to use 6 digits (colors), or indicate the number of possible digits
-    (you cannot change the number of positions so easily).
+This program plays mastermind, if you call it by a name ending by
+'d', otherwise it _solves_ mastermind. Call it without parameters
+to use 6 digits (colors), or indicate the number of possible digits
+(you cannot change the number of positions so easily).
 
-    The number in parentheses is the number of possible combinations,
-    based on previous questions and answers.  If you solve the puzzle,
-    "(1)" indicates that your previous moves are enough to give correct
-    answer.  If the program acts as solver and terminates prematurely,
-    it means that you have mistaken in your answers to its guesses.
-    Question marks indicate the number of digits you have to enter
-    (either 4 when you guess or 2 when computer guesses).
+The number in parentheses is the number of possible combinations,
+based on previous questions and answers.  If you solve the puzzle,
+"(1)" indicates that your previous moves are enough to give correct
+answer.  If the program acts as solver and terminates prematurely,
+it means that you have mistaken in your answers to its guesses.
+Question marks indicate the number of digits you have to enter
+(either 4 when you guess or 2 when computer guesses).
 
-    Note that the program uses the same code for both player and
-    solver, and the only place where it makes difference is the
-    interactive part. Many obfuscations have been made to achieve
-    this.  An expression giving (bulls * 16 + cows) from two numbers
-    is, however, quite straightforward :-) , as well as the arithmetic
-    of binary coded colors-base numbers is.
+Note that the program uses the same code for both player and
+solver, and the only place where it makes difference is the
+interactive part. Many obfuscations have been made to achieve
+this.  An expression giving (bulls * 16 + cows) from two numbers
+is, however, quite straightforward :-) , as well as the arithmetic
+of binary coded colors-base numbers is.
 
-    Limitations: maximum number of digits (colors) is 14 (1..F).
+### Limitations: maximum number of digits (colors) is 14 (1..F).
 
-    Suggestions: Use terminal (or emulator) with non-destructive
-    backspaces. Do "disable scrolling" on cmdtool or similar emulators.
+Suggestions: Use terminal (or emulator) with non-destructive
+backspaces. Do "disable scrolling" on cmdtool or similar emulators.
 
-    Bugs: Please don't type ^D at the prompt!!
+#### Bugs: Please don't type ^D at the prompt!!
 
-    EXAMPLE: Suppose we think of 1234:
+EXAMPLE: Suppose we think of 1234:
 
     judges-385> leo
 	(1296): 6433
@@ -101,7 +80,7 @@
 	(1): 1234
 	?? 40       # you may enter everything there
 
-    EXAMPLE: Guess the computer's number:
+EXAMPLE: Guess the computer's number:
 
     judges-387> mind
 	(1296): ???? 1122   # my strategy isn't the best, just as example
