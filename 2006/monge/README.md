@@ -1,25 +1,31 @@
 # Best Compiled Graphics
 
-Maurizio Monge
-Department of Mathematics
-University of Pisa
-Pisa
-Italy
-maurizio.monge at gmail dot com
+    Maurizio Monge
+    Department of Mathematics
+    University of Pisa
+    Pisa
+    Italy
+    maurizio.monge at gmail dot com
 
+# To build:
 
-## To build:
+Make sure you have the SDL2 development environment installed.
 
-        echo Make sure you have the SDL2 development environment installed
-        make all
+```sh
+make
+```
 
-### To run
+### To run:
 
-        ./monge expression ...
+```sh
+./monge expression ...
+```
 
 ### Try:
 
-        ./monge "z = 0" "z = z*z*z + c; Abs2(z) < 4"
+```sh
+./monge "z = 0" "z = z*z*z + c; Abs2(z) < 4"
+```
 
 ## Judges' comments
 
