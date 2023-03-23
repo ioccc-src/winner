@@ -1,28 +1,38 @@
 # Best Abuse of Computation
 
-Christopher Night
-Harvard University
-Department of Astronomy
-Cambrige MA 02238
-US
-<http://www.people.fas.harvard.edu/~night/>
+    Christopher Night
+    Harvard University
+    Department of Astronomy
+    Cambrige MA 02238
+    US
+    <http://www.people.fas.harvard.edu/~night/>
 
-## Judges' Comments:
+# To build:
 
-### To build:
-
-        make night
+```sh
+make
+```
 
 ### To run:
 
-        ./night
+```sh
+./night
+```
+
+### Try:
+
+```sh
+echo "Do or do not. There is no try."
+```
+
+## Judges' comments:
 
 You'd never guess, from looking at the code, that there is a
 genetic algorithm involved.  Somewhere.  But what does it do?
 Well, it might take you a while to navigate the results, let
 alone the code.
 
-## Selected Author's Comments:
+## Author's comments:
 
 Don't worry; this is not a self-reproducing program, as you might at
 first guess from the layout. I would never be so foolhardy as to
@@ -52,7 +62,7 @@ convinced, you can try to solve it yourself. The goal is to traverse
 from the upper-left to the upper-right and out the top, where the
 number of moves remaining is printed. Use the arrow keys for suckers
 (w, a, s, d) to move around. q quits and r restarts. Also, the maze
-changes as you move through it, in a predicatable way. It should be
+changes as you move through it, in a predictable way. It should be
 easy enough to figure out the pattern. For best results, use a display
 with bold-text capabilities and color.
 
