@@ -16,7 +16,7 @@ make
 ### To run:
 
 ```sh
-./prog
+./vik2
 ```
 
 ### Try:

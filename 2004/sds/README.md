@@ -23,7 +23,7 @@ make
 
 ```sh
 ./sds < sds.c > encoder.c
-cc -o encoder encoder.c
+make encoder
 ./encoder sds.hint <sds.c >sds_msg.c
 ```
 

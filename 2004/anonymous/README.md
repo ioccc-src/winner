@@ -32,6 +32,20 @@ don't have a "pgm" viewer then we suggest the "netpbm" toolkit
 graphics format that you can view - most graphical Web browsers
 can display PNG or JPEG images.
 
+BTW: if you haven't read The Lord of the Rings what are you waiting for? :-) You'll
+find out the source of the text above though you'll see that there are some
+circumflexes missing! That's okay though due to I/O of the entry and in earlier
+drafts sometimes the û with an umlaut had a H added to it. The real text is:
+
+> Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk, agh
+> burzum-ishi krimpatul.
+
+which when translated from Black Speech means:
+
+> One Ring to rule them all, One Ring to find them,
+> One Ring to bring them all and in the darkness bind them.
+
+
 p.s. Frodo lives!
 
 ## Author's comments:
@@ -42,7 +56,7 @@ transcription to standard output as a portable graymap (PGM) file.
 
 The specific transcription mode is the Black Speech Tengwar mode, as
 used in the inscription on the One Ring. The program handles the
-following diagraphs:
+following digraphs:
 
 - "gh", "sh", "th": the corresponding tengwar are output for these
   specific sounds

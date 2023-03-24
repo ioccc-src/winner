@@ -26,6 +26,12 @@ make
 ./arachnid arachnid.info
 ```
 
+and then try:
+
+```sh
+./arachnid arachnid.c
+```
+
 ## Judges' comments
 
 The fun part comes when you realize that the maze scrolls.  The overall

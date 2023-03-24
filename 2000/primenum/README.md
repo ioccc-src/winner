@@ -44,7 +44,7 @@ it successfully fooled half of the judges, including me.
 For 15 years, IOCCC winners have obfuscated programs using esoteric,
 difficult-to-interpret, confusing algorithms.  This entry finally bucks
 that trend and obfuscates in the most "obvious" way possible: by
-painstakenly describing the algorithm in clear pseudocode.  Even novice
+painstakingly describing the algorithm in clear pseudocode.  Even novice
 programmers will recognize that the program should find and print prime
 numbers up to a given number (as specified on the command line).
 

@@ -10,38 +10,38 @@
 
         make all
 
-### To run
+### To run:
 
 	./bas2 < bas2.c
 
-## Judges' comments
+## Judges' comments:
 
-    Questions to ponder:
+### Questions to ponder:
 
-	Can you determine the relationship between the input and the
-	resulting numeric output?
+Can you determine the relationship between the input and the
+resulting numeric output?
 
-	The program was not designed to process files with a certain
-	octet value, what value is that?
+The program was not designed to process files with a certain
+octet value, what value is that?
 
-    Hint and Extra Credit:
+### Hint and Extra Credit:
 
-	This entry points our a minor flaw in the IOCCC rules that has
-	been around since 1992.  It processes a certain octet value in
-	a way that differs from a strict reading of one of the
-	official IOCCC rules.  What is the rule and what is the octet
-	value?
+This entry points our a minor flaw in the IOCCC rules that has
+been around since 1992.  It processes a certain octet value in
+a way that differs from a strict reading of one of the
+official IOCCC rules.  What is the rule and what is the octet
+value?
 
-## Author's comments
+## Author's comments:
 
-    The main obfuscation is the way characters are recognized, which is
-    done by matching the bit patterns.  Minor obfuscations are:
+The main obfuscation is the way characters are recognized, which is
+done by matching the bit patterns.  Minor obfuscations are:
 
-    - Useless layout.
+- Useless layout.
 
-    - Useless variable names.
+- Useless variable names.
 
-    - Recursive main() instead of 2 loops (over input characters and over
-    bits in the character).
+- Recursive main() instead of 2 loops (over input characters and over bits in
+the character).
 
-    - ? and || instead of if statements.
+- ? and || instead of if statements.
