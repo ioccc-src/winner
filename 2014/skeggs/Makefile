@@ -63,8 +63,7 @@ X11_INCDIR= /opt/X11/include
 # Common C compiler warnings to silence
 #
 #CSILENCE=
-CSILENCE= -Wno-c99-extensions -Wno-declaration-after-statement -Wno-format-extra-args \
-	-Wno-keyword-macro -Wno-overlength-strings -Wno-parentheses \
+CSILENCE= -Wno-format-extra-args -Wno-keyword-macro -Wno-parentheses \
 	-Wno-unused-parameter
 
 # Common C compiler warning flags
@@ -95,7 +94,7 @@ ARCH=
 # Defines that are needed to compile
 #
 #CDEFINE=
-CDEFINE= '-DCC="${CC} -fPIC"'
+CDEFINE= -DCC="${CC} -fPIC"
 
 # Include files that are needed to compile
 #
@@ -103,8 +102,8 @@ CINCLUDE=
 #CINCLUDE= -include stdlib.h
 #CINCLUDE= -include stdio.h
 #CINCLUDE= -include stdlib.h -include stdio.h
-#CINCLUDE= -I ${X11_INCDIR}
-#CINCLUDE= -I ${HOMEBREW_PREFIX}/include/SDL2
+#CINCLUDE= -I ${X11_INCDIR} -I ${X11_INCDIR}/X11
+#CINCLUDE= `${SDL2_CONFIG} --cflags`
 
 # Optimization
 #
@@ -125,10 +124,10 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-#LIBS=
-LIBS= -ldl
+LIBS=
+#LIBS= -lm
 #LIBS= -L ${X11_LIBDIR} -lX11
-#LIBS= -L ${HOMEBREW_PREFIX}/lib -lSDL2
+#LIBS= `${SDL2_CONFIG} --libs`
 
 # C compiler to use
 #
@@ -328,4 +327,3 @@ pluto: charon
 	@echo "dwarf is a type of planet"
 	@echo "therefore, $@ is a planet"
 	@echo "having lots of planets is good feature because supernovae can help ${MAKE} a lot of them"
-

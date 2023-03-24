@@ -1,26 +1,32 @@
 # Most dynamic
 
-Cel Skeggs  
-<ioccc@celskeggs.com>  
-<http://www.celskeggs.com>  
+    Cel Skeggs  
+    <ioccc@celskeggs.com>  
+    <http://www.celskeggs.com>  
 
-## To build:
+# To build:
 
-        make all
+```sh
+make
+```
 
-### To run
+### To run:
 
-    ./prog
+```sh
+./prog
+```
 
 ### Try:
 
-    ./prog
+```sh
+echo "Do or do not. There is no try."
+```
 
 HINT: Try pressing the left and right arrow keys as needed.
 Also try pressing space/enter to select options.
 Pressing Q or Escape may end the fun before you are ready. :-)
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 When the code looks like lemons, it is probably because the LEMONPEOPLE,
 or at least the LEMONLORD was involved. :-)
@@ -220,11 +226,10 @@ I ran out of time to test it on more systems.
 
    `5092`
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
