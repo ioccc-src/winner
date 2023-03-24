@@ -1,36 +1,42 @@
 # Best Assembler
 
-Stephen Sykes
-Itäinen koulupolku
-Kauniainen
-Finland
-<http://www.stephensykes.com>
+    Stephen Sykes
+    Itäinen koulupolku
+    Kauniainen
+    Finland
+    <http://www.stephensykes.com>
 
-## Judges' Comments:
+# To build:
 
-### To build:
-
-        make sykes1
+```sh
+make
+```
 
 ### To run:
 
-        ./sykes1
+```sh
+./sykes1
+```
 
-next point your browser to the file:
+Next point your browser to the file: `sykes1.html`.
 
-        sykes1.html
+### Try:
 
-in the same directory.  Next try:
+```sh
+./sykes1 10
+```
 
-        ./sykes1 10
+Refresh your browser.  
 
-and refresh your browser.  Now read the sykes1.html page source.
+## Judges' comments:
+
+Read the sykes1.html page source.
 Now then read the C source.  Confused?  :-)
 
 For extra credit, understand what happens when you give this entry
 an negative number argument, and why.
 
-## Selected Author's Comments:
+## Author's comments:
 
 This cube shaped program solves the fiendishly difficult "Bedlam Cube"
 
@@ -54,7 +60,9 @@ need to be very lucky indeed to stumble across a solution.
 
 Compile the program, then test that it works:
 
-        ./sykes1
+```sh
+./sykes1
+```
 
 Shortly you should see the first solution pop out on your screen.  It
 shows you how to build the cube piece by piece, rendered in glorious
@@ -68,7 +76,9 @@ build the cube.  Rendered in glorious 3d color.
 
 Want to see another solution?  Try:
 
-        ./sykes1 some_number
+```sh
+./sykes1 some_number
+```
 
 The program will discard solutions up to the number, and output numbered
 solution.  Refresh your browser window to see the new solution.
@@ -77,7 +87,9 @@ Try some more - there are exactly 19186 solutions to choose from.
 
 If you have a fast machine you might try the last solution:
 
-        ./sykes1 19186
+```sh
+./sykes1 19186
+```
 
 On my machine this takes about half an hour to run.
 
@@ -87,9 +99,11 @@ The implementation is an optimized recursive algorithm that tries to fit
 the pieces into the cube one by one.  The cube pieces are defined near
 the start of the program:
 
-        int s[ ] = { 186, 94, 1426, 3098
-                ,1047 , 122 , 1082 , 3083 , 1039
-                , 569 , 527 , 1054 , 531  }  ;
+```c
+int s[ ] = { 186, 94, 1426, 3098
+	,1047 , 122 , 1082 , 3083 , 1039
+	, 569 , 527 , 1054 , 531  }  ;
+```
 
 Each piece is a bitmap, and represents a 3x3x3 cube.
 
@@ -131,7 +145,9 @@ the pieces, and provided that a solution is possible, it will be found.
 For example, if you modify line 13 of the source like this, the program
 will solve for a different piece set:
 
-        int s[ ] = { 187, 94, 402, 3098
+```c
+int s[ ] = { 187, 94, 402, 3098
+```
 
 And of course you can make your own.
 
