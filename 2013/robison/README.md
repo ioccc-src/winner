@@ -1,24 +1,28 @@
 # Most poetic use of strings
 
-Arch D. Robison  
-<arch.d.robison@gmail.com>  
+    Arch D. Robison  
+    <arch.d.robison@gmail.com>  
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make robison
+```sh
+make
+```
 
 ### To run:
 
-    ./robison
+```sh
+./robison
+```
 
 ### Try:
 
-    echo '1*2*3*4*5*6*7*8*9%1000' | ./robison
-    echo '100000000000000000000*(20*(1+(99477941840441*50)))/31664812345028528' | ./robison
+```sh
+echo '1*2*3*4*5*6*7*8*9%1000' | ./robison
+echo '100000000000000000000*(20*(1+(99477941840441*50)))/31664812345028528' | ./robison
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 Of integers this prog does a lot,
 plus minus, div times (and what not).
@@ -33,8 +37,8 @@ With cut and paste and some time,
 one can compute M(23209).
 
 ## Author's comments:
-Oh, The Strings You Can C!
---------------------------
+
+### Oh, The Strings You Can C!
 
 I love the C language; its tersness is tops.  
 But the thing I abhor is numerical ops!  
@@ -102,12 +106,10 @@ With a pound and define, mass production of vars!
 The moral is clear, for programmers out there:   
 With the C lib for strings, you can hack with a flair.  
 
+## Copyright:
 
---------------------------------------------------------------------------------
-<!--
 (c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
