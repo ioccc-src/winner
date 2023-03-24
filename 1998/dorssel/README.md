@@ -10,10 +10,20 @@
 
         make all
 
-### To run:
+## To run:
+
+	./dorssel
+	# input some text
+
+	echo text | ./dorssel
+
+## Try:
 
 	echo Simple as 123 | ./dorssel
+	echo 'Binary as simple as 1, 10 11.' | ./dorssel
 	echo '.... --- .--  -.. --- . ...  .. -  -.. ---  - .... .- -' | ./dorssel
+	echo 'HOW DOES IT DO THAT' | ./dorssel
+	echo 'HOW DOES IT DO THAT' | ./dorssel | ./dorssel
 
 ## Judges' comments:
 
