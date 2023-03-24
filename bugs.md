@@ -315,6 +315,21 @@ type).
 
 # 1998
 
+## [1998/schnitzi](1998/schnitzi/schnitzi.c) ([README.md](1998/schnitzi/README.md))
+
+### Status: INABIAF - please do not fix
+
+If you get the compiler warning:
+
+	warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+	   11 | void  g(){ O=j; printf(_); }
+	      |                 ^~~~~~
+
+
+please do NOT change it! Doing so will break the generated output.
+
+It does not currently work under macOS. This will be investigated in the near
+future.
 
 # 2000
 

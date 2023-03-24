@@ -1,8 +1,8 @@
 typedef void e();
 
-e *w,*l,*u,*_o,*j,*t,*O,exit,b,c_,b_,a_,c,a,z_,x_,d,y_,_m;
-int q,m,_d,z,k,h,f[99];
-char y[26],_p[40][26],_q,r[2],*_,**s,*i,
+e *w,*l,*u,*_o,*j,*t,*O,b,c_,b_,a_,c,a,z_,x_,d,y_,_m;
+int q,m,z,k,h,f[99];
+char y[26],_p[40][26],_q,r[2],*_,**s,*i,*_d,
 
 *x[]= { "\n", ")", "if (", "}\n", ");\n\n", "    ", ",&", "\"",
   ",", " %%d", ";\n\n    scanf(\"%%d", "%%d ", "else ", ",", "<",
