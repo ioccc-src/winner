@@ -1,3 +1,4 @@
+#!/usr/bin/env perl
 $a="";
 while (<STDIN>){
 	$a=$a . $_;
