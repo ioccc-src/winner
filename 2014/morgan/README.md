@@ -1,36 +1,40 @@
 # Most likely to succeed
 
-Yves-Marie Morgan  
-<yves-marie.morgan@parrot.com>  
+    Yves-Marie Morgan  
+    <yves-marie.morgan@parrot.com>  
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make
+```sh
+make
+```
 
 ### To run:
 
-    ./prog [arg ..]
+```sh
+./prog [arg ..]
+```
 
 ### Try:
 
-    make
-    cp -f prog morgan
-    ./morgan clobber
-    ls
+```sh
+make
+cp -f prog morgan
+./morgan clobber
+ls
 
-    ./morgan all install
-    ls
+./morgan all install
+ls
 
-    ./prog love haste waste supernova
-    ls
+./prog love haste waste supernova
+ls
 
-    make
-    ./prog magic
-    ls
+make
+./prog magic
+ls
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 Think of this as a Maker Faire's make.  :-)
 
@@ -38,6 +42,7 @@ It works reasomably well.  While not super ultra-featured, it does fair well wit
 Not only that, it helped uncover a bug we had in our special Makefile rules.
 
 ## Author's comments:
+
 ### Remarks
 
 This program is a tiny `make` clone.
@@ -85,12 +90,10 @@ with gcc 4.8.2 on Linux Ubuntu 14.04 64-bit :
 * prog.c:23:72: warning: signed and unsigned type in conditional expression [-Wsign-compare]
 * prog.c:12:11: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
 
+## Copyright:
 
---------------------------------------------------------------------------------
-<!--
 (c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
