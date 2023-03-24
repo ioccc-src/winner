@@ -1,196 +1,269 @@
 #!/usr/bin/env make
 #
-# 2013 makefile
+# IOCCC 2013 winning entry - misaka
+
+################################################################################
 #
-# This work by Landon Curt Noll, Simon Cooper, and Leonid A. Broukhis
-# is licensed under:
+# Regarding individual entries:
+#
+# IOCCC winning entry code may not work on your system.  Even with standards,
+# conditions and build environments change, especially when it comes to more
+# extreme code such you might find in an IOCCC winner.  Moreover, what was
+# allowed and liked in one IOCCC contest may no longer be liked/allowed in
+# later IOCCC years.
+#
+# Corrections on winning author and fixing typos in remarks are VERY WELCOME.
+#
+# GitHub pull requests are welcome:
+#
+# If you have a patch that might make running an entry work in modern Unix-like
+# environments, please create a GitHub pull request for the IOCCC judges to
+# consider.
+#
+# Suggestions and corrections regarding Makefiles, winning author information,
+# fixing typos in remarks, and code patches are welcome via opening a GitHub
+# issue or better yet, by creating a GitHub pull request for the IOCCC judges
+# to consider.  To form a GitHub issue or GitHub pull, please visit:
+#
+# https://github.com/ioccc-src/winner
+#
+################################################################################
+
+# This work by Landon Curt Noll and Leonid A. Broukhis is licensed under:
 #
 #	Creative Commons Attribution-ShareAlike 3.0 Unported License.
 #
 # See: http://creativecommons.org/licenses/by-sa/3.0/
 
 
-################
-# tool locations
-################
+#############################
+# shell used by this Makefile
+#############################
 #
 SHELL= bash
-CP= cp
-CPP= cpp
-GUNZIP= gunzip
-LD= ld
-MAKE= make
-RM= rm
-SED= sed
-TAR= tar
-TRUE= true
-CHMOD= chmod
+
+#######################
+# common tool locations
+#######################
+#
+include ../../var.mk
 
 # Set X11_LIBDIR to the directory where the X11 library resides
 #
-X11_LIBDIR= /usr/X11R6/lib
+#X11_LIBDIR= /usr/X11R6/lib
+#X11_LIBDIR= /usr/X11/lib
+X11_LIBDIR= /opt/X11/lib
 
 # Set X11_INCLUDEDIR to the directory where the X11 include files reside
 #
-X11_INCDIR= /usr/X11R6/include
+#X11_INCDIR= /usr/X11R6/include
+#X11_INCDIR= /usr/X11/include
+X11_INCDIR= /opt/X11/include
 
-# Compiler warnings
+# Common C compiler warnings to silence
 #
-#CWARN=
-CWARN= -Wall -W -Wno-comment -Wno-empty-body
-#CWARN= -Wall -W -pedantic
+#CSILENCE=
+CSILENCE= -Wno-comment -Wno-empty-body
 
-# compiler standard
+# Common C compiler warning flags
+#
+#CWARN= ${CSILENCE}
+#CWARN= -Wall ${CSILENCE}
+#CWARN= -Wall -Wextra ${CSILENCE}
+CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+
+# Compiler standard
 #
 #CSTD=
 #CSTD= -ansi
-CSTD= -std=c99
+CSTD= -std=gnu11
 
-# compiler bit architecture
+# Compiler bit architecture
 #
 # Some entries require 32-bitness:
 # ARCH= -m32
 #
-# Some entries require 64-bitess:
+# Some entries require 64-bitness:
 # ARCH= -m64
 #
 # By default we assume nothing:
 #
 ARCH=
 
-# optimization
+# Defines that are needed to compile
+#
+CDEFINE=
+#CDEFINE= -DIOCCC
+
+# Include files that are needed to compile
+#
+CINCLUDE=
+#CINCLUDE= -include stdlib.h
+#CINCLUDE= -include stdio.h
+#CINCLUDE= -include stdlib.h -include stdio.h
+#CINCLUDE= -I ${X11_INCDIR} -I ${X11_INCDIR}/X11
+#CINCLUDE= `${SDL2_CONFIG} --cflags`
+
+# Optimization
 #
 # Most compiles will safely use -O2.  Some can use only -O1 or -O.
 # A few compilers have broken optimizers or this entry make break
 # under those buggy optimizers and thus you may not want anything.
+# Reasonable compilers will allow for -O3.
 #
 #OPT=
 #OPT= -O
 #OPT= -O1
-OPT= -O2
-#OPT= -O3
+#OPT= -O2
+OPT= -O3
+
+# Default flags for ANSI C compilation
+#
+CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
 LIBS=
+#LIBS= -lm
+#LIBS= -L ${X11_LIBDIR} -lX11
+#LIBS= `${SDL2_CONFIG} --libs`
 
-# default flags for ANSI C compilation
-#
-CFLAGS= ${CWARN} ${CSTD} ${ARCH} ${OPT} ${LIBS}
-
-# ANSI compiler
-#
-# Set CC to the name of your ANSI compiler.
-#
-# Some entries seem to need gcc.  If you have gcc, set
-# both CC and MAY_NEED_GCC to gcc.
-#
-# If you do not have gcc, set CC to the name of your ANSI compiler, and
-# set MAY_NEED_GCC to either ${CC} (and hope for the best) or to just :
-# to disable such programs.
+# C compiler to use
 #
 CC= cc
 #CC=clang
-MAY_NEED_GCC= gcc
+#CC=gcc
+
+# Compiler add-ons or replacements for clang only
+#
+ifeq ($(CC),clang)
+#
+CSILENCE+= -Wno-documentation -Wno-format-nonliteral -Wno-missing-prototypes \
+	-Wno-missing-variable-declarations -Wno-poison-system-directories \
+	-Wno-shorten-64-to-32 -Wno-sign-conversion \
+	-Wno-unreachable-code-loop-increment -Wno-unused-macros
+#
+CWARN+= -Weverything
+#
+endif
+
+# Specific add-ons or replacements for gcc only
+#
+ifeq ($(CC),gcc)
+#
+#CSILENCE+=
+#
+#CWARN+=
+#
+endif
 
 
 ##############################
 # Special flags for this entry
 ##############################
 #
-ENTRY= horizontal_cat vertical_cat long_cat loong_cat \
+ENTRY= misaka
+PROG= ${ENTRY}
+#
+OBJ= misaka.o misaka2.o misaka3.o misaka4.o misaka5.o \
+        misaka6.o misaka7.o misaka8.o misaka9.o
+DATA= bf.pl spoiler.html
+TARGET= ${PROG} horizontal_cat vertical_cat long_cat loong_cat \
 	loooong_cat loooooooong_cat long_fat_cat \
 	long_faat_cat same_as_long_cat
-OBJS= misaka.o misaka2.o misaka3.o misaka4.o misaka5.o \
-	misaka6.o misaka7.o misaka8.o misaka9.o
+#
+ALT_OBJ=
+ALT_TARGET=
+
 OTHER_C= misaka2.c misaka3.c misaka4.c misaka5.c \
 	misaka6.c misaka7.c misaka8.c misaka9.c
-DATA= bf.pl
-ALT_OBJ=
-ALT_ENTRY=
 
 
 #################
 # build the entry
 #################
 #
-all: ${ENTRY} ${DATA}
+all: data ${TARGET}
 	@${TRUE}
 
-misaka: all
-	@${TRUE}
+.PHONY: all alt data everything clean clobber install \
+	love haste waste maker easter_egg sandwich \
+	supernova deep_magic magic charon pluto
 
-horizontal_cat: misaka.c
-	${CC} ${CFLAGS} $< -o $@
+${PROG}: ${PROG}.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
-misaka2.c: horizontal_cat misaka.c
-	${RM} -f misaka2.c
-	./horizontal_cat misaka.c misaka.c > misaka2.c
+horizontal_cat: ${PROG}.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
-vertical_cat: misaka2.c
-	${CC} ${CFLAGS} misaka2.c -o $@
+${PROG}2.c: horizontal_cat ${PROG}.c
+	${RM} -f $@
+	./horizontal_cat ${PROG}.c ${PROG}.c > $@
 
-misaka3.c: vertical_cat misaka.c
-	${RM} -f misaka3.c
-	./vertical_cat misaka.c misaka.c > misaka3.c
+vertical_cat: ${PROG}2.c
+	${CC} ${CFLAGS} ${PROG}2.c -o $@ ${LIBS}
 
-long_cat: misaka3.c
-	${CC} ${CFLAGS} misaka3.c -o $@
+${PROG}3.c: vertical_cat ${PROG}.c
+	${RM} -f $@
+	./vertical_cat ${PROG}.c ${PROG}.c > $@
 
-misaka4.c: vertical_cat misaka.c
-	${RM} -f misaka4.c
-	./vertical_cat misaka.c misaka.c misaka.c > misaka4.c
+long_cat: ${PROG}3.c
+	${CC} ${CFLAGS} ${PROG}3.c -o $@ ${LIBS}
 
-loong_cat: misaka4.c
-	${CC} ${CFLAGS} misaka4.c -o $@
+${PROG}4.c: vertical_cat ${PROG}.c
+	${RM} -f $@
+	./vertical_cat ${PROG}.c ${PROG}.c ${PROG}.c > $@
 
-misaka5.c: vertical_cat misaka.c
-	${RM} -f misaka5.c
-	./vertical_cat misaka.c misaka.c misaka.c misaka.c > misaka5.c
+loong_cat: ${PROG}4.c
+	${CC} ${CFLAGS} ${PROG}4.c -o $@ ${LIBS}
 
-loooong_cat: misaka5.c
-	${CC} ${CFLAGS} misaka5.c -o $@
+${PROG}5.c: vertical_cat ${PROG}.c
+	${RM} -f $@
+	./vertical_cat ${PROG}.c ${PROG}.c ${PROG}.c ${PROG}.c > $@
 
-misaka6.c: vertical_cat misaka.c
-	${RM} -f misaka6.c
-	./vertical_cat misaka.c misaka.c misaka.c misaka.c misaka.c > misaka6.c
+loooong_cat: ${PROG}5.c
+	${CC} ${CFLAGS} ${PROG}5.c -o $@ ${LIBS}
 
-loooooooong_cat: misaka6.c
-	${CC} ${CFLAGS} misaka6.c -o $@
+${PROG}6.c: vertical_cat ${PROG}.c
+	${RM} -f $@
+	./vertical_cat ${PROG}.c ${PROG}.c ${PROG}.c ${PROG}.c ${PROG}.c > $@
 
-misaka7.c: vertical_cat horizontal_cat misaka.c
-	${RM} -f misaka7.c
-	./vertical_cat misaka.c misaka.c | ./horizontal_cat - - > misaka7.c
+loooooooong_cat: ${PROG}6.c
+	${CC} ${CFLAGS} ${PROG}6.c -o $@ ${LIBS}
 
-long_fat_cat: misaka7.c
-	${CC} ${CFLAGS} misaka7.c -o $@
+${PROG}7.c: vertical_cat horizontal_cat ${PROG}.c
+	${RM} -f $@
+	./vertical_cat ${PROG}.c ${PROG}.c | ./horizontal_cat - - > $@
 
-misaka8.c: vertical_cat horizontal_cat misaka.c
-	${RM} -f misaka8.c
-	./vertical_cat misaka.c misaka.c | ./horizontal_cat - - - > misaka8.c
+long_fat_cat: ${PROG}7.c
+	${CC} ${CFLAGS} ${PROG}7.c -o $@ ${LIBS}
 
-long_faat_cat: misaka8.c
-	${CC} ${CFLAGS} misaka8.c -o $@
+${PROG}8.c: vertical_cat horizontal_cat ${PROG}.c
+	${RM} -f $@
+	./vertical_cat ${PROG}.c ${PROG}.c | ./horizontal_cat - - - > $@
 
-misaka9.c: vertical_cat horizontal_cat misaka.c
-	${RM} -f misaka9.c
-	./horizontal_cat misaka.c misaka.c | ./vertical_cat misaka.c - > misaka9.c
+long_faat_cat: ${PROG}8.c
+	${CC} ${CFLAGS} ${PROG}8.c -o $@ ${LIBS}
 
-same_as_long_cat: misaka9.c
-	${CC} ${CFLAGS} misaka9.c -o $@
+${PROG}9.c: vertical_cat horizontal_cat ${PROG}.c
+	${RM} -f $@
+	./horizontal_cat ${PROG}.c ${PROG}.c | ./vertical_cat ${PROG}.c - > $@
 
-# Information on the misaka programs
+same_as_long_cat: ${PROG}9.c
+	${CC} ${CFLAGS} ${PROG}9.c -o $@ ${LIBS}
+
+# Information on the ${PROG} programs
 #
-understanding: bf.pl misaka.c ${OTHER_C}
+understanding: bf.pl ${PROG}.c ${OTHER_C}
 	@${CHMOD} +x bf.pl
-	@for c in misaka.c ${OTHER_C}; do \
+	@for c in ${PROG}.c ${OTHER_C}; do \
 	    echo ./bf.pl $$c; \
 	    ./bf.pl $$c; \
 	done
 
 # alternative executable
 #
-alt: ${ALT_ENTRY}
+alt: data ${ALT_TARGET}
 	@${TRUE}
 
 # data files
@@ -198,34 +271,51 @@ alt: ${ALT_ENTRY}
 data: ${DATA}
 	@${TRUE}
 
+# both all and alt
+#
+everything: all alt
+
 
 ###############
 # utility rules
 ###############
 #
-everything: all alt
-
 clean:
-	${RM} -f ${OBJS} ${ALT_OBJ}
+	${RM} -f ${OBJ} ${ALT_OBJ}
+	@-if [ -f indent.c ]; then \
+	    echo ${RM} -f indent.c; \
+	    ${RM} -f indent.c; \
+	fi
 
 clobber: clean
-	${RM} -f ${ENTRY} ${ALT_ENTRY}
-	${RM} -f ${OTHER_C}
-
-nuke: clobber
-	@${TRUE}
-
-dist_clean: nuke
-	@${TRUE}
+	${RM} -f ${TARGET} ${ALT_TARGET}
+	@-if [ -e sandwich ]; then \
+	    ${RM} -f sandwich; \
+	    echo 'ate sandwich'; \
+	fi
 
 install:
-	@echo "Surely we are joking Dr. Lehmer!"
+	@echo "Dr. Spock says that is not logical!"
 	@${TRUE}
 
-# backwards compatibility
+# you may be able to misunderstand the source by reading indent.c
 #
-build: all
-	@${TRUE}
+indent.c: ${PROG}.c
+	@if which "${GINDENT}" >/dev/null 2>&1; then \
+	    echo ${RM} -f $@; \
+	    ${RM} -f $@; \
+	    echo "${GINDENT} < $< > $@"; \
+	    ${GINDENT} < $< > $@; \
+	elif which "${INDENT}" >/dev/null 2>&1; then \
+	    echo ${RM} -f $@; \
+	    ${RM} -f $@; \
+	    echo "${INDENT} < $< > $@"; \
+	    ${INDENT} < $< > $@; \
+	else \
+	    echo "no intent tool found, ident $< yourself, sorry"; \
+	    echo "exit 1"; \
+	    exit 1; \
+	fi
 
 
 ##################
@@ -244,35 +334,69 @@ waste:
 	@echo 'haste'
 	@${TRUE}
 
+maker:
+	@echo 'Participate in a maker faire'
+	@${TRUE}
+
 easter_egg:
-	@echo you expected to mis-understand this $${RANDOM} magic
-	@echo chongo '<was here>' "/\\oo/\\"
-	@echo Readers shall not be disallowed from being unable to not partly misunderstand this partocular final echo.
+	@echo "you expected to often misunderstand this $${RANDOM} magic"
+	@echo "chongo '<was here>' /\\oo/\\"
+	@echo "Eggy"
+
+sandwich: easter_egg
+	@if [ `id -u` -eq 0 ]; then \
+	    echo 'Okay.'; \
+	    echo "$${RANDOM}`date +%s`$${RANDOM}" > $@; \
+	else \
+	    echo 'What? Make it yourself.'; \
+	    exit 1; \
+	fi
 
 # Understand the history of the Homebrew Computer Club
 # as well as the West Coast Computer Faire and
 # you might be confused different.  :-)
 #
-supernova: nuke
+supernova: sandwich
 	@-if [ -r .code_anal ]; then \
-	    ${RM} -f .code_anal_v4; \
+	    ${RM} -f .code_anal_v6; \
 	else \
-	    echo "We are not expected to understand that"; \
+	    echo "planet deniers, like some members of the IAU, are so cute when they try to defend their logic"; \
 	fi
+	@echo "A $@ helps ${MAKE} the elements that help form planets"
 	@${TRUE}
 
-deep_magic:
+deep_magic: supernova
 	@-if [ -r .code_anal ]; then \
-	    ccode_analysis --deep_magic 2ed3582ec5c094a093fea2a6bcb9f19439892873c9cc45ed1ceaafe08b7d52e1b2c7cd524be3b0b2 --FNV1a_hash 512-bit "${ENTRY}"; \
+	    ccode_analysis --deep_magic 7889066cdbdf09b0408021754586e895be641cc9be29e7eafd3ca65359541f17 \
+	    		   --FNV1a_hash_512_bit -v2 "${PROG}" "${PROG}.c"; \
 	else \
-	    echo "Park different"; \
+	    echo "Wrong! Do it again!"; \
+	    sleep 2; \
+	    echo "Wrong! Do it again!"; \
+	    sleep 2; \
+	    echo "Wrong! Do it again!"; \
 	fi
 	@${TRUE}
 
 magic: deep_magic
 	@-if [ -r .code_anal ]; then \
-	    ccode_analysis --mode 391581 --level 216193 --FNV1a_hash 512-bit "${ENTRY}"; \
+	    ccode_analysis --level 20003 --mode 5717175 --FNV1a_hash_512_bit -v2 "${PROG}" "${PROG}.c"; \
 	else \
-	    echo "These aren't the primes you're looking for Paul Erdos!"; \
+	    echo "If you don't eat yer meat, you can't have any pudding!"; \
+	    echo "How can you have any pudding if you don't eat yer meat?!"; \
 	fi
 	@${TRUE}
+
+# The IOCCC resident astronomer states
+#
+charon: magic
+	@echo "$@ is a dwarf planet"
+	@echo "dwarf is a type of planet"
+	@echo "therefore IAU, $@ is a planet"
+
+pluto: charon
+	${MAKE} charon
+	@echo "$@ is a dwarf planet"
+	@echo "dwarf is a type of planet"
+	@echo "therefore, $@ is a planet"
+	@echo "having lots of planets is good feature because supernovae can help ${MAKE} a lot of them"
