@@ -1,23 +1,27 @@
 # Most surprisingly portable
 
-Gregor Richards  
-<Richards@codu.org>  
+    Gregor Richards  
+    <Richards@codu.org>  
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make richards
+```sh
+make
+```
 
 ### To run:
 
-    ./richards
+```sh
+./richards
+```
 
 ### Try:
 
-    echo '10 9 8 7 6 5 4 3 2 1*p*p*p*p*p*p*p*p*p' | ./richards
+```sh
+echo '10 9 8 7 6 5 4 3 2 1*p*p*p*p*p*p*p*p*p' | ./richards
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 Oh no, yet another dc-style calculator? (see 2000/dlowe using an embedded Perl
 interpreter and deemed Worst Abuse of the Rules). 
@@ -26,6 +30,7 @@ The author claims that his calculator does just-in-time compilation.
 What would you do to prove or disprove his claim without attempting to unravel the source?
 
 ## Author's comments:
+
 This is an implementation of the classic UNIX dc command, the reverse-polish
 calculator. Actually it's a pretty bad implementation, since it only implements
 32-bit integers (well, sizeof(int)-sized integers). It only implements the
@@ -66,11 +71,10 @@ flags:
  * owcc 1.9 + x86 + Windows: Needs -DNM -DAH -fno-stack-check
  * gcc 4.4.5 + sh4: -O0 works, higher optimization levels don't work for unknown reasons.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2012, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
