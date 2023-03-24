@@ -223,7 +223,7 @@ universe.
 
 The command ./blakely - < blakely.c is therefore *not* recommended.
 
-### Copyright:
+## Copyright:
 
 (c) Copyright 1984-2012, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].

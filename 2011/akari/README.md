@@ -128,11 +128,10 @@ C program 4 levels deep, it's much easier to interleave something like
 a brainf#$% program in a C program, for example.  For comparison, a
 brainf#$% program is embedded inside akari.c
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2012, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
