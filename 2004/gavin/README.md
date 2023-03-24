@@ -16,7 +16,7 @@ make
 ### To run:
 
 ```sh
-./prog
+./gavin
 ```
 
 ### Try:
@@ -59,7 +59,7 @@ sh
 Can have several shell windows:
 
 ```sh
-vi gavin.hint
+vi README.md
 ./prim
 ```
 

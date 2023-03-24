@@ -17,13 +17,13 @@ make
 ### To run:
 
 ```sh
-./hibachi-start.sh
+cd build; ./hibachi-start.sh
 ```
 
 ### Try:
 
 ```sh
-./hibachi-start.sh
+cd build; ./hibachi-start.sh
 ```
 
 Then use your web browser to visit http://localhost:8008/

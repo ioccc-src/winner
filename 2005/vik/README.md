@@ -28,7 +28,7 @@ make
 
 An amazing use of the X libraries with twisty code passages,
 all different.  One risks running in code path circles as main is
-called again and again.  be sure to pay attention to commas!  :-)
+called again and again. Be sure to pay attention to commas!  :-)
 
 ## Author's comments:
 
@@ -44,7 +44,7 @@ submitted with the entry.
 This program is a complete 3D engine with
 
   * Easy configurable maze maps
-  * Up to 26 differnt bitmap textures in a maze
+  * Up to 26 different bitmap textures in a maze
   * Support for animated bitmap textures
   * Uses default bitmaps in case the configured bitmaps can't be found
   * A default map in case no one is specified
@@ -54,7 +54,7 @@ backward)
 
 ### Build and Run
 
-Compile the source code and link x libraries if nessecary. The program takes
+Compile the source code and link x libraries if necessary. The program takes
 three options which have to be typed in a specific order as described below.
 
         Usage: prog [-w <width>] [mapfile]
@@ -79,7 +79,7 @@ Use the cursor keys to navigate through the labyrinth.
 
 A maze consist of a map file and texture bitmap files. The map file is an
 ascii text file where lower case letters represent walls. The letter tells the
-engine what bitmap texture file to use. The '*' character lets the engine know
+engine what bitmap texture file to use. The `'*'` character lets the engine know
 where to position the user. The example below shows how a map file can look:
 
        aaaaaaaaaaaaa
@@ -99,7 +99,7 @@ current directory).
 
 ### Obfuscation
 
-The program is obfuscated in several ways, bad use of variables, use of the ?
+The program is obfuscated in several ways, bad use of variables, use of the `?`
 operator, recursive calls to main, bad use of for variables and the comma
 operator. To make the final obfuscated touch I ran indent which really made
 the program unreadable (I guess that is not really the intent with indent ;)

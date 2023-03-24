@@ -9,9 +9,11 @@
 
         make all
 
-NOTE: This entry will not compile on modern systems because it
-relies on a compiler bug which was fixed in gcc 2.3.3 (a very
-long time ago now).
+NOTE: This entry will not compile on modern systems because it relies on a
+compiler bug which was fixed in gcc 2.3.3 (a very long time ago now). Trying to
+compile it will also make a bogus file on your file system.  To delete it you
+can use the inode option `-inum` with `find` with the delete option after
+finding the inode with `ls -li`.
 
 ### To run
 

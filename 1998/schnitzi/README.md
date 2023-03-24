@@ -15,7 +15,7 @@
 ### To run
 
 	./schnitzi 5 > sort.c
-	cc sort.c -o sort
+	make sort
 	echo 123 > data
 	echo 234 >> data
 	echo 413 >> data

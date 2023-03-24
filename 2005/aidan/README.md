@@ -13,13 +13,13 @@ make
 ### To run:
 
 ```sh
-./aidan
+./aidan < puzzle
 ```
 
 ### Try:
 
 ```sh
-echo "Do or do not. There is no try."
+./aidan < insane1.sudoku 
 ```
 
 ## Judges' comments:
