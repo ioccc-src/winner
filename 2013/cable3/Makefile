@@ -107,7 +107,7 @@ CDEFINE= -DKB='(kb=read(H(8),r+1190,1))&&H(7)'
 #CINCLUDE= -include stdio.h
 #CINCLUDE= -include stdlib.h -include stdio.h
 #CINCLUDE= -I ${X11_INCDIR} -I ${X11_INCDIR}/X11
-CINCLUDE= `${SDL2_CONFIG} --cflags`
+CINCLUDE= `${SDL1_CONFIG} --cflags`
 
 # Optimization
 #
@@ -131,7 +131,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 #LIBS=
 #LIBS= -lm
 #LIBS= -L ${X11_LIBDIR} -lX11
-LIBS= `${SDL2_CONFIG} --libs`
+LIBS= `${SDL1_CONFIG} --libs`
 
 # C compiler to use
 #
