@@ -1,52 +1,68 @@
 # Most Useful
 
-Dave Burton <ioccc@snox.net>  
-<http://snox.net/ioccc>  
+    Dave Burton <ioccc@snox.net>
+    <http://snox.net/ioccc>
 
-## To build:
+# To build:
 
-        make all
+```sh
+make
+```
 
-### To run
+### To run:
 
-    ./prog "expression"
+```sh
+./prog "expression"
+```
 
-or
+or:
 
-    ./prog
-    (input expressions)
-       
+```sh
+./prog
+```
+
+Type in expressions on standard input.
+
 ### Try:
 
-    ./prog '?0x3343<<2'
+```sh
+./prog '?0x3343<<2'
 
-    echo '?0x3343<<2' | ./prog
+echo '?0x3343<<2' | ./prog
 
-    ./prog
+./prog
+```
 
-    Enter:
+Enter:
 
-	a=0xfeedface
-	b=0xcafe
-	a << 16 + b
+```sh
+a=0xfeedface
+b=0xcafe
+a << 16 + b
+```
 
-    grep '[0-9]' prog.c
+```sh
+grep '[0-9]' prog.c
 
-    ./prog < test.in
+./prog < test.in
 
-    man ./calc.man
+man ./calc.man
+```
 
 ## Alternate code
 
-An alternate version of this entry, prog.alt.c, is provided.  This alternate code is discussed in the "prog.c vs prog.alt.c" section of the author's comments below.
+An alternate version of this entry, `prog.alt.c`, is provided.
+This alternate code is discussed in the "prog.c vs prog.alt.c" section of the author's comments below.
 
 To compile this alternate version:
 
-    make alt
+```sh
+make alt
+```
 
 Use `prog.alt` as you would `prog` above.
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 "Look, Ma, no ~~hands~~ digits!"
 
@@ -57,14 +73,12 @@ We were impressed with the level of detail the author "blogged" the obfuscation 
 
 ## Author's comments:
 
-calc - an integer expression calculator that outputs in both hex and decimal
-----------------------------------------------------------------------------
+### calc - an integer expression calculator that outputs in both hex and decimal
 
 All useful tools should include sufficient documentation.
 See the included man page. ;-)
 
-Notes
------
+### Notes
 
 This program is named calc.  Onomatopoeia of sorts, in the visual realm.
 The formatting was easier: Form Follows Function (although [Hou][1] did this better).
@@ -75,8 +89,7 @@ Printed in 8 pt Courier, it makes aesthetically pleasing 8.5 x 11 wall art.
 
 [1]: http://www.ioccc.org/2011/hou/hint.html "Hou Qiming"
 
-prog.c vs prog.alt.c
----------------------
+### prog.c vs prog.alt.c
 
 Dominik Muth observed a syntax error on `1+1`, `1-1`, `1|1`, and `1^1` when using an
 ARM based computer, although `1*1` and others worked correctly.
@@ -85,8 +98,7 @@ The original code has this weakness, which can be corrected by adding `-fsigned-
 to the compile line.
 The modified code is agnostic to `char` signed-ness.
 
-Why is this entry obfuscated/interesting?
------------------------------------------
+### Why is this entry obfuscated/interesting?
 
 Yes, this is another calculator program.
 
@@ -99,7 +111,7 @@ Nor are the digits simply obfuscated.  There are no character constants.
 There is only one single, short string, and it does not contain any obfuscated digits.
 And yet the output is in decimal and hexadecimal, and it accepts octal, decimal, and hex input.
 
-Flow control is by `for` and `return`.  It is If-less.  Switch-less.  While-less.  Hope-less.   
+Flow control is by `for` and `return`.  It is If-less.  Switch-less.  While-less.  Hope-less.
 Literally, if not figuratively. ;-)
 
 The code size is intentionally 2015, as stated by iocccsize -i,
@@ -109,8 +121,7 @@ Finally, calc is interesting, if for no other reason than it is practically usef
 Hex/decimal conversion, arithmetic, byte-swapping, bit-shifting, and logical operations with memory,
 on the command line, or interactively.
 
-But the question is why is the entry obfuscated?
-------------------------------------------------
+### But the question is why is the entry obfuscated?
 
 The code follows many industry best-practices:
 
@@ -160,8 +171,7 @@ The code follows many industry best-practices:
   But isn't it unsportsmanlike to rely upon it?  However, even with this helpful guide,
   things like reading input lines remain as tricky to read as they are to write.
 
-Compiler warnings
------------------
+### Compiler warnings
 
 Calc is C99 compliant, and is ANSI/C90 compliant except for wanting 64-bit `long long`.
 Changing the two `long long` typedefs to `long`, and compiling with `gcc -m32`
@@ -179,16 +189,15 @@ To stifle these complaints:
 
 When invoked with -ansi -pedantic, there are two warnings, which can be ignored:
 
-  * `ISO C90 does not support 'long long'`   
+  * `ISO C90 does not support 'long long'`
 
 With -Wall -std=c99, both are quite noisy, and all can be ignored:
 
-  * `array subscript has type 'char' [-Wchar-subscripts]`   
-  * `value computed is not used [-Wunused-value]`   
-  * `operation on 'j' may be undefined [-Wsequence-point]`   
+  * `array subscript has type 'char' [-Wchar-subscripts]`
+  * `value computed is not used [-Wunused-value]`
+  * `operation on 'j' may be undefined [-Wsequence-point]`
 
-Test Suite
-----------
+### Test Suite
 
 If the program name begins with an "e", it echoes stdin to stdout.
 This allows for a convenient test suite:
@@ -196,16 +205,14 @@ This allows for a convenient test suite:
 	ln -s prog eprog
 	PATH=. eprog < test.in | diff - test.out
 
-Spoilers
---------
+### Spoilers
 
 If you do not want to puzzle out how it works, see spoilers.markdown.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2016, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
