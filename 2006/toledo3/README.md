@@ -1,29 +1,37 @@
 # Most Portable Chess Set
 
-Oscar Toledo
-Av. Santa Cruz del Monte 9-304
-Ciudad Satelite. Edo. de Mexico
-CP. 53110
-Mexico
+    Oscar Toledo
+    Av. Santa Cruz del Monte 9-304
+    Ciudad Satelite. Edo. de Mexico
+    CP. 53110
+    Mexico
 
-## Judges' Comments:
+# To build:
 
-### To build:
-
-        make toledo3
-
-NOTE: You may have to alter the paths suitably, and you do need X. Modify the makefile as needed.
+```sh
+make
+```
 
 ### To run:
 
-        ./toledo3 1
+```sh
+./toledo3 [1 | 2 | 3 [b]]
+```
+
+### Try:
+
+```sh
+./toledo3 1
+```
+
+## Judges' comments:
 
 It's pretty obvious from looking at it what this program does,
 since it's clearly spelled out in the code.  The interesting
 question is whether this is easier or harder to understand than
 the code for Deep Blue.
 
-## Selected Author's Comments:
+## Author's comments:
 
 There are so many text-based chess programs, what is that of
 A1, H5, C4, D5?  The queen is really pointing to the king?
@@ -33,14 +41,15 @@ What You See Is An IOCCC Entry), point'n'click to move pieces
 is the only required action, and of course the command-line
 options:
 
-        ./toledo3        Two-players mode
-                                (useful if you don't have a board at hand)
-        ./toledo3 1      Human white - Computer black, level 1 (fast)
-        ./toledo3 2      Human white - Computer black, level 2 (medium)
-        ./toledo3 3      Human white - Computer black, level 3 (slow)
-        ./toledo3 1 b    Human black - Computer white, level 1 (fast)
-        ./toledo3 2 b    Human black - Computer white, level 2 (medium)
-        ./toledo3 3 b    Human black - Computer white, level 3 (slow)
+```sh
+./toledo3        # Two-players mode (useful if you don't have a board at hand)
+./toledo3 1      # Human white - Computer black, level 1 (fast)
+./toledo3 2      # Human white - Computer black, level 2 (medium)
+./toledo3 3      # Human white - Computer black, level 3 (slow)
+./toledo3 1 b    # Human black - Computer white, level 1 (fast)
+./toledo3 2 b    # Human black - Computer white, level 2 (medium)
+./toledo3 3 b    # Human black - Computer white, level 3 (slow)
+```
 
 The computer will check that your moves are legal, full legal
 chess moves are allowed, except minor promotions on human side.
@@ -65,8 +74,9 @@ number generator.
 Because it is resource-hungry, I strongly recommend to compile it
 using maximum optimization, on GCC you can use:
 
-        gcc -O3 -fexpensive-optimizations prog.c -o prog -lX11
-
+```
+gcc -O3 -fexpensive-optimizations prog.c -o prog -lX11
+```
 
 ### KNOWN "FEATURES"
 
