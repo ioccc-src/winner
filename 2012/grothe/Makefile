@@ -62,8 +62,8 @@ X11_INCDIR= /opt/X11/include
 
 # Common C compiler warnings to silence
 #
-CSILENCE=
-#CSILENCE= -Wno-implicit-int
+#CSILENCE=
+CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-unused-value
 
 # Common C compiler warning flags
 #
@@ -101,8 +101,8 @@ CINCLUDE=
 #CINCLUDE= -include stdlib.h
 #CINCLUDE= -include stdio.h
 #CINCLUDE= -include stdlib.h -include stdio.h
-#CINCLUDE= -I ${X11_INCDIR}
-#CINCLUDE= -I ${HOMEBREW_PREFIX}/include/SDL2
+#CINCLUDE= -I ${X11_INCDIR} -I ${X11_INCDIR}/X11
+#CINCLUDE= `${SDL2_CONFIG} --cflags`
 
 # Optimization
 #
@@ -126,7 +126,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 LIBS=
 #LIBS= -lm
 #LIBS= -L ${X11_LIBDIR} -lX11
-#LIBS= -L ${HOMEBREW_PREFIX}/lib -lSDL2
+#LIBS= `${SDL2_CONFIG} --libs`
 
 # C compiler to use
 #
@@ -138,9 +138,9 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-CSILENCE+= -Wno-comma -Wno-missing-noreturn -Wno-missing-prototypes \
-	-Wno-missing-variable-declarations -Wno-poison-system-directories \
-	-Wno-shadow -Wno-unreachable-code
+CSILENCE+= -Wno-comma -Wno-missing-prototypes -Wno-missing-variable-declarations \
+	-Wno-poison-system-directories -Wno-shadow -Wno-missing-noreturn \
+	-Wno-unreachable-code
 #
 CWARN+= -Weverything
 #
@@ -166,7 +166,7 @@ PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 DATA= cookie_piece1.dat cookie_piece2.dat cookie_piece3.dat \
-	cookie_piece4.dat cookie_recipe.txt
+        cookie_piece4.dat cookie_recipe.txt
 TARGET= ${PROG}
 #
 ALT_OBJ=
@@ -326,4 +326,3 @@ pluto: charon
 	@echo "dwarf is a type of planet"
 	@echo "therefore, $@ is a planet"
 	@echo "having lots of planets is good feature because supernovae can help ${MAKE} a lot of them"
-

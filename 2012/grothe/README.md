@@ -1,39 +1,46 @@
 # Most conspiratorial
 
-Aaron Grothe  
-2205 South 51st Street  
-Omaha, NE 68106  
-US  
-<ajgrothe@yahoo.com>  
+    Aaron Grothe  
+    2205 South 51st Street  
+    Omaha, NE 68106  
+    US  
+    <ajgrothe@yahoo.com>  
 
-David Madore  
-<http://www.madore.org/~david/>  
+    David Madore  
+    <http://www.madore.org/~david/>  
 
-## To build:
+# To build:
 
-        make all
+```sh
+make
+```
 
 ### To run:
 
-    # To create a shared secret shared among M people with N+1 needed to reconstruct
-    ./grothe -secret 1-/dev/urandom 2-/dev/urandom ... N-/dev/urandom \
-    1+shared1 2+shared2 ... M+sharedM
+To create a shared secret shared among M people with N+1 needed to reconstruct:
 
-    # To reconstruct the original (an arbitrary combination of N+1 or
-    # more shared files with their proper numbers)
-    ./grothe I-sharedI J-sharedJ K-sharedK ... +reconstructed
+```sh
+./grothe -secret 1-/dev/urandom 2-/dev/urandom ... N-/dev/urandom 1+shared1 2+shared2 ... M+sharedM
+```
+
+To reconstruct the original (an arbitrary combination of N+1 or
+more shared files with their proper numbers):
+
+```sh
+./grothe I-sharedI J-sharedJ K-sharedK ... +reconstructed
+```
 
 ### Try:
 
-    ./grothe -grothe.c 1+grothe.c.1 2+grothe.c.2
+```sh
+./grothe -grothe.c 1+grothe.c.1 2+grothe.c.2
 
-    ./grothe -cookie_recipe.txt 1-/dev/urandom 2-/dev/urandom \
-    1+cookie_piece1.dat 2+cookie_piece2.dat 3+cookie_piece3.dat 4+cookie_piece4.dat
+./grothe -cookie_recipe.txt 1-/dev/urandom 2-/dev/urandom 1+cookie_piece1.dat 2+cookie_piece2.dat 3+cookie_piece3.dat 4+cookie_piece4.dat
 
-    ./grothe 1-cookie_piece1.dat 2-cookie_piece2.dat 4-cookie_piece4.dat
-    +cookie_recipe_restore.txt
+./grothe 1-cookie_piece1.dat 2-cookie_piece2.dat 4-cookie_piece4.dat 4+cookie_recipe_restore.txt
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 Also known as Best abuse of the judging process.
 
@@ -63,7 +70,7 @@ into 3 parts and require two of them be available to extract the original recipe
 
 Actually surprisingly useful for an IOCCC entry :-)
 
-**Usage**
+### Usage
 
 To share a secret
 
@@ -74,26 +81,30 @@ number of pieces - 2 + file to be shared
 total number of pieces created by program 4
 pieces needed to reassemble recipe 3 or greater
 
-**example usage**
+### Example usage
 
-\# to share secret into 4 pieces of which at least 3 will be needed to get back the recipe
+To share secret into 4 pieces of which at least 3 will be needed to get back the recipe:
 
-    ./grothe \
-        -cookie_recipe.txt 
-        1-/dev/urandom 2-/dev/urandom 
-        1+cookie_piece1.dat 2+cookie_piece2.dat 3+cookie_piece3.dat 4+cookie_piece4.dat
+```sh
+./grothe \
+    -cookie_recipe.txt 
+    1-/dev/urandom 2-/dev/urandom 
+    1+cookie_piece1.dat 2+cookie_piece2.dat 3+cookie_piece3.dat 4+cookie_piece4.dat
+```
 
-\# put recipe back together using 1, 2 and 4th piece
+To put recipe back together using 1, 2 and 4th piece:
 
-    ./grothe \
-        1-cookie_piece1.dat 2-cookie_piece2.dat 4-cookie_piece4.dat
-        +cookie_recipe_restore.txt
+```sh
+./grothe \
+    1-cookie_piece1.dat 2-cookie_piece2.dat 4-cookie_piece4.dat
+    +cookie_recipe_restore.txt
+```
 
-**Limitations**
+### Limitations
 
 * program is limited to 256 input and output files and will slow down dramatically when you get past 20-50 inputs and outputs
 
-**Obfuscations**
+### Obfuscations
 
 * nothing is done consistently throughout the program E.g i+=1, i=i+1, i++ and ++i are all used in the program.  The mark of true code buggery. - "A foolish consistency is the hobgoblin of little minds" - Ralph Waldo Emerson
 * uses the most powerful obfuscation of all "Math".  "Any sufficiently advanced cryptography is indistinguasble from magic" - Apologies to Arthur C. Clarke
@@ -105,17 +116,16 @@ pieces needed to reassemble recipe 3 or greater
 * use of #defines from stdio.h, stdlib.h for values \_STDIO\_H and EXIT\_SUCCESS used to represent 1 and 0 respectively in the program
 * arrays only need to be 256x256 most are set to greater values than they need to be so trying to figure it out can be a bit tough
 
-**References**
+### References
 
 * Shamir's Secret Sharing - <a href="http://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing">http://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing</a>
 * David Madore's implementation of Shamir's Secret Sharing - <a href="http://www.madore.org/~david/programs/programs-1.36.html">http://www.madore.org/~david/programs/programs-1.36.html</a>
 * Steve's Recipe Database - source for the $25k Cookie Recipe - <a href="http://recipes.stevex.net/">http://recipes.stevex.net/</a>
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
