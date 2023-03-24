@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 clear
 stty cbreak raw -echo min 0
 if [ -f hd.img ]
