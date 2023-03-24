@@ -92,7 +92,7 @@ CSTD= -std=gnu99
 #
 # By default we assume nothing:
 #
-ARCH=
+ARCH= -m32
 
 # Defines that are needed to compile
 #
@@ -101,7 +101,7 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE=
+CINCLUDE= -include stdio.h
 #CINCLUDE= -include stdlib.h
 #CINCLUDE= -include stdio.h
 #CINCLUDE= -include stdlib.h -include stdio.h
@@ -119,7 +119,7 @@ CINCLUDE=
 #OPT= -O
 #OPT= -O1
 #OPT= -O2
-OPT= -O3
+OPT=
 
 # Default flags for ANSI C compilation
 #
@@ -188,6 +188,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo "NOTE: this entry requires 32-bit architecture in order to run properly"
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable

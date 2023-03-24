@@ -12,6 +12,18 @@
 make
 ```
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) discovered that there
+are two things that are needed in order to get this to work in modern systems.
+First it needs 32-bit architecture so the Makefile now has `-m32`. It appears
+it's because of the size of ints being different which affects the bitwise
+operations though this is just a hunch. Second is the optimiser cannot be
+enabled for this to work. Both changes made and it works. This does prove a
+problem for macOS as it no longer easily allows for compiling with 32-bit
+possibly even if you have the Intel chip (it certainly does not work with arm64
+macOS). It might be possible to get the entry to work with 64-bit by changing
+the int size but this is currently unknown.
+
+
 ### To run:
 
 ```sh
