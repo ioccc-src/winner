@@ -9,6 +9,9 @@
 
         make all
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made this use `fgets()`
+not `gets()` to make it safer. Thank you Cody for your assistance!
+
 ### To run
 
 	./schnitzi file
