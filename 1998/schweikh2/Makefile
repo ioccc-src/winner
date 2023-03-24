@@ -169,6 +169,9 @@ TARGET= ${PROG}
 ALT_OBJ= ${PROG}.alt.o
 ALT_TARGET= ${PROG}.alt
 
+# FORCE use of -trigraphs
+#
+CFLAGS+= -trigraphs
 
 #################
 # build the entry
