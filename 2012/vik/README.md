@@ -1,55 +1,68 @@
 # Best use of cocoa - Bronze award
 
-Daniel Vik  
-<daniel@vik.cc>  
-<http://danielvik.com/>  
+    Daniel Vik  
+    <daniel@vik.cc>  
+    <http://danielvik.com/>  
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make vik
+```sh
+make
+```
 
 This entry requires [Zlib](http://www.zlib.net/).
 
 ### To run:
 
-#### Embed text (from file or command line):
+To embed text (from file or command line):
 
-    ./vik e base.png filename > encodedimg.png
-    # or
-    ./vik e base.png SomeRandomText > encodedimg.png
+```sh
+./vik e base.png filename > encodedimg.png
+```
 
-#### Extract the embedded text:
+or
 
-    ./vik d encodedimg.png
+```sh
+./vik e base.png SomeRandomText > encodedimg.png
+```
 
-#### Embed a PNG into another
+To extract the embedded text:
 
-    ./vik e base.png source.png > encodedimg.png
+```sh
+./vik d encodedimg.png
+```
 
-#### Extract the embedded PNG:
+To embed a PNG into another:
 
-    ./vik d encodedimg.png > restored.png
+```sh
+./vik e base.png source.png > encodedimg.png
+```
+
+To extract the embedded PNG:
+
+```sh
+./vik d encodedimg.png > restored.png
+```
 
 ### Try:
 
-    ./vik e ioccc.png chocolate.png > chocolate-in-ioccc.png
-    ./vik e chocolate.png ioccc.png > ioccc-in-chocolate.png
-    ./vik d chocolate-in-ioccc.png > restored-chocolate.png
-    ./vik d ioccc-in-chocolate.png > restored-ioccc.png
+```sh
+./vik e ioccc.png chocolate.png > chocolate-in-ioccc.png
+./vik e chocolate.png ioccc.png > ioccc-in-chocolate.png
+./vik d chocolate-in-ioccc.png > restored-chocolate.png
+./vik d ioccc-in-chocolate.png > restored-ioccc.png
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 References to chocolate had no effect on judging this entry. We
 guarantee it.
 
-Can you discern hidden pieces of chocolate in chocolate-in-ioccc.png ?
-
+Can you discern hidden pieces of chocolate in `chocolate-in-ioccc.png`?
 
 ## Author's comments:
-Introduction
-------------
+
+### Introduction
 
 This program is a  steganography application for embedding an image or text
 into another image as well as extracting  the embedded image  or text back.
@@ -73,15 +86,18 @@ extracted image, and run it through  any of the previous  winning brain$#@$
 interpreters, but I thought it would be easier to include an interpreter in
 the program  to avoid the hassle:
 
-    ./vik e ioccc.png chocolate.png > encodedimg.png
-    ./vik b encodedimg.png
+```sh
+./vik e ioccc.png chocolate.png > encodedimg.png
+./vik b encodedimg.png
+```
 
 It is of course also possible  to embed a brain$#@$ program  as a text file
 (as explained above) and decode it, e.g.:
 
-    ./vik e ioccc.png .+[.+] > encodedimg.png
-    ./vik b encodedimg.png
-
+```sh
+./vik e ioccc.png .+[.+] > encodedimg.png
+./vik b encodedimg.png
+```
 
 ### Obfuscation
 
@@ -96,7 +112,6 @@ followed by a single return statement.  There is a little bit of use of the
 question mark operator,   but this is really  there to keep  the program as
 simple as possible.
 
-
 ### Portability
 
 The program is portable to most platforms that  have zlib  available.   The
@@ -108,8 +123,9 @@ compile the program on this platform, the following line can be added after
 the  variable  declarations  in  the  main  declaration  in  order  to  run
 correctly:
 
-    _setmode(_fileno(stdout), 0x8000);
-
+```c
+_setmode(_fileno(stdout), 0x8000);
+```
 
 ### Limitations
 
@@ -140,11 +156,10 @@ as well as the scan line filters.
 All these features  were quite easy to add,   much thanks to  the (actually
 pretty good) design of the code.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
