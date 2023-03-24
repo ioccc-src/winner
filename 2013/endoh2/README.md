@@ -1,32 +1,33 @@
 # Most recyclable
 
-Yusuke Endoh  
-<mame@ruby-lang.org>  
-<https://github.com/mame/>  
+    Yusuke Endoh  
+    <mame@ruby-lang.org>  
+    <https://github.com/mame/>  
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make endoh2
+```sh
+make
+```
 
 ### To run:
 
-     make all   
+```sh
+make check
+```
 
 You'll need to have Ruby installed to run all the automated check
 
-    make check
-
 ### Try:
 
-    cat jpeg.c
-    
-Look at jpeg.jpg in an image viewer program.
+```sh
+cat jpeg.c
+```
 
-    
-### Selected Judges Remarks:
+Look at `jpeg.jpg` in an image viewer program.
 
+## Judges' comments:
+    
 This is a program which, when fed its own source, generates a program that almost is its whitespace inverse,
 which, in its order, generates a JPEG file (speaking of file size abuse, that is about 16.4 times 
 larger than a PBM file with the same image, but the source was also abusing the size counting program...)
@@ -34,6 +35,7 @@ larger than a PBM file with the same image, but the source was also abusing the 
 Don't pay attention to the OCR ~~behind the ruby curtain~~ --- it's a straightforward bitmap comparison.
 
 ## Author's comments:
+
 ### Highlights
 
 * LZ77-like compression for font and template data
@@ -80,11 +82,10 @@ which is distributed in MIT License:
     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
     DEALINGS IN THE SOFTWARE.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
