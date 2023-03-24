@@ -1,24 +1,30 @@
 # Most underscored argument
 
-Ferenc Deak  
-<fritzone@gmail.com>  
+    Ferenc Deak  
+    <fritzone@gmail.com>  
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make deak
+```sh
+make
+```
 
 ### To run:
 
-    ./prog
+```sh
+./prog
+```
 
 ### Try:
 
-    Changing bounding box coordinates in the source to explore
-    various regions of the fractal.
+```sh
+./prog
+```
 
-### Selected Judges Remarks:
+Changing bounding box coordinates in the source to explore
+various regions of the fractal.
+
+## Judges' comments:
 
 We consider this entry a tribute to all "Abuse of the C preprocessor"
 and Mandelbrot fractal drawing entries we've seen over the years.
@@ -26,6 +32,7 @@ and Mandelbrot fractal drawing entries we've seen over the years.
 We liked the use of unary notation facilitated by variadic macros.
 
 ## Author's comments:
+
 ### Portability
 
 The application was written on a standard Ubuntu 14.04 and tested with
@@ -77,11 +84,10 @@ Yes, unfortunately there are compiler warnings of the kind "initialization makes
 integer from pointer without a cast" the provided Makefile automatically
 disables them.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
