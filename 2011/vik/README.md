@@ -1,31 +1,39 @@
 # Most sound
 
-Daniel Vik  
-802 Durshire Way  
-Sunnyvale, Ca 94087  
-<daniel@vik.cc>  
-<http://www.danielvik.com>  
+    Daniel Vik  
+    802 Durshire Way  
+    Sunnyvale, Ca 94087  
+    <daniel@vik.cc>  
+    <http://www.danielvik.com>  
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make vik
+```sh
+make
+```
 
 ### To run:
 
-    ./vik file.mod > audio_file.raw
+```sh
+./vik file.mod > audio_file.raw
+```
 
 ### Try:
 
-    ./vik randowan.mod | mplayer -demuxer rawaudio -
-    ./vik mad_world.mod | mplayer -demuxer rawaudio -
+```sh
+./vik randowan.mod | mplayer -demuxer rawaudio -
+./vik mad_world.mod | mplayer -demuxer rawaudio -
+```
 
-Alternatively, you can use
+Alternatively, you can use:
 
-    ./vik file.mod > file.raw; ./raw2wav file.raw > file.wav 
+```sh
+./vik file.mod > file.raw; ./raw2wav file.raw > file.wav 
+```
 
 It is possible to download a number of Mod files from [The Mod Archive](http://modarchive.org).
+
+## Judges' comments:
 
 The randowan.mod and mad_world.mod files were created by
 [Henrik Bertilsson](http://www.translucentboy.com) and
@@ -42,14 +50,16 @@ initilzation for?
 
 Does it take your system a long time to compile?  You may want to do try:
 
-     cc -S vik.c
+```sh
+cc -S vik.c
+```
 
 and to examine the resulting assembly file vik.s.  On some platforms
 the assembly file is about 128 MBytes in size!
 
 ## Author's comments:
-Introduction
-============
+
+### Introduction
 
 In 1987,  Karsten Obarski changed the way music was handled in games and
 demos with the introducton of the MOD file format on Commodore Amiga.
@@ -58,9 +68,7 @@ A MOD file contains a set of samples,   a number of patterns  indicating
 how and when the samples  are to be played,   a list of what patterns to
 play in what order, and a number of effects.
 
-
-Features
-========
+### Features
 
 This program converts MOD files  created  with the standard trackers for
 Amiga,  e.g. Pro Tracker,  Noise Tracker and Sound Tracker to raw 16 bit
@@ -85,9 +93,7 @@ program supports most of them, including:
 Due to size constraints tremolo and vibrato is not supported.   Also, to
 avoid infinite long songs, the position jump feature is ignored.
 
-
-Songs
-=====
+### Songs
 
 With his permission, the package incldues two songs composed by Henrik
 Bertilsson, also known as Deelite:
@@ -96,16 +102,13 @@ Bertilsson, also known as Deelite:
   2. Randowan
 
 
-Build
-=====
+### Build
 
 Compiling for *nix systems (including cygwin) is straight forward:
 
     $ gcc -o vik vik.c
 
-
-Usage
-=====
+### Usage
 
 ### Convert MOD file to raw 44.1kHz stereo audio file
 
@@ -117,9 +120,7 @@ Usage
 
 (Don't forget the last '-' as it makes mplayer read from stdin.)
 
-
-Obfuscation
-===========
+### Obfuscation
 
 The IOCCC rules did not put a limit  on the entropy of the  source code,
 and it appears that the general entropy rules doesn't apply. An estimate
@@ -141,9 +142,7 @@ conditional  and the program  uses the ? operator (sigh) mainly  to save
 space,   but also to leverage  the comma operator  and  precedence  more
 efficiently.
 
-
-Portability
-===========
+### Portability
 
 The progam is portable to most platforms.  The only system dependency is
 that the program relies on writing binary data to stdout.
@@ -152,20 +151,19 @@ Microsoft compilers adds a carriges return to newlines,   and to compile
 the program with this platform,   the following line  can be added after
 the main declaration in order for the program to run correctly:
 
-    _setmode(_fileno(stdout), 0x8000);
+```c
+_setmode(_fileno(stdout), 0x8000);
+```
 
-
-Limitations
-===========
+### Limitations
 
 The program  only runs when  a valid  MOD file is passed as argument. If
 no argument is passed, the program crashes.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2012, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
