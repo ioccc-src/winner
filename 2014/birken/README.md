@@ -1,31 +1,34 @@
 # Best use of port 1701
 
-Michael Birken  
-<o__1@hotmail.com>  
-<http://www.meatfighter.com/>  
+    Michael Birken  
+    <o__1@hotmail.com>  
+    <http://www.meatfighter.com/>  
 
-Alexander Prishchepov  
-<https://github.com/sans17/>  
+    Alexander Prishchepov  
+    <https://github.com/sans17/>  
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make
+```sh
+make
+```
 
 ### To run:
 
-    ./prog < some_secret_or_something
+```sh
+./prog < some_secret_or_something
 
-    ./prog http://host[:port]
+./prog http://host[:port]
+```
 
 ### Try:
 
-    ./prog.c
+```sh
+./prog
 
-    ./prog http://127.0.0.1:1701
+./prog http://127.0.0.1:1701
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 Port 1701?  Well this is not the l2f registered TCP/1701 protocol.
 Sniff the traffic to/from that port.  You will see HTTP client
@@ -39,25 +42,34 @@ So how does this program do it?  A trek though the cloak of
 obfuscation awaits the reader of the source!
 
 ## Author's comments:
+
 ### Abstract
 
 When launched in web server mode, this application appears to deliver nothing more than a static HTML page.  But, in actuality, it provides covert file transfer over the Internet.  This is demonstrated by starting the application as a client-side downloader.  The hidden transmitted data cannot be reconstructed or even detected from the binary content of the traffic between the client and the server.
 
 ### To run web server
 
-    ./prog < secret_file_to_be_downloaded
+```sh
+./prog < secret_file_to_be_downloaded
+```
 
 Try using the program's source code as the secret file:
 
-    ./prog < prog.c
+```sh
+./prog < prog.c
+```
 
 ### To run client-side downloader
 
-    ./prog http://host[:port]
+```sh
+./prog http://host[:port]
+```
 
 The optional port defaults to 1701.  If the web server instance is started on the same box, try:
 
-    ./prog http://127.0.0.1:1701
+```sh
+./prog http://127.0.0.1:1701
+```
 
 It will incrementally display the contents of the hidden file at a rate of approximately 1 baud.
 
@@ -110,23 +122,24 @@ The NCC constant is the web server port number.
 
 For space considerations, the following include statements were dropped resulting in compiler warnings:
 
-    #include <asm/byteorder.h>
-    #include <ctype.h>
-    #include <netinet/in.h>
-    #include <stdlib.h>
-    #include <string.h>
-    #include <sys/select.h>
-    #include <sys/socket.h>
-    #include <sys/types.h>
-    #include <sys/unistd.h>
+```c
+#include <asm/byteorder.h>
+#include <ctype.h>
+#include <netinet/in.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <sys/unistd.h>
+```
 
 It may be necessary to restore some of these under certain environments.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
