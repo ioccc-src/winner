@@ -10,21 +10,28 @@
 
         make all
 
-NOTE: we could not compile this entry under modern macOS but it will work
-fine under linux. It likely fails to compile under macOS because its gcc is
-actually just clang which is more strict about the type of the third
-argument of main(). If you have gcc under macOS it might work just as well.
-We did not test other systems.
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work with
+clang. The problem was that the third arg to main() was not a `char **`. Instead
+`O5()` (which was `main()`) is now its own function which main() calls with the
+right parameters. Thank you Cody for your assistance!
 
 
-### To run
+## To run:
 
 	./vanb 'exp'
 	
 	where:
 	    'exp'	an octal expression
 
-## Judges' comments
+
+## Try:
+
+	./vanb 1+1
+
+	./vanb 4+4
+
+
+## Judges' comments:
     
 The octal expression may contain:
 

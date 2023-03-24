@@ -93,7 +93,7 @@ ARCH=
 # Defines that are needed to compile
 #
 #CDEFINE=
-CDEFINE= -DO5=main
+CDEFINE=
 
 # Include files that are needed to compile
 #
@@ -182,7 +182,6 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: This entry might not compile when using modern compilers."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
