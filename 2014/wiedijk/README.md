@@ -1,23 +1,27 @@
 # Most functional
 
-Freek Wiedijk  
-<freek@cs.ru.nl>  
+    Freek Wiedijk  
+    <freek@cs.ru.nl>  
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make wiedijk
+```sh
+make
+```
 
 ### To run:
 
-    ./prog
+```sh
+./prog
+```
 
 ### Try:
 
-    gcc -E prog.c | indent | sed '1,/5.*prog/d'
+```sh
+cc -E prog.c | indent | sed '1,/5.*prog/d'
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 C11 features definitely help this entry to be as concise as it is.
 
@@ -26,6 +30,7 @@ The judges would like to think that they had almost understood how this entry wo
 If you win a bet by demonstrating this entry, please let us know.
 
 ## Author's comments:
+
 ### Remarks
 
 - computes the factorial function
@@ -52,11 +57,10 @@ If you win a bet by demonstrating this entry, please let us know.
 - 10! seconds = 6 weeks
 - answers the ultimate question of life, the universe and everything
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
