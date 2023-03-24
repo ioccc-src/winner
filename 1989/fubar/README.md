@@ -11,9 +11,8 @@
 
         make all
 
-NOTE: With a bit of tinkering [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson) got this to work in modern systems. Thank you Cody for
-your assistance!
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) got this to work with
+modern systems. Thank you Cody for your assistance!
 
 
 ### To run
