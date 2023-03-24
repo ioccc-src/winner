@@ -1,40 +1,44 @@
 # Balanced use of obfuscation - Gold award
 
-Adar Zeitak  
-<aa4z2@walla.co.il>  
+    Adar Zeitak  
+    <aa4z2@walla.co.il>  
 
-## To build:
+# To build:
 
-        make all
-
-### To run
-
-    make zeitak
+```sh
+make
+```
 
 ### To run:
 
-    ./zeitak < file.c
+```sh
+./zeitak < file.c
+```
 
 where file.c is the file to be checked for nesting errors. For example, you may
 try incorrect.c and the program itself.
 
 ### Try:
 
-    ./zeitak < zeitak.c
-    ./zeitak < incorrect.c
+```sh
+./zeitak < zeitak.c
+./zeitak < incorrect.c
+```
 
 ### Alternate code
 
-An alternate version of this entry, `zeitak\_deobfucate.c`, is provided.
-The file `zeitak\_deobfucate.c` provides a version that has been slightly
+An alternate version of this entry, `zeitak.alt.c`, is provided.
+The file `zeitak.alt.c` provides a version that has been slightly
 deobfuscated.  You may find reading that file helpful in your attempt
 to understand this extremely subtle entry.
 
 To compile this alternate version:
 
-    make alt
+```sh
+make alt
+```
 
-Use `zeitak\_deobfucate.c` as you would `zeitak` above.
+Use `zeitak.alt` as you would `zeitak` above.
 
 ## Judges' comments
 
@@ -116,11 +120,10 @@ Additional obfuscations include:
 **  Windows 7 32-bit with GCC
 **  Windows 7 32-bit with OpenWatcom
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->

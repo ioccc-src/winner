@@ -168,11 +168,11 @@ ENTRY= zeitak
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA=
+DATA= incorrect.c
 TARGET= ${PROG}
 #
-ALT_OBJ= ${PROG}_deobfucate.o
-ALT_TARGET= ${PROG}_deobfucate
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -189,7 +189,7 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
-${PROG}_deobfucate: ${PROG}_deobfucate.c
+${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
