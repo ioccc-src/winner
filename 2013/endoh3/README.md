@@ -1,18 +1,20 @@
 # Most tweetable 1-liner
 
-Yusuke Endoh  
-<mame@ruby-lang.org>  
-<https://github.com/mame/>  
+    Yusuke Endoh  
+    <mame@ruby-lang.org>  
+    <https://github.com/mame/>  
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make endoh3
+```sh
+make
+```
 
 ### To run:
 
-    ./endoh3
+```sh
+./endoh3
+```
 
 ### Try:
 
@@ -21,49 +23,61 @@ remarks include some options for different operating systems.
 
 The simplest way is to create a .wav file and have your system play that.
 
-    echo 'CDEFGABc' | ./endoh3 | ruby wavify.rb > cde.wav
+```sh
+echo 'CDEFGABc' | ./endoh3 | ruby wavify.rb > cde.wav
+```
 
 There are also some other musical samples, twinkle.abc and menuet.abc.
 
-### Selected Judges Remarks:
+## Judges' comments:
 
-This program can tweet out a tune and is small enough to tweet.
-
+This endoh3ram can tweet out a tune and is small enough to tweet.
 
 ## Author's comments:
+
 ### Remarks
 
 This is a sound synthesizer for a subset of [ABC music notation](http://en.wikipedia.org/wiki/ABC_notation).
 
 Try:
 
-    gcc -o prog prog.c
-    echo "CDEFGABc" | ./prog > /dev/dsp
+```sh
+cc -o endoh3 endoh3.c
+echo "CDEFGABc" | ./endoh3 > /dev/dsp
+```
 
 If `/dev/dsp` is not available on your system, use an OSS sound wrapper such
 as `padsp` or `aoss`:
 
-    echo "CDEFGABc" | ./prog | padsp tee /dev/dsp > /dev/null
+```sh
+echo "CDEFGABc" | ./endoh3 | padsp tee /dev/dsp > /dev/null
+```
 
 If you are using Mac OS X, try [sox](http://sox.sourceforge.net/):
 
-    echo "CDEFGABc" | ./prog | sox -q -traw -r8000 -b8 -e unsigned-integer - -tcoreaudio
+```sh
+echo "CDEFGABc" | ./endoh3 | sox -q -traw -r8000 -b8 -e unsigned-integer - -tcoreaudio
+```
 
 If they do not work, use the attached script to convert the output
 into a wave file format:
 
-    echo "CDEFGABc" | ./prog | ruby wavify.rb > cde.wav
+```sh
+echo "CDEFGABc" | ./endoh3 | ruby wavify.rb > cde.wav
+```
 
 and play `cde.wav`.
 
 You can enjoy some music scores that I attached:
 
-    cat twinkle.abc | ./prog > /dev/dsp
-    cat menuet.abc | ./prog > /dev/dsp
+```sh
+cat twinkle.abc | ./endoh3 > /dev/dsp
+cat menuet.abc | ./endoh3 > /dev/dsp
+```
 
 ### Obfuscation
 
-The following sequence of questions may be helpful to understand the program.
+The following sequence of questions may be helpful to understand the endoh3ram.
 
 - How does it convert ABC notes into the frequency?
 - What is `89/84.`?  I found it by using Stern-Brocot tree.
@@ -118,12 +132,13 @@ But I do not attach it to protect you from W\*\*\*\*r.
 For the same reason, do not play a score that contains only `z1092`.
 You know, it is ["the famous song"](http://en.wikipedia.org/wiki/4%E2%80%B233%E2%80%B3).
 
-
 ### Spoiler (rot13)
 
 Urer vf n zntvpny rkcerffvba juvpu V sbhaq ol oehgr-sbepr:
 
-    (p % 32 + 5) * 9 / 5 % 13 + a / 32 * 12 - 22
+```c
+(p % 32 + 5) * 9 / 5 % 13 + a / 32 * 12 - 22
+```
 
 Vagrerfgvatyl, vg pbairegf na NFPVV ahzore bs NOP abgrf
 gb gur pbeerfcbaqvat gbar ahzore.
@@ -170,11 +185,10 @@ lbh pna ercynpr vg jvgu `(ybat)(a*Q)` vs lbh ner crqnagvp.)
 Nyy gung jnf yrsg jnf gb pbzovar naq pbaqrafr gur pbzcbaragf.
 Gur xrl vf fdhnfuvat gurz vagb whfg bar sbe-ybbc.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
