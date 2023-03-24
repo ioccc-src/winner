@@ -1,29 +1,33 @@
 # Best data utility
 
-Szabolcs Borsanyi  
-Theoretische Physik  
-Gaussstraße 20  
-42097 Wuppertal  
-Germany  
-<borsanyi@uni-wuppertal.de>  
+    Szabolcs Borsanyi  
+    Theoretische Physik  
+    Gaussstraße 20  
+    42097 Wuppertal  
+    Germany  
+    <borsanyi@uni-wuppertal.de>  
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make borsanyi
+```sh
+make
+```
 
 ### To run:
 
-    ./borsanyi < some_data_file
+```sh
+./borsanyi < some_data_file
+```
 
 ### Try:
 
-    ./borsanyi < data.1
-    ./borsanyi < data.2
-    ./borsanyi < data.3
+```sh
+./borsanyi < data.1
+./borsanyi < data.2
+./borsanyi < data.3
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 This is a nice quick histogram plotter.  A useful utility when you need to
 look at the distribution of some data.
@@ -41,13 +45,14 @@ While the input does not need to be sorted, the histogram output is sorted.
 How does it put the data into buckets?  Why does it fork 22 times?
 
 ## Author's comments:
+
 This small piece of program is meant to be a useful tool, when
 there are some data around and you need a quick glance at the
 histogram. I am all too often logged in to a remote machine with
 slow X connection, and a terminal-based program would be of
 great help.
 
-# Limitations:
+### Limitations:
 
 * I optimized the output for the data I had around, you might want to adjust
   for your needs. For a great excess of data points the program will crash
@@ -60,7 +65,7 @@ great help.
 * Could rounding errors cause the omission of the highest bin? There might be
   empty bins at the edges.
 
-# Obfuscation:
+### Obfuscation:
 
 * The program follows a rather unconventional approach to the task
   of histogram building. The usual array of integers (for the histogram
@@ -71,11 +76,10 @@ great help.
 * Multi-process approach for optimal use of resources.
 * Some bin size obfuscation.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2012, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
