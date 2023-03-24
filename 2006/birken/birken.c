@@ -64,7 +64,7 @@ _=z->o; c=_->o->_; a= c->_->_->o; c=_
 ->c++; h(c); } Q Z(a->c<c->c){ a
 ->c++; h(a); } z=z->_; } } X*
 v(X*_,int O){ X*s=(X*)m\
-alloc(strlen(_)*siz\
+alloc(1+strlen(_)*siz\
 eof(X)); X*l=s;
 J((*l++=*_?
 *_-O:0)
