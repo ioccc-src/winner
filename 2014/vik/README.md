@@ -1,40 +1,44 @@
 # Best handling of beeps
 
-Daniel Vik  
-<daniel@vik.cc>  
-<http://danielvik.com/>  
+    Daniel Vik  
+    <daniel@vik.cc>  
+    <http://danielvik.com/>  
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-	make all
+```sh
+make
+```
 
 ### To run:
 
-	./prog > foo.c
+```sh
+./prog > foo.c
+```
 
 ### Try:
 
-	echo 'Want to hear me beep?' | ./prog > audio_file.raw
+```sh
+echo 'Want to hear me beep?' | ./prog > audio_file.raw
 
-	echo 'No. I want chocolate!' | ./prog | mplayer -demuxer rawaudio -
+echo 'No. I want chocolate!' | ./prog | mplayer -demuxer rawaudio -
+```
 
-
-### Selected Judges Remarks:
+## Judges' comments:
 
 This program sets a new tone for obfuscation. But do you understand
 what it says about obfuscation? Perhaps:
 
-
-	./prog < prog.c > prog.raw
-
+```sh
+./prog < prog.c > prog.raw
+```
 
 might speak to your coding style? If not, then perhaps:
 
+```sh
+./prog < README.md | mplayer -demuxer rawaudio -
 
-	./prog < remarks.markdown | mplayer -demuxer rawaudio -
-
+```
 
 might help? :-)
 
@@ -43,6 +47,7 @@ machine entry](../../2020/ferguson2); see his
 [README.md](../../2020/ferguson2/README.md) for details (search for `vik`).
 
 ## Author's comments:
+
 ### Remarks
 
 This program converts ascii text to Morse audio file and vice versa. As far as
@@ -56,15 +61,14 @@ Don't forget the last '-' as it makes mplayer read from stdin.
 
 ## Convert audio file with Morse signals to text
 
-
-	$ ./prog e < audio_file.raw
-
+```sh
+./prog e < audio_file.raw
+```
 
 or alternatively pass a .wav file as input.
 
 The preferred input format 44.1kHz stereo, but it does a decent job on mono
 input and different frequencies as well.
-
 
 ### Portability
 
@@ -75,8 +79,9 @@ Microsoft compilers add a carriage return to newlines, and to compile the
 program with this platform, the following line can be added after the main
 declaration in order for the program to run correctly:
 
-
-	_setmode(_fileno(stdout), 0x8000);
+```c
+_setmode(_fileno(stdout), 0x8000);
+```
 
 ### Known Issues
 
@@ -93,11 +98,10 @@ However I found some man made recordings on that decode reasonable well.
 If a recording doesn't decode, you could try to pre-process the input with a
 narrow bandpass filter on the frequency of the transmission.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
