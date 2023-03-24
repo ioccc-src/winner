@@ -29,7 +29,8 @@
 	./sort < data
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
-this entry. Thank you Cody for your assistance!
+this entry. The problem was invalid data types. Thank you Cody for your
+assistance!
 
 ## Judges' comments
 
