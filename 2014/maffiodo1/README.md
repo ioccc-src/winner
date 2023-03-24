@@ -1,24 +1,30 @@
 # Homage to a classic game
 
-Sandro Maffiodo  
-<smaffer@gmail.com>  
-<http://www.assezeta.com/sandromaffiodo>  
+    Sandro Maffiodo  
+    <smaffer@gmail.com>  
+    <http://www.assezeta.com/sandromaffiodo>  
 
-## To build:
+# To build:
 
-        make all
+```sh
+make
+```
 
 ### To run:
 
-    cat mario.level | ./prog 320 200 800 300 128 144 mario.rgba mario8.wav 10343679
+```sh
+cat mario.level | ./prog 320 200 800 300 128 144 mario.rgba mario8.wav 10343679
+```
 
 ### Try:
 
-    cat giana.level | ./prog 320 200 1000 300 192 168 giana.rgba giana8.wav 5459393
+```sh
+cat giana.level | ./prog 320 200 1000 300 192 168 giana.rgba giana8.wav 5459393
 
-    cat mario.level | ./prog 320 200 800 300 128 144 mario.rgba mario8.wav 10343679 && telnet towel.blinkenlights.nl
+cat mario.level | ./prog 320 200 800 300 128 144 mario.rgba mario8.wav 10343679 && telnet towel.blinkenlights.nl
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 A classic for a particular generation. Like all good programs, being data
 driven means you can do fun things in small spaces.
@@ -29,11 +35,15 @@ driven means you can do fun things in small spaces.
 
 Use tabsize=4 to see the magic
 
-	./expand -t 4 < prog.c
+```sh
+./expand -t 4 < prog.c
+```
 
 The program returns 0 if the user win or *not-zero* if loose so you can test it and make something useful (or not), like that:
 
-	cat mario.level | ./prog 320 200 800 300 128 144 mario.rgba mario8.wav 10343679 && telnet towel.blinkenlights.nl
+```sh
+cat mario.level | ./prog 320 200 800 300 128 144 mario.rgba mario8.wav 10343679 && telnet towel.blinkenlights.nl
+```
 
 This is an engine for **Platform Games**. It can be used to create games like the legendary [Super Mario Bros](http://en.wikipedia.org/wiki/Super_Mario_Bros.).
 With this simple and clear sourcecode you can create all the games you want, for free!
@@ -118,7 +128,9 @@ The program reads the level description from **stdin**.
 
 The level description is a sequence of rows where each row describe an object. You can input as many objects as you want but the maximum number of objects handled by the program is 333. You can modify this value by editing the source here:
 
-	C[333*7],d=333;
+```c
+C[333*7],d=333;
+```
 
 Each row have six columns:
 
@@ -166,11 +178,10 @@ The music used in the examples have been resampled, starting from the original v
 
 [The Great Giana The Sisters](http://en.wikipedia.org/wiki/The_Great_Giana_Sisters) is the game created by Time Warp Productions and also for this game worth my previous notes. Long live [The Great Giana The Sisters](http://en.wikipedia.org/wiki/The_Great_Giana_Sisters) !! :)
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
