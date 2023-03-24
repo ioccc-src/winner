@@ -11,13 +11,25 @@
 make
 ```
 
-### To run:
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this entry to
+work with clang which is stricter on the type of args to main(). Curiously
+although clang requires the types of args to be strictly correct it allows for
+only one arg which he made it as the second arg was not used and this allows for
+a closer match to the original format of the entry. Thank you Cody for your
+assistance!
+
+
+## To run:
 
 ```sh
 ./slone
 ```
 
-### Try:
+WARNING: if you are easily overstimulated with fast movement or have
+photosensitivity please be careful running this entry!
+
+
+## Try:
 
 ```sh
 echo "Do or do not. There is no try."
