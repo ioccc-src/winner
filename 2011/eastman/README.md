@@ -1,23 +1,29 @@
 # Best ball
 
-Peter Eastman  
-<peter.eastman@gmail.com>  
+    Peter Eastman
+    <peter.eastman@gmail.com>
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make eastman
+```sh
+make
+```
 
 ### To run:
 
-    ./eastman
+```sh
+./eastman
+```
 
 ### Try:
 
-    Quit the program.  Resize your terminal window.  Run it again.
+Quit the program.  Resize your terminal window.  Run it again.
 
-### Selected Judges Remarks:
+```sh
+./eastman
+```
+
+## Judges' comments:
 
 This round program will generate a classic spherical result!
 
@@ -31,6 +37,7 @@ If you are ambitious, make the font really small and the window really
 large for hi-rez graphics!
 
 ## Author's comments:
+
 This program uses ANSI graphics to recreate the classic Boing Ball demo from
 the Commodore Amiga.  See http://www.youtube.com/watch?v=-ga41edXw3A if you
 aren't familiar with it.  Back in its day, this demo inspired lust and awe in
@@ -48,7 +55,9 @@ program is running, though.  It only checks the size once, when it starts up.
 
 To compile:
 
-cc -lm ball.c
+```sh
+cc -lm eastman.c
+```
 
 Portability:
 
@@ -81,11 +90,10 @@ when I can calculate it from the return value of usleep() instead?  And I could
 have written usleep(80000), but usleep(79383) just looks so much better.  And
 so on.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2012, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
