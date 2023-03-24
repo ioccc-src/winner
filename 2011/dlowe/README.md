@@ -1,60 +1,72 @@
 # Most self deprecating
 
-David Lowe  
-434 Tenney Drive  
-Rogue River, OR  
-97537  
-<j.david.lowe@gmail.com>  
-<http://www.pootpoot.net/>  
+    David Lowe  
+    434 Tenney Drive  
+    Rogue River, OR  
+    97537  
+    <j.david.lowe@gmail.com>  
+    <http://www.pootpoot.net/>  
 
+## To build:
 
-## Judges' comments:
-### To build:
-
-    make dlowe
+```sh
+make
+```
 
 ### To run:
 
-    ./dlowe -<n_iterations> corpus1/ [...] corpus0/ < start.net > end.net
+```sh
+./dlowe -<n_iterations> corpus1/ [...] corpus0/ < start.net > trained.net
+```
 
-	NOTE: The directory entries MUST end in a /
+NOTE: In the above command, the directory args MUST end in a "/".
 
-    ./dlowe file [file ...] < trained.net
+Then to use the `trained.net`:
+
+```sh
+./dlowe file [file ...] < trained.net
+```
 
 ### Try:
 
-    Download the dlowe-aux-data.tar.bz2 file from:
+Try these pre-trained networks:
 
-    	curl -O http://www.ioccc.org/2011/dlowe/dlowe-aux-data.tar.bz2
+```sh
+./dlowe dlowe.c < dlowe-aux-data/ioccc-winlose-trained.net
+./dlowe dlowe < dlowe-aux-data/ioccc-winlose-trained.net
 
-    tar -jxf dlowe-aux-data.tar.bz2
+./dlowe xor-0/00 < dlowe-aux-data/xor-trained.net
+./dlowe xor-0/11 < dlowe-aux-data/xor-trained.net
+./dlowe xor-1/01 < dlowe-aux-data/xor-trained.net
+./dlowe xor-1/10 < dlowe-aux-data/xor-trained.net
 
-    ./dlowe dlowe.c < ioccc-winlose-trained.net
-    ./dlowe dlowe < ioccc-winlose-trained.net
+./dlowe hint.html < dlowe-aux-data/english-trained.net
 
-    ./dlowe xor-0/00 < xor-trained.net
-    ./dlowe xor-0/11 < xor-trained.net
-    ./dlowe xor-1/01 < xor-trained.net
-    ./dlowe xor-1/10 < xor-trained.net
+./dlowe dlowe-aux-data.tar.bz2 < dlowe-aux-data/png-trained.net
+```
 
-    ./dlowe hint.html < english-trained.net
+NOTE: The `dlowe-aux-data.tar.bz2/` directory was created by:
 
-    ./dlowe dlowe-aux-data.tar.bz2 < png-trained.net
+```sh
+tar -jxf dlowe-aux-data.tar.bz2
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 This entry is a ghoulish example of a brain (dead?) neural network classifier.
 It comes with a set of corpora for you to try.
 
-#### ioccc-winlose-trained.net
+### ioccc-winlose-trained.net
 
 You can create your own trained networks.  For example, we trained a network
 on the C code of entries that were supplied to the 20Th IOCCC.
 
 The ioccc-winlose-trained.net was trained using the earlystop.pl tool:
 
-    rm -f ioccc-winlose-trained.net
-    ./earlystop.pl ioccc-winlose-trained.net ioccc_won_training/ ioccc_lost_training/ ioccc_won_test/ ioccc_lost_test/
+```sh
+rm -f ioccc-winlose-trained.net
+./earlystop.pl ioccc-winlose-trained.net ioccc_won_training/ ioccc_lost_training/ ioccc_won_test/ ioccc_lost_test/
+```
 
 where:
 
@@ -86,7 +98,9 @@ dlowe-aux-data.tar.bz2 file in the above mentioned URL.
 
 The dlowe.c was explicitly excluded from this trailing set.  So this test is interesting:
 
-    ./dlowe dlowe.c < ioccc-winlose-trained.net
+```sh
+./dlowe dlowe.c < ioccc-winlose-trained.net
+```
 
 The match of dlowe.c to the lose/win trailed network was:
 
@@ -104,7 +118,9 @@ data sets on which to test:
 
 We created the english-trained.net as follows:
 
-    ./dlowe -8000 english-1/ english-0/ < /dev/null > english-trained.net
+```sh
+./dlowe -8000 english-1/ english-0/ < /dev/null > english-trained.net
+```
 
 	english-0/
 	    Non-English (French) text
@@ -113,7 +129,9 @@ We created the english-trained.net as follows:
 
 We created the png-trained.net as follows:
 
-    ./dlowe -8000 png-1/ png-0/ < /dev/null > png-trained.net
+```sh
+./dlowe -8000 png-1/ png-0/ < /dev/null > png-trained.net
+```
 
 	png-0/
 	    Non-png (gif) images
@@ -122,7 +140,9 @@ We created the png-trained.net as follows:
 
 We created the xor-trained.net as follows:
 
-    ./dlowe -8000 xor-1/ xor-0/ < /dev/null > xor-trained.net
+```sh
+./dlowe -8000 xor-1/ xor-0/ < /dev/null > xor-trained.net
+```
 
 	xor-0/
 	    Data that XORs to 0
@@ -130,11 +150,14 @@ We created the xor-trained.net as follows:
 	    Data that XORs to 1
 
 ## Author's comments:
-# Synopsis:
+
+### Synopsis:
+
 This is an artificially intelligent judging tool to help the IOCCC judges.
 Here's to shorter, more frequent contests!
 
-# Description:
+### Description:
+
 This is a multilayer perceptron (a feedforward artificial neural network)
 which can be trained, using on-line backpropagation, to classify input files.
 
@@ -143,9 +166,11 @@ neuron.
 
 The neurons' activation function is the logistic function 1 / (1 + e ^ -x).
 
-## Classifying
+### Classifying
 
-    ./dlowe file [file ...] < trained.net
+```sh
+./dlowe file [file ...] < trained.net
+```
 
 To classify files, one specifies a trained network (on stdin) and one or more
 files to classify. The program will output one line per successfully-classified
@@ -156,9 +181,12 @@ The interpretation of the classification number depends on how the network was
 trained, but it's geared toward interpretation as a *probability* or a
 *confidence*.
 
-## Training
+### Training
 
-    ./dlowe -<n_iterations> corpus1/ [...] corpus0/ < start.net > end.net
+
+```sh
+./dlowe -<n_iterations> corpus1/ [...] corpus0/ < start.net > end.net
+```
 
     NOTE: The directory args must end in a / for them to work.
 
@@ -176,7 +204,7 @@ intermediate target values.
 
 The learning rate is hard-coded as 0.3. No momentum factor is used.
 
-### png corpora
+#### png corpora
 
 The png-1 corpus was obtained by manually scraping the first results from an
 https://images.google.com search for "obfuscate filetype:png".
@@ -194,7 +222,7 @@ Results:
    a .gif"
  * produced a network with about 87% accuracy
 
-### english corpora
+#### english corpora
 
 The english-1 corpus was obtained by manually scraping the first results from
 a https://www.google.com/webhp?lr=lang_en search for "paris filetype:txt".
@@ -213,7 +241,7 @@ Results:
    "probably french"
  * produced a network with 100% accuracy
 
-### xor corpora
+#### xor corpora
 
 The xor-1 corpus consists of two files containing '01' and '10' respectively.
 
@@ -224,7 +252,8 @@ Results:
  * using these corpora as a training set
  * takes about 8000 iterations to learn xor to within a tolerance of <0.01
 
-# Limitations
+### Limitations
+
 The program can't tell you anything meaningful about files with less than two
 bytes in them (I'm looking at you, smr.c!)
 
@@ -255,7 +284,7 @@ library (untested, but they do exist).
 Backpropagation doesn't always converge: if you play with this long enough,
 you'll eventually have a training session that completely fails to converge.
 
-# Obfuscation:
+### Obfuscation:
 
 Zombies! (Since neural networks are modeled after BRAINS, ya know? And
 corpus sounds a lot like corpse. And I have 4- and 7-year-old kids ;)
@@ -277,11 +306,10 @@ by a network trained to recognize ioccc winners ;)
 
 ... but mostly zombies!
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2012, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
