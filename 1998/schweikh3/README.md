@@ -12,15 +12,24 @@
 
         make all
 
-### To run
+## To run;
 
-	If "dir" is the directory (or a directory tree) where you keep
-	all your favorite pictures off the Internet or from
-	alt.binaries.pictures.*, do
+If "dir" is the directory (or a directory tree) where you keep
+all your favorite pictures off the Internet or from
+`alt.binaries.pictures.*`, do
 
 	find dir -type f -print | ./schweikh3
 
-## Judges' comments
+## Try:
+
+If you're in this winning entry's directory:
+
+	find . -type f -print | ./schweikh3
+
+Notice that the tool finds a duplicate file, that of the man page.
+
+
+## Judges' comments:
 
     Maybe you will not need to buy another 10 Gb disk to store them.  :-)
 

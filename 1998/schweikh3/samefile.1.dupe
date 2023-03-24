@@ -1,0 +1,116 @@
+.\"
+.\" To format this file into a text file say
+.\"
+.\"    nroff -man samefile.1              or
+.\"    groff -man -Tascii samefile.1
+.\"
+.TH SAMEFILE 1 "OCTOBER 1997" IOCCC "User Manuals"
+.SH NAME
+samefile \- find identical files
+.SH SYNOPSIS
+.B samefile
+.SH DESCRIPTION
+.B samefile
+reads a list of file names (one file name per line) from stdin.
+For each file name pair with identical contents, a
+line consisting of six tab separated fields is output:
+The size in bytes, two file names, the character ``='' if
+the two files are on the same device, ``X'' otherwise,
+and the link counts of the two files.
+The output is sorted in reverse order by size.
+
+.B samefile
+uses two stages to give optimum performance.
+ 
+In the first stage, all non-plain files are silently
+ignored (directories, devices, FIFOs, sockets,
+symbolic links) as well as files for which
+.BR stat (2)
+or
+.BR open (2)
+fails.
+The result of the first stage (the file names) is written into
+a binary tree with one node for every file size. Each node
+is in turn a linked list of file names along with inode and
+device information.
+It is also at this first stage where checks for hard links are done.
+For any inode only one filename will be added to the binary tree.
+
+In the second stage all files having the same
+size are compared against each other. The rules
+of mathematical logic are applied to reduce work
+and output noise: if files A, B, and C have the same size and
+.B samefile
+finds that A = B and A = C then it will not
+compare B against C (and will not
+output a line for B and C) but only
+for A = B and A = C. The algorithm will detect
+equality across arbitrarily long chains.
+Note however, that because
+only the first filename per inode gets into the
+first stage, the output for a group of identical files
+with different inode numbers is also minimized. Suppose
+you have six identical files of size 100
+in an inode group consisting of the three
+inodes with numbers 10, 20 and 30:
+ 
+.nf
+$ ls -i   # output edited for readabilty:
+   10 file1     20 file4     30 file6
+   10 file2     20 file5
+   10 file3
+$ ls | samefile
+100     file1   file4   =       3       2
+100     file1   file6   =       3       1
+ 
+.fi
+The sum of the sizes in the first column is the amount of disk space
+you could gain by making all 6 files links to only one
+file or remove all but one of the files. To be precise,
+disk space is allocated in blocks - you will probably gain
+two blocks here, rather than 200 bytes.
+Note that it is not enough to just remove file4 and
+file6 (you would gain only 100 bytes because file5
+still exists.)
+
+.SH LIMITATIONS
+.B Samefile
+was written with no limits in mind. The number of input lines is
+unlimited. The size of the actual files is only limited by
+available virtual memory needed to compare one pair of files.
+The only hard limit is the constraint that there should not
+be more than about 8192 files having the same size. Experience
+has shown that there are rarely more than a couple dozen
+files of the same size.
+.SH EXAMPLES
+.nf
+
+For everybody:
+What are the duplicates under my home directory?
+
+    $ find $HOME | samefile
+
+For the sysadmin folks:
+Report all duplicate files under /usr larger than 16k:
+
+    $ find /usr -size +16384c -a -type f | samefile
+
+For the ftp and WWW admins:
+How much space is wasted below our site's /pub directory?
+
+    $ find /pub -type f | samefile | awk '{sum += $1} END {print sum}'
+
+.fi
+
+.SH "EXIT STATUS"
+If
+.B samefile
+runs out of memory the exit status is 1,
+zero otherwise.
+.fi
+.SH "SEE ALSO"
+.BR find (1),
+.BR ln (1),
+.BR rm (1)
+.\"
+.\"            End Of Man Page
