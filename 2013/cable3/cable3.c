@@ -1,5 +1,5 @@
 #include "SDL.h"
-
+#undef localtime
 #define $ for(O=9
 #define CX M+=(T%3+2*!(!T*t-6))
 #define x ,A=4*!T,O=t,W=h=T<3?u(Q?p:D(A+3),D(A),D(A+1)[i]+D(A+2)*g+):K(t),U=V=K(a),o?U=h,W=V:V,

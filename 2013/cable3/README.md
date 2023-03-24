@@ -15,6 +15,14 @@ make
 ./cable3 bios-image-file floppy-image-file [harddisk-image-file]
 ```
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile
+with modern systems. The problem is that `localtime()` is used differently and
+`time.h` being included there was a conflicting function type. This appeared to
+be a problem with macOS. The other problem is that this entry uses SDL functions
+that were removed from SDL2 so the Makefile has to use `sdl-config` and not
+`sdl2-config`. Thank you Cody for your assistance!
+
+
 ### Try:
 
 ```sh
