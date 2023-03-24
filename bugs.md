@@ -3,14 +3,16 @@
 
 There are a number of known problems with IOCCC winners: many of
 which have to do with differences between today's compiler environments
-and those of today.  In some cases the original code has a bug, some
-of which were recently discovered.  In some cases attempt to port
+and those of today. In some cases the original code has a bug, some
+of which were recently discovered. In some cases attempt to port
 older code to more modern environments introduced bugs.
 
 The following is a known list of **BUGS and (mis)FEATURES** in IOCCC winners.
 
-Can you fix/improve them?  You are **VERY WELCOME** to try.
-Please submit your fixes fix a [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls).
+Can you fix/improve them? You are **VERY WELCOME** to try.
+Please submit your fixes fix in a [GitHub pull
+request](https://github.com/ioccc-src/temp-test-ioccc/pulls) with one pull
+request per fix, please!
 
 We will be happy to credit those who submit successful [GitHub pull
 requests](https://github.com/ioccc-src/temp-test-ioccc/pulls) in the entry's
@@ -18,7 +20,86 @@ _README.md_ file. If you're a previous winner we will add a link to your winning
 entries in the file (if you're not we can add a link to your personal website if
 you have one if you like).
 
+# List of Statuses - Please read before fixing (you may skip if you're only interested in entries with known issues)
 
+Entries below have one of the following _Status_ values.
+
+Please see the text below for more information.
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) has been working on
+resolving these issues and has fixed many but you're welcome to have a go at it
+too (though he'll be very sad if he doesn't have a chance at it first :-( so you
+might want to hold off for now :-) .. or not :-) ). He hopes to have most of the
+remaining entries resolved in the near future but nevertheless if you're okay
+making people very sad you may have a go at the entries :-) He'll remove this
+part later on.
+
+### Status: known bug - please help us fix
+
+This entry has a bug that needs fixing. Are you able to fix it?
+
+We welcome your help! Please submit a [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls)
+and we will be happy to credit you in the entry's _README.md_ file.
+
+### Status: main() function args not allowed - please help us fix
+
+This entry has a problem in that the args to main() are not of a specific type
+due this being allowed in earlier C. This shows itself in some compilers like
+clang. [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) looked at the
+source code of clang and reported that there is no way to override this
+requirement so these entries will fail to compile with clang. That's why he in
+some entries he fixed he did it by adding a function called `pain()`. :-)
+
+Note for macOS users: please be aware that gcc under macOS is clang despite the
+fact it might appear to be gcc: no symlink and both gcc and clang exist but the
+gcc is clang which you'll see if you run `gcc --version`.
+
+A tip and some fix methods from Cody: in the older days args to main() not given
+a type were implicit ints but when they're required to be char ** this can cause
+a problem. In some cases Cody was able to use a char * inside main() (see
+[1989/tromp/tromp.c](1989/tromp/tromp.c) and
+[1986/holloway/holloway.c](1986/holloway) for two examples though done slightly
+differently). In other cases he was able to dereference the pointers to be used
+like an int. He used other various techniques to get them to compile. In some
+cases this introduced a problem but typically if not always that problem exists
+with compilers that are less strict.
+
+Request: For one-liners please keep the file one line if at all possible! If it
+needs an include you can update the Makefile `CINCLUDE` variable. For instance
+if it needs `stdio.h` you could do `-include stdio.h`. Please leave a space
+after the `=` in the Makefile!
+
+We welcome your help! Please submit a [GitHub pull
+request](https://github.com/ioccc-src/temp-test-ioccc/pulls) and we will be
+happy to credit you in the entry's _README.md_ file.
+
+### Status: Compiled executable crashes - please help us fix
+
+While the entry can compile, the resulting executable sometimes or always crashes.
+
+We welcome your help! Please submit a [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls)
+and we will be happy to credit you in the entry's _README.md_ file.
+
+### Status: Requires a compiler supporting -traditional-cpp - alternate code requested
+
+This entry needs a compiler that support `-traditional-cpp`. `gcc` supports this
+but `clang` does not.
+
+Please be advised that, as noted above, gcc under macOS is actually gcc even if it
+looks like it's gcc (the programs are the same, they're not symlinks but both
+are clang).
+
+If you do wish to provide an alternate version of the program that does not need
+compiler supporting -traditional-cpp you are welcome to summit such code via a
+[GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls) and we
+will be happy to credit you in the entry's _README.md_ file.
+
+### Status: INABIAF - please do not fix
+
+INABIAF: It's not a bug it's a feature :-)
+
+The following entries should NOT be touched: they are system specific by design
+but are noteworthy nonetheless.
 
 # 1984
 
@@ -48,6 +129,8 @@ To see this entry in action check out [Yusuke
 Endoh](/winners.html#Yusuke_Endoh)'s [2015/endoh3](2015/endoh3) entry. Otherwise
 a Vax-11 or pdp-11 emulator would be necessary.
 
+NOTE: if you do change this please make sure to put it in `mullender.alt.c`!
+
 
 # 1985
 
@@ -60,9 +143,10 @@ This entry needs a compiler that support `-traditional-cpp`. `gcc`
 supports this but `clang` does not. Please be advised that `gcc` under macOS is
 actually gcc if it looks like it's gcc (two different binaries).
 
-If you do wish to provide an alternate version of the program that does not need compiler supporting -traditional-cpp
-you are summit such code via a [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls)
-and we will be happy to credit you in the entry's _README.md_ file.
+If you do wish to provide an alternate version of the program that does not need
+compiler supporting -traditional-cpp we welcome you to summit such code via a
+[GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls) and we
+will be happy to credit you in the entry's _README.md_ file.
 
 
 # 1986
@@ -92,6 +176,9 @@ alternatives and it did not work. Thus if you see something like:
               *
 ```
 
+it is NOT a problem and should not be changed. Changing it will either crash it
+or make it not work.
+
 
 ## [1986/wall/wall.c](1986/wall/wall.c) ([README.md](1986/wall/README.md))
 
@@ -105,7 +192,6 @@ If you do wish to provide an alternate version of the program that does not need
 you are summit such code via a [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls)
 and we will be happy to credit you in the entry's _README.md_ file.
 
-it is NOT a problem and should not be changed.
 
 
 # 1987
@@ -501,61 +587,4 @@ things that are misinterpreted as bugs. See his
 [troubleshooting.md](2020/ferguson1/troubleshooting.md) files for details.
 
 
-# List of Status - Please read
 
-Entries below have one of the following _Status_ values.
-
-Please see the text below for more information.
-
-### Status: known bug - please help us fix
-
-This entry has a bug that needs fixing.  Are you able to fix it?
-
-We welcome your help!  Please submit a [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls)
-and we will be happy to credit you in the entry's _README.md_ file.
-
-### Status: main() function args not allowed - please help us fix
-
-The following entries have a problem in that the args to main() are
-not of a specific type due this being allowed in earlier C. This
-shows itself in some compilers like clang. Looking at the source
-code of clang there is no way to override this requirement so these
-entries will fail to compile with clang.
-
-Please be aware that gcc under macOS is clang despite the fact it
-might appear to be gcc: no symlink and both gcc and clang exist.
-
-A tip: in the older days args to main() not given a type were used
-as ints but when they're required to be char ** this can cause a
-problem. In some cases Cody was able to use a char * inside main()
-(see 1989/tromp/tromp.c for an example). In other cases he was able
-to dereference the pointers to be used like an int. Some might
-require additional functions are added.
-
-Request: For one-liners please keep the file one line!
-
-We welcome your help!  Please submit a [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls)
-and we will be happy to credit you in the entry's _README.md_ file.
-
-### Status: Compiled executable crashes - please help us fix
-
-While the entry can compile, the resulting executable sometimes or always crashes.
-
-We welcome your help!  Please submit a [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls)
-and we will be happy to credit you in the entry's _README.md_ file.
-
-### Status: Requires a compiler supporting -traditional-cpp - alternate code requested
-
-This entry needs a compiler that support -traditional-cpp. gcc supports this but clang does not.
-
-Please be advised that gcc under macOS is actually gcc if it looks like it's gcc (two different binaries).
-
-If you do wish to provide an alternate version of the program that does not need compiler supporting -traditional-cpp
-you are summit such code via a [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls)
-and we will be happy to credit you in the entry's _README.md_ file.
-
-### Status: INABIAF - please do not fix
-
-INABIAF: It's not a bug it's a feature :-)
-
-The following entries should NOT be touched: they are system specific by design but are noteworthy nonetheless.
