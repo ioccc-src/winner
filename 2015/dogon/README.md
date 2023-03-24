@@ -1,47 +1,53 @@
 # Most Crafty
 
-Gil Dogon  
-<http://sokoban-gild.com>  
+    Gil Dogon  
+    <http://sokoban-gild.com>  
 
+# To build:
 
-## Judges' comments:
-### To use:
+```sh
+make
+```
 
-    make
+### To run:
 
-    ./prog
+```sh
+./prog
+```
 
 ### Try:
 
-    ./prog
+```sh
+./prog
+```
 
-    press and hold the Left Arrow key until you turn 90-degrees to the left
+Press and hold the Left Arrow key until you turn 90-degrees to the left
 
-    when you see a long tunnel, press the function key F2
+When you see a long tunnel, press the function key F2
 
-    Use the Up, Down, Left and Right keys to change your path
+Use the Up, Down, Left and Right keys to change your path
 
-    Press function higher numbered function keys (F3, F4, ...) to go faster
+Press function higher numbered function keys (F3, F4, ...) to go faster
 
-    Press F1 to stop
+Press F1 to stop
 
-    Turn 90-degrees to one side
+Turn 90-degrees to one side
 
-    Press F4 to and drill into some blocks for a bit
+Press F4 to and drill into some blocks for a bit
 
-    Press F1 to stop
+Press F1 to stop
 
-    Turn 180-degrees to face the way you came
+Turn 180-degrees to face the way you came
 
-    Press F2 and navigate back down the new hole until you reach the long tunnel again
+Press F2 and navigate back down the new hole until you reach the long tunnel again
 
-    Press F1 to stop
+Press F1 to stop
 
-    etc.
+etc.
 
-    Press the ESC key
+Press the ESC key
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 You are in a twisty maze blocks, almost all alike.
 
@@ -54,6 +60,7 @@ How many function keys does your keyboard have?  Can you generate very high numb
 *Textures? We don't need no stinking textures.*
 
 ## Author's comments:
+
 ### What is it?
 
 Just run prog with no arguments on an X11-compatible system. The scenery, though pseudo-randomly generated should be strangely familiar, specially to those still in their teen age. You can navigate using the keyboard arrow keys and the function keys. Your speed is a linear function of (n-1) where Fn is the last function key you have pressed, and you always move in the direction you are looking at. Be aware that you are probably some kind of a Creeper as is obvious from looking at the program, hence your movement is destructive to the environment. So after pressing F12 for warp speed, and moving around randomly, you might find yourself in a 3D maze of twisty little passages, from which there is only one Esc(ape) key. Note that in theory if you have a specialty keyboard with 32 function keys you may even press F31 to reach infinite improbability drive speed, though the author had never tested this feature. However a hidden comment in keysymdef.h suggests the existence of a mythical Sun Keyboard with 35 function keys :)
@@ -78,8 +85,9 @@ This entry is rather portable I think on modern platforms. It assumes of course 
 * The entry assumes the default visual has 24 bit depth (RGB). This seems to be the case on most X Servers this days.
 * The entry, does a thing which is an absolute No-No for X-windows program, i.e. assuming it knows some numeric values for keysyms defined in keysymdef.h . I have searched far and wide the lord Google's domain, yet was unable to find a version of the file where those assumptions were broken. This enables the important support of up to 32 function keys keyboards without spilling over the size limit, and allows us to use such fun expression for arrow view control as the following:
 
-       *(a&1?&C:&B)-=(.05 -a/2%2*.1)*!(a-1&4092^3920)
-
+```c
+*(a&1?&C:&B)-=(.05 -a/2%2*.1)*!(a-1&4092^3920)
+```
 
 ### Precision issues.
 
@@ -101,11 +109,10 @@ Evidently when doing such arithmetics, care must me taken to avoid overflow from
 
 Similar technique is used on the RGB components so their brightness can be adjusted simultaneously by the expression: o=o*b>>8 . Of course some spare bits are needed between the components, so they are spread in the long long and reordered as RBG.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2016, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
