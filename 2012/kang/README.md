@@ -1,27 +1,31 @@
 # Best short program
 
-Seonghoon Kang  
-<kang.seonghoon@mearie.org>  
+    Seonghoon Kang  
+    <kang.seonghoon@mearie.org>  
 
-## To build:
+# To build:
 
-        make all
-
-### To run
+```sh
+make
+```
 
 ### To run:
 
-    echo "full spelling of an English cardinal numeral less than a quadrillion" | ./kang
+```sh
+echo "full spelling of an English cardinal numeral less than a quadrillion" | ./kang
+```
 
 ### Try:
 
-    echo Nineteen hundred and eighty-four | ./kang
-    echo uno | ./kang
-    echo trois | ./kang
-    echo fier | ./kang
-    echo "shest'" | ./kang
+```sh
+echo Nineteen hundred and eighty-four | ./kang
+echo uno | ./kang
+echo trois | ./kang
+echo fier | ./kang
+echo "shest'" | ./kang
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 The judges were able to appreciate the Indo-European language family
 relation by making this entry successfully recognize *some* French,
@@ -34,7 +38,7 @@ We've added a linefeed to the print format for convenience.
 
 ## Author's comments:
 
-## Synopsis
+### Synopsis
 
 This short program reads a spelt number (e.g. `forty-two`) and writes a
 corresponding decimal number (e.g. `42`). Too long for one-liners, alas,
@@ -59,7 +63,7 @@ It does *not* accept some spelt numbers, which I found mostly irrelevant:
 * A bare `hundred`, `thousand` etc. do not work.
 * `one million million` does not work. Get used to `one trillion`!
 
-## Requirements
+### Requirements
 
 This program is quite portable, only requiring the following:
 
@@ -78,7 +82,7 @@ The design of the program explicitly allows for `EOF` which does not equal to -1
 (it has to be negative per the standard) and both signed and unsigned `char`,
 for example. Furthermore it is endian-independent.
 
-## Obfuscations (SPOILERS!)
+### Obfuscations (SPOILERS!)
 
 Many obfuscations used are typical for standard IOCCC entries:
 
@@ -142,19 +146,17 @@ Having said this important trick, other details should be relatively easier to
 follow. The order of lookup table, for example, is very important,
 and the biggest constant 6177 is not arbitrarily chosen.
 
-## Acknowledgement
+### Acknowledgement
 
 The cleaner (size-optimized) version of this program was originally published
 in my website in July 2011. Sun Park and others have reviewed it and let me
 aware of possible improvements. I'd also like to thank Seo Sanghyeon for
 proof-reading remarks.
 
+## Copyright:
 
---------------------------------------------------------------------------------
-<!--
 (c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->

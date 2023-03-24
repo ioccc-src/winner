@@ -64,7 +64,7 @@ X11_INCDIR= /opt/X11/include
 #
 #CSILENCE=
 CSILENCE= -Wno-bitwise-op-parentheses -Wno-error -Wno-implicit-function-declaration \
-	-Wno-int-conversion -Wno-pointer-to-int-cast
+	-Wno-implicit-int -Wno-int-conversion -Wno-pointer-to-int-cast
 
 # Common C compiler warning flags
 #
@@ -77,7 +77,7 @@ CWARN= -Wall -Wextra ${CSILENCE}
 #
 #CSTD=
 #CSTD= -ansi
-CSTD= -std=gnu90
+CSTD= -std=gnu11
 
 # Compiler bit architecture
 #
@@ -102,8 +102,8 @@ CINCLUDE=
 #CINCLUDE= -include stdlib.h
 #CINCLUDE= -include stdio.h
 #CINCLUDE= -include stdlib.h -include stdio.h
-#CINCLUDE= -I ${X11_INCDIR}
-#CINCLUDE= -I ${HOMEBREW_PREFIX}/include/SDL2
+#CINCLUDE= -I ${X11_INCDIR} -I ${X11_INCDIR}/X11
+#CINCLUDE= `${SDL2_CONFIG} --cflags`
 
 # Optimization
 #
@@ -127,7 +127,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 LIBS=
 #LIBS= -lm
 #LIBS= -L ${X11_LIBDIR} -lX11
-#LIBS= -L ${HOMEBREW_PREFIX}/lib -lSDL2
+#LIBS= `${SDL2_CONFIG} --libs`
 
 # C compiler to use
 #
@@ -139,7 +139,7 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-CSILENCE+= -Wno-long-long -Wno-missing-variable-declarations -Wno-pedantic \
+CSILENCE+= -Wno-missing-variable-declarations -Wno-pedantic \
 	-Wno-poison-system-directories
 #
 CWARN+= -Weverything
@@ -325,4 +325,3 @@ pluto: charon
 	@echo "dwarf is a type of planet"
 	@echo "therefore, $@ is a planet"
 	@echo "having lots of planets is good feature because supernovae can help ${MAKE} a lot of them"
-
