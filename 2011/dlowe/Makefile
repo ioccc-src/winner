@@ -123,7 +123,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LIBS= -lm
 #LIBS= -lm
 #LIBS= -L ${X11_LIBDIR} -lX11
 #LIBS= `${SDL2_CONFIG} --libs`
