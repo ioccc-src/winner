@@ -1,29 +1,33 @@
 # Best Handwriting
 
-Etienne Duble <etienne.duble@imag.fr>  
-<http://lig-membres.imag.fr/duble>  
+    Etienne Duble <etienne.duble@imag.fr>  
+    <http://lig-membres.imag.fr/duble>  
 
-## To build:
+# To build:
 
-        make all
+```sh
+make
+```
 
-### To run
+### To run:
 
-    make
-    
-    echo Some text | ./prog
+```sh
+echo Some text | ./prog
+```
 
 ### Try:
 
-    echo Hello, world | ./prog
+```sh
+echo Hello, world | ./prog
 
-    DRAFT=1 ./prog < prog.c
+DRAFT=1 ./prog < prog.c
 
-    ./prog
-    > [type]
-    (...observe...) 
+./prog
+> [type]
+(...observe...) 
 
-    ./prog < prog.c
+./prog < prog.c
+```
 
 ### Alternate code
 
@@ -188,12 +192,10 @@ mode" have to check whether their standard input is a terminal or not (by
 using isatty()). Did you notice that this program does not perform any such
 detection, but still behaves (or seems to behave) appropriately?
 
+## Copyright:
 
---------------------------------------------------------------------------------
-<!--
 (c) Copyright 1984-2016, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
