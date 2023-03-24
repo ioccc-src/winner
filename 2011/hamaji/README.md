@@ -1,31 +1,33 @@
 # Best solved puzzle
 
-Shinichiro Hamaji  
-<shinichiro.hamaji@gmail.com>  
+    Shinichiro Hamaji  
+    <shinichiro.hamaji@gmail.com>  
 
-bsoup  
+# To build:
 
-
-## Judges' comments:
-### To build:
-
-    make hamaji
+```sh
+make
+```
 
 ### To run:
 
-    ./hamaji < a_nonogram_file
+```sh
+./hamaji < a_nonogram_file
+```
 
 ### Try:
 
-    ./hamaji < dragon.nono
-    ./hamaji < random.nono
-    ./hamaji < soccer.nono
-    ./hamaji < codegolf.nono
-    ./hamaji < face.nono
-    ./hamaji < penguin.nono
-    ./hamaji < samurai.nono
+```sh
+./hamaji < dragon.nono
+./hamaji < random.nono
+./hamaji < soccer.nono
+./hamaji < codegolf.nono
+./hamaji < face.nono
+./hamaji < penguin.nono
+./hamaji < samurai.nono
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 This program solves "Nonogram", which also known as "Paint by Numbers":
 
@@ -43,6 +45,7 @@ NOTE: NONOGRAM (r) is a registered Trademark and is used with permission.
       See http://nonogram.com/ for more information.
 
 ## Author's comments:
+
 The format of the input files are as same as this site:
 
 <http://codegolf.com/paint-by-numbers>
@@ -162,7 +165,9 @@ with the well obfuscated code.
 This program uses two C99 features. One line comments and "long long".
 GCC's "-ansi -pedantic" check should pass:
 
-    $ gcc -ansi -pedantic -std=c99 hamaji.c
+```sh
+cc -ansi -pedantic -std=c99 hamaji.c
+```
 
 I checked my program with gcc-4.6.2 on linux, llvm-gcc-4.2 on mac, and
 clang-3.0 on mac.
@@ -175,7 +180,9 @@ memory layout, undefined evaluation order (e.g., a[i++]=i), etc.
 This program won't work if the size of long long literal is less than 8.
 By grepping the source code of gcc
 
-    grep LONG_LONG_TYPE_SIZE gcc/config/*/*
+```sh
+grep LONG_LONG_TYPE_SIZE gcc/config/*/*
+```
 
 I found long long may be 32bit integers only on AVR.
 
@@ -199,13 +206,14 @@ from this site:
 
 You can reproduce dragon.nono from hamaji.c using c2nono.pl:
 
-    perl c2nono.pl hamaji.c | ./hamaji
+```sh
+perl c2nono.pl hamaji.c | ./hamaji
+```
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2012, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
