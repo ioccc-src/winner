@@ -1,26 +1,30 @@
 # Best one liner
 
-Taketo Konno  
-Tokyo, Japan  
-<inaniwa3@gmail.com>  
+    Taketo Konno  
+    Tokyo, Japan  
+    <inaniwa3@gmail.com>  
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make konno
+```sh
+make
+```
 
 ### To run:
 
-    ./konno just_a_single_argument_of_lower_case_letters
+```sh
+./konno just_a_single_argument_of_lower_case_letters
+```
 
 ### Try:
 
-    ./konno qwerty
-    ./konno ioccc
-    ./konno "the quick brown fox jumps over the lazy dog"
+```sh
+./konno qwerty
+./konno ioccc
+./konno "the quick brown fox jumps over the lazy dog"
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 This tiny program outputs what looks like a tiny keyboard.  
 OK, so the letters are missing. But that is no problem because 
@@ -36,6 +40,7 @@ extend this program to deal with a full QWERTY keyboard?
 Can you then minimize the size of that code?
 
 ## Author's comments:
+
 ### Limitation
 
 This program ignores non-lower case letters.
@@ -45,11 +50,10 @@ This program ignores non-lower case letters.
 * "for" is not used. 
 * A part of program is encrypted.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2012, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
