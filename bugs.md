@@ -331,6 +331,15 @@ please do NOT change it! Doing so will break the generated output.
 It does not currently work under macOS. This will be investigated in the near
 future.
 
+Another warning to ignore is:
+
+
+	warning: assignment to 'char *' from incompatible pointer type 'char **' [-Wincompatible-pointer-types]
+	   55 | main(int v,char **c){ O=r_; _d=c;
+	      |                               ^
+
+Please do not change this.
+
 # 2000
 
 
