@@ -1,25 +1,29 @@
 # Most useful
 
-Kimmo Fredriksson  
-<kimmo.k.k.fredriksson@gmail.com>  
+    Kimmo Fredriksson  
+    <kimmo.k.k.fredriksson@gmail.com>  
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make fredriksson
+```sh
+make
+```
 
 ### To run:
-    
-    ./fredriksson [-icvtnk#] regexp < file
+
+```sh
+./fredriksson [-icvtnk#] regexp < file
+```
 
 ### Try:
 
-    ./fredriksson -k1 -i POOT < /etc/group
-    ulimit -s unlimited
-    ./fredriksson -k2 -t -n bofuskate < /usr/share/dict/words
+```sh
+./fredriksson -k1 -i POOT < /etc/group
+ulimit -s unlimited
+./fredriksson -k2 -t -n bofuskate < /usr/share/dict/words
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 The author of this entry was making sure that it does not win the
 "Best Short Program" award.  On the outside, the program behaves
@@ -28,18 +32,19 @@ transform decompressor that produces the source code of the actual
 obfuscated approximate grep program and calls it. As an exercise,
 try writing the compressor.
 
-
-
 ## Author's comments:
-# Approximate grep
+
+### Approximate grep
 
 Implements a variant of grep.
 
-## Usage
+### Usage
 
 To search regexp from file, do:
 
-	./fredriksson [-icvtnk#] regexp < file
+```sh
+./fredriksson [-icvtnk#] regexp < file
+```
 
 Pipes may not work, see the section Limitations.
 The options `-i -c -v` and `-n` are the classic ones:
@@ -114,7 +119,7 @@ expressions by putting `]` as the first character, and putting `-` last.
   liners in IOCCC entries, just adjust your stack size to a suitable
   threshold, and search for "ioccc", with option `-vk5`.
 
-## Limitations and remarks
+### Limitations and remarks
 
 * Using warning options (such as -Wall) when building gives a lot of warning,
   such as `suggest parentheses around '&&' within '||'`, `value computed is
@@ -162,7 +167,7 @@ expressions by putting `]` as the first character, and putting `-` last.
 
   (Btw, tcc has its roots in IOCCC...)
 
-## Obfuscations (a.k.a. spoilers...)
+### Obfuscations (a.k.a. spoilers...)
 
 * The initialized char array includes the source code of the real program,
   as well as its name and commands to build and run it, all Burrows-Wheeler
@@ -263,12 +268,10 @@ expressions by putting `]` as the first character, and putting `-` last.
   if deleting even one of those chars breaks the program! (This does not
   apply to the generated source `ag.c`.)
 
+## Copyright:
 
---------------------------------------------------------------------------------
-<!--
 (c) Copyright 1984-2012, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
