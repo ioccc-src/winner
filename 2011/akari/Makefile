@@ -1,65 +1,164 @@
 #!/usr/bin/env make
 #
-# 2011 makefile
+# IOCCC 2011 winning entry - akari
+
+################################################################################
 #
-# This work by Landon Curt Noll, Simon Cooper, and Leonid A. Broukhis
-# is licensed under:
+# Regarding individual entries:
+#
+# IOCCC winning entry code may not work on your system.  Even with standards,
+# conditions and build environments change, especially when it comes to more
+# extreme code such you might find in an IOCCC winner.  Moreover, what was
+# allowed and liked in one IOCCC contest may no longer be liked/allowed in
+# later IOCCC years.
+#
+# Corrections on winning author and fixing typos in remarks are VERY WELCOME.
+#
+# GitHub pull requests are welcome:
+#
+# If you have a patch that might make running an entry work in modern Unix-like
+# environments, please create a GitHub pull request for the IOCCC judges to
+# consider.
+#
+# Suggestions and corrections regarding Makefiles, winning author information,
+# fixing typos in remarks, and code patches are welcome via opening a GitHub
+# issue or better yet, by creating a GitHub pull request for the IOCCC judges
+# to consider.  To form a GitHub issue or GitHub pull, please visit:
+#
+# https://github.com/ioccc-src/winner
+#
+################################################################################
+
+# This work by Landon Curt Noll and Leonid A. Broukhis is licensed under:
 #
 #	Creative Commons Attribution-ShareAlike 3.0 Unported License.
 #
 # See: http://creativecommons.org/licenses/by-sa/3.0/
 
 
-################
-# tool locations
-################
+#############################
+# shell used by this Makefile
+#############################
 #
 SHELL= bash
-CP= cp
-CPP= cpp
-GUNZIP= gunzip
-LD= ld
-MAKE= make
-RM= rm
-SED= sed
-TAR= tar
-TRUE= true
 
-# Compiler warnings
+#######################
+# common tool locations
+#######################
 #
-CWARN= -Wall -W -pedantic
+include ../../var.mk
 
-# compiler standard
+# Set X11_LIBDIR to the directory where the X11 library resides
 #
-CSTD= -std=c99
-CSTD2= -ansi
+#X11_LIBDIR= /usr/X11R6/lib
+#X11_LIBDIR= /usr/X11/lib
+X11_LIBDIR= /opt/X11/lib
 
-# compiler bit architecture
+# Set X11_INCLUDEDIR to the directory where the X11 include files reside
 #
-# Some entries require 32-bitness,
-# other entries require 64-bitess.
-# By default we assume nothing.
+#X11_INCDIR= /usr/X11R6/include
+#X11_INCDIR= /usr/X11/include
+X11_INCDIR= /opt/X11/include
+
+# Common C compiler warnings to silence
+#
+#CSILENCE=
+CSILENCE= -Wno-empty-body -Wno-error -Wno-implicit-function-declaration \
+	-Wno-implicit-int -Wno-return-type -Wno-unused-parameter
+
+# Common C compiler warning flags
+#
+#CWARN= ${CSILENCE}
+#CWARN= -Wall ${CSILENCE}
+CWARN= -Wall -Wextra ${CSILENCE}
+#CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+
+# Compiler standard
+#
+#CSTD=
+#CSTD= -ansi
+CSTD= -std=gnu99
+
+# Compiler bit architecture
+#
+# Some entries require 32-bitness:
+# ARCH= -m32
+#
+# Some entries require 64-bitness:
+# ARCH= -m64
+#
+# By default we assume nothing:
 #
 ARCH=
 
-# optimization
+# Defines that are needed to compile
+#
+CDEFINE=
+#CDEFINE= -DIOCCC
+
+# Include files that are needed to compile
+#
+CINCLUDE=
+#CINCLUDE= -include stdlib.h
+#CINCLUDE= -include stdio.h
+#CINCLUDE= -include stdlib.h -include stdio.h
+#CINCLUDE= -I ${X11_INCDIR} -I ${X11_INCDIR}/X11
+#CINCLUDE= `${SDL2_CONFIG} --cflags`
+
+# Optimization
 #
 # Most compiles will safely use -O2.  Some can use only -O1 or -O.
 # A few compilers have broken optimizers or this entry make break
 # under those buggy optimizers and thus you may not want anything.
+# Reasonable compilers will allow for -O3.
 #
-OPT= -O2
+#OPT=
+#OPT= -O
+#OPT= -O1
+#OPT= -O2
+OPT= -O3
 
-# default flags for ANSI C compilation
+# Default flags for ANSI C compilation
 #
-CFLAGS= ${CWARN} ${CSTD} ${ARCH} ${OPT}
-CFLAGS2= ${CSTD2} ${ARCH} ${OPT}
+CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
-# ANSI compiler
+# Libraries needed to build
 #
-# Set CC to the name of your ANSI compiler.
+LIBS=
+#LIBS= -lm
+#LIBS= -L ${X11_LIBDIR} -lX11
+#LIBS= `${SDL2_CONFIG} --libs`
+
+# C compiler to use
 #
 CC= cc
+#CC=clang
+#CC=gcc
+
+# Compiler add-ons or replacements for clang only
+#
+ifeq ($(CC),clang)
+#
+CSILENCE+= -Wno-conditional-uninitialized -Wno-error \
+	-Wno-implicit-function-declaration -Wno-format-nonliteral \
+	-Wno-implicit-int -Wno-missing-prototypes \
+	-Wno-missing-variable-declarations -Wno-poison-system-directories \
+	-Wno-redundant-parens -Wno-return-type -Wno-shadow -Wno-shorten-64-to-32 \
+	-Wno-strict-prototypes -Wno-pedantic
+#
+CWARN+= -Weverything
+#
+endif
+
+# Specific add-ons or replacements for gcc only
+#
+ifeq ($(CC),gcc)
+#
+#CSILENCE+=
+#
+#CWARN+=
+#
+endif
 
 
 ##############################
@@ -67,70 +166,103 @@ CC= cc
 ##############################
 #
 ENTRY= akari
+PROG= ${ENTRY}
+#
+OBJ= ${PROG}.o
 DATA= example.ppm
+TARGET= ${PROG} ${PROG}2 ${PROG}3 ${PROG}4
+#
+ALT_OBJ=
+ALT_TARGET=
 
 
 #################
 # build the entry
 #################
 #
-all: ${ENTRY} ${DATA}
+all: data ${TARGET}
 	@${TRUE}
 
-everything: ${ENTRY} \
-	    ${ENTRY}2.c ${ENTRY}2 \
-	    ${ENTRY}3.c ${ENTRY}3 \
-	    ${ENTRY}4.c ${ENTRY}4
-	@${TRUE}
+.PHONY: all alt data everything clean clobber install \
+	love haste waste maker easter_egg sandwich \
+	supernova deep_magic magic charon pluto
 
-${ENTRY}: ${ENTRY}.c
-	${CC} ${CFLAGS} ${ENTRY}.c -o ${ENTRY}
+${PROG}: ${PROG}.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
-${ENTRY}2.c: ${ENTRY}
-	./${ENTRY} ${ENTRY}.c $@
+${PROG}2.c: ${PROG}
+	./${PROG} ${PROG}.c $@
 
-${ENTRY}2: ${ENTRY}2.c
-	${CC} ${CFLAGS} ${ENTRY}2.c -o $@
+${PROG}2: ${PROG}2.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
-${ENTRY}3.c: ${ENTRY} ${ENTRY}.c
-	./${ENTRY} < ${ENTRY}.c | ./${ENTRY} > $@
+${PROG}3.c: ${PROG} ${PROG}.c
+	./${PROG} < ${PROG}.c | ./${PROG} > $@
 
-${ENTRY}3: ${ENTRY}3.c
-	${CC} ${CFLAGS2} ${ENTRY}3.c -o $@
+${PROG}3: ${PROG}3.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
-${ENTRY}4.c: ${ENTRY} ${ENTRY}.c
-	./${ENTRY} < ${ENTRY}.c | ./${ENTRY} | ./${ENTRY} > $@
+${PROG}4.c: ${PROG} ${PROG}.c
+	./${PROG} < ${PROG}.c | ./${PROG} | ./${PROG} > $@
 
-${ENTRY}4: ${ENTRY}4.c
-	${CC} ${CFLAGS2} ${ENTRY}4.c -o $@
+${PROG}4: ${PROG}4.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
 #
-alt:
+alt: data ${ALT_TARGET}
 	@${TRUE}
+
+# data files
+#
+data: ${DATA}
+	@${TRUE}
+
+# both all and alt
+#
+everything: all alt
 
 
 ###############
 # utility rules
 ###############
 #
-everything: all alt
-
 clean:
-	${RM} -f ${ENTRY}.o ${ENTRY}2.c ${ENTRY}3.c ${ENTRY}4.c
+	${RM} -f ${OBJ} ${ALT_OBJ}
+	@-if [ -f indent.c ]; then \
+	    echo ${RM} -f indent.c; \
+	    ${RM} -f indent.c; \
+	fi
 
 clobber: clean
-	${RM} -f ${ENTRY} ${ENTRY}2 ${ENTRY}3 ${ENTRY}4
-
-nuke: clobber
-	@echo gnab gib!
+	${RM} -f ${TARGET} ${ALT_TARGET}
+	@-if [ -e sandwich ]; then \
+	    ${RM} -f sandwich; \
+	    echo 'ate sandwich'; \
+	fi
 
 install:
-	@echo "Surely you're joking Mr. Feynman!"
+	@echo "Dr. Spock says that is not logical!"
+	@${TRUE}
 
-# backwards compatibility
+# you may be able to misunderstand the source by reading indent.c
 #
-build: all
+indent.c: ${PROG}.c
+	@if which "${GINDENT}" >/dev/null 2>&1; then \
+	    echo ${RM} -f $@; \
+	    ${RM} -f $@; \
+	    echo "${GINDENT} < $< > $@"; \
+	    ${GINDENT} < $< > $@; \
+	elif which "${INDENT}" >/dev/null 2>&1; then \
+	    echo ${RM} -f $@; \
+	    ${RM} -f $@; \
+	    echo "${INDENT} < $< > $@"; \
+	    ${INDENT} < $< > $@; \
+	else \
+	    echo "no intent tool found, ident $< yourself, sorry"; \
+	    echo "exit 1"; \
+	    exit 1; \
+	fi
 
 
 ##################
@@ -139,15 +271,79 @@ build: all
 #
 love:
 	@echo 'not war?'
+	@${TRUE}
 
 haste:
 	$(MAKE) waste
+	@${TRUE}
 
 waste:
-	@echo 'waste'
+	@echo 'haste'
+	@${TRUE}
+
+maker:
+	@echo 'Participate in a maker faire'
+	@${TRUE}
 
 easter_egg:
-	@echo you expected to mis-understand this $${RANDOM} magic
-	@echo chongo '<was here>' "/\\oo/\\"
-	@echo Readers shall not be disallowed from being unable to partly misunderstand this final echo.
+	@echo "you expected to often misunderstand this $${RANDOM} magic"
+	@echo "chongo '<was here>' /\\oo/\\"
+	@echo "Eggy"
+
+sandwich: easter_egg
+	@if [ `id -u` -eq 0 ]; then \
+	    echo 'Okay.'; \
+	    echo "$${RANDOM}`date +%s`$${RANDOM}" > $@; \
+	else \
+	    echo 'What? Make it yourself.'; \
+	    exit 1; \
+	fi
+
+# Understand the history of the Homebrew Computer Club
+# as well as the West Coast Computer Faire and
+# you might be confused different.  :-)
+#
+supernova: sandwich
+	@-if [ -r .code_anal ]; then \
+	    ${RM} -f .code_anal_v6; \
+	else \
+	    echo "planet deniers, like some members of the IAU, are so cute when they try to defend their logic"; \
+	fi
+	@echo "A $@ helps ${MAKE} the elements that help form planets"
 	@${TRUE}
+
+deep_magic: supernova
+	@-if [ -r .code_anal ]; then \
+	    ccode_analysis --deep_magic 7889066cdbdf09b0408021754586e895be641cc9be29e7eafd3ca65359541f17 \
+	    		   --FNV1a_hash_512_bit -v2 "${PROG}" "${PROG}.c"; \
+	else \
+	    echo "Wrong! Do it again!"; \
+	    sleep 2; \
+	    echo "Wrong! Do it again!"; \
+	    sleep 2; \
+	    echo "Wrong! Do it again!"; \
+	fi
+	@${TRUE}
+
+magic: deep_magic
+	@-if [ -r .code_anal ]; then \
+	    ccode_analysis --level 20003 --mode 5717175 --FNV1a_hash_512_bit -v2 "${PROG}" "${PROG}.c"; \
+	else \
+	    echo "If you don't eat yer meat, you can't have any pudding!"; \
+	    echo "How can you have any pudding if you don't eat yer meat?!"; \
+	fi
+	@${TRUE}
+
+# The IOCCC resident astronomer states
+#
+charon: magic
+	@echo "$@ is a dwarf planet"
+	@echo "dwarf is a type of planet"
+	@echo "therefore IAU, $@ is a planet"
+
+pluto: charon
+	${MAKE} charon
+	@echo "$@ is a dwarf planet"
+	@echo "dwarf is a type of planet"
+	@echo "therefore, $@ is a planet"
+	@echo "having lots of planets is good feature because supernovae can help ${MAKE} a lot of them"

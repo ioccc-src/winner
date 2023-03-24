@@ -1,46 +1,50 @@
 # Best of Show - Most Shrinkable
 
-Don Yang  
-<omoikane@uguu.org>  
-<http://uguu.org/>  
+    Don Yang  
+    <omoikane@uguu.org>  
+    <http://uguu.org/>  
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make akari
+```sh
+make
+```
 
 ### To run:
 
-    ./akari [input_file_or_- [output_file_or_- [even]]]
+```sh
+./akari [input_file_or_- [output_file_or_- [even]]]
+```
 
 ### Try:
 
-    ./akari < example.ppm > odd_output.ppm
-    ./akari - - even < example.ppm > even_output.ppm
-    ./akari example.ppm odd_output.ppm
+```sh
+./akari < example.ppm > odd_output.ppm
+./akari - - even < example.ppm > even_output.ppm
+./akari example.ppm odd_output.ppm
 
-    make akari2.c
-    cat akari2.c
+make akari2.c
+cat akari2.c
 
-    make akari2
+make akari2
 
-    ./akari2 < akari2.c
-    ./akari2 rot13 < akari2.c
+./akari2 < akari2.c
+./akari2 rot13 < akari2.c
 
-    make akari3.c
-    cat akari3.c
+make akari3.c
+cat akari3.c
 
-    make akari3
+make akari3
 
-    ./akari3
+./akari3
 
-    make akari4.c
-    cat akari4.c
+make akari4.c
+cat akari4.c
 
-    ./akari4
+./akari4
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 Akari is an image downsampling utility that accepts 3 inout formats:
 
@@ -56,6 +60,7 @@ Akari is an image downsampling utility that accepts 3 inout formats:
 Anything that is not parseable as PGM or PPM will be downsampled as ASCII art.
 
 ## Author's comments:
+
 Akari is an image downsampling utility.  She accepts up to 3 arguments:
 
 First argument is the input image.  If it's "-" or unspecified, Akari
