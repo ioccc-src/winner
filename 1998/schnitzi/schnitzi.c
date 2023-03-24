@@ -1,8 +1,8 @@
 typedef void e();
 
-e *w,*l,*u,*_o,*j,*t,*O,exit,b,c_,b_,a_,c,a,z_,x_,d,y_,_m;
-int q,m,_d,z,k,h,f[99];
-char y[26],_p[40][26],_q,r[2],*_,**s,*i,
+e *w,*l,*u,*_o,*j,*t,*O,b,c_,b_,a_,c,a,z_,x_,d,y_,_m,n,*h;
+int q,m,z,k,f[99];
+char y[26],_p[40][26],_q,r[2],*_,**s,*i,*_d,
 
 *x[]= { "\n", ")", "if (", "}\n", ");\n\n", "    ", ",&", "\"",
   ",", " %%d", ";\n\n    scanf(\"%%d", "%%d ", "else ", ",", "<",
@@ -52,5 +52,5 @@ void x_(){ O=g; *r=y[k-2]; _=r; j=o_; }
 void d (){ O=g; *r=y[k]; _=r; k=k+1; m=k<z; w=_t; l=p_; j=p; }
 void y_(){ O=g; *r=x[17][1]+k; _=r; j=q_; }
 void r_(){ O=_b; _=x[17]; s=(char**)_d; s=s+1; i=*s; q=0; }
-main(int v,char **c){ O=r_; _d=c;
+main(int v,char **V){ O=r_; _d=V;
   x: (O)(); goto x; }

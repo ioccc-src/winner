@@ -315,6 +315,27 @@ type).
 
 # 1998
 
+## [1998/schnitzi](1998/schnitzi/schnitzi.c) ([README.md](1998/schnitzi/README.md))
+
+### Status: INABIAF - please do not fix
+
+If you get the compiler warning:
+
+	warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+	   11 | void  g(){ O=j; printf(_); }
+	      |                 ^~~~~~
+
+
+please do NOT change it! Doing so will break the generated output.
+
+Another warning to ignore is:
+
+
+	warning: assignment to 'char *' from incompatible pointer type 'char **' [-Wincompatible-pointer-types]
+	   55 | main(int v,char **c){ O=r_; _d=c;
+	      |                               ^
+
+Please do not change this either.
 
 # 2000
 
