@@ -18,6 +18,9 @@ Or you can build this entry without the `halfdelay()` call by:
 
 	make chaos_nohalf
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added a call to
+`endwin()` to restore terminal sanity (echo etc.) when exiting the program.
+Thank you Cody for your assistance!
 
 ## To run:
 

@@ -48,7 +48,7 @@ A main(A N,char ** Y) {
 	_('u',-,2,0,1)
 	_('i',-,1,0,2)
 	G += M=='a'?-.1:M=='z'?.1:0;
-	if(M=='q') { printf("%.9s\n",P); exit(0); }
+	if(M=='q') { printf("%.9s\n",P); endwin(); exit(0); }
 		
 	memset(Q,0,3792); 
 	erase(); 
