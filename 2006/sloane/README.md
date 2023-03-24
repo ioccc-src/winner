@@ -1,24 +1,34 @@
 # Homer's Favorite
 
-Andy Sloane
-1041 Seneca St.
-Hartford, WI 53027
-US
+    Andy Sloane
+    1041 Seneca St.
+    Hartford, WI 53027
+    US
 
-## Judges' Comments:
+# To build:
 
-### To build:
-
-        make slone
+```sh
+make
+```
 
 ### To run:
 
-        ./sloane
+```sh
+./slone
+```
+
+### Try:
+
+```sh
+echo "Do or do not. There is no try."
+```
+
+## Judges' Comments:
 
 Looks almost good enough to eat, dunnit?  I suppose you could argue that,
 at first blush, this looks like a self-reproducing program.
 
-## Selected Author's Comments:
+## Author's comments:
 
 This program doesn't require any special build options, other than that it
 uses sin and cos and hence requires the math library.
