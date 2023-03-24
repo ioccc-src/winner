@@ -1,5 +1,7 @@
 .*.sw[a-z]
 .sw[a-z]
+.sv[a-z]
+.*.sv[a-z]
 .DS_Store
 /archive/1984/
 /archive/1985/
