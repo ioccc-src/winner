@@ -1,34 +1,43 @@
 # Most elementary use of C - Silver award
 
-Tsukasa Hamano  
-<hamano@cuspy.org>  
+    Tsukasa Hamano  
+    <hamano@cuspy.org>  
 
-## To build:
+# To build:
 
-        make all
+```sh
+make
+```
 
 ### To run:
 
-    ./hamano < textfile > output.pdf
+```sh
+./hamano < textfile > output.pdf
+```
 
 ### Try:
 
-    ./hamano < README.md > hint.pdf
+```sh
+./hamano < README.md > hint.pdf
+```
 
-    # You can read output.pdf with PDF reader
-    acroread hint.pdf
-    # or
-    evince hint.pdf
+You can read output.pdf with PDF reader acroread hint.pdf or evince hint.pdf.
 
-    # deobfuscate
-    gcc -xc hint.pdf -o hint
-    ./hint
+To deobfuscate:
 
-    # Of course, You can obfuscate c code
-    echo 'void main(){puts("Hello World!");}' | ./hamano > hello.pdf
-    gcc -xc hello.pdf -o hello2
-    ./hello2 | gcc -xc - -o ./hello3
-    ./hello3
+```sh
+cc -xc hint.pdf -o hint
+./hint
+```
+
+Of course, You can also obfuscate c code:
+
+```sh
+echo 'void main(){puts("Hello World!");}' | ./hamano > hello.pdf
+cc -xc hello.pdf -o hello2
+./hello2 | gcc -xc - -o ./hello3
+./hello3
+```
 
 ## Judges' comments
 
@@ -71,20 +80,20 @@ available to compile as C code.
 I've been tested with GCC 4.7 and Clang 3.0 on Linux, and following
 PDF Reader:
 
- * Adobe Acrobat Reader
- * Evince
- * Ghostscript
- * Xpdf
+    * Adobe Acrobat Reader
+    * Evince
+    * Ghostscript
+    * Xpdf
 
 ### Obfuscations
+
 This program is obfuscated by using classical methods.
 But can you find out the embedded font from fragmented glyph?
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
