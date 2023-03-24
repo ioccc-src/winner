@@ -1,34 +1,42 @@
 # Best One Liner
 
-Stephen Sykes
-Itäinen koulupolku
-Kauniainen
-Finland
-<http://www.stephensykes.com>
+    Stephen Sykes
+    Itäinen koulupolku
+    Kauniainen
+    Finland
+    <http://www.stephensykes.com>
 
-## Judges' Comments:
+# To build:
 
-### To build:
-
-        make sykes2
+```sh
+make
+```
 
 ### To run:
 
-        ./sykes2
+```sh
+./prog
+```
 
-Then "Lather, rinse, repeat":
+### Try:
 
-        while :; do
-                clear
-                rm -f sykes2
-                make sykes2
-                ./sykes2
-                sleep 1
-        done
+```sh
+while :; do
+    clear
+    rm -f sykes2
+    make sykes2
+    ./sykes2
+    sleep 1
+done
+```
+
+## Judges' Comments:
+
+As they say, "Lather, rinse, repeat"! :-)
 
 If you have the time, figure out how this small 1-line entry works!
 
-## Selected Author's Comments:
+## Author's comments:
 
 At 130 characters of C code (without the newline at the end), this
 should fit into the "1-liner" category.
