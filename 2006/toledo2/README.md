@@ -1,21 +1,30 @@
 # Best of Show
 
-Oscar Toledo
-Av. Santa Cruz del Monte 9-304
-Ciudad Satelite. Edo. de Mexico
-CP. 53110
-Mexico
+    Oscar Toledo
+    Av. Santa Cruz del Monte 9-304
+    Ciudad Satelite. Edo. de Mexico
+    CP. 53110
+    Mexico
 
-## Judges' comments:
+# To build:
 
-### To build:
+```sh
+make
+```
 
-        make toledo2
+### To run:
+
+```sh
+./toledo2
+```
 
 ### Try:
 
-        cp C.BASIC C
-        ./toledo2
+```sh
+echo "Do or do not. There is no try."
+```
+
+## Judges' comments:
 
 We're impressed! Last year, it was a 6502 emulator; this year,
 it's 8080!  It requires an input file ("C") to be present, but
