@@ -28,9 +28,8 @@
 	echo 324 >> data
 	./sort < data
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work (it
-segfaulted) under linux. He notes that currently it segfaults under macOS but
-he'll work on that in the near future.
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
+this entry. Thank you Cody for your assistance!
 
 ## Judges' comments
 
