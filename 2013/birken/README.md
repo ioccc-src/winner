@@ -1,26 +1,30 @@
 # Best painting tool
 
-Michael Birken  
-<o__1@hotmail.com>  
-<http://www.meatfighter.com/>  
+    Michael Birken
+    <o__1@hotmail.com>
+    <http://www.meatfighter.com/>
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make birken
+```sh
+make
+```
 
 ### To run:
 
-    ./birken < 17_columns_wide_paint_by_numbers_file
+```sh
+./birken < 17_columns_wide_paint_by_numbers_file
+```
 
 ### Try:
 
-    ./birken < examples/ioccc.txt
+```sh
+./birken < examples/ioccc.txt
 
-    perl -e 'map{map{print int(rand()*8);}(0..16);print chr(10);}(0..30);' | tr '[0-4]' ' '| ./birken 
+perl -e 'map{map{print int(rand()*8);}(0..16);print chr(10);}(0..30);' | tr '[0-4]' ' '| ./birken
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 This program also wins the "Most amusing abuse of the iocccsize tool" award; although not the
 absolute best: it is possible to achieve 0 by writing
@@ -31,13 +35,13 @@ absolute best: it is possible to achieve 0 by writing
 The game of Tetris had been used in many endeavors, from studying [algorithmic complexity](http://arxiv.org/abs/cs/0210020) to [treating PTSD](http://www.livescience.com/19894-tetris-treat-ptsd-flashbacks.html).
 Using it for painting by numbers looks like a novel idea.
 
-
 ## Author's comments:
+
 ### About This Document
 
-This document is best viewed as an HTML file in a browser that supports animated gifs.  Extract `examples.tbz2` for the sample input files.
+This document is best viewed as an HTML file in a browser that supports animated gifs.
 
-    tar -xjvf examples.tbz2
+See the files: `*.txt`, `*.png` and `*.gif`.
 
 ### Abstract
 
@@ -96,7 +100,7 @@ Since J, T and L Tetriminos are used interchangeably to produce the emitted squa
 ### Platforms
 
 Before a row is constructed, the algorithm inspects the row below it.  If the row below fails to provide support for all of the squares to be deposited above it, then a temporary platform is required.  When that platform is removed, the new row will drop, leaving some of the squares apparently floating above empty space due to the way that gravity works in the original Tetris.
-        
+
 The illustration below depicts the 10 platform patterns (really only 5 considering mirror symmetry).  The construction of a platform begins by dropping a T Tetrimino on top one of the squares of the last generated row.  The remaining Tetriminos support each other down to that first T.  Meaning, as long as the previously generated row contains at least 1 square, like the red square below, then it is possible to construct a flat platform above it for the generation of the next row.
 
 ![](platform2.gif)
@@ -104,7 +108,7 @@ The illustration below depicts the 10 platform patterns (really only 5 consideri
 In the middle of platform construction, the bottom row gets completed and cleared, leaving 3 rows above it.  The final J or L Tetrimino that will remove those rows is not inserted until the square emitters are done generating the next row of the sprite on top of the platform.  That final piece precludes square emission in the first and last 2 columns.  But, as discussed above, the square emitters are limited to the 17 inner columns due to the geometry of the J, T and L Tetriminos used in the process.
 
 Also, of the 19 possible ways to start constructing a platform on top of a T Tetrimino, only the 10 patterns shown above exist.
-    
+
 ### Program Input
 
 The input sprite is represented textually.  Digit characters `0` to `7` correspond to pixels with colors from the palette below.
@@ -112,10 +116,10 @@ The input sprite is represented textually.  Digit characters `0` to `7` correspo
 ![ANSI color palette](palette.png)
 
 As discussed above, sprites are limited to a maximum of 3 colors from this palette.
-  
-All other characters are interpreted as transparent pixels. 
 
-The maximum permissible size of the input text is 32 rows by 17 columns. Row length can vary as long as no single row exceeds 17 characters. 
+All other characters are interpreted as transparent pixels.
+
+The maximum permissible size of the input text is 32 rows by 17 columns. Row length can vary as long as no single row exceeds 17 characters.
 
 Every row must contain at least one palette digit character.
 
@@ -139,14 +143,17 @@ This program demonstrates how to exploit a bug in IOCCC size tool version 2013-0
 
 If that line is added to the top of any program, the tool will report a size of 8.
 
-    ./iocccsize -i < prog.c
-    8
-
+```sh
+$ ./iocccsize -i < prog.c
+8
+```
 
 When that line is deleted from this program, the tool properly reports the secondary size limit of the program as 2048.
 
-    ./iocccsize -i < prog.c
-    2048
+```sh
+$ ./iocccsize -i < prog.c
+2048
+```
 
 Although this bug provides an easy means of circumventing contest rule 2, as demonstrated from the size value, this entry is not necessarily striving for a 'worst abuse of the rules' award.
 
@@ -162,8 +169,8 @@ Carefully selected variable names also yielded wonderful expressions like `l=0`,
 
 The source is formatted to resemble the Tetris playfield midgame.  It is also an homage to all the past IOCCC entries formatted as a compact block of text; the T, orientated appropriately to reflect its name and the first letter in the title of the game, is just a moment away from producing such a text block.
 
-Three tables are encoded as separate strings within the program: 
- 
+Three tables are encoded as separate strings within the program:
+
 The first string stores the coordinates of the squares of the 19 distinct rotations of Tetriminos (see below).  Since a Tetrimino is a chain of 4 squares, all Tetriminos fit within a 4&times;4 matrix.  To determine the coordinates of the squares, the Tetrimino is pushed to the upper-left of the matrix.  Each coordinate value requires 2 bits of storage.  Consequentially, the four x-coordinates and the four y-coordinates were packed into separate octets.  To convert the octets into valid ASCII characters, the squares were sorted such that the least significant bits stored the largest coordinate values.  The results were offset by 35, the `#` character, which is 1 beyond the ASCII value of `"`, making it easier to pack into a string.  None of the resultant values are beyond ASCII 127.  The coordinates for all 19 rotations fit in a string of length 38.
 
 ![](rotations.png)
@@ -174,7 +181,7 @@ The third string conceptually stores the default colors of the 19 rotations.  A 
 
 The program is full of subtle obfuscations:
 
-* The unary decrement operator is used in conjunction with global variable automatic zero initialization to set variables to `-1`.  
+* The unary decrement operator is used in conjunction with global variable automatic zero initialization to set variables to `-1`.
 
 * The boolean expression of the form, `x + 1`, is used multiple times to determine if a value is not `-1`.  Similarly, expressions of the form `x - y` are used to determine if `x != y`.
 
@@ -184,7 +191,7 @@ The program is full of subtle obfuscations:
 
 * Variable `i` is less than necessary.
 
-* A cursorily glance at the expressions `4&&L` and `m&&e==m` suggests that they always evaluate to true. 
+* A cursorily glance at the expressions `4&&L` and `m&&e==m` suggests that they always evaluate to true.
 
 * The varying single square emitter pattern lengths are resolved during string decoding using the clever expression, `(i & 3) - 3`, which identifies pattern 3 and 7 as longer.
 
@@ -249,13 +256,10 @@ The origin of the remaining files are described below:
 * `happyface.txt` - Based on a smiley; rights unknown
 * `snoo.txt` - 8-bit version of Snoo, Reddit's alien mascot
 
+## Copyright:
 
-
---------------------------------------------------------------------------------
-<!--
 (c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
