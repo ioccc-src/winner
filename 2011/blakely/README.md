@@ -1,28 +1,33 @@
 # Most devolving
 
-Philip Blakely  
-Cambridge, UK  
-<pmblakely@gmail.com>  
+    Philip Blakely  
+    Cambridge, UK  
+    <pmblakely@gmail.com>  
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make blakely
+```sh
+make
+```
 
 ### To run:
 
-    # Zoom out and make your terminal window 53 or more lines deep 
-    ./blakely < blakely.c | head -300
+Zoom out and make your terminal window 53 or more lines deep.
+
+```sh
+./blakely < blakely.c | head -300
+```
 
 ### Try:
 
-    ./blakely < 3.dat | head -100
-    ./blakely - < 3.dat | head -40
-    ./blakely < evolve_to_3.dat | head -55
-    ./blakely < t0_3.dat
+```sh
+./blakely < 3.dat | head -100
+./blakely - < 3.dat | head -40
+./blakely < evolve_to_3.dat | head -55
+./blakely < t0_3.dat
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 This program plays Life, computes Pi to 16 digits
 if given its own source as input, and allows to check if your garden
@@ -31,11 +36,13 @@ is a [Garden of Eden](http://en.wikipedia.org/wiki/Garden_of_Eden_%28cellular_au
 If you have enough time to spare, put the plan of your garden in a text file, 
 and run:
 
-    ./blakely - < garden.txt
+```sh
+./blakely - < garden.txt
+```
 
 ## Author's comments:
-Remarks
--------
+
+### Remarks
 
 This program uses a well-known algorithm in order to display pi to
 fifteen decimal places. The source-layout itself demonstrates the importance of
@@ -43,15 +50,16 @@ using the correct amount of whitespace in code and the clear superiority of spac
 
 In order to see the main feature of the code, type:
 
-    ./blakely < blakely.c
+```sh
+./blakely < blakely.c
+```
 
 and wait for about four seconds before using Ctrl-C (or whatever) to end the program. The
 results are best viewed in a terminal window at least 60 characters
 high and wide. Alternatively, redirect the output to a separate file
 (killing when necessary).
 
-Overview
---------
+### Overview
 
 The program emulates John Conway's ceullular automaton known as "The
 Game of Life", using standard input as a starting grid. The layout of
@@ -59,14 +67,18 @@ the source-code is such that it evolves to a digital representation of
 the first 15 decimal places of pi after 4 time steps. This was setup
 using the other feature of the program which can be demonstrated as follows:
 
-    ./blakely - < 3.dat
+```sh
+./blakely - < 3.dat
+```
 
 The program will first display the grid given in 3.dat, and then three
 more grids (taking a few minutes to display the last). Waiting for any more grids will
 take a substantial amount of time. The final grid has been put into
 evolve\_to\_3.dat, and if you type
 
-    ./blakely < evolve_to_3.dat
+```sh
+./blakely < evolve_to_3.dat
+```
 
 then the 3 will reappear after three time steps.
 
@@ -81,8 +93,7 @@ will stop if it is unable to find a grid that will evolve to the
 current layout correctly. This can be seen with the sample grid
 t0_3.dat, which evolves backwards by only two time-steps.
 
-Input file format
------------
+### Input file format
 
 The input files must encode a square grid, where a space is a dead
 cell, and any other character (except a newline) is a living cell. Each line must be the same
@@ -91,8 +102,7 @@ designing grids, it may help to type full-stops in place of spaces,
 and do a global replace afterwards. Any deviation from this format will
 cause errors in the output.
 
-Limitations
------------
+### Limitations
 
 This is only an approximation to the original Life, as it takes place
 on a finite grid, with borders that are automatically killed off
@@ -108,8 +118,7 @@ seg-fault), but changing the two 9802s to MAX\_SIZE*MAX\_SIZE+1 will
 solve this, although some reformatting of the
 code may have to be done to allow larger numbers.
 
-Compiler warnings/assumptions
------------------------------
+### Compiler warnings/assumptions
 
 When compiled with the -Wall -pedantic -ansi options of gcc, some
 warnings suggesting extra parentheses occur (not necessary for anyone
@@ -123,8 +132,7 @@ ASCII based system is required to run it. Also, as mentioned above,
 any system that uses anything other than a plain '\n' to end a line will cause
 problems when reading in files.
 
-Obfuscations
-------------
+### Obfuscations
 
 Given the finely-tuned layout required to evolve into pi, this is one of the
 main obfuscations used in the code. However, running the code through the
@@ -149,8 +157,7 @@ Other obfuscations used are:
 - Storing a variable whose value could easily be found from another
 - Use of gotos to emulate a for loop
 
-Algorithm
----------
+### Algorithm
 
 The forwards evolution of the grid is straightforward.
 
@@ -174,8 +181,7 @@ Since this uses brute-force, it can be very slow. (In fact, the
 various obfuscations have, at least for the gcc compiler,
 caused a substantial slowdown.)
 
-Program layout
---------------
+### Program layout
 
 The "calculation" of pi was chosen purely because algorithms to find
 pi are numerous, but the Game of Life is rarely (if ever?) used for
@@ -217,11 +223,10 @@ universe.
 
 The command ./blakely - < blakely.c is therefore *not* recommended.
 
---------------------------------------------------------------------------------
-<!--
+### Copyright:
+
 (c) Copyright 1984-2012, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
