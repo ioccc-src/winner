@@ -16,14 +16,29 @@ make
 ### To run:
 
 ```sh
-./prog
+./mynx http://<domain>
 ```
+
+You can specify a port by appending to the domain `:port`. See notes below on
+the issue of https.
 
 ### Try:
 
 ```sh
-./mynx http://www.ioccc.org/
+./mynx http://www.textfiles.com
 ```
+
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) pointed out that this
+will not work for https initially for two reasons. First it scanned for http://.
+Cody changed it to scan for both http:// and https:// but the problem is a
+secure connection needs to be set up before http commands can be sent. One would
+also have to specify a port in the URL. Fortunately or unfortunately many more
+websites use https nowadays so this entry will not work as well as it used to.
+If one were to try and connect to `http://www.ioccc.org` with this entry they'll
+just get a 301 error. Perhaps someone can come up with a pipeline that will make
+this work with the change made.  Otherwise just enjoy it for what it was.
+
 
 ## Judges' comments
 

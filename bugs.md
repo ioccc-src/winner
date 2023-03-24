@@ -226,6 +226,16 @@ is true on both linux and macOS, with `k` being equal to 22.
 Should the entry use `perror()`? Perhaps not but we're not sure of its purpose
 so it can stay for now with this note.
 
+### [2005/mynx](2005/mynx/mynx.c) ([README.md](2005/mynx/README.md))
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) notes that, though
+probably obvious, this entry will not work with https. He changed the code to
+scan for https too (it exited before) in case someone comes up with a clever
+command line to make it work but the problem is a secure connection has to first
+be set up in order to give http commands. This is not a bug but it's worth
+pointing out as it won't work on as many websites as it used to including the
+[IOCCC website](https://www.ioccc.org) itself.
+
 
 ### [2019/endoh](2019/endoh/prog.c) ([README.md](2019/endoh/README.md))
 
