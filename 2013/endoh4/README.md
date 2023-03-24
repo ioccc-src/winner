@@ -1,37 +1,43 @@
 # Most solid
 
-Yusuke Endoh  
-<mame@ruby-lang.org>  
-<https://github.com/mame/>  
+    Yusuke Endoh  
+    <mame@ruby-lang.org>  
+    <https://github.com/mame/>  
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make endoh4
+```sh
+make
+```
 
 ### To run:
 
-    ./endoh4
+```sh
+./endoh4
+```
 
 ### Try:
 
-NOTE: The author recommends the use of xterm.
+```sh
+./endoh4 < cube.txt
+```
 
-    ./endoh4 < cube.txt
+The author recommends the use of xterm.
 
 For example, if you are a soccer fan, try:
 
-    make all
-    ./endoh4 < solids/archimedian-solid/a11-truncated-icosahedron.txt
+```sh
+./endoh4 < solids/archimedian-solid/a11-truncated-icosahedron.txt
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 This program is formatted as the net for a tetrahedron. (hint, try feeding the
 program it's own source code).  When it runs there is an animation for the
 computation to work out the convex hull.
 
 ## Author's comments:
+
 ### Spec
 
 This is a convex polyhedron viewer, which:
@@ -64,20 +70,26 @@ It should not be warned with -pedantic and -Wextra.
 
 You may want to use `tput` to hide a terminal cursor.
 
-    tput civis
-    ./endoh4 < cube.txt
-    tput cnorm
+```sh
+tput civis
+./endoh4 < cube.txt
+tput cnorm
+```
 
 ### Bonuses
 
 You can change the screen size.  Let the aspect ratio be about 3:1.
 
-    gcc -DS=120,40 -o endoh4 endoh4.c
+```sh
+cc -DS=120,40 -o endoh4 endoh4.c
+```
 
 The shape of this code is the geometric net of a regular tetrahedron.
-  So, try:
+So, try:
 
-    ./endoh4 < endoh4.c
+```sh
+./endoh4 < endoh4.c
+```
 
 The solids.tbz2 file includes various solid data:
 [Platonic solids](http://en.wikipedia.org/wiki/Platonic_solid),
@@ -95,11 +107,10 @@ in Wikipedia.
 They are copyrighted in CC BY-SA 3.0
 by "User:Cyp" and "User:AndrewKepert".
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
