@@ -1,40 +1,45 @@
 # Best use of 1 Infinite Loop
 
-Qiming Hou  
-<hqm03ster@gmail.com>  
-<http://www.houqiming.net>  
+    Qiming Hou  
+    <hqm03ster@gmail.com>  
+    <http://www.houqiming.net>  
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make hou
+```sh
+make
+```
 
 ### To run:
 
-    ./hou [scene-file-name] [options]
+```sh
+./hou [scene-file-name] [options]
+```
 
-    Follow the instructions in stdout, preferably with an auto-refreshing PPM image viewer ready.
-    Refresh the image every time the output refreshes, all effects should be more or less recognizable when you see 16.
+Follow the instructions in stdout, preferably with an auto-refreshing PPM image viewer ready.
+Refresh the image every time the output refreshes, all effects should be more or less recognizable when you see 16.
 
 ### Try:
 
-    ./hou BIG
-    ./hou old_default.scene BIG
-    ./hou otherroom.scene
-    ./hou otherroom.scene NAIVE
+```sh
+./hou BIG
+./hou old_default.scene BIG
+./hou otherroom.scene
+./hou otherroom.scene NAIVE
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 You could consider that this program violates the source code size
-limit. This is because the first compliation of this program is
+limit. This is because the first compilation of this program is
 really just a decompressor to generate the real source code of the
 program.
 
-This program will loop infinitely while progressivly refining a
+This program will loop infinitely while progressively refining a
 raytraced image.
 
 ## Author's comments:
+
 ### Using hou
 
 This program is a programmable rendering engine with a built-in default scene. The standard command line is:
@@ -113,11 +118,10 @@ To save time and energy for the judges, rendered images for all provided scenes 
 
   * The decoder uses an O(n^2) algorithm to avoid the gigabytes-sized hash table frequently found in other PPM implementations.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
