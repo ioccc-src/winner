@@ -18,6 +18,10 @@ make
 ./birken < file.tofu
 ```
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
+macOS with this entry. The problem was a missing `+1` for strlen() with
+malloc(). Thank you Cody for your assistance!
+
 ### Try:
 
 ```sh
