@@ -102,6 +102,15 @@ needless cast to `char *` from gets(). This cast remains in the code however.
 however.
 
 
+### [2005/giljade](2005/giljade/giljade.c) ([README.md](2005/giljade/README.md))
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) noted that this
+requires both 32-bit CPUs (data size?) and also cannot have optimiser enabled.
+It might be that it can be fixed, perhaps by changing the int sizes and bitwise
+operations, but if not this will not work with some systems like modern Macs as
+Apple has made it hard to compile 32-bit applications.
+
+
 ### [2014/vik](2014/vik/prog.c) ([README.md](2014/vik/README.md))
 
 
@@ -182,7 +191,7 @@ the judges and needn't be fixed.
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the scripts to
 work in modern systems. He notes however that the command in the try section,
-the one to test the official C entry, appear to not work with macOS, giving:
+the one to test the official C entry, appears to not work with macOS, giving:
 
 
 	$ echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
@@ -216,14 +225,6 @@ is true on both linux and macOS, with `k` being equal to 22.
 
 Should the entry use `perror()`? Perhaps not but we're not sure of its purpose
 so it can stay for now with this note.
-
-
-### [1996/westley](1996/westley/westley.c) ([README.md](1996/westley/README.md))
-
-
-This entry will possibly segfault even when showing the proper output in the
-`clock1`, `clock2` and `clock3` scripts. Though this doesn't need to be fixed as
-long as it works right it wouldn't hurt to fix it either.
 
 
 ### [2019/endoh](2019/endoh/prog.c) ([README.md](2019/endoh/README.md))
@@ -295,13 +296,16 @@ XXX - .. more entries to be added later ..
 This entry is likely to fail and/or dump core on any computer other than a
 Vax-11 or pdp-11. In 1984 machine dependent code was allowed.
 
-Perhaps what is needed is for someone to supply a Vax-11 or pdp-11 emulator for this entry.
+To see this entry in action check out [Yusuke
+Endoh](/winners.html#Yusuke_Endoh)'s [2015/endoh3](2015/endoh3) entry. Otherwise
+a Vax-11 or pdp-11 emulator would be necessary.
 
 
 ### [2004/gavin](2004/gavin/gavin.c) ([README.md](2004/gavin//README.md))
 
 
-Segmentation fault occurs when running `gavin` to produce the kernel:
+Segmentation fault will occur in some systems. For instance on macOS with the
+arm64 chip:
 
 ```sh
 ./gavin > kernel
@@ -318,13 +322,10 @@ ld: symbol(s) not found for architecture arm64
 ```
 
 
-#### Recent for 2004/gavin mods:
+#### Recent 2004/gavin mods:
 
-
-In case recent modification are part of the problem, here is a full disclosure
-of what was changed:
-
-To compile on modern C compilers, the following patch was applied to `gavin.c`:
+Although not related some recent changes were made to 2004/gavin to let it
+compile under clang. The following patch was applied:
 
 ```patch
 diff --git a/2004/gavin/gavin.c b/2004/gavin/gavin.c
