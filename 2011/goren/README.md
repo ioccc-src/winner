@@ -1,23 +1,27 @@
 # Most artistic
 
-Uri Goren  
-<goren.uri@gmail.com>  
+    Uri Goren  
+    <goren.uri@gmail.com>  
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make goren
+```sh
+make
+```
 
 ### To run:
 
-    echo "some text" | ./goren
+```sh
+echo "some text" | ./goren
+```
 
 ### Try:
 
-    echo "Hello, world!" | ./goren
+```sh
+echo "Hello, world!" | ./goren
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 In the words of [René François Ghislain Magritte Magritte](http://en.wikipedia.org/wiki/Rene_Magritte):
 
@@ -34,6 +38,7 @@ However if one takes a firm stand and declares:
 something happens!  Why?
 
 ## Author's comments:
+
 This program was written in homage to Rene Magritte's picture "La
 trahison des images" (The Treachery of Images).
 
@@ -80,11 +85,10 @@ mostly with gcc on Linux.
 It doesn't support 64 bits (due to integer-pointer casts, and a >>31).
 It does work on 64-bit Linux, becasue all functions are below 4GB.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2012, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
