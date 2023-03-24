@@ -1,22 +1,32 @@
 # Best Small Program
 
-Oscar Toledo
-Av. Santa Cruz del Monte 9-304
-Ciudad Satelite. Edo. de Mexico
-CP. 53110
-Mexico
+    Oscar Toledo
+    Av. Santa Cruz del Monte 9-304
+    Ciudad Satelite. Edo. de Mexico
+    CP. 53110
+    Mexico
 
-## Judges' remarks:
+# To build:
 
-### To build:
+```sh
+make
+```
 
-        make toledo1
+### To run:
+
+```sh
+./toledo1 twodigits
+```
 
 ### Try:
 
-        ./toledo1 00
-        ./toledo1 30
-        ./toledo1 99
+```sh
+./toledo1 00
+./toledo1 30
+./toledo1 99
+```
+
+## Judges' remarks:
 
 For most of the arguments (e.g. those above) the resulting path
 is not circular, but at least one starting point yields a circular path.
