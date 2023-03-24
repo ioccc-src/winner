@@ -1,47 +1,52 @@
 # PiE in the sky award
 
-Yusuke Endoh  
-<mame@ruby-lang.org>  
-<https://github.com/mame/>  
+    Yusuke Endoh  
+    <mame@ruby-lang.org>  
+    <https://github.com/mame/>  
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make endoh2
+```sh
+make
+```
 
 ### To run:
 
-    ./endoh2 > pi.c
-    gcc -o pi pi.c
-    ./pi > 314.c
-    ...
+```sh
+./endoh2 > pi.c
+gcc -o pi pi.c
+./pi > 314.c
+```
 
-    ./endoh2 e > e.c  
-    gcc -o e e.c
-    ./e > 271.c
-    ...
+and:
+
+```sh
+./endoh2 e > e.c  
+gcc -o e e.c
+./e > 271.c
+```
 
 ### Try:
 
-    make pi
-    make e
-    make everything
+```sh
+make pi
+make e
+make everything
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 A pi/e printing quasi-quine in ASCII art with a compressed font in it;
 what else to wish for in this program? Virtual machine emulation?
 
 ## Author's comments:
+
 Yeah, "Again".  Sorry.  But I don't feel guilty or uncomfortable.
 
 This entry is based on 'over-used themes' such as self reproducing
 program and pi or e computation.  I know you're tired of them.
 
-
 But have you ever seen **all-in-one**?
-
 
 ### What it is
 
@@ -92,7 +97,6 @@ of ASCII-art with comment padded.
 These design requirements made my program well-obfuscated
 willy-nilly.
 
-
 ### Portability
 
 I expect it to work in any major environment and C compiler.
@@ -107,41 +111,41 @@ function.  In fact, recent compilers with "-std=c99 -Wall -W
 I've tested with gcc-4.6.3 and clang-3.0 on Linux (Ubuntu 12.04)
 and gcc-4.5.3 and clang-3.1 on Cygwin.
 
-
 ### Synopsis
 
-    gcc endoh2.c -o endoh2
+```sh
+cc endoh2.c -o endoh2
 
-    ./endoh2 > pi.c
-    cat pi.c
+./endoh2 > pi.c
+cat pi.c
 
-    gcc pi.c     -o pi     ; ./pi     > 314.c     ; cat 314.c
-    gcc 314.c    -o 314    ; ./314    > 3141.c    ; cat 3141.c
-    gcc 3141.c   -o 3141   ; ./3141   > 31415.c   ; cat 31415.c
-    gcc 31415.c  -o 31415  ; ./31415  > 314159.c  ; cat 314159.c
-    gcc 314159.c -o 314159 ; ./314159 > 3141592.c ; cat 3141592.c
-    etc...
+cc pi.c     -o pi     ; ./pi     > 314.c     ; cat 314.c
+cc 314.c    -o 314    ; ./314    > 3141.c    ; cat 3141.c
+cc 3141.c   -o 3141   ; ./3141   > 31415.c   ; cat 31415.c
+cc 31415.c  -o 31415  ; ./31415  > 314159.c  ; cat 314159.c
+cc 314159.c -o 314159 ; ./314159 > 3141592.c ; cat 3141592.c
+etc...
 
-    ./endoh2 e > e.c
-    cat e.c
+./endoh2 e > e.c
+cat e.c
 
-    gcc e.c      -o e      ; ./e      > 271.c     ; cat 271.c
-    gcc 271.c    -o 271    ; ./271    > 2718.c    ; cat 2718.c
-    gcc 2718.c   -o 2718   ; ./2718   > 27182.c   ; cat 27182.c
-    gcc 27182.c  -o 27182  ; ./27182  > 271828.c  ; cat 271828.c
-    gcc 271828.c -o 271828 ; ./271828 > 2718281.c ; cat 2718281.c
-    etc...
+cc e.c      -o e      ; ./e      > 271.c     ; cat 271.c
+cc 271.c    -o 271    ; ./271    > 2718.c    ; cat 2718.c
+cc 2718.c   -o 2718   ; ./2718   > 27182.c   ; cat 27182.c
+cc 27182.c  -o 27182  ; ./27182  > 271828.c  ; cat 271828.c
+cc 271828.c -o 271828 ; ./271828 > 2718281.c ; cat 2718281.c
+etc...
+```
 
 You can do `make everything` for the process (with no `cat`).
 
 Note: The executable may return a failure (non-zero) exit status
 unless -std=c99 option is given.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
