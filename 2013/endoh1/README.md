@@ -1,30 +1,33 @@
 # Most lazy SKIer
 
-Yusuke Endoh  
-<mame@ruby-lang.org>  
-<https://github.com/mame/>  
+    Yusuke Endoh  
+    <mame@ruby-lang.org>  
+    <https://github.com/mame/>  
 
+# To build:
 
-## Judges' comments:
-### To build:
+```sh
+make
+```
 
-    make 
-
-This builds endoh1, echo, hello, and tac.
 ### To run:
 
-    ./endoh1 [file.lazy]
+```sh
+./endoh1 [file.lazy]
+```
 
 ### Try:
 
-    ./endoh1 hello.lazy
-    ./hello
-    echo Hello | ./echo 
-    ./tac < endoh1.c
+```sh
+./endoh1 hello.lazy
+./hello
+echo Hello | ./echo 
+./tac < endoh1.c
+```
 
 Be patient with the last one.
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 We liked this entry because it can serve as a standalone program as well as an include file; and, as usual,
 because its input data is at least as obfuscated as the program itself.
@@ -32,9 +35,8 @@ because its input data is at least as obfuscated as the program itself.
 This entry can be considered an abuse of the GCC's optimizer; it takes GCC about 4x longer to compile it
 with -O3 than without, compared to clang's 2x.
 
-
-
 ## Author's comments:
+
 ### Remarks
 
     $ less prog.c
@@ -72,7 +74,6 @@ Note that `#` is a comment in Lazy K.
 [3]: redacted
 [4]: http://en.wikipedia.org/wiki/Polyglot_%28computing%29
 
-
 ### Obfuscation
 
 ... is inherent in SKI combinator calculus :-)
@@ -86,7 +87,6 @@ and to satisfy IOCCC's size rule.
 
 These led to the good obfuscation.
 See Spoiler section in detail, if you need.
-
 
 ### Limitation
 
@@ -102,7 +102,6 @@ Huge memory may be required to compile the program
 In addition, there are some limitations (and workarounds)
 mentioned in Spoiler section.
 But I think it wouldn't matter only when you run the attached programs.
-
 
 ### Portability
 
@@ -134,7 +133,6 @@ If your compiler does not support it,
 you cannot use the program as a library.
 But you can compile and run it as a standalone program, at least.
 In fact, tcc does not support the macro, but does work.
-
 
 ### Spoiler (rot13)
 
@@ -198,7 +196,6 @@ ol gjrnxvat gur qrsvavgvba bs znpeb `N` `O` `P` naq `Q`.
 (Abgr gung pybfherf ner nyybggrq bayl jura cnefvat;
 nsgre gur rinyhngvba fgnegf, "bhg bs pybfher" pnaabg bpphe.)
 
-
 #### Fubeg pbeqvat
 
 Guvf znetva vf gbb aneebj gb pbagnva n qrgnvyrq rkcynangvba.
@@ -206,11 +203,10 @@ Vafgrnq, V whfg nfx lbh bar dhrfgvba.
 Pna lbh gryy jung `i f[]={0,0,f+6,f+2,f+4,f,f+3,f+5,f+1};` vf?
 V sbhaq guvf ol hfvat FZG fbyire.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
