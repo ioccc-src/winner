@@ -1,27 +1,31 @@
 # Most shiny
 
-Matt Zucker  
-<mzucker1@swarthmore.edu>  
-<http://www.swarthmore.edu/NatSci/mzucker1/>  
+    Matt Zucker  
+    <mzucker1@swarthmore.edu>  
+    <http://www.swarthmore.edu/NatSci/mzucker1/>  
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make zucker
+```sh
+make
+```
 
 ### To run:
 
-    ./zucker > image.ppm
+```sh
+./zucker > image.ppm
+```
 
 ### Try:
 
-    ./zucker "Hello!!!" > hello.ppm
-    ./zucker faster\! -preview > image2.ppm
+```sh
+./zucker "Hello!!!" > hello.ppm
+./zucker faster\! -preview > image2.ppm
+```
 
-    # Display the PPM image with your favorite image viewer
+Display the PPM image with your favorite image viewer.
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 The rendered image is centered and is output as a 600 by 220 pixel PPM.
 The vector font is proportional.
@@ -29,16 +33,17 @@ The vector font is proportional.
 This entry uses no local variables. None! At! All!
 
 ## Author's comments:
-An image generator
-==================
 
-What it does:
--------------
+### An image generator
+
+### What it does:
 
 This program makes pretty pictures.  To see the default output, try
 running
 
-        ./zucker > image.ppm
+```sh
+./zucker > image.ppm
+```
 
 On the author's 2.5 GHz MacBook Pro, this command takes approximately
 1 minute and 18 seconds to run -- your runtime may vary.  You will
@@ -53,19 +58,22 @@ reloads the image as it is rendered.)
 Aside from the default image, you may create your own by running the
 program as follows:
 
-        ./zucker "your text" > image.ppm
+```sh
+./zucker "your text" > image.ppm
+```
 
 To mitigate long runtimes, the program can be invoked in a "preview"
 mode by appending `-preview` to the command line arguments, like so:
 
-        ./zucker faster\! -preview > image.ppm
+```sh
+./zucker faster\! -preview > image.ppm
+```
 
 If your platform distinguishes between binary and text streams, you
 may need to insert some code to reopen standard output in binary mode
 at the start of `main`. An ASCII platform is assumed.
 
-Pedagogical value:
-------------------
+### Pedagogical value:
 
 This program is quite suitable for the inexperienced programmer, due
 to a number of considerations:
@@ -93,9 +101,7 @@ to a number of considerations:
     reflection ray at an object's surface, given the incoming
     direction and surface normal.
     
-
-Further details (contains spoilers):
-------------------------------------
+### Further details (contains spoilers):
 
 The program is not quite a traditional ray tracer, but a "sphere
 tracer" which uses distance fields to encode proximity to objects in
@@ -161,11 +167,10 @@ were not submitted as entries for this year's IOCCC, not because they
 lack obfuscation, but because neither is written in C (they are in C++
 and Python, respectively).
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2012, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
