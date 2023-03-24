@@ -21,9 +21,14 @@ echo "full spelling of an English cardinal numeral less than a quadrillion" | ./
 echo Nineteen hundred and eighty-four | ./kang
 echo uno | ./kang
 echo trois | ./kang
-echo fier | ./kang
+echo vier | ./kang
 echo "shest'" | ./kang
 ```
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) changed the code to
+accept the proper German for four 'vier' where before it was spelt with the
+sound of V (fier not vier). Thank you Cody!
+
 
 ## Judges' comments:
 
