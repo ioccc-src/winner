@@ -1,44 +1,48 @@
 # Most surreptitious
 
-Don Yang  
-<omoikane@uguu.org>  
-<http://uguu.org/>  
+    Don Yang  
+    <omoikane@uguu.org>  
+    <http://uguu.org/>  
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make nyaruko
+```sh
+make
+```
 
 ### To run:
 
-    ./nyaruko [seed.txt] < original.bin > output.c
-    bash output.c > key.c
-    perl output.c > data.c
+```sh
+./nyaruko [seed.txt] < original.bin > output.c
+bash output.c > key.c
+perl output.c > data.c
 
-    cat key.c data.c > output.c
+cat key.c data.c > output.c
 
-    gcc output.c -o output
-    ./output > regenerated.bin
+gcc output.c -o output
+./output > regenerated.bin
+```
 
 ### Try:
 
-    echo "A quick brown fox jumps over the lazy dog" | ./nyaruko > output.c
-    perl output.c > data.c
-    gcc -o data data.c
-    ./data
-    gcc -o output output.c
-    ./output
+```sh
+echo "A quick brown fox jumps over the lazy dog" | ./nyaruko > output.c
+perl output.c > data.c
+cc -o data data.c
+./data
+cc -o output output.c
+./output
+```
 
-
-### Selected Judges Remarks:
+## Judges' comments:
 
 The judges have nothing to add that has not already been written
-about in the spoiler.html.gz file!  :-)
+about in the `spoiler.html`` file!  :-)
 
 ## Author's comments:
-Usage
-=====
+
+### Usage
+
 Nyaruko is a binary to text filter.  Given some input on stdin,
 Nyaruko will produce C code that reproduces this input on stdout:
 
@@ -73,9 +77,8 @@ shared across different files.  On operating systems that do not have
 /dev/urandom, users should always specify this extra seed argument to
 avoid deterministic keys.
 
+### Features
 
-Features
-========
 Implementation details that makes Nyaruko more obfuscated than usual
 programs:
 
@@ -101,9 +104,8 @@ the Crawling Chaos.  The most obvious thing to do with chaos is to
 make a random number generator, and the most obvious thing to do with
 a random number generator is to make one-time-pads for encryption.
 
+### Compatibility
 
-Compatibility
-=============
 Nyaruko has these environment dependencies:
 
    * Requires ASCII character set.
@@ -129,18 +131,15 @@ combinations:
 Note that on MingW, stdin and stdout are not opened in binary mode by
 default, this means Nyaruko may not faithfully encode files on MingW.
 
+### Extra files
 
-Extra files
-===========
-
-spoiler.html.gz - Contains full recording of how the code went from
+spoiler.html - Contains full recording of how the code went from
 blank state to an obfuscated program, gzipped to fit under 1MB.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
