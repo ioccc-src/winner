@@ -1,28 +1,45 @@
 # Most complex ASCII fluid - Honorable mention
 
-Yusuke Endoh  
-<mame@ruby-lang.org>  
-<https://github.com/mame/>  
+    Yusuke Endoh  
+    <mame@ruby-lang.org>  
+    <https://github.com/mame/>  
 
+# To build:
 
-## Judges' comments:
-### To build:
-
-    make endoh1
+```sh
+make
+```
 
 ### To run:
 
-    ./endoh1 < configuration.txt
+```sh
+./endoh1 < configuration.txt
+```
 
 ### Try:
 
-    ./endoh1 < endoh1.c
+```sh
+./endoh1 < endoh1.c
 
-    ./endoh1 < pour-out.txt
+./endoh1 < pour-out.txt
 
-    ./endoh1 < fountain.txt
+./endoh1 < fountain.txt
+```
 
-### Selected Judges Remarks:
+### Alternate code:
+
+An alternate version of this entry, `endoh1.alt.c`, is provided.
+This alternate code is a de-obfuscated version of `endoh1.c`.
+
+To compile this alternate version:
+
+```sh
+make alt
+```
+
+Use `endoh1.alt` as you would `endoh1` above.
+
+## Judges' comments:
 
 Let's play Jeopardy!
 
@@ -38,18 +55,20 @@ happy to experiment with.
 One configuration file was inspired by an [XKCD what if? entry](http://whatif.xkcd.com/6/).
 
 ## Author's comments:
+
 ### Synopsis
 
 **DO NOT FORGET "-DG=1 -DP=4 -DV=8"** and make your terminal window larger
 than 80 x 25.
 
-    gcc endoh1.c -DG=1 -DP=4 -DV=8 -D_BSD_SOURCE -o endoh1 -lm
-    ./endoh1 < endoh1.c
-    ./endoh1 < logo.txt
-    ./endoh1 < column.txt
-    ./endoh1 < pour-out.txt
-    ./endoh1 < tanada.txt
-
+```sh
+cc endoh1.c -DG=1 -DP=4 -DV=8 -D_BSD_SOURCE -o endoh1 -lm
+./endoh1 < endoh1.c
+./endoh1 < logo.txt
+./endoh1 < column.txt
+./endoh1 < pour-out.txt
+./endoh1 < tanada.txt
+```
 
 ### What it is
 
@@ -101,7 +120,6 @@ different fluid behavior.
 
 <http://en.wikipedia.org/wiki/Marching_squares>
 
-
 ### Portability
 
 The program requires a C99 compiler; it uses `complex` types and one-line
@@ -120,7 +138,6 @@ I've tested with gcc-4.6.3 and clang-3.0 on Linux (Ubuntu 12.04)
 and gcc-4.5.3 and clang-3.1 on Cygwin.  On Cygwin, gcc and clang complain about
 a usage of `I` (complex's imaginary unit), but I bet this is cygwin's issue;
 it is surely a C99 feature.
-
 
 ### Obfuscation w/ Spoiler
 
@@ -144,7 +161,6 @@ Though some assignments may look meaningless, it is actually meaningful; it
 extracts "integer part of real part" from a complex value by assigning (and
 casting) it to an integer-type variable.
 
-
 ### Notes about Additional Files
 
 "logo.txt" is a source of the logo in this remark file.
@@ -164,7 +180,6 @@ Other \*.txt files are due to the judges.
 "endoh1\_color.c" is a variant that shows the density by using terminal 256
 colors.
 
-
 ### Acknowledgment
 
 I would like to thank my wife @hirekoke for her teaching me the SPH method.
@@ -175,11 +190,10 @@ after the judgment.
 The judges and HAMANO Tsukasa (The silver medalist at this IOCCC) kindly
 provided many configuration files.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
