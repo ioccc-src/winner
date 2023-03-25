@@ -1,22 +1,31 @@
 # Best of show
 
-Christopher Mills <mrxo@sonic.net>  
-Twitter: @MisterXopher  
+    Christopher Mills <mrxo@sonic.net>  
+    Twitter: @MisterXopher  
 
+# To build:
 
-## Judges' comments:
-### To use:
+```sh
+make
+```
 
-    make
-    ./prog
+### To run:
+
+```sh
+./prog
+```
 
 ### Try:
 
-    make
-    ./prog
-    (At the ">boot" prompt, type return)
-    (At the ":" prompt, type "rk(0,0)rkunix")
-    NOTE: To quit, press Control-E
+```sh
+./prog
+```
+
+At the ">boot" prompt, type return
+
+At the ":" prompt, type "rk(0,0)rkunix"
+
+NOTE: To quit, press Control-E
 
 ### Selected Judges Remarks:
 
@@ -26,16 +35,19 @@ Do small machines only need small programs?  This program weighs in at just
 This program can take you back to the start of everything, it is possible to
 run v0. Just type:
 
-    make
-    ./v0
+```sh
+./v0
+```
 
-    NOTE: To quit v0, press Control-E
+NOTE: To quit v0, press Control-E
 
 You will be greeted with a familiar prompt of "login". The username and
 password are "dmr" and "dmr". To make things more familiar you'll need to
 create '.' as it hasn't been invented yet on this image!
 
-    @ ln dd dmr .
+```sh
+@ ln dd dmr .
+```
 
 An "ls" will reveal that C hasn't been invented yet! IOBCC anyone? The
 compiler is "bc". It producess assembly, which will then need to be assembled
@@ -44,31 +56,34 @@ together in this order "ops.s bl.s hello.s bi.s" to produce a.out!
 But wait, we said this was the start of it all! This program can also run a
 program that replaces an even larger machine that can run BSD 2.9. To start this,
 
-    make
-    ./prog
+```sh
+./prog
+```
 
-    (At the ">boot" prompt, type return)
-    (At the ":" prompt, type "rk(0,0)rkunix")
-    NOTE: To quit prog, press Control-E
+At the ">boot" prompt, type return
+
+At the ":" prompt, type "rk(0,0)rkunix"
+
+NOTE: To quit prog, press Control-E
 
 This should now be very familiar and it is possible to compile and run one of
 the very first IOCCC entires "mullender.c"
 
 But wait, there is even more!  Try:
 
-    make
-    ./v6
+```sh
+./v6
+```
 
-    (At the "@" prompt, type "rkunix")
-    NOTE: To quit v6, press Control-E
+At the "@" prompt, type "rkunix"
+
+NOTE: To quit v6, press Control-E
 
 ## Author's comments:
 
 >   *This IOCCC entry is dedicated to the late Dennis M. Ritchie*
 
-
-The Program
-===========
+### The Program
 
 Since this is the 25th "annual" IOCCC, I thought I should mark the occasion
 with a look back to its earliest roots.  At the same time the contest enters
@@ -87,8 +102,7 @@ can build versions that can run each of the following:
 
 For reasons to be described in a bit, the last (BSD 2.9) is the default.
 
-Building and Running BSD 2.9
-----------------------------
+### Building and Running BSD 2.9
 
 To run BSD 2.9, do `make` to build `prog` and then `./prog` to run it.
 
@@ -267,8 +281,7 @@ code, and they use the same name for the disk (`rk05.fs`), if you want to go
 back to the BSD simulation, you should either delete `rk05.fs` or do a
 `make clean` before you do a `make`.
 
-Building and Running UNIX v0
-----------------------------
+### Building and Running UNIX v0
 
 We now set the Wayback Machine to the very start of it all, 1969.
 
@@ -424,8 +437,7 @@ number of differences still:
 As usual, when you are done exploring UNIX v0, type Control-E to exit the
 simulator.
 
-About the Program
-=================
+### About the Program
 
 The program came about when I was looking for something to honor the pending
 50th anniversary of the C language (because of the mercurial nature of IOCCC
@@ -522,8 +534,7 @@ polling interval to a few polls per tick, so that simulation remains
 responsive.  Since we use the real wall-clock time, this means that the
 emulated system will see time advance at the correct rate.
 
-Licencing Fun
--------------
+### Licencing Fun
 
 So now I have a system that can run UNIX v0.  One problem remains...  I don't
 have permission to submit UNIX v0 to the IOCCC.  It is not my code and the
@@ -554,8 +565,7 @@ condition that it will not assert copyright rights for non-commercial use.
 So the newer UNIXes are in the clear.  I doubt anyone actually cares about
 version 0 either, but technically it's still under copyright.
 
-PDP-11/40
----------
+### PDP-11/40
 
 So if I have a PDP-7 emulator, how do I run operating systems that expect a
 PDP-11?  Simple...  *I emulate a PDP-11/40 on the PDP-7*.  I have written
@@ -628,8 +638,7 @@ window on the dawn of the UNIX era.  I feel that someone should complete the
 circle here by emulating a VAX 780 on the PDP-11 and run 4.2BSD on it, so that
 we can get the [original runtime environment used for the first IOCCC] [13].
 
-Compile-time Options
---------------------
+### Compile-time Options
 
 The following command flags control the compilation:
 
@@ -661,13 +670,11 @@ The following command flags control the compilation:
     quoting here -- there is at least three levels going on.  In particular,
     you will need to escape `$` as `$$` to protect it from `make`.
 
-What is the ASCII art supposed to be?
--------------------------------------
+### What is the ASCII art supposed to be?
 
 The ASCII art represents a torn piece of [paper tape] [14].
 
-Acknowledgements
-----------------
+### Acknowledgements
 
 None of this could have been possible without the hard work of
 
@@ -717,12 +724,10 @@ time...
 [17]: http://bitsavers.trailing-edge.com       "Bitsavers.org"
 [18]: https://www.bell-labs.com/usr/dmr/www/   "DMR Homepage"
 
+## Copyright:
 
---------------------------------------------------------------------------------
-<!--
 (c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
