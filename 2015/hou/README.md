@@ -53,7 +53,8 @@ This looks like a normal C program.
 
 Almost everything is a double.
 
-There are tell-tale signs like `pow(2,(?/12))` and `exp(-?*?)` (names redacted). You can also find a bunch of cosines and polynomial evaluations.
+There are tell-tale signs like `pow(2,(?/12))` and `exp(-?*?)` (names redacted).
+You can also find a bunch of cosines and polynomial evaluations.
 
 It looks like a ????? ???????????, right?
 
@@ -61,29 +62,41 @@ Run and find out.
 
 ### Why obfuscated
 
-Some poor scripting folks only have access to doubles (Jav?script, L?a, BA?IC, etc.).
+Some poor scripting folks only have access to doubles (Jav?script, L?a, BA?IC,
+etc.).
 
-As a C programmer, I feel obliged to show a gesture of sympathy, to experience their pain and provide an answer.
+As a C programmer, I feel obliged to show a gesture of sympathy, to experience
+their pain and provide an answer.
 
-Except when absolutely necessary (`printf`, `int main()`, array indexing), there isn't a single integer. Even `getchar()` and `EOF` are immediately converted.
+Except when absolutely necessary (`printf`, `int main()`, array indexing), there
+isn't a single integer. Even `getchar()` and `EOF` are immediately converted.
 
-Since `bool` counts as an integer type too, there is no boolean either. No comparison, no `if`, no `?:`, no `||` `&&`. Everything is done in a single loop that terminates on printf. Straight up arithmetic.
+Since `bool` counts as an integer type too, there is no boolean either. No
+comparison, no `if`, no `?:`, no `||` `&&`. Everything is done in a single loop
+that terminates on printf. Straight up arithmetic.
 
-`floor` and `ceil` are technically double-to-double functions, but they feel like cheating. Yes `cos`, no `floor`.
+`floor` and `ceil` are technically double-to-double functions, but they feel
+like cheating. Yes `cos`, no `floor`.
 
 ### Limitations
 
 Hard requirements:
 
-* The platform must implement the `double` type as IEEE754-compliant 64-bit floating point numbers.  The 80-bit intermediate format used by x87 is considered as an violation of this. The code should print an error message on such platforms.
+* The platform must implement the `double` type as IEEE754-compliant 64-bit
+floating point numbers.  The 80-bit intermediate format used by x87 is
+considered as an violation of this. The code should print an error message on
+such platforms.
 
 * The program must start with the CPU / FPU in round-to-nearest mode.
 
 Soft requirements:
 
-* The compiler must respect `volatile`. The code is formatted to warn about that, though.
+* The compiler must respect `volatile`. The code is formatted to warn about
+that, though.
 
-* The printed result is only correct on little-endian machines. The program takes care to warn about this issue after printing an incorrect big-endian result. Error messages become garbled, though.
+* The printed result is only correct on little-endian machines. The program
+takes care to warn about this issue after printing an incorrect big-endian
+result. Error messages become garbled, though.
 
 Tested platforms:
 

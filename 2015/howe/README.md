@@ -1,9 +1,9 @@
 # Most Different
 
-    Anthony Howe <achowe@snert.com>  
-    Montreal, Quebec, Canada  
-    <http://www.snert.com/>  
-    Twitter: @SirWumpus  
+Anthony Howe <achowe@snert.com>  
+Montreal, Quebec, Canada  
+<http://www.snert.com/>  
+Twitter: @SirWumpus  
 
 # To build:
 
@@ -94,15 +94,26 @@ NOTE: Unlike the original entry source, prog.alt.c, prog.c uses a
 
 ### Description
 
-This is a functioning micro diff tool using an [O(NP) algorithm][Wu+89], compared to the older [O(ND) difference algorithm][Mye86] used by some versions of diff.  Its output is based on the default diff(1) output described by POSIX and [The Open Group Base Specifications][SUSV7].  The output is suitable for use with patch(1).
+This is a functioning micro diff tool using an [O(NP) algorithm][Wu+89],
+compared to the older [O(ND) difference algorithm][Mye86] used by some versions
+of diff.  Its output is based on the default diff(1) output described by POSIX
+and [The Open Group Base Specifications][SUSV7].  The output is suitable for use
+with patch(1).
 
 The -d option simply writes the edit distance between file1 and file2.
 
 ### Observations
 
-The FNV1a hash is a little slow compared to the trival hash GNU Diff uses.  I downloaded a plain text copy of "War And Peace" from Project Gutenberg, used ``makeholes.c`` to make 1000 random changes, then profiled and timed the program verses GNU Diff.  The bottle neck appears to be in the file I/O and line hashing with an average +0.05s slower.  Using a huge file like "War And Peace" for testing offsets the diff(1) optimised file I/O.
+The FNV1a hash is a little slow compared to the trivial hash GNU Diff uses.  I
+downloaded a plain text copy of "War And Peace" from Project Gutenberg, used
+``makeholes.c`` to make 1000 random changes, then profiled and timed the program
+verses GNU Diff.  The bottleneck appears to be in the file I/O and line hashing
+with an average +0.05s slower.  Using a huge file like "War And Peace" for
+testing offsets the diff(1) optimised file I/O.
 
-There is no hash collision checking, partly because FNV1a appears to generate very [few collisions][HshCmp] and an assumption that localised collisions within a region of edits are highly unlikely.
+There is no hash collision checking, partly because FNV1a appears to generate
+very [few collisions][HshCmp] and an assumption that localised collisions within
+a region of edits are highly unlikely.
 
 ### Support Files
 

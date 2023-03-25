@@ -1,8 +1,8 @@
 # Best One-liner
 
-    Yusuke Endoh  
-    <https://github.com/mame/>  
-    Twitter: @mametter  
+Yusuke Endoh  
+<https://github.com/mame/>  
+Twitter: @mametter  
 
 # To build:
 
@@ -31,7 +31,9 @@ make
 ### Alternate code
 
 An alternate version of this entry, `prog.alt.c`, is provided.  
-This alternate code does not contain improvements suggested by Gil Dogon.
+This alternate code does not contain improvements suggested by [Gil
+Dogon](/winners.html#Gil_Dogon); it is
+the author's original entry.
 
 To compile this alternate version:
 
@@ -61,9 +63,12 @@ Visual factorization 1-liner.  Try:
     ./prog @ @ @ @ @ @ @ @
     ./prog @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
 
-Inspired by [Animated Factorization Diagrams](http://www.datapointed.net/visualizations/math/factorization/animated-diagrams/).
+Inspired by [Animated Factorization
+Diagrams](http://www.datapointed.net/visualizations/math/factorization/animated-diagrams/).
 
-EDIT: `prog.alt.c` is the original version that I submitted.  Gil Dogon kindly improved it during the review.  Thank you!
+`prog.alt.c` is the original version that I submitted. [Gil
+Dogon](/winners.html#Gil_Dogon) kindly improved it during the review.  Thank
+you!
 
 ## Copyright:
 

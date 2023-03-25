@@ -1,7 +1,7 @@
 # "For the Birds!" Award
 
-    Chris Mills  
-    Twitter: @MisterXopher  
+Chris Mills  
+Twitter: @MisterXopher  
 
 # To build:
 
@@ -21,7 +21,7 @@ make
 ./prog
 ```
 
-Pressing the up arrow and the down arrow at the right time.
+Press the up arrow and the down arrow at the right time.
 
 ## Judges' comments:
 
@@ -33,7 +33,8 @@ bit easier for you:
 make clobber all DW=199999 DW=22 DH=16 DA=50 DI=-150
 ```
 
-From the makefile:
+From the Makefile:
+
 
     # Game parameters
     #
@@ -117,7 +118,7 @@ command line:
  * `-DF`: Sprite for player when flapping.  
  * `-DG`: Instruction text.  Change to your native tongue.
 
-Feel free to try out physics or playfield options to make the game more
+Feel free to try out physics or play field options to make the game more
 interesting.  Try setting the player sprites to change the game completely --
 maybe you can be a fish, or a pig -- the options are limitless!  Try using
 emoji -- you can be a flying beer mug!
@@ -139,9 +140,9 @@ make EMOJI=globe
 ```
 
 for some examples (the full list of options is in the `Makefile`).  Don't
-forget to `make clean` first.  If the output doesn't look right, you may need
+forget to `make clobber` first.  If the output doesn't look right, you may need
 to link with the "wide" version of `ncurses`.  On MacOSX 10.11, it should work
-with the current `-lcurses`; on Linux, you probably need `-lncursesw`.
+with the current `-lcurses`; on Linux, you might need `-lncursesw`.
 See the `Makefile` to make this change if you need to.  Or buy a Mac.
 
 You will also need a UTF-8 compatible terminal and an emoji font installed,

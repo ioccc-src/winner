@@ -57,7 +57,8 @@ If you are still puzzled, look at prog.c with your favorite text editor.
 
 You will do a double take.
 
-Hint 1: Do `less prog.c`.  You will see an **emphasized** string if your terminal supports bold.
+Hint 1: Do `less prog.c`.  You will see an **emphasized** string if your
+terminal supports bold.
 
 Hint 2: Do `wc -c prog.c`.  This is very long one-liner.
 
