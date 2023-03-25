@@ -1,27 +1,29 @@
 # Most unstable
 
-Edward Giles  
+    Edward Giles  
 
-## To build:
+# To build:
 
-        make all
+```sh
+make
+```
 
-### To run
+### To run:
 
-    ./prog
+```sh
+./prog
+```
 
 ### Try:
 
-    make
+```sh
+./prog ioccc.txt
+./prog prog.c
+./prog sand.txt
+./prog sand.alt.txt
+```
 
-### Try:
-
-    ./prog ioccc.txt
-    ./prog prog.c
-    ./prog sand.txt
-    ./prog sand.alt.txt
-
-### Selected Judges Remarks:
+## Judges' comments:
 
 Can you explain the behavior of the program when ioccc.txt is given to it as input?
 
@@ -30,13 +32,15 @@ Polynomish to English?
 
 You may have to install libsdl2-dev on your system to compile and use this code:
 
-    sudo apt install libsdl2-dev  # Linux
-    Something else # MacOS
+```sh
+sudo dnf install SDL2		 # Linux
+sudo apt install libsdl2-dev 	 # Debian
+brew install sdl2		 # MacOS via HomeBrew
+```
 
 ## Author's comments:
 
-Remarks
-=======
+### Remarks
 
 This entry graphically displays a simulation of sand falling.
 It uses SDL to draw the interface.
@@ -61,11 +65,10 @@ The preprocessor is used to both obfuscate the code as a whole and abbreviate
 the calls to SDL. Additionally, throughout the code, the variables were named
 so that they are short and easily confused with each other.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
