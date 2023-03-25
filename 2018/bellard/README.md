@@ -1,25 +1,31 @@
 # Most inflationary
 
-Fabrice Bellard  
-<https://bellard.org/>  
+    Fabrice Bellard  
+    <https://bellard.org/>  
 
-## To build:
+# To build:
 
-        make all
+```sh
+make
+```
 
-### To run
+### To run:
 
-    ./prog > lena.ppm
+```sh
+./prog > lena.ppm
+```
 
 ### Try:
 
-    eog lena.ppm # On Linux
-    preview lena.ppm # On MacOS
+```sh
+eog lena.ppm # On Linux
+preview lena.ppm # On MacOS
 
-    wget http://upload.wikimedia.org/wikipedia/en/2/24/Lenna.png
-    pngtopnm < Lenna.png | pnmscale 0.25 | cjpeg -arithmetic -dct float -quality 14 > small.jpg
+pngtopnm < Lenna.png | pnmscale 0.25 | cjpeg -arithmetic -dct float -quality 14 > small.jpg
+```
+# NOTE: Lenna.png is from https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 The file `small.jpg` will be approximately of the same size as the raw image data
 in the program. Compare the level of the detail and the artifacts of
@@ -60,9 +66,11 @@ Although the program was optimized to decompress its built-in image,
 it accepts to decompress image files from its standard
 input. Examples:
   
-    ./prog d < lena512.bin > lena512.ppm
-    ./prog d < fruits.bin > fruits.ppm
-    ./prog d < vintage_cars.bin > vintage_cars.ppm
+```sh
+./prog d < lena512.bin > lena512.ppm
+./prog d < fruits.bin > fruits.ppm
+./prog d < vintage_cars.bin > vintage_cars.ppm
+```
 
 The original images for [fruits][1] and [vintage cars][2] come from
 Wikipedia and were resized to a width of 1024 pixels. Warning: the
@@ -73,16 +81,13 @@ The program should be portable on any Unix system. On Windows the line
 the main() function to avoid unwanted carriage return characters in
 the output.
 
---------------------------------------------------------------------------------
-
 [1]: https://commons.wikimedia.org/wiki/File%3AFruits_oranges%2C_jardin_japonais_2.JPG
 [2]: https://commons.wikimedia.org/wiki/File%3ARed_Bull_Jungfrau_Stafette%2C_10th_stage_-_vintage_cars_%282%29.jpg
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->

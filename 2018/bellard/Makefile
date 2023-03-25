@@ -62,8 +62,10 @@ X11_INCDIR= /opt/X11/include
 
 # Common C compiler warnings to silence
 #
-CSILENCE=
-#CSILENCE= -Wno-implicit-int
+#CSILENCE=
+CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-implicit-int \
+	-Wno-logical-op-parentheses -Wno-main -Wno-parentheses -Wno-pedantic \
+	-Wno-return-type -Wno-shift-op-parentheses
 
 # Common C compiler warning flags
 #
@@ -138,7 +140,9 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-#CSILENCE+=
+CSILENCE+= -Wno-conditional-uninitialized -Wno-missing-prototypes \
+	-Wno-missing-variable-declarations -Wno-poison-system-directories \
+	-Wno-strict-prototypes
 #
 CWARN+= -Weverything
 #
@@ -163,7 +167,7 @@ ENTRY= endoh1
 PROG= prog
 #
 OBJ= ${PROG}.o
-DATA=
+DATA= fruits.bin lena512.bin vintage_cars.bin Lenna.png
 TARGET= ${PROG}
 #
 ALT_OBJ= ${PROG}.alt.o
@@ -215,6 +219,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -f lena.ppm small.jpg
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
