@@ -19,7 +19,7 @@ make
 ./prog
 ```
 
-Connect to port http://localhost:10333 with your browser
+Connect to port http://localhost:10333 with your browser.
 
 ### Try:
 
@@ -37,7 +37,8 @@ find any other tributes?
 
 ## Author's comments:
 
-What does "Alan Turing" remind you of?  Cryptanalysis of the Enigma?  Turing machine?  Turing test?  This program is also based on his work.
+What does "Alan Turing" remind you of?  Cryptanalysis of the Enigma?  Turing
+machine?  Turing test?  This program is also based on his work.
 
 ### Whirlwind tour
 
@@ -53,7 +54,9 @@ cc -O3 -std=c99 \
         -DTIMESTEP=1.0 -DSPEED=2 -DRGB=255:128:192
 ```
 
-Then, run it under `tcpserver` command in [ucspi-tcp](http://cr.yp.to/ucspi-tcp.html) package, which was created by Daniel J. Bernstein, IOCCC 1989 "Best of Show" winner.
+Then, run it under `tcpserver` command in
+[ucspi-tcp](http://cr.yp.to/ucspi-tcp.html) package, which was created by Daniel
+J. Bernstein, IOCCC 1989 "Best of Show" winner.
 
     $ tcpserver -v 127.0.0.1 10333 ./prog ioccc.txt
 
@@ -175,7 +178,7 @@ But note that I didn't test well.
 
 ## Copyright:
 
-(c) Copyright 1984-2016, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+(c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
