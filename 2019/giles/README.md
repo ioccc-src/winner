@@ -1,21 +1,28 @@
 # Most in need of wide space
 
-Edward Giles  
+    Edward Giles  
 
+# To build:
 
-## Judges' comments:
-### To use:
+```sh
+make
+```
 
-    make prog
-    ./prog infile.wav outfile.wav
+### To run:
+
+```sh
+./prog infile.wav outfile.wav
+```
 
 ### Try:
 
-    play MonodyVocals.wav
-    ./prog MonodyVocals.wav
-    play out.wav
+```sh
+play MonodyVocals.wav
+./prog MonodyVocals.wav
+play out.wav
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 Do you need to pretend enjoying a more spacious living environment than you actually are in,
 or the great outdoors with mountains and canyons, when recording your outgoing voicemail message?
@@ -23,8 +30,8 @@ Then don't waste another minute! Record yourself, send the audio file through th
 and let your callers be surprised.
 
 ## Author's comments:
-Description
------------
+
+### Description
 
 This program takes a WAV audio file as input, and applies an artificial reverberation effect to it. It works by feeding the audio through a number of delay lines of various lengths, with various amounts of feedback, to create a smooth echo that fades away over time. A number of parameters of the effect can be altered, to change its sonic characteristics.
 
@@ -38,8 +45,10 @@ Interesting fact: The size of the program from `./iocccsize -i` is 2019.
 
 **How to use**:
 
-    ./prog input [output [size [dry [wet [damping]]]]]
-    prog.exe input [output [size [dry [wet [damping]]]]]
+```sh
+./prog input [output [size [dry [wet [damping]]]]]
+prog.exe input [output [size [dry [wet [damping]]]]]
+```
     
 * `input`: The path to the input file. Required.
 * `output`: The path to the output file. Optional, defaults to `out.wav`.
@@ -52,20 +61,20 @@ The values `size`, `dry`, `wet`, and `damping` can be specified either as decima
 
 The default settings are designed to make the effect obvious rather than subtle, so it may be a good idea to adjust the ratio of "dry" to "wet", to give a more pleasant result:
 
-    ./prog in.wav out.wav 1.8 80% 15%
+```sh
+./prog in.wav out.wav 1.8 80% 15%
+```
 
 The program only supports WAV files, and only mostly. Other audio formats, such as MP3, are not supported because they are difficult to decode, but there are free programs such as `ffmpeg` that can perform the conversion. Some of the advanced features of the WAV file format are also not supported, such as metadata, 3 or more channels, or a bit depth other than 16 bits. Fortunately, WAV files that don't use these features are very common. The program validates the input file, so passing it a file it can't process will cause the program to print `Bad input file` or `Wave file must be 16 bits,1-2 channels.` depending on what it thinks the problem is. If the output file cannot be opened, the program will print `Can't open output file`.
 
-Assumptions
------------
+### Assumptions
 
 1. The code is compiled using the C99 or C11 standard
 2. Values are stored in memory in little-endian order
 3. `float` is a floating-point type of any size, such that all zero bits represents the number zero
 4. `int16_t` and `int32_t` are 2's-complement, `sizeof(int16_t) == 2` and `sizeof(int32_t) == 4`.
 
-Obfuscations
-------------
+### Obfuscations
 
 The main obfuscation is that digital signal processing algorithms are inherently opaque. They just consist of iterating through a list of floating-point numbers and performing a series of arithmetic operations on each value. Even if this entry were entirely cleaned of all other obfuscation, it will appear to the average programmer to do the following:
 
@@ -138,12 +147,10 @@ A few other miscellaneous obfuscations have also been done:
 * `for(s=14[f]=0;s<f[13];s++)` is used instead of `f[14]=0; for(s=0;s<f[13];s++)`
 * The line that contains `printf("Hello, world!");` is mostly commented out.
 
+## Copyright:
 
---------------------------------------------------------------------------------
-<!--
 (c) Copyright 1984-2019, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
