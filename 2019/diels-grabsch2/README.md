@@ -1,20 +1,27 @@
 # Most self-aware
 
-Volker Diels-Grabsch  
-<https://njh.eu>  
+    Volker Diels-Grabsch  
+    <https://njh.eu>  
 
+# To build:
 
-## Judges' comments:
-### To use:
+```sh
+make
+```
 
-    make
+### To run:
+
+```sh
+./prog
+```
 
 ### Try:
 
-    ./prog
-    sha512sum prog.c || shasum -a 512 prog.c
+```sh
+sha512sum prog.c || shasum -a 512 prog.c
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 Before running this one, stay calm. Chill out, have a cup of tea. Is this bad?
 
@@ -22,11 +29,14 @@ To understand what is going on here, please check if you are dreaming, or are yo
 that you are dreaming? Or is it, wake up from the simulation?
 
 ## Author's comments:
+
 ### Almost a hash collision
 
 This program prints its own SHA-512 hash.  To verify, run:
 
-    sha512sum prog.c; ./prog
+```sh
+sha512sum prog.c; ./prog
+```
 
 Output:
 
@@ -174,11 +184,10 @@ of them by at least 4 bits, or both by 2.  Or, one splits the 67 bits
 asymmetrically?  I was unable to make it work with 2 parts, but that
 doesn't have to mean anything.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2019, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
