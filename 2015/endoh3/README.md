@@ -49,12 +49,13 @@ This program is a joke PDP-11 emulator.  ("ll-dpd" is embedded in the code.  Rea
 
 You got it?  This program is supposed to be used in this way:
 
-    $ wget http://ioccc.org/1984/mullender.c
-    $ clang -o prog prog.c mullender.c
-    $ ./prog
+```sh
+wget http://ioccc.org/1984/mullender.c
+clang -o prog prog.c mullender.c
+./prog
+```
 
 You can enjoy the legendary winner of the first IOCCC, again.
-
 
 ### Internal
 
@@ -76,7 +77,6 @@ It supports the minimal subset of instructions and addressing modes which are ne
   * 2: Autoincrement
   * 4: Autodecrement deferred
   * 6: Index (incomplete)
-
 
 ### Limitation
 
