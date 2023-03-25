@@ -381,7 +381,7 @@ cc -ansi -Wall -trigraphs -Wno-trigraphs -Wno-parentheses -Wno-empty-body -Wno-c
 
 ### Coda
 
-Cody Ferguson was relentless in his pursuit of bugs.
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) was relentless in his pursuit of bugs.
 Thanks to his reports, the version of `unob.sh` is stronger,
 `tac` groks digraphs, `tokenfix` corrects for missing digraphs in `prog.c`,
 and the program `manpage` was added to the corpus.
