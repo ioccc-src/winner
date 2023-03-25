@@ -1,25 +1,45 @@
 # Best one-liner
 
-Dave Burton  
-<http://ioccc.snox.net>  
+    Dave Burton  
+    <http://ioccc.snox.net>  
 
+# To build:
 
-## Judges' comments:
-### To use:
+```sh
+make
+```
 
-    make
-    ./prog < any-file
+### To run:
+
+```sh
+./prog < any-file
+```
 
 ### Try:
 
-    ./prog < prog
-    ./prog < prog.c
+```sh
+./prog < prog
+./prog < prog.c
+```
 
-### Selected Judges Remarks:
+### Alternate code:
+
+An alternate version of this entry, `prog.alt.c`, is provided
+This alternate code was supposed compile without warnings, however
+with modern compilers this is no longer the case.
+
+To compile this alternate version:
+
+```sh
+make alt
+```
+
+## Judges' comments:
 
 One line, one array, one loop and one statement but it prints many bytes. It won.
 
 ## Author's comments:
+
 Feed this anything on stdin.
 
 The included script may be used as a driver program for this entry.
@@ -37,8 +57,7 @@ This code has been compiled and tested on:
 
 <div style="margin-bottom:60em;margin-top:4em"><strong>Spoiler below; scroll down.</strong></div>
 
-SPOILER
--------
+### SPOILER
 
 This started life as a personal challenge: write the shortest hex dump utility in C.
 
@@ -48,7 +67,9 @@ no extraneous newlines, the code must be portable,
 and without bypassing the solution using execve(2),
 or functions built upon it (system(3), popen(3), etc).  E.g:
 
-	main(){system("hd");}	// it's turtles all the way down!
+```c
+main(){system("hd");}	// it's turtles all the way down!
+```
 
 is not acceptable.
 And, "output correctly" is the output format of this entry.  QED.
@@ -58,15 +79,17 @@ This was too long for a one-liner, so it had to be formatted as something more i
 This solution is pleasing, but a true one-liner was the hoped-for goal.
 Here is the 157 character version in it's entirety:
 
-	char     O,o[  20];L(O){
-	putchar  ( O+  48+39  *(9<
-	O));}    I(O)  {L(~     15);
-	O|| puts(o);}  main     (l){
-	for(;~(l=getchar())     ;I(O
-	&=15     ))o[  O++      ]=4<
-	(4^l     >>5)  ?l:     46,L
-	(l>>     4),L  (l&15);O&&
-	I(o[     O]=0  );}//157c
+```c
+char     O,o[  20];L(O){
+putchar  ( O+  48+39  *(9<
+O));}    I(O)  {L(~     15);
+O|| puts(o);}  main     (l){
+for(;~(l=getchar())     ;I(O
+&=15     ))o[  O++      ]=4<
+(4^l     >>5)  ?l:     46,L
+(l>>     4),L  (l&15);O&&
+I(o[     O]=0  );}//157c
+```
 
 While thinking about this in the shower (you are not the only one that does this!)
 came the idea which reduced the code to just 119 chars.
@@ -75,65 +98,69 @@ The progression to the present size is interesting,
 and it is interesting that the same algorithm can be expressed so differently
 by slight rearrangement of its parts.
 
-	// 119
-	char O,o[20];main(l){for(;~(l=getchar());O||puts(o))o[O++]=isprint(l)?l:46,O&=15,printf("%02x ",l);O[o]=0;O&&puts(o);}
-	// 116
-	char O,o[20];main(l){for(;O++[o]=~(l=getchar())?4<(4^l>>5)?l:46:0;(O&=15)||puts(o))printf("%02x ",l);O>1&&puts(o);}
-	// 115
-	char O,o[20];main(l){for(;O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0;(O=-~O&15)||puts(o))printf("%02x ",l);O&&puts(o);}
-	// 113
-	char O,o[20];main(l){for(;~l;(O=~l?printf("%02x ",l),-~O&15:!O)||puts(o))O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0;}
-	// 112
-	char O,o[20];main(l){for(;~l;(O=~l?-~O&printf("%02x ",l)*5:!O)||puts(o))O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0;}
-	// 111
-	char O,o[20];main(l){for(;~l;O||puts(o))O=(O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0)?-~O&printf("%02x ",l)*5:!O;}
-	// 110
-	char O,o[0];main(l){for(;~l;O||puts(o))O=(O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0)?-~O&printf("%02x ",l)*5:!O;}
-	// 109
-	char O,o[];main(l){for(;~l;O||puts(o))O=(O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0)?-~O&printf("%02x ",l)*5:!O;}
+```c
+// 119
+char O,o[20];main(l){for(;~(l=getchar());O||puts(o))o[O++]=isprint(l)?l:46,O&=15,printf("%02x ",l);O[o]=0;O&&puts(o);}
+// 116
+char O,o[20];main(l){for(;O++[o]=~(l=getchar())?4<(4^l>>5)?l:46:0;(O&=15)||puts(o))printf("%02x ",l);O>1&&puts(o);}
+// 115
+char O,o[20];main(l){for(;O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0;(O=-~O&15)||puts(o))printf("%02x ",l);O&&puts(o);}
+// 113
+char O,o[20];main(l){for(;~l;(O=~l?printf("%02x ",l),-~O&15:!O)||puts(o))O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0;}
+// 112
+char O,o[20];main(l){for(;~l;(O=~l?-~O&printf("%02x ",l)*5:!O)||puts(o))O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0;}
+// 111
+char O,o[20];main(l){for(;~l;O||puts(o))O=(O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0)?-~O&printf("%02x ",l)*5:!O;}
+// 110
+char O,o[0];main(l){for(;~l;O||puts(o))O=(O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0)?-~O&printf("%02x ",l)*5:!O;}
+// 109
+char O,o[];main(l){for(;~l;O||puts(o))O=(O[o]=~(l=getchar())?4<(4^l>>5)?l:46:0)?-~O&printf("%02x ",l)*5:!O;}
+```
 
 There are solutions without the ASCII sidebar that are significantly shorter.
 These do not compete in the same category, since their output is materially different.
 They are derived from the solutions above, but are still fascinating as concise utilities,
 so here is their progression, for the curious:
 
-	// 102
-	I;O(O){putchar(O+48+39*(9<O));}main(l){for(;~(l=getchar());O(++I&15?~15:~37))O(l>>4),O(l&15);O(-38);}
-	// 80
-	O;main(l){while(~(l=getchar()))printf("%02x%c",l,++O&15?32:10);O&15&&puts("");}
-	// 78
-	O;main(l){for(;~l;(O=~(l=getchar())?printf("%02x ",l),-~O&15:!O)||puts(""));}
-	// 77
-	O;main(l){for(;~l;(O=~(l=getchar())?-~O&printf("%02x ",l)*5:!O)||puts(""));}
-	// 76
-	O;main(l){for(;~l;O||puts(&O))O=~(l=getchar())?-~O&printf("%02x ",l)*5:!O;}
+```c
+// 102
+I;O(O){putchar(O+48+39*(9<O));}main(l){for(;~(l=getchar());O(++I&15?~15:~37))O(l>>4),O(l&15);O(-38);}
+// 80
+O;main(l){while(~(l=getchar()))printf("%02x%c",l,++O&15?32:10);O&15&&puts("");}
+// 78
+O;main(l){for(;~l;(O=~(l=getchar())?printf("%02x ",l),-~O&15:!O)||puts(""));}
+// 77
+O;main(l){for(;~l;(O=~(l=getchar())?-~O&printf("%02x ",l)*5:!O)||puts(""));}
+// 76
+O;main(l){for(;~l;O||puts(&O))O=~(l=getchar())?-~O&printf("%02x ",l)*5:!O;}
+```
 
 It is possible to reduce the size of each of these by one by eliding the trailing newline.
 This was not reported above since the newline kept getting appended by processing software,
 and it is more interesting to remove characters by changing code than by filtering:
 
-	$ tr -d '\012' < 109.c | wc -c
-	108
-	$ tr -d '\012' < 76.c | wc -c
-	75
-	$ tr -d '\012' < 109.c | cc -o 108 -xc -
-	$ verify 108
-	$
+```sh
+$ tr -d '\012' < 109.c | wc -c
+108
+$ tr -d '\012' < 76.c | wc -c
+75
+$ tr -d '\012' < 109.c | cc -o 108 -xc -
+$ verify 108
+$
+```
 
 An obfuscated hex dump has been done before:
 [1986/bright/bright.c](http://ioccc.org/1986/bright/bright.c) is similar in function,
 but it uses more characters in just setting up its obfuscation than this entire solution!
 
-BIGGER SPOILER
---------------
+### BIGGER SPOILER
 
 If you are unhappy with the way DEL (character 127) is handled,
 replace the cryptic expression `4<(4^l>>5)?l:46` with `32>l|l>126?46:l`.
 Both take the same number of characters, but the former is a bit more interesting.
 Bonus question: how does the first expression work?
 
-BIGGEST SPOILER (and some history)
-----------------------------------
+### BIGGEST SPOILER (and some history)
 
 Technically, `char o[0];` is illegal (SS 6.7.6.2) according to ISO (N1570).
 And `char o[];` is a conditionally supported feature (SS 6.7.6.2, 6.10.8.3).
@@ -186,8 +213,7 @@ and therefore 111 compiles but does not work correctly;
 > Most of the rest of the system, especially in the kernel,
 > are models of clarity and efficient expression.
 
-TL;DR
------
+### TL;DR
 
 So which version is the shortest, portable hex dump?
 
@@ -196,29 +222,29 @@ So which version is the shortest, portable hex dump?
 * 113 works on Ancient UNIX and the portable C compiler.
 * 119 works on all platforms, including the original Ritchie PDP-11 C compiler.
 
-Coda
-----
+### Coda
 
 Clearly, the smallest possible program violates modern best practice.
 It is not even possible to compile cleanly, but it will compile correctly.
 
-Included is `prog.nowarn.c`, a modern C implementation that is -- perhaps -- the smallest,
+Included is `prog.alt.c`, a modern C implementation that is -- perhaps -- the smallest,
 clean-compiling version using `clang` or `gcc` with `-Wall -pedantic`.
 Note that while this is larger than all but the original attempt,
 it will *not* work with the original Ritchie PDP-11 C compiler,
 since the expression within the ternary remains too complex.
 
-Try
+Try:
 
-	cat prog.c prog.nowarn.c
+```sh
+cat prog.c prog.alt.c
+```
 
 to compare the differences (`diff` is not helpful on a one-liner).
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
