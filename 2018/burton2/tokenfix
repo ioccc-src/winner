@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 awk '
 r==1 { r=0; if (/>=/){print ">>>="; next}

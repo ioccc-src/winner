@@ -1,41 +1,50 @@
 # Best abuse of the rules
 
-Dave Burton  
-<http://ioccc.snox.net>  
+    Dave Burton  
+    <http://ioccc.snox.net>  
 
+# To build:
 
-## Judges' comments:
-### To use:
+```sh
+make
+```
 
-    make
+### To run:
 
-    ./prog [-tcksri] < file.c
+```sh
+./prog [-tcksri] < file.c
+```
 
 ### Try:
 
-    ./prog -i < prog.c
-    ./prog -s < prog.c
-    ./prog -sk < prog.c
+```sh
+./prog -i < prog.c
+./prog -s < prog.c
+./prog -sk < prog.c
+```
 
 If you get stuck, try:
 
-    make test
+```sh
+make test
+```
 
 If you get really stuck, try:
 
-    man ./tac.man
+```sh
+man ./tac.man
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 They say size isn't everything, and in the case of IOCCC [iocccsize.c](http://www.ioccc.org/2018/iocccsize.c)
 that is saying something!  What is this program weighing and how much does it weigh?
 
-
 ## Author's comments:
-tac - tokenize and count C and derivative languages
----------------------------------------------------
 
-<blockquote><pre style="font-style:italic">
+### tac - tokenize and count C and derivative languages
+
+```
 tac computes C program size  
 (obfuscated / otherwise)  
 by splitting code as tokens small,  
@@ -75,10 +84,9 @@ I hope you find this code obscure
 enough to win, and thus procure  
 a public place for all to see  
 how badly I can butcher C!  
-</pre></blockquote>
+```
 
-Said another way....
---------------------
+### Said another way....
 
 `tac` is the inverse of `cat`(1): it un-concatenates its input into C tokens,
 writing the token stream to stdout.  There are options to suppress the token ids,
@@ -120,17 +128,20 @@ counting words correctly absent -k.
 
 [1]: http://ioccc.org/2014/birken/hint.html "Best use of port 1701"
 
-Backwards Compatibility
------------------------
+### Backwards Compatibility
 
 `tac` was run over all 366 previous IOCCC winning entries:
 
-	find ~/src/obc -type f -name \*.c | wc
+```sh
+find ~/src/obc -type f -name \*.c | wc
+```
 
 The discrepancies found are documented and explained in the file "discrepancies".
 
-	find ~/src/obc -type f -a -name "*.c" | xargs ./spotcheck ./prog | ./spotdiff |
-		grep -v keep | diff -bw - discrep* | grep "[<>] cl "
+```sh
+find ~/src/obc -type f -a -name "*.c" | xargs ./spotcheck ./prog | ./spotdiff |
+	grep -v keep | diff -bw - discrep* | grep "[<>] cl "
+```
 
 In summary, there are only 6 unique entries out of 366 that have any variation
 in Rule 2 counts; in all cases, the differences are due to bugs within
@@ -159,8 +170,7 @@ NB: `iocccsize` gets a different answer from `tac` on its own (iocccsize.c) sour
 proved by fixing iocccsize.c with the included patch, so `iocccsize` reports
 the correct answer for itself.
 
-But wait... There's More!
--------------------------
+### But wait... There's More!
 
 There is no limit on line length, file length, comment length, or identifier length.
 
@@ -171,17 +181,20 @@ For instance, here is a simple token counter, useful in finding repeated long to
 frequency, or counting the references to identifiers, constants, or breadth of use of the
 language:
 
-	!/bin/sh
-	cat $* | ./prog -t | sort | uniq -c | sort -k1nr
+```sh
+#!/usr/bin/env bash
+cat $* | ./prog -t | sort | uniq -c | sort -k1nr
+```
 
 And here is a C keyword frequency counter:
 
-	#!/bin/sh
-	function iskeyword {
-	   awk 'BEGIN{f="c11";while(getline<f)k[$1]=0}
-		{if($1 in k)k[$1]++}END{for(i in k)print k[i],i}'
-	}
-	cat $* | ./prog -t | iskeyword | sort -k1nr
+```sh
+#!/usr/bin/env bash
+function iskeyword {
+   awk 'BEGIN{f="c11";while(getline<f)k[$1]=0} {if($1 in k)k[$1]++}END{for(i in k)print k[i],i}'
+}
+cat $* | ./prog -t | iskeyword | sort -k1nr
+```
 
 This script was used to "optimize" the reserved word order so the most frequent IOCCC
 winning entry keywords are checked first.
@@ -206,50 +219,51 @@ A more refined version of this is included in the file `unob.sh`,
 but the simple code below is a serviceable obfuscated C de-obfuscator in a _scripting language_.
 It really is this easy with `tac`:
 
-	#!/bin/sh
-	script='
-	BEGIN {
-		last=nl="\n";
-		f="c11"; while(getline <f > 0) kw[$0]++; close(f);
-	}
+```sh
+#!/usr/bin/env bash
+script='
+BEGIN {
+	last=nl="\n";
+	f="c11"; while(getline <f > 0) kw[$0]++; close(f);
+}
 
-	function iskw(a)   { return a in kw }
-	function indent(a) { return sprintf("%*s", n*3, " ") }
-	function newline() { if (!infor && last != nl) printf last=nl; }
-	function show(a) {
-		if (last==nl) printf "%s", indent()
-		printf "%s%s", space(), a
-		last=a
-	}
-	function space() {
-		return iskw(last) ||
-		  (last ~ /[A-Za-z0-9_+-\/%^[&\]\)=:<>;]$/ && $0 !~ /[:;()\[\],]/) ? " " : ""
-	}
+function iskw(a)   { return a in kw }
+function indent(a) { return sprintf("%*s", n*3, " ") }
+function newline() { if (!infor && last != nl) printf last=nl; }
+function show(a) {
+	if (last==nl) printf "%s", indent()
+	printf "%s%s", space(), a
+	last=a
+}
+function space() {
+	return iskw(last) ||
+	  (last ~ /[A-Za-z0-9_+-\/%^[&\]\)=:<>;]$/ && $0 !~ /[:;()\[\],]/) ? " " : ""
+}
 
-	/^\(/	{ ++paren }
-	/^\)/	{ --paren }
+/^\(/	{ ++paren }
+/^\)/	{ --paren }
 
-	/^for/		    { newline(); infor=1 }
-	infor && /^;/	    { ++infor; show($0 " "); next }
-	infor==1 && /^:/    { ++infor }
-	infor>1 && paren==0 { infor=0 }
+/^for/		    { newline(); infor=1 }
+infor && /^;/	    { ++infor; show($0 " "); next }
+infor==1 && /^:/    { ++infor }
+infor>1 && paren==0 { infor=0 }
 
-	/^\?/		{ tern++; n++; newline(); show($0 " "); next }
-	tern && /^:/	{ newline(); show($0); --tern; --n; next }
+/^\?/		{ tern++; n++; newline(); show($0 " "); next }
+tern && /^:/	{ newline(); show($0); --tern; --n; next }
 
-	/^#/	{ newline(); show($0); newline(); next }
-	/^;/	{ show($0); newline(); next }
-	/^{/	{ show($0); ++n; newline(); next }
-	/^}/	{ n--; newline(); show($0); newline(); next }
+/^#/	{ newline(); show($0); newline(); next }
+/^;/	{ show($0); newline(); next }
+/^{/	{ show($0); ++n; newline(); next }
+/^}/	{ n--; newline(); show($0); newline(); next }
 
-	{ show($0) }
-	'
-	cat $* | sed 's/#include/##include/' | cpp -E -trigraphs |
-	sed 's/^# .*$//' | sed 's/^#//' |
-	./prog -t | awk "$script"
+{ show($0) }
+'
+cat $* | sed 's/#include/##include/' | cpp -E -trigraphs |
+sed 's/^# .*$//' | sed 's/^#//' |
+./prog -t | awk "$script"
+```
 
-On the question of obfuscation
-------------------------------
+### On the question of obfuscation
 
 * I assume you noticed the [braces][2]?
 
@@ -287,8 +301,7 @@ On the question of obfuscation
 [3]: https://www.youtube.com/watch?v=OHVjs4aobqs "Inconceivable"
 [4]: https://www.youtube.com/watch?v=Ug75diEyiA0 "Where's the beef?"
 
-Rule 2
-------
+### Rule 2
 
 The keyword list is externalized as an include file.  This presents a useful
 feature for the source code: not only can the reserved word script above be
@@ -322,7 +335,9 @@ which is neither complete (`#define`, `#ifndef`, `#undef` are missing
 -- yes, Virginia knows about `#define` omitted on purpose),
 nor correct (many more are added: `I`, `true`, `bool`, `compl`, ...):
 
-	(sed -n '1p' c11; sed -n '2,$p' ioccc.kw.freq | sort) | comm -3 - c11
+```sh
+(sed -n '1p' c11; sed -n '2,$p' ioccc.kw.freq | sort) | comm -3 - c11
+```
 
 That is an obfuscated way to say "diff".  But it also more clearly shows the, um, diffs.
 
@@ -344,8 +359,7 @@ apart from the program, and because Freecode is not entirely free.*)
 
 [5]: https://www.youtube.com/watch?v=VU0GYSA1POs "Ants"
 
-Compilation
------------
+### Compilation
 
 The code is ANSI compliant, but it does have a string longer than 509 characters.
 It has been tested on OSX and Linux, Clang and GCC.
@@ -361,10 +375,11 @@ NB: This is *not* a portability concern, the one string holds only printable ASC
 
 Thus:
 
-	clang -ansi -Wall -trigraphs -Wno-trigraphs -Wno-parentheses -Wno-empty-body -Wno-char-subscripts -Wno-pointer-sign -DU=O -DW=\"keywords\" -o prog prog.c
+```sh
+cc -ansi -Wall -trigraphs -Wno-trigraphs -Wno-parentheses -Wno-empty-body -Wno-char-subscripts -Wno-pointer-sign -DU=O -DW=\"keywords\" -o prog prog.c
+```
 
-Coda
-----
+### Coda
 
 Cody Ferguson was relentless in his pursuit of bugs.
 Thanks to his reports, the version of `unob.sh` is stronger,
@@ -380,18 +395,19 @@ such as combined arguments
 
 Try:
 
-	manpage tac
+```sh
+manpage tac
 
-	manpage -h
-	manpage -h | manpage
-	manpage -h | manpage -R | less
-	manpage -h | manpage -P | lpr
+manpage -h
+manpage -h | manpage
+manpage -h | manpage -R | less
+manpage -h | manpage -P | lpr
+```
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->

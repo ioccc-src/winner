@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # unob is a proof-of-concept script.
 # Prior to tac, scripting the layout of C code was intractable.
