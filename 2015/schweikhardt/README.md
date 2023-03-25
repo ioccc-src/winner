@@ -1,29 +1,36 @@
 # Best Documented
 
-Jens Schweikhardt  
-<http://www.schweikhardt.net>  
+    Jens Schweikhardt  
+    <http://www.schweikhardt.net>  
 
+# To build:
 
-## Judges' comments:
-### To use:
+```sh
+make
+```
 
-    make
+### To run:
 
-    ./prog n
+```sh
+./prog n
+```
 
-    where n is a base 16 number of any size
+where n is a base 16 number of any size.
 
 ### Try:
 
-    ./prog 19
+```sh
+./prog 19
+```
 
-
-### Selected Judges Remarks:
+## Judges' comments:
 
 This code is clean.  When you compile with all warnings enabled,
 such as with clang:
 
-   cc -Weverything -pedantic -std=c11 -Dtyp=uint64\_t -O3 prog.c -o prog
+```sh
+cc -Weverything -pedantic -std=c11 -Dtyp=uint64\_t -O3 prog.c -o prog
+```
 
 The code compiles without warnings on the systems that we tested!
 
@@ -33,9 +40,11 @@ static source checkers.
 This tool references a problem that David I. Bell once described
 as having one of the largest "yummo quotients" in number theory:
 
-                         complexity of the solution
-    yummo quotient = -----------------------------------
-                     complexity of the problem statement
+```
+		     complexity of the solution
+yummo quotient = -----------------------------------
+		 complexity of the problem statement
+```
 
 Erdős privately told one of the IOCCC judges:
 
@@ -45,15 +54,17 @@ to begin to work on the [Collatz conjecture](https://en.wikipedia.org/wiki/Colla
 
 You may explore this famous conjecture using this entry:
 
-    ./prog 2410
-    ./prog abfff
-    ./prog 27f8cebf
-    ./prog 246f8fddf
-    ./prog 2e95ab51ffea9de
-    ./prog e6a5c22fd7bde9f
-    ./prog 1b7dd73a937485bf
-    ./prog 7d3237680d190a77e53751b
-    ./prog 302ab3d052fb87c06228d249581be0e4
+```sh
+./prog 2410
+./prog abfff
+./prog 27f8cebf
+./prog 246f8fddf
+./prog 2e95ab51ffea9de
+./prog e6a5c22fd7bde9f
+./prog 1b7dd73a937485bf
+./prog 7d3237680d190a77e53751b
+./prog 302ab3d052fb87c06228d249581be0e4
+```
 
 When you first look at the source, the code looks fairly straightforward.
 But look again.  Like the Collatz conjecture, simplicity is deceptive!
@@ -67,8 +78,8 @@ p.s. We appreciated that apart from a few powers of 2, the source
 code is magic number free.
 
 ## Author's comments:
-The TL;DR version
------------------
+
+### The TL;DR version
 
 This is the cleanest program ever submitted. If for some input it enters
 a non-terminating loop or runs out of memory you will be insta-famous.
@@ -80,8 +91,7 @@ The program illustrates the bloat caused by adherence to too many rules,
 each of which may sound sane in isolation, but in their entirety lead to
 an obfuscated, hard to read and understand monster.
 
-What this program does.
------------------------
+### What this program does.
 
 The program tests whether a given natural number satisfies the
 [Collatz Conjecture](https://en.wikipedia.org/wiki/Collatz_conjecture):
@@ -116,23 +126,27 @@ prefix) as the first argument. The program prints the given number in
 zero-padded hex and each iteration along with a line count in decimal.
 The example above looks like this (compiled with 64 bit word size):
 
-    $ ./prog 6
-    0000000000000006
-    0000000000000003 1
-    000000000000000A 2
-    0000000000000005 3
-    0000000000000010 4
-    0000000000000008 5
-    0000000000000004 6
-    0000000000000002 7
-    0000000000000001 8
+```sh
+$ ./prog 6
+0000000000000006
+0000000000000003 1
+000000000000000A 2
+0000000000000005 3
+0000000000000010 4
+0000000000000008 5
+0000000000000004 6
+0000000000000002 7
+0000000000000001 8
+## Judges' comments:
 
 The size of *n* is only limited by the argument size limit of your
 shell/OS (the program implements arbitrary size bignums).
 To query this on your POSIX system, run
 
-    $ getconf ARG_MAX
-    262144
+```sh
+$ getconf ARG_MAX
+262144
+```
 
 which reports the limit in bytes, here 256KB. This allows to test
 whether a [Googol](https://en.wikipedia.org/wiki/Googol), which is
@@ -141,12 +155,12 @@ Fear not,
 [bc(1)](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/bc.html)
 to the rescue:
 
-    $ printf 'obase=16;10^100\n' | bc
-    1249AD2594C37CEB0B2784C4CE0BF38ACE408E211A7CAAB24308A82E8F1000000000\
-    0000000000000000
-    $ ./prog 1249AD2594C37CEB0B2784C4CE0BF38ACE408E211A7CAAB24308A82E8F10000000000000000000000000 \
-    | less
-    [...]
+$ printf 'obase=16;10^100\n' | bc
+1249AD2594C37CEB0B2784C4CE0BF38ACE408E211A7CAAB24308A82E8F1000000000\
+0000000000000000
+$ ./prog 1249AD2594C37CEB0B2784C4CE0BF38ACE408E211A7CAAB24308A82E8F10000000000000000000000000 \
+| less
+[...]
 
 Observe how the first 100 iterations melt the zeros to the right. Can you explain
 why?
@@ -154,58 +168,54 @@ why?
 For a given *n* the program behavior is one of the following 3:
 
 1. The sequence stops at 1. No fame. No money. Thanks for playing. Computational
-   mathematicians have tested all *n* < 4FFDD776055A0000 (~10<sup>18</sup>)
-   so don't try anything less than that.
+mathematicians have tested all *n* < 4FFDD776055A0000 (~10<sup>18</sup>)
+so don't try anything less than that.
 2. The chosen *n* leads to a sequence with ever bigger numbers,
-   so that eventually the bignum cannot be stored in memory. If this happens,
-   the program outputs `laugh` (more likely) or `throw up` (less likely) and
-   stops. You *might* have found
-   a number for which the sequence *diverges*. If confirmed, this disproves the
-   conjecture.
+so that eventually the bignum cannot be stored in memory. If this happens,
+the program outputs `laugh` (more likely) or `throw up` (less likely) and
+stops. You *might* have found
+a number for which the sequence *diverges*. If confirmed, this disproves the
+conjecture.
 3. The chosen *n* leads to a cycle not including 1 (i.e. runs forever,
-   repeating the same sequence over and over). You have disproved the
-   conjecture and should certainly submit a paper to the nearest
-   mathematical journal.
+repeating the same sequence over and over). You have disproved the
+conjecture and should certainly submit a paper to the nearest
+mathematical journal.
 
-
-Design objectives
------------------
+### Design objectives
 
 I gave myself the following objectives. Like in real world programming,
 not all of them can be met 100%. Think of them as a multidimensional
 continuum, where trade-offs have to be made.
 
 1. No arbitrary limits on the input number. 64 bits might be enough
-   for everybody, but is not enough for exploring new Collatz-territory.
-   Thus bignums are required.
+for everybody, but is not enough for exploring new Collatz-territory.
+Thus bignums are required.
 2. Ultra-portable. Must run on C89 systems and self-adapt to C99 and C11
-   features like exact width types.
+features like exact width types.
 3. Super-efficient. Must be able to run with the widest type as the
-   base of the bignums. Make the user select the widest type supported
-   by the implementation and then crunch away. If a non-standard
-   128bit type is available, it should be usable.
+base of the bignums. Make the user select the widest type supported
+by the implementation and then crunch away. If a non-standard
+128bit type is available, it should be usable.
 4. Pentagon level lint cleanliness and MISRA compliance.
 5. Easy to understand, self-documenting clear code. A joy for maintenance
-   programmers. The epitome of best practice demonstration for all
-   future textbooks on C.
+programmers. The epitome of best practice demonstration for all
+future textbooks on C.
 
-Program Obfuscation
-===================
+### Program Obfuscation
 
 In the following I address all the *tests* as specified by your honors in the
 *guidelines*.
 
- * look at the original source
- * convert ANSI tri-graphs to ASCII
- * C pre-process the source ignoring `#include` lines
- * C pre-process the source ignoring `#define` and `#include` lines
- * run it through a C beautifier
- * examine the algorithm
- * compile it (with flags to enable all warnings)
- * execute it
+* look at the original source
+* convert ANSI tri-graphs to ASCII
+* C pre-process the source ignoring `#include` lines
+* C pre-process the source ignoring `#define` and `#include` lines
+* run it through a C beautifier
+* examine the algorithm
+* compile it (with flags to enable all warnings)
+* execute it
 
-Look at the original source
----------------------------
+### Look at the original source
 
 Using one letter identifiers is quite old. I decided to use TLI (three
 letter identifiers). Not the random kind, rather with a connection to
@@ -214,27 +224,27 @@ the myriad of possible amino acids there are 23 from which proteins are
 built. In biochemistry, each is assigned a TLI (see [Proteinogenic amino
 acid](https://en.wikipedia.org/wiki/Proteinogenic_amino_acid)):
 
-	ala	Alanine
-	cys	Cysteine
-	asp	Aspartic acid
-	glu	Glutamic acid
-	phe	Phenylalanine
-	gly	Glycine
-	his	Histidine
-	ile	Isoleucine
-	lys	Lysine
-	leu	Leucine
-	met	Methionine
-	asn	Asparagine
-	pyl	Pyrrolysine
-	pro	Proline
-	gln	Glutamine
-	arg	Arginine
-	ser	Serine
-	thr	Threonine
-	sec	Selenocysteine
-	val	Valine
-	trp	Tryptophan
+    ala	Alanine
+    cys	Cysteine
+    asp	Aspartic acid
+    glu	Glutamic acid
+    phe	Phenylalanine
+    gly	Glycine
+    his	Histidine
+    ile	Isoleucine
+    lys	Lysine
+    leu	Leucine
+    met	Methionine
+    asn	Asparagine
+    pyl	Pyrrolysine
+    pro	Proline
+    gln	Glutamine
+    arg	Arginine
+    ser	Serine
+    thr	Threonine
+    sec	Selenocysteine
+    val	Valine
+    trp	Tryptophan
 	tyr	Tyrosine
 	asx	Asparagine or Aspartic acid
 	glx	Glutamic acid or Glutamine
@@ -258,19 +268,16 @@ counter), `gly` means "Grow Larger memorY", `gln` is "Grown Larger Now"
 is the "UNit (Known as 1)", `trp` is the "Tabula Rasa Product" (zero),
 `phe` is "Print HEx" and so on.
 
-Convert ANSI tri-graphs to ASCII
---------------------------------
+### Convert ANSI tri-graphs to ASCII
 
 Huh??!
 
-C pre-process the source ignoring '#include' lines
---------------------------------------------------
+### C pre-process the source ignoring '#include' lines
 
 Wow, an identity operation (except for the `<stdint.h>` and `EOF + __STDC__`
 trivialities). Did you gain any insight through this?
 
-C pre-process the source ignoring '#define' and '#include' lines
-----------------------------------------------------------------
+### C pre-process the source ignoring '#define' and '#include' lines
 
 `#define`? Which `#define` directives? How many 4K source files do you
 see that neither use a single `#define` directive *nor* abuse the build
@@ -278,13 +285,13 @@ file? Even though the "no `#define`" rule I submitted myself to made it
 hard, I could use `__LINE__` and stdio macros `EOF`, `L_tmpnam`,
 `BUFSIZ`, `FILENAME_MAX`, `TMP_MAX` to obfuscate at least something.
 
-Run it through a C beautifier
------------------------------
+### Run it through a C beautifier
 
 Another identity operation. I've done it for you already. Use this
 `.indent.pro` with FreeBSD indent:
 
-	$ cat .indent.pro
+```sh
+$ cat .indent.pro
     -bad   /* blank line after decls */
     -bap   /* blank line after functions */
     -br    /* braces on if line */
@@ -302,6 +309,7 @@ Another identity operation. I've done it for you already. Use this
     -Tpro
     -Tser
     -Tala
+```
 
 It looks like a perfect program should:
 
@@ -325,39 +333,41 @@ as (256 + 128 + 4 + 2) * 512 minimizes the character count. That's what
 judges get when they don't like programs that are longer than they need
 to be.
 
-Examine the algorithm
----------------------
+### Examine the algorithm
 
 Spoilers ahead. Duh!
 
 Pseudocode, with comments matching those in the C source:
 
-    /* run */
-    if (non-NULL and nonempty argv[1]) {
-       n = convert(argv[1])
-       print n                       /* 2hx */
-       while (n != 1) {              /* one */
-          if (n is odd) {            /* odd */
-             m = deep copy of n      /* cpy */
-             n <<= 1                 /* shl */
-             n += m                  /* add */
-             increment n             /* inc */
-          } else {                   /* eve */
-             n >>= 1                 /* shr */
-          }
-          print n                    /* 2hx */
+```c
+/* run */
+if (non-NULL and nonempty argv[1]) {
+   n = convert(argv[1])
+   print n                       /* 2hx */
+   while (n != 1) {              /* one */
+      if (n is odd) {            /* odd */
+	 m = deep copy of n      /* cpy */
+	 n <<= 1                 /* shl */
+	 n += m                  /* add */
+	 increment n             /* inc */
+      } else {                   /* eve */
+	 n >>= 1                 /* shr */
       }
-    }
+      print n                    /* 2hx */
+  }
+}
+```
 
 Bignums are represented as the two member structs
 
-    typedef struct {
-         size_t places;   /* number of places in base 2<sup>8*sizeof(type)</sup> */
-         type  *number;   /* dynamically allocated memory for number */
-    } bignum
+```c
+typedef struct {
+     size_t places;   /* number of places in base 2<sup>8*sizeof(type)</sup> */
+     type  *number;   /* dynamically allocated memory for number */
+} bignum
+```
 
-Compile it (with flags to enable all warnings)
-----------------------------------------------
+### Compile it (with flags to enable all warnings)
 
 Here's where the program shines brighter than a [gamma-ray
 burst](https://en.wikipedia.org/wiki/Gamma-ray_burst)!
@@ -368,9 +378,7 @@ analyzers at my program and make it find the slightest of issues.
 Is `clang -Wall -Wextra -Weverything -Dtyp=uint32_t prog.c` all you can
 do? Clang has implemented a new warning? Bring it on!
 
-
-Execute it
-----------
+### Execute it
 
 May you win the jackpot!
 
@@ -383,21 +391,22 @@ This means however, that the program accepts __any string__, turns it
 into a starting number (which is output as the first line), and starts
 crunching. Nothing stops you from executing
 
-    $ ./prog "$(cat prog.c)"            # Kind of quine?
-    $ ./prog "$(cat rules guidelines)"  # A jackpot? Maybe next year...
-    $ ./prog "$(cat /bin/ls)"           # Number cut short at first NUL byte.
+```sh
+./prog "$(cat prog.c)"            # Kind of quine?
+./prog "$(cat rules guidelines)"  # A jackpot? Maybe next year...
+./prog "$(cat /bin/ls)"           # Number cut short at first NUL byte.
+```
 
 In a certain way, the program is character set and encoding agnostic.
 
-Assumptions made
-----------------
+### Assumptions made
 
 * The `EOF` macro from `<stdio.h>` must expand to negative one since it is used
-  to decrement a pointer and do some other math.
-  None of the tools catches this one. The program self-protects against unusual
-  systems with `#if EOF + __STDC__` followed by `#error goofy!`. In the rare event
-  your system is goofy, replace all `EOF` tokens with `(-1)` and remove the
-  `#error` directive.
+to decrement a pointer and do some other math.
+None of the tools catches this one. The program self-protects against unusual
+systems with `#if EOF + __STDC__` followed by `#error goofy!`. In the rare event
+your system is goofy, replace all `EOF` tokens with `(-1)` and remove the
+`#error` directive.
 
 
 While the program works best when bytes/characters are octets and the
@@ -406,9 +415,7 @@ on 24bit or 36bit systems with 9 bits/byte, or systems where
 `sizeof(typ)` is 1 even for `int` and so on. On such systems, it will only
 use 8 * `sizeof(typ)` bits per place. It does not work when `CHAR_BIT <= 7`.
 
-
-Results of various checkers
----------------------------
+### Results of various checkers
 
 ### cppcheck
 
@@ -416,7 +423,9 @@ The open source static checker [cppcheck](http://cppcheck.sourceforge.net/)
 checks various problems with respect to style, performance, portability
 and general fishiness. To enable all checks, run
 
-    $ cppcheck --enable=all --force -I/usr/include -Dtyp=uint32_t prog.c
+```sh
+cppcheck --enable=all --force -I/usr/include -Dtyp=uint32_t prog.c
+```
 
 No issues found.
 
@@ -427,16 +436,17 @@ checks various problems with respect to security like buffer overflows,
 function arguments to known troublemaker functions and more. It doesn't need to
 pre-process code, so can be run without the `typ` macro being defined:
 
-    $ flawfinder prog.c
-    Flawfinder version 1.31, (C) 2001-2014 David A. Wheeler.
-    Number of rules (primarily dangerous function names) in C/C++ ruleset: 169
-    Examining prog.c
-    FINAL RESULTS:
-    ANALYSIS SUMMARY:
-    No hits found.
-    $
+```sh
+$ flawfinder prog.c
+Flawfinder version 1.31, (C) 2001-2014 David A. Wheeler.
+Number of rules (primarily dangerous function names) in C/C++ ruleset: 169
+Examining prog.c
+FINAL RESULTS:
+ANALYSIS SUMMARY:
+No hits found.
+```
 
-### valgrind
+#### valgrind
 
 The open source dynamic checker [valgrind](http://valgrind.org/)
 runs an executable and verifies all memory accesses and (de)allocations for
@@ -511,7 +521,7 @@ So I `fclose(stdout)` before returning and now:
 
 A squeaky clean valgrind result!
 
-### FlexeLint
+#### FlexeLint
 
 FlexeLint is a commercial lint tool by [Gimpel
 Software](http://www.gimpel.com/html/index.htm). It supports nearly a
@@ -629,9 +639,7 @@ what remained:
     -esym(9058,__*)  // tag not used outside typedef
     -e9092           // NULL does not expand to a pointer (but plain 0)
 
-
-Compulsory obfuscations
------------------------
+### Compulsory obfuscations
 
 Which of the rules cause which obfuscation?
 
@@ -641,7 +649,9 @@ expressions other than assignments to `char` objects. A consequence is
 that printing digits with `'0' + digit` is not allowed (even though
 `'0'` is technically an `int`!) so I am forced to output hex digits with
 
-    printf("%c", (met)tyr + 32 + 16 + ((8 + EOF) * ((met)tyr / (8 + 2))));
+```c
+printf("%c", (met)tyr + 32 + 16 + ((8 + EOF) * ((met)tyr / (8 + 2))));
+```
 
 because of the "no magic numbers other than powers of two" rule. How is this
 an improvement over `printf("%c", '0' + tyr + 7 * (tyr / 10)`, MISRA?
@@ -664,9 +674,10 @@ precedence rules in expressions." This requires parentheses for almost
 all expressions involving more than one operator, especially those for which
 a cast is required, leading to hard to understand expressions such as
 
-    const ser glx = (ser)((asx > (ser)64u) ? (ser)((ser)asx + (ser)8u + (ser)1u) : (ser)asx);
-    not.not[leu] = (and)((and)not.not[leu] | (and)(((and)glx % (and)16u) << (and)lys));
-
+```c
+const ser glx = (ser)((asx > (ser)64u) ? (ser)((ser)asx + (ser)8u + (ser)1u) : (ser)asx);
+not.not[leu] = (and)((and)not.not[leu] | (and)(((and)glx % (and)16u) << (and)lys));
+```
 
 MISRA 14.7, "A function shall have a single point of exit at the end of
 the function." Sigh. Since I must use eloquent prototypes (8.1, 16.3,
@@ -676,20 +687,23 @@ useless indent level*. The first three `if` statements in `main` cause a
 silly 24 character indent. The maximum indent is forced to 8, which is way
 too high for a sane function.
 
-
 MISRA 16.10, "If a function returns error information, then that error
 information shall be tested." A cast to void would draw a lint warning, so
 I use the `printf` result in expressions,
 
-	lys -= 4 * printf("%c", (met)tyr + 32 + 16 + ((8 + EOF) * ((met)tyr / (8 + 2))));
-	val += printf("\n") / ((__LINE__ * L_tmpnam) + TMP_MAX);
-	val -= (printf(" %d\n", val) > BUFSIZ) ? FILENAME_MAX : EOF;
+```c
+lys -= 4 * printf("%c", (met)tyr + 32 + 16 + ((8 + EOF) * ((met)tyr / (8 + 2))));
+val += printf("\n") / ((__LINE__ * L_tmpnam) + TMP_MAX);
+val -= (printf(" %d\n", val) > BUFSIZ) ? FILENAME_MAX : EOF;
+```
 
 which are, in the absence of errors, equivalent to
 
-    lys -= 4;
-    /*nop*/
-    ++val;
+```c
+lys -= 4;
+/*nop*/
+++val;
+```
 
 
 MISRA 13.1, "Assignment operators shall not be used in expressions that
@@ -702,9 +716,11 @@ declared as pointer to const if the pointer is not used to modify the
 addressed object." in conjunction with lint's "Note 952: Parameter could
 be declared const" causes const-poisoning for all functions,
 
-    static void phe(const ala not);
-    static void gly(ala *const not, const and his);
-    met main(met val, const pro *const his[]);
+```c
+static void phe(const ala not);
+static void gly(ala *const not, const and his);
+met main(met val, const pro *const his[]);
+```
 
 and quite a number of automatic variables.
 
@@ -718,15 +734,19 @@ up :-) (humor really helps!)"
 If your compiler supports a 128 bit wide type (e.g. clang, gcc) then
 you can use it via the `typ` macro:
 
-    clang -Dtyp=__uint128_t -o prog prog.c
+```sh
+clang -Dtyp=__uint128_t -o prog prog.c
+```
 
 Indeed, the program can use (and lints clean for) all of
 
-    clang -Dtyp=uint8_t  -o prog8  prog.c
-    clang -Dtyp=uint16_t -o prog16 prog.c
-    clang -Dtyp=uint32_t -o prog32 prog.c
-    clang -Dtyp=uint64_t -o prog64 prog.c
-    clang -std=c89 -Dtyp="unsigned long" -o prog89 prog.c
+```sh
+clang -Dtyp=uint8_t  -o prog8  prog.c
+clang -Dtyp=uint16_t -o prog16 prog.c
+clang -Dtyp=uint32_t -o prog32 prog.c
+clang -Dtyp=uint64_t -o prog64 prog.c
+clang -std=c89 -Dtyp="unsigned long" -o prog89 prog.c
+```
 
 This works because the program has no need for corresponding `SCN` or
 `PRI` macros to do the scanning and printing of variables of these
@@ -761,11 +781,10 @@ memory resources with the ulimit(1) built-in of your shell.
 
 For all intents and purposes, the *Not Overflowing Type* keeps the promise!
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2016, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
