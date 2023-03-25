@@ -1,33 +1,40 @@
 # Most calendrical
 
-Timo Poikola  
-<https://ig.fi/other/ioccc>  
-Twitter: @timpoiko  
+    Timo Poikola  
+    <https://ig.fi/other/ioccc>  
+    Twitter: @timpoiko  
 
+# To build:
 
-## Judges' comments:
-### To use:
+```sh
+make
+```
 
-    make prog
-    ./prog 512 ./prog
+### To run:
 
-    sleep 86400; make clobber prog
-    ./prog 512 ./prog
+```sh
+./prog 512 ./prog
 
-    sleep 86400; make clobber prog
-    ./prog 512 ./prog
+sleep 86400; make clobber prog
+./prog 512 ./prog
+
+sleep 86400; make clobber prog
+./prog 512 ./prog
+```
 
 ### Try:
 
 If you don't have a few days, try:
 
-    TZ=UTC24 make clobber prog
-    ./prog 512 ./prog
+```sh
+TZ=UTC24 make clobber prog
+./prog 512 ./prog
 
-    TZ=UTC48 make clobber prog
-    ./prog 512 ./prog
+TZ=UTC48 make clobber prog
+./prog 512 ./prog
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 Do you have the time to see what this program does?  Think again, come back and try again.
 
@@ -38,22 +45,31 @@ The source code layout and some of the variable names honors the ski jumping acc
 [Matti Nyk&auml;nen](https://en.wikipedia.org/wiki/Matti_Nyk%C3%A4nen).
 
 ## Author's comments:
-### How to build ###
-    gcc -O0 -o prog prog.c
+
+### How to build
+
+```sh
+gcc -O0 -o prog prog.c
+```
 
 or
 
-    clang -O[0123s] -o prog prog.c
+```sh
+clang -O[0123s] -o prog prog.c
+```
 
 e.g.:
 
-    clang -O1 -o prog prog.c
+```sh
+clang -O1 -o prog prog.c
+```
 
 ### Poster
 
 You can generate an A3 sized poster by _make docs_. This command creates a pdf file _poikola.pdf_.
 
-### What this entry does ###
+### What this entry does
+
 An old wise man mumbled to me:
 >Implement a program, which can calculate SHA-3 checksum for a file
 
@@ -67,7 +83,8 @@ the all-time best [ski jumper](https://en.wikipedia.org/wiki/Matti_Nyk%C3%A4nen)
 [amateur philosopher](http://telefinn.blogspot.com/2011/11/matti-nykanen-quotes.html), who passed away on fourth of
 February 2019.
 
-####Oh boys.
+### Oh boys.
+
 So, I followed the rules given by Gandalf the White and the Judges of IOCCC. Output of `iocccsize`,
 using the [2019 version of iocccsize](https://www.ioccc.org/2019/iocccsize.c), is carefully selected.
 For the sake of clarity, I used single letter variables in the code. I also avoided unnecessary use of functions.
@@ -80,7 +97,8 @@ stuck if invoked erroneously. The program is invoked in this way: ./prog `<integ
 not validate its input in any way. These same parameters should be given in calculating a Fibonacci sequence or prime
 numbers. *Please note that maximum file size is one gigabyte.*
 
-### Obfuscation ###
+### Obfuscation
+
 *Matti Nyk&auml;nen*: Every time I jump, and I get that feeling of _bon voyage_, the feeling that I&#8217;ve been here
 before.
 
@@ -92,6 +110,7 @@ used as labels, however, there is `lahti` instead of <tt style="font-family: Mon
 12px;">salpausselk&auml;</tt>.
 
 ### SHA-3-512 Compatibility chart ###
+
 Tested against [test vectors](https://www.di-mgt.com.au/sha_testvectors.html).
 Clang-4.0: For optimization levels [0123s], the program compiles and produces correct output for every tested vector using
 c11, c89, c90, c99, gnu11, gnu1x, gnu89, gnu90, gnu99, iso9899:1990, iso9899:199409, iso9899:1999 and
@@ -100,15 +119,18 @@ iso9899:2011 as argument of `-std=`
 Gcc-6: For optimization level 0, correct output using
 c11, c99, gnu11, gnu1x, gnu89, gnu90, gnu99, iso9899:1999 and iso9899:2011
 
-### Missing a prime ###
+### Missing a prime
+
 For obvious reason, the oddest prime is missing from output.
 
-### Observations ###
+### Observations
+
 Gcc and clang are very fragile compilers. I spent numerous hours trying to achieve exactly the same output from
 different optimization levels and compilers. Small change in code can produce really unexpected results, i.e. the compiler
 can skip a few expressions or statements without obvious reason.
 
-### Major spoilers ###
+### Major spoilers
+
 Please scroll down if you want to see spoilers.
 <div style="margin-bottom:61em;">&nbsp;</div>
 It is commonly believed that [Mike Keith's algorithm](http://www.cadaeic.net/calendar.htm) published in _Journal of
@@ -127,7 +149,8 @@ that value of '^' is 94 in ASCII table.
 For prime calculations: I recycled code from my high school C-programming course. Originally, I wrote it over 20 years
 ago. My teacher said that it is (too) complicated to use bits stored in arrays, so I did it.
 
-### Other stuff ###
+### Other stuff
+
 Cody: I really like that you enjoyed my previous entry. I hope that you will like this entry too.
 Because I did not want to give too many clues to Judges, I tried to write this entry in a different way
 than Most Stellar, but in this code there is at least one recycled thing from it. By the way,
@@ -144,11 +167,10 @@ I realized that SHA-3 even with 224-bit output could take too much CPU time.
 
 I would like to say _thanks_ to PSP, because there were not too much interrupts during the coding phase.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2019, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
