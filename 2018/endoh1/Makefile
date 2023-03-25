@@ -62,8 +62,8 @@ X11_INCDIR= /opt/X11/include
 
 # Common C compiler warnings to silence
 #
-#CSILENCE=
-CSILENCE= -Wno-overlength-strings
+CSILENCE=
+#CSILENCE= -Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -101,8 +101,8 @@ CINCLUDE=
 #CINCLUDE= -include stdlib.h
 #CINCLUDE= -include stdio.h
 #CINCLUDE= -include stdlib.h -include stdio.h
-#CINCLUDE= -I ${X11_INCDIR}
-#CINCLUDE= -I ${HOMEBREW_PREFIX}/include/SDL2
+#CINCLUDE= -I ${X11_INCDIR} -I ${X11_INCDIR}/X11
+#CINCLUDE= `${SDL2_CONFIG} --cflags`
 
 # Optimization
 #
@@ -126,7 +126,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 LIBS=
 #LIBS= -lm
 #LIBS= -L ${X11_LIBDIR} -lX11
-#LIBS= -L ${HOMEBREW_PREFIX}/lib -lSDL
+#LIBS= `${SDL2_CONFIG} --libs`
 
 # C compiler to use
 #
@@ -161,11 +161,12 @@ endif
 # Special flags for this entry
 ##############################
 #
-ENTRY= XXX
+ENTRY= endoh1
 PROG= prog
 #
 OBJ= ${PROG}.o
-DATA=
+CSRC= ${PROG}.o
+DATA= golem.txt smily.txt invisible.txt
 TARGET= ${PROG}
 #
 ALT_OBJ=
@@ -214,6 +215,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -f output.gif golem.gif smily.gif invisible.gif
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
@@ -325,4 +327,3 @@ pluto: charon
 	@echo "dwarf is a type of planet"
 	@echo "therefore, $@ is a planet"
 	@echo "having lots of planets is good feature because supernovae can help ${MAKE} a lot of them"
-

@@ -1,22 +1,28 @@
 # Best tool to reveal holes
 
-Yusuke Endoh  
-Twitter: @mametter  
+    Yusuke Endoh  
+    Twitter: @mametter  
 
-## To build:
+# To build:
 
-        make all
+```sh
+make
+```
 
-### To run
+### To run:
 
-    ./prog < textfile > output.gif
+```sh
+./prog < textfile > output.gif
+```
 
 ### Try:
 
-    ./prog < golem.txt > golem.gif
-    ./prog < smily.txt > smily.gif
+```sh
+./prog < golem.txt > golem.gif
+./prog < smily.txt > smily.gif
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 To get the best experience, use a GIF viewer that can handle animated gifs.
 On OS X you can use Safari using "open -a Safari smily.gif"
@@ -31,28 +37,34 @@ Unfortunately this won't run on your PDP8, if you had one, as it needs at
 least 2MiB of memory to run in.
 
 ## Author's comments:
+
 This program generates an animated GIF from a plain text.  Run:
 
-    gcc -o prog prog.c
-    ./prog < invisible.txt > invisible.gif
+```sh
+cc -o prog prog.c
+./prog < invisible.txt > invisible.gif
+```
 
 Open invisible.gif and then wait a minute.  You will see a hidden message.
 Can you tell the difference between letters that leaves the mark and ones that does not?
 
 Other examples:
 
-    ./prog < golem.txt > golem.gif
-    ./prog < smily.txt > smily.gif
+```sh
+./prog < golem.txt > golem.gif
+./prog < smily.txt > smily.gif
+```
 
 The program itself has a hidden message.
 
-    ./prog < prog.c > prog.gif
+```sh
+./prog < prog.c > prog.gif
+```
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
