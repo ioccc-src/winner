@@ -1,33 +1,38 @@
 # Most in need of whitespace
 
-Joshua Karns  
-Twitter: @jkarnss  
+    Joshua Karns  
+    Twitter: @jkarnss  
 
-## To build:
+# To build:
 
-        make all
+```sh
+make
+```
 
-### To run
+### To run:
 
-    ./prog < textfile_that_fits_on_the_screen
+```sh
+./prog < textfile_that_fits_on_the_screen
+```
 
 ### Try:
 
-    make test
+```sh
+./prog < README.md
 
-    ./prog < README.md
+./prog < prog.c
 
-    ./prog < prog.c
-
-    ./prog < maze
+./prog < maze
+```
 
 The last two can be done in a sequence, first showing the respective files at
 the terminal, like:
 
-    ./demo.sh
+```sh
+./demo.sh
+```
 
-
-### Selected Judges Remarks:
+## Judges' comments:
 
 If you typically get lost in mazes, watching this program run might -- or might not, YMMV --
 teach you how to find your way in a maze. The algorithm is well-known but the drawing is amazing!
@@ -41,8 +46,7 @@ A puzzle for the reader: Can you change the program to consider a diagonal movem
 
 ## Author's comments:
 
-The Program
------------
+### The Program
                                 
 This program is pretty simple! It performs a breadth  first search on the
 specified graph. The graph can be any ascii text file  that has an 'at'
@@ -52,26 +56,31 @@ which will be the destination.
 The nodes on this graph that are spaces are connected with any directly
 adjacent nodes that are also spaces. Nodes that aren't spaces are not 
 connected with anything.
-                                         
 
-Compiling and Running
----------------------
+### Compiling and Running
 
 This program usually compiles under both GCC and clang. Build with:
 
-    $(CC) -std=c99 -o tbfs prog.c
+```sh
+$(CC) -std=c99 -o tbfs prog.c
+```
 
 where $(CC) is cc, gcc, clang, or somet other c compiler.
 
 You can then run it with:
-    cat <input file> | ./tbfs
+
+```sh
+cat <input file> | ./tbfs
+```
 
 Examples:
-    ./tbfs < maze 
-    ./tbfs < prog.c
 
-Issues
------------
+```sh
+./tbfs < maze 
+./tbfs < prog.c
+```
+
+### Issues
 
 - The program must be ran in a terminal that supports ANSI escape codes for
 moving the cursor and changing colors.
@@ -88,11 +97,10 @@ not encountered this myself).
 - The program could be obfuscated much further.
 - The program contains some unused code and data.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2019, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
