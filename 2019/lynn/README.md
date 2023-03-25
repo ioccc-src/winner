@@ -1,27 +1,36 @@
 # Most functional compiler
 
-Ben Lynn  
-<https://crypto.stanford.edu/~blynn/>  
-Twitter: @bmxlynn  
+    Ben Lynn
+    <https://crypto.stanford.edu/~blynn/>
+    Twitter: @bmxlynn
 
+# To build:
 
-## Judges' comments:
-### To use:
+```sh
+make
+```
 
-    make
+### To run:
+
+```sh
+./prog
+```
 
 ### Try:
 
-    (./prog < fib.hs; cat prog.c) > fib.c
-    cc fib.c -o fib
-    ./fib
+```sh
+(./prog < fib.hs; cat prog.c) > fib.c
+cc fib.c -o fib
+./fib
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 A fully functional compiler. The example prints out the 30th Fibonacci number.
 
 ## Author's comments:
-# Remarks #
+
+### Remarks
 
 A Haskell compiler. Supports a subset of Haskell more than large enough to
 self-host. Like GHC with custom language extensions:
@@ -40,24 +49,30 @@ self-host. Like GHC with custom language extensions:
 
  * `SyntaxForTheMasses`: See below.
 
-## Demos ##
+### Demos
 
 Build the compiler:
 
-    $ $(CC) -o prog prog.c
+```sh
+cc -o prog prog.c
+```
 
 ### Fibonacci numbers
 
 Test the compiler on `fib.hs`:
 
-    $ (./prog < fib.hs ; cat prog.c) > fib.c
+```sh
+(./prog < fib.hs ; cat prog.c) > fib.c
+```
 
 Compiling the output produces a binary that prints the 30th Fibonacci number.
 
 The file `ghcfib.hs` includes `fib.hs` with some glue code, and shows GHC
 also accepts our subset of Haskell:
 
-    $ ghc ghcfib.hs
+```sh
+ ghc ghcfib.hs
+```
 
 ### Self-hosting compiler
 
@@ -66,7 +81,9 @@ instead provide `hint.hs`, the output of a certain stage of the compiler when
 run on itself. This intermediate output is hopefully difficult to understand,
 yet is accepted by our compiler:
 
-    $ (./prog < hint.hs ; cat prog.c) > hint.c
+```sh
+(./prog < hint.hs ; cat prog.c) > hint.c
+```
 
 The output program behaves like the compiler itself.
 
@@ -83,24 +100,32 @@ languages"](https://www.cs.dartmouth.edu/~doug/nfa.pdf). We exercise it by
 showing the first entries of the length-ordered list of all strings consisting
 of the characters a and b that contain an even number of a's.
 
-    $ (./prog < lol.hs ; cat prog.c) > lol.c
+```sh
+(./prog < lol.hs ; cat prog.c) > lol.c
+```
 
 A GHC wrapper is provided:
 
-    $ ghc ghclol.hs
+```sh
+ghc ghclol.hs
+```
 
 ### Strongly-connected components
 
 See `scc.hs` (and its GHC wrapper `ghcscc.hs`) for an elegant way to print the
 strongly-connected components of a graph in reverse topological order.
 
-    $ (./prog < scc.hs ; cat prog.c) > scc.c
+```sh
+(./prog < scc.hs ; cat prog.c) > scc.c
+```
 
 It expects the input to be in a similar format as a previous entry
 (2018 vokes). Indeed, obtain the 2018 winners, and run:
 
-    $ ./scc < 2018/vokes/example-1.txt
-    $ ./scc < 2018/vokes/example-2.txt
+```sh
+./scc < 2018/vokes/example-1.txt
+./scc < 2018/vokes/example-2.txt
+```
 
 The output should agree, though our program omits line numbers and does not
 sort entries within a line. (Also, our program only treats spaces as
@@ -185,7 +210,7 @@ or rather, a compiler that accepts a subset of Haskell sufficiently large to
 self-host. You might say I wrote a tool for this contest, then ran it on itself
 to make an entry for it.
 
-## Obfuscation techniques ##
+### Obfuscation techniques
 
 Even with Kiselyov's algorithm and some term rewriting, the compiler only fit
 after compression, which naturally obfuscates the code. More tricks were needed
@@ -239,7 +264,7 @@ year](http://okmij.org/ftp/tagless-final/ski.pdf).
  parser combinators, lambda calculus, bracket abstraction, denotational
  semantics, etc.
 
-## Warnings ##
+### Warnings
 
 On my system, it compiles cleanly with `-Wall` with older standards, e.g.
 `-std=c89`, but less cleanly if `-pedantic` is also supplied.
@@ -247,16 +272,15 @@ On my system, it compiles cleanly with `-Wall` with older standards, e.g.
 Compiling the compiler output with `-Wall` triggers a warning about a
 strange-looking comment.
 
-## Behind-the-scenes commentary ##
+### Behind-the-scenes commentary
 
 [My website reveals how this compiler
 works.](https://crypto.stanford.edu/~blynn/compiler/ioccc.html)
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2019, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
