@@ -19,7 +19,7 @@ make
 ### Try:
 
 ```sh
-./birken < examples/ioccc.txt
+./birken < ioccc.txt
 
 perl -e 'map{map{print int(rand()*8);}(0..16);print chr(10);}(0..30);' | tr '[0-4]' ' '| ./birken
 ```

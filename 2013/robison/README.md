@@ -31,7 +31,7 @@ And modulus if remainders the needing,
 on standard input percent be feeding.
 
 More than one line can thru give input,
-when interactive one values more than thruput.
+when interactive one values more than throughput.
 
 With cut and paste and some time,
 one can compute M(23209).
@@ -40,7 +40,7 @@ one can compute M(23209).
 
 ### Oh, The Strings You Can C!
 
-I love the C language; its tersness is tops.  
+I love the C language; its terseness is tops.  
 But the thing I abhor is numerical ops!  
 
 No shifting, division, remainder, or times.  

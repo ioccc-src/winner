@@ -32,12 +32,12 @@ echo "Do or do not. There is no try."
 ## Judges' comments:
 
 The judges enjoyed playing the game almost to completion; if we remember correctly, 
-we managed to place 59 or 60 dominos. We wonder, what would be faster: to play the game to completion
+we managed to place 59 or 60 dominoes. We wonder, what would be faster: to play the game to completion
 or to write an unobfuscated version of it?
 
 ## Author's comments:
 
-This program is a domino game. The goal is to place dominos on the 8x8 grid.
+This program is a domino game. The goal is to place dominoes on the 8x8 grid.
 Each domino is made of 6 squares of the color red or green. To place a domino,
 at least one of it side shall match the other side of another domino.
 
@@ -47,7 +47,7 @@ at least one of it side shall match the other side of another domino.
 
 At the start of the game, the first domino is placed randomly on the grid. You
 get another domino to place by selecting one empty position in the stack on the
-right. You can have to 8 dominos pending at any time.
+right. You can have to 8 dominoes pending at any time.
 
 ### Moving in the stack
 
@@ -71,17 +71,17 @@ sides and the domino has at least one neighbour.
 
 ### Scoring
 
-First, depending on the number of dominos pending in the stack, a bonus is
+First, depending on the number of dominoes pending in the stack, a bonus is
 accorded :
 * 1 domino in the stack : 8 points.
-* 2 dominos in the stack : 4 points.
-* 3 or 4 dominos in the stack : 2 points.
-* 5 or more dominos in the stack : 0 point.
+* 2 dominoes in the stack : 4 points.
+* 3 or 4 dominoes in the stack : 2 points.
+* 5 or more dominoes in the stack : 0 point.
 
 Then the bonus is multiplied by the number of matching neighbor the placed domino
 has (1, 2, 3 or 4). This is added to the score.
 
-Finally, the total score is divided by the number of dominos placed (1 - 64).
+Finally, the total score is divided by the number of dominoes placed (1 - 64).
 
 The 3 numbers on display represent : the total score, the fill count and the
 final score (total score divided by fill count).
@@ -90,8 +90,8 @@ final score (total score divided by fill count).
 
 The game is finished when no more domino can be placed and you either :
 * filled the complete grid.
-* have 8 pending dominos in the stack.
-* no more domino can be revealed in the stack (more than 56 dominos placed on
+* have 8 pending dominoes in the stack.
+* no more domino can be revealed in the stack (more than 56 dominoes placed on
   the grid).
 
 **Note** There is no real end of game detection implemented in the program,
@@ -99,7 +99,7 @@ simply press `q` when you have finished...
 
 ### Strategy
 
-* Try to minimize the number of dominos revealed in the stack. The lower the number,
+* Try to minimize the number of dominoes revealed in the stack. The lower the number,
 the higher the bonus.
 * Each domino is unique and all combination of colors exists, so keep track
   of what is already place and what is left.
