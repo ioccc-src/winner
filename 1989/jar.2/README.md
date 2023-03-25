@@ -11,8 +11,16 @@
 
 	make all
 
-NOTE: To have a chance to compile under a modern CPP, we had to
-replace `#D` with `#define` and `#a` with `#include`.
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work with
+modern compilers. Modern compilers do not allow code like:
+
+	#define D define
+	#define a include
+
+	#D foo bar
+	#a <stdio.h>
+
+Thank you Cody for your assistance!
 
 
 ### To run:
