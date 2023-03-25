@@ -1,29 +1,35 @@
 # Most alphabetic
 
-Marcin Ciura  
-Twitter: @mciura  
+    Marcin Ciura  
+    Twitter: @mciura  
 
-## To build:
+# To build:
 
-        make all
+```sh
+make
+```
 
-### To run
+### To run:
 
-    ./getwords.sh en | grep .. | ./prog string
+```sh
+./getwords.sh en | grep .. | ./prog string
+```
 
 ### Try:
 
-    ./getwords.sh en | grep .. | ./prog aeiouvwxyz
+```sh
+./getwords.sh en | grep .. | ./prog aeiouvwxyz
 
-    ./getwords.sh en | grep .. | ./prog aeiouhjklmnvwxyz
+./getwords.sh en | grep .. | ./prog aeiouhjklmnvwxyz
 
-    ./getwords.sh en | grep .. | ./prog mrjocktvquizphdbagsfewlynx
+./getwords.sh en | grep .. | ./prog mrjocktvquizphdbagsfewlynx
 
-    ./en.sh
+./en.sh
 
-    ./fr.sh
+./fr.sh
 
-    ./ru.sh
+./ru.sh
+```
 
 ### Alternate code
 
@@ -32,11 +38,13 @@ See the Author's comments for more information.
 
 To compile this alternate version:
 
-    make alt
+```sh
+make alt
+```
 
 Use `prog.alt` as you would `prog` above.
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 A few letters, one at a time, with no repeats.
 How many different ways can this be done?
@@ -49,6 +57,7 @@ Speaking of jumping, can you rewrite the code to
 remove all of the goto jumps in this code?
 
 ## Author's comments:
+
 ### What is this? <a name="wit"></a>
 
 This entry reads from standard input a list of words in any language
@@ -167,11 +176,10 @@ With the supplied `Makefile`, both `gcc` and `clang` compile
 compilation with `gcc -std=c90`, add `-Wno-format` to
 `CSILENCE` in `Makefile`.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2019, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
