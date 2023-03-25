@@ -1,30 +1,36 @@
 # Most Compact
 
-Chris Mills  
-Twitter: @MisterXopher  
+    Chris Mills  
+    Twitter: @MisterXopher  
 
+# To build:
 
-## Judges' comments:
-### To use:
+```sh
+make
+```
 
-    make
-    
-    ./prog compressed_file.Z
+### To run:
+
+```sh
+./prog compressed_file.Z
+```
 
 ### Try:
 
-    printf '000I\236\f\31H\260\240\301\203' > ioccc.Z
-    ./prog ioccc.Z 
+```sh
+printf '000I\236\f\31H\260\240\301\203' > ioccc.Z
+./prog ioccc.Z 
 
-    dd bs=1k count=4096 < /dev/urandom > test1
-    compress < test1 > test1.Z
-    time ./prog test1.Z | cmp - test1
+dd bs=1k count=4096 < /dev/urandom > test1
+compress < test1 > test1.Z
+time ./prog test1.Z | cmp - test1
 
-    dd bs=1k count=4096 < /dev/zero > test2
-    compress < test2 > test2.Z
-    time ./prog test2.Z | cmp - test2
+dd bs=1k count=4096 < /dev/zero > test2
+compress < test2 > test2.Z
+time ./prog test2.Z | cmp - test2
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 Without ASCII art, the source code of this entry would have been exactly 256 bytes.
 Compared to [1990/jaw](http://ioccc.org/years.html#1990_jaw), it is very impressive,
@@ -34,8 +40,8 @@ using a similar idea.
 Why is the sad smiley on line 12 in that particular place?
 
 ## Author's comments:
-The Program
-===========
+
+### The Program
 
 This program is in implementation of the unix `zcat(1)` command for printing
 compressed files that have been created by the `compress(1)` command.
@@ -54,10 +60,12 @@ on the command line.  On the odd chance you don't have `compress` hanging about
 on your system, I've provided compressed copies of this year's IOCCC rules
 and guidelines files.  To print them, just do
 
-    ./prog ioccc_guidelines.txt.Z
+```sh
+./prog ioccc_guidelines.txt.Z
+./prog ioccc_rules.txt.Z
+```
 
-The Details
------------
+### The Details
 
 The basic cleverness here comes from realizing that the compressed data is
 itself an encoded version of the code dictionary.  When the encoder sees
@@ -92,8 +100,7 @@ Managing all the details involved added a lovely additional layer of
 obfuscation to the otherwise elegant recursive decoder.  Still, the code
 manages it in a remarkably small amount of code.
 
-Limitations
------------
+### Limitations
 
 The decoder doesn't look at the header.  If you supply something that is not
 compressed data, it's likely to crash in an interesting manner.
@@ -120,12 +127,10 @@ pass in an alternate universe where the vax on which `compress` was authored
 had been big-endian.  Luckily for us, it wasn't, and neither are most of the
 systems you might want to compile this for.
 
+## Copyright:
 
---------------------------------------------------------------------------------
-<!--
 (c) Copyright 1984-2016, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
