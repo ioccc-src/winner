@@ -1,31 +1,37 @@
 # Most shifty
 
-Don Yang  
-<http://uguu.org/>  
+    Don Yang  
+    <http://uguu.org/>  
 
+# To build:
 
-## Judges' comments:
-### To use:
+```sh
+make
+```
 
-    make
-    more generated1.c
-    more generated2.c
-    more generated3.c
+### To run:
+
+```sh
+more generated1.c
+more generated2.c
+more generated3.c
+```
 
 ### Try:
 
-    make
-    ./left < prog.c
-    ./right < prog.c
-    ./left < prog.c | ./left
+```sh
+./left < prog.c
+./right < prog.c
+./left < prog.c | ./left
 
-    ./shift < prog.c
+./shift < prog.c
 
-    ./msg0
-    ./msg1
-    ./msg2
+./msg0
+./msg1
+./msg2
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 Code should be readable in any direction! This tool will help you rotate your
 code so you don't have to stare at it sideways or even upside down. Rotating
@@ -45,27 +51,34 @@ programs.
 
 The final message can be revealed using
 
-    ./msg9 < prog.c
+```sh
+./msg9 < prog.c
+```
 
 But what combinations will generate ./msg3, ./msg4, ./msg5, ./msg6, ./msg7,
 ./msg8 and finally ./msg9?
 
 ## Author's comments:
-# Tools usage
+
+### Tools usage
 
 Nuko is a text rotator: given some text in stdin, Nuko will write the
 same text to stdout, but rotated 90 degrees counterclockwise.
 
-    gcc prog.c -o left
-    ./left < input.txt > rotated_counterclockwise.txt
+```sh
+cc prog.c -o left
+./left < input.txt > rotated_counterclockwise.txt
+```
 
 Due to static memory allocation, only the first 1K columns by 1K rows
 are rotated, the rest are silently ignored.  But fear not, a separate
 tool with dynamic memory allocation is included:
 
-    ./left < prog.c > r1.c
-    gcc r1.c -o right
-    ./right < input.txt > rotated_clockwise.txt
+```sh
+./left < prog.c > r1.c
+cc r1.c -o right
+./right < input.txt > rotated_clockwise.txt
+```
 
 For variety, this second tool rotates clockwise instead of
 counterclockwise.  Also, it can handle files larger than 1024x1024,
@@ -76,22 +89,26 @@ rotate counterclockwise once more, we get another program.  This
 program outputs a single message to stdout, which is the name of the
 series that Nuko came from.
 
-    ./left < prog.c | ./left > r2.c
-    gcc r2.c -o msg0
-    ./msg0
+```sh
+./left < prog.c | ./left > r2.c
+cc r2.c -o msg0
+./msg0
+```
 
 There is one final rotation, which produces a tool that removes
 leading whitespaces:
 
-    ./left < prog.c | ./left | ./left > r3.c
-    gcc r3.c -o shift
-    ./shift < input.txt > no_leading_space.txt
+```sh
+./left < prog.c | ./left | ./left > r3.c
+cc r3.c -o shift
+./shift < input.txt > no_leading_space.txt
+```
 
 Where this might be useful, besides ruining the formatting of certain
 files, is that it completes the set of tools needed to solve the
 puzzle that is embedded in prog.c
 
-# Puzzle box
+### Puzzle box
 
 Notice how the edges of prog.c contain two notches.  By rotating
 prog.c and removing leading space, the code would be shifted one space
@@ -100,8 +117,10 @@ side).  This shifted code behaves slightly different from the original
 program.  For example, here are two more messages that can be
 produced:
 
-    ./shift < prog.c | ./right > msg1.c && gcc msg1.c -o msg1 && ./msg1
-    ./shift < prog.c | ./left > msg2.c && gcc msg2.c -o msg2 && ./msg2
+```sh
+./shift < prog.c | ./right > msg1.c && gcc msg1.c -o msg1 && ./msg1
+./shift < prog.c | ./left > msg2.c && gcc msg2.c -o msg2 && ./msg2
+```
 
 In total, there are 9 embedded strings that can be produced via a
 sequence of rotates and shifts, one of which can be used to extract
@@ -114,7 +133,7 @@ lazy, just read the Makefile).
 Source code for all the tools needed to solve this puzzle are embedded
 in prog.c, all you need is a C compiler.
 
-# Features
+### Features
 
    - Code compiles when rotated 4 ways.  This required a bit of
      patience to achieve.  Code still compiles even with one column of
@@ -129,7 +148,7 @@ in prog.c, all you need is a C compiler.
 
    - Process for writing prog.c is available in spoiler.html
 
-# Compatibility
+### Compatibility
 
 Nuko and the rotated tools accepts only ASCII files where each
 character maps to exactly one byte.  Also, end-of-line sequence is
@@ -152,11 +171,10 @@ Nuko has been verified to work with these compiler / OS combinations:
 Nuko compiles without warnings with all compilers above, even with
 "-Wall -Wextra -pedantic" for gcc and clang.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
