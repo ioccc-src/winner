@@ -1,5 +1,8 @@
+data
 data.c
+key
 key.c
 nyaruko
+output
 output.c
 regenerated.bin
