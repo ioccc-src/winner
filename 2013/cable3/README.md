@@ -16,11 +16,15 @@ make
 ```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile
-with modern systems. The problem is that `localtime()` is used differently and
-`time.h` being included there was a conflicting function type. This appeared to
-be a problem with macOS. The other problem is that this entry uses SDL functions
-that were removed from SDL2 so the Makefile has to use `sdl-config` and not
-`sdl2-config`. Thank you Cody for your assistance!
+with modern systems. The problems were that `localtime()` is used differently
+and `time.h` being included (with SDL2 in macOS - but see below) there was a
+conflicting function type. This appeared to be a problem with macOS and only
+when SDL2 was included (but which as noted next it cannot be). The other problem
+is that this entry uses SDL functions that were removed from SDL2 so the
+Makefile has to use `sdl-config` and not `sdl2-config`. Thus the removal of
+localtime probably does not have to be done after all. He left it there in case
+some implementation of SDL1 also has this problem. Thank you Cody for your
+assistance!
 
 
 ### Try:
