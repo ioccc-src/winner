@@ -1,8 +1,9 @@
 # Best use of weasel words
 
-    Cody Boone Ferguson <weasel@xexyl.net>  
-    <https://ioccc.xexyl.net/2018/weasel>  
-    Twitter: @xexyl  
+Cody Boone Ferguson <weasel@xexyl.net>   
+[https://ioccc.xexyl.net](https://ioccc.xexyl.net)  
+[https://xexyl.net](https://xexyl.net)  
+Mastodon: [@xexyl@fosstodon.org](https://fosstodon.org/@xexyl)      
 
 # To build:
 
@@ -252,18 +253,18 @@ I was quite proud that when the next contest came the judges removed that
 question. Later 2018 and all of 2019 was difficult for me so it was like I won a
 second time for the same entry.
 
-### On user errors
+### On <del>user</del> monkey errors
 
-If the generation reaches **`SIZE_MAX - 1`** I consider it a
-user (or monkey) error; if the user insists on being so petulant enough as to try such
-a ridiculous set of parameters in an attempt to make it be no more successful
-than a monkey typing *then it shouldn't be any more successful than a monkey; if
-it by chance reaches the target it's because a monkey could too!* Either way
-unless the number reaches **`SIZE_MAX - 1`** the monkey Eric won't be blamed. It
-should be noted that depending on the parameters (size of chromosome, number of
-offspring, the string itself) the program could take quite a lot of system
-resources; and whether the OS kills it, Eric the monkey falls asleep or the
-typewriter is taken from him the result could very well be not found without
+If the generation reaches **`SIZE_MAX - 1`** I consider it a monkey (or if you
+insist: user) error; if the user insists on being so petulant enough as to try
+such a ridiculous set of parameters in an attempt to make it be no more
+successful than a monkey typing *then it shouldn't be any more successful than a
+monkey; if it by chance reaches the target it's because a monkey could too!*
+Either way unless the number reaches **`SIZE_MAX - 1`** the monkey Eric won't be
+blamed. It should be noted that depending on the parameters (size of chromosome,
+number of offspring, the string itself) the program could take quite a lot of
+system resources; and whether the OS kills it, Eric the monkey falls asleep or
+the typewriter is taken from him the result could very well be not found without
 blaming him. Of course the judges were talking about fish not monkeys. But since
 this program is inspired by the Weasel program *which was inspired by the
 [Infinite Monkey Theorem][]* I opted instead to target the monkey Eric even if
@@ -907,13 +908,12 @@ result. Remember too that **`S`** cannot be less than **`38`**. Both **`S`** and
 
 Skip to [An aside on bugs](#bugs).
 
-The entry works for both C99 and C11 (it *requires at least C99 even if you
-translate digraphs*). The program doesn't require third-party libraries and
-should work on any Unix based system. It works on both 64-bit and 32-bit (but
-inevitably some data type sizes will be smaller and this I believe includes
-**`SIZE_MAX`**). I don't think Windows gcc ports would have many issues (if any)
-either but I have no way to test this. I have tested the following systems and
-configurations:
+This entry requires at least C99 even if you translate digraphs. The program
+doesn't require third-party libraries and should work on any Unix based system.
+It works on both 64-bit and 32-bit (but inevitably some data type sizes will be
+smaller and this I believe includes **`SIZE_MAX`**). I don't think Windows gcc
+ports would have many issues (if any) either but I have no way to test this.
+Originally I tested it on the below systems.
 
 #### Fedora 26:
 
@@ -993,7 +993,7 @@ Skip to [Final thoughts](#thoughts).
 
 I have included a RPM spec file for those with a Red Hat based Linux
 distribution; see [rpm.md][] for details (including why I implemented
-this) if for some (strange?) reason you're interested.
+this) if for some (strange or maybe even mad) reason you're interested.
 
 [rpm.md]: rpm.md
 
@@ -1177,13 +1177,14 @@ like to thank my mother for being the best mum anyone could ask for, who's
 always been here for me and whom I also inherit the keen analytical mind from. I
 love you all!
 
-I want to also thank Dave Burton for acknowledging me in his README.md file
-for as he put it 'being relentless with pursuit of bugs'. To think that it was
-circumstantial to my entry too makes it all the more unlikely but that doesn't
-take away the significance of it; for I am a very symbolic person and being
-acknowledged for this type of thing is great but to be acknowledged for it by
-someone who has won more than once is even more special to me: thank you Dave!
-It means a great deal to me and I am glad I could help! :)
+I want to also thank [Dave Burton](/winners#Dave_Burton) for acknowledging me in
+his [README.md]((../burton2/README.md) for his [2018/burton2](../burton2/prog.c)
+entry for as he put it 'being relentless with pursuit of bugs'. To think that it
+was circumstantial to my entry too makes it all the more unlikely but that
+doesn't take away the significance of it; for I am a very symbolic person and
+being acknowledged for this type of thing is great but to be acknowledged for it
+by someone who has won more than once is even more special to me: thank you
+Dave!  It means a great deal to me and I am glad I could help! :)
 
 I would also like to say to the judges about their commentary as well as the
 category title: they're all very dear to me and that includes not just the
@@ -1197,16 +1198,13 @@ wonderful contest requiring creativity, cleverness, uniqueness and
 inventiveness but to win beside all the other wonderful entries is truly
 special!
 
-Shortly after the entry has been published I will have more information on the
-winning entry at [https://ioccc.xexyl.net/2018/weasel][] including how to
-contact me (besides what's already published on the IOCCC website). There also
-is an [errata page][] so that in the case I find anything I would like to
-correct in the documentation or other supplementary files I can note them there.
+I have more information on the winning entry at
+[https://ioccc.xexyl.net/2018/weasel][] including how to contact me (besides
+what's already published on the IOCCC website). I have commentary on the other
+winning entries as well.
 
-If you wish to contact me please do so; although I have a Twitter account I don't
-really use it so please send me an email instead. I do have Facebook as of a
-little under two years but I'll worry about that at such a time (I presume in
-fact 'if') it becomes relevant.
+If you wish to contact me please do so. Please contact via mastodon. You can try
+email but I'm more likely to respond to mastodon messages.
 
 [https://ioccc.xexyl.net/2018/weasel]: https://ioccc.xexyl.net/2018/weasel
 [errata page]: https://ioccc.xexyl.net/2018/weasel/errata
