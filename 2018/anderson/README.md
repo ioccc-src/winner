@@ -1,50 +1,61 @@
 # Most able to divine code gaps
 
-Derek Anderson  
+    Derek Anderson  
+`
+# To build:
 
-## To build:
+```sh
+make
+```
 
-        make all
+### To run:
 
-### To run
-
-    ./prog < textfile
+```sh
+./prog < textfile
+```
 
 ### Try:
 
-    ./prog < prog.c
-    ./prog < prog.alt.c
-    ./prog < README.md
+```sh
+./prog < prog.c
+./prog < prog.alt.c
+./prog < README.md
+```
 
-### Alternate code
+### Alternate code:
 
-An alternate version of this entry, prog.alt.c, is provided.
-Compare `prog.c` and `prog.alt.c` and find out why we had to modify the entry, and what confused the author
-(see the author's remarks). No, it was not the shape of the Roman V that we, or the compiler, didn't like.
+An alternate version of this entry, `prog.alt.c`, is provided.
 
-### Alternate code
+Compare `prog.c` and `prog.alt.c` and find out why we had to modify
+the entry, and what confused the author (see the author's remarks).
+No, it was not the shape of the Roman V that we, or the compiler,
+didn't like.
 
 To compile this alternate version:
 
-    make alt
+```sh
+make alt
+```
 
 Use `prog.alt` as you would `prog` above.
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 With this entry, you won't need to turn your monitor [upside down](http://en.wikipedia.org/wiki/River_%28typography%29)!
 
 ## Author's comments:
 
-## Compiling the program
+### Compiling the program
 
-    gcc -Wall -Wextra -Wpedantic -O3 -std=c11 prog.c -o prog
+```sh
+cc -Wall -Wextra -Wpedantic -O3 -std=c11 prog.c -o prog
+```
 
 Also works with a standard of c99, but c90/c89 will not compile due to
 for loop initial declarations, along with additional warnings about
 variable length arrays and lack of a return statement.
 
-## Additional info
+### Additional info
 
 This small program, when given text on stdin, will produce a pattern of
 squiggly lines. This pattern is deterministic, and it shouldn't be too
@@ -75,11 +86,10 @@ variable assignment, such as `j=k`. There is some filler fluff, such as
 added for the purpose of making certain things line up right, and only
 secondarily to obfuscate.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
