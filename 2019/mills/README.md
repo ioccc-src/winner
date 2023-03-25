@@ -1,35 +1,38 @@
 # Most in need to be tweeted
 
-Christopher Mills  
-Twitter: @MisterXopher  
+    Christopher Mills  
+    Twitter: @MisterXopher  
 
+# To build:
 
-## Judges' comments:
-### To use:
+```sh
+make
+```
 
-    make
+### To run:
 
-    make cpclean
-    # Let this run for about about an hour and then kill it:
-    ./prog Shakespeare.txt
-    ./prog < $(< ls -1tr cp* | tail -1) | head -100
+```sh
+make cpclean
+# Let this run for about about an hour and then kill it:
+./prog Shakespeare.txt
+./prog < $(< ls -1tr cp* | tail -1) | head -100
+```
 
 ### Try:
 
-    # If you are on a 64-bit system:
+```sh
+make test-64bit
 
-    make test-64bit
+less IOCCC-Rules-Guidelines.output.txt
 
-    less IOCCC-Rules-Guidelines.output.txt
+less IOCCC-hints.output.txt
 
-    less IOCCC-hints.output.txt
+less Eugene_Onegin.output.txt
+```
 
-    less Eugene_Onegin.output.txt
+ However, as the binary model files used to produce the output are in an implementation-specific format, your mileage may vary.
 
-    # However, as the binary model files used to produce the output are in an implementation-specific format,
-    # your mileage may vary.
-
-### Selected Judges Remarks:
+## Judges' comments:
 
 Can a machine learn?
 
@@ -43,11 +46,9 @@ Can it write rules and guidelines for the IOCCC?
 
 You decide. :-)
 
-
 ## Author's comments:
 
-Welcome to OMLET! &#x1f373;
-=================
+### Welcome to OMLET! &#x1f373;
 
 OMLET is the _Obfuscated Machine Learning Environment Toolkit_, a
 micro-framework for experimenting with [recurrent neural networks][1].  OMLET
@@ -79,9 +80,7 @@ training, but you can have even more fun by downloading some larger datasets:
   + [_War and Peace_][31]
   + [Donald Trump's 2016 campaign speeches][32]
 
-
-Getting started with OMLET
---------------------------
+### Getting started with OMLET
 
 OMLET has three operating modes:
 
@@ -92,15 +91,24 @@ OMLET has three operating modes:
 For your first OMLET experiment, we will try training a simple single-level
 RNN to write some [Shakespere][5] plays.  Start by typing
 
-    make
+```sh
+make
+```
 
 After it builds, train it using
 
-    ./prog shakespere.txt
+```sh
+./prog shakespere.txt
+```
 
 This will immediately start outputting gibberish to the output, e.g.
 
-    ./prog shakespere.txt
+```sh
+./prog shakespere.txt
+```
+
+produces:
+
      sins ohennAu
     T-teooclelp tiThoWy
     
@@ -240,7 +248,9 @@ doing `Control-C`.
 You can continue training from a previous checkpoint by providing the
 checkpoint file name as the second parameter, for example:
 
-    ./prog shakespere.txt cp01_1.970
+```sh
+./prog shakespere.txt cp01_1.970
+```
 
 After the validation cycle finishes, OMLET begins the next epoch by restarting
 training at the beginning of the training set.  Training continues forever,
@@ -254,7 +264,9 @@ parameters to generate data.  Inference mode takes the checkpoint file as
 *standard input* (not on the command line) and hence must be run with a
 command like
 
-    ./prog < cp55_1.807
+```sh
+./prog < cp55_1.807
+```
 
 Running it produces an infinite amount of generated output, until you hit
 `Control-C` to stop it.
@@ -264,15 +276,16 @@ will want to delete all the checkpoint files because the format depends on
 both the network and the input -- using the wrong checkpoint is likely to
 cause a crash.
 
-Experimenting with different networks
--------------------------------------
+### Experimenting with different networks
 
 The default network for OMLET (the one you get if you type `make` with the
 executable name `prog`) is the simplest recurrent neural network.  It looks
 like
 
-    h = tanh(Wxh * x + Whh * h' + Bh)
-    y = Why * h + By
+```c
+h = tanh(Wxh * x + Whh * h' + Bh)
+y = Why * h + By
+```
 
 where
 
@@ -292,20 +305,31 @@ It is the presence of the hidden state vector that allows the RNN to
 "remember" the past.  We can see what would happen if we removed this hidden
 state.  If you type
 
-    make lin1
+```sh
+make lin1
+```
 
 OMLET will create an [ADALINE][10] network that does
 
-    y = Wxy * x + By
+```c
+y = Wxy * x + By
+```
 
 This simple [linear][11] [feed-forward network][12].  You can run it with
 
-    ./lin1 shakespeare.txt
+```sh
+./lin1 shakespeare.txt
+```
 
 The linear network won't be able to get past the gibberish stage, because it
 lacks history:
 
-    ./lin1 shakespeare.txt
+```sh
+./lin1 shakespeare.txt
+```
+
+produces:
+
     UERond w,
     
     
@@ -343,15 +367,16 @@ above.  Alas, even adding a nonlinearity to the feed-forward network
 still lack the history provided by the hidden state vector (although if you
 want to try it yourself, you can do so with `make per1`).
 
-Going deeper
-------------
+### Going deeper
 
 We can try to improve the RNN's performance by stacking RNN modules atop each
 other:
 
-    h1 = RNN(h1', x)
-    h2 = RNN(h2', h1)
-    y = Why * h2 + By
+```c
+h1 = RNN(h1', x)
+h2 = RNN(h2', h1)
+y = Why * h2 + By
+```
 
 with `RNN(h, x)` defined as above.  Each RNN module has its own set of
 parameters and its own hidden state vector.  This will improve the network's
@@ -369,11 +394,15 @@ performance, at the cost of a much larger parameter space
 
 You can try the deeper network by doing
 
-    make rnn2
+```sh
+make rnn2
+```
 
 (or even `make rnn3` if you want a three-layer RNN) and train it with
 
-    ./rnn2 shakespeare.txt
+```sh
+./rnn2 shakespeare.txt
+```
 
 The additional depth should allow the network to make better predictions (it
 can represent more complicated history), but it may take a long time to train
@@ -381,8 +410,7 @@ can represent more complicated history), but it may take a long time to train
 because of the [vanishing and exploding gradient problem][17], which might
 keep it from ever reaching its potential.
 
-LSTMs and GRUs
---------------
+### LSTMs and GRUs
 
 RNNs are particularly hard to train because the they are trained using
 [bankpropagation through time][18].  The RNN is trained by effectively
@@ -395,11 +423,15 @@ gradient, worsening the exploding and vanishing gradient problem.
 solve this problem.  Christopher Olah gives a good description of them
 at his [blog posting][20].  You can build a two-level LSTM by doing
 
-    make lstm2
+```sh
+make lstm2
+```
 
 and train with it with
 
-    ./lstm2 shakespeare.txt
+```sh
+./lstm2 shakespeare.txt
+```
 
 The LSTM is much easier to train because it explicitly decides how to update
 its hidden state via "gates".  These gates are called
@@ -411,11 +443,13 @@ its hidden state via "gates".  These gates are called
 
 The basic LSTM equations are
 
-    f = sigmoid(Wxf * x + Whf * h' + Bf)
-    i = sigmoid(Wxi * x + Whi * h' + Bi)
-    o = sigmoid(Wxo * x + Who * h' + Bo)
-    c = f * c' + i * tanh(Wxc * x + Whc * h' + Bc)
-    h = o * tanh(c)
+```c
+f = sigmoid(Wxf * x + Whf * h' + Bf)
+i = sigmoid(Wxi * x + Whi * h' + Bi)
+o = sigmoid(Wxo * x + Who * h' + Bo)
+c = f * c' + i * tanh(Wxc * x + Whc * h' + Bc)
+h = o * tanh(c)
+```
 
 Where
 
@@ -441,10 +475,11 @@ simplified versions of an LSTM which combine the gates together, meaning they
 require fewer learned parameters.  This allows them to train faster than a
 generic LSTM.  You can build a two-layer GRU with
 
-    make gru2
+```sh
+make gru2
+```
 
-Building your own networks
---------------------------
+### Building your own networks
 
 The OMLET `Makefile` comes with one-, two- and three-layer RNNs, LSTMs and
 GRUs, along with simpler feed-forward networks like multi-layer perceptrons and
@@ -454,9 +489,11 @@ compiler's command-line by using `-D` directives.  The network is defined by
 a `-DNW='...'` command which consists of a series of comma-separated
 assignments.  For example, the simple one-layer RNN could be defined like
 
-    -DNW=` x  = I(n), hp = I(128),                  \
-           h  = C(hp, T(A(L(128, x), L(128, hp)))), \
-           y  = L(n, h)'
+```make
+-DNW=` x  = I(n), hp = I(128),                  \
+       h  = C(hp, T(A(L(128, x), L(128, hp)))), \
+       y  = L(n, h)'
+```
 
 The network declares `x` as an input vector (there must be a declaration for
 `x`).  It is declared as `I(n)`, which is an input vector of size `n`, which
@@ -497,16 +534,18 @@ training mode, this is used to generate the loss which is backpropagated.
 As an example of a more complicated network, we can look at a two-layer
 GRU network:
 
-    -DHS=128,                                 \
-    -DNW=' x  = I(n),                         \
-           y  = L(n, MD(MD(x)))'              \
-    -DBK=' hp = I(HS),                        \
-           z  = S(A(L(HS, x), L(HS, hp))),    \
-           r  = S(A(L(HS, x), L(HS, hp))),    \
-           c  = T(A(L(HS, x), L(HS, hp))),    \
-           zc = OG(1, -1, z),                 \
-           h  = C(hp, A(M(zc, hp), M(z, c))), \
-           y  = h'
+```make
+-DHS=128,                                 \
+-DNW=' x  = I(n),                         \
+       y  = L(n, MD(MD(x)))'              \
+-DBK=' hp = I(HS),                        \
+       z  = S(A(L(HS, x), L(HS, hp))),    \
+       r  = S(A(L(HS, x), L(HS, hp))),    \
+       c  = T(A(L(HS, x), L(HS, hp))),    \
+       zc = OG(1, -1, z),                 \
+       h  = C(hp, A(M(zc, hp), M(z, c))), \
+       y  = h'
+```
 
 We are using a few new tricks here -- first, we are defining `HS` as the size
 of the hidden and cell vectors.  There's nothing special about this name, its
@@ -544,8 +583,7 @@ Note: even if you don't use `MD` in your network, you should still define
 `BK` by adding `-DBK='y=x'` to the command line, otherwise you will get a
 compile-time error.
 
-Hyperparameters
----------------
+### Hyperparameters
 
 OMLET has a large number of training and inference parameters which can be
 changed by the user.  All of these are set by `-D` on the compile command line.
@@ -586,7 +624,6 @@ The list of hyperparameters follows:
     wish to add a subdirectory to the name to keep checkpoint files out of
     the current directory.
 
-
   [1]: https://en.wikipedia.org/wiki/Recurrent_neural_network
   [2]: https://en.wikipedia.org/wiki/Deep_learning
   [3]: https://www.tensorflow.org
@@ -625,12 +662,10 @@ The list of hyperparameters follows:
  [43]: https://www.fast.ai/2018/07/02/adam-weight-decay/
  [44]: http://karpathy.github.io/2015/05/21/rnn-effectiveness/
 
+## Copyright:
 
---------------------------------------------------------------------------------
-<!--
 (c) Copyright 1984-2019, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
