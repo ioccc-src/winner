@@ -9,13 +9,13 @@
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 echo Some text | ./prog
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo Hello, world | ./prog
@@ -29,9 +29,11 @@ DRAFT=1 ./prog < prog.c
 ./prog < prog.c
 ```
 
-### Alternate code
+## Alternate code
 
-An alternate version of this entry, prog.alt.c, is provided.  This alternate code is discussed below in the "prog.c vs prog.alt.c" section of the Author's comments below.
+An alternate version of this entry, prog.alt.c, is provided.  This alternate
+code is discussed below in the "prog.c vs prog.alt.c" section of the Author's
+comments below.
 
 To compile this alternate version:
 
@@ -64,11 +66,11 @@ wondering if it was not the reason for its very erratic behaviour.
 
 The file `prog.alt.c` is the one I submitted.
 
-Gil Dogon noted a few unsafe statements (statements whose behaviour is
-undefined in the C standard and, as such, could cause issues with other
-compilers or optimization levels). These have been fixed in `prog.c`.
-After this fix, in order to remain rule-2-compliant, a variable name has
-also been shortened in this file.
+[Gil Dogon](/winners.html#Gil_Dogon) noted a few unsafe statements (statements
+whose behaviour is undefined in the C standard and, as such, could cause issues
+with other compilers or optimization levels). These have been fixed in `prog.c`.
+After this fix, in order to remain rule-2-compliant, a variable name has also
+been shortened in this file.
 
 ### How to build
 
@@ -84,61 +86,70 @@ Otherwise (gcc):
 
 ### How to use it
 
-You need a terminal configured to handle an *UTF-8* encoding and a
-font including *braille patterns*.
+You need a terminal configured to handle a *UTF-8* encoding and a font including
+*braille patterns*.
+
 This is the default on most modern GNU/Linux operating systems.
-The default terminal application (gnome-terminal) or even a simple
-xterm should render things properly.
-I tested this on several Debian and Ubuntu systems, 32 and 64bits (no configuration was needed).
-I also tested it on FreeBSD 9.3 32bits (font and encoding configuration
-was needed in this case). 
 
-Basic mode:
+The default terminal application (gnome-terminal) or even a simple xterm should
+render things properly.
 
-    $ echo 'I am testing this thing.' | ./prog
-    [... rendering ...]
+I tested this on several Debian and Ubuntu systems, 32 and 64bits (no
+configuration was needed).
 
-    $ ./prog < lorem-ipsum.txt
-    [... rendering ...]
+I also tested it on FreeBSD 9.3 32bits (font and encoding configuration was
+needed in this case).
 
-Interactive mode:
+#### Basic mode:
 
-    $ ./prog
-    > hello world!!!
-    [... rendering ...]
-    >
+```sh
+$ echo 'I am testing this thing.' | ./prog
+[... rendering ...]
 
-### Obfuscation
+$ ./prog < lorem-ipsum.txt
+[... rendering ...]
+```
+
+#### Interactive mode:
+
+```sh
+$ ./prog
+> hello world!!!
+[... rendering ...]
+>
+```
+
+### Obfuscation:
 
 This entry is obfuscated in various ways:
 
-*   The structure is hidden by avoiding loops, 'if' statements, ternary
-    conditionals, and jump-related instructions. Instead, recursivity is
-    heavily used.
+*   The structure is hidden by avoiding loops, `if` statements, ternary
+conditionals, and jump-related instructions. Instead, recursivity is heavily
+used.
 *   Merging all functions into one added even more recursivity. ;)
 *   The provided code does not contain the same number of opening and closing
-    parenthesis.
+parenthesis.
 *   Preprocessing the code inflates it and adds lots of indents. Removing some
-    of the tricks involved without breaking the program will be challenging.
+of the tricks involved without breaking the program will be challenging.
 *   The program 'plays' with standard input & output streams, which causes
-    unusual side effects.
-*   Some variables are re-used for unrelated processings.
-*   Crucial data may be hidden in unexpected places (e.g. as the size of
-    a temporary buffer).
+unusual side effects.
+*   Some variables are re-used for unrelated processes.
+*   Crucial data may be hidden in unexpected places (e.g. as the size of a
+temporary buffer).
 *   Some parts of the code may have no effect (but may have an effect in a
-    specific context, who knows?), and classical libc functions may not act
-    as usual.
+specific context, who knows?), and classical libc functions may not act as
+usual.
 *   And of course variable names are hard to read (or distracting).
 
 On the other hand, the following may help:
 
 *   The code layout should help to identify which part of the code is
-    obfuscated. ;)
-*   File 'codes.txt' shows how each character is drawn. This data is
-    encoded in macro O_o at the top of the source file. 
+obfuscated. ;)
+*   File 'codes.txt' shows how each character is drawn. This data is encoded in
+macro `O_o` at the top of the source file.
 
 
-### Limitations
+### Limitations:
 
 #### Charset
 
@@ -147,54 +158,59 @@ chars:
 
     a-z, A-Z, '.' ':' ',' ';' '!' and '?'.
 
-Uppercase and lowercase chars are rendered the same.
-The program also understand the space and the linefeed (\n).
-Other chars are simply ignored (most of the time ;)
+Uppercase and lowercase chars are rendered the same. The program also understand
+the space and the linefeed (\n).  Other chars are simply ignored (most of the
+time ;)
 
 #### Stack size
 
-This limitation is due to the heavy use of recursivity. After having processed
-a large number of characters, the process may exceed the stack size and crash.
+This limitation is due to the heavy use of recursivity. After having processed a
+large number of characters, the process may exceed the stack size and crash.
 (However I did not experience this myself. The top-level recursion might be
 removed by the compiler as part of its optimizations.)
 
 #### Line rendering
 
-The program does its best to avoid cutting words at the end of lines, but
-it could still happen in case of long words.
+The program does its best to avoid cutting words at the end of lines, but it
+could still happen in case of long words.
 
 ### Subtleties and extra features
 
 #### Handling more than text docs?
 
-Given the limited set of characters handled, the program is mostly limited
-to simple text documents. 
+Given the limited set of characters handled, the program is mostly limited to
+simple text documents.
+
 Thus, if you try for example:
 
-    $ ./prog < prog.c 
+```sh
+$ ./prog < prog.c 
+```
 
-You will not get something that looks like C code. (but you can still try,
-if you are curious. :)
+You will not get something that looks like C code. (but you can still try, if
+you are curious. :)
 
 #### A 'draft' mode
 
 Defining an environment variable called DRAFT will enable the 'draft-mode'.
 Try for example:
 
-    $ echo 'testing the draft mode' | DRAFT=1 ./prog
+```sh
+$ echo 'testing the draft mode' | DRAFT=1 ./prog
+```
 
 The program will run much faster but the rendering will be less precise.
 
 #### The subtle interactive mode
 
-I saved the best for last: usually, programs that handle an "interactive
-mode" have to check whether their standard input is a terminal or not (by
-using isatty()). Did you notice that this program does not perform any such
+I saved the best for last: usually, programs that handle an "interactive mode"
+have to check whether their standard input is a terminal or not (by using
+`isatty()`). Did you notice that this program does not perform any such
 detection, but still behaves (or seems to behave) appropriately?
 
 ## Copyright:
 
-(c) Copyright 1984-2016, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+(c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html

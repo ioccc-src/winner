@@ -32,10 +32,10 @@ time ./prog test2.Z | cmp - test2
 
 ## Judges' comments:
 
-Without ASCII art, the source code of this entry would have been exactly 256 bytes.
-Compared to [1990/jaw](http://ioccc.org/years.html#1990_jaw), it is very impressive,
-even taking into account the missing atob functionality. Now we wish for a compress(1)-like compressor
-using a similar idea.
+Without ASCII art, the source code of this entry would have been exactly 256
+bytes.  Compared to [1990/jaw](http://ioccc.org/years.html#1990_jaw), it is very
+impressive, even taking into account the missing atob functionality. Now we wish
+for a compress(1)-like compressor using a similar idea.
 
 Why is the sad smiley on line 12 in that particular place?
 
@@ -43,7 +43,7 @@ Why is the sad smiley on line 12 in that particular place?
 
 ### The Program
 
-This program is in implementation of the unix `zcat(1)` command for printing
+This program is an implementation of the unix `zcat(1)` command for printing
 compressed files that have been created by the `compress(1)` command.
 
 The adaptive [LZW](https://en.wikipedia.org/wiki/Lempel–Ziv–Welch) compression
@@ -122,14 +122,14 @@ In the event that you don't supply an argument, or that argument doesn't name
 a readable file, the program will just silently exit.  This is a feature.
 
 The program depends on having a little-endian system.  On a big-endian system
-you will get a wierd big-endian version of `compress`, which might have come to
+you will get a weird big-endian version of `compress`, which might have come to
 pass in an alternate universe where the vax on which `compress` was authored
 had been big-endian.  Luckily for us, it wasn't, and neither are most of the
 systems you might want to compile this for.
 
 ## Copyright:
 
-(c) Copyright 1984-2016, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+(c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html

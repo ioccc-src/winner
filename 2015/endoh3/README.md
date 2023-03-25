@@ -26,31 +26,36 @@ make -B BACK_TO=ioccc.c
 
 ## Judges' comments:
 
-Like Marty and Doc, something nostalgic from 1984 appears live in October of 2015! 
+Like Marty and Doc, something nostalgic from 1984 appears live in October of
+2015!
+
 The author of this gem is a true Delorean!
 
-A question for inquisitive readers: is the implemented subset of PDP-11 instructions Turing-complete?
-(For a clue, see the end of the author's remarks.)
-If in doubt, use [APOUT](http://www.tuhs.org/Archive/PDP-11/Emulators/Apout/).
+A question for inquisitive readers: is the implemented subset of PDP-11
+instructions Turing-complete? (For a clue, see the end of the author's remarks.)
+If in doubt, use [APOUT](https://github.com/DoctorWkt/Apout).
 
 ## Author's comments:
 
 ### Hint / Compatibility
 
 * A little-endian system is required due to an external factor.
-* Strictly speaking, this program does not comply with any C specification for the same reason.  But I believe it is reasonably portable.
+* Strictly speaking, this program does not comply with any C specification for
+the same reason.  But I believe it is reasonably portable.
 * It uses a GCC extension but works on clang.
-* This is a kind of emulator.  You may find its architecture name if you look at the source code from all angles.
+* This is a kind of emulator.  You may find its architecture name if you look at
+the source code from all angles..
 * Find main() function.
 
 ### Spoiler
 
-This program is a joke PDP-11 emulator.  ("ll-dpd" is embedded in the code.  Read it upside down.)
+This program is a joke PDP-11 emulator.  ("ll-dpd" is embedded in the code.
+Read it upside down.)
 
 You got it?  This program is supposed to be used in this way:
 
 ```sh
-wget http://ioccc.org/1984/mullender.c
+wget https://www.ioccc.org/1984/mullender.c
 clang -o prog prog.c mullender.c
 ./prog
 ```
@@ -59,9 +64,12 @@ You can enjoy the legendary winner of the first IOCCC, again.
 
 ### Internal
 
-This program uses `__attribute__((constructor))`, which is a GCC extension, to hijack the main function call.  And then it interprets main as an instruction sequence.
+This program uses `__attribute__((constructor))`, which is a GCC extension, to
+hijack the main function call.  And then it interprets main as an instruction
+sequence.
 
-It supports the minimal subset of instructions and addressing modes which are needed for mullender.c to work:
+It supports the minimal subset of instructions and addressing modes which are
+needed for mullender.c to work:
 
 * Instructions
   * BR: branch
@@ -80,7 +88,10 @@ It supports the minimal subset of instructions and addressing modes which are ne
 
 ### Limitation
 
-Non-trivial combination of instruction and addressing mode may cause undefined behavior (unsequenced modification), such as attempting to autoincrement a destination register.  Index addressing mode works well only for R7 (PC register).
+Non-trivial combination of instruction and addressing mode may cause undefined
+behavior (unsequenced modification), such as attempting to autoincrement a
+destination register.  Index addressing mode works well only for R7 (PC
+register).
 
 
 ### One more thing
@@ -203,7 +214,7 @@ Note: the program writes a binary to stdout.
 
 ## Copyright:
 
-(c) Copyright 1984-2016, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
+(c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
