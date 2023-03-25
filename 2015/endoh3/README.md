@@ -1,24 +1,30 @@
 # Back to the Future Award
 
-Yusuke Endoh  
-<https://github.com/mame/>  
-Twitter: @mametter  
+    Yusuke Endoh  
+    <https://github.com/mame/>  
+    Twitter: @mametter  
 
+# To build:
 
-## Judges' comments:
-### To use:
+```sh
+make
+```
 
-    make 
-    
-    ./prog
+### To run:
+
+```sh
+./prog
+```
 
 ### Try:
 
-    make -B BACK_TO=ioccc.c
-    
-    ./prog
+```sh
+make -B BACK_TO=ioccc.c
 
-### Selected Judges Remarks:
+./prog
+```
+
+## Judges' comments:
 
 Like Marty and Doc, something nostalgic from 1984 appears live in October of 2015! 
 The author of this gem is a true Delorean!
@@ -28,6 +34,7 @@ A question for inquisitive readers: is the implemented subset of PDP-11 instruct
 If in doubt, use [APOUT](http://www.tuhs.org/Archive/PDP-11/Emulators/Apout/).
 
 ## Author's comments:
+
 ### Hint / Compatibility
 
 * A little-endian system is required due to an external factor.
@@ -35,7 +42,6 @@ If in doubt, use [APOUT](http://www.tuhs.org/Archive/PDP-11/Emulators/Apout/).
 * It uses a GCC extension but works on clang.
 * This is a kind of emulator.  You may find its architecture name if you look at the source code from all angles.
 * Find main() function.
-
 
 ### Spoiler
 
@@ -195,11 +201,10 @@ Note: the program writes a binary to stdout.
     -16401,-23136,-28110,11874,-18945,1879,2,0,-32256,-20996,-18169,29220,12,0,0,0,
     335,-27277,-30776,20480,0};
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2016, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
