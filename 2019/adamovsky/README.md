@@ -1,23 +1,30 @@
 # Most functional interpreter
 
-Ondřej Adamovský <oa@cmail.cz>  
+    Ondřej Adamovský <oa@cmail.cz>  
 
+# To build:
 
-## Judges' comments:
-### To use:
+```sh
+make
+```
 
-    make prog
-    ./prog file.unl
+### To run:
+
+```sh
+./prog file.unl
+```
 
 ### Try:
 
-    ./prog spam.unl
+```sh
+./prog spam.unl
 
-    ./prog sierpinski.unl | less
+./prog sierpinski.unl | less
 
-    ./prog advent.unl
+./prog advent.unl
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 Even after pre-processing and indenting, the C code of this entry
 is about as understandable as the Unlambda code.
@@ -26,20 +33,23 @@ Pretending that we don't know a bit of functional programming :) and lacking a b
 to understand the entry but to fuzz it,
 we stumbled on a string of bytes which crashed it:
 
-    ````.0`.0`.0`c.0``sssss
+```
+````.0`.0`.0`c.0``sssss
+```
 
 Functional programming is not a panacea against core dumps, after all.
 
 ## Author's comments:
+
 **&#187;A highly structured state state machine&#171;**
 
-### Purpose ###
+### Purpose
 
 The purpose of this program is to allow you to play Colossal Cave Adventure as
 implemented by [Kunihiko Sakamoto][1]. As that was written in [Unlambda programming
 language][2] designed by David Alexander Madore it has to be an Unlambda interpreter.
 
-### Aesthetics ###
+### Aesthetics
 
 The program grew a bit too long so I had to use several macros to downsize it.
 That unfortunately reduced my options for program layout. I decided to separate
@@ -55,16 +65,20 @@ It might be a surprise for you that according to the IOCCC size tool the program
 actually a *oneliner*. It certainly was for me. I like to think the tool is overwhelmed
 by the sheer length of the dividing line and totally overlooks the rest of the program.
 
-### Usage ###
+### Usage
 
 When built directly
 
-    make
+```sh
+make
+```
 
 the program (*prog*) accepts a single parameter with the name of an Unlambda program. You can
 download the [Colossal Cave Adventure][1] (the *advent.unl* file) and run it like this
 
-    ./prog advent.unl
+```sh
+./prog advent.unl
+```
 
 You can also try other programs from the Web. Many example programs are in the official
 [Unlambda distribution][3] on the Unlambda homepage. The most complex programs there are
@@ -73,7 +87,9 @@ entries from [quine contest][4].
 There is an alternative build path that requires IOCCC size tool to complete. Put the tool
 source *iocccsize.c* in the project directory and call
 
-    make identify
+```sh
+make identify
+```
 
 It will build the tool and use it to build an alternative program *prog2*, which in turn will
 produce an Unlambda program *identify.unl*. `make identify` runs this program to identify
@@ -92,7 +108,7 @@ when the execution reaches them).
 The Unlambda source file may contain several Unlambda programs. The interpreter will run
 them all in sequence.
 
-### Unlambda ###
+### Unlambda
 
 If you want to familiarise yourself with the language, visit its [Wikipedia page][5] for
 a brief introduction or its [homepage][2] for an indepth discussion. For further reading you
@@ -101,7 +117,7 @@ can visit Wikipedia pages on [Lambda Calculus][6] and [Combinatory Logic][7].
 You can also play with an [online interpreter][8] by Github user inazz. There you can
 debug one of example programs provided or try your wits in writing your own.
 
-### Hints ###
+### Hints
 
 Here are some pointers where to start when trying to understand the interpreter:
 
@@ -112,7 +128,7 @@ Here are some pointers where to start when trying to understand the interpreter:
 -	Can fD0 function be called?
 -	Are the function names familiar? (warning: some are misleading)
 
-### Obfuscation sources ###
+### Obfuscation sources
 
 -	The elephant in the room is the Unlambda language. As we all know, functional
 	programming defies sanity. Furthermore, Unlambda was specifically designed
@@ -125,7 +141,7 @@ Here are some pointers where to start when trying to understand the interpreter:
 
 More on this in the Spoilers section.
 
-### Build notes ###
+### Build notes
 
 The program does not require any special treatment by compilers. Some warnings
 had to be suppressed when compiling with `-Wall -Wextra -pedantic`. Those were
@@ -134,7 +150,7 @@ technique. Compilation with `-Weverything` produced many more warnings, but thos
 are only relevant for multi-source-file projects and some are really questionable
 (e.g. `-Wdisabled-macro-expansion`).
 
-### Portability ###
+### Portability
 
 Development was done on Debian 9 on x86-64 architecture using mainly Clang 3.8.1-24
 and GCC 6.3.0. The source is C11 compliant and does not use any special properties
@@ -155,7 +171,7 @@ except the following:
 	for later printing. This might produce some warnings, but since it was developed
 	using chars it should be always used safely.
 
-### Spoilers ###
+### Spoilers
 
 -	You can examine the *progSpoiler.c* file. It is the original final version of
 	the interpreter, before I started the downsizing. It accepts one more optional
@@ -208,12 +224,12 @@ except the following:
 	functions were shuffled both for S functions and Apply functions in the same way
 	to hide the meaning of *f* and *r* prefixes.
 
-### Identification spoiler ###
+### Identification spoiler
 
 The alternative build path `make identify` output commemorates a [previous IOCCC winner][9] which uses
 similar methods to mess with the size tool.
 
-### Judges remarks spoilers ###
+### Judges remarks spoilers
 
 It is not a bug, it is a feature. :)
 
@@ -244,11 +260,10 @@ never be complete and able to be applied.
 [8]: https://inazz.jp/unlambda/                              "Online Unlambda interpreter"
 [9]: http://ioccc.org/2014/birken/hint.html                  "Best use of port 1701"
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2019, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
