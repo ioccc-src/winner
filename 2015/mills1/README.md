@@ -1,27 +1,37 @@
 # "For the Birds!" Award
 
-Chris Mills  
-Twitter: @MisterXopher  
+    Chris Mills  
+    Twitter: @MisterXopher  
 
+# To build:
 
-## Judges' comments:
-### To use:
+```sh
+make
+```
 
-    make
-    
-    ./prog
+### To run:
+
+```sh
+./prog
+```
 
 ### Try:
 
-    Pressing the up arrow and the down arrow at the right time.
+```sh
+./prog
+```
 
-### Selected Judges Remarks:
+Pressing the up arrow and the down arrow at the right time.
+
+## Judges' comments:
 
 Did you find that mobile application game a bit frustrating?
 Well you can adjust the makefile parameters to make life a
 bit easier for you:
 
-    make clobber all DW=199999 DW=22 DH=16 DA=50 DI=-150
+```sh
+make clobber all DW=199999 DW=22 DH=16 DA=50 DI=-150
+```
 
 From the makefile:
 
@@ -65,8 +75,7 @@ Enjoy!
 
 ## Author's comments:
 
-The Program
-===========
+### The Program
 
 Better late than never to jump on the bandwagon of 2014's most successful
 mobile game.  The game is called Tappy Bird, and has all the sophisticated
@@ -82,16 +91,14 @@ You can even make the game more challenging -- resize the terminal window to
 make the world taller or shorter.  You'll never be able to get through the
 pipes when they are four times as tall!
 
-Instructions
-------------
+### Instructions
 
 The instructions are printed at the start of the game:  Tap to Flap!
 
 Hit any key to make your bird fly.  Navigate her between the gaps in the pipes.
 Your score is shown in the upper left, along with your current high-score.
 
-Customization options
----------------------
+### Customization options
 
 To customize the gameplay, change any of the following options on the compile
 command line:
@@ -121,11 +128,15 @@ to make some changes to the `Makefile` to get emoji to work on your system.
 To help you get started, I've included some example substitutions for emoji
 sprites and instruction text; for example, type
 
-    make EMOJI=beer LANGUAGE=spanish
+```sh
+make EMOJI=beer LANGUAGE=spanish
+```
 
 or
 
-    make EMOJI=globe
+```sh
+make EMOJI=globe
+```
 
 for some examples (the full list of options is in the `Makefile`).  Don't
 forget to `make clean` first.  If the output doesn't look right, you may need
@@ -137,20 +148,16 @@ You will also need a UTF-8 compatible terminal and an emoji font installed,
 and you will need to have your `LANG` environment variable set to use UTF-8.
 Again, if this is too complicated, maybe just go and get that Mac.
 
-Future additions
-----------------
+### Future additions
 
 Future versions of the game will include monitization via the freemium model
 with micropayments for customization options, play-to-win and of course
 live-streamed targeted video advertising.
 
+## Copyright:
 
-
---------------------------------------------------------------------------------
-<!--
 (c) Copyright 1984-2016, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
