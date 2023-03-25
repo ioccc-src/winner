@@ -1,29 +1,37 @@
 # Most likely to top the charts
 
-Qiming HOU  
+    Qiming HOU  
 
-## To build:
+# To build:
 
-        make all
+```sh
+make
+```
 
-### To run
+### To run:
 
-    ./prog < input.json > output.html
+```sh
+./prog < input.json > output.html
+```
 
-    View `output.html` in a browser.
+View `output.html` in a browser.
 
 ### Try:
 
-    grep -e '[-?+*/^&|.<>=]' prog.c
+```sh
+grep -e '[-?+*/^&|.<>=]' prog.c
 
-    (cd ..; ls -lS */prog.c) | \
-    awk 'BEGIN { print "["; } { print "{\"winner\":\"",$9,"\", \"size\":",$5,"},"} END { print "]"}' \
-    > ioccc.json
-    ./prog < ioccc.json > ioccc.html
+(cd ..; ls -lS */prog.c) | \
+awk 'BEGIN { print "["; } { print "{\"winner\":\"",$9,"\", \"size\":",$5,"},"} END { print "]"}' \
+> ioccc.json
+./prog < ioccc.json > ioccc.html
+```
 
-What's not right with the output? How to fix it?
+View `output.html` in a browser.
 
-### Selected Judges Remarks:
+What's not right with the output?  How can one fix it?
+
+## Judges' comments:
 
 This entry exhibits a way of obfuscation we haven't seen before, we think.
 The rulez of programming in an imperative language are violated, aren't they?
@@ -38,11 +46,10 @@ This entry takes such decadence to an extreme. It just calls a bunch of librarie
 
 As one would expect from such an approach, this program is much more resource intensive than it should be. And one needs a C99-compatible libc (with the common UNIX stuff) to build this and an HTML5-compatible browser to open the result. And it terminates with an assertion failure, but who cares if the web page is already generated?
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
