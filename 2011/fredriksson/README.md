@@ -23,6 +23,9 @@ ulimit -s unlimited
 ./fredriksson -k2 -t -n bofuskate < /usr/share/dict/words
 ```
 
+NOTE: you need to be allowed to change your stack size or else the last command
+will likely cause the program to dump core.
+
 ## Judges' comments:
 
 The author of this entry was making sure that it does not win the
@@ -172,7 +175,7 @@ expressions by putting `]` as the first character, and putting `-` last.
 * The initialized char array includes the source code of the real program,
   as well as its name and commands to build and run it, all Burrows-Wheeler
   -transformed, then run-length-encoded with unary coding. The main program
-  extracts and builds that, and then calls it. More precicely, the command
+  extracts and builds that, and then calls it. More precisely, the command
   to build is
 
 		gcc -O3 ag.c -o ag
@@ -231,7 +234,7 @@ expressions by putting `]` as the first character, and putting `-` last.
 
 		./fredriksson -ck0 [0-9] < fredriksson.c
 
-  This should print 1, as there is a numer '3' in the char array (only).
+  This should print 1, as there is a number '3' in the char array (only).
   You can also try
 
 		./fredriksson -ck0 [0-9] < ag.c

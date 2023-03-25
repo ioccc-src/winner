@@ -23,7 +23,7 @@ make
 ./akari - - even < example.ppm > even_output.ppm
 ./akari example.ppm odd_output.ppm
 
-make akari2.c
+make akari2
 cat akari2.c
 
 make akari2
@@ -31,14 +31,14 @@ make akari2
 ./akari2 < akari2.c
 ./akari2 rot13 < akari2.c
 
-make akari3.c
+make akari3
 cat akari3.c
 
 make akari3
 
 ./akari3
 
-make akari4.c
+make akari4
 cat akari4.c
 
 ./akari4

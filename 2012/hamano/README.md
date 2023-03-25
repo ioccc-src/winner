@@ -30,12 +30,12 @@ cc -xc hint.pdf -o hint
 ./hint
 ```
 
-Of course, You can also obfuscate c code:
+Of course, You can also obfuscate C code:
 
 ```sh
-echo 'void main(){puts("Hello World!");}' | ./hamano > hello.pdf
-cc -xc hello.pdf -o hello2
-./hello2 | gcc -xc - -o ./hello3
+echo 'int main(){puts("Hello World!");}' | ./hamano > hello.pdf
+cc -Wno-implicit-function-declaration -xc hello.pdf -o hello2
+./hello2 | gcc -Wno-implicit-function-declaration -xc - -o ./hello3
 ./hello3
 ```
 

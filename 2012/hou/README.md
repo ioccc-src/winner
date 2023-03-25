@@ -25,7 +25,7 @@ less hou.c
 
 ./hou chk.txt hou.c | wc
 
-./hou markdown.txt remarks.markdown > remarks.htm
+./hou markdown.txt README.md > remarks.htm
 ```
 
 View the `remarks.htm` file in your web browser.
@@ -93,9 +93,9 @@ As an extra tweak, the text message actually does something useful. Remove the "
 
 ### References
 
-[1] [Russ Cox, Regular Expression Matching: the Virtual Machine Approach](http://swtch.com/~rsc/regexp/regexp2.html)
+[1][Russ Cox, Regular Expression Matching: the Virtual Machine Approach](http://swtch.com/~rsc/regexp/regexp2.html)
 
-[2] [Regular Expression Matching Can Be Simple And Fast (but is slow in Java, Perl, PHP, Python, Ruby, ...)](http://swtch.com/~rsc/regexp/regexp1.html)
+[2][Regular Expression Matching Can Be Simple And Fast (but is slow in Java, Perl, PHP, Python, Ruby, ...)](http://swtch.com/~rsc/regexp/regexp1.html)
 
 ## Copyright:
 

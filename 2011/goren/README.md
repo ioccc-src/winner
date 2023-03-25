@@ -48,7 +48,7 @@ using conditions.
 In this work, Magritte points out that a picture of a pipe is not
 a pipe.  But what IS a pipe? This program tries to provide an answer.
 
-Magritte's [test for pipes](http://en.wikipedia.org/wiki/The_Treachery_of_Images} is:
+Magritte's [test for pipes](http://en.wikipedia.org/wiki/The_Treachery_of_Images) is:
 
     The famous pipe. How people reproached me for it! And yet, could
     you stuff my pipe? No, it's just a representation, is it not?
@@ -69,7 +69,7 @@ impressive, but I think it can be taken further, in two ways.
 First, conditional operators, such as ?:, && and ||, can be thrown
 away.  Second, using setjmp and longjmp, which are unfortunately
 not in common use, might make it difficult for a novice programmer
-to understnad the code without referring to the man page.
+to understand the code without referring to the man page.
 
 By removing these, the code is 100% condition free, and every
 function runs its instructions in perfect order. Naturally, this
@@ -83,7 +83,7 @@ The program should compile with any C compiler, but was tested
 mostly with gcc on Linux.
 
 It doesn't support 64 bits (due to integer-pointer casts, and a >>31).
-It does work on 64-bit Linux, becasue all functions are below 4GB.
+It does work on 64-bit Linux, because all functions are below 4GB.
 
 ## Copyright:
 

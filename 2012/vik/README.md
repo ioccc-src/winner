@@ -106,7 +106,7 @@ macros or helper methods that can be confusing,  I placed all functionality
 in the main function. Main is called recursively and quite extensively, but
 it gives  the benefit  that all  invocations of  the function  has the same
 parameters, argv and argc.   This really helps readability, as a programmer
-doesn’t need to remember several variable or function names.   I also tried
+doesn't need to remember several variable or function names.   I also tried
 to reduce the number of keywords,  and the program only  has four for-loops
 followed by a single return statement.  There is a little bit of use of the
 question mark operator,   but this is really  there to keep  the program as
