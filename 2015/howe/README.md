@@ -1,55 +1,64 @@
 # Most Different
 
-Anthony Howe <achowe@snert.com>  
-Montreal, Quebec, Canada  
-<http://www.snert.com/>  
-Twitter: @SirWumpus  
+    Anthony Howe <achowe@snert.com>  
+    Montreal, Quebec, Canada  
+    <http://www.snert.com/>  
+    Twitter: @SirWumpus  
 
-## To build:
+# To build:
 
-        make all
+```sh
+make
+```
 
-### To run
+### To run:
 
-    ./prog file1 file2
+```sh
+./prog file1 file2
 
-    ./prog -d file1 file2
+./prog -d file1 file2
+```
 
 ### Try:
 
-    ./prog prog.alt.c prog.c
+```sh
+./prog prog.alt.c prog.c
 
-    make test
-    ./prog -d ABXYEFCD.tmp ACDBECFD.tmp
-    ./prog ABXYEFCD.tmp ACDBECFD.tmp
+make test
+./prog -d ABXYEFCD.tmp ACDBECFD.tmp
+./prog ABXYEFCD.tmp ACDBECFD.tmp
 
-    rm -f curds.tmp whey.tmp
-    cp /usr/share/man/man1/cc.1 curds.tmp
-    cp /usr/share/man/man1/cc.1 whey.tmp
-    chmod 666 whey.tmp
-    make makeholes
-    ./makeholes -n 1000 whey.tmp
-    ./prog curds.tmp whey.tmp
-    ./avgtime.sh 100 ./prog curds.tmp whey.tmp
+rm -f curds.tmp whey.tmp
+cp /usr/share/man/man1/cc.1 curds.tmp
+cp /usr/share/man/man1/cc.1 whey.tmp
+chmod 666 whey.tmp
+make makeholes
+./makeholes -n 1000 whey.tmp
+./prog curds.tmp whey.tmp
+./avgtime.sh 100 ./prog curds.tmp whey.tmp
 
-    # Assuming curl(1) installed, grab a really HUGE text file.
-    curl -L -o war-and-peace.txt http://www.gutenberg.org/ebooks/2600.txt.utf-8
-    cp war-and-peace.txt nuked.tmp
-    ./makeholes -c'~' -n 1000 nuked.tmp
-    ./prog war-and-peace.txt nuked.tmp
-    ./avgtime.sh 100 ./prog war-and-peace.txt nuked.tmp
+# Assuming curl(1) installed, grab a really HUGE text file.
+curl -L -o war-and-peace.txt http://www.gutenberg.org/ebooks/2600.txt.utf-8
+cp war-and-peace.txt nuked.tmp
+./makeholes -c'~' -n 1000 nuked.tmp
+./prog war-and-peace.txt nuked.tmp
+./avgtime.sh 100 ./prog war-and-peace.txt nuked.tmp
+```
 
 ### Alternate code
 
-An alternate version of this entry, prog.alt.c, is provided.  This alternate code does not use a 64 bit FNV hash.
+An alternate version of this entry, `prog.alt.c`, is provided.
+This alternate code does not use a 64 bit FNV hash.
 
 To compile this alternate version:
 
-    make alt
+```sh
+make alt
+```
 
 Use `prog.alt` as you would `prog` above.
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 This is the best use of the FNV that we have seen in the IOCCC so far!
 The output, when used without -d, is compatible with POSIX diff and
@@ -74,8 +83,8 @@ NOTE: Unlike the original entry source, prog.alt.c, prog.c uses a
 64 bit FNV hash and fixes a function call warning.
 
 ## Author's comments:
-Features
---------
+
+### Features
 
 * "An O(NP) Sequence Comparison Algorithm" by Wu, Manber, Myers, Miller.
 
@@ -83,25 +92,19 @@ Features
 
 * Strokes one of the judge's ego (I couldn't email chocolate or curry).
 
-
-Description
------------
+### Description
 
 This is a functioning micro diff tool using an [O(NP) algorithm][Wu+89], compared to the older [O(ND) difference algorithm][Mye86] used by some versions of diff.  Its output is based on the default diff(1) output described by POSIX and [The Open Group Base Specifications][SUSV7].  The output is suitable for use with patch(1).
 
 The -d option simply writes the edit distance between file1 and file2.
 
-
-Observations
-------------
+### Observations
 
 The FNV1a hash is a little slow compared to the trival hash GNU Diff uses.  I downloaded a plain text copy of "War And Peace" from Project Gutenberg, used ``makeholes.c`` to make 1000 random changes, then profiled and timed the program verses GNU Diff.  The bottle neck appears to be in the file I/O and line hashing with an average +0.05s slower.  Using a huge file like "War And Peace" for testing offsets the diff(1) optimised file I/O.
 
 There is no hash collision checking, partly because FNV1a appears to generate very [few collisions][HshCmp] and an assumption that localised collisions within a region of edits are highly unlikely.
 
-
-Support Files
--------------
+### Support Files
 
 * ``prog-test.sh``  
 Basic test program verifies known test edit distances and patch support.
@@ -111,9 +114,7 @@ Basic test program verifies known test edit distances and patch support.
 * ``makeholes.c``  
 Random edits (holes) made to a file in-place.
 
-
-References
-----------
+### References
 
 Wu, Manber, Myers, and Miller; August 1989;  
 "An O(NP) Sequence Comparison Algorithm";  
@@ -160,11 +161,10 @@ Which hashing algorithm is best for uniqueness and speed?
 
 [HshCmp]: http://programmers.stackexchange.com/questions/49550/which-hashing-algorithm-is-best-for-uniqueness-and-speed
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2016, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
