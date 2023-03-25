@@ -1,23 +1,29 @@
 # Most stellar
 
-Timo Poikola <ioccc2018@ig.fi>  
-<https://ig.fi/>  
+    Timo Poikola <ioccc2018@ig.fi>  
+    <https://ig.fi/>  
 
-## To build:
+# To build:
 
-        make all
+```sh
+make
+```
 
-### To run
+### To run:
 
-    ./prog
+```sh
+./prog
+```
 
 ### Try:
 
 On terminal supports 24 bit color, has black background, and size at least 125x38, try:
 
-    ./prog
+```sh
+./prog
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 It is said by some students of Astronomy:
 
@@ -32,11 +38,15 @@ And those in the deep south might wish to go north for a better view.
 
 ### How to build
 
-    gcc -o prog -std=gnu11 -O3 prog.c
+```sh
+cc -o prog -std=gnu11 -O3 prog.c
+```
 
 or
 
-    make
+```sh
+make
+```
 
 ### Poster
 
@@ -107,15 +117,15 @@ If you think you understand how this program works, can you answer these questio
 
 
 ### Rot18ed part
+
 Because the rot13 is too easy to decode with the plain eyes, I decided to use the Caesar cipher with the key 18.
 
 Lzw xajkl tsffwj ak wfugvwv mkafy AWWW 754 xdgslk gf dafw 47. Al ak hjaflwv gfdq gf dalldw-wfvasf esuzafwk.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
