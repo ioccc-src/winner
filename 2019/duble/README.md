@@ -1,32 +1,34 @@
 # Best collaborative graphics
 
-Etienne Duble  
-<https://lig-membres.imag.fr/duble>  
-Twitter: @etienne_duble  
+    Etienne Duble  
+    <https://lig-membres.imag.fr/duble>  
+    Twitter: @etienne_duble  
 
-## To build:
+# To build:
 
-        make all
+```sh
+make
+```
 
-### To run
+### To run:
 
-    ./prog file
+```sh
+./prog file
+```
 
 ### Try:
 
-    ./prog /tmp/drawing
+```sh
+./prog /tmp/drawing
+```
 
-    (open another window / terminal)
+Open another window / terminal.
 
-    ./prog /tmp/drawing
+```sh
+./prog /tmp/drawing
+```
 
-    (open more terminals....)
-
-    ./prog /tmp/drawing
-
-
-NOTE: this entry does not work under at least some versions of macOS.
-
+Open more terminals...
 
 ### Alternate code
 
@@ -35,17 +37,19 @@ code might not work as well on macOS.
 
 To compile this alternate version:
 
-    make alt
+```sh
+make alt
+```
 
 Use `prog.alt` as you would `prog` above.
 
-
-### Selected Judges' Remarks:
+## Judges' comments:
 
 After starting the program, use the cursor keys, then try some modes, like "p"
 or "l" (they toggle).
 
 ## Author's comments:
+
 ### Introduction
 
 This program is a **graphics editor**, running on the terminal.
@@ -139,7 +143,9 @@ Note: the drawing files `prog` generates are probably even more portable than
 The default size is the one of my xterm (see top of Makefile).
 You may set it to the full size of your terminal window by typing:
 
-    $ make fullscreen
+```sh
+make fullscreen
+```
 
 IMPORTANT NOTES:
 
@@ -172,12 +178,10 @@ and it works on macOS too!
 I must confess it was challenging to remain below the size limit with this little
 change.
 
+## Copyright:
 
---------------------------------------------------------------------------------
-<!--
 (c) Copyright 1984-2019, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->

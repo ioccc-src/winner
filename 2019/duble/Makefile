@@ -65,14 +65,15 @@ X11_INCDIR= /opt/X11/include
 #CSILENCE=
 CSILENCE= -Wno-bitwise-op-parentheses -Wno-dangling-else -Wno-format-security \
 	-Wno-implicit-int -Wno-incompatible-pointer-types \
-	-Wno-logical-op-parentheses -Wno-unused-value
+	-Wno-logical-op-parentheses -Wno-pedantic -Wno-return-type \
+	-Wno-unused-value
 
 # Common C compiler warning flags
 #
 #CWARN= ${CSILENCE}
 #CWARN= -Wall ${CSILENCE}
-CWARN= -Wall -Wextra ${CSILENCE}
-#CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+#CWARN= -Wall -Wextra ${CSILENCE}
+CWARN= -Wall -Wextra -pedantic ${CSILENCE}
 
 # Compiler standard
 #
@@ -94,7 +95,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE= -Dg=11 -Ds=0 -DV=24 -DW=80
+CDEFINE=
 #CDEFINE= -DIOCCC
 
 # Include files that are needed to compile
@@ -103,8 +104,8 @@ CINCLUDE=
 #CINCLUDE= -include stdlib.h
 #CINCLUDE= -include stdio.h
 #CINCLUDE= -include stdlib.h -include stdio.h
-#CINCLUDE= -I ${X11_INCDIR}
-#CINCLUDE= -I ${HOMEBREW_PREFIX}/include/SDL2
+#CINCLUDE= -I ${X11_INCDIR} -I ${X11_INCDIR}/X11
+#CINCLUDE= `${SDL2_CONFIG} --cflags`
 
 # Optimization
 #
@@ -128,7 +129,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 LIBS=
 #LIBS= -lm
 #LIBS= -L ${X11_LIBDIR} -lX11
-#LIBS= -L ${HOMEBREW_PREFIX}/lib -lSDL
+#LIBS= `${SDL2_CONFIG} --libs`
 
 # C compiler to use
 #
@@ -140,10 +141,7 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-CSILENCE+= -Wno-comma -Wno-implicit-int-conversion -Wno-missing-prototypes \
-	-Wno-missing-variable-declarations -Wno-pedantic \
-	-Wno-poison-system-directories -Wno-shadow -Wno-shorten-64-to-32 \
-	-Wno-strict-prototypes -Wno-zero-length-array
+#CSILENCE+=
 #
 CWARN+= -Weverything
 #
@@ -168,11 +166,17 @@ ENTRY= duble
 PROG= prog
 #
 OBJ= ${PROG}.o
+CSRC= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
 ALT_OBJ= ${PROG}.alt.o
 ALT_TARGET= ${PROG}.alt
+
+LINES= 24
+COLUMNS= 80
+
+OS_SET= Linux FreeBSD Darwin
 
 
 #################
@@ -186,16 +190,84 @@ all: data ${TARGET}
 	love haste waste maker easter_egg sandwich \
 	supernova deep_magic magic charon pluto
 
-${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+${PROG}:
+	${MAKE} `${UNAME}`
 
-${PROG}.alt: ${PROG}.alt.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+check-os: check-os.sh
+	${SHELL} ./check-os.sh ${LINES} ${COLUMNS}
+
+error-stty:
+	@echo "No stty command here. Please manually specify size in the Makefile." >&2 ; false
+
+has-stty:
+	which stty >/dev/null || $(MAKE) error-stty
+
+fullscreen: has-stty
+	${MAKE} ${PROG} \
+	LINES=`stty size | sed -s 's/ .*$$//'` \
+	COLUMNS=`stty size | sed -s 's/^.* //'`
+
+Darwin: ${PROG}.c
+	${RM} -f $@
+	${CC} ${CFLAGS} -Dg=392 \
+			-Ds=46 \
+			-DV=${LINES} \
+			-DW=${COLUMNS} \
+			$< -o ${PROG} ${LIBS}
+	${LN} ${PROG} $@
+
+FreeBSD: ${PROG}.c
+	${RM} -f $@
+	${CC} ${CFLAGS} -Dg=392 \
+			-Ds=46 \
+			-DV=${LINES} \
+			-DW=${COLUMNS} \
+			$< -o ${PROG} ${LIBS}
+	${LN} ${PROG} $@
+
+Linux: ${PROG}.c
+	${RM} -f $@
+	${CC} ${CFLAGS} -Dg=11 \
+			-Ds=0 \
+			-DV=${LINES} \
+			-DW=${COLUMNS} \
+			$< -o ${PROG} ${LIBS}
+	${LN} ${PROG} $@
 
 # alternative executable
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt:
+	$(MAKE) `${UNAME}`.alt
+
+Darwin.alt: ${PROG}.alt.c
+	${RM} -f $@
+	${CC} ${CFLAGS} -Dg=392 \
+			-Ds=46 \
+			-DV=${LINES} \
+			-DW=${COLUMNS} \
+			$< -o ${PROG}.alt ${LIBS}
+	${LN} ${PROG}.alt $@
+
+FreeBSD.alt: ${PROG}.alt.c
+	${RM} -f $@
+	${CC} ${CFLAGS} -Dg=392 \
+			-Ds=46 \
+			-DV=${LINES} \
+			-DW=${COLUMNS} \
+			$< -o ${PROG}.alt ${LIBS}
+	${LN} ${PROG}.alt $@
+
+Linux.alt: ${PROG}.alt.c
+	${RM} -f $@
+	${CC} ${CFLAGS} -Dg=11 \
+			-Ds=0 \
+			-DV=${LINES} \
+			-DW=${COLUMNS} \
+			$< -o ${PROG}.alt ${LIBS}
+	${LN} ${PROG}.alt $@
 
 # data files
 #
@@ -220,6 +292,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -f Darwin Darwin.alt FreeBSD FreeBSD.alt Linux Linux.alt
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
