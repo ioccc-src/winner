@@ -1,25 +1,33 @@
 # Most Diffused Reaction
 
-Someone Anonymous  
-Twitter: @hirekoke  
+    Someone Anonymous  
+    Twitter: @hirekoke  
 
-Yusuke Endoh  
-<https://github.com/mame/>  
-Twitter: @mametter  
+    Yusuke Endoh  
+    <https://github.com/mame/>  
+    Twitter: @mametter  
 
+# To build:
 
-## Judges' comments:
-### To use:
+```sh
+make
+```
 
-    make
-    
-    <tbd-tool-rubl-perl-python?>
+### To run:
+
+```sh
+./prog
+```
+
+Connect to port http://localhost:10333 with your browser
 
 ### Try:
 
-    Connect to port http://localhost:10333 with your browser
+```sh
+echo "Do or do not. There is no try."
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 How did the leopard get its spots? Why are a zebra's stripes unique?
 
@@ -28,20 +36,22 @@ pointers to his features like eyes with "stdeye-o" and "<--mouth". Can you
 find any other tributes?
 
 ## Author's comments:
-What does "Alan Turing" remind you of?  Cryptanalysis of the Enigma?  Turing machine?  Turing test?  This program is also based on his work.
 
+What does "Alan Turing" remind you of?  Cryptanalysis of the Enigma?  Turing machine?  Turing test?  This program is also based on his work.
 
 ### Whirlwind tour
 
 Compile the program as follows:
 
-    $ clang -O3 -std=c99 \
+```sh
+cc -O3 -std=c99 \
         -Wall -Wextra -pedantic -o prog prog.c \
         -Delta_u="Du*laplacian(u)-u*v*v+F*(1-u)" \
         -Delta_v="Dv*laplacian(v)+u*v*v-v*(F+K)" \
         -DF=0.040 -DK=0.060 -DDu=0.200 -DDv=0.100 \
         -DUV_BACKGROUND=1,0 -DUV_DROP=-0.5,0.5 \
         -DTIMESTEP=1.0 -DSPEED=2 -DRGB=255:128:192
+```
 
 Then, run it under `tcpserver` command in [ucspi-tcp](http://cr.yp.to/ucspi-tcp.html) package, which was created by Daniel J. Bernstein, IOCCC 1989 "Best of Show" winner.
 
@@ -163,11 +173,10 @@ But note that I didn't test well.
 * [4] Eastlake 3rd, D. and P. Jones, "US Secure Hash Algorithm 1 (SHA1)", RFC 3174, DOI 10.17487/RFC3174, September 2001, <http://www.rfc-editor.org/info/rfc3174>.
 * [5] Josefsson, S., "The Base16, Base32, and Base64 Data Encodings", RFC 4648, DOI 10.17487/RFC4648, October 2006, <http://www.rfc-editor.org/info/rfc4648>.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2016, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
