@@ -1,32 +1,41 @@
 # Most likely to be awarded
 
-Marcin Ciura <mciura@gmail.com>  
-Twitter: @mciura  
+    Marcin Ciura <mciura@gmail.com>  
+    Twitter: @mciura  
 
-## To build:
+# To build:
 
-        make all
+```sh
+make
+```
 
-### To run
+### To run:
 
-    ./prog < text
+```sh
+./prog < text
+```
 
 ### Try:
 
-    ./prog < Makefile
-    ./prog < README.md
+```sh
+./prog < Makefile
+./prog < README.md
+```
 
-### Alternate code
+### Alternate code:
 
-An alternate version of this entry, prog.alt.c, is provided.  As mentioned in the Author's comments, the alternate version lacks a useful bug fix.
+An alternate version of this entry, `prog.alt.c`, is provided.
+As mentioned in the Author's comments, the alternate version lacks a useful bug fix.
 
 To compile this alternate version:
 
-    make alt
+```sh
+make alt
+```
 
 Use `prog.alt` as you would `prog` above.
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 This text was processed by prog. You may get confused.
 We're not really sure: prog.c wasn't commented.
@@ -35,8 +44,7 @@ Having been written in C, how large of a vocabulary has it?
 
 ## Author's comments:
 
-The Program
-===========
+### The Program
 
 "The Elements of Style" by prof. William Strunk, Jr. and E. B. White
 is well known for its dislike of the passive voice.  Direct, vigorous,
@@ -63,8 +71,7 @@ initials.  Both regular and irregular past participles are properly
 dealt with.  Note that some words are red herrings: even though their
 ending is -ed, they are not past participles.
 
-The Big String
-==============
+### The Big String
 
 Here is the purpose of every byte inside the **`c[]`** string:
 
@@ -78,8 +85,7 @@ Here is the purpose of every byte inside the **`c[]`** string:
   adverbs, wh-words, and other words) and recognizing abbreviations -
   two type B state machines, called by **`V(808)`** and **`V(205)`**.
 
-The State Machines
-==================
+### The State Machines
 
 I heard you don't like state machines so I put a state machine in your
 state machine so you can reject this entry while you reject this entry.
@@ -88,8 +94,7 @@ Both types of state machines in the program are Mealy machines: we can
 think of their transitions as triples (**`transition_label`**,
 **`next_state`**, **`output`**).
 
-Type A
-------
+### Type A
 
 A state of type A state machine consists of eight transitions whose
 representations occupy consecutive bytes.  The byte
@@ -150,8 +155,7 @@ And here are sample steps of scanning tokens with classes **`to_be`**,
 * **`state`** = 22, **`transition_label`** = 0 (**`adverb`**), **`output`** = **`ignore`**
 * **`state`** = 22, **`transition_label`** = 3 (**`past_participle`**), **`output`** = **`passive_construction_end`**
 
-Type B
-------
+### Type B
 
 Type B state machines are built by a variant of the algorithm described
 in the paper
@@ -228,8 +232,7 @@ And here are sample steps of scanning the string "i.e.":
 * **`state`** = 1, **`transition_label`** = 0 ('\0'), **`output`** = **`abbreviation`**.
 Return **`abbreviation`**.
 
-Remarks
-=======
+### Remarks
 
 The judges found a bug in the handling of contractions: **`prog.alt.c`**
 outputs "foo wasn'**[t bazzed]**".  I fixed the bug in **`prog.c`**, making
@@ -249,11 +252,10 @@ I have tested it on:
 For a clean compile under c89 and c90, add **`-Woverlength-strings`**
 to **`CSILENCE`**.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
