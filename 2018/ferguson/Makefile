@@ -92,8 +92,8 @@ ARCH=
 
 # Defines that are needed to compile
 #
+#CDEFINE=
 CDEFINE= -DQ='typedef' -D'g(o)'='goto o;' -D'w(x)'="x:" -D'H(main)'='r(main)'
-#CDEFINE= -DIOCCC=25
 
 # Include files that are needed to compile
 #
@@ -101,8 +101,8 @@ CINCLUDE=
 #CINCLUDE= -include stdlib.h
 #CINCLUDE= -include stdio.h
 #CINCLUDE= -include stdlib.h -include stdio.h
-#CINCLUDE= -I ${X11_INCDIR}
-#CINCLUDE= -I ${HOMEBREW_PREFIX}/include/SDL2
+#CINCLUDE= -I ${X11_INCDIR} -I ${X11_INCDIR}/X11
+#CINCLUDE= `${SDL2_CONFIG} --cflags`
 
 # Optimization
 #
@@ -126,7 +126,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 LIBS=
 #LIBS= -lm
 #LIBS= -L ${X11_LIBDIR} -lX11
-#LIBS= -L ${HOMEBREW_PREFIX}/lib -lSDL
+#LIBS= `${SDL2_CONFIG} --libs`
 
 # C compiler to use
 #
@@ -163,11 +163,12 @@ ENTRY= ferguson
 PROG= prog
 #
 OBJ= ${PROG}.o
-DATA=
-TARGET= ${PROG}
+CSRC= ${PROG}.o
+DATA= FILES hint.css rpm.md test-strings.txt weasel.1 weasel.man weasel.spec
+TARGET= ${PROG} weasel
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}-simple.o
+ALT_TARGET= ${PROG}-simple weasel-simple
 
 
 #################
@@ -184,10 +185,22 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
+weasel: ${PROG}
+	${CP} -f $< $@
+
+test: ${PROG} test.sh
+	./test.sh
+
 # alternative executable
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}-simple: ${PROG}-simple.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
+weasel-simple: ${PROG}-simple
+	${CP} -f $< $@
 
 # data files
 #

@@ -1,27 +1,33 @@
 # Best use of weasel words
 
-Cody Boone Ferguson <weasel@xexyl.net>  
-<https://ioccc.xexyl.net/2018/weasel>  
-Twitter: @xexyl  
+    Cody Boone Ferguson <weasel@xexyl.net>  
+    <https://ioccc.xexyl.net/2018/weasel>  
+    Twitter: @xexyl  
 
-## To build:
+# To build:
 
-        make all
+```sh
+make
+```
 
-### To rum
+### To run:
 
-    ./weasel
+```sh
+./weasel
+```
 
 ### Try:
 
-    ./weasel words
-    ./weasel -mq words
-    ./weasel -q -r8 'EVOLUTION IS A PROVEN FACT'
-    ./weasel -m 'INTELLIGENT DESIGN'
+```sh
+./weasel words
+./weasel -mq words
+./weasel -q -r8 'EVOLUTION IS A PROVEN FACT'
+./weasel -m 'INTELLIGENT DESIGN'
 
-    make test
+make test
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 Looking back over the strata of past IOCCC entries, this program marks a new
 mutation on our understanding of sequencing of code.  In adaptation of the
@@ -39,7 +45,9 @@ while using more Cenozoic minded code migration, read rpm.md.
 
 If you find yourself in an evolutionary dead end, try:
 
-    man ./weasel.man
+```sh
+man ./weasel.man
+```
 
 ## Author's comments:
 
@@ -68,7 +76,9 @@ texts. To resolve this I think the best way is referencing the judges' comments:
 if you want a quick rundown of the entry try what they suggest and view the man
 page (it explains all the options and describes the program briefly):
 
-    man ./weasel.man
+```sh
+man ./weasel.man
+```
 
 If that isn't sufficient **I would recommend reading this section** *(and
 possibly the next)* where I attempt to give a brief explanation of the sections
@@ -361,21 +371,26 @@ has more than one word (that is it contains spaces) or anything else interpreted
 specially by your shell e.g. parentheses. For instance if you just want to find
 **`METHINKS`** you could do one of:
 
-
-	    $ ./weasel METHINKS
-	    $ ./weasel "METHINKS"
-	    $ ./weasel 'METHINKS'
+```sh
+./weasel METHINKS
+./weasel "METHINKS"
+./weasel 'METHINKS'
+```
 
 If you wanted **`YOU ARE A MONKEY`**:
 
-	    $ ./weasel "YOU ARE A MONKEY"
-	    $ ./weasel 'YOU ARE A MONKEY'
+```sh
+./weasel "YOU ARE A MONKEY"
+./weasel 'YOU ARE A MONKEY'
+```
 
 If you do one of:
 
-	    $ ./weasel "METHINKS IT IS A" "MONKEY"
-	    $ ./weasel METHINKS IT IS A MONKEY
-
+```sh
+./weasel "METHINKS IT IS A" "MONKEY"
+./weasel METHINKS IT IS A MONKEY
+```
+ 
 It will search for **`MONKEY`** in both cases; in other words it's the last one.
 If the string is too long given the value of **`S`** (see 
 **[How to build](#build)**) it will be truncated. 
@@ -384,13 +399,17 @@ If you actually do want to search for a string starting with a **`-`** you must
 disable further parsing of options by using the **`-`** option itself; for
 example if you were to do any of:
 
-	    $ ./weasel -q- -- -test
-	    $ ./weasel -q- -test
-	    $ ./weasel -q -- -test
+```sh
+./weasel -q- -- -test
+./weasel -q- -test
+./weasel -q -- -test
+```
 
 The target string will be: **`-TEST`**. This means though that here:
 
-	    $ ./weasel -q -- -test -r5
+```sh
+./weasel -q -- -test -r5
+```
 
 The string to be searched would actually be **`-r5`** and the mutation rate
 will remain the default because after the **`-`** option is seen it will no
@@ -404,7 +423,9 @@ are equivalent:
 	    
 As for the caveat I referenced what does the following do?
 
-	    $ ./weasel -qr 5
+```sh
+./weasel -qr 5
+```
 
 In fact it will set quiet output and set the target string to be '5'. So the
 mutation rate will be out of range, thus enabling that Easter egg, but it will
@@ -414,30 +435,35 @@ note on the parsing of the **`-`** option; if the program is currently parsing
 the other options are in the command line it might still parse the options. Thus
 you have:
 
-	    $ ./weasel -qr-r5
-	    quiet output
-	    mutation rate out of range
-	    target 'METHINKS IT IS LIKE A WEASEL'
-	    mutation rate 5
-	    Generation  440 Offspring 20: METHINKS IT IS LIKE A WEASEL
+```sh
+$ ./weasel -qr-r5
+quiet output
+mutation rate out of range
+target 'METHINKS IT IS LIKE A WEASEL'
+mutation rate 5
+Generation  440 Offspring 20: METHINKS IT IS LIKE A WEASEL
+```
 
 Similarly this would set quiet output, then an invalid mutation rate and then a
 mutation rate of 5:
 
-	    $ ./weasel --qrr5
+```sh
+./weasel --qrr5
+```
 
 
 If you were instead to do one of (for example):
 
-	    $ ./weasel -q -- -r
-	    $ ./weasel -q -q- -r
+```sh
+./weasel -q -- -r
+./weasel -q -q- -r
+```
 
 Then it *would* set quiet output then see the **`--`** (the **`-`** option
 itself) and then the target string would *literally* be set to **`-r`** because
 it no longer cares about the **`-`** for option parsing. In other words options
 are only parsed if the first character is **`-`** and if the parser hasn't seen
 the **`-`** - *in an earlier element of `argv`. This is not a bug!*
-
 
 ### <a name="spoiler">Spoilers</a>
 
@@ -467,16 +493,17 @@ requested?  There are at least two ways to go about it: I took the monkey safe
 ('fool safe') method; *if you explicitly request monkey mode you cannot disable
 it in the same invocation of `weasel`*!
 
-
-	    $ ./weasel -qr101r5r101r1r test
-	    quiet output
-	    mutation rate out of range
-	    mutation rate out of range
-	    mutation rate out of range
-	    target 'test'
-	    mutation rate 0
-	    monkey at typewriter
-	    Generation 16844        Offspring 22: TEST
+```sh
+$ ./weasel -qr101r5r101r1r test
+quiet output
+mutation rate out of range
+mutation rate out of range
+mutation rate out of range
+target 'test'
+mutation rate 0
+monkey at typewriter
+Generation 16844        Offspring 22: TEST
+```
 
 So in this case I joined the options in the following order:
 
@@ -531,13 +558,14 @@ in monkey mode.
 
 Another example:
 
-
-	    $ ./weasel -q -r101 test -r5
-	    quiet output
-	    mutation rate out of range
-	    target 'test'
-	    mutation rate 5
-	    Generation  109 Offspring 13: TEST
+```sh
+$ ./weasel -q -r101 test -r5
+quiet output
+mutation rate out of range
+target 'test'
+mutation rate 5
+Generation  109 Offspring 13: TEST
+```
 
 In this case I also enabled quiet mode but I didn't join the options; the
 **`-r101`** reports that it's out of range and sets monkey mode. I then specify
@@ -546,14 +574,15 @@ which means that it'll use the genetic algorithm.
 
 One more example of monkey mode:
 
-
-	    $ ./weasel -q -mr101 test -r5
-	    quiet output
-	    mutation rate out of range
-	    target 'test'
-	    mutation rate 5
-	    monkey at typewriter
-	    Generation 465298       Offspring 10: TEST
+```sh
+$ ./weasel -q -mr101 test -r5
+quiet output
+mutation rate out of range
+target 'test'
+mutation rate 5
+monkey at typewriter
+Generation 465298       Offspring 10: TEST
+```
 
 Here I also requested quiet output and then *explicitly requested that Eric the
 monkey types.* After this I set the mutation rate to be 101 which would have
@@ -662,13 +691,16 @@ with.
 
 Try:
 
-		$ make test
+```sh
+make test
+```
 
 This will essentially make sure the program is compiled and then do:
 
-		$ chmod +x test.sh
-		$ ./test.sh
-
+```sh
+chmod +x test.sh
+./test.sh
+```
 
 The script will first try compiling the program (if necessary) and if it fails
 for any reason it will exit; else it will read each line in the file
@@ -681,9 +713,9 @@ processed).
 You can pass additional options directly to the script but remember that it
 stops when there are no more strings in the file - so if you try:
 
-
-	    $ ./test.sh -q test
-
+```sh
+./test.sh -q test
+```
 
 The final string **`test`** won't be searched for; it will however run the program
 in all invocations with quiet output enabled. The following are some notes about
@@ -713,12 +745,13 @@ program prints an error message and then exits (returning 1). But since the
 keyboard doesn't have **`'\n'`** if you were to type a **`'`** and send a
 **`'\n'`** before the closing **`'`** you might see something like:
 
+```sh
+$ ./weasel '!!
+> '
 
-		$ ./weasel '!!
-		> '
-		
-		'
-		' not in keyboard " !"#$<%:>&'()*+,-./0123456789;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`{|}~"
+'
+' not in keyboard " !"#$<%:>&'()*+,-./0123456789;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`{|}~"
+```
 
 I showed that **`'`** is in the keyboard already; however the user sent a
 **`\n`** (hence the secondary prompt **`>`** on line two) before literally typing the
@@ -731,7 +764,6 @@ finally the closing **`'`**.  Specifically **`isspace()` characters aren't
 distinctly seen like a letter, digit or symbol is: `isprint('\n') == 0 &&
 isspace('\n') == 1`**. You can add these characters but the output will be
 rather confusing and hard to read.
-
 
 ## **4. <a name="obfuscation">Obfuscation</a>**
 
@@ -746,9 +778,11 @@ as well as some C keywords.
 
 2.  The way **`main()`** is declared is:
 
-	    /* Special C main() handler (encapsulation): */
-	    #define r(main) main
-	    r(k main(k a, E **V)) {
+```c
+/* Special C main() handler (encapsulation): */
+#define r(main) main
+r(k main(k a, E **V)) {
+```
 
     It appears to be recursively defined but is it? And is it truly
 encapsulation? And is it executing code of any kind? It mightn't seem like it
@@ -785,7 +819,6 @@ code.
 In case you wondered deciphering #5 won't decipher #7 (neither will deciphering
 \#7 help you decipher #5).
 
-
 ### <a name="beauty">Beauty</a>
 
 Skip to [How to build](#build).
@@ -799,9 +832,7 @@ And if you'll notice that although it *might look like a compact blob of octets*
 at first glance if you look throughout the file you'll see two statements to
 set your thinking straight:
 
-
 > **NO BLOB CODING**
-
 
 > **THIS IS NOT A COMPACT BLOB OF OCTETS**
 
@@ -809,7 +840,6 @@ So you see even if your eyes are trying to deceive you they're quite wrong. Yes
 some of it might look like a blob but this is clearly false; *as all good
 programmers know if something is potentially confusing or misleading it should
 be made clear in the comments! :)*
-
 
 ## **5. <a name="build">How to build</a>**
 
@@ -822,7 +852,6 @@ behaviour of the program in a number of ways (see the
 **[Compilation](#compiling)** subsection for example invocations). Both are
 capped to be no greater than **`SIZE_MAX - 1`**. This is handled by the C
 preprocessor.
-
 
 **`S`**    
 
@@ -846,23 +875,28 @@ Be aware that depending on the size of **`S`** and **`N`** (individually and
 together) the program will use varying amounts of memory and the larger the
 values the more memory it'll require.
 
-
 ### <a name="compiling">Compilation</a>
 
 Skip to [Portability](#portability).
 
 The following options **must always be passed to the compiler:**
 
-	    -DQ='typedef' -D'g(o)'='goto o;' -D'w(x)'="x:" -D'H(main)'='r(main)'
+```sh
+-DQ='typedef' -D'g(o)'='goto o;' -D'w(x)'="x:" -D'H(main)'='r(main)'
+```
 
 If you want to increase the number of offspring to **`50`** and the size of the
 chromosome to **`75`** you would pass to the compiler:
 
-	    -DQ='typedef' -D'g(o)'='goto o;' -D'w(x)'="x:" -D'H(main)'='r(main)' -DN=50 -DS=75
+```sh
+-DQ='typedef' -D'g(o)'='goto o;' -D'w(x)'="x:" -D'H(main)'='r(main)' -DN=50 -DS=75
+```
 
 If you wanted to change **`N`** to **`3`**:
 
-	    -DQ='typedef' -D'g(o)'='goto o;' -D'w(x)'="x:" -D'H(main)'='r(main)' -DN=3
+```sh
+-DQ='typedef' -D'g(o)'='goto o;' -D'w(x)'="x:" -D'H(main)'='r(main)' -DN=3
+```
 
 Remember that it cannot be less than **`3`**; *more correctly if it's less than
 4 it's redefined to 3* so you could have passed in **`-DN=2`** and have the same
@@ -881,55 +915,60 @@ inevitably some data type sizes will be smaller and this I believe includes
 either but I have no way to test this. I have tested the following systems and
 configurations:
 
-	    Fedora 26:
+#### Fedora 26:
 
-	    $ clang --version|head -n1
-	    clang version 4.0.1 (tags/RELEASE_401/final)
-	    $ gcc --version|head -n1
-	    gcc (GCC) 7.3.1 20180130 (Red Hat 7.3.1-2)
-	    $ /lib64/libc-2.25.so |head -n1|cut -d',' -f1-1
-	    GNU C Library (GNU libc) stable release version 2.25
-	    $ lscpu |grep Endian
-	    Byte Order:          Little Endian
+```sh
+$ clang --version|head -n1
+clang version 4.0.1 (tags/RELEASE_401/final)
+$ gcc --version|head -n1
+gcc (GCC) 7.3.1 20180130 (Red Hat 7.3.1-2)
+$ /lib64/libc-2.25.so |head -n1|cut -d',' -f1-1
+GNU C Library (GNU libc) stable release version 2.25
+$ lscpu |grep Endian
+Byte Order:          Little Endian
+```
 
+#### CentOS Linux release 7.4.1708 (Core)
 
-	    CentOS Linux release 7.4.1708 (Core)
+```sh
+$ clang --version|head -n1
+clang version 3.4.2 (tags/RELEASE_34/dot2-final)
+$ gcc --version|head -n1
+gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-16)
+$ /lib64/libc-2.17.so |head -n1 |cut -d, -f1-1
+GNU C Library (GNU libc) stable release version 2.17
+$ lscpu |grep Endian
+Byte Order:            Little Endian
+```
 
-	    $ clang --version|head -n1
-	    clang version 3.4.2 (tags/RELEASE_34/dot2-final)
-	    $ gcc --version|head -n1
-	    gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-16)
-	    $ /lib64/libc-2.17.so |head -n1 |cut -d, -f1-1
-	    GNU C Library (GNU libc) stable release version 2.17
-	    $ lscpu |grep Endian
-	    Byte Order:            Little Endian
+#### Fedora 27:
 
+```sh
+$ clang --version|head -n1
+clang version 5.0.1 (tags/RELEASE_501/final)
+$ gcc --version|head -n1
+gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
+$ /lib64/libc-2.26.so |head -n1|cut -d, -f1-1
+GNU C Library (GNU libc) stable release version 2.26
+$ lscpu |grep Endian
+Byte Order:          Little Endian
+```
 
-	    Fedora 27:
+#### macOS:
 
-	    $ clang --version|head -n1
-	    clang version 5.0.1 (tags/RELEASE_501/final)
-	    $ gcc --version|head -n1
-	    gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
-	    $ /lib64/libc-2.26.so |head -n1|cut -d, -f1-1
-	    GNU C Library (GNU libc) stable release version 2.26
-	    $ lscpu |grep Endian
-	    Byte Order:          Little Endian
+System Version: macOS 10.13.4 (17E199)
+Kernel Version: Darwin 17.5.0
 
-	    
-	    macOS:
-
-	    System Version: macOS 10.13.4 (17E199)
-	    Kernel Version: Darwin 17.5.0
-	    $ gcc -v
-	    Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
-	    Apple LLVM version 9.1.0 (clang-902.0.39.1)
-	    Target: x86_64-apple-darwin17.5.0
-	    Thread model: posix
-	    InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-	    $ uname -srmv
-	    Darwin 17.5.0 Darwin Kernel Version 17.5.0: Mon Mar  5 22:24:32 PST 2018; root:xnu-4570.51.1~1/RELEASE_X86_64 x86_64
-
+```sh
+$ gcc -v
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.1.0 (clang-902.0.39.1)
+Target: x86_64-apple-darwin17.5.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$ uname -srmv
+Darwin 17.5.0 Darwin Kernel Version 17.5.0: Mon Mar  5 22:24:32 PST 2018; root:xnu-4570.51.1~1/RELEASE_X86_64 x86_64
+```
 
 #### <a name="bugs">An aside</a>
 
@@ -948,7 +987,6 @@ unreasonable monkeys. I will say though that there is at least one place I see
 after having won that could be slightly more efficient (can you find it?); I am
 however leaving it as it is because this is what won.
 
-
 ### <a name="rpm">Installing</a>
 
 Skip to [Final thoughts](#thoughts).
@@ -958,7 +996,6 @@ distribution; see [rpm.md][] for details (including why I implemented
 this) if for some (strange?) reason you're interested.
 
 [rpm.md]: rpm.md
-
 
 ## **6. <a name="thoughts">Final thoughts</a>**
 
@@ -1051,8 +1088,10 @@ When we found others were actually trying to programs with A, we quickly added
 additional cryptic features and evolved into B, BCPL, and finally C. We stopped
 when we got a clean compile on the following syntax:
 
-	    for(;P("\n"),R=;P("|"))for(e=C;e=P("_"+(*u++/
-	    8)%2))P("|"+(*u/4)%2);
+```c
+for(;P("\n"),R=;P("|"))for(e=C;e=P("_"+(*u++/
+8)%2))P("|"+(*u/4)%2);
+```
 
 > "To think that modern programmers would try to use a language that allowed
 such a statement was beyond our comprehension! We actually thought of selling
@@ -1092,8 +1131,10 @@ is a lack of common sense but since he was part of its creation I don't think
 it's a bad thing; **on the contrary it makes all of us C programmers even more
 talented! :)** I do wonder if he tested that bit of C code though:
 
-	    for(;P("\n"),R=;P("|"))for(e=C;e=P("_"+(*u++/
-	    8)%2))P("|"+(*u/4)%2);
+```c
+for(;P("\n"),R=;P("|"))for(e=C;e=P("_"+(*u++/
+8)%2))P("|"+(*u/4)%2);
+```
 	   
 How is **`R=;`** valid? Since I don't have the context maybe there is something
 I'm missing but either way it's a funny piece. It could also be for irony itself
@@ -1170,11 +1211,10 @@ fact 'if') it becomes relevant.
 [https://ioccc.xexyl.net/2018/weasel]: https://ioccc.xexyl.net/2018/weasel
 [errata page]: https://ioccc.xexyl.net/2018/weasel/errata
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
