@@ -72,13 +72,13 @@ print_num(n, b)
 }
 
 /* 'main' takes standard 'argc' and 'argv' parameters */
-main(argc, argv)
+main(int argc, char **argv)
 {
     /* no local name space is supported, but local variables ARE
        supported. As long as you do not use a globally defined
        variable name as local variable (which is a bad habbit), you
        won't have any problem */
-    int s, n, f, base;
+    int n, f, base;
     
     /* && and || operator have the same semantics as C (left to right
        evaluation and early exit) */
@@ -86,15 +86,14 @@ main(argc, argv)
         /* '*' operator is supported with explicit casting to 'int *',
            'char *' or 'int (*)()' (function pointer). Of course, 'int'
            are supposed to be used as pointers too. */
-        s = *(int *)argv;
-        help(s);
+        help(argv[0]);
         return 1;
     }
     /* Any libc function can be used because OTCC uses dynamic linking */
-    n = atoi(*(int *)(argv + 4));
+    n = atoi(argv[1]);
     base = DEFAULT_BASE;
     if (argc >= 3) {
-        base = atoi(*(int *)(argv + 8));
+        base = atoi(argv[2]);
         if (base < 2 || base > 36) {
             /* external variables can be used too (here: 'stderr') */
             fprintf(stderr, "Invalid base\n");
@@ -118,7 +117,7 @@ main(argc, argv)
 }
 
 /* functions can be used before being defined */
-help(name)
+help(char *name)
 {
     printf("usage: %s n [base]\n", name);
     printf("Compute fib(n) and fact(n) and output the result in base 'base'\n");
