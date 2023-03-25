@@ -20,7 +20,7 @@ _README.md_ file. If you're a previous winner we will add a link to your winning
 entries in the file (if you're not we can add a link to your personal website if
 you have one if you like).
 
-# List of Statuses - Please read before fixing (you may skip if you're only interested in entries with known issues)
+# List of Statuses - Please read before fixing (you may skip if you're only interested in knowing about entries with known issues)
 
 Entries below have one of the following _Status_ values.
 
@@ -383,6 +383,17 @@ use of the provided source file
 on. Note that it needs to be compiled as a x86 program.
 - The program will to an extent destroy files it is used on. See the author's
 warning in their comments on that.
+
+
+## [2001/bellard](2001/bellard/bellard.c) ([README.md](2001/bellard/README.md))
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed an initial
+segfault and he also fixed the [supplementary
+program](2001/bellard/bellard.otccex.c) to test the entry on to not segfault and
+seemingly work but he has no 32-bit system to test any further fixes and we
+would greatly appreciate anyone's help! It appears that this entry will require
+major debugging and to make it work one might need to have a deep understanding
+of the ELF format.
 
 
 # 2004

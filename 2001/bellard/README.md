@@ -19,6 +19,17 @@ make
 ./bellard file
 ```
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) partially fixed this
+but he notes that this will not work without some serious debugging. As he has
+no 32-bit system to test this under it's also unlikely he will be able to
+resolve the remaining problems. He also has no knowledge of the ELF binary
+format so that will also make it harder to work. As it is it segfaults. He fixed
+an earlier segfault so that at least the file can be opened and he also changed
+some of the macro uses to what they expanded to but mostly he kept it the same.
+He also fixed `bellard.otccex.c` so it does not segfault and seemingly works
+okay. Thank you Cody for your assistance!
+
+
 ### Try:
 
 ```sh

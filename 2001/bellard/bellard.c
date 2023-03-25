@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 #define k *(int*)
 #define a if(
 #define c ad()
@@ -10,14 +12,13 @@
 #define f ()
 #define J return
 #define l ae(
-#define n e)
 #define u d!=
 #define F int 
 #define y (j)
 #define r m=
 #define t +4
 F d,z,C,h,P,K,ac,q,G,v,Q,R,D,L,W,M;
-E(n{
+E(int e){
 x D++=e;
 }
 o f{
@@ -131,43 +132,43 @@ x q++=g;
 g=g>>8;
 }
 }
-A(n{
+A(int e){
 F g;
-p n{
+p e){
 g=k e;
 k e=q-e-4;
 e=g;
 }
 }
-s(g,n{
+s(int g,int e){
 l g);
 k q=e;
 e=q;
 q=q t;
 J e;
 }
-H(n{
-s(184,n;
+H(e){
+s(184,e);
 }
-B(n{
-J s(233,n;
+B(e){
+J s(233,e);
 }
-S(j,n{
+S(int j,int e){
 l 1032325);
-J s(132+j,n;
+J s(132+j,e);
 }
-Z(n{
+Z(int e){
 l 49465);
 H(0);
 l 15);
 l e+144);
 l 192);
 }
-N(j,n{
+N(int j,int e){
 l j+131);
-s((e<512)<<7|5,n;
+s((e<512)<<7|5,e);
 }
-T y{
+T (int j){
 F g,e,m,aa;
 g=1;
 a d b 34){
@@ -221,7 +222,7 @@ w f;
 l 89);
 l 392+(e b 256));
 }
-i a n{
+i a e){
 a e b 256)l 139);
 i l 48655);
 q++;
@@ -264,7 +265,7 @@ k r j;
 c;
 a!g){
 e=e t;
-k e=s(232,k n;
+k e=s(232,k e);
 }
 i a g b 1){
 s(2397439,j);
@@ -276,11 +277,11 @@ s(232,g-q-5);
 a j)s(50305,j);
 }
 }
-O y{
+O (int j){
 F e,g,m;
 a j--b 1)T(1);
 i{
-O y;
+O (j);
 r 0;
 p j b C){
 g=d;
@@ -288,17 +289,17 @@ e=z;
 c;
 a j>8){
 r S(e,m);
-O y;
+O (j);
 }
 i{
 l 80);
-O y;
+O (j);
 l 89);
 a j b 4|j b 5){
-Z(n;
+Z(e);
 }
 i{
-l n;
+l e);
 a g b 37)l 146);
 }
 }
@@ -308,7 +309,7 @@ r S(e,m);
 H(e^1);
 B(5);
 A(m);
-H(n;
+H(e);
 }
 }
 }
@@ -319,19 +320,19 @@ U f{
 w f;
 J S(0,0);
 }
-I y{
+I (int j){
 F m,g,e;
 a d b 288){
 c;
 c;
 r U f;
 c;
-I y;
+I (j);
 a d b 312){
 c;
 g=B(0);
 A(m);
-I y;
+I (j);
 A(g);
 }
 i{
@@ -357,7 +358,7 @@ a u 41){
 e=B(0);
 w f;
 B(g-q-5);
-A(n;
+A(e);
 g=e t;
 }
 }
@@ -369,7 +370,7 @@ A(m);
 i a d b 123){
 c;
 ab(1);
-p u 125)I y;
+p u 125)I (j);
 c;
 }
 i{
@@ -386,7 +387,7 @@ i a u 59)w f;
 c;
 }
 }
-ab y{
+ab (int j){
 F m;
 p d b 256|u-1&!j){
 a d b 256){
@@ -428,11 +429,11 @@ k r G;
 }
 }
 }
-main(g,n{
+int main(int g,char **e){
 Q=stdin;
 a g-->1){
-e=e t;
-Q=fopen(k e,"r");
+*e=e[1];
+Q=fopen(*e,"r");
 }
 D=strcpy(R V," int if else while break return for define main ")+48;
 v V;
@@ -441,6 +442,6 @@ P V;
 o f;
 c;
 ab(0);
-J(*(int(*)f)k(P+592))(g,n;
+J(*(int(*)f)k(P+592))(g,e);
 }
 
