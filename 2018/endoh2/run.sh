@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Do the compile and run loop for 10 seconds
 
 transient_parrot=$(tempfile -s .c)

@@ -1,39 +1,44 @@
 # Best use of python
 
-Yusuke Endoh  
-Twitter: @mametter  
+    Yusuke Endoh  
+    Twitter: @mametter  
 
+# To build:
 
-## Judges' comments:
-### To use:
+```sh
+make
+```
 
-    make
+### To run:
 
-    ./prog
+```sh
+./prog
+```
 
 ### Try:
 
-    make
+```sh
+./prog | tee prog_next.c
+make prog_next
+./prog_next | tee prog_next.c
+make prog_next
+./prog_next | tee prog_next.c
 
-    ./prog | tee prog_next.c
-    make prog_next
-    ./prog_next | tee prog_next.c
-    make prog_next
-    ./prog_next | tee prog_next.c
+make python
 
-    make python
+make python3
+```
 
-    make python3
-
-### Selected Judges Remarks:
+## Judges' comments:
 
 And now for something completely different: A program whose metabolic
 processes are a matter of interest only to historians. It has kicked the bucket
 and departed to that mysterious country from whose bourne no traveller returns!
 This is an EX-tremely obfuscated program!
 
-
 ## Author's comments:
+
+```
                              ___-----__
                           _--          --__
                         _-        _--_     \
@@ -51,12 +56,12 @@ This is an EX-tremely obfuscated program!
           _-                                |
          /                                   |
         |                                     |
+```
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
