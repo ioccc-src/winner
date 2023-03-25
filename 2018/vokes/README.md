@@ -1,22 +1,29 @@
 # Most connected
 
-Scott Vokes  
-Twitter: @silentbicycle  
+    Scott Vokes  
+    Twitter: @silentbicycle  
 
+# To build:
 
-## Judges' comments:
-### To use:
+```sh
+make
+```
 
-    make
-    ./prog < example-1.txt
+### To run:
+
+```sh
+./prog < example-1.txt
+```
 
 ### Try:
 
-    ./prog < example-2.txt
-    ./prog < example-tab.txt
-    ./prog < ioccc.txt
+```sh
+./prog < example-2.txt
+./prog < example-tab.txt
+./prog < ioccc.txt
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 What this program does is not witchcraft and there are no spectres, but you
 might have a meltdown trying to work it all out.
@@ -25,10 +32,9 @@ This entry is designed to mislead in many ways. However, if you find yourself
 wanting to know the possibilities for navigating a graph, you will get the
 answer you seek with no hocus pocus.
 
-
 ## Author's comments:
-Introduction
-------------
+
+### Introduction
 
 This program reads a directed graph (as lines with integer node IDs),
 and prints the graph's nodes in reverse-topologically sorted order,
@@ -76,9 +82,7 @@ implementation of counting sort, which sorts each group.
 For other details about the input format, see "Issues and
 Limitations".
 
-
-Building
---------
+### Building
 
 To build:
 
@@ -95,9 +99,7 @@ may also be necessary -- the function pointer declarations for
 `_` and `B` may get warnings otherwise, for reasons described
 under "Obfuscations".
 
-
-Obfuscations
-------------
+### Obfuscations
 
 - This entry uses functions that have a variable number of arguments,
   but despite what the rules say, there is no need to be careful about
@@ -166,9 +168,7 @@ Obfuscations
 - Oh, and the program is squashed into the shape of a bubbling cauldron,
   on top of a giant underscore, so there's that.
 
-
-Issues and Limitations
-----------------------
+### Issues and Limitations
 
 - Despite appearances, it does not handle numbers in hex, or provide
   a `curses(3)`-based interface.
@@ -214,11 +214,10 @@ Issues and Limitations
   the values 48 through 57, rather than using `isdigit()`. As noted
   above, this program has nothing to do with a hand.
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
