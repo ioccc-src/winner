@@ -1,45 +1,58 @@
 # Most in need of debugging
 
-Yusuke Endoh  
-Twitter: @mametter  
+    Yusuke Endoh  
+    Twitter: @mametter  
 
+# To build:
 
-## Judges' comments:
-### To use:
+```sh
+make
+```
 
-    make
+### To run:
+
+```sh
+./prog
+```
 
 ### Try:
 
-    ./prog
+```sh
+gdb ./prog || llvm ./prog
+```
 
-    gdb ./prog || llvm ./prog
-
-### Selected Judges Remarks:
+## Judges' comments:
 
 The purpose of this program is to crash. You'll want to have memorized "man
 ascii" when debugging it to reveal its purpose.
 
 ## Author's comments:
+
 ### backtrace quine
 
 Compile prog.c with no optimization.
 
-    $ gcc -g -O0 -o prog prog.c
+```sh
+cc -g -O0 -o prog prog.c
+```
 
 Then, run it.  You will see a segmentation fault.
 
-    $ ./prog
-    Segmentation fault (core dumped)
+```sh
+$ ./prog
+Segmentation fault (core dumped)
+```
 
 Let's debug.  As usual, run it under gdb.
 
-    $ gdb ./prog
-    (gdb) run
-    Starting program: /home/.../prog
+```sh
+$ gdb ./prog
+(gdb) run
+Starting program: /home/.../prog
 
-    Program received signal SIGSEGV, Segmentation fault.
-    0x0000000000000000 in ?? ()
+Program received signal SIGSEGV, Segmentation fault.
+0x0000000000000000 in ?? ()
+```
 
 Okay, check the backtrace.
 
@@ -65,8 +78,7 @@ See the line numbers and lookup the ASCII table.
     101 = 'e'
     ...
 
-
-#### One more thing
+### One more thing
 
 The original program can be used as a GDB command file.
 
@@ -87,14 +99,15 @@ The original program can be used as a GDB command file.
 
 By using this, you can confirm that it is actually a quine.
 
-    $ gdb -q -x prog.c ./prog | sed -n -r 's/#.*:([0-9]+)/\1/p' | awk '{printf "%c",$1}' > prog2.c
-    $ diff prog.c prog2.c
+```sh
+gdb -q -x prog.c ./prog | sed -n -r 's/#.*:([0-9]+)/\1/p' | awk '{printf "%c",$1}' > prog2.c
+diff prog.c prog2.c
+```
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2019, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
