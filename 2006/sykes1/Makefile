@@ -191,7 +191,7 @@ ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 ${PROG}.html: ${PROG}.c
-	${RM} ${PROG}.html
+	${RM} -f ${PROG}.html
 	cp ${PROG}.c ${PROG}.html
 
 # alternative executable
