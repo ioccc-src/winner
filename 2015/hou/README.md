@@ -1,21 +1,27 @@
 # Most Well-rounded Hash
 
-Qiming Hou <hqm03ster@gmail.com>  
-<http://www.houqiming.net/>  
+    Qiming Hou <hqm03ster@gmail.com>  
+    <http://www.houqiming.net/>  
 
+# To build:
 
-## Judges' comments:
-### To use:
+```sh
+make
+```
 
-    make
-    
-    echo IOCCC | ./prog
+### To run:
+
+```sh
+echo IOCCC | ./prog
+```
 
 ### Try:
 
-    echo "" | ./prog
+```sh
+echo "" | ./prog
+```
 
-### Selected Judges Remarks:
+## Judges' comments:
 
 A good start for understanding this entry might be
 https://www.ietf.org/rfc/rfc1321.txt. How does it compute this using only a
@@ -26,19 +32,23 @@ the reference code!
 
 Some things that make you go, "huh?"
 
-	./prog < prog.c | cut -c-5
-	./prog < Makefile | cut -c-4
+```sh
+./prog < prog.c | cut -c-5
+./prog < Makefile | cut -c-4
+```
 
 How are those values magically returned?
 
 What happens with a large file? Something over 256K
 
-	./prog < large_file
+```sh
+./prog < large_file
+```
 
 Where does that message come from?
 
-
 ## Author's comments:
+
 This looks like a normal C program.
 
 Almost everything is a double.
@@ -85,11 +95,10 @@ Tested platforms:
 * Windows 8.1, x86, MinGW gcc 4.6.2 (fails, prints error message)
 * Windows 8.1, x86, MinGW gcc 4.6.2 with -msse2 -mfpmath=sse (works)
 
---------------------------------------------------------------------------------
-<!--
+## Copyright:
+
 (c) Copyright 1984-2016, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
 
 [judges]: http://www.ioccc.org/judges.html
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
