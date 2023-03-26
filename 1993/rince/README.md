@@ -1,4 +1,4 @@
-Most Well Rounded:
+# Most Well Rounded:
 
 	James Bonfield
 	MRC Laboratory of Molecular Biology,
@@ -7,7 +7,15 @@ Most Well Rounded:
 	England
 
 
-Judges' comments:
+# To build:
+
+    make all
+
+[Yusuke Endoh](/winners.html#Yusuke_Endoh)  supplied a patch to get this to work
+in modern systems. Thank you Yusuke!
+
+
+# Judges' comments:
 
     To run:
 	make rince
