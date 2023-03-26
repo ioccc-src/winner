@@ -1,19 +1,3 @@
-
-###############
-# utility rules
-###############
-#
-everything: all alt
-
-clean:
-	${RM} -f ${OBJ} ${ALT_OBJ}
-
-clobber: clean
-	${RM} -f ${TARGET} ${ALT_TARGET}
-	@-if [ -e sandwich ]; then \
-	    ${RM} -f sandwich; \
-	    echo 'ate sandwich'; \
-	fi
 #!/usr/bin/env make
 #
 # IOCCC 2018 winning entry - endoh2
