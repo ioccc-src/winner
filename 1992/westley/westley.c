@@ -1,7 +1,7 @@
            main(l
-   ,a)char**a;{int n;int d;
-  for(d=atoi(a[1])/10*80-
- atoi(a[2])/5-596;n="@NKA\
+  ,a)char**a;{int n;int d;
+if (l>2)for(d=atoi(a[1])/10
+*80-atoi(a[2])/5-596;n="@NKA\
 CLCCGZAAQBEAADAFaISADJABBA^\
 SNLGAQABDAXIMBAACTBATAHDBAN\
 ZcEMMCCCCAAhEIJFAEAAABAfHJE\
