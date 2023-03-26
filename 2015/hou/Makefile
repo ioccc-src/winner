@@ -167,7 +167,7 @@ ${PROG}: prebuild
 	fi
 
 prebuild: ${CSRC}
-        ${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
 #
