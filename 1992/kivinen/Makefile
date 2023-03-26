@@ -78,8 +78,8 @@ CDEFINE=
 #CINCLUDE= -include stdlib.h
 #CINCLUDE= -include stdio.h
 #CINCLUDE= -include stdlib.h -include stdio.h
-#CINCLUDE= -I ${X11_INCDIR}
-CINCLUDE= -I ${HOMEBREW_PREFIX}/include
+CINCLUDE= -I ${X11_INCDIR}
+#CINCLUDE= `${SDL2_CONFIG} --cflags`
 
 # Optimization
 #
@@ -102,8 +102,8 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 #
 #LIBS=
 #LIBS= -lm
-#LIBS= -L ${X11_LIBDIR} -lX11 -lresolv
-LIBS= -L ${HOMEBREW_PREFIX}/lib -lX11 -lresolv
+LIBS= -L ${X11_LIBDIR} -lX11
+#LIBS= `${SDL2_CONFIG} --libs`
 
 # C compiler to use
 #
