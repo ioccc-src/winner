@@ -52,12 +52,12 @@ O:
 #line				8 "<%s>:\n"
 				char *I = L + __LINE__;
 				int O = printf (__FILE__, n[nn]) +
-#line				2 "0gcc -ansi -E -dM -undef %s /usr/include/%s>r\0 ("
+#line				2 "0gcc -ansi -E -dM -undef %s /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/%s>r\0 ("
 				sprintf (K, 1+__FILE__, f[S-*__FILE__] + __LINE__, n[nn]);
 				O += system (K);
-				if ((G = fopen (__FILE__+44, "r")))
+				if ((G = fopen (__FILE__+95, "r")))
 				while ((fgets (L, (int)sizeof L, G)) != 0) {
-					I[strcspn (I, 46+__FILE__)] = O = 0;
+					I[strcspn (I, 97+__FILE__)] = O = 0;
 #line					1 "*r"
 					t (n) t (e)
 					if (0 == O) O = puts (L);
