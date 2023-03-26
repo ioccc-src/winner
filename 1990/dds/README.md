@@ -16,7 +16,8 @@ you Yusuke!
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) removed the erroneous
 prototype to `fopen()` and made this use `fgets()` instead of `gets()` to make
-it safer. Thank you Cody for your assistance!
+it safer. He also fixed a segfault in the case that the file cannot be loaded.
+Thank you Cody for your assistance!
 
 ### To run
 
@@ -31,9 +32,6 @@ Give the following lines as input:
 	RUN
 
 NOTE: this is case sensitive.
-
-NOTE: this program will likely segfault if you specify a file that cannot be
-opened.
 
 ## Judges' comments:
 
