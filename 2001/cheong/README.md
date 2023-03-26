@@ -15,8 +15,9 @@ make
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work with
 clang by adding another function that is allowed to have a third arg as an int,
 not a `char **`. He chose pain() because it's a four letter word that would
-match the format and because it's pain that clang forces this. :-) Thank you
-Cody for your assistance!
+match the format and because it's pain that clang forces this. :-) He also fixed
+a segfault in the case that no arg is specified. Thank you Cody for your
+assistance!
 
 
 ### To run:
