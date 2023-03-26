@@ -6,8 +6,65 @@
 
 # To build:
 
+This entry requires SDL to be installed.
+
 ```sh
 make
+```
+
+### To install SDL and SDL2:
+
+#### macOS users
+
+If you have not aleady do so, install Homebrew.  See the following for information:
+
+    https://brew.sh
+
+Then to install SDL and SDL2, execute the following command:
+
+```sh
+brew install sdl2 sdl12-compat
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+#### Linux users:
+
+To install SDL and SDL2, execute the following command as root:
+
+```sh
+dnf install SDL2 SDL2-devel sdl12-compat sdl12-compat-devel
+```
+
+Use make as follows:
+
+```sh
+make ... SDL2_INCLUDE_ROOT=/usr
+```
+
+or set the following environment variable:
+
+```sh
+export SDL2_INCLUDE_ROOT=/usr
+```
+
+#### Debian users
+
+To install SDL and SDL2, execute the following command as root:
+
+```sh
+apt install libsdl1.2debian libsdl1.2-dev libsdl2-dev
+```
+
+Use make as follows:
+
+```sh
+make ... SDL2_INCLUDE_ROOT=/usr
+```
+
+or set the following environment variable:
+
+```sh
+export SDL2_INCLUDE_ROOT=/usr
 ```
 
 ### To run:

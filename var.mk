@@ -262,3 +262,62 @@ ZMORE= zmore
 ZNEW= znew
 ZPRINT= zprint
 ZSH= zsh
+
+
+#####
+# X11
+#####
+
+# Set X11_LIBDIR to the directory where the X11 library resides
+#
+#X11_LIBDIR= /usr/X11R6/lib
+#X11_LIBDIR= /usr/X11/lib
+X11_LIBDIR= /opt/X11/lib
+
+# Set X11_INCLUDEDIR to the directory where the X11 include files reside
+#
+#X11_INCDIR= /usr/X11R6/include
+#X11_INCDIR= /usr/X11/include
+X11_INCDIR= /opt/X11/include
+
+
+############################
+# SD1 and SDL2 include files
+############################
+
+# macOS users:
+#
+# If you have not aleady do so, install Homebrew.  See the following for information:
+#
+#	https://brew.sh
+#
+# Then to install SDL and SDL2, execute the following command:
+#
+#	brew install sdl2 sdl12-compat
+#	eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Linux users:
+#
+# To install SDL and SDL2, execute the following command as root:
+#
+#	dnf install SDL2 SDL2-devel sdl12-compat sdl12-compat-devel
+
+# Debian users:
+#
+# To install SDL and SDL2, execute the following command as root:
+#
+#	apt install libsdl1.2debian libsdl1.2-dev libsdl2-dev
+
+# SDL2_INCLUDE_ROOT is the directory under which include/SDL/ and/or
+# include/SDL2/ may be found.
+#
+# Even if you do not use HomeBrew, you might set the environment
+# variable $HOMEBREW_PREFIX to the SDL2_INCLUDE_ROOT directory path
+# as the default SDL2_INCLUDE_ROOT value is $HOMEBREW_PREFIX.
+# Of you may run make and set SDL2_INCLUDE_ROOT directly:
+#
+#	make all SDL2_INCLUDE_ROOT=/some/path
+#
+#SDL2_INCLUDE_ROOT= /usr
+#SDL2_INCLUDE_ROOT= /opt/homebrew
+SDL2_INCLUDE_ROOT= ${HOMEBREW_PREFIX}
