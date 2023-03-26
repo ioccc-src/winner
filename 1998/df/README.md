@@ -24,8 +24,8 @@ game has some data - but where?  It's unclear which of the contents of
 the program are used.
 
 Curiously, the program only works if its source is in the directory
-it's run in.  More curiously, the program will fail if the program's
-name's second letter isn't "r" (the source has been changed for your
+it's run in.  More curiously, the program would fail if the program's
+name's second letter wasn't "r" (the source has been changed for your
 convenience and this restriction does no longer exist).
 
 Modern design has come a long way since the unreadable, tightly-coupled
