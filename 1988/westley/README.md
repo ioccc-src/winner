@@ -33,7 +33,7 @@ You might enjoy looking at the output of:
 
 	cc -E westley.c
 
-Misha Dynin provided a fix for westley.c si that it may compile on 
+Misha Dynin provided a fix for westley.c so that it may compile on 
 both K&R and more modern C compilers.
 
 ## Copyright and CC BY-SA 4.0 License:
