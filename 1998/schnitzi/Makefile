@@ -46,6 +46,7 @@ SHELL= bash
 # common tool locations
 #######################
 #
+include ../../var.mk
 
 # Set X11_LIBDIR to the directory where the X11 library resides
 #
