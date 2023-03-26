@@ -1,6 +1,6 @@
 #!/usr/bin/env make
 #
-# IOCCC 2006sykes1 winning entry - sykes1
+# IOCCC 2006 winning entry - sykes1
 
 ################################################################################
 #
