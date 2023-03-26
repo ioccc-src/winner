@@ -269,8 +269,8 @@ indent.c: ${PROG}.c
 	    ${INDENT} < $< > $@; \
 	else \
 	    echo "no intent tool found, ident $< yourself, sorry"; \
-	    echo "exit 1"; \
-	    exit 1; \
+	    echo "exit 17"; \
+	    exit 17; \
 	fi
 
 
@@ -295,9 +295,9 @@ maker:
 	@${TRUE}
 
 easter_egg:
-	@echo "you expected to often misunderstand this $${RANDOM} magic"
+	@echo "You are expected to often misunderstand this $${RANDOM} magic, Eggy!"
 	@echo "chongo '<was here>' /\\oo/\\"
-	@echo "Eggy"
+	@echo "p.s.: Careful with That Axe, Eugene!"
 
 sandwich: easter_egg
 	@if [ `id -u` -eq 0 ]; then \
@@ -305,7 +305,7 @@ sandwich: easter_egg
 	    echo "$${RANDOM}`date +%s`$${RANDOM}" > $@; \
 	else \
 	    echo 'What? Make it yourself.'; \
-	    exit 1; \
+	    echo "Did you forget the magic word?"; \
 	fi
 
 # Understand the history of the Homebrew Computer Club
@@ -316,7 +316,7 @@ supernova: sandwich
 	@-if [ -r .code_anal ]; then \
 	    ${RM} -f .code_anal_v6; \
 	else \
-	    echo "planet deniers, like some members of the IAU, are so cute when they try to defend their logic"; \
+	    echo "Planet deniers, like some members of the IAU, are so cute when they try to defend their logic"; \
 	fi
 	@echo "A $@ helps ${MAKE} the elements that help form planets"
 	@${TRUE}
@@ -324,12 +324,12 @@ supernova: sandwich
 deep_magic: supernova
 	@-if [ -r .code_anal ]; then \
 	    ccode_analysis --deep_magic 7889066cdbdf09b0408021754586e895be641cc9be29e7eafd3ca65359541f17 \
-	    		   --FNV1a_hash_512_bit -v2 "${PROG}" "${PROG}.c"; \
+			   --FNV1a_hash_512_bit -v2 "${PROG}" "${PROG}.c"; \
 	else \
 	    echo "Wrong! Do it again!"; \
-	    sleep 2; \
+	    sleep 1; \
 	    echo "Wrong! Do it again!"; \
-	    sleep 2; \
+	    sleep 1; \
 	    echo "Wrong! Do it again!"; \
 	fi
 	@${TRUE}
@@ -347,12 +347,12 @@ magic: deep_magic
 #
 charon: magic
 	@echo "$@ is a dwarf planet"
-	@echo "dwarf is a type of planet"
-	@echo "therefore IAU, $@ is a planet"
+	@echo "Dwarf planets are a type of planet"
+	@echo "Therefore IAU, $@ is a planet"
 
 pluto: charon
-	${MAKE} charon
+	@echo "See https://www.hou.usra.edu/meetings/lpsc2017/pdf/1448.pdf for a good definition of a planet"
 	@echo "$@ is a dwarf planet"
-	@echo "dwarf is a type of planet"
-	@echo "therefore, $@ is a planet"
-	@echo "having lots of planets is good feature because supernovae can help ${MAKE} a lot of them"
+	@echo "Dwarf planets are a type of planet"
+	@echo "Therefore, $@ is a planet"
+	@echo "The geophysical definition of planet gives us ~110 planets in our solar system"

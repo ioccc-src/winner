@@ -217,8 +217,8 @@ indent.c: ${PROG}.c
 	    ${INDENT} < $< > $@; \
 	else \
 	    echo "no intent tool found, ident $< yourself, sorry"; \
-	    echo "exit 1"; \
-	    exit 1; \
+	    echo "exit 17"; \
+	    exit 17; \
 	fi
 
 
@@ -243,7 +243,7 @@ make:
 	@${TRUE}
 
 easter_egg:
-	@echo you expected to often misunderstand this $${RANDOM} magic
+	@echo You are expected to often misunderstand this $${RANDOM} magic
 	@echo chongo '<was here>' "/\\oo/\\"
 	@echo Eggy
 
@@ -256,7 +256,7 @@ sandwich:
 	    echo $${RANDOM}`date +%s`$${RANDOM} > $@; \
 	else \
 	    echo 'What? Make it yourself.'; \
-	    exit 1; \
+	    echo "Did you forget the magic word?"; \
 	fi
 
 # Understand the history of the Homebrew Computer Club
@@ -267,7 +267,7 @@ supernova: nuke
 	@-if [ -r .code_anal ]; then \
 	    ${RM} -f .code_anal_v6; \
 	else \
-	    echo "planet deniers, like some members of the IAU, are so cute when they try to defend their logic"; \
+	    echo "Planet deniers, like some members of the IAU, are so cute when they try to defend their logic"; \
 	fi
 	@echo A $@ helps ${MAKE} the elements that help form planets
 	@${TRUE}
@@ -277,9 +277,9 @@ deep_magic:
 	    ccode_analysis --deep_magic 7889066cdbdf09b0408021754586e895be641cc9be29e7eafd3ca65359541f17 --FNV1a_hash_512_bit "prog"; \
 	else \
 	    echo "Wrong! Do it again!"; \
-	    sleep 2; \
+	    sleep 1; \
 	    echo "Wrong! Do it again!"; \
-	    sleep 2; \
+	    sleep 1; \
 	    echo "Wrong! Do it again!"; \
 	fi
 	@${TRUE}
@@ -297,12 +297,12 @@ magic: deep_magic
 #
 charon: supernova
 	@echo $@ is a dwarf planet
-	@echo dwarf is a type of planet
-	@echo therefore IAU, $@ is a planet
+	@echo Dwarf planets are a type of planet
+	@echo Therefore IAU, $@ is a planet
 
 pluto: supernova
-	${MAKE} charon
+	@echo "See https://www.hou.usra.edu/meetings/lpsc2017/pdf/1448.pdf for a good definition of a planet"
 	@echo $@ is a dwarf planet
-	@echo dwarf is a type of planet
-	@echo therefore, $@ is a planet
+	@echo Dwarf planets are a type of planet
+	@echo Therefore, $@ is a planet
 	@echo get used to having lots of planets becasue supernovae can ${MAKE} a lot of them
