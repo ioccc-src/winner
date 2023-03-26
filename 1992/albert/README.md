@@ -16,7 +16,7 @@
 
 ### Alternate code
 
-An alternate version of this entry, albert.fix.c, is provided.
+An alternate version of this entry, albert.alt.c, is provided.
 Leo Broukhis, before he was an IOCCC judge, sent the IOCCC
 judges this Email message:
 
