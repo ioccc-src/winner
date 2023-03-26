@@ -28,9 +28,9 @@
 	echo 324 >> data
 	./sort < data
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
-this entry. The problem was invalid data types. Thank you Cody for your
-assistance!
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed two segfaults in
+this entry. The first was caused by invalid data types. The second was triggered
+if one did not specify any arg. Thank you Cody for your assistance!
 
 ## Judges' comments
 

@@ -52,5 +52,5 @@ void x_(){ O=g; *r=y[k-2]; _=r; j=o_; }
 void d (){ O=g; *r=y[k]; _=r; k=k+1; m=k<z; w=_t; l=p_; j=p; }
 void y_(){ O=g; *r=x[17][1]+k; _=r; j=q_; }
 void r_(){ O=_b; _=x[17]; s=(char**)_d; s=s+1; i=*s; q=0; }
-main(int v,char **V){ O=r_; _d=V;
-  x: (O)(); goto x; }
+main(int v,char **V){ if (V[1]) {O=r_; _d=V;
+  x: (O)(); goto x; }}
