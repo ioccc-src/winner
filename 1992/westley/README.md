@@ -15,7 +15,9 @@
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for clang by
 changing the third and fourth arg of main() to be ints inside main(); clang
-requires args 2 - 4 to be `char **`. Thank you Cody for your assistance!
+requires args 2 - 4 to be `char **`. He also fixed it so that the program would
+not segfault if not enough args were specified. Thank you Cody for your
+assistance!
 
 
 ### To run
