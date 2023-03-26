@@ -11,17 +11,19 @@
 
 	    make all
 
-NOTE: for modern compilers we had to change the C pre-processor lines like:
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for modern
+systems. Modern compilers do not allow directives like:
 
 	    #define _ define
 	    -#_ foo bar
 
-to be:
+so Cody changed the lines to be in the form of:
 
 	    #define foo bar
 
 Even so this entry requires a compiler that supports the `-traditional-cpp`
-option.
+option. Thank you Cody for your assistance!
+
 
 ## Try:
 
