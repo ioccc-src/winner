@@ -4,36 +4,24 @@
 
 ################################################################################
 #
-# Regarding individual entries:
+# IOCCC winning entry code may not work on your system.  What was liked/allowed
+# and worked in the past may no longer be the liked/allowed or compile/run today.
 #
-# IOCCC winning entry code may not work on your system.  Even with standards,
-# conditions and build environments change, especially when it comes to more
-# extreme code such you might find in an IOCCC winner.  Moreover, what was
-# allowed and liked in one IOCCC contest may no longer be liked/allowed in
-# later IOCCC years.
+# Bug fixes, corrections and typo fixes are VERY WELCOME.  If you see a problem,
+# first check this URL for a list of known bugs and (mis)features of IOCCC winners:
 #
-# Corrections on winning author and fixing typos in remarks are VERY WELCOME.
+#	http://www.ioccc.org/bugs.md
 #
-# GitHub pull requests are welcome:
-#
-# If you have a patch that might make running an entry work in modern Unix-like
-# environments, please create a GitHub pull request for the IOCCC judges to
-# consider.
-#
-# Suggestions and corrections regarding Makefiles, winning author information,
-# fixing typos in remarks, and code patches are welcome via opening a GitHub
-# issue or better yet, by creating a GitHub pull request for the IOCCC judges
-# to consider.  To form a GitHub issue or GitHub pull, please visit:
-#
-# https://github.com/ioccc-src/winner
+# GitHub pull requests are welcome!  Please see the above URL for details.
 #
 ################################################################################
-
-# This work by Landon Curt Noll and Leonid A. Broukhis is licensed under:
 #
-#	Creative Commons Attribution-ShareAlike 3.0 Unported License.
+# This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+# You are free to share and adapt this file under the terms this license:
 #
-# See: http://creativecommons.org/licenses/by-sa/3.0/
+#	Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+#
+# For more information, see: https://creativecommons.org/licenses/by-sa/4.0/
 
 
 #############################
