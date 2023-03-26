@@ -12,7 +12,8 @@
         make all
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed some segfaults
-under modern (and in some cases earier) systems with this entry. Thank you Cody!
+under modern (and in some cases earlier) systems with this entry. Thank you Cody
+for your assistance!
 
 [Yusuke Endoh](/winners.html#Yusuke_Endoh) pointed out that `atof` nowadays
 needs `#include <stdlib.h>` which was used in order to get this to work
