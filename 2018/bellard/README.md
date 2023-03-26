@@ -84,10 +84,11 @@ the output.
 [1]: https://commons.wikimedia.org/wiki/File%3AFruits_oranges%2C_jardin_japonais_2.JPG
 [2]: https://commons.wikimedia.org/wiki/File%3ARed_Bull_Jungfrau_Stafette%2C_10th_stage_-_vintage_cars_%282%29.jpg
 
-## Copyright:
+## Copyright and CC BY-SA 4.0 License:
 
-(c) Copyright 1984-2018, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
-This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+You are free to share and adapt this file under the terms this license:
 
-[judges]: http://www.ioccc.org/judges.html
-[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+For more information, see: https://creativecommons.org/licenses/by-sa/4.0/

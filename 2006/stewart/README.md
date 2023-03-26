@@ -167,3 +167,12 @@ where one would expect decimal.  Shifts instead of devides.
 Using xbm as the output format.  This might confuse someone who doesn't
 have an X background.  It happens to be easy but is probably a very bad
 choice from a filesize standpoint.  1024x1024 image is 641k in size.
+
+## Copyright and CC BY-SA 4.0 License:
+
+This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+You are free to share and adapt this file under the terms this license:
+
+    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+For more information, see: https://creativecommons.org/licenses/by-sa/4.0/

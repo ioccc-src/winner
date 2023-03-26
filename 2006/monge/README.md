@@ -206,3 +206,12 @@ The zooming algorithm works by remembering for each pixel the
 floating point offset to where the value was actually calculated.
 When zooming, the best match is searched, and if the offset is
 too big (>1) the pixel is recalculated.
+
+## Copyright and CC BY-SA 4.0 License:
+
+This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+You are free to share and adapt this file under the terms this license:
+
+    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+For more information, see: https://creativecommons.org/licenses/by-sa/4.0/

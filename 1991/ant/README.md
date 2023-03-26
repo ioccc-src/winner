@@ -122,8 +122,11 @@ work correctly, however.
 
 [net90]	"Editor 101/102" articles from comp.editors
 
-Copyright (c) 1991, Landon Curt Noll & Larry Bassel.
-All Rights Reserved.  Permission for personal, educational or non-profit use is
-granted provided this this copyright and notice are included in its entirety
-and remains unaltered.  All other uses must receive prior permission in writing
-from both Landon Curt Noll and Larry Bassel.
+## Copyright and CC BY-SA 4.0 License:
+
+This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+You are free to share and adapt this file under the terms this license:
+
+    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+For more information, see: https://creativecommons.org/licenses/by-sa/4.0/

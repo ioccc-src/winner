@@ -451,11 +451,11 @@ A call-by-name lambda-calculus machine
 Higher Order Symbol. Comput. 20, 3 (September 2007), 199-207.
 <http://www.pps.univ-paris-diderot.fr/~krivine/articles/lazymach.pdf>
 
---------------------------------------------------------------------------------
-<!--
-(c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
-This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+## Copyright and CC BY-SA 4.0 License:
 
-[judges]: http://www.ioccc.org/judges.html
-[cc]: http://creativecommons.org/licenses/by-sa/3.0/
--->
+This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+You are free to share and adapt this file under the terms this license:
+
+    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+For more information, see: https://creativecommons.org/licenses/by-sa/4.0/

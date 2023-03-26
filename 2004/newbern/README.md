@@ -65,3 +65,12 @@ Decryption is left as an exercise for the reader.
 The program assumes an ASCII operating environment.
 
 The program is best viewed with tab-stops set to 8.
+
+## Copyright and CC BY-SA 4.0 License:
+
+This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+You are free to share and adapt this file under the terms this license:
+
+    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+For more information, see: https://creativecommons.org/licenses/by-sa/4.0/

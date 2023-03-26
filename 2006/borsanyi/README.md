@@ -93,3 +93,12 @@ program is not expected to depend on endianness.  The standard
 output is used for a binary output, which might cause problems.
 To avoid most caveats, the program does not output the octet
 0x0a.  The program assumes the use of ASCII.
+
+## Copyright and CC BY-SA 4.0 License:
+
+This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+You are free to share and adapt this file under the terms this license:
+
+    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+For more information, see: https://creativecommons.org/licenses/by-sa/4.0/

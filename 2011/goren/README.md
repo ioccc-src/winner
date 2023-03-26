@@ -85,10 +85,11 @@ mostly with gcc on Linux.
 It doesn't support 64 bits (due to integer-pointer casts, and a >>31).
 It does work on 64-bit Linux, because all functions are below 4GB.
 
-## Copyright:
+## Copyright and CC BY-SA 4.0 License:
 
-(c) Copyright 1984-2012, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
-This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+You are free to share and adapt this file under the terms this license:
 
-[judges]: http://www.ioccc.org/judges.html
-[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+For more information, see: https://creativecommons.org/licenses/by-sa/4.0/

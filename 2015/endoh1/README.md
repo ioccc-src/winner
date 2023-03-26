@@ -210,10 +210,11 @@ field data to the browser on each frame.
 * [4] Eastlake 3rd, D. and P. Jones, "US Secure Hash Algorithm 1 (SHA1)", RFC 3174, DOI 10.17487/RFC3174, September 2001, <http://www.rfc-editor.org/info/rfc3174>.
 * [5] Josefsson, S., "The Base16, Base32, and Base64 Data Encodings", RFC 4648, DOI 10.17487/RFC4648, October 2006, <http://www.rfc-editor.org/info/rfc4648>.
 
-## Copyright:
+## Copyright and CC BY-SA 4.0 License:
 
-(c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
-This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+You are free to share and adapt this file under the terms this license:
 
-[judges]: http://www.ioccc.org/judges.html
-[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+For more information, see: https://creativecommons.org/licenses/by-sa/4.0/

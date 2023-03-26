@@ -317,10 +317,11 @@ block before the first `printf()`, but we initialize the `scanf()` format to the
 string so that it returns right away without blocking. The first time the `printf()`
 call runs, it writes out `"%hhd"` to create the `scanf()` format string.
 
-## Copyright:
+## Copyright and CC BY-SA 4.0 License:
 
-(c) Copyright 1984-2020, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
-This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+You are free to share and adapt this file under the terms this license:
 
-[judges]: http://www.ioccc.org/judges.html
-[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+For more information, see: https://creativecommons.org/licenses/by-sa/4.0/

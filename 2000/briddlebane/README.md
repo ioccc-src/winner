@@ -62,3 +62,12 @@ Furthermore, it is ambiguous how said data is arranged and why
 it is necessary to resort to trigonometric functions to handle
 it.  One of the real mysteries involves the numbers "114" and
 "2", which are, according to Lord Zarbon, very deliberate.
+
+## Copyright and CC BY-SA 4.0 License:
+
+This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+You are free to share and adapt this file under the terms this license:
+
+    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+For more information, see: https://creativecommons.org/licenses/by-sa/4.0/

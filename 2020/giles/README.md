@@ -98,10 +98,11 @@ This program determines which frequencies are present in the input by passing it
 
 Tones are generated using those same resonators by providing [an impulse](https://en.wikipedia.org/wiki/Kronecker_delta#Digital_signal_processing) as input. An impulse can be thought of as consisting of sine-waves at all frequencies, and when it is put through one of the resonators, the result is a single pure sine wave.
 
-## Copyright:
+## Copyright and CC BY-SA 4.0 License:
 
-(c) Copyright 1984-2020, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
-This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+You are free to share and adapt this file under the terms this license:
 
-[judges]: http://www.ioccc.org/judges.html
-[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+For more information, see: https://creativecommons.org/licenses/by-sa/4.0/

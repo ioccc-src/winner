@@ -67,3 +67,12 @@ smaller numbers are much easier to remember. Also the macros really
 help hiding most of the uses of these numbers away. All macros and
 variables are easy-to-remember single character abbreviations, from
 some language, meaningful to the purpose(s) of the macro, I hope.
+
+## Copyright and CC BY-SA 4.0 License:
+
+This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+You are free to share and adapt this file under the terms this license:
+
+    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+For more information, see: https://creativecommons.org/licenses/by-sa/4.0/

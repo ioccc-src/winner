@@ -84,3 +84,12 @@ The program will first read in all the input integers, but it will begin
 execution immediately and only read program instructions as they are needed.
 Yet there is no global variable storing how far it has read! Perhaps the
 hardest thing to figure out is how it finds the matching square brackets.
+
+## Copyright and CC BY-SA 4.0 License:
+
+This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+You are free to share and adapt this file under the terms this license:
+
+    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+For more information, see: https://creativecommons.org/licenses/by-sa/4.0/

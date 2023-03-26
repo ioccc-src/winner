@@ -33,3 +33,12 @@ Take some time to figure out what it does before you run it!
 
 Beware, running this program with too high of a number
 amounts to doing a fork bomb on your machine!
+
+## Copyright and CC BY-SA 4.0 License:
+
+This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+You are free to share and adapt this file under the terms this license:
+
+    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+For more information, see: https://creativecommons.org/licenses/by-sa/4.0/

@@ -236,10 +236,11 @@ Screenshots of some of these applications running (on Mac OS X) are provided for
 
 A lot of compiler warnings are produced by clang. Missing type specifiers, control reaching the end of functions without returning values, incompatible pointer type assignments, and some precedence warnings, all necessary to keep the source size down. Other compilers are likely to produce similar warnings.
 
-## Copyright:
+## Copyright and CC BY-SA 4.0 License:
 
-(c) Copyright 1984-2015, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved
-This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License][cc].
+This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+You are free to share and adapt this file under the terms this license:
 
-[judges]: http://www.ioccc.org/judges.html
-[cc]: http://creativecommons.org/licenses/by-sa/3.0/
+    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+For more information, see: https://creativecommons.org/licenses/by-sa/4.0/

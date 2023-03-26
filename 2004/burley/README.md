@@ -79,3 +79,12 @@ is written as a single statement -- count the semicolons!  (OK, there
 are really three statements if you count the variable declarations.)  To
 keep things simple, I have avoided the C preprocessor and tricky
 statements such as "if", "for", "do", "while", "switch", and "goto".
+
+## Copyright and CC BY-SA 4.0 License:
+
+This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+You are free to share and adapt this file under the terms this license:
+
+    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+For more information, see: https://creativecommons.org/licenses/by-sa/4.0/

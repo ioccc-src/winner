@@ -142,3 +142,12 @@ but still is declared before main(). The `5[O]()` in main() calls
 this function.  Similarly, Most indexing operations have been
 changed to this form; and I tried to write each such operation
 different.
+
+## Copyright and CC BY-SA 4.0 License:
+
+This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+You are free to share and adapt this file under the terms this license:
+
+    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+For more information, see: https://creativecommons.org/licenses/by-sa/4.0/
