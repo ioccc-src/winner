@@ -1,6 +1,6 @@
 #!/usr/bin/env make
 #
-# IOCCC 2015 winning entry - algmyr
+# IOCCC 2018 winning entry - algmyr
 
 ################################################################################
 #
