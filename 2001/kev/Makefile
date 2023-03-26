@@ -36,18 +36,6 @@ SHELL= bash
 #
 include ../../var.mk
 
-# Set X11_LIBDIR to the directory where the X11 library resides
-#
-#X11_LIBDIR= /usr/X11R6/lib
-#X11_LIBDIR= /usr/X11/lib
-X11_LIBDIR= /opt/X11/lib
-
-# Set X11_INCLUDEDIR to the directory where the X11 include files reside
-#
-#X11_INCDIR= /usr/X11R6/include
-#X11_INCDIR= /usr/X11/include
-X11_INCDIR= /opt/X11/include
-
 # Common C compiler warnings to silence
 #
 #CSILENCE=
