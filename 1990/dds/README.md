@@ -14,13 +14,15 @@
 [Yusuke Endoh](/winners.html#Yusuke_Endoh) fixed this for modern systems. Thank
 you Yusuke!
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) removed the erroneous
+prototype to `fopen()` and made this use `fgets()` instead of `gets()` to make
+it safer. He also fixed a segfault in the case that the file cannot be loaded.
+Thank you Cody for your assistance!
+
 ### To run
 
 	./dds
 
-
-NOTE: this entry uses `gets()` so you might get a warning when compiling and
-running this entry.
 
 ### Try:
 
@@ -30,7 +32,6 @@ Give the following lines as input:
 	RUN
 
 NOTE: this is case sensitive.
-
 
 ## Judges' comments:
 
