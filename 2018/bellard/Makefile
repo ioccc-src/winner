@@ -1,6 +1,6 @@
 #!/usr/bin/env make
 #
-# IOCCC 2020 winning entry - endoh1
+# IOCCC 2018 winning entry - bellard
 
 ################################################################################
 #
