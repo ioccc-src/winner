@@ -10,9 +10,13 @@ Mike Laman
 
 	./laman <positive number>
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this entry to not
+segfault if no arg is specified. Instead it'll print nothing. Thank you Cody for
+your assistance!
+
 ## Try:
 
-The program accepts ONE positive argument.  Seeing is believing, so try things
+The program accepts ONE POSITIVE argument.  Seeing is believing, so try things
 like:
 
 	./laman 4
@@ -20,9 +24,6 @@ like:
 	./laman 16
 
 This code should run you in circles.
-
-NOTE: this program will likely segfault if you do not provide an argument and it
-will not print anything if the number is not positive or not a number.
 
 ## Judges' comments:
 
