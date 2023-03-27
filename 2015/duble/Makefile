@@ -49,7 +49,7 @@ CWARN= -Wall -Wextra -pedantic ${CSILENCE}
 
 # Compiler standard
 #
-CSTD= -std=c11 -D_BSD_SOURCE -D_XOPEN_SOURCE
+CSTD= -std=c11
 
 # Compiler bit architecture
 #
@@ -60,7 +60,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE=
+CDEFINE= -D_BSD_SOURCE -D_XOPEN_SOURCE
 
 # Include files that are needed to compile
 #
