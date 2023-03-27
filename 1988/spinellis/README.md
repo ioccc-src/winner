@@ -24,7 +24,6 @@ Thank you Cody for your assistance!
 	    printf("Hello world\n");
 	}
 	^D
-	^D
 	./spinellis
 
 	make clobber all
