@@ -12,18 +12,29 @@
 
 To get this to compile with a modern CPP, we had to replace `#D` with `#define`.
 
+## To run:
+
+Run the program this way:
+
+	./ovdluhe < textfile
+
+The program stops when it reaches the end of the template buffer 
+by chance or is killed.
+
+## Try:
+
+	./ovdluhe < ./ovdluhe.c
+	./ovdluhe < ./ovdluhe.c
+
+	./ovdluhe < README.md
+	./ovdluhe < README.md
+
+
 ## Judges' comments:
 
 Run this program using your favorite text file as input.  Files
 such as mailboxes, man pages and usenet articles are especially
 recommended.  You will get different output each time you run it.
-
-Run the program this way:
-
-	ovdluhe < textfile
-
-The program stops when it reaches the end of the template buffer 
-by chance or is killed.
 
 
 
