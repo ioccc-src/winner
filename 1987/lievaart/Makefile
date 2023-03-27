@@ -247,7 +247,7 @@ waste:
 	@echo 'haste'
 	@${TRUE}
 
-make:
+maker:
 	@echo 'Participate in a maker faire'
 	@${TRUE}
 
