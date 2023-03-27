@@ -167,7 +167,7 @@ ${PROG}2: ${PROG}2.c
 
 # alternative executable
 #
-alt: ${DATA} ${ALT_TARGET}
+alt: data ${ALT_TARGET}
 	@${TRUE}
 
 ${PROG}.alt: ${PROG}.alt.c

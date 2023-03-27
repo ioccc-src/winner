@@ -166,7 +166,7 @@ ${PROG}: ${PROG}.c
 
 # alternative executable
 #
-alt: ${DATA} ${ALT_TARGET}
+alt: data ${ALT_TARGET}
 	@${TRUE}
 
 # data files
