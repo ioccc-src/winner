@@ -147,13 +147,13 @@ ${PROG}: ${PROG}.c
 gtface: gtface.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
-${PROG}.alt: ${PROG}.alt.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
-
 # alternative executable
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # data files
 #

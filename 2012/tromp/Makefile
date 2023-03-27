@@ -149,13 +149,13 @@ ${PROG}64: ${PROG}
 	${RM} -f $@
 	${CP} -v $< $@
 
-${PROG}32: ${PROG}.c
-	${CC} ${CFLAGS} -m32 -DInt=int  -DX=4 $< -o $@
-
 # alternative executable
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}32: ${PROG}.c
+	${CC} ${CFLAGS} -m32 -DInt=int  -DX=4 $< -o $@
 
 # data files
 #

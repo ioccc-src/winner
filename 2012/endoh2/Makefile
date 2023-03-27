@@ -151,6 +151,11 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
+# alternative executable
+#
+alt: data ${ALT_TARGET}
+	@${TRUE}
+
 pi.c: ${PROG}
 	${RM} -f $@
 	./$< > $@
@@ -299,11 +304,6 @@ e: e.c
 
 271828182845: 271828182845.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
-
-# alternative executable
-#
-alt: data ${ALT_TARGET}
-	@${TRUE}
 
 # data files
 #

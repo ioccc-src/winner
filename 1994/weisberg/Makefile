@@ -146,13 +146,13 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${C_SMALL} ${CFLAGS} $< -o $@ ${LIBS}
 
-${PROG}.alt: ${PROG}.c
-	${CC} ${C_LARGE} ${CFLAGS} $< -o $@ ${LIBS}
-
 # alternative executable
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.c
+	${CC} ${C_LARGE} ${CFLAGS} $< -o $@ ${LIBS}
 
 # data files
 #

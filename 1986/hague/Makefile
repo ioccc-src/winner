@@ -143,6 +143,10 @@ ${PROG}: ${PROG}.c
 	@echo "      when compiling and running this program with some systems."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
+# alternative executable
+#
+alt: data ${ALT_TARGET}
+	@${TRUE}
 
 # data files
 #

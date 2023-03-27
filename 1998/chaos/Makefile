@@ -142,17 +142,17 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
+# alternative executable
+#
+alt: data ${ALT_TARGET}
+	@${TRUE}
+
 ${PROG}_nohalf: ${PROG}_nohalf.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 ${PROG}_nohalf.c: ${PROG}.c
 	${RM} -f $@
 	${SED} -e 's/halfdelay([^)]*);//' < $? > $@
-
-# alternative executable
-#
-alt: data ${ALT_TARGET}
-	@${TRUE}
 
 # data files
 #

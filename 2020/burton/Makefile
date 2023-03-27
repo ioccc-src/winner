@@ -117,12 +117,12 @@ endif
 ENTRY= burton
 PROG= prog
 #
-OBJ= ${PROG}.o
+OBJ= ${PROG}.o ${PROG}_le.o ${PROG}_be.o
 DATA= correct
-TARGET= ${PROG}
+TARGET= ${PROG} ${PROG}_le ${PROG}_be
 #
-ALT_OBJ= ${PROG}_le.o
-ALT_TARGET= ${PROG}_le
+ALT_OBJ=
+ALT_TARGET=
 
 # magic define parameters for Little Endian machines
 #
@@ -153,9 +153,11 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} -DB=${B} -DI=${I} -DT=${T} -DS=${S} $< -o $@ ${LIBS}
 
-${PROG}_le: ${PROG}
-	${RM} -f $@
-	${CP} -f $< $@
+${PROG}_le: ${PROG}.c
+	${CC} ${CFLAGS} -DB=${B} -DI=${I} -DT=${T} -DS=${S} $< -o $@ ${LIBS}
+
+${PROG}_be: ${PROG}.c
+	${CC} ${CFLAGS} -DB=${_B} -DI=${_I} -DT=${_T} -DS=${_S} $< -o $@ ${LIBS}
 
 test: check_le.sh check_be.sh prog_le prog_be correct
 	./check_le.sh ./prog_le | ${DIFF} -bw - correct
@@ -166,15 +168,12 @@ test: check_le.sh check_be.sh prog_le prog_be correct
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-${PROG}_be: ${PROG}.c
-	${CC} ${CFLAGS} -DB=${_B} -DI=${_I} -DT=${_T} -DS=${_S} $< -o $@ ${LIBS}
-
 # data files
 #
 data: ${DATA}
 	@${TRUE}
 
-# both all and alt
+
 #
 everything: all alt
 	@${TRUE}

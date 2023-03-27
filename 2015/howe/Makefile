@@ -142,18 +142,18 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
+test: makeholes prog-test.sh ${TARGET}
+	${SHELL} ./prog-test.sh
+
+makeholes: makeholes.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
 # alternative executable
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
 ${PROG}.alt: ${PROG}.alt.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
-
-test: makeholes prog-test.sh ${TARGET}
-	${SHELL} ./prog-test.sh
-
-makeholes: makeholes.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # data files
