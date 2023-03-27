@@ -38,7 +38,6 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-#CSILENCE=
 CSILENCE= -Wno-bitwise-op-parentheses -Wno-dangling-else -Wno-format-security \
 	-Wno-implicit-int -Wno-incompatible-pointer-types \
 	-Wno-logical-op-parentheses -Wno-pedantic -Wno-return-type \
@@ -46,15 +45,10 @@ CSILENCE= -Wno-bitwise-op-parentheses -Wno-dangling-else -Wno-format-security \
 
 # Common C compiler warning flags
 #
-#CWARN= ${CSILENCE}
-#CWARN= -Wall ${CSILENCE}
-#CWARN= -Wall -Wextra ${CSILENCE}
 CWARN= -Wall -Wextra -pedantic ${CSILENCE}
 
 # Compiler standard
 #
-#CSTD=
-#CSTD= -ansi
 CSTD= -std=gnu17
 
 # Compiler bit architecture
@@ -72,16 +66,10 @@ ARCH=
 # Defines that are needed to compile
 #
 CDEFINE=
-#CDEFINE= -DIOCCC
 
 # Include files that are needed to compile
 #
 CINCLUDE=
-#CINCLUDE= -include stdlib.h
-#CINCLUDE= -include stdio.h
-#CINCLUDE= -include stdlib.h -include stdio.h
-#CINCLUDE= -I ${X11_INCDIR} -I ${X11_INCDIR}/X11
-#CINCLUDE= `${SDL2_CONFIG} --cflags`
 
 # Optimization
 #
@@ -90,10 +78,6 @@ CINCLUDE=
 # under those buggy optimizers and thus you may not want anything.
 # Reasonable compilers will allow for -O3.
 #
-#OPT=
-#OPT= -O
-#OPT= -O1
-#OPT= -O2
 OPT= -O3
 
 # Default flags for ANSI C compilation
@@ -103,15 +87,10 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 # Libraries needed to build
 #
 LIBS=
-#LIBS= -lm
-#LIBS= -L ${X11_LIBDIR} -lX11
-#LIBS= `${SDL2_CONFIG} --libs`
 
 # C compiler to use
 #
 CC= cc
-#CC=clang
-#CC=gcc
 
 # Compiler add-ons or replacements for clang only
 #
@@ -304,21 +283,18 @@ indent.c: ${PROG}.c
 #
 love:
 	@echo 'not war?'
-	@${TRUE}
+
+waste:
+	@echo $@
 
 haste:
 	$(MAKE) waste
-	@${TRUE}
 
-waste:
-	@echo 'haste'
-	@${TRUE}
-
-maker:
+maker: haste
 	@echo 'Participate in a maker faire'
-	@${TRUE}
+	$(MAKE) love
 
-easter_egg:
+easter_egg: maker
 	@echo "You are expected to often misunderstand this $${RANDOM} magic, Eggy!"
 	@echo "chongo '<was here>' /\\oo/\\"
 	@echo "p.s.: Careful with That Axe, Eugene!"
@@ -343,7 +319,6 @@ supernova: sandwich
 	    echo "Planet deniers, like some members of the IAU, are so cute when they try to defend their logic"; \
 	fi
 	@echo "A $@ helps ${MAKE} the elements that help form planets"
-	@${TRUE}
 
 deep_magic: supernova
 	@-if [ -r .code_anal ]; then \
@@ -356,7 +331,6 @@ deep_magic: supernova
 	    sleep 1; \
 	    echo "Wrong! Do it again!"; \
 	fi
-	@${TRUE}
 
 magic: deep_magic
 	@-if [ -r .code_anal ]; then \
@@ -365,7 +339,6 @@ magic: deep_magic
 	    echo "If you don't eat yer meat, you can't have any pudding!"; \
 	    echo "How can you have any pudding if you don't eat yer meat?!"; \
 	fi
-	@${TRUE}
 
 # The IOCCC resident astronomer states
 #
