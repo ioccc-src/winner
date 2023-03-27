@@ -156,8 +156,8 @@ CFLAGS+= -traditional-cpp
 all: data ${TARGET}
 	@${TRUE}
 
-.PHONY: alt data everything clean clobber nuke dist_clean \
-	install build love haste waste make easter_egg \
+.PHONY: all alt data everything clean clobber install \
+	love haste waste maker easter_egg sandwich \
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
