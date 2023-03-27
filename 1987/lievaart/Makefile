@@ -256,9 +256,6 @@ easter_egg:
 	@echo "chongo '<was here>' /\\oo/\\"
 	@echo "p.s.: Careful with That Axe, Eugene!"
 
-fabricate fashion form frame manufacture produce: make
-	@${TRUE}
-
 sandwich:
 	@if [ `id -u` -eq 0 ]; then \
 	    echo 'Okay.'; \
