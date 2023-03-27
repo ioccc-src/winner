@@ -52,13 +52,8 @@ CSTD= -std=gnu90
 
 # Compiler bit architecture
 #
-# Some entries require 32-bitness:
-# ARCH= -m32
-#
-# Some entries require 64-bitness:
-# ARCH= -m64
-#
-# By default we assume nothing:
+# Some entries require 32-bitness: ARCH= -m32
+# Some entries require 64-bitness: ARCH= -m64
 #
 ARCH=
 
@@ -71,11 +66,6 @@ CDEFINE=
 CINCLUDE=
 
 # Optimization
-#
-# Most compiles will safely use -O2.  Some can use only -O1 or -O.
-# A few compilers have broken optimizers or this entry make break
-# under those buggy optimizers and thus you may not want anything.
-# Reasonable compilers will allow for -O3.
 #
 OPT= -O3
 
