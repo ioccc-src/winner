@@ -43,10 +43,10 @@ include var.mk
 #
 all:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9]?; do \
+	@-for i in [12][0-9][0-9][0-9]; do \
             if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make all"; \
-                (cd $$i; make all); \
+                echo "cd $$i; make $@"; \
+                (cd $$i; make $@); \
             fi; \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
@@ -59,10 +59,10 @@ all:
 #
 alt:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9]?; do \
+	@-for i in [12][0-9][0-9][0-9]; do \
             if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make all"; \
-                (cd $$i; make all); \
+                echo "cd $$i; make $@"; \
+                (cd $$i; make $@); \
             fi; \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
@@ -71,10 +71,10 @@ alt:
 #
 data:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9]?; do \
+	@-for i in [12][0-9][0-9][0-9]; do \
             if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make all"; \
-                (cd $$i; make all); \
+                echo "cd $$i; make $@"; \
+                (cd $$i; make $@); \
             fi; \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
@@ -83,10 +83,10 @@ data:
 #
 everything:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9]?; do \
+	@-for i in [12][0-9][0-9][0-9]; do \
             if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make all"; \
-                (cd $$i; make all); \
+                echo "cd $$i; make $@"; \
+                (cd $$i; make $@); \
             fi; \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
@@ -98,40 +98,40 @@ everything:
 #
 clean:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9]?; do \
+	@-for i in [12][0-9][0-9][0-9]; do \
             if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make all"; \
-                (cd $$i; make all); \
+                echo "cd $$i; make $@"; \
+                (cd $$i; make $@); \
             fi; \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 clobber:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9]?; do \
+	@-for i in [12][0-9][0-9][0-9]; do \
             if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make all"; \
-                (cd $$i; make all); \
+                echo "cd $$i; make $@"; \
+                (cd $$i; make $@); \
             fi; \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 install:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9]?; do \
+	@-for i in [12][0-9][0-9][0-9]; do \
             if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make all"; \
-                (cd $$i; make all); \
+                echo "cd $$i; make $@"; \
+                (cd $$i; make $@); \
             fi; \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 indent.c:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9]?; do \
+	@-for i in [12][0-9][0-9][0-9]; do \
             if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make all"; \
-                (cd $$i; make all); \
+                echo "cd $$i; make $@"; \
+                (cd $$i; make $@); \
             fi; \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
@@ -143,60 +143,60 @@ indent.c:
 #
 love:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9]?; do \
+	@-for i in [12][0-9][0-9][0-9]; do \
             if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make all"; \
-                (cd $$i; make all); \
+                echo "cd $$i; make $@"; \
+                (cd $$i; make $@); \
             fi; \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 haste:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9]?; do \
+	@-for i in [12][0-9][0-9][0-9]; do \
             if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make all"; \
-                (cd $$i; make all); \
+                echo "cd $$i; make $@"; \
+                (cd $$i; make $@); \
             fi; \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 waste:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9]?; do \
+	@-for i in [12][0-9][0-9][0-9]; do \
             if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make all"; \
-                (cd $$i; make all); \
+                echo "cd $$i; make $@"; \
+                (cd $$i; make $@); \
             fi; \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 maker:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9]?; do \
+	@-for i in [12][0-9][0-9][0-9]; do \
             if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make all"; \
-                (cd $$i; make all); \
+                echo "cd $$i; make $@"; \
+                (cd $$i; make $@); \
             fi; \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 easter_egg:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9]?; do \
+	@-for i in [12][0-9][0-9][0-9]; do \
             if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make all"; \
-                (cd $$i; make all); \
+                echo "cd $$i; make $@"; \
+                (cd $$i; make $@); \
             fi; \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 sandwich:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9]?; do \
+	@-for i in [12][0-9][0-9][0-9]; do \
             if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make all"; \
-                (cd $$i; make all); \
+                echo "cd $$i; make $@"; \
+                (cd $$i; make $@); \
             fi; \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
@@ -206,50 +206,50 @@ sandwich:
 #
 supernova:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9]?; do \
+	@-for i in [12][0-9][0-9][0-9]; do \
             if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make all"; \
-                (cd $$i; make all); \
+                echo "cd $$i; make $@"; \
+                (cd $$i; make $@); \
             fi; \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 deep_magic:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9]?; do \
+	@-for i in [12][0-9][0-9][0-9]; do \
             if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make all"; \
-                (cd $$i; make all); \
+                echo "cd $$i; make $@"; \
+                (cd $$i; make $@); \
             fi; \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 magic:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9]?; do \
+	@-for i in [12][0-9][0-9][0-9]; do \
             if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make all"; \
-                (cd $$i; make all); \
+                echo "cd $$i; make $@"; \
+                (cd $$i; make $@); \
             fi; \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 charon:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9]?; do \
+	@-for i in [12][0-9][0-9][0-9]; do \
             if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make all"; \
-                (cd $$i; make all); \
+                echo "cd $$i; make $@"; \
+                (cd $$i; make $@); \
             fi; \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 pluto:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9]?; do \
+	@-for i in [12][0-9][0-9][0-9]; do \
             if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make all"; \
-                (cd $$i; make all); \
+                echo "cd $$i; make $@"; \
+                (cd $$i; make $@); \
             fi; \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
