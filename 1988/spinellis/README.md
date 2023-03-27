@@ -10,11 +10,11 @@
 
 	make all
 
-and then type a C program into followed by EOF two times (`^D^D`).
+and then type a C program into followed by EOF (usually `^D`, ctrl-d).
 
-NOTE: this entry will not compile with clang. Also be advised that gcc in macOS
-is actually clang so this will not work even with the default compiler in macOS.
-
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made a version (also
+one-line) for clang. See the alternative code section below for how to use.
+Thank you Cody for your assistance!
 
 ## Try:
 
@@ -23,7 +23,6 @@ is actually clang so this will not work even with the default compiler in macOS.
 	{
 	    printf("Hello world\n");
 	}
-	^D
 	^D
 	./spinellis
 
@@ -35,23 +34,39 @@ is actually clang so this will not work even with the default compiler in macOS.
 		printf("%d\n", i);
 	}
 	^D
+	./spinellis
+
+## Alternative code:
+
+For clang try the alt code like:
+
+	make clobber alt
+	#include <stdio.h>
+	main()
+	{
+	    puts("Hello world\n");
+	}
 	^D
 	./spinellis
 
 
-## Judges' comments
+
+## Judges' comments:
 
 We enjoyed this entry this year, however in the future programs must be able to
 be compiled from within a Makefile without the need of human intervention.
 
-The author originally wrote:
+Meanwhile Cody was twisted enough to point out (though to be fair he felt sick
+doing this) that with a slight modification this entry can be C++ instead. We don't
+thank him for this ghastly point! :-)
 
-    This program can be configured to do almost everything.
-    The configuration is done during compile time by typing
-    in, C code, that one would like the program to perform.
-    A trivial example is given in the `how to compile' section
-    but the possibilities are clearly limited only by your
-    imagination and programming skills.
+## Author's comments:
+
+This program can be configured to do almost everything.  The configuration is
+done during compile time by typing in, C code, that one would like the program
+to perform.  A trivial example is given in the `how to compile' section but the
+possibilities are clearly limited only by your imagination and programming
+skills.
 
 ## Copyright and CC BY-SA 4.0 License:
 
