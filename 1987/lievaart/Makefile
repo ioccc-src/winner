@@ -183,12 +183,15 @@ ${PROG}2.alt: ${PROG}2.alt.c
 data: ${DATA}
 	@${TRUE}
 
+# both all and alt
+#
+everything: all alt
+
 
 ###############
 # utility rules
 ###############
 #
-everything: all alt
 
 clean:
 	${RM} -f ${OBJ} ${ALT_OBJ}

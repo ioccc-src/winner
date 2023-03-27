@@ -175,13 +175,15 @@ ${PROG}.orig: ${PROG}.orig.c
 data: ${DATA}
 	@${TRUE}
 
+# both all and alt
+#
+everything: all alt
+
 
 ###############
 # utility rules
 ###############
 #
-everything: all
-
 clean:
 	${RM} -f ${OBJ} ${ALT_OBJ}
 	@-if [ -f indent.c ]; then \

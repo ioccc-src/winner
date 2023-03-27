@@ -171,6 +171,10 @@ alt: ${DATA} ${ALT_TARGET}
 data: ${DATA}
 	@${TRUE}
 
+# both all and alt
+#
+everything: all alt
+
 
 ###############
 # utility rules
