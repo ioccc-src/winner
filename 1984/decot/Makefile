@@ -160,13 +160,13 @@ data: ${DATA}
 # both all and alt
 #
 everything: all alt
+	@${TRUE}
 
 
 ###############
 # utility rules
 ###############
 #
-
 clean:
 	${RM} -f ${OBJ} ${ALT_OBJ}
 	@-if [ -f indent.c ]; then \

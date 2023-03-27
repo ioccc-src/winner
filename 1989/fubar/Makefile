@@ -159,6 +159,7 @@ ${PROG}.orig: ${PROG}.orig.c
 # both all and alt
 #
 everything: all alt
+	@${TRUE}
 
 
 ###############

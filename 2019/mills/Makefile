@@ -335,6 +335,7 @@ Eugene_Onegin.output.txt: Eugene_Onegin.cp11_1.188 ${generator}
 # both all and alt
 #
 everything: all alt
+	@${TRUE}
 
 
 ###############

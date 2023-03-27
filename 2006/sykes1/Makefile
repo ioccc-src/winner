@@ -162,6 +162,7 @@ data: ${DATA}
 # both all and alt
 #
 everything: all alt
+	@${TRUE}
 
 
 ###############

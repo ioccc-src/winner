@@ -190,6 +190,7 @@ test: prog tac runtest fixed_iocccsize ${EXTRA_DATA}
 # both all and alt
 #
 everything: all alt
+	@${TRUE}
 
 
 ###############
