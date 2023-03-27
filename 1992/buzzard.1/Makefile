@@ -117,7 +117,7 @@ ALT_OBJ=
 ALT_TARGET=
 
 NOINCLUDE= ${SED} -e 's/^.\([	 ]*\)include/%include/'
-SPACECLEAN= ${SED} -e 's/\([^	 ]\)\([	 ]\)[ 	][ 	 ]*/\1\2/g'
+SPACECLEAN= ${SED} -e 's/\([^	 ]\)\([	 ]\)[	 ][	 ]*/\1\2/g'
 CPPCLEAN= ${GREP} -v '^. [0-9][0-9]*'
 
 

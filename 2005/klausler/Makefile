@@ -138,20 +138,20 @@ ${PROG}: dict.h ${PROG}.c
 dict.h:
 	${RM} -f $@
 	dict="";\
-  	for f in mydict ${DICTIONARY};\
-  	    do if [ -r $$f ]; then dict="$$dict $$f"; fi; \
+	for f in mydict ${DICTIONARY};\
+	    do if [ -r $$f ]; then dict="$$dict $$f"; fi; \
 	done; \
-  	if [ ".$$dict" = . ]; then \
+	if [ ".$$dict" = . ]; then \
 	    echo no dictionary found; \
 	    exit 1; \
 	fi; \
-  	${CAT} $$dict | \
-     	${TR} -cd 'A-Za-z\n' | \
-     	${TR} A-Z a-z | \
-     	${GREP} -E -v '^[^ais]$$' | \
-     	${SORT} | \
-     	${UNIQ} | \
-     	${SED} 's/^/"/;s/$$/",/' > $@
+	${CAT} $$dict | \
+	${TR} -cd 'A-Za-z\n' | \
+	${TR} A-Z a-z | \
+	${GREP} -E -v '^[^ais]$$' | \
+	${SORT} | \
+	${UNIQ} | \
+	${SED} 's/^/"/;s/$$/",/' > $@
 
 # alternative executable
 #

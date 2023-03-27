@@ -111,7 +111,7 @@ ENTRY= dlowe
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA= earlystop.pl 
+DATA= earlystop.pl
 TARGET= ${PROG}
 #
 ALT_OBJ=

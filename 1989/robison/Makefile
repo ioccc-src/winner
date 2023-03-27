@@ -75,9 +75,6 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 #
 CINCLUDE+= -include stdlib.h
 
-
-## FORCE 
-
 # Libraries needed to build
 #
 LIBS=

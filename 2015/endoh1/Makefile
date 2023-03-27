@@ -191,7 +191,7 @@ oregonator: ${CSRC}
 	${CC} ${CFLAGS} -o $@ ${CSRC} \
 	    ${OREGONATOR_MODEL} -DDu=0.01 -DDv=0.01 -DE=0.1 -DF=1.4 -DQ=0.002 \
 	    -DUV_BACKGROUND=0 -DUV_DROP=0.05,0.2 \
-    	    -DTIMESTEP=0.001 -DSPEED=80 -DRGB=128:192:255 ${LIBS}
+	    -DTIMESTEP=0.001 -DSPEED=80 -DRGB=128:192:255 ${LIBS}
 
 # alternative executable
 #

@@ -59,7 +59,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE= 
+CDEFINE=
 
 # Include files that are needed to compile
 #
