@@ -168,7 +168,6 @@ everything: all alt
 # utility rules
 ###############
 #
-
 clean:
 	${RM} -f ${OBJ} ${ALT_OBJ}
 	@-if [ -f indent.c ]; then \
