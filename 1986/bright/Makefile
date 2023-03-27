@@ -149,10 +149,6 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-${PROG}.orig: ${PROG}.orig.c
-	@echo "NOTE: The original source might not compile using modern compilers."
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
-
 # data files
 #
 data: ${DATA}
