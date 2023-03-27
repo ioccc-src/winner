@@ -254,7 +254,7 @@ easter_egg:
 sandwich:
 	@if [ `id -u` -eq 0 ]; then \
 	    echo 'Okay.'; \
-	    echo $${RANDOM}`date +%s`$${RANDOM} > $@; \
+	    echo "$${RANDOM}`date +%s`$${RANDOM}" > $@; \
 	else \
 	    echo 'What? Make it yourself.'; \
 	    echo "Did you forget the magic word?"; \
