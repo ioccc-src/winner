@@ -43,6 +43,20 @@ of the remaining entries resolved in the near future but nevertheless if you're
 okay making people very sad you may have a go at the entries :-) He'll remove
 this part later on.
 
+### ON **ALL** FIXES / IMPROVEMENTS / CHANGES
+
+Make **ABSOLUTE CERTAIN** that you test the entry _BEFORE_ **AND** _AFTER_ your
+changes! This includes output and the same input functionality! Sometimes it
+might seem to be fine but is actually not! We will note some where this is known
+to happen (if it's not yet fixed).
+
+Make **ABSOLUTE CERTAIN** that you read the README.md file _BEFORE_ your changes
+as it's important to see that the code is doing what it is supposed to. In the
+case that it's not obvious (some README.md files do not even have commands to
+try or even explain how to use it!) then you should either skip the entry OR ask
+someone who will now e.g. us.
+
+
 ### Request for one-liners:
 
 For one-liners please keep the file one line if at all possible! If it needs an
@@ -64,6 +78,15 @@ different platforms. These tend to be required at the risk that sometimes the
 entry will not work for certain platforms, some of which might or might not be
 fixable. But even if they are fixable (which will likely be hard to do) it's
 almost certain that such code would be just as non-portable (importable ? :-) ).
+
+### On layout of program source
+
+If you make changes PLEASE TRY and keep the source code layout as close to the
+original as possible. This might not always be possible and if you have an
+editor that does formatting it can cause problems. Sometimes formatters can even
+break code! [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) has
+experienced this many times so he tends to disable all format options when
+formatting code.
 
 
 
@@ -87,7 +110,7 @@ any problems.
 
 ## STATUS: doesn't work with some platforms - please help us fix
 
-Entries with this status do not work under some OS's and/or architectures (and/or
+Entries with this status do not work under some OSes and/or architectures (and/or
 something else?). Please help us to fix it!
 
 ## STATUS: main() function args not allowed - please help us fix
@@ -134,9 +157,47 @@ compiler supporting you are welcome to summit such code via a
 [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls) and we
 will be happy to credit you in the entry's _README.md_ file.
 
+## STATUS: uses gets() - change to fgets() if possible
+
+Entries with this status use `gets()` which is unsafe because it has no limit on
+the length of the string. [Cody Boone
+Ferguson](/winners.html#Cody_Boone_Ferguson) has fixed several of these and he's
+working on others in between fixing other things. He provides some important
+notes:
+
+First: in some cases changing the entry to use `fgets()` will break the entry
+and in some cases cause it to crash. Where this is known we will document it.
+Some of these Cody is also working on.
+
+Second: you MUST check the output before and after to make sure that it remains
+the same. Sometimes the output might not be immediately obviously wrong but is.
+We will document known examples.
+
+Third: `gets()` does NOT STORE the `'\n'` but `fgets()` DOES! This is one of the
+reasons some of the entries break when changed to `fgets()`. Cody has fixed some
+of these but there are others he hasn't had time to address and/or even discover
+yet.
+
+Fourth: just because you don't see the string `gets` in the code does not mean
+it's not used. It is after all the Obfuscated C Code Contest! :-) Sometimes it
+will be in the Makefile and other times it will be obfuscated in other ways.
+Compilers and linkers tend to warn about its use and this is a good way to find
+entries that use it even if it's not visible in the code.
+
 # List of entries by year, sorted in alphabetical order
 
 # 1984
+
+## [1984/anonymous](1984/anonymous/anonymous.c) ([README.md](1984/anonymous/README.md))
+## STATUS: doesn't work with some platforms - please help us fix
+
+Although this works under linux it does not work under macOS: it prints nothing,
+exiting 0.
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added some notes about
+this in the [README.md](1984/anonymous/README.md) file. Can you fix this? We
+welcome your help!
+
 
 
 ## [1984/decot](1984/decot/decot.c) ([README.md](1984/decot/README.md))
@@ -148,6 +209,7 @@ actually gcc if it looks like it's gcc (two different binaries).
 
 If you do wish to provide an alternate version of the program that does not need
 compiler supporting `-traditional-cpp` you are welcome to submit such code via a [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls) and we will be happy to credit you in the entry's _README.md_ file.
+
 
 
 ## [1984/mullender](1984/mullender/mullender.c) ([README.md](1984/mullender/README.md))
@@ -166,6 +228,16 @@ update the Makefile to have an alt target!
 
 # 1985
 
+## [1985/applin](1985/applin/applin.c) ([README.md](1985/applin/README.md)
+## STATUS: doesn't work with some platforms - please help us fix
+
+[Yusuke Endoh](/winners.html#Yusuke_Endoh) provided a fix for gcc but
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) observed that this does
+not work under macOS. It prints `H????????` with additional `?`s printed as it
+continues to run.
+
+We have not had a chance to try and fix this yet.
+
 
 ## [1985/sicherman](1985/sicherman/sicherman.c) ([README.md](1985/sicherman/README.md))
 ## STATUS: Requires a compiler supporting `-traditional-cpp` - alternate code requested
@@ -175,7 +247,7 @@ supports this but `clang` does not. Please be advised that `gcc` under macOS is
 actually gcc if it looks like it's gcc (two different binaries).
 
 If you do wish to provide an alternate version of the program that does not need
-compiler supportingwe welcome you to summit such code via a
+compiler supporting we welcome you to summit such code via a
 [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls) and we
 will be happy to credit you in the entry's _README.md_ file.
 
@@ -190,6 +262,13 @@ will be happy to credit you in the entry's _README.md_ file.
 This entry is known to segfault after printing its output. It was documented by
 the judges and shouldn't be fixed.
 
+## [1986/hague](1986/hague/hague.c) ([README.md](1986/hague/README.md))
+## STATUS: uses gets() - change to fgets() if possible
+
+This entry uses `gets()` which is unsafe. In particular the buffer size is 81.
+`gets()` does not store the `'\n'` but it does store the `'\0'`.
+
+The latter fact
 
 ## [1986/holloway](1986/holloway/holloway.c) ([README.md](1986/holloway/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
@@ -243,6 +322,22 @@ actually gcc if it looks like it's gcc (two different binaries).
 
 # 1987
 
+## [1987/lievaart](1987/lievaart/lievaart.c) ([README.md](1987/lievaart/README.md))
+
+This might not work right. When [Cody Boone
+Ferguson](/winners.html#Cody_Boone_Ferguson) runs it he gets something like:
+
+```sh
+$ ./lievaart
+Level:5
+You:2
+You:3
+You:^C
+```
+
+However he also hasn't played Othello or if he has it was a very long time ago,
+so maybe he's doing something wrong.
+
 
 # 1988
 
@@ -253,6 +348,15 @@ actually gcc if it looks like it's gcc (two different binaries).
 This entry needs a compiler that support `-traditional-cpp`. `gcc`
 supports this but `clang` does not. Please be advised that `gcc` under macOS is
 actually gcc if it looks like it's gcc (two different binaries).
+
+## [1988/isaak/isaak.com) ([README.md](1988/isaak/README.md))
+## STATUS: known bug - please help us fix
+
+This currently prints nothing. [Cody Boone
+Ferguson](/winners.html#Cody_Boone_Ferguson) is working on this along with other
+things and there is a known fix even besides if he decides his time would be
+better spent on something else here or in that elusive thing called 'real life'.
+
 
 
 # 1989
