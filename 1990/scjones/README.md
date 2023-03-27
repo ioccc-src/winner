@@ -23,8 +23,8 @@ but we were able to get it to compile with modern compilers by specifying the
 `-ansi` flag with a tip from [Yusuke Endoh](/winners.html#Yusuke_Endoh). Thank
 you Yusuke! 
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) pointed out that note
-that the compiler option `-trigraphs` would also have worked.
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) pointed out that the
+compiler option `-trigraphs` would also have worked.
 
 
 ### To run:
