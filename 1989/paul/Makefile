@@ -130,7 +130,6 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: this entry will likely dump core with arm64 chips."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable

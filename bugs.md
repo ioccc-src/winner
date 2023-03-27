@@ -361,11 +361,6 @@ better spent on something else here or in that elusive thing called 'real life'.
 
 # 1989
 
-## [1989/paul](1989/paul/paul.c) ([README.md](1989/paul/README.md))
-## STATUS: known bug - please help us fix
-
-This entry works under linux but segfaults under macOS. We'll be working on this
-but if you have a fix we'll be happy to look at it.
 
 ## [1989/westley](1989/westley/westley.c) ([README.md](1989/westley/README.md))
 ## STATUS: main() function args not allowed - please help us fix

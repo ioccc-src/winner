@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define f int
+#define f long
 #define v (void)printf(
 #define x ),exit(1);
 #define y ){if(n)c=z(n,u),u=n,n=c;o[i]=n?'0'+(1&*n):'0';}
