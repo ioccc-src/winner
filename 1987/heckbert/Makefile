@@ -242,9 +242,9 @@ make:
 	@${TRUE}
 
 easter_egg:
-	@echo You are expected to often misunderstand this $${RANDOM} magic
-	@echo chongo '<was here>' "/\\oo/\\"
-	@echo Eggy
+	@echo "You are expected to often misunderstand this $${RANDOM} magic, Eggy!"
+	@echo "chongo '<was here>' /\\oo/\\"
+	@echo "p.s.: Careful with That Axe, Eugene!"
 
 fabricate fashion form frame manufacture produce: make
 	@${TRUE}
