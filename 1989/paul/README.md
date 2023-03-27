@@ -11,14 +11,15 @@
 
 	make all
 
-NOTE: this entry will likely dump core with arm64 chips. We could get it to work
-with modern systems with x86_64 but systems but at least with macOS arm64
-this program dumps core. We could not test Intel Macs.
 
 ## Try:
 
 	./paul
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault under
+macOS. The problem was that the int (from `#define f`) should be a long. This
+became apparent when he was using lldb and saw that the type of a pointer was
+long. Thank you Cody for your assistance!
 
 ## Judges' comments:
 
