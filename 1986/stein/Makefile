@@ -122,8 +122,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ= ${PROG}.orig.o
-ALT_TARGET= ${PROG}.orig
+ALT_OBJ=
+ALT_TARGET=
 
 
 #################
@@ -138,13 +138,6 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	-${RM} -f a.out
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
-	-${LN} $@ a.out
-
-
-${PROG}.orig: ${PROG}.orig.c
-	@echo "NOTE: The original source might not compile using modern compilers."
 	-${RM} -f a.out
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 	-${LN} $@ a.out

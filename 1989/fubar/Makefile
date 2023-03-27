@@ -151,11 +151,6 @@ alt: data ${ALT_TARGET}
 data: ${DATA}
 	@${TRUE}
 
-${PROG}.orig: ${PROG}.orig.c
-	${RM} -f $@
-	${CP} -f fubar.orig.sh $@
-	${CHMOD} +x $@
-
 # both all and alt
 #
 everything: all alt
