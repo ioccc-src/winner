@@ -1,58 +1,91 @@
-# BUGS and (mis)FEATURES
-
+# BUGS and (MIS)FEATURES
 
 There are a number of known problems with IOCCC winners: many of
 which have to do with differences between today's compiler environments
 and those of today. In some cases the original code has a bug, some
-of which were recently discovered. In some cases attempt to port
-older code to more modern environments introduced bugs.
+of which were recently discovered and many of which were fixed. In some cases
+attempt to port older code to more modern environments introduced bugs.
 
 The following is a known list of **BUGS and (mis)FEATURES** in IOCCC winners.
 
-Can you fix/improve them? You are **VERY WELCOME** to try.
+Can you fix/improve entries not under the INABIAF (it's not a bug it's a
+feature)? You are **VERY WELCOME** to try.
+
 Please submit your fixes fix in a [GitHub pull
 request](https://github.com/ioccc-src/temp-test-ioccc/pulls) with one pull
 request per fix, please!
 
-We will be happy to credit those who submit successful [GitHub pull
-requests](https://github.com/ioccc-src/temp-test-ioccc/pulls) in the entry's
+We will be **happy to credit anyone who submits successful [GitHub pull
+requests](https://github.com/ioccc-src/temp-test-ioccc/pulls)** in the entry's
 _README.md_ file. If you're a previous winner we will add a link to your winning
-entries in the file (if you're not we can add a link to your personal website if
-you have one if you like).
+entries in the file (if you're not a previous winner we can add a link to your
+GitHub page or personal website if you have one, should you wish).
 
-# List of Statuses - Please read before fixing (you may skip if you're only interested in knowing about entries with known issues)
+If you do fix an entry please feel free to delete the entry from this file!
+Otherwise if you wish to not worry about it we can do that to make sure the
+format is consistent and clean.
 
-Entries below have one of the following _Status_ values.
+Thank you!
 
-Please see the text below for more information.
+# LIST OF STATUSES - PLEASE READ BEFORE FIXING (you may skip if you're only interested in knowing about entries with known issues)
+
+Entries below have one of the following _**STATUS**_ values. Please see the text
+below for more information. If an entry has more than one status it means that
+either they all apply or they compliment each other. For instance
+[2004/gavin](2004/gavin/gavin.c) crashes but it also doesn't even compile with
+some platforms/architectures.
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) has been working on
 resolving these issues and has fixed many but you're welcome to have a go at it
-too (though he'll be very sad if he doesn't have a chance at it first :-( so you
-might want to hold off for now :-) .. or not :-) ). He hopes to have most of the
-remaining entries resolved in the near future but nevertheless if you're okay
-making people very sad you may have a go at the entries :-) He'll remove this
-part later on.
+too (though he'll be very sad if he doesn't have a chance to at first fix it :-(
+so you might want to hold off for now :-) .. or not :-) ). He hopes to have most
+of the remaining entries resolved in the near future but nevertheless if you're
+okay making people very sad you may have a go at the entries :-) He'll remove
+this part later on.
 
-### Status: known bug - please help us fix
+### Request for one-liners:
 
-This entry has a bug that needs fixing. Are you able to fix it?
+For one-liners please keep the file one line if at all possible! If it needs an
+include you can update the Makefile `CINCLUDE` variable. For instance if it
+needs `stdio.h` you could do `-include stdio.h`. Please leave a space after the
+`=` in the Makefile!
 
-We welcome your help! Please submit a [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls)
-and we will be happy to credit you in the entry's _README.md_ file.
 
-### Status: main() function args not allowed - please help us fix
+## STATUS: INABIAF - please **DO NOT** fix
+### INABIAF: It's not a bug it's a feature :-)
 
-This entry has a problem in that the args to main() are not of a specific type
-due this being allowed in earlier C. This shows itself in some compilers like
-clang. [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) looked at the
-source code of clang and reported that there is no way to override this
-requirement so these entries will fail to compile with clang. That's why he in
-some entries he fixed he did it by adding a function called `pain()`. :-)
+Entries with this status should NOT be touched: they are system specific by design
+or are other things that are not actually bugs even if they appear to be but are
+noteworthy nonetheless.
 
-Note for macOS users: please be aware that gcc under macOS is clang despite the
-fact it might appear to be gcc: no symlink and both gcc and clang exist but the
-gcc is clang which you'll see if you run `gcc --version`.
+## STATUS: known bug - please help us fix
+
+Entries with this status have one or more bugs that need to be fixed. Are you
+able to fix it?
+
+## STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
+
+Entries with this status might or might not have a bug possibly depending on the
+system.  In these entries we don't have the appropriate systems to test and fix
+any problems.
+
+## STATUS: doesn't work with some platforms - please help us fix
+
+Entries with this status do not work under some OS's and/or architectures (and/or
+something else?). Please help us to fix it!
+
+## STATUS: main() function args not allowed - please help us fix
+
+Entries with this status have a problem in that the args to main() are not of a
+specific type due this being allowed in earlier C. This shows itself in some
+compilers like clang. [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson)
+looked at the source code of clang and reported that there is no way to override
+this requirement so these entries will fail to compile with clang. That's why he
+in some entries he fixed he did it by adding a function called `pain()`. :-)
+
+**NOTE for macOS users**: please be aware that _gcc_ under macOS **is actually
+clang** despite the fact it might appear to be gcc: no symlink and both gcc and
+clang exist but the gcc is clang which you'll see if you run `gcc --version`.
 
 A tip and some fix methods from Cody: in the older days args to main() not given
 a type were implicit ints but when they're required to be char ** this can cause
@@ -64,63 +97,46 @@ like an int. He used other various techniques to get them to compile. In some
 cases this introduced a problem but typically if not always that problem exists
 with compilers that are less strict.
 
-Request: For one-liners please keep the file one line if at all possible! If it
-needs an include you can update the Makefile `CINCLUDE` variable. For instance
-if it needs `stdio.h` you could do `-include stdio.h`. Please leave a space
-after the `=` in the Makefile!
 
-We welcome your help! Please submit a [GitHub pull
-request](https://github.com/ioccc-src/temp-test-ioccc/pulls) and we will be
-happy to credit you in the entry's _README.md_ file.
+## STATUS: compiled executable crashes - please help us fix
 
-### Status: Compiled executable crashes - please help us fix
+While such entries can compile, the resulting executable sometimes or always
+crashes.
 
-While the entry can compile, the resulting executable sometimes or always crashes.
 
-We welcome your help! Please submit a [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls)
-and we will be happy to credit you in the entry's _README.md_ file.
+## STATUS: requires a compiler supporting `-traditional-cpp` - alternate code requested
 
-### Status: Requires a compiler supporting -traditional-cpp - alternate code requested
-
-This entry needs a compiler that support `-traditional-cpp`. `gcc` supports this
-but `clang` does not.
+Entries with this status need a compiler that support `-traditional-cpp`. `gcc`
+supports this but `clang` does not.
 
 Please be advised that, as noted above, gcc under macOS is actually gcc even if it
 looks like it's gcc (the programs are the same, they're not symlinks but both
 are clang).
 
 If you do wish to provide an alternate version of the program that does not need
-compiler supporting -traditional-cpp you are welcome to summit such code via a
+compiler supporting you are welcome to summit such code via a
 [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls) and we
 will be happy to credit you in the entry's _README.md_ file.
 
-### Status: INABIAF - please do not fix
-
-INABIAF: It's not a bug it's a feature :-)
-
-The following entries should NOT be touched: they are system specific by design
-but are noteworthy nonetheless.
+# List of entries by year, sorted in alphabetical order
 
 # 1984
 
 
 ## [1984/decot](1984/decot/decot.c) ([README.md](1984/decot/README.md))
-
-### Status: Requires a compiler supporting -traditional-cpp - alternate code requested
+## STATUS: requires a compiler supporting `-traditional-cpp` - alternate code requested
 
 This entry needs a compiler that support `-traditional-cpp`. `gcc`
 supports this but `clang` does not. Please be advised that `gcc` under macOS is
 actually gcc if it looks like it's gcc (two different binaries).
 
-If you do wish to provide an alternate version of the program that does not need compiler supporting -traditional-cpp
-you are summit such code via a [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls)
-and we will be happy to credit you in the entry's _README.md_ file.
+If you do wish to provide an alternate version of the program that does not need
+compiler supporting `-traditional-cpp` you are welcome to submit such code via a [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls) and we will be happy to credit you in the entry's _README.md_ file.
 
 
 ## [1984/mullender](1984/mullender/mullender.c) ([README.md](1984/mullender/README.md))
-
-### Status: Compiled executable crashes - please help us fix
-
+## STATUS: compiled executable crashes - please help us fix
+## STATUS: doesn't work with some platforms - please help us fix
 
 This entry is likely to fail and/or dump core on any computer other than a
 Vax-11 or pdp-11. In 1984 machine dependent code was allowed.
@@ -129,22 +145,21 @@ To see this entry in action check out [Yusuke
 Endoh](/winners.html#Yusuke_Endoh)'s [2015/endoh3](2015/endoh3) entry. Otherwise
 a Vax-11 or pdp-11 emulator would be necessary.
 
-NOTE: if you do change this please make sure to put it in `mullender.alt.c`!
-
+NOTE: if you do change this please make sure to put it in `mullender.alt.c` and
+update the Makefile to have an alt target!
 
 # 1985
 
 
 ## [1985/sicherman](1985/sicherman/sicherman.c) ([README.md](1985/sicherman/README.md))
-
-### Status: Requires a compiler supporting -traditional-cpp - alternate code requested
+## STATUS: Requires a compiler supporting `-traditional-cpp` - alternate code requested
 
 This entry needs a compiler that support `-traditional-cpp`. `gcc`
 supports this but `clang` does not. Please be advised that `gcc` under macOS is
 actually gcc if it looks like it's gcc (two different binaries).
 
 If you do wish to provide an alternate version of the program that does not need
-compiler supporting -traditional-cpp we welcome you to summit such code via a
+compiler supportingwe welcome you to summit such code via a
 [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls) and we
 will be happy to credit you in the entry's _README.md_ file.
 
@@ -153,21 +168,21 @@ will be happy to credit you in the entry's _README.md_ file.
 
 
 ## [1986/august](1986/august/august.c) ([README.md](1986/august/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
 
-### Status: INABIAF - please do not fix
 
 This entry is known to segfault after printing its output. It was documented by
-the judges and needn't be fixed.
+the judges and shouldn't be fixed.
 
 
 ## [1986/holloway](1986/holloway/holloway.c) ([README.md](1986/holloway/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
 
-### Status: INABIAF - please do not fix
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for modern
+systems but he points out a warning that should NOT be fixed; he experimented
+with trying to fix it but it did not work, either segfaulting or not displaying
+the correct output. Thus:
 
-When compiling this entry you might get an incompatible pointer type warning but
-this should be ignored. When [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this he experimented with the
-alternatives and it did not work. Thus if you see something like:
 
 ```c
 [holloway.c:15:11: warning: incompatible pointer types initializing 'char *' with an expression of type 'char **'; dereference with * [-Wincompatible-pointer-types]
@@ -176,22 +191,16 @@ alternatives and it did not work. Thus if you see something like:
               *
 ```
 
-it is NOT a problem and should not be changed. Changing it will either crash it
-or make it not work.
+is NOT a problem and should not be changed.
+
 
 
 ## [1986/wall/wall.c](1986/wall/wall.c) ([README.md](1986/wall/README.md))
-
-### Status: Requires a compiler supporting -traditional-cpp - alternate code requested
+## STATUS: Requires a compiler supporting `-traditional-cpp` - alternate code requested
 
 This entry needs a compiler that support `-traditional-cpp`. `gcc`
 supports this but `clang` does not. Please be advised that `gcc` under macOS is
 actually gcc if it looks like it's gcc (two different binaries).
-
-If you do wish to provide an alternate version of the program that does not need compiler supporting -traditional-cpp
-you are summit such code via a [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls)
-and we will be happy to credit you in the entry's _README.md_ file.
-
 
 
 # 1987
@@ -201,24 +210,23 @@ and we will be happy to credit you in the entry's _README.md_ file.
 
 
 ## [1988/dale](1988/dale/dale.c) ([README.md](1988/dale/README.md))
-
-### Status: Requires a compiler supporting -traditional-cpp - alternate code requested
+## STATUS: Requires a compiler supporting `-traditional-cpp` - alternate code requested
 
 This entry needs a compiler that support `-traditional-cpp`. `gcc`
 supports this but `clang` does not. Please be advised that `gcc` under macOS is
 actually gcc if it looks like it's gcc (two different binaries).
 
-If you do wish to provide an alternate version of the program that does not need compiler supporting -traditional-cpp
-you are summit such code via a [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls)
-and we will be happy to credit you in the entry's _README.md_ file.
-
 
 # 1989
 
+## [1989/paul](1989/paul/paul.c) ([README.md](1989/paul/README.md))
+## STATUS: known bug - please help us fix
+
+This entry works under linux but segfaults under macOS. We'll be working on this
+but if you have a fix we'll be happy to look at it.
 
 ## [1989/westley](1989/westley/westley.c) ([README.md](1989/westley/README.md))
-
-### Status: main() function args not allowed - please help us fix
+## STATUS: main() function args not allowed - please help us fix
 
 Although [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for
 some of the versions that are generated (see below tip) it will not work for
@@ -226,26 +234,28 @@ all. He noted that trying to fix it in some cases causes a segfault and in other
 cases it fails to generate some of the files (others are okay) at all (empty
 files).
 
-He gives a tip on the problem: main() requires the second, third and fourth arg
-to be a `char **`. This didn't use to be the case and some compilers like gcc
-don't complain. He was able to get `main()` to be correct BUT a feature is that
-it uses ROT13 to decrypt the function `znva` to be main in generated files.
-Since that function does not have the correct types when converted to main() it
-fails to compile. But as he said changing the type causes either a segfault or
-files not generated at all. `ver1`, `ver2` and `ver3` are the problematic ones.
-The segfault happens when running the main program.
-
+He gives these tips on the problem: `main()`'s second, third and fourth args are
+supposed to be a `char **`. This didn't use to be the case and some compilers
+like gcc don't complain. `clang` however does. Cody was able to get `main()` to
+be correct BUT a feature is that it uses ROT13 to decrypt the function `znva` to
+be main in _generated files_ (see the [README.md](1989/westley/README.md) for
+details). Since that function does not have the correct types when converted to
+main() it fails to compile.  But as he said changing the type causes either a
+segfault or files not generated at all. `ver1`, `ver2` and `ver3` are the
+problematic ones.  The segfault happens when running the main program. Cody
+fixed that but as noted as for the generated files only `ver0` will compile with
+clang.
 
 # 1990
 
 
 ## [1990/jaw](1990/jaw/jaw.c) ([README.md](1990/jaw/README.md))
-
-### Status: INABIAF - please do not fix
+## STATUS: INABIAF - please **DO NOT** fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the scripts to
 work in modern systems. He notes however that the command in the try section,
-the one to test the official C entry, appears to not work with macOS, giving:
+the one to test the official C entry, **appears** (the keyword!) to not work
+with macOS, giving:
 
 
 ```sh
@@ -255,9 +265,9 @@ oops: Undefined error: 0
 ```
 
 However this is because the entry uses `perror()` and it just so happens that
-the default `errno` gives that result. For instance if you run the following C
-program under macOS you will get undefined error but if you do it under linux
-you'll likely get success.
+the default `errno` of 0 gives that result. For instance if you run the
+following C program under macOS you will get undefined error but if you do it
+under linux you'll likely get success.
 
 
 ```c
@@ -276,10 +286,10 @@ namely:
 
 	I k>16)
 
-is true on both linux and macOS, with `k` being equal to 22.
+is true on both linux and macOS, with `k` being equal to 22!
 
 Should the entry use `perror()`? Perhaps not but we're not sure of its purpose
-so it can stay for now with this note.
+so it should stay with this note.
 
 
 # 1991
@@ -298,28 +308,35 @@ so it can stay for now with this note.
 
 
 ## [1995/cdua](1995/cdua/cdua.c) ([README.md](1995/cdua/README.md))
+## STATUS: known bug - please help us fix
 
-### Status: known bug - please help us fix
+This did not originally compile under macOS and after it did compile under
+macOS, it crashed. [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson)
+fixed these problems.
 
-This did not originally compile under macOS and after it did compile under macOS, it crashed.
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this but he
-observed that sometimes the program asks the user to hit return a second time to
-resume solving the maze. It does not always happen. It doesn't seem to be
-related to making it work under macOS as all that did was removing some invalid
-prototypes and use `printf()` instead of the invalid pointer to it (incompatible
-type).
+However he observed that sometimes the program asks the user to hit return a
+second time to resume solving the maze. It does not always happen. It doesn't
+seem to be related to making it work under macOS as all that did was removing
+some invalid prototypes and use `printf()` instead of the invalid pointer to it
+(incompatible type). Besides that it happened under linux where there was no
+compilation error or crash.
 
 
 # 1996
 
+# 1997
+
+There was no IOCCC in 1997.
 
 # 1998
 
 ## [1998/schnitzi](1998/schnitzi/schnitzi.c) ([README.md](1998/schnitzi/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
 
-### Status: INABIAF - please do not fix
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work for
+modern systems but he notes a couple compile warnings to ignore.
 
-If you get the compiler warning:
+First if you get the warning:
 
 	warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
 	   11 | void  g(){ O=j; printf(_); }
@@ -328,14 +345,21 @@ If you get the compiler warning:
 
 please do NOT change it! Doing so will break the generated output.
 
-Another warning to ignore is:
+Another warning that was introduced but should be ignored (it's required) is:
 
 
 	warning: assignment to 'char *' from incompatible pointer type 'char **' [-Wincompatible-pointer-types]
 	   55 | main(int v,char **c){ O=r_; _d=c;
 	      |                               ^
 
-Please do not change this either.
+Please DO NOT change this either.
+
+If there are any other warnings triggered by your compiler please DO NOT fix
+those either!
+
+# 1999
+
+There was no IOCCC in 1999.
 
 # 2000
 
@@ -344,8 +368,7 @@ Please do not change this either.
 
 
 ## [2001/anonymous](2001/anonymous/anonymous.c) ([README.md](2001/anonymous/README.md))
-
-### Status: known bug - please help us fix
+## STATUS: known bug - please help us fix
 
 This entry seems to no longer work and we would appreciate any help from anyone
 who can fix this. [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) has
@@ -386,6 +409,7 @@ warning in their comments on that.
 
 
 ## [2001/bellard](2001/bellard/bellard.c) ([README.md](2001/bellard/README.md))
+## STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed an initial
 segfault and he also fixed the [supplementary
@@ -395,45 +419,60 @@ would greatly appreciate anyone's help! It appears that this entry will require
 major debugging and to make it work one might need to have a deep understanding
 of the ELF format.
 
+# 2002
+
+There was no IOCCC in 2002.
+
+# 2003
+
+There was no IOCCC in 2003.
 
 # 2004
 
 
 ## [2004/burley](2004/burley/burley.c) ([README.md](2004/burley/README.md))
+## STATUS: known bug - please help us fix
 
-### Status: known bug - please help us fix
-
-This entry did not compile with clang but [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this problem. He notes however that
-prior to (with gcc) and after the fix (gcc, clang) it does not work: it allows
-input of the bet and then it prints the hand but it does not do anything with
-your next move. He provides the following notes:
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile
+with clang. He notes however that both prior to the fix (with gcc) and after the
+fix (gcc, clang) it does not work: it allows input of the bet but after it
+prints the hand it does not do anything with your next move. Cody provided the
+following notes and tips (including possible reasons it doesn't work):
 
 0. Originally the `jmp_buf` was just an `int p[4][1000]`.
 1. The `setjmp.h` header file was not included so the calls to `longjmp()` had
 not only the wrong number of arguments but also implicitly returned int when it
 actually returns void. This means that the comma operator had to be used to get
-the binary expressions to work. It might be this is part of the problem.
+the binary expressions to work. It might be this is part of the problem. It's
+possible that actually changing this introduced it to not work as some old
+entries actually use invalid prototypes and work but changing them to use the
+proper prototype breaks them.
 2. Another possible problem is the abuse of `setjmp()` and `longjmp()` which is
 known to be a problem, at least as he interprets it in his tired head (and less
 experience with `longjmp`). In particular:
 > The longjmp() routines may not be called after the routine which called the
 > setjmp() routines returns.
+See also the NOTES section of the linux man pages for `setjmp(3)` and
+`longjmp(3)`.
 3. The main() originally returned a call to main() which appeared to be an
-infinite recursion at least as it was; now it returns a call to poke() which has
-the same number and type of args (1, `char *`) that main() had. This appears to
-not be an infinite recursion but I might be reading it wrong. Changing it to not
-return itself and the same problem occurs so perhaps this is not the problem.
-4. As well main() had only one arg, a `char *`, and there was a (seemingly)
+infinite recursion at least as it was; now it returns a call to poke() (since
+it's a poker game) which has the same number and type of args (1, `char *`) that
+main() originally had. This appears to not be an infinite recursion but I might
+be reading it wrong. Changing it to not return itself and the same problem
+occurs so perhaps this is not the problem. It's possible that the initial call
+to the `poke()` function is incorrect.
+4. It might be that the requirement of the comma operator in modern compilers is
+a problem. Perhaps some instances of `,1` should be `,0`? That seems plausible
+as they are often used with the `&&` operator.
+5. As well main() had only one arg, a `char *`, and there was a (seemingly)
 needless cast to `char *` from gets(). This cast remains in the code however.
-5. The code no longer uses `gets()` but `fgets()`; this is not the problem
+6. The code no longer uses `gets()` but `fgets()`; this is not the problem
 however.
 
 
 ## [2004/gavin](2004/gavin/gavin.c) ([README.md](2004/gavin//README.md))
-
-### Status: Compiled executable crashes - please help us fix
-
+## STATUS: compiled executable crashes - please help us fix
+## STATUS: doesn't work with some platforms - please help us fix
 
 Segmentation fault will occur in some systems. For instance on macOS with the
 arm64 chip:
@@ -452,8 +491,10 @@ Undefined symbols for architecture arm64:
 ld: symbol(s) not found for architecture arm64
 ```
 
+We believe that this simply won't work with non x86 specific systems but perhaps
+you have a fix? We welcome your help!
 
-#### Recent 2004/gavin mods:
+### Recent 2004/gavin mods:
 
 Although not related some recent changes were made to 2004/gavin to let it
 compile under clang. The following patch was applied:
@@ -483,7 +524,7 @@ index c967b7e..2082b49 100644
  {
    Z, k = K;
    if (!t)
-``
+```
 
 The original Makefile from 2004 had the following to say about this entry:
 
@@ -534,21 +575,25 @@ fit into the current IOCCC build environment.
 
 # 2005
 
-
 ## [2005/giljade](2005/giljade/giljade.c) ([README.md](2005/giljade/README.md))
-
-### Status: known bug - please help us fix
+## STATUS: doesn't work with some platforms - please help us fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) noted that this
-requires both 32-bit CPUs (data size?) and also cannot have optimiser enabled.
-It might be that it can be fixed, perhaps by changing the int sizes and bitwise
-operations, but if not this will not work with some systems like modern Macs as
-Apple has made it hard to compile 32-bit applications.
+requires both 32-bit CPUs (data size?) and also cannot have the optimiser
+enabled.  It might be that it can be fixed, perhaps by changing the int sizes
+and bitwise operations, but if not this will not work with some systems like
+modern Macs as Apple has made it quite difficult to compile 32-bit applications
+(thanks a lot Apple for ruining some IOCCC entries! :-) ).
+
+It's quite probable that non x86 related CPUs will also not work: it's hard to
+know because Cody's only non-x86 (x86_64 in particular) system is the MacBook
+Pro Max with the M1 chip which is arm64 and specifying `-m32` is invalid on that
+system (might be on Intel 64-bit Macs as well but he hasn't had one since before
+November 2022).
 
 
 ## [2005/mynx](2005/mynx/mynx.c) ([README.md](2005/mynx/README.md))
-
-### Status: INABIAF - please do not fix
+## STATUS: INABIAF - please **DO NOT** fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) notes that, though
 probably obvious, this entry will not work with https. He changed the code to
@@ -560,6 +605,12 @@ pointing out as it won't work on as many websites as it used to including the
 
 
 # 2006
+# 2007
+# 2008
+# 2009
+# 2010
+
+These years did not have an IOCCC.
 
 
 # 2011
@@ -575,18 +626,17 @@ pointing out as it won't work on as many websites as it used to including the
 
 
 ## [2014/vik](2014/vik/prog.c) ([README.md](2014/vik/README.md))
-
-### Status: known bug - please help us fix
+## STATUS: known bug - please help us fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) discovered a bug that
-shows itself in some cases (it works in others) when working on his [2020 Enigma
-machine](2020/ferguson2/prog.c) entry. See his
+shows itself in some cases (it works in others) when working on his winning
+[2020 Enigma machine](2020/ferguson2/prog.c) ('Most enigmatic) entry. See his
 [README.md](2020/ferguson2/README.md) for details (search for `vik` in the
 file).
 
-He provides a tip in testing the problem: it might help to use the Enigma
+He provides a tip in testing the problem: it might help to use his Enigma
 machine to find problems as it will allow you to verify what is correct and what
-is not. Again see his README.md for details.
+is not. Again see his README.md for details!
 
 
 # 2015
@@ -599,19 +649,16 @@ is not. Again see his README.md for details.
 
 
 ## [2019/endoh](2019/endoh/prog.c) ([README.md](2019/endoh/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
 
-### Status: INABIAF - please do not fix
-
-As a backtrace quine this entry is SUPPOSED to segfault so this should not be
+As a backtrace quine this entry is **SUPPOSED to segfault** so this should not be
 touched either.
-
 
 # 2020
 
 
 ## [2020/ferguson1](2020/ferguson1/prog.c) ([README.md](2020/ferguson1/README.md))
-
-### Status: INABIAF - please do not fix
+## STATUS: INABIAF - please **DO NOT** fix
 
 There are some things that might appear to be bugs but are actually features or
 things that are misinterpreted as bugs. See his
@@ -619,4 +666,7 @@ things that are misinterpreted as bugs. See his
 [troubleshooting.md](2020/ferguson1/troubleshooting.md) files for details.
 
 
+# 2021
+# 2022
 
+These years did not have an IOCCC entry.
