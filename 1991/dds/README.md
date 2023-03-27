@@ -14,7 +14,27 @@
 ### To run
 
 	./dds basic_program
-	./a.out
+	./a
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed some segfaults in
+this entry as well as making it so `a` (was `a.out`, see below) can be generated
+(as in the program did not work, at least with clang). The first segfault which
+was always triggered was due to the code `*q>' '&&(*q)--;`. This seems odd at
+first glance but it's pointing to `s` which was read-only memory as a `char *s`.
+It's now a `char s[]`. The second and third segfaults were caused if a file was
+not specified (or it the one specified did not exist or couldn't be opened for
+some reason) and if the output file could not be opened for writing. The
+allowing the generated code to compile with clang is something of a hack
+unfortunately. The code `return system(q-6);` ended up doing `return system("cc
+a.c");` but depending on the compiler this would trigger errors due to no
+function prototype specified and also a case where main() had a `return;`
+without any return value. Because the string `s` is complicated and because Cody
+did not want to inadvertently mess something up he changed that code to
+`system("make a");` and then added the right rule to the Makefile. Thus you now
+need both `make` and `cc`. If you use gcc you may change the system() call to
+what was given in this description to get a more authentic feel. If you do this
+you must then run `./a.out` not `./a`!  Thank you Cody for your assistance!
+
 
 ## Judges' comments
 
@@ -24,8 +44,8 @@ Make and run as follows:
 
 For example, the author suggests trying:
      
-	dds LANDER.BAS
-	a.out
+	./dds LANDER.BAS
+	./a
 
 Notice that a file a.c has been generated.  Can you tell how a.c was
 produced?  How does a.c relate to LANDER.BAS?

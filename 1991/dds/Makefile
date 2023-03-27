@@ -62,7 +62,7 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE=
+CINCLUDE= -include stdio.h
 
 # Optimization
 #
@@ -80,6 +80,7 @@ LIBS=
 #
 CC= cc
 
+CSILENCE= -Wno-implicit-function-declaration
 # Compiler add-ons or replacements for clang only
 #
 ifeq ($(CC),clang)
@@ -130,6 +131,9 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
+a: a.c
+	${CC} ${CFLAGS} -Wno-return-type $< -o $@ ${LIBS}
 
 # alternative executable
 #
