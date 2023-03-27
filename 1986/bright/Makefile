@@ -203,12 +203,6 @@ clobber: clean
 	    echo 'ate sandwich'; \
 	fi
 
-nuke: clobber
-	@${TRUE}
-
-dist_clean: nuke
-	@${TRUE}
-
 install:
 	@echo "Dr. Spock says that is not logical!"
 	@${TRUE}
