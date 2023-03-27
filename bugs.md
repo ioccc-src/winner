@@ -51,6 +51,22 @@ needs `stdio.h` you could do `-include stdio.h`. Please leave a space after the
 `=` in the Makefile!
 
 
+### Compiler warnings are very rarely a problem
+
+In general warnings should NOT be addressed. The only time they should be
+CONSIDERED is when the entry does not work. However note that sometimes trying
+to fix the warnings will actually introduce bugs! Below in some entries we do
+list some warnings that definitely should be ignored (including some introduced
+by fixes) but we do not list them all: trying to keep track of them all would be
+impractical especially as different compilers give different warnings. Another
+type of warning that would be hard to keep track of is different data sizes on
+different platforms. These tend to be required at the risk that sometimes the
+entry will not work for certain platforms, some of which might or might not be
+fixable. But even if they are fixable (which will likely be hard to do) it's
+almost certain that such code would be just as non-portable (importable ? :-) ).
+
+
+
 ## STATUS: INABIAF - please **DO NOT** fix
 ### INABIAF: It's not a bug it's a feature :-)
 
@@ -191,7 +207,29 @@ the correct output. Thus:
               *
 ```
 
-is NOT a problem and should not be changed.
+is NOT a problem and should NOT be changed. Neither are:
+
+```c
+holloway.c:14:1: warning: return type defaults to 'int' [-Wreturn-type]
+   14 | main(m1,s) char **s; {
+      | ^~~~
+holloway.c: In function 'main':
+holloway.c:14:1: warning: type of 'm1' defaults to 'int' [-Wmissing-parameter-type]
+holloway.c:15:15: warning: initialization of 'char *' from incompatible pointer type 'char **' [-Wincompatible-pointer-types]
+   15 |     char *t = s;
+      |               ^
+holloway.c:23:22: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   23 |             for(a=f;a<j;++a)if(tab1[a]&&!(tab1[a]%((long)l(n))))return(a);
+      |                      ^
+holloway.c:24:9: note: here
+   24 |         case g:
+      |         ^~~~
+holloway.c:34:1: warning: control reaches end of non-void function [-Wreturn-type]
+   34 | }
+      | ^
+
+```
+
 
 
 
