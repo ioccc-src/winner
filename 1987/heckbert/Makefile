@@ -152,7 +152,7 @@ ALT_TARGET= ${PROG}.orig
 # build the entry
 #################
 #
-all: ${DATA} ${TARGET}
+all: data ${TARGET}
 	@${TRUE}
 
 .PHONY: data everything clean clobber nuke dist_clean \

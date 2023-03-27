@@ -153,7 +153,7 @@ CFLAGS+= -traditional-cpp
 # build the entry
 #################
 #
-all: ${DATA} ${TARGET}
+all: data ${TARGET}
 	@${TRUE}
 
 .PHONY: alt data everything clean clobber nuke dist_clean \
