@@ -10,22 +10,36 @@
 
         make all
 
-### To run
+## To run:
 
 	./schnitzi < textfile
 
-## Judges' comments
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the entry to not
+overflow the buffer (and segfault) by changing the call of `gets()` to
+`fgets()`. He also increased the buffer size. Prior to this fix one could not
+redirect the Makefile into this program, as an example problem. Thank you Cody
+for your assistance!
 
-    Try:
+
+## Try:
 
 	./schnitzi < /etc/motd
+	./schnitzi < /etc/passwd
+
+
+
+## Judges' comments:
+
+
+Try:
+
 	./schnitzi < schnitzi.c
 
-    Compare the output of the program with its source.  Sure the output
-    is different, but there is more than meets the diff's eye.  Can you
-    find out why?
+Compare the output of the program with its source.  Sure the output
+is different, but there is more than meets the `diff`'s eye.  Can you
+find out why?
 
-## Author's comments
+## Author's comments:
 
     SPOILER:
 
