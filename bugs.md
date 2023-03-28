@@ -361,6 +361,12 @@ better spent on something else here or in that elusive thing called 'real life'.
 
 # 1989
 
+## [1989/robison](1989/robison/robison.c) ([README.md](1989/robison/README.md))
+## STATUS: known bug - please help us fix
+
+This might not be an issue that needs to be fixed but numbers with non-binary
+digits will crash the program.
+
 
 ## [1989/westley](1989/westley/westley.c) ([README.md](1989/westley/README.md))
 ## STATUS: main() function args not allowed - please help us fix
