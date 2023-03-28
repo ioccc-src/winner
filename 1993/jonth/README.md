@@ -11,8 +11,20 @@
         make all
 
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this so that it
-will work with modern systems. Thank you Cody for your assistance!
+Both [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) and [Yusuke
+Endoh](/winners.html#Yusuke_Endoh) fixed this so that it
+will work with modern systems. Yusuke provided some fixes of the X code and Cody
+fixed the C pre-processor directives so that it would compile. It used to be
+that you could get away with code like:
+
+```c
+G        int i,j
+K        case
+```
+
+and expect `G;` to equate to `int i, j;` (though it's now a long) and `K` to mean
+`case` but that's no longer the case so the offending lines had `#define`
+prepended to them. Thank you Yusuke and Cody for your assistance!
 
 
 ### To run
