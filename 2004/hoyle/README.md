@@ -30,7 +30,7 @@ make
 ### Alternate code
 
 An alternate version of this entry, `hoyle.alt.c`, is provided.  This alternate code
-missing newline and used a non-standard tab stop size.
+has a missing newline and used a non-standard tab stop size.
 
 To compile this alternate version:
 

@@ -1,4 +1,4 @@
-Best X Program:
+# Best X Program:
 
 	Tero Kivinen
 	Helsinki University of Technology
@@ -7,7 +7,7 @@ Best X Program:
 	Finland
 
 
-Judges' comments:
+## Judges' comments:
 
     If your machine support the X Window System, Version 11:
 	make kivinen
@@ -24,76 +24,78 @@ Judges' comments:
 	  avoids this problem.
 	
 
-Selected notes from the author:
+## Selected notes from the author:
 
-    X Entertainment Kit
+X Entertainment Kit
 
-    This kit includes three games from the early of video games for
-    The X Window System Version 11 Release 5. It should work with
-    earlier releases, though.
+This kit includes three games from the early of video games for
+The X Window System Version 11 Release 5. It should work with
+earlier releases, though.
 
 
-    Space Invaders
+### Space Invaders
 
-    The classic game of shooting aliens from outer space, trying to
-    exterminate all life on earth. The game ends when the first line
-    of aliens touches the ground, or destroy you. To win the game you
-    must destroy all the aliens. If you evade out from the screen you
-    lose.
+The classic game of shooting aliens from outer space, trying to
+exterminate all life on earth. The game ends when the first line
+of aliens touches the ground, or destroy you. To win the game you
+must destroy all the aliens. If you evade out from the screen you
+lose.
 
-        Controls:
+#### Controls:
+
                 Button 1 = Move left
                 Button 2 = Fire missile
                 Button 3 = Move right
 
 
-    Breakout
+###  Breakout
 
-    Break all the bricks with the ball, using your paddle. If you miss
-    the ball the game ends.
+Break all the bricks with the ball, using your paddle. If you miss
+the ball the game ends.
 
-        Controls:
+#### Controls:
+
                 Button 1 = Move left
                 Button 3 = Move right
 
 
-    Dropout
+### Dropout
 
-    Catch all the falling pieces, before they reach the ground. If you
-    miss it, game ends. To win you must catch all 30 pieces.
+Catch all the falling pieces, before they reach the ground. If you
+miss it, game ends. To win you must catch all 30 pieces.
 
-        Controls:
+#### Controls:
                 Button 1 = Move left
                 Button 3 = Move right
 
 
 
-    Starting the game
+## Starting the game
 
-    The type of the game is determined by the number of arguments
-    given to the program.
+The type of the game is determined by the number of arguments
+given to the program.
 
-        no arguments = Space Invaders
-        1 argument   = Breakout
-        2 arguments  = Dropout
-        3 arguments  = double sized Breakout
-        4 arguments  = triple sized Space Invaders
-        5 arguments  = triple sized Breakout
-        6 arguments  = double sized Dropout
-        7 arguments  = quadruple sized Breakout
-        and so on...
-
-
-    Scores
-
-    The exit value of the game is your score. The smaller the score
-    the better it is. The exit value of zero means you have won.
+no arguments = Space Invaders
+1 argument   = Breakout
+2 arguments  = Dropout
+3 arguments  = double sized Breakout
+4 arguments  = triple sized Space Invaders
+5 arguments  = triple sized Breakout
+6 arguments  = double sized Dropout
+7 arguments  = quadruple sized Breakout
+and so on...
 
 
-    Features
+### Scores
 
-    The game has a cheat system, which can be found after examining the
-    event loop at the end of program. It is not a bug, it's a feature!
+The exit value of the game is your score. The smaller the score
+the better it is. The exit value of zero means you have won.
+
+
+### Features
+
+The game has a cheat system, which can be found after examining the
+event loop at the end of program. It is not a bug, it's a feature!
 
 ## Copyright and CC BY-SA 4.0 License:
 
