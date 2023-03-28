@@ -17,7 +17,7 @@ TEXT_4 = both sides
 TEXT_5	=	tabs boths sides
 
 #
-#  Test psuedo targets.
+#  Test pseudo targets.
 #
 all : print_macros repeat redefine many flags multiple split errors done
 

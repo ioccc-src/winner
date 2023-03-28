@@ -11,29 +11,38 @@
 
         make all
 
-### To run
+## To run:
 
-	./am ant.test.mk
+	./am Makefile
 
-## Judges' comments
+where `Makefile` is a Makefile to use.
 
 
-    Like much of Posix, obfuscation has its place.  Your task is to
-    figure out where.
+## Try:
 
-    This entry comes complete with a Posix-like command description.
-    Interested Posix balloters should lobby the IEEE for an obfuscated 
-    P1003 sub-committee.
+	./ant ant.test.mk
 
-    We also suggest that you try:
+We also suggest that you try:
 
 	make am
 	./am Makefile am_clobber	# clobber everything except am
 	./am Makefile all
 
-## Author's comments
 
-    See the file ant.README.
+## Judges' comments
+
+
+Like much of Posix, obfuscation has its place.  Your task is to
+figure out where.
+
+This entry comes complete with a Posix-like command description.
+Interested Posix balloters should lobby the IEEE for an obfuscated 
+P1003 sub-committee.
+
+
+## Author's comments:
+
+See the file [ant.README](ant.README).
 
 ## Copyright and CC BY-SA 4.0 License:
 
