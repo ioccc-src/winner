@@ -11,41 +11,73 @@
 
         make all
 
-### To run
+## To run:
 
 	./dds basic_program
-	./a
+	./a.out
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed some segfaults in
 this entry as well as making it so `a` (was `a.out`, see below) can be generated
-(as in the program did not work, at least with clang). The first segfault which
-was always triggered was due to the code `*q>' '&&(*q)--;`. This seems odd at
-first glance but it's pointing to `s` which was read-only memory as a `char *s`.
-It's now a `char s[]`. The second and third segfaults were caused if a file was
-not specified (or it the one specified did not exist or couldn't be opened for
-some reason) and if the output file could not be opened for writing. The
-allowing the generated code to compile with clang is something of a hack
-unfortunately. The code `return system(q-6);` ended up doing `return system("cc
-a.c");` but depending on the compiler this would trigger errors due to no
-function prototype specified and also a case where main() had a `return;`
-without any return value. Because the string `s` is complicated and because Cody
-did not want to inadvertently mess something up he changed that code to
-`system("make a");` and then added the right rule to the Makefile. Thus you now
-need both `make` and `cc`. If you use gcc you may change the system() call to
-what was given in this description to get a more authentic feel. If you do this
-you must then run `./a.out` not `./a`!  Thank you Cody for your assistance!
+(as in the program did not work, at least with clang). The alternative code,
+described below, is what is needed for clang. Reading it might be instructive
+even if you have gcc.
 
+The first segfault which was always triggered was due to the code `*q>'
+'&&(*q)--;`. This seems odd at first glance but it's pointing to `s` which was
+read-only memory as a `char *s`.  It's now a `char s[]`. The second and third
+segfaults were caused if a file was not specified (or it the one specified did
+not exist or couldn't be opened for some reason) and if the output file could
+not be opened for writing.
 
-## Judges' comments
+Thank you Cody for your assistance!
 
-Make and run as follows:
+## Try:
+
+With gcc, make and run as follows:
     
 	make dds
 
 For example, the author suggests trying:
      
 	./dds LANDER.BAS
-	./a
+	./a.out
+
+### Alternative code:
+
+The alternative code, provided by Cody, allows this entry to work successfully
+even with clang. He notes that unfortunately it's something of a hack or maybe
+even a kludge. This however seems important because it works well and allows for
+not messing with the `s` string which is quite complicated. For all Cody knows
+even changing the length could break functionality and indeed the length would
+have to be longer for this to work with clang.
+
+How does it work? The code, which you will see in `dds.c`, `return system(q-6);`
+equates to `return system("cc a.c");` but clang by default, at least in macOS,
+has default -Werror and there were some warnings. This means that the
+compilation failed with clang. In particular it would fail (at least with
+`LANDER.BAS`) due to a return from `main()` without a return value and the use
+of functions not yet declared.
+
+Now as noted since the string `s` is complicated and because Cody did not want
+to inadvertently mess something up he changed that code to `system("make a");`
+and then added the right rule to the Makefile. Thus for the alternative version
+you now need both `make` and `cc`. If you use gcc you may change the system()
+call to what was given in this description to get a more authentic feel. If you
+do this you must then run `./a.out` not `./a`! Thus to use the alternative
+version:
+
+```sh
+make clobber alt
+./dds.alt LANDER.BAS
+./a
+```
+
+Thank you Cody for your assistance!
+
+
+## Judges' comments:
+
+## Try:
 
 Notice that a file a.c has been generated.  Can you tell how a.c was
 produced?  How does a.c relate to LANDER.BAS?
