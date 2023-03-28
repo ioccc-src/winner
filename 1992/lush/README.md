@@ -19,7 +19,7 @@ work with gcc. Thank you Yusuke! [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) made it use `fgets()` instead of
 `gets()` and also added the `runme.sh` script to demonstrate it (using make was
 problematic). Cody notes that unfortunately this does not work with clang due to
-different compiler messages.
+different compiler messages. Thank you Cody!
 
 ## Judges' comments:
 
