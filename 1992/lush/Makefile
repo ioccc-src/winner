@@ -61,7 +61,7 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE=
+CINCLUDE= -include stdio.h
 
 # Optimization
 #
@@ -128,7 +128,6 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: This entry requires a non-standard K&R C compiler to compile."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 lush.again: ${PROG}.c

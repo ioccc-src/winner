@@ -113,6 +113,14 @@ any problems.
 Entries with this status do not work under some OSes and/or architectures (and/or
 something else?). Please help us to fix it!
 
+## STATUS: doesn't work with some compilers - please provide alternative code
+
+Some entries do not work with some compilers. A good example is
+[1992/lush](1992/lush/lush.c) which uses error messages from the compiler to
+generate its output.
+
+Please help us by writing alternative code!
+
 ## STATUS: main() function args not allowed - please help us fix
 
 Entries with this status have a problem in that the args to main() are not of a
@@ -439,6 +447,14 @@ so it should stay with this note.
 
 
 # 1992
+
+## [1992/lush](1992/lush/lush.c) ([README.md](1992/lush/README.md))
+## STATUS: doesn't work with some compilers - please provide alternative code
+
+We used a patch from [Yusuke Endoh](/winners.html#Yusuke_Endoh) to get this to
+work but it only works with gcc. Unfortunately due to the way the entry works
+and the fact that other compilers like clang have different warnings and errors
+this simply does not work with them. Can you help us?
 
 
 # 1993
