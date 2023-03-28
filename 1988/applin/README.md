@@ -1,4 +1,4 @@
-Best of show:
+# Best of show:
 
     	Jack Applin
 	Hewlett-Packard
@@ -12,11 +12,11 @@ Best of show:
         make all
 
 
-### Try:
+## Try:
 
 	./applin
 
-## Judges' comments
+## Judges' comments:
 
 This entry is by far the most unusual abuse of the C preprocessor that
 we have received thus far.  Nearly all of the real work is done in the
