@@ -16,13 +16,12 @@
 systems (it did not work at all). He also made it so that if a file fails to
 open it does not return but rather skips the reading of the file.
 
-What was
-wrong? The call to `freopen()` was incorrect with the second arg (the mode)
-being instead `5+__FILE__`. It now is `"r"`. There was also a call to `fopen()`
-that was wrong where the mode was instead `44+__FILE__`. Interestingly enough
-though this did not seem to be an issue though I cannot explain why. He notes
-that it works fine with `clang` as well as `gcc` (which is what is used but in
-macOS - see below for alternative code - `gcc` is clang).
+What was wrong? The call to `freopen()` was incorrect with the second arg (the
+mode) being instead `5+__FILE__`. It now is `"r"`. There was also a call to
+`fopen()` that was wrong where the mode was instead `44+__FILE__`. Interestingly
+enough though this did not seem to be an issue though I cannot explain why. He
+notes that it works fine with `clang` as well as `gcc` (which is what is used
+but in macOS - see below for alternative code - `gcc` is clang).
 
 Additionally Cody provided an alternative version for macOS. See below for the
 alternative version. Thank you Cody for your assistance!
