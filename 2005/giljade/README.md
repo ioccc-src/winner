@@ -21,7 +21,8 @@ enabled for this to work. Both changes made and it works. This does prove a
 problem for macOS as it no longer easily allows for compiling with 32-bit
 possibly even if you have the Intel chip (it certainly does not work with arm64
 macOS). It might be possible to get the entry to work with 64-bit by changing
-the int size but this is currently unknown.
+the int size but this is currently unknown. Thank you Cody for your help in
+getting this to work!
 
 
 ### To run:
