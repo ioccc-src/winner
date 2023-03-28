@@ -10,11 +10,15 @@
 
         make all
 
-### To run
+## To run:
+
+	./albert number
+
+## Try:
 
 	./albert 1234567890123456789
 
-### Alternate code
+## Alternate code:
 
 An alternate version of this entry, albert.alt.c, is provided.
 Leo Broukhis, before he was an IOCCC judge, sent the IOCCC
@@ -46,7 +50,7 @@ To compile this alternate version:
 
 Use `albert.alt` as you would `albert` above.
 
-## Judges' comments
+## Judges' comments:
     
 We were impressed with the speed at which it was able to factor
 arbitrarily large numbers consisting of factors that fit into
