@@ -28,9 +28,17 @@
 	echo 324 >> data
 	./sort < data
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed two segfaults in
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed three segfaults in
 this entry. The first was caused by invalid data types. The second was triggered
-if one did not specify any arg. Thank you Cody for your assistance!
+if one did not specify any arg. The third happened if the arg was had any
+characters that were not the digits 1 - 9 (if it started with 0 it could work as
+long as another digit followed it and there were no other non-digits). Thank you
+Cody for your assistance!
+
+NOTE: the larger the number the number of lines of output can become
+substantially higher as well. Doing `./schnitzi 9` will actually print 771999
+lines!
+
 
 ## Judges' comments
 

@@ -93,7 +93,8 @@ formatting code.
 ## STATUS: INABIAF - please **DO NOT** fix
 ### INABIAF: It's not a bug it's a feature :-)
 
-Entries with this status should NOT be touched: they are system specific by design
+Entries with this status should NOT be touched (unless they have another status
+that suggests that issue can be changed): they are system specific by design
 or are other things that are not actually bugs even if they appear to be but are
 noteworthy nonetheless.
 
@@ -515,6 +516,15 @@ Please DO NOT change this either.
 
 If there are any other warnings triggered by your compiler please DO NOT fix
 those either!
+
+Another important note is that as the number passed into the program gets bigger
+the number of lines of output gets substantially larger. For instance:
+
+```sh
+$ ./schnitzi 9|wc -l
+  771999
+```
+
 
 # 1999
 
