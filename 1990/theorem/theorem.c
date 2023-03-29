@@ -24,6 +24,7 @@ w(g,R,u)float*g,u;char R;
 /**/{int b,f;A=atoi(++a);b=atoi(++a);while((f=A+b)<15000){printf("%d\n",f);A=b;b=f;}}
 main(A,a)int A;char*a[];
 o o
+if (a[1]==NULL||a[2]==NULL||a[3]==NULL||a[4]==NULL||a[5]==NULL) return 1;
 if(!strcmp(*++a,"-r"))S();
 D=atof(*++a);
 T=atof(*++a);
@@ -78,12 +79,12 @@ return O;
 for(j=0;j<n;puts(j++[m]));
 e("",O,O,a);
 n=j-(O=1);
-while(gets(j++[m]));
+while(fgets(j++[m],500,stdin));
 if(!strcmp(++a,"-r"))S();
 C
 /**/main(A,a)int A;char*a[];
 Y
-S(){while(gets(b++[m]));for(b--;b--;puts(b[m]));}
+S(){while(fgets(b++[m],500,stdin));for(b--;b--;puts(b[m]));}
 char*f,m[500][99],R,v[99];
 int b,W,n,i,j,z;
 float Q,G,D,M,T,O,B,U,V,N,e();
