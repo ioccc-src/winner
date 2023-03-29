@@ -9,24 +9,24 @@
 
 ## Judges' comments:
 
-    If your machine support the X Window System, Version 11:
+If your machine support the X Window System, Version 11:
+
 	make kivinen
 
-    The type of entertainment depends on number of arguments
-    you have with the program.  :-)
+The type of entertainment depends on number of arguments
+you have with the program.  :-)
 
-    NOTE: Some systems do not need (or have) -lsocket -lresolv -lnsl.
-	  Such systems should compile using -lX11.
+NOTE: Some systems do not need (or have) `-lsocket -lresolv -lnsl`.
+Such systems should compile using `-lX11`.
 
-    NOTE: The original winning source kivinen.orig.c assumed that
-	  exit returned a value which cause problems for some
-	  systems where exit returned a void.  The file kivinen.c
-	  avoids this problem.
-	
+NOTE: The original winning source `kivinen.orig.c`, found in the archive
+directory, assumed that exit returned a value which cause problems for some
+systems where exit returns void.  The file kivinen.c avoids this problem.
+
 
 ## Selected notes from the author:
 
-X Entertainment Kit
+### X Entertainment Kit
 
 This kit includes three games from the early of video games for
 The X Window System Version 11 Release 5. It should work with
@@ -48,7 +48,7 @@ lose.
                 Button 3 = Move right
 
 
-###  Breakout
+###  Breakout:
 
 Break all the bricks with the ball, using your paddle. If you miss
 the ball the game ends.
@@ -59,18 +59,19 @@ the ball the game ends.
                 Button 3 = Move right
 
 
-### Dropout
+### Dropout:
 
 Catch all the falling pieces, before they reach the ground. If you
 miss it, game ends. To win you must catch all 30 pieces.
 
 #### Controls:
+
                 Button 1 = Move left
                 Button 3 = Move right
 
 
 
-## Starting the game
+### Starting the game:
 
 The type of the game is determined by the number of arguments
 given to the program.
@@ -86,13 +87,13 @@ no arguments = Space Invaders
 and so on...
 
 
-### Scores
+### Scores:
 
 The exit value of the game is your score. The smaller the score
 the better it is. The exit value of zero means you have won.
 
 
-### Features
+### Features:
 
 The game has a cheat system, which can be found after examining the
 event loop at the end of program. It is not a bug, it's a feature!
