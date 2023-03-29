@@ -68,7 +68,7 @@ CINCLUDE=
 
 # Optimization
 #
-OPT= -ggdb3
+OPT= -O3
 
 # Default flags for ANSI C compilation
 #
