@@ -131,7 +131,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LIBS} ${BACK_TO}
 
 # alternative executable
 #

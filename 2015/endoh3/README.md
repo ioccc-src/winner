@@ -19,10 +19,41 @@ make
 ### Try:
 
 ```sh
-make -B BACK_TO=ioccc.c
+cc -o koch koch.c prog.c
+./koch
 
-./prog
+cc -o quine quine.c prog.c
+./quine
+
+cc -o pi pi.c prog.c
+./pi
+cc -DN=50 -o pi pi.c prog.c
+./pi
 ```
+
+For `pi.c` the macro `N` determines the number of digits after initial digit
+(which we hope you know :-) ).
+
+And to see the original `mullender.c` in action try the following:
+
+```sh
+cc -o prog prog.c mullender.c
+./prog
+q
+^C # where ^C is ctrl-C, interrupt.
+```
+
+Observe what happens when you hit enter or another character! Send EOF to end
+the program.
+
+The author, [Yusuke Endoh](/winners.html#Yusuke_Endoh), supplied the additional
+source files, which [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson)
+added to the repo for us. He wrote on his [analysis of the
+entry](https://mame-github-io.translate.goog/ioccc-ja-spoilers/2015/endoh3.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp)
+that there are others as well but we don't seem to have them and he didn't
+provide them on his page. We've not yet contacted him for a copy but we will in
+time. Thank you Yusuke!
+
 
 ## Judges' comments:
 
