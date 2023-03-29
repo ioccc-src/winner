@@ -10,32 +10,29 @@
 
         make all
 
-### To run
+### To run:
 
 	./marangon
 
-## Judges' comments
+## Judges' comments:
 
-    The object is to refill the table with 5's, by incrementing
-    or decrementing numbers as needed.  It is the side effects
-    that get you into trouble.  If you are not careful, you may
-    find things "at 6's and 7's".  :-)
+The object is to refill the table with 5's, by incrementing or decrementing
+numbers as needed.  It is the side effects that get you into trouble.  If you
+are not careful, you may find things "at 6's and 7's".  :-)
 
-    NOTE: Some compilers have had trouble optimizing this entry.
+NOTE: Some compilers have had trouble optimizing this entry.
 
-    NOTE: Some systems need to compile with -ltermcap as well as -lcurses.
+NOTE: Some systems need to compile with `-ltermcap` as well as `-lcurses`.
 
-    NOTE: The original winning source marangon.orig.c assumed that
-	  exit returned a value which cause problems for some
-	  systems where exit returned a void.  The file marangon.c
-	  avoids this problem.
+NOTE: The original winning source `marangon.orig.c`, found in the archive
+directory, assumed that exit returns a value which cause problems for some
+systems where exit returns a void.  The file `marangon.c` avoids this problem.
 
-## Author's comments
+## Author's comments:
 
-    It starts off by creating a table with number 5 in all places.  The
-    CPU melts the numbers and you must return them in original state.
-    When you increase a number, all the other eight numbers next to it
-    decrease and vice-versa.
+It starts off by creating a table with number 5 in all places.  The CPU melts
+the numbers and you must return them in original state.  When you increase a
+number, all the other eight numbers next to it decrease and vice-versa.
 
 ## Copyright and CC BY-SA 4.0 License:
 
