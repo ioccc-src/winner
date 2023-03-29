@@ -114,7 +114,7 @@ PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 DATA=
-TARGET= ${PROG} og
+TARGET= ${PROG} ag
 #
 ALT_OBJ=
 ALT_TARGET=
@@ -134,7 +134,7 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
-og: ${PROG}
+ag: ${PROG}
 	${RM} -f $@
 	${LN} $< $@
 
