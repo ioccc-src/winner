@@ -14,18 +14,25 @@
 
 ### To run
 
-	sh ./dgibson.sh [datafile]
+	./dgibson.sh [datafile]
 
-	where:
-	    datafile	initial pattern (default: dgibson.data1)
+where:
+   
 
-## Judges' comments
+	datafile	initial pattern (default: dgibson.data1)
+
+## Try:
+
+
+	./dgibson.sh dgibson.data3
+
+## Judges' comments:
     
-    We have provided the shell script 'dgibson.sh' to make it easier
-    to run this entry.  Run this shell script several times to
-    see what happens.
+We have provided the shell script `dgibson.sh` to make it easier
+to run this entry.  Run this shell script several times to
+see what happens.
 
-    There are a number of data files available:
+There are a number of data files available:
 
 	dgibson.data1
 	dgibson.data2
@@ -33,39 +40,33 @@
 	dgibson.data4
 	dgibson.data5
 
-    For dgibson.data5 you will need a large screen, lots of virtual
-    memory and lots of time!
+For `dgibson.data5` you will need a large screen, lots of virtual
+memory and lots of time!
 
-    Good luck trying to use a debugger on this entry!  Life is not
-    always pretty.
-
-    NOTE: we could not compile this entry under modern macOS but it will work
-    fine under linux. It likely fails to compile under macOS because its gcc is
-    actually just clang which is more strict about the type of the second argument
-    of main(). If you have gcc under macOS it might work just as well. We did not
-    test other systems.
+Good luck trying to use a debugger on this entry!  Life is not
+always pretty.
 
 ## Author's comments
 
-    This program plays the Game of Life.
+This program plays the Game of Life.
 
-    Life is a cellular automaton invented by J. H. Conway, in which each of
-    a rectangular grid of cells can be alive or dead, and cells with more
-    than 3 or less than 2 (out of 8) live neighbours die, and empty cells
-    with exactly 3 neighbours give birth.
+Life is a cellular automaton invented by J. H. Conway, in which each of
+a rectangular grid of cells can be alive or dead, and cells with more
+than 3 or less than 2 (out of 8) live neighbours die, and empty cells
+with exactly 3 neighbours give birth.
 
-    Some notes: the "STAT n" information does not have to be present in the
-    initial configuration;  the initial configuration should not have live
-    cells around the edges; the grid should be a perfect rectangle.
+Some notes: the "STAT n" information does not have to be present in the
+initial configuration;  the initial configuration should not have live
+cells around the edges; the grid should be a perfect rectangle.
 
-    Further features: the current generation number is preserved, and the
-    grid automatically resizes itself as the object gets too big or too
-    small.
+Further features: the current generation number is preserved, and the
+grid automatically resizes itself as the object gets too big or too
+small.
 
-	When writing this program, my goal was to make each cell in the life
-	grid expand to the code which calculates the fate of that cell.  In
-	addition, the resulting program is a single expression, which makes it
-	necessary to recurse on main in two "directions" simultaneously.
+When writing this program, my goal was to make each cell in the life
+grid expand to the code which calculates the fate of that cell.  In
+addition, the resulting program is a single expression, which makes it
+necessary to recurse on main in two "directions" simultaneously.
 
 ## Copyright and CC BY-SA 4.0 License:
 
