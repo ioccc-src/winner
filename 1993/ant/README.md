@@ -10,32 +10,35 @@
 
         make all
 
-### To run
+### To run:
 
 	./ant 'ERE' [file ...]
 
-## Judges' comments
+## Try:
 
-    You may also want to try the author's test suite:
-	make -f ant.test.mk
-    
-    See the author's Posix P1003.2-like documentation file ant.txt
-    for more information.
+You may also want to try the author's test suite:
 
-    This program demonstrates that Posix doesn't guarantee readability.  :-)
+    make -f ant.test.mk
 
-## Author's comments
+## Judges' comments:
 
-    Some of the features of my entry are:
+See the author's Posix P1003.2-like documentation file ant.txt
+for more information.
 
-       o  "Lengthy" POSIX.2 style specification and manual :) :) 
-       o  Useful subset of POSIX.2 Extended Regular Expressions.
-       o  Recursive ERE parser/compiler that generates an NFA railroad. 
-       o  Lazy NFA to DFA evaluation to improve performance speed.
-       o  Code tested on a variety of platforms.
-       o  Make driven test script.
-       o  Can be compiled with ANSI or K&R C.
-       o  Not a toy, but actually useful and usable on systems that use DOS.
+This program demonstrates that Posix doesn't guarantee readability.  :-)
+
+## Author's comments:
+
+Some of the features of my entry are:
+
+-  "Lengthy" POSIX.2 style specification and manual :) :) 
+-  Useful subset of POSIX.2 Extended Regular Expressions.
+-  Recursive ERE parser/compiler that generates an NFA railroad. 
+-  Lazy NFA to DFA evaluation to improve performance speed.
+-  Code tested on a variety of platforms.
+-  Make driven test script.
+-  Can be compiled with ANSI or K&R C.
+-  Not a toy, but actually useful and usable on systems that use DOS.
 
 ## Copyright and CC BY-SA 4.0 License:
 
