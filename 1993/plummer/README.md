@@ -9,7 +9,7 @@
 
         make all
 
-### To run
+## To run:
 
 	./plummer number arg
 
@@ -27,7 +27,7 @@ Cody!
 For extra credit: What happens when 'number' contains non-numeric
 characters, and why?
 
-## Author's comments
+## Author's comments:
 
 This program prints out all numbers up to a given number of digits
 on a single line.  When the largest number is reached, the program
