@@ -14,7 +14,7 @@
 modern compilers. Thank you Cody!
 
 
-### To run
+## To run:
 
 To have the computer guess:
 
@@ -28,7 +28,7 @@ where:
 
 	colors		number of possible colors (1 to 15) (default: 6)
 
-## Judges' comments
+## Judges' comments:
     
 By default, the number of colors if 6.  You may specify a
 value of between 1 and 15 colors.  See the author's notes
@@ -37,7 +37,7 @@ for instructions of how to play.
 We look forward to more entries from the newer members of the 
 International Internet community.
 
-## Author's comments
+## Author's comments:
 
 This program plays mastermind, if you call it by a name ending by
 'd', otherwise it _solves_ mastermind. Call it without parameters
@@ -66,7 +66,7 @@ backspaces. Do "disable scrolling" on cmdtool or similar emulators.
 
 #### Bugs: Please don't type ^D at the prompt!!
 
-EXAMPLE: Suppose we think of 1234:
+##### EXAMPLE: Suppose we think of 1234:
 
     judges-385> leo
 	(1296): 6433
@@ -80,7 +80,7 @@ EXAMPLE: Suppose we think of 1234:
 	(1): 1234
 	?? 40       # you may enter everything there
 
-EXAMPLE: Guess the computer's number:
+##### EXAMPLE: Guess the computer's number:
 
     judges-387> mind
 	(1296): ???? 1122   # my strategy isn't the best, just as example
