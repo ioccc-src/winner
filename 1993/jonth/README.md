@@ -10,6 +10,10 @@
 
         make all
 
+NOTE: this entry requires `X11/Xlib.h` header file and the X11 library to
+compile. macOS users running Mountain Lion and later will need to download and
+install [XQuartz](https://www.xquartz.org) in order to compile and run this
+entry.
 
 Both [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) and [Yusuke
 Endoh](/winners.html#Yusuke_Endoh) fixed this so that it
@@ -27,11 +31,11 @@ and expect `G;` to equate to `int i, j;` (though it's now a long) and `K` to mea
 prepended to them. Thank you Yusuke and Cody for your assistance!
 
 
-### To run
+### To run:
 
 	./jonth			# must be run on an X11 server
 
-## Judges' comments
+## Judges' comments:
 
 Use 'h' and 'l' to shift objects left or right.  Use 'k' to
 rotate and press SPACE to drop.
@@ -40,12 +44,12 @@ This program's output may be even more obfuscated when played
 on inverse video.  :-)
 
 
-## Author's comments
+## Author's comments:
 
-This is jonth (jon's t(h)etris) for the X Window System.
+This is `jonth` (`jon's t(h)etris`) for the X Window System.
 
 This program is also an example of data abstraction.  The X array is 
-after initialization hidden by the well defined macros t, u and F.
+after initialization hidden by the well defined macros `t`, `u` and `F`.
 
 This program is highly portable as it runs on a "Notebook" size SPARC.
 This program will not work on machines with `sizeof(int)!=sizeof(void *)`.
