@@ -13,9 +13,9 @@
 (                lll>l1  )                 li|=! (                  l[3*l1+++3
  ]           -ll[strlen (                 ll)-1]  )                    ;return
 (                    li  )                ;}main (                      ll,lll
- )  char*lll[];{char l1 [   111][21],li1[111][21  ]              ,il1[111],i1l
+ )  char*lll[];{if(ll<2)return 1;char l1 [111][21],  li1[111][21],il1[111],i1l
 [                   111  ] ;int lli,l11,l1l,li/* (  */,ll1,il,l;FILE*f;if(ll-2
- )             {f=fopen (             lll[1],"r"  )     ;lli=l=ll1=il=!1;while
+ )             {f=fopen (             lll[1],"r"  );if(!f)return 1;lli=l=ll1=il=!1;while
 ( fscanf(f,"%s",l1[lli]  )             +1){li=ii (                   l1[lli],3
  )                 ;iii (                l1[lli]  )          ;l1l=l11=!1;while
 (               l1l>-ll  )                  {iii (                   lll[-l1l]
