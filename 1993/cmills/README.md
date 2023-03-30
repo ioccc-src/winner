@@ -11,16 +11,11 @@
         make all
 
 NOTE: this entry requires `X11/Xlib.h` header file and the X11 library to
-compile. The Makefile sets the additional paths to `/opt/X11/include` (`-I`
-flag) and `/opt/X11/lib` (`-L` flag) but you can override it by specifying e.g.:
+compile. macOS users running Mountain Lion and later will need to download and
+install [XQuartz](https://www.xquartz.org) in order to compile and run this
+entry.
 
-	make X11_INCDIR=/opt/local/include X11_LIBDIR=/opt/local/lib/ all
-
-which could compile it under macOS with MacPorts if you have the right packages
-installed though it still must be run on an X11 server which means that the
-example is just that: an example which might or might not work when running.
-
-### To run
+### To run:
 
     DISPLAY="your_X_server_display" 
     export DISPLAY
@@ -30,10 +25,11 @@ example is just that: an example which might or might not work when running.
 
 	speed	update speed from 1 to 9 (default is 9)
 
-## Judges' comments
+## Judges' comments:
 
-    From the San Jose Mercury News (May 15, 1993 page 20A "West Hackers 
-    trounce East in computer quiz game"): 
+From the San Jose Mercury News (May 15, 1993 page 20A "West Hackers 
+trounce East in computer quiz game"): 
+
 
 	"Since 1984, a contest has been held on Usenet for the most
 	unreadable, creative, bizarre but working C program", Gates
@@ -44,34 +40,34 @@ example is just that: an example which might or might not work when running.
 	the right answer - it's "The Obfuscated C Contest [sic]" - but
 	it brought down the house of Apple partisans...
 
-    [The expression on Bill Gates' face was a sight to behold, as reported
-    to us by several who were there].
+[The expression on Bill Gates' face was a sight to behold, as reported
+to us by several who were there].
 
-    You must set $DISPLAY in your environment or the program will 
-    dump core.  This is not a bug as the author documented it as
-    a feature.  :-)
+You must set $DISPLAY in your environment or the program will 
+dump core.  This is not a bug as the author documented it as
+a feature.  :-)
 
-    The optional argument is integer which controls the speed of the
-    program.  By default the speed is 9.  You may want to try 1.
+The optional argument is integer which controls the speed of the
+program.  By default the speed is 9.  You may want to try 1.
 
-    You will have to kill the program (i.e., ^C) to stop it.
+You will have to kill the program (i.e., ^C) to stop it.
 
-    WARNING: Slow servers or servers with long request queues will
-	     continue to 'run' for a while after you have killed
-	     the program.
+WARNING: Slow servers or servers with long request queues will
+continue to 'run' for a while after you have killed
+the program.
 
-    This program makes your windows about as useful as their windows. :-)
+This program makes your windows about as useful as their windows. :-)
 
-## Author's comments
+## Author's comments:
 
-    The program uses a single backing pixmap (which is the size of the
-    screen) for all of its subwindows (with a little bit of trickery to
-    move the offset around).  This is much better (and faster) than the
-    obvious implementation which would require a full-screen pixmap and
-    a separate backing pixmap for each subwindow.
+The program uses a single backing pixmap (which is the size of the
+screen) for all of its subwindows (with a little bit of trickery to
+move the offset around).  This is much better (and faster) than the
+obvious implementation which would require a full-screen pixmap and
+a separate backing pixmap for each subwindow.
 
-    The chance that a window breaks is based on it's kinetic energy,
-    which in turn is based on it's area and speed.  How silly!
+The chance that a window breaks is based on it's kinetic energy,
+which in turn is based on it's area and speed.  How silly!
 
 ## Copyright and CC BY-SA 4.0 License:
 
