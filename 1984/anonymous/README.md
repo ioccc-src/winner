@@ -55,7 +55,11 @@ program.  What reads like a read may be written like a write!
 
 ## Author's comments:
 
-No comments were provided by the author.
+Some years after this entry was published we asked the author if they still
+wished to remain anonymous and they said:
+
+> Yes, I want to keep my anonymity.  But you can tell them that I am well known
+for my connection to the C language.'
 
 ## Copyright and CC BY-SA 4.0 License:
 

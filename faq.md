@@ -448,8 +448,8 @@ While many have asked who it was, we have continued to follow the
 author's wish to remain anonymous.
 
 A few years ago, we asked the author if they still wanted to remain anonymous.
-They said: '_Yes, I want to keep my anonymity.  But you can tell them that I am a well known for my connection to the
-C language"_'. It was not until 2001 that another [anonymous
+They said: '_Yes, I want to keep my anonymity.  But you can tell them that I am well known for my connection to the
+C language_'. It was not until 2001 that another [anonymous
 entry](/years.html#2001_anonymous) received an award.
 
 BTW: The [1984 winner](/years.html#1984_mullender) remains one of my (Landon
