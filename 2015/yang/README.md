@@ -3,19 +3,19 @@
     Don Yang  
     <http://uguu.org/>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 echo Some text | ./prog 
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo IOCCC 2015 | ./prog | tee output.c

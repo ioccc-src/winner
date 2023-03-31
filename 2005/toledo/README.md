@@ -8,19 +8,19 @@
     Mexico
     uno@biyubi.com
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./toledo [a ...]
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./toledo a

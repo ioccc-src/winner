@@ -8,19 +8,19 @@
 
     http://www.westley.org
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./westley
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./westley < westley.c > westley2.c

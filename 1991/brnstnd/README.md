@@ -16,7 +16,7 @@ similar operators no longer works.  The invalid operands to binary expressions
 were resolved with the comma operator. Thank you Cody for your assistance!
 
 
-### Try:
+## Try:
 
 	./brnstnd < sorta.i2+2
 	./brnstnd < sorta.iwhosort

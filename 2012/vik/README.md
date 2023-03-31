@@ -4,7 +4,7 @@
     <daniel@vik.cc>  
     <http://danielvik.com/>  
 
-# To build:
+## To build:
 
 ```sh
 make
@@ -12,7 +12,7 @@ make
 
 This entry requires [Zlib](http://www.zlib.net/).
 
-### To run:
+## To run:
 
 To embed text (from file or command line):
 
@@ -44,7 +44,7 @@ To extract the embedded PNG:
 ./vik d encodedimg.png > restored.png
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./vik e ioccc.png chocolate.png > chocolate-in-ioccc.png

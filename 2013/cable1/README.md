@@ -3,19 +3,19 @@
     Adrian Cable  
     <adrian.cable@gmail.com>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./cable1 name group1 group2
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./cable1 obama republican democrat

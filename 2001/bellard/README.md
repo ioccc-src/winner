@@ -7,13 +7,13 @@
 
     http://bellard.org
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./bellard file
@@ -30,7 +30,7 @@ He also fixed `bellard.otccex.c` so it does not segfault and seemingly works
 okay. Thank you Cody for your assistance!
 
 
-### Try:
+## Try:
 
 ```sh
 ./bellard bellard.otccex.c

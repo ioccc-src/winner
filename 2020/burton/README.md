@@ -10,7 +10,7 @@ Twitter: @lv2jmp
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog arg ...
@@ -18,7 +18,7 @@ make
 
 NOTE: this entry will dump core if you do not specify an argument.
 
-### Try:
+## Try:
 
 ```sh
 ./prog 128

@@ -7,13 +7,13 @@
     Someone Anonymous  
     Twitter: @hirekoke  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog
@@ -26,7 +26,7 @@ but in 2023 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) did this
 and reported that it works well. He also said he really loved it! Thank you
 Cody!
 
-### Try:
+## Try:
 
 ```sh
 echo "Do or do not. There is no try."

@@ -3,19 +3,19 @@
     Freek Wiedijk  
     <freek@cs.ru.nl>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog
 ```
 
-### Try:
+## Try:
 
 ```sh
 cc -E prog.c | indent | sed '1,/5.*prog/d'

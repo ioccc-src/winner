@@ -5,19 +5,19 @@
 
     http://bicoherent.topcities.com/
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./anonymous
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./anonymous "ash nazg durhbatuluhk, ash nazg gimbatul, \

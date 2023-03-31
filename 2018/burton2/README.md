@@ -3,19 +3,19 @@
     Dave Burton  
     <http://ioccc.snox.net>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog [-tcksri] < file.c
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./prog -i < prog.c

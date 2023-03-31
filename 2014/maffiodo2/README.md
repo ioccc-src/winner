@@ -4,19 +4,19 @@
     <smaffer@gmail.com>  
     <http://www.assezeta.com/sandromaffiodo>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog arg
 ```
 
-### Try:
+## Try:
 
 ```sh
 cat image.rgb | ./prog '  .,:;!$#@'

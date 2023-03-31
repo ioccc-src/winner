@@ -3,19 +3,19 @@
     Joshua Karns  
     Twitter: @jkarnss  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog < textfile_that_fits_on_the_screen
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./prog < README.md

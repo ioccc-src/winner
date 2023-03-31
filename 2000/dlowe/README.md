@@ -24,13 +24,13 @@ with more recent perl versions; the symbol now `PL_na` was once `na`. He notes
 that this entry crashes under macOS but it works under linux after this change.
 
 
-### To run:
+## To run:
 
 ```sh
 ./dlowe [file ...]
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo "13 14 15 16 17 + - * / p" | ./dlowe

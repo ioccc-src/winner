@@ -27,7 +27,7 @@ you Yusuke!
 compiler option `-trigraphs` would also have worked.
 
 
-### To run:
+## To run:
 
 	./scjones
 

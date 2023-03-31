@@ -7,19 +7,19 @@
     U.K.
 
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./gavin
 ```
 
-### Try:
+## Try:
 
 To enjoy the results (on a Linux/x86 machine):
 

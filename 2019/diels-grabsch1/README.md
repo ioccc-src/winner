@@ -3,19 +3,19 @@
     Volker Diels-Grabsch  
     <https://njh.eu>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog < file > file.Z
 ```
 
-### Try:
+## Try:
 
 ```sh
 dd bs=1024 count=2048 < /dev/zero | compress > ref.Z

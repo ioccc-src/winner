@@ -10,13 +10,13 @@ Twitter: @ilyakurdyukov
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog
 ```
 
-### Try:
+## Try:
 
 ```sh
 # Take a selfie

@@ -5,13 +5,13 @@
     Foster, RI, 02825
     USA
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./ctk
@@ -26,7 +26,7 @@ Cody notes that this fix will not just for linux but macOS too. Thank you Yusuke
 for your assistance!
 
 
-### Try:
+## Try:
 
 ```sh
 echo "Do or do not. There is no try."

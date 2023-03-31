@@ -3,19 +3,19 @@
     Tsukasa Hamano  
     <hamano@cuspy.org>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./hamano < textfile > output.pdf
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./hamano < README.md > hint.pdf

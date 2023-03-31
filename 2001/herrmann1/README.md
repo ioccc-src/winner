@@ -8,19 +8,19 @@
 
     http://pcpool.mathematik.uni-freiburg.de/~immi/
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./herrmann1.sh 'prg=file'
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./herrmann1.sh 'prg=herrmann1.times2'

@@ -4,19 +4,19 @@
     <https://lig-membres.imag.fr/duble>  
     Twitter: @etienne_duble  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog file
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./prog /tmp/drawing

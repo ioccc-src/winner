@@ -2,19 +2,19 @@
 
     Gil Dogon  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog < pattern.mc
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./prog < glider.mc

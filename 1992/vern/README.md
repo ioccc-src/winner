@@ -12,7 +12,7 @@
 
         make all
 
-### To run:
+## To run:
 
 	./vern 3		# <-- default is 2
 

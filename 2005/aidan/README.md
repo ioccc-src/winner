@@ -4,19 +4,19 @@
         United Kingdom
         makomk@lycos.co.uk
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./aidan < puzzle
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./aidan < insane1.sudoku 

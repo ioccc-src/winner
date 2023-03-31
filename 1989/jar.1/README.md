@@ -7,7 +7,7 @@
 	02150 Espoo
 	Finland
 
-# To build and run:
+## To build and run:
 
     make clobber all
 

@@ -8,19 +8,19 @@ USA
 
 http://omoikane.cjb.net
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./dhyang
 ```
 
-### Try:
+## Try:
 
 ```sh
 make saitou

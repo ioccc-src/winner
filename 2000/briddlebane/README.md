@@ -14,13 +14,13 @@ The Xoemn, MN 68214
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./briddlebane
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo "Do or do not. There is no try."

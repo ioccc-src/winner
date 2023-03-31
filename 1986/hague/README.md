@@ -18,7 +18,7 @@ compiling and running this program with some systems.
 	./hague
 	# enter some text
 
-### Try:
+## Try:
 
 	./hague
 	IOCCC

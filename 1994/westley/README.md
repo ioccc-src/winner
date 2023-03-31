@@ -17,7 +17,7 @@ where you get messages as compiler errors. Depending on the compiler line you
 will get different error messages and one compiler line will make you win the
 game!
 
-### To run
+## To run
 
 	./westley
 

@@ -4,19 +4,19 @@
     <mzucker1@swarthmore.edu>  
     <http://www.swarthmore.edu/NatSci/mzucker1/>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./zucker > image.ppm
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./zucker "Hello!!!" > hello.ppm

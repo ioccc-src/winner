@@ -4,19 +4,19 @@
     <o__1@hotmail.com>
     <http://www.meatfighter.com/>
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./birken < 17_columns_wide_paint_by_numbers_file
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./birken < ioccc.txt

@@ -10,7 +10,7 @@
 
         make all
 
-### To run:
+## To run:
 
 	./ag word word2 word3 < /path/to/dictionary
 

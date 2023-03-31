@@ -6,19 +6,19 @@
     <daniel@vik.cc>  
     <http://www.danielvik.com>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./vik file.mod > audio_file.raw
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./vik randowan.mod | mplayer -demuxer rawaudio -

@@ -3,13 +3,13 @@
     Don Yang  
     <http://uguu.org/>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 more generated1.c
@@ -17,7 +17,7 @@ more generated2.c
 more generated3.c
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./left < prog.c

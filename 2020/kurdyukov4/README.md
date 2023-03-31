@@ -10,13 +10,13 @@ Twitter: @ilyakurdyukov
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog text_file output_length context_length random_seed
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./prog Shakespeare.txt 2000 10 1

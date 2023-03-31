@@ -6,7 +6,7 @@
     vince@deater.net
     <http://www.deater.net/weave/>
 
-# To build:
+## To build:
 
 Before building, make sure that you have the OpenGL development libraries
 installed.
@@ -15,7 +15,7 @@ installed.
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./vince
@@ -23,7 +23,7 @@ make
 
 Under MacOSX run from within an xterm while the X11 server is running.
 
-### Try:
+## Try:
 
 ```sh
 echo "Do or do not. There is no try."

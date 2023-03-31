@@ -10,7 +10,7 @@ Walter Bright
 
 	./bright some_file
 
-### Try:
+## Try:
 
 	./bright bright.c
 

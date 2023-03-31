@@ -3,13 +3,13 @@
     Yves-Marie Morgan  
     <yves-marie.morgan@parrot.com>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 For the console version (ncurses):
 
@@ -23,7 +23,7 @@ For the graphical version (X11):
 ./morgan2 X
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo "Do or do not. There is no try."

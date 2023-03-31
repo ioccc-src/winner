@@ -6,19 +6,19 @@
     Cleveland, TN 37312
     USA
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./dgbeards
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo "Do or do not. There is no try."

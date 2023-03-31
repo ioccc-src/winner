@@ -3,19 +3,19 @@
     Volker Diels-Grabsch  
     <https://njh.eu>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog
 ```
 
-### Try:
+## Try:
 
 ```sh
 sha512sum prog.c || shasum -a 512 prog.c

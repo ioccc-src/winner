@@ -3,19 +3,19 @@
     Marcin Ciura <mciura@gmail.com>  
     Twitter: @mciura  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog < text
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./prog < Makefile

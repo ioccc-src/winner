@@ -10,19 +10,19 @@
 
     http://users.ox.ac.uk/~scat1148
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./rosten number
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./rosten 1.03

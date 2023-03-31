@@ -3,19 +3,19 @@
     Ferenc Deak  
     <fritzone@gmail.com>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./prog

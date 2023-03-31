@@ -16,7 +16,7 @@
 
         make all
 
-### To run:
+## To run:
 
 	echo 4 | ./baruch
 	echo 7 | ./baruch

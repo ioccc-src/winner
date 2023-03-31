@@ -3,19 +3,19 @@
     Dave Burton  
     <http://ioccc.snox.net>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog < any-file
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./prog < prog

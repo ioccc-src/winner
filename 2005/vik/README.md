@@ -6,19 +6,19 @@
     USA
     daniel@vik.cc
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./vik [file.map]
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./vik maze.map

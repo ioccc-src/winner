@@ -6,19 +6,19 @@
     CP. 53110
     Mexico
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./toledo2
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo "Do or do not. There is no try."

@@ -3,13 +3,13 @@
     Adar Zeitak  
     <aa4z2@walla.co.il>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./zeitak < file.c
@@ -18,7 +18,7 @@ make
 where file.c is the file to be checked for nesting errors. For example, you may
 try incorrect.c and the program itself.
 
-### Try:
+## Try:
 
 ```sh
 ./zeitak < zeitak.c

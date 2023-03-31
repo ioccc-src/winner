@@ -7,19 +7,19 @@
 
     http://uguu.org/
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./omoikane infile layout outfile
 ```
 
-### Try:
+## Try:
 
 ```
 ./omoikane omoikane.info omoikane.info omoikane.output

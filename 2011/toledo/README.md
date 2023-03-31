@@ -7,13 +7,13 @@
     <biyubi@gmail.com>  
     <http://nanochess.110mb.com/>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./toledo
@@ -21,7 +21,7 @@ make
 
 NOTE: This requires X11 to run or modifications to use layer.c on Windows.
 
-### Try:
+## Try:
 
 ```sh
 echo "Do or do not. There is no try."

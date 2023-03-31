@@ -4,19 +4,19 @@
     <mame@ruby-lang.org>  
     <https://github.com/mame/>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog > foo.c
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./prog > main.c

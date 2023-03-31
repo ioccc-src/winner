@@ -3,19 +3,19 @@
     Uri Goren  
     <goren.uri@gmail.com>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 echo "some text" | ./goren
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo "Hello, world!" | ./goren

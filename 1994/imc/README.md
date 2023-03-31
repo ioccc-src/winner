@@ -11,7 +11,7 @@
 
         make all
 
-### To run
+## To run
 
     To use:
 	./imc INTEGER

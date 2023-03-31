@@ -8,7 +8,7 @@
 
     http://pcpool.mathematik.uni-freiburg.de/~immi/
 
-# To build:
+## To build:
 
 ```sh
 make
@@ -20,7 +20,7 @@ changing specific references to the `argv` arg, casting to int which was its old
 type. Thank you Cody for your assistance!
 
 
-### To run:
+## To run:
 
 ```sh
 ./herrmann2
@@ -34,7 +34,7 @@ some interesting thoughts which can be found
 Thank you Yusuke for your interesting thoughts!
 
 
-### Try:
+## Try:
 
 ```sh
 ./herrmann2 < herrmann2.ioccc

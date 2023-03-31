@@ -10,18 +10,18 @@ John Tromp
 
     make tromp32	# On a 32-bit machine
 
-### To run
+## To run
 
     ./tromp [-b]
 
     NOTE: Substitute ./tromp32 for ./tromp everywhere below if on a 32-bit machine
 
-### To run:
+## To run:
 
     cat ascii-prog.blc data | ./tromp -b
     cat binary-prog.Blc data | ./tromp
 
-### Try:
+## Try:
 
     (cat hilbert.Blc; echo -n 1234) | ./tromp
     (cat oddindices.Blc; echo; cat primes.blc | ./tromp -b) | ./tromp

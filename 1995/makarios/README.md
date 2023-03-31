@@ -10,7 +10,7 @@
 
         make all
 
-### To run:
+## To run:
 
 	./makarios
 

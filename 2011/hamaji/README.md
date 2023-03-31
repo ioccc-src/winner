@@ -3,19 +3,19 @@
     Shinichiro Hamaji  
     <shinichiro.hamaji@gmail.com>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./hamaji < a_nonogram_file
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./hamaji < dragon.nono

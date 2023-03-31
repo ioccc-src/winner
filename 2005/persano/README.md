@@ -5,19 +5,19 @@
     Brazil
     mauro_persano@yahoo.com
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./persano p q [num frames]
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./persano 3 16 > knot3-16.gif

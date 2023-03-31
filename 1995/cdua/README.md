@@ -16,7 +16,7 @@ would work with macOS. Once it could compile it additionally segfaulted under
 macOS which he also fixed. Thank you Cody for your assistance!
 
 
-### To run
+## To run
 
 	./cdua
 

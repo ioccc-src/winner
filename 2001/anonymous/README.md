@@ -3,7 +3,7 @@
     The author wishes to remain anonymous
     Great Britain
 
-# To build:
+## To build:
 
 ```sh
 make

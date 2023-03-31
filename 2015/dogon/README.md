@@ -3,19 +3,19 @@
     Gil Dogon  
     <http://sokoban-gild.com>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./prog

@@ -4,19 +4,19 @@
     <mame@ruby-lang.org>  
     <https://github.com/mame/>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./endoh4
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./endoh4 < cube.txt

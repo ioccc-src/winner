@@ -3,19 +3,19 @@
     Seonghoon Kang  
     <kang.seonghoon@mearie.org>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 echo "full spelling of an English cardinal numeral less than a quadrillion" | ./kang
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo Nineteen hundred and eighty-four | ./kang

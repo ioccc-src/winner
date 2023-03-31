@@ -3,19 +3,19 @@
     Yves-Marie Morgan  
     <yves-marie.morgan@parrot.com>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog [arg ..]
 ```
 
-### Try:
+## Try:
 
 ```sh
 make

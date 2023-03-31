@@ -4,19 +4,19 @@
     <mame@ruby-lang.org>  
     <https://github.com/mame/>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog < input > output
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo Hello | ./prog

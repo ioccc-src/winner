@@ -3,19 +3,19 @@
     Marcin Ciura  
     Twitter: @mciura  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./getwords.sh en | grep .. | ./prog string
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./getwords.sh en | grep .. | ./prog aeiouvwxyz

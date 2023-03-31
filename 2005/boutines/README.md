@@ -4,13 +4,13 @@
         Toulouse, France
         francois.boutines@gmail.com
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 You will need an [SVG] viewer. Look here to find some [SVG Viewer Implementations].
 
@@ -23,7 +23,7 @@ The following will create an SVG file:
 perl -e 'map{print rand," ",rand,"n";}(1..20);' | ./boutines > test.svg
 ```
 
-### Try:
+## Try:
 
 ```sh
 perl -e 'map{print rand," ",rand,"n";}(1..20);' | ./boutines > test.svg

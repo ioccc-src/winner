@@ -7,19 +7,19 @@
     Australia
     http://byron.csse.monash.edu.au/
     
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./bmeyer
 ```
 
-### Try:
+## Try:
 
 In a video window (white text on black background):
 

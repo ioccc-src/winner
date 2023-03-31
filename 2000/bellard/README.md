@@ -13,13 +13,13 @@
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./bellard
 ```
 
-### Try:
+## Try:
 
 ```sh
 Do. Or do not. There is no try. :-)

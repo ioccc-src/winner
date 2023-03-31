@@ -5,19 +5,19 @@
     Omaha, NE 68106
     US
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./grothe carrier_freq pixelclock horizontal_total < some_input.txt
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./grothe 65000000 10000000 1344 < twinkle.txt

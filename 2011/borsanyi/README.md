@@ -7,19 +7,19 @@
     Germany  
     <borsanyi@uni-wuppertal.de>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./borsanyi < some_data_file
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./borsanyi < data.1

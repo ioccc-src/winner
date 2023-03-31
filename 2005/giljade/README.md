@@ -6,7 +6,7 @@
         Israel
         gil_jade@netvision.net.il
 
-# To build:
+## To build:
 
 ```sh
 make
@@ -25,13 +25,13 @@ the int size but this is currently unknown. Thank you Cody for your help in
 getting this to work!
 
 
-### To run:
+## To run:
 
 ```sh
 ./giljade
 ```
 
-### Try:
+## Try:
 
 ```sh
 giljade > out

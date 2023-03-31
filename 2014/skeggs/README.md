@@ -4,19 +4,19 @@
     <ioccc@celskeggs.com>  
     <http://www.celskeggs.com>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo "Do or do not. There is no try."

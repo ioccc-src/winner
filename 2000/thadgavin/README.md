@@ -12,19 +12,19 @@
     Cambridge,
     UK, CB4 1DE
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./thadgavin
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo "Do or do not. There is no try."

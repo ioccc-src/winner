@@ -2,13 +2,13 @@
 
     Qiming HOU  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog < input.json > output.html
@@ -16,7 +16,7 @@ make
 
 View `output.html` in a browser.
 
-### Try:
+## Try:
 
 ```sh
 grep -e '[-?+*/^&|.<>=]' prog.c

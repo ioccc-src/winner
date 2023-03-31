@@ -9,19 +9,19 @@
 
     http://www.ens-lyon.fr/~nollinge/
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./ollinger integer
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./ollinger 1000 | cut -c -200

@@ -4,13 +4,13 @@
     <mame@ruby-lang.org>  
     <https://github.com/mame/>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./endoh2 > pi.c
@@ -26,7 +26,7 @@ gcc -o e e.c
 ./e > 271.c
 ```
 
-### Try:
+## Try:
 
 ```sh
 make pi

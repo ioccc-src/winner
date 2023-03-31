@@ -6,19 +6,19 @@
     Finland
     <http://www.stephensykes.com>
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog
 ```
 
-### Try:
+## Try:
 
 ```sh
 while :; do

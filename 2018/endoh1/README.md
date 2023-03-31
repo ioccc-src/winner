@@ -3,19 +3,19 @@
     Yusuke Endoh  
     Twitter: @mametter  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog < textfile > output.gif
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./prog < golem.txt > golem.gif

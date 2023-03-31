@@ -23,7 +23,7 @@ modern compilers. Modern compilers do not allow code like:
 Thank you Cody for your assistance!
 
 
-### To run:
+## To run:
 
 
 	./jar.2

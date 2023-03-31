@@ -8,19 +8,19 @@ India
 
 http://tomx.tripod.com/
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./tomx
 ```
 
-### Try:
+## Try:
 
 ```sh
 rm -f ./tomx

@@ -4,7 +4,7 @@ Yusuke Endoh
 <https://github.com/mame/>  
 Twitter: @mametter  
 
-# To build:
+## To build:
 
 ```sh
 make

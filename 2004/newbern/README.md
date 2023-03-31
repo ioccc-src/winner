@@ -4,7 +4,7 @@
     28 Jeanette Ave. #1
     Belmont, MA 02478
 
-# To build:
+## To build:
 
 ```sh
 make
@@ -17,13 +17,13 @@ earlier in the code and to use that variable which `main()` used. Thank you Cody
 for your assistance!
 
 
-### To run:
+## To run:
 
 ```sh
 ./newbern [file.dat arg]
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./newbern newbern.dat "IOCCC 2004"

@@ -2,19 +2,19 @@
 
     Dave Burton  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog < prog.c
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo "Do or do not. There is no try."

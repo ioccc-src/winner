@@ -9,13 +9,13 @@ Nicholas Carlini <nicholas@carlini.com>
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog
 ```
 
-### Try:
+## Try:
 
 ```sh
 # Play with a friend, P1 and P2, squares are numbered 1..9

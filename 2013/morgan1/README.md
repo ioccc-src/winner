@@ -3,19 +3,19 @@
     Yves-Marie Morgan  
     <yves-marie.morgan@parrot.com>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 echo "2013/10/03" | ./morgan1
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo "1985/10/28" | ./morgan1

@@ -6,7 +6,7 @@
 
     http://www.bme.jhu.edu/~rcheong/
 
-# To build:
+## To build:
 
 ```sh
 make
@@ -20,13 +20,13 @@ a segfault in the case that no arg is specified. Thank you Cody for your
 assistance!
 
 
-### To run:
+## To run:
 
 ```sh
 ./cheong digits
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./cheong 1024

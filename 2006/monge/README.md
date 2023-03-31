@@ -7,7 +7,7 @@
     Italy
     maurizio.monge at gmail dot com
 
-# To build:
+## To build:
 
 
 Make sure you have the SDL1 (not SDL2!) development environment installed.
@@ -25,13 +25,13 @@ requires x86/x86_64 CPUs. Without it it might very well segfault (for instance
 it segfaulted on his MacBook Pro with the M1 chip).
 
 
-### To run:
+## To run:
 
 ```sh
 ./monge expression ...
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./monge "z = 0" "z = z*z*z + c; Abs2(z) < 4"

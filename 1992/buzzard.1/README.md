@@ -11,7 +11,7 @@ Most Obfuscated Algorithm:
 
         make all
 
-### To run
+## To run
 
 	./buzzard.1 0 10
 	./buzzard.1 56 720

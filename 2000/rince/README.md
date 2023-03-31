@@ -7,19 +7,19 @@ Cambridge
 CB2 2QH
 England
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./rince number number2
 ```
 
-### Try:
+## Try:
 
 ```sh
 make dmy2jd

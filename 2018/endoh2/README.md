@@ -3,19 +3,19 @@
     Yusuke Endoh  
     Twitter: @mametter  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./prog | tee prog_next.c

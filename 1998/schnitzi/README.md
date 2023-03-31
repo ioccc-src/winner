@@ -12,7 +12,7 @@
 
         make all
 
-### To run
+## To run
 
 	./schnitzi 5 > sort.c
 	make sort

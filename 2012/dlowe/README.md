@@ -7,7 +7,7 @@
     <j.david.lowe@gmail.com>  
     <http://www.pootpoot.net/>  
 
-# To build:
+## To build:
 
 ```sh
 make
@@ -18,13 +18,13 @@ compile. macOS users running Mountain Lion and later will need to download and
 install [XQuartz](https://www.xquartz.org) in order to compile and run this
 entry.
 
-### To run:
+## To run:
 
 ```sh
 ./dlowe
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./dlowe

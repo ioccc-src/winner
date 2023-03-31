@@ -3,19 +3,19 @@
     Kimmo Fredriksson  
     <kimmo.k.k.fredriksson@gmail.com>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./fredriksson [-icvtnk#] regexp < file
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./fredriksson -k1 -i POOT < /etc/group

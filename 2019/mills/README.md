@@ -3,13 +3,13 @@
     Christopher Mills  
     Twitter: @MisterXopher  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 make cpclean
@@ -18,7 +18,7 @@ make cpclean
 ./prog < $(< ls -1tr cp* | tail -1) | head -100
 ```
 
-### Try:
+## Try:
 
 ```sh
 make test-64bit

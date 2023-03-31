@@ -8,19 +8,19 @@
 
     http://www.kev.pulo.com.au/
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./kev hostname
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./kev localhost
