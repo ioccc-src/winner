@@ -16,6 +16,20 @@ Robbert van Renesse
 > not execute correctly.  In later years, machine dependent
 > code was discouraged.
 
+## Alternative code:
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added the alternative
+code which lets you run this on other systems. He notes though that this was
+only a slight fix to the change in the [faq](/faq.md). Thank you Cody for your
+assistance!
+
+To build:
+
+
+	make alt
+
+Use `./mullender.alt` as you would `./mullender` above.
+
 
 ## Judges' comments:
 

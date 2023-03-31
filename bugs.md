@@ -220,20 +220,8 @@ If you do wish to provide an alternate version of the program that does not need
 compiler supporting `-traditional-cpp` you are welcome to submit such code via a [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls) and we will be happy to credit you in the entry's _README.md_ file.
 
 
+# 1984
 
-## [1984/mullender](1984/mullender/mullender.c) ([README.md](1984/mullender/README.md))
-## STATUS: compiled executable crashes - please help us fix
-## STATUS: doesn't work with some platforms - please help us fix
-
-This entry is likely to fail and/or dump core on any computer other than a
-Vax-11 or pdp-11. In 1984 machine dependent code was allowed.
-
-To see this entry in action check out [Yusuke
-Endoh](/winners.html#Yusuke_Endoh)'s [2015/endoh3](2015/endoh3) entry. Otherwise
-a Vax-11 or pdp-11 emulator would be necessary.
-
-NOTE: if you do change this please make sure to put it in `mullender.alt.c` and
-update the Makefile to have an alt target!
 
 # 1985
 

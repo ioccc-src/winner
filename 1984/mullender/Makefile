@@ -111,8 +111,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -135,6 +135,9 @@ ${PROG}: ${PROG}.c
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${ALT_TARGET}: ${PROG}.alt.c
+	${CC} -include stdio.h -include unistd.h ${CFLAGS} $< -o $@ ${LIBS}
 
 # data files
 #

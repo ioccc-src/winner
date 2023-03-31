@@ -35,15 +35,36 @@ but are different/missing today.
 
 E.g. it is highly unlikely that you'll be able to execute
 [1984/mullender](years.html#1984/mullender) on a computer you're using to read
-this FAQ.
+this FAQ. However for that entry [Cody Boone
+Ferguson](/winners.html#Cody_Boone_Ferguson) added alternative code so that you
+can enjoy this entry. Try:
+
+```sh
+make alt
+./mullender.alt
+```
+
+See also [Yusuke Endoh](/winners.html#Yusuke_Endoh)'s entry
+[2015/endoh3](/2015/endoh3/README.md) entry which lets one compile it and run
+it.
+
+Others are not so easy though we're working on this and over time have added
+alternative code and in some cases replaced the original code with code that
+works for modern systems.
+
+
+## Q: How do I get X11 entries to work with macOS Mountain Lion and later?
+
+In macOS Mountain Lion and beyond to run X11 applications one needs to install
+[XQuartz](https://www.xquartz.org). This will let you compile, link and run X11
+applications.
 
 ## Q: I found a bug in a previous winner, what should I do?
 
 We do not 'maintain' the contest winners. The code is made available on an 'AS
-IS' basis. If you have a FIX for
-a entry, we suggest that you try and email it to the authors and to CC:
-us using the instructions on the 
-[contacting the IOCCC Judges](contact.hml) page.
+IS' basis. If you have a FIX for a entry, we suggest that you try and email it
+to the authors and to CC: us using the instructions on the [contacting the IOCCC
+Judges](contact.hml) page.
 
 IF you have a FIX, and IF the author does not object, and IF your fix
 looks reasonable, we will add a web link to a copy of your email
@@ -318,11 +339,20 @@ more other entries that came in close behind.
 
 switch(19xx/XYZZY) {
 
-- case [1984/mullender](years.html#1984_mullender): try
+    case [1984/mullender](years.html#1984_mullender):
+
+try the alternative code added by [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) like:
+
+```sh
+make alt
+./mullender.alt
+```
+
+Thank you Cody for your help!
+
+It's a slight adjustment to our original suggested code:
 
 	main(){int i=512;do write(1,"  :-)\b\b\b\b",9),usleep(i);while(--i);}
-
-instead. Enable reverse wraparound in your xterm window for best results.
 
 break;
 
