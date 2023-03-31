@@ -18,7 +18,7 @@
 
 # The IOCCC FAQ
 
-## Q:</font> How many entries do you receive each year?
+## Q: How many entries do you receive each year?
 
 By tradition, we do not say.
 
@@ -66,9 +66,8 @@ IS' basis. If you have a FIX for a entry, we suggest that you try and email it
 to the authors and to CC: us using the instructions on the [contacting the IOCCC
 Judges](contact.hml) page.
 
-IF you have a FIX, and IF the author does not object, and IF your fix
-looks reasonable, we will add a web link to a copy of your email
-for others to see.
+IF you have a FIX, and IF the author does not object, and IF your fix looks
+reasonable, we will add a web link to a copy of your email for others to see.
 
 ## Q: Are there types of entries that are submitted so frequently that the judges get tired of them?
 
@@ -129,7 +128,7 @@ anymore._
 
 - [1990/scjones](years.html#1990_scjones)
 
-- [1994/smr](years.html#1994_smr) - _do not claim your program is the smallest one without seeing it!
+- [1994/smr](years.html#1994_smr) - _do not claim your program is the smallest one without seeing this!
 
 - [2000/dhyang](years.html#2000_dhyang) - _unless you beat this one, your chances are slim_
 
@@ -149,7 +148,7 @@ anymore._
 
 - [2000/tomx](years.html#2000_tomx)
 
-_**it's so 20th century...**_
+_**...it's so 20th century...**_
 
 ### entries that use some complex state machine/table to print something
 
@@ -167,7 +166,7 @@ _**it's so 20th century...**_
 
 - [1991/fine](years.html#1991_fine)
 
-### **pi** or **e** computation</font>
+### **pi** or **e** computation
 
 - [1986/august](years.html#1986_august)
 
@@ -177,17 +176,19 @@ _**it's so 20th century...**_
 
 - [1989/roemer](years.html#1989_roemer)
 
+#### Hints on overused themes
+
 HINT: It is not fatal to send in those types of entries, it is just MUCH
-HARDER to win. Such an entry would have to do something really unique and
-interesting to even make it into the final judging rounds. Entries that
+HARDER to win. Such an entry would have to do something _really unique **AND**
+interesting_ to even make it into the final judging rounds. Entries that
 re-use these 'worn out' themes frequently lose to other entries that do
 something different.
 
-HINT: If you really MUST send in an entry based on an 'over-used theme',
-be sure that it is obfuscated in several new and novel ways. Be sure to clearly
-explain near the beginning of your remarks why you are submitting a entry
-based on an 'over-used theme' and why the judges should not simply toss
-it out as being boring.
+HINT: If you really MUST send in an entry based on an 'overused theme', be sure
+that it is obfuscated in several new and novel ways. Be sure to _clearly_
+explain near the beginning of your remarks why you are submitting a entry based
+on an 'overused theme' and why the judges should not simply toss it out as being
+boring.
 
 ## Q: What should I write in the 'remarks' (remarks.md) section of my entry, if anything at all?
 
@@ -208,40 +209,45 @@ As much or as little as you wish.
 ### What does not help:
 
 - admitting that your entry is not very obfuscated (you see, the contest is
-called <B>IOCCC</B>, not <B>INVOCCC</B>); but even if you do not admit it, not
-very obfuscated entries have a minuscule chance to win (although
-[2000/tomx](years.html#2000_tomx) is a notable counterexample)
+called the **IOCCC**, not the **INVOCCC** :-) ); but even if you do not admit
+it, not very obfuscated entries have a minuscule chance to win (although
+[2000/tomx](years.html#2000_tomx) is a notable counterexample).
 
 - mentioning your name or any identifying information in the remark section (or
 in the C code for that matter) - we like to be unbiased during the judging
-rounds; we look at the author name only if an entry wins
+rounds; we look at the author name only if an entry wins. See the guidelines if
+this is not clear!
 
-- leaving the remark section empty
+- leaving the remark section empty.
+
 
 ## Q: I am confused: what should I put to the 'build' section?
 
 The 'build' section must contain UNIX shell-style commands to compile your C
-language entry **in a file named prog.c** and produce an executable file. More than one command is allowed,
-as far as the size rule is followed.
-Usually one (or more) of these commands will be an invocation of
-a C compiler (use **cc** or <B>gcc</B>), but there may be exceptions
-(or not anymore, see [2000/tomx](years.html#2000_tomx)).
+language entry **in a file named prog.c** and produce an executable file. More
+than one command is allowed, as far as the size rule is followed.  Usually one
+(or more) of these commands will be an invocation of a C compiler (use **cc** or
+**gcc**), but there may be exceptions (or not anymore, see
+[2000/tomx](years.html#2000_tomx)).
 
 If your entry depends on a particular source file name during compilation or execution, you will have to put a line
 
-	cp prog.c desired_name.c
+	
+	    cp prog.c desired_name.c
+
 
 before the compiler invocation line.
 
+
 If in doubt, put
 
-	cc -o prog prog.c
+	    cc -o prog prog.c
 
 in the 'build' section.
 
 Note however that with the [mkiocccentry
 tool](https://github.com/ioccc-src/mkiocccentry) we have an example Makefile
-which you should update, using the instructions above if necessary.
+which you should update and submit, using the instructions above if necessary.
 
 
 ## Q: What happened to the winners for 1997, 1999 2002, 2003, 2007 - 2010, 2016, 2017, 2021 and 2022 ?
@@ -275,9 +281,11 @@ POSIX-conforming.
 
 Your entry must compile with GCC and run under at least one flavor of UNIX (e.g.
 Linux or Solaris). To improve chances to win, it should work under both BSD and
-SysV style UNIX (think <B>stty cbreak</B>), and should not depend on endianness.
+SysV style UNIX (think **stty cbreak**), and should not depend on endianness.
 If it can compile and run on Windows and/or Mac  (see
-[2000/thadgavin](/years.html#2000_thadgavin) for one example, amongst others), even better.
+[2000/thadgavin](/years.html#2000_thadgavin) for one example, amongst others),
+even better. Being able to compile with other compilers like clang is also a
+good thing.
 
 ## Q: I would like to mirror the IOCCC web site. May I do so?
 
@@ -350,7 +358,7 @@ make alt
 
 Thank you Cody for your help!
 
-It's a slight adjustment to our original suggested code:
+BTW: in this case it's a slight adjustment to our original suggested code:
 
 	main(){int i=512;do write(1,"  :-)\b\b\b\b",9),usleep(i);while(--i);}
 
@@ -363,8 +371,8 @@ depth of 8 bits or less.
 
 break;
 
-- default: Try enabling <TT>-fwritable-strings</TT> for GCC
-or its equivalent for other compilers.
+- default: Try enabling `-fwritable-strings` for GCC or its equivalent for other
+compilers.
 
 }
 
@@ -390,7 +398,7 @@ As well as: '_It's more than bad code, the author really had to try to make it
 this bad!_
 
 After a few minutes we wandered back into my office where I posted a
-[flame to to
+[flame to
 net.lang.c](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=789%40nsc.UUCP&rnum=3&filter=0")
 inviting people to try and out obfuscate the UN\*X source code we had just been working on.
 
@@ -403,7 +411,6 @@ BTW: This posting was made back in the days when AT&amp;T was the evil giant.
 Now, Microsoft makes AT&amp;T look mild and kind in comparison. :-( (IMHO) ).
 
 BTW: See the story about the '[Bill Gates](/1993/mills/mills.hint)' award. :-)
-
 
 OK, back to the story.
 
@@ -438,7 +445,7 @@ Curt Noll) all time favorites.
 
 The name used in the posting of the [1st IOCCC
 winner](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=837%40nsc.UUCP&rnum=2&filter=0)
-posting was **I**nternational **O**bfuscated **C** **C**ode <B>C</B>ontest or
+posting was **I**nternational **O**bfuscated **C** **C**ode **C**ontest or
 **IOCCC** for short.
 
 The posting said '_1st annual_', so in 1985 we held the [2nd IOCCC contest](/years.html#1985)
