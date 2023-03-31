@@ -5,19 +5,19 @@
     Lindon UT  84042
     USA
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./williams
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo "Do or do not. There is no try."

@@ -9,13 +9,13 @@ Edward Giles
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./prog < pi.wav

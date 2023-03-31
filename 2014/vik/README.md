@@ -4,19 +4,19 @@
     <daniel@vik.cc>  
     <http://danielvik.com/>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog > foo.c
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo 'Want to hear me beep?' | ./prog > audio_file.raw

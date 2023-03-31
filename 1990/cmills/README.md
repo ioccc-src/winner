@@ -10,7 +10,7 @@
 
 	make all
 
-### To run
+## To run
 
     ./cmills [starting_cash]
 
@@ -30,7 +30,7 @@ to:
     !gets(l)
 
 
-### Try:
+## Try:
 
     ./cmills 5000
 

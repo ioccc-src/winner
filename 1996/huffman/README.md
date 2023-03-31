@@ -12,7 +12,7 @@
 
         make all
 
-### To run:
+## To run:
 
 
 	echo 'Huffman Decoding' | ./huffman

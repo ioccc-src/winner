@@ -1,20 +1,20 @@
 # Most able to divine code gaps
 
     Derek Anderson  
-`
-# To build:
+
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog < textfile
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./prog < prog.c
@@ -22,7 +22,7 @@ make
 ./prog < README.md
 ```
 
-### Alternate code:
+## Alternate code:
 
 An alternate version of this entry, `prog.alt.c`, is provided.
 
@@ -45,7 +45,7 @@ With this entry, you won't need to turn your monitor [upside down](http://en.wik
 
 ## Author's comments:
 
-### Compiling the program
+### Compiling the program:
 
 ```sh
 cc -Wall -Wextra -Wpedantic -O3 -std=c11 prog.c -o prog

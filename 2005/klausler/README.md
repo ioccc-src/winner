@@ -7,19 +7,19 @@
     USA
     pmk@cray.com
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./klausler arg1 agr2 | head
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./klausler peter klausler | head

@@ -3,19 +3,19 @@
     Steinar Hamre
     Norway
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./hamre math_expression_string
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./hamre '-1+4/3*(2+1/(3/2*(7/2-7/3+1/6)))/2'

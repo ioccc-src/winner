@@ -43,7 +43,7 @@ Note that it is an int and it uses `atoi()` which does NOT check for
 overflow! In fact it's argc itself.
 
 
-### Try:
+## Try:
 
 
     ./mullender.alt

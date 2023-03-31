@@ -11,11 +11,11 @@
 
         make all
 
-### To run
+## To run:
 
 	./isaak
 
-### Alternate code
+### Alternate code:
 
 An alternate version of this entry, `isaak.alt.c`.
 

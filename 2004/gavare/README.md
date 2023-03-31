@@ -7,19 +7,19 @@
 
     http://www.mdstud.chalmers.se/~md1gavan/
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./gavare
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./gavare > ioccc_ray.ppm

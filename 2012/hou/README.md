@@ -4,19 +4,19 @@
     <hqm03ster@gmail.com>  
     <http://www.houqiming.net>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./hou syntax-file file-to-process
 ```
 
-### Try:
+## Try:
 
 ```sh
 less hou.c
@@ -32,7 +32,7 @@ View the `remarks.htm` file in your web browser.
 
 The result is best viewed in a 80x25 console with ANSI colors.
 
-### Try (Windows):
+## Try (Windows):
 
 ```sh
 copy header.htm hou.htm /y

@@ -7,19 +7,19 @@
 
     http://cc.ysu.edu/~jpdalbec/
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./jdalbec number ...
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./jdalbec 1

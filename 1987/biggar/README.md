@@ -11,11 +11,11 @@ Santa Monica, CA
         make all
 
 
-### To run:
+## To run:
 
 	some_command | ./biggar | od -c
 
-### Try:
+## Try:
 
 	cat biggar.c | ./biggar | od -c
 

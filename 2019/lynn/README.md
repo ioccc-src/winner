@@ -4,19 +4,19 @@
     <https://crypto.stanford.edu/~blynn/>
     Twitter: @bmxlynn
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog
 ```
 
-### Try:
+## Try:
 
 ```sh
 (./prog < fib.hs; cat prog.c) > fib.c

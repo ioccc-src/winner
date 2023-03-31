@@ -4,13 +4,13 @@
     Cambridge, UK  
     <pmblakely@gmail.com>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 Zoom out and make your terminal window 53 or more lines deep.
 
@@ -18,7 +18,7 @@ Zoom out and make your terminal window 53 or more lines deep.
 ./blakely < blakely.c | head -300
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./blakely < 3.dat | head -100

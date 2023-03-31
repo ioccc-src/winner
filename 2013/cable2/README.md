@@ -3,19 +3,19 @@
     Adrian Cable  
     <adrian.cable@gmail.com>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./cable2 file.bmp [color]
 ```
 
-### Try:
+## Try:
 
 Here is an OCR example that shows all 94 supported ASCII characters:
 

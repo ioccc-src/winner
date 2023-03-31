@@ -5,19 +5,19 @@ Cody Boone Ferguson <weasel@xexyl.net>
 [https://xexyl.net](https://xexyl.net)  
 Mastodon: [@xexyl@fosstodon.org](https://fosstodon.org/@xexyl)      
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./weasel
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./weasel words

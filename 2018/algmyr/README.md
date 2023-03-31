@@ -3,13 +3,13 @@
     Anton Älgmyr  
     Twitter: @aalgmyr  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 cat prog.c | ./prog           # Printing garbage might break your font
@@ -17,7 +17,7 @@ cat prog.c | ./prog           # Printing garbage might break your font
 ./prog -d 2 0 out.raw         # Decode the first (0th) channel out of two
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./prog -h | ./prog -d 1 0

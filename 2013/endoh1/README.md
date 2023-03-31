@@ -4,19 +4,19 @@
     <mame@ruby-lang.org>  
     <https://github.com/mame/>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./endoh1 [file.lazy]
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./endoh1 hello.lazy

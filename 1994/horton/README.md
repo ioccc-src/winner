@@ -11,7 +11,7 @@
 
         make all
 
-### To run
+## To run
 
 	./horton A B C D
 

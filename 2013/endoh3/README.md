@@ -4,19 +4,19 @@
     <mame@ruby-lang.org>  
     <https://github.com/mame/>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./endoh3
 ```
 
-### Try:
+## Try:
 
 Trying this out will depend on how your system can play sounds. The author's
 remarks include some options for different operating systems.

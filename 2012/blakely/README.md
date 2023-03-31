@@ -4,19 +4,19 @@
     Cambridge, UK  
     <pmblakely@gmail.com>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./blakely "RPN formula" resolution > output.gif
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./blakely "xx*yy*+" 64 > paraboloid.gif

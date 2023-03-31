@@ -3,19 +3,19 @@
     Peter Eastman
     <peter.eastman@gmail.com>
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./eastman
 ```
 
-### Try:
+## Try:
 
 Quit the program.  Resize your terminal window.  Run it again.
 

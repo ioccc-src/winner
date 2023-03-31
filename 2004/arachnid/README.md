@@ -8,19 +8,19 @@
 
     http://www.notdot.net/
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./arachnid [mazefile]
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./arachnid arachnid.info

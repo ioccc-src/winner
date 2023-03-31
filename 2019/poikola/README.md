@@ -4,13 +4,13 @@
     <https://ig.fi/other/ioccc>  
     Twitter: @timpoiko  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog 512 ./prog
@@ -22,7 +22,7 @@ sleep 86400; make clobber prog
 ./prog 512 ./prog
 ```
 
-### Try:
+## Try:
 
 If you don't have a few days, try:
 

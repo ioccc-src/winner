@@ -6,13 +6,13 @@
     US
     o__1 at hotmail dot com
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./birken < file.tofu
@@ -22,7 +22,7 @@ make
 macOS with this entry. The problem was a missing `+1` for strlen() with
 malloc(). Thank you Cody for your assistance!
 
-### Try:
+## Try:
 
 ```sh
 ./birken < counter.tofu

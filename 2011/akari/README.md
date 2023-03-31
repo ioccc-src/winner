@@ -4,19 +4,19 @@
     <omoikane@uguu.org>  
     <http://uguu.org/>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./akari [input_file_or_- [output_file_or_- [even]]]
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./akari < example.ppm > odd_output.ppm

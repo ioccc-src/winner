@@ -3,19 +3,19 @@
     Chris Mills  
     Twitter: @MisterXopher  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog compressed_file.Z
 ```
 
-### Try:
+## Try:
 
 ```sh
 printf '000I\236\f\31H\260\240\301\203' > ioccc.Z

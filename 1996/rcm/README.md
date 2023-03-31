@@ -9,7 +9,7 @@
 
         make all
 
-### To run:
+## To run:
 
 	./rcm < rfc1951.gz
 

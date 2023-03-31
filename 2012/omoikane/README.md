@@ -4,13 +4,13 @@
     <omoikane@uguu.org>  
     <http://uguu.org/>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./nyaruko [seed.txt] < original.bin > output.c
@@ -23,7 +23,7 @@ gcc output.c -o output
 ./output > regenerated.bin
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo "A quick brown fox jumps over the lazy dog" | ./nyaruko > output.c

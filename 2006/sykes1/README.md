@@ -6,13 +6,13 @@
     Finland
     <http://www.stephensykes.com>
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./sykes1
@@ -20,7 +20,7 @@ make
 
 Next point your browser to the file: `sykes1.html`.
 
-### Try:
+## Try:
 
 ```sh
 ./sykes1 10

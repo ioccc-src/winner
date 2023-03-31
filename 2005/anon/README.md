@@ -2,19 +2,19 @@
 
         Anonymous
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./anon x y [z]
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./anon 4 4

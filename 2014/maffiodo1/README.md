@@ -4,7 +4,7 @@
     <smaffer@gmail.com>  
     <http://www.assezeta.com/sandromaffiodo>  
 
-# To build:
+## To build:
 
 This entry requires SDL to be installed.
 
@@ -67,13 +67,13 @@ or set the following environment variable:
 export SDL2_INCLUDE_ROOT=/usr
 ```
 
-### To run:
+## To run:
 
 ```sh
 cat mario.level | ./prog 320 200 800 300 128 144 mario.rgba mario8.wav 10343679
 ```
 
-### Try:
+## Try:
 
 ```sh
 cat giana.level | ./prog 320 200 1000 300 192 168 giana.rgba giana8.wav 5459393

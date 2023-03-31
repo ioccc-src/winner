@@ -3,13 +3,13 @@
     Adrian Cable  
     <adrian.cable@gmail.com>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./cable3 bios-image-file floppy-image-file [harddisk-image-file]
@@ -27,7 +27,7 @@ some implementation of SDL1 also has this problem. Thank you Cody for your
 assistance!
 
 
-### Try:
+## Try:
 
 ```sh
 ./runme
@@ -111,7 +111,7 @@ PLEASE NOTE that under UNIXes the keyboard must be in raw mode for the emulator 
 	./cable3 bios floppy.img harddisk.img
 	stty cooked echo
 
-### To run the emulator - floppy mode only
+## To run the emulator - floppy mode only
 
 The simplest use of the emulator is with a single floppy boot disk image, like the fd.img provided, which is a FreeDOS boot disk.
 
@@ -121,7 +121,7 @@ Before running the emulator on a Unix-type system, stty needs to be used to put 
 	./cable3 bios fd.img
 	stty cooked echo
 
-### To run the emulator - floppy + HD mode
+## To run the emulator - floppy + HD mode
 
 Easiest to start with is to try a ready-made 40MB hard disk image containing a whole bunch of software:
 

@@ -7,19 +7,19 @@
 
     http://www.jonhoyle.com
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./hoyle point ...
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./hoyle 10 0.5

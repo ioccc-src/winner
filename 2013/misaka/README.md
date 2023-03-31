@@ -4,7 +4,7 @@
     <omoikane@uguu.org>  
     <http://uguu.org/>  
 
-# To build:
+## To build:
 
 ```sh
 make
@@ -12,14 +12,14 @@ make
 
 This will build a bunch of versions of the code. See the author's details for information on all of these builds.
 
-### To run:
+## To run:
 
 ```sh
 ./horizontal_cat [files...] > [output]
 ./vertical_cat [files...] > [output]
 ```
 
-### Try:
+## Try:
 
 To understand the various intermediate source files that are built, try:
 

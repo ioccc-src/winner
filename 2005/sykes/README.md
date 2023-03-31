@@ -7,19 +7,19 @@
     Finland
     sds@maxisat.fi
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./sykes binary_file
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./sykes pet.rom

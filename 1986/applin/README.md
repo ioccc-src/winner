@@ -14,7 +14,7 @@ USA
 
 	./applin
 
-### Try:
+## Try:
 
 	sh applin.c
 

@@ -4,19 +4,19 @@
     USA
     mike@mikeash.com
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./mikeash
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./mikeash < mikeash.c

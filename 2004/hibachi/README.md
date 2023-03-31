@@ -8,19 +8,19 @@
 
     http://www.snert.com/
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 cd build; ./hibachi-start.sh
 ```
 
-### Try:
+## Try:
 
 ```sh
 cd build; ./hibachi-start.sh

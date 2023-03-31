@@ -7,19 +7,19 @@
     <j.david.lowe@gmail.com>  
     <http://www.pootpoot.net/>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./dlowe [numbers...]
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./dlowe 0 1 2 3 4 5 6 7

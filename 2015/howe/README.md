@@ -5,13 +5,13 @@ Montreal, Quebec, Canada
 <http://www.snert.com/>  
 Twitter: @SirWumpus  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog file1 file2
@@ -19,7 +19,7 @@ make
 ./prog -d file1 file2
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./prog prog.alt.c prog.c

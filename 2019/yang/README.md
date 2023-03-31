@@ -3,13 +3,13 @@
     Don Yang  
     <http://uguu.org/>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog sample_input.txt a b c d
@@ -25,7 +25,7 @@ cat d
 cat a b c d | ./prog
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./prog prog.c a b c d e

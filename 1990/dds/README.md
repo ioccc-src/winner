@@ -19,12 +19,12 @@ prototype to `fopen()` and made this use `fgets()` instead of `gets()` to make
 it safer. He also fixed a segfault in the case that the file cannot be loaded.
 Thank you Cody for your assistance!
 
-### To run
+## To run
 
 	./dds
 
 
-### Try:
+## Try:
 
 Give the following lines as input:
     

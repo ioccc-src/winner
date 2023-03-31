@@ -7,19 +7,19 @@
 
     http://www.vik.cc/
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./vik1 [arg]
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./vik1

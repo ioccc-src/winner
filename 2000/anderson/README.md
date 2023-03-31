@@ -16,13 +16,13 @@ make
 use `fgets()` instead of `gets()` to make it safer. Thank you Cody!
 
 
-### To run:
+## To run:
 
 ```sh
 echo something | ./anderson
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo Obfuscate | ./anderson

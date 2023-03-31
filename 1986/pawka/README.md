@@ -11,7 +11,7 @@ San Diego, Ca
         make all
 
 
-### Try:
+## Try:
 
 	./pawka
 

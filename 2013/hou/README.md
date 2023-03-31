@@ -4,13 +4,13 @@
     <hqm03ster@gmail.com>  
     <http://www.houqiming.net>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./hou [scene-file-name] [options]
@@ -19,7 +19,7 @@ make
 Follow the instructions in stdout, preferably with an auto-refreshing PPM image viewer ready.
 Refresh the image every time the output refreshes, all effects should be more or less recognizable when you see 16.
 
-### Try:
+## Try:
 
 ```sh
 ./hou BIG

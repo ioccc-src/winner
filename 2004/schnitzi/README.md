@@ -6,19 +6,19 @@
     Albert Park, VIC 3206
     Australia
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./schnitzi
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./schnitzi <schnitzi.inp0 | vi

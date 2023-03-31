@@ -8,19 +8,19 @@
 
     http://www.schweikhardt.net/
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./schweikh string string2
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./schweikh foo 'f??'; echo $?

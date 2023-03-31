@@ -65,13 +65,13 @@ or set the following environment variable:
 export SDL2_INCLUDE_ROOT=/usr
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./prog ioccc.txt

@@ -11,11 +11,11 @@ USA
 
         make all
 
-### To run
+## To run
 
 	./hines file.c
 
-### Try:
+## Try:
 
 	./hines hines.c
 

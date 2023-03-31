@@ -9,13 +9,13 @@ tsoj <tsoj.tsoj@gmx.de>
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog
 ```
 
-### Try:
+## Try:
 
 ```sh
 # Make your terminal as large as possible, possibly reduce your font size

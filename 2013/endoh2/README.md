@@ -4,13 +4,13 @@
     <mame@ruby-lang.org>  
     <https://github.com/mame/>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 make check
@@ -18,7 +18,7 @@ make check
 
 You'll need to have Ruby installed to run all the automated check
 
-### Try:
+## Try:
 
 ```sh
 cat jpeg.c

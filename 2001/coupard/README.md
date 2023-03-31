@@ -7,19 +7,19 @@
     Lindon, UT 84042
     USA
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./coupard
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./coupard > /dev/audio

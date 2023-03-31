@@ -3,19 +3,19 @@
     Scott Vokes  
     Twitter: @silentbicycle  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog < example-1.txt
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./prog < example-2.txt

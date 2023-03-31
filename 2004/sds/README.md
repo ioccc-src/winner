@@ -7,19 +7,19 @@
 
     http://www.stephensykes.com
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./sds
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./sds < sds.c > encoder.c

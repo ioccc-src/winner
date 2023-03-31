@@ -6,19 +6,19 @@
     CP. 53110
     Mexico
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./toledo1 twodigits
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./toledo1 00

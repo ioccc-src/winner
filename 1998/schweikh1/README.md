@@ -67,7 +67,7 @@ the different command line and the different numbers.
 To use this version use `schweikh1.alt` instead.
 
 
-### To run:
+## To run:
 
 	./schweikh1
 

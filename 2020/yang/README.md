@@ -9,13 +9,13 @@ Don Yang
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog [PIN] < input.txt > output.c
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo "International Obfuscated C Code Contest 2020" | ./prog 23209 > code.c

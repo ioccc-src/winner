@@ -2,19 +2,19 @@
 
     Ondřej Adamovský <oa@cmail.cz>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog file.unl
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./prog spam.unl

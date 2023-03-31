@@ -3,19 +3,19 @@
     Gregor Richards  
     <Richards@codu.org>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./richards
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo '10 9 8 7 6 5 4 3 2 1*p*p*p*p*p*p*p*p*p' | ./richards

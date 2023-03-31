@@ -14,7 +14,7 @@
 
 	http://personal.eunet.fi/pp/halo/
 
-# To build:
+## To build:
 
 ```sh
 make
@@ -27,7 +27,7 @@ compile this by adding `X11/` to the includes of `Xlib.h` and `keysym.h`. Thank
 you Cody!
 
 
-### To run:
+## To run:
 
 ```sh
 ./jarijyrki < infile.info > outfile.info
@@ -35,7 +35,7 @@ you Cody!
 
 You will need a system capable of displaying the results of X Window programs.
 
-### Try:
+## Try:
 
 ```sh
 ./jarijyrki < sheet1.info > myedits.info

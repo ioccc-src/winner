@@ -9,13 +9,13 @@ Twitter: @mametter
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./run_clock

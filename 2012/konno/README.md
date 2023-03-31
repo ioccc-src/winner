@@ -4,13 +4,13 @@
     Tokyo, Japan  
     <inaniwa3@gmail.com>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./konno N
@@ -18,7 +18,7 @@ make
 
 NOTE: N is an integer from 0 to 255.
 
-### Try:
+## Try:
 
 ```sh
 ./konno 30

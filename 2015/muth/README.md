@@ -3,19 +3,19 @@
     Dominik Muth 
     <muth.ioccc@freenet.de>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 make -B [MACHINE=your_machine.h] [TAPE=your_tape.h] [X=[0|1|2|3|4|5|6|7|8|9]] [V=[0|1|2]] run
 ```
 
-### Try:
+## Try:
 
 ```sh
 make -B V=2 run

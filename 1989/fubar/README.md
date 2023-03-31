@@ -15,11 +15,11 @@
 modern systems. Thank you Cody for your assistance!
 
 
-### To run
+## To run
 
 	./fubar number>
 
-### Try:
+## Try:
 
 	./fubar 2
 

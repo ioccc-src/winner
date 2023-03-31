@@ -6,19 +6,19 @@
     CP. 53110
     Mexico
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./toledo3 [1 | 2 | 3 [b]]
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./toledo3 1

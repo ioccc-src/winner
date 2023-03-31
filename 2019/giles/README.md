@@ -2,19 +2,19 @@
 
     Edward Giles  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog infile.wav outfile.wav
 ```
 
-### Try:
+## Try:
 
 ```sh
 play MonodyVocals.wav

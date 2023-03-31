@@ -8,11 +8,11 @@
 	7945
 	South Africa
 
-# To build:
+## To build:
 
         make all
 
-### To run
+## To run
 
 	./dgibson.sh [datafile]
 

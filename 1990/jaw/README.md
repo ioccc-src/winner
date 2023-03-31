@@ -36,7 +36,7 @@ Endoh](/winners.html#Yusuke_Endoh). Thank you Yusuke for your implementation of
 `btoa`!
 
 
-### Try:
+## Try:
 
 To test the official C entry, one might try:
 

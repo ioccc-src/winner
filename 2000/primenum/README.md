@@ -4,7 +4,7 @@
     [address subject to change]
     MD, USA
 
-# To build:
+## To build:
 
 ```sh
 make
@@ -15,14 +15,14 @@ portable by changing the return type of `main()` to be `int` not `void`. Thank
 you Cody for your assistance!
 
 
-### To run:
+## To run:
 
 ```sh
 ./primenum n 
 ```
 NOTE: n is an integer.
 
-### Try:
+## Try:
 
 ```sh
 ./primenum 23209

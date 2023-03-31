@@ -6,7 +6,7 @@ Rigakubu 7-goukan 311
 Hongou 7-3-1, Bunkyou-ku, Tokyo
 Japan
 
-# To build:
+## To build:
 
 ```sh
 make
@@ -18,13 +18,13 @@ when run or not compile at all (gcc and clang respectively). Thank you Cody for
 your assistance!
 
 
-### To run:
+## To run:
 
 ```sh
 ./natori
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo "Do or do not. There is no try."

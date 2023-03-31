@@ -68,13 +68,13 @@ or set the following environment variable:
 export SDL2_INCLUDE_ROOT=/usr
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./jetro
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo "Do or do not. There is no try."

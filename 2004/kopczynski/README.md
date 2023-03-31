@@ -8,19 +8,19 @@
 
     http://www.mimuw.edu.pl/~erykk/
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./kopczynski < input_file
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./kopczynski < kopczynski-8a

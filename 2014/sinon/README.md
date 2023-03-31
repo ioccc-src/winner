@@ -4,19 +4,19 @@
     <omoikane@uguu.org>  
     <http://uguu.org/>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 cp -f sinon.c run.c; ./hecate.sh
 ```
 
-### Try:
+## Try:
 
 ```sh
 cp -f sinon.c run.c; ./hecate.sh; ./glock.sh; sleep 3; ./glock.sh; sleep 1; ./hecate.sh

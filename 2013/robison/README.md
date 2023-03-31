@@ -3,19 +3,19 @@
     Arch D. Robison  
     <arch.d.robison@gmail.com>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./robison
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo '1*2*3*4*5*6*7*8*9%1000' | ./robison

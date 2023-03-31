@@ -11,7 +11,7 @@ Mastodon: [@xexyl@fosstodon.org](https://fosstodon.org/@xexyl)
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 WAIT=N WALLS=[01] EVADE=N SIZE=N MAXSIZE=N GROW=N SHEDS=N SHED=N CANNIBAL=[01] ./prog

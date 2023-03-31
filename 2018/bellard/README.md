@@ -3,19 +3,19 @@
     Fabrice Bellard  
     <https://bellard.org/>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog > lena.ppm
 ```
 
-### Try:
+## Try:
 
 ```sh
 eog lena.ppm # On Linux

@@ -7,13 +7,13 @@
     Alexander Prishchepov  
     <https://github.com/sans17/>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog < some_secret_or_something
@@ -21,7 +21,7 @@ make
 ./prog http://host[:port]
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./prog
@@ -47,7 +47,7 @@ obfuscation awaits the reader of the source!
 
 When launched in web server mode, this application appears to deliver nothing more than a static HTML page.  But, in actuality, it provides covert file transfer over the Internet.  This is demonstrated by starting the application as a client-side downloader.  The hidden transmitted data cannot be reconstructed or even detected from the binary content of the traffic between the client and the server.
 
-### To run web server
+## To run web server
 
 ```sh
 ./prog < secret_file_to_be_downloaded
@@ -59,7 +59,7 @@ Try using the program's source code as the secret file:
 ./prog < prog.c
 ```
 
-### To run client-side downloader
+## To run client-side downloader
 
 ```sh
 ./prog http://host[:port]

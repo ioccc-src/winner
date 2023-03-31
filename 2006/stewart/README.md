@@ -3,19 +3,19 @@
     Thomas Stewart
     US
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./stewart
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./stewart 640 480 FILE

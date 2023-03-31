@@ -31,7 +31,7 @@ and expect `G;` to equate to `int i, j;` (though it's now a long) and `K` to mea
 prepended to them. Thank you Yusuke and Cody for your assistance!
 
 
-### To run:
+## To run:
 
 	./jonth			# must be run on an X11 server
 

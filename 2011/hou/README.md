@@ -3,19 +3,19 @@
     Hou Qiming  
     <hqm03ster@gmail.com>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./hou 'a calculator expression -- see the C Code for details'
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./hou 11/26+222/31

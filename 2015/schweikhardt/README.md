@@ -3,13 +3,13 @@
     Jens Schweikhardt  
     <http://www.schweikhardt.net>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog n
@@ -17,7 +17,7 @@ make
 
 where n is a base 16 number of any size.
 
-### Try:
+## Try:
 
 ```sh
 ./prog 19

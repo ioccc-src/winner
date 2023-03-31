@@ -13,7 +13,7 @@ To compile on a 16 bit machine, change 300000 to 30000.
 
 
 
-### Try:
+## Try:
 
 	./heckbert 40 < heckbert.c > ph.c; make ph
 	./ph 21 < heckbert.c > bar.c; make bar

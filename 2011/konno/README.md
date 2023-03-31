@@ -4,19 +4,19 @@
     Tokyo, Japan  
     <inaniwa3@gmail.com>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./konno just_a_single_argument_of_lower_case_letters
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./konno qwerty

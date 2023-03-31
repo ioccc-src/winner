@@ -12,7 +12,7 @@ Mastodon: [@xexyl@fosstodon.org](https://fosstodon.org/@xexyl)
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog  
@@ -48,7 +48,7 @@ make
 
 **NOTE**: in recode no spaces between options and option arguments are allowed.
 
-### Try:
+## Try:
 
 ```sh
 # IOCCC obfuscated!  

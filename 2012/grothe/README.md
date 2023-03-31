@@ -9,13 +9,13 @@
     David Madore  
     <http://www.madore.org/~david/>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 To create a shared secret shared among M people with N+1 needed to reconstruct:
 
@@ -30,7 +30,7 @@ more shared files with their proper numbers):
 ./grothe I-sharedI J-sharedJ K-sharedK ... +reconstructed
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./grothe -grothe.c 1+grothe.c.1 2+grothe.c.2

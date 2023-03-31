@@ -11,7 +11,7 @@
 
         make all
 
-### To run
+## To run
 
 Make and run as follows:
 

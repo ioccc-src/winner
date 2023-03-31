@@ -3,19 +3,19 @@
     Qiming Hou <hqm03ster@gmail.com>  
     <http://www.houqiming.net/>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 echo IOCCC | ./prog
 ```
 
-### Try:
+## Try:
 
 ```sh
 echo "" | ./prog

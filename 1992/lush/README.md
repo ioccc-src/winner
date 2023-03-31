@@ -9,7 +9,7 @@
 
         make all
 
-### To run:
+## To run:
 
 	./runme.sh
 

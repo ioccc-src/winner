@@ -29,7 +29,7 @@ wish for the original unsafe version you can make the following change:
 	./wall | some_command
 	# enter some strings
 
-### Try:
+## Try:
 
 	./wall | bc | ./wall
 

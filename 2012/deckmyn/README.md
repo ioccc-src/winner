@@ -3,13 +3,13 @@
     Alex Deckmyn  
     <alex.deckmyn@gmail.com>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 A shell interpreter with proper backtick interpolation is required.
 
@@ -17,7 +17,7 @@ A shell interpreter with proper backtick interpolation is required.
 ./deckmyn "`cat deckmyn.c`" "`cat musicfile.txt`" > sheetmusic.pbm
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./deckmyn "`cat deckmyn.c`" "`cat example_greensleeves`" > greensleeves.pbm

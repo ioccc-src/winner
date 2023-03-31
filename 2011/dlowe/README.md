@@ -13,7 +13,7 @@
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./dlowe -<n_iterations> corpus1/ [...] corpus0/ < start.net > trained.net
@@ -27,7 +27,7 @@ Then to use the `trained.net`:
 ./dlowe file [file ...] < trained.net
 ```
 
-### Try:
+## Try:
 
 Try these pre-trained networks:
 

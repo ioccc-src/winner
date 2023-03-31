@@ -3,7 +3,7 @@
     Etienne Duble <etienne.duble@imag.fr>  
     <http://lig-membres.imag.fr/duble>  
 
-# To build:
+## To build:
 
 ```sh
 make

@@ -8,19 +8,19 @@
     United Kingdom
     s.borsanyi at sussex dot ac dot uk
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./borsanyi string > file.gif
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./borsanyi ioccc@example.com > example.gif

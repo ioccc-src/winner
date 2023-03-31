@@ -14,7 +14,7 @@ segfault when no file is specified or the file cannot be opened for reading. he
 also made this use `fgets()` not `gets()` to make it safer. Thank you Cody for
 your assistance!
 
-### To run:
+## To run:
 
 	    ./schnitzi file
 	
