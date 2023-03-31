@@ -9,7 +9,7 @@
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog "expression"
@@ -23,7 +23,7 @@ or:
 
 Type in expressions on standard input.
 
-### Try:
+## Try:
 
 ```sh
 ./prog '?0x3343<<2'
@@ -49,7 +49,7 @@ grep '[0-9]' prog.c
 man ./calc.1
 ```
 
-## Alternate code
+## Alternate code:
 
 An alternate version of this entry, `prog.alt.c`, is provided.
 This alternate code is discussed in the "prog.c vs prog.alt.c" section of the
@@ -210,7 +210,7 @@ With -Wall -std=c99, both are quite noisy, and all can be ignored:
   * `value computed is not used [-Wunused-value]`
   * `operation on 'j' may be undefined [-Wsequence-point]`
 
-### Test Suite
+### Test Suite:
 
 If the program name begins with an "e", it echoes stdin to stdout.
 This allows for a convenient test suite:
@@ -220,9 +220,9 @@ ln -s prog eprog
 PATH=. eprog < test.in | diff - test.out
 ```
 
-### Spoilers
+### Spoilers:
 
-If you do not want to puzzle out how it works, see `spoilers.markdown`.
+If you do not want to puzzle out how it works, see [spoilers.md](spoilers.md).
 
 ## Copyright and CC BY-SA 4.0 License:
 
