@@ -825,6 +825,19 @@ for now.
 
 # 2018
 
+## [2018/hou](2018/hou/prog.c) ([README.md](2018/hou/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+When you run it you will see something like:
+
+```sh
+$ ./prog < ioccc.json > ioccc.html
+Assertion failed: (rulez), function C, file prog.c, line 124.
+Abort trap: 6
+```
+
+but this is expected and the file `ioccc.html` will be generated properly.
+
 
 # 2019
 
