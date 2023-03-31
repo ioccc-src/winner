@@ -13,6 +13,11 @@
 make
 ```
 
+NOTE: this entry requires `X11/Xlib.h` header file and the X11 library to
+compile. macOS users running Mountain Lion and later will need to download and
+install [XQuartz](https://www.xquartz.org) in order to compile and run this
+entry.
+
 ### To run:
 
 ```sh
@@ -33,9 +38,6 @@ Use up and down keys to escape death.
 
 The judges lose playing this game. This entry wins!
 
-OS X users running Mountain Lion and later will need to download and install:
-
-	http://xquartz.macosforge.org/landing/
 
 Q: How did we get past the variadic macro problem on a Mac?
 

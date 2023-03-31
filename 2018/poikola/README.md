@@ -3,19 +3,25 @@
     Timo Poikola <ioccc2018@ig.fi>  
     <https://ig.fi/>  
 
-# To build:
+## To build:
 
 ```sh
 make
 ```
 
-### To run:
+NOTE: this entry requires `X11/Xlib.h` header file and the X11 library to
+compile. macOS users running Mountain Lion and later will need to download and
+install [XQuartz](https://www.xquartz.org) in order to compile and run this
+entry.
+
+
+## To run:
 
 ```sh
 ./prog
 ```
 
-### Try:
+## Try:
 
 On terminal supports 24 bit color, has black background, and size at least 125x38, try:
 
@@ -72,7 +78,7 @@ This entry has partial support for terminals with a white background but the bes
 has a black background and the size is at least 125x38.
 
 Special note for Mac users: __Terminal__ does not work as expected you might need xterm from XQuartz or some other
-working terminal. Thanks to Dave Burton for spotting this problem.
+working terminal. Thanks to [Dave Burton](/winners.html#Dave_Burton) for spotting this problem.
 
 The main reason for the header `unistd.h` is `getdelim()` but once I included it I also abused other functions and defines. This header is mutually exclusive with _-std=c11_.
 
@@ -116,11 +122,12 @@ If you think you understand how this program works, can you answer these questio
 4. How do you change a single bit, without changing the functionality?
 
 
-### Rot18ed part
+### Rot18 part
 
 Because the rot13 is too easy to decode with the plain eyes, I decided to use the Caesar cipher with the key 18.
 
-Lzw xajkl tsffwj ak wfugvwv mkafy AWWW 754 xdgslk gf dafw 47. Al ak hjaflwv gfdq gf dalldw-wfvasf esuzafwk.
+    Lzw xajkl tsffwj ak wfugvwv mkafy AWWW 754 xdgslk gf dafw 47. Al ak hjaflwv
+    gfdq gf dalldw-wfvasf esuzafwk.
 
 ## Copyright and CC BY-SA 4.0 License:
 

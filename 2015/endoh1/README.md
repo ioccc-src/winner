@@ -1,11 +1,11 @@
 # Most Diffused Reaction
 
-Someone Anonymous  
-Twitter: @hirekoke  
+    Yusuke Endoh  
+    <https://github.com/mame/>  
+    Twitter: @mametter  
 
-Yusuke Endoh  
-<https://github.com/mame/>  
-Twitter: @mametter  
+    Someone Anonymous  
+    Twitter: @hirekoke  
 
 # To build:
 

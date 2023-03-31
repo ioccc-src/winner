@@ -10,13 +10,13 @@ Twitter: @mametter
 make
 ```
 
-### To run:
+## To run:
 
 ```sh
 ./prog <a number of arguments>
 ```
 
-### Try:
+## Try:
 
 ```sh
 ./prog @ @ @ @ @ @
@@ -28,7 +28,7 @@ make
 ./prog $(< Makefile)
 ```
 
-### Alternate code
+## Alternate code:
 
 An alternate version of this entry, `prog.alt.c`, is provided.  
 This alternate code does not contain improvements suggested by [Gil

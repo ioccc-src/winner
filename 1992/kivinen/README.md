@@ -7,11 +7,21 @@
 	Finland
 
 
-## Judges' comments:
+## To build:
+
 
 If your machine support the X Window System, Version 11:
 
-	make kivinen
+	make all
+
+NOTE: this entry requires `X11/Xlib.h` header file and the X11 library to
+compile. macOS users running Mountain Lion and later will need to download and
+install [XQuartz](https://www.xquartz.org) in order to compile and run this
+entry.
+
+
+## Judges' comments:
+
 
 The type of entertainment depends on number of arguments
 you have with the program.  :-)
