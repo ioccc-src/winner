@@ -29,6 +29,8 @@ make python
 make python3
 ```
 
+NOTE: to interrupt the loop send intr (typically ctrl-C).
+
 ## Judges' comments:
 
 And now for something completely different: A program whose metabolic
