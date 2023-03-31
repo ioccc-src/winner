@@ -4,9 +4,10 @@ generated3.c
 generated4.c
 generated5.c
 left
-msg0
-msg1
-msg2
+msg[0-9]
 prog
 right
 shift
+rotated_counterclockwise.txt
+rotated_clockwise.txt
+no_leading_space.txt
