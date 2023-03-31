@@ -27,6 +27,23 @@ format is consistent and clean.
 
 Thank you!
 
+### ON **ALL** FIXES / IMPROVEMENTS / CHANGES
+
+Make **ABSOLUTE CERTAIN** that you test the entry _BEFORE_ **AND** _AFTER_ your
+changes! This includes output and the same input functionality! Sometimes it
+might seem to be fine but is actually not! We will note some where this is known
+to happen (if it's not yet fixed).
+
+Make **ABSOLUTE CERTAIN** that you read the README.md file _BEFORE_ your changes
+as it's important to see that the code is doing what it is supposed to. In the
+case that it's not obvious (some README.md files do not even have commands to
+try or even explain how to use it!) then you should either skip the entry OR ask
+someone who will know e.g. us.
+
+Make **ABSOLUTE CERTAIN** that you read the next section, the list of statuses
+and the related information, BEFORE you submit a pull request!
+
+
 # LIST OF STATUSES - PLEASE READ BEFORE FIXING (you may skip if you're only interested in knowing about entries with known issues)
 
 Entries below have one of the following _**STATUS**_ values. Please see the text
@@ -43,29 +60,7 @@ of the remaining entries resolved in the near future but nevertheless if you're
 okay making people very sad you may have a go at the entries :-) He'll remove
 this part later on.
 
-### ON **ALL** FIXES / IMPROVEMENTS / CHANGES
-
-Make **ABSOLUTE CERTAIN** that you test the entry _BEFORE_ **AND** _AFTER_ your
-changes! This includes output and the same input functionality! Sometimes it
-might seem to be fine but is actually not! We will note some where this is known
-to happen (if it's not yet fixed).
-
-Make **ABSOLUTE CERTAIN** that you read the README.md file _BEFORE_ your changes
-as it's important to see that the code is doing what it is supposed to. In the
-case that it's not obvious (some README.md files do not even have commands to
-try or even explain how to use it!) then you should either skip the entry OR ask
-someone who will now e.g. us.
-
-
-### Request for one-liners:
-
-For one-liners please keep the file one line if at all possible! If it needs an
-include you can update the Makefile `CINCLUDE` variable. For instance if it
-needs `stdio.h` you could do `-include stdio.h`. Please leave a space after the
-`=` in the Makefile!
-
-
-### Compiler warnings are very rarely a problem
+## Compiler warnings are very rarely a problem
 
 In general warnings should NOT be addressed. The only time they should be
 CONSIDERED is when the entry does not work. However note that sometimes trying
@@ -78,6 +73,14 @@ different platforms. These tend to be required at the risk that sometimes the
 entry will not work for certain platforms, some of which might or might not be
 fixable. But even if they are fixable (which will likely be hard to do) it's
 almost certain that such code would be just as non-portable (importable ? :-) ).
+
+## Request for one-liners:
+
+For one-liners please keep the file one line if at all possible! If it needs an
+include you can update the Makefile `CINCLUDE` variable. For instance if it
+needs `stdio.h` you could do `-include stdio.h`. Please leave a space after the
+`=` in the Makefile and thank you!
+
 
 ### On layout of program source
 
@@ -166,7 +169,7 @@ compiler supporting you are welcome to summit such code via a
 [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls) and we
 will be happy to credit you in the entry's _README.md_ file.
 
-## STATUS: uses gets() - change to fgets() if possible
+## STATUS: uses gets() - change to fgets() if possible (in some cases getline() works)
 
 Entries with this status use `gets()` which is unsafe because it has no limit on
 the length of the string. [Cody Boone
@@ -193,6 +196,14 @@ will be in the Makefile and other times it will be obfuscated in other ways.
 Compilers and linkers tend to warn about its use and this is a good way to find
 entries that use it even if it's not visible in the code.
 
+## STATUS: missing file(s) - please provide them
+
+In these entries one file or multiple files are missing from the repo. In some
+cases these files can be found on the [IOCCC website](https://www.ioccc.org) but
+in other cases they are entirely absent. In this case you'll probably have to
+contact the author (unless you are the author! :-) ).
+
+
 # List of entries by year, sorted in alphabetical order
 
 # 1984
@@ -200,13 +211,13 @@ entries that use it even if it's not visible in the code.
 ## [1984/anonymous](1984/anonymous/anonymous.c) ([README.md](1984/anonymous/README.md))
 ## STATUS: doesn't work with some platforms - please help us fix
 
+
 Although this works under linux it does not work under macOS: it prints nothing,
 exiting 0.
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added some notes about
 this in the [README.md](1984/anonymous/README.md) file. Can you fix this? We
 welcome your help!
-
 
 
 ## [1984/decot](1984/decot/decot.c) ([README.md](1984/decot/README.md))
@@ -797,6 +808,19 @@ is not. Again see his README.md for details!
 
 
 # 2015
+
+## [2015/endoh3](2015/endoh3/prog.c) ([README.md](2015/endoh3/README.md))
+## STATUS: missing files - please provide them
+
+With Yusuke's analysis of his entry which can be found
+[here](https://mame-github-io.translate.goog/ioccc-ja-spoilers/2015/endoh3.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp)
+he shows a tarball with source files that work with his entry, a mock emulator
+for [1984/mullender](1984/mullender/mullender.c). Unfortunately he does not have
+the tarball available for download and only showed a few (which
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added to the repo).
+
+Cody has his email and WILL be contacting him in time but we note it here anyway
+for now.
 
 
 # 2018
