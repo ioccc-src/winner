@@ -39,15 +39,14 @@ this program left and recompiling will reveal other tools including a right rota
 and a shift program.
 
 Strange things happen when the world is upside down! It is entirely possible
-that this is remark is completely misleading.
+that this remark is completely misleading.
 
 What exactly does the shift program do?
 
-Like a great sliding puzzle (hint) this entry has 6 more programs that will
-reveal messages and one more tool that can be used to reveal the final
-message hidden in the original source.  All of these can be created using
-combinations of ./left, ./right and ./shift and the additionally generated
-programs.
+Like a great sliding puzzle (hint) this entry has six more programs that will
+reveal messages and one more tool that can be used to reveal the final message
+hidden in the original source.  All of these can be created using combinations
+of `./left`, `./right` and `./shift` and the additionally generated programs.
 
 The final message can be revealed using
 
@@ -55,12 +54,12 @@ The final message can be revealed using
 ./msg9 < prog.c
 ```
 
-But what combinations will generate ./msg3, ./msg4, ./msg5, ./msg6, ./msg7,
-./msg8 and finally ./msg9?
+But what combinations will generate `./msg3`, `./msg4`, `./msg5`, `./msg6`,
+`./msg7`, `./msg8` and finally `./msg9`?
 
 ## Author's comments:
 
-### Tools usage
+### Tools' usage:
 
 Nuko is a text rotator: given some text in stdin, Nuko will write the
 same text to stdout, but rotated 90 degrees counterclockwise.
@@ -108,7 +107,7 @@ Where this might be useful, besides ruining the formatting of certain
 files, is that it completes the set of tools needed to solve the
 puzzle that is embedded in prog.c
 
-### Puzzle box
+### Puzzle box:
 
 Notice how the edges of prog.c contain two notches.  By rotating
 prog.c and removing leading space, the code would be shifted one space
@@ -135,20 +134,20 @@ in prog.c, all you need is a C compiler.
 
 ### Features
 
-   - Code compiles when rotated 4 ways.  This required a bit of
-     patience to achieve.  Code still compiles even with one column of
-     text shifted.  This required even more patience.
+- Code compiles when rotated 4 ways.  This required a bit of patience to
+achieve.  Code still compiles even with one column of text shifted.  This
+required even more patience.
 
-   - All rotated and shifted variants compiles without warnings.  This
-     involves various tweaks to satisfy cases where compiler is overly
-     protective, including but not limited to the "1125" at line 4 as
-     opposed to "1025", to satisfy -Waggresive-loop-optimizations.
+- All rotated and shifted variants compiles without warnings.  This involves
+various tweaks to satisfy cases where compiler is overly protective, including
+but not limited to the "1125" at line 4 as opposed to "1025", to satisfy
+`-Waggresive-loop-optimizations`.
 
-   - CRC32 of the code is embedded in the code itself.
+- CRC32 of the code is embedded in the code itself.
 
-   - Process for writing prog.c is available in spoiler.html
+- Process for writing prog.c is available in spoiler.html
 
-### Compatibility
+### Compatibility:
 
 Nuko and the rotated tools accepts only ASCII files where each
 character maps to exactly one byte.  Also, end-of-line sequence is
@@ -158,18 +157,18 @@ will look weird after rotation, for example.
 
 Nuko has been verified to work with these compiler / OS combinations:
 
-   - gcc 4.8.4 on Linux
-   - gcc 4.9.2 on Linux
-   - gcc 6.1.0 on JS/Linux
-   - gcc 6.3.0 on Linux
-   - gcc 6.4.0 on Cygwin
-   - clang 3.5.0 on Linux
-   - clang 3.8.1 on Linux
-   - clang 5.0.1 on Cygwin
-   - tcc 0.9.25 on JS/Linux
+- gcc 4.8.4 on Linux
+- gcc 4.9.2 on Linux
+- gcc 6.1.0 on JS/Linux
+- gcc 6.3.0 on Linux
+- gcc 6.4.0 on Cygwin
+- clang 3.5.0 on Linux
+- clang 3.8.1 on Linux
+- clang 5.0.1 on Cygwin
+- tcc 0.9.25 on JS/Linux
 
 Nuko compiles without warnings with all compilers above, even with
-"-Wall -Wextra -pedantic" for gcc and clang.
+`-Wall -Wextra -pedantic` for gcc and clang.
 
 ## Copyright and CC BY-SA 4.0 License:
 
