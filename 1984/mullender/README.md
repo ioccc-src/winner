@@ -20,19 +20,44 @@ Robbert van Renesse
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added the alternative
 code which lets you run this on other systems. He notes though that this was
-only a slight fix to the change in the [faq](/faq.md). Thank you Cody for your
-assistance!
+only a slight fix and enhancement to the change in the [faq](/faq.md). Thank you
+Cody for your assistance!
 
-To build:
+### To build:
 
 
 	make alt
 
-Use `./mullender.alt` as you would `./mullender` above.
+### To run:
+
+	./mullender.alt [microseconds]
+
+The default microseconds is 10000. This ability is so you can experiment with
+different speeds in between writes. It can be useful if your CPU is too slow or
+too fast.
+
+BTW: is there such a thing as too fast a CPU ? :-) actually yes for certain code
+which is probably not as uncommon as you think :-) ).
+
+Note that it is an int and it uses `atoi()` which does NOT check for
+overflow! In fact it's argc itself.
+
+
+### Try:
+
+
+    ./mullender.alt
+
+    ./mullender.alt 5000
+
+    ./mullender.alt 500
+
+    ./mullender.alt 20000
+
+What happens if you hit enter after it writes a line of output?
 
 
 ## Judges' comments:
-
 
 Without question, this C program is the one of the most obfuscated
 C program that has ever been received!  Like all great contest
@@ -54,6 +79,8 @@ The real Vax code starts with the second word.  This small program
 makes direct calls to the write() Unix system call to produce a
 message on the screen.  Can you guess what is printed?  We knew you
 couldn't!  :-)
+
+BTW: this remains my (Landon Curt Noll's) all time favorite entries!
 
 ## Author's comments:
 

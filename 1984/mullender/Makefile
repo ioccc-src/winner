@@ -137,7 +137,7 @@ alt: data ${ALT_TARGET}
 	@${TRUE}
 
 ${ALT_TARGET}: ${PROG}.alt.c
-	${CC} -include stdio.h -include unistd.h ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} -include stdio.h -include unistd.h -include stdlib.h ${CFLAGS} $< -o $@ ${LIBS}
 
 # data files
 #

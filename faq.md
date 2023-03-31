@@ -41,8 +41,12 @@ can enjoy this entry. Try:
 
 ```sh
 make alt
-./mullender.alt
+./mullender.alt [microseconds]
 ```
+
+The microseconds defaults to 10000.
+
+Thank you Cody!
 
 See also [Yusuke Endoh](/winners.html#Yusuke_Endoh)'s entry
 [2015/endoh3](/2015/endoh3/README.md) entry which lets one compile it and run
@@ -353,14 +357,23 @@ try the alternative code added by [Cody Boone Ferguson](/winners.html#Cody_Boone
 
 ```sh
 make alt
-./mullender.alt
+./mullender.alt [microseconds]
 ```
+
+where microseconds is the number of microseconds to sleep between writes.
+Default 10000. This is useful to see different speeds as well as if your CPU is
+too slow or too fast for the entry. See the
+[README.md](/1984/mullender/README.md) for more details.
 
 Thank you Cody for your help!
 
-BTW: in this case it's a slight adjustment to our original suggested code:
+BTW: in this case it's a slight fix and improvement to our original suggested
+code:
 
 	main(){int i=512;do write(1,"  :-)\b\b\b\b",9),usleep(i);while(--i);}
+
+BTW: is there such a thing as too fast a CPU ? :-) actually yes for certain code
+which is probably not as uncommon as you think :-) ).
 
 break;
 
