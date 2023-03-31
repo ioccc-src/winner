@@ -50,10 +50,13 @@ Thank you Cody!
 
 See also [Yusuke Endoh](/winners.html#Yusuke_Endoh)'s entry
 [2015/endoh3](/2015/endoh3/README.md) entry which lets one compile it and run
-it.
+it. Another entry that you can enjoy it under is [Christopher
+Mill](/winners.html#Christopher_Mills)'s entry
+[2018/mills](/2018/mills/README.md) which is a PDP-7 emulator as well as a
+PDP-11/40 emulator. 
 
 Others are not so easy though we're working on this and over time have added
-alternative code and in some cases replaced the original code with code that
+alternative code. In some cases we replaced the original code with code that
 works for modern systems.
 
 
