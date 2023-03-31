@@ -1,7 +1,7 @@
 # Most connected
 
-    Scott Vokes  
-    Twitter: @silentbicycle  
+Scott Vokes  
+Twitter: @silentbicycle  
 
 ## To build:
 
@@ -34,7 +34,7 @@ answer you seek with no hocus pocus.
 
 ## Author's comments:
 
-### Introduction
+### Introduction:
 
 This program reads a directed graph (as lines with integer node IDs),
 and prints the graph's nodes in reverse-topologically sorted order,
@@ -82,7 +82,7 @@ implementation of counting sort, which sorts each group.
 For other details about the input format, see "Issues and
 Limitations".
 
-### Building
+### Building:
 
 To build:
 
@@ -99,7 +99,7 @@ may also be necessary -- the function pointer declarations for
 `_` and `B` may get warnings otherwise, for reasons described
 under "Obfuscations".
 
-### Obfuscations
+### Obfuscations:
 
 - This entry uses functions that have a variable number of arguments,
   but despite what the rules say, there is no need to be careful about
@@ -115,8 +115,8 @@ under "Obfuscations".
 
 - It uses `_` in three different scopes: as a goto label (function
   scope), as an enum name, and a `_` function pointer (which is required
-  to have file scope, since it starts with '_'). There are also other
-  `_`s: it appears in a string, obscured by a headecimal escape sequence
+  to have file scope, since it starts with `_`). There are also other
+  `_`s: it appears in a string, obscured by a hexadecimal escape sequence
   (`\x5f`), and the cauldron is supported by a giant underscore.
   (Does this program qualify for Best One Liner?)
 
@@ -168,7 +168,7 @@ under "Obfuscations".
 - Oh, and the program is squashed into the shape of a bubbling cauldron,
   on top of a giant underscore, so there's that.
 
-### Issues and Limitations
+### Issues and Limitations:
 
 - Despite appearances, it does not handle numbers in hex, or provide
   a `curses(3)`-based interface.
