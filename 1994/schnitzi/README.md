@@ -14,11 +14,15 @@
 
 	./schnitzi < textfile
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the entry to not
-overflow the buffer (and segfault) by changing the call of `gets()` to
-`fgets()`. He also increased the buffer size. Prior to this fix one could not
-redirect the Makefile into this program, as an example problem. Thank you Cody
-for your assistance!
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) increased the buffer
+size from 100 to 10000. Changing it to use `fgets()` instead of `gets()` is more
+problematic because when feeding the source code to the program the output
+results in compiler errors and not only that but the gets() is still there in
+the generated output. Even changing the buffer size can result in compilation
+errors if not done correctly. The generated output also does not have a changed
+buffer size. Changing it to use fgets() can happen later, maybe, but bigger
+files can now be parsed by the original code. An example is this Makefile. Thank
+you Cody!
 
 
 ## Try:
