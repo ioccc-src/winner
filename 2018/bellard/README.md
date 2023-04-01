@@ -19,7 +19,7 @@ make
 
 ```sh
 eog lena.ppm # On Linux
-preview lena.ppm # On MacOS
+open -a Preview lena.ppm # On macOS
 
 pngtopnm < Lenna.png | pnmscale 0.25 | cjpeg -arithmetic -dct float -quality 14 > small.jpg
 ```
@@ -27,22 +27,25 @@ pngtopnm < Lenna.png | pnmscale 0.25 | cjpeg -arithmetic -dct float -quality 14 
 
 ## Judges' comments:
 
-The file `small.jpg` will be approximately of the same size as the raw image data
-in the program. Compare the level of the detail and the artifacts of
+The file `small.jpg` will be approximately of the same size as the raw image
+data in the program. Compare the level of the detail and the artifacts of
 `small.jpg` and `lena.ppm`.
 
-Compressing images is just a matter of simple arithmetic and some magic, isn't it?
+Compressing images is just a matter of simple arithmetic and some magic, isn't
+it?
 
 We could understand some of the arithmetic but none of the magic.
 
-Deciphering the mechanism used for data encoding to make use
-of whitespace, braces and semicolons should be a slightly easier task.
+Deciphering the mechanism used for data encoding to make use of whitespace,
+braces and semicolons should be a slightly easier task.
 
 ## Author's comments:
 
-This program outputs a 128x128 RGB image file to the standard output
-using the portable pixmap file format (PPM). It contains the famous
-"Lena" image which is used in many image compression tests. 
+Warning: the program is not protected against invalid input.
+
+This program outputs a 128x128 RGB image file to the standard output using the
+portable pixmap file format (PPM). It contains the famous "Lena" image which is
+used in many image compression tests.
 
 The uncompressed image is 12 times larger than the source code of the
 program which includes the image data and the complete decoder. The
@@ -73,8 +76,8 @@ input. Examples:
 ```
 
 The original images for [fruits][1] and [vintage cars][2] come from
-Wikipedia and were resized to a width of 1024 pixels. Warning: the
-program is not protected against invalid input.
+Wikipedia and were resized to a width of 1024 pixels.
+
 
 The program should be portable on any Unix system. On Windows the line
 `_setmode(0, 32768); _setmode(1, 32768);` must be added at the start of
