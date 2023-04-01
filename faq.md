@@ -66,6 +66,89 @@ In macOS Mountain Lion and beyond to run X11 applications one needs to install
 [XQuartz](https://www.xquartz.org). This will let you compile, link and run X11
 applications.
 
+## Q: How do I compile and run entries that use SDL1/SDL2 ?
+
+This depends on your operating system but below are some instructions for some
+OSes.
+
+### Red Hat based linux
+
+Execute one of the following as root or via sudo:
+
+```sh
+dnf install SDL2 SDL2-devel sdl12-compat sdl12-compat-devel
+yum install SDL2 SDL2-devel sdl12-compat sdl12-compat-devel
+```
+
+In the past it was said that one might need to run `make` like:
+
+```sh
+make ... SDL2_INCLUDE_ROOT=/usr
+```
+
+or set the following environment variable:
+
+```sh
+export SDL2_INCLUDE_ROOT=/usr
+```
+
+but this might not be necessary in more modern days especially as we use
+`sdl-config` and `sdl2-config` which should find the proper paths.
+
+### Debian based linux
+
+Execute the following as root or via sudo:
+
+```sh
+apt install libsdl1.2debian libsdl1.2-dev libsdl2-dev
+```
+
+and then try `make all` again.
+
+In the past it was said that one might need to run `make` like:
+
+```sh
+make ... SDL2_INCLUDE_ROOT=/usr
+```
+
+or set the following environment variable:
+
+```sh
+export SDL2_INCLUDE_ROOT=/usr
+```
+
+but this might not be necessary in more modern days especially as we use
+`sdl-config` and `sdl2-config` which should find the proper paths.
+
+
+### macOS
+
+If you're using macOS there are at least three ways to obtain it. You can
+download it from the SDL website and install the package. This will possibly not
+work well for the IOCCC but these will:
+
+#### MacPorts
+
+If you haven't already, install
+[MacPorts](https://www.macports.org/install.php). Then run:
+
+
+```sh
+sudo port install libsdl libsdl2
+```
+
+#### Homebrew
+
+If you have not already done so, install [Homebrew](https://brew.sh).
+
+Then to install SDL and SDL2, execute the following command:
+
+```sh
+brew install sdl2 sdl12-compat
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+
 ## Q: I found a bug in a previous winner, what should I do?
 
 We do not 'maintain' the contest winners. The code is made available on an 'AS

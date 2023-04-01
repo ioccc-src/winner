@@ -12,11 +12,9 @@ make
 
 ### To install SDL and SDL2:
 
-#### macOS users
+#### macOS users (Homebrew)
 
-If you have not aleady do so, install Homebrew.  See the following for information:
-
-    https://brew.sh
+If you have not already done so, install [Homebrew](https://brew.sh).
 
 Then to install SDL and SDL2, execute the following command:
 
@@ -25,7 +23,17 @@ brew install sdl2 sdl12-compat
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
-#### Linux users:
+#### macOS users (MacPorts)
+
+Install [MacPorts](https://www.macports.org/install.php).
+
+Then to install SDL and SDL2:
+
+```sh
+sudo port install libsdl libsdl2
+```
+
+#### Red Hat Linux users:
 
 To install SDL and SDL2, execute the following command as root:
 
@@ -33,7 +41,7 @@ To install SDL and SDL2, execute the following command as root:
 dnf install SDL2 SDL2-devel sdl12-compat sdl12-compat-devel
 ```
 
-Use make as follows:
+It was once possibly necessary to use `make` like:
 
 ```sh
 make ... SDL2_INCLUDE_ROOT=/usr
@@ -44,6 +52,9 @@ or set the following environment variable:
 ```sh
 export SDL2_INCLUDE_ROOT=/usr
 ```
+
+but this is most likely unneeded as we use `sdl-config` and `sdl2-config` in the
+Makefiles.
 
 #### Debian users
 
@@ -53,7 +64,7 @@ To install SDL and SDL2, execute the following command as root:
 apt install libsdl1.2debian libsdl1.2-dev libsdl2-dev
 ```
 
-Use make as follows:
+It was once possibly necessary to use `make` like:
 
 ```sh
 make ... SDL2_INCLUDE_ROOT=/usr
@@ -64,6 +75,12 @@ or set the following environment variable:
 ```sh
 export SDL2_INCLUDE_ROOT=/usr
 ```
+
+but this is most likely unneeded as we use `sdl-config` and `sdl2-config` in the
+Makefiles.
+
+See also the judges' comments below.
+
 
 ## To run:
 
@@ -90,9 +107,10 @@ Polynomish to English?
 You may have to install libsdl2-dev on your system to compile and use this code:
 
 ```sh
-sudo dnf install SDL2		 # Linux
+sudo dnf install SDL2 SDL2-devel # Linux
 sudo apt install libsdl2-dev 	 # Debian
-brew install sdl2		 # MacOS via HomeBrew
+brew install sdl2		 # macOS via Homebrew
+sudo port install libsdl2	 # macOS via MacPorts
 ```
 
 ## Author's comments:
@@ -104,14 +122,14 @@ It uses SDL to draw the interface.
 
 The code makes the following assumptions about the underlying system:
 
-* SDL 2 is installed from https://libsdl.org
-* "double" is an IEEE 754 floating-point type and sizeof(double)==8
-* The compiler supports the C99 standard
+* SDL2 is installed from [https://libsdl.org](https://libsdl.org).
+* `double` is an IEEE 754 floating-point type and `sizeof(double)==8`.
+* The compiler supports the C99 standard.
 
 In order to simulate the motion of the sand, a cellular automaton is used. The
 state transition table is not stored directly. Instead, the program stores the
 coefficients of a polynomial that map each state to the correct one. These
-coefficients are stored as raw hexadecimal in the V[] array, and they are
+coefficients are stored as raw hexadecimal in the `V[]` array, and they are
 reinterpreted as doubles when used. This allows more numeric precision in fewer
 characters (base 16 > base 10), and makes the purpose of the array less clear.
 
