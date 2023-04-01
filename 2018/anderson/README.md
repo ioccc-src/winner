@@ -1,6 +1,6 @@
 # Most able to divine code gaps
 
-    Derek Anderson  
+Derek Anderson  
 
 ## To build:
 
@@ -24,12 +24,11 @@ make
 
 ## Alternate code:
 
-An alternate version of this entry, `prog.alt.c`, is provided.
+An alternate version of this entry, [prog.alt.c](prog.alt.c), is provided.
 
-Compare `prog.c` and `prog.alt.c` and find out why we had to modify
-the entry, and what confused the author (see the author's remarks).
-No, it was not the shape of the Roman V that we, or the compiler,
-didn't like.
+Compare [prog.c](prog.c) and [prog.alt.c](prog.alt.c) and find out why we had to
+modify the entry, and what confused the author (see the author's remarks).  No,
+it was not the shape of the Roman V that we, or the compiler, didn't like.
 
 To compile this alternate version:
 
@@ -51,11 +50,11 @@ With this entry, you won't need to turn your monitor [upside down](http://en.wik
 cc -Wall -Wextra -Wpedantic -O3 -std=c11 prog.c -o prog
 ```
 
-Also works with a standard of c99, but c90/c89 will not compile due to
+Also works with a standard of C99, but C90/C89 will not compile due to
 for loop initial declarations, along with additional warnings about
 variable length arrays and lack of a return statement.
 
-### Additional info
+### Additional info:
 
 This small program, when given text on stdin, will produce a pattern of
 squiggly lines. This pattern is deterministic, and it shouldn't be too
