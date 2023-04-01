@@ -1,7 +1,7 @@
 # Most inflationary
 
-    Fabrice Bellard  
-    <https://bellard.org/>  
+Fabrice Bellard  
+<https://bellard.org/>  
 
 ## To build:
 
