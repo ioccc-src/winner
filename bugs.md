@@ -357,15 +357,6 @@ This entry needs a compiler that support `-traditional-cpp`. `gcc`
 supports this but `clang` does not. Please be advised that `gcc` under macOS is
 actually gcc if it looks like it's gcc (two different binaries).
 
-## [1988/isaak/isaak.com) ([README.md](1988/isaak/README.md))
-## STATUS: known bug - please help us fix
-
-This currently prints nothing. [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson) is working on this along with other
-things and there is a known fix even besides if he decides his time would be
-better spent on something else here or in that elusive thing called 'real life'.
-
-
 
 # 1989
 

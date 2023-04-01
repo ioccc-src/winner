@@ -15,10 +15,14 @@
 
 	./isaak
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work for
+modern systems. The problem was that the important function, a redefinition of
+exit(), was not being called in main(). See below notes for the original,
+alternative version. Thank you Cody for your assistance!
+
 ### Alternate code:
 
-An alternate version of this entry, `isaak.alt.c`.
-
+The original version of this code is in [isaak.alt.c](isaak.alt.c).
 The original entry starts with the line:
 
 	main(){};
@@ -26,7 +30,12 @@ The original entry starts with the line:
 This works on some systems.  Why?  Note that `#include <stdio.h>` is given on
 the last line.  Why is this needed?  Note the unusual calls to sprintf.
 
-## Judges' comments
+This version also relied on being able to define define to something else and
+using that macro for `#define`. This version will not likely work on modern
+systems if you can even get it to compile.
+
+
+## Judges' comments:
 
 NOTE:  The program relies heavily on ASCII.  Don't even think of running it on
 an EBCDIC machine.  If you name the file anything other than "isaak.c", you must
@@ -36,14 +45,16 @@ NOTE: The use of null comments to separate macros to construct different tokens
 from a single macro (e.g., `"O/**/O"` creates either `++` or `--` by defining
 `O` to be `+` or `-`) may cause some strict ANSI C preprocessors to object.
 
-NOTE: Most System V machines will not be able to execute this program correctly
+NOTE: Most System V machines were not be able to execute this program correctly
 due to the fact that BSD style systems have an sprintf() that returns a `char *`.
-
-Due to the above problems, we have placed the output of this program
-in the file: isaak.encode.  To read this file do:
+Due to the above problems, we placed the output of this program in the file:
+isaak.encode.  To read this file do:
 
 	uudecode < isaak.encode
 	cat isaak.output
+
+But since Cody fixed it this is not strictly necessary. See the
+[isaak.alt.c](isaak.alt.c) for the original source.
 
 FYI: We are likely to be more strict about portability in the future.
 

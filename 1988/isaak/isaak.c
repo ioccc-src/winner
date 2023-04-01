@@ -1,4 +1,4 @@
-main(){}
+main(){exit(0);}
 #define U
 #define main Si
 #if U defined(y)
