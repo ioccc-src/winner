@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-hd=${HD:=prog}
+hd=${HD:=./prog}
 
 cat $* |
 $hd |
