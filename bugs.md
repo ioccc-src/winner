@@ -453,6 +453,63 @@ this simply does not work with them. Can you help us?
 
 # 1994
 
+## [1994/schnitzi](1994/schnitzi.c) ([README.md])(1994/schnitzi/README.md))
+## STATUS: uses gets() - change to fgets() if possible
+
+The original buffer size of this entry is 100 which is very easily overflowed
+with `gets()` which it uses. [Cody Boone
+Ferguson](/winners.html#Cody_Boone_Ferguson) changed the buffer size to 10000
+but he notes a problem in that this does not translate to the generated source
+file (when feeding the source itself). With `fgets()` it generates compiler
+errors. Without special care with changing the buffer size it would also
+generate compiler errors. Cody explains the magic below which might be used to
+change this entry to fgets() (and he'll be working on it in the coming days most
+likely).
+
+### The magic of the entry
+
+Take a look at the interesting comment as well as the `int r=0,x,y=0` at the top
+of the file. If you look at each column go down that column you can see how it
+spells out the code. For instance the first column looks like:
+
+
+```
+i
+n
+c
+l
+u
+d
+e
+ 
+<
+s
+t
+d
+i
+o
+.
+h
+>
+```
+
+If you join the lines you end up with:
+
+
+```c
+#include <stdio.h>
+```
+
+If you look at column 25 which is the end of the word 'mh111' and you go down to
+the next row you'll see a 0 and if you go one row down another 0. This is the
+buffer size, 100, for `u`. The column to the left is the same for the `t`
+variable.
+
+Thus it seems that in order to get the generated output correct one needs to
+provide the correct input in comments or possibly by rearranging some of the
+code (this was required to make the generated code compile at all when changing
+the buffer size).
+
 
 # 1995
 

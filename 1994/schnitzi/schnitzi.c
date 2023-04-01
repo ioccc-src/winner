@@ -20,12 +20,12 @@ h                   mh111 de{l)   +di (+'( d+%  c n+
  */                 n         =             0     ;
                main        (       )   {
                 char       v   [
-                1000   ]                   ,  s;
-          int t[100    ]                    ,
-              u[100              ]     ;  u
+              10000    ]                   ,  s;
+          int t[100     ]                    ,
+              u[100               ]     ;  u
                   [                   0
       ]=ftell(stdin        )       ;
-         while(fgets(v,100,stdin )&&((v[strlen(v)-1]='\0',1))                )
+         while(gets (v    )                 )
                  {t  [         r ]=
              strlen                 (
                v);y=
