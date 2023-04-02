@@ -453,7 +453,22 @@ this simply does not work with them. Can you help us?
 
 # 1994
 
-## [1994/schnitzi](1994/schnitzi.c) ([README.md])(1994/schnitzi/README.md))
+## [1994/ldb](1994/ldb/ldb.c) ([README.md](1994/ldb/README.md))
+## STATUS: known bug - please help us fix
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile
+with modern systems (see the README.md file for what had to change) but the
+entry also used `gets()`. This could overflow long lines. Cody changed it to
+`fgets()` but this introduces another problem namely that newlines can be
+printed if the line length < 231.
+
+This seems like a worthy compromise but it would be ideal for it to never print
+a newline unless that's the line itself (a blank line).
+
+Cody will be looking at this later on.
+
+
+## [1994/schnitzi](1994/schnitzi/schnitzi.c) ([README.md])(1994/schnitzi/README.md))
 ## STATUS: uses gets() - change to fgets() if possible
 
 The original buffer size of this entry is 100 which is very easily overflowed

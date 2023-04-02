@@ -1,20 +1,20 @@
 # Best One-liner:
 
-	Laurion Burchall
-	Brown University
-	Unit 4641
-	Providence RI 02912-4641
-	USA
+Laurion Burchall
+Brown University
+Unit 4641
+Providence RI 02912-4641
+USA
 
 ## To build:
 
         make all
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this so it would
-compile and work with modern compilers. Thank you Cody for your assistance!
-
-NOTE: this entry uses `gets()` so you will likely get a warning on compilation
-and/or execution of the program.
+compile and work with modern compilers. The problem was that `srand()` returns
+void but it was used in a `||` expression. Thus the comma operator was needed.
+Cody also changed the entry to use `fgets()` instead of `gets()` to make it
+safe for lines greater than 231 in length. Thank you Cody for your assistance!
 
 
 ## To run:
@@ -23,7 +23,6 @@ and/or execution of the program.
 
 	some_command | ./ldb
 
-NOTE: input lines must be under 232 characters long.
 
 ## Try:
 
@@ -33,14 +32,15 @@ NOTE: input lines must be under 232 characters long.
 		Best One-liner\n
 		by Laurion Burchall" | ./ldb
 
-## Judges' comments
+## Judges' comments:
 
-Trigraphs are natural obfuscators.  Most C-beautifiers become 
-C-uglifiers because they don't handle them correctly.
+Trigraphs are natural obfuscators.  Most C-beautifiers become C-uglifiers
+because they don't handle them correctly.
 
-Can you figure out how it prints a given random line from stdin?
+Can you figure out how it prints a given random line (or if the line is longer
+than 231 characters, part of that line) from stdin?
 
-## Author's comments
+## Author's comments:
 
 All input lines must be under 232 characters long.  The compiling
 platform should be ASCII based.
