@@ -11,7 +11,7 @@
           /*T*/,"r");for      (;(       L/*KPUOWOWMUQ
          LLOLMPULWLWL         WLW         LWLWLWLWLWLW
          LWLWLULVOXP          LLV          LLLOLMPULOL
-        MMNP*/=getc           (J)            )!= -1;L/*
+        MMNP*/=getc           (J)            )>= 0;L/*
        OLWLRMMQUL             VOX             PLLVLLLMQO
        PMPYPXPNP              MQL              LVLLLWPSP
       XPOQNQOPMQ              LLV              LTj*/>='J'
