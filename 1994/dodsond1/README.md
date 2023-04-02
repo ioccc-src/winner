@@ -1,10 +1,10 @@
 # Best Game:
 
-	Don Dodson
-	AG Communication Systems
-	17239 N. 19th Ave. #1003
-	Phoenix, AZ 85023  
-	USA
+Don Dodson
+AG Communication Systems
+17239 N. 19th Ave. #1003
+Phoenix, AZ 85023  
+USA
 
 ## To build:
 
@@ -14,22 +14,22 @@
 
 	./dodsond1
     
-	NOTE: At the prompt, try entering E3.
+NOTE: At the prompt, try entering E3.
 
-## Judges' comments
+## Judges' comments:
 
-    The program plays the game that the layout of the source implies.
-    The source, on the other hand, implies a language along the
-    lines of Lisp.  :-)
+The program plays the game that the layout of the source implies.
+The source, on the other hand, implies a language along the
+lines of Lisp.  :-)
 
-## Author's comments
+## Author's comments:
 
-    For each turn, the board is displayed and the player is prompted for
-    a move.  Enter your move as an upper-case  character followed by a number.
+For each turn, the board is displayed and the player is prompted for
+a move.  Enter your move as an upper-case  character followed by a number.
 
-    The program uses a single function for 4 different purposes -- to
-    determine if a valid move exists, to verify that a move is valid, to
-    make a move, and to determine the value of a move.
+The program uses a single function for 4 different purposes -- to
+determine if a valid move exists, to verify that a move is valid, to
+make a move, and to determine the value of a move.
 
 ## Copyright and CC BY-SA 4.0 License:
 
