@@ -135,7 +135,7 @@ ${PROG}.clean: ${PROG}.clean.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 remarks: README.md
-	%{RM} -f $@
+	${RM} -f $@
 	${CP} $? $@
 
 correct: newlines remarks 256 check
