@@ -522,13 +522,13 @@ If you join the lines you end up with:
 
 If you look at column 25 which is the end of the word 'mh111' and you go down to
 the next row you'll see a 0 and if you go one row down another 0. This is the
-buffer size, 100, for `u`. The column to the left is the same for the `t`
+buffer size, 100, for `u`! The column to the left is the same for the `t`
 variable.
 
 Thus it seems that in order to get the generated output correct one needs to
 provide the correct input in comments or possibly by rearranging some of the
-code (this was required to make the generated code compile at all when changing
-the buffer size).
+code (this was actually required to make the generated code compile at all when
+changing the buffer size, see below).
 
 ### Important points:
 
@@ -550,6 +550,103 @@ can cause a compilation error! Make sure that the output of:
 can be compiled and the output of that new program when fed itself can also be
 compiled!
 
+## [1994/shapiro](1994/shapiro/shapiro.c) ([README.md](1994/shapiro/README.md))
+## STATUS: missing file - please provide it
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) noted that the
+README.md file refers to an alternative version of the code that is not
+obfuscated but it is missing from the entry directory and the archive. Do you
+have this file?
+
+We would be grateful if you could provide it to us.  If you can provide this
+file you might consider removing this entry from this file as well but if not
+we'll take care of it.
+
+### Important reminder to fix the `-1` value check for `getc()`:
+
+Cody wants to remind you that he fixed the code to not use `-1` for the return
+value of `getc()`; this is important because `EOF` is **NOT** guaranteed to be
+`-1` but rather any negative value. On systems where `EOF != -1` the program
+would enter an infinite loop until the program crashed, by chance reads a `-1`
+or was killed. See the README.md for more details. If you don't feel comfortable
+changing it to `EOF` Cody will happily do it for you but otherwise go right
+ahead. We'll credit you in the README.md file regardless.
+
+
+## STATUS: doesn't work with some platforms - please help us fix
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) pointed out a potential
+bug in [1994/shapiro](1994/shapiro/shapiro.c) on systems where `EOF != -1` as
+the code assumes that `EOF` will always be `-1`. As the standard says (see `7.21
+Input/output<stdio.h>` subsection 1) it only has to be a negative int, not
+necessarily `-1`. The problem is that the source file's last character is a
+newline (10 in decimal) and so on systems where `EOF != -1` the `getc()`
+functions would not terminate the loop (but see below). This would cause a
+breakage in the entry.
+
+However due to clever encoding of the code it is not a simple matter of applying
+the following patch:
+
+```diff
+diff --git i/1994/shapiro/shapiro.c w/1994/shapiro/shapiro.c
+index d2da120c7bc4e251b7624859e48f47f188d398e9..e054a1ceb067b82bf37c07e5ce75e82be7a03b85 100644
+--- i/1994/shapiro/shapiro.c
++++ w/1994/shapiro/shapiro.c
+@@ -9,11 +9,11 @@
+             /*PPPPVPOQMQRPR*/=0;FILE/*TPSLUMWQT*/ *
+            J/*MPRPKPLQ*/;     J=      fopen(__FILE__
+           /*T*/,"r");for      (;(       L/*KPUOWOWMUQ
+          LLOLMPULWLWL         WLW         LWLWLWLWLWLW
+          LWLWLULVOXP          LLV          LLLOLMPULOL
+-        MMNP*/=getc           (J)            )!= -1;L/*
++        MMNP*/=getc           (J)            )!=EOF;L/*
+        OLWLRMMQUL             VOX             PLLVLLLMQO
+        PMPYPXPNP              MQL              LVLLLWPSP
+       XPOQNQOPMQ              LLV              LTj*/>='J'
+      &&L/*LRPYP               OQL               QMQLLVLLL
+      OLMQVOXPL                LVL                LLVOe*/<=
+
+```
+
+as doing so will cause `warning: illegal character encoding in string
+literal` and the error `error: source file is not valid UTF-8`. Looking at the
+file you'll see on line 4 of `shapiro_t2.c`:
+
+
+```
+char *a[]={"%c+------------+\n","%c+%3dPRÒ<82>3·Âå&Â"2W6öæF6'Â"Ò<96>æVGW6'Â¢ <82>öV'7'Â"R2Çå&Â"Â^E33sÃ^E33³UB¶cS³<83>T2Ç^E33<83>#Ò·£<90>æF^G"¶ÕÕ³^GÃ^BÃ^RsÃ^RCÃ^R^SÃ^BÓ·£Ð^V<96>æ<86>bÇ2<96><92>æF^Gb·3<86>^V&^G¢¢^B2¶£°7<86>^V&^GB¶E^CÓÅ¢RÆbÖc³£@<97>ÖVöE^Gr¶£`<94>ÄT^D¢<82>Æ¢<92>¶£p<87><96>ÆV^F<82>ÒÒb^Fbb^B^R^B<97>^FW<86>B<96>^Bbb^B^Rbö&·<86><92><92>²£<80>ÖcFö^FWæ<86>bÓbÆÃ^SÃ"^R&<92>²<93>ÖcFö^FWæ<86><82>bÓbÆÃ^S<93>²^RÃ""'<92>²£`ö&<87>²³<93>²<97>f<86>b<96>²gvVF7<87>BÆB^CÃ<92><96>²C¶5G'ÇVæ<86>B<96>Ò^RÓÕsÂ^Es²£<90>f<86>¢BÖÓs^Bs²b<96>²7^G'<97>æFg<86>¢2Æ"R2Çå&ÂB¶^R<93>²ó<86>2GGöVGÇbÃbÓbÆB¶^RÃ^B<93>Ò§<90>f<86>¢Bæs^Bs²b<96>ò<86><82>ÆRÃBÆ^BÃ^B<93>ÒWÆ6W¶G<97>ÖV<86>br<96>²SÖ^S67F<97>ÖV<86>Âö6^VÆF<97>ÖV<86>br<96><92>²£`ö&<87>b×^S³cÇc³c·²<92>ò<86><82>Æb^WÒ^Scbb^WÒcÓ^RÃb·r^BsÂ^RF÷<96><86>R¶"¶e×<95>Âb<97>2ÇVV^F<87>^R<93>²Ó××§ 
+```
+
+when it should be something entirely different. For what it should be try
+running `make clobber all ; cat shapiro_t2.c` or else look at the second program
+in the spoilers file [shapiro.md](1994/shapiro/shapiro.md]).
+
+Cody is working will be working on this here and there but if you have a fix or
+any suggestions you're welcome to provide it or them.
+
+Cody points you to the README.md file for what should happen when the entry is
+successfully compiled (including no compilation errors when running `make
+clobber all`).
+
+Another problem is that in the [shapiro.md](shapiro.md) file the first program
+does not work.
+
+### Tips on this entry:
+
+Cody provides some tips on this entry:
+
+First: the comments are the important part of this entry. Remove them and the
+program breaks.
+
+Second and perhaps part of the problem with changing the code to `EOF` instead
+of `-1` is the `for` loop particularly to do with the bitwise operations,
+perhaps also made worse by the seemingly gibberish comments.
+
+Another important point is that the Makefile compiles the program as
+`shapiro_t1` so that the source code that corresponds with it is actually
+[shapiro.c](1994/shapiro/shapiro.c). But notice how running `shapiro_t1` results
+in different functionality than `shapiro` itself? The source code that
+`shapiro_t1` generates, `shapiro_t2.c`, is what is compiled into `shapiro`.
 
 # 1995
 

@@ -109,7 +109,7 @@ ENTRY= shapiro
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA= shapiro.info
+DATA= shapiro.md
 TARGET= ${PROG}
 #
 ALT_OBJ=
