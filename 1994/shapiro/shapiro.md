@@ -13,7 +13,7 @@ This is a very simple program:
  5. FILE *J;
  6. J=fopen(__FILE__,"r");
  7. for(;
- 8.     (L=getc(J))!=EOF;
+ 8.     (L=getc(J))>=0;
  9.     L>='J'&&L<='J'+15 && 
 10.     ((M=!M)?K=L:putchar(K-'J'|(L-'J'<<4)))
 11.    );
