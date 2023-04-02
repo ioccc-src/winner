@@ -119,7 +119,7 @@ position.  It won't move until both hands click over at 4:00.
 ## Copyright and CC BY-SA 4.0 License:
 
 This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
-You are free to share and adapt this file under the terms this license:
+You are free to share and adapt this file under the terms of this license:
 
     Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
