@@ -1,6 +1,6 @@
 # Best one-liner
 
-    Dave Burton  
+Dave Burton  
 
 ## To build:
 
@@ -28,7 +28,7 @@ unix utilities available as winning entries.
 
 ## Author's comments:
 
-### Synopsis
+### Synopsis:
 
 Feed it anything on stdin.   
 The output should look familiar.
@@ -40,31 +40,32 @@ WARN="-Wno-implicit-int -Wno-missing-variable-declarations -Wno-parentheses"
 cc -Wall -Wextra -Weverything -pedantic $WARN -include stdio.h -o prog prog.c
 ```
 
-### Description
+### Description:
 
-Included is a test script, useful for the corner cases.
-As in all good Unix programs, it is silent upon success; any output demonstrates an error.
-Instead of checking correctness, the check script can simply output the results:   
-(The Makefile contains the spoiler):
+Included is a test script, useful for the corner cases.  As in all good Unix
+programs, it is silent upon success; any output demonstrates an error.  Instead
+of checking correctness, the check script can simply output the results:   (The
+Makefile contains the spoiler):
 
 ```sh
 out=cat ./check ./prog
 ```
 
-Interestingly, and a spoiler here: MacOS and FreeBSD implement the common utility "correctly".
-CentOS and Ubuntu both share a "flawed" utility that changes output format based upon input redirection or pipeline(!).
-As well, the latter two also behave slightly differently on what they count as whitespace:
-\a and \b are both counted whitespace(!), even though the relevant man pages on these systems
-omit these characters from the description.
+Interestingly, and a spoiler here: macOS and FreeBSD implement the common
+utility "correctly".  CentOS and Ubuntu both share a "flawed" utility that
+changes output format based upon input redirection or pipeline(!).  As well, the
+latter two also behave slightly differently on what they count as whitespace:
+`\a` and `\b` are both counted whitespace(!), even though the relevant man pages
+on these systems omit these characters from the description.
 
-This program follows FreeBSD and MacOS, the arbiters of correct for these purposes.
+This program follows FreeBSD and macOS, the arbiters of correct for these purposes.
 
-### Limits
+### Limits:
 
 Requires the C locale and ASCII character set.   
 Input should be less than ten million octets toavoidthisproblem.   
 
-### See Also
+### See Also:
 
 You can enjoy this code from beginning to end.   
 No whitespace was harmed in the creation of this program.   
