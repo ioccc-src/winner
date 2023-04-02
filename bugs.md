@@ -481,11 +481,16 @@ generate compiler errors. Cody explains the magic below which might be used to
 change this entry to fgets() (and he'll be working on it in the coming days most
 likely).
 
-### The magic of the entry
+### The magic of [1994/schnitzi](1994/schnitzi/schnitzi.c) and how it flips text
+
+Cody provided some tips in how the entry works so that it can hopefully be made
+to use fgets() and also hopefully have the buffer size updated in the generated
+code. He notes that this might be a real problem with formatting the code but
+nevertheless he offers the below tips:
 
 Take a look at the interesting comment as well as the `int r=0,x,y=0` at the top
 of the file. If you look at each column go down that column you can see how it
-spells out the code. For instance the first column looks like:
+spells out the code! For instance the first column looks like:
 
 
 ```
@@ -524,6 +529,26 @@ Thus it seems that in order to get the generated output correct one needs to
 provide the correct input in comments or possibly by rearranging some of the
 code (this was required to make the generated code compile at all when changing
 the buffer size).
+
+### Important points:
+
+Getting this entry to use `fgets()` is easy but the problem is you're supposed
+to be able to feed the source to the program and the output of that will be
+compilable. It however will create compiler errors. So it's not just changing
+the code to get it to use fgets()! I (Cody) already did this before I noticed
+the other part which is why I rolled that part back. I did increase the buffer
+size but that only works on the original source.
+
+To say just how sensitive this entry is: even a space, lack of space or a
+character, wrong character, lack of character or character in the wrong place
+can cause a compilation error! Make sure that the output of:
+
+```sh
+./schnitzi < schnitzi.c
+```
+
+can be compiled and the output of that new program when fed itself can also be
+compiled!
 
 
 # 1995
