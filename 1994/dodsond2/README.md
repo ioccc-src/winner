@@ -16,14 +16,35 @@ USA
 
 ## Judges' comments:
 
-The original source file may be found in [dodsond2.gz](dodsond2.gz).  For people
-who don't have `gunzip`, an unzipped version is provided as
-[dodsond2.c](dodsond2.c).
-
 Each year people find new ways to squeeze more and more out of the
 contest rules.  Next year, entries that use compression utilities
 to get around the size limit will find themselves squeezed out of
 the contest!
+
+### A historical note:
+
+The original source code was submitted as a GZIP compressed file
+that the _file(1)_ command reports as:
+
+```
+dodsond2.gz: gzip compressed data, last modified: Mon Aug 29 21:54:39 1994, max compression, from Unix, original size modulo 2^32 2652
+```
+
+The [dodsond2.gz](dodsond2.gz) file was submitted as source
+in an effort to get around the 1994 version of Rule 2:
+
+    2) Your entry must be <= 3217 bytes in length.  The number of characters
+       excluding whitespace (tab, space, newline), and excluding any ; { or }
+       followed by either whitespace or end of file, must be <= 1536.
+
+Indeed, when [dodsond2.gz](dodsond2.gz) is uncompressed, it is identical
+to the [dodsond2.c](dodsond2.c) file you find today.
+
+The IOCCC rules and guidelines were modified in an effort to address
+this fun "_abuse of the rules_" style hack.
+
+It is worth noting that without this compression "_abuse of the rules_"
+style hack, the [dodsond2.c](dodsond2.c) is further obfuscated.
 
 ## Author's comments:
 
