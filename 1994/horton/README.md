@@ -1,60 +1,74 @@
 # Best Utility:
 
-	Mark Horton
-	AT&T Bell Labs
-	Rm 1H-117
-	6200 E Broad St.
-	Columbus OH 43213
-	USA
+Mark Horton
+AT&T Bell Labs
+Rm 1H-117
+6200 E Broad St.
+Columbus OH 43213
+USA
 
 ## To build:
 
         make all
 
-## To run
+## To run:
 
-	./horton A B C D
+```sh
+./horton A B C D
+```
 
-	A, B, C, D are numeric arguments (try 3 2 1 0).
+A, B, C, D are numeric arguments.
 
-## Judges' comments
+## Try: 
 
-    Try to figure out how this program prints, for a given slope, the
-    right character.  And for extra credit, try to figure out which
-    character is at the bottom on this hint file.  :-)
+```sh
+./horton 3 2 1 0
+```
 
-    This confuses cb greatly. See horton.alt.c for an unobfuscated/enhanced
-    version.  To run this alternate version:
+### Alternative code:
 
-	make horton.alt
-	./horton.alt A B C D
+This confuses cb greatly. See [horton.alt.c](horton.alt.c) for an unobfuscated/enhanced
+version. To run this alternate version:
 
-	A, B, C, D are numeric arguments (try 3 2 1 0).
+```sh
+make horton.alt
+./horton.alt A B C D
+```
+
+(Use `horton.alt` as you would `horton` above.)
+
+
+## Judges' comments:
+
+Try to figure out how this program prints, for a given slope, the
+right character.  And for extra credit, try to figure out which
+character is at the bottom on this hint file.  :-)
 
 ## Author's comments
 
-    Run it with any 4 numeric arguments, e.g. prog 3 2 1 0.  Play with the
-    numbers to get a pleasing result, or use it for your high school algebra
-    class.
+Run it with any 4 numeric arguments, e.g. prog 3 2 1 0.  Play with the
+numbers to get a pleasing result, or use it for your high school algebra
+class.
 
-    SPOILER:
+### SPOILER:
 
-    As should be obvious from 20 feet away, the program is a cubic plotter.
-    It plots against certain artists, splattering their cubes with graphs
-    of their cubic equations.  Those dastardly arguments are mere coefficients,
-    cogs in the wheels of the grand plot to overthrow the cubics!
+As should be obvious from 20 feet away, the program is a cubic plotter.
+It plots against certain artists, splattering their cubes with graphs
+of their cubic equations.  Those dastardly arguments are mere coefficients,
+cogs in the wheels of the grand plot to overthrow the cubics!
 
-    Oh, by the way, it uses a self-contained graphtab and frame buffer.
-    It's easily modified to graph *any* 96x160 bitmap on a dumb terminal.
+Oh, by the way, it uses a self-contained graphtab and frame buffer.
+It's easily modified to graph *any* 96x160 bitmap on a dumb terminal.
 
-    See the gtface program for another example.  Try:
+See the [gtface](gtface.c) program for another example.  Try:
 
 	make gtface
 	./gtface < gtface.data
 
-    For more information, see
-    Using GraphTab; USENIX ;login:
-    Sept/Oct 1992; Pages 28-31
+For more information, see
+Using GraphTab; USENIX ;login:
+Sept/Oct 1992; Pages 28-31
+
 
               MMMM,M,MM"MM,,,
            ,,MMMMMMMMM"""""""",
