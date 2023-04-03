@@ -31,7 +31,14 @@ make
 ./ru.sh
 ```
 
-### Alternate code
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed invalid bytes
+error in `tr` in the scripts. He notes that at least on his systems (macOS and
+fedora linux) the alternative languages do not work. Perhaps that is the wrong
+locale or it's unable to come up with perfect pangrams but one will not get
+errors now (it did not work before the fixes either). Thank you Cody for your
+assistance!
+
+### Alternate code:
 
 There is an alternate version of this code that flushes stdout after writing a newline.
 See the Author's comments for more information.
@@ -46,15 +53,15 @@ Use `prog.alt` as you would `prog` above.
 
 ## Judges' comments:
 
-A few letters, one at a time, with no repeats.
-How many different ways can this be done?
+A few letters, one at a time, with no repeats.  How many different ways can this
+be done?
 
-While a quick brown fox might jump over the lazy dog,
-it has too many repeat letters to allow this entry to repeat.
-It is better that Mr Jock, TV quiz PhD, bags few lynx.
+While a quick brown fox might jump over the lazy dog, it has too many repeat
+letters to allow this entry to repeat.  It is better that Mr Jock, TV quiz PhD,
+bags few lynx.
 
-Speaking of jumping, can you rewrite the code to
-remove all of the goto jumps in this code?
+Speaking of jumping, can you rewrite the code to remove all of the goto jumps in
+this code?
 
 ## Author's comments:
 
@@ -65,25 +72,27 @@ written with an alphabet and outputs perfect pangrams composed of these
 words. A perfect pangram is a series of words that contains every letter
 of the alphabet exactly once.
 
-Example execution:
+#### Example execution:
 
-    $ grep .. /usr/share/dict/words | ./prog abcdefghijklmnopqrstuvwxyz
-    qualm fjord wiz pyx vs beg kc nth
-    quartz jinx vs fed kc womb glyph
-    quid jamb fez vs pyx kc growl nth
-    quiz fjord pyx vs bag kc mewl nth
-    quiz fjord pyx vs gab kc mewl nth
-    quiz fjord pyx vs gem bawl kc nth
-    quiz fjord pyx vs meg bawl kc nth
-    quiz fjord vex bawl kc gyp ms nth
-    quiz jamb flex vs kc gyp word nth
-    quiz jamb pyx vs kc flog drew nth
-    quiz jamb pyx vs kc frog lewd nth
-    quiz jamb pyx vs kc frog weld nth
-    quiz jamb pyx vs kc golf drew nth
-    quiz jamb pyx vs kc grew fold nth
-    quiz jamb pyx vs kc grow nth fled
-    quiz jamb pyx vs kc growl fed nth
+```sh
+$ grep .. /usr/share/dict/words | ./prog abcdefghijklmnopqrstuvwxyz
+qualm fjord wiz pyx vs beg kc nth
+quartz jinx vs fed kc womb glyph
+quid jamb fez vs pyx kc growl nth
+quiz fjord pyx vs bag kc mewl nth
+quiz fjord pyx vs gab kc mewl nth
+quiz fjord pyx vs gem bawl kc nth
+quiz fjord pyx vs meg bawl kc nth
+quiz fjord vex bawl kc gyp ms nth
+quiz jamb flex vs kc gyp word nth
+quiz jamb pyx vs kc flog drew nth
+quiz jamb pyx vs kc frog lewd nth
+quiz jamb pyx vs kc frog weld nth
+quiz jamb pyx vs kc golf drew nth
+quiz jamb pyx vs kc grew fold nth
+quiz jamb pyx vs kc grow nth fled
+quiz jamb pyx vs kc growl fed nth
+```
 
 Rearranging the words into more or less meaningful expressions is the
 user's duty.
@@ -94,9 +103,10 @@ Programming_ by Donald E. Knuth. As of June 2019, you can download an
 incomplete draft of the fascicle from [Knuth's
 website](https://www-cs-faculty.stanford.edu/~knuth/fasc5c.ps.gz).
 
-### Usage
+### Usage:
 
-`prog LETTERS [N]`
+`./prog LETTERS [N]`
+
 reads allowed words from standard input and writes perfect pangrams
 with at most _N_ words composed of _LETTERS_ to standard output, one
 per line. If _N_ is not given, the number of words in the pangrams is
@@ -106,25 +116,30 @@ _LETTERS_ must not exceed 97 characters.
 The exit status is 0 if no error occurred, 1 if the input word list
 is too long, and 2 if the command-line arguments are missing.
 
-### Helper scripts
+### Helper scripts:
 
-`getwords.sh LANGUAGE_CODE`
-outputs a sorted list of unique words in a given language, one per
-line. It requires `aspell` with a dictionary for _LANGUAGE_CODE_.
+- [getwords.sh](getwords.sh)
 
-`wrapprog.py LETTERS [N]`
-works similarly to `prog LETTERS [N]` except that it merges
-anagrams before passing them to `prog` and expands them in
-`prog`'s output. This way, it finishes the job faster than
-`prog` when there are millions of perfect pangrams. It requires a
-UTF-8 locale.
+    `./getwords.sh LANGUAGE_CODE`
 
-`de.sh`, `en.sh`, `fr.sh`, `it.sh`, `pl.sh`,
-and `ru.sh` output German, English, French, Italian, Polish,
-and Russian perfect pangrams, respectively. They require a UTF-8
-locale.
+    outputs a sorted list of unique words in a given language, one per line.  It
+    requires `aspell` with a dictionary for _LANGUAGE_CODE_.
 
-### Miscellaneous remarks
+- [wrapprog.py](wrapprog.py)
+
+    `./wrapprog.py LETTERS [N]`
+
+    works similarly to `./prog LETTERS [N]` except that it merges pangrams
+    before passing them to `prog` and expands them in `prog`'s output. This way,
+    it finishes the job faster than `prog` when there are millions of perfect
+    pangrams. It requires a UTF-8 locale.
+
+- [de.sh](de.sh), [en.sh](en.sh), [fr.sh](fr.sh), [it.sh](it.sh),
+[pl.sh](pl.sh), and [ru.sh](ru.sh) output German,
+English, French, Italian, Polish, and Russian perfect pangrams, respectively.
+They require a UTF-8 locale.
+
+### Miscellaneous remarks:
 
 I dare submit this entry to categories _algorithms_,
 _internationalization_ (I have not found active use of `<wchar.h>`
@@ -143,7 +158,7 @@ the example from section [What is this?](#wit) finished in 1.35
 seconds. On the other hand, `prog` can only output series of words
 with non-repeating characters, unlike `klausler`.
 
-In contrast to `prog.alt.c`, `prog.c` does not call
+In contrast to [prog.alt.c](prog.alt.c), [prog.c](prog.c) does not call
 `fflush(stdout)` after outputting each line, thus running faster.
 I am grateful to Witold Jarnicki for suggesting this change.
 The original `prog` finished the example above in 100 minutes
@@ -171,8 +186,8 @@ by without `goto M` and `goto H`, I challenge the adherents of
 structured programming to refactor `goto T`, which jumps back into a
 nested `if` block.
 
-With the supplied `Makefile`, both `gcc` and `clang` compile
-`prog.c` without warnings in C11 and C99 mode. For a clean
+With the supplied [Makefile](Makefile), both `gcc` and `clang` compile
+[prog.c](prog.c) without warnings in C11 and C99 mode. For a clean
 compilation with `gcc -std=c90`, add `-Wno-format` to
 `CSILENCE` in `Makefile`.
 
