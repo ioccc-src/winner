@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 set -x
-./getwords.sh de | tr A-ZÄÖÜ a-zäöü | grep .. | ./prog aäbcdefghijklmnoöpqrsßtuüvwxyz
+LC_ALL=C ./getwords.sh de | LC_ALL=C tr '[:lower:]' '[:upper:]'  | LC_ALL=C grep .. | LC_ALL=C ./prog aäbcdefghijklmnoöpqrsßtuüvwxyz

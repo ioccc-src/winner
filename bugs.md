@@ -12,8 +12,8 @@ Can you fix/improve entries not under the INABIAF (it's not a bug it's a
 feature)? You are **VERY WELCOME** to try.
 
 Please submit your fixes fix in a [GitHub pull
-request](https://github.com/ioccc-src/temp-test-ioccc/pulls) with one pull
-request per fix, please!
+request](https://github.com/ioccc-src/temp-test-ioccc/pulls) (with ONE PULL
+REQUEST *PER* FIX, please)!
 
 We will be **happy to credit anyone who submits successful [GitHub pull
 requests](https://github.com/ioccc-src/temp-test-ioccc/pulls)** in the entry's
@@ -25,14 +25,19 @@ If you do fix an entry please feel free to delete the entry from this file!
 Otherwise if you wish to not worry about it we can do that to make sure the
 format is consistent and clean.
 
-Thank you!
+THANK YOU!
 
 ### ON **ALL** FIXES / IMPROVEMENTS / CHANGES
 
 Make **ABSOLUTE CERTAIN** that you test the entry _BEFORE_ **AND** _AFTER_ your
 changes! This includes output and the same input functionality! Sometimes it
 might seem to be fine but is actually not! We will note some where this is known
-to happen (if it's not yet fixed).
+to happen (if it's not yet fixed). This has actually already happened to us.
+Sometimes it is okay: some entries are known to not work but they can still have
+improvements (rarer situation but it's happened). Some might have slightly
+different output but which is not a problem for instance a newline after output
+in [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson)'s changing it to
+[1994/ldb](1994/ldb/ldb.c) use `fgets()` from `gets()`.
 
 Make **ABSOLUTE CERTAIN** that you read the README.md file _BEFORE_ your changes
 as it's important to see that the code is doing what it is supposed to. In the
@@ -43,12 +48,19 @@ someone who will know e.g. us.
 Make **ABSOLUTE CERTAIN** that you read the next section, the list of statuses
 and the related information, BEFORE you submit a pull request!
 
+**BE VERY AWARE** that sometimes fixing an entry for one platform will break it
+under another so if you have more than one platform (e.g. macOS and linux) it
+would be wise to test it under all that you have access to. Otherwise we can do
+that. Of course if the entry does not work under any platform and you fix it for
+one that's more than fine (and it has been done numerous times).
+
+Again, THANK YOU!
 
 # LIST OF STATUSES - PLEASE READ BEFORE FIXING (you may skip if you're only interested in knowing about entries with known issues)
 
-Entries below have one of the following _**STATUS**_ values. Please see the text
-below for more information. If an entry has more than one status it means that
-either they all apply or they compliment each other. For instance
+Entries below have one or more of the following _**STATUS**_ values. Please see
+the text below for more information. If an entry has more than one status it
+means that either they all apply or they compliment each other. For instance
 [2004/gavin](2004/gavin/gavin.c) crashes but it also doesn't even compile with
 some platforms/architectures.
 
@@ -60,21 +72,34 @@ of the remaining entries resolved in the near future but nevertheless if you're
 okay making people very sad you may have a go at the entries :-) He'll remove
 this part later on.
 
-## Compiler warnings are very rarely a problem
+## General notes about the statuses and making fixes
+
+### Compiler warnings are very rarely a problem
 
 In general warnings should NOT be addressed. The only time they should be
 CONSIDERED is when the entry does not work. However note that sometimes trying
-to fix the warnings will actually introduce bugs! Below in some entries we do
-list some warnings that definitely should be ignored (including some introduced
-by fixes) but we do not list them all: trying to keep track of them all would be
-impractical especially as different compilers give different warnings. Another
-type of warning that would be hard to keep track of is different data sizes on
-different platforms. These tend to be required at the risk that sometimes the
-entry will not work for certain platforms, some of which might or might not be
-fixable. But even if they are fixable (which will likely be hard to do) it's
-almost certain that such code would be just as non-portable (importable ? :-) ).
+to fix the warnings will actually introduce bugs! Other times 'fixing' them will
+break the entry (see below).
 
-## Request for one-liners:
+Below in some entries we do list some warnings that definitely should be ignored
+(including some introduced by fixes) but we do not list them all: trying to keep
+track of them all would be impractical especially as different compilers give
+different warnings.
+
+Another type of warning that would be hard to keep track of is different data
+sizes on different platforms.  These tend to be required at the risk that
+sometimes the entry will not work for certain platforms, some of which might or
+might not be fixable; a good example where it was required to change and is okay
+is when [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the
+segfault in macOS of [1989/paul](1994/paul/paul.c): changing the `int *` to a
+`long *` was required and it works just as well with linux.
+
+But even if they are fixable (which will likely be hard to do) it's almost
+certain that such code would be just as non-portable (importable ? :-) ).
+
+Hopefully with the example entries listed above you get the idea.
+
+### Request for one-liners:
 
 For one-liners please keep the file one line if at all possible! If it needs an
 include you can update the Makefile `CINCLUDE` variable. For instance if it
@@ -88,8 +113,8 @@ If you make changes PLEASE TRY and keep the source code layout as close to the
 original as possible. This might not always be possible and if you have an
 editor that does formatting it can cause problems. Sometimes formatters can even
 break code! [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) has
-experienced this many times so he tends to disable all format options when
-formatting code.
+experienced this many times with vim so he tends to disable all format options
+when formatting code.
 
 
 
@@ -950,6 +975,19 @@ but this is expected and the file `ioccc.html` will be generated properly.
 
 # 2019
 
+## [2019/ciura](2019/ciura/prog.c) ([README.md](2019/ciura/README.md))
+## STATUS: known bug - please help us fix
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the scripts so
+that the locale is correct (or at least correct for the commands to be run
+without error, notwithstanding English which isn't a problem) but he notes that
+under both macOS and fedora linux the alternative language scripts don't report
+anything. This happened before and after the fix to the scripts.
+
+Maybe it's the locale or maybe it's the dictionary files but it appears that
+they did work for some. If you can identify the problem we would appreciate the
+help!
+
 
 ## [2019/endoh](2019/endoh/prog.c) ([README.md](2019/endoh/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
@@ -973,3 +1011,10 @@ things that are misinterpreted as bugs. See his
 # 2022
 
 These years did not have an IOCCC entry.
+
+# Final words
+
+We hope this document was of use to you in determining which entries are known
+to have a problem, what entries are known to have features that are not bugs and
+so on. We also thank you for going through this document and, if you propose any
+fixes via a pull request or otherwise, we thank you as well for the help!
