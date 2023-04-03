@@ -16,8 +16,10 @@ void but it was used in a `||` expression. Thus the comma operator was needed.
 Cody also changed the entry to use `fgets()` instead of `gets()` to make it
 safe for lines greater than 231 in length. Note that this now prints a newline
 after the output but this seems like a worthy compromise for making it safer
-(fixing it is more problematic than it is worth). Thank you Cody for your
-assistance!
+(fixing it is more problematic than it is worth).  A subtlety about this fix: if
+a line is greater than 231 in length if the program chooses that line it might
+print the first 231 characters or it might print (up to) the next 231 characters
+and so on. Thank you Cody for your assistance!
 
 
 ## To run:
