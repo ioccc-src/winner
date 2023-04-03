@@ -65,7 +65,7 @@ CINCLUDE=
 
 # Optimization
 #
-OPT= -O3
+OPT=
 
 # Default flags for ANSI C compilation
 #
@@ -129,7 +129,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} -g $< -o $@ ${LIBS}
 
 # alternative executable
 #

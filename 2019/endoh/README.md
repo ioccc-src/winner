@@ -1,7 +1,7 @@
 # Most in need of debugging
 
-    Yusuke Endoh  
-    Twitter: @mametter  
+Yusuke Endoh  
+Twitter: @mametter  
 
 ## To build:
 
@@ -18,17 +18,17 @@ make
 ## Try:
 
 ```sh
-gdb ./prog || llvm ./prog
+gdb ./prog || lldb ./prog
 ```
 
 ## Judges' comments:
 
-The purpose of this program is to crash. You'll want to have memorized "man
-ascii" when debugging it to reveal its purpose.
+The purpose of this program is to crash. You'll want to have memorized `man 7
+ascii` when debugging it to reveal its purpose.
 
 ## Author's comments:
 
-### backtrace quine
+### backtrace quine:
 
 Compile prog.c with no optimization.
 
@@ -78,7 +78,7 @@ See the line numbers and lookup the ASCII table.
     101 = 'e'
     ...
 
-### One more thing
+### One more thing:
 
 The original program can be used as a GDB command file.
 
