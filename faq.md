@@ -148,6 +148,12 @@ brew install sdl2 sdl12-compat
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
+## Q: How did entry XYZZY win? It breaks rule 2!
+
+As entries have been fixed it is entirely possible that some of the entries no
+longer fit within the year's size restrictions. For the original version see the
+[/archive](/archive) directory where you can find all the original winning
+entries.
 
 ## Q: I found a bug in a previous winner, what should I do?
 
