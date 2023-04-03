@@ -14,7 +14,10 @@ USA
 compile and work with modern compilers. The problem was that `srand()` returns
 void but it was used in a `||` expression. Thus the comma operator was needed.
 Cody also changed the entry to use `fgets()` instead of `gets()` to make it
-safe for lines greater than 231 in length. Thank you Cody for your assistance!
+safe for lines greater than 231 in length. Note that this now prints a newline
+after the output but this seems like a worthy compromise for making it safer
+(fixing it is more problematic than it is worth). Thank you Cody for your
+assistance!
 
 
 ## To run:

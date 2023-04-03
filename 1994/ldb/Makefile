@@ -132,7 +132,6 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: this entry uses gets() so you might get a warning compiling and/or running this."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
