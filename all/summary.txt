@@ -136,7 +136,7 @@
 1996 schweikh3	Determins the memory allocation honesty of the OS
 1996 westley	Shows the time on clock with a configurable face and style
 
-# There is no 1997 IOCCC contest
+# There was no IOCCC in 1997.
 
 1998 banks	A flight simulator!
 1998 bas1	Outputs a gziped 3D beam maze in Postscript
@@ -153,7 +153,7 @@
 1998 schweikh3	Finds duplicate files that waste disk space
 1998 tomtorfs	CRC generator
 
-# There is no 1999 IOCCC contest
+# There was no IOCCC in 1999.
 
 2000 anderson	ASCII to semaphore code convertor
 2000 bellard	Prints M6972593 (2^6972593-1) by Modular Fast Fourier Transform
@@ -186,9 +186,9 @@
 2001 westley	Sorts/scrambles, outputs as text/punch-cards
 2001 williams	Plays X-based missile command
 
-# There is no 2002 IOCCC contest
+# There was no IOCCC in 2002.
 
-# There is no 2003 IOCCC contest
+# There was no IOCCC in 2003.
 
 2004 anonymous	Rendering of a stroked font
 2004 arachnid	Curses maze displayer/navigator with only line-of-sight visibility
@@ -237,13 +237,13 @@
 2006 toledo2	An 8080 emulator
 2006 toledo3	An X11 chess game
 
-# There is no 2007 IOCCC contest
+# There was no IOCCC in 2007.
 
-# There is no 2008 IOCCC contest
+# There was no IOCCC in 2008.
 
-# There is no 2009 IOCCC contest
+# There was no IOCCC in 2009.
 
-# There is no 2010 IOCCC contest
+# There was no IOCCC in 2010.
 
 2011 akari	Downsampler with 3 embeded programs
 2011 blakely	Life/reverse life
@@ -318,9 +318,9 @@
 2015 schweikhardt	Collatz bignum computation
 2015 yang	text encoder with sea star pattern, varies with C flavor
 
-# There is no 2016 IOCCC contest
+# There was no IOCCC in 2016.
 
-# There is no 2017 IOCCC contest
+# There was no IOCCC in 2017.
 
 2018 algmyr	Converts text to sound using font as spectrogram
 2018 anderson	Visualizer of typographic rivers
@@ -368,3 +368,7 @@
 2020 otterness	MIDI improver
 2020 tsoj	Asteroids
 2020 yang	PIN-protected program generator
+
+# There was no IOCCC in 2021.
+
+# There was no IOCCC in 2022.
