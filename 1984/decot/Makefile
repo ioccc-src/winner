@@ -63,7 +63,7 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE=
+CINCLUDE= -include stdio.h -include math.h
 
 # Optimization
 #
@@ -75,7 +75,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LIBS= -lm
 
 # C compiler to use
 #
@@ -114,12 +114,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
-
-# FORCE use of -traditional-cpp
-#
-CFLAGS+= -traditional-cpp
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -134,7 +130,6 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: this entry requires a compiler that supports -traditional-cpp."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable

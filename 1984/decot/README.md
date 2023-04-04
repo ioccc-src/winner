@@ -6,32 +6,62 @@ Dave Decot
 
         make all
 
-[Yusuke Endoh](/winners.html#Yusuke_Endoh) supplied a patch so that this
-entry would compile with gcc. Thank you Yusuke!
-
-NOTE: this entry requires a compiler that supports `-traditional-cpp`. Note that
-clang does not support it and in macOS gcc is actually clang so this will not
-compile with the default compiler in macOS.
+Originally [Yusuke Endoh](/winners.html#Yusuke_Endoh) supplied a patch so that
+this entry would compile with gcc - but not clang - or at least some versions.
+Thank you Yusuke!  [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson)
+noticed this did not work under fedora linux and it definitely didn't work with
+macOS as it requires a compiler that supports `-traditional-cpp` which clang
+does not. Clang also requires that the second and third arguments to main be a
+`char **`. Cody fixed both problems and now it works under both macOS and linux
+- clang and gcc. Thank you Cody for your assistance!
 
 ## To run:
 
-	./decot
+```sh
+./decot
+```
+
+### Alternative code:
+
+The alternative code, [decot.alt.c](decot.alt.c), is the fix that Cody made to
+the version that does require `-traditional-cpp` and still runs afoul with
+clang's requirement for the second and third arguments to main() being a `char
+**` (the fixed version's main() only has one arg, an int). It is a minor fix to
+Yusuke's fix. Thank you Yusuke and Cody!
+
+To try this version:
+
+```sh
+make alt
+./decot.alt
+```
+
 
 ## Judges' comments:
-
-
-Some new (in 1984) compilers disliked line 15 of the source, so we changed it
-from:
-
-	for(signal=0;*k * x * __FILE__ *i;) do {
-
-to:
-
-	for(signal=0;*k *x * __FILE__ *i;) do {
 
 This program prints out a string of garbage.
 
 The judges also offer this one comment: understand comments!
+
+### Historical comments:
+
+Some new (in 1984) compilers disliked line 15 of the original source, so we changed it
+from:
+
+```c
+for(signal=0;*k * x * __FILE__ *i;) do {
+```
+
+to:
+
+```c
+for(signal=0;*k *x * __FILE__ *i;) do {
+```
+
+
+To see what we mean look at the source file in the
+[archive/archive-1984.tar.bz2](/archive-1984.tar.bz2) tarball or
+[decot.alt.c](decot.alt.c).
 
 ## Author's comments:
 
