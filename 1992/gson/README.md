@@ -14,16 +14,19 @@
 
 	./ag word word2 word3 < /path/to/dictionary
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this entry to not
-use gets(). Previously it had a buffer size of 256 which could easily overflow.
-Now in this entry `gets()` is used in a more complicated way (first `m` is set
-to `*++p` in a for loop where `p` is argv and then later `m` is set to point to
-`h` which is of size 256) and trying to change it to use fgets() proved more a
-problem. Since the input must come from the command line Cody changed the buffer
-size to `ARG_MAX+1` which should be enough especially since the command expects
-redirecting a dictionary file as part of the command line. This also makes it
-possible for longer strings to be read (in case the `gets()` was not used in a
-loop). Thank you Cody for your assistance!
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) changed the buffer size
+in such a way that gets() should be safe (theoretically) as it comes from the
+command line.  Ideally `fgets()` would be used but this is a more problematic.
+Previously it had a buffer size of 256 which could easily overflow.  Now in this
+entry `gets()` is used in a more complicated way.  First `m` is set to `*++p` in
+a for loop where `p` is argv and then later `m` is set to point to `h` which is
+of size 256. `gets()` is called as `m = gets(m)`) but trying to change it to use
+fgets() proved more a problem. Since the input must come from the command line
+Cody changed the buffer size to `ARG_MAX+1` which should be enough (again
+theoretically) especially since the command expects redirecting a dictionary
+file as part of the command line. This also makes it possible for longer strings
+to be read (in case the `gets()` was not used in a loop). Thank you Cody for
+your assistance!
 
 
 ## Judges' comment:
