@@ -10,7 +10,7 @@ Originally [Yusuke Endoh](/winners.html#Yusuke_Endoh) supplied a patch so that
 this entry would compile with gcc - but not clang - or at least some versions.
 Thank you Yusuke!  [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson)
 noticed this did not work under fedora linux and it definitely didn't work with
-macOS as it requires a compiler that supports `-traditional-cpp` which clang
+macOS as it required a compiler that supports `-traditional-cpp` which clang
 does not. Clang also requires that the second and third arguments to main be a
 `char **`. Cody fixed both problems and now it works under both macOS and linux
 - clang and gcc. Thank you Cody for your assistance!
