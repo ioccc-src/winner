@@ -298,10 +298,15 @@ the judges and shouldn't be fixed.
 ## [1986/hague](1986/hague/hague.c) ([README.md](1986/hague/README.md))
 ## STATUS: uses gets() - change to fgets() if possible
 
-This entry uses `gets()` which is unsafe. In particular the buffer size is 81.
-`gets()` does not store the `'\n'` but it does store the `'\0'`.
+This entry uses `gets()` which is unsafe. In particular the buffer size is a
+mere 81 and it does not read a single string at command invocation but instead
+until the program is terminated. This size can be increased to start out but it
+would be better if it used `fgets()`. This will be addressed in time but is
+noted here as a reminder.
 
-The latter fact
+The way this entry is formed has made it not as simple as some of the others
+that have been addressed.
+
 
 ## [1986/holloway](1986/holloway/holloway.c) ([README.md](1986/holloway/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
