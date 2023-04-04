@@ -4,7 +4,9 @@ Ed Lycklama
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work with
@@ -13,21 +15,36 @@ get this to work on modern systems Cody changed the `#o` lines to `#define`. The
 `lycklama.alt.c` is the original source code as it provides some fun input for
 the entry.
 
-## To run:
-
-	./lycklama < some_file
-
 ## Try:
 
 
-	./lycklama < lycklama.c
+```sh
+./lycklama < lycklama.c
 
-	# notice the difference between the above and this one:
-	./lycklama < lycklama.alt.c
+# notice the difference between the above and this one:
+./lycklama < lycklama.alt.c
 
-	./lycklama < README.md
+./lycklama < README.md
 
-	./lycklama < Makefile
+./lycklama < Makefile
+```
+
+### Alternative code:
+
+If you have an older compiler that lets you define some object to define and
+then use it in place of `#define` you can run:
+
+```sh
+make alt
+```
+
+Use `./lylycklama.alt` as you would `./lycklama` above.
+
+## To run:
+
+```sh
+./lycklama < some_file
+```
 
 
 ## Judges' comments:
