@@ -245,19 +245,6 @@ this in the [README.md](1984/anonymous/README.md) file. Can you fix this? We
 welcome your help!
 
 
-## [1984/decot](1984/decot/decot.c) ([README.md](1984/decot/README.md))
-## STATUS: requires a compiler supporting `-traditional-cpp` - alternate code requested
-
-This entry needs a compiler that support `-traditional-cpp`. `gcc`
-supports this but `clang` does not. Please be advised that `gcc` under macOS is
-actually gcc if it looks like it's gcc (two different binaries).
-
-If you do wish to provide an alternate version of the program that does not need
-compiler supporting `-traditional-cpp` you are welcome to submit such code via a [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls) and we will be happy to credit you in the entry's _README.md_ file.
-
-
-# 1984
-
 
 # 1985
 
