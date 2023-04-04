@@ -13,10 +13,10 @@ make all
 ```
 
 We used a patch provided by [Yusuke Endoh](/winners.html#Yusuke_Endoh) to make
-this work with gcc. Thank you Yusuke! [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this so that it does not
-require `-traditional-cpp`. This took a fair bit of tinkering as this entry *is*
-strange. Thank you Cody for your assistance!
+this work with gcc (in particular the patch uses `strdup()` on two strings).
+Thank you Yusuke! [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed
+this so that it does not require `-traditional-cpp`. This took a fair bit of
+tinkering as this entry *is* strange. Thank you Cody for your assistance!
 
 ## To use:
 
