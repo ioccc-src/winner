@@ -8,17 +8,37 @@ US of A
 
 ## To build:
 
-        make all
-
+```sh
+make all
+```
 
 We used a patch provided by [Yusuke Endoh](/winners.html#Yusuke_Endoh) to make
-this work with gcc. Thank you Yusuke!
+this work with gcc (in particular the patch uses `strdup()` on two strings).
+Thank you Yusuke! [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed
+this so that it does not require `-traditional-cpp`. This took a fair bit of
+tinkering as this entry *is* strange. Thank you Cody for your assistance!
 
-NOTE: On modern systems this entry requires the option `-traditional-cpp` which
-clang does not support. Please be advised that gcc under macOS is actually
-clang so this will not compile with the default gcc under macOS. As this entry
-stood in modern systems it did not work even when compiled.
+## To use:
 
+```sh
+./wall
+```
+
+### Alternative code:
+
+If you have an old compiler or a compiler that supports `-traditional-cpp` you
+might enjoy looking at the original source (after patch by Yusuke applied) in
+[wall.alt.c](wall.alt.c). To build:
+
+```sh
+# if you have an old enough compiler:
+make alt
+
+# or with gcc:
+make CFLAGS+="-traditional-cpp" alt
+```
+
+Use `./wall.alt` as you would `./wall`.
 
 ## Judges' comments:
 

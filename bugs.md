@@ -322,15 +322,7 @@ holloway.c:34:1: warning: control reaches end of non-void function [-Wreturn-typ
 
 ```
 
-
-
-
-## [1986/wall/wall.c](1986/wall/wall.c) ([README.md](1986/wall/README.md))
-## STATUS: Requires a compiler supporting `-traditional-cpp` - alternate code requested
-
-This entry needs a compiler that support `-traditional-cpp`. `gcc`
-supports this but `clang` does not. Please be advised that `gcc` under macOS is
-actually gcc if it looks like it's gcc (two different binaries).
+or any others.
 
 
 # 1987
