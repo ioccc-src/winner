@@ -68,7 +68,7 @@ CINCLUDE=
 
 # Optimization
 #
-OPT= -O3
+OPT= 
 
 # Default flags for ANSI C compilation
 #
@@ -120,6 +120,10 @@ TARGET= ${PROG}
 ALT_OBJ=
 ALT_TARGET=
 
+############################
+# FORCE no -O level        #
+# ##########################
+COPT+= -O0
 
 #################
 # build the entry
@@ -134,6 +138,11 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${LN} -sf ${PROG} tbfs
+
+test: prog
+	${CAT} prog.c | ./prog
+
 
 # alternative executable
 #
