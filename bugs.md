@@ -233,18 +233,6 @@ contact the author (unless you are the author! :-) ).
 
 # 1984
 
-## [1984/anonymous](1984/anonymous/anonymous.c) ([README.md](1984/anonymous/README.md))
-## STATUS: doesn't work with some platforms - please help us fix
-
-
-Although this works under linux it does not work under macOS: it prints nothing,
-exiting 0.
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added some notes about
-this in the [README.md](1984/anonymous/README.md) file. Can you fix this? We
-welcome your help!
-
-
 
 # 1985
 
