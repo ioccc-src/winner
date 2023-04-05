@@ -1,5 +1,8 @@
 main(/*/,('\b'*'\b'>=_|_>'\t'*'\n')
-char **('\b'*'\b'>=_|_>'\t'*'\n') (in the /*/ manual)
+char **('\b'*'\b'>=_|_>'\t'*'\n')
+* C program. (If you don't
+* understand it look it
+* up.) (In the /*/ /*C*/ manual)
 {
 	char _,__; 
 	while (read(0,&__,1) & write((_=(_=~' '&__,/*/)),
