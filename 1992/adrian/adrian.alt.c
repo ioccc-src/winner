@@ -8,6 +8,7 @@
 int W ,head;
 #define S(W,b,f) strncpy(W,b,f),W[f]=0\
 
+  
 char *wcs=" \t\n";
 struct{ char X[z+1]; 
         char f ;
@@ -104,7 +105,7 @@ while( s = strtok(0,wcs)) {
                   < 10 && printf((W,Y)); }
    if(j+28) { {
                 ; } printf("%7u%7u%7u\n", wcl , wcw , wcc); }
-   while( fgets(Y,998,stdin) ){ Y[strlen(Y)-1]='\0'; if(A(Y)) puts(Y); }
+   while( gets(Y) ) if(A(Y)) puts(Y);
    W, jr; }
 
 O(int wc,char**V) {

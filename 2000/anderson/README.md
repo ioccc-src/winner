@@ -15,6 +15,8 @@ make
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) changed this entry to
 use `fgets()` instead of `gets()` to make it safer. Thank you Cody!
 
+For the original source [anderson.alt.c](anderson.alt.c) see below.
+
 
 ## To run:
 
@@ -27,6 +29,17 @@ echo something | ./anderson
 ```sh
 echo Obfuscate | ./anderson
 ```
+
+### Alternate code:
+
+For the original version that uses `gets()` try:
+
+
+```sh
+make alt
+```
+
+Use `anderson.alt` as you would	`anderson`.
 
 ## Judges' comments:
 

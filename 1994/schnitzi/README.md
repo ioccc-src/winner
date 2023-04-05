@@ -8,11 +8,15 @@ USA
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./schnitzi < textfile
+```sh
+./schnitzi < textfile
+```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) increased the buffer
 size from 100 to 10000. Changing it to use `fgets()` instead of `gets()` is more
@@ -21,17 +25,30 @@ results in compiler errors and not only that but the gets() is still there in
 the generated output. Even changing the buffer size can result in compilation
 errors if not done correctly. The generated output also does not have a changed
 buffer size. Changing it to use fgets() can happen later, maybe, but bigger
-files can now be parsed by the original code. An example is this Makefile. Cody
+files can now be parsed by the original code. An example is the Makefile. Cody
 gave some tips on how this entry works, in order to make the entry use fgets()
 and compile successfully too, in the [bugs.md](/bugs.md) file. Thank you Cody!
+
+For the original source file [schnitzi.alt.c](schnitzi.alt.c) see below.
 
 
 ## Try:
 
-	./schnitzi < /etc/motd
-	./schnitzi < /etc/passwd
+```sh
+./schnitzi < /etc/motd
+./schnitzi < /etc/passwd
+```
 
 
+### Alternate code:
+
+For the original version with a smaller buffer try:
+
+```sh
+make alt
+```
+
+Use `schnitzi.alt` as you would `schnitzi`.
 
 ## Judges' comments:
 
