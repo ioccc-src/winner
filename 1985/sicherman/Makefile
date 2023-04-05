@@ -61,7 +61,7 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE=
+CINCLUDE= -include unistd.h
 
 # Optimization
 #
@@ -111,12 +111,9 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
-# FORCE use of -traditional-cpp
-#
-CFLAGS+= -traditional-cpp
 
 #################
 # build the entry
@@ -130,13 +127,12 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: NOTE: this entry requires a compiler that supports -traditional-cpp."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
 #
-alt: data ${ALT_TARGET}
-	@${TRUE}
+alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} -traditional-cpp $< -o $@ ${LIBS}
 
 # data files
 #
