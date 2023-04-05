@@ -4,13 +4,35 @@ Col. G. L. Sicherman
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
-NOTE: This entry requires a compiler that support `-traditional-cpp`.
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this very twisted
+entry to not require `-traditional-cpp`. He'd like to refer you to the original
+file in [sicherman.alt.c](sicherman.alt.c) and he suggests that you then compare
+it to [sicherman.c](sicherman.c) for some good old C-fashioned fun! Thank you
+Cody for your assistance!
 
 ## Try:
 
-	./sicherman  < sicherman.c
+```sh
+./sicherman  < sicherman.c
+
+echo IOCCC | ./sicherman
+```
+
+### Alternate code:
+
+If you do have a compiler that supports `-traditional-cpp` you may compile the
+original like:
+
+```sh
+make alt
+```
+
+Use `sicherman.alt` as you would `sicherman`.
 
 ## Judges' comments:
 

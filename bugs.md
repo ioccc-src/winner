@@ -247,19 +247,6 @@ continues to run.
 We have not had a chance to try and fix this yet.
 
 
-## [1985/sicherman](1985/sicherman/sicherman.c) ([README.md](1985/sicherman/README.md))
-## STATUS: Requires a compiler supporting `-traditional-cpp` - alternate code requested
-
-This entry needs a compiler that support `-traditional-cpp`. `gcc`
-supports this but `clang` does not. Please be advised that `gcc` under macOS is
-actually gcc if it looks like it's gcc (two different binaries).
-
-If you do wish to provide an alternate version of the program that does not need
-compiler supporting we welcome you to summit such code via a
-[GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls) and we
-will be happy to credit you in the entry's _README.md_ file.
-
-
 # 1986
 
 
