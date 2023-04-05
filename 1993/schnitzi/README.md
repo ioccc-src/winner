@@ -10,7 +10,7 @@
         make all
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to not
-segfault when no file is specified or the file cannot be opened for reading. he
+segfault when no file is specified or the file cannot be opened for reading. He
 also made this use `fgets()` not `gets()` to make it safer. Thank you Cody for
 your assistance!
 

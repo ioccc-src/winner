@@ -8,32 +8,43 @@
 
 ## To build:
 
-	make all
+```sh
+make all
+```
 
 ## To run
 
-    ./cmills [starting_cash]
+```sh
+./cmills [starting_cash]
+```
 
 We used a patch from [Yusuke Endoh](/winners.html#Yusuke_Endoh) to get this to
 work in modern systems (it resulted in a bus error otherwise). Thank you Yusuke
 for your assistance!
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made the program safer
-by using `fgets()` instead of `gets()`. Thank you Cody for your help in making
-this safer! For the original code you can change the instances of:
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made this safer by
+using `fgets()` instead of `gets()`. Thank you Cody!
 
-
-    !fgets(l,M,stdin)
-
-to:
-
-    !gets(l)
+The original bug fixed version is in [cmills.alt.c](cmills.alt.c), described in
+the `Alternate code` section.
 
 
 ## Try:
 
-    ./cmills 5000
+```sh
+./cmills 5000
+```
 
+### Alternate code:
+
+For the original version that uses `gets()` try:
+
+
+```sh
+make alt
+```
+
+Use `cmills.alt` as you would `cmills`.
 
 ## Judges' comments:
 

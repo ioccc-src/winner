@@ -8,7 +8,9 @@
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) changed the location
@@ -23,15 +25,34 @@ macro definition! Thus the code now first trims off the last character of the
 buffer read to get the same correct functionality but in a safe way. Thank you
 Cody for your assistance!
 
-
+For the original version [adrian.alt.c](adrian.alt.c) see the `Alternate code` section below.
 
 ## Try:
 
-	./adrian adrian.grep.try < README.md
+```sh
+./adrian adrian.grep.try < README.md
+```
 
 For the slow minded, try:
 
-	./adsleep 32767
+```sh
+./adsleep 32767
+```
+
+NOTE: if you do not specify an arg to the program it will segfault.
+
+### Alternate code:
+
+For the original version that uses `gets()` try:
+
+
+```sh
+make alt
+```
+
+Use `adrian.alt` as you would `adrian`.
+
+
 
 ## Judges' comments:
     

@@ -8,7 +8,9 @@ USA
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this so it would
 compile and work with modern compilers. The problem was that `srand()` returns
@@ -21,21 +23,38 @@ a line is greater than 231 in length if the program chooses that line it might
 print the first 231 characters or it might print (up to) the next 231 characters
 and so on. Thank you Cody for your assistance!
 
+For the original fixed version [ldb.alt.c](ldb.alt.c) see below.
+
 
 ## To run:
 
-	./ldb < file
+```sh
+./ldb < file
 
-	some_command | ./ldb
+some_command | ./ldb
+```
 
 
 ## Try:
 
-	./ldb < /etc/passwd
+```sh
+./ldb < /etc/passwd
 
-	printf "The International Obfuscated C Code Contest\n
-		Best One-liner\n
-		by Laurion Burchall" | ./ldb
+printf "The International Obfuscated C Code Contest\n
+	Best One-liner\n
+	by Laurion Burchall" | ./ldb
+```
+
+### Alternate code:
+
+For the original version fixed so that it will compile with modern compiles,
+try:
+
+```sh
+make alt
+```
+
+Use `ldb.alt` as you would `ldb`.
 
 ## Judges' comments:
 
