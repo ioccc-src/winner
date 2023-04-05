@@ -115,10 +115,6 @@ TARGET= ${PROG}
 ALT_OBJ=
 ALT_TARGET=
 
-# FORCE use of -traditional-cpp
-#
-CFLAGS+= -traditional-cpp
-
 #################
 # build the entry
 #################
@@ -131,7 +127,6 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: this entry requires a compiler that supports -traditional-cpp."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
