@@ -347,14 +347,6 @@ so maybe he's doing something wrong.
 # 1988
 
 
-## [1988/dale](1988/dale/dale.c) ([README.md](1988/dale/README.md))
-## STATUS: Requires a compiler supporting `-traditional-cpp` - alternate code requested
-
-This entry needs a compiler that support `-traditional-cpp`. `gcc`
-supports this but `clang` does not. Please be advised that `gcc` under macOS is
-actually gcc if it looks like it's gcc (two different binaries).
-
-
 # 1989
 
 ## [1989/robison](1989/robison/robison.c) ([README.md](1989/robison/README.md))

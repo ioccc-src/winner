@@ -117,7 +117,7 @@ ALT_TARGET=
 
 # FORCE use of -traditional-cpp
 #
-CFLAGS+= -traditional-cpp
+#CFLAGS+= -traditional-cpp
 
 #################
 # build the entry
