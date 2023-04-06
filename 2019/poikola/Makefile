@@ -119,7 +119,7 @@ TARGET= ${PROG}
 ALT_OBJ=
 ALT_TARGET=
 
-
+DOCS= poikola.tex
 #################
 # build the entry
 #################
@@ -143,6 +143,9 @@ alt: data ${ALT_TARGET}
 #
 data: ${DATA}
 	@${TRUE}
+
+docs: ${DOCS}
+	pdflatex ${DOCS}
 
 # both all and alt
 #
