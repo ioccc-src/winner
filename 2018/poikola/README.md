@@ -1,7 +1,9 @@
 # Most stellar
 
-    Timo Poikola <ioccc2018@ig.fi>  
-    <https://ig.fi/>  
+Timo Poikola <ioccc2018@ig.fi>  
+<https://ig.fi/>  
+<https://ig.fi/other/ioccc>  
+Twitter: @timpoiko  
 
 ## To build:
 
@@ -89,7 +91,7 @@ This entry has partial support for terminals with a white background but the
 best viewing experience is achieved when the terminal in use supports 24-bit
 colors, has a black background and the size is at least 125x38.
 
-Special note for Mac users: __Terminal__ does not work as expected you might
+Special note for Mac users: __Terminal__ does not work as expected; you might
 need xterm from XQuartz or some other working terminal. Thanks to [Dave
 Burton](/winners.html#Dave_Burton) for spotting this problem.
 
@@ -100,7 +102,7 @@ with _-std=c11_.
 The program was developed with little-endian machines; I tried to support
 big-endian too, but this support is somewhat limited.
 
-This program has been compiled in
+This program has been compiled with:
 
 1. i386 (Debian Stretch) with gcc and clang
 2. amd64 (Debian Buster) with gcc and clang
