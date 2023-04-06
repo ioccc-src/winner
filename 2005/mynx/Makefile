@@ -111,7 +111,7 @@ ENTRY= mynx
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA= configure configure.in entities.txt makefile.in
+DATA= source/configure source/configure.in entities.txt source/makefile.in
 TARGET= ${PROG}
 #
 ALT_OBJ=
