@@ -17,6 +17,12 @@ cat prog.c | ./prog           # Printing garbage might break your font
 ./prog -d 2 0 out.raw         # Decode the first (0th) channel out of two
 ```
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made this entry not
+crash when a file cannot be opened. The original file, kept for the wonderful
+format, is in [prog.alt.c](prog.alt.c). See below for details. Thank you Cody
+for your assistance!
+
+
 ## Try:
 
 ```sh
@@ -25,14 +31,28 @@ cat prog.c | ./prog           # Printing garbage might break your font
 # Who needs cat?
 ./prog prog.c | ./prog -d 1 0
 
-# Assuming ALSA
+# Assuming ALSA:
 echo '<<<<<<  /\_/\_/\  _-_-_-_  !!!!!  :.:.:.:  >>>>>> ****** ~~~~~~~' |
     ./prog | aplay -c1 -fFLOAT_LE -r44100
 
-# Assuming sox
+# Assuming sox:
 echo -n ' MENE MENE TEKEL UPHARSIN ' | ./prog | 
     sox -t raw -c 1 -r 44100 -L -e floating-point -b 32 - -n spectrogram -d 10 -X 300
+
+# now open spectrogram.png with a graphics viewer or editor
 ```
+
+### Alternate code:
+
+The original source which will crash if a file cannot be opened but which also
+has a nicer layout can be found in [prog.alt.c](prog.alt.c). Try:
+
+
+```sh
+make alt
+```
+
+Use `prog.alt` as you would `prog`.
 
 ## Judges' comments:
 

@@ -59,7 +59,7 @@ char*G=
    44100     ;p=25; e=    55;c=256; t=75; r=q>1?v[1][0]*c+v[1][1]:0; a=7;l=16;if(r    ==11620){d     (atoi
   (v[2]),   atoi(v[3]),  q<5?stdin:fopen(v[4],"r")); return 0; } char*H=malloc(c),*  h=H; sprintf   (H,"\0"
  "Usage\n"  "    %s [-"  "h] [-d #c cid] file1 file2 ... (or stdin)"+(q-1&&r==11624  ),v[0]);if(*  H)q=1;int
- w=2>q?1:q-1;FILE**f=M FILE*)*w);f[0]=stdin;if(q>1)for(r=0;r<w;(((f[r]=fopen(v[r+1],"r"))||(exit(1),1))),++r); int l=s/t
+ w=2>q?1:q -1; FILE**f=M FILE*)*w); f[0]=stdin; if(q>1)for(r=0; r<w; f[r]=fopen(v[r +1],"r"),++r); int l=s/t
  *w; float *b=M float)*l ),*t=b+l; int*i=M int)*w); for(; ; ){ int x=*h&&1>ungetc(* H++,*f); for(r =w; r--;)
 { i[r]=getc (f[r]); if(i[r]<0)i[r]=!++x; } if(x==w)break; while(++r<6){ while(C(b++,t,w,F(*i++,r< 5,r))); i-=
 w; fwrite(b-=w,sizeof(float),l,stdout); } fflush(stdout); } while(fclose(f[--w]),w); E f); E b); E i); E h);}
