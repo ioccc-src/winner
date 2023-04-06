@@ -28,20 +28,20 @@ make
 # For those not knowing Russian, just to see how the UTF-8 characters are handled
 ```
 
-*Performance depends on the number of same hashes found.
-Too many identical strings if the context length is small.
--- Author*
+> Performance depends on the number of same hashes found.
+> Too many identical strings if the context length is small.
+> -- Author
 
 ## Judges' comments:
 
-We were able to write our own program performing the same trick
-using the (still non-standard, for some reason) library function `memmem`,
-but that way it works too fast regardless of the context length, and it's much less fun.
+We were able to write our own program performing the same trick using the (still
+non-standard, for some reason) library function `memmem()`, but that way it
+works too fast regardless of the context length, and it's much less fun.
 
-*Wow, amazing! Very fast, but there is a drawback to randomness.
-If some string only appears after half the input, the first instance
-of this string will have a 50% chance of occurrence.
-Example:*
+> Wow, amazing! Very fast, but there is a drawback to randomness.
+> If some string only appears after half the input, the first instance
+> of this string will have a 50% chance of occurrence.
+> Example:
 
 ```
 echo "00000000000000000000 01 02 02 02 02 02 02" > test.txt
@@ -51,21 +51,31 @@ echo "00000000000000000000 01 02 02 02 02 02 02" > test.txt
 # more ones in output
 ```
 
-*But this will happen very rarely on real data.
--- Author*
+> But this will happen very rarely on real data.
+> -- Author
 
 Try using the same random seed and varying the context size.
 
+BTW: what on Middle-earth is `lámatyávë`? It's Quenya, one of the languages of
+the Elves in Tolkien's Legendarium. It means sound taste (plural is lámatyáver)
+and it refers to phonaesthesia - the pleasure of sound and form of words. It's
+discussed in [Morgoth's Ring](https://en.wikipedia.org/wiki/Morgoth%27s_Ring),
+volume X of [History of Middle-earth
+(HoMe)](https://en.wikipedia.org/wiki/The_History_of_Middle-earth). Now can you
+appreciate the award title a bit better?
+
 ## Author's comments:
-### Building
+
+### Building:
 
 ```sh
 cc prog.c -o prog
 ```
 
-### Usage
+### Usage:
 
-This program generates random text from the provided dictionary using a Markov chain, outputs to `stdout`.
+This program generates random text from the provided dictionary using a Markov
+chain, outputs to `stdout`.
 
 ```sh
 ./prog input.txt 2000 10 12345
@@ -74,18 +84,27 @@ This program generates random text from the provided dictionary using a Markov c
 Parameters are:
 
 1. dictionary filename
-Need at least the size of the book, the more the better (1Mb), you can concatenate several books into one file. This should be a text file (not `.doc`/`.pdf`). You can feed with books in `.fb2` format, metadata is filtered. Whitespace characters is also filtered. For languages other than English, it's better to use ANSI encoding. You can use UTF, but you need to increase chain length (if one ANSI character is encoded as two UTF bytes, then multiply chain length by two).
+    Need at least the size of the book, the more the better (1Mb), you can
+    concatenate several books into one file. This should be a text file (not
+    `.doc`/`.pdf`). You can feed with books in `.fb2` format, metadata is
+    filtered.  Whitespace characters are also filtered. For languages other than
+    English, it's better to use ANSI encoding. You can use UTF, but you need to
+    increase chain length (if one ANSI character is encoded as two UTF bytes,
+    then multiply chain length by two).
 
-2. bytes to generate (limited at 1Mb)
+2. bytes to generate (limited to 1Mb)
 
 3. chain length
-Randomness and performance depend inversely on this parameter and the size of the dictionary. If you feel that bytes are generated too slowly, then you need to increase the length of the chain. This length means that any part of the output of this size in bytes exists somewhere in the dictionary.
+    Randomness and performance depend inversely on this parameter and the size
+    of the dictionary. If you feel that bytes are generated too slowly, then you
+    need to increase the length of the chain. This length means that any part of
+    the output of this size in bytes exists somewhere in the dictionary.
 
 4. random seed
 
 ### Example
 
-You can try this with the inputs provided with `2019/mills` from the IOCCC winners.
+You can try this with the inputs provided with [2019/mills](/2019/mills/prog.c) from the IOCCC winners.
 
 
 ```sh
