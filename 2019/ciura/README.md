@@ -1,7 +1,7 @@
 # Most alphabetic
 
-    Marcin Ciura  
-    Twitter: @mciura  
+Marcin Ciura  
+Twitter: @mciura  
 
 ## To build:
 
