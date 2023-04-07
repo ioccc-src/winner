@@ -16,11 +16,7 @@ make
 ./prog arg ...
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made this entry not
-segfault when no arg is specified though he notes that the author says it will
-segfault on zero args. He did NOT fix the strange results when more than one arg
-is specified. Thank you Cody for your assistance!
-
+NOTE: this entry will crash on no arg specified.
 
 ## Try:
 
