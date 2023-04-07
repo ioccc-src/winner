@@ -14,7 +14,8 @@
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for modern
 systems (it did not work at all). He also made it so that if a file fails to
-open it does not return but rather skips the reading of the file.
+open it does not return but rather skips the reading of the file. Doing this
+lets the entry work right.
 
 What was wrong? The call to `freopen()` was incorrect with the second arg (the
 mode) being instead `5+__FILE__`. It now is `"r"`. There was also a call to
