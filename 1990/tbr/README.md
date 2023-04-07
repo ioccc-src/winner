@@ -23,8 +23,9 @@ make all
 modern compilers; `exit(3)` returns void but the function was used in a binary
 expression so this wouldn't even compile. Cody also changed the code to use
 `fgets()` instead of `gets()` so one would not get a warning about the use of
-`gets()` at execution which was interspersed with the output. Thank you Cody for
-your assistance!
+`gets()` at linking time or execution, the latter case causing confusing output
+due to the warning being interspersed with the program's output. Thank you Cody
+for your assistance!
 
 For the original version with `gets()` see the alternate code section below.
 
