@@ -17,11 +17,7 @@ cat prog.c | ./prog           # Printing garbage might break your font
 ./prog -d 2 0 out.raw         # Decode the first (0th) channel out of two
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made this entry not
-crash when a file cannot be opened. The original file, kept for the wonderful
-format, is in [prog.alt.c](prog.alt.c). See below for details. Thank you Cody
-for your assistance!
-
+NOTE: this entry will crash if a file specified cannot be opened.
 
 ## Try:
 
@@ -41,18 +37,6 @@ echo -n ' MENE MENE TEKEL UPHARSIN ' | ./prog |
 
 # now open spectrogram.png with a graphics viewer or editor
 ```
-
-### Alternate code:
-
-The original source which will crash if a file cannot be opened but which also
-has a nicer layout can be found in [prog.alt.c](prog.alt.c). Try:
-
-
-```sh
-make alt
-```
-
-Use `prog.alt` as you would `prog`.
 
 ## Judges' comments:
 
