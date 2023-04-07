@@ -1,7 +1,7 @@
 # Most in need of transparency
 
-    Don Yang  
-    <http://uguu.org/>  
+Don Yang  
+<http://uguu.org/>  
 
 ## To build:
 
@@ -43,16 +43,23 @@ cat e
 cat a b c d e | ./prog
 
 cat a b c d e | ./prog | diff - prog.c
+
+./prog prog.c | ruby prog.c
+
+
+./prog violet.c | ruby prog.c
+
+./prog violet.c | ruby violet.c
 ```
 
 ## Judges' comments:
 
-Do you understand how this program works?
-You may have to go over and over the output again.
+Do you understand how this program works?  You may have to go over and over the
+output again.
 
 ## Author's comments:
 
-### Summary
+### Summary:
 
 Scramble/unscramble to single file:
 
@@ -86,10 +93,10 @@ Scramble slowly:
 
 Input must be in UTF-8 encoding.
 
-### Details
+### Details:
 
-This is a text scrambling utility.  To scramble text, specify input
-file name as the first argument:
+This is a text scrambling utility.  To scramble text, specify input file name as
+the first argument:
 
 ```sh
 ./prog input.txt > output.txt
@@ -107,7 +114,7 @@ output through `strings(1)` and see that most of the original strings
 are gone.  What happened is that the original text has been shuffled
 with ANSI cursor positioning codes inserted such that characters are
 printed in random order.  This effect is more visible if there is a
-delay after each character is printed.  For convenience, an utility is
+delay after each character is printed.  For convenience, a utility is
 included in the source to output characters slowly:
 
 ```sh
@@ -167,9 +174,9 @@ and expanding tabs to 8 spaces.
 ./prog input.txt | ./prog
 ```
 
-### Features
+### Features:
 
-### UTF-8 support
+#### UTF-8 support:
 
 A simple text scrambling utility might not have required a screenful
 of code, but this particular one natively supports UTF-8.
@@ -185,7 +192,7 @@ be possible to unscramble those text back to the original using this
 same utility, since the utility is self-consistent in how cursor
 positions are handled.
 
-$## Error handling
+### Error handling
 
 If any file can not be opened for reading or writing, an error is
 printed to stderr, and the utility will exit with nonzero status.
@@ -196,7 +203,7 @@ If input contains CR-LF end of line sequences, those CRs are silently
 dropped.  In fact, most control codes are silently ignored except line
 feeds (preserved) and tabs (expanded to 8 spaces).
 
-$## Compatibility
+### Compatibility
 
 Verified to work and compiles without warnings on these environments:
 
@@ -206,7 +213,7 @@ Verified to work and compiles without warnings on these environments:
    * clang 5.0.1 on Cygwin
    * gcc 4.8.4 on Linux
 
-$## Full version
+### Full version
 
 I tried really hard to make `prog.c` fit in a 80x25 terminal without
 wrapping.  If I were not constrained by space, I would have made an
@@ -214,8 +221,9 @@ ASCII art out of it.  `violet.c` is that program, and also comes with
 the minor benefit of supporting lines longer than a million columns
 depending on `sizeof(int)`.
 
-Violet is named after "Violet Evergarden", the character who is highly
-skilled in writing letters.
+Violet is named after [Violet
+Evergarden](https://en.wikipedia.org/wiki/Violet_Evergarden) in the story with
+the same name, the character who is highly skilled in writing letters.
 
 ## Copyright and CC BY-SA 4.0 License:
 
