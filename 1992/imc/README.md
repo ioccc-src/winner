@@ -27,8 +27,8 @@ output.
 
 Of course, the source (layout) is self-documenting!  :-)
 
-NOTE: The original winning source assumed that exit returned a value which cause
-problems for some systems where exit returned a void.  The file imc.c has been
+NOTE: The original winning source assumed that exit() returned a value which cause
+problems for some systems where exit() returns a void.  The file [imc.c](imc.c) has been
 modified to avoid this problem.
 
 ## Author's comments
