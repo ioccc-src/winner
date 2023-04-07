@@ -1,8 +1,8 @@
 # Most calendrical
 
-    Timo Poikola  
-    <https://ig.fi/other/ioccc>  
-    Twitter: @timpoiko  
+Timo Poikola  
+<https://ig.fi/other/ioccc>  
+Twitter: @timpoiko  
 
 ## To build:
 
@@ -36,17 +36,20 @@ TZ=UTC48 make clobber prog
 
 ## Judges' comments:
 
-Do you have the time to see what this program does?  Think again, come back and try again.
+Do you have the time to see what this program does?  Think again, come back and
+try again.
 
-Note that 2 can be said to be the least odd prime because it is the greatest even prime.
-Moreover 2 can be also said to be the greatest odd prime because it is the least even prime.
+Note that 2 can be said to be the least odd prime because it is the greatest
+even prime.  Moreover 2 can be also said to be the greatest odd prime because it
+is the least even prime.
 
-The source code layout and some of the variable names honors the ski jumping accomplishments of
-[Matti Nyk&auml;nen](https://en.wikipedia.org/wiki/Matti_Nyk%C3%A4nen).
+The source code layout and some of the variable names honors the ski jumping
+accomplishments of [Matti
+Nyk&auml;nen](https://en.wikipedia.org/wiki/Matti_Nyk%C3%A4nen).
 
 ## Author's comments:
 
-### How to build
+### How to build:
 
 ```sh
 gcc -O0 -o prog prog.c
@@ -64,49 +67,58 @@ e.g.:
 clang -O1 -o prog prog.c
 ```
 
-### Poster
+### Poster:
 
-You can generate an A3 sized poster by _make docs_. This command creates a pdf file _poikola.pdf_.
+You can generate an A3 sized poster by `make docs`. This command creates a pdf
+file `poikola.pdf`.
 
-### What this entry does
+### What this entry does:
 
 An old wise man mumbled to me:
->Implement a program, which can calculate SHA-3 checksum for a file
+> Implement a program, which can calculate SHA-3 checksum for a file
 
 I think it is easy, but the wizard didn't stop yet:
->and primes and Fibonacci numbers.
+
+> and primes and Fibonacci numbers.
 
 Still easy. But the Gandalf the Grey impersonator is not ready:
->But use only _main()_, and do not use _math.h_ nor predefined stuff at all. But wait, there are some more rules: This
-work should reflect the extraordinary mind of Matti Nyk&auml;nen,
-the all-time best [ski jumper](https://en.wikipedia.org/wiki/Matti_Nyk%C3%A4nen) and
-[amateur philosopher](http://telefinn.blogspot.com/2011/11/matti-nykanen-quotes.html), who passed away on fourth of
-February 2019.
 
-### Oh boys.
+> But use only `main()`, and do not use `math.h` nor predefined stuff at all.
+But wait, there are more rules: This work should reflect the extraordinary mind
+of Matti Nyk&auml;nen, the all-time best [ski
+jumper](https://en.wikipedia.org/wiki/Matti_Nyk%C3%A4nen) and [amateur
+philosopher](http://telefinn.blogspot.com/2011/11/matti-nykanen-quotes.html),
+who passed away on fourth of February 2019.
 
-So, I followed the rules given by Gandalf the White and the Judges of IOCCC. Output of `iocccsize`,
-using the [2019 version of iocccsize](https://www.ioccc.org/2019/iocccsize.c), is carefully selected.
-For the sake of clarity, I used single letter variables in the code. I also avoided unnecessary use of functions.
-Like a tripundra, this program has three levels. In order to reveal all of them, you have to compile this program
-on three consecutive days.
+### Oh boys:
 
-As this is a contest for obfuscated code, the program does not perform unnecessary checks, but either fails or gets
-stuck if invoked erroneously. The program is invoked in this way: ./prog `<integer>` `<file>` in where `<integer>` is
-224, 256, 384, 512 or even 1024. Yes, I know 1024 is not a supported length of output, but as I said, the program does
-not validate its input in any way. These same parameters should be given in calculating a Fibonacci sequence or prime
-numbers. *Please note that maximum file size is one gigabyte.*
+So, I followed the rules given by Gandalf the White and the Judges of IOCCC.
+Output of `iocccsize`, using the [2019 version of
+iocccsize](https://www.ioccc.org/2019/iocccsize.c), is carefully selected.  For
+the sake of clarity, I used single letter variables in the code. I also avoided
+unnecessary use of functions.  Like a tripundra, this program has three levels.
+In order to reveal all of them, you have to compile this program on three
+consecutive days.
 
-### Obfuscation
+As this is a contest for obfuscated code, the program does not perform
+unnecessary checks, but either fails or gets stuck if invoked erroneously. The
+program is invoked in this way: ./prog `<integer>` `<file>` in where `<integer>`
+is 224, 256, 384, 512 or even 1024. Yes, I know 1024 is not a supported length
+of output, but as I said, the program does not validate its input in any way.
+These same parameters should be given in calculating a Fibonacci sequence or
+prime numbers. *Please note that maximum file size is one gigabyte..
 
-*Matti Nyk&auml;nen*: Every time I jump, and I get that feeling of _bon voyage_, the feeling that I&#8217;ve been here
-before.
+### Obfuscation:
 
-*Matti Nyk&auml;nen*: When you are about to jump, you are all alone and have to make your own decisions. Up there,
-it's all _up yours_.
+*Matti Nyk&auml;nen*: Every time I jump, and I get that feeling of _bon voyage_,
+the feeling that I've been here before.
 
-This code has some jumping too. I used some `goto`s instead of `longjmp()`. Some Finnish ski jumping sites are
-used as labels, however, there is `lahti` instead of <tt style="font-family: Monaco, Courier New, monospace;font-size:
+*Matti Nyk&auml;nen*: When you are about to jump, you are all alone and have to
+make your own decisions. Up there, it's all _up yours_.
+
+This code has some jumping too. I used some `goto`s instead of `longjmp()`. Some
+Finnish ski jumping sites are used as labels, however, there is `lahti` instead
+of <tt style="font-family: Monaco, Courier New, monospace;font-size:
 12px;">salpausselk&auml;</tt>.
 
 ### SHA-3-512 Compatibility chart ###
