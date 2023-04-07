@@ -22,8 +22,8 @@ escape codes. It became apparent to [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) (when he was looking at the source
 code of this entry) that it was no longer valid ANSI escape sequences. He has
 used them before but that was a long time ago and with Yusuke's patch it works.
-Cody notes that this fix will not just for linux but macOS too. Thank you Yusuke
-for your assistance!
+Cody notes that this fix will not just work for linux but macOS too. Thank you
+Yusuke for your assistance!
 
 
 ## Try:
