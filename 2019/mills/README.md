@@ -1,7 +1,7 @@
 # Most in need to be tweeted
 
-    Christopher Mills  
-    Twitter: @MisterXopher  
+Christopher Mills  
+Twitter: @MisterXopher  
 
 ## To build:
 
@@ -30,7 +30,8 @@ less IOCCC-hints.output.txt
 less Eugene_Onegin.output.txt
 ```
 
- However, as the binary model files used to produce the output are in an implementation-specific format, your mileage may vary.
+However, as the binary model files used to produce the output are in an
+implementation-specific format, your mileage may vary.
 
 ## Judges' comments:
 
@@ -39,7 +40,6 @@ Can a machine learn?
 Some say so.
 
 But can a machine learn to write like Shakespeare,
-
 or tweet like [Trump](http://trumptwitterarchive.com)?
 
 Can it write rules and guidelines for the IOCCC?
@@ -48,7 +48,7 @@ You decide. :-)
 
 ## Author's comments:
 
-### Welcome to OMLET! &#x1f373;
+### Welcome to OMLET! &#x1f373;:
 
 OMLET is the _Obfuscated Machine Learning Environment Toolkit_, a
 micro-framework for experimenting with [recurrent neural networks][1].  OMLET
@@ -59,17 +59,17 @@ functionality in less than 4 KB!
 
 OMLET has the following features:
 
-  + User-programmable network configurations and hyperparameters
-  + Support for various types of recurrent and feed-forward neural networks
-    including vanilla RNNs, LSTMs and GRUs of depths of up to 99 layers
-  + No limit on parameter size (except for those imposed by the system)
-  + Training and inference modes, with periodic checkpointing
-  + Advanced [Adam][42] optimizer with [weight decay][43] for simplified
-    training
-  + Hyperparamer support for batch sizing, learning rate schedule, weight
-    decay and gradient clipping
-  + Easily extensible (requires some expertise in the C programming language)
-  + Friendly markdown documentation
++ User-programmable network configurations and hyperparameters
++ Support for various types of recurrent and feed-forward neural networks
+including vanilla RNNs, LSTMs and GRUs of depths of up to 99 layers
++ No limit on parameter size (except for those imposed by the system)
++ Training and inference modes, with periodic checkpointing
++ Advanced [Adam][42] optimizer with [weight decay][43] for simplified
+training
++ Hyperparamer support for batch sizing, learning rate schedule, weight
+decay and gradient clipping
++ Easily extensible (requires some expertise in the C programming language)
++ Friendly markdown documentation
 
 OMLET is based on [Andrej Karpathy's][40] [character-level language model][41]
 as described in his blog post [_The Unreasonable Effectiveness of Recurrent
@@ -98,13 +98,13 @@ make
 After it builds, train it using
 
 ```sh
-./prog shakespere.txt
+./prog Shakespere.txt
 ```
 
 This will immediately start outputting gibberish to the output, e.g.
 
 ```sh
-./prog shakespere.txt
+./prog Shakespere.txt
 ```
 
 produces:
@@ -178,7 +178,7 @@ reduce and the generated snippets will improve quickly:
     He brich nom dove worthan then wise,
     T0:13% 2.254926
 
-It's already started to figure out things about Shakespere plays -- how to
+It's already started to figure out things about Shakespeare plays -- how to
 spell short English words, how long lines tend to be, and that characters take
 turns speaking with their names capitalized.  The training loss has dropped to
 2.25 and the improvement is noticeable.
@@ -235,7 +235,7 @@ training loss will give you an idea of how well the network is learning and
 can let you know if the network is [overfitting or underfitting][7].
 
 As part of the training process, the data set (which for OMLET is the
-`shakespere.txt` file you gave on the command line) is divided into
+[Shakespeare.txt](Shakespeare.txt) file you gave on the command line) is divided into
 [training and validation sets][8] (by default, 95% of the data is used for
 training, but like most OMLET parameters, you can change this at compile-time).
 
@@ -249,7 +249,7 @@ You can continue training from a previous checkpoint by providing the
 checkpoint file name as the second parameter, for example:
 
 ```sh
-./prog shakespere.txt cp01_1.970
+./prog Shakespeare.txt cp01_1.970
 ```
 
 After the validation cycle finishes, OMLET begins the next epoch by restarting
@@ -318,14 +318,14 @@ y = Wxy * x + By
 This simple [linear][11] [feed-forward network][12].  You can run it with
 
 ```sh
-./lin1 shakespeare.txt
+./lin1 Shakespeare.txt
 ```
 
 The linear network won't be able to get past the gibberish stage, because it
 lacks history:
 
 ```sh
-./lin1 shakespeare.txt
+./lin1 Shakespeare.txt
 ```
 
 produces:
@@ -367,7 +367,7 @@ above.  Alas, even adding a nonlinearity to the feed-forward network
 still lack the history provided by the hidden state vector (although if you
 want to try it yourself, you can do so with `make per1`).
 
-### Going deeper
+### Going deeper:
 
 We can try to improve the RNN's performance by stacking RNN modules atop each
 other:
@@ -401,7 +401,7 @@ make rnn2
 (or even `make rnn3` if you want a three-layer RNN) and train it with
 
 ```sh
-./rnn2 shakespeare.txt
+./rnn2 Shakespeare.txt
 ```
 
 The additional depth should allow the network to make better predictions (it
@@ -412,7 +412,7 @@ keep it from ever reaching its potential.
 
 ### LSTMs and GRUs
 
-RNNs are particularly hard to train because the they are trained using
+RNNs are particularly hard to train because they are trained using
 [bankpropagation through time][18].  The RNN is trained by effectively
 converting it into a non-recurrent network by making many copies of it
 and propagating the hidden state through the copies.  During training,
@@ -430,7 +430,7 @@ make lstm2
 and train with it with
 
 ```sh
-./lstm2 shakespeare.txt
+./lstm2 Shakespeare.txt
 ```
 
 The LSTM is much easier to train because it explicitly decides how to update
@@ -456,7 +456,7 @@ Where
   * `x` is the input vector
   * `h` is the hidden state (and the output to the next layer)
   * `c` is the _cell state_ which represents the "memory" of the LSTM
-  * `h'` and `c`' are the previous values of `h` and `c` respectively
+  * `h'` and `c'` are the previous values of `h` and `c` respectively
   * `f` is the _forget gate_ that tells the LSTM what portion of the hidden
     state to forget
   * `i` is the _input gate_ that tells the LSTM what portion of the input
@@ -548,7 +548,7 @@ GRU network:
 ```
 
 We are using a few new tricks here -- first, we are defining `HS` as the size
-of the hidden and cell vectors.  There's nothing special about this name, its
+of the hidden and cell vectors.  There's nothing special about this name, it's
 just convenient to specify it so we don't have a bunch of constants in the
 code.  Second, the network itself is very simple -- it declares `x` and has
 the matrix that converts the `HS`-sized hidden vector back to the `n`-sized
@@ -600,12 +600,12 @@ The list of hyperparameters follows:
     see farther back in time, but at a cost of proportionally more memory.
   * `TR`: The percentage of batches in the input data set that will be used
     for training.  The default value of 0.95 sets this as 95%.
-  * `LR`: The initial learning rate,  The default is 0.002.
+  * `LR`: The initial learning rate,  the default is 0.002.
   * `LE`: The epoch where the learning rate will start decaying.  Defaults to
     epoch 10.
   * `LD`: Learning rate decay, per epoch (after `LE` epochs).  The learning
     rate is scaled by this number.  Default is 0.97
-  * `WD`: Weight-decay parameter, to promote [regularizaiton][27].  The default
+  * `WD`: Weight-decay parameter, to promote [regularization][27].  The default
     is 0.00008.
   * `RS`: The random scale for weight initialization.  Weight parameters will
     be initialized to be between `-RS` to `+RS`.  The default is 0.15.
