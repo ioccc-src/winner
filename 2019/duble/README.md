@@ -1,8 +1,8 @@
 # Best collaborative graphics
 
-    Etienne Duble  
-    <https://lig-membres.imag.fr/duble>  
-    Twitter: @etienne_duble  
+Etienne Duble  
+<https://lig-membres.imag.fr/duble>  
+Twitter: @etienne_duble  
 
 ## To build:
 
@@ -28,11 +28,15 @@ Open another window / terminal.
 ./prog /tmp/drawing
 ```
 
-Open more terminals...
+Open more terminals and repeat...
 
-### Alternate code
+WARNING: if the file is deleted it might lock any session still in use. These
+will have to be killed from another shell session or by closing the terminal
+tab.
 
-An alternate version of this entry, prog.alt.c, is provided.  This alternate
+### Alternate code:
+
+An alternate version of this entry, [prog.alt.c](prog.alt.c), is provided.  This alternate
 code might not work as well on macOS.
 
 To compile this alternate version:
@@ -50,14 +54,14 @@ or "l" (they toggle).
 
 ## Author's comments:
 
-### Introduction
+### Introduction:
 
-This program is a **graphics editor**, running on the terminal.
+This program is a **graphics editor**, running in the terminal.
 
 It provides **collaborative** features: one can join the drawing session
 of someone else by just opening the same file!
 
-### Getting started
+### Getting started:
 
 The program can run on Linux, FreeBSD, macOS, and in most terminals.
 See section 'Limits, Portability' for more info.
@@ -75,18 +79,18 @@ If the file does not exist, you will start with a blank drawing.
 If someone else (or another *instance of yourself*, maybe??) is already
 editing this file, you will join the session!
 
-### Edition features
+### Edition features:
 
 * **arrow keys**: move cursor.
-* **p** key: enter *pen* mode (type **p** again to return to the default *move* mode).
-* **l** key: enter *line* mode (type **l** again to validate the line and return to the *move* mode).
-* **c** key: cycle through a small set of different *colors*.
-* **q** key: quit the editor. The drawing is automatically saved.
+* `p` key: enter *pen* mode (type **p** again to return to the default *move* mode).
+* `l` key: enter *line* mode (type **l** again to validate the line and return to the *move* mode).
+* `c` key: cycle through a small set of different *colors*.
+* `q` key: quit the editor. The drawing is automatically saved.
 
 The mode and current color is indicated at the bottom left corner of
 the editor.
 
-### Bonus features
+### Bonus features:
 
 * If you just want to display the content of a drawing file, you do not
   need to start the editor. Just **execute the drawing file**: `./<the-file>`.
@@ -94,7 +98,7 @@ the editor.
 * `ls --color <drawing-files...>` will probably select different colors
   to indicate whether a drawing file is being edited or not. :-)
 
-### Obfuscation
+### Obfuscation:
 
 You will probably have a hard time analyzing this entry, because:
 
@@ -111,22 +115,22 @@ You will probably have a hard time analyzing this entry, because:
     *in inverse video mode, will a space char show the foreground color or
     background color?*
 
-### A few more things
+### A few more things:
 
 Did you notice the `enum` declaration? Could it be just an `int` or `const int`
-variable, instead? (spoiler: http://c-faq.com/ansi/constasconst.html)
+variable, instead? (spoiler: <http://c-faq.com/ansi/constasconst.html>)
 
 If your keyboard has no arrow keys, you can probably find alternate keys by
 reading the source code.
 
-### Limits, Portability
+### Limits, Portability:
 
 I tested the program on several Linux systems, on FreeBSD 12, and on
-macOS (mojave).
+macOS (Mojave).
 
 On Linux, the program uses an OS-specific detail to hide communication
 artefacts, and avoids the need to remove them on exit.
-Since this is Linux-specific, it was not possible on FreeBSD or Mac OS.
+Since this is Linux-specific, it was not possible on FreeBSD or macOS.
 Its behavior is a little more *dirty* there.
 
 The program should work on most terminals that support 8-bit colors,
@@ -136,15 +140,15 @@ inverse video mode, and movement escape codes, e.g. `xterm`, `gnome-terminal`,
 Note: the drawing files `prog` generates are probably even more portable than
 `prog` itself!
 
-### Drawing area size
+### Drawing area size:
 
-*The drawing area size is set at compilation time*.
+#### The drawing area size is set at compilation time:
 
 The default size is the one of my xterm (see top of Makefile).
 You may set it to the full size of your terminal window by typing:
 
 ```sh
-make fullscreen
+make clobber fullscreen
 ```
 
 IMPORTANT NOTES:
@@ -157,7 +161,7 @@ IMPORTANT NOTES:
 
 ### prog.c vs prog.alt.c
 
-The file `prog.alt.c` is the one I submitted.
+The file [prog.alt.c](prog.alt.c) is the one I submitted.
 
 Judges proposed a small update: the program was using macro `FD_SET` inside an
 expression, which breaks compilation on macOS. Wrapping this macro into a
