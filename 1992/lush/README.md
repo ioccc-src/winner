@@ -28,7 +28,7 @@ code` section below.
 
 ### Alternate code:
 
-The original source (fixed to work with gcc) which uses gets() try:
+For the original source (fixed to work with gcc) which uses gets() try:
 
 ```sh
 make alt
