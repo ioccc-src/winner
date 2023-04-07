@@ -132,7 +132,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: This entry will likely dump core on invalid input."
+	@echo "NOTE: this entry will crash with numbers with non binary digits."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
