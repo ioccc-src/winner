@@ -9,7 +9,7 @@ make all
 ```
 
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work with
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile with
 modern compilers. In the past 'define' in `#define` could even be defined but to
 get this to work on modern systems Cody changed the `#o` lines to `#define`. The
 `lycklama.alt.c` is the original source code as it provides some fun input for
