@@ -18,20 +18,6 @@ make all
 ./schnitzi < textfile
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) increased the buffer
-size from 100 to 10000. Changing it to use `fgets()` instead of `gets()` is more
-problematic because when feeding the source code to the program the output
-results in compiler errors and not only that but the gets() is still there in
-the generated output. Even changing the buffer size can result in compilation
-errors if not done correctly. The generated output also does not have a changed
-buffer size. Changing it to use fgets() can happen later, maybe, but bigger
-files can now be parsed by the original code. An example is the Makefile. Cody
-gave some tips on how this entry works, in order to make the entry use fgets()
-and compile successfully too, in the [bugs.md](/bugs.md) file. Thank you Cody!
-
-For the original source file [schnitzi.alt.c](schnitzi.alt.c) see below.
-
-
 ## Try:
 
 ```sh
@@ -39,16 +25,26 @@ For the original source file [schnitzi.alt.c](schnitzi.alt.c) see below.
 ./schnitzi < /etc/passwd
 ```
 
+NOTE: the buffer size is very small at 100. It's easy to fix the buffer size but
+it is not as easy to change it to `fgets()`. [Cody Boone
+Ferguson](/winners.html#Cody_Boone_Ferguson) gives some hints in the
+[bugs.md](/bugs.md) file on how this entry works which might be useful in order
+to get this to use `fgets()` which would prevent a warning at linking or
+runtime. The file [schnitzi.alt.c](schnitzi.alt.c) has this to get anyone
+started, should they wish to tackle it (Cody will in time). The problem with
+changing the buffer size is that even when it works the generated output (see
+judges' comments below) will not be 100% correct duplication of the program.
 
 ### Alternate code:
 
-For the original version with a smaller buffer try:
+To build the alternative code try:
 
 ```sh
 make alt
 ```
 
 Use `schnitzi.alt` as you would `schnitzi`.
+
 
 ## Judges' comments:
 

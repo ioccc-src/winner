@@ -128,6 +128,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo "NOTE: the buffer size of this entry is very small at 100."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
