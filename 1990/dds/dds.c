@@ -17,7 +17,7 @@ X'R':B[2]!='M'&&(l=*--C)X'I':B[1]=='N'?fgets(p=B,R,stdin),P[*d]=S():(*(q=Q(B,"TH
 ()))X'G':p=B+4,B[2]=='S'&&(*C++=l,p++),l=S()-1 X'F':*(q=Q(B,"TO"))=0;p=B+5;P[i
 =B[3]]=S();p=q+2;M[i]=S();L[i]=l X'N':++P[*d]<=M[*d]&&(l=L[*d]);}else p=B+2,P[
 *B]=S();l++;}X'L':N printf(I)X'N':N(free(m[i]),0),m[i]=0	X'B':_ 0 t('S',5,"w",N
-f&&fprintf(f,I))t('O',4,"r",while(f&&fgets(B,R,f))(*Q(B,"\n")=0,G()))X 0:default:G()
+fprintf(f,I))t('O',4,"r",while(fgets(B,R,f))(*Q(B,"\n")=0,G()))X 0:default:G()
 ;}_ 0;}G(){l=atoi(B);m[l]&&(free(m[l]),0);(p=Q(B," "))?strcpy(m[l]=malloc(strlen(p
 )),p+1):(m[l]=0,0);}O(S,J,'=',==,'#',!=)O(J,K,'<',<,'>',>)O(K,V,'$',<=,'!',>=)
 O(V,W,'+',+,'-',-)O(W,Y,'*',*,'/',/)Y(){int o;_*p=='-'?p++,-Y():*p>='0'&&*p<=
