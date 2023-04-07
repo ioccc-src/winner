@@ -1,8 +1,8 @@
 # Most functional compiler
 
-    Ben Lynn
-    <https://crypto.stanford.edu/~blynn/>
-    Twitter: @bmxlynn
+Ben Lynn
+<https://crypto.stanford.edu/~blynn/>
+Twitter: @bmxlynn
 
 ## To build:
 
