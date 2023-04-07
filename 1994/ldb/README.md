@@ -16,12 +16,14 @@ make all
 compile and work with modern compilers. The problem was that `srand()` returns
 void but it was used in a `||` expression. Thus the comma operator was needed.
 Cody also changed the entry to use `fgets()` instead of `gets()` to make it
-safe for lines greater than 231 in length. Note that this now prints a newline
-after the output but this seems like a worthy compromise for making it safer
-(fixing it is more problematic than it is worth).  A subtlety about this fix: if
-a line is greater than 231 in length if the program chooses that line it might
-print the first 231 characters or it might print (up to) the next 231 characters
-and so on. Thank you Cody for your assistance!
+safe for lines greater than 231 in length and to prevent a warning at linking or
+at runtime. Note that this now prints a newline after the output but this seems
+like a worthy compromise for making it safer (fixing it is more problematic than
+it is worth). In macOS another line of output would be shown anyway namely the
+warning that it uses gets(). A subtlety about this fix: if a line is greater
+than 231 in length if the program chooses that line it might print the first 231
+characters or it might print (up to) the next 231 characters and so on. Thank
+you Cody for your assistance!
 
 For the original fixed version [ldb.alt.c](ldb.alt.c) see below.
 
