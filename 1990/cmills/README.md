@@ -23,7 +23,8 @@ work in modern systems (it resulted in a bus error otherwise). Thank you Yusuke
 for your assistance!
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made this safer by
-using `fgets()` instead of `gets()`. Thank you Cody!
+using `fgets()` instead of `gets()`. This avoids a potentially alarming warning
+at linking or runtime. Thank you Cody for your assistance!
 
 The original bug fixed version is in [cmills.alt.c](cmills.alt.c), described in
 the `Alternate code` section.
