@@ -23,7 +23,7 @@ open -a Preview lena.ppm # On macOS
 
 pngtopnm < Lenna.png | pnmscale 0.25 | cjpeg -arithmetic -dct float -quality 14 > small.jpg
 ```
-# NOTE: Lenna.png is from https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png
+### NOTE: Lenna.png is from https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png
 
 ## Judges' comments:
 
