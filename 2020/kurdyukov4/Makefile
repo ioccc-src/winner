@@ -144,7 +144,7 @@ data: ${DATA}
 	@${TRUE}
 
 ${DATA}:
-	${CURL} -o $@.gz https://www.ioccc.org/2019/mills/$@.gz && ${GUNZIP} $@.gz
+	@${TRUE}
 
 # both all and alt
 #
@@ -165,7 +165,6 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -f ${DATA}
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
