@@ -30,7 +30,9 @@ make
 
 ### Alternate code:
 
-An alternate version of this entry, prog.alt.c, is provided.  This alternate code lacks the additional rule to flag all unprobed cells.  See the Author's comments for more details.
+An alternate version of this entry, [prog.alt.c](prog.alt.c), is provided.  This
+alternate code lacks the additional rule to flag all unprobed cells.  See the
+Author's comments for more details.
 
 To compile this alternate version:
 
@@ -42,29 +44,33 @@ Use `prog.alt` as you would `prog` above.
 
 ## Judges' comments:
 
-When playing Minesweeper, a misclick might ruin a game, so why not leave the routine to the computer?
-This program automatically uncovers mines according to several rules, and leaves guessing (and applying
-the most straightforward of the rules -- just for fun, perhaps?) to the user.
+When playing Minesweeper, a misclick might ruin a game, so why not leave the
+routine to the computer?  This program automatically uncovers mines according to
+several rules, and leaves guessing (and applying the most straightforward of the
+rules -- just for fun, perhaps?) to the user.
 
-Try creating your own input files according to the author's remarks. Did you encounter any problems?
+Try creating your own input files according to the author's remarks. Did you
+encounter any problems?
 
-The submission was in violation of the "2053" size rule by one character, likely a late typo. It was easy to fix.
+The submission was in violation of the "2053" size rule by one character, likely
+a late typo. It was easy to fix.
 
 ## Author's comments:
 
-### Semi-automatic Minesweeper
+### Semi-automatic Minesweeper:
 
 Minesweeper is a game to sweep mines, as you know.  The task consists of two parts:
 
 A) choose a random cell based on your sixth sense
 B) identify a non-mine cell based on logical inference
 
-However, (B) is error-prone, and a waste of time.  You must use a computer to do such a boring task!
+However, (B) is error-prone, and a waste of time.  You must use a computer to do
+such a boring task!
 
 This program is a semi-automatic minesweeper which does Part (B) automatically.
 All you have to do is (A).  You can test if you are lucky or not.
 
-#### How to use
+#### How to use:
 
 It uses ncurses:
 
@@ -73,21 +79,25 @@ gcc -o prog prog.c -lncurses
 ./prog
 ```
 
-You will see a terminal-wide field of a minesweeper.  Probe a cell by mouse click.
-If a cell turns out to have a mine (or not), the program determines whether its neighbors have a mine or not, and automatically probes (or flags) the cell.
+You will see a terminal-wide field of a minesweeper.  Probe a cell by mouse
+click.
 
-##### Keyboard commands
+If a cell turns out to have a mine (or not), the program determines whether its
+neighbors have a mine or not, and automatically probes (or flags) the cell.
+
+##### Keyboard commands:
 
 * `R`: new game (You can also click the smiley face at the top line.)
 * `Q`: quit
 
-#### Internal
+#### Internals:
 
 The program uses four types of local inference:
 
-#### Rule 1
+##### Rule 1:
 
-If the number of a cell is equal to the count of the flagged neighbors, all the unprobed neighbors are probed.
+If the number of a cell is equal to the count of the flagged neighbors, all the
+unprobed neighbors are probed.
 
 Example:
 
@@ -97,11 +107,14 @@ Example:
 ! ! !      ! ! !
 ```
 
-Note that `?` is a unprobed cell (it is unknown whether the cell has a mine or not); `!` is a flagged cell (it is already known that the cell has a mine); and `.` is a probed cell (it is already known that the cell has no mine).
+Note that `?` is an unprobed cell (it is unknown whether the cell has a mine or
+not); `!` is a flagged cell (it is already known that the cell has a mine); and
+`.` is a probed cell (it is already known that the cell has no mine).
 
-#### Rule 2
+##### Rule 2:
 
-If the number of a cell is equal to the count of the unprobed or flagged neighbors, all the unprobed neighbors are flagged,
+If the number of a cell is equal to the count of the unprobed or flagged
+neighbors, all the unprobed neighbors are flagged.
 
 Example:
 
@@ -111,9 +124,11 @@ Example:
 . 2 !      . 2 !
 ```
 
-#### Rule 3
+##### Rule 3:
 
-Consider two number cells A and B.  If A is equal to the difference of B and the count of B's unprobed and flagged neighbors that are not A's neighbors, all A's unprobed neighbors that are not B's neighbors are probed.
+Consider two number cells A and B.  If A is equal to the difference of B and the
+count of B's unprobed and flagged neighbors that are not A's neighbors, all A's
+unprobed neighbors that are not B's neighbors are probed.
 
 Example:
 
