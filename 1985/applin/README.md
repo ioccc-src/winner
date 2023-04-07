@@ -12,7 +12,8 @@ Jack Applin [with help from Robert Heckendorn]
 
 
 NOTE: [Yusuke Endoh](/winners.html#Yusuke_Endoh) provided a patch to get this to
-not issue a bus error. Thank you Yusuke! We note that this entry does not work
+not issue a bus error. Thank you Yusuke! [Cody Boone
+Ferguson](/winners.html#Cody_Boone_Ferguson) noted that this entry does not work
 under macOS. Try it out and see for yourself what happens!
 
 
