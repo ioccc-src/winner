@@ -13,13 +13,13 @@
 
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
-this entry as well as it displaying environmental variables if argc == 1.
-Although the scripts showed correct output these also segfaulted but with the
-fix they no longer do. Now if argc < 5 (argv[4] is referenced) it will not do
-anything and it will not segfault either (this was caused by the body of the
-for() loop which is now empty (it doesn't appear to be needed at all). Note that
-this does make some of the author's explanations / portability notes no longer
-valid but we have kept them there for the interested.  Thank you Cody for your assistance!
+this entry as well as it displaying environmental variables.  Although the
+scripts showed correct output these also segfaulted but with the fix they no
+longer do. Now if argc < 5 (argv[4] is referenced) it will not do anything and
+it will not segfault either (this was caused by the body of the for() loop which
+is now empty (it doesn't appear to be needed at all). Note that this does make
+some of the author's explanations / portability notes no longer valid but we
+have kept them there for the interested.  Thank you Cody for your assistance!
 
 
 ## To run:
