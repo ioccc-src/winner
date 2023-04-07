@@ -133,6 +133,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo "NOTE: this entry will segfault on no arg specified."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 sorter.c: ${PROG} ${PROG}.c
