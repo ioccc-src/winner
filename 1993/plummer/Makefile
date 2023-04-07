@@ -128,6 +128,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo "NOTE: this program will crash with not enough args."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable

@@ -18,9 +18,8 @@ where:
     number  is a number     (try 21701)
     arg	    is any argument
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added a check in the
-code so that it will not segfault if not enough args are specified. Thank you
-Cody!
+
+NOTE: this entry will crash without enough args.
 
 ## Judges' comments:
     
