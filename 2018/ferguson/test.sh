@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Make sure the program has been compiled
 make clobber all 1> /dev/null|| exit 1
