@@ -24,7 +24,7 @@ NOTE: on modern systems this might be hard to see it solve it in running time as
 it goes so quickly but it will still show the result after execution.
 
 NOTE: sometimes the program needs you to press enter a second time to continue
-solving the maze.
+solving the maze. See [bugs.md](/bugs.md) for more details.
 
 
 ## Judges' comments
