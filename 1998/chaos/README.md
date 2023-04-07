@@ -1,11 +1,10 @@
 # Best Object Orientation:
 
-    Alan De Smet
-    8531 Greenway Blvd. #206
-    Middleton, WI 53562
-    USA
-
-    http://www.upl.cs.wisc.edu/~chaos/
+Alan De Smet
+8531 Greenway Blvd. #206
+Middleton, WI 53562
+USA
+<http://www.highprogrammer.com/alan/>
 
 
 ## To build:
@@ -13,7 +12,7 @@
 	make chaos
 
 NOTE: Some systems do not implement `halfdelay()` in their `libcurses`.
-You might try compiling with -lncurses of you have that library.
+You might try compiling with -lncurses if you have that library.
 Or you can build this entry without the `halfdelay()` call by:
 
 	make chaos_nohalf
