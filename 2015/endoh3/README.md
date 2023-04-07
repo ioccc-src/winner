@@ -1,8 +1,8 @@
 # Back to the Future Award
 
-    Yusuke Endoh  
-    <https://github.com/mame/>  
-    Twitter: @mametter  
+Yusuke Endoh  
+<https://github.com/mame/>  
+Twitter: @mametter  
 
 ## To build:
 
