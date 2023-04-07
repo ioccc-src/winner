@@ -130,6 +130,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo "NOTE: this program will crash on invalid input."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
