@@ -1,5 +1,5 @@
 a[900];		b;c;d=1		;e=1;f;		g;h;O;		main(k,
-l)char*		*l;{g=		l[1]?		atoi(*++l)	:0;for(k=
+l)char*		*l;{g=		atoi(*		++l);		for(k=
 0;k*k<		g;b=k		++>>1)		;for(h=		0;h*h<=
 g;++h);		--h;c=(		(h+=g>h		*(h+1))		-1)>>1;
 while(d		<=g){		++O;for		(f=0;f<		O&&d<=g
