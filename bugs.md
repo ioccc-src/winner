@@ -117,19 +117,10 @@ experienced this many times with vim so he tends to disable all format options
 when formatting code.
 
 
-
-## STATUS: INABIAF - please **DO NOT** fix
-### INABIAF: It's not a bug it's a feature :-)
-
-Entries with this status should NOT be touched (unless they have another status
-that suggests that issue can be changed): they are system specific by design
-or are other things that are not actually bugs even if they appear to be but are
-noteworthy nonetheless.
-
 ## STATUS: known bug - please help us fix
 
 Entries with this status have one or more bugs that need to be fixed. Are you
-able to fix it?
+able to fix it? We welcome your help!
 
 ## STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
 
@@ -173,26 +164,13 @@ like an int. He used other various techniques to get them to compile. In some
 cases this introduced a problem but typically if not always that problem exists
 with compilers that are less strict.
 
-
 ## STATUS: compiled executable crashes - please help us fix
 
 While such entries can compile, the resulting executable sometimes or always
 crashes.
 
-
-## STATUS: requires a compiler supporting `-traditional-cpp` - alternate code requested
-
-Entries with this status need a compiler that support `-traditional-cpp`. `gcc`
-supports this but `clang` does not.
-
-Please be advised that, as noted above, gcc under macOS is actually gcc even if it
-looks like it's gcc (the programs are the same, they're not symlinks but both
-are clang).
-
-If you do wish to provide an alternate version of the program that does not need
-compiler supporting you are welcome to summit such code via a
-[GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls) and we
-will be happy to credit you in the entry's _README.md_ file.
+NOTE: this does NOT apply to entries under the INABIAF status (though they're
+not mutually exclusive in some cases).
 
 ## STATUS: uses gets() - change to fgets() if possible (in some cases getline() works)
 
@@ -221,6 +199,11 @@ will be in the Makefile and other times it will be obfuscated in other ways.
 Compilers and linkers tend to warn about its use and this is a good way to find
 entries that use it even if it's not visible in the code.
 
+NOTE: this status is not necessarily mutually exclusive with the INABIAF (it's a
+bug not a feature) status. The reason for this is due to warnings during linking
+or runtime, sometimes causing confusing output.
+
+
 ## STATUS: missing file(s) - please provide them
 
 In these entries one file or multiple files are missing from the repo. In some
@@ -228,11 +211,86 @@ cases these files can be found on the [IOCCC website](https://www.ioccc.org) but
 in other cases they are entirely absent. In this case you'll probably have to
 contact the author (unless you are the author! :-) ).
 
+## STATUS: missing make rules - please provide them
+
+In these entries one or more make rules noted by the author and/or judges is/are
+missing. You might consider looking at the [archive](/archive) as a good place
+to find them.
+
+## STATUS: INABIAF - please **DO NOT** fix
+### INABIAF: It's not a bug it's a feature :-)
+
+Entries with this status should NOT be touched (unless they have another status
+that suggests that issue can be changed): they are system specific by design
+or are other things that are not actually bugs even if they appear to be. But
+are noteworthy nonetheless.
+
+NOTE: the definition of this status changed over time. At one point it was when
+something was noted by the author, the judges, a consequence of earlier
+requirements for winning entries or the purpose was to do something that might
+appear to be buggy. An example of system specific entries:
+
+[1984/mullender](1984/mullender/mullender.c) (see below and the [faq](/faq.md)
+for a version that works in modern systems) is very system specific and was
+before system specific winning entries were discouraged. This is an all time
+personal favourite of Landon Curt Noll.
+
+An example where a crash is not a bug: [2019/endoh](2019/endoh/endoh.c) is
+supposed to crash. There are others that are also supposed to crash or that are
+known to segfault but are considered features.
+
+As of 07 April 2023 the definition changed where just because an entry segfaults
+because of (for example) invalid input does not mean it's a bug that should be
+fixed. [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed some of the
+entries but he felt this is tampering with the entries (that after all are not
+meant to be maintainable or even good programming style!); thus the definition
+of this status was changed and the 'fixes' were rolled back. There might be some
+exceptions where the entry did not actually work or compile under some systems;
+in this case depending on how complicated the fix is it might not have been
+rolled back.
+
+We challenge you to fix them for educational/instructional value and/or
+enjoyment but we kindly request that you **DO NOT** submit a pull request! If
+you can't figure it out you're invited to look at the git diffs if you wish.
+
+NOTE: in the case of `gets()` we've fixed some to avoid the warning of the
+compiler, linker or even during runtime, depending on the system. In [one
+case](1990/tbr/tbr.c) the fix actually prevents confusing output (though that
+was not the only fix made).
+
+### Exception: your own entries
+
+Of course if you're the author you're welcome to fix your own entry (or else
+suggest that they're fixed)!
+
+
+## STATUS: requires a compiler supporting `-traditional-cpp` - alternate code requested
+### NOTE: all of these appear to be fixed
+
+Entries with this status need a compiler that support `-traditional-cpp`. `gcc`
+supports this but `clang` does not.
+
+Please be advised that, as noted above, gcc under macOS is actually gcc even if it
+looks like it's gcc (the programs are the same, they're not symlinks but both
+are clang).
+
+If you do wish to provide an alternate version of the program that does not need
+compiler supporting you are welcome to summit such code via a
+[GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls) and we
+will be happy to credit you in the entry's _README.md_ file.
+
+NOTE: as of commit fa8a9b8b28a6b69a6b4efd74a45402f745e280b3 we believe that all
+the entries with this problem have been fixed.
+
 
 # List of entries by year, sorted in alphabetical order
 
 # 1984
 
+## [1984/laman](1984/laman/laman.c) ([README.md](1984/laman/README.md)
+## STATUS: INABIAF - please **DO NOT** fix
+
+This entry will segfault if there is no arg.
 
 # 1985
 
@@ -244,7 +302,8 @@ contact the author (unless you are the author! :-) ).
 not work under macOS. It prints `H????????` with additional `?`s printed as it
 continues to run.
 
-We have not had a chance to try and fix this yet.
+We have not had a chance to try and fix this yet but you're welcome to have a go
+at it.
 
 
 # 1986
@@ -280,7 +339,7 @@ the correct output. Thus:
 
 
 ```c
-[holloway.c:15:11: warning: incompatible pointer types initializing 'char *' with an expression of type 'char **'; dereference with * [-Wincompatible-pointer-types]
+holloway.c:15:11: warning: incompatible pointer types initializing 'char *' with an expression of type 'char **'; dereference with * [-Wincompatible-pointer-types]
     char *t = s;
           ^   ~
               *
@@ -315,6 +374,7 @@ or any others.
 # 1987
 
 ## [1987/lievaart](1987/lievaart/lievaart.c) ([README.md](1987/lievaart/README.md))
+## STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
 
 This might not work right. When [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) runs it he gets something like:
@@ -337,10 +397,9 @@ so maybe he's doing something wrong.
 # 1989
 
 ## [1989/robison](1989/robison/robison.c) ([README.md](1989/robison/README.md))
-## STATUS: known bug - please help us fix
+## STATUS: INABIAF - please **DO NOT** fix
 
-This might not be an issue that needs to be fixed but numbers with non-binary
-digits will crash the program.
+This program will crash with numbers with non-binary digits.
 
 
 ## [1989/westley](1989/westley/westley.c) ([README.md](1989/westley/README.md))
@@ -410,6 +469,19 @@ Should the entry use `perror()`? Perhaps not but we're not sure of its purpose
 so it should stay with this note.
 
 
+## [1990/theorem](1990/theorem/theorem.c) ([README.md](1990/theorem/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed some segfaults in
+this entry that prevented it from working. However if not enough args are
+specified this program will crash.  This should NOT be fixed.
+
+## STATUS: known bug - please help us fix
+
+On the other hand the `fibonacci` program that is generated prints a string of
+0s over and over again. Can you fix this? See the README.md for details on how
+to generate it.
+
 # 1991
 
 
@@ -425,6 +497,12 @@ this simply does not work with them. Can you help us?
 
 
 # 1993
+
+## [1993/plummber](1993/plummer/plummer.c) ([README.md](1993/plummer/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+If not enough args are specified this program will crash. This should NOT be
+fixed.
 
 
 # 1994
@@ -447,26 +525,27 @@ Cody will be looking at this later on.
 ## [1994/schnitzi](1994/schnitzi/schnitzi.c) ([README.md])(1994/schnitzi/README.md))
 ## STATUS: uses gets() - change to fgets() if possible
 
-The original buffer size of this entry is 100 which is very easily overflowed
-with `gets()` which it uses. [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson) changed the buffer size to 10000
-but he notes a problem in that this does not translate to the generated source
-file (when feeding the source itself). With `fgets()` it generates compiler
-errors. Without special care with changing the buffer size it would also
-generate compiler errors. Cody explains the magic below which might be used to
-change this entry to fgets() (and he'll be working on it in the coming days most
-likely).
+The buffer size of this entry is 100 which is very easily overflowed
+with `gets()` which it uses. Changing it to use `fgets()` is difficult. Even
+changing the buffer size can cause compilation errors and even when that is
+fixed it will not translate to the generated file. The buffer size was changed
+but to make it the same functionality it was changed back.
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) explains the magic of
+how this entry works below which will be necessary if this entry is to be fixed,
+below.
 
 ### The magic of [1994/schnitzi](1994/schnitzi/schnitzi.c) and how it flips text
 
-Cody provided some tips in how the entry works so that it can hopefully be made
-to use fgets() and also hopefully have the buffer size updated in the generated
-code. He notes that this might be a real problem with formatting the code but
-nevertheless he offers the below tips:
+The problem is getting the generated code to use `fgets()` (once it even
+compiles which is easy to do) and also have the updated buffer size be the same.
+The generated output, when changed to `fgets()` failed to compile. The buffer
+size, when using `gets()` is still the same.
 
-Take a look at the interesting comment as well as the `int r=0,x,y=0` at the top
-of the file. If you look at each column go down that column you can see how it
-spells out the code! For instance the first column looks like:
+The real problem is with formatting the code. Take a look at the interesting
+comment as well as the `int r=0,x,y=0` at the top of the file. If you look at
+each column go down that column you can see how it spells out the code! For
+instance the first column looks like:
 
 
 ```
@@ -609,12 +688,36 @@ $ ./schnitzi 9|wc -l
   771999
 ```
 
+There are two segfaults that were initially fixed but the fixes were undone to
+make the entry as close to possible as the original. These should not be fixed
+either:
+
+- if one does not specify an arg the program will crash.
+- if the arg had any characters that were not digits 1 - 9 it will show invalid
+output and then crash. If it starts with 0 it can work as long as another digit
+follows it and there are no other non-digits.
+
 
 # 1999
 
 There was no IOCCC in 1999.
 
 # 2000
+
+[2000/primenum](2000/primenum/primenum.c) ([README.md](2000/primenum/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This program does not do what you might think it does! Running it like:
+
+```sh
+./primenum 13
+```
+
+will seemingly wait for input exactly because it is waiting for input. See the
+README.md file or look at the source.
+
+It also has main() return void even though this is non-standard. Please do not
+fix this (in fact it was originally done but rolled back).
 
 
 # 2001
@@ -840,9 +943,9 @@ modern Macs as Apple has made it quite difficult to compile 32-bit applications
 
 It's quite probable that non x86 related CPUs will also not work: it's hard to
 know because Cody's only non-x86 (x86_64 in particular) system is the MacBook
-Pro Max with the M1 chip which is arm64 and specifying `-m32` is invalid on that
-system (might be on Intel 64-bit Macs as well but he hasn't had one since before
-November 2022).
+Pro Max with the M1 chip which is arm64 and unfortunately specifying `-m32` is
+invalid on that system (might be on Intel 64-bit Macs as well but he hasn't had
+one since before November 2022).
 
 
 ## [2005/mynx](2005/mynx/mynx.c) ([README.md](2005/mynx/README.md))
@@ -910,6 +1013,13 @@ for now.
 
 # 2018
 
+## [2018/algmyr](2018/algmyr/algmyr.c) ([README.md)(2018/algmyr/README.md]))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This entry is known to crash if a file cannot be opened. This is noted by the
+author and is easy enough to fix but need not be.
+
+
 ## [2018/hou](2018/hou/prog.c) ([README.md](2018/hou/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 
@@ -948,6 +1058,12 @@ touched either.
 
 # 2020
 
+## [2020/burton](2020/burton/prog.c) ([README.md](2020/burton/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This entry is known to crash if no arg is specified. Although easy to fix it is
+documented and should not be fixed (of course you may fix it to see if you can
+but it shouldn't be made into a pull request).
 
 ## [2020/ferguson1](2020/ferguson1/prog.c) ([README.md](2020/ferguson1/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
