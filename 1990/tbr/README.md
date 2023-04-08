@@ -1,16 +1,16 @@
 # Best Utility
 
-	Byron Rakitzis	       
-	Princeton University   
-	5707 Old Lodge Dr.     
-	Houston, TX 77066      
-	USA		       
+Byron Rakitzis	       
+Princeton University   
+5707 Old Lodge Dr.     
+Houston, TX 77066      
+USA		       
 
-	Sean Dorward
-	Princeton University
-	10274 Burleigh Cottage Lane
-	Ellicott City, MD 21043
-	USA
+Sean Dorward
+Princeton University
+10274 Burleigh Cottage Lane
+Ellicott City, MD 21043
+USA
 
 
 ## To build:
@@ -27,7 +27,8 @@ expression so this wouldn't even compile. Cody also changed the code to use
 due to the warning being interspersed with the program's output. Thank you Cody
 for your assistance!
 
-For the original version with `gets()` see the alternate code section below.
+For the original version with `gets()` see the [archive
+tarball](/archive-1990.tar.bz2).
 
 ## To run:
 
@@ -53,19 +54,6 @@ or ctrl-c (or kill it from another terminal :-) ).
 
 What happens if you try using `cd -` to return to previous directory? What about
 `cd` with no args?
-
-## Alternate code:
-
-If you wish to see the original source (fixed so it can compile) that uses
-`gets()` instead of `fgets()` you can look at [tbr.alt.c](tbr.alt.c). To compile
-it:
-
-```sh
-make alt
-```
-
-Use `tbr.alt` as you would `tbr`. You'll likely get a warning about the usage of
-`gets()` and with macOS it will mess up output of the first line.
 
 ## Judges' comments:
 
