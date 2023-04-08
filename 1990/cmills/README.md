@@ -26,8 +26,7 @@ for your assistance!
 using `fgets()` instead of `gets()`. This avoids a potentially alarming warning
 at linking or runtime. Thank you Cody for your assistance!
 
-The original bug fixed version is in [cmills.alt.c](cmills.alt.c), described in
-the `Alternate code` section.
+For the original code see the [1992 archive](/archive/archive-1990.tar.bz2).
 
 
 ## Try:
@@ -36,16 +35,6 @@ the `Alternate code` section.
 ./cmills 5000
 ```
 
-### Alternate code:
-
-For the original version that uses `gets()` try:
-
-
-```sh
-make alt
-```
-
-Use `cmills.alt` as you would `cmills`.
 
 ## Judges' comments:
 
