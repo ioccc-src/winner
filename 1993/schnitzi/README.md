@@ -1,18 +1,17 @@
 # Obfuscated Intelligence Award:
 
-	Mark Schnitzius
-	1700 Woodbury Rd. #1208
-	Orlando, FL 32828
-	USA
+Mark Schnitzius
+1700 Woodbury Rd. #1208
+Orlando, FL 32828
+USA
 
 ## To build:
 
         make all
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to not
-segfault when no file is specified or the file cannot be opened for reading. He
-also made this use `fgets()` not `gets()` to make it safer. Thank you Cody for
-your assistance!
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made this use `fgets()`
+not `gets()` to make it safer and to prevent a warning with linking or at
+runtime. Thank you Cody for your assistance!
 
 ## To run:
 
@@ -21,6 +20,8 @@ your assistance!
 where:
 	    
 	    file	a file containing some text
+
+NOTE: this entry will segfault if the file cannot be opened.
 
 ## Try:
 

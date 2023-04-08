@@ -128,6 +128,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo "NOTE: this entry will segfault if the file cannot be opened."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable

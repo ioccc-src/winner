@@ -1,10 +1,10 @@
 # Best of Show
 
-	Adrian Mariano
-	University of Washington
-	2729 72nd Ave SE
-	Mercer Island, WA 98040
-	USA
+Adrian Mariano
+University of Washington
+2729 72nd Ave SE
+Mercer Island, WA 98040
+USA
 
 
 ## To build:
@@ -12,13 +12,12 @@
         make all
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed some segfaults
-under modern (and in some cases earlier) systems with this entry. He also fixed
-a segfault if not enough args are used. Originally we noted that the 4 trailing
-args '0 0 0 0' were required on systems that dump core when NULL is dereferenced
-but this problem showed itself in modern systems even with the 4 '0 0 0 0'. To
-make this easier for users Cody also kindly fixed this problem. Finally he
-changed this program to use `fgets()` not `gets()` to make it safer. Thank you
-Cody for your assistance!
+under modern (and in some cases earlier) systems with this entry. Originally we
+noted that the 4 trailing args '0 0 0 0' were required on systems that dump core
+when NULL is dereferenced but this problem showed itself in modern systems even
+with the 4 '0 0 0 0'. Finally he changed this program to use `fgets()` not
+`gets()` to make it safer and to prevent a warning about `gets()` at linking or
+runtime. Thank you Cody for your assistance!
 
 [Yusuke Endoh](/winners.html#Yusuke_Endoh) pointed out that `atof` nowadays
 needs `#include <stdlib.h>` which was used in order to get this to work
@@ -37,6 +36,7 @@ where:
 	h - step size
 	y1 - initial value  (y(x1) == y1)
 
+NOTE: this entry will segfault on no arg specified.
 
 ## Try:
 
@@ -76,7 +76,7 @@ reversing filter!  Try:
 Still not impressed?  The author throws in for free, a 
 sort program! Try:
 
-	cc sorter.c -o sorter
+	make sorter
 	ls | ./sorter
 
 This program is safe for home use as well.  The author has
@@ -89,7 +89,7 @@ And finally, as a special offer to users of this entry,
 the author provides a Fibonacci sequence generator!  Try:
 
     ./sorter 0 0 0 0 < theorem.c > fibonacci.c
-    cc fibonacci.c -o fibonacci
+    make fibonacci
     ./fibonacci 1 1
     ./fibonacci 2 1
 

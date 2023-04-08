@@ -141,6 +141,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo "NOTE: this entry will crash on no arg specified."
 	${CC} ${CFLAGS} -DB=${B} -DI=${I} -DT=${T} -DS=${S} $< -o $@ ${LIBS}
 
 ${PROG}_le: ${PROG}.c
