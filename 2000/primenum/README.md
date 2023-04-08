@@ -1,8 +1,8 @@
 # Best Abuse of CPP:
 
-    Raymond Cheong
-    [address subject to change]
-    MD, USA
+Raymond Cheong
+[address subject to change]
+MD, USA
 
 ## To build:
 
@@ -10,22 +10,20 @@
 make
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made this more
-portable by changing the return type of `main()` to be `int` not `void`. Thank
-you Cody for your assistance!
-
 
 ## To run:
 
 ```sh
-./primenum n 
+echo n | ./primenum n 
+
 ```
+
 NOTE: n is an integer.
 
 ## Try:
 
 ```sh
-./primenum 23209
+echo IOCCC 23209 | ./primenum 23209
 ```
 
 ## Judges' comments:
@@ -54,7 +52,7 @@ unexpected and confusing output.  Clearly, the program contains several
 syntax "mistakes" (e.g. LessThanOrEqualTo) and blatant "errors" (e.g.
 Zero).  This program clearly requires "debugging."
 
-As a result of these "bugs", the program does not primes at all.
+As a result of these "bugs", the program does not calculate primes at all.
 Instead, the program reads input from stdin and returns garbled text on
 stdout.  Fortunately, you can recover the original message simply by
 running the program a second time.  Try:
@@ -70,19 +68,19 @@ argument, otherwise the "bugs" in the program will cause it to crash!
 
 - The program attempts to mislead the reader into thinking that it
   generates prime numbers.  It does this by
-    o describing a correct algorithm in pseudocode,
-    o using partially correct conversion of pseudocode to real code,
-    o using suggestive variable names, and
-    o using a suggestive program name.
+    * describing a correct algorithm in pseudocode,
+    * using partially correct conversion of pseudocode to real code,
+    * using suggestive variable names, and
+    * using a suggestive program name.
 - The program demonstrates a novel method of abusing the C preprocessor.
 - How the filter algorithm works is left as an exercise to the reader.
 - OK, so running it through the preprocessor strips away the prime
   number front.  But ye be warned: not a11 variab1es1es are identica1 :-)
 - Other features include
-    o useless variables
-    o useless if
-    o a for loop that's used as an if statement
-    o dependence on the high bit being 0
+    * useless variables
+    * useless if
+    * a for loop that's used as an if statement
+    * dependence on the high bit being 0
 - Try also
   echo THIS MESSAGE IS IN ALL CAPS | ./primenum 32
 

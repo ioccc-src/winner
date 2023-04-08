@@ -1,8 +1,8 @@
-#define BeginProgram int main(int argc, char *argv[])
+#define BeginProgram void main(int argc, char *argv[])
 #define CloseBrace }
 #define CommandLineArgument -1
 #define Declare int i,j,n,Flag=1;
-#define EndOfProgram return 0;
+#define EndOfProgram return;
 #define False 0;
 #define ForLoop ;for
 #define GetCommandLineArgument n=atoi(argv[1]);
