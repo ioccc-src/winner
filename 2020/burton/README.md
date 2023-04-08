@@ -1,8 +1,8 @@
 # Best one-liner
 
-    Dave Burton
-    <http://snox.net/ioccc>
-    Twitter: @lv2jmp
+Dave Burton
+<http://snox.net/ioccc>
+Twitter: @lv2jmp
 
 ## To build:
 
@@ -38,7 +38,7 @@ NOTE: this entry will crash on no arg specified.
 ### Alternate code:
 
 By default, this code compiles for Little Endian machines.
-To compile for a Big Engian machine use:
+To compile for a Big Endian machine use:
 
 ```sh
 make alt
@@ -59,7 +59,7 @@ This tiny one-liner is a bit-twiddlers delight! It does all of the work
 without looping.
 
 To understand how it works, a good place to start is to look at the hex
-value that results when the two magic constants are XORed.
+value that results when the two magic constants are `XOR`ed.
 
 Once you've figured out what happens with one set of constants, how can
 choosing new constants, but using the same computation generate a reversed
@@ -73,21 +73,22 @@ make test
 
 ## Author's comments:
 
-Invoke this with a single non-negative integer less than 256, and a useful transformation occurs.
+Invoke this with a single non-negative integer less than 256, and a useful
+transformation occurs.
 
-### Rule 2-ish
+### Rule 2-ish:
 
-Exporting the constants B,I,T,S to the makefile allows the code
-to be compiled for either LE (little-endian) or BE (big-endian) machines(!!),
-so they are truly configuration parameters, not logic.
+Exporting the constants `B`,`I`,`T`,`S` to the [Makefile](Makefile) allows the
+code to be compiled for either LE (little-endian) or BE (big-endian)
+machines(!!), so they are truly configuration parameters, not logic.
 
-### Notes
+### Notes:
 
 One <strike>ping</strike> argument only.  It will segfault on zero arguments, and
 display strange results if more than one argument.
 
-Small, non-negative integers only.  Useful range is 0 .. 511, sorta, for LE; 0 .. 255 for BE.
-Bonus points if you can explain why the limits work this way.
+Small, non-negative integers only.  Useful range is `0 .. 511`, sorta, for LE; `0
+.. 255` for BE.  Bonus points if you can explain why the limits work this way.
 
 ASCII character set, 64-bit long longs are required.
 
@@ -95,10 +96,10 @@ v,a,r,i,a,b,l,e,s_NAME the operation.
 
 No loops, no branches?!?
 
-### Compilation
+#### Compilation:
 
-Compiles cleanly under `clang -Wall -Weverything -pedantic`,
-but you need to add `--include stdio.h --include stdlib.h` for the `printf`(3) and `atoi`(3).
+Compiles cleanly under `clang -Wall -Weverything -pedantic`, but you need to add
+`--include stdio.h --include stdlib.h` for the `printf`(3) and `atoi`(3).
 
 On a little-endian machine:
 
