@@ -1,17 +1,21 @@
 # Worst Abuse of the C Preprocessor:
 
-	Ed Luke
-	Mississippi State University
-	P.O. Box 6176
-	Mississippi State, MS 39762, USA
+Ed Luke
+Mississippi State University
+P.O. Box 6176
+Mississippi State, MS 39762, USA
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./runme.sh
+```sh
+./runme.sh
+```
 
 
 [Yusuke Endoh](/winners.html#Yusuke_Endoh) supplied a patch which makes this
@@ -23,18 +27,7 @@ instead of `gets()` and also added the `runme.sh` script to demonstrate it
 (using make was problematic). Cody notes that unfortunately this does not work
 with clang due to different compiler messages. Thank you Cody!
 
-For the original entry see [lush.alt.c](lush.alt.c) described in the `Alternate
-code` section below.
-
-### Alternate code:
-
-For the original source (fixed to work with gcc) which uses gets() try:
-
-```sh
-make alt
-```
-
-Use `lush.alt` as you would `lush`.
+For the original entry see the [archive tarball](/archive/archive-1992.tar.bz2).
 
 
 ## Judges' comments:
