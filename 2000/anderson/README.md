@@ -13,7 +13,8 @@ make
 ```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) changed this entry to
-use `fgets()` instead of `gets()` to make it safer. Thank you Cody!
+use `fgets()` instead of `gets()` to make it safer and to prevent warnings from
+showing up at linking or runtime. Thank you Cody!
 
 For the original source [anderson.alt.c](anderson.alt.c) see below.
 
