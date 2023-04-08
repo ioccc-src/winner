@@ -21,7 +21,7 @@ if(R=='/')*g/=u;
 if(R=='^')P(g,*g,u);
 C
 w(g,R,u)float*g,u;char R;
-/**/{int b,f;A=atoi(++a);b=atoi(++a);while((f=A+b)<15000){printf("%d\n",f);A=b;b=f;}}
+/**/{int b,f;if(A>2){A=atoi(a[1]);b=atoi(a[2]);while((f=A+b)<15000){printf("%d\n",f);A=b;b=f;}}}
 main(A,a)int A;char*a[];
 o o
 if(!strcmp(*++a,"-r"))S();
@@ -46,14 +46,14 @@ W=D=1;
 ;
 while(W!=1)
 o o
-strcpy(j+m,v);
+strcpy(j[m],v);
 o 
 if((j-=W)<=W)break;
-strcpy(j+m,m+j-W);
+strcpy(j[m],m[j-W]);
 C
-while(strcmp(m+j-W,v)>0)
+while(strcmp(m[j-W],v)>0)
 j=i;
-strcpy(v,i+m);
+strcpy(v,i[m]);
 C
 for(i=(W/=3)-1;++i<n;)
 ;
@@ -78,12 +78,12 @@ return O;
 for(j=0;j<n;puts(j++[m]));
 e("",O,O,a);
 n=j-(O=1);
-while(fgets(j++[m],500,stdin));
+while(fgets(j++[m],99,stdin))(j-1)[m][strlen((j-1)[m])-1]='\0';
 if(!strcmp(++a,"-r"))S();
 C
 /**/main(A,a)int A;char*a[];
 Y
-S(){while(fgets(b++[m],500,stdin));for(b--;b--;puts(b[m]));}
+S(){while(fgets(b++[m],99,stdin))(b-1)[m][strlen((b-1)[m])-1]='\0';for(b--;b--;puts(b[m]));}
 char*f,m[500][99],R,v[99];
 int b,W,n,i,j,z;
 float Q,G,D,M,T,O,B,U,V,N,e();

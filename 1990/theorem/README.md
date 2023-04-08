@@ -11,13 +11,19 @@ USA
 
         make all
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed some segfaults
-under modern (and in some cases earlier) systems with this entry. Originally we
-noted that the 4 trailing args '0 0 0 0' were required on systems that dump core
-when NULL is dereferenced but this problem showed itself in modern systems even
-with the 4 '0 0 0 0'. Finally he changed this program to use `fgets()` not
-`gets()` to make it safer and to prevent a warning about `gets()` at linking or
-runtime. Thank you Cody for your assistance!
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed some bugs that
+impacted the usability of this program including some segfaults under modern
+systems (and possibly in some cases earlier systems) with this entry.
+Originally we noted that the 4 trailing args '0 0 0 0' were required on systems
+that dump core when NULL is dereferenced but this problem showed itself in
+modern systems even with the 4 '0 0 0 0'. He also fixed the code so that the
+generated `fibonacci.c` actually works; before it just printed `0` over and over
+again (since it did not work anyway a segfault prevention was added here). He
+also some array addressing (some of which might not be strictly necessary but as
+he was testing the `fibonacci.c` bug he ended up changing it anyway). Finally he
+changed this program to use `fgets()` not `gets()` to make it safer and to
+prevent a warning about `gets()` at linking or runtime. Thank you Cody for your
+assistance!
 
 [Yusuke Endoh](/winners.html#Yusuke_Endoh) pointed out that `atof` nowadays
 needs `#include <stdlib.h>` which was used in order to get this to work
