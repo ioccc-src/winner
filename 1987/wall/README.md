@@ -23,7 +23,8 @@ make all
 ```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made this safer by
-using `fgets()` instead of `gets()`. The original source is in
+using `fgets()` instead of `gets()`. This prevents a potentially alarming
+warning at linking or runtime. The original source is in
 [wall.alt.c](wall.alt.c) described below. Thank you Cody!
 
 
