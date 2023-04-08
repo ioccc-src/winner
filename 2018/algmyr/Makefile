@@ -131,6 +131,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo "NOTE: this program will crash if a file specified cannot be opened."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable

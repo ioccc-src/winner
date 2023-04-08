@@ -10,9 +10,9 @@ Mike Laman
 
 	./laman <positive number>
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this entry to not
-segfault if no arg is specified. Instead it'll print nothing. Thank you Cody for
-your assistance!
+
+NOTE: this entry will segfault without an arg.
+
 
 ## Try:
 

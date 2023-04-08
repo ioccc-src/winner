@@ -20,7 +20,7 @@ h                   mh111 de{l)   +di (+'( d+%  c n+
  */                 n         =             0     ;
                main        (       )   {
                 char       v   [
-              10000    ]                   ,  s;
+                100    ]                   ,  s;
           int t[100     ]                    ,
               u[100               ]     ;  u
                   [                   0
