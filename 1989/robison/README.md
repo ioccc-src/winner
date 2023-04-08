@@ -37,6 +37,8 @@ Yusuke!
 
 	echo 100 / 100 | ./robison # <-- what happens here ?
 
+NOTE: this entry will crash with numbers with non binary digits.
+
 ## Judges' comments:
 
 Sites with punch card facilities will be happy to note that
