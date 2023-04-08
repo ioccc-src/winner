@@ -14,16 +14,17 @@ make all
 
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) changed the location
-that it used `gets()` to be `fgets()` instead to make it safer. One might think
-that simply changing the gets() to fgets() (with stdin) would work but it did
-not because `fgets()` stores the newline and `gets()` does not. The code was
-relying on not having this newline. With `fgets()` the code `if(A(Y)) puts(Y);`
-ended up printing an extra line which made the generation of some files (like
-`adhead.c`) fail to compile (`gets()` does not store the newline but `fgets()`
-does). Why? There was a blank line after a `\` at the end of the first line of a
-macro definition! Thus the code now first trims off the last character of the
-buffer read to get the same correct functionality but in a safe way. Thank you
-Cody for your assistance!
+that it used `gets()` to be `fgets()` instead to make it safer and to prevent
+any warnings during linking or runtime. One might think that simply changing the
+gets() to fgets() (with stdin) would work but it did not because `fgets()`
+stores the newline and `gets()` does not. The code was relying on not having
+this newline. With `fgets()` the code `if(A(Y)) puts(Y);` ended up printing an
+extra line which made the generation of some files (like `adhead.c`) fail to
+compile (`gets()` does not store the newline but `fgets()` does). Why? There was
+a blank line after a `\` at the end of the first line of a macro definition!
+Thus the code now first trims off the last character of the buffer read to get
+the same correct functionality but in a safe way. Thank you Cody for your
+assistance!
 
 For the original version [adrian.alt.c](adrian.alt.c) see the `Alternate code` section below.
 
