@@ -3,6 +3,8 @@
 .sv[a-z]
 .*.sv[a-z]
 *.dSYM
+*.bak
+*.bku
 .DS_Store
 /archive/1984/
 /archive/1985/
