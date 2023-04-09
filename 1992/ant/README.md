@@ -1,43 +1,51 @@
 # Best Utility:
 
-	Anthony C Howe
-	Mortice Kern Systems Inc.
-	Unit 1, 14 Weber Street North
-	Waterloo, Ontario
-	N2J 3G4
-	Canada
+Anthony C Howe  
+Mortice Kern Systems Inc.  
+Unit 1, 14 Weber Street North  
+Waterloo, Ontario  
+N2J 3G4  
+Canada  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./am Makefile
+```sh
+./am Makefile
+```
 
 where `Makefile` is a Makefile to use.
 
 
 ## Try:
 
-	./ant ant.test.mk
+```sh
+./ant ant.test.mk
+```
 
 We also suggest that you try:
 
-	make am
-	./am Makefile am_clobber	# clobber everything except am
-	./am Makefile all
+```sh
+make am
+./am Makefile am_clobber	# clobber everything except am
+./am Makefile all
+```
 
 
-## Judges' comments
+## Judges' comments:
 
 
-Like much of Posix, obfuscation has its place.  Your task is to
+Like much of POSIX, obfuscation has its place.  Your task is to
 figure out where.
 
 This entry comes complete with a Posix-like command description.
-Interested Posix balloters should lobby the IEEE for an obfuscated 
-P1003 sub-committee.
+Interested POSIX balloters should lobby the IEEE for an obfuscated 
+P1003 subcommittee.
 
 
 ## Author's comments:
