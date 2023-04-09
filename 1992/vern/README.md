@@ -1,30 +1,36 @@
 # Best of Show:
 
-	Vern Paxson
-	Lawrence Berkeley Laboratory
-	Computer Systems Engineering
-	Bldg. 46A, Room 1123
-	Lawrence Berkeley Laboratory
-	1 Cyclotron Rd.
-	Berkeley, CA 94720  USA
+Vern Paxson  
+Lawrence Berkeley Laboratory  
+Computer Systems Engineering  
+Bldg. 46A, Room 1123  
+Lawrence Berkeley Laboratory  
+1 Cyclotron Rd.  
+Berkeley, CA 94720  USA  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./vern 3		# <-- default is 2
+```sh
+./vern 3		# <-- default is 2
+```
 
 ## Try:
 
 
 You might start off by giving the following input:
 
-	63 43
-	76 55
-	71 52
-	67 57		(this may take a while)
+```
+63 43
+76 55
+71 52
+67 57		# (this may take a while)
+```
 
 ## Judges' comments:
 
@@ -33,10 +39,13 @@ suggested above.  :-)
 
 For a real quick game try:
 
-	./vern
+```sh
+./vern
 
-	65 55
-	66 46
+65 55
+66 46
+
+```
 
 NOTE: Move values must be restricted to the range 00 to 77.
 
@@ -49,10 +58,10 @@ This program plays chess.  You play the white pieces and the program
 the black pieces.  Moves are entered as a two-digit number specifying
 the coordinates of the piece to be moved followed by another two-digit
 number specifying the coordinates of where to move it.  Rows and
-columns are numbered starting with (0,0) for the upper-lefthand corner
-(black's queen's rook) and going to (7,7) for the lower-righthand
+columns are numbered starting with (0,0) for the upper-left-hand corner
+(black's queen's rook) and going to (7,7) for the lower-right-hand
 corner (white's king's rook).  For example, the PK4 opening for white
-is indicated as "64 44".  Moves are read using scanf() so care should
+is indicated as "64 44".  Moves are read using `scanf()` so care should
 be taken to not enter the wrong number of fields.
 
 If the move you enter is illegal then you are just prompted again to
@@ -80,7 +89,7 @@ There are a few limitations on play:
 - the board-position-repeated-three-times and fifty-moves stalemates are not
 recognized.
 
-If you checkmate the computer it prints "Rats!" and exits.  If your own
+If you checkmate the computer it prints "Rats!" and exits. If your own
 checkmate is imminent it prints "Har har." but doesn't exit so it can
 rub your nose in defeat (which may be a move or two away if you're
 playing at a high "ply" - see the next paragraph).  Stalemates are not
@@ -101,7 +110,7 @@ blunders but also immediately stupid moves altogether.  A ply of 4
 will find all mate-in-two's.
 
 
-### Obfuscation
+### Obfuscation:
 
 This program is obfuscated in a number of ways.  First, it abuses the
 contest rule regarding ';', '{', and '}' in the source not counting
