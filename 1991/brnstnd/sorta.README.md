@@ -1,25 +1,25 @@
-The 'sorta' scripts described below can sorta be found in this directory.
+The `sorta` scripts described below can sorta be found in this directory.
 
-sorta.i2+2
-----------
+# [sorta.i2+2](sorta.i2+2)
+
 
     2 2+#`            [ about as basic as you can get ]ld
+
 
 This script takes 2, adds 2 to it, and prints the result (with a
 newline). I get 5 on the hand-held Sinclair under ZYNIX. Let me know if
 your machine produces a different result so that I can send you patches.
 
 
-sorta.iarg0
------------
+# [sorta.iarg0](sorta.iarg0)
 
     0A`           [ take arg 0, print it ]
 
 This is self-explanatory.
 
 
-sorta.icalc
------------
+# [sorta.icalc](sorta.icalc)
+
 
 
     [D2sD3s]:Dld        [ input m n, output m n m n ]ld
@@ -56,18 +56,18 @@ sorta.icalc
     1=D  1s# " | "T 1s#T " is "T D&1sD&&  #T$ld " (" 1=2 ")"T `ld
     1=D  1s# " ^ "T 1s#T " is "T 1=D&2sD&1sD&&&D&  #T$ld " (" 1=2 ")"T `ld
 
-icalc shows off SORTA's understanding of integer arithmetic. You can run
+`icalc` shows off SORTA's understanding of integer arithmetic. You can run
 it with up to two arguments; the arguments have default values of 27182
 and 3145. Notice that sorta doesn't have a language primitive for
-converting a string to a number, yet icalc is performing arithmetic on
-its arguments. Can you see how? (Hint: Try sorta "2 2+" 3 < sorta.icalc.
-Look at program A.) icalc also provides a useful binary output routine,
-and if you can't remember offhand that D2sD3s&2sD&1sD&&&D& means xor,
+converting a string to a number, yet `icalc` is performing arithmetic on
+its arguments. Can you see how? (Hint: Try `./brnstnd "2 2+" 3 < sorta.icalc`.
+Look at program A.) `icalc` also provides a useful binary output routine,
+and if you can't remember offhand that `D2sD3s&2sD&1sD&&&D&` means xor,
 you can just look it up here.
 
 
-sorta.idup
------------
+# [sorta.idup](sorta.idup)
+
 
     [ld#1_+1=y]:x
     [uD1+=x]:y
@@ -77,8 +77,7 @@ This script prints out the maximum file descriptor available from
 repeated dup()s---usually NOFILE - 1. Can you see how it works?
 
 
-sorta.iecho
------------
+# [sorta.iecho](sorta.iecho)
 
     [" "$ld]:sld                    [ print a space ]ld
     [1s1+DA$ld1s1_+D=sD=x]:xld      [ given n (argc-n), print args ]ld
@@ -89,8 +88,8 @@ interpretation. (Note that, unlike some shells' echo, /bin/echo prints a
 newline even with no arguments.) Try sorta foo bar < iecho.
 
 
-sorta.ifact1
-------------
+# [sorta.ifact1](sorta.ifact1)
+
 
     1#`ld2*#`ld3*#`ld4*#`ld5*#`ld6*#`ld7*#`ld8*#`ld9*#`ld10*#`ld
 
@@ -98,32 +97,31 @@ This is a very straightforward factorial program: Take 1, print it,
 multiply by 2, print it, multiply by 3, print it, etc.
 
 
-sorta.ifact2
-------------
+# [sorta.ifact2](sorta.ifact2)
+
 
     [1+D2s*#`ld1s]:f
     1 0
     1=f 1=f 1=f 1=f 1=f 1=f 1=f 1=f 1=f 1=f
 
-ifact1 does a lot of repeated work. ifact2 takes advantage of this by
-keeping the current n! n on the stack. Each call to routine f (1=f)
+`ifact1` does a lot of repeated work. `ifact2` takes advantage of this by
+keeping the current `n!` n on the stack. Each call to routine f (1=f)
 increments n by 1 and prints out the factorial.
 
 
-sorta.ifact3
-------------
+# [sorta.ifact3](sorta.ifact3)
+
 
     [1+D2s*#`ld1s]:f       [ given (n-1)! (n-1), print n!, put n! n ]
     [2s1=f2s1_+D0>=x]:x    [ given n n! x, print (n+1)! through (n+x)! ]
     0 1 10 1=x
 
-Finally, ifact3 removes all the redundancy from ifact2, and exhibits
+Finally, `ifact3` removes all the redundancy from `ifact2`, and exhibits
 proper documentation of stack routines. You can replace the 10 by
 anything in this version.
 
 
-sorta.iio
----------
+# [sorta.iio](sorta.iio)
 
       [ a simple example of interpreting code on the fly ]ld
 
@@ -132,8 +130,8 @@ sorta.iio
 Notice that "2 2+" is a literal string inside the program.
 
 
-sorta.irot13
-------------
+# [sorta.irot13](sorta.irot13)
+
 
     "[] [.tr] "
     ["]".[a-m][n-z][A-M][N-Z]"[" ]TTT ["]".[n-z][a-m][N-Z][A-M]"[" ]TTT
@@ -145,17 +143,17 @@ sorta.irot13
 	 0 'o D0 1s>=hld
     0Ou1=x  [ in a more complex spawner, this would be done under a fork ]ld
 
-Despite its name, irot13 is meant to show how to exec a program with
-redirection from within sorta. You run it as sorta blah < irot13; it
-opens blah and runs a (BSD-style) tr command to rotate all letters by 13
-spots. 1A 0 0 o opens argv[1]; the ' keeps the filename around for
-subroutine h to print a nice error message if necessary. 0Ou closes
-stdout and replaces it with the new descriptor. Finally, subroutine x
-executes the tr.
+Despite its name, `irot13` is meant to show how to exec a program with
+redirection from within sorta. You run it as `./brnstnd blah < irot13`; it
+opens `blah` and runs a (BSD-style) `tr` command to rotate all letters by 13
+spots. `1A 0 0 o` opens `argv[1]`; the ` ' ` keeps the filename around for
+subroutine `h` to print a nice error message if necessary. `0Ou` closes
+stdout and replaces it with the new descriptor. Finally, subroutine `x`
+executes the `tr`.
 
 
-sorta.isleep
-------------
+# [sorta.isleep](sorta.isleep)
+
 
     ["" "+sleep" "+5" "sleep" !q]:S [F0>1_+=S]:s
     "forking sleep 5..."`ld
@@ -167,22 +165,20 @@ sorta.isleep
 This script illustrates the classic fork-exec-wait.
 
 
-sorta.itailrec
---------------
+# [sorta.itailrec](sorta.itailrec)
 
     [3*#" "T$ldD=f]:f
     1=f
 
 The sole purpose of this script is to prove that sorta can do infinite
-tail recursion (in this case, in program f). Do sorta < itailrec | more
+tail recursion (in this case, in program `f`). Do `./brnstnd < itailrec | more`
 and watch the powers of 3 (mod your computer's word size) flow by.
 
 
-sorta.iwhosort
---------------
+# [sorta.iwhosort](sorta.iwhosort)
 
     [0Ou "" "+-u" "sort" !q]:S [F0>1_+=S]:s
     [1Ou "" "+-u" "who"  !q]:W [F0>1_+=W]:w
     P1=wO1=sOww
 
-This final example is a simple pipeline, who | sort.
+This final example is a simple pipeline, `who | sort`.
