@@ -1,34 +1,38 @@
 # Best Game:
 
-    James Bonfield
-    University of Warwick
-    7 Water End,
-    Wrestlingworth,
-    Sandy Beds,
-    SG19 2HA
-    England
+James Bonfield  
+University of Warwick  
+7 Water End  
+Wrestlingworth  
+Sandy Beds  
+SG19 2HA  
+England  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./rince
+```sh
+./rince
+```
 
 ## Judges' comments:
 
-This entry has been updated to allow most ANSI C compiler.
+This entry has been updated to allow most ANSI C compilers.
 
-## Author's comments
+## Author's comments:
 
 This program is a simple puzzle type game. (I'll leave you to play
 it to see the rest of it .. :-) .)  The general idea was to try and
 write the smallest playable game, but keep the playability and
 enjoyment high. 
     
-		    Instructions (rot 13 to read).
-		    ==============================
+### Instructions (rot13 to read):
+
 
     Xrl gb znc:-
 
