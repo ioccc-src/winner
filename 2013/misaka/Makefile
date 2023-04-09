@@ -235,6 +235,8 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -f misaka2.c misaka3.c misaka4.c misaka5.c
+	${RM} -f misaka6.c misaka7.c misaka8.c misaka9.c
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
