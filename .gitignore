@@ -1,11 +1,12 @@
-.*.sw[a-z]
-.sw[a-z]
-.sv[a-z]
-.*.sv[a-z]
-*.dSYM
 *.bak
 *.bku
+*.dSYM
+.*.sv[a-z]
+.*.sw[a-z]
 .DS_Store
+.sv[a-z]
+.sw[a-z]
+/NOTES
 /archive/1984/
 /archive/1985/
 /archive/1986/
@@ -35,6 +36,6 @@
 /archive/2020/
 /bugs.html
 /faq.html
-mkentry
-/NOTES
 iocccsize
+mkentry
+readme.html
