@@ -1,14 +1,16 @@
 # "Bill Gates" Award:
 
-	Chris Mills
-	Pagine Corporation
-	1961-A Concourse Drive
-	San Jose, CA 95131
-	USA
+Chris Mills  
+Pagine Corporation  
+1961-A Concourse Drive  
+San Jose, CA 95131  
+USA  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 NOTE: this entry requires `X11/Xlib.h` header file and the X11 library to
 compile. macOS users running Mountain Lion and later will need to download and
@@ -17,13 +19,15 @@ entry.
 
 ## To run:
 
-    DISPLAY="your_X_server_display" 
-    export DISPLAY
-    ./cmills [speed]	# must be run on an X11 server
+```sh
+DISPLAY="your_X_server_display" 
+export DISPLAY
+./cmills [speed]	# must be run on an X11 server
+```
 
-    where:
+where:
 
-	speed	update speed from 1 to 9 (default is 9)
+`speed` is update speed from 1 to 9 (default is 9).
 
 ## Judges' comments:
 
@@ -31,19 +35,19 @@ From the San Jose Mercury News (May 15, 1993 page 20A "West Hackers
 trounce East in computer quiz game"): 
 
 
-	"Since 1984, a contest has been held on Usenet for the most
-	unreadable, creative, bizarre but working C program", Gates
-	said. "What is the name of this contest?"
-
-	"Windows," shot back Gassee, naming Microsoft's premier product
-	- a product over which Apple sued Microsoft five years ago. Not
-	the right answer - it's "The Obfuscated C Contest [sic]" - but
-	it brought down the house of Apple partisans...
+>	"Since 1984, a contest has been held on Usenet for the most
+>	unreadable, creative, bizarre but working C program", Gates
+>	said. "What is the name of this contest?"
+>
+>	"Windows," shot back Gassee, naming Microsoft's premier product
+>	- a product over which Apple sued Microsoft five years ago. Not
+>	the right answer - it's "The Obfuscated C Contest [sic]" - but
+>	it brought down the house of Apple partisans...
 
 [The expression on Bill Gates' face was a sight to behold, as reported
 to us by several who were there].
 
-You must set $DISPLAY in your environment or the program will 
+You must set `$DISPLAY` in your environment or the program will 
 dump core.  This is not a bug as the author documented it as
 a feature.  :-)
 
