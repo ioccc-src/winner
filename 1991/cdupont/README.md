@@ -1,21 +1,25 @@
 # Most Useful Label:
 
-	Christian Dupont
-	Ecole Normale Superieure de Lyon,
-	Laboratoire d'Informatique Parallele
-	42, Rue H.Berlioz 
-	69009 Lyon 
-	France
+Christian Dupont  
+Ecole Normale Superieure de Lyon   
+Laboratoire d'Informatique Parallele  
+42, Rue H.Berlioz   
+69009 Lyon   
+France  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
-## To run
+## To run:
 
-	./cdupont
+```sh
+./cdupont
+```
 
-## Judges' comments
+## Judges' comments:
 
 Why is the following label necessary?
 
@@ -30,7 +34,7 @@ NOTE: One should remove the final trailing newline to obtain the
 original source file.  This step is not needed to compile
 this entry.
 
-## Author's comments
+## Author's comments:
 
 Spoiler, rot13 to read:
 
