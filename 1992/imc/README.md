@@ -1,23 +1,27 @@
 # Best Output:
 
-	Ian Collier
-	Oxford University
-	The Queen's College
-	High Street
-	OXFORD
-	OX1 4AW
-	ENGLAND
+Ian Collier  
+Oxford University  
+The Queen's College  
+High Street  
+Oxford  
+OX1 4AW  
+England  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	# text mode
-	./imc -text
+```sh
+# text mode
+./imc -text
 
-	./imc 
+./imc 
+```
 
 ## Judges' comments:
 
@@ -31,9 +35,9 @@ NOTE: The original winning source assumed that exit() returned a value which cau
 problems for some systems where exit() returns a void.  The file [imc.c](imc.c) has been
 modified to avoid this problem.
 
-## Author's comments
+## Author's comments:
 
-### Portability
+### Portability:
 
 This program depends upon the ASCII character set, and makes certain
 assumptions about the architecture. It naughtily declares the first
@@ -49,9 +53,9 @@ program runs happily without any parameters. If you supply an incorrect
 parameter, an obfuscated error message results! :-) Should you want to
 run the program without knowing what it does, then supplying the single
 letter t as a parameter is a good move. Otherwise, direct the output
-into a file. The resulting file is most useful on Sun OS, where the
+into a file. The resulting file is most useful on SunOS, where the
 `file` command will tell you what to do with it. For best results with
-the t option, you may want to change the definition of the I macro :-)
+the `t` option, you may want to change the definition of the `I` macro :-)
 Details appear later, though the formatting of the code is a large clue.
 
 All the code in this program appears between the `;` and `)` in
@@ -65,7 +69,7 @@ complex ones are best left as macros, because they have well-defined and
 nontrivial (IMHO) functions. These macros help to give the program's
 parameter format its flexibility. The parameters are sorted out in a
 unique way (based on an idea by Pete Bevin) which hides very effectively
-their identities (and I think that using a variable called _ adds a nice
+their identities (and I think that using a variable called `_` adds a nice
 touch to the illegibility of the code). In this section of the code, the
 data types of the numbers checked against is varied, and just because
 you see a `,` doesn't mean it has anything to do with commas! So I hope
@@ -78,19 +82,22 @@ contains eight 4-byte integers, the byte order in which depends upon the
 machine. On Sun workstations they are stored MSB first].
 
 The program may be asked to produce text output instead of a raster
-file. Then the characters defined in the I macro will be used to create
+file. Then the characters defined in the `I` macro will be used to create
 up to 16 different shades of grey. Quite a respectable picture can be
-gained by printing a 130x110 output on a dot matrix 132 column printer
+gained by printing a `130x110` output on a dot matrix 132 column printer
 with the linefeed set to 7 points. Text output also gives a good picture
 when used in an X window with small characters having a square aspect
 ratio.
 
 The options accepted by the program follow. Each option is a letter; it
 may be preceded with a minus sign (or any character in `[!-/]`) and may be
-followed by other letters, so for example
+followed by other letters, so for example:
 
 
-	    m    -m     mask     *mail
+- m
+- \-m
+- mask
+- \*mail
 
 
 all mean the same thing. Most options may be followed by one or two
@@ -98,7 +105,10 @@ numbers. These numbers may be separated from each other and from the
 option by a space, or may be joined to each other with a comma, or may
 be appended to the single-letter option, so
 
-	   -s100,200    size 100,200    -size123 100 200  s100 200
+- \-s100,200
+- size 100,200
+- \-size123 100 200
+- s100 200
 
 all mean the same (note that in `-size123` all characters following the
 initial `s` are ignored). Numbers need not be specified, as each has a
@@ -107,22 +117,30 @@ appears before `t`, specifying an option without numbers has no effect.
 (specifying `-s -t` has the effect of producing text with the default
 raster size; not a good idea!).
 
-### Options
+### Options:
 
 The options of this program are:
 
-	-centre x y  (float x,y) Centre the picture at x+iy in the complex
-				 plane (default x=0 y=0)
-	-factor f    (float f)   Use f pixels per unit of the plane (default
-				 f=x/4 where x is the width)
-	-julia  x y  (float x,y) Draw a julia set. Use x+iy as the constant
-				 to add after squaring (default x=0 y=0)
-	-limit  l    (int l)     Use l iterations maximum (default l=128)
-	-mask   m    (int m)     Use m as a mask in deciding the colour of each
-				 pixel (see below) (default m=1)
-	-size   x y  (int x,y)   Produce an x-by-y output (default for raster
-				 x=768 y=768; default for text x=63 y=23)
-	-text                    Produce text instead of raster.
+`-centre x y`  (float x,y) Centre the picture at `x+iy` in the complex
+			 plane (default `x=0 y=0`)
+
+
+`-factor f`    (float f)   Use `f` pixels per unit of the plane (default
+			 `f=x/4` where `x` is the width)
+
+
+`-julia  x y`  (float x,y) Draw a julia set. Use `x+iy` as the constant
+			 to add after squaring (default `x=0 y=0`)
+
+`-limit  l`    (int l)     Use `l` iterations maximum (default `l=128`)
+
+`-mask   m`    (int m)     Use `m` as a mask in deciding the colour of each
+			 pixel (see below) (default `m=1`)
+
+`-size   x y`  (int x,y)   Produce an x-by-y output (default for raster
+			 `x=768 y=768`; default for text `x=63 y=23`)
+
+`-text`                    Produce text instead of raster.
 
 The colour of each point is determined by taking the bit-and of the
 number of iterations and the mask. For a raster, the point is black
@@ -137,12 +155,14 @@ bits (e.g. 8).
 While the program is creating your picture, it displays dots on the
 standard error to indicate its progress (one dot per pixel line).
 
-### Example pictures to try
+### Example pictures to try:
 
 Here are a couple of good pictures to draw:
 
-    ./imc -s 512,512 -f 600000 -l 512 -m 16 -c.00805,.74274 > screen1.ras
-    ./imc -s512,512 -j-.523,-.535 > screen2.ras
+```sh
+./imc -s 512,512 -f 600000 -l 512 -m 16 -c.00805,.74274 > screen1.ras
+./imc -s512,512 -j-.523,-.535 > screen2.ras
+```
 
 ## Copyright and CC BY-SA 4.0 License:
 
