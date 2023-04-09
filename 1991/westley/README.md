@@ -1,77 +1,89 @@
 # Grand Prize:
 
-    Brian Westley (Merlyn LeRoy on usenet)
-    DigiBoard, Inc.
-    1026 Blair Ave.
-    St. Paul, MN  55104  USA
-    
-    http://www.westley.org
+Brian Westley (Merlyn LeRoy on usenet)  
+DigiBoard, Inc.  
+1026 Blair Ave.  
+St. Paul, MN  55104  
+USA   
+<http://www.westley.org>  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
-## To run
+## To run:
 
 Make and run as follows:
 
-	./westley [move_location] | tee nextmove.c
-    
-where the 'move_location' is a digit from 1 to 9 that represents
+
+```sh
+./westley [move_location] | tee nextmove.c
+```
+
+where the `move_location` is a digit from 1 to 9 that represents
 a move on a tic-tac-toe board:
 
 		1 2 3
 		4 5 6
 		7 8 9
 
-If you omit 'move_location', then the computer moves first.  For your 
+If you omit `move_location`, then the computer moves first.  For your 
 next move, recompile `nextmove.c` and play it again:
 
-	make nextmove
-	./nextmove move_location | tee nextmove.c
+```sh
+make nextmove
+./nextmove move_location | tee nextmove.c
+```
 
-## Judges' comments
+## Judges' comments:
 
-    We have provided the shell script, ttt, to make it easier to play the game:
+We have provided the shell script, [ttt](ttt.sh), to make it easier to play the game:
 
-	make ttt
-	./ttt [first_move]	<- omit first arg to have it move first
-	./ttt next_move
+```sh
+make ttt
+./ttt [first_move]	<- omit first arg to have it move first
+./ttt next_move
 
-    The shell script determines when the game is over, and automatically 
-    replaces merlyn.c with an improved version after a loss.  The ttt script 
-    has two other modes:
+```
+  
+The shell script determines when the game is over, and automatically 
+replaces `merlyn.c` (copied from [westley.c](westley.c) with an improved version after a loss.  The [ttt](ttt.sh) script 
+has two other modes:
 
-	./ttt quitgame	<- cancel any game in process, revert to merlyn.c
-	./ttt clobber	<- remove all game files, revert to original source
- 
-    Try not to cheat, the computer has not learned how to catch you doing it.
+```sh
+./ttt quitgame	# cancel any game in process, revert to merlyn.c
+./ttt clobber	# remove all game files, revert to original source
+```
 
-## Author's comments
+Try not to cheat, the computer has not learned how to catch you doing it.
 
-    A tic-tac-toe self-modifying program that "learns".  This C program
-    plays standard tic-tac-toe on itself.  The code is written as a
-    tic-tac-toe grid; moves are carried out within the code.
+## Author's comments:
 
-    The human is X, the computer 0 [sic, "zero", not letter "O"].
+A tic-tac-toe self-modifying program that "learns".  This C program
+plays standard tic-tac-toe on itself.  The code is written as a
+tic-tac-toe grid; moves are carried out within the code.
 
-    The program, when run, reproduces itself with both the player's
-    move and the computer's move added.  Recompile THIS program (using
-    the same compile line) and repeat until the game is finished.
+The human is `X`, the computer `0` [sic, "zero", not letter "O"].
 
-    If the computer wins, the "straight face" in the upper right-hand
-    corner ":-|" will change into a happy face ":-)".  If it is a draw,
-    the face does not change.  If the computer loses, the board is
-    blanked and the face changes into a sad face ":-(".  If this
-    happens, the blank board should replace the original program; the
-    computer changes its play and will continue to do so until it no
-    longer loses games.
+The program, when run, reproduces itself with both the player's
+move and the computer's move added.  Recompile THIS program (using
+the same compile line) and repeat until the game is finished.
 
-    If you want a program that never loses, simply replace the string
-    "9999999999  :-| " with "9883857753  :-| ".
+If the computer wins, the "straight face" in the upper right-hand
+corner ":-|" will change into a happy face ":-)".  If it is a draw,
+the face does not change.  If the computer loses, the board is
+blanked and the face changes into a sad face ":-(".  If this
+happens, the blank board should replace the original program; the
+computer changes its play and will continue to do so until it no
+longer loses games.
 
-    How It Works (rot13 to read)
-    ----------------------------
+If you want a program that never loses, simply replace the string
+`"9999999999  :-| "` with `"9883857753  :-| "`.
+
+### How It Works (rot13 to read):
+
 
     Gur iregvpny "onef" bs gur tevq ner vqragvpny shapgvbaf, jvgu gur
     anzr bs gur shapgvba nf n(), o(), be p().  Nsgre rnpu shapgvba vf

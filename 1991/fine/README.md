@@ -1,27 +1,37 @@
 # Best One Liner:
 
-	Thomas A. Fine
-	Ohio State University
-	Department of Computer and Information Science
-	2036 Neil Avenue Mall
-	Columbus, Ohio  43210
-	USA
+Thomas A. Fine  
+Ohio State University  
+Department of Computer and Information Science  
+2036 Neil Avenue Mall  
+Columbus, Ohio  43210  
+USA  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
+
+## To run:
+
+```sh
+echo text | ./fine
+```
 
 ## Try:
 
-	echo "green terra
+```sh
+echo "green terra
 vex
 tang
 vend onyx
 cheryl be flashy
 rail
 clerk" | ./fine
+```
 
-## Judges' comments
+## Judges' comments:
 
 This filter, 80 chars plus a newline, fits into a single line on most 
 terminals (unless your terminal has a line wrap mis-feature :-)).

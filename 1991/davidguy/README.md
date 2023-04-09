@@ -1,35 +1,52 @@
 # Best X11 Graphics:
 
-	David Applegate			Guy Jacobson
-	School of Computer Science	AT&T Bell Laboratories
-	Carnegie Mellon University	600 Mountain Avenue
-	Pittsburgh PA 15213		Murray Hill NJ 07974
-	USA				USA
+David Applegate			  
+School of Computer Science	
+Carnegie Mellon University	
+Pittsburgh PA 15213		
+USA				
+
+
+Guy Jacobson  
+AT&T Bell Laboratories  
+600 Mountain Avenue  
+Murray Hill NJ 07974  
+USA  
+
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./davidguy ip_address:server.screen
+```sh
+./davidguy ip_address:server.screen
+```
 
 where `ip_address` in an IP address of an X server.
 
 ## Try:
 
-	    ./davidguy 127.0.0.1:0.0
+```sh
+./davidguy 127.0.0.1:0.0
+```
 
 Of course, you may need to supply a more reasonable address.  :-)
 
 ## Also try:
 
-	    cp -f davidguy guydavid
-	    ./guydavid 127.0.0.1:0.0
-
-## Judges' comments
+```sh
+cp -f davidguy guydavid
+./guydavid 127.0.0.1:0.0
+```
 
 Can you determine why this makes a difference?
+
+## Judges' comments:
+
 
 We permitted this type of entry to win because:
 
@@ -43,11 +60,11 @@ explain this further.
 We are pleased that this entry has helped bring new 'life' into
 the contest.
 
-## Author's comments
+## Authors' comments:
 
 The program is a fully-functional X client.  It talks directly to
 the X server through a socket without using Xlib, Xt or any other
-wussie toolkit junk.  With no arguments, it will try to run
+wussy toolkit junk.  With no arguments, it will try to run
 locally using the unix-domain socket (only on BSD :-( ) or you can
 give it a command line argument identifying a display host address
 (in dotted octet notation, like 127.0.0.1:0.0) where the X server
@@ -57,9 +74,9 @@ that the program works even when the server and the client have
 different architectures).  It buffers communication to the X
 server for efficiency.
 
-[[ NOTE: The original source in davidguy.c used only an IP address
+NOTE: The original source in davidguy.c used only an IP address
 argument (assumed :0.0) and assumed the color of black
-and white. ]]
+and white.
 
 The program doesn't require any user interaction; you can just sit
 back and watch it run.  All the action takes place in the root
@@ -84,7 +101,8 @@ the program was supposed to do would still be hard to understand.
 
 ### Quasi-spoiler on internals:
 
-The program plays Conway's game of Life in the root window's
+The program plays [Conway's Game of
+Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) in the root window's
 background pixmap.  It starts by setting the background to random
 bits, and then plays Life, with one Life cell for each pixel of the
 screen.  In the game of Life, a cell survives to the next round if
@@ -96,7 +114,7 @@ if it has 4 or more neighbors.
 The algorithm used to compute the next generation is based on the
 observation that a cell's state in the next generation is a boolean
 function of its current state, and the states of its 8 neighbors
-(ie, a boolean function from 9 bits to 1 bit).  This function can
+(i.e., a boolean function from 9 bits to 1 bit).  This function can
 be computed by a boolean circuit.  In addition, intermediate values
 computed by the circuit can be shared between neighboring cells,
 reducing the number of gates per cell required.  These ideas
