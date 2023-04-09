@@ -48,10 +48,6 @@ echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
 which should apply the identity transformation to a minimal holoalphabetic
 sentence.
 
-Cody noted the above will not work under macOS. The commands in the judges'
-comments do work in macOS after the fixes he made.
-
-
 ## Judges' comments:
 
 
