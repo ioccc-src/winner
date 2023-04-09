@@ -169,7 +169,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -f life.d
+	${RM} -f life.d data.name
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
