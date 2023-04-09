@@ -1,27 +1,34 @@
-# Worst Abuse of the Rules:
+# Worst Abuse of the Rules
 
-	Nathan Sidwell
-	Inmos UK
-	1000 Aztec West
-	Almondsbury
-	Bristol
-	UK BS12 4SQ
+Nathan Sidwell  
+Inmos UK  
+1000 Aztec West  
+Almondsbury  
+Bristol  
+UK BS12 4SQ  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run
 
-	./nathan
+```sh
+./nathan
+```
 
-## Judges' comments
+## Try:
 
-Try:
+```sh
+./nathan obfuscate < nathan.c > foobarf.c
+./nathan - obfuscate < foobarf.c > barfoof.c
+diff nathan.c barfoof.c
+```
 
-	./nathan obfuscate < nathan.c > foobarf.c
-	./nathan - obfuscate < foobarf.c > barfoof.c
-	diff nathan.c barfoof.c
+
+## Judges' comments:
 
 ### WARNING:
 
@@ -77,7 +84,7 @@ re-distribute a program contest winner to the network!
 
 ## Author's comments
 
-### PROGRAM USE
+### PROGRAM USE:
 
 This program is a hello world text encryptor/decryptor. It uses an
 enigma (I think) style encryption algorithm, where the encryption
@@ -93,12 +100,12 @@ before the key. (Actually encryption and decryption proper inverse
 operations, so you can use decrypt to scramble and encrypt to
 descramble, if you're perverse.)
 
-### PORTABILITY (A little knowledge is a dangerous thing)
+### PORTABILITY (A little knowledge is a dangerous thing):
 
 It's written in ANSI C, and doesn't even assume an ASCII character
 set, (it has an array of the characters to convert), so should be
-portable across many platforms. It passes gcc -ansi -pedantic -O
--Wall with no warnings (You may get assignment in conditional
+portable across many platforms. It passes `gcc -ansi -pedantic -O
+-Wall` with no warnings (You may get assignment in conditional
 warnings on other platforms though).  Because I've heard that
 conditional jumps slow down fast processors, I've eliminated all
 the ifs from the code, indeed, as its only one statement, it should
@@ -109,7 +116,7 @@ another scoping level does not need to be opened.
 Being an encryptor/decryptor, you probably want the source code to
 be obfuscated, to hide the algorithm.
 
-### OBFUSCATION
+### OBFUSCATION:
 
 In spite of the fact that it looks like a nice friendly hello world
 program, it isn't (as documented above). (Short lines have been padded,
