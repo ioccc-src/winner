@@ -9,7 +9,9 @@ USA
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed some bugs that
 impacted the usability of this program including some segfaults under modern
@@ -32,7 +34,9 @@ initially. Thank you Yusuke!
 
 ## To run:
 
-	./theorem expression x1 x2 h y1
+```sh
+./theorem expression x1 x2 h y1
+```
 
 where:
 
@@ -46,8 +50,9 @@ NOTE: this entry will segfault on no arg specified.
 
 ## Try:
 
-	./theorem y 0 1 0.1 1
-
+```sh
+./theorem y 0 1 0.1 1
+```
 
 
 ## Judges' comments:
@@ -70,54 +75,62 @@ left to right.  (i.e., parenthesis aren't supported).
 
 Try running the program with the following args:
 
-	./theorem y 0 1 0.1 1
-	./theorem 1/x 1 2 0.1 0
-	./theorem 'x^2/y+x' 0 1 0.1 6
+```sh
+./theorem y 0 1 0.1 1
+./theorem 1/x 1 2 0.1 0
+./theorem 'x^2/y+x' 0 1 0.1 6
+```
 
 But wait, there is more!  You also get, free of charge, a 
 reversing filter!  Try:
 
-	./theorem -r 0 0 0 0 < theorem.c > sorter.c
+```sh
+./theorem -r 0 0 0 0 < theorem.c > sorter.c
+```
 
 Still not impressed?  The author throws in for free, a 
 sort program! Try:
 
-	make sorter
-	ls | ./sorter
+```sh
+make sorter
+ls | ./sorter
+```
 
 This program is safe for home use as well.  The author has
 included a safety feature in case you misplace the original
 program source:
 
-    ./sorter -r 0 0 0 0 < sorter.c > theorem_bkp.c
+```sh
+./sorter -r 0 0 0 0 < sorter.c > theorem_bkp.c
+```
 
 And finally, as a special offer to users of this entry,
 the author provides a Fibonacci sequence generator!  Try:
 
-    ./sorter 0 0 0 0 < theorem.c > fibonacci.c
-    make fibonacci
-    ./fibonacci 1 1
-    ./fibonacci 2 1
+```sh
+./sorter 0 0 0 0 < theorem.c > fibonacci.c
+make fibonacci
+./fibonacci 1 1
+./fibonacci 2 1
+```
 
-Program available 9 track and cartridge cassette.  Gensu knife
-not included!  :-)
+Program available on 9 track and cartridge cassette.  Neither [Ginsu
+knife](https://ginsu.com) nor [Swiss army
+knife](https://en.wikipedia.org/wiki/Swiss_Army_knife) included! :-)
 
-When this program was first shown at the 1990 Summer Usenix 
-conference, it received a standing ovation; a first for
-a contest entry.
+When this program was first shown at the 1990 Summer Usenix conference, it
+received a standing ovation; a first for a contest entry.
 
+## Author's comments:
 
-
-## Author's comments
-
-Differential equations are solved via the Runge-Kutta method, 
-which guarantees local error proportional to h^5, and total
-error across a finite interval is at most a constant times h^4.
+Differential equations are solved via the Runge-Kutta method, which guarantees
+local error proportional to h^5, and total error across a finite interval is at
+most a constant times `h^4`.
 
 Sorting is accomplished with a standard shell sort.
 
-Note that the sorting and reversing is limited to files with 
-fewer than 500 lines, each less than 99 characters long.  
+Note that the sorting and reversing is limited to files with fewer than 500
+lines, each less than 99 characters long.
 
 ## Copyright and CC BY-SA 4.0 License:
 
