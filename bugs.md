@@ -498,6 +498,14 @@ This program crashes. This will be worked on in the near future.
 
 # 1992
 
+## [1992/buzzard.1](1992/buzzard.1/buzzard.1.c) ([README.md](1992/buzzard.1/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This entry will crash without enough args (2). At this time this is not
+considered a bug to fix so it should not be fixed.
+
+
+
 ## [1992/lush](1992/lush/lush.c) ([README.md](1992/lush/README.md))
 ## STATUS: doesn't work with some compilers - please provide alternative code
 
