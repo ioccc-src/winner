@@ -1,20 +1,24 @@
 # Most Unusual Data Structure
 
-	Peter J Ruczynski.
-	Pyramid Technology Ltd.
-	Pyramid House,
-	Solatron Road
-	Farnborough.
-	Hants GU14 7PL
-	England, U.K.
+Peter J Ruczynski  
+Pyramid Technology Ltd.  
+Pyramid House    
+Solatron Road  
+Farnborough  
+Hants GU14 7PL  
+England, U.K.  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./pjr
+```sh
+./pjr
+```
 
 ## Judges' comments:
 
@@ -24,26 +28,28 @@ it is done?
 By use of pointers to functions returning a struct of pointers 
 to functions!
 
-Note that some compilers will be unable to compile the
-expression 'X=g()...' in main due to lack of temporary
-stack space.  One might want to try replacing main with:
+Note that some compilers will be unable to compile the expression `X=g()...` in
+main() due to lack of temporary stack space.  One might want to try replacing
+main with:
 
-    	main(){X=s().v().o().o().l().S().d().l().i().o().w().N();}
-    
+```c
+main(){X=s().v().o().o().l().S().d().l().i().o().w().N();}
+```
+
 if this is a problem.
 
 
-Spoiler: (rot13 to read)
+### Spoiler:
 
-    Guvf cebtenz cevagf bhg gur fgevat:
+This program prints out the string:
 
-    gur dhvpx oebja sbk whzcrq bire gur ynml qbt
+> the quick brown fox jumped over the lazy dog
 
-    ol hfr bs cbvagref gb shapgvbaf ergheavat n fgehpg bs cbvagref 
-    gb shapgvbaf!
+by use of pointers to functions returning a struct of pointers
+to functions!
 
 
-## Author's comments
+## Author's comments:
 
     Vg vf fvzcyr gb znxr gur cebtenz cevag bgure fgevatf.  Rnpu
     nycunorgvpny punenpgre sebz n gb m vf cevagrq bhg nf vgf

@@ -1,10 +1,10 @@
 # Best Game
 
-	Chris Mills
-	Wyse Technology
-	3471 N. 1st St.
-	San Jose CA 95134
-	USA
+Chris Mills  
+Wyse Technology  
+3471 N. 1st St.  
+San Jose CA 95134  
+USA  
 
 ## To build:
 
@@ -24,7 +24,7 @@ for your assistance!
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made this safer by
 using `fgets()` instead of `gets()`. This avoids a potentially alarming warning
-at linking or runtime. Thank you Cody for your assistance!
+at compiling and/or linking and/or runtime. Thank you Cody for your assistance!
 
 For the original code see the [1992 archive](/archive/archive-1990.tar.bz2).
 
@@ -42,29 +42,25 @@ For the original code see the [1992 archive](/archive/archive-1990.tar.bz2).
 The Makefile uses several `-D` defines. The following is is a list of the macros
 that may be changed:
 
-	-DM=<max bet allowed>
-	-DN=<52 * number of decks used>
-	-DX=<how to seed the rand() generator>
+- `-DM=<max bet allowed>`
+- `-DN=<52 * number of decks used>`
+- `-DX=<how to seed the rand() generator>`
 
 The macro `V` should remain `void`.
 
 
 ## Author's comments:
 
-This is a blackjack program.  It does splits, doubling down,
-insurance, etc.  
+This is a blackjack program.  It does splits, doubling down, insurance, etc.
 
-As best I can figure, it should be ANSI-compliant, as well as
-portable to BSD & sysV (as well as the irritating compiler I
-was using which assumes `x=*p++` means `x*=p++`!).  It is
-reasonably robust in its error handling---it won't let you
-split, double, etc. unless you actually have the cash, etc.  To
-terminate the program, hit EOF or type 0 or a negative number
-for you wager.
+As best I can figure, it should be ANSI-compliant, as well as portable to BSD &
+SysV (as well as the irritating compiler I was using which assumes `x=*p++`
+means `x*=p++`!).  It is reasonably robust in its error handling---it won't let
+you split, double, etc. unless you actually have the cash, etc.  To terminate
+the program, hit EOF or type 0 or a negative number for you wager.
 
-The way it deals with splits is particularly cool (IMHO).  You
-can split many times, and it will show all hands as they are
-played.
+The way it deals with splits is particularly cool (IMHO).  You can split many
+times, and it will show all hands as they are played.
 
 ## Copyright and CC BY-SA 4.0 License:
 

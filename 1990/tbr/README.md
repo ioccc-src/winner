@@ -1,16 +1,16 @@
 # Best Utility
 
-Byron Rakitzis	       
+Byron Rakitzis	         
 Princeton University   
 5707 Old Lodge Dr.     
 Houston, TX 77066      
 USA		       
 
-Sean Dorward
-Princeton University
-10274 Burleigh Cottage Lane
-Ellicott City, MD 21043
-USA
+Sean Dorward   
+Princeton University  
+10274 Burleigh Cottage Lane  
+Ellicott City, MD 21043  
+USA  
 
 
 ## To build:
@@ -28,7 +28,7 @@ due to the warning being interspersed with the program's output. Thank you Cody
 for your assistance!
 
 For the original version with `gets()` see the [archive
-tarball](/archive-1990.tar.bz2).
+tarball](/archive/archive-1990.tar.bz2).
 
 ## To run:
 
@@ -44,13 +44,15 @@ or ctrl-c (or kill it from another terminal :-) ).
 
 ## Try:
 
-	./tbr
-	ls -l tbr tbr.c
-	# notice how the following does not work:
-	ls tbr*
-	# try figuring out how this entry works in an editor:
-	vi tbr.c
-	# then figure out how to exit vi :-)
+```sh
+./tbr
+ls -l tbr tbr.c
+# notice how the following does not work:
+ls tbr*
+# try figuring out how this entry works in an editor:
+vi tbr.c
+# then figure out how to exit vi :-)
+```
 
 What happens if you try using `cd -` to return to previous directory? What about
 `cd` with no args?
@@ -68,22 +70,25 @@ Shell source was a major inspiration for the formation of the IOCCC back in
 The author supplied us with a slightly smaller unformatted version
 of the program which we include below:
 
-	    #define D ,close(
-	    char*c,q[512],m[256],*v[99],**u,*i[3];int f[2],p;main(){for(m[m[60]=m[62]=
-	    32]=m[*m=124[m]=9]=6;e(-8),gets(1+(c=q))||(exit(0),0);r(0,0))for(;*++c;);}
-	    r(t,o){*i=i[2]=0;for(u=v+98;m[*--c]^9;m[*c]&32?i[*c&2]=
-	    *u,u-v^98&&++u:3)if(!m[*c]){for(*++c=0;!m[*--c];);*--u=
-	    ++c;}u-v^98?strcmp(*u,"cd")?*c?pipe(f),o=f[1]:1,(p=fork())?e(p),o?
-	    r(o,0)D o)D*f):4,wait(0):(o?dup2(*f,0)D*f)D o):*i?1 D
-	    0),e(open(*i,0)):5,t?dup2(t,1)D t):i[2]?9 D
-	    1),e(creat(i[2],438)):2,e(execvp(*u,u))):e(chdir(u[1])*2):6;}
-	    e(x){x<0?write(2,"?\n$ "-x/4,2),x+1||(exit(1),0):5;}
+```c
+#define D ,close(
+char*c,q[512],m[256],*v[99],**u,*i[3];int f[2],p;main(){for(m[m[60]=m[62]=
+32]=m[*m=124[m]=9]=6;e(-8),gets(1+(c=q))||(exit(0),0);r(0,0))for(;*++c;);}
+r(t,o){*i=i[2]=0;for(u=v+98;m[*--c]^9;m[*c]&32?i[*c&2]=
+*u,u-v^98&&++u:3)if(!m[*c]){for(*++c=0;!m[*--c];);*--u=
+++c;}u-v^98?strcmp(*u,"cd")?*c?pipe(f),o=f[1]:1,(p=fork())?e(p),o?
+r(o,0)D o)D*f):4,wait(0):(o?dup2(*f,0)D*f)D o):*i?1 D
+0),e(open(*i,0)):5,t?dup2(t,1)D t):i[2]?9 D
+1),e(creat(i[2],438)):2,e(execvp(*u,u))):e(chdir(u[1])*2):6;}
+e(x){x<0?write(2,"?\n$ "-x/4,2),x+1||(exit(1),0):5;}
+```
 
-
+It has the `exit()` returns void fix but not the `gets()` to `fgets()` fix
+applied.
 
 ## Author's comments:
 
-Rot13:
+### Rot13:
 
     Guvf cebtenz vf n ehqvzragnel furyy. Vg qbrf v/b erqverpgvba, cvcrf
     naq pq. Vg syntf reebef ba snvyrq puqve'f, bcra'f, perng'f

@@ -151,22 +151,28 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 ## Q: How did entry XYZZY win? It breaks rule 2!
 
 As entries have been fixed it is entirely possible that some of the entries no
-longer fit within the year's size restrictions. For the original version see the
-[/archive](/archive) directory where you can find all the original winning
-entries.
+longer fit within the year's size restrictions. Invariably the length of columns
+and number of rows might also be changed.
+
+For the original version see the [/archive](/archive) directory where you can
+find all the original winning entries.
 
 ## Q: I found a bug in a previous winner, what should I do?
 
-We do not 'maintain' the contest winners. The code is made available on an 'AS
-IS' basis. If you have a FIX for a entry, we suggest that you try and email it
-to the authors and to CC: us using the instructions on the [contacting the IOCCC
-Judges](contact.hml) page.
+We do not 'maintain' the contest winners as such. The code is made available on an 'AS
+IS' basis. If you have a FIX for an entry, we suggest that you try and email it
+to the authors and to submit your fixes in a [GitHub pull
+request](https://github.com/ioccc-src/temp-test-ioccc/pulls) (with ONE PULL
+REQUEST *PER* FIX, please!). 
 
-IF you have a FIX, and IF the author does not object, and IF your fix looks
-reasonable, we will add a web link to a copy of your email for others to see.
+Note that just because you have a fix does not mean it'll be accepted. This
+might be because the author objects or it doesn't fit in some way or another. Of
+course if the entry does not work we'll certainly be more inclined to accept the
+fix. If it is accepted we'll be happy to credit you in the entry's _README.md_
+file. If you're a previous winner we will happily link to your entries; if
+you're not we can link to your website if you wish.
 
 ## Q: Are there types of entries that are submitted so frequently that the judges get tired of them?
-
 
 Yes, there are types of entries that show up over and over again.
 

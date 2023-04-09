@@ -11,7 +11,7 @@ The following is a known list of **BUGS and (mis)FEATURES** in IOCCC winners.
 Can you fix/improve entries not under the INABIAF (it's not a bug it's a
 feature)? You are **VERY WELCOME** to try.
 
-Please submit your fixes fix in a [GitHub pull
+Please submit your fixes in a [GitHub pull
 request](https://github.com/ioccc-src/temp-test-ioccc/pulls) (with ONE PULL
 REQUEST *PER* FIX, please)!
 
@@ -476,6 +476,17 @@ so it should stay with this note.
 this entry that prevented it from working. However if not enough args are
 specified this program will crash.  This should NOT be fixed.
 
+
+## [1990/westley](1990/westley/westley.c) ([README.md](1990/westley/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This entry will crash without an arg. At this time this is not considered worth
+fixing so it should not be fixed.
+
+## STATUS: known bug - please help us fix
+
+However a negative number will make the program enter an infinite loop. This
+will be fixed in time but it's noted here for now.
 
 # 1991
 

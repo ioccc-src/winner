@@ -1,25 +1,59 @@
 # Best Small Program
 
-	Doron Osovlanski
-	CADTECH - CAD/CAM Systems Ltd
-        24 Ben-Yosef st.
-        Givat-Shmuel   51905
-	Israel
+Baruch Nissenbaum  
+Tel-Aviv University  
+The Faculty of Engineering  
+Tel-Aviv  
+Israel  
 
-	Baruch Nissenbaum
-	Tel-Aviv University
-	The Faculty of Engineering
-	Tel-Aviv
-	Israel
+Doron Osovlanski  
+CADTECH - CAD/CAM Systems Ltd  
+24 Ben-Yosef St.  
+Givat-Shmuel   51905  
+Israel  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	echo 4 | ./baruch
-	echo 7 | ./baruch
+```sh
+echo 4 | ./baruch
+echo 7 | ./baruch
+```
+
+## Try:
+
+```sh
+echo 2 | ./baruch
+echo 3 | ./baruch
+```
+
+Why is there no output?
+
+### Alternate code:
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) provided alternate code
+for users using Turbo-C or MSC, based on the authors' comments below, except
+that he did not change the `" #Q"` string as that showed worse looking output
+instead of improved output though he has no way to test the compilers in
+question. YMMV. Thank you Cody (though we all think <strike>[no
+one](https://en.wiktionary.org/wiki/no_one#Pronoun)</strike> [very
+few](https://en.wikipedia.org/wiki/0)
+[users](https://en.wikipedia.org/wiki/Microsoft_Windows)
+[here](https://www.ioccc.org) will need it :-) )!
+
+To compile:
+
+```sh
+make alt
+```
+
+Use `baruch.alt` as you would `baruch`.
+
 
 ## Judges' comments:
 
@@ -30,44 +64,38 @@ added a final newline to the file to make unpacking easy.
 
 ## Authors' comments:
 
-The goal of this work was to write a program that solves the
-classic n-queen problem, with a board size of up to 99x99, while
-keeping the program as short as possible.
+The goal of this work was to write a program that solves the classic [n-queens
+problem](https://en.wikipedia.org/wiki/Eight_queens_puzzle), with a board size
+of up to 99x99, while keeping the program as short as possible.
 
-The program finds all possibilities to place N chess queens on
-a NxN chess board so that no queen is in range of any other queen
-(not in the same column row or diagonal).  For each solution the
-chess board and the place of the queens is printed to stdout.
+The program finds all possibilities to place N chess queens on a NxN
+[chessboard](https://en.wikipedia.org/wiki/Chessboard) so that no queen is in
+range of any other queen (not in the same column row or diagonal).  For each
+solution the chess board and the place of the queens is printed to stdout.
 
+This program is about as simple and as readable as possible.  To make things
+even more simple we used a very limited subset of C:
 
-This program is about as simple and as readable as possible.
-To make things even more simple we used a very limited subset of C:
+- No pre-processor statements
+- Only one, harmless, `for` statement
+- No `if`s
+- No `break`s
+- No `case`s
+- No functions outside the standard C library
+- No `goto`s
+- No structures
 
-     No pre-processor statements
-     Only one, harmless, 'for' statement
-     No ifs
-     No breaks
-     No cases
-     No functions
-     No gotos
-     No structures
-
-In short, it contains no C language that might confuse the
-innocent reader.  :-)
-
+In short, it contains no C language that might confuse the innocent reader. :-)
 
 This program demonstrates the claim that in C, any program
 can be written using a single 'for' statement, as long as it is
 long enough..
 
-The authors' further note:
+### For PC users:
 
-For PC users:
-
-In order to compile the program under Turbo-C or MSC, 'int '
-should be inserted at the beginning of the program.
-For better looking results it is recommended to replace the " #Q"
-string with " \261\2".
+In order to compile the program under Turbo-C or MSC,  `'int '` should be inserted
+at the beginning of the program.  For better looking results it is recommended
+to replace the `" #Q"` string with `" \261\2"`.
 
 ## Copyright and CC BY-SA 4.0 License:
 
