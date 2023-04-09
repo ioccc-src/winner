@@ -11,7 +11,7 @@ The following is a known list of **BUGS and (mis)FEATURES** in IOCCC winners.
 Can you fix/improve entries not under the INABIAF (it's not a bug it's a
 feature)? You are **VERY WELCOME** to try.
 
-Please submit your fixes fix in a [GitHub pull
+Please submit your fixes in a [GitHub pull
 request](https://github.com/ioccc-src/temp-test-ioccc/pulls) (with ONE PULL
 REQUEST *PER* FIX, please)!
 
