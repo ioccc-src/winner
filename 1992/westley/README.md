@@ -1,16 +1,17 @@
 # Best Small Program:
 
-	Brian Westley (aka Merlyn LeRoy)
-	Digi International
-	1026 Blair Ave.
-	St. Paul, MN  55104
-	USA
-
-	http://www.westley.org
+Brian Westley (aka Merlyn LeRoy)  
+Digi International  
+1026 Blair Ave.  
+St. Paul, MN  55104  
+USA  
+<http://www.westley.org>  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for clang by
@@ -24,11 +25,15 @@ in the author's comments below). Thank you Cody for your assistance!
 
 If lost:
 
-	make whereami
-    
+```sh
+make whereami
+```
+
 Then run:
 
-	./whereami lat long
+```sh
+./whereami lat long
+```
 
 Where lat and long correspond to your latitude and longitude.
 
@@ -37,15 +42,19 @@ show correctly!
 
 ## Try:
 
-	./whereami 47 -122	(- means west of meridian)
-	./whereami 47 122
+```sh
+./whereami 47 -122	(- means west of meridian)
+./whereami 47 122
+```
 
 
 ### Alternative code:
 
 The author provided a version for the USA. To build:
 
-	make alt
+```sh
+make alt
+```
 
 Use `westley.alt` as you would `whereami` above.
 
@@ -56,8 +65,9 @@ NOTE: this alternative version also needs a terminal that wraps at 80 columns.
 
 To find the approximate place where this entry was judged, type:
 
-	./whereami 37 -122	(- means west of meridian)
-
+```sh
+./whereami 37 -122	(- means west of meridian)
+```
    
 ## Author's comments:
 
@@ -76,7 +86,7 @@ The program requires the ASCII character set, putchar(), atoi(),
 and a display that auto-wraps at 80 characters(!).  If your display
 does not work this way, you will have to massage the output;
 for example, you can pipe it to a file and edit it with vi,
-which will do autowrap for you.
+which will do auto-wrap for you.
 
 Lint complains that main() returns a random value and I'm not
 checking the value that putchar() returns.  Scandalous!
@@ -88,14 +98,14 @@ don't exist and characters before a string constant.
 ### How it works:
 
 The map is printed as one long string of ' ' and '!' characters,
-with the autowrap used to stack up slices of 80.  The map data is
+with the auto-wrap used to stack up slices of 80.  The map data is
 a string; the first character is how many '!'s are printed
 ('A'=1, 'B'=2, etc), the second character is how many ' 's, the
 third is how many '!'s, etc.  ASCII characters less than 'A'
 print no characters but still change the polarity, so any map
 of ' 's and '!'s is possible.  This is done in the putchar()
-argument as "33^l&1", where l is the character position+4; if
-l is odd, ' ' is printed, if l is even, '!' is printed.
+argument as `33^l&1`, where `l` is the character `position+4`; if
+`l` is odd, ' ' is printed, if `l` is even, '!' is printed.
 
 The position of latitude & longitude is changed into a single
 character position within the one long string via the first
@@ -122,13 +132,19 @@ is reasonably accurate.
 
 ### Here are some cities you might like to try:
 
-         New York  41  -74       Los Angeles  34 -118
-           London  52    0             Paris  45    2
-           Moscow  56   38           Beijing  40  116
-        New Delhi  29   77    Rio de Janeiro -23  -43
-           Sydney -34  151             Tokyo  36  140
+- New York	    41   -74       
+- London	    52   0             
+- Moscow	    56   38           
+- New Delhi	    29   77    
+- Sydney	    -34  151
+- Los Angeles	    34   -118
+- Paris		    45   2
+- Rio de Janeiro    -23  -43
+- Beijing	    40   116
+- Tokyo		    36   140
 
 For a domestic (USA) version with higher resolution, try:
+
 ```c
 main(l,a,n,d)char**a;{for(d=atoi(a[1])/2*80-atoi(a[2])-2043;
 n="bnaBCOCXdBBHGYdAP[A M E R I C A].AqandkmavX|ELC}BOCd"
@@ -141,7 +157,7 @@ joined together as one 160-character line and listed.  You should see:
 	main(l,a,n,d)...
 	[A M E R I C A]...
 
-...going down the left edge if your terminal autowraps at 80 characters.
+...going down the left edge if your terminal auto-wraps at 80 characters.
 
 ## Copyright and CC BY-SA 4.0 License:
 

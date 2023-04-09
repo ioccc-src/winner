@@ -1,18 +1,22 @@
 # Most Humorous Output:
 
-	Andreas Gustafsson
-	Helsinki University of Technology
-	Arentikuja 1 D 305			(home address)
-	00410 Helsinki
-	FINLAND
+Andreas Gustafsson  
+Helsinki University of Technology  
+Arentikuja 1 D 305		 
+00410 Helsinki  
+Finland  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./ag word word2 word3 < /path/to/dictionary
+```sh
+./ag word word2 word3 < /path/to/dictionary
+```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) changed the buffer size
 in such a way that gets() should be safe (theoretically) as it comes from the
@@ -30,58 +34,74 @@ to be read (in case the `gets()` was not used in a loop). Thank you Cody for
 your assistance!
 
 
-## Judges' comment:
+## Try:
 
 Determine where your system dictionary is located.  You may find
 it located in one of the following places:
 
+```
 	/usr/share/dict/words
 	/usr/share/lib/spell/words
 	/usr/ucblib/dict/words
 	/dev/null			# <-- for machines with nothing to say
-    
+```  
+
 Then using the proper dictionary:
 
-        ./ag free software foundation	< /usr/share/dict/words
-        ./ag obfuscated c contest	< /usr/share/dict/words
-        ./ag unix international		< /usr/share/dict/words
-	./ag george bush		< /usr/share/dict/words
-	./ag bill clinton		< /usr/share/dict/words
-	./ag ross perot			< /usr/share/dict/words
-	./ag paul e tsongas		< /usr/share/dict/words
+```sh
+./ag free software foundation	< /usr/share/dict/words
+./ag obfuscated c contest	< /usr/share/dict/words
+./ag unix international		< /usr/share/dict/words
+./ag george bush		< /usr/share/dict/words
+./ag bill clinton		< /usr/share/dict/words
+./ag ross perot			< /usr/share/dict/words
+./ag paul e tsongas		< /usr/share/dict/words
+```
+
+
+## Judges' comment:
 
 Recently some newspapers printed amusing anagrams of one of the
 names listed above.  Run this program to find the anagrams they
 weren't allowed to print!
 
+The author provided an obfuscated script that can be used to construct
+dictionaries which has been put in as [mkdict.sh](mkdict.sh). To use try:
+
+```sh
+cat README.md | ./mkdict.sh > words
+```
+
+Then try using the program as shown above with the file `words`.
+
 ## Author's comments:
 
 The name of the game:
 
-AG is short for either Anagram Generator or simply AnaGram.
-It might also be construed to mean Alphabet Game, and by pure
-coincidence it happens to be the author's initials.
+AG is short for either Anagram Generator or simply AnaGram.  It might also be
+construed to mean Alphabet Game, and by pure coincidence it happens to be the
+author's initials.
     
     
 ### What it does:
     
-AG takes one or more words as arguments, and tries to find
-anagrams of those words, i.e. words or sentences containing
-exactly the same letters.
+AG takes one or more words as arguments, and tries to find anagrams of those
+words, i.e. words or sentences containing exactly the same letters.
 
 
 ### How to use it:
     
-To run AG, you need a dictionary file consisting of distinct words
-in the natural language of your choice, one word on each line.  If
-your machine doesn't have one already, you can make your own
-dictionary by concatenating a few hundred of your favourite Usenet
-articles and piping them through the following obfuscated shell
-script:
+To run AG, you need a dictionary file consisting of distinct words in the
+natural language of your choice, one word on each line.  If your machine doesn't
+have one already, you can make your own dictionary by concatenating a few
+hundred of your favourite Usenet articles and piping them through the following
+obfuscated shell script:
 
-        #!/bin/sh
-        z=a-z];tr [A-Z\] \[$z|sed s/[\^$z[\^$z*/_/g|tr _ \\012|grep ..|sort -u
-    
+```sh
+#!/bin/sh
+z=a-z];tr [A-Z\] \[$z|sed s/[\^$z[\^$z*/_/g|tr _ \\012|grep ..|sort -u
+``` 
+
 Using articles from alt.folklore.computers is likely to make
 a more professional-looking dictionary than rec.arts.erotica.
 
