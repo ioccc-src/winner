@@ -477,6 +477,17 @@ this entry that prevented it from working. However if not enough args are
 specified this program will crash.  This should NOT be fixed.
 
 
+## [1990/westley](1990/westley/westley.c) ([README.md](1990/westley/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This entry will crash without an arg. At this time this is not considered worth
+fixing so it should not be fixed.
+
+## STATUS: known bug - please help us fix
+
+However a negative number will make the program enter an infinite loop. This
+will be fixed in time but it's noted here for now.
+
 # 1991
 
 
