@@ -1,18 +1,22 @@
 # Best Output:
 
-	Sean Barrett
-	University of Maryland
-	5407 20th Place 
-	Hyattsville MD 20782 
-	USA
+Sean Barrett  
+University of Maryland  
+5407 20th Place   
+Hyattsville MD 20782   
+USA  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./buzzard
+```sh
+./buzzard
+```
 
 ## Judges' comments:
 
@@ -25,13 +29,13 @@ You are invited to try to cheat, ... if you can figure out how!  :-)
 ### HOW TO PLAY:
 
 When the game starts, you are at the far end of the maze from the
-exit, looking down a corridor.  To move forward, type 'f' and press
-return.  To turn 90 degrees right, type 'r'; left, 'l'.  You can
+exit, looking down a corridor.  To move forward, type `f` and press
+return.  To turn 90 degrees right, type `r`; left, `l`.  You can
 put multiple commands on one line, and the new view will be drawn
 after all the moves.
 
 The game ends if you get out the exit (you'll know it when you see
-it) or when you type ^D.
+it) or when you type `^D` (EOF).
 
 ### HINTS ON HOW TO CHEAT:  (rot13 to read)
 
