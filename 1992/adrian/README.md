@@ -1,10 +1,10 @@
 # Most Educational:
 
-	Adrian Mariano
-	University of Washington
-	2729 72nd Ave SE
-	Mercer Island, WA 98040
-	USA
+Adrian Mariano  
+University of Washington  
+2729 72nd Ave SE  
+Mercer Island, WA 98040  
+USA  
 
 ## To build:
 
@@ -26,7 +26,6 @@ Thus the code now first trims off the last character of the buffer read to get
 the same correct functionality but in a safe way. Thank you Cody for your
 assistance!
 
-For the original version [adrian.alt.c](adrian.alt.c) see the `Alternate code` section below.
 
 ## Try:
 
@@ -42,18 +41,6 @@ For the slow minded, try:
 
 NOTE: if you do not specify an arg to the program it will segfault.
 
-### Alternate code:
-
-For the original version that uses `gets()` try:
-
-
-```sh
-make alt
-```
-
-Use `adrian.alt` as you would `adrian`.
-
-
 
 ## Judges' comments:
     
@@ -64,7 +51,7 @@ NOTE: Some compilers have had trouble optimizing this entry.
 
 ## Author's comments:
 
-        ADrian's GREP (adgrep)
+### ADrian's GREP (adgrep)
 
 For those confused by the complexity of full-blown egrep style regular
 expressions, this program offers an alternative.  It implements an
