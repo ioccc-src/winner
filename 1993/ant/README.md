@@ -1,31 +1,37 @@
 # Best Utility:
 
-	Anthony Howe
-	Mortice Kern Systems, Inc.
-	Unit 1, 14 Weber Street North,
-	Waterloo, Ontario, N2J 3G4
-	Canada
+Anthony Howe  
+Mortice Kern Systems, Inc.  
+Unit 1, 14 Weber Street North  
+Waterloo, Ontario, N2J 3G4  
+Canada  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./ant 'ERE' [file ...]
+```sh
+./ant 'ERE' [file ...]
+```
 
 ## Try:
 
 You may also want to try the author's test suite:
 
-    make -f ant.test.mk
+```sh
+make -f ant.test.mk
+```
 
 ## Judges' comments:
 
-See the author's Posix P1003.2-like documentation file ant.txt
-for more information.
+See the author's POSIX P1003.2-like documentation file ant.txt for more
+information.
 
-This program demonstrates that Posix doesn't guarantee readability.  :-)
+This program demonstrates that POSIX doesn't guarantee readability.  :-)
 
 ## Author's comments:
 
