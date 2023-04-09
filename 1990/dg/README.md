@@ -1,44 +1,53 @@
 # Best Abuse of the C Preprocessor
 
-	David Goodenough
-	anonymous organization
-	541 Commonwealth Ave,
-	Newton, MA 02159
-	USA
+David Goodenough  
+anonymous organization   
+541 Commonwealth Ave  
+Newton, MA 02159  
+USA  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 
 ## To run:
 
-	echo foo bar | ./dg
+```sh
+echo foo bar | ./dg
+```
 
 ## Try:
 
-	echo "to C or not to C" | ./dg
+```sh
+echo "to C or not to C" | ./dg
+```
 
 ## Judges' comments:
 
 Some C preprocessors got confused about single quotes in certain cases.
 In particular, the following source line:
 
-       b12(ase(bco(acp(bi(acp(bcp(acp(bpl(aqu(bqu(A))))))))))))))))))))))))))))))
+```c
+b12(ase(bco(acp(bi(acp(bcp(acp(bpl(aqu(bqu(A))))))))))))))))))))))))))))))
+```
 
 sometimes has to be changed to:
 
-       b12(ase(bco(acp(bi(acp(bcp(acp(bpl('A'))))))))))))))))))))))))))))
+```c
+b12(ase(bco(acp(bi(acp(bcp(acp(bpl('A'))))))))))))))))))))))))))))
+```
 
-if the C preprocessor botches single quotes in cpp expansions, which we have
-done for the wider audience.
+particularly if the C preprocessor botches single quotes in cpp expansions,
+which we have done for the wider audience.
 
 
 ## Author's comments:
 
-If my preprocessor could hack it, I could write this as one single
-line rather than 4, but when I do that I get a complaint "defines
-nested too deeply".
+If my preprocessor could hack it, I could write this as one single line rather
+than 4, but when I do that I get a complaint "defines nested too deeply".
 
 Spoiler: (rot13 to read)
 
