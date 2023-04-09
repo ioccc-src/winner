@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Sun  9 Apr 2023 05:12:09 PDT*
+*Last updated: Sun  9 Apr 2023 13:38:05 UTC*
 
 More things will likely be added over time and as items are done they _should
 be_ removed from the list IF AND ONLY IF (!!) we are certain it is done (many
@@ -11,8 +11,7 @@ not been done).
 - Find entries with bugs and INABIAF and add to [bugs.md](/bugs.md).
 - Resolve as many of the issues in [bugs.md](/bugs.md) with the exception of the
 INABIAF ones. This is likely not possible but some certainly can be fixed.
-- Check for typos in [1990/jaw/README.md](/1990/jaw/README.md). Many other
-README.md files have to be checked for typos as well.
+- Check for typos in README.md files.
 - Verify which README.md files have not been checked for correct formatting and
 fix any issues.
 
