@@ -1,24 +1,52 @@
 # Best X Program:
 
-	Tero Kivinen
-	Helsinki University of Technology
-	Klovinrinne 6b
-	02180 Espoo
-	Finland
+Tero Kivinen  
+Helsinki University of Technology  
+Klovinrinne 6b  
+02180 Espoo  
+Finland  
 
 
 ## To build:
 
-
 If your machine support the X Window System, Version 11:
 
-	make all
+```sh
+make all
+```
 
 NOTE: this entry requires `X11/Xlib.h` header file and the X11 library to
 compile. macOS users running Mountain Lion and later will need to download and
 install [XQuartz](https://www.xquartz.org) in order to compile and run this
 entry.
 
+It was observed that on modern systems this goes much too quick. [Yusuke
+Endoh](/winners.html#Yusuke_Endoh) created a patch that calls `usleep()` but
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) thought the value was
+too slow so he made it a macro in the Makefile `Z`, defaulting at 15000. You can
+reconfigure it like:
+
+```sh
+make clobber Z=1000 all
+```
+
+Yusuke also noted that there is a bug in the program where right after starting
+it moves towards the right but if you click the mouse it goes back. Thank you
+Yusuke!
+
+
+## Try:
+
+
+```sh
+./kivinen
+
+./kivinen a
+
+./kivinen a b
+```
+
+See also the author's comments for other variations.
 
 ## Judges' comments:
 
@@ -31,19 +59,19 @@ Such systems should compile using `-lX11`.
 
 NOTE: The original winning source `kivinen.orig.c`, found in the archive
 directory, assumed that exit returned a value which cause problems for some
-systems where exit returns void.  The file kivinen.c avoids this problem.
+systems where exit returns void.  The file [kivinen.c](kivinen.c) avoids this problem.
 
 
 ## Selected notes from the author:
 
-### X Entertainment Kit
+### X Entertainment Kit:
 
 This kit includes three games from the early of video games for
 The X Window System Version 11 Release 5. It should work with
 earlier releases, though.
 
 
-### Space Invaders
+#### Space Invaders
 
 The classic game of shooting aliens from outer space, trying to
 exterminate all life on earth. The game ends when the first line
@@ -51,50 +79,51 @@ of aliens touches the ground, or destroy you. To win the game you
 must destroy all the aliens. If you evade out from the screen you
 lose.
 
-#### Controls:
+##### Controls:
 
-                Button 1 = Move left
-                Button 2 = Fire missile
-                Button 3 = Move right
+- Button 1 = Move left
+- Button 2 = Fire missile
+- Button 3 = Move right
 
 
-###  Breakout:
+####  Breakout
 
 Break all the bricks with the ball, using your paddle. If you miss
 the ball the game ends.
 
-#### Controls:
+##### Controls:
 
-                Button 1 = Move left
-                Button 3 = Move right
+- Button 1 = Move left
+- Button 3 = Move right
 
 
-### Dropout:
+#### Dropout
 
 Catch all the falling pieces, before they reach the ground. If you
 miss it, game ends. To win you must catch all 30 pieces.
 
-#### Controls:
+##### Controls:
 
-                Button 1 = Move left
-                Button 3 = Move right
+- Button 1 = Move left
+- Button 3 = Move right
 
 
 
-### Starting the game:
+### Starting a game:
 
 The type of the game is determined by the number of arguments
 given to the program.
 
-no arguments = Space Invaders
-1 argument   = Breakout
-2 arguments  = Dropout
-3 arguments  = double sized Breakout
-4 arguments  = triple sized Space Invaders
-5 arguments  = triple sized Breakout
-6 arguments  = double sized Dropout
-7 arguments  = quadruple sized Breakout
-and so on...
+- no arguments = Space Invaders
+- 1 argument   = Breakout
+- 2 arguments  = Dropout
+- 3 arguments  = double sized Breakout
+- 4 arguments  = triple sized Space Invaders
+- 5 arguments  = triple sized Breakout
+- 6 arguments  = double sized Dropout
+- 7 arguments  = quadruple sized Breakout
+
+...and so on...
 
 
 ### Scores:

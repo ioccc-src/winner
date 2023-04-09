@@ -504,6 +504,12 @@ This program crashes. This will be worked on in the near future.
 This entry will crash without enough args (2). At this time this is not
 considered a bug to fix so it should not be fixed.
 
+## [1992/kivinen](1992/kivinen/kivinen.c) ([README.md](1992/kivinen/README.md))
+## STATUS: known bug - please help us fix
+
+When you start the program everything starts to move over to the right side and then ends. 
+[Yusuke Endoh](/winners.html#Yusuke_Endoh) pointed out that if you click the
+mouse it takes it back towards the centre but this should probably be fixed.
 
 
 ## [1992/lush](1992/lush/lush.c) ([README.md](1992/lush/README.md))
