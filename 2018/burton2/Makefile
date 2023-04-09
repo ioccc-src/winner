@@ -196,7 +196,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -f fixed_iocccsize tac keywords iocccsize
+	${RM} -f fixed_iocccsize tac keywords iocccsize manpage
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
