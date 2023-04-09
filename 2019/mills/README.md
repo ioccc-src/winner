@@ -15,7 +15,6 @@ make
 make cpclean
 # Let this run for about about an hour and then kill it:
 ./prog Shakespeare.txt
-./prog < $(< ls -1tr cp* | tail -1) | head -100
 ```
 
 ## Try:
@@ -28,6 +27,10 @@ less IOCCC-Rules-Guidelines.output.txt
 less IOCCC-hints.output.txt
 
 less Eugene_Onegin.output.txt
+
+./prog < IOCCC-Rules-Guidelines.cp98_0.175 |head -n 100
+
+./prog < Shakespeare.cp04_1.633 | head -n 100
 ```
 
 However, as the binary model files used to produce the output are in an
