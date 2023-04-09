@@ -476,11 +476,6 @@ so it should stay with this note.
 this entry that prevented it from working. However if not enough args are
 specified this program will crash.  This should NOT be fixed.
 
-## STATUS: known bug - please help us fix
-
-On the other hand the `fibonacci` program that is generated prints a string of
-0s over and over again. Can you fix this? See the README.md for details on how
-to generate it.
 
 # 1991
 
