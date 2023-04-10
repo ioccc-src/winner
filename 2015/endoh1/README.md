@@ -32,7 +32,7 @@ Cody!
 echo "Do or do not. There is no try."
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 How did the leopard get its spots? Why are a zebra's stripes unique?
 
@@ -40,7 +40,7 @@ In case you didn't recognise the portrait of Alan Turing, there are some
 pointers to his features like eyes with "stdeye-o" and "<--mouth". Can you
 find any other tributes?
 
-## Author's comments:
+## Author's remarks:
 
 What does "Alan Turing" remind you of?  Cryptanalysis of the Enigma?  Turing
 machine?  Turing test?  This program is also based on his work.

@@ -19,7 +19,7 @@ changing the third and fourth arg of main() to be ints inside main(); clang
 requires args 2 - 4 to be `char **`. He also fixed it so that the program would
 not segfault if not enough args were specified. He did the same for the
 alternative version (see below) provided by the author (the original can be seen
-in the author's comments below). Thank you Cody for your assistance!
+in the author's remarks below). Thank you Cody for your assistance!
 
 ## To run
 
@@ -61,7 +61,7 @@ Use `westley.alt` as you would `whereami` above.
 NOTE: this alternative version also needs a terminal that wraps at 80 columns.
 
 
-## Judges' comments:
+## Judges' remarks:
 
 To find the approximate place where this entry was judged, type:
 
@@ -69,7 +69,7 @@ To find the approximate place where this entry was judged, type:
 ./whereami 37 -122	(- means west of meridian)
 ```
    
-## Author's comments:
+## Author's remarks:
 
 Run the program with your latitude & longitude as integer
 arguments; it will produce a map made up of '!' with the given

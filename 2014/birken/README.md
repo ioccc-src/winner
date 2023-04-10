@@ -28,7 +28,7 @@ make
 
 ./prog http://127.0.0.1:1701
 
-## Judges' comments:
+## Judges' remarks:
 
 Port 1701?  Well this is not the l2f registered TCP/1701 protocol.
 Sniff the traffic to/from that port.  You will see HTTP client
@@ -41,7 +41,7 @@ binary content communicated between client and server.
 So how does this program do it?  A trek though the cloak of
 obfuscation awaits the reader of the source!
 
-## Author's comments:
+## Author's remarks:
 
 ### Abstract
 

@@ -54,7 +54,7 @@ and enter some input like:
 	quit # for the cat version
 
 
-## Judges' comments:
+## Judges' remarks:
 
 
 What we found amazing was how the flow of control was transferred
@@ -67,7 +67,7 @@ done and how it is being exploited?
 Some compilers complained about this file, so we changed: '=++I' to '= ++I'.
 
 
-## Author's comments:
+## Author's remarks:
 
 No comments were provided by the author.
 

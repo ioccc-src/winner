@@ -36,12 +36,12 @@ make anonymous.ten
 ```
 
 
-## Judges' comments:
+## Judges' remarks:
 
 Is emulation the sincerest form of flattery?  This small program does
 quite a lot of bit twiddling.
 
-## Author's comments:
+## Author's remarks:
 
 This program is an optimizing dynamic binary translator, allowing you to
 run x86 programs on any machine (x86 or otherwise).

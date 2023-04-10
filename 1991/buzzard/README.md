@@ -18,13 +18,13 @@ make all
 ./buzzard
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 You will be A-mazed.
 
 You are invited to try to cheat, ... if you can figure out how!  :-)
 
-## Author's comments:
+## Author's remarks:
 
 ### HOW TO PLAY:
 

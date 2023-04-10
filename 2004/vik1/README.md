@@ -28,7 +28,7 @@ make
 ./vik1 ad3
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Danial Vik has presented a tour de force feature rich X11-based
 racing game that fit within the contest size limits.  Take a
@@ -36,7 +36,7 @@ glace at the feature list he provided below.  Amazing!
 
 Happy touring on the road and in the code!
 
-## Author's comments:
+## Author's remarks:
 
 ### Features
 

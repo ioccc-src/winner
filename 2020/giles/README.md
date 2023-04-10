@@ -26,11 +26,11 @@ make
 # Use an audio player to play jenny.wav
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 A cross platform utility for both encoding and decoding tones.
 
-## Author's comments:
+## Author's remarks:
 
 ### Introduction and Usage
 

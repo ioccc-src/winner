@@ -48,7 +48,7 @@ NOTE: Use - for standard input.  For example:
 ./vertical_cat - -
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 There is more to cat than [mere cats](http://cheezburger.com/1680494336).  
 Be they tall, fat, long or squat, this source code is sure to amuse.
@@ -70,7 +70,7 @@ While I'm sure most cats would have preferred otherwise,
 the flying fish was returned to *em*swim with the fishes*em*. :-)
 No cats were harmed in the process of judging this entry.
 
-## Author's comments:
+## Author's remarks:
 
 ### Overview
 

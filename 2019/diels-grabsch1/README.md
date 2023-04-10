@@ -35,7 +35,7 @@ cmp ref.Z dg1.Z # Oops, the files differ
 zcat < dg1.Z | cmp - ../mills/Shakespeare.txt # Decompresses correctly. What is going on?
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Finally, IOCCC now has its own text compression program, and it is short enough
 to qualify for the Best Short Program award! That said, can you compress it down
@@ -46,7 +46,7 @@ Can you explain why the zero file compresses identically by the entry and the
 standard compress tool, but the text file compresses differently? The judges
 know. :)
 
-## Author's comments:
+## Author's remarks:
 
 ### A tiny "compress" tool:
 

@@ -26,7 +26,7 @@ make
 ./borsanyi ioccc@example.com > example.gif
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This entry uses a very user-friendly representation of the font
 it uses (with a few exceptions).   Check out the source and see
@@ -37,7 +37,7 @@ recognition tools.  The amount of imagination necessary to
 recognise the @ character will certainly challenge a few
 anti-CAPTCHA tools.
 
-## Author's comments:
+## Author's remarks:
 
 ### Email address to gif converter
 

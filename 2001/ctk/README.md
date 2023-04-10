@@ -35,14 +35,14 @@ echo "Do or do not. There is no try."
 Make sure to hit 'q' to exit or else your terminal will be messed up (to restore
 it you can try `stty sane` or `reset`).
 
-## Judges' comments:
+## Judges' remarks:
 
 No matter how careful you are, this guy eventually crashes.  Most people
 can make at least one successful road trip without crashing.
 
 This is, of course, another of the retro games.
 
-## Author's comments:
+## Author's remarks:
 
 This is a game based on an Apple ][ Print Shop Companion easter
 egg named 'DRIVER', in which the goal is to drive as fast as

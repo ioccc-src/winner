@@ -26,7 +26,7 @@ HINT: Try pressing the left and right arrow keys as needed.
 Also try pressing space/enter to select options.
 Pressing Q or Escape may end the fun before you are ready. :-)
 
-## Judges' comments:
+## Judges' remarks:
 
 When the code looks like lemons, it is probably because the LEMONPEOPLE,
 or at least the LEMONLORD was involved. :-)
@@ -40,7 +40,7 @@ is being written to a file and then compiled.  And yet that compiled
 code is somehow executed from main.  But how?  How is main able to
 call code that was written and compiled just in time for execution?
 
-## Author's comments:
+## Author's remarks:
 
 ### TABLE OF CONTENTS
 

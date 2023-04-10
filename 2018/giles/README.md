@@ -79,7 +79,7 @@ export SDL2_INCLUDE_ROOT=/usr
 but this is most likely unneeded as we use `sdl-config` and `sdl2-config` in the
 Makefiles.
 
-See also the judges' comments below.
+See also the judges' remarks below.
 
 
 ## To run:
@@ -97,7 +97,7 @@ See also the judges' comments below.
 ./prog sand.alt.txt
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Can you explain the behavior of the program when ioccc.txt is given to it as input?
 
@@ -113,7 +113,7 @@ brew install sdl2		 # macOS via Homebrew
 sudo port install libsdl2	 # macOS via MacPorts
 ```
 
-## Author's comments:
+## Author's remarks:
 
 ### Remarks
 

@@ -72,7 +72,7 @@ To use this version use `schweikh1.alt` instead.
 
 	./schweikh1
 
-## Judges' comments:
+## Judges' remarks:
 
 What does it do?  It seems to print a list of system headers, perhaps
 with words after them.  Curiously, if you look at the list of words
@@ -85,7 +85,7 @@ whether or not it should.  The innovative realization that you can
 use special characters, such as '\n', in #file directives alone
 merits some recognition.
 
-I've included most of the author's comments; they're fairly thorough.
+I've included most of the author's remarks; they're fairly thorough.
 Do not read them if you want to figure this out yourself.  "Amendment
 One" refers to "NA1", the add-on to C89 which added some fairly
 crufty internationalization support.
@@ -97,7 +97,7 @@ gcc invocation anyway.  Anyone who uses egcs and has no plain gcc
 will need to frob the source anyway and can be expected to do the
 right thing with ${CC}. So use gcc.
 
-## Author's comments
+## Author's remarks
 
 Important! This program, if it compiles at all, is mis-compiled by many
 compilers due to compiler bugs. It could be the "least likely

@@ -30,14 +30,14 @@ make
 echo "Do or do not. There is no try."
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This entry is a nice play by the rules. It can use curses, if the
 SDL graphic library is not present, and is quite good at that,
 but the colors used in graphic mode (16 bit depth) are unfortunately
 less than dazzling. We could not test this entry in DOS mode.
 
-## Author's comments:
+## Author's remarks:
 
 To run under DOS:
 

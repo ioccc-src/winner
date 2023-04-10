@@ -26,7 +26,7 @@ ulimit -s unlimited
 NOTE: you need to be allowed to change your stack size or else the last command
 will likely cause the program to dump core.
 
-## Judges' comments:
+## Judges' remarks:
 
 The author of this entry was making sure that it does not win the
 "Best Short Program" award.  On the outside, the program behaves
@@ -35,7 +35,7 @@ transform decompressor that produces the source code of the actual
 obfuscated approximate grep program and calls it. As an exercise,
 try writing the compressor.
 
-## Author's comments:
+## Author's remarks:
 
 ### Approximate grep
 

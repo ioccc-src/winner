@@ -27,7 +27,7 @@ echo Hello | ./echo
 
 Be patient with the last one.
 
-## Judges' comments:
+## Judges' remarks:
 
 We liked this entry because it can serve as a standalone program as well as an include file; and, as usual,
 because its input data is at least as obfuscated as the program itself.
@@ -35,7 +35,7 @@ because its input data is at least as obfuscated as the program itself.
 This entry can be considered an abuse of the GCC's optimizer; it takes GCC about 4x longer to compile it
 with -O3 than without, compared to clang's 2x.
 
-## Author's comments:
+## Author's remarks:
 
 ### Remarks
 

@@ -55,7 +55,7 @@ For clang try the alt code like:
 
 NOTE: you need to make clobber first for this entry to work right.
 
-## Judges' comments:
+## Judges' remarks:
 
 We enjoyed this entry this year, however in the future programs must be able to
 be compiled from within a Makefile without the need of human intervention.
@@ -64,7 +64,7 @@ Meanwhile Cody was twisted enough to point out (though to be fair he felt sick
 doing this) that with a slight modification this entry can be C++ instead. We don't
 thank him for this ghastly point! :-)
 
-## Author's comments:
+## Author's remarks:
 
 This program can be configured to do almost everything.  The configuration is
 done during compile time by typing in, C code, that one would like the program

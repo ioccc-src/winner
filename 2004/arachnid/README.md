@@ -32,7 +32,7 @@ and then try:
 ./arachnid arachnid.c
 ```
 
-## Judges' comments
+## Judges' remarks
 
 The fun part comes when you realize that the maze scrolls.  The overall
 visual effect is quite pleasing (at least on some displays), and, well,
@@ -42,7 +42,7 @@ Navigation is through the use of the "wasd" inverted-T formation on
 Qwerty keyboards.  Rogue players, vi users, and Dvorak typists are
 invited to get lost!
 
-## Author's comments
+## Author's remarks
 
 This program accepts ASCII formatted mazes as input, and renders
 them onscreen for the user to explore, complete with Line Of Sight

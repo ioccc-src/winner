@@ -26,7 +26,7 @@ cat jpeg.c
 
 Look at `jpeg.jpg` in an image viewer program.
 
-## Judges' comments:
+## Judges' remarks:
     
 This is a program which, when fed its own source, generates a program that almost is its whitespace inverse,
 which, in its order, generates a JPEG file (speaking of file size abuse, that is about 16.4 times 
@@ -34,7 +34,7 @@ larger than a PBM file with the same image, but the source was also abusing the 
 
 Don't pay attention to the OCR ~~behind the ruby curtain~~ --- it's a straightforward bitmap comparison.
 
-## Author's comments:
+## Author's remarks:
 
 ### Highlights
 

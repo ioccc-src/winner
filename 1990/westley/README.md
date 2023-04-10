@@ -50,7 +50,7 @@ make alt
 Use `westley.alt` as you would `westley`.
 
 
-## Judges' comments:
+## Judges' remarks:
 
 
 If you would rather "Daisy" someone other than Westley, rename 
@@ -70,7 +70,7 @@ make it easier on news readers, we converted each control-L to
 a blank line.
 
 
-## Author's comments:
+## Author's remarks:
 
 This is a "Picking the Daisy" simulation.  Now, instead of mangling a 
 daisy, simply run this program with the number of petals desired as 

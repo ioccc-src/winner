@@ -7,7 +7,7 @@ Jan Stein
         make all
 
 
-## Judges' comments:
+## Judges' remarks:
 
 NOTE: to avoid problems with news and mail, the single line was split
 into 3 lines.  Join all lines into a single line to recreate
@@ -24,7 +24,7 @@ Try the program with the following argument:
 output cleanly.  Your system may require another set of characters.
 In time, you will figure out what it does. :-)
 
-## Author's comments:
+## Author's remarks:
 
 No comments were provided by the author.
 

@@ -51,7 +51,7 @@ NOTE: The `dlowe-aux-data.tar.bz2/` directory was created by:
 tar -jxf dlowe-aux-data.tar.bz2
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This entry is a ghoulish example of a brain (dead?) neural network classifier.
 It comes with a set of corpora for you to try.
@@ -149,7 +149,7 @@ We created the xor-trained.net as follows:
 	xor-1/
 	    Data that XORs to 1
 
-## Author's comments:
+## Author's remarks:
 
 ### Synopsis:
 

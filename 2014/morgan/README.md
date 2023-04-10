@@ -34,14 +34,14 @@ make
 ls
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Think of this as a Maker Faire's make.  :-)
 
 It works reasomably well.  While not super ultra-featured, it does fair well with the Makefile we supplied.
 Not only that, it helped uncover a bug we had in our special Makefile rules.
 
-## Author's comments:
+## Author's remarks:
 
 ### Remarks
 

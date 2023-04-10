@@ -16,7 +16,7 @@
 
 	./tomtorfs tomtorfs.c 32 04C11DB7 1 FFFFFFFF FFFFFFFF
 
-## Judges' comments
+## Judges' remarks
 
     Also try:
 
@@ -31,7 +31,7 @@
     of the program with the value of CRC computed by PKZIP or any other
     archiver that uses the CRC-32 algorithm.
 
-## Author's comments
+## Author's remarks
 
     Usage:
        crc filename bitwidth polynom reflected init xor

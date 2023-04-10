@@ -80,7 +80,7 @@ export SDL2_INCLUDE_ROOT=/usr
 echo "Do or do not. There is no try."
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 We have seen entries with SDL graphics in the past, now it's time for SDL
 sound. This entry can even be run on a computer without a sound card with an
@@ -89,7 +89,7 @@ into the SDL documentation.
 
 Can you figure out how the notes are encoded and program a different melody?
 
-## Author's comments:
+## Author's remarks:
 
 To compile the entry you need SDL library, which is used only for audio
 output. To run the entry make sure you have audio output available. The entry

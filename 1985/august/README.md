@@ -22,7 +22,7 @@ what of the output in the first N (say 15) lines are primes:
 	while read -r n ; do primes "$n" $((n + 1)) ; done < <((./august | head -n 15 ))
 
 
-## Judges' comments:
+## Judges' remarks:
 
 An interesting use of a recursive call to main.  Compile and execute
 without args.  What is the initial value of b, and does it alter the
@@ -32,7 +32,7 @@ If you let it, the program will continue to print a numerical sequence
 (can you guess in what base it is printed?) until you run out of
 memory or until they sell your computer, which ever comes first.
 
-## Author's comments:
+## Author's remarks:
 
 No comments were provided by the author.
 

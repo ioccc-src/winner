@@ -23,14 +23,14 @@ Cody for your assistance!
 	./holloway
 
 
-## Judges' comments:
+## Judges' remarks:
 
 Believe it or not, this is the old standard "Hello, world" program
 performed in a very complex way.  The judges and the author defy you
 to determine how it does it.  It is a good thing that K&R didn't use
 this version as the first C program!
 
-## Author's comments:
+## Author's remarks:
 
 No comments were provided by the author.
 

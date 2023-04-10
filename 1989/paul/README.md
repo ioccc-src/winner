@@ -21,7 +21,7 @@ macOS. The problem was that the int (from `#define f`) should be a long. This
 became apparent when he was using lldb and saw that the type of a pointer was
 long. Thank you Cody for your assistance!
 
-## Judges' comments:
+## Judges' remarks:
 
 The original source contained a long line which caused many
 mailers to barf.  The original file may be re-constructed by

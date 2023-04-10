@@ -22,7 +22,7 @@ play MonodyVocals.wav
 play out.wav
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Do you need to pretend enjoying a more spacious living environment than you
 actually are in, or the great outdoors with mountains and canyons, when
@@ -30,7 +30,7 @@ recording your outgoing voicemail message?  Then don't waste another minute!
 Record yourself, send the audio file through this entry, and let your callers be
 surprised.
 
-## Author's comments:
+## Author's remarks:
 
 ### Description:
 

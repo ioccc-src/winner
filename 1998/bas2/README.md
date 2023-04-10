@@ -14,7 +14,7 @@
 
 	./bas2 < bas2.c
 
-## Judges' comments:
+## Judges' remarks:
 
 ### Questions to ponder:
 
@@ -32,7 +32,7 @@ a way that differs from a strict reading of one of the
 official IOCCC rules.  What is the rule and what is the octet
 value?
 
-## Author's comments:
+## Author's remarks:
 
 The main obfuscation is the way characters are recognized, which is
 done by matching the bit patterns.  Minor obfuscations are:

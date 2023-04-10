@@ -34,13 +34,13 @@ sox from MacPorts or Homebrew you can do something like:
 Thanks go to [Yusuke Endoh](/winners.html#Yusuke_Endoh) for providing a proper
 command line (see [/2013/endoh3/README.md](2013/endoh3/README.md).
 
-## Judges' comments:
+## Judges' remarks:
 
 You may need to run this a few times to understand exactly what is
 being said.  You might even need to look somewhere on your desktop,
 your arm or the wall for confirmation.
 
-## Author's comments:
+## Author's remarks:
 
 Past years' IOCCC entries do many marvellous things in small packages,
 such as console utilities, games, math, languages or even X

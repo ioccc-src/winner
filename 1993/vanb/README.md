@@ -30,7 +30,7 @@ where 'exp' is an octal expression
 	./vanb 4+4
 
 
-## Judges' comments:
+## Judges' remarks:
     
 The octal expression may contain:
 
@@ -47,7 +47,7 @@ one should surround the expression in single quotes.
 It is a good thing that this program consists of only one
 expression, otherwise it might become hard to understand.  :-)
 
-## Author's comments
+## Author's remarks
 
 The program does no error checking - erroneous expressions will
 produce spurious results. Note that unary '-' is an operator. Thus,

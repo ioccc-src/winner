@@ -22,7 +22,7 @@ make
 cat image.rgb | ./prog '  .,:;!$#@'
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 On the face of it :-) given what this program one might wonder what makes this winner special.
 But when you realize the source is small enough to tweet on twitter you understand.
@@ -30,7 +30,7 @@ But when you realize the source is small enough to tweet on twitter you understa
 Who will be the first to tweet this source?  How many re-tweets will such tweet get?
 And how many people will really understand the tweet?
 
-## Author's comments:
+## Author's remarks:
 
 ### Remarks
 

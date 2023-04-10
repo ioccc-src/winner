@@ -36,7 +36,7 @@ that this entry crashes under macOS but it works under linux after this change.
 echo "13 14 15 16 17 + - * / p" | ./dlowe
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 When this entry was submitted the rules of the IOCCC did not prohibit
 the use of embedded language interpreters.  The judges considered
@@ -46,12 +46,12 @@ hand it qualifies as the Worst Abuse of the Rules.  As a previous winner
 Judges.
 
 The program also contains an undocumented command for Chad and Chongo.
-The judges' comments contain a clue to the hidden command :-).
+The judges' remarks contain a clue to the hidden command :-).
 
 * The IOCCC uses an anonymous judging process which keeps the identity
 of the submitters hidden until all the prize winners have been selected.
 
-## Author's comments:
+## Author's remarks:
 
 ### Usage:
 

@@ -21,14 +21,14 @@ USA
 	./applin
 
 
-## Judges' comments:
+## Judges' remarks:
 
 
 The judges were so amused by this little program that we created an
 award just for it.  This program is portable to the C and Fortran 77
 compilers as well as executable by the Bourne shell!
 
-## Author's comments:
+## Author's remarks:
 
 No comments were provided by the author.
 

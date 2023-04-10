@@ -24,14 +24,14 @@ make
 Changing bounding box coordinates in the source to explore
 various regions of the fractal.
 
-## Judges' comments:
+## Judges' remarks:
 
 We consider this entry a tribute to all "Abuse of the C preprocessor"
 and Mandelbrot fractal drawing entries we've seen over the years.
 
 We liked the use of unary notation facilitated by variadic macros.
 
-## Author's comments:
+## Author's remarks:
 
 ### Portability
 

@@ -20,11 +20,11 @@ make all
 ./rince
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This entry has been updated to allow most ANSI C compilers.
 
-## Author's comments:
+## Author's remarks:
 
 This program is a simple puzzle type game. (I'll leave you to play
 it to see the rest of it .. :-) .)  The general idea was to try and

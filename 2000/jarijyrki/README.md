@@ -41,14 +41,14 @@ You will need a system capable of displaying the results of X Window programs.
 ./jarijyrki < sheet1.info > myedits.info
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This entry is one of those that makes you wonder why some commercial
 software needs tens to hundreds of megabytes to install!  This entry
 does not simply do the basics, it includes graphing features.  All this
 program needs now is a flight simulator!
 
-## Author's comments:
+## Author's remarks:
 
 1. OVERVIEW
 

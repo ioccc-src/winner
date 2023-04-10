@@ -24,14 +24,14 @@ make
 ./toledo3 1
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 It's pretty obvious from looking at it what this program does,
 since it's clearly spelled out in the code.  The interesting
 question is whether this is easier or harder to understand than
 the code for Deep Blue.
 
-## Author's comments:
+## Author's remarks:
 
 There are so many text-based chess programs, what is that of
 A1, H5, C4, D5?  The queen is really pointing to the king?

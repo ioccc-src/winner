@@ -21,12 +21,12 @@ make
 gdb ./prog || lldb ./prog
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 The purpose of this program is to crash. You'll want to have memorized `man 7
 ascii` when debugging it to reveal its purpose.
 
-## Author's comments:
+## Author's remarks:
 
 ### backtrace quine:
 

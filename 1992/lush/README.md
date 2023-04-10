@@ -20,7 +20,7 @@ make all
 
 
 [Yusuke Endoh](/winners.html#Yusuke_Endoh) supplied a patch which makes this
-work with gcc. Due to how it works (see Judges' comments below) this will not
+work with gcc. Due to how it works (see Judges' remarks below) this will not
 work with clang. Thank you Yusuke!
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made it use `fgets()`
@@ -31,13 +31,13 @@ with clang due to different compiler messages. Thank you Cody!
 For the original entry see the [archive tarball](/archive/archive-1992.tar.bz2).
 
 
-## Judges' comments:
+## Judges' remarks:
 
 The program uses error messages issued by the C Preprocessor to
 generate its message to the world.  One program's error is another 
 program's data!
 
-## Author's comments:
+## Author's remarks:
 
 This program is yet another "Hello World." program with a twist.  The
 string Hello World has been encoded in the error messages the compiler

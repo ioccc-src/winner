@@ -38,13 +38,13 @@ make alt
 
 Use `prog.alt` as you would `prog` above.
 
-## Judges' comments:
+## Judges' remarks:
 
 This hash of a C code makes a hash out of input.
 Do you understand how?
 You should get a-round-to-it figuring it out!
 
-## Author's comments:
+## Author's remarks:
 
 ### MD5 with integers
 

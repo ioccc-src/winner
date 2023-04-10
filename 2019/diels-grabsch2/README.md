@@ -27,14 +27,14 @@ you Cody!
 sha512sum prog.c || shasum -a 512 prog.c
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Before running this one, stay calm. Chill out, have a cup of tea. Is this bad?
 
 To understand what is going on here, please check if you are dreaming, or are you dreaming
 that you are dreaming? Or is it, wake up from the simulation?
 
-## Author's comments:
+## Author's remarks:
 
 ### Almost a hash collision:
 

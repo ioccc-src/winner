@@ -34,14 +34,14 @@ make alt
 
 Use `prog.alt` as you would `prog` above.
 
-## Judges' comments:
+## Judges' remarks:
 
 You may be tempted to use a mirror. Resist the temptation! Try figuring out how the clock hands are drawn.
 Can you change the program to make it draw a familiar (non-mirrored) clock face? Can you add the second hand?
 
 When using the `run_clock` shell script, your perception of time might depend on what time it is.
 
-## Author's comments:
+## Author's remarks:
 
 Prepare a mirror!
 

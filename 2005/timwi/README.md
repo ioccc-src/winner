@@ -22,7 +22,7 @@ make
 (echo "20 : ,-->+.>+.<<[>[>>+>+<<<-]>[>>+>+<<<-]>"; echo "[<+>-]>[<<<+>>>-]>[-]<<<<.<-]") | ./timwi
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Unlike most BF interpreters that we have been receiving for the last few
 years, this one, in our opinion, is the most obfuscated albeit the most
@@ -35,7 +35,7 @@ small quines work, some don't.
 
 Why?
 
-## Author's comments:
+## Author's remarks:
 
 This is an interpreter for the programming language BrainFuck (BF).
 

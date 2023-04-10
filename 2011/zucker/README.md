@@ -25,14 +25,14 @@ make
 
 Display the PPM image with your favorite image viewer.
 
-## Judges' comments:
+## Judges' remarks:
 
 The rendered image is centered and is output as a 600 by 220 pixel PPM.
 The vector font is proportional.
 
 This entry uses no local variables. None! At! All!
 
-## Author's comments:
+## Author's remarks:
 
 ### An image generator
 

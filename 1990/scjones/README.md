@@ -36,7 +36,7 @@ compiler option `-trigraphs` would also have worked.
 ./scjones
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 The addition of trigraphs has made it easier to make programs hard to read.  It
 was a dark and stormy night for C when the ANSI C committee added trigraphs to
@@ -53,7 +53,7 @@ The Author sent us this note after he was informed that he won:
 ... it was unintentional.
 
 
-## Author's comments:
+## Author's remarks:
 
 Since this year's contest is dedicated to ANSI C, here is a strictly conforming
 entry.  In accordance with the ANSI definition of a strictly conforming program

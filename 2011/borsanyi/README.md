@@ -27,7 +27,7 @@ make
 ./borsanyi < data.3
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This is a nice quick histogram plotter.  A useful utility when you need to
 look at the distribution of some data.
@@ -44,7 +44,7 @@ use malloc or alloca. How does it build the histogram?
 While the input does not need to be sorted, the histogram output is sorted.
 How does it put the data into buckets?  Why does it fork 22 times?
 
-## Author's comments:
+## Author's remarks:
 
 This small piece of program is meant to be a useful tool, when
 there are some data around and you need a quick glance at the

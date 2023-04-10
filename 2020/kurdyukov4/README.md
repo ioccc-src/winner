@@ -32,7 +32,7 @@ make
 > Too many identical strings if the context length is small.
 > -- Author
 
-## Judges' comments:
+## Judges' remarks:
 
 We were able to write our own program performing the same trick using the (still
 non-standard, for some reason) library function `memmem()`, but that way it
@@ -64,7 +64,7 @@ volume X of [History of Middle-earth
 (HoMe)](https://en.wikipedia.org/wiki/The_History_of_Middle-earth). Now can you
 appreciate the award title a bit better?
 
-## Author's comments:
+## Author's remarks:
 
 ### Building:
 

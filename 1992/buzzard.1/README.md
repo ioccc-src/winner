@@ -30,7 +30,7 @@ NOTE: this program will crash without two args.
 ./buzzard.1 1 521
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 To see good C Preprocessor buzzard.1, try:
 
@@ -41,7 +41,7 @@ cat babble.cppcb
 
 Notice how many statements it takes to do anything useful?
 
-## Author's comments:
+## Author's remarks:
 
 What you shouldn't think about `buzzard.1`:
 

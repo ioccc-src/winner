@@ -30,11 +30,11 @@ make
 Try the above command in a large window, say 200 chars wide and 100
 high (200x100) with a tiny font,
 
-## Judges' comments:
+## Judges' remarks:
 
 Do get lost in the programs line of thought!  :-)
 
-## Author's comments:
+## Author's remarks:
 
 ### What's this?
 

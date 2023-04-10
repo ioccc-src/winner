@@ -40,13 +40,13 @@ just get a 301 error. Perhaps someone can come up with a pipeline that will make
 this work with the change made.  Otherwise just enjoy it for what it was.
 
 
-## Judges' comments
+## Judges' remarks
 
 This little mynx will give any Fiery Fox a run for its money. A nice complement
 to last years winning hibachi. The judges double dare any eager
 Obfuscationalists to submit the missing pieces to get a functioning LAMP stack.
 
-## Author's comments:
+## Author's remarks:
 
 I was rather impressed by last year's mini web server. So much so that
 it inspired me to try my hand at writing the client side complement.

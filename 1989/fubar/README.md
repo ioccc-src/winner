@@ -24,7 +24,7 @@ modern systems. Thank you Cody for your assistance!
 	./fubar 2
 
 
-## Judges' comments
+## Judges' remarks
 
 Run this with a single digit argument (or wait a long time).
 
@@ -34,7 +34,7 @@ Do you know why?
 NOTE: don't try running `ouroboros.c` directly with an arg as it'll turn into an
 infinite loop. The same will happen with larger numbers.
 
-## Author's comments
+## Author's remarks
 
 In a nutshell, this is probably the slowest and most
 obnoxious factorial program ever written.  Unfortunately, 

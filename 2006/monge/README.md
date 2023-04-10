@@ -37,7 +37,7 @@ it segfaulted on his MacBook Pro with the M1 chip).
 ./monge "z = 0" "z = z*z*z + c; Abs2(z) < 4"
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 For those who are familiar with the previous IOCCC winners, this program
 is best described as "1994/tvr meets 2001/bellard". Here you have
@@ -51,7 +51,7 @@ At the time of judging we were too mesmerized by the graphics
 to realize it; and, after all, this entry does take a special
 effort to work on both i386 and x86_64. Portable it is! :)
 
-## Author's comments:
+## Author's remarks:
 
 ### For the impatient:
 

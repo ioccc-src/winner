@@ -25,7 +25,7 @@ make
 ./hou 'sin(1.5708)+0.04321+log(sqrt(exp(1*1*1)))+(1+2*3)-0.4-0.6+(4+6)*(2-1+2*3)-tan(0.785398)+2*10/3*6*sqrt(16/2/2)*10+10000-1000'
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This self-documenting scientific calculator compiles clean with no
 warnings under the most strict pedantic mode of gcc and clang.
@@ -73,7 +73,7 @@ The button layout in the C code is significant ... not just a nice looking layou
 The parser is functionally equivalent to a normal arithmetic parser for all valid inputs.
 For another fun challenge: try to determine how it parses the command line argument.
 
-## Author's comments:
+## Author's remarks:
 
 ### Obfuscations
 

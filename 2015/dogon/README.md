@@ -47,7 +47,7 @@ etc.
 
 Press the ESC key
 
-## Judges' comments:
+## Judges' remarks:
 
 You are in a twisty maze blocks, almost all alike.
 
@@ -60,7 +60,7 @@ number function keys such as F30 or F31?  :-)
 
 *Textures? We don't need no stinking textures.*
 
-## Author's comments:
+## Author's remarks:
 
 ### What is it?
 

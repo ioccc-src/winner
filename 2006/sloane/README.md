@@ -40,7 +40,7 @@ echo "Do or do not. There is no try."
 Looks almost good enough to eat, dunnit?  I suppose you could argue that,
 at first blush, this looks like a self-reproducing program.
 
-## Author's comments:
+## Author's remarks:
 
 This program doesn't require any special build options, other than that it
 uses sin and cos and hence requires the math library.

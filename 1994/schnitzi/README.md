@@ -35,7 +35,7 @@ to get this to use `fgets()` which would prevent a warning at linking or
 runtime. The file [schnitzi.alt.c](schnitzi.alt.c) has this to get anyone
 started, should they wish to tackle it (Cody will in time). The problem with
 changing the buffer size is that even when it works the generated output (see
-judges' comments below) will not be 100% correct duplication of the program.
+judges' remarks below) will not be 100% correct duplication of the program.
 
 ### Alternate code:
 
@@ -48,7 +48,7 @@ make alt
 Use `schnitzi.alt` as you would `schnitzi`.
 
 
-## Judges' comments:
+## Judges' remarks:
 
 
 Try:
@@ -59,7 +59,7 @@ Compare the output of the program with its source.  Sure the output
 is different, but there is more than meets the `diff`'s eye.  Can you
 find out why?
 
-## Author's comments:
+## Author's remarks:
 
 ### SPOILER:
 

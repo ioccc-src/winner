@@ -23,7 +23,7 @@ make
 
 Press the up arrow and the down arrow at the right time.
 
-## Judges' comments:
+## Judges' remarks:
 
 Did you find that mobile application game a bit frustrating?
 Well you can adjust the makefile parameters to make life a
@@ -74,7 +74,7 @@ Enjoy!
     TAP!! TAP!! TAP!!
     FLAP! FLAP! FLAP!
 
-## Author's comments:
+## Author's remarks:
 
 ### The Program
 

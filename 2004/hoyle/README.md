@@ -40,14 +40,14 @@ make alt
 
 Use `hoyle.alt.c` as you would `hoyle` above.
 
-## Judges' comments
+## Judges' remarks
 
 This obfuscation functions at several levels.  Note the clever
 use of use of #defines.  The do(if,else) #define, for example,
 is delightful.  The code itself contains a bunch of curves
 designed to throw you off axis.  :-)
 
-## Author's comments
+## Author's remarks
 
 This application graphs polynomials on a standard Cartesian coordinate
 system.  Polynomials of the form ax^0 + bx^1 + cx^2 + ... are graphed by

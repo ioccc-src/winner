@@ -74,7 +74,7 @@ cat README.md | ./mkdict.sh > words
 
 Then try using the program as shown above with the file `words`.
 
-## Author's comments:
+## Author's remarks:
 
 The name of the game:
 

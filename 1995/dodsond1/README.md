@@ -19,7 +19,7 @@
 
 	./dodsond1 < README.md
 
-## Judges' comments:
+## Judges' remarks:
 
 You might consider giving the following input:
 
@@ -32,7 +32,7 @@ You might consider giving the following input:
 
 	./dodsond1 < try.this.txt
 
-## Author's comments:
+## Author's remarks:
 
 Istha ogrampra akesta Englishwa extta aswa inputwa andwa
 anslatestra itwa intowa Igpa Atinla.

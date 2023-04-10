@@ -26,13 +26,13 @@ make hello
 ./hello
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 If you look closely at the source, you will see code that appears
 to puts C code that includes itself.  How and why?  Perhaps it is
 in the DNA code of the code? Perhaps there are 23 reasons? :-)
 
-## Author's comments:
+## Author's remarks:
 
 ### Remarks
 

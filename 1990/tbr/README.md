@@ -57,7 +57,7 @@ vi tbr.c
 What happens if you try using `cd -` to return to previous directory? What about
 `cd` with no args?
 
-## Judges' comments:
+## Judges' remarks:
 
 
 This program touches on a well known Unix utility, the 6th edition Bourne Shell
@@ -86,7 +86,7 @@ e(x){x<0?write(2,"?\n$ "-x/4,2),x+1||(exit(1),0):5;}
 It has the `exit()` returns void fix but not the `gets()` to `fgets()` fix
 applied.
 
-## Author's comments:
+## Author's remarks:
 
 ### Rot13:
 

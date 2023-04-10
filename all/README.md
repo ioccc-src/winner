@@ -101,7 +101,7 @@ features which result the program failing to compile.  You may have to do some
 syntax changing as we did to get old programs to compile on strict ANSI C
 compilers.
 
-Last, read the judges' comments/spoilers on the program.  Hints for `foo.c` are
+Last, read the judges' remarks/spoilers on the program.  Hints for `foo.c` are
 given in `README.md`.  Often they will contain suggested arguments or
 recommended data to use.
 

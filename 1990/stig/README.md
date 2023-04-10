@@ -23,7 +23,7 @@ NOTE: that's not a typo or mistake but one can also do:
 ./o
 ```
 
-## Judges' comments
+## Judges' remarks
 
 We changed the alias that the author's suggested alias from a
 C-shell alias to a zsh alias.
@@ -34,7 +34,7 @@ WARNING: This program's `how to compile` is too specific to a particular shell.
 The obfuscation of this program is more related to shell obfuscation than C
 obfuscation.  This type of entry will not be permitted in future contests.
 
-## Author's comments:
+## Author's remarks:
 
 If you like shell programming you may also admire my creative quoting. (I use
 echo to create an alias which when run calls cc with the -D option to create a C

@@ -28,7 +28,7 @@ where:
 
 	colors		number of possible colors (1 to 15) (default: 6)
 
-## Judges' comments:
+## Judges' remarks:
     
 By default, the number of colors if 6.  You may specify a
 value of between 1 and 15 colors.  See the author's notes
@@ -37,7 +37,7 @@ for instructions of how to play.
 We look forward to more entries from the newer members of the 
 International Internet community.
 
-## Author's comments:
+## Author's remarks:
 
 This program plays mastermind, if you call it by a name ending by
 'd', otherwise it _solves_ mastermind. Call it without parameters

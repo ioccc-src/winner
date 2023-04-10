@@ -39,14 +39,14 @@ make alt
 
 Use `toledo2` or `toledo3` as you would `toledo` above.
 
-## Judges' comments:
+## Judges' remarks:
 
 Challenge yourself with your ability to look 5, 6 or more moves ahead.
 Challenge your knowledge of C operator precedence.  The following the
 move analysis via recursion while it executes moves.  All while playing
 by the rules of C and Chess within a single function!
 
-## Author's comments:
+## Author's remarks:
 
 ### What does this program
 

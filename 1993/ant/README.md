@@ -26,14 +26,14 @@ You may also want to try the author's test suite:
 make -f ant.test.mk
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 See the author's POSIX P1003.2-like documentation file ant.txt for more
 information.
 
 This program demonstrates that POSIX doesn't guarantee readability.  :-)
 
-## Author's comments:
+## Author's remarks:
 
 Some of the features of my entry are:
 

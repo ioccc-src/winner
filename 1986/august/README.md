@@ -19,7 +19,7 @@ Sweden
 
 NOTE: this entry is very likely to core dump after its output.
 
-## Judges' comments:
+## Judges' remarks:
 
 This program computes a specific mathematical value.  Simply compile
 and give it an infinite amount of stack space and cpu time.  Otherwise
@@ -29,7 +29,7 @@ dump.
 This program will pass lint on your system assuming your lint is brave
 enough to try and parse it correctly.
 
-## Author's comments:
+## Author's remarks:
 
 No comments were provided by the author.
 

@@ -38,7 +38,7 @@ cc -Describe -Door westley.c
 cc -Describe -Drain westley.c
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Not all compiler errors are bad.
 
@@ -53,7 +53,7 @@ to make it easier to see the game in action. Thank you Cody! To use:
 ./spoiler.sh
 ```
 
-## Author's comments:
+## Author's remarks:
 
 This program, in accordance with the rules, compiles into a legal
 C program without human intervention.  However, it simply compiles

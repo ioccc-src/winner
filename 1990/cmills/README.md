@@ -36,7 +36,7 @@ For the original code see the [1992 archive](/archive/archive-1990.tar.bz2).
 ```
 
 
-## Judges' comments:
+## Judges' remarks:
 
 
 The Makefile uses several `-D` defines. The following is is a list of the macros
@@ -49,7 +49,7 @@ that may be changed:
 The macro `V` should remain `void`.
 
 
-## Author's comments:
+## Author's remarks:
 
 This is a blackjack program.  It does splits, doubling down, insurance, etc.
 

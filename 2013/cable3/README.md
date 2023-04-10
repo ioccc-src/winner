@@ -33,7 +33,7 @@ assistance!
 ./runme
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This entry weighs in at a magical 4043 bytes (8086 nibbles, 28,301
 bits). It manages to implement most of the hardware in a 1980's era
@@ -45,7 +45,7 @@ correctly display console applications that use ANSI graphics.
 
 Update: This entry now has its own web page <http://www.megalith.co.uk/8086tiny>
 
-## Author's comments:
+## Author's remarks:
 
 ### A tiny but highly functional PC emulator/virtual machine
 

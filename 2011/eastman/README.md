@@ -23,7 +23,7 @@ Quit the program.  Resize your terminal window.  Run it again.
 ./eastman
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This round program will generate a classic spherical result!
 
@@ -36,7 +36,7 @@ size itself to the initial geometry of your terminal.
 If you are ambitious, make the font really small and the window really
 large for hi-rez graphics!
 
-## Author's comments:
+## Author's remarks:
 
 This program uses ANSI graphics to recreate the classic Boing Ball demo from
 the Commodore Amiga.  See http://www.youtube.com/watch?v=-ga41edXw3A if you

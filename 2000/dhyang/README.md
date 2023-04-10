@@ -39,7 +39,7 @@ make aku
 ./aku | diff - aku.c
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 A beautiful combination of solving several different problems, but
 mostly, the single most impressive layout we've ever seen.  Many
@@ -48,7 +48,7 @@ programs have *one* interesting layout; this one has four.
 It may be informative to run the code through a "beautifier", to
 study it, but the layout itself is where most of the interest lies.
 
-## Author's comments:
+## Author's remarks:
 
 This one is dedicated to Saitou Hajime fans `^_^x`
 

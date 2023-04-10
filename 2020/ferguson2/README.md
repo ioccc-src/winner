@@ -82,7 +82,7 @@ rm -f conf input output output2
 
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This code is an enigma.  Try to decode it!
 
@@ -106,7 +106,7 @@ There is a good deal of useful documentation that is provided with this entry:
 [recode.html]: recode.html
 [chocolate-cake.html]: chocolate-cake.html
 
-## Author's comments:
+## Author's remarks:
 
 My remarks about my Heer 'Army' and Luftwaffe 'Air Force' Enigma simulator for
 the 27th IOCCC.
@@ -779,7 +779,7 @@ But there are some others who I don't remember like Ilya Kurdyukov (who's
 offered a lot of interesting thoughts on Snake and who plans to have his own
 version after the entries are published), Nathan Otterness, Nicholas Carlini
 (whose entry is an absolutely brilliant abuse of printf - and I totally agree
-with the judges comments that your entry is so novel that it'll be worth special
+with the judges remarks that your entry is so novel that it'll be worth special
 mention in the future Best of IOCCC list!) and tsoj too.
 
 Well done and congratulations to all of you again!  Thank you for submitting the

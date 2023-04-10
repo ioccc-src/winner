@@ -15,7 +15,7 @@
 	./westley
 
 
-## Judges' comments
+## Judges' remarks
 
 Your compiler must parse
 

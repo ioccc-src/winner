@@ -24,7 +24,7 @@ make
 perl -e 'map{map{print int(rand()*8);}(0..16);print chr(10);}(0..30);' | tr '[0-4]' ' '| ./birken
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This program also wins the "Most amusing abuse of the iocccsize tool" award; although not the
 absolute best: it is possible to achieve 0 by writing
@@ -35,7 +35,7 @@ absolute best: it is possible to achieve 0 by writing
 The game of Tetris had been used in many endeavors, from studying [algorithmic complexity](http://arxiv.org/abs/cs/0210020) to [treating PTSD](http://www.livescience.com/19894-tetris-treat-ptsd-flashbacks.html).
 Using it for painting by numbers looks like a novel idea.
 
-## Author's comments:
+## Author's remarks:
 
 ### About This Document
 

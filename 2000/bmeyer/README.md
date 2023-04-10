@@ -65,7 +65,7 @@ Decompress that smaller glic-file:
 
 Compare the new.pgm file to the lavabus.pgm file by viewing them.
 
-## Judges' comments:
+## Judges' remarks:
 
 Don't even think of supplying different compression factors (the
 dashed argument) for compression and decompression!  You've been warned.
@@ -91,7 +91,7 @@ If your system has 80-bit internal representation of floating
 point values (x86, some Motorola processors) and you want the
 compressed format to be portable across platforms, you need
 to set your FPU to use 64 bit mode. See the extra build lines
-in the Makefile, and read the author's comments below.
+in the Makefile, and read the author's remarks below.
 
 If you cannot work out how to get into 64 bit mode, you can
 try using -ffloat-store if you compile with GCC (this may have
@@ -103,7 +103,7 @@ chance any given file produced might not be portable.
 
 The makefile defaults to -O3 and no `asm()` call.
 
-## Author's comments:
+## Author's remarks:
 
 GLICBAWLS
 

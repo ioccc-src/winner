@@ -31,7 +31,7 @@ rail
 clerk" | ./fine
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This filter, 80 chars plus a newline, fits into a single line on most 
 terminals (unless your terminal has a line wrap mis-feature :-)).
@@ -44,7 +44,7 @@ How does this program work?  Which 3 bytes of C code can be changed
 into 2 bytes, allowing the program to still work, but also stripping 
 the high bit off of some input?
 
-## Author's comments
+## Author's remarks
 
 The author wishes to thank J Greely for the last 6 bytes.
 

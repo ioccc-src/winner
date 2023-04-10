@@ -22,7 +22,7 @@ echo '1*2*3*4*5*6*7*8*9%1000' | ./robison
 echo '100000000000000000000*(20*(1+(99477941840441*50)))/31664812345028528' | ./robison
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Of integers this prog does a lot,
 plus minus, div times (and what not).
@@ -36,7 +36,7 @@ when interactive one values more than throughput.
 With cut and paste and some time,
 one can compute M(23209).
 
-## Author's comments:
+## Author's remarks:
 
 ### Oh, The Strings You Can C!
 

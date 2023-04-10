@@ -44,7 +44,7 @@ cat akari4.c
 ./akari4
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Akari is an image downsampling utility that accepts 3 inout formats:
 
@@ -59,7 +59,7 @@ Akari is an image downsampling utility that accepts 3 inout formats:
 
 Anything that is not parseable as PGM or PPM will be downsampled as ASCII art.
 
-## Author's comments:
+## Author's remarks:
 
 Akari is an image downsampling utility.  She accepts up to 3 arguments:
 

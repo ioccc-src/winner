@@ -37,7 +37,7 @@ thanks to Yusuke for confirming the output is correct!
 Why does the output end with 121?
 
 
-## Judges' comments:
+## Judges' remarks:
 
 The output is mis-leading ... why does it also print 2047?
 
@@ -51,7 +51,7 @@ We (the judges) recommend that you take the time needed to understand
 how this program works.  The source is small enough to make the effort
 reasonable, and complex enough to make it interesting.
 
-## Author's comments:
+## Author's remarks:
 
 This program assumes that your terminal wraps lines automatically.
 If this is not the case, you may need to change the space in the

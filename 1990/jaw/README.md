@@ -48,7 +48,7 @@ echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
 which should apply the identity transformation to a minimal holoalphabetic
 sentence.
 
-## Judges' comments:
+## Judges' remarks:
 
 
 The program, in its base form, implements two useful utilities:
@@ -78,7 +78,7 @@ cmp ../jaw.c jaw.c
 cmp ../README.md README.md
 ```
 
-## Authors' comments:
+## Authors' remarks:
 
 ### ABSTRACT
 

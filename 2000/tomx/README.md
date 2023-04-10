@@ -37,7 +37,7 @@ make -f tomx.c
 ./tomx
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Polyglots have come and gone, but this was the first one we'd seen
 where one language *used* another to perform its tasks.  An interesting
@@ -45,7 +45,7 @@ approach.  Admittedly, it's not all that obfuscated - but there's more
 to it than you might think, since you have to make sure that your
 changes don't change the shell code or the makefile.
 
-## Author's comments:
+## Author's remarks:
 
 ### Summary
 

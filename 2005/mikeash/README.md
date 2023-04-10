@@ -23,7 +23,7 @@ make
 ./mikeash < mikeash.c | diff - mikeash.c
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Having problems speaking code?  Do you LISP?  Parenthetically
 speaking, this entry takes advantage of C99 features, while
@@ -31,7 +31,7 @@ speaking parenthetically.  Best of all, it self-reproduces!
 
 John McCarthy might not of imagined it quite like this!  :-)
 
-## Author's comments:
+## Author's remarks:
 
 This program is a self-reproducing program, which is on the IOCCC's list
 of discouraged program types. Worse, it's a self-reproducing program

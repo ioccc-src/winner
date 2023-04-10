@@ -19,7 +19,7 @@ make all
 ./cdupont
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Why is the following label necessary?
 
@@ -34,7 +34,7 @@ NOTE: One should remove the final trailing newline to obtain the
 original source file.  This step is not needed to compile
 this entry.
 
-## Author's comments:
+## Author's remarks:
 
 Spoiler, rot13 to read:
 

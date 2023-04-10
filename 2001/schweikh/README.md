@@ -28,11 +28,11 @@ make
 ./schweikh bar 'f??'; echo $?
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Do you get the pattern here?
 
-## Author's comments:
+## Author's remarks:
 
 This one-liner program is a glob pattern matcher. It understands
 the glob characters `*' meaning `zero or more characters' and

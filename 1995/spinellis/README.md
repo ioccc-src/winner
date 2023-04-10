@@ -14,14 +14,14 @@
 
 	./spinellis < spinellis.c
 
-## Judges' comments
+## Judges' remarks
 
 
 While the code does not abuse the rules, its output surely does!
 
 P.S. Does the source have any spelling errors?
 
-## Author's comments
+## Author's remarks
 
 96% of the program lines (631 out of the 658) are comment text rendering
 the program readable and understandable.  With the exception of the

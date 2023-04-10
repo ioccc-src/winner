@@ -79,7 +79,7 @@ make clobber alt
 Thank you Cody for your assistance!
 
 
-## Judges' comments:
+## Judges' remarks:
 
 
 Notice that a file `a.c` has been generated.  Can you tell how `a.c` was
@@ -92,7 +92,7 @@ NOTE: Due to minor problems with some strict ANSI C compilers, we
 have supplied a more portable ANSI version.
 
 
-## Author's comments:
+## Author's remarks:
 
 This program is a companion to the DDS-BASIC interpreter program that
 was submitted to the contest in 1990.  This compiles BASIC programs into

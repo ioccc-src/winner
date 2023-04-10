@@ -23,11 +23,11 @@ make
 
 While that is running, point your favorite browser at: [http://localhost:8224](http://localhost:8224)
 
-## Judges' comments:
+## Judges' remarks:
 
 Who will be the first to post an image rendered during a leap-second?
 
-## Author's comments:
+## Author's remarks:
 
 ### The Program
 

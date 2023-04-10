@@ -24,13 +24,13 @@ make
 ./vik maze.map
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 An amazing use of the X libraries with twisty code passages,
 all different.  One risks running in code path circles as main is
 called again and again. Be sure to pay attention to commas!  :-)
 
-## Author's comments:
+## Author's remarks:
 
 This entry is a Wolfenstein style graphics engine where a user can navigate in
 a 3D world. The maze has walls with bitmap textures. The application contains

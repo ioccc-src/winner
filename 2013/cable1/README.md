@@ -25,7 +25,7 @@ make
 ./cable1 lincoln republican democrat
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Partisan may be defined as a strong supporter of a cause, party or person.
 We need not limit ourselves to the two major political parties in the US today.
@@ -73,7 +73,7 @@ Why late?  See [this tweet](https://twitter.com/landonnoll/status/40158296712374
 
 So how does a one line C source know so much?  Hint: it doesn't.
 
-## Author's comments:
+## Author's remarks:
 
 ### Presidents of the United States of America!
 

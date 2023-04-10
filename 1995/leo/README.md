@@ -30,7 +30,7 @@ and send foo.ps to your local postscript printer or open it in an appropriate
 application (e.g. GIMP).
 
 
-## Judges' comments:
+## Judges' remarks:
 
 Press return after each image is drawn.
 
@@ -47,7 +47,7 @@ find out all the secret switches that the author doesn't divulge !
  not a number is a candidate)
 
 
-## Author's comments:
+## Author's remarks:
 
 The usage is:
 

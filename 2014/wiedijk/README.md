@@ -21,7 +21,7 @@ make
 cc -E prog.c | indent | sed '1,/5.*prog/d'
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 C11 features definitely help this entry to be as concise as it is.
 
@@ -29,7 +29,7 @@ The judges would like to think that they had almost understood how this entry wo
 
 If you win a bet by demonstrating this entry, please let us know.
 
-## Author's comments:
+## Author's remarks:
 
 ### Remarks
 

@@ -30,7 +30,7 @@
 	cat parse.oo fac.oc | ./august | ./august
 
 
-## Judges' comments:
+## Judges' remarks:
 
 This entry can feed on itself.  If you C preprocess the source,
 you compile the interpreter:
@@ -59,7 +59,7 @@ We (the judges) recommend that you spend some time studying this
 entry as it surely will make the 'best of the IOCCC' list.  It was
 very well received by those who attended the IOCCC BOF.
 
-## Author's comments
+## Author's remarks
 
 This program is a bytecode interpreter.  This fact is not
 particularly obfuscated; any experienced C programmer can see that

@@ -57,13 +57,13 @@ And as an added IOCCC bonus: :-)
 ./cable2 bonus.bmp
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 We can confirm that this is the first time the IOCCC has been used
 to peer-review a new research. We had quite a bit of fun with a sharpie and a
 scanner.
 
-## Author's comments:
+## Author's remarks:
 
 ### OCR - Obfuscated Character Recognition of Handwritten Text
 

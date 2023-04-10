@@ -58,7 +58,7 @@ make alt
 
 Use `ldb.alt` as you would `ldb`.
 
-## Judges' comments:
+## Judges' remarks:
 
 Trigraphs are natural obfuscators.  Most C-beautifiers become C-uglifiers
 because they don't handle them correctly.
@@ -66,7 +66,7 @@ because they don't handle them correctly.
 Can you figure out how it prints a given random line (or if the line is longer
 than 231 characters, part of that line) from stdin?
 
-## Author's comments:
+## Author's remarks:
 
 All input lines must be under 232 characters long.  The compiling
 platform should be ASCII based.

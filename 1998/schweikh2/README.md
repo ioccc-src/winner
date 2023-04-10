@@ -44,7 +44,7 @@ What happens if you don't put in any number like the below?
 	<ENTER>
 
 
-## Judges' comments:
+## Judges' remarks:
 
 Run the program with a small argument, like 5 or 10, several times.  Are the
 results different? Why?
@@ -103,7 +103,7 @@ email the author for a free pat on the back.
 NOTE: the author submitted the program as yarng so when trying the examples
 below change `yarng` to `./schweikh2`.
 
-## Author's comments:
+## Author's remarks:
 
 What this program does
 ----------------------

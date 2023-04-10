@@ -24,7 +24,7 @@ echo 'Want to hear me beep?' | ./prog > audio_file.raw
 echo 'No. I want chocolate!' | ./prog | mplayer -demuxer rawaudio -
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This program sets a new tone for obfuscation. But do you understand
 what it says about obfuscation? Perhaps:
@@ -46,7 +46,7 @@ NOTE: In 2020 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) found a
 minor bug when working on his [Enigma machine entry](../../2020/ferguson2); see
 his [README.md](../../2020/ferguson2/README.md) for details (search for `vik`).
 
-## Author's comments:
+## Author's remarks:
 
 ### Remarks
 

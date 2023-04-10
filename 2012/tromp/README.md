@@ -32,7 +32,7 @@ John Tromp
 The judges dare to say that the data files this entry is processing
 are more obfuscated than the entry itself.
 
-## Author's comments:
+## Author's remarks:
 
 This program celebrates the close connection between obfuscation and conciseness,
 by implementing the most concise language known, Binary Lambda Calculus (BLC).

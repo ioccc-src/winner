@@ -38,11 +38,11 @@ make alt
 
 Use `prog.alt` as you would `prog` above.
 
-## Judges' comments:
+## Judges' remarks:
 
 With this entry, you won't need to turn your monitor [upside down](http://en.wikipedia.org/wiki/River_%28typography%29)!
 
-## Author's comments:
+## Author's remarks:
 
 ### Compiling the program:
 

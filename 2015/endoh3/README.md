@@ -55,7 +55,7 @@ provide them on his page. We've not yet contacted him for a copy but we will in
 time. Thank you Yusuke!
 
 
-## Judges' comments:
+## Judges' remarks:
 
 Like Marty and Doc, something nostalgic from 1984 appears live in October of
 2015!
@@ -66,7 +66,7 @@ A question for inquisitive readers: is the implemented subset of PDP-11
 instructions Turing-complete? (For a clue, see the end of the author's remarks.)
 If in doubt, use [APOUT](https://github.com/DoctorWkt/Apout).
 
-## Author's comments:
+## Author's remarks:
 
 ### Hint / Compatibility
 

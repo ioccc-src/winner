@@ -39,7 +39,7 @@ cc -Wno-implicit-function-declaration -xc hello.pdf -o hello2
 ./hello3
 ```
 
-## Judges' comments
+## Judges' remarks
 
 This entry treads into a new territory for IOCCC - generating PDF files.
 
@@ -67,7 +67,7 @@ Don't forget to take a look at the generated PDF, perhaps you might even want
 to compile the output with a C compiler.  When you run it, what does it
 output?
 
-## Author's comments
+## Author's remarks
 
 This program obfuscate text file into PDF file with Dancing men
 algorithm.

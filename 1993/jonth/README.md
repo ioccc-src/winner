@@ -35,7 +35,7 @@ prepended to them. Thank you Yusuke and Cody for your assistance!
 
 	./jonth			# must be run on an X11 server
 
-## Judges' comments:
+## Judges' remarks:
 
 Use 'h' and 'l' to shift objects left or right.  Use 'k' to
 rotate and press SPACE to drop.
@@ -44,7 +44,7 @@ This program's output may be even more obfuscated when played
 on inverse video.  :-)
 
 
-## Author's comments:
+## Author's remarks:
 
 This is `jonth` (`jon's t(h)etris`) for the X Window System.
 

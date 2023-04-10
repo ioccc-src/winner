@@ -30,13 +30,13 @@ a 0 1
 NOTE: if you do not input three different 'words' it will block. You can input
 more text to fulfil the program's requirements.
 
-## Judges' comments:
+## Judges' remarks:
 
 This entry turns a newspaper solitaire puzzle into a competition
 with the computer to be the last one moving.  The object of this
 source code is to determine the object of this source code!  :-)
 
-## Author's comments:
+## Author's remarks:
 
 I wanted submit a fully object-oriented entry to show that
 object-orientated code:

@@ -59,7 +59,7 @@ If the two args added up equals 0 the program will enter an infinite loop,
 printing 0 over and over again. Cody fixed another condition where this happens
 but this has not been fixed. See [bugs.md](/bugs.md) for more details.
 
-## Judges' comments:
+## Judges' remarks:
 
 The program's source implements four functions, all from the
 same source file!
@@ -125,7 +125,7 @@ knife](https://en.wikipedia.org/wiki/Swiss_Army_knife) included! :-)
 When this program was first shown at the 1990 Summer Usenix conference, it
 received a standing ovation; a first for a contest entry.
 
-## Author's comments:
+## Author's remarks:
 
 Differential equations are solved via the Runge-Kutta method, which guarantees
 local error proportional to h^5, and total error across a finite interval is at

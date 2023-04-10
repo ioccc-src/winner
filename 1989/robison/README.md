@@ -39,7 +39,7 @@ Yusuke!
 
 NOTE: this entry will crash with numbers with non binary digits.
 
-## Judges' comments:
+## Judges' remarks:
 
 Sites with punch card facilities will be happy to note that
 the source deck can be re-collated with an ASCII sort.

@@ -28,7 +28,7 @@ Refresh the image every time the output refreshes, all effects should be more or
 ./hou otherroom.scene NAIVE
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 You could consider that this program violates the source code size
 limit. This is because the first compilation of this program is
@@ -38,7 +38,7 @@ program.
 This program will loop infinitely while progressively refining a
 raytraced image.
 
-## Author's comments:
+## Author's remarks:
 
 ### Using hou
 

@@ -31,7 +31,7 @@ more generated3.c
 ./msg2
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Code should be readable in any direction! This tool will help you rotate your
 code so you don't have to stare at it sideways or even upside down. Rotating
@@ -57,7 +57,7 @@ The final message can be revealed using
 But what combinations will generate `./msg3`, `./msg4`, `./msg5`, `./msg6`,
 `./msg7`, `./msg8` and finally `./msg9`?
 
-## Author's comments:
+## Author's remarks:
 
 ### Tools' usage:
 

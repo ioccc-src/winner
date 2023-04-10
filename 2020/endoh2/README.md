@@ -27,7 +27,7 @@ make
 ./prog bear.txt
 ``
 
-## Judges' comments:
+## Judges' remarks:
 
 Clever use of the C99 complex data type. The spoiler.zip file contains clues
 as to how some winning authors create / edit programs into ASCII shapes.
@@ -35,7 +35,7 @@ as to how some winning authors create / edit programs into ASCII shapes.
 With the source from the spoiler.zip file could you make the code render for a
 larger terminal window?  How about adding more glyphs?
 
-## Author's comments:
+## Author's remarks:
 
 No!  Try not.  Do, or do not.  There is no try.
 

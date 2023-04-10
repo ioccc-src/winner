@@ -30,7 +30,7 @@ compress < test2 > test2.Z
 time ./prog test2.Z | cmp - test2
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Without ASCII art, the source code of this entry would have been exactly 256
 bytes.  Compared to [1990/jaw](http://ioccc.org/years.html#1990_jaw), it is very
@@ -39,7 +39,7 @@ for a compress(1)-like compressor using a similar idea.
 
 Why is the sad smiley on line 12 in that particular place?
 
-## Author's comments:
+## Author's remarks:
 
 ### The Program
 

@@ -29,14 +29,14 @@ where FILE is one of:
         pentagon pentagons rings rings2 spirals spirals2 spirals3
         spirals4 squares stars stars2 tree tree2 tree3 tree4 triangle
 
-## Judges' comments:
+## Judges' remarks:
 
 Note the interesting choice of using a #define in the output.
 The selection of input files makes this one endlessly fun to play
 with.  Many image viewers will be able to read the results, as will
 a reasonably experienced user who can parse formats in their mind.  :-)
 
-## Author's comments:
+## Author's remarks:
 
 ### Execution
 

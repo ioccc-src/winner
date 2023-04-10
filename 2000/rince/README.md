@@ -26,7 +26,7 @@ make dmy2jd
 ./rince 0.001 `./dmy2jd  7.8 1 1610`
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This program may have you going around in circles :-) Try running it
 first before reading the Selected Author's Comments below.
@@ -34,7 +34,7 @@ first before reading the Selected Author's Comments below.
 The judges verified the correctness of output for recent dates
 thru visual observation.
 
-## Author's comments:
+## Author's remarks:
 
 ### How to use it
 

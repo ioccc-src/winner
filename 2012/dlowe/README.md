@@ -34,7 +34,7 @@ Watch for a while if you like, then press a key within the window.
 
 Use up and down keys to escape death.
 
-## Judges' comments:
+## Judges' remarks:
 
 The judges lose playing this game. This entry wins!
 
@@ -43,7 +43,7 @@ Q: How did we get past the variadic macro problem on a Mac?
 
 A: Don't use -pedantic-errors in the Makefile.
 
-## Author's comments:
+## Author's remarks:
 
 ### Conway's Game of DEATH
 

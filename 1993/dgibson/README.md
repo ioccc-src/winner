@@ -29,7 +29,7 @@ where:
 ./dgibson.sh dgibson.data3
 ```
 
-## Judges' comments:
+## Judges' remarks:
     
 We have provided the shell script [dgibson.sh](dgibson.sh) to make it easier
 to run this entry.  Run this shell script several times to
@@ -49,7 +49,7 @@ memory and lots of time!
 Good luck trying to use a debugger on this entry!  Life is not
 always pretty.
 
-## Author's comments:
+## Author's remarks:
 
 This program plays the [Game of
 Life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life).

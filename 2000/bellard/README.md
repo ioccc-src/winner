@@ -25,7 +25,7 @@ make
 Do. Or do not. There is no try. :-)
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This code is an nice compact example of a Modular Fast Fourier Transform.
 While its output is very specific, the internal FFT has a wide variety

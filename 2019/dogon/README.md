@@ -28,7 +28,7 @@ make
 ./prog < message.mc
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 [1991/davidguy](http://ioccc.org/years.html#1991_davidguy),
 [2011/blakely](http://ioccc.org/years.html#2011_blakely), ...
@@ -50,7 +50,7 @@ We truly have not much more to add, except two things:
 
 In the interest of saving lives, this entry was not fuzzed.
 
-## Author's comments:
+## Author's remarks:
 
 ### What is it?
 

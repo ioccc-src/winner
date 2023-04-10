@@ -81,12 +81,12 @@ cat giana.level | ./prog 320 200 1000 300 192 168 giana.rgba giana8.wav 5459393
 cat mario.level | ./prog 320 200 800 300 128 144 mario.rgba mario8.wav 10343679 && telnet towel.blinkenlights.nl
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 A classic for a particular generation. Like all good programs, being data
 driven means you can do fun things in small spaces.
 
-## Author's comments:
+## Author's remarks:
 
 ### Remarks
 

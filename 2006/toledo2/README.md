@@ -24,7 +24,7 @@ make
 echo "Do or do not. There is no try."
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 We're impressed! Last year, it was a 6502 emulator; this year,
 it's 8080!  It requires an input file ("C") to be present, but
@@ -38,11 +38,11 @@ system (one by one, so you'll have to be patient).
 
 Remember the good old days and play (or let your kids play)
 Adventure (in the directory ADVENTUR within the KAYPROII.ZIP
-file referred in the author's comments); walking in a maze of
+file referred in the author's remarks); walking in a maze of
 twisty little passages all alike is easier than understanding
 the code!
 
-## Author's comments:
+## Author's remarks:
 
 This program emulates a complete Intel(r) 8080
 processor, along with a teletype and a disk

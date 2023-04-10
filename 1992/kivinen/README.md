@@ -46,9 +46,9 @@ Yusuke!
 ./kivinen a b
 ```
 
-See also the author's comments for other variations.
+See also the author's remarks for other variations.
 
-## Judges' comments:
+## Judges' remarks:
 
 
 The type of entertainment depends on number of arguments

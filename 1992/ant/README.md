@@ -37,7 +37,7 @@ make am
 ```
 
 
-## Judges' comments:
+## Judges' remarks:
 
 
 Like much of POSIX, obfuscation has its place.  Your task is to
@@ -48,7 +48,7 @@ Interested POSIX balloters should lobby the IEEE for an obfuscated
 P1003 subcommittee.
 
 
-## Author's comments:
+## Author's remarks:
 
 See the file [ant.README](ant.README).
 

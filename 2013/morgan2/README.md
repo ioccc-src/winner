@@ -29,13 +29,13 @@ For the graphical version (X11):
 echo "Do or do not. There is no try."
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 The judges enjoyed playing the game almost to completion; if we remember correctly, 
 we managed to place 59 or 60 dominoes. We wonder, what would be faster: to play the game to completion
 or to write an unobfuscated version of it?
 
-## Author's comments:
+## Author's remarks:
 
 This program is a domino game. The goal is to place dominoes on the 8x8 grid.
 Each domino is made of 6 squares of the color red or green. To place a domino,

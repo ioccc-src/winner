@@ -22,7 +22,7 @@ USA
 ./smr > smr.out ; diff -s smr.out smr.c
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Nearly every year, one or more people would submit what they claimed 
 was the world's smallest self reproducing program.  While the sizes
@@ -41,7 +41,7 @@ that is one character larger than this entry, forever eliminating
 this sort of program from contest.  After all, how many variations
 can one make on this entry?  :-)
 
-## Author's comments:
+## Author's remarks:
 
 The world's smallest self-replicating program. Guaranteed.
 Produces a listing of itself on stdout.

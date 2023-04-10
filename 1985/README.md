@@ -3,7 +3,7 @@
 Look at the README.md file for the given winner for information
 on how to compile the winner and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
-You may then wish to look at the Author's comments for even more details.
+You may then wish to look at the Author's remarks for even more details.
 
 Hints against machine dependent code were added to the [rules](rules.txt) to
 avoid another 1984 style winner ([1984/mullender](../1984/mullender)). Rules and

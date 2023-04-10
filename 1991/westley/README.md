@@ -37,7 +37,7 @@ make nextmove
 ./nextmove move_location | tee nextmove.c
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 We have provided the shell script, [ttt](ttt.sh), to make it easier to play the game:
 
@@ -59,7 +59,7 @@ has two other modes:
 
 Try not to cheat, the computer has not learned how to catch you doing it.
 
-## Author's comments:
+## Author's remarks:
 
 A tic-tac-toe self-modifying program that "learns".  This C program
 plays standard tic-tac-toe on itself.  The code is written as a

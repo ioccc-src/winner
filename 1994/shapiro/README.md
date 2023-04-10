@@ -45,7 +45,7 @@ ps x
 Notice what you see in the output of `ps`!
 
 
-## Judges' comments:
+## Judges' remarks:
 
 This entry has many different levels of obfuscation, and yet the
 source file is self documenting.  :-)
@@ -58,7 +58,7 @@ this program. Note that this alt file is currently missing. See
 [bugs.md](/bugs.md) for details.
 
 
-## Author's comments:
+## Author's remarks:
 
 The basic theme (pun) of this program is:
     

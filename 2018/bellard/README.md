@@ -25,7 +25,7 @@ pngtopnm < Lenna.png | pnmscale 0.25 | cjpeg -arithmetic -dct float -quality 14 
 ```
 ### NOTE: Lenna.png is from https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png
 
-## Judges' comments:
+## Judges' remarks:
 
 The file `small.jpg` will be approximately of the same size as the raw image
 data in the program. Compare the level of the detail and the artifacts of
@@ -39,7 +39,7 @@ We could understand some of the arithmetic but none of the magic.
 Deciphering the mechanism used for data encoding to make use of whitespace,
 braces and semicolons should be a slightly easier task.
 
-## Author's comments:
+## Author's remarks:
 
 Warning: the program is not protected against invalid input.
 

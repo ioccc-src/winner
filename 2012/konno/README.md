@@ -37,14 +37,14 @@ make alt
 
 Use `konno.alt` as you would `konno` above.
 
-## Judges' comments:
+## Judges' remarks:
 
 This entry is a good one-liner to analyze completely.
 
 For extra credit, what are the minimal changes to convert it to
 64-bit integers so that it could print 32 lines?
 
-## Author's comments:
+## Author's remarks:
 
 ### Remarks
 

@@ -38,7 +38,7 @@ echo -n ' MENE MENE TEKEL UPHARSIN ' | ./prog |
 # now open spectrogram.png with a graphics viewer or editor
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Be warned, this is not your garden variety text-to-speech program! Earplugs are advised,
 or at least a handy and well-tested volume knob.
@@ -48,7 +48,7 @@ and the message can be displayed in fiery letters, but don't be alarmed.
 
 How does decoding of the waveform work? Can you encode an arbitrary text in a sound sample?
 
-## Author's comments:
+## Author's remarks:
 
 ### What is this?
 

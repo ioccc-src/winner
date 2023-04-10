@@ -44,7 +44,7 @@ vi out
 
 Press ^F (control F) repeatedly.
 
-## Judges' comments:
+## Judges' remarks:
 
 This entry takes editorial in how it deals with its output.  After using
 vi to look at the source, use vi to look at its output.   We especially
@@ -58,7 +58,7 @@ s=s^(b=s&s-1^s)
 
 ... and understand why it is found in the source code.
 
-## Author's comments:
+## Author's remarks:
 
 ### So what do we have here ?
 

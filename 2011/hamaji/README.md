@@ -27,7 +27,7 @@ make
 ./hamaji < samurai.nono
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This program solves "Nonogram", which also known as "Paint by Numbers":
 
@@ -44,7 +44,7 @@ files and then compare your solution with this program!
 NOTE: NONOGRAM (r) is a registered Trademark and is used with permission.
       See http://nonogram.com/ for more information.
 
-## Author's comments:
+## Author's remarks:
 
 The format of the input files are as same as this site:
 

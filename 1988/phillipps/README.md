@@ -23,7 +23,7 @@ be `char **` :-) ) with the correct args it now works. Thank you Cody for your
 assistance!
 
 
-## Judges' comments
+## Judges' remarks
 
 Compile and run without parameters.
 

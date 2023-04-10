@@ -45,7 +45,7 @@ An alternate version is also compiled for Big Endian machines.
 
 Use `prog_be` as you would `prog` above.
 
-## Judges' comments:
+## Judges' remarks:
 
 Can you determine why this shows strange output for `./prog 128 128`
 and `./prog 128 128 128 128` but not `./prog 128 128 128`?
@@ -70,7 +70,7 @@ This code may be tested by:
 make test
 ```
 
-## Author's comments:
+## Author's remarks:
 
 Invoke this with a single non-negative integer less than 256, and a useful
 transformation occurs.

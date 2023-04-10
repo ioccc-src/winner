@@ -47,7 +47,7 @@ Then try:
 echo $?
 ```
 
-## Judges' comments
+## Judges' remarks
 
 What is in a line?  A lot when you obfuscate the way Eryk Kopczynski
 did it.  This small one line program is an outstanding technical
@@ -72,7 +72,7 @@ Here is a related puzzle: how to continue the sequence:
 With certain arguments, you can alter the exit value.  Can you figure
 out how and why?
 
-## Author's comments
+## Author's remarks
 
 The program proves it is not as hard to recognize numbers. The current
 one liner version should correctly recognize all numbers from 8 to 11.

@@ -25,7 +25,7 @@ make
 ./omoikane omoikane.info omoikane.info omoikane.output
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 For extra credit, spot the checksum in the source file itself.
 What makes this one particularly interesting is that the checksum,
@@ -37,7 +37,7 @@ checksum; if you have to change it, you might as well change it!
 This program was submitted under the name "Rinia", so the Author's
 Comments refer to it as such.
 
-## Author's comments:
+## Author's remarks:
 
 Rinia (1/14/04)
 

@@ -18,7 +18,7 @@
 	char *(*(fun[16])();
 
 
-## Judges' comments
+## Judges' remarks
 
 This is a somewhat restricted version of a useful program that has been
 posted to Usenet.  What is unusual is what it is able to do so much

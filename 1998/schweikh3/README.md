@@ -29,7 +29,7 @@ If you're in this winning entry's directory:
 Notice that the tool finds a duplicate file, that of the man page.
 
 
-## Judges' comments:
+## Judges' remarks:
 
     Maybe you will not need to buy another 10 Gb disk to store them.  :-)
 
@@ -48,7 +48,7 @@ Notice that the tool finds a duplicate file, that of the man page.
     NOTE: Some non-gcc compilers that are not fully ANSI standard do
 	  not compile this entry correctly.
 
-## Author's comments
+## Author's remarks
 
     The source is expected to conform to IEEE Std 1003.1-1990 ("POSIX").
     Thank God the IEEE does not standardize a coding style...

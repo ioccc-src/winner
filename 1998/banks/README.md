@@ -16,7 +16,7 @@
 
 	cat horizon.sc pittsburgh.sc | ./banks
 
-## Judges' comments:
+## Judges' remarks:
 
 What can we say?  It's a flight sim done in 1536 bytes of real code.
 This one is a real marvel.  When people say the size limits are too
@@ -24,9 +24,9 @@ tight, well, we can just point them at this one.  This program really
 pushes the envelope!
 
 The provided Makefile should work; you will need an X-ish system, and
-a select() system call.  More on building in the author comments.
+a select() system call.  More on building in the author remarks.
 
-## Author's comments:
+## Author's remarks:
 
 You have just stepped out of the real world and into the
 virtual.  You are now sitting in the cockpit of a Piper Cherokee

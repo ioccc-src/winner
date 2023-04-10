@@ -25,7 +25,7 @@ like:
 
 This code should run you in circles.
 
-## Judges' comments:
+## Judges' remarks:
 
 Some new compilers dislike lines 6 and 10 of the source, so we changed
 them from:
@@ -40,7 +40,7 @@ to:
 
 I hope you have a C beautifier!
 
-## Author's comments:
+## Author's remarks:
 
 No comments were provided by the author.
 

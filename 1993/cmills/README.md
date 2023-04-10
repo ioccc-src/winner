@@ -29,7 +29,7 @@ where:
 
 `speed` is update speed from 1 to 9 (default is 9).
 
-## Judges' comments:
+## Judges' remarks:
 
 From the San Jose Mercury News (May 15, 1993 page 20A "West Hackers 
 trounce East in computer quiz game"): 
@@ -62,7 +62,7 @@ the program.
 
 This program makes your windows about as useful as their windows. :-)
 
-## Author's comments:
+## Author's remarks:
 
 The program uses a single backing pixmap (which is the size of the
 screen) for all of its subwindows (with a little bit of trickery to

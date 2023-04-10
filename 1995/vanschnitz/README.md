@@ -20,7 +20,7 @@
     make clobber all LEVEL=6
     ./vanschnitz
 
-## Judges' comments:
+## Judges' remarks:
 
 Warning: in the past, values of LEVEL>8 have been known to cause compilers (and
 in one case a system) to crash during compilation. We tested it in 2023 on a
@@ -28,7 +28,7 @@ MacBook Pro with the M1 chip and found that LEVEL > 6 caused problems.
 
 For a bad/slow time try LEVEL=15.
 
-## Authors' comments:
+## Authors' remarks:
 
 A classic problem in computer science is known as the Towers
 of Hanoi.  It involves a set of different-sized disks mounted

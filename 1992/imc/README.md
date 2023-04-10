@@ -23,7 +23,7 @@ make all
 ./imc 
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 The program is more interesting to run on workstations that can make use of a
 Sun raster file.  Others can make use of the -text flag for character oriented
@@ -35,7 +35,7 @@ NOTE: The original winning source assumed that exit() returned a value which cau
 problems for some systems where exit() returns a void.  The file [imc.c](imc.c) has been
 modified to avoid this problem.
 
-## Author's comments:
+## Author's remarks:
 
 ### Portability:
 

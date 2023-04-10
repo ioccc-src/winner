@@ -26,16 +26,16 @@ NOTE: n is an integer.
 echo IOCCC 23209 | ./primenum 23209
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
-Don't read the author comments until you're ready for the spoiler.
+Don't read the author remarks until you're ready for the spoiler.
 Just stop and read the program; it won't take long.  Once you've figured
 out what it does, run it.  It may surprise you.
 
 This entry won, not because the obfuscation is impenetrable, but because
 it successfully fooled half of the judges, including me.
 
-## Author's comments:
+## Author's remarks:
 
 ### Description
 

@@ -40,7 +40,7 @@ the terminal, like:
 ./demo.sh
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 If you typically get lost in mazes, watching this program run might -- or might
 not, YMMV -- teach you how to find your way in a maze. The algorithm is
@@ -55,7 +55,7 @@ see the @ sign as well as the exclamation mark.
 A puzzle for the reader: Can you change the program to consider a diagonal
 movement as one step?
 
-## Author's comments:
+## Author's remarks:
 
 ### The Program:
                                 

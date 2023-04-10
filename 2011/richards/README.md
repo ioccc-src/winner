@@ -21,7 +21,7 @@ make
 echo '10 9 8 7 6 5 4 3 2 1*p*p*p*p*p*p*p*p*p' | ./richards
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Oh no, yet another dc-style calculator? (see 2000/dlowe using an embedded Perl
 interpreter and deemed Worst Abuse of the Rules). 
@@ -29,7 +29,7 @@ Well, this one does it (expression calculation, that is, not the rule abuse) in 
 The author claims that his calculator does just-in-time compilation.
 What would you do to prove or disprove his claim without attempting to unravel the source?
 
-## Author's comments:
+## Author's remarks:
 
 This is an implementation of the classic UNIX dc command, the reverse-polish
 calculator. Actually it's a pretty bad implementation, since it only implements

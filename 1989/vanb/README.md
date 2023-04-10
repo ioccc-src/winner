@@ -17,7 +17,7 @@
 	./vanb the rug gary lent	
 	./vanb unix is better than os/2
 
-## Judges' comments:
+## Judges' remarks:
 
 This program computes all proper subsets of the set of
 arguments passed to it.  Each subset is printed with one 

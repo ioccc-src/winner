@@ -26,7 +26,7 @@ make
 ./kev localhost
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Continuing with this year's "retro game" theme, this is another old game;
 arguably, one of the oldest.  Requires a functioning network, and curses.
@@ -36,7 +36,7 @@ How many games come out at $50 and still require you to wait for a patch
 to come out before you can play multiplayer?  This one works out of the
 box.
 
-## Author's comments:
+## Author's remarks:
 
 			   NETWORK P*NG!
 			[=================]
