@@ -24,8 +24,7 @@ make all
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made this safer by
 using `fgets()` instead of `gets()`. This prevents a potentially alarming
-warning at linking or runtime. The original source is in
-[wall.alt.c](wall.alt.c) described below. Thank you Cody!
+warning at linking or runtime.
 
 
 ## Try:
@@ -53,18 +52,6 @@ and enter some input like:
 	x*x
 	2^x
 	quit # for the cat version
-
-### Alternate code:
-
-
-For the original version that uses `gets()` try:
-
-
-```sh
-make alt
-```
-
-Use `wall.alt` as you would `wall`.
 
 
 ## Judges' comments:
