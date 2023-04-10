@@ -27,6 +27,16 @@ format is consistent and clean.
 
 THANK YOU!
 
+## To the winning authors:
+
+If you're the author of an entry that has been fixed and you find it against
+your liking **PLEASE** let us know and we'll be happy to undo any fixes even if
+it takes away some instructional value or even usability. _In this case we're
+**VERY SORRY_** about it: it's a fine line, we know, and we tried to use careful
+judgement but invariably some might have been the wrong decision. Thank you for
+understanding!
+
+
 ### ON **ALL** FIXES / IMPROVEMENTS / CHANGES
 
 Make **ABSOLUTE CERTAIN** that you test the entry _BEFORE_ **AND** _AFTER_ your
@@ -121,6 +131,11 @@ when formatting code.
 
 Entries with this status have one or more bugs that need to be fixed. Are you
 able to fix it? We welcome your help!
+
+An important point to note is that there is a very fine line when fixing bugs
+where it might sometimes border on tampering with the program. And after all,
+these are not meant to be maintainable or even good programming style! Use
+careful judgement when fixing bugs please!
 
 ## STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
 
@@ -239,19 +254,19 @@ An example where a crash is not a bug: [2019/endoh](2019/endoh/endoh.c) is
 supposed to crash. There are others that are also supposed to crash or that are
 known to segfault but are considered features.
 
-As of 07 April 2023 the definition changed where just because an entry segfaults
-because of (for example) invalid input does not mean it's a bug that should be
-fixed. [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed some of the
-entries but he felt this is tampering with the entries (that after all are not
-meant to be maintainable or even good programming style!); thus the definition
-of this status was changed and the 'fixes' were rolled back. There might be some
-exceptions where the entry did not actually work or compile under some systems;
-in this case depending on how complicated the fix is it might not have been
-rolled back.
+As of 10 April 2023 the definition changed for a second time (the first time was
+07 April 2023). If something is noted by the author as a known bug or limitation
+it need not be fixed unless it impacts the usability of the program or removes
+instructional value. An example where a crash undocumented needn't be fixed is
+[1984/laman](1984/laman/laman.c).  On the other hand the fixes made by [Cody
+Boone Ferguson](/winners.html#Cody_Boone_Ferguson) in
+[1990/theorem](1990/theorem/theorem.c) were useful.
 
-We challenge you to fix them for educational/instructional value and/or
-enjoyment but we kindly request that you **DO NOT** submit a pull request! If
-you can't figure it out you're invited to look at the git diffs if you wish.
+Nonetheless we challenge you to fix these entries for educational/instructional
+value and/or enjoyment but we kindly request that you **DO NOT** submit a pull
+request! If you can't figure it out you're invited to look at the git diffs,
+where there are some (some were fixed earlier on but rolled back due the fix
+feeling like tampering).
 
 NOTE: in the case of `gets()` we've fixed some to avoid the warning of the
 compiler, linker or even during runtime, depending on the system. In [one
@@ -470,11 +485,47 @@ so it should stay with this note.
 
 
 ## [1990/theorem](1990/theorem/theorem.c) ([README.md](1990/theorem/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+## STATUS: known bug - please help us fix
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed some segfaults in
-this entry that prevented it from working. However if not enough args are
-specified this program will crash.  This should NOT be fixed.
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed many bugs that
+prevented this from working properly (including segfaults) but one bug known to
+exist remains: if `theorem_bkp` or `fibonacci` is passed two zeros the program
+will enter an infinite loop, printing 0 over and over again (another condition
+where this occurred was fixed).
+
+Cody provides some hints here:
+
+0. The function in `theorem.c` that matters is `w` (see below for definition).
+1. However adding checks for the value being > 0 does not work due to the way the
+code is generated. See below.
+
+`w()` looks like this:
+
+```c
+w(g,R,u)float*g,u;char R;
+/**/{int b,f;if(A>2){A=atoi(a[1]);b=atoi(a[2]);while((f=A+b)<15000){printf("%d\n",f);A=b;b=f;}}}
+```
+
+But as far as point 1 above changing it to be:
+
+```c
+/**/{int b,f;if(A>2){A=atoi(a[1]);b=atoi(a[2]);while(f!=0&&(f=A+b)<15000){printf("%d\n",f);A=b;b=f;}}}
+```
+
+and similar (like checking `>0`, doing a `do..while`, doing an `if` before the
+while etc.) cause compilation errors.
+
+Can you fix this? We welcome your help!
+
+BTW: one of the important fixes for `fibonacci` to work is:
+
+```diff
+-/**/{int b,f;A=atoi(++a);b=atoi(++a);while((f=A+b)<15000){printf("%d\n",f);A=b;b=f;}}
++/**/{int b,f;if(A>2){A=atoi(a[1]);b=atoi(a[2]);while((f=A+b)<15000){printf("%d\n",f);A=b;b=f;}}}
+```
+
+Observe the check for the number of args and the calls to `atoi()` have been
+changed a bit too.
 
 
 ## [1990/westley](1990/westley/westley.c) ([README.md](1990/westley/README.md))
