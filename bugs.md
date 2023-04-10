@@ -578,8 +578,8 @@ this simply does not work with them. Can you help us?
 ## [1993/plummber](1993/plummer/plummer.c) ([README.md](1993/plummer/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 
-If not enough args are specified this program will crash. This should NOT be
-fixed.
+If not enough args are specified this program will likely crash or do something
+else. This should NOT be fixed.
 
 
 # 1994

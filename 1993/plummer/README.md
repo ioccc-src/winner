@@ -18,8 +18,10 @@ where:
     number  is a number     (try 21701)
     arg	    is any argument
 
+### INABIAF - it's not a bug it's a feature :-)
 
-NOTE: this entry will crash without enough args.
+This entry will very likely crash or do something else if you run it without
+enough args.
 
 ## Judges' remarks:
     
