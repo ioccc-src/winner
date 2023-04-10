@@ -80,7 +80,7 @@ otherwise the output will be in all caps.
 
 NOTE: To quit v6, press Control-E.
 
-## Author's comments:
+## Author's remarks:
 
 >   *This IOCCC entry is dedicated to the late Dennis M. Ritchie*
 

@@ -22,14 +22,14 @@ make
 ./prog
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This program consists of a single print statement wrapped in a while loop. You
 would not think that this would amount to much, but you would be very, very
 wrong. A clue to what is happening and how this works is encoded in the
 ASCII art of the program source.
 
-## Author's comments:
+## Author's remarks:
 
 HOW ABOUT A NICE GAME OF <strike>CHESS</strike>TIC-TAC-TOE?
 

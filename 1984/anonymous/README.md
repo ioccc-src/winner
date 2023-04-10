@@ -20,7 +20,7 @@ In the `read()` function which actually calls `write(2)` the `i` (which is the
 your assistance!
 
 
-## Judges' comments:
+## Judges' remarks:
 
 The author was too embarrassed that they could write such trash, so I
 promised to protect their identity.  I will say that the author of this
@@ -39,7 +39,7 @@ for more information on the tattoo. This is what it looks like:
 
 
 
-## Author's comments:
+## Author's remarks:
 
 ### On remaining anonymous:
 

@@ -24,7 +24,7 @@ make
 ./prog advent.unl
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Even after pre-processing and indenting, the C code of this entry
 is about as understandable as the Unlambda code.
@@ -39,7 +39,7 @@ bytes which crashed it:
 
 Functional programming is not a panacea against core dumps, after all.
 
-## Author's comments:
+## Author's remarks:
 
 **&#187;A highly structured state state machine&#171;**
 

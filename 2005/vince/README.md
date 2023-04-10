@@ -42,7 +42,7 @@ make alt
 
 Use `vince.alt` as you would `vince` above.
 
-## Judges' comments:
+## Judges' remarks:
 
 This beauteous entry makes use of visual {}'s and whitespace to instruct
 the OpenGL development libraries to create beauteous visuals.  Even
@@ -50,7 +50,7 @@ hitting the space bar while the program runs produces a "spacey" effect! :-)
 
 Challenge: Try modifying the texture to something of your own design.
 
-## Author's comments:
+## Author's remarks:
 
 ### ABUSE OF RULES
 

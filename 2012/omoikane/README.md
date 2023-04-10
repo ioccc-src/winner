@@ -34,12 +34,12 @@ cc -o output output.c
 ./output
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 The judges have nothing to add that has not already been written
 about in the `spoiler.html`` file!  :-)
 
-## Author's comments:
+## Author's remarks:
 
 ### Usage
 

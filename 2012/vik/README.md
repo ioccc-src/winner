@@ -53,14 +53,14 @@ To extract the embedded PNG:
 ./vik d ioccc-in-chocolate.png > restored-ioccc.png
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 References to chocolate had no effect on judging this entry. We
 guarantee it.
 
 Can you discern hidden pieces of chocolate in `chocolate-in-ioccc.png`?
 
-## Author's comments:
+## Author's remarks:
 
 ### Introduction
 

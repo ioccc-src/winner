@@ -28,7 +28,7 @@ can try the alt version:
 
 Use `hines.alt` as you would `hines` above.
 
-## Judges' comments
+## Judges' remarks
 
 This program was designed to maximize the bother function for
 structured programmers.  This program takes goto statements to their
@@ -39,7 +39,7 @@ letter to ACM form titled: _"'GOTO Considered Harmful' Considered Harmful"_.
 See the Communications of the ACM, March 1987, Page 195-196.
 
 
-## Author's comments:
+## Author's remarks:
 
 No comments were provided by the author.
 

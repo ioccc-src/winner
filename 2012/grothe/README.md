@@ -40,7 +40,7 @@ more shared files with their proper numbers):
 ./grothe 1-cookie_piece1.dat 2-cookie_piece2.dat 4-cookie_piece4.dat 4+cookie_recipe_restore.txt
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Also known as Best abuse of the judging process.
 
@@ -59,7 +59,7 @@ The judges also took some liberty obfuscating this entry a litte more.
 How does this entry work? The only place multiplication is used is
 to perform the atoi conversion.
 
-## Author's comments:
+## Author's remarks:
 
 **Description**
 

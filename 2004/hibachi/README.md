@@ -28,7 +28,7 @@ cd build; ./hibachi-start.sh
 
 Then use your web browser to visit http://localhost:8008/
 
-## Judges' comments:
+## Judges' remarks:
 
 This entry violates the guidelines in so many ways!  We are not
 exactly sure how many org's will be upset with this entry, but we
@@ -38,7 +38,7 @@ the likes Mr Howe.
 This entry also has the dubious honour of being the only one to have
 been submitted with its own ./configure script.
 
-## Author's comments:
+## Author's remarks:
 
 ### README.TXT (Feb 2004)
 

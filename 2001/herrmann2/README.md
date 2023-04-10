@@ -67,13 +67,13 @@ and in `herrmann2.ioccc` try:
 
 
 	
-## Judges' comments:
+## Judges' remarks:
 
 Be careful when staring at the source code - your eyes might cross, but
 if you concentrate on your focus you will find illumination!
 
 
-## Author's comments:
+## Author's remarks:
 
 You probably know those "magic eye" 3D pictures - pictures looking
 like random noise, but when you look "through" the paper, you

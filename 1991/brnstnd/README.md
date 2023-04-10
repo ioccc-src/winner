@@ -28,7 +28,7 @@ were resolved with the comma operator. Thank you Cody for your assistance!
 See also the other `sorta.*` files.
 
 
-## Judges' comments:
+## Judges' remarks:
 
 For info on more examples, read the [sorta.README.md](sorta.README.md) file.
 
@@ -44,7 +44,7 @@ this entry.
 To have a chance to compile under a modern CPP, we had to
 replace `#D` with `#define`.
 
-## Author's comments:
+## Author's remarks:
 
 This is an interpreter for the programming language SORTA, a systems
 and numerical programming language with features sorta from C, sorta

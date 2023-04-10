@@ -30,13 +30,13 @@ For example, if you are a soccer fan, try:
 ./endoh4 < solids/archimedian-solid/a11-truncated-icosahedron.txt
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This program is formatted as the net for a tetrahedron. (hint, try feeding the
 program it's own source code).  When it runs there is an animation for the
 computation to work out the convex hull.
 
-## Author's comments:
+## Author's remarks:
 
 ### Spec
 

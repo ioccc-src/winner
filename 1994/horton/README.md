@@ -38,13 +38,13 @@ make horton.alt
 (Use `horton.alt` as you would `horton` above.)
 
 
-## Judges' comments:
+## Judges' remarks:
 
 Try to figure out how this program prints, for a given slope, the
 right character.  And for extra credit, try to figure out which
 character is at the bottom on this hint file.  :-)
 
-## Author's comments
+## Author's remarks
 
 Run it with any 4 numeric arguments, e.g. prog 3 2 1 0.  Play with the
 numbers to get a pleasing result, or use it for your high school algebra

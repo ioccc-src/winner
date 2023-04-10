@@ -20,7 +20,7 @@ make all
 ./pjr
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This program prints out a string.  Can you figure out how
 it is done?
@@ -49,7 +49,7 @@ by use of pointers to functions returning a struct of pointers
 to functions!
 
 
-## Author's comments:
+## Author's remarks:
 
     Vg vf fvzcyr gb znxr gur cebtenz cevag bgure fgevatf.  Rnpu
     nycunorgvpny punenpgre sebz n gb m vf cevagrq bhg nf vgf

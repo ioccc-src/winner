@@ -22,7 +22,7 @@ Cody for your help!
 
 	./marshall
 
-# Judges' comments:
+# Judges' remarks:
 
 This program prints the name of the picture.  The layout is somewhat
 pretty though it is not the usual sort of output one would expect
@@ -32,7 +32,7 @@ This program was selected for the 1987 t-shirt collection.
 
 
 
-## Author's comments:
+## Author's remarks:
 
 No comments were provided by the author.
 

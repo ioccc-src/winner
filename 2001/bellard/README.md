@@ -36,11 +36,11 @@ okay. Thank you Cody for your assistance!
 ./bellard bellard.otccex.c
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 <JUDGES_COMMENTS> :-)
 
-## Author's comments:
+## Author's remarks:
 
     OTCC is an Obfuscated Tiny C Compiler for i386-linux. It generates
     FAST! i386 32 bit code (no bytecode) and it is powerful enough to

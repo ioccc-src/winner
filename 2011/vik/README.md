@@ -33,7 +33,7 @@ Alternatively, you can use:
 
 It is possible to download a number of Mod files from [The Mod Archive](http://modarchive.org).
 
-## Judges' comments:
+## Judges' remarks:
 
 The randowan.mod and mad_world.mod files were created by
 [Henrik Bertilsson](http://www.translucentboy.com) and
@@ -57,7 +57,7 @@ cc -S vik.c
 and to examine the resulting assembly file vik.s.  On some platforms
 the assembly file is about 128 MBytes in size!
 
-## Author's comments:
+## Author's remarks:
 
 ### Introduction
 

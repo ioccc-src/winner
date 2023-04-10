@@ -35,7 +35,7 @@ using that macro for `#define`. This version will not likely work on modern
 systems if you can even get it to compile.
 
 
-## Judges' comments:
+## Judges' remarks:
 
 NOTE:  The program relies heavily on ASCII.  Don't even think of running it on
 an EBCDIC machine.  If you name the file anything other than "isaak.c", you must

@@ -21,12 +21,12 @@ where num is a non-negative number.
 	./heathbar 4253 2281
 
 
-## Judges' comments:
+## Judges' remarks:
 
 The main reason we liked this entry was mainly because the main
 effect of the source was self documenting!  :-)
 
-## Author's comments
+## Author's remarks
 
 Run this program with two non-negative integer arguments
 (e.g. "prog 1234 999").

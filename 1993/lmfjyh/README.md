@@ -35,7 +35,7 @@ and the bogus file will be:
 
 	    ";main(){puts("Hello World!");}char*C=".c
 
-For an explanation of why this is see the author's comments.
+For an explanation of why this is see the author's remarks.
 
 ## To run:
 
@@ -43,12 +43,12 @@ If you have gcc < 2.3.3:
 
 	./lmfjyh
 
-## Judges' comments:
+## Judges' remarks:
     
 There's more than one way to get around disk quotas. :-)
 
 
-## Author's comments;
+## Author's remarks;
 
 "Practical and efficient method of compressing source code".
 

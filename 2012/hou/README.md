@@ -40,13 +40,13 @@ hou html.txt hou.c >> hou.htm
 start hou.htm
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 What a versatile entry! It can be used to check the size of IOCCC entries *and* to publish them as HTML.
 
 For extra credit: what is the meaning of the number 2321237?
 
-## Author's comments:
+## Author's remarks:
 
 ### Disclaimer
 

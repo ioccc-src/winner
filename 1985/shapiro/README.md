@@ -12,7 +12,7 @@ Carl Shapiro
 	./shapiro
 
 
-## Judges' comments:
+## Judges' remarks:
 
 As submitted, this program was 3 lines (2 of defines and 1 of code).
 To make news & mail happy we split the last line into 7. The file
@@ -24,7 +24,7 @@ This program was selected for the 1987 t-shirt collection.
 We found this program is be simply a**maze**ing! Run this program without
 arguments and notice the output. 
 
-## Author's comments:
+## Author's remarks:
 
 No comments were provided by the author.
 

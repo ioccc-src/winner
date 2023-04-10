@@ -16,7 +16,7 @@
 
 	./dlowe < anyfile > pootfile
 
-## Judges' comments
+## Judges' remarks
 
 Why is this entry would be considered a utility?  Well because it
 is able to convert content-free web pages into useful web pages.
@@ -66,7 +66,7 @@ that version try:
 	make dlowe.alt
 	./dlowe.alt < anyfile > pootfile
 
-## Author's comments
+## Author's remarks
 
 This program is a text filter, it reads stdin and outputs the
 "corrected" text to stdout.

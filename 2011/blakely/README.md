@@ -27,7 +27,7 @@ Zoom out and make your terminal window 53 or more lines deep.
 ./blakely < t0_3.dat
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This program plays Life, computes Pi to 16 digits
 if given its own source as input, and allows to check if your garden
@@ -40,7 +40,7 @@ and run:
 ./blakely - < garden.txt
 ```
 
-## Author's comments:
+## Author's remarks:
 
 ### Remarks
 

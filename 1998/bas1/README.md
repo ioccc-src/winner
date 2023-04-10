@@ -23,7 +23,7 @@ or:
 
 	    ./bas1 | gunzip | gs -sDEVICE=pgmraw -sOutputFile='|xv -' -
 
-## Judges' comments
+## Judges' remarks
 
 The output is supposed to be a 3D maze, but it is somewhat more
 than that. If you've seen any of the Maurits Escher's works,
@@ -31,7 +31,7 @@ you'll know what we're talking about.
 
 When trying to run the program with command line arguments, be generous.
 
-## Author's comments
+## Author's remarks
 
 BEMAZING
 ========

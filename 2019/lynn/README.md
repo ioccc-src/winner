@@ -24,11 +24,11 @@ cc fib.c -o fib
 ./fib
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 A fully functional compiler. The example prints out the 30th Fibonacci number.
 
-## Author's comments:
+## Author's remarks:
 
 ### Remarks:
 

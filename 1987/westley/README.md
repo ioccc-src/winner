@@ -31,7 +31,7 @@ which is true symmetry:
 	./westley
 
 
-## Judges' comments:
+## Judges' remarks:
 
 Putchar must exist in the C library and not just as a macro.
 If it fails to compile, add the line:  `#include <stdio.h>`  at the

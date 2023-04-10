@@ -42,7 +42,7 @@ make alt
 
 Use `anderson.alt` as you would	`anderson`.
 
-## Judges' comments:
+## Judges' remarks:
 
 This small program might be a nice addition to a digital personal
 organizer; just in case you are stranded on a desert island and need to
@@ -53,7 +53,7 @@ very cleverly obscured without the use of a single #define!
 Reformatting this program by hand :-) is the easiest way to understand
 what is going on.
 
-## Author's comments:
+## Author's remarks:
 
 This program is a simple filter that translates ASCII text into
 semaphore code.  It reads from standard input and converts all

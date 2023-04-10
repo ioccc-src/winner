@@ -20,13 +20,13 @@ For more information try:
 	./rcm < rfc1952.gz
 
 
-## Judges' comments:
+## Judges' remarks:
 
 For a good noop try:
 
 	gzip -c < rcm.c | ./rcm
 
-## Author's comments:
+## Author's remarks:
 
 Except for some silly requirements regarding input validation, CRC
 checking, and similar unimportant fluff, this program is a fully

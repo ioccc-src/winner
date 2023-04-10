@@ -27,7 +27,7 @@ wget -O entertainer.mid https://www.midiworld.com/download/3857
 # Play output.mid with your favorite player
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 In an entry that boasts not using literals, one would expect to see straightforward ways to produce
 small integers like `!(x^x)<<!(x^x)`, etc. but this entry is trickier than that. Deciphering what it does,
@@ -35,7 +35,7 @@ apart from reading stdin and writing to stdout, would take a while.
 
 While doing that, you can be audibly *entertained* by a sample of its output.
 
-## Author's comments:
+## Author's remarks:
 
 ### MIDI "boots and cats"
 

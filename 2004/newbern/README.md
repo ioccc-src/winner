@@ -30,12 +30,12 @@ for your assistance!
 echo SOS | ./newbern
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 The program is formatted using the same font glyphs as the example
 data file.
 
-## Author's comments:
+## Author's remarks:
 
 This is a configurable banner-like program.
 

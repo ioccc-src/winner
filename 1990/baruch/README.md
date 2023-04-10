@@ -37,7 +37,7 @@ Why is there no output?
 ### Alternate code:
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) provided alternate code
-for users using Turbo-C or MSC, based on the authors' comments below, except
+for users using Turbo-C or MSC, based on the authors' remarks below, except
 that he did not change the `" #Q"` string as that showed worse looking output
 instead of improved output though he has no way to test the compilers in
 question. YMMV. Thank you Cody (though we all think <strike>[no
@@ -55,14 +55,14 @@ make alt
 Use `baruch.alt` as you would `baruch`.
 
 
-## Judges' comments:
+## Judges' remarks:
 
 This program reads an integer between 4 and 99 from the stdin.
 
 NOTE: The original program did not have a newline at the end of the file.  We
 added a final newline to the file to make unpacking easy.
 
-## Authors' comments:
+## Authors' remarks:
 
 The goal of this work was to write a program that solves the classic [n-queens
 problem](https://en.wikipedia.org/wiki/Eight_queens_puzzle), with a board size

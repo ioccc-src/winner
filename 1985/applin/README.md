@@ -17,12 +17,12 @@ Ferguson](/winners.html#Cody_Boone_Ferguson) noted that this entry does not work
 under macOS. Try it out and see for yourself what happens!
 
 
-## Judges' comments:
+## Judges' remarks:
 
 One liner programs are short but twisted.  This "Hello, World" version
 certainly takes its time saying hello.
 
-## Author's comments:
+## Author's remarks:
 
 No comments were provided by the author.
 

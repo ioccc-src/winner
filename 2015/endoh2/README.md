@@ -24,7 +24,7 @@ cat prog.c
 ./prog | diff - prog.c
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 At this point you might be wondering, [WTF](http://acronyms.thefreedictionary.com/WTF)?\*
 
@@ -47,7 +47,7 @@ Where did those underscores come from?  Well [RTFS](http://acronyms.thefreedicti
 
 If you are still puzzled, look at prog.c with your favorite text editor.
 
-## Author's comments:
+## Author's remarks:
 
 **Follow this instruction literally!**
 

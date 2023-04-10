@@ -16,7 +16,7 @@
 
 	./applin
 
-## Judges' comments:
+## Judges' remarks:
 
 This entry is by far the most unusual abuse of the C preprocessor that
 we have received thus far.  Nearly all of the real work is done in the

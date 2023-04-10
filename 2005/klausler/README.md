@@ -25,7 +25,7 @@ make
 ./klausler peter klausler | head
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 To reduce the size of the source, include other people's data.
 That is what Peter suggests when he describes how to generate
@@ -35,7 +35,7 @@ In other words: make use of other words!  :-)
 
 Rules might have to be changed!
 
-## Author's comments:
+## Author's remarks:
 
 A useful tool to help one appear extra smart and witty when IRCing, or even
 just highly annoying.

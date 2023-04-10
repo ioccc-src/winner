@@ -31,7 +31,7 @@ Thank you Cody for your assistance!
 
 NOTE: this entry will likely segfault on invalid input.
 
-## Judges' comments:
+## Judges' remarks:
 
 This is the most useful program entered this year. It is a
 rather large subset of lisp.  It has no error recovery, and

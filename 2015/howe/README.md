@@ -58,7 +58,7 @@ make alt
 
 Use `prog.alt` as you would `prog` above.
 
-## Judges' comments:
+## Judges' remarks:
 
 This is the best use of the FNV that we have seen in the IOCCC so far!
 The output, when used without -d, is compatible with POSIX diff and
@@ -82,7 +82,7 @@ might be easier than the academic papers it was inspired by.
 NOTE: Unlike the original entry source, prog.alt.c, prog.c uses a
 64 bit FNV hash and fixes a function call warning.
 
-## Author's comments:
+## Author's remarks:
 
 ### Features
 

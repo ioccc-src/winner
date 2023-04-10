@@ -53,7 +53,7 @@ man ./calc.1
 
 An alternate version of this entry, `prog.alt.c`, is provided.
 This alternate code is discussed in the "prog.c vs prog.alt.c" section of the
-author's comments below.
+author's remarks below.
 
 To compile this alternate version:
 
@@ -63,7 +63,7 @@ make alt
 
 Use `prog.alt` as you would `prog` above.
 
-## Judges' comments:
+## Judges' remarks:
 
 "Look, Ma, no ~~hands~~ digits!"
 
@@ -73,7 +73,7 @@ modulo, are easy to find. Where are addition and subtraction?
 We were impressed with the level of detail the author "blogged" the obfuscation
 process.
 
-## Author's comments:
+## Author's remarks:
 
 ### calc - an integer expression calculator that outputs in both hex and decimal
 

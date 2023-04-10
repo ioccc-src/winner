@@ -21,7 +21,7 @@ echo "some text" | ./goren
 echo "Hello, world!" | ./goren
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 In the words of [René François Ghislain Magritte Magritte](http://en.wikipedia.org/wiki/Rene_Magritte):
 
@@ -37,7 +37,7 @@ However if one takes a firm stand and declares:
 
 something happens!  Why?
 
-## Author's comments:
+## Author's remarks:
 
 This program was written in homage to Rene Magritte's picture "La
 trahison des images" (The Treachery of Images).

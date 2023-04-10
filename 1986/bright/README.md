@@ -17,7 +17,7 @@ Walter Bright
 	./bright bright
 
 
-## Judges' comments:
+## Judges' remarks:
 
 Compile this program and give a filename as an argument.
 
@@ -26,7 +26,7 @@ excessive shifting to obfuscate an otherwise useful binary display
 program.  This gives you a small example of what it is like to
 maintain the Bourne shell! :-}
 
-## Author's comments:
+## Author's remarks:
 
 No comments were provided by the author.
 

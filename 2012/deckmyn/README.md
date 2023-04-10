@@ -23,7 +23,7 @@ A shell interpreter with proper backtick interpolation is required.
 ./deckmyn "`cat deckmyn.c`" "`cat example_greensleeves`" > greensleeves.pbm
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 The C of this entry is definitely sharp. The program cleverly uses its own
 source at runtime to define the notes, time signature and accidental bitmaps.
@@ -34,7 +34,7 @@ to generate an image of a 10-pin DIP chip (a sound processor?).
 Ironically, the way this entry is called from the command line is an abuse of C Shell.
 Please use Bourne-family shells to run this entry.
 
-## Author's comments:
+## Author's remarks:
 
 ### Example use
 
@@ -50,7 +50,7 @@ open greensleeves.pbm
 open short_bass.pbm
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 ### Description
 

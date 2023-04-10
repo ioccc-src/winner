@@ -25,7 +25,7 @@ make
 ./gavare > ioccc_ray.ppm
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 For users of systems that distinguish between text and binary mode
 (you know who you are), add a library call that specifies binary mode
@@ -39,7 +39,7 @@ best results.
 The judges were able to figure out how to control position
 (in all 3 coordinates), size, and color (to some extent) of the balls.
 
-## Author's comments:
+## Author's remarks:
 
 It is possible to write some kinds of programs in C without using reserved
 words.  For very short and trivial programs, it usually isn't very hard to

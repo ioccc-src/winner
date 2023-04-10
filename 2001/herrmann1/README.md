@@ -32,7 +32,7 @@ make
 ./herrmann1.sh 'prg=herrmann1.gcd'
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 There are some clear hints in the source code as to the
 purpose of this program.  Perhaps the only way to figure out what is
@@ -40,7 +40,7 @@ going on is to look at the differences between the runs of the C
 preprocessor!  Computer Science students should recognize what is going
 on.
 
-## Author's comments:
+## Author's remarks:
 
 Many cool things have been done with the preprocessor,
 e.g. calculation of prime numbers or the tower of Hanoi. However,

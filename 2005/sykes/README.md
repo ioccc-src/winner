@@ -25,7 +25,7 @@ make
 ./sykes pet.rom
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 For those who fondly remember their first PET, this entry will start you
 down memory lane ... starting with $C000 of course!
@@ -47,7 +47,7 @@ We then created:
 For your convenience, we have added the above mentioned files to this entry directory.
 They are used to form the pet.rom file.
 
-## Author's comments:
+## Author's remarks:
 
 This program is not only a complete 6502 processor emulator, but also an
 emulation of the Commodore PET 2001.

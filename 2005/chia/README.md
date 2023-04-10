@@ -22,14 +22,14 @@ make
 echo "Do or do not. There is no try."
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Have you had your morning cup of Java?  You might want a
 second cup before parsing this entry.  And give your C
 pre-processor a triple shot as it tries to handle parameters
 for "stringification".
 
-## Author's comments:
+## Author's remarks:
 
 Two things inspired this entry. First, there were the C programs which were
 `#define`'d to look like Pascal or Visual Basic: the /bin/sh code from V7 Unix

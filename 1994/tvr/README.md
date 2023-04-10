@@ -36,7 +36,7 @@ where `altmode` `1` - `4` correspond to mode `0` - `3` in the original entry and
 `altmode 0` calculates Mandelbrot/Julian sets correctly.
 
 
-## Judges' comments:
+## Judges' remarks:
 
 This entry requires the use of X11.  It will form two windows (hopefully your
 window manager will ask you where to place these in your display) which you
@@ -47,7 +47,7 @@ The fractally minded may be able to detect that mode 0 does not calculate
 Mandelbrot/Julian sets correctly.  Can you find the bug?  Better still, can you
 fix it without breaking something else?
 
-## Author's comments:
+## Author's remarks:
 
 ### Interactive Fractals for X Window System
 

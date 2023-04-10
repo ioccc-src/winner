@@ -18,7 +18,7 @@ make all
 ./marangon
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 The object is to refill the table with 5's, by incrementing or decrementing
 numbers as needed.  It is the side effects that get you into trouble.  If you
@@ -32,7 +32,7 @@ NOTE: The original winning source `marangon.orig.c`, found in the archive
 directory, assumed that exit returns a value which cause problems for some
 systems where exit returns a void.  The file `marangon.c` avoids this problem.
 
-## Author's comments:
+## Author's remarks:
 
 It starts off by creating a table with number 5 in all places.  The CPU melts
 the numbers and you must return them in original state.  When you increase a

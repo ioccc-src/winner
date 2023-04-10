@@ -29,11 +29,11 @@ echo 'CDEFGABc' | ./endoh3 | ruby wavify.rb > cde.wav
 
 There are also some other musical samples, twinkle.abc and menuet.abc.
 
-## Judges' comments:
+## Judges' remarks:
 
 This endoh3ram can tweet out a tune and is small enough to tweet.
 
-## Author's comments:
+## Author's remarks:
 
 ### Remarks
 

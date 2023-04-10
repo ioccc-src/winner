@@ -23,7 +23,7 @@ where data-file contains lines of < 255 chars in length.
 	./esde README.md date
 
 
-## Judges' comments:
+## Judges' remarks:
 
 When reading the source be careful to distinguish between variable
 names and library functions.  
@@ -32,7 +32,7 @@ If you still don't know what it does, try
 [https://en.wikipedia.org/wiki/Soundex](https://en.wikipedia.org/wiki/Soundex).
 
 
-## Author's comments
+## Author's remarks
 
 ### what this program does:
 

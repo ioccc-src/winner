@@ -41,7 +41,7 @@ assistance!
 ### Alternate code:
 
 There is an alternate version of this code that flushes stdout after writing a newline.
-See the Author's comments for more information.
+See the Author's remarks for more information.
 
 To compile this alternate version:
 
@@ -51,7 +51,7 @@ make alt
 
 Use `prog.alt` as you would `prog` above.
 
-## Judges' comments:
+## Judges' remarks:
 
 A few letters, one at a time, with no repeats.  How many different ways can this
 be done?
@@ -63,7 +63,7 @@ bags few lynx.
 Speaking of jumping, can you rewrite the code to remove all of the goto jumps in
 this code?
 
-## Author's comments:
+## Author's remarks:
 
 ### What is this? <a name="wit"></a>
 

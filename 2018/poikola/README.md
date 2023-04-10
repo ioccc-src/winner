@@ -32,7 +32,7 @@ On terminal supports 24 bit color, has black background, and size at least 125x3
 ./prog
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 It is said by some students of Astronomy:
 
@@ -43,7 +43,7 @@ Many [Mnemonic variations](http://www.star.ucl.ac.uk/%7Epac/obafgkmrns.html) exi
 You might wish, on a star, to better understand the colors being displayed.
 And those in the deep south might wish to go north for a better view.
 
-## Author's comments:
+## Author's remarks:
 
 ### How to build:
 

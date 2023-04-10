@@ -40,7 +40,7 @@ leading 0 if needed.
 The source code is nice, compact, and self documenting
 as all good programs should be!  :-)
 
-## Author's comments:
+## Author's remarks:
 
 ### Operation
 

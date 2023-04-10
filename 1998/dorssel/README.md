@@ -25,7 +25,7 @@
 	echo 'HOW DOES IT DO THAT' | ./dorssel
 	echo 'HOW DOES IT DO THAT' | ./dorssel | ./dorssel
 
-## Judges' comments:
+## Judges' remarks:
 
 How does the program decide which way to convert?
 
@@ -50,7 +50,7 @@ Extra credit: Change the program so that it does not SHOUT IN ALL CAPS.
 
 You might also want to read the [dorssel.hint](dorssel.hint) file.
 
-## Author's comments:
+## Author's remarks:
 
 Usage
 =====

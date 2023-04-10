@@ -27,13 +27,13 @@ make -B MACHINE=machine_times2.h TAPE=tape_five.h V=1 run
 make -B MACHINE=machine_chaos_5_2.h X=5 run
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This is something we were fearing all along: that the C preprocessor is Turing-complete
 even without conditionals and recursive file inclusion as some kind of a
 [rewriting system](https://en.wikipedia.org/wiki/Rewriting). Now we have the proof!
 
-## Author's comments:
+## Author's remarks:
 
 ### Preprocessor Turing Engine
 

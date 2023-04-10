@@ -22,7 +22,7 @@ make
 ./aidan < insane1.sudoku 
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Are you puzzled about puzzles?  This entry might puzzle you
 more while it puzzles out some puzzles: all in a puzzling way!
@@ -31,7 +31,7 @@ Goto the source and notice the lack of functions.  Jump
 to the switch statement.  And if you think you can puzzle
 it out better, try solving insane1.sudoku all by yourself!
 
-## Author's comments:
+## Author's remarks:
 
 This program can solve a type of logic puzzle known as a Sudoku, and also
 generate new ones. (Apparently, the puzzle is known as Number Place in the US,

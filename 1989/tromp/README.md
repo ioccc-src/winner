@@ -64,7 +64,7 @@ file might look like:
 .... hey, I haven't played in a very long time and the lower one was hitting
 space (default drop) in rapid succession :-)
 
-## Judges' comments
+## Judges' remarks
 
 This is a character terminal version of the TETRIS program.
 It runs on a VT100 compatible terminal or emulator.  It is
@@ -91,7 +91,7 @@ As was stated last year, we are likely to be more strict about
 portability in the future.  [ We mean it this time :-) ]
 
 
-## Author's comments
+## Author's remarks
 
 This program plays the familiar game of `TETRIS' with the
 following features:

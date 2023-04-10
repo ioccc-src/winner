@@ -41,13 +41,13 @@ make alt
 
 Use `prog.alt` as you would `prog` above.
 
-## Judges' comments:
+## Judges' remarks:
 
 It is interesting how well smeonoe can raed txet wtih lots of tyops in it.
 How well can you raed porg.c, C prgoarm that is in the shpae of an SD card (or
 is it a pnuch crad)?
 
-## Author's comments:
+## Author's remarks:
 
 ### Letter Mixer ###
 

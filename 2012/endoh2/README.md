@@ -34,12 +34,12 @@ make e
 make everything
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 A pi/e printing quasi-quine in ASCII art with a compressed font in it;
 what else to wish for in this program? Virtual machine emulation?
 
-## Author's comments:
+## Author's remarks:
 
 Yeah, "Again".  Sorry.  But I don't feel guilty or uncomfortable.
 

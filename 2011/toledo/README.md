@@ -27,7 +27,7 @@ NOTE: This requires X11 to run or modifications to use layer.c on Windows.
 echo "Do or do not. There is no try."
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This two player game uses X11. The control keys can be configured by
 modifying the A,B,C and D macros at compilation.
@@ -45,7 +45,7 @@ you remove both the X11 include files and replace them with
 	
 you ought to be able to compile and run this program on Windows.
 
-## Author's comments:
+## Author's remarks:
 
         /=========\                 
         \==\   /==/                ||

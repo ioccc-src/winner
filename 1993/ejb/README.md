@@ -18,7 +18,7 @@ where:
 
 	level   a value from -128 to 127
 
-## Judges' comments:
+## Judges' remarks:
 
 A negative argument plays the patience puzzle.  An argument
 greater than 0 plays the Tower of Hanoi puzzle.  In either case
@@ -31,7 +31,7 @@ the argument 127 to this program and want to see it finish!
 
 We note that this also works under macOS just fine.
 
-## Author's comments
+## Author's remarks
 
 WHAT THIS PROGRAM DOES
 ======================

@@ -34,13 +34,13 @@ pasteboard/selection/cut buffer to "input" the output into vi:
 ./schnitzi <schnitzi.inp1 >schnitzi.out1
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This exemplifies the meaning of Visual Editor, but we don't think
 that any benchmarking sites are going to use this to tout the
 performance of the latest hardware!
 
-## Author's comments:
+## Author's remarks:
 
 If you've ever pasted a large chunk of text into an editor (such as
 'vi') without first putting it into insert mode, or turning off

@@ -29,11 +29,11 @@ perl -e 'map{print rand," ",rand,"n";}(1..20);' | ./boutines > test.svg
 perl -e 'map{print rand," ",rand,"n";}(1..20);' | ./boutines > test.svg
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Can you explain the author's remark "[generated files] are not as scalable as their name suggests"?
 
-## Author's comments:
+## Author's remarks:
 
 _In memory of my father Pierre Boutines-Vignard._
 

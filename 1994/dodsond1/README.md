@@ -16,13 +16,13 @@ USA
     
 NOTE: At the prompt, try entering E3.
 
-## Judges' comments:
+## Judges' remarks:
 
 The program plays the game that the layout of the source implies.
 The source, on the other hand, implies a language along the
 lines of Lisp.  :-)
 
-## Author's comments:
+## Author's remarks:
 
 For each turn, the board is displayed and the player is prompted for
 a move.  Enter your move as an upper-case  character followed by a number.

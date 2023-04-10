@@ -52,12 +52,12 @@ cat a b c d e | ./prog | diff - prog.c
 ./prog violet.c | ruby violet.c
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Do you understand how this program works?  You may have to go over and over the
 output again.
 
-## Author's comments:
+## Author's remarks:
 
 ### Summary:
 

@@ -45,7 +45,7 @@ cp -f davidguy guydavid
 
 Can you determine why this makes a difference?
 
-## Judges' comments:
+## Judges' remarks:
 
 
 We permitted this type of entry to win because:
@@ -60,7 +60,7 @@ explain this further.
 We are pleased that this entry has helped bring new 'life' into
 the contest.
 
-## Authors' comments:
+## Authors' remarks:
 
 The program is a fully-functional X client.  It talks directly to
 the X server through a socket without using Xlib, Xt or any other

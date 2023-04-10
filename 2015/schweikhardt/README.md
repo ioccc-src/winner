@@ -23,7 +23,7 @@ where n is a base 16 number of any size.
 ./prog 19
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This code is clean.  When you compile with all warnings enabled,
 such as with clang:
@@ -77,7 +77,7 @@ build some very complex structures.  :-)
 p.s. We appreciated that apart from a few powers of 2, the source
 code is magic number free.
 
-## Author's comments:
+## Author's remarks:
 
 ### The TL;DR version
 
@@ -137,7 +137,7 @@ $ ./prog 6
 0000000000000004 6
 0000000000000002 7
 0000000000000001 8
-## Judges' comments:
+## Judges' remarks:
 
 The size of *n* is only limited by the argument size limit of your
 shell/OS (the program implements arbitrary size bignums).

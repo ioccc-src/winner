@@ -32,14 +32,14 @@ for i in 0001 0002 0004 0008 0016 0032 0064 0128 0256 0512 1024 2048 4096 8192 ;
 # Then flip through the out*.jpg pictures and see when you start recognizing the image.
 ``
 
-## Judges' comments:
+## Judges' remarks:
 
 This entry has reminded us of a winning entry back in the early 90s. Can you guess which one?
 
 For a given image, try graphing the execution time relative to the number of rectangles.
 What is the complexity? Is it obvious from the source code?
 
-## Author's comments:
+## Author's remarks:
 ### Usage
 
 This program divides the image into a specified number of rectangles. This process is content aware, so algorithm tries to match most of the information. However, it doesn't find the best theoretically possible layout.

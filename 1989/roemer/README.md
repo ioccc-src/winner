@@ -14,7 +14,7 @@
 
 	./roemer
 
-## Judges' comments:
+## Judges' remarks:
 
 Do you know what this program does?  If you do, look again,
 there is more here than meets the PI.

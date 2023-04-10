@@ -25,14 +25,14 @@ make
 echo "Do or do not. There is no try."
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 You'd never guess, from looking at the code, that there is a
 genetic algorithm involved.  Somewhere.  But what does it do?
 Well, it might take you a while to navigate the results, let
 alone the code.
 
-## Author's comments:
+## Author's remarks:
 
 Don't worry; this is not a self-reproducing program, as you might at
 first guess from the layout. I would never be so foolhardy as to

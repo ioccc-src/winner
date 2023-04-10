@@ -12,7 +12,7 @@
 	./litmaath eschew obfuscation
 
 
-## Judges' comments:
+## Judges' remarks:
 
 Note the unusual structure:
 

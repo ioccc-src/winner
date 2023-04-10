@@ -25,13 +25,13 @@ make
 echo "Do or do not. There is no try."
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 The fun thing about CPP abuses is that, in most cases, running the
 preprocessor on them doesn't help you decipher the obfuscated code.
 That's assuming your preprocessor can take it at all.
 
-## Author's comments:
+## Author's remarks:
 
 ### Introduction
 

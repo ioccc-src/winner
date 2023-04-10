@@ -42,14 +42,14 @@ For the slow minded, try:
 NOTE: if you do not specify an arg to the program it will segfault.
 
 
-## Judges' comments:
+## Judges' remarks:
     
 Once you get past the obfuscation, you have an opportunity to learn
 about regular expressions and state machines.
 
 NOTE: Some compilers have had trouble optimizing this entry.
 
-## Author's comments:
+## Author's remarks:
 
 ### ADrian's GREP (adgrep)
 

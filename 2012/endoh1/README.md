@@ -39,7 +39,7 @@ make alt
 
 Use `endoh1.alt` as you would `endoh1` above.
 
-## Judges' comments:
+## Judges' remarks:
 
 Let's play Jeopardy!
 
@@ -54,7 +54,7 @@ happy to experiment with.
 
 One configuration file was inspired by an [XKCD what if? entry](http://whatif.xkcd.com/6/).
 
-## Author's comments:
+## Author's remarks:
 
 ### Synopsis
 

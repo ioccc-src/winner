@@ -20,7 +20,7 @@ Santa Monica, CA
 	cat biggar.c | ./biggar | od -c
 
 
-## Judges' comments:
+## Judges' remarks:
 
 By changing the compile line you can make this program do anything you
 want.  This is a very efficient way to transfer source, though it
@@ -45,7 +45,7 @@ Passes BSD and UTS lint.  At least one version of lint is thrown into
 an infinite loop by this entry.
 
 
-## Author's comments:
+## Author's remarks:
 
 No comments were provided by the author.
 

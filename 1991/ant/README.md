@@ -28,7 +28,7 @@ cp README.md hill
 ./ant hill
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 The author was kind enough to supply a list of references below,
 in case you are still confused after read the source!  :-)
@@ -44,7 +44,7 @@ NOTE: to enter form feed you should be able to hit `ctrl-L`. This will allow you
 to exit insert mode rather than ESC like in normal vi(m). See the author's
 commands section for other commands.
 
-## Author's comments:
+## Author's remarks:
 
 Ant's Editor vIOCCC91
 

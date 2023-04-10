@@ -35,12 +35,12 @@ For some abuse, try:
 ./rosten 0.99
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Friction can be your friend if it does not rub you (or your mouse
 cursor) in the wrong way.  :-)
 
-## Author's comments:
+## Author's remarks:
 
 NAME
 

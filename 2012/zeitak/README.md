@@ -40,7 +40,7 @@ make alt
 
 Use `zeitak.alt` as you would `zeitak` above.
 
-## Judges' comments
+## Judges' remarks
 
 This is an extremely subtle and twisted piece of Gold award winning code!
 
@@ -49,7 +49,7 @@ At one point we spent
 [18 minutes](https://twitter.com/ioccc/status/252162898800033792)
 just to understand 18 key characters of this code.
 
-## Author's comments
+## Author's remarks
 
 ### Nesting Errors Detector
 

@@ -21,7 +21,7 @@ echo IOCCC | ./prog
 echo "" | ./prog
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 A good start for understanding this entry might be
 https://www.ietf.org/rfc/rfc1321.txt. How does it compute this using only a
@@ -47,7 +47,7 @@ What happens with a large file? Something over 256K
 
 Where does that message come from?
 
-## Author's comments:
+## Author's remarks:
 
 This looks like a normal C program.
 

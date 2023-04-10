@@ -24,7 +24,7 @@ make
 echo "Do or do not. There is no try."
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This is probably the worst AI we've ever seen.  So, then, why did
 the entry win?  Because it's *trying* to lose.
@@ -35,7 +35,7 @@ Of particular interest is the author's decision that the program should
 crash if it loses.  I've played chess with a lot of people like that, and
 I appreciate the realism.
 
-## Author's comments:
+## Author's remarks:
 
 FAQ:
 

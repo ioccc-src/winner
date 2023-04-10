@@ -45,7 +45,7 @@ make alt
 
 Use `westley.alt` as you would `westley` above.
 
-## Judges' comments
+## Judges' remarks
 
 Try copying the source to a new file and changing around the
 order of the lines.  Does it produce the exact same output?
@@ -56,7 +56,7 @@ ways this program can transform input to output.
 This assortment obfuscated lines takes position-independant code
 to a new level!  :-)
 
-## Author's comments
+## Author's remarks
 
 Punch cards, or Hollerith cards, were becoming obsolete just
 as C was becoming more popular*; this is rather unfortunate,

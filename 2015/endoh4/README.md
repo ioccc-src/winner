@@ -43,14 +43,14 @@ make alt
 
 Use `prog.alt` as you would `prog` above.
 
-## Judges' comments:
+## Judges' remarks:
 
 For this one liner it is best to avoid prime numbers. The output groups
 factors in the x-y dimensions. How many factors can be represented before you
 run out of command line argument space? How could you modify the program to
 experiment with numbers that have more or larger factors?
 
-## Author's comments:
+## Author's remarks:
 
 Visual factorization 1-liner.  Try:
 

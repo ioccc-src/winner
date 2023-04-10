@@ -19,11 +19,11 @@
 
 	echo 42 | ./savastio
 
-## Judges' comments:
+## Judges' remarks:
 
 I know an l when I see a 1.
 
-## Author's comments:
+## Author's remarks:
 
 This program is an infinite-precision factorial calculator.  It will
 compute the factorial of any number entered to an infinite degree of

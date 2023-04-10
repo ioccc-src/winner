@@ -34,7 +34,7 @@ make alt
 
 Use `sicherman.alt` as you would `sicherman`.
 
-## Judges' comments:
+## Judges' remarks:
 
 This program abuses the C preprocessor so much that some /lib/cpp fail to
 strip out all of the comments on the first pass!  If you were able to
@@ -55,7 +55,7 @@ does, then you don't, so read it again!  Explain why:
 results in diff reporting a difference on some machines.
 
 
-## Author's comments:
+## Author's remarks:
 
 No comments were provided by the author.
 

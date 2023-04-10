@@ -18,12 +18,12 @@ WARNING: on modern systems this is very fast and could be a problem for those
 susceptible to photosensitivity. Please try this one with caution if this
 applies to you! The same goes for people who can be overstimulated.
 
-## Judges' comments
+## Judges' remarks
 
 We were impressed by the author's ability to render spheres in 3D 
 in a very small chunk of code.
 
-## Author's comments
+## Author's remarks
 
 This program shows flying spheres. The program eats CPU on lesser
 equipped systems. The program will run until termination. Terminal 

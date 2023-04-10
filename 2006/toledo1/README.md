@@ -34,7 +34,7 @@ is not circular, but at least one starting point yields a circular path.
 Why do some of the "illegal" starting points work more or less as could
 be expected, and some dump core?
 
-## Author's comments:
+## Author's remarks:
 
 Can you place a knight on a chess board and make it
 to visit the 64 squares without repeating them?

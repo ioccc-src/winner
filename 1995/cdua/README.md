@@ -27,11 +27,11 @@ NOTE: sometimes the program needs you to press enter a second time to continue
 solving the maze. See [bugs.md](/bugs.md) for more details.
 
 
-## Judges' comments
+## Judges' remarks
 
 This could be used as the basis of an a-maze-ing screen exerciser.
 
-## Author's comments
+## Author's remarks
 
 A program that generates a maze, and then solves it, all this being
 seen by the user.  Some highlights of obfuscation are: 3 steps

@@ -47,12 +47,12 @@ make alt
 
 Use `prog.alt` as you would `prog` above.
 
-## Judges' comments:
+## Judges' remarks:
 
 After starting the program, use the cursor keys, then try some modes, like "p"
 or "l" (they toggle).
 
-## Author's comments:
+## Author's remarks:
 
 ### Introduction:
 

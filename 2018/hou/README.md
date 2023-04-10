@@ -31,14 +31,14 @@ View `output.html` in a browser.
 
 What's not right with the output?  How can one fix it?
 
-## Judges' comments:
+## Judges' remarks:
 
 This entry exhibits a way of obfuscation we haven't seen before, we think.
 The rulez of programming in an imperative language are violated, aren't they?
 
 Try figuring out how to increase the number of different colors, if you can.
 
-## Author's comments:
+## Author's remarks:
 
 Nowadays almost every programmer needs to do some Web chore. With all the open
 source stuff readily available, often we just need to call a bunch of libraries

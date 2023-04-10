@@ -24,7 +24,7 @@ make
     ash nazg thrakatuluhk, agh burzhumh-ishi krimpatul." >anonymous.pgm
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Then view the output using your favourite "pgm" viewer.  If you
 don't have a "pgm" viewer then we suggest the "netpbm" toolkit
@@ -48,7 +48,7 @@ which when translated from Black Speech means:
 
 p.s. Frodo lives!
 
-## Author's comments:
+## Author's remarks:
 
 This program takes a single command line argument, transcribes the
 argument text into Tolkien's Elvish letters, and writes the

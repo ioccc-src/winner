@@ -29,7 +29,7 @@ echo sparkline of file sizes: `wc -c * | awk '{print $1}' | xargs ./dlowe`
 ./dlowe 0 
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 We liked how this entry used Unicode, specifically UTF-8, in a somewhat obfuscated way. 
 
@@ -57,7 +57,7 @@ and with clang (3.3), we get
 
 Which one is correct? :)
 
-## Author's comments:
+## Author's remarks:
 
 ### sparkl
 

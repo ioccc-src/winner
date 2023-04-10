@@ -16,7 +16,7 @@
 
 	./schweikh1
 
-## Judges' comments:
+## Judges' remarks:
 
 Look at the source.  There is something very odd going on here.  
 Where does the real code come from if everything is a C pre-processor 
@@ -25,7 +25,7 @@ statement?
 Clearly this is either the Best Use or the Worst Abuse of the
 C Preprocessor that the judges have seen this year!
 
-## Author's comments:
+## Author's remarks:
 
 What this program does
 ----------------------

@@ -46,7 +46,7 @@ sample expressions that you can use:
 	      )
 	    )
 
-## Judges' comments:
+## Judges' remarks:
 
 This program translates lambda expressions into combinator
 expressions.  But you do not need to know Lambda Calculus to be
@@ -76,7 +76,7 @@ combinator expressions on standard output.
 What do you have to do to make this program work with an old non-ANSI C
 preprocessor?
 
-## Author's comments:
+## Author's remarks:
 
 My program is a demonstration of some practical applications of
 theoretical computer science. The application it implements is a program

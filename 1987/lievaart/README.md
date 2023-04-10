@@ -54,7 +54,7 @@ been without the size restriction.  This version has the full end game
 logic and displays the board after each move!
 
 
-## Author's comments:
+## Author's remarks:
 
 No comments were provided by the author.
 

@@ -24,7 +24,7 @@ make
 ./konno "the quick brown fox jumps over the lazy dog"
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This tiny program outputs what looks like a tiny keyboard.  
 OK, so the letters are missing. But that is no problem because 
@@ -39,7 +39,7 @@ how this program works and does what it does.  Can you
 extend this program to deal with a full QWERTY keyboard?
 Can you then minimize the size of that code?
 
-## Author's comments:
+## Author's remarks:
 
 ### Limitation
 

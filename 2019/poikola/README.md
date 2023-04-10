@@ -34,7 +34,7 @@ TZ=UTC48 make clobber prog
 ./prog 512 ./prog
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Do you have the time to see what this program does?  Think again, come back and
 try again.
@@ -47,7 +47,7 @@ The source code layout and some of the variable names honors the ski jumping
 accomplishments of [Matti
 Nyk&auml;nen](https://en.wikipedia.org/wiki/Matti_Nyk%C3%A4nen).
 
-## Author's comments:
+## Author's remarks:
 
 ### How to build:
 

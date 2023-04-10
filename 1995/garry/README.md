@@ -20,7 +20,7 @@
 
 	./garry < README.md
 
-## Judges' comments
+## Judges' remarks
 
 In general, try:
 
@@ -33,7 +33,7 @@ left intact) looked very much like a rat "dropping core".  See
 The author was kind enough to provide a less obfuscated version of
 the source called `garry.fmt.c`.
 
-## Author's comments
+## Author's remarks
 
 This  program is a file filter, designed to do environment-expansion and
 incorporating  the  ability  to  create  binary from escaped data in the

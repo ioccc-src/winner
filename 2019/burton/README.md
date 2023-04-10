@@ -20,13 +20,13 @@ make
 echo "Do or do not. There is no try."
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 A tiny, but punctually correct way of POSIX counting for text files. This one
 line, one word, 127 character beauty continues to expand the number of classic
 unix utilities available as winning entries.
 
-## Author's comments:
+## Author's remarks:
 
 ### Synopsis:
 

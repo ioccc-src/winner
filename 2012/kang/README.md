@@ -30,7 +30,7 @@ accept the proper German for four 'vier' where before it was spelt with the
 sound of V (fier not vier). Thank you Cody!
 
 
-## Judges' comments:
+## Judges' remarks:
 
 The judges were able to appreciate the Indo-European language family
 relation by making this entry successfully recognize *some* French,
@@ -41,7 +41,7 @@ colloquial year numbers of the last millennium.
 
 We've added a linefeed to the print format for convenience.
 
-## Author's comments:
+## Author's remarks:
 
 ### Synopsis
 

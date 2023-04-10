@@ -48,7 +48,7 @@ Beautiful penmanship! However, your fonts may vary.
 How does this entry compress the font it uses? What's the purpose of lrand48()?
 Why does the program dump core, when it does :) ?
 
-## Author's comments:
+## Author's remarks:
 
 ### Introduction
 

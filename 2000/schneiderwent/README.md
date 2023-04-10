@@ -21,7 +21,7 @@ make
 ./schneiderwent schneiderwent.data
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Very nice play by the rules and portable text obfuscation.
 This far surpasses old tricks like adding or subtracting 1
@@ -31,7 +31,7 @@ Translating the messages into your language of preference while
 keeping the program portable between different encodings
 (Chinese, Japanese, Russian - anyone?) may be an entertaining task.
 
-## Author's comments:
+## Author's remarks:
 
 This entry displays the current time to the console, for example:
 

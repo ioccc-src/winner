@@ -16,16 +16,16 @@
 
 	./pootris
 
-## Judges' comments
+## Judges' remarks
 
-Read the Author's comments below.  We believe that your experience may
+Read the Author's remarks below.  We believe that your experience may
 mirror one of our experiences:
 
 > Originally, I didn't appreciate the game.  Then I actually read the
 > description of the controls.  I started playing.  I struggled.
 > I spelled my first "poot".  I was hooked ...
 
-## Author's comments
+## Author's remarks
 
 Usage:
 

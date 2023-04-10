@@ -63,7 +63,7 @@ Thank you Cody for your assistance!
 NOTE: in linux it might happen that core dumps are created when running this
 entry even though it works fine.
 
-## Judges' comments
+## Judges' remarks
 
 This entry has a very twisted flow of control via recursion, iteration 
 and multi-processing.  Try to understand what is being done with the

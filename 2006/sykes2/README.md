@@ -36,7 +36,7 @@ As they say, "Lather, rinse, repeat"! :-)
 
 If you have the time, figure out how this small 1-line entry works!
 
-## Author's comments:
+## Author's remarks:
 
 At 130 characters of C code (without the newline at the end), this
 should fit into the "1-liner" category.

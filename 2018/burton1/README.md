@@ -34,11 +34,11 @@ To compile this alternate version:
 make alt
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 One line, one array, one loop and one statement but it prints many bytes. It won.
 
-## Author's comments:
+## Author's remarks:
 
 Feed this anything on stdin.
 

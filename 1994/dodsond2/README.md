@@ -14,7 +14,7 @@ USA
 
 	./dodsond2
 
-## Judges' comments:
+## Judges' remarks:
 
 Each year people find new ways to squeeze more and more out of the
 contest rules.  Next year, entries that use compression utilities
@@ -46,7 +46,7 @@ this fun "_abuse of the rules_" style hack.
 It is worth noting that without this compression "_abuse of the rules_"
 style hack, the [dodsond2.c](dodsond2.c) is further obfuscated.
 
-## Author's comments:
+## Author's remarks:
 
 Go searching for the Wumpus in the Caverns of Doom!  But be careful...
 There are pits and bats waiting to seal your fate, as well as a 

@@ -35,7 +35,7 @@ What happens if you pass only three parameters like the below?
 
         ./schweikh2 15 1 0
 
-## Judges' comments:
+## Judges' remarks:
 
 
 The original program, with only slight obfuscations, may be found
@@ -45,7 +45,7 @@ in `hunni.c`.  The perl script, obfuscates it appropriately:
 
 This entry was another crowd pleaser at the IOCCC BOF.
 
-## Author's comments:
+## Author's remarks:
 
 Note: the source must be viewed with tabstop 8. To appreciate the
 beauty have your eyes half closed.

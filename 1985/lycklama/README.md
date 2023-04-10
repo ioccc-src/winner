@@ -47,13 +47,13 @@ Use `./lylycklama.alt` as you would `./lycklama` above.
 ```
 
 
-## Judges' comments:
+## Judges' remarks:
 
 Run the program, redirecting a file into it, and notice how it redisplays it.
 The program itself looks like tty noise.
 
 
-## Author's comments:
+## Author's remarks:
 
 No comments were provided by the author.
 

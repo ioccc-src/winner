@@ -29,7 +29,7 @@ compile at all (gcc and clang respectively). Thank you Cody for your assistance!
 echo "Do or do not. There is no try."
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Here is a nice compact program that changes with the phase of the moon.
 Can you figure out how it does it?
@@ -40,7 +40,7 @@ own non-traditional prototype for main().  We have had uglify this
 program in order to try and prevent C compilers form failing to
 compile due to the unusual arg types of the main() function.
 
-## Author's comments:
+## Author's remarks:
 
 This program outputs a rough image of the moon in its current phase.
 The main obfuscation of this entry is its complicated double recursion

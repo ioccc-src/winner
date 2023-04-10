@@ -28,7 +28,7 @@ Next point your browser to the file: `sykes1.html`.
 
 Refresh your browser.  
 
-## Judges' comments:
+## Judges' remarks:
 
 Read the sykes1.html page source.
 Now then read the C source.  Confused?  :-)
@@ -36,7 +36,7 @@ Now then read the C source.  Confused?  :-)
 For extra credit, understand what happens when you give this entry
 an negative number argument, and why.
 
-## Author's comments:
+## Author's remarks:
 
 This cube shaped program solves the fiendishly difficult "Bedlam Cube"
 

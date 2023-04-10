@@ -25,7 +25,7 @@ make
 echo "Do or do not. There is no try."
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 You are in a maze of twisty little passages, all alike.
 
@@ -39,7 +39,7 @@ expect that from something this small.
 Of particular interest:  Go ahead, run it through the preprocessor.  You
 *still* won't see the words that are used in the game.
 
-## Author's comments:
+## Author's remarks:
 
 TED Shroyer came up with the idea that made it possible to hide all
 the text.  Thanks, TED.  You won.  :)

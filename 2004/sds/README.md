@@ -27,7 +27,7 @@ make encoder
 ./encoder sds.hint <sds.c >sds_msg.c
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Why not use the program to hide another program in the program? It
 must have seemed reasonable at the time.
@@ -39,7 +39,7 @@ horribly badly formatted emails spammers send might contain secret
 messages.  Annoyingly, it's a little too obvious that SOMETHING has
 been done to a message for us to hide one in the remarks.  :)
 
-## Author's comments:
+## Author's remarks:
 
 Stenography is the term for the family of techniques used for
 hiding information within other information.  Today, it has many real

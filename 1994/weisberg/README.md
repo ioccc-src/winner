@@ -35,13 +35,13 @@ Lesser systems will find this alternative version a good way to create
 a core file.  :-)
 
 
-## Judges' comments:
+## Judges' remarks:
 
 This entry confuses some C-preprocessors and some C-beautifiers.
 We found one cpp that processed this source differently when
 it was read on stdin instead of via `cc -E`.
 
-## Author's comments:
+## Author's remarks:
 
 ### Description:
 

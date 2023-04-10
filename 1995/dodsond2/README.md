@@ -15,14 +15,14 @@
 	  ./dodsond2
 
 
-## Judges' comments:
+## Judges' remarks:
 
 An amazing entry!
 
 The official chef enjoyed solving the maze, which she did on the first
 attempt.
 
-## Author's comments:
+## Author's remarks:
 
 ### Interactive 3D Maze
 

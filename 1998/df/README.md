@@ -14,7 +14,7 @@
 
 	./df
 
-## Judges' comments;
+## Judges' remarks;
 
 Everyone talks about how data hiding can produce clearer code; I am
 pleased to offer this charming refutation.
@@ -37,7 +37,7 @@ Extra credit questions:
 - How many words does this entry use?
 - Can you add more words to the program and still make it work?
 
-## Author's comments
+## Author's remarks
 
 This program lets you guess English words. It displays an underscore
 for each letter in the word; guessing a letter that actually is in
@@ -107,7 +107,7 @@ reverse them. Anyone out there should have enough discipline and
 rot13 shouldn't be required, really. After all, we are no children
 anymore :-)
 
-This paragraph is not part of the author's comments, but is a helpful
+This paragraph is not part of the author's remarks, but is a helpful
 gift from the judges; if you read too fast to stop yourself, this should
 give you enough time to stop, which you really need to do RIGHT NOW if
 you don't want to read the spoilers, which really do spoil everything,

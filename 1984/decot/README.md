@@ -37,11 +37,11 @@ make alt
 ```
 
 
-## Judges' comments:
+## Judges' remarks:
 
 This program prints out a string of garbage.
 
-The judges also offer this one comment: understand comments!
+The judges also offer this one comment: understand remarks!
 
 ### Historical comments:
 
@@ -63,7 +63,7 @@ To see what we mean look at the source file in the
 [archive/archive-1984.tar.bz2](/archive-1984.tar.bz2) tarball or
 [decot.alt.c](decot.alt.c).
 
-## Author's comments:
+## Author's remarks:
 
 No comments were provided by the author.
 

@@ -43,7 +43,7 @@ Try feeding the program source to the program and ask both:
 	What is cat?
 
 
-## Judges' comments:
+## Judges' remarks:
 
 After this program prints the contents of 'file', ask it
 some questions related to the text.
@@ -67,7 +67,7 @@ NOTE: If you have a ' in the question this entry may fail.
 
 NOTE: The author may also be contacted at: marks@aldrin.ksc.nasa.gov.
 
-## Author's comments:
+## Author's remarks:
 
 I wanted to write a program that would read in a text file in
 natural language (such as English) and answer questions about that

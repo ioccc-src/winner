@@ -100,7 +100,7 @@ CANNIBAL=1 WALLS=1 WAIT=0 EVADE=1 MAXSIZE=10 ./prog
 # allows for configuring colours
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 As the [Gadsden flag](https://en.wikipedia.org/wiki/Gadsden_flag) warns, beware of the snake!
 This game has a number of configurable pitfalls including walls and snakes.
@@ -131,7 +131,7 @@ Because most of us could use some *Double-layered Chocolate Fudge Cake*!
 
 Read ***ONLY*** if you really must give up trying to de-obfuscate!
 
-## Author's comments:
+## Author's remarks:
 
 ### Feature-rich curses implementation of the Snake game (with many gameplay modes and options)
 
@@ -538,7 +538,7 @@ But there are some others who I don't remember like Ilya Kurdyukov (who's
 offered a lot of interesting thoughts on Snake and who plans to have his own
 version after the entries are published), Nathan Otterness, Nicholas Carlini
 (whose entry is an absolutely brilliant abuse of printf - and I totally agree
-with the judges comments that your entry is so novel that it'll be worth special
+with the judges remarks that your entry is so novel that it'll be worth special
 mention in the future Best of IOCCC list!) and tsoj too.
 
 Well done and congratulations to all of you again!  Thank you for submitting the

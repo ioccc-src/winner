@@ -25,7 +25,7 @@ make main
 ./main Hello
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Big terminals with tiny fonts have their uses in certain cases.
 One of them is:
@@ -40,7 +40,7 @@ When using a smart phone to read the output, you may need to
 step back to see the bigger picture because that picture is worth
 more than 1000 words.
 
-## Author's comments:
+## Author's remarks:
 
 ### Remarks
 

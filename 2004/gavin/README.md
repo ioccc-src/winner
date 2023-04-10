@@ -65,7 +65,7 @@ vi README.md
 
 Press and hold any key.
 
-## Judges' comments:
+## Judges' remarks:
 
 Over the years, we've seen a program that dumps core
 if executed on a "wrong" architecture immediately (1984/mullender),
@@ -89,7 +89,7 @@ What you can do and what you cannot do in such programs?
 The program called "prim", written by the judges,
 computes and prints prime numbers.
 
-## Author's comments:
+## Author's remarks:
 
 This is a 32-bit multitasking operating system for x86 computers,
 with GUI and filesystem, support for loading and executing user

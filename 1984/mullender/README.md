@@ -57,7 +57,7 @@ overflow! In fact it's argc itself.
 What happens if you hit enter after it writes a line of output?
 
 
-## Judges' comments:
+## Judges' remarks:
 
 Without question, this C program is the one of the most obfuscated
 C program that has ever been received!  Like all great contest
@@ -82,7 +82,7 @@ couldn't!  :-)
 
 BTW: this remains my (Landon Curt Noll's) all time favorite entries!
 
-## Author's comments:
+## Author's remarks:
 
 These comments, found at
 [https://lainsystems.com/posts/exploring-mullender-dot-c/](https://lainsystems.com/posts/exploring-mullender-dot-c/),

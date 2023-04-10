@@ -25,7 +25,7 @@ echo "1996/12/31" | ./morgan1
 
 Try pressing the arrow keys when your focus is in the window.
 
-## Judges' comments:
+## Judges' remarks:
 
 To verify the output, try echoing the date of an evening with a clear sky.
 Use binoculars and/or telescope as needed.  In some cases you may need
@@ -33,7 +33,7 @@ to wait for a better time of the evening.  In a few cases, such as
 the South Pole in the summer, you may need to move to a different
 observing site.
 
-## Author's comments:
+## Author's remarks:
 
 ### Instructions
 

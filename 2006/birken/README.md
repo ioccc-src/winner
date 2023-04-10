@@ -33,7 +33,7 @@ malloc(). Thank you Cody for your assistance!
 
 etc.
 
-## Judges' comments:
+## Judges' remarks:
 
 What is TUFO?  It's not a veggy friendly food, nor it is Verilog or
 VHDL.  It is not even Pascal!
@@ -52,7 +52,7 @@ And for those who are still confused:
 > <http://en.wikipedia.org/wiki/Edamame>
 > <http://en.wikipedia.org/wiki/Tofu>
 
-## Author's comments:
+## Author's remarks:
 
 If man is capable of creating tofu hotdogs (simulated meat), then why
 not tofu circuitry (simulated circuits)?  This program is my tribute to

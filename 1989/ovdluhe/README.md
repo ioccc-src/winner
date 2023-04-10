@@ -30,7 +30,7 @@ by chance or is killed.
 	./ovdluhe < README.md
 
 
-## Judges' comments:
+## Judges' remarks:
 
 Run this program using your favorite text file as input.  Files
 such as mailboxes, man pages and usenet articles are especially

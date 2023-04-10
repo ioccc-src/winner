@@ -25,7 +25,7 @@ echo foo bar | ./dg
 echo "to C or not to C" | ./dg
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Some C preprocessors got confused about single quotes in certain cases.
 In particular, the following source line:
@@ -44,7 +44,7 @@ particularly if the C preprocessor botches single quotes in cpp expansions,
 which we have done for the wider audience.
 
 
-## Author's comments:
+## Author's remarks:
 
 If my preprocessor could hack it, I could write this as one single line rather
 than 4, but when I do that I get a complaint "defines nested too deeply".

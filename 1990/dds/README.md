@@ -37,12 +37,12 @@ RUN
 
 NOTE: this is case sensitive.
 
-## Judges' comments:
+## Judges' remarks:
 
 Be sure not to run out of fuel!
 
 
-## Author's comments:
+## Author's remarks:
 
 This is the DDS-BASIC Interpreter (Version 1.00). 
 

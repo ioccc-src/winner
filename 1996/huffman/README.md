@@ -26,7 +26,7 @@ and/or running on modern systems.
 	echo 'CC OR NOT CC' | ./huffman | ./huffman
 
 
-## Judges' comments:
+## Judges' remarks:
 
 If you are still confused and want to read a spoiler, check out
 the source and it will be clear as mud!
@@ -39,7 +39,7 @@ And if you really can't see what is going on, here is an extra spoiler:
 
 This entry was very well received at the IOCCC BOF.
 
-## Author's comments:
+## Author's remarks:
 
 This filter program is really not obfuscated code.  It compiles cleanly
 with an ANSI C compiler and comes with user documentation that even a

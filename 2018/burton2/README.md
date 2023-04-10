@@ -35,12 +35,12 @@ If you get really stuck, try:
 man ./tac.man
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 They say size isn't everything, and in the case of IOCCC [iocccsize.c](http://www.ioccc.org/2018/iocccsize.c)
 that is saying something!  What is this program weighing and how much does it weigh?
 
-## Author's comments:
+## Author's remarks:
 
 ### tac - tokenize and count C and derivative languages:
 

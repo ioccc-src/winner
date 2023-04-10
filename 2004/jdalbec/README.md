@@ -28,12 +28,12 @@ make
 
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 We still aren't sure whether or not this is a useful program, but
 it's the first atomic fission we've seen in the IOCCC.
 
-## Author's comments:
+## Author's remarks:
 
 It's elementary!
 

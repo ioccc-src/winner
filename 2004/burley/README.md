@@ -25,7 +25,7 @@ gcc before the fix and it does not work with clang either; see
 ./burley
 ```
 
-NOTE: you need to input a number first. See judges' comments below for
+NOTE: you need to input a number first. See judges' remarks below for
 information on how to play.
 
 
@@ -35,7 +35,7 @@ information on how to play.
 echo "Do or do not. There is no try."
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This is a draw poker program.  You start with $100.  Input alternates
 between your bet and which cards to keep.  Example:
@@ -72,7 +72,7 @@ the program so this "strategy" no longer works?
 Notice the clever use of setjmp() and longjmp() calls.  Can you keep
 track of what state is being saved and restored?
 
-## Author's comments
+## Author's remarks
 
 This program plays draw poker.  What is unusual about it is that it
 is written as a single statement -- count the semicolons!  (OK, there

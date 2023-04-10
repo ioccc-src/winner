@@ -26,7 +26,7 @@ compiling and running this program with some systems.
 	Jim Hague
 
 
-## Judges' comments:
+## Judges' remarks:
 
 Compile this program and feed ASCII text into standard input.  This
 program is known to pass lint on some systems and abort lint on
@@ -39,7 +39,7 @@ similar variables can be obfuscating!  The author notes that this
 program implements the international Morse standard.  Now for extra
 credit, what Morse message does the program spell out?
 
-## Author's comments:
+## Author's remarks:
 
 No comments were provided by the author.
 

@@ -25,7 +25,7 @@ Ask yourself what happens to `foo.md` if you try:
 	./ph 40 < README.md > foo.md
 
 
-## Judges' comments:
+## Judges' remarks:
 
 Folding at the wrong length may be equivalent to a "Spindle or Mutilate" operation. For example:
 
@@ -36,7 +36,7 @@ Try not to
 files. :-)
 
 
-## Author's comments:
+## Author's remarks:
 
 No comments were provided by the author.
 

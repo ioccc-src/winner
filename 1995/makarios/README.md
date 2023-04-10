@@ -14,12 +14,12 @@
 
 	./makarios
 
-## Judges' comments
+## Judges' remarks
 
 The judges were impressed that such a small program could do so much!
 Can you figure out how it does it?
 
-## Author's comments
+## Author's remarks
 
 This program takes no arguments. It emits the base 8 representation
 of prime palindromes (palindromic in base 8, of course).

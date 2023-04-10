@@ -28,7 +28,7 @@ diff nathan.c barfoof.c
 ```
 
 
-## Judges' comments:
+## Judges' remarks:
 
 ### WARNING:
 
@@ -82,7 +82,7 @@ were/are.  Certain US federal officials can get away with shipping arms to
 certain nations in apparent violation of US laws, but I personally can't
 re-distribute a program contest winner to the network!
 
-## Author's comments
+## Author's remarks
 
 ### PROGRAM USE:
 

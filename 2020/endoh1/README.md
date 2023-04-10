@@ -32,7 +32,7 @@ make
 
 An alternate version of this entry, [prog.alt.c](prog.alt.c), is provided.  This
 alternate code lacks the additional rule to flag all unprobed cells.  See the
-Author's comments for more details.
+Author's remarks for more details.
 
 To compile this alternate version:
 
@@ -42,7 +42,7 @@ make alt
 
 Use `prog.alt` as you would `prog` above.
 
-## Judges' comments:
+## Judges' remarks:
 
 When playing Minesweeper, a misclick might ruin a game, so why not leave the
 routine to the computer?  This program automatically uncovers mines according to
@@ -55,7 +55,7 @@ encounter any problems?
 The submission was in violation of the "2053" size rule by one character, likely
 a late typo. It was easy to fix.
 
-## Author's comments:
+## Author's remarks:
 
 ### Semi-automatic Minesweeper:
 

@@ -35,7 +35,7 @@ cc -DPIN=23209 code.c -o decoded	# wait for it ...
 # weeeeeeeeeeeeee! You are having a good time!
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 You might think of this entry as code obfuscater with a code.
 If you use the wrong code, you're gonna have a bad time.
@@ -45,7 +45,7 @@ What is compiling this entry about?
 This winning entry also comes with a [JavaScript timelapse
 spoiler](spoiler.html) that shows how this entry was written.
 
-## Author's comments:
+## Author's remarks:
 
 ### Synopsis
 

@@ -25,7 +25,7 @@ make
 ### Alternate code:
 
 An alternate version of this entry, `prog.alt.c`, is provided.  As mentioned in
-the Author's comments, the alternate version lacks a useful bug fix.
+the Author's remarks, the alternate version lacks a useful bug fix.
 
 To compile this alternate version:
 
@@ -36,14 +36,14 @@ make alt
 Use `prog.alt` as you would `prog` above.
 
 
-## Judges' comments:
+## Judges' remarks:
 
 This text was processed by prog. You may get confused.
 We're not really sure: prog.c wasn't commented.
 Who has been thoroughly puzzled by prog? Also how obfuscated is prog?
 Having been written in C, how large of a vocabulary has it?
 
-## Author's comments:
+## Author's remarks:
 
 ### The Program:
 

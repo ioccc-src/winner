@@ -36,7 +36,7 @@ less Eugene_Onegin.output.txt
 However, as the binary model files used to produce the output are in an
 implementation-specific format, your mileage may vary.
 
-## Judges' comments:
+## Judges' remarks:
 
 Can a machine learn?
 
@@ -49,7 +49,7 @@ Can it write rules and guidelines for the IOCCC?
 
 You decide. :-)
 
-## Author's comments:
+## Author's remarks:
 
 ### Welcome to OMLET! &#x1f373;:
 

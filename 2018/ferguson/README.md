@@ -28,7 +28,7 @@ make
 make test
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Looking back over the strata of past IOCCC entries, this program marks a new
 mutation on our understanding of sequencing of code.  In adaptation of the
@@ -50,7 +50,7 @@ If you find yourself in an evolutionary dead end, try:
 man ./weasel.man
 ```
 
-## Author's comments:
+## Author's remarks:
 
     0. Preface
     1. What it is
@@ -73,7 +73,7 @@ program, how to compile, etc. then there isn't need to heed this note.**
 I was at a loss on how to present my remarks; on the one hand I wanted to give
 everything to the judges so they didn't miss anything. But on the other hand I
 didn't want to reveal as much publicly and many people don't like to read long
-texts. To resolve this I think the best way is referencing the judges' comments:
+texts. To resolve this I think the best way is referencing the judges' remarks:
 if you want a quick rundown of the entry try what they suggest and view the man
 page (it explains all the options and describes the program briefly):
 

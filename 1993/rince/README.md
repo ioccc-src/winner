@@ -28,7 +28,7 @@ where:
 
 
 
-## Judges' comments:
+## Judges' remarks:
     
 The author has provided several CABBAGE files for your amusement:
 

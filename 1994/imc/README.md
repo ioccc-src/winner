@@ -24,12 +24,12 @@ England
 	./imc 4
 	./imc 6
 
-## Judges' comments:
+## Judges' remarks:
 
 This entry's algorithm is as magic as its output!
 
 
-## Author's comments:
+## Author's remarks:
 
 This program may be compiled with an ANSI or K&R compiler.  A few
 harmless warnings are displayed only if "gcc -Wall" is used.

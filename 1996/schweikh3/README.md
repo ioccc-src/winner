@@ -22,7 +22,7 @@ You have been warned.
 	./schweikh3
 
 
-## Judges' comments:
+## Judges' remarks:
 
 The source fails to compile on compilers that recognize the inline
 keyword by default.  For gcc, you may need to use -ansi.
@@ -41,7 +41,7 @@ NOTE: On some systems such as SunOS, one may need to compile with:
 	      -I. -D_POSIX_SOURCE '-Ddifftime(a,b)=(double)(b-a)' \
 	      schweikh3.c -o schweikh3
 
-## Author's comments:
+## Author's remarks:
 
 Why I think my entry is obfuscated
 ----------------------------------

@@ -20,13 +20,13 @@
 
 	./jonth host1:0 host2:0
 
-## Judges' comments:
+## Judges' remarks:
 
 
 For extra credit, figure out how you can cheat by taking over
 a square already occupied by an opponent.
 
-## Author's comments:
+## Author's remarks:
 
 This is multi-user tic-tac-toe for X Windows. You may give one or two X
 displays as arguments to this game.

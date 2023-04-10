@@ -61,11 +61,11 @@ make alt
 
 Use `buzzard.2.alt` as you would `buzzard.2` above.
 
-## Judges' comments:
+## Judges' remarks:
 
 Have fun!
 
-## Author's comments:
+## Author's remarks:
 
 ### What it does:
 

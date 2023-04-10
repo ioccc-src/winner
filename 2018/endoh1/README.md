@@ -22,7 +22,7 @@ make
 ./prog < smily.txt > smily.gif
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 To get the best experience, use a GIF viewer that can handle animated gifs.
 On OS X you can use Safari using "open -a Safari smily.gif"
@@ -36,7 +36,7 @@ You should only give this program printable ASCII characters.
 Unfortunately this won't run on your PDP8, if you had one, as it needs at
 least 2MiB of memory to run in.
 
-## Author's comments:
+## Author's remarks:
 
 This program generates an animated GIF from a plain text.  Run:
 

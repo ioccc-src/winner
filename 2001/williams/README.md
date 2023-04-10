@@ -23,7 +23,7 @@ make
 echo "Do or do not. There is no try."
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 A strange game. The only winning move is not to play. No, really; you can't
 actually win.  :)
@@ -33,7 +33,7 @@ it's the standard "three triangles around a circular" logo for nukes.
 
 This is a pretty straightforward game.
 
-## Author's comments:
+## Author's remarks:
 
 What this program does:
 

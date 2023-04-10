@@ -11,7 +11,7 @@ USA
 
         make all
 
-## Judges' comments:
+## Judges' remarks:
 
 The Judges believe that this is the best one line entry ever received.
 Compile on a `UN*X` system, or at least using a C implementation that

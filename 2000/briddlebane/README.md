@@ -26,7 +26,7 @@ make
 echo "Do or do not. There is no try."
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 One could argue that this program was a "diseased dumpster of tripe"
 but I suspect that would only result in the judges being heckled as a
@@ -43,7 +43,7 @@ inclusive!).  Without this it results in an error in the encoding of
 the way it assigns variables to memory) it will terminate "decrepit"
 with the character '\200' (the last value of F) instead of '\0'.
 
-## Author's comments:
+## Author's remarks:
 
 This program was broadcast from deep within the Zarbonic Cluster
 and received at 9:03pm on March 21st, 2000 by Moxen N. Briddlebane.

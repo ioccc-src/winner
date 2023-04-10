@@ -23,14 +23,14 @@ make
 ./prog
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 This game does not use curses, but you may end up cursing.
 
 The code is made more difficult to read using an innovative, right justified,
 reverse indentation style.
 
-## Author's comments:
+## Author's remarks:
 
 #### Controls
 - Movement:  

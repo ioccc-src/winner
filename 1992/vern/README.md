@@ -32,7 +32,7 @@ You might start off by giving the following input:
 67 57		# (this may take a while)
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 The judges assume no responsibility for the obfuscated opening
 suggested above.  :-)
@@ -52,7 +52,7 @@ NOTE: Move values must be restricted to the range 00 to 77.
 NOTE: Because some mailers have problems with the original winning source,
 a slightly modified version with shorter lines has been provided.
 
-## Author's comments:
+## Author's remarks:
 
 This program plays chess.  You play the white pieces and the program
 the black pieces.  Moves are entered as a two-digit number specifying

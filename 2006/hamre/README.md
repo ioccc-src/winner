@@ -21,7 +21,7 @@ make
 ./hamre '-1+4/3*(2+1/(3/2*(7/2-7/3+1/6)))/2'
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 An irrationally coded source presents rational things!
 
@@ -30,7 +30,7 @@ of supporting a new operator by way of an existing macro
 in the source.  And can you determine which macro this is
 and understand the purpose of its arguments?
 
-## Author's comments:
+## Author's remarks:
 
 This is a calculator for rational numbers. Believe it or not, that is
 a useful tool to have around, and I haven't found a useful version,

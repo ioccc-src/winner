@@ -23,7 +23,7 @@ make
 echo "Do or do not. There is no try."
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 The program plays almost always reasonably, but does not always detect
 illegal moves.  Try "9 1" as your first move, then "13 2". Also it
@@ -34,7 +34,7 @@ a game when its position is hopeless.
 Unfortunately, due to the contest rules, we're unable to grant the
 author a patent he applied for.  :-)
 
-## Author's comments:
+## Author's remarks:
 
 ### TITLE OF INVENTION
 

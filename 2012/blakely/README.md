@@ -26,7 +26,7 @@ make
 time ./blakely 0 250 > flat.gif
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Several IOCCC themes (RPN calculator, animated GIF generator, ray tracing) in one package! Very impressive!
 
@@ -34,7 +34,7 @@ The checkerboard pattern in the output can be broken. Could you figure out how?
 
 Larger GIF files confuse some image viewers.
 
-## Author's comments:
+## Author's remarks:
 
 ### Remarks
 

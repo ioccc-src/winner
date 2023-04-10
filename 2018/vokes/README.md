@@ -23,7 +23,7 @@ make
 ./prog < ioccc.txt
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 What this program does is not witchcraft and there are no spectres, but you
 might have a meltdown trying to work it all out.
@@ -32,7 +32,7 @@ This entry is designed to mislead in many ways. However, if you find yourself
 wanting to know the possibilities for navigating a graph, you will get the
 answer you seek with no hocus pocus.
 
-## Author's comments:
+## Author's remarks:
 
 ### Introduction:
 

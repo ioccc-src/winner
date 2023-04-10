@@ -21,14 +21,14 @@ make
 ./anon 3 3 3
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Taking the 4x4 board with 15 tiles to a whole new level, this entry
 takes this puzzle to a whole new dimension!  While you puzzle out
 this puzzle, we invite you to take a good LONG look how and WHY
 main is recursively called and how the run-time stack is used.
 
-## Author's comments:
+## Author's remarks:
 
 ### ABOUT THE GAME ITSELF
 

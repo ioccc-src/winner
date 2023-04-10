@@ -31,7 +31,7 @@ make output
 ./output
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Before analysing the code in detail we were able to guess two out of four tests
 this entry uses to tell the 5 languages/flavors apart. Can you find all four?
@@ -39,7 +39,7 @@ this entry uses to tell the 5 languages/flavors apart. Can you find all four?
 The way the text is encoded in the output doesn't cease to amaze. Can you tell
 why an array of 512 elements is needed?
 
-## Author's comments:
+## Author's remarks:
 
 Fuuko is a sea star generator.  Feed her some input through stdin to
 get lots of sea star patterns in stdout.

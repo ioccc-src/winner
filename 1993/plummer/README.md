@@ -21,12 +21,12 @@ where:
 
 NOTE: this entry will crash without enough args.
 
-## Judges' comments:
+## Judges' remarks:
     
 For extra credit: What happens when 'number' contains non-numeric
 characters, and why?
 
-## Author's comments:
+## Author's remarks:
 
 This program prints out all numbers up to a given number of digits
 on a single line.  When the largest number is reached, the program

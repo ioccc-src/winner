@@ -22,13 +22,13 @@ cp -f sinon.c run.c; ./hecate.sh
 cp -f sinon.c run.c; ./hecate.sh; ./glock.sh; sleep 3; ./glock.sh; sleep 1; ./hecate.sh
 ```
 
-## Judges' comments:
+## Judges' remarks:
 
 Try to figure out how this entry determines the optimization level with
 which it had been compiled. Is this an example of undefined behavior
 or unspecified behavior?
 
-## Author's comments:
+## Author's remarks:
 
 ### Summary
 

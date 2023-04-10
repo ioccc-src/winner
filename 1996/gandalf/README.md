@@ -39,14 +39,14 @@ Care to guess why these execute differently?  Only the
 compiler knows ... ok maybe other things like the author,
 the judges and maybe you too?
 
-## Judges' comments
+## Judges' remarks
 
 For mis-leading C pre-processor output, try:
 
 
 	cc -E gandalf.c
 
-## Author's comments
+## Author's remarks
 
 The program requires an ASCII system.
 
