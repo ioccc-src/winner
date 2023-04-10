@@ -1,10 +1,11 @@
 # Best Non-Use of Curses:
 
-    Mark Schnitzius
-    Eclipse Group
-    94 Richardson St
-    Albert Park, VIC 3206
-    Australia
+Mark Schnitzius  
+Eclipse Group  
+94 Richardson St  
+Albert Park, VIC 3206  
+Australia  
+<http://computronium.org/ioccc.html>  
 
 ## To build:
 

@@ -1,10 +1,12 @@
 # Best Layout:
 
-Mark Schnitzius
-ISX Corporation
-1165 Northchase Pkwy, Suite 120
-Marietta, GA 30067
-USA
+Mark Schnitzius  
+ISX Corporation  
+1165 Northchase Pkwy, Suite 120  
+Marietta, GA 30067  
+USA  
+<http://computronium.org/ioccc.html>
+
 
 ## To build:
 
