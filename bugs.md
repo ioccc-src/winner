@@ -305,7 +305,8 @@ the entries with this problem have been fixed.
 ## [1984/laman](1984/laman/laman.c) ([README.md](1984/laman/README.md)
 ## STATUS: INABIAF - please **DO NOT** fix
 
-This entry will segfault if there is no arg.
+This entry will very likely crash or do something else if you run it without an
+arg.
 
 # 1985
 
