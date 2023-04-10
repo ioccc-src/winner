@@ -23,7 +23,9 @@ C
 w(g,R,u)float*g,u;char R;
 /**/{int b,f;if(A>2){A=atoi(a[1]);b=atoi(a[2]);while((f=A+b)<15000){printf("%d\n",f);A=b;b=f;}}}
 main(A,a)int A;char*a[];
-o o
+o
+o
+if (a[1]==NULL||a[2]==NULL||a[3]==NULL||a[4]==NULL||a[5]==NULL) return 1;
 if(!strcmp(*++a,"-r"))S();
 D=atof(*++a);
 T=atof(*++a);

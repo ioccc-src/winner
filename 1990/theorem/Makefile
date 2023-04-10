@@ -115,7 +115,7 @@ PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 DATA=
-TARGET= ${PROG} sorter fibonacci
+TARGET= ${PROG} sorter fibonacci theorem_bkp
 #
 ALT_OBJ=
 ALT_TARGET=
@@ -133,7 +133,6 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: this entry will segfault on no arg specified."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 sorter.c: ${PROG} ${PROG}.c
@@ -147,6 +146,12 @@ fibonacci.c: sorter ${PROG}.c
 
 fibonacci: fibonacci.c
 	${CC} ${CFLAGS} fibonacci.c -o $@
+
+theorem_bkp: sorter theorem_bkp.c
+	${CC} ${CFLAGS} theorem_bkp.c -o $@
+
+theorem_bkp.c:
+	-./sorter -r 0 0 0 0 < sorter.c > theorem_bkp.c
 
 # alternative executable
 #

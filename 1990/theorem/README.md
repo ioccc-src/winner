@@ -18,14 +18,14 @@ impacted the usability of this program including some segfaults under modern
 systems (and possibly in some cases earlier systems) with this entry.
 Originally we noted that the 4 trailing args '0 0 0 0' were required on systems
 that dump core when NULL is dereferenced but this problem showed itself in
-modern systems even with the 4 '0 0 0 0'. He also fixed the code so that the
-generated `fibonacci.c` actually works; before it just printed `0` over and over
-again (since it did not work anyway a segfault prevention was added here). He
-also some array addressing (some of which might not be strictly necessary but as
-he was testing the `fibonacci.c` bug he ended up changing it anyway). Finally he
-changed this program to use `fgets()` not `gets()` to make it safer and to
-prevent a warning about `gets()` at linking or runtime. Thank you Cody for your
-assistance!
+modern systems even with the 4 '0 0 0 0'. He also fixed a segfault if not enough
+args are specified and fixed the code so that the generated `fibonacci.c`
+actually works; before it just printed `0` over and over again (since it did not
+work anyway a segfault prevention was added here). He also some array addressing
+(some of which might not be strictly necessary but as he was testing the
+`fibonacci.c` bug he ended up changing it anyway). Finally he changed this
+program to use `fgets()` not `gets()` to make it safer and to prevent a warning
+about `gets()` at linking or runtime. Thank you Cody for your assistance!
 
 [Yusuke Endoh](/winners.html#Yusuke_Endoh) pointed out that `atof` nowadays
 needs `#include <stdlib.h>` which was used in order to get this to work
@@ -46,7 +46,6 @@ where:
 	h - step size
 	y1 - initial value  (y(x1) == y1)
 
-NOTE: this entry will segfault on no arg specified.
 
 ## Try:
 
@@ -54,6 +53,11 @@ NOTE: this entry will segfault on no arg specified.
 ./theorem y 0 1 0.1 1
 ```
 
+### Known bug with `fibonacci.c` and `theorem_bkp.c`:
+
+If the two args added up equals 0 the program will enter an infinite loop,
+printing 0 over and over again. Cody fixed another condition where this happens
+but this has not been fixed. See [bugs.md](/bugs.md) for more details.
 
 ## Judges' comments:
 
