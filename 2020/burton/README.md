@@ -16,7 +16,10 @@ make
 ./prog arg ...
 ```
 
-NOTE: this entry will crash on no arg specified.
+### INABIAF - it's not a bug it's a feature :-)
+
+This entry will very likely crash or do something else if you run it without an
+arg. It might also print strange output with more than one arg.
 
 ## Try:
 
@@ -38,11 +41,7 @@ NOTE: this entry will crash on no arg specified.
 ### Alternate code:
 
 By default, this code compiles for Little Endian machines.
-To compile for a Big Endian machine use:
-
-```sh
-make alt
-```
+An alternate version is also compiled for Big Endian machines.
 
 Use `prog_be` as you would `prog` above.
 
@@ -85,7 +84,7 @@ machines(!!), so they are truly configuration parameters, not logic.
 ### Notes:
 
 One <strike>ping</strike> argument only.  It will segfault on zero arguments, and
-display strange results if more than one argument.
+display strange results with more than one argument.
 
 Small, non-negative integers only.  Useful range is `0 .. 511`, sorta, for LE; `0
 .. 255` for BE.  Bonus points if you can explain why the limits work this way.

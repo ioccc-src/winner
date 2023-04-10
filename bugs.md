@@ -1132,6 +1132,9 @@ This entry is known to crash if no arg is specified. Although easy to fix it is
 documented and should not be fixed (of course you may fix it to see if you can
 but it shouldn't be made into a pull request).
 
+It will also show funny output with more than one arg. This should not be fixed
+either. But can you figure out why this happens?
+
 ## [2020/ferguson1](2020/ferguson1/prog.c) ([README.md](2020/ferguson1/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 
