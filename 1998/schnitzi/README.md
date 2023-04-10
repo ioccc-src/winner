@@ -1,47 +1,56 @@
-# Best Flow Control:
+# Best Flow Control
 
-    Mark Schnitzius
-    ISX Corporation
-    1280 West Peachtree St. Apt. 1507
-    Atlanta, GA 30309
-    USA
-
-    http://east.isx.com/~schnitzi/
+Mark Schnitzius
+ISX Corporation
+1280 West Peachtree St. Apt. 1507
+Atlanta, GA 30309
+USA
+<http://computronium.org/ioccc.html>
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
-## To run
+## To run:
 
-	./schnitzi 5 > sort.c
-	make sort
+```sh
+./schnitzi 5 > sort.c
+make sort
+```
 
 ## Try:
 
-	./schnitzi 3 > sort.c
-	make sort
-	echo 123 > data
-	echo 234 >> data
-	echo 413 >> data
-	echo 134 >> data
-	echo 324 >> data
-	./sort < data
+```sh
+./schnitzi 3 > sort.c
+make sort
+echo 123 > data
+echo 234 >> data
+echo 413 >> data
+echo 134 >> data
+echo 324 >> data
+./sort < data
+```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed invalid data
-types which prevented this entry from working. There are two other segfaults
-that should not be fixed and they are discussed in [bugs.md](/bugs.md). Thank
-you Cody for your assistance!
+types which prevented this entry from working, causing a segfault. This showed
+itself in two parts which required two fixes, one for linux and further changes
+for macOS. He also fixed a segfault (after printing garbage) when the arg
+specified evaluated to 0.  Thank you Cody for your assistance!
 
-NOTE: the larger the number the number of lines of output can become
-substantially higher as well. Doing `./schnitzi 9` will actually print 771999
+### INABIAF - it's not a bug it's a feature
+
+NOTE: the larger the number given to the program the longer the output becomes
+and quite substantially so.  Doing `./schnitzi 9` will actually print 771999
 lines!
 
 
-## Judges' comments
+## Judges' remarks:
 
-This is a beautiful program.  How can a program with no conditional
-behavior at all have output which depends on anything?
+This is a beautiful program.  How can a program with no conditional (except for
+the fixes for modern systems made by Cody) behavior at all have output which
+depends on anything?
 
 For hints on deciphering this, see below past the Author's Comments;
 they're a nice summary, but they leave the mystery intact.
@@ -52,7 +61,7 @@ letter E in the story. He did not note this but it has over 50000 (50 thousand)
 (!!) words without the letter E which is one of the most common letters!
 
 
-## Author's comments
+## Author's remarks:
 
 In literary circles, there is a poetic form called a "lipogram",
 which is a poem in which a specific letter has been distinctly
@@ -87,15 +96,19 @@ a depth of one.
 So what does it do?  Give it an integer (1 < n < 27) on the command
 line, such as
 
-    	./schnitzi 5
+```sh
+./schnitzi 5
+```
 
 The output will itself be a lipographic program, one which inputs
 (in this case) five numbers and prints them out sorted.  It sorts
 them, however, using only "if/else" statements, without arrays or
 looping.  To see the resulting program run, redirect the output from
-"schnitzi" into another file, like this
+`schnitzi` into another file, like this
 
-    	schnitzi 4 > sort.c
+```sh
+schnitzi 4 > sort.c
+```
 
 and then compile it.
 
@@ -105,10 +118,10 @@ The big key to this program is figuring out what the names of the
 functions ought to be; a bit of research may allow you to guess at
 a few crucial ones.
 
-The only function ever called is "O", but "O" is just set to point to
+The only function ever called is `O`, but `O` is just set to point to
 other functions all the time.  Or, almost all the time.
 
-So how does 'h' get set, and what to?
+So how does `h` get set, and what to?
 
 ## Copyright and CC BY-SA 4.0 License:
 

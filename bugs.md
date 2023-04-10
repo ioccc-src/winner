@@ -764,15 +764,6 @@ $ ./schnitzi 9|wc -l
   771999
 ```
 
-There are two segfaults that were initially fixed but the fixes were undone to
-make the entry as close to possible as the original. These should not be fixed
-either:
-
-- if one does not specify an arg the program will crash.
-- if the arg had any characters that were not digits 1 - 9 it will show invalid
-output and then crash. If it starts with 0 it can work as long as another digit
-follows it and there are no other non-digits.
-
 
 # 1999
 
