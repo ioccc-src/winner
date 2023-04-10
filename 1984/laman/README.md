@@ -11,7 +11,10 @@ Mike Laman
 	./laman <positive number>
 
 
-NOTE: this entry will segfault without an arg.
+### INABIAF - it's not a bug it's a feature :-)
+
+This entry will very likely crash or do something else if you run it without an
+arg.
 
 
 ## Try:

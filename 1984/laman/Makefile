@@ -128,7 +128,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: this entry will segfault without an arg."
+	@echo "NOTE: this entry will likely crash or do something else without an arg."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
