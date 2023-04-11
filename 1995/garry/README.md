@@ -1,28 +1,31 @@
 # Best Utility
 
-    Garry Glendown
-    G\"uldene Kammer 35
-    36251 Bad Hersfeld 
-    Germany
+Garry Glendown
+Germany
+<https://web.archive.org/web/20011221120305/http://insider.regio.net/~garry/>
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-
-	./garry <input_file >output_file
+```sh
+./garry <input_file >output_file
+```
 
 ## Try:
 
-	./garry.test.sh
+```sh
 
-	./garry < README.md
+./garry.test.sh
 
-## Judges' remarks
+./garry < README.md
+```
 
-In general, try:
+## Judges' remarks:
 
 
 While it may not have been the intention of the submitter, the
@@ -33,9 +36,9 @@ left intact) looked very much like a rat "dropping core".  See
 The author was kind enough to provide a less obfuscated version of
 the source called `garry.fmt.c`.
 
-## Author's remarks
+## Author's remarks:
 
-This  program is a file filter, designed to do environment-expansion and
+This program is a file filter, designed to do environment-expansion and
 incorporating  the  ability  to  create  binary from escaped data in the
 environment variables.
 
