@@ -603,8 +603,7 @@ fixed it will not translate to the generated file. The buffer size was changed
 but to make it the same functionality it was changed back.
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) explains the magic of
-how this entry works below which will be necessary if this entry is to be fixed,
-below.
+how this entry works which will be necessary if this entry is to be fixed, below.
 
 ### The magic of [1994/schnitzi](1994/schnitzi/schnitzi.c) and how it flips text
 
