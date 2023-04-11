@@ -28,8 +28,18 @@ tang
 vend onyx
 cheryl be flashy
 rail
-clerk" | ./fine
+clerk
+the rug gary lenT
+" | ./fine
 ```
+
+Read the last line backwards! Credit goes to [Merlyn LeRoy (Brian
+Westley)](/winners.html#Brian_Westley) for that. See his 22 August 1992
+[rec.puzzles
+post](https://groups.google.com/g/rec.puzzles/c/z_xVPMRVBtg/m/lyEYSAeBD4gJ). To
+those who have a harder time reading backwards it says: `Gary lent the rug`
+from `the rug gary lent`!
+
 
 ## Judges' remarks:
 
