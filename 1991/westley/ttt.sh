@@ -5,9 +5,9 @@
 # parse args
 #
 if [ $# -gt 1 ]; then
-    echo "usage: ttt [move_digit]" 1>&2
-    echo "       ttt quitgame" 1>&2
-    echo "       ttt clobber" 1>&2
+    echo "usage: ./ttt [move_digit]" 1>&2
+    echo "       ./ttt quitgame" 1>&2
+    echo "       ./ttt clobber" 1>&2
     exit 1
 elif [ $# -eq 1 ]; then
     move="$1"
@@ -41,9 +41,9 @@ if [ $# -eq 1 ]; then
     case "$move" in
     1|2|3|4|5|6|7|8|9) ;;
     *)  echo "ttt: bad argument" 1>&2
-	echo "usage: ttt [move_digit]" 1>&2
-	echo "       ttt quitgame" 1>&2
-	echo "       ttt clobber" 1>&2
+	echo "usage: ./ttt [move_digit]" 1>&2
+	echo "       ./ttt quitgame" 1>&2
+	echo "       ./ttt clobber" 1>&2
 	exit 2 ;;
     esac
 fi
@@ -74,7 +74,7 @@ if [ ! -f merlyn ]; then
     status=$?
     if [ "$status" -ne 0 ]; then
 	echo "ttt: something is wrong, fix merlyn.c and build it yourself!" 1>&2
-	echo "     or maybe type:  ttt clobber" 1>&2
+	echo "     or maybe type:  ./ttt clobber" 1>&2
 	exit 5
     fi
     rm -f ttt_game.c
@@ -100,13 +100,13 @@ else
     status=$?
     if [ "$status" -ne 0 ]; then
 	echo "ttt: something is wrong, fix ttt_game.c and build it yourself!" 1>&2
-	echo "     or maybe type:  ttt quitgame" 1>&2
+	echo "     or maybe type:  ./ttt quitgame" 1>&2
 	exit 6
     fi
     if [ -z "$move" ]; then
-	ttt_game | tee ttt_new.c
+	./ttt_game | tee ttt_new.c
     else
-	ttt_game "$move" | tee ttt_new.c
+	./ttt_game "$move" | tee ttt_new.c
     fi
     chmod +w ttt_new.c
     if [ -s ttt_new.c ]; then
@@ -143,8 +143,8 @@ else
 
     else
 	echo "ttt: something is wrong, maybe ttt_old.c will help" 1>&2
-	echo "     or maybe type:  ttt quitgame" 1>&2
-	echo "     or maybe type:  ttt clobber" 1>&2
+	echo "     or maybe type:  ./ttt quitgame" 1>&2
+	echo "     or maybe type:  ./ttt clobber" 1>&2
 	exit 7
     fi
 fi
