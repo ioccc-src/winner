@@ -1,4 +1,4 @@
-# Best game:
+# Best game
 
 	John Tromp
 	Centre for Mathematics and Computer Science (CWI)

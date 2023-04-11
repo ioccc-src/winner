@@ -1,4 +1,4 @@
-# Best One Liner:
+# Best One Liner
 
 Mark Schnitzius  
 ISX Corporation  

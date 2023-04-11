@@ -1,4 +1,4 @@
-# Best of Show:
+# Best of Show
 
     Gavin Barraclough
     Flat 20, 83 Newton Street,

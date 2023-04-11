@@ -1,4 +1,4 @@
-# Interesting Algorithm:
+# Interesting Algorithm
 
     Sebastian Deorowicz
     ul. Radzionkowska 71a

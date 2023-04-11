@@ -1,4 +1,4 @@
-# Best Small Program:
+# Best Small Program
 
 Brian Westley (aka Merlyn LeRoy)  
 Digi International  

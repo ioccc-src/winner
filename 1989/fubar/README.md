@@ -1,4 +1,4 @@
-# Best self-modifying program:
+# Best self-modifying program
 
 	Jay Vosburgh
         Sequent Computer Systems, Inc

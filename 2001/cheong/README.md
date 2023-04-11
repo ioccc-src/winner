@@ -1,4 +1,4 @@
-# Best short program:
+# Best short program
 
     Raymond Cheong
     Johns Hopkins University

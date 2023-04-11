@@ -1,4 +1,4 @@
-# Most algorithms in one program:
+# Most algorithms in one program
 
 	Merlyn LeRoy (Brian Westley)
 	Starfire Consulting

@@ -1,4 +1,4 @@
-# Best Self-Documenting:
+# Best Self-Documenting
 
     Tom Torfs
     De Nayer Instituut

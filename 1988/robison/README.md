@@ -1,4 +1,4 @@
-## Best abuse of C constructs:
+## Best abuse of C constructs
 
     	Arch D. Robison
 	University of Illinois at Urbana-Champaign

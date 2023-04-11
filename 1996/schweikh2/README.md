@@ -1,4 +1,4 @@
-# Best Algorithm:
+# Best Algorithm
 
     Jens Schweikhardt
     DFN Network Operation Center

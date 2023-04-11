@@ -1,4 +1,4 @@
-# Best Numerical Obfuscation:
+# Best Numerical Obfuscation
 
     John Dalbec
     20 Squire's Ct.	(home address)

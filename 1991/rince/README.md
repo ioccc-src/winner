@@ -1,4 +1,4 @@
-# Best Game:
+# Best Game
 
 James Bonfield  
 University of Warwick  

@@ -1,4 +1,4 @@
-# Best use of Vision:
+# Best use of Vision
 
     Nick Johnson
     25 Harvey Tce

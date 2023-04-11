@@ -1,4 +1,4 @@
-# Best Abuse of User:
+# Best Abuse of User
 
 Moxen N. Briddlebane
 24 Oxtree Ave.

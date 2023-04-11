@@ -1,4 +1,4 @@
-## Least likely to compile successfully:
+## Least likely to compile successfully
 
 	Ian Phillipps
 	Cambridge Consultants Ltd

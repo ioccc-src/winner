@@ -1,4 +1,4 @@
-# Most Complete Program:
+# Most Complete Program
 
 Thomas P John
 Mishybi Plamoottil

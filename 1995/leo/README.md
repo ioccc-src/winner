@@ -1,4 +1,4 @@
-# Best Use of Obfuscation:
+# Best Use of Obfuscation
 
     Leonid A. Broukhis
     46728 Crawford St., apt. 20

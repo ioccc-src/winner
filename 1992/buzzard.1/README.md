@@ -1,4 +1,4 @@
-# Most Obfuscated Algorithm:
+# Most Obfuscated Algorithm
 
 Sean Barrett  
 Software Construction Company  

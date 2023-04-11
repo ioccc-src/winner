@@ -1,4 +1,4 @@
-# Best of Show:
+# Best of Show
 
 	Jari Arkko
 	Kauppalantie 25A7,

@@ -1,4 +1,4 @@
-## Best layout:
+## Best layout
 
 	Lievaart, Roemer B.
 	VU-Informatica, Amsterdam

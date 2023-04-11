@@ -1,4 +1,4 @@
-# Best Game:
+# Best Game
 
     Don Dodson
     AG Communication Systems

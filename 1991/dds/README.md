@@ -1,4 +1,4 @@
-# Most Well Rounded:
+# Most Well Rounded
 
 Diomidis Spinellis  
 Imperial College, University of London  

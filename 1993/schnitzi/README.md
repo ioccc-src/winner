@@ -1,4 +1,4 @@
-# Obfuscated Intelligence Award:
+# Obfuscated Intelligence Award
 
 Mark Schnitzius  
 1700 Woodbury Rd. #1208  

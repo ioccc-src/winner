@@ -1,4 +1,4 @@
-# Best Use of Light and Spheres:
+# Best Use of Light and Spheres
 
     Anders Gavare
     Gibraltargatan 82-156

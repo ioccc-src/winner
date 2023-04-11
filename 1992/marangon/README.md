@@ -1,4 +1,4 @@
-# Best Game:
+# Best Game
 
 Marangoni Andrea  
 Department of Computer Science at Milano  

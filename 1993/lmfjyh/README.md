@@ -1,4 +1,4 @@
-# Most Versatile Source:
+# Most Versatile Source
 
 	Jyrki Holopainen
 	Oy LM Ericsson Ab

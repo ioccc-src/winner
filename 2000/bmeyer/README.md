@@ -1,4 +1,4 @@
-# Best Utility:
+# Best Utility
 
     Bernd Meyer
     Monash University, Melbourne, Australia

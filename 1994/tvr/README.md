@@ -1,4 +1,4 @@
-# Best X11 Program:
+# Best X11 Program
 
 Teemu Rantanen
 Helsinki University of Technology

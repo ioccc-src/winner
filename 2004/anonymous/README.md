@@ -1,4 +1,4 @@
-# Best use of "Precious" Lines:
+# Best use of "Precious" Lines
 
     The author wishes to remain anonymous
     Singapore

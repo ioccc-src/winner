@@ -1,4 +1,4 @@
-# Most Well Rounded:
+# Most Well Rounded
 
 	James Bonfield
 	MRC Laboratory of Molecular Biology,

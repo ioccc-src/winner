@@ -1,4 +1,4 @@
-# Best game:
+# Best game
 
 Arch D. Robison
 1406 Country Lake Drive

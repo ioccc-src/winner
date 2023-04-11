@@ -1,4 +1,4 @@
-# Best Output:
+# Best Output
 
     Carlos Duarte
     Instituto Superior Tecnico

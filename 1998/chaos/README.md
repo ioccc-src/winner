@@ -1,4 +1,4 @@
-# Best Object Orientation:
+# Best Object Orientation
 
 Alan De Smet
 8531 Greenway Blvd. #206

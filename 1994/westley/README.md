@@ -1,4 +1,4 @@
-# Worst Abuse of the C Preprocessor:
+# Worst Abuse of the C Preprocessor
 
 Brian Westley (Merlyn LeRoy on Usenet)
 Digi International

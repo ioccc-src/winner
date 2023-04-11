@@ -1,4 +1,4 @@
-# Most Irregular Expression:
+# Most Irregular Expression
 
 	David Van Brackle
 	ISX Corporation

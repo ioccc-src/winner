@@ -1,4 +1,4 @@
-# Best Font Engine:
+# Best Font Engine
 
     Jeff Newbern
     28 Jeanette Ave. #1

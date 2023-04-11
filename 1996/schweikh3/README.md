@@ -1,4 +1,4 @@
-# Best Utility:
+# Best Utility
 
     Jens Schweikhardt
     DFN Network Operation Center

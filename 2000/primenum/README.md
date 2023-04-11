@@ -1,4 +1,4 @@
-# Best Abuse of CPP:
+# Best Abuse of CPP
 
 Raymond Cheong
 [address subject to change]

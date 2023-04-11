@@ -1,4 +1,4 @@
-# Most likely to amaze:
+# Most likely to amaze
 
     The author wishes to remain anonymous
     Great Britain

@@ -1,4 +1,4 @@
-# Most Humorous Output:
+# Most Humorous Output
 
 Andreas Gustafsson  
 Helsinki University of Technology  

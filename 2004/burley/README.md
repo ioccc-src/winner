@@ -1,4 +1,4 @@
-# Best Calculated Risk:
+# Best Calculated Risk
 
     Brent Burley
     500 S. Buena Vista St.

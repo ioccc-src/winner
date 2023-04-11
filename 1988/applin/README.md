@@ -1,4 +1,4 @@
-# Best of show:
+# Best of show
 
     	Jack Applin
 	Hewlett-Packard

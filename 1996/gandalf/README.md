@@ -1,4 +1,4 @@
-# Best Layout:
+# Best Layout
 
     Dean Swift
     Trinome Communications

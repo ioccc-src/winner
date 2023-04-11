@@ -1,4 +1,4 @@
-# Best Abuse of the Guidelines:
+# Best Abuse of the Guidelines
 
     Anthony Howe
     Snert

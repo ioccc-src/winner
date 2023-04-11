@@ -1,4 +1,4 @@
-# Best Game:
+# Best Game
 
 	Leonid A. Broukhis
 	Moscow Centre of SPARC Technology

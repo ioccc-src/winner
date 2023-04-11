@@ -1,4 +1,4 @@
-# Best X11 Graphics:
+# Best X11 Graphics
 
 David Applegate			  
 School of Computer Science	

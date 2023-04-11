@@ -1,4 +1,4 @@
-# Best of Show:
+# Best of Show
 
     Lennart Augustsson
     CR&T

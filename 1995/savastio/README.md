@@ -1,4 +1,4 @@
-# Most Obfuscated Syntax:
+# Most Obfuscated Syntax
 
     Michael Savastio
     Securicor Telesciences

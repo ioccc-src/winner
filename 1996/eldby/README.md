@@ -1,4 +1,4 @@
-# Best Output:
+# Best Output
 
     Thor AAge Eldby
     European Technology Partner

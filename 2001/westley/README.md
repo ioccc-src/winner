@@ -1,4 +1,4 @@
-# Best position-independent code:
+# Best position-independent code
 
     Brian Westley
     Firesign Theatre webmaster

@@ -1,4 +1,4 @@
-# Abusing The Rules:
+# Abusing The Rules
 
     Diomidis Spinellis
     SENA S.A.

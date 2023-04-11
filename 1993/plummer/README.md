@@ -1,4 +1,4 @@
-# Best One Liner:
+# Best One Liner
 
 	Mark Plummer
 	2901 Reckord Road

@@ -1,4 +1,4 @@
-# Best visuals:
+# Best visuals
 
     	Mark Isaak
 	Imagen Corporation

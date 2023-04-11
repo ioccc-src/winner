@@ -1,4 +1,4 @@
-# Best Abuse of CPP:
+# Best Abuse of CPP
 
     Daniel Vik
     926 Genter Street

@@ -1,4 +1,4 @@
-# Best X11 Entry:
+# Best X11 Entry
 
     Jon Thingvold
     University of Oslo

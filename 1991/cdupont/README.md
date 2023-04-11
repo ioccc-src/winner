@@ -1,4 +1,4 @@
-# Most Useful Label:
+# Most Useful Label
 
 Christian Dupont  
 Ecole Normale Superieure de Lyon   

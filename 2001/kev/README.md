@@ -1,4 +1,4 @@
-# Best Curses Game:
+# Best Curses Game
 
     Kevin Pulo
     School of Information Technologies

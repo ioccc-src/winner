@@ -1,4 +1,4 @@
-# Best Layout:
+# Best Layout
 
 Don Yang
 UCSD

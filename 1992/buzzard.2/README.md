@@ -1,4 +1,4 @@
-# Best Language Tool:
+# Best Language Tool
 
 Sean Barrett  
 Software Construction Company  

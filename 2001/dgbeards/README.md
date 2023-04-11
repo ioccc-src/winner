@@ -1,4 +1,4 @@
-# Best AI:
+# Best AI
 
     Doug Beardsley
     Southern Adventist University

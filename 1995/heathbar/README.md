@@ -1,4 +1,4 @@
-# Best Layout:
+# Best Layout
 
     Heather Downs, Selene Makarios
     The Software Bungalow

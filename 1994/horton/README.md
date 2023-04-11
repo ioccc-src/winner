@@ -1,4 +1,4 @@
-# Best Utility:
+# Best Utility
 
 Mark Horton
 AT&T Bell Labs

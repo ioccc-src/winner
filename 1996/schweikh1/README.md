@@ -1,4 +1,4 @@
-# Worst Abuse of the C Preprocessor:
+# Worst Abuse of the C Preprocessor
 
     Jens Schweikhardt
     DFN Network Operation Center

@@ -1,4 +1,4 @@
-# Strangest abuse of the rules:
+# Strangest abuse of the rules
 
 	Jari Arkko
 	Laboratory of Information Processing Science
