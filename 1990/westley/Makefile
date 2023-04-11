@@ -128,6 +128,8 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo "NOTE: this will very likely crash without an arg and will enter an infinite loop"
+	@echo "with an arg that is not a number > 0."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
