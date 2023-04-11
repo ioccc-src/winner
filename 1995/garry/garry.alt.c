@@ -16,7 +16,7 @@
 	  !c){return(y);}a=y;b=z;while(*a){if(*a!=D) *b++=*a
 	 ++;else{a++;c=strchr(a,D);if(c){*c=0;;if(strchr(a,32
 	)){*c=D;*b++=D;}else{;v=getenv(a);if(v){while(*v){if(*
-	v!=92)*b++=*v++;else{f=0;v++;if(*v<48||*v>57
+	v!=92)*b++=*v++;else{int f=0;v++;if(*v<48||*v>57
 	)*b++=92;else{f=(*v++)-48;;if(*v<48||*v
 	>57)*b++=f;else{f=(f<<3)+(*v++)-48;;*b++=(
 	 (*v<48||*v>57)?f:((f<<3)+(*v++)-48));}}}

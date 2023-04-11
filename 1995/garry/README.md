@@ -10,6 +10,7 @@ Germany
 make all
 ```
 
+
 ## To run:
 
 ```sh
@@ -25,16 +26,32 @@ make all
 ./garry < README.md
 ```
 
+### Alternate code:
+
+While it may not have been the intention of the author, the
+judges noted that the C pre-processed version (with the `#include`s
+left intact) looked very much like a rat "dropping core".  See
+[garry.alt.c](garry.alt.c) and judge for yourself!
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed it
+so that it will compile with modern compilers. The problem was a missing `int` for
+the `f` variable. He felt it was important that it works because the layout does
+indeed look to him like a rat is dropping core. Thank you Cody!
+
+To use try:
+
+```sh
+make alt
+```
+
+Use `garry.alt` as you would `garry` above.
+
+
 ## Judges' remarks:
 
 
-While it may not have been the intention of the submitter, the
-judges noted that the C pre-processed version (with the `#include`s
-left intact) looked very much like a rat "dropping core".  See
-`garry.cpp` and judge for yourself!
-
 The author was kind enough to provide a less obfuscated version of
-the source called `garry.fmt.c`.
+the source called [garry.fmt.c](garry.fmt.c).
 
 ## Author's remarks:
 
