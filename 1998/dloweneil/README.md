@@ -1,4 +1,4 @@
-# Most Fun:
+# Most Fun
 
     David Lowe				Neil Mix
     Pootpoot				Pootpoot

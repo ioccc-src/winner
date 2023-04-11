@@ -1,4 +1,4 @@
-# Obsolescent Feature:
+# Obsolescent Feature
 
     Frans van Dorsselaer
     Bakker Industrial Automation

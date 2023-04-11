@@ -1,4 +1,4 @@
-# Best RFC Obfuscation:
+# Best RFC Obfuscation
 
     Ron McFarland
     7941 Fawncreek Drive

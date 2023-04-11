@@ -1,4 +1,4 @@
-# Best Data Hiding:
+# Best Data Hiding
 
     Daniel Fischer
     VNetx.com GbR

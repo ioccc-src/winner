@@ -1,4 +1,4 @@
-# Best Obfuscated Algorithm:
+# Best Obfuscated Algorithm
 
 	E. Jay Berkenbilt
 	Engineering Research Associates

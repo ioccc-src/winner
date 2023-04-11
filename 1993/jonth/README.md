@@ -1,4 +1,4 @@
-# Most Obfuscated X Program:
+# Most Obfuscated X Program
 
 Jon Thingvold
 University of Oslo

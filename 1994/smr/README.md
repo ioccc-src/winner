@@ -1,4 +1,4 @@
-# Worst Abuse of the Rules:
+# Worst Abuse of the Rules
 
 Szymon Rusinkiewicz
 Massachusetts Institute of Technology

@@ -1,4 +1,4 @@
-# Best Encapsulation:
+# Best Encapsulation
 
     Bas de Bakker
     Pica, Centre for Library Automation

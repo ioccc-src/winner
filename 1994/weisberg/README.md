@@ -1,4 +1,4 @@
-# Best Short Program:
+# Best Short Program
 
 Jeff Weisberg
 University of Rochester

@@ -1,4 +1,4 @@
-# Most Timely Output:
+# Most Timely Output
 
 Craig Schneiderwent
 WI, USA

@@ -1,4 +1,4 @@
-# Best Output:
+# Best Output
 
 Sean Barrett  
 University of Maryland  

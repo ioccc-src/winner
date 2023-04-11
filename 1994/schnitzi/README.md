@@ -1,4 +1,4 @@
-# Best Layout:
+# Best Layout
 
 Mark Schnitzius  
 ISX Corporation  

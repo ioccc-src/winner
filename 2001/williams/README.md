@@ -1,4 +1,4 @@
-# Best Graphic Game:
+# Best Graphic Game
 
     John Williams
     941 E  25 S

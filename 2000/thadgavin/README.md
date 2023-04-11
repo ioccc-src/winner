@@ -1,4 +1,4 @@
-# Most Portable Output:
+# Most Portable Output
 
     Thaddaeus Frogley
     Creature Labs

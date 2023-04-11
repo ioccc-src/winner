@@ -1,4 +1,4 @@
-# Most eye-crossing:
+# Most eye-crossing
 
     Immanuel Herrmann
     University of Freiburg, Germany

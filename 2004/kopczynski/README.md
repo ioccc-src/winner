@@ -1,4 +1,4 @@
-# Best one-liner:
+# Best one-liner
 
     Eryk Kopczynski
     Faculty of Mathematics, Informatics and Mechanics

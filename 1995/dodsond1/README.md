@@ -1,4 +1,4 @@
-# Most Humorous:
+# Most Humorous
 
     Don Dodson
     AG Communication Systems

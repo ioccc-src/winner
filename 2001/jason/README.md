@@ -1,4 +1,4 @@
-# Best Of Show:
+# Best Of Show
 
     Jason Orendorff
     5 Buchanan St.

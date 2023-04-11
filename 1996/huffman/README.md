@@ -1,4 +1,4 @@
-# Best Obfuscated Character Set Utility:
+# Best Obfuscated Character Set Utility
 
     Ken Huffman
     Applied Innovation Inc

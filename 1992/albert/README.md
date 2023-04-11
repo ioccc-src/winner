@@ -1,4 +1,4 @@
-# Most Useful Program:
+# Most Useful Program
 
 Albert van der Horst  
 S P&A R&C  

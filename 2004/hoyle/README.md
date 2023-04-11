@@ -1,4 +1,4 @@
-# Most Functional Output:
+# Most Functional Output
 
     Jonathan Hoyle
     162 Burwyck Park

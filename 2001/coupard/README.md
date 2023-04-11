@@ -1,4 +1,4 @@
-# Most obfuscated sound:
+# Most obfuscated sound
 
     Pierre-Philippe Coupard
     Lineo, Inc.

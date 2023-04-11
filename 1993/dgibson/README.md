@@ -1,4 +1,4 @@
-# Best Abuse of the C Preprocessor:
+# Best Abuse of the C Preprocessor
 
 David Gibson  
 University of Cape Town  

@@ -1,4 +1,4 @@
-# Best One Liner:
+# Best One Liner
 
     Brian Westley (Merlyn LeRoy on Usenet)
     1906 James Ave.

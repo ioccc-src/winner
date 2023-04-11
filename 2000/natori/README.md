@@ -1,4 +1,4 @@
-# Best Small Program:
+# Best Small Program
 
 NATORI Shin
 Univ. of Tokyo

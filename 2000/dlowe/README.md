@@ -1,4 +1,4 @@
-# Worst Abuse of the Rules:
+# Worst Abuse of the Rules
 
 David Lowe
 1224 11th Avenue

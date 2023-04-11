@@ -1,4 +1,4 @@
-## Most useful Obfuscated C program:
+## Most useful Obfuscated C program
 
 	Amperif Corporation
 	9232 Eton Avenue

@@ -1,4 +1,4 @@
-# Best abuse of the user:
+# Best abuse of the user
 
     Edward Rosten
     Oxford University

@@ -1,4 +1,4 @@
-# Most Educational:
+# Most Educational
 
 Adrian Mariano  
 University of Washington  

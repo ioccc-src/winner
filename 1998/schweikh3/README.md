@@ -1,4 +1,4 @@
-# Most Space Efficient:
+# Most Space Efficient
 
     Jens Schweikhardt
     DFN Network Operation Center

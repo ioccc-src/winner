@@ -1,4 +1,4 @@
-# Best Utility:
+# Best Utility
 
 Anthony Howe  
 Mortice Kern Systems, Inc.  

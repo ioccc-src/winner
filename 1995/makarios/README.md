@@ -1,4 +1,4 @@
-# Best Short Program:
+# Best Short Program
 
     Selene Makarios & Heather Downs
     The Software Bungalow

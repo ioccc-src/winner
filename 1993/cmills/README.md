@@ -1,4 +1,4 @@
-# "Bill Gates" Award:
+# "Bill Gates" Award
 
 Chris Mills  
 Pagine Corporation  

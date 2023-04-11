@@ -1,4 +1,4 @@
-# Most Obfuscated Packaging:
+# Most Obfuscated Packaging
 
 Don Dodson
 AG Communication Systems

@@ -1,4 +1,4 @@
-# Best X11 Game:
+# Best X11 Game
 
     Daniel Vik
     926 Genter Street

@@ -1,4 +1,4 @@
-# Most Erratic Behavior:
+# Most Erratic Behavior
 
     Jens Schweikhardt
     DFN Network Operation Center

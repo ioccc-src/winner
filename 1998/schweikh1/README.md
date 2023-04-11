@@ -1,4 +1,4 @@
-# CPP Abuse:
+# CPP Abuse
 
     Jens Schweikhardt
     DFN Network Operation Center

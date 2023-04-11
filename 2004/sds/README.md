@@ -1,4 +1,4 @@
-# Best Abuse of Indentation:
+# Best Abuse of Indentation
 
     Stephen Sykes
     Laivalahdenportti 2

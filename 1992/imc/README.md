@@ -1,4 +1,4 @@
-# Best Output:
+# Best Output
 
 Ian Collier  
 Oxford University  

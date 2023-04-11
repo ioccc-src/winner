@@ -1,4 +1,4 @@
-# Most Well Rounded Obfuscation:
+# Most Well Rounded Obfuscation
 
 Andrew T. Shapiro
 CSES/CIRES University of Colorado

@@ -1,4 +1,4 @@
-# Best Non-Use of Curses:
+# Best Non-Use of Curses
 
 Mark Schnitzius  
 Eclipse Group  

@@ -1,4 +1,4 @@
-# Best One Liner:
+# Best One Liner
 
 Thomas A. Fine  
 Ohio State University  

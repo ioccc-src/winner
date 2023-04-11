@@ -1,4 +1,4 @@
-# Most Obfuscated Translator:
+# Most Obfuscated Translator
 
     Tony Finch
     Demon Internet

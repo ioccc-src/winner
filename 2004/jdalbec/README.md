@@ -1,4 +1,4 @@
-# Best Abuse of the Periodic Table:
+# Best Abuse of the Periodic Table
 
     John Dalbec
     20 Squire's Ct.

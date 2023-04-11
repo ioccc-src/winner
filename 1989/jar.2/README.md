@@ -1,4 +1,4 @@
-## Best of show:
+## Best of show
 
 	Jari Arkko, Ora Lassila, Esko Nuutila
 	Laboratory of Information Processing Science

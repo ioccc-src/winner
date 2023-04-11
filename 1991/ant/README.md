@@ -1,4 +1,4 @@
-# Best Utility:
+# Best Utility
 
 Anthony C Howe  
 Mortice Kern Systems Inc.	#CL-23  

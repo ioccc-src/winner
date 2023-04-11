@@ -1,4 +1,4 @@
-# Best X Program:
+# Best X Program
 
 Tero Kivinen  
 Helsinki University of Technology  

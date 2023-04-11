@@ -1,4 +1,4 @@
-# Best of Show:
+# Best of Show
 
 Vern Paxson  
 Lawrence Berkeley Laboratory  

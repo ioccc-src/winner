@@ -1,4 +1,4 @@
-# Best primal ASCII graphics:
+# Best primal ASCII graphics
 
     Nicolas Ollinger
     Ecole Normale Superieure de Lyon

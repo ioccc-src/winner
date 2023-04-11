@@ -1,4 +1,4 @@
-# Worst Driver:
+# Worst Driver
 
     Chris King
     115 Foster Center Road

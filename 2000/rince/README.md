@@ -1,4 +1,4 @@
-# Astronomically Obfuscated:
+# Astronomically Obfuscated
 
 James Bonfield
 MRC Laboratory of Molcular Biology

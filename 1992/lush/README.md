@@ -1,4 +1,4 @@
-# Worst Abuse of the C Preprocessor:
+# Worst Abuse of the C Preprocessor
 
 Ed Luke  
 Mississippi State University  

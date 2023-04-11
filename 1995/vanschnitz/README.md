@@ -1,4 +1,4 @@
-# Worst Abuse of the C Preprocessor and Most Likely To Amaze:
+# Worst Abuse of the C Preprocessor and Most Likely To Amaze
 
     Mark Schnitzius & David Van Brackle
     ISX Corporation

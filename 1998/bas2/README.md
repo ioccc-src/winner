@@ -1,4 +1,4 @@
-# Best Small Program:
+# Best Small Program
 
     Bas de Bakker
     Pica, Centre for Library Automation

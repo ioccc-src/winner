@@ -1,4 +1,4 @@
-# Best One-liner:
+# Best One-liner
 
 Laurion Burchall
 Brown University

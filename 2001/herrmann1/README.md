@@ -1,4 +1,4 @@
-# Best abuse of the C preprocessor:
+# Best abuse of the C preprocessor
 
     Immanuel Herrmann
     University of Freiburg, Germany

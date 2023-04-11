@@ -1,4 +1,4 @@
-# Best abuse of the rules:
+# Best abuse of the rules
 
     Fabrice Bellard
     451 chemin du mas de Matour

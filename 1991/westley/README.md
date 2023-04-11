@@ -1,4 +1,4 @@
-# Grand Prize:
+# Grand Prize
 
 Brian Westley (Merlyn LeRoy on usenet)  
 DigiBoard, Inc.  

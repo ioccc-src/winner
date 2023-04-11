@@ -1,4 +1,4 @@
-# Best of Show:
+# Best of Show
 
     Carl Banks
     Penn State Department of Aerospace Engineering

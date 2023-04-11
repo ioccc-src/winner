@@ -1,4 +1,4 @@
-# Most Specific Output:
+# Most Specific Output
 
     Fabrice Bellard
     451 chemin du mas de Matour
