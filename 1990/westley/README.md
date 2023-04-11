@@ -24,8 +24,11 @@ systems. It had `1s` in places for a short int which was changed to just `1`.
 Since it's instructional to see the differences he has provided an alternate
 version with the original code. See below. Thank you Cody for your assistance!
 
-NOTE: this entry will segfault without an arg and will enter an infinite loop if
-input is not a positive number.
+NOTE: this program will enter an infinite loop if input is not a number > 0.
+
+### INABIAF - it's not a bug it's a feature :-)
+
+NOTE: this entry will very likely crash or do something else without an arg.
 
 
 ## Try:

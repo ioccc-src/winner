@@ -537,8 +537,8 @@ fixing so it should not be fixed.
 
 ## STATUS: known bug - please help us fix
 
-However a negative number will make the program enter an infinite loop. This
-will be fixed in time but it's noted here for now.
+However any input not a number > 0 will make the program enter an infinite loop.
+This will be fixed in time but it's noted here for now.
 
 # 1991
 
