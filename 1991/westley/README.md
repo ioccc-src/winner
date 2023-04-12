@@ -134,7 +134,7 @@ you can win tic-tac-toe, that there can be acceptable draws.
 ### INABIAF - it's not a bug it's a feature! :-)
 
 Try not to cheat (even though it's very easy :-) ), the computer has not learned
-how to catch you doing it..
+how to catch you doing it.
 
 ## Author's remarks:
 
