@@ -1,7 +1,7 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
     "winner_version" : "0.0 2023-04-12",
-    "IOCCC_award" : "Best award title",
+    "IOCCC_award" : "Award title",
     "IOCCC_contest" : "IOCCC28",
     "IOCCC_year_dir" : 2024,
     "IOCCC_dirname" : "dirname",
@@ -32,7 +32,7 @@
 	},
 	{
 	    "filename" : "prog.c",
-	    "filetype" : "c",
+	    "filetype" : "C",
 	    "created_by" : null,
 	    "winners.html_show" : true,
 	    "winners.html_display_via" : "GitHub",
@@ -50,7 +50,7 @@
 	},
 	{
 	    "filename" : "prog.alt.c",
-	    "filetype" : "c",
+	    "filetype" : "C",
 	    "created_by" : null,
 	    "winners.html_show" : true,
 	    "winners.html_display_via" : "GitHub",
@@ -85,7 +85,7 @@
 	    "winners.html_rank" : 100
 	},
 	{
-	    "filename" : "spoliler.md",
+	    "filename" : "spoiler.md",
 	    "filetype" : "markdown",
 	    "created_by" : null,
 	    "winners.html_show" : false,
@@ -94,7 +94,7 @@
 	    "winners.html_rank" : null
 	},
 	{
-	    "filename" : "spoliler.html",
+	    "filename" : "spoiler.html",
 	    "filetype" : "html",
 	    "created_by" : "md2html",
 	    "winners.html_show" : true,
