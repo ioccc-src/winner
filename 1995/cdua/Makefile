@@ -61,7 +61,7 @@ CDEFINE= -DZ=3000
 
 # Include files that are needed to compile
 #
-CINCLUDE= 
+CINCLUDE= -include stdio.h -include stdlib.h
 
 # Optimization
 #
@@ -112,8 +112,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -134,6 +134,10 @@ ${PROG}: ${PROG}.c
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${ALT_TARGET}: ${PROG}.alt.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
 
 # data files
 #
