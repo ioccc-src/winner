@@ -1,41 +1,61 @@
 # Best Utility
 
-    Garry Glendown
-    G\"uldene Kammer 35
-    36251 Bad Hersfeld 
-    Germany
+Garry Glendown
+Germany
+<https://web.archive.org/web/20011221120305/http://insider.regio.net/~garry/>
 
 ## To build:
 
-        make all
+```sh
+make all
+```
+
 
 ## To run:
 
-
-	./garry <input_file >output_file
+```sh
+./garry <input_file >output_file
+```
 
 ## Try:
 
-	./garry.test.sh
+```sh
 
-	./garry < README.md
+./garry.test.sh
 
-## Judges' remarks
+./garry < README.md
+```
 
-In general, try:
+### Alternate code:
 
-
-While it may not have been the intention of the submitter, the
+While it may not have been the intention of the author, the
 judges noted that the C pre-processed version (with the `#include`s
 left intact) looked very much like a rat "dropping core".  See
-`garry.cpp` and judge for yourself!
+[garry.alt.c](garry.alt.c) and judge for yourself!
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed it
+so that it will compile with modern compilers. The problem was a missing `int` for
+the `f` variable. He felt it was important that it works because the layout does
+indeed look to him like a rat is dropping core. Thank you Cody!
+
+To use try:
+
+```sh
+make alt
+```
+
+Use `garry.alt` as you would `garry` above.
+
+
+## Judges' remarks:
+
 
 The author was kind enough to provide a less obfuscated version of
-the source called `garry.fmt.c`.
+the source called [garry.fmt.c](garry.fmt.c).
 
-## Author's remarks
+## Author's remarks:
 
-This  program is a file filter, designed to do environment-expansion and
+This program is a file filter, designed to do environment-expansion and
 incorporating  the  ability  to  create  binary from escaped data in the
 environment variables.
 
