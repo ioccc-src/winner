@@ -5,8 +5,8 @@ prog.c			    This is the source file to the `weasel'
 			    program [1].
 
 
-prog-simple.c		    This is the source code file to the
-			    `weasel-simple' program [1].
+prog.alt.c		    This is the source code file to the
+			    `weasel.alt' program [1].
 
 
 test.sh			    Script provided to test the weasel program [1].
@@ -79,8 +79,8 @@ the spec file. Please note that the paths below are dependent on the prefix
 used in installation; where I suggest '/usr' it is equally possible it could be
 under '/usr/local', for example.
 
-[1]			    Note that 'prog.c' and 'prog-simple.c' would be
-			    linked to 'weasel.c' and 'weasel-simple.c'
+[1]			    Note that 'prog.c' and 'prog.alt.c' would be
+			    linked to 'weasel.c' and 'weasel.alt.c'
 			    (respectively) in the '/usr/src/weasel'
 			    subdirectory.
 

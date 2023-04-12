@@ -37,21 +37,21 @@ AutoReq:	1
 %setup -n weasel
 
 %build
-make weasel weasel-simple
+make weasel weasel.alt
 mv -f README.md README.md 2>/dev/null || :
 
 %install
 rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT%{_bindir} $RPM_BUILD_ROOT%{_usrsrc}/weasel
 install -p -m 755 weasel $RPM_BUILD_ROOT%{_bindir}/weasel
-install -p -m 755 weasel-simple $RPM_BUILD_ROOT%{_bindir}/weasel-simple
+install -p -m 755 weasel.alt $RPM_BUILD_ROOT%{_bindir}/weasel.alt
 install -p -m 755 test.sh $RPM_BUILD_ROOT%{_usrsrc}/weasel/test.sh
 install -m 644 test-strings.txt $RPM_BUILD_ROOT%{_usrsrc}/weasel/test-strings.txt
 install -m 644 prog.c -D $RPM_BUILD_ROOT%{_usrsrc}/weasel/weasel.c
 ln -s weasel.c $RPM_BUILD_ROOT%{_usrsrc}/weasel/prog.c
 install -m 644 Makefile -D $RPM_BUILD_ROOT%{_usrsrc}/weasel
-install -m 644 prog-simple.c -D $RPM_BUILD_ROOT%{_usrsrc}/weasel/weasel-simple.c
-ln -s weasel-simple.c $RPM_BUILD_ROOT%{_usrsrc}/weasel/prog-simple.c
+install -m 644 prog.alt.c -D $RPM_BUILD_ROOT%{_usrsrc}/weasel/weasel.alt.c
+ln -s weasel.alt.c $RPM_BUILD_ROOT%{_usrsrc}/weasel/prog.alt.c
 install -m 644 weasel.1 -D $RPM_BUILD_ROOT%{_mandir}/man1/weasel.1
 install -m 644 hint.html -D $RPM_BUILD_ROOT%{_docdir}/weasel/weasel.html
 install -m 644 README.md -D $RPM_BUILD_ROOT%{_docdir}/weasel/weasel.markdown

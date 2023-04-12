@@ -28,6 +28,12 @@ make
 make test
 ```
 
+### Alternate code:
+
+The author provided an alternate version which has a simpler keyboard for the
+monkey Eric. See his comments under the 'keyboards' section, briefly referred to
+in the 'what it is' section.
+
 ## Judges' remarks:
 
 Looking back over the strata of past IOCCC entries, this program marks a new
@@ -158,7 +164,7 @@ operative phrase is *given enough time*; but even if it's extremely unlikely
 monkey; I thought the monkey had it too easy: unlike his limited keyboard I have
 (besides space) every character in the ASCII range **`0<=126`** that
 **`isprint()`** returns non-zero except that only capital letters are included;
-the file *`prog-simple.c`* has a slightly smaller keyboard. There are some
+the file [prog.alt.c](prog.alt.c) has a slightly smaller keyboard. There are some
 additional features I have added (including two Easter eggs); amongst others:
 ability to change the target string and maximum length. See 
 **[How it works](#how)**, **[Hints](#hints)** and **[How to build](#build)** for
