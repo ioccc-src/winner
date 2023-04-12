@@ -112,8 +112,8 @@ CSRC= ${PROG}.o
 DATA= FILES hint.css rpm.md test-strings.txt weasel.1 weasel.man weasel.spec
 TARGET= ${PROG} weasel
 #
-ALT_OBJ= ${PROG}-simple.o
-ALT_TARGET= ${PROG}-simple weasel-simple
+ALT_OBJ= ${PROG}.alt
+ALT_TARGET= ${PROG}.alt weasel.alt
 
 
 #################
@@ -141,10 +141,10 @@ test: ${PROG} test.sh
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-${PROG}-simple: ${PROG}-simple.c
+${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
-weasel-simple: ${PROG}-simple
+weasel.alt: ${PROG}.alt
 	${CP} -f $< $@
 
 # data files
