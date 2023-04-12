@@ -63,7 +63,7 @@
 	    "created_by" : null,
 	    "winners.html_show" : true,
 	    "winners.html_display_via" : "download_only",
-	    "winners.html_extra_text" : " - optional argument",
+	    "winners.html_extra_text" : " - optional argument file",
 	    "winners.html_rank" : 100
 	},
 	{
@@ -72,7 +72,7 @@
 	    "created_by" : null,
 	    "winners.html_show" : true,
 	    "winners.html_display_via" : "browser",
-	    "winners.html_extra_text" : " - required argument",
+	    "winners.html_extra_text" : " - required argument file",
 	    "winners.html_rank" : 100
 	},
 	{
