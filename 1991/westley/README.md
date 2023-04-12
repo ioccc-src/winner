@@ -117,7 +117,7 @@ Can you figure out why the board looks different than the
 
 What happens if you make a move already made?
 
-Now go try and draw or better yet win!
+Now go try and draw or better yet win (without cheating which is very easy :-) )!
 Why is win better than draw? Because everyone knows how to draw:
 
 > Professor Falken: Did you ever play tic-tac-toe?
@@ -131,7 +131,10 @@ at the [International Obfuscated C Code Contest judges'
 room](https://www.ioccc.org/https://www.ioccc.org/judges.html) they believe that
 you can win tic-tac-toe, that there can be acceptable draws.
 
-Try not to cheat, the computer has not learned how to catch you doing it.
+### INABIAF - it's not a bug it's a feature! :-)
+
+Try not to cheat (even though it's very easy :-) ), the computer has not learned
+how to catch you doing it..
 
 ## Author's remarks:
 
@@ -156,7 +159,7 @@ longer loses games.
 If you want a program that never loses, simply replace the string
 `"9999999999  :-| "` with `"9883857753  :-| "`.
 
-### How It Works (rot13 to read):
+### How it works (rot13 to read):
 
 
     Gur iregvpny "onef" bs gur tevq ner vqragvpny shapgvbaf, jvgu gur
