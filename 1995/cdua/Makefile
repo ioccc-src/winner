@@ -57,11 +57,11 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE=
+CDEFINE= -DZ=3000
 
 # Include files that are needed to compile
 #
-CINCLUDE= -include stdlib.h -include stdio.h
+CINCLUDE= 
 
 # Optimization
 #
