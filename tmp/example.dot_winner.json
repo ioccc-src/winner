@@ -1,0 +1,124 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "winner_version" : "0.0 2023-04-12",
+    "IOCCC_award" : "Best award title",
+    "IOCCC_contest" : "IOCCC28",
+    "IOCCC_year_dir" : 2024,
+    "IOCCC_dirname" : "dirname",
+    "IOCCC_entry_handle" : "2024_dirname",
+    "author_set" : [
+	{ "author_handle" : "first0_last0" },
+	{ "author_handle" : "first1_last1" },
+	{ "author_handle" : "first2_last2" }
+    ],
+    "manifest" : [
+	{
+	    "filename" : "index.html",
+	    "filetype" : "html",
+	    "created_by" : "README2index",
+	    "winners.html_show" : true,
+	    "winners.html_display_via" : "browser",
+	    "winners.html_extra_text" : " - click here first",
+	    "winners.html_rank" : 10
+	},
+	{
+	    "filename" : "README.md",
+	    "filetype" : "markdown",
+	    "created_by" : null,
+	    "winners.html_show" : false,
+	    "winners.html_display_via" : null,
+	    "winners.html_extra_text" : null,
+	    "winners.html_rank" : null
+	},
+	{
+	    "filename" : "prog.c",
+	    "filetype" : "c",
+	    "created_by" : null,
+	    "winners.html_show" : true,
+	    "winners.html_display_via" : "GitHub",
+	    "winners.html_extra_text" : " - winning source code",
+	    "winners.html_rank" : 20
+	},
+	{
+	    "filename" : "Makefile",
+	    "filetype" : "make",
+	    "created_by" : null,
+	    "winners.html_show" : true,
+	    "winners.html_display_via" : "GitHub",
+	    "winners.html_extra_text" : " - how to compile",
+	    "winners.html_rank" : 30
+	},
+	{
+	    "filename" : "prog.alt.c",
+	    "filetype" : "c",
+	    "created_by" : null,
+	    "winners.html_show" : true,
+	    "winners.html_display_via" : "GitHub",
+	    "winners.html_extra_text" : " - alternative program to try",
+	    "winners.html_rank" : 40
+	},
+	{
+	    "filename" : "raw_data.file",
+	    "filetype" : "data",
+	    "created_by" : null,
+	    "winners.html_show" : true,
+	    "winners.html_display_via" : "download_only",
+	    "winners.html_extra_text" : " - optional argument",
+	    "winners.html_rank" : 100
+	},
+	{
+	    "filename" : "chocolate_cake.jpg",
+	    "filetype" : "image",
+	    "created_by" : null,
+	    "winners.html_show" : true,
+	    "winners.html_display_via" : "browser",
+	    "winners.html_extra_text" : " - required argument",
+	    "winners.html_rank" : 100
+	},
+	{
+	    "filename" : "magic.txt",
+	    "filetype" : "text",
+	    "created_by" : null,
+	    "winners.html_show" : true,
+	    "winners.html_display_via" : "download_only",
+	    "winners.html_extra_text" : " - required data file",
+	    "winners.html_rank" : 100
+	},
+	{
+	    "filename" : "spoliler.md",
+	    "filetype" : "markdown",
+	    "created_by" : null,
+	    "winners.html_show" : false,
+	    "winners.html_display_via" : null,
+	    "winners.html_extra_text" : null,
+	    "winners.html_rank" : null
+	},
+	{
+	    "filename" : "spoliler.html",
+	    "filetype" : "html",
+	    "created_by" : "md2html",
+	    "winners.html_show" : true,
+	    "winners.html_display_via" : "browser",
+	    "winners.html_extra_text" : " - Spoiler warning",
+	    "winners.html_rank" : 200
+	},
+	{
+	    "filename" : ".gitignore",
+	    "filetype" : "gitignore",
+	    "created_by" : null,
+	    "winners.html_show" : false,
+	    "winners.html_display_via" : null,
+	    "winners.html_extra_text" : null,
+	    "winners.html_rank" : null
+	},
+	{
+	    "filename" : ".winner.json",
+	    "filetype" : "JSON",
+	    "created_by" : "jwinner",
+	    "winners.html_show" : false,
+	    "winners.html_display_via" : null,
+	    "winners.html_extra_text" : null,
+	    "winners.html_rank" : null
+	}
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_version" : "0.0 2023-04-12",
+    "author_handle" : "first0_last0",
+    "full_name" : "First Middle Last",
+    "location_code" : "AU",
+    "location_name" : "Australia",
+    "email" : "user0@example.com",
+    "url" : "https:\/\/a.host0.example.com\/index.html",
+    "alt_url" : "https:\/\/b.host0.example.com\/index.html",
+    "mastodon" : "@mastodon0@example.com",
+    "mastodon_url" : "https:\/\/example.org\/@mastodon0",
+    "github" : "@github0",
+    "affiliation" : "an affiliation group",
+    "winning_entry_set" : [
+	{ "IOCCC_entry_handle" : "1987_somedir" },
+	{ "IOCCC_entry_handle" : "2020_entrydir" },
+	{ "IOCCC_entry_handle" : "2024_dirname" }
+    ]
+}
