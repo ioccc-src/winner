@@ -107,6 +107,8 @@ c(1);*J=--u?O?*J:*v[1]:53;X|=u<<57-*v[u];y(X);K=40+q;q?e(O,X),q&&(K='|'),e(X
 ttt: I win!
 ```
 
+Redirects stderr to `/dev/null` by default. If you need errors or warnings use
+`-e`.
 
 ## Judges' remarks:
 
