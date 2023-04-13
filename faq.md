@@ -172,6 +172,12 @@ fix. If it is accepted we'll be happy to credit you in the entry's _README.md_
 file. If you're a previous winner we will happily link to your entries; if
 you're not we can link to your website if you wish.
 
+## Q: After running a program my terminal is all messed up! How do I restore my terminal?
+
+The simplest way to do this is to type `reset`. If echo was disabled you can get
+away with `stty echo`. Sometimes you can also get away with `stty sane`. `reset`
+does the most but note that it will clear the screen (`clear` will not work).
+
 ## Q: Are there types of entries that are submitted so frequently that the judges get tired of them?
 
 Yes, there are types of entries that show up over and over again.
