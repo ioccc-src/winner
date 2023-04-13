@@ -542,6 +542,23 @@ This will be fixed in time but it's noted here for now.
 
 # 1991
 
+## [1991/dds](1991/dds/dds.c) ([README.md)(1991/dds/README.md))
+## [1991/dds.alt](1991/dds/dds.alt.c) ([README.md)(1991/dds/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+If the BASIC file cannot be opened for reading or the output file cannot be
+opened for writing the program will crash. This is not a bug but a feature.
+Please do not fix this except for the challenge.
+
+Please also note that for `clang` you have to use [dds.alt](1991/dds/dds.alt.c) not
+[dds.c](1991/dds/dds.c).
+
+## STATUS: uses gets() - change to fgets() if possible
+
+That being said the compiled code uses `gets()` not `fgets()`. Can you fix this?
+You might find that the `s` array is relevant but if you do change it please
+make sure to test all functionality!
+
 ## [1991/westley](1991/westley/westley.c) ([README.md](1991/westley/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 
@@ -551,6 +568,7 @@ you're caught'. :-)
 
 Please don't try and fix it as it's not a bug and was actually documented as a
 possibility. Can you find out how?
+
 
 
 # 1992

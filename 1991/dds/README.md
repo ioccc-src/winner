@@ -20,31 +20,38 @@ make all
 ./a.out
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed some segfaults in
-this entry as well as making it so `a` (was `a.out`, see below) can be generated
-(as in the program did not work, at least with clang). The alternative code,
-described below, is what is needed for clang. Reading it might be instructive
-even if you have gcc.
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault that
+prevented this entry from working at all and made an alternate version
+that works with `clang`. The alternate code, described below, is what is needed
+for clang. Reading it might be instructive even if you have gcc.
 
-The first segfault which was always triggered was due to the code `*q>'
-'&&(*q)--;`. This seems odd at first glance but it's pointing to `s` which was
-read-only memory as a `char *s`.  It's now a `char s[]`. The second and third
-segfaults were caused if a file was not specified (or it the one specified did
-not exist or couldn't be opened for some reason) and if the output file could
-not be opened for writing.
+The segfault which was always triggered was due to the code `*q>' '&&(*q)--;`.
+This seems odd at first glance but it's pointing to `s` which was read-only
+memory as a `char *s`.  It's now a `char s[]`.
 
 Thank you Cody for your assistance!
+
+### INABIAF - it's not a bug it's a feature! :-)
+
+Please note that if the BASIC file cannot be opened for reading or the output
+file cannot be opened for writing then this program will crash. These crashes
+are a mild nuisance but are considered a feature not a bug. We challenge you to
+fix it for learning if you wish. See also [bugs.md](/bugs.md).
 
 ## Try:
 
 With gcc, make and run as follows:
-    
-	make dds
+
+```sh
+make dds
+```
 
 For example, the author suggests trying:
-     
-	./dds LANDER.BAS
-	./a.out
+    
+```sh
+./dds LANDER.BAS
+./a.out
+```
 
 ### Alternative code:
 
@@ -55,7 +62,7 @@ not messing with the `s` string which is quite complicated. For all Cody knows
 even changing the length could break functionality and indeed the length would
 have to be longer for this to work with clang.
 
-How does it work? The code, which you will see in `dds.c`, `return system(q-6);`
+How does it work? The code, which you will see in [dds.c](dds.c), `return system(q-6);`
 equates to `return system("cc a.c");` but clang by default, at least in macOS,
 has default -Werror and there were some warnings. This means that the
 compilation failed with clang. In particular it would fail (at least with
