@@ -542,6 +542,17 @@ This will be fixed in time but it's noted here for now.
 
 # 1991
 
+## [1991/westley](1991/westley/westley.c) ([README.md](1991/westley/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+There is a very simple way to always win. The program doesn't catch you and as
+someone called Cody's late grandmother said to him: 'it's not cheating unless
+you're caught'. :-)
+
+Please don't try and fix it as it's not a bug and was actually documented as a
+possibility. Can you find out how?
+
+
 # 1992
 
 ## [1992/buzzard.1](1992/buzzard.1/buzzard.1.c) ([README.md](1992/buzzard.1/README.md))
