@@ -53,6 +53,15 @@ For example, the author suggests trying:
 ./a.out
 ```
 
+What happens if you give the program a C program like itself? Try:
+
+```sh
+./dds dds.c
+```
+
+You'll get errors yes but what does the generated file look like? What about
+other types of files?
+
 ### Alternative code:
 
 The alternative code, provided by Cody, allows this entry to work successfully
@@ -62,10 +71,11 @@ not messing with the `s` string which is quite complicated. For all Cody knows
 even changing the length could break functionality and indeed the length would
 have to be longer for this to work with clang.
 
-How does it work? The code, which you will see in [dds.c](dds.c), `return system(q-6);`
-equates to `return system("cc a.c");` but clang by default, at least in macOS,
-has default -Werror and there were some warnings. This means that the
-compilation failed with clang. In particular it would fail (at least with
+How does it work? The code (which you will see in [dds.c](dds.c)) does a `return
+system(q-6);` which equates to `return system("cc a.c");` but clang by default,
+at least in macOS, has default -Werror and there were some warnings. This means
+that the compilation failed with clang (because it didn't use `make` so no
+[Makefile](Makefile) was used). In particular it would fail (at least with
 `LANDER.BAS`) due to a return from `main()` without a return value and the use
 of functions not yet declared.
 
