@@ -1,6 +1,6 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "winner_version" : "0.0 2023-04-12",
+    "winner_JSON_format_version" : "0.0 2023-04-12",
     "IOCCC_award" : "Award title",
     "IOCCC_contest" : "IOCCC28",
     "IOCCC_year_dir" : 2024,
@@ -80,7 +80,7 @@
 	    "filetype" : "text",
 	    "created_by" : null,
 	    "winners.html_show" : true,
-	    "winners.html_display_via" : "download_only",
+	    "winners.html_display_via" : "GitHub",
 	    "winners.html_extra_text" : " - required data file",
 	    "winners.html_rank" : 100
 	},

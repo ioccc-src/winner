@@ -1,6 +1,6 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "author_version" : "0.0 2023-04-12",
+    "author_JSON_format_version" : "0.0 2023-04-12",
     "author_handle" : "first0_last0",
     "full_name" : "First Middle Last",
     "location_code" : "AU",
