@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #
-# sgit - run sed (by default with -i) on all files under git control
+# sgit - run sed (by default with -i) on all files (or one or more globs) under
+# git control
 #
 # This script allows one to run sed under git control without having to come up
 # with a list of files first and then passing those to the command.
@@ -16,7 +17,7 @@
 # - Cody Boone Ferguson (@xexyl)
 #
 
-export SGIT_VERSION="0.0.6-1 17-03-2023" # format: major.minor.patch-release DD-MM-YYYY
+export SGIT_VERSION="0.0.7-1 12-04-2023" # format: major.minor.patch-release DD-MM-YYYY
 
 USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-x] [-I] [-o sed_options] [-s sed] [-e command] <glob...>
 
@@ -26,6 +27,7 @@ USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-x] [-I] [-o sed_options] [
     -x			    turn on tracing (set -x)
     -I			    disable in place editing
     -o			    sed options (don't pass '-')
+				WARNING: use of '-o n' without '-I', can depending on command, empty files
     -s sed		    set path to sed
     -e command		    append sed command to to list to execute on globs
 
@@ -64,6 +66,9 @@ while getopts :hVv:xIo:s:e: flag; do
     s)	SED="$OPTARG"
 	;;
     e)	SED_COMMANDS+=(-e "$OPTARG")
+	;;
+    \?) echo "$0: ERROR: invalid option: -$OPTARG" 1>&2
+	exit 3
 	;;
     :)	echo "$0: ERROR: option -$OPTARG requires an argument" 1>&2
 	echo 1>&2
