@@ -1,5 +1,7 @@
+# First Obfuscated C Code Contest
+
 In 1984, the first contest was held.  The name of the contest was simply
-``Obfuscated C Code Contest''.
+`Obfuscated C Code Contest`.
 
 Look at the README.md file for the given winner for information on how to
 compile the winner and how to run the winning program.  Look at the winning
@@ -8,7 +10,9 @@ the Author's remarks for even more details.
 
 Restrictions against machine dependent code were not in the [rules](rules.txt)
 in 1984. The source file size restriction was only 512 bytes.  Rules and results
-were posted to net.lang.c and net.unix-wizards.
+were posted to [net.lang.c and net.unix-wizards. The contest was announced in a
+[net.lang.c
+post](https://groups.google.com/g/net.lang.c/c/lx-TAuEyeRI/m/HdOOnNx6LC0J).
 
 =-=
 
