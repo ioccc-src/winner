@@ -1,19 +1,23 @@
 # Best visuals
 
-    	Mark Isaak
-	Imagen Corporation
-	2650 San Tomas Expy.
-	Santa Clara, CA 
-	95052-8101
-	USA
+Mark Isaak  
+Imagen Corporation  
+2650 San Tomas Expy.  
+Santa Clara, CA   
+95052-8101  
+USA  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./isaak
+```sh
+./isaak
+```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work for
 modern systems. The problem was that the important function, a redefinition of
@@ -25,7 +29,9 @@ alternative version. Thank you Cody for your assistance!
 The original version of this code is in [isaak.alt.c](isaak.alt.c).
 The original entry starts with the line:
 
+```c
 	main(){};
+```
 
 This works on some systems.  Why?  Note that `#include <stdio.h>` is given on
 the last line.  Why is this needed?  Note the unusual calls to sprintf.
@@ -50,13 +56,20 @@ due to the fact that BSD style systems have an sprintf() that returns a `char *`
 Due to the above problems, we placed the output of this program in the file:
 isaak.encode.  To read this file do:
 
-	uudecode < isaak.encode
-	cat isaak.output
+```sh
+uudecode < isaak.encode
+cat isaak.output
+```
 
 But since Cody fixed it this is not strictly necessary. See the
 [isaak.alt.c](isaak.alt.c) for the original source.
 
 FYI: We are likely to be more strict about portability in the future.
+
+## Author's remarks:
+
+No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

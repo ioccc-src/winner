@@ -8,8 +8,9 @@ Greece
 
 ## To build:
 
-
-	make all
+```sh
+make all
+```
 
 and then type a C program into followed by EOF (usually `^D`, ctrl-d).
 
@@ -19,23 +20,25 @@ Thank you Cody for your assistance!
 
 ## Try:
 
-	make clobber all
-	main()
-	{
-	    printf("Hello world\n");
-	}
-	^D
-	./spinellis
+```sh
+make clobber all
+main()
+{
+    printf("Hello world\n");
+}
+^D
+./spinellis
 
-	make clobber all
-	int main()
-	{
-	    int i;
-	    for (i = 0; i < 5; ++i)
-		printf("%d\n", i);
-	}
-	^D
-	./spinellis
+make clobber all
+int main()
+{
+    int i;
+    for (i = 0; i < 5; ++i)
+	printf("%d\n", i);
+}
+^D
+./spinellis
+```
 
 NOTE: you need to make clobber first for this entry to work right.
 
@@ -43,15 +46,17 @@ NOTE: you need to make clobber first for this entry to work right.
 
 For clang try the alt code like:
 
-	make clobber alt
-	#include <stdio.h>
-	main()
-	{
-	    puts("Hello world\n");
-	}
-	^D
-	./spinellis
+```sh
+make clobber alt
+#include <stdio.h>
+main()
+{
+    puts("Hello world\n");
+}
+^D
+./spinellis
 
+```
 
 NOTE: you need to make clobber first for this entry to work right.
 

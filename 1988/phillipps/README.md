@@ -1,17 +1,18 @@
 ## Least likely to compile successfully
 
-	Ian Phillipps
-	Cambridge Consultants Ltd
-	Science Park
-	Milton Road
-	Cambridge CB4 4DW
-	England
+Ian Phillipps  
+Cambridge Consultants Ltd  
+Science Park  
+Milton Road  
+Cambridge CB4 4DW  
+England  
 
 
 ## To build:
 
-
-	make all
+```sh
+make all
+```
 
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for modern
@@ -23,7 +24,7 @@ be `char **` :-) ) with the correct args it now works. Thank you Cody for your
 assistance!
 
 
-## Judges' remarks
+## Judges' remarks:
 
 Compile and run without parameters.
 
@@ -32,6 +33,11 @@ and thus represents a new departure in text compression standards.
 
 The judges thought that this program looked like what you would get
 by pounding on the keys of an old typewriter at random.
+
+## Author's remarks:
+
+No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 
