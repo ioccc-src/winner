@@ -1,26 +1,32 @@
 # The most obscure program
 
-Lennart Augustsson
-<chalmers!augustss> 
+Lennart Augustsson  
+<chalmers!augustss>  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./august
+```sh
+./august
+```
 
 ## Try:
 
-
-	./august | head -n 10
+```sh
+./august | head -n 10
+```
 
 If you have the `primes(6)` tool (sometimes part of BSD Games) you can see
 what of the output in the first N (say 15) lines are primes:
 
-	while read -r n ; do primes "$n" $((n + 1)) ; done < <((./august | head -n 15 ))
-
+```sh
+while read -r n ; do primes "$n" $((n + 1)) ; done < <((./august | head -n 15 ))
+```
 
 ## Judges' remarks:
 
@@ -34,7 +40,7 @@ memory or until they sell your computer, which ever comes first.
 
 ## Author's remarks:
 
-No comments were provided by the author.
+No remarks were provided by the author.
 
 ## Copyright and CC BY-SA 4.0 License:
 

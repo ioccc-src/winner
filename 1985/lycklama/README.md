@@ -1,6 +1,6 @@
 # The strangest appearing program 
 
-Ed Lycklama
+Ed Lycklama  
 
 ## To build:
 
@@ -55,7 +55,7 @@ The program itself looks like tty noise.
 
 ## Author's remarks:
 
-No comments were provided by the author.
+No remarks were provided by the author.
 
 ## Copyright and CC BY-SA 4.0 License:
 
