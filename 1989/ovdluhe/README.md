@@ -1,14 +1,16 @@
 ## Most humorous output
 
-	Oskar von der Luehe
-	Institut fuer Astronomie
-	ETH - Zentrum
-	8092 Zuerich
-	Switzerland
+Oskar von der Luehe  
+Institut fuer Astronomie  
+ETH - Zentrum  
+8092 Zuerich  
+Switzerland  
 
 ## To build:
 
-	make all
+```sh
+make all
+```
 
 To get this to compile with a modern CPP, we had to replace `#D` with `#define`.
 
@@ -16,19 +18,34 @@ To get this to compile with a modern CPP, we had to replace `#D` with `#define`.
 
 Run the program this way:
 
-	./ovdluhe < textfile
+```sh
+./ovdluhe < textfile
+```
 
 The program stops when it reaches the end of the template buffer 
 by chance or is killed.
 
 ## Try:
 
-	./ovdluhe < ./ovdluhe.c
-	./ovdluhe < ./ovdluhe.c
+```sh
+./ovdluhe < ./ovdluhe.c
+./ovdluhe < ./ovdluhe.c
 
-	./ovdluhe < README.md
-	./ovdluhe < README.md
+./ovdluhe < README.md
+./ovdluhe < README.md
+```
 
+### Alternate code:
+
+The author suggested that one varies the definition of `P` from 2 through 10. As
+it's a `#define` it's easy to set up which [Cody Boone
+Ferguson](/winners.html#Cody_Boone_Ferguson) did for us. To use try:
+
+```sh
+make CFLAGS="-DP=9" clobber alt
+```
+
+Use `ovdluhe.alt` as you would `ovdluhe`.
 
 ## Judges' remarks:
 
@@ -38,7 +55,7 @@ recommended.  You will get different output each time you run it.
 
 
 
-## Selected notes from the author:
+## Author's remarks:
 
 This program implements an "Eddington ape" - it generates
 random text from a supplied template.  The template text file
