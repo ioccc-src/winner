@@ -15,6 +15,12 @@ make
 echo "some text" | ./goren
 ```
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for macOS.
+Before the fix it segfaulted. It worked fine under linux. After fixing it it was
+noticed that the author stated it does not work for 64-bit so it was then tested
+as a 32-bit binary (linux) and 64-bit binary (linux, macOS) and both work. Thank
+you Cody!
+
 ## Try:
 
 ```sh
@@ -29,11 +35,15 @@ In the words of [René François Ghislain Magritte Magritte](http://en.wikipedia
 
 One may ask the surrealist question:
 
-    echo 'If | is just a representation of a pipe, then how can data stuff it?' | ./goren
+```sh
+echo 'If | is just a representation of a pipe, then how can data stuff it?' | ./goren
+```
 
 However if one takes a firm stand and declares:
 
-    echo '| is just a representation of a pipe because I say so! So stuff it!' | ./goren
+```sh
+echo '| is just a representation of a pipe because I say so! So stuff it!' | ./goren
+```
 
 something happens!  Why?
 
@@ -50,8 +60,8 @@ a pipe.  But what IS a pipe? This program tries to provide an answer.
 
 Magritte's [test for pipes](http://en.wikipedia.org/wiki/The_Treachery_of_Images) is:
 
-    The famous pipe. How people reproached me for it! And yet, could
-    you stuff my pipe? No, it's just a representation, is it not?
+>    The famous pipe. How people reproached me for it! And yet, could
+>    you stuff my pipe? No, it's just a representation, is it not?
 
 Accordingly, this program only approves pipes which can be used for
 stuffing data.
