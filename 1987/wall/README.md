@@ -23,35 +23,44 @@ make all
 ```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made this safer by
-using `fgets()` instead of `gets()`. This prevents a potentially alarming
-warning at linking or runtime.
+using `fgets()` instead of `gets()`. This prevents an annoying and potentially
+alarming warning at compiling, linking or runtime.
 
 
 ## Try:
 
-	./wall | bc | ./wall
+```sh
+./wall | bc | ./wall
+```
 
 and input the following:
 
-	x*x
-	c^2
-	m*m
+```
+x*x
+c^2
+m*m
 
-	# can you figure out what this does?
-	500
+# can you figure out what this does?
+500
+
+```
 
 ### Also try:
 
-	./wall | bc
+```sh
+./wall | bc
 
-	./wall | cat
+./wall | cat
+```
 
 
 and enter some input like:
 
-	x*x
-	2^x
-	quit # for the cat version
+```
+x*x
+2^x
+quit # for the cat version
+```
 
 
 ## Judges' remarks:
@@ -64,12 +73,12 @@ be directly called.  Even so, these pointers to functions are being
 used as an argument to signal.  Can you determine why this is being
 done and how it is being exploited?
 
-Some compilers complained about this file, so we changed: '=++I' to '= ++I'.
+Some compilers complained about this file, so we changed: `=++I` to `= ++I`.
 
 
 ## Author's remarks:
 
-No comments were provided by the author.
+No remarks were provided by the author.
 
 ## Copyright and CC BY-SA 4.0 License:
 

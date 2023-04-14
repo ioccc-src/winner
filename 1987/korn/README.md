@@ -1,15 +1,17 @@
 # Best One Liner
 
-David Korn  
+David Korn   
 AT&T Bell Labs  
-MH 3C-526B, AT&T Bell Labs  
-Murray Hill, NJ  
-07974  
-USA  
+MH 3C-526B, AT&T Bell Labs   
+Murray Hill, NJ   
+07974   
+USA   
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## Judges' remarks:
 
@@ -29,7 +31,9 @@ Several points are important to understand in this program:
 2) What is the value of the symbol "have"?  (hint: the value is
    NOT 4 characters, or 'h', or a string)  Consider the fact that:
 
-        char *x;
+
+	    char *x;
+
 
   defines a pointer to a character (i.e. an address), and that
   the '=' assigns things is compatible types.  Since:
@@ -42,12 +46,17 @@ Several points are important to understand in this program:
 
         x[3]	*(x+3)	  *(3+x)
 
-   since addition is communitive.  What can be said about the value:
+   since addition is commutative.  What can be said about the value:
 
         3[x]
 
-David Korn's /bin/ksh provides us with a greatly improved version of
+David Korn's `/bin/ksh` provides us with a greatly improved version of
 the /bin/sh.  The source for v7's /bin/sh greatly inspired this contest.
+
+## Author's remarks:
+
+No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

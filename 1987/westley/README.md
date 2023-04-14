@@ -1,34 +1,40 @@
 # Best Layout
 
-    Brian Westley (aka Merlyn Leroy on usenet)  
-    Starfire Consulting  
-    1121 Hamline Ave. N. #17  
-    St. Paul, MN  
-    55108  
-    USA  
-
-    http://www.westley.org
+Brian Westley (aka Merlyn Leroy on usenet)  
+Starfire Consulting  
+1121 Hamline Ave. N. #17  
+St. Paul, MN  
+55108  
+USA  
+<http://www.westley.org>  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for modern
 systems. The problem was 'assignment to cast is illegal, lvalue casts are not
 supported'. For the original file see below. Thank you Cody for your assistance!
 
 
-## Alternate code:
+## To run:
+
+```sh
+./westley
+```
+
+### Alternate code:
 
 If you have an older compiler you can try compiling the original source code
 which is true symmetry:
 
-	make alt
+```sh
+make alt
+```
 
-
-## To run:
-
-	./westley
+Use `westley.alt` as you would `westley` above.
 
 
 ## Judges' remarks:
@@ -40,7 +46,11 @@ top of the program.
 Line by line symmetry performed better than any C beautifier.  Think
 of if it as a C ink blot.  :-)
 
-NOTE: This entry requires a non-standard K&R C compiler to compile.
+
+## Author's remarks:
+
+No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 
