@@ -21,7 +21,7 @@ not segfault if not enough args were specified. He did the same for the
 alternative version (see below) provided by the author (the original can be seen
 in the author's remarks below). Thank you Cody for your assistance!
 
-## To run
+## To run:
 
 If lost:
 

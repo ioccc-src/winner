@@ -13,7 +13,7 @@ USA
 make all
 ```
 
-## To run
+## To run:
 
 ```sh
 ./buzzard.1 num num
@@ -52,13 +52,13 @@ What you shouldn't think about `buzzard.1`:
 
 I didn't just submit the post-C-preprocessed output as an entry.
 
-#### Cute trick warning:
+#### Cute trick warning
 
 `buzzard.1` contains only a numeric printf, yet sometimes it prints out
 short strings.
 
 
-### What it does:
+### What it does
 
 `buzzard.1` is a simple mathematical program. It expects two numeric
 arguments.
@@ -86,7 +86,7 @@ If the first argument is less than 0, it prints out an
 error message.
 
 
-### What it is:
+### What it is
 
 `buzzard.1` is a translator from a pseudo-assembly language into a subset of C
 suitable for execution on Charles Babbage's Analytical Engine.  Or rather, the
@@ -100,22 +100,22 @@ could have been simulated on the AE by connecting the already-processed card
 stack to the input card stack.
 
 
-### How to try to understand it:
+### How to try to understand it
 
 *Don't* expand the `#define`s!  Rather, decipher what they do.
 Some of them are mere obfuscation fodder, put in to encourage
 you to run it through CPP.
 
 
-### What it doesn't quite do right as an emulator:
+### What it doesn't quite do right as an emulator
 
 Because of the definitional constraints, calls to `atoi(argv[#])` also appear
-inside the loop.  These could be put outside-- the initial values of the
+inside the loop.  These could be put outside--the initial values of the
 "registers" on the AE--but the macro conventions being used didn't lend
 themselves to it.
 
 
-### Theoretical observations:
+### Theoretical observations
 
 The simulated comparison operations only work with a certain range of numbers;
 numbers that are too large will cause the output code to fail to simulate the
@@ -130,7 +130,7 @@ simulate any existing machine--although not quickly).  This would be a good
 place to site some references on the AE, but I don't have any.
 
 
-### Definition of the input language to buzzard.1 (OR What Exactly Do All The Macros Do?):
+### Definition of the input language to buzzard.1 (OR What Exactly Do All The Macros Do?)
 
 [Don't read this unless you're stumped!]
 

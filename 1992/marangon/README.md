@@ -30,7 +30,8 @@ NOTE: Some systems need to compile with `-ltermcap` as well as `-lcurses`.
 
 NOTE: The original winning source `marangon.orig.c`, found in the archive
 directory, assumed that exit returns a value which cause problems for some
-systems where exit returns a void.  The file `marangon.c` avoids this problem.
+systems where exit returns a void.  The file [marangon.c](marangon.c) avoids
+this problem.
 
 ## Author's remarks:
 

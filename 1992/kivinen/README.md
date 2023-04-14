@@ -62,9 +62,9 @@ directory, assumed that exit returned a value which cause problems for some
 systems where exit returns void.  The file [kivinen.c](kivinen.c) avoids this problem.
 
 
-## Selected notes from the author:
+## Author's remarks:
 
-### X Entertainment Kit:
+### X Entertainment Kit
 
 This kit includes three games from the early of video games for
 The X Window System Version 11 Release 5. It should work with
@@ -79,7 +79,7 @@ of aliens touches the ground, or destroy you. To win the game you
 must destroy all the aliens. If you evade out from the screen you
 lose.
 
-##### Controls:
+##### Controls
 
 - Button 1 = Move left
 - Button 2 = Fire missile
@@ -91,7 +91,7 @@ lose.
 Break all the bricks with the ball, using your paddle. If you miss
 the ball the game ends.
 
-##### Controls:
+##### Controls
 
 - Button 1 = Move left
 - Button 3 = Move right
@@ -102,14 +102,14 @@ the ball the game ends.
 Catch all the falling pieces, before they reach the ground. If you
 miss it, game ends. To win you must catch all 30 pieces.
 
-##### Controls:
+##### Controls
 
 - Button 1 = Move left
 - Button 3 = Move right
 
 
 
-### Starting a game:
+### Starting a game
 
 The type of the game is determined by the number of arguments
 given to the program.
@@ -126,13 +126,13 @@ given to the program.
 ...and so on...
 
 
-### Scores:
+### Scores
 
 The exit value of the game is your score. The smaller the score
 the better it is. The exit value of zero means you have won.
 
 
-### Features:
+### Features
 
 The game has a cheat system, which can be found after examining the
 event loop at the end of program. It is not a bug, it's a feature!

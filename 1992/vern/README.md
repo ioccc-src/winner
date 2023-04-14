@@ -110,7 +110,7 @@ blunders but also immediately stupid moves altogether.  A ply of 4
 will find all mate-in-two's.
 
 
-### Obfuscation:
+### Obfuscation
 
 This program is obfuscated in a number of ways.  First, it abuses the
 contest rule regarding ';', '{', and '}' in the source not counting
@@ -141,16 +141,16 @@ square on the board.  Those moves that are legal it then explores to
 see their effects (using alpha-beta search).  This tactic somewhat
 obfuscates the algorithm used by the program.
 
-Finally, there are three key constants that occur throughout the
-program:  64, 8, and 3 (lg 8).  Rather than making these available at
-compile-time, which provides a hint as to what the program is up to,
-they are computed probabilistically at run-time.  An instance of the
-"Inspection Paradox" is used which happens to produce a value that on
-average is close to .64.  10000 instances of this value are computed,
-added up, and then divided by 100.  Sometimes the value produced will
-be 63 or 65 instead of 64 (but I've never observed any other values),
-so the result is then rounded to the nearest multiple of 4, and then
-the other constants are derived from it.
+Finally, there are three key constants that occur throughout the program:  64,
+8, and 3 (lg 8).  Rather than making these available at compile-time, which
+provides a hint as to what the program is up to, they are computed
+probabilistically at run-time.  An instance of the ["Inspection
+Paradox"](https://en.wikipedia.org/wiki/Renewal_theory#Inspection_paradox) is
+used which happens to produce a value that on average is close to .64.  10000
+instances of this value are computed, added up, and then divided by 100.
+Sometimes the value produced will be 63 or 65 instead of 64 (but I've never
+observed any other values), so the result is then rounded to the nearest
+multiple of 4, and then the other constants are derived from it.
 
 ## Copyright and CC BY-SA 4.0 License:
 

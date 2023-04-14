@@ -24,9 +24,10 @@ work with gcc. Due to how it works (see Judges' remarks below) this will not
 work with clang. Thank you Yusuke!
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made it use `fgets()`
-instead of `gets()` and also added the `runme.sh` script to demonstrate it
-(using make was problematic). Cody notes that unfortunately this does not work
-with clang due to different compiler messages. Thank you Cody!
+instead of `gets()` to prevent annoying warnings getting in the way and also
+added the `runme.sh` script to demonstrate it (using make was problematic). Cody
+notes that unfortunately this does not work with clang due to different compiler
+messages. Thank you Cody!
 
 For the original entry see the [archive tarball](/archive/archive-1992.tar.bz2).
 

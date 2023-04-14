@@ -67,7 +67,7 @@ Have fun!
 
 ## Author's remarks:
 
-### What it does:
+### What it does
 
 `first` implements a relatively primitive stack machine.  How
 primitive?  It supplies 13 visible primitives: 3 arithmetic,
@@ -88,7 +88,7 @@ are below, and the interesting property is discussed much
 further down.
 
 
-### How to run it:
+### How to run it
 
 `first` expects you to first enter the names of the 13 primitives,
 separated by whitespace--it doesn't care what you name them, but
@@ -129,7 +129,7 @@ reimplementing all of first and third a second time--I did not care to tackle
 this project.
 
 
-### Compiling:
+### Compiling
 
 `first` is reasonably portable.  You may need to adjust the size of the buffers
 on smaller machines; `m[]` needs to be at least 2000 long, though.
