@@ -607,6 +607,12 @@ else. This should NOT be fixed.
 
 # 1994
 
+## [1994/horton[(1994/horton/horton.c) ([README.md](1994/horton/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+If not enough args are specified this program will likely crash or do something
+else. This should NOT be fixed.
+
 ## [1994/ldb](1994/ldb/ldb.c) ([README.md](1994/ldb/README.md))
 ## STATUS: known bug - please help us fix
 
@@ -742,6 +748,15 @@ seem to be related to making it work under macOS as all that did was removing
 some invalid prototypes and use `printf()` instead of the invalid pointer to it
 (incompatible type). Besides that it happened under linux where there was no
 compilation error or crash.
+
+
+## [1995/vanschnitz](1995/vanschnitz/vanschnitz.c) ([README.md](1995/vanschnitz/README.md))
+## STATUS: missing file - please provide it
+
+The authors stated that they included a version that allows people with just K&R
+compilers to use the program but this file is missing. Can you provide it?
+
+We would appreciate anyone who has it or even just knows the name! Thank you.
 
 
 # 1996
