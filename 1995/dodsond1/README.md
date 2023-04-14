@@ -1,32 +1,39 @@
 # Most Humorous
 
-    Don Dodson
-    AG Communication Systems
-    4101 W Union Hills Dr #1104
-    Glendale, AZ 85308 
-    USA
+Don Dodson  
+AG Communication Systems  
+4101 W Union Hills Dr #1104  
+Glendale, AZ 85308   
+USA  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./dodsond1 < text_file
+```sh
+./dodsond1 < text_file
+```
 
 ## Try:
 
-
-	./dodsond1 < README.md
+```sh
+./dodsond1 < README.md
+```
 
 ## Judges' remarks:
 
 You might consider giving the following input:
 
+```
 	 ... a male (who) gets very, very frustrated sitting in a chair all
 	 the time because males are biologically driven to go out and hunt
 	 giraffes.
 		-- Adjunct Professor Newt Gingrich, Reinhardt College, 1/7/95
+```
 
 ... which can be done like:
 
@@ -41,12 +48,12 @@ The obfuscation is on several levels.
 
 Most obviously, the shape of the program.
 
-Underneath that, the variable names are in pig latin, as are the
+Underneath that, the variable names are in pig Latin, as are the
 names of the standard C functions, such as putchar.  Even main is
-written as ainma.
+written as `ainma`.
 
 The program construction is also very obfuscated, with all of the
-code being inside the ()'s of one of the 6 "orfa" loops.
+code being inside the ()'s of one of the 6 `orfa` loops.
 
 ## Copyright and CC BY-SA 4.0 License:
 

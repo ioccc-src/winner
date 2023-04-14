@@ -20,7 +20,7 @@ macOS which he also fixed. Thank you Cody for your assistance!
 NOTE: on modern systems this was hard to see it solve it in real time because it
 goes so quickly so Cody added an alternate version which makes it easier with
 modern systems to see the maze actually being solved in real time. We encourage
-you to use this version but we keep the original here to both preserve the
+you to use that version but we keep the original here to both preserve the
 original code (the bug fixes notwithstanding) and it will also let you see just
 how fast your computer is :-) (and you can also use both to see the difference).
 For this alternate, slower version, please see below.

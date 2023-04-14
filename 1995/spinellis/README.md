@@ -1,27 +1,33 @@
 # Abusing The Rules
 
-    Diomidis Spinellis
-    SENA S.A.
-    Kyprou 27
-    GR-152 37 Filothei 
-    Greece
+Diomidis Spinellis  
+SENA S.A.  
+Kyprou 27  
+GR-152 37 Filothei   
+Greece 
+<http://www.spinellis.gr>  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./spinellis < spinellis.c
+```sh
+./spinellis < spinellis.c
+```
 
-## Judges' remarks
+## Judges' remarks:
 
 
 While the code does not abuse the rules, its output surely does!
 
 P.S. Does the source have any spelling errors?
 
-## Author's remarks
+
+## Author's remarks:
 
 96% of the program lines (631 out of the 658) are comment text rendering
 the program readable and understandable.  With the exception of the

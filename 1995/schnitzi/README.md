@@ -5,23 +5,30 @@ ISX Corporation
 3215-C Post Woods Dr.  
 Atlanta, GA 30339   
 USA  
-<http://computronium.org/ioccc.html>
+<http://computronium.org/ioccc.html>  
 
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./schnitzi num
+```sh
+./schnitzi num
+```
 
 ## Try:
-	./schnitzi 24
-	./schnitzi 18
-	./schnitzi 30
 
-NOTE: as the author warns do not use too high a number! If you wish to ignore
+```sh
+./schnitzi 24
+./schnitzi 18
+./schnitzi 30
+```
+
+WARNING: the author warns to not use too high a number! If you wish to ignore
 the warning it is an exercise to determine how high is too high. :-)
 
 ## Judges' remarks:

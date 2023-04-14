@@ -56,35 +56,40 @@ the source called [garry.fmt.c](garry.fmt.c).
 ## Author's remarks:
 
 This program is a file filter, designed to do environment-expansion and
-incorporating  the  ability  to  create  binary from escaped data in the
+incorporating the ability to create binary from escaped data in the
 environment variables.
 
-The  calling syntax is pretty simple, just use it with stdio-redirection
+The calling syntax is pretty simple, just use it with stdio-redirection
 or inside pipelines, e.g.:
 
-	progname <file_to_convert >converted_file
+```sh
+./garry <file_to_convert >converted_file
+```
 
 or
 
-	cat all_my_files/* | progname | lp
+```sh
+cat all_my_files/* | ./garry | lp
+```
 
-The syntax of the conversion of the input file is as follows: To include
-the  value of an environment variable in the output file, place the name
-of the variable between "$"-signs in the input, e.g.:
+The syntax of the conversion of the input file is as follows: To include the
+value of an environment variable in the output file, place the name of the
+variable between "$"-signs in the input, e.g.:
 
 	My Home-Directory is: $HOME$
 	I'm using the path: $PATH$
 
-Unknown  Env-variables  or  malformed  expressions  are ignored and kept
-intact.
+Unknown Env-variables or malformed expressions are ignored and kept intact.
 
-Additionally,   the   filter   replaces  escaped  octal  values  in  the
-environment variables by their binary representation, e.g.:
+Additionally, the filter replaces escaped octal values in the environment
+variables by their binary representation, e.g.:
 
-	$ TEST="\110\145\154\154\157"
-	$ export TEST
-	$ echo '$TEST$' | progname
-	Hello
+```sh
+$ TEST="\110\145\154\154\157"
+$ export TEST
+$ echo '$TEST$' | ./garry
+Hello
+```
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -1,19 +1,22 @@
 # Best Game
 
-    Don Dodson
-    AG Communication Systems
-    4101 W Union Hills Dr #1104
-    Glendale, AZ 85308 
-    USA
+Don Dodson  
+AG Communication Systems  
+4101 W Union Hills Dr #1104  
+Glendale, AZ 85308   
+USA  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	  ./dodsond2
-
+```sh
+./dodsond2
+```
 
 ## Judges' remarks:
 
