@@ -1,24 +1,38 @@
 # Worst Abuse of the C Preprocessor and Most Likely To Amaze
 
-    Mark Schnitzius & David Van Brackle
-    ISX Corporation
-    1165 Northchase Parkway
-    Suite 120
-    Marietta, GA  30067 
-    USA
+Mark Schnitzius & David Van Brackle  
+ISX Corporation  
+1165 Northchase Parkway  
+Suite 120  
+Marietta, GA  30067   
+USA  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./vanschnitz
+```sh
+./vanschnitz
+```
 
 ## Try:
 
-    make clobber all LEVEL=6
-    ./vanschnitz
+```sh
+make clobber all LEVEL=6
+./vanschnitz
+```
+
+### Alternate code:
+
+The authors provided a spoiler version of the program. Originally uuencoded we
+have decoded it for the wider audience in [spoiler.c](spoiler.c). The
+`uuencode`d blob is still available in their remarks below. They encourage you
+to first try and figure it out without it.
+
 
 ## Judges' remarks:
 
@@ -44,30 +58,32 @@ solution.
 
 How do you trick a compiler into actually solving the problem?
 First, you must tell it how many disks you wish to solve it
-for.  This is done by defining the symbol 'n' on the compile
+for.  This is done by defining the symbol `n` on the compile
 line.  For instance, to cause the compiler to solve the Towers
 of Hanoi problem with four disks, you would compile the program
 like this:
 
-        gcc hanoi.c -o hanoi -Dn=4
+```sh
+gcc hanoi.c -o hanoi -Dn=4
+```
 
-A default value of 5 will be used for n if you do not define
-it on the command line.  The value of n cannot be greater than
+A default value of `5` will be used for `n` if you do not define
+it on the command line.  The value of `n` cannot be greater than
 fifteen (the compiler we used to test has a limit on the #include
 depth).  The compiler then solves the problem using binary 
 arithmetic based on whether particular symbols are defined or not.
 
-To loop, the program #include's itself.  This is, of course,
-expensive; one compile we did with n=14 took about fifty
-minutes to compile on our system (compiling with n=15
-caused our system to crash).
+To loop, the program `#include`s itself.  This is, of course,
+expensive; one compile we did with `n=14` took about fifty
+minutes to compile on our system (compiling with `n=15` caused our system to
+crash).
 
 The resulting program that the compiler generates simply
 prints out the answer.  Did I say "simply"?  Actually, the
 whole resulting program consists of a single printf statement,
 consisting of a massive string constant of length `35*(2^n-1)`,
 followed by `3*(2^n-1)` integers which get formatted into the
-string.  For our n=14 run, this adds up to a string constant
+string.  For our `n=14` run, this adds up to a string constant
 of length 573405, followed by 49149 integers delimited by
 commas.  (Generating the string constant depends on the
 ANSI C feature in which adjacent character strings are
@@ -75,14 +91,16 @@ catenated; a version that does not use this feature has been
 included for people who can only run K&R).  A good way to see
 the resulting program (on a Unix system) is to do the command
 
-        gcc hanoi.c -E -Dn=5 | grep -v \# | grep -v ^\$
+```sh
+gcc hanoi.c -E -Dn=5 | grep -v \# | grep -v ^\$
+```
 
 For an odd number of disks, the program will provide a
 solution wherein the disks end up on peg 2; for an even
 number of disks, they will end on peg 3.  This should 
 provide some hint as to what sort of algorithm is used.
 
-We have included a "spoiler" version of the program, with
+We have included a [spoiler](spoiler.c) version of the program, with
 meaningful symbol names and comments, but we encourage you
 to try to decipher the program without it...
 
