@@ -9,11 +9,14 @@ USA
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made this use `fgets()`
-not `gets()` to make it safer and to prevent a warning with linking or at
-runtime. Thank you Cody for your assistance!
+not `gets()` to make it safer and to prevent an annoying warning with compiling
+and/or linking and/or runtime, the latter of which is interspersed with the
+output of the program itself. Thank you Cody for your assistance!
 
 ## To run:
 
@@ -23,47 +26,55 @@ where:
 	    
 	    file	a file containing some text
 
-NOTE: this entry will segfault if the file cannot be opened.
+### INABIAF - it's not a bug it's a feature! :-)
+
+This entry will segfault if the file cannot be opened. This is not a bug.
 
 ## Try:
 
-	    ./schnitzi schnitzi.info
-	    # ask some questions suggested by the author, noted below
+```sh
+./schnitzi schnitzi.info
+# ask some questions suggested by the author, noted below
+```
 
 We also suggest you ask the program:
 
-	    Who is Mark Schnitzus?
+```sh
+Who is Mark Schnitzus?
+```
 
 Notice how it still manages to answer the question despite there being an
 intentional spelling error there.
 
 Try feeding the program source to the program and ask both:
 
-	What is cat ?
-	What is cat?
-
+```sh
+What is cat ?
+What is cat?
+```
 
 ## Judges' remarks:
 
 After this program prints the contents of 'file', ask it
 some questions related to the text.
     
-The author suggests the following questions when using schnitzi.info:
+The author suggests the following questions when using
+[schnitzi.info](schnitzi.info):
 
 
-	Who is Mark Schnitzius?
-	What exactly does this program do?
-	What language is it written in?
-	Has the Loch Ness monster really been captured?
-	Who was Hitler?
-	Were the NASA moon landings faked?
-	Is it true that Elvis is alive?
-	Do colorless green ideas sleep furiously?
+- Who is Mark Schnitzius?
+- What exactly does this program do?
+- What language is it written in?
+- Has the Loch Ness monster really been captured?
+- Who was Hitler?
+- Were the NASA moon landings faked?
+- Is it true that Elvis is alive?
+- Do colorless green ideas sleep furiously?
 
 We suggest you try using the body (minus the header and signature line) 
 of a Usenet article.  You might want to try something from alt.flame.  :-)
 
-NOTE: If you have a ' in the question this entry may fail.
+NOTE: If you have a ' in the question this entry might fail.
 
 NOTE: The author may also be contacted at: marks@aldrin.ksc.nasa.gov.
 
@@ -88,7 +99,7 @@ If you're curious as to how it works, I guess you could feed in the
 source as the input file and ask "How does this work?" at the prompt,
 but I'm not guaranteeing any results...
 
-### Compilation notes:
+### Compilation notes
 
 -  The use of 'strcasecmp' may be non-standard.  'strcmp' can be substituted for
 it, with a slight performance penalty.
@@ -97,14 +108,14 @@ it, with a slight performance penalty.
 argv[0], to hold the name of the executable.  It is my understanding that this
 property of argv[0] is not guaranteed on some systems.
 
-### Obfuscation:
+### Obfuscation
 
 -  It uses a hidden string to test for punctuation.
 
 -  The layout, variable names, and expression format have been chosen in such a
 way as to cause visual confusion.
 
--  It uses uses external 'system' calls to echo the text file and break up the
+-  It uses uses external `system()` calls to echo the text file and break up the
 question into individual words with a recursive call.
 
 -  It uses a clever hack to simulate artificial intelligence.

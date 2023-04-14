@@ -114,14 +114,14 @@ DATA=
 TARGET= ${PROG}
 #
 ALT_OBJ=
-ALT_TARGET=
+ALT_TARGET= mind
 
 
 #################
 # build the entry
 #################
 #
-all: data ${TARGET}
+all: data ${TARGET} ${ALT_TARGET}
 	@${TRUE}
 
 .PHONY: all alt data everything clean clobber install \

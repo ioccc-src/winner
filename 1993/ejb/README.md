@@ -1,22 +1,28 @@
 # Best Obfuscated Algorithm
 
-	E. Jay Berkenbilt
-	Engineering Research Associates
-	1595 Springhill Road
-	Vienna, VA 22182-2235
-	USA
+E. Jay Berkenbilt  
+Engineering Research Associates  
+1595 Springhill Road  
+Vienna, VA 22182-2235  
+USA  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./ejb level
+```sh
+./ejb level
+```
 
 where:
 
-	level   a value from -128 to 127
+```sh
+level   a value from -128 to 127
+```
 
 ## Judges' remarks:
 
@@ -33,20 +39,22 @@ We note that this also works under macOS just fine.
 
 ## Author's remarks
 
-WHAT THIS PROGRAM DOES
-======================
+### What this program does
 
-### Output solution to Towers of Hanoi for five rings:
+#### Output solution to Towers of Hanoi for five rings:
 
-	./ejb 5			
+```sh
+./ejb 5			
+```
 
 The format of the output for the Towers of Hanoi case is simply a
 text description of how to solve the puzzle.
 
-### Output solution to the Patience puzzle for six rings:
+#### Output solution to the Patience puzzle for six rings:
 
-
-	./ejb -6	
+```sh
+./ejb -6	
+```
 
 
 For the patience puzzle, the output is a sequence binary codes representing
@@ -55,8 +63,7 @@ A "1" means the ring is on the U; a "0" means it is off the U.  The program
 prints the word "Invalid" in response to illegal command line parameters.
 
 
-MOTIVATION
-==========
+### Motivation
 
 Most people who have written software for other people have been
 asked to count lines of code.  Naturally, this brings up the
@@ -66,25 +73,24 @@ always provide a meaningful measure of code size.  This is
 especially true in this program where the number of semicolons
 itself is ambiguous.  Does it have two or three?  In addition, the
 only "C" keyword this program uses besides type names and
-qualifiers is "return", and the only function defined in the code
-is "main".  The level of complexity of the program without multiple
+qualifiers is `return`, and the only function defined in the code
+is `main`.  The level of complexity of the program without multiple
 semicolons, statements, and functions is achieved by abusing C
-operators, especially the comma operator.  Considerable use of ||,
-&&, and ? : helps too.  In addition, main is called recursively.
-The null pointer that terminates argv is used to pass additional
+operators, especially the comma operator.  Considerable use of `||`,
+`&&`, and `? :` helps too.  In addition, main is called recursively.
+The NULL pointer that terminates argv is used to pass additional
 information into main.  Even though the algorithms used by this
 code are simple, this program is still hard to follow even when
 indented properly.  (It is pretty hard to indent this code
 reasonably, however.)
 
-Although this program is has only been tested on UNIX systems but
-will probably run on just about any machine with an ANSI C
-compiler.  It does not use the C preprocessor at all.  The only
-functions it uses are atoi, malloc, memset, printf, and puts.  It
-does, however, require that the architecture it runs on have bytes
-that are at least eight bits long and pointers that are at least
-four bytes long.  In addition, it requires an ANSI compiler since
-it uses "signed char" and ANSI-style function declarations.
+Although this program has only been tested on UNIX systems it will probably run
+on just about any machine with an ANSI C compiler.  It does not use the C
+preprocessor at all.  The only functions it uses are `atoi()`, `malloc()`,
+`memset()`, `printf()`, and `puts()`.  It does, however, require that the
+architecture it runs on have bytes that are at least eight bits long and
+pointers that are at least four bytes long.  In addition, it requires an ANSI
+compiler since it uses "signed char" and ANSI-style function declarations.
 
 ## Copyright and CC BY-SA 4.0 License:
 

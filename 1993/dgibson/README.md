@@ -21,7 +21,7 @@ make all
 
 where:
 	
-`datafile` is the initial pattern (default: dgibson.data1)
+`datafile` is the initial pattern (default: [dgibson.data1](dgibson.data1))
 
 ## Try:
 
@@ -59,7 +59,7 @@ a rectangular grid of cells can be alive or dead, and cells with more
 than 3 or less than 2 (out of 8) live neighbours die, and empty cells
 with exactly 3 neighbours give birth.
 
-### Some notes:
+### Some notes
 
 - the "STAT n" information does not have to be present in the initial
 configuration

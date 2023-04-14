@@ -1,14 +1,16 @@
 # Most Obfuscated X Program
 
-Jon Thingvold
-University of Oslo
-Sogn Studentby 8231
-N 0858 Oslo
-Norway
+Jon Thingvold  
+University of Oslo  
+Sogn Studentby 8231  
+N 0858 Oslo  
+Norway  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 NOTE: this entry requires `X11/Xlib.h` header file and the X11 library to
 compile. macOS users running Mountain Lion and later will need to download and
@@ -33,11 +35,13 @@ prepended to them. Thank you Yusuke and Cody for your assistance!
 
 ## To run:
 
-	./jonth			# must be run on an X11 server
+```sh
+./jonth			# must be run on an X11 server
+```
 
 ## Judges' remarks:
 
-Use 'h' and 'l' to shift objects left or right.  Use 'k' to
+Use `h` and `l` to shift objects left or right.  Use `k` to
 rotate and press SPACE to drop.
 
 This program's output may be even more obfuscated when played 
@@ -52,7 +56,7 @@ This program is also an example of data abstraction.  The X array is
 after initialization hidden by the well defined macros `t`, `u` and `F`.
 
 This program is highly portable as it runs on a "Notebook" size SPARC.
-This program will not work on machines with `sizeof(int)!=sizeof(void *)`.
+This program will not work on machines where `sizeof(int)!=sizeof(void *)`.
 
 ## Copyright and CC BY-SA 4.0 License:
 
