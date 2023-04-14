@@ -1,20 +1,24 @@
 ## Most complex algorithm
 
-	Paul E. Black
-	CIRRUS LOGIC, Inc.
-	1463 Centre Pointe Dr.
-	Milpitas, CA 
-	95035 
-	USA
+Paul E. Black  
+CIRRUS LOGIC, Inc.  
+1463 Centre Pointe Dr.  
+Milpitas, CA   
+95035   
+USA  
 
 ## To build:
 
-	make all
+```sh
+make all
+```
 
 
 ## Try:
 
-	./paul
+```sh
+./paul
+```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault under
 macOS. The problem was that the int (from `#define f`) should be a long. This
@@ -31,9 +35,9 @@ removing the trailing "\" on line 12 and joining lines 12 and
 WHAT FOLLOWS IS A DETAILED PROGRAM EXPLANATION AND SPOILER.
 IF YOU WANT A REAL CHALLENGE, DON'T READ ANY FURTHER AND TRY
 TO UNDERSTAND THE PROGRAM VIA THE SOURCE.
-
 
-Selected notes from the author:
+
+## Author's remarks:
 
 This programs computes and prints Fibonacci numbers by
 simulating a Turing machine with the proper program.
@@ -78,8 +82,8 @@ If bit 4 (16&byte) is true, the next character is sent to
 stdout.  (I added this feature so programs could print
 results.)
 
-The Turing machine has next state 'j' when it begins.  The
-cycle is 1) exit if the state is 'x', 2) find the next
+The Turing machine has next state `j` when it begins.  The
+cycle is 1) exit if the state is `x`, 2) find the next
 instruction (given the state and the character under the scan
 head).  [The program string is searched forward for the next
 matching instruction.  If the end of the string is reached, the

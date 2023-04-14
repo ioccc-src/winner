@@ -1,33 +1,41 @@
 ## Best of show
 
-	Jari Arkko, Ora Lassila, Esko Nuutila
-	Laboratory of Information Processing Science
-	Helsinki University of Technology
-	Otakaari 1
-	02150 Espoo
-	Finland
+Jari Arkko, Ora Lassila, Esko Nuutila  
+Laboratory of Information Processing Science  
+Helsinki University of Technology  
+Otakaari 1  
+02150 Espoo  
+Finland  
 
 ## To build:
 
-	make all
+```sh
+make all
+```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work with
 modern compilers. Modern compilers do not allow code like:
 
-	#define D define
-	#define a include
+```c
+#define D define
+#define a include
 
-	#D foo bar
-	#a <stdio.h>
+#D foo bar
+#a <stdio.h>
+```
+
+He notes that there _is_ a way to get it (or something close to it) to work. Do
+you know how?
 
 Thank you Cody for your assistance!
 
 
 ## To run:
 
-
-	./jar.2
-	[enter some lisp]
+```sh
+./jar.2
+[enter some lisp]
+```
 
 NOTE: this entry will likely segfault on invalid input.
 
@@ -40,15 +48,27 @@ all this functionality in such a small, densely packed program,
 is impressive enough to win the Best of show award.
 
 
-## Selected notes from the author:
+## Author's remarks:
 
 This program implements a Lisp interpreter in 1465 bytes of source.
 Some sophisticated features supported, eg. functionals and recursion.  
 The special-forms/functions/variables implemented are:
 
-	+	-	*	<	()	
-	car	cdr	cons	defun	equal
-	function if	lambda	quote	t
+- \+
+- \-
+- \*
+- \<
+- ()
+- car
+- cdr
+- cons
+- defun
+- equal
+- function
+- if
+- lambda
+- quote
+- t
 
 Below are sample lisp expressions you might choose to try as input.
 The program implements a conventional lisp listener, i.e. you type in
@@ -56,6 +76,7 @@ lisp expressions (followed by CR), the program evaluates them and
 prints out the return values. End execution by typing an end-of-file
 character.
 
+```lisp
 	(+ 2.5 3.1)
 	(defun fib (n)
 	   (if (< n 2)
@@ -74,6 +95,7 @@ character.
 	(cons (quote (f)) ())
 	(car (quote (a b c)))
 	(cdr (cdr (quote (g h i))))
+```
 
 
 Please do not leave any whitespace before the first parenthesis when

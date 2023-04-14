@@ -1,40 +1,47 @@
 # Best self-modifying program
 
-	Jay Vosburgh
-        Sequent Computer Systems, Inc
-        15450 SW Koll Parkway
-        Beaverton, OR
-        97006
-        USA
+Jay Vosburgh  
+Sequent Computer Systems, Inc  
+15450 SW Koll Parkway  
+Beaverton, OR  
+97006  
+USA  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) got this to work with
 modern systems. Thank you Cody for your assistance!
 
 
-## To run
+## To run:
 
-	./fubar number>
+```sh
+./fubar <number>
+```
 
 ## Try:
 
-	./fubar 2
+```sh
+./fubar 2
+```
 
 
-## Judges' remarks
+## Judges' remarks:
 
 Run this with a single digit argument (or wait a long time).
 
 The blank line at the beginning of the source is mandatory.
 Do you know why?
 
-NOTE: don't try running `ouroboros.c` directly with an arg as it'll turn into an
-infinite loop. The same will happen with larger numbers.
+NOTE: don't try running [ouroboros.c](ouroboros.c) (note that it's executable)
+directly with an arg as it'll turn into an infinite loop. The same will happen
+with larger numbers.
 
-## Author's remarks
+## Author's remarks:
 
 In a nutshell, this is probably the slowest and most
 obnoxious factorial program ever written.  Unfortunately, 
@@ -46,7 +53,7 @@ The shell script compiles itself, and then executes the
 resulting binary, giving the source as input.  The program 
 works by successively modifying #define lines each pass through.
 
-Both "indent" and "cb" will damage the program, "indent" 
+Both `indent` and `cb` will damage the program, `indent` 
 much more so.
 
 ## Copyright and CC BY-SA 4.0 License:
