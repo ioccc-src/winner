@@ -1,58 +1,68 @@
 # The Grand Prize 
 
-Sjoerd Mullender
+Sjoerd Mullender  
 
-Robbert van Renesse
+Robbert van Renesse  
 
 ## To build:
 
-	make all
+```sh
+make all
+```
 
 ## To run:
 
-	./mullender
+```sh
+./mullender
+```
 
 > NOTE: If your machine is not a Vax-11 or pdp-11, this program will
 > not execute correctly.  In later years, machine dependent
 > code was discouraged.
 
-## Alternative code:
+### Alternative code:
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added the alternative
 code which lets you run this on other systems. He notes though that this was
 only a slight fix and enhancement to the change in the [faq](/faq.md). Thank you
 Cody for your assistance!
 
-### To build:
+#### To build:
 
 
-	make alt
+```sh
+make alt
+```
 
-### To run:
+#### To run:
 
-	./mullender.alt [microseconds]
+```sh
+./mullender.alt [microseconds]
+```
 
-The default microseconds is 10000. This ability is so you can experiment with
+The default microseconds is 10000. This feature is so you can experiment with
 different speeds in between writes. It can be useful if your CPU is too slow or
 too fast.
 
-BTW: is there such a thing as too fast a CPU ? :-) actually yes for certain code
-which is probably not as uncommon as you think :-) ).
+BTW: is there such a thing as too fast a CPU ? :-) Actually yes for certain code
+which is probably not as uncommon as you think :-).
 
 Note that it is an int and it uses `atoi()` which does NOT check for
 overflow! In fact it's argc itself.
 
 
-## Try:
+#### Try:
 
 
-    ./mullender.alt
+```sh
+./mullender.alt
 
-    ./mullender.alt 5000
+./mullender.alt 5000
 
-    ./mullender.alt 500
+./mullender.alt 500
 
-    ./mullender.alt 20000
+./mullender.alt 20000
+```
 
 What happens if you hit enter after it writes a line of output?
 
@@ -84,7 +94,7 @@ BTW: this remains my (Landon Curt Noll's) all time favorite entries!
 
 ## Author's remarks:
 
-These comments, found at
+These remarks, found at
 [https://lainsystems.com/posts/exploring-mullender-dot-c/](https://lainsystems.com/posts/exploring-mullender-dot-c/),
 were provided by Sjoerd Mullender years later. We thank the author of the
 article for the quote!
@@ -125,9 +135,9 @@ The rest is history.
 Since this was the first contest, we hadn't seen any old entries, nor had any of
 the other contestants. Of course we knew about #define and tricks you could do
 with that, but we didn't need that for this program. In fact, we made it as
-“standard” as possible. At the time there was this program called “cb” for C
+“standard” as possible. At the time there was this program called `cb` for C
 beautifier which would re-indent your program to make the layout look better. Our
-program is idempotent under cb.
+program is idempotent under `cb`.
 
 ## Copyright and CC BY-SA 4.0 License:
 
