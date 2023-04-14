@@ -1,15 +1,19 @@
 # Best one liner
 
-Jack Applin [with help from Robert Heckendorn]
+Jack Applin [with help from Robert Heckendorn]  
+<https://web.archive.org/web/19991006042323/http://www.geocities.com/HotSprings/6789/>
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## Try:
 
-	./applin
-
+```sh
+./applin
+```
 
 NOTE: [Yusuke Endoh](/winners.html#Yusuke_Endoh) provided a patch to get this to
 not issue a bus error. Thank you Yusuke! [Cody Boone
@@ -24,7 +28,7 @@ certainly takes its time saying hello.
 
 ## Author's remarks:
 
-No comments were provided by the author.
+No remarks were provided by the author.
 
 ## Copyright and CC BY-SA 4.0 License:
 

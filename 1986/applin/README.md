@@ -1,24 +1,31 @@
 # Most adaptable program
 
-Jack Applin  
-Hewlett-Packard  
-Ft. Collins  
-Colorado  
-USA  
+Jack Applin    
+Hewlett-Packard    
+Ft. Collins    
+Colorado   
+USA   
+<https://web.archive.org/web/19991006042323/http://www.geocities.com/HotSprings/6789/>
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./applin
+```sh
+./applin
+```
 
 ## Try:
 
-	sh applin.c
+```sh
+sh applin.c
 
-	./applin
+./applin
+```
 
 
 ## Judges' remarks:
@@ -30,7 +37,7 @@ compilers as well as executable by the Bourne shell!
 
 ## Author's remarks:
 
-No comments were provided by the author.
+No remarks were provided by the author.
 
 ## Copyright and CC BY-SA 4.0 License:
 

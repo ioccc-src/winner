@@ -1,20 +1,24 @@
 # Best of show
 
-    	Jack Applin
-	Hewlett-Packard
-	3404 E. Harmony Rd
-	Ft. Collins, CO 
-	80525 
-	USA
+Jack Applin  
+Hewlett-Packard  
+3404 E. Harmony Rd  
+Ft. Collins, CO  
+80525   
+USA  
+<https://web.archive.org/web/19991006042323/http://www.geocities.com/HotSprings/6789/>
 
 ## To build:
 
-        make all
-
+```sh
+make all
+```
 
 ## Try:
 
-	./applin
+```sh
+./applin
+```
 
 ## Judges' remarks:
 
@@ -22,19 +26,26 @@ This entry is by far the most unusual abuse of the C preprocessor that
 we have received thus far.  Nearly all of the real work is done in the
 preprocessor!
 
-When we compiled applin.c on an Amdahl 5890-300E, we found that it
-spent over 75 minutes in the System V C preprocessor!  Besides showing
-that the standard System V cpp is slow, it showed that it contained a
-memory usage problem.  The applin.c only uses 29 different preprocessor
-symbols (besides `stdio.h`) and yet the preprocessor ran out of space!
+When we compiled [applin.c](applin.c) on an
+[Amdahl](https://en.wikipedia.org/wiki/Amdahl_Corporation) 5890-300E, we found that it
+spent over 75 minutes in the System V C preprocessor!  Besides showing that the
+standard System V cpp is slow, it showed that it contained a memory usage
+problem.  The [applin.c](applin.c) only uses 29 different preprocessor symbols
+(besides `stdio.h`) and yet the preprocessor ran out of space!
 
 The GNU C preprocessor took less than 45 seconds to perform the 2nd pass 
 on the Amdahl 5890-300E.  But due to the ANSI-likeness of GNU cpp (v. 1-21), 
 it was not able to cleanly substitute a symbol that began with a '#'.
 Clearly the GNU C preprocessor is faster.
 
-A smaller version of applin.c can be found in zsmall.c.  Your machine
-may have an easier time with this program.  See the Makefile for details.
+A smaller version of [applin.c](applin.c) can be found in [zsmall.c](zsmall.c).
+Your machine may have an easier time with this program.  See the Makefile for
+details.
+
+## Author's remarks:
+
+No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 
