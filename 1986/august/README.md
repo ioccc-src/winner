@@ -1,6 +1,6 @@
 # Best complex task done in a complex way
 
-Lennart Augustsson  
+Lennart Augustsson   
 Dept. of Comp. Sci.  
 Chalmers University of Technology,  
 412 96 Gothenburg  
@@ -8,13 +8,15 @@ Sweden
 
 ## To build:
 
-        make all
-
-
+```sh
+make all
+```
 
 ## Try:
 
-	./august
+```sh
+./august
+```
 
 
 NOTE: this entry is very likely to core dump after its output.
@@ -31,7 +33,7 @@ enough to try and parse it correctly.
 
 ## Author's remarks:
 
-No comments were provided by the author.
+No remarks were provided by the author.
 
 ## Copyright and CC BY-SA 4.0 License:
 

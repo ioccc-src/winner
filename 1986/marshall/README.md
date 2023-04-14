@@ -1,6 +1,6 @@
 # Best layout
 
-Eric Marshall  
+Eric Marshall   
 System Development Corporation, a Burroughs Company  
 P.O. Box 517  
 Paoli, PA.  
@@ -8,7 +8,9 @@ Paoli, PA.
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) got this to
@@ -20,7 +22,9 @@ Cody for your help!
 
 ## Try:
 
-	./marshall
+```sh
+./marshall
+```
 
 # Judges' remarks:
 
@@ -34,7 +38,7 @@ This program was selected for the 1987 t-shirt collection.
 
 ## Author's remarks:
 
-No comments were provided by the author.
+No remarks were provided by the author.
 
 ## Copyright and CC BY-SA 4.0 License:
 

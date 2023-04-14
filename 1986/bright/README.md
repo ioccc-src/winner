@@ -1,21 +1,26 @@
 # Most useful obfuscation 
 
-Walter Bright
+Walter Bright  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./bright some_file
+```sh
+./bright some_file
+```
 
 ## Try:
 
-	./bright bright.c
+```sh
+./bright bright.c
 
-	./bright bright
-
+./bright bright
+```
 
 ## Judges' remarks:
 
@@ -28,7 +33,7 @@ maintain the Bourne shell! :-}
 
 ## Author's remarks:
 
-No comments were provided by the author.
+No remarks were provided by the author.
 
 ## Copyright and CC BY-SA 4.0 License:
 

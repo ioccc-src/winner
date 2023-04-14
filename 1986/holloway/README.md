@@ -7,8 +7,9 @@ USA
 
 ## To build:
 
-        make all
-
+```sh
+make all
+```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to
 compile and work with clang (it already worked with gcc).  The problem was that
@@ -20,7 +21,9 @@ Cody for your assistance!
 
 ## Try:
 
-	./holloway
+```sh
+./holloway
+```
 
 
 ## Judges' remarks:
@@ -32,7 +35,7 @@ this version as the first C program!
 
 ## Author's remarks:
 
-No comments were provided by the author.
+No remarks were provided by the author.
 
 ## Copyright and CC BY-SA 4.0 License:
 
