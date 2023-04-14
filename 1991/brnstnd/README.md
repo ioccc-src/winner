@@ -77,7 +77,7 @@ Here, then, is the SORTA programming language. All non-digits delimit
 numeric constants. Spaces and newlines are ignored except as numeric
 delimiters.
 
-### Basic operations:
+### Basic operations
 
 - `q`: quit
 - `number`: push that number on top of the i stack
@@ -107,7 +107,7 @@ delimiters.
 	Note that nand is sufficient to construct all bitwise operations, as
 	demonstrated by icalc below.
 
-### System operations:
+### System operations
 
 - `o`: pop top of `s stack` and top two of `i stack`; `open(s1,i2,i1);` leave
 result on `i stack`
@@ -126,7 +126,7 @@ in the s stack to terminate the argument list. If the execve()
 fails, any operation involving current members of the s stack has
 undefined effects, and -1 is pushed onto the i stack.
 
-### High-level language operations:
+### High-level language operations
 
 - :x: copy the top of the s stack into a program labeled by character x
 - =x: pop the top of the i stack. If it was nonzero, execute the program

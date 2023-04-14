@@ -26,7 +26,7 @@ You are invited to try to cheat, ... if you can figure out how!  :-)
 
 ## Author's remarks:
 
-### HOW TO PLAY:
+### How to play
 
 When the game starts, you are at the far end of the maze from the
 exit, looking down a corridor.  To move forward, type `f` and press
@@ -37,7 +37,9 @@ after all the moves.
 The game ends if you get out the exit (you'll know it when you see
 it) or when you type `^D` (EOF).
 
-### HINTS ON HOW TO CHEAT:  (rot13 to read)
+### Hints on how to cheat
+
+Rot13 to read:
 
     Lbh pna, bs pbhefr, purng ol ybbxvat ng gur znmr znc.  Gur dhrfgvba
     lbh arrq gb nfx lbhefrys, gubhtu, vf jung frdhrapr bs punenpgref
@@ -48,7 +50,9 @@ it) or when you type `^D` (EOF).
     gura onpxjneq sebz gur pheerag cbfvgvba gb qenj gur yrsg fvqr naq
     gura gur evtug fvqr.
 
-### ADVANCED USAGE NOTES:  (rot13 to read)
+### Advanced usage notes
+
+Rot13 to read:
 
     Gur cebtenz pna nyfb or eha sebz bgure svyrf pbagnvavat znmrf.  Gur
     znmr fubhyq or ynvq bhg tencuvpnyyl va gur boivbhf sbezng; arjyvarf
