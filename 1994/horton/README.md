@@ -1,15 +1,17 @@
 # Best Utility
 
-Mark Horton
-AT&T Bell Labs
-Rm 1H-117
-6200 E Broad St.
-Columbus OH 43213
-USA
+Mark Horton  
+AT&T Bell Labs  
+Rm 1H-117  
+6200 E Broad St.  
+Columbus OH 43213  
+USA  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
@@ -17,7 +19,12 @@ USA
 ./horton A B C D
 ```
 
-A, B, C, D are numeric arguments.
+`A`, `B`, `C` and `D` are numeric arguments.
+
+### INABIAF - it's not a bug it's a feature! :-)
+
+Running this program without enough args will very likely crash or do something
+else.
 
 ## Try: 
 
@@ -31,11 +38,11 @@ This confuses cb greatly. See [horton.alt.c](horton.alt.c) for an unobfuscated/e
 version. To run this alternate version:
 
 ```sh
-make horton.alt
+make alt
 ./horton.alt A B C D
 ```
 
-(Use `horton.alt` as you would `horton` above.)
+Use `horton.alt` as you would `horton` above.
 
 
 ## Judges' remarks:
@@ -44,9 +51,9 @@ Try to figure out how this program prints, for a given slope, the
 right character.  And for extra credit, try to figure out which
 character is at the bottom on this hint file.  :-)
 
-## Author's remarks
+## Author's remarks:
 
-Run it with any 4 numeric arguments, e.g. prog 3 2 1 0.  Play with the
+Run it with any 4 numeric arguments, e.g. `./horton 3 2 1 0`.  Play with the
 numbers to get a pleasing result, or use it for your high school algebra
 class.
 
@@ -62,13 +69,17 @@ It's easily modified to graph *any* 96x160 bitmap on a dumb terminal.
 
 See the [gtface](gtface.c) program for another example.  Try:
 
-	make gtface
-	./gtface < gtface.data
+```sh
+make gtface
+./gtface < gtface.data
+```
 
 For more information, see
+
 Using GraphTab; USENIX ;login:
 Sept/Oct 1992; Pages 28-31
 
+```
 
               MMMM,M,MM"MM,,,
            ,,MMMMMMMMM"""""""",
@@ -94,6 +105,7 @@ Sept/Oct 1992; Pages 28-31
        ," , "MMMMMMM"MM"M,,,,MMMMM ,   ,,
        M  ," MMMMMM"MM""M ,MMMMM,M,    M
       ,      MMMM,MMMM"M"M"M,MM,M,",    "
+```
 
 ## Copyright and CC BY-SA 4.0 License:
 
