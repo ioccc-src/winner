@@ -16,7 +16,7 @@
 NOTE: This may take a while.  Some systems may have problems building 
 this entry because of the system resources it requires.
 
-## To run
+## To run:
 
 	./fanf
 

@@ -10,7 +10,7 @@
 
         make all
 
-## To run
+## To run:
 
 If lpr on your system can print PostScript:
 

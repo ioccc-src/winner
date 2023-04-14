@@ -12,7 +12,7 @@
 
         make all
 
-## To run
+## To run:
 
 	cat horizon.sc pittsburgh.sc | ./banks
 
