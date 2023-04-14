@@ -5,7 +5,7 @@ ISX Corporation
 1165 Northchase Pkwy, Suite 120  
 Marietta, GA 30067  
 USA  
-<http://computronium.org/ioccc.html>
+<http://computronium.org/ioccc.html>  
 
 
 ## To build:
@@ -32,10 +32,11 @@ it is not as easy to change it to `fgets()`. [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) gives some hints in the
 [bugs.md](/bugs.md) file on how this entry works which might be useful in order
 to get this to use `fgets()` which would prevent a warning at linking or
-runtime. The file [schnitzi.alt.c](schnitzi.alt.c) has this to get anyone
-started, should they wish to tackle it (Cody will in time). The problem with
-changing the buffer size is that even when it works the generated output (see
-judges' remarks below) will not be 100% correct duplication of the program.
+runtime, the latter of which is interspersed with the output of the program. The
+file [schnitzi.alt.c](schnitzi.alt.c) has this to get anyone started, should
+they wish to tackle it (Cody might in time). The problem with changing the buffer
+size is that even when it works the generated output (see judges' remarks below)
+will not be 100% correct duplication of the program.
 
 ### Alternate code:
 
@@ -69,16 +70,20 @@ down to the bottom right.  In other words, the first row in the
 file ends up written down the first column of the result, the
 second row is written down the second column, etc. The program
 is run by redirecting a file into the executable on the command
-line; for instance, for the included 'info' file, the program
+line; for instance, for the file 'info', the program
 would be run as follows:
 
-    	schnitzi < info
-    
+```sh
+schnitzi < info
+``` 
+
 The program generates interesting results when its source file is
 used as input:
-    
+   
+```sh
     	schnitzi < schnitzi.c
-    
+```
+
 The result of this command is a program which does the exact same
 thing -- in other words, both the program and the "flipped"
 version of itself work identically (you'll need to redirect the

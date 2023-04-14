@@ -1,11 +1,11 @@
 # Worst Abuse of the C Preprocessor
 
-Brian Westley (Merlyn LeRoy on Usenet)
-Digi International
-1906 James Ave.
-St. Paul, MN  55105
-USA
-<http://www.westley.org>
+Brian Westley (Merlyn LeRoy on Usenet)  
+Digi International  
+1906 James Ave.  
+St. Paul, MN  55105  
+USA  
+<http://www.westley.org>  
 
 ## To build:
 
@@ -20,12 +20,8 @@ game!
 
 ## To run:
 
-```sh
-./westley
-```
+There is no running as such. See below.
 
-NOTE: your terminal should be set to 80 columns, 8 character tabs, and
-wraparound.
 
 
 ## Try:
@@ -37,6 +33,9 @@ different cc arguments.  For example:
 cc -Describe -Door westley.c
 cc -Describe -Drain westley.c
 ```
+
+NOTE: your terminal should be set to 80 columns, 8 character tabs, and
+wraparound.
 
 ## Judges' remarks:
 
