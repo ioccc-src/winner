@@ -1,29 +1,33 @@
 # Best Output
 
-    Thor AAge Eldby
-    European Technology Partner
-    Roedtvetvn 20                (Home address)
-    0955 OSLO
-    Norway
+Thor AAge Eldby  
+European Technology Partner  
+Roedtvetvn 20                (Home address)  
+0955 Oslo  
+Norway  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./eldby 
+```sh
+./eldby 
+```
 
 WARNING: on modern systems this is very fast and could be a problem for those
 susceptible to photosensitivity. Please try this one with caution if this
 applies to you! The same goes for people who can be overstimulated.
 
-## Judges' remarks
+## Judges' remarks:
 
 We were impressed by the author's ability to render spheres in 3D 
 in a very small chunk of code.
 
-## Author's remarks
+## Author's remarks:
 
 This program shows flying spheres. The program eats CPU on lesser
 equipped systems. The program will run until termination. Terminal 
