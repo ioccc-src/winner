@@ -27,7 +27,7 @@ make all
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the script to
 work properly in modern environments (to do with PATH not having '.' in it). He
-notes that with an invocation in the try section below you will with macOS get
+notes that with an invocation in the try section below will with macOS show
 what appears to be an error message but is actually okay. He gives more
 information in the [bugs.md](/bugs.md) file. Thank you Cody for the help and
 notes!
@@ -136,7 +136,7 @@ environment.
 
 ----------------------------------------------
 
-### Portability:
+### Portability
 
 We have ported this program to a wide variety of systems. Among
 these are:
@@ -152,7 +152,7 @@ these are:
 - Dynix / Sequent Balance ('cc' for Natl. Semi. base + 'gcc 1.36')
 - Unicos / Cray 2
 
-### Obfuscation:
+### Obfuscation
 
 We (the authors) feel this program is obfuscated for the
 following reasons:

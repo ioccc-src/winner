@@ -55,18 +55,19 @@ Use `westley.alt` as you would `westley`.
 
 ## Judges' remarks:
 
-
 If you would rather "Daisy" someone other than Westley, rename 
 the program as needed.  :-)
 
 Read each block of code as if it were a piece of correspondence.
 For example, the first block of code would read:
 
-	charlie,
-		doubletime me, OXFACE!
-		not interested, get out
-		mainly die, charly, *die*
-			signed charlotte
+```
+charlie,
+	doubletime me, OXFACE!
+	not interested, get out
+	mainly die, charly, *die*
+		signed charlotte
+```
 
 The original source had control-L's after each code block.  To 
 make it easier on news readers, we converted each control-L to 
@@ -86,7 +87,7 @@ Lint complains about everything - null effect, xxx may be used before
 set, statement not reached, return(e) and return.  Lint dumps core
 on some systems.  My personal favorite lint complaint is
 
-    	"warning: eroticism unused in function main".
+**_"warning: eroticism unused in function main"._**
     
 Also obviously, `(char)lotte` and `(char*)lie` are incompatible types...
 

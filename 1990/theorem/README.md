@@ -21,9 +21,9 @@ that dump core when NULL is dereferenced but this problem showed itself in
 modern systems even with the 4 '0 0 0 0'. He also fixed a segfault if not enough
 args are specified and fixed the code so that the generated `fibonacci.c`
 actually works; before it just printed `0` over and over again (since it did not
-work anyway a segfault prevention was added here). He also some array addressing
-(some of which might not be strictly necessary but as he was testing the
-`fibonacci.c` bug he ended up changing it anyway). Finally he changed this
+work anyway a segfault prevention was added here). He also fixed some array
+addressing (some of which might not be strictly necessary but as he was testing
+the `fibonacci.c` bug he ended up changing it anyway). Finally he changed this
 program to use `fgets()` not `gets()` to make it safer and to prevent a warning
 about `gets()` at linking or runtime. Thank you Cody for your assistance!
 
@@ -40,12 +40,13 @@ initially. Thank you Yusuke!
 
 where:
 
-	expression - function f(x,y)  (see below)
-	x1 - start of interval
-	x2 - end of interval
-	h - step size
-	y1 - initial value  (y(x1) == y1)
-
+```
+expression - function f(x,y)  (see below)
+x1 - start of interval
+x2 - end of interval
+h - step size
+y1 - initial value  (y(x1) == y1)
+```
 
 ## Try:
 
@@ -65,15 +66,17 @@ The program's source implements four functions, all from the
 same source file!
 
 When you compile theorem.c as is and run with 5 args, it numerically
-solves the equation y'=f(x,y), with a step size of h, over the interval 
-x=[x1,x2], with the initial condition of y(x1)=y1.
+solves the equation `y'=f(x,y)`, with a step size of `h`, over the interval 
+`x=[x1,x2]`, with the initial condition of `y(x1)=y1`.
 
-The 'expression' f(x,y), is any function of 'x' and 'y' with the
+The 'expression' `f(x,y)` is any function of `x` and `y` with the
 operators:
 
-	    +	-	*	/	^
+```
++	-	*	/	^
+```
 
-The symbol '^' is the power operator.  Note that it only supports
+The symbol `^` is the power operator.  Note that it only supports
 integer powers.  Also note that all expressions are evaluated strictly 
 left to right.  (i.e., parenthesis aren't supported).
 
@@ -128,7 +131,7 @@ received a standing ovation; a first for a contest entry.
 ## Author's remarks:
 
 Differential equations are solved via the Runge-Kutta method, which guarantees
-local error proportional to h^5, and total error across a finite interval is at
+local error proportional to `h^5`, and total error across a finite interval is at
 most a constant times `h^4`.
 
 Sorting is accomplished with a standard shell sort.
