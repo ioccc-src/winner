@@ -143,6 +143,13 @@ Entries with this status might or might not have a bug possibly depending on the
 system.  In these entries we don't have the appropriate systems to test and fix
 any problems.
 
+## STATUS: probable bug (possibly depending on system) - please help test and if necessary fix
+
+Entries with this status almost certainly have a bug or some other problem. The
+issue or issues might depend on the system much like the above _STATUS: possible
+bug (possibly depending on system)_.
+
+
 ## STATUS: doesn't work with some platforms - please help us fix
 
 Entries with this status do not work under some OSes and/or architectures (and/or
@@ -192,31 +199,43 @@ not mutually exclusive in some cases).
 Entries with this status use `gets()` which is unsafe because it has no limit on
 the length of the string. [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) has fixed several of these and he's
-working on others in between fixing other things. He provides some important
-notes:
+working on others in between fixing other things.
 
-First: in some cases changing the entry to use `fgets()` will break the entry
-and in some cases cause it to crash. Where this is known we will document it.
-Some of these Cody is also working on.
+There's a very good reason for this even though it is bordering on tampering
+entries: in modern systems one will get possibly alarming and certainly annoying
+warnings during at least one of compiling, linking and execution. In macOS it's
+most annoying as it happens during execution (also compilation) with the warning
+being interspersed with the output of the program, often causing confusing
+output with the entry. A good example that was fixed is
+[1990/tbr](1990/tbr/tbr.c).
 
-Second: you MUST check the output before and after to make sure that it remains
+Cody provided some important notes on this status with respect to fixing /
+changing entries:
+
+0. In some cases changing the entry to use `fgets()` will break the entry and in
+some cases cause it to crash. Where this is known we will document it.  Some of
+these Cody is also off and on working on.
+
+1. You **MUST** check the output before and after to make sure that it remains
 the same. Sometimes the output might not be immediately obviously wrong but is.
-We will document known examples.
+We will document known examples as we come across them.
 
-Third: `gets()` does NOT STORE the `'\n'` but `fgets()` DOES! This is one of the
+2. `gets()` does NOT STORE the `'\n'` but `fgets()` DOES! This is one of the
 reasons some of the entries break when changed to `fgets()`. Cody has fixed some
-of these but there are others he hasn't had time to address and/or even discover
+of these but there are others he hasn't had time to address or even discover
 yet.
 
-Fourth: just because you don't see the string `gets` in the code does not mean
-it's not used. It is after all the Obfuscated C Code Contest! :-) Sometimes it
-will be in the Makefile and other times it will be obfuscated in other ways.
-Compilers and linkers tend to warn about its use and this is a good way to find
-entries that use it even if it's not visible in the code.
+3. Just because you don't see the string `gets` in the code does not mean it's
+not used. It is after all the International _Obfuscated C Code_ Contest!  :-)
+Sometimes it will be in the Makefile and other times it will be obfuscated in
+other ways.  Compilers and linkers tend to warn about its use (and as noted in
+macOS it also happens at execution) and this is a good way to find entries that
+use it even if it's not visible in the code.
 
-NOTE: this status is not necessarily mutually exclusive with the INABIAF (it's a
-bug not a feature) status. The reason for this is due to warnings during linking
-or runtime, sometimes causing confusing output.
+_NOTE_: this status is _NOT necessarily mutually exclusive_ with the _INABIAF_ (it's a
+bug not a feature) status. The reason for this is due to warnings during
+compiling, linking and/or runtime, sometimes causing confusing output (as noted
+above).
 
 
 ## STATUS: missing file(s) - please provide them
@@ -232,13 +251,29 @@ In these entries one or more make rules noted by the author and/or judges is/are
 missing. You might consider looking at the [archive](/archive) as a good place
 to find them.
 
+## STATUS: missing or dead link - please provide them
+
+This is as they sound: a link is either missing or it's no longer valid. In many
+cases the [Internet Wayback Machine](https://web.archive.org) will be very
+useful but there happens to be numerous links that this is not helpful. In other
+cases the URL has changed. Some of these have been discovered by the Internet
+Wayback Machine with the orange status.
+
+### Statuses of Internet Wayback Machine archive:
+
+- Green (3xx): redirect (this has been used to find changes in URL).
+- Orange (4xx): not found etc.
+- Blue: this is a good link (but note that this doesn't mean that it's correct!).
+
+The archive website will tell you if the link was never captured.
+
 ## STATUS: INABIAF - please **DO NOT** fix
 ### INABIAF: It's not a bug it's a feature :-)
 
 Entries with this status should NOT be touched (unless they have another status
-that suggests that issue can be changed): they are system specific by design
-or are other things that are not actually bugs even if they appear to be. But
-are noteworthy nonetheless.
+that suggests that _that_ issue can be changed): they are system specific by
+design or are other things that are not actually bugs even if they appear to be.
+But are noteworthy nonetheless.
 
 NOTE: the definition of this status changed over time. At one point it was when
 something was noted by the author, the judges, a consequence of earlier
@@ -248,7 +283,8 @@ appear to be buggy. An example of system specific entries:
 [1984/mullender](1984/mullender/mullender.c) (see below and the [faq](/faq.md)
 for a version that works in modern systems) is very system specific and was
 before system specific winning entries were discouraged. This is an all time
-personal favourite of Landon Curt Noll.
+personal favourite of Landon Curt Noll. Run the alternate code to understand why
+this might be (along with how strange the source code is :-) ).
 
 An example where a crash is not a bug: [2019/endoh](2019/endoh/endoh.c) is
 supposed to crash. There are others that are also supposed to crash or that are
@@ -256,8 +292,8 @@ known to segfault but are considered features.
 
 As of 10 April 2023 the definition changed for a second time (the first time was
 07 April 2023). If something is noted by the author as a known bug or limitation
-it need not be fixed unless it impacts the usability of the program or removes
-instructional value. An example where a crash undocumented needn't be fixed is
+it need not be fixed **unless it impacts the usability** of the program or **it removes
+instructional value**. An example where a crash undocumented needn't be fixed is
 [1984/laman](1984/laman/laman.c).  On the other hand the fixes made by [Cody
 Boone Ferguson](/winners.html#Cody_Boone_Ferguson) in
 [1990/theorem](1990/theorem/theorem.c) were useful.
@@ -265,18 +301,18 @@ Boone Ferguson](/winners.html#Cody_Boone_Ferguson) in
 Nonetheless we challenge you to fix these entries for educational/instructional
 value and/or enjoyment but we kindly request that you **DO NOT** submit a pull
 request! If you can't figure it out you're invited to look at the git diffs,
-where there are some (some were fixed earlier on but rolled back due the fix
-feeling like tampering).
+where there are some (some were fixed earlier on but rolled back as both Cody
+and Landon individually felt that the fix was tampering with the entry).
 
 NOTE: in the case of `gets()` we've fixed some to avoid the warning of the
-compiler, linker or even during runtime, depending on the system. In [one
-case](1990/tbr/tbr.c) the fix actually prevents confusing output (though that
-was not the only fix made).
+compiler, linker or even during runtime, depending on the system. In [some cases
+like 1990/tbr](1990/tbr/tbr.c) the fix actually prevents confusing output (though that
+was not the only fix made in that entry).
 
 ### Exception: your own entries
 
-Of course if you're the author you're welcome to fix your own entry (or else
-suggest that they're fixed)!
+Of course if you're the author you're welcome to fix your own entry, prefer your
+own fix or suggest that they're fixed!
 
 
 ## STATUS: requires a compiler supporting `-traditional-cpp` - alternate code requested
@@ -295,10 +331,12 @@ compiler supporting you are welcome to summit such code via a
 will be happy to credit you in the entry's _README.md_ file.
 
 NOTE: as of commit fa8a9b8b28a6b69a6b4efd74a45402f745e280b3 we believe that all
-the entries with this problem have been fixed.
+the entries with this problem have been fixed due [Cody Boone
+Ferguson](/winners.html#Cody_Boone_Ferguson)'s pursuit in fixing entries. Thanks
+Cody!
 
 
-# List of entries by year, sorted in alphabetical order
+# List of entries by year, sorted in alphabetical order per year
 
 # 1984
 
@@ -870,12 +908,12 @@ warning in their comments on that.
 
 
 ## [2001/bellard](2001/bellard/bellard.c) ([README.md](2001/bellard/README.md))
-## STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
+## STATUS: probable bug (possibly depending on system) - please help test and if necessary fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed an initial
 segfault and he also fixed the [supplementary
-program](2001/bellard/bellard.otccex.c) to test the entry on to not segfault and
-seemingly work but he has no 32-bit system to test any further fixes and we
+program bellard.otccex.c](2001/bellard/bellard.otccex.c) to test the entry on to not segfault and
+seemingly work but he has no 32-bit system to test any further fixes; we
 would greatly appreciate anyone's help! It appears that this entry will require
 major debugging and to make it work one might need to have a deep understanding
 of the ELF format.
@@ -929,6 +967,10 @@ as they are often used with the `&&` operator.
 needless cast to `char *` from gets(). This cast remains in the code however.
 6. The code no longer uses `gets()` but `fgets()`; this is not the problem
 however.
+7. Sometimes the lack of a _proper_ prototype lets code work if the function is
+used incorrectly so one should be careful with adding the proper prototypes.
+With this entry it didn't _appear_ to be relevant but maybe it is after another
+change?
 
 
 ## [2004/gavin](2004/gavin/gavin.c) ([README.md](2004/gavin//README.md))
