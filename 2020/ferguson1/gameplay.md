@@ -391,16 +391,9 @@ left go right etc.) and then after some length (but before you get beyond the
 snake) turn (so that you go perpendicular) and then watch as the snake starts
 unwinding at one place and then suddenly unwinds another direction.
 
-An example of extreme cannibalism is in the [cannibalism.log][] file. It has
-more than one run the first of one has several dumps. I didn't move for a long
-time: the initial size was 1500 and I would have won before moving if I went
-after bugs right away. In the last two captures of the first invocation (the
-third and second to last dump) the bug, head and tail of the snake are at:
-
-	     Bug: line 87, col 47
-	    Head: line 88, col 62; and line 115, col 48
-	    Tail: line 84, col 46; and line 112, col 29
-
+An example of extreme cannibalism is in the [cannibalism.log.md][] file. It
+explains information about the file including how to find the bug, head and tail
+of the snake, at least where it was documented. The first run has several dumps.
 The final example has the snake inside itself.
 
 # <a name="shedding" href="#toc">Gameplay: Shedding (stretching)</a>
@@ -814,7 +807,7 @@ years ago but I know it's true now. **Believe in yourself. Always.**
 [snake-colours]: snake-colours
 [number of hertz (flashes) per second triggering seizures]: https://www.epilepsysociety.org.uk/photosensitive-epilepsy#.Xjgpwi2ZOgQ
 [termcaps.c]: termcaps.c
-[cannibalism.log]: cannibalism.log
+[cannibalism.log.md]: cannibalism.log.md
 [crazy.log]: crazy.log
 [play.sh]: play.sh
 
