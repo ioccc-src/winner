@@ -212,4 +212,4 @@ X:55/89 Y:11/25 S:1564/1600 B:32
 ##########################################################################################
 ```
 
-...and no: the itsself was not a typo but intentional sibilance!
+...and no Preciouss: the itsself was not a typo but intentional sibilance!
