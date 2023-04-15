@@ -8,7 +8,7 @@ make it easier to distinguish what is what.
 # Examples
 
 In the below game dumps I have replaced the bug with `B`, the head with `H` and
-where it is known, the tail with `T` in order to help distinguish where they
+where it is known, the tail with `T`, in order to help distinguish where they
 are. Since the head is replaced with `H` I have noted the direction it was
 moving above each dump. Each line with a bug, the head or tail is marked with
 upper case text to make it easier to see.
