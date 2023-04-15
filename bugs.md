@@ -918,6 +918,11 @@ would greatly appreciate anyone's help! It appears that this entry will require
 major debugging and to make it work one might need to have a deep understanding
 of the ELF format.
 
+The author said that they compiled it with [gcc version
+2.95.2](https://ftp.gnu.org/gnu/gcc/gcc-2.95.2/gcc-everything-2.95.2.tar.gz). We don't know if
+a certain gcc version is necessary but it might be helpful to download and
+compile that version to test it.
+
 # 2002
 
 There was no IOCCC in 2002.
