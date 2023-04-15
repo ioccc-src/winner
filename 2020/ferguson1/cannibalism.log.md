@@ -29,7 +29,7 @@ X:45/89 Y:22/25 S:1675/2001 B:35
 #  o               ooooooooooooooooooooooooo              o  o    o  o  o                #
 #  o     ooooooooooo  ooooooooooooooooooooooo    oooooooooooooooo o  o  o                #
 #oooooooooooooooooooooooooooooooooooooooooooooooooooooo   o  o  o o  o  o              oo#
-#  o     o      ooooooooooooooooooooooooooooooooooooooo   o  o  oBo  o  oooo           o # <-- **BUG HERE**
+#  o     o      ooooooooooooooooooooooooooooooooooooooo   o  o  oBo  o  oooo           o # <--**BUG**
 #  o     o      o   ooooooooooooooooooooooooooooooooooooooo  o  o o  o     o           o #
 #  o     o      o   o  o        ooo o  o   oo       oooooooooooooooooooooooo           o #
 #  o   ooooooooooooooooo   oooooooo o  o   oooooooooooo   ooooooooooooooooooooooooo    o #
@@ -42,7 +42,7 @@ X:45/89 Y:22/25 S:1675/2001 B:35
 # ooooooooooooooooooooooooooooooooooooooooooooooooooooooooo  o  o o            o  o      #
 #oooooo  o        oooooo   o    o o o o o  o       ooooooooooooooooooooooooo   o  ooooooo#
 #        o          o      o    o o o oooo ooooooooooooooooo o  o          o   o  o      #
-#        o          o      oo   o o o   oooooH               o  oooooooo   ooooo  o      # <-- **HEAD HERE, MOVING RIGHT**
+#        o          o      oo   o o o   oooooH               o  oooooooo   ooooo  o      # <--**HEAD, RIGHT**
 #ooooooooo          ooooooooooooooooooooo                    ooooooooooo          ooooooo#
 #oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo#
 ##########################################################################################
@@ -60,13 +60,13 @@ X:79/89 Y:9/25 S:1680/2001 B:36
 #  o               ooooooooooooooooooooooooo              o  o    o  o  o                #
 #  o     ooooooooooo  ooooooooooooooooooooooo    oooooooooooooooo o  o  o                #
 #oooooooooooooooooooooooooooooooooooooooooooooooooooooo   o  o  o o  o  o              oo#
-#  o     o      oooooooooooooooooooooooo   oo         o   o oooooooooooooooooooH       o # <-- **HEAD HERE, MOVING RIGHT**
+#  o     o      oooooooooooooooooooooooo   oo         o   o oooooooooooooooooooH       o # <--**HEAD, RIGHT**
 #  o     o      o   oooooooooooooooooooooooooooooooooooooooooo  o o  o     o           o #
 #  o     o      o   o  o        o o o  o   oo   o   oooooooooooooooooooooooo           o #
 #  o   ooooooooooooooooo        o o o  o   oooooooooooo   ooooooooooooooooooooooooo    o #
 #  o   o o      o   oooooo      o o o  o oooooooooooooooooooooooo o  o  o         o    o #
 #oooooooooooooooooo o  o o   oo o o o  o o ooo       oo   o oo  o o  oooooooooooooooooooo#
-#  o   oooooooooooooooooooooooooooooooooooooooooooooooooooo oo Bo o  oo o      o  o      # <-- **BUG HERE**
+#  o   oooooooooooooooooooooooooooooooooooooooooooooooooooo oo Bo o  oo o      o  o      # <--**BUG**
 #  o     o      ooooooooooooooooooooooooooooooooooooooooooooooooo o  oo o      o  o      #
 #oooooooooo   oooo  o  o      o o o o   o  ooo     o oooooooooooooooooo ooooooooooooooooo#
 # oooooooooooooooo  o  o      ooooooooo o  ooo     o o    o  o  o o   ooooooooooooo      #
@@ -91,7 +91,7 @@ X:53/89 Y:18/25 S:1690/2001 B:38
 #  o               ooooooooooooooooooooooooo              o  o    o  o  o                #
 #  o     ooooooooooo  ooooooooooooooooo    o     oooooooooooooooo o  o  o                #
 #oooooooooooooooooooooooooooooooooooooooooooooooooooooo   o  o  o o  o  o              oo#
-#  o  B  o      oooooooooooooooooooooooo   o          o   o oooooooooooooooooooo       o # <-- **BUG HERE**
+#  o  B  o      oooooooooooooooooooooooo   o          o   o oooooooooooooooooooo       o # <--**BUG**
 #  o     o      o   oooooooooooooooooooooooooooooooooooooooooo  o o  o     o   o       o #
 #  o     o      o   o  o        o o o  o   o    o   oooooooooooooooooooooooo   o       o #
 #  o   ooooooooooooooooo        o o o  o   oooooooooo o   ooooooooooooooooooooooooo    o #
@@ -100,7 +100,7 @@ X:53/89 Y:18/25 S:1690/2001 B:38
 #  o   oooooooooooooooooooooooooooooooooooooooooooooooooooo oo oo o  oo o      o  o      #
 #  o     o      ooooooooooooooooooooooooooooooooooooooooooooooooo o  oo o      o  o      #
 #oooooooooo   oooo  o  o      o o o o   o  o o     o  ooooooooooooooooo ooooooooooooooooo#
-# oooooooooooooooo  o  o      ooooooooo o  o o     o Hooooooooooo o   ooooooooooooo      # <-- **HEAD HERE, MOVING LEFT**
+# oooooooooooooooo  o  o      ooooooooo o  o o     o Hooooooooooo o   ooooooooooooo      # <--**HEAD, LEFT**
 # ooooooooooooooooooooooooooooooooooooooooooooooooooooooooo  o  o o            o  o      #
 #oooooo  o        oooooo        o o o o o  o o     ooooooooooooooooooooooooo   o  ooooooo#
 #        o          o           o o o oooo ooooooooooooooooo o  o          o   o  o      #
@@ -115,11 +115,11 @@ X:53/89 Y:18/25 S:1690/2001 B:38
 ```
 X:61/89 Y:6/25 S:1815/2001 B:63
 ##########################################################################################
-#           oooooooooooooooooooooooooooooooooT                                           # <-- **TAIL HERE**
+#           oooooooooooooooooooooooooooooooooT                                           # <--**TAIL**
 #           o                                                                            #
 #     ooooo o      ooooooooooo                                                           #
-#  oooooooooo      o         o                B                   ooooooooooooooooooooo  # <-- **BUG HERE**
-#oooooo   o oooooooooooooooooooooooooooooooo                 Hooooooooooooooooooooooooooo# <-- **HEAD HERE, MOVING LEFT**
+#  oooooooooo      o         o                B                   ooooooooooooooooooooo  # <--**BUG**
+#oooooo   o oooooooooooooooooooooooooooooooo                 Hooooooooooooooooooooooooooo# <--**HEAD, LEFT
 #  o   ooooooooooooooooooooooo             o              oooo    o  o  o  o     ooo     #
 #  o   o oooo          oooooooooooooooooooooooooooooooo   o  ooooooooooooooooooo ooo     #
 #  o ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo ooo     #
@@ -146,10 +146,10 @@ X:61/89 Y:6/25 S:1815/2001 B:63
 ```
 X:47/89 Y:5/25 S:1815/2001 B:63
 ##########################################################################################
-#           ooooooooooooooooT                                                            # <-- **TAIL HERE**
+#           ooooooooooooooooT                                                            # <--**TAIL**
 #           o                                                                            #
-#     ooooo o      ooooooooooo                    oooo                                   # <-- **HEAD HERE, MOVING LEFT**
-#  oooooooooo      o         o                BHooo  o            ooooooooooooooooooooo  # <-- **BUG HERE**
+#     ooooo o      ooooooooooo                    oooo                                   # <--**HEAD, LEFT**
+#  oooooooooo      o         o                BHooo  o            ooooooooooooooooooooo  # <--**BUG**
 #oooooo   o oooooooooooooooooooooooooooooooo         oooooooooooooooooooooooooooooooooooo#
 #  o   ooooooooooooooooooooooo             o              oooo    o  o  o  o     ooo     #
 #  o   o oooo          oooooooooooooooooooooooooooooooo   o  ooooooooooooooooooo ooo     #
@@ -195,11 +195,11 @@ X:55/89 Y:11/25 S:1564/1600 B:32
 #  o   o        ooooooooooooo oooooooooooooooooooooo    ooo     oo     o o           o oo#
 #ooo   o        o         oooooo      o         oooo    ooo     oo     o o           oooo#
 #  o   o        o           oooo      o         o oo    ooo     oooooooooooooooooo     oo#
-#  o   o        o ooooooooooooo  oooooooooooooooo oooooHoooooooooooooooooooooooooooooo   # <-- **HEAD HERE, MOVING LEFT**
+#  o   o        o ooooooooooooo  oooooooooooooooo oooooHoooooooooooooooooooooooooooooo   # <--**HEAD, LEFT**
 #  o   o        o o      ooooooooo    oooooooooooooooooooooooooooo     o o       o   o   #
 #  o   ooooooo  o o      o    oooooooooooooo       o    o o      o     o o       ooooo   #
 #  o         o  o o      o    o          o         o    o o      o     o o               #
-#  o         o  o o      o    o          oB    ooooooooooooooooooo     o o        ooo    # <-- **BUG HERE**
+#  o         o  o o      o    o          oB    ooooooooooooooooooo     o o        ooo    # <--**BUG**
 #  o         o  o o      o    oooooooooooooooooooooooooooooooooooooooooooo        o o    #
 #  oooooooooooooo o      o    oo      o  o     oooooooooooooooooooooooooooooooooooooo    #
 #     o      oo   o      o    oo  oooooooooooooo   o    o o            oooooooooooo      #
