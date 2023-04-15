@@ -84,7 +84,7 @@ function configure_colours()
     for i in "WALL" "WALL (BACKGROUND)" "HEAD" "HEAD (BACKGROUND)" "BODY" "BODY (BACKGROUND)" "BUG" "BUG (BACKGROUND)"; do
 	show_colours "${i}"
 	x="${?}"
-	if [ "${x}" != 255 ]; then
+	if [[ "${x}" != 255 ]]; then
 	    COLOURS[$j]="${COLOURS[$j]}${COLOUR[$x]}"
 	else
 	    COLOURS[$j]=${DFLT[$j]}
@@ -92,24 +92,34 @@ function configure_colours()
 	j=$j+1
     done
 
-    echo cc -o prog.alt prog.alt.c -D'f(a,b)'='((a)<(b)?(a):(b))' ${COLOURS[0]} ${COLOURS[1]} \
-	${COLOURS[2]} ${COLOURS[3]} ${COLOURS[4]} ${COLOURS[5]} ${COLOURS[6]} ${COLOURS[7]} -lncurses
+    echo cc -o prog.alt prog.alt.c -D'f(a,b)'='((a)<(b)?(a):(b))' "${COLOURS[0]}" "${COLOURS[1]}" \
+	"${COLOURS[2]}" "${COLOURS[3]}" "${COLOURS[4]}" "${COLOURS[5]}" "${COLOURS[6]}" "${COLOURS[7]}" -lncurses
 
-    cc -o prog.alt prog.alt.c -D'f(a,b)'='((a)<(b)?(a):(b))' ${COLOURS[0]} ${COLOURS[1]} \
-	${COLOURS[2]} ${COLOURS[3]} ${COLOURS[4]} ${COLOURS[5]} ${COLOURS[6]} ${COLOURS[7]} -lncurses || exit 1
+    cc -o prog.alt prog.alt.c -D'f(a,b)'='((a)<(b)?(a):(b))' "${COLOURS[0]}" "${COLOURS[1]}" \
+	"${COLOURS[2]}" "${COLOURS[3]}" "${COLOURS[4]}" "${COLOURS[5]}" "${COLOURS[6]}" "${COLOURS[7]}" -lncurses || exit 1
+
+}
+function just_compile()
+{
+    echo cc -o prog.alt prog.alt.c -D'f(a,b)'='((a)<(b)?(a):(b))' "${DFLT[0]}" "${DFLT[1]}" \
+	"${DFLT[2]}" "${DFLT[3]}" "${DFLT[4]}" "${DFLT[5]}" "${DFLT[6]}" "${DFLT[7]}" -lncurses
+
+    cc -o prog.alt prog.alt.c -D'f(a,b)'='((a)<(b)?(a):(b))' "${DFLT[0]}" "${DFLT[1]}" \
+	"${DFLT[2]}" "${DFLT[3]}" "${DFLT[4]}" "${DFLT[5]}" "${DFLT[6]}" "${DFLT[7]}" -lncurses || exit 1
 }
 function testcaps()
 {
     make || exit 1
     ./termcaps
     T="${?}"
-    if [ "${T}" -ne 0 ]; then
+    if [[ "${T}" -ne 0 ]]; then
 	read -rp  "Terminal issues detected; do you wish to continue anyway (Y/N) ? " ans
 	[[ "${ans}" != "y" ]] && [[ "${ans}" != "Y" ]] && exit 1
     fi
 }
 function menu()
 {
+    echo
     printf "** GAME MODE SELECTION MENU **\n\n"
 
     echo "(0)  Drawing mode"
@@ -211,66 +221,75 @@ function play()
 	    configure_colours
 	    ;;
 	*)
+	    just_compile
 	    ;;
     esac
 
-    menu
-    read -rp "Make your selection (0 - 7 or any other key to exit): " mode
 
-    case "${mode}" in
-	0)  # Drawing mode 0
-	    draw0
-	    ;;
-	1)  # Drawing mode 1
-	    draw1
-	    ;;
-	2)  # Automatic mode (computer plays by itself) (photosensitive epilepsy/stimulation overload trigger)
-	    auto0
-	    ;;
-	3)  # Automatic mode variation 0 (photosensitive epilepsy/stimulation overload trigger)
-	    auto1
-	    ;;
-	4)  # grow shrink mode
-	    growshrink0
-	    ;;
-	5)  # grow shrink mode variation 0
-	    growshrink1
-	    ;;
-	6)  # hypnotic mode (photosensitive epilepsy/stimulation overload trigger)
-	    hypno
-	    ;;
-	7)  # stimulation / calming mode
-	    stim
-	    ;;
-	8)  # normal mode (aka Judges' Normal)
-	    norm
-	    ;;
-	9)  # 100ms w/o cheat modes (Judges' Zeroth)
-	    judges0
-	    ;;
-	10) # 75ms w/both cheat modes (Judges' First)
-	    judges1
-	    ;;
-	11) # Immediately win (Judges' Second)
-	    judges2
-	    ;;
-	12) # 50ms w/both cheat modes, evade at 200 moves (Judges' Third)
-	    judges3
-	    ;;
-	13) # 75ms w/both cheat modes, shrink mode (win with six bugs) (Judges' Fourth)
-	    judges4
-	    ;;
-	14) # Let computer win by itself very quickly (Judges' Fifth)
-	    judges5
-	    ;;
-	15) # Start at 400, shrink by 5 every 100 moves, cannibalism and max size possible
-	    growshrink3
-	    ;;
-	16) # Start at 400, shrink by 5 every 100 moves and max size possible
-	    growshrink4
-	    ;;
-	*)
-	    exit 0
-    esac
+    while true; do
+	menu
+	read -rp "Make your selection (0 - 7 or any other key to exit): " mode
+
+	case "${mode}" in
+	    0)  # Drawing mode 0
+		draw0
+		;;
+	    1)  # Drawing mode 1
+		draw1
+		;;
+	    2)  # Automatic mode (computer plays by itself) (photosensitive epilepsy/stimulation overload trigger)
+		auto0
+		;;
+	    3)  # Automatic mode variation 0 (photosensitive epilepsy/stimulation overload trigger)
+		auto1
+		;;
+	    4)  # grow shrink mode
+		growshrink0
+		;;
+	    5)  # grow shrink mode variation 0
+		growshrink1
+		;;
+	    6)  # hypnotic mode (photosensitive epilepsy/stimulation overload trigger)
+		hypno
+		;;
+	    7)  # stimulation / calming mode
+		stim
+		;;
+	    8)  # normal mode (aka Judges' Normal)
+		norm
+		;;
+	    9)  # 100ms w/o cheat modes (Judges' Zeroth)
+		judges0
+		;;
+	    10) # 75ms w/both cheat modes (Judges' First)
+		judges1
+		;;
+	    11) # Immediately win (Judges' Second)
+		judges2
+		;;
+	    12) # 50ms w/both cheat modes, evade at 200 moves (Judges' Third)
+		judges3
+		;;
+	    13) # 75ms w/both cheat modes, shrink mode (win with six bugs) (Judges' Fourth)
+		judges4
+		;;
+	    14) # Let computer win by itself very quickly (Judges' Fifth)
+		judges5
+		;;
+	    15) # Start at 400, shrink by 5 every 100 moves, cannibalism and max size possible
+		growshrink3
+		;;
+	    16) # Start at 400, shrink by 5 every 100 moves and max size possible
+		growshrink4
+		;;
+	    *)
+		exit 0
+	esac
+	read -rp "Do you want to continue? " ans
+
+	if [[ "$ans" != "y" && "$ans" != "Y" ]]; then
+	    break;
+	fi
+    done
 }
 play
