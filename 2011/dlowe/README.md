@@ -1,11 +1,10 @@
 # Most self deprecating
 
-    David Lowe  
-    434 Tenney Drive  
-    Rogue River, OR  
-    97537  
-    <j.david.lowe@gmail.com>  
-    <http://www.pootpoot.net/>  
+David Lowe  
+434 Tenney Drive  
+Rogue River, OR  
+97537  
+<j.david.lowe@gmail.com>  
 
 ## To build:
 
@@ -40,18 +39,26 @@ Try these pre-trained networks:
 ./dlowe xor-1/01 < dlowe-aux-data/xor-trained.net
 ./dlowe xor-1/10 < dlowe-aux-data/xor-trained.net
 
-./dlowe hint.html < dlowe-aux-data/english-trained.net
+./dlowe README.md < dlowe-aux-data/english-trained.net
 
 ./dlowe dlowe-aux-data.tar.bz2 < dlowe-aux-data/png-trained.net
 ```
 
+You can run `./try.me.sh` to do the same thing.
+
 NOTE: The `dlowe-aux-data.tar.bz2/` directory was created by:
+
 
 ```sh
 tar -jxf dlowe-aux-data.tar.bz2
 ```
 
 ## Judges' remarks:
+
+NOTE: the author's website, http://www.pootpoot.net, no longer exists (as the
+same) and the Internet Wayback Machine did not load scripts. Do you know if the
+domain changed? Please provide us with the proper URL or if you know if it was
+shut down for ever, please let us know that. Thank you!
 
 This entry is a ghoulish example of a brain (dead?) neural network classifier.
 It comes with a set of corpora for you to try.
@@ -61,7 +68,7 @@ It comes with a set of corpora for you to try.
 You can create your own trained networks.  For example, we trained a network
 on the C code of entries that were supplied to the 20Th IOCCC.
 
-The ioccc-winlose-trained.net was trained using the earlystop.pl tool:
+The ioccc-winlose-trained.net was trained using the [earlystop.pl](earlystop.pl) tool:
 
 ```sh
 rm -f ioccc-winlose-trained.net
@@ -70,101 +77,112 @@ rm -f ioccc-winlose-trained.net
 
 where:
 
-    ioccc_won_training/
-    	1/2 of C code of the 20th IOCCC winners (except for dlowe.c from 2011)
-	plus 1/2 of the C code winners from prior IOCCC contests
+- `ioccc_won_training/`
+    1/2 of C code of the 20th IOCCC winners (except for dlowe.c from 2011)
+    plus 1/2 of the C code winners from prior IOCCC contests
 
-    ioccc_won_test/
-    	1/2 of C code of the 20th IOCCC winners (except for dlowe.c from 2011)
-	plus 1/2 of the C code winners from prior IOCCC contests
+- `ioccc_won_test/`
+    1/2 of C code of the 20th IOCCC winners (except for dlowe.c from 2011)
+    plus 1/2 of the C code winners from prior IOCCC contests
 
-    ioccc_lost_training/
-	1/2 of C code from entries that that did not win
+- `ioccc_lost_training/`
+    1/2 of C code from entries that that did not win
 
-    ioccc_lost_test/
-	1/2 of C code from entries that that did not win
+- `ioccc_lost_test/`
+    1/2 of C code from entries that that did not win
 
-    NOTE: The above directies were not shipped and the C code from
-    	  entries that that did not win was flushed to /dev/null.
+NOTE: The above directories were not shipped and the C code from
+entries that that did not win were flushed to /dev/null.
 
-The earlystop.pl tool wrote:
+The [earlystop.pl](earlystop.pl) tool wrote:
 
     training 1 to 1001...
     training 1001 to 2001...
     prior error = 56.746974766043; current error = 58.095691135305
 
 The resulting ioccc-winlose-trained.net file was included in the
-dlowe-aux-data.tar.bz2 file in the above mentioned URL.
+[dlowe-aux-data.tar.bz2](dlowe-aux-data.tar.bz2) tarball.
 
-The dlowe.c was explicitly excluded from this trailing set.  So this test is interesting:
+The [dlowe.c](dlowe.c) was explicitly excluded from this trailing set, so this
+test is interesting:
 
 ```sh
-./dlowe dlowe.c < ioccc-winlose-trained.net
+./dlowe dlowe.c < dlowe-aux-data/ioccc-winlose-trained.net
 ```
 
-The match of dlowe.c to the lose/win trailed network was:
+The match of [dlowe.c](dlowe.c) to the lose/win trailed network was:
 
-    dlowe.c 0.125108
+```
+dlowe.c 0.125108
+```
 
 NOTE: The non-artificially intelligent decisions of the IOCCC judges include random
-      quirks and their non-linear judgment calls not found in the ioccc trained network.
-      Just because C code is or isn't scored highly by this network does not
-      mean it will win or lose a future IOCCC.  On the other hand ... it just might!
+quirks and their non-linear judgment calls not found in the ioccc trained network.
+Just because C code is or isn't scored highly by this network does not
+mean it will win or lose a future IOCCC.  On the other hand ... it just might!
 
 #### other data sets to try
 
 While we cannot supply you with the losing IOCCC source code, the author did supply a number
 data sets on which to test:
 
-We created the english-trained.net as follows:
+We created the [english-trained.net](dlowe-aux-data/english-trained.net) as follows:
 
 ```sh
-./dlowe -8000 english-1/ english-0/ < /dev/null > english-trained.net
+./dlowe -8000 dlowe-aux-data/english-1/ dlowe-aux-data/english-0/ < /dev/null > dlowe-aux-data/english-trained.net
 ```
 
-	english-0/
-	    Non-English (French) text
-	english-1/
-	    English (non-French) text
+- [dlowe-aux-data/english-0/](dlowe-aux-data/english-0/)
+    Non-English (French) text
 
-We created the png-trained.net as follows:
+- [dlowe-aux-data/english-1/](dlowe-aux-data/english-1)
+    English (non-French) text
+
+We created the [png-trained.net](dlowe-aux-data/png-trained.net) as follows:
 
 ```sh
-./dlowe -8000 png-1/ png-0/ < /dev/null > png-trained.net
+./dlowe -8000 png-1/ png-0/ < /dev/null > dlowe-aux-data/png-trained.net
 ```
 
-	png-0/
+- [dlowe-aux-data/png-0/](dlowe-aux-data/png-0/)
 	    Non-png (gif) images
-	png-1/
+
+- [dlowe-aux-data/png-1/](dlowe-aux-data/png-1/)
 	    png (non-gif) images
 
-We created the xor-trained.net as follows:
+We created the [xor-trained.net](dlowe-aux-data/xor-trained.net) as follows:
 
 ```sh
-./dlowe -8000 xor-1/ xor-0/ < /dev/null > xor-trained.net
+./dlowe -8000 dlowe-aux-data/xor-1/ dlowe-aux-data/xor-0/ < /dev/null > dlowe-aux-data/xor-trained.net
 ```
 
-	xor-0/
+- [dlowe-aux-data/xor-0](dlowe-aux-data/xor-0/)
 	    Data that XORs to 0
-	xor-1/
+
+- [dlowe-aux-data/xor-1/](dlowe-aux-data/xor-1/)
 	    Data that XORs to 1
+
+**NOTE**: The directory args **must end in a /** for them to work.
 
 ## Author's remarks:
 
-### Synopsis:
+### Synopsis
 
 This is an artificially intelligent judging tool to help the IOCCC judges.
 Here's to shorter, more frequent contests!
 
-### Description:
+### Description
 
-This is a multilayer perceptron (a feedforward artificial neural network)
-which can be trained, using on-line backpropagation, to classify input files.
+This is a multilayer [perceptron](https://en.wikipedia.org/wiki/Perceptron) (a
+[feedforward artificial neural
+network](https://en.wikipedia.org/wiki/Feedforward_neural_network))
+which can be trained, using on-line
+[backpropagation](https://en.wikipedia.org/wiki/Backpropagation), to classify input files.
 
-It has a fixed topology of 2^16 input neurons, 6 hidden neurons and 1 output
+It has a fixed topology of `2^16` input neurons, 6 hidden neurons and 1 output
 neuron.
 
-The neurons' activation function is the logistic function 1 / (1 + e ^ -x).
+The neurons' activation function is the logistic function `1 / (1 + e ^ -x)`.
 
 ### Classifying
 
@@ -188,7 +206,7 @@ trained, but it's geared toward interpretation as a *probability* or a
 ./dlowe -<n_iterations> corpus1/ [...] corpus0/ < start.net > end.net
 ```
 
-    NOTE: The directory args must end in a / for them to work.
+**NOTE**: The directory args **must end in a /** for them to work.
 
 To train a network, one specifies a starting network (on stdin), two or more
 corpora (directories containing training data), and the number of training
@@ -214,15 +232,15 @@ https://images.google.com search for "obfuscate filetype:gif".
 
 Results:
 
- * using these corpora as a training set
- * using several hundred random *.gif and *.png files from my home computer as
-   a test set
- * using the included "earlystop.pl" script, which stopped after 67000 iterations.
- * interpreting output of "> 0.5" as "probably a .png" and "< 0.5" as "probably
-   a .gif"
- * produced a network with about 87% accuracy
+* using these corpora as a training set.
+* using several hundred random `*.gif` and `*.png` files from my home computer as
+  a test set
+* using the included [earlystop.pl](earlystop.pl) script, which stopped after 67000 iterations.
+* interpreting output of `> 0.5` as "probably a .png" and `< 0.5` as "probably
+  a .gif"
+* produced a network with about 87% accuracy
 
-#### english corpora
+#### English corpora
 
 The english-1 corpus was obtained by manually scraping the first results from
 a https://www.google.com/webhp?lr=lang_en search for "paris filetype:txt".
@@ -230,16 +248,16 @@ a https://www.google.com/webhp?lr=lang_en search for "paris filetype:txt".
 The english-0 corpus was obtained by manually scraping the first results from
 a https://www.google.com/webhp?lr=lang_fr search for "paris filetype:txt".
 
-Results:
+##### Results:
 
- * using these corpora as a training set
- * using several dozen additional text files (obtained by the same methods)
-   as a test set
- * using the included "earlystop.pl" script, which stopped after 10000
-   iterations.
- * interpreting output of "> 0.5" as "probably english" and "< 0.5" as
-   "probably french"
- * produced a network with 100% accuracy
+* using these corpora as a training set.
+* using several dozen additional text files (obtained by the same methods)
+as a test set.
+* using the included [earlystop.pl](earlystop.pl) script, which stopped after 10000
+iterations.
+* interpreting output of `> 0.5` as "probably English" and `< 0.5` as
+"probably French"
+* produced a network with 100% accuracy
 
 #### xor corpora
 
@@ -247,15 +265,15 @@ The xor-1 corpus consists of two files containing '01' and '10' respectively.
 
 The xor-0 corpus consists of two files containing '00' and '11' respectively.
 
-Results:
+##### Results:
 
- * using these corpora as a training set
- * takes about 8000 iterations to learn xor to within a tolerance of <0.01
+* using these corpora as a training set.
+* takes about 8000 iterations to learn xor to within a tolerance of `<0.01`.
 
 ### Limitations
 
 The program can't tell you anything meaningful about files with less than two
-bytes in them (I'm looking at you, smr.c!)
+bytes in them (I'm looking at you, [smr.c](/1994/smr/smr.c)!)
 
 You must include the trailing directory separator on training directories
 (this allows the program to be portable without wasting precious bytes on
@@ -265,7 +283,7 @@ Serialized network files are only portable between systems with the same
 floating-point representation and endianness.
 
 Making sure not to overfit the network to the training data is a bit of a
-black art. I have enclosed 'earlystop.pl', a wrapper script that implements
+black art. I have enclosed [earlystop.pl](earlystop.pl), a wrapper script that implements
 a simple 'early stopping' algorithm; other techniques are possible.
 
 Bad input (e.g. nonexistent files, non-numeric number of iterations, etc.)
@@ -284,24 +302,18 @@ library (untested, but they do exist).
 Backpropagation doesn't always converge: if you play with this long enough,
 you'll eventually have a training session that completely fails to converge.
 
-### Obfuscation:
+### Obfuscation
 
-Zombies! (Since neural networks are modeled after BRAINS, ya know? And
-corpus sounds a lot like corpse. And I have 4- and 7-year-old kids ;)
-
-Neural networks are interesting, and while the math isn't terribly difficult,
+- Zombies! (Since neural networks are modeled after BRAINS, ya know? And
+corpus sounds a lot like corpse. And I have 4- and 7-year-old kids ;) )
+- Neural networks are interesting, and while the math isn't terribly difficult,
 their behavior is difficult to fully understand.
-
-Had some extra space in one of the major data structures, and it seemed a
+- Had some extra space in one of the major data structures, and it seemed a
 shame to waste it.
-
-Similarly, I think three file pointers ought to be enough for anyone.
-
-Lots of magic numbers expressed in various ways.
-
-Random abuse of random C trivia.
-
-Some textual changes were made to maximize the classification of this program
+- Similarly, I think three file pointers ought to be enough for anyone.
+- Lots of magic numbers expressed in various ways.
+- Random abuse of random C trivia.
+- Some textual changes were made to maximize the classification of this program
 by a network trained to recognize ioccc winners ;)
 
 ... but mostly zombies!
