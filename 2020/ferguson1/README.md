@@ -15,62 +15,67 @@ make
 
 ```sh
 WAIT=N WALLS=[01] EVADE=N SIZE=N MAXSIZE=N GROW=N SHEDS=N SHED=N CANNIBAL=[01] ./prog
-# Start pressing some arrow keys
+# start pressing some arrow keys
 ```
 
-Variables:
+where `N` is a number and `[01]` is either `1` or `0` (or more correctly zero
+and non-zero).
 
-* WAIT	    
+### Variables:
+
+* **`WAIT`**	    
 	    	positive or negative integer that changes how long to wait for
 		a key press prior to moving again. < 0 blocks which allows
 		for complete control over movement at your own pace. Default
-		231; you can move faster by holding down an arrow key.
+		231; you can move faster by holding down or rapidly pressing an
+		arrow key.
 
-* WALLS	  
-	        whether the walls are passable or impassable (default
-		passable). 0 means impassable; 1 passable.
+* **`WALLS`**	  
+	        whether the walls are passable or impassable. Default passable,
+		1; 0 disables.
 
-* EVADE	
+* **`EVADE`**  	
 	        how many movements the Snake moves before the bug (well
-		insect; see notes below about why bugs) is will move to
-		another location on the field.
+		insect; see notes below about why bugs) will move to
+		another location in the field. Default 300; 0 disables.
 
-* SIZE	
+* **`SIZE`**   
 	        initial size of the Snake. Note that it grows by one per
 		move so at the default 5 it will not initially be 5
 		characters long! < 0 is an immediate win.
 
-* MAXSIZE	
+* **`MAXSIZE`**   	
 	        the maximum size the Snake can become before the game is
 		won. < 0 is the maximum size based on terminal dimensions;
 		any other size will be capped based on the terminal
-		dimensions to prevent problems.
+		dimensions to prevent problems. Note that when **`SIZE+GROW >=
+		MAXSIZE`** you win _before_ you grow to the full size!
 
-* GROW	
-	        size to grow every time you eat a bug. Negative values are
-		allowed! This creates for fun gameplay modes with enough
-		creativity. See [gameplay.html](gameplay.html) for some
-		examples.
+* **`GROW`**   
+	        size to grow every time you eat a bug. Default 5; negative
+		values are allowed. 'Negativity' creates for fun gameplay modes with
+		enough creativity. See [gameplay.md](gameplay.md) /
+		[gameplay.html](gameplay.html) as well as [play.sh](play.sh) for some examples.
 
-* SHED	    
-	        every SHED movements you will grow (> 0), shrink (< 0) or
-		not at all (0) by the SHEDS value. Again with creativity you
-		can create some fun gameplay modes.
-
-		NOTE: SHED and SHEDS is actually a misnomer; see notes
+* **`SHED`**	    
+	        every **`SHED`** movements you will grow (> 0), shrink (< 0) or
+		stay the same length (0) by the **`SHEDS`** (below) value. Again
+		with creativity you can create some fun gameplay modes.  NOTE:
+		the concept of shedding in this game is a misnomer; see notes
 		below.
     
-* SHEDS	    
-	        every SHED movements will impact what this value means: grow
-		(> 0), shrink (< 0) or not at all (0). Again with creativity
-		you can create some fun gameplay modes here. For instance
-		you can grow upon eating a bug but shrink every SHED
-		movements and it's a battle of whether you win by SIZE < 0
-		or SIZE >= MAXSIZE. See play.sh for examples.
-		NOTE: SHED and SHEDS is actually a misnomer; see notes
-		below.
+* **`SHEDS`**	    
+	        every **`SHED`** movements will impact what this value means: grow
+		(> 0), shrink (< 0) or not at all (0). Exception: if the snake
+		eats a bug the counter isn't incremented. Again with creativity
+		you can create some fun gameplay modes here. For instance you
+		can grow upon eating a bug but shrink every **`SHED`** movements
+		and then it's a battle of whether you win by **`SIZE < 0`** or
+		**`SIZE >= MAXSIZE`**. See [play.sh](play.sh) for examples.
+		NOTE: the concept of shedding in this game is a misnomer; see
+		notes below.
 
-* CANNIBAL	
+* **`CANNIBAL`**   		
 	        whether you can go through the Snake or not. Default is 0
 		(cannot).
 
@@ -137,52 +142,27 @@ Read ***ONLY*** if you really must give up trying to de-obfuscate!
 
 Snake has two cheat modes (passable walls and self [cannibalism]), a drawing (or
 practising) mode, *can play by itself (**and win!**)*, is coloured (included
-[snake-colours.sh][] and [play.sh][] scripts compile in player-selected
-colours) and there are many other play modes (many more can be devised with the
+[snake-colours.sh][] and [play.sh][] scripts compile in player-selected colours)
+and there are many other play modes (many more can be devised with the
 imagination and the environmental variables; see [gameplay.html][] for many
-examples) and options.  You can pause and there's even a built-in test unit for
-some features!  The following variables change the game in the following ways
-(all can be combined):
+examples and [play.sh][] for preconfigured modes) and options.  You can pause
+and there's even a built-in test unit for some features!  The variables
+mentioned in the to run section at the top of this file modify the behaviour of
+Snake.
 
+Here are some other features of the game:
 
-*   The speed of the snake: how many milliseconds to **WAIT** for input before
-    moving; *default 231 milliseconds*. You can move faster by pressing a
-    direction key quicker or even holding it down.
-
-*   If the bug (to eat) will move (**EVADE**) after user-specified number of snake
-    moves (*default 300, 0 disables*).
-
-*   If the snake can go through **WALLS** (coming out at the opposite wall)
-    (*default 1, yes*).
-
-*   If the snake can go through itself (**CANNIBAL**) (*default 0, no*).
-
-*   The initial **SIZE** of the snake (*default 5*). Note that it grows one by
-    each movement so even if you start at 5 it will take some movements before
-    you are the full length.
-
-*   The size the snake must become in order to win the game (**MAXSIZE**, *default 997*).
-
-*   How much to **GROW** each time a bug is eaten (*default 5*, can be negative).
-
-*   How many moves (**SHED**, *default 0, disabled*) before 'stretching' (grow)
-    (**SHEDS**, *default 5*; can be negative). This is how snakes grow in the wild so is a
-    misnomer here because snakes don't grow in the manner that the original
-    Snake game was designed.
-
-    - Exception: if the bug is eaten the counter isn't incremented.
-
-*   A drawing/practising mode (**WAIT** < 0 makes `timeout()` set blocking read).
+*   A drawing/practising mode (**`WAIT`** < 0 makes `timeout()` block).
 
 *   Computer plays the game (**WAIT=0**).  
 	- **EPILEPSY/STIMULATION OVERLOAD WARNING** included in the relevant
-	section (this goes for a low **EVADE** value too).
+	section (this goes for a low **`EVADE`** value too).
 
 *   Grow-Shrink mode (Positive and Negative Winning) mode (see
     [gameplay.html][] for more details).
 
 *   The dimensions of the game (this is actually a terminal thing but I document
-    how to do this and its potential pitfalls) (**LINES** , **COLUMNS**).
+    how to do this and its potential pitfalls) (**`LINES`** , **`COLUMNS`**).
 
 There are no complicated command line invocations; it's just a matter of passing
 into the game descriptively named variables and I include a script that sets up
@@ -228,7 +208,7 @@ though much of it is what's also above). To render try:
 man ./snake.1
 ```
 
-The [COMPILING][] file has a few portability notes and the [HACKING][] file has
+The [COMPILING.md][] file has a few portability notes and the [HACKING.md][] file has
 some information on how one might modify things, things that could be
 implemented (and how to/how not to go about some of the things) as well as some
 other information on the entry (some of which is deliberately not true - a
@@ -308,7 +288,8 @@ everything? That's an unintentional lie; I thought it was everything but I
 implemented many new things after that. In fact I have numerous times thought I
 was done only to have added yet another feature - or two or three or more!
 
-Second is the old Atari game [Surround][]. There were a few modes as I recall.
+Second is the old Atari game [Surround][] (according to Wikipedia it might even
+be the origin of Snake itself). There were a few modes as I recall.
 The object of the game was to surround your opponent so that they would run into
 you, the wall or themselves. The opponent was either the computer or another
 player.
@@ -318,11 +299,11 @@ likewise).  There was also a drawing mode where you could just move round making
 different designs though that this is in my entry is a happy coincidence
 (because `timeout()` will block when it gets a negative value). It's true that
 in my Snake it's not quite the same but it's close enough. Perhaps it can be
-made more like Surround if it grows every movement but then depending on the max
+made more like [Surround][] if it grows every movement but then depending on the max
 size of the snake the game might be over fairly quickly (I don't remember how
-it was done in Surround).
+it was done in [Surround][]).
 
-In Surround each move you made you would grow in size by one. This is what
+In [Surround][] each move you made you would grow in size by one. This is what
 inspired the shedding mode. Anyway I always loved the game and it's similar to
 Snake in several ways.
 
@@ -427,7 +408,7 @@ And if you're a show-off you can try:
 -   Do more than one or all of the above at the same time (the longer the snake
     becomes the more often you should do these things).
 -   Eat a [great chocolate cake][]. Actually you should do that whether you're
-    trying to show off or not. Sleep, bathe, eat chocolate cake, play Snake, eat
+    trying to show off or not. Sleep, bath, eat chocolate cake, play Snake, eat
     chocolate cake, play Snake, sleep, ... For a great recipe see below.
 
 But if that's not enough I don't know what to tell you other than suggest that
@@ -441,7 +422,7 @@ a pun and every pun deserves to be shed).
 They grow through a process called moulting - shedding their skin (other
 creatures also moult). This takes place over some days and unlike humans snakes
 never stop growing (though growth slows down as they mature). I chose the
-variables **SHED** and **SHEDS** for simplicity and because the words are
+variables **`SHED`** and **`SHEDS`** for simplicity and because the words are
 shorter. I don't like the words because it's rather a misnomer but what I had
 chosen before was longer - STRETCH and STRETCHES.
 
@@ -461,10 +442,10 @@ when other implementations don't have it this way. There are a few reasons.
 
 First is that the friend's implementation had it that way and it had been a long
 time since I had played it (if I ever did? I don't know now: I played so many
-games over the years and the game most alike it that I played is Surround, as
+games over the years and the game most alike it that I played is [Surround][], as
 below).
 
-It also is the way it is in Surround.
+It also is the way it is in [Surround][].
 
 It makes cannibalism mode very interesting.
 
@@ -512,13 +493,13 @@ out bad!
 I submitted three Snake versions; these are the other layouts for those few
 (more likely none) who are interested to see them.
 
-The prog.2.c has more digraphs but I think no other significant differences.
+The [prog.2.c](prog.2.c) has more digraphs but I think no other significant differences.
 
-The prog.3.c is in a more artistic layout (a backwards S), has at least one
+The [prog.3.c](prog.3.c) is in a more artistic layout (a backwards S), has at least one
 additional obfuscation technique (see spoilers) but it also has more digraphs
 and as the judges said they feel that digraphs are dated so that's probably why
-they chose the first layout. The prog.3-j.c version is prog.3.c with a shorter J
-define.
+they chose the first layout. The [prog.3-j.c](prog.3-j.c) version is
+[prog.3.c](prog.3.c) with a shorter `J` macro.
 
 The prog.alt.c version is the one that allows for customising the bug colour and
 it's used in both [snake-colours.sh][] and [play.sh][]. It also calls `erase()`
@@ -577,8 +558,8 @@ my entries. It's a huge honour; thank you! I also happen to **love** your
 comments as well as the award titles. And yes indeed 'most of us could use
 *[Double-layered Chocolate Fudge Cake][]*!'
 
-[COMPILING]: COMPILING
-[HACKING]: HACKING
+[COMPILING.md]: COMPILING.md
+[HACKING.md]: HACKING.md
 [bugs.html]: bugs.html
 [troubleshooting.html]: troubleshooting.html
 [human snakes]: http://www.macroevolution.net/snake-human-hybrids.html

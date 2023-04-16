@@ -37,7 +37,7 @@ it as structured as possible/easiest to find.
 
 Because the score line is dynamic in length depending on the terminal size it
 can happen that the score/status wraps to the next line(s). This can be fixed by
-modifying the status line (see [HACKING][]) but you shouldn't need it to be very
+modifying the status line (see [HACKING.md][]) but you shouldn't need it to be very
 wide.
 
 * RESOLUTION #0: Use a bigger screen (it doesn't take that many columns)
@@ -59,7 +59,7 @@ wide.
 		#define J Z(B:%zu\n), c);
 
     Recompile and try again. That will then show only the number of bugs eaten. See
-    the HACKING file for other data you can include (though there are some
+    the [HACKING.md][] file for other data you can include (though there are some
     discrepancies here and there as you'll see).
 
 
@@ -210,18 +210,18 @@ snake. See below for some tests.
 		terminal supports bold
 		terminal supports colours
 
-		terminal rows  42 (39  playable)
-		terminal cols 157 (155 playable)
+		terminal rows  41 (38  playable)
+		terminal cols 154 (152 playable)
 
-		snake size:   997 (max size: 6006)
-		      bugs:   199 (max size: 1201)
+		snake size:   997 (max size: 5738)
+		      bugs:   199 (max size: 1147)
 
-		at least 34 columns recommended for snake size 997   (is 157)
-		at least 37 columns recommended for snake size 6006  (is 157)
+		at least 34 columns (currently 154) recommended for snake size 997
+		at least 37 columns (currently 154) recommended for capped snake size 5738
 
 		No problems detected.
 
-    Why are there only 39 playable lines for 42 rows? The first row is the score
+    Why are there only 38 playable lines for 41 rows? The first row is the score
     line, the second is the top wall, the last is the bottom wall. For columns
     you have the left and rightmost columns for the walls.
 
@@ -286,7 +286,8 @@ so that's probably why; in CentOS I did have to install it specially.
 
     The `-m` suffix to terminal names means monochrome. Under Linux this
     terminal is under `/usr/share/terminfo/l/linux-m` and under macOS (Catalina
-    at least) it's at `/usr/share/terminfo/6c/linux-m`.
+    at least) it's at `/usr/share/terminfo/6c/linux-m` (for macOS Ventura it's
+    `/usr/share/terminfo/6c/linux-m`).
 
 * BOTTOM LINE: Try using a monochrome terminal for the game by e.g.:
 
@@ -295,7 +296,7 @@ so that's probably why; in CentOS I did have to install it specially.
     And then on your white background terminal the game should keep the
     background white and the foreground black. This will of course mean you have
     no colour but unfortunately changing the background colour of curses would
-    eat too many bytes in the entry (I cite the functions in the HACKING file).
+    eat too many bytes in the entry (I cite the functions in the [HACKING.md][] file).
 
     I discuss colours and terminals in much more detail in
     [terminals.md][] ([terminals.html][]).
@@ -335,7 +336,9 @@ hit a key every time to move because it is blocking.
 
 What happens if you do:
 
-		WALLS= ./prog
+```sh
+WALLS= ./prog
+```
 
 Can you run into the wall since you didn't specify a value and the default is 1?
 No. That's not the way it works. By saying WALLS= you have told the system that
@@ -347,43 +350,55 @@ for a number could have a better value than 0.
 If however you were to give valid input followed by invalid input the valid
 input would be parsed. For example:
 
-		WALLS=1test ./prog
+```sh
+WALLS=1test ./prog
+```
 
-Would let you go through the walls. On the other hand
+would let you go through the walls. On the other hand
 
-		WALLS=test1 ./prog
+```sh
+WALLS=test1 ./prog
+```
 
-Would not. Furthermore if you specify the same variable more than once it's the
+would not. Furthermore if you specify the same variable more than once it's the
 last one that counts. For example:
 
-		WALLS=0 WALLS=1 CANNIBAL=1 CANNIBAL=0 ./prog
+```sh
+WALLS=0 WALLS=1 CANNIBAL=1 CANNIBAL=0 ./prog
+```
 
-Would allow you to go through walls but you could not cannibalise.
+would allow you to go through walls but you could not cannibalise.
 
 Also note that I specify base 0 which means that you can also have it in hex and
 octal. These are all the same:
 
-		SIZE=0x3
-		SIZE=3
-		SIZE=03
+```
+SIZE=0x3
+SIZE=3
+SIZE=03
+```
 
 The way the functions work is if 0x (or 0X) it's considered hex; if prefixed
 with a 0 it's octal and otherwise it's decimal. If you specify invalid data
 (even if only at the beginning of the string) the functions return 0. For
-example
+example:
 
-		SIZE=0
-		SIZE=f
-		SIZE=-
-		SIZE=f1
+```
+SIZE=0
+SIZE=f
+SIZE=-
+SIZE=f1
+```
 
-Are all equivalent.
+are all equivalent.
 
-Observe that
+Observe that:
 
-		SIZE=08
+```
+SIZE=08
+```
 
-Is invalid input because octal only has digits 0 - 7: the resulting size will be
+is invalid input because octal only has digits 0 - 7: the resulting size will be
 0.
 
 
@@ -402,31 +417,35 @@ screen size must be at least 10 lines/columns (though in code the number will
 not be 10); if either is smaller you will get 'screen too small' and the game
 will end (yes things that haven't begun can be ended).
 
-If calloc() fails to obtain the needed memory you'll see something like (here it
+If `calloc()` fails to obtain the needed memory you'll see something like (here it
 was before I added proper - to make the perfect and obvious pun - capsizing
 so that by setting the size to -1 it went to the max unsigned value):
 
-		$ MAXSIZE=-1 ./prog
-		memory error
-		X:0/157 Y:0/42 S:3/18446744073709551614 B:0
+```sh
+$ MAXSIZE=-1 ./prog
+memory error
+X:0/157 Y:0/42 S:3/18446744073709551614 B:0
+```
 
 
-BTW: There are two arrays that have to be **MAXSIZE** (technically + 1).
+BTW: There are two arrays that have to be **`MAXSIZE`** (technically + 1).
 
 Is it possible that some value specified by the user could mess this up? I do
 not know but what I do know is that because it's unsigned it can't be negative;
 if the max size is 0 then the array size will be 1 but it won't matter because
 the snake size will be >= that max anyway. But here's a curious output:
 
-		SIZE=1 MAXSIZE=0 ./prog
-		YOU WIN!
-		X:78/156 Y:20/41 S:0/0 B:0
+```sh
+SIZE=1 MAXSIZE=0 ./prog
+YOU WIN!
+X:78/156 Y:20/41 S:0/0 B:0
+```
 
 Why does it show snake size as 0 when I specified 1? It's because the max size
 is 0 and I limit the size to be no bigger than the max size.
 
 
-[HACKING]: HACKING
+[HACKING.md]: HACKING.md
 [prog.c]: prog.c
 [bugs.md]: bugs.md
 [terminals.md]: terminals.md

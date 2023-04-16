@@ -38,10 +38,10 @@ already knew that so no harm there, hey?
 The gameplay I have already described but this explains the way things are
 actually done in more detail.
 
-First I initialise curses; if this fails I print an error message ('curses
-error') and return 1.  Next the screen size is determined and I subtract 1 from
-both x/y. If it's too small curses is ended and an error message ('screen
-too small') is printed - returning 1.
+First I initialise curses; if this fails I print an error message (`curses
+error`) and return 1.  Next the screen size is determined and I subtract 1 from
+both `x`/`y`. If it's too small curses is ended and an error message (`screen
+too small`) is printed - returning 1.
 
 Next the max size of the snake is determined: if `MAXSIZE` is specified then
 it's the value of that; otherwise it's the default. But in either case if it's
@@ -49,18 +49,18 @@ too big based on the screen dimensions it's capsized. The arrays for the snake
 are this size + 1. Other environmental variables are also processed.
 
 Then the arrays are allocated; if either return NULL curses is ended, an error
-message ('memory error') is printed and return 1.
+message (`memory error`) is printed and return 1.
 
 If no errors have occurred I set up colours, turn on bold, set up the keypad
 etc., place the snake, the bug, draw the walls and then it waits for the first
 move (or quit of course). Technically I don't 'wait' for input as such: unless
 the wait time is negative (drawing mode) it's just a non-blocking call up to the
-WAIT milliseconds but in no event will the snake move until it is told to at
+`WAIT` milliseconds but in no event will the snake move until it is told to at
 least once (in drawing mode it will always wait).
 
 In drawing mode if you pause then when you resume (hit space) the snake will
 move the last direction it had been told to move - because the direction is set
-and input was detected (the same goes for another key e.g. 'g' - just like in
+and input was detected (the same goes for another key e.g. `g` - just like in
 normal mode). But it will then wait again for input.
 
 The snake function both draws the snake and updates the arrays; if the new size
@@ -85,9 +85,9 @@ loses/quits/wins) the movement proceeds; if the game hasn't started yet it will
 jump to the top of the loop. If it's paused the same thing until it's resumed.
 The rest of the loop can be described thusly.
 
-It checks the current max y/x, draws the walls, bug, gets any input from
+It checks the current max `y`/`x`, draws the walls, bug, gets any input from
 keyboard, and then if there is movement checks for collisions; if current max
-x/y are is/are smaller than original then it's automatically a game over from
+`x`/`y` are is/are smaller than original then it's automatically a game over from
 running into walls regardless of that feature status - this simplifies things
 greatly (see below for more details).
 
@@ -99,7 +99,7 @@ it's also game over.
 
 As the snake moves it will for each move grow by one up to the technical size.
 This might at times look a bit different from other times but it's a visual
-thing based on the internal data of the game and the features enabled for
+thing based on the internal state of the game and the features enabled for
 example shedding and shedding size.
 
 Finally if the snake's new coordinates are on a bug a new bug is placed on the
@@ -128,13 +128,13 @@ for bugs.
 
 # <a name="manual-automatic" href="#toc">Drawing (manual) and computer playing (automatic) modes</a>
 
-How do these modes work? The `timeout()` function takes a signed int: if it's <
-0 it waits indefinitely; if it's 0 it returns immediately even if there's no
-input waiting (if input is there then it's used instead); and if it's > 0 it
+How do these modes work? The `timeout()` function takes a signed int: if it's `<
+0` it waits indefinitely; if it's `0` it returns immediately even if there's no
+input waiting (if input is there then it's used instead); and if it's `> 0` it
 waits that many milliseconds. Thus a negative value allows for complete control
-over the snake's movement (speed and otherwise), a value of 0 means the snake
+over the snake's movement (speed and otherwise), a value of `0` means the snake
 will move as long as it's not paused etc. and otherwise it waits up to that many
-milliseconds (which is how the 0 value comes into play).
+milliseconds (which is how the `0` value comes into play).
 
 
 # <a name="collision" href="#toc">Collision detection</a>
@@ -149,8 +149,8 @@ verifying if the snake head is at a place that's occupied by the snake, the wall
 or the bug.
 
 The bug does its best to avoid landing where the snake is but given that snakes
-are very flexible and cunning who can tell what might happen? As I noted these
-bugs are not bugs! :)
+are very flexible and cunning who can tell what might happen? As I noted _these
+bugs are not bugs! :)_
 
 
 ## <a name="cannibalcollision" href="#toc">Cannibal collision detection</a>
@@ -351,7 +351,7 @@ converted this:
 		    (!P && (P = 1))||(P=0);
 
 
-- Makes use of the different 'namespaces' to have variables and labels be the
+- Makes use of the different namespaces to have variables and labels be the
 same identifier. For example in main() there's a variable that also have the
 same name label for `goto` (there used to be two pairs in main()).
 
@@ -361,7 +361,7 @@ two loops (a for() in the 'while()'), re-entering (as in starting over) a for()
 loop and for dealing with errors.
 
 - Why do I check for `Q || P` and then goto x only to then check for `!Q && !D`
-to then goto x? Do I need to check Q at all? In fact I do but at a quick glance
+to then `goto x`? Do I need to check `Q` at all? In fact I do but at a quick glance
 it might be easy to miss.
 
 - Uses an unnamed array (compound literal) for several different game variables.
@@ -437,10 +437,10 @@ dimensions. Now in the first call in main() I have the code and tests following:
     offsets for every time I use negative offsets. But where's the fun in that?
     :)
 
-    BTW: Some of these are not in the table of expressions in the HACKING file.
+    BTW: Some of these are not in the table of expressions in the HACKING.md file.
     Also there might be some code in there that is no longer correct (it was
     before I started obfuscation) though it might be able to give an idea.
-    Spoilers abound in that file (in addition to this file) but the HACKING file
+    Spoilers abound in that file (in addition to this file) but the HACKING.md file
     states things that are no longer true: a way of obfuscation itself! Instead
     of misleading comments it's misleading statements in the file that explains
     what some of the things are for!
@@ -731,7 +731,7 @@ simply return E() and thus it's only called once. Similarly for `Q` I set it to
 top of the code and then in main() assigned like: `l = ++(int) { 3 } ;` which
 equates to 4. I think that's pretty cool!
 
-- What is this? `for(I=0; A&&I<A-(A-A||A); ++I)` In fact the `A-(A-A||A)` is
+- What is this? `for(I=0; A&&I<A-(A-A||A); ++I)`. In fact the `A-(A-A||A)` is
 equivalent to `A-1`: `A` here is always > 0 so `A-A` is 0; however because `A`
 is non-zero the expression `A-A||A` is equivalent to `0 || A` and since A is
 non-zero we know that the value is `1` and thus it's `A - 1`! I quite like this
@@ -818,25 +818,29 @@ Another thing that reduced a lot of bytes - 34 to be exact - is using the
 `mvvline()` and `mvhline()` ncurses functions rather than use three for loops to
 draw the walls.
 
-Much later on I made it so that the E() function returns 1; this was a clever
+Much later on I made it so that the `E()` function returns 1; this was a clever
 way to have what I already did have - return 1 if there's an error (i.e. memory
 error or curses error or screen too small) but otherwise return 0 without having
 to have a separate int and I could get rid of two `{}` pairs as well as add
-another use for the E() function: it calls endwin() exactly once (even though
+another use for the `E()` function: it calls endwin() exactly once (even though
 when there isn't an error condition it can be called more than once) as well as
 printing the final score - or else an error. And now it also allows for printing
 an error and returning from main() at the same time! This also means that by
-returning E() I am returning 1 but if the end of main() is reached 0 is
+returning `E()` I am returning 1 but if the end of main() is reached 0 is
 returned. In either case curses is ended.
 
 One of these optimisations saved four bytes simply by taking advantage of the
 value of a loop iterator after the loop. The loop is:
 
-	    for (I = 0; A && I < A - 1; ++I)
+```c
+for (I = 0; A && I < A - 1; ++I)
+```
 
 However after the loop I had this:
 
-	    A > 1 && q(n[A - 1],e[A - 1], 'o');
+```c
+A > 1 && q(n[A - 1],e[A - 1], 'o');
+```
 
 When I was considering moving that line to before the loop it occurred to me
 that as long as `A > 0` then `A - 1 == I` after the loop. I still had to check
@@ -857,43 +861,54 @@ the problem.
 
 First, the function that turns on colours looked like:
 
-	    if (h) attron(m(PAIR(L)));
-	    else attroff(m(PAIR(L)));
+```c
+if (h) attron(m(PAIR(L)));
+else attroff(m(PAIR(L)));
+```
 
 But I thought is that else actually needed? If I were to switch the order so
 that the `attroff()` is called first then I could just do an `if (h)` -
 therefore getting rid of the `else`! But then I thought why not do what I've
 done elsewhere? I had:
 
-	    attroff(m(PAIR(L)));
-	    if (h) attron(m(PAIR(L)));
+```c
+attroff(m(PAIR(L)));
+if (h) attron(m(PAIR(L)));
+```
 
 But I then saved an extra byte by making it:
 
-	    attroff(m(PAIR(L)));
-	    h && attron(m(PAIR(L)));
+```c
+attroff(m(PAIR(L)));
+h && attron(m(PAIR(L)));
+```
 
 That saved two bytes.
 
-Second let's look at the B() function: there were two things I thought of that
+Second let's look at the `B()` function: there were two things I thought of that
 would save some bytes (I no longer know how many but a few at least possibly six
 or even more). I had the following code:
 
-	    if (V && U && o) { S(N); b(1); }
+```c
+if (V && U && o) { S(N); b(1); }
+```
 
 This made sure that only if the snake has caught a bug should it grow by the
 growth size and increase the bug count. But was checking for the `V` or `U`
-necessary? I gave it a look over and it occurred to me: the only time B() is
+necessary? I gave it a look over and it occurred to me: the only time `B()` is
 called with `1` (thus `o` is 1 so the if is true) was if the bug actually is
 caught. That means I could remove the `V && U &&` part of the if! Thus it became
 instead:
 
-	    if (o) { S(N); b(1); }
-
+```c
+if (o) { S(N); b(1); }
+```
 
 Then this
 
-	    !o && V && U && q U,V,' ');
+```c
+!o && V && U && q U,V,' ');
+```
 
 ...is to make sure to only clear the spot the bug is (or was) at if
 the bug was NOT eaten. Why not eaten? Because if it was eaten it means the
@@ -912,7 +927,9 @@ where the snake already is. So if I had to make sure the game had started (the
 snake has moved at least once) what could I check? In fact that means the
 direction is not 0! So I could just replace it with:
 
-	    !o && D && q *U,*V,' ');
+```c
+!o && D && q *U,*V,' ');
+```
 
 That reduced the count further. But then I wondered if even that much is needed.
 The condition is that the bug has evaded which means the snake has moved already
@@ -927,9 +944,11 @@ the score line is updated: so the empty space will be overwritten anyway. And if
 the score line is made an empty string it doesn't matter because it'll appear as
 all spaces anyway. Thus I could save another three bytes by changing it to:
 
-	    !o  && q *U,*V,' ');
+```c
+!o  && q *U,*V,' ');
+```
 
-Technically it would be a `" "` (see [HACKING][] file) else for N (not referring to
+Technically it would be a `" "` (see [HACKING.md][] file) else for N (not referring to
 the variable though it might very well matter here too) movements (i.e.  due to
 sizes) you will at times (e.g. after eating a bug) see the snake body char at
 0,0. I'm not bothered about that though because the score line is meant to
@@ -939,8 +958,7 @@ imposition on usage (and for that matter having a 'o' at 0,0 isn't either).
 
 [gameplay.md]: gameplay.md
 [gameplay.html]: gameplay.html
-[COMPILING]: COMPILING
-[HACKING]: HACKING
+[HACKING.md]: HACKING.md
 
 -----------------------------------------------------------------------------------------------------
 (c) Copyright 1984-2020, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved

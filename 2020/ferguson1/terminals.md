@@ -232,7 +232,7 @@ properly. Because that's what funny means in this context.
 It'd be nice if curses could detect hitting more than one arrow key at the
 same time so that diagonal directions would be possible but unfortunately it's
 not (`cat -v` confirms this). Even if I were to define four extra keys what
-would they be? And what about the head character? The HACKING file has
+would they be? And what about the head character? The [HACKING](HACKING.md) file has
 information on this.
 
 I also limit the terminal size to 10 lines/columns but most likely it would
@@ -255,7 +255,7 @@ from a quick test this holds even with a terminal that has a white background.
 There is a way to force the background to remain white though that's by way of
 monochrome (so no colours); I discuss that and another related terminal specific
 in the troubleshooting guide (there's another way but it would take me over the
-iocccsize; I talk about it in the HACKING file).
+iocccsize; I talk about it in the [HACKING](HACKING.md) file).
 
 ## <a name="monochrome" href="#toc">Monochrome terminals</a>
 

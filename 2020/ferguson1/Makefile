@@ -114,7 +114,7 @@ PROG= prog
 #
 OBJ= ${PROG}.o
 DATA= COMPILING.md HACKING.md bugs.html bugs.md cake.jpg cannibalism.log.md \
-	chocolate-cake.html chocolate-cake.md crazy.log gameplay.html gameplay.md \
+	chocolate-cake.html chocolate-cake.md crazy.log.md gameplay.html gameplay.md \
 	halfwidth_vs_fullwidth.png ioccc-cake.jpg play.sh prog.2.c prog.3-j.c \
 	prog.3.c snake-colours.sh snake.1 spoilers.html spoilers.md \
 	termcaps.c terminals.html terminals.md troubleshooting.html troubleshooting.md

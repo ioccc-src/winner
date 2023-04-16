@@ -1,10 +1,10 @@
 In order to successfully compile this you will need a C compiler that supports
 C99+ and ncurses; note that for some platforms (e.g. Red Hat based Linux) you
 will need two different packages: the library itself but also the dev package
-that has the header files etc. If you use the Makefile obviously you need `make'
+that has the header files etc. If you use the Makefile obviously you need `make`
 too.
 
-In gameplay.md I show how to easily customise the colours, set up
+In [gameplay.md](gameplay.md) I show how to easily customise the colours, set up
 different gameplay modes and various other things. The troubleshooting.md
 and terminals.md as well as bugs.md include a variety of information
 should you run into trouble.
@@ -33,7 +33,9 @@ I imagine that it works for 32-bit systems but I do not know for sure.
 
 You should be able to get the compiler with:
 
-	    sudo xcode-select --install
+```sh
+sudo xcode-select --install
+```
 
 You don't need Xcode itself and it appears that the command line tools (as above
 should install) already has ncurses so there shouldn't be anything else that
@@ -51,10 +53,15 @@ you want to use the Makefile) to compile and link this entry. With Fedora more
 recent versions there's the `dnf` package manager but I cannot help with any of
 the GUI installers since I don't use them. Something like:
 
-	    sudo dnf install ncurses-devel ncurses make gcc
+```sh
+sudo dnf install ncurses-devel ncurses make gcc
+```
 
-    Or
-	    # dnf install ncurses-devel ncurses make gcc
+or
+
+```sh
+# dnf install ncurses-devel ncurses make gcc
+```
 
 # Portability: CentOS
 
@@ -62,20 +69,29 @@ Just like Fedora you will need `gcc`, `ncurses`, `ncurses-devel` (and if you
 want to use the Makefile `make`). CentOS uses `yum` and CentOS 8 uses `dnf`.
 So:
 
-	    sudo yum install ncurses-devel ncurses make gcc
+```sh
+sudo yum install ncurses-devel ncurses make gcc
+```
 
-	Or
-	    # yum install ncurses-devel ncurses make gcc
+or
 
-Or
-	    sudo dnf install ncurses-devel ncurses make gcc
+```sh
+# yum install ncurses-devel ncurses make gcc
+```
 
-	Or
+or
 
-	    # dnf install ncurses-devel ncurses make gcc
+```sh
+sudo dnf install ncurses-devel ncurses make gcc
+```
 
+or
 
-You can also use Clang to compile.
+```sh
+# dnf install ncurses-devel ncurses make gcc
+```
+
+You can also use clang to compile (which is what gcc actually is under macOS).
 
 
 # Compilation notes

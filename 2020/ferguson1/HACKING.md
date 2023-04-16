@@ -1,4 +1,11 @@
-## Warning / caveat about this document
+# About this document
+
+In this document I provide information to the herpetologist hackers to help them
+modify certain things and add features for their studying of snakes. Or if
+you prefer you can be the snake studying the herpetologist. Whichever character
+you prefer to play doesn't really matter.
+
+# Warning / caveat about this document
 
 WARNING: There are some things cited in this document that are no longer
 correct, might be misleading or otherwise not clear. This is both intentional
@@ -7,21 +14,17 @@ something specific. Put another way just because the table says something
 doesn't mean it's the whole truth: no misleading comments but misleading
 document that talks about some parts of the code!
 
-In this document I provide information to the herpetologist hackers to help them
-to modify certain things and add features for their studying of snakes. Or if
-you prefer you can be the snake studying the herpetologist. Whichever character
-you prefer to play doesn't really matter.
-
 Please do not assume that just because something is in this file means that it's
-complete or will work without any changes. As I have changed the game over
-development stages some features have been dramatically changed and some of
-these ideas could be incompatible now or otherwise impractical. Also you might
-find in fact that some of these leave more questions than answers (e.g. some
-require making decisions for specific problems one might encounter)!
+complete or will work without any changes (see above). As I have changed the
+game over development stages some features have been dramatically changed and
+some of these ideas could be incompatible now or otherwise impractical. Also you
+might find in fact that some of these leave more questions than answers (e.g.
+some require making decisions for specific problems one might encounter)!
 
 With that said here's the C sibilancy (the herpetologist programmer's and
 snake's syllabary) for all snake and herpetologist programmers alike.
 
+# Modifying and adding additional features to the code
 
 * Modifications
 
@@ -61,14 +64,14 @@ snake's syllabary) for all snake and herpetologist programmers alike.
 
     - Max times the bug evades before game over
 
-* MODIFICATIONS
+# Modifications
 
 Here I include information on modifying the game in various ways depending on
 the preference of the herpetologist (or if you prefer you can be the snake
 studying the herpetologist).
 
 
-# Modifying the colours
+## Modifying the colours
 
 As I already said I provided a script that prompts you for colours and then
 compiles the game with those colours (default if invalid input).
@@ -82,78 +85,88 @@ and background.
 To change the colours use the snake-colours.sh or play.sh scripts. Hit enter for
 defaults if you don't want to change the colour.
 
-# Background colour of the game field
+## Background colour of the game field
 
 I prefer black backgrounds but this is the basic idea behind changing it. You
 initialise a pair (make it 5 so as to not interfere with the script
 customisability) and then you use the bkgd() function with the colour pair.
 Something like this:
 
-    init_pair(5, COLOR_BLACK, COLOR_WHITE);
-    bkgd(COLOR_PAIR(5));
+```c
+init_pair(5, COLOR_BLACK, COLOR_WHITE);
+bkgd(COLOR_PAIR(5));
+```
 
 I played with this after winning and I came across some problems with colours
 but that changes the background of the program anyway.
 
 The standard colour identifiers are:
 
-             COLOR_BLACK
-             COLOR_RED
-             COLOR_GREEN
-             COLOR_YELLOW
-             COLOR_BLUE
-             COLOR_MAGENTA
-             COLOR_CYAN
-             COLOR_WHITE
+```c
+COLOR_BLACK
+COLOR_RED
+COLOR_GREEN
+COLOR_YELLOW
+COLOR_BLUE
+COLOR_MAGENTA
+COLOR_CYAN
+COLOR_WHITE
+```
 
 
-See Linux Journal for more information:
+See Linux Journal for more information article
+<https://www.linuxjournal.com/content/programming-color-ncurses> for more
+details.
 
-    https://www.linuxjournal.com/content/programming-color-ncurses for more details).
 
-
-# Modifying the characters for the wall, bug and snake
+## Modifying the characters for the wall, bug and snake
 
 For the wall, bug and snake body characters you can replace the following in the
-source code (include the single quotes) respectively:
+source code (**include the single quotes!**) respectively:
 
-    '#'
+```
+'#'
 
-    '*'
+'*'
 
-    'o'
+'o'
+```
 
-# Modifying input keys
+## Modifying input keys
 
 Let's say you don't want to use arrow keys or you don't have arrow keys. Instead
-you might want the keys 'l', 'r', 'u' and 'd' for the directions. Find the case
+you might want the keys `l`, `r`, `u` and `d` for the directions. Find the case
 statements:
 
-    KEY_LEFT
-    KEY_RIGHT
-    KEY_UP
-    KEY_DOWN
+```c
+case KEY_LEFT:
+case KEY_RIGHT:
+case KEY_UP:
+case KEY_DOWN:
+```
 
-Replace KEY_LEFT with:
+Replace `KEY_LEFT` with:
 
-    'l'
+```c
+'l'
+```
 
-(Yes the single quotes matter)
-
-And do the same thing for the other directions too. If you want more than one
+and do the same thing for the other directions too. If you want more than one
 key e.g. the arrow keys and the letters just add another case statement e.g. for
 left it might be:
 
-    case KEY_LEFT: case 'l':
+```c
+case KEY_LEFT: case 'l':
+```
+
+Yes the single quotes matter. You can do similar for the other input keys.
+Please note that modifier keys like ctrl aren't detectable or at least I'm
+unaware of how to do so.
 
 
-You can do similar for the other input keys. Please note that modifier keys like
-ctrl aren't detectable or at least I'm unaware of how to do so.
+## Modifying the status/score line (table of variables/stats below)
 
-
-# Modifying the status/score line (table of variables/stats below)
-
-* SPOILER WARNING
+### SPOILER WARNING
 
 Below I give a table of some variables/expressions along with the data types and
 their respective format specifiers of the data. Originally it was a lot more
@@ -167,11 +180,15 @@ different sets. Please also be aware that if you don't want any information you
 must set it to the below at the very least; defining it without a value is not
 enough (it amounts to the parameters to a printf call):
 
-    #define J " " );
+```c
+#define J " " );
+```
 
 If you don't care about brief displays of 'o' at 0,0 you can just have:
 
-    #define J "");
+```c
+#define J "");
+```
 
 That's the bare minimum. Notice also that it's been a long while since I've
 tested this part but I think this is right.
@@ -191,7 +208,9 @@ coordinates of where the snake is plus the other things that are there (a number
 of which were added over time). Obviously this would take many bug sized bytes
 (bites) even once let alone twice! Thus I made it into a define:
 
-    #define J Z(X:%d/%d Y:%d/%d S:%zu/%zu B:%zu\n), Y, y[-2], X,*y,A,g, c);
+```c
+#define J Z(X:%d/%d Y:%d/%d S:%zu/%zu B:%zu\n), Y, y[-2], X,*y,A,g, c);
+```
 
 With the table below you can show a variety of other variables/statistics.
 
@@ -199,7 +218,7 @@ There's another reason for changing this line though: depending on the terminal
 width the line could cover the top wall; this can even happen only part of the
 game because the line length is not constant: most of the variables change
 throughout the game play and as these are displayed the length of the line
-changes. Use `make test' to get an estimate (it's not perfect).
+changes. Use `make test` to get an estimate (it's not perfect).
 
 This is not the fault of my entry but rather how text wraps. But this is another
 reason it's easy to change: if the terminal size is too short then you can
@@ -215,78 +234,83 @@ For an example this would only include the size of the snake and the number of
 bugs eaten (I think I have this correct; I've made many changes to the point of
 not wanting to mess with anything that's unnecessary):
 
-    #define J Z(SIZE: %zu BUGS: %zu\n), A, c);
+```c
+#define J Z(SIZE: %zu BUGS: %zu\n), A, c);
+```
 
 More generally the following expressions and data types (with format specifiers)
 come to mind as information that might be of interest.
 
-    DESCRIPTION	    EXPRESSION		TYPE	    FORMAT	    NOTES
-						    SPECIFIER
+	    DESCRIPTION		    EXPRESSION		TYPE	FORMAT SPECIFIER  
+  
+	    Snake size		    A			    size_t	%zu  
+  
+	    Y coordinate	    Y			    int		%d  
+	    of snake head  
+  
+	    X coordinate	    X			    int		%d  
+	    of snake head  
+  
+	    Max snake size	    g			    size_t	%zu  
+  
+	    Bugs eaten		    c			    size_t	%zu  
+  
+	    Bug line (Y)	    *U			    int		%d  
+  
+	    Bug column (X)	    *V			    int		%d  
+  
+	    Snake size		    A			    size_t	%zu  
+  
+	    Growth size (per	N			    size_t	%zu  
+	    bug)  
+  
 
-    Snake size		A	    size_t		%zu
-
-    Y coordinate	Y	    int			%d
-    of snake head
-
-    X coordinate	X	    int			%d
-    of snake head
-
-   Max snake size	g	    size_t		%zu
-
-   Bugs eaten		c	    size_t		%zu
-
-   Bug line (Y)		*U	    int			%d
-
-   Bug column (X)	*V	    int			%d
-
-   (Initial) Snake size	A	    size_t		%zu
-
-   Growth size (per	N	    size_t		%zu
-   bug)
-
-
-# Make it so the snake starts at a random location
+## Make it so the snake starts at a random location
 
 Quite simply change:
 
-    X = H / 2; Y = *x / 2;
+```c
+X = H / 2; Y = *x / 2;
+```
 
 To be something like:
 
-    X = R(1,H-1);
-    Y = R(2,*x-1);
+```c
+X = R(1,H-1);
+Y = R(2,*x-1);
+```
 
 Or whatever you might want it to be... (question to answer: will this work at
 all? You decide!)
 
 
-* ADDITIONS (+)
+# Additions (+)
 
 Here are some things you could add (including a bit of code).
 
 
-# Health (and/or Lives)
+## Health (and/or Lives)
 
 This was something I thought of a number of times but I opted for other features
 instead. Here are some ideas on how one might choose to implement something like
 this. Or maybe it's more like what sorts of things do you have to consider and
 answer?
 
-(1) If the snake runs back into itself - thus dying - the snake would actually
-be slithering inside itself (a rather creepy thought - though they sort of do
-when they shed their skin). How then would the lives be of any value? If that
-would constitute as running into itself wouldn't it very quickly lose all lives?
+0. If the snake runs back into itself - thus dying - the snake would actually be
+slithering inside itself (a rather creepy thought - though they sort of do when
+they shed their skin). How then would the lives be of any value? If that would
+constitute as running into itself wouldn't it very quickly lose all lives?
 
-I can think of a number of ways to answer this question: by defining specific
-rules (as in what would be allowed and what wouldn't be) and also by when to
-decrement the lives.
+    I can think of a number of ways to answer this question: by defining
+    specific rules (as in what would be allowed and what wouldn't be) and also
+    by when to decrement the lives.
 
-(2) If the snake hits a wall and it's not allowed to where would the snake be
+1. If the snake hits a wall and it's not allowed to where would the snake be
 placed? This is similar to (1) but maybe not as many things to consider.
 
-(3) Should the snake lose its size? WHAT does having another life even MEAN?
+2. Should the snake lose its size? WHAT does having another life even MEAN?
 
-(4) Do you want (you do not necessarily need) a new variable that says how many
+3. Do you want (you do not necessarily need) a new variable that says how many
 lives you want? Either way probably be good that it can be specified by the
 player.
 
@@ -305,12 +329,12 @@ some other complications.
 You could do similar for health only maybe the size of the snake decreases or
 you use the variable you would have used for lives to be health instead.
 
-Vital issue to resolve: Where is the snake? And if the snake size is decreased
+Vital issue to resolve: where is the snake? And if the snake size is decreased
 will you be careful enough that you don't run into the snake where it actually
 isn't?
 
 
-# Saving the game
+## Saving the game
 
 A few things would have to be done to do this. Maybe more than a few: some
 decisions and some code.
@@ -329,8 +353,8 @@ the number of bugs eaten so far. Alternatively you could have the bug simply be
 placed somewhere where the snake isn't after replacing (can you replace
 something with itself?) the snake.
 
-Question: Do you have to save the WALLS and other environmental variables?
-You wouldn't have to but you could: If you didn't it would mean that the player
+Question: do you have to save the WALLS and other environmental variables?
+You wouldn't have to but you could: if you didn't it would mean that the player
 could change the growth size on another run for example, or they could disable
 or enable a feature.
 
@@ -355,40 +379,43 @@ It might seem like a difficult task but it's actually not that difficult. It
 didn't take much time for me to do something like this: as far as saving and
 loading the values and even setting up ncurses: I just didn't go beyond that.
 
-Tip: Don't try scr_dump()/scr_restore()/scr_init()/scr_set(). After a quick
+Tip: **DON'T TRY** `scr_dump()`/`scr_restore()`/`scr_init()`/`scr_set()`. After a quick
 test in the way I have things set up it seems to cause some problems (also
-scr_dump() quits the program).
+`scr_dump()` quits the program).
 
 You would have to instead identify that restoring is requested, then read in the
 file (including the coordinates) and then populate the snake arrays, drawing it
 on screen.
 
 
-# Different types of walls
+## Different types of walls
 
 The game has two modes with walls: if you run into it the game is over (you
 die) OR you go through it and come out on the opposite side. There certainly are
 other possibilities though. Here I give some ideas that could be implemented
 (and one I have some code for).
 
-# Different types of walls: Blockades
+### Different types of walls: Blockades
 
-Instead of the snake either dying or going through and out on the other side
-what if it's just that the snake is momentarily dazed and unable to move again
-until it comes round sort of like what happens with some people who pay more
-attention to their ruddy phone instead of where they're walking (even when
-crossing a busy street!).
+I did this once before as an experiment so it can work fine: let's say instead
+of the snake either dying or going through and out on the other side what if
+it's just that the snake is momentarily dazed and unable to move again until it
+comes round sort of like what happens with some people who pay more attention to
+their ruddy phone instead of where they're walking (even when crossing a busy
+street!).
 
-If you look at the walls code you will see a ternary operator for both X and Y
+If you look at the walls code you will see a ternary operator for both `X` and `Y`
 coordinates. This of course is very different now but the idea remains the same:
 
-    if (p && !(*O>=O[1]||H>=M(1)))
-    {
-	if (X<1||X>=H)
-	    X = X<1?H-1:1;
-	if (Y<2||Y>=*O)
-	    Y = Y<2?*O-1:2;
-    }
+```c
+if (p && !(*O>=O[1]||H>=M(1)))
+{
+    if (X<1||X>=H)
+	X = X<1?H-1:1;
+    if (Y<2||Y>=*O)
+	Y = Y<2?*O-1:2;
+}
+```
 
 
 You can ignore the first if if you like; I'm not going to explain that part. The
@@ -399,9 +426,11 @@ coordinates to the correct new location.
 If however you wanted the walls to act as a barrier you could do something like
 this instead (omitting the inner if statements here):
 
-			X=X<1?1:*H-1;
+```c
+X=X<1?1:*H-1;
 
-			Y=Y<2?2:*O-1;
+Y=Y<2?2:*O-1;
+```
 
 Again though that's just the idea; the code is dramatically different. The above
 incidentally is not even complete.
@@ -421,22 +450,25 @@ other words the snake will just appear to be not moving as if the game had been
 paused.
 
 
-# Diagonal movement
+## Diagonal movement
 
 I said this is impractical so how could it be done? Well you have to decide
 which keys would take you up and right, up and left, down and right or down and
 left. The trouble is ncurses can't detect both right and up at the same time.
-Besides that though it would only be a matter of updating both Y and X
+Besides that though it would only be a matter of updating both `Y` and `X`
 coordinates rather than just one or the other. That's easy enough to do. The
 only impractical part of this is deciding the keys and unfortunately rule 2b
 (and probably 2b) would have been broken and so have no chance of winning (now
-that I won it's too much effort and I've forgotten some of the stuff too to say
+that I won it's too much effort and I've forgotten most of the stuff too to say
 nothing of getting the format right).
 
-Anyway it's just a matter of updating both X and Y. But what about going through
-walls mode? Does it matter? I'll let you figure it out!
+Anyway it's just a matter of updating both `X` and `Y`. But what about going
+through walls mode? Does it matter? I'll let you figure it out!
 
-# Special abilities
+Looking back at the missing features, this is the feature I wanted more than any
+other.
+
+## Special abilities
 
 Could the snake jump over itself if it wanted to? How would this be implemented?
 The head would simply be moved one beyond but then you would have to keep track
@@ -446,7 +478,7 @@ actually includes it! Then it would only be a matter of deciding what key does
 what.
 
 
-# Obstacles
+## Obstacles
 
 Similar to walls only that it's inside the field. You would have to consider
 the behaviour of running into the obstacles: should the snake die? Should it
@@ -457,7 +489,7 @@ character. Also to make it simpler if the walls are passable then so too would
 be the obstacles; else you would die (or if you had health/lives then those
 would apply).
 
-# More than one bug
+## More than one bug
 
 The main thing to consider would be the test if the snake has eaten a bug would
 have to check an array (and: how big? Where does the size come from?) as well as
@@ -466,14 +498,14 @@ meaning that if you run into a bug spot that has more than one bug you would eat
 that many bugs).
 
 
-# Power-ups
+## Power-ups
 
 You would need to decide what power-ups exist, what they do, how many can there
 be (and how many can the snake have at one time), what makes them show up plus
 you would have to add code to handle the power-ups.
 
 
-# Snakeskin shedding (becoming an obstacle)
+## Snakeskin shedding (becoming an obstacle)
 
 I.e. at some point the snake would split back to some (arbitrary) size but then
 the snakeskin left would act as the snake in the sense that if the snake runs
@@ -483,18 +515,18 @@ slithered out. But that would fill the screen very quickly of course. Maybe the
 snakeskin has some other purpose?
 
 
-# Snake moves faster over time
+## Snake moves faster over time
 
-In the game Surround you have no control over the speed. I believe there are
-five different speed levels but the player has no control over it except the
-drawing mode. It would be possible to make it so the snake moves faster over
-time. How often and by what amount would probably vary but importantly it would
-need to not go so fast there's no controlling - or go below 0 which puts it in
-blocking mode. Probably it would be that it gets faster up to a certain per cent
-of the original speed so that it doesn't get too fast. But even that would have
-to be customisable.
+In the game [Surround](https://en.wikipedia.org/wiki/Surround_(video_game) you
+have no control over the speed. I believe there are five different speed levels
+but the player has no control over it except the drawing mode. It would be
+possible to make it so the snake moves faster over time. How often and by what
+amount would probably vary but importantly it would need to not go so fast
+there's no controlling - or go below 0 which puts it in blocking mode. Probably
+it would be that it gets faster up to a certain per cent of the original speed
+so that it doesn't get too fast. But even that would have to be customisable.
 
-# Max times the bug evades before game over
+## Max times the bug evades before game over
 
 Basically so that the player is on a time schedule of sorts. The same could be
 done for maximum number of movements before game over. These would both be
