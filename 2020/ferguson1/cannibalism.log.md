@@ -1,17 +1,18 @@
 # Extreme cannibalism in [2020 IOCCC 'Don't tread on me' Snake game](/2020/ferguson1/prog.c)
 
 To give an idea what cannibalism can look like (it's I believe a unique feature
-to any other implementation of Snake), this file shows just how extreme
-cannibalism can get with a long snake. I made a few changes, described below, to
-make it easier to distinguish what is what.
+to any other version of Snake), this file shows just how extreme cannibalism can
+get with a long snake. I made a few changes, described below, to make it easier
+to distinguish what is what.
 
 # Examples
 
-In the below game dumps I have replaced the bug with `B`, the head with `H` and
-where it is known, the tail with `T`, in order to help distinguish where they
-are. Since the head is replaced with `H` I have noted the direction it was
-moving above each dump. Each line with a bug, the head or tail is marked with
-upper case text to make it easier to see.
+In the below game dumps I have replaced the bug with **`B`**, the head with
+**`H`** and where it is known, the tail with **`T`**, in order to help
+distinguish where they are. Since the head is replaced with **`H`** I have noted
+the direction it was moving above each dump as well as at the right of the line;
+each line with a bug, the head or tail is marked with upper case text at the
+right to make it easier to find.
 
 The first run I include several dumps but there isn't much information about
 most of them.
@@ -212,4 +213,4 @@ X:55/89 Y:11/25 S:1564/1600 B:32
 ##########################################################################################
 ```
 
-...and no Preciouss: the itsself was not a typo but intentional sibilance!
+...and no **_Preciouss_**: the _itsself_ was not a typo but intentional sibilance!
