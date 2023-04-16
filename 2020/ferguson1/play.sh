@@ -35,7 +35,8 @@
 # (added 16 August 2020). This will start you at 400 and every 100 movements you
 # would lose 5 in length; when you eat a bug you would grow by 5 (default).
 #
-# Last updated: 16 August 2020
+# Last updated: 15 April 2023
+#
 COLOUR[0]="BLACK"
 COLOUR[1]="RED"
 COLOUR[2]="GREEN"
