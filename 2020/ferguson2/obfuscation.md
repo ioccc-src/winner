@@ -1,7 +1,9 @@
 # Obfuscation
 
-*   The obvious strings are obfuscated by the default Enigma settings in the
-program itself.
+*   Strings identifying what it is are encrypted by the Enigma itself (with its
+default settings). The strings are: `Position`, `Setting`, `Ring`, `Plugboard pair`
+`Reflector`. Together these would be a dead giveaway to anyone familiar with the
+Enigma machine and some of them by themselves would be a dead giveaway too.
 
 *   Digraphs. This isn't necessarily obfuscation itself but it does cause some
 beautifiers problems and it can be useful in layout as well (in some contexts
@@ -37,26 +39,26 @@ ints:
 
 	    void w(char *s, int k, int v)
 	    {
-		for(e<:2:> = 0; s<:*P:>; ++e<:2:>)
-		{
-		    v = s<:e<:2:>:>;
-		    if(v > 64 && v < 91)
-			s<:e<:2:>:> = (((v - 65 + k) % 26) + 65);
-		}
+		    for(e<:2:> = 0; s<:*P:>; ++e<:2:>)
+		    {
+			    v = s<:e<:2:>:>;
+			    if(v > 64 && v < 91)
+				s<:e<:2:>:> = (((v - 65 + k) % 26) + 65);
+		    }
 	    }
 	    void Q(void)
 	    {
-		for(*g = 0; *g < 3; ++*g)
-		{
-		    *Y<:16+e<:1:>:>=S<:e<:e<:1:>-3:>:>;
-		    R<:e<:1:>:>=Y<:e<:-3+e<:1:>:>:>;
-		    w(R[*g],*(e+e<:1:>-6)=q(Y<:8:>,*Y<:7:>),*g);
-		}
+		    for(*g = 0; *g < 3; ++*g)
+		    {
+			    *Y<:16+e<:1:>:>=S<:e<:e<:1:>-3:>:>;
+			    R<:e<:1:>:>=Y<:e<:-3+e<:1:>:>:>;
+			    w(R[*g],*(e+e<:1:>-6)=q(Y<:8:>,*Y<:7:>),*g);
+		    }
 	    }
 
 
-    First of all: why do I set e[2] to 0 and increment it for each pass in the
-    loop, but then the condition for the loop is s[*P]?
+    First of all: why do I set `e[2]` to 0 and increment it for each pass in the
+    loop, but then the condition for the loop is `s[*P]`?
 
     Second notice the many references to e[1] (as e[1] and *g). This variable (pointing
     into z) is used as the iterator in this loop as well as a loop in another

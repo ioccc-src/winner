@@ -82,9 +82,19 @@ rm -f conf input output output2
 
 ```
 
+What does:
+
+```sh
+echo | ./recode
+echo | ./recode -v
+
+```
+
+do?
+
 ## Judges' remarks:
 
-This code is an enigma.  Try to decode it!
+This code is an [enigma](https://en.wikipedia.org/wiki/Enigma_machine).  Try to decode it!
 
 There is a good deal of useful documentation that is provided with this entry:
 
@@ -108,11 +118,15 @@ There is a good deal of useful documentation that is provided with this entry:
 
 ## Author's remarks:
 
-My remarks about my Heer 'Army' and Luftwaffe 'Air Force' Enigma simulator for
+My remarks about my [Heer
+'Army'](https://en.wikipedia.org/wiki/German_Army_(1935%E2%80%931945)) and
+[Luftwaffe 'Air Force'](https://en.wikipedia.org/wiki/Luftwaffe) [Enigma
+machine](https://en.wikipedia.org/wiki/Enigma_machine) simulator for
 the 27th IOCCC.
 
 I want to dedicate this entry in part to the millions of poor souls that were
-lost during the tragedy that is the Second World War. There are so many people
+lost during the tragedy that is the [Second World
+War](https://en.wikipedia.org/wiki/World_War_II). There are so many people
 who are unknown, unloved, unclaimed and even unidentified. And who knows what
 they might have gone on to do if their lives weren't - like it is with all other
 wars - needlessly taken from them? When one considers it was all because the
@@ -167,29 +181,35 @@ sure there are some other words that are equally as valid but I believe 'Enigma'
 is a great word nonetheless.
 
 However it's curious that no winning entry has ever been a simulator of the
-German Enigma machine. I'm actually quite surprised at that because it's such a
-brilliant piece of engineering of the time even though it had a critical flaw:
-that no letter could be itself; this combined with cribs (known or suspected
-plaintext) - which was down to carelessness, capturing an Enigma and sometimes
-settings sheet, as well as known messages the Germans started out with - allowed
-for cracking the code.
+[German Enigma machine](https://en.wikipedia.org/wiki/Enigma_machine). I'm
+actually quite surprised at that because it's such a brilliant piece of
+engineering of the time even though it had a critical flaw: that no letter could
+be itself; this combined with cribs (known or suspected plaintext) - which was
+down to carelessness, capturing an Enigma and sometimes settings sheet, as well
+as known messages the Germans started out with - allowed for [cracking the
+code](https://en.wikipedia.org/wiki/Cryptanalysis_of_the_Enigma).
 
-Combining this entry with two of the Morse code entries is particularly
+Combining this entry with two of the [Morse
+code](https://en.wikipedia.org/wiki/Morse_code) entries is particularly
 interesting because that's what the Germans did: the party sending the message
 would first set up the machine, write down the letters and then transmit by
-Morse code the encoded message. Then those picking up on the message would note
-the Morse code, translate it to the alphabet and then input it into their Enigma
-machine configured in the same way and thus have the original message.
+[Morse code](https://en.wikipedia.org/wiki/Morse_code) the encoded message. Then
+those picking up on the message would note the [Morse
+code](https://en.wikipedia.org/wiki/Morse_code), translate it to the alphabet
+and then input it into their Enigma machine configured in the same way and thus
+have the original message.
 
-The [1998 ASCII / Morse code translator][] entry (author Dorssel) prints the
-Morse code of text; and the [2014 Morse audio transcoder][] (author Vik) can be
-used to allow for the actual sound of it. With my entry we can complete the
-loop!
+The [1998 ASCII / Morse code translator][] entry by [Franz van
+Dorsselaer](/winners.html#Frans_van_Dorsselaer) prints the Morse code of text;
+and the [2014 Morse audio transcoder][] by [Daniel
+Vik](/winners.html#Daniel_Vik) can be used to allow for the actual sound of it.
+With my entry we can complete the loop!
 
 
 ### <a name="nathan" href="#toc">The 1992 Nathan entry</a>
 
-The author (Nathan) of the [1992 Worst Abuse of the Rules][] had this to say:
+The author [Nathan Sidwell](/winners.html#Nathan_Sidwell) of the [1992 Worst
+Abuse of the Rules][] had this to say about his program:
 
 ```
 This program is a hello world text encrypter/decrypter. It uses an
@@ -207,19 +227,20 @@ operations, so you can use decrypt to scramble and encrypt to
 descramble, if you're perverse.)
 ```
 
-But the Enigma algorithm is more complex than that and my entry can encipher and
-decipher text in the manner of the Enigma machines of the Army (Heer) and Air
+But the Enigma algorithm is more complex than that and my entry can encipher (and
+by extension decipher) text in the manner of the Enigma machines of the Army (Heer) and Air
 Force (Luftwaffe); the Kriegsmarine 'Navy' was more complex (see section [Adding
 Kriegsmarine support](#kriegsmarine) for more information on that.
 
 My entry should also work as a non-military grade Enigma as it by default has an
 empty plugboard (they had none). I explain how to set up the simulator later.
 
-Yusuke Endoh asked the judges and me if the real 1992 entry source was
-available. Simon Cooper didn't have access to it because it was before his time in
-the IOCCC; but before the other judges could answer Ilya Kurdyukov sent a link to
-the original 1992 code. As of March 2023 the original before unseen code was
-published but I leave this in for historical purposes.
+[Yusuke Endoh](/winners.html#Yusuke_Endoh) asked the judges and me if the real
+1992 entry source was available. Simon Cooper didn't have access to it because
+it was before his time in the IOCCC; but before the other judges could answer
+[Ilya Kurdyukov](/winners.html#Ilya_Kurdyukov) sent a link to the original 1992
+code. As of March 2023 the original before unseen code was published but I leave
+this in for historical purposes.
 
 
 ### <a name="usage" href="#toc">Usage</a>
@@ -250,10 +271,11 @@ After that you can input the string and it'll go from there.
 #### <a name="example" href="#toc">Example run</a>
 
 BTW: There's a much more entertaining (and delicious) challenge or exercise in
-[recode.html][] (involves [chocolate-cake.html][]) though one might need a different
-kind of exercise after taking up the challenge! :-) These however show the
-general program as well as how to use the two winning entries of the Morse code
-that I referred to earlier:
+[recode.html][] (markdown version [recode.md](recode.md)) (involves
+[chocolate-cake.html][]) though one might need a different kind of exercise
+after taking up the challenge! :-) These however show the general program as
+well as how to use the two winning entries of the Morse code that I referred to
+earlier:
 
 
 ```sh
@@ -375,7 +397,7 @@ $ echo IOCCC | ./prog | ./dorssel
 
 ### <a name="recode" href="#toc">The recode.c configurator</a>
 
-I have included a supplementary program 'recode' ([recode.c][]) that can
+I have included a supplementary program [recode.c][] that can
 do a number of things which acts as a kind of wrapper and configurator to my
 entry. By default it prompts you for the settings (rotors/rings, ring settings,
 positions, reflector and plugboard pairs), validating input as you go.
@@ -397,8 +419,9 @@ I didn't think of everything. My entry was meant to be a simulator only as far
 as the ciphering goes but I thought this would make it much more interesting:
 make it more flexible by a wrapper program.
 
-For examples using it (and a delicious challenge) see [recode.html][]. See
-also [recode.1][] and [enigma.1][] man pages.
+For examples using it (and a delicious challenge) see
+[recode.html][]/[recode.md](recode.md). See also the [recode.1][] and
+[enigma.1][] man pages.
 
 
 ### <a name="parsersubtlety" href="#toc">A parser subtlety that could cause confusion</a>
@@ -430,9 +453,8 @@ WD
 SIRDK
 ```
 
-First of all: what is that WD? I didn't type that but it appeared it seems due
-to too much input that triggers this (it happens when I hit ctrl-d to end
-input).
+First of all: what is that `WD`? I didn't type that but it showed up hitting
+`ctrl-d` to end input.
 
 If everything is input correctly it would show nothing except the actual Enigma
 output (maybe at times ^D - I have noticed this at least when I don't fill in
@@ -441,9 +463,9 @@ machines that had plugboards, I really do not know). I don't view this as a bug
 because the parsing of input is meant to be simple and in fact you can expect
 the same output from the same input even if there are errors in the input.
 
-Anyway as you can see the first '1AB' was the first ring, setting and position.
+Anyway as you can see the first `1AB` was the first ring, setting and position.
 After this it wants Ring 2 and I did similar; for ring 3 I did it each variable
-by itself. However for the reflector I did 1A and it only expects 1 char! So will
+by itself. However for the reflector I did `1A` and it only expects 1 char! So will
 that mean that the plugboard pairs are off? Yes it does seem to be so. This is
 buffering at play I believe but it's useful for allowing the recode program to
 easily configure the Enigma machine. In the other markdown/html file I give a hint
@@ -458,7 +480,8 @@ There are two reflectors and the same applies: in C 0-1 but in human it's
 1-2 (technically these were reflectors B and C in the Enigma machine which I
 display by name in recode.c just like with the rotors).
 
-For more information see [recode.html][].
+For more information see [recode.html][] or [recode.md](recode.md) if viewing on
+GitHub.
 
 BTW: If you need a reminder to go to the gym just do your Enigma ABCs and it
 should help you remember (though not at this time in our world it might help you
@@ -474,8 +497,8 @@ ABC
 
 ### <a name="layout" href="#toc">On the source code layout</a>
 
-The layout of recode.c isn't too significant (but see below) but I want to
-mention prog.c especially:
+The layout of [recode.c][] isn't too significant (but see below) but I want to
+mention [prog.c](prog.c) especially:
 
 I did think of a more artistic layout but reflecting on it I think that the
 blankness of it can be another way of honouring all the many people who died
@@ -488,17 +511,19 @@ even unidentified; it's the presence of absence.
 
 I find it somehow fitting that the day I have finished this is 30 April 2020,
 which was exactly 75 years from the day that the person responsible for the
-Second World War, Adolf Hitler, ended his life. (I have since then made a bug
-fix but I consider this inconsequential).
+[Second World War](https://en.wikipedia.org/wiki/World_War_II), Adolf Hitler,
+ended his life. (I have since then made a bug fix but I consider this
+inconsequential).
 
-As for recode.c though I really love this:
+As for [recode.c][] though I really love this:
 
-```
+```c
   /\
 /     This is *not* what you think:
 ```
 
-...because it seems so wrong in C code at first glance.
+...because it seems so wrong in C code at first glance. Also what does the
+'this' refer to?
 
 
 ### <a name="obfuscation" href="#toc">Obfuscation</a>
@@ -521,15 +546,15 @@ To encipher:
 The file [obfuscation.key][] is the key to decipher/encipher
 [obfuscation.txt][].
 
-For the lazy [obfuscation.md][] has the deciphered version. I am afraid
-I'm not so inclined to do that for the cake recipe: the idea there is to make it
-a fun exercise that when solved unlocks a wonderful double-layered chocolate
-fudge cake recipe. But given that my ['Don't tread on me award'](../ferguson1) entry also
-has the recipe, not enciphered, one might just go there instead. Still it's a
-fun way to explore this entry.
+For the lazy [obfuscation.md][] has the deciphered version. I am afraid I'm not
+so inclined to do that for the cake recipe: the idea there is to make it a fun
+exercise that when solved unlocks a wonderful double-layered chocolate fudge
+cake recipe. But given that my ['Don't tread on me'](../ferguson1) award entry
+also has the recipe, not enciphered, one might just go there instead. Still it's
+a fun way to explore this entry.
 
 As for the [obfuscation.key][] file if you observe the contents you'll find the
-word OBFUSCATION:
+word `OBFUSCATION`:
 
 ```
 2OB5FU1SC2ATIONCDEFGHJKLMPQRYZ
@@ -545,21 +570,22 @@ and some could be considered features; others are just differences.
 *   Does not check for using the same rotor more than once. The real Enigma
 machines this would not work because they had to choose from a set of rotors and
 there were no duplicates. This shouldn't be a problem here however except that
-it won't be a possible configuration of the real Enigma machine. The `recode`
+it wouldn't be a possible configuration of the real Enigma machine. The `recode`
 program *however does validate this* (except when reading in settings via the
-`-R` option which I explain in the [recode.html][] file).
+`-R` option which I explain in the [recode.html][]/[recode.md](recode.md) file).
 
 *   The way the plugboard - for the machines that had them - is if you connect A
 to B then no other letters can connect to A or B. Earlier there wasn't proper
 detection and this caused invalid output.
 
-```
-Why only 10 pairs when the German alphabet has 26 letters? It's
-theoretically possible to have 13 but the Enigma typically had 10 pairs.
-It's easy enough to update my entry to do this once you de-obfuscate it but
-I'm not helping there (and in fact I don't think I could any more even if I
-wanted to - at least not easily!).
-```
+> Why only 10 pairs when the German alphabet has 26 letters (the Enigma did not
+have the Eszett or the umlauts and in any case there is some disagreement about
+these being part of the alphabet; anyway for umlauts one can add an E after the
+letter and for the Eszett you can use 'ss' or 'SS' which is what they did)? It's
+theoretically possible to have 13 but the Enigma typically had 10 pairs.  It's
+easy enough to update my entry to do this once you de-obfuscate it but I'm not
+helping there (and in fact I don't think I could any more even if I wanted to -
+at least not easily!).
 
 *   It does not obviously have the clicking sound associated with the moving
 parts of the real machine. I think it would be annoying to have this as it
@@ -578,7 +604,9 @@ entry prints `!isalpha()` chars untouched. The Germans had different systems for
 punctuations, numbers etc. (one of the documents I link to has these details).
 
 *   My entry preserves case of letters. The real Enigma had only one case as it
-was just a keyboard and they didn't need case-sensitivity. 
+was just a keyboard and they didn't need case-sensitivity. Context would be
+important as some words in German have different meanings depending on if
+capitalised or not (and all nouns are capitalised).
 
 *   Later models introduced a fourth rotor. The Kriegsmarine procedures were
 also far more complex than the Heer and Luftwaffe. I find this particularly
@@ -595,7 +623,7 @@ them for this reason; I include 5 rotors and 2 reflectors and that's a total of
 too. It is however feasible to update the rotor and reflector options and you
 could even make your own versions if you wanted to. Doing this is an exercise to
 the reader however (the idea of trying this makes me cringe because of how I
-obfuscated things)!
+obfuscated things including encrypting some of it with the Enigma itself)!
 
 There's one thing I'm unsure of in my implementation. Because of all the
 possible settings I used some other simulators as a starting point and more
@@ -604,8 +632,8 @@ bugs though and so one thing looked odd and I don't know if it is right or not.
 An online simulator appears correct but I don't see the option to change that
 part.
 
-If you notice in the Q() function where I set up specific pointers and other
-data there is a call to the macro 'q' but I only refer to the first ring setting
+If you notice in the `Q()` function where I set up specific pointers and other
+data there is a call to the macro `q` but I only refer to the first ring setting
 (of which I no longer even know which element it is! Or was it position? I don't
 even know that now for certain). That's because the Python code did that (though
 very differently of course) but I also had to bug-fix the Python in another
@@ -622,9 +650,10 @@ I said that one could add the additional rotors used by the Kriegsmarine but
 looking at this again it appears that it's not as simple as adding the rotors to
 the code and updating the references to the array etc.
 
-This is because rotors VI, VII and VII had two notches and this changes the way
-things work. The Kriegsmarine M4 also had an additional change which would
-complicate matters more.
+This is because [rotors](https://en.wikipedia.org/wiki/Enigma_rotor_details)
+`VI`, `VII` and `VII` had two notches and this changes the way things work. The
+[Kriegsmarine M4](https://www.cryptomuseum.com/crypto/enigma/m4/index.htm) also
+had an additional change which would complicate matters more.
 
 I looked into trying to do this for another version after winning but some of
 the obfuscation techniques dramatically complicates even attempting this so I
@@ -714,7 +743,7 @@ and you'll see the resulting text being:
 UUMMX
 ```
 
-Which is exactly as my entry shows! So at least for the starting position BBC
+Which is exactly as my entry shows! So at least for the starting position `BBC`
 and an empty plugboard and the other defaults in my entry (which appear to be
 consistent with the online simulator too) I can verify it works.
 
@@ -808,7 +837,8 @@ millions of people whose lives were taken from them in what amounts to - like
 all other wars - a horrible, pointless conflict and an utter waste of life,
 something precious that is far too often taken for granted. As I noted before I
 found it fitting that I finished this on 30 April 2020 - exactly 75 years after
-Adolf Hitler, he who started the Second World War, ended his life. The blankness
+Adolf Hitler, he who started the [Second World War]([Second World
+War](https://en.wikipedia.org/wiki/World_War_II), ended his life. The blankness
 of the layout is another way of honouring the poor souls who lost their lives,
 many of whom we will never know even their name let alone what they might have
 accomplished if it wasn't for their tragic and pointless deaths. Always remember
