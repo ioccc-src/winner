@@ -42,53 +42,67 @@ for the capabilities I use in the entry.
 It also tries to determine the minimum number of columns to play without the
 status line overflowing - even with the dynamic length. Try:
 
-	    $ make test
+```sh
+$ make test
+```
 
-This compiles the program and runs it; you should see something like:
+This compiles the program [termcaps.c](termcaps.c) and runs it; you should see something like:
 
-	    terminal supports cursor movement
-	    terminal supports making cursor invisible
-	    terminal supports bold
-	    terminal supports colours
 
-	    terminal rows  42 (39  playable)
-	    terminal cols 157 (155 playable)
+```
+terminal supports cursor movement
+terminal supports making cursor invisible
+terminal supports bold
+terminal supports colours
 
-	    snake size:   997 (max size: 6006)
-		  bugs:   199 (max size: 1201)
+terminal rows  41 (38  playable)
+terminal cols 155 (153 playable)
 
-	    at least 34 columns recommended for snake size 997   (is 157)
-	    at least 37 columns recommended for snake size 6006  (is 157)
+snake size:   997 (max size: 5776)
+      bugs:   199 (max size: 1155)
 
-	    No problems detected.
+at least 34 columns (currently 155) recommended for snake size 997
+at least 37 columns (currently 155) recommended for capped snake size 5776
 
-If I pass in any of the variables **GROW**, **MAXSIZE**, **SIZE** and/or
-**LINES** or **COLUMNS** it bases its calculations on those variables. For
+No problems detected.
+```
+
+Terminal rows and cols are the current values (the number of columns shown later
+as well). The snake size is the default size to win (based on the variables, see
+below). The `max size: 5776` is the capped size (or 'capsize'). The 199 bugs is
+approximately the `snake_size / growth_size` i.e. how many bugs it
+will take to win the game. The max bugs in the `bugs` line is approximately
+`max_snake_size / growth_size` i.e. how many bugs it'll take to win at the
+maximum (capped) snake size.
+
+If I pass in any of the variables **`GROW`**, **`MAXSIZE`**, **`SIZE`** and/or
+**`LINES`** or **`COLUMNS`** it bases its calculations on those variables. For
 example:
 
-	    $ MAXSIZE=-1 GROW=1  make test
-	    terminal supports cursor movement
-	    terminal supports making cursor invisible
-	    terminal supports bold
-	    terminal supports colours
+```sh
+terminal supports cursor movement
+terminal supports making cursor invisible
+terminal supports bold
+terminal supports colours
 
-	    terminal rows  42 (39  playable)
-	    terminal cols 157 (155 playable)
+terminal rows  41 (38  playable)
+terminal cols 155 (153 playable)
 
-	    snake size:  6006 (max size: 6006)
-		  bugs:  6001 (max size: 6001)
+snake size:  5776 (max size: 5776)
+      bugs:  5771 (max size: 5771)
 
-	    at least 37 columns recommended for snake size 6006  (is 157)
-	    at least 37 columns recommended for snake size 6006  (is 157)
+at least 37 columns (currently 155) recommended for snake size 5776 
+at least 37 columns (currently 155) recommended for capped snake size 5776 
 
-	    No problems detected.
+No problems detected.
+```
 
-
-As you can see it tells you the max size (the 'capsized' snake) as well as
-the requested max size (if the requested size is bigger than the capsize then it
+As you can see it tells you the max size (the 'capsized' snake) as well as the
+requested max size (if the requested size is bigger than the capped size then it
 will be set to that value instead) of the snake. The capped size is like in the
 Snake game itself but the suggested minimum number of columns is based on a
 number of variables.
+
 
 If I were to do the above but set columns to less < 35 then there would be a
 problem. But why if the utility recommends at least 37? This is because the
@@ -108,7 +122,7 @@ this should give you an idea.
 
 If there are any problems it will say how many (fatal and otherwise). The fatal
 problems are if curses fails to initialise or if movement of cursor cannot be
-done (both seem odd).
+done (both seem unlikely to happen nowadays).
 
 Both scripts run this utility and prompt if there are any problems;
 you can continue either way.
