@@ -471,7 +471,9 @@ $ cat config
 
 Besides a famous book that I happen to love (who doesn't? Ah, but what is it
 Cody?) there's also a reference to code which I also love (just as all
-participants of the IOCCC do). But what matters is the output:
+participants of the IOCCC do). Other things there don't mean anything but what
+does is the output:
+
 
 ```sh
 $ cat output
