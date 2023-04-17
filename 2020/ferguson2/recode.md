@@ -1,13 +1,14 @@
 # The recode configurator documentation (and a fun way to explore my 2020 IOCCC Enigma simulator)
 
 N.B. At the end of this file I have given a fun exercise that can be used to
-explore my [Enigma machine](https://en.wikipedia.org/wiki/Enigma_machine)
-simulator. It's especially worth doing if you you like good chocolate and could
+explore my [Enigma machine](https://www.cryptomuseum.com/crypto/enigma/index.htm)
+[simulator](prog.c). It's especially worth doing if you you like good chocolate and could
 use a delicious [Double-layered Chocolate Fudge Cake][].
 
-Alternatively if you just want the [recipe](/2020/ferguson1/chocolate-cake.md)
+Alternatively if you just want the [recipe](../ferguson1/chocolate-cake.md)
 you could look at my [Snake entry 'Don't tread on me'
-award](/2020/ferguson1/prog.c) since it's also there and not enciphered.
+award](../ferguson1/prog.c) since it's also there and not enciphered.
+
 
 <a name="toc"></a>
 
@@ -115,9 +116,8 @@ Though you won't find some of those strings in [recode.c](recode.c) or
 amusing coincidence *but it really did happen!*
 
 As for `-f` the contents would be output with the settings e.g. to pipe to
-[prog](prog.c) itself (as if you redirected the file contents to the Enigma
-machine for encipherment/decipherment). If the file cannot be opened it sets
-back to stdin.
+`prog` itself (as if you redirected the file contents to the Enigma machine for
+encipherment/decipherment). If the file cannot be opened it sets back to stdin.
 
 `-o` outputs the settings to the file. If the file cannot be opened for writing
 or is the same file name (see below) then only stdout will be used.  Example of
@@ -166,7 +166,7 @@ argument) shell expansion will not work right so for example doing:
 $ ./recode -R~/config
 ```
 
-Will not read the file 'config' in the home directory. I show another way to
+will _not_ read the file 'config' in the home directory. I show another way to
 achieve this later.
 
 This limitation also applies to the `-f` and `-o` options!
@@ -263,11 +263,11 @@ Input plugboard pair 10: QR
 ```
 
 Notice that I skipped a [plugboard
-pair](https://en.wikipedia.org/wiki/Enigma_machine#Plugboard); this can be done
-in a number of ways but two dots is one. Notice also that it's in a different
-order than the simulator: because with the size restrictions on my entry I saved
-bytes by using the same loop where I could. It just felt more natural to have
-them grouped together in a configurator for the simulator.
+pair](https://www.cryptomuseum.com/crypto/enigma/i/sb.htm); this can be done in
+a number of ways but two dots is one. Notice also that it's in a different order
+than the simulator: because with the size restrictions on my entry I saved bytes
+by using the same loop where I could. It just felt more natural to have them
+grouped together in a configurator for the [simulator](prog.c).
 
 ```sh
 $ echo 1AA2AA3AA2ABCD..EFGHIJKLMNOPQRIOCCC | ./prog - 2>/dev/null
@@ -291,6 +291,7 @@ the pipeline works with settings etc.
 
 What happens if the plugboard pairs are the same but in a different order? It's
 the same output:
+
 
 ```sh
 $ echo 1AA2AA3AA2AB..CDEFGHIJKLMNOPQRIOCCC|./prog - 2>/dev/null
@@ -356,9 +357,10 @@ Plugboard pair #10: ST
 ```
 
 Notice that I redirect stdout to /dev/null so that the config is only written to
-the file config. But also notice that for plugboard pair 4 I typed in `GHIJ` and
-it didn't report an error. Neither did it complain about `IJ` in the next pair.
-This is because it consumes input overflow. 
+the file config. But also notice that for [plugboard
+pair](https://www.cryptomuseum.com/crypto/enigma/i/sb.htm) 4 I typed in `GHIJ`
+and it didn't report an error. Neither did it complain about `IJ` in the next
+pair.  This is because it consumes input overflow.
 
 It shouldn't be this way for the simulator though because that could cause
 inconsistent number of characters expected before the text to encipher.
@@ -394,8 +396,8 @@ $ ./recode -r -osettings
 
 (Above ^D was not shown but I typed it.) The way it works: if nothing is read
 the buffer remains `NULL` and so I don't print it but still do print the settings
-file. Actually even if `getdelim()` fails you're supposed to free the buffer so I
-set another variable to indicate if it should be printed.
+file. (Actually even if `getdelim()` fails you're supposed to free the buffer so I
+set another variable to indicate if it should be printed.)
 
 # <a name="reuseconfig" href="#toc">Reusing a configuration</a>
 
@@ -504,7 +506,7 @@ UGEVP
 ```
 
 
-Note that I typed in IOCCC and sent EOF (ctrl-d); the settings were written to
+Note that I typed in `IOCCC` and sent `EOF` (ctrl-d); the settings were written to
 the config file (for deciphering later) and then all of it was piped to the
 Enigma entry resulting in the line below IOCCC. But let's verify it worked out
 okay:
@@ -560,7 +562,7 @@ anyway?
 
 * Best idea: try the below experiment!
 
-# <a name="cake" href="#toc">Delicious Enigmatic: Double-layered Chocolate Fudge Cake</a>
+# <a name="cake" href="#toc">Deliciously Enigmatic: Double-layered Chocolate Fudge Cake</a>
 
 As I was making the above silly list something occurred to me. My [other
 entry](/2020/ferguson1/prog.c) this year includes a recipe for a wonderful
@@ -571,9 +573,9 @@ So this is what I offer: if you take one of the settings below and run the
 simulator on the file [chocolate-cake.html][] you will have a wonderful
 chocolate cake recipe (that even my late stepmum who didn't even like chocolate
 loved - it's a speciality of my mum's and they were the best of friends too). If
-you're lazy just go and look at the
-[recipe](/2020/ferguson1/chocolate-cake.html) (or
-[here](/2020/ferguson1/chocolate-cake.md) if on GitHub) in my other entry. Then
+you're lazy (or just want some delicious double-layered chocolate fudge cake!)
+just go and look at the [recipe](../ferguson1/chocolate-cake.html) (or
+[here](../ferguson1/chocolate-cake.md) if on GitHub) in my other entry. Then
 again if you're lazy you're probably not reading this far! :)
 
 The settings is one of the below but a couple questions you might ask yourself:
