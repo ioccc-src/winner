@@ -911,6 +911,9 @@ my entries. It's a huge honour; thank you! I also happen to love your comments
 as well as the award titles. And yes indeed 'most of us could use
 *[Double-layered Chocolate Fudge Cake][]*!'
 
+If you wish to contact me please do so. Please contact via mastodon. You can try
+email but I'm more likely to respond to mastodon messages.
+
 [Double-layered Chocolate Fudge Cake]: chocolate-cake.html
 [Heer (army)]: https://en.wikipedia.org/wiki/German_Army_(1935%E2%80%931945)
 [Heer]: https://en.wikipedia.org/wiki/German_Army_(1935%E2%80%931945)

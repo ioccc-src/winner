@@ -511,24 +511,30 @@ both do.
 ### <a name="winning" href="#toc">Winning thoughts, dedications and thanks</a>
 
 Once again I'm honoured to win along with some of the other veterans who I have
-a huge amount of respect for; there's Don Yang, Dave Burton, Yusuke Endoh and
-Edward Giles all of whom are amazing programmers. I'm especially proud to win
-besides Dave Burton and Yusuke Endoh but Don Yang and Edward Giles too.
+a huge amount of respect for; there's [Don Yang](/winners.html#Don_Yang), [Dave
+Burton](/winners.html#Dave_Burton), [Yusuke Endoh](/winners.html#Yusuke_Endoh)
+and [Edward Giles](/winners.html#Edward_Giles) all of whom are amazing
+programmers. I'm especially proud to win besides Dave Burton and Yusuke Endoh
+but Don Yang and Edward Giles too.
 
-But there are some others who I don't remember like Ilya Kurdyukov (who's
-offered a lot of interesting thoughts on Snake and who plans to have his own
-version after the entries are published), Nathan Otterness, Nicholas Carlini
-(whose entry is an absolutely brilliant abuse of printf - and I totally agree
-with the judges remarks that your entry is so novel that it'll be worth special
-mention in the future Best of IOCCC list!) and tsoj too.
+But there are some others who I don't remember like [Ilya
+Kurdyukov](/winners.html#https://en.wikipedia.org/wiki/Signals_intelligence#World_War_II)
+(who's offered a lot of interesting thoughts on [Snake](../ferguson1/prog.c) and
+who plans to have his own version after the entries are published), [Nathan
+Otterness](/winners.html#Nathan_Otterness), [Nicholas
+Carlini](/winners.html#Nicholas_Carlini) (your entry is an absolutely brilliant
+abuse of `printf` - and I totally agree with the judges remarks that your entry
+is so novel that it'll be worth special mention in the future Best of IOCCC
+list!) and [tsoj](/winners.html#_tsoj) too.
 
 Well done and congratulations to all of you again!  Thank you for submitting the
 wonderful entries and I'm honoured to have my two entries beside yours!
 
 To Dave Burton I thank you for your wonderful comments as well as pointing out
-that even with prog.alt.c it probably would be better to make use of the alt
-target instead of naming prog.c prog.alt.c. You're quite right, I had thought
-of it but you brought it up so I could correct it. Much appreciated mate.
+that even with [prog.alt.c](prog.alt.c) it probably would be better to make use
+of the alt target instead of naming prog.c prog.alt.c. You're quite right, I had
+thought of it but you brought it up so I could correct it. Much appreciated
+mate.
 
 I would like to dedicate this entry to my wonderful mum Dianne Ferguson whom I
 love with all my heart and soul <3 Thank you for being the best mother
@@ -539,13 +545,14 @@ mother.
 
 I also want to dedicate this to Vicky Wilmore who has given me a lot of
 love the past few years and who was there for me in some very dark times. Thank
-you Vicky sweetheart from the bottom of my heart and soul.
+you Vicky sweetheart from the bottom of my heart and soul xxx
 
-I would like to thank my dear friend Martijn Schoemaker for encouraging me in my
-programming over the years and who I owe a great deal to. Thank you for
-believing in me and my programming abilities (and other abilities) even when I
-couldn't believe in myself! Very much appreciated especially coming from an
-amazing programmer who I have huge admiration for!
+I would like to thank my dear friend [Martijn
+Schoemaker](https://www.ficture.nl) for encouraging me in my programming over
+the years and who I owe a great deal to. Thank you for believing in me and my
+programming abilities (and other abilities) even when I couldn't believe in
+myself! Very much appreciated especially coming from an amazing programmer who I
+have huge admiration for!
 
 I want to thank Ilya Kurdyukov for his helpful comments, suggestions and
 reporting the problem about half-width/full-width char spacing. He's been
@@ -557,6 +564,9 @@ continuing to hold the contest after all these years - and for having selected
 my entries. It's a huge honour; thank you! I also happen to **love** your
 comments as well as the award titles. And yes indeed 'most of us could use
 *[Double-layered Chocolate Fudge Cake][]*!'
+
+If you wish to contact me please do so. Please contact via mastodon. You can try
+email but I'm more likely to respond to mastodon messages.
 
 [COMPILING.md]: COMPILING.md
 [HACKING.md]: HACKING.md

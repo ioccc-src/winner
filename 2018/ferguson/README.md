@@ -1171,17 +1171,20 @@ requiring creativity, cleverness and novelty is a tribute to an equally
 creative, clever and unique dog that she was. I miss you terribly Venus but I'm
 so happy to have had you in my life.
 
-But I want to also dedicate it to (and thank) my dear friend Martijn Schoemaker
-whom provided me with the spark a very long time ago (and whom has stood by me
-and helped me in more ways than he can know - **`#including C`**); if it wasn't
-for you Martijn I wouldn't have been able to win so consider this a recursive
-thank you thank you! :) I would also like to give thanks and much love to my
-best and closest friend Vicky Wilmore who means the absolute world to me; thank
-you for being such a wonderfully beautiful person and friend - that truly is
-what 'just you' means, sweetheart, and don't you forget it! <3 Finally I would
-like to thank my mother for being the best mum anyone could ask for, who's
-always been here for me and whom I also inherit the keen analytical mind from. I
-love you all!
+But I want to also dedicate it to (and thank) my dear friend [Martijn
+Schoemaker](https://www.ficture.nl) whom provided me with the spark a very long
+time ago (and whom has stood by me and helped me in more ways than he can know -
+**`#including C`**); if it wasn't for you Martijn I wouldn't have been able to
+win so consider this a recursive thank you thank you! :)
+
+I would also like to give thanks and much love to my dear friend Vicky Wilmore
+who means the absolute world to me; thank you for being such a wonderfully
+beautiful person and friend - that truly is what 'just you' means, sweetheart,
+and don't you forget it! <3
+
+Finally I would like to thank my mother for being the best mum anyone could ask
+for, who's always been here for me and whom I also inherit the keen analytical
+mind from. I love you all!
 
 I want to also thank [Dave Burton](/winners#Dave_Burton) for acknowledging me in
 his [README.md]((../burton2/README.md) for his [2018/burton2](../burton2/prog.c)
