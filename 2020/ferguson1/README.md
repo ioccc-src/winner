@@ -54,8 +54,8 @@ and non-zero).
 * **`GROW`**   
 	        size to grow every time you eat a bug. Default 5; negative
 		values are allowed. 'Negativity' creates for fun gameplay modes with
-		enough creativity. See [gameplay.md](gameplay.md) /
-		[gameplay.html](gameplay.html) as well as [play.sh](play.sh) for some examples.
+		enough creativity. See [gameplay.html][] ([gameplay.md][] on
+		GitHub) as well as [play.sh](play.sh) for some examples.
 
 * **`SHED`**	    
 	        every **`SHED`** movements you will grow (> 0), shrink (< 0) or
@@ -112,27 +112,27 @@ This game has a number of configurable pitfalls including walls and snakes.
 
 There is a good deal of useful documentation that is provided with this entry:
 
-* [gameplay.html][]
+* [gameplay.html][] ([gameplay.md][] on GitHub)
 
 Documented game *features*!
 
-* [terminals.html][]
+* [terminals.html][] ([terminals.md][] on GitHub)
 
 Information about terminal capabilities, dimensions (setting and how to restore sanity if it causes any problems) as well as colours (limitations etc.).
 
-* [troubleshooting.html][]
+* [troubleshooting.html][] ([troubleshooting.md][] on GitHub)
 
 Workarounds for various game *features*
 
-* [bugs.html][]
+* [bugs.html][] ([bugs.md][] on GitHub)
 
 Bugs and things that might seem like bugs but are not.
 
-* [chocolate-cake.html][]
+* [chocolate-cake.html][] ([chocolate-cake.md][] on GitHub)
 
 Because most of us could use some *Double-layered Chocolate Fudge Cake*!
 
-* [spoilers.html][]
+* [spoilers.html][] ([spoilers.md][] on GitHub)
 
 Read ***ONLY*** if you really must give up trying to de-obfuscate!
 
@@ -144,11 +144,11 @@ Snake has two cheat modes (passable walls and self [cannibalism]), a drawing (or
 practising) mode, *can play by itself (**and win!**)*, is coloured (included
 [snake-colours.sh][] and [play.sh][] scripts compile in player-selected colours)
 and there are many other play modes (many more can be devised with the
-imagination and the environmental variables; see [gameplay.html][] for many
-examples and [play.sh][] for preconfigured modes) and options.  You can pause
-and there's even a built-in test unit for some features!  The variables
-mentioned in the to run section at the top of this file modify the behaviour of
-Snake.
+imagination and the environmental variables; see [gameplay.html][]
+([gameplay.md][] on GitHub) for many examples and [play.sh][] for preconfigured
+modes) and options.  You can pause and there's even a built-in test unit for
+some features!  The variables mentioned in the to run section at the top of this
+file modify the behaviour of Snake.
 
 Here are some other features of the game:
 
@@ -159,16 +159,16 @@ Here are some other features of the game:
 	section (this goes for a low **`EVADE`** value too).
 
 *   Grow-Shrink mode (Positive and Negative Winning) mode (see
-    [gameplay.html][] for more details).
+    [gameplay.html][]/[gameplay.md][] for more details).
 
 *   The dimensions of the game (this is actually a terminal thing but I document
     how to do this and its potential pitfalls) (**`LINES`** , **`COLUMNS`**).
 
 There are no complicated command line invocations; it's just a matter of passing
 into the game descriptively named variables and I include a script that sets up
-many different gameplay modes (see [gameplay.html][] and [play.sh][]).
+many different gameplay modes (see [gameplay.html][]/[gameplay.md][] and [play.sh][]).
 
-The [gameplay.html][] file has all the information on
+The [gameplay.html][]/[gameplay.md][] file has all the information on
 what the game looks like, how to play, the different types of modes (that I have
 thought of so far) including all those in the above list. Along with the
 [play.sh][] and [snake-colours.sh][] scripts it's probably the most important
@@ -182,22 +182,22 @@ suggestions (that I don't document so as to not spoil them). You can pass in
 environmental variables to both scripts though obviously some will conflict with
 different options in play.sh.
 
-Probably just as important is [chocolate-cake.html][] with an old but wonderful
-recipe (because the judges love chocolate and who can blame them? - also it goes
-with one of the IAQs I include later).
+Probably just as important is [chocolate-cake.html][] ([chocolate-cake.md][] on
+GitHub) with an old but wonderful recipe (because the judges love chocolate and
+who can blame them? - also it goes with one of the IAQs I include later).
 
-The [troubleshooting.html][] file has some advice on potential problems (and
-things that might appear to be problems at first glance but are not) that I have
-thought of or encountered.
+The [troubleshooting.html][] ([troubleshooting.md][] on GitHub) file has some
+advice on potential problems (and things that might appear to be problems at
+first glance but are not) that I have thought of or encountered.
 
-The [terminals.html][] has a variety of information specific to terminals from
-input/directions, dimensions, sanity and colours: a sort of troubleshooting
-guide for terminals with some additional information.
+The [terminals.html][] ([terminals.md][] on GitHub) has a variety of information
+specific to terminals from input/directions, dimensions, sanity and colours: a
+sort of troubleshooting guide for terminals with some additional information.
 
-The [spoilers.html][] has a variety of information including some of the
-obfuscation techniques and a bit of how it works.
+The [spoilers.html][] ([spoilers.md][] on GitHub) has a variety of information
+including some of the obfuscation techniques and a bit of how it works.
 
-The [bugs.html][] has a list of known bugs and things that
+The [bugs.html][] ([bugs.md][] on GitHub) has a list of known bugs and things that
 look like bugs but aren't as well as documenting a built-in test unit for some
 features.
 
@@ -208,19 +208,22 @@ though much of it is what's also above). To render try:
 man ./snake.1
 ```
 
-The [COMPILING.md][] file has a few portability notes and the [HACKING.md][] file has
-some information on how one might modify things, things that could be
-implemented (and how to/how not to go about some of the things) as well as some
-other information on the entry (some of which is deliberately not true - a
-variation of misleading comments). These files are probably insignificant.
+The [COMPILING.html][] ([COMPILING.md][] on GitHub) file has a few portability
+notes and the [HACKING.html][] ([HACKING.md][] on GitHub) file has some
+information on how one might modify things, things that could be implemented
+(and how to/how not to go about some of the things) as well as some other
+information on the entry (some of which is deliberately not true - a variation
+of misleading comments). These files are probably insignificant.
 
 I have more information about this entry at
-[https://ioccc.xexyl.net/2020/snake][].
+<https://ioccc.xexyl.net/2020/snake]>.
 
-For the files I recommend looking at the html files with a browser; this
-particularly goes for the [gameplay.html][], [bugs.html][], [terminals.html][]
-and [troubleshooting.html][] - along with the most important one
-[chocolate-cake.html][].
+As noted for the files I recommend looking at the html files with a browser
+unless on GitHub in which case I recommend the markdown files; this particularly
+goes for the gameplay, bugs, terminals, troubleshooting ones along with the most
+important one, chocolate cake. Most important for the cake as the formatting is
+very important.
+
 
 <a name="toc"></a>
 
@@ -268,7 +271,7 @@ and [troubleshooting.html][] - along with the most important one
     took fewer bytes and the negative shedding is a positive consequence of
     unsigned arithmetic.
 
-On a more serious note look at [bugs.html][].
+On a more serious note look at [bugs.html][] ([bugs.md][] on GitHub).
 
 
 ### <a name="naqs" href="#toc">NAQs/IAQs (Never/Infrequently Asked Questions)</a>
@@ -462,17 +465,18 @@ walls passable and not worry about dying.
 
 Why yes I do! So good in fact that even my late stepmum who didn't even like
 chocolate (except white chocolate) loved this cake. It's a double-layered
-chocolate fudge cake. See the file [chocolate-cake.html][] for the recipe.
-Note that it's a complicated but it's well worth it!
+chocolate fudge cake. See the file [chocolate-cake.html][]
+([chocolate-cake.md][] on GitHub) for the recipe.  Note that it's a complicated
+but it's well worth it!
 
-I included it in all my entries this year because if any of them won more people
+I included it in both of my entries this year because if any of them won more people
 can have this recipe; also it might help remind the judges that they really
 should have their cook bake it so they can all - including the cook should they
 also like chocolate - enjoy the cake whilst judging (and otherwise - it's a big
 cake and very rich). Sadly they didn't get to enjoy it during their judging due
 to the pandemic but maybe next time (or they can do on their own).
 
-Do make sure to pay attention to all notes!
+**Do make _SURE_ that  you pay attention to _ALL_ notes!**
 
 ##### Reiterating the notes about the cake and the icing
 
@@ -483,7 +487,8 @@ use the refrigerator or else air conditioner to cool down the place. This might
 or might not work well enough.
 - Do **NOT** use imitation vanilla!
 - Do **NOT** use butter even if you think it'll come out better; it will come
-out bad!
+out bad! Many people have made this mistake 'because they know better'. You've
+been warned.
 - Pay attention to the rest of the notes as well! They're crucial.
 
 
@@ -569,27 +574,31 @@ If you wish to contact me please do so. Please contact via mastodon. You can try
 email but I'm more likely to respond to mastodon messages.
 
 [COMPILING.md]: COMPILING.md
+[COMPILING.html]: COMPILING.html
 [HACKING.md]: HACKING.md
+[HACKING.html]: HACKING.html
 [bugs.html]: bugs.html
+[bugs.md]: bugs.md
 [troubleshooting.html]: troubleshooting.html
 [human snakes]: http://www.macroevolution.net/snake-human-hybrids.html
+[chocolate-cake.md]: chocolate-cake.md
 [chocolate-cake.html]: chocolate-cake.html
-[spoilers.markdown]: spoilers.markdown
+[spoilers.md]: spoilers.md
+[spoilers.html]: spoilers.md
 [Surround]: https://en.wikipedia.org/wiki/Surround_(video_game)
 [Snake walk: The physics of slithering]: https://www.bbc.co.uk/news/science-environment-35563941
 [snake-colours.sh]: snake-colours.sh
 [gameplay.html]: gameplay.html
+[gameplay.md]: gameplay.md
 [flying snakes]: https://www.bbc.co.uk/news/science-environment-25943693
 [play.sh]: play.sh
 [great chocolate cake]: cake.jpg
 [https://ioccc.xexyl.net/2020/snake]: https://ioccc.xexyl.net/2020/snake
 [Double-layered Chocolate Fudge Cake]: chocolate-cake.html
-[gameplay.html]: gameplay.html
 [terminals.html]: terminals.html
+[terminals.md]: terminals.md
 [troubleshooting.html]: troubleshooting.html
-[bugs.html]: bugs.html
-[chocolate-cake.html]: chocolate-cake.html
-[spoilers.html]: spoilers.html
+[troubleshooting.md]: troubleshooting.md
 
 ## Copyright and CC BY-SA 4.0 License:
 

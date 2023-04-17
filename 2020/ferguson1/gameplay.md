@@ -69,11 +69,12 @@ for the input keys.
 # 1. <a name="support" href="#toc">Testing terminal environment/capabilities</a>
 
 Most people probably won't have any issue at all but for those who have any
-problems with the terminal see the [terminals.md][] file for more
-information on the terminal capabilities testing utility I include.
+problems with the terminal see the [terminals.html][] ([terminals.md][] on
+GitHub) file for more information on the terminal capabilities testing utility I
+include.
 
-For troubleshooting other problems see [troubleshooting.md][]
-([troubleshooting.html][]) and [bugs.md][] ([bugs.html][]).
+For troubleshooting other problems see [troubleshooting.html][]
+([troubleshooting.md][] on GitHub) and [bugs.html][] ([bugs.md][] on GitHub).
 
 
 # 2. <a name="input" href="#toc">Input keys</a>
@@ -414,10 +415,11 @@ left go right etc.) and then after some length (but before you get beyond the
 snake) turn (so that you go perpendicular) and then watch as the snake starts
 unwinding at one place and then suddenly unwinds another direction.
 
-An example of extreme cannibalism is in the [cannibalism.log.md][] file. It
-explains information about the file including how to find the bug, head and tail
-of the snake, at least where it was documented. The first run has several dumps.
-The final example has the snake inside itself.
+An example of extreme cannibalism is in the [cannibalism.log.html][]
+([cannibalism.log.md][] on GitHub) file. It explains information about the file
+including how to find the bug, head and tail of the snake, at least where it was
+documented. The first run has several dumps.  The final example has the snake
+inside itself.
 
 # <a name="shedding" href="#toc">Gameplay: Shedding (stretching)</a>
 
@@ -476,8 +478,8 @@ X:24/49 Y:8/16 S:5/658 B:0
 
 # 4. <a name="modes" href="#toc">Gameplay modes</a>
 
-Here I list a number of different modes of play. In the [bugs.md][]
-([bugs.html][]) file I even show how there's a built-in test unit for some
+Here I list a number of different modes of play. In the [bugs.html][]
+([bugs.md][] on GitHub) file I even show how there's a built-in test unit for some
 modes! There are certainly other modes that could be imagined: the modes below
 happened over time and some were simply an accidental discovery or something I
 thought of by a chance; others were thought out from the beginning but were
@@ -696,7 +698,8 @@ The parameters above were chosen after playing with the mode a bit to find a
 value that wouldn't take that much time but still would pose a challenge. One
 could reverse it so that one shrinks more than growing.
 
-The [crazy.log.md][] file has several screen dumps with this idea.
+The [crazy.log.html][] ([crazy.log.md][] on GitHub) file has several screen
+dumps with this idea.
 
 You could also have it so that eating a bug makes you shrink and moving so many
 moves you grow. I tried this and for me it was far more fun. The [play.sh][]
@@ -874,12 +877,15 @@ years ago but I know it's true now. **Believe in yourself. Always.**
 [troubleshooting.html]: troubleshooting.html
 [bugs.md]: bugs.md
 [bugs.html]: bugs.html
-[spoilers.markdown]: spoilers.markdown
+[spoilers.md]: spoilers.md
+[spoilers.html]: spoilers.html
 [snake-colours]: snake-colours
 [number of hertz (flashes) per second triggering seizures]: https://www.epilepsysociety.org.uk/photosensitive-epilepsy#.Xjgpwi2ZOgQ
 [termcaps.c]: termcaps.c
 [cannibalism.log.md]: cannibalism.log.md
+[cannibalism.log.html]: cannibalism.log.html
 [crazy.log.md]: crazy.log.md
+[crazy.log.md]: crazy.log.html
 [play.sh]: play.sh
 
 -----------------------------------------------------------------------------------------------------

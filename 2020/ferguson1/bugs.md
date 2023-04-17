@@ -142,7 +142,7 @@ And you'll see that you start to be the normal size but then you leave your
 head several places until you end up getting to the max size (by way of it
 being unsigned). This isn't a bug even if it might seem like one. In fact
 this is the basis of the grow/shrink mode of play that I talk about in the
-[gameplay.md][] ([gameplay.html][]) file.
+[gameplay.html][] ([gameplay.md][] on GitHub) file.
 
 Here's another thing to be aware of. Let's say you do:
 
@@ -266,7 +266,7 @@ With 10 rows and columns it's calculated as `7 * 7` (i.e. it's
 (`playable_rows * playable_columns`). I have played with this many
 times and I do not believe there should be a problem. If there is it's from a
 very poor implementation of rand() and I discuss this in
-[troubleshooting.md][] ([troubleshooting.html][]).
+[troubleshooting.html][] ([troubleshooting.md][] on GitHub).
 
 There I also give some test outputs without the cap in place to give an idea of
 when it became a problem (or would have). In short this is known but I do not
@@ -323,6 +323,7 @@ but it is very much appreciated and it means a great deal to me. Cheers.)
 [troubleshooting.md]: troubleshooting.md
 [troubleshooting.html]: troubleshooting.html
 [gameplay.html]: gameplay.html
+[gameplay.md]: gameplay.md
 [cannibalism.log.md]: cannibalism.log.md
 [https://en.wikipedia.org/wiki/Halfwidth_and_fullwidth_forms]: https://en.wikipedia.org/wiki/Halfwidth_and_fullwidth_forms
 [spoilers]: spoilers.markdown

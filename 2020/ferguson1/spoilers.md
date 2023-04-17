@@ -1,6 +1,6 @@
 # Introduction (SPOILER ALERT)
 
-In the [gameplay.md][] ([gameplay.html][]) file I have given enough
+In the [gameplay.html][] ([gameplay.md][] on GitHub) file I have given enough
 information to know how the game looks, how to move the snake, how to pause etc.
 In this file I am including (some) information on how the game actually works:
 the technical details as it were, obfuscation techniques and also some of the
@@ -437,13 +437,14 @@ dimensions. Now in the first call in main() I have the code and tests following:
     offsets for every time I use negative offsets. But where's the fun in that?
     :)
 
-    BTW: Some of these are not in the table of expressions in the HACKING.md file.
-    Also there might be some code in there that is no longer correct (it was
-    before I started obfuscation) though it might be able to give an idea.
-    Spoilers abound in that file (in addition to this file) but the HACKING.md file
-    states things that are no longer true: a way of obfuscation itself! Instead
-    of misleading comments it's misleading statements in the file that explains
-    what some of the things are for!
+    BTW: Some of these are not in the table of expressions in the
+    [HACKING.html][] ([HACKING.md][] on GitHub) file.  Also there might be some
+    code in there that is no longer correct (it was before I started
+    obfuscation) though it might be able to give an idea.  Spoilers abound in
+    that file (in addition to this file) but the [HACKING.html][] ([HACKING.md][]
+    on GitHub) file states things that are no longer true: a way of obfuscation
+    itself! Instead of misleading comments it's misleading statements in the
+    file that explains what some of the things are for!
 
 - Misleading variable names for coordinates. In other words the Y coordinate is
 called X and the X coordinate is called Y.  This adds to the already confusing
@@ -948,17 +949,19 @@ all spaces anyway. Thus I could save another three bytes by changing it to:
 !o  && q *U,*V,' ');
 ```
 
-Technically it would be a `" "` (see [HACKING.md][] file) else for N (not referring to
-the variable though it might very well matter here too) movements (i.e.  due to
-sizes) you will at times (e.g. after eating a bug) see the snake body char at
-0,0. I'm not bothered about that though because the score line is meant to
-display something, it squeezes a few more bytes and having a space is hardly an
-imposition on usage (and for that matter having a 'o' at 0,0 isn't either).
+Technically it would be a `" "` (see [HACKING.html][] or on GitHub
+[HACKING.md][]) else for N (not referring to the variable though it might very
+well matter here too) movements (i.e.  due to sizes) you will at times (e.g.
+after eating a bug) see the snake body char at 0,0. I'm not bothered about that
+though because the score line is meant to display something, it squeezes a few
+more bytes and having a space is hardly an imposition on usage (and for that
+matter having a 'o' at 0,0 isn't either).
 
 
 [gameplay.md]: gameplay.md
 [gameplay.html]: gameplay.html
 [HACKING.md]: HACKING.md
+[HACKING.html]: HACKING.html
 
 -----------------------------------------------------------------------------------------------------
 (c) Copyright 1984-2020, [Leo Broukhis, Simon Cooper, Landon Curt Noll][judges] - All rights reserved

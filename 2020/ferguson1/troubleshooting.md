@@ -37,8 +37,8 @@ it as structured as possible/easiest to find.
 
 Because the score line is dynamic in length depending on the terminal size it
 can happen that the score/status wraps to the next line(s). This can be fixed by
-modifying the status line (see [HACKING.md][]) but you shouldn't need it to be very
-wide.
+modifying the status line (see [HACKING.html][] or on GitHub [HACKING.md][]) but
+you shouldn't need it to be very wide.
 
 * RESOLUTION #0: Use a bigger screen (it doesn't take that many columns)
 
@@ -58,9 +58,10 @@ wide.
 
 		#define J Z(B:%zu\n), c);
 
-    Recompile and try again. That will then show only the number of bugs eaten. See
-    the [HACKING.md][] file for other data you can include (though there are some
-    discrepancies here and there as you'll see).
+    Recompile and try again. That will then show only the number of bugs eaten.
+    See the [HACKING.html][] ([HACKING.md][] on GitHub) file for other data you
+    can include (though there are some discrepancies here and there as you'll
+    see).
 
 
 ## <a name="notmoving" href="#toc">The snake isn't moving!</a>
@@ -90,7 +91,8 @@ e.g. when the snake is growing.
     numerous causes for this some of which are a busy computer but ultimately
     it'll catch up; just give it the time it needs.
 
-* BOTTOM LINE: If you want more information then see the [bugs.md][] file.
+* BOTTOM LINE: If you want more information then see the [bugs.html][]
+([bugs.md][] on GitHub) file.
 
 
 ## <a name="invisiblehead" href="#toc">I can't see the snake head (or other part of the snake)!</a>
@@ -296,10 +298,11 @@ so that's probably why; in CentOS I did have to install it specially.
     And then on your white background terminal the game should keep the
     background white and the foreground black. This will of course mean you have
     no colour but unfortunately changing the background colour of curses would
-    eat too many bytes in the entry (I cite the functions in the [HACKING.md][] file).
+    eat too many bytes in the entry (I cite the functions in the
+    [HACKING.html][] ([HACKING.md][] on GitHub) file).
 
     I discuss colours and terminals in much more detail in
-    [terminals.md][] ([terminals.html][]).
+    [terminals.html][] ([terminals.md][] on GitHub).
 
 
 ## <a name="toodark" href="#toc">The text is hard to see (not bright enough)!</a>
@@ -403,7 +406,8 @@ is invalid input because octal only has digits 0 - 7: the resulting size will be
 
 
 I discuss the signed/unsigned issue to do with curses and sizes in C being
-unsigned in [bugs.md][] but probably there isn't anything more to say here.
+unsigned in [bugs.html][] ([bugs.md][] on GitHub) but probably there isn't
+anything more to say here.
 
 ## <a name="errors" href="#toc">Errors and error reporting</a>
 
@@ -446,8 +450,10 @@ is 0 and I limit the size to be no bigger than the max size.
 
 
 [HACKING.md]: HACKING.md
+[HACKING.html]: HACKING.html
 [prog.c]: prog.c
 [bugs.md]: bugs.md
+[bugs.html]: bugs.html
 [terminals.md]: terminals.md
 [terminals.html]: terminals.html
 [snake-colours]: snake-colours
