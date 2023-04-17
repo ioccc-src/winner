@@ -176,7 +176,8 @@ you're not we can link to your website if you wish.
 
 The simplest way to do this is to type `reset`. If echo was disabled you can get
 away with `stty echo`. Sometimes you can also get away with `stty sane`. `reset`
-does the most but note that it will clear the screen (`clear` will not work).
+does the most but note that it will clear the screen (`clear` will too but it
+won't reset the terminal).
 
 ## Q: Are there types of entries that are submitted so frequently that the judges get tired of them?
 
@@ -289,7 +290,7 @@ _**...it's so 20th century...**_
 HINT: It is not fatal to send in those types of entries, it is just MUCH
 HARDER to win. Such an entry would have to do something _really unique **AND**
 interesting_ to even make it into the final judging rounds. Entries that
-re-use these 'worn out' themes frequently lose to other entries that do
+reuse these 'worn out' themes frequently lose to other entries that do
 something different.
 
 HINT: If you really MUST send in an entry based on an 'overused theme', be sure
@@ -401,7 +402,7 @@ We are not accepting mirror requests at this time, sorry.
 
 ## Q: I want to publish some parts of the IOCCC in an article, or book, or newsletter, or use then in class/instructional notes, or quote from the IOCCC. May I do so?
 
-Please ask the IOCCC judges first. Please send your request using the
+Please ask the [IOCCC judges](/judges.html) first. Please send your request using the
 instructions on the [contacting the IOCCC Judges](/contact.html) page.
 
 ## Q: What are the grand prize / Best of Show winners?
