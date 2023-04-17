@@ -119,7 +119,7 @@ There is a good deal of useful documentation that is provided with this entry:
 ## Author's remarks:
 
 My remarks about my [Heer
-'Army'](https://en.wikipedia.org/wiki/German_Army_(1935%E2%80%931945)) and
+'Army'](https://en.wikipedia.org/wiki/German_Army_(1935%E2%80%931945) and
 [Luftwaffe 'Air Force'](https://en.wikipedia.org/wiki/Luftwaffe) [Enigma
 machine](https://en.wikipedia.org/wiki/Enigma_machine) simulator for
 the 27th IOCCC.
@@ -271,7 +271,7 @@ After that you can input the string and it'll go from there.
 #### <a name="example" href="#toc">Example run</a>
 
 BTW: There's a much more entertaining (and delicious) challenge or exercise in
-[recode.html][] (markdown version [recode.md](recode.md)) (involves
+[recode.html][] (markdown version [recode.md](recode.md) if reading on GitHub) (involves
 [chocolate-cake.html][]) though one might need a different kind of exercise
 after taking up the challenge! :-) These however show the general program as
 well as how to use the two winning entries of the Morse code that I referred to
@@ -419,8 +419,8 @@ I didn't think of everything. My entry was meant to be a simulator only as far
 as the ciphering goes but I thought this would make it much more interesting:
 make it more flexible by a wrapper program.
 
-For examples using it (and a delicious challenge) see
-[recode.html][]/[recode.md](recode.md). See also the [recode.1][] and
+For examples using it (and a delicious challenge) see [recode.html][] (or
+[recode.md](recode.md) if reading on GitHub). See also the [recode.1][] and
 [enigma.1][] man pages.
 
 
