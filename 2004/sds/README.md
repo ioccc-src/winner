@@ -24,8 +24,27 @@ make
 ```sh
 ./sds < sds.c > encoder.c
 make encoder
-./encoder sds.hint <sds.c >sds_msg.c
+./encoder README.md <sds.c >sds_msg.c
+make sds_msg
+./sds_msg < sds.c > sds2_msg.c
+diff sds2_msg.c encoder.c
 ```
+
+Also try:
+
+```sh
+echo 'Hello, World!' > message
+./encoder message < README.md > remarks.md
+diff remarks.md README.md # notice how similar they are
+
+# and then observe:
+./sds < remarks.md
+```
+
+### INABIAF - it's not a bug it's a feature! :-)
+
+The generated code will very likely crash or do something else if not given a
+proper command line. This is not a bug but a feature.
 
 ## Judges' remarks:
 
@@ -97,14 +116,16 @@ changed inside strings where it should be left alone.  Plain text
 files are good candidates for hiding information in, but the added
 spacing may render the text somewhat difficult to read.
 
+### Obfuscation
+
 This program is obfuscated in a number of ways:
 
-* The code is all but impossible to read due to the spacing
-* The algorithm is well hidden in the code due to copious red-herrings
-* The long expressions cause indentation tools to give poor results
-* And good old fashioned ternery operators are the icing on the cake
+* The code is all but impossible to read due to the spacing.
+* The algorithm is well hidden in the code due to copious red-herrings.
+* The long expressions cause indentation tools to give poor results.
+* And good old fashioned ternary operators are the icing on the cake.
 
-Compiling the program
+### Compiling the program
 
 The program (and the encoder program) should compile on any
 reasonable compiler.  In particular, they are known to compile under

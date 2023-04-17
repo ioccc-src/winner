@@ -272,8 +272,9 @@ The archive website will tell you if the link was never captured.
 
 Entries with this status should NOT be touched (unless they have another status
 that suggests that _that_ issue can be changed): they are system specific by
-design or are other things that are not actually bugs even if they appear to be.
-But are noteworthy nonetheless.
+design or are other things that are not actually bugs or bugs even if they
+appear to be. Or they might be documented bugs or things that simply are part of
+the entry. Nonetheless they are noteworthy.
 
 NOTE: the definition of this status changed over time. At one point it was when
 something was noted by the author, the judges, a consequence of earlier
@@ -1079,6 +1080,12 @@ gavin_files: boot.b lilo.conf prim gavin_install.txt
 
 The current ([Makefile](2004/gavin/Makefile) was modified to try and
 fit into the current IOCCC build environment.
+
+## [2004/sds](2004/sds/sds.c) ([README.md](2004/sds/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+The generated code will very likely segfault or do something not intended if not
+given the right args. See the README.md file for the correct syntax.
 
 
 # 2005

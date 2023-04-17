@@ -61,7 +61,7 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE=
+CINCLUDE= -include stdlib.h
 
 # Optimization
 #
