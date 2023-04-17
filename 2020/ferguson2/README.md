@@ -46,7 +46,7 @@ make
 
 ```
 
-**NOTE**: in [recode](recode.c) no spaces between options and option arguments are allowed.
+**NOTE**: in `recode` no spaces between options and option arguments are allowed.
 
 ## Try:
 
@@ -100,9 +100,11 @@ There is a good deal of useful documentation that is provided with this entry:
 
 * [enigma.1](enigma.1)	-  A useful man page for this entry.  To render, try:
 
+
 ```sh
 	    man ./enigma.1
 ```
+
 
 * [recode.html][] (or [recode.md](recode.md) if reading on GitHub)   
 	- Some useful information about [recode.c](recode.c)
@@ -536,8 +538,8 @@ ended his life. (I later made a bug fix but I consider this inconsequential).
 As for [recode.c][] though I really love this:
 
 ```c
-		    /\
-    /		 This is *not* what you think:
+	      /\
+    /	       This is *not* what you think:
 ```
 
 ...because it seems so wrong in C code at first glance. Also what does the
@@ -601,14 +603,14 @@ when reading in settings via the `-R` option which I explain in the
 letters can connect to A or B. Earlier there wasn't proper detection and this
 caused invalid output.
 
-> Why only 10 pairs when the German alphabet has 26 letters (the Enigma did not
-have the Eszett or the umlauts and in any case there is some disagreement about
-these being part of the alphabet; anyway for umlauts one can add an E after the
-letter and for the Eszett you can use 'ss' or 'SS' which is what they did)? It's
-theoretically possible to have 13 but the Enigma typically had 10 pairs.  It's
-easy enough to update my entry to do this once you de-obfuscate it but I'm not
-helping there (and in fact I don't think I could any more even if I wanted to -
-at least not easily).
+    Why only 10 pairs when the German alphabet has 26 letters (the Enigma did
+    not have the Eszett or the umlauts and in any case there is some
+    disagreement about these being part of the alphabet; anyway for umlauts one
+    can add an E after the letter and for the Eszett you can use 'ss' or 'SS'
+    which is what they did)? It's theoretically possible to have 13 but the
+    Enigma typically had 10 pairs.  It's easy enough to update my entry to do
+    this once you de-obfuscate it but I'm not helping there (and in fact I don't
+    think I could any more even if I wanted to - at least not easily).
 
 *   It does not obviously have the clicking sound associated with the moving
 parts of the real machine. I think it would be annoying to have this as it
