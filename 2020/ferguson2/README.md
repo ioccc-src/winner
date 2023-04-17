@@ -46,7 +46,7 @@ make
 
 ```
 
-**NOTE**: in `recode` no spaces between options and option arguments are allowed.
+**NOTE**: in [recode](recode.c) no spaces between options and option arguments are allowed.
 
 ## Try:
 
