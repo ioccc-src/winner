@@ -13,10 +13,8 @@ make
 ```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) changed this entry to
-use `fgets()` instead of `gets()` to make it safer and to prevent warnings from
-showing up at linking or runtime. Thank you Cody!
-
-For the original source [anderson.alt.c](anderson.alt.c) see below.
+use `fgets()` instead of `gets()` to make it safer and to prevent annoying
+warnings from showing up at linking or runtime. Thank you Cody!
 
 
 ## To run:
@@ -30,17 +28,6 @@ echo something | ./anderson
 ```sh
 echo Obfuscate | ./anderson
 ```
-
-### Alternate code:
-
-For the original version that uses `gets()` try:
-
-
-```sh
-make alt
-```
-
-Use `anderson.alt` as you would	`anderson`.
 
 ## Judges' remarks:
 
