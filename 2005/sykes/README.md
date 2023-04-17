@@ -1,11 +1,12 @@
 # Best emulator
 
-    Stephen Sykes
-    Maxisat
-    Laivalahdenportti 2
-    00810, Helsinki
-    Finland
-    sds@maxisat.fi
+Stephen Sykes  
+Maxisat  
+Laivalahdenportti 2  
+00810, Helsinki  
+Finland  
+<sds@maxisat.fi>  
+<https://web.archive.org/web/20160316092728/http://www.stephensykes.com/>
 
 ## To build:
 
