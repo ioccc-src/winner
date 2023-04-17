@@ -20,11 +20,14 @@ output of the program itself. Thank you Cody for your assistance!
 
 ## To run:
 
-	    ./schnitzi file
-	
-where:
-	    
-	    file	a file containing some text
+```sh
+./schnitzi file
+```
+
+where
+
+
+`file` is a file containing some text.
 
 ### INABIAF - it's not a bug it's a feature! :-)
 
