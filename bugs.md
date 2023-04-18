@@ -800,6 +800,265 @@ We would appreciate anyone who has it or even just knows the name! Thank you.
 
 # 1996
 
+## [1996/jonth](1996/jonth/jonth.c) ([README.md](1996/jonth/README.md))
+## STATUS: doesn't work with some platforms - please help us fix
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) noted that this does
+not work properly in macOS (at least Ventura). He did some debugging and has
+determined where the crash occurs (depending on invocation of the program) and
+came up with a workaround of sorts but if you have a fix we welcome your help.
+
+With this you'll need XQuartz as described in the [faq](faq.md) and the
+[1996/jonth/README.md](1996/jonth/README.md) file.
+
+Notes from Cody:
+
+Depending on invocation it appeared to have more than one crash location. It
+appears that the correct invocation might be `./jonth :0 :0` but it still
+crashes. Earlier invocations it would crash at
+
+```c
+s=XDefaultScreen(V=d[D]=XOpenDisplay(*(h+=!! *h)));
+```
+
+because `XOPenDisplay()` returned NULL. But using `:0 :0` _appears_ to resolve
+that problem. However instead it crashes at this code:
+
+```c
+XMapRaised(V,R[D][x][y]=w(V,e,H*x,H*y,H,H,1,0,1,0,2048,&c));
+```
+
+This is formed through the macros `K` and what appears to be `S` (but maybe
+others?):
+
+```c
+#define K Y(o,XMapRaised(V,e);)x=3;x--;)for(y=3;y--;r(G))XMapRaised(V,R[D]
+#define S +k),z(k-P=w(V,e,H*x,H*y,H,H,1,0,1,0,2048,&c));}XEvent J;M(){XFlush(
+```
+
+and the code surrounding it will look something like:
+
+```c
+for (o[D]=XCreatePixmapFromBitmapData(V,e,b,H,H,BlackPixel(V,s),
+    WhitePixel(V,s),DefaultDepth(V,s)),memset(b,x=0,H*H); x<H; x++)
+                    XMapRaised(V,e);
+for(x=3; x--;)
+    for(y=3; y--; r(G))
+        XMapRaised(V,R[D][x][y]=w(V,e,H*x,H*y,H,H,1,0,1,0,2048,&c));
+```
+
+...however I (Cody) have been awake since stupid o'clock and I might be missing
+something. I'm particularly not clear what happened to the part after the
+`XMapRaised(V,R[D]` before the rest of the function call (see the `S` macro).
+
+A C pre-processed version of the code is below in case this helps you find the
+problem:
+
+```c
+#include <math.h>
+#include <X11/Xlib.h>
+extern XIM Z;XID(*w)()=XCreateWindow,m,e,o[2],W[2],G[2],R[2][3][3];Display*V,*d[2];char**h,k=25,b[2500],H=50,D,s,x,y,i;T(){float l;XSetWindowAttributes c;s=XDefaultScreen(V=d[D]=XOpenDisplay(*(h+=!! *h)));XStoreName(V,e=w(V,RootWindow(V,s),0,0,152,152,2,0,1,0,0,0),"II"+D);for(G[D]=XCreatePixmapFromBitmapData(V,e,b,H,H,BlackPixel(V,s),WhitePixel(V,s),DefaultDepth(V,s)),memset(b,x=0,H*H);x<H;x++) for(i=c.event_mask=4;i--;x+i>H||z(x+i,(z(H-x-i,x),x)))x<i||z(x-i,x)|z(H-x+i,x);for(W[D]=XCreatePixmapFromBitmapData(V,e,b,H,H,BlackPixel(V,s),WhitePixel(V,s),DefaultDepth(V,s)),memset(b,x=0,H*H);x<H;x++) for(l=k;l>20&&l>x;l-=.5)z(x+k,y=sqrt(l*l-x*x) +k),z(k-x,y)-z(y,x+k)+z(y,k-x)*z(x+k,y=H-y),z(k-x,y),z(y,k-x),z(y,k+x);for(o[D]=XCreatePixmapFromBitmapData(V,e,b,H,H,BlackPixel(V,s),WhitePixel(V,s),DefaultDepth(V,s)),memset(b,x=0,H*H);x<H;x++)XMapRaised(V,e); for(x=3;x--;)for(y=3;y--;r(G))XMapRaised(V,R[D][x][y]=w(V,e,H*x,H*y,H,H,1,0,1,0,2048,&c));}XEvent J;M(){XFlush( d[!D]);x=3;for(XNextEvent(V,&J);x--;)for(y=3;y--;J.xany.window==R[D][ x][y]&&!b[x+k*y]++?t(D),t(!(D^=1)):D);M();}z(x,y){b[x/8+y*7]|=1<<x%8;}t(p){r(p?W:o);XClearWindow(V,m);}main(i,f)char**f;{M((T(h=f), T (++D)));}r(XID*z){XSetWindowBackgroundPixmap(V=d[D],m=R[D][x][y],z[ D]);}GC*g(
+    XIC
+);
+```
+
+### Workaround for macOS (if you have another X capable box like linux)
+
+If you have X forward functionality enabled if you put in your `~/.ssh/config`
+file (in the macOS) the line: `ForwardX11 yes` and have XQuartz open and ssh
+into that other box by `ssh -X` it appears that you can run the program but it
+does appear to not register the `O` move. Not sure if that's just doing
+something wrong or not.
+
+## STATUS: missing or dead link - please provide them
+
+As well the link which was http://www.uio.no/~jonth is no longer valid and
+there's no archive on the Internet Wayback Machine. Do you know of a proper URL?
+We greatly appreciate your help here!
+
+
+# 1997
+
+There was no IOCCC in 1997.
+
+# 1998
+
+## [1998/schnitzi](1998/schnitzi/schnitzi.c) ([README.md](1998/schnitzi/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work for
+modern systems but he notes a couple compile warnings to ignore.
+
+First if you get the warning:
+
+	warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+	   11 | void  g(){ O=j; printf(_); }
+	      |                 ^~~~~~
+
+
+please do NOT change it! Doing so will break the generated output.
+
+Another warning that was introduced but should be ignored (it's required) is:
+
+
+	warning: assignment to 'char *' from incompatible pointer type 'char **' [-Wincompatible-pointer-types]
+	   55 | main(int v,char **c){ O=r_; _d=c;
+	      |                               ^
+
+Please DO NOT change this either.
+
+If there are any other warnings triggered by your compiler please DO NOT fix
+those either!
+
+Another important note is that as the number passed into the program gets bigger
+the number of lines of output gets substantially larger. For instance:
+
+```sh
+$ ./schnitzi 9|wc -l
+  771999
+```
+
+
+# 1999
+
+There was no IOCCC in 1999.
+
+# 2000
+
+[2000/primenum](2000/primenum/primenum.c) ([README.md](2000/primenum/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This program does not do what you might think it does! Running it like:
+
+```sh
+./primenum 13
+```
+
+will seemingly wait for input exactly because it is waiting for input. See the
+README.md file or look at the source.
+
+It also has main() return void even though this is non-standard. Please do not
+fix this (in fact it was originally done but rolled back).
+
+
+# 2001
+
+
+## [2001/anonymous](2001/anonymous/anonymous.c) ([README.md](2001/anonymous/README.md))
+## STATUS: known bug - please help us fix
+
+This entry seems to no longer work and we would appreciate any help from anyone
+who can fix this. [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) has
+the following hints that might help but he has no system where he could test
+it. [Yusuke Endoh](/winners.html#Yusuke_Endoh) [wrote a little bit about
+it](https://mame-github-io.translate.goog/ioccc-ja-spoilers/2001/anonymous.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp) that
+might or might not help but he too could not get it to work.
+
+Tips from Cody:
+
+- Try a beautifier on the original C code.
+- Use cpp to make the functions easier to parse. For instance if you're in the
+directory try `cpp -E anonymous.c > anonymous.cpp` and look at that file to see
+the functions. It might or might not be helpful to use cpp on the beautified
+source.
+- After beautifying it try changing references of the macros (where not too
+complicated) to their definitions. For instance in vim you might do:
+`:%s/\<l\>/int */g` and then delete the line that was changed to `#define int *
+int*` (or else do a range substitute so it's not changed). You might not need
+this if you use the cpp. This might be useful anyway to more easily test things.
+- If your system has a `setarch` tool that might or might not be of help (I'm
+not too familiar with its internals).
+- The code appears to do everything from one call to `exit(3)` but it makes use
+of the ternary operator and possibly the comma operator.
+- Check the Makefile for the defines but also observe that those are in the
+source file. It appears that the entry might try compiling as well but that's
+from a quick glance.
+- The original main() started like: `main (char *ck, char **k)` but we made it
+compilable for clang by changing it to be: `main (int cka, char **k) { char *ck
+= (char *)cka;` which might or might not be good.
+- The author warns that only simple source (once compiled) would work so make
+use of the provided source file
+[2001/anonymous/anonymous.ten.c](2001/anonymous/anonymous.ten.c). To compile try
+`make anonymous.ten` from the entry directory which you can then run the entry
+on. Note that it needs to be compiled as a x86 program.
+- The program will to an extent destroy files it is used on. See the author's
+warning in their comments on that.
+
+
+## [2001/bellard](2001/bellard/bellard.c) ([README.md](2001/bellard/README.md))
+## STATUS: probable bug (possibly depending on system) - please help test and if necessary fix
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed an initial
+segfault and he also fixed the [supplementary
+program bellard.otccex.c](2001/bellard/bellard.otccex.c) to test the entry on to not segfault and
+seemingly work but he has no 32-bit system to test any further fixes; we
+would greatly appreciate anyone's help! It appears that this entry will require
+major debugging and to make it work one might need to have a deep understanding
+of the ELF format.
+
+The author said that they compiled it with [gcc version
+2.95.2](https://ftp.gnu.org/gnu/gcc/gcc-2.95.2/gcc-everything-2.95.2.tar.gz). We don't know if
+a certain gcc version is necessary but it might be helpful to download and
+compile that version to test it.
+
+# 2002
+
+There was no IOCCC in 2002.
+
+# 2003
+
+There was no IOCCC in 2003.
+
+# 2004
+
+
+## [2004/burley](2004/burley/burley.c) ([README.md](2004/burley/README.md))
+## STATUS: known bug - please help us fix
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile
+with clang. He notes however that both prior to the fix (with gcc) and after the
+fix (gcc, clang) it does not work: it allows input of the bet but after it
+prints the hand it does not do anything with your next move. Cody provided the
+following notes and tips (including possible reasons it doesn't work):
+
+0. Originally the `jmp_buf` was just an `int p[4][1000]`.
+1. The `setjmp.h` header file was not included so the calls to `longjmp()` had
+not only the wrong number of arguments but also implicitly returned int when it
+actually returns void. This means that the comma operator had to be used to get
+the binary expressions to work. It might be this is part of the problem. It's
+possible that actually changing this introduced it to not work as some old
+entries actually use invalid prototypes and work but changing them to use the
+proper prototype breaks them.
+2. Another possible problem is the abuse of `setjmp()` and `longjmp()` which is
+known to be a problem, at least as he interprets it in his tired head (and less
+experience with `longjmp`). In particular:
+> The longjmp() routines may not be called after the routine which called the
+> setjmp() routines returns.
+See also the NOTES section of the linux man pages for `setjmp(3)` and
+`longjmp(3)`.
+3. The main() originally returned a call to main() which appeared to be an
+infinite recursion at least as it was; now it returns a call to poke() (since
+it's a poker game) which has the same number and type of args (1, `char *`) that
+main() originally had. This appears to not be an infinite recursion but I might
+be reading it wrong. Changing it to not return itself and the same problem
+occurs so perhaps this is not the problem. It's possible that the initial call
+to the `poke()` function is incorrect.
+4. It might be that the requirement of the comma operator in modern compilers is
+a problem. Perhaps some instances of `,1` should be `,0`? That seems plausible
+as they are often used with the `&&` operator.
+5. As well main() had only one arg, a `char *`, and there was a (seemingly)
+needless cast to `char *` from gets(). This cast remains in the code however.
+6. The code no longer uses `gets()` but `fgets()`; this is not the problem
+however.
+7. Sometimes the lack of a _proper_ prototype lets code work if the function is
+used incorrectly so one should be careful with adding the proper prototypes.
+With this entry it didn't _appear_ to be relevant but maybe it is after another
+change?
+
+
+## [2004/gavin](2004/gavin/gavin.c) ([README.md](2004/gavin//README.md))
+## STATUS: compiled executable crashes - please help us fix
+## STATUS: doesn't work with some 
 # 1997
 
 There was no IOCCC in 1997.
