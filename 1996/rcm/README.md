@@ -1,37 +1,45 @@
 # Best RFC Obfuscation
 
-    Ron McFarland
-    7941 Fawncreek Drive
-    Cincinnati, Ohio 45249
-    USA
+Ron McFarland  
+7941 Fawncreek Drive  
+Cincinnati, Ohio 45249  
+USA  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./rcm < rfc1951.gz
+```sh
+./rcm < rfc1951.gz
+```
 
 ## Try:
 
 For more information try:
 
-	./rcm < rfc1952.gz
-
+```sh
+./rcm < rfc1952.gz
+```
 
 ## Judges' remarks:
 
 For a good noop try:
 
-	gzip -c < rcm.c | ./rcm
+```sh
+gzip -c < rcm.c | ./rcm
+```
 
 ## Author's remarks:
 
-Except for some silly requirements regarding input validation, CRC
-checking, and similar unimportant fluff, this program is a fully
-compliant RFC1951/RFC1952 (GNU Gzip) file uncompressor.  Feed it a
-"gzip" compressed file on standard input, and it will write the fully
+Except for some silly requirements regarding input validation, CRC checking, and
+similar unimportant fluff, this program is a fully compliant
+[RFC1951](https://www.ietf.org/rfc/rfc1951.txt)/[RFC1952](https://www.ietf.org/rfc/rfc1952.txt)
+([GNU Gzip](https://www.gnu.org/software/gzip/)) file uncompressor.  Feed it a
+`gzip` compressed file on standard input, and it will write the fully
 uncompressed original file to standard output.
 
 ### ObJustifications for this entry:
@@ -39,7 +47,7 @@ uncompressed original file to standard output.
 #### The Design Trade-off Argument:
 
 "The 184 characters worth of defines in the build file have been
-carefully offset by 184 redundant and unnecessary '{', '}', and ';'
+carefully offset by 184 redundant and unnecessary '`{`', '`}`', and '`;`'
 characters in the source file."
 
 #### The Design Review Argument:
@@ -49,12 +57,12 @@ meets and actually exceeds specification."
 
 #### The Program Metrics Argument:
 
-"The program source is less than 3,100 characters in length and
-uncompresses file `emacs-19.34b.tar.gz' in about 130 seconds on
-my HP 9000/735.  The now obsolete source file `inflate.c' from
-the GNU gzip source tree is 31,613 characters in length and
-uncompresses the emacs distribution file in slightly under 25
-seconds.  Thus:
+"The program source is less than 3,100 characters in length and uncompresses
+file
+[emacs-19.34b.tar.gz](https://ftp.gnu.org/old-gnu/emacs/emacs-19.34b.tar.gz) in
+about 130 seconds on my HP 9000/735.  The now obsolete source file `inflate.c'
+from the GNU gzip source tree is 31,613 characters in length and uncompresses
+the emacs distribution file in slightly under 25 seconds.  Thus:
 
             3100 / 130 = 23.85       -vs-      31613 / 25 = 1264.52
 
