@@ -20,7 +20,28 @@ make all
 
 WARNING: on modern systems this is very fast and could be a problem for those
 susceptible to photosensitivity. Please try this one with caution if this
-applies to you! The same goes for people who can be overstimulated.
+applies to you! The same goes for people who can be overstimulated. See below
+for alternate version if you want to see it go slower or if seeing things move
+by too fast is a problem for you.
+
+NOTE: to reset the sanity of your terminal after this program ends try `reset`.
+
+
+### Alternate code:
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) provided an alternate
+version which uses `usleep()` in between writing the output for those who are
+sensitive to text flashing by rapidly (it affects him too but he also thinks it
+moves too fast nowadays anyway). The default sleep duration is `35000` but you can
+change it at compilation like:
+
+```sh
+make CFLAGS+="-DZ=20000" clobber alt
+```
+
+Use `eldby.alt` as you would `eldby`.
+
+Thank you Cody!
 
 ## Judges' remarks:
 
