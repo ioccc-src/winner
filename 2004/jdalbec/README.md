@@ -1,11 +1,10 @@
 # Best Abuse of the Periodic Table
 
-    John Dalbec
-    20 Squire's Ct.
-    Canfield OH 44406
-    USA
-
-    http://cc.ysu.edu/~jpdalbec/
+John Dalbec  
+20 Squire's Ct.  
+Canfield OH 44406  
+USA  
+<https://jpdalbec.people.ysu.edu>  
 
 ## To build:
 
@@ -37,8 +36,8 @@ it's the first atomic fission we've seen in the IOCCC.
 
 It's elementary!
 
-See http://mathworld.wolfram.com/LookandSaySequence.html,
-http://mathworld.wolfram.com/CosmologicalTheorem.html,
+See <http://mathworld.wolfram.com/LookandSaySequence.html>,
+<http://mathworld.wolfram.com/CosmologicalTheorem.html>,
 and the references listed there.
 
 Go read the web pages and come back.

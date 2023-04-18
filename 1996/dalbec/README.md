@@ -1,16 +1,16 @@
 # Best Numerical Obfuscation
 
-    John Dalbec
-    20 Squire's Ct.	(home address)
-    Canfield, OH 44406
-    USA
-
-    http://www.math.yale.edu/pub/users/dalbec/
+John Dalbec  
+20 Squire's Ct.	(home address)  
+Canfield, OH 44406  
+USA  
+<https://jpdalbec.people.ysu.edu>
 
 ## To build:
 
-        make all
-
+```sh
+make all
+```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) proposed a fix for this
 to compile with clang and Landon implemented it after some discussion. The
@@ -27,12 +27,15 @@ thanks to Yusuke for confirming the output is correct!
 
 ## To run:
 
-	./dalbec
+```sh
+./dalbec
+```
 
 ## Try:
 
-
-	./dalbec 3 | head -n 29
+```sh
+./dalbec 3 | head -n 29
+```
 
 Why does the output end with 121?
 
@@ -65,25 +68,26 @@ space is roughly proportional to the last number printed.
 (On SunOS/cc, the proportionality constant is about 48 bytes.)
 
 On completion, the program produces a core file that may be used to
-refine this estimate.  (Or you could try typing "limit" if you're
-running `csh`.) In rare cases the stack space may exceed `24*MAXINT`
+refine this estimate.  (Or you could try typing `limit` if you're
+running `csh`.) In rare cases the stack space may exceed `24*INT_MAX`
 bytes, in which case the program will produce an inaccurate estimate.
 
-This program is obfuscated:
+This program is obfuscated by:
 
-1. by the use of easily-confused variable names
+1. The use of easily-confused variable names.
 
-2. by using the implicit !=0 in conditional expressions
+2. Using the implicit `!=0` in conditional expressions.
 
-3. by substituting expressions such as !a for 0 where a!=0 and !a for 1 where a==0
+3. Substituting expressions such as `!a` for `0` where `a!=0` and `!a` for `1`
+where `a==0`.
 
-4. by the fact that main() is a single expression and so beautifies poorly
+4. The fact that `main()` is a single expression and so beautifies poorly.
 
-5. by the fact that main() is used
+5. The fact that `main()` is used:
 
-    - to compute powers in modular arithmetic
+    - to compute powers in modular arithmetic.
 
-    - to recursively call itself in the main loop
+    - to recursively call itself in the main loop.
 
 ## Copyright and CC BY-SA 4.0 License:
 
