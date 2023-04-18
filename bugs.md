@@ -881,7 +881,7 @@ Tips from Cody:
 
 - Try a beautifier on the original C code.
 - Use cpp to make the functions easier to parse. For instance if you're in the
-directory try `cpp -E anonymous.cp > anonymous.cpp` and look at that file to see
+directory try `cpp -E anonymous.c > anonymous.cpp` and look at that file to see
 the functions. It might or might not be helpful to use cpp on the beautified
 source.
 - After beautifying it try changing references of the macros (where not too
