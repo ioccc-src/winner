@@ -847,9 +847,33 @@ for(x=3; x--;)
         XMapRaised(V,R[D][x][y]=w(V,e,H*x,H*y,H,H,1,0,1,0,2048,&c));
 ```
 
-...however I (Cody) have been awake since stupid o'clock and I might be missing
-something. I'm particularly not clear what happened to the part after the
-`XMapRaised(V,R[D]` before the rest of the function call (see the `S` macro).
+In particular it is this part of the code that crashes: `w(...)`. But what is
+that? According to `lldb`  it is:
+
+```
+(lldb) p w
+(XID (*)(...)) $0 = 0x00000001003cd374 (libX11.6.dylib`XCreateWindow)
+```
+
+so `w == XCreateWindow()`. But it never actually finishes its call; modifying
+the code a bit and we see that it crashes before it returns:
+
+
+```
+(lldb) up
+frame #1: 0x0000000100003af4 jonth`T at jonth.c:40:16
+   37  				    r(G)
+   38  				    )
+   39  			    {
+-> 40  				Window ww = w(V,e,H*x,H*y,H,H,1,0,1,0,2048,&c);
+   41  				XMapRaised(V,R[D][x][y]=ww);
+   42  			    }
+
+```
+
+...so it never reaches the call that should be using its return value.
+Unfortunately if XQuartz has debug symbols I don't have access to them so I'm at
+a loss at this time.
 
 A C pre-processed version of the code is below in case this helps you find the
 problem:
