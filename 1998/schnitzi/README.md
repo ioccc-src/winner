@@ -39,7 +39,7 @@ itself in two parts which required two fixes, one for linux and further changes
 for macOS. He also fixed a segfault (after printing garbage) when the arg
 specified evaluated to 0.  Thank you Cody for your assistance!
 
-### INABIAF - it's not a bug it's a feature
+### INABIAF - it's not a bug it's a feature :-)
 
 NOTE: the larger the number given to the program the longer the output becomes
 and quite substantially so.  Doing `./schnitzi 9` will actually print 771999
