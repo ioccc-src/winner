@@ -1,12 +1,11 @@
 # Best Layout
 
-Don Yang
-UCSD
-259 E. Bellbrook St.
-Covina, CA 91722
-USA
-
-http://omoikane.cjb.net
+Don Yang  
+UCSD  
+259 E. Bellbrook St.  
+Covina, CA 91722  
+USA  
+<http://uguu.org>   
 
 ## To build:
 
@@ -58,22 +57,22 @@ them with cool layout!
 
 For your enjoyment:
 
-1. Compile saitou.c
-2. Run a.out and pipe output to another .c file
+1. Compile [dhyang.c](dhyang.c).
+2. Run `./dhyang` and pipe output to another .c file
 3. Compile that file
 4. Repeat steps 2 and 3 until eventually the output cycles
 
-To interpret the output: the saitou.c is an image of Saitou Hajime,
-which eventually generates three sources files that are images of
-"aku soku zan" (sin swift slay), Saitou's motto ;)
+To interpret the output: the [dhyang.c](dhyang.c.c) is an image of Saitou
+Hajime, which eventually generates three sources files that are images of "aku
+soku zan" (sin swift slay), Saitou's motto ;)
 
 For best viewing, set tab spaces to 8 characters, and set your
 terminal fonts to as close to square as possible.  I hate to do this
 but you know, size...
 
-saitou.c and all its output compiles with gcc if your OS uses ASCII
-character set.  No file is included and all functions assume default
-int return type (a source of compile warnings)
+[dhyang.c](dhyang.c) and all its output compiles with gcc if your OS uses ASCII
+character set.  No file is included and all functions assume default int return
+type (a source of compile warnings).
 
 ## Copyright and CC BY-SA 4.0 License:
 
