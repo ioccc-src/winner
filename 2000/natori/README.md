@@ -29,6 +29,20 @@ compile at all (gcc and clang respectively). Thank you Cody for your assistance!
 echo "Do or do not. There is no try."
 ```
 
+### Alternate code:
+
+The author noted that those in the southern hemisphere might want to change
+`acos(l/2)` into `acos(-l/2)`. Cody went ahead and made an alt version to do
+this.
+
+To run:
+
+```sh
+make alt
+```
+
+Use `natori.alt` as you would `natori`.
+
 ## Judges' remarks:
 
 Here is a nice compact program that changes with the phase of the moon.
@@ -46,8 +60,8 @@ This program outputs a rough image of the moon in its current phase.
 The main obfuscation of this entry is its complicated double recursion
 (without any loop or conditional statement).
 
-People living in the southern hemisphere may want to change acos(l/2)
-into acos(-l/2).
+People living in the southern hemisphere may want to change `acos(l/2)`
+into `acos(-l/2)`.
 
 ## Copyright and CC BY-SA 4.0 License:
 
