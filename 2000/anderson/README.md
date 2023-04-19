@@ -1,10 +1,10 @@
 # Best Use of Flags
 
-Glyn Anderson
-Jl. Raya Serang KM 18.2
-Desa Bojong
-Cikupa, Tangerang, 15710
-Indonesia
+Glyn Anderson  
+Jl. Raya Serang KM 18.2  
+Desa Bojong  
+Cikupa, Tangerang, 15710  
+Indonesia  
 
 ## To build:
 
@@ -36,7 +36,7 @@ organizer; just in case you are stranded on a desert island and need to
 signal your distress to passing ships.
 
 The obfuscation in this program is truly masterful.  The program is
-very cleverly obscured without the use of a single #define!
+very cleverly obscured without the use of a single `#define`!
 Reformatting this program by hand :-) is the easiest way to understand
 what is going on.
 
@@ -52,17 +52,19 @@ output as a depiction of a person holding two flags, using only ASCII
 characters (semaphore smileys, if you will).  For example, given the
 input "Hello, world!", the output will be:
 
-		  <>       <>       <>    <>                  <>     <>
-      _()       ()/      ()/      ()/     _\)       ()       (/_     _\)
-    [] /^      |^^      /^^      /^^    [] ^^      |^^|      ^^ [] [] ^^
-      <>[      [][     <>][     <>][       ][      [][]      ][       ][
+```
+	      <>       <>       <>    <>                  <>     <>
+  _()       ()/      ()/      ()/     _\)       ()       (/_     _\)
+[] /^      |^^      /^^      /^^    [] ^^      |^^|      ^^ [] [] ^^
+  <>[      [][     <>][     <>][       ][      [][]      ][       ][
 
 
-		  <>    []
-      _()_      ()/     |()       ()
-    [] ^^ []   /^^       ^^|     |^^|
-       ][     <>][       ][]     [][]
+	      <>    []
+  _()_      ()/     |()       ()
+[] ^^ []   /^^       ^^|     |^^|
+   ][     <>][       ][]     [][]
 
+```
 
 The program is obfuscated without the use of the preprocessor or any
 special compilation parameters.  In fact, the program doesn't even
@@ -74,7 +76,7 @@ statements to format the code properly.)  There is a single string
 constant which encodes the flag positions and other data needed for
 drawing the semaphore codes.
 
-The preprocessor will provide no help in un-obfuscating this code, and a
+The preprocessor will provide no help in de-obfuscating this code, and a
 C beautifier won't get you very far either.  You just have to crunch
 through it.
 
