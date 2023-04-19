@@ -20,12 +20,22 @@ cat august.c test.oc | ./august > test.oo
 ```
 
 
-NOTE: Some compilers will compile this code into infinite loops!
-If the above cat line does not execute in a very short amount
-of time, then you may need to fix your compiler or use gcc.
+NOTE: Some compilers like clang will compile this code into infinite loops!  If
+the above cat line (or one of the ones later in the try section) does not
+execute in a very short amount of time, then you may need to fix your compiler
+or use gcc.
 
-It should print a `!` followed by a newline.
+The above should print a `!` followed by a newline.
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
+this program that prevented it from working right but he notes it hangs in
+macOS. It works fine in linux. This is because macOS has clang, not gcc, even
+the gcc binary. He observed that with specific compiler flags it hangs in linux
+too and perhaps it's related to this in macOS; maybe other flags are needed but
+he doesn't know (at least not yet). He provided a bit more information in
+[bugs.md](/bugs.md) for anyone who wants to have a go at providing a fix for
+other compilers. As there are a lot of commands to try he also added
+[try.sh](try.sh). Thank you Cody for your assistance!
 
 ## Try:
 
@@ -73,6 +83,13 @@ And if you have lots of spare time, you can recurse one level deeper:
 
 ```sh
 cat august.oo august.oo august.oo fac.oo | ./august
+```
+
+NOTE: to run all the commands in the above sections you can also use the
+[try.sh](try.sh) script like:
+
+```sh
+./try.sh
 ```
 
 We (the judges) recommend that you spend some time studying this

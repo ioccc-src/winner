@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-invalid-source-encoding
+CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-invalid-source-encoding -Wno-invalid-utf8
 
 # Common C compiler warning flags
 #
@@ -57,7 +57,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE= -DZ=60000 -D'T=m[s]' -D'P=m[s++]' \
+CDEFINE= -DZ=240000 -D'T=m[s]' -D'P=m[s++]' \
 	-D'L=m[p++]' -D'g=getchar()' -DE=else -DW=while -D'B=m[p++]' \
 	-DI=if -DR='s=s+l/2;T=r;I(l%2)s++' -D'X=m[s-' \
 	-D'D=Q(13,-)Q(14,*)Q(15,/)Q(16,%)Q(6,==)Q(7,!=)Q(8,<)C(1,r=P;m[T]=r;T=r)C(9,r=P;m[T]=r;s++)'

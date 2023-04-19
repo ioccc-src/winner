@@ -800,6 +800,36 @@ We would appreciate anyone who has it or even just knows the name! Thank you.
 
 # 1996
 
+## [1996/august](1996/august/august.c) ([README.md](1996/august/README.md))
+## STATUS: doesn't work with some compilers - please provide alternative code
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
+this program that prevented it from working but he observes that this hangs
+in macOS with this invocation in particular:
+
+```sh
+cat august.c august.oc | ./august > august.oo
+```
+
+This happens to do with the fact that macOS is `clang` even the binary `gcc`.
+Trying clang in linux and the same problem occurs. As well if specifying (even
+with gcc) certain flags this also happens namely `-ggdb3`. The bug fix involved
+increasing the value of `Z` as it was accessing way out of range of the array,
+thus causing a segfault.
+
+The compilation should look like:
+
+```sh
+cc -std=gnu90 -Wall -Wextra -pedantic -Wno-error -Wno-implicit-function-declaration -Wno-invalid-source-encoding -Wno-invalid-utf8  -DZ=240000 -D'T=m[s]' -D'P=m[s++]' -D'L=m[p++]' -D'g=getchar()' -DE=else -DW=while -D'B=m[p++]' -DI=if -DR='s=s+l/2;T=r;I(l%2)s++' -D'X=m[s-' -D'D=Q(13,-)Q(14,*)Q(15,/)Q(16,%)Q(6,==)Q(7,!=)Q(8,<)C(1,r=P;m[T]=r;T=r)C(9,r=P;m[T]=r;s++)'  -O3 august.c -o august 
+```
+
+but again this will not work with clang. As the judges noted that some compilers
+compile it into an infinite loop I'm (Cody) inclined to believe that this is the
+source of the problem.
+
+Nevertheless if you have a fix for clang we welcome it!
+
+
 ## [1996/gandalf](1996/gandalf/gandalf.c) ([README.md](1996/gandalf/README.md))
 ## STATUS: missing or dead link - please provide them
 
