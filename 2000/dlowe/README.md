@@ -1,11 +1,9 @@
 # Worst Abuse of the Rules
 
-David Lowe
-1224 11th Avenue
-San Francisco, California, 94122
-USA
-
-http://pootpoot.com/~dlowe/
+David Lowe  
+1224 11th Avenue  
+San Francisco, California, 94122  
+USA  
 
 ## To build:
 
@@ -22,6 +20,7 @@ perl -MConfig -e 'print "$Config{archlibexp}/CORE\n"'
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile
 with more recent perl versions; the symbol now `PL_na` was once `na`. He notes
 that this entry crashes under macOS but it works under linux after this change.
+Thank you Cody for your assistance!
 
 
 ## To run:
@@ -41,8 +40,8 @@ echo "13 14 15 16 17 + - * / p" | ./dlowe
 When this entry was submitted the rules of the IOCCC did not prohibit
 the use of embedded language interpreters.  The judges considered
 disqualifying this entry because of the use of perl, but on the other
-hand it qualifies as the Worst Abuse of the Rules.  As a previous winner
-* David Lowe continues to inflict the highest quality "poot" on the
+hand it qualifies as the Worst Abuse of the Rules.  As a previous winner\*
+David Lowe continues to inflict the highest quality "poot" on the
 Judges.
 
 The program also contains an undocumented command for Chad and Chongo.
@@ -53,30 +52,33 @@ of the submitters hidden until all the prize winners have been selected.
 
 ## Author's remarks:
 
-### Usage:
+### Usage
 
 ./dlowe [file ...]
 
-### Synopsis:
+### Synopsis
 
-This is a reverse polish calculator, loosely based on the dc(1) unix
+This is a reverse polish calculator, loosely based on the `dc(1)` unix
 calculator.
 
-# Syntax:
+# Syntax
 
-This program understands the following dc(1) commands:
+This program understands the following `dc(1)` commands:
 
-   p   prints the top stack value without altering the stack.
-   P   prints the top stack value, removing it from the stack, and
-       doesn't print a trailing newline.
-   f   prints the contents of the stack, one number per line,
-       without modifying it.
-   c   clears the stack.
-   d   pushes a copy of the top stack value onto the stack.
-   r   reverses the order of the top two stack values.
+```
+p   prints the top stack value without altering the stack.
+P   prints the top stack value, removing it from the stack, and
+    doesn't print a trailing newline.
+f   prints the contents of the stack, one number per line,
+    without modifying it.
+c   clears the stack.
+d   pushes a copy of the top stack value onto the stack.
+r   reverses the order of the top two stack values.
+```
 
 And the following arithmetic operators are supported:
 
+```
    +   Pops 2 values and pushes their sum.
    -   Pops 2 values and pushes the result of subtracting the first
        from the second.
@@ -87,14 +89,15 @@ And the following arithmetic operators are supported:
        to the power of the first.
    %   Pops 2 values and pushes the remainder of the division that
        / would do.
+```
 
 The precision and range are double, like it or not, except that the
-modulus operator actually returns (p1 - (p2 * (p1 / p2))), but with
+modulus operator actually returns `(p1 - (p2 * (p1 / p2)))`, but with
 the innermost division calculated at integer precision.  This is
-usually what you expect (e.g. echo "12 8 % p" | ./dlowe == 4)
+usually what you expect (e.g. `echo "12 8 % p" | ./dlowe == 4`)
 
 Commands are read from stdin or from a list of files named on
-the command line.  Unlike dc(1), multiple commands on the same line
+the command line.  Unlike `dc(1)`, multiple commands on the same line
 must be space separated.  Commands are only executed when a newline
 or EOF is encountered.
 
@@ -153,9 +156,9 @@ error reporting.
 
 Unfortunately, Perl is an evolving beast - that includes the
 embedding API and the XS API.  The code was developed under
-Perl 5.005_03, successfully tested against Perl 5.6.0, Perl 5.005_02
-and Perl 5.004_04, and according to the version delta documentation,
-should work as-is with Perl 5.002 and later (which has been around
+`Perl 5.005_03`, successfully tested against `Perl 5.6.0`, `Perl 5.005_02`
+and `Perl 5.004_04`, and according to the version delta documentation,
+should work as-is with Perl 5.002` and later (which has been around
 since February 1996).  To clarify - it's not the Perl code itself
 that may be non-portable, it's the C code for embedding Perl and for
 calling C from Perl.
@@ -169,7 +172,7 @@ by slight misconfigurations of Perl on your system.
 
 Some compilers also complain that "third argument of `main' is
 deprecated" or something to that effect.  But in Perl prior to
-5.6.0, the header file "proto.h" actually had a prototype for main,
+`5.6.0`, the header file "proto.h" actually had a prototype for main,
 so applications which embed Perl must use the three argument form
 of main.
 
@@ -182,52 +185,52 @@ say, camels and humps.
 
 ### Obfuscated?
 
-. Reverse polish notation is pretty strange, in and of itself.
+- Reverse polish notation is pretty strange, in and of itself.
 
-. The layout of the program is three roughly symmetrical "stacks"
+- The layout of the program is three roughly symmetrical "stacks"
 of code.  This layout is quite sensitive in places - my C indenter
 actually breaks the code by inserting spaces in certain places.
 
-. Anyone who has ever programmed in Perl can attest to the fact that
+- Anyone who has ever programmed in Perl can attest to the fact that
 it is particularly well-suited to obfuscation; thus, the Perl is
 obfuscated.  (Here's my favorite legal Perl from this program:
-'_:$_=<>;' - but '$SS[$#SS]-=$SS[$#SS-1]' isn't bad, either).
+`_:$_=<>;` - but `$SS[$#SS]-=$SS[$#SS-1]` isn't bad, either).
 
-. I've eschewed traditional branch and loop structures such as
-'if' and 'for', in favor of their oft-neglected cousins, 'goto'
-and '?:', in both the Perl and C code.
+- I've eschewed traditional branch and loop structures such as
+`if` and `for`, in favor of their oft-neglected cousins, `goto`
+and `?:`, in both the Perl and C code.
 
-. I've used some highly magical Perl incantations, such as symbolic
-references, the 'goto &NAME' syntax, AUTOLOAD for exception handling,
-and abuse of the default scalar ($_).
+- I've used some highly magical Perl incantations, such as symbolic
+references, the `goto &NAME` syntax, `AUTOLOAD` for exception handling,
+and abuse of the default scalar (`$_`).
 
-. I've also deliberately used Perl syntax that is very much unlike
-C syntax: the &NAME rather than NAME() function calling syntax,
-leaving off parentheses wherever possible, using print() instead
-of printf(), and using the English style logic operators 'and' and
-'or' rather than '&&' and '||', for example.
+- I've also deliberately used Perl syntax that is very much unlike
+C syntax: the `&NAME` rather than `NAME()` function calling syntax,
+leaving off parentheses wherever possible, using `print()` instead
+of `printf()`, and using the English style logic operators `and` and
+`or` rather than `&&` and `||`, for example.
 
-. The fact that all the Perl code is in double-quotes doesn't lend
+- The fact that all the Perl code is in double-quotes doesn't lend
 any readability to the regular expressions and quoted strings
 therein.
 
-. The points and ways in which C and Perl connect are *really*
+- The points and ways in which C and Perl connect are *really*
 obscure.  They're also incredibly poorly documented, as they're
 primarily used in machine-generated code.  However, there's a
-wealth of example code on CPAN (www.cpan.org).
+wealth of example code on [CPAN (www.cpan.org)](https://www.cpan.org).
 
-. The Perl API functions are almost all macros, so you will probably
+- The Perl API functions are almost all macros, so you will probably
 find that preprocessor expansion will only make things worse.  They
-also have helpful, verbose names like SvNV, SvIV, and newSVpv.  I
+also have helpful, verbose names like `SvNV`, `SvIV`, and `newSVpv`.  I
 couldn't have done better myself!
 
-. Figuring out how the mathematical C functions get called is a bit
+- Figuring out how the mathematical C functions get called is a bit
 tricky.  Note the lack of explicit switching based on command
 input.
 
-. Because of the "interesting" way that commands are interpreted,
+- Because of the "interesting" way that commands are interpreted,
 all of the commands have synonyms.  For example, if you find it
-easier to remember, '=' is synonymous with 'd'.  This is makes it
+easier to remember, `=` is synonymous with `d`.  This also makes it
 possible to write (even more) obfuscated reverse polish commands
 (I figure this explanation moves the synonyms from 'bug' to
 'feature'!)
@@ -235,13 +238,15 @@ possible to write (even more) obfuscated reverse polish commands
 . The first IOCCC entry with an "easter egg"?...
 
 
-Aside: on unobfuscated Perl
+### Aside: on unobfuscated Perl
+
 My original intent was to write obfuscated C and crystal-clear Perl,
 to highlight my bending of the rules.  Unfortunately, Perl really
 doesn't lend itself to crystal-clear code...
 
 
-Bending the rules?
+### Bending the rules?
+
 Well, the rules never state that you can't embed another programming
 language, but on the other hand, knowing Perl probably isn't high on
 the list of qualifications for judges... Oh dear, I guess your C
@@ -251,7 +256,7 @@ If you don't change the rules, it'll be embedded Ada next year!
 
 ### AutoDefend
 
-A. Isn't this the obfuscated C contest?  What's this Perl $#_&&$_?
+A. Isn't this the obfuscated C contest?  What's this Perl `$#_&&$_`?
 
 D. Hey, this program *is* 100% C, and does not exec an external Perl
 interpreter.  It simply links against the Perl language library.
