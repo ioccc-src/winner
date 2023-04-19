@@ -1,12 +1,12 @@
 # Best Abuse of User
 
-Moxen N. Briddlebane
-24 Oxtree Ave.
-The Xoemn, MN 68214
+Moxen N. Briddlebane  
+24 Oxtree Ave.  
+The Xoemn, MN 68214  
 
-Lord Zarbon
-24 Oxtree Ave.
-The Xoemn, MN 68214
+Lord Zarbon  
+24 Oxtree Ave.  
+The Xoemn, MN 68214  
 
 ## To build:
 
@@ -22,9 +22,9 @@ make
 
 ## Try:
 
-```sh
-echo "Do or do not. There is no try."
-```
+For some fun every time you log in try running this from your `.bashrc` or
+equivalent file!
+
 
 ## Judges' remarks:
 
@@ -37,11 +37,11 @@ Can you find out how it stores the insult strings?  Can you then take
 an insult and figure out when it will be uttered?
 
 [sc] The code also contains a buffer overflow bug which I have fixed!
-The array size of "s" should be 1079 characters long.  (From 0 to 1078
+The array size of `s` should be 1079 characters long.  (From 0 to 1078
 inclusive!).  Without this it results in an error in the encoding of
 "decrepit" -- For a 32bit little endian machine using GCC (because of
 the way it assigns variables to memory) it will terminate "decrepit"
-with the character '\200' (the last value of F) instead of '\0'.
+with the character `'\200'` (the last value of `F`) instead of `'\0'`.
 
 ## Author's remarks:
 
@@ -60,8 +60,8 @@ mechanics of programming. What is particularly disturbing is
 the curious method of insult-encoding employed by this program.
 Furthermore, it is ambiguous how said data is arranged and why
 it is necessary to resort to trigonometric functions to handle
-it.  One of the real mysteries involves the numbers "114" and
-"2", which are, according to Lord Zarbon, very deliberate.
+it.  One of the real mysteries involves the numbers `114` and
+`2`, which are, according to Lord Zarbon, very deliberate.
 
 ## Copyright and CC BY-SA 4.0 License:
 
