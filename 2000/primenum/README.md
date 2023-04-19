@@ -1,8 +1,8 @@
 # Best Abuse of CPP
 
-Raymond Cheong
-[address subject to change]
-MD, USA
+Raymond Cheong  
+[address subject to change]  
+MD, USA  
 
 ## To build:
 
@@ -57,8 +57,10 @@ Instead, the program reads input from stdin and returns garbled text on
 stdout.  Fortunately, you can recover the original message simply by
 running the program a second time.  Try:
 
-    ./primenum n < textfile | ./primenum n > textfile2
-    diff textfile textfile2
+```sh
+./primenum n < textfile | ./primenum n > textfile2
+diff textfile textfile2
+```
 
 where n is the same number (modulo 64).  So, the prime number generator
 is actually a simple text encoder/decoder!  Of course, don't forget that
@@ -82,7 +84,7 @@ argument, otherwise the "bugs" in the program will cause it to crash!
     * a for loop that's used as an if statement
     * dependence on the high bit being 0
 - Try also
-  echo THIS MESSAGE IS IN ALL CAPS | ./primenum 32
+  `echo THIS MESSAGE IS IN ALL CAPS | ./primenum 32`
 
 ## Copyright and CC BY-SA 4.0 License:
 
