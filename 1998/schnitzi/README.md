@@ -71,29 +71,28 @@ instance, in this paragraph, the vowel which immediately follows
 entire novel (E. V. Wright's "Gadsby") in which no word contains
 the letter 'e'.
 
-The IOCCC has been no stranger to this concept.  Several winning
-entries from years past have accomplished interesting feats while
-completely avoiding the use of certain C constructs thought to
-be essential (e.g. 1988's robison.c).  If you have to ask why they
-would do it this way, then this contest just isn't for you.
+The IOCCC has been no stranger to this concept.  Several winning entries from
+years past have accomplished interesting feats while completely avoiding the use
+of certain C constructs thought to be essential (e.g. 1988's
+[robison.c](//1988/robison/robison.c)).  If you have to ask why they would do it
+this way, then this contest just isn't for you.
 
-In continuing with this fine tradition, this program suggests to
-the ANSI committee some new practical simplifications for the C
-language.  For instance, it appears that CONDITIONAL BRANCHING isn't
-really necessary.  So, we can do away with while, do...while, for,
-if/else, switch, ?:, or anything else that might cause any kind of
-nondeterministic jump in the code.  There's too much uncertainty
-in the world anyway.
+In continuing with this fine tradition, this program suggests to the ANSI
+committee some new practical simplifications for the C language.  For instance,
+it appears that CONDITIONAL BRANCHING isn't really necessary.  So, we can do
+away with `while`, `do...while`, `for`, `if`/`else`, `switch`, `?:`, or anything
+else that might cause any kind of nondeterministic jump in the code.  There's
+too much uncertainty in the world anyway.
 
 Function parameters and return types just confuse people anyway, so
 get rid of them.  Same with local variables.  In fact, all you really
-need are assignment statements, and maybe one printf() and one goto.
+need are assignment statements, and maybe one `printf()` and one `goto`.
 
 This style of programming is also ideal for systems with limited
 memory capacity, since the function call stack never goes beyond
 a depth of one.
 
-So what does it do?  Give it an integer (1 < n < 27) on the command
+So what does it do?  Give it an integer `(1 < n < 27)` on the command
 line, such as
 
 ```sh
@@ -102,12 +101,12 @@ line, such as
 
 The output will itself be a lipographic program, one which inputs
 (in this case) five numbers and prints them out sorted.  It sorts
-them, however, using only "if/else" statements, without arrays or
+them, however, using only `if/else` statements, without arrays or
 looping.  To see the resulting program run, redirect the output from
 `schnitzi` into another file, like this
 
 ```sh
-schnitzi 4 > sort.c
+./schnitzi 4 > sort.c
 ```
 
 and then compile it.
