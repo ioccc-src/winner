@@ -1,30 +1,50 @@
 # Best Utility
 
-    David Lowe
-    Pootpoot
-    67-D Manchester Street
-    San Francisco, CA 94110
-    USA
-
-    http://pootpoot.com/
+David Lowe  
+Pootpoot  
+67-D Manchester Street  
+San Francisco, CA 94110  
+USA  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./dlowe < anyfile > pootfile
+```sh
+./dlowe < anyfile > pootfile
+```
 
-## Judges' remarks
+## Try:
 
-Why is this entry would be considered a utility?  Well because it
+```sh
+./dlowe < README.md
+./dlowe < README.md > README.poot.md
+
+```
+
+Why is there different output?
+
+### Alternate code:
+
+NOTE: The original entry was just a text based pootifier.  To build
+that version try:
+
+```sh
+make dlowe.alt
+./dlowe.alt < anyfile > pootfile
+```
+
+## Judges' remarks:
+
+Why could this this entry be considered a utility?  Well because it
 is able to convert content-free web pages into useful web pages.
 
 To see why, try using an online version, modified for use as
-a CGI program:
-
-	https://web.archive.org/web/20001025182142/http://pootpoot.com/poot/pootify?URL=http://www.microsoft.com
+a CGI program: <https://web.archive.org/web/20001025182142/http://pootpoot.com/poot/pootify?URL=http://www.microsoft.com>
 
 We are sure that you will find that new web page to make a much
 more consistent level of quality.  :-)
@@ -32,41 +52,39 @@ more consistent level of quality.  :-)
 A CGI script such as:
 
 
-	#!/bin/sh
-	# pootify - a sample CGI pootifier
-	#
-	POOT="/usr/local/bin/dlowe"
-	LYNX="/usr/local/bin/lynx"
-	ECHO="/usr/bin/echo"
-	EXPR="/usr/bin/expr"
-	${ECHO} "Content-type: text/html"
-	${ECHO}
-	if [ -z "${QUERY_STRING}" ]; then
-	    ${ECHO} "QUERY_STRING not found"
-	else
-	    URL=`${EXPR} "$QUERY_STRING" : '[Uu][Rr][Ll]=\(.*\)'`
-	    if [ -z "${URL}" ]; then
-		${ECHO} "No URL given in QUERY_STRING"
-	    elif [ X`${EXPR} "${URL}" : '[Ff][Ii][Ll][Ee]:'` != X0 ]; then
-		${ECHO} "file: based URLs are not allowed"
-	    else
-		${LYNX} -restrictions=all -source "${URL}" | ${POOT}
-	    fi
-	fi
+```sh
+#!/bin/sh
+# pootify - a sample CGI pootifier
+#
+POOT="/usr/local/bin/dlowe"
+LYNX="/usr/local/bin/lynx"
+ECHO="/usr/bin/echo"
+EXPR="/usr/bin/expr"
+${ECHO} "Content-type: text/html"
+${ECHO}
+if [ -z "${QUERY_STRING}" ]; then
+    ${ECHO} "QUERY_STRING not found"
+else
+    URL=`${EXPR} "$QUERY_STRING" : '[Uu][Rr][Ll]=\(.*\)'`
+    if [ -z "${URL}" ]; then
+	${ECHO} "No URL given in QUERY_STRING"
+    elif [ X`${EXPR} "${URL}" : '[Ff][Ii][Ll][Ee]:'` != X0 ]; then
+	${ECHO} "file: based URLs are not allowed"
+    else
+	${LYNX} -restrictions=all -source "${URL}" | ${POOT}
+    fi
+fi
+```
 
 can be used to pootify web pages.
 
 For further information see:
 
-	https://web.archive.org/web/20040326083431/http://www.pootpoot.com/poot/pootify/?URL=http%3A%2F%2Fwww.ioccc.org
+```sh
+https://web.archive.org/web/20040326083431/http://www.pootpoot.com/poot/pootify/?URL=http%3A%2F%2Fwww.ioccc.org
+```
 
-NOTE: The original entry was just a text based pootifier.  To build
-that version try:
-
-	make dlowe.alt
-	./dlowe.alt < anyfile > pootfile
-
-## Author's remarks
+## Author's remarks:
 
 This program is a text filter, it reads stdin and outputs the
 "corrected" text to stdout.
@@ -76,9 +94,9 @@ its purpose and mode of operation are not terribly obvious.
 More importantly, it is a tool for further obfuscation, in that it
 can take any text and render it unintelligible.
 
-Suggested uses: add to your MANROFFSEQ environment variable for man page
-enjoyment; use it to turn the GPL into the PPL; see what happens when you
-run perl4 programs after they've been run through it; "encrypt" sensitive
+Suggested uses: add to your `MANROFFSEQ` environment variable for man page
+enjoyment; use it to turn the GPL into the `PPL`; see what happens when you
+run `perl4` programs after they've been run through it; "encrypt" sensitive
 (but unnecessary) documents...
 
 ## Copyright and CC BY-SA 4.0 License:

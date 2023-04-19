@@ -945,6 +945,16 @@ There was no IOCCC in 1997.
 
 # 1998
 
+## [1998/dlowe](1998/dlowe.c) ([README.md](1998/dlowe/README.md))
+## STATUS: missing or dead link - please provide them
+
+The domain http://pootpoot.com no longer exists as it once did. The judges have
+given a script that can be used to make a similar page (**warning: not checked
+for security in modern days!**). Do you have a server with enough bandwidth and
+would like to set it up?  We'll gladly thank you in the README.md file and link
+to the page as well!  You'll have IOCCC fame for reviving a pootifier! :-)
+
+
 ## [1998/schnitzi](1998/schnitzi/schnitzi.c) ([README.md](1998/schnitzi/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 
