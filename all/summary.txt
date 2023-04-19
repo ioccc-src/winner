@@ -1,4 +1,4 @@
-# yr filename   Spoiler summary
+# yr entry      Spoiler summary
 #
 
 1984 anonymous	prints hello world, where read is write
