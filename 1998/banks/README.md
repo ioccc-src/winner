@@ -1,20 +1,23 @@
 # Best of Show
 
-    Carl Banks
-    Penn State Department of Aerospace Engineering
-    232 Hammond Building
-    University Park, PA 16802
-    USA
-
-    http://www.personal.psu.edu/users/c/w/cwb129/
+Carl Banks  
+Penn State Department of Aerospace Engineering  
+232 Hammond Building  
+University Park, PA 16802  
+USA  
+<https://blog.aerojockey.com/post/iocccsim>
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	cat horizon.sc pittsburgh.sc | ./banks
+```sh
+cat horizon.sc pittsburgh.sc | ./banks
+```
 
 ## Judges' remarks:
 
@@ -24,7 +27,11 @@ tight, well, we can just point them at this one.  This program really
 pushes the envelope!
 
 The provided Makefile should work; you will need an X-ish system, and
-a select() system call.  More on building in the author remarks.
+a `select()` system call.  More on building in the author remarks.
+
+Carl Banks linked to (on his old website) an interesting article about this
+entry, a flight simulator in just 1536 bytes, which can be found at
+<https://web.archive.org/web/20040201120708/http://www.idg.co.nz/magazine/pcworld/oct99/code.htm>.
 
 ## Author's remarks:
 
@@ -47,12 +54,11 @@ indicator, or compass.  0 is north, 90 is east, 180 is south,
 270 is west.  The third instrument is the altimeter, which
 measures your height above ground level in feet.
 
---------
-Features
---------
+### Features
 
-* Simulator models a Piper Cherokee, which is a light, single-engine propeller
-driven airplane.
+* Simulator models a [Piper
+Cherokee](https://en.wikipedia.org/wiki/Piper_PA-28_Cherokee), which is a light,
+single-engine propeller driven airplane.
 
 * The airplane is modeled as a six degree-of-freedom rigid body, accurately
 reflecting its dynamics (for normal flight conditions, at least).
@@ -65,7 +71,7 @@ reflecting its dynamics (for normal flight conditions, at least).
 heading indicator (compass), and an altimeter.
 
 * Flight controls may be mapped to any keys at compile time by redefining the
-macros in the build file.  Nice if your keyboard doesn't have arrow keys.  (Or
+macros in the Makefile.  Nice if your keyboard doesn't have arrow keys.  (Or
 if you still use vi. :-)
 
 * Time step size can be set at compile time.  This is useful to reduce flicker
@@ -81,9 +87,7 @@ seconds tend to have numerical stability problems.)
 * Fly through buildings!
 
 
--------
-Scenery
--------
+### Scenery
 
 Each of the `*.sc` files is a scenery file.  The simulator
 program reads in the scenery from standard input on startup.
@@ -92,55 +96,67 @@ less than 1000 total lines of input.
 
 Here is a brief description of the scenery files:
 
-      horizon.sc    -- A horizon, nothing more.  You will probably
-		       always want to input this piece of scenery.
+- [horizon.sc](horizon.sc)
 
-      mountains.sc  -- An alternate horizon; a little more
-		       mountainous.
+    A horizon, nothing more.  You will probably always want to input this piece
+    of scenery.
 
-      pittsburgh.sc -- Scenery of downtown Pittsburgh.  The downtown
-		       area is initially located to your right.
+- [mountains.sc](mountains.sc)
 
-      bb.sc         -- Simple obstacle course.  Try to fly over the
-		       buildings and under the bridges.
+    An alternate horizon; a little more mountainous.
 
-      pyramids.sc   -- Fly over the tombs of the ancient Pharaohs,
-		       in this (fictitious) Egyptian landscape.
+- [pittsburgh.sc]([pittsburgh.sc])
 
-      river.sc      -- Follow a flowing river from the sky.
+    Scenery of downtown Pittsburgh.  The downtown area is initially located
+    to your right.
+
+- [bb.sc](bb.sc)
+
+    Simple obstacle course.  Try to fly over the buildings and under the
+    bridges.
+
+- [pyramids.sc](pyramids.sc)
+
+    Fly over the tombs of the ancient Pharaohs, in this (fictitious) Egyptian
+    landscape.
+
+- [river.sc](river.sc)
+
+    Follow a flowing river from the sky.
 
 
 A few examples of how to input scenery:
 
-
-      cat horizon.sc pittsburgh.sc | ./banks
-      cat mountains.sc bb.sc | ./banks
-      cat mountains.sc river.sc pyramids.sc | ./banks
+```sh
+cat horizon.sc pittsburgh.sc | ./banks
+cat mountains.sc bb.sc | ./banks
+cat mountains.sc river.sc pyramids.sc | ./banks
+```
 
 You can simulate flying through a cloud bank as well:
 
 
-      ./banks < /dev/null
+```sh
+./banks < /dev/null
+```
 
 
 You will usually want at least a horizon, though.
 
 The format of scenery files is simple, by the way.  They're just
 a list of 3-D coordinates, and the simulator simply draws line
-segments from point to point as listed in the scenery file.  0 0
-0 is used to end a series of consecutive line segments.  Note
-that in the coordinate system used, the third coordinate
-represents altitude in a negative sense: negative numbers are
-positive altitudes.
+segments from point to point as listed in the scenery file.  `0 0
+0` is used to end a series of consecutive line segments.  Note
+that in the coordinate system used, _the third coordinate
+represents **altitude** in a negative sense: negative numbers are
+positive altitudes_.
 
 I'm sure you'll be making your own scenery files very soon!!!
 
-----------------------------
-Alternate Build Instructions
-----------------------------
+### Alternate Build Instructions
 
 Several options must be passed to the compiler to make the build
-work.  The provided build file has the appropriate options set
+work.  The provided [Makefile](Makefile) has the appropriate options set
 to default values.  Use this section if you want to compile with
 different options.
 
@@ -148,17 +164,17 @@ To map a key to a control, you must pass an option to the
 compiler in the format `-Dcontrol=key`.  The possible controls
 you can map are described in the table below:
 
-
-       Control         Description         Default Key
-       -------  -------------------------  -----------
-	 IT         Increase throttle      XK_Page_Up
-	 DT         Decrease throttle      XK_Page_Down
-	 FD         Move stick forward     XK_Up
-	 BK         Move stick back        XK_Down
-	 LT         Move stick left        XK_Left
-	 RT         Move stick right       XK_Right
-	 CS         Center stick           XK_Enter
-
+```
+Control         Description         Default Key
+-------  -------------------------  -----------
+ IT         Increase throttle      XK_Page_Up
+ DT         Decrease throttle      XK_Page_Down
+ FD         Move stick forward     XK_Up
+ BK         Move stick back        XK_Down
+ LT         Move stick left        XK_Left
+ RT         Move stick right       XK_Right
+ CS         Center stick           XK_Enter
+```
 
 Values for the possible keys can be found in the X Windows
 header file `<X11/keysym.h>`.  This file is most likely a
@@ -173,10 +189,10 @@ option would be `-DCS=XK_space`.
 
 To set the time step size, you must pass the following option to
 the compiler: `-Ddt=duration`, where `dt` is literal, and where
-duration is the time in seconds you want the time step to be.
+`duration` is the time in seconds you want the time step to be.
 
 Two things to keep in mind when selecting a time step.  Time
-steps that are too large (more than about 0.03) will cause
+steps that are too large (more than about `0.03`) will cause
 numerical stability problems and should be avoided.  Setting the
 time step to be smaller than your clock resolution will slow
 down the simulator, because the system pauses for more time than
