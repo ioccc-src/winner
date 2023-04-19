@@ -800,6 +800,14 @@ We would appreciate anyone who has it or even just knows the name! Thank you.
 
 # 1996
 
+## [1996/gandalf](1996/gandalf/gandalf.c) ([README.md](1996/gandalf/README.md))
+## STATUS: missing or dead link - please provide them
+
+The link was http://www.tc3.co.uk/~gandalf/G.HTML but this no longer exists as
+it was instead requiring a login / password.
+
+Do you have an updated link? We welcome your help!
+
 ## [1996/jonth](1996/jonth/jonth.c) ([README.md](1996/jonth/README.md))
 ## STATUS: doesn't work with some platforms - please help us fix
 

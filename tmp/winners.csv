@@ -1,15 +1,15 @@
 # name,winner_handle,url,email,country,mastodon/twitter
-Anonymous,Anonymous_1984,null,null,null,null,null);
-Anonymous,Anonymous_2004,http://bicoherent.topcities.com/,null,null,null,null);
-Anonymous,Anonymous_2005,null,null,null,null,null);
-bsoup,bsoup,null,,mail@bsoup.skr.jp,null,null);
-Aaron Grothe,Aaron_Grothe,null,null,ajgrothe@yahoo.com,US,null);
+Anonymous,Anonymous_1984,null,null,null,null);
+Anonymous,Anonymous_2004,http://bicoherent.topcities.com/,null,null,null);
+Anonymous,Anonymous_2005,null,null,null,null);
+bsoup,bsoup,null,mail@bsoup.skr.jp,null,null);
+Aaron Grothe,Aaron_Grothe,null,ajgrothe@yahoo.com,US,null);
 Adar Zeitak,Adar_Zeitak,null,null,aa4z2@walla.co.il,null,null);
 Adrian Cable,Adrian_Cable,null,null,null,null,null);
 Adrian Mariano,Adrian_Mariano,http://cam.cornell.edu/adrian/,null,adrian@cam.cornell.edu,null,null);
 Aidan Thornton,Aidan_Thornton,null,null,makomk@lycos.co.uk,United Kingdom,null);
 Alan De Smet,Alan_De_Smet,http://www.upl.cs.wisc.edu/~chaos/,null,chaos@null.net,null,null);
-Albert van der Horst,Albert_van_der_Horst,http://home.hccnet.nl/a.w.m.van.der.horst,null,albert@spenarnc.xs4all.nl,null,null);
+Albert van der Horst,Albert_van_der_Horst,http://home.hccnet.nl/a.w.m.van.der.horst,albert@spenarnc.xs4all.nl,null,null);
 Alex Deckmyn,Alex_Deckmyn,null,null,alex.deckmyn@gmail.com,null,null);
 Alexander Prishchepov,Alexander_Prishchepov,https://github.com/sans17/,null,student.00x@gmail.com,null,null);
 Anders Gavare,Anders_Gavare,http://www.mdstud.chalmers.se/~md1gavan/,null,md1gavan@mdstud.chalmers.se,null,null);
@@ -52,7 +52,7 @@ David Korn,David_Korn,http://www.kornshell.com/~dgk/,null,dgk@research.att.com,n
 David Lowe,David Lowe,http://pootpoot.com/,null,david@pootpoot.com,null,null);
 David Madore,David_Madore,http://www.madore.org/~david/,null,david+alexander@madore.org,null,null);
 David Van Brackle,David_Van_Brackle,http://east.isx.com/~vanb/,null,vanb@east.isx.com,null,null);
-Dean Swift,Dean_Swift,http://www.tc3.co.uk/~gandalf/G.HTML,null,null,null,null);
+Dean Swift,Dean_Swift,null,null,null,null,null);
 Derek Anderson,Derek_Anderson,null,null,dereka9991@gmail.com,null,null);
 Diomidis Spinellis,Diomidis_Spinellis,http://www.spinellis.gr,null,dds@aueb.gr,null,null);
 Dominik Muth,Dominik_Muth,null,null,dominik.muth@gmx.de,null,null);
@@ -80,7 +80,7 @@ Gavin Buttimore,Gavin_Buttimore,null,null,gavin.buttimore@creaturelabs.com,null,
 Gil Dogon,Gil_Dogon,null,null,gil.jade@gmail.com,null,null);
 Glyn Anderson,Glyn_Anderson,null,null,glyn@mataharistudios.com,null,null);
 Gopi Reddy,Gopi_Reddy,null,null,null,null,null);
-Gregor Richards,Gregor_Richards,null,,Richards@codu.org,null,null);
+Gregor Richards,Gregor_Richards,null,Richards@codu.org,null,null);
 Heather Downs,Heather_Downs,http://www.bungalow.com/,null,heather@bungalow.com,null,null);
 Ian Collier,Ian_Collier,http://www.comlab.ox.ac.uk/oucl/users/ian.collier/,null,imc@comlab.ox.ac.uk,UK,null);
 Ian Phillipps,Ian_Phillipps,null,null,ian@dial.pipex.com,null,null);
@@ -109,7 +109,7 @@ Jyrki Holopainen,Jyrki_Holopainen,http://personal.eunet.fi/pp/halo/,null,jyrki.h
 Karl F. Fox,Karl_F._Fox,null,null,karl@ascend.com,null,null);
 Ken Huffman,Ken_Huffman,http://www.huffmancoding.com,null,huffmancoding@gmail.com,null,null);
 Kevin Pulo,Kevin_Pulo,//www.kev.pulo.com.au/,null,kev@pulo.com.au,null,null);
-Kimmo Fredriksson,Kimmo_Fredriksson,null,,kimmo.k.k.fredriksson@gmail.com,null,null);
+Kimmo Fredriksson,Kimmo_Fredriksson,null,kimmo.k.k.fredriksson@gmail.com,null,null);
 Larry Jones,Larry_Jones,null,null,lawrence.jones@siemens.com,null,null);
 Larry Wall,Larry_Wall,http://www.wall.org/~larry/,null,larry@wall.org,null,null);
 Laurion Burchall,Laurion_Burchall,http://www.netspace.org/users/ldb,null,ldb@netspace.org,null,null);
@@ -147,7 +147,7 @@ Paul Dale,Paul_Dale,http://www.jcu.edu.au/~ccptd/,null,null,null,null);
 Paul E. Black,Paul_E._Black,http://hissa.ncsl.nist.gov/~black/black.html,null,p.black@acm.org,null,null);
 Paul Eggert,Paul_Eggert,null,null,eggert@twinsun.com,null,null);
 Paul Heckbert,Paul_Heckbert,http://www.cs.cmu.edu/~ph,null,ph@cs.cmu.edu,null,null);
-Peter Eastman,Peter_Eastman,null,,peter.eastman@gmail.com,null,null);
+Peter Eastman,Peter_Eastman,null,peter.eastman@gmail.com,null,null);
 Peter J Ruczynski,Peter_J_Ruczynski,http://www.softbase.co.uk/,null,pete@softbase.demon.co.uk,null,null);
 Peter Klausler,Peter_Klausler,null,null,pmk@cray.com,US,null);
 Philip Blakely,Philip_Blakely,null,null,pmblakely@gmail.com,Cambridge, UK
@@ -166,14 +166,14 @@ Sean Dorward,Sean_Dorward,null,null,null,null,null);
 Sebastian Deorowicz,Sebastian_Deorowicz,http://sun.aei.polsl.pl/~sdeor/,null,sdeorowicz@gmail.com,null,null);
 Selene Makarios,Selene_Makarios,http://www.bungalow.com/,null,null,null,null);
 Seonghoon Kang,Seonghoon_Kang,null,null,kang.seonghoon@mearie.org,null,null);
-Shinichiro Hamaji,Shinichiro_Hamaji,null,,shinichiro.hamaji@gmail.com,null,null);
+Shinichiro Hamaji,Shinichiro_Hamaji,null,shinichiro.hamaji@gmail.com,null,null);
 Sjoerd Mullender,Sjoerd_Mullender,http://www.cwi.nl/~sjoerd/,null,Sjoerd.Mullender@cwi.nl,null,null);
 Someone Anonymous,Anonymous_2015,null,null,hirekokeshi@gmail.com,null,@hirekoke);
 Spencer Hines,Spencer_Hines,null,null,null,null,null);
 Steinar Hamre,Steinar_Hamre,null,null,null,Norway,null);
 Stephen Sykes,Stephen_Sykes,https://web.archive.org/web/20160316092728/http://www.stephensykes.com/,null,null,FI,null);
 Stig Hemmer,Stig_Hemmer,http://www.pvv.ntnu.no/~stig/,null,stig@pvv.ntnu.no,null,null);
-Szabolcs Borsanyi,Szabolcs_Borsanyi,null,,borsanyi@uni-wuppertal.de,Theoretische Physik\nGaussstraße 20\n42097 Wuppertal\nGermany,null);
+Szabolcs Borsanyi,Szabolcs_Borsanyi,null,borsanyi@uni-wuppertal.de,Theoretische Physik\nGaussstraße 20\n42097 Wuppertal\nGermany,null);
 Szymon Rusinkiewicz,Szymon_Rusinkiewicz,http://www-leland.stanford.edu/~smr,null,smr@cs.stanford.edu,null,null);
 Taketo Konno,Taketo_Konno,null,null,inaniwa3@gmail.com,Tokyo, Japan
 Teemu Rantanen,Teemu_Rantanen,http://www.cs.hut.fi/~tvr/,null,tvr@cs.hut.fi,null,null);
@@ -187,7 +187,7 @@ Timo Poikola,Timo_Poikola,https://ig.fi/other/ioccc,null,timo@ig.fi,null,@timpoi
 Tom Torfs,Tom Torfs,http://members.xoom.com/tomtorfs,null,null,null,null);
 Tony Finch,Tony_Finch,http://dotat.at/,null,dot@dotat.at,null,null);
 Tsukasa Hamano,Tsukasa_Hamano,null,null,hamano@cuspy.org,null,null);
-Uri Goren,Uri_Goren,null,,goren.uri@gmail.com,null,null);
+Uri Goren,Uri_Goren,null,goren.uri@gmail.com,null,null);
 V. Chia,V._Chia,null,null,bi@mncw.tk,Singapore,null);
 Vern Paxson,Vern_Paxson,null,null,vern@ee.lbl.gov,null,null);
 Vincent Weaver,Vincent_Weaver,http://www.deater.net/weave/,null,vince@deater.net,US,null);
