@@ -1,8 +1,8 @@
 # Most devolving
 
-    Philip Blakely  
-    Cambridge, UK  
-    <pmblakely@gmail.com>  
+Philip Blakely    
+Cambridge, UK  
+<pmblakely@gmail.com>  
 
 ## To build:
 
@@ -29,7 +29,8 @@ Zoom out and make your terminal window 53 or more lines deep.
 
 ## Judges' remarks:
 
-This program plays Life, computes Pi to 16 digits
+This program plays [Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
+(see also [here](https://conwaylife.com)), computes Pi to 16 digits
 if given its own source as input, and allows to check if your garden
 is a [Garden of Eden](http://en.wikipedia.org/wiki/Garden_of_Eden_%28cellular_automaton%29), all in one source. 
 
@@ -41,8 +42,6 @@ and run:
 ```
 
 ## Author's remarks:
-
-### Remarks
 
 This program uses a well-known algorithm in order to display pi to
 fifteen decimal places. The source-layout itself demonstrates the importance of
@@ -82,25 +81,25 @@ evolve\_to\_3.dat, and if you type
 
 then the 3 will reappear after three time steps.
 
-As should now be clear, this use of program will attempt to evolve a given setup backwards in
-time according to the Life rules. The resulting grid is clearly not
-necessarily unique. The program will evolve backwards given *any* single
-command line option.
+As should now be clear, this use of program will attempt to evolve a given setup
+backwards in time according to the Life rules. The resulting grid is clearly not
+necessarily unique. The program will evolve backwards given *any* single command
+line option.
 
 When evolving forwards, the code can only be stopped by killing the
 program. In the reverse direction, the code can either be killed, or
 will stop if it is unable to find a grid that will evolve to the
 current layout correctly. This can be seen with the sample grid
-t0_3.dat, which evolves backwards by only two time-steps.
+[t0_3.dat](t0_3.dat), which evolves backwards by only two time-steps.
 
 ### Input file format
 
-The input files must encode a square grid, where a space is a dead
-cell, and any other character (except a newline) is a living cell. Each line must be the same
-length, and end with a single newline character \n (ASCII 10), including the last line. When
-designing grids, it may help to type full-stops in place of spaces,
-and do a global replace afterwards. Any deviation from this format will
-cause errors in the output.
+The input files must encode a square grid, where a space is a dead cell, and any
+other character (except a newline) is a living cell. Each line must be the same
+length, and end with a single newline character `\n` (ASCII 10), including the
+last line. When designing grids, it may help to type full-stops (dots) in place
+of spaces, and do a global replace afterwards. Any deviation from this format
+will cause errors in the output.
 
 ### Limitations
 
@@ -114,48 +113,47 @@ such for the following time-step, although any living cells on the
 right border will never be displayed.
 
 The maximum grid size is currently 99 by 99 (exceeding this will cause a
-seg-fault), but changing the two 9802s to MAX\_SIZE*MAX\_SIZE+1 will
-solve this, although some reformatting of the
-code may have to be done to allow larger numbers.
+segfault), but changing the two `9802`s to `MAX_SIZE*MAX_SIZE+1` will
+solve this, although some reformatting of the code might have to be done to allow
+larger numbers.
 
 ### Compiler warnings/assumptions
 
-When compiled with the -Wall -pedantic -ansi options of gcc, some
-warnings suggesting extra parentheses occur (not necessary for anyone
-fully conversant with operator precedence). There is one unused
-variable, v, but unnamed function parameters are not permitted in ANSI
-C, so naming it is necessary, and gcc no longer warns about its
-existence, although earlier versions did.
+When compiled with the `-Wall -pedantic -ansi` options of gcc, some warnings
+suggesting extra parentheses occur (not necessary for anyone fully conversant
+with operator precedence). There is one unused variable, `v`, but unnamed
+function parameters are not permitted in ANSI C, so naming it is necessary, and
+gcc no longer warns about its existence, although earlier versions do.
 
-Since the program calculates ASCII character values for display, an
-ASCII based system is required to run it. Also, as mentioned above,
-any system that uses anything other than a plain '\n' to end a line will cause
-problems when reading in files.
+Since the program calculates ASCII character values for display, an ASCII based
+system is required to run it. Also, as mentioned above, any system that uses
+anything other than a plain `\n` to end a line will cause problems when reading
+in files.
 
-### Obfuscations
+### Obfuscation
 
 Given the finely-tuned layout required to evolve into pi, this is one of the
 main obfuscations used in the code. However, running the code through the
 preprocessor, expanding the defines, and applying GNU's indent, although
 making the location of functions and statements clear, by no means makes the
-code entirely clear.  Note that expanding out the #defines does not take the
+code entirely clear.  Note that expanding out the `#define`s does not take the
 program over the character limit. The main reason for these is to do with the
 layout, since there are few places that keywords or tokens of over 2
-characters can be fitted, and requiring the first few lines to be #includes
+characters can be fitted, and requiring the first few lines to be `#include`s
 would cause similar problems.
 
 Other obfuscations used are:
 
 - Use of the classic 2[a] syntax to access the third element of the
-  array a
+  array `a`.
 - Nested ternary operators, combined with shortcut evaluation being
-  required for correct operation
-- Use of the comma operator to embed operations inside one another
-- Calculation of ASCII codes
-- Needlessly recursive functions
+  required for correct operation.
+- Use of the comma operator to embed operations inside one another.
+- Calculation of ASCII codes.
+- Needlessly recursive functions.
 - Use of bitwise-operations.
-- Storing a variable whose value could easily be found from another
-- Use of gotos to emulate a for loop
+- Storing a variable whose value could easily be found from another.
+- Use of `goto`s to emulate a for loop.
 
 ### Algorithm
 
@@ -184,7 +182,8 @@ caused a substantial slowdown.)
 ### Program layout
 
 The "calculation" of pi was chosen purely because algorithms to find
-pi are numerous, but the Game of Life is rarely (if ever?) used for
+pi are numerous, but the [Game of
+Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) is rarely (if ever?) used for
 this purpose. Also, separate digits made determining the layout somewhat easier.
 
 Deriving the layout was the most complicated part of the program. As is clear from
@@ -200,28 +199,30 @@ into. Therefore it was necessary to add some regions that would quickly die off
 without expanding to collide with the digits' evolution.
 Groups of cells such as singletons, pairs, and larger groups like
 
+```
     * * * * * * * * * *
      *****************
     * * * * * * * * * *
+```
 
 were useful in this regard.
 
 Other problems were given by keywords which need to be all in one
 string, keywords requiring space after them, and
 multi-character tokens. Some of these problems were dealt with by
-using the #defines and #includes given in the build-script, as there
+using the `#define`s and `#include`s given in the build-script, as there
 was no way to have sufficient separate lines in the code to do this
 without causing many difficulties. Some rejigging of the grid's layout
 as the code was fitted into its format was also done, resorting to
 trial-and-improvement in some cases. Occasional use of constructs such
-as f -= -3 was made as f += 3 could not be fitted into the required format.
+as `f -= -3` was made as `f += 3` could not be fitted into the required format.
 The fact that the borders would be killed off immediately was also helpful.
 
 It should be noted that evolving a full 60-by-60 grid backwards using
 this code would probably take us at least up to the heat-death of the
 universe.
 
-The command ./blakely - < blakely.c is therefore *not* recommended.
+The command `./blakely - < blakely.c` is therefore *not* recommended.
 
 ## Copyright and CC BY-SA 4.0 License:
 
