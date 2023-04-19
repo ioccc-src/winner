@@ -1,7 +1,7 @@
 # Most useful
 
-    Kimmo Fredriksson  
-    <kimmo.k.k.fredriksson@gmail.com>  
+Kimmo Fredriksson    
+<kimmo.k.k.fredriksson@gmail.com>   
 
 ## To build:
 
@@ -39,7 +39,7 @@ try writing the compressor.
 
 ### Approximate grep
 
-Implements a variant of grep.
+Implements a variant of `grep`.
 
 ### Usage
 
@@ -50,7 +50,7 @@ To search regexp from file, do:
 ```
 
 Pipes may not work, see the section Limitations.
-The options `-i -c -v` and `-n` are the classic ones:
+The options `-i`, `-c`, `-v` and `-n` are the classic ones:
 
 * `-i`	Ignore case.
 
@@ -84,7 +84,7 @@ following are allowed:
 
 * Wild card: `.` (dot) matches any character.
 
-* Bracket expression: list of charactres enclosed by `[` and `]`,
+* Bracket expression: list of characters enclosed by `[` and `]`,
   matches any single character in the list.
 
 * Range expression: two characters separated by hyphen and enclosed in
@@ -103,11 +103,15 @@ expressions by putting `]` as the first character, and putting `-` last.
 
 * You can use this in place of cat. Just say
 
-		./fredriksson -k3 cat < file
+```sh
+./fredriksson -k3 cat < file
+```
 
 * Like with cat, you can append line numbers too:
 
-		./fredriksson -nk3 cat < file
+```sh
+./fredriksson -nk3 cat < file
+```
 
 ### Other features
 
@@ -118,7 +122,7 @@ expressions by putting `]` as the first character, and putting `-` last.
 * It may consume huge amounts of memory, and a stack overflow may occur.
   This results in Segmentation fault (or the equivalent of your favorite
   system, such as Bus error). This is a feature, that can be used to detect
-  overly long lines in the input file, such as checking the lenght of one
+  overly long lines in the input file, such as checking the length of one
   liners in IOCCC entries, just adjust your stack size to a suitable
   threshold, and search for "ioccc", with option `-vk5`.
 
@@ -136,7 +140,7 @@ expressions by putting `]` as the first character, and putting `-` last.
   i.e. pipes may or may not work. If you want to count only (`-c` option),
   then this shouldn't be an issue.
 
-* The total lenght of the (preprocessed) pattern is at most
+* The total length of the (preprocessed) pattern is at most
   `sizeof(long)*CHAR_BIT`. That does not count things like bracket expressions
   or escape chars, that is, the pattern `'a[bcd]e\.f'` is 5 chars long, not
   10 chars. That does not mean that the matched substring in the standard
@@ -219,8 +223,8 @@ expressions by putting `]` as the first character, and putting `-` last.
 * It also shows the power of boolean logic and bitwise arithmetic.
 
 * This is the first (?) entry in the history of IOCCC, that cannot be
-  totally un-obfuscated by the author. This is due to the clever choice of
-  the actual algorithm, that is obfucated by nature, and it is an open
+  totally de-obfuscated by the author. This is due to the clever choice of
+  the actual algorithm, that is obfuscated by nature, and it is an open
   research problem whether a simpler algorithm exists, with the same time
   complexity.
 
@@ -239,7 +243,7 @@ expressions by putting `]` as the first character, and putting `-` last.
 
 		./fredriksson -ck0 [0-9] < ag.c
 
-  after running fredriksson at least once (since this generates that
+  after running `fredriksson` at least once (since this generates that
   `ag.c` file), and this should print 0.
 
 * The source code is best viewed with cat (or using the program itself),
