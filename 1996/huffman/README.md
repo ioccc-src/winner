@@ -1,29 +1,35 @@
 # Best Obfuscated Character Set Utility
 
-    Ken Huffman
-    Applied Innovation Inc
-    5800 Innovation Dr.
-    Dublin, OH 43016
-    USA
-    <http://www.huffmancoding.com>
-    huffmancoding@gmail.com
+Ken Huffman  
+Applied Innovation Inc  
+5800 Innovation Dr.  
+Dublin, OH 43016  
+USA  
+<http://www.huffmancoding.com>  
+huffmancoding@gmail.com  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-
-	echo 'Huffman Decoding' | ./huffman
+```sh
+echo 'Huffman Decoding' | ./huffman
+```
 
 NOTE: this program uses `gets()` so you will likely get a warning when compiling
 and/or running on modern systems.
 
 ## Try: 
 
-	echo 'seeing or feeling is believing' | ./huffman
-	echo 'CC OR NOT CC' | ./huffman | ./huffman
+```sh
+echo 'seeing or feeling is believing' | ./huffman
+echo 'CC OR NOT CC' | ./huffman
+echo 'CC OR NOT CC' | ./huffman | ./huffman
+```
 
 
 ## Judges' remarks:
@@ -35,7 +41,9 @@ And for a misleading hint, consider who won!  :-)
 
 And if you really can't see what is going on, here is an extra spoiler:
 
-	./huffman < huffman.c
+```sh
+./huffman < huffman.c
+```
 
 This entry was very well received at the IOCCC BOF.
 
@@ -45,7 +53,7 @@ This filter program is really not obfuscated code.  It compiles cleanly
 with an ANSI C compiler and comes with user documentation that even a
 blind person could read.
 
-The program is a bi-directional filter with the output of the program 
+The program is a bidirectional filter with the output of the program 
 suitable for its input.  The output of this program, when used as input,
 undoes the original program filtering.
 
