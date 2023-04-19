@@ -1,11 +1,11 @@
 # Astronomically Obfuscated
 
-James Bonfield
-MRC Laboratory of Molcular Biology
-Hills Road,
-Cambridge
-CB2 2QH
-England
+James Bonfield  
+MRC Laboratory of Molcular Biology  
+Hills Road   
+Cambridge  
+CB2 2QH  
+England  
 
 ## To build:
 
@@ -29,10 +29,10 @@ make dmy2jd
 ## Judges' remarks:
 
 This program may have you going around in circles :-) Try running it
-first before reading the Selected Author's Comments below.
+first before reading the author's remarks below.
 
 The judges verified the correctness of output for recent dates
-thru visual observation.
+through visual observation.
 
 ## Author's remarks:
 
@@ -60,7 +60,7 @@ the fraction of a day to skip forward for each screen refresh. I suggest:
 
 To display the output (still guessing?) for a given date, specify two
 arguments. The first argument is as before and the second argument is a
-Julian day number (given as a fractional component). Eg:
+Julian day number (given as a fractional component). E.g.:
 
 ```sh
 ./rince 0 2441193.6
@@ -70,7 +70,7 @@ Julian day number (given as a fractional component). Eg:
 A Julian day is defined to be the number of days since January 1st in
 the year -4712 (4713BC), starting at 12 noon GMT.[1]  To aid conversion
 from our time (GMT) to Julian day there is a supplementary program
-named: dmy2jd.c. Run it with "day_float month year" as arguments. See
+named: dmy2jd.c. Run it with `day_float month year` as arguments. See
 below for an example.
 
 ### What it does
@@ -82,10 +82,12 @@ assure you that the parallax is minimal!
 The moons are labelled with roman numerals from I to IV. I being the
 closest to the planet and IV being the furthest. They are:
 
+```
 I     Io
 II    Europa
 III   Ganymede
 IV    Callisto
+```
 
 Amazingly, all it takes is a pair of binoculars to see the Galilean moons,
 so the results can be experimentally checked. (Note that at present, the
@@ -95,8 +97,9 @@ The positions of the moons should be correct for binoculars, but possibly
 not if you have a telescope or if you are in the southern hemisphere. In
 that case I suggest that to get the correct image you look at the screen
 from inside the monitor whilst standing on your head. In case of
-confusion, please consult the following chart (*):
+confusion, please consult the following chart (\*):
 
+```
 			       N
 			       ^
 			       |
@@ -104,14 +107,15 @@ confusion, please consult the following chart (*):
 			       |
 			       v
 			       S
+```
 
-(*) Not to scale.
+(\*) Not to scale.
 
 ### History
 
 Galileo discovered the moons in January 1610.
-"http://www-isds.jpl.nasa.gov/cwo/cwo_54ga/html/cd/galileo.htm" states
-the following:
+<https://web.archive.org/web/20001204212000/http://www-isds.jpl.nasa.gov/cwo/cwo_54ga/html/cd/galileo.htm>
+states the following:
 
 ```
 By early 1610, Galileo had further improved his telescope by
@@ -157,8 +161,14 @@ Thus we can plot Galileo's discoveries using the following three plots:
 ```
 
 However we can go one better by seeing what Galileo would have seen if it
-wasn't cloudy on the 9th. Try "./rince 0 `./dmy2jd 9.85 1 1610`" to see
-what he was missing out on. I wonder what he'd have made of that!
+wasn't cloudy on the 9th. Try:
+
+
+```sh
+./rince 0 `./dmy2jd 9.85 1 1610`
+```
+
+to see what he was missing out on. I wonder what he'd have made of that!
 
 Galileo discovered the fourth moon a few days later.
 
@@ -171,9 +181,8 @@ IOCCC entry.
 
 The year 4713BC was chosen by Joseph Justus Scaliger in the 16th Century,
 so clearly this program has a long history :-) A more complete description
-of the origins of Julian Days can be found at:
-
-http://aa.usno.navy.mil/AA/faq/docs/millennium.html
+of the origins of Julian Days can be found at
+<https://web.archive.org/web/20001206152200/http://aa.usno.navy.mil/AA/faq/docs/millennium.html>.
 
 ### Assumptions
 
