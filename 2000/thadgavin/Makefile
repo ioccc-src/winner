@@ -129,7 +129,11 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo "WARNING: if you are sensitive to rapid movement you should probably avoid this entry."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
+${PROG}_sdl: ${PROG}.c
+	${CC} ${CFLAGS} -DSDL `${SDL1_CONFIG} --cflags` $< -o $@ ${LIBS} `${SDL1_CONFIG} --libs`
 
 # alternative executable
 #
