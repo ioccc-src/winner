@@ -34,6 +34,9 @@ Use `thadgavin_sdl` as you would `thadgavin` below.
 
 Thank you Cody for your assistance!
 
+To see the craziness of the SDL fix (because of a design choice of the SDL1
+developers) see the log for commit dd0b26b5d6325e8b6fdef1232156c8bb8c66613f. Be
+prepared for a surprise.
 
 ## To run:
 
