@@ -16,12 +16,14 @@ make all
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
 this entry as well as it displaying environmental variables.  Although the
 scripts showed correct output, it somewhat lessened the usability because they
-segfaulted. With the fix they no longer do. If argc < 5 (argv[4] is referenced)
-it will not do anything and it will not segfault either - this was caused by the
-body of the for() loop which is now empty (it doesn't appear to be needed at
-all). Note that you should check the [westley.alt.c](westley.alt.c) file when
-reading the author's comments. To see how to use the original see below.  Thank
-you Cody for your assistance!
+segfaulted and showed (an) environmental variable, interspersed with the output
+of the program. With the fix they no longer have this problem. If `argc < 5`
+(`argv[4]` is referenced) it will not do anything and it will not segfault
+either - this was caused by the body of the for() loop which is now empty (it
+doesn't appear to be needed at all at least modernly). Note that you should
+check the [westley.alt.c](westley.alt.c) file when reading the author's
+comments. To see how to use the original see below.  Thank you Cody for your
+assistance!
 
 
 ## To run:
@@ -48,8 +50,8 @@ sh ./clock3
 ### Alternate code:
 
 An alternate version of this entry, [westley.alt.c](westley.alt.c), is provided.
-This version is the original code [westley.alt.c](westley.alt.c) and does not
-contain the above mentioned fixes.
+This version is the original code and does not contain the above mentioned
+fixes.
 
 To compile this alternate version:
 
@@ -75,13 +77,11 @@ understand it.
 
 ## Author's remarks:
 
-This 1-line program allows various analog ASCII clocks
-to print out the time; the ASCII clock is built from
-the command line arguments, so many different types of
-clocks can be generated.  Three different scripts are
-supplied to print out a grandfather clock, a mantle
-clock that runs backwards, and a linear-style clock.
-(they are `clock1`, `clock2`, and `clock3`)
+This 1-line program allows various analog ASCII clocks to print out the time;
+the ASCII clock is built from the command line arguments, so many different
+types of clocks can be generated.  Three different scripts are supplied to print
+out a grandfather clock, a mantle clock that runs backwards, and a linear-style
+clock.  (they are `clock1`, `clock2`, and `clock3`)
 
 The program makes the following (possibly non-portable) assumptions:
 
