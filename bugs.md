@@ -1017,6 +1017,8 @@ README.md file or look at the source.
 It also has main() return void even though this is non-standard. Please do not
 fix this (in fact it was originally done but rolled back).
 
+As well there is a known crash that's also a feature.
+
 
 # 2001
 
