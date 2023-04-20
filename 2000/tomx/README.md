@@ -1,12 +1,11 @@
 # Most Complete Program
 
-Thomas P John
-Mishybi Plamoottil
-Parottukonam
-Nalanchira P.O, Trivandrum-695015
-India
-
-http://tomx.tripod.com/
+Thomas P John  
+Mishybi Plamoottil  
+Parottukonam  
+Nalanchira P.O, Trivandrum-695015  
+India  
+<https://web.archive.org/web/20010720192926/http://tomx.tripod.com/>  
 
 ## To build:
 
@@ -43,22 +42,21 @@ Polyglots have come and gone, but this was the first one we'd seen
 where one language *used* another to perform its tasks.  An interesting
 approach.  Admittedly, it's not all that obfuscated - but there's more
 to it than you might think, since you have to make sure that your
-changes don't change the shell code or the makefile.
+changes don't change the shell code or the Makefile.
 
 ## Author's remarks:
 
 ### Summary
 
-This program works as a C source file, a Makefile and also as a
-Shell (/bin/sh) script. But unlike some other multi-language prog-
-rams, this one is NOT meant to print "Hello, world" in all 3 cases
-(At least in the true sense ;-)). The C, make and shell code build
-upon each other to create a C program (?) which when executed as a
-shell script will compile itself through the C compiler using a
-makefile! - Pretty useful, Eh?.
+This program works as a C source file, a Makefile and also as a shell
+(`/bin/sh`) script. But unlike some other multi-language programs, this one is
+NOT meant to print "Hello, world" in all 3 cases (At least in the true sense
+;-)). The C, make and shell code build upon each other to create a C program (?)
+which when executed as a shell script will compile itself through the C compiler
+using a Makefile! - Pretty useful, Eh?
 
-Probably, this is the first entry ever to fully satisfy Rule #1
-("Your entry must be a complete program") in the strictest sense;-)
+Probably, this is the first entry ever to fully satisfy Rule #1 ("Your entry
+must be a complete program") in the strictest sense;-)
 
 ### Top 5 reasons (IMHO) why this code is an entry for IOCCC
 
@@ -76,27 +74,25 @@ obfuscation should be in C and not elsewhere???. Mmmmm...).
 3. Extending Argument #2... Obfuscation done in the C code
 (comments?) create obfuscated code for the other 2 languages.
 This opens new possibilities to be explored in depth in future
-IOCCCs.
+`IOCCC`s.
 
 4. LOOKS like a Makefile, WORKS like a shell script and COMPILES
 like a C program.
 
-5. Does something useful (See Notes #1, #2).
+5. Does something useful (See Notes #1 and #2 below).
 
 
 ### Notes
 
 1. The program could have been something other than the simple "Hello, world"
 program that it is. It is possible to do `#include "prog2.c"` in the place of
-the main(), leaving the complexities of the C file elsewhere and making this
-source still acceptable to "make" and "sh". The following modification to the
-last few lines will compile the IOCCC's famous `mkentry.c`.
+the `main()`, leaving the complexities of the C file elsewhere and making this
+source still acceptable to `make` and `sh`. The following modification to the
+last few lines will compile the IOCCC's famous [mkentry.c](mkentry.c).
 
-```make
-.PHONY: /* true clean */ 
-#undef   true 
-#include "mkentry.c"
-```
+    .PHONY: /* true clean */ 
+    #undef   true 
+    #include "mkentry.c"
 
 Ain't that useful?
 
@@ -104,18 +100,18 @@ Ain't that useful?
 very interesting things like generating C code on execution
 by adding additional code in  make/sh (open up a loop????).
 This opens the possibilities of generating & compiling some
-[obfuscated?] C code. (Maybe should try this if this program
+(obfuscated?) C code. (Maybe should try this if this program
 fails at IOCCC 2000)
 
 3. Changing the `%:%.c` dependency to a `$(PROG):$(PROG).c` form
 can compile this program with some other `make`s (I got it to
-work in Windows using nmake and Gnuwin32's sh ;-)
+work in Windows using nmake and Gnuwin32's sh ;-) )
 
 4. Interesting things to do: try `./tomx.c clean`. This will
 do the same as `make clean` :-)). Also: `./tomx.c all`
 
-5. Be careful about the Tabs in the source code. Removing them
-or converting Tabs to spaces can be disastrous.
+5. Be careful about the tabs in the source code. Removing them
+or converting tabs to spaces can be disastrous.
 
 ## Copyright and CC BY-SA 4.0 License:
 
