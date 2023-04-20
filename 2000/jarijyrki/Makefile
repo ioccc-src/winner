@@ -115,7 +115,7 @@ ENTRY= jarijyrki
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA= sheet1.info
+DATA= finance.sheet
 TARGET= ${PROG}
 #
 ALT_OBJ=
