@@ -1019,6 +1019,13 @@ fix this (in fact it was originally done but rolled back).
 
 As well there is a known crash that's also a feature.
 
+## [2000/rince](2000/rince/rince.c) ([README.md](2000/rince/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+If `DISPLAY` is not set the program will very likely crash, do something strange
+(or if you're very unlucky your computer might [halt and catch
+fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing))! :-) ).
+
 
 # 2001
 

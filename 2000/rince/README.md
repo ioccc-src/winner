@@ -19,6 +19,11 @@ make
 ./rince number number2
 ```
 
+### INABIAF - it's not a bug it's a feature! :-)
+
+If `DISPLAY` is not set the program will very likely crash or do something
+different.
+
 ## Try:
 
 ```sh
@@ -28,11 +33,11 @@ make dmy2jd
 
 ## Judges' remarks:
 
-This program may have you going around in circles :-) Try running it
-first before reading the author's remarks below.
+This program may have you going around in circles :-) Try running it first
+before reading the author's remarks below.
 
-The judges verified the correctness of output for recent dates
-through visual observation.
+The judges verified the correctness of output for recent dates through visual
+observation.
 
 ## Author's remarks:
 
@@ -67,19 +72,22 @@ Julian day number (given as a fractional component). E.g.:
 ./rince 0.01 2441193.6
 ```
 
-A Julian day is defined to be the number of days since January 1st in
-the year -4712 (4713BC), starting at 12 noon GMT.[1]  To aid conversion
-from our time (GMT) to Julian day there is a supplementary program
-named: dmy2jd.c. Run it with `day_float month year` as arguments. See
-below for an example.
+A Julian day is defined to be the number of days since January 1st in the year
+`-4712 (4713BC)`, starting at 12 noon GMT.\[1\] To aid conversion from our time
+(GMT) to Julian day there is a supplementary program named:
+[dmy2jd.c](dmy2jd.c). Run it with `day_float month year` as arguments. See below
+for an example.
 
 ### What it does
 
-This program plots the positions of the four Galilean moons of Jupiter,
-as seen from earth. It doesn't correct for your location on earth, but I
-assure you that the parallax is minimal!
+This program plots the positions of the four [Galilean
+moons](https://en.wikipedia.org/wiki/Galilean_moons) of
+[Jupiter](https://en.wikipedia.org/wiki/Jupiter), as seen from
+[Earth](https://en.wikipedia.org/wiki/Earth). It doesn't correct for your
+location on Earth, but I assure you that the
+[parallax](https://en.wikipedia.org/wiki/Parallax#Astronomy) is minimal!
 
-The moons are labelled with roman numerals from I to IV. I being the
+The moons are labelled with Roman numerals from I to IV. I being the
 closest to the planet and IV being the furthest. They are:
 
 ```
@@ -174,39 +182,46 @@ Galileo discovered the fourth moon a few days later.
 
 I've tried typing these dates in to two Java based Jovian moon plotters,
 but both I tried had problems dealing with dates earlier than 1900. More
-professional software, such as the SkyMap program [3] gets these values
+professional software, such as the
+[SkyMap](http://www.bmsoftware.com/skymappro9.htm) gets these values
 correct and this compares well with the above description and with this
 IOCCC entry.
 
-
-The year 4713BC was chosen by Joseph Justus Scaliger in the 16th Century,
-so clearly this program has a long history :-) A more complete description
-of the origins of Julian Days can be found at
+The year 4713BC was chosen by [Joseph Justus
+Scaliger](https://en.wikipedia.org/wiki/Joseph_Justus_Scaliger) in the 16th
+Century, so clearly this program has a long history :-) A more complete
+description of the origins of Julian Days can be found at
 <https://web.archive.org/web/20001206152200/http://aa.usno.navy.mil/AA/faq/docs/millennium.html>.
 
 ### Assumptions
+
+This program assumes:
 
 1. The ASCII character set is used.
 
 2. That an enormous comet hasn't changed the course of Jupiter (or Earth!).
 
-3. That the date has not been specified as the gap between the Julian and Gregorian calendar.
+3. That the date has not been specified as the gap between the
+[Julian](https://en.wikipedia.org/wiki/Julian_calendar) and
+[Gregorian](https://en.wikipedia.org/wiki/Gregorian_calendar) calendar.
 
-4. That the DISPLAY environment variable is set and the X display can opened. If this is not the case the program will crash.
+4. That the `DISPLAY` environment variable is set and the X display can opened.
+If this is not the case the program will crash.
 
 5. There is a year 2000BC problem :-)
 
-More specifically, the plots for dates that far back are too inaccurate
-to be of realistic use. Comparisons against SkyMap Pro [3] show that
-there is a good similarity (but not much more) up to about 500BC.
+    More specifically, the plots for dates that far back are too inaccurate to
+    be of realistic use. Comparisons against [SkyMap
+    Pro](http://www.bmsoftware.com/skymappro9.htm) show that there is a good
+    similarity (but not much more) up to about 500BC.
 
 6. The code definitely is not portable - it will produce incorrect results if run from the surface of Mars.
 
 ### Obfuscations
 
-In addition to the normal obfuscations, I feel that the code contains
-some less common tricks. Taken through the standard rounds listed in the
-guidelines, the code attempts to pass these as follows:
+In addition to the normal obfuscations, I feel that the code contains some less
+common tricks. Taken through the standard rounds listed in the
+[guidelines](/2000/guidelines.txt), the code attempts to pass these as follows:
 
 1. Look at the original source
 
@@ -219,26 +234,26 @@ guidelines, the code attempts to pass these as follows:
     large string constant could not be split up using a "partA"
     "partB" method which clearly limits the code layout. However the
     space saved by using a single long string constant is more than
-    outweighed by ability to further obfuscate.
+    outweighed by the ability to further obfuscate.
 
 2. convert ANSI tri-graphs to ASCII
 
     These are not used.
 
-3. C pre-process the source ignoring #include lines
-4. C pre-process the source ignoring #define and #include lines
+3. C pre-process the source ignoring `#include` lines
+4. C pre-process the source ignoring `#define` and `#include` lines
 
     This does a good job of expanding out the code, but it does not
-    clarify things greatly. The use of #defines has been restricted
+    clarify things greatly. The use of `#defines` has been restricted
     primarily to a space-saving mechanism.
 
-    Additionally, the use of typedefs means that the types used are
+    Additionally, the use of `typedef`s means that the types used are
     still obscured unless further replacement edits are made.
 
 5. Run it through a C beautifier.
 
     GNU indent seems to do a reasonable job, provided that the
-    #defines are expanded first. This doesn't lay the algorithm
+    `#define`s are expanded first. This doesn't lay the algorithm
     particularly bare though as most of the obfuscations are not
     simple code layouts.
 
@@ -246,15 +261,14 @@ guidelines, the code attempts to pass these as follows:
 
     The algorithm operates on two levels. The main visible level is
     by taking a large string and breaking this down into a series of
-    op-codes (which I have termed J-code). These are then executed.
+    opcodes (which I have termed J-code). These are then executed.
 
     To get to the real method of how it works, you need to decode
-    the op-code string (which deliberately contains as many ; { and
-    } symbols as possible), which will give you a reverse-polish
+    the opcode string (which deliberately contains as many `;`, `{` and
+    `}` symbols as possible), which will give you a reverse-polish
     notation chunk of mathematics.
 
-    Sensible people amongst you will simply refer to the referenced
-    book :-)
+    Sensible people amongst you will simply refer to the referenced book :-)
 
 7. Lint it.
 
@@ -269,69 +283,63 @@ guidelines, the code attempts to pass these as follows:
     I'm sorry to say that there are several warnings issued by the
     compiler.
 
-    Firstly, the return type for X() is not specified, so it
-    defaults to int. Horror of all horrors - this function does not
-    return an integer type (it doesn't contain any specific
-    returns). The return value from X() is not accessed. The same
-    problem occurs in main - it does not return. However main never
-    exits unless there is a serious error.
+    Firstly, the return type for `X()` is not specified, so it defaults to int.
+    Horror of all horrors - this function does not return an integer type (it
+    doesn't contain any specific returns). The return value from `X()` is not
+    accessed. The same problem occurs in `main()` - it does not return. However
+    `main()` never exits unless there is a serious error.
 
-    The 6th argument of XDrawText (which should be XTextItem) is
+    The 6th argument of `XDrawText` (which should be `XTextItem`) is
     passed as a compatible structure, but without casting. This is
     to reduce code space. A more elegant solution is to remove the
-    "struct {...} Z" completely and use "XTextItem
-    f={i-127+r/3*2,r%3+r/3+1,0,E}" at the start of XDrawText
+    `struct {...} Z` completely and use `XTextItem
+    f={i-127+r/3*2,r%3+r/3+1,0,E}` at the start of `XDrawText`
     block. Although this is accepted by several compilers, it is not
     strict ANSI due to the non-constant initialisers. A pity.
 
-    Note that I make use of usleep(). This is a POSIX call (it is
-    BSD), but it supported on many systems. It may be implemented
-    using select() or poll() if required, or as a final solution you
-    may change the usleep(10000) to sleep(1). To compile on systems
-    which do not have usleep, but do have select, the following may
-    suffice as an additional compiler argument:
+    Note that I make use of `usleep()`. This is a POSIX call (it is BSD), but it's
+    supported on many systems. It may be implemented using `select()` or `poll()` if
+    required, or as a final solution you can change the `usleep(10000)` to
+    `sleep(1)`. To compile on systems which do not have `usleep()`, but do have
+    `select()`, the following may suffice as an additional compiler argument:
 
-```sh
--Dusleep={time_t v[2]={0,10000};select(0,0,0,0,v);}
-```
+    ```
+	-Dusleep={time_t v[2]={0,10000};select(0,0,0,0,v);}
+    ```
 
-    Gcc complains about "unreachable code at beginning of switch
+    gcc complains about "unreachable code at beginning of switch
     statement", although removing some of this code will prevent
     the algorithm from working.
 
-    Gcc also suggests that I should be using extra parenthesis, but
+    gcc also suggests that I should be using extra parenthesis, but
     I'm taking this as good comment :-)
-
 
 In addition to the above, the program has the following useful(?)
 obfuscations:
 
-1.      The algorithm requires many floating point numbers (about
-    50). These are encoded as ASCII.
+1.  The algorithm requires many floating point numbers (about 50). These are
+encoded as ASCII.
 
-2.      The J-code algorithm has op-codes designed to be space
-    saving. They are all one byte, but many are also considered as
-    white-space by the rules. This algorithm forms part of the same
-    string that the floating point constants are embedded
-    within. What does the ";" command do in J-code?
+2.  The J-code algorithm has opcodes designed to be space saving. They are all
+one byte, but many are also considered as whitespace by the rules. This
+algorithm forms part of the same string that the floating point constants are
+embedded within. What does the `;` command do in J-code?
 
-3.      The J-code language is both stack based and variable based. This
-    "uncleanliness" is not ideal from a computer science angle, but
-    when has cleanliness been considered as good in IOCCC? :-)
+3.  The J-code language is both stack based and variable based. This
+"uncleanliness" is not ideal from a computer science angle, but when has
+cleanliness been considered as good in IOCCC? :-)
 
-4.      Association of unconnected data by implied function usage. Eg
-    use of strlen() and sizeof() simply to return useful numerical
-    values, using irrelevant arguments.
+4.  Association of unconnected data by implied function usage. E.g. use of
+`strlen()` and `sizeof()` simply to return useful numerical values, using
+irrelevant arguments.
 
-5.      As we already have a dependency on ASCII this has been abused
-    further. Specifically some integer constants are specified as
-    ASCII and some ASCII constants are integers. This hides the true
-    meaning for the values.
+5. As we already have a dependency on ASCII this has been abused further.
+Specifically some integer constants are specified as ASCII and some ASCII
+constants are integers. This hides the true meaning for the values.
 
-6.	    Red herrings: there's a couple of pieces of code whose
-    appearance is just there to mislead the unfirm of mind.
-    I've only tried to include such examples in places where at
-    first glance the code appears to be executed.
+6.  Red herrings: there are a couple of pieces of code whose appearance is just
+there to mislead the infirm of mind.  I've only tried to include such examples
+in places where at first glance the code appears to be executed.
 
 ### References
 
@@ -340,9 +348,6 @@ Jean Meeus. Published by Willmann-Bell Inc.
 
 [2] Astronomical algorithms (1st ed): pages 285-299.
 Jean Meeus. Published by Willmann-Bell Inc.
-
-[3] Skymap Pro, by Chris Marriott
-http://www.skymap.com/
 
 ## Copyright and CC BY-SA 4.0 License:
 
