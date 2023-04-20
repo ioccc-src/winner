@@ -44,7 +44,7 @@ fact(n)
 /* Well, we could use printf, but it would be too easy */
 print_num(n, b)
 {
-    int tab, p, c;
+    int *tab, *p, c;
     /* Numbers can be entered in decimal, hexadecimal ('0x' prefix) and
        octal ('0' prefix) */
     /* more complex programs use malloc */
@@ -57,7 +57,7 @@ print_num(n, b)
             c = c + 'a' - 10;
         else
             c = c + '0';
-        *(char *)p = c;
+        *p = c;
         p++;
         n = n / b;
         /* 'break' is supported */
@@ -66,7 +66,7 @@ print_num(n, b)
     }
     while (p != tab) {
         p--;
-        printf("%c", *(char *)p);
+        printf("%c", *p);
     }
     free(tab);
 }
@@ -78,7 +78,7 @@ main(int argc, char **argv)
        supported. As long as you do not use a globally defined
        variable name as local variable (which is a bad habbit), you
        won't have any problem */
-    int n, f, base;
+    int n, (*f)(), base;
     
     /* && and || operator have the same semantics as C (left to right
        evaluation and early exit) */
