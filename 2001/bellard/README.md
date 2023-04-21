@@ -4,7 +4,7 @@ Fabrice Bellard
 451 chemin du mas de Matour  
 34790 Grabels  
 France  
-https://bellard.org  
+<https://bellard.org>
 
 ## To build:
 
@@ -67,21 +67,16 @@ or by giving the C source to its standard input.
 
 - Sample compilation and execution:
 
-```sh
         ./bellard bellard.otccex.c 10
-```
 
 - Self compilation:
 
-```sh
         ./bellard bellard.c bellard.otccex.c 10
-```
 
 - Self compilation iterated...
 
-```sh
         ./bellard bellard.c bellard.c bellard.otccex.c 10
-```
+    
     An alternate syntax is to use it as a script interpreter: you can
     put `#!/usr/local/bin/otcc` at the beginning of your C source if
     you installed `otcc` at this place.
