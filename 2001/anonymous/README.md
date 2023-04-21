@@ -36,12 +36,22 @@ as 64-bit but the files it processes must be 32-bit binaries. Not doing this
 will likely cause a crash or cause your computer [halt and catch
 fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)! :-)
 
+This entry will also very likely crash if no arg is specified. It might do
+something funny if you run it on itself as well but see below :-)
+
 ## Try:
 
 ```sh
 make anonymous.ten
 ./anonymous anonymous.ten
 ```
+
+What happens if the x86 program has already been modified by this program?
+
+What happens if you try it on another file like [anonymous.c](anonymous.c)? Can
+you recompile it okay? What if you run it on `anonymous` itself? Can you run the
+program successfully after it without recompiling?
+
 
 
 ## Judges' remarks:
