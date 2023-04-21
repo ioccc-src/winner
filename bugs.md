@@ -1042,34 +1042,80 @@ might or might not help but he too could not get it to work.
 
 Tips from Cody:
 
-- Try a beautifier on the original C code.
-- Use cpp to make the functions easier to parse. For instance if you're in the
-directory try `cpp -E anonymous.c > anonymous.cpp` and look at that file to see
-the functions. It might or might not be helpful to use cpp on the beautified
-source.
-- After beautifying it try changing references of the macros (where not too
-complicated) to their definitions. For instance in vim you might do:
-`:%s/\<l\>/int */g` and then delete the line that was changed to `#define int *
-int*` (or else do a range substitute so it's not changed). You might not need
-this if you use the cpp. This might be useful anyway to more easily test things.
-- If your system has a `setarch` tool that might or might not be of help (I'm
-not too familiar with its internals).
-- The code appears to do everything from one call to `exit(3)` but it makes use
-of the ternary operator and possibly the comma operator.
-- Check the Makefile for the defines but also observe that those are in the
-source file. It appears that the entry might try compiling as well but that's
-from a quick glance.
 - The original main() started like: `main (char *ck, char **k)` but we made it
 compilable for clang by changing it to be: `main (int cka, char **k) { char *ck
 = (char *)cka;` which might or might not be good.
+
+- `gcc` reports an infinite recursive call of `main()`. My (Cody's) guess is
+that this is the root of the problem of the crash but it might be other things. 
+I'm not sure how to stop this from happening. This happens before and after the
+above fix for `clang`!
+
+- Try a beautifier on the original C code. This might or might not work; see
+next point.
+
+- Use `cpp -E` (see [cpp.c](2001/anonymous/cpp.c)) and clean it up first. I
+(Cody) did this for convenience though there are still macros. This is because
+it was done via a hackish make rule:
+
+	cpp: ${PROG}.c
+        @echo "NOTE: this entry seems to no longer work."
+        magic='cpp ${CFLAGS} -E'; \
+        X='-DA(X)=#X'; \
+        $$magic -Dmagic= $$X "-DX=A($$magic \"$$X\")" \
+                $< ${LIBS} > anonymous.cpp.c
+
+
+- (If beautifying) After beautifying it try changing references of the macros
+(where not too complicated) to their definitions. For instance in vim you might
+do: `:%s/\<l\>/int */g` and then delete the line that was changed to `#define
+int * int*` (or else do a range substitute so it's not changed). You might not
+need this if you use the cpp. This might be useful anyway to more easily test
+things.
+
+- If your system has a `setarch` tool that might or might not be of help (I'm
+not too familiar with its internals).
+
+- The code appears to do everything from one call to `exit(3)` but it makes use
+of the ternary operator and possibly the comma operator Check the Makefile for
+the defines but also observe that those are in the source file. It appears that
+the entry might try compiling as well but that's from a quick glance.
+
 - The author warns that only simple source (once compiled) would work so make
 use of the provided source file
 [2001/anonymous/anonymous.ten.c](2001/anonymous/anonymous.ten.c). To compile try
 `make anonymous.ten` from the entry directory which you can then run the entry
 on. Note that it needs to be compiled as a x86 program.
-- The program will to an extent destroy files it is used on. See the author's
-warning in their comments on that.
 
+- The `Tr` macro appears (at a glance when very tired) to create another
+function and when C pre-processed it seems like at least the function `L()` is
+there twice. However this is actually a bit different: one is `L##i()` and the
+other is `L()`. `L##i()` calls itself and `L()` calls `L##i()`. You might have luck
+renaming it e.g. `Li()` instead but I (Cody) had some problems renaming some of
+these functions (some but not all).
+
+- Pray, cast a spell or just wish yourself good luck, depending on your
+beliefs/personality/whatever! :-) It seems you'll need it! :-) (and also :-( )
+
+Here are some additional warnings on different platforms:
+
+```c
+anonymous.c:12:13: warning: operation on 'P' may be undefined [-Wsequence-point]
+ #define I (P+=4,*L(P-4,0))
+             ^
+```
+
+With `gdb` I determined that in the function `Runi()` appears to be NULL. I'm
+not sure if this is relevant or not.
+
+With `gdb` it appears that the crash happens with:
+
+```
+V (v@entry=<optimized out>) at anonymous.c:44
+44	    return E (B[v]);
+```
+
+(see [cpp.c](cpp.c)).
 
 ## [2001/bellard](2001/bellard/bellard.c) ([README.md](2001/bellard/README.md))
 ## STATUS: probable bug (possibly depending on system) - please help test and if necessary fix
@@ -1229,13 +1275,16 @@ it. [Yusuke Endoh](/winners.html#Yusuke_Endoh) [wrote a little bit about
 it](https://mame-github-io.translate.goog/ioccc-ja-spoilers/2001/anonymous.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp) that
 might or might not help but he too could not get it to work.
 
-Tips from Cody:
+WARNING: the program will to an extent destroy files it is used on! See the
+author's warning in their comments on that.
+
+Some tips from Cody:
 
 - Try a beautifier on the original C code.
 - Use cpp to make the functions easier to parse. For instance if you're in the
 directory try `cpp -E anonymous.c > anonymous.cpp` and look at that file to see
 the functions. It might or might not be helpful to use cpp on the beautified
-source.
+source. `cc -E` might or might not be useful as well.
 - After beautifying it try changing references of the macros (where not too
 complicated) to their definitions. For instance in vim you might do:
 `:%s/\<l\>/int */g` and then delete the line that was changed to `#define int *
@@ -1243,21 +1292,34 @@ int*` (or else do a range substitute so it's not changed). You might not need
 this if you use the cpp. This might be useful anyway to more easily test things.
 - If your system has a `setarch` tool that might or might not be of help (I'm
 not too familiar with its internals).
-- The code appears to do everything from one call to `exit(3)` but it makes use
-of the ternary operator and possibly the comma operator.
+- The code appears to do everything from one call to `exit(3)` which actually
+calls `main()` itself (is this part of the problem? We don't know) but it makes
+use of the ternary operator and possibly the comma operator (hard to parse
+without much formatting that's not been done).
 - Check the Makefile for the defines but also observe that those are in the
 source file. It appears that the entry might try compiling as well but that's
 from a quick glance.
-- The original main() started like: `main (char *ck, char **k)` but we made it
-compilable for clang by changing it to be: `main (int cka, char **k) { char *ck
-= (char *)cka;` which might or might not be good.
+- The original `main()` started like: `main (char *ck, char **k)` but we (Landon
+and Cody both had the same idea but Landon made the commit before Cody could)
+made it compilable for clang by changing it to be: `main (int cka, char **k) {
+char *ck = (char *)cka;` which might or might not be good.
 - The author warns that only simple source (once compiled) would work so make
 use of the provided source file
-[2001/anonymous/anonymous.ten.c](2001/anonymous/anonymous.ten.c). To compile try
-`make anonymous.ten` from the entry directory which you can then run the entry
-on. Note that it needs to be compiled as a x86 program.
-- The program will to an extent destroy files it is used on. See the author's
-warning in their comments on that.
+[2001/anonymous/anonymous.ten.c](2001/anonymous/anonymous.ten.c) that Cody bug
+fixed (which is necessary for it to work). To compile try `make anonymous.ten`
+from the entry directory which you can then run the entry on. Note that it needs
+to be compiled as a x86 program so the Makefile uses `-m32`. This will likely
+not work in macOS as Apple has unfortunately made it very hard to compile 32-bit
+code. With Apple's silicon chip it will be impossible as the architecture is
+entirely incompatible. We don't know if the original program needs to be 32-bit
+compiled nowadays but since the author said it can run on other platforms we
+have **NOT** made it use `-m32`. We give instructions on how to compile
+[anonymous.ten](2001/anonymous/anonymous.ten.c) without specifying 32-bit, in
+the Makefile, when trying to compile it.
+
+Cody also recommends that one try breaking apart the `exit()` called in `E`
+which calls `main()` call and if possible breaking `main()` into more than one
+function (this might not be possible) into several.
 
 
 ## [2001/bellard](2001/bellard/bellard.c) ([README.md](2001/bellard/README.md))

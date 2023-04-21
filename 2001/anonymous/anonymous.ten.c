@@ -1,3 +1,4 @@
+#include <stdio.h>
 #define PLURAL(bottles) bottles==1?"bottle":"bottles"
 
 void sing(int bottles) {

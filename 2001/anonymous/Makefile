@@ -70,7 +70,7 @@ CINCLUDE=
 
 # Optimization
 #
-OPT= -O1
+OPT= 
 
 # Default flags for ANSI C compilation
 #
@@ -116,7 +116,7 @@ ENTRY= anonymous
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA= anonymous.ten.c
+DATA= 
 TARGET= ${PROG}
 #
 ALT_OBJ=
@@ -141,6 +141,15 @@ ${PROG}: ${PROG}.c
 	warning='-Dprocessor'; \
 	$$magic $$warning -Dmagic= $$X "-DX=A($$magic \"$$X\")" \
 		$< -o $@ ${LIBS}
+
+${PROG}.ten: ${PROG}.ten.c
+	@echo "NOTE: this program must be compiled as 32-bit to use with the entry itself."
+	@echo "if you want to use it where this is not possible e.g. with a Mac try, say to"
+	@echo "use by itself, try:"
+	@echo
+	@echo "	    ${CC} $< -o $@"
+	@echo
+	${CC} ${CFLAGS} -m32 $< -o $@ ${LIBS}
 
 # alternative executable
 #
