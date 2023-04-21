@@ -76,7 +76,7 @@ main(int argc, char **argv)
 {
     /* no local name space is supported, but local variables ARE
        supported. As long as you do not use a globally defined
-       variable name as local variable (which is a bad habbit), you
+       variable name as local variable (which is a bad habit), you
        won't have any problem */
     int n, (*f)(), base;
     
