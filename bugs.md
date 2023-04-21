@@ -1029,23 +1029,19 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing))! :-) ).
 
 # 2001
 
-
-
 ## [2001/bellard](2001/bellard/bellard.c) ([README.md](2001/bellard/README.md))
 ## STATUS: probable bug (possibly depending on system) - please help test and if necessary fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed an initial
-segfault and he also fixed the [supplementary
-program bellard.otccex.c](2001/bellard/bellard.otccex.c) to test the entry on to not segfault and
-seemingly work but he has no 32-bit system to test any further fixes; we
-would greatly appreciate anyone's help! It appears that this entry will require
-major debugging and to make it work one might need to have a deep understanding
-of the ELF format.
+segfault and he also fixed the [supplementary program
+bellard.otccex.c](2001/bellard/bellard.otccex.c) but this still crashes.  Cody
+will probably be looking at this in the not too distant future but if you have a
+fix we welcome it.
 
 The author said that they compiled it with [gcc version
-2.95.2](https://ftp.gnu.org/gnu/gcc/gcc-2.95.2/gcc-everything-2.95.2.tar.gz). We don't know if
-a certain gcc version is necessary but it might be helpful to download and
-compile that version to test it.
+2.95.2](https://ftp.gnu.org/gnu/gcc/gcc-2.95.2/gcc-everything-2.95.2.tar.gz). We
+don't know if a certain gcc version is necessary but it might be helpful to
+download and compile that version to test it - or it might not.
 
 
 ## [2001/cheong](2001/cheong/cheong.c) ([README.md](2001/cheong/README.md))

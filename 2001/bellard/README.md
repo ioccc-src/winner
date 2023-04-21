@@ -19,14 +19,13 @@ make
 ```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) partially fixed this
-but he notes that this will not work without some serious debugging. As he has
-no 32-bit system to test this under it's also unlikely he will be able to
-resolve the remaining problems. He also has no knowledge of the ELF binary
-format so that will also make it harder to work. As it is it segfaults. He fixed
-an earlier segfault so that at least the file can be opened and he also changed
-some of the macro uses to what they expanded to but mostly he kept it the same.
-He also fixed `bellard.otccex.c` so it does not segfault and seemingly works
-okay (it did not work at all). The author stated that they used [gcc
+but he notes that this will not work without some possibly serious debugging. As
+it is it segfaults. He fixed an earlier segfault so that at least the file can
+be opened and he also changed some of the macro uses to what they expanded to
+but mostly he kept it the same.  He also fixed
+[bellard.otccex.c](bellard.otccex.c) so it does not
+segfault and seemingly works okay (it did not work at all). The author stated
+that they used [gcc
 2.95.2](https://ftp.gnu.org/gnu/gcc/gcc-2.95.2/gcc-everything-2.95.2.tar.gz) but
 we don't know if that's relevant or not. Thank you Cody for your assistance! Can
 you fix the entry? We welcome your help! If you can please look at
