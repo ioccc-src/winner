@@ -1,13 +1,12 @@
 # Best abuse of the C preprocessor
 
-    Immanuel Herrmann
-    University of Freiburg, Germany
-    Rehlingstr. 17
-    79100 Freiburg
-    Germany
-
-    http://pcpool.mathematik.uni-freiburg.de/~immi/
-
+Immanuel Herrmann  
+University of Freiburg, Germany  
+Rehlingstr. 17  
+79100 Freiburg  
+Germany  
+<https://web.archive.org/web/20071018081145/http://pcpool.mathematik.uni-freiburg.de/~immi/>
+  
 ## To build:
 
 ```sh
@@ -75,8 +74,7 @@ terminal!
 
 ### How to use it
 
-For the impatient
------------------
+#### For the impatient
 
 The info files "herrmann1.turing" and "herrmann1.gcd" are sample
 programs for the Turing machine. For example, type

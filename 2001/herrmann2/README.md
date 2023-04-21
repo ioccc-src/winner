@@ -1,12 +1,11 @@
 # Most eye-crossing
 
-    Immanuel Herrmann
-    University of Freiburg, Germany
-    Rehlingstr. 17
-    79100 Freiburg
-    Germany
-
-    http://pcpool.mathematik.uni-freiburg.de/~immi/
+Immanuel Herrmann  
+University of Freiburg, Germany  
+Rehlingstr. 17  
+79100 Freiburg  
+Germany  
+<https://web.archive.org/web/20071018081145/http://pcpool.mathematik.uni-freiburg.de/~immi/>
 
 ## To build:
 
