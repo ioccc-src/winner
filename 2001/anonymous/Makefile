@@ -117,7 +117,7 @@ PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 DATA= 
-TARGET= ${PROG}
+TARGET= ${PROG} cpp
 #
 ALT_OBJ=
 ALT_TARGET=
@@ -141,6 +141,15 @@ ${PROG}: ${PROG}.c
 	warning='-Dprocessor'; \
 	$$magic $$warning -Dmagic= $$X "-DX=A($$magic \"$$X\")" \
 		$< -o $@ ${LIBS}
+
+cpp: cpp.c
+	@echo "NOTE: this entry seems to no longer work."
+	magic='${CC} ${CFLAGS}'; \
+	X='-DA(X)=#X'; \
+	warning='-Dprocessor'; \
+	$$magic $$warning -Dmagic= $$X "-DX=A($$magic \"$$X\")" \
+		$< -o $@ ${LIBS}
+
 
 ${PROG}.ten: ${PROG}.ten.c
 	@echo "NOTE: this program must be compiled as 32-bit to use with the entry itself."
