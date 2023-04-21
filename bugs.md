@@ -1049,6 +1049,10 @@ download and compile that version to test it - or it might not.
 
 This program will very likely crash or do something different without an arg.
 
+## [2001/dgbeards](2001/dgbeards/dgbeards.c) ([README.md](2001/dgbeards/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This program deliberately crashes if it loses (which is what it aims to do).
 
 # 2002
 
