@@ -1087,6 +1087,13 @@ The author said that they compiled it with [gcc version
 a certain gcc version is necessary but it might be helpful to download and
 compile that version to test it.
 
+
+## [2001/cheong](2001/cheong/cheong.c) ([README.md](2001/cheong/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This program will very likely crash or do something different without an arg.
+
+
 # 2002
 
 There was no IOCCC in 2002.
