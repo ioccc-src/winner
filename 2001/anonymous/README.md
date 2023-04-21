@@ -12,25 +12,29 @@ make
 ## To run:
 
 ```sh
-./anonymous program
+./anonymous x86_program
 ```
 
-NOTE: [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the
-supplementary program which is necessary to test the program. He C pre-processed
-and cleaned it up as well as commented it some as it heavily uses the ternary
-operator and recursive calls. It is not consistent but if you look at it you
-should understand why that is! Thank you Cody for your assistance! He notes
-however that this entry seems to no longer work and has offered some tips in the
-[bugs.md](/bugs.md) file for anyone who mights want to try and fix this but it
-does seem to require a lot of parsing, debugging, an x86 system and possibly
-knowing the internals of the ELF format (x86 specific if there are any?). You
-need to run the program on a binary to test. See the try section below for the
-above mentioned program that you can test the entry on.  Thank you and we will
-happily credit you if you fix this.
+NOTE: [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed both the
+supplementary program and the program itself, both of which segfaulted. He
+managed to do this with linux but it will not work with macOS (see below why);
+this is not a bug but a feature inherent in what it does. He said this took
+serious debugging and skill (shameless self promotion but it's true :-) ) and we
+thank him _very much_!
 
-WARNING: if you do get this to work **IT WILL _DESTROY FILES__ that it is used
-on!** See the author's warning on this.
+Why does this not work on macOS? Because Apple has made it very hard to compile
+32-bit programs. It's even harder with the Apple silicon chip. Thus this will
+have to remain for linux only. BSD was not tested. 
 
+WARNING: this will somewhat destroy files that it is used on. See the author's
+warning about this.
+
+### INABIAF - it's not a bug it's a feature! :-)
+
+This entry will not work on 64-bit binaries! The program itself can be compiled
+as 64-bit but the files it processes must be 32-bit binaries. Not doing this
+will likely cause a crash or cause your computer [halt and catch
+fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)! :-)
 
 ## Try:
 

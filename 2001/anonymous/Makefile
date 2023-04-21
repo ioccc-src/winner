@@ -70,7 +70,7 @@ CINCLUDE=
 
 # Optimization
 #
-OPT= 
+OPT=
 
 # Default flags for ANSI C compilation
 #
@@ -117,7 +117,7 @@ PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 DATA= 
-TARGET= ${PROG} cpp
+TARGET= ${PROG}
 #
 ALT_OBJ=
 ALT_TARGET=
@@ -135,14 +135,6 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: this entry seems to no longer work."
-	magic='${CC} ${CFLAGS}'; \
-	X='-DA(X)=#X'; \
-	warning='-Dprocessor'; \
-	$$magic $$warning -Dmagic= $$X "-DX=A($$magic \"$$X\")" \
-		$< -o $@ ${LIBS}
-
-cpp: cpp.c
 	@echo "NOTE: this entry seems to no longer work."
 	magic='${CC} ${CFLAGS}'; \
 	X='-DA(X)=#X'; \
