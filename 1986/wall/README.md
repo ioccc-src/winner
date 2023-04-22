@@ -1,9 +1,6 @@
 # The grand prize in most well-rounded in confusion
 
 Larry Wall  
-System Development Corporation  
-Santa Monica  
-California  
 US 
 
 ## To build:

@@ -1,9 +1,7 @@
 # Most Useful Obfuscation
 
 Larry Wall  
-Unisys - System Development Group Santa Monica  
-9132 Kester Ave  
-Panorama City, CA  91402  US  
+US
 
 ## To build:
 
