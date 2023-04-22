@@ -1,10 +1,7 @@
 # Best complex task done in a complex way
 
 Lennart Augustsson   
-Dept. of Comp. Sci.  
-Chalmers University of Technology,  
-412 96 Gothenburg  
-Sweden  
+<https://web.archive.org/web/20090831055828/http://www.cs.chalmers.se/~augustss>
 
 ## To build:
 

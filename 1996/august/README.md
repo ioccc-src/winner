@@ -1,10 +1,8 @@
 # Best of Show
 
-Lennart Augustsson  
-CR&T  
-Stora Badhusgatan 18-20  
-S-411 21 Goteborg    
-Sweden  
+Lennart Augustsson   
+<https://web.archive.org/web/20090831055828/http://www.cs.chalmers.se/~augustss>
+
 
 ## To build:
 
