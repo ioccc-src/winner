@@ -1,9 +1,7 @@
 # Best simple task performed in a complex way
 
 Bruce Holloway  
-Digital Research, Inc.  
-Monterey, CA  
-USA  
+US  
 
 ## To build:
 
