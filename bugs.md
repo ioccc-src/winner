@@ -1030,18 +1030,42 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing))! :-) ).
 # 2001
 
 ## [2001/bellard](2001/bellard/bellard.c) ([README.md](2001/bellard/README.md))
-## STATUS: probable bug (possibly depending on system) - please help test and if necessary fix
+## STATUS: doesn't work with some platforms - please help us fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed an initial
 segfault and he also fixed the [supplementary program
-bellard.otccex.c](2001/bellard/bellard.otccex.c) but this still crashes.  Cody
-will probably be looking at this in the not too distant future but if you have a
-fix we welcome it.
+bellard.otccex.c](2001/bellard/bellard.otccex.c) but this still crashes. Below
+are some notes about getting this entry to work but the gist of it is that it
+requires i386 linux. Can you fix it for 64-bit linux? We welcome your help! Here
+are some notes of interest:
 
 The author said that they compiled it with [gcc version
 2.95.2](https://ftp.gnu.org/gnu/gcc/gcc-2.95.2/gcc-everything-2.95.2.tar.gz). We
 don't know if a certain gcc version is necessary but it might be helpful to
 download and compile that version to test it - or it might not.
+
+I (Cody) have no i386 system to test this but perhaps this is why I can't get it
+to work.  Yusuke was able to get this to work with `-m32` but it seems with an
+emulator.
+
+On the author's [web page for this program](https://bellard.org/otcc/) where it
+is stated it requires i386 linux.
+
+There I found what should be a more portable version which is included as
+[otccelf.c](2001/bellard/otccelf.c) (after adding some `#include`s and the
+modification by Yusuke noted in the README.md file) but it appears this also
+requires i386 linux; indeed looking at the code it hard codes paths that are
+i386 specific to linux.
+
+Another point of interest is that the author provided de-obfuscated versions
+which might be of value to look at. I might do that as well but this entry is
+very likely never going to work for 64-bit linux.
+
+Or maybe you have a fix for 64-bit CPUs? You might like to look at the otccelf
+version but note that it at least in 64-bit linux (and macOS) have compilation
+errors.
+
+Either way we welcome your help! Thank you!
 
 
 ## [2001/cheong](2001/cheong/cheong.c) ([README.md](2001/cheong/README.md))

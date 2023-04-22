@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= #-Wno-bitwise-op-parentheses -Wno-error -Wno-implicit-function-declaration \
+CSILENCE= -Wno-bitwise-op-parentheses -Wno-error -Wno-implicit-function-declaration \
 	-Wno-implicit-int -Wno-int-conversion -Wno-int-to-pointer-cast \
 	-Wno-parentheses -Wno-return-type
 
@@ -55,7 +55,7 @@ CSTD= -std=gnu99
 # Some entries require 32-bitness: ARCH= -m32
 # Some entries require 64-bitness: ARCH= -m64
 #
-ARCH=
+ARCH= -m32
 
 # Defines that are needed to compile
 #
@@ -71,7 +71,7 @@ OPT= -O3
 
 # Default flags for ANSI C compilation
 #
-CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT} -rdynamic
+CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT} -rdynamic -fno-pie
 
 # Libraries needed to build
 #
