@@ -21,3 +21,14 @@ fix any issues.
     * [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) has done many and
     has some kind of record of what he's done but these can be added later by
     having a list of years to check.
+    * NOTE: as of yesterday, 21 April 2023, years up through part of 2001 have
+    been checked except that a few years might need typo checks (or a bit more
+    thoroughly). It's very likely I won't keep this updated until it's finished
+    but I wanted to note it now.
+- Remove addresses from older winning entries but (if known) keep country code +
+add country code to winners.csv. As of half past 4 Pacific time on 22 April 2023
+only the years through 1986 are done. This should not take much time but I
+(Cody) am bored with it for now and would rather do other more important things.
+This will likely not be updated until after it's done (and when I remember to
+remove it - I expect that when I go for it I'll do it in one sitting or maybe a
+few sittings with a few brief breaks).
