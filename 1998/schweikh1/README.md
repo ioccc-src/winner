@@ -23,10 +23,10 @@ mode) being instead `5+__FILE__`. It now is `"r"`. There was also a call to
 `fopen()` that was wrong where the mode was instead `44+__FILE__`. Interestingly
 enough though this did not seem to be an issue though I cannot explain why. He
 notes that it works fine with `clang` as well as `gcc` (which is what is used
-but in macOS - see below for alternative code - `gcc` is clang).
+but in macOS - see below for alternate code - `gcc` is clang).
 
-Additionally Cody provided an alternative version for macOS. See below for the
-alternative version. Thank you Cody for your assistance!
+Additionally Cody provided an alternate version for macOS. See below for the
+alternate version. Thank you Cody for your assistance!
 
 
 ## To run:
@@ -35,10 +35,10 @@ alternative version. Thank you Cody for your assistance!
 ./schweikh1
 ```
 
-### Alternative code:
+### Alternate code:
 
 As noted above [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made an
-alternative version that works with macOS but there are some important notes as
+alternate version that works with macOS but there are some important notes as
 well as a description of how it works (spoilers for the original version as
 well).
 
@@ -46,7 +46,7 @@ Cody said that at least with his MacBook Pro Max with the M1 chip some header
 files report an unsupported architecture and unsupported compiler (error,
 warning). However the defines are still found okay.
 
-For this alternative version you will need the command line tools which you can
+For this alternate version you will need the command line tools which you can
 install like:
 
 ```sh
