@@ -1,9 +1,6 @@
 # Most adaptable program
 
 Jack Applin    
-Hewlett-Packard    
-Ft. Collins    
-Colorado   
 USA   
 <https://web.archive.org/web/19991006042323/http://www.geocities.com/HotSprings/6789/>
 
