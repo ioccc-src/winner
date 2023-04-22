@@ -15,8 +15,8 @@ make all
 ```
 
 NOTE: Almost every compiler is supposed to be able to accept the code in
-`schweikh2.c`; try compiling `schweikh2.alt.c` to see if your compiler
-is fully standard-compliant.
+[schweikh2.c](schweikh2.c); try compiling [schweikh2.alt.c](schweikh2.alt.c]) to
+see if your compiler is fully standard-compliant.
 
 ## To run:
 
