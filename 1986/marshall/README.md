@@ -1,10 +1,6 @@
 # Best layout
 
 Eric Marshall   
-System Development Corporation, a Burroughs Company  
-P.O. Box 517  
-Paoli, PA.  
-19301  
 
 ## To build:
 
