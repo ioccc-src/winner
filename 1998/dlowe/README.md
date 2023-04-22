@@ -4,7 +4,7 @@ David Lowe
 Pootpoot  
 67-D Manchester Street  
 San Francisco, CA 94110  
-USA  
+US  
 
 ## To build:
 
@@ -37,6 +37,8 @@ that version try:
 make dlowe.alt
 ./dlowe.alt < anyfile > pootfile
 ```
+
+What's the difference between this and `dlowe`?
 
 ## Judges' remarks:
 
