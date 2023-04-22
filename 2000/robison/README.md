@@ -3,7 +3,7 @@
 Arch D. Robison  
 1406 Country Lake Drive  
 Champaign IL 61821  
-USA  
+US  
 
 ## To build:
 

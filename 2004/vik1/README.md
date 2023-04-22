@@ -3,7 +3,7 @@
     Daniel Vik
     926 Genter Street
     La Jolla, Ca 92037
-    USA
+    US
 
     http://www.vik.cc/
 

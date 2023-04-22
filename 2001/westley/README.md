@@ -4,7 +4,7 @@
     Firesign Theatre webmaster
     1906 James Ave
     St. Paul, MN  55105
-    USA
+    US
 
     http://www.westley.org
 

@@ -4,7 +4,7 @@ Don Yang
 UCSD  
 259 E. Bellbrook St.  
 Covina, CA 91722  
-USA  
+US  
 <http://uguu.org>   
 
 ## To build:

@@ -4,7 +4,7 @@ Szymon Rusinkiewicz
 Massachusetts Institute of Technology  
 305 Memorial Dr., Room 005B  
 Cambridge, Ma  02139    
-USA  
+US  
 
 ## To build:
 

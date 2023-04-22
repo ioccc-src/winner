@@ -3,7 +3,7 @@
     Jason Orendorff
     5 Buchanan St.
     Nashua, NH 03060
-    USA
+    US
 
     http://www.jorendorff.com/
 

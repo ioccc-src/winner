@@ -1,7 +1,7 @@
 # Most Timely Output
 
 Craig Schneiderwent  
-WI, USA  
+WI, US  
 
 ## To build:
 

@@ -5,7 +5,7 @@ ISX Corporation
 1165 Northchase Parkway  
 Suite 120  
 Marietta, GA  30067   
-USA  
+US  
 
 ## To build:
 

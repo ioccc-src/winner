@@ -5,7 +5,7 @@ AT&T Bell Labs
 Rm 1H-117  
 6200 E Broad St.  
 Columbus OH 43213  
-USA  
+US  
 
 ## To build:
 

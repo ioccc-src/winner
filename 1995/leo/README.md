@@ -3,7 +3,7 @@
 Leonid A. Broukhis  
 46728 Crawford St., apt. 20  
 Fremont, CA 94539   
-USA  
+US  
 
 ## To build:
 

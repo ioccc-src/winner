@@ -4,7 +4,7 @@ Andrew T. Shapiro
 CSES/CIRES University of Colorado  
 Campus Box 216  
 Boulder, CO 80309-0216  
-USA  
+US  
 
 ## To build:
 

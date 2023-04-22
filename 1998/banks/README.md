@@ -4,7 +4,7 @@ Carl Banks
 Penn State Department of Aerospace Engineering  
 232 Hammond Building  
 University Park, PA 16802  
-USA  
+US  
 <https://blog.aerojockey.com/post/iocccsim>
 
 ## To build:

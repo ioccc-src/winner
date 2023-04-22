@@ -3,7 +3,7 @@
 David Lowe  
 1224 11th Avenue  
 San Francisco, California, 94122  
-USA  
+US  
 
 ## To build:
 

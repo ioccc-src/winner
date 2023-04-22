@@ -2,7 +2,7 @@
 
     Vincent Weaver
     Ithaca, NY
-    USA
+    US
     vince@deater.net
     <http://www.deater.net/weave/>
 

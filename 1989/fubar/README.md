@@ -5,7 +5,7 @@ Sequent Computer Systems, Inc
 15450 SW Koll Parkway  
 Beaverton, OR  
 97006  
-USA  
+US  
 
 ## To build:
 

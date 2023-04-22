@@ -5,7 +5,7 @@ University of Illinois
 1304 W. Springfield Ave.  
 Urbana, IL  
 61801  
-USA  
+US  
 
 ## To build:
 

@@ -5,7 +5,7 @@ University of Rochester
 Dept of Electrical Engineering  
 Computer Studies Bldg  
 Rochester, NY 14627  
-USA  
+US  
 
 ## To build:
 

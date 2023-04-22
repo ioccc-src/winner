@@ -1,7 +1,7 @@
 # Most adaptable program
 
 Jack Applin    
-USA   
+US   
 <https://web.archive.org/web/19991006042323/http://www.geocities.com/HotSprings/6789/>
 
 ## To build:

@@ -4,7 +4,7 @@ E. Jay Berkenbilt
 Engineering Research Associates  
 1595 Springhill Road  
 Vienna, VA 22182-2235  
-USA  
+US  
 
 ## To build:
 

@@ -373,7 +373,7 @@ en/decoded\[4\].
 
 - [lavabus.pgm](lavabus.pgm)
 
-    A bus that was trapped by lava from Kilauea volcano in Hawaii, USA.  Nobody
+    A bus that was trapped by lava from Kilauea volcano in Hawaii, US.  Nobody
     was in the bus at the time, BTW.  Photo date: 1981.
 
 - [lenna.glic](lenna.glic)

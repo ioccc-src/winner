@@ -3,7 +3,7 @@
 Mark Schnitzius  
 1700 Woodbury Rd. #1208  
 Orlando, FL 32828  
-USA  
+US  
 <http://computronium.org/ioccc.html>  
 
 

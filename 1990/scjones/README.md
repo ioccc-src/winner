@@ -4,7 +4,7 @@ Larry Jones
 SDRC  
 2000 Eastman Dr  
 Milford, OH 45150    
-USA  
+US  
 
 ## To build:
 

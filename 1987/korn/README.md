@@ -5,7 +5,7 @@ AT&T Bell Labs
 MH 3C-526B, AT&T Bell Labs   
 Murray Hill, NJ   
 07974   
-USA   
+US   
 
 ## To build:
 

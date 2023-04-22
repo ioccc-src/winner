@@ -5,7 +5,7 @@ Ohio State University
 Department of Computer and Information Science  
 2036 Neil Avenue Mall  
 Columbus, Ohio  43210  
-USA  
+US  
 
 ## To build:
 

@@ -58,7 +58,7 @@ The US International Traffic in Arms Regulations controls certain exportations
 going out of the United States.  The U.S.  Munitions List gives the specific
 categories of restricted exports.  Because this entry at one time appeared to
 fall under this restricted category, the judges originally were not able to
-distribute winners outside of the USA.
+distribute winners outside of the US.
 
 Nathan Sidwell stated that he was willing to distribute the winning source.  To
 read HIS instructions of how to obtain his winning program one was able to run:

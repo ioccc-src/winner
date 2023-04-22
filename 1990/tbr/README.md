@@ -4,13 +4,13 @@ Byron Rakitzis
 Princeton University   
 5707 Old Lodge Dr.     
 Houston, TX 77066      
-USA		       
+US		       
 
 Sean Dorward   
 Princeton University  
 10274 Burleigh Cottage Lane  
 Ellicott City, MD 21043  
-USA  
+US  
 
 
 ## To build:

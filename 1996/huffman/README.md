@@ -4,7 +4,7 @@ Ken Huffman
 Applied Innovation Inc  
 5800 Innovation Dr.  
 Dublin, OH 43016  
-USA  
+US  
 <http://www.huffmancoding.com>  
 huffmancoding@gmail.com  
 

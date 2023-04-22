@@ -4,7 +4,7 @@ Brian Westley (aka Merlyn LeRoy)
 Digi International  
 1026 Blair Ave.  
 St. Paul, MN  55104  
-USA  
+US  
 <http://www.westley.org>  
 
 ## To build:
@@ -50,7 +50,7 @@ show correctly!
 
 ### Alternative code:
 
-The author provided a version for the USA. To build:
+The author provided a version for the US. To build:
 
 ```sh
 make alt
@@ -143,7 +143,7 @@ is reasonably accurate.
 - Beijing	    40   116
 - Tokyo		    36   140
 
-For a domestic (USA) version with higher resolution, try:
+For a domestic (US) version with higher resolution, try:
 
 ```c
 main(l,a,n,d)char**a;{for(d=atoi(a[1])/2*80-atoi(a[2])-2043;

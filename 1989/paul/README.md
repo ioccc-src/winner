@@ -5,7 +5,7 @@ CIRRUS LOGIC, Inc.
 1463 Centre Pointe Dr.  
 Milpitas, CA   
 95035   
-USA  
+US  
 
 ## To build:
 

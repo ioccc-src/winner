@@ -5,7 +5,7 @@ Imagen Corporation
 2650 San Tomas Expy.  
 Santa Clara, CA   
 95052-8101  
-USA  
+US  
 
 ## To build:
 

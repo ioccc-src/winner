@@ -4,7 +4,7 @@ Mark Schnitzius
 ISX Corporation  
 1165 Northchase Pkwy, Suite 120  
 Marietta, GA 30067  
-USA  
+US  
 <http://computronium.org/ioccc.html>  
 
 

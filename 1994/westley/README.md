@@ -4,7 +4,7 @@ Brian Westley (Merlyn LeRoy on Usenet)
 Digi International  
 1906 James Ave.  
 St. Paul, MN  55105  
-USA  
+US  
 <http://www.westley.org>  
 
 ## To build:

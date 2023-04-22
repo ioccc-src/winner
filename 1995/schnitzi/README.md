@@ -4,7 +4,7 @@ Mark Schnitzius
 ISX Corporation  
 3215-C Post Woods Dr.  
 Atlanta, GA 30339   
-USA  
+US  
 <http://computronium.org/ioccc.html>  
 
 

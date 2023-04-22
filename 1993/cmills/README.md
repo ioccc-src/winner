@@ -4,7 +4,7 @@ Chris Mills
 Pagine Corporation  
 1961-A Concourse Drive  
 San Jose, CA 95131  
-USA  
+US  
 
 ## To build:
 

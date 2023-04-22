@@ -4,7 +4,7 @@ Ed Luke
 Mississippi State University  
 P.O. Box 6176  
 Mississippi State, MS 39762  
-USA    
+US    
 
 ## To build:
 

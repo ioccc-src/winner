@@ -4,7 +4,7 @@ Heather Downs & Selene Makarios
 The Software Bungalow  
 900 High School Way, #2202  
 Mountain View, CA 94041  
-USA  
+US  
 
 ## To build:
 

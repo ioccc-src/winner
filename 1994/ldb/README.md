@@ -4,7 +4,7 @@ Laurion Burchall
 Brown University
 Unit 4641
 Providence RI 02912-4641
-USA
+US
 
 ## To build:
 

@@ -5,7 +5,7 @@ University of Illinois at Urbana-Champaign
 1304 W. Springfield Ave.  
 Urbana IL   
 61801  
-USA  
+US  
 
 ## To build:
 

@@ -3,7 +3,7 @@
 John Dalbec  
 20 Squire's Ct.  
 Canfield OH 44406  
-USA  
+US  
 <https://jpdalbec.people.ysu.edu>  
 
 ## To build:

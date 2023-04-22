@@ -3,7 +3,7 @@
     John Williams
     941 E  25 S
     Lindon UT  84042
-    USA
+    US
 
 ## To build:
 

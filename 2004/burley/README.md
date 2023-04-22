@@ -3,7 +3,7 @@
     Brent Burley
     500 S. Buena Vista St.
     Burbank, CA 91521
-    USA
+    US
 
 ## To build:
 

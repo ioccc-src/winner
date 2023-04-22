@@ -4,7 +4,7 @@ Doug Beardsley
 Southern Adventist University  
 359 Davis Rd. NW  
 Cleveland, TN 37312  
-USA  
+US  
 
 ## To build:
 

@@ -72,7 +72,7 @@ contest have not been formed at this time and are not expected to be
 ready for distribution until late February 1998.
 
 So what happened to 1997?  Well the next USENIX Technical Conference
-will be held Jun 15-19, 1998 (in New Orleans, USA).  The 18 month
+will be held Jun 15-19, 1998 (in New Orleans, US).  The 18 month
 span between conferences will cause the IOCCC to skip over 1997.
 
 Be sure to wait until the 1998 rules are posted before submitting entries.

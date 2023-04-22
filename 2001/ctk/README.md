@@ -3,7 +3,7 @@
 Chris King  
 115 Foster Center Road  
 Foster, RI, 02825  
-USA  
+US  
 
 ## To build:
 

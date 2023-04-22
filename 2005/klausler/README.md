@@ -4,7 +4,7 @@
     Cray Inc.
     2802 W 40th St
     Minneapolis MN 55410
-    USA
+    US
     pmk@cray.com
 
 ## To build:

@@ -5,19 +5,19 @@ Research Institute for Advanced Computer Science
 MS 230-5  
 NASA Ames Research Center  
 Moffett Field, CA 94131  
-USA  
+US  
 
 Karl F. Fox  
 Morning Star Technologies, Inc.  
 1760 Zollinger Road  
 Columbus, OH 43221  
-USA  
+US  
 
 Paul Eggert  
 Twin Sun Inc.  
 360 N. Sepulveda Blvd. #2055  
 El Segundo, CA 90245  
-USA  
+US  
 
 ## To build:
 

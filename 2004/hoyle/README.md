@@ -3,7 +3,7 @@
     Jonathan Hoyle
     162 Burwyck Park
     Saline, MI  48176
-    USA
+    US
 
     http://www.jonhoyle.com
 

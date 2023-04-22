@@ -1,7 +1,7 @@
 # Best use of parenthesis
 
     Michael Ash
-    USA
+    US
     mike@mikeash.com
 
 ## To build:

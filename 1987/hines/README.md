@@ -5,7 +5,7 @@ OnLine Computer Systems
 4200 Farragut Street  
 Hyattsville, MD  
 20781  
-USA  
+US  
 
 ## To build:
 

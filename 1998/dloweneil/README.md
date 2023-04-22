@@ -4,13 +4,13 @@ David Lowe
 Pootpoot				
 67-D Manchester Street	 
 San Francisco, CA 94110	  
-USA					
+US					
 
 Neil Mix  
 Pootpoot  
 1490 Sacramento Street #4G  
 San Francisco, CA 94110  
-USA  
+US  
 
 ## To build:
 

@@ -5,7 +5,7 @@ Starfire Consulting
 1121 Hamline Ave. N. #17  
 St. Paul, MN  
 55108  
-USA  
+US  
 <http://www.westley.org>  
 
 ## To build:

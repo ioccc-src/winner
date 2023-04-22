@@ -4,7 +4,7 @@ Mark Schnitzius
 ISX Corporation
 1280 West Peachtree St. Apt. 1507
 Atlanta, GA 30309
-USA
+US
 <http://computronium.org/ioccc.html>
 
 ## To build:
