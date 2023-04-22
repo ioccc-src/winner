@@ -1078,6 +1078,25 @@ This program will very likely crash or do something different without an arg.
 
 This program deliberately crashes if it loses (which is what it aims to do).
 
+## [2001/herrmann1](2001/herrmann1/herrmann1.c) ([README.md](2001/herrmann1/README.md)
+## STATUS: missing files - please provide them
+
+The author referred to the file `herrmann1.turing` but it does not exist not even
+in the archive. Do you have a copy? Please provide it!
+
+## STATUS: missing files - please provide them
+
+The author also referred to the file `times2.turing` but this is also missing in
+the archive. Do you have a copy? Please provide it!
+
+
+## STATUS: known bug - please help us fix
+
+There is also a bug in part. During compilation you're supposed to see some
+animation but this does not seem to work with modern gcc versions. It appears
+that version 2.95 works but maybe others do as well. Do you have a fix? We would
+appreciate your help!
+
 # 2002
 
 There was no IOCCC in 2002.
