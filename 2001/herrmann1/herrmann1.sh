@@ -3,8 +3,7 @@
 name=herrmann1
 
 # Make sure things are clean to start with...
-#rm -f ${name} ${name}-1.c ${name}-2.c ${name}-3.c
-set -x
+rm -f ${name} ${name}-1.c ${name}-2.c ${name}-3.c
 
 defs=""
 for p in ${1+"$@"}; do
@@ -27,4 +26,4 @@ eval ${CC:-cc} ${name}-1.c -o ${name} 2> error && rm error
 eval ./${name}
 
 # Clean up intermediates...
-#rm -f ${name}-1.c ${name}-2.c ${name}-3.c
+rm -f ${name}-1.c ${name}-2.c ${name}-3.c
