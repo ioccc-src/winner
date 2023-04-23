@@ -1276,6 +1276,27 @@ Yes that's a zero. Now removing the 0 changes it to:
 I did break that line up too but I don't remember the results and unfortunately
 right now I need to not continue with it. Still some ideas.
 
+## [2001/kev](2001/kev/kev.c) ([README.md](2001/kev/README.md)
+## STATUS: INABIAF - please **DO NOT** fix
+
+Sometimes when one player presses `q` it will result in broken pipe on the other
+end.
+
+The author also noted that some versions of `curses` have problems with
+`getch()` having a delay.
+
+The program is very likely to segfault if the specified port can't be bound or
+connected to.
+
+If the terminal is too wide (the author suggests over 500 characters) the
+program can segfault.
+
+It's also possible to crash the program if a player scores over a billion
+points.
+
+Although it is independent of endianness both systems need the same character
+set. In other words both have to be ASCII or EBCDIC - not one of each.
+
 # 2002
 
 There was no IOCCC in 2002.
