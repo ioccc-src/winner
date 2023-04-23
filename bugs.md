@@ -1097,6 +1097,185 @@ animation but this does not seem to work with modern gcc versions. It appears
 that version 2.95 works but maybe others do as well. Do you have a fix? We would
 appreciate your help!
 
+## [2001/herrmann2](2001/herrmann2/herrmann2.c) ([README.md](2001/herrmann2/README.md)
+## STATUS: compiled executable crashes - please help us fix
+
+The basic operation of this program does work but when using the more advanced
+features it crashes. [Yusuke Endoh](/winners.html#Yusuke_Endoh)  did not have
+this problem but [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) did
+before and after the fix for clang that he made. Two examples where it crashes:
+
+```sh
+./herrmann2 \
+'char*d,A[9876];e;b;*ad,a,c;  tw,ndr,T; wri; ;*h; _,ar  ;on;'\
+' ;l ;i(V)man,n    {-!har  ;   =Aadre(0,&e,o||n -- +,o4,=9,l=b=8,'\
+'!( te-*Aim)|(0~l),srand  (l),,!A,d=,b))&&+((A + te-A(&(*)=+ +95>'\
+'e?(*& c_*r=5,r+e-r +_:2-19<-+?|(d==d),!n ?*d| *( (char**)+V+), ('\
+'  +0,*d-7 ) -r+8)c:7:+++7+! r: and%9- 85! ()-(r+o):(+w,_+ A*(=er'\
+'i+(o)+b)),!write,(=_((-b+*h)(1,A+b,!!((((-+, a >T^l,( o-95=+))w?'\
+'++  &&r:b<<2+a +w) ((!main(n*n,V) , +-) ),l)),w= +T-->o +o+;{ &!'\
+'a;}return _+= ' < herrmann2.ioccc
+```
+
+and
+
+```sh
+./herrmann2 "234 84 045 5 6765 7487 65190 84 656 254 12 43931 818 0 6542 \
+341 45 567 76967 7244 606 976567 895 81898 095 68678 1843 4650547 \
+565980691 389 04974" < herrmann2.ioccc
+```
+
+On the other hand these do not crash:
+
+```sh
+./herrmann2 < herrmann2.ioccc
+./herrmann2 < herrmann2.cup
+```
+
+A few notes from Cody:
+
+- The author stated that there are some layout restrictions and the changes made
+to get it to compile with clang might have impacted this some. However it
+appears to function the same before and after and the author is not clear enough
+in details.
+- The author said that to add a function call one has to 'fill an entire line
+with stuff doing mostly nothing' but it was not specified what an entire line is
+nor what will happen otherwise. This is seen throughout the code and is likely
+the source of dead code and variable declarations being repeated. Now originally
+my fix did not call a separate function but when trying to find out more about
+the crash I made it call another function. This still however functions just the
+same and crashes just the same as well. See below for the diff applied.
+- I was able to fix one unsequenced modification but the others are not so easy
+to fix. See below for the clang warnings.
+- The entry will give different output each invocation! But what you'll see is that
+each line has a repeating pattern! This is expected.  See below for an example
+few lines.
+- See below for possible crash locations.
+
+
+The diff for calling a function to let clang compile it is:
+
+```diff
+diff --git i/2001/herrmann2/herrmann2.c w/2001/herrmann2/herrmann2.c
+index b1a01c2d3e6b1528ac364793bafadad9388a03e6..5d9876f79d52c79029fd7b3cf47b41a300dd62c7 100644
+--- i/2001/herrmann2/herrmann2.c
++++ w/2001/herrmann2/herrmann2.c
+@@ -1,23 +1,23 @@
+ char*d,A[9876];char*d,A[9876];char*d,A[9876];char*d,A[9876];char*d,A[9876];char
+ e;b;*ad,a,c;  te;b;*ad,a,c;  te;*ad,a,c;  w,te;*ad,a,  w,te;*ad,and,  w,te;*ad,
+ r,T; wri; ;*h; r,T; wri; ;*h; r; wri; ;*h;_, r; wri;*h;_, r; wri;*har;_, r; wri
+-;on;l;i(int V);on;l;i(int V);o;l;mai(int n,int V);o;mai(int n,int V);main(int n,char**V)
+-   {-!har  ;      {-!har  ;      {har  =A;      {h  =A;ad        =A;read
++;on; ;l ;on; ;l ;o ;l ;o; pain(n,V){ -!har; {-!har; {har=A;{h=A;ad     =A;read
+ (0,&e,o||n -- +(0,&e,o||n -- +(0,&o||n ,o-- +(0,&on ,o-4,- +(0,n ,o-=94,- +(0,n
+ ,l=b=8,!( te-*A,l=b=8,!( te-*A,l=b,!( time-*A,l=b, time)|-*A,l= time(0)|-*A,l=
+ ~l),srand  (l),~l),srand  (l),~l),and  ,!(l),~l),a  ,!(A,l),~l)  ,!(d=A,l),~l)
+ ,b))&&+((A + te,b))&&+((A + te,b))+((A -A+ te,b))+A -A+ (&te,b+A -A+(* (&te,b+A
+ )=+ +95>e?(*& c)=+ +95>e?(*& c) +95>e?(*& _*c) +95>(*& _*c) +95>(*&r= _*c) +95>
+-5,r+e-r +_:2-195,r+e-r +_:2-195+e-r +_:2-1<-95+e-r +_-1<-95+e-r ++?_-1<-95+e-r
+-|(d==d),!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d=
+- *( (char**)+(int)V+ *( (char)+(int)V+ *( (c),har)+V+  (c),har)+ (V+  (c),r)+ (V+  (  c),
++5,r+e-r +_:2-195,r+e-r +_:2-195+e-r +_:2-1<-95+e-r +_-1<-95+e-r?_-1<-95+e-r +1
++|(d==d),++r,!n?*d||(d==d),!n ?*d||(d==d),!n?*d||(d==d),!n?*d||(d==d),!n?*d||(d=
++ *( (char**)+V+ *( (char)+V+ *( (c),har)+V+  (c),har)+ (V+  (c),r)+ (V+  (  c),
+ +0,*d-7 ) -r+8)+0,*d-7 -r+8)+0,*d-c:7 -r+80,*d-c:7 -r+7:80,*d-7 -r+7:80,*d++-7
+ +7+! r: and%9- +7+! rand%9-85 +7+! rand%95 +7+!!  rand%95 +7+  rand()%95 +7+  r
+ -(r+o):(+w,_+ A-(r+o)+w,_+*( A-(r+o)+w,_+ A-(r=e+o)+w,_+ A-(r+o)+wri,_+ A-(r+o)
+ +(o)+b)),!write+(o)+b,!wri,(te+(o)+b,!write+(o=_)+b,!write+(o)+b,!((write+(o)+b
+ -b+*h)(1,A+b,!!-b+*h),A+b,((!!-b+*h),A+b,!!-b+((*h),A+b,!!-b+*h),A-++b,!!-b+*h)
+ , a >T^l,( o-95, a >T,( o-=+95, a >T,( o-95, a)) >T,( o-95, a >T,(w? o-95, a >T
+ ++  &&r:b<<2+a ++  &&b<<2+a+w ++  &&b<<2+w ++  ) &&b<<2+w ++  &&b<<((2+w ++  &&
+-!main(n*n,V) , !main(n,V) , !main(+-n,V) ,main(+-n,V) ) ,main(n,V) ) ,main),(n,
++!pain(n*n,V) , !pain(n,V) , !pain(+-n,V) ,pain(+-n,V) ) ,pain(n,V) ) ,pain),(n,
+ l)),w= +T-->o +l)),w= +T>o +l)),w=o+ +T>o +l,w=o+ +T>o;{ +l,w=o+T>o;{ +l,w &=o+
+ !a;}return _+= !a;}return _+= !a;}return _+= !a;}return _+= !a;}return _+= !a;}
++main (n,V)char **V;{ (void)V; return pain(n,0); return pain(n,0);return pain(n,0); }
+
+```
+
+The remaining unsequenced modification warnings are:
+
+```
+herrmann2.c:5:12: warning: multiple unsequenced modifications to 'n' [-Wunsequenced]
+(0,&e,o||n -- +(0,&e,o||n -- +(0,&o||n ,o-- +(0,&on ,o-4,- +(0,n ,o-=94,- +(0,n
+           ^              ~~
+herrmann2.c:5:42: warning: unsequenced modification and access to 'o' [-Wunsequenced]
+(0,&e,o||n -- +(0,&e,o||n -- +(0,&o||n ,o-- +(0,&on ,o-4,- +(0,n ,o-=94,- +(0,n
+                                         ^           ~
+herrmann2.c:17:68: warning: unsequenced modification and access to 'b' [-Wunsequenced]
+-b+*h)(1,A+b,!!-b+*h),A+b,((!!-b+*h),A+b,!!-b+((*h),A+b,!!-b+*h),A-++b,!!-b+*h)
+                                                                   ^
+```
+
+I tried moving the modification about like I did for `r` I think it was but I
+was not able to get it to a new sequence. This might or might not be relevant.
+
+An example line broken up into parts to show how it repeats a pattern:
+
+```
+TP$t5Oad0t`XC5zjP3TP$t5adt`XC5zjP3TP$5ad^t`XC5zjP3TP$5ad^t`XvCH5zjP3TP
+```
+
+If you break it up you get:
+
+```
+TP$t5Oad0t`XC5zjP3
+TP$t5adt`XC5zjP3
+TP$5ad^t`XC5zjP3
+TP$5ad^t`XvCH5zjP3
+TP
+```
+
+which you can see is quite similar.
+
+
+For possible crash locations:
+
+
+```
+(gdb) bt
+#0  0x0000000000401444 in pain (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:13
+#1  0x00000000004018af in main (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:23
+(gdb) list
+9	)=+ +95>e?(*& c)=+ +95>e?(*& c) +95>e?(*& _*c) +95>(*& _*c) +95>(*&r= _*c) +95>
+10	5,r+e-r +_:2-195,r+e-r +_:2-195+e-r +_:2-1<-95+e-r +_-1<-95+e-r?_-1<-95+e-r +1
+11	|(d==d),++r,!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d=
+12	 *( (char**)+V+ *( (char)+V+ *( (c),har)+V+  (c),har)+ (V+  (c),r)+ (V+  (  c),
+13	+0,*d-7 ) -r+8)+0,*d-7 -r+8)+0,*d-c:7 -r+80,*d-c:7 -r+7:80,*d-7 -r+7:80,*d++-7
+```
+
+What is curious is `*d == '\0'` and trying to print (though not in runtime)
+`*d++` results in invalid read. However when breaking the line down to several:
+
+```
+#0  pain (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:14
+#1  0x00000000004018af in main (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:28
+(gdb) list
+9	)=+ +95>e?(*& c)=+ +95>e?(*& c) +95>e?(*& _*c) +95>(*& _*c) +95>(*&r= _*c) +95>
+10	5,r+e-r +_:2-195,r+e-r +_:2-195+e-r +_:2-1<-95+e-r +_-1<-95+e-r?_-1<-95+e-r +1
+11	|(d==d),++r,!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d=
+12	 *( (char**)+V+ *( (char)+V+ *( (c),har)+V+  (c),har)+ (V+  (c),r)+ (V+  (  c),
+13	+0,*d-7 ) -r+8)
+14	+0,
+```
+
+Yes that's a zero. Now removing the 0 changes it to:
+
+```
+#0  pain (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:12
+12	 *( (char**)+V+ *( (char)+V+ *( (c),har)+V+  (c),har)+ (V+  (c),r)+ (V+  (  c),
+(gdb) l
+7	~l),srand  (l),~l),srand  (l),~l),and  ,!(l),~l),a  ,!(A,l),~l)  ,!(d=A,l),~l)
+8	,b))&&+((A + te,b))&&+((A + te,b))+((A -A+ te,b))+A -A+ (&te,b+A -A+(* (&te,b+A
+9	)=+ +95>e?(*& c)=+ +95>e?(*& c) +95>e?(*& _*c) +95>(*& _*c) +95>(*&r= _*c) +95>
+10	5,r+e-r +_:2-195,r+e-r +_:2-195+e-r +_:2-1<-95+e-r +_-1<-95+e-r?_-1<-95+e-r +1
+11	|(d==d),++r,!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d=
+12	 *( (char**)+V+ *( (char)+V+ *( (c),har)+V+  (c),har)+ (V+  (c),r)+ (V+  (  c),
+```
+
+I did break that line up too but I don't remember the results and unfortunately
+right now I need to not continue with it. Still some ideas.
+
 # 2002
 
 There was no IOCCC in 2002.

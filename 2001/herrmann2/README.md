@@ -44,26 +44,33 @@ Try running each command a few times and notice the different output. Can you
 figure out why each is different?
 
 
-If you use vi(m) you can see a pattern in `hermmann2.cup` and `herrmann2.ioccc`
-by say:
+If you use vi(m) you can see a pattern in [herrmann2.cup](herrmann2.cup) and
+[herrmann2.ioccc][(herrmann2.ioccc]) by say:
 
 
-	/[pon]                                                                                                                                          
+```
+/[pon]                                                                                                                                          
+```
 
 and
 
-	/l
+```
+/l
+```
 
-For additional fun in `herrman2.cup` try:
+For additional fun in [herrmann2.cup](herrmann2.cup) try:
 
 
-	/[po]
-	/q
+```
+/[po]
+/q
+```
 
-and in `herrmann2.ioccc` try:
+and in [herrmann2.ioccc](herrmann2.ioccc) try:
 
-	/n
-
+```
+/n
+```
 
 	
 ## Judges' remarks:
@@ -86,12 +93,12 @@ yes, the program itself is such a 3D picture.
 1. Create a file which describes the desired 3D picture. The file
 must be a block of lowercase letters the size of the desired
 picture. The letters specify the depth of the corresponding pixel:
-"a" means close to the paper, "z" means far away. The info files
+`a` means close to the paper, `z` means far away. The info files
 are examples. Be aware that the size of the picture is restricted
 to about 9k.
 
 2. Pipe your picture into the program. The output will be your
-3D picture, constructed of random characters (with ascii code between
+3D picture, constructed of random characters (with ASCII code between
 32 and 126). For example, type
 
 ```sh
@@ -106,8 +113,8 @@ argument. When it arrives at the end of the argument, it will
 start over at the beginning. Example:
 
 ```sh
-./herrmann2 "234 84 045 5 6765 7487 65190 84 656 254 12 43931 818 0 6542\
-341 45 567 76967 7244 606 976567 895 81898 095 68678 1843 4650547\
+./herrmann2 "234 84 045 5 6765 7487 65190 84 656 254 12 43931 818 0 6542 \
+341 45 567 76967 7244 606 976567 895 81898 095 68678 1843 4650547 \
 565980691 389 04974" < herrmann2.ioccc
 ```
 
@@ -173,7 +180,7 @@ only a sixth of the characters can be chosen freely! (457 of
 1840, to be exact.) In contrast, in palindrome programs, for
 example, half of the characters can be chosen freely.
 
-- I did not cheat by using comments or -D options - something
+- I did not cheat by using comments or `-D` options - something
 I've seen even some palindrome programs do. In fact, at my first
 attempt at writing the program I became convinced that it
 isn't possible without cheating. But then I found out that with
@@ -194,7 +201,7 @@ one). Which is the other digit I could have put there instead,
 and what other changes to the program would have been necessary?
 Without violating the constraints of course.)
 
-- The fact that the main loop of the program calls "main"
+- The fact that the main loop of the program calls `main`
 recursively is nothing new. New however is that this program
 only needs a logarithmic recursion depth! (Find out how this
 works.)
@@ -212,10 +219,10 @@ and let the result inspire you. ;-)
 - I fear that gcc is the only compiler for which this program
 works. Due to the severe restrictions, I was forced to use
 declarations of int variables, functions and parameters without
-specifying their type. The biggest problem was to put "int
-main(int c, char ** v){" into the program. After some time, I
+specifying their type. The biggest problem was to put `int
+main(int c, char ** v){` into the program. After some time, I
 became convinced that this is impossible. Finally, at least I
-managed to squeeze "main(c, v){" into the constraints instead.
+managed to squeeze `main(c, v){` into the constraints instead.
 
 - Also, a lot of warnings are produced - most of them "data
 definition has no type or storage class", but also some
@@ -227,12 +234,12 @@ get rid of them.
 versions of gcc. I tested it with versions 2.7.2.1, 2.8.1,
 2.95.2, and ecgs-2.91.66.
 
-- Of course I couldn't put "#include"-lines at the beginning of
+- Of course I couldn't put `#include`s at the beginning of
 the program. Usually, this is not really necessary with
 gcc. However, for this program it would have been, because some
 functions appear as function pointers, and as such they are not
-generated implicitly. So the build script has to pass "-include
-..." to gcc. A problem with this is that the complete path of
+generated implicitly. So the build script has to pass `-include
+...` to gcc. A problem with this is that the complete path of
 the include files has to be provided. In the build script, I
 assume that the path is /usr/include, but this can easily be
 adapted.
