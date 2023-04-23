@@ -1,11 +1,10 @@
 # Best Of Show
 
-    Jason Orendorff
-    5 Buchanan St.
-    Nashua, NH 03060
-    US
-
-    http://www.jorendorff.com/
+Jason Orendorff
+5 Buchanan St.
+Nashua, NH 03060
+US
+<http://jorendorff.blogspot.com>
 
 ## To build:
 
@@ -44,27 +43,30 @@ Of particular interest:  Go ahead, run it through the preprocessor.  You
 TED Shroyer came up with the idea that made it possible to hide all
 the text.  Thanks, TED.  You won.  :)
 
-
-$ cc -o prog prog.c
-$ ./prog
+```sh
+$ cc -o jason jason.c
+$ ./jason
 you are in a maze of twisty little passages
 caves lead:  left forward back
 you see
    a lamp
 > _
 
+```
+
 This program is a rather nostalgic little labyrinth game.  Start
-out by typing "get lamp", then use the direction words "left",
-"right", "forward", and "back" to explore the caves.  Note that
+out by typing "`get lamp`", then use the direction words "`left`",
+"`right`", "`forward`", and "`back`" to explore the caves.  Note that
 these words can refer to different passages depending on which way
-you're facing.  "back" always takes you back the way you came.
+you're facing.  "`back`" always takes you back the way you came.
 Type "quit" to quit.
 
 The maze is randomly generated each time you play.  The algorithm
 ensures that you start at least 6 hops away from the exit.  All
 passages are two-way.
 
-(There is a trick, well-known among adventure game fans, to
+(There is a trick, well-known among
+[Adventure](https://en.wikipedia.org/wiki/Colossal_Cave_Adventure) game fans, to
 keeping one's bearings in games like this.  Unless you know the
 trick, it can be very difficult to find your way around.  Try it
 out first; I'll give away the secret at the bottom of this
@@ -79,10 +81,10 @@ points per item, and bonus points for speed.
 
 Why I think this program is obfuscated:
 
-* 70% more # symbols than the average entry.
+* 70% more `#` symbols than the average entry.
 
 * Where are all the messages?  The game is downright chatty for
-  only having two string literals ("%d \n" and "Y\n : ! ,.?>").
+  only having two string literals (`"%d \n"` and `"Y\n : ! ,.?>"`).
 
 * There is exactly one loop in the program, a for loop, and it is
   clearly the product of a deranged mind.  Running the
@@ -98,13 +100,13 @@ Why I think this program is obfuscated:
 
 * Attempts to replace the one-character identifiers with longer,
   more meaningful names will likewise cause problems.  In fact,
-  simply changing all the Y's to Z's and vice versa results in
+  simply changing all the `Y`s to `Z`s and vice versa results in
   some unexpected side effects.
 
 When all warnings are enabled, some compilers express the desire
 to see a few more parentheses.  I respectfully submit that there are
 plenty of parentheses in the program (370 in all.)  Besides, any
-more would put me over the size limit.  gcc also generates a
+more would put me over the size limit.  `gcc` also generates a
 warning about some calculations not being used.  Having just spent
 19 hours staring at this program, sweating over every character, I
 swear gcc is wrong.
@@ -114,8 +116,10 @@ I find the plaintive chorus "B?  B?" particularly poignant.
 Also, smiley faces are formatted flush left.  (If you don't find
 the game entertaining, see if you can find
 
+```
     the fish scales              Q)++j<
     the shooting star         -~- ~ -~i +
+```
 
 in the source code.)
 
@@ -125,9 +129,11 @@ in the source code.)
 
 
 
-[GAME STRATEGY SPOILER:  The trick, of course, is to drop items in
-empty rooms to mark them.  That way you usually know if you're in a
-room you've seen before.  It greatly aids mapping.]
+### GAME STRATEGY SPOILER
+
+The trick, of course, is to drop items in empty rooms to mark them.  That way
+you usually know if you're in a room you've seen before.  It greatly aids
+mapping.
 
 ## Copyright and CC BY-SA 4.0 License:
 
