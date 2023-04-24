@@ -1433,63 +1433,6 @@ fix this (in fact it was originally done but rolled back).
 # 2001
 
 
-## [2001/anonymous](2001/anonymous/anonymous.c) ([README.md](2001/anonymous/README.md))
-## STATUS: known bug - please help us fix
-
-This entry seems to no longer work and we would appreciate any help from anyone
-who can fix this. [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) has
-the following hints that might help but he has no system where he could test
-it. [Yusuke Endoh](/winners.html#Yusuke_Endoh) [wrote a little bit about
-it](https://mame-github-io.translate.goog/ioccc-ja-spoilers/2001/anonymous.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp) that
-might or might not help but he too could not get it to work.
-
-WARNING: the program will to an extent destroy files it is used on! See the
-author's warning in their comments on that.
-
-Some tips from Cody:
-
-- Try a beautifier on the original C code.
-- Use cpp to make the functions easier to parse. For instance if you're in the
-directory try `cpp -E anonymous.c > anonymous.cpp` and look at that file to see
-the functions. It might or might not be helpful to use cpp on the beautified
-source. `cc -E` might or might not be useful as well.
-- After beautifying it try changing references of the macros (where not too
-complicated) to their definitions. For instance in vim you might do:
-`:%s/\<l\>/int */g` and then delete the line that was changed to `#define int *
-int*` (or else do a range substitute so it's not changed). You might not need
-this if you use the cpp. This might be useful anyway to more easily test things.
-- If your system has a `setarch` tool that might or might not be of help (I'm
-not too familiar with its internals).
-- The code appears to do everything from one call to `exit(3)` which actually
-calls `main()` itself (is this part of the problem? We don't know) but it makes
-use of the ternary operator and possibly the comma operator (hard to parse
-without much formatting that's not been done).
-- Check the Makefile for the defines but also observe that those are in the
-source file. It appears that the entry might try compiling as well but that's
-from a quick glance.
-- The original `main()` started like: `main (char *ck, char **k)` but we (Landon
-and Cody both had the same idea but Landon made the commit before Cody could)
-made it compilable for clang by changing it to be: `main (int cka, char **k) {
-char *ck = (char *)cka;` which might or might not be good.
-- The author warns that only simple source (once compiled) would work so make
-use of the provided source file
-[2001/anonymous/anonymous.ten.c](2001/anonymous/anonymous.ten.c) that Cody bug
-fixed (which is necessary for it to work). To compile try `make anonymous.ten`
-from the entry directory which you can then run the entry on. Note that it needs
-to be compiled as a x86 program so the Makefile uses `-m32`. This will likely
-not work in macOS as Apple has unfortunately made it very hard to compile 32-bit
-code. With Apple's silicon chip it will be impossible as the architecture is
-entirely incompatible. We don't know if the original program needs to be 32-bit
-compiled nowadays but since the author said it can run on other platforms we
-have **NOT** made it use `-m32`. We give instructions on how to compile
-[anonymous.ten](2001/anonymous/anonymous.ten.c) without specifying 32-bit, in
-the Makefile, when trying to compile it.
-
-Cody also recommends that one try breaking apart the `exit()` called in `E`
-which calls `main()` call and if possible breaking `main()` into more than one
-function (this might not be possible) into several.
-
-
 ## [2001/bellard](2001/bellard/bellard.c) ([README.md](2001/bellard/README.md))
 ## STATUS: probable bug (possibly depending on system) - please help test and if necessary fix
 
