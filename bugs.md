@@ -1449,6 +1449,22 @@ The author said that they compiled it with [gcc version
 a certain gcc version is necessary but it might be helpful to download and
 compile that version to test it.
 
+## [2001/westley](2001/westley/westley.c) ([README.md](2001/westley/README.md))
+## STATUS: missing files - please provide them
+
+The author referred to the file `card.gif` but this appears to be missing. Do
+you have it? If you do please provide it and thank you!
+
+## STATUS: uses gets() - change to fgets() if possible (in some cases getline() works)
+
+The code also uses `gets()` which, without redirecting stderr to `/dev/null`,
+can show an obnoxious warning every time it's run. In the script
+[2001/westley/westley.sh](2001/westley/westley.sh) that [Cody Boone
+Ferguson](/winners.html#Cody_Boone_Ferguson) added stderr is in fact redirected
+to `/dev/null` to prevent this warning but it would probably be better if it was
+changed to use `fgets()` (which he might end up doing).
+
+
 # 2002
 
 There was no IOCCC in 2002.

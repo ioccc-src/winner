@@ -63,7 +63,7 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE=
+CINCLUDE= -include stdio.h
 
 # Optimization
 #
@@ -113,7 +113,7 @@ PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 DATA=
-TARGET= ${PROG}
+TARGET= ${PROG} ${PROG}.sort ${PROG}.punch
 #
 ALT_OBJ= ${PROG}.alt.o
 ALT_TARGET= ${PROG}.alt
@@ -142,6 +142,10 @@ westley2: westley2.c
 
 westley3: westley3.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
+${PROG}.sort: ${PROG}.sort.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
 
 # alternative executable
 #
