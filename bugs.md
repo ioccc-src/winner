@@ -1297,6 +1297,17 @@ points.
 Although it is independent of endianness both systems need the same character
 set. In other words both have to be ASCII or EBCDIC - not one of each.
 
+## [2001/schweikh](2001/schweikh/schweikh.c) ([README.md](2001/schweikh/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This program will very likely crash or do something else if you do not give it
+two args.
+
+Note also that the glob pattern must match the whole string. See the author's
+comments for details and a workaround.
+
+There's also no way to escape meta characters.
+
 # 2002
 
 There was no IOCCC in 2002.
