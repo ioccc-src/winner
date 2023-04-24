@@ -1,9 +1,7 @@
 # Best Graphic Game
 
-    John Williams
-    941 E  25 S
-    Lindon UT  84042
-    US
+John Williams
+US
 
 ## To build:
 
@@ -25,11 +23,12 @@ echo "Do or do not. There is no try."
 
 ## Judges' remarks:
 
-A strange game. The only winning move is not to play. No, really; you can't
-actually win.  :)
+[A strange game. The only winning move is not to
+play](https://en.wikipedia.org/wiki/WarGames). No, really; you can't
+actually win. :)
 
-The formatting really wants a wide screen; if you can't read it that way,
-it's the standard "three triangles around a circular" logo for nukes.
+The formatting really wants a wide screen; if you can't read it that way, it's
+the standard "three triangles around a circular" logo for nukes.
 
 This is a pretty straightforward game.
 
@@ -37,8 +36,8 @@ This is a pretty straightforward game.
 
 What this program does:
 
-It plays Missile Command, complete with MIRVs, smart bombs,
-extra cities, and scoring.
+It plays [Missile Command](https://en.wikipedia.org/wiki/Missile_Command),
+complete with MIRVs, smart bombs, extra cities, and scoring.
 
 Command line arguments and input files are ignored.
 
@@ -51,18 +50,18 @@ points for each city left at the end of a level.
 The game ends when you lose all your cities, although you will have
 to wait until the level finishes raining down to see your final score.
 
-
+### Obfuscation
 
 The main obfuscation technique is the need to compress the code to fit
 all the functionality within the size limits.  I could not have included
-smart bombs without the rule excluding { } ; characters in the counts.
-All of the #defines are there to reduce code size.
+smart bombs without the rule excluding `{};` characters in the counts.
+All of the `#define`s are there to reduce code size.
 
 On the other hand, I did waste a few characters in order to include
 some rather obfuscated math in the program.  It uses fixed-point
 arithmetic, resulting in the overuse of bitwise shift operators.
-Another example is (x|1), which is used in a couple different ways.
-The purpose of A/(x|1) is probably obvious, but what does (x|1)%2 do?
+Another example is `(x|1)`, which is used in a couple different ways.
+The purpose of `A/(x|1)` is probably obvious, but what does `(x|1)%2` do?
 
 ## Copyright and CC BY-SA 4.0 License:
 
