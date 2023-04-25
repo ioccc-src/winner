@@ -22,6 +22,22 @@ make
 ./gavare > ioccc_ray.ppm
 ```
 
+### Alternate code:
+
+The author provided [on their web page for the
+entry](https://gavare.se/ioccc/ioccc_gavare.c.html) an unobfuscated version that was used
+during development, which we have included in the file
+[gavare.r3.c](gavare.r3.c). To compile, try:
+
+
+```sh
+make alt
+```
+
+Use `gavare.r3` as you would `gavare` above.
+
+
+
 ## Judges' remarks:
 
 For users of systems that distinguish between text and binary mode
