@@ -53,7 +53,7 @@ by Yusuke. Thank you Yusuke!
 
 ## Judges' remarks:
 
-\<JUDGES_COMMENTS\> :-)
+`<JUDGES_COMMENTS>` :-)
 
 ## Author's remarks:
 
