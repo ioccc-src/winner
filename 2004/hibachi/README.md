@@ -1,12 +1,8 @@
 # Best Abuse of the Guidelines
 
-    Anthony Howe
-    Snert
-    42 av. Isola Bella
-    06400 Cannes
-    France
-
-    http://www.snert.com/
+Anthony Howe  
+Canada  
+<http://www.snert.com/>  
 
 ## To build:
 
@@ -17,45 +13,52 @@ make
 ## To run:
 
 ```sh
-cd build; ./hibachi-start.sh
+cd build; ./hibachi-start.sh &
 ```
 
 ## Try:
 
 ```sh
-cd build; ./hibachi-start.sh
+cd build; ./hibachi-start.sh &
 ```
 
-Then use your web browser to visit http://localhost:8008/
+Then use your web browser to visit `http://localhost:8008/`. When you're
+finished make sure to kill `hibachi`.
+
+NOTE: you must be in the `build` directory when running `hibachi` for this to
+work.
 
 ## Judges' remarks:
 
-This entry violates the guidelines in so many ways!  We are not
-exactly sure how many org's will be upset with this entry, but we
-are considering starting an IOCCC standards body just to reign in
-the likes Mr Howe.
+This entry violates the [guidelines](/2004/guidelines.txt) in so many ways!  We
+are not exactly sure how many organisations will be upset with this entry, but
+we are considering starting an IOCCC standards body just to reign in the likes
+of Mr Howe.
 
-This entry also has the dubious honour of being the only one to have
-been submitted with its own ./configure script.
+This entry also has the dubious honour of being the only one to have been
+submitted with its own [configure](build/configure) script.
+
+NOTE: the author states there is a tarball `hibachi.tgz` but this was extracted
+so the file does not exist here.
 
 ## Author's remarks:
 
 ### README.TXT (Feb 2004)
 
-Hibachi is a simple, small, and (probably) very secure web server.
+`Hibachi` is a simple, small, and (probably) very secure web server.
 
-There is a `hibachi.tgz' file that unpacks several support
+There is a `hibachi.tgz` file that unpacks several support
 files and a sub-directory tree containing the documentation and
 examples. It can be viewed by:
 
-    tar -zxf hibachi.tgz
-    lynx hibachi/localhost/index.html
+```sh
+tar -zxf hibachi.tgz
+lynx hibachi/localhost/index.html
+```
 
-Or once Hibachi is running, use a web browser, preferably one that
+Or once `Hibachi` is running, use a web browser, preferably one that
 supports images and JavaScript, to view the documentation and try
-some of the CGI examples:
-
-    http://localhost:8008/
+some of the CGI examples, visit: http://localhost:8008/.
 
 ### Building
 
@@ -71,7 +74,7 @@ For Linux (older):
 
 ```sh
 gcc -DSHUT_WR=1 -o hibachi hibachi.c
-``
+```
 
 For SunOS:
 
@@ -79,12 +82,12 @@ For SunOS:
 gcc -o hibachi hibachi.c -lnsl -lsocket
 ```
 
-Since some systems place socket and network functions into other
-libraries, a GNU autoconf ./configure script has been provided to
-figure out the necessary link libraries, to verify all the
-necessary headers and functions are present, and setup the #!
-paths for the CGI examples. In which case the preferred build
-commands are:
+Since some systems place socket and network functions into other libraries, a
+[GNU autoconf](https://en.wikipedia.org/wiki/Autoconf)
+[configure](https://en.wikipedia.org/wiki/Configure_script) script has been
+provided to figure out the necessary link libraries, to verify all the necessary
+headers and functions are present, and setup the `#!` paths for the CGI
+examples. In which case the preferred build commands are:
 
 ```
 ./configure [--enable-port=number]
@@ -94,6 +97,7 @@ make
 To start the server on the default port (8008):
 
 ```sh
+cd build;
 ./hibachi-start.sh &
 ```
 
@@ -113,31 +117,33 @@ kill %1
 
 *  Supports virtual hosts.
 
-*  Supports all MIME types.
+*  Supports all [MIME](https://en.wikipedia.org/wiki/MIME) types.
 
-*  Supports Common Gateway Interface (CGI) scripts and programs.
+*  Supports [Common Gateway Interface
+(CGI)](https://en.wikipedia.org/wiki/Common_Gateway_Interface) scripts and programs.
 
 *  Supports multiple index.* file types:
 
-    index.htm, index.html, index.php, index.pl,
-    index.sh, index.rb, index.py
+	index.htm, index.html, index.php, index.pl, index.sh, index.rb, index.py
 
-*  Supports subset of RFC 2616 HTTP/1.1 methods:
+*  Supports subset of [RFC 2616](https://datatracker.ietf.org/doc/html/rfc2616)
+[HTTP](https://en.wikipedia.org/wiki/HTTP)/1.1 methods:
 
-    GET, HEAD, and POST
+	`GET`, `HEAD`, and `POST`
 
 *  Simple & straight forward configuration using environment variables.
 
-*  Portability across Unix-like environments, such as:
-
-    Cygwin, FreeBSD, Linux, SunOS.
+*  Portability across Unix-like environments, such as: Cygwin, FreeBSD, Linux,
+SunOS.
 
 *  Known to work with Lynx, Mozilla, Opera, and Internet Explorer
   web browsers.
 
-*  Is a dedicated process-forking server that does not use inetd.
+*  Is a dedicated process-forking server that does not use
+[inetd](https://en.wikipedia.org/wiki/Inetd).
 
-*  Is secure against relative path file snooping.
+*  Is secure against [relative path file
+snooping](https://cwe.mitre.org/data/definitions/23.html).
 
 *  Is secure against directory searches.
 
@@ -147,27 +153,31 @@ kill %1
   1940 bytes long by IOCCC 2004 rules,
   ~6KB compiled & stripped for FreeBSD.
 
-*  Superior & smaller than micro_httpd from http://www.acme.com/
+*  Superior & smaller than
+[micro_httpd](http://www.acme.com/software/micro_httpd/) from <http://www.acme.com/>.
 
 *  And has a really cool tongue-in-cheek animated logo too.
 
 ### Comments
 
-*  This code is properly indented using the One True Brace style.
+*  This code is properly indented using the [One True Brace
+style](https://wiki.c2.com/?OneTrueBraceStyle).
 
-*  HTTP/1.0 200 OK == HTTP/1.1 200 OK CRLF Connection: close ?
+*  `HTTP/1.0 200 OK` == `HTTP/1.1 200 OK CRLF Connection: close` ?
 
-*  getenv() == putenv() ?
+*  `getenv()` == `putenv()` ?
 
-*  Hibachi can serve www.ioccc.org.
+*  `Hibachi` can serve [www.ioccc.org](https://www.ioccc.org).
 
 *  Commented spoiler available.
 
 ### Known Issues
 
-*  The "links" text browser does not support RFC 2616 section 7.2.1
+*  The [links][1] text browser does not support RFC 2616 section 7.2.1
   paragraph 3 sentence 2, and so fails to display responses from
-  hibachi.
+  `hibachi`.
+
+[1]: https://en.wikipedia.org/wiki/Links_(web_browser)
 
 ### Suggested IOCCC Categories
 
