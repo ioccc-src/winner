@@ -16,7 +16,10 @@ make
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work with
 clang by changing the args to main() to be `int` and `char **` respectively and
 changing specific references to the `argv` arg, casting to int which was its old
-type. Thank you Cody for your assistance!
+type. However this entry only works completely if compiled as 32-bit (it does
+work in part if compiled as 64-bit). See the alternate code below for
+information on the 64-bit version and [bugs.md](/bugs.md) for more details on
+this issue in general. Thank you Cody for your assistance!
 
 
 ## To run:
@@ -25,12 +28,18 @@ type. Thank you Cody for your assistance!
 ./herrmann2
 ```
 
-Cody notes that [Yusuke Endoh](/winners.html#Yusuke_Endoh) does not get a
-segfault with some of the invocations (without fixing it for clang) but Cody
-does get a segfault both before fixing it for clang and after. Yusuke provides
-some interesting thoughts which can be found
-[here](https://mame-github-io.translate.goog/ioccc-ja-spoilers/2001/herrmann2.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp).
-Thank you Yusuke for your interesting thoughts!
+
+### Alternate code:
+
+As noted above an alternate version is available for 64-bit. This will crash in
+some of the invocations given by the author but it will work for the basic
+operations. To use try:
+
+```sh
+make alt
+```
+
+Use `herrmann2.alt` as you would `herrmann2` above and below.
 
 
 ## Try:

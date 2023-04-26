@@ -68,6 +68,11 @@ Again, THANK YOU!
 
 # LIST OF STATUSES - PLEASE READ BEFORE FIXING (you may skip if you're only interested in knowing about entries with known issues)
 
+NOTE: when going through the entries you can skip to the next entry (some are
+detailed explanations) by searching for `^## STATUS:` in your editor (or
+searching for it - probably without the `^` in your browser). For a specific
+year try `^# YYYY` where `YYYY` is the year as a number.
+
 Entries below have one or more of the following _**STATUS**_ values. Please see
 the text below for more information. If an entry has more than one status it
 means that either they all apply or they compliment each other. For instance
@@ -109,15 +114,24 @@ certain that such code would be just as non-portable (importable ? :-) ).
 
 Hopefully with the example entries listed above you get the idea.
 
+### General request on original code
+
+If you're fixing an entry please make as few changes as possible! This is to
+make it as close to the original but allowing it to work. This might be less of
+a problem when providing alternate versions but it might still be nice to have
+it as close as possible to the original. See also below two points.
+
 ### Request for one-liners:
 
 For one-liners please keep the file one line if at all possible! If it needs an
 include you can update the Makefile `CINCLUDE` variable. For instance if it
 needs `stdio.h` you could do `-include stdio.h`. Please leave a space after the
-`=` in the Makefile and thank you!
+`=` in the Makefile. You may also have extra long lines if this seems useful to
+make it a one-liner even if it kind of makes it longer than what the judges
+consider a one-liner. Thank you!
 
 
-### On layout of program source
+### On layout of program source:
 
 If you make changes PLEASE TRY and keep the source code layout as close to the
 original as possible. This might not always be possible and if you have an
@@ -1098,12 +1112,20 @@ that version 2.95 works but maybe others do as well. Do you have a fix? We would
 appreciate your help!
 
 ## [2001/herrmann2](2001/herrmann2/herrmann2.c) ([README.md](2001/herrmann2/README.md)
-## STATUS: compiled executable crashes - please help us fix
+## STATUS: doesn't work with some platforms - please help us fix
 
 The basic operation of this program does work but when using the more advanced
-features it crashes. [Yusuke Endoh](/winners.html#Yusuke_Endoh)  did not have
-this problem but [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) did
-before and after the fix for clang that he made. Two examples where it crashes:
+features it crashes but only if not compiled with `-m32`. This means that macOS
+cannot easily compile it - if it can at all; Apple makes it very hard to do so.
+To at least somewhat use it under macOS or a place where `-m32` is not possible
+try using the [2001/herrmann2/herrmann2-64.c](2001/herrmann2/herrmann2-64.c)
+program. The below describes the original including a fix for clang which does
+not include a fix for 64-bit but still works with clang with one caveat which is
+also described below.
+
+With the default [herrmann2.c](2001/herrmann2/herrmann2.c) the below invocations
+work fine - again as long as `-m32` works.
+
 
 ```sh
 ./herrmann2 \
@@ -1117,7 +1139,10 @@ before and after the fix for clang that he made. Two examples where it crashes:
 'a;}return _+= ' < herrmann2.ioccc
 ```
 
-and
+Note that with this it generates the original source code _prior to the clang
+fix_! This is a nice way to get the original prefixed version!
+
+This also works with 32-bit:
 
 ```sh
 ./herrmann2 "234 84 045 5 6765 7487 65190 84 656 254 12 43931 818 0 6542 \
@@ -1125,7 +1150,7 @@ and
 565980691 389 04974" < herrmann2.ioccc
 ```
 
-On the other hand these do not crash:
+On the other hand these work with 64 bit (`Mach` or `x86_64`):
 
 ```sh
 ./herrmann2 < herrmann2.ioccc
@@ -1135,147 +1160,168 @@ On the other hand these do not crash:
 A few notes from Cody:
 
 - The author stated that there are some layout restrictions and the changes made
-to get it to compile with clang might have impacted this some. However it
-appears to function the same before and after and the author is not clear enough
-in details.
+to get it to compile with clang might have impacted this some. However given
+that it appears to function correctly as long as it is compiled as a 32-bit
+binary both before and after the fix this is probably not relevant.
 - The author said that to add a function call one has to 'fill an entire line
 with stuff doing mostly nothing' but it was not specified what an entire line is
 nor what will happen otherwise. This is seen throughout the code and is likely
-the source of dead code and variable declarations being repeated. Now originally
-my fix did not call a separate function but when trying to find out more about
-the crash I made it call another function. This still however functions just the
-same and crashes just the same as well. See below for the diff applied.
-- I was able to fix one unsequenced modification but the others are not so easy
-to fix. See below for the clang warnings.
+the source of dead code and variable declarations being repeated.
+- At one point (not originally) my fix involved calling another function this
+was done to try and find more about the crash. However this caused the program
+to crash with the invocations that work as long as it's compiled with 32-bit so
+this has been rolled back. This might be due to the restrictions noted in this
+item and the above one but I'm not sure.
 - The entry will give different output each invocation! But what you'll see is that
 each line has a repeating pattern! This is expected.  See below for an example
 few lines.
-- See below for possible crash locations.
+- There are some multiple and unsequenced modifications to some variables. See
+below for these. This again does not seem to matter in 32-bit - at least
+theoretically.
+- See below for possible crash locations when compiled as 64-bit.
 
-
-The diff for calling a function to let clang compile it is:
-
-```diff
-diff --git i/2001/herrmann2/herrmann2.c w/2001/herrmann2/herrmann2.c
-index b1a01c2d3e6b1528ac364793bafadad9388a03e6..5d9876f79d52c79029fd7b3cf47b41a300dd62c7 100644
---- i/2001/herrmann2/herrmann2.c
-+++ w/2001/herrmann2/herrmann2.c
-@@ -1,23 +1,23 @@
- char*d,A[9876];char*d,A[9876];char*d,A[9876];char*d,A[9876];char*d,A[9876];char
- e;b;*ad,a,c;  te;b;*ad,a,c;  te;*ad,a,c;  w,te;*ad,a,  w,te;*ad,and,  w,te;*ad,
- r,T; wri; ;*h; r,T; wri; ;*h; r; wri; ;*h;_, r; wri;*h;_, r; wri;*har;_, r; wri
--;on;l;i(int V);on;l;i(int V);o;l;mai(int n,int V);o;mai(int n,int V);main(int n,char**V)
--   {-!har  ;      {-!har  ;      {har  =A;      {h  =A;ad        =A;read
-+;on; ;l ;on; ;l ;o ;l ;o; pain(n,V){ -!har; {-!har; {har=A;{h=A;ad     =A;read
- (0,&e,o||n -- +(0,&e,o||n -- +(0,&o||n ,o-- +(0,&on ,o-4,- +(0,n ,o-=94,- +(0,n
- ,l=b=8,!( te-*A,l=b=8,!( te-*A,l=b,!( time-*A,l=b, time)|-*A,l= time(0)|-*A,l=
- ~l),srand  (l),~l),srand  (l),~l),and  ,!(l),~l),a  ,!(A,l),~l)  ,!(d=A,l),~l)
- ,b))&&+((A + te,b))&&+((A + te,b))+((A -A+ te,b))+A -A+ (&te,b+A -A+(* (&te,b+A
- )=+ +95>e?(*& c)=+ +95>e?(*& c) +95>e?(*& _*c) +95>(*& _*c) +95>(*&r= _*c) +95>
--5,r+e-r +_:2-195,r+e-r +_:2-195+e-r +_:2-1<-95+e-r +_-1<-95+e-r ++?_-1<-95+e-r
--|(d==d),!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d=
-- *( (char**)+(int)V+ *( (char)+(int)V+ *( (c),har)+V+  (c),har)+ (V+  (c),r)+ (V+  (  c),
-+5,r+e-r +_:2-195,r+e-r +_:2-195+e-r +_:2-1<-95+e-r +_-1<-95+e-r?_-1<-95+e-r +1
-+|(d==d),++r,!n?*d||(d==d),!n ?*d||(d==d),!n?*d||(d==d),!n?*d||(d==d),!n?*d||(d=
-+ *( (char**)+V+ *( (char)+V+ *( (c),har)+V+  (c),har)+ (V+  (c),r)+ (V+  (  c),
- +0,*d-7 ) -r+8)+0,*d-7 -r+8)+0,*d-c:7 -r+80,*d-c:7 -r+7:80,*d-7 -r+7:80,*d++-7
- +7+! r: and%9- +7+! rand%9-85 +7+! rand%95 +7+!!  rand%95 +7+  rand()%95 +7+  r
- -(r+o):(+w,_+ A-(r+o)+w,_+*( A-(r+o)+w,_+ A-(r=e+o)+w,_+ A-(r+o)+wri,_+ A-(r+o)
- +(o)+b)),!write+(o)+b,!wri,(te+(o)+b,!write+(o=_)+b,!write+(o)+b,!((write+(o)+b
- -b+*h)(1,A+b,!!-b+*h),A+b,((!!-b+*h),A+b,!!-b+((*h),A+b,!!-b+*h),A-++b,!!-b+*h)
- , a >T^l,( o-95, a >T,( o-=+95, a >T,( o-95, a)) >T,( o-95, a >T,(w? o-95, a >T
- ++  &&r:b<<2+a ++  &&b<<2+a+w ++  &&b<<2+w ++  ) &&b<<2+w ++  &&b<<((2+w ++  &&
--!main(n*n,V) , !main(n,V) , !main(+-n,V) ,main(+-n,V) ) ,main(n,V) ) ,main),(n,
-+!pain(n*n,V) , !pain(n,V) , !pain(+-n,V) ,pain(+-n,V) ) ,pain(n,V) ) ,pain),(n,
- l)),w= +T-->o +l)),w= +T>o +l)),w=o+ +T>o +l,w=o+ +T>o;{ +l,w=o+T>o;{ +l,w &=o+
- !a;}return _+= !a;}return _+= !a;}return _+= !a;}return _+= !a;}return _+= !a;}
-+main (n,V)char **V;{ (void)V; return pain(n,0); return pain(n,0);return pain(n,0); }
-
-```
 
 The remaining unsequenced modification warnings are:
 
 ```
-herrmann2.c:5:12: warning: multiple unsequenced modifications to 'n' [-Wunsequenced]
+herrmann2.c:6:12: warning: multiple unsequenced modifications to 'n' [-Wunsequenced]
 (0,&e,o||n -- +(0,&e,o||n -- +(0,&o||n ,o-- +(0,&on ,o-4,- +(0,n ,o-=94,- +(0,n
            ^              ~~
-herrmann2.c:5:42: warning: unsequenced modification and access to 'o' [-Wunsequenced]
+herrmann2.c:6:42: warning: unsequenced modification and access to 'o' [-Wunsequenced]
 (0,&e,o||n -- +(0,&e,o||n -- +(0,&o||n ,o-- +(0,&on ,o-4,- +(0,n ,o-=94,- +(0,n
                                          ^           ~
-herrmann2.c:17:68: warning: unsequenced modification and access to 'b' [-Wunsequenced]
+herrmann2.c:11:65: warning: unsequenced modification and access to 'r' [-Wunsequenced]
+5,r+e-r +_:2-195,r+e-r +_:2-195+e-r +_:2-1<-95+e-r +_-1<-95+e-r ++?_-1<-95+e-r
+                                                 ~              ^
+herrmann2.c:18:68: warning: unsequenced modification and access to 'b' [-Wunsequenced]
 -b+*h)(1,A+b,!!-b+*h),A+b,((!!-b+*h),A+b,!!-b+((*h),A+b,!!-b+*h),A-++b,!!-b+*h)
                                                                    ^
 ```
 
-I tried moving the modification about like I did for `r` I think it was but I
-was not able to get it to a new sequence. This might or might not be relevant.
-
-An example line broken up into parts to show how it repeats a pattern:
-
 ```
-TP$t5Oad0t`XC5zjP3TP$t5adt`XC5zjP3TP$5ad^t`XC5zjP3TP$5ad^t`XvCH5zjP3TP
+6ejZR}DU}*u?CI)6ejZR}DU}*u?CI)6ejZR}DU}*u?CI)6ejZR}DU}*u?CI)6ejZR}DU}*u?CI)6ejZ
 ```
 
 If you break it up you get:
 
 ```
-TP$t5Oad0t`XC5zjP3
-TP$t5adt`XC5zjP3
-TP$5ad^t`XC5zjP3
-TP$5ad^t`XvCH5zjP3
-TP
+6ejZR}DU}*u?CI)
+6ejZR}DU}*u?CI)
+6ejZR}DU}*u?CI)
+6ejZR}DU}*u?CI)
+6ejZR}DU}*u?CI)
+6ejZ
 ```
 
 which you can see is quite similar.
 
-
-For possible crash locations:
-
+As for crash locations:
 
 ```
+Program terminated with signal SIGSEGV, Segmentation fault.
+#0  main (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:22
+22	     )+0,
+[...]
+```
+
+Note that that's not a `+` and the letter O; it's a zero!
+
+Since I broke the line down here's what the line looks like correctly:
+
+```c
++0,*d-7 ) -r+8)+0,*d-7 -r+8)+0,*d-c:7 -r+80,*d-c:7 -r+7:80,*d-7 -r+7:80,*d++-7
+```
+
+What happens if we remove the `+0`? We then get on line 13:
+
+```
+*( (char**)+(int)V+ *( (char)+(int)V+ *( (c),har)+V+  (c),har)+ (V+  (c),r)+ (V+  (  c),
+
+```
+
+Breaking this line down and we see it's still line 13:
+
+```
+13	 *
+14	 ( (char**)+
+15	   (int)V+
+16	   *( (char)+
+17	       (int)V+
+```
+
+So let's merge the lines a bit:
+
+```
+#0  main (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:13
+13	 *( (char**)+(int)V+
 (gdb) bt
-#0  0x0000000000401444 in pain (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:13
-#1  0x00000000004018af in main (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:23
-(gdb) list
-9	)=+ +95>e?(*& c)=+ +95>e?(*& c) +95>e?(*& _*c) +95>(*& _*c) +95>(*&r= _*c) +95>
-10	5,r+e-r +_:2-195,r+e-r +_:2-195+e-r +_:2-1<-95+e-r +_-1<-95+e-r?_-1<-95+e-r +1
-11	|(d==d),++r,!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d=
-12	 *( (char**)+V+ *( (char)+V+ *( (c),har)+V+  (c),har)+ (V+  (c),r)+ (V+  (  c),
-13	+0,*d-7 ) -r+8)+0,*d-7 -r+8)+0,*d-c:7 -r+80,*d-c:7 -r+7:80,*d-7 -r+7:80,*d++-7
+#0  main (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:13
+(gdb) p (char**)+(int)V
+$1 = (char **) 0xffffffff831602d8
+(gdb) p *(char**)+(int)V
+Cannot access memory at address 0xffffffff831602d8
 ```
 
-What is curious is `*d == '\0'` and trying to print (though not in runtime)
-`*d++` results in invalid read. However when breaking the line down to several:
+Still line 13. Let's do it again:
 
 ```
-#0  pain (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:14
-#1  0x00000000004018af in main (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:28
-(gdb) list
-9	)=+ +95>e?(*& c)=+ +95>e?(*& c) +95>e?(*& _*c) +95>(*& _*c) +95>(*&r= _*c) +95>
-10	5,r+e-r +_:2-195,r+e-r +_:2-195+e-r +_:2-1<-95+e-r +_-1<-95+e-r?_-1<-95+e-r +1
-11	|(d==d),++r,!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d=
-12	 *( (char**)+V+ *( (char)+V+ *( (c),har)+V+  (c),har)+ (V+  (c),r)+ (V+  (  c),
-13	+0,*d-7 ) -r+8)
-14	+0,
+#0  0x0000000000401442 in main (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:13
+13	 *( (char**)+(int)V+ *( (char)+ (int)V+ *( (c), har)+ V+ (c), har)+ (V+ (c), r)+ (V+ (  c), + 0, *d - 7 ) -r +8),
+(gdb) p *(( (char**)+(int)V+ *( (char)+ (int)V+ *( (c), har)+ V+ (c), har)+ (V+ (c), r)+ (V+ (  c), + 0, *d - 7 ) -r +8))
+Cannot access memory at address 0xffffffffbfa05960
+(gdb) p *( ( char**)+(int)V)
+Cannot access memory at address 0xffffffffbfa05958
+(gdb) p *( ( char**)+(int)V)+*((char)+(int)V)
+Cannot access memory at address 0x58
+(gdb) p *( (char)+ (int)V )
+Cannot access memory at address 0x58
+(gdb) p (int)V+*((c),har)
+$1 = -1080010408
+(gdb) ptype (int)V+*((c),har)
+type = int
+(gdb) p V
+$2 = (char **) 0x7fffbfa05958
+(gdb) p (int)V
+$3 = -1080010408
+(gdb) ptype V
+type = char **
+(gdb) p *V
+$4 = 0x7fffbfa07323 "./herrmann2"
+(gdb) ptype (int)V
+type = int
+(gdb) q
+
 ```
 
-Yes that's a zero. Now removing the 0 changes it to:
+and so on. Note that with the fix for clang `V` is a `char **` not an int hence
+the casts. But is this relevant? Let's find out:
 
 ```
-#0  pain (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:12
-12	 *( (char**)+V+ *( (char)+V+ *( (c),har)+V+  (c),har)+ (V+  (c),r)+ (V+  (  c),
-(gdb) l
-7	~l),srand  (l),~l),srand  (l),~l),and  ,!(l),~l),a  ,!(A,l),~l)  ,!(d=A,l),~l)
-8	,b))&&+((A + te,b))&&+((A + te,b))+((A -A+ te,b))+A -A+ (&te,b+A -A+(* (&te,b+A
-9	)=+ +95>e?(*& c)=+ +95>e?(*& c) +95>e?(*& _*c) +95>(*& _*c) +95>(*&r= _*c) +95>
-10	5,r+e-r +_:2-195,r+e-r +_:2-195+e-r +_:2-1<-95+e-r +_-1<-95+e-r?_-1<-95+e-r +1
-11	|(d==d),++r,!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d==d),!n ?*d||(d=
-12	 *( (char**)+V+ *( (char)+V+ *( (c),har)+V+  (c),har)+ (V+  (c),r)+ (V+  (  c),
+#0  0x0000000000401440 in main (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:14
+14	+0,*d-7 ) -r+8)+0,*d-7 -r+8)+0,*d-c:7 -r+80,*d-c:7 -r+7:80,*d-7 -r+7:80,*d++-7
 ```
 
-I did break that line up too but I don't remember the results and unfortunately
-right now I need to not continue with it. Still some ideas.
+Now it's a different line! Can we fix this?
 
+```
+#0  main (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:21
+21	 +0,
+```
+
+Again `+0`! Let's remove it:
+
+```
+#0  main (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:13
+13	 *( (char**)+V+ *( (char)+V+ *( (c),har)+V+  (c),har)+ (V+  (c),r)+ (V+  (  c),
+(gdb) p *( (char **)V)
+Cannot access memory at address 0x544777d8
+```
+
+So now it's back to the same problem which means that it's most likely not
+because of the fix for clang. Still if you have a 32-bit compiler/linker you can
+run the program; else you can at least run the alt version that works in part.
+
+Do you have a fix for 64-bit compilation? Please provide it!
 ## [2001/kev](2001/kev/kev.c) ([README.md](2001/kev/README.md)
 ## STATUS: INABIAF - please **DO NOT** fix
 
