@@ -1,8 +1,8 @@
 # Best one-liner
 
-Eryk Kopczynski
-Poland
-<http://www.mimuw.edu.pl/~erykk/>
+Eryk Kopczynski  
+Poland  
+<http://www.mimuw.edu.pl/~erykk/>  
 
 ## To build:
 
