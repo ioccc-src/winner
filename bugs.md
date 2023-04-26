@@ -1408,10 +1408,6 @@ used incorrectly so one should be careful with adding the proper prototypes.
 With this entry it didn't _appear_ to be relevant but maybe it is after another
 change?
 
-
-## [2004/gavin](2004/gavin/gavin.c) ([README.md](2004/gavin//README.md))
-## STATUS: compiled executable crashes - please help us fix
-## STATUS: doesn't work with some 
 # 1997
 
 There was no IOCCC in 1997.

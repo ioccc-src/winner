@@ -119,7 +119,7 @@ ENTRY= gavin
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA= boot.b lilo.conf prim gavin_install.txt
+DATA= boot.b lilo.conf prim gavin.md
 TARGET= ${PROG} kernel sh vi fs.tar
 #
 ALT_OBJ=
