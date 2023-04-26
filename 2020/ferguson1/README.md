@@ -32,7 +32,7 @@ and non-zero).
 
 * **`WALLS`**	  
 	        whether the walls are passable or impassable. Default passable,
-		1; 0 disables.
+		1; 0 makes walls impassable where you die if you hit a wall.
 
 * **`EVADE`**  	
 	        how many movements the Snake moves before the bug (well
@@ -42,7 +42,7 @@ and non-zero).
 * **`SIZE`**   
 	        initial size of the Snake. Note that it grows by one per
 		move so at the default 5 it will not initially be 5
-		characters long! < 0 is an immediate win.
+		characters long! < 0 is likely an immediate win.
 
 * **`MAXSIZE`**   	
 	        the maximum size the Snake can become before the game is
@@ -77,7 +77,7 @@ and non-zero).
 
 * **`CANNIBAL`**   		
 	        whether you can go through the Snake or not. Default is 0
-		(cannot).
+		(cannot - die if you try).
 
 
 
@@ -114,7 +114,7 @@ There is a good deal of useful documentation that is provided with this entry:
 
 * [gameplay.html][] ([gameplay.md][] on GitHub)
 
-Documented game *features*!
+Documented game *features* and gameplay modes!
 
 * [terminals.html][] ([terminals.md][] on GitHub)
 
@@ -159,16 +159,17 @@ Here are some other features of the game:
 	section (this goes for a low **`EVADE`** value too).
 
 *   Grow-Shrink mode (Positive and Negative Winning) mode (see
-    [gameplay.html][]/[gameplay.md][] for more details).
+    [gameplay.html][] ([gameplay.md][] on GitHub) for more details).
 
 *   The dimensions of the game (this is actually a terminal thing but I document
     how to do this and its potential pitfalls) (**`LINES`** , **`COLUMNS`**).
 
 There are no complicated command line invocations; it's just a matter of passing
 into the game descriptively named variables and I include a script that sets up
-many different gameplay modes (see [gameplay.html][]/[gameplay.md][] and [play.sh][]).
+many different gameplay modes (see [gameplay.html][] ([gameplay.md][] on GitHub)
+and [play.sh][]).
 
-The [gameplay.html][]/[gameplay.md][] file has all the information on
+The [gameplay.html][] ([gameplay.md][] on GitHub) file has all the information on
 what the game looks like, how to play, the different types of modes (that I have
 thought of so far) including all those in the above list. Along with the
 [play.sh][] and [snake-colours.sh][] scripts it's probably the most important
