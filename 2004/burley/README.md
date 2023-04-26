@@ -1,9 +1,7 @@
 # Best Calculated Risk
 
-Brent Burley
-500 S. Buena Vista St.
-Burbank, CA 91521
-US
+Brent Burley  
+US  
 
 ## To build:
 
