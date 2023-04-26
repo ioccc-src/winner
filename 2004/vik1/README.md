@@ -34,6 +34,9 @@ Daniel Vik has presented a tour de force feature rich X11-based
 racing game that fit within the contest size limits. Take a
 glance at the feature list he provided below. Amazing!
 
+The author posted a video of this on YouTube:
+<https://www.youtube.com/watch?v=xTseqWCtAUA>.
+
 Happy touring on the road and in the code!
 
 ## Author's remarks:
