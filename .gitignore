@@ -3,6 +3,7 @@
 *.dSYM
 .*.sv[a-z]
 .*.sw[a-z]
+.su[a-z]
 .DS_Store
 .sv[a-z]
 .sw[a-z]
