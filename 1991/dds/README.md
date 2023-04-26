@@ -16,8 +16,8 @@ make all
 ## To run:
 
 ```sh
-./dds basic_program
-./a.out
+./dds basic_program 2>/dev/null
+./a.out 2>/dev/null
 ```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault that
@@ -49,14 +49,14 @@ make dds
 For example, the author suggests trying:
     
 ```sh
-./dds LANDER.BAS
-./a.out
+./dds LANDER.BAS 2>/dev/null
+./a.out 2>/dev/null
 ```
 
 What happens if you give the program a C program like itself? Try:
 
 ```sh
-./dds dds.c
+./dds dds.c 2>/dev/null
 ```
 
 You'll get errors yes but what does the generated file look like? What about
@@ -76,8 +76,8 @@ system(q-6);` which equates to `return system("cc a.c");` but clang by default,
 at least in macOS, has default -Werror and there were some warnings. This means
 that the compilation failed with clang (because it didn't use `make` so no
 [Makefile](Makefile) was used). In particular it would fail (at least with
-`LANDER.BAS`) due to a return from `main()` without a return value and the use
-of functions not yet declared.
+[LANDER.BAS](LANDER.BAS)) due to a return from `main()` without a return value
+and the use of functions not yet declared.
 
 Now as noted since the string `s` is complicated and because Cody did not want
 to inadvertently mess something up he changed that code to `system("make a");`
@@ -89,8 +89,8 @@ version:
 
 ```sh
 make clobber alt
-./dds.alt LANDER.BAS
-./a
+./dds.alt LANDER.BAS 2>/dev/null
+./a 2>/dev/null
 ```
 
 Thank you Cody for your assistance!
