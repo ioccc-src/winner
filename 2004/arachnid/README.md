@@ -1,8 +1,8 @@
 # Best use of Vision
 
-Nick Johnson
-New Zealand
-<https://web.archive.org/web/20051030162356/http://www.notdot.net/>
+Nick Johnson  
+New Zealand  
+<https://web.archive.org/web/20051030162356/http://www.notdot.net/>  
 
 ## To build:
 
