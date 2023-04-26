@@ -1,9 +1,9 @@
 # Best X11 Game
 
-Daniel Vik
-US
-<http://www.vik.cc/>
-<http://www.danielvik.com>
+Daniel Vik  
+US  
+<http://www.vik.cc/>  
+<http://www.danielvik.com>  
 
 ## To build:
 
