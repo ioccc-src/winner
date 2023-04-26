@@ -1,8 +1,8 @@
 # Best Abuse of Indentation
 
-Stephen Sykes
-Finland
-<https://web.archive.org/web/20160316092728/http://www.stephensykes.com/>
+Stephen Sykes  
+Finland  
+<https://web.archive.org/web/20160316092728/http://www.stephensykes.com/>  
 
 ## To build:
 
