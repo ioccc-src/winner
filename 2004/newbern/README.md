@@ -1,8 +1,7 @@
 # Best Font Engine
 
-    Jeff Newbern
-    28 Jeanette Ave. #1
-    Belmont, MA 02478
+Jeff Newbern  
+US
 
 ## To build:
 
