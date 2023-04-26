@@ -9,12 +9,16 @@ track of things that have been done already and what have not been done (mostly
 not been done).
 
 - Find entries with bugs and INABIAF and add to [bugs.md](/bugs.md).
+    For instance a INABIAF section should be added to [bugs.md](bugs.md) for
+    [2004/jdalbec](2004/jdalbec/jdalbec.) based on the README.md file.
+
 - Resolve as many of the issues in [bugs.md](/bugs.md) with the exception of the
 INABIAF ones. This is likely not possible but some certainly can be fixed.
+
 - Check for typos in README.md files.
+
 - Verify which README.md files have not been checked for correct formatting and
 fix any issues.
-
     * This includes author information: not only at first column but making sure
     that the lines end with spaces so that the rendered output does not end up
     on one line only.
@@ -25,6 +29,7 @@ fix any issues.
     been checked except that a few years might need typo checks (or a bit more
     thoroughly). It's very likely I won't keep this updated until it's finished
     but I wanted to note it now.
+
 - Remove addresses from older winning entries but (if known) keep country code +
 add country code to winners.csv. As of half past 4 Pacific time on 22 April 2023
 only the years through 1986 are done. This should not take much time but I
