@@ -51,7 +51,8 @@ the program as `sudoku-sf.c` which was renamed and changed in their comments.
 
 ## Author's remarks:
 
-This program can solve a type of logic puzzle known as a Sudoku, and also
+This program can solve a type of logic puzzle known as a
+[Sudoku](https://en.wikipedia.org/wiki/Sudoku), and also
 generate new ones.
 
 ### Contents
