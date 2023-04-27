@@ -84,8 +84,9 @@ resolving these issues and has fixed many but you're welcome to have a go at it
 too (though he'll be very sad if he doesn't have a chance to at first fix it :-(
 so you might want to hold off for now :-) .. or not :-) ). He hopes to have most
 of the remaining entries resolved in the near future but nevertheless if you're
-okay making people very sad you may have a go at the entries :-) He'll remove
-this part later on.
+okay making people very sad you may have a go at the entries :-) [Yusuke
+Endoh](/winners.html#Yusuke_Endoh) has also fixed a number of entries though at
+this point he does not know it. :-) Cody will remove this part later on.
 
 ## General notes about the statuses and making fixes
 
@@ -112,9 +113,24 @@ segfault in macOS of [1989/paul](1994/paul/paul.c): changing the `int *` to a
 But even if they are fixable (which will likely be hard to do) it's almost
 certain that such code would be just as non-portable (importable ? :-) ).
 
+In rare cases they are valid. For instance Cody noticed in linux the following
+warning in [1985/applin](1985/applin/applin.c) with gcc:
+
+```
+applin.c:1:78: warning: incompatible implicit declaration of built-in function 'execlp' [-Wbuiltin-declaration-mismatch]
+    1 | main(v,c)char**c;{for(v[c++]=strdup("Hello, world!\n");(!!c)[*c]&&(v--||--c&&execlp(*c,*c,c[!!c]+!!c,!c));**c=!c)write(!!*c,*c,!!**c);}
+      |                                                                              ^~~~~~
+```
+
+and this reminded him of his fix to
+[1984/anonymous](1984/anonymous/anonymous.c). In the case of `1984/anonymous` it
+was a bit more involved but with `1985/applin` one need only add to the Makefile
+`-include unistd.h`. So there are some cases where fixing warnings can fix a
+problem but in general they should be ignored even if they're annoying.
+
 Hopefully with the example entries listed above you get the idea.
 
-### General request on original code
+### General request on original code:
 
 If you're fixing an entry please make as few changes as possible! This is to
 make it as close to the original but allowing it to work. This might be less of
@@ -362,17 +378,6 @@ This entry will very likely crash or do something else if you run it without an
 arg.
 
 # 1985
-
-## [1985/applin](1985/applin/applin.c) ([README.md](1985/applin/README.md)
-## STATUS: doesn't work with some platforms - please help us fix
-
-[Yusuke Endoh](/winners.html#Yusuke_Endoh) provided a fix for gcc but
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) observed that this does
-not work under macOS. It prints `H????????` with additional `?`s printed as it
-continues to run.
-
-We have not had a chance to try and fix this yet but you're welcome to have a go
-at it.
 
 
 # 1986
