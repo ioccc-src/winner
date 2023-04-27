@@ -3,7 +3,7 @@
 use warnings;
 use IPC::Open2;
 
-my $sf_exe = "./sudoku-sf"; # location of sudoku-sf executable
+my $sf_exe = "./aidan"; # location of sudoku-sf executable
 
 my $vflg=0; my $gcmd=$sf_exe; my $scmd=$sf_exe;
 my $gcnt=400; my $soff=2; my $fbad=1; my $ffile=1; 
