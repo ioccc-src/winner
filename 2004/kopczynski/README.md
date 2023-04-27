@@ -40,6 +40,9 @@ Also try:
 
 What happens?
 
+What happens if you feed the program source to the program? Can you figure out
+why?
+
 ### Alternate code
 
 The judges modified the program to print its result.  The original
