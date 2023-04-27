@@ -13,7 +13,20 @@ make all
 modern compilers. In the past 'define' in `#define` could even be defined but to
 get this to work on modern systems Cody changed the `#o` lines to `#define`. The
 `lycklama.alt.c` is the original source code as it provides some fun input for
-the entry.
+the entry. Thank you Cody! With a tip from [Yusuke
+Endoh](/winners.html#Yusuke_Endoh)  it was indirectly noticed that if one slows
+down the call to `write()` one can see some fun output that's not visible with
+modern systems so Cody added a call to `usleep()`. The default time is `0`
+which disables it (in order to make it as close to original as possible; an alt
+version already exists mostly for fun output). In order to change the speed (try
+500 or 700) do:
+
+```sh
+make CDEFINE+="-DZ=700" clobber all
+```
+
+Thank you Yusuke!
+
 
 ## Try:
 

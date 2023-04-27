@@ -9,7 +9,7 @@
 #define o_ main
 #define o__ if
 #define oo_ 0
-#define _o(_,__,___)(void)___o(_,__,ooo(___))
+#define _o(_,__,___)(void)___o(_,__,ooo(___),Z&&usleep(Z))
 #define __o (o_o_<<((o_o_<<(o_o_<<o_o_))+(o_o_<<o_o_)))+(o_o_<<(o_o_<<(o_o_<<o_o_)))
 o_(){_o_ _=oo_,__,___,____[__o];_oo ______;_____:___=__o-o_o_; _______:
 _o(o_o_,____,__=(_-o_o_<___?_-o_o_:___));o_o(;__;_o(o_o_,"\b",o_o_),__--);
