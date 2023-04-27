@@ -1,7 +1,7 @@
 # Best handling of beeps
 
 Daniel Vik  
-US
+US  
 <daniel@vik.cc>  
 <https://www.vik.cc/>  
 <http://danielvik.com/>  
