@@ -196,11 +196,14 @@ Please help us by writing alternative code!
 ## STATUS: main() function args not allowed - please help us fix
 
 Entries with this status have a problem in that the args to main() are not of a
-specific type due this being allowed in earlier C. This shows itself in some
-compilers like clang. [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson)
-looked at the source code of clang and reported that there is no way to override
-this requirement so these entries will fail to compile with clang. That's why he
-in some entries he fixed he did it by adding a function called `pain()`. :-)
+specific type due to this being allowed in earlier C. Some compilers like clang
+have a deficiency where they do not allow this so these entries do not work with
+clang.
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) looked at the source
+code of clang and reported that there is no way to override this requirement so
+these entries will fail to compile with clang. That's why in some entries he
+fixed he did it by adding a function called `pain()`. :-)
 
 **NOTE for macOS users**: please be aware that _gcc_ under macOS **is actually
 clang** despite the fact it might appear to be gcc: no symlink and both gcc and
@@ -1692,20 +1695,49 @@ strange. This might also happen if you specify excessively large board
 dimensions. Try `100 100 100` for instance and see what happens!
 
 ## [2005/giljade](2005/giljade/giljade.c) ([README.md](2005/giljade/README.md))
-## STATUS: doesn't work with some platforms - please help us fix
+## STATUS: known bug - please help us fix
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) noted that this
-requires both 32-bit CPUs (data size?) and also cannot have the optimiser
-enabled.  It might be that it can be fixed, perhaps by changing the int sizes
-and bitwise operations, but if not this will not work with some systems like
-modern Macs as Apple has made it quite difficult to compile 32-bit applications
-(thanks a lot Apple for ruining some IOCCC entries! :-) ).
+Landon Curt Noll fixed this entry to work with clang by changing the first arg
+to be an `int` and the second arg to be a `char **`. This is important because
+of clang's deficiency requiring args to be one type only.
 
-It's quite probable that non x86 related CPUs will also not work: it's hard to
-know because Cody's only non-x86 (`x86_64` in particular) system is the MacBook
-Pro Max with the M1 chip which is arm64 and unfortunately specifying `-m32` is
-invalid on that system (might be on Intel 64-bit Macs as well but he hasn't had
-one since November 2022).
+This did not completely fix the problem for the program however.
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) observed that it has to
+be compiled with `-m32` which is not possible in modern macOS. It also cannot
+have the compiler optimiser enabled. Cody fixed it so that it works in 64-bit
+but the clang fix does break something in the entry, specifically that the
+self-test feature of the program no longer works.
+
+One is supposed to be able to do:
+
+```sh
+./giljade > out
+./giljade out
+```
+
+and see all layouts compile without error. If you wish to see this in action and
+you have a compiler without the deficiency of clang you can do:
+
+```sh
+make alt
+./giljade.alt > out
+./giljade out
+
+```
+
+(You don't need to use `giljade.alt` to test compile - it's the output of the
+program that's the actual problem.)
+
+But the issue is can it be fixed for clang. If you have a fix we welcome your
+help! Believe it or not this appears in part to be due to more than two spaces in
+the program except in the places where the original code has them. This however
+does not seem to be the full story. Cody probably will look at this again but
+for now we note this problem here.
+
+## STATUS: INABIAF - please **DO NOT** fix
+
+It also will very likely segfault or do something strange if the source code
+does not exist.
 
 
 ## [2005/mynx](2005/mynx/mynx.c) ([README.md](2005/mynx/README.md))

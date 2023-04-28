@@ -42,7 +42,8 @@ CSILENCE= -Wno-bitwise-conditional-parentheses -Wno-bitwise-op-parentheses \
 	-Wno-builtin-requires-header -Wno-empty-body -Wno-error \
 	-Wno-implicit-function-declaration -Wno-extra-semi -Wno-implicit-int \
 	-Wno-logical-op-parentheses -Wno-return-type -Wno-shift-op-parentheses \
-	-Wno-unused-value -Wno-incompatible-pointer-types -Wno-int-conversion
+	-Wno-unused-value -Wno-incompatible-pointer-types -Wno-int-conversion \
+	-Wno-parentheses -Wno-misleading-indentation
 
 # Common C compiler warning flags
 #
@@ -57,7 +58,7 @@ CSTD= -std=gnu99
 # Some entries require 32-bitness: ARCH= -m32
 # Some entries require 64-bitness: ARCH= -m64
 #
-ARCH= -m32
+ARCH=
 
 # Defines that are needed to compile
 #
@@ -65,7 +66,7 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE= -include stdio.h
+CINCLUDE= -include stdio.h -include string.h -include unistd.h -include stdlib.h
 
 # Optimization
 #
@@ -89,7 +90,7 @@ ifeq ($(CC),clang)
 #
 CSILENCE+= -Wno-comma -Wno-format-nonliteral -Wno-missing-prototypes \
 	-Wno-missing-variable-declarations -Wno-poison-system-directories \
-	-Wno-strict-prototypes
+	-Wno-strict-prototypes -Wno-parentheses -Wno-misleading-indentation
 #
 CWARN+= -Weverything
 #
@@ -117,8 +118,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -133,13 +134,15 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: this entry requires 32-bit architecture in order to run properly"
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # data files
 #
