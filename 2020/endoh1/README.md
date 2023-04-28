@@ -1,7 +1,8 @@
 # Most explosive
 
 Yusuke Endoh
-Twitter: @mametter
+<https://github.com/mame/>  
+Mastodon: [@mame@ruby.social](https://ruby.social/@mame)  
 
 ## To build:
 
