@@ -150,7 +150,7 @@ main(I V, c *v)
 		struct sockaddr_in A;
 		L = 0;
 		B = 1;
-		Q !sscanf(t, "http://%255[^/]%n", h, &n) && !*h) {
+		Q (!sscanf(t, "http://%255[^/]%n", h, &n)&&!sscanf(t,"https://%255[^/]%n",h, &n) && !*h)) {
 			Q !(f = fopen(t, "rb")))
 				k 1;
 			goto e;

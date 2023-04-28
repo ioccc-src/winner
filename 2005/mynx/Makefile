@@ -114,8 +114,8 @@ OBJ= ${PROG}.o
 DATA= source/configure source/configure.in entities.txt source/makefile.in
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################

@@ -1751,12 +1751,12 @@ does not exist.
 ## STATUS: INABIAF - please **DO NOT** fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) notes that, though
-probably obvious, this entry will not work with https. He changed the code to
-scan for https too (it exited before) in case someone comes up with a clever
-command line to make it work but the problem is a secure connection has to first
-be set up in order to give http commands. This is not a bug but it's worth
-pointing out as it won't work on as many websites as it used to including the
-[IOCCC website](https://www.ioccc.org) itself.
+probably obvious, this entry will not work with https. He added an alt version
+that scans for https in case someone wants to set up a pipeline or other
+workaround (perhaps with stunnel) but the problem otherwise is a secure
+connection has to first be set up in order to give http commands. This is not a
+bug but it's worth pointing out as it won't work on as many websites as it used
+to including the [IOCCC website](https://www.ioccc.org) itself.
 
 
 # 2006
