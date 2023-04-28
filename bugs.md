@@ -1678,6 +1678,19 @@ given the right args. See the README.md file for the correct syntax.
 
 # 2005
 
+## [2005/anon](2005/anon/anon.c) ([README.md](2005/anon/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This program sometimes will create unsolvable puzzles :-) just to hook you.
+As a protection against this - and to prevent you from spending too much time on
+such puzzles (or too big puzzles if you insist on doing this) - it deliberately
+destroys its runtime stack. See the [README.md](2005/anon/README.md) for more
+details on this.
+
+If you specify more than three args the program might also crash or do something
+strange. This might also happen if you specify excessively large board
+dimensions. Try `100 100 100` for instance and see what happens!
+
 ## [2005/giljade](2005/giljade/giljade.c) ([README.md](2005/giljade/README.md))
 ## STATUS: doesn't work with some platforms - please help us fix
 
@@ -1689,10 +1702,10 @@ modern Macs as Apple has made it quite difficult to compile 32-bit applications
 (thanks a lot Apple for ruining some IOCCC entries! :-) ).
 
 It's quite probable that non x86 related CPUs will also not work: it's hard to
-know because Cody's only non-x86 (x86_64 in particular) system is the MacBook
+know because Cody's only non-x86 (`x86_64` in particular) system is the MacBook
 Pro Max with the M1 chip which is arm64 and unfortunately specifying `-m32` is
 invalid on that system (might be on Intel 64-bit Macs as well but he hasn't had
-one since before November 2022).
+one since November 2022).
 
 
 ## [2005/mynx](2005/mynx/mynx.c) ([README.md](2005/mynx/README.md))
