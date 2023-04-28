@@ -1351,6 +1351,13 @@ points.
 Although it is independent of endianness both systems need the same character
 set. In other words both have to be ASCII or EBCDIC - not one of each.
 
+## [2001/ollinger](2001/ollinger/ollinger.c) ([README.md)(2001/ollinger/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This program will very likely crash or do something else without an arg.
+
+
+
 ## [2001/schweikh](2001/schweikh/schweikh.c) ([README.md](2001/schweikh/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 

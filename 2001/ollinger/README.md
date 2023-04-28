@@ -16,6 +16,10 @@ make
 ./ollinger integer
 ```
 
+### INABIAF - it's not a bug it's a feature! :-)
+
+This program will very likely crash or do something else without an arg.
+
 ## Try:
 
 ```sh
