@@ -1,12 +1,9 @@
 # Best game
 
-    Oscar Toledo G.
-    Familia Toledo
-    Av. Santa Cruz del Monte 9-304
-    Ciudad Satelite Edo de Mexico
-    CP 53110
-    Mexico
-    uno@biyubi.com
+Oscar Toledo G.
+Familia Toledo
+Mexico
+<uno@biyubi.com>
 
 ## To build:
 
@@ -42,7 +39,7 @@ Use `toledo2` or `toledo3` as you would `toledo` above.
 ## Judges' remarks:
 
 Challenge yourself with your ability to look 5, 6 or more moves ahead.
-Challenge your knowledge of C operator precedence.  The following the
+Challenge your knowledge of C operator precedence.  The following is the
 move analysis via recursion while it executes moves.  All while playing
 by the rules of C and Chess within a single function!
 
@@ -58,7 +55,7 @@ without arguments:
 ./toledo
 ```
 
-The other mode is accesible running the program with one argument (5-ply
+The other mode is accessible running the program with one argument (5-ply
 analysis):
 
 ```sh
@@ -71,7 +68,7 @@ Two arguments for 6-ply analysis:
 ./toledo a b
 ```
 
-And each succesive argument will analyze one ply more. There is no ply limit,
+And each successive argument will analyze one ply more. There is no ply limit,
 but beyond 7 ply is very slow, try it at your own risk and computing time.
 
 ### Entering movements
@@ -83,7 +80,7 @@ will warn you of illegal moves. All legal chess moves are permitted.
 One special case is when you are doing promotion, you must enter the move with
 an extra letter indicating the desired piece.
 
-By example "f7f8n" (supossing you have a pawn on f7), will promote it to a
+By example "f7f8n" (supposing you have a pawn on f7), will promote it to a
 knight, substitute 'n' for the desired piece (N/Q/R/B).
 
 Note that the program requires the piece letter, it will not select
@@ -119,21 +116,21 @@ computer can do all legal chess moves, other features are:
   * Computer is tough (check 7-ply), even in 5 ply can give a surprise to
 amateur players.
 
-### Obsfucation tricks
+### Obfuscation tricks
 
-  * Only one C function, really modular.
-  * Extensive use of the trinary and comma operators, save a hard drive today.
-  * Extensive use of C operator precedence, all good C programmers remember
+* Only one C function, really modular.
+* Extensive use of the ternary and comma operators, save a hard drive today.
+* Extensive use of C operator precedence, all good C programmers remember
 it... I cannot.
-  * Exchanged operands every place is possible, someday someone will
+* Exchanged operands every place is possible, someday someone will
 understand it,
-  * Mixed and multifunction expressions on statements, in good old-BASIC
+* Mixed and multifunction expressions on statements, in good old-BASIC
 style.
-  * Macros used to hide C syntax, check unballanced parenthesis and calls with
+* Macros used to hide C syntax, check unbalanced parenthesis and calls with
 empty arguments!
-  * Only includes strictly necessary standard headers, the linker takes care,
+* Only includes strictly necessary standard headers, the linker takes care,
 and compiles faster... but I'm still not seeing the difference.
-  * Uses only one string, very easy to I18N ;)
+* Uses only one string, very easy to I18N ;)
 
 ## Copyright and CC BY-SA 4.0 License:
 
