@@ -1,9 +1,9 @@
 # Most beauteous visuals
 
-Vincent Weaver
-US
-<vince@deater.net>
-<http://www.deater.net/weave/>
+Vincent Weaver  
+US  
+<vince@deater.net>  
+<http://www.deater.net/weave/>  
 
 ## To build:
 
