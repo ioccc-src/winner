@@ -58,11 +58,11 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE=
+CDEFINE= -DZ=65000
 
 # Include files that are needed to compile
 #
-CINCLUDE=
+CINCLUDE= -include math.h -include stdio.h
 
 # Optimization
 #
@@ -74,7 +74,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LIBS= -lm
 
 # C compiler to use
 #
@@ -115,8 +115,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -137,6 +137,9 @@ ${PROG}: ${PROG}.c
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # data files
 #

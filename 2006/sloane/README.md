@@ -1,9 +1,7 @@
 # Homer's Favorite
 
-    Andy Sloane
-    1041 Seneca St.
-    Hartford, WI 53027
-    US
+Andy Sloane  
+US  
 
 ## To build:
 
@@ -15,7 +13,10 @@ make
 work with clang which is stricter on the type of args to main(). Curiously
 although clang requires the types of args to be strictly correct it allows for
 only one arg which he made it as the second arg was not used and this allows for
-a closer match to the original format of the entry. Thank you Cody for your
+a closer match to the original format of the entry. He also made sure that the
+Makefile links in `libm` as not all systems do this by default. Since the author
+suggested that the lack of certain `#include`s might break the program in some
+systems he added `-include ...` to the Makefile as well. Thank you Cody for your
 assistance!
 
 
@@ -28,12 +29,40 @@ assistance!
 WARNING: if you are easily overstimulated with fast movement or have
 photosensitivity please be careful running this entry!
 
+An alternatively version of this entry exists so that one can actually see what
+is going on. This is also more ideal for those who are overstimulated by fast
+movements. See the alternate code section below.
+
 
 ## Try:
 
 ```sh
 echo "Do or do not. There is no try."
 ```
+
+### Alternate code:
+
+The alternate version, provided by [Cody Boone
+Ferguson](/winners.html#Cody_Boone_Ferguson), uses `usleep()` so one can enjoy
+the entry with modern systems and which will not be too stimulating for those
+who have a problem with fast moving text (like himself). It uses the `Z` macro
+as the parameter to `usleep()` which you can override. The default is
+`-DZ=65000`. To compile with the default:
+
+
+```sh
+make alt
+```
+
+If you wish to override the sleep value try something like:
+
+```sh
+make CDEFINE="-DZ=70000" clobber alt
+```
+
+Use `sloane.alt` as you would `sloane` above.
+
+Thank you Cody!
 
 ## Judges' Comments:
 
@@ -43,13 +72,14 @@ at first blush, this looks like a self-reproducing program.
 ## Author's remarks:
 
 This program doesn't require any special build options, other than that it
-uses sin and cos and hence requires the math library.
+uses `sin()` and `cos()` and hence requires the math library.
 
 You will almost certainly get a compiler warning because I declared a bunch
 of global ints without types.  The code looks better this way, though, I
-think.  There are also no #includes, so there may be warnings for
-undeclared references to printf, etc.  There's a chance that my failure to
-include math.h or declare sin or cos will make the donut not render
+think.  There are also no `#include`s, so there may be warnings for
+undeclared references to `printf()`, etc.  There's a chance that my failure to
+include `math.h` or declare `sin()` or `cos()` will make the
+[donut](https://en.wikipedia.org/wiki/Doughnut) not render
 properly -- it's worked on every system I've tried so far though.
 
 You will need some kind of VT100-ish emulation; so while this compiles and
@@ -59,12 +89,11 @@ The shape of the source gives a hint about its output: it's a little
 animation of a shaded donut rotating over an infinite checkerboard.  Like
 many IOCCC entries, it is thus self-documenting.
 
-I wanted to create something as "pure" as I could - meaning that the
-entire source code is shaped into a work of art, without being prefixed
-by any #define hacks, or even #includes, _and_ is portable enough to not
-require any special libraries to do the animating.  I achieved this with
-two standard escape codes for clearing the screen and moving the cursor
-back to the top-left.
+I wanted to create something as "pure" as I could - meaning that the entire
+source code is shaped into a work of art, without being prefixed by any
+`#define` hacks, or even `#includes`, _and_ is portable enough to not require
+any special libraries to do the animating.  I achieved this with two standard
+escape codes for clearing the screen and moving the cursor back to the top-left.
 
 The donut isn't raytraced.  It's much simpler than that.
 
