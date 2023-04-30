@@ -1,8 +1,8 @@
 # Most ingenious puzzle solution
 
-Aidan Thornton
-United Kingdom
-makomk@lycos.co.uk
+Aidan Thornton  
+United Kingdom  
+<makomk@lycos.co.uk>  
 
 ## To build:
 
