@@ -1,9 +1,9 @@
 # Most circuitous walk
 
-Daniel Vik
-US
-<daniel@vik.cc>
-<https://www.vik.cc>
+Daniel Vik  
+US  
+<daniel@vik.cc>  
+<https://www.vik.cc>  
 
 ## To build:
 
