@@ -62,6 +62,8 @@ overflow! In fact it's argc itself.
 ./mullender.alt 500
 
 ./mullender.alt 20000
+
+./mullender.alt 100000
 ```
 
 What happens if you hit enter after it writes a line of output?
@@ -133,7 +135,7 @@ would fit, some as an ASCII character.
 The rest is history.
 
 Since this was the first contest, we hadn't seen any old entries, nor had any of
-the other contestants. Of course we knew about #define and tricks you could do
+the other contestants. Of course we knew about `#define` and tricks you could do
 with that, but we didn't need that for this program. In fact, we made it as
 “standard” as possible. At the time there was this program called `cb` for C
 beautifier which would re-indent your program to make the layout look better. Our
