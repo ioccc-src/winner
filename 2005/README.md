@@ -9,7 +9,7 @@ Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
 The IOCCC has a web site and now has a number of international mirrors.
-The primary site can be found at <http://www.ioccc.org/>.
+The primary site can be found at <https://www.ioccc.org/>.
 
 Use `make(1)` to compile entries.  It is possible that on non-Unix / non-Linux
 systems the `Makefile` needs to be changed.  See the `Makefile` for details.
@@ -100,9 +100,9 @@ requests](https://github.com/ioccc-src/temp-test-ioccc/pulls) in the entry's
 
 
 For the latest information on how to contact the IOCCC Judges please visit
-<http://www.ioccc.org/contact.html>.
+<https://www.ioccc.org/contact.html>.
 
-For news of the next contest watch <http://www.ioccc.org/>.
+For news of the next contest watch <https://www.ioccc.org/>.
 
 =-=
 
