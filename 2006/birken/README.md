@@ -2,9 +2,9 @@
 
 ## (Electronic Design Automation - Mechanical Abstract Machine Emulator)
 
-    Michael Birken
-    US
-    o__1 at hotmail dot com
+Michael Birken
+US
+<o__1 at hotmail dot com>
 
 ## To build:
 
@@ -20,7 +20,7 @@ make
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
 macOS with this entry. The problem was a missing `+1` for strlen() with
-malloc(). Thank you Cody for your assistance!
+malloc(). This prevented it from working. Thank you Cody for your assistance!
 
 ## Try:
 
@@ -54,14 +54,15 @@ And for those who are still confused:
 
 ## Author's remarks:
 
-If man is capable of creating tofu hotdogs (simulated meat), then why
-not tofu circuitry (simulated circuits)?  This program is my tribute to
-the early computer pioneers like Konrad Zuse.  It's an educational tool
-designed to introduce students to digital circuit theory using
-technology that was considered state of the art in the 1940's!  To
-enable you to fully understand the capabilities of this circuit
-simulator, I have included a 55 page manual (info.pdf) in the info
-portion of the entry submission.
+If man is capable of creating [tofu](http://en.wikipedia.org/wiki/Tofu) [hot
+dogs](https://en.wikipedia.org/wiki/Hot_dog) (simulated meat), then why not tofu
+[circuitry](https://en.wikipedia.org/wiki/Electronic_circuit) (simulated
+circuits)?  This program is my tribute to the early computer pioneers like
+[Konrad Zuse](https://en.wikipedia.org/wiki/Konrad_Zuse).  It's an educational
+tool designed to introduce students to digital circuit theory using technology
+that was considered state of the art in the 1940s!  To enable you to fully
+understand the capabilities of this circuit simulator, I have included a 55 page
+manual ([info.pdf](info.pdf)) in the info portion of the entry submission.
 
 The primary obfuscation is the data structure chosen for parsing the
 input file and for executing the simulation.  Oh man...  coding that
