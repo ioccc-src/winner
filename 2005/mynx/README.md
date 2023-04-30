@@ -1,11 +1,8 @@
 # Best use of the www
 
-    Anthony Howe
-    Snert
-    42 av. Isola Bella
-    06400 Cannes,
-    France
-    achowe@snert.com
+Anthony Howe  
+<achowe@snert.com>  
+<http://www.snert.com>  
 
 ## To build:
 
