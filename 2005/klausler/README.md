@@ -2,7 +2,7 @@
 
 Peter Klausler  
 US  
-pmk@cray.com  
+<pmk@cray.com>
 
 ## To build:
 
