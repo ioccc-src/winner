@@ -31,53 +31,56 @@ We believe you will be impressed with this year's winners.
 
 In particular:
 
-+ The Abuse of the rules used local dictionary data to get around the
-size limit.
++ The [Abuse of the rules](klausler/klausler.c) used local dictionary data to
+get around the size limit.
 
-+ The Most beauteous visuals made clever use of {}'s and whitespace in their source code and during execution.
++ The [Most beauteous visuals](vince/vince.c) made clever use of `{}`s and
+whitespace in their source code and during execution.
 
-+ The most circuitous walk entry is just amazing.
++ The [Most circuitous walk](vik/vik.c) entry is just amazing.
 
-+ The Best game makes full use of its single function.
++ The [Best game](toledo/toledo.c) makes full use of its single function.
 
-+ The Best emulator may allow you to re-connect to your first PET.
++ The [Best emulator](sykes) may allow you to reconnect to your first
+[PET](https://en.wikipedia.org/wiki/Commodore_PET).
 
-+ Our Best of Show this year was simply (or non-simply) the best!
++ Our [Best of Show](persano/persano.c) this year was simply (or non-simply :-) ) the best!
 
-+ (And we need only mention (parenthetically speaking) that the best use of parenthesis is self re-producing).
++ (And we need only mention (parenthetically speaking) that the best use of parenthesis is self reproducing).
 
-+ The most sonorous output might sound like a good idea.
++ The [Most sonorous output](jetro/jetro.c) might `sound` :-) like a good idea.
 
-+ The Best 2D puzzle takes editorial license with expressions as well as the
-with the vi editor.
++ The [Best 2D puzzle](giljade/giljade.c) takes editorial license with expressions as well as the
+with the [vi editor](https://en.wikipedia.org/wiki/Vi).
 
-+ The Most ambiguous language winner is really a C program.
++ The [Most ambiguous language](chia/chia.c) winner is really a C program.
 
-+ The superfluous output winner is simply Voronoilific!
++ The [Most superfluous output](boutines/boutines.c) winner is simply
+[Voronoi](Voronoi)-lific!
 
-+ Try not to have your sense of good coding offended by the Most
-discourteous interpreter winner.
++ Try not to have your sense of good coding offended by the [Most
+discourteous interpreter](timwi/timwi.c) winner.
 
-+ The Best use of the www doesn't include those letters
++ The [Best use of the www](mynx/mynx.c) doesn't include those letters.
 
-+ You will be puzzled by Best 3D puzzle winner, we are sure!
++ You will be puzzled by the [Best 3D puzzle](anon/anon.c) winner; we are sure!
 
-+ The Most ingenious puzzle solution might puzzle you more while it
++ The [Most ingenious puzzle solution](aidan/aidan.c) might puzzle you more while it
 puzzles out some puzzles: all in a puzzling way!  :-)
 
-### Remarks on some losing entries
+### Remarks on some of the losing entries
 
 There were some outstanding entries that did not win.  Unfortunately
 some very good entries lost because they:
 
-+ depended too much on non-portable side effects in expressions;
++ depended too much on non-portable side effects in expressions; and/or
 
-+ depended too much on a particular byte order;
++ depended too much on a particular byte order; and/or
 
 + required the use of a special script, data file or pseudo-machine
   language that was not supplied with the entry.
 
-We hope the authors of some of those entries will fix and re-submit
+We hope the authors of some of those entries will fix and resubmit
 them for the next IOCCC.
 
 
@@ -99,7 +102,8 @@ requests](https://github.com/ioccc-src/temp-test-ioccc/pulls) in the entry's
 `README.md`.
 
 
-For the latest information on how to contact the IOCCC Judges please visit
+For the latest information on how to contact the [IOCCC
+Judges](https://www.ioccc.org/judges.html) please visit
 <https://www.ioccc.org/contact.html>.
 
 For news of the next contest watch <https://www.ioccc.org/>.
