@@ -1,6 +1,6 @@
 # First Obfuscated C Code Contest
 
-In [1984](/1984), the first contest was held.  The name of the contest was simply
+In [1984](/years.html#1984), the first contest was held.  The name of the contest was simply
 "`Obfuscated C Code Contest`".
 
 Look at the `README.md`file for the given winner for information on how to
