@@ -1777,6 +1777,13 @@ Don't try dividing by 0 (zero).
 
 Incorrect formulas will ungracefully crash the program.
 
+## [2006/stewart](2006/stewart/stewart.c) ([README.md](2006/stewart/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This program will very likely crash or do something funny if the file does not
+exist or cannot be opened.
+
+
 # 2007
 # 2008
 # 2009
