@@ -1,8 +1,6 @@
 # Best 2D puzzle
 
 Gil Dogon  
-1 HaBeer Alley  
-Jerusalem  
 Israel  
 <gil_jade@netvision.net.il>
 
