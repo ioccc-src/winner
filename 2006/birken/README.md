@@ -2,9 +2,9 @@
 
 ## (Electronic Design Automation - Mechanical Abstract Machine Emulator)
 
-Michael Birken
-US
-<o__1 at hotmail dot com>
+Michael Birken  
+US  
+<o__1 at hotmail dot com>  
 
 ## To build:
 
