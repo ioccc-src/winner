@@ -1783,6 +1783,10 @@ Incorrect formulas will ungracefully crash the program.
 This program will very likely crash or do something funny if the file does not
 exist or cannot be opened.
 
+## [2006/toledo2](2006/toledo2/toledo2.c) ([README.md](2006/toledo2/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+By design this program is supposed to crash on termination.
 
 # 2007
 # 2008

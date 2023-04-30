@@ -1,10 +1,7 @@
 # Best of Show
 
-    Oscar Toledo
-    Av. Santa Cruz del Monte 9-304
-    Ciudad Satelite. Edo. de Mexico
-    CP. 53110
-    Mexico
+Oscar Toledo
+Mexico
 
 ## To build:
 
@@ -18,19 +15,42 @@ make
 ./toledo2
 ```
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
+this program which was making it fail to work under macOS - it did not seem to
+be a problem under linux, at least not fedora. The problem was wrong variable
+types - `int`s instead of `FILE *`s. It now works under both macOS and linux.
+Thank you Cody for your assistance!
+
+### INABIAF - it's not a bug it's a feature! :-)
+
+By design this program is supposed to crash on termination.
+
 ## Try:
 
 ```sh
-echo "Do or do not. There is no try."
+./toledo2
+
 ```
+
+and then type in the following:
+
+```
+10 PRINT "HELLO WORLD!"
+LIST
+RUN
+```
+
+To end the program hit ctrl-z.
+
 
 ## Judges' remarks:
 
-We're impressed! Last year, it was a 6502 emulator; this year,
-it's 8080!  It requires an input file ("C") to be present, but
-it does not have to be one of C.BASIC or C.BIOS - you're welcome
-to write a standalone 8080 program yourself! How about C.FORTH
-or C.LISP?
+We're impressed! Last year, it was a
+[6502](https://en.wikipedia.org/wiki/MOS_Technology_6502) emulator; this year,
+it's [8080](https://en.wikipedia.org/wiki/Intel_8080)! It requires an input file
+(`C`) to be present, but it does not have to be one of `C.BASIC` or `C.BIOS` -
+you're welcome to write a standalone 8080 program yourself! How about `C.FORTH`
+or `C.LISP`?
 
 In addition to the functionality you could expect from a program
 of this size, it allows importing files from the host file
@@ -44,7 +64,8 @@ the code!
 
 ## Author's remarks:
 
-This program emulates a complete Intel(r) 8080
+This program emulates a complete [Intel(r)
+8080](https://en.wikipedia.org/wiki/Intel_8080)
 processor, along with a teletype and a disk
 controller, just like at the start of the personal
 computers revolution (circa 1975).
@@ -54,12 +75,13 @@ usable, so along it you will find two files
 (C.BASIC and C.BIOS). Rename C.BASIC to C and run
 the emulator, and et voila! you have the public
 domain Palo Alto Tiny BASIC (by Li-Chen Wang),
-published on the very first volume of Dr. Dobb's
-Journal.
+published on the very first volume of [Dr. Dobb's
+Journal](https://en.wikipedia.org/wiki/Dr._Dobb%27s_Journal).
 
 Type using uppercase letters, here are three example
 programs, press Enter after each line:
 
+```
         10 PRINT "Hello, world!"
         LIST
         RUN
@@ -69,6 +91,7 @@ programs, press Enter after each line:
         30 NEXT A              30 PRINT A+B
         LIST                   LIST
         RUN                    RUN
+```
 
 Press Ctrl+Z to quit, by the way, the segmentation fault is
 normal at this point.
