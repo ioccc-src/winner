@@ -1760,6 +1760,18 @@ to including the [IOCCC website](https://www.ioccc.org) itself.
 
 
 # 2006
+
+## [2006/hamre](2006/hamre/hamre.c) ([README.md](2006/hamre/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This program will very likely crash or do something completely irrational :-) if
+you don't supply it with an argument.
+
+As well supplying more arguments will possibly limit the number of nested
+operators supported.
+
+Don't try dividing by 0 (zero).
+
 # 2007
 # 2008
 # 2009
