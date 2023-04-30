@@ -1,9 +1,9 @@
 # Best game
 
-Oscar Toledo G.
-Familia Toledo
-Mexico
-<uno@biyubi.com>
+Oscar Toledo G.  
+Familia Toledo  
+Mexico  
+<uno@biyubi.com>  
 
 ## To build:
 
