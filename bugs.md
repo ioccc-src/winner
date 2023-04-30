@@ -1772,6 +1772,11 @@ operators supported.
 
 Don't try dividing by 0 (zero).
 
+## [2006/monge](2006/monge/monge.c) ([README.md](2006/monge/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+Incorrect formulas will ungracefully crash the program.
+
 # 2007
 # 2008
 # 2009
