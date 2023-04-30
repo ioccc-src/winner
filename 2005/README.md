@@ -1,49 +1,31 @@
-2005 marked the "The Eighteenth International Obfuscated C Code Contest"
-========================================================================
+# 2005 marked the "The Eighteenth International Obfuscated C Code Contest"
 
 
-Standard IOCCC stuff
---------------------
+## Standard IOCCC stuff
 
-Look at the README.md file for the given winner for information
-on how to compile the winner and how to run the winning program.
+Look at the `README.md` file for the given winner for information
+on how to compile the entry and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
 The IOCCC has a web site and now has a number of international mirrors.
-The primary site can be found at,
+The primary site can be found at <http://www.ioccc.org/>.
 
->	<http://www.ioccc.org/>
-
-Use make to compile entries.  It is possible that on non-Un\*x / non-Linux
-systems the makefile needs to be changed.  See the Makefile for details.
+Use `make(1)` to compile entries.  It is possible that on non-Unix / non-Linux
+systems the `Makefile` needs to be changed.  See the `Makefile` for details.
 
 This year we included most of the information included by the submitters
-in the README.md files.
+in the `README.md` files.
 
-Read over the makefile for compile/build issues.  Your system may require
-certain changes (add or remove a library, add or remove a #define).
+Read over the `Makefile` for compile/build issues.  Your system may require
+certain changes (add or remove a library, add or remove a `#define`).
 
 Some ANSI C compilers are not quite as good as they should be.  If
-yours is lacking, you may need to compile using gcc instead of your
+yours is lacking, you may need to compile using `gcc` instead of your
 local compiler.
 
 
-Remarks on some of the entries
-------------------------------
-
-There were some outstanding entries that did not win.  Unfortunately
-some very good entries lost because they:
-
-+ depended too much on non-portable side effects in expressions;
-
-+ depended too much on a particular byte order;
-
-+ required the use of a special script, data file or pseudo-machine
-  language that was not supplied with the entry.
-
-We hope the authors of some of those entries will fix and re-submit
-them for the next IOCCC.
+## Remarks on some of the entries
 
 We believe you will be impressed with this year's winners.
 
@@ -52,7 +34,7 @@ In particular:
 + The Abuse of the rules used local dictionary data to get around the
 size limit.
 
-+ The Most beauteous visuals made cleaver use of {}'s and whitespace in their source code and during execution.
++ The Most beauteous visuals made clever use of {}'s and whitespace in their source code and during execution.
 
 + The most circuitous walk entry is just amazing.
 
@@ -83,27 +65,44 @@ discourteous interpreter winner.
 + The Most ingenious puzzle solution might puzzle you more while it
 puzzles out some puzzles: all in a puzzling way!  :-)
 
+### Remarks on some losing entries
 
-Final Comments
---------------
+There were some outstanding entries that did not win.  Unfortunately
+some very good entries lost because they:
 
-Please feel free to send us comments and suggestions about the
-competition, this README or anything else that you would like to see in
-future contests.
++ depended too much on non-portable side effects in expressions;
+
++ depended too much on a particular byte order;
+
++ required the use of a special script, data file or pseudo-machine
+  language that was not supplied with the entry.
+
+We hope the authors of some of those entries will fix and re-submit
+them for the next IOCCC.
+
+
+## Final Comments
+
+Please feel free to send us comments and suggestions about the competition, this
+[README.md](README.md) or anything else that you would like to see in future
+contests.
 
 If you use, distribute or publish these entries in some way, please drop
 us a line.  We enjoy seeing who, where and how the contest is used.
 
 If you have problems with any of the entries, AND YOU HAVE A FIX, please
-send us the fix (patch file or the entire changed file).
+send us the fix please submit your fixes fix as a [GitHub pull
+request](https://github.com/ioccc-src/temp-test-ioccc/pulls).
+
+We will be happy to credit those who submit successful [GitHub pull
+requests](https://github.com/ioccc-src/temp-test-ioccc/pulls) in the entry's
+`README.md`.
+
 
 For the latest information on how to contact the IOCCC Judges please visit
+<http://www.ioccc.org/contact.html>.
 
->	<http://www.ioccc.org/contact.html>
-
-For news of the next contest watch:
-
->	<http://www.ioccc.org/>
+For news of the next contest watch <http://www.ioccc.org/>.
 
 =-=
 
