@@ -1,4 +1,4 @@
-# 2005 marked the "The Eighteenth International Obfuscated C Code Contest"
+# [2005](/years.html#2005) marked the "The Eighteenth International Obfuscated C Code Contest"
 
 
 ## Standard IOCCC stuff
