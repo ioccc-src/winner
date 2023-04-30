@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Sun 30 Apr 2023 11:05:45 UTC*
+*Last updated: Sun 30 Apr 2023 11:43:53 UTC*
 
 More things will likely be added over time and as items are done they _should
 be_ removed from the list IF AND ONLY IF (!!) we are certain it is done (many
@@ -18,9 +18,8 @@ INABIAF ones. This is likely not possible but some certainly can be fixed.
 - Check for typos in README.md files.
 
 - Go through all year README.md files that is 1984/README.md, 1985/README.md and
-so on. Only 2005/README.md has been done (though 2004/README.md is about to be
-done so one might say that as of 30 April 2023 only 2004 and 2005 have been
-fixed).
+so on. As of *Sun 30 Apr 2023 11:43:53 UTC* the following years have been
+finished: 1984, 1985, 2004, 2005.
 
 - Verify which README.md files have not been checked for correct formatting and
 fix any issues.
