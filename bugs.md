@@ -1829,6 +1829,33 @@ instead being something else entirely. The Internet Wayback Machine, although it
 archived it, did not load scripts. Do you know if the domain was moved? Do you
 have an archive or mirror? Please provide us it! Thank you.
 
+## [2011/richards](2011/richards/richards.c) ([README.md](2011/richards/README.md))
+## STATUS: doesn't work with some platforms - please help us fix
+
+This does not appear to work with macOS. We're not sure if this is to do with
+the Apple silicon chip or not. At a glance it appears to be that it might be the
+function pointers. In particular it seems to crash at:
+
+```c
+
+    W(1) while ((c = *p)) {
+```
+
+in the `K` function. It's called like this, from main():
+
+```c
+    while (b = fgets(malloc(999), 999, stdin))
+        ((f) K(b, d)) (d);
+```
+
+But what is curious is that it seems to have different problems depending on the
+macros defined. In an attempt to get it to work the `mmap()` call was changed to
+allow for exec and read and write (which might be a problem in such a
+combination) but this only works in linux (it already did work in linux,
+however, so this doesn't help much).
+
+Do you have a fix? We welcome it!
+
 # 2012
 
 

@@ -192,7 +192,7 @@ u main()
 #if NM
         malloc(H);
 #else
-        mmap(0, H, -1, MAP_PRIVATE | MAP_ANON, -1, 0);
+	mmap(NULL, H, PROT_EXEC|PROT_READ|PROT_WRITE, MAP_ANON | MAP_PRIVATE, -1, 0);
 #endif
     while (b = fgets(malloc(999), 999, stdin))
         ((f) K(b, d)) (d);
