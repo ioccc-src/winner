@@ -60,20 +60,20 @@ high and wide. Alternatively, redirect the output to a separate file
 
 ### Overview
 
-The program emulates John Conway's ceullular automaton known as "The
-Game of Life", using standard input as a starting grid. The layout of
-the source-code is such that it evolves to a digital representation of
-the first 15 decimal places of pi after 4 time steps. This was setup
-using the other feature of the program which can be demonstrated as follows:
+The program emulates John Conway's cellular automaton known as "[The Game of
+Life](https://conwaylife.com)", using standard input as a starting grid. The
+layout of the source-code is such that it evolves to a digital representation of
+the first 15 decimal places of pi after 4 time steps. This was setup using the
+other feature of the program which can be demonstrated as follows:
 
 ```sh
 ./blakely - < 3.dat
 ```
 
-The program will first display the grid given in 3.dat, and then three
+The program will first display the grid given in [3.dat](3.dat), and then three
 more grids (taking a few minutes to display the last). Waiting for any more grids will
 take a substantial amount of time. The final grid has been put into
-evolve\_to\_3.dat, and if you type
+[evolve_to_3.dat](evolve_to_3.dat), and if you type
 
 ```sh
 ./blakely < evolve_to_3.dat
@@ -134,7 +134,7 @@ in files.
 
 Given the finely-tuned layout required to evolve into pi, this is one of the
 main obfuscations used in the code. However, running the code through the
-preprocessor, expanding the defines, and applying GNU's indent, although
+preprocessor, expanding the `#define`s, and applying GNU's indent, although
 making the location of functions and statements clear, by no means makes the
 code entirely clear.  Note that expanding out the `#define`s does not take the
 program over the character limit. The main reason for these is to do with the
@@ -144,7 +144,7 @@ would cause similar problems.
 
 Other obfuscations used are:
 
-- Use of the classic 2[a] syntax to access the third element of the
+- Use of the classic `2[a]` syntax to access the third element of the
   array `a`.
 - Nested ternary operators, combined with shortcut evaluation being
   required for correct operation.
