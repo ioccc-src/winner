@@ -3,7 +3,7 @@
 Oscar Toledo G.  
 Familia Toledo  
 Mexico  
-<uno@biyubi.com>  
+<https://nanochess.org>  
 
 ## To build:
 

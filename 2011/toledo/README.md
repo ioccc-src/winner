@@ -1,11 +1,9 @@
 # Best non-chess game
 
-    Oscar Toledo G.  
-    Av. Sta. Cruz del Monte 9-304  
-    Cd. Satelite. Edo. de Mexico.  
-    CP. 53110. Mexico.  
-    <biyubi@gmail.com>  
-    <http://nanochess.110mb.com/>  
+Oscar Toledo G.    
+Mexico  
+<biyubi@gmail.com>   
+<https://nanochess.org>  
 
 ## To build:
 
