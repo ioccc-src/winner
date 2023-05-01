@@ -1,8 +1,8 @@
 # Most shiny
 
-    Matt Zucker  
-    <mzucker1@swarthmore.edu>  
-    <http://www.swarthmore.edu/NatSci/mzucker1/>  
+Matt Zucker  
+<mzucker1@swarthmore.edu>  
+<https://mzucker.github.io/swarthmore/>  
 
 ## To build:
 
@@ -19,11 +19,20 @@ make
 ## Try:
 
 ```sh
-./zucker "Hello!!!" > hello.ppm
+./zucker "Hello\!\!\!" > hello.ppm
 ./zucker faster\! -preview > image2.ppm
 ```
 
 Display the PPM image with your favorite image viewer.
+
+The author gave options for macOS but we note that you can just do:
+
+```sh
+open image.ppm
+```
+
+which will open `Preview.app` which will let you look at the image no problem.
+No need to install additional software.
 
 ## Judges' remarks:
 
@@ -36,7 +45,7 @@ This entry uses no local variables. None! At! All!
 
 ### An image generator
 
-### What it does:
+#### What it does:
 
 This program makes pretty pictures.  To see the default output, try
 running
@@ -62,7 +71,7 @@ program as follows:
 ./zucker "your text" > image.ppm
 ```
 
-To mitigate long runtimes, the program can be invoked in a "preview"
+To mitigate long runtime, the program can be invoked in a "preview"
 mode by appending `-preview` to the command line arguments, like so:
 
 ```sh
@@ -73,7 +82,7 @@ If your platform distinguishes between binary and text streams, you
 may need to insert some code to reopen standard output in binary mode
 at the start of `main`. An ASCII platform is assumed.
 
-### Pedagogical value:
+#### Pedagogical value:
 
 This program is quite suitable for the inexperienced programmer, due
 to a number of considerations:
@@ -101,7 +110,7 @@ to a number of considerations:
     reflection ray at an object's surface, given the incoming
     direction and surface normal.
     
-### Further details (contains spoilers):
+#### Further details (contains spoilers):
 
 The program is not quite a traditional ray tracer, but a "sphere
 tracer" which uses distance fields to encode proximity to objects in
@@ -135,14 +144,14 @@ it is impossible to modify either the image width or height without
 changing the source in at least three different places, including
 inside the large string literal.
 
-Some of the functions are simple vector algebra operations such as
+Some of the functions are simple vector algebraic operations such as
 vector construction, dot product, and normalization. However, it was
 found to be much more compact to define a single operation for
 multiply-and-add rather than to have separate functions for addition,
 subtraction, and scaling. Again, compactness led to obfuscation.
 
 This program heavily abuses `for` loops. The comma operator is used to
-get as much milage as possible out of statements inside of loop
+get as much mileage as possible out of statements inside of loop
 declarations. Between `for` loops, the comma operator, and the ternary
 operator, it was possible to avoid `if` and `while` altogether.
 
@@ -155,7 +164,7 @@ performed just about everywhere. Fascinatingly, this doesn't seem to
 affect performance too badly. Sometimes when an explicit cast
 (i.e. from float to int) is needed, the program instead simply assigns
 to a free variable of the desired type instead. Both the `array[index]`
-and `index[array]` notations are used interchangably throughout the
+and `index[array]` notations are used interchangeably throughout the
 program.
 
 Two other programs were written to support development of this
