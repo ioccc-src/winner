@@ -20,14 +20,8 @@ make
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
 this program which was making it fail to work under macOS - it did not seem to
 be a problem under linux, at least not fedora. The problem was wrong variable
-types - implicit `int`s instead of `longs` and two `FILE *`s. The `long` references
-:-) were taken from [Yusuke Endoh](/winners.html#Yusuke_Endoh) and technically
-it works if all the variables are `long` but this would trigger (if not
-silenced) additional warnings and the correct type is `FILE *`. However changing
-them all to `FILE *` (including some that are used as a file) cause compilation
-errors. It might end up that a cast is sufficient or the wrong combination is
-used but for now this will work and works with both macOS and linux. Thank you
-Cody (and Yusuke)!
+types - implicit `int`s instead of `FILE *`s. It now works with both macOS and
+linux. Thank you Cody!
 
 To end execution press `ctrl-z`. As mentioned in the author's remarks and in the
 below section, it is supposed to crash on termination though Cody noted this
