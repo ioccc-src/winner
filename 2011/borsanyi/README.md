@@ -1,9 +1,6 @@
 # Best data utility
 
 Szabolcs Borsanyi    
-Theoretische Physik  
-Gaussstraße 20  
-42097 Wuppertal  
 Germany  
 <borsanyi@uni-wuppertal.de>  
 
