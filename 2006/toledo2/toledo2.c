@@ -1,4 +1,6 @@
                                #include <stdio.h>
+                               #include <stdlib.h>
+                               #include <unistd.h>
            #define n(o,p,e)=y=(z=a(e)%16 p x%16 p o,a(e)p x p o),h(
                                 #define s 6[o]
              #define p z=l[d(9)]|l[d(9)+1]<<8,1<(9[o]+=2)||++8[o]
@@ -17,7 +19,7 @@
                     unsigned char o[10],l[78114],*c=l,*k=l
                           #define d(e)o[e]+256*o[e-1]
 #define h(l)s=l>>8&1|128&y|!(y&255)*64|16&z|2,y^=y>>4,y^=y<<2,y^=~y>>1,s|=y&4
-+64506; FILE *u, *e, *V, *v;x,y,z,Z; main(r,U)char**U;{
++64506; FILE *u, *v; long e,V,x,y,z,Z; main(r,U)char**U;{
 
      { { { } } }       { { { } } }       { { { } } }       { { { } } }
     { { {   } } }     { { {   } } }     { { {   } } }     { { {   } } }

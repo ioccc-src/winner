@@ -1786,7 +1786,30 @@ exist or cannot be opened.
 ## [2006/toledo2](2006/toledo2/toledo2.c) ([README.md](2006/toledo2/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this program to
+not crash in macOS (it appeared to work fine in fedora linux on an `x86_64`
+architecture but he does not know if it crashed in macOS Ventura due to the fact
+it is an `arm64` CPU - the Apple silicon chip). This fix, BTW, is a mix of a fix
+by [Yusuke Endoh](/winners.html#Yusuke_Endoh) and Cody's. Nevertheless there are
+two features that are not bugs and one bug (see below).
+
 By design this program is supposed to crash on termination.
+
+You must type in caps (except in strings) and this program is indeed
+case-sensitive.
+
+## STATUS: known bug - please help us fix
+
+The author showed something like this in their remarks:
+
+```sh
+./toledo2 DDT.COM
+A> IMPORT DDT.COM
+```
+
+but the `A>` prompt never appears; instead it's just the same as if you
+specified no arg.
+
 
 # 2007
 # 2008

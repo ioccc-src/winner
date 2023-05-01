@@ -18,12 +18,26 @@ make
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
 this program which was making it fail to work under macOS - it did not seem to
 be a problem under linux, at least not fedora. The problem was wrong variable
-types - `int`s instead of `FILE *`s. It now works under both macOS and linux.
-Thank you Cody for your assistance!
+types - implicit `int`s instead of `longs` and two `FILE *`s. The `long` references
+:-) were taken from [Yusuke Endoh](/winners.html#Yusuke_Endoh) and technically
+it works if all the variables are `long` but this would trigger (if not
+silenced) additional warnings and the correct type is `FILE *`. However changing
+them all to `FILE *` (including some that are used as a file) cause compilation
+errors. It might end up that a cast is sufficient or the wrong combination is
+used but for now this will work and works with both macOS and linux. Thank you
+Cody (and Yusuke)!
+
+To end execution press `ctrl-z`. As mentioned in the author's remarks and in the
+below section, it is supposed to crash on termination though Cody noted this
+does not seem to happen in macOS. He asks ironically: 'if it's supposed to crash
+and it does not crash is it actually a bug or is it a feature? :-)'
 
 ### INABIAF - it's not a bug it's a feature! :-)
 
 By design this program is supposed to crash on termination.
+
+You must type in caps (except in strings) and this program is indeed
+case-sensitive.
 
 ## Try:
 
@@ -42,6 +56,13 @@ RUN
 
 To end the program hit ctrl-z.
 
+### IABINAF - it's a bug it's not a feature! :-)
+
+Although the program does not crash when reading in `C.BIOS` it appears that the
+CP/M emulator does not work as expected at least according to the author's
+remarks.
+
+See also [bugs.md](/bugs.md) for more details.
 
 ## Judges' remarks:
 
@@ -57,7 +78,8 @@ of this size, it allows importing files from the host file
 system (one by one, so you'll have to be patient).
 
 Remember the good old days and play (or let your kids play)
-Adventure (in the directory ADVENTUR within the KAYPROII.ZIP
+[Adventure](https://rickadams.org/adventure/) (in the directory `ADVENTUR`
+within the `KAYPROII.ZIP`
 file referred in the author's remarks); walking in a maze of
 twisty little passages all alike is easier than understanding
 the code!
@@ -65,55 +87,61 @@ the code!
 ## Author's remarks:
 
 This program emulates a complete [Intel(r)
-8080](https://en.wikipedia.org/wiki/Intel_8080)
-processor, along with a teletype and a disk
-controller, just like at the start of the personal
-computers revolution (circa 1975).
+8080](https://en.wikipedia.org/wiki/Intel_8080) processor, along with a teletype
+and a disk controller, just like at the start of the personal computers
+revolution (circa 1975).
 
-It needs an initial memory image to do something
-usable, so along it you will find two files
-(C.BASIC and C.BIOS). Rename C.BASIC to C and run
-the emulator, and et voila! you have the public
-domain Palo Alto Tiny BASIC (by Li-Chen Wang),
-published on the very first volume of [Dr. Dobb's
+It needs an initial memory image to do something usable, so along with it you
+will find two files ([C.BASIC](C.BASIC) and [C.BIOS](C.BIOS)). Rename
+[C.BASIC](C.BASIC) to `C` (NOTE from the judges: running `make` will do this for
+you), run the emulator, and et voila! you have the public domain Palo Alto [Tiny
+BASIC](https://en.wikipedia.org/wiki/Tiny_BASIC) (by Li-Chen Wang), published in
+the very first volume of [Dr. Dobb's
 Journal](https://en.wikipedia.org/wiki/Dr._Dobb%27s_Journal).
 
-Type using uppercase letters, here are three example
-programs, press Enter after each line:
+Type using uppercase letters. Here are three example programs. Press Enter after
+each line:
 
+```basic
+10 PRINT "Hello, world!"
+LIST
+RUN
+
+10 FOR A=1 TO 10
+20 PRINT A             
+30 NEXT A              
+LIST                   
+RUN                    
+
+10 INPUT A
+20 INPUT B
+30 PRINT A+B
+LIST
+RUN
 ```
-        10 PRINT "Hello, world!"
-        LIST
-        RUN
 
-        10 FOR A=1 TO 10       10 INPUT A
-        20 PRINT A             20 INPUT B
-        30 NEXT A              30 PRINT A+B
-        LIST                   LIST
-        RUN                    RUN
-```
-
-Press Ctrl+Z to quit, by the way, the segmentation fault is
+Press Ctrl+Z to quit. By the way, the segmentation fault is
 normal at this point.
 
-All good programmers started learning BASIC, now, what about a
-CP/M emulator?
+All good programmers started learning
+[BASIC](https://en.wikipedia.org/wiki/BASIC), now, what about a
+[CP/M](https://en.wikipedia.org/wiki/CP/M) emulator?
 
 Download the following file (not included because of possible
 copyright and blah, blah):
 
 > <http://www.retroarchive.org/cpm/os/KAYPROII.ZIP>
 
-Extract CPM64.COM from the SOURCE directory, and copy it to
-files named A and B (these will be the disk drives). Now rename
-the provided C.BIOS to C and run the emulator.
+Extract `CPM64.COM` from the `SOURCE` directory, and copy it to
+files named `A` and `B` (these will be the disk drives). Now rename
+the provided [C.BIOS](C.BIOS) to `C` and run the emulator.
 
-Now you have a running CP/M system!, with two files on A: drive,
-HALT.COM to stop the emulator (so it closes drives) and IMPORT.COM
-to introduce new files.
+Now you have a running [CP/M](https://en.wikipedia.org/wiki/CP/M) system!, with
+two files on A: drive, `HALT.COM` to stop the emulator (so it closes drives) and
+`IMPORT.COM` to introduce new files.
 
-To get a complete CP/M system, you will need the following files
-from the KAYPROII.ZIP, SOURCE directory:
+To get a complete [CP/M](https://en.wikipedia.org/wiki/CP/M) system, you will need the following files
+from the `KAYPROII.ZIP` (in the `SOURCE` directory):
 
         ASM.COM  DDT.COM   DUMP.COM   ED.COM   LOAD.COM
         PIP.COM  STAT.COM  SUBMIT.COM XSUB.COM
@@ -121,39 +149,44 @@ from the KAYPROII.ZIP, SOURCE directory:
 To import them, you must run the emulator with an argument, by
 example:
 
-        prog DDT.COM
+```sh
+./toledo2 DDT.COM
+```
 
 When the A> prompt appears, do:
 
-        IMPORT DDT.COM
+```
+IMPORT DDT.COM
+```
 
-When it ends, do HALT, so the file is saved, and you can start
+When it ends, do `HALT`, so the file is saved, and you can start
 the same process with another file.
 
 At this time I have tested successfully the following software
-from retroarchive.org:
+from <http://www.retroarchive.org>:
 
-> <http://www.retroarchive.org/cpm/lang/c80v30.zip>
-> <http://www.retroarchive.org/cpm/lang/Mbasic.com>
-> <http://www.retroarchive.org/cpm/business/MULTPLAN.ZIP>
+- <http://www.retroarchive.org/cpm/lang/c80v30.zip>
+- <http://www.retroarchive.org/cpm/lang/Mbasic.com>
+- <http://www.retroarchive.org/cpm/business/MULTPLAN.ZIP>
 
-Some programs requiere installation to configure the terminal,
+Some programs require installation to configure the terminal,
 locate ANSI or VT-100.
 
 ### What is an 8080?
 
-It is simply the little brother of the Z80, it has no extended
-registers (AF', BC', DE', HL', IX or IY), no relative jumps,
-and every instruction beginning with CB, DD, ED or FD doesn't
+It is simply the little brother of the
+[Z80](https://en.wikipedia.org/wiki/Zilog_Z80); it has no extended
+registers (`AF'`, `BC'`, `DE'`, `HL'`, `IX` or `IY`), no relative jumps,
+and every instruction beginning with `CB`, `DD`, `ED` or `FD` doesn't
 exist.
 
-The flags are only S (Sign, bit 7), Z (Zero, bit 6), P (Parity,
-bit 2) and C (Carry, bit 0).
+The flags are only `S` (Sign, bit 7), `Z` (Zero, bit 6), `P` (Parity,
+bit 2) and `C` (Carry, bit 0).
 
 ### Porting it
 
 It is easy if your platform has getch/kbhit and
-ANSI terminal
+ANSI terminal:
 
         read    -->  Z=kbhit()?getch():0
         write   -->  putchar(7[o])
@@ -164,34 +197,33 @@ Also add the following to trap Ctrl-C:
         #include <signal.h>
         signal(SIGINT, SIG_IGN);
 
-On PC/DOS you need to add ANSI.SYS to CONFIG.SYS
+NOTE from the judges: in Unix like systems `getch()` is part of curses but this
+is not what is needed.
 
-In *NIX the min 0 on stty is required, circa 2001
+On PC/DOS you need to add `ANSI.SYS` to `CONFIG.SYS`.
+
+In Unix the min 0 on `stty` is required but circa 2001
 it was not required.
 
-.
-.
-.
 
 ### How it works (SPOILER)
 
-.
-.
-.
+The `l` array contains the 64K memory; it is initialized with a
+boot image loaded from the `C` file. The program counter is the
+`c` pointer and registers are in `o[]`. The main loop reads every
+opcode and separates them in one of three common forms. A lot
+of ternary operators selects the instruction.
 
-The l array contains the 64K memory, it is initialized with a
-boot image loaded from the 'C' file, the program counter is the
-c pointer, and regitser are on o[]. The main loops reads every
-op-code and separates it in one of three common forms, a lot
-of trinary operators selects the instruction.
-
+```
         o[0] = B register   o[1] = C register
         o[2] = D register   o[3] = E register
         o[4] = H register   o[5] = L register
         o[6] = Flags        o[7] = A or accumulator
+```
 
 The following instructions do peripheral operation:
 
+```
         76           Quits emulator
         DB 00        Reads key pressed status
         DB 01        Reads key
@@ -199,33 +231,36 @@ The following instructions do peripheral operation:
         D3 xx        Writes byte from acc. to console
         ED ED 02     Reads sector
         ED ED 03     Writes sector
+```
 
 Memory addresses:
 
+```
         FBFA = Low source/target direction
         FBFB - High source/target direction
         FBFC - Sector
         FBFD - Low cylinder
         FBFE - High cylinder
         FBFF - Drive.
+```
 
 The BIOS is tailor made for this emulator, and helps to simplify it.
 
-Other notes:
+### Other notes
 
 - The 8080 runs at your computer speed divided
   between a number that I have not calculated.
 - This obfuscated processor is created using
-  obfuscated code produced by an obfuscated mind,
+  obfuscated code produced by an obfuscated mind;
   no brains were harmed during its production,
   except those that tried to read the code.
-- The original version of this code was eated
+- The original version of this code was eaten
   by my C++ dog.
-- I intended to make it simple to understand,
+- I intended to make it simple to understand;
   it uses only four C keywords.
 - Also I discovered that braces are very useful
   for commenting.
-- Why to bother with prototypes?, every good C
+- Why bother with prototypes? Every good C
   programmer can develop its C programs using
   only one function.
 
