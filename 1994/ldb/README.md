@@ -1,10 +1,10 @@
 # Best One-liner
 
-Laurion Burchall
-Brown University
-Unit 4641
-Providence RI 02912-4641
-US
+Laurion Burchall  
+Brown University  
+Unit 4641  
+Providence RI 02912-4641  
+US  
 
 ## To build:
 
