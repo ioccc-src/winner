@@ -1,7 +1,7 @@
 # Best of Show
 
-Oscar Toledo
-Mexico
+Oscar Toledo  
+Mexico  
 
 ## To build:
 
