@@ -55,7 +55,7 @@ CSTD= -std=gnu99
 # Some entries require 32-bitness: ARCH= -m32
 # Some entries require 64-bitness: ARCH= -m64
 #
-ARCH= -m32
+ARCH= 
 
 # Defines that are needed to compile
 #
@@ -131,6 +131,11 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo "WARNING: ${PROG}.c must be compiled as 32-bit to use with the entry itself;"
+	@echo "if you cannot use -m32 this will NOT work!"
+	${CC} ${CFLAGS} -m32 $< -o $@ ${LIBS}
+
+${PROG}.otccex: ${PROG}.otccex.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable

@@ -35,6 +35,7 @@ fact(n)
     /* local variables can be declared. Only 'int' type is supported */
     int i, r;
     r = 1;
+
     /* 'while' and 'for' loops are supported */
     for(i=2;i<=n;i++)
         r = r * i;
@@ -60,9 +61,9 @@ print_num(n, b)
         *p = c;
         p++;
         n = n / b;
-        /* 'break' is supported */
-        if (n == 0)
-            break;
+	/* 'break' is supported */
+	if (n == 0)
+	    break;
     }
     while (p != tab) {
         p--;
@@ -100,11 +101,13 @@ main(int argc, char **argv)
             return 1;
         }
     }
-    printf("fib(%d) = ", n);
-    print_num(fib(n), base);
-    printf("\n");
-
-    printf("fact(%d) = ", n);
+    printf("fib(%d) with base %d = ", base, n);
+    if (n > 48) {
+	printf("Overflow\n");
+    } else {
+	print_num(fib(n), base);
+    }
+    printf("fact(%d) with base %d = ", base, n);
     if (n > 12) {
         printf("Overflow");
     } else {

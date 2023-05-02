@@ -24,17 +24,22 @@ linux or else some skill in resolving the portability issues. As it is it
 segfaults in 64-bit linux (and as expected macOS). He fixed an earlier segfault
 so that at least the file can be opened (but perhaps that will be wrong in i386
 linux?) and he also changed some of the macro used to what they evaluate to but
-mostly he kept it the same.  He also fixed [bellard.otccex.c](bellard.otccex.c)
-so it does not segfault and seemingly works okay (it did not work at all) but
-still this appears to not work in 64-bit linux. See below portability notes.
-Thank you Cody for your assistance!
+mostly he kept it the same.
+
+Cody also fixed [bellard.otccex.c](bellard.otccex.c) so it does not segfault and
+seemingly works okay (it did not work at all). The main problem was that some
+ints were being used as pointers. Also the Fibonacci sequence (`fib()`) will
+overflow at `n > 48` so this is checked prior to running the function. Either
+way unfortunately this entry seems to not work in 64-bit linux or macOS. See
+below portability notes. Thank you Cody for your assistance!
+
 
 ### Portability notes:
 
 With a tip from [Yusuke Endoh](/winners.html#Yusuke_Endoh) we rediscovered the
 author's [web page for this program](https://bellard.org/otcc/) where it is
 stated that this will only work in i386 linux.  The author also stated in the
-remarks in this document that they used that they used [gcc
+remarks in this document that they used [gcc
 2.95.2](https://ftp.gnu.org/gnu/gcc/gcc-2.95.2/gcc-everything-2.95.2.tar.gz) but
 we don't know if that's relevant or not.
 
