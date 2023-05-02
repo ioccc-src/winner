@@ -1,7 +1,7 @@
 # Most artistic
 
-    Uri Goren  
-    <goren.uri@gmail.com>  
+Uri Goren  
+<goren.uri@gmail.com>  
 
 ## To build:
 
@@ -18,8 +18,8 @@ echo "some text" | ./goren
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for macOS.
 Before the fix it segfaulted. It worked fine under linux. After fixing it it was
 noticed that the author stated it does not work for 64-bit so it was then tested
-as a 32-bit binary (linux) and 64-bit binary (linux, macOS) and both work. Thank
-you Cody!
+as a 32-bit binary (linux) and 64-bit binary (linux, macOS) and both work. It
+was fixed by changing some `int`s to `long`s. Thank you Cody!
 
 ## Try:
 
@@ -49,8 +49,10 @@ something happens!  Why?
 
 ## Author's remarks:
 
-This program was written in homage to Rene Magritte's picture "La
-trahison des images" (The Treachery of Images).
+This program was written in homage to [Rene
+Magritte](http://en.wikipedia.org/wiki/Rene_Magritte)'s picture ["La
+trahison des images" (The Treachery of
+Images)](https://en.wikipedia.org/wiki/The_Treachery_of_Images).
 
 In order to show my unconditional admiration of this work, I avoided
 using conditions.
@@ -70,14 +72,14 @@ One thing I tried to achieve is condition free programming.  Many
 have noted that conditions make the code harder to read and understand.
 A good example would be:
 
-[Brent Burley's 2004 IOCCC winner](http://www.ioccc.org/years.html#2004_burley)
+[Brent Burley's 2004 IOCCC winner](/2004/burley/burley.c).
 
-That entry omits conditional statements such as "if" and "while".
+That entry omits conditional statements such as `if` and `while`.
 His achievement in improving clarity by omitting conditions is
 impressive, but I think it can be taken further, in two ways.
 
-First, conditional operators, such as ?:, && and ||, can be thrown
-away.  Second, using setjmp and longjmp, which are unfortunately
+First, conditional operators, such as `?:`, `&&` and `||`, can be thrown
+away.  Second, using `setjmp` and `longjmp`, which are unfortunately
 not in common use, might make it difficult for a novice programmer
 to understand the code without referring to the man page.
 
