@@ -1852,27 +1852,77 @@ have an archive or mirror? Please provide us it! Thank you.
 ## [2011/richards](2011/richards/richards.c) ([README.md](2011/richards/README.md))
 ## STATUS: doesn't work with some platforms - please help us fix
 
-This does not appear to work with macOS. We're not sure if this is to do with
-the Apple silicon chip or not. At a glance it appears to be that it might be the
-function pointers. In particular it seems to crash at:
+This does not appear to work with macOS, resulting in a segfault. We're not
+sure if this is to do with the Apple silicon chip or not but it seems unlikely.
+At first glance it appeared to be that it might be the function pointers. These
+were changed a bit and it might have helped a bit but this is not certain
+either. What was noticed is that there is an overflow according to `asan`:
 
-```c
 
-    W(1) while ((c = *p)) {
+```
+==32361==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x00016d368d08 at pc 0x000102b1dcb0 bp 0x00016d368b90 sp 0x00016d368b88
+READ of size 8 at 0x00016d368d08 thread T0
+    #0 0x102b1dcac in rd richards.c:128
+    #1 0x102b1e1f4 in re richards.c:145
+    #2 0x102a7e7e0 in t richards.c:104
+    #3 0x102b1f7cc in main richards.c:185
+    #4 0x19498ff24  (<unknown module>)
+
+Address 0x00016d368d08 is located in stack of thread T0 at offset 40 in frame
+    #0 0x102b1dae8 in rd richards.c:125
+
+  This frame has 1 object(s):
+    [32, 40) 'a' (line 126) <== Memory access at offset 40 overflows this variable
+HINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork
+      (longjmp and C++ exceptions *are* supported)
+SUMMARY: AddressSanitizer: stack-buffer-overflow richards.c:128 in rd
+Shadow bytes around the buggy address:
+  0x00702da8d150: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702da8d160: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702da8d170: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702da8d180: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702da8d190: 00 00 00 00 00 00 00 00 00 00 00 00 f1 f1 f1 f1
+=>0x00702da8d1a0: 00[f3]f3 f3 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702da8d1b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702da8d1c0: f1 f1 f1 f1 00 f3 f3 f3 00 00 00 00 00 00 00 00
+  0x00702da8d1d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702da8d1e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702da8d1f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==32361==ABORTING
+
 ```
 
-in the `K` function. It's called like this, from main():
+This was reported in both linux as 32-bit and 64-bit and macOS as 64-bit except
+that the sizes were different in 32-bit (as expected). The code it is having a
+problem with is:
 
 ```c
-    while (b = fgets(malloc(999), 999, stdin))
-        ((f) K(b, d)) (d);
+  o *a = 0, **b = &a, **c = b + 24;
+    x[v] = w;
+    for (; b < c && (*b < (o *)w || *b > (o *) T || *b == (long) v); b++);
+
 ```
 
-But what is curious is that it seems to have different problems depending on the
-macros defined. In an attempt to get it to work the `mmap()` call was changed to
-allow for exec and read and write (which might be a problem in such a
-combination) but this only works in linux (it already did work in linux,
-however, so this doesn't help much).
+where `o` is a `void`.
 
 Do you have a fix? We welcome it!
 

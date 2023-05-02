@@ -61,11 +61,11 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE= -include stdlib.h -include string.h -include stdio.h -include ctype.h
+CINCLUDE= -include stdlib.h -include string.h -include stdio.h -include ctype.h -include sys/mman.h -include setjmp.h
 
 # Optimization
 #
-OPT= -O3
+OPT= 
 
 # Default flags for ANSI C compilation
 #

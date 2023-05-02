@@ -24,11 +24,11 @@
 #define H 9<<16
 #define I case
 #define J(i) calloc(i,1)
-#define W(c) e=(k*)memcpy(e,x[(u)c],y[(u)c])+y[(u)c];
+#define W(c) e=(o*)memmove(e,x[(u)c],y[(u)c])+y[(u)c];
 #define N break; I
 q char k;
 q void o;
-q int u;
+q unsigned long u;
 q o(*f) (vo o *);
 q struct {
     u *a, **R, *m, h, c;
@@ -43,7 +43,7 @@ u sk[H];
 k *w;
 o *x[H];
 u y[H];
-k *j, *e;
+f *j, *e;
 u l=256;
 o g(u v)
 {
@@ -123,15 +123,15 @@ o T()
 
 o rd(u v)
 {
-    k *a = 0, **b = &a, **c = b + 32;
+    o *a = 0, **b = &a, **c = b + 24;
     x[v] = w;
-    for (; b < c && (*b < w || *b > (k *) T || *b == (k *) (long) v); b++);
+    for (; b < c && (*b < (o *)w || *b > (o *) T || *b == (long) v); b++);
     if (b == c) {
         jmp_buf *j = alloca(sizeof(*j));
         setjmp(*j);
         rd(v);
     } else {
-        y[v] = *b - w;
+        y[v] = *b - (o*)w;
         w = *b;
     }
 }
@@ -146,7 +146,7 @@ o re(vo k * rec)
 } F(d) M--;
 
 *M /= M[1];
-} F(p) printf("%d\n", *M);
+} F(p) printf("%lu\n", *M);
 } F(x) u n = *M--;
 
 if (!S j[n])
@@ -165,7 +165,7 @@ lx(d);
 o *lib1[] = { T, T, T, T, T } ;
 o *lib2[] = { T, ld, lp, lx, l1 } ;
 
-u main()
+int main()
 {
     u i;
     k *b;
@@ -192,7 +192,7 @@ u main()
 #if NM
         malloc(H);
 #else
-	mmap(NULL, H, PROT_EXEC|PROT_READ|PROT_WRITE, MAP_ANON | MAP_PRIVATE, -1, 0);
+	mmap(NULL, H, -1, MAP_ANON | MAP_PRIVATE, -1, 0);
 #endif
     while (b = fgets(malloc(999), 999, stdin))
         ((f) K(b, d)) (d);
