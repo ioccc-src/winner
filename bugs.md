@@ -1849,6 +1849,20 @@ instead being something else entirely. The Internet Wayback Machine, although it
 archived it, did not load scripts. Do you know if the domain was moved? Do you
 have an archive or mirror? Please provide us it! Thank you.
 
+## STATUS: INABIAF - please **DO NOT** fix
+
+The author states the following:
+
+* Bad input (e.g. nonexistent files, non-numeric number of iterations, etc.)
+tends to result in empty output.
+
+* Given exactly one corpus, the program will crash or produce garbage.
+
+* Leaks memory and file descriptors while processing files.
+
+* Will crash and die horribly if it runs out of memory.
+
+
 ## [2011/richards](2011/richards/richards.c) ([README.md](2011/richards/README.md))
 ## STATUS: doesn't work with some platforms - please help us fix
 

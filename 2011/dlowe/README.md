@@ -1,9 +1,6 @@
 # Most self deprecating
 
 David Lowe  
-434 Tenney Drive  
-Rogue River, OR  
-97537  
 <j.david.lowe@gmail.com>  
 
 ## To build:
@@ -18,9 +15,9 @@ make
 ./dlowe -<n_iterations> corpus1/ [...] corpus0/ < start.net > trained.net
 ```
 
-NOTE: In the above command, the directory args MUST end in a "/".
+NOTE: In the above command, the directory args MUST end in a `/`.
 
-Then to use the `trained.net`:
+Then to use `trained.net`:
 
 ```sh
 ./dlowe file [file ...] < trained.net
@@ -46,7 +43,7 @@ Try these pre-trained networks:
 
 You can run `./try.me.sh` to do the same thing.
 
-NOTE: The `dlowe-aux-data.tar.bz2/` directory was created by:
+NOTE: The `dlowe-aux-data/` directory was created by:
 
 
 ```sh
@@ -55,20 +52,21 @@ tar -jxf dlowe-aux-data.tar.bz2
 
 ## Judges' remarks:
 
+This entry is a ghoulish example of a brain (dead?) neural network classifier.
+It comes with a set of corpora for you to try.
+
 NOTE: the author's website, http://www.pootpoot.net, no longer exists (as the
 same) and the Internet Wayback Machine did not load scripts. Do you know if the
 domain changed? Please provide us with the proper URL or if you know if it was
 shut down for ever, please let us know that. Thank you!
 
-This entry is a ghoulish example of a brain (dead?) neural network classifier.
-It comes with a set of corpora for you to try.
-
-### ioccc-winlose-trained.net
+### `ioccc-winlose-trained.net`
 
 You can create your own trained networks.  For example, we trained a network
 on the C code of entries that were supplied to the 20Th IOCCC.
 
-The ioccc-winlose-trained.net was trained using the [earlystop.pl](earlystop.pl) tool:
+The `ioccc-winlose-trained.net` was trained using the
+[earlystop.pl](earlystop.pl) tool:
 
 ```sh
 rm -f ioccc-winlose-trained.net
@@ -78,11 +76,11 @@ rm -f ioccc-winlose-trained.net
 where:
 
 - `ioccc_won_training/`
-    1/2 of C code of the 20th IOCCC winners (except for dlowe.c from 2011)
+    1/2 of C code of the 20th IOCCC winners (except for [dlowe.c](dlowe.c) from 2011)
     plus 1/2 of the C code winners from prior IOCCC contests
 
 - `ioccc_won_test/`
-    1/2 of C code of the 20th IOCCC winners (except for dlowe.c from 2011)
+    1/2 of C code of the 20th IOCCC winners (except for [dlowe.c](dlowe.c) from 2011)
     plus 1/2 of the C code winners from prior IOCCC contests
 
 - `ioccc_lost_training/`
@@ -91,8 +89,8 @@ where:
 - `ioccc_lost_test/`
     1/2 of C code from entries that that did not win
 
-NOTE: The above directories were not shipped and the C code from
-entries that that did not win were flushed to /dev/null.
+NOTE: The above directories were not shipped and everything from the entries
+that did not win were flushed to `/dev/null`.
 
 The [earlystop.pl](earlystop.pl) tool wrote:
 
@@ -100,7 +98,7 @@ The [earlystop.pl](earlystop.pl) tool wrote:
     training 1001 to 2001...
     prior error = 56.746974766043; current error = 58.095691135305
 
-The resulting ioccc-winlose-trained.net file was included in the
+The resulting `ioccc-winlose-trained.net` file was included in the
 [dlowe-aux-data.tar.bz2](dlowe-aux-data.tar.bz2) tarball.
 
 The [dlowe.c](dlowe.c) was explicitly excluded from this trailing set, so this
@@ -162,14 +160,15 @@ We created the [xor-trained.net](dlowe-aux-data/xor-trained.net) as follows:
 - [dlowe-aux-data/xor-1/](dlowe-aux-data/xor-1/)
 	    Data that XORs to 1
 
-**NOTE**: The directory args **must end in a /** for them to work.
+**NOTE**: The directory args **must end in a** `/` for them to work.
 
 ## Author's remarks:
 
 ### Synopsis
 
-This is an artificially intelligent judging tool to help the IOCCC judges.
-Here's to shorter, more frequent contests!
+This is an [artificially
+intelligent](https://en.wikipedia.org/wiki/Artificial_intelligence) judging tool
+to help the IOCCC judges.  Here's to shorter, more frequent contests!
 
 ### Description
 
@@ -206,7 +205,7 @@ trained, but it's geared toward interpretation as a *probability* or a
 ./dlowe -<n_iterations> corpus1/ [...] corpus0/ < start.net > end.net
 ```
 
-**NOTE**: The directory args **must end in a /** for them to work.
+**NOTE**: The directory args **must end in a** `/` for them to work.
 
 To train a network, one specifies a starting network (on stdin), two or more
 corpora (directories containing training data), and the number of training
@@ -220,55 +219,63 @@ The first corpus will be assigned a target value of 1. The last will be
 assigned a target value of 0. Intervening directories (if any) will be assigned
 intermediate target values.
 
-The learning rate is hard-coded as 0.3. No momentum factor is used.
+The learning rate is hard-coded as `0.3`. No momentum factor is used.
 
 #### png corpora
 
-The png-1 corpus was obtained by manually scraping the first results from an
-https://images.google.com search for "obfuscate filetype:png".
+The [png-1](dlowe-aux-data/png-1) corpus was obtained by manually scraping the first results from an
+<https://images.google.com> search for "[obfuscate
+filetype:png](https://www.google.com/search?tbm=isch&sxsrf=APwXEddqIU34dxhpFdjEa8emNJKHOkYXIw:1683049158657&source=hp&biw=1727&bih=952&ei=xkpRZLapJtLKkPIP8bGKkAk&iflsig=AOEireoAAAAAZFFY1nbmEUHC74Cmg3Y5rEY1fV7ocASZ&ved=0ahUKEwi2pPXZltf-AhVSJUQIHfGYApIQ4dUDCAY&uact=5&oq=obfuscate+filetype:png&gs_lcp=CgNpbWcQA1AAWABg9QNoAHAAeACAATuIATuSAQExmAEAoAECoAEBqgELZ3dzLXdpei1pbWc&sclient=img&q=obfuscate&tbs=ift:png)".
 
-The png-0 corpus was obtained by manually scraping the first results from an
-https://images.google.com search for "obfuscate filetype:gif".
+The [png-0](dlowe-aux-data/png-0) corpus was obtained by manually scraping the first results from an
+<https://images.google.com> search for "[obfuscate
+filetype:gif](https://www.google.com/search?tbm=isch&ved=2ahUKEwiowo7fltf-AhXSOUQIHbJBDp8Q2-cCegQIABAA&oq=obfuscate+filetype:gif&gs_lcp=CgNpbWcQAzoECCMQJzoHCAAQigUQQzoFCAAQgARQ6AxY6AxgpBJoAHAAeACAAUeIAcsBkgEBM5gBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=0UpRZOiVINLzkPIPsoO5-Ak&bih=952&biw=1727&q=obfuscate&tbs=ift:gif)".
 
-Results:
+##### Results:
 
-* using these corpora as a training set.
-* using several hundred random `*.gif` and `*.png` files from my home computer as
-  a test set
-* using the included [earlystop.pl](earlystop.pl) script, which stopped after 67000 iterations.
-* interpreting output of `> 0.5` as "probably a .png" and `< 0.5` as "probably
-  a .gif"
-* produced a network with about 87% accuracy
+* Using these corpora as a training set;
+* Using several hundred random `*.gif` and `*.png` files from my home computer as
+  a test set;
+* Using the included [earlystop.pl](earlystop.pl) script, which stopped after 67000 iterations.
+* Interpreting output of `> 0.5` as "probably a `.png`" and `< 0.5` as "probably
+  a `.gif`"
+
+produced a network with about 87% accuracy
 
 #### English corpora
 
-The english-1 corpus was obtained by manually scraping the first results from
-a https://www.google.com/webhp?lr=lang_en search for "paris filetype:txt".
+The [english-1](dlowe-aux-data/english-1) corpus was obtained by manually scraping the first results from
+a <https://www.google.com/webhp?lr=lang_en> search for "[paris
+filetype:txt](https://www.google.com/search?q=paris+filetype%3Atxt&lr=lang_en&tbs=lr%3Alang_1en&sxsrf=APwXEdeHXyUYdUxCYQQDHmJhbHzX9aARSA%3A1683049834430&source=hp&ei=ak1RZJHUGN_DkPIP26OtkA8&iflsig=AOEireoAAAAAZFFbejA0Xfqoq__FXx--Ok0S6GQjnGnA&ved=0ahUKEwiRsZOcmdf-AhXfIUQIHdtRC_IQ4dUDCAo&uact=5&oq=paris+filetype%3Atxt&gs_lcp=Cgdnd3Mtd2l6EANQAFgAYN4DaABwAHgAgAE-iAE-kgEBMZgBAKABAqABAQ&sclient=gws-wiz)".
 
-The english-0 corpus was obtained by manually scraping the first results from
-a https://www.google.com/webhp?lr=lang_fr search for "paris filetype:txt".
+The [english-0](dlowe-aux-data/english-0) corpus was obtained by manually scraping the first results from
+a <https://www.google.com/webhp?lr=lang_fr> search for "[paris
+filetype:txt](https://www.google.com/search?q=paris+filetype%3Atxt&lr=lang_fr&tbs=lr%3Alang_1fr&sxsrf=APwXEddcsQ-gMhrqSUJo6omWFUl7jQMASg%3A1683049870736&source=hp&ei=jk1RZLevK_fKkPIPjbWN-AU&iflsig=AOEireoAAAAAZFFbnvExHGkcavB5H8F0xsLAWN2KfYFK&ved=0ahUKEwi3rrutmdf-AhV3JUQIHY1aA18Q4dUDCAo&uact=5&oq=paris+filetype%3Atxt&gs_lcp=Cgdnd3Mtd2l6EANQAFgAYLMDaABwAHgAgAE-iAE-kgEBMZgBAKABAqABAQ&sclient=gws-wiz)".
 
 ##### Results:
 
-* using these corpora as a training set.
-* using several dozen additional text files (obtained by the same methods)
-as a test set.
-* using the included [earlystop.pl](earlystop.pl) script, which stopped after 10000
-iterations.
-* interpreting output of `> 0.5` as "probably English" and `< 0.5` as
-"probably French"
-* produced a network with 100% accuracy
+* Using these corpora as a training set;
+* Using several dozen additional text files (obtained by the same methods) as a
+test set;
+* Using the included [earlystop.pl](earlystop.pl) script, which stopped after
+10000 iterations;
+* Interpreting output of `> 0.5` as "probably English" and `< 0.5` as "probably
+French"
+
+produced a network with 100% accuracy.
 
 #### xor corpora
 
-The xor-1 corpus consists of two files containing '01' and '10' respectively.
+The [xor-1](dlowe-aux-data/xor-1) corpus consists of two files containing `01`
+and `10` respectively.
 
-The xor-0 corpus consists of two files containing '00' and '11' respectively.
+The [xor-0](dlowe-aux-data/xor-0) corpus consists of two files containing `00`
+and `11` respectively.
 
 ##### Results:
 
-* using these corpora as a training set.
-* takes about 8000 iterations to learn xor to within a tolerance of `<0.01`.
+Using these corpora as a training set takes about 8000 iterations to learn xor
+to within a tolerance of `<0.01`.
 
 ### Limitations
 
@@ -277,12 +284,14 @@ bytes in them (I'm looking at you, [smr.c](/1994/smr/smr.c)!)
 
 You must include the trailing directory separator on training directories
 (this allows the program to be portable without wasting precious bytes on
-figuring out how to concatenate directory and file names...)
+figuring out how to concatenate directory and file names...).
 
 Serialized network files are only portable between systems with the same
-floating-point representation and endianness.
+[floating-point](https://en.wikipedia.org/wiki/Floating-point_arithmetic)
+representation and [endianness](https://en.wikipedia.org/wiki/Endianness).
 
-Making sure not to overfit the network to the training data is a bit of a
+Making sure not to
+[overfit](https://en.wikipedia.org/wiki/Overfitting#Machine_learning) the network to the training data is a bit of a
 black art. I have enclosed [earlystop.pl](earlystop.pl), a wrapper script that implements
 a simple 'early stopping' algorithm; other techniques are possible.
 
@@ -295,8 +304,8 @@ Leaks memory and file descriptors while processing files.
 
 Will crash and die horribly if it runs out of memory.
 
-The Microsoft C compiler doesn't provide a dirent API, so to get this working
-on a Windows system you'll need cygwin+gcc (tested) or a dirent compatibility
+The Microsoft C compiler doesn't provide a `dirent` API, so to get this working
+on a Windows system you'll need cygwin+gcc (tested) or a `dirent` compatibility
 library (untested, but they do exist).
 
 Backpropagation doesn't always converge: if you play with this long enough,
@@ -304,7 +313,8 @@ you'll eventually have a training session that completely fails to converge.
 
 ### Obfuscation
 
-- Zombies! (Since neural networks are modeled after BRAINS, ya know? And
+- [Zombies](https://en.wikipedia.org/wiki/Zombie)! (Since neural networks are
+modeled after [BRAINS](https://en.wikipedia.org/wiki/Brain), ya know? And
 corpus sounds a lot like corpse. And I have 4- and 7-year-old kids ;) )
 - Neural networks are interesting, and while the math isn't terribly difficult,
 their behavior is difficult to fully understand.
@@ -314,7 +324,7 @@ shame to waste it.
 - Lots of magic numbers expressed in various ways.
 - Random abuse of random C trivia.
 - Some textual changes were made to maximize the classification of this program
-by a network trained to recognize ioccc winners ;)
+by a network trained to recognize [IOCCC winners](/winners.html) ;)
 
 ... but mostly zombies!
 
