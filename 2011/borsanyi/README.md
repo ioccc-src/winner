@@ -26,20 +26,22 @@ make
 
 ## Judges' remarks:
 
-This is a nice quick histogram plotter.  A useful utility when you need to
-look at the distribution of some data.
+This is a nice quick [histogram](https://en.wikipedia.org/wiki/Histogram)
+plotter.  A useful utility when you need to look at the distribution of some
+data.
 
 Here are some challenges:
 
-You can modify the number of histogram bins and the scaling of the histogram
-by editing the source.  Try to find them!
+You can modify the number of histogram
+[bins](https://en.wikipedia.org/wiki/Data_binning) and the scaling of the
+histogram by editing the source.  Try to find them!
 
 If you look at the source you will notice that the usual array of
 histogram bins is missing. The source contains no arrays and it does not
 use `malloc(3)` or `alloca(3)`. How does it build the histogram?
 
 While the input does not need to be sorted, the histogram output is sorted.
-How does it put the data into buckets?  Why does it fork 22 times?
+How does it put the data into buckets?  Why does it `fork()` 22 times?
 
 ## Author's remarks:
 
