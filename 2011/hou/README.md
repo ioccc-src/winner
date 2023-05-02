@@ -1,7 +1,7 @@
 # Best self documenting program
 
-    Hou Qiming  
-    <hqm03ster@gmail.com>  
+Hou Qiming   
+<hqm03ster@gmail.com>  
 
 ## To build:
 
@@ -13,6 +13,12 @@ make
 
 ```sh
 ./hou 'a calculator expression -- see the C Code for details'
+```
+
+More generally:
+
+```sh
+./hou expression
 ```
 
 ## Try:
@@ -33,7 +39,7 @@ warnings under the most strict pedantic mode of gcc and clang.
 The first example, along with the correct result appears in the
 source code. What does it mean?
 
-The calculator obeys the precendence rules and allows parenthesis,
+The calculator obeys the precedence rules and allows parenthesis.
 
 ```sh
 ./hou '1+2*3'
@@ -54,7 +60,7 @@ Comments would almost be redundant.  :-}
 
 ### The ASCII art is valid C code
 
-Not just fancy formatted comment removed by the C Pre-processor
+... and not just fancy formatted comment removed by the C Pre-processor.
 
 ### The only multi-byte strings are format strings
 
@@ -87,26 +93,26 @@ supported functionality using embedded ASCII art.
   after preprocessing. No string-encoded lookup table is used.
 - The example input and its expected output are both algorithmically significant.
 - The button layout is also significant.
-- The actual syntax being parsed is not the obvious, despite being
+- The actual syntax being parsed is not that obvious, despite being
   functionally equivalent for all correct inputs.
 
 ### Portability
 
-- This program requires "argv" to point to writable memory. It doesn't require
+- This program requires `argv` to point to writable memory. It doesn't require
   the actual argv strings to be writable, though.
 - This program requires ASCII.
-- This program doesn't work with %e style numbers like "1e-4".
+- This program doesn't work with `%e` style numbers like `1e-4`.
 - Some seemingly redundant code works to eliminate warnings and evade a gcc bug.
 
 ### Spoilers
 
-The parser parses function names, substraction, and division as single-letter
+The parser parses function names, subtraction, and division as single-letter
 unary operators. A bitmask encoded hash table is used to check no-ops/digits
 and another hash function maps the ASCII to a function ordinal, which is then
 executed by the button panel.
 
-Both hash functions are found using a separate search program. Another program
-is used to find a way to format one hash function as example input such that
+Both hash functions were found using a separate search program. Another program
+was used to find a way to format one hash function as example input such that
 it produces something resembling the bitmask hash table as part of its output.
 
 ## Copyright and CC BY-SA 4.0 License:
