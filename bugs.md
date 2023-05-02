@@ -195,6 +195,8 @@ Please help us by writing alternative code!
 
 ## STATUS: main() function args not allowed - please help us fix
 
+At this time all of these have been fixed but the below is what it's all about.
+
 Entries with this status have a problem in that the args to main() are not of a
 specific type due to this being allowed in earlier C. Some compilers like clang
 have a deficiency where they do not allow this so these entries do not work with
@@ -1050,6 +1052,24 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing))! :-) ).
 
 
 # 2001
+
+## [2001/anonymous](2001/anonymous/anonymous.c) ([README.md](2001/anonymous/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this so that it
+works in modern systems but he notes that the program
+[anonymous.ten.c](2001/anonymous/anonymous.ten.c) **MUST** be compiled as a
+32-bit ELF binary! This because the program acts on 32-bit ELF binaries. If you
+cannot use `-m32` on this file the program **will** almost certainly crash but
+in no case will it work properly.
+
+This means that for macOS it will not work. Why will this not work in macOS?
+Because Apple saw to it to make it very hard to compile 32-bit binaries (thanks
+Apple for ruining some IOCCC entries! :-) :-( ). This appears to be even harder
+with the Apple silicon chip. Thus this entry will not work with macOS unless you
+have an older, out of date version.
+
+Other BSD Unices were not tested.
 
 ## [2001/bellard](2001/bellard/bellard.c) ([README.md](2001/bellard/README.md))
 ## STATUS: doesn't work with some platforms - please help us fix

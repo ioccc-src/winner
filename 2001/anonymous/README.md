@@ -15,25 +15,53 @@ make
 ./anonymous x86_program
 ```
 
-NOTE: [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed both the
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed both the
 supplementary program and the program itself, both of which segfaulted. He
-managed to do this with linux but it will not work with macOS (see below why);
-this is not a bug but a feature inherent in what it does. He said this took
-serious debugging and skill (shameless self promotion but it's true :-) ) and we
-thank him _very much_!
+managed to do this with linux but it will not work with macOS (see
+[bugs.md](/bugs.md) for why this is); this is not a bug but a feature inherent
+in what it does. He said this took serious debugging and skill (shameless self
+promotion but it's true :-) ) and we thank him _very much_! But what needed to
+be changed? Although it took a fair bit of debugging it turns out all that
+needed to be changed was:
 
-Why does this not work on macOS? Because Apple has made it very hard to compile
-32-bit programs. It's even harder with the Apple silicon chip. Thus this will
-have to remain for linux only. BSD was not tested. 
+- `#include <sys/mman.h>` for `mmap()`.
+- have `main()` call another function which is the recursive function; this
+prevented `main()` from entering an infinite loop.
 
-WARNING: this will somewhat destroy files that it is used on. See the author's
-warning about this.
+Without either of these it would crash and prevent modification of the 32-bit
+[ELF](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) (not elf :-)
+) binary. The following change was also made to be more portable, in case the
+constants `PROT_READ` and/or `PROT_WRITE` are not standardised:
+
+Change `3` in the call to `mmap()` to be `PROT_READ|PROT_WRITE`: just in case
+`PROT_READ|PROT_WRITE` does not equal 3 (though it seems to be equal in both
+macOS and linux).
+
+NOTE: there might be educational value to see the progress of this fix; if you
+wish to see, try:
+
+```sh
+git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..93aa8d79f208dcccc3c5a2370a727b5cf64e9c53 anonymous.c
+git diff 93aa8d79f208dcccc3c5a2370a727b5cf64e9c53..c48629017117379a52b1a512ef8f2593ca9569c8 anonymous.c
+git diff c48629017117379a52b1a512ef8f2593ca9569c8..efdee208a2bc650256637b9357ddfd0de82d2f41 anonymous.c
+git diff efdee208a2bc650256637b9357ddfd0de82d2f41..e9a3f77ea3b209e63ac3f9c06bb84ad86e5ea706 anonymous.c
+```
+
+### WARNING on note from the author
+
+The author suggested that this will somewhat destroy the binaries this touches
+but Cody did not observe this. It does indeed modify the files as the script
+below will show you (though not all files are modified: can you figure out why
+that is?) but Cody did not notice any problems in using them. Perhaps it's
+something he's not aware of. If you follow the try commands below you will
+notice that although the binaries do differ it's not many differences. See the
+author's warning about this.
 
 ### INABIAF - it's not a bug it's a feature! :-)
 
 This entry will not work on 64-bit binaries! The program itself can be compiled
-as 64-bit but the files it processes must be 32-bit binaries. Not doing this
-will likely cause a crash or cause your computer [halt and catch
+as 64-bit but the files it processes must be 32-bit ELF binaries. Not doing this
+will likely cause a crash or cause your computer to [halt and catch
 fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)! :-)
 
 This entry will also very likely crash if no arg is specified. It might do
@@ -42,8 +70,7 @@ something funny if you run it on itself as well but see below :-)
 ## Try:
 
 ```sh
-make anonymous.ten
-./anonymous anonymous.ten
+./try.me.sh
 ```
 
 What happens if the x86 program has already been modified by this program?
@@ -51,7 +78,6 @@ What happens if the x86 program has already been modified by this program?
 What happens if you try it on another file like [anonymous.c](anonymous.c)? Can
 you recompile it okay? What if you run it on `anonymous` itself? Can you run the
 program successfully after it without recompiling?
-
 
 
 ## Judges' remarks:
