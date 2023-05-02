@@ -1420,10 +1420,10 @@ proper prototype breaks them.
 2. Another possible problem is the abuse of `setjmp()` and `longjmp()` which is
 known to be a problem, at least as he interprets it in his tired head (and less
 experience with `longjmp`). In particular:
-> The longjmp() routines may not be called after the routine which called the
-> setjmp() routines returns.
-See also the NOTES section of the linux man pages for `setjmp(3)` and
-`longjmp(3)`.
+    > The longjmp() routines may not be called after the routine which called the
+    > setjmp() routines returns.
+    See also the NOTES section of the linux man pages for `setjmp(3)` and
+    `longjmp(3)`.
 3. The main() originally returned a call to main() which appeared to be an
 infinite recursion at least as it was; now it returns a call to poke() (since
 it's a poker game) which has the same number and type of args (1, `char *`) that
