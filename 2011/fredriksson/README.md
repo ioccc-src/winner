@@ -28,12 +28,12 @@ will likely cause the program to dump core.
 
 ## Judges' remarks:
 
-The author of this entry was making sure that it does not win the
-"Best Short Program" award.  On the outside, the program behaves
-as an approximate grep.  On the inside, it is a Burrows-Wheeler
-transform decompressor that produces the source code of the actual
-obfuscated approximate grep program and calls it. As an exercise,
-try writing the compressor.
+The author of this entry was making sure that it does not win the "Best Short
+Program" award.  On the outside, the program behaves as an approximate `grep`.
+On the inside, it is a [Burrows-Wheeler
+transform](https://en.wikipedia.org/wiki/Burrows-Wheeler_transform) decompressor
+that produces the source code of the actual obfuscated approximate `grep`
+program and calls it. As an exercise, try writing the compressor.
 
 ## Author's remarks:
 
@@ -49,7 +49,7 @@ To search regexp from file, do:
 ./fredriksson [-icvtnk#] regexp < file
 ```
 
-Pipes may not work, see the section Limitations.
+Pipes might not work, see the section Limitations.
 The options `-i`, `-c`, `-v` and `-n` are the classic ones:
 
 * `-i`	Ignore case.
@@ -61,28 +61,34 @@ The options `-i`, `-c`, `-v` and `-n` are the classic ones:
 * `-n`	Prefixes each printed line by its line number (only if
 	`-c` was not given).
 
-This version of grep recognizes two more options, not present in normal
-grep implementations:
+This version of `grep` recognizes two more options, not present in normal
+`grep` implementations:
 
 * `-kN`	Permit `N` insertions, deletions or mismatches of characters in the
-	matches (aka edit-distance). E.g. "obfuscated" matches "obfuscation"
-	with one deletion and two mismatches. Likewise, "obfuscate" and
-	"oversimplify" match with 7 edit operations. The default is `-k0`
+	matches (aka
+	[edit-distance](https://en.wikipedia.org/wiki/Edit_distance)). E.g.
+	"`obfuscated`" matches "`obfuscation`"
+	with one deletion and two mismatches. Likewise, "`obfuscate`" and
+	"`oversimplify`" match with 7 [edit
+	operations](https://en.wikipedia.org/wiki/Edit_distance#Formal_definition_and_properties). The default is `-k0`
 	(i.e. exact match).
 
-* `-t`	Add local transpositions to the set of allowed edit-operations.
-	That is, "ab" matches "ba" with one transposition (swap), and
-	"obfuscated" matches "bofsuact" with three swaps and two insertions,
+* `-t`	Add local transpositions to the set of allowed
+	[edit-operations](https://en.wikipedia.org/wiki/Edit_distance#Formal_definition_and_properties).
+	That is, "`ab`" matches "`ba`" with one transposition (swap), and
+	"`obfuscated`" matches "`bofsuact`" with three swaps and two insertions,
 	i.e. use `-tk5` to find this.
 
-Of course, one could construct a standard regexp that matches the same
+Of course, one could construct a standard
+[regexp](https://www.regular-expressions.info) that matches the same
 patterns, but the problem is that such a regexp grows exponentially in
-size when the number of allowed edit operations is increased.
+size when the number of allowed [edit
+operations](https://en.wikipedia.org/wiki/Edit_distance#Formal_definition_and_properties) is increased.
 
 This version does not recognize all regular expressions, but the
 following are allowed:
 
-* Wild card: `.` (dot) matches any character.
+* Wildcard: `.` (dot) matches any character.
 
 * Bracket expression: list of characters enclosed by `[` and `]`,
   matches any single character in the list.
@@ -92,7 +98,7 @@ following are allowed:
   two characters (inclusive). E.g. `[a-d]` is the same as `[abcd]`.
 
 The special characters must be escaped, if they are to be taken
-literally (i.e. use e.g. `\.` to match period). You might want to protect
+literally (e.g. `\.` to match period). You might want to protect
 these with `'`, i.e. use `'foo\[bar'` instead of `foo\[bar`. If you want to
 use the literal `-` in bracket expression, protect that too (`\-`),
 otherwise this is not needed. Note that the syntax differs from standard
@@ -101,13 +107,14 @@ expressions by putting `]` as the first character, and putting `-` last.
 
 ### Other uses
 
-* You can use this in place of cat. Just say
+* You can use this in place of [cat](https://en.wikipedia.org/wiki/Cat_(Unix)).
+Just say
 
 ```sh
 ./fredriksson -k3 cat < file
 ```
 
-* Like with cat, you can append line numbers too:
+* Like with `cat`, you can append line numbers too:
 
 ```sh
 ./fredriksson -nk3 cat < file
@@ -124,11 +131,11 @@ expressions by putting `]` as the first character, and putting `-` last.
   system, such as Bus error). This is a feature, that can be used to detect
   overly long lines in the input file, such as checking the length of one
   liners in IOCCC entries, just adjust your stack size to a suitable
-  threshold, and search for "ioccc", with option `-vk5`.
+  threshold, and search for "`ioccc`", with option `-vk5`.
 
 ### Limitations and remarks
 
-* Using warning options (such as -Wall) when building gives a lot of warning,
+* Using warning options (such as `-Wall`) when building gives a lot of warning,
   such as `suggest parentheses around '&&' within '||'`, `value computed is
   not used`, `implicit declaration of function 'putchar'`, `implicit
   declaration of function 'getchar'`, `control reaches end of non-void
@@ -148,7 +155,7 @@ expressions by putting `]` as the first character, and putting `-` last.
   longer. However, no assumptions are made for `sizeof(long)`. In fact,
   you can easily use `long long` instead,
 
-* Depending on the file, may require a lot of stack space. If the
+* Depending on the file, it might require a lot of stack space. If the
   program segfaults (because of this), say
 
 		ulimit -s unlimited
@@ -159,7 +166,7 @@ expressions by putting `]` as the first character, and putting `-` last.
   handle this just fine even in C89 mode, though.
 
 * The code should be reasonably portable, it assumes standard ASCII codes
-  for each char, and that a C compiler is on $PATH; the latter is hard coded
+  for each char, and that a C compiler is on `$PATH`; the latter is hard coded
   to be 'gcc', but any compiler would work, provided that it supports
   C99, or long lines as an extension. This code has been tested on:
 
@@ -177,7 +184,8 @@ expressions by putting `]` as the first character, and putting `-` last.
 ### Obfuscations (a.k.a. spoilers...)
 
 * The initialized char array includes the source code of the real program,
-  as well as its name and commands to build and run it, all Burrows-Wheeler
+  as well as its name and commands to build and run it, all
+  [Burrows-Wheeler](https://en.wikipedia.org/wiki/Burrows-Wheeler_transform)
   -transformed, then run-length-encoded with unary coding. The main program
   extracts and builds that, and then calls it. More precisely, the command
   to build is
@@ -193,14 +201,12 @@ expressions by putting `]` as the first character, and putting `-` last.
   from the submitted entry.)
 
 * The code demonstrates several useful programming paradigms, such as
-
 	- recursion to remove all loops
-	- sub routines (`main()` contains several logical sub routines,
+	- subroutines (`main()` contains several logical subroutines,
 	  selected by the first argument)
 	- function pointers
 
 * Algorithmically, it incorporates the following
-
 	- (inverse) Burrows-Wheeler transform (used also e.g. in bzip2)
 	- data compression (really expansion :-), run-lenght-encoding,
 	  unary coding (this is why it is expansion rather than compression)
@@ -212,10 +218,9 @@ expressions by putting `]` as the first character, and putting `-` last.
 	- self extracting, compiling and running code
 
 * As a C program, it demonstrates that
-
 	- a C subset without reserved words is complete enough,
 	  (excluding data type specific things (`int`, `char`, `void` ...))
-	- only letters are needed (i.e. the digits 0-9 are not)
+	- only letters are needed (i.e. the digits `0-9` are not)
 	- only one statement is enough to code any program (plus
 	  variable definitions)
 	- white space has other uses than just indenting the code
@@ -238,7 +243,7 @@ expressions by putting `]` as the first character, and putting `-` last.
 
 		./fredriksson -ck0 [0-9] < fredriksson.c
 
-  This should print 1, as there is a number '3' in the char array (only).
+  This should print 1, as there is a number `3` in the char array (only).
   You can also try
 
 		./fredriksson -ck0 [0-9] < ag.c
@@ -251,7 +256,7 @@ expressions by putting `]` as the first character, and putting `-` last.
 
   One reason for this is that the code builds (some of the) constant
   values from string literal `"\b"`, except that the backspace `\b` is not
-  escaped like that, the source uses the raw ascii value (010 octal) instead.
+  escaped like that; the source uses the raw ascii value (010 octal) instead.
   Thus when viewing with cat or something, that backspace erases the leading
   quotation mark. Makes it appear uncompilable, and it is: if you copy-paste
   the cat output from terminal to some editor, save it, the result would not
