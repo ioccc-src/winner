@@ -112,8 +112,8 @@ OBJ= ${PROG}.o
 DATA= mad_world.mod randowan.mod raw2wav
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
