@@ -27,6 +27,11 @@ make
 ./endoh1 < fountain.txt
 ```
 
+Also try using `endoh1_color` as you would `endoh1` above. `make` will compile
+this by default.
+
+
+
 ### Alternate code:
 
 An alternate version of this entry, `endoh1.alt.c`, is provided.
@@ -42,7 +47,7 @@ Use `endoh1.alt` as you would `endoh1` above.
 
 ## Judges' remarks:
 
-Let's play Jeopardy!
+Let's play [Jeopardy!](https://en.wikipedia.org/wiki/Jeopardy!)
 
 *   A: An obfuscated program that deals with complex numbers and produces animated ASCII graphics.
 *   Q: What is a Mandelbrot simulator?
@@ -59,7 +64,7 @@ One configuration file was inspired by an [XKCD what if? entry](http://whatif.xk
 
 ### Synopsis
 
-**DO NOT FORGET "-DG=1 -DP=4 -DV=8"** and make your terminal window larger
+**DO NOT FORGET** `-DG=1 -DP=4 -DV=8` and make your terminal window larger
 than 80 x 25.
 
 ```sh
@@ -73,6 +78,7 @@ cc endoh1.c -DG=1 -DP=4 -DV=8 -D_BSD_SOURCE -o endoh1 -lm
 
 ### What it is
 
+```
     ,___. ,.       ,.    ,.   ,___. ,.              ,.       ,.
     |/--' ||       `'    ||   |/--' `'              ||       |\_.
     |\__. || ,. ,. ,. ,__/|   |\__. ,. ,____. ,. ,. ||  ,_.  |/-'  ,_.  ,__.
@@ -99,10 +105,10 @@ cc endoh1.c -DG=1 -DP=4 -DV=8 -D_BSD_SOURCE -o endoh1 -lm
               `-'`'   `-'`-'  `-'`-'           `-'`'    `'`'  `'`' `'`'
 
 
-This program is a fluid simulator using "Smoothed-particle hydrodynamics (SPH)"
-method.
+```
 
-<http://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics>
+This program is a fluid simulator using [Smoothed-particle hydrodynamics
+(SPH)](http://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics) method.
 
 The SPH particles represent the fluid flow.  Particles have information about
 the position, density, and velocity.  In every simulation step, they are
@@ -117,20 +123,22 @@ The compilation options `-DG=1 -DP=4 -DV=8` represent, respectively, the factor
 of gravity, pressure, and viscosity.  By changing their values, you can see
 different fluid behavior.
 
-"Marching square"-like algorithm is used to render the particles.
-
-<http://en.wikipedia.org/wiki/Marching_squares>
+[Marching square](http://en.wikipedia.org/wiki/Marching_squares)-like algorithm
+is used to render the particles.
 
 ### Portability
 
 The program requires a C99 compiler; it uses `complex` types and one-line
-comments.  It also uses `usleep`, which may require `-D_BSD_SOURCE` or somewhat
+comments.  It also uses `usleep`, which may require `-D_BSD_SOURCE` or so
 to build with no warning.  Under these conditions, it should be portable.
-At least, recent compilers with `-std=c99 -Wall -W -Wextra -pedantic` says
+At least, recent compilers with `-std=c99 -Wall -W -Wextra -pedantic` say
 nothing.
 
-    gcc -DG=1 -DP=4 -DV=8 -D_BSD_SOURCE -std=c99 -Wall -W -Wextra -pedantic endoh1.c
-    clang -DG=1 -DP=4 -DV=8 -D_BSD_SOURCE -std=c99 -Wall -W -Wextra -pedantic endoh1.c
+```sh
+gcc -DG=1 -DP=4 -DV=8 -D_BSD_SOURCE -std=c99 -Wall -W -Wextra -pedantic endoh1.c
+
+clang -DG=1 -DP=4 -DV=8 -D_BSD_SOURCE -std=c99 -Wall -W -Wextra -pedantic endoh1.c
+```
 
 I expect it to work in any Unix-like environment.  VTxxx/ANSI sequences are
 used to clear screen and move cursor to home.
@@ -146,11 +154,12 @@ First of all, the source code itself serves as an initial configuration.
 Preprocessing directives (such as `#include`)'s `#` serve as walls.
 
 This program uses `double complex` to represent any 2D vector.  But, note that
-x-axis and y-axis is swapped (real axis = y-axis, imaginary axis = x-axis).
+`x-axis` and `y-axis` is swapped (real axis = y-axis, imaginary axis = x-axis).
 The purpose of swapping is not only obfuscation, but also short coding: for
 example, to add gravity to total force, `force += G` suffices, rather than
 `force += G*I`.
-(Incidentally, you can exert horizontal gravity by using, such as, `-DG=I`)
+
+(Incidentally, you can exert horizontal gravity by using for instance `-DG=I`)
 
 Every five entries of `double complex a[]` contain information of one particle:
 position, wall-flag, density, force, and velocity, in turn.
@@ -164,29 +173,29 @@ casting) it to an integer-type variable.
 
 ### Notes about Additional Files
 
-"logo.txt" is a source of the logo in this remark file.
+[logo.txt](logo.txt) is a source of the logo in this remark file.
 
-"column.txt" is a water column collapse, which is a popular demo of SPH.
+[column.txt](column.txt) is a water column collapse, which is a popular demo of SPH.
 
-"pour-out.txt" pours you a cup of tea.
+[pour-out.txt](pour-out.txt) pours you a cup of tea.
 
-"tanada.txt" simulates "Terrace farming".  ("Tanada" means a "terraced rice
-fields" in Japanese.)
+[tanada.txt](tanada.txt) simulates "Terrace farming".  ("Tanada" means a "[terraced rice
+fields](https://en.wikipedia.org/wiki/Terrace_(earthworks))" in Japanese.)
 
-"clock.txt" is a "water" clock created by HAMANO Tsukasa.
+[clock.txt](clock.txt) is a "water" clock created by HAMANO Tsukasa.
 
-Other \*.txt files are due to the judges.
+Other `*.txt` files are from the judges.
 
 
-"endoh1\_color.c" is a variant that shows the density by using terminal 256
+[endoh1_color.c](endoh1_color.c) is a variant that shows the density by using terminal 256
 colors.
 
-### Acknowledgment
+### Acknowledgments
 
 I would like to thank my wife @hirekoke for her teaching me the SPH method.
 
 The judges <strike>ordered</strike> suggested creating a color version
-after the judgment.
+after the contest.
 
 The judges and HAMANO Tsukasa (The silver medalist at this IOCCC) kindly
 provided many configuration files.
