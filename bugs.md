@@ -11,7 +11,11 @@ The following is a known list of **BUGS and (mis)FEATURES** in IOCCC winners.
 Can you fix/improve entries not under the INABIAF (it's not a bug it's a
 feature)? You are **VERY WELCOME** to try.
 
-Please submit your fixes in a [GitHub pull
+NOTE: currently this file is mostly for us. We are not yet ready for help except
+for dead links and missing files. We will remove this notice when this changes.
+We will note this below for each status we're not yet ready for help with.
+
+As far as how to help: please submit your fixes in a [GitHub pull
 request](https://github.com/ioccc-src/temp-test-ioccc/pulls) (with ONE PULL
 REQUEST *PER* FIX, please)!
 
@@ -35,6 +39,12 @@ it takes away some instructional value or even usability. _In this case we're
 **VERY SORRY_** about it: it's a fine line, we know, and we tried to use careful
 judgement but invariably some might have been the wrong decision. Thank you for
 understanding!
+
+I ([Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson))
+accept the blame in some cases; when working on getting entries to compile
+sometimes I got carried away with it and there might be that I fixed some things
+that should not have been fixed. I am correcting these mistakes as I come across
+them but if I miss any please let the judges or me know.
 
 
 ### ON **ALL** FIXES / IMPROVEMENTS / CHANGES
@@ -132,14 +142,14 @@ Hopefully with the example entries listed above you get the idea.
 
 ### General request on original code:
 
-If you're fixing an entry please make as few changes as possible! This is to
+If you're fixing an entry please make as _FEW CHANGES AS POSSIBLE_! This is to
 make it as close to the original but allowing it to work. This might be less of
 a problem when providing alternate versions but it might still be nice to have
 it as close as possible to the original. See also below two points.
 
 ### Request for one-liners:
 
-For one-liners please keep the file one line if at all possible! If it needs an
+For one-liners _PLEASE KEEP THE FILE ONE LINE IF AT ALL POSSIBLE_! If it needs an
 include you can update the Makefile `CINCLUDE` variable. For instance if it
 needs `stdio.h` you could do `-include stdio.h`. Please leave a space after the
 `=` in the Makefile. You may also have extra long lines if this seems useful to
@@ -149,15 +159,23 @@ consider a one-liner. Thank you!
 
 ### On layout of program source:
 
-If you make changes PLEASE TRY and keep the source code layout as close to the
-original as possible. This might not always be possible and if you have an
+If you make changes _PLEASE TRY AND KEEP THE SOURCE CODE LAYOUT AS CLOSE TO THE
+ORIGINAL AS POSSIBLE_. This might not always be possible and if you have an
 editor that does formatting it can cause problems. Sometimes formatters can even
 break code! [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) has
 experienced this many times with vim so he tends to disable all format options
-when formatting code.
+when formatting code. In vim you should be able to do that with:
+
+```
+:set formatoptions=
+```
+
 
 
 ## STATUS: known bug - please help us fix
+
+NOTE: we're still locating entries and working on fixes with this status so we're not yet
+ready for help. We will remove this when we are.
 
 Entries with this status have one or more bugs that need to be fixed. Are you
 able to fix it? We welcome your help!
@@ -169,11 +187,17 @@ careful judgement when fixing bugs please!
 
 ## STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
 
+NOTE: we're still locating entries and working on fixes with this status so we're not yet
+ready for help. We will remove this when we are.
+
 Entries with this status might or might not have a bug possibly depending on the
 system.  In these entries we don't have the appropriate systems to test and fix
 any problems.
 
 ## STATUS: probable bug (possibly depending on system) - please help test and if necessary fix
+
+NOTE: we're still locating entries and working on fixes with this status so we're not yet
+ready for help. We will remove this when we are.
 
 Entries with this status almost certainly have a bug or some other problem. The
 issue or issues might depend on the system much like the above _STATUS: possible
@@ -182,10 +206,16 @@ bug (possibly depending on system)_.
 
 ## STATUS: doesn't work with some platforms - please help us fix
 
+NOTE: we're still locating entries and working on fixes with this status so we're not yet
+ready for help. We will remove this when we are.
+
 Entries with this status do not work under some OSes and/or architectures (and/or
 something else?). Please help us to fix it!
 
 ## STATUS: doesn't work with some compilers - please provide alternative code
+
+NOTE: we're still locating entries and working on fixes with this status so we're not yet
+ready for help. We will remove this when we are.
 
 Some entries do not work with some compilers. A good example is
 [1992/lush](1992/lush/lush.c) which uses error messages from the compiler to
@@ -195,7 +225,8 @@ Please help us by writing alternative code!
 
 ## STATUS: main() function args not allowed - please help us fix
 
-At this time all of these have been fixed but the below is what it's all about.
+NOTE: it appears that all of these have been fixed. However some still have
+problems. This is what the status means, however:
 
 Entries with this status have a problem in that the args to main() are not of a
 specific type due to this being allowed in earlier C. Some compilers like clang
@@ -223,6 +254,9 @@ with compilers that are less strict.
 
 ## STATUS: compiled executable crashes - please help us fix
 
+NOTE: we're still locating entries and working on fixes with this status so we're not yet
+ready for help. We will remove this when we are.
+
 While such entries can compile, the resulting executable sometimes or always
 crashes.
 
@@ -230,6 +264,9 @@ NOTE: this does NOT apply to entries under the INABIAF status (though they're
 not mutually exclusive in some cases).
 
 ## STATUS: uses gets() - change to fgets() if possible (in some cases getline() works)
+
+NOTE: we're still locating entries and working on fixes with this status so we're not yet
+ready for help. We will remove this when we are.
 
 Entries with this status use `gets()` which is unsafe because it has no limit on
 the length of the string. [Cody Boone
