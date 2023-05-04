@@ -1,7 +1,8 @@
 # Best short program
 
-    Seonghoon Kang  
-    <kang.seonghoon@mearie.org>  
+Seonghoon Kang  
+<kang.seonghoon@mearie.org>  
+<http://mearie.org>
 
 ## To build:
 
@@ -73,7 +74,7 @@ It does *not* accept some spelt numbers, which I found mostly irrelevant:
 This program is quite portable, only requiring the following:
 
 * The signature `int main(int, int)` should be accepted by the linker. (Original
-  version only)
+  version only).
 * `char` should be at least 8 bits long (as dictated by the standard), `int`
   should be at least 32 bits long, `long long` should be at least 64 bits long.
 * Both the compiler and execution environment should use an ASCII-compatible
@@ -120,17 +121,21 @@ Other obfuscations are more subtle:
 But the most important obfuscation is the clever construction of lookup table.
 The program uses 11 different characters required for recognizing 22 lexemes:
 
+```
 	zero        one         tw-         th(i)r-     fo(u)r-     fi-         six-
 	seven-      eigh-       nin-        ten         eleven      twelve
 	hundred(s)  thousand(s) million(s)  billion(s)  trillion(s)
 	a           and         -teen       -ty
+```
 
 So that they are internally represented as like:
 
+```
 	r        n        tw-      tr-      fr-      f-       s-
 	sn-      g-       nn-      tn       ln       twl
 	nr(s)    tsan(s)  lln(s)   blln(s)  trlln(s)
 	a        an       -tn      -ty
+```
 
 The stemmer recognizes the longest matching prefix, so every lexeme can be
 recognized by at most three characters (e.g. `trl` instead of `trlln`). This is
