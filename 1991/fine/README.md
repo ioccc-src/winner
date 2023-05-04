@@ -5,7 +5,7 @@ Ohio State University
 Department of Computer and Information Science  
 2036 Neil Avenue Mall  
 Columbus, Ohio  43210  
-USA  
+US  
 
 ## To build:
 
@@ -37,8 +37,8 @@ Read the last line backwards! Credit goes to [Merlyn LeRoy (Brian
 Westley)](/winners.html#Brian_Westley) for that. See his 22 August 1992
 [rec.puzzles
 post](https://groups.google.com/g/rec.puzzles/c/z_xVPMRVBtg/m/lyEYSAeBD4gJ). To
-those who have a harder time reading backwards it says: `Gary lent the rug`
-from `the rug gary lent`!
+those who have a harder time reading backwards it says: `Gary lent the rug`,
+rotated from `the rug gary lent`!
 
 
 ## Judges' remarks:
@@ -54,7 +54,7 @@ How does this program work?  Which 3 bytes of C code can be changed
 into 2 bytes, allowing the program to still work, but also stripping 
 the high bit off of some input?
 
-## Author's remarks
+## Author's remarks:
 
 The author wishes to thank J Greely for the last 6 bytes.
 

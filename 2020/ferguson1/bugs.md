@@ -30,7 +30,9 @@ simply a fun consequence of the features I did implement.
 Let's say you want to verify that the evade mode is at the right count. How
 can you verify it without modifying the code? Try:
 
-		SIZE=0 SHED=1 SHEDS=1 EVADE=10 ./prog
+```sh
+SIZE=0 SHED=1 SHEDS=1 EVADE=10 ./prog
+```
 
 Since you start out at size 0 and you shed every movement then when you're
 size 10 (as long as you don't eat a bug of course!) the bug should evade.
@@ -50,7 +52,9 @@ don't at this time remember any I might have done.
 One way to show this is in full is to set the initial size and growth size to a
 high value; then try each one individually. For example:
 
-		    SIZE=100 ./prog
+```sh
+SIZE=100 ./prog
+```
 
 In this case after you make the first move the snake will keep growing and
 so the snake tail stays in the same spot until after it's the 'full size'.
@@ -59,7 +63,7 @@ start to move too (i.e. if the tail isn't moving it is growing or else paused).
 
 In several tests I set the initial size to a high value, the max to a higher
 value still and enabled cannibalism and much of the screen was full of the snake
-before it started to move. The [cannibalism.log][] has some examples of both
+before it started to move. The [cannibalism.log.md][] has some examples of both
 cannibalism and a long snake that didn't move for most of the game.
 
 If however you let the snake get to the full size then eat a bug there can
@@ -91,7 +95,7 @@ you can safely go back on yourself even without cannibalism enabled. This is
 intentional; a snake size of 0 is pointless but why should it not be playable
 anyway?
 
-If SIZE < 0 you'll likely win straight away since it's unsigned and it'll wrap
+If `SIZE < 0` you'll likely win straight away since it's unsigned and it'll wrap
 back to the maximum so you will win automatically (this is the same as the
 second mode the judges suggested with `SIZE=-1 ./prog`).
 
@@ -111,37 +115,49 @@ way negative size will force a win.
 
 Here's a fun output:
 
-		    < <<<+
+```
+< <<<+
+```
 
 That's from:
 
-		    SHED=1 SHEDS=-1 ./prog
+```sh
+SHED=1 SHEDS=-1 ./prog
+```
 
 And right after that you would see:
 
-		    YOU WIN!
-		    X:72/156 Y:20/41 S:997/997 B:0
+```
+YOU WIN!
+X:72/156 Y:20/41 S:997/997 B:0
+```
 
 Try this though:
 
-		    SHEDS=-1 SHED=25 ./prog
+```sh
+SHEDS=-1 SHED=25 ./prog
+```
 
 And you'll see that you start to be the normal size but then you leave your
 head several places until you end up getting to the max size (by way of it
 being unsigned). This isn't a bug even if it might seem like one. In fact
 this is the basis of the grow/shrink mode of play that I talk about in the
-[gameplay.md][] ([gameplay.html][]) file.
+[gameplay.html][] ([gameplay.md][] on GitHub) file.
 
 Here's another thing to be aware of. Let's say you do:
 
-		    SIZE=1 GROW=-1 ./prog
+```sh
+SIZE=1 GROW=-1 ./prog
+```
 
 How many bugs will it take before you win? In fact it's two: you would see the
 head twice: the second time once you 'shrink' down to size 0; it would then be
 that if you get another bug you will be at the 'max size':
 
-		    YOU WIN!
-		    X:81/156 Y:35/41 S:997/997 B:2
+```sh
+YOU WIN!
+X:81/156 Y:35/41 S:997/997 B:2
+```
 
 #  <a name="bitetail" href="#toc">'I was a few places behind my tail and I ran into it!'</a>
 
@@ -161,17 +177,21 @@ For instance it might look like this (the first line is as it happens, the
 second pointing to where it happens and the third being what's left after the
 rest of the snake has gone through). Doing `SHED=100 SHEDS=-1`:
 
-		    ooooooooo>ooo>
-			     ^
-			     >
+```
+ooooooooo>ooo>
+	 ^
+	 >
+```
 
-The ^ points to the part that's split from the snake and which will be
+The `^` points to the part that's split from the snake and which will be
 there on its own after the snake passes through it. Here's an example with
 it being `SHEDS=-3`:
 
-		    <ooo<ooooo
-			^^^
-			<oo
+```
+<ooo<ooooo
+    ^^^
+    <oo
+```
 
 If you go through the part that has split (which for some might be difficult
 to see whilst the snake has not fully left its skin) you won't run into
@@ -187,14 +207,16 @@ gameplay modes.
 
 # <a name="buginsnake" href="#toc">It looks like the bug is in the snake</a>
 
-I show a different example in the [crazy.log][] file but what defines a coordinate
+I show a different example in the [crazy.log.md][] file but what defines a coordinate
 which the snake occupies? If the snake breaks apart then the only part
 of the screen the snake is occupying is the place which is actually moving: if
 the snake decreases in size by 3 then the three respective characters you can go
 through safely. But this also means that a bug can go there! So you might see
 something like:
 
-		<*oooooooo
+```
+<*oooooooo
+```
 
 This is because the snake is no longer there: in fact in this run the snake was
 quite a bit lower on the screen and 25 in length.
@@ -214,35 +236,37 @@ the game is 10 x 10. This includes the walls and score line.
 Now the default max snake size is 997 but when the terminal is too small it
 adjusts the max snake size. For 10 lines and 10 columns you would see:
 
-	    $ make test
-	    terminal supports cursor movement
-	    terminal supports making cursor invisible
-	    terminal supports bold
-	    terminal supports colours
+```sh
+$ make test
+terminal supports cursor movement
+terminal supports making cursor invisible
+terminal supports bold
+terminal supports colours
 
-	    terminal rows  10 (7   playable)
-	    terminal cols  10 (8   playable)
+terminal rows  10 (7   playable)
+terminal cols  10 (8   playable)
 
-	    snake size:    49 (max size: 49)
-		  bugs:     9 (max size: 9)
+snake size:    49 (max size: 49)
+      bugs:     9 (max size: 9)
 
-	    at least 28 columns recommended for snake size 49    (is 10)
-	    at least 28 columns recommended for snake size 49    (is 10)
+at least 28 columns recommended for snake size 49    (is 10)
+at least 28 columns recommended for snake size 49    (is 10)
 
-	    1 problem detected (0 fatal).
-	    make: *** [test] Error 1
+1 problem detected (0 fatal).
+make: *** [test] Error 1
+```
 
 First: what's the problem? It's just a warning that for the snake size of 49 the
 recommended size of columns is 28. However this is just for the score text; with
 only 10 columns it will overflow and wrap to the next line(s). But if you observe
 that 49 is the max snake size. How is this derived and why?
 
-With 10 rows and columns it's calculated as 7 * 7 (i.e. it's
+With 10 rows and columns it's calculated as `7 * 7` (i.e. it's
 `(cols-3)*(rows-3)`. However the number of playable locations is in this case 56
 (`playable_rows * playable_columns`). I have played with this many
 times and I do not believe there should be a problem. If there is it's from a
 very poor implementation of rand() and I discuss this in
-[troubleshooting.md][] ([troubleshooting.html][]).
+[troubleshooting.html][] ([troubleshooting.md][] on GitHub).
 
 There I also give some test outputs without the cap in place to give an idea of
 when it became a problem (or would have). In short this is known but I do not
@@ -277,7 +301,7 @@ had to say on it:
 <img src="halfwidth_vs_fullwidth.png">
 
 However the function `mvaddch()` takes a `chtype` which amounts to a C char
-with additional information and so the full width Ｏis too big for the
+with additional information and so the full width `Ｏ`is too big for the
 function call. He reminded me of the old DOS box chars but even if this was
 easily duplicable (and it might be and I don't remember) the logic would
 have to be changed for drawing the snake and in such a way that would change
@@ -294,12 +318,13 @@ suggested it is bugging me I once again here say it's not at all bugging me
 but it is very much appreciated and it means a great deal to me. Cheers.)
 
 
-[crazy.log]: crazy.log
+[crazy.log.md]: crazy.log.md
 [gameplay.md]: gameplay.md
 [troubleshooting.md]: troubleshooting.md
 [troubleshooting.html]: troubleshooting.html
 [gameplay.html]: gameplay.html
-[cannibalism.log]: cannibalism.log
+[gameplay.md]: gameplay.md
+[cannibalism.log.md]: cannibalism.log.md
 [https://en.wikipedia.org/wiki/Halfwidth_and_fullwidth_forms]: https://en.wikipedia.org/wiki/Halfwidth_and_fullwidth_forms
 [spoilers]: spoilers.markdown
 [screenshot of halfwidth vs fullwidth]: halfwidth_vs_fullwidth.png

@@ -1,11 +1,8 @@
 # Best data utility
 
-    Szabolcs Borsanyi  
-    Theoretische Physik  
-    Gaussstraße 20  
-    42097 Wuppertal  
-    Germany  
-    <borsanyi@uni-wuppertal.de>  
+Szabolcs Borsanyi    
+Germany  
+<borsanyi@uni-wuppertal.de>  
 
 ## To build:
 
@@ -29,20 +26,22 @@ make
 
 ## Judges' remarks:
 
-This is a nice quick histogram plotter.  A useful utility when you need to
-look at the distribution of some data.
+This is a nice quick [histogram](https://en.wikipedia.org/wiki/Histogram)
+plotter.  A useful utility when you need to look at the distribution of some
+data.
 
 Here are some challenges:
 
-You can modify the number of histogram bins and the scaling of the histogram
-by editing the source.  Try to find them!
+You can modify the number of histogram
+[bins](https://en.wikipedia.org/wiki/Data_binning) and the scaling of the
+histogram by editing the source.  Try to find them!
 
 If you look at the source you will notice that the usual array of
 histogram bins is missing. The source contains no arrays and it does not
-use malloc or alloca. How does it build the histogram?
+use `malloc(3)` or `alloca(3)`. How does it build the histogram?
 
 While the input does not need to be sorted, the histogram output is sorted.
-How does it put the data into buckets?  Why does it fork 22 times?
+How does it put the data into buckets?  Why does it `fork()` 22 times?
 
 ## Author's remarks:
 
@@ -52,20 +51,20 @@ histogram. I am all too often logged in to a remote machine with
 slow X connection, and a terminal-based program would be of
 great help.
 
-### Limitations:
+### Limitations
 
 * I optimized the output for the data I had around, you might want to adjust
   for your needs. For a great excess of data points the program will crash
   (depending on the available stack).
 * Giving too few (distinct) points can also cause crash (or division by zero).
 * The program expects plain numbers separated by white spaces.
-* ASCII is assumed. 
-* Some POSIX-like system is assumed (fork and wait(NULL) are used)
+* ASCII is assumed.
+* Some POSIX-like system is assumed (`fork()` and `wait(NULL)` are used).
 * Do not give any arguments to the program.
 * Could rounding errors cause the omission of the highest bin? There might be
   empty bins at the edges.
 
-### Obfuscation:
+### Obfuscation
 
 * The program follows a rather unconventional approach to the task
   of histogram building. The usual array of integers (for the histogram

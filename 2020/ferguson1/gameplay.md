@@ -69,20 +69,21 @@ for the input keys.
 # 1. <a name="support" href="#toc">Testing terminal environment/capabilities</a>
 
 Most people probably won't have any issue at all but for those who have any
-problems with the terminal see the [terminals.md][] file for more
-information on the terminal capabilities testing utility I include.
+problems with the terminal see the [terminals.html][] ([terminals.md][] on
+GitHub) file for more information on the terminal capabilities testing utility I
+include.
 
-For troubleshooting other problems see [troubleshooting.md][]
-([troubleshooting.html][]) and [bugs.md][] ([bugs.html][]).
+For troubleshooting other problems see [troubleshooting.html][]
+([troubleshooting.md][] on GitHub) and [bugs.html][] ([bugs.md][] on GitHub).
 
 
 # 2. <a name="input" href="#toc">Input keys</a>
 
--   Left, right, up and down **arrow keys**: Move that direction.
+-   Left, right, up and down **arrow keys**: move that direction.
 
--   'q' (and 'Q'): Quit the game.
+-   `q` (and `Q`): quit the game.
 
--   Space (`' '`): Pause/resume the game (direction keys will also resume).
+-   Space: pause/resume the game (direction keys will also resume).
     Note that no other keys will resume the game; however if you press a key
     that `getch()` picks up on and the game is not paused then it will be as if
     you pressed the current direction key (assuming you already moved the snake).
@@ -106,24 +107,26 @@ below. Note that the top line is the score/status line: the top wall is at line
 (ncurses is the opposite: Y/X). I will parenthesise the numbers below to refer
 to the number in the diagram:
 
-		X:24/49 Y:8/16 S:5/658 B:0
-		##################################################
-		#                                                #
-		#                                                #
-		#                                                #
-		#                                                #
-		#                                                #
-		#                                                #
-		#                       +                        #
-		#                                                #
-		#                                      *         #
-		#                                                #
-		#                                                #
-		#                                                #
-		#                                                #
-		#                                                #
-		##################################################
+```
+X:24/49 Y:8/16 S:5/658 B:0
+##################################################
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+#                       +                        #
+#                                                #
+#                                      *         #
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+##################################################
 
+```
 
 -   The snake (`+`) is at (24),(8). The bug char is `*` and the wall char is
     `#`. When the snake moves the head will be an arrow facing the direction it
@@ -149,66 +152,72 @@ to the number in the diagram:
 ## <a name="playing" href="#toc">Gameplay: Playing the game</a>
 
 
-	    X:39/49 Y:8/16 S:5/658 B:0
-	    ##################################################
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                  oooo>         #
-	    #                                                #
-	    #                                      *         #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    ##################################################
+```
+X:39/49 Y:8/16 S:5/658 B:0
+##################################################
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+#                                  oooo>         #
+#                                                #
+#                                      *         #
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+##################################################
+```
 
 I let the snake grow to its full size (with the head at (39),(8)) and I'm two
 places above the bug so let's go down:
 
-	    X:39/49 Y:9/16 S:5/658 B:0
-	    ##################################################
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                   oooo         #
-	    #                                      v         #
-	    #                                      *         #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    ##################################################
+```
+X:39/49 Y:9/16 S:5/658 B:0
+##################################################
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+#                                   oooo         #
+#                                      v         #
+#                                      *         #
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+##################################################
+```
 
 
 Now you see that the snake is going down and in one move the bug will be eaten.
 Let's do that:
 
-	    X:36/49 Y:10/16 S:10/658 B:1
-	    ##################################################
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                 *                              #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                   ^  o         #
-	    #                                   oooo         #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    ##################################################
+```
+X:36/49 Y:10/16 S:10/658 B:1
+##################################################
+#                                                #
+#                                                #
+#                                                #
+#                 *                              #
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+#                                   ^  o         #
+#                                   oooo         #
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+##################################################
+```
 
 Observe that the bug was eaten and a new bug spawned elsewhere. I went left
 three and then up one and could slither on to the bug.
@@ -220,44 +229,48 @@ By default walls are passable (**WALLS=1**). Let's get to full size and go
 through the top wall:
 
 
-	    X:36/49 Y:15/16 S:10/658 B:1
-	    ##################################################
-	    #                                   o            #
-	    #                                   o            #
-	    #                                   o            #
-	    #                 *                 o            #
-	    #                                   o            #
-	    #                                   o            #
-	    #                                   o            #
-	    #                                   o            #
-	    #                                   o            #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                   ^            #
-	    ##################################################
+```
+X:36/49 Y:15/16 S:10/658 B:1
+##################################################
+#                                   o            #
+#                                   o            #
+#                                   o            #
+#                 *                 o            #
+#                                   o            #
+#                                   o            #
+#                                   o            #
+#                                   o            #
+#                                   o            #
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+#                                   ^            #
+##################################################
+```
 
 There you can see I have grown to the full size and went through the top wall;
 the head is now at the opposite wall. Continuing:
 
-	    X:36/49 Y:11/16 S:10/658 B:1
-	    ##################################################
-	    #                                   o            #
-	    #                                   o            #
-	    #                                   o            #
-	    #                 *                 o            #
-	    #                                   o            #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                   ^            #
-	    #                                   o            #
-	    #                                   o            #
-	    #                                   o            #
-	    #                                   o            #
-	    ##################################################
+```
+X:36/49 Y:11/16 S:10/658 B:1
+##################################################
+#                                   o            #
+#                                   o            #
+#                                   o            #
+#                 *                 o            #
+#                                   o            #
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+#                                   ^            #
+#                                   o            #
+#                                   o            #
+#                                   o            #
+#                                   o            #
+##################################################
+```
 
 I might then have turned to the left and then shortly go up to get the bug. This
 goes on until you lose, quit or win the game.
@@ -266,30 +279,32 @@ goes on until you lose, quit or win the game.
 When you specify **WALLS=0** the walls become an obstacle that end the game. It
 might look like (I set the starting size to 150 and had only just started):
 
-
-	    X:20/49 Y:2/16 S:150/658 B:0
-	    ##################################################
-	    #                   ^                            #
-	    #                   o                            #
-	    #                   o          *                 #
-	    #                   o                            #
-	    #                   o                            #
-	    #                   o                            #
-	    #                   ooooo                        #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    ##################################################
+```
+X:20/49 Y:2/16 S:150/658 B:0
+##################################################
+#                   ^                            #
+#                   o                            #
+#                   o          *                 #
+#                   o                            #
+#                   o                            #
+#                   o                            #
+#                   ooooo                        #
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+##################################################
+```
 
 If I continue going up I will see:
 
-	    OUCH!
-	    X:20/49 Y:1/16 S:150/658 B:0
-
+```
+OUCH!
+X:20/49 Y:1/16 S:150/658 B:0
+```
 
 
 
@@ -298,129 +313,134 @@ If I continue going up I will see:
 By default cannibalism is disabled (**CANNIBAL=0**)  so if you run into yourself it might look
 something like:
 
-	    X:45/49 Y:10/16 S:10/658 B:1
-	    ##################################################
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                 *                              #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                          ooooo #
-	    #                                            ^ o #
-	    #                                            ooo #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    #                                                #
-	    ##################################################
+```
+X:45/49 Y:10/16 S:10/658 B:1
+##################################################
+#                                                #
+#                                                #
+#                                                #
+#                 *                              #
+#                                                #
+#                                                #
+#                                                #
+#                                          ooooo #
+#                                            ^ o #
+#                                            ooo #
+#                                                #
+#                                                #
+#                                                #
+#                                                #
+##################################################
+```
 
 If I were to do any movement but turn to the left I would run into myself. I'll
 go to the right two spaces:
 
-	    OW!
-	    X:47/49 Y:10/16 S:10/658 B:1
-
+```
+OW!
+X:47/49 Y:10/16 S:10/658 B:1
+```
 
 But **CANNIBAL=1** can look very funny both in movement and still especially
 when you go through yourself several times when the snake is rather long. For
 example going through walls and the snake a few times:
 
-	    X:4/49 Y:12/16 S:165/658 B:3
-	    ##################################################
-	    #oo                        o    ooooo  o o      o#
-	    #                          oooo o      ooo      o#
-	    #                             ooooooooooooooooooo#
-	    #                               o                #
-	    #                 oooooooooo    o                #
-	    #                 o        o    o                #
-	    #                 o  oooo  o    o                #
-	    #                 o  o     o    o                #
-	    #                 ooooooooooooooo                #
-	    #                    o     o*                    #
-	    # oo>                o     o                     #
-	    # o           oooooooo     o                     #
-	    #oooooooooooooo            o        oooo oooooooo#
-	    # o                        o        o  o o       #
-	    ##################################################
+```
+X:4/49 Y:12/16 S:165/658 B:3
+##################################################
+#oo                        o    ooooo  o o      o#
+#                          oooo o      ooo      o#
+#                             ooooooooooooooooooo#
+#                               o                #
+#                 oooooooooo    o                #
+#                 o        o    o                #
+#                 o  oooo  o    o                #
+#                 o  o     o    o                #
+#                 ooooooooooooooo                #
+#                    o     o*                    #
+# oo>                o     o                     #
+# o           oooooooo     o                     #
+#oooooooooooooo            o        oooo oooooooo#
+# o                        o        o  o o       #
+##################################################
+```
 
 I'll go back through myself now:
 
-	    X:6/49 Y:14/16 S:165/658 B:3
-	    ##################################################
-	    #oo                        o    ooooo  o o      o#
-	    #                          oooo o      ooo      o#
-	    #                             ooooooooooooooooooo#
-	    #                               o                #
-	    #                 oooooooooo    o                #
-	    #                 o        o    o                #
-	    #                 o  oooo  o    o                #
-	    #                 o  o     o    o                #
-	    #                 ooooooooooooooo                #
-	    #                    o     o*                    #
-	    # ooo                o     o                     #
-	    # oo          oooooooo     o                     #
-	    #ooooo>oooooooo            o        oooo oooooooo#
-	    # o                        o        o  o o       #
-	    ##################################################
+```
+X:6/49 Y:14/16 S:165/658 B:3
+##################################################
+#oo                        o    ooooo  o o      o#
+#                          oooo o      ooo      o#
+#                             ooooooooooooooooooo#
+#                               o                #
+#                 oooooooooo    o                #
+#                 o        o    o                #
+#                 o  oooo  o    o                #
+#                 o  o     o    o                #
+#                 ooooooooooooooo                #
+#                    o     o*                    #
+# ooo                o     o                     #
+# oo          oooooooo     o                     #
+#ooooo>oooooooo            o        oooo oooooooo#
+# o                        o        o  o o       #
+##################################################
+```
 
 If you note that the head is at (6),(14) I will go one more to the right and you
 will see that the arrow has moved over:
 
-	    X:7/49 Y:14/16 S:165/658 B:3
-	    ##################################################
-	    #oo                        o    ooooo  o o      o#
-	    #                          oooo o      ooo      o#
-	    #                             ooooooooooooooooooo#
-	    #                               o                #
-	    #                 oooooooooo    o                #
-	    #                 o        o    o                #
-	    #                 o  oooo  o    o                #
-	    #                 o  o     o    o                #
-	    #                 ooooooooooooooo                #
-	    #                    o     o*                    #
-	    # ooo                o     o                     #
-	    # oo          oooooooo     o                     #
-	    #oooooo>ooooooo            o        oooo oooooooo#
-	    # o                        o        o  o o       #
-	    ##################################################
+```
+X:7/49 Y:14/16 S:165/658 B:3
+##################################################
+#oo                        o    ooooo  o o      o#
+#                          oooo o      ooo      o#
+#                             ooooooooooooooooooo#
+#                               o                #
+#                 oooooooooo    o                #
+#                 o        o    o                #
+#                 o  oooo  o    o                #
+#                 o  o     o    o                #
+#                 ooooooooooooooo                #
+#                    o     o*                    #
+# ooo                o     o                     #
+# oo          oooooooo     o                     #
+#oooooo>ooooooo            o        oooo oooooooo#
+# o                        o        o  o o       #
+##################################################
+```
 
-Try this: Get a reasonable length and then go back on yourself (if you're going
+Try this: get a reasonable length and then go back on yourself (if you're going
 left go right etc.) and then after some length (but before you get beyond the
 snake) turn (so that you go perpendicular) and then watch as the snake starts
 unwinding at one place and then suddenly unwinds another direction.
 
-An example of extreme cannibalism is in the [cannibalism.log][] file. It has
-more than one run the first of one has several dumps. I didn't move for a long
-time: the initial size was 1500 and I would have won before moving if I went
-after bugs right away. In the last two captures of the first invocation (the
-third and second to last dump) the bug, head and tail of the snake are at:
-
-	     Bug: line 87, col 47
-	    Head: line 88, col 62; and line 115, col 48
-	    Tail: line 84, col 46; and line 112, col 29
-
-The final example has the snake inside itself.
+An example of extreme cannibalism is in the [cannibalism.log.html][]
+([cannibalism.log.md][] on GitHub) file. It explains information about the file
+including how to find the bug, head and tail of the snake, at least where it was
+documented. The first run has several dumps.  The final example has the snake
+inside itself.
 
 # <a name="shedding" href="#toc">Gameplay: Shedding (stretching)</a>
 
-This feature will make you grow by the value of **SHEDS** for every **SHED**
+This feature will make you grow by the value of **`SHEDS`** for every **`SHED`**
 movements (the counter isn't incremented when you eat a bug). Basically growing
 without eating a bug (stretching would be better name here).
 
 
 # <a name="winning" href="#toc">Gameplay: Winning</a>
 
-If you ever get to the **MAXSIZE** the game is won. You can force a win by
+If you ever get to the **`MAXSIZE`** the game is won. You can force a win by
 setting the max size to a smaller value than the size you specify (or the
 default) or setting the size to higher than the default (or < 0 which will end
 up being > the max size though I suppose there might be some value that makes it
 less than again - I'm not going to try and figure that out however). Anyway:
 
-	    SIZE=-1 ./prog
-	    YOU WIN!
-	    X:24/49 Y:8/16 S:658/658 B:0
+```sh
+SIZE=-1 ./prog
+YOU WIN!
+X:24/49 Y:8/16 S:658/658 B:0
+```
 
 Observe that the size isn't the default 997: because the screen size is too
 small for that value (see [terminals.md][]).
@@ -429,7 +449,8 @@ The reason I chose 997 is that it leaves a bit of a challenge for some (maybe
 most) people but it's still winnable. Previously even I couldn't have won unless
 maybe a much bigger screen, if both cheat modes were disabled. I probably could
 win without any cheat mode enabled on my 24" monitor but I probably would need
-at least one cheat mode on my 13" laptop (I don't need both enabled).
+at least one cheat mode on my 16" laptop (I don't need both enabled). I don't
+think I need either for 997.
 
 The beauty though is the game can be winnable by anyone since you can define the
 max size to win. Games are meant to be fun: who enjoys games that can never be
@@ -449,14 +470,16 @@ the game is won is 199 - also a prime!
 
 If you wish to quit you can hit 'q' (case-insensitive). For example:
 
-	    X:24/49 Y:8/16 S:5/658 B:0
+```
+X:24/49 Y:8/16 S:5/658 B:0
+```
 
 
 
 # 4. <a name="modes" href="#toc">Gameplay modes</a>
 
-Here I list a number of different modes of play. In the [bugs.md][]
-([bugs.html][]) file I even show how there's a built-in test unit for some
+Here I list a number of different modes of play. In the [bugs.html][]
+([bugs.md][] on GitHub) file I even show how there's a built-in test unit for some
 modes! There are certainly other modes that could be imagined: the modes below
 happened over time and some were simply an accidental discovery or something I
 thought of by a chance; others were thought out from the beginning but were
@@ -469,7 +492,7 @@ the modes below.
 ## <a name="warning" href="#toc">Photosensitive epilepsy/Stimulation overload trigger warnings</a>
 
 If you have **photosensitive epilepsy please be careful** especially with low values
-for both **WAIT** and **EVADE**. It appears that the [number of hertz (flashes)
+for both **`WAIT`** and **`EVADE`**. It appears that the [number of hertz (flashes)
 per second triggering seizures][] is wide but depending on the variables it
 easily can be in the range.
 
@@ -486,19 +509,25 @@ If you want to draw the snake wherever you like on the screen you can do this by
 modifying the wait time (for input) to -1 (or any value < 0): then the snake
 does not move until you press a movement key. For example:
 
-	    WAIT=-1 ./prog
+```sh
+WAIT=-1 ./prog
+```
 
 
 When you eat a bug the snake will grow and you can draw more. If you want to
 make it so you can go through yourself:
 
-	    WAIT=-1 CANNIBAL=1 ./prog
+```sh
+WAIT=-1 CANNIBAL=1 ./prog
+```
 
 If you don't want to start out so small (i.e. you want to be able to draw more
 quickly) you can just set the size to a bigger number (and you could do the same
 with growth and moult/shed):
 
-	    SIZE=50 CANNIBAL=1 WAIT=-1 ./prog
+```sh
+SIZE=50 CANNIBAL=1 WAIT=-1 ./prog
+```
 
 Do note that although you're a bigger size you still grow one movement at a
 time.
@@ -506,12 +535,16 @@ time.
 Okay but then if you get too many bugs the drawing will be over. If this proves
 to be a problem simply do:
 
-	    SIZE=100 CANNIBAL=1 WAIT=-1 GROW=0 ./prog
+```sh
+SIZE=100 CANNIBAL=1 WAIT=-1 GROW=0 ./prog
+```
 
 Or something like that (maybe make the size bigger but that's up to you). You
 could also set the max size to be the highest possible by saying
 
-	    MAXSIZE=-1
+```sh
+MAXSIZE=-1
+```
 
 Which I've done in the [play.sh][] script.
 
@@ -522,11 +555,14 @@ perfect: the snake after all does not leave gaps and the game does not support
 diagonal movement and I also made a mistake and had to modify what I was aiming
 for. But you can consider this mode drawing or practice mode.
 
-	       oooooooooo   ooooo    o  oo  ooooo
-	       o     o  oo  o   oo   o ooo  o    
-	       oooo  o   oo ooooooo  oooo   ooooo
-		  o  o    ooo     oo o ooo  o    
-	       oooo  o     oo      ooo  oooooooo>
+
+
+		   oooooooooo   ooooo    o  oo  ooooo  
+		   o     o  oo  o   oo   o ooo  o       
+		   oooo  o   oo ooooooo  oooo   ooooo  
+		      o  o    ooo     oo o ooo  o       
+		   oooo  o     oo      ooo  oooooooo>   
+
 
 
 ## <a name="auto" href="#toc">Gameplay mode: Computer playing / Automatic mode (Photosensitive epilepsy/Stimulation overload trigger)</a>
@@ -542,7 +578,9 @@ too.
 
 If you're still here you can create this effect like:
 
-	    WAIT=0 WALLS=1 CANNIBAL=1 ./prog
+```sh
+WAIT=0 WALLS=1 CANNIBAL=1 ./prog
+```
 
 As long as the bug evades you'll find that the snake is growing because it's
 actually eating bugs; the computer is actually playing the game by itself! You
@@ -566,14 +604,18 @@ so with fewer available it has a harder time finding a place in that one line.
 
 Here's how to make the bug move every time the snake moves:
 
-	    CANNIBAL=1 WALLS=1 WAIT=0 EVADE=1 ./prog
+```sh
+CANNIBAL=1 WALLS=1 WAIT=0 EVADE=1 ./prog
+```
 
 
 #### Help the computer win fairly quickly
 
 If you want to see the game 'win' try something like:
 
-	    CANNIBAL=1 WALLS=1 WAIT=0 EVADE=1 MAXSIZE=10 ./prog
+```sh
+CANNIBAL=1 WALLS=1 WAIT=0 EVADE=1 MAXSIZE=10 ./prog
+```
 
 
 #### Negative growth (Shrink) Automatic mode
@@ -581,7 +623,9 @@ If you want to see the game 'win' try something like:
 Here's a fun one I just thought of (a long time after these other modes were
 thought of):
 
-	    WAIT=0 EVADE=1 GROW=-1 SIZE=9 MAXSIZE=10 CANNIBAL=1 ./prog
+```sh
+WAIT=0 EVADE=1 GROW=-1 SIZE=9 MAXSIZE=10 CANNIBAL=1 ./prog
+```
 
 What you'll see is that first the snake will get to the size of 9 - whether it
 shows to be 10 characters depends on whether or not it gets a bug before it can
@@ -594,7 +638,9 @@ then the head again (i.e. 1 then 0 in size) and then win! This is also in the
 
 Of course you can also do something like:
 
-	    WAIT=5 WALLS=1 CANNIBAL=1 ./prog
+```sh
+WAIT=5 WALLS=1 CANNIBAL=1 ./prog
+```
 
 Which although might not seem like it is significantly slower.
 
@@ -611,13 +657,17 @@ of success in catching bugs? Obviously the dimensions will affect this value.
 
 How long will it take for the snake to run into itself? For instance by doing:
 
-	    WAIT=0 ./prog
+```sh
+WAIT=0 ./prog
+```
 
-On my 13" MacBook Pro at the default settings going horizontally the snake ran
-into itself at:
+On my 13" MacBook Pro (replaced later by a 16") at the default settings going
+horizontally the snake ran into itself at:
 
-	    OW!
-	    X:57/156 Y:20/41 S:155/997 B:30
+```
+OW!
+X:57/156 Y:20/41 S:155/997 B:30
+```
 
 What if you set the size to a high value? The lowest? There are bound to be
 other games to play with this feature!
@@ -632,7 +682,9 @@ You have a negative shedding growth and a positive growth size: negative and
 positive winning. Depending on the parameters specified it might go one way over
 the other. Try:
 
-	    SIZE=150 SHEDS=-5 GROW=10 SHED=50 MAXSIZE=250 ./prog
+```sh
+SIZE=150 SHEDS=-5 GROW=10 SHED=50 MAXSIZE=250 ./prog
+```
 
 What this does is set the size to 150 (to make it not go down so quickly) and
 then for each bug you eat it adds 5 to the size; for every 50 moves (that you
@@ -646,13 +698,16 @@ The parameters above were chosen after playing with the mode a bit to find a
 value that wouldn't take that much time but still would pose a challenge. One
 could reverse it so that one shrinks more than growing.
 
-The [crazy.log][] file has several screen dumps with this idea.
+The [crazy.log.html][] ([crazy.log.md][] on GitHub) file has several screen
+dumps with this idea.
 
 You could also have it so that eating a bug makes you shrink and moving so many
 moves you grow. I tried this and for me it was far more fun. The [play.sh][]
 also has this mode:
 
-	    SIZE=100 SHEDS=5 GROW=-10 SHED=50 MAXSIZE=250 ./prog
+```sh
+SIZE=100 SHEDS=5 GROW=-10 SHED=50 MAXSIZE=250 ./prog
+```
 
 Obviously there are many other variations. The [play.sh][] script has some
 of them (the above is option 5; others are 4, 15 and 16 but only options 4 and 5
@@ -672,7 +727,9 @@ snake moving too.
 
 Anyway this might sound absurd but it can be somewhat hypnotic by doing:
 
-	    EVADE=1 CANNIBAL=1 ./prog
+```sh
+EVADE=1 CANNIBAL=1 ./prog
+```
 
 And just moving the snake about not trying to catch any bugs - just let whatever
 happens happen.
@@ -686,7 +743,9 @@ the growth size to 0 and then just move the snake round and round eating bugs
 until you want to quit. You can enable cannibalism so that you don't have to
 worry about even running into yourself and losing:
 
-	    GROW=0 CANNIBAL=1 ./prog
+```sh
+GROW=0 CANNIBAL=1 ./prog
+```
 
 
 ## <a name="expansibility" href="#toc">Gameplay mode: Expansibility</a>
@@ -715,11 +774,15 @@ this file discusses as well as allowing to easily change the colours.
 
 To do this use the [snake-colours][] script like so:
 
-	    ./snake-colours
+```sh
+./snake-colours
+```
 
 If you want to pass in specific variables you can do that too e.g.:
 
-	    CANNIBAL=1 ./snake-colours
+```sh
+CANNIBAL=1 ./snake-colours
+```
 
 The script will prompt you for the colour of the walls, snake head, body and the
 bug.
@@ -736,11 +799,15 @@ you choose uses then the script will override what you pass in.
 
 To use you can do something like:
 
-	    ./play.sh
+```sh
+./play.sh
+```
 
 Or to make it so walls are an obstacle:
 
-	    WALLS=0 ./play.sh
+```sh
+WALLS=0 ./play.sh
+```
 
 
 # 6. <a name="variables" href="#toc">Notes about some of the game variables</a>
@@ -757,7 +824,7 @@ snake to move slower you have to increase the wait time!
 
 ## <a name="evade" href="#toc">EVADE: Bug evasion frequency</a>
 
-For every **EVADE** snake movements the bug will try and find a new place to
+For every **`EVADE`** snake movements the bug will try and find a new place to
 occupy. It might be very close to it and I do not ensure it's a new place at
 all.
 
@@ -810,12 +877,15 @@ years ago but I know it's true now. **Believe in yourself. Always.**
 [troubleshooting.html]: troubleshooting.html
 [bugs.md]: bugs.md
 [bugs.html]: bugs.html
-[spoilers.markdown]: spoilers.markdown
+[spoilers.md]: spoilers.md
+[spoilers.html]: spoilers.html
 [snake-colours]: snake-colours
 [number of hertz (flashes) per second triggering seizures]: https://www.epilepsysociety.org.uk/photosensitive-epilepsy#.Xjgpwi2ZOgQ
 [termcaps.c]: termcaps.c
-[cannibalism.log]: cannibalism.log
-[crazy.log]: crazy.log
+[cannibalism.log.md]: cannibalism.log.md
+[cannibalism.log.html]: cannibalism.log.html
+[crazy.log.md]: crazy.log.md
+[crazy.log.md]: crazy.log.html
 [play.sh]: play.sh
 
 -----------------------------------------------------------------------------------------------------

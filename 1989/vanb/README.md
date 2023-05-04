@@ -1,21 +1,25 @@
 ## Best one liner
 
-	David Van Brackle
-	Department of Computer Science
-	University of Central Florida
-	Orlando, Florida 
-	32816
-	USA 
+David Van Brackle  
+Department of Computer Science  
+University of Central Florida  
+Orlando, Florida   
+32816  
+US   
 
 
 ## To build:
 
-	make all
+```sh
+make all
+```
 
 ## Try:
 
-	./vanb the rug gary lent	
-	./vanb unix is better than os/2
+```sh
+./vanb the rug gary lent	
+./vanb unix is better than os/2
+```
 
 ## Judges' remarks:
 
@@ -25,7 +29,7 @@ element on each line, followed by a line of ten dashes.
 
 
 
-## Selected notes from the author:
+## Author's remarks:
 
 The program has the following charming and possibly 
 non-portable features:

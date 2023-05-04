@@ -1,8 +1,8 @@
 # Most discourteous interpreter
 
-    Arne "Timwi" Heizmann
-    Germany
-    timwi@gmx.net
+Arne "Timwi" Heizmann  
+Germany  
+<timwi@gmx.net>
 
 ## To build:
 
@@ -24,40 +24,43 @@ make
 
 ## Judges' remarks:
 
-Unlike most BF interpreters that we have been receiving for the last few
-years, this one, in our opinion, is the most obfuscated albeit the most
-discourteous to the language it interprets. A simple 3-character fix will make
-it slightly less so.
+Unlike most [BF](https://en.wikipedia.org/wiki/Brainfuck) interpreters that we
+have been receiving for the last few years, this one, in our opinion, is the
+most obfuscated albeit the most discourteous to the language it interprets. A
+simple 3-character fix will make it slightly less so.
 
 Quite a few BF programs found on the Net expect byte-based memory, quite a few
 exceed the capacity of this interpreter, but there are many that work. Some
-small quines work, some don't.
+small [quines][] work, some don't.
 
 Why?
 
+[quines]: https://en.wikipedia.org/wiki/Quine_(computing)
+
 ## Author's remarks:
 
-This is an interpreter for the programming language BrainFuck (BF).
+This is an interpreter for the programming language
+[BrainFuck](https://en.wikipedia.org/wiki/Brainfuck) (BF).
 
 Input must be provided in the following format: First a sequence of integers
-separated by whitespace (this will be the input to the BF program), then a
-colon (:), then the BF program itself.
+separated by whitespace (this will be the input to the BF program), then a `:`
+(colon), then the BF program itself.
 
 You must not pass any command-line arguments.
 
 ### Features
 
-  * Supports the complete set of 8 BF instructions (+-<>[].,).
-  * Supports the use of alternative characters for some of those instructions.
+* Supports the complete set of 8 BF instructions (`+-<>[].,`).
+* Supports the use of alternative characters for some of those instructions.
 Use this to obfuscate your BF programs!
 
-For a challenge, figure out what this obfuscated BF program does:
+    For a challenge, figure out what this obfuscated BF program does:
 
-        J4mzt?Vazexx-20d~&&~AxdUV!x(~Jz&V)x*(P=J)JUN(dizz)xx_!xx'0&{Vz;}&Jj
+	    J4mzt?Vazexx-20d~&&~AxdUV!x(~Jz&V)x*(P=J)JUN(dizz)xx_!xx'0&{Vz;}&Jj
 
-It takes two integers as input and outputs one integer.
+    It takes two integers as input and outputs one integer.
 
-  * Ignores all whitespace (newlines, spaces and tabs) in the input program.
+* Ignores all whitespace (newlines, spaces and tabs) in the input program.
 
 ### Limitations
 
@@ -70,13 +73,13 @@ one of these limits, the behaviour is undefined.
 
 ### Obfuscations
 
-Some of the superficial obfuscations are pretty obvious: I'm using #defines to
-make everything look nice and liney, and the program is merely a recursive
-main function with only a single 'return' statement which uses nested ternary
+Some of the superficial obfuscations are pretty obvious: I'm using `#define`s to
+make everything look nice and lineal, and the program is merely a recursive
+`main` function with only a single `return` statement which uses nested ternary
 operators to make even the pre-processed code unreadable.
 
 However, the more subtle obfuscations relate to the way the program works.
-After applying the pre-processing, you will see a lot of "1+1+1+...etc.", and
+After applying the pre-processing, you will see a lot of `1+1+1`...etc., and
 even if you replace these with their result, those numbers will still not
 represent (or even relate to) the ASCII codes of the BF instructions.
 

@@ -1,18 +1,22 @@
 # Most Obfuscated Packaging
 
-Don Dodson
-AG Communication Systems
-17239 N. 19th Ave. #1003
-Phoenix, AZ 85023  
-USA
+Don Dodson  
+AG Communication Systems  
+17239 N. 19th Ave. #1003  
+Phoenix, AZ 85023    
+US  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./dodsond2
+```sh
+./dodsond2
+```
 
 ## Judges' remarks:
 
@@ -33,9 +37,11 @@ dodsond2.gz: gzip compressed data, last modified: Mon Aug 29 21:54:39 1994, max 
 The [dodsond2.gz](dodsond2.gz) file was submitted as source
 in an effort to get around the 1994 version of Rule 2:
 
-    2) Your entry must be <= 3217 bytes in length.  The number of characters
-       excluding whitespace (tab, space, newline), and excluding any ; { or }
-       followed by either whitespace or end of file, must be <= 1536.
+```
+2) Your entry must be <= 3217 bytes in length.  The number of characters
+   excluding whitespace (tab, space, newline), and excluding any ; { or }
+   followed by either whitespace or end of file, must be <= 1536.
+```
 
 Indeed, when [dodsond2.gz](dodsond2.gz) is uncompressed, it is identical
 to the [dodsond2.c](dodsond2.c) file you find today.
@@ -58,11 +64,11 @@ be detected from 2 rooms away.
 
 To win, you must find one or more arrows, determine where the Wumpus 
 is, and shoot him, all without falling into a pit or becoming the 
-next meal for the Wumpus.  To shoot an arrow, type "s".  Then give a 
+next meal for the Wumpus.  To shoot an arrow, type `s`.  Then give a 
 list of the rooms you want to shoot into.  The rooms must be 
 connected in the order you list them, or else the arrow may bounce 
 back and hit you.  An arrow can go through as many as four rooms.  
-But beware, because shooting an arrow and missing the Wumpus may
+But beware that shooting an arrow and missing the Wumpus may
 awaken him.
 
 There is a robber who waits in an unknown room. If you enter
@@ -71,8 +77,8 @@ and move to a new room.  If he steals all the arrows in the
 Caverns, you may catch him and recover all of them.  Doing this
 gives you a bonus on your score.
 
-You can quit at any time by typing 'q'.  Typing 'i' will tell
-you how many arrows you are carrying.  'l' prints the description
+You can quit at any time by typing `q`.  Typing `i` will tell
+you how many arrows you are carrying.  `l` prints the description
 of the current room again.
 
 ## Copyright and CC BY-SA 4.0 License:

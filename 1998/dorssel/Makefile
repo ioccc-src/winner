@@ -111,7 +111,7 @@ ENTRY= dorssel
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA= dorssel.hint
+DATA= dorssel.md
 TARGET= ${PROG}
 #
 ALT_OBJ=

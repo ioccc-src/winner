@@ -35,6 +35,7 @@ fact(n)
     /* local variables can be declared. Only 'int' type is supported */
     int i, r;
     r = 1;
+
     /* 'while' and 'for' loops are supported */
     for(i=2;i<=n;i++)
         r = r * i;
@@ -44,7 +45,7 @@ fact(n)
 /* Well, we could use printf, but it would be too easy */
 print_num(n, b)
 {
-    int tab, p, c;
+    int *tab, *p, c;
     /* Numbers can be entered in decimal, hexadecimal ('0x' prefix) and
        octal ('0' prefix) */
     /* more complex programs use malloc */
@@ -57,16 +58,16 @@ print_num(n, b)
             c = c + 'a' - 10;
         else
             c = c + '0';
-        *(char *)p = c;
+        *p = c;
         p++;
         n = n / b;
-        /* 'break' is supported */
-        if (n == 0)
-            break;
+	/* 'break' is supported */
+	if (n == 0)
+	    break;
     }
     while (p != tab) {
         p--;
-        printf("%c", *(char *)p);
+        printf("%c", *p);
     }
     free(tab);
 }
@@ -76,9 +77,9 @@ main(int argc, char **argv)
 {
     /* no local name space is supported, but local variables ARE
        supported. As long as you do not use a globally defined
-       variable name as local variable (which is a bad habbit), you
+       variable name as local variable (which is a bad habit), you
        won't have any problem */
-    int n, f, base;
+    int n, (*f)(), base;
     
     /* && and || operator have the same semantics as C (left to right
        evaluation and early exit) */
@@ -100,11 +101,13 @@ main(int argc, char **argv)
             return 1;
         }
     }
-    printf("fib(%d) = ", n);
-    print_num(fib(n), base);
-    printf("\n");
-
-    printf("fact(%d) = ", n);
+    printf("fib(%d) with base %d = ", base, n);
+    if (n > 48) {
+	printf("Overflow\n");
+    } else {
+	print_num(fib(n), base);
+    }
+    printf("fact(%d) with base %d = ", base, n);
     if (n > 12) {
         printf("Overflow");
     } else {

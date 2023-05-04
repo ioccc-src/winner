@@ -16,35 +16,51 @@ make all
 ## To run:
 
 ```sh
-./dds basic_program
-./a.out
+./dds basic_program 2>/dev/null
+./a.out 2>/dev/null
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed some segfaults in
-this entry as well as making it so `a` (was `a.out`, see below) can be generated
-(as in the program did not work, at least with clang). The alternative code,
-described below, is what is needed for clang. Reading it might be instructive
-even if you have gcc.
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault that
+prevented this entry from working at all and made an alternate version
+that works with `clang`. The alternate code, described below, is what is needed
+for clang. Reading it might be instructive even if you have gcc.
 
-The first segfault which was always triggered was due to the code `*q>'
-'&&(*q)--;`. This seems odd at first glance but it's pointing to `s` which was
-read-only memory as a `char *s`.  It's now a `char s[]`. The second and third
-segfaults were caused if a file was not specified (or it the one specified did
-not exist or couldn't be opened for some reason) and if the output file could
-not be opened for writing.
+The segfault which was always triggered was due to the code `*q>' '&&(*q)--;`.
+This seems odd at first glance but it's pointing to `s` which was read-only
+memory as a `char *s`.  It's now a `char s[]`.
 
 Thank you Cody for your assistance!
+
+### INABIAF - it's not a bug it's a feature! :-)
+
+Please note that if the BASIC file cannot be opened for reading or the output
+file cannot be opened for writing then this program will crash. These crashes
+are a mild nuisance but are considered a feature not a bug. We challenge you to
+fix it for learning if you wish. See also [bugs.md](/bugs.md).
 
 ## Try:
 
 With gcc, make and run as follows:
-    
-	make dds
+
+```sh
+make dds
+```
 
 For example, the author suggests trying:
-     
-	./dds LANDER.BAS
-	./a.out
+    
+```sh
+./dds LANDER.BAS 2>/dev/null
+./a.out 2>/dev/null
+```
+
+What happens if you give the program a C program like itself? Try:
+
+```sh
+./dds dds.c 2>/dev/null
+```
+
+You'll get errors yes but what does the generated file look like? What about
+other types of files?
 
 ### Alternative code:
 
@@ -55,12 +71,13 @@ not messing with the `s` string which is quite complicated. For all Cody knows
 even changing the length could break functionality and indeed the length would
 have to be longer for this to work with clang.
 
-How does it work? The code, which you will see in `dds.c`, `return system(q-6);`
-equates to `return system("cc a.c");` but clang by default, at least in macOS,
-has default -Werror and there were some warnings. This means that the
-compilation failed with clang. In particular it would fail (at least with
-`LANDER.BAS`) due to a return from `main()` without a return value and the use
-of functions not yet declared.
+How does it work? The code (which you will see in [dds.c](dds.c)) does a `return
+system(q-6);` which equates to `return system("cc a.c");` but clang by default,
+at least in macOS, has default -Werror and there were some warnings. This means
+that the compilation failed with clang (because it didn't use `make` so no
+[Makefile](Makefile) was used). In particular it would fail (at least with
+[LANDER.BAS](LANDER.BAS)) due to a return from `main()` without a return value
+and the use of functions not yet declared.
 
 Now as noted since the string `s` is complicated and because Cody did not want
 to inadvertently mess something up he changed that code to `system("make a");`
@@ -72,8 +89,8 @@ version:
 
 ```sh
 make clobber alt
-./dds.alt LANDER.BAS
-./a
+./dds.alt LANDER.BAS 2>/dev/null
+./a 2>/dev/null
 ```
 
 Thank you Cody for your assistance!

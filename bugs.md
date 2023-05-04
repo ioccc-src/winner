@@ -11,7 +11,11 @@ The following is a known list of **BUGS and (mis)FEATURES** in IOCCC winners.
 Can you fix/improve entries not under the INABIAF (it's not a bug it's a
 feature)? You are **VERY WELCOME** to try.
 
-Please submit your fixes in a [GitHub pull
+NOTE: currently this file is mostly for us. We are not yet ready for help except
+for dead links and missing files. We will remove this notice when this changes.
+We will note this below for each status we're not yet ready for help with.
+
+As far as how to help: please submit your fixes in a [GitHub pull
 request](https://github.com/ioccc-src/temp-test-ioccc/pulls) (with ONE PULL
 REQUEST *PER* FIX, please)!
 
@@ -35,6 +39,12 @@ it takes away some instructional value or even usability. _In this case we're
 **VERY SORRY_** about it: it's a fine line, we know, and we tried to use careful
 judgement but invariably some might have been the wrong decision. Thank you for
 understanding!
+
+I ([Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson))
+accept the blame in some cases; when working on getting entries to compile
+sometimes I got carried away with it and there might be that I fixed some things
+that should not have been fixed. I am correcting these mistakes as I come across
+them but if I miss any please let the judges or me know.
 
 
 ### ON **ALL** FIXES / IMPROVEMENTS / CHANGES
@@ -68,6 +78,11 @@ Again, THANK YOU!
 
 # LIST OF STATUSES - PLEASE READ BEFORE FIXING (you may skip if you're only interested in knowing about entries with known issues)
 
+NOTE: when going through the entries you can skip to the next entry (some are
+detailed explanations) by searching for `^## STATUS:` in your editor (or
+searching for it - probably without the `^` in your browser). For a specific
+year try `^# YYYY` where `YYYY` is the year as a number.
+
 Entries below have one or more of the following _**STATUS**_ values. Please see
 the text below for more information. If an entry has more than one status it
 means that either they all apply or they compliment each other. For instance
@@ -79,8 +94,9 @@ resolving these issues and has fixed many but you're welcome to have a go at it
 too (though he'll be very sad if he doesn't have a chance to at first fix it :-(
 so you might want to hold off for now :-) .. or not :-) ). He hopes to have most
 of the remaining entries resolved in the near future but nevertheless if you're
-okay making people very sad you may have a go at the entries :-) He'll remove
-this part later on.
+okay making people very sad you may have a go at the entries :-) [Yusuke
+Endoh](/winners.html#Yusuke_Endoh) has also fixed a number of entries though at
+this point he does not know it. :-) Cody will remove this part later on.
 
 ## General notes about the statuses and making fixes
 
@@ -107,27 +123,59 @@ segfault in macOS of [1989/paul](1994/paul/paul.c): changing the `int *` to a
 But even if they are fixable (which will likely be hard to do) it's almost
 certain that such code would be just as non-portable (importable ? :-) ).
 
+In rare cases they are valid. For instance Cody noticed in linux the following
+warning in [1985/applin](1985/applin/applin.c) with gcc:
+
+```
+applin.c:1:78: warning: incompatible implicit declaration of built-in function 'execlp' [-Wbuiltin-declaration-mismatch]
+    1 | main(v,c)char**c;{for(v[c++]=strdup("Hello, world!\n");(!!c)[*c]&&(v--||--c&&execlp(*c,*c,c[!!c]+!!c,!c));**c=!c)write(!!*c,*c,!!**c);}
+      |                                                                              ^~~~~~
+```
+
+and this reminded him of his fix to
+[1984/anonymous](1984/anonymous/anonymous.c). In the case of `1984/anonymous` it
+was a bit more involved but with `1985/applin` one need only add to the Makefile
+`-include unistd.h`. So there are some cases where fixing warnings can fix a
+problem but in general they should be ignored even if they're annoying.
+
 Hopefully with the example entries listed above you get the idea.
+
+### General request on original code:
+
+If you're fixing an entry please make as _FEW CHANGES AS POSSIBLE_! This is to
+make it as close to the original but allowing it to work. This might be less of
+a problem when providing alternate versions but it might still be nice to have
+it as close as possible to the original. See also below two points.
 
 ### Request for one-liners:
 
-For one-liners please keep the file one line if at all possible! If it needs an
+For one-liners _PLEASE KEEP THE FILE ONE LINE IF AT ALL POSSIBLE_! If it needs an
 include you can update the Makefile `CINCLUDE` variable. For instance if it
 needs `stdio.h` you could do `-include stdio.h`. Please leave a space after the
-`=` in the Makefile and thank you!
+`=` in the Makefile. You may also have extra long lines if this seems useful to
+make it a one-liner even if it kind of makes it longer than what the judges
+consider a one-liner. Thank you!
 
 
-### On layout of program source
+### On layout of program source:
 
-If you make changes PLEASE TRY and keep the source code layout as close to the
-original as possible. This might not always be possible and if you have an
+If you make changes _PLEASE TRY AND KEEP THE SOURCE CODE LAYOUT AS CLOSE TO THE
+ORIGINAL AS POSSIBLE_. This might not always be possible and if you have an
 editor that does formatting it can cause problems. Sometimes formatters can even
 break code! [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) has
 experienced this many times with vim so he tends to disable all format options
-when formatting code.
+when formatting code. In vim you should be able to do that with:
+
+```
+:set formatoptions=
+```
+
 
 
 ## STATUS: known bug - please help us fix
+
+NOTE: we're still locating entries and working on fixes with this status so we're not yet
+ready for help. We will remove this when we are.
 
 Entries with this status have one or more bugs that need to be fixed. Are you
 able to fix it? We welcome your help!
@@ -139,16 +187,35 @@ careful judgement when fixing bugs please!
 
 ## STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
 
+NOTE: we're still locating entries and working on fixes with this status so we're not yet
+ready for help. We will remove this when we are.
+
 Entries with this status might or might not have a bug possibly depending on the
 system.  In these entries we don't have the appropriate systems to test and fix
 any problems.
 
+## STATUS: probable bug (possibly depending on system) - please help test and if necessary fix
+
+NOTE: we're still locating entries and working on fixes with this status so we're not yet
+ready for help. We will remove this when we are.
+
+Entries with this status almost certainly have a bug or some other problem. The
+issue or issues might depend on the system much like the above _STATUS: possible
+bug (possibly depending on system)_.
+
+
 ## STATUS: doesn't work with some platforms - please help us fix
+
+NOTE: we're still locating entries and working on fixes with this status so we're not yet
+ready for help. We will remove this when we are.
 
 Entries with this status do not work under some OSes and/or architectures (and/or
 something else?). Please help us to fix it!
 
 ## STATUS: doesn't work with some compilers - please provide alternative code
+
+NOTE: we're still locating entries and working on fixes with this status so we're not yet
+ready for help. We will remove this when we are.
 
 Some entries do not work with some compilers. A good example is
 [1992/lush](1992/lush/lush.c) which uses error messages from the compiler to
@@ -158,12 +225,18 @@ Please help us by writing alternative code!
 
 ## STATUS: main() function args not allowed - please help us fix
 
+NOTE: it appears that all of these have been fixed. However some still have
+problems. This is what the status means, however:
+
 Entries with this status have a problem in that the args to main() are not of a
-specific type due this being allowed in earlier C. This shows itself in some
-compilers like clang. [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson)
-looked at the source code of clang and reported that there is no way to override
-this requirement so these entries will fail to compile with clang. That's why he
-in some entries he fixed he did it by adding a function called `pain()`. :-)
+specific type due to this being allowed in earlier C. Some compilers like clang
+have a deficiency where they do not allow this so these entries do not work with
+clang.
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) looked at the source
+code of clang and reported that there is no way to override this requirement so
+these entries will fail to compile with clang. That's why in some entries he
+fixed he did it by adding a function called `pain()`. :-)
 
 **NOTE for macOS users**: please be aware that _gcc_ under macOS **is actually
 clang** despite the fact it might appear to be gcc: no symlink and both gcc and
@@ -181,6 +254,9 @@ with compilers that are less strict.
 
 ## STATUS: compiled executable crashes - please help us fix
 
+NOTE: we're still locating entries and working on fixes with this status so we're not yet
+ready for help. We will remove this when we are.
+
 While such entries can compile, the resulting executable sometimes or always
 crashes.
 
@@ -189,34 +265,49 @@ not mutually exclusive in some cases).
 
 ## STATUS: uses gets() - change to fgets() if possible (in some cases getline() works)
 
+NOTE: we're still locating entries and working on fixes with this status so we're not yet
+ready for help. We will remove this when we are.
+
 Entries with this status use `gets()` which is unsafe because it has no limit on
 the length of the string. [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) has fixed several of these and he's
-working on others in between fixing other things. He provides some important
-notes:
+working on others in between fixing other things.
 
-First: in some cases changing the entry to use `fgets()` will break the entry
-and in some cases cause it to crash. Where this is known we will document it.
-Some of these Cody is also working on.
+There's a very good reason for this even though it is bordering on tampering
+entries: in modern systems one will get possibly alarming and certainly annoying
+warnings during at least one of compiling, linking and execution. In macOS it's
+most annoying as it happens during execution (also compilation) with the warning
+being interspersed with the output of the program, often causing confusing
+output with the entry. A good example that was fixed is
+[1990/tbr](1990/tbr/tbr.c).
 
-Second: you MUST check the output before and after to make sure that it remains
+Cody provided some important notes on this status with respect to fixing /
+changing entries:
+
+0. In some cases changing the entry to use `fgets()` will break the entry and in
+some cases cause it to crash. Where this is known we will document it.  Some of
+these Cody is also off and on working on.
+
+1. You **MUST** check the output before and after to make sure that it remains
 the same. Sometimes the output might not be immediately obviously wrong but is.
-We will document known examples.
+We will document known examples as we come across them.
 
-Third: `gets()` does NOT STORE the `'\n'` but `fgets()` DOES! This is one of the
+2. `gets()` does NOT STORE the `'\n'` but `fgets()` DOES! This is one of the
 reasons some of the entries break when changed to `fgets()`. Cody has fixed some
-of these but there are others he hasn't had time to address and/or even discover
+of these but there are others he hasn't had time to address or even discover
 yet.
 
-Fourth: just because you don't see the string `gets` in the code does not mean
-it's not used. It is after all the Obfuscated C Code Contest! :-) Sometimes it
-will be in the Makefile and other times it will be obfuscated in other ways.
-Compilers and linkers tend to warn about its use and this is a good way to find
-entries that use it even if it's not visible in the code.
+3. Just because you don't see the string `gets` in the code does not mean it's
+not used. It is after all the International _Obfuscated C Code_ Contest!  :-)
+Sometimes it will be in the Makefile and other times it will be obfuscated in
+other ways.  Compilers and linkers tend to warn about its use (and as noted in
+macOS it also happens at execution) and this is a good way to find entries that
+use it even if it's not visible in the code.
 
-NOTE: this status is not necessarily mutually exclusive with the INABIAF (it's a
-bug not a feature) status. The reason for this is due to warnings during linking
-or runtime, sometimes causing confusing output.
+_NOTE_: this status is _NOT necessarily mutually exclusive_ with the _INABIAF_ (it's a
+bug not a feature) status. The reason for this is due to warnings during
+compiling, linking and/or runtime, sometimes causing confusing output (as noted
+above).
 
 
 ## STATUS: missing file(s) - please provide them
@@ -232,13 +323,30 @@ In these entries one or more make rules noted by the author and/or judges is/are
 missing. You might consider looking at the [archive](/archive) as a good place
 to find them.
 
+## STATUS: missing or dead link - please provide them
+
+This is as they sound: a link is either missing or it's no longer valid. In many
+cases the [Internet Wayback Machine](https://web.archive.org) will be very
+useful but there happens to be numerous links that this is not helpful. In other
+cases the URL has changed. Some of these have been discovered by the Internet
+Wayback Machine with the orange status.
+
+### Statuses of Internet Wayback Machine archive:
+
+- Green (3xx): redirect (this has been used to find changes in URL).
+- Orange (4xx): not found etc.
+- Blue: this is a good link (but note that this doesn't mean that it's correct!).
+
+The archive website will tell you if the link was never captured.
+
 ## STATUS: INABIAF - please **DO NOT** fix
 ### INABIAF: It's not a bug it's a feature :-)
 
 Entries with this status should NOT be touched (unless they have another status
-that suggests that issue can be changed): they are system specific by design
-or are other things that are not actually bugs even if they appear to be. But
-are noteworthy nonetheless.
+that suggests that _that_ issue can be changed): they are system specific by
+design or are other things that are not actually bugs or bugs even if they
+appear to be. Or they might be documented bugs or things that simply are part of
+the entry. Nonetheless they are noteworthy.
 
 NOTE: the definition of this status changed over time. At one point it was when
 something was noted by the author, the judges, a consequence of earlier
@@ -248,7 +356,8 @@ appear to be buggy. An example of system specific entries:
 [1984/mullender](1984/mullender/mullender.c) (see below and the [faq](/faq.md)
 for a version that works in modern systems) is very system specific and was
 before system specific winning entries were discouraged. This is an all time
-personal favourite of Landon Curt Noll.
+personal favourite of Landon Curt Noll. Run the alternate code to understand why
+this might be (along with how strange the source code is :-) ).
 
 An example where a crash is not a bug: [2019/endoh](2019/endoh/endoh.c) is
 supposed to crash. There are others that are also supposed to crash or that are
@@ -256,8 +365,8 @@ known to segfault but are considered features.
 
 As of 10 April 2023 the definition changed for a second time (the first time was
 07 April 2023). If something is noted by the author as a known bug or limitation
-it need not be fixed unless it impacts the usability of the program or removes
-instructional value. An example where a crash undocumented needn't be fixed is
+it need not be fixed **unless it impacts the usability** of the program or **it removes
+instructional value**. An example where a crash undocumented needn't be fixed is
 [1984/laman](1984/laman/laman.c).  On the other hand the fixes made by [Cody
 Boone Ferguson](/winners.html#Cody_Boone_Ferguson) in
 [1990/theorem](1990/theorem/theorem.c) were useful.
@@ -265,18 +374,18 @@ Boone Ferguson](/winners.html#Cody_Boone_Ferguson) in
 Nonetheless we challenge you to fix these entries for educational/instructional
 value and/or enjoyment but we kindly request that you **DO NOT** submit a pull
 request! If you can't figure it out you're invited to look at the git diffs,
-where there are some (some were fixed earlier on but rolled back due the fix
-feeling like tampering).
+where there are some (some were fixed earlier on but rolled back as both Cody
+and Landon individually felt that the fix was tampering with the entry).
 
 NOTE: in the case of `gets()` we've fixed some to avoid the warning of the
-compiler, linker or even during runtime, depending on the system. In [one
-case](1990/tbr/tbr.c) the fix actually prevents confusing output (though that
-was not the only fix made).
+compiler, linker or even during runtime, depending on the system. In [some cases
+like 1990/tbr](1990/tbr/tbr.c) the fix actually prevents confusing output (though that
+was not the only fix made in that entry).
 
 ### Exception: your own entries
 
-Of course if you're the author you're welcome to fix your own entry (or else
-suggest that they're fixed)!
+Of course if you're the author you're welcome to fix your own entry, prefer your
+own fix or suggest that they're fixed!
 
 
 ## STATUS: requires a compiler supporting `-traditional-cpp` - alternate code requested
@@ -295,10 +404,12 @@ compiler supporting you are welcome to summit such code via a
 will be happy to credit you in the entry's _README.md_ file.
 
 NOTE: as of commit fa8a9b8b28a6b69a6b4efd74a45402f745e280b3 we believe that all
-the entries with this problem have been fixed.
+the entries with this problem have been fixed due [Cody Boone
+Ferguson](/winners.html#Cody_Boone_Ferguson)'s pursuit in fixing entries. Thanks
+Cody!
 
 
-# List of entries by year, sorted in alphabetical order
+# List of entries by year, sorted in alphabetical order per year
 
 # 1984
 
@@ -309,17 +420,6 @@ This entry will very likely crash or do something else if you run it without an
 arg.
 
 # 1985
-
-## [1985/applin](1985/applin/applin.c) ([README.md](1985/applin/README.md)
-## STATUS: doesn't work with some platforms - please help us fix
-
-[Yusuke Endoh](/winners.html#Yusuke_Endoh) provided a fix for gcc but
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) observed that this does
-not work under macOS. It prints `H????????` with additional `?`s printed as it
-continues to run.
-
-We have not had a chance to try and fix this yet but you're welcome to have a go
-at it.
 
 
 # 1986
@@ -542,6 +642,23 @@ This will be fixed in time but it's noted here for now.
 
 # 1991
 
+## [1991/dds](1991/dds/dds.c) ([README.md)(1991/dds/README.md))
+## [1991/dds.alt](1991/dds/dds.alt.c) ([README.md)(1991/dds/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+If the BASIC file cannot be opened for reading or the output file cannot be
+opened for writing the program will crash. This is not a bug but a feature.
+Please do not fix this except for the challenge.
+
+Please also note that for `clang` you have to use [dds.alt](1991/dds/dds.alt.c) not
+[dds.c](1991/dds/dds.c).
+
+## STATUS: uses gets() - change to fgets() if possible
+
+That being said the compiled code uses `gets()` not `fgets()`. Can you fix this?
+You might find that the `s` array is relevant but if you do change it please
+make sure to test all functionality!
+
 ## [1991/westley](1991/westley/westley.c) ([README.md](1991/westley/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 
@@ -551,6 +668,7 @@ you're caught'. :-)
 
 Please don't try and fix it as it's not a bug and was actually documented as a
 possibility. Can you find out how?
+
 
 
 # 1992
@@ -588,6 +706,12 @@ else. This should NOT be fixed.
 
 
 # 1994
+
+## [1994/horton[(1994/horton/horton.c) ([README.md](1994/horton/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+If not enough args are specified this program will likely crash or do something
+else. This should NOT be fixed.
 
 ## [1994/ldb](1994/ldb/ldb.c) ([README.md](1994/ldb/README.md))
 ## STATUS: known bug - please help us fix
@@ -726,7 +850,635 @@ some invalid prototypes and use `printf()` instead of the invalid pointer to it
 compilation error or crash.
 
 
+## [1995/vanschnitz](1995/vanschnitz/vanschnitz.c) ([README.md](1995/vanschnitz/README.md))
+## STATUS: missing file - please provide it
+
+The authors stated that they included a version that allows people with just K&R
+compilers to use the program but this file is missing. Can you provide it?
+
+We would appreciate anyone who has it or even just knows the name! Thank you.
+
+
 # 1996
+
+## [1996/august](1996/august/august.c) ([README.md](1996/august/README.md))
+## STATUS: doesn't work with some compilers - please provide alternative code
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
+this program that prevented it from working but he observes that this hangs
+in macOS with this invocation in particular:
+
+```sh
+cat august.c august.oc | ./august > august.oo
+```
+
+This happens to do with the fact that macOS is `clang` even the binary `gcc`.
+Trying clang in linux and the same problem occurs. As well if specifying (even
+with gcc) certain flags this also happens namely `-ggdb3`. The bug fix involved
+increasing the value of `Z` as it was accessing way out of range of the array,
+thus causing a segfault.
+
+The compilation should look like:
+
+```sh
+cc -std=gnu90 -Wall -Wextra -pedantic -Wno-error -Wno-implicit-function-declaration -Wno-invalid-source-encoding -Wno-invalid-utf8  -DZ=240000 -D'T=m[s]' -D'P=m[s++]' -D'L=m[p++]' -D'g=getchar()' -DE=else -DW=while -D'B=m[p++]' -DI=if -DR='s=s+l/2;T=r;I(l%2)s++' -D'X=m[s-' -D'D=Q(13,-)Q(14,*)Q(15,/)Q(16,%)Q(6,==)Q(7,!=)Q(8,<)C(1,r=P;m[T]=r;T=r)C(9,r=P;m[T]=r;s++)'  -O3 august.c -o august 
+```
+
+but again this will not work with clang. As the judges noted that some compilers
+compile it into an infinite loop I'm (Cody) inclined to believe that this is the
+source of the problem.
+
+Nevertheless if you have a fix for clang we welcome it!
+
+
+## [1996/gandalf](1996/gandalf/gandalf.c) ([README.md](1996/gandalf/README.md))
+## STATUS: missing or dead link - please provide them
+
+The link was http://www.tc3.co.uk/~gandalf/G.HTML but this no longer exists as
+it was instead requiring a login / password.
+
+Do you have an updated link? We welcome your help!
+
+## [1996/jonth](1996/jonth/jonth.c) ([README.md](1996/jonth/README.md))
+## STATUS: doesn't work with some platforms - please help us fix
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) noted that this does
+not work properly in macOS (at least Ventura). He did some debugging and has
+determined where the crash occurs (depending on invocation of the program) and
+came up with a workaround of sorts but if you have a fix we welcome your help.
+
+With this you'll need XQuartz as described in the [faq](faq.md) and the
+[1996/jonth/README.md](1996/jonth/README.md) file.
+
+Notes from Cody:
+
+Depending on invocation it appeared to have more than one crash location. It
+appears that the correct invocation might be `./jonth :0 :0` but it still
+crashes. Earlier invocations it would crash at
+
+```c
+s=XDefaultScreen(V=d[D]=XOpenDisplay(*(h+=!! *h)));
+```
+
+because `XOPenDisplay()` returned NULL. But using `:0 :0` _appears_ to resolve
+that problem. However instead it crashes at this code:
+
+```c
+XMapRaised(V,R[D][x][y]=w(V,e,H*x,H*y,H,H,1,0,1,0,2048,&c));
+```
+
+This is formed through the macros `K` and what appears to be `S` (but maybe
+others?):
+
+```c
+#define K Y(o,XMapRaised(V,e);)x=3;x--;)for(y=3;y--;r(G))XMapRaised(V,R[D]
+#define S +k),z(k-P=w(V,e,H*x,H*y,H,H,1,0,1,0,2048,&c));}XEvent J;M(){XFlush(
+```
+
+and the code surrounding it will look something like:
+
+```c
+for (o[D]=XCreatePixmapFromBitmapData(V,e,b,H,H,BlackPixel(V,s),
+    WhitePixel(V,s),DefaultDepth(V,s)),memset(b,x=0,H*H); x<H; x++)
+                    XMapRaised(V,e);
+for(x=3; x--;)
+    for(y=3; y--; r(G))
+        XMapRaised(V,R[D][x][y]=w(V,e,H*x,H*y,H,H,1,0,1,0,2048,&c));
+```
+
+In particular it is this part of the code that crashes: `w(...)`. But what is
+that? According to `lldb`  it is:
+
+```
+(lldb) p w
+(XID (*)(...)) $0 = 0x00000001003cd374 (libX11.6.dylib`XCreateWindow)
+```
+
+so `w == XCreateWindow()`. But it never actually finishes its call; modifying
+the code a bit and we see that it crashes before it returns:
+
+
+```
+(lldb) up
+frame #1: 0x0000000100003af4 jonth`T at jonth.c:40:16
+   37  				    r(G)
+   38  				    )
+   39  			    {
+-> 40  				Window ww = w(V,e,H*x,H*y,H,H,1,0,1,0,2048,&c);
+   41  				XMapRaised(V,R[D][x][y]=ww);
+   42  			    }
+
+```
+
+...so it never reaches the call that should be using its return value.
+Unfortunately if XQuartz has debug symbols I don't have access to them so I'm at
+a loss at this time.
+
+A C pre-processed version of the code is below in case this helps you find the
+problem:
+
+```c
+#include <math.h>
+#include <X11/Xlib.h>
+extern XIM Z;XID(*w)()=XCreateWindow,m,e,o[2],W[2],G[2],R[2][3][3];Display*V,*d[2];char**h,k=25,b[2500],H=50,D,s,x,y,i;T(){float l;XSetWindowAttributes c;s=XDefaultScreen(V=d[D]=XOpenDisplay(*(h+=!! *h)));XStoreName(V,e=w(V,RootWindow(V,s),0,0,152,152,2,0,1,0,0,0),"II"+D);for(G[D]=XCreatePixmapFromBitmapData(V,e,b,H,H,BlackPixel(V,s),WhitePixel(V,s),DefaultDepth(V,s)),memset(b,x=0,H*H);x<H;x++) for(i=c.event_mask=4;i--;x+i>H||z(x+i,(z(H-x-i,x),x)))x<i||z(x-i,x)|z(H-x+i,x);for(W[D]=XCreatePixmapFromBitmapData(V,e,b,H,H,BlackPixel(V,s),WhitePixel(V,s),DefaultDepth(V,s)),memset(b,x=0,H*H);x<H;x++) for(l=k;l>20&&l>x;l-=.5)z(x+k,y=sqrt(l*l-x*x) +k),z(k-x,y)-z(y,x+k)+z(y,k-x)*z(x+k,y=H-y),z(k-x,y),z(y,k-x),z(y,k+x);for(o[D]=XCreatePixmapFromBitmapData(V,e,b,H,H,BlackPixel(V,s),WhitePixel(V,s),DefaultDepth(V,s)),memset(b,x=0,H*H);x<H;x++)XMapRaised(V,e); for(x=3;x--;)for(y=3;y--;r(G))XMapRaised(V,R[D][x][y]=w(V,e,H*x,H*y,H,H,1,0,1,0,2048,&c));}XEvent J;M(){XFlush( d[!D]);x=3;for(XNextEvent(V,&J);x--;)for(y=3;y--;J.xany.window==R[D][ x][y]&&!b[x+k*y]++?t(D),t(!(D^=1)):D);M();}z(x,y){b[x/8+y*7]|=1<<x%8;}t(p){r(p?W:o);XClearWindow(V,m);}main(i,f)char**f;{M((T(h=f), T (++D)));}r(XID*z){XSetWindowBackgroundPixmap(V=d[D],m=R[D][x][y],z[ D]);}GC*g(
+    XIC
+);
+```
+
+### Workaround for macOS (if you have another X capable box like linux)
+
+If you have X forward functionality enabled if you put in your `~/.ssh/config`
+file (in the macOS) the line: `ForwardX11 yes` and have XQuartz open and ssh
+into that other box by `ssh -X` it appears that you can run the program but it
+does appear to not register the `O` move. Not sure if that's just doing
+something wrong or not.
+
+## STATUS: missing or dead link - please provide them
+
+As well the link which was http://www.uio.no/~jonth is no longer valid and
+there's no archive on the Internet Wayback Machine. Do you know of a proper URL?
+We greatly appreciate your help here!
+
+
+# 1997
+
+There was no IOCCC in 1997.
+
+# 1998
+
+## [1998/dlowe](1998/dlowe/dlowe.c) ([README.md](1998/dlowe/README.md))
+## STATUS: missing or dead link - please provide them
+
+The domain http://pootpoot.com no longer exists as it once did. The judges have
+given a script that can be used to make a similar page (**warning: not checked
+for security in modern days!**). Do you have a server with enough bandwidth and
+would like to set it up?  We'll gladly thank you in the README.md file and link
+to the page as well!  You'll have IOCCC fame for reviving a pootifier! :-)
+
+## [1998/dloweneil](1998/dloweneil/dloweneil.c) ([README.md](1998/dloweneil/README.md))
+## STATUS: missing or dead link - please provide them
+
+See above entry [1998/dlowe](1998/dlowe/dlowe.c).
+
+
+## [1998/schnitzi](1998/schnitzi/schnitzi.c) ([README.md](1998/schnitzi/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work for
+modern systems but he notes a couple compile warnings to ignore.
+
+First if you get the warning:
+
+	warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+	   11 | void  g(){ O=j; printf(_); }
+	      |                 ^~~~~~
+
+
+please do NOT change it! Doing so will break the generated output.
+
+Another warning that was introduced but should be ignored (it's required) is:
+
+
+	warning: assignment to 'char *' from incompatible pointer type 'char **' [-Wincompatible-pointer-types]
+	   55 | main(int v,char **c){ O=r_; _d=c;
+	      |                               ^
+
+Please DO NOT change this either.
+
+If there are any other warnings triggered by your compiler please DO NOT fix
+those either!
+
+Another important note is that as the number passed into the program gets bigger
+the number of lines of output gets substantially larger. For instance:
+
+```sh
+$ ./schnitzi 9|wc -l
+  771999
+```
+
+
+# 1999
+
+There was no IOCCC in 1999.
+
+# 2000
+
+[2000/primenum](2000/primenum/primenum.c) ([README.md](2000/primenum/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This program does not do what you might think it does! Running it like:
+
+```sh
+./primenum 13
+```
+
+will seemingly wait for input exactly because it is waiting for input. See the
+README.md file or look at the source.
+
+It also has main() return void even though this is non-standard. Please do not
+fix this (in fact it was originally done but rolled back).
+
+As well there is a known crash that's also a feature.
+
+## [2000/rince](2000/rince/rince.c) ([README.md](2000/rince/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+If `DISPLAY` is not set the program will very likely crash, do something strange
+(or if you're very unlucky your computer might [halt and catch
+fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing))! :-) ).
+
+
+# 2001
+
+## [2001/anonymous](2001/anonymous/anonymous.c) ([README.md](2001/anonymous/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this so that it
+works in modern systems but he notes that the program
+[anonymous.ten.c](2001/anonymous/anonymous.ten.c) **MUST** be compiled as a
+32-bit ELF binary! This because the program acts on 32-bit ELF binaries. If you
+cannot use `-m32` on this file the program **will** almost certainly crash but
+in no case will it work properly.
+
+This means that for macOS it will not work. Why will this not work in macOS?
+Because Apple saw to it to make it very hard to compile 32-bit binaries (thanks
+Apple for ruining some IOCCC entries! :-) :-( ). This appears to be even harder
+with the Apple silicon chip. Thus this entry will not work with macOS unless you
+have an older, out of date version.
+
+Other BSD Unices were not tested.
+
+## [2001/bellard](2001/bellard/bellard.c) ([README.md](2001/bellard/README.md))
+## STATUS: doesn't work with some platforms - please help us fix
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed an initial
+segfault and he also fixed the [supplementary program
+bellard.otccex.c](2001/bellard/bellard.otccex.c) but this still crashes. Below
+are some notes about getting this entry to work but the gist of it is that it
+requires i386 linux. Can you fix it for 64-bit linux? We welcome your help! Here
+are some notes of interest:
+
+The author said that they compiled it with [gcc version
+2.95.2](https://ftp.gnu.org/gnu/gcc/gcc-2.95.2/gcc-everything-2.95.2.tar.gz). We
+don't know if a certain gcc version is necessary but it might be helpful to
+download and compile that version to test it - or it might not.
+
+I (Cody) have no i386 system to test this but perhaps this is why I can't get it
+to work.  Yusuke was able to get this to work with `-m32` but it seems with an
+emulator.
+
+On the author's [web page for this program](https://bellard.org/otcc/) where it
+is stated it requires i386 linux.
+
+There I found what should be a more portable version which is included as
+[otccelf.c](2001/bellard/otccelf.c) (after adding some `#include`s and the
+modification by Yusuke noted in the README.md file) but it appears this also
+requires i386 linux; indeed looking at the code it hard codes paths that are
+i386 specific to linux.
+
+Another point of interest is that the author provided de-obfuscated versions
+which might be of value to look at. I might do that as well but this entry is
+very likely never going to work for 64-bit linux.
+
+Or maybe you have a fix for 64-bit CPUs? You might like to look at the otccelf
+version but note that it at least in 64-bit linux (and macOS) have compilation
+errors.
+
+Either way we welcome your help! Thank you!
+
+
+## [2001/cheong](2001/cheong/cheong.c) ([README.md](2001/cheong/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This program will very likely crash or do something different without an arg.
+
+## [2001/dgbeards](2001/dgbeards/dgbeards.c) ([README.md](2001/dgbeards/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This program deliberately crashes if it loses (which is what it aims to do).
+
+## [2001/herrmann1](2001/herrmann1/herrmann1.c) ([README.md](2001/herrmann1/README.md)
+## STATUS: missing files - please provide them
+
+The author referred to the file `herrmann1.turing` but it does not exist not even
+in the archive. Do you have a copy? Please provide it!
+
+## STATUS: missing files - please provide them
+
+The author also referred to the file `times2.turing` but this is also missing in
+the archive. Do you have a copy? Please provide it!
+
+
+## STATUS: known bug - please help us fix
+
+There is also a bug in part. During compilation you're supposed to see some
+animation but this does not seem to work with modern gcc versions. It appears
+that version 2.95 works but maybe others do as well. Do you have a fix? We would
+appreciate your help!
+
+## [2001/herrmann2](2001/herrmann2/herrmann2.c) ([README.md](2001/herrmann2/README.md)
+## STATUS: doesn't work with some platforms - please help us fix
+
+The basic operation of this program does work but when using the more advanced
+features it crashes but only if not compiled with `-m32`. This means that macOS
+cannot easily compile it - if it can at all; Apple makes it very hard to do so.
+To at least somewhat use it under macOS or a place where `-m32` is not possible
+try using the [2001/herrmann2/herrmann2-64.c](2001/herrmann2/herrmann2-64.c)
+program. The below describes the original including a fix for clang which does
+not include a fix for 64-bit but still works with clang with one caveat which is
+also described below.
+
+With the default [herrmann2.c](2001/herrmann2/herrmann2.c) the below invocations
+work fine - again as long as `-m32` works.
+
+
+```sh
+./herrmann2 \
+'char*d,A[9876];e;b;*ad,a,c;  tw,ndr,T; wri; ;*h; _,ar  ;on;'\
+' ;l ;i(V)man,n    {-!har  ;   =Aadre(0,&e,o||n -- +,o4,=9,l=b=8,'\
+'!( te-*Aim)|(0~l),srand  (l),,!A,d=,b))&&+((A + te-A(&(*)=+ +95>'\
+'e?(*& c_*r=5,r+e-r +_:2-19<-+?|(d==d),!n ?*d| *( (char**)+V+), ('\
+'  +0,*d-7 ) -r+8)c:7:+++7+! r: and%9- 85! ()-(r+o):(+w,_+ A*(=er'\
+'i+(o)+b)),!write,(=_((-b+*h)(1,A+b,!!((((-+, a >T^l,( o-95=+))w?'\
+'++  &&r:b<<2+a +w) ((!main(n*n,V) , +-) ),l)),w= +T-->o +o+;{ &!'\
+'a;}return _+= ' < herrmann2.ioccc
+```
+
+Note that with this it generates the original source code _prior to the clang
+fix_! This is a nice way to get the original prefixed version!
+
+This also works with 32-bit:
+
+```sh
+./herrmann2 "234 84 045 5 6765 7487 65190 84 656 254 12 43931 818 0 6542 \
+341 45 567 76967 7244 606 976567 895 81898 095 68678 1843 4650547 \
+565980691 389 04974" < herrmann2.ioccc
+```
+
+On the other hand these work with 64 bit (`Mach` or `x86_64`):
+
+```sh
+./herrmann2 < herrmann2.ioccc
+./herrmann2 < herrmann2.cup
+```
+
+A few notes from Cody:
+
+- The author stated that there are some layout restrictions and the changes made
+to get it to compile with clang might have impacted this some. However given
+that it appears to function correctly as long as it is compiled as a 32-bit
+binary both before and after the fix this is probably not relevant.
+- The author said that to add a function call one has to 'fill an entire line
+with stuff doing mostly nothing' but it was not specified what an entire line is
+nor what will happen otherwise. This is seen throughout the code and is likely
+the source of dead code and variable declarations being repeated.
+- At one point (not originally) my fix involved calling another function this
+was done to try and find more about the crash. However this caused the program
+to crash with the invocations that work as long as it's compiled with 32-bit so
+this has been rolled back. This might be due to the restrictions noted in this
+item and the above one but I'm not sure.
+- The entry will give different output each invocation! But what you'll see is that
+each line has a repeating pattern! This is expected.  See below for an example
+few lines.
+- There are some multiple and unsequenced modifications to some variables. See
+below for these. This again does not seem to matter in 32-bit - at least
+theoretically.
+- See below for possible crash locations when compiled as 64-bit.
+
+
+The remaining unsequenced modification warnings are:
+
+```
+herrmann2.c:6:12: warning: multiple unsequenced modifications to 'n' [-Wunsequenced]
+(0,&e,o||n -- +(0,&e,o||n -- +(0,&o||n ,o-- +(0,&on ,o-4,- +(0,n ,o-=94,- +(0,n
+           ^              ~~
+herrmann2.c:6:42: warning: unsequenced modification and access to 'o' [-Wunsequenced]
+(0,&e,o||n -- +(0,&e,o||n -- +(0,&o||n ,o-- +(0,&on ,o-4,- +(0,n ,o-=94,- +(0,n
+                                         ^           ~
+herrmann2.c:11:65: warning: unsequenced modification and access to 'r' [-Wunsequenced]
+5,r+e-r +_:2-195,r+e-r +_:2-195+e-r +_:2-1<-95+e-r +_-1<-95+e-r ++?_-1<-95+e-r
+                                                 ~              ^
+herrmann2.c:18:68: warning: unsequenced modification and access to 'b' [-Wunsequenced]
+-b+*h)(1,A+b,!!-b+*h),A+b,((!!-b+*h),A+b,!!-b+((*h),A+b,!!-b+*h),A-++b,!!-b+*h)
+                                                                   ^
+```
+
+```
+6ejZR}DU}*u?CI)6ejZR}DU}*u?CI)6ejZR}DU}*u?CI)6ejZR}DU}*u?CI)6ejZR}DU}*u?CI)6ejZ
+```
+
+If you break it up you get:
+
+```
+6ejZR}DU}*u?CI)
+6ejZR}DU}*u?CI)
+6ejZR}DU}*u?CI)
+6ejZR}DU}*u?CI)
+6ejZR}DU}*u?CI)
+6ejZ
+```
+
+which you can see is quite similar.
+
+As for crash locations:
+
+```
+Program terminated with signal SIGSEGV, Segmentation fault.
+#0  main (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:22
+22	     )+0,
+[...]
+```
+
+Note that that's not a `+` and the letter O; it's a zero!
+
+Since I broke the line down here's what the line looks like correctly:
+
+```c
++0,*d-7 ) -r+8)+0,*d-7 -r+8)+0,*d-c:7 -r+80,*d-c:7 -r+7:80,*d-7 -r+7:80,*d++-7
+```
+
+What happens if we remove the `+0`? We then get on line 13:
+
+```
+*( (char**)+(int)V+ *( (char)+(int)V+ *( (c),har)+V+  (c),har)+ (V+  (c),r)+ (V+  (  c),
+
+```
+
+Breaking this line down and we see it's still line 13:
+
+```
+13	 *
+14	 ( (char**)+
+15	   (int)V+
+16	   *( (char)+
+17	       (int)V+
+```
+
+So let's merge the lines a bit:
+
+```
+#0  main (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:13
+13	 *( (char**)+(int)V+
+(gdb) bt
+#0  main (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:13
+(gdb) p (char**)+(int)V
+$1 = (char **) 0xffffffff831602d8
+(gdb) p *(char**)+(int)V
+Cannot access memory at address 0xffffffff831602d8
+```
+
+Still line 13. Let's do it again:
+
+```
+#0  0x0000000000401442 in main (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:13
+13	 *( (char**)+(int)V+ *( (char)+ (int)V+ *( (c), har)+ V+ (c), har)+ (V+ (c), r)+ (V+ (  c), + 0, *d - 7 ) -r +8),
+(gdb) p *(( (char**)+(int)V+ *( (char)+ (int)V+ *( (c), har)+ V+ (c), har)+ (V+ (c), r)+ (V+ (  c), + 0, *d - 7 ) -r +8))
+Cannot access memory at address 0xffffffffbfa05960
+(gdb) p *( ( char**)+(int)V)
+Cannot access memory at address 0xffffffffbfa05958
+(gdb) p *( ( char**)+(int)V)+*((char)+(int)V)
+Cannot access memory at address 0x58
+(gdb) p *( (char)+ (int)V )
+Cannot access memory at address 0x58
+(gdb) p (int)V+*((c),har)
+$1 = -1080010408
+(gdb) ptype (int)V+*((c),har)
+type = int
+(gdb) p V
+$2 = (char **) 0x7fffbfa05958
+(gdb) p (int)V
+$3 = -1080010408
+(gdb) ptype V
+type = char **
+(gdb) p *V
+$4 = 0x7fffbfa07323 "./herrmann2"
+(gdb) ptype (int)V
+type = int
+(gdb) q
+
+```
+
+and so on. Note that with the fix for clang `V` is a `char **` not an int hence
+the casts. But is this relevant? Let's find out:
+
+```
+#0  0x0000000000401440 in main (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:14
+14	+0,*d-7 ) -r+8)+0,*d-7 -r+8)+0,*d-c:7 -r+80,*d-c:7 -r+7:80,*d-7 -r+7:80,*d++-7
+```
+
+Now it's a different line! Can we fix this?
+
+```
+#0  main (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:21
+21	 +0,
+```
+
+Again `+0`! Let's remove it:
+
+```
+#0  main (n@entry=<optimized out>, V@entry=<optimized out>) at herrmann2.c:13
+13	 *( (char**)+V+ *( (char)+V+ *( (c),har)+V+  (c),har)+ (V+  (c),r)+ (V+  (  c),
+(gdb) p *( (char **)V)
+Cannot access memory at address 0x544777d8
+```
+
+So now it's back to the same problem which means that it's most likely not
+because of the fix for clang. Still if you have a 32-bit compiler/linker you can
+run the program; else you can at least run the alt version that works in part.
+
+Do you have a fix for 64-bit compilation? Please provide it!
+## [2001/kev](2001/kev/kev.c) ([README.md](2001/kev/README.md)
+## STATUS: INABIAF - please **DO NOT** fix
+
+Sometimes when one player presses `q` it will result in broken pipe on the other
+end.
+
+The author also noted that some versions of `curses` have problems with
+`getch()` having a delay.
+
+The program is very likely to segfault if the specified port can't be bound or
+connected to.
+
+If the terminal is too wide (the author suggests over 500 characters) the
+program can segfault.
+
+It's also possible to crash the program if a player scores over a billion
+points.
+
+Although it is independent of endianness both systems need the same character
+set. In other words both have to be ASCII or EBCDIC - not one of each.
+
+## [2001/ollinger](2001/ollinger/ollinger.c) ([README.md)(2001/ollinger/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This program will very likely crash or do something else without an arg.
+
+
+
+## [2001/schweikh](2001/schweikh/schweikh.c) ([README.md](2001/schweikh/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This program will very likely crash or do something else if you do not give it
+two args.
+
+Note also that the glob pattern must match the whole string. See the author's
+comments for details and a workaround.
+
+There's also no way to escape meta characters.
+
+# 2002
+
+There was no IOCCC in 2002.
+
+# 2003
+
+There was no IOCCC in 2003.
+
+# 2004
+
+
+## [2004/burley](2004/burley/burley.c) ([README.md](2004/burley/README.md))
+## STATUS: known bug - please help us fix
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile
+with clang. He notes however that both prior to the fix (with gcc) and after the
+fix (gcc, clang) it does not work: it allows input of the bet but after it
+prints the hand it does not do anything with your next move. Cody provided the
+following notes and tips (including possible reasons it doesn't work):
+
+0. Originally the `jmp_buf` was just an `int p[4][1000]`.
+1. The `setjmp.h` header file was not included so the calls to `longjmp()` had
+not only the wrong number of arguments but also implicitly returned int when it
+actually returns void. This means that the comma operator had to be used to get
+the binary expressions to work. It might be this is part of the problem. It's
+possible that actually changing this introduced it to not work as some old
+entries actually use invalid prototypes and work but changing them to use the
+proper prototype breaks them.
+2. Another possible problem is the abuse of `setjmp()` and `longjmp()` which is
+known to be a problem, at least as he interprets it in his tired head (and less
+experience with `longjmp`). In particular:
+    > The longjmp() routines may not be called after the routine which called the
+    > setjmp() routines returns.
+    See also the NOTES section of the linux man pages for `setjmp(3)` and
+    `longjmp(3)`.
+3. The main() originally returned a call to main() which appeared to be an
+infinite recursion at least as it was; now it returns a call to poke() (since
+it's a poker game) which has the same number and type of args (1, `char *`) that
+main() originally had. This appears to not be an infinite recursion but I might
+be reading it wrong. Changing it to not return itself and the same problem
+occurs so perhaps this is not the problem. It's possible that the initial call
+to the `poke()` function is incorrect.
+4. It might be that the requirement of the comma operator in modern compilers is
+a problem. Perhaps some instances of `,1` should be `,0`? That seems plausible
+as they are often used with the `&&` operator.
+5. As well main() had only one arg, a `char *`, and there was a (seemingly)
+needless cast to `char *` from gets(). This cast remains in the code however.
+6. The code no longer uses `gets()` but `fgets()`; this is not the problem
+however.
+7. Sometimes the lack of a _proper_ prototype lets code work if the function is
+used incorrectly so one should be careful with adding the proper prototypes.
+With this entry it didn't _appear_ to be relevant but maybe it is after another
+change?
 
 # 1997
 
@@ -795,57 +1547,37 @@ fix this (in fact it was originally done but rolled back).
 # 2001
 
 
-## [2001/anonymous](2001/anonymous/anonymous.c) ([README.md](2001/anonymous/README.md))
-## STATUS: known bug - please help us fix
-
-This entry seems to no longer work and we would appreciate any help from anyone
-who can fix this. [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) has
-the following hints that might help but he has no system where he could test
-it. [Yusuke Endoh](/winners.html#Yusuke_Endoh) [wrote a little bit about
-it](https://mame-github-io.translate.goog/ioccc-ja-spoilers/2001/anonymous.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp) that
-might or might not help but he too could not get it to work.
-
-Tips from Cody:
-
-- Try a beautifier on the original C code.
-- Use cpp to make the functions easier to parse. For instance if you're in the
-directory try `cpp -E anonymous.cp > anonymous.cpp` and look at that file to see
-the functions. It might or might not be helpful to use cpp on the beautified
-source.
-- After beautifying it try changing references of the macros (where not too
-complicated) to their definitions. For instance in vim you might do:
-`:%s/\<l\>/int */g` and then delete the line that was changed to `#define int *
-int*` (or else do a range substitute so it's not changed). You might not need
-this if you use the cpp. This might be useful anyway to more easily test things.
-- If your system has a `setarch` tool that might or might not be of help (I'm
-not too familiar with its internals).
-- The code appears to do everything from one call to `exit(3)` but it makes use
-of the ternary operator and possibly the comma operator.
-- Check the Makefile for the defines but also observe that those are in the
-source file. It appears that the entry might try compiling as well but that's
-from a quick glance.
-- The original main() started like: `main (char *ck, char **k)` but we made it
-compilable for clang by changing it to be: `main (int cka, char **k) { char *ck
-= (char *)cka;` which might or might not be good.
-- The author warns that only simple source (once compiled) would work so make
-use of the provided source file
-[2001/anonymous/anonymous.ten.c](2001/anonymous/anonymous.ten.c). To compile try
-`make anonymous.ten` from the entry directory which you can then run the entry
-on. Note that it needs to be compiled as a x86 program.
-- The program will to an extent destroy files it is used on. See the author's
-warning in their comments on that.
-
-
 ## [2001/bellard](2001/bellard/bellard.c) ([README.md](2001/bellard/README.md))
-## STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
+## STATUS: probable bug (possibly depending on system) - please help test and if necessary fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed an initial
 segfault and he also fixed the [supplementary
-program](2001/bellard/bellard.otccex.c) to test the entry on to not segfault and
-seemingly work but he has no 32-bit system to test any further fixes and we
+program bellard.otccex.c](2001/bellard/bellard.otccex.c) to test the entry on to not segfault and
+seemingly work but he has no 32-bit system to test any further fixes; we
 would greatly appreciate anyone's help! It appears that this entry will require
 major debugging and to make it work one might need to have a deep understanding
 of the ELF format.
+
+The author said that they compiled it with [gcc version
+2.95.2](https://ftp.gnu.org/gnu/gcc/gcc-2.95.2/gcc-everything-2.95.2.tar.gz). We don't know if
+a certain gcc version is necessary but it might be helpful to download and
+compile that version to test it.
+
+## [2001/westley](2001/westley/westley.c) ([README.md](2001/westley/README.md))
+## STATUS: missing files - please provide them
+
+The author referred to the file `card.gif` but this appears to be missing. Do
+you have it? If you do please provide it and thank you!
+
+## STATUS: uses gets() - change to fgets() if possible (in some cases getline() works)
+
+The code also uses `gets()` which, without redirecting stderr to `/dev/null`,
+can show an obnoxious warning every time it's run. In the script
+[2001/westley/westley.sh](2001/westley/westley.sh) that [Cody Boone
+Ferguson](/winners.html#Cody_Boone_Ferguson) added stderr is in fact redirected
+to `/dev/null` to prevent this warning but it would probably be better if it was
+changed to use `fgets()` (which he might end up doing).
+
 
 # 2002
 
@@ -896,6 +1628,10 @@ as they are often used with the `&&` operator.
 needless cast to `char *` from gets(). This cast remains in the code however.
 6. The code no longer uses `gets()` but `fgets()`; this is not the problem
 however.
+7. Sometimes the lack of a _proper_ prototype lets code work if the function is
+used incorrectly so one should be careful with adding the proper prototypes.
+With this entry it didn't _appear_ to be relevant but maybe it is after another
+change?
 
 
 ## [2004/gavin](2004/gavin/gavin.c) ([README.md](2004/gavin//README.md))
@@ -1000,39 +1736,138 @@ gavin_files: boot.b lilo.conf prim gavin_install.txt
 The current ([Makefile](2004/gavin/Makefile) was modified to try and
 fit into the current IOCCC build environment.
 
+## [2004/sds](2004/sds/sds.c) ([README.md](2004/sds/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+The generated code will very likely segfault or do something not intended if not
+given the right args. See the README.md file for the correct syntax.
+
 
 # 2005
 
+## [2005/anon](2005/anon/anon.c) ([README.md](2005/anon/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This program sometimes will create unsolvable puzzles :-) just to hook you.
+As a protection against this - and to prevent you from spending too much time on
+such puzzles (or too big puzzles if you insist on doing this) - it deliberately
+destroys its runtime stack. See the [README.md](2005/anon/README.md) for more
+details on this.
+
+If you specify more than three args the program might also crash or do something
+strange. This might also happen if you specify excessively large board
+dimensions. Try `100 100 100` for instance and see what happens!
+
 ## [2005/giljade](2005/giljade/giljade.c) ([README.md](2005/giljade/README.md))
-## STATUS: doesn't work with some platforms - please help us fix
+## STATUS: known bug - please help us fix
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) noted that this
-requires both 32-bit CPUs (data size?) and also cannot have the optimiser
-enabled.  It might be that it can be fixed, perhaps by changing the int sizes
-and bitwise operations, but if not this will not work with some systems like
-modern Macs as Apple has made it quite difficult to compile 32-bit applications
-(thanks a lot Apple for ruining some IOCCC entries! :-) ).
+Landon Curt Noll fixed this entry to work with clang by changing the first arg
+to be an `int` and the second arg to be a `char **`. This is important because
+of clang's deficiency requiring args to be one type only.
 
-It's quite probable that non x86 related CPUs will also not work: it's hard to
-know because Cody's only non-x86 (x86_64 in particular) system is the MacBook
-Pro Max with the M1 chip which is arm64 and unfortunately specifying `-m32` is
-invalid on that system (might be on Intel 64-bit Macs as well but he hasn't had
-one since before November 2022).
+This did not completely fix the problem for the program however.
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) observed that it has to
+be compiled with `-m32` which is not possible in modern macOS. It also cannot
+have the compiler optimiser enabled. Cody fixed it so that it works in 64-bit
+but the clang fix does break something in the entry, specifically that the
+self-test feature of the program no longer works.
+
+One is supposed to be able to do:
+
+```sh
+./giljade > out
+./giljade out
+```
+
+and see all layouts compile without error. If you wish to see this in action and
+you have a compiler without the deficiency of clang you can do:
+
+```sh
+make alt
+./giljade.alt > out
+./giljade out
+
+```
+
+(You don't need to use `giljade.alt` to test compile - it's the output of the
+program that's the actual problem.)
+
+But the issue is can it be fixed for clang. If you have a fix we welcome your
+help! Believe it or not this appears in part to be due to more than two spaces in
+the program except in the places where the original code has them. This however
+does not seem to be the full story. Cody probably will look at this again but
+for now we note this problem here.
+
+## STATUS: INABIAF - please **DO NOT** fix
+
+It also will very likely segfault or do something strange if the source code
+does not exist.
 
 
 ## [2005/mynx](2005/mynx/mynx.c) ([README.md](2005/mynx/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) notes that, though
-probably obvious, this entry will not work with https. He changed the code to
-scan for https too (it exited before) in case someone comes up with a clever
-command line to make it work but the problem is a secure connection has to first
-be set up in order to give http commands. This is not a bug but it's worth
-pointing out as it won't work on as many websites as it used to including the
-[IOCCC website](https://www.ioccc.org) itself.
+probably obvious, this entry will not work with https. He added an alt version
+that scans for https in case someone wants to set up a pipeline or other
+workaround (perhaps with stunnel) but the problem otherwise is a secure
+connection has to first be set up in order to give http commands. This is not a
+bug but it's worth pointing out as it won't work on as many websites as it used
+to including the [IOCCC website](https://www.ioccc.org) itself.
 
 
 # 2006
+
+## [2006/hamre](2006/hamre/hamre.c) ([README.md](2006/hamre/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This program will very likely crash or do something completely irrational :-) if
+you don't supply it with an argument.
+
+As well supplying more arguments will possibly limit the number of nested
+operators supported.
+
+Don't try dividing by 0 (zero).
+
+## [2006/monge](2006/monge/monge.c) ([README.md](2006/monge/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+Incorrect formulas will ungracefully crash the program.
+
+## [2006/stewart](2006/stewart/stewart.c) ([README.md](2006/stewart/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This program will very likely crash or do something funny if the file does not
+exist or cannot be opened.
+
+## [2006/toledo2](2006/toledo2/toledo2.c) ([README.md](2006/toledo2/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this program to
+not crash in macOS (it appeared to work fine in fedora linux on an `x86_64`
+architecture but he does not know if it crashed in macOS Ventura due to the fact
+it is an `arm64` CPU - the Apple silicon chip). This fix, BTW, is a mix of a fix
+by [Yusuke Endoh](/winners.html#Yusuke_Endoh) and Cody's. Nevertheless there are
+two features that are not bugs and one bug (see below).
+
+By design this program is supposed to crash on termination.
+
+You must type in caps (except in strings) and this program is indeed
+case-sensitive.
+
+## STATUS: known bug - please help us fix
+
+The author showed something like this in their remarks:
+
+```sh
+./toledo2 DDT.COM
+A> IMPORT DDT.COM
+```
+
+but the `A>` prompt never appears; instead it's just the same as if you
+specified no arg.
+
+
 # 2007
 # 2008
 # 2009
@@ -1042,6 +1877,112 @@ These years did not have an IOCCC.
 
 
 # 2011
+
+## [2011/dlowe](2011/dlowe/dlowe.c) ([README.md](2011/dlowe/README.md))
+## STATUS: missing or dead link - please provide them
+
+The author's website, http://www.pootpoot.net, no longer exists as it once did,
+instead being something else entirely. The Internet Wayback Machine, although it
+archived it, did not load scripts. Do you know if the domain was moved? Do you
+have an archive or mirror? Please provide us it! Thank you.
+
+## STATUS: INABIAF - please **DO NOT** fix
+
+The author states the following:
+
+* Bad input (e.g. nonexistent files, non-numeric number of iterations, etc.)
+tends to result in empty output.
+
+* Given exactly one corpus, the program will crash or produce garbage.
+
+* Leaks memory and file descriptors while processing files.
+
+* Will crash and die horribly if it runs out of memory.
+
+
+## [2011/richards](2011/richards/richards.c) ([README.md](2011/richards/README.md))
+## STATUS: doesn't work with some platforms - please help us fix
+
+This does not appear to work with macOS, resulting in a segfault. We're not
+sure if this is to do with the Apple silicon chip or not but it seems unlikely.
+At first glance it appeared to be that it might be the function pointers. These
+were changed a bit and it might have helped a bit but this is not certain
+either. What was noticed is that there is an overflow according to `asan`:
+
+
+```
+==32361==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x00016d368d08 at pc 0x000102b1dcb0 bp 0x00016d368b90 sp 0x00016d368b88
+READ of size 8 at 0x00016d368d08 thread T0
+    #0 0x102b1dcac in rd richards.c:128
+    #1 0x102b1e1f4 in re richards.c:145
+    #2 0x102a7e7e0 in t richards.c:104
+    #3 0x102b1f7cc in main richards.c:185
+    #4 0x19498ff24  (<unknown module>)
+
+Address 0x00016d368d08 is located in stack of thread T0 at offset 40 in frame
+    #0 0x102b1dae8 in rd richards.c:125
+
+  This frame has 1 object(s):
+    [32, 40) 'a' (line 126) <== Memory access at offset 40 overflows this variable
+HINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork
+      (longjmp and C++ exceptions *are* supported)
+SUMMARY: AddressSanitizer: stack-buffer-overflow richards.c:128 in rd
+Shadow bytes around the buggy address:
+  0x00702da8d150: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702da8d160: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702da8d170: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702da8d180: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702da8d190: 00 00 00 00 00 00 00 00 00 00 00 00 f1 f1 f1 f1
+=>0x00702da8d1a0: 00[f3]f3 f3 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702da8d1b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702da8d1c0: f1 f1 f1 f1 00 f3 f3 f3 00 00 00 00 00 00 00 00
+  0x00702da8d1d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702da8d1e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702da8d1f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==32361==ABORTING
+
+```
+
+This was reported in both linux as 32-bit and 64-bit and macOS as 64-bit except
+that the sizes were different in 32-bit (as expected). The code it is having a
+problem with is:
+
+```c
+  o *a = 0, **b = &a, **c = b + 24;
+    x[v] = w;
+    for (; b < c && (*b < (o *)w || *b > (o *) T || *b == (long) v); b++);
+
+```
+
+where `o` is a `void`.
+
+Do you have a fix? We welcome it!
+
+## [2011/vik](2012/vik/vik.c) ([README.md](2012/vik/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+The author stated that the program will crash if no argument is passed tot he
+program though we note that your computer might also [halt and catch
+fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
 
 
 # 2012

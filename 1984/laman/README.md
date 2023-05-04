@@ -1,14 +1,18 @@
 # Third place
 
-Mike Laman
+Mike Laman  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./laman <positive number>
+```sh
+./laman <positive number>
+```
 
 
 ### INABIAF - it's not a bug it's a feature :-)
@@ -22,9 +26,11 @@ arg.
 The program accepts ONE POSITIVE argument.  Seeing is believing, so try things
 like:
 
-	./laman 4
-	./laman 9
-	./laman 16
+```sh
+./laman 4
+./laman 9
+./laman 16
+```
 
 This code should run you in circles.
 
@@ -33,19 +39,23 @@ This code should run you in circles.
 Some new compilers dislike lines 6 and 10 of the source, so we changed
 them from:
 
-	;++f)a[		b<<5|c]		=d++,b+		=e;for(		f=0;f<O
-	<<5|c]^		=a[b<<5		|c]^=a[		(k-(b+1		))<<5|c]
+```c
+;++f)a[		b<<5|c]		=d++,b+		=e;for(		f=0;f<O
+<<5|c]^		=a[b<<5		|c]^=a[		(k-(b+1		))<<5|c]
+```
 
 to:
 
-	;++f)a[		b<<5|c]		=d++,b+=	e;for(		f=0;f<O
-	<<5|c]^=	a[b<<5		|c]^=a[		(k-(b+1		))<<5|c]
+```c
+;++f)a[		b<<5|c]		=d++,b+=	e;for(		f=0;f<O
+<<5|c]^=	a[b<<5		|c]^=a[		(k-(b+1		))<<5|c]
+```
 
 I hope you have a C beautifier!
 
 ## Author's remarks:
 
-No comments were provided by the author.
+No remarks were provided by the author.
 
 ## Copyright and CC BY-SA 4.0 License:
 

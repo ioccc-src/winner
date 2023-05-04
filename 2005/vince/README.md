@@ -1,10 +1,9 @@
 # Most beauteous visuals
 
-    Vincent Weaver
-    Ithaca, NY
-    USA
-    vince@deater.net
-    <http://www.deater.net/weave/>
+Vincent Weaver  
+US  
+<vince@deater.net>  
+<http://www.deater.net/weave/>  
 
 ## To build:
 
@@ -21,7 +20,8 @@ make
 ./vince
 ```
 
-Under MacOSX run from within an xterm while the X11 server is running.
+Under macOS run from within an console tab (whether xterm, the default or
+another) while the X11 server is running.
 
 ## Try:
 
@@ -31,8 +31,8 @@ echo "Do or do not. There is no try."
 
 ### Alternate code:
 
-The `vince.alt.c` code of the submission will run on SGI Irix and
-also has the recursive CPP macro (which snuck in accidentally) removed.
+The [vince.alt.c](vince.alt.c) code of the submission will run on SGI IRIX and
+also has the recursive CPP macro (which sneaked in accidentally) removed.
 
 To compile this alternate version:
 
@@ -44,9 +44,12 @@ Use `vince.alt` as you would `vince` above.
 
 ## Judges' remarks:
 
-This beauteous entry makes use of visual {}'s and whitespace to instruct
-the OpenGL development libraries to create beauteous visuals.  Even
-hitting the space bar while the program runs produces a "spacey" effect! :-)
+This beauteous entry makes use of visual `{}`s and whitespace to instruct the
+[OpenGL](https://www.opengl.org) development libraries to create beauteous
+visuals.  Even hitting the space bar while the program runs produces a "spacey"
+effect! :-)
+
+NOTE: when hitting space bar make sure that the program window is in focus!
 
 Challenge: Try modifying the texture to something of your own design.
 
@@ -54,23 +57,23 @@ Challenge: Try modifying the texture to something of your own design.
 
 ### ABUSE OF RULES
 
-  * The executable needs to read in its own source code in order to run. As
+* The executable needs to read in its own source code in order to run. As
 long as the source is in the same directory as the executable it should be
 able to find it...
 
-  * The program requires the OpenGL library.
+* The program requires the OpenGL library.
 
-  * The program abuses severely the whitespace and { } ; exceptions in the
-filesize limits.
+* The program abuses severely the whitespace and `{ } ;` exceptions in the
+file size limits.
 
 ### Requirements
 
-  * OpenGL. It works (slowly) with Mesa.
+* OpenGL. It works (slowly) with Mesa.
 
-  * 16bpp graphics capability (but might work at other depths)
+* 16bpp graphics capability (but might work at other depths)
 
-  * The original source needs to be in the same directory as the executable,
-and the source's name should be the same as the executable but with .c on the
+* The original source needs to be in the same directory as the executable,
+and the source's name should be the same as the executable but with `.c` on the
 end.
 
 ### Background
@@ -86,7 +89,7 @@ rendering.
 ### Obfuscation
 
 It was a challenge getting the source code below the 2k limit. OpenGL has way
-too many GRATUITOUSLY_LONG_CONSTANTS and glLongStudlyFunctionNames();
+too many '`GRATUITOUSLY_LONG_CONSTANTS`' and '`glLongStudlyFunctionNames();`'.
 
 Therefore, much of the obfuscation comes secondary to just reducing the code
 size to fit under the limit while still having some semblance of a demo.
@@ -95,7 +98,7 @@ There are some interesting abuses scattered about.
 
 ### Usage
 
-Try hitting the spacebar when the program is running.
+Try hitting the space bar when the program is running.
 
 ### For Fun
 
@@ -107,11 +110,13 @@ Many thanks to John Clemens for testing this on various machines for me.
 
 ### Errors you can get
 
-        0 = no error
-        1 = X problem
-        2 = Can't open glx
-        3 = Can't open 16bpp visual
-        4 = can't open source file
+- 0 = no error.
+- 1 =
+[X](https://en.wikipedia.org/wiki/X_Window_System_protocols_and_architecture)
+problem.
+- 2 = Can't open [glx](https://en.wikipedia.org/wiki/GLX).
+- 3 = Can't open 16bpp visual.
+- 4 = can't open source file.
 
 ## Copyright and CC BY-SA 4.0 License:
 

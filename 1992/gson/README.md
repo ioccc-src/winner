@@ -40,10 +40,10 @@ Determine where your system dictionary is located.  You may find
 it located in one of the following places:
 
 ```
-	/usr/share/dict/words
-	/usr/share/lib/spell/words
-	/usr/ucblib/dict/words
-	/dev/null			# <-- for machines with nothing to say
+/usr/share/dict/words
+/usr/share/lib/spell/words
+/usr/ucblib/dict/words
+/dev/null			# <-- for machines with nothing to say
 ```  
 
 Then using the proper dictionary:
@@ -83,13 +83,13 @@ construed to mean Alphabet Game, and by pure coincidence it happens to be the
 author's initials.
     
     
-### What it does:
+### What it does
     
 AG takes one or more words as arguments, and tries to find anagrams of those
 words, i.e. words or sentences containing exactly the same letters.
 
 
-### How to use it:
+### How to use it
     
 To run AG, you need a dictionary file consisting of distinct words in the
 natural language of your choice, one word on each line.  If your machine doesn't
@@ -113,7 +113,7 @@ number of words in the anagrams is limited to 3 by default.  This
 limit can be changed using a numeric command line option, as in
 `./ag -4 international obfuscated c code contest </usr/dict/words`.
 
-### Bugs:
+### Bugs
     
 - There is no error checking.
 - Standard input must be seekable, so you can't pipe the dictionary into AG.
@@ -126,7 +126,7 @@ it can solve is severely limited on machines that limit the stack size to 64k or
 less.
 
 
-### Obfuscatory notes:
+### Obfuscatory notes
     
 As you can see, AG takes advantage of the new '92 whitespace rules to
 achieve a clear, readable, self-documenting layout.  The identifiers

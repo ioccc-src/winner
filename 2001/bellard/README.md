@@ -1,11 +1,10 @@
 # Best abuse of the rules
 
-    Fabrice Bellard
-    451 chemin du mas de Matour
-    34790 GRABELS
-    France
-
-    http://bellard.org
+Fabrice Bellard  
+451 chemin du mas de Matour  
+34790 Grabels  
+France  
+<https://bellard.org>
 
 ## To build:
 
@@ -20,14 +19,35 @@ make
 ```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) partially fixed this
-but he notes that this will not work without some serious debugging. As he has
-no 32-bit system to test this under it's also unlikely he will be able to
-resolve the remaining problems. He also has no knowledge of the ELF binary
-format so that will also make it harder to work. As it is it segfaults. He fixed
-an earlier segfault so that at least the file can be opened and he also changed
-some of the macro uses to what they expanded to but mostly he kept it the same.
-He also fixed `bellard.otccex.c` so it does not segfault and seemingly works
-okay. Thank you Cody for your assistance!
+but he notes that this will not work without (according to the author) i386
+linux or else some skill in resolving the portability issues. As it is it
+segfaults in 64-bit linux (and as expected macOS). He fixed an earlier segfault
+so that at least the file can be opened (but perhaps that will be wrong in i386
+linux?) and he also changed some of the macro used to what they evaluate to but
+mostly he kept it the same.
+
+Cody also fixed [bellard.otccex.c](bellard.otccex.c) so it does not segfault and
+seemingly works okay (it did not work at all). The main problem was that some
+ints were being used as pointers. Also the Fibonacci sequence (`fib()`) will
+overflow at `n > 48` so this is checked prior to running the function. Either
+way unfortunately this entry seems to not work in 64-bit linux or macOS. See
+below portability notes. Thank you Cody for your assistance!
+
+
+### Portability notes:
+
+With a tip from [Yusuke Endoh](/winners.html#Yusuke_Endoh) we rediscovered the
+author's [web page for this program](https://bellard.org/otcc/) where it is
+stated that this will only work in i386 linux.  The author also stated in the
+remarks in this document that they used [gcc
+2.95.2](https://ftp.gnu.org/gnu/gcc/gcc-2.95.2/gcc-everything-2.95.2.tar.gz) but
+we don't know if that's relevant or not.
+
+Yusuke offered a modification which is not needed with gcc but with some
+versions of `clang` it is. With `gcc` we can get away with `-rdynamic -fno-pie
+-Wl,-z,execstack` which solves the problem of execution in memory but any
+compiler that does not support this would not work. Thus we use the modification
+by Yusuke. Thank you Yusuke!
 
 
 ## Try:
@@ -38,129 +58,130 @@ okay. Thank you Cody for your assistance!
 
 ## Judges' remarks:
 
-<JUDGES_COMMENTS> :-)
+`<JUDGES_COMMENTS>` :-)
 
 ## Author's remarks:
 
-    OTCC is an Obfuscated Tiny C Compiler for i386-linux. It generates
-    FAST! i386 32 bit code (no bytecode) and it is powerful enough to
-    compile itself. OTCC supports a strict subset of C. This subset is
-    compilable by a standard ANSI C compiler. OTCC compiles,
-    assembles, links and runs C code without the need of any other
-    program.
+`OTCC` is an Obfuscated Tiny C Compiler for i386-linux. It generates
+FAST! i386 32 bit code (no bytecode) and it is powerful enough to
+compile itself. `OTCC` supports a strict subset of C. This subset is
+compilable by a standard ANSI C compiler. `OTCC` compiles,
+assembles, links and runs C code without the need of any other
+program.
 
-    You can use it by typing:
+You can use it by typing:
 
-        ./bellard bellard.c [args]...
+```sh
+./bellard bellard.c [args]...
+```
 
-    or by giving the C source to its standard input.
+or by giving the C source to its standard input.
 
-    'args' are given to the 'main' function of bellard.c (argv[0] is
-    bellard.c).
+`args` are given to the `main` function of `bellard.c` (`argv[0]` is
+[bellard.c](bellard.c)).
 
-    Examples:
+### Examples:
 
-     - Sample compilation and execution:
+- Sample compilation and execution:
 
         ./bellard bellard.otccex.c 10
 
-     - Self compilation:
+- Self compilation:
 
         ./bellard bellard.c bellard.otccex.c 10
 
-     - Self compilation iterated...
+- Self compilation iterated...
 
         ./bellard bellard.c bellard.c bellard.otccex.c 10
-
+    
     An alternate syntax is to use it as a script interpreter: you can
-    put '#!/usr/local/bin/otcc' at the beginning of your C source if
-    you installed otcc at this place.
+    put `#!/usr/local/bin/otcc` at the beginning of your C source if
+    you installed `otcc` at this place.
 
-    Supported C language subset (read joint example 'otccex.c' to have
-    an introduction to OTCC dialect):
+### Supported C language subset (read joint example [bellard.otccex.c](bellard.otccex.c) to have an introduction to `OTCC` dialect)
 
-    - Expressions:
+#### Expressions:
 
-        * binary operators, by decreasing priority order: '*' '/' '%',
-          '+' '-', '>>' '<<', '<' '<=' '>' '>=', '==' '!=', '&',
-          '^', '|', '=', '&&', '||'.
+* binary operators, by decreasing priority order: `*` `/` `%`,
+  `+` `-`, `>>` `<<`, `<` `<=` `>` `>=`, `==` `!=`, `&`,
+  `^`, `|`, `=`, `&&`, `||`.
 
-        * '&&' and '||' have the same semantics as C : left to right
-          evaluation and early exit.
+* `&&` and `||` have the same semantics as in C: left to right
+  evaluation and early exit.
 
-        * Parenthesis are supported.
+* Parenthesis are supported.
 
-        * Unary operators: '&', '*' (pointer indirection), '-'
-          (negation), '+', '!', '~', post fixed '++' and '--'.
+* Unary operators: `&`, `*` (pointer indirection), `-`
+  (negation), `+`, `!`, `~`, post fixed `++` and `--`.
 
-        * Pointer indirection ('*') only works with explicit cast to
-          'char *', 'int *' or 'int (*)()' (function pointer).
+* Pointer indirection (`*`) only works with explicit cast to
+  `char *`, `int *` or `int (*)()` (function pointer).
 
-        * '++', '--', and unary '&' can only be used with variable
-          lvalue (left value).
+* `++`, `--`, and unary `&` can only be used with variable
+  lvalue (left value).
 
-        * '=' can only be used with variable or '*' (pointer
-          indirection) lvalue.
+* `=` can only be used with variable or `*` (pointer
+  indirection) lvalue.
 
-        * Function calls are supported with standard i386 calling
-          convention. Function pointers are supported with explicit
-          cast. Functions can be used before being declared.
+* Function calls are supported _with standard **i386** calling
+  convention_. Function pointers are supported _with explicit
+  cast_. Functions can be used before being declared.
 
-    - Types: only signed integer ('int') variables and functions can
-      be declared. Variables cannot be initialized in
-      declarations. Only old K&R function declarations are parsed
-      (implicit integer return value and no types on arguments).
+- Types: only signed integer (`int`) variables and functions can
+  be declared. Variables cannot be initialized in
+  declarations. _Only old K&R function declarations are parsed
+  (implicit integer return value and no types on arguments)_.
 
-    - Any function or variable from the libc can be used because OTCC
-      uses the libc dynamic linker to resolve undefined symbols.
+- Any function or variable from the libc can be used because `OTCC`
+  uses the libc dynamic linker to resolve undefined symbols.
 
-    - Instructions: blocks ('{' '}') are supported as in C. 'if' and
-      'else' can be used for tests. The 'while' and 'for' C constructs
-      are supported for loops. 'break' can be used to exit
-      loops. 'return' is used for the return value of a function.
+- Instructions: blocks (`{` `}`) are supported as in C. `if` and
+  `else` can be used for tests. The `while` and `for` C looks are supported.
+  `break` can be used to exit loops. `return` is used for the return value of a
+  function.
 
-    - Identifiers are parsed the same way as C. Local variables are
-      handled, but there is no local name space (not a problem if
-      different names are used for local and global variables).
+- Identifiers are parsed the same way as C. Local variables are
+  handled, but there is no local name space (not a problem if
+  different names are used for local and global variables).
 
-    - Numbers can be entered in decimal, hexadecimal ('0x' or '0X'
-      prefix), or octal ('0' prefix).
+- Numbers can be entered in decimal, hexadecimal (`0x` or `0X`
+  prefix), or octal (`0` prefix).
 
-    - '#define' is supported without function like arguments. No macro
-      recursion is tolerated. Other preprocessor directives are
-      ignored.
+- `#define` is supported without function like arguments. _No macro
+  recursion is tolerated_; _other preprocessor directives are
+  ignored_.
 
-    - C Strings and C character constants are supported. Only '\n',
-      '\"', '\'' and '\\' escapes are recognized.
+- C Strings and C character constants are supported. Only `\n`,
+  `\"`, `\'` and `\\` escapes are recognized.
 
-    - C Comments can be used (but no C++ comments).
+- C Comments can be used (but no C++ comments).
 
-    - No error is displayed if an incorrect program is given.
+- No error is displayed if an incorrect program is given.
 
-    - Memory: the code, data, and symbol sizes are limited to 100KB
-      (it can be changed in the source code).
+- Memory: the code, data, and symbol sizes are limited to 100KB
+  (it can be changed in the source code).
 
-    Obfuscation:
+### Obfuscation:
 
-    No special effort was needed because obfuscation is almost
-    unavoidable for such a program :-) Defines must be used to
-    compress the code, and integrated i386 code generator leads to non
-    obvious code.
+No special effort was needed because obfuscation is almost
+unavoidable for such a program :-) Defines must be used to
+compress the code, and integrated i386 code generator leads to non
+obvious code.
 
-    Portability:
+### Portability:
 
-    OTCC only works on i386 linux because it generates i386 code. OTCC
-    also relies on little endianness, unaligned memory accesses and
-    ASCII representation of characters. It also supposes that no valid
-    pointers are less than 512. If all those constraints are met, then
-    OTCC could be theoretically used to "cross compile", although no
-    such support is currently integrated.
+`OTCC` only works on i386 linux because it generates i386 code. `OTCC`
+also relies on little endianness, unaligned memory accesses and
+ASCII representation of characters. It also supposes that no valid
+pointers are less than 512. If all those constraints are met, then
+`OTCC` could be theoretically used to "cross compile", although no
+such support is currently integrated.
 
-    It was successfully compiled with gcc version 2.95.2. You get some
-    warnings because old K&R protos are used, some casts are implicit
-    and some functions are used before being defined. OTCC uses the
-    dynamic linker to resolve symbols with 'dlsym()', so '-ldl' must
-    be used as library when you compile it.
+It was successfully compiled with gcc version 2.95.2. You get some
+warnings because old K&R prototypes are used, some casts are implicit
+and some functions are used before being defined. `OTCC` uses the
+dynamic linker to resolve symbols with `dlsym()`, so `-ldl` must
+be used when you compile and link it.
 
 ## Copyright and CC BY-SA 4.0 License:
 

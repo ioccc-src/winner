@@ -1,27 +1,32 @@
 # Interesting Algorithm
 
-    Sebastian Deorowicz
-    ul. Radzionkowska 71a
-    42-605 Tarnowskie Gory 
-    Poland
+Sebastian Deorowicz  
+ul. Radzionkowska 71a  
+42-605 Tarnowskie Gory   
+Poland  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./esde data-file word
+```sh
+./esde data-file word
+```
 
 where data-file contains lines of < 255 chars in length.
 
 
 ## Try: 
 
-	./esde esde.data Johanson
-	./esde esde.data2 read
-	./esde README.md date
-
+```sh
+./esde esde.data Johanson
+./esde esde.data2 read
+./esde README.md date
+```
 
 ## Judges' remarks:
 
@@ -32,19 +37,19 @@ If you still don't know what it does, try
 [https://en.wikipedia.org/wiki/Soundex](https://en.wikipedia.org/wiki/Soundex).
 
 
-## Author's remarks
+## Author's remarks:
 
-### what this program does:
+### what this program does
 
 This program searches in the file words which have the same Soundex code
-like the given word, and print out lines with these words.
+of the given word, and print out lines with those words.
 
-The Soundex code is using to find similar sounds words.
+The Soundex code is used to find similar sounding words.
 
 Soundex code begins with the first letter of the word followed by a
-three-digit code. There is the algorithm:
+three-digit code. This is the algorithm:
 
-0. Every letter in the word change by a digit (excluding the first letter).
+0. Every letter in the word beyond the first letter is replaced by a digit.
 1. Replace all pairs of the same code by single code (ex. R011235 -> R01235).
 2. Remove all 0-codes (ex. R01235 -> R1235).
 3. If length of code is > 4, get only first 4 codes (ex. R1235 -> R123).

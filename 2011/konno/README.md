@@ -1,8 +1,8 @@
 # Best one liner
 
-    Taketo Konno  
-    Tokyo, Japan  
-    <inaniwa3@gmail.com>  
+Taketo Konno    
+Japan  
+<inaniwa3@gmail.com>  
 
 ## To build:
 
@@ -13,7 +13,7 @@ make
 ## To run:
 
 ```sh
-./konno just_a_single_argument_of_lower_case_letters
+./konno lower_case_word
 ```
 
 ## Try:
@@ -47,8 +47,8 @@ This program ignores non-lower case letters.
 
 ### Obfuscation
 
-* "for" is not used. 
-* A part of program is encrypted.
+* `for` is not used. 
+* A part of the program is encrypted.
 
 ## Copyright and CC BY-SA 4.0 License:
 

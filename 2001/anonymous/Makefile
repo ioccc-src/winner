@@ -70,7 +70,7 @@ CINCLUDE=
 
 # Optimization
 #
-OPT= -O1
+OPT=
 
 # Default flags for ANSI C compilation
 #
@@ -116,8 +116,8 @@ ENTRY= anonymous
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA= anonymous.ten.c
-TARGET= ${PROG}
+DATA= 
+TARGET= ${PROG} ${PROG}.ten
 #
 ALT_OBJ=
 ALT_TARGET=
@@ -135,12 +135,26 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: this entry seems to no longer work."
 	magic='${CC} ${CFLAGS}'; \
 	X='-DA(X)=#X'; \
 	warning='-Dprocessor'; \
 	$$magic $$warning -Dmagic= $$X "-DX=A($$magic \"$$X\")" \
 		$< -o $@ ${LIBS}
+
+
+${PROG}.ten: ${PROG}.ten.c
+	@echo "WARNING: ${PROG}.ten.c must be compiled as 32-bit to use with the entry itself;"
+	@echo "this is because the program works on 32-bit binaries. If you cannot use -m32 this"
+	@echo "will NOT work!"
+	@echo
+	@echo "If you want to use it where this is not possible e.g. with a Mac, say to"
+	@echo "use by itself, try:"
+	@echo
+	@echo "	    ${CC} $< -o $@"
+	@echo
+	@echo "but running ${PROG} on the resulting binary will crash."
+	@echo
+	${CC} ${CFLAGS} -m32 $< -o $@ ${LIBS}
 
 # alternative executable
 #
@@ -171,6 +185,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -f anonymous.ten.bak ten.od ten.od.bak ten.txt ten.bak.txt
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

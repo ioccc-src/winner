@@ -10,7 +10,7 @@ John Tromp
 
     make tromp32	# On a 32-bit machine
 
-## To run
+## To run:
 
     ./tromp [-b]
 

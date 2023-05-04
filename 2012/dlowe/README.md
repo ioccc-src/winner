@@ -38,17 +38,17 @@ Use up and down keys to escape death.
 
 The judges lose playing this game. This entry wins!
 
-
 Q: How did we get past the variadic macro problem on a Mac?
 
-A: Don't use -pedantic-errors in the Makefile.
+A: Don't use `-pedantic-errors` in the Makefile.
+
 
 ## Author's remarks:
 
 ### Conway's Game of DEATH
 
-This is a challenging, fast-paced arcade game, based on the famous Game of
-Life.
+This is a challenging, fast-paced arcade game, based on the famous [Game of
+Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
 
 ### Story
 
@@ -63,7 +63,7 @@ escape?
 No. There is no winning. Sadly for Mr.C, this universe goes on forever. Just
 see how far you can make it!
 
-Press 'q' any time to quit.
+Press `q` any time to quit.
 
 ### Features
 

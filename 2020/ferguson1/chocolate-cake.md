@@ -6,7 +6,7 @@ has seemed to get it down as well as she has but it's well worth the effort if
 you love chocolate. My late stepmum who only liked white chocolate loved this
 cake!
 
-<img src='cake.jpg' alt='picture of the double-layered chocolate fudge cake'>
+![picture of the Double-layered chocolate fudge cake](cake.jpg)
 
 There are two sets of ingredients and instructions; the cake and the icing. In
 addition there are some notes to pay attention to; some will be repeated because
@@ -57,8 +57,12 @@ recipe notes because they're really important!**
 
 **PAY CLOSE ATTENTION TO THESE:**
 
-*   **USE MARGARINE**. Butter does not work well. If you think it will come out
-    better by using butter you're very mistaken; it will come out badly!
+*   **USE MARGARINE, _NOT_ BUTTER!** Butter does not work well. If you think it
+    will come out better by using butter you're very mistaken; it will come out
+    badly! People have come back saying it didn't come out well and they are
+    asked if they used butter or margarine. They had used butter because they
+    'know better' but they were very wrong; they did not know better and the
+    cake was awful because of this.
 
 *   Over the years they changed the size of the unsweetened chocolate squares;
     they used to be one ounce each now they are 1/4 ounce each square so be sure to
@@ -71,13 +75,13 @@ recipe notes because they're really important!**
     to fully cool on racks. The important point is that they don't overcook.
 
 *   When the recipe was first written they sold powdered sugar in a box; now
-    it's confectioners sugar in a bag. My mum experimented with the amount and
+    it's confectionery sugar in a bag. My mum experimented with the amount and
     found that 4 cups seems about right.
 
 *   She uses **WHOLE MILK** for this recipe; she doesn't know if it really matters
     but given that she and I both prefer skim milk except for here and in
     chocolate milk I would recommend whole milk for this recipe too. In any case
-    it turns out great **if you follow *everything* to a T!**
+    it turns out great **IF YOU FOLLOW *EVERYTHING* TO A T!**
 
 *   Use only **PURE VANILLA EXTRACT**! Do **NOT USE imitation vanilla!**
 
@@ -98,37 +102,37 @@ recipe notes because they're really important!**
 
 ## Cake Preparation
 
-1.  Lightly grease two 9 x 1.5 inch round pans; lightly dust with flour.
+1.  Lightly grease **TWO 9 X 1.5 INCH ROUND PANS**; lightly dust with flour.
 
-2.  Preheat oven to 350 F (176.67 C).
+2.  Preheat oven to **350 F (176.67 C)**.
 
 
 ## Cake Directions
 
-1.  Melt **3 oz unsweetened chocolate** in double boiler or small bowl over
-    **hot (*but not boiling*) water**; let cool whilst proceeding.
+1.  Melt **3 OZ UNSWEETENED CHOCOLATE** in double boiler or small bowl over
+    **hot (*BUT NOT BOILING*) water**; let cool whilst proceeding.
 
-2.  Sift **2 1/4 cups flour**, **2 tsp baking soda**, and **1/2 tsp salt**
+2.  Sift **2 1/4 CUPS FLOUR**, **2 TSP BAKING SODA**, and **1/2 TSP SALT**
 
-3.  Beat **1 stick margarine** in large bowl *until soft*.
+3.  Beat **1 STICK MARGARINE** in large bowl *until soft*. Again **MARGARINE**.
 
-4.  Add **2 1/4 cups packed brown sugar** and **3 eggs**. Beat until light and
+4.  Add **2 1/4 CUPS PACKED BROWN SUGAR** and **3 EGGS**. Beat until light and
     fluffy.
 
-5.  Beat in **1 1/2 tsp vanilla** and **cooled melted chocolate**.
+5.  Beat in **1 1/2 TSP VANILLA** and **COOLED MELTED CHOCOLATE**.
 
-6.  Stir in dry ingredients alternately with **1 cup sour cream**; always beat
+6.  Stir in dry ingredients alternately with **1 CUP SOUR CREAM**; always beat
     until smooth.
 
-7.  Stir in **1 cup boiling water**.
+7.  Stir in **1 CUP _BOILING_ WATER**.
 
 8.  Pour into prepared pans.
 
-9.  Bake for **ONLY 35 minutes** (NO LONGER) at 350 F (176.67 C).
+9.  Bake for **ONLY 35 MINUTES** (**NO LONGER!**) at **350 F (176.67 C)**.
 
 10. When you take the cake out put the cake pans on a cooling rack for **TWO
-    MINUTES ONLY AND THEN IMMEDIATELY TURN CAKES OUT ON TO RACK**. Let cool
-    completely.
+    MINUTES _ONLY_ AND _THEN IMMEDIATELY TURN CAKES OUT_ ON TO RACK**. Let **COOL
+    _COMPLETELY_**.
 
 
 ## Icing Ingredients
@@ -146,33 +150,33 @@ bowl can sit in.
 
 **PAY CLOSE ATTENTION TO THESE:**
 
-*   Make sure that the melted chocolate and margarine does not get solid.
+*   **Make sure** that the melted chocolate and margarine does not get solid.
 
-*   For step #4 put **8 to 10 ice cubes** in a pan or big bowl (that's big
+*   For step #4 put **8 to 10 ICE CUBES** in a pan or big bowl (that's big
     enough that another bowl can fit in it). Add an inch of water and then set
-    the bowl with the icing in the pan or bowl of ice water. **Do not let the
-    icing get wet!**
+    the bowl with the icing in the pan or bowl of ice water. **DO NOT LET THE
+    ICING GET WET!**
 
-*   Do not let icing get too thick.
+*   **DO NOT LET ICING GET TOO THICK.**
 
-*   Use **whole milk.**
+*   Use **WHOLE MILK.**
 
-*   Use only **pure vanilla extract**! Do **not use imitation vanilla!**
+*   Use **ONLY PURE VANILLA EXTRACT**! **DO NOT USE IMITATION VANILLA!**
 
 
 ## Icing Directions
 
 
-1.  Combine **4 oz unsweetened chocolate** and **1/2 cup margarine** in pan.
+1.  Combine **4 OZ UNSWEETENED CHOCOLATE** and **1/2 CUP MARGARINE** in pan.
     Melt and remove from heat. **DO NOT LET IT GET SOLID.**
 
-2.  Combine **3 1/4 cups powdered sugar**, **1/2 cups whole milk** and **2 tsp
-    vanilla** into a bowl. **Stir until smooth**.
+2.  Combine **3 1/4 CUPS POWDERED SUGAR**, **1/2 CUPS WHOLE MILK** and **2 TSP
+    VANILLA** into a bowl. **STIR UNTIL SMOOTH**.
 
 3.  Add chocolate mixture.
 
 4.  Set bowl in pan/bowl of ice and water. Beat with spoon/mixer until it's
-    thick BUT not too thick. Make sure icing doesn't get wet! The idea is to
+    thick BUT not too thick. **Make _SURE_ ICING DOES _NOT_ GET WET!** The idea is to
     **MAKE THE BOWL IT'S IN COLD *but not let the icing get wet***.
 
 [picture]: cake.jpg

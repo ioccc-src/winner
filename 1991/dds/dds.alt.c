@@ -10,8 +10,8 @@ R%PN4\nQ<g\\(aP3Q(^>aP2Q,2<n\\(aP3Q(^>aP4Hb%OD12D12N2!N3\nJVP3Q,,<jg)aP3Q=>n\
 aP1Q*aHb%FN1\nQm>::::aHC%VP3Q>bupj)hfut)c**aHb%JD12JON1!Qjg)a%LN1UP1D12JIQUa\
 P1HL%IQ*m>aN2!N2\nP2Q<fmtf!m,,aHC%MN1!N2>P2Q>aN2\nP2Hbdd!b/d";int k;char R[4][99]
 ;main(c,v)char**v;{char*p,*r,*q;for(q=s;*q;q++)*q>' '&&(*q)--;{FILE*i=fopen(v
-[1],"r"),*o=fopen(q-3,"w");if(!i||!o)return 1;for(p=s;;p++)switch(*p++){B'M':
-Q(k=fgetc(i))!=EOF&&k!=*p)*r++=k;if(k==EOF){fputs("}}\n",o);fclose(o);return
-system("make a");}*r=0 B'P':while(*p!='`')fputc(*p++,o)B'O':Q*r)fputc(*r++,o);
-p--B'C':k=0;Q k<*p-'0')(*r++=fgetc(i),k++);*r=0 B'I':k= *p;if(**R==k)goto G
-B'G':k= *p;G:p=s;while(*p!='$'||p[1]!= k)p++;p++B'N':R[*p-'0'][0]++;}}}
+[1],"r"),*o=fopen(q-3,"w");for(p=s;;p++)switch(*p++){B'M':Q(k=fgetc(i))!=EOF
+&&k!=*p)*r++=k;if(k==EOF){fputs("}}\n",o);fclose(o);return system("make a");}*r=0
+B'P':while(*p!='`')fputc(*p++,o)B'O':Q*r)fputc(*r++,o);p--B'C':k=0;Q k<*p-'0'
+)(*r++=fgetc(i),k++);*r=0 B'I':k= *p;if(**R==k)goto G B'G':k= *p;G:p=s;while(
+*p!='$'||p[1]!= k)p++;p++B'N':R[*p-'0'][0]++;}}}

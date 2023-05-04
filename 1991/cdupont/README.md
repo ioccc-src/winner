@@ -23,9 +23,9 @@ make all
 
 Why is the following label necessary?
 
-
-	sorryfor_this_unused_but_very_needed_label:
-
+```c
+sorryfor_this_unused_but_very_needed_label:
+```
 
 Notice that if you C beautify (cb) or pre-process this program, it
 will no longer work correctly, or at all.  (go ahead, try it... :-))

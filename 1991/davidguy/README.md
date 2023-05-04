@@ -4,14 +4,14 @@ David Applegate
 School of Computer Science	
 Carnegie Mellon University	
 Pittsburgh PA 15213		
-USA				
+US				
 
 
 Guy Jacobson  
 AT&T Bell Laboratories  
 600 Mountain Avenue  
 Murray Hill NJ 07974  
-USA  
+US  
 
 
 ## To build:

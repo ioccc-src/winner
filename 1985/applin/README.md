@@ -1,20 +1,29 @@
 # Best one liner
 
-Jack Applin [with help from Robert Heckendorn]
+Jack Applin [with help from Robert Heckendorn]  
+<https://web.archive.org/web/19991006042323/http://www.geocities.com/HotSprings/6789/>
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## Try:
 
-	./applin
-
+```sh
+./applin
+```
 
 NOTE: [Yusuke Endoh](/winners.html#Yusuke_Endoh) provided a patch to get this to
-not issue a bus error. Thank you Yusuke! [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson) noted that this entry does not work
-under macOS. Try it out and see for yourself what happens!
+not issue crash and [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson)
+fixed this to work with macOS.  The problem with the crash is that it
+destructively rewrites string literals but with `strdup()` it's safe. For macOS
+it's because there was no prototype for `execlp()` and macOS has problems with
+missing prototypes for some functions (this was also seen when Cody fixed
+[1984/anonymous](/1984/anonymous/anonymous.c) for macOS as well though that fix
+was more complicated). Ironically this fix was discovered through linux! Thank
+you Yusuke and Cody for your help!
 
 
 ## Judges' remarks:
@@ -24,7 +33,7 @@ certainly takes its time saying hello.
 
 ## Author's remarks:
 
-No comments were provided by the author.
+No remarks were provided by the author.
 
 ## Copyright and CC BY-SA 4.0 License:
 

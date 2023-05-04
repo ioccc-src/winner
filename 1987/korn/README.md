@@ -1,15 +1,17 @@
 # Best One Liner
 
-David Korn  
+David Korn   
 AT&T Bell Labs  
-MH 3C-526B, AT&T Bell Labs  
-Murray Hill, NJ  
-07974  
-USA  
+MH 3C-526B, AT&T Bell Labs   
+Murray Hill, NJ   
+07974   
+US   
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## Judges' remarks:
 
@@ -21,33 +23,43 @@ section right now and see if you are one of the few people who can.
 
 Several points are important to understand in this program:
 
-1) What is the symbol 'unix' and what is its value in the program?
-   Clearly 'unix' is not a function, and since 'unix' is not declared
-   to be a data type (such as int, char, struct foo, enum, ...)
-   what must 'unix' be?
+1. What is the symbol `unix` and what is its value in the program?  Clearly
+`unix` is not a function, and since `unix` is not declared to be a data type
+(such as `int`, `char`, `struct foo`, `enum`, ...) what must `unix` be?
 
-2) What is the value of the symbol "have"?  (hint: the value is
-   NOT 4 characters, or 'h', or a string)  Consider the fact that:
+2. What is the value of the symbol `"have"`?  (hint: the value is NOT 4
+characters, or `'h'`, or a string)  Consider the fact that:
 
-        char *x;
 
-  defines a pointer to a character (i.e. an address), and that
-  the '=' assigns things is compatible types.  Since:
+	    char *x;  
+
+
+  defines a pointer to a character (i.e. an address), and that the `=` assigns
+  things of compatible types.  Since:
+
 
         x = "have";
 
-  is legal C, what type of value is "have"?
+  is legal C, what type of value is `"have"`?
 
-3) Note that the following expressions yield the same value:
+3. Note that the following expressions yield the same value:
 
-        x[3]	*(x+3)	  *(3+x)
 
-   since addition is communitive.  What can be said about the value:
+        x[3]	*(x+3)	  *(3+x)  
 
-        3[x]
+   since addition is commutative.  What can be said about the value:  
 
-David Korn's /bin/ksh provides us with a greatly improved version of
+        3[x]  
+
+    ?
+
+David Korn's `/bin/ksh` provides us with a greatly improved version of
 the /bin/sh.  The source for v7's /bin/sh greatly inspired this contest.
+
+## Author's remarks:
+
+No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

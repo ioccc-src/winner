@@ -1,11 +1,12 @@
 # Best one liner 
 
-Jan Stein
+Jan Stein  
 
 ## To build:
 
-        make all
-
+```sh
+make all
+```
 
 ## Judges' remarks:
 
@@ -16,9 +17,9 @@ the original file.
 
 Try the program with the following argument:
 
-
-	./stein ^N^N
-
+```sh
+./stein ^N^N
+```
 
 (^N is ASCII control-N).  One some machines, ^M^L is needed to get it to
 output cleanly.  Your system may require another set of characters.
@@ -26,7 +27,7 @@ In time, you will figure out what it does. :-)
 
 ## Author's remarks:
 
-No comments were provided by the author.
+No remarks were provided by the author.
 
 ## Copyright and CC BY-SA 4.0 License:
 

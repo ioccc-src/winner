@@ -43,7 +43,7 @@ The ideal 3rd judge would have all of the following:
     * reasonable written communication skills (able to write README.md files)
     * appreciation for well-written non-obfuscated code
     * willing to devote ~4 weekend days in January (starting Jan 96) for judging
-    * located in the San Francisco (California, USA) Bay Area, or
+    * located in the San Francisco (California, US) Bay Area, or
       able to travel (paying your own way) to the SF Bay Area during judging, or
       able to link to the other IOCCC judges some form of a a video link
 

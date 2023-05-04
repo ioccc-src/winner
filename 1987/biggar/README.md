@@ -1,6 +1,6 @@
 # Best Abuse of the Rules
 
-Mark Biggar  
+Mark Biggar   
 UNiSYS - System Development Group, Santa Monica  
 2525 Colorado AV MD 91-01  
 Santa Monica, CA  
@@ -8,27 +8,32 @@ Santa Monica, CA
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 
 ## To run:
 
-	some_command | ./biggar | od -c
+```sh
+some_command | ./biggar | od -c
+```
 
 ## Try:
 
-	cat biggar.c | ./biggar | od -c
-
+```sh
+cat biggar.c | ./biggar | od -c
+```
 
 ## Judges' remarks:
 
 By changing the compile line you can make this program do anything you
-want.  This is a very efficient way to transfer source, though it
+want. This is a very efficient way to transfer source, though it
 increases the size of Makefiles.
 
 With only slight variations, this program can be set to many uses.
 Consider how easy it would be to release `Un*x` source in this form;
-so what if the make files grow a little!  :-) 
+so what if the Makefiles grow a little!  :-) 
 
 One vendor's lint got hung in an infinite loop over this entry!
 
@@ -47,7 +52,7 @@ an infinite loop by this entry.
 
 ## Author's remarks:
 
-No comments were provided by the author.
+No remarks were provided by the author.
 
 ## Copyright and CC BY-SA 4.0 License:
 

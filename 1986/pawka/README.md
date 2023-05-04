@@ -7,14 +7,15 @@ San Diego, Ca
 
 ## To build:
 
-
-        make all
-
+```sh
+make all
+```
 
 ## Try:
 
-	./pawka
-
+```sh
+./pawka
+```
 
 ## Judges' remarks:
 
@@ -24,7 +25,7 @@ is obfuscated, of all things!
 
 ## Author's remarks:
 
-No comments were provided by the author.
+No remarks were provided by the author.
 
 ## Copyright and CC BY-SA 4.0 License:
 

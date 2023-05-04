@@ -1,28 +1,37 @@
 ## Most useful Obfuscated C program
 
-	Amperif Corporation
-	9232 Eton Avenue
-	Chatsworth, CA
-	91311
-	U.S.A.
+Amperif Corporation  
+9232 Eton Avenue  
+Chatsworth, CA  
+91311  
+U.S.A.  
 
 
 ## To build:
 
 
-	make all
+```sh
+make all
+```
 
 ## Try:
 
-	./reddy
-	char *(*(fun[16])();
+```sh
+./reddy
+char *(*(fun[16])();
+```
 
 
-## Judges' remarks
+## Judges' remarks:
 
 This is a somewhat restricted version of a useful program that has been
 posted to Usenet.  What is unusual is what it is able to do so much
 in such little space.
+
+## Author's remarks:
+
+No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

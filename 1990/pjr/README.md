@@ -51,6 +51,8 @@ to functions!
 
 ## Author's remarks:
 
+Rot13:
+
     Vg vf fvzcyr gb znxr gur cebtenz cevag bgure fgevatf.  Rnpu
     nycunorgvpny punenpgre sebz n gb m vf cevagrq bhg nf vgf
     bccbfvgr:

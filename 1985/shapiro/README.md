@@ -1,15 +1,18 @@
 # Grand prize for most well-rounded in confusion
 
-Carl Shapiro
+Carl Shapiro  
 
 ## To build:
 
-        make all
-
+```sh
+make all
+```
 
 ## Try:
 
-	./shapiro
+```sh
+./shapiro
+```
 
 
 ## Judges' remarks:
@@ -18,7 +21,6 @@ As submitted, this program was 3 lines (2 of defines and 1 of code).
 To make news & mail happy we split the last line into 7. The file
 [shapiro.alt.c](shapiro.alt.c) is the original version.
 
-
 This program was selected for the 1987 t-shirt collection.
 
 We found this program is be simply a**maze**ing! Run this program without
@@ -26,7 +28,7 @@ arguments and notice the output.
 
 ## Author's remarks:
 
-No comments were provided by the author.
+No remarks were provided by the author.
 
 ## Copyright and CC BY-SA 4.0 License:
 

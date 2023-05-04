@@ -113,8 +113,8 @@ DATA= blank.sudoku insane1.sudoku insane2.sudoku insane3.sudoku insane4.sudoku \
 	insane5.sudoku tough1.sudoku wp.sudoku
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################

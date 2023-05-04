@@ -1,15 +1,16 @@
 # Best game
 
-	John Tromp
-	Centre for Mathematics and Computer Science (CWI)
-	Oetgensstraat 7
-	1701CK Heerhugowaard
-	Netherlands
+John Tromp  
+Centre for Mathematics and Computer Science (CWI)  
+Oetgensstraat 7  
+1701CK Heerhugowaard  
+Netherlands  
 
 ## To build:
 
-        make all
-
+```sh
+make all
+```
 
 We used a patch from [Yusuke Endoh](/winners.html#Yusuke_Endoh) 
 to get this to compile under gcc. Thank you Yusuke for your assistance!
@@ -24,6 +25,40 @@ being created) and after this making sure the terminal stayed sane (the letter
 high score file was reinstated). We thank you for your assistance Cody (he
 cynically notes that he did it because tetris just has to work)!
 
+## To run:
+
+```sh
+./tromp [drops_per_sec  [cmd_string]]
+```
+
+## Try:
+
+```sh
+./tromp 5
+
+# fast with vim keys
+#   h	    - left (left)
+#   k	    - rotate (arbitrary, in vim k = up)
+#   l	    - right (right)
+#   j	    - drop (down)
+#   space   - pause (literal space in vim)
+#   q	    - quit (similar to :q in vim)
+
+./tromp 10 "hklj q"
+```
+
+NOTE: after this game ends a file called `HI` will be in the directory with the
+high scores (up to 20 runs saved) so one can see who has the highest score. The
+file might look like:
+
+```
+330 by cody
+136 by cody
+```
+
+.... hey, I haven't played in a very long time and the lower one was hitting
+space (default drop) in rapid succession :-)
+
 
 ### Alternate code:
 
@@ -32,39 +67,14 @@ were unable to see the improvements in modern systems even after fixing it to
 compile (the high score file was not created at all) but if you have an old
 compiler you can try compiling it in its original unmodified form by running:
 
-	make alt
+```sh
+make alt
+```
+
+Use `tromp.alt` as you would `tromp` above.
 
 
-## To run:
-
-	./tromp [drops_per_sec  [cmd_string]]
-
-## Try:
-
-	./tromp 5
-
-	# fast with vim keys
-	#   h	    - left (left)
-	#   k	    - rotate (arbitrary, in vim k = up)
-	#   l	    - right (right)
-	#   j	    - drop (down)
-	#   space   - pause (literal space in vim)
-	#   q	    - quit (similar to :q in vim)
-	./tromp 10 "hklj q"
-
-NOTE: after this game ends a file called `HI` will be in the directory with the
-high scores (up to 20 runs saved) so one can see who has the highest score. The
-file might look like:
-
-
-     330 by cody
-     136 by cody
-
-
-.... hey, I haven't played in a very long time and the lower one was hitting
-space (default drop) in rapid succession :-)
-
-## Judges' remarks
+## Judges' remarks:
 
 This is a character terminal version of the TETRIS program.
 It runs on a VT100 compatible terminal or emulator.  It is
@@ -75,23 +85,23 @@ will drop in a second, is 2.  The default "cmd_string" is
 "jkl pq".  The first 6 characters of "cmd_string" relate
 to the following 6 game commands:
 
-		    j - left
-		    k - rotate
-		    l - right
-	      <space> - drop
-		    p - pause
-		    q - quit
+- j		- left
+- k		- rotate
+- l		- right
+- space	    - drop
+- p		- pause
+- q		- quit
 
 Specifying "cmd_string" allows one to re-define the commands.
 The pause command pauses the game, clears the screen and
-prints the current score.  To un-pause, type the pause
+prints the current score.  To resume, type the pause
 character again, which by default is "p".
 
 As was stated last year, we are likely to be more strict about
 portability in the future.  [ We mean it this time :-) ]
 
 
-## Author's remarks
+## Author's remarks:
 
 This program plays the familiar game of `TETRIS' with the
 following features:
@@ -131,6 +141,7 @@ at the start and -raw at the end. This further reduces the size of
 the program, but has the possible disadvantage that the program
 can only by stopped by 'q' or by the `kill -9' command.
 
+```c
     long h[4];t(){h[3]-=h[3]/3000;setitimer(0,h,0);}c,d,l,v[]={(int)t,0,2},w,s,I,K
     =0,i=276,j,k,q[276],Q[276],*n=q,*m,x=17,f[]={7,-13,-12,1,8,-11,-12,-1,9,-1,1,
     12,3,-13,-12,-1,12,-1,11,1,15,-1,13,1,18,-1,1,2,0,-12,-1,11,1,-12,1,13,10,-12,
@@ -150,6 +161,7 @@ can only by stopped by 'q' or by the `kill -9' command.
     0);while(getchar()-a[4]);puts("\033[H\033[J\033[7m");sigsetmask(s);}}d=popen(
     "stty -cbreak echo stop \023;sort -mnr -o HI - HI;cat HI","w");fprintf(d,
     "%4d from level %1d by %s\n",w,l,getlogin());pclose(d);}
+```
 
 ## Copyright and CC BY-SA 4.0 License:
 

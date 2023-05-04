@@ -38,7 +38,7 @@
    (v,X*Y,0xA0000   ); } else{       r.x.ax=
  0x13;            __dpmi_int(    0x10,&r); } }
                    #elif defined(SDL)
-              #include "SDL/SDL.h"
+              #include <SDL.h>
           SDL_Surface    *s; void
          F(int i){ if   (i){ SDL_SetColors(
      s,h,0,256);         SDL_UpdateRect
@@ -57,7 +57,7 @@
          LINES      &~1,Y=y<Y?y:Y; } }
           #endif
 
-main()
+main(int argc, char **argv)
 {
     F(0);
 

@@ -112,8 +112,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -129,6 +129,10 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
+${PROG}.alt: ${PROG}.c
+	${CC} ${CFLAGS} -DNO_STTY $< -o $@ ${LIBS}
+
 
 # alternative executable
 #

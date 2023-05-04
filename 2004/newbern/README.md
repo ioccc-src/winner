@@ -1,8 +1,7 @@
 # Best Font Engine
 
-    Jeff Newbern
-    28 Jeanette Ave. #1
-    Belmont, MA 02478
+Jeff Newbern  
+US
 
 ## To build:
 
@@ -11,8 +10,8 @@ make
 ```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) and Landon individually
-fixed this to work with clang. Cody turned the second arg to main, which clang
-requires to be a `char **`, to be not the same name as a function defined
+fixed this to work with clang. Cody then turned the second arg to main, which
+clang requires to be a `char **`, to be not the same name as a function defined
 earlier in the code and to use that variable which `main()` used. Thank you Cody
 for your assistance!
 
@@ -41,26 +40,23 @@ This is a configurable banner-like program.
 
 ### Examples:
 
-- To convert a character glyph into a data file
+- To convert a character glyph into a data file:
 
-```sh
-./newbern char < some_nicely_shaped_text >> data_file
-```
+	./newbern char < some_nicely_shaped_text >> data_file
 
-- To print a string using glyphs from a data file
 
-```sh
-./newbern data_file a_string
-```
+- To print a string using glyphs from a data file:
 
-### Extra functionality:
+	./newbern data_file a_string
+
+### Extra functionality
 
 The program can also act as a Morse encoder, unarguably.
 
 It also has double-super-secret encryption capabilities.
 Decryption is left as an exercise for the reader.
 
-### Portability:
+### Portability
 
 The program assumes an ASCII operating environment.
 

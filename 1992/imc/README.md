@@ -37,7 +37,7 @@ modified to avoid this problem.
 
 ## Author's remarks:
 
-### Portability:
+### Portability
 
 This program depends upon the ASCII character set, and makes certain
 assumptions about the architecture. It naughtily declares the first
@@ -117,7 +117,7 @@ appears before `t`, specifying an option without numbers has no effect.
 (specifying `-s -t` has the effect of producing text with the default
 raster size; not a good idea!).
 
-### Options:
+### Options
 
 The options of this program are:
 
@@ -155,7 +155,7 @@ bits (e.g. 8).
 While the program is creating your picture, it displays dots on the
 standard error to indicate its progress (one dot per pixel line).
 
-### Example pictures to try:
+### Example pictures to try
 
 Here are a couple of good pictures to draw:
 

@@ -12,6 +12,7 @@ AWK= awk
 BANNER= banner
 BASE64= base64
 BASENAME= basename
+BASH= bash
 BATCH= batch
 BC= bc
 BINHEX= binhex

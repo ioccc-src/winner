@@ -1,9 +1,9 @@
 # Most Versatile Source
 
-	Jyrki Holopainen
-	Oy LM Ericsson Ab
-	SF-02420 Jorvas
-	Finland
+Jyrki Holopainen  
+Oy LM Ericsson Ab  
+SF-02420 Jorvas  
+Finland  
 
 ## To build:
 
@@ -17,23 +17,23 @@ option `-inum` with `find` with the delete option after finding the inode with
 `ls -li` or else use a GUI to do it.  Should you wish to try compiling it you
 might see something like:
 
-	    NOTE: This will not compile when using modern compilers because
-	    it relies on a compiler bug which was fixed in gcc 2.3.3 (a very
-	    long time ago now).
-	    rm -f \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
-	    cp lmfjyh.c \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
-	    cc -std=gnu90 -Wall -Wextra -pedantic    -include stdio.h -O3 \
-			\"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c -o lmfjyh
-	    Undefined symbols for architecture arm64:
-	      "_main", referenced from:
-		 implicit entry/start for main executable
-	    ld: symbol(s) not found for architecture arm64
-	    clang: error: linker command failed with exit code 1 (use -v to see invocation)
-	    make: *** [lmfjyh] Error 1
-
-and the bogus file will be:
-
-	    ";main(){puts("Hello World!");}char*C=".c
+```sh
+$ make all
+NOTE: This will not compile when using modern compilers because
+it relies on a compiler bug which was fixed in gcc 2.3.3 (a very
+long time ago now).
+rm -f \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
+cp lmfjyh.c \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
+cc -std=gnu90 -Wall -Wextra -pedantic    -include stdio.h -O3 \
+	    \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c -o lmfjyh
+Undefined symbols for architecture arm64:
+  "_main", referenced from:
+     implicit entry/start for main executable
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [lmfjyh] Error 1
+```
+and the bogus file will be `";main(){puts("Hello World!");}char*C=".c`.
 
 For an explanation of why this is see the author's remarks.
 
@@ -41,14 +41,16 @@ For an explanation of why this is see the author's remarks.
 
 If you have gcc < 2.3.3:
 
-	./lmfjyh
+```sh
+./lmfjyh
+```
 
 ## Judges' remarks:
     
 There's more than one way to get around disk quotas. :-)
 
 
-## Author's remarks;
+## Author's remarks:
 
 "Practical and efficient method of compressing source code".
 
@@ -61,34 +63,36 @@ best with C-source code.
 As an example, I have taken a simple "Hello world!" program
 that should be familiar to all C-programmers.
 
-Listing 1. A simple "Hello World" program:
+#### Listing 1: A simple "Hello World" program
 
 
-	    main()
-	    {
-	      puts("Hello World!");
-	    }
-
+```c
+main()
+{
+  puts("Hello World!");
+}
+```
 
 ### Packing method
 
-Normally a file name is used only to identify the file, 
-but this new revolutionary method introduces a totally new concept: 
-THE FILE NAME IS THE PROGRAM. There is no need to waste
-valuable disk space to store source code. The program is
-embedded in the file name, only a minor portion of it
-is inside the file.
+Normally a file name is used only to identify the file, but this new
+revolutionary method introduces a totally new concept: THE FILE NAME IS THE
+PROGRAM. There is no need to waste valuable disk space to store source code. The
+program is embedded in the file name, only a minor portion of it is inside the
+file.
 
-Listing 2. Compressed "Hello world":
+#### Listing 2: Compressed "Hello world"
 
-	
-	    char*_=__FILE__;
-
-
-Listing 3. Code embedded in the file name:
+```c
+char*_=__FILE__;
+```
 
 
-	    ";main(){puts("Hello World!");}char*C=".c
+#### Listing 3: Code embedded in the file name
+
+```c
+";main(){puts("Hello World!");}char*C=".c
+```
 
 
 The sample program in listing 1 is 36 bytes long. By using the new
@@ -97,12 +101,12 @@ bytes. In the example the compression ratio is 2:1. It is evident
 that the longer the program is, the better the compression ratio
 is. The maximum compression ratio in a UNIX environment is 254:16
 which equals approximately to 16:1.  By using the method a one
-megabyte of source code can be compressed to 64 kilobytes.
+megabyte of source code file can be compressed to 64 kilobytes.
 
 One might easily think that the program could be compressed to a
 single byte by writing a one character long preprocessor directive
 in the source file and defining the actual source code in the
-command line, eg. 'cc hello.c -DX=main(){puts...'.  With this
+command line, eg. `cc hello.c -DX='main(){puts ...'`.  With this
 method nothing is gained, since the compiling commands must be
 stored in a file, and that takes even more space than writing the
 code in a source file as presented in listing 1.
@@ -111,12 +115,12 @@ code in a source file as presented in listing 1.
 ### Packing files in a UNIX environment
 
 In a UNIX environment it is possible to write almost any program by
-including the code in file names. Since '/' is used to separate
+including the code in file names. Since `/` is used to separate
 path components and cannot therefore exist in a file name, all
 features of C-language cannot be used.
 
 In C, the `/` is used as a division operator and it may also be a
-part of a comment start and end identifier. This is, however, not a
+part of a comment start and end identifier. This, however, is not a
 dangerous limitation, since practice has shown that comments are
 almost totally unnecessary. A real programmer can more easily
 understand pure source code, and misleading comments are
@@ -127,7 +131,7 @@ when using integers.
 Large programs must be separated into small modules. This enforces
 people to write better programs, since monolithic programming style
 cannot be used. Program development will also be faster, no extra
-code need not be recompiled after changes have been made.
+code needs be recompiled after changes have been made.
 
 
 ### Usage with currently available tools
@@ -136,30 +140,30 @@ I have tested how well this new method works with currently
 available programming tools.
 
 Any ANSI conforming C-compiler that runs under a REAL operating
-system should be able to compile the code.  (there may be problems
-with some older UNIX variants)
+system should be able to compile the code (there might be problems
+with some older UNIX variants).
 
-### Compilers:
+### Compilers
 
 These worked:
 
-    gcc versions 2.0, 2.1, 2.3.2 (ld failed at AIX with gcc 2.1)
-    cc (HP-UX)
-    cc (VAX)
+- gcc versions 2.0, 2.1, 2.3.2 (ld failed at AIX with gcc 2.1)
+- cc (HP-UX)
+- cc (VAX)
 
 These failed miserably:
 
-    cc (SunOs/Solaris)      - could not start cpp properly
-    cc/xlc (AIX)            - could not open source
+- cc (SunOS/Solaris)      - could not start cpp properly
+- cc/xlc (AIX)            - could not open source
 
-### Other tools:
+### Other tools
 
-#### Debuggers: (tested at SunOs 4.1.2)
+#### Debuggers: (tested at SunOS 4.1.2)
 
-dbx     - Quit with a very 'informative' error message:
-	"dbx: fatal error: Is a directory"
+- dbx   - Quit with a very 'informative' error message:
+	    "dbx: fatal error: Is a directory"
 
-gdb     - Printed almost the same error message ":Is a directory".
+- gdb   - Printed almost the same error message ": Is a directory".
 	It was, however, possible to step through the code but 
 	not list it.
 
@@ -170,7 +174,7 @@ None of the lints tested environments were able to parse the file.
 
 ### Conclusions
 
-The method can be used to compress any types of files, actually the
+The method can be used to compress any types of files and the
 compression ratios are even better when compressing other files
 than C-source.  For example plain text files may be compressed with
 INFINITE compression ratio. It is trivial task to compress a 100

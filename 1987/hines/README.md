@@ -5,30 +5,38 @@ OnLine Computer Systems
 4200 Farragut Street  
 Hyattsville, MD  
 20781  
-USA  
+US  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
-## To run
+## To run:
 
-	./hines file.c
+```sh
+./hines file.c
+```
 
 ## Try:
 
-	./hines hines.c
+```sh
+./hines hines.c
+```
 
-### Alternate code
+### Alternate code:
 
-An alternate version of this entry is in `hines.alt.c`. With older compilers you
+An alternate version of this entry is in [hines.alt.c](hines.alt.c). With older compilers you
 can try the alt version:
 
-    make alt
+```sh
+make alt
+```
 
 Use `hines.alt` as you would `hines` above.
 
-## Judges' remarks
+## Judges' remarks:
 
 This program was designed to maximize the bother function for
 structured programmers.  This program takes goto statements to their
@@ -41,7 +49,7 @@ See the Communications of the ACM, March 1987, Page 195-196.
 
 ## Author's remarks:
 
-No comments were provided by the author.
+No remarks were provided by the author.
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -1,15 +1,17 @@
 ## Best minimal use of C
 
-	Arch D. Robison
-	University of Illinois
-	1304 W. Springfield Ave.
-	Urbana, IL
-	61801
-	USA
+Arch D. Robison  
+University of Illinois  
+1304 W. Springfield Ave.  
+Urbana, IL  
+61801  
+US  
 
 ## To build:
 
-	make all
+```sh
+make all
+```
 
 
 NOTE: we were able to get this to compile under modern systems with a patch from
@@ -18,24 +20,27 @@ Yusuke!
 
 ## To run:
 
-	./robison
-	# enter valid expressions
-
+```sh
+./robison
+# enter valid expressions
+```
 
 ## Try:
 
-	./robison
-	11x10
+```sh
+./robison
+11x10
 
-	echo 1x10x111 | ./robison
+echo 1x10x111 | ./robison
 
-	echo 1+1+10 | ./robison
+echo 1+1+10 | ./robison
 
-	echo 100 - 1 | ./robison
+echo 100 - 1 | ./robison
 
-	echo -100 x 100 + 1 | ./robison
+echo -100 x 100 + 1 | ./robison
 
-	echo 100 / 100 | ./robison # <-- what happens here ?
+echo 100 / 100 | ./robison # <-- what happens here ?
+```
 
 NOTE: this entry will crash with numbers with non binary digits.
 
@@ -50,7 +55,7 @@ constructs that the C language supports.
 NOTE: this entry will likely dump core with invalid input.
 
 
-## Selected notes from the author:
+## Author's remarks:
 
 This program is a handy picoAPL interpreter written in C--.  It
 outputs the evaluation of an APL expression from standard
@@ -58,13 +63,17 @@ input.  Functions are limited to dyadic +,-,x, and unary -;
 numerals must be binary.  Parentheses may be used for
 grouping.  For example:
 
-		101x111-100
+```
+101x111-100
+```
 
 prints:
 
-		1111
+```
+1111
+```
 
-That is 5x(7-4) is 15.  (APL groups from right to left.)
+That is `5x(7-4)` is `15`.  (APL groups from right to left.)
 Extending it to the full APL language should be trivial.
 
 The C-- language improves the C language by removing superfluous

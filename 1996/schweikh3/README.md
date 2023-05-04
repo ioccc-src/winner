@@ -1,50 +1,56 @@
 # Best Utility
 
-    Jens Schweikhardt
-    DFN Network Operation Center
-    Schlartaeckerweg 3 (home address)
-    D-71384 Weinstadt
-    Germany
-
-    http://www.uni-stuttgart.de/People/schweikhardt/home.html
+Jens Schweikhardt  
+DFN Network Operation Center  
+Schlartaeckerweg 3 (home address)  
+D-71384 Weinstadt  
+Germany  
+<http://www.schweikhardt.net>  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-**WARNING**: Do not run this program without reading this text down to the end!
+**WARNING: DO NOT RUN this program without reading this text down to the end!**
 It may render your system unusable for a limited amount of time
 or force you to reboot using the Big Red Button!  This is **NOT** a joke.
 You have been warned.  
 
-	./schweikh3
-
+```sh
+./schweikh3
+```
 
 ## Judges' remarks:
 
 The source fails to compile on compilers that recognize the inline
-keyword by default.  For gcc, you may need to use -ansi.
+keyword by default.  For gcc, you may need to use `-ansi`.
 
-See the file, `schweikh3.info` for example output from various systems.
+See the file [schweikh3.info](schweikh3.info) for example output from various
+systems.
 
 But still it is a useful utility.  To use try:
 
-	    ./schweikh3
+```sh
+./schweikh3
+```
 
 and thanks for the virtual memories!  :-)
 
 NOTE: On some systems such as SunOS, one may need to compile with:
 
+```make
 	    ${CC} ${CFLAGS} \
 	      -I. -D_POSIX_SOURCE '-Ddifftime(a,b)=(double)(b-a)' \
 	      schweikh3.c -o schweikh3
+```
 
 ## Author's remarks:
 
-Why I think my entry is obfuscated
-----------------------------------
+### Why I think my entry is obfuscated
 
 There are some layout obfuscations that hinder readability, like
 some (but not all) one character tokens in column 1. Includes,
@@ -65,50 +71,53 @@ You have to select maximum ANSI C conformance of your
 compiler. The source fails to compile under a C++ compiler due to
 the `new' identifier which is a C++ reserved word:
 
-	$ g++ prog.c
-	prog.c:9: parse error before `new'
-	prog.c:16: parse error before `new'
-	prog.c:46: parse error before `void'
-	prog.c:65: parse error before `Lisp'
-	prog.c:68: parse error before `;'
-	[...]
-	prog.c:91: confused by earlier errors, bailing out
+```sh
+$ g++ schweikh3.c
+schweikh3.c:9: parse error before `new'
+schweikh3.c:16: parse error before `new'
+schweikh3.c:46: parse error before `void'
+schweikh3.c:65: parse error before `Lisp'
+schweikh3.c:68: parse error before `;'
+[...]
+schweikh3.c:91: confused by earlier errors, bailing out
+```
 
 The source fails to compile on compilers that recognize the inline
 keyword by default, e.g. gcc:
 
-	$ gcc prog.c
-	prog.c:46: parse error before `void'
-	prog.c: In function `main':
-	prog.c:91: parse error before `inline'
-	prog.c: At top level:
-	prog.c:97: parse error before `void'
+```sh
+$ gcc schweikh3.c
+schweikh3.c:46: parse error before `void'
+schweikh3.c: In function `main':
+schweikh3.c:91: parse error before `inline'
+schweikh3.c: At top level:
+schweikh3.c:97: parse error before `void'
+```
 
 The `-ansi` option to gcc fixes this.
 
 The source fails to compile on obsolete systems with obsolete
-memory models due to the identifier `far' (to be honest: this is
-untested :-).
+memory models due to the identifier `far` (to be honest: this is
+untested :-) ).
 
 Does your indent cope with backslash/newline pairs inbetween
 keywords like in "re\<newline>turn"? Solaris' indent inserts spaces 
 and thereby renders the source uncompilable...
 
 The indented source will exhibit different semantics when indenting
-changes the number of lines (due to using the __LINE__ macro in an
+changes the number of lines (due to using the `__LINE__` macro in an
 expression).
 
-And what about sizeof __TIME__?  This one's for the philosophers 
-and physicists among us programmers. What is it? sizeof (char *)? -- no.
-strlen ("hh:mm:ss")? -- no. It's the same as sizeof __DATE__ -
-sizeof "no" :-)
+And what about sizeof `__TIME__`?  This one's for the philosophers 
+and physicists among us programmers. What is it? `sizeof (char *)`? -- no.
+`strlen ("hh:mm:ss")`? -- no. It's the same as `sizeof __DATE__ -
+sizeof "no"` :-)
 
 The program is POSIX conformant and lints without warning under
 Solaris' Sunpro lint. Allocated memory is correctly freed on all
 possible execution paths.
 
-What this program does:
-----------------------
+### What this program does
 
 This program tests your operating system's allocation honesty. It
 forks a child that will allocate as much as possible with byte
@@ -140,8 +149,7 @@ the behaviour changes when calloc is used instead of malloc.
 For FreeBSD, the last two lines are not messages stemming from
 my program but issued by the syslog daemon.
 
-Implementation remarks
-----------------------
+### Implementation remarks
 
 How can we distinguish the three different OS types from the
 table above?
@@ -154,10 +162,10 @@ where POSIX enters the scene.
 
 Type 3), thrashing, was the hardest part. The first attempt was to
 measure the elapsed processor time it takes to write a single byte
-(using clock()). If a certain threshold is reached I assume the
+(using `clock()`). If a certain threshold is reached I assume the
 system is thrashing. When thrashing, however, the process does not
 consume processor time in a noticeable amount any longer and I lose.
-So I switched to measuring wall clock time using time(). On the one
+So I switched to measuring wall clock time using `time()`. On the one
 system that I observe thrashing (Linux) this works (although the
 value returned by time seems to 'hang' sometimes when the OS thrashes.
 Exceeding a threshold of 5 seconds may be detected only after half a

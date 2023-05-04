@@ -1,12 +1,8 @@
 # Best position-independent code
 
-    Brian Westley
-    Firesign Theatre webmaster
-    1906 James Ave
-    St. Paul, MN  55105
-    USA
-
-    http://www.westley.org
+Brian Westley
+US
+<http://www.westley.org>
 
 ## To build:
 
@@ -22,20 +18,20 @@ make
 
 ## Try:
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added the script
+[westley.sh](westley.sh) to automate a heap of commands that we, the IOCCC
+judges, suggested, as well as some additional ones that he thought would be fun.
+These include the below sort and punch card versions that he added, described
+below, based on the author's remarks. Thank you Cody!
+
 ```sh
-./westley < westley.c > westley2.c
-make westley2
-echo 'Bozos, please deflate shoes before entering the bus!'| ./westley2
-sort -b < westley2.c > westley3.c
-make westley3
-./westley3 < westley.c | diff - westley.c
-./westley3 < westley.c | diff - westley2.c
-./westley3 < westley.c | diff - westley3.c
+./westley.sh
 ```
 
-### Alternate code
+### Alternate code:
 
-An alternate version of this entry, `westley.alt.c`, is provided.  This alternate code may be less portable.
+An alternate version of this entry, [westley.alt.c](westley.alt.c), is provided.
+This alternate code might be less portable.
 
 To compile this alternate version:
 
@@ -45,7 +41,27 @@ make alt
 
 Use `westley.alt` as you would `westley` above.
 
-## Judges' remarks
+### Sorted code:
+
+The author stated that one can sort (with ignoring leading blanks i.e. `sort
+-b`) the code by line and it will always sort the order of the input.
+
+Use `westley.sort` as you would `westley` above.
+
+### Punch card code:
+
+The author also stated that if you just sort the code you'll get the with
+`sort`) version that just prints out the punch card. Cody put this in
+[westley.punch.c](westley.punch.c) specifically so that Westley can punch
+everyone in the face! :-) This is also compiled by default.
+
+To use, try:
+
+```sh
+echo 'Brian Westley does it again!' | ./westley.punch 2>/dev/null
+```
+
+## Judges' remarks:
 
 Try copying the source to a new file and changing around the
 order of the lines.  Does it produce the exact same output?
@@ -53,16 +69,19 @@ order of the lines.  Does it produce the exact same output?
 By changing the order of the source, figure out in how many different
 ways this program can transform input to output.
 
-This assortment obfuscated lines takes position-independant code
+This assortment obfuscated lines takes position-independent code
 to a new level!  :-)
 
-## Author's remarks
+We find it amazing that with just 28 lines of code (not counting comments and
+blank lines) there are `28!` or ``304,888,344,611,713,860,501,504,000,000``
+versions of the program, all valid C!
 
-Punch cards, or Hollerith cards, were becoming obsolete just
-as C was becoming more popular*; this is rather unfortunate,
-because C has an advantage over many other languages when it
-comes to punch cards - C programs can be written to be "drop
-proof".
+## Author's remarks:
+
+[Punch cards](https://en.wikipedia.org/wiki/Punched_card), or Hollerith cards,
+were becoming obsolete just as C was becoming more popular\*; this is rather
+unfortunate, because C has an advantage over many other languages when it comes
+to punch cards - C programs can be written to be "drop proof".
 
 Consider the following C program:
 
@@ -76,7 +95,7 @@ c(){printf("C");}
 This program will compile and run no matter what order the
 lines are in.  If you punch it on cards (one line of code per
 card, naturally) and drop them, you don't need to put them in
-any particular order**; it will always produce "ABC" as output.
+any particular order\*\*; it will always produce `ABC` as output.
 
 You can also use global variables:
 
@@ -96,9 +115,9 @@ test(a,b){return a;}
 main(){if (test(0,1)) printf("T"); else printf("F");}
 ```
 
-This program will print out "T" if the #define statement
-falls between the declaration of test() and its use in
-main(), otherwise it will print out "F".  Furthermore,
+This program will print out `T` if the `#define` statement
+falls between the declaration of `test()` and its use in
+`main()`, otherwise it will print out `F`.  Furthermore,
 you can use the same call to test() repeatedly in
 different lines to return different values:
 
@@ -120,16 +139,20 @@ number generator...
 Of course, there are drawbacks to C programming on punch
 cards; an 80-character line limit can be restricting, and
 (to be maximally portable) you need to use trigraphs for
-the characters "^[]{}\" (these aren't found on every
+the characters `^[]{}\` (these aren't found on every
 keypunch, and have various encodings).
 
 My C program entry does the following:
 
-1) reads in lines
-2) rearranges the lines, or not
-2a)  if it rearranges the lines, they are sorted or scrambled
-3) reverses the order of the lines, or not
-4) prints out the lines as either text or EBCDIC punch cards.
+1. Reads in lines.
+
+2. Rearranges the lines, or not.
+    - if it rearranges the lines, they are sorted or scrambled.
+
+3. Reverses the order of the lines, or not.
+
+4. Prints out the lines as either text or
+[EBCDIC](https://en.wikipedia.org/wiki/EBCDIC) punch cards.
 
 The code, as written, scrambles the input and prints it out
 as normal text, so you can simulate 'dropping' the cards.
@@ -137,19 +160,19 @@ You can repeatedly scramble the code to get all 12 variants
 (but the scrambling isn't very random; it's just a bubble
 sort with a random number, so some variants are more common
 than others).  You can also just swap the arguments in the
-calls to t() in all combinations to get all the variations.
+calls to `t()` in all combinations to get all the variations.
 
 If you sort the lines, you will get the version that just
 prints out the input as punch cards (you will need to display
 at least 82 columns of text, or clip the last few chars by
-piping it through "sed s/...$//").  If you use this on the
-original code, you will see that it spells out "HOLLERITH"
+piping it through `sed s/...$//`).  If you use this on the
+original code, you will see that it spells out `HOLLERITH`
 when punched on cards (you can see the tall, thin letters
-spelling out "HOLLERITH" if you turn the C code sideways).
-You will also see why "/KC 0000 K" is a "Hollerith emoticon".
+spelling out `HOLLERITH` if you turn the C code sideways).
+You will also see why `/KC 0000 K` is a `Hollerith emoticon`.
 Unrecognized characters are punched as a lace column.
 (You can see an ASCII simulation of the code as punch cards
-by looking at card.gif)
+by looking at `card.gif`.)
 
 For a nice test pattern, try
 
@@ -158,29 +181,30 @@ For a nice test pattern, try
 ```
 
 If you want to analyze the program, sorting the lines while
-ignoring leading blanks works best (sort -b).  This will
+ignoring leading blanks works best (`sort -b`).  This will
 produce the version that just reverses the line order, and
 the routines in the code are in a sensible order.
 
 This program should work on EBCDIC computers.  It assumes
-that the time_t ptr param to time() will work with an int
-ptr, and that "passing through" a char[][] array as a simple
-char* is ok.  Your compiler MUST understand trigraphs, or it
+that the `time_t` ptr param to `time()` will work with an `int`
+ptr, and that "passing through" a `char[][]` array as a simple
+`char *` is OK.  Your compiler MUST understand trigraphs, or it
 will miss the trigraph backslash before the double quote in
-the K string and complain about a malformed string; for GNU
-C, use -ansi or -trigraphs.  Entering a line of more than 80
+the `K` string and complain about a malformed string; for GNU
+C, use `-ansi` or `-trigraphs`.  Entering a line of more than 80
 characters, or more than 81 lines, will jam the card reader.
 
-I've used the a[b] ==> *(a+b) trick, because this is
-actually shorter than the trigraph version of a??(b??).
+I've used the `a[b]` ==> `*(a+b)` trick, because this is
+actually shorter than the trigraph version of `a??(b??)`.
 
 With 28 lines of code (not counting the blank lines or the
-comment), there are technically 28! different programs, or
-304,888,344,611,713,860,501,504,000,000 different versions,
+comment), there are technically `28!` different programs, or
+`304,888,344,611,713,860,501,504,000,000` different versions,
 all legal C.
 
-*except in Florida voting machines
-**all cards must be face down, nine-edge first, of course.
+\* except in Florida voting machines
+
+\*\* all cards must be face down, nine-edge first, of course.
 
 ## Copyright and CC BY-SA 4.0 License:
 

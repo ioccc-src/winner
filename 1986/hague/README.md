@@ -1,13 +1,13 @@
 # Worst abuse of the C preprocessor
 
-Jim Hague  
-University of Kent at Canterbury  
-Canterbury, Kent  
+Jim Hague    
 UK  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 
 NOTE: this entry uses gets() so you might get a warning about this when
@@ -15,15 +15,19 @@ compiling and running this program with some systems.
 
 ## To run:
 
+```sh
 	./hague
 	# enter some text
+```
 
 ## Try:
 
-	./hague
-	IOCCC
-	International Obfuscated C Code Contest
-	Jim Hague
+```sh
+./hague
+IOCCC
+International Obfuscated C Code Contest
+Jim Hague
+```
 
 
 ## Judges' remarks:
@@ -35,13 +39,13 @@ others.
 This program was selected for the 1987 t-shirt collection.
 
 Think Morse code when you ponder this program.  Note how use of
-similar variables can be obfuscating!  The author notes that this
+similar variables can be obfuscating!  The author noted that this
 program implements the international Morse standard.  Now for extra
 credit, what Morse message does the program spell out?
 
 ## Author's remarks:
 
-No comments were provided by the author.
+No remarks were provided by the author.
 
 ## Copyright and CC BY-SA 4.0 License:
 

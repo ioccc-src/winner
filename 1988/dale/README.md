@@ -1,11 +1,11 @@
 ## Best abuse of system calls
 
-Paul Dale
-University of Queensland
-Computer Science Dept
-Dept of Computer Science
-Uni of Qld, 4067
-Australia
+Paul Dale  
+University of Queensland  
+Computer Science Dept  
+Dept of Computer Science  
+Uni of Qld, 4067  
+Australia  
 
 ## To build:
 
@@ -56,9 +56,10 @@ Thank you Cody for your assistance!
 
 ## Try:
 
-
-	./dale hello world
-	./dale these files are in this directory: *
+```sh
+./dale hello world
+./dale these files are in this directory: *
+```
 
 NOTE: in linux it might happen that core dumps are created when running this
 entry even though it works fine.
@@ -70,6 +71,11 @@ and multi-processing.  Try to understand what is being done with the
 system calls.
 
 NOTE: This program assumes the ASCII character set is being used.
+
+## Author's remarks:
+
+No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

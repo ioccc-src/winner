@@ -1,24 +1,30 @@
 # Best Layout
 
-    Heather Downs, Selene Makarios
-    The Software Bungalow
-    900 High School Way, #2202
-    Mountain View, CA 94041
-    USA
+Heather Downs & Selene Makarios  
+The Software Bungalow  
+900 High School Way, #2202  
+Mountain View, CA 94041  
+US  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./heathbar num num
+```sh
+./heathbar num num
+```
 
 where num is a non-negative number.
 
 ## Try:
 
-	./heathbar 4253 2281
+```sh
+./heathbar 4253 2281
+```
 
 
 ## Judges' remarks:
@@ -29,7 +35,7 @@ effect of the source was self documenting!  :-)
 ## Author's remarks
 
 Run this program with two non-negative integer arguments
-(e.g. "prog 1234 999").
+(e.g. `./heathbar 1234 999`).
 
 My goal was to create the fastest possible C program. To that
 end, I made three critical observations:

@@ -1,22 +1,25 @@
 # Dishonorable mention
 
-    Anonymous
+Anonymous  
 
 
 ## To build:
 
-	make all
+```sh
+make all
+```
 
 ## To run:
 
-	./anonymous
-
+```sh
+./anonymous
+```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work
 under macOS. The fix was to prototype `read()` prior to being defined and not
 using `int, int, int` as the entry does. Instead the second arg is a `void *`.
-In the `read()` function which actually calls `write(2)` the `i` (which is the
-`void *` has to be cast to an `int`. This solves the problem. Thank you Cody for
+In the `read()` function (which actually calls `write(2)`) the `i` (which is the
+`void *`) has to be cast to an `int`. This solves the problem. Thank you Cody for
 your assistance!
 
 
@@ -47,7 +50,7 @@ Some years after this entry was published we asked the author if they still
 wished to remain anonymous and they said:
 
 > Yes, I want to keep my anonymity.  But you can tell them that I am well known
-for my connection to the C language.'
+for my connection to the C language.
 
 ### On the famous tattoo (see above):
 
@@ -63,10 +66,10 @@ Landon Curt Noll, the one who told the author about the tattoo, wrote back:
 ### Regrets:
 
 Landon Curt Noll wrote that the author, if they had to do it over again, regrets not
-making the program a one-liner and not moving the "int i" into an arg of main
+making the program a one-liner and not moving the `int i` into an arg of main
 (so that the line would have started with main). On the other hand the author
-likes the "two line look" and the way hell o was split. :-) And they like the
-fact that it ends in a smily face: ;}
+likes the "two line look" and the way `hell o` was split. :-) And they like the
+fact that it ends in a smily face: `;}`
 
 
 ## Copyright and CC BY-SA 4.0 License:

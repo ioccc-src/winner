@@ -114,8 +114,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.r3.o
+ALT_TARGET= ${PROG}.r3
 
 
 #################

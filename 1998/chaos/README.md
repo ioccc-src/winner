@@ -1,21 +1,26 @@
 # Best Object Orientation
 
-Alan De Smet
-8531 Greenway Blvd. #206
-Middleton, WI 53562
-USA
-<http://www.highprogrammer.com/alan/>
+Alan De Smet  
+8531 Greenway Blvd. #206  
+Middleton, WI 53562  
+US  
+<http://www.highprogrammer.com/alan/>  
 
 
 ## To build:
 
-	make chaos
+```sh
+make chaos
+
+```
 
 NOTE: Some systems do not implement `halfdelay()` in their `libcurses`.
 You might try compiling with -lncurses if you have that library.
 Or you can build this entry without the `halfdelay()` call by:
 
-	make chaos_nohalf
+```sh
+make chaos_nohalf
+```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added a call to
 `endwin()` to restore terminal sanity (echo etc.) when exiting the program.
@@ -24,18 +29,19 @@ Thank you Cody for your assistance!
 ## To run:
 
 
-	./chaos
+```sh
+./chaos
+```
 
 ## Judge's Comments:
 
 This is the author's first IOCCC entry.  We thought the entry was
 a nice example of a compact collection of obfuscations.
 
-Can you figure our why, in some cases, it wants to read itself?
+Can you figure out why, in some cases, it wants to read itself?
 
 
 ## Selected Author's Comments:
-
 
 ### Usage
 
@@ -46,8 +52,8 @@ worry about it...
 
 ### Summary
 
-This is a simple ncurses 3D object viewer. The keys 'y', 'u', 'i',
-'h', 'j', and 'k' rotate.  'a' and 'z' zoom in and out.  'q' quits.
+This is a simple ncurses 3D object viewer. The keys `y`, `u`, `i`,
+`h`, `j`, and `k` rotate.  `a` and `z` zoom in and out.  `q` quits.
 Given about 3 seconds of no input, it will start rotating until
 interrupted by user input.
 
@@ -58,7 +64,7 @@ Memory malloced is never freed.  This shouldn't be a big deal,
 since only one block is ever allocated, and the OS should recover it.
 
 My local flavor of lint doesn't seem to like the fact that I never
-"return" from main.  Feh, what does it know?  Otherwise, ignoring
+`return` from main.  Feh, what does it know?  Otherwise, ignoring
 lint's over protectiveness ("Of course I'm not using all of the
 functions defined in curses.h!"), it's lint clean.
 

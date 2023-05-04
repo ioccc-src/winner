@@ -47,8 +47,8 @@ Both albert and albert.orig loop without printing anything, although
 the first factor is 101 and is usually found in an instant.
 ```
 
-The `albert.c` file is the fixed file, whereas the `albert.alt.c`
-is the file before applying Leo Broukhis' fix.
+The [albert.c](albert.c) file is the fixed file, whereas the
+[albert.alt.c](albert.alt.c) is the file before applying Leo Broukhis' fix.
 
 To compile this alternate version:
 
@@ -119,7 +119,7 @@ destroy some of the lay out.  Running the program through lint shows the usual
 remarks for a K&R program. Defeating this through casts does not make a program
 cleaner in my opinion.
 
-### Hints:
+### Hints
 
 Here are some hints, but they may not be too helpful:
 

@@ -1,29 +1,35 @@
 # Obsolescent Feature
 
-    Frans van Dorsselaer
-    Bakker Industrial Automation
-    Kaiserstraat 35
-    NL-2311 GP   Leiden
-    The Netherlands
+Frans van Dorsselaer  
+Bakker Industrial Automation  
+Kaiserstraat 35  
+NL-2311 GP   Leiden  
+The Netherlands  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
-	./dorssel
-	# input some text
+```sh
+./dorssel
+# input some text
 
-	echo text | ./dorssel
+echo text | ./dorssel
+```
 
 ## Try:
 
-	echo Simple as 123 | ./dorssel
-	echo 'Binary as simple as 1, 10 11.' | ./dorssel
-	echo '.... --- .--  -.. --- . ...  .. -  -.. ---  - .... .- -' | ./dorssel
-	echo 'HOW DOES IT DO THAT' | ./dorssel
-	echo 'HOW DOES IT DO THAT' | ./dorssel | ./dorssel
+```sh
+echo Simple as 123 | ./dorssel
+echo 'Binary as simple as 1, 10 11.' | ./dorssel
+echo '.... --- .--  -.. --- . ...  .. -  -.. ---  - .... .- -' | ./dorssel
+echo 'HOW DOES IT DO THAT' | ./dorssel
+echo 'HOW DOES IT DO THAT' | ./dorssel | ./dorssel
+```
 
 ## Judges' remarks:
 
@@ -52,15 +58,14 @@ You might also want to read the [dorssel.hint](dorssel.hint) file.
 
 ## Author's remarks:
 
-Usage
-=====
+### Usage
 
 This program converts ASCII to Morse code, and vice versa.
 
 The program reads in lines from standard input and writes its result to
 standard output.  The direction of conversion is determined on a per
 line basis.  Each line must consist of a maximum of 952 characters
-followed by a new line character, they must not contain any NUL
+followed by a new line character and they must not contain any NUL
 characters.  Otherwise, some characters may be lost in the conversion.
 
 - Encoding to Morse code: The program knows the Morse codes for all Latin
@@ -69,40 +74,46 @@ are replaced by an ASCII space ' '.  Morse code per converted character is
 written as a sequence of '.' and '-' characters, each sequence followed by a
 space.
 
-- Decoding from Morse code: Morse code should be typed as sequences of '.' and
-'-' characters, separated by a space.  Extra spaces will be echoed back (to
-separate words).  Unknown sequences will be converted to a '?' character.
+- Decoding from Morse code: Morse code should be typed as sequences of `.` and
+`-` characters, separated by a space.  Extra spaces will be echoed back (to
+separate words).  Unknown sequences will be converted to a `?` character.
 
-Notes
-=====
+### Notes
 
 The program assumes both source and execution character sets to be
 ASCII.  As far as I can tell, the program is conforming and does not
 invoke undefined behavior.
 
-Hints
-=====
+### Hints
 
-Try
+Try:
 
-          ./dorssel < dorssel.c | ./dorssel
+```sh
+./dorssel < dorssel.c | ./dorssel
+```
 
 to see what variables, numbers, and functions are used.  (Does a
 better job than most C beautifiers).
 
 - Filter your text twice (as in the previous sample) to obtain a version of your
-text that can be reversibly morsified, i.e.
+text that can be reversibly Morsified, i.e.
 
-          ./dorssel | ./dorssel | ./dorssel | ./dorssel
+```sh
+./dorssel < dorssel.c | ./dorssel | ./dorssel | ./dorssel
+```
 
 is the same as
 
-          ./dorssel | ./dorssel
+```sh
+./dorssel < dorssel.c | ./dorssel
+```
 
 - The file "dorssel.hint" contains all the information needed to understand this
 program.  For an obfuscated spoiler, try
 
-          ./dorssel < dorssel.hint 
+```sh
+./dorssel < dorssel.hint 
+```
 
 ## Copyright and CC BY-SA 4.0 License:
 

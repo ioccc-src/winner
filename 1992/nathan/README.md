@@ -13,7 +13,7 @@ UK BS12 4SQ
 make all
 ```
 
-## To run
+## To run:
 
 ```sh
 ./nathan
@@ -58,7 +58,7 @@ The US International Traffic in Arms Regulations controls certain exportations
 going out of the United States.  The U.S.  Munitions List gives the specific
 categories of restricted exports.  Because this entry at one time appeared to
 fall under this restricted category, the judges originally were not able to
-distribute winners outside of the USA.
+distribute winners outside of the US.
 
 Nathan Sidwell stated that he was willing to distribute the winning source.  To
 read HIS instructions of how to obtain his winning program one was able to run:
@@ -84,7 +84,7 @@ re-distribute a program contest winner to the network!
 
 ## Author's remarks
 
-### PROGRAM USE:
+### Program use
 
 This program is a hello world text encryptor/decryptor. It uses an
 enigma (I think) style encryption algorithm, where the encryption
@@ -100,7 +100,7 @@ before the key. (Actually encryption and decryption proper inverse
 operations, so you can use decrypt to scramble and encrypt to
 descramble, if you're perverse.)
 
-### PORTABILITY (A little knowledge is a dangerous thing):
+### Portability (A little knowledge is a dangerous thing)
 
 It's written in ANSI C, and doesn't even assume an ASCII character
 set, (it has an array of the characters to convert), so should be
@@ -116,7 +116,7 @@ another scoping level does not need to be opened.
 Being an encryptor/decryptor, you probably want the source code to
 be obfuscated, to hide the algorithm.
 
-### OBFUSCATION:
+### Obfuscation
 
 In spite of the fact that it looks like a nice friendly hello world
 program, it isn't (as documented above). (Short lines have been padded,

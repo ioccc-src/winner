@@ -1,6 +1,6 @@
 # The worst abuse of the C preprocessor
 
-Col. G. L. Sicherman
+Col. G. L. Sicherman  
 
 ## To build:
 
@@ -9,8 +9,8 @@ make all
 ```
 
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this very twisted
-entry to not require `-traditional-cpp`. He'd like to refer you to the original
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this _very twisted
+entry_ to not require `-traditional-cpp`. He'd like to refer you to the original
 file in [sicherman.alt.c](sicherman.alt.c) and he suggests that you then compare
 it to [sicherman.c](sicherman.c) for some good old C-fashioned fun! Thank you
 Cody for your assistance!
@@ -36,10 +36,10 @@ Use `sicherman.alt` as you would `sicherman`.
 
 ## Judges' remarks:
 
-This program abuses the C preprocessor so much that some /lib/cpp fail to
-strip out all of the comments on the first pass!  If you were able to
-understand Decot's entry in 1984, you will have a head start on this
-one.
+This program abuses the C preprocessor so much that some /lib/cpp fail to strip
+out all of the comments on the first pass!  If you were able to understand
+[Decot's](/winners.html#Dave_Decot) [entry in 1984](/1984/decot/decot.c), you
+will have a head start on this one.
 
 Be sure to run this program through lint!  If your lint works
 correctly, it should warn you that the argument 'Manual' isn't used.
@@ -57,7 +57,7 @@ results in diff reporting a difference on some machines.
 
 ## Author's remarks:
 
-No comments were provided by the author.
+No remarks were provided by the author.
 
 ## Copyright and CC BY-SA 4.0 License:
 

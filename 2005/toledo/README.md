@@ -1,12 +1,9 @@
 # Best game
 
-    Oscar Toledo G.
-    Familia Toledo
-    Av. Santa Cruz del Monte 9-304
-    Ciudad Satelite Edo de Mexico
-    CP 53110
-    Mexico
-    uno@biyubi.com
+Oscar Toledo G.  
+Familia Toledo  
+Mexico  
+<https://nanochess.org>  
 
 ## To build:
 
@@ -29,7 +26,8 @@ make
 
 ## Alternate code:
 
-An alternate version of this entry, `toledo2.c` and `toledo3.c` is provided.
+Two alternate versions of this entry, [toledo2.c](toledo2.c) and
+[toledo3.c](toledo3.c) are provided.
 
 To compile these alternate versions:
 
@@ -37,12 +35,12 @@ To compile these alternate versions:
 make alt
 ```
 
-Use `toledo2` or `toledo3` as you would `toledo` above.
+Use `toledo2` and `toledo3` as you would `toledo` above.
 
 ## Judges' remarks:
 
 Challenge yourself with your ability to look 5, 6 or more moves ahead.
-Challenge your knowledge of C operator precedence.  The following the
+Challenge your knowledge of C operator precedence.  The following is the
 move analysis via recursion while it executes moves.  All while playing
 by the rules of C and Chess within a single function!
 
@@ -50,50 +48,54 @@ by the rules of C and Chess within a single function!
 
 ### What does this program
 
-This is a chess program, it can work in two modes: two-players, and one player
-(always white) against the machine. To get the first mode, run the program
-without arguments:
+This is a [chess](https://en.wikipedia.org/wiki/Chess) program, it can work in
+two modes: two-players, and one player (always white) against the machine. To
+get the first mode, run the program without arguments:
 
 ```sh
 ./toledo
 ```
 
-The other mode is accesible running the program with one argument (5-ply
+The other mode is accessible running the program with one argument
+(5-[ply](https://en.wikipedia.org/wiki/Ply_(game_theory))
 analysis):
 
 ```sh
 ./toledo a
 ```
 
-Two arguments for 6-ply analysis:
+Two arguments for 6-[ply](https://en.wikipedia.org/wiki/Ply_(game_theory))
+analysis:
 
 ```sh
 ./toledo a b
 ```
 
-And each succesive argument will analyze one ply more. There is no ply limit,
-but beyond 7 ply is very slow, try it at your own risk and computing time.
+And each successive argument will analyze one
+[ply](https://en.wikipedia.org/wiki/Ply_(game_theory)) more. There is no ply
+limit, but beyond 7 ply is very slow, try it at your own risk and computing
+time.
 
 ### Entering movements
 
-When is your turn, you can enter your move, by example, as "d2d4" (without the
-quotes) and press the Enter key, the computer will check move legality and
-will warn you of illegal moves. All legal chess moves are permitted.
+When is your turn, you can enter your move, by example, as `d2d4` and press the
+enter key. The computer will check move legality and will warn you of illegal
+moves. All legal chess moves are permitted.
 
 One special case is when you are doing promotion, you must enter the move with
 an extra letter indicating the desired piece.
 
-By example "f7f8n" (supossing you have a pawn on f7), will promote it to a
-knight, substitute 'n' for the desired piece (N/Q/R/B).
+By example `f7f8n` (supposing you have a pawn on `F7`), will promote it to a
+knight; substitute `n` for the desired piece (`N`/`Q`/`R`/`B`).
 
-Note that the program requires the piece letter, it will not select
+Note that the program requires the piece letter; it will not select
 automatically a queen, so don't be surprised if it doesn't accept your move.
 
 ### Game status
 
-The computer will check for checkmate and stalemate, also after each machine
-move, it will show the score of the position, an higher number is better for
-the computer, i.e. worst for you.
+The computer will check for checkmate and stalemate. Also, after each machine
+move, it will show the score of the position: a higher number is better for
+the computer, i.e. worse for you.
 
 ### Quirks
 
@@ -105,35 +107,43 @@ This is a good example of a chess program reduced to the essential. In order
 to get it into the contest limits, I used short but slow and unintelligible
 algorithms.
 
-The interface accounts for only a fraction of the code, the core does
-multiples functions, it is called recursively to analyze and evaluate each
-ply, does alpha-beta cutting, move generation, machine playing, check
-detection, illegal move verification and does moves after they are verified.
+The interface accounts for only a fraction of the code, the core does multiples
+functions: it is called recursively to analyze and evaluate each
+[ply](https://en.wikipedia.org/wiki/Ply_(game_theory)), does [alpha-beta
+pruning](https://en.wikipedia.org/wiki/Alpha-beta_pruning), move generation,
+machine playing, check detection, illegal move verification and does moves after
+they are verified.
 
-Also sets an standard on ultra-mini-chess programs, the player and the
-computer can do all legal chess moves, other features are:
+It also sets a standard on ultra-mini-chess programs. The player and the
+computer can do all legal chess moves.
 
-  * Illegal move verification.
-  * Checkmate detection.
-  * Stalemate detection.
-  * Computer is tough (check 7-ply), even in 5 ply can give a surprise to
+### Additional features
+
+Other features are:
+
+* Illegal move verification.
+* [Checkmate](https://en.wikipedia.org/wiki/Checkmate) detection.
+* Stalemate detection.
+* Computer is tough (check
+7-[ply](https://en.wikipedia.org/wiki/Ply_(game_theory))) and even in 5 ply can give a surprise to
 amateur players.
 
-### Obsfucation tricks
+### Obfuscation tricks
 
-  * Only one C function, really modular.
-  * Extensive use of the trinary and comma operators, save a hard drive today.
-  * Extensive use of C operator precedence, all good C programmers remember
+* Only one very modular C function.
+* Extensive use of the ternary and comma operators; save a hard drive today.
+* Extensive use of C operator precedence; all good C programmers remember
 it... I cannot.
-  * Exchanged operands every place is possible, someday someone will
-understand it,
-  * Mixed and multifunction expressions on statements, in good old-BASIC
+* Exchanged operands every place possible. Someday someone will
+understand it.
+* Mixed and multifunction expressions on statements, in good old-BASIC
 style.
-  * Macros used to hide C syntax, check unballanced parenthesis and calls with
+* Macros used to hide C syntax: check unbalanced parenthesis and calls with
 empty arguments!
-  * Only includes strictly necessary standard headers, the linker takes care,
+* Only includes strictly necessary standard headers, the linker takes care,
 and compiles faster... but I'm still not seeing the difference.
-  * Uses only one string, very easy to I18N ;)
+* Uses only one string, very easy to
+[i18n](https://en.wikipedia.org/wiki/Internationalization_and_localization) ;)
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -5,28 +5,33 @@
 #
 # This script allows one to run sed under git control without having to come up
 # with a list of files first and then passing those to the command.
+#
 # It allows for multiple sed commands and multiple globs. By default it uses -i
-# to edit the file in place (without backup extension) but this can be
-# overridden with the -I option. See -h option for all the options.
+# to edit the file in place (WITHOUT BACKUP EXTENSION; use -i option if you want
+# a backup!) but in place editing can be overridden with the -I option. See -h
+# option for all the options.
 #
 # DISCLAIMER AND WARNING: this is something of a hack and might be error prone.
 # It works for what is needed but possibly could be improved. Even so I like it
-# how it is and I don't think it would do good to add any additional features
-# except perhaps allowing for one to specify path to sed.
+# how it is and I don't think it would do much good to add many more additional
+# features.
 #
 # - Cody Boone Ferguson (@xexyl)
 #
 
-export SGIT_VERSION="0.0.7-1 12-04-2023" # format: major.minor.patch-release DD-MM-YYYY
+export SGIT_VERSION="0.0.8-1 19-04-2023" # format: major.minor.patch-release DD-MM-YYYY
 
-USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-x] [-I] [-o sed_options] [-s sed] [-e command] <glob...>
+USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-x] [-I] [-i extension] [-o sed_options] [-s sed] [-e command] <glob...>
 
     -h			    print help and exit
     -V			    print version and exit
     -v level		    set verbosity level
     -x			    turn on tracing (set -x)
     -I			    disable in place editing
-    -o			    sed options (don't pass '-')
+    -i extension	    set backup extension (default none)
+				WARNING: sed -i overwrites existing files
+				WARNING: this will create another file for each file changed
+    -o			    sed options (NOTE: don't pass '-'!)
 				WARNING: use of '-o n' without '-I', can depending on command, empty files
     -s sed		    set path to sed
     -e command		    append sed command to to list to execute on globs
@@ -38,6 +43,7 @@ export SED
 export SED_OPTIONS=""
 export I_FLAG=
 export VERBOSITY=0
+export EXTENSION=""
 
 # we need an array for sed commands
 declare -a SED_COMMANDS
@@ -47,7 +53,7 @@ IFS=$'\t\n'
 
 # parse args
 #
-while getopts :hVv:xIo:s:e: flag; do
+while getopts :hVv:xIi:o:s:e: flag; do
     case "$flag" in
     h)	echo "$USAGE" 1>&2
 	exit 2
@@ -60,6 +66,8 @@ while getopts :hVv:xIo:s:e: flag; do
     x)	set -x
 	;;
     I)	I_FLAG="-I"
+	;;
+    i)  EXTENSION="$OPTARG"
 	;;
     o)	SED_OPTIONS="-$OPTARG"
 	;;
@@ -148,6 +156,12 @@ if [[ "$VERBOSITY" -gt 1 ]]; then
     echo "debug[2]: looping through all globs" 1>&2
 fi
 
+if [[ -n "$EXTENSION" ]]; then
+    if [[ "$VERBOSITY" -ge 1 ]]; then
+	echo "debug[1]: using backup extension: $EXTENSION" 1>&2
+    fi
+fi
+
 GLOBS="$#"
 i=0
 while [[ "$i" -lt "$GLOBS" ]]; do
@@ -155,12 +169,13 @@ while [[ "$i" -lt "$GLOBS" ]]; do
 	echo "debug[2]: found glob: $i" 1>&2
     fi
 
+
     if [[ "$VERBOSITY" -ge 1 ]]; then
 	if [[ -z "$I_FLAG" ]]; then
 	    if [[ -n "$SED_OPTIONS" ]]; then
-		echo "debug[1]: about to run: git ls-files $1 | xargs $SED -i\"\" $SED_OPTIONS ${SED_COMMANDS[*]}" 1>&2
+		echo "debug[1]: about to run: git ls-files $1 | xargs $SED -i\"$EXTENSION\" $SED_OPTIONS ${SED_COMMANDS[*]}" 1>&2
 	    else
-		echo "debug[1]: about to run: git ls-files $1 | xargs $SED -i\"\" ${SED_COMMANDS[*]}" 1>&2
+		echo "debug[1]: about to run: git ls-files $1 | xargs $SED -i\"$EXTENSION\" ${SED_COMMANDS[*]}" 1>&2
 	    fi
 	else
 	    if [[ -n "$SED_OPTIONS" ]]; then
@@ -173,9 +188,9 @@ while [[ "$i" -lt "$GLOBS" ]]; do
 
     if [[ -z "$I_FLAG" ]]; then
 	if [[ -n "$SED_OPTIONS" ]]; then
-	    git ls-files "$1" | xargs "$SED" -i"" "$SED_OPTIONS" "${SED_COMMANDS[@]}"
+	    git ls-files "$1" | xargs "$SED" -i"$EXTENSION" "$SED_OPTIONS" "${SED_COMMANDS[@]}"
 	else
-	    git ls-files "$1" | xargs "$SED" -i"" "${SED_COMMANDS[@]}"
+	    git ls-files "$1" | xargs "$SED" -i"$EXTENSION" "${SED_COMMANDS[@]}"
 	fi
     else
 	if [[ -n "$SED_OPTIONS" ]]; then

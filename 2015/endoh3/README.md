@@ -2,7 +2,7 @@
 
 Yusuke Endoh  
 <https://github.com/mame/>  
-Twitter: @mametter  
+Mastodon: [@mame@ruby.social](https://ruby.social/@mame)  
 
 ## To build:
 

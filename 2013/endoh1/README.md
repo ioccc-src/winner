@@ -1,8 +1,9 @@
 # Most lazy SKIer
 
-    Yusuke Endoh  
-    <mame@ruby-lang.org>  
-    <https://github.com/mame/>  
+Yusuke Endoh  
+<mame@ruby-lang.org>  
+<https://github.com/mame/>  
+Mastodon: [@mame@ruby.social](https://ruby.social/@mame)  
 
 ## To build:
 

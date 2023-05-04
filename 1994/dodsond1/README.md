@@ -1,20 +1,24 @@
 # Best Game
 
-Don Dodson
-AG Communication Systems
-17239 N. 19th Ave. #1003
-Phoenix, AZ 85023  
-USA
+Don Dodson  
+AG Communication Systems  
+17239 N. 19th Ave. #1003  
+Phoenix, AZ 85023    
+US  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
-## To run
+## To run:
 
-	./dodsond1
-    
-NOTE: At the prompt, try entering E3.
+```sh
+./dodsond1
+```
+
+NOTE: At the prompt, try entering `E3`.
 
 ## Judges' remarks:
 

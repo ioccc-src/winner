@@ -1,17 +1,19 @@
 # Best use of the www
 
-    Anthony Howe
-    Snert
-    42 av. Isola Bella
-    06400 Cannes,
-    France
-    achowe@snert.com
+Anthony Howe  
+<achowe@snert.com>  
+<http://www.snert.com>  
 
 ## To build:
 
 ```sh
 make
 ```
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this so that the
+[configure](source/configure) script (which is not needed but part of the entry)
+would work with compilers that have by default `-Werror` like clang in macOS.
+Thank you Cody!
 
 ## To run:
 
@@ -22,6 +24,8 @@ make
 You can specify a port by appending to the domain `:port`. See notes below on
 the issue of https.
 
+
+
 ## Try:
 
 ```sh
@@ -30,28 +34,52 @@ the issue of https.
 
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) pointed out that this
-will not work for https initially for two reasons. First it scanned for http://.
-Cody changed it to scan for both http:// and https:// but the problem is a
-secure connection needs to be set up before http commands can be sent. One would
-also have to specify a port in the URL. Fortunately or unfortunately many more
-websites use https nowadays so this entry will not work as well as it used to.
-If one were to try and connect to `http://www.ioccc.org` with this entry they'll
-just get a 301 error. Perhaps someone can come up with a pipeline that will make
-this work with the change made.  Otherwise just enjoy it for what it was.
+will not work for https initially for two reasons. For a starting point see the
+alternate code section below.
+
+### Alternate code:
+
+As noted this will not work for https. This is because it does not scan for
+https but also a secure connection needs to be set up before http commands can
+be sent. One would also have to specify a port in the URL. Fortunately or
+unfortunately many more websites use https nowadays so this entry will not work
+as well as it used to.  If one were to try and connect to `http://www.ioccc.org`
+with this entry they'll just get a 301 error.
+
+In case someone can come up with a clever pipeline or some other hack or
+workaround (perhaps [stunnel](https://www.stunnel.org)), Cody added the alt code
+which does scan for https. Futile, maybe, in which case just enjoy it for what
+it was. To compile:
 
 
-## Judges' remarks
+```sh
+make alt
+```
 
-This little mynx will give any Fiery Fox a run for its money. A nice complement
-to last years winning hibachi. The judges double dare any eager
-Obfuscationalists to submit the missing pieces to get a functioning LAMP stack.
+Use `mynx.alt` as you would `mynx`. You'd have to specify a port at the end of
+the URL like:
+
+```sh
+./mynx.alt https://www.ioccc.org:443
+```
+
+but again unless you have a clever workaround or hack to the problem, this sadly
+won't work.
+
+## Judges' remarks:
+
+This little `mynx` will give any [Fiery
+Fox](https://en.wikipedia.org/wiki/Firefox) a run for its money. A nice
+complement to last years winning [hibachi](/2004/hibachi/src/hibachi.c). The
+judges double dare any eager Obfuscationalists to submit the missing pieces to
+get a functioning LAMP stack.
 
 ## Author's remarks:
 
-I was rather impressed by last year's mini web server. So much so that
+I was rather impressed by last year's mini webserver. So much so that
 it inspired me to try my hand at writing the client side complement.
 
-A typical build would be command would be:
+A typical build command would be:
 
 ```sh
 cc -omynx mynx.c
@@ -69,26 +97,27 @@ all the network functions in a variety of places. So a simpler build
 command sequence would be:
 
 ```sh
-./configure
-make
+cd source ; ./configure ; make
 ```
 
 After which, the rest of the documentation can be read by saying:
 
 ```sh
-./mynx manual.html
+./mynx ../manual.html
 ```
 
 Manifest:
 
-        mynx.c
-        makefile                pre-built generic Un*x
-        README.TXT
-        manual.html
-        makefile.in             makefile template
-        entities.txt            ISO 8859-1 entites
-        configure.in            configure script description
-        configure               pre-built configure script
+```
+    mynx.c
+    makefile                pre-built generic Un*x
+    README.TXT
+    manual.html
+    makefile.in             makefile template
+    entities.txt            ISO 8859-1 entites
+    configure.in            configure script description
+    configure               pre-built configure script
+```
 
 ## Copyright and CC BY-SA 4.0 License:
 

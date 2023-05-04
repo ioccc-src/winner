@@ -1,15 +1,17 @@
 ## Best small program
 
-	Maarten Litmaath
-	Free University (VU) Amsterdam
-	Department of computer science
-	Uilenstede 72
-	1183 AK Amstelveen
-	The Netherlands
+Maarten Litmaath  
+Free University (VU) Amsterdam  
+Department of computer science  
+Uilenstede 72  
+1183 AK Amstelveen  
+The Netherlands  
 
 ## Try:
 
-	./litmaath eschew obfuscation
+```sh
+./litmaath eschew obfuscation
+```
 
 
 ## Judges' remarks:
@@ -17,9 +19,10 @@
 Note the unusual structure:
 
 
-	 while (<condition>)
-		 ;
-
+```c
+while (<condition>)
+	 ;
+```
 
 Did you notice that the body is empty?
 
@@ -30,14 +33,21 @@ could make the body of the 'while' loop an 'fprintf' with interesting
 variables like:
 
 
-	fprintf(stderr,
-	     "argv=%lo *argv=%lo **argv=%c argv[1]=%lo *argv[1]=%c argc=%d\n",
-	     (long) argv, (long) *argv, *argv && **argv ? **argv : '@',
-	     (long) argv[1], argv[1] && *argv[1] ? *argv[1] : '@', argc);
+```c
+fprintf(stderr,
+     "argv=%lo *argv=%lo **argv=%c argv[1]=%lo *argv[1]=%c argc=%d\n",
+     (long) argv, (long) *argv, *argv && **argv ? **argv : '@',
+     (long) argv[1], argv[1] && *argv[1] ? *argv[1] : '@', argc);
+```
 
 
 Furthermore, it's interesting to note that only two variables are
 used to achieve everything.
+
+## Author's remarks:
+
+No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

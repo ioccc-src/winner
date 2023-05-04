@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
-./westley  \
+${WESTLEY:=./westley}
+${WESTLEY}  \
 "123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_\`abcdefghijkl" \
 "/\$%&'()*+,-./\$%&'()*+,-." \
 " ||" \

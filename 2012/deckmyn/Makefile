@@ -110,7 +110,7 @@ ENTRY= deckmyn
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA= MANUAL example_beethoven example_greensleeves
+DATA= deckmyn.md example_beethoven example_greensleeves
 TARGET= ${PROG}
 #
 ALT_OBJ=

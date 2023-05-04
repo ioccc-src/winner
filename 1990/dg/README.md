@@ -4,7 +4,7 @@ David Goodenough
 anonymous organization   
 541 Commonwealth Ave  
 Newton, MA 02159  
-USA  
+US  
 
 ## To build:
 

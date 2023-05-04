@@ -1,8 +1,6 @@
 # Best Abuse of CPP
 
-Raymond Cheong
-[address subject to change]
-MD, USA
+Raymond Cheong  
 
 ## To build:
 
@@ -18,7 +16,15 @@ echo n | ./primenum n
 
 ```
 
-NOTE: n is an integer.
+NOTE: `n` is an integer.
+
+### INABIAF - it's not a bug it's a feature! :-)
+
+Although the name of the program suggests it prints prime numbers this is not
+the case. This is by design. See the author's comments for more details or
+better yet look at the code and if necessary try it out.
+
+A crash in the program is known as well. This is also a feature.
 
 ## Try:
 
@@ -49,16 +55,18 @@ numbers up to a given number (as specified on the command line).
 But novice programmers especially know that mistakes are often made in
 translating pseudocode to real code, often resulting in programs with
 unexpected and confusing output.  Clearly, the program contains several
-syntax "mistakes" (e.g. LessThanOrEqualTo) and blatant "errors" (e.g.
-Zero).  This program clearly requires "debugging."
+syntax "mistakes" (e.g. `LessThanOrEqualTo`) and blatant "errors" (e.g.
+`Zero`).  This program clearly requires "debugging."
 
 As a result of these "bugs", the program does not calculate primes at all.
 Instead, the program reads input from stdin and returns garbled text on
 stdout.  Fortunately, you can recover the original message simply by
 running the program a second time.  Try:
 
-    ./primenum n < textfile | ./primenum n > textfile2
-    diff textfile textfile2
+```sh
+./primenum n < textfile | ./primenum n > textfile2
+diff textfile textfile2
+```
 
 where n is the same number (modulo 64).  So, the prime number generator
 is actually a simple text encoder/decoder!  Of course, don't forget that
@@ -67,22 +75,28 @@ argument, otherwise the "bugs" in the program will cause it to crash!
 ### Features
 
 - The program attempts to mislead the reader into thinking that it
-  generates prime numbers.  It does this by
-    * describing a correct algorithm in pseudocode,
-    * using partially correct conversion of pseudocode to real code,
-    * using suggestive variable names, and
+  generates prime numbers.  It does this by:
+    * describing a correct algorithm in pseudocode;
+    * using partially correct conversion of pseudocode to real code;
+    * using suggestive variable names; and
     * using a suggestive program name.
+
 - The program demonstrates a novel method of abusing the C preprocessor.
-- How the filter algorithm works is left as an exercise to the reader.
+
+- Determining how the filter algorithm works is left as an exercise to the
+  reader.
+
 - OK, so running it through the preprocessor strips away the prime
-  number front.  But ye be warned: not a11 variab1es1es are identica1 :-)
+  number front.  But ye be warned: "not a11 variab1es1es are identica1" :-)
+
 - Other features include
     * useless variables
     * useless if
     * a for loop that's used as an if statement
     * dependence on the high bit being 0
+
 - Try also
-  echo THIS MESSAGE IS IN ALL CAPS | ./primenum 32
+  `echo THIS MESSAGE IS IN ALL CAPS | ./primenum 32`
 
 ## Copyright and CC BY-SA 4.0 License:
 

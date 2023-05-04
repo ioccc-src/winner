@@ -1,11 +1,11 @@
 # Best Short Program
 
-Jeff Weisberg
-University of Rochester
-Dept of Electrical Engineering
-Computer Studies Bldg
-Rochester, NY 14627
-USA
+Jeff Weisberg  
+University of Rochester  
+Dept of Electrical Engineering  
+Computer Studies Bldg  
+Rochester, NY 14627  
+US  
 
 ## To build:
 
@@ -43,7 +43,7 @@ it was read on stdin instead of via `cc -E`.
 
 ## Author's remarks:
 
-### Description:
+### Description
 
 The following short program implements the "Yet Another" algorithm for
 generating prime numbers.  It will generate all primes up to 33554432,
@@ -53,7 +53,7 @@ run to completion, so as an added feature, it will cease execution upon
 reception of a signal (any will do equally well), as well as in the
 event of a system shutdown or reboot.
 
-### Bugs:
+### Bugs
 
 The alternative version ([weisberg.alt](weisberg.alt.c)) has never actually run
 to completion. After running for close to a week it had reached somewhere around
@@ -63,7 +63,7 @@ remarkably well). As there are quite a lot of primes to be found before reaching
 the output through your favorite pager (`more` or `less`), and not output to a
 paper output device (unless you have *LOTS* of paper).
 
-### Technical:
+### Technical
 
 The original "Yet Another Prime Program" algorithm used here was developed as a
 Computer Architecture course micro-programming exercise, and was designed to

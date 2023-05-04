@@ -1,7 +1,7 @@
 # Most likely to amaze
 
-    The author wishes to remain anonymous
-    Great Britain
+The author wishes to remain anonymous  
+Great Britain  
 
 ## To build:
 
@@ -12,28 +12,72 @@ make
 ## To run:
 
 ```sh
-./anonymous program
+./anonymous x86_program
 ```
 
-NOTE: this entry seems to no longer work. [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson) has offered some tips in the
-[bugs.md](/bugs.md) file for anyone who mights want to try and fix this but it
-seems to require a lot of parsing, debugging, an x86 system and possibly knowing
-the internals of the ELF format (x86 specific). You need to run the program on a
-binary to test. See the try section below for a program that, if you get the
-entry to work, would be okay to test it on. Thank you and we will happily credit
-you if you fix this.
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed both the
+supplementary program and the program itself, both of which segfaulted. He
+managed to do this with linux but it will not work with macOS (see
+[bugs.md](/bugs.md) for why this is); this is not a bug but a feature inherent
+in what it does. He said this took serious debugging and skill (shameless self
+promotion but it's true :-) ) and we thank him _very much_! But what needed to
+be changed? Although it took a fair bit of debugging it turns out all that
+needed to be changed was:
 
-WARNING: if you do get this to work it will destroy files that it is used on.
-See the author's warning on this.
+- `#include <sys/mman.h>` for `mmap()`.
+- have `main()` call another function which is the recursive function; this
+prevented `main()` from entering an infinite loop.
 
+Without either of these it would crash and prevent modification of the 32-bit
+[ELF](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) (not elf :-)
+) binary. The following change was also made to be more portable, in case the
+constants `PROT_READ` and/or `PROT_WRITE` are not standardised:
+
+Change `3` in the call to `mmap()` to be `PROT_READ|PROT_WRITE`: just in case
+`PROT_READ|PROT_WRITE` does not equal 3 (though it seems to be equal in both
+macOS and linux).
+
+NOTE: there might be educational value to see the progress of this fix; if you
+wish to see, try:
+
+```sh
+git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..93aa8d79f208dcccc3c5a2370a727b5cf64e9c53 anonymous.c
+git diff 93aa8d79f208dcccc3c5a2370a727b5cf64e9c53..c48629017117379a52b1a512ef8f2593ca9569c8 anonymous.c
+git diff c48629017117379a52b1a512ef8f2593ca9569c8..efdee208a2bc650256637b9357ddfd0de82d2f41 anonymous.c
+git diff efdee208a2bc650256637b9357ddfd0de82d2f41..e9a3f77ea3b209e63ac3f9c06bb84ad86e5ea706 anonymous.c
+```
+
+### WARNING on note from the author
+
+The author suggested that this will somewhat destroy the binaries this touches
+but Cody did not observe this. It does indeed modify the files as the script
+below will show you (though not all files are modified: can you figure out why
+that is?) but Cody did not notice any problems in using them. Perhaps it's
+something he's not aware of. If you follow the try commands below you will
+notice that although the binaries do differ it's not many differences. See the
+author's warning about this.
+
+### INABIAF - it's not a bug it's a feature! :-)
+
+This entry will not work on 64-bit binaries! The program itself can be compiled
+as 64-bit but the files it processes must be 32-bit ELF binaries. Not doing this
+will likely cause a crash or cause your computer to [halt and catch
+fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)! :-)
+
+This entry will also very likely crash if no arg is specified. It might do
+something funny if you run it on itself as well but see below :-)
 
 ## Try:
 
 ```sh
-make anonymous.ten
-./anonymous anonymous.ten
+./try.me.sh
 ```
+
+What happens if the x86 program has already been modified by this program?
+
+What happens if you try it on another file like [anonymous.c](anonymous.c)? Can
+you recompile it okay? What if you run it on `anonymous` itself? Can you run the
+program successfully after it without recompiling?
 
 
 ## Judges' remarks:
@@ -46,7 +90,8 @@ quite a lot of bit twiddling.
 This program is an optimizing dynamic binary translator, allowing you to
 run x86 programs on any machine (x86 or otherwise).
 
-I have included a simple "10 green bottles" program, already compiled
+I have included a simple [10 green
+bottles](https://www.bbc.co.uk/teach/school-radio/nursery-rhymes-ten-green-bottles/zncyt39) program, already compiled
 for the x86.  The program 'ten', and its source (dull) are given as info
 files.  Warning: note that the translator screws around with the binary
 you run on it, *will* corrupt the binary to some extent, and may leave
@@ -88,75 +133,75 @@ switches such that while compiling the program it generates one error
 compiler errors while it is running (yes, the program can generate
 compiler errors while it is running).  If you do not wish to see this
 error, or if the program generates any further error when compiled using
-your C compiler please remove the "warning=..." line from the build
-script.
+your C compiler please remove the `-Dwarning='-Dprocessor'` line and the
+`$$warning` from the compiler invocation.
 
-### Optimization:
+### Optimization
 
-The build script contains a "-O1" switch for the compiler.  Increasing
+The build script contains a `-O1` switch for the compiler.  Increasing
 the optimization level will make the program run *slower*, while
 compiling the program without any optimization will allow it to run
 *faster*.
 
-### Obfuscation:
+### Obfuscation
 
-The most obvious part of the obfuscation is probably the mess of defines
-at the top.  This may seem a somewhat tired old obfuscation - however
-since many of these macros are (sometimes only) used by the program once
-it has dynamically recompiled itself, they are only referenced within
-the source code from within strings - and therefore the macros cannot be
-expanded.  Furthermore, some of these strings of code are not given as
-strings, but instead are wrapped up in macros that use the "#"
-preprocessor operator to turn them into strings. In the hope throwing a
-few C beautifiers the macro to generate the strings is not contained
-within the source code but instead is passed in on the command line.
+The most obvious part of the obfuscation is probably the mess of defines at the
+top.  This may seem a somewhat tired old obfuscation - however since many of
+these macros are (sometimes only) used by the program once it has dynamically
+recompiled itself, they are only referenced within the source code from within
+strings - and therefore the macros cannot be expanded.  Furthermore, some of
+these strings of code are not given as strings, but instead are wrapped up in
+macros that use the `#` preprocessor operator to turn them into strings. In the
+hope of throwing off a few C beautifiers the macro to generate the strings is
+not contained within the source code but instead is passed in on the command
+line.
 
 Buried under all this, and the fact that the entire program is just a
-call to exit, there are some nice subtle little obfuscations.  For
+call to `exit()`, there are some nice subtle little obfuscations.  For
 example, you may notice that there are a couple of macros that use the
-"##" preprocessor operator to build pairs of functions.  One of these
+`##` preprocessor operator to build pairs of functions.  One of these
 macros is used to build to pairs of functions of which only one has
 local variables which shadow global variables; so one modifies the
 global state, and the other doesn't.
 
-There is also quite a nice trick where I wave a magic wand, and a chunk
-of code which should only be run when the program is run for the first
-time (setting the PC to point at main, etc) gets turned into a
-frog^M^M^M^Mstring.  The C compiler sees a string by itself in the code,
-thinks "yup, that's a valid C expression", and quietly moves on to the
-next line of code.
+There is also quite a nice trick where I wave a magic wand, and a chunk of code
+which should only be run when the program is run for the first time (setting the
+[PC / IP](https://en.wikipedia.org/wiki/Program_counter) to point at `main()`,
+etc) gets turned into a `frog^M^M^M^Mstring`.  The C compiler sees a string by
+itself in the code, thinks "yup, that's a valid C expression", and quietly moves
+on to the next line of code.
 
-### Limitations:
+### Limitations
 
-Due to space limitations only a handful of instructions are supported,
-those instructions which are supported may supported in somewhat
-non-conventional ways, chunks of the architecture (e.g. flags) are just
+Due to space limitations only a handful of instructions are supported;
+these instructions which are supported are supported in somewhat
+non-conventional ways: chunks of the architecture (e.g. flags) are just
 ignored, the elf loader does not really load the elf binary, the target
 library linking can only pass up to 3 parameters to the target library
-function, etc, etc, etc.
+function, etc.
 
 In short, please consider this a full disclaimer for any bug that may
 turn up - yes the program is unsafe, but it's pretty cool anyway.
 
-Despite all this, the translator is not exclusively limited to running
-the 'ten' program.  Other trivial x86 programs may run on the translator
-\- and I have successfully run a wide range of HelloWorld programs,
-including one of last years IOCCC winners, 'tomx'.
+Despite all this, the translator is not exclusively limited to running the
+[anonymous.ten](anonymous.ten.c) program.  Other trivial **_x86_** programs may
+run on the translator \- and I have successfully run a wide range of "Hello
+World" programs, including one of last years IOCCC winners,
+[tomx](/2000/tomx/tomx.c).
 
-### Complete Program:
+### Complete Program
 
-The fact that the program makes calls to system and execv may imply that
-it is not a complete program in its own right, as it relies on other
-programs.  The call to system is a call to ask gcc to recompile the
-translator with a new set of switches, and the call to execv asks for
-the newly compiled program to be executed.  I would point out that
-almost every other entry to this competition also require a C compiler
-(well, the published winners at any rate, and I recognize that a few
-don't).  There is little real difference between this program and one
-like last years entry 'dhyang'; both are just C programs that generate C
-code as their output.
+The fact that the program makes calls to `system()` and `execv()` may imply that
+it is not a complete program in its own right, as it relies on other programs.
+The call to `system()` is a call to ask gcc to recompile the translator with a
+new set of switches, and the call to `execv()` asks for the newly compiled
+program to be executed.  I would point out that almost every other entry to this
+competition also require a C compiler (well, the published winners at any rate,
+and I recognize that a few don't).  There is little real difference between this
+program and one like last years entry [dhyang](/2000/dhyang/dhyang.c); both are
+just C programs that generate C code as their output.
 
-Enjoy, thanks!
+Enjoy and thanks!
 
 ## Copyright and CC BY-SA 4.0 License:
 

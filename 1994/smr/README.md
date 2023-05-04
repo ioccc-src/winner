@@ -1,14 +1,16 @@
 # Worst Abuse of the Rules
 
-Szymon Rusinkiewicz
-Massachusetts Institute of Technology
-305 Memorial Dr., Room 005B
-Cambridge, Ma  02139  
-USA
+Szymon Rusinkiewicz  
+Massachusetts Institute of Technology  
+305 Memorial Dr., Room 005B  
+Cambridge, Ma  02139    
+US  
 
 ## To build:
 
-        make all
+```sh
+make all
+```
 
 ## To run:
 
@@ -36,10 +38,9 @@ compiler can't, the build instructions supplied with this entry
 will produce an executable file.  On most systems, the stdout
 from the executable will exactly match original source.
 
-In the future, the contest rules will specify a minimum size
-that is one character larger than this entry, forever eliminating
-this sort of program from contest.  After all, how many variations
-can one make on this entry?  :-)
+In the future, the contest rules will specify a minimum size that is one
+character larger than this entry, forever eliminating this sort of program from
+the contest.  After all, how many variations can one make on this entry? :-)
 
 ## Author's remarks:
 

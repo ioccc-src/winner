@@ -5,11 +5,13 @@ Imperial College, University of London
 Myrsinis 1  
 GR-145 62 Kifissia  
 Greece  
-<https://www.spinellis.gr/>
+<https://www.spinellis.gr/>  
 
 ## To build:
 
-	make all
+```sh
+make all
+```
 
 
 [Yusuke Endoh](/winners.html#Yusuke_Endoh) fixed this for modern systems. Thank
@@ -17,10 +19,10 @@ you Yusuke!
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) removed the erroneous
 prototype to `fopen()` and made this use `fgets()` instead of `gets()` to make
-it safer and to prevent a potentially alarming warning at compiling and/or
-linking and/or runtime. Thank you Cody for your assistance!
+it safer and to prevent an annoying and potentially alarming warning at
+compiling and/or linking and/or runtime. Thank you Cody for your assistance!
 
-## To run
+## To run:
 
 ```sh
 ./dds

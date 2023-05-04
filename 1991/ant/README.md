@@ -54,7 +54,7 @@ Carriage return is mapped to newline on input and ignored on output.  Tab stops
 are every eight columns.  Non-printable characters may have unpredictable
 results depending on the implementation of `curses`.
 
-### COMMANDS:
+### Commands
 
 -    h j k l	    left, down, up, right cursor movement
 -    H J K L	    word left, page down, page up, word right
@@ -66,13 +66,13 @@ results depending on the implementation of `curses`.
 -    R		    refresh the screen
 -    Q		    quit
     
-### EXIT STATUS:
+### Exit status
 
 -    0		    success
 -    2		    missing edit filename
 
 
-### ABOUT THIS ENTRY:
+### About this entry
 
 The BUF size should be set at compile time to 32767.  This value was used
 because the Sozobon C compiler for the Atari ST has 16 bit ints and a limit on
@@ -102,7 +102,7 @@ in the same group every so often.
 This entry will display a file with long lines, but has trouble scrolling the
 screen with long lines.  Paging up and down should work correctly, however.
 
-### REFERENCES:
+### References:
 
 [Fin80]	Craig A. Finseth, "Theory and Practice of Text Editors or 
 	A Cookbook For An EMACS", TM-165, MIT Lab. for Computer 
