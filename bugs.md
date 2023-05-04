@@ -1980,7 +1980,7 @@ Do you have a fix? We welcome it!
 ## [2011/vik](2012/vik/vik.c) ([README.md](2012/vik/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 
-The author stated that the program will crash if no argument is passed tot he
+The author stated that the program will crash if no argument is passed to the
 program though we note that your computer might also [halt and catch
 fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
 
