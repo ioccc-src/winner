@@ -1,8 +1,8 @@
 # Best one liner
 
-    Taketo Konno  
-    Tokyo, Japan  
-    <inaniwa3@gmail.com>  
+Taketo Konno  
+Japan  
+<inaniwa3@gmail.com>  
 
 ## To build:
 
@@ -26,7 +26,7 @@ NOTE: N is an integer from 0 to 255.
 
 ### Alternate code
 
-An alternate version of this entry, `konno_alt.c`, is provided.
+An alternate version of this entry, [konno.alt.c](konno.alt.c), is provided.
 This alternate code is an unobfuscated version of the winning code.
 
 To compile this alternate version:
@@ -60,7 +60,7 @@ Try:
 ./konno 165
 ```
 
-There are 256 (from 0 to 255) possible rules.
+There are 256 (from 0 through 255) possible rules.
 
 ### Obfuscation
 
@@ -70,7 +70,7 @@ This program uses bit operations. I think
 7&O<<!o>>!o+29
 ```
 
-is an intersting operation. This isn't equal to
+is an interesting operation. This isn't equal to
 
 ```c
 7&O>>29
@@ -80,7 +80,7 @@ operation. What is the operation doing?
 
 ### Limitation
 
-This program assumes that the size of int is 4.
+This program assumes that the size of `int` is 4.
 
 ## Copyright and CC BY-SA 4.0 License:
 
