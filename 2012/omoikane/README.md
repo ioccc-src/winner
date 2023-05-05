@@ -1,8 +1,8 @@
 # Most surreptitious
 
-    Don Yang  
-    <omoikane@uguu.org>  
-    <http://uguu.org/>  
+Don Yang  
+<omoikane@uguu.org>  
+<http://uguu.org/>  
 
 ## To build:
 
@@ -36,81 +36,90 @@ cc -o output output.c
 
 ## Judges' remarks:
 
-The judges have nothing to add that has not already been written
-about in the `spoiler.html`` file!  :-)
+The judges have nothing to add that has not already been written about in the
+[spoiler.html](spoiler.html) (requires JavaScript) file!  :-)
 
 ## Author's remarks:
 
 ### Usage
 
-Nyaruko is a binary to text filter.  Given some input on stdin,
-Nyaruko will produce C code that reproduces this input on stdout:
+`Nyaruko` is a binary to text filter.  Given some input on stdin,
+`Nyaruko` will produce C code that reproduces this input on stdout:
 
-    ./nyaruko < original.bin > output.c
-    gcc output.c -o output
-    ./output > regenerated.bin
+```sh
+./nyaruko < original.bin > output.c
+gcc output.c -o output
+./output > regenerated.bin
+```
 
 Output is encrypted, but both key and data are included in the output.
 To separate the key from the data, run these commands:
 
+```sh
     bash output.c > key.c
     perl output.c > data.c
+```
 
-The key-less data.c still compiles, but produces a different message
+The key-less `data.c` still compiles, but produces a different message
 on stdout instead of the original input.  This message is a hint to
 why the code is formatted the way it is.
 
 To combine the key and data, concatenate them together in either
 order:
 
+```sh
     cat key.c data.c > output.c
     cat data.c key.c > output.c
+```
 
-By default, Nyaruko generates a unique random key for every message,
-using /dev/urandom as the seed.  If given an extra command line
-argument, Nyaruko will seed using that file instead of /dev/urandom:
+By default, `Nyaruko` generates a unique random key for every message,
+using `/dev/urandom` as the seed.  If given an extra command line
+argument, `Nyaruko` will seed using that file instead of `/dev/urandom`:
 
-    ./nyaruko seed.txt < input.bin > output.c
+```sh
+./nyaruko seed.txt < input.bin > output.c
+```
 
 This makes the output key deterministic, allowing the same key to be
 shared across different files.  On operating systems that do not have
-/dev/urandom, users should always specify this extra seed argument to
+`/dev/urandom`, users should always specify this extra seed argument to
 avoid deterministic keys.
 
 ### Features
 
-Implementation details that makes Nyaruko more obfuscated than usual
+Implementation details that make `Nyaruko` more obfuscated than usual
 programs:
 
-   * Nyaruko recycles variables and buffers to reduce internal state.
-     The variable names are also carefully chosen for mixed-case
-     madness.
-   * Nyaruko employs some preprocessor magic to share much of the same
-     code and state between the encoder and decoder, and to increase
-     occurrences of smileys ;)
+* `Nyaruko` recycles variables and buffers to reduce internal state.
+ The variable names are also carefully chosen for mixed-case
+ madness.
+* `Nyaruko` employs some preprocessor magic to share much of the same
+ code and state between the encoder and decoder, and to increase
+ occurrences of smileys ;)
 
 Output code has these features:
 
-   * Fits nicely under 80 columns, and does not contain any trigraphs.
-   * Uses a fairly efficient encoding scheme, better than uuencode for
-     files larger than ~13K, and better than base64 for files larger
-     than 20K.
-   * Encryption with ISAAC, a cryptographically secure pseudorandom
-     number generator.
-   * Trivial 3 language polyglot.
+* Fits nicely under 80 columns, and does not contain any trigraphs.
+* Uses a fairly efficient encoding scheme, better than `uuencode` for
+ files larger than ~13K, and better than `base64` for files larger
+ than 20K.
+* Encryption with [ISAAC](https://en.wikipedia.org/wiki/ISAAC_(cipher)), a
+cryptographically secure pseudorandom number generator.
+* Trivial 3 language polyglot.
 
-Code layout is meant to resemble Nyaruko, also known as Nyarlathotep,
-the Crawling Chaos.  The most obvious thing to do with chaos is to
-make a random number generator, and the most obvious thing to do with
-a random number generator is to make one-time-pads for encryption.
+Code layout is meant to resemble
+[Nyaruko](https://en.wikipedia.org/wiki/Nyarlathotep), also known as
+`Nyarlathotep`, the Crawling Chaos.  The most obvious thing to do with chaos is
+to make a random number generator, and the most obvious thing to do with a
+random number generator is to make one-time-pads for encryption.
 
 ### Compatibility
 
-Nyaruko has these environment dependencies:
+`Nyaruko` has these environment dependencies:
 
-   * Requires ASCII character set.
-   * Assumes sizeof(unsigned int) == 4.
-   * Best viewed with tab stops set to 8 spaces.
+* Requires ASCII character set.
+* Assumes `sizeof(unsigned int) == 4`.
+* Best viewed with tab stops set to 8 spaces.
 
 Output code has the same dependencies, with the additional
 requirement that the compiler must support arbitrarily long string
@@ -118,23 +127,24 @@ literals.  Maximum input size that can be encoded while still
 producing standard-compliant output is ~276 bytes for C89, and ~3168
 bytes for C99.
 
-Nyaruko has been to verified to work with these compiler/OS
+`Nyaruko` has been to verified to work with these compiler/OS
 combinations:
 
-   * gcc 4.4.5 on Linux (32bit and 64bit)
-   * clang 3.1 on Windows (Cygwin)
-   * gcc 4.5.3 on Windows (Cygwin)
-   * gcc 4.5.3 on Windows (MingW)
-   * gcc 4.3.5 on JSLinux
-   * tcc 0.9.25 on JSLinux
+* gcc 4.4.5 on Linux (32bit and 64bit)
+* clang 3.1 on Windows (Cygwin)
+* gcc 4.5.3 on Windows (Cygwin)
+* gcc 4.5.3 on Windows (MingW)
+* gcc 4.3.5 on JSLinux
+* tcc 0.9.25 on JSLinux
 
 Note that on MingW, stdin and stdout are not opened in binary mode by
-default, this means Nyaruko may not faithfully encode files on MingW.
+default, this means `Nyaruko` may not faithfully encode files on MingW.
 
 ### Extra files
 
-spoiler.html - Contains full recording of how the code went from
-blank state to an obfuscated program, gzipped to fit under 1MB.
+[spoiler.html](spoiler.html) - Contains full recording of how the code went from
+blank state to an obfuscated program, gzipped to fit under 1MB. Requires
+JavaScript.
 
 ## Copyright and CC BY-SA 4.0 License:
 
