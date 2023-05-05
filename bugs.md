@@ -647,8 +647,9 @@ This will be fixed in time but it's noted here for now.
 ## STATUS: INABIAF - please **DO NOT** fix
 
 If the BASIC file cannot be opened for reading or the output file cannot be
-opened for writing the program will crash. This is not a bug but a feature.
-Please do not fix this except for the challenge.
+opened for writing the program will very likely crash or do something funny.
+This is not a bug but a feature.  Please do not fix this except for the
+challenge to yourself.
 
 Please also note that for `clang` you have to use [dds.alt](1991/dds/dds.alt.c) not
 [dds.c](1991/dds/dds.c).

@@ -20,6 +20,7 @@ make all
 ./a.out 2>/dev/null
 ```
 
+
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault that
 prevented this entry from working at all and made an alternate version
 that works with `clang`. The alternate code, described below, is what is needed
@@ -31,12 +32,17 @@ memory as a `char *s`.  It's now a `char s[]`.
 
 Thank you Cody for your assistance!
 
+
+NOTE: for `clang` you'll likely have to use the alternate code described below.
+
 ### INABIAF - it's not a bug it's a feature! :-)
 
 Please note that if the BASIC file cannot be opened for reading or the output
-file cannot be opened for writing then this program will crash. These crashes
-are a mild nuisance but are considered a feature not a bug. We challenge you to
-fix it for learning if you wish. See also [bugs.md](/bugs.md).
+file cannot be opened for writing then this program will very likely crash or do
+something funny.
+
+These are a mild nuisance but are considered a feature not a bug. We challenge
+you to fix it for learning if you wish. See also [bugs.md](/bugs.md).
 
 ## Try:
 
