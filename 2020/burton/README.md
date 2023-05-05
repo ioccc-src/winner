@@ -54,7 +54,7 @@ Can you find a pattern here?
 
 What happens if you specify different numbers?
 
-This tiny one-liner is a bit-twiddlers delight! It does all of the work
+This tiny one-liner is a bit-twiddler's delight! It does all of the work
 without looping.
 
 To understand how it works, a good place to start is to look at the hex
@@ -91,7 +91,7 @@ Small, non-negative integers only.  Useful range is `0 .. 511`, sorta, for LE; `
 
 ASCII character set, 64-bit long longs are required.
 
-v,a,r,i,a,b,l,e,s_NAME the operation.
+v,a,r,i,a,b,l,e,s\_NAME the operation.
 
 No loops, no branches?!?
 
