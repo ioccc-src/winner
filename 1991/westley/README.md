@@ -14,7 +14,7 @@ make all
 ```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
-this program which prevented it from working. The problem was the read-only
+this program which prevented it from working. The problem was that the read-only
 char array `char *z[]` was being written to. The fix was to change it to `char
 z[][100]` in two spots (see if you can determine why two places, not one!). Why
 100 when the longest string is < 100? Because a shorter value caused strange
