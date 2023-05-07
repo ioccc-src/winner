@@ -18,7 +18,7 @@ make
 ```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a crash and a
-display problem in this entry so that it would work in modern (64-bit) systems.
+display problem in this entry so that it now works in modern (64-bit) systems.
 The problem was that it relied on 32-bits so some `int`s were changed to
 `long`s. At this time we don't have an easy way to test this theory but it might
 be that using `-m32` would let this work in 32-bit systems. Thank you Cody for
