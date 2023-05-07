@@ -16,11 +16,10 @@ make all
 ```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work
-under macOS. The fix was to prototype `read()` prior to being defined and not
-using `int, int, int` as the entry does. Instead the second arg is a `void *`.
-In the `read()` function (which actually calls `write(2)`) the `i` (which is the
-`void *`) has to be cast to an `int`. This solves the problem. Thank you Cody for
-your assistance!
+under macOS. The fix was to not use implicit `int`s in the `read()` function as
+it once did. Instead the second arg is a `void *`.  In the `read()` function
+(which actually calls `write(2)`) the `i` (which is the `void *`) has to be cast
+to an `int`. This solves the problem. Thank you Cody for your assistance!
 
 
 ## Judges' remarks:
