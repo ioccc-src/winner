@@ -1935,10 +1935,10 @@ Okay but what about argument 2? Well `W` is defined as:
 so it would appear that 
 
 ```c
-y[(u)c])+y[(u)c]
+x[(u)c]
 ```
 
-(at least in my tired head?) `y[1]` is NULL. But why does it work then?
+(at least in my tired head?) is NULL. But why does it work then?
 
 
 Under macOS (with the arm64 chip) we get:
