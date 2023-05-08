@@ -46,7 +46,7 @@ CWARN= -Wall -Wextra ${CSILENCE}
 
 # Compiler standard
 #
-CSTD= -std=gnu11
+CSTD= -std=gnu99
 
 # Compiler bit architecture
 #
@@ -65,7 +65,7 @@ CINCLUDE= -include stdlib.h -include string.h -include stdio.h -include ctype.h 
 
 # Optimization
 #
-OPT= 
+OPT=
 
 # Default flags for ANSI C compilation
 #

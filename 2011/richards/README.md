@@ -15,14 +15,17 @@ make
 ./richards
 ```
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a minor problem
+that showed up in both linux and macOS. He notes however that as of this time
+this entry does not work with macOS. See [bugs.md](/bugs.md) for more details.
+Thank you Cody!
+
 ## Try:
 
 ```sh
 echo '10 9 8 7 6 5 4 3 2 1*p*p*p*p*p*p*p*p*p' | ./richards
 ```
 
-NOTE: this entry does not work in macOS. See [bugs.md](/bugs.md) for more
-details.
 
 ## Judges' remarks:
 
