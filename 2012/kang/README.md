@@ -28,7 +28,8 @@ echo "shest'" | ./kang
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) changed the code to
 accept the proper German for four 'vier' where before it was spelt with the
-sound of V (fier not vier). Thank you Cody!
+sound of V (fier not vier). But was this a bug or a feature? He's on the fence
+here but he went ahead and did it anyway as it seems useful. Thank you Cody!
 
 
 ## Judges' remarks:
@@ -155,6 +156,8 @@ a smaller lookup table, it has many good consequences:
 Having said this important trick, other details should be relatively easier to
 follow. The order of lookup table, for example, is very important,
 and the biggest constant 6177 is not arbitrarily chosen.
+
+More spoilers can be found at <https://gist.github.com/lifthrasiir/3909337>
 
 ### Acknowledgement
 
