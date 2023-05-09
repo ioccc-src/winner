@@ -1904,12 +1904,28 @@ tends to result in empty output.
 ## [2011/richards](2011/richards/richards.c) ([README.md](2011/richards/README.md))
 ## STATUS: doesn't work with some platforms - please help us fix
 
-This does not appear to work with macOS, resulting in a segfault. We're not
-sure if this is to do with the Apple silicon chip or not but it seems unlikely.
+This does not appear to work with macOS, resulting in a segfault (and sometimes
+a bus error).
+
+We're not
+sure if this is to do with the Apple silicon chip or not but it seems like it
+_might_ (see Apple resources below) be but it could also be a wider problem with macOS. It appears that
+Apple does not allow certain combinations of memory protections with the arm64
+processor.
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) tried some of the
+workarounds but at this time he could not get it to work. He offers some earlier
+debugging sessions below as well as a resource from the author as well as some
+resources on Apple's website should anyone wish to take a crack at it. He might
+address it later.
+
+### Debugging
+
 At first glance it appeared to be that it might be the function pointers or the
-fact it is trying to execute code in memory. The function pointers were changed
-a bit but this has not helped solve the problem with macOS. A few things that
-were noticed depending on `asan` sanitisers specified. With `address` in linux:
+fact it is trying to execute code in memory (as noted above). The function
+pointers were changed a bit but this has not helped solve the problem with
+macOS. A few things that were noticed depending on `asan` sanitisers specified.
+With `address` in linux:
 
 
 
@@ -1940,6 +1956,7 @@ x[(u)c]
 
 (at least in my tired head?) is NULL. But why does it work then?
 
+NOTE: `u` is `int`.
 
 Under macOS (with the arm64 chip) we get:
 
@@ -2038,6 +2055,9 @@ o rd(u v)
 
 ```
 
+but this seems to not necessarily be relevant since without it it works in
+linux.
+
 A warning of interest when compiling is:
 
 ```
@@ -2064,10 +2084,31 @@ f *lib2[] = { T, ld, lp, lx, l1 } ;
                              ^~
 ```
 
-but I'm not sure if this is relevant or not: it might be.
+This can be fixed easily enough however but it doesn't appear to matter in this
+case.
 
-Finally the author has more about the entry at
+### Resources
+
+#### More from the author
+
+The author has more about the entry at
 <https://github.com/GregorR/ioccc2011>.
+
+#### Apple resources
+
+[Porting Just-In-Time Compilers to Apple
+Silicon](https://developer.apple.com/documentation/apple-silicon/porting-just-in-time-compilers-to-apple-silicon?language=objc)
+
+[Allow Execution of JIT-compiled Code
+Entitlement](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_security_cs_allow-jit?language=objc)
+
+Looking at
+<https://github.com/apple/darwin-xnu/blob/5394bb038891708cd4ba748da79b90a33b19f82e/bsd/kern/kern_mman.c>
+Cody noticed a curious thing in the `mprotect()` function: `#if
+CONFIG_DYNAMIC_CODE_SIGNING` and the protection variable has the
+`VM_PROT_TRUSTED` set it might allow overriding the problem but this is
+unconfirmed and it's not known when `CONFIG_DYNAMIC_CODE_SIGNING` would be
+defined.
 
 Do you have a fix? We welcome it!
 
