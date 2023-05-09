@@ -15,49 +15,64 @@ make
 ./richards
 ```
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a minor problem
+that showed up in both linux and macOS. He notes however that as of this time
+this entry does not work with macOS. See [bugs.md](/bugs.md) for more details.
+Thank you Cody!
+
 ## Try:
 
 ```sh
 echo '10 9 8 7 6 5 4 3 2 1*p*p*p*p*p*p*p*p*p' | ./richards
+echo '64 256 128 p/p*p' | ./richards
 ```
 
-NOTE: this entry does not work in macOS. See [bugs.md](/bugs.md) for more
-details.
 
 ## Judges' remarks:
 
-Oh no, yet another dc-style calculator? (see 2000/dlowe using an embedded Perl
-interpreter and deemed Worst Abuse of the Rules). 
-Well, this one does it (expression calculation, that is, not the rule abuse) in a different way. 
-The author claims that his calculator does just-in-time compilation.
-What would you do to prove or disprove his claim without attempting to unravel the source?
+Oh no, yet another
+[dc](https://en.wikipedia.org/wiki/Dc_(computer_program))-style calculator? (see
+[2000/dlowe](/2000/dlowe) using an embedded Perl interpreter and deemed `Worst
+Abuse of the Rules`).  Well, this one does it (expression calculation, that is,
+not the rule abuse) in a different way.  The author claims that his calculator
+does just-in-time compilation.  What would you do to prove or disprove his claim
+without attempting to unravel the source?
 
 ## Author's remarks:
 
-This is an implementation of the classic UNIX dc command, the reverse-polish
+This is an implementation of the classic UNIX
+[dc](https://en.wikipedia.org/wiki/Dc_(computer_program)) command, the
+[reverse Polish](https://en.wikipedia.org/wiki/Reverse_Polish_notation)
 calculator. Actually it's a pretty bad implementation, since it only implements
 32-bit integers (well, sizeof(int)-sized integers). It only implements the
 commands `+`, `-`, `*`, `/`, `p` (only for numbers), register stacks, macros and
 comparisons. Wow, you'd think I could've done better in 2K of code.
 
-OH! I forgot to mention! It's a JIT.
+OH! I forgot to mention! It's a
+[JIT](https://en.wikipedia.org/wiki/Just-in-time_compilation).
 
-Wait, don't stop reading! I know what you're thinking, platform-specific code
-is discouraged in IOCCC. But do you see any platform-specific code? There's no
-assembler here! This JIT works on a dozen platforms, and the only
-platform-specific assumptions it makes are that the stack grows down and
-integers are at least 32-bit.
+Wait, don't stop reading! I know what you're thinking, platform-specific code is
+discouraged in IOCCC. But do you see any platform-specific code? There's no
+assembler here! This
+[JIT](https://en.wikipedia.org/wiki/Just-in-time_compilation) works on a dozen
+platforms, and the only platform-specific assumptions it makes are that the
+stack grows down and integers are at least 32-bit.
 
 You will probably get warnings while compiling the code. In particular:
 
- * If your system requires the inclusion of alloca.h to use alloca, use the
-   compile flag `-DAH`.
- * If your system cannot use mmap, use the compile flag `-DNM`.
- * I don't include any headers I don't strictly need to, so you'll get warnings
-   about (at least) `memcpy()`, `isdigit()`, `atoi()`, `calloc()`, `malloc()`
-   and `alloca()` if you didn't use `-DAH`.
- * GCC likes to complain about `while (a = b)` (assignments as a condition).
- * I don't return from `main()`, even though it's declared to return int.
+* If your system requires the inclusion of alloca.h to use alloca, use the
+  compile flag `-DAH`.
+
+* If your system cannot use `mmap()`, use the compile flag `-DNM`.
+
+* I don't include any headers I don't strictly need to, so you'll get warnings
+  about (at least) `memcpy()`, `isdigit()`, `atoi()`, `calloc()`, `malloc()`
+  and `alloca()` if you didn't use `-DAH`.
+	- NOTE from judges: we added these includes in 2023.
+
+* GCC likes to complain about `while (a = b)` (assignments as a condition).
+
+* I don't return from `main()`, even though it's declared to return int.
 
 Platforms on which all known/tested optimization levels work with no additional
 flags:

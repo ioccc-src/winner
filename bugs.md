@@ -647,8 +647,9 @@ This will be fixed in time but it's noted here for now.
 ## STATUS: INABIAF - please **DO NOT** fix
 
 If the BASIC file cannot be opened for reading or the output file cannot be
-opened for writing the program will crash. This is not a bug but a feature.
-Please do not fix this except for the challenge.
+opened for writing the program will very likely crash or do something funny.
+This is not a bug but a feature.  Please do not fix this except for the
+challenge to yourself.
 
 Please also note that for `clang` you have to use [dds.alt](1991/dds/dds.alt.c) not
 [dds.c](1991/dds/dds.c).
@@ -1903,45 +1904,126 @@ tends to result in empty output.
 ## [2011/richards](2011/richards/richards.c) ([README.md](2011/richards/README.md))
 ## STATUS: doesn't work with some platforms - please help us fix
 
-This does not appear to work with macOS, resulting in a segfault. We're not
-sure if this is to do with the Apple silicon chip or not but it seems unlikely.
-At first glance it appeared to be that it might be the function pointers. These
-were changed a bit and it might have helped a bit but this is not certain
-either. What was noticed is that there is an overflow according to `asan`:
+This does not appear to work with macOS, resulting in a segfault (and sometimes
+a bus error).
+
+We're not
+sure if this is to do with the Apple silicon chip or not but it seems like it
+_might_ (see Apple resources below) be but it could also be a wider problem with macOS. It appears that
+Apple does not allow certain combinations of memory protections with the arm64
+processor.
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) tried some of the
+workarounds but at this time he could not get it to work. He offers some earlier
+debugging sessions below as well as a resource from the author as well as some
+resources on Apple's website should anyone wish to take a crack at it. He might
+address it later.
+
+### Debugging
+
+At first glance it appeared to be that it might be the function pointers or the
+fact it is trying to execute code in memory (as noted above). The function
+pointers were changed a bit but this has not helped solve the problem with
+macOS. A few things that were noticed depending on `asan` sanitisers specified.
+With `address` in linux:
+
 
 
 ```
-==32361==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x00016d368d08 at pc 0x000102b1dcb0 bp 0x00016d368b90 sp 0x00016d368b88
-READ of size 8 at 0x00016d368d08 thread T0
-    #0 0x102b1dcac in rd richards.c:128
-    #1 0x102b1e1f4 in re richards.c:145
-    #2 0x102a7e7e0 in t richards.c:104
-    #3 0x102b1f7cc in main richards.c:185
-    #4 0x19498ff24  (<unknown module>)
+richards.c:101:9: runtime error: null pointer passed as argument 2, which is declared to never be null
+```
 
-Address 0x00016d368d08 is located in stack of thread T0 at offset 40 in frame
-    #0 0x102b1dae8 in rd richards.c:125
+but it actually works. This code is:
 
-  This frame has 1 object(s):
-    [32, 40) 'a' (line 126) <== Memory access at offset 40 overflows this variable
+```c
+    } else
+                p++;
+        W(c)} /* LINE 101 */
+    }
+```
+
+Okay but what about argument 2? Well `W` is defined as:
+
+```c
+#define W(c) e=memmove(e,x[(u)c], y[(u)c])+y[(u)c];
+```
+
+so it would appear that 
+
+```c
+x[(u)c]
+```
+
+(at least in my tired head?) is NULL. But why does it work then?
+
+NOTE: `u` is `int`.
+
+Under macOS (with the arm64 chip) we get:
+
+```
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==10834==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0xffffffffffffffff (pc 0x00019f446748 bp 0x00016f353100 sp 0x00016f352b90 T139066)
+==10834==The signal is caused by a WRITE memory access.
+    #0 0x19f446748 in _platform_memmove+0xa8 (libsystem_platform.dylib:arm64e+0x3748) (BuildId: 756cd10d62a032839e57cbaa810c95ac32000000200000000100000000030d00)
+    #1 0x100c33c2c in main richards.c:202
+    #2 0x19f0bff24  (<unknown module>)
+
+==10834==Register values:
+ x[0] = 0xffffffffffffffff   x[1] = 0x0000000100ab18c1   x[2] = 0x00000000000000cf   x[3] = 0x0000000000000000
+ x[4] = 0x0000000100ab18a1   x[5] = 0x0000000000000001   x[6] = 0x000000000000000a   x[7] = 0x0000000000000000
+ x[8] = 0x00000001015972b8   x[9] = 0xffffffffffffffff  x[10] = 0x0000000000000001  x[11] = 0x00000000000001f0
+x[12] = 0x0000000000000001  x[13] = 0x00000000000003e0  x[14] = 0x0000000000000001  x[15] = 0x0000000000000084
+x[16] = 0x000000019f4466a0  x[17] = 0x00000001ff3ad908  x[18] = 0x0000000000000000  x[19] = 0x0000000100c32a80
+x[20] = 0x00000001017e0000  x[21] = 0x00000001017e1910  x[22] = 0x000000016f353530  x[23] = 0x000000019f13a366
+x[24] = 0x000000016f3534b0  x[25] = 0x0000000000000001  x[26] = 0x0000000000000000  x[27] = 0x0000000000000000
+x[28] = 0x0000000000000000     fp = 0x000000016f353100     lr = 0x0000000100aaf880     sp = 0x000000016f352b90
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (libsystem_platform.dylib:arm64e+0x3748) (BuildId: 756cd10d62a032839e57cbaa810c95ac32000000200000000100000000030d00) in _platform_memmove+0xa8
+==10834==ABORTING
+```
+
+and naturally it does not work.
+
+Adding the proper `PROT_WRITE` constant to the `mmap()` call does not seem to
+help. Of course with the address this is not surprising so why is a different
+address allocated in macOS? Or is it?
+
+Now with `address` sanitiser both linux and macOS crash at:
+
+```
+=================================================================
+==10983==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x00016f8d5e78 at pc 0x0001005dd910 bp 0x00016f8d5cd0 sp 0x00016f8d5cc8
+READ of size 8 at 0x00016f8d5e78 thread T0
+    #0 0x1005dd90c in rd richards.c:132
+    #1 0x1005ddf8c in re richards.c:149
+    #2 0x1005110a0 in t richards.c:108
+    #3 0x1005df72c in main richards.c:189
+    #4 0x19f0bff24  (<unknown module>)
+
+Address 0x00016f8d5e78 is located in stack of thread T0 at offset 56 in frame
+    #0 0x1005dd678 in rd richards.c:129
+
+  This frame has 2 object(s):
+    [32, 36) 'v.addr'
+    [48, 56) 'a' (line 130) <== Memory access at offset 56 overflows this variable
 HINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork
       (longjmp and C++ exceptions *are* supported)
-SUMMARY: AddressSanitizer: stack-buffer-overflow richards.c:128 in rd
+SUMMARY: AddressSanitizer: stack-buffer-overflow richards.c:132 in rd
 Shadow bytes around the buggy address:
-  0x00702da8d150: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x00702da8d160: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x00702da8d170: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x00702da8d180: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x00702da8d190: 00 00 00 00 00 00 00 00 00 00 00 00 f1 f1 f1 f1
-=>0x00702da8d1a0: 00[f3]f3 f3 00 00 00 00 00 00 00 00 00 00 00 00
-  0x00702da8d1b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x00702da8d1c0: f1 f1 f1 f1 00 f3 f3 f3 00 00 00 00 00 00 00 00
-  0x00702da8d1d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x00702da8d1e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x00702da8d1f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702df3ab70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702df3ab80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702df3ab90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702df3aba0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702df3abb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x00702df3abc0: 00 00 00 00 00 00 00 00 f1 f1 f1 f1 04 f2 00[f3]
+  0x00702df3abd0: f3 f3 f3 f3 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702df3abe0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702df3abf0: 00 00 00 00 f1 f1 f1 f1 00 f3 f3 f3 00 00 00 00
+  0x00702df3ac00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x00702df3ac10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 Shadow byte legend (one shadow byte represents 8 application bytes):
   Addressable:           00
-  Partially addressable: 01 02 03 04 05 06 07
+  Partially addressable: 01 02 03 04 05 06 07 
   Heap left redzone:       fa
   Freed heap region:       fd
   Stack left redzone:      f1
@@ -1958,34 +2040,97 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   ASan internal:           fe
   Left alloca redzone:     ca
   Right alloca redzone:    cb
-==32361==ABORTING
-
+==10983==ABORTING
+/bin/bash: line 1: 10983 Abort trap: 6           ./richards
 ```
 
-This was reported in both linux as 32-bit and 64-bit and macOS as 64-bit except
-that the sizes were different in 32-bit (as expected). The code it is having a
-problem with is:
+which corresponds to the code:
 
 ```c
-  o *a = 0, **b = &a, **c = b + 24;
+o rd(u v)
+{
+    o *a = 0, **b = &a, **c = b + 32;
     x[v] = w;
-    for (; b < c && (*b < (o *)w || *b > (o *) T || *b == (long) v); b++);
+    for (; b < c && (*b < (o *)w || *b > (o *) T || *b == &v); b++); /* LINE 132 */
 
 ```
 
-where `o` is a `void`.
+but this seems to not necessarily be relevant since without it it works in
+linux.
+
+A warning of interest when compiling is:
+
+```
+
+richards.c:169:15: warning: incompatible pointer types initializing 'f *' (aka 'void (**)(volatile void *)') with an expression of type 'o ()' (aka 'void ()') [-Wincompatible-pointer-types]
+f *lib1[] = { T, T, T, T, T } ;
+
+...
+
+richards.c:170:15: warning: incompatible pointer types initializing 'f *' (aka 'void (**)(volatile void *)') with an expression of type 'o ()' (aka 'void ()') [-Wincompatible-pointer-types]
+f *lib2[] = { T, ld, lp, lx, l1 } ;
+              ^
+richards.c:170:18: warning: incompatible pointer types initializing 'f *' (aka 'void (**)(volatile void *)') with an expression of type 'void (volatile dt)' (aka 'void (struct (unnamed at richards.c:36:3) *volatile)') [-Wincompatible-pointer-types]
+f *lib2[] = { T, ld, lp, lx, l1 } ;
+                 ^~
+richards.c:170:22: warning: incompatible pointer types initializing 'f *' (aka 'void (**)(volatile void *)') with an expression of type 'void (volatile dt)' (aka 'void (struct (unnamed at richards.c:36:3) *volatile)') [-Wincompatible-pointer-types]
+f *lib2[] = { T, ld, lp, lx, l1 } ;
+                     ^~
+richards.c:170:26: warning: incompatible pointer types initializing 'f *' (aka 'void (**)(volatile void *)') with an expression of type 'void (volatile dt)' (aka 'void (struct (unnamed at richards.c:36:3) *volatile)') [-Wincompatible-pointer-types]
+f *lib2[] = { T, ld, lp, lx, l1 } ;
+                         ^~
+richards.c:170:30: warning: incompatible pointer types initializing 'f *' (aka 'void (**)(volatile void *)') with an expression of type 'void (volatile dt)' (aka 'void (struct (unnamed at richards.c:36:3) *volatile)') [-Wincompatible-pointer-types]
+f *lib2[] = { T, ld, lp, lx, l1 } ;
+                             ^~
+```
+
+This can be fixed easily enough however but it doesn't appear to matter in this
+case.
+
+### Resources
+
+#### More from the author
+
+The author has more about the entry at
+<https://github.com/GregorR/ioccc2011>.
+
+#### Apple resources
+
+[Porting Just-In-Time Compilers to Apple
+Silicon](https://developer.apple.com/documentation/apple-silicon/porting-just-in-time-compilers-to-apple-silicon?language=objc)
+
+[Allow Execution of JIT-compiled Code
+Entitlement](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_security_cs_allow-jit?language=objc)
+
+Looking at
+<https://github.com/apple/darwin-xnu/blob/5394bb038891708cd4ba748da79b90a33b19f82e/bsd/kern/kern_mman.c>
+Cody noticed a curious thing in the `mprotect()` function: `#if
+CONFIG_DYNAMIC_CODE_SIGNING` and the protection variable has the
+`VM_PROT_TRUSTED` set it might allow overriding the problem but this is
+unconfirmed and it's not known when `CONFIG_DYNAMIC_CODE_SIGNING` would be
+defined.
 
 Do you have a fix? We welcome it!
 
-## [2011/vik](2012/vik/vik.c) ([README.md](2012/vik/README.md))
+
+## [2011/vik](2011/vik/vik.c) ([README.md](2011/vik/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 
-The author stated that the program will crash if no argument is passed tot he
+The author stated that the program will crash if no argument is passed to the
 program though we note that your computer might also [halt and catch
 fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
 
 
 # 2012
+
+## [2012/vik](2012/vik/vik.c) ([README.md](2012/vik/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+The author stated that the program will crash if no argument is passed to the
+program or if invalid arguments or images of mismatching sizes or unsupported
+pixel formats though we note that your computer might also [halt and catch
+fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
+
 
 
 # 2013

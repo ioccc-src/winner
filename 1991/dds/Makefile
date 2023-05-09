@@ -85,7 +85,7 @@ CSILENCE= -Wno-implicit-function-declaration
 #
 ifeq ($(CC),clang)
 #
-CSILENCE+= -Wno-implicit-int-conversion -Wno-missing-variable-declarations
+CSILENCE+= -Wno-implicit-int-conversion -Wno-missing-variable-declarations \
 	-Wno-pedantic -Wno-poison-system-directorie
 #
 CWARN+= -Weverything

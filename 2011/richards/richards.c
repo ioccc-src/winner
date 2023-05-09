@@ -3,7 +3,10 @@
 #endif
 #include<setjmp.h>
 #include<stdio.h>
-#if !NM
+#include<stdlib.h>
+#include<string.h>
+#include<ctype.h>
+#ifndef NM
 #include<sys/mman.h>
 #endif
 #define vo volatile
@@ -24,11 +27,11 @@
 #define H 9<<16
 #define I case
 #define J(i) calloc(i,1)
-#define W(c) e=(o*)memmove(e,x[(u)c],y[(u)c])+y[(u)c];
+#define W(c) e=memmove(e,x[(u)c],y[(u)c])+y[(u)c];
 #define N break; I
 q char k;
 q void o;
-q unsigned long u;
+q int u;
 q o(*f) (vo o *);
 q struct {
     u *a, **R, *m, h, c;
@@ -43,7 +46,7 @@ u sk[H];
 k *w;
 o *x[H];
 u y[H];
-f *j, *e;
+f j, e;
 u l=256;
 o g(u v)
 {
@@ -59,7 +62,8 @@ f K(k * p, dt d)
 {
     k c, n = 0;
     f r = (f) e;
-    W(1) while ((c = *p)) {
+    W(1)
+	while ((c = *p)) {
         switch (c) {
           I '#':
             while (*++p != 10);
@@ -123,9 +127,9 @@ o T()
 
 o rd(u v)
 {
-    o *a = 0, **b = &a, **c = b + 24;
+    o *a = 0, **b = &a, **c = b + 32;
     x[v] = w;
-    for (; b < c && (*b < (o *)w || *b > (o *) T || *b == (long) v); b++);
+    for (; b < c && (*b < (o *)w || *b > (o *) T || *b == &v); b++);
     if (b == c) {
         jmp_buf *j = alloca(sizeof(*j));
         setjmp(*j);
@@ -146,7 +150,7 @@ o re(vo k * rec)
 } F(d) M--;
 
 *M /= M[1];
-} F(p) printf("%lu\n", *M);
+} F(p) printf("%d\n", *M);
 } F(x) u n = *M--;
 
 if (!S j[n])
@@ -162,8 +166,8 @@ M++;
 lx(d);
 }
 }
-o *lib1[] = { T, T, T, T, T } ;
-o *lib2[] = { T, ld, lp, lx, l1 } ;
+f *lib1[] = { T, T, T, T, T } ;
+f *lib2[] = { T, ld, lp, lx, l1 } ;
 
 int main()
 {
@@ -189,10 +193,10 @@ int main()
     S l = (f *) lib2;
     S r = (f) T;
     j = e =
-#if NM
+#ifdef NM
         malloc(H);
 #else
-	mmap(NULL, H, -1, MAP_ANON | MAP_PRIVATE, -1, 0);
+	(f)mmap(NULL, H, -1, MAP_ANON | MAP_PRIVATE, -1, 0);
 #endif
     while (b = fgets(malloc(999), 999, stdin))
         ((f) K(b, d)) (d);

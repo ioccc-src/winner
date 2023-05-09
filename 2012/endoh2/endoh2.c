@@ -1,4 +1,4 @@
-#include<stdio.h> /******** SpigotQuine -- usage: ./spigot [pi or e] ********/
+#include<stdio.h> /******** SpigotQuine -- usage: ./endoh2 [pi or e] ********/
 char*s="G1%%xJ{;Q7wunmuGuu%%uu#include<stdio.h>/*Spigot_Quine*/#include<stdli"
 "b.h>/*_IOCCC2012_*/int*e,"    "i,j,k,n"     ";char*q"    ",*a,*d,*z,*p=%s%c;"
 "int" "%cmain(){a=calloc("                                 "1,1e4+n*2);;for(*"

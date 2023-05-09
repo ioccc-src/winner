@@ -27,25 +27,31 @@ gcc -o e e.c
 ./e > 271.c
 ```
 
+...
+
 ## Try:
 
 ```sh
-make pi
-make e
-make everything
+./everything.sh
 ```
 
 ## Judges' remarks:
 
-A pi/e printing quasi-quine in ASCII art with a compressed font in it;
-what else to wish for in this program? Virtual machine emulation?
+A
+[pi](https://en.wikipedia.org/wiki/Pi)/[e](https://en.wikipedia.org/wiki/E_(mathematical_constant))
+printing quasi-[quine](https://en.wikipedia.org/wiki/Quine_(computing) in [ASCII
+art](https://en.wikipedia.org/wiki/ASCII_art) with a compressed font in it; what
+else to wish for in this program? [Virtual
+machine](https://en.wikipedia.org/wiki/Virtual_machine) emulation?
 
 ## Author's remarks:
 
 Yeah, "Again".  Sorry.  But I don't feel guilty or uncomfortable.
 
 This entry is based on 'over-used themes' such as self reproducing
-program and pi or e computation.  I know you're tired of them.
+program and [pi](https://en.wikipedia.org/wiki/Pi) or
+[e](https://en.wikipedia.org/wiki/E_(mathematical_constant))) computation.  I
+know you're tired of them.
 
 But have you ever seen **all-in-one**?
 
@@ -54,57 +60,58 @@ But have you ever seen **all-in-one**?
 This program generates a new program in the shape of the Greek letter
 `pi`.  Then, the generated program:
 
-- computes 3 digits of pi and prints it as a ASCII-art program that:
-- computes 4 digits of pi and prints it as a ASCII-art program that:
-- computes 5 digits of pi and prints it as a ASCII-art program that:
-- computes 6 digits of pi and prints it as a ASCII-art program that:
-- etc.
+- computes 3 digits of pi and prints it as an ASCII-art program that:
+- computes 4 digits of pi and prints it as an ASCII-art program that:
+- computes 5 digits of pi and prints it as an ASCII-art program that:
+- computes 6 digits of pi and prints it as an ASCII-art program that:
+- ...
 
-One more thing...  When you give a command line option "e" to the
-first program, the generated one will compute Napier's constant
+One more thing...  When you give a command line argument `e` to the
+first program, the generated one will compute [Napier's
+constant](https://en.wikipedia.org/wiki/E_(mathematical_constant)))
 rather than pi.
 
 
 ### Obfuscation
 
-This program itself is in the shape of a spigot.  This is derived
-from analogy with "spigot algorithm" which infinitely computes the
-value of a mathematical constant such as `pi` or `e`.
+This program itself is in the shape of a
+[spigot](https://en.wikipedia.org/wiki/Tap_(valve)).  This is derived from
+analogy with [spigot algorithm](https://en.wikipedia.org/wiki/Spigot_algorithm)
+which infinitely computes the value of a mathematical constant such as
+[pi](https://en.wikipedia.org/wiki/Pi) or
+[e](https://en.wikipedia.org/wiki/E_(mathematical_constant)).
 
-<http://en.wikipedia.org/wiki/Spigot_algorithm>
+The two sets of programs, `314*.c` and `271*.c`, are almost the same
+except their shape and constant computational part.  I tailored the
+common part to parse in both shapes (`3.14...` and `2.71...`), by
+tweaking the computational order and adding meaningless code fragments.
 
-The two sets of programs, 314\*.c and 271\*.c, are almost the same
-except its shape and constant computation part.  I tailored the
-common part to parse in both shapes ("3.14..." and "2.71..."), by
-tweaking the computation order and adding meaningless code fragment.
-
-On the other hand, to make it fit inside one screen (80 x 25), my
-program is shortened properly, more than it looks.  (As you may
-know, Quine needs to make its program size doubled.)
-For example, this program involves 3x5 bitmap font data of ten
-characters ('0' -- '9'), as just 20 bytes: "G1%xJ{;Q7wunmuGuu%uu".
-We can decode character n as `275*s[n+10] - 8*s[n] - 8`.  I solved the
-system of Bezout's identities to find the magic string, with the
-aid of a brute force.  See `find-font-table.rb` in detail.
-
-<http://en.wikipedia.org/wiki/B%C3%A9zout's_identity>
+On the other hand, to make it fit inside one screen (80 x 25), my program is
+shortened properly, more than it looks.  (As you may know,
+[quines](https://en.wikipedia.org/wiki/Quine_(computing)) need to make its
+program size doubled.) For example, this program involves 3x5 bitmap font data
+of ten characters (`0` -- `9`), as just 20 bytes: `G1%xJ{;Q7wunmuGuu%uu`.  We
+can decode character `n` as `275*s[n+10] - 8*s[n] - 8`.  I solved the system of
+[Bézout's identity](https://en.wikipedia.org/wiki/B%C3%A9zout%27s_identity) to
+find the magic string, with the aid of a brute force.  See `find-font-table.rb`
+in detail.
 
 I used many other tricks for short coding.
 
-I'm sorry that many ASCII-art-style winning entries of IOCCCs
-ignore preprocessor directives.  In my program, #include is a part
-of ASCII-art with comment padded.
+I'm sorry that many ASCII-art-style winning entries of
+[IOCCC](https://www.ioccc.org/years.html) ignore [C preprocessor
+directives](https://en.wikipedia.org/wiki/C_preprocessor).  In my program,
+`#include` is a part of ASCII-art with comments padded.
 
 These design requirements made my program well-obfuscated
 willy-nilly.
 
 ### Portability
 
-I expect it to work in any major environment and C compiler.
-To build with no warning, it requires two C99 features: string
-literal more than 509 characters and omissible return in main
-function.  In fact, recent compilers with "-std=c99 -Wall -W
--Wextra -pedantic" would say nothing.
+I expect it to work in any major environment and C compiler.  To build with no
+warning, it requires two C99 features: string literal more than 509 characters
+and not requiring a return in `main()` function.  In fact, recent compilers with
+`-std=c99 -Wall -W -Wextra -pedantic` would say nothing.
 
     gcc -std=c99 -Wall -W -Wextra -pedantic spigot.c
     clang -std=c99 -Wall -W -Wextra -pedantic spigot.c
@@ -141,7 +148,7 @@ etc...
 You can do `make everything` for the process (with no `cat`).
 
 Note: The executable may return a failure (non-zero) exit status
-unless -std=c99 option is given.
+unless `-std=c99` option is given.
 
 ## Copyright and CC BY-SA 4.0 License:
 

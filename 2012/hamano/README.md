@@ -1,7 +1,7 @@
 # Most elementary use of C - Silver award
 
-    Tsukasa Hamano  
-    <hamano@cuspy.org>  
+Tsukasa Hamano  
+<hamano@cuspy.org>  
 
 ## To build:
 
@@ -21,7 +21,11 @@ make
 ./hamano < README.md > hint.pdf
 ```
 
-You can read output.pdf with PDF reader acroread hint.pdf or evince hint.pdf.
+You can read `hint.pdf` with a PDF reader like `acroread hint.pdf` or `evince
+hint.pdf`. With macOS you can do `open hint.pdf` which by default will open
+`Preview.app`. You may of course use your pdf view to open the file directly
+instead.
+
 
 To deobfuscate:
 
@@ -39,7 +43,7 @@ cc -Wno-implicit-function-declaration -xc hello.pdf -o hello2
 ./hello3
 ```
 
-## Judges' remarks
+## Judges' remarks:
 
 This entry treads into a new territory for IOCCC - generating PDF files.
 
@@ -63,32 +67,30 @@ So what do those flags really mean?
 
 The [Dancing men algorithm][1] might be useful.
 
-Don't forget to take a look at the generated PDF, perhaps you might even want
+Don't forget to take a look at the generated PDF. Perhaps you might even want
 to compile the output with a C compiler.  When you run it, what does it
 output?
 
-## Author's remarks
+## Author's remarks:
 
-This program obfuscate text file into PDF file with Dancing men
-algorithm.
+This program obfuscate text file into PDF file with [Dancing men
+algorithm](http://en.wikipedia.org/wiki/The_Adventure_of_the_Dancing_Men).
 
-<http://en.wikipedia.org/wiki/The_Adventure_of_the_Dancing_Men>
-
-Probably, the output PDF file is compliant with PDF 1.3. And also
+Probably, the output PDF file is compliant with PDF 1.3 and it's also
 available to compile as C code.
 
-I've been tested with GCC 4.7 and Clang 3.0 on Linux, and following
-PDF Reader:
+I've tested it with GCC 4.7 and Clang 3.0 with Linux, and the following
+PDF Readers:
 
-    * Adobe Acrobat Reader
-    * Evince
-    * Ghostscript
-    * Xpdf
+* Adobe Acrobat Reader
+* Evince
+* Ghostscript
+* Xpdf
 
 ### Obfuscations
 
-This program is obfuscated by using classical methods.
-But can you find out the embedded font from fragmented glyph?
+This program is obfuscated by using classical methods.  But can you find the
+embedded font in the fragmented glyph?
 
 ## Copyright and CC BY-SA 4.0 License:
 
