@@ -57,7 +57,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE=
+CDEFINE= -DZ=15000
 
 # Include files that are needed to compile
 #
@@ -120,8 +120,8 @@ DATA= belmont.txt bloober.txt bomberman.txt boo.txt bub.txt cheepcheep.txt \
 	toad.txt triple0.gif triple1.gif
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -138,6 +138,8 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 # alternative executable
 #
 alt: data ${ALT_TARGET}
