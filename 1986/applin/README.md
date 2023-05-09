@@ -2,7 +2,7 @@
 
 Jack Applin    
 US   
-<https://web.archive.org/web/19991006042323/http://www.geocities.com/HotSprings/6789/>
+<https://www.cs.colostate.edu/~applin/>
 
 ## To build:
 

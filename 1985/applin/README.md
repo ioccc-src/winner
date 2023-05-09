@@ -1,7 +1,8 @@
 # Best one liner
 
-Jack Applin [with help from Robert Heckendorn]  
-<https://web.archive.org/web/19991006042323/http://www.geocities.com/HotSprings/6789/>
+Jack Applin [with help from Robert Heckendorn]
+US  
+<https://www.cs.colostate.edu/~applin/>
 
 ## To build:
 
