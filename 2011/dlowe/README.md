@@ -1,7 +1,9 @@
 # Most self deprecating
 
 David Lowe  
+US  
 <j.david.lowe@gmail.com>  
+<https://github.com/dlowe>
 
 ## To build:
 
