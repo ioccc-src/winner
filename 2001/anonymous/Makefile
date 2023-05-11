@@ -116,7 +116,7 @@ ENTRY= anonymous
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA= 
+DATA=
 TARGET= ${PROG} ${PROG}.ten
 #
 ALT_OBJ=

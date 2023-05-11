@@ -118,8 +118,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ= 
-ALT_TARGET= 
+ALT_OBJ=
+ALT_TARGET=
 
 
 #################
