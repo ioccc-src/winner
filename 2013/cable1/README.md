@@ -1,7 +1,7 @@
 # Most partisan 1-liner
 
-    Adrian Cable  
-    <adrian.cable@gmail.com>  
+Adrian Cable    
+<adrian.cable@gmail.com>  
 
 ## To build:
 
@@ -36,14 +36,14 @@ Let us consider:
 ./cable1 Cooper Mac PC
 ```
 
-Simon works for Apple, so would would expect Mac.  :-)
+Simon works for Apple, so you would expect Mac.  :-)
 Landon is a long time Mac user:
 
 ```sh
 ./cable1 Noll Mac PC
 ```
 
-That works too!.  Now Leo brings PCs to the IOCCC judging for cross-platform
+That works too!  Now Leo brings PCs to the IOCCC judging for cross-platform
 testing:
 
 ```sh
@@ -77,25 +77,38 @@ So how does a one line C source know so much?  Hint: it doesn't.
 
 ### Presidents of the United States of America!
 
-Politics is full of memorable one-liners. Without wishing to misunderestimate the taste of the judges, nor prejudge the past, the author hopes you enjoy this contribution to the genre.
+Politics is full of memorable
+[one-liners](https://rationalwiki.org/wiki/Politics#Famous_quotes). Without wishing to
+[misunderestimate](https://www.youtube.com/watch?v=JhmdEq3JhoY)
+the taste of the judges, nor prejudge the past, the author hopes you enjoy this
+contribution to the genre.
 
-This one-line C program accepts as a first command-line argument the last name of any of the last 31 US Presidents (from Franklin Pierce onwards), in lower case, and prints out their political affiliation.
+This one-line C program accepts as a first command-line argument the last name
+of any of the last 31 US Presidents (from Franklin Pierce onwards), in lower
+case, and prints out their political affiliation.
 
-Use "republican" as the 2nd command-line argument, and "democrat" as the 3rd (or equivalent strings of your choice).
+Use `republican` as the 2nd command-line argument, and `democrat` as the 3rd (or
+equivalent strings of your choice).
 
 ### Why is this entry obfuscated/interesting?
 
-- The program looks up the name supplied on the command line against a list of Presidents' names, and matches names to political affiliations using a look-up table. But where in the source is the list of names, and where is the look-up table?
+The program looks up the name supplied on the command line against a list of
+Presidents' names, and matches names to political affiliations using a look-up
+table. But where in the source is the list of names, and where is the look-up
+table?
 
 ### Notes
 
-- For Theodore Roosevelt, use: ./cable1 roosevelt republican democrat
-- But, for Franklin D Roosevelt, use: ./cable1 fdr republican democrat
+- For Theodore Roosevelt, use: `./cable1 roosevelt republican democrat`.
+
+- But, for Franklin D Roosevelt, use: `./cable1 fdr republican democrat`.
+
 - This program needs a little endian CPU to work properly.
 
 ### Compiler warnings
 
-clang warns about a missing type specifier for main, and that implicit function declarations are invalid in C99 (but still accepts them).
+`clang` warns about a missing type specifier for `main()`, and that implicit
+function declarations are invalid in C99 (but still accepts them).
 
 ## Copyright and CC BY-SA 4.0 License:
 
