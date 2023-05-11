@@ -1,9 +1,8 @@
 # Worst Abuse of the Rules
 
 David Lowe  
-1224 11th Avenue  
-San Francisco, California, 94122  
 US  
+<https://github.com/dlowe>
 
 ## To build:
 

@@ -1,10 +1,9 @@
 # Best Utility
 
 David Lowe  
-Pootpoot  
-67-D Manchester Street  
-San Francisco, CA 94110  
 US  
+<j.david.lowe@gmail.com>
+<https://github.com/dlowe>
 
 ## To build:
 

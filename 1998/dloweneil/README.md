@@ -1,15 +1,10 @@
 # Most Fun
 
 David Lowe		
-Pootpoot				
-67-D Manchester Street	 
-San Francisco, CA 94110	  
 US					
+<https://github.com/dlowe>
 
 Neil Mix  
-Pootpoot  
-1490 Sacramento Street #4G  
-San Francisco, CA 94110  
 US  
 
 ## To build:

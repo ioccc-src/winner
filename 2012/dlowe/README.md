@@ -1,11 +1,9 @@
 # Best way to lose a life
 
-    J. David Lowe  
-    434 Tenney Drive  
-    Rogue River, OR  
-    97537  
-    <j.david.lowe@gmail.com>  
-    <http://www.pootpoot.net/>  
+J. David Lowe  
+US
+<j.david.lowe@gmail.com>  
+<https://github.com/dlowe>
 
 ## To build:
 
