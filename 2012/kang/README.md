@@ -16,6 +16,12 @@ make
 echo "full spelling of an English cardinal numeral less than a quadrillion" | ./kang
 ```
 
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) changed the code to
+accept the proper German for four 'vier' where before it was spelt with the
+sound of V (fier not vier). But was this a bug or a feature? He's on the fence
+here but he went ahead and did it anyway as it seems useful. Thank you Cody!
+
+
 ## Try:
 
 ```sh
@@ -24,12 +30,27 @@ echo uno | ./kang
 echo trois | ./kang
 echo vier | ./kang
 echo "shest'" | ./kang
+
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) changed the code to
-accept the proper German for four 'vier' where before it was spelt with the
-sound of V (fier not vier). But was this a bug or a feature? He's on the fence
-here but he went ahead and did it anyway as it seems useful. Thank you Cody!
+How does it have no `u` or `o` in a string in the source code and yet it gets
+`uno` right?
+
+### Also try:
+
+For those who speak Germans:
+
+```sh
+for i in eins zwei drei vier fuenf sechs sieben acht neun zehn elf zwoelf dreizehn ; \
+do
+    echo "$i"|./kang;
+done
+
+```
+
+What does it get right? What does it get wrong? Finally why does it get what it
+gets wrong wrong?
+
 
 
 ## Judges' remarks:
