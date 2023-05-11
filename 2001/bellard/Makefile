@@ -55,7 +55,7 @@ CSTD= -std=gnu99
 # Some entries require 32-bitness: ARCH= -m32
 # Some entries require 64-bitness: ARCH= -m64
 #
-ARCH= 
+ARCH=
 
 # Defines that are needed to compile
 #
