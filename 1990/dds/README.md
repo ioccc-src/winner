@@ -1,11 +1,9 @@
 # Best Language Tool
 
 Diomidis Spinellis  
-Imperial College, University of London  
-Myrsinis 1  
-GR-145 62 Kifissia  
 Greece  
 <https://www.spinellis.gr/>  
+Mastodon: <https://mstdn.social/@DSpinellis>
 
 ## To build:
 

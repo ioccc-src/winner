@@ -1,10 +1,9 @@
 ## Best abuse of the rules
 
-Diomidis Spinellis (currently at Imperial College, London, England)  
-1 Myrsinis Str.  
-GR-145 62 Kifissia  
+Diomidis Spinellis  
 Greece  
 <https://www.spinellis.gr/>  
+Mastodon: <https://mstdn.social/@DSpinellis>
 
 ## To build:
 

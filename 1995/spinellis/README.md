@@ -1,11 +1,9 @@
 # Abusing The Rules
 
 Diomidis Spinellis  
-SENA S.A.  
-Kyprou 27  
-GR-152 37 Filothei   
-Greece 
-<http://www.spinellis.gr>  
+Greece  
+<https://www.spinellis.gr/>  
+Mastodon: <https://mstdn.social/@DSpinellis>
 
 ## To build:
 
