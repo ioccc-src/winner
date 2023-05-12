@@ -1,9 +1,9 @@
-# The Grand Prize 
+# The Grand Prize
 
-Sjoerd Mullender  
-<https://github.com/sjoerdmullender>  
+Sjoerd Mullender<br />
+<https://github.com/sjoerdmullender>
 
-Robbert van Renesse  
+Robbert van Renesse
 
 ## To build:
 
@@ -290,7 +290,7 @@ main(argc, argv) char **argv;
 	exit(2);
     }
 
-    fseek (fp, (long) sizeof (struct exec), 0); 
+    fseek (fp, (long) sizeof (struct exec), 0);
     printf("/* portable between VAX and PDP11 */\n\n");
     printf ("short main[] = {\n");
     for (;;) {
