@@ -1,6 +1,6 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "winner_JSON_format_version" : "0.0 2023-04-12",
+    "winner_JSON_format_version" : "0.1 2023-05-12",
     "IOCCC_award" : "Award title",
     "IOCCC_contest" : "IOCCC28",
     "IOCCC_year_dir" : 2024,
@@ -16,109 +16,118 @@
 	    "filename" : "index.html",
 	    "filetype" : "html",
 	    "created_by" : "README2index",
-	    "winners.html_show" : true,
-	    "winners.html_display_via" : "browser",
-	    "winners.html_extra_text" : " - click here first",
-	    "winners.html_rank" : 10
+	    "winners_show" : true,
+	    "winners_display_via" : "browser",
+	    "winners_extra_text" : " - click here first",
+	    "winners_rank" : 10
 	},
 	{
 	    "filename" : "README.md",
 	    "filetype" : "markdown",
 	    "created_by" : null,
-	    "winners.html_show" : false,
-	    "winners.html_display_via" : null,
-	    "winners.html_extra_text" : null,
-	    "winners.html_rank" : null
+	    "winners_show" : false,
+	    "winners_display_via" : null,
+	    "winners_extra_text" : null,
+	    "winners_rank" : null
 	},
 	{
 	    "filename" : "prog.c",
 	    "filetype" : "C",
 	    "created_by" : null,
-	    "winners.html_show" : true,
-	    "winners.html_display_via" : "GitHub",
-	    "winners.html_extra_text" : " - winning source code",
-	    "winners.html_rank" : 20
+	    "winners_show" : true,
+	    "winners_display_via" : "GitHub",
+	    "winners_extra_text" : " - winning source code",
+	    "winners_rank" : 20
 	},
 	{
 	    "filename" : "Makefile",
 	    "filetype" : "make",
 	    "created_by" : null,
-	    "winners.html_show" : true,
-	    "winners.html_display_via" : "GitHub",
-	    "winners.html_extra_text" : " - how to compile",
-	    "winners.html_rank" : 30
+	    "winners_show" : true,
+	    "winners_display_via" : "GitHub",
+	    "winners_extra_text" : " - how to compile",
+	    "winners_rank" : 30
 	},
 	{
 	    "filename" : "prog.alt.c",
 	    "filetype" : "C",
 	    "created_by" : null,
-	    "winners.html_show" : true,
-	    "winners.html_display_via" : "GitHub",
-	    "winners.html_extra_text" : " - alternative program to try",
-	    "winners.html_rank" : 40
+	    "winners_show" : true,
+	    "winners_display_via" : "GitHub",
+	    "winners_extra_text" : " - alternative program to try",
+	    "winners_rank" : 40
 	},
 	{
 	    "filename" : "raw_data.file",
 	    "filetype" : "data",
 	    "created_by" : null,
-	    "winners.html_show" : true,
-	    "winners.html_display_via" : "download_only",
-	    "winners.html_extra_text" : " - optional argument file",
-	    "winners.html_rank" : 100
+	    "winners_show" : true,
+	    "winners_display_via" : "download_only",
+	    "winners_extra_text" : " - optional argument file",
+	    "winners_rank" : 100
 	},
 	{
 	    "filename" : "chocolate_cake.jpg",
 	    "filetype" : "image",
 	    "created_by" : null,
-	    "winners.html_show" : true,
-	    "winners.html_display_via" : "browser",
-	    "winners.html_extra_text" : " - required argument file",
-	    "winners.html_rank" : 100
+	    "winners_show" : true,
+	    "winners_display_via" : "browser",
+	    "winners_extra_text" : " - required argument file",
+	    "winners_rank" : 100
 	},
 	{
 	    "filename" : "magic.txt",
 	    "filetype" : "text",
 	    "created_by" : null,
-	    "winners.html_show" : true,
-	    "winners.html_display_via" : "GitHub",
-	    "winners.html_extra_text" : " - required data file",
-	    "winners.html_rank" : 100
+	    "winners_show" : true,
+	    "winners_display_via" : "GitHub",
+	    "winners_extra_text" : " - required data file",
+	    "winners_rank" : 100
 	},
 	{
 	    "filename" : "spoiler.md",
 	    "filetype" : "markdown",
 	    "created_by" : null,
-	    "winners.html_show" : false,
-	    "winners.html_display_via" : null,
-	    "winners.html_extra_text" : null,
-	    "winners.html_rank" : null
+	    "winners_show" : false,
+	    "winners_display_via" : null,
+	    "winners_extra_text" : null,
+	    "winners_rank" : null
 	},
 	{
 	    "filename" : "spoiler.html",
 	    "filetype" : "html",
 	    "created_by" : "md2html",
-	    "winners.html_show" : true,
-	    "winners.html_display_via" : "browser",
-	    "winners.html_extra_text" : " - Spoiler warning",
-	    "winners.html_rank" : 200
+	    "winners_show" : true,
+	    "winners_display_via" : "browser",
+	    "winners_extra_text" : " - Spoiler warning",
+	    "winners_rank" : 200
 	},
 	{
 	    "filename" : ".gitignore",
 	    "filetype" : "gitignore",
 	    "created_by" : null,
-	    "winners.html_show" : false,
-	    "winners.html_display_via" : null,
-	    "winners.html_extra_text" : null,
-	    "winners.html_rank" : null
+	    "winners_show" : false,
+	    "winners_display_via" : null,
+	    "winners_extra_text" : null,
+	    "winners_rank" : null
 	},
 	{
 	    "filename" : ".winner.json",
 	    "filetype" : "JSON",
 	    "created_by" : "jwinner",
-	    "winners.html_show" : false,
-	    "winners.html_display_via" : null,
-	    "winners.html_extra_text" : null,
-	    "winners.html_rank" : null
+	    "winners_show" : false,
+	    "winners_display_via" : null,
+	    "winners_extra_text" : null,
+	    "winners_rank" : null
+	},
+	{
+	    "filename" : "2024_dirname.tar.bz2",
+	    "filetype" : "tbz2",
+	    "created_by" : "mkwinnertar",
+	    "winners_show" : true,
+	    "winners_display_via" : "download_only",
+	    "winners_extra_text" : " - download winning source",
+	    "winners_rank" : 300
 	}
     ]
 }
