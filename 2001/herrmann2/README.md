@@ -1,9 +1,6 @@
 # Most eye-crossing
 
 Immanuel Herrmann  
-University of Freiburg, Germany  
-Rehlingstr. 17  
-79100 Freiburg  
 Germany  
 <https://web.archive.org/web/20071018081145/http://pcpool.mathematik.uni-freiburg.de/~immi/>
 
@@ -14,12 +11,11 @@ make
 ```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work with
-clang by changing the args to main() to be `int` and `char **` respectively and
-changing specific references to the `argv` arg, casting to int which was its old
-type. However this entry only works completely if compiled as 32-bit (it does
-work in part if compiled as 64-bit). See the alternate code below for
-information on the 64-bit version and [bugs.md](/bugs.md) for more details on
-this issue in general. Thank you Cody for your assistance!
+both 64-bit and 32-bit compiles by changing most of the `int`s (all but that in
+`main`) to `long`s. He also fixed it to compile with clang by changing the args
+of main to be `int` and `char **` respectively and changing specific references
+to the `argv` arg, casting to `long` (was `int` but the 64-bit fix requires
+`long`) which was its old type. Thank you Cody for your assistance!
 
 
 ## To run:
@@ -27,20 +23,6 @@ this issue in general. Thank you Cody for your assistance!
 ```sh
 ./herrmann2
 ```
-
-
-### Alternate code:
-
-As noted above an alternate version is available for 64-bit. This will crash in
-some of the invocations given by the author but it will work for the basic
-operations. To use try:
-
-```sh
-make alt
-```
-
-Use `herrmann2.alt` as you would `herrmann2` above and below.
-
 
 ## Try:
 
