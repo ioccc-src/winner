@@ -114,8 +114,8 @@ OBJ= ${PROG}.o
 DATA= herrmann2.cup herrmann2.ioccc
 TARGET= ${PROG}
 #
-ALT_OBJ= ${PROG}.alt.o
-ALT_TARGET= ${PROG}.alt
+ALT_OBJ=
+ALT_TARGET=
 
 
 #################
@@ -130,7 +130,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} -m32 $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
 #
