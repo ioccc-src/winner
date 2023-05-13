@@ -111,7 +111,7 @@ ENTRY= arachnid
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA= arachnid.info
+DATA= arachnid.txt
 TARGET= ${PROG}
 #
 ALT_OBJ=
