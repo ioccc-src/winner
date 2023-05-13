@@ -127,7 +127,8 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: This entry will not compile with some compilers like clang."
+	@echo "NOTE: this entry will not compile with some compilers like clang."
+	@echo "NOTE: use make alt for clang."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
