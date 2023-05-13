@@ -64,7 +64,7 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE= `${SDL2_CONFIG} --cflags`
+CINCLUDE= `${SDL1_CONFIG} --cflags`
 
 # Optimization
 #
@@ -76,7 +76,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS= `${SDL2_CONFIG} --libs`
+LIBS= `${SDL1_CONFIG} --libs`
 
 # C compiler to use
 #
