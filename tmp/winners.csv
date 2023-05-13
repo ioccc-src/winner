@@ -15,8 +15,8 @@ anonymous,Anonymous 1984,Anonymous_1984,null,null,null,null,null,null
 anonymous,Anonymous 2004,Anonymous_2004,https://web.archive.org/web/20040324155828/http://bicoherent.topcities.com/,null,SG,null,null,null
 anonymous,Anonymous 2005,Anonymous_2005,null,null,null,null,null,null
 anonymous,Anonymous 2015,Anonymous_2015,null,hirekokeshi@gmail.com,JP,@hirekoke,null,null
-adamovský,Ondřej Adamovský,Ondřej_Adamovský,null,oa@cmail.cz,CZ,null,null,null
-älgmyr,Anton Älgmyr,Anton_Älgmyr,algmyr@student.chalmers.se,null,@aalgmyr,SE,null,null
+adamovský,Ondřej Adamovský,Ondrej_Adamovsky,null,oa@cmail.cz,CZ,null,null,null
+älgmyr,Anton Älgmyr,Anton_Algmyr,algmyr@student.chalmers.se,null,@aalgmyr,SE,null,null
 anderson,Derek Anderson,Derek_Anderson,null,dereka9991@gmail.com,US,null,null,null
 anderson,Glyn Anderson,Glyn_Anderson,null,glyn@mataharistudios.com,null,null,null,null
 applegate,David Applegate,David_Applegate,http://www.caam.rice.edu/~davida,davida@caam.rice.edu,null,null,null,null
@@ -31,19 +31,19 @@ barraclough,Gavin Barraclough,Gavin_Barraclough,null,gavin@barraclough.name,null
 barrett,Sean Barrett,Sean_Barrett,http://world.std.com/~buzzard,buzzard@world.std.com,null,null,null,null
 beardsley,Doug Beardsley,Doug_Beardsley,null,dgbeards@southern.edu,null,null,null,null
 bellard,Fabrice Bellard,Fabrice_Bellard,https://bellard.org/,fabrice@bellard.org,FR,null,null,null
-berkenbilt,E. Jay Berkenbilt,E._Jay_Berkenbilt,null,null,null,null,null,null
+berkenbilt,E. Jay Berkenbilt,E_Jay_Berkenbilt,null,null,null,null,null,null
 bernstein,Daniel J. Bernstein,Daniel_J._Bernstein,http://pobox.com/~djb/djb.html,djb@pobox.com,null,null,null,null
 biggar,Mark Biggar,Mark_Biggar,null,mark@biggar.org,null,null,null,null
 birken,Michael Birken,Michael_Birken,http://www.meatfighter.com/,null,US,null,null,null
-black,Paul E. Black,Paul_E._Black,http://hissa.ncsl.nist.gov/~black/black.html,p.black@acm.org,null,null,null,null
+black,Paul E. Black,Paul_E_Black,http://hissa.ncsl.nist.gov/~black/black.html,p.black@acm.org,null,null,null,null
 blakely,Philip Blakely,Philip_Blakely,null,pmblakely@gmail.com,GB,null,null,null
 bonfield,James Bonfield,James_Bonfield,null,jkb@mrc-lmb.cam.ac.uk,null,null,null,null
 borsanyi,Szabolcs Borsanyi,Szabolcs_Borsanyi,null,borsanyi@uni-wuppertal.de,DE,null,null,null
 boutines,Francois Boutines,Francois_Boutines,null,francois.boutines@gmail.com,FR,null,null,null
 brackle,David Van Brackle,David_Van_Brackle,http://east.isx.com/~vanb/,vanb@east.isx.com,null,null,null,null
-briddlebane,Moxen N. Briddlebane,Moxen_N._Briddlebane,null,moxen@gateway.net,null,null,null,null
+briddlebane,Moxen N. Briddlebane,Moxen_N_Briddlebane,null,moxen@gateway.net,null,null,null,null
 bright,Walter Bright,Walter_Bright,http://www.walterbright.com/,emperor@classicempire.com,null,null,null,null
-broukhis,Leonid A. Broukhis,Leonid_A._Broukhis,http://www.mailcom.com/leob,leob@mailcom.com,null,null,null,null
+broukhis,Leonid A. Broukhis,Leonid_A_Broukhis,http://www.mailcom.com/leob,leob@mailcom.com,null,null,null,null
 burchall,Laurion Burchall,Laurion_Burchall,http://www.netspace.org/users/ldb,ldb@netspace.org,null,null,null,null
 burley,Brent Burley,Brent_Burley,null,brent.burley@disney.com,null,null,null,null
 burton,Dave Burton,Dave_Burton,http://snox.net/ioccc,daveb@snox.net,US,@lv2jmp,null,null
@@ -51,7 +51,7 @@ buttimore,Gavin Buttimore,Gavin_Buttimore,null,gavin.buttimore@creaturelabs.com,
 cable,Adrian Cable,Adrian_Cable,null,null,US,null,null,null
 carlini,Nicholas Carlini,Nicholas_Carlini,https://nicholas.carlini.com,nicholas@carlini.com,US,null,null,null
 cheong,Raymond Cheong,Raymond_Cheong,http://www.raymondcheong.com/index.html,rcheong@jhu.edu,null,null,null,null
-chia,V. Chia,V._Chia,null,bi@mncw.tk,SG,null,null,null
+chia,V. Chia,V_Chia,null,bi@mncw.tk,SG,null,null,null
 ciura,Marcin Ciura,Marcin_Ciura,null,mciura@gmail.com,PL,@mciura,null,null
 collier,Ian Collier,Ian_Collier,http://www.comlab.ox.ac.uk/oucl/users/ian.collier/,imc@comlab.ox.ac.uk,GB,null,null,null
 coupard,Pierre-Philippe Coupard,Pierre-Philippe_Coupard,null,pierre@lineo.com,null,null,null,null
@@ -76,7 +76,7 @@ eldby,Thor Eldby,Thor_Eldby,null,null,null,null,null,null
 endoh,Yusuke Endoh,Yusuke_Endoh,null,mame@ruby-lang.org,JP,null,@mame@ruby.social,null
 ferguson,Cody Boone Ferguson,Cody_Boone_Ferguson,https://xexyl.net,ioccc@xexyl.net,US,null,@xexyl@fosstodon.org,https://ioccc.xexyl.net
 finch,Tony Finch,Tony_Finch,http://dotat.at/,dot@dotat.at,null,null,null,null
-fine,Thomas A. Fine,Thomas_A._Fine,http://hea-www.harvard.edu/~fine/,fine@head-cfa.harvard.edu,null,null,null,null
+fine,Thomas A. Fine,Thomas_A_Fine,http://hea-www.harvard.edu/~fine/,fine@head-cfa.harvard.edu,null,null,null,null
 fischer,Daniel Fischer,Daniel_Fischer,null,df@freudenstadt.net,null,null,null,null
 fox,Karl F. Fox,Karl_F._Fox,null,karl@ascend.com,null,null,null,null
 fredriksson,Kimmo Fredriksson,Kimmo_Fredriksson,null,kimmo.k.k.fredriksson@gmail.com,FI,null,null,null
@@ -97,7 +97,7 @@ hamano,Tsukasa Hamano,Tsukasa_Hamano,null,hamano@cuspy.org,JP,null,null,null
 hamre,Steinar Hamre,Steinar_Hamre,null,null,NO,null,null,null
 heckbert,Paul Heckbert,Paul_Heckbert,http://www.cs.cmu.edu/~ph,ph@cs.cmu.edu,null,null,null,null
 heckendorn,Robert Heckendorn,Robert_Heckendorn,http://www.cs.colostate.edu/~heckendo/main.html,null,null,null,null,null
-heizmann,Arne "Timwi" Heizmann,Arne_"Timwi"_Heizmann,null,timwi@gmx.net,DE,null,null,null
+heizmann,Arne "Timwi" Heizmann,Arne_Heizmann,null,timwi@gmx.net,DE,null,null,null
 hemmer,Stig Hemmer,Stig_Hemmer,http://www.pvv.ntnu.no/~stig/,stig@pvv.ntnu.no,null,null,null,null
 herrmann,Immanuel Herrmann,Immanuel_Herrmann,https://web.archive.org/web/20071018081145/http://pcpool.mathematik.uni-freiburg.de/~immi/,null,null,null,null,null
 hines,Spencer Hines,Spencer_Hines,null,null,null,null,null,null
@@ -105,7 +105,7 @@ holloway,Bruce Holloway,Bruce_Holloway,null,null,US,null,null,null
 holopainen,Jyrki Holopainen,Jyrki_Holopainen,https://web.archive.org/web/20061205082106/http://personal.eunet.fi/pp/halo/,jyrki.holopainen@paetronics.fi,null,null,null,null
 horst,Albert van der Horst,Albert_van_der_Horst,http://home.hccnet.nl/a.w.m.van.der.horst,albert@spenarnc.xs4all.nl,null,null,null,null
 horton,Mary Ann Horton,Mary_Ann_Horton,https://maryannhorton.com,null,null,null,null,null
-howe,Anthony C. Howe,Anthony_C._Howe,http://www.snert.com/,achowe@snert.com,null,CA,null,null,null
+howe,Anthony C. Howe,Anthony_C_Howe,http://www.snert.com/,achowe@snert.com,null,CA,null,null,null
 hoyle,Jonathan Hoyle,Jonathan_Hoyle,http://www.jonhoyle.com,jonhoyle@mac.com,null,null,null,null
 huffman,Ken Huffman,Ken_Huffman,http://www.huffmancoding.com,huffmancoding@gmail.com,null,null,null,null
 isaak,Mark Isaak,Mark_Isaak,null,null,null,null,null,null
@@ -124,7 +124,7 @@ kurdyukov,Ilya Kurdyukov,Ilya_Kurdyukov,https://github.com/ilyakurdyukov,olme8@m
 laman,Mike Laman,Mike_Laman,null,mlaman@home.com,null,null,null,null
 lassila,Ora Lassila,Ora_Lassila,http://www.lassila.org/,ora.lassila@nokia.com,null,null,null,null
 lauha,Jetro Lauha,Jetro_Lauha,http://jet.ro,null,Finland,null,null,null
-lievaart,Roemer B. Lievaart,Roemer_B._Lievaart,http://huizen.dds.nl/~lievaart,roemer.lievaart@xs4all.nl,null,null,null,null
+lievaart,Roemer B. Lievaart,Roemer_B_Lievaart,http://huizen.dds.nl/~lievaart,roemer.lievaart@xs4all.nl,null,null,null,null
 litmaath,Maarten Litmaath,Maarten_Litmaath,null,litmaath@cern.ch,null,null,null,null
 lowe,J. David Lowe,J_David_Lowe,https://github.com/dlowe,j.david.lowe@gmail.com,US,null,null,null
 luehe,Oskar von der Luehe,Oskar_von_der_Luehe,null,null,null,null,null,null
@@ -154,7 +154,7 @@ ollinger,Nicolas Ollinger,Nicolas_Ollinger,https://www.univ-orleans.fr/lifo/Memb
 orendorff,Jason Orendorff,Jason_Orendorff,http://jorendorff.blogspot.com,jason@jorendorff.com,US,null,null,null
 osovlanski,Doron Osovlanski,Doron_Osovlanski,http://www.cadtech.co.il/profile.html,null,null,null,null,null
 otterness,Nathan Otterness,Nathan_Otterness,https://github.com/yalue,supersasquatch@gmail.com,US,null,null,null
-pawka,Michael H. Pawka,Michael_H._Pawka,http://niceup.com,mikey@niceup.com,null,null,null,null
+pawka,Michael H. Pawka,Michael_H_Pawka,http://niceup.com,mikey@niceup.com,null,null,null,null
 paxson,Vern Paxson,Vern_Paxson,null,vern@ee.lbl.gov,null,null,null,null
 persano,Mauro Persano,Mauro_Persano,null,mauro_persano@yahoo.com,BR,null,null,null
 phillipps,Ian Phillipps,Ian_Phillipps,null,ian@dial.pipex.com,null,null,null,null
@@ -178,7 +178,7 @@ schweikhardt,Jens Schweikhardt,Jens_Schweikhardt,http://www.schweikhardt.net,sch
 shapiro,Andrew T. Shapiro,Andrew_Shapiro,null,null,null,null,null,null
 shapiro,Carl Shapiro,Carl_Shapiro,null,carl@lasvegassun.com,null,null,null,null
 shin,NATORI Shin,NATORI_Shin,null,natori@is.s.u-tokyo.ac.jp,null,null,null,null
-sicherman,Col. G. L. Sicherman,Col._G._L._Sicherman,http://www.monmouth.com/~colonel/,colonel@monmouth.com,null,null,null,null
+sicherman,Col. G. L. Sicherman,Col_G_L_Sicherman,http://www.monmouth.com/~colonel/,colonel@monmouth.com,null,null,null,null
 sidwell,Nathan Sidwell,Nathan_Sidwell,http://www.cs.bris.ac.uk/~nathan/,nathan@cs.bris.ac.uk,null,null,null,null
 skeggs,Cel Skeggs,Cel_Skeggs,http://www.celskeggs.com,null,celskeggs@gmail.com,null,null,null,null
 sloane,Andy Sloane,Andy_Sloane,null,null,null,US,null,null,null
@@ -202,7 +202,7 @@ weisberg,Jeff Weisberg,Jeff_Weisberg,http://www.op.net/~jaw,null,jaw@op.net,null
 westley,Brian Westley,Brian_Westley,http://www.westley.org,brian@westley.org,US,null,null,null
 wiedijk,Freek Wiedijk,Freek_Wiedijk,null,null,NL,null,null,null
 williams,John Williams,John_Williams,null,williams@morinda.com,null,null,null,null
-woods,James A. Woods,James_A._Woods,null,null,null,null,null,null
+woods,James A. Woods,James_A_Woods,null,null,null,null,null,null
 yang,Don Yang,Don_Yang,http://uguu.org/,omoikane@uguu.org,US,null,null,null
 zarbon,Lord Zarbon,Lord_Zarbon,null,null,null,null,null,null
 zeitak,Adar Zeitak,Adar_Zeitak,null,aa4z2@walla.co.il,IL,null,null,null
