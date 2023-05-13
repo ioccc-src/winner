@@ -1,4 +1,4 @@
-# The grand prize in most well-rounded in confusion
+# Grand prize in most well-rounded in confusion
 
 Larry Wall  
 US 

@@ -1,4 +1,4 @@
-# The strangest appearing program 
+# Strangest appearing program 
 
 Ed Lycklama  
 

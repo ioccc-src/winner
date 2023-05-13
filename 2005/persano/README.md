@@ -1,4 +1,4 @@
-# Best of show
+# Best of Show
 
 Mauro Persano  
 Brazil  

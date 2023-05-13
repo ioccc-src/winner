@@ -1,4 +1,4 @@
-# The worst abuse of the C preprocessor
+# Worst abuse of the C preprocessor
 
 Col. G. L. Sicherman  
 

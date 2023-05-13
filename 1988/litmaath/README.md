@@ -1,4 +1,4 @@
-## Best small program
+# Best small program
 
 Maarten Litmaath  
 Free University (VU) Amsterdam  

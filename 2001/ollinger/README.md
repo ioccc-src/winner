@@ -1,4 +1,4 @@
-# Best primal ASCII graphics
+# Best of Show
 
 Nicolas Ollinger
 France

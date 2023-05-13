@@ -1,4 +1,4 @@
-# Best one-liner
+# Best One-Liner
 
 Eryk Kopczynski  
 Poland  

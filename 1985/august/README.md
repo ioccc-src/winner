@@ -1,4 +1,4 @@
-# The most obscure program
+# Most obscure program
 
 Lennart Augustsson  
 <https://web.archive.org/web/20090831055828/http://www.cs.chalmers.se/~augustss>

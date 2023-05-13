@@ -1,4 +1,4 @@
-## Best abuse of the rules
+# Best abuse of the rules
 
 Diomidis Spinellis  
 Greece  
