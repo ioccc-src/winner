@@ -1,4 +1,4 @@
-# Best use of the www
+# Best use of the WWW
 
 Anthony Howe  
 <achowe@snert.com>  

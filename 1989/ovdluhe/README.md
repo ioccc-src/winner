@@ -1,4 +1,4 @@
-## Most humorous output
+# Most humorous output
 
 Oskar von der Luehe  
 Institut fuer Astronomie  

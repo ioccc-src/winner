@@ -1,4 +1,4 @@
-# The Grand Prize
+# Grand Prize
 
 Sjoerd Mullender<br />
 <https://github.com/sjoerdmullender>

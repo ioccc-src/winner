@@ -1,4 +1,4 @@
-## Most complex algorithm
+# Most complex algorithm
 
 Paul E. Black  
 CIRRUS LOGIC, Inc.  

@@ -111,11 +111,11 @@ ENTRY= arachnid
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA= arachnid.info
+DATA= arachnid.txt
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -137,6 +137,8 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 # data files
 #
 data: ${DATA}

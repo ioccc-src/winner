@@ -1,4 +1,4 @@
-## Best layout
+# Best layout
 
 Merlyn LeRoy (Brian Westley)  
 Rosemount, Inc.  

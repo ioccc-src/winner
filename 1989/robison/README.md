@@ -1,4 +1,4 @@
-## Best minimal use of C
+# Best minimal use of C
 
 Arch D. Robison  
 University of Illinois  

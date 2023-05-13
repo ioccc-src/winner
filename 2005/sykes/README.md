@@ -1,4 +1,4 @@
-# Best emulator
+# Best Emulator
 
 Stephen Sykes  
 <sds@maxisat.fi>  
