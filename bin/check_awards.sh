@@ -1,4 +1,36 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# 
+# This script was mostly auto-generated with the contents of the
+# tmp/year-auth-prize.csv file but modified in vim to make it simpler to
+# generate as it was not worth getting everything correct. It was initially
+# generated like:
+#
+#	echo '#!/bin/bash' > bin/check_awards.sh ; ( while read -r g ; do
+#	    echo grep "$g";
+#	done < <(sed -e 's,_,/,g' -e 's/"/\\"/g' tmp/year-auth-prize.csv |
+#	    awk -F, '{print grep "\x22" $2 "\x22" " " $1 "/" "README.md"}' ); )
+#	    >> bin/check_awards.sh
+#
+# To determine how many entries have a mismatch in award compared to the CSV
+# file do:
+#
+#	sh bin/check_awards.sh | grep :0
+#
+# It must be run in the top level directory. It shouldn't be necessary in future
+# IOCCC contests as the problem should not occur again.
+#
+# This was a hack and not the prettiest hack made by Cody Boone Ferguson
+# (@xexyl) to quickly check all entries from 1984 through 2020. It probably could
+# have been done simpler but this is what I came up with after being awake for
+# 5+ hours at 0700 in the morning. I didn't particularly fancy going through 321
+# README.md files and checking 321 lines of the CSV file!
+#
+# This file as well as some README.md and the CSV file all had to be modified a
+# number of times as mismatches were found which is another reason I did not
+# want to spend effort trying to get the exact pipeline as it was quicker to
+# modify this script.
+#
+
 grep -Hc "^# Dishonorable mention" 1984/anonymous/README.md
 grep -Hc "^# Second place" 1984/decot/README.md
 grep -Hc "^# Third place" 1984/laman/README.md
