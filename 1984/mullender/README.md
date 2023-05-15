@@ -17,11 +17,11 @@ make all
 ./mullender
 ```
 
-> NOTE: If your machine is not a Vax-11 or pdp-11, this program will
+> NOTE: If your machine is not a VAX-11 or PDP-11, this program will
 > not execute correctly.  In later years, machine dependent
 > code was discouraged.
 
-### Alternative code:
+### Alternate code:
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added the alternative
 code which lets you run this on other systems. He notes though that this was
@@ -94,6 +94,30 @@ message on the screen.  Can you guess what is printed?  We knew you
 couldn't!  :-)
 
 BTW: this remains my (Landon Curt Noll's) all time favorite entries!
+
+Cody found the remarks from [Sjoerd Mullender](/winners.html#Sjoerd_Mullender)
+and added the program that was used by the authors to generate the array that he
+referred to. Because [a.out.h](a.out.h) is not available in all systems (like macOS) and
+more importantly because he wanted it to be as close to as the original as
+possible he used a copy of
+<https://raw.githubusercontent.com/dspinellis/unix-history-repo/Research-Release/usr/include/a.out.h>
+in the *fabulous* [Unix History
+Repo](https://github.com/dspinellis/unix-history-repo/tree/Research-Release).
+
+This tool can be built by running:
+
+
+```sh
+make gentab
+```
+
+Cody notes that it does not appear to work in modern systems (unbalanced braces)
+or something else is wrong but given that this was done a long time ago on a now
+archaic system maybe that is why. He also noted that if the `short`s are not
+changed to just `int` it prints out a lot of negative numbers but since
+[mullender.c](mullender.c) has a negative number he kept it as is.
+
+Thank you Cody!
 
 ## Author's remarks:
 
