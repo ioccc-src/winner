@@ -41,7 +41,7 @@ include ../var.mk
 # IOCCC winners
 ###############
 #
-WINNERS= cmills dgibson ejb howe jonth leo lmfjyh plummer rince schnitzi vanb
+WINNERS= ant cmills dgibson ejb jonth leo lmfjyh plummer rince schnitzi vanb
 
 YEAR= 1993
 
