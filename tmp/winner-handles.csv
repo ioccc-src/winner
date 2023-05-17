@@ -1,10 +1,3 @@
-Brian_Westley,1987_westley,1988_westley,1989_westley,1990_westley,1991 westley,1992_westley,1994_westley,1996_westley,2001_westley,
-Cody_Boone_Ferguson,2018_ferguson,2020_ferguson1,2020_ferguson2,
-David_Korn,1987_korn,
-Don_Yang,2015_yang,2018_yang,2019_yang,2020_yang,
-Jack_Applin,1985_applin,1986_applin,1988_applin,
-Matt_Zucker,2011_zucker,
-Ondrej_Adamovsky,2019_adamovsky,
 Aaron_Grothe
 Adar_Zeitak
 Adrian_Cable
@@ -19,6 +12,10 @@ Andrea_Marangoni
 Andreas_Gustafsson
 Andrew_Shapiro
 Andy_Sloane
+Anonymous_1984
+Anonymous_2004
+Anonymous_2005
+Anonymous_2015
 Anthony_C_Howe
 Anton_Algmyr
 Arch_D_Robison
@@ -28,6 +25,7 @@ Bas_de_Bakker
 Ben_Lynn
 Bernd_Meyer
 Brent_Burley
+Brian_Westley
 Bruce_Holloway
 Byron_Rakitzis
 Carl_Banks
@@ -38,15 +36,18 @@ Chris_King
 Christian_Dupont
 Christopher_Mills
 Christopher_Night
+Cody_Boone_Ferguson
 Col_G_L_Sicherman
 Craig_Schneiderwent
 Daniel_Fischer
+Daniel_J._Bernstein
 Daniel_Vik
 Dave_Burton
 Dave_Decot
 David_Applegate
 David_Gibson
 David_Goodenough
+David_Korn
 David_Madore
 David_Van_Brackle
 Dean_Swift
@@ -54,6 +55,7 @@ Derek_Anderson
 Diomidis_Spinellis
 Dominik_Muth
 Don_Dodson
+Don_Yang
 Doron_Osovlanski
 Doug_Beardsley
 E_Jay_Berkenbilt
@@ -68,7 +70,7 @@ Etienne_Duble
 Fabrice_Bellard
 Ferenc_Deak
 Francois_Boutines
-Frans_van_Dorsselaer
+Frans van Dorsselaer
 Freek_Wiedijk
 Garry_Glendown
 Gavin_Barraclough
@@ -83,6 +85,7 @@ Ian_Phillipps
 Ilya_Kurdyukov
 Immanuel_Herrmann
 J_David_Lowe
+Jack_Applin
 James_A_Woods
 James_Bonfield
 Jan_Stein
@@ -101,6 +104,7 @@ Jon_Thingvold
 Jonathan_Hoyle
 Joshua_Karns
 Jyrki_Holopainen
+Karl_F._Fox
 Ken_Huffman
 Kevin_Pulo
 Kimmo_Fredriksson
@@ -117,6 +121,7 @@ Mark_Isaak
 Mark_Plummer
 Mark_Schnitzius
 Mary_Ann_Horton
+Matt_Zucker
 Maurizio_Monge
 Mauro_Persano
 Michael_Ash
@@ -132,6 +137,7 @@ Neil_Mix
 Nicholas_Carlini
 Nick_Johnson
 Nicolas_Ollinger
+Ondrej_Adamovsky
 Ora_Lassila
 Oscar_Toledo
 Oskar_von_der_Luehe
@@ -143,6 +149,7 @@ Peter_Eastman
 Peter_J_Ruczynski
 Peter_Klausler
 Philip_Blakely
+Pierre-Philippe_Coupard
 Qiming_HOU
 Raphael_Meyer
 Raymond_Cheong
@@ -174,13 +181,17 @@ Thomas_P_John
 Thomas_Stewart
 Thor_Eldby
 Timo_Poikola
+Tom_Torfs
 Tony_Finch
 Tsukasa_Hamano
 Uri_Goren
 V_Chia
 Vern_Paxson
 Vincent_Weaver
+Volker_Diels-Grabsch
 Walter_Bright
 Yusuke_Endoh
-_tsoj
+Yves-Marie_Morgan
 bsoup
+tsoj
+winner_handle
