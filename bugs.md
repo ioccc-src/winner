@@ -955,8 +955,9 @@ that? According to `lldb`  it is:
 (XID (*)(...)) $0 = 0x00000001003cd374 (libX11.6.dylib`XCreateWindow)
 ```
 
-so `w == XCreateWindow()`. But it never actually finishes its call; modifying
-the code a bit and we see that it crashes before it returns:
+so `w == XCreateWindow()` (which can also be seen in the code). But it never
+actually finishes its call; modifying the code a bit and we see that it crashes
+before it returns:
 
 
 ```
@@ -1178,6 +1179,7 @@ that version 2.95 works but maybe others do as well. Do you have a fix? We would
 appreciate your help!
 
 Do you have a fix for 64-bit compilation? Please provide it!
+
 ## [2001/kev](2001/kev/kev.c) ([README.md](2001/kev/README.md)
 ## STATUS: INABIAF - please **DO NOT** fix
 
