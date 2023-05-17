@@ -19,9 +19,9 @@ make
 supplementary program and the program itself, both of which segfaulted. He
 managed to do this with linux but it will not work with macOS (see
 [bugs.md](/bugs.md) for why this is); this is not a bug but a feature inherent
-in what it does. He said this took serious debugging and skill (shameless self
-promotion but it's true :-) ) and we thank him _very much_! But what needed to
-be changed? Although it took a fair bit of debugging it turns out all that
+in what it does.
+
+Although it took a fair bit of debugging it turns out all that
 needed to be changed was:
 
 - `#include <sys/mman.h>` for `mmap()`.
@@ -46,6 +46,13 @@ git diff 93aa8d79f208dcccc3c5a2370a727b5cf64e9c53..c48629017117379a52b1a512ef8f2
 git diff c48629017117379a52b1a512ef8f2593ca9569c8..efdee208a2bc650256637b9357ddfd0de82d2f41 anonymous.c
 git diff efdee208a2bc650256637b9357ddfd0de82d2f41..e9a3f77ea3b209e63ac3f9c06bb84ad86e5ea706 anonymous.c
 ```
+
+There's an another important point in [bugs.md](/bugs.md) about this entry,
+however, in that we're not sure if the entry was supposed to run the program or
+not as there is some inconsistency in the author's comments which we think might
+have been intentional.
+
+Thank you Cody for your assistance!
 
 ### WARNING on note from the author
 

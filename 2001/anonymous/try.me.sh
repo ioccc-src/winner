@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-make clobber
+make clobber >/dev/null 2>&1
 
 if [[ $(make anonymous.ten >/dev/null 2>&1) ]]; then
 
@@ -26,7 +26,6 @@ if [[ $(make anonymous.ten >/dev/null 2>&1) ]]; then
     echo "$ diff -s ten.txt ten.bak.txt" 1>&2
     diff -s ten.txt ten.bak.txt
 else
-    echo
     echo "cannot compile anonymous.ten.c as 32-bit, sorry."
     exit 1
 fi

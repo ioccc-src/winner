@@ -191,8 +191,18 @@ NOTE: we're still locating entries and working on fixes with this status so we'r
 ready for help. We will remove this when we are.
 
 Entries with this status might or might not have a bug possibly depending on the
-system.  In these entries we don't have the appropriate systems to test and fix
-any problems.
+system.  In these entries it's unknown if there is a bug and sometimes it's
+because we do not remember and sometimes we don't have the appropriate system or
+environment to test and fix any possible problems.
+
+## STATUS: might not be completely functional - can you confirm?
+
+NOTE: we're still locating entries and working on fixes with this status so we're not yet
+ready for help. We will remove this when we are.
+
+Although these entries _appear_ to work for one or more reasons we're unsure if
+they are completely functional. Can you confirm this? Please let us know so we
+can fix it!
 
 ## STATUS: probable bug (possibly depending on system) - please help test and if necessary fix
 
@@ -1093,14 +1103,26 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing))! :-) ).
 # 2001
 
 ## [2001/anonymous](2001/anonymous/anonymous.c) ([README.md](2001/anonymous/README.md))
+## STATUS: might not be completely functional - can you confirm?
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
+both the entry and the supplementary program (both segfaulted) and it appears to
+work in that it does do what the author suggests. However there is an
+inconsistency in remarks about whether it should _execute_ the program it's run
+on after modification or if it should _only modify_ it. With Cody's fix it
+modifies the program, only works on 32-bit ELF binaries (by design) and the
+binary still works but we do not know if it's supposed _additionally_ run it.
+Can you confirm? Please let us know!
+
+
 ## STATUS: INABIAF - please **DO NOT** fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this so that it
-works in modern systems but he notes that the program
-[anonymous.ten.c](2001/anonymous/anonymous.ten.c) **MUST** be compiled as a
-32-bit ELF binary! This because the program acts on 32-bit ELF binaries. If you
-cannot use `-m32` on this file the program **will** almost certainly crash but
-in no case will it work properly.
+works (it segfaulted - but see above) in modern systems but he notes that the
+program [anonymous.ten.c](2001/anonymous/anonymous.ten.c) **MUST** be compiled
+as a 32-bit ELF binary! This is because the program only works on 32-bit ELF
+binaries. If you cannot use `-m32` on the files it acts on the program **will**
+almost certainly crash but in no case will it work properly.
 
 This means that for macOS it will not work. Why will this not work in macOS?
 Because Apple saw to it to make it very hard to compile 32-bit binaries (thanks
