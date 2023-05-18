@@ -135,6 +135,7 @@ ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} \
 	    \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c -o $@ ${LIBS} || \
 	    ${RM} -f \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
+	${RM} -f \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
 
 # alternative executable
 #
