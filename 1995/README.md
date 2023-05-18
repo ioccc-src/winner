@@ -1,73 +1,75 @@
-1995 marked the "The Twelfth International Obfuscated C Code Contest"
+# 1995 marked the "The Twelfth International Obfuscated C Code Contest"
 
 
 Look at the README.md file for the given winner for information
-on how to compile the winner and how to run the winning program.
-Look at the winning source and try to figure how it does what it does!
-You may then wish to look at the Author's remarks for even more details.
+on how to compile and run the winning program.  Look at the winning source and
+try to figure how it does what it does! You may then wish to look at the
+`Author's remarks` section for even more details.
 
-The IOCCC has an official home page:
+The IOCCC has an official home page, <https://www.ioccc.org>, which contains
+previous winning entries, information about the judges, announcements and much
+more.
 
-	http://www.ioccc.org
+Use `make` to compile entries.  It is possible that on BSD or non-Unix
+systems the `Makefile` needs to be changed.  See the `Makefile` for details.
 
-containing previous winning entries, information about the judges,
-announcements and much more.
-
-Use make to compile entries.  It is possible that on BSD or non-unix
-systems the makefile needs to be changed.  See the Makefile for details.
-
-Read over the makefile for compile/build issues.  Your system may
+Read over the `Makefile` for compile/build issues.  Your system may
 require certain changes (add or remove a library, add or remove a
-#define).
+`#define`).
 
-This year Sriram Srinivasan joined the judging.
+This year [Sriram Srinivasan](http://www.malhar.net/sriram/) joined the judging.
 
-The moderator of comp.unix.wizards did not feel that the IOCCC was "wizardly"
-enough to be posted to comp.unix.wizards - we will no longer post the
-winners to this newsgroup - we'll let you the reader decide for yourself the
-wizardlyness of these entries.
+The moderator of
+[comp.unix.wizards](https://groups.google.com/g/comp.unix.wizards) did not feel
+that the IOCCC was "wizardly" enough to be posted to comp.unix.wizards - we will
+no longer post the winners to this newsgroup - we'll let you the reader decide
+for yourself the wizardry of these entries.
 
-This year there were several people who won more than once
-and several previous winners who won this year. The judging was done
-without knowledge of the names of the submitters - multiple winners were
-a coincidence. Since we tend to discount entries that are similar to
-previous winners, these people have had to come with original ideas to
-stay in the winners circle.
+This year there were several people who won more than once and several [previous
+winners](/winners.html) as well. The judging was done without knowledge of the
+names of the submitters - multiple winners were a coincidence. Since we tend to
+discount entries that are similar to previous winners, these people had to come
+with original ideas to stay in the winners circle.
 
-We wish to thank CAIP at Rutgers University for the use of their machines.
+We wish to thank [CAIP at Rutgers
+University](https://catalogs.rutgers.edu/generated/nb-grad_0305/pg20199.html)
+for the use of their machines.
 
-A few notes regarding future contests
--------------------------------------
+## A few notes regarding future contests
 
-Due to changes in the Usenix conference calendar, the 1996 contest will
-be delayed.  Because there will be no Summer 1996 Usenix conference,
-the 1996 IOCCC winners will be announced at the Jan 1997 Usenix
-conference.
+Due to changes in the [USENIX
+conference](https://www.usenix.org/conferences/all) calendar, the [1996
+contest](/years.html#1996) will be delayed.  Because there will be no Summer
+1996 USENIX conference, the 1996 IOCCC winners will be announced at the Jan 1997
+USENIX conference.
 
-The 1996 contest will not open until sometime in October 1996, and will
-close sometime around the end of December 1996.  The rules for the 1996
-contest have not been formed at this time and are not expected to be
-ready for distribution until late September 1996.
+The 1996 contest will not open until sometime in October 1996, and will close
+sometime around the end of December 1996.  The [rules for the 1996
+contest](/1996/rules.txt) have not been formed at this time and are not expected
+to be ready for distribution until late September 1996.
 
-Be sure to wait until the 1996 rules are posted before submitting entries.
-Rules differ from year to year, sometimes in significant ways.
+Be sure to wait until the [1996 rules](/1996/rules.txt) are posted before
+submitting entries.  Rules differ from year to year, sometimes in significant
+ways.
 
 Please send us comments and suggestions what we have expressed above.
 Also include anything else that you would like to see in future contests.
 Send such email to:
 
-	...!{sun,pacbell,uunet,pyramid}!hoptoad!judges
-	judges@toad.com
-
+```
+...!{sun,pacbell,uunet,pyramid}!hoptoad!judges
+judges@toad.com
+```
 If you use, distribute or publish these entries in some way, please drop
 us a line.  We enjoy seeing who, where and how the contest is used.
 
-If you have problems with any of the entries, AND YOU HAVE A FIX, please
-email the fix (patch file or the entire changed file) to the above address.
+If you have problems with any of the entries, AND IF YOU HAVE A FIX, please
+submit a [GitHub pull
+request](https://github.com/ioccc-src/temp-test-ioccc/pulls) (with ONE PULL
+REQUEST *PER* FIX, please).
 
 
-Credits
--------
+## Credits
 
 We would like to thank Barbara Frezza for her role as official chef of
 the contest.  Landon Noll, Larry Bassel and Sriram Srinivasan
@@ -75,7 +77,7 @@ appreciated the opportunity to serve as official taste testers.  And as
 usual, the food was excellent.  The official menus of the 1995
 Obfuscated C Contest dinners were:
 
-Session One:
+### Session One:
 
 Antipasti: Crudites, olive selection, pickles, cheese selection
 Soup: Homemade mushroom and green onion soup
@@ -84,7 +86,7 @@ Salad: artichoke, red bell peppers, Italian onions, cucumbers
 Main Course: Pizzas, with a variety of toppings
 Dessert: Chocolate torte
 
-Session Two:
+### Session Two:
 
 Antipasti: crudites, olives, roasted red peppers, cheese selection
 Salad: Mixed greens with vinaigrette
@@ -95,16 +97,16 @@ Dessert: Cookie selection, featuring chocolate chocolate chip cookies and
 	 chocolate butter cookies
 
 
-Session Three
+### Session Three
 
 Antipasti: Crudites, olive selection
 Salad: Mixed greens with mustard vinaigrette
-Main Course: Broiled salmon with lemmon pepper mayonnaise, chard, mixture
+Main Course: Broiled salmon with lemon pepper mayonnaise, chard, mixture
 	of white and wild rices
 Bread: Cheese bread with herbs
-Dessert: Chocolate cheesecake (Coutesy of Elizabeth Watson)
+Dessert: Chocolate cheesecake (Courtesy of Elizabeth Watson)
 
-Session Four:
+### Session Four:
 
 Antipasti: Crudites, olive selection, roasted red peppers, cheese selection
 Bread: Sourdough
@@ -114,29 +116,29 @@ Main Course: Surf and Turf--Grilled steaks of salmon and New York steak
 	wild rice
 Dessert: Chocolate mousse
 
-Session Five:
+### Session Five:
 
 Antipasti: Crudites, olive selection, pickles
 Salad: Mixed spring greens with mustard vinaigrette
-Main Course: Linguini with a cream sauce of Shiitaki mushrooms and smoked
+Main Course: Linguini with a cream sauce of shiitake mushrooms and smoked
 salmon
 Bread: Garlic bread
-Dessert: Flourless chocolate torte
+Dessert: Flour-less chocolate torte
 
-Session Six:
+### Session Six:
 
 Antipasti: Carrot and celery sticks with cheese spread, olive selection,
 pickles
 Bread: Focaccia with black olives and mozzarella cheeses
 Salad: Mixed spring greens with flowers and mustard vinaigrette
 Soup: Homemade butternut squash soup with mushrooms
-Main Course: Cracked dungeness crab with lemon mayonnaise, broccoli,
+Main Course: Cracked Dungeness crab with lemon mayonnaise, broccoli,
 	mixture of white and brown rice
 Dessert: Key lime pie
 
 =-=
 
-Copyright (c) 1996, Landon Curt Noll, Larry Bassel & Sriram Srinivasan.
+Copyright (c) 1995, Landon Curt Noll, Larry Bassel & Sriram Srinivasan.
 All Rights Reserved.  Permission for personal, educational or non-profit use is
 granted provided this this copyright and notice are included in its entirety
 and remains unaltered.  All other uses must receive prior permission in writing

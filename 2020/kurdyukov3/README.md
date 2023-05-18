@@ -47,6 +47,13 @@ It is interesting how well smeonoe can raed txet wtih lots of tyops in it.
 How well can you raed porg.c, C prgoarm that is in the shpae of an SD card (or
 is it a pnuch crad)?
 
+BTW: this funny reading of English (which also works with several other
+languages) is called
+[typoglycemia](https://www.mrc-cbu.cam.ac.uk/personal/matt.davis/Cmabrigde/)
+(the article however is incorrect in stating that if the letters were more
+jumbled or if other words were formed one could not read it: we know of some who
+can in fact do exactly that).
+
 ## Author's remarks:
 
 ### Letter Mixer ###

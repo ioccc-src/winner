@@ -131,6 +131,10 @@ ${PROG}: ${PROG}.c
 	@echo "than a Vax-11 or pdp-11."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
+gentab: gentab.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
+
 # alternative executable
 #
 alt: data ${ALT_TARGET}
@@ -164,6 +168,7 @@ clean:
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
 	${RM} -f core
+	${RM} -f gentab
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

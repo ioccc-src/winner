@@ -113,7 +113,7 @@ ENTRY= tromp
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA= how13 primes.blc uni.blc uni8.Blc bf.Blc hw.bf deflate.Blc inflate.Blc \
+DATA= how.md primes.blc uni.blc uni8.Blc bf.Blc hw.bf deflate.Blc inflate.Blc \
 	parse.Blc symbolic.Blc primes.pl
 TARGET= ${PROG} ${PROG}64
 #

@@ -19,9 +19,9 @@ make
 supplementary program and the program itself, both of which segfaulted. He
 managed to do this with linux but it will not work with macOS (see
 [bugs.md](/bugs.md) for why this is); this is not a bug but a feature inherent
-in what it does. He said this took serious debugging and skill (shameless self
-promotion but it's true :-) ) and we thank him _very much_! But what needed to
-be changed? Although it took a fair bit of debugging it turns out all that
+in what it does.
+
+Although it took a fair bit of debugging it turns out all that
 needed to be changed was:
 
 - `#include <sys/mman.h>` for `mmap()`.
@@ -46,6 +46,13 @@ git diff 93aa8d79f208dcccc3c5a2370a727b5cf64e9c53..c48629017117379a52b1a512ef8f2
 git diff c48629017117379a52b1a512ef8f2593ca9569c8..efdee208a2bc650256637b9357ddfd0de82d2f41 anonymous.c
 git diff efdee208a2bc650256637b9357ddfd0de82d2f41..e9a3f77ea3b209e63ac3f9c06bb84ad86e5ea706 anonymous.c
 ```
+
+There's an another important point in [bugs.md](/bugs.md) about this entry,
+however, in that we're not sure if the entry was supposed to run the program or
+not as there is some inconsistency in the author's comments which we think might
+have been intentional.
+
+Thank you Cody for your assistance!
 
 ### WARNING on note from the author
 
@@ -73,7 +80,8 @@ something funny if you run it on itself as well but see below :-)
 ./try.me.sh
 ```
 
-What happens if the x86 program has already been modified by this program?
+What happens if the x86 program has already been modified by this program? The
+judges' remarks below might give you a hint!
 
 What happens if you try it on another file like [anonymous.c](anonymous.c)? Can
 you recompile it okay? What if you run it on `anonymous` itself? Can you run the
@@ -90,37 +98,49 @@ quite a lot of bit twiddling.
 This program is an optimizing dynamic binary translator, allowing you to
 run x86 programs on any machine (x86 or otherwise).
 
-I have included a simple [10 green
-bottles](https://www.bbc.co.uk/teach/school-radio/nursery-rhymes-ten-green-bottles/zncyt39) program, already compiled
-for the x86.  The program 'ten', and its source (dull) are given as info
-files.  Warning: note that the translator screws around with the binary
-you run on it, *will* corrupt the binary to some extent, and may leave
-any program you run on it unusable.
+I have included a simple [10 Green
+Bottles](https://www.bbc.co.uk/teach/school-radio/nursery-rhymes-ten-green-bottles/zncyt39)
+[program](anonymous.ten.c) (try `make anonymous.ten`), meant to be compiled in 32-bit.
+The program `anonymous.ten`, and its source (dull) are included as data
+files.
 
-The build script should give an example command to run.
+### Warning
+
+Note that the translator screws around with the binary you run on it and *might*
+corrupt the binary to some extent and in so doing might leave any program you
+run on it unusable.
+
+The build script should give an example command to compile the program.
 
 ### Features
 
-Basic Block Cache: Rather than translating each instruction individually
-the dynamic binary translator generates a translation for an entire
-basic block of subject code.  Having translated a block once, the target
-code generated will be stored for the duration that the program is
-running, so as a program runs its performance will improve, as it hits
-cached blocks.  This can be clearly observed in the example program,
-'ten'.
+[Basic Block](https://en.wikipedia.org/wiki/Basic_block)
+[Cache](https://en.wikipedia.org/wiki/Cache_(computing)): Rather than
+translating each instruction individually the dynamic binary translator
+generates a translation for an entire basic block of subject code.  Having
+translated a block once, the target code generated will be stored for the
+duration that the program is running, so as a program runs its performance will
+improve, as it hits cached blocks.  This can be clearly observed in the example
+program, [anonymous.ten](anonymous.ten.c) which must be compiled as a 32-bit
+binary.
 
 ### Target Library Linking:
 
-The program runs dynamically linked elf binaries, and when the subject
-program attempts to make a call to a standard library, the translator
-attempts to make an appropriate call to the native system libraries on
-the target machine.  This involves mangling between different calling
-conventions, etc.
+The program runs [dynamically
+linked](https://en.wikipedia.org/wiki/Dynamic_linker) [ELF
+binaries](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format), and
+when the subject program attempts to make a call to a standard
+[library](https://en.wikipedia.org/wiki/Library_(computing)), the translator
+attempts to make an appropriate call to the native system libraries on the
+target machine.  This involves mangling between different calling conventions,
+etc.
 
 ### Automatic Endian Detection/Reversal:
 
-There are various problems raised when attempting to run little endian
-x86 code on a big endian chip, such as a PPC.  These problems are dealt
+There are various problems raised when attempting to run little
+[endian](https://en.wikipedia.org/wiki/Endianness)
+[x86](https://en.wikipedia.org/wiki/X86) code on a big endian chip, such as a
+[PPC](https://en.wikipedia.org/wiki/PowerPC).  These problems are dealt
 with in a manner that is entirely transparent to the user.
 
 ### Configuration:
@@ -145,7 +165,7 @@ compiling the program without any optimization will allow it to run
 
 ### Obfuscation
 
-The most obvious part of the obfuscation is probably the mess of defines at the
+The most obvious part of the obfuscation is probably the mess of `#define`s at the
 top.  This may seem a somewhat tired old obfuscation - however since many of
 these macros are (sometimes only) used by the program once it has dynamically
 recompiled itself, they are only referenced within the source code from within
@@ -160,8 +180,8 @@ Buried under all this, and the fact that the entire program is just a
 call to `exit()`, there are some nice subtle little obfuscations.  For
 example, you may notice that there are a couple of macros that use the
 `##` preprocessor operator to build pairs of functions.  One of these
-macros is used to build to pairs of functions of which only one has
-local variables which shadow global variables; so one modifies the
+macros is used to build pairs of functions of which only one has
+local variables which shadow global variables: so one modifies the
 global state, and the other doesn't.
 
 There is also quite a nice trick where I wave a magic wand, and a chunk of code
@@ -173,12 +193,13 @@ on to the next line of code.
 
 ### Limitations
 
-Due to space limitations only a handful of instructions are supported;
-these instructions which are supported are supported in somewhat
-non-conventional ways: chunks of the architecture (e.g. flags) are just
-ignored, the elf loader does not really load the elf binary, the target
-library linking can only pass up to 3 parameters to the target library
-function, etc.
+Due to space limitations only a handful of instructions are supported; these
+instructions which are supported are supported in somewhat non-conventional
+ways: chunks of the architecture (e.g. flags) are just ignored, the ELF
+[loader](https://en.wikipedia.org/wiki/Loader_(computing)) does not really load
+the [ELF binary](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format),
+the target [library linking](https://en.wikipedia.org/wiki/Linker_(computing))
+can only pass up to 3 parameters to the target library function, etc.
 
 In short, please consider this a full disclaimer for any bug that may
 turn up - yes the program is unsafe, but it's pretty cool anyway.

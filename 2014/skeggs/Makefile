@@ -58,7 +58,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE= -DCC="${CC} -fPIC"
+CDEFINE= -DCC='"${CC} -fPIC"'
 
 # Include files that are needed to compile
 #
