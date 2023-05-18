@@ -51,6 +51,12 @@ If you wish to change the time to sleep (default `200`) you can do so like:
 make clobber CDEFINE="-DZ=50" alt
 ```
 
+#### Try:
+
+```sh
+./plummer.alt xyzzyzzyx 5555
+```
+
 Thank you Cody!
 
 ### INABIAF - it's not a bug it's a feature :-)
