@@ -1,196 +1,196 @@
-Ondřej Adamovský
-Anton Älgmyr
-Glyn Anderson
-Derek Anderson
-Anonymous 2015
-Anonymous 2005
-Anonymous 2004
-Anonymous 1984
-David Applegate
-Jack Applin
-Jari Arkko
-Michael Ash
-Lennart Augustsson
-Bas de Bakker
-Carl Banks
-Gavin Barraclough
-Sean Barrett
-Doug Beardsley
-Fabrice Bellard
-E. Jay Berkenbilt
-Daniel J. Bernstein
-Mark Biggar
-Michael Birken
-Paul E. Black
-Philip Blakely
-James Bonfield
-Szabolcs Borsanyi
-Francois Boutines
-David Van Brackle
-Moxen N. Briddlebane
-Walter Bright
-Leonid A. Broukhis
-bsoup
-Laurion Burchall
-Brent Burley
-Dave Burton
-Gavin Buttimore
-Adrian Cable
-Nicholas Carlini
-Raymond Cheong
-V. Chia
-Marcin Ciura
-Ian Collier
-Pierre-Philippe Coupard
-John Dalbec
-Paul Dale
-Ferenc Deak
-Alex Deckmyn
-Dave Decot
-Sebastian Deorowicz
-Volker Diels-Grabsch
-Don Dodson
-Gil Dogon
-Frans van Dorsselaer
-Sean Dorward
-Heather Downs
-Carlos Duarte
-Etienne Duble
-Christian Dupont
-Peter Eastman
-Paul Eggert
-Thor Eldby
-Yusuke Endoh
-Cody Boone Ferguson
-Tony Finch
-Thomas A. Fine
-Daniel Fischer
-Karl F. Fox
-Kimmo Fredriksson
-Thaddaeus Frogley
-Anders Gavare
-David Gibson
-Edward Giles
-Garry Glendown
-David Goodenough
-Uri Goren
 Aaron Grothe
-Andreas Gustafsson
-Jim Hague
-Shinichiro Hamaji
-Tsukasa Hamano
-Steinar Hamre
-Paul Heckbert
-Robert Heckendorn
-Arne Timwi Heizmann
-Stig Hemmer
-Immanuel Herrmann
-Spencer Hines
-Bruce Holloway
-Jyrki Holopainen
+Adar Zeitak
+Adrian Cable
+Adrian Mariano
+Aidan Thornton
+Alan De Smet
 Albert van der Horst
-Mary Ann Horton
-Qiming HOU
+Alex Deckmyn
+Alexander Prishchepov
+Anders Gavare
+Andrea Marangoni
+Andreas Gustafsson
+Andrew T. Shapiro
+Andy Sloane
+Anonymous 1984
+Anonymous 2004
+Anonymous 2005
+Anonymous 2015
 Anthony C. Howe
-Jonathan Hoyle
-Ken Huffman
-Mark Isaak
-Thomas P John
-Nick Johnson
-Larry Jones
-Seonghoon Kang
-Joshua Karns
+Anton Älgmyr
+Arch D. Robison
+Arne Timwi Heizmann
+Baruch Nissenbaum
+Bas de Bakker
+Ben Lynn
+Bernd Meyer
+Brent Burley
+Brian Westley
+Bruce Holloway
+Byron Rakitzis
+Carl Banks
+Carl Shapiro
+Carlos Duarte
+Cel Skeggs
 Chris King
-Tero Kivinen
-Peter Klausler
-Taketo Konno
-Eryk Kopczynski
+Christian Dupont
+Christopher Mills
+Christopher Night
+Cody Boone Ferguson
+Col. G. L. Sicherman
+Craig Schneiderwent
+Daniel Fischer
+Daniel J. Bernstein
+Daniel Vik
+Dave Burton
+Dave Decot
+David Applegate
+David Gibson
+David Goodenough
 David Korn
-Ilya Kurdyukov
-Mike Laman
-Ora Lassila
-Jetro Lauha
-Roemer B. Lievaart
-Maarten Litmaath
-J. David Lowe
-Oskar von der Luehe
+David Madore
+David Van Brackle
+Dean Swift
+Derek Anderson
+Diomidis Spinellis
+Dominik Muth
+Don Dodson
+Don Yang
+Doron Osovlanski
+Doug Beardsley
+E. Jay Berkenbilt
 Ed Luke
 Ed Lycklama
-Ben Lynn
-David Madore
-Sandro Maffiodo
-Selene Makarios
-Andrea Marangoni
-Adrian Mariano
-Eric Marshall
-Ron McFarland
-Bernd Meyer
-Raphael Meyer
-Christopher Mills
-Neil Mix
-Maurizio Monge
-Yves-Marie Morgan
-Sjoerd Mullender
-Dominik Muth
-Jeff Newbern
-Christopher Night
-Baruch Nissenbaum
-Esko Nuutila
-Nicolas Ollinger
-Jason Orendorff
-Doron Osovlanski
-Nathan Otterness
-Michael H. Pawka
-Vern Paxson
-Mauro Persano
-Ian Phillipps
-Mark Plummer
-Timo Poikola
-Alexander Prishchepov
-Kevin Pulo
-Byron Rakitzis
-Teemu Rantanen
-Gopi Reddy
-Robbert van Renesse
-Gregor Richards
-Arch D. Robison
+Edward Giles
 Edward Rosten
-Peter J Ruczynski
-Szymon Rusinkiewicz
-Michael Savastio
-Craig Schneiderwent
-Mark Schnitzius
-Jens Schweikhardt
-Andrew T. Shapiro
-Carl Shapiro
-NATORI Shin
-Col. G. L. Sicherman
-Nathan Sidwell
-Cel Skeggs
-Andy Sloane
-Alan De Smet
-Diomidis Spinellis
-Jan Stein
-Thomas Stewart
-Dean Swift
-Stephen Sykes
-Jon Thingvold
-Aidan Thornton
-Oscar Toledo G.
-Tom Torfs
-John Tromp
-tsoj
-Daniel Vik
-Scott Vokes
-Jay Vosburgh
-Larry Wall
-Vincent Weaver
-Jeff Weisberg
-Brian Westley
+Eric Marshall
+Eryk Kopczynski
+Esko Nuutila
+Etienne Duble
+Fabrice Bellard
+Ferenc Deak
+Francois Boutines
+Frans van Dorsselaer
 Freek Wiedijk
-John Williams
+Garry Glendown
+Gavin Barraclough
+Gavin Buttimore
+Gil Dogon
+Glyn Anderson
+Gopi Reddy
+Gregor Richards
+Heather Downs
+Ian Collier
+Ian Phillipps
+Ilya Kurdyukov
+Immanuel Herrmann
+J. David Lowe
+Jack Applin
 James A. Woods
-Don Yang
+James Bonfield
+Jan Stein
+Jari Arkko
+Jason Orendorff
+Jay Vosburgh
+Jeff Newbern
+Jeff Weisberg
+Jens Schweikhardt
+Jetro Lauha
+Jim Hague
+John Dalbec
+John Tromp
+John Williams
+Jon Thingvold
+Jonathan Hoyle
+Joshua Karns
+Jyrki Holopainen
+Karl F. Fox
+Ken Huffman
+Kevin Pulo
+Kimmo Fredriksson
+Larry Jones
+Larry Wall
+Laurion Burchall
+Lennart Augustsson
+Leonid A. Broukhis
 Lord Zarbon
-Adar Zeitak
+Maarten Litmaath
+Marcin Ciura
+Mark Biggar
+Mark Isaak
+Mark Plummer
+Mark Schnitzius
+Mary Ann Horton
 Matt Zucker
+Maurizio Monge
+Mauro Persano
+Michael Ash
+Michael Birken
+Michael H. Pawka
+Michael Savastio
+Mike Laman
+Moxen N. Briddlebane
+NATORI Shin
+Nathan Otterness
+Nathan Sidwell
+Neil Mix
+Nicholas Carlini
+Nick Johnson
+Nicolas Ollinger
+Ondřej Adamovský
+Ora Lassila
+Oscar Toledo G.
+Oskar von der Luehe
+Paul Dale
+Paul E. Black
+Paul Eggert
+Paul Heckbert
+Peter Eastman
+Peter J Ruczynski
+Peter Klausler
+Philip Blakely
+Pierre-Philippe Coupard
+Qiming HOU
+Raphael Meyer
+Raymond Cheong
+Robbert van Renesse
+Robert Heckendorn
+Roemer B. Lievaart
+Ron McFarland
+Sandro Maffiodo
+Scott Vokes
+Sean Barrett
+Sean Dorward
+Sebastian Deorowicz
+Selene Makarios
+Seonghoon Kang
+Shinichiro Hamaji
+Sjoerd Mullender
+Spencer Hines
+Steinar Hamre
+Stephen Sykes
+Stig Hemmer
+Szabolcs Borsanyi
+Szymon Rusinkiewicz
+Taketo Konno
+Teemu Rantanen
+Tero Kivinen
+Thaddaeus Frogley
+Thomas A. Fine
+Thomas P John
+Thomas Stewart
+Thor Eldby
+Timo Poikola
+Tom Torfs
+Tony Finch
+Tsukasa Hamano
+Uri Goren
+V. Chia
+Vern Paxson
+Vincent Weaver
+Volker Diels-Grabsch
+Walter Bright
+Yusuke Endoh
+Yves-Marie Morgan
+bsoup
+tsoj
