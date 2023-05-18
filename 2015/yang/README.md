@@ -1,7 +1,7 @@
 # Most Pointed Reaction
 
-    Don Yang  
-    <http://uguu.org/>  
+Don Yang   
+<http://uguu.org/>  
 
 ## To build:
 
@@ -65,7 +65,7 @@ echo IOCCC | ./fuuko_cpp98 > output_cpp98.c
 ```
 
 Don't like dango either?  Use a C++11 compiler to get just circles (or
-swiss cheese, if you prefer that).
+Swiss cheese, if you prefer that).
 
 ```sh
 g++ -O3 -std=c++11 fuuko.c -lm -o fuuko_cpp11
@@ -106,7 +106,7 @@ Fuuko has been tested under these environments:
 
 The most obscure parts are in detecting the subtle differences in
 different dialects.  The standard committees put a lot of effort into
-avoiding "quiet changes", but Fuuko is still able exploit a few of
+avoiding "quiet changes", but Fuuko is still able to exploit a few of
 those.  It should be an interesting exercise for the reader to figure
 how she did it.
 

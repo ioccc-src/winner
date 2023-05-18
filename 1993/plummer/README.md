@@ -11,6 +11,7 @@ US
 make all
 ```
 
+
 ## To run:
 
 ```sh
@@ -21,6 +22,42 @@ where:
 
 - number is a number    (try 21701)
 - arg is any argument
+
+NOTE: an alternate version exists. See Alternate code section below.
+
+## Try:
+
+```sh
+./plummer 01234567890876543210 xxx
+
+```
+
+### Alternate code:
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added an alternate
+version which uses `usleep()` so you can see what is happening with faster
+systems. To use:
+
+
+```sh
+make alt
+```
+
+Use `plummer.alt` as you would `plummer`.
+
+If you wish to change the time to sleep (default `200`) you can do so like:
+
+```sh
+make clobber CDEFINE="-DZ=50" alt
+```
+
+#### Try:
+
+```sh
+./plummer.alt xyzzyzzyx 5555
+```
+
+Thank you Cody!
 
 ### INABIAF - it's not a bug it's a feature :-)
 
@@ -41,32 +78,31 @@ specifies the number to start counting from and uses leading `0`s to
 indicate the number of digits, the second argument can be anything
 but must be present.
 
-Variable names are single characters chosen for their similarity to
-other characters (O for 0, l for 1, S for 5 in some fonts, and _
-for ...  well nothing really, but it is easy to miss).  To prevent
-the need for `strlen()`, the fact that argv is laid out sequentially
-is exploited (ie.  `argv[i + 1] == argv[i] + strlen(argv[i]) + 1`).
-This is not portable (by the books), but it seems to work
-everywhere I try (actually, for VMS, that only holds for `i > 1`).
-Also, I depend on the fact that a carriage return causes the line
-just written to be overwritten. `lint` (and most compilers) complain
-that there is no control path leading to a return from `main()`.  At
-125 characters, it still fits on a single line (for those of us who
-don't mind ruining our eyes with 132 column screens).
+Variable names are single characters chosen for their similarity to other
+characters (`O` for `0` (zero), `l` for `1` (one), `S` for `5` (five) in some
+fonts, and `_` for ...  well nothing really, but it is easy to miss).  To
+prevent the need for `strlen()`, the fact that argv is laid out sequentially is
+exploited (i.e.  `argv[i + 1] == argv[i] + strlen(argv[i]) + 1`).  This is not
+portable (by the books), but it seems to work everywhere I try (actually, for
+VMS, that only holds for `i > 1`).  Also, I depend on the fact that a carriage
+return causes the line just written to be overwritten. `lint` (and most
+compilers) complain that there is no control path leading to a return from
+`main()`.  At 125 characters, it still fits on a single line (for those of us
+who don't mind ruining our eyes with 132 column screens).
 
 The first statement points the base of `l` (the argument vector) to
 be the first argument by incrementing it.  It then assigns `O` to
 point to the character before the first character of the second
-argument which also happens to be the NULL termination of the first
+argument which also happens to be the NUL termination of the first
 argument.  `*O` gets a `\r` assigned to it.  Finally `0` is assigned to
 the first character of the second argument which has the effect of
-NULL terminating the first argument after the carriage return had
-removed its NULL termination.  I really tried to make the last part
+NUL terminating the first argument after the carriage return had
+removed its NUL termination.  I really tried to make the last part
 of that statement part of the original expression, but the best I
 could do was attach it with a comma (against the advice of K&R).
 The for loop runs the next for loop continuously (actually until
 the machine crashes or the user gets tired of seeing the
-counting).  The next for loop is the meat of the program.  In the
+counting). The next for loop is the meat of the program.  In the
 initialization statement, the string pointed to by `l` (the first
 argument containing the digits used for counting followed by a `\r`)
 is printed, and `_` is started at the least significant digit in the
