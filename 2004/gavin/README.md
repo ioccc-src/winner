@@ -25,7 +25,7 @@ su
 ```
 
 Make a floppy with an ext2 filesystem (`mke2fs /dev/fd0` replacing `fd0` with
-whatever the floppy device is!),  mount it under `/mnt/floppy`. Then:
+whatever the floppy device is!),  mount it under `/mnt/floppy` and then:
 
 
 ```sh
@@ -47,13 +47,13 @@ Move the window away from the corner.
 vi gavin.c
 ```
 
-Scroll the file with up-arrow and down-arrow
+Scroll up and down the file with up-arrow and down-arrow.
 
 ```sh
 sh
 ```
 
-Can have several shell windows:
+You can have several shell windows:
 
 ```sh
 vi README.md
@@ -61,6 +61,15 @@ vi README.md
 ```
 
 Press and hold any key.
+
+### Alternate method
+
+[Yusuke Endoh](/winners.html#Yusuke_Endoh)  provided the `kernel` and `fs.tar`
+files which can be used if you cannot normally use this entry. Instead of
+generating the files just use the files provided.
+
+Thank you Yusuke!
+
 
 ## Judges' remarks:
 
