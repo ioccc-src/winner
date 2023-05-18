@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-make clobber >/dev/null 2>&1
+make clobber all >/dev/null 2>&1
 
-if [[ $(make anonymous.ten >/dev/null 2>&1) ]]; then
+if [[ -f "anonymous.ten" ]]; then
 
     make anonymous 2>/dev/null
     echo "$ cp anonymous.ten anonymous.ten.bak" 1>&2
