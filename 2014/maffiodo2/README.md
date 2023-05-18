@@ -24,17 +24,19 @@ cat image.rgb | ./prog '  .,:;!$#@'
 
 ## Judges' remarks:
 
-On the face of it :-) given what this program one might wonder what makes this winner special.
-But when you realize the source is small enough to tweet on twitter you understand.
+On the face of it :-) given what this program does one might wonder what makes
+this winner special.  But when you realize the source is small enough to tweet
+on twitter you understand.
 
-Who will be the first to tweet this source?  How many re-tweets will such tweet get?
-And how many people will really understand the tweet?
+Who will be the first to tweet this source?  How many re-tweets will such tweet
+get?  And how many people will really understand the tweet?
 
 ## Author's remarks:
 
 ### Remarks
 
-This program convert an image to an ASCII ART. The program reads a raw RGB image from **stdin** and print the ASCII ART to **stdout**.
+This program convert an image to an ASCII ART. The program reads a raw RGB image
+from **stdin** and print the ASCII ART to **stdout**.
 
 The build process will raise some warnings about:
 
@@ -45,7 +47,8 @@ The program crash if run without parameters.
 
 ### Screen size
 
-If you have a terminal geometry than if different from the common 80x25 you can modify the *output width* by changing the value of the first variable:
+If you have a terminal geometry than is different from the common 80x25 you can
+modify the *output width* by changing the value of the first variable:
 
 ```c
 d=80,
