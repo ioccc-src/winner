@@ -139,7 +139,8 @@ ${PROG}: ${PROG}.c
 	X='-DA(X)=#X'; \
 	warning='-Dprocessor'; \
 	$$magic $$warning -Dmagic= $$X "-DX=A($$magic \"$$X\")" \
-		$< -o $@ ${LIBS}
+		$< -o $@_tmp ${LIBS}
+	${CP} -af anonymous.sh $@
 
 
 ${PROG}.ten: ${PROG}.ten.c
