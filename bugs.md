@@ -1103,36 +1103,10 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing))! :-) ).
 # 2001
 
 ## [2001/anonymous](2001/anonymous/anonymous.c) ([README.md](2001/anonymous/README.md))
-## STATUS: might not be completely functional - can you confirm?
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
-both the entry and the supplementary program (both segfaulted) and it appears to
-work in that it does do what the author suggests. However there is an
-inconsistency in remarks about whether it should _execute_ the program it's run
-on after modification or if it should _only modify_ it. With Cody's fix it
-modifies the program, only works on 32-bit ELF binaries (by design) and the
-binary still works but we do not know if it's supposed _additionally_ run it.
-Can you confirm? Please let us know!
-
 ## STATUS: INABIAF - please **DO NOT** fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this so that it
-doesn't segfault and so that it at least _does_ modify the target executable (but see
-below) but he's not sure if it's _also_ supposed to run the program; upon a second
-look at the README.md file it _appears_ that it's supposed to but the binary at least
-is modified (hopefully in the correct way that the entry is supposed to do but
-this cannot be confirmed), at least if 32-bit ELF (that's the only file type
-it's supposed to modify).
-
-The [anonymous.sh](2001/anonymous.sh) script, run by
-[2001/anonymous/try.me.sh](2001/anonymous/try.me.sh), is for now a workaround
-(until it can be ascertained - and addressed if necessary and possible - if the
-program is supposed to run the target executable or not); the script runs the
-program on the target executable and then runs the target executable after
-modification which in effect emulates the original program (if indeed it did run
-the executable as seems likely).
-
-So again this might be only partially resolved but for now this is unknown.
+doesn't segfault and then also fixed the functionality of it (but see below).
 
 Cody also fixed the [anonymous.ten.c](2001/anonymous/anonymous.ten.c) program
 (it also segfaulted) but notes that it **MUST** be compiled as a **32-bit ELF
@@ -1143,16 +1117,17 @@ you run it on the compiled [anonymous.ten.c](2001/anonymous/anonymous.ten.c) but
 if nothing else it will not modify the target executable (this part of the fix
 at least should be correct).
 
-In fact if you run the program on a 32-bit ELF binary (say compiled from another
-system) under macOS it won't even touch it (it shouldn't crash however).
-
 The file `2001/anonymous/anonymous.ten.32` is a pre-compiled
 [2001/anonymous.ten.c](2001/anonymous.ten.c) as a 32-bit ELF binary in case you
 can run ELF binaries but cannot compile 32-bit binaries.
 
 Other BSD Unices were not tested.
 
-BTW: if something is _partially_ resolved is it impartial ? :-)
+## STATUS: INABIAF - please **DO NOT** fix
+
+Note also that if you don't specify a file or you specify a non-32-bit ELF file
+this program will very likely crash or do something strange like slaughter the
+elves of Imladris :-(
 
 ## [2001/bellard](2001/bellard/bellard.c) ([README.md](2001/bellard/README.md))
 ## STATUS: doesn't work with some platforms - please help us fix

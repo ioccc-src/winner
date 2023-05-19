@@ -16,8 +16,9 @@ make
 ```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed both the
-supplementary program and the program itself (but for the program itself see
-[bugs.md](/bugs.md), both of which segfaulted. He managed to do this with linux
+supplementary program and the program itself (both of which segfaulted and once
+that was fixed only the binary was modified; it was not run but according to the
+author's remarks it should be executed). He managed to do this with linux
 but it will not work with macOS (see [bugs.md](/bugs.md) for why this is); this
 is not a bug but a feature inherent in what it does.
 
@@ -38,6 +39,12 @@ Change `3` in the call to `mmap()` to be `PROT_READ|PROT_WRITE`: just in case
 `PROT_READ|PROT_WRITE` does not equal 3 (though it seems to be equal in both
 macOS and linux).
 
+There was one other thing that had to be done though. Since the program used to
+recursively call (infinite recursion, seemingly) `main()` and since that cannot
+be done what had to be done is first call `munmap()` and `close()` (else one
+would get text file busy error) and then run `execv()` again like the function
+`pain()` (was in `main()`) did but with a slight change.
+
 NOTE: there might be educational value to see the progress of this fix; if you
 wish to see, try:
 
@@ -48,12 +55,17 @@ git diff c48629017117379a52b1a512ef8f2593ca9569c8..efdee208a2bc650256637b9357ddf
 git diff efdee208a2bc650256637b9357ddfd0de82d2f41..e9a3f77ea3b209e63ac3f9c06bb84ad86e5ea706 anonymous.c
 ```
 
-There's an another important point in [bugs.md](/bugs.md) about this entry,
-however, in that we're not sure if the entry was supposed to run the program or
-not as there is some inconsistency in the author's comments which we think might
-have been intentional.
-
 Thank you Cody for your assistance!
+
+### INABIAF - it's not a bug it's a feature! :-)
+
+If you do not specify a 32-bit binary as the arg of this program it will very
+likely crash or do something terribly wrong like slaughtering all the elves of
+Imladris! :-) so please don't do that :-(
+
+If the program cannot be run (for instance under macOS as it's an ELF file) then
+the program will touch the file but it won't run it; it'll silently fail to
+execute it.
 
 ### WARNING on note from the author
 
