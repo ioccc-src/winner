@@ -60,13 +60,12 @@ Thank you Cody for your assistance!
 
 ### INABIAF - it's not a bug it's a feature! :-)
 
-If you do not specify a 32-bit binary as the arg of this program it will very
-likely crash or do something terribly wrong like slaughtering all the elves of
-Imladris! :-) so please don't do that :-(
+If you do not specify a 32-bit ELF binary as the arg of this program it will
+very likely crash or do something terribly wrong like slaughtering all the elves
+of Imladris! :-) so please don't do that :-(
 
-If the program cannot be run (for instance under macOS as it's an ELF file) then
-the program will touch the file but it won't run it; it'll silently fail to
-execute it.
+If the program cannot be run (for instance under macOS as an ELF file) then
+the program will fail to execute it and might not even touch it.
 
 ### WARNING on note from the author
 
