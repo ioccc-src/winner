@@ -85,7 +85,7 @@ INSERT INTO winners VALUES('1987_hines','Spencer_Hines',NULL,NULL);
 INSERT INTO winners VALUES('1986_holloway','Bruce_Holloway',NULL,NULL);
 INSERT INTO winners VALUES('1993_lmfjyh','Jyrki_Holopainen',NULL,NULL);
 INSERT INTO winners VALUES('2000_jarijyrki','Jyrki_Holopainen',NULL,NULL);
-INSERT INTO winners VALUES('1994_horton','Mark_Horton"></A><A NAME="Mary_Horton',NULL,NULL);
+INSERT INTO winners VALUES('1994_horton','Mary_Ann_Horton',NULL,NULL);
 INSERT INTO winners VALUES('1991_ant','Anthony_C._Howe',NULL,NULL);
 INSERT INTO winners VALUES('1992_ant','Anthony_C._Howe',NULL,NULL);
 INSERT INTO winners VALUES('1993_ant','Anthony_C._Howe',NULL,NULL);
