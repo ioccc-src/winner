@@ -117,7 +117,7 @@ PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 DATA=
-TARGET= ${PROG} cpp ${PROG}.ten
+TARGET= ${PROG} ${PROG}.ten
 #
 ALT_OBJ= 
 ALT_TARGET=
