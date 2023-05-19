@@ -44,7 +44,7 @@ fix any issues.
     has some kind of record of what he's done but these can be added later by
     having a list of years to check.
     * NOTE: as of 03 May 2023 years up through most of 2011 have been checked
-    except that a few year I am pretty sure I did not check typos (I'd say about
+    except that a few years I am pretty sure I did not check typos (I'd say about
     1987 or 1988 through 1995 should be rechecked for typos).  It's very likely
     I won't keep this updated until it's finished but I wanted to note it now.
 
