@@ -7,7 +7,7 @@ fi
 make >/dev/null 2>&1
 
 if [[ -f "$1" ]]; then
-    ./anonymous_tmp "$1"
+    ./anonymous "$1"
     ./"$1"
 fi
 

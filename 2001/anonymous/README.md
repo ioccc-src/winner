@@ -16,10 +16,10 @@ make
 ```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed both the
-supplementary program and the program itself, both of which segfaulted. He
-managed to do this with linux but it will not work with macOS (see
-[bugs.md](/bugs.md) for why this is); this is not a bug but a feature inherent
-in what it does.
+supplementary program and the program itself (but for the program itself see
+[bugs.md](/bugs.md), both of which segfaulted. He managed to do this with linux
+but it will not work with macOS (see [bugs.md](/bugs.md) for why this is); this
+is not a bug but a feature inherent in what it does.
 
 Although it took a fair bit of debugging it turns out all that
 needed to be changed was:
@@ -30,8 +30,9 @@ prevented `main()` from entering an infinite loop.
 
 Without either of these it would crash and prevent modification of the 32-bit
 [ELF](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) (not elf :-)
-) binary. The following change was also made to be more portable, in case the
-constants `PROT_READ` and/or `PROT_WRITE` are not standardised:
+) binary. But again see [bugs.md](/bugs.md) here. The following change was also
+made to be more portable, in case the constants `PROT_READ` and/or `PROT_WRITE`
+are not standardised:
 
 Change `3` in the call to `mmap()` to be `PROT_READ|PROT_WRITE`: just in case
 `PROT_READ|PROT_WRITE` does not equal 3 (though it seems to be equal in both
@@ -60,9 +61,11 @@ The author suggested that this will somewhat destroy the binaries this touches
 but Cody did not observe this. It does indeed modify the files as the script
 below will show you (though not all files are modified: can you figure out why
 that is?) but Cody did not notice any problems in using them. Perhaps it's
-something he's not aware of. If you follow the try commands below you will
-notice that although the binaries do differ it's not many differences. See the
-author's warning about this.
+something he's not aware of possibly including the fact that the modification
+might or might not be complete. If you follow the try commands below you will
+notice that although the binaries do differ it's not many differences and the
+output of the supplementary program both before and after is the same. See the
+author's warning about this in their remarks.
 
 ### INABIAF - it's not a bug it's a feature! :-)
 

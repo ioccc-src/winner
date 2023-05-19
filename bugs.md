@@ -1114,23 +1114,45 @@ modifies the program, only works on 32-bit ELF binaries (by design) and the
 binary still works but we do not know if it's supposed _additionally_ run it.
 Can you confirm? Please let us know!
 
-
 ## STATUS: INABIAF - please **DO NOT** fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this so that it
-works (it segfaulted - but see above) in modern systems but he notes that the
-program [anonymous.ten.c](2001/anonymous/anonymous.ten.c) **MUST** be compiled
-as a 32-bit ELF binary! This is because the program only works on 32-bit ELF
-binaries. If you cannot use `-m32` on the files it acts on the program **will**
-almost certainly crash but in no case will it work properly.
+doesn't segfault and so that it at least _does_ modify the target executable (but see
+below) but he's not sure if it's _also_ supposed to run the program; upon a second
+look at the README.md file it _appears_ that it's supposed to but the binary at least
+is modified (hopefully in the correct way that the entry is supposed to do but
+this cannot be confirmed), at least if 32-bit ELF (that's the only file type
+it's supposed to modify).
 
-This means that for macOS it will not work. Why will this not work in macOS?
-Because Apple saw to it to make it very hard to compile 32-bit binaries (thanks
-Apple for ruining some IOCCC entries! :-) :-( ). This appears to be even harder
-with the Apple silicon chip. Thus this entry will not work with macOS unless you
-have an older, out of date version.
+The [anonymous.sh](2001/anonymous.sh) script, run by
+[2001/anonymous/try.me.sh](2001/anonymous/try.me.sh), is for now a workaround
+(until it can be ascertained - and addressed if necessary and possible - if the
+program is supposed to run the target executable or not); the script runs the
+program on the target executable and then runs the target executable after
+modification which in effect emulates the original program (if indeed it did run
+the executable as seems likely).
+
+So again this might be only partially resolved but for now this is unknown.
+
+Cody also fixed the [anonymous.ten.c](2001/anonymous/anonymous.ten.c) program
+(it also segfaulted) but notes that it **MUST** be compiled as a **32-bit ELF
+binary** so it will NOT work in macOS (for example); if you cannot use `-m32` or
+even if you can but it cannot compile as an ELF binary (not elf binary :-) )
+(but see below) then the `anonymous` program itself will very likely crash if
+you run it on the compiled [anonymous.ten.c](2001/anonymous/anonymous.ten.c) but
+if nothing else it will not modify the target executable (this part of the fix
+at least should be correct).
+
+In fact if you run the program on a 32-bit ELF binary (say compiled from another
+system) under macOS it won't even touch it (it shouldn't crash however).
+
+The file `2001/anonymous/anonymous.ten.32` is a pre-compiled
+[2001/anonymous.ten.c](2001/anonymous.ten.c) as a 32-bit ELF binary in case you
+can run ELF binaries but cannot compile 32-bit binaries.
 
 Other BSD Unices were not tested.
+
+BTW: if something is _partially_ resolved is it impartial ? :-)
 
 ## [2001/bellard](2001/bellard/bellard.c) ([README.md](2001/bellard/README.md))
 ## STATUS: doesn't work with some platforms - please help us fix
