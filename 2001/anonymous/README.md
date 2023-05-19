@@ -80,16 +80,6 @@ notice that although the binaries do differ it's not many differences and the
 output of the supplementary program both before and after is the same. See the
 author's warning about this in their remarks.
 
-### INABIAF - it's not a bug it's a feature! :-)
-
-This entry will not work on 64-bit binaries! The program itself can be compiled
-as 64-bit but the files it processes must be 32-bit ELF binaries. Not doing this
-will likely cause a crash or cause your computer to [halt and catch
-fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)! :-)
-
-This entry will also very likely crash if no arg is specified. It might do
-something funny if you run it on itself as well but see below :-)
-
 ## Try:
 
 ```sh
