@@ -117,9 +117,9 @@ PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 DATA=
-TARGET= ${PROG} ${PROG}.ten
+TARGET= ${PROG} cpp ${PROG}.ten
 #
-ALT_OBJ=
+ALT_OBJ= 
 ALT_TARGET=
 
 
@@ -139,8 +139,7 @@ ${PROG}: ${PROG}.c
 	X='-DA(X)=#X'; \
 	warning='-Dprocessor'; \
 	$$magic $$warning -Dmagic= $$X "-DX=A($$magic \"$$X\")" \
-		$< -o $@_tmp ${LIBS}
-	${CP} -af anonymous.sh $@
+		$< -o $@ ${LIBS}
 
 
 ${PROG}.ten: ${PROG}.ten.c
@@ -156,6 +155,7 @@ ${PROG}.ten: ${PROG}.ten.c
 	@echo "but running ${PROG} on the resulting binary will crash."
 	@echo
 	${CC} ${CFLAGS} -m32 $< -o $@ ${LIBS}
+
 
 # alternative executable
 #

@@ -16,10 +16,11 @@ make
 ```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed both the
-supplementary program and the program itself, both of which segfaulted. He
-managed to do this with linux but it will not work with macOS (see
-[bugs.md](/bugs.md) for why this is); this is not a bug but a feature inherent
-in what it does.
+supplementary program and the program itself (both of which segfaulted and once
+that was fixed only the binary was modified; it was not run but according to the
+author's remarks it should be executed). He managed to do this with linux
+but it will not work with macOS (see [bugs.md](/bugs.md) for why this is); this
+is not a bug but a feature inherent in what it does.
 
 Although it took a fair bit of debugging it turns out all that
 needed to be changed was:
@@ -30,12 +31,19 @@ prevented `main()` from entering an infinite loop.
 
 Without either of these it would crash and prevent modification of the 32-bit
 [ELF](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) (not elf :-)
-) binary. The following change was also made to be more portable, in case the
-constants `PROT_READ` and/or `PROT_WRITE` are not standardised:
+) binary. But again see [bugs.md](/bugs.md) here. The following change was also
+made to be more portable, in case the constants `PROT_READ` and/or `PROT_WRITE`
+are not standardised:
 
 Change `3` in the call to `mmap()` to be `PROT_READ|PROT_WRITE`: just in case
 `PROT_READ|PROT_WRITE` does not equal 3 (though it seems to be equal in both
 macOS and linux).
+
+There was one other thing that had to be done though. Since the program used to
+recursively call (infinite recursion, seemingly) `main()` and since that cannot
+be done what had to be done is first call `munmap()` and `close()` (else one
+would get text file busy error) and then run `execv()` again like the function
+`pain()` (was in `main()`) did but with a slight change.
 
 NOTE: there might be educational value to see the progress of this fix; if you
 wish to see, try:
@@ -45,14 +53,20 @@ git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..93aa8d79f208dcccc3c5a2370a727
 git diff 93aa8d79f208dcccc3c5a2370a727b5cf64e9c53..c48629017117379a52b1a512ef8f2593ca9569c8 anonymous.c
 git diff c48629017117379a52b1a512ef8f2593ca9569c8..efdee208a2bc650256637b9357ddfd0de82d2f41 anonymous.c
 git diff efdee208a2bc650256637b9357ddfd0de82d2f41..e9a3f77ea3b209e63ac3f9c06bb84ad86e5ea706 anonymous.c
+git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..2159caec4677e0f25ad704a74e04c8196fd6c343 anonymous.c
 ```
 
-There's an another important point in [bugs.md](/bugs.md) about this entry,
-however, in that we're not sure if the entry was supposed to run the program or
-not as there is some inconsistency in the author's comments which we think might
-have been intentional.
-
 Thank you Cody for your assistance!
+
+### INABIAF - it's not a bug it's a feature! :-)
+
+If you do not specify a 32-bit binary as the arg of this program it will very
+likely crash or do something terribly wrong like slaughtering all the elves of
+Imladris! :-) so please don't do that :-(
+
+If the program cannot be run (for instance under macOS as it's an ELF file) then
+the program will touch the file but it won't run it; it'll silently fail to
+execute it.
 
 ### WARNING on note from the author
 
@@ -60,9 +74,11 @@ The author suggested that this will somewhat destroy the binaries this touches
 but Cody did not observe this. It does indeed modify the files as the script
 below will show you (though not all files are modified: can you figure out why
 that is?) but Cody did not notice any problems in using them. Perhaps it's
-something he's not aware of. If you follow the try commands below you will
-notice that although the binaries do differ it's not many differences. See the
-author's warning about this.
+something he's not aware of possibly including the fact that the modification
+might or might not be complete. If you follow the try commands below you will
+notice that although the binaries do differ it's not many differences and the
+output of the supplementary program both before and after is the same. See the
+author's warning about this in their remarks.
 
 ### INABIAF - it's not a bug it's a feature! :-)
 

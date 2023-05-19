@@ -66,7 +66,11 @@ Press and hold any key.
 
 [Yusuke Endoh](/winners.html#Yusuke_Endoh)  provided the `kernel` and `fs.tar`
 files which can be used if you cannot normally use this entry. Instead of
-generating the files just use the files provided.
+generating the files just use the files provided, found under the [img/](img/)
+directory. Note that the `img/fs.tar` extracts into `fs/` so you will have to
+fix the tarball; this is done to prevent extraction from the entry directory
+overwriting the files and preventing `make clobber` from wiping some of them
+out.
 
 Thank you Yusuke!
 
