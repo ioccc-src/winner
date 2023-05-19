@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Wed  3 May 2023 14:57:29 UTC*
+*Last updated: Fri 19 May 2023 09:39:17 UTC*
 
 More things will likely be added over time and as items are done they _should
 be_ removed from the list IF AND ONLY IF (!!) we are certain it is done (many
@@ -55,3 +55,12 @@ only the years through 1986 are done. This should not take much time but I
 This will likely not be updated until after it's done (and when I remember to
 remove it - I expect that when I go for it I'll do it in one sitting or maybe a
 few sittings with a few brief breaks).
+
+- Verify that [2004/gavin](2004/gavin/)'s [img/fs.tar](2004/gavin/img/fs.tar)
+contains the same version of files as under [2004/gavin](2004/gavin/) itself.
+This should be verifiable by extracting the tarball in the entry's [img/](img/)
+subdirectory and then typing the below from the entry's main directory
+([2004/gavin](2004/gavin)), making sure no output is displayed:
+
+	diff -r . img/fs|grep -v 'Only in'
+

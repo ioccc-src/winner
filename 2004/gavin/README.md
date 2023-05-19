@@ -66,7 +66,8 @@ Press and hold any key.
 
 [Yusuke Endoh](/winners.html#Yusuke_Endoh)  provided the `kernel` and `fs.tar`
 files which can be used if you cannot normally use this entry. Instead of
-generating the files just use the files provided.
+generating the files just use the files provided, found under the [img/](img/)
+directory.
 
 Thank you Yusuke!
 
