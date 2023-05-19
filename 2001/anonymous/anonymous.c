@@ -5,8 +5,6 @@
 #include <stdlib.h>
 #include <strings.h>
 #include <sys/mman.h>
-#include <string.h>
-#include <errno.h>
 
 #define l int*
 #define F char
