@@ -22,12 +22,12 @@ author's remarks it should be executed). He managed to do this with linux
 but it will not work with macOS (see [bugs.md](/bugs.md) for why this is); this
 is not a bug but a feature inherent in what it does.
 
-Although it took a fair bit of debugging it turns out all that
-needed to be changed was:
+Although it took a fair bit of debugging it turns out all that had to change
+was:
 
-- `#include <sys/mman.h>` for `mmap()`.
-- have `main()` call another function which is the recursive function; this
-prevented `main()` from entering an infinite loop.
+- `#include <sys/mman.h>` for `mmap()` and `munmap()`.
+- have `main()` call another function which is no longer a recursive function;
+this prevented `main()` from entering an infinite recursive loop.
 
 Without either of these it would crash and prevent modification of the 32-bit
 [ELF](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) (not elf :-)
@@ -41,9 +41,13 @@ macOS and linux).
 
 There was one other thing that had to be done though. Since the program used to
 recursively call (infinite recursion, seemingly) `main()` and since that cannot
-be done what had to be done is first call `munmap()` and `close()` (else one
-would get text file busy error) and then run `execv()` again like the function
-`pain()` (was in `main()`) did but with a slight change.
+be done what had to be done instead is after the new function (`pain()` since it
+was a pain to fix :-) ) returns to first call `munmap()` and `close()` (else
+one would get text file busy error) and then the program can call `execv()` again like the
+function `pain()` (was in `main()`) did but with a slight change. See commit
+`2159caec4677e0f25ad704a74e04c8196fd6c343` for details. Notice that
+the location of the calls to `munmap()` and `close() followed by `execv()` do
+matter!
 
 NOTE: there might be educational value to see the progress of this fix; if you
 wish to see, try:
