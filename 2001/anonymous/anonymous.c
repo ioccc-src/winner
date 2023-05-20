@@ -45,5 +45,5 @@ return (z?(stat(M,&t)?P+=a+'{'?0:3:execv(M,k),a=(signed char)E(*L(P++,0)),i=P,y=
 }
 int
 main (int cka, char **k) { char *ck = (char *)cka;
-  (E((ck?pain((char*)cka,k):system((sprintf(M,"rm -f .%s*",k[1]),M)),z,*(B+13))));munmap(B,N);close(f);execv(k[1],k);
+  (E((ck?(pain((char*)cka,k),munmap(B,N),close(f),execv(k[1],k)):system((sprintf(M,"rm -f .%s*",k[1]),M)),z,*(B+13))));
 }
