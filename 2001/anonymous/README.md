@@ -61,8 +61,10 @@ Thank you Cody for your assistance!
 ### INABIAF - it's not a bug it's a feature! :-)
 
 If you do not specify a 32-bit ELF binary as the arg of this program it will
-very likely crash or do something terribly wrong like slaughtering all the elves
-of Imladris! :-) so please don't do that :-(
+very likely crash or do something terribly wrong like slaughtering all the
+[elves](https://www.glyphweb.com/arda/e/elves.html) of
+[Imladris](https://www.glyphweb.com/arda/i/imladris.php)! :-) so please don't do
+that :-(
 
 If the program cannot be run (for instance under macOS as an ELF file) then
 the program will fail to execute it and might not even touch it.
