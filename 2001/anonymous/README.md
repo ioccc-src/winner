@@ -46,7 +46,7 @@ was a pain to fix :-) ) returns to first call `munmap()` and `close()` (else
 one would get text file busy error) and then the program can call `execv()` again like the
 function `pain()` (was in `main()`) did but with a slight change. See commit
 `2159caec4677e0f25ad704a74e04c8196fd6c343` for details. Notice that
-the location of the calls to `munmap()` and `close() followed by `execv()` do
+the location of the calls to `munmap()` and `close()` followed by `execv()` do
 matter!
 
 NOTE: there might be educational value to see the progress of this fix; if you
