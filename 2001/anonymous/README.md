@@ -58,9 +58,35 @@ git diff 93aa8d79f208dcccc3c5a2370a727b5cf64e9c53..c48629017117379a52b1a512ef8f2
 git diff c48629017117379a52b1a512ef8f2593ca9569c8..efdee208a2bc650256637b9357ddfd0de82d2f41 anonymous.c
 git diff efdee208a2bc650256637b9357ddfd0de82d2f41..e9a3f77ea3b209e63ac3f9c06bb84ad86e5ea706 anonymous.c
 git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..2159caec4677e0f25ad704a74e04c8196fd6c343 anonymous.c
+git diff 2159caec4677e0f25ad704a74e04c8196fd6c343..4bc03de321612869aebf855850c6500df95cb6ef anonymous.c
+```
+
+Finally to see from start to finish:
+
+```sh
+git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..4bc03de321612869aebf855850c6500df95cb6ef anonymous.c
 ```
 
 Thank you Cody for your assistance!
+
+## Try:
+
+```sh
+./try.me.sh
+```
+
+What happens if the x86 program has already been modified by this program? The
+judges' remarks below might give you a hint!
+
+What happens if you try it on another file like [anonymous.c](anonymous.c)? Can
+you recompile it okay? What if you run it on `anonymous` itself? Can you run the
+program successfully after it without recompiling?
+
+
+## Judges' remarks:
+
+Is emulation the sincerest form of flattery?  This small program does
+quite a lot of bit twiddling.
 
 ### INABIAF - it's not a bug it's a feature! :-)
 
@@ -85,24 +111,6 @@ notice that although the binaries do differ it's not many differences and the
 output of the supplementary program both before and after is the same. See the
 author's warning about this in their remarks.
 
-## Try:
-
-```sh
-./try.me.sh
-```
-
-What happens if the x86 program has already been modified by this program? The
-judges' remarks below might give you a hint!
-
-What happens if you try it on another file like [anonymous.c](anonymous.c)? Can
-you recompile it okay? What if you run it on `anonymous` itself? Can you run the
-program successfully after it without recompiling?
-
-
-## Judges' remarks:
-
-Is emulation the sincerest form of flattery?  This small program does
-quite a lot of bit twiddling.
 
 ## Author's remarks:
 
