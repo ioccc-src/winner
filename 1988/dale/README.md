@@ -1,10 +1,6 @@
 # Best abuse of system calls
 
 Paul Dale  
-University of Queensland  
-Computer Science Dept  
-Dept of Computer Science  
-Uni of Qld, 4067  
 Australia  
 
 ## To build:
@@ -54,6 +50,7 @@ so Cody changed the lines to be in the form of:
 Thank you Cody for your assistance!
 
 
+
 ## Try:
 
 ```sh
@@ -63,6 +60,18 @@ Thank you Cody for your assistance!
 
 NOTE: in linux it might happen that core dumps are created when running this
 entry even though it works fine.
+
+### Alternate code
+
+If you have an old enough compiler you can try the original version in
+[dale.alt.c](dale.alt.c). To use:
+
+```sh
+make alt
+```
+
+Use `dale.alt` as you would `dale` above.
+
 
 ## Judges' remarks
 
