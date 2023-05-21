@@ -82,6 +82,8 @@ What happens if you try it on another file like [anonymous.c](anonymous.c)? Can
 you recompile it okay? What if you run it on `anonymous` itself? Can you run the
 program successfully after it without recompiling?
 
+NOTE: if the 32-bit version cannot be compiled the script will at least run the
+alternate version of the [anonymous.ten](anonymous.ten.c) program.
 
 ## Judges' remarks:
 
