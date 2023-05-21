@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-make clobber all >/dev/null 2>&1
+make clobber alt all >/dev/null 2>&1
 
 
 TARGET="anonymous.ten"
@@ -27,5 +27,8 @@ if [[ -f "$TARGET" ]]; then
     diff -s ten.txt ten.bak.txt
 else
     echo "cannot compile anonymous.ten.c as 32-bit, sorry."
-    exit 1
+    echo "will run 64-bit version directly."
+    sleep 3
+    echo "$ ./$TARGET.64"
+    ./"$TARGET".64
 fi
