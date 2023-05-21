@@ -715,6 +715,14 @@ this simply does not work with them. Can you help us?
 If not enough args are specified this program will likely crash or do something
 else. This should NOT be fixed.
 
+## [1993/lmfjyh](1993/lmfjyh/lmfjyh.c) ([README.md](1993/lmfjyh/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This entry relied on a bug in gcc that was fixed with gcc version 2.3.3. This
+cannot be fixed for modern systems as the bug is long gone.
+
+An alternate version, however, does exist. See the README.md file for details.
+
 
 # 1994
 

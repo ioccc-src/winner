@@ -111,8 +111,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -129,7 +129,8 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	@echo "NOTE: This will not compile when using modern compilers because"
 	@echo "it relies on a compiler bug which was fixed in gcc 2.3.3 (a very"
-	@echo "long time ago now)."
+	@echo "long time ago now). Try make alt for a version that works with gcc"
+	@echo ">=2.3.3."
 	${RM} -f \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
 	${CP} lmfjyh.c \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
 	${CC} ${CFLAGS} \
