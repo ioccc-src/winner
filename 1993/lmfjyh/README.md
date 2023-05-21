@@ -1,49 +1,56 @@
 # Most Versatile Source
 
 Jyrki Holopainen  
-Oy LM Ericsson Ab  
-SF-02420 Jorvas  
 Finland  
 
 ## To build:
 
 This entry will not compile with gcc < 2.3.3 as it relied on a bug which was
-fixed in gcc 2.3.3 which was fixed a very long time ago now. If you have such a
-compiler you can run `make all`.
+fixed in gcc 2.3.3 which was fixed a very long time ago now. There is an
+alternate version for [those of
+us](https://www.collinsdictionary.com/dictionary/english/everyone) with gcc >=
+2.3.3. See Alternate code section below for more details.
 
-**WARNING**: Trying to compile this entry without the affected gcc will also
-make a bogus file on your file system.  To delete it you can use the inode
-option `-inum` with `find` with the delete option after finding the inode with
-`ls -li` or else use a GUI to do it.  Should you wish to try compiling it you
-might see something like:
+If you have gcc < 2.3.3 you can build this entry like:
 
 ```sh
-$ make all
-NOTE: This will not compile when using modern compilers because
-it relies on a compiler bug which was fixed in gcc 2.3.3 (a very
-long time ago now).
-rm -f \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
-cp lmfjyh.c \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
-cc -std=gnu90 -Wall -Wextra -pedantic    -include stdio.h -O3 \
-	    \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c -o lmfjyh
-Undefined symbols for architecture arm64:
-  "_main", referenced from:
-     implicit entry/start for main executable
-ld: symbol(s) not found for architecture arm64
-clang: error: linker command failed with exit code 1 (use -v to see invocation)
-make: *** [lmfjyh] Error 1
+make all
 ```
-and the bogus file will be `";main(){puts("Hello World!");}char*C=".c`.
 
-For an explanation of why this is see the author's remarks.
+This will create a file called `";main(){puts("Hello World!");}char*C=".c` which
+would print `Hello World!` when compiled.
+
+For an explanation of why and how this works see the author's remarks. The gist
+of the entry itself, however, is the file name _itself **is** the code_.
+
+NOTE: we delete the bogus file whether or not the compilation succeeds.
+
+There is an alternate version which simply does what the program did with gcc <
+2.3.3.
+
 
 ## To run:
 
-If you have gcc < 2.3.3:
+If you have gcc < 2.3.3 (i.e. the entry can compile):
 
 ```sh
 ./lmfjyh
 ```
+
+### Alternate code
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added an alternate
+version which does what the program did with gcc < 2.3.3. To use:
+
+```sh
+make alt
+```
+
+Use `lmfjyh.alt` as you would `lmfjyh` above. Note that other code could also be
+done with this bug; see the author's remarks for more details.
+
+Thank you Cody!
+
 
 ## Judges' remarks:
     
@@ -106,7 +113,7 @@ megabyte of source code file can be compressed to 64 kilobytes.
 One might easily think that the program could be compressed to a
 single byte by writing a one character long preprocessor directive
 in the source file and defining the actual source code in the
-command line, eg. `cc hello.c -DX='main(){puts ...'`.  With this
+command line, e.g. `cc hello.c -DX='main(){puts ...'`.  With this
 method nothing is gained, since the compiling commands must be
 stored in a file, and that takes even more space than writing the
 code in a source file as presented in listing 1.
