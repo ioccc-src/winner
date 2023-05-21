@@ -67,12 +67,28 @@ Finally to see from start to finish:
 git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..4bc03de321612869aebf855850c6500df95cb6ef anonymous.c
 ```
 
+Cody also added a [program](anonymous.bed.c) like [anonymous.ten.c](anonymous.ten.c)
+[Ten Green Bottles](https://en.wikipedia.org/wiki/Ten_Green_Bottles) but which
+sings [Ten in the Bed](https://allnurseryrhymes.com/ten-in-the-bed/). Why? For
+fun and so that there's another program that is a bit different (it uses a `char
+*[]` array for example) that this program will still work on. To use:
+
+```sh
+make anonymous.bed # if able to use -m32
+./anonymous anonymous.bed
+
+make anonymous.bed.64 # if unable to use -m32
+./anonymous.bed.64
+```
+
 Thank you Cody for your assistance!
 
 ## Try:
 
 ```sh
 ./try.me.sh
+
+./anonymous anonymous.bed # if able to use -m32
 ```
 
 What happens if the x86 program has already been modified by this program? The

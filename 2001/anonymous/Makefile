@@ -117,7 +117,7 @@ PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 DATA=
-TARGET= ${PROG} ${PROG}.ten ${PROG}.ten.64
+TARGET= ${PROG} ${PROG}.ten ${PROG}.ten.64 ${PROG}.bed ${PROG}.bed.64
 #
 ALT_OBJ= ${PROG}.ten.64.o
 ALT_TARGET= ${PROG}.ten.64
@@ -150,7 +150,7 @@ ${PROG}.ten: ${PROG}.ten.c
 	@echo "If you want to use it where this is not possible e.g. with a Mac, say to"
 	@echo "use by itself, try:"
 	@echo
-	@echo "	    ${CC} $< -o $@"
+	@echo "	    make anonymous.ten.64"
 	@echo
 	@echo "but running ${PROG} on the resulting binary will crash."
 	@echo
@@ -161,6 +161,27 @@ ${PROG}.ten.64: ${PROG}.ten.c
 	@echo "this is because it works ONLY on 32-bit ELF binaries! This however at least"
 	@echo "lets you see the supplementary program in action."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
+${PROG}.bed: ${PROG}.bed.c
+	@echo "WARNING: ${PROG}.bed.c must be compiled as 32-bit to use with the entry itself;"
+	@echo "this is because the program works on 32-bit binaries. If you cannot use -m32 this"
+	@echo "will NOT work!"
+	@echo
+	@echo "If you want to use it where this is not possible e.g. with a Mac, say to"
+	@echo "use by itself, try:"
+	@echo
+	@echo "	    make anonymous.bed.64"
+	@echo
+	@echo "but running ${PROG} on the resulting binary will crash."
+	@echo
+	${CC} ${CFLAGS} -m32 $< -o $@ ${LIBS}
+
+${PROG}.bed.64: ${PROG}.bed.c
+	@echo "WARNING: the file created by this rule will NOT work with the entry itself;"
+	@echo "this is because it works ONLY on 32-bit ELF binaries! This however at least"
+	@echo "lets you see the supplementary program in action."
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
 
 # alternative executable
 #
