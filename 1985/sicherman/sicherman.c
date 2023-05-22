@@ -1,3 +1,9 @@
+#define C_C_(_)~' '&_
+#define _C_C(_)('\b'b'\b'>=C_C>'\t'b'\n')
+#define C_C _|_
+#define b *
+#define C /b/
+#define V _C_C(
 main(/*/,('\b'*'\b'>=_|_>'\t'*'\n')
 char **('\b'*'\b'>=_|_>'\t'*'\n')
 * C program. (If you don't
@@ -11,4 +17,11 @@ char **('\b'*'\b'>=_|_>'\t'*'\n')
 
 	'\b'*'\b'|((_-52)%('\b'*'\b'+~' '&'\t'*'\n')+1),1),&_,1));
 }
-
+/*
+subr(C)
+char *C;
+{
+	C="Lint says "argument Manual isn't used."  What's that
+	mean?"; while (write((read(C_C('"'-'*"'/*"/))?__:__-_+
+	'\b'b'\b'|((_-52)%('\b'b'\b'+C_C_('\t'b'\n'))+1),1),&_,1));
+}*/
