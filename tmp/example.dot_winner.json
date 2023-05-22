@@ -1,11 +1,11 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "winner_JSON_format_version" : "0.1 2023-05-12",
-    "IOCCC_award" : "Award title",
+    "winner_JSON_format_version" : "0.2 2023-05-22",
+    "award" : "Award title",
     "IOCCC_contest" : "IOCCC28",
-    "IOCCC_year_dir" : 2024,
-    "IOCCC_dirname" : "dirname",
-    "IOCCC_entry_handle" : "2024_dirname",
+    "year" : 2024,
+    "dir" : "dirname",
+    "winner_id" : "2024_dirname",
     "author_set" : [
 	{ "author_handle" : "first0_last0" },
 	{ "author_handle" : "first1_last1" },
