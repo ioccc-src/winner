@@ -17,11 +17,12 @@ char **('\b'*'\b'>=_|_>'\t'*'\n')
 
 	'\b'*'\b'|((_-52)%('\b'*'\b'+~' '&'\t'*'\n')+1),1),&_,1));
 }
-/*
+#if 0
 subr(C)
 char *C;
 {
 	C="Lint says "argument Manual isn't used."  What's that
-	mean?"; while (write((read(C_C('"'-'*"'/*"/))?__:__-_+
+	mean?"; while (write((read(C_C('"'-'/*"'/*"*/))?__:__-_+
 	'\b'b'\b'|((_-52)%('\b'b'\b'+C_C_('\t'b'\n'))+1),1),&_,1));
-}*/
+}
+#endif
