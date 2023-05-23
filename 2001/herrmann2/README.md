@@ -15,7 +15,10 @@ both 64-bit and 32-bit compiles by changing most of the `int`s (all but that in
 `main`) to `long`s. He also fixed it to compile with clang by changing the args
 of main to be `int` and `char **` respectively and changing specific references
 to the `argv` arg, casting to `long` (was `int` but the 64-bit fix requires
-`long`) which was its old type. Thank you Cody for your assistance!
+`long`) which was its old type. The original file, used for demonstration
+purposes, as well as if you want to see if your system works with the original
+code (in which case see below Alternate code section), is in
+[herrmann2.alt.c](herrmann2.alt.c). Thank you Cody for your assistance!
 
 
 ## To run:
@@ -63,7 +66,33 @@ and in [herrmann2.ioccc](herrmann2.ioccc) try:
 /n
 ```
 
-	
+### Also try:
+
+```sh
+./herrmann2 \
+'char*d,A[9876];e;b;*ad,a,c;  tw,ndr,T; wri; ;*h; _,ar  ;on;'\
+' ;l ;i(V)man,n    {-!har  ;   =Aadre(0,&e,o||n -- +,o4,=9,l=b=8,'\
+'!( te-*Aim)|(0~l),srand  (l),,!A,d=,b))&&+((A + te-A(&(*)=+ +95>'\
+'e?(*& c_*r=5,r+e-r +_:2-19<-+?|(d==d),!n ?*d| *( (char**)+V+), ('\
+'  +0,*d-7 ) -r+8)c:7:+++7+! r: and%9- 85! ()-(r+o):(+w,_+ A*(=er'\
+'i+(o)+b)),!write,(=_((-b+*h)(1,A+b,!!((((-+, a >T^l,( o-95=+))w?'\
+'++  &&r:b<<2+a +w) ((!main(n*n,V) , +-) ),l)),w= +T-->o +o+;{ &!'\
+'a;}return _+= ' < herrmann2.ioccc > herrmann2.orig.c && \
+diff herrmann2.alt.c herrmann2.orig.c && echo "output matches with original code"
+```
+
+
+### Alternate code:
+
+If you wish to use the original version that does not work for all platforms,
+you can make use of the [herrmann2.alt.c](herrmann2.alt.c) by running:
+
+```sh
+make alt
+```
+
+Use `herrmann2.alt` as you would `herrmann2` above.
+
 ## Judges' remarks:
 
 Be careful when staring at the source code - your eyes might cross, but
@@ -130,7 +159,7 @@ effect.
 ### Extra-Features
 
 - The program is able to handle all common kinds of line breaks:
-Unix, Dos and Mac. To get an output with a certain kind of line
+Unix, DOS and Mac. To get an output with a certain kind of line
 breaks, simply use the same kind of line breaks in the input
 file.
 
@@ -165,7 +194,7 @@ on normal-sized terminals.
 - The layout is of a completely new kind. And it describes what
 the program does more precisely than any comment could.
 
-- I don't think there has ever been an ioccc program with so
+- I don't think there has ever been an IOCCC program with so
 severe layout constraints. Once the 3D picture has been fixed,
 only a sixth of the characters can be chosen freely! (457 of
 1840, to be exact.) In contrast, in palindrome programs, for
@@ -185,7 +214,7 @@ stuff doing mostly nothing.)
 
 - Just in case this is not enough: Yes, the code itself is
 obfuscated: It's (almost) only one big expression, with deep
-nesting of () and ?:, and full of unnecessary operations which
+nesting of `()` and `?:`, and full of unnecessary operations which
 do not really help making it readable. And it contains a lot of
 "magic numbers". (My favourite is the "7" in line 15 (each
 one). Which is the other digit I could have put there instead,
@@ -232,7 +261,7 @@ functions appear as function pointers, and as such they are not
 generated implicitly. So the build script has to pass `-include
 ...` to gcc. A problem with this is that the complete path of
 the include files has to be provided. In the build script, I
-assume that the path is /usr/include, but this can easily be
+assume that the path is `/usr/include`, but this can easily be
 adapted.
 
 ## Copyright and CC BY-SA 4.0 License:
