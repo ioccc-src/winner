@@ -114,8 +114,8 @@ OBJ= ${PROG}.o
 DATA= herrmann2.cup herrmann2.ioccc
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -137,7 +137,7 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-${ALT_TARGET}: herrmann2.c
+${ALT_TARGET}: herrmann2.alt.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # data files
