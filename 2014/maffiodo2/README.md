@@ -25,8 +25,8 @@ cat image.rgb | ./prog '  .,:;!$#@'
 ## Judges' remarks:
 
 On the face of it :-) given what this program does one might wonder what makes
-this winner special.  But when you realize the source is small enough to tweet
-on twitter you understand.
+this winner special.  But when you realize the source is small enough for posting
+to social media that has a small size limit.
 
 Who will be the first to tweet this source?  How many re-tweets will such tweet
 get?  And how many people will really understand the tweet?

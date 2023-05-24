@@ -1,7 +1,6 @@
 # Most in need of whitespace
 
 Joshua Karns  
-Twitter: @jkarnss  
 
 ## To build:
 

@@ -1,7 +1,6 @@
 # Most likely to be awarded
 
 Marcin Ciura <mciura@gmail.com>  
-Twitter: @mciura  
 
 ## To build:
 

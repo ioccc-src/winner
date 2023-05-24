@@ -3,7 +3,6 @@
 Timo Poikola <ioccc2018@ig.fi>  
 <https://ig.fi/>  
 <https://ig.fi/other/ioccc>  
-Twitter: @timpoiko  
 
 ## To build:
 

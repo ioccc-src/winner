@@ -1,7 +1,6 @@
 # Best of show
 
 Christopher Mills <mrxo@sonic.net>  
-Twitter: @MisterXopher  
 
 ## To build:
 

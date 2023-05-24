@@ -71,6 +71,17 @@ A PC guy as expected.  What about that other Steve?
 Humm .. maybe there is a hidden reason he is leaving the late Micro$oft? :-)
 Why late?  See [this tweet](https://twitter.com/landonnoll/status/401582967123742720).
 
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+An important 2023 update to this historic note:
+
+The IOCCC no longer uses twitter.  Today the IOCCC uses Mastodon.
+For more information and to see our IOCCC Mastodon posts, see:
+
+    https://fosstodon.org/@ioccc
+
+End of important 2023 update to this historic note.
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
 So how does a one line C source know so much?  Hint: it doesn't.
 
 ## Author's remarks:

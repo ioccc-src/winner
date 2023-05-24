@@ -2,7 +2,6 @@
 
 Etienne Duble  
 <https://lig-membres.imag.fr/duble>  
-Twitter: @etienne_duble  
 
 ## To build:
 

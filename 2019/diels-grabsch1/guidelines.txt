@@ -42,6 +42,17 @@ ABOUT THIS FILE:
     Non-twitter users should force their browsers to reload the above URL
     to be sure they are seeing the most recent tweets.
 
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+An important 2023 update to this historic note:
+
+The IOCCC no longer uses twitter.  Today the IOCCC uses Mastodon.
+For more information and to see our IOCCC Mastodon posts, see:
+
+    https://fosstodon.org/@ioccc
+
+End of important 2023 update to this historic note.
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
     While we try to post use news at:
 
         http://www.ioccc.org/index.html#news
@@ -785,6 +796,17 @@ JUDGING PROCESS:
     often accept their suggestions/comments about our remarks as well.
     This is done prior to posting the winners to the wide world.
 
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+An important 2023 update to this historic note:
+
+The IOCCC no longer uses twitter.  Today the IOCCC uses Mastodon.
+For more information and to see our IOCCC Mastodon posts, see:
+
+    https://fosstodon.org/@ioccc
+
+End of important 2023 update to this historic note.
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
     Judging consists of a number of elimination rounds.  During a round,
     the collection of entries are divided into two roughly equal piles;
     the pile that advances on to the next round, and the pile that does
@@ -883,6 +905,17 @@ ANNOUNCEMENT OF WINNERS:
     Non-twitter users should force their browsers to reload the above URL
     to be sure they are seeing the most recent tweets.
 
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+An important 2023 update to this historic note:
+
+The IOCCC no longer uses twitter.  Today the IOCCC uses Mastodon.
+For more information and to see our IOCCC Mastodon posts, see:
+
+    https://fosstodon.org/@ioccc
+
+End of important 2023 update to this historic note.
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
     The judges will then post an initial announcement of who won, the name
     of their award, and a very brief description of the winning entry
     on the IOCCC web site:
@@ -909,6 +942,25 @@ ANNOUNCEMENT OF WINNERS:
         NOTE: previous winners are available at that URL
 
     We will also tweet, via @IOCCC, when the winning source is available.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+An important 2023 update to how winners are announced
+
+The IOCCC no longer uses twitter.  IOCCC winners will be announced
+by a git commit to the IOCCC winners repo:
+
+	https://github.com/ioccc-src/winner
+
+that, in turn, updates the offivial IOCCC web site:
+
+	https://www.ioccc.org/index.html
+
+In addition a note is posted to the IOCCC Mastodon account:
+
+    https://fosstodon.org/@ioccc
+
+End of important 2023 update to how winners are announced.
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
     It is pointless to ask the IOCCC judges how many entries we receive.
     Other government TLA or FLA snooping organizations are prohibited from
@@ -955,6 +1007,17 @@ FOR MORE INFORMATION:
 
     Non-twitter users should force their browsers to reload the above URL
     to be sure they are seeing the most recent tweets.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+An important 2023 update to this historic note:
+
+The IOCCC no longer uses twitter.  Today the IOCCC uses Mastodon.
+For more information and to see our IOCCC Mastodon posts, see:
+
+    https://fosstodon.org/@ioccc
+
+End of important 2023 update to this historic note.
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 Leonid A. Broukhis
 Simon Cooper

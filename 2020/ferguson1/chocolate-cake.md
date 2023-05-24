@@ -182,8 +182,8 @@ bowl can sit in.
 [picture]: cake.jpg
 [http://www.onlineconversion.com/cooking.htm]: http://www.onlineconversion.com/cooking.htm
 [IOCCC and chocolate]: http://www.gomc.com/firstpage/200103068.pdf
-[International Original Chocolate Cake Contest tweet]: https://twitter.com/ilyakurdyukov/status/1290520266087571458?s=20
-[fellow IOCCC winner Ilya Kurdyukov]: https://twitter.com/ilyakurdyukov
+[International Original Chocolate Cake Contest tweet]: https://web.archive.org/web/20200805053007/https://twitter.com/ilyakurdyukov/status/1290520266087571458
+[fellow IOCCC winner Ilya Kurdyukov GitHub]: https://github.com/ilyakurdyukov
 [GitHub]: https://github.com/ilyakurdyukov
 [IOCCC cake source image]: ioccc-cake.jpg
 [chocolates FAQ]: https://www.davidlebovitz.com/chocolate-faqs/

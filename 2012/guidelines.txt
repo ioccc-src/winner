@@ -44,6 +44,17 @@ ABOUT THIS FILE:
 |
 |   and reload that page every once in a while.
 
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+An important 2023 update to this historic note:
+
+The IOCCC no longer uses twitter.  Today the IOCCC uses Mastodon.
+For more information and to see our IOCCC Mastodon posts, see:
+
+    https://fosstodon.org/@ioccc
+
+End of important 2023 update to this historic note.
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
 |   WHAT'S NEW IN 2012:
 
 |   The contest runs from 2012-Aug-15 3:14:15 UTC to 2012-Sep-14 9:26:53 UTC.
@@ -631,6 +642,17 @@ ANNOUNCEMENT OF WINNERS:
 |   of their award, and a very brief description of the winning entry
 |   from the @IOCCC twitter handle.
 
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+An important 2023 update to this historic note:
+
+The IOCCC no longer uses twitter.  Today the IOCCC uses Mastodon.
+For more information and to see our IOCCC Mastodon posts, see:
+
+    https://fosstodon.org/@ioccc
+
+End of important 2023 update to this historic note.
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
     The judges will then post an initial announcement of who won, the name
     of their award, and a very brief description of the winning entry
     on the IOCCC web site:
@@ -658,6 +680,25 @@ ANNOUNCEMENT OF WINNERS:
 
     We will submit a story announcing the availability of the winners
     to /. at the same time.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+An important 2023 update to how winners are announced
+
+The IOCCC no longer uses twitter.  IOCCC winners will be announced
+by a git commit to the IOCCC winners repo:
+
+	https://github.com/ioccc-src/winner
+
+that, in turn, updates the offivial IOCCC web site:
+
+	https://www.ioccc.org/index.html
+
+In addition a note is posted to the IOCCC Mastodon account:
+
+    https://fosstodon.org/@ioccc
+
+End of important 2023 update to how winners are announced.
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 |   Don't ask us how many non-winning entries we receive.
 

@@ -2,7 +2,6 @@
 
 Timo Poikola  
 <https://ig.fi/other/ioccc>  
-Twitter: @timpoiko  
 
 ## To build:
 

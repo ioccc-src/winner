@@ -1,7 +1,6 @@
 # Most connected
 
 Scott Vokes  
-Twitter: @silentbicycle  
 
 ## To build:
 

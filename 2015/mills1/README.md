@@ -1,7 +1,6 @@
 # "For the Birds!" Award
 
 Chris Mills  
-Twitter: @MisterXopher  
 
 ## To build:
 

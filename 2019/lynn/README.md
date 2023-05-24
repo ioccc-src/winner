@@ -2,7 +2,6 @@
 
 Ben Lynn
 <https://crypto.stanford.edu/~blynn/>
-Twitter: @bmxlynn
 
 ## To build:
 

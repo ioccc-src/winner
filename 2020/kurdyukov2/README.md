@@ -2,7 +2,6 @@
 
 Ilya Kurdyukov  
 <https://github.com/ilyakurdyukov>  
-Twitter: @ilyakurdyukov  
 
 ## To build:
 

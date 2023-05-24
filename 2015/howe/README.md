@@ -3,7 +3,6 @@
 Anthony Howe <achowe@snert.com>  
 Montreal, Quebec, Canada  
 <http://www.snert.com/>  
-Twitter: @SirWumpus  
 
 ## To build:
 

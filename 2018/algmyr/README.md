@@ -1,7 +1,6 @@
 # Most cacophonic
 
 Anton Älgmyr  
-Twitter: @aalgmyr  
 
 ## To build:
 

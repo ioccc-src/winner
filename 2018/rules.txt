@@ -270,6 +270,17 @@ FOR MORE INFORMATION:
     Non-twitter users should force their browsers to reload the above URL
     to be sure they are seeing the most recent tweets.
 
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+An important 2023 update to this historic note:
+
+The IOCCC no longer uses twitter.  Today the IOCCC uses Mastodon.
+For more information and to see our IOCCC Mastodon posts, see:
+
+    https://fosstodon.org/@ioccc
+
+End of important 2023 update to this historic note.
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
 Leonid A. Broukhis
 Simon Cooper
 chongo (Landon Curt Noll) /\cc/\

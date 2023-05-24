@@ -5,7 +5,6 @@ Yusuke Endoh
 Mastodon: [@mame@ruby.social](https://ruby.social/@mame)  
 
 Someone Anonymous  
-Twitter: @hirekoke  
 
 ## To build:
 

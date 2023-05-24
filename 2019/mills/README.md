@@ -1,7 +1,6 @@
 # Most in need to be tweeted
 
 Christopher Mills  
-Twitter: @MisterXopher  
 
 ## To build:
 

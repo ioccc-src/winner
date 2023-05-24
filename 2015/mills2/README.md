@@ -1,7 +1,6 @@
 # Most Compact
 
     Chris Mills  
-    Twitter: @MisterXopher  
 
 ## To build:
 

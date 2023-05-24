@@ -2,7 +2,6 @@
 
 Dave Burton
 <http://snox.net/ioccc>
-Twitter: @lv2jmp
 
 ## To build:
 
