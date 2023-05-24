@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Fri 19 May 2023 09:39:17 UTC*
+*Last updated: Wed 24 May 2023 12:35:37 UTC*
 
 More things will likely be added over time and as items are done they _should
 be_ removed from the list IF AND ONLY IF (!!) we are certain it is done (many
@@ -64,3 +64,6 @@ subdirectory and then typing the below from the entry's main directory
 
 	diff -r . img/fs|grep -v 'Only in'
 
+- Try and see if I (Cody) can make [1985/sicherman](1985/sicherman/sicherman.c)
+even more like its original form. I have some ideas here but it might involve
+some discussion too.
