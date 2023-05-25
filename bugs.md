@@ -1581,19 +1581,24 @@ dimensions. Try `100 100 100` for instance and see what happens!
 ## [2005/giljade](2005/giljade/giljade.c) ([README.md](2005/giljade/README.md))
 ## STATUS: known bug - please help us fix
 
-Landon Curt Noll fixed this entry to work (or at least compile) with clang by
-changing the first arg to be an `int` and the second arg to be a `char **`. This
-is important because of clang's defect requiring args to be one type only.
+This is currently for the [alt version](2005/giljade/giljade.alt.c) of the code:
+due to clang's defect where it requires args of main() to be of a specific type
+the code had to be changed. However when this happens the code no longer works
+properly. [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the
+entry to work itself but Landon made the original alt version. This also however
+did not work due to some other issues that had to be worked out.
 
-This did not completely fix the problem for the program however.
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) observed that it at
-that point it had to be compiled with `-m32` which is not possible in modern
-macOS. It also cannot have optimisation enabled though with the fix below this
-is no longer certain either way.
+First the optimisation had to be disabled. Second is that for this to do
+anything (except perhaps crash .. I (Cody) cannot recall now exactly) in 64-bit
+systems (and also 32-bit compilation via `-m32`) the `long*E` had to be changed
+to `int*E`. These changes let it work properly for compilers that do not have
+the defect described above but then there is clang.
 
-Cody fixed it so that it works in 64-bit but the clang compilation fix does
-break something in the entry, specifically that the self-test feature of the
-program no longer works.
+At first we had the clang fix be the [giljade.c](2005/giljade/giljade.c) file
+but since it does not fully work we for now have swapped the alt and the
+original until such a time that it can be fixed for clang too. The below
+describes the problem with the alt version, that which will only partially work
+with clang.
 
 One is supposed to be able to do:
 
@@ -1603,50 +1608,76 @@ One is supposed to be able to do:
 ```
 
 and see all layouts compile without error. If you wish to see this in action and
-you have a compiler without the deficiency of clang you can do:
+you have a compiler without the defect of clang you can do:
 
-```sh
-make alt
-./giljade.alt > out
-./giljade out
+
+But if you try this with the alt code we run into some problems depending on
+what `cc` is in the system. In macOS it's clang but in linux it's probably gcc.
+Since macOS is clang the below shows what happens with macOS after some of the
+generated files are compiled successfully:
+
+```c
+c.c:74:53: error: expected expression
+T;*R=M;*_++=10;F( R=D;putchar(*R)&& _>++R;);}}};O-b*/
+                                                    ^
+c.c:76:72: error: expected expression
+
+                                                                       ^
+c.c:76:72: error: expected '}'
+c.c:50:72: note: to match this '{'
+N,B+B[h],16));h=B [h]+4);B[h]||(B[h ]=N-B,N=N+6);}main(int Ua,char**wa){
+                                                                       ^
+```
+
+The end of each file should actually look something like:
+
+
+```c
+*/>++R;);}}};O-b- f-u-s-c-a-t-e;}/*.*dbhn.Lhnd.$d:rdd .,n.,d.$d,$dp.$r>
+*..*b.b:bb.b.b.,b *.":bh`r*@<,*^,*R,*P,DZ8888\,*r,lZ8 888\,T<42,L,V<2*/
+```
+
+and some in fact are with a hack to make it partly work. What is this hack? Take
+a look at the comment in the code:
+
+```c
+/*echo/Line/%d;sed/-n/-e/ %d,%dp/%s/|sed*/
+/*-e/ 's,intUa,int/ Ua,g'>c.c;cc/c.c/-Wno-implicit-function-declaration /-c*/
 
 ```
 
-(You don't need to use `giljade.alt` to test compile but the alt program
-currently needs to be used for generating the output.)
+That is actually called via `system()`. But if you observe in
+[giljade.c](2005/giljade/giljade.c) the comment is quite different being just:
 
-But the question is can it be fixed for clang. If you have a fix we welcome your
-help! Believe it or not this appears in part to be due to more than two spaces in
-the program except in the places where the original code has them. This however
-does not seem to be the full story.
-
-In order for the program (compiled as 64-bit) to output anything at all the
-variable `E` must be an `int *` not a `long *`. However the change that allows
-clang to compile it causes the output to not have spaces where necessary to
-successfully compile the generated output. There was another issue with clang in
-that a warning is triggered by default but passing the correct `-Wno-` option
-solves that problem.
-
-A useful thing to observe is the comment that looks like:
 
 ```c
 /*echo/Line/%d;sed/-n/-e/ %d,%dp/%s>*/
-/*c.c;cc/c.c/-Wno-implicit-function-declaration /-c*/
+/*c.c;cc/c.c /-c*/
 ```
 
-It should be noted that this command, with the comment chars stripped and the
-appropriate values substituted, is executed via `system()` which then prints out
-the right lines.
+Why? Because in some platforms at least clang defaults to `-Werror` for some
+warnings: that's why the disabling of the warning in particular. But the change
+to make it compile with clang changed the output generated to merge the `int`
+and the arg in `main()` which is of course a big problem. Thus the additional
+`sed` command fixes this problem but somewhere in the process some of the
+generated code fails.
 
-Nevertheless the change for `clang` breaks the output. How? Observe the relevant
-part:
+What might the translation of the comment end up being? Here's an example:
 
-```c
-intmain(intUa/* */,char**wa)
+```
+system("  echo Line 2;sed -n -e 2,77p out>    c.c;cc c.c -c  ");
 ```
 
-No space between the `int` and the other parts. This causes different
-compilation errors with clang and gcc.
+But of course the range of lines to print changes successively as the program
+goes through the file.
+
+Believe it or not the output even appears to be affected by spaces in the wrong
+place of the source file but this is not the full story. Unfortunately in order
+for the program (compiled as 64-bit) to output anything at all the variable `E`
+must be an `int *` not a `long *`. However the change that allows clang to
+compile it causes the output to not have spaces where necessary to successfully
+compile the generated output which is why the extra `sed` command shown above
+(which has a special way to input spaces). But it can show up in other ways too.
 
 Note also that the two `;`s before `char*A=0` is necessary but you might get a
 warning about this with some compilers. If it's removed you'll see something
@@ -1656,21 +1687,11 @@ like:
 sh: -c: line 0: `  echo Line 2;sed -n -e 2,77p out>    c.c;cc c.c -Wno-implicit-function-declaration -c  ;char A=0, _, R, Q,D[9999], r,l[9999],T=42,M,V=32;int E,k[9999],B[1<<+21], N=B+1234567,q=0,h=3,j=2,O,b,f,u,s,c,a,t,e,d;C(){F(h=N[3];(B[h]&&+memcmp(N,B+B[h],16));h=B[h]+4);B[h]||(B[h]=N-B,N=N+6);}intmain(intUa,char  wa){char U=Ua;int  w=wa'
 ```
 
-when running the program on its output. Observe there too that the `char **` and
-`char *` have become just `char`s! With the two `;`s this is not a problem. What
-is a problem is it still does not compile, giving the errors:
+or so, depending on the comment, when running the program on its output.
 
-```c
-c.c:52:44: error: expected identifier
-4);B[h]||(B[h]=N- B,N=N+6);}intmain (intUa,char**wa){char*U=Ua;int**w/*
-                                           ^
-c.c:52:61: error: use of undeclared identifier 'Ua'
-4);B[h]||(B[h]=N- B,N=N+6);}intmain (intUa,char**wa){char*U=Ua;int**w/*
-                                                            ^
-c.c:53:4: error: use of undeclared identifier 'wa'
-*/=wa;;F(_=A;*_;_ ++)10-*_&&*_-V&&( *_-92)&&(k[q]=isalnum(l[q]=*_),q++)
-   ^
-```
+Observe too that the `*` part of pointers have been removed! You also see the
+merge of `int` and `Ua` as noted earlier. With the two `;`s this is not a
+problem.
 
 
 Cody will look at this all later on.

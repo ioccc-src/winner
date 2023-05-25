@@ -134,6 +134,8 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo "NOTE: this version requires non-standard args to main() and will fail with"
+	@echo "some compilers like clang. Try make alt for such compilers."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
