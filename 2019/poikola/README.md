@@ -194,7 +194,7 @@ arrays, so I did it.
 
 ### Other stuff
 
-[Cody](/winners.html#Cody_Boone_Ferguson): I really like that you enjoyed my
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson): I really like that you enjoyed my
 previous entry. I hope that you will like this entry too.  Because I did not
 want to give too many clues to [the Judges](/judges.html), I tried to write this
 entry in a different way than [Most Stellar](/2018/poikola/prog.c), but in this
