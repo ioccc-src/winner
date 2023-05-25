@@ -19,21 +19,21 @@ make
 supplementary program and the program itself (both of which segfaulted and once
 that was fixed only the binary was modified; it was not run but according to the
 author's remarks it should be executed). He managed to do this with linux
-but it will not work with macOS (see [bugs.md](/bugs.md) for why this is); this
-is not a bug but a feature inherent in what it does.
+but it will not work with macOS (see [bugs.md](/bugs.md) for why this is); _this
+is not a bug, it's a feature_ inherent in what it does!
 
-Although it took a fair bit of debugging it turns out all that had to change
-was:
+The following had to be done in order to get this to work:
 
 - `#include <sys/mman.h>` for `mmap()` and `munmap()`.
 - have `main()` call another function which is no longer a recursive function;
 this prevented `main()` from entering an infinite recursive loop.
 
 Without either of these it would crash and prevent modification of the 32-bit
-[ELF](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) (not elf :-)
-) binary. But again see [bugs.md](/bugs.md) here. The following change was also
-made to be more portable, in case the constants `PROT_READ` and/or `PROT_WRITE`
-are not standardised:
+[ELF](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) (not elf :-) )
+binary. But again see [bugs.md](/bugs.md) here.
+
+The following change was also made to be more portable, in case the constants
+`PROT_READ` and/or `PROT_WRITE` are not standardised:
 
 Change `3` in the call to `mmap()` to be `PROT_READ|PROT_WRITE`: just in case
 `PROT_READ|PROT_WRITE` does not equal 3 (though it seems to be equal in both
@@ -42,12 +42,13 @@ macOS and linux).
 There was one other thing that had to be done though. Since the program used to
 recursively call (infinite recursion, seemingly) `main()` and since that cannot
 be done what had to be done instead is after the new function (`pain()` since it
-was a pain to fix :-) ) returns to first call `munmap()` and `close()` (else
-one would get text file busy error) and then the program can call `execv()` again like the
-function `pain()` (was in `main()`) did but with a slight change. See commit
-`2159caec4677e0f25ad704a74e04c8196fd6c343` for details. Notice that
-the location of the calls to `munmap()` and `close()` followed by `execv()` do
-matter!
+was a pain to fix :-) ) returns to first call `munmap()` and `close()` (else one
+would get text file busy error) and then the program can call `execv()` again
+like the function `pain()` (was in `main()`) did but with a slight change. See
+commit `2159caec4677e0f25ad704a74e04c8196fd6c343` for more details.
+
+Notice that the location of the calls to `munmap()` and `close()` followed by
+`execv()` _does matter_!
 
 NOTE: there might be educational value to see the progress of this fix; if you
 wish to see, try:
