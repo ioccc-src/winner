@@ -1581,16 +1581,19 @@ dimensions. Try `100 100 100` for instance and see what happens!
 ## [2005/giljade](2005/giljade/giljade.c) ([README.md](2005/giljade/README.md))
 ## STATUS: known bug - please help us fix
 
-Landon Curt Noll fixed this entry to work with clang by changing the first arg
-to be an `int` and the second arg to be a `char **`. This is important because
-of clang's deficiency requiring args to be one type only.
+Landon Curt Noll fixed this entry to work (or at least compile) with clang by
+changing the first arg to be an `int` and the second arg to be a `char **`. This
+is important because of clang's defect requiring args to be one type only.
 
 This did not completely fix the problem for the program however.
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) observed that it has to
-be compiled with `-m32` which is not possible in modern macOS. It also cannot
-have the compiler optimiser enabled. Cody fixed it so that it works in 64-bit
-but the clang fix does break something in the entry, specifically that the
-self-test feature of the program no longer works.
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) observed that it at
+that point it had to be compiled with `-m32` which is not possible in modern
+macOS. It also cannot have optimisation enabled though with the fix below this
+is no longer certain either way.
+
+Cody fixed it so that it works in 64-bit but the clang compilation fix does
+break something in the entry, specifically that the self-test feature of the
+program no longer works.
 
 One is supposed to be able to do:
 
@@ -1609,20 +1612,75 @@ make alt
 
 ```
 
-(You don't need to use `giljade.alt` to test compile - it's the output of the
-program that's the actual problem.)
+(You don't need to use `giljade.alt` to test compile but the alt program
+currently needs to be used for generating the output.)
 
-But the issue is can it be fixed for clang. If you have a fix we welcome your
+But the question is can it be fixed for clang. If you have a fix we welcome your
 help! Believe it or not this appears in part to be due to more than two spaces in
 the program except in the places where the original code has them. This however
-does not seem to be the full story. Cody probably will look at this again but
-for now we note this problem here.
+does not seem to be the full story.
+
+In order for the program (compiled as 64-bit) to output anything at all the
+variable `E` must be an `int *` not a `long *`. However the change that allows
+clang to compile it causes the output to not have spaces where necessary to
+successfully compile the generated output. There was another issue with clang in
+that a warning is triggered by default but passing the correct `-Wno-` option
+solves that problem.
+
+A useful thing to observe is the comment that looks like:
+
+```c
+/*echo/Line/%d;sed/-n/-e/ %d,%dp/%s>*/
+/*c.c;cc/c.c/-Wno-implicit-function-declaration /-c*/
+```
+
+It should be noted that this command, with the comment chars stripped and the
+appropriate values substituted, is executed via `system()` which then prints out
+the right lines.
+
+Nevertheless the change for `clang` breaks the output. How? Observe the relevant
+part:
+
+```c
+intmain(intUa/* */,char**wa)
+```
+
+No space between the `int` and the other parts. This causes different
+compilation errors with clang and gcc.
+
+Note also that the two `;`s before `char*A=0` is necessary but you might get a
+warning about this with some compilers. If it's removed you'll see something
+like:
+
+```sh
+sh: -c: line 0: `  echo Line 2;sed -n -e 2,77p out>    c.c;cc c.c -Wno-implicit-function-declaration -c  ;char A=0, _, R, Q,D[9999], r,l[9999],T=42,M,V=32;int E,k[9999],B[1<<+21], N=B+1234567,q=0,h=3,j=2,O,b,f,u,s,c,a,t,e,d;C(){F(h=N[3];(B[h]&&+memcmp(N,B+B[h],16));h=B[h]+4);B[h]||(B[h]=N-B,N=N+6);}intmain(intUa,char  wa){char U=Ua;int  w=wa'
+```
+
+when running the program on its output. Observe there too that the `char **` and
+`char *` have become just `char`s! With the two `;`s this is not a problem. What
+is a problem is it still does not compile, giving the errors:
+
+```c
+c.c:52:44: error: expected identifier
+4);B[h]||(B[h]=N- B,N=N+6);}intmain (intUa,char**wa){char*U=Ua;int**w/*
+                                           ^
+c.c:52:61: error: use of undeclared identifier 'Ua'
+4);B[h]||(B[h]=N- B,N=N+6);}intmain (intUa,char**wa){char*U=Ua;int**w/*
+                                                            ^
+c.c:53:4: error: use of undeclared identifier 'wa'
+*/=wa;;F(_=A;*_;_ ++)10-*_&&*_-V&&( *_-92)&&(k[q]=isalnum(l[q]=*_),q++)
+   ^
+```
+
+
+Cody will look at this all later on.
 
 ## STATUS: INABIAF - please **DO NOT** fix
 
 It also will very likely segfault or do something strange if the source code
 does not exist.
 
+This entry requires that `sed` and `cc` are in the path.
 
 ## [2005/mynx](2005/mynx/mynx.c) ([README.md](2005/mynx/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix

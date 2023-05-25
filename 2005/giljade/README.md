@@ -16,26 +16,29 @@ make
 ./giljade
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for modern
-systems. The problem that was showing up is that with either optimising or
-anything but 32-bit was used it would not work. The optimising cannot be used
-still but it now works with both 32-bit and 64-bit. The problem was the size of
-`int` and `long` being different now. Instead of `long *E` it is now `int *E`.
-This solves the problem for both 32-bit and 64-bit as long as optimising is
-disabled. Tested under linux (32-bit, 64-bit) and macOS (arm64). Thank you Cody
-for your assistance!
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) partly (see below)
+fixed this for modern systems. The problem that was showing up is that with
+either optimising or anything but 32-bit was used it would not work. The
+optimising cannot be used still but it now works with both 32-bit and 64-bit.
+The problem was the size of `int` and `long` being different now. Instead of
+`long *E` it is now `int *E`.  This solves the problem for both 32-bit and
+64-bit as long as optimising is disabled. Tested under linux (32-bit, 64-bit)
+and macOS (arm64). Thank you Cody for your assistance!
 
 NOTE: the self-test feature no longer works due to the fix for clang (which
 requires the first arg of `main()` to be an `int` and the second arg to be `char
 **`). Believe it having more than two spaces in the code, except where the
-original code has them, appears to be part of the problem but it's not the full
-story. If you have a compiler that doesn't have this deficiency (e.g.  gcc) you
-can use the alternate code described below.
+original code has them, might be part of the problem but it's not the full
+story. If you have a compiler that doesn't have this defect (e.g.  gcc) you
+can use the alternate code described below. See also [bugs.md](/bugs.md).
+
 
 ### INABIAF - it's not a bug it's a feature! :-)
 
 If the program source file is not lying in the same directory this program will
 very likely crash or do something strange.
+
+This entry requires that both `sed` and `cc` are in the path.
 
 ## Try:
 

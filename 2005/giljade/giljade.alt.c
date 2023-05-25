@@ -12,7 +12,7 @@
 ),l)u=u>>5-m &u;s=u&E[3-l];I(t(m),3-l) s=(u)a&*E;I\
 (t(m),(0));; /*echo/Line/%d;sed/-n/-e/ %d,%dp/%s>*/
 /*c.c;cc/c.c /-c*/;;char*A=0,*_,*R,*Q, D[9999],*r,l
-[9999],T=42, M,V=32;long*E,k[9999],B[1 <<+21],*N=B+
+[9999],T=42, M,V=32;int*E,k[9999],B[1 <<+21],*N=B+
 1234567,q=0, h=3,j=2,O,b,f,u,s,c,a,t,e ,d;C(){F(h=N
 [3];(B[h]&&+ memcmp(N,B+B[h],16));h=B[ h]+4);B[h]||
 (B[h]=N-B,N= N+6);}main(char*U,int*w[] ){;;F(_=A=D+
