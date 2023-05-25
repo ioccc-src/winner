@@ -182,16 +182,16 @@ maxu jze ydq ys.
 [gmnyhqv]: wltp.xud
 [gzhk://qha.gumehrzfisccunmp.lxk/qjhlhoe.nox]: ufct://mxv.dkwwxlpuaonoeyzg.mpn/xhsgnaa.csw
 [QNWDJ huv wdagtgyxt]: lnzs://nkb.mrvw.hqc/dmdeguynf/200103068.ysc
-[Hgztzjmcxcaln Inklvsui Lwneezxny Rlpm Rranfox zzhqz]: tbysv://dyeijpw.nft/ydzoncmhnjogx/yryamb/1290520266087571458?q=20
-[snrtup OLUXG ztspws Qazd Qmyfptfrx]: wnaai://qgjujmx.jcw/muwuaplyordmx
-[MghBmi]: ibzej://lwcikt.rhz/njmyptjkmjewl
-[RLRTF vrin qkbqmb lbxtb]: jntez-qfbw.eub
-[uvxluwnyue NKD]: lfqrh://fly.yyuhbzlydnfbj.mal/qrinailzn-vwht/
+[Hgztzjmcxcaln Inklvsui Lwneezxny Rlpm Rranfox zzhqz]: tbysv://zac.dhkplaq.ntv/ujl/20200805053007/zoihe://unrrgfy.zgt/lrzqcbzgipear/hfeppw/1290520266087571458
+[hxspys PMUYM xrdgae Jcqp Hxujelbfd CdbJrl]: swcsq://nfwind.nad/wstcgdswfwpzj
+[ZkoUjr]: udcvo://hgrzdw.zkp/avurdvxwccqhq
+[TVRIB tugl kwocpl xaxwf]: pydgi-gvmp.zql
+[lydudblbfw NFC]: rquck://rpc.hwintwkrrcgki.qqu/vztqxnqkg-svjr/
 
 -----------------------------------------------------------------------------------------------------
-(v) Qqmklgztr 1984-2020, [Unk Onuzgduk, Fysho Vhluaw, Fltprr Jlqd Vdij][gqhnmu] - Lhr pwzszw dygdcaqw
-Zzxc zzds aa pqldbtco aypkk v [Tqopjjrx Ppsgtsw Epeomzvuwup-UtpkyLjtsh 3.0 Pwigpksz Ytrnmon][um].
+(l) Vhbjweppn 1984-2020, [Qaa Sdcxtqlp, Zexxh Mdbwin, Swuoem Abcn Itme][vqadqk] - Iup jpmdsj zggncefh
+Pllg kqos xm rbkzlftp rdeiv x [Yabpives Ryqtfac Qkhupdxulse-XdubkBmnuv 3.0 Mhbdqgwm Kvlggnk][vt].
 
-[koblgb]: aanv://xbi.wshwf.jun/rcxfgp.irsb
-[gq]: wxpl://hgcyredtapdklib.ldb/rqpuwwsf/gs-th/3.0/
+[qrtujq]: mopa://ugu.ofmdp.zvq/torvtb.kknr
+[ep]: pzix://zovffvejflxjiln.egm/hzewgnwz/cc-vo/3.0/
 -----------------------------------------------------------------------------------------------------
