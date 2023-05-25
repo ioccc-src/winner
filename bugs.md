@@ -2033,6 +2033,13 @@ help!
 As a backtrace quine this entry is **SUPPOSED to segfault** so this should not be
 touched either.
 
+## [2019/poikola](2019/poikola/prog.c) ([README.md](2019/poikola/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This program will not validate input so it might fail or get stuck if invoked
+erroneously.
+
+
 # 2020
 
 ## [2020/burton](2020/burton/prog.c) ([README.md](2020/burton/README.md))
