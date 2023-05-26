@@ -20,10 +20,6 @@ make
 
 Connect to port http://localhost:10333 with your browser.
 
-The author said he had no recent version of macOS to test to see if this works
-but in 2023 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) did this
-and reported that it works well. He also said he really loved it! Thank you
-Cody!
 
 ## Try:
 
@@ -41,8 +37,12 @@ find any other tributes?
 
 ## Author's remarks:
 
-What does "Alan Turing" remind you of?  Cryptanalysis of the Enigma?  Turing
-machine?  Turing test?  This program is also based on his work.
+What does "[Alan Turing](https://en.wikipedia.org/wiki/Alan_Turing)" remind you
+of? [Cryptanalysis](https://en.wikipedia.org/wiki/Cryptanalysis) of the [Enigma
+machine](https://en.wikipedia.org/wiki/Enigma_machine)?  [Turing
+machine](https://en.wikipedia.org/wiki/Turing_machine)? [Turing
+test](https://en.wikipedia.org/wiki/Turing_test)? This program is also based on
+his work.
 
 ### Whirlwind tour
 
@@ -58,20 +58,24 @@ cc -O3 -std=c99 \
         -DTIMESTEP=1.0 -DSPEED=2 -DRGB=255:128:192
 ```
 
-Then, run it under `tcpserver` command in
+Then, run it under `tcpserver` command in the
 [ucspi-tcp](http://cr.yp.to/ucspi-tcp.html) package, which was created by
 [Daniel J. Bernstein](/winners.html#Daniel_J._Bernstein), [IOCCC 1991 "Best of
 Show"](../../1991/brnstnd/brnstnd.c) ([README.md](../../1991/brnstnd/README.md)).
 
-    $ tcpserver -v 127.0.0.1 10333 ./prog ioccc.txt
+```sh
+tcpserver -v 127.0.0.1 10333 ./prog ioccc.txt
+```
 
 Finally, open `http://127.0.0.1:10333/` by a modern browser supporting HTML5.
-You can use the mouse cursor to place drops into the Petri dish interactively.
+You can use the mouse cursor to place drops into the [Petri
+dish](https://en.wikipedia.org/wiki/Petri_dish) interactively.
 
 
 ### Description
 
-This is a simulator of *reaction-diffusion systems*.
+This is a simulator of [reaction-diffusion
+systems](https://en.wikipedia.org/wiki/Reaction-diffusion_system).
 
 Reaction-diffusion systems, proposed by Alan Turing in [1], are mathematical
 models in which two chemical substances are transformed into each other (*local
