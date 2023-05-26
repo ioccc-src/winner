@@ -11,9 +11,15 @@ make
 ```
 
 NOTE: if you do not have access to a compiler that lets you have alternative arg
-types to `main()` you must use the alternate code. This is hopefully just a
-temporary problem but it's a complicated problem as well. See 'To run' and
-'Alternate code' sections as well as [bugs.md](/bugs.md) for more information.
+types to `main()` the self-test feature will fail. If your compiler does not
+have this defect you can use the Alternate code described below. The reason to
+have it as the alternate version is that there is more to the entry that can
+still be enjoyed with compilers with the `main()` args defect including the
+primary purpose of the entry, a puzzle.
+
+Hopefully this will be resolved in time where there is no need for an alternate
+version but it's a complicated one. See also the [bugs.md](/bugs.md) file for
+more information.
 
 ## To run:
 
@@ -21,23 +27,25 @@ temporary problem but it's a complicated problem as well. See 'To run' and
 ./giljade
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for modern
-systems but there was a problem with both the clang fixed version (which Landon
-originally put in but Cody further fixed so that it would work somewhat) and the
-original version. There remains a problem with the clang version.
+After Landon fixed the entry to compile with clang (but see above and below)
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) noticed this does not
+work at all in modern systems. He fixed this to work but he notes that the fix
+to let clang compile it breaks the self-test feature.
 
-The problem that was showing up is that with either optimising or anything but
-32-bit was used it would not work. The optimising cannot be used still but it
-now works with both 32-bit and 64-bit. The solution has to do with the size
-difference between `int` and `long` so that the `long *E` is now `int *E`. This
-solves a specific problem for linux (32-bit, 64-bit) and macOS (arm64).
+The problem that was showing up is that with either optimising or if anything
+but 32-bit (as in `-m32`) was used it would not work (at least in 64-bit
+systems?). The optimising cannot be used still but it now works with both 32-bit
+and 64-bit. The solution has to do with the size difference between `int` and
+`long` so that the `long*E` is now `int*E`. This solves a specific problem for
+linux (32-bit, 64-bit) and macOS (arm64).
 
 But as noted there is another problem with clang: the self-test feature only
-completely works with the original version, not the one that will compile with
-clang. The alt version only passes some of its tests. If your compiler does not
-have the defect that clang has about arg types to `main()` you can use
-successfully run the self-test feature completely. Otherwise see the Alternate
-code section below.
+completely works with the original version ([giljade.alt.c](giljade.alt.c)), not
+the one that will compile with clang ([giljade.c](giljade.c)). The alternate
+version, which will not compile with clang, is the only one that passes the
+self-tests. If your compiler does not have the defect that clang has about arg
+types to `main()` see the Alternate code section below at least for the
+self-test feature.
 
 Thank you Cody for your assistance!
 
@@ -61,23 +69,11 @@ vi out
 
 Press ^F (control F) repeatedly.
 
-### Also try:
-
-```sh
-./giljade > out
-./giljade out
-```
-
-NOTE: this will only completely work with the original version at least at this
-time.
-
 ### Alternate code:
 
-This version is compilable with clang but as noted the self-test feature is
-incomplete. It did not work at all but Cody added a hack to make part of it work
-until this can be looked at further. See also the [bugs.md](/bugs.md) file.
-
-If you have clang you can use this version like:
+This version will work only with compilers that let you have alternate types to
+the args of `main()` and will also successfully run its self-test (the other
+version only runs some of them successfully). To use:
 
 ```sh
 make alt
@@ -85,6 +81,12 @@ make alt
 
 Use `giljade.alt` as you would `giljade` above.
 
+#### Try:
+
+```sh
+./giljade.alt > out
+./giljade.alt out
+```
 
 ## Judges' remarks:
 

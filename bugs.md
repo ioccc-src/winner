@@ -1581,24 +1581,24 @@ dimensions. Try `100 100 100` for instance and see what happens!
 ## [2005/giljade](2005/giljade/giljade.c) ([README.md](2005/giljade/README.md))
 ## STATUS: known bug - please help us fix
 
-This is currently for the [alt version](2005/giljade/giljade.alt.c) of the code:
-due to clang's defect where it requires args of main() to be of a specific type
-the code had to be changed. However when this happens the code no longer works
-properly. [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the
-entry to work itself but Landon made the original alt version. This also however
-did not work due to some other issues that had to be worked out.
+The alternate code will not compile with compilers that do not let you have
+alternate types of the args to `main()`. An example compiler with this defect is
+`clang`. If you have `gcc` you can use `make alt` and there is no problem.
 
-First the optimisation had to be disabled. Second is that for this to do
-anything (except perhaps crash .. I (Cody) cannot recall now exactly) in 64-bit
-systems (and also 32-bit compilation via `-m32`) the `long*E` had to be changed
-to `int*E`. These changes let it work properly for compilers that do not have
-the defect described above but then there is clang.
+The reason the clang fixed (but see below) version is [giljade.c](giljade.c) is
+that the primary purpose of the entry is a 2D puzzle and this works with the
+clang fix, more or less (if not entirely hard to know with the many layouts it
+generates). The problem is that with the clang fix the self-test version does
+not work for every layout. The author even notes that modifying the code will
+cause this but it has to be changed to let clang compile it due to clang's
+defect.
 
-At first we had the clang fix be the [giljade.c](2005/giljade/giljade.c) file
-but since it does not fully work we for now have swapped the alt and the
-original until such a time that it can be fixed for clang too. The below
-describes the problem with the alt version, that which will only partially work
-with clang.
+Now [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work
+in both the clang version (which Landon added) and the original version
+([giljade.alt.c](giljade.alt.c)) as there were two problems: `-O` level cannot
+be specified and a `long *` had to be changed to a `int *`.
+
+### The actual problem
 
 One is supposed to be able to do:
 
@@ -1610,9 +1610,16 @@ One is supposed to be able to do:
 and see all layouts compile without error. If you wish to see this in action and
 you have a compiler without the defect of clang you can do:
 
+```sh
+make alt
+./giljade.alt > out
+./giljade.alt out
+```
 
-But if you try this with the alt code we run into some problems depending on
-what `cc` is in the system. In macOS it's clang but in linux it's probably gcc.
+But if you try this with `giljade` you will run into compilation errors,
+seemingly different across different compilers. In macOS it's clang but in linux
+it's probably gcc (the entry uses `cc`).
+
 Since macOS is clang the below shows what happens with macOS after some of the
 generated files are compiled successfully:
 
@@ -1625,7 +1632,7 @@ c.c:76:72: error: expected expression
                                                                        ^
 c.c:76:72: error: expected '}'
 c.c:50:72: note: to match this '{'
-N,B+B[h],16));h=B [h]+4);B[h]||(B[h ]=N-B,N=N+6);}main(int Ua,char**wa){
+(N,B+B[h],16));h= B[h]+4);B[h]||(B[ h]=N-B,N=N+6);}main(int Z,char*Y[]){
                                                                        ^
 ```
 
@@ -1642,12 +1649,12 @@ a look at the comment in the code:
 
 ```c
 /*echo/Line/%d;sed/-n/-e/ %d,%dp/%s/|sed*/
-/*-e/ 's,intUa,int/ Ua,g'>c.c;cc/c.c/-Wno-implicit-function-declaration /-c*/
-
+/*-e/ 's,intZ,int/ Z,g'>c.c;cc/c.c/-Wno-implicit-function-declaration /-c*/
 ```
 
 That is actually called via `system()`. But if you observe in
-[giljade.c](2005/giljade/giljade.c) the comment is quite different being just:
+[giljade.alt.c](2005/giljade/giljade.alt.c) the comment is quite different being
+just:
 
 
 ```c
@@ -1659,8 +1666,8 @@ Why? Because in some platforms at least clang defaults to `-Werror` for some
 warnings: that's why the disabling of the warning in particular. But the change
 to make it compile with clang changed the output generated to merge the `int`
 and the arg in `main()` which is of course a big problem. Thus the additional
-`sed` command fixes this problem but somewhere in the process some of the
-generated code fails.
+`sed` command fixes the problem of `int` and `Z` becoming one word but somewhere
+in the process some of the generated code fails.
 
 What might the translation of the comment end up being? Here's an example:
 
@@ -1677,22 +1684,24 @@ for the program (compiled as 64-bit) to output anything at all the variable `E`
 must be an `int *` not a `long *`. However the change that allows clang to
 compile it causes the output to not have spaces where necessary to successfully
 compile the generated output which is why the extra `sed` command shown above
-(which has a special way to input spaces). But it can show up in other ways too.
+(which has a special way to input spaces). We do not know if the change from
+`long *` to `int *` also messes up the output but we suspect not because it
+works for gcc.
 
 Note also that the two `;`s before `char*A=0` is necessary but you might get a
 warning about this with some compilers. If it's removed you'll see something
 like:
 
 ```sh
-sh: -c: line 0: `  echo Line 2;sed -n -e 2,77p out>    c.c;cc c.c -Wno-implicit-function-declaration -c  ;char A=0, _, R, Q,D[9999], r,l[9999],T=42,M,V=32;int E,k[9999],B[1<<+21], N=B+1234567,q=0,h=3,j=2,O,b,f,u,s,c,a,t,e,d;C(){F(h=N[3];(B[h]&&+memcmp(N,B+B[h],16));h=B[h]+4);B[h]||(B[h]=N-B,N=N+6);}intmain(intUa,char  wa){char U=Ua;int  w=wa'
+sh: -c: line 0: syntax error near unexpected token `{F'
+sh: -c: line 0: `  echo Line 2;sed -n -e 2,77p out |sed    -e 's,intZ,int Z,g'>c.c;cc c.c -Wno-implicit-function-declaration -c  ;char A=0, _, R, Q,D[9999], r,l[9999],T=42,M,V=32;int E,k[9999],B[1<<+21], N=B+1234567,q=0,h=3,j=2,O,b,f,u,s,c,a,t,e,d;C(){F(h=N[3];(B[h]&&+memcmp(N,B+B[h],16));h=B[h]+4);B[h]||(B[h]=N-B,N=N+6);}main(intZ,char Y[]){char U=Z;int  w=Y;'
 ```
 
 or so, depending on the comment, when running the program on its output.
 
 Observe too that the `*` part of pointers have been removed! You also see the
-merge of `int` and `Ua` as noted earlier. With the two `;`s this is not a
+merge of `int` and `Z` as noted earlier. With the two `;`s this is not a
 problem.
-
 
 Cody will look at this all later on.
 
