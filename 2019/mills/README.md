@@ -41,10 +41,8 @@ Can a machine learn?
 
 Some say so.
 
-But can a machine learn to write like Shakespeare,
-or tweet like Trump?
-
-Can it write rules and guidelines for the IOCCC?
+But can a machine learn to write like Shakespeare? Can it write rules and
+guidelines for the IOCCC?
 
 You decide. :-)
 
