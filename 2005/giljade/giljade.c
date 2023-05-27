@@ -11,12 +11,12 @@
 )u=(f&p)i(m) ;s=u&E[3];I(t(m),3)s=(u)a &E[l];I(t(m\
 ),l)u=u>>5-m &u;s=u&E[3-l];I(t(m),3-l) s=(u)a&*E;I\
 (t(m),(0));; /*echo/Line/%d;sed/-n/-e/ %d,%dp/%s/|sed*/
-/*-e/ 's,intZ,int/ Z,g'>c.c;cc/c.c/-Wno-implicit-function-declaration /-c*/
+/*-e/'s,intZ,int/ Z,g'>c.c;cc/c.c/-Wno-implicit-function-declaration /-c*/
 ;;char*A=0,*_,*R,*Q, D[9999],*r,l[9999],T=42, M,V=32;int *E,k[9999],B[1 <<+21],*N=B+
 1234567,q=0, h=3,j=2,O,b,f,u,s,c,a,t,e ,d;C(){F(h=N
 [3];(B[h]&&+ memcmp(N,B+B[h],16));h=B[ h]+4);B[h]||
-(B[h]=N-B,N= N+6);}main(int Z,char*Y[] ){char*U=Z;int**w=Y;
-;;F(_=A=D+6666,A[fread(A,1,3333,fopen
+(B[h]=N-B,N= N+6);}main(int Z,char**Y ){char*U=Z ;
+int**w=Y; ;;F(_=A=D+6666,A[fread(A,1,3333,fopen
 (__FILE__, "r"))]=0;*++ _;h||(*_=V))
 *_-59|_[1]-* _||(h&&(*_=+ 35),h---2||(_[9]=V));;F(_
 =A;*_;_++)10 -*_&&*_-V&&( *_-92)&&(k[q]=isalnum(l[q
