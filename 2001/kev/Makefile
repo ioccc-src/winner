@@ -59,7 +59,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE= -DPORT=5455 -DSPEED=50 -Dl_="socket(il.sin_family=AF_INET,SOCK_STREAM,0)"
+CDEFINE= -DPORT=5455 -DSPEED=100 -Dl_="socket(il.sin_family=AF_INET,SOCK_STREAM,0)"
 
 # Include files that are needed to compile
 #
@@ -115,8 +115,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -137,6 +137,9 @@ ${PROG}: ${PROG}.c
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # data files
 #

@@ -1,11 +1,8 @@
 # Best Curses Game
 
-Kevin Pulo
-School of Information Technologies
-Madsen Building F09
-University of Sydney, NSW, 2006
-Australia
-<http://www.kev.pulo.com.au/>
+Kevin Pulo<br>
+Australia<br>
+<http://www.kev.pulo.com.au/><br>
 Mastodon: <https://fosstodon.org/@devkev>
 
 ## To build:
@@ -17,14 +14,48 @@ make
 ## To run:
 
 ```sh
-./kev hostname
+./kev # in one terminal
+
+./kev hostname # in another terminal
 ```
+
+NOTE: each player's paddle is at the bottom and the opponent at the top.
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) slowed down the ball
+just a tad as it went too fast for the speed at which the paddles move even when
+holding down the movement keys. If you need to change the speed you can
+reconfigure it like (say for over a network and not the same host):
+
+```sh
+make clobber SPEED=50 all # default value which is very fast
+```
+
+There is an alternate version which lets you use the arrow keys to control your
+paddle. See below Alternate code.
 
 ## Try:
 
 ```sh
+./kev 
 ./kev localhost
 ```
+
+### Alternate code:
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) provided an alternate
+version which lets you use the arrow keys on your keyboard instead of the more
+awkward ',' and '.'. To use:
+
+```sh
+make alt
+```
+
+Use `kev.alt` as you would `kev`.
+
+What happens if you use both, one in one terminal and the other in another
+terminal?
+
+Thank you Cody!
 
 ## Judges' remarks:
 
@@ -45,7 +76,7 @@ box.
 
 * TCP sockets
 * curses
-* usleep
+* `usleep()`
 
 ### DESCRIPTION
 
@@ -117,18 +148,17 @@ terminal size).
 
 ### BUILDING
 
-Just run `make`to use the Makefile as above.  The `SPEED` variable in the Makefile
-controls the speed of the game (defaults to `50`).  This speed is
-the delay between frames in milliseconds.  Thus a value of 0 will
-make the game go as fast as your network can handle, and values
-less than 50 are useful for larger terminals or more exciting
-games.  The program needs bandwidth equal to 1/s bytes per second
-(where `s` is the speed value).  Any latency on the network will
-be added to `s` - so you should probably subtract any latency from
-the value of `s` you want to have.  Given that `loopback` and fast
-Ethernet LANs are both much less than 1ms of latency, you should
-only need to worry about this if you plan on playing over a slower
-link like a cable modem, DSL, or (God-forbid) dial-up.
+Just run `make`to use the Makefile as above.  The `SPEED` variable in the
+Makefile controls the speed of the game (defaults to `50`).  This speed is the
+delay between frames in milliseconds.  Thus a value of 0 will make the game go
+as fast as your network can handle, and values less than 50 are useful for
+larger terminals or more exciting games.  The program needs bandwidth equal to
+1/s bytes per second (where `s` is the speed value).  Any latency on the network
+will be added to `s` - so you should probably subtract any latency from the
+value of `s` you want to have.  Given that `loopback` and fast Ethernet LANs are
+both much less than 1ms of latency, you should only need to worry about this if
+you plan on playing over a slower link like a cable modem, DSL, or (God-forbid)
+dial-up.
 
 The TCP port to use for network communications is specified by the
 `PORT` variable in the Makefile.  If the default of `5455` is
