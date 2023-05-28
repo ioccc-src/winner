@@ -1,17 +1,41 @@
 # Best small program
 
 Maarten Litmaath  
-Free University (VU) Amsterdam  
-Department of computer science  
-Uilenstede 72  
-1183 AK Amstelveen  
 The Netherlands  
+
+## To build:
+
+```sh
+make
+```
+
+## To run:
+
+```sh
+./litmaath some text
+```
+
+There is an alternate version provided. See the Alternate code section below.
 
 ## Try:
 
 ```sh
 ./litmaath eschew obfuscation
 ```
+
+### Alternate code:
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added the
+[litmaath.alt.c](litmaath.alt.c) which we described in our remarks below. To
+use:
+
+```sh
+make alt
+```
+
+Use `litmaath.alt` as you would `litmaath` above.
+
+Thank you Cody!
 
 
 ## Judges' remarks:

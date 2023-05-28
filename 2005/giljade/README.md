@@ -10,32 +10,51 @@ Israel
 make
 ```
 
+NOTE: if you do not have access to a compiler that lets you have alternative arg
+types to `main()` the self-test feature will fail. If your compiler does not
+have this defect you can use the Alternate code described below. The reason to
+have it as the alternate version is that there is more to the entry that can
+still be enjoyed with compilers with the `main()` args defect including the
+primary purpose of the entry, a puzzle.
+
+Hopefully this will be resolved in time where there is no need for an alternate
+version but it's a complicated one. See also the [bugs.md](/bugs.md) file for
+more information.
+
 ## To run:
 
 ```sh
 ./giljade
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for modern
-systems. The problem that was showing up is that with either optimising or
-anything but 32-bit was used it would not work. The optimising cannot be used
-still but it now works with both 32-bit and 64-bit. The problem was the size of
-`int` and `long` being different now. Instead of `long *E` it is now `int *E`.
-This solves the problem for both 32-bit and 64-bit as long as optimising is
-disabled. Tested under linux (32-bit, 64-bit) and macOS (arm64). Thank you Cody
-for your assistance!
+After Landon fixed the entry to compile with clang (but see above and below)
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) noticed this does not
+work at all in modern systems. He fixed this to work but he notes that the fix
+to let clang compile it breaks the self-test feature.
 
-NOTE: the self-test feature no longer works due to the fix for clang (which
-requires the first arg of `main()` to be an `int` and the second arg to be `char
-**`). Believe it having more than two spaces in the code, except where the
-original code has them, appears to be part of the problem but it's not the full
-story. If you have a compiler that doesn't have this deficiency (e.g.  gcc) you
-can use the alternate code described below.
+The problem that was showing up is that with either optimising or if anything
+but 32-bit (as in `-m32`) was used it would not work (at least in 64-bit
+systems?). The optimising cannot be used still but it now works with both 32-bit
+and 64-bit. The solution has to do with the size difference between `int` and
+`long` so that the `long*E` is now `int*E`. This solves a specific problem for
+linux (32-bit, 64-bit) and macOS (arm64).
+
+But as noted there is another problem with clang: the self-test feature only
+completely works with the original version ([giljade.alt.c](giljade.alt.c)), not
+the one that will compile with clang ([giljade.c](giljade.c)). The alternate
+version, which will not compile with clang, is the only one that passes the
+self-tests. If your compiler does not have the defect that clang has about arg
+types to `main()` see the Alternate code section below at least for the
+self-test feature.
+
+Thank you Cody for your assistance!
 
 ### INABIAF - it's not a bug it's a feature! :-)
 
 If the program source file is not lying in the same directory this program will
 very likely crash or do something strange.
+
+This entry requires that both `sed` and `cc` are in the path.
 
 ## Try:
 
@@ -52,18 +71,22 @@ Press ^F (control F) repeatedly.
 
 ### Alternate code:
 
-Thanks to the fix for `clang` the self-test feature (of the output, see the
-author's remarks) does not work. If however you have gcc which does not have the
-defect that clang has with requirements in `main()`s args you can still use it
-via the alternate code. To compile:
-
+This version will work only with compilers that let you have alternate types to
+the args of `main()` and will also successfully run its self-test (the other
+version only runs some of them successfully). To use:
 
 ```sh
 make alt
 ```
 
-Use `giljade.alt` as you would `giljade`.
+Use `giljade.alt` as you would `giljade` above.
 
+#### Try:
+
+```sh
+./giljade.alt > out
+./giljade.alt out
+```
 
 ## Judges' remarks:
 

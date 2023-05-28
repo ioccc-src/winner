@@ -8,12 +8,15 @@ Finland
 
 This entry requires SDL to be installed.
 
+See the [faq](/faq.md) for information on how to install it if you haven't
+already.
+
+If you have SDL installed:
+
 ```sh
 make
 ```
 
-See the [faq](/faq.md) for information on how to install it if you haven't
-already.
 
 ## To run:
 

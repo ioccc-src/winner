@@ -596,48 +596,13 @@ so it should stay with this note.
 
 
 ## [1990/theorem](1990/theorem/theorem.c) ([README.md](1990/theorem/README.md))
-## STATUS: known bug - please help us fix
+## STATUS: INABIAF - please **DO NOT** fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed many bugs that
-prevented this from working properly (including segfaults) but one bug known to
-exist remains: if `theorem_bkp` or `fibonacci` is passed two zeros the program
-will enter an infinite loop, printing 0 over and over again (another condition
-where this occurred was fixed).
-
-Cody provides some hints here:
-
-0. The function in `theorem.c` that matters is `w` (see below for definition).
-1. However adding checks for the value being > 0 does not work due to the way the
-code is generated. See below.
-
-`w()` looks like this:
-
-```c
-w(g,R,u)float*g,u;char R;
-/**/{int b,f;if(A>2){A=atoi(a[1]);b=atoi(a[2]);while((f=A+b)<15000){printf("%d\n",f);A=b;b=f;}}}
-```
-
-But as far as point 1 above changing it to be:
-
-```c
-/**/{int b,f;if(A>2){A=atoi(a[1]);b=atoi(a[2]);while(f!=0&&(f=A+b)<15000){printf("%d\n",f);A=b;b=f;}}}
-```
-
-and similar (like checking `>0`, doing a `do..while`, doing an `if` before the
-while etc.) cause compilation errors.
-
-Can you fix this? We welcome your help!
-
-BTW: one of the important fixes for `fibonacci` to work is:
-
-```diff
--/**/{int b,f;A=atoi(++a);b=atoi(++a);while((f=A+b)<15000){printf("%d\n",f);A=b;b=f;}}
-+/**/{int b,f;if(A>2){A=atoi(a[1]);b=atoi(a[2]);while((f=A+b)<15000){printf("%d\n",f);A=b;b=f;}}}
-```
-
-Observe the check for the number of args and the calls to `atoi()` have been
-changed a bit too.
-
+prevented this from working properly (including segfaults) but one thing to note
+is that if you pass two zeroes to `theorem_bkp` or `fibonacci` the program
+will enter an infinite loop, printing 0 over and over again; another condition
+where this occurred was fixed but this one should not be fixed. Thank you.
 
 ## [1990/westley](1990/westley/westley.c) ([README.md](1990/westley/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
@@ -1581,16 +1546,24 @@ dimensions. Try `100 100 100` for instance and see what happens!
 ## [2005/giljade](2005/giljade/giljade.c) ([README.md](2005/giljade/README.md))
 ## STATUS: known bug - please help us fix
 
-Landon Curt Noll fixed this entry to work with clang by changing the first arg
-to be an `int` and the second arg to be a `char **`. This is important because
-of clang's deficiency requiring args to be one type only.
+The alternate code will not compile with compilers that do not let you have
+alternate types of the args to `main()`. An example compiler with this defect is
+`clang`. If you have `gcc` you can use `make alt` and there is no problem.
 
-This did not completely fix the problem for the program however.
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) observed that it has to
-be compiled with `-m32` which is not possible in modern macOS. It also cannot
-have the compiler optimiser enabled. Cody fixed it so that it works in 64-bit
-but the clang fix does break something in the entry, specifically that the
-self-test feature of the program no longer works.
+The reason the clang fixed (but see below) version is [giljade.c](giljade.c) is
+that the primary purpose of the entry is a 2D puzzle and this works with the
+clang fix, more or less (if not entirely hard to know with the many layouts it
+generates). The problem is that with the clang fix the self-test version does
+not work for every layout. The author even notes that modifying the code will
+cause this but it has to be changed to let clang compile it due to clang's
+defect.
+
+Now [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work
+in both the clang version (which Landon added) and the original version
+([giljade.alt.c](giljade.alt.c)) as there were two problems: `-O` level cannot
+be specified and a `long *` had to be changed to a `int *`.
+
+### The actual problem
 
 One is supposed to be able to do:
 
@@ -1600,29 +1573,109 @@ One is supposed to be able to do:
 ```
 
 and see all layouts compile without error. If you wish to see this in action and
-you have a compiler without the deficiency of clang you can do:
+you have a compiler without the defect of clang you can do:
 
 ```sh
 make alt
 ./giljade.alt > out
-./giljade out
-
+./giljade.alt out
 ```
 
-(You don't need to use `giljade.alt` to test compile - it's the output of the
-program that's the actual problem.)
+But if you try this with `giljade` you will run into compilation errors,
+seemingly different across different compilers. In macOS it's clang but in linux
+it's probably gcc (the entry uses `cc`).
 
-But the issue is can it be fixed for clang. If you have a fix we welcome your
-help! Believe it or not this appears in part to be due to more than two spaces in
-the program except in the places where the original code has them. This however
-does not seem to be the full story. Cody probably will look at this again but
-for now we note this problem here.
+Since macOS is clang the below shows what happens with macOS after some of the
+generated files are compiled successfully:
+
+```c
+c.c:74:53: error: expected expression
+T;*R=M;*_++=10;F( R=D;putchar(*R)&& _>++R;);}}};O-b*/
+                                                    ^
+c.c:76:72: error: expected expression
+
+                                                                       ^
+c.c:76:72: error: expected '}'
+c.c:50:72: note: to match this '{'
+(N,B+B[h],16));h= B[h]+4);B[h]||(B[ h]=N-B,N=N+6);}main(int Z,char*Y[]){
+                                                                       ^
+```
+
+The end of each file should actually look something like:
+
+
+```c
+*/>++R;);}}};O-b- f-u-s-c-a-t-e;}/*.*dbhn.Lhnd.$d:rdd .,n.,d.$d,$dp.$r>
+*..*b.b:bb.b.b.,b *.":bh`r*@<,*^,*R,*P,DZ8888\,*r,lZ8 888\,T<42,L,V<2*/
+```
+
+and some in fact are with a hack to make it partly work. What is this hack? Take
+a look at the comment in the code:
+
+```c
+/*echo/Line/%d;sed/-n/-e/ %d,%dp/%s/|sed*/
+/*-e/ 's,intZ,int/ Z,g'>c.c;cc/c.c/-Wno-implicit-function-declaration /-c*/
+```
+
+That is actually called via `system()`. But if you observe in
+[giljade.alt.c](2005/giljade/giljade.alt.c) the comment is quite different being
+just:
+
+
+```c
+/*echo/Line/%d;sed/-n/-e/ %d,%dp/%s>*/
+/*c.c;cc/c.c /-c*/
+```
+
+Why? Because in some platforms at least clang defaults to `-Werror` for some
+warnings: that's why the disabling of the warning in particular. But the change
+to make it compile with clang changed the output generated to merge the `int`
+and the arg in `main()` which is of course a big problem. Thus the additional
+`sed` command fixes the problem of `int` and `Z` becoming one word but somewhere
+in the process some of the generated code fails.
+
+What might the translation of the comment end up being? Here's an example:
+
+```
+system("  echo Line 2;sed -n -e 2,77p out>    c.c;cc c.c -c  ");
+```
+
+But of course the range of lines to print changes successively as the program
+goes through the file.
+
+Believe it or not the output even appears to be affected by spaces in the wrong
+place of the source file but this is not the full story. Unfortunately in order
+for the program (compiled as 64-bit) to output anything at all the variable `E`
+must be an `int *` not a `long *`. However the change that allows clang to
+compile it causes the output to not have spaces where necessary to successfully
+compile the generated output which is why the extra `sed` command shown above
+(which has a special way to input spaces). We do not know if the change from
+`long *` to `int *` also messes up the output but we suspect not because it
+works for gcc.
+
+Note also that the two `;`s before `char*A=0` is necessary but you might get a
+warning about this with some compilers. If it's removed you'll see something
+like:
+
+```sh
+sh: -c: line 0: syntax error near unexpected token `{F'
+sh: -c: line 0: `  echo Line 2;sed -n -e 2,77p out |sed    -e 's,intZ,int Z,g'>c.c;cc c.c -Wno-implicit-function-declaration -c  ;char A=0, _, R, Q,D[9999], r,l[9999],T=42,M,V=32;int E,k[9999],B[1<<+21], N=B+1234567,q=0,h=3,j=2,O,b,f,u,s,c,a,t,e,d;C(){F(h=N[3];(B[h]&&+memcmp(N,B+B[h],16));h=B[h]+4);B[h]||(B[h]=N-B,N=N+6);}main(intZ,char Y[]){char U=Z;int  w=Y;'
+```
+
+or so, depending on the comment, when running the program on its output.
+
+Observe too that the `*` part of pointers have been removed! You also see the
+merge of `int` and `Z` as noted earlier. With the two `;`s this is not a
+problem.
+
+Cody will look at this all later on.
 
 ## STATUS: INABIAF - please **DO NOT** fix
 
 It also will very likely segfault or do something strange if the source code
 does not exist.
 
+This entry requires that `sed` and `cc` are in the path.
 
 ## [2005/mynx](2005/mynx/mynx.c) ([README.md](2005/mynx/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
@@ -2032,6 +2085,13 @@ help!
 
 As a backtrace quine this entry is **SUPPOSED to segfault** so this should not be
 touched either.
+
+## [2019/poikola](2019/poikola/prog.c) ([README.md](2019/poikola/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This program will not validate input so it might fail or get stuck if invoked
+erroneously.
+
 
 # 2020
 
