@@ -27,6 +27,7 @@ Bernd_Meyer
 Brent_Burley
 Brian_Westley
 Bruce_Holloway
+Bsoup
 Byron_Rakitzis
 Carl_Banks
 Carl_Shapiro
@@ -40,7 +41,7 @@ Cody_Boone_Ferguson
 Col_G_L_Sicherman
 Craig_Schneiderwent
 Daniel_Fischer
-Daniel_J._Bernstein
+Daniel_J_Bernstein
 Daniel_Vik
 Dave_Burton
 Dave_Decot
@@ -70,7 +71,7 @@ Etienne_Duble
 Fabrice_Bellard
 Ferenc_Deak
 Francois_Boutines
-Frans van Dorsselaer
+Frans_van_Dorsselaer
 Freek_Wiedijk
 Garry_Glendown
 Gavin_Barraclough
@@ -104,7 +105,7 @@ Jon_Thingvold
 Jonathan_Hoyle
 Joshua_Karns
 Jyrki_Holopainen
-Karl_F._Fox
+Karl_F_Fox
 Ken_Huffman
 Kevin_Pulo
 Kimmo_Fredriksson
@@ -183,6 +184,7 @@ Thor_Eldby
 Timo_Poikola
 Tom_Torfs
 Tony_Finch
+Tsoj
 Tsukasa_Hamano
 Uri_Goren
 V_Chia
@@ -192,5 +194,3 @@ Volker_Diels-Grabsch
 Walter_Bright
 Yusuke_Endoh
 Yves-Marie_Morgan
-bsoup
-tsoj
