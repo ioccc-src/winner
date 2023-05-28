@@ -596,48 +596,13 @@ so it should stay with this note.
 
 
 ## [1990/theorem](1990/theorem/theorem.c) ([README.md](1990/theorem/README.md))
-## STATUS: known bug - please help us fix
+## STATUS: INABIAF - please **DO NOT** fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed many bugs that
-prevented this from working properly (including segfaults) but one bug known to
-exist remains: if `theorem_bkp` or `fibonacci` is passed two zeros the program
-will enter an infinite loop, printing 0 over and over again (another condition
-where this occurred was fixed).
-
-Cody provides some hints here:
-
-0. The function in `theorem.c` that matters is `w` (see below for definition).
-1. However adding checks for the value being > 0 does not work due to the way the
-code is generated. See below.
-
-`w()` looks like this:
-
-```c
-w(g,R,u)float*g,u;char R;
-/**/{int b,f;if(A>2){A=atoi(a[1]);b=atoi(a[2]);while((f=A+b)<15000){printf("%d\n",f);A=b;b=f;}}}
-```
-
-But as far as point 1 above changing it to be:
-
-```c
-/**/{int b,f;if(A>2){A=atoi(a[1]);b=atoi(a[2]);while(f!=0&&(f=A+b)<15000){printf("%d\n",f);A=b;b=f;}}}
-```
-
-and similar (like checking `>0`, doing a `do..while`, doing an `if` before the
-while etc.) cause compilation errors.
-
-Can you fix this? We welcome your help!
-
-BTW: one of the important fixes for `fibonacci` to work is:
-
-```diff
--/**/{int b,f;A=atoi(++a);b=atoi(++a);while((f=A+b)<15000){printf("%d\n",f);A=b;b=f;}}
-+/**/{int b,f;if(A>2){A=atoi(a[1]);b=atoi(a[2]);while((f=A+b)<15000){printf("%d\n",f);A=b;b=f;}}}
-```
-
-Observe the check for the number of args and the calls to `atoi()` have been
-changed a bit too.
-
+prevented this from working properly (including segfaults) but one thing to note
+is that if you pass two zeroes to `theorem_bkp` or `fibonacci` the program
+will enter an infinite loop, printing 0 over and over again; another condition
+where this occurred was fixed but this one should not be fixed. Thank you.
 
 ## [1990/westley](1990/westley/westley.c) ([README.md](1990/westley/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix

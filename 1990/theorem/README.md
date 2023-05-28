@@ -29,7 +29,7 @@ about `gets()` at linking or runtime. Thank you Cody for your assistance!
 
 [Yusuke Endoh](/winners.html#Yusuke_Endoh) pointed out that `atof` nowadays
 needs `#include <stdlib.h>` which was used in order to get this to work
-initially. Thank you Yusuke!
+initially (prior to this the output was incomplete). Thank you Yusuke!
 
 
 ## To run:
@@ -54,20 +54,29 @@ y1 - initial value  (y(x1) == y1)
 ./theorem y 0 1 0.1 1
 ```
 
-### Known bug with `fibonacci.c` and `theorem_bkp.c`:
+### INABIAF - it's not a bug it's a feature! :-)
 
-If the two args added up equals 0 the program will enter an infinite loop,
-printing 0 over and over again. Cody fixed another condition where this happens
-but this has not been fixed. See [bugs.md](/bugs.md) for more details.
+If the two args passed to `fibonacci` and `theorem_bkp` equals 0 it will
+print 0 over and over again in an infinite loop. In this case it should not be
+fixed (another condition where this occurred was fixed as it affected usability
+of the program).
+
+BTW: why can't the fix:
+
+```c
+if (a[1]==NULL||a[2]==NULL||a[3]==NULL||a[4]==NULL||a[5]==NULL) return 1;
+```
+
+be changed to just test the value of `A` when `a` is argv and `A` is argc?
 
 ## Judges' remarks:
 
 The program's source implements four functions, all from the
 same source file!
 
-When you compile theorem.c as is and run with 5 args, it numerically
-solves the equation `y'=f(x,y)`, with a step size of `h`, over the interval 
-`x=[x1,x2]`, with the initial condition of `y(x1)=y1`.
+When you compile theorem.c as is and run with 5 args, it numerically solves the
+equation `y'=f(x,y)`, with a step size of `h` (see above usage), over the
+interval `x=[x1,x2]`, with the initial condition of `y(x1)=y1`.
 
 The 'expression' `f(x,y)` is any function of `x` and `y` with the
 operators:
