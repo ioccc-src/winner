@@ -10,11 +10,27 @@ US
 make all
 ```
 
+A smaller version, originally called `zsmall.c`, of [applin.c](applin.c) can be
+found in [applin.alt.c](applin.alt.c).  Your machine may have an easier time
+with this program.  See the Alternate code section below for details.
+
 ## Try:
 
 ```sh
 ./applin
 ```
+
+### Alternate code:
+
+As noted above a smaller version can be used in case your cpp has a hard time
+with this entry. To use:
+
+```sh
+make alt
+```
+
+Use `applin.alt` as you would `applin` above.
+
 
 ## Judges' remarks:
 
@@ -34,9 +50,6 @@ on the Amdahl 5890-300E.  But due to the ANSI-likeness of GNU cpp (v. 1-21),
 it was not able to cleanly substitute a symbol that began with a '#'.
 Clearly the GNU C preprocessor is faster.
 
-A smaller version of [applin.c](applin.c) can be found in [zsmall.c](zsmall.c).
-Your machine may have an easier time with this program.  See the Makefile for
-details.
 
 ## Author's remarks:
 
