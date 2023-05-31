@@ -29,6 +29,9 @@ Open another window / terminal.
 
 Open more terminals and repeat...
 
+### INABIAF - it's not a bug it's a feature! :-)
+
+
 WARNING: if the file is deleted it might lock any session still in use. These
 will have to be killed from another shell session or by closing the terminal
 tab.
@@ -43,6 +46,20 @@ srwxr-xr-x   1 ioccc  staff      0  6 Apr 08:15 .CGGHAMGC
 srwxr-xr-x   1 ioccc  staff      0  6 Apr 08:16 .CMDGAELH
 ...
 ```
+
+To get a list of files with this glob try:
+
+```sh
+ls -al |awk '{print $NF}' | grep -E '^\.[A-Z]+'
+```
+
+To delete them you can do:
+
+```sh
+find . -name '.[A-Z]*' -delete
+```
+
+though one might want to check that the program is not currently running. :-)
 
 ### Alternate code:
 

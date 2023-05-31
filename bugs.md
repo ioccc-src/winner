@@ -2086,6 +2086,20 @@ This is NOT a bug and you'll have to (at least at this time?) delete the files
 manually. You shouldn't have to worry about these being added to git: it seems
 to ignore sockets (it did at least in macOS).
 
+NOTE: To get a list of files with this glob try:
+
+```sh
+ls -al |awk '{print $NF}' | grep -E '^\.[A-Z]+'
+```
+
+To delete them you can do:
+
+```sh
+find . -name '.[A-Z]*' -delete
+```
+
+though one might want to check that the program is not currently running. :-)
+
 ## [2019/ciura](2019/ciura/prog.c) ([README.md](2019/ciura/README.md))
 ## STATUS: known bug - please help us fix
 
