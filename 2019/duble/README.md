@@ -29,9 +29,37 @@ Open another window / terminal.
 
 Open more terminals and repeat...
 
+### INABIAF - it's not a bug it's a feature! :-)
+
+
 WARNING: if the file is deleted it might lock any session still in use. These
 will have to be killed from another shell session or by closing the terminal
 tab.
+
+NOTE: this entry might leave sockets lying about in the current working
+directory which you'll have to delete manually. Here's an example in macOS:
+
+```sh
+$ ls -al
+srwxr-xr-x   1 ioccc  staff      0  6 Apr 08:19 .BDHFHALG
+srwxr-xr-x   1 ioccc  staff      0  6 Apr 08:15 .CGGHAMGC
+srwxr-xr-x   1 ioccc  staff      0  6 Apr 08:16 .CMDGAELH
+...
+```
+
+To get a list of files with this glob try:
+
+```sh
+ls -al |awk '{print $NF}' | grep -E '^\.[A-Z]+'
+```
+
+To delete them you can do:
+
+```sh
+find . -name '.[A-Z]*' -delete
+```
+
+though one might want to check that the program is not currently running. :-)
 
 ### Alternate code:
 
@@ -48,8 +76,8 @@ Use `prog.alt` as you would `prog` above.
 
 ## Judges' remarks:
 
-After starting the program, use the cursor keys, then try some modes, like "p"
-or "l" (they toggle).
+After starting the program, use the cursor keys, then try some modes, like `p`
+or `l` (they toggle).
 
 ## Author's remarks:
 
@@ -69,13 +97,15 @@ To build, type `make` (assuming gcc) or `make CC=clang`.
 
 Then you can start the program. It expects a file path as its first argument:
 
-    $ ./prog /tmp/drawing
+```sh
+./prog /tmp/drawing
+```
 
 (If not started this way, `prog` will refuse to start.)
 
 If the file does not exist, you will start with a blank drawing.
 
-If someone else (or another *instance of yourself*, maybe??) is already
+If someone else (or another *instance of yourself*, maybe?) is already
 editing this file, you will join the session!
 
 ### Edition features:
