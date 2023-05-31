@@ -111,8 +111,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ= zsmall.o
-ALT_TARGET= zsmall
+ALT_OBJ= applin.alt.o
+ALT_TARGET= applin.alt
 
 
 #################
@@ -146,6 +146,10 @@ ${PROG}: ${PROG}.c
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${ALT_TARGET}: ${PROG}.alt.c
+	${CP} -f ${PROG}.alt.c zsmall.c
+	${CC} ${CFLAGS} zsmall.c -o $@
 
 # not an official entry
 #
