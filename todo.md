@@ -1,12 +1,12 @@
 # A todo list of known things to check and/or do
-*Last updated: Wed 24 May 2023 12:35:37 UTC*
+*Last updated: Wed 31 May 2023 09:52:55 UTC*
 
 More things will likely be added over time and as items are done they _should
-be_ removed from the list IF AND ONLY IF (!!) we are certain it is done (many
-times it's thought that this was done only to find out that they are not). It is
-hoped that this will be referenced and updated as this is an easy way to keep
-track of things that have been done already and what have not been done (mostly
-not been done).
+be_ removed from the list IF AND ONLY IF (!!) we are _absolutely certain_ it is
+done (many times it's thought that a task was done only to find out it wasn't).
+It is hoped that this will be referenced and updated as this is an easy way to
+keep track of things that have been done already and what hasn't been done (in
+this file the case is mostly _NOT_ been done).
 
 - Find entries with bugs as well INABIAF and add to [bugs.md](/bugs.md).
     For instance a INABIAF section should be added to [bugs.md](bugs.md) for
@@ -47,14 +47,20 @@ fix any issues.
     except that a few years I am pretty sure I did not check typos (I'd say about
     1987 or 1988 through 1995 should be rechecked for typos).  It's very likely
     I won't keep this updated until it's finished but I wanted to note it now.
+    * NOTE: a while back (as of 31 May 2023) Cody noticed that some of the files
+    he already checked could be improved wrt formatting so he'll have to have a
+    quick look at the previously edited files; some he has done already but the
+    vast majority have not been checked. These should be relatively easy to fix
+    but will only be done _after_ the rest of the files are processed
+    (presumably with complete changes made :-) ).
 
 - Remove addresses from older winning entries but (if known) keep country code +
 add country code to winners.csv. As of half past 4 Pacific time on 22 April 2023
-only the years through 1986 are done. This should not take much time but I
-(Cody) am bored with it for now and would rather do other more important things.
-This will likely not be updated until after it's done (and when I remember to
-remove it - I expect that when I go for it I'll do it in one sitting or maybe a
-few sittings with a few brief breaks).
+only the years through 1986 have been done entirely. This should not take much
+time but I (Cody) am bored with it for now and would rather do other more
+important things.  This will likely not be updated until after it's done (and
+when I remember to remove it - I expect that when I go for it I'll do it in one
+sitting or maybe a few sittings with a few brief breaks).
 
 - Verify that [2004/gavin](2004/gavin/)'s [img/fs.tar](2004/gavin/img/fs.tar)
 contains the same version of files as under [2004/gavin](2004/gavin/) itself.
@@ -66,4 +72,17 @@ subdirectory and then typing the below from the entry's main directory
 
 - Try and see if I (Cody) can make [1985/sicherman](1985/sicherman/sicherman.c)
 even more like its original form. I have some ideas here but it might involve
-some discussion too.
+some discussion too. See 22 May 2023 commits for the improvements already made.
+
+- Check all Makefiles for notes / warnings on compilation and see if they can be
+moved to _after_ the compilation as they're more likely to be seen this way. In
+some cases this will have to be done in the Makefile via `|| :` (that might be
+good to have in the Makefiles anyway so that additional rules / targets are
+run) or else they'll have to be put above the compilation.
+    * Make compilation of targets use `|| :` in the Makefiles to allow
+    additional targets to compile and/or let warnings/notes be printed. An
+    important use of this is that some entries won't compile with clang due to
+    defects but the alternate version will. Whether this is a good idea is TBD
+    but it's noted here as a reminder to be discussed.
+
+
