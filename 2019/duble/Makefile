@@ -137,6 +137,8 @@ all: data ${TARGET}
 
 ${PROG}:
 	${MAKE} `${UNAME}`
+	@echo "WARNING: this entry will likely leave sockets lying about in the current"
+	@echo "working directory. See the bugs.md and README.md for details."
 
 check-os: check-os.sh
 	${SHELL} ./check-os.sh ${LINES} ${COLUMNS}
