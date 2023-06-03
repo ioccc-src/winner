@@ -282,40 +282,19 @@ X11_LIBDIR= /opt/X11/lib
 X11_INCDIR= /opt/X11/include
 
 
-############################
-# SD1 and SDL2 include files
-############################
-
-# macOS users:
+##########################
+# SD1 and SDL2 libraries #
+##########################
 #
-# If you have not aleady do so, install Homebrew.  See the following for information:
+# For details on how to install SDL/SDL2 see faq.md.
 #
-#	https://brew.sh
-#
-# Then to install SDL and SDL2, execute the following command:
-#
-#	brew install sdl2 sdl12-compat
-#	eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# Linux users:
-#
-# To install SDL and SDL2, execute the following command as root:
-#
-#	dnf install SDL2 SDL2-devel sdl12-compat sdl12-compat-devel
-
-# Debian users:
-#
-# To install SDL and SDL2, execute the following command as root:
-#
-#	apt install libsdl1.2debian libsdl1.2-dev libsdl2-dev
-
 # SDL2_INCLUDE_ROOT is the directory under which include/SDL/ and/or
 # include/SDL2/ may be found.
 #
-# Even if you do not use HomeBrew, you might set the environment
-# variable $HOMEBREW_PREFIX to the SDL2_INCLUDE_ROOT directory path
-# as the default SDL2_INCLUDE_ROOT value is $HOMEBREW_PREFIX.
-# Of you may run make and set SDL2_INCLUDE_ROOT directly:
+# Even if you do not use Homebrew (one of the methods for macOS), you might set
+# the environment variable $HOMEBREW_PREFIX to the SDL2_INCLUDE_ROOT directory
+# path as the default SDL2_INCLUDE_ROOT value is $HOMEBREW_PREFIX.  Of you may
+# run make and set SDL2_INCLUDE_ROOT directly:
 #
 #	make all SDL2_INCLUDE_ROOT=/some/path
 #
