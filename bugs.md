@@ -519,6 +519,11 @@ so maybe he's doing something wrong.
 
 # 1988
 
+## [1988/dale](1988/dale/dale.c) ([README.md](1988/dale/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+In linux it might happen that despite no error message or message about doing
+so, the program drops a core file into the directory.
 
 # 1989
 
