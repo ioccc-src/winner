@@ -1,10 +1,8 @@
 # Best One-liner
 
 Laurion Burchall  
-Brown University  
-Unit 4641  
-Providence RI 02912-4641  
 US  
+<https://web.archive.org/web/20070711215750/http://www.netspace.org/users/ldb/>
 
 ## To build:
 
