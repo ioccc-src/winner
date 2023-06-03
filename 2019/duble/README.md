@@ -50,7 +50,7 @@ srwxr-xr-x   1 ioccc  staff      0  6 Apr 08:16 .CMDGAELH
 To get a list of files with this glob try:
 
 ```sh
-ls -al |awk '{print $NF}' | grep -E '^\.[A-Z]+'
+ls -al|awk '{print $NF}'|grep -E '^\.[A-Z]{2,}'
 ```
 
 To delete them you can do:
