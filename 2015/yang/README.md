@@ -10,8 +10,8 @@ make
 ```
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed an unfortunate
-typo in the Makefile that was causing some of the files to compile properly,
-trying instead to compile already compiled code. Thank you Cody!
+typo in the Makefile that was preventing some of the files from compiling
+properly, trying instead to compile already compiled code. Thank you Cody!
 
 ## To run:
 
