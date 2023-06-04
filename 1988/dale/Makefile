@@ -128,6 +128,8 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	@echo "NOTE: in linux after running this program it might drop core dumps"
+	@echo "even though it doesn't show any error."
 
 # alternative executable
 #

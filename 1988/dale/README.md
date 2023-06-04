@@ -11,24 +11,29 @@ make all
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for modern
 compilers. There were two problems to address. One was that the entry required
-`-traditional-cpp` which it no longer does. It needed this because of two things
+`-traditional-cpp` (which <strike>not all compilers support</strike> `clang`
+does not support) which Cody fixed. It needed that option because of two things
 it did:
 
 ```c
 #define a(x)get/***/x/***/id())
 
+/* ... */
+
 p Z=chroot("/");L(!a(u)execv((q(v="/ipu6ljov"),v),C);Z-=kill(l);
 
-...
+/* ... */
 
 case_2:L(!--V){O/*/*/c*c+c);wait(A+c*c-c);L(!Z)f(A,"\n",c);return(A*getgid());};C++;
 ```
 
-does not work to create `getuid()` and `getgid()`. The second is that
+no longer works to create `getuid()` and `getgid()`. The second is that
 
-    for/*/(;;);/*/k()){O/*/*/c);
+```c
+for/*/(;;);/*/k()){O/*/*/c);
+```
 
-cannot form 'fork())' in modern C compilers. What is quite fun is that the cpp
+cannot form `fork())` in modern C compilers. What is quite fun is that the cpp
 can!
 
 The other problem was that modern compilers do not allow directives like:
@@ -49,8 +54,6 @@ so Cody changed the lines to be in the form of:
 
 Thank you Cody for your assistance!
 
-
-
 ## Try:
 
 ```sh
@@ -58,8 +61,20 @@ Thank you Cody for your assistance!
 ./dale these files are in this directory: *
 ```
 
-NOTE: in linux it might happen that core dumps are created when running this
-entry even though it works fine.
+What do the following commands do and why do they do it? Why do they differ in
+format from the above command? Finally how can you get the more likely desired
+behaviour?
+
+
+```sh
+./dale $(printf "the following files exist in this directory:\n%s\n" *)
+./dale "$(printf "the following files exist in this directory:\n%s\n" *)"
+```
+
+### INABIAF - it's not a bug it's a feature! :-)
+
+In linux it might happen that core dumps are created when running this entry
+even though it works fine and you don't see any message about dumping core.
 
 ### Alternate code
 
@@ -67,7 +82,7 @@ If you have an old enough compiler you can try the original version in
 [dale.alt.c](dale.alt.c). To use:
 
 ```sh
-make alt
+make clobber alt
 ```
 
 Use `dale.alt` as you would `dale` above.
