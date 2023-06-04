@@ -6,7 +6,7 @@ other than Linux you may need modify the [Makefile](Makefile) to compile `sh`
 using a cross-compiler that produces ELF binaries - i.e. a cross-compiler
 targeting x86 Linux.  In short, you need to build this on an x86 Linux machine.
 
-2) Next, find a suitable machine to run the OS on.  It should be perfectly safe,
+2. Next, find a suitable machine to run the OS on.  It should be perfectly safe,
 and since it does not directly attempt to access any hard disk drives (only a
 ramdisk loaded by the bootloader) it should do no damage to your existing setup,
 BUT I ACCEPT NO LIABILITY FOR ANY DAMAGE DONE BY THIS PROGRAM.  Run it at your
