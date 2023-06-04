@@ -112,7 +112,7 @@ ENTRY= yang
 PROG= prog
 #
 OBJ= ${PROG}.o
-CSRC= ${PROG}.o
+CSRC= ${PROG}.c
 CPLUSPLUSSRC= ${PROG}.cc
 DATA=
 TARGET= ${PROG} ${PROG}_c90 ${PROG}_c99 ${PROG}_c11 ${CPLUSPLUSSRC} \
