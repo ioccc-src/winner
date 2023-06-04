@@ -68,8 +68,9 @@ applications.
 
 ## Q: How do I compile and run entries that use SDL1/SDL2 ?
 
-This depends on your operating system but below are some instructions for some
-OSes.
+This depends on your operating system but below are instructions for linux and
+macOS with alternative methods for macOS and different package managers with
+linux.
 
 ### Red Hat based linux
 
@@ -121,10 +122,17 @@ but this might not be necessary in more modern days especially as we use
 `sdl-config` and `sdl2-config` which should find the proper paths.
 
 
+### Other linux distributions
+
+Use your package manager to install the appropriate packages. Try the search
+feature of the package manager to determine which packages you need to install.
+Note that you might have to install both the library and the developmental
+packages: one for compiling and one for linking / running.
+
 ### macOS
 
 If you're using macOS there are at least three ways to obtain it. You can
-download it from the SDL website and install the package. This will possibly not
+download it from the SDL website and install the package. The latter will not
 work well for the IOCCC but these will:
 
 #### MacPorts
@@ -152,7 +160,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 As entries have been fixed it is entirely possible that some of the entries no
 longer fit within the year's size restrictions. Invariably the length of columns
-and number of rows might also be changed.
+and number of rows might also have changed.
 
 For the original version see the [/archive](/archive) directory where you can
 find all the original winning entries.
