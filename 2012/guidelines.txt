@@ -83,7 +83,7 @@ HINTS AND SUGGESTIONS:
     a number of tests to an entry:
 
 	* look at the original source
-	* convert ANSI tri-graphs to ASCII
+	* convert ANSI trigraphs to ASCII
 	* C pre-process the source ignoring '#include' lines
 	* C pre-process the source ignoring '#define' and '#include' lines
 	* run it through a C beautifier
@@ -230,7 +230,7 @@ OUR LIKES AND DISLIKES:
 	* depend on a utility or application not normally found on most
 	  most POSIX P1003.1/P1003.2 like systems
 	* abuse the build file to get around the size limit
-	* obfuscate by excessive use of ANSI tri-graphs
+	* obfuscate by excessive use of ANSI trigraphs
 	* are longer than they need to be
 	* are similar to previous winners
 	* are identical to previous losers  :-)
