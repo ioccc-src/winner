@@ -1,6 +1,6 @@
 # Dishonorable mention
 
-Anonymous  
+Anonymous
 
 
 ## To build:
@@ -21,6 +21,24 @@ it once did. Instead the second arg is a `void *`.  In the `read()` function
 (which actually calls `write(2)`) the `i` (which is the `void *`) has to be cast
 to an `int`. This solves the problem. Thank you Cody for your assistance!
 
+### Alternate code:
+
+The original version of this entry was added, by request,
+in order to show the code that was turned into the [tattoo]
+(https://web.archive.org/web/20070120220721/https://thomasscovell.com/tattoo.php).
+
+#### To build:
+
+```sh
+make alt
+```
+
+#### To run:
+
+```sh
+echo NOTE: This entry may not work on some systems.
+./anonymous.alt
+```
 
 ## Judges' remarks:
 
@@ -34,7 +52,7 @@ program.  What reads like a read may be written like a write!
 In 2005 someone by the name of Thomas Scovell got a tattoo of this entry. See
 his [web
 page](https://web.archive.org/web/20070120220721/https://thomasscovell.com/tattoo.php)
-for more information on the tattoo. This is what it looks like:  
+for more information on the tattoo. This is what it looks like:
 
 
 ![1984-anonymous-tattoo.jpg](1984-anonymous-tattoo.jpg)

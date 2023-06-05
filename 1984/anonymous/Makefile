@@ -39,7 +39,8 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-implicit-int \
-	-Wno-return-type -Wno-string-plus-int -Wno-unsequenced
+	-Wno-return-type -Wno-string-plus-int -Wno-unsequenced \
+	-Wno-deprecated-non-prototype -Wno-void-pointer-to-int-cast
 
 # Common C compiler warning flags
 #
@@ -85,7 +86,8 @@ CC= cc
 ifeq ($(CC),clang)
 #
 CSILENCE+= -Wno-poison-system-directories -Wno-shadow -Wno-missing-prototypes \
-	-Wno-strict-prototypes -Wno-missing-variable-declarations -Wno-pedantic
+	-Wno-strict-prototypes -Wno-missing-variable-declarations -Wno-pedantic \
+	-Wno-void-pointer-to-int-cast
 #
 CWARN+= -Weverything
 #
@@ -113,8 +115,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -129,13 +131,16 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: This entry most likely will not work under macOS."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${ALT_TARGET}: ${PROG}.alt.c
+	@echo "NOTE: This entry may not work on some systems."
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # data files
 #
