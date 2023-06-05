@@ -236,7 +236,7 @@ common tricks. Taken through the standard rounds listed in the
     space saved by using a single long string constant is more than
     outweighed by the ability to further obfuscate.
 
-2. convert ANSI tri-graphs to ASCII
+2. convert ANSI trigraphs to ASCII
 
     These are not used.
 

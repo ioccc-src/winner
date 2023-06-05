@@ -195,7 +195,7 @@ POINTS TO PONDER:
     each entry is judged when we:
 
 	* look at the original source
-	* If it is ANSI, convert tri-graphs to ASCII
+	* If it is ANSI, convert trigraphs to ASCII
 	* C pre-process the source ignoring '#include' '#define' lines
 	* C pre-process the source ignoring '#define' and '#include' lines
 	* run it through a C beautifier
@@ -216,7 +216,7 @@ POINTS TO PONDER:
 	     (it is ok only if you warn us in the 'remark' header item)
 	* won't compile under both BSD or SYS V Un*x
 	* use an excessively long compile line to get around the size limit
-	* obfuscate by excessive use of ANSI tri-graphs
+	* obfuscate by excessive use of ANSI trigraphs
 	* are longer than they need to be
 	* are similar to previous winners
 	* are similar to previous losers  :-)
