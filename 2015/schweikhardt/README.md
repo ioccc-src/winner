@@ -96,8 +96,8 @@ an obfuscated, hard to read and understand monster.
 The program tests whether a given natural number satisfies the
 [Collatz Conjecture](https://en.wikipedia.org/wiki/Collatz_conjecture):
 
-Take any natural number *n*. If *n* is even, divide it by 2 to get *n*/2.
-If *n* is odd, multiply it by 3 and add 1 to obtain 3*n* + 1.
+Take any natural number `n`. If `n` is even, divide it by `2` to get `n/2`.
+If `n` is odd, multiply it by 3 and add 1 to obtain `3n + 1`.
 Repeat the process indefinitely.
 The conjecture is that no matter what number you start with,
 you eventually reach 1.
@@ -106,7 +106,7 @@ Paul Erdős said about the Collatz conjecture:
 "Mathematics may not be ready for such problems."
 He also offered $500 for its solution.
 
-For example, the sequence of numbers for *n* = 6 is
+For example, the sequence of numbers for `n` = 6 is
 
 >    6, 3, 10, 5, 16, 8, 4, 2, 1.
 
@@ -121,7 +121,7 @@ a few more cycles, each of different length:
 >   −17, −50, −25, −74, −37, −110, −55, −164, −82, −41, −122, −61, −182, −91, −272, −136, −68, −34, −17
 
 The program computes the sequence for a given positive natural number
-and stops at 1. The number *n* is specified in hexadecimal (without 0x
+and stops at 1. The number `n` is specified in hexadecimal (without 0x
 prefix) as the first argument. The program prints the given number in
 zero-padded hex and each iteration along with a line count in decimal.
 The example above looks like this (compiled with 64 bit word size):
@@ -137,9 +137,9 @@ $ ./prog 6
 0000000000000004 6
 0000000000000002 7
 0000000000000001 8
-## Judges' remarks:
+```
 
-The size of *n* is only limited by the argument size limit of your
+The size of `n` is only limited by the argument size limit of your
 shell/OS (the program implements arbitrary size bignums).
 To query this on your POSIX system, run
 
@@ -155,31 +155,31 @@ Fear not,
 [bc(1)](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/bc.html)
 to the rescue:
 
+```sh
 $ printf 'obase=16;10^100\n' | bc
 1249AD2594C37CEB0B2784C4CE0BF38ACE408E211A7CAAB24308A82E8F1000000000\
 0000000000000000
 $ ./prog 1249AD2594C37CEB0B2784C4CE0BF38ACE408E211A7CAAB24308A82E8F10000000000000000000000000 \
 | less
 [...]
+```
 
 Observe how the first 100 iterations melt the zeros to the right. Can you explain
 why?
 
-For a given *n* the program behavior is one of the following 3:
+For a given `n` the program behavior is one of the following 3:
 
 1. The sequence stops at 1. No fame. No money. Thanks for playing. Computational
-mathematicians have tested all *n* < 4FFDD776055A0000 (~10<sup>18</sup>)
-so don't try anything less than that.
-2. The chosen *n* leads to a sequence with ever bigger numbers,
-so that eventually the bignum cannot be stored in memory. If this happens,
-the program outputs `laugh` (more likely) or `throw up` (less likely) and
-stops. You *might* have found
-a number for which the sequence *diverges*. If confirmed, this disproves the
-conjecture.
-3. The chosen *n* leads to a cycle not including 1 (i.e. runs forever,
-repeating the same sequence over and over). You have disproved the
-conjecture and should certainly submit a paper to the nearest
-mathematical journal.
+mathematicians have tested all `n < 4FFDD776055A0000` (~10<sup>18</sup>) so
+don't try anything less than that.
+2. The chosen `n` leads to a sequence with ever bigger numbers, so that
+eventually the bignum cannot be stored in memory. If this happens, the program
+outputs `laugh` (more likely) or `throw up` (less likely) and stops. You *might*
+have found a number for which the sequence *diverges*. If confirmed, this
+disproves the conjecture.
+3. The chosen `n` leads to a cycle not including 1 (i.e. runs forever, repeating
+the same sequence over and over). You have disproved the conjecture and should
+certainly submit a paper to the nearest mathematical journal.
 
 ### Design objectives
 
@@ -207,7 +207,7 @@ In the following I address all the *tests* as specified by your honors in the
 *guidelines*.
 
 * look at the original source
-* convert ANSI tri-graphs to ASCII
+* convert ANSI trigraphs to ASCII
 * C pre-process the source ignoring `#include` lines
 * C pre-process the source ignoring `#define` and `#include` lines
 * run it through a C beautifier
@@ -268,7 +268,7 @@ counter), `gly` means "Grow Larger memorY", `gln` is "Grown Larger Now"
 is the "UNit (Known as 1)", `trp` is the "Tabula Rasa Product" (zero),
 `phe` is "Print HEx" and so on.
 
-### Convert ANSI tri-graphs to ASCII
+### Convert ANSI trigraphs to ASCII
 
 Huh??!
 
