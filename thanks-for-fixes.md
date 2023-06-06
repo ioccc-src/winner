@@ -1,10 +1,27 @@
-## [1984/anonymous](1984/anonymous/anonymous.c) ([README.md](1984/anonymous/README.md]))
+# Thanks for all the fixes
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work
-under macOS. The fix was to not use implicit `int`s in the `read()` function as
-it once did. Instead the second arg is a `void *`.  In the `read()` function
-(which actually calls `write(2)`) the `i` (which is the `void *`) has to be cast
-to an `int`. This solves the problem. Thank you Cody for your assistance!
+.. and all the fish.  :-)
+
+## Thank you honor roll
+
+There are several people who have contributed to the above mentioned
+several thousand changes and important improvements.  We call out the
+extensive contributions of [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson)
+who is responsible for many of the improvements.
+
+From the [IOCCC judges](https://www.ioccc.org/judges.html): Thank you **very much** [Cody Boone
+Ferguson](/winners.html#Cody_Boone_Ferguson) for the extensive
+efforts in helping improve the IOCCC presentation of past IOCCC
+winners!
+
+## Thank you list
+
+To avoid having to change numerous "_README.md_" files to add thank you notes,
+we centralize them below.
+
+The [IOCCC judges](https://www.ioccc.org/judges.html) wish to recognize the many
+important contributions to the IOCCC presentation of past IOCCC winners.
+We are pleased to note the many contributions on a winner by winner basis.
 
 
 ## [1984/decot](1984/decot/decot.c) ([README.md](1984/decot/README.md]))
