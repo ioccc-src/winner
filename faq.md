@@ -273,6 +273,10 @@ _**...it's so 20th century...**_
 
 - [1988/phillipps](years.html#1988_phillipps)
 
+- [2018/ciura](years.html#2018_ciura)
+
+- [2018/giles](years.html#2018_giles)
+
 ### rot13
 
 - [1985/sicherman](years.html#1985_sicherman)
