@@ -7,11 +7,13 @@ Atlanta, GA 30309
 US
 <http://computronium.org/ioccc.html>
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To run:
 
@@ -19,6 +21,7 @@ make all
 ./schnitzi 5 > sort.c
 make sort
 ```
+
 
 ## Try:
 
@@ -33,12 +36,6 @@ echo 324 >> data
 ./sort < data
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed invalid data
-types which prevented this entry from working, causing a segfault. This showed
-itself in two parts which required two fixes, one for linux and further changes
-for macOS. He also fixed a segfault (after printing garbage) when the arg
-specified evaluated to 0.  Thank you Cody for your assistance!
-
 ### INABIAF - it's not a bug it's a feature :-)
 
 NOTE: the larger the number given to the program the longer the output becomes
@@ -49,7 +46,7 @@ lines!
 ## Judges' remarks:
 
 This is a beautiful program.  How can a program with no conditional (except for
-the fixes for modern systems made by Cody) behavior at all have output which
+the fixes for modern systems) behavior at all have output which
 depends on anything?
 
 For hints on deciphering this, see below past the Author's Comments;
@@ -121,6 +118,7 @@ The only function ever called is `O`, but `O` is just set to point to
 other functions all the time.  Or, almost all the time.
 
 So how does `h` get set, and what to?
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

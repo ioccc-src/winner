@@ -14,11 +14,13 @@ US
 make all
 ```
 
+
 ## To run:
 
 ```sh
 ./schnitzi < textfile
 ```
+
 
 ## Try:
 
@@ -27,16 +29,6 @@ make all
 ./schnitzi < /etc/passwd
 ```
 
-NOTE: the buffer size is very small at 100. It's easy to fix the buffer size but
-it is not as easy to change it to `fgets()`. [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson) gives some hints in the
-[bugs.md](/bugs.md) file on how this entry works which might be useful in order
-to get this to use `fgets()` which would prevent a warning at linking or
-runtime, the latter of which is interspersed with the output of the program. The
-file [schnitzi.alt.c](schnitzi.alt.c) has this to get anyone started, should
-they wish to tackle it (Cody might in time). The problem with changing the buffer
-size is that even when it works the generated output (see judges' remarks below)
-will not be 100% correct duplication of the program.
 
 ### Alternate code:
 
@@ -59,6 +51,7 @@ Try:
 Compare the output of the program with its source.  Sure the output
 is different, but there is more than meets the `diff`'s eye.  Can you
 find out why?
+
 
 ## Author's remarks:
 
@@ -110,6 +103,7 @@ needed to pad it put it over the limit -- it nearly filled a 79 by
 79 area, adding up to over 4000 total characters).  I will provide
 this other version to anyone interested -- contact me by email
 at schnitzi@east.isx.com.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -10,11 +10,13 @@ UK
 make
 ```
 
+
 ## To run:
 
 ```sh
 ./gavin
 ```
+
 
 ## Try:
 
@@ -62,18 +64,6 @@ vi README.md
 
 Press and hold any key.
 
-### Alternate method:
-
-[Yusuke Endoh](/winners.html#Yusuke_Endoh)  provided the `kernel` and `fs.tar`
-files which can be used if you cannot normally use this entry. Instead of
-generating the files just use the files provided, found under the [img/](img/)
-directory. Note that the `img/fs.tar` extracts into `fs/` so you will have to
-fix the tarball; this is done this way to prevent extraction from the entry
-directory overwriting the files and causing `make clobber` to wipe some of them
-out.
-
-Thank you Yusuke!
-
 
 ## Judges' remarks:
 
@@ -102,6 +92,7 @@ What you can do and what you cannot do in such programs?
 
 The program called `prim`, written by the judges, computes and prints prime
 numbers.
+
 
 ## Author's remarks:
 
@@ -173,6 +164,7 @@ so these may need updating as appropriate (`0x90200` is the address
 at which a Linux bootloader loads an x86 kernel image).
 
 \* ;-)
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

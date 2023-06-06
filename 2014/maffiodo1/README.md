@@ -4,6 +4,7 @@
     <smaffer@gmail.com>  
     <http://www.assezeta.com/sandromaffiodo>  
 
+
 ## To build:
 
 This entry requires SDL to be installed. See the [faq.md](/faq.md) if you don't
@@ -13,15 +14,13 @@ know how to do this for your system.
 make
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the build for
-this entry: it does not require SDL2 but SDL1 so there were linking errors.
-Thank you Cody!
 
 ## To run:
 
 ```sh
 cat mario.level | ./prog 320 200 800 300 128 144 mario.rgba mario8.wav 10343679
 ```
+
 
 ## Try:
 
@@ -42,14 +41,14 @@ starwars # animated Star Wars 'film'
 ```
 
 NOTE: the author stated that the sky colour is incorrect in some versions of
-macOS, offering a workaround. Cody tested this out in the most recent macOS
+macOS, offering a workaround. Others tested this out in the most recent macOS
 version and this does not seem to be a problem any more. As he played (and beat)
 the entire series many times years ago he can confirm that the sky is more or
 less correct though it's possible that because he's practically blind he might
 have missed something :-) He guesses that the problem might have been the
 version of `SDL1` but he does not know this either way.
 
-Cody notes ironically that the author stated that in Super Mario Bros one cannot
+Others notes ironically that the author stated that in Super Mario Bros one cannot
 go through walls but there are known glitches where you can in some areas (as he
 recalls this also applied to the arcade version, Mario Bros, but he cannot
 confirm this now) :-)
@@ -321,6 +320,7 @@ Productions](https://www.ign.com/games/producer/time-warp-productions) and my
 justification for the sprites for Mario are the same for this game. Long live
 [The Great Giana The
 Sisters](http://en.wikipedia.org/wiki/The_Great_Giana_Sisters) !! :)
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

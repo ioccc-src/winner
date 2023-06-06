@@ -13,10 +13,6 @@ US
 make all
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made this use `fgets()`
-not `gets()` to make it safer and to prevent an annoying warning with compiling
-and/or linking and/or runtime, the latter of which is interspersed with the
-output of the program itself. Thank you Cody for your assistance!
 
 ## To run:
 
@@ -32,6 +28,7 @@ where
 ### INABIAF - it's not a bug it's a feature! :-)
 
 This entry will segfault if the file cannot be opened. This is not a bug.
+
 
 ## Try:
 
@@ -55,6 +52,7 @@ Try feeding the program source to the program and ask both:
 What is cat ?
 What is cat?
 ```
+
 
 ## Judges' remarks:
 
@@ -80,6 +78,7 @@ of a Usenet article.  You might want to try something from alt.flame.  :-)
 NOTE: If you have a ' in the question this entry might fail.
 
 NOTE: The author may also be contacted at: marks@aldrin.ksc.nasa.gov.
+
 
 ## Author's remarks:
 
@@ -125,6 +124,7 @@ question into individual words with a recursive call.
 
 The text for the info file, by the way, consists largely of headlines
 from the Weekly World News.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

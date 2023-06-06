@@ -22,9 +22,6 @@ Or you can build this entry without the `halfdelay()` call by:
 make chaos_nohalf
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added a call to
-`endwin()` to restore terminal sanity (echo etc.) when exiting the program.
-Thank you Cody for your assistance!
 
 ## To run:
 
@@ -32,6 +29,7 @@ Thank you Cody for your assistance!
 ```sh
 ./chaos
 ```
+
 
 ## Judge's Comments:
 
@@ -85,6 +83,7 @@ The object will "bounce" off the camera, but the result (some points
 in front, some reflected from the rear) looks really odd.  And it
 sometimes hangs.  So just don't fly through objects.  You'll be
 happier.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

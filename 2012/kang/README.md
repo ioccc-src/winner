@@ -4,22 +4,19 @@ Seonghoon Kang
 <kang.seonghoon@mearie.org>  
 <http://mearie.org>
 
+
 ## To build:
 
 ```sh
 make
 ```
 
+
 ## To run:
 
 ```sh
 echo "full spelling of an English cardinal numeral less than a quadrillion" | ./kang
 ```
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) changed the code to
-accept the proper German for four 'vier' where before it was spelt with the
-sound of V (fier not vier). But was this a bug or a feature? He's on the fence
-here but he went ahead and did it anyway as it seems useful. Thank you Cody!
 
 
 ## Try:
@@ -52,7 +49,6 @@ What does it get right? What does it get wrong? Finally why does it get what it
 gets wrong wrong?
 
 
-
 ## Judges' remarks:
 
 The judges were able to appreciate the Indo-European language family
@@ -63,6 +59,7 @@ Also worth mentioning is this entry's ability to understand the
 colloquial year numbers of the last millennium.
 
 We've added a linefeed to the print format for convenience.
+
 
 ## Author's remarks:
 
@@ -186,6 +183,7 @@ The cleaner (size-optimized) version of this program was originally published
 in my website in July 2011. Sun Park and others have reviewed it and let me
 aware of possible improvements. I'd also like to thank Seo Sanghyeon for
 proof-reading remarks.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

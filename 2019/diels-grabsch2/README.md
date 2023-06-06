@@ -3,17 +3,13 @@
 Volker Diels-Grabsch  
 <https://njh.eu>  
 
+
 ## To build:
 
 ```sh
 make
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made the author's
-statement that the entry compiles cleanly true by fixing `warning: a function
-declaration without a prototype is deprecated in all versions of C` (in
-main()). Not strictly necessary but if he's making fixes he might as well. Thank
-you Cody!
 
 ## To run:
 
@@ -21,11 +17,13 @@ you Cody!
 ./prog
 ```
 
+
 ## Try:
 
 ```sh
 sha512sum prog.c || shasum -a 512 prog.c
 ```
+
 
 ## Judges' remarks:
 
@@ -33,6 +31,7 @@ Before running this one, stay calm. Chill out, have a cup of tea. Is this bad?
 
 To understand what is going on here, please check if you are dreaming, or are you dreaming
 that you are dreaming? Or is it, wake up from the simulation?
+
 
 ## Author's remarks:
 
@@ -188,6 +187,7 @@ but whenever one multiplies two of them, one needs to right-shift one
 of them by at least 4 bits, or both by 2.  Or, one splits the 67 bits
 asymmetrically?  I was unable to make it work with 2 parts, but that
 doesn't have to mean anything.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

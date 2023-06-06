@@ -6,12 +6,12 @@ SDRC
 Milford, OH 45150    
 US  
 
+
 ## To build:
 
 ```sh
 make all
 ```
-
 
 Modern compilers failed to compile this entry:
 
@@ -26,15 +26,13 @@ but we were able to get it to compile with modern compilers by specifying the
 `-ansi` flag with a tip from [Yusuke Endoh](/winners.html#Yusuke_Endoh). Thank
 you Yusuke! 
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) pointed out that the
-compiler option `-trigraphs` would also have worked.
-
 
 ## To run:
 
 ```sh
 ./scjones
 ```
+
 
 ## Judges' remarks:
 
@@ -68,6 +66,7 @@ trigraphs for characters which are not in the `Invariant Code Set` of `ISO
 standpoint) character sets.  In short, it should be very widely portable.  As an
 extra added attraction, all of the lines are under 72 characters long, which
 would allow for sequence numbers to be punched in columns 73-80 :-).
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

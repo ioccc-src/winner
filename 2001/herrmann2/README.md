@@ -4,21 +4,12 @@ Immanuel Herrmann
 Germany  
 <https://web.archive.org/web/20071018081145/http://pcpool.mathematik.uni-freiburg.de/~immi/>
 
+
 ## To build:
 
 ```sh
 make
 ```
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work with
-both 64-bit and 32-bit compiles by changing most of the `int`s (all but that in
-`main`) to `long`s. He also fixed it to compile with clang by changing the args
-of main to be `int` and `char **` respectively and changing specific references
-to the `argv` arg, casting to `long` (was `int` but the 64-bit fix requires
-`long`) which was its old type. The original file, used for demonstration
-purposes, as well as if you want to see if your system works with the original
-code (in which case see below Alternate code section), is in
-[herrmann2.alt.c](herrmann2.alt.c). Thank you Cody for your assistance!
 
 
 ## To run:
@@ -92,6 +83,7 @@ make alt
 ```
 
 Use `herrmann2.alt` as you would `herrmann2` above.
+
 
 ## Judges' remarks:
 
@@ -263,6 +255,7 @@ generated implicitly. So the build script has to pass `-include
 the include files has to be provided. In the build script, I
 assume that the path is `/usr/include`, but this can easily be
 adapted.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

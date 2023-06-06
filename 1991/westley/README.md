@@ -7,19 +7,12 @@ St. Paul, MN  55104
 US   
 <http://www.westley.org>  
 
+
 ## To build:
 
 ```sh
 make all
 ```
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
-this program which prevented it from working. The problem was that the read-only
-char array `char *z[]` was being written to. The fix was to change it to `char
-z[][100]` in two spots (see if you can determine why two places, not one!). Why
-100 when the longest string is < 100? Because a shorter value caused strange
-output and it's easier to just choose a larger value that works without having
-to find the correct value. Thank you Cody for your assistance!
 
 ## To run:
 
@@ -110,6 +103,7 @@ ttt: I win!
 Redirects stderr to `/dev/null` by default. If you need errors or warnings use
 `-e`.
 
+
 ## Judges' remarks:
 
 Can you figure out why the board looks different than the
@@ -135,6 +129,7 @@ you can win tic-tac-toe, that there can be acceptable draws.
 
 Try not to cheat (even though it's very easy :-) ), the computer has not learned
 how to catch you doing it.
+
 
 ## Author's remarks:
 
@@ -266,6 +261,7 @@ If you want a program that never loses, simply replace the string
     gur frpbaq, rgp.  Gur grzcyngrf ner fpnaarq hagvy n yrtny zbir vf
     sbhaq.  N grzcyngr vf fpnaarq sebz obggbz gb gbc, evtug gb yrsg
     (v.r.  zbir 9 vf grfgrq svefg, gura 8, qbja gb zbir 1).
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -3,16 +3,24 @@
 
 <center><img alt="IOCCC" SRC="png/ioccc.png"></center><br>
 <center><font size="6"><I>The International Obfuscated C Code Contest </I></font></center><br>
-<center><P>[ <A HREF="judges.html">The judges</A> |
+
+<P>
+<CENTER>
+<A HREF="judges.html">The judges</A> |
 <A HREF="main.html">IOCCC home page</A> |
-<A HREF="main.html#enter">How to enter</A> |
 <B>FAQ</B> |
+<A HREF="index.html#enter">How to enter</A> |
 <A HREF="contact.html">Contacting the IOCCC</A>
-<br>
-<A HREF="main.html#new">IOCCC news</A> |
+<BR><BR>
+<A HREF="index.html#news">IOCCC news</A> |
 <A HREF="winners.html">People who have won</A> |
-<A HREF="years.html">Winning entries</A> ]</P></center>
-<br>
+<A HREF="years.html">Winning entries</A>
+<BR><BR>
+<A HREF="bugs.md">Known Bugs &amp; (Mis)features</A> |
+<A HREF="how-to-bugfix.md">How to fix an IOCCC winner</A> |
+<A HREF="thanks-for-fixes.md">Thanks for the fixes</A> |
+<A HREF="www-history.md">A bit of web site history</A>
+</CENTER>
 
 <HR>
 

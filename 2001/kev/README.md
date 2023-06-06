@@ -5,11 +5,13 @@ Australia<br>
 <http://www.kev.pulo.com.au/><br>
 Mastodon: <https://fosstodon.org/@devkev>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To run:
 
@@ -21,10 +23,8 @@ make
 
 NOTE: each player's paddle is at the bottom and the opponent at the top.
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) slowed down the ball
-just a tad as it went too fast for the speed at which the paddles move even when
-holding down the movement keys. If you need to change the speed you can
-reconfigure it like (say for over a network and not the same host):
+If you need to change the speed you can reconfigure it like (say
+for over a network and not the same host):
 
 ```sh
 make clobber SPEED=50 all # default value which is very fast
@@ -33,6 +33,7 @@ make clobber SPEED=50 all # default value which is very fast
 There is an alternate version which lets you use the arrow keys to control your
 paddle. See below Alternate code.
 
+
 ## Try:
 
 ```sh
@@ -40,11 +41,10 @@ paddle. See below Alternate code.
 ./kev localhost
 ```
 
+
 ### Alternate code:
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) provided an alternate
-version which lets you use the arrow keys on your keyboard instead of the more
-awkward ',' and '.'. To use:
+To use:
 
 ```sh
 make alt
@@ -55,7 +55,6 @@ Use `kev.alt` as you would `kev`.
 What happens if you use both, one in one terminal and the other in another
 terminal?
 
-Thank you Cody!
 
 ## Judges' remarks:
 
@@ -66,6 +65,7 @@ The graphics aren't the impressive part; the graphics and network are.
 How many games come out at $50 and still require you to wait for a patch
 to come out before you can play multiplayer?  This one works out of the
 box.
+
 
 ## Author's remarks:
 
@@ -213,6 +213,7 @@ If you run the client and server on different architectures, both
 architectures need to have the same character systems (i.e. don't
 try mixing ASCII and EBCDIC).  It is independent of endianness
 though.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

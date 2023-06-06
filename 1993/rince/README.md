@@ -13,8 +13,6 @@ England
 make all
 ```
 
-[Yusuke Endoh](/winners.html#Yusuke_Endoh) supplied a patch to get this to work
-in modern systems. Thank you Yusuke!
 
 ## To run:
 
@@ -25,6 +23,7 @@ in modern systems. Thank you Yusuke!
 where:
 	
 `[cabbage]` is a CABBAGE description file  (default: `rince.c`)
+
 
 ## Judges' remarks:
     
@@ -209,6 +208,7 @@ insufficient memory) is performed.
 There is no 'end of game' checking method. Hence games like Sokoban rely
 on the user to decide when they have had enough. Also, there is no quit
 mechanism other than control C.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

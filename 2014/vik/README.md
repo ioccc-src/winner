@@ -6,17 +6,20 @@ US
 <https://www.vik.cc/>  
 <http://danielvik.com/>  
 
+
 ## To build:
 
 ```sh
 make
 ```
 
+
 ## To run:
 
 ```sh
 ./prog > foo.c
 ```
+
 
 ## Try:
 
@@ -25,6 +28,7 @@ echo 'Want to hear me beep?' | ./prog > audio_file.raw
 
 echo 'No. I want chocolate!' | ./prog | mplayer -demuxer rawaudio -
 ```
+
 
 ## Judges' remarks:
 
@@ -44,9 +48,6 @@ might speak to your coding style? If not, then perhaps:
 
 might help? :-)
 
-NOTE: In 2020 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) found a
-minor bug when working on his [Enigma machine entry](../../2020/ferguson2); see
-his [README.md](../../2020/ferguson2/README.md) for details (search for `vik`).
 
 ## Author's remarks:
 
@@ -99,6 +100,7 @@ However I found some man made recordings on that decode reasonable well.
 
 If a recording doesn't decode, you could try to pre-process the input with a
 narrow bandpass filter on the frequency of the transmission.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

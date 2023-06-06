@@ -4,16 +4,13 @@ Anthony Howe
 <achowe@snert.com>  
 <http://www.snert.com>  
 
+
 ## To build:
 
 ```sh
 make
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this so that the
-[configure](source/configure) script (which is not needed but part of the entry)
-would work with compilers that have by default `-Werror` like clang in macOS.
-Thank you Cody!
 
 ## To run:
 
@@ -25,7 +22,6 @@ You can specify a port by appending to the domain `:port`. See notes below on
 the issue of https.
 
 
-
 ## Try:
 
 ```sh
@@ -33,9 +29,9 @@ the issue of https.
 ```
 
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) pointed out that this
-will not work for https initially for two reasons. For a starting point see the
-alternate code section below.
+Some have pointed out that this will not work for https initially
+for two reasons. For a starting point see the alternate code section below.
+
 
 ### Alternate code:
 
@@ -47,9 +43,9 @@ as well as it used to.  If one were to try and connect to `http://www.ioccc.org`
 with this entry they'll just get a 301 error.
 
 In case someone can come up with a clever pipeline or some other hack or
-workaround (perhaps [stunnel](https://www.stunnel.org)), Cody added the alt code
-which does scan for https. Futile, maybe, in which case just enjoy it for what
-it was. To compile:
+workaround (perhaps [stunnel](https://www.stunnel.org)), 
+
+To compile:
 
 
 ```sh
@@ -66,6 +62,7 @@ the URL like:
 but again unless you have a clever workaround or hack to the problem, this sadly
 won't work.
 
+
 ## Judges' remarks:
 
 This little `mynx` will give any [Fiery
@@ -73,6 +70,7 @@ Fox](https://en.wikipedia.org/wiki/Firefox) a run for its money. A nice
 complement to last years winning [hibachi](/2004/hibachi/src/hibachi.c). The
 judges double dare any eager Obfuscationalists to submit the missing pieces to
 get a functioning LAMP stack.
+
 
 ## Author's remarks:
 
@@ -118,6 +116,7 @@ Manifest:
     configure.in            configure script description
     configure               pre-built configure script
 ```
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

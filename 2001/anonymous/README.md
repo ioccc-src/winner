@@ -3,11 +3,13 @@
 The author wishes to remain anonymous  
 Great Britain  
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To run:
 
@@ -15,63 +17,7 @@ make
 ./anonymous x86_program
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed both the
-supplementary program and the program itself (both of which segfaulted and once
-that was fixed only the binary was modified; it was not run but according to the
-author's remarks it should be executed). He managed to do this with linux
-but it will not work with macOS (see [bugs.md](/bugs.md) for why this is); _this
-is not a bug, it's a feature_ inherent in what it does!
-
-The following had to be done in order to get this to work:
-
-- `#include <sys/mman.h>` for `mmap()` and `munmap()`.
-- have `main()` call another function which is no longer a recursive function;
-this prevented `main()` from entering an infinite recursive loop.
-
-Without either of these it would crash and prevent modification of the 32-bit
-[ELF](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) (not elf :-) )
-binary. But again see [bugs.md](/bugs.md) here.
-
-The following change was also made to be more portable, in case the constants
-`PROT_READ` and/or `PROT_WRITE` are not standardised:
-
-Change `3` in the call to `mmap()` to be `PROT_READ|PROT_WRITE`: just in case
-`PROT_READ|PROT_WRITE` does not equal 3 (though it seems to be equal in both
-macOS and linux).
-
-There was one other thing that had to be done though. Since the program used to
-recursively call (infinite recursion, seemingly) `main()` and since that cannot
-be done what had to be done instead is after the new function (`pain()` since it
-was a pain to fix :-) ) returns to first call `munmap()` and `close()` (else one
-would get text file busy error) and then the program can call `execv()` again
-like the function `pain()` (was in `main()`) did but with a slight change. See
-commit `2159caec4677e0f25ad704a74e04c8196fd6c343` for more details.
-
-Notice that the location of the calls to `munmap()` and `close()` followed by
-`execv()` _does matter_!
-
-NOTE: there might be educational value to see the progress of this fix; if you
-wish to see, try:
-
-```sh
-git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..93aa8d79f208dcccc3c5a2370a727b5cf64e9c53 anonymous.c
-git diff 93aa8d79f208dcccc3c5a2370a727b5cf64e9c53..c48629017117379a52b1a512ef8f2593ca9569c8 anonymous.c
-git diff c48629017117379a52b1a512ef8f2593ca9569c8..efdee208a2bc650256637b9357ddfd0de82d2f41 anonymous.c
-git diff efdee208a2bc650256637b9357ddfd0de82d2f41..e9a3f77ea3b209e63ac3f9c06bb84ad86e5ea706 anonymous.c
-git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..2159caec4677e0f25ad704a74e04c8196fd6c343 anonymous.c
-git diff 2159caec4677e0f25ad704a74e04c8196fd6c343..4bc03de321612869aebf855850c6500df95cb6ef anonymous.c
-```
-
-Finally to see from start to finish:
-
-```sh
-git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..4bc03de321612869aebf855850c6500df95cb6ef anonymous.c
-```
-
-Cody also added a [program](anonymous.bed.c) like [anonymous.ten.c](anonymous.ten.c)
-[Ten Green Bottles](https://en.wikipedia.org/wiki/Ten_Green_Bottles) but which
-sings [Ten in the Bed](https://allnurseryrhymes.com/ten-in-the-bed/). Why? For
-fun and so that there's another program that is a bit different (it uses a `char
+For fun and so that there's another program that is a bit different (it uses a `char
 *[]` array for example) that this program will still work on. To use:
 
 ```sh
@@ -82,7 +28,6 @@ make anonymous.bed.64 # if unable to use -m32
 ./anonymous.bed.64
 ```
 
-Thank you Cody for your assistance!
 
 ## Try:
 
@@ -101,6 +46,7 @@ program successfully after it without recompiling?
 
 NOTE: if the 32-bit version cannot be compiled the script will at least run the
 alternate version of the [anonymous.ten](anonymous.ten.c) program.
+
 
 ## Judges' remarks:
 
@@ -121,9 +67,9 @@ the program will fail to execute it and might not even touch it.
 ### WARNING on note from the author
 
 The author suggested that this will somewhat destroy the binaries this touches
-but Cody did not observe this. It does indeed modify the files as the script
+but others did not observe this. It does indeed modify the files as the script
 below will show you (though not all files are modified: can you figure out why
-that is?) but Cody did not notice any problems in using them. Perhaps it's
+that is?) but others did not notice any problems in using them. Perhaps it's
 something he's not aware of possibly including the fact that the modification
 might or might not be complete. If you follow the try commands below you will
 notice that although the binaries do differ it's not many differences and the
@@ -261,6 +207,7 @@ program and one like last years entry [dhyang](/2000/dhyang/dhyang.c); both are
 just C programs that generate C code as their output.
 
 Enjoy and thanks!
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -7,26 +7,12 @@ D-71384 Weinstadt
 Germany    
 <http://www.schweikhardt.net>  
 
+
 ## To build:
 
 ```sh
 make all
 ```
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for modern
-systems (it did not work at all). He also made it so that if a file fails to
-open it does not return but rather skips the reading of the file. Doing this
-lets the entry work right.
-
-What was wrong? The call to `freopen()` was incorrect with the second arg (the
-mode) being instead `5+__FILE__`. It now is `"r"`. There was also a call to
-`fopen()` that was wrong where the mode was instead `44+__FILE__`. Interestingly
-enough though this did not seem to be an issue though I cannot explain why. He
-notes that it works fine with `clang` as well as `gcc` (which is what is used
-but in macOS - see below for alternate code - `gcc` is clang).
-
-Additionally Cody provided an alternate version for macOS. See below for the
-alternate version. Thank you Cody for your assistance!
 
 
 ## To run:
@@ -37,14 +23,13 @@ alternate version. Thank you Cody for your assistance!
 
 ### Alternate code:
 
-As noted above [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made an
-alternate version that works with macOS but there are some important notes as
+As noted above the alternate version works with macOS but there are some important notes as
 well as a description of how it works (spoilers for the original version as
 well).
 
-Cody said that at least with his MacBook Pro Max with the M1 chip some header
-files report an unsupported architecture and unsupported compiler (error,
-warning). However the defines are still found okay.
+An MacBook Pro Max with the M1 chip some header files report an
+unsupported architecture and unsupported compiler (error, warning).
+However the defines are still found okay.
 
 For this alternate version you will need the command line tools which you can
 install like:
@@ -102,6 +87,7 @@ most of the time on this entry, because the program has a hardcoded
 gcc invocation anyway.  Anyone who uses egcs and has no plain gcc
 will need to frob the source anyway and can be expected to do the
 right thing with `${CC}`. So use gcc.
+
 
 ## Author's remarks
 
@@ -302,6 +288,7 @@ does what it should.
 
 From the goals: "To stress C compilers with unusual code."
 That describes exactly my modest attempts...
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

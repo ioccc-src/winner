@@ -10,6 +10,7 @@ Lennart Augustsson
 make all
 ```
 
+
 ## To run:
 
 ```sh
@@ -25,15 +26,6 @@ or use gcc.
 
 The above should print a `!` followed by a newline.
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
-this program that prevented it from working right but he notes it hangs in
-macOS. It works fine in linux. This is because macOS has clang, not gcc, even
-the gcc binary. He observed that with specific compiler flags it hangs in linux
-too and perhaps it's related to this in macOS; maybe other flags are needed but
-he doesn't know (at least not yet). He provided a bit more information in
-[bugs.md](/bugs.md) for anyone who wants to have a go at providing a fix for
-other compilers. As there are a lot of commands to try he also added
-[try.sh](try.sh). Thank you Cody for your assistance!
 
 ## Try:
 
@@ -93,6 +85,7 @@ NOTE: to run all the commands in the above sections you can also use the
 We (the judges) recommend that you spend some time studying this
 entry as it surely will make the 'best of the IOCCC' list.  It was
 very well received by those who attended the IOCCC BOF.
+
 
 ## Author's remarks:
 
@@ -287,6 +280,7 @@ stars:		"*"*
 ---
 
 Well, that is enough ranting for now.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

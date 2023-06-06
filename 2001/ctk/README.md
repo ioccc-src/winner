@@ -5,21 +5,19 @@ Chris King
 Foster, RI, 02825  
 US  
 
+
 ## To build:
 
 ```sh
 make
 ```
 
+
 ## To run:
 
 ```sh
 ./ctk
 ```
-
-The ANSI escape codes were no longer valid but [Yusuke
-Endoh](/winners.html#Yusuke_Endoh) provided a patch to fix the ANSI escape
-codes. This works with macOS as well. Thank you Yusuke!
 
 
 ## Try:
@@ -31,12 +29,14 @@ echo "Do or do not. There is no try."
 Make sure to hit `q` to exit or else your terminal will be messed up (to restore
 it you can try `stty sane` or `reset`).
 
+
 ## Judges' remarks:
 
 No matter how careful you are, this guy eventually crashes.  Most people
 can make at least one successful road trip without crashing.
 
 This is, of course, another of the retro games.
+
 
 ## Author's remarks:
 
@@ -56,6 +56,7 @@ XTerm with the "Unreadable" font and the window maximized
 vertically!).
 
 [1]: https://en.wikipedia.org/wiki/Easter_egg_(media)#In_computing
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

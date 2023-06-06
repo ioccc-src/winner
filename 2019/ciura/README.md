@@ -2,17 +2,20 @@
 
 Marcin Ciura  
 
+
 ## To build:
 
 ```sh
 make
 ```
 
+
 ## To run:
 
 ```sh
 ./getwords.sh en | grep .. | ./prog string
 ```
+
 
 ## Try:
 
@@ -30,12 +33,6 @@ make
 ./ru.sh
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed invalid bytes
-error in `tr` in the scripts. He notes that at least on his systems (macOS and
-fedora linux) the alternative languages do not work. Perhaps that is the wrong
-locale or it's unable to come up with perfect pangrams but one will not get
-errors now (it did not work before the fixes either). Thank you Cody for your
-assistance!
 
 ### Alternate code:
 
@@ -50,6 +47,7 @@ make alt
 
 Use `prog.alt` as you would `prog` above.
 
+
 ## Judges' remarks:
 
 A few letters, one at a time, with no repeats.  How many different ways can this
@@ -61,6 +59,7 @@ bags few lynx.
 
 Speaking of jumping, can you rewrite the code to remove all of the goto jumps in
 this code?
+
 
 ## Author's remarks:
 
@@ -189,6 +188,7 @@ With the supplied [Makefile](Makefile), both `gcc` and `clang` compile
 [prog.c](prog.c) without warnings in C11 and C99 mode. For a clean
 compilation with `gcc -std=c90`, add `-Wno-format` to
 `CSILENCE` in `Makefile`.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

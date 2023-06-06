@@ -3,18 +3,12 @@
 Brent Burley  
 US  
 
+
 ## To build:
 
 ```sh
 make
 ```
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile with
-clang which requires that the first arg of main() be an int and the remaining
-args to be a `char **`. He notes that he could not get the entry to work with
-gcc before the fix and it does not work with clang either; see
-[/bugs.md](/bugs.md) for information here. Thank you Cody for your assistance!
-
 
 
 ## To run:
@@ -32,6 +26,7 @@ information on how to play.
 ```sh
 echo "Do or do not. There is no try."
 ```
+
 
 ## Judges' remarks:
 
@@ -75,6 +70,7 @@ the program so this "strategy" no longer works?
 Notice the clever use of `setjmp()` and `longjmp()` calls.  Can you keep track
 of what state is being saved and restored?
 
+
 ## Author's remarks:
 
 This program plays draw poker.  What is unusual about it is that it
@@ -82,6 +78,7 @@ is written as a single statement -- count the semicolons!  (OK, there
 are really three statements if you count the variable declarations.)  To
 keep things simple, I have avoided the C preprocessor and tricky
 statements such as `if`, `for`, `do`, `while`, `switch`, and `goto`.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

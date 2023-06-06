@@ -13,24 +13,6 @@ US
 make all
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed some bugs that
-impacted the usability of this program including some segfaults under modern
-systems (and possibly in some cases earlier systems) with this entry.
-Originally we noted that the 4 trailing args '0 0 0 0' were required on systems
-that dump core when NULL is dereferenced but this problem showed itself in
-modern systems even with the 4 '0 0 0 0'. He also fixed a segfault if not enough
-args are specified and fixed the code so that the generated `fibonacci.c`
-actually works; before it just printed `0` over and over again (since it did not
-work anyway a segfault prevention was added here). He also fixed some array
-addressing (some of which might not be strictly necessary but as he was testing
-the `fibonacci.c` bug he ended up changing it anyway). Finally he changed this
-program to use `fgets()` not `gets()` to make it safer and to prevent a warning
-about `gets()` at linking or runtime. Thank you Cody for your assistance!
-
-[Yusuke Endoh](/winners.html#Yusuke_Endoh) pointed out that `atof` nowadays
-needs `#include <stdlib.h>` which was used in order to get this to work
-initially (prior to this the output was incomplete). Thank you Yusuke!
-
 
 ## To run:
 
@@ -68,6 +50,7 @@ if (a[1]==NULL||a[2]==NULL||a[3]==NULL||a[4]==NULL||a[5]==NULL) return 1;
 ```
 
 be changed to just test the value of `A` when `a` is argv and `A` is argc?
+
 
 ## Judges' remarks:
 
@@ -137,6 +120,7 @@ knife](https://en.wikipedia.org/wiki/Swiss_Army_knife) included! :-)
 When this program was first shown at the 1990 Summer Usenix conference, it
 received a standing ovation; a first for a contest entry.
 
+
 ## Author's remarks:
 
 Differential equations are solved via the Runge-Kutta method, which guarantees
@@ -147,6 +131,7 @@ Sorting is accomplished with a standard shell sort.
 
 Note that the sorting and reversing is limited to files with fewer than 500
 lines, each less than 99 characters long.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

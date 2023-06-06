@@ -2,24 +2,19 @@
 
 Joshua Karns  
 
+
 ## To build:
 
 ```sh
 make
 ```
 
+
 ## To run:
 
 ```sh
 ./prog < textfile_that_fits_on_the_screen
 ```
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) reported that with `-O`
-level > 0 this program segfaults (sometimes?). He's not sure why as it worked
-fine before on the same systems tested but `-O0` appears to fix the problem in
-both macOS and linux. Perhaps this is the problem that the author reported where
-it sometimes segfaults but Cody did not try debugging it. Thank you Cody for
-your assistance!
 
 
 ## Try:
@@ -39,6 +34,7 @@ the terminal, like:
 ./demo.sh
 ```
 
+
 ## Judges' remarks:
 
 If you typically get lost in mazes, watching this program run might -- or might
@@ -53,6 +49,7 @@ see the @ sign as well as the exclamation mark.
 
 A puzzle for the reader: Can you change the program to consider a diagonal
 movement as one step?
+
 
 ## Author's remarks:
 
@@ -106,6 +103,7 @@ file.
 not encountered this myself).
 - The program could be obfuscated much further.
 - The program contains some unused code and data.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -3,11 +3,13 @@
     Adrian Cable  
     <adrian.cable@gmail.com>  
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To run:
 
@@ -15,23 +17,13 @@ make
 ./cable3 bios-image-file floppy-image-file [harddisk-image-file]
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile
-with modern systems. The problems were that `localtime()` is used differently
-and `time.h` being included (with SDL2 in macOS - but see below) there was a
-conflicting function type. This appeared to be a problem with macOS and only
-when SDL2 was included (but which as noted next it cannot be). The other problem
-is that this entry uses SDL functions that were removed from SDL2 so the
-Makefile has to use `sdl-config` and not `sdl2-config`. Thus the removal of
-localtime probably does not have to be done after all. He left it there in case
-some implementation of SDL1 also has this problem. Thank you Cody for your
-assistance!
-
 
 ## Try:
 
 ```sh
 ./runme
 ```
+
 
 ## Judges' remarks:
 
@@ -44,6 +36,7 @@ If you are using macOS, the included sc-ioccc.terminal configuration file will
 correctly display console applications that use ANSI graphics.
 
 Update: This entry now has its own web page <http://www.megalith.co.uk/8086tiny>
+
 
 ## Author's remarks:
 
@@ -235,6 +228,7 @@ Screenshots of some of these applications running (on Mac OS X) are provided for
 ### Compiler warnings
 
 A lot of compiler warnings are produced by clang. Missing type specifiers, control reaching the end of functions without returning values, incompatible pointer type assignments, and some precedence warnings, all necessary to keep the source size down. Other compilers are likely to produce similar warnings.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

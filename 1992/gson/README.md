@@ -6,32 +6,19 @@ Arentikuja 1 D 305
 00410 Helsinki  
 Finland  
 
+
 ## To build:
 
 ```sh
 make all
 ```
 
+
 ## To run:
 
 ```sh
 ./ag word word2 word3 < /path/to/dictionary
 ```
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) changed the buffer size
-in such a way that gets() should be safe (theoretically) as it comes from the
-command line (though it can also read input from stdin after starting the
-program). Ideally `fgets()` would be used but this is a more problematic.
-Previously it had a buffer size of 256 which could easily overflow. In this
-entry `gets()` is used in a more complicated way:  first `m` is set to `*++p` in
-a for loop where `p` is argv. Later `m` is set to point to `h` which was of size
-\256. `gets()` is called as `m = gets(m)`) but trying to change it to use
-fgets() proved more a problem. Since the input must come from the command line
-Cody changed the buffer size to `ARG_MAX+1` which should be enough (again
-theoretically) especially since the command expects redirecting a dictionary
-file as part of the command line. This also makes it possible for longer strings
-to be read (in case the `gets()` was not used in a loop). Thank you Cody for
-your assistance!
 
 
 ## Try:
@@ -59,7 +46,7 @@ Then using the proper dictionary:
 ```
 
 
-## Judges' comment:
+## Judges' remarks:
 
 Recently some newspapers printed amusing anagrams of one of the
 names listed above.  Run this program to find the anagrams they
@@ -73,6 +60,7 @@ cat README.md | ./mkdict.sh > words
 ```
 
 Then try using the program as shown above with the file `words`.
+
 
 ## Author's remarks:
 
@@ -265,6 +253,7 @@ algorithms are outlined in the rot-13 encoded spoiler below.
 	erphefvir vaibpngvbaf bs gur frnepu shapgvba, frrxvat gb gur ortvaavat
 	bs gur jbeq zngpurq ol gung vaibpngvba, naq pbclvat gur punenpgref bs
 	gur jbeq qverpgyl sebz fgnaqneq vachg gb fgnaqneq bhgchg.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

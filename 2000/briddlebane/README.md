@@ -4,14 +4,13 @@ Moxen N. Briddlebane
 
 Lord Zarbon  
 
+
 ## To build:
 
 ```sh
 make
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile
-in systems that require one to explicitly link in `libm`. Thank you Cody!
 
 ## To run:
 
@@ -42,6 +41,7 @@ inclusive!).  Without this it results in an error in the encoding of
 the way it assigns variables to memory) it will terminate "decrepit"
 with the character `'\200'` (the last value of `F`) instead of `'\0'`.
 
+
 ## Author's remarks:
 
 This program was broadcast from deep within the Zarbonic Cluster
@@ -61,6 +61,7 @@ Furthermore, it is ambiguous how said data is arranged and why
 it is necessary to resort to trigonometric functions to handle
 it.  One of the real mysteries involves the numbers `114` and
 `2`, which are, according to Lord Zarbon, very deliberate.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

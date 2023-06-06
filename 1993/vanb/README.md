@@ -6,16 +6,12 @@ ISX Corporation
 Marietta, GA 30067  
 US  
 
+
 ## To build:
 
 ```sh
 make all
 ```
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work with
-clang. The problem was that the third arg to main() was not a `char **`. Instead
-`O5()` (which was `main()`) is now its own function which main() calls with the
-right parameters. Thank you Cody for your assistance!
 
 
 ## To run:
@@ -38,6 +34,7 @@ hexadecimal and decimal numbers.
 
 What happens if you use something other than valid digits?
 
+
 ## Judges' remarks:
     
 The octal expression may contain:
@@ -56,6 +53,7 @@ one should surround the expression in single quotes.
 
 It is a good thing that this program consists of only one
 expression, otherwise it might become hard to understand.  :-)
+
 
 ## Author's remarks:
 
@@ -217,6 +215,7 @@ int octal( int intermediate )
 ```
 
 `F` and `C` work similarly.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

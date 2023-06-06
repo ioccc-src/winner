@@ -5,11 +5,13 @@ Familia Toledo
 Mexico  
 <https://nanochess.org>  
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To run:
 
@@ -17,18 +19,13 @@ make
 ./toledo3 [1 | 2 | 3 [b]]
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a crash and a
-display problem in this entry so that it now works in modern (64-bit) systems.
-The problem was that it relied on 32-bits so some `int`s were changed to
-`long`s. At this time we don't have an easy way to test this theory but it might
-be that using `-m32` would let this work in 32-bit systems. Thank you Cody for
-your assistance!
 
 ## Try:
 
 ```sh
 ./toledo3 1
 ```
+
 
 ### Alternate versions:
 
@@ -45,6 +42,7 @@ It's pretty obvious from looking at it what this program does,
 since it's clearly spelled out in the code.  The interesting
 question is whether this is easier or harder to understand than
 the code for Deep Blue.
+
 
 ## Author's remarks:
 
@@ -130,6 +128,7 @@ Using [toledo3-sbar.c](toledo3-sbar.c) (which is too large for this IOCCC size
 rules) creates a status display about gameplay on the window title bar.
 
 Using [toledo3-txt.c](toledo3-txt.c) turns this into being purely text based.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

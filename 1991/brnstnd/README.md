@@ -3,19 +3,12 @@
 Daniel J. Bernstein  
 New York University  
 
+
 ## To build:
 
 ```sh
 make all
 ```
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for modern
-systems. There were two invalid operands to binary expression (`char *` and
-`void` and `int` and `void`) to resolve and additionally a mis-feature of the C
-pre-processor which no longer works had to be changed as well in order to get
-this to compile. In particular the macro `C`, defined as `C =G` to make `+=` and
-similar operators no longer works.  The invalid operands to binary expressions
-were resolved with the comma operator. Thank you Cody for your assistance!
 
 
 ## Try:
@@ -43,6 +36,7 @@ this entry.
 
 To have a chance to compile under a modern CPP, we had to
 replace `#D` with `#define`.
+
 
 ## Author's remarks:
 
@@ -183,6 +177,7 @@ Possible future extensions to SORTA include string extraction and
 matching, reading from files into strings, and encrypting the string
 pool to further confuse the judges. I don't think I can fit this into
 the size limit, unfortunately.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

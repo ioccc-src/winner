@@ -4,11 +4,13 @@ Daniel Vik
 <daniel@vik.cc>  
 <http://www.danielvik.com>  
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To run:
 
@@ -24,6 +26,7 @@ below.
 The author stated that the program will crash if no argument is passed tot he
 program though we note that your computer might also [halt and catch
 fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
+
 
 ## Try:
 
@@ -41,12 +44,10 @@ Alternatively, you can use:
 It is possible to download a number of Mod files from [The Mod
 Archive](http://modarchive.org).
 
+
 ### Alternate code:
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson), though he feels
-slightly sick :-), added a version for Windows based on the author's comments
-(along with looking up the function for the right header file). To build try the
-alt rule of the Makefile. Assuming that `make` is similar enough try:
+Assuming that `make` is similar enough try:
 
 ```sh
 make alt
@@ -54,6 +55,7 @@ make alt
 ```
 
 Use `vik.alt` as you would `vik` above.
+
 
 ## Judges' remarks:
 
@@ -76,6 +78,7 @@ the assembly file is about 128MB in size!
 NOTE: The [randowan.mod](randowan.mod) and [mad_world.mod](mad_world.mod) files were
 created by [Henrik Bertilsson](http://www.translucentboy.com) and are included
 with his permission.
+
 
 ## Author's remarks:
 
@@ -190,6 +193,7 @@ _setmode(_fileno(stdout), 0x8000);
 
 The program only runs when a valid MOD file is passed as argument. If
 no argument is passed, the program crashes.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

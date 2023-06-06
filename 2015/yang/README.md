@@ -3,21 +3,20 @@
 Don Yang   
 <http://uguu.org/>  
 
+
 ## To build:
 
 ```sh
 make
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed an unfortunate
-typo in the Makefile that was preventing some of the files from compiling
-properly, trying instead to compile already compiled code. Thank you Cody!
 
 ## To run:
 
 ```sh
 echo Some text | ./prog 
 ```
+
 
 ## Try:
 
@@ -56,6 +55,7 @@ why an array of 512 elements is needed?
 NOTE: the author calls the program `Fuuko` and so the source file referred to in
 their remarks uses `fuuko.c`. The [Makefile](Makefile) will compile everything
 so you need not worry about this.
+
 
 ## Author's remarks:
 
@@ -150,6 +150,7 @@ The process of writing this program can be seen by opening
 
 Code layout is inspired by [Ibuki
 Fuuko](https://clannad.fandom.com/wiki/Fuko_Ibuki), for her love of sea stars.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -6,23 +6,12 @@ Canfield, OH 44406
 US  
 <https://jpdalbec.people.ysu.edu>
 
+
 ## To build:
 
 ```sh
 make all
 ```
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) proposed a fix for this
-to compile with clang and Landon implemented it after some discussion. The
-reason Cody did not do it is because he thought it was the wrong output but as
-it happens the try section below was worded a bit confusingly. He looked at
-[Yusuke Endoh's](/winners.html#Yusuke_Endoh) analysis found
-[here](https://mame-github-io.translate.goog/ioccc-ja-spoilers/1996/dalbec.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp)
-but he missed that Yusuke added a '...' after the result which made him think
-the fix was wrong. Cody also made the recommended change of the author to make
-it so that each number is printed on a line by itself rather than having a long
-string of numbers on the same line. Thank you Cody for your assistance and
-thanks to Yusuke for confirming the output is correct!
 
 
 ## To run:
@@ -53,6 +42,7 @@ For a hint see
 We (the judges) recommend that you take the time needed to understand
 how this program works.  The source is small enough to make the effort
 reasonable, and complex enough to make it interesting.
+
 
 ## Author's remarks:
 
@@ -88,6 +78,7 @@ where `a==0`.
     - to compute powers in modular arithmetic.
 
     - to recursively call itself in the main loop.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

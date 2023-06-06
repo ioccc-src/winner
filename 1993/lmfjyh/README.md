@@ -3,6 +3,7 @@
 Jyrki Holopainen  
 Finland  
 
+
 ## To build:
 
 This entry will not compile with gcc < 2.3.3 as it relied on a bug which was
@@ -37,10 +38,10 @@ If you have gcc < 2.3.3 (i.e. the entry can compile):
 ./lmfjyh
 ```
 
+
 ### Alternate code
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added an alternate
-version which does what the program did with gcc < 2.3.3. To use:
+To use:
 
 ```sh
 make alt
@@ -48,8 +49,6 @@ make alt
 
 Use `lmfjyh.alt` as you would `lmfjyh` above. Note that other code could also be
 done with this bug; see the author's remarks for more details.
-
-Thank you Cody!
 
 
 ## Judges' remarks:
@@ -195,6 +194,7 @@ technique may be widely used, since currently there are only few
 tools supporting it. The advantages over the traditional methods
 are, however, so great that there is no doubt that this method will
 be new standard.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

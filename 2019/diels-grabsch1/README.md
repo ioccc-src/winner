@@ -3,23 +3,20 @@
 Volker Diels-Grabsch  
 <https://njh.eu>  
 
+
 ## To build:
 
 ```sh
 make
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made the author's
-statement that the entry compiles cleanly true by fixing `warning: a function
-declaration without a prototype is deprecated in all versions of C ` (in
-main()). Not strictly necessary but if he's making fixes he might as well. Thank
-you Cody!
 
 ## To run:
 
 ```sh
 ./prog < file > file.Z
 ```
+
 
 ## Try:
 
@@ -35,6 +32,7 @@ cmp ref.Z dg1.Z # Oops, the files differ
 zcat < dg1.Z | cmp - ../mills/Shakespeare.txt # Decompresses correctly. What is going on?
 ```
 
+
 ## Judges' remarks:
 
 Finally, IOCCC now has its own text compression program, and it is short enough
@@ -45,6 +43,7 @@ sacrificing the compression ratio?
 Can you explain why the zero file compresses identically by the entry and the
 standard compress tool, but the text file compresses differently? The judges
 know. :)
+
 
 ## Author's remarks:
 
@@ -76,6 +75,7 @@ compressed, too: It has exactly the same size as the  paragraph you are reading
 right now. And exactly the same shape. Nevertheless, it is portable C99 code
 that runs on 32-bit and 64-bit platforms. It compiles without warnings on both
 GCC and Clang even with `-Wextra and -Weverything`.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -4,17 +4,20 @@ Yusuke Endoh
 <https://github.com/mame/>  
 Mastodon: [@mame@ruby.social](https://ruby.social/@mame)  
 
+
 ## To build:
 
 ```sh
 make
 ```
 
+
 ## To run:
 
 ```sh
 ./prog
 ```
+
 
 ## Try:
 
@@ -46,14 +49,6 @@ q
 Observe what happens when you hit enter or another character! Send EOF to end
 the program.
 
-The author, [Yusuke Endoh](/winners.html#Yusuke_Endoh), supplied the additional
-source files, which [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson)
-added to the repo for us. He wrote on his [analysis of the
-entry](https://mame-github-io.translate.goog/ioccc-ja-spoilers/2015/endoh3.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp)
-that there are others as well but we don't seem to have them and he didn't
-provide them on his page. We've not yet contacted him for a copy but we will in
-time. Thank you Yusuke!
-
 
 ## Judges' remarks:
 
@@ -65,6 +60,7 @@ The author of this gem is a true Delorean!
 A question for inquisitive readers: is the implemented subset of PDP-11
 instructions Turing-complete? (For a clue, see the end of the author's remarks.)
 If in doubt, use [APOUT](https://github.com/DoctorWkt/Apout).
+
 
 ## Author's remarks:
 
@@ -242,6 +238,7 @@ Note: the program writes a binary to stdout.
     8203,-25556,13494,30352,29161,30898,1432,-5991,25411,1344,-4019,22299,15685,
     -16401,-23136,-28110,11874,-18945,1879,2,0,-32256,-20996,-18169,29220,12,0,0,0,
     335,-27277,-30776,20480,0};
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -4,6 +4,7 @@ Maurizio Monge
 Italy
 <maurizio.monge at gmail dot com>
 
+
 ## To build:
 
 Make sure you have the SDL1 (not SDL2!) development environment installed.
@@ -12,20 +13,13 @@ Make sure you have the SDL1 (not SDL2!) development environment installed.
 make
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) pointed out that
-without SDL1 (**not** SDL2) this will not link because two functions that are
-used were removed from SDL2. Since SDL1 is still available and since changing
-the code to use SDL2 would be more complicated he decided to change the Makefile
-to use `sdl-config` not `sdl2-config`. Nevertheless he points out that the entry
-requires x86/x86_64 CPUs. Without it it might very well segfault (for instance
-it segfaulted on his MacBook Pro with the M1 chip).
-
 
 ## To run:
 
 ```sh
 ./monge expression ...
 ```
+
 
 ## Try:
 
@@ -36,6 +30,7 @@ it segfaulted on his MacBook Pro with the M1 chip).
 ### INABIAF - it's not a bug it's a feature! :-)
 
 Incorrect formulas will ungracefully crash the program.
+
 
 ## Judges' remarks:
 
@@ -51,6 +46,7 @@ is, quite predictably, a dud.
 At the time of judging we were too mesmerized by the graphics
 to realize it; and, after all, this entry does take a special
 effort to work on both `i386` and `x86_64`. Portable it is! :)
+
 
 ## Author's remarks:
 
@@ -208,6 +204,7 @@ The zooming algorithm works by remembering for each pixel the
 floating point offset to where the value was actually calculated.
 When zooming, the best match is searched, and if the offset is
 too big (`>1`) the pixel is recalculated.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

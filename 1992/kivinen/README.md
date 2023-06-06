@@ -20,20 +20,6 @@ compile. macOS users running Mountain Lion and later will need to download and
 install [XQuartz](https://www.xquartz.org) in order to compile and run this
 entry.
 
-It was observed that on modern systems this goes much too quick. [Yusuke
-Endoh](/winners.html#Yusuke_Endoh) created a patch that calls `usleep()` but
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) thought the value was
-too slow so he made it a macro in the Makefile `Z`, defaulting at 15000. You can
-reconfigure it like:
-
-```sh
-make clobber Z=1000 all
-```
-
-Yusuke also noted that there is a bug in the program where right after starting
-it moves towards the right but if you click the mouse it goes back. Thank you
-Yusuke!
-
 
 ## Try:
 
@@ -48,8 +34,8 @@ Yusuke!
 
 See also the author's remarks for other variations.
 
-## Judges' remarks:
 
+## Judges' remarks:
 
 The type of entertainment depends on number of arguments
 you have with the program.  :-)
@@ -136,6 +122,7 @@ the better it is. The exit value of zero means you have won.
 
 The game has a cheat system, which can be found after examining the
 event loop at the end of program. It is not a bug, it's a feature!
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

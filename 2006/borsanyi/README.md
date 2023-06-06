@@ -4,15 +4,13 @@ Szabolcs Borsanyi
 United Kingdom  
 s.borsanyi at sussex dot ac dot uk  
 
+
 ## To build:
 
 ```sh
 make
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed (the Makefile)
-under some systems where the `lpthread` was not implicitly linked in. Thank you
-Cody!
 
 ## To run:
 
@@ -20,11 +18,13 @@ Cody!
 ./borsanyi string > file.gif
 ```
 
+
 ## Try:
 
 ```sh
 ./borsanyi ioccc@example.com > example.gif
 ```
+
 
 ## Judges' remarks:
 
@@ -36,6 +36,7 @@ The resulting GIF file is likely to puzzle optical character
 recognition tools.  The amount of imagination necessary to
 recognise the @ character will certainly challenge a few
 anti-CAPTCHA tools.
+
 
 ## Author's remarks:
 
@@ -97,6 +98,7 @@ program is not expected to depend on endianness.  The standard
 output is used for a binary output, which might cause problems.
 To avoid most caveats, the program does not output the octet
 `0x0a`.  The program assumes the use of ASCII.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

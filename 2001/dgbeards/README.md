@@ -6,11 +6,13 @@ Southern Adventist University
 Cleveland, TN 37312  
 US  
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To run:
 
@@ -18,13 +20,13 @@ make
 ./dgbeards
 ```
 
+
 ### Alternate code:
 
 The author provided a way to speed it up a bit and also how to make it so it
-doesn't crash on losing. [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson) made this alternate version with
-the former change (the idea of crashing when losing is too good to fix in his
-opinion). To compile:
+doesn't crash on losing. 
+
+To compile:
 
 ```sh
 make alt
@@ -33,15 +35,16 @@ make alt
 Use `dgbeards.alt` as you would `dgbeards` above. Can you find a flaw in this
 version that the author did not note?
 
-
 ## INABIAF - it's not a bug it's a feature! :-)
 
 This game crashes if it loses.
+
 
 ## Try:
 
 See if you can figure out how to make the computer always lose. It's a very
 simple thing to do. Read the author's remarks for clues.
+
 
 ## Judges' remarks:
 
@@ -56,6 +59,7 @@ I appreciate the realism.
 
 BTW: if your goal is to lose and you do does that mean you win? :-) What does
 winning mean in a game you're supposed to lose at?
+
 
 ## Author's remarks:
 
@@ -243,6 +247,7 @@ fix.]
 This bug can be fixed in a number of ways, but there is a way that adds only one
 byte to the source code.  In the statement `s=(e=-V(n-1,o))>s?Y=G,e:s;` change
 the `>` to a `>=` and the bug will be gone.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -7,18 +7,15 @@ Damaia
 2720 Amadora   
 Portugal  
 
+
 ## To build:
 
 ```sh
 make all
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this so that it
-would work with macOS. Once it could compile it additionally segfaulted under
-macOS which he also fixed. Thank you Cody for your assistance!
-
 NOTE: on modern systems this was hard to see it solve it in real time because it
-goes so quickly so Cody added an alternate version which makes it easier with
+goes so quickly so an alternate version which makes it easier with
 modern systems to see the maze actually being solved in real time. We encourage
 you to use that version but we keep the original here to both preserve the
 original code (the bug fixes notwithstanding) and it will also let you see just
@@ -42,8 +39,9 @@ solving the maze. See [bugs.md](/bugs.md) for more details.
 This version uses `usleep(3)` with the `Z` (defined in the Makefile, default
 `3000`) microseconds to make it easier to see the maze being solved in real
 time. You can redefine Z to reconfigure it in case it's going too slow, too
-fast :-) or you're doing some strange experiment like making it 100000 (which
-Cody did for fun :-) ). To compile and use without reconfiguring the 3000
+fast :-) or you're doing some strange experiment like making it 100000.
+
+To compile and use without reconfiguring the 3000
 microseconds, try:
 
 ```sh
@@ -76,12 +74,14 @@ Why?
 
 This could be used as the basis of an a-maze-ing screen exerciser.
 
+
 ## Author's remarks:
 
 A program that generates a maze, and then solves it, all this being
 seen by the user.  Some highlights of obfuscation are: 3 steps
 functions in one - main(), several recursive calls with conditional
 actions, and just one (big and ugly) statement to solve the maze.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

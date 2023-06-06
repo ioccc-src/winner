@@ -7,22 +7,19 @@ St. Paul, MN  55104
 US  
 <http://www.westley.org>  
 
+
 ## To build:
 
 ```sh
 make all
 ```
 
+
 ## To run:
 
 ```sh
 ./westley number
 ```
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for modern
-systems. It had `1s` in places for a short int which was changed to just `1`.
-Since it's instructional to see the differences he has provided an alternate
-version with the original code. See below. Thank you Cody for your assistance!
 
 NOTE: this program will enter an infinite loop if input is not a number > 0.
 
@@ -42,9 +39,7 @@ NOTE: this entry will very likely crash or do something else without an arg.
 
 ### Alternate code:
 
-To see how C has changed over the years Cody provided the original source in
-[westley.alt.c](westley.alt.c). If you have an old enough compiler try:
-
+If you have an old enough compiler try and to see how C has changed over the years:
 
 ```sh
 make alt
@@ -90,6 +85,7 @@ on some systems.  My personal favorite lint complaint is
 **_"warning: eroticism unused in function main"._**
     
 Also obviously, `(char)lotte` and `(char*)lie` are incompatible types...
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -6,6 +6,7 @@ Sogn Studentby 8231
 N 0858 Oslo  
 Norway  
 
+
 ## To build:
 
 ```sh
@@ -17,27 +18,13 @@ compile. macOS users running Mountain Lion and later will need to download and
 install [XQuartz](https://www.xquartz.org) in order to compile and run this
 entry.
 
-Both [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) and [Yusuke
-Endoh](/winners.html#Yusuke_Endoh) fixed this so that it
-will work with modern systems. Yusuke provided some fixes of the X code and Cody
-fixed the C pre-processor directives so that it would compile. It used to be
-that you could get away with code like:
-
-```c
-G        int i,j
-K        case
-```
-
-and expect `G;` to equate to `int i, j;` (though it's now a long) and `K` to mean
-`case` but that's no longer the case so the offending lines had `#define`
-prepended to them. Thank you Yusuke and Cody for your assistance!
-
 
 ## To run:
 
 ```sh
 ./jonth			# must be run on an X11 server
 ```
+
 
 ## Judges' remarks:
 
@@ -57,6 +44,7 @@ after initialization hidden by the well defined macros `t`, `u` and `F`.
 
 This program is highly portable as it runs on a "Notebook" size SPARC.
 This program will not work on machines where `sizeof(int)!=sizeof(void *)`.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -1,10 +1,9 @@
 # EDAMAME Award
 
-## (Electronic Design Automation - Mechanical Abstract Machine Emulator)
-
 Michael Birken  
 US  
 <o__1 at hotmail dot com>  
+
 
 ## To build:
 
@@ -12,15 +11,13 @@ US
 make
 ```
 
+
 ## To run:
 
 ```sh
 ./birken < file.tofu
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
-macOS with this entry. The problem was a missing `+1` for strlen() with
-malloc(). This prevented it from working. Thank you Cody for your assistance!
 
 ## Try:
 
@@ -33,7 +30,12 @@ malloc(). This prevented it from working. Thank you Cody for your assistance!
 
 etc.
 
+
 ## Judges' remarks:
+
+Q: EDAMAME?
+
+A: Electronic Design Automation - Mechanical Abstract Machine Emulator
 
 What is TUFO?  It's not a veggy friendly food, nor it is Verilog or
 VHDL.  It is not even Pascal!
@@ -51,6 +53,7 @@ And for those who are still confused:
 
 > <http://en.wikipedia.org/wiki/Edamame>
 > <http://en.wikipedia.org/wiki/Tofu>
+
 
 ## Author's remarks:
 
@@ -71,6 +74,7 @@ more than a pair anyway?  Subtle obfuscations abound.  Bonus points go
 out the one who discovers the hidden program within the source.
 
 Note that the shape of the source is a wave, not a waveform.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -6,14 +6,12 @@ Moscow Centre of SPARC Technology
 89-1-95 Moscow  
 Russia  
 
+
 ## To build:
 
 ```sh
 make all
 ```
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work with
-modern compilers. Thank you Cody!
 
 
 ## To run:
@@ -34,6 +32,7 @@ where:
 
 [colors] is the number of possible colors (1 to 15) (default: 6)
 
+
 ## Judges' remarks:
     
 By default, the number of colors is 6.  You may specify a
@@ -42,6 +41,7 @@ for instructions of how to play.
 
 We look forward to more entries from the newer members of the 
 International Internet community.
+
 
 ## Author's remarks:
 
@@ -106,6 +106,7 @@ judges-387> ./mind
 (1): ???? 6444
 40		   # we have guessed the number
 ```
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

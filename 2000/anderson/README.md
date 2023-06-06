@@ -6,15 +6,12 @@ Desa Bojong
 Cikupa, Tangerang, 15710  
 Indonesia  
 
+
 ## To build:
 
 ```sh
 make
 ```
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) changed this entry to
-use `fgets()` instead of `gets()` to make it safer and to prevent annoying
-warnings from showing up at linking or runtime. Thank you Cody!
 
 
 ## To run:
@@ -23,11 +20,13 @@ warnings from showing up at linking or runtime. Thank you Cody!
 echo something | ./anderson
 ```
 
+
 ## Try:
 
 ```sh
 echo Obfuscate | ./anderson
 ```
+
 
 ## Judges' remarks:
 
@@ -39,6 +38,7 @@ The obfuscation in this program is truly masterful.  The program is
 very cleverly obscured without the use of a single `#define`!
 Reformatting this program by hand :-) is the easiest way to understand
 what is going on.
+
 
 ## Author's remarks:
 
@@ -90,6 +90,7 @@ data.  Again, if it's OK with K&R, it's OK with me.
 This program is a great teaching tool for learning the semaphore code;
 and if you don't have any flags handy you can just use two copies of the
 source file.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

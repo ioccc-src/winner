@@ -2,6 +2,7 @@
 
 Anonymous
 
+
 ## To build:
 
 ```sh
@@ -11,11 +12,13 @@ make
 NOTE: if your shell does not support `stty` then see the alternate version
 described in the section below.
 
+
 ## To run:
 
 ```sh
 ./anon x y [z]
 ```
+
 
 ## Try:
 
@@ -24,13 +27,10 @@ described in the section below.
 ./anon 3 3 3
 ```
 
+
 ### Alternate version:
 
-The author stated that if `stty` does not work right on your system you can
-compile it differently so that the program does not use `stty`.
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) set this up so that one
-need not update the [Makefile](Makefile). There's a fun thing here that will be
-mentioned below as well. Thank you Cody! To use this version:
+To use this version:
 
 ```sh
 make alt
@@ -68,6 +68,7 @@ Taking the 4x4 board with 15 tiles to a whole new level, this entry takes this
 puzzle to a whole new dimension!  While you puzzle out this puzzle, we invite
 you to take a good LONG look how and WHY `main()` is recursively called and how
 the runtime stack is used.
+
 
 ## Author's remarks:
 
@@ -508,6 +509,7 @@ that it will always generate a solvable game. However, size limits
 necessitated the removal of this code. And besides, the game is more addictive
 when it's sometimes unsolvable. Especially when it taunts the user with a
 smiley. :-)
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

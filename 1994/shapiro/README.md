@@ -6,33 +6,20 @@ Campus Box 216
 Boulder, CO 80309-0216  
 US  
 
+
 ## To build:
 
 ```sh
 make all
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a bug on systems
-where `EOF != -1`. The problem is that `getc()` and the related functions do not
-return `-1` on EOF or error but rather `EOF`. However `EOF` is not required to be
-`-1` but merely an int < 0 and this program assumed that `getc()` will return
-`-1` on EOF or error, not `EOF`. On systems where `EOF != -1` it could result in
-an infinite loop (for the same reason one should not use `EOF` for the `getopt()`
-functions as they return `-1` when all options are parsed (for details on the
-definition of `EOF` see `7.21 Input/output<stdio.h>` subsection 1 of the
-standard)). An interesting problem occurred where changing the `-1` to `EOF`
-caused both `warning: illegal character encoding in string literal` and `error:
-source file is not valid UTF-8`. But since `EOF` is simply an int < 0 and making
-the loop condition check that the return value is >= 0 does not cause a
-compilation error and it functions correctly it will address the systems where
-`EOF != -1` just as if it checked for `!= EOF`. Thank you Cody for your
-assistance!
 
 ## To run:
 
 ```sh
 ./shapiro &
 ```
+
 
 ## Try:
 
@@ -99,6 +86,7 @@ All of which are harmless (famous last words).
 
 This may or may not work on non ASCII systems (I could not find one to
 test it on.)
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -3,21 +3,12 @@
 Andy Sloane  
 US  
 
+
 ## To build:
 
 ```sh
 make
 ```
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this entry to
-work with clang which is stricter on the type of args to main(). Curiously
-although clang requires the types of args to be strictly correct it allows for
-only one arg which he made it as the second arg was not used and this allows for
-a closer match to the original format of the entry. He also made sure that the
-Makefile links in `libm` as not all systems do this by default. Since the author
-suggested that the lack of certain `#include`s might break the program in some
-systems he added `-include ...` to the Makefile as well. Thank you Cody for your
-assistance!
 
 
 ## To run:
@@ -40,10 +31,10 @@ movements. See the alternate code section below.
 echo "Do or do not. There is no try."
 ```
 
+
 ### Alternate code:
 
-The alternate version, provided by [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson), uses `usleep()` so one can enjoy
+The alternate version uses `usleep()` so one can enjoy
 the entry with modern systems and which will not be too stimulating for those
 who have a problem with fast moving text (like himself). It uses the `Z` macro
 as the parameter to `usleep()` which you can override. The default is
@@ -62,12 +53,12 @@ make CDEFINE="-DZ=70000" clobber alt
 
 Use `sloane.alt` as you would `sloane` above.
 
-Thank you Cody!
 
 ## Judges' Comments:
 
 Looks almost good enough to eat, dunnit?  I suppose you could argue that,
 at first blush, this looks like a self-reproducing program.
+
 
 ## Author's remarks:
 
@@ -122,6 +113,7 @@ In increasing order of difficulty:
 
  - How is the "IOCCC 2006" logo encoded?  Can you put something else in its
    place?  Can you find a smaller encoding?
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

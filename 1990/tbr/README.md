@@ -19,16 +19,9 @@ US
 make all
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work with
-modern compilers; `exit(3)` returns void but the function was used in a binary
-expression so this wouldn't even compile. Cody also changed the code to use
-`fgets()` instead of `gets()` so one would not get a warning about the use of
-`gets()` at linking time or execution, the latter case causing confusing output
-due to the warning being interspersed with the program's output. Thank you Cody
-for your assistance!
-
 For the original version with `gets()` see the [archive
 tarball](/archive/archive-1990.tar.bz2).
+
 
 ## To run:
 
@@ -41,6 +34,7 @@ NOTE: globs do not work with this entry. Why?
 
 NOTE: `exit` does not work and neither does `logout`. To exit try sending ctrl-d
 or ctrl-c (or kill it from another terminal :-) ).
+
 
 ## Try:
 
@@ -57,8 +51,8 @@ vi tbr.c
 What happens if you try using `cd -` to return to previous directory? What about
 `cd` with no args?
 
-## Judges' remarks:
 
+## Judges' remarks:
 
 This program touches on a well known Unix utility, the 6th edition Bourne Shell
 (`/bin/sh`), whose original source was considered to be extremely obfuscated by
@@ -85,6 +79,7 @@ e(x){x<0?write(2,"?\n$ "-x/4,2),x+1||(exit(1),0):5;}
 
 It has the `exit()` returns void fix but not the `gets()` to `fgets()` fix
 applied.
+
 
 ## Author's remarks:
 
@@ -143,6 +138,7 @@ applied.
 
     Gurer vf whfg bar reebe zrffntr, gur dhrfgvba znex, ohg url, gung'f
     nyy rq qbrf gbb.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -6,15 +6,12 @@ Rigakubu 7-goukan 311
 Hongou 7-3-1, Bunkyou-ku, Tokyo
 Japan
 
+
 ## To build:
 
 ```sh
 make
 ```
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for modern
-compilers. Depending on the compiler it would either segfault when run or not
-compile at all (gcc and clang respectively). Thank you Cody for your assistance!
 
 
 ## To run:
@@ -23,25 +20,27 @@ compile at all (gcc and clang respectively). Thank you Cody for your assistance!
 ./natori
 ```
 
+
 ## Try:
 
 ```sh
 echo "Do or do not. There is no try."
 ```
 
+
 ### Alternate code:
 
 The author noted that those in the southern hemisphere might want to change
-`acos(l/2)` into `acos(-l/2)`. Cody went ahead and made an alt version to do
-this.
+`acos(l/2)` into `acos(-l/2)`. 
 
-To run:
+To run the alternate code that supports the southern hemisphere:
 
 ```sh
 make alt
 ```
 
 Use `natori.alt` as you would `natori`.
+
 
 ## Judges' remarks:
 
@@ -54,6 +53,7 @@ own non-traditional prototype for main().  We have had uglify this
 program in order to try and prevent C compilers form failing to
 compile due to the unusual arg types of the main() function.
 
+
 ## Author's remarks:
 
 This program outputs a rough image of the moon in its current phase.
@@ -62,6 +62,7 @@ The main obfuscation of this entry is its complicated double recursion
 
 People living in the southern hemisphere may want to change `acos(l/2)`
 into `acos(-l/2)`.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

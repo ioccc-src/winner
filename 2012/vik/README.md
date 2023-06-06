@@ -4,6 +4,7 @@ Daniel Vik
 <daniel@vik.cc>  
 <http://danielvik.com/>  
 
+
 ## To build:
 
 ```sh
@@ -55,6 +56,7 @@ program or if invalid arguments or images of mismatching sizes or unsupported
 pixel formats though we note that your computer might also [halt and catch
 fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
 
+
 ## Try:
 
 ```sh
@@ -64,12 +66,10 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
 ./vik d ioccc-in-chocolate.png > restored-ioccc.png
 ```
 
+
 ### Alternate code:
 
-Based on the author's description it should be able to get this entry to work
-for Windows. With his instructions [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson) added the alternate version that
-does this for the few who might use Windows. To compile:
+For those few who might use Windows, To compile:
 
 ```sh
 make alt
@@ -77,8 +77,6 @@ make alt
 
 Use `vik.alt` as you would `vik` above.
 
-We're not sure whether we want to thank Cody or not for this :-) and he's not
-sure if he wants to be thanked either :-) but we appreciate it nonetheless.
 
 ## Judges' remarks:
 
@@ -89,6 +87,7 @@ Can you discern hidden pieces of chocolate in
 [chocolate-in-ioccc.png](chocolate-in-ioccc.png)?
 
 ![chocolate in ioccc](chocolate-in-ioccc.png "Chocolate in IOCCC")
+
 
 ## Author's remarks:
 
@@ -187,6 +186,7 @@ as well as the scan line filters.
 
 All these features were quite easy to add, much thanks to the (actually
 pretty good) design of the code.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

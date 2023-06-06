@@ -5,11 +5,13 @@ Greece
 <https://www.spinellis.gr/>  
 Mastodon: <https://mstdn.social/@DSpinellis>
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To run:
 
@@ -18,17 +20,9 @@ make all
 ./a.out 2>/dev/null
 ```
 
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault that
-prevented this entry from working at all and made an alternate version
-that works with `clang`. The alternate code, described below, is what is needed
-for clang. Reading it might be instructive even if you have gcc.
-
 The segfault which was always triggered was due to the code `*q>' '&&(*q)--;`.
 This seems odd at first glance but it's pointing to `s` which was read-only
 memory as a `char *s`.  It's now a `char s[]`.
-
-Thank you Cody for your assistance!
 
 
 NOTE: for `clang` you'll likely have to use the alternate code described below.
@@ -41,6 +35,7 @@ something funny.
 
 These are a mild nuisance but are considered a feature not a bug. We challenge
 you to fix it for learning if you wish. See also [bugs.md](/bugs.md).
+
 
 ## Try:
 
@@ -66,13 +61,15 @@ What happens if you give the program a C program like itself? Try:
 You'll get errors yes but what does the generated file look like? What about
 other types of files?
 
+
 ### Alternative code:
 
-The alternative code, provided by Cody, allows this entry to work successfully
+
+The alternative code allows this entry to work successfully
 even with clang. He notes that unfortunately it's something of a hack or maybe
 even a kludge. This however seems important because it works well and allows for
-not messing with the `s` string which is quite complicated. For all Cody knows
-even changing the length could break functionality and indeed the length would
+not messing with the `s` string which is quite complicated. 
+Even changing the length could break functionality and indeed the length would
 have to be longer for this to work with clang.
 
 How does it work? The code (which you will see in [dds.c](dds.c)) does a `return
@@ -83,8 +80,8 @@ that the compilation failed with clang (because it didn't use `make` so no
 [LANDER.BAS](LANDER.BAS)) due to a return from `main()` without a return value
 and the use of functions not yet declared.
 
-Now as noted since the string `s` is complicated and because Cody did not want
-to inadvertently mess something up he changed that code to `system("make a");`
+Now as noted since the string `s` is complicated and to not
+inadvertently mess something up he changed that code to `system("make a");`
 and then added the right rule to the Makefile. Thus for the alternative version
 you now need both `make` and `cc`. If you use gcc you may change the system()
 call to what was given in this description to get a more authentic feel. If you
@@ -96,8 +93,6 @@ make clobber alt
 ./dds.alt LANDER.BAS 2>/dev/null
 ./a 2>/dev/null
 ```
-
-Thank you Cody for your assistance!
 
 
 ## Judges' remarks:
@@ -169,6 +164,7 @@ loops for scanning the expression in the IF statement and the way a
 decision tree is implemented in order to match the statements.  (Of
 course the `s` string is encoded by adding one to every character of it just
 to confuse you).
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

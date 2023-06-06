@@ -4,17 +4,12 @@ Timo Poikola <ioccc2018@ig.fi>
 <https://ig.fi/>  
 <https://ig.fi/other/ioccc>  
 
+
 ## To build:
 
 ```sh
 make
 ```
-
-NOTE: some have reported that Terminal.app in macOS does not work and one might
-need a different terminal emulator like that from
-[XQuartz](https://www.xquartz.org) but [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson) reported that this works fine in
-macOS Ventura with Terminal.app. YMMV of course.
 
 
 ## To run:
@@ -23,6 +18,7 @@ macOS Ventura with Terminal.app. YMMV of course.
 ./prog
 ```
 
+
 ## Try:
 
 On terminal supports 24 bit color, has black background, and size at least 125x38, try:
@@ -30,6 +26,7 @@ On terminal supports 24 bit color, has black background, and size at least 125x3
 ```sh
 ./prog
 ```
+
 
 ## Judges' remarks:
 
@@ -41,6 +38,7 @@ It is said by some students of Astronomy:
 Many [Mnemonic variations](http://www.star.ucl.ac.uk/%7Epac/obafgkmrns.html) exist.
 You might wish, on a star, to better understand the colors being displayed.
 And those in the deep south might wish to go north for a better view.
+
 
 ## Author's remarks:
 
@@ -155,6 +153,7 @@ the Caesar cipher with the key 18.
 
     Lzw xajkl tsffwj ak wfugvwv mkafy AWWW 754 xdgslk gf dafw 47. Al ak hjaflwv
     gfdq gf dalldw-wfvasf esuzafwk.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

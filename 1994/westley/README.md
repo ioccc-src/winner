@@ -7,6 +7,7 @@ St. Paul, MN  55105
 US  
 <http://www.westley.org>  
 
+
 ## To build:
 
 ```sh
@@ -18,10 +19,10 @@ where you get messages as compiler errors. Depending on the compiler line you
 will get different error messages and one compiler line will make you win the
 game!
 
+
 ## To run:
 
 There is no running as such. See below.
-
 
 
 ## Try:
@@ -37,20 +38,19 @@ cc -Describe -Drain westley.c
 NOTE: your terminal should be set to 80 columns, 8 character tabs, and
 wraparound.
 
+
 ## Judges' remarks:
 
 Not all compiler errors are bad.
 
 For spoilers see the end of the notes from the author below.
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) converted the spoiler
-compiler options to be compiler commands and added a script
-[spoiler.sh](spoiler.sh) to automate the spoiler commands provided by the author
-to make it easier to see the game in action. Thank you Cody! To use:
+To use:
 
 ```sh
 ./spoiler.sh
 ```
+
 
 ## Author's remarks:
 
@@ -131,6 +131,7 @@ cc -Drop -Donut -Down -Drain westley.c # or -Drop -Dwarf -Donut
 Note that the game has no real state information; you can type these
 commands in any order, at any time.  Also note that word order is
 unimportant.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

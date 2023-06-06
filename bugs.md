@@ -1,4 +1,4 @@
-# BUGS and (MIS)FEATURES
+# Bugs and (Mis)features
 
 There are a number of known problems with IOCCC winners: many of
 which have to do with differences between today's compiler environments

@@ -4,11 +4,13 @@ Brian Westley
 US
 <http://www.westley.org>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To run:
 
@@ -16,17 +18,13 @@ make
 ./westley
 ```
 
-## Try:
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added the script
-[westley.sh](westley.sh) to automate a heap of commands that we, the IOCCC
-judges, suggested, as well as some additional ones that he thought would be fun.
-These include the below sort and punch card versions that he added, described
-below, based on the author's remarks. Thank you Cody!
+## Try:
 
 ```sh
 ./westley.sh
 ```
+
 
 ### Alternate code:
 
@@ -51,8 +49,8 @@ Use `westley.sort` as you would `westley` above.
 ### Punch card code:
 
 The author also stated that if you just sort the code you'll get the with
-`sort`) version that just prints out the punch card. Cody put this in
-[westley.punch.c](westley.punch.c) specifically so that Westley can punch
+`sort`) version that just prints out the punch card. The
+[westley.punch.c](westley.punch.c) code specifically so that Westley can punch
 everyone in the face! :-) This is also compiled by default.
 
 To use, try:
@@ -60,6 +58,7 @@ To use, try:
 ```sh
 echo 'Brian Westley does it again!' | ./westley.punch 2>/dev/null
 ```
+
 
 ## Judges' remarks:
 
@@ -75,6 +74,7 @@ to a new level!  :-)
 We find it amazing that with just 28 lines of code (not counting comments and
 blank lines) there are `28!` or ``304,888,344,611,713,860,501,504,000,000``
 versions of the program, all valid C!
+
 
 ## Author's remarks:
 
@@ -205,6 +205,7 @@ all legal C.
 \* except in Florida voting machines
 
 \*\* all cards must be face down, nine-edge first, of course.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

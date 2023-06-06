@@ -4,11 +4,13 @@ Eryk Kopczynski
 Poland  
 <http://www.mimuw.edu.pl/~erykk/>  
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To run:
 
@@ -16,10 +18,6 @@ make
 ./kopczynski < input_file
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) reported that this
-entry cannot be optimised by the compiler if it's to work. He also added the
-file [kopczynski-a](kopczynski-a) to demonstrate what happens when art more like
-a letter is fed to the program. Thank you Cody!
 
 ## Try:
 
@@ -43,6 +41,7 @@ What happens?
 What happens if you feed the program source to the program? Can you figure out
 why?
 
+
 ### Alternate code
 
 The judges modified the program to print its result.  The original
@@ -58,6 +57,7 @@ Then try:
 ./kopczynski.alt < kopczynski-10
 echo $?
 ```
+
 
 ## Judges' remarks:
 
@@ -83,6 +83,7 @@ Here is a related puzzle: how to continue the sequence:
 
 With certain arguments, you can alter the exit value / output.  Can you figure
 out how and why?
+
 
 ## Author's remarks:
 
@@ -195,6 +196,7 @@ figuring how arguments can be used to alter the exit value.
 
 10. Finally, the program tries to be as concise as possible. Some obfuscation
 comes from this. For additional obfuscation and conciseness, `if` means `while`.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

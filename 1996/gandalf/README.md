@@ -8,16 +8,13 @@ Surrey
 GU1 4AP  
 England  
 
+
 ## To build:
 
 ```sh
 make all
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile
-and work with modern systems. As he loved the references in the code that could
-not compile he just commented out as little as possible to get this to compile.
-Thank you Cody for your assistance!
 
 ## To run:
 
@@ -44,6 +41,7 @@ Care to guess why these execute differently?  Only the
 compiler knows ... ok maybe other things like the author,
 the judges and maybe you too?
 
+
 ## Judges' remarks:
 
 For misleading C pre-processor output, try:
@@ -52,9 +50,11 @@ For misleading C pre-processor output, try:
 cc -E gandalf.c
 ```
 
+
 ## Author's remarks:
 
 The program requires an ASCII system.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

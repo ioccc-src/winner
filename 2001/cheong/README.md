@@ -4,18 +4,12 @@ Raymond Cheong
 US  
 <http://www.raymondcheong.com/index.html> 
 
+
 ## To build:
 
 ```sh
 make
 ```
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work with
-clang by adding another function that is allowed to have a third arg as an int,
-not a `char **`. He chose pain() because it's a four letter word that would
-match the format and because it's pain that clang forces this. :-) This fix
-makes a point of the author's notes on portability no longer valid, btw. Thank
-you Cody for your assistance!
 
 
 ## To run:
@@ -37,6 +31,7 @@ This program will very likely crash or do something different without an arg.
 ./cheong 05305265226926441255040573044986873789
 ```
 
+
 ## Judges' remarks:
 
 Be sure to give an even number of digits in the argument.  Add a
@@ -44,6 +39,7 @@ leading 0 if needed.
 
 The source code is nice, compact, and self documenting
 as all good programs should be!  :-)
+
 
 ## Author's remarks:
 
@@ -108,6 +104,7 @@ with fixed-width font)
 
 Thanks goes out to Bobby Rohde for numerous suggestions on how to shorten
 the program.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

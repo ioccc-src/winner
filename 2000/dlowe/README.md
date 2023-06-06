@@ -4,6 +4,7 @@ David Lowe
 US  
 <https://github.com/dlowe>
 
+
 ## To build:
 
 ```sh
@@ -15,11 +16,6 @@ The following bit of perl may help determining the values you need:
 ```sh
 perl -MConfig -e 'print "$Config{archlibexp}/CORE\n"'
 ```
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile
-with more recent perl versions; the symbol now `PL_na` was once `na`. He notes
-that this entry crashes under macOS but it works under linux after this change.
-Thank you Cody for your assistance!
 
 
 ## To run:
@@ -33,6 +29,7 @@ Thank you Cody for your assistance!
 ```sh
 echo "13 14 15 16 17 + - * / p" | ./dlowe
 ```
+
 
 ## Judges' remarks:
 
@@ -48,6 +45,7 @@ The judges' remarks contain a clue to the hidden command :-).
 
 * The IOCCC uses an anonymous judging process which keeps the identity
 of the submitters hidden until all the prize winners have been selected.
+
 
 ## Author's remarks:
 
@@ -276,6 +274,7 @@ Granted, embeddable Perl isn't quite so portable, but still...
 Also, Perl 5 is bundled with the following OS distributions: AIX 4.3.3+,
 FreeBSD 3.0+, IRIX 6.4+, every Linux distribution, NetBSD, OpenBSD, and
 DEC Tru64 5.0+, again according to the Perl people.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

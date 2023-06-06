@@ -4,6 +4,7 @@ Michael Birken
 <o__1@hotmail.com>  
 <http://www.meatfighter.com/>  
 
+
 ## To build:
 
 ```sh
@@ -16,6 +17,7 @@ available. See Alternate code section below for more details.
 WARNING: if you have a problem with flashing colours please consider whether you
 should try this entry or not. This problem can also occur with the alternate
 version but to a lesser degree depending on how it's configured.
+
 
 ## To run:
 
@@ -36,12 +38,13 @@ perl -e 'map{map{print int(rand()*8);}(0..16);print chr(10);}(0..30);' | tr '[0-
 BIRKEN=birken.alt ./demo.sh
 ```
 
+
 ### Alternate code:
 
-Along with the [demo.sh](demo.sh), based on the author's recommendations,
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added an alternate
-version for this entry which allows one to control how fast the painting is
-done. To compile:
+The alternate version for this entry which allows one to control
+how fast the painting is done.
+
+To compile:
 
 
 ```sh
@@ -52,7 +55,7 @@ Finding the 'right' default value was a fine line; the default, 15000
 microseconds (0.015 seconds), will take quite a while to finish but it allows
 one to more easily see what is going on. Even easier to see would be 25000 but
 these values make it quite slow and one could easily lose interest. Like some
-other entries where Cody made this type of alternate version he made it
+other entries where this was made an alternate version he made it
 configurable at compile time. If you wish to speed it up by 100% you can instead
 do:
 
@@ -69,8 +72,6 @@ Given that the [original](birken.c) version is easy to see without a delay this
 slower value shouldn't be a problem.
 
 Use `birken.alt` as you would `birken` above.
-
-Thank you Cody!
 
 
 ## Judges' remarks:
@@ -89,6 +90,7 @@ PTSD](http://www.livescience.com/19894-tetris-treat-ptsd-flashbacks.html) and
 it's even been [put on MIT's Green
 Building](http://hacks.mit.edu/Hacks/by_year/2012/tetris/).
 Using it for painting by numbers looks like a novel idea.
+
 
 ## Author's remarks:
 
@@ -514,6 +516,7 @@ The origin of the remaining files are described below:
 
 * [snoo.txt](snoo.txt) - 8-bit version of [Snoo](https://www.reddit.com/r/Snoo/),
 [Reddit](https://www.reddit.com)'s alien mascot
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

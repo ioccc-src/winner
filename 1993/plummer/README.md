@@ -5,6 +5,7 @@ Mark Plummer
 Fallston, MD, 21047  
 US  
 
+
 ## To build:
 
 ```sh
@@ -25,6 +26,7 @@ where:
 
 NOTE: an alternate version exists. See Alternate code section below.
 
+
 ## Try:
 
 ```sh
@@ -34,9 +36,7 @@ NOTE: an alternate version exists. See Alternate code section below.
 
 ### Alternate code:
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added an alternate
-version which uses `usleep()` so you can see what is happening with faster
-systems. To use:
+To use:
 
 
 ```sh
@@ -51,18 +51,18 @@ If you wish to change the time to sleep (default `200`) you can do so like:
 make clobber CDEFINE="-DZ=50" alt
 ```
 
+
 #### Try:
 
 ```sh
 ./plummer.alt xyzzyzzyx 5555
 ```
 
-Thank you Cody!
-
 ### INABIAF - it's not a bug it's a feature :-)
 
 This entry will very likely crash or do something else if you run it without
 enough args.
+
 
 ## Judges' remarks:
     
@@ -121,6 +121,7 @@ been incremented past `9`).
 The inspiration for this program came from actual code which dealt
 with scanning for a unique temporary filename by appending a
 successively larger number to the end of a string.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

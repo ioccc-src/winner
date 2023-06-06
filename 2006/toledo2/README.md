@@ -5,11 +5,13 @@ Familia Toledo
 Mexico  
 <https://nanochess.org>  
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To run:
 
@@ -17,14 +19,8 @@ make
 ./toledo2
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
-this program which was making it fail to work under macOS - it did not seem to
-be a problem under linux, at least not fedora. The problem was wrong variable
-types - implicit `int`s instead of `FILE *`s. It now works with both macOS and
-linux. Thank you Cody!
-
 To end execution press `ctrl-z`. As mentioned in the author's remarks and in the
-below section, it is supposed to crash on termination though Cody noted this
+below section, it is supposed to crash on termination though some noted this
 does not seem to happen in macOS. He asks ironically: 'if it's supposed to crash
 and it does not crash is it actually a bug or is it a feature? :-)'
 
@@ -34,6 +30,7 @@ By design this program is supposed to crash on termination.
 
 You must type in caps (except in strings) and this program is indeed
 case-sensitive.
+
 
 ## Try:
 
@@ -60,6 +57,7 @@ remarks.
 
 See also [bugs.md](/bugs.md) for more details.
 
+
 ## Judges' remarks:
 
 We're impressed! Last year, it was a
@@ -79,6 +77,7 @@ within the `KAYPROII.ZIP`
 file referred in the author's remarks); walking in a maze of
 twisty little passages all alike is easier than understanding
 the code!
+
 
 ## Author's remarks:
 
@@ -259,6 +258,7 @@ The BIOS is tailor made for this emulator, and helps to simplify it.
 - Why bother with prototypes? Every good C
   programmer can develop its C programs using
   only one function.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

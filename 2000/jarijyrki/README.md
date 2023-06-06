@@ -12,6 +12,7 @@ Forsellesintie 1-3A10
 Finland  
 <https://web.archive.org/web/20061205082106/http://personal.eunet.fi/pp/halo/>  
 
+
 ## To build:
 
 ```sh
@@ -19,10 +20,6 @@ make
 ```
 
 You will need X11 header files and libraries installed to build this program.
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made it easier to
-compile this by adding `X11/` to the includes of `Xlib.h` and `keysym.h`. Thank
-you Cody!
 
 
 ## To run:
@@ -32,6 +29,7 @@ you Cody!
 ```
 
 You will need a system capable of displaying the results of X Window programs.
+
 
 ## Try:
 
@@ -63,12 +61,15 @@ And observe that it matches what you had in the previous run!
 
 NOTE: changing the dimension parameters (see the authors' comments) renders
 existing spreadsheet files unusable.
+
+
 ## Judges' remarks:
 
 This entry is one of those that makes you wonder why some commercial software
 needs tens to hundreds of <strike>megabytes</strike>gigabytes to install!  This
 entry does not simply do the basics, it includes graphing features.  All this
 program needs now is a flight simulator!
+
 
 ## Author's remarks:
 
@@ -461,6 +462,7 @@ certain kinds of places.  If this happens, you may move the offending character
 to a new name by exchanging it on the command line and in the program with
 another character. Note that there are *no* free characters in the program
 currently.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

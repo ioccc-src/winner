@@ -4,17 +4,20 @@ Nick Johnson
 New Zealand  
 <https://web.archive.org/web/20051030162356/http://www.notdot.net/>  
 
+
 ## To build:
 
 ```sh
 make
 ```
 
+
 ## To run:
 
 ```sh
 ./arachnid [mazefile]
 ```
+
 
 ## Try:
 
@@ -32,20 +35,16 @@ Navigation is through the use of the `wasd` inverted-T formation on
 QWERTY keyboards.  Rogue players, vi users, and Dvorak typists are
 invited to get lost (or use the alt version)!
 
+
 ### Alternate code
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added an alternate
-version which allows those like himself used to `h`, `j`, `k` and `l` movement
-keys to not get lost. Non rogue players, vi users and Dvorak typists are invited
-to get lost (or use the original version)! To use:
+To use:
 
 ```sh
 make alt
 ```
 
 Use `arachnid.alt` as you would `arachnid` above.
-
-Thank you Cody!
 
 
 ## Judges' remarks:
@@ -81,6 +80,7 @@ explorers out there.
 ```
 
 You can explore the maze using the `w`,`a`,`s`, and `d` keys.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

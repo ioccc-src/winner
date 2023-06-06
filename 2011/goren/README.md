@@ -3,11 +3,13 @@
 Uri Goren  
 <goren.uri@gmail.com>  
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To run:
 
@@ -15,17 +17,13 @@ make
 echo "some text" | ./goren
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for macOS.
-Before the fix it segfaulted. It worked fine under linux. After fixing it it was
-noticed that the author stated it does not work for 64-bit so it was then tested
-as a 32-bit binary (linux) and 64-bit binary (linux, macOS) and both work. It
-was fixed by changing some `int`s to `long`s. Thank you Cody!
 
 ## Try:
 
 ```sh
 echo "Hello, world!" | ./goren
 ```
+
 
 ## Judges' remarks:
 
@@ -46,6 +44,7 @@ echo '| is just a representation of a pipe because I say so! So stuff it!' | ./g
 ```
 
 something happens!  Why?
+
 
 ## Author's remarks:
 
@@ -96,6 +95,7 @@ mostly with gcc on Linux.
 
 It doesn't support 64 bits (due to integer-pointer casts, and a >>31).
 It does work on 64-bit Linux, because all functions are below 4GB.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

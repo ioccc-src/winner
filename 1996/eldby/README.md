@@ -6,11 +6,13 @@ Roedtvetvn 20                (Home address)
 0955 Oslo  
 Norway  
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To run:
 
@@ -29,11 +31,7 @@ NOTE: to reset the sanity of your terminal after this program ends try `reset`.
 
 ### Alternate code:
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) provided an alternate
-version which uses `usleep()` in between writing the output for those who are
-sensitive to text flashing by rapidly (it affects him too but he also thinks it
-moves too fast nowadays anyway). The default sleep duration is `35000` but you can
-change it at compilation like:
+The default sleep duration is `35000` but you can change it at compilation like:
 
 ```sh
 make CFLAGS+="-DZ=20000" clobber alt
@@ -41,18 +39,19 @@ make CFLAGS+="-DZ=20000" clobber alt
 
 Use `eldby.alt` as you would `eldby`.
 
-Thank you Cody!
 
 ## Judges' remarks:
 
 We were impressed by the author's ability to render spheres in 3D 
 in a very small chunk of code.
 
+
 ## Author's remarks:
 
 This program shows flying spheres. The program eats CPU on lesser
 equipped systems. The program will run until termination. Terminal 
 must be vt100 or better with 80 columns and 24 rows or more.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

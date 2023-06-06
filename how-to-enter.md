@@ -1,4 +1,4 @@
-# Contributing to the IOCCC
+# How to submit to the IOCCC
 
 ## Submit to the IOCCC
 
@@ -19,11 +19,3 @@ via email using their previously registered email address, and upload the
 winning code to the [winner repo](https://github.com/ioccc-src/winner) repo
 which in turn will cause them to be displayed on the [IOCCC winning entries
 page](https://www.ioccc.org/years.html).
-
-## Updating your winning entries
-
-If you are an IOCCC winner, you may update your entries (metadata as well as
-source code and any extra files) by opening a [GitHub pull
-request](https://github.com/ioccc-src/winner/pulls) against the master
-[branch](https://github.com/ioccc-src/winner/branches) of the [ioccc-src/winner
-repo](https://github.com/ioccc-src/winner) repo.

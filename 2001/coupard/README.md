@@ -7,17 +7,20 @@ ATTN : Pierre-Philippe Coupard
 Lindon, UT 84042  
 US  
 
+
 ## To build:
 
 ```sh
 make
 ```
 
+
 ## To run:
 
 ```sh
 ./coupard
 ```
+
 
 ## Try:
 
@@ -35,14 +38,13 @@ something like:
 ./coupard | sox -q -traw -r8000 -b8 -e unsigned-integer - -tcoreaudio
 ```
 
-Thanks go to [Yusuke Endoh](/winners.html#Yusuke_Endoh) for providing a proper
-command line (see [/2013/endoh3/README.md](2013/endoh3/README.md).
 
 ## Judges' remarks:
 
 You may need to run this a few times to understand exactly what is
 being said.  You might even need to look somewhere on your desktop,
 your arm or the wall for confirmation.
+
 
 ## Author's remarks:
 
@@ -158,6 +160,7 @@ because it's composed only of printable characters under 127.
 When linting the program with `lclint`, it complains about a huge list
 of things that, if corrected to make lint happy, would probably double
 the size of the source code.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

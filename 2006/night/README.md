@@ -4,11 +4,13 @@ Christopher Night
 US
 <https://web.archive.org/web/20090415070532/https://www.people.fas.harvard.edu/~night>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To run:
 
@@ -19,17 +21,17 @@ make
 There is an alternate version that supports arrow keys. See the alternate code
 section below.
 
+
 ## Try:
 
 ```sh
 echo "Do or do not. There is no try."
 ```
 
+
 ### Alternate code:
 
-As [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) is a lost :-) `vim`
-user he took the author's remarks to add support back for arrow keys. To use
-compile like:
+To compile:
 
 
 ```sh
@@ -37,8 +39,6 @@ make alt
 ```
 
 Use `night.alt` as you would `night` above.
-
-Thank you Cody!
 
 
 ## Judges' remarks:
@@ -54,6 +54,7 @@ There is a nice way to cheat. If you don't want to figure it out you can look at
 [Yusuke Endoh](/winners.html#Yusuke_Endoh)'s analysis of this entry at
 (translation from Japanese so it's not perfect)
 <https://mame-github-io.translate.goog/ioccc-ja-spoilers/2006/night.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp>.
+
 
 ## Author's remarks:
 
@@ -145,6 +146,7 @@ following two macros to:
 ```
 
 Code on!
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -4,6 +4,7 @@ John Tromp
 <john.tromp@gmail.com>  
 <http://tromp.github.io/>  
 
+
 ## To build:
 
 ```sh
@@ -11,6 +12,7 @@ make all		# On a 64-bit machine (default)
 
 make tromp32		# On a 32-bit machine
 ```
+
 
 ## To run:
 
@@ -20,12 +22,14 @@ make tromp32		# On a 32-bit machine
 
 Use `./tromp32` as you would `./tromp` if on a 32-bit machine.
 
+
 ## To run:
 
 ```sh
 cat ascii-prog.blc data | ./tromp -b
 cat binary-prog.Blc data | ./tromp
 ```
+
 
 ## Try:
 
@@ -35,10 +39,11 @@ cat binary-prog.Blc data | ./tromp
 cat primes.blc | ./tromp -b | ./primes.pl
 ```
 
-### Selected Judges Remarks:
+## Judges' remarks:
 
 The judges dare to say that the data files this entry is processing
 are more obfuscated than the entry itself.
+
 
 ## Author's remarks:
 
@@ -526,6 +531,7 @@ Jean-Louis Krivine. 2007.
 A call-by-name lambda-calculus machine
 Higher Order Symbol. Comput. 20, 3 (September 2007), 199-207.
 <http://www.pps.univ-paris-diderot.fr/~krivine/articles/lazymach.pdf>
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

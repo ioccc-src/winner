@@ -12,6 +12,7 @@ Creature Labs
 Cambridge   
 UK, CB4 1DE  
 
+
 ## To build:
 
 ```sh
@@ -21,10 +22,7 @@ make
 NOTE: the author suggested `-O6` but at least some gcc versions support no more
 than level 3 which is what the Makefile has.
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the code and
-added an appropriate make rule so that the SDL version works independent from
-the curses version (using the same code). To use it:
-
+To use the SDL version works independentlt from the cueses version:
 
 ```sh
 make thadgavin_sdl
@@ -32,11 +30,6 @@ make thadgavin_sdl
 
 Use `thadgavin_sdl` as you would `thadgavin` below.
 
-Thank you Cody for your assistance!
-
-To see the craziness of the SDL fix (because of a design choice of the SDL1
-developers) see the log for commit dd0b26b5d6325e8b6fdef1232156c8bb8c66613f. Be
-prepared for a surprise.
 
 ## To run:
 
@@ -58,12 +51,14 @@ screen.
 echo "Do or do not. There is no try."
 ```
 
+
 ## Judges' remarks:
 
 This entry is a nice play by the rules. It can use curses, if the
 SDL graphic library is not present, and is quite good at that,
 but the colors used in graphic mode (16 bit depth) are unfortunately
 less than dazzling. We could not test this entry in DOS mode.
+
 
 ## Authors' remarks:
 
@@ -108,6 +103,7 @@ Recommended dosage:
 At least 3 minutes taken 3 times a day when tired.
 
 Do not exceed 3 times recommended dose.  May cause sickness, dizziness, nausea.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

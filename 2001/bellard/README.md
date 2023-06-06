@@ -6,48 +6,19 @@ Fabrice Bellard
 France  
 <https://bellard.org>
 
+
 ## To build:
 
 ```sh
 make
 ```
 
+
 ## To run:
 
 ```sh
 ./bellard file
 ```
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) partially fixed this
-but he notes that this will not work without (according to the author) i386
-linux or else some skill in resolving the portability issues. As it is it
-segfaults in 64-bit linux (and as expected macOS). He fixed an earlier segfault
-so that at least the file can be opened (but perhaps that will be wrong in i386
-linux?) and he also changed some of the macro used to what they evaluate to but
-mostly he kept it the same.
-
-Cody also fixed [bellard.otccex.c](bellard.otccex.c) so it does not segfault and
-seemingly works okay (it did not work at all). The main problem was that some
-ints were being used as pointers. Also the Fibonacci sequence (`fib()`) will
-overflow at `n > 48` so this is checked prior to running the function. Either
-way unfortunately this entry seems to not work in 64-bit linux or macOS. See
-below portability notes. Thank you Cody for your assistance!
-
-
-### Portability notes:
-
-With a tip from [Yusuke Endoh](/winners.html#Yusuke_Endoh) we rediscovered the
-author's [web page for this program](https://bellard.org/otcc/) where it is
-stated that this will only work in i386 linux.  The author also stated in the
-remarks in this document that they used [gcc
-2.95.2](https://ftp.gnu.org/gnu/gcc/gcc-2.95.2/gcc-everything-2.95.2.tar.gz) but
-we don't know if that's relevant or not.
-
-Yusuke offered a modification which is not needed with gcc but with some
-versions of `clang` it is. With `gcc` we can get away with `-rdynamic -fno-pie
--Wl,-z,execstack` which solves the problem of execution in memory but any
-compiler that does not support this would not work. Thus we use the modification
-by Yusuke. Thank you Yusuke!
 
 
 ## Try:
@@ -56,9 +27,11 @@ by Yusuke. Thank you Yusuke!
 ./bellard bellard.otccex.c
 ```
 
+
 ## Judges' remarks:
 
 `<JUDGES_COMMENTS>` :-)
+
 
 ## Author's remarks:
 
@@ -182,6 +155,7 @@ warnings because old K&R prototypes are used, some casts are implicit
 and some functions are used before being defined. `OTCC` uses the
 dynamic linker to resolve symbols with `dlsym()`, so `-ldl` must
 be used when you compile and link it.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

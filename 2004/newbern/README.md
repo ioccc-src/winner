@@ -3,17 +3,12 @@
 Jeff Newbern  
 US
 
+
 ## To build:
 
 ```sh
 make
 ```
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) and Landon individually
-fixed this to work with clang. Cody then turned the second arg to main, which
-clang requires to be a `char **`, to be not the same name as a function defined
-earlier in the code and to use that variable which `main()` used. Thank you Cody
-for your assistance!
 
 
 ## To run:
@@ -22,6 +17,7 @@ for your assistance!
 ./newbern [file.dat arg]
 ```
 
+
 ## Try:
 
 ```sh
@@ -29,10 +25,12 @@ for your assistance!
 echo SOS | ./newbern
 ```
 
+
 ## Judges' remarks:
 
 The program is formatted using the same font glyphs as the example
 data file.
+
 
 ## Author's remarks:
 
@@ -61,6 +59,7 @@ Decryption is left as an exercise for the reader.
 The program assumes an ASCII operating environment.
 
 The program is best viewed with tab-stops set to 8.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

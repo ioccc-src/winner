@@ -3,17 +3,20 @@
 Peter Eastman  
 <peter.eastman@gmail.com>  
 
+
 ## To build:
 
 ```sh
 make
 ```
 
+
 ## To run:
 
 ```sh
 ./eastman
 ```
+
 
 ## Try:
 
@@ -24,13 +27,6 @@ Quit the program.  Resize your terminal window.  Run it again.
 ```
 
 NOTE: to restore your cursor in your shell, try `reset`.
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) tested this with
-[macOS Ventura](https://www.apple.com/macos/ventura/) with the M1 chip for
-the author (who tested [OS X 10.7
-(Lion)](https://en.wikipedia.org/wiki/OS_X_Lion) and [fedora
-10](https://fedoraproject.org/wiki/Releases/10/FeatureList)) and reported that
-it works fine.
 
 
 ## Judges' remarks:
@@ -45,6 +41,7 @@ size itself to the initial geometry of your terminal.
 
 If you are ambitious, make the font really small and the window really
 large for hi-res graphics!
+
 
 ## Author's remarks:
 
@@ -100,6 +97,7 @@ example, I could have written the outer loop as `while(1)`, but why write a 1
 when I can calculate it from the return value of `usleep()` instead? And I could
 have written `usleep(80000)`, but `usleep(79383)` just looks so much better.
 And so on.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

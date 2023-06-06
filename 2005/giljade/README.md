@@ -4,6 +4,7 @@ Gil Dogon
 Israel  
 <gil_jade@netvision.net.il>
 
+
 ## To build:
 
 ```sh
@@ -21,33 +22,12 @@ Hopefully this will be resolved in time where there is no need for an alternate
 version but it's a complicated one. See also the [bugs.md](/bugs.md) file for
 more information.
 
+
 ## To run:
 
 ```sh
 ./giljade
 ```
-
-After Landon fixed the entry to compile with clang (but see above and below)
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) noticed this does not
-work at all in modern systems. He fixed this to work but he notes that the fix
-to let clang compile it breaks the self-test feature.
-
-The problem that was showing up is that with either optimising or if anything
-but 32-bit (as in `-m32`) was used it would not work (at least in 64-bit
-systems?). The optimising cannot be used still but it now works with both 32-bit
-and 64-bit. The solution has to do with the size difference between `int` and
-`long` so that the `long*E` is now `int*E`. This solves a specific problem for
-linux (32-bit, 64-bit) and macOS (arm64).
-
-But as noted there is another problem with clang: the self-test feature only
-completely works with the original version ([giljade.alt.c](giljade.alt.c)), not
-the one that will compile with clang ([giljade.c](giljade.c)). The alternate
-version, which will not compile with clang, is the only one that passes the
-self-tests. If your compiler does not have the defect that clang has about arg
-types to `main()` see the Alternate code section below at least for the
-self-test feature.
-
-Thank you Cody for your assistance!
 
 ### INABIAF - it's not a bug it's a feature! :-)
 
@@ -55,6 +35,7 @@ If the program source file is not lying in the same directory this program will
 very likely crash or do something strange.
 
 This entry requires that both `sed` and `cc` are in the path.
+
 
 ## Try:
 
@@ -69,6 +50,7 @@ vi out
 
 Press ^F (control F) repeatedly.
 
+
 ### Alternate code:
 
 This version will work only with compilers that let you have alternate types to
@@ -81,12 +63,14 @@ make alt
 
 Use `giljade.alt` as you would `giljade` above.
 
+
 #### Try:
 
 ```sh
 ./giljade.alt > out
 ./giljade.alt out
 ```
+
 
 ## Judges' remarks:
 
@@ -101,6 +85,7 @@ s=s^(b=s&s-1^s)
 ```
 
 ... and understand why it is found in the source code.
+
 
 ## Author's remarks:
 
@@ -225,6 +210,7 @@ tricky.
 ### Hint for the challenges
 
 Just try to change the program, and use the self test to see what happens ...
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

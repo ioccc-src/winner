@@ -3,11 +3,13 @@
 Gregor Richards  
 <Richards@codu.org>  
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To run:
 
@@ -15,10 +17,6 @@ make
 ./richards
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a minor problem
-that showed up in both linux and macOS. He notes however that as of this time
-this entry does not work with macOS. See [bugs.md](/bugs.md) for more details.
-Thank you Cody!
 
 ## Try:
 
@@ -37,6 +35,7 @@ Abuse of the Rules`).  Well, this one does it (expression calculation, that is,
 not the rule abuse) in a different way.  The author claims that his calculator
 does just-in-time compilation.  What would you do to prove or disprove his claim
 without attempting to unravel the source?
+
 
 ## Author's remarks:
 
@@ -88,6 +87,7 @@ flags:
 
  * owcc 1.9 + x86 + Windows: Needs `-DNM -DAH -fno-stack-check`
  * gcc 4.4.5 + sh4: -O0 works, higher optimization levels don't work for unknown reasons.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

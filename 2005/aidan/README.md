@@ -4,11 +4,13 @@ Aidan Thornton
 United Kingdom  
 <makomk@lycos.co.uk>  
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To run:
 
@@ -20,10 +22,6 @@ make
 
 where `seed` is a number.
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the test script,
-described by the author in their remarks, to refer to the proper compiled
-program (it's hardcoded) which was never done which broke the script. Thank you
-Cody!
 
 ## Try:
 
@@ -32,6 +30,7 @@ Cody!
 
 ./aidan 42
 ```
+
 
 ## Judges' remarks:
 
@@ -310,6 +309,7 @@ that way somehow...
 * various other little things not worth mentioning.
 
 So basically, just what you'd normally expect in an IOCCC entry.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 
