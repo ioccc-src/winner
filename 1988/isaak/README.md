@@ -19,11 +19,6 @@ make all
 ./isaak
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work for
-modern systems. The problem was that the important function, a redefinition of
-exit(), was not being called in main(). See below notes for the original,
-alternative version. Thank you Cody for your assistance!
-
 ### Alternate code:
 
 The original version of this code is in [isaak.alt.c](isaak.alt.c).

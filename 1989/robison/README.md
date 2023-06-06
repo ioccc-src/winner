@@ -14,10 +14,6 @@ make all
 ```
 
 
-NOTE: we were able to get this to compile under modern systems with a patch from
-[Yusuke Endoh](/winners.html#Yusuke_Endoh). Thank you for your assistance
-Yusuke!
-
 ## To run:
 
 ```sh

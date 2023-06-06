@@ -9,13 +9,6 @@ make all
 ```
 
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) got this to
-compile and work with clang. It did not work with clang because it is more
-strict about the second and third args to main() and the third arg was an int.
-He notes that he tried to keep the picture as close to the original. The line
-lengths are the same but some spaces had to be changed to non-spaces. Thank you
-Cody for your help!
-
 ## Try:
 
 ```sh

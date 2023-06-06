@@ -18,17 +18,6 @@ make all
 ./cmills [starting_cash]
 ```
 
-We used a patch from [Yusuke Endoh](/winners.html#Yusuke_Endoh) to get this to
-work in modern systems (it resulted in a bus error otherwise). Thank you Yusuke
-for your assistance!
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made this safer by
-using `fgets()` instead of `gets()`. This avoids an annoying and potentially
-alarming warning at compiling and/or linking and/or runtime that in some cases
-is interspersed with the program's output. Thank you Cody for your assistance!
-
-For the original code see the [1992 archive](/archive/archive-1990.tar.bz2).
-
 
 ## Try:
 

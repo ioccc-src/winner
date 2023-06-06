@@ -9,12 +9,6 @@ make all
 ```
 
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this _very twisted
-entry_ to not require `-traditional-cpp`. He'd like to refer you to the original
-file in [sicherman.alt.c](sicherman.alt.c) and he suggests that you then compare
-it to [sicherman.c](sicherman.c) for some good old C-fashioned fun! Thank you
-Cody for your assistance!
-
 ## Try:
 
 ```sh

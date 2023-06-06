@@ -13,22 +13,6 @@ Finland
 make all
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work with
-modern compilers. Modern compilers do not allow code like:
-
-```c
-#define D define
-#define a include
-
-#D foo bar
-#a <stdio.h>
-```
-
-He notes that there _is_ a way to get it (or something close to it) to work. Do
-you know how?
-
-Thank you Cody for your assistance!
-
 
 ## To run:
 

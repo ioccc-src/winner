@@ -9,14 +9,6 @@ US
 make all
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to
-compile and work with clang (it already worked with gcc).  The problem was that
-clang is more strict about the type of second arg to main(). However simply
-changing it to a `char **` and updating the `*s` to `**s` caused a segfault. By
-adding a new variable, `char *t`, initialising it to `s` and then using `t`
-instead of `s` it compiles and runs successfully under clang and gcc. Thank you
-Cody for your assistance!
-
 ## Try:
 
 ```sh

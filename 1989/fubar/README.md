@@ -13,10 +13,6 @@ US
 make all
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) got this to work with
-modern systems. Thank you Cody for your assistance!
-
-
 ## To run:
 
 ```sh

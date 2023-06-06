@@ -25,17 +25,8 @@ US
 make all
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the script to
-work properly in modern environments (to do with PATH not having '.' in it). He
-notes that with an invocation in the try section below will with macOS show
-what appears to be an error message but is actually okay. He gives more
-information in the [bugs.md](/bugs.md) file. Thank you Cody for the help and
-notes!
-
-NOTE: as `btoa` is not common we used a ruby script from [Yusuke
-Endoh](/winners.html#Yusuke_Endoh). Thank you Yusuke for your implementation of
-`btoa`!
-
+NOTE: see the [bugs.md](/bugs.md) file for information on what appears to be a
+bug in macOS but is actually not.
 
 ## Try:
 

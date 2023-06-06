@@ -9,51 +9,6 @@ Australia
 make all
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for modern
-compilers. There were two problems to address. One was that the entry required
-`-traditional-cpp` (which <strike>not all compilers support</strike> `clang`
-does not support) which Cody fixed. It needed that option because of two things
-it did:
-
-```c
-#define a(x)get/***/x/***/id())
-
-/* ... */
-
-p Z=chroot("/");L(!a(u)execv((q(v="/ipu6ljov"),v),C);Z-=kill(l);
-
-/* ... */
-
-case_2:L(!--V){O/*/*/c*c+c);wait(A+c*c-c);L(!Z)f(A,"\n",c);return(A*getgid());};C++;
-```
-
-no longer works to create `getuid()` and `getgid()`. The second is that
-
-```c
-for/*/(;;);/*/k()){O/*/*/c);
-```
-
-cannot form `fork())` in modern C compilers. What is quite fun is that the cpp
-can!
-
-The other problem was that modern compilers do not allow directives like:
-
-```c
-#define _ define
-+#_ P char
-+#_ p int
-+#_ O close(
-...
-```
-
-so Cody changed the lines to be in the form of:
-
-```c
-#define foo bar
-```
-
-Thank you Cody for your assistance!
-
 ## Try:
 
 ```sh
