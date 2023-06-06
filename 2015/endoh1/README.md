@@ -29,10 +29,13 @@ echo "Do or do not. There is no try."
 
 ## Judges' remarks:
 
-How did the leopard get its spots? Why are a zebra's stripes unique?
+[How did the leopard get its
+spots](https://www.livescience.com/950-leopard-spots.html)? Why are a [zebra's
+stripes](https://africafreak.com/zebra-stripes) unique?
 
-In case you didn't recognise the portrait of Alan Turing, there are some
-pointers to his features like eyes with "stdeye-o" and "<--mouth". Can you
+In case you didn't recognise the portrait of [Alan
+Turing](https://en.wikipedia.org/wiki/Alan_Turing), there are some
+pointers to his features like eyes with "`stdeye-o`" and "`<--mouth`". Can you
 find any other tributes?
 
 ## Author's remarks:
@@ -58,7 +61,7 @@ cc -O3 -std=c99 \
         -DTIMESTEP=1.0 -DSPEED=2 -DRGB=255:128:192
 ```
 
-Then, run it under `tcpserver` command in the
+Then, run it with the `tcpserver` command in the
 [ucspi-tcp](http://cr.yp.to/ucspi-tcp.html) package, which was created by
 [Daniel J. Bernstein](/winners.html#Daniel_J._Bernstein), [IOCCC 1991 "Best of
 Show"](../../1991/brnstnd/brnstnd.c) ([README.md](../../1991/brnstnd/README.md)).
