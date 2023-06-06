@@ -15,12 +15,6 @@ make all
 ./anonymous
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work
-under macOS. The fix was to not use implicit `int`s in the `read()` function as
-it once did. Instead the second arg is a `void *`.  In the `read()` function
-(which actually calls `write(2)`) the `i` (which is the `void *`) has to be cast
-to an `int`. This solves the problem. Thank you Cody for your assistance!
-
 ### Alternate code:
 
 The original version of this entry was added, by request,

@@ -15,15 +15,6 @@ make all
 ```
 
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for modern
-systems. It did not compile with clang because it requires the second and third
-args to main() to be `char **` but even before that with gcc it printed random
-characters. After fixing it for clang by changing main() to call the new
-function pain() (chosen because it's a pain that clang requires these args to
-be `char **` :-) ) with the correct args it now works. Thank you Cody for your
-assistance!
-
-
 ## Judges' remarks:
 
 Compile and run without parameters.

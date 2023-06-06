@@ -9,13 +9,6 @@ make all
 ```
 
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile
-with modern compilers. In the past one could get away with defining some macro
-to `#define` and then use `#foo` to have the same effect as using `#define` but
-this does not work in modern systems so Cody changed the `#o` lines to
-`#define`. The `lycklama.alt.c` is the original source code as it provides some
-fun input for the entry. Thank you Cody!
-
 With a tip from [Yusuke Endoh](/winners.html#Yusuke_Endoh)  it was indirectly
 noticed that if one slows down the call to `write()` one can see some fun output
 that's not visible with modern systems so Cody added a call to `usleep()`. The

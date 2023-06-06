@@ -20,10 +20,6 @@ make all
 # enter some strings
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made this safer by
-using `fgets()` instead of `gets()`. This prevents an annoying and potentially
-alarming warning at compiling, linking or runtime.
-
 
 ## Try:
 

@@ -14,11 +14,6 @@ US
 make all
 ```
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for modern
-systems. The problem was 'assignment to cast is illegal, lvalue casts are not
-supported'. For the original file see below. Thank you Cody for your assistance!
-
-
 ## To run:
 
 ```sh
