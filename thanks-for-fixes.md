@@ -14,7 +14,7 @@ many of the improvements.  Thank you **very much** for the
 extensive efforts in helping improve the IOCCC presentation of past
 IOCCC winners!
 
-Yusuke Endoh](/winners.html#Yusuke_Endoh) supplied a number of
+[Yusuke Endoh](/winners.html#Yusuke_Endoh) supplied a number of
 important bug fixes to a number of past IOCCC winners.  Some of
 those fixes were very technically challenging.  Thank you **very
 much** for your help!
