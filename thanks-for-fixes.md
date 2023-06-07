@@ -332,12 +332,6 @@ Endoh](/winners.html#Yusuke_Endoh). Thank you Yusuke for your implementation of
 `btoa`!
 
 
-## [1990/scjones](1990/scjones/scjones.c) ([README.md](1990/scjones/README.md]))
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) pointed out that the
-compiler option `-trigraphs` would also have worked.
-
-
 ## [1990/tbr](1990/tbr/tbr.c) ([README.md](1990/tbr/README.md]))
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work with
