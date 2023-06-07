@@ -20,8 +20,8 @@ request](https://github.com/ioccc-src/temp-test-ioccc/pulls) (with ONE PULL
 REQUEST *PER* FIX, please)!
 
 We will be **happy to credit anyone who submits successful [GitHub pull
-requests](https://github.com/ioccc-src/temp-test-ioccc/pulls)** in the entry's
-_README.md_ file. If you're a previous winner we will add a link to your winning
+requests](https://github.com/ioccc-src/temp-test-ioccc/pulls)** in the [thanks
+file](thanks-for-fixes.md). If you're a previous winner we will add a link to your winning
 entries in the file (if you're not a previous winner we can add a link to your
 GitHub page or personal website if you have one, should you wish).
 
@@ -411,7 +411,7 @@ are clang).
 If you do wish to provide an alternate version of the program that does not need
 compiler supporting you are welcome to summit such code via a
 [GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls) and we
-will be happy to credit you in the entry's _README.md_ file.
+will be happy to credit you in the [thanks file](thanks-for-fixes.md).
 
 NOTE: as of commit fa8a9b8b28a6b69a6b4efd74a45402f745e280b3 we believe that all
 the entries with this problem have been fixed due [Cody Boone
@@ -819,7 +819,7 @@ value of `getc()`; this is important because `EOF` is **NOT** guaranteed to be
 would enter an infinite loop until the program crashed, by chance reads a `-1`
 or was killed. See the README.md for more details. If you don't feel comfortable
 changing it to `EOF` Cody will happily do it for you but otherwise go right
-ahead. We'll credit you in the README.md file regardless.
+ahead. We'll credit you in the [thanks file](thanks-for-fixes.md) regardless.
 
 # 1995
 
