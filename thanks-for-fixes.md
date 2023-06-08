@@ -10,7 +10,7 @@ several thousand changes and important improvements.
 
 We call out the extensive contributions of [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) who is responsible for
-many of the improvements including many, many complicated bug fixes (like
+many of the improvements including many, many complicated bug fixes like
 [2001/anonymous](2001/anonymous/anonymous.c), making entries not require
 `-traditional-cpp`, typo and consistency
 fixes.  Thank you **very much** for the extensive efforts in helping
