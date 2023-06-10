@@ -676,6 +676,12 @@ work but it only works with gcc. Unfortunately due to the way the entry works
 and the fact that other compilers like clang have different warnings and errors
 this simply does not work with them. Can you help us?
 
+## [1992/westley](1992/westley/westley.c) ([README.md](1992/westley/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This entry will very likely crash or nuke the world without enough args. This is
+not considered a bug but a feature and should not be fixed in the repo.
+
 
 # 1993
 
