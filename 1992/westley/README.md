@@ -56,8 +56,9 @@ NOTE: this alternative version also needs a terminal that wraps at 80 columns.
 
 ### INABIAF - it's not a bug it's a feature! :-)
 
-This program and the alternate version will very likely crash or nuke the world
-without enough args. This should not be fixed.
+This program and the alternate version will very likely crash or nuke the entire
+world or just the USA, respectively, without enough args. This should not be
+fixed.
 
 ## Judges' remarks:
 
