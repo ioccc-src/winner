@@ -679,9 +679,11 @@ this simply does not work with them. Can you help us?
 ## [1992/westley](1992/westley/westley.c) ([README.md](1992/westley/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 
-This program and the alternate version will very likely crash or nuke the entire
-world or just the USA, respectively, without enough args. This should not be
-fixed.
+This program and the alternate version will very likely crash or
+[nuke](https://en.wikipedia.org/wiki/Nuclear_weapon) the [entire
+world](https://en.wikipedia.org/wiki/Earth) or just the
+[USA](https://en.wikipedia.org/wiki/United_States), respectively, without enough
+args. This should not be fixed.
 
 # 1993
 
