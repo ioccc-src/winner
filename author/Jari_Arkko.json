@@ -1,0 +1,22 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_handle" : "Jari_Arkko",
+    "full_name" : "Jari Arkko",
+    "sort_word" : "arkko",
+    "location_code" : "",
+    "location_name" : "",
+    "email" : "jari@arkko.com",
+    "url" : "http:\/\/www.arkko.com",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : "",
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+	{ "winner_id" : "1989_jar1" },
+	{ "winner_id" : "1989_jar.2" },
+	{ "winner_id" : "2000_jarijyrki" }
+    ]
+}

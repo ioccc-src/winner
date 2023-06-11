@@ -1,0 +1,22 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_handle" : "Cody_Boone_Ferguson",
+    "full_name" : "Cody Boone Ferguson",
+    "sort_word" : "ferguson",
+    "location_code" : "US",
+    "location_name" : "United States of America",
+    "email" : "ioccc@xexyl.net",
+    "url" : "https:\/\/xexyl.net",
+    "alt_url" : "https:\/\/ioccc.xexyl.net",
+    "deprecated_twitter_handle" : "",
+    "mastodon" : "@xexyl@fosstodon.org",
+    "mastodon_url" : "http:\/\/fosstodon.org\/@xexyl",
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+	{ "winner_id" : "2018_ferguson" },
+	{ "winner_id" : "2020_ferguson1" },
+	{ "winner_id" : "2020_ferguson2" }
+    ]
+}

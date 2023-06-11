@@ -1,4 +1,4 @@
-# sort_word,name,winner_handle,url,email,location_code,deprecated_twitter,mastodon,alternate_url,
+# sort_word,name,author_handle,url,email,location_code,deprecated_twitter,mastodon,alternate_url,
 # 0:	lower case sort word,,,,,,,,,
 # 1:	name,,,,,,,,,
 # 2:	winner_handle,,,,,,,,,

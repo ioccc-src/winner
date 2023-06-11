@@ -1,0 +1,28 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_handle" : "Brian_Westley",
+    "full_name" : "Brian Westley",
+    "sort_word" : "westley",
+    "location_code" : "US",
+    "location_name" : "United States of America",
+    "email" : "brian@westley.org",
+    "url" : "http:\/\/www.westley.org",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : "",
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+	{ "winner_id" : "1987_westley" },
+	{ "winner_id" : "1988_westley" },
+	{ "winner_id" : "1989_westley" },
+	{ "winner_id" : "1990_westley" },
+	{ "winner_id" : "1991_westley" },
+	{ "winner_id" : "1992_westley" },
+	{ "winner_id" : "1994_westley" },
+	{ "winner_id" : "1996_westley" },
+	{ "winner_id" : "2001_westley" }
+    ]
+}

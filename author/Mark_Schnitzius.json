@@ -1,0 +1,25 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_handle" : "Mark_Schnitzius",
+    "full_name" : "Mark Schnitzius",
+    "sort_word" : "schnitzius",
+    "location_code" : "",
+    "location_name" : "",
+    "email" : "schnitzi@gmail.com",
+    "url" : null,
+    "alt_url" : null,
+    "deprecated_twitter_handle" : "",
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+	{ "winner_id" : "1993_schnitzi" },
+	{ "winner_id" : "1994_schnitzi" },
+	{ "winner_id" : "1995_schnitzi" },
+	{ "winner_id" : "1995_vanschnitz" },
+	{ "winner_id" : "1998_schnitzi" },
+	{ "winner_id" : "2004_schnitzi" }
+    ]
+}

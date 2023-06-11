@@ -1,9 +1,9 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "author_JSON_format_version" : "0.1 2023-05-22",
+    "author_JSON_format_version" : "1.0 2023-06-10",
     "author_handle" : "first0_last0",
     "full_name" : "First Middle Last",
-    "sort_word" : "last",
+    "sort_word" : "lowercaselast",
     "location_code" : "AU",
     "location_name" : "Australia",
     "email" : "user0@example.com",

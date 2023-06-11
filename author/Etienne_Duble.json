@@ -1,0 +1,21 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_handle" : "Etienne_Duble",
+    "full_name" : "Etienne Duble",
+    "sort_word" : "duble",
+    "location_code" : "FR",
+    "location_name" : "France",
+    "email" : "etienne.duble@gmail.com",
+    "url" : "https:\/\/lig-membres.imag.fr\/duble",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : "@etienne_duble",
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+	{ "winner_id" : "2015_duble" },
+	{ "winner_id" : "2019_duble" }
+    ]
+}

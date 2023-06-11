@@ -1,0 +1,23 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_handle" : "Stephen_Sykes",
+    "full_name" : "Stephen Sykes",
+    "sort_word" : "sykes",
+    "location_code" : "FI",
+    "location_name" : "Finland",
+    "email" : null,
+    "url" : "https:\/\/web.archive.org\/web\/20160316092728\/http:\/\/www.stephensykes.com\/",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : "",
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+	{ "winner_id" : "2004_sds" },
+	{ "winner_id" : "2005_sykes" },
+	{ "winner_id" : "2006_sykes1" },
+	{ "winner_id" : "2006_sykes2" }
+    ]
+}

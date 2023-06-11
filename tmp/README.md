@@ -255,3 +255,13 @@ A CSV file: one line per `winner`.
 The 1st field is a `winner_id`.
 
 The 2nd field is the name of the award for given `winner`.
+
+* [gen_author_json.sh](gen_author_json.sh)
+
+Temporary tool used to generate the author/author_handle.json files.
+
+The following command, executed in this directory, created the `author/` directory:
+
+```sh
+rm -rf ../author ; ./gen_author_json.sh  author_handle.txt author.csv author-wins.csv ../author
+```

@@ -1,0 +1,23 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_handle" : "Diomidis_Spinellis",
+    "full_name" : "Diomidis Spinellis",
+    "sort_word" : "spinellis",
+    "location_code" : "GR",
+    "location_name" : "Greece",
+    "email" : "dds@aueb.gr",
+    "url" : "http:\/\/www.spinellis.gr",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : "",
+    "mastodon" : "@DSpinellis@mstdn.social",
+    "mastodon_url" : "http:\/\/mstdn.social\/@DSpinellis",
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+	{ "winner_id" : "1988_spinellis" },
+	{ "winner_id" : "1990_dds" },
+	{ "winner_id" : "1991_dds" },
+	{ "winner_id" : "1995_spinellis" }
+    ]
+}

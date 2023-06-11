@@ -1,0 +1,20 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_handle" : "V_Chia",
+    "full_name" : "V. Chia",
+    "sort_word" : "chia",
+    "location_code" : "SG",
+    "location_name" : "Singapore",
+    "email" : "bi@mncw.tk",
+    "url" : null,
+    "alt_url" : null,
+    "deprecated_twitter_handle" : "",
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+	{ "winner_id" : "2005_chia" }
+    ]
+}

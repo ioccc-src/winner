@@ -1,0 +1,21 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_handle" : "Immanuel_Herrmann",
+    "full_name" : "Immanuel Herrmann",
+    "sort_word" : "herrmann",
+    "location_code" : "",
+    "location_name" : "",
+    "email" : null,
+    "url" : "https:\/\/web.archive.org\/web\/20071018081145\/http:\/\/pcpool.mathematik.uni-freiburg.de\/~immi\/",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : "",
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+	{ "winner_id" : "2001_herrmann1" },
+	{ "winner_id" : "2001_herrmann2" }
+    ]
+}

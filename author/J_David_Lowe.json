@@ -1,0 +1,25 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_handle" : "J_David_Lowe",
+    "full_name" : "J. David Lowe",
+    "sort_word" : "lowe",
+    "location_code" : "US",
+    "location_name" : "United States of America",
+    "email" : "j.david.lowe@gmail.com",
+    "url" : "https:\/\/github.com\/dlowe",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : "",
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+	{ "winner_id" : "1998_dlowe" },
+	{ "winner_id" : "1998_dloweneil" },
+	{ "winner_id" : "2000_dlowe" },
+	{ "winner_id" : "2011_dlowe" },
+	{ "winner_id" : "2012_dlowe" },
+	{ "winner_id" : "2013_dlowe" }
+    ]
+}

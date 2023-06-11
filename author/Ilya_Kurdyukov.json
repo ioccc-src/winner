@@ -1,0 +1,23 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_handle" : "Ilya_Kurdyukov",
+    "full_name" : "Ilya Kurdyukov",
+    "sort_word" : "kurdyukov",
+    "location_code" : "RU",
+    "location_name" : "Russian Federation",
+    "email" : "olme8@mail.ru",
+    "url" : "https:\/\/github.com\/ilyakurdyukov",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : "@ilyakurdyukov",
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+	{ "winner_id" : "2020_kurdyukov1" },
+	{ "winner_id" : "2020_kurdyukov2" },
+	{ "winner_id" : "2020_kurdyukov3" },
+	{ "winner_id" : "2020_kurdyukov4" }
+    ]
+}

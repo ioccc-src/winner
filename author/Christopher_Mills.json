@@ -1,0 +1,26 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_handle" : "Christopher_Mills",
+    "full_name" : "Christopher Mills",
+    "sort_word" : "mills",
+    "location_code" : "US",
+    "location_name" : "United States of America",
+    "email" : "mrxo@sonic.net",
+    "url" : null,
+    "alt_url" : null,
+    "deprecated_twitter_handle" : "@MisterXopher",
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+	{ "winner_id" : "1990_cmills" },
+	{ "winner_id" : "1993_cmills" },
+	{ "winner_id" : "2013_mills" },
+	{ "winner_id" : "2015_mills1" },
+	{ "winner_id" : "2015_mills2" },
+	{ "winner_id" : "2018_mills" },
+	{ "winner_id" : "2019_mills" }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_handle" : "Stig_Hemmer",
+    "full_name" : "Stig Hemmer",
+    "sort_word" : "hemmer",
+    "location_code" : "NO",
+    "location_name" : "Norway",
+    "email" : "stig@pvv.ntnu.no",
+    "url" : "http:\/\/www.pvv.ntnu.no\/~stig\/",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : "",
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+	{ "winner_id" : "1990_stig" }
+    ]
+}

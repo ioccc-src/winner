@@ -1,0 +1,20 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_handle" : "Seonghoon_Kang",
+    "full_name" : "Seonghoon Kang",
+    "sort_word" : "kang",
+    "location_code" : "KR",
+    "location_name" : "Korea (the Republic of)",
+    "email" : "kang.seonghoon@mearie.org",
+    "url" : "http:\/\/mearie.org",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : "",
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+	{ "winner_id" : "2012_kang" }
+    ]
+}

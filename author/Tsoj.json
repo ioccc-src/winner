@@ -1,0 +1,20 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_handle" : "Tsoj",
+    "full_name" : "tsoj",
+    "sort_word" : "tsoj",
+    "location_code" : "DE",
+    "location_name" : "Germany",
+    "email" : "tsoj.tsoj@gmx.de",
+    "url" : "https:\/\/gitlab.com\/tsoj",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : "",
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+	{ "winner_id" : "2020_tsoj" }
+    ]
+}

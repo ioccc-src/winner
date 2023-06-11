@@ -1,0 +1,21 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_handle" : "Larry_Wall",
+    "full_name" : "Larry Wall",
+    "sort_word" : "wall",
+    "location_code" : "US",
+    "location_name" : "United States of America",
+    "email" : "larry@wall.org",
+    "url" : "http:\/\/www.wall.org\/~larry\/",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : "",
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+	{ "winner_id" : "1986_wall" },
+	{ "winner_id" : "1987_wall" }
+    ]
+}

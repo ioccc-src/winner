@@ -1,0 +1,20 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_handle" : "Ondrej_Adamovsky",
+    "full_name" : "Ond\u00c5\u0099ej Adamovsk\u00c3\u00bd",
+    "sort_word" : "adamovsky",
+    "location_code" : "CZ",
+    "location_name" : "Czechia",
+    "email" : "oa@cmail.cz",
+    "url" : null,
+    "alt_url" : null,
+    "deprecated_twitter_handle" : "",
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+	{ "winner_id" : "2019_adamovsky" }
+    ]
+}

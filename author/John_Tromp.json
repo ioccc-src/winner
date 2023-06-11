@@ -1,0 +1,21 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_handle" : "John_Tromp",
+    "full_name" : "John Tromp",
+    "sort_word" : "tromp",
+    "location_code" : "US",
+    "location_name" : "United States of America",
+    "email" : "john.tromp@gmail.com",
+    "url" : "http:\/\/tromp.github.io\/",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : "",
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+	{ "winner_id" : "1989_tromp" },
+	{ "winner_id" : "2012_tromp" }
+    ]
+}

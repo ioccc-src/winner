@@ -1,0 +1,29 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_handle" : "Don_Yang",
+    "full_name" : "Don Yang",
+    "sort_word" : "yang",
+    "location_code" : "US",
+    "location_name" : "United States of America",
+    "email" : "omoikane@uguu.org",
+    "url" : "http:\/\/uguu.org\/",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : "",
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+	{ "winner_id" : "2000_dhyang" },
+	{ "winner_id" : "2004_omoikane" },
+	{ "winner_id" : "2011_akari" },
+	{ "winner_id" : "2012_omoikane" },
+	{ "winner_id" : "2013_misaka" },
+	{ "winner_id" : "2014_sinon" },
+	{ "winner_id" : "2015_yang" },
+	{ "winner_id" : "2018_yang" },
+	{ "winner_id" : "2019_yang" },
+	{ "winner_id" : "2020_yang" }
+    ]
+}

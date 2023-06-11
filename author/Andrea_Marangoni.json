@@ -1,0 +1,20 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "author_JSON_format_version" : "1.0 2023-06-10",
+    "author_handle" : "Andrea_Marangoni",
+    "full_name" : "Andrea Marangoni",
+    "sort_word" : "marangoni",
+    "location_code" : "IT",
+    "location_name" : "Italy",
+    "email" : "andrea@andreamarangoni.it",
+    "url" : "http:\/\/www.andreamarangoni.it",
+    "alt_url" : null,
+    "deprecated_twitter_handle" : "",
+    "mastodon" : null,
+    "mastodon_url" : null,
+    "github" : null,
+    "affiliation" : null,
+    "winning_entry_set" : [
+	{ "winner_id" : "1992_marangon" }
+    ]
+}
