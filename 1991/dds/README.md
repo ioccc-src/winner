@@ -62,15 +62,14 @@ You'll get errors yes but what does the generated file look like? What about
 other types of files?
 
 
-### Alternative code:
+### Alternate code:
 
-
-The alternative code allows this entry to work successfully
-even with clang. He notes that unfortunately it's something of a hack or maybe
-even a kludge. This however seems important because it works well and allows for
-not messing with the `s` string which is quite complicated. 
-Even changing the length could break functionality and indeed the length would
-have to be longer for this to work with clang.
+The alternate code allows this entry to work successfully even with clang. [Cody
+Boone Ferguson](/winners.html#Cody_Boone_Ferguson) notes that unfortunately it's
+something of a hack or maybe even a kludge. This however seems important because
+it works well and allows for not messing with the `s` string which is quite
+complicated.  Even changing the length could break functionality and indeed the
+length would have to be longer for this to work with clang.
 
 How does it work? The code (which you will see in [dds.c](dds.c)) does a `return
 system(q-6);` which equates to `return system("cc a.c");` but clang by default,
@@ -81,7 +80,7 @@ that the compilation failed with clang (because it didn't use `make` so no
 and the use of functions not yet declared.
 
 Now as noted since the string `s` is complicated and to not
-inadvertently mess something up he changed that code to `system("make a");`
+inadvertently mess something up Cody changed that code to `system("make a");`
 and then added the right rule to the Makefile. Thus for the alternative version
 you now need both `make` and `cc`. If you use gcc you may change the system()
 call to what was given in this description to get a more authentic feel. If you
@@ -94,9 +93,7 @@ make clobber alt
 ./a 2>/dev/null
 ```
 
-
 ## Judges' remarks:
-
 
 Notice that a file `a.c` has been generated.  Can you tell how `a.c` was
 produced?  How does `a.c` relate to [LANDER.BAS](LANDER.BAS)?

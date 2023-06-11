@@ -14,7 +14,7 @@ make all
 and then type a C program into followed by EOF (usually `^D`, ctrl-d).
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made a version (also
-one line) for clang. See the alternative code section below for how to use.
+one line) for clang. See the Alternate code section below for how to use.
 Thank you Cody for your assistance!
 
 ## Try:
@@ -41,7 +41,7 @@ int main()
 
 NOTE: you need to make clobber first for this entry to work right.
 
-## Alternative code:
+## Alternate code:
 
 For clang try the alt code like:
 

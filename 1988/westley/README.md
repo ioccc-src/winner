@@ -14,16 +14,26 @@ U.S.A.
 make all
 ```
 
-Misha Dynin provided a fix for [westley.c](westley.c) so that it may compile on 
-both K&R and more modern C compilers. Thank you Misha! The original code, used
-for entertainment and educational value, is in [westley.alt.c](westley.alt.c),
-described below.
+NOTE: this version is a fixed version for modern C compilers. The Alternate
+code below is the original.
 
 ## Try:
 
 ```sh
 ./westley
 ```
+
+### Alternate code:
+
+The alternate code in [westley.alt.c](westley.alt.c) is the original version
+submitted to the contest. If you have an old enough compiler you can run it
+like:
+
+```sh
+make alt
+```
+
+Use `westley.alt` as you would `westley` above.
 
 ## Judges' remarks:
 

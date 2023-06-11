@@ -9,12 +9,13 @@ There are several people who have contributed to the above mentioned
 several thousand changes and important improvements.
 
 We call out the extensive contributions of [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson) who is responsible for
-many of the improvements including many, many complicated bug fixes like
+Ferguson](/winners.html#Cody_Boone_Ferguson) who is responsible for many of the
+improvements including many, many complicated bug fixes like
 [2001/anonymous](2001/anonymous/anonymous.c), making entries not require
-`-traditional-cpp`, typo and consistency
-fixes.  Thank you **very much** for the extensive efforts in helping
-improve the IOCCC presentation of past IOCCC winners!
+`-traditional-cpp`, fixing entries to compile with clang, providing alternate
+code where useful or necessary, typo and consistency fixes.  Thank you **very
+much** for the extensive efforts in helping improve the IOCCC presentation of
+past IOCCC winners!
 
 [Yusuke Endoh](/winners.html#Yusuke_Endoh) supplied a number of
 important bug fixes to a number of past IOCCC winners.  Some of
@@ -42,12 +43,11 @@ on a winner by winner basis.
 
 ## [1984/decot](1984/decot/decot.c) ([README.md](1984/decot/README.md]))
 
-Cody fixed this to not
-require `-traditional-cpp` which not all compilers support (clang does not
-support it for example). Clang is also more strict about the args' types in
-`main()` and this was also a problem that Cody fixed, making it work with both
-clang and gcc. For the original code with the gcc fix described below, see the
-alternate code section below.
+Cody fixed this to not require `-traditional-cpp` which not all compilers
+support (clang does not support it for example). Clang is also more strict about
+the args' types in `main()` and this was also a problem that Cody fixed, making
+it work with both clang and gcc. For the original code with the gcc fix
+described below, see the alternate code section in the README.md file.
 
 Originally Yusuke supplied a patch so that this entry would compile with gcc -
 but not clang - or at least some versions.
@@ -55,18 +55,16 @@ but not clang - or at least some versions.
 
 ## [1984/mullender](1984/mullender/mullender.c) ([README.md](1984/mullender/README.md]))
 
-Cody provided an alternate
-version which was an improved version from the judges so that everyone can enjoy
-it in systems that are not VAX/PDP. We also refer you to the [faq](faq.md) as
-there are some winning entries that also let one enjoy it - with more to them of
-course!
+Cody provided an alternate version which was an improved version from the judges
+so that everyone can enjoy it in systems that are not VAX/PDP. We also refer you
+to the [faq](faq.md) as there are some winning entries that also let one enjoy
+it - with more to them of course!
 
 ## [1985/applin](1985/applin/applin.c) ([README.md](1985/applin/README.md]))
 
-Yusuke provided a patch to get this to
-not issue crash and Cody
-fixed this to work with macOS (it printed the string `H????` in a seemingly
-infinite loop of printing more and more `?`s).
+Yusuke provided a patch to get this to not issue crash and Cody fixed this to
+work with macOS (it printed the string `H????` in a seemingly infinite loop of
+printing more and more `?`s).
 
 The problem with the crash is that it destructively rewrites string literals but
 with `strdup()` it's safe.
@@ -85,78 +83,77 @@ shell.
 
 ## [1985/lycklama](1985/lycklama/lycklama.c) ([README.md](1985/lycklama/README.md]))
 
-Cody fixed this to compile
-with modern compilers. In the past one could get away with defining some macro
-to `#define` and then use `#foo` to have the same effect as using `#define` but
-this does not work in modern systems so Cody changed the `#o` lines to
-`#define`. The `lycklama.alt.c` is the original source code as it provides some
-fun input for the entry.
+Cody fixed this to compile with modern compilers. In the past one could get away
+with defining some macro to `#define` and then use `#foo` to have the same
+effect as using `#define` but this does not work in modern systems so Cody
+changed the `#o` lines to `#define`. The
+[lycklama.alt.c](1985/lycklama/lycklama.alt.c) is the original source
+code as it provides some fun input for the entry.
 
-Yusuke provided some useful information that
-amounts to an alternate version but which does not actually modify the code.
-Perhaps it should be an alternate version but in any case see the README.md file
-for details.
+Yusuke provided some useful information that amounts to an alternate version but
+which does not actually modify the code except by a provided macro for a
+`usleep()` call which Cody added. See the README.md file details.
 
 
 ## [1985/sicherman](1985/sicherman/sicherman.c) ([README.md](1985/sicherman/README.md]))
 
-Cody fixed this _very twisted
-entry_ to not require `-traditional-cpp`. He'd like to refer you to the original
-file in [sicherman.alt.c](1985/sicherman.alt.c) and he suggests that you then compare
-it to [sicherman.c](1985/sicherman/sicherman.c) for some good old C-fashioned fun!
+Cody fixed this _very twisted entry_ to not require `-traditional-cpp`. He'd
+like to refer you to the original file in
+[sicherman.alt.c](1985/sicherman.alt.c) and he suggests that you then compare it
+to [sicherman.c](1985/sicherman/sicherman.c) for some good old C-fashioned fun!
 
 
 ## [1986/holloway](1986/holloway/holloway.c) ([README.md](1986/holloway/README.md]))
 
-Cody fixed this to
-compile and work with clang (it already worked with gcc).  The problem was that
-clang is more strict about the type of second arg to main(). However simply
-changing it to a `char **` and updating the `*s` to `**s` caused a segfault. By
-adding a new variable, `char *t`, initialising it to `s` and then using `t`
-instead of `s` it compiles and runs successfully under clang and gcc.
+Cody fixed this to compile and work with clang (it already worked with gcc).
+The problem was that clang is more strict about the type of second arg to
+main(). However simply changing it to a `char **` and updating the `*s` to `**s`
+caused a segfault. By adding a new variable, `char *t`, initialising it to `s`
+and then using `t` instead of `s` it compiles and runs successfully under clang
+and gcc.
 
 
 ## [1986/marshall](1986/marshall/marshall.c) ([README.md](1986/marshall/README.md]))
 
-Cody got this to
-compile and work with clang. It did not work with clang because it is more
-strict about the second and third args to main() and the third arg was an int.
-He notes that he tried to keep the picture as close to the original. The line
-lengths are the same but some spaces had to be changed to non-spaces.
+Cody got this to compile and work with clang. It did not work with clang because
+it is more strict about the second and third args to `main()` and the third arg
+was an `int`.  He notes that he tried to keep the ASCII art as close to the
+original as possible. The line lengths are the same but some spaces had to be
+changed to non-spaces.
 
 
 ## [1986/wall](1986/wall/wall.c) ([README.md](1986/wall/README.md]))
 
-We used a patch provided by Yusuke to make
-this work with gcc (in particular the patch uses `strdup()` on two strings).
+We used a patch provided by Yusuke to make this work with gcc (in particular the
+patch uses `strdup()` on two strings).
 
 Cody fixed this so that it does not require `-traditional-cpp`. This took a fair
 bit of tinkering as this entry *is* strange. The original code is provided to
-allow one to easily see how different C was in those days. See below for
-details. Thank you Cody for your assistance!
+allow one to easily see how different C was in those days. See the README.md
+file for details.
 
 
 ## [1987/wall](1987/wall/wall.c) ([README.md](1987/wall/README.md]))
 
-Cody made this safer by
-using `fgets()` instead of `gets()`. This prevents an annoying and potentially
-alarming warning at compiling, linking or runtime.
+Cody made this safer by using `fgets()` instead of `gets()`. This prevents an
+annoying and potentially alarming warning at compiling, linking or runtime.
+Though this could be partly remedied through redirecting `stderr` to `/dev/null`
+this would not truly resolve the problem either.
 
 
 ## [1987/westley](1987/westley/westley.c) ([README.md](1987/westley/README.md]))
 
-Cody fixed this for modern
-systems. The problem was 'assignment to cast is illegal, lvalue casts are not
-supported'. For the original file see below.
+Cody fixed this for modern systems. The problem was `'assignment to cast is
+illegal, lvalue casts are not supported'`. For the original file see the
+README.md file.
 
 
 ## [1988/dale](1988/dale/dale.c) ([README.md](1988/dale/README.md]))
 
-Cody fixed this for modern
-compilers. There were two problems to address. One was that the entry required
-`-traditional-cpp` (which <strike>not all compilers support</strike> `clang`
-does not support) which Cody fixed. It needed that option because of two things
-it did:
+Cody fixed this for modern compilers. There were two problems to address. One
+was that the entry required `-traditional-cpp` (which <strike>not all compilers
+support</strike> `clang` does not support) which Cody fixed. It needed that
+option because of two things it did:
 
 ```c
 #define a(x)get/***/x/***/id())
@@ -198,41 +195,46 @@ so Cody changed the lines to be in the form of:
 
 ## [1988/isaak](1988/isaak/isaak.c) ([README.md](1988/isaak/README.md]))
 
-Cody fixed this to work for
-modern systems. The problem was that the important function, a redefinition of
-exit(), was not being called in main(). See below notes for the original,
-alternative version.
+Cody fixed this to work for modern systems. The problem was that the important
+function, a redefinition of exit(), was not being called in main(). See below
+notes for the original, alternative version.
 
 The original version is in [1988/isaak/isaak.alt.c](1988/isaak/isaak.alt.c).
 
 
 ## [1988/phillipps](1988/phillipps/phillipps.c) ([README.md](1988/phillipps/README.md]))
 
-Cody fixed this for modern
-systems. It did not compile with clang because it requires the second and third
-args to main() to be `char **` but even before that with gcc it printed random
-characters. After fixing it for clang by changing main() to call the new
-function pain() (chosen because it's a pain that clang requires these args to
-be `char **` :-) ) with the correct args it now works.
+Cody fixed this for modern systems. It did not compile with clang because it
+requires the second and third args to main() to be `char **` but even before
+that with gcc it printed random characters. After fixing it for clang by
+changing main() to call the new function pain() (chosen because it's a pain that
+clang requires these args to be `char **` :-) ) with the correct args it now
+works.
 
 
 ## [1988/spinellis](1988/spinellis/spinellis.c) ([README.md](1988/spinellis/README.md]))
 
-An alternate version was provided by Cody for this so that it works for
-compilers like clang.
+An [alternate version](1988/spinellis/spinellis.alt.c) was provided by Cody for
+this so that it works for compilers like clang. See the README.md files for
+details.
 
+## [1988/westley](1988/westley/westley.c) ([README.md](1988/westley/README.md]))
+
+The [original version](1988/westley/westley.c), provided as an alternate code,
+was fixed by Misha Dynin, based on the judges' remarks so that this would work
+with modern C compilers.
 
 ## [1989/fubar](1989/fubar/fubar.c) ([README.md](1989/fubar/README.md]))
 
-Cody got this to work with
-modern systems. The main issues were an `#include` had to be added and fixing the
-path to files referred to in the code was also needed.
+Cody got this to work with modern systems. The `main()` issues were an
+`#include` had to be added and fixing the path to files referred to in the code
+was also needed.
 
 
 ## [1989/jar.2](1989/jar.2/jar.2.c) ([README.md](1989/jar.2/README.md]))
 
-Cody fixed this to work with
-modern compilers. Modern compilers do not allow code like:
+Cody fixed this to work with modern compilers. Modern compilers do not allow
+code like:
 
 ```c
 #define D define
@@ -247,16 +249,15 @@ you know how?
 
 ## [1989/ovdluhe](1989/ovdluhe/ovdluhe.c) ([README.md](1989/ovdluhe/README.md]))
 
-Cody provided an alternate version based on the author's remarks. See the
-README.md for details.
+Cody provided an [alternate version](1989/ovdluhe/ovdluhe.alt.c) based on the
+author's remarks. See the README.md for details.
 
 
 ## [1989/paul](1989/paul/paul.c) ([README.md](1989/paul/README.md]))
 
-Cody fixed a segfault under
-macOS. The problem was that the int (from `#define f`) should be a long. This
-became apparent when he was using lldb and saw that the type of a pointer was
-long.
+Cody fixed a segfault under macOS. The problem was that the int (from `#define
+f`) should be a long. This became apparent when he was using lldb and saw that
+the type of a pointer was long.
 
 
 ## [1989/robison](1989/robison/robison.c) ([README.md](1989/robison/README.md]))
@@ -288,8 +289,8 @@ decided later.
 
 ## [1990/baruch](1990/baruch/baruch.c) ([README.md](1990/baruch/README.md]))
 
-Cody added an alternate version which allows certain compilers to compile the
-code, based on the author's remarks.
+Cody added an [alternate version](1990/baruch/baruch.alt.c) which allows certain
+compilers to compile the code, based on the author's remarks.
 
 
 ## [1990/cmills](1990/cmills/cmills.c) ([README.md](1990/cmills/README.md]))
@@ -305,8 +306,7 @@ For the original code see the [1992 archive](/archive/archive-1990.tar.bz2).
 
 ## [1990/dds](1990/dds/dds.c) ([README.md](1990/dds/README.md]))
 
-Yusuke fixed this for modern systems. Thank
-you Yusuke!
+Yusuke fixed this for modern systems.
 
 Cody removed the erroneous prototype to `fopen()` and made this use `fgets()`
 instead of `gets()` to make it safer and to prevent an annoying and potentially
@@ -315,8 +315,8 @@ alarming warning at compiling and/or linking and/or runtime.
 
 ## [1990/jaw](1990/jaw/jaw.c) ([README.md](1990/jaw/README.md]))
 
-Cody fixed the script to work properly in modern environments (to do with PATH
-not having '.' in it). He notes that with an invocation in the try section will
+Cody fixed the script to work properly in modern environments (to do with `$PATH`
+not having `.` in it). He notes that with an invocation in the try section will
 with macOS show what appears to be an error message but is actually okay. He
 gives more information in the [bugs.md](/bugs.md) file.
 
@@ -336,31 +336,29 @@ program's output.
 
 ## [1990/theorem](1990/theorem/theorem.c) ([README.md](1990/theorem/README.md]))
 
-Cody fixed some bugs that
-impacted the usability of this program including some segfaults under modern
-systems (and possibly in some cases earlier systems) with this entry.
-Originally we noted that the 4 trailing args '0 0 0 0' were required on systems
-that dump core when NULL is dereferenced but this problem showed itself in
-modern systems even with the 4 '0 0 0 0'. He also fixed a segfault if not enough
-args are specified and fixed the code so that the generated `fibonacci.c`
-actually works; before it just printed `0` over and over again (since it did not
-work anyway a segfault prevention was added here). He also fixed some array
-addressing (some of which might not be strictly necessary but as he was testing
-the `fibonacci.c` bug he ended up changing it anyway). Finally he changed this
-program to use `fgets()` not `gets()` to make it safer and to prevent a warning
-about `gets()` at linking or runtime.
+Cody fixed some bugs that impacted the usability of this program including some
+segfaults under modern systems (and possibly in some cases earlier systems) with
+this entry.  Originally we noted that the 4 trailing args '0 0 0 0' were
+required on systems that dump core when NULL is dereferenced but this problem
+showed itself in modern systems even with the 4 '0 0 0 0'. He also fixed a
+segfault if not enough args are specified and fixed the code so that the
+generated `fibonacci.c` actually works; before it just printed `0` over and over
+again (since it did not work anyway a segfault prevention was added here). He
+also fixed some array addressing (some of which might not be strictly necessary
+but as he was testing the `fibonacci.c` bug he ended up changing it anyway).
+Finally he changed this program to use `fgets()` not `gets()` to make it safer
+and to prevent a warning about `gets()` at linking or runtime.
 
-Yusuke pointed out that `atof` nowadays
-needs `#include <stdlib.h>` which was used in order to get this to work
-initially (prior to this the output was incomplete).
+Yusuke pointed out that `atof` nowadays needs `#include <stdlib.h>` which was
+used in order to get this to work initially (prior to this output was there but
+incomplete).
 
 
 ## [1990/westley](1990/westley/westley.c) ([README.md](1990/westley/README.md]))
 
-Cody fixed this for modern
-systems. It had `1s` in places for a short int which was changed to just `1`.
-Since it's instructional to see the differences he has provided an alternate
-version with the original code. See below.
+Cody fixed this for modern systems. It had `1s` in places for a short int which
+was changed to just `1`.  Since it's instructional to see the differences he has
+provided an alternate version with the original code. See below.
 
 Cody provided the original source in [westley.alt.c](1990/westley/westley.alt.c).
 
@@ -368,74 +366,70 @@ Cody provided the original source in [westley.alt.c](1990/westley/westley.alt.c)
 
 ## [1991/brnstnd](1991/brnstnd/brnstnd.c) ([README.md](1991/brnstnd/README.md]))
 
-Cody fixed this for modern
-systems. There were two invalid operands to binary expression (`char *` and
-`void` and `int` and `void`) to resolve and additionally a mis-feature of the C
-pre-processor which no longer works had to be changed as well in order to get
-this to compile. In particular the macro `C`, defined as `C =G` to make `+=` and
-similar operators no longer works.  The invalid operands to binary expressions
-were resolved with the comma operator.
+Cody fixed this for modern systems. There were two invalid operands to binary
+expression (`char *` and `void` and `int` and `void`) to resolve and
+additionally a mis-feature of the C pre-processor which no longer works had to
+be changed as well in order to get this to compile. In particular the macro `C`,
+defined as `C =G` to make `+=` and similar operators no longer works.  The
+invalid operands to binary expressions were resolved with the comma operator.
 
 
 ## [1991/dds](1991/dds/dds.c) ([README.md](1991/dds/README.md]))
 
-Cody fixed a segfault that
-prevented this entry from working at all and made an alternate version
-that works with `clang`. The alternate code, described below, is what is needed
-for clang. Reading it might be instructive even if you have gcc.
+Cody fixed a segfault that prevented this entry from working at all and made an
+[alternate version](1991/dds/dds.alt.c) that works with `clang`. The alternate
+code, described in the README.md file, is what is needed for clang. Reading it
+might be instructive even if you have gcc.
 
 
 ## [1991/westley](1991/westley/westley.c) ([README.md](1991/westley/README.md]))
 
-Cody fixed a segfault in
-this program which prevented it from working. The problem was that the read-only
-char array `char *z[]` was being written to. The fix was to change it to `char
-z[][100]` in two spots (see if you can determine why two places, not one!). Why
-100 when the longest string is < 100? Because a shorter value caused strange
-output and it's easier to just choose a larger value that works without having
-to find the correct value.
+Cody fixed a segfault in this program which prevented it from working. The
+problem was that the read-only char array `char *z[]` was being written to. The
+fix was to change it to `char z[][100]` in two spots (see if you can determine
+why two places, not one!). Why 100 when the longest string is < 100? Because a
+shorter value caused strange output and it's easier to just choose a larger
+value that works without having to find the correct value.
 
 
 ## [1992/adrian](1992/adrian/adrian.c) ([README.md](1992/adrian/README.md]))
 
-Cody changed the location
-that it used `gets()` to be `fgets()` instead to make it safer and to prevent
-annoying warnings during compiling, linking or runtime (interspersed with the
-program's output). One might think that simply changing the gets() to fgets()
-(with stdin) would work but it did not because `fgets()` stores the newline and
-`gets()` does not. The code was relying on not having this newline. With
-`fgets()` the code `if(A(Y)) puts(Y);` ended up printing an extra line which
-made the generation of some files (like `adhead.c`) fail to compile (`gets()`
-does not store the newline but `fgets()` does). Why? There was a blank line
-after a `\` at the end of the first line of a macro definition!  Thus the code
-now first trims off the last character of the buffer read to get the same
-correct functionality but in a safe way.
+Cody changed the location that it used `gets()` to be `fgets()` instead to make
+it safer and to prevent annoying warnings during compiling, linking or runtime
+(interspersed with the program's output). One might think that simply changing
+the gets() to fgets() (with stdin) would work but it did not because `fgets()`
+stores the newline and `gets()` does not. The code was relying on not having
+this newline. With `fgets()` the code `if(A(Y)) puts(Y);` ended up printing an
+extra line which made the generation of some files (like `adhead.c`) fail to
+compile. Why? There was a blank line after a `\` at the end of the first line of
+a macro definition!  Thus the code now first trims off the last character of the
+buffer read to get the same correct functionality but in a safe way and
+non obnoxious way.
 
 
 ## [1992/gson](1992/gson/gson.c) ([README.md](1992/gson/README.md]))
 
-Cody changed the buffer size
-in such a way that gets() should be safe (theoretically) as it comes from the
-command line (though it can also read input from stdin after starting the
-program). Ideally `fgets()` would be used but this is a more problematic.
-Previously it had a buffer size of 256 which could easily overflow. In this
-entry `gets()` is used in a more complicated way:  first `m` is set to `*++p` in
-a for loop where `p` is argv. Later `m` is set to point to `h` which was of size
-\256. `gets()` is called as `m = gets(m)`) but trying to change it to use
-fgets() proved more a problem. Since the input must come from the command line
-Cody changed the buffer size to `ARG_MAX+1` which should be enough (again
-theoretically) especially since the command expects redirecting a dictionary
-file as part of the command line. This also makes it possible for longer strings
-to be read (in case the `gets()` was not used in a loop).
+Cody changed the buffer size in such a way that `gets()` should be safe
+(theoretically) as it comes from the command line (though it can also read input
+from stdin after starting the program). Ideally `fgets()` would be used but this
+is a more problematic.  Previously it had a buffer size of 256 which could
+easily overflow. In this entry `gets()` is used in a more complicated way:
+first `m` is set to `*++p` in a for loop where `p` is argv. Later `m` is set to
+point to `h` which was of size \256. `gets()` is called as `m = gets(m)`) but
+trying to change it to use `fgets()` proved more a problem. Since the input must
+come from the command line Cody changed the buffer size to `ARG_MAX+1` which
+should be enough (again theoretically) especially since the command expects
+redirecting a dictionary file as part of the command line. This also makes it
+possible for longer strings to be read (in case the `gets()` was not used in a
+loop).
 
 
 ## [1992/kivinen](1992/kivinen/kivinen.c) ([README.md](1992/kivinen/README.md]))
 
 It was observed that on modern systems this goes much too quick. [Yusuke
 Endoh](/winners.html#Yusuke_Endoh) created a patch that calls `usleep()` but
-Cody thought the value was
-too slow so he made it a macro in the Makefile `Z`, defaulting at 15000. You can
-reconfigure it like:
+Cody thought the value was too slow so he made it a macro in the Makefile `Z`,
+defaulting at 15000. You can reconfigure it like:
 
 ```sh
 make clobber Z=1000 all
@@ -447,31 +441,27 @@ it moves towards the right but if you click the mouse it goes back.
 
 ## [1992/lush](1992/lush/lush.c) ([README.md](1992/lush/README.md]))
 
-Yusuke supplied a patch which makes this
-work with gcc. Due to how it works (see Judges' remarks below) this will not
-work with clang.
+Yusuke supplied a patch which makes this work with gcc. Due to how it works (see
+Judges' remarks in the README.md file) this will not work with clang.
 
-Cody made it use `fgets()`
-instead of `gets()` to prevent annoying warnings getting in the way and also
-added the `runme.sh` script to demonstrate it (using make was problematic). Cody
-notes that unfortunately this does not work with clang due to different compiler
-messages.
+Cody made it use `fgets()` instead of `gets()` to prevent annoying warnings
+getting in the way and also added the `runme.sh` script to demonstrate it (using
+make was problematic). Cody notes that unfortunately this does not work with
+clang due to different compiler messages.
 
 
 ## [1992/westley](1992/westley/westley.c) ([README.md](1992/westley/README.md]))
 
-Cody fixed this for clang by
-changing the third and fourth arg of main() to be ints inside main(); clang
-requires args 2 - 4 to be `char **`. He also fixed it so that the program would
-not segfault if not enough args were specified. He did the same for the
-alternative version (see below) provided by the author (the original can be seen
-in the author's remarks below).
+Cody fixed this for clang by changing the third and fourth arg of `main()` to be
+ints inside `main()`; clang requires args 2 - 4 to be `char **`. He also fixed
+it so that the program would not segfault if not enough args were specified. He
+did the same for the alternative version (see below) provided by the author (the
+original can be seen in the author's remarks below).
 
 
 ## [1993/jonth](1993/jonth/jonth.c) ([README.md](1993/jonth/README.md]))
 
-Both Cody and [Yusuke
-Endoh](/winners.html#Yusuke_Endoh) fixed this so that it
+Both Cody and [Yusuke Endoh](/winners.html#Yusuke_Endoh) fixed this so that it
 will work with modern systems. Yusuke provided some fixes of the X code and Cody
 fixed the C pre-processor directives so that it would compile. It used to be
 that you could get away with code like:
@@ -493,131 +483,111 @@ Cody fixed this to work with modern compilers.
 
 ## [1993/lmfjyh](1993/lmfjyh/lmfjyh.c) ([README.md](1993/lmfjyh/README.md]))
 
-Cody added an alternate
-version which does what the program did with gcc < 2.3.3.
+Cody added an [alternate version](1993/lmfjyh/lmfjyh.alt.c) which does what the
+program did with gcc < 2.3.3. See the README.md file for details.
 
 
 ## [1993/plummer](1993/plummer/plummer.c) ([README.md](1993/plummer/README.md]))
 
-Cody added an alternate
-version which uses `usleep()` so you can see what is happening with faster
-systems.
+Cody added an [alternate version](1993/plummer/plummer.alt.c) which uses
+`usleep()` so you can see what is happening with faster systems. See the
+README.md files for details.
 
 
 ## [1993/rince](1993/rince/rince.c) ([README.md](1993/rince/README.md]))
 
-Yusuke supplied a patch to get this to work
-in modern systems.
+Yusuke supplied a patch to get this to work in modern systems.
 
 
 ## [1993/schnitzi](1993/schnitzi/schnitzi.c) ([README.md](1993/schnitzi/README.md]))
 
-Cody made this use `fgets()`
-not `gets()` to make it safer and to prevent an annoying warning with compiling
-and/or linking and/or runtime, the latter of which is interspersed with the
-output of the program itself.
+Cody made this use `fgets()` not `gets()` to make it safer and to prevent an
+annoying warning with compiling and/or linking and/or runtime, the latter of
+which is interspersed with the output of the program itself.
 
 
 ## [1993/vanb](1993/vanb/vanb.c) ([README.md](1993/vanb/README.md]))
 
-Cody fixed this to work with
-clang. The problem was that the third arg to main() was not a `char **`. Instead
-`O5()` (which was `main()`) is now its own function which main() calls with the
-right parameters.
+Cody fixed this to work with clang. The problem was that the third arg to main()
+was not a `char **`. Instead `O5()` (which was `main()`) is now its own function
+which main() calls with the right parameters.
 
 
 ## [1994/ldb](1994/ldb/ldb.c) ([README.md](1994/ldb/README.md]))
 
-Cody fixed this so it would
-compile and work with modern compilers. The problem was that `srand()` returns
-void but it was used in a `||` expression. Thus the comma operator was needed.
-Cody also changed the entry to use `fgets()` instead of `gets()` to make it safe
-for lines greater than 231 in length and to prevent a warning at linking or at
-runtime, the latter of which can be interspersed with output of the program.
-Note that this now prints a newline after the output but this seems like a
-worthy compromise for making it safer (fixing it is more problematic than it is
-worth). In macOS another line of output would be shown anyway namely the warning
-that it uses gets(). A subtlety about this fix: if a line is greater than 231 in
-length if the program chooses that line it might print the first 231 characters
-or it might print (up to) the next 231 characters and so on.
-your assistance!
-
-
-## [1994/schnitzi](1994/schnitzi/schnitzi.c) ([README.md](1994/schnitzi/README.md]))
-
-NOTE: the buffer size is very small at 100. It's easy to fix the buffer size but
-it is not as easy to change it to `fgets()`. [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson) gives some hints in the
-[bugs.md](/bugs.md) file on how this entry works which might be useful in order
-to get this to use `fgets()` which would prevent a warning at linking or
-runtime, the latter of which is interspersed with the output of the program. The
-file [schnitzi.alt.c](schnitzi.alt.c) has this to get anyone started, should
-they wish to tackle it (Cody might in time). The problem with changing the buffer
-size is that even when it works the generated output (see judges' remarks below)
-will not be 100% correct duplication of the program.
+Cody fixed this so it would compile and work with modern compilers. The problem
+was that `srand()` returns void but it was used in a `||` expression. Thus the
+comma operator was needed.  Cody also changed the entry to use `fgets()` instead
+of `gets()` to make it safe for lines greater than 231 in length and to prevent
+a warning at linking or at runtime, the latter of which can be interspersed with
+output of the program.  Note that this now prints a newline after the output but
+this seems like a worthy compromise for making it safer (fixing it is more
+problematic than it is worth). In macOS another line of output would be shown
+anyway namely the warning that it uses gets(). A subtlety about this fix: if a
+line is greater than 231 in length if the program chooses that line it might
+print the first 231 characters or it might print (up to) the next 231 characters
+and so on.
 
 
 ## [1994/shapiro](1994/shapiro/shapiro.c) ([README.md](1994/shapiro/README.md]))
 
-Cody fixed a bug on systems
-where `EOF != -1`. The problem is that `getc()` and the related functions do not
-return `-1` on EOF or error but rather `EOF`. However `EOF` is not required to be
-`-1` but merely an int < 0 and this program assumed that `getc()` will return
-`-1` on EOF or error, not `EOF`. On systems where `EOF != -1` it could result in
-an infinite loop (for the same reason one should not use `EOF` for the `getopt()`
-functions as they return `-1` when all options are parsed (for details on the
-definition of `EOF` see `7.21 Input/output<stdio.h>` subsection 1 of the
-standard)). An interesting problem occurred where changing the `-1` to `EOF`
-caused both `warning: illegal character encoding in string literal` and `error:
-source file is not valid UTF-8`. But since `EOF` is simply an int < 0 and making
-the loop condition check that the return value is >= 0 does not cause a
-compilation error and it functions correctly it will address the systems where
-`EOF != -1` just as if it checked for `!= EOF`.
+Cody fixed a bug on systems where `EOF != -1`. The problem is that `getc()` and
+the related functions do not return `-1` on EOF or error but rather `EOF`.
+However `EOF` is not required to be `-1` but merely an int < 0 and this program
+assumed that `getc()` will return `-1` on EOF or error, not `EOF`. On systems
+where `EOF != -1` it could result in an infinite loop (for the same reason one
+should not use `EOF` for the `getopt()` functions as they return `-1` when all
+options are parsed (for details on the definition of `EOF` see `7.21
+Input/output<stdio.h>` subsection 1 of the standard)). An interesting problem
+occurred where changing the `-1` to `EOF` caused both `warning: illegal
+character encoding in string literal` and `error: source file is not valid
+UTF-8`. But since `EOF` is simply an int < 0 and making the loop condition check
+that the return value is >= 0 does not cause a compilation error and it
+functions correctly it will address the systems where `EOF != -1` just as if it
+checked for `!= EOF`.
 
 
 ## [1994/westley](1994/westley/westley.c) ([README.md](1994/westley/README.md]))
 
-Cody converted the spoiler
-compiler options to be compiler commands and added a script
-[spoiler.sh](spoiler.sh) to automate the spoiler commands provided by the author
-to make it easier to see the game in action.
+Cody converted the spoiler compiler options (provided by the author) to be
+compiler commands and added a script [spoiler.sh](1994/westley/spoiler.sh) to
+automate the spoiler commands to make it easier to see the game in action.
 
 
 ## [1995/cdua](1995/cdua/cdua.c) ([README.md](1995/cdua/README.md]))
 
-Cody fixed this so that it
-would work with macOS. Once it could compile it additionally segfaulted under
-macOS which he also fixed.  Cody also provided the Alternate code for fun :-) ).
+Cody fixed this so that it would work with macOS. Once it could compile it
+additionally segfaulted under macOS which he also fixed.  Cody also provided the
+[Alternate code](1995/cdua/cdua.alt.c) for fun :-) ).
 
 
 ## [1995/garry](1995/garry/garry.c) ([README.md](1995/garry/README.md]))
 
-Cody fixed it
-so that it will compile with modern compilers. The problem was a missing `int` for
-the `f` variable. He felt it was important that it works because the layout does
-indeed look to him like a rat is dropping core.
+Cody fixed it so that it will compile with modern compilers. The problem was a
+missing `int` for the `f` variable. He felt it was important that it works
+because the layout does indeed look to him like a rat is dropping core, which
+the judges suggested.
 
 
 ## [1996/august](1996/august/august.c) ([README.md](1996/august/README.md]))
 
-Cody fixed a segfault in
-this program that prevented it from working right but he notes it hangs in
-macOS. It works fine in linux. This is because macOS has clang, not gcc, even
-the gcc binary. He observed that with specific compiler flags it hangs in linux
-too and perhaps it's related to this in macOS; maybe other flags are needed but
-he doesn't know (at least not yet). He provided a bit more information in
-[bugs.md](/bugs.md) for anyone who wants to have a go at providing a fix for
-other compilers. As there are a lot of commands to try he also added
-[try.sh](try.sh).
+Cody fixed a segfault in this program that prevented it from working right but
+he notes it hangs in macOS. It works fine in linux. This is because macOS has
+clang, not gcc, even the gcc binary. He observed that with specific compiler
+flags it hangs in linux too and perhaps it's related to this in macOS; maybe
+other flags are needed but he doesn't know (at least not yet). He provided a bit
+more information in [bugs.md](/bugs.md) for anyone who wants to have a go at
+providing a fix for other compilers. As there are a lot of commands to try he
+also added [try.sh](1996/august/try.sh).
 
 
 ## [1996/dalbec](1996/dalbec/dalbec.c) ([README.md](1996/dalbec/README.md]))
 
-Cody proposed a fix for this
-to compile with clang and Landon implemented it after some discussion. The
-reason Cody did not do it is because he thought it was the wrong output but as
-it happens the try section below was worded a bit confusingly. He looked at
-[Yusuke Endoh's](/winners.html#Yusuke_Endoh) analysis found
+Cody proposed a fix for this to compile with clang and Landon implemented it
+after some discussion. The reason Cody did not do it is because he thought it
+was the wrong output but as it happens the try section below was worded a bit
+confusingly. He looked at [Yusuke Endoh's](/winners.html#Yusuke_Endoh) analysis
+found
 [here](https://mame-github-io.translate.goog/ioccc-ja-spoilers/1996/dalbec.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp)
 but he missed that Yusuke added a '...' after the result which made him think
 the fix was wrong. Cody also made the recommended change of the author to make
@@ -627,51 +597,49 @@ string of numbers on the same line.
 
 ## [1996/eldby](1996/eldby/eldby.c) ([README.md](1996/eldby/README.md]))
 
-Cody provided an alternate
-version which uses `usleep()` in between writing the output for those who are
-sensitive to text flashing by rapidly (it affects him too but he also thinks it
-moves too fast nowadays anyway).
+Cody provided an [alternate version](1996/eldby/eldby.alt.c) which uses
+`usleep()` in between writing the output for those who are sensitive to text
+flashing by rapidly (it affects him too but he also thinks it moves too fast
+nowadays anyway).
 
 
 ## [1996/gandalf](1996/gandalf/gandalf.c) ([README.md](1996/gandalf/README.md]))
 
-Cody fixed this to compile
-and work with modern systems. As he loved the references in the code that could
-not compile he just commented out as little as possible to get this to compile.
+Cody fixed this to compile and work with modern systems. As he loved the
+references in the code that could not compile he just commented out as little as
+possible to get this to compile.
 
 
 ## [1996/westley](1996/westley/westley.c) ([README.md](1996/westley/README.md]))
 
-Cody fixed a segfault in
-this entry as well as it displaying environmental variables.  Although the
-scripts showed correct output, it somewhat lessened the usability because they
-segfaulted and showed (an) environmental variable, interspersed with the output
-of the program. With the fix they no longer have this problem. If `argc < 5`
-(`argv[4]` is referenced) it will not do anything and it will not segfault
-either - this was caused by the body of the for() loop which is now empty (it
-doesn't appear to be needed at all at least modernly). Note that you should
-check the [westley.alt.c](westley.alt.c) file when reading the author's
-comments. To see how to use the original see below.
+Cody fixed a segfault in this entry as well as it displaying environmental
+variables.  Although the scripts showed correct output, it somewhat lessened the
+usability because they segfaulted and showed (an) environmental variable,
+interspersed with the output of the program. With the fix they no longer have
+this problem. If `argc < 5` (`argv[4]` is referenced) it will not do anything
+and it will not segfault either - this was caused by the body of the for() loop
+which is now empty (it doesn't appear to be needed at all at least modernly).
+Note that you should check the [westley.alt.c](1996/westley/westley.alt.c) file
+when reading the author's comments. To see how to use the original, see the
+README.md file.
 
 
 ## [1998/chaos](1998/chaos/chaos.c) ([README.md](1998/chaos/README.md]))
 
-Cody added a call to
-`endwin()` to restore terminal sanity (echo etc.) when exiting the program.
+Cody added a call to `endwin()` to restore terminal sanity (echo etc.) when
+exiting the program.
 
 
 ## [1998/schnitzi](1998/schnitzi/schnitzi.c) ([README.md](1998/schnitzi/README.md]))
 
-Cody fixed invalid data
-types which prevented this entry from working, causing a segfault. This showed
-itself in two parts which required two fixes, one for linux and further changes
-for macOS. He also fixed a segfault (after printing garbage) when the arg
-specified evaluated to 0.
+Cody fixed invalid data types which prevented this entry from working, causing a
+segfault. This showed itself in two parts which required two fixes, one for
+linux and further changes for macOS. He also fixed a segfault (after printing
+garbage) when the arg specified evaluated to 0.
 
-Cody made an
-alternate version that works with macOS but there are some important notes as
-well as a description of how it works (spoilers for the original version as
-well).
+Cody made an [alternate version](1998/schnitzi/schnitzi.alt.c) that works with
+macOS but there are some important notes as well as a description of how it
+works (spoilers for the original version as well), found in the README.md file.
 
 
 ## [1998/schweikh1](1998/schweikh1/schweikh1.c) ([README.md](1998/schweikh1/README.md]))
