@@ -42,9 +42,9 @@ show correctly!
 ```
 
 
-### Alternative code:
+### Alternate code:
 
-The author provided a version for the US. To build:
+The author provided a version for the US which we added. To build:
 
 ```sh
 make alt
@@ -54,6 +54,13 @@ Use `westley.alt` as you would `whereami` above.
 
 NOTE: this alternative version also needs a terminal that wraps at 80 columns.
 
+### INABIAF - it's not a bug it's a feature! :-)
+
+This program and the alternate version will very likely crash or
+[nuke](https://en.wikipedia.org/wiki/Nuclear_weapon) the [entire
+world](https://en.wikipedia.org/wiki/Earth) or just the
+[USA](https://en.wikipedia.org/wiki/United_States), respectively, without enough
+args. This should not be fixed.
 
 ## Judges' remarks:
 

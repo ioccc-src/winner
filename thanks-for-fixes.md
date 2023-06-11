@@ -452,11 +452,10 @@ clang due to different compiler messages.
 
 ## [1992/westley](1992/westley/westley.c) ([README.md](1992/westley/README.md]))
 
-Cody fixed this for clang by changing the third and fourth arg of `main()` to be
-ints inside `main()`; clang requires args 2 - 4 to be `char **`. He also fixed
-it so that the program would not segfault if not enough args were specified. He
-did the same for the alternative version (see below) provided by the author (the
-original can be seen in the author's remarks below).
+Cody fixed this to work for clang by changing the third and fourth arg of
+`main()` to be ints inside `main()`; clang requires args 2 - 4 to be `char **`.
+He also added the alternate version that the author gave in the remarks that is
+specifically for the USA rather than the world.
 
 
 ## [1993/jonth](1993/jonth/jonth.c) ([README.md](1993/jonth/README.md]))

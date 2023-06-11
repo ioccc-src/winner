@@ -676,6 +676,14 @@ work but it only works with gcc. Unfortunately due to the way the entry works
 and the fact that other compilers like clang have different warnings and errors
 this simply does not work with them. Can you help us?
 
+## [1992/westley](1992/westley/westley.c) ([README.md](1992/westley/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This program and the alternate version will very likely crash or
+[nuke](https://en.wikipedia.org/wiki/Nuclear_weapon) the [entire
+world](https://en.wikipedia.org/wiki/Earth) or just the
+[USA](https://en.wikipedia.org/wiki/United_States), respectively, without enough
+args. This should not be fixed.
 
 # 1993
 
@@ -707,9 +715,10 @@ else. This should NOT be fixed.
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile
 with modern systems (see the README.md file for what had to change) but the
-entry also used `gets()`. This could overflow long lines. Cody changed it to
-`fgets()` but this introduces another problem namely that newlines can be
-printed if the line length < 231.
+entry also used `gets()` which in some systems would print out a warning along
+with the output of the program. Naturally it could also overflow long lines.
+Cody changed it to `fgets()` to prevent the display problem but this introduces
+another problem namely that newlines can be printed if the line length < 231.
 
 This seems like a worthy compromise but it would be ideal for it to never print
 a newline unless that's the line itself (a blank line).
@@ -811,15 +820,27 @@ We would be grateful if you could provide it to us.  If you can provide this
 file you might consider removing this entry from this file as well but if not
 we'll take care of it.
 
-### Important reminder to fix the `-1` value check for `getc()`:
+### Important reminder and a note about the `-1` value check for `getc()`:
 
-Cody wants to remind you that he fixed the code to not use `-1` for the return
-value of `getc()`; this is important because `EOF` is **NOT** guaranteed to be
-`-1` but rather any negative value. On systems where `EOF != -1` the program
-would enter an infinite loop until the program crashed, by chance reads a `-1`
-or was killed. See the README.md for more details. If you don't feel comfortable
-changing it to `EOF` Cody will happily do it for you but otherwise go right
-ahead. We'll credit you in the [thanks file](thanks-for-fixes.md) regardless.
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the code to not
+use `-1` for the return value of `getc()`; this is important because `EOF` is
+**NOT** guaranteed to be `-1` but rather any negative value. On systems where
+`EOF != -1` the program would enter an infinite loop until the program crashed,
+by chance reads a `-1` or was killed (it is for this same reason that one should
+not use `EOF` for the `getopt()` functions as they return `-1` when all options
+are parsed (for details on the definition of `EOF` see `7.21
+Input/output<stdio.h>` subsection 1 of the standard)).
+
+
+An interesting problem occurred where changing the `-1` to `EOF` caused both
+`warning: illegal character encoding in string literal` and `error: source file
+is not valid UTF-8`. But since `EOF` is simply an int < 0 and making the loop
+condition check that the return value is >= 0 does not cause a compilation error
+and it functions correctly it will address the systems where `EOF != -1` just as
+if it checked for `!= EOF`.
+
+Since it works there is no need to fix this except for a challenge to yourself.
+
 
 # 1995
 
