@@ -9,7 +9,7 @@
     "email" : "borsanyi@uni-wuppertal.de",
     "url" : null,
     "alt_url" : null,
-    "deprecated_twitter_handle" : "",
+    "deprecated_twitter_handle" : null,
     "mastodon" : null,
     "mastodon_url" : null,
     "github" : null,

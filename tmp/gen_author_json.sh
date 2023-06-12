@@ -482,34 +482,42 @@ grep -v '^#' "$AUTHOR_HANDLE_TXT" | while read -r AUTHOR_HANDLE; do
 	    echo '    "author_handle" : "'"$AUTHOR_HANDLE"'",'
 	    echo '    "full_name" : "'"$NAME"'",'
 	    echo '    "sort_word" : "'"$SORT_WORD"'",'
-	    echo '    "location_code" : "'"$LOCATION_CODE"'",'
-	    echo '    "location_name" : "'"$LOCATION_NAME"'",'
-	    if [[ $EMAIL == null ]]; then
+	    if [[ $LOCATION_CODE == null || -z $LOCATION_CODE ]]; then
+		echo '    "location_code" : null,'
+	    else
+		echo '    "location_code" : "'"$LOCATION_CODE"'",'
+	    fi
+	    if [[ $LOCATION_NAME == null || -z $LOCATION_NAME ]]; then
+		echo '    "location_name" : null,'
+	    else
+		echo '    "location_name" : "'"$LOCATION_NAME"'",'
+	    fi
+	    if [[ $EMAIL == null || -z $EMAIL ]]; then
 		echo '    "email" : null,'
 	    else
 		echo '    "email" : "'"$EMAIL"'",'
 	    fi
-	    if [[ $URL == null ]]; then
+	    if [[ $URL == null || -z $URL ]]; then
 		echo '    "url" : null,'
 	    else
 		echo '    "url" : "'"$URL"'",'
 	    fi
-	    if [[ $ALTERNATE_URL == null ]]; then
+	    if [[ $ALTERNATE_URL == null || -z $ALTERNATE_URL ]]; then
 		echo '    "alt_url" : null,'
 	    else
 		echo '    "alt_url" : "'"$ALTERNATE_URL"'",'
 	    fi
-	    if [[ $DEPRECATED_TWITTER == null ]]; then
+	    if [[ $DEPRECATED_TWITTER == null || -z $DEPRECATED_TWITTER ]]; then
 		echo '    "deprecated_twitter_handle" : null,'
 	    else
 		echo '    "deprecated_twitter_handle" : "'"$DEPRECATED_TWITTER"'",'
 	    fi
-	    if [[ $MASTODON == null ]]; then
+	    if [[ $MASTODON == null || -z $MASTODON ]]; then
 		echo '    "mastodon" : null,'
 	    else
 		echo '    "mastodon" : "'"$MASTODON"'",'
 	    fi
-	    if [[ $MASTODON_URL == null ]]; then
+	    if [[ $MASTODON_URL == null || -z $MASTODON_URL ]]; then
 		echo '    "mastodon_url" : null,'
 	    else
 		echo '    "mastodon_url" : "'"$MASTODON_URL"'",'

@@ -9,7 +9,7 @@
     "email" : "dds@aueb.gr",
     "url" : "http:\/\/www.spinellis.gr",
     "alt_url" : null,
-    "deprecated_twitter_handle" : "",
+    "deprecated_twitter_handle" : null,
     "mastodon" : "@DSpinellis@mstdn.social",
     "mastodon_url" : "http:\/\/mstdn.social\/@DSpinellis",
     "github" : null,
