@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 #
-# sgit - run sed (by default with -i) on all files (or one or more globs) under
-# git control
+# sgit - run sed on all files under git control
 #
 # This script allows one to run sed under git control without having to come up
 # with a list of files first and then passing those to the command.

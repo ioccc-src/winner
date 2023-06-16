@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+#
+# check_awards - check the award lines in README.md files
+#
+# XXX - This is a temporary utility that will be replaced when
+#	the .winner.json files are built
 # 
 # This script was mostly auto-generated with the contents of the
 # tmp/year-auth-prize.csv file but modified in vim to make it simpler to
