@@ -139,8 +139,9 @@ alt: data ${ALT_TARGET}
 	@${TRUE}
 
 ${ALT_TARGET}: ${PROG}.alt.c
-	@echo "NOTE: This entry may not work on some systems."
+	@echo "** NOTE: this version might not work on some systems **"
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	@echo "** NOTE: this version might not work on some systems **"
 
 # data files
 #
