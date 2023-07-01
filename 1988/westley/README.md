@@ -1,11 +1,7 @@
 # Best layout
 
 Merlyn LeRoy (Brian Westley)  
-Rosemount, Inc.  
-1121 Hamline Ave. N. #17  
-St. Paul, MN    
-55108  
-U.S.A.  
+US
 <http://www.westley.org>  
 
 ## To build:
@@ -14,26 +10,15 @@ U.S.A.
 make all
 ```
 
-NOTE: this version is a fixed version for modern C compilers. The Alternate
-code below is the original.
+NOTE: this version is a fixed version for modern C compilers. See the Alternate
+code section below for how to use the original.
+
 
 ## Try:
 
 ```sh
 ./westley
 ```
-
-### Alternate code:
-
-The alternate code in [westley.alt.c](westley.alt.c) is the original version
-submitted to the contest. If you have an old enough compiler you can run it
-like:
-
-```sh
-make alt
-```
-
-Use `westley.alt` as you would `westley` above.
 
 ## Judges' remarks:
 
@@ -53,10 +38,13 @@ by changing the #define line to:
 #define _ F-->00||F-OO--;
 ```
 
+This is what the modified code in [westley.c](westley.c) does whereas the alt
+code is the original.
+
 You might enjoy looking at the output of:
 
 ```sh
-cc -E westley.c
+cc -E westley.alt.c
 ```
 
 ### Alternate code:

@@ -14,6 +14,9 @@ Germany
 make all
 ```
 
+An alternate version for this entry works with macOS. See the Alternate code
+section below for more details.
+
 
 ## To run:
 
@@ -23,11 +26,11 @@ make all
 
 ### Alternate code:
 
-As noted above the alternate version works with macOS but there are some important notes as
-well as a description of how it works (spoilers for the original version as
-well).
+As noted above the alternate version works with macOS but there are some
+important notes as well as a description of how it works (spoilers for the
+original version as well).
 
-An MacBook Pro Max with the M1 chip some header files report an
+With a MacBook Pro Max with the M1 chip some header files report an
 unsupported architecture and unsupported compiler (error, warning).
 However the defines are still found okay.
 
@@ -60,7 +63,14 @@ This allows for opening the right files. The problem with the macOS is
 `/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include` which is why
 the different command line and the different numbers.
 
-To use this version use `schweikh1.alt` instead.
+To use this version use:
+
+
+```sh
+make alt
+```
+
+Use `schweikh1.alt` as you would `schweikh1` above.
 
 
 ## Judges' remarks:
@@ -73,7 +83,7 @@ standard headers.
 
 This code is a wonder; it's a wonder that it compiles.  I wonder
 whether or not it should.  The innovative realization that you can
-use special characters, such as `'\n'`, in #file directives alone
+use special characters, such as `'\n'`, in `#file` directives alone
 merits some recognition.
 
 I've included most of the author's remarks; they're fairly thorough.

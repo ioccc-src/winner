@@ -1,11 +1,7 @@
 # Best Layout
 
-Brian Westley (aka Merlyn Leroy on usenet)  
-Starfire Consulting  
-1121 Hamline Ave. N. #17  
-St. Paul, MN  
-55108  
-US  
+Brian Westley (aka Merlyn Leroy on usenet)<br>
+US<br>
 <http://www.westley.org>  
 
 ## To build:

@@ -1335,6 +1335,12 @@ There was no IOCCC in 1999.
 
 # 2000
 
+## [2000/dlowe](2000/dlowe/dlowe.c) ([README.md](2000/dlowe/README.md))
+## STATUS: doesn't work with some platforms - please help us fix
+
+This entry crashes in macOS. This will be looked at later.
+
+
 [2000/primenum](2000/primenum/primenum.c) ([README.md](2000/primenum/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 
@@ -1658,7 +1664,7 @@ in the process some of the generated code fails.
 
 What might the translation of the comment end up being? Here's an example:
 
-```
+```c
 system("  echo Line 2;sed -n -e 2,77p out>    c.c;cc c.c -c  ");
 ```
 
@@ -1698,6 +1704,7 @@ It also will very likely segfault or do something strange if the source code
 does not exist.
 
 This entry requires that `sed` and `cc` are in the path.
+
 
 ## [2005/mynx](2005/mynx/mynx.c) ([README.md](2005/mynx/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
@@ -2084,6 +2091,15 @@ Abort trap: 6
 ```
 
 but this is expected and the file `ioccc.html` will be generated properly.
+
+## [2018/poikola](2018/poikola/prog.c) ([README.md](2018/poikola/README.md]))
+## STATUS: INABIAF - please **DO NOT** fix
+
+Some have reported that Terminal.app in macOS does not work and one might need a
+different terminal emulator like that from [XQuartz](https://www.xquartz.org)
+but [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) reported that this
+works fine in macOS Ventura with Terminal.app. YMMV of course.
+
 
 
 # 2019

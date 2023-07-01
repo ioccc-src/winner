@@ -64,12 +64,12 @@ other types of files?
 
 ### Alternate code:
 
-The alternate code allows this entry to work successfully even with clang. [Cody
-Boone Ferguson](/winners.html#Cody_Boone_Ferguson) notes that unfortunately it's
-something of a hack or maybe even a kludge. This however seems important because
-it works well and allows for not messing with the `s` string which is quite
-complicated.  Even changing the length could break functionality and indeed the
-length would have to be longer for this to work with clang.
+The alternate code allows this entry to work successfully even with clang.
+Unfortunately it's something of a hack or maybe even a kludge.  This however
+seems important because it works well and allows for not messing with the `s`
+string which is quite complicated.  Even changing the length could break
+functionality and indeed the length would have to be longer for this to work
+with clang.
 
 How does it work? The code (which you will see in [dds.c](dds.c)) does a `return
 system(q-6);` which equates to `return system("cc a.c");` but clang by default,
@@ -79,13 +79,12 @@ that the compilation failed with clang (because it didn't use `make` so no
 [LANDER.BAS](LANDER.BAS)) due to a return from `main()` without a return value
 and the use of functions not yet declared.
 
-Now as noted since the string `s` is complicated and to not
-inadvertently mess something up Cody changed that code to `system("make a");`
-and then added the right rule to the Makefile. Thus for the alternative version
-you now need both `make` and `cc`. If you use gcc you may change the system()
-call to what was given in this description to get a more authentic feel. If you
-do this you must then run `./a.out` not `./a`! Thus to use the alternative
-version:
+Now as noted since the string `s` is complicated and to not inadvertently mess
+something up it was changed so that the code uses `system("make a");` and then an
+appropriate rule was added to the Makefile. Thus for the alternative version you
+now need both `make` and `cc`. If you use gcc you can change the `system()` call
+to what was given in this description to get a more authentic feel. If you do
+this you must then run `./a.out` not `./a`! Thus to use the alternative version:
 
 ```sh
 make clobber alt
@@ -100,9 +99,6 @@ produced?  How does `a.c` relate to [LANDER.BAS](LANDER.BAS)?
 
 This obfuscated program translates BASIC programs into obfuscated
 C programs by way of an obfuscated algorithm.
-
-NOTE: Due to minor problems with some strict ANSI C compilers, we 
-have supplied a more portable ANSI version.
 
 
 ## Author's remarks:
