@@ -113,8 +113,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ver0.o ver1.o ver2.o ver3.o
+ALT_TARGET= ver0 ver1 ver2 ver3
 
 
 #################
@@ -129,13 +129,30 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: This entry uses non-standard args to main() that do not work with some modern compilers."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+ver0: ver0.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
+ver1: ver1.c
+	@echo "** NOTE: this version will not compile with clang **"
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	@echo "** NOTE: this version will not compile with clang **"
+
+ver2: ver2.c
+	@echo "** NOTE: this version will not compile with clang **"
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	@echo "** NOTE: this version will not compile with clang **"
+
+ver3: ver3.c
+	@echo "** NOTE: this version will not compile with clang **"
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	@echo "** NOTE: this version will not compile with clang **"
 
 # data files
 #
