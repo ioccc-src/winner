@@ -1,15 +1,9 @@
 # Best Utility
 
 Byron Rakitzis	         
-Princeton University   
-5707 Old Lodge Dr.     
-Houston, TX 77066      
 US		       
 
 Sean Dorward   
-Princeton University  
-10274 Burleigh Cottage Lane  
-Ellicott City, MD 21043  
 US  
 
 
@@ -83,61 +77,66 @@ applied.
 
 ## Author's remarks:
 
-### Rot13:
+This program is a rudimentary shell. It does i/o redirection, pipes
+and cd. It flags errors on failed `chdir()`, `open()`, `creat()`,
+`execvp()`, `fork()` and a few syntax errors.
 
-    Guvf cebtenz vf n ehqvzragnel furyy. Vg qbrf v/b erqverpgvba, cvcrf
-    naq pq. Vg syntf reebef ba snvyrq puqve'f, bcra'f, perng'f
-    rkrpic'f, sbex'f naq n srj flagnk reebef.
+This program is obfuscated in a few notable ways: apart from the layout (an
+unformatted (but crunched) version is included for people who want to put this
+through cb) it makes clever use of a write statement, so that the same statement
+can be used to print errors and the prompt. By calling the error function with
+the value `-8`, the pointer offset in the expression `"?\n$ "-x/4` goes from 0
+to 2.  Presto!  A prompt. For errors with numbers smaller than `-4` (i.e., UNIX
+system calls) a question mark is printed.
 
-    Guvf cebtenz vf boshfpngrq va n srj abgnoyr jnlf: ncneg sebz gur
-    ynlbhg (na hasbeznggrq (ohg pehapurq) irefvba vf vapyhqrq sbe
-    crbcyr jub jnag gb chg guvf guebhtu po) vg znxrf pyrire hfr bs n
-    jevgr fgngrzrag, fb gung gur fnzr fgngrzrag pna or hfrq gb cevag
-    reebef naq gur cebzcg. Ol pnyyvat gur reebe shapgvba jvgu gur inyhr
-    -8, gur cbvagre bssfrg va gur rkcerffvba "?\a$ "-k/4 tbrf sebz 0 gb
-    2.  Cerfgb!  N cebzcg. Sbe reebef jvgu ahzoref fznyyre guna -4
-    (v.r., HAVK flfgrz pnyyf) n dhrfgvba znex vf cevagrq.
+The error value of `chdir()` is doubled so that we don't exit from the parent
+shell on a `chdir()` error (since `e()` exits on `-1` errors only).  All other
+system call failures exit since they are from subshells.
 
-    Gur reebe inyhr bs puqve vf qbhoyrq fb gung jr qba'g rkvg sebz gur
-    cnerag furyy ba n puqve reebe (fvapr r() rkvgf ba -1 reebef bayl).
-    Nyy bgure flfgrz pnyy snvyherf rkvg fvapr gurl ner sebz fhofuryyf.
+Recursion is sneakily employed to avoid a second call to `fork()`,
+and the line is parsed in a fairly bizarre fashion:  backwards. The
+heart of the program, that is, the part which performs all `fork()`s,
+`exec()`s, `open()`s, etc. is ONE C STATEMENT.
 
-    Erphefvba vf farnxvyl rzcyblrq gb nibvq n frpbaq pnyy gb sbex(),
-    naq gur yvar vf cnefrq va n snveyl ovmneer snfuvba:  onpxjneqf. Gur
-    urneg bs gur cebtenz, gung vf, gur cneg juvpu cresbezf nyy sbexf,
-    rkrpf, bcraf, rgp. vf BAR P FGNGRZRAG.
+The meta-values array is initialized in a bizarre fashion, and the
+subsequent checks for the `'<'` and `'>'` are performed in a single
+statement using a mask, since you know that `'>'&2` is 0, whereas
+`'<'&2` is 2. Other such micro-obfuscations abound.
 
-    Gur zrgn-inyhrf neenl vf vavgvnyvmrq va n ovmneer snfuvba, naq gur
-    fhofrdhrag purpxf sbe gur '<' naq '>' ner cresbezrq va n fvatyr
-    fgngrzrag hfvat n znfx, fvapr lbh xabj gung '>'&2 vf 0, jurernf
-    '<'&2 vf 2. Bgure fhpu zvpeb-boshfpngvbaf nobhaq.
+Finally, it is notable that the code was hacked for minimality. If
+you look at the compressed version, you will be hard-pressed to
+eliminate more than a few characters (we can't see how to make it
+any smaller!).  550 characters is pretty lean for a shell that does
+this much.
 
-    Svanyyl, vg vf abgnoyr gung gur pbqr jnf unpxrq sbe zvavznyvgl. Vs
-    lbh ybbx ng gur pbzcerffrq irefvba, lbh jvyy or uneq-cerffrq gb
-    ryvzvangr zber guna n srj punenpgref (jr pna'g frr ubj gb znxr vg
-    nal fznyyre!).  550 punenpgref vf cerggl yrna sbe n furyy gung qbrf
-    guvf zhpu.
+### BUGS
 
-    OHTF
+The syntax of the shell has not been fully explored, but if you try
+to redirect in the same direction more than once, only one
+redirection is performed. This is a "feature" of the way the line
+is parsed; a pointer to the stack of arguments is assigned and an
+argument is stolen every time a `>` or `<` is encountered.  The
+shell flags an error if no arguments are on the stack. Thus, for
+example:
 
-    Gur flagnk bs gur furyy unf abg orra shyyl rkcyberq, ohg vs lbh gel
-    gb erqverpg va gur fnzr qverpgvba zber guna bapr, bayl bar
-    erqverpgvba vf cresbezrq. Guvf vf n "srngher" bs gur jnl gur yvar
-    vf cnefrq; n cbvagre gb gur fgnpx bs nethzragf vf nffvtarq naq na
-    nethzrag vf fgbyra rirel gvzr n ">" be "<" vf rapbhagrerq.  Gur
-    furyy syntf na reebe vs ab nethzragf ner ba gur fgnpx. Guhf, sbe
-    rknzcyr:
-		png > sbb > one
-    pngf gb sbb, fvapr vg jnf chfurq ynfg, ohg
-		png > > sbb one
-    pngf gb one, fvapr one jnf chfurq haqre sbb. (erzrzore jr'er
-    cnefvat evtug-yrsg)
+```sh
+cat > foo > bar
+```
 
-    Qrcraqvat ba lbhe synibe bs HA*K, pq jvgubhg na nethzrag jvyy
-    rvgure cebqhpr na reebe be whfg qb abguvat.
+cats to foo, since it was pushed last, but
 
-    Gurer vf whfg bar reebe zrffntr, gur dhrfgvba znex, ohg url, gung'f
-    nyy rq qbrf gbb.
+```sh
+cat > > foo bar
+```
+
+cats to bar, since bar was pushed under foo (remember we're
+parsing right-left).
+
+Depending on your flavor of Unix, cd without an argument will
+either produce an error or just do nothing.
+
+There is just one error message, the question mark, but hey, that's
+all ed does too.
 
 
 ## Copyright and CC BY-SA 4.0 License:
