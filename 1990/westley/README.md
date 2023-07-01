@@ -21,11 +21,12 @@ make all
 ./westley number
 ```
 
-NOTE: this program will enter an infinite loop if input is not a number > 0.
 
 ### INABIAF - it's not a bug it's a feature :-)
 
-NOTE: this entry will very likely crash or do something else without an arg.
+This entry will very likely crash or do something else without an arg.
+
+This program will enter an infinite loop if input is not a number > 0.
 
 
 ## Try:

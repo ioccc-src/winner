@@ -252,9 +252,9 @@ fixed he did it by adding a function called `pain()`. :-)
 clang** despite the fact it might appear to be gcc: no symlink and both gcc and
 clang exist but the gcc is clang which you'll see if you run `gcc --version`.
 
-A tip and some fix methods from Cody: in the older days args to main() not given
-a type were implicit ints but when they're required to be char ** this can cause
-a problem. In some cases Cody was able to use a char * inside main() (see
+A tip and some fix methods from Cody: in the older days args not given a type
+were implicit ints but when they're required to be char ** this can cause a
+problem. In some cases Cody was able to use a char * inside main() (see
 [1989/tromp/tromp.c](1989/tromp/tromp.c) and
 [1986/holloway/holloway.c](1986/holloway) for two examples though done slightly
 differently). In other cases he was able to dereference the pointers to be used
@@ -612,13 +612,9 @@ where this occurred was fixed but this one should not be fixed. Thank you.
 ## [1990/westley](1990/westley/westley.c) ([README.md](1990/westley/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 
-This entry will crash without an arg. At this time this is not considered worth
-fixing so it should not be fixed.
+This entry will very likely crash or do something strange without an arg.
 
-## STATUS: known bug - please help us fix
-
-However any input not a number > 0 will make the program enter an infinite loop.
-This will be fixed in time but it's noted here for now.
+This entry will also enter an infinite loop if input is not a number > 0.
 
 # 1991
 
