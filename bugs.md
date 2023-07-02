@@ -500,21 +500,11 @@ or any others.
 # 1987
 
 ## [1987/lievaart](1987/lievaart/lievaart.c) ([README.md](1987/lievaart/README.md))
-## STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
+## STATUS: INABIAF - please **DO NOT** fix
 
-This might not work right. When [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson) runs it he gets something like:
-
-```sh
-$ ./lievaart
-Level:5
-You:2
-You:3
-You:^C
-```
-
-However he also hasn't played Othello or if he has it was a very long time ago,
-so maybe he's doing something wrong.
+Two issues to be aware of: if you input invalid input (as in invalid characters
+like `.`) it might enter an infinite loop printing the same thing over and over.
+Also if you don't enter a valid number it will prompt you again.
 
 
 # 1988
@@ -2124,7 +2114,7 @@ This is NOT a bug and you'll have to (at least at this time?) delete the files
 manually. You shouldn't have to worry about these being added to git: it seems
 to ignore sockets (it did at least in macOS).
 
-NOTE: To get a list of files with this glob try:
+NOTE: to get a list of files with this glob try:
 
 ```sh
 ls -al |awk '{print $NF}' | grep -E '^\.[A-Z]+'

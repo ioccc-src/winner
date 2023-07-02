@@ -1,9 +1,7 @@
 # Grand Prize
 
 Roemer B. Lievaart  
-VU Informatica  
-Churchilllaan 173-IV    
-Amsterdam, The Netherlands   
+Netherlands   
 
 ## To build:
 
@@ -21,8 +19,11 @@ compiler.
 # enter a level and start playing as described below
 ```
 
-NOTE: if you enter invalid input the program will enter an infinite loop
-displaying a string like `"You:"` repeatedly.
+### INABIAF - it's not a bug it's a feature! :-)
+
+If you enter invalid input the program will enter an infinite loop displaying a
+string like `"You:"` repeatedly (for instance if you input `.`). If you enter an
+incorrect value it will prompt you again until you input a proper value.
 
 ## Try:
 
