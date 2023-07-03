@@ -129,6 +129,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo "NOTE: This entry uses non-standard args to main() that do not work with some modern compilers."
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
@@ -136,23 +137,29 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-ver0: ver0.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+# alternative executable
+#
+alt: data ${ALT_TARGET}
+	@${TRUE}
 
-ver1: ver1.c
-	@echo "** NOTE: this version will not compile with clang **"
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
-	@echo "** NOTE: this version will not compile with clang **"
+ver0: ${PROG}
+	./${PROG} < westley.c > ver0.c
+	-${CC} ${CFLAGS} ver0.c -o $@ ${LIBS}
 
-ver2: ver2.c
+ver1: ${PROG}
+	./${PROG} 1 < westley.c > ver1.c
 	@echo "** NOTE: this version will not compile with clang **"
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
-	@echo "** NOTE: this version will not compile with clang **"
+	-${CC} ${CFLAGS} ver1.c -o $@ ${LIBS}
 
-ver3: ver3.c
+ver2: ${PROG}
+	./${PROG} 1 2 < westley.c > ver2.c
 	@echo "** NOTE: this version will not compile with clang **"
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	-${CC} ${CFLAGS} ver2.c -o $@ ${LIBS}
+
+ver3: ${PROG}
+	./${PROG} 1 2 3 < westley.c > ver3.c
 	@echo "** NOTE: this version will not compile with clang **"
+	-${CC} ${CFLAGS} ver3.c -o $@ ${LIBS}
 
 # data files
 #
