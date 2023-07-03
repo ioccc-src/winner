@@ -11,7 +11,7 @@
     "alt_url" : null,
     "deprecated_twitter_handle" : null,
     "mastodon" : "@mame@ruby.social",
-    "mastodon_url" : "http:\/\/ruby.social\/@mame",
+    "mastodon_url" : "https://ruby.social/@mame",
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [

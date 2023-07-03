@@ -7,11 +7,11 @@
     "location_code" : "AU",
     "location_name" : "Australia",
     "email" : "kev@pulo.com.au",
-    "url" : "\/\/www.kev.pulo.com.au\/",
+    "url" : "//www.kev.pulo.com.au/",
     "alt_url" : null,
     "deprecated_twitter_handle" : null,
     "mastodon" : "@devkev@fosstodon.org",
-    "mastodon_url" : "http:\/\/fosstodon.org\/@devkev",
+    "mastodon_url" : "https://fosstodon.org/@devkev",
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
