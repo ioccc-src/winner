@@ -374,7 +374,7 @@ grep -v '^#' "$AUTHOR_HANDLE_TXT" | while read -r AUTHOR_HANDLE; do
 			"for author handle $AUTHOR_HANDLE in $AUTHOR_CSV" 1>&2
 		    exit 30
 		fi
-		MASTODON_URL="http://$MASTODON_SERVER/$AT_MASTODON_USER"
+		MASTODON_URL="https://$MASTODON_SERVER/$AT_MASTODON_USER"
 	        ;;
 	    *) echo "$0: ERROR: MASTODON: $MASTODON is not of the form @user@server"
 		    "for author handle $AUTHOR_HANDLE in $AUTHOR_CSV" 1>&2
