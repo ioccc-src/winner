@@ -11,52 +11,31 @@ Mastodon: <https://mstdn.social/@DSpinellis>
 make all
 ```
 
-and then type a C program into followed by EOF (usually `^D`, ctrl-d).
-
-An alternate version (also one-line) that will work with clang has been
-provided. See the Alternate code section below for how to use.
-
 ## Try:
 
 ```sh
-make clobber all
-main()
-{
-    printf("Hello world\n");
-}
-^D
-./spinellis
-
-make clobber all
-int main()
-{
-    int i;
-    for (i = 0; i < 5; ++i)
-	printf("%d\n", i);
-}
-^D
-./spinellis
+rm -f spinellis ; cc spinellis.c -o spinellis < input.txt && ./spinellis
 ```
 
-NOTE: you need to make clobber first for this entry to work right.
+and try:
+
+```
+rm -f spinellis ; cc spinellis.c -o spinellis < input2.txt && ./spinellis
+```
 
 ## Alternate code:
 
 For clang try the alt code like:
 
 ```sh
-make clobber alt
-#include <stdio.h>
-main()
-{
-    puts("Hello world\n");
-}
-^D
-./spinellis
-
+cc spinellis.alt.c -o spinellis.alt < input.txt && ./spinellis.alt
 ```
 
-NOTE: you need to make clobber first for this entry to work right.
+and try:
+
+```
+cc spinellis.alt.c -o spinellis.alt < input2.txt && ./spinellis.alt
+```
 
 ## Judges' remarks:
 

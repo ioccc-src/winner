@@ -108,7 +108,7 @@ ENTRY= spinellis
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA= spinellis.data
+DATA= spinellis.data input.txt input2.txt
 TARGET= ${PROG}
 #
 ALT_OBJ= ${PROG}.alt.o
@@ -126,19 +126,22 @@ all: data ${TARGET}
 	love haste waste maker easter_egg sandwich \
 	supernova deep_magic magic charon pluto
 
-${PROG}: ${PROG}.c
+${PROG}: ${PROG}.c input.txt
 	@echo "NOTE: this entry will not compile with some compilers like clang."
 	@echo "NOTE: use make alt for clang."
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	@echo Now run the following command:
+	${RM} -f $@
+	@echo ${CC} ${CFLAGS} $< -o $@ ${LIBS} '<' input.txt '&&' ./${PROG}
 
 # alternative executable
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-${PROG}.alt: ${PROG}.alt.c
+${PROG}.alt: ${PROG}.alt.c input.txt
 	${CC} ${CFLAGS} -Wno-implicit-function-declaration $< -o $@ ${LIBS}
-	@while read -r r; do echo $$r ; done | ./${PROG}.alt
+	@echo Now run the following command:
+	@echo ./${PROG}.alt '<' input.txt '&&' ./${PROG}.alt
 
 # data files
 #
