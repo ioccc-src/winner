@@ -1,10 +1,6 @@
 # Most algorithms in one program
 
 Merlyn LeRoy (Brian Westley)  
-Starfire Consulting  
-1026 Blair Ave.  
-St. Paul, MN    
-55104    
 US  
 <http://www.westley.org>  
 
@@ -15,16 +11,14 @@ make all
 ```
 
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) was able to get
-this to partially work with clang; clang requires that the second, third and
-fourth args to main() be `char **`. Only `westley.c` and `ver0.c` (see below) will
+NOTE: this entry only partly works with clang; clang requires that the second, third and
+fourth args to `main()` be `char **`. Only `westley.c` and `ver0.c` (see below) will
 compile with clang. It's possible to get `ver1.c` to compile too but this causes
 problems with generating the output of the remaining files so we have opted, at
 least for now, to not do that, as it does not have to output just source code.
-He notes that the original source code sometimes segfaults with `ver2` which
-also happens with the fix but it'll only compile with a compiler that
-does not require the second, third and fourth args of main() to be a `char **`.
-Thank you Cody for your help!
+The original source code sometimes segfaults with `ver2` which also happens with
+the fix but it'll only compile with a compiler that does not require the second,
+third and fourth args of `main()` to be a `char **`.
 
 
 ## Try:
@@ -46,12 +40,22 @@ make ver2
 make ver3
 ```
 
+Then run:
+
+```sh
+./westley
+# input some lines of text, sending EOF (usually ctrl-d) to end
+echo IOCCC | ./ver0
+echo Version 1 | ./ver1
+echo Version 2 | ./ver2
+echo Version 3 | ./ver3
+```
 
 ## Judges' remarks:
 
 
 There is a secret way to get ONE of the versions to print out
-"Hello, world!\n".  Can you find how to do it?
+"`Hello, world!\n`".  Can you find how to do it?
 
 
 ## Author's remarks:
@@ -91,7 +95,7 @@ check for ROT13 version] is all it complains about).
 
 `ver0` and `ver1` use a range check and a calculation to do ROT13,
 while `ver2` and `ver3` use table lookup.  All versions contain
-`main()` and it's ROT13 fn, `znva()`.  `ver0`/`ver1` [`ver2`/`ver3`] are
+`main()` and its ROT13 function, `znva()`.  `ver0`/`ver1` [`ver2`/`ver3`] are
 (of course) syntactically identical, since the syntax is in the
 non-alphabetic characters.  However, since one program starts
 at `main()` while it's ROT13 counterpart starts at `znva()`, `znva()`
@@ -132,17 +136,16 @@ expr1 && (expr2,expr3);
 `expr2` was OFTEN evaluated even if `expr1` was false.  I removed
 such statements to make it more portable.
 
-The variable names are worth noting:
+### Variable names worth noting
 
---
 
-'irk' and  'vex' are ROT13 pairs and are synonyms.
+`irk` and  `vex` are ROT13 pairs and are synonyms.
 
-'Near' and 'Arne' are ROT13 pairs and are anagrams.
+`Near` and `Arne` are ROT13 pairs and are anagrams.
 
-'NOON' and 'ABBA' are ROT13 pairs and are palindromes.
+`NOON` and `ABBA` are ROT13 pairs and are palindromes.
 
-'tang' and 'gnat' are both ROT13 and palindrome pairs!
+`tang` and `gnat` are both ROT13 and palindrome pairs!
 
 --
 

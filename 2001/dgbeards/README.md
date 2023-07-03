@@ -1,9 +1,6 @@
 # Best AI
 
 Doug Beardsley  
-Southern Adventist University  
-359 Davis Rd. NW  
-Cleveland, TN 37312  
 US  
 
 
@@ -24,7 +21,8 @@ make
 ### Alternate code:
 
 The author provided a way to speed it up a bit and also how to make it so it
-doesn't crash on losing. 
+doesn't crash on losing.  The idea that it crashes on losing was too good to
+lose but this alternate version has the former change.
 
 To compile:
 

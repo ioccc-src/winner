@@ -13,9 +13,8 @@ make all
 
 and then type a C program into followed by EOF (usually `^D`, ctrl-d).
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) made a version (also
-one line) for clang. See the Alternate code section below for how to use.
-Thank you Cody for your assistance!
+An alternate version (also one-line) that will work with clang has been
+provided. See the Alternate code section below for how to use.
 
 ## Try:
 
@@ -61,12 +60,9 @@ NOTE: you need to make clobber first for this entry to work right.
 
 ## Judges' remarks:
 
-We enjoyed this entry this year, however in the future programs must be able to
+We enjoyed this entry this year; however in the future programs must be able to
 be compiled from within a Makefile without the need of human intervention.
 
-Meanwhile Cody was twisted enough to point out (though to be fair he felt sick
-doing this) that with a slight modification this entry can be C++ instead. We don't
-thank him for this ghastly point! :-)
 
 ## Author's remarks:
 

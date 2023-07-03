@@ -252,9 +252,9 @@ fixed he did it by adding a function called `pain()`. :-)
 clang** despite the fact it might appear to be gcc: no symlink and both gcc and
 clang exist but the gcc is clang which you'll see if you run `gcc --version`.
 
-A tip and some fix methods from Cody: in the older days args to main() not given
-a type were implicit ints but when they're required to be char ** this can cause
-a problem. In some cases Cody was able to use a char * inside main() (see
+A tip and some fix methods from Cody: in the older days args not given a type
+were implicit ints but when they're required to be char ** this can cause a
+problem. In some cases Cody was able to use a char * inside main() (see
 [1989/tromp/tromp.c](1989/tromp/tromp.c) and
 [1986/holloway/holloway.c](1986/holloway) for two examples though done slightly
 differently). In other cases he was able to dereference the pointers to be used
@@ -500,21 +500,11 @@ or any others.
 # 1987
 
 ## [1987/lievaart](1987/lievaart/lievaart.c) ([README.md](1987/lievaart/README.md))
-## STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
+## STATUS: INABIAF - please **DO NOT** fix
 
-This might not work right. When [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson) runs it he gets something like:
-
-```sh
-$ ./lievaart
-Level:5
-You:2
-You:3
-You:^C
-```
-
-However he also hasn't played Othello or if he has it was a very long time ago,
-so maybe he's doing something wrong.
+Two issues to be aware of: if you input invalid input (as in invalid characters
+like `.`) it might enter an infinite loop printing the same thing over and over.
+Also if you don't enter a valid number it will prompt you again.
 
 
 # 1988
@@ -612,13 +602,9 @@ where this occurred was fixed but this one should not be fixed. Thank you.
 ## [1990/westley](1990/westley/westley.c) ([README.md](1990/westley/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 
-This entry will crash without an arg. At this time this is not considered worth
-fixing so it should not be fixed.
+This entry will very likely crash or do something strange without an arg.
 
-## STATUS: known bug - please help us fix
-
-However any input not a number > 0 will make the program enter an infinite loop.
-This will be fixed in time but it's noted here for now.
+This entry will also enter an infinite loop if input is not a number > 0.
 
 # 1991
 
@@ -1339,6 +1325,12 @@ There was no IOCCC in 1999.
 
 # 2000
 
+## [2000/dlowe](2000/dlowe/dlowe.c) ([README.md](2000/dlowe/README.md))
+## STATUS: doesn't work with some platforms - please help us fix
+
+This entry crashes in macOS. This will be looked at later.
+
+
 [2000/primenum](2000/primenum/primenum.c) ([README.md](2000/primenum/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 
@@ -1662,7 +1654,7 @@ in the process some of the generated code fails.
 
 What might the translation of the comment end up being? Here's an example:
 
-```
+```c
 system("  echo Line 2;sed -n -e 2,77p out>    c.c;cc c.c -c  ");
 ```
 
@@ -1702,6 +1694,7 @@ It also will very likely segfault or do something strange if the source code
 does not exist.
 
 This entry requires that `sed` and `cc` are in the path.
+
 
 ## [2005/mynx](2005/mynx/mynx.c) ([README.md](2005/mynx/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
@@ -2089,6 +2082,15 @@ Abort trap: 6
 
 but this is expected and the file `ioccc.html` will be generated properly.
 
+## [2018/poikola](2018/poikola/prog.c) ([README.md](2018/poikola/README.md]))
+## STATUS: INABIAF - please **DO NOT** fix
+
+Some have reported that Terminal.app in macOS does not work and one might need a
+different terminal emulator like that from [XQuartz](https://www.xquartz.org)
+but [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) reported that this
+works fine in macOS Ventura with Terminal.app. YMMV of course.
+
+
 
 # 2019
 
@@ -2112,7 +2114,7 @@ This is NOT a bug and you'll have to (at least at this time?) delete the files
 manually. You shouldn't have to worry about these being added to git: it seems
 to ignore sockets (it did at least in macOS).
 
-NOTE: To get a list of files with this glob try:
+NOTE: to get a list of files with this glob try:
 
 ```sh
 ls -al |awk '{print $NF}' | grep -E '^\.[A-Z]+'
