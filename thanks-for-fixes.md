@@ -777,6 +777,12 @@ To see the craziness of the SDL fix (because of a terrible design choice of the
 SDL1 developers) see the log for commit
 dd0b26b5d6325e8b6fdef1232156c8bb8c66613f. Be prepared for a surprise!
 
+Cody also added an alternate version to help see what is going on in more modern
+systems and in case you're sensitive to rapidly moving swirling. See the
+README.md for details on that. Note that this alternate version only will impact
+the curses and the SDL versions as Cody does not have a DOS system to test the
+other version in.
+
 
 ## [2001/anonymous](2001/anonymous/anonymous.c) ([README.md](2001/anonymous/README.md]))
 
