@@ -926,11 +926,10 @@ your keyboard instead of the more awkward '`,`' and '`.`'.
 
 ## [2001/westley](2001/westley/westley.c) ([README.md](2001/westley/README.md]))
 
-Cody added the script
-[westley.sh](westley.sh) to automate a heap of commands that we, the IOCCC
-judges, suggested, as well as some additional ones that he thought would be fun.
-He also provided the sort and punch card versions that he added, described in
-the README.md, based on the author's remarks.
+Cody added the script [westley.sh](westley.sh) to automate a heap of commands
+that we, the IOCCC judges, suggested, as well as some additional ones that he
+thought would be fun.  He also provided the sort and punch card versions that he
+added, described in the README.md, based on the author's remarks.
 
 ## [2004/arachnid](2004/arachnid/arachnid.c) ([README.md](2004/arachnid/README.md]))
 
@@ -941,10 +940,12 @@ Dvorak typists are invited to get lost (or use the original version)! :-)
 
 ## [2004/burley](2004/burley/burley.c) ([README.md](2004/burley/README.md]))
 
-Cody fixed this to compile with clang which requires that the first arg of
-main() be an int and the remaining args to be a `char **`. Compile but not work.
-It did not work before the fix when compiled with gcc and it does not work with
-clang either. See [/bugs.md](/bugs.md) for information.
+Cody fixed this to compile with clang and also fixed it to work. A problem was
+that `longjmp()` was being used with one arg which compiled because `setjmp.h`
+was not included. Another part of the `setjmp()`/`longjmp()` situation was that
+instead of `jmp_buf` the array `p` was of `int`. Finally the optimiser cannot be
+enabled. As for clang it is because of the defect where the first arg must be an
+int and the rest must be a `char **`.
 
 
 ## [2004/gavin](2004/gavin/gavin.c) ([README.md](2004/gavin/README.md]))

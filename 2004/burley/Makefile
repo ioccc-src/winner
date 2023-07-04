@@ -66,7 +66,7 @@ CINCLUDE= -include stdio.h -include setjmp.h -include string.h -include time.h -
 
 # Optimization
 #
-OPT= -O3
+OPT=
 
 # Default flags for ANSI C compilation
 #
