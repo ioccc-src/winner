@@ -790,7 +790,7 @@ Cody fixed both the supplementary program and the program itself (both of which
 segfaulted and once that was fixed only the binary was modified; it was not run
 but according to the author's remarks it should be executed). He managed to do
 this with linux but it will not work with macOS (see [bugs.md](/bugs.md) for why
-this is); _this is not a bug, it's a feature_ inherent in what it does!
+this is); _this is **not** a bug, it's a feature_ inherent in what it does!
 
 The following had to be done in order to get this to work:
 
@@ -845,26 +845,27 @@ sings [Ten in the Bed](https://allnurseryrhymes.com/ten-in-the-bed/).
 
 ## [2001/bellard](2001/bellard/bellard.c) ([README.md](2001/bellard/README.md]))
 
-Cody partially fixed this but he notes that this will not work without
+Cody at least partially fixed this but he notes that this will not work without
 (according to the author) i386 linux or else some skill in resolving the
 portability issues. As it is it segfaults in 64-bit linux (and as expected
 macOS). He fixed an earlier segfault so that at least the file can be opened
-(but perhaps that will be wrong in i386 linux?) and he also changed some of the
-macro used to what they evaluate to but mostly he kept it the same.
+(but perhaps that will be wrong in i386 linux / older C?) and he also changed
+some of the macro used to what they evaluate to but mostly he kept it the same.
 
 Cody also fixed [bellard.otccex.c](bellard.otccex.c) so it does not segfault and
 seemingly works okay (it did not work at all). The main problem was that some
 ints were being used as pointers. Also the Fibonacci sequence (`fib()`) will
-overflow at `n > 48` so this is checked prior to running the function. Either
-way unfortunately this entry seems to not work in 64-bit linux or macOS. See
-below portability notes.
+overflow at `n > 48` so this is checked prior to running the function just like
+the author did for the factorial (overflowing at `>12`). Either way
+unfortunately this entry seems to not work in 64-bit linux or macOS. See below
+portability notes as well as another fix in this entry by Yusuke.
 
 ### Portability notes:
 
-With a tip from Yusuke we rediscovered the
-author's [web page for this program](https://bellard.org/otcc/) where it is
-stated that this will only work in i386 linux.  The author also stated in the
-remarks in this document that they used [gcc
+With a tip from Yusuke we rediscovered the author's [web page for this
+program](https://bellard.org/otcc/) where it is stated that this will only work
+in i386 linux.  The author also stated in the remarks in this document that they
+used [gcc
 2.95.2](https://ftp.gnu.org/gnu/gcc/gcc-2.95.2/gcc-everything-2.95.2.tar.gz) but
 we don't know if that's relevant or not.
 
@@ -877,17 +878,18 @@ by Yusuke.
 
 ## [2001/cheong](2001/cheong/cheong.c) ([README.md](2001/cheong/README.md]))
 
-Cody fixed this to work with
-clang by adding another function that is allowed to have a third arg as an int,
-not a `char **`. He chose pain() because it's a four letter word that would
-match the format and because it's pain that clang forces this. :-) This fix
-makes a point of the author's notes on portability no longer valid, btw.
+Cody fixed this to work with clang by adding another function that is allowed to
+have a third arg as an int, not a `char **`. He chose pain() because it's a four
+letter word that would match the format and because it's pain that clang forces
+this. :-) This fix makes a point of the author's notes on portability no longer
+valid, btw.
 
 
 ## [2001/coupard](2001/coupard/coupard.c) ([README.md](2001/coupard/README.md]))
 
-Thanks go to Yusuke for providing a proper command line (see
-[/2013/endoh3/README.md](2013/endoh3/README.md).
+Thanks go to Yusuke for providing a proper command line for macOS (to do with
+sound; see his [/2013/endoh3/README.md](2013/endoh3/README.md) entry where he
+also refers to sound devices in macOS).
 
 
 ## [2001/ctk](2001/ctk/ctk.c) ([README.md](2001/ctk/README.md]))
