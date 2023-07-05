@@ -656,3 +656,39 @@ for more details.
 This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
 <TD>&nbsp;<!--<a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
 </TR></TABLE>
+
+## Q: Why do you sometimes use the first person plural?
+
+As a precedent for [first person
+plural](https://en.wikipedia.org/wiki/Nosism), we may sight [Two-,
+Three-, and Four-Atom Exchange Effects in bcc in
+3He](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.35.1442) and
+the co-authorship of [F. D. C.
+Willard](https://en.wikipedia.org/wiki/F._D._C._Willard) as well
+as the [APS New Open Access
+Initiative](https://journals.aps.org/2014/04/01/aps-announces-a-new-open-access-initiative).
+
+The number of [IOCCC judges](https://www.ioccc.org/judges.html) has
+always been "> 1" such that IOCCC judges often prefer to themselves
+in the plural, sometimes [in the common
+plural](https://en.wikipedia.org/wiki/Plural), sometimes in the
+[first person plural](https://en.wikipedia.org/wiki/Nosism), there
+may be some who reject such a practice.  Therefore please consider
+that when you believe that just one of the [IOCCC
+judges](https://www.ioccc.org/judges.html) is in action, you may
+consider that [F. D. C.
+Willard](https://en.wikipedia.org/wiki/F._D._C._Willard) has been
+consulted, agreed, and has authorized the statement thus allowing
+the [in the common plural](https://en.wikipedia.org/wiki/Plural)
+to be used without offense.
+
+And while some might claim that [F. D. C.
+Willard](https://en.wikipedia.org/wiki/F._D._C._Willard) died in
+1982, we suggest that the [Schrödinger's
+cat](https://en.wikipedia.org/wiki/Schrödinger%27s_cat) superposition
+may still be in effect and the 1982 [report of death was an
+exaggeration](https://books.google.com/books?id=ms3tce7BgJsC&lpg=PA134&vq=%22the%20report%20of%20my%20death%20was%20an%20exaggeration%22&pg=PA134#v=onepage&q=%22the%20report%20of%20my%20death%20was%20an%20exaggeration%22&f=false).
+
+p.s. Here is an image of F. D. C. Willard:
+
+[F D C Willard](png/F.D.C.Willard.png)
