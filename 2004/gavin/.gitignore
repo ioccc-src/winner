@@ -1,9 +1,10 @@
-gavin
-sh
-vi
-gavin.o
 fs/
-img/README.md
+fs.tar
+gavin
+gavin.o
 img/gavin.c
 img/prim
+img/README.md
 kernel
+sh
+vi
