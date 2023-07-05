@@ -2073,11 +2073,21 @@ things that are misinterpreted as bugs. See his
 # 2021
 # 2022
 
-These years did not have an IOCCC entry.
+There was no IOCCC in these years.
+
+# 2023
+
+Probably there will be no IOCCC in 2023 but we do hope to at least run the
+IOCCCMOCK contest this year. This depends entirely on the work in this repo
+and the [mkiocccentry](https://github.com/ioccc-src/mkiocccentry) being
+completed.
 
 # Final words
 
 We hope this document was of use to you in determining which entries are known
 to have a problem, what entries are known to have features that are not bugs and
 so on. We also thank you for going through this document and, if you propose any
-fixes via a pull request or otherwise, we thank you as well for the help!
+[fixes](/thanks-for-fixes.md) via a [GitHub pull
+request](https://github.com/ioccc-src/temp-test-ioccc/pulls) or otherwise, we
+thank you as well for the help! We will happily add you to the
+[thanks-for-fixes.md](/thanks-for-fixes.md) file as well.

@@ -64,8 +64,18 @@ Mill](/winners.html#Christopher_Mills)'s entry
 PDP-11/40 emulator. 
 
 Others are not so easy though we're working on this and over time have added
-alternative code. In some cases we replaced the original code with code that
-works for modern systems.
+alternative code. Most entries do now work and the others we are working on. In
+some cases we replaced the original code with code that works for modern systems
+but one can view the archive for the original code (sometimes the original code
+is in the directory usually as a `winner.alt.c` or `prog.alt.c` but note that
+sometimes authors have that already as well).
+
+## Q: After running a program my terminal is all messed up! How do I restore my terminal?
+
+The simplest way to do this is to type `reset`. If echo was disabled you can get
+usually away with `stty echo`. Sometimes you can also get away with `stty sane`.
+`reset` does the most but note that it will clear the screen (obviously `clear`
+will too but it won't reset the terminal).
 
 
 ## Q: How do I get X11 entries to work with macOS Mountain Lion and later?
@@ -164,14 +174,48 @@ brew install sdl2 sdl12-compat
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
+## Q: How do I compile and run entries that use sound in macOS?
+
+This might depend on the entry but in some cases like
+[2001/coupard](2001/coupard/coupard.c) one needs to do more work in order to get
+it to work. In this case you should be able to use the Swiss Army Knife of sound
+processing programs, [SoX](https://sox.sourceforge.net). To install this easily
+you can use either MacPorts or Homebrew. See below for instructions for each.
+
+Usually the README.md file will explain how to use it in linux so we do not
+include this here, at least for now.
+
+### MacPorts
+
+If you haven't already, install
+[MacPorts](https://www.macports.org/install.php). Then run:
+
+
+```sh
+sudo port install sox
+```
+
+### Homebrew
+
+If you have not already done so, install [Homebrew](https://brew.sh).
+
+Then to install SoX, execute the following command:
+
+```sh
+brew install sox
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
 ## Q: How did entry XYZZY win? It breaks rule 2!
 
 As entries have been fixed it is entirely possible that some of the entries no
 longer fit within the year's size restrictions. Invariably the length of columns
-and number of rows might also have changed.
+and/or number of rows have also changed.
 
 For the original version see the [/archive](/archive) directory where you can
-find all the original winning entries.
+find all the original winning entries. In some cases the `winner.alt.c` is the
+original source code.
+
 
 ## Q: I found a bug in a previous winner, what should I do?
 
@@ -188,12 +232,18 @@ fix. If it is accepted we'll be happy to credit you in the entry's _README.md_
 file. If you're a previous winner we will happily link to your entries; if
 you're not we can link to your website if you wish.
 
-## Q: After running a program my terminal is all messed up! How do I restore my terminal?
+More generally please see the file [how-to-bugfix.md](/how-to-bugfix.md). Note
+that this file is not a tutorial on how to fix X, Y and Z problems but rather
+what to do to get the fix in.
 
-The simplest way to do this is to type `reset`. If echo was disabled you can get
-away with `stty echo`. Sometimes you can also get away with `stty sane`. `reset`
-does the most but note that it will clear the screen (`clear` will too but it
-won't reset the terminal).
+## Q: Do you have a list of entries with known problems and/or features that might appear to be bugs but are not?
+
+Yes! Please see [bugs.md](/bugs.md) for a list of known bugs and/or issues of a
+variety of kinds.
+
+Note that just because an entry is not in the bugs file does not mean there is
+not an issue and note that some issues are simply missing files, dead URL(s) or
+something like that.
 
 ## Q: Are there types of entries that are submitted so frequently that the judges get tired of them?
 

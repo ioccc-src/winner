@@ -61,7 +61,7 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE= -I ${HOMEBREW_PREFIX}/include -I /usr/local/include
+CINCLUDE= -I ${HOMEBREW_PREFIX}/include -I /usr/local/include -I /opt/local/include
 
 # Optimization
 #
@@ -73,7 +73,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS= -L ${HOMEBREW_PREFIX}/lib -L /usr/local/lib
+LIBS= -L ${HOMEBREW_PREFIX}/lib -L /usr/local/lib -L /opt/local/lib
 LIBJPEG= -ljpeg
 LIBPNG= -lpng
 
