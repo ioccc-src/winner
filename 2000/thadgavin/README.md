@@ -22,7 +22,7 @@ make
 NOTE: the author suggested `-O6` but at least some gcc versions support no more
 than level 3 which is what the Makefile has.
 
-To use the SDL version works independentlt from the cueses version:
+To use the SDL version that works independently from the curses version:
 
 ```sh
 make thadgavin_sdl
@@ -37,8 +37,8 @@ Use `thadgavin_sdl` as you would `thadgavin` below.
 ./thadgavin
 ```
 
-WARNING: if you are sensitive to rapid movement you should probably avoid
-this entry, both the SDL version and the curses version.
+WARNING: if you are sensitive to rapid movement or if you want to see better
+what is going on then please see the Alternate code section.
 
 NOTE: in curses mode you might want to type `reset` after execution of this
 program as the program does not call `endwin()`. Using `reset` will clear the
@@ -50,6 +50,38 @@ screen.
 ```sh
 echo "Do or do not. There is no try."
 ```
+
+## Alternate code:
+
+An alternate version exists which allows you to slow down the printing of the
+characters, useful for those with modern systems or those who are sensitive to
+rapid moving swirling. To use:
+
+
+```sh
+make alt
+```
+
+To make the SDL version:
+
+```sh
+make thadgavin.alt_sdl
+```
+
+If you wish to reconfigure the delay you can do so like:
+
+```sh
+make -DZ=50 clobber alt
+make -DZS=5000 clobber thadgavin.alt_sdl
+```
+
+Use `thadgavin.alt` and `thadgavin.alt_sdl` as you would `thadgavin` and
+`thadgavin_sdl` above.
+
+The default for the curses alt version is 30 and for SDL it is 150000. The
+different macros is because the curses version is already slower but it's better
+to not tie the two values together. The reason for such drastically different
+numbers is because curses is already slower than SDL.
 
 
 ## Judges' remarks:

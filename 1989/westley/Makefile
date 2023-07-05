@@ -137,11 +137,6 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-# alternative executable
-#
-alt: data ${ALT_TARGET}
-	@${TRUE}
-
 ver0: ${PROG}
 	./${PROG} < westley.c > ver0.c
 	-${CC} ${CFLAGS} ver0.c -o $@ ${LIBS}

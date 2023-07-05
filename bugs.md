@@ -252,9 +252,9 @@ fixed he did it by adding a function called `pain()`. :-)
 clang** despite the fact it might appear to be gcc: no symlink and both gcc and
 clang exist but the gcc is clang which you'll see if you run `gcc --version`.
 
-A tip and some fix methods from Cody: in the older days args not given a type
-were implicit ints but when they're required to be char ** this can cause a
-problem. In some cases Cody was able to use a char * inside main() (see
+A tip and some fix methods from Cody: in the older days args to main() not given
+a type were implicit ints but when they're required to be char ** this can cause
+a problem. In some cases Cody was able to use a char * inside main() (see
 [1989/tromp/tromp.c](1989/tromp/tromp.c) and
 [1986/holloway/holloway.c](1986/holloway) for two examples though done slightly
 differently). In other cases he was able to dereference the pointers to be used
@@ -606,6 +606,7 @@ This entry will very likely crash or do something strange without an arg.
 
 This entry will also enter an infinite loop if input is not a number > 0.
 
+
 # 1991
 
 ## [1991/dds](1991/dds/dds.c) ([README.md)(1991/dds/README.md))
@@ -643,8 +644,8 @@ possibility. Can you find out how?
 ## [1992/buzzard.1](1992/buzzard.1/buzzard.1.c) ([README.md](1992/buzzard.1/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 
-This entry will crash without enough args (2). At this time this is not
-considered a bug to fix so it should not be fixed.
+This entry will crash without enough args (2).
+
 
 ## [1992/kivinen](1992/kivinen/kivinen.c) ([README.md](1992/kivinen/README.md))
 ## STATUS: known bug - please help us fix
@@ -669,7 +670,7 @@ This program and the alternate version will very likely crash or
 [nuke](https://en.wikipedia.org/wiki/Nuclear_weapon) the [entire
 world](https://en.wikipedia.org/wiki/Earth) or just the
 [USA](https://en.wikipedia.org/wiki/United_States), respectively, without enough
-args. This should not be fixed.
+args. This should not be fixed! :-)
 
 # 1993
 
@@ -700,11 +701,12 @@ else. This should NOT be fixed.
 ## STATUS: known bug - please help us fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile
-with modern systems (see the README.md file for what had to change) but the
-entry also used `gets()` which in some systems would print out a warning along
-with the output of the program. Naturally it could also overflow long lines.
-Cody changed it to `fgets()` to prevent the display problem but this introduces
-another problem namely that newlines can be printed if the line length < 231.
+with modern systems (see the [thanks-for-fixes.md](thanks-for-fixes.md) file for
+what had to change) but the entry also used `gets()` which in some systems would
+print out a warning along with the output of the program. Naturally it could
+also overflow long lines.  Cody changed it to `fgets()` to prevent the display
+problem but this introduces another problem namely that newlines can be printed
+if the line length < 231.
 
 This seems like a worthy compromise but it would be ideal for it to never print
 a newline unless that's the line itself (a blank line).
@@ -1182,7 +1184,6 @@ animation but this does not seem to work with modern gcc versions. It appears
 that version 2.95 works but maybe others do as well. Do you have a fix? We would
 appreciate your help!
 
-Do you have a fix for 64-bit compilation? Please provide it!
 
 ## [2001/kev](2001/kev/kev.c) ([README.md](2001/kev/README.md)
 ## STATUS: INABIAF - please **DO NOT** fix
@@ -1231,55 +1232,7 @@ There was no IOCCC in 2002.
 
 There was no IOCCC in 2003.
 
-# 2004
 
-
-## [2004/burley](2004/burley/burley.c) ([README.md](2004/burley/README.md))
-## STATUS: known bug - please help us fix
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile
-with clang. He notes however that both prior to the fix (with gcc) and after the
-fix (gcc, clang) it does not work: it allows input of the bet but after it
-prints the hand it does not do anything with your next move. Cody provided the
-following notes and tips (including possible reasons it doesn't work):
-
-0. Originally the `jmp_buf` was just an `int p[4][1000]`.
-1. The `setjmp.h` header file was not included so the calls to `longjmp()` had
-not only the wrong number of arguments but also implicitly returned int when it
-actually returns void. This means that the comma operator had to be used to get
-the binary expressions to work. It might be this is part of the problem. It's
-possible that actually changing this introduced it to not work as some old
-entries actually use invalid prototypes and work but changing them to use the
-proper prototype breaks them.
-2. Another possible problem is the abuse of `setjmp()` and `longjmp()` which is
-known to be a problem, at least as he interprets it in his tired head (and less
-experience with `longjmp`). In particular:
-    > The longjmp() routines may not be called after the routine which called the
-    > setjmp() routines returns.
-    See also the NOTES section of the linux man pages for `setjmp(3)` and
-    `longjmp(3)`.
-3. The main() originally returned a call to main() which appeared to be an
-infinite recursion at least as it was; now it returns a call to poke() (since
-it's a poker game) which has the same number and type of args (1, `char *`) that
-main() originally had. This appears to not be an infinite recursion but I might
-be reading it wrong. Changing it to not return itself and the same problem
-occurs so perhaps this is not the problem. It's possible that the initial call
-to the `poke()` function is incorrect.
-4. It might be that the requirement of the comma operator in modern compilers is
-a problem. Perhaps some instances of `,1` should be `,0`? That seems plausible
-as they are often used with the `&&` operator.
-5. As well main() had only one arg, a `char *`, and there was a (seemingly)
-needless cast to `char *` from gets(). This cast remains in the code however.
-6. The code no longer uses `gets()` but `fgets()`; this is not the problem
-however.
-7. Sometimes the lack of a _proper_ prototype lets code work if the function is
-used incorrectly so one should be careful with adding the proper prototypes.
-With this entry it didn't _appear_ to be relevant but maybe it is after another
-change?
-
-# 1997
-
-There was no IOCCC in 1997.
 
 # 1998
 
@@ -1324,12 +1277,6 @@ $ ./schnitzi 9|wc -l
 There was no IOCCC in 1999.
 
 # 2000
-
-## [2000/dlowe](2000/dlowe/dlowe.c) ([README.md](2000/dlowe/README.md))
-## STATUS: doesn't work with some platforms - please help us fix
-
-This entry crashes in macOS. This will be looked at later.
-
 
 [2000/primenum](2000/primenum/primenum.c) ([README.md](2000/primenum/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
@@ -1392,49 +1339,6 @@ There was no IOCCC in 2003.
 
 # 2004
 
-
-## [2004/burley](2004/burley/burley.c) ([README.md](2004/burley/README.md))
-## STATUS: known bug - please help us fix
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile
-with clang. He notes however that both prior to the fix (with gcc) and after the
-fix (gcc, clang) it does not work: it allows input of the bet but after it
-prints the hand it does not do anything with your next move. Cody provided the
-following notes and tips (including possible reasons it doesn't work):
-
-0. Originally the `jmp_buf` was just an `int p[4][1000]`.
-1. The `setjmp.h` header file was not included so the calls to `longjmp()` had
-not only the wrong number of arguments but also implicitly returned int when it
-actually returns void. This means that the comma operator had to be used to get
-the binary expressions to work. It might be this is part of the problem. It's
-possible that actually changing this introduced it to not work as some old
-entries actually use invalid prototypes and work but changing them to use the
-proper prototype breaks them.
-2. Another possible problem is the abuse of `setjmp()` and `longjmp()` which is
-known to be a problem, at least as he interprets it in his tired head (and less
-experience with `longjmp`). In particular:
-> The longjmp() routines may not be called after the routine which called the
-> setjmp() routines returns.
-See also the NOTES section of the linux man pages for `setjmp(3)` and
-`longjmp(3)`.
-3. The main() originally returned a call to main() which appeared to be an
-infinite recursion at least as it was; now it returns a call to poke() (since
-it's a poker game) which has the same number and type of args (1, `char *`) that
-main() originally had. This appears to not be an infinite recursion but I might
-be reading it wrong. Changing it to not return itself and the same problem
-occurs so perhaps this is not the problem. It's possible that the initial call
-to the `poke()` function is incorrect.
-4. It might be that the requirement of the comma operator in modern compilers is
-a problem. Perhaps some instances of `,1` should be `,0`? That seems plausible
-as they are often used with the `&&` operator.
-5. As well main() had only one arg, a `char *`, and there was a (seemingly)
-needless cast to `char *` from gets(). This cast remains in the code however.
-6. The code no longer uses `gets()` but `fgets()`; this is not the problem
-however.
-7. Sometimes the lack of a _proper_ prototype lets code work if the function is
-used incorrectly so one should be careful with adding the proper prototypes.
-With this entry it didn't _appear_ to be relevant but maybe it is after another
-change?
 
 
 ## [2004/gavin](2004/gavin/gavin.c) ([README.md](2004/gavin//README.md))
@@ -1654,7 +1558,7 @@ in the process some of the generated code fails.
 
 What might the translation of the comment end up being? Here's an example:
 
-```c
+```
 system("  echo Line 2;sed -n -e 2,77p out>    c.c;cc c.c -c  ");
 ```
 
@@ -1694,7 +1598,6 @@ It also will very likely segfault or do something strange if the source code
 does not exist.
 
 This entry requires that `sed` and `cc` are in the path.
-
 
 ## [2005/mynx](2005/mynx/mynx.c) ([README.md](2005/mynx/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
@@ -2081,15 +1984,6 @@ Abort trap: 6
 ```
 
 but this is expected and the file `ioccc.html` will be generated properly.
-
-## [2018/poikola](2018/poikola/prog.c) ([README.md](2018/poikola/README.md]))
-## STATUS: INABIAF - please **DO NOT** fix
-
-Some have reported that Terminal.app in macOS does not work and one might need a
-different terminal emulator like that from [XQuartz](https://www.xquartz.org)
-but [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) reported that this
-works fine in macOS Ventura with Terminal.app. YMMV of course.
-
 
 
 # 2019

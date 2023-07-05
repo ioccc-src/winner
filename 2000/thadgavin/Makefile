@@ -57,11 +57,11 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE=
+CDEFINE= -DZ=30 -DZS=150000
 
 # Include files that are needed to compile
 #
-CINCLUDE=
+CINCLUDE= -include unistd.h
 
 # Optimization
 #
@@ -113,8 +113,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -139,6 +139,13 @@ ${PROG}_sdl: ${PROG}.c
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+
+
+${PROG}.alt_sdl: ${PROG}.alt.c
+	${CC} ${CFLAGS} -DSDL `${SDL1_CONFIG} --cflags` $< -o $@ ${LIBS} `${SDL1_CONFIG} --libs`
 
 # data files
 #
