@@ -148,6 +148,30 @@ data: ${DATA}
 everything: all alt
 	@${TRUE}
 
+# The original vik2 source
+#
+# On some systems such as Linux, this source either fails
+# to finish compiling or takes a super-long time generating
+# a huge number of compiler errors.  As such, we do not
+# recommend compiling this code.  However for some the
+# curiosity factor, even though it may have the effect of:
+#
+#	kill -9 cat
+#
+# may too strong for some not try to compile the original
+# vik2 source code.  Therefore we offer this special
+# Makefile rule for those who do not wish curtail their curiosity.
+#
+cat-killing-curiosity: vik2.possible.cat.death.c
+	@echo 'Curiosity killed the cat ...'
+	${RM} -f ${PROG}.possible.cat.death_1.c
+	${CC} -E '-DSTOP=_5' '-DFNAME="${PROG}.possible.cat.death_1.c"' \
+	    ${PROG}.possible.cat.death.c > ${PROG}.possible.cat.death_1.c
+	${RM} -f ${PROG}.possible.cat.death_2.c
+	${CC} -E ${PROG}.possible.cat.death_1.c > ${PROG}.possible.cat.death_2.c
+	${CC} ${CFLAGS} ${PROG}.possible.cat.death_2.c -o $@
+	@echo '... but satisfaction brought it back.  :-)'
+
 
 ###############
 # utility rules
@@ -168,6 +192,7 @@ vik2_clobber: vik2_clean
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
 	${RM} -f ${PROG}_1.c ${PROG}_2.c
+	${RM} -f ${PROG}.possible.cat.death_1.c ${PROG}.possible.cat.death_2.c cat-killing-curiosity
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
