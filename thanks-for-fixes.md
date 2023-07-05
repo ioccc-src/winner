@@ -1212,3 +1212,10 @@ not sure why as it worked fine before on the same systems tested but `-O0`
 appears to fix the problem in both macOS and linux. Perhaps this is the problem
 that the author reported where it sometimes segfaults but Cody did not try
 debugging it yet.
+
+## [2020/kurdyukov2](2020/kurdyukov2/prog.c) ([README.md](2020/kurdyukov2/README.md))
+
+Cody added `-L`/`-I` paths to the Makefile to let this compile more easily if
+the user has installed the appropriate library with
+[MacPorts](https://www.macports.org) (with the default MacPorts prefix
+`/opt/local`).
