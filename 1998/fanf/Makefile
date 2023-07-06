@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-pointer-bool-conversion -Wno-unused-parameter -Wno-main
+CSILENCE= -Wno-pointer-bool-conversion -Wno-unused-parameter -Wno-main -Wno-implicit-function-declaration
 
 # Common C compiler warning flags
 #
@@ -129,12 +129,8 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	${RM} -f ${PROG}tmp1.c
-	${CC} ${CFLAGS} -E $< > ${PROG}tmp1.c
-	${RM} -f ${PROG}tmp2.c
-	${CC} ${CFLAGS} -E ${PROG}tmp1.c > ${PROG}tmp2.c
-	@echo This next compile may take a whie to complete
-	${CC} ${CFLAGS} ${PROG}tmp2.c ${LIBS} -o $@
+	@echo This might take a while to complete.
+	${CC} ${CFLAGS} ${PROG}.c ${LIBS} -o $@
 
 # alternative executable
 #

@@ -1,10 +1,6 @@
 # Most Obfuscated Translator
 
 Tony Finch
-Demon Internet
-322 Regent's Park Road
-Finchley
-London N3 2QQ
 United Kingdom
 <https://dotat.at>
 
