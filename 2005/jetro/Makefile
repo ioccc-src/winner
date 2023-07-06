@@ -73,7 +73,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS= `${SDL2_CONFIG} --libs`
+LIBS= `${SDL2_CONFIG} --libs` -lm
 
 # C compiler to use
 #

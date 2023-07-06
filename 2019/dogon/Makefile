@@ -76,7 +76,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS= -L ${X11_LIBDIR} -lX11
+LIBS= -L ${X11_LIBDIR} -lX11 -lm
 
 # C compiler to use
 #

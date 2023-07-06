@@ -426,6 +426,11 @@ Yusuke pointed out that `atof` nowadays needs `#include <stdlib.h>` which was
 used in order to get this to work initially (prior to this output was there but
 incomplete).
 
+## [1990/stig](1990/stig/stig.c) ([README.md](1990/stig/README.md))
+
+Cody fixed the paths in the Makefile so that this would build in linux (it
+worked fine in macOS).
+
 
 ## [1990/westley](1990/westley/westley.c) ([README.md](1990/westley/README.md]))
 
@@ -1001,6 +1006,32 @@ provided, found under the [img/](2004/gavin/img/) directory. Note that the
 done this way to prevent extraction from the entry directory overwriting the
 files and causing `make clobber` to wipe some of them out.
 
+## [2004/jdalbec](2004/jdalbec/jdalbec.c) ([README.md](2004/jdalbec/README.md))
+
+Cody fixed this to compile with gcc (it worked with clang). The problem was the
+cpp being unable to parse the generated code (see the README.md for details) and
+this ended up with a number of errors like:
+
+
+```c
+jdalbec.c:64:5: error: stray '##' in program
+   64 | B N##B (I) ; \
+      |     ^~
+
+
+..
+
+jdalbec.c:65:5: error: stray '##' in program
+   65 | V F##B (B) ; \
+      |     ^~
+jdalbec.c:65:5: error: expected ';' before 'B'
+   65 | V F##B (B) ; \
+      |     ^ ~
+      |     ;
+```
+
+and various other problems.
+
 
 ## [2004/kopczynski](2004/kopczynski/kopczynski.c) ([README.md](2004/kopczynski/README.md]))
 
@@ -1129,12 +1160,17 @@ for the self-test feature.
 
 For much more details on the problem see [bugs.md](/bugs.md).
 
+## [2005/jetro](2005/jetro/jetro.c) ([README.md](2005/jetro/README.md))
+
+Cody added explicit linking of libm (`-lm`) for systems like linux that seem to
+not do it implicitly (like macOS does).
+
 
 ## [2005/mynx](2005/mynx/mynx.c) ([README.md](2005/mynx/README.md]))
 
-Cody fixed this so that the
-[configure](source/configure) script (which is not needed but part of the entry)
-would work with compilers that have by default `-Werror` like clang in macOS.
+Cody fixed this so that the [configure](source/configure) script (which is not
+needed but part of the entry) would work with compilers that have by default
+`-Werror` like clang in macOS.
 
 Cody also added the alt code which does scan for https. Futile, maybe, based on
 how https is set up, in which case just enjoy it for what it was. But there
@@ -1225,6 +1261,16 @@ Cody, though he feels slightly sick :-), added a version for Windows based on
 the author's comments (along with looking up the function for the right header
 file). To build try the alt rule of the Makefile.
 
+## [2012/blakely](2012/blakely/blakely.c) ([README.md](2012/blakely/README.md))
+
+Cody added explicit linking of libm (`-lm`) as not all systems do this
+implicitly (linux doesn't seem to but macOS does).
+
+## [2012/endoh1](2012/endoh1/endoh1.c) ([README.md](2012/endoh1/README.md))
+
+Cody added explicit linking of libm (`-lm`) as not all systems do this
+implicitly (linux doesn't seem to but macOS does).
+
 
 ## [2012/kang](2012/kang/kang.c) ([README.md](2012/kang/README.md]))
 
@@ -1263,6 +1309,11 @@ removed from SDL2 so the Makefile has to use `sdl-config` and not `sdl2-config`.
 This means that to be strictly technical, the removal of `localtime()` is not
 necessary but this change was left in place anyway.
 
+## [2013/morgan1](2013/morgan1/morgan1.c) ([README.md](2013/morgan1/README.md))
+
+Cody added explicit linking of libm (`-lm`) as not all systems do this
+implicitly (linux doesn't seem to but macOS does).
+
 
 ## [2014/maffiodo1](2014/maffiodo1/maffiodo1.c) ([README.md](2014/maffiodo1/README.md]))
 
@@ -1272,6 +1323,10 @@ were linking errors.
 
 ## [2015/endoh3](2015/endoh3/prog.c) ([README.md](2015/endoh3/README.md]))
 
+Cody fixed this to compile with linux which was having a problem with duplicate
+symbols of `main()`. The fix is through the option `-fcommon` which will let it
+compile like it does with macOS.
+
 The author, Yusuke, supplied the additional source files, which Cody added to
 the repo for us. Yusuke wrote in his [analysis of the
 entry](https://mame-github-io.translate.goog/ioccc-ja-spoilers/2015/endoh3.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp)
@@ -1279,11 +1334,29 @@ that there are others as well but we don't seem to have them and he didn't
 provide them on his page. We've not yet contacted him for a copy but we will in
 time.
 
+## [2015/hou](2015/hou/prog.c) ([README.md](2015/hou/README.md))
+
+Cody added explicit linking of libm (`-lm`) for systems that do not do this
+(linux doesn't seem to but macOS does).
+
 
 ## [2015/yang](2015/yang/prog.c) ([README.md](2015/yang/README.md]))
 
 Cody fixed an unfortunate typo in the Makefile that was preventing some of the
 files from compiling properly, trying instead to compile already compiled code.
+
+He also added explicit linking of libm (`-lm`) for systems that do not do this
+(linux seems to not but macOS does).
+
+## [2018/bellard](2018/bellard/prog.c) ([README.md](2018/bellard/README.md))
+
+Cody added explicit linking of libm (`-lm`) for systems that do not do this
+(linux doesn't seem to but macOS does).
+
+## [2018/hou](2018/hou/prog.c) ([README.md](2018/hou/README.md))
+
+Cody added explicit linking of libm (`-lm`) for systems that do not do this
+(linux doesn't seem to but macOS does).
 
 
 
@@ -1309,6 +1382,11 @@ Cody made the author's statement that the entry compiles cleanly true by fixing
 `warning: a function declaration without a prototype is deprecated in all
 versions of C` (in main()). Not strictly necessary but if he's making fixes he
 might as well.
+
+## [2019/dogon](2019/dogon/prog.c) ([README.md](2019/dogon/README.md))
+
+Cody added explicit linking of libm (`-lm`) for systems that do not do this
+(linux does not seem to but macOS does).
 
 
 ## [2019/karns](2019/karns/prog.c) ([README.md](2019/karns/README.md]))
