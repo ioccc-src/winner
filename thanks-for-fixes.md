@@ -1311,6 +1311,8 @@ time.
 Cody fixed an unfortunate typo in the Makefile that was preventing some of the
 files from compiling properly, trying instead to compile already compiled code.
 
+He also added explicit linking of libm (`-lm`) for systems that do not do this
+(linux seems to not but macOS does).
 
 
 ## [2019/ciura](2019/ciura/prog.c) ([README.md](2019/ciura/README.md]))
