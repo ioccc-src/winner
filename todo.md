@@ -1,5 +1,11 @@
 # A todo list of known things to check and/or do
-*Last updated: Thu  6 Jul 2023 11:24:42 UTC*
+*Last updated: Thu  6 Jul 2023 11:54:19 UTC*
+
+This document is primarily for [Cody Boone
+Ferguson](/winners.html#Cody_Boone_Ferguson) as he (that is I :-) ) wanted a way
+to keep track of things in a way that did not require the information getting
+lost in the thousands of changes in the repo and because it might be too much to
+add to the todo list in the issues themselves.
 
 More things will likely be added over time and as items are done they _should
 be_ removed from the list IF AND ONLY IF (!!) we are _absolutely certain_ it is
@@ -108,3 +114,24 @@ run) or else they'll have to be put above the compilation.
 - Check the [GitHub issue #3 comment
 1615962832](https://github.com/ioccc-src/temp-test-ioccc/issues/3#issuecomment-1615962832)
 for links about the todo items wrt the [FAQ](/faq.md).
+
+- Check for dead links of all kinds: not only author URLs but file URLs on the
+website. I (Cody) would be seriously surprised if I did not make a typo
+somewhere (or some places!) in the many thousands of changes I made in the
+README.md files, the [bugs.md](/bugs.md) files and maybe even the
+[thanks-for-fixes.md](/thanks-for-fixes.md) file plus others that might be
+there.
+    * In the case of author URLs sometimes the Internet Wayback Machine is
+    helpful (and has helped) but in other cases it has not. Note that sometimes
+    the Internet Wayback Machine helped find more recent URLs so this should be
+    attempted first before adding the last archive link.
+    * Remember to update the author JSON files if it's an author URL!
+    * For URLs that cannot be located at all remove them entirely but add them
+    to [bugs.md](/bugs.md) as a missing link to the respective entry. See that file for the
+    correct status to add. Remember that each type of issue per entry in the
+    [bugs.md](/bugs.md) file should have its own status.
+    * If it's a link in the repo then there's no need (in almost all cases if
+    not all cases) to have the Internet Wayback Machine: instead just update the
+    link to point to the right location.
+    * Do we need to update the links that point to GitHub raw content? I'm not
+    sure.
