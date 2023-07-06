@@ -1,5 +1,9 @@
 #include <stdio.h> 
+#include <unistd.h>
 #include <limits.h>
+#ifndef ARG_MAX
+#define ARG_MAX _POSIX_ARG_MAX
+#endif
 long a
 [4],b[
 4],c[4]
