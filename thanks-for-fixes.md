@@ -1155,12 +1155,17 @@ for the self-test feature.
 
 For much more details on the problem see [bugs.md](/bugs.md).
 
+## [2005/jetro](2005/jetro/jetro.c) ([README.md](2005/jetro/README.md))
+
+Cody added explicit linking of libm (`-lm`) for systems like linux that seem to
+not do it implicitly (like macOS does).
+
 
 ## [2005/mynx](2005/mynx/mynx.c) ([README.md](2005/mynx/README.md]))
 
-Cody fixed this so that the
-[configure](source/configure) script (which is not needed but part of the entry)
-would work with compilers that have by default `-Werror` like clang in macOS.
+Cody fixed this so that the [configure](source/configure) script (which is not
+needed but part of the entry) would work with compilers that have by default
+`-Werror` like clang in macOS.
 
 Cody also added the alt code which does scan for https. Futile, maybe, based on
 how https is set up, in which case just enjoy it for what it was. But there
