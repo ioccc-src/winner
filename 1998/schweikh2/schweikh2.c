@@ -8,7 +8,7 @@ static volatile sig_atomic_t One;
 #define ONE(One) Zero(One)
 int
 
-#line 10 "01\015"
+??=line 10 ONE(O(1,1,2,6,0,6))
 main (register zero, char **ONE)
 %:
 <% switch (sizeof __FILE__ < zero) case 1: return One /= zero;

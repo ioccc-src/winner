@@ -740,6 +740,20 @@ Additionally Cody provided an alternate version for macOS. See the README.md
 file for details on the alternate version.
 
 
+## [1998/schweikh2](1998/schweikh2/schweikh2.c) ([README.md](1998/schweikh2/README.md]))
+
+Cody fixed the code to not trigger an internal compiler error in gcc:
+
+```
+:10:16: warning: type defaults to 'int' in declaration of 'zero' [-Wimplicit-int]
+: In function 'main':
+:12:1: warning: missing terminating " character
+:12:19: internal compiler error: invalid built-in macro "__FILE__"
+```
+
+The string `"01\015"` had to be changed to `ONE(O(1,1,2,6,0,6))`.
+
+
 ## [2000/anderson](2000/anderson/anderson.c) ([README.md](2000/anderson/README.md]))
 
 Cody changed this entry to use `fgets()` instead of `gets()` to make it safer
