@@ -1239,7 +1239,7 @@ were linking errors.
 ## [2015/endoh3](2015/endoh3/prog.c) ([README.md](2015/endoh3/README.md]))
 
 The author, Yusuke, supplied the additional source files, which Cody added to
-the repo for us. He wrote on his [analysis of the
+the repo for us. Yusuke wrote in his [analysis of the
 entry](https://mame-github-io.translate.goog/ioccc-ja-spoilers/2015/endoh3.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp)
 that there are others as well but we don't seem to have them and he didn't
 provide them on his page. We've not yet contacted him for a copy but we will in
