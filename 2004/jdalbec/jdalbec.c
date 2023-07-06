@@ -1,28 +1,25 @@
-#define Nd Np define
-#define Np ??=
-
-Nd Ba BC(B, I)
-Nd Be BC(Br, I)
-Nd Ca(C, Ca) CB(B, In C, Ca)
-Nd Cl(Cl) Cl Cl
-Nd Cs const
-Nd FrB N = Zr; Fr((O, B = BrB(BrF, I)))
-Nd Fe(F) FO (In = Zr; F; In++)
-Nd FF FB(B); FB(BF);
-Nd FI Fe(IO)
-Nd FO for
-Nd Fr(F) FO (I = Zr; F; I++)
-Nd II I I, In
-Nd In(I, Ir) main(I, Ir)
-Nd IO In[O[C + I]]
-Nd Ir(I) if (I)
-Nd Nb N > N && N > -O
-Nd Rb(Rb, B) BBr(Br, Rb, B)
-Nd Re return
-Nd Sc struct
-Nd Si(Te) sizeof (Te)
-Nd Te typedef
-Nd Zn N < Zr
+??= define Ba BC(B, I)
+??= define Be BC(Br, I)
+??= define Ca(C, Ca) CB(B, In C, Ca)
+??= define Cl(Cl) Cl Cl
+??= define Cs const
+??= define FrB N = Zr; Fr((O, B = BrB(BrF, I)))
+??= define Fe(F) FO (In = Zr; F; In++)
+??= define FF FB(B); FB(BF);
+??= define FI Fe(IO)
+??= define FO for
+??= define Fr(F) FO (I = Zr; F; I++)
+??= define II I I, In
+??= define In(I, Ir) main(I, Ir)
+??= define IO In[O[C + I]]
+??= define Ir(I) if (I)
+??= define Nb N > N && N > -O
+??= define Rb(Rb, B) BBr(Br, Rb, B)
+??= define Re return
+??= define Sc struct
+??= define Si(Te) sizeof (Te)
+??= define Te typedef
+??= define Zn N < Zr
 
 Te char C;
 Te int I;
@@ -54,37 +51,7 @@ V *(*Mo)(Si) = malloc;
 I (*Pr)(Cs C *, ...) = printf;
 I (*P)(I) = putchar;
 
-Nd Tm(B,C) \
-Sc B { \
-	C *B; \
-	I N; \
-} ; \
-Te Sc B *B; \
-\
-B N##B (I) ; \
-V F##B (B) ; \
-C B##C (B, I) ; \
-V C##B (B, I, C) ; \
-\
-B N##B (I N) { \
-	B B; \
-\
-	Re (W, B = Mo(Si(Sc B))) ? \
-		(O, B->B = Mo(((W, B->N = N) ? N : O) * Si(C))) ? \
-			B Cl(: (At(), B)); \
-} \
-V F##B (B B) { \
-	F(B->B); \
-	F(B); \
-} \
-C B##C (B B, I N) { \
-	Re B->Nb ? B->B[N] : (C) Zr; \
-} \
-V C##B (B B, I N, C C) { \
-	N; \
-	B->Nb ? B->B[N] = C : C ? At(), C : C; \
-}
-
+??= define Tm(B,C) Sc B { C *B; I N; } ; Te Sc B *B; B N##B (I) ; V F##B (B) ; C B##C (B, I) ; V C##B (B, I, C) ; B N##B (I N) { B B; Re (W, B = Mo(Si(Sc B))) ? (O, B->B = Mo(((W, B->N = N) ? N : O) * Si(C))) ? B Cl(: (At(), B)); } V F##B (B B) { F(B->B); F(B); } C B##C (B B, I N) { Re B->Nb ? B->B[N] : (C) Zr; } V C##B (B B, I N, C C) { N; B->Nb ? B->B[N] = C : C ? At(), C : C; }
 Tm(B,C)
 
 V Pb (B) ;
@@ -93,30 +60,30 @@ C Co (B, B, I) ;
 B Sb (B, I) ;
 
 V Pb (B B) {
-	I I;
-	Fr(Ba) 
-		P(Ba);
+ I I;
+ Fr(Ba)
+  P(Ba);
 }
 I Bi (B B) {
-	I I;
-	Fr(Ba) ;
-	Re I;
+ I I;
+ Fr(Ba) ;
+ Re I;
 }
 C Co (B Br, B B, I N) {
-	I I;
-	Fr(I < N)
-		Ir(Be - Ba)
-			Re Be - Ba;
-	Re Zr;
+ I I;
+ Fr(I < N)
+  Ir(Be - Ba)
+   Re Be - Ba;
+ Re Zr;
 }
 B Sb (B Br, I N) {
-	B B;
-	I I;
+ B B;
+ I I;
 
-	B = NB(Zn ? Bi(Br) + N : N);
-	FO(I = Zn ? -N : Zr; Zn ? Be : I < N; I++)
-		CB(B, Zn ? I + N : I, Be);
-	Re B;
+ B = NB(Zn ? Bi(Br) + N : N);
+ FO(I = Zn ? -N : Zr; Zn ? Be : I < N; I++)
+  CB(B, Zn ? I + N : I, Be);
+ Re B;
 }
 
 Tm(Br,B)
@@ -124,13 +91,13 @@ Tm(Br,B)
 V PBr (Br, I) ;
 
 V PBr (Br B, I N) {
-	I I;
-	Pr(W * W + Xe, N);
-	Fr(BrB(B, I)) {
-		P(O[Na]);
-		Pb(BrB(B, I));
-	}
-	P(Xe[W << W]);
+ I I;
+ Pr(W * W + Xe, N);
+ Fr(BrB(B, I)) {
+  P(O[Na]);
+  Pb(BrB(B, I));
+ }
+ P(Xe[W << W]);
 }
 
 B Dy (B, I) ;
@@ -138,107 +105,109 @@ I S (C, B) ;
 Br Sr (Br) ;
 
 B Dy (B Br, I N) {
-	B B;
-	C C, Cr;
-	II;
+ B B;
+ C C, Cr;
+ II;
 
-	B = NB(W * Bi(Br));
-	FO(In = I = Zr; (O, C = Be); I++) {
-		FO(Cr = O; (W, C == BC(Br, I + Cr)); Cr++) ;
-		I += Cr - O;
-		Ca(++, Cr + Si(H)**H - Si(U)**U);
-		Ca(++, C);
-	}
-	Ir(N)
-		FB(Br);
-	Ca(-N, W[H]);
-	Re B;
+ B = NB(W * Bi(Br));
+ FO(In = I = Zr; (O, C = Be); I++) {
+  FO(Cr = O; (W, C == BC(Br, I + Cr)); Cr++) ;
+  I += Cr - O;
+  Ca(++, Cr + Si(H)**H - Si(U)**U);
+  Ca(++, C);
+ }
+ Ir(N)
+  FB(Br);
+ Ca(-N, W[H]);
+ Re B;
 }
 I S (C C, B Br) {
-	B B, BF;
-	II;
+ B B, BF;
+ II;
 
-	Ir(C == BC(Br, Zr))
-		Re Zr;
+ Ir(C == BC(Br, Zr))
+  Re Zr;
 
-	Fr(Be) {
-		B = Cl(BF = Sb(Br, I); )
+ Fr(Be) {
+  B = Cl(BF = Sb(Br, I); )
 
-		Fe(BC(B, Zr)) {
-			B = Dy(B, W);
-			Ir(C == BC(B, Zr)) {
-				FF
-				Re Zr;
-			}
+  Fe(BC(B, Zr)) {
+   B = Dy(B, W);
+   Ir(C == BC(B, Zr)) {
+    FF
+    Re Zr;
+   }
 
-			Ir(In % W)
-				BF = Dy(BF, W);
+   Ir(In % W)
+    BF = Dy(BF, W);
 
-			Ir(Zr == Co(B, BF, Bi(BF))) {
-				FF
-				Re O;
-			}
-		}
+   Ir(Zr == Co(B, BF, Bi(BF))) {
+    FF
+    Re O;
+   }
+  }
 
-		FF
-	}
-	B = Dy(Br, Zr);
-	I = S(C, B);
-	FB(B);
-	Re I;
+  FF
+ }
+ B = Dy(Br, Zr);
+ I = S(C, B);
+ FB(B);
+ Re I;
 }
 Br Sr (Br BrF) {
-	Br Br;
-	B B, BF;
-	II, N;
+ Br Br;
+ B B, BF;
+ II, N;
 
-	FrB
-		N += Bi(B);
-	Br = NBr(N);
-	FrB {
-		Rb(N++, B);
-		Fe(BC(B, In + O))
-			S(BC(B, In), BF = Sb(B, -In - O)) ?
-				Ca(+O, O[U]),
-				Rb(N++, B = BF),
-				In = Zr :
-				(FB(BF), W);
-	}
-	FBr(BrF);
-	Rb(N, (V *) Zr);
-	Re Br;
+ FrB
+  N += Bi(B);
+ Br = NBr(N);
+ FrB {
+  Rb(N++, B);
+  Fe(BC(B, In + O))
+   S(BC(B, In), BF = Sb(B, -In - O)) ?
+    Ca(+O, O[U]),
+    Rb(N++, B = BF),
+    In = Zr :
+    (FB(BF), W);
+ }
+ FBr(BrF);
+ Rb(N, (V *) Zr);
+ Re Br;
 }
 
 I In (I, C **) ;
 
 I In (I N, C ** C) {
-	Br Br;
-	B B;
-	II;
+ Br Br;
+ B B;
+ II;
 
-	Br = NBr(--N);
-	Fr(I < N) {
-		FI ;
-		Rb(I, B = NB(In));
-		FI
-			Ca(-Zr, IO);
-	}
+ Br = NBr(--N);
+ Fr(I < N) {
+  FI ;
+  Rb(I, B = NB(In));
+  FI
+   Ca(-Zr, IO);
+ }
 
-	Fr(BrB(Br, Zr)) {
-		Br = Sr(Br);
-		PBr(Br, I);
+ Fr(BrB(Br, Zr)) {
+  Br = Sr(Br);
+  PBr(Br, I);
 
-		Fe((W, B = BrB(Br, In))) {
-			Rb(In, Dy(B, Zr));
-			FB(B);
-		}
-	}
-	
+  Fe((W, B = BrB(Br, In))) {
+   Rb(In, Dy(B, Zr));
+   FB(B);
+  }
+ }
+
  {   }  {    }  {   } { } { }  {  }  {  }   { } {     } {   } {    }
 {     } { { } } { }   { } { } { }   { }    {   }  { }   { }   { { } }
 { { } } {    }  {   } { } { }  { }  { }   { { } } { }   {   } { {  } }  C;
 {     } { { } } { }   { } { }   { } { }   {     } { }   { }   { { } }
  {   }  {    }  { }    {   }  {  }   {  } { } { } { }   {   } {    }
 
-	Re Zr;
+
+
+ Re Zr;
 }

@@ -1001,6 +1001,32 @@ provided, found under the [img/](2004/gavin/img/) directory. Note that the
 done this way to prevent extraction from the entry directory overwriting the
 files and causing `make clobber` to wipe some of them out.
 
+## [2004/jdalbec](2004/jdalbec/jdalbec.c) ([README.md](2004/jdalbec/README.md))
+
+Cody fixed this to compile with gcc (it worked with clang). The problem was the
+cpp being unable to parse the generated code (see the README.md for details) and
+this ended up with a number of errors like:
+
+
+```c
+jdalbec.c:64:5: error: stray '##' in program
+   64 | B N##B (I) ; \
+      |     ^~
+
+
+..
+
+jdalbec.c:65:5: error: stray '##' in program
+   65 | V F##B (B) ; \
+      |     ^~
+jdalbec.c:65:5: error: expected ';' before 'B'
+   65 | V F##B (B) ; \
+      |     ^ ~
+      |     ;
+```
+
+and various other problems.
+
 
 ## [2004/kopczynski](2004/kopczynski/kopczynski.c) ([README.md](2004/kopczynski/README.md]))
 
