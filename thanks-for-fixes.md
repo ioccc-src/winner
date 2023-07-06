@@ -1294,6 +1294,11 @@ removed from SDL2 so the Makefile has to use `sdl-config` and not `sdl2-config`.
 This means that to be strictly technical, the removal of `localtime()` is not
 necessary but this change was left in place anyway.
 
+## [2013/morgan1](2013/morgan1/morgan1.c) ([README.md](2013/morgan1/README.md))
+
+Cody added explicit linking of libm (`-lm`) as not all systems do this
+implicitly (linux doesn't seem to but macOS does).
+
 
 ## [2014/maffiodo1](2014/maffiodo1/maffiodo1.c) ([README.md](2014/maffiodo1/README.md]))
 
