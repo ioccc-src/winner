@@ -14,10 +14,6 @@ Germany
 make all
 ```
 
-NOTE: Almost every compiler is supposed to be able to accept the code in
-[schweikh2.c](schweikh2.c); try compiling [schweikh2.alt.c](schweikh2.alt.c]) to
-see if your compiler is fully standard-compliant.
-
 ## To run:
 
 
@@ -57,17 +53,19 @@ What happens if you don't put in any number like the below?
 Run the program with a small argument, like 5 or 10, several times.  Are the
 results different? Why?
 
-Some non-gcc compilers that are not fully ANSI standard do not compile this
-entry correctly.
+### Historical remarks:
+
+At the time of judging, some non-gcc compilers that were not fully ANSI standard
+did not compile this entry correctly.
 
 At the time this hint file was written, some gcc and egcs implementations ran
 into problem when building the original entry:
 
 ```sh
-make schweikh2.alt
+make schweikh2
 ```
 
-This program often will produce an error of the form:
+This program often produced an error of the form:
 
 ```
 gcc -ansi schweikh2.alt.c -o schweikh2.alt
@@ -102,7 +100,7 @@ and the lone `"` after the `#.file` line results in an assembler syntax error.
 In some cases one must compile using `gcc -g`:
 
 ```sh
-make schweikh2.alt CFLAGS=-g
+make schweikh2 CFLAGS=-g
 ```
 
 to trigger this error.
@@ -111,18 +109,31 @@ And with the proper text beyond the `\012`, it may be possible to have
 all kinds of fun adding `inline assembly` via `#line` directives.  :-)
 For extra credit:
 
-If your compiler has this bug, transform the line in the C
-program to inject assembly instructions in such a way that
-the program will compile.
+If your compiler had this bug, you could transform the line in the C program to
+inject assembly instructions in such a way that the program would compile.
 
-If you are able to do the above, try adding assembly instructions
-so that it will compile, execute and do something interesting.
+If you were able to do the above, you could try adding assembly instructions so
+that it will compile, execute and do something interesting.
 
-If you succeed in doing this (especially on FreeBSD, Linux or SPARC),
-email the author for a free pat on the back.
+If you succeeded in doing this (especially on FreeBSD, Linux or SPARC),
+you could have emailed the author for a free pat on the back (and maybe you
+still can :-) ).
 
 NOTE: the author submitted the program as `yarng` so when trying the examples
 below change `yarng` to `./schweikh2`.
+
+However in 2023 it was observed that it is gcc that has a problem with the
+compilation of the _modified_ program, giving an internal compiler error:
+
+```
+:10:16: warning: type defaults to 'int' in declaration of 'zero' [-Wimplicit-int]
+: In function 'main':
+:12:1: warning: missing terminating " character
+:12:19: internal compiler error: invalid built-in macro "__FILE__"
+```
+
+so the string `"01\015"` was changed to `ONE(O(1,1,2,6,0,6))` and now it works
+with both clang and gcc.
 
 ## Author's remarks:
 
