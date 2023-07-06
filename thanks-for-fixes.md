@@ -846,7 +846,7 @@ Notice that the location of the calls to `munmap()` and `close()` followed by
 `execv()` _does matter_!
 
 NOTE: there might be educational value to see the progress of this fix; if you
-wish to see, try:
+wish to see, try the following commands from the `2001/anonymous` directory:
 
 ```sh
 git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..93aa8d79f208dcccc3c5a2370a727b5cf64e9c53 anonymous.c
