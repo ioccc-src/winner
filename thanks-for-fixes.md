@@ -910,17 +910,33 @@ He also points out that there is a way to get the computer to automatically lose
 very quickly and he also points out that there is a flaw in the alternate
 version that the author did not note. Do you know what these are?
 
+## [2001/herrmann1](2001/herrmann1/herrmann1.c) ([README.md](2001/herrmann1/README.md]))
+
+Cody fixed this so that the when compiling the code the program is not executed
+itself by itself which just showed the usage string and exited. The [script
+herrmann1.sh](2001/herrmann1/herrmann1.sh) is used to compile the program but
+it's also how you invoke the program. 
+
+He also fixed the [script herrmann1.sh](2001/herrmann1/herrmann1.sh) for
+shellcheck. In particular there were quite a few:
+
+
+```
+SC2086 (info): Double quote to prevent globbing and word splitting.
+SC2248 (style): Prefer double quoting even when variables don't contain special characters.
+```
+
+errors/warnings.
 
 ## [2001/herrmann2](2001/herrmann2/herrmann2.c) ([README.md](2001/herrmann2/README.md]))
 
-Cody fixed this to work with
-both 64-bit and 32-bit compiles by changing most of the `int`s (all but that in
-`main`) to `long`s. He also fixed it to compile with clang by changing the args
-of main to be `int` and `char **` respectively and changing specific references
-to the `argv` arg, casting to `long` (was `int` but the 64-bit fix requires
-`long`) which was its old type. The original file, used for demonstration
-purposes, as well as if you want to see if your system works with the original
-code, is the alternate version. See the README.md for details.
+Cody fixed this to work with both 64-bit and 32-bit compiles by changing most of
+the `int`s (all but that in `main`) to `long`s. He also fixed it to compile with
+clang by changing the args of main to be `int` and `char **` respectively and
+changing specific references to the `argv` arg, casting to `long` (was `int` but
+the 64-bit fix requires `long`) which was its old type. The original file, used
+for demonstration purposes, as well as if you want to see if your system works
+with the original code, is the alternate version. See the README.md for details.
 
 
 ## [2001/kev](2001/kev/kev.c) ([README.md](2001/kev/README.md]))
@@ -958,14 +974,12 @@ int and the rest must be a `char **`.
 
 ## [2004/gavin](2004/gavin/gavin.c) ([README.md](2004/gavin/README.md]))
 
-Yusuke provided the `kernel` and `fs.tar`
-files which can be used if you cannot normally use this entry. Instead of
-generating the files just use the files provided, found under the
-[img/](2004/gavin/img/)
-directory. Note that the `img/fs.tar` extracts into `fs/` so you will have to
-fix the tarball; this is done this way to prevent extraction from the entry
-directory overwriting the files and causing `make clobber` to wipe some of them
-out.
+Yusuke provided the `kernel` and `fs.tar` files which can be used if you cannot
+normally use this entry. Instead of generating the files just use the files
+provided, found under the [img/](2004/gavin/img/) directory. Note that the
+`img/fs.tar` extracts into `fs/` so you will have to fix the tarball; this is
+done this way to prevent extraction from the entry directory overwriting the
+files and causing `make clobber` to wipe some of them out.
 
 
 ## [2004/kopczynski](2004/kopczynski/kopczynski.c) ([README.md](2004/kopczynski/README.md]))
