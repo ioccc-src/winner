@@ -1,1028 +1,1009 @@
-#define O \
-#ifdef
-#define Q \
-#undef
-#define C \
-#define
-#define G \
-#else
-#define D \
-#ifndef
-#define l \
-#include FNAME
-#define I \
-#endif
-
-
-
-O  i
-O  o
-O  c
-Q  c
-I
-O  d
-Q  d
-I
-O  e
-Q  e
-I
-O  f
-Q  f
-I
-O  g
-Q  g
-I
-O  h
-Q  h
-I
-O  Z
-Q  Z
-I
-O  j
-Q  j
-I
-O  k
-Q  k
-I
-O  m
-Q  m
-I
-O  n
-Q  n
-I
-Q  o
-G
-O  E
-O  t
-Q  t
-I
-O  s
-Q  s
-I
-O  u
-Q  u
-I
-O  v
-Q  v
-I
-O  w
-Q  w
-I
-O  x
-Q  x
-I
-O  y
-Q  y
-I
-O  z
-Q  z
-I
-O  A
-Q  A
-I
-O  B
-Q  B
-I
-O  r
-Q  r
-I
-Q  E
-G
-O _L
-O  a
-O  b
-D  q
-Q  a
-C  q
-I
-G
-O  q
-Q  a
-I
-I
-G
-O  b
-D  q
-C  a
-I
-G
-O  q
-C  a
-Q  q
-I
-I
-I
-O  p
-Q  p
-I
-O  a
-C  p
-Q  a
-I
-O  b
-Q  b
-I
-G
-O  F
-O  q
-Q  q
-I
-C _L
-O  c
-Q  c
-C  a
-I
-O  t
-C  b
-I
-l
-O  p
-C  c
-I
-O  d
-Q  d
-C  a
-I
-O  s
-C  b
-I
-l
-O  p
-C  d
-I
-O  e
-Q  e
-C  a
-I
-O  u
-C  b
-I
-l
-O  p
-C  e
-I
-O  f
-Q  f
-C  a
-I
-O  v
-C  b
-I
-l
-O  p
-C  f
-I
-O  g
-Q  g
-C  a
-I
-O  w
-C  b
-I
-l
-O  p
-C  g
-I
-O  h
-Q  h
-C  a
-I
-O  x
-C  b
-I
-l
-O  p
-C  h
-I
-O  Z
-Q  Z
-C  a
-I
-O  y
-C  b
-I
-l
-O  p
-C  Z
-I
-O  j
-Q  j
-C  a
-I
-O  z
-C  b
-I
-l
-O  p
-C  j
-I
-O  k
-Q  k
-C  a
-I
-O  A
-C  b
-I
-l
-O  p
-C  k
-I
-O  m
-Q  m
-C  a
-I
-O  B
-C  b
-I
-l
-O  p
-C  m
-I
-O  n
-Q  n
-C  a
-I
-O  r
-C  b
-I
-l
-O  p
-C  n
-I
-Q _L
-Q  F
-G
-O  H
-C  E
-l
-C  s
-C  F
-l
-Q  s
-Q  H
-G
-O _u
-O  t
-Q  t
-G
-C  t
-I
-O  s
-Q  s
-G
-C  s
-I
-O  u
-Q  u
-G
-C  u
-I
-O  v
-Q  v
-G
-C  v
-I
-O  w
-Q  w
-G
-C  w
-I
-O  x
-Q  x
-G
-C  x
-I
-O  y
-Q  y
-G
-C  y
-I
-O  z
-Q  z
-G
-C  z
-I
-O  A
-Q  A
-G
-C  A
-I
-O  B
-Q  B
-G
-C  B
-I
-O  r
-Q  r
-G
-C  r
-I
-C  F
-l
-O _v
-Q _v
-I
-O  q
-C _v
-I
-C  E
-l
-C  t
-C  F
-l
-O _v
-O  q
-Q  q
-G
-C  q
-I
-I
-Q _u
-G
-O _w
-O  J
-Q  J
-I
-O _q
-Q _q
-I
-C _u
-l
-D  c
-D  d
-D  e
-D  f
-D  g
-D  h
-D  Z
-D  j
-D  k
-D  m
-D  n
-C  J
-I
-I
-I
-I
-I
-I
-I
-I
-I
-I
-I
-D  q
-C _q
-I
-Q _w
-G
-O _x
-O  K
-Q  K
-I
-O  \
-STOP
-C  K
-I
-O _r
-C  K
-I
-D  K
-D _s
-C _s
-D  L
-C  L
-I
-D  M
-C  M
-I
-D  N
-C  N
-I
-D  P
-C  P
-I
-D  R
-C  R
-I
-D  S
-C  S
-I
-D  T
-C  T
-I
-D  U
-C  U
-I
-D  V
-C  V
-I
-D  W
-C  W
-I
-D  X
-C  X
-I
-D  Y
-C  Y
-I
-D _i
-C _i
-I
-D _a
-C _a
-I
-D _b
-C _b
-I
-D _c
-C _c
-I
-D _d
-C _d
-I
-D _e
-C _e
-I
-D _f
-C _f
-I
-D _g
-C _g
-I
-I
-C  E
-l
-C  t
-O _h
-C  s
-I
-O _t
-C  u
-I
-O _3
-C  v
-I
-O _4
-C  w
-I
-O _5
-C  x
-I
-O _6
-C  y
-I
-O _7
-C  z
-I
-O _8
-C  A
-I
-O _9
-C  B
-I
-O _r
-C  r
-I
-C _w
-l
-C  o
-l
-D  J
-O _q
-C  c
-O  X
-Q  X
-C  d
-I
-O  Y
-Q  Y
-C  e
-I
-O _i
-Q _i
-C  f
-I
-O _a
-Q _a
-C  g
-I
-O _b
-Q _b
-C  h
-I
-O _c
-Q _c
-C  Z
-I
-O _d
-Q _d
-C  j
-I
-O _e
-Q _e
-C  k
-I
-O _f
-Q _f
-C  m
-I
-O _g
-Q _g
-C  n
-I
-C  H
-l
-C  E
-l
-C  t
-O  d
-C  X
-C  s
-I
-O  e
-C  Y
-C  u
-I
-O  f
-C _i
-C  v
-I
-O  g
-C _a
-C  w
-I
-O  h
-C _b
-C  x
-I
-O  Z
-C _c
-C  y
-I
-O  j
-C _d
-C  z
-I
-O  k
-C _e
-C  A
-I
-O  m
-C _f
-C  B
-I
-O  n
-C _g
-C  r
-I
-G
-C  c
-O  L
-Q  L
-C  d
-I
-O  M
-Q  M
-C  e
-I
-O  N
-Q  N
-C  f
-I
-O  P
-Q  P
-C  g
-I
-O  R
-Q  R
-C  h
-I
-O  S
-Q  S
-C  Z
-I
-O  T
-Q  T
-C  j
-I
-O  U
-Q  U
-C  k
-I
-O  V
-Q  V
-C  m
-I
-O  W
-Q  W
-C  n
-I
-C  H
-l
-C  E
-l
-C  t
-O  d
-C  L
-C  s
-I
-O  e
-C  M
-C  u
-I
-O  f
-C  N
-C  v
-I
-O  g
-C  P
-C  w
-I
-O  h
-C  R
-C  x
-I
-O  Z
-C  S
-C  y
-I
-O  j
-C  T
-C  z
-I
-O  k
-C  U
-C  A
-I
-O  m
-C  V
-C  B
-I
-O  n
-C  W
-C  r
-I
-I
-I
-C  o
-l
-O _y
-Q _y
-C  c
-I
-O _z
-Q _z
-C  d
-I
-O _A
-Q _A
-C  e
-I
-O _B
-Q _B
-C  f
-I
-O _C
-Q _C
-C  g
-I
-O _D
-Q _D
-C  h
-I
-O _E
-Q _E
-C  Z
-I
-O _F
-Q _F
-C  j
-I
-O _G
-Q _G
-C  k
-I
-O _H
-Q _H
-C  m
-I
-O _I
-Q _I
-C  n
-I
-O  J
-C  o
-l
-O _s
-C  c
-I
-O  L
-C  d
-I
-O  M
-C  e
-I
-O  N
-C  f
-I
-O  P
-C  g
-I
-O  R
-C  h
-I
-O  S
-C  Z
-I
-O  T
-C  j
-I
-O  U
-C  k
-I
-O  V
-C  m
-I
-O  W
-C  n
-I
-C  H
-l
-C  E
-l
-O _M
-C  t
-I
-O  X
-C  s
-I
-O  Y
-C  u
-I
-O _i
-C  v
-I
-O _a
-C  w
-I
-O _b
-C  x
-I
-O _c
-C  y
-I
-O _d
-C  z
-I
-O _e
-C  A
-I
-O _f
-C  B
-I
-O _g
-C  r
-I
-C _w
-l
-O  J
-Q  i
-l
-O _h
-|  2
-I
-O _t
-|  4
-I
-O _3
-|  8
-I
-O _4
+ #ifdef i
+ #ifdef o
+ #ifdef c
+ #undef c
+ #endif
+ #ifdef d
+ #undef d
+ #endif
+ #ifdef e
+ #undef e
+ #endif
+ #ifdef f
+ #undef f
+ #endif
+ #ifdef g
+ #undef g
+ #endif
+ #ifdef h
+ #undef h
+ #endif
+ #ifdef Z
+ #undef Z
+ #endif
+ #ifdef j
+ #undef j
+ #endif
+ #ifdef k
+ #undef k
+ #endif
+ #ifdef m
+ #undef m
+ #endif
+ #ifdef n
+ #undef n
+ #endif
+ #undef o
+ #else
+ #ifdef E
+ #ifdef t
+ #undef t
+ #endif
+ #ifdef s
+ #undef s
+ #endif
+ #ifdef u
+ #undef u
+ #endif
+ #ifdef v
+ #undef v
+ #endif
+ #ifdef w
+ #undef w
+ #endif
+ #ifdef x
+ #undef x
+ #endif
+ #ifdef y
+ #undef y
+ #endif
+ #ifdef z
+ #undef z
+ #endif
+ #ifdef A
+ #undef A
+ #endif
+ #ifdef B
+ #undef B
+ #endif
+ #ifdef r
+ #undef r
+ #endif
+ #undef E
+ #else
+ #ifdef _L
+ #ifdef a
+ #ifdef b
+ #ifndef q
+ #undef a
+ #define q
+ #endif
+ #else
+ #ifdef q
+ #undef a
+ #endif
+ #endif
+ #else
+ #ifdef b
+ #ifndef q
+ #define a
+ #endif
+ #else
+ #ifdef q
+ #define a
+ #undef q
+ #endif
+ #endif
+ #endif
+ #ifdef p
+ #undef p
+ #endif
+ #ifdef a
+ #define p
+ #undef a
+ #endif
+ #ifdef b
+ #undef b
+ #endif
+ #else
+ #ifdef F
+ #ifdef q
+ #undef q
+ #endif
+ #define _L
+ #ifdef c
+ #undef c
+ #define a
+ #endif
+ #ifdef t
+ #define b
+ #endif
+ #include FNAME
+ #ifdef p
+ #define c
+ #endif
+ #ifdef d
+ #undef d
+ #define a
+ #endif
+ #ifdef s
+ #define b
+ #endif
+ #include FNAME
+ #ifdef p
+ #define d
+ #endif
+ #ifdef e
+ #undef e
+ #define a
+ #endif
+ #ifdef u
+ #define b
+ #endif
+ #include FNAME
+ #ifdef p
+ #define e
+ #endif
+ #ifdef f
+ #undef f
+ #define a
+ #endif
+ #ifdef v
+ #define b
+ #endif
+ #include FNAME
+ #ifdef p
+ #define f
+ #endif
+ #ifdef g
+ #undef g
+ #define a
+ #endif
+ #ifdef w
+ #define b
+ #endif
+ #include FNAME
+ #ifdef p
+ #define g
+ #endif
+ #ifdef h
+ #undef h
+ #define a
+ #endif
+ #ifdef x
+ #define b
+ #endif
+ #include FNAME
+ #ifdef p
+ #define h
+ #endif
+ #ifdef Z
+ #undef Z
+ #define a
+ #endif
+ #ifdef y
+ #define b
+ #endif
+ #include FNAME
+ #ifdef p
+ #define Z
+ #endif
+ #ifdef j
+ #undef j
+ #define a
+ #endif
+ #ifdef z
+ #define b
+ #endif
+ #include FNAME
+ #ifdef p
+ #define j
+ #endif
+ #ifdef k
+ #undef k
+ #define a
+ #endif
+ #ifdef A
+ #define b
+ #endif
+ #include FNAME
+ #ifdef p
+ #define k
+ #endif
+ #ifdef m
+ #undef m
+ #define a
+ #endif
+ #ifdef B
+ #define b
+ #endif
+ #include FNAME
+ #ifdef p
+ #define m
+ #endif
+ #ifdef n
+ #undef n
+ #define a
+ #endif
+ #ifdef r
+ #define b
+ #endif
+ #include FNAME
+ #ifdef p
+ #define n
+ #endif
+ #undef _L
+ #undef F
+ #else
+ #ifdef H
+ #define E
+ #include FNAME
+ #define s
+ #define F
+ #include FNAME
+ #undef s
+ #undef H
+ #else
+ #ifdef _u
+ #ifdef t
+ #undef t
+ #else
+ #define t
+ #endif
+ #ifdef s
+ #undef s
+ #else
+ #define s
+ #endif
+ #ifdef u
+ #undef u
+ #else
+ #define u
+ #endif
+ #ifdef v
+ #undef v
+ #else
+ #define v
+ #endif
+ #ifdef w
+ #undef w
+ #else
+ #define w
+ #endif
+ #ifdef x
+ #undef x
+ #else
+ #define x
+ #endif
+ #ifdef y
+ #undef y
+ #else
+ #define y
+ #endif
+ #ifdef z
+ #undef z
+ #else
+ #define z
+ #endif
+ #ifdef A
+ #undef A
+ #else
+ #define A
+ #endif
+ #ifdef B
+ #undef B
+ #else
+ #define B
+ #endif
+ #ifdef r
+ #undef r
+ #else
+ #define r
+ #endif
+ #define F
+ #include FNAME
+ #ifdef _v
+ #undef _v
+ #endif
+ #ifdef q
+ #define _v
+ #endif
+ #define E
+ #include FNAME
+ #define t
+ #define F
+ #include FNAME
+ #ifdef _v
+ #ifdef q
+ #undef q
+ #else
+ #define q
+ #endif
+ #endif
+ #undef _u
+ #else
+ #ifdef _w
+ #ifdef J
+ #undef J
+ #endif
+ #ifdef _q
+ #undef _q
+ #endif
+ #define _u
+ #include FNAME
+ #ifndef c
+ #ifndef d
+ #ifndef e
+ #ifndef f
+ #ifndef g
+ #ifndef h
+ #ifndef Z
+ #ifndef j
+ #ifndef k
+ #ifndef m
+ #ifndef n
+ #define J
+ #endif
+ #endif
+ #endif
+ #endif
+ #endif
+ #endif
+ #endif
+ #endif
+ #endif
+ #endif
+ #endif
+ #ifndef q
+ #define _q
+ #endif
+ #undef _w
+ #else
+ #ifdef _x
+ #ifdef K
+ #undef K
+ #endif
+ #ifdef STOP
+ #define K
+ #endif
+ #ifdef _r
+ #define K
+ #endif
+ #ifndef K
+ #ifndef _s
+ #define _s
+ #ifndef L
+ #define L
+ #endif
+ #ifndef M
+ #define M
+ #endif
+ #ifndef N
+ #define N
+ #endif
+ #ifndef P
+ #define P
+ #endif
+ #ifndef R
+ #define R
+ #endif
+ #ifndef S
+ #define S
+ #endif
+ #ifndef T
+ #define T
+ #endif
+ #ifndef U
+ #define U
+ #endif
+ #ifndef V
+ #define V
+ #endif
+ #ifndef W
+ #define W
+ #endif
+ #ifndef X
+ #define X
+ #endif
+ #ifndef Y
+ #define Y
+ #endif
+ #ifndef _i
+ #define _i
+ #endif
+ #ifndef _a
+ #define _a
+ #endif
+ #ifndef _b
+ #define _b
+ #endif
+ #ifndef _c
+ #define _c
+ #endif
+ #ifndef _d
+ #define _d
+ #endif
+ #ifndef _e
+ #define _e
+ #endif
+ #ifndef _f
+ #define _f
+ #endif
+ #ifndef _g
+ #define _g
+ #endif
+ #endif
+ #define E
+ #include FNAME
+ #define t
+ #ifdef _h
+ #define s
+ #endif
+ #ifdef _t
+ #define u
+ #endif
+ #ifdef _3
+ #define v
+ #endif
+ #ifdef _4
+ #define w
+ #endif
+ #ifdef _5
+ #define x
+ #endif
+ #ifdef _6
+ #define y
+ #endif
+ #ifdef _7
+ #define z
+ #endif
+ #ifdef _8
+ #define A
+ #endif
+ #ifdef _9
+ #define B
+ #endif
+ #ifdef _r
+ #define r
+ #endif
+ #define _w
+ #include FNAME
+ #define o
+ #include FNAME
+ #ifndef J
+ #ifdef _q
+ #define c
+ #ifdef X
+ #undef X
+ #define d
+ #endif
+ #ifdef Y
+ #undef Y
+ #define e
+ #endif
+ #ifdef _i
+ #undef _i
+ #define f
+ #endif
+ #ifdef _a
+ #undef _a
+ #define g
+ #endif
+ #ifdef _b
+ #undef _b
+ #define h
+ #endif
+ #ifdef _c
+ #undef _c
+ #define Z
+ #endif
+ #ifdef _d
+ #undef _d
+ #define j
+ #endif
+ #ifdef _e
+ #undef _e
+ #define k
+ #endif
+ #ifdef _f
+ #undef _f
+ #define m
+ #endif
+ #ifdef _g
+ #undef _g
+ #define n
+ #endif
+ #define H
+ #include FNAME
+ #define E
+ #include FNAME
+ #define t
+ #ifdef d
+ #define X
+ #define s
+ #endif
+ #ifdef e
+ #define Y
+ #define u
+ #endif
+ #ifdef f
+ #define _i
+ #define v
+ #endif
+ #ifdef g
+ #define _a
+ #define w
+ #endif
+ #ifdef h
+ #define _b
+ #define x
+ #endif
+ #ifdef Z
+ #define _c
+ #define y
+ #endif
+ #ifdef j
+ #define _d
+ #define z
+ #endif
+ #ifdef k
+ #define _e
+ #define A
+ #endif
+ #ifdef m
+ #define _f
+ #define B
+ #endif
+ #ifdef n
+ #define _g
+ #define r
+ #endif
+ #else
+ #define c
+ #ifdef L
+ #undef L
+ #define d
+ #endif
+ #ifdef M
+ #undef M
+ #define e
+ #endif
+ #ifdef N
+ #undef N
+ #define f
+ #endif
+ #ifdef P
+ #undef P
+ #define g
+ #endif
+ #ifdef R
+ #undef R
+ #define h
+ #endif
+ #ifdef S
+ #undef S
+ #define Z
+ #endif
+ #ifdef T
+ #undef T
+ #define j
+ #endif
+ #ifdef U
+ #undef U
+ #define k
+ #endif
+ #ifdef V
+ #undef V
+ #define m
+ #endif
+ #ifdef W
+ #undef W
+ #define n
+ #endif
+ #define H
+ #include FNAME
+ #define E
+ #include FNAME
+ #define t
+ #ifdef d
+ #define L
+ #define s
+ #endif
+ #ifdef e
+ #define M
+ #define u
+ #endif
+ #ifdef f
+ #define N
+ #define v
+ #endif
+ #ifdef g
+ #define P
+ #define w
+ #endif
+ #ifdef h
+ #define R
+ #define x
+ #endif
+ #ifdef Z
+ #define S
+ #define y
+ #endif
+ #ifdef j
+ #define T
+ #define z
+ #endif
+ #ifdef k
+ #define U
+ #define A
+ #endif
+ #ifdef m
+ #define V
+ #define B
+ #endif
+ #ifdef n
+ #define W
+ #define r
+ #endif
+ #endif
+ #endif
+ #define o
+ #include FNAME
+ #ifdef _y
+ #undef _y
+ #define c
+ #endif
+ #ifdef _z
+ #undef _z
+ #define d
+ #endif
+ #ifdef _A
+ #undef _A
+ #define e
+ #endif
+ #ifdef _B
+ #undef _B
+ #define f
+ #endif
+ #ifdef _C
+ #undef _C
+ #define g
+ #endif
+ #ifdef _D
+ #undef _D
+ #define h
+ #endif
+ #ifdef _E
+ #undef _E
+ #define Z
+ #endif
+ #ifdef _F
+ #undef _F
+ #define j
+ #endif
+ #ifdef _G
+ #undef _G
+ #define k
+ #endif
+ #ifdef _H
+ #undef _H
+ #define m
+ #endif
+ #ifdef _I
+ #undef _I
+ #define n
+ #endif
+ #ifdef J
+ #define o
+ #include FNAME
+ #ifdef _s
+ #define c
+ #endif
+ #ifdef L
+ #define d
+ #endif
+ #ifdef M
+ #define e
+ #endif
+ #ifdef N
+ #define f
+ #endif
+ #ifdef P
+ #define g
+ #endif
+ #ifdef R
+ #define h
+ #endif
+ #ifdef S
+ #define Z
+ #endif
+ #ifdef T
+ #define j
+ #endif
+ #ifdef U
+ #define k
+ #endif
+ #ifdef V
+ #define m
+ #endif
+ #ifdef W
+ #define n
+ #endif
+ #define H
+ #include FNAME
+ #define E
+ #include FNAME
+ #ifdef _M
+ #define t
+ #endif
+ #ifdef X
+ #define s
+ #endif
+ #ifdef Y
+ #define u
+ #endif
+ #ifdef _i
+ #define v
+ #endif
+ #ifdef _a
+ #define w
+ #endif
+ #ifdef _b
+ #define x
+ #endif
+ #ifdef _c
+ #define y
+ #endif
+ #ifdef _d
+ #define z
+ #endif
+ #ifdef _e
+ #define A
+ #endif
+ #ifdef _f
+ #define B
+ #endif
+ #ifdef _g
+ #define r
+ #endif
+ #define _w
+ #include FNAME
+ #ifdef J
+ #undef i
+ #include FNAME
+ #ifdef _h
+| 2
+ #endif
+ #ifdef _t
+| 4
+ #endif
+ #ifdef _3
+| 8
+ #endif
+ #ifdef _4
 | 16
-I
-O _5
+ #endif
+ #ifdef _5
 | 32
-I
-O _6
+ #endif
+ #ifdef _6
 | 64
-I
-O _7
+ #endif
+ #ifdef _7
 |128
-I
-O _8
+ #endif
+ #ifdef _8
 |256
-I
-O _9
+ #endif
+ #ifdef _9
 |512
-I
+ #endif
 )
 ;
-I
-C  o
-l
-C  c
-O _h
-Q _h
-C  d
-I
-O _t
-Q _t
-C  e
-I
-O _3
-Q _3
-C  f
-I
-O _4
-Q _4
-C  g
-I
-O _5
-Q _5
-C  h
-I
-O _6
-Q _6
-C  Z
-I
-O _7
-Q _7
-C  j
-I
-O _8
-Q _8
-C  k
-I
-O _9
-Q _9
-C  m
-I
-O _r
-Q _r
-C  n
-I
-C  H
-l
-O  d
-C _h
-I
-O  e
-C _t
-I
-O  f
-C _3
-I
-O  g
-C _4
-I
-O  h
-C _5
-I
-O  Z
-C _6
-I
-O  j
-C _7
-I
-O  k
-C _8
-I
-O  m
-C _9
-I
-O  n
-C _r
-I
-C  o
-l
-Q _s
-G
-O _q
-C  F
-G
-C _u
-I
-l
-O  c
-C _y
-I
-O  d
-C _z
-I
-O  e
-C _A
-I
-O  f
-C _B
-I
-O  g
-C _C
-I
-O  h
-C _D
-I
-O  Z
-C _E
-I
-O  j
-C _F
-I
-O  k
-C _G
-I
-O  m
-C _H
-I
-O  n
-C _I
-I
-I
-I
-G
-O _J
-C _x
-l
-l
-l
-l
-l
-l
-l
-l
-l
-l
-Q _x
-G
-O _K
-C _J
-l
-l
-l
-l
-l
-l
-l
-l
-l
-l
-Q _J
-G
-C _K
-l
-l
-l
-l
-l
-l
-l
-l
-l
-l
-Q _K
-D  K
-l
-I
-I
-I
-I
-I
-I
-I
-I
-I
-I
-I
-G
-C  i
-O _N
-pri\
-ntf(
+ #endif
+ #define o
+ #include FNAME
+ #define c
+ #ifdef _h
+ #undef _h
+ #define d
+ #endif
+ #ifdef _t
+ #undef _t
+ #define e
+ #endif
+ #ifdef _3
+ #undef _3
+ #define f
+ #endif
+ #ifdef _4
+ #undef _4
+ #define g
+ #endif
+ #ifdef _5
+ #undef _5
+ #define h
+ #endif
+ #ifdef _6
+ #undef _6
+ #define Z
+ #endif
+ #ifdef _7
+ #undef _7
+ #define j
+ #endif
+ #ifdef _8
+ #undef _8
+ #define k
+ #endif
+ #ifdef _9
+ #undef _9
+ #define m
+ #endif
+ #ifdef _r
+ #undef _r
+ #define n
+ #endif
+ #define H
+ #include FNAME
+ #ifdef d
+ #define _h
+ #endif
+ #ifdef e
+ #define _t
+ #endif
+ #ifdef f
+ #define _3
+ #endif
+ #ifdef g
+ #define _4
+ #endif
+ #ifdef h
+ #define _5
+ #endif
+ #ifdef Z
+ #define _6
+ #endif
+ #ifdef j
+ #define _7
+ #endif
+ #ifdef k
+ #define _8
+ #endif
+ #ifdef m
+ #define _9
+ #endif
+ #ifdef n
+ #define _r
+ #endif
+ #define o
+ #include FNAME
+ #undef _s
+ #else
+ #ifdef _q
+ #define F
+ #else
+ #define _u
+ #endif
+ #include FNAME
+ #ifdef c
+ #define _y
+ #endif
+ #ifdef d
+ #define _z
+ #endif
+ #ifdef e
+ #define _A
+ #endif
+ #ifdef f
+ #define _B
+ #endif
+ #ifdef g
+ #define _C
+ #endif
+ #ifdef h
+ #define _D
+ #endif
+ #ifdef Z
+ #define _E
+ #endif
+ #ifdef j
+ #define _F
+ #endif
+ #ifdef k
+ #define _G
+ #endif
+ #ifdef m
+ #define _H
+ #endif
+ #ifdef n
+ #define _I
+ #endif
+ #endif
+ #endif
+ #else
+ #ifdef _J
+ #define _x
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #undef _x
+ #else
+ #ifdef _K
+ #define _J
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #undef _J
+ #else
+ #define _K
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #include FNAME
+ #undef _K
+ #ifndef K
+ #include FNAME
+ #endif
+ #endif
+ #endif
+ #endif
+ #endif
+ #endif
+ #endif
+ #endif
+ #endif
+ #endif
+ #endif
+ #else
+ #define i
+ #ifdef _N
+printf(
+
 "%d"
 "\n"
 ,
-1
-G
-#  \
-inc\
-lud\
-e<s\
-tdi\
-o.h>
-int\
- ma\
-in()
-C _N
-C _h
-C _M
-Q  i
+1);
+ #else
+
+
+
+
+
+
+int
+ main()
+
+ #define _N
+ #define _h
+ #define _M
+ #undef i
 {
-l
+ #include "vik2_1.c"
 +
-1
-)
-;
-l
+1);
+
+ #include "vik2_1.c"
 }
-I
-I
+ #endif
+ #endif
