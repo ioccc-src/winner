@@ -1256,6 +1256,11 @@ Cody, though he feels slightly sick :-), added a version for Windows based on
 the author's comments (along with looking up the function for the right header
 file). To build try the alt rule of the Makefile.
 
+## [2012/blakely](2012/blakely/blakely.c) ([README.md](2012/blakely/README.md))
+
+Cody added explicit linking of libm (`-lm`) as not all systems do this
+implicitly (linux doesn't seem to but macOS does).
+
 ## [2012/endoh1](2012/endoh1/endoh1.c) ([README.md](2012/endoh1/README.md))
 
 Cody added explicit linking of libm (`-lm`) as not all systems do this
