@@ -1319,6 +1319,12 @@ He also added explicit linking of libm (`-lm`) for systems that do not do this
 Cody added explicit linking of libm (`-lm`) for systems that do not do this
 (linux doesn't seem to but macOS does).
 
+## [2018/hou](2018/hou/prog.c) ([README.md](2018/hou/README.md))
+
+Cody added explicit linking of libm (`-lm`) for systems that do not do this
+(linux doesn't seem to but macOS does).
+
+
 
 ## [2019/ciura](2019/ciura/prog.c) ([README.md](2019/ciura/README.md]))
 
