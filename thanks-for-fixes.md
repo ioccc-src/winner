@@ -708,6 +708,12 @@ README.md file.
 Cody added a call to `endwin()` to restore terminal sanity (echo etc.) when
 exiting the program.
 
+## [1998/fanf](1998/fanf/fanf.c) ([README.md](1998/fanf/README.md))
+
+Cody fixed this for Linux. The problem was the intermediate steps to get to the
+final code that is compiled. The entry itself is what was essentially what used
+to be compiled. Now it works with both Linux and macOS (and BSD?).
+
 
 ## [1998/schnitzi](1998/schnitzi/schnitzi.c) ([README.md](1998/schnitzi/README.md]))
 
