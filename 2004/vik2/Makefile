@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-strict-prototypes
+CSILENCE= -Wno-strict-prototypes -Wno-implicit-function-declaration
 
 # Common C compiler warning flags
 #
@@ -127,11 +127,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	${RM} -f ${PROG}_1.c
-	${CC} -E '-DSTOP=_5' '-DFNAME="${PROG}_1.c"' ${PROG}.c > ${PROG}_1.c
-	${RM} -f ${PROG}_2.c
-	${CC} -E ${PROG}_1.c > ${PROG}_2.c
-	${CC} ${CFLAGS} ${PROG}_2.c -o ${PROG}
+	${CC} ${CFLAGS} -DFNAME='"${PROG}.c"' '-DSTOP=_5' ${PROG}.c -o ${PROG}
 
 # alternative executable
 #
@@ -153,12 +149,12 @@ everything: all alt
 # On some systems such as Linux, this source either fails
 # to finish compiling or takes a super-long time generating
 # a huge number of compiler errors.  As such, we do not
-# recommend compiling this code.  However for some the
+# recommend compiling this code.  However for ailurophiles the
 # curiosity factor, even though it may have the effect of:
 #
 #	kill -9 cat
 #
-# may too strong for some not try to compile the original
+# may be too strong to not try and compile the original
 # vik2 source code.  Therefore we offer this special
 # Makefile rule for those who do not wish curtail their curiosity.
 #
@@ -184,14 +180,13 @@ clean:
 	    ${RM} -f indent.c; \
 	fi
 vik2_clean:
-	${RM} -f vik2_1.c vik2_2.c vik2.o
+	${RM} -f vik2.o
 
 vik2_clobber: vik2_clean
 	${RM} -f vik2
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -f ${PROG}_1.c ${PROG}_2.c
 	${RM} -f ${PROG}.possible.cat.death_1.c ${PROG}.possible.cat.death_2.c cat-killing-curiosity
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
