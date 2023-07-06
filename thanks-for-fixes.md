@@ -1314,6 +1314,11 @@ files from compiling properly, trying instead to compile already compiled code.
 He also added explicit linking of libm (`-lm`) for systems that do not do this
 (linux seems to not but macOS does).
 
+## [2018/bellard](2018/bellard/prog.c) ([README.md](2018/bellard/README.md))
+
+Cody added explicit linking of libm (`-lm`) for systems that do not do this
+(linux doesn't seem to but macOS does).
+
 
 ## [2019/ciura](2019/ciura/prog.c) ([README.md](2019/ciura/README.md]))
 

@@ -75,7 +75,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS= -lcurses
+LIBS= -lcurses -lm
 
 # C compiler to use
 #
