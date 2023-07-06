@@ -1305,6 +1305,11 @@ that there are others as well but we don't seem to have them and he didn't
 provide them on his page. We've not yet contacted him for a copy but we will in
 time.
 
+## [2015/hou](2015/hou/prog.c) ([README.md](2015/hou/README.md))
+
+Cody added explicit linking of libm (`-lm`) for systems that do not do this
+(linux doesn't seem to but macOS does).
+
 
 ## [2015/yang](2015/yang/prog.c) ([README.md](2015/yang/README.md]))
 
