@@ -1323,6 +1323,10 @@ were linking errors.
 
 ## [2015/endoh3](2015/endoh3/prog.c) ([README.md](2015/endoh3/README.md]))
 
+Cody fixed this to compile with linux which was having a problem with duplicate
+symbols of `main()`. The fix is through the option `-fcommon` which will let it
+compile like it does with macOS.
+
 The author, Yusuke, supplied the additional source files, which Cody added to
 the repo for us. Yusuke wrote in his [analysis of the
 entry](https://mame-github-io.translate.goog/ioccc-ja-spoilers/2015/endoh3.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp)
