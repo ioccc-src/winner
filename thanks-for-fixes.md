@@ -1349,6 +1349,11 @@ Cody made the author's statement that the entry compiles cleanly true by fixing
 versions of C` (in main()). Not strictly necessary but if he's making fixes he
 might as well.
 
+## [2019/dogon](2019/dogon/prog.c) ([README.md](2019/dogon/README.md))
+
+Cody added explicit linking of libm (`-lm`) for systems that do not do this
+(linux does not seem to but macOS does).
+
 
 ## [2019/karns](2019/karns/prog.c) ([README.md](2019/karns/README.md]))
 
