@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-macro-redefined \
 	-Wno-null-character -Wno-overlength-strings -Wno-parentheses \
 	-Wno-shift-op-parentheses -Wno-sign-compare -Wno-unsequenced \
-	-Wno-unused-value -Wno-unused-variable
+	-Wno-unused-value -Wno-unused-variable -Wno-sequence-point
 
 # Common C compiler warning flags
 #
@@ -88,7 +88,8 @@ ifeq ($(CC),clang)
 #
 CSILENCE+= -Wno-implicit-int-conversion -Wno-missing-prototypes \
 	-Wno-missing-variable-declarations -Wno-poison-system-directories \
-	-Wno-shadow -Wno-sign-conversion -Wno-strict-prototypes
+	-Wno-shadow -Wno-sign-conversion -Wno-strict-prototypes \
+	-Wno-declaration-after-statement
 #
 CWARN+= -Weverything
 #
@@ -132,6 +133,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo "This next compile may take a while to complete:"
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
@@ -140,6 +142,7 @@ alt: data ${ALT_TARGET}
 	@${TRUE}
 
 ${PROG}.alt: ${PROG}.alt.c
+	@echo "This next compile may take a while to complete:"
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # data files
