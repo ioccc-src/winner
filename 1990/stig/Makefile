@@ -127,7 +127,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "source stig.sh ; source stig.c" | ${SH}
+	@echo "source ./stig.sh ; source ./stig.c" | ${SH}
 
 # alternative executable
 #

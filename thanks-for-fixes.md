@@ -426,6 +426,11 @@ Yusuke pointed out that `atof` nowadays needs `#include <stdlib.h>` which was
 used in order to get this to work initially (prior to this output was there but
 incomplete).
 
+## [1990/stig](1990/stig/stig.c) ([README.md](1990/stig/README.md))
+
+Cody fixed the paths in the Makefile so that this would build in linux (it
+worked fine in macOS).
+
 
 ## [1990/westley](1990/westley/westley.c) ([README.md](1990/westley/README.md]))
 
