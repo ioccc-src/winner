@@ -1429,7 +1429,7 @@ gavin: gavin.c
         ${RM} -f vi
         ${CP} sh vi
         ${RM} -f fs.tar
-        ${TAR} -cvf fs.tar sh vi gavin.c gavin.hint prim
+        ${TAR} -cvf fs.tar sh vi gavin.c README.md prim
 
 gavin_clean:
         ${RM} -f sh vi kernel gavin.o
