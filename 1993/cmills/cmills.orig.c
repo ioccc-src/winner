@@ -1,0 +1,54 @@
+long
+z[7992],W,H,*t=z,j,k,*T=z,n,b;
+#include<X11/Xlib.h>
+Window*E,D,s,w[999],*e=w;
+Display*d;
+Pixmap
+p;
+m(w,h,x,y,u,v){
+#define C XCreateSimpleWindow(d,
+XSetWindowBackgroundPixmap(d,s=C*e=C
+#define l(n)t[n]=T[n]+
+D,l(0)x,l(1)y,t[2]=w,t[3]=h,1,b,0),l(6)-x,l(7)-y,W,H,0,0,0),p);
+l(4)u;
+l(5)v;
+#define M XMapRaised(d,
+M
+s);
+M*e++);
+t+=8;
+}
+main(c,g)char**g;
+{
+XSetWindowAttributes
+a;
+XGCValues
+v;
+n=DefaultScreen(d=XOpenDisplay(0));
+p=XCreatePixmap(d,D=RootWindow(d,n),W=DisplayWidth(d,n),H=DisplayHeight(d,n),DefaultDepth(d,n));
+v.subwindow_mode=IncludeInferiors;
+XCopyArea(d,D,p,XCreateGC(d,D,GCSubwindowMode,&v),0,0,W,H,0,0);
+a.override_redirect=True;
+XChangeWindowAttributes(d,D=C
+D,0,0,W,H,0,0,b=BlackPixel(d,n)),CWOverrideRedirect,&a);
+M
+D);
+m(W,H,0,0,3,3);
+for(c=c^1?atoi(g[1]):9;
+;
+)for(T=z,n=e-(E=w);
+n--;
+T+=8,++E){
+XMoveWindow(d,*E,*T+=T[4]*c,T[1]+=T[5]*c);
+j=0;
+#define F(n,o,s)o+T[n-4]s-0&&++j&&T[n]s!1&&(T[n]=0-T[n])||
+if((F(4,0,<)F(4,T[2]-W,>)F(5,0,<)F(5,T[3]-H,>)1)&&j&&(j=T[2]/2)&&(k=T[3]/2)&&e-w<997&&rand()%32768<=T[2]*T[3]*(T[4]*T[4]+T[5]*T[5])/999){
+m(T[2]-j,T[3]-k,j,k,2,2);
+m(j,T[3]-k,0,k,-2,-2);
+m(T[2]-j,k,j,0,2,-2);
+T[7]-=2;
+XResizeWindow(d,*E,T[2]=j,T[3]=k);
+T[6]-=2;
+}
+}
+}
