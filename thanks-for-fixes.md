@@ -914,6 +914,23 @@ valid, btw.
 
 ## [2001/coupard](2001/coupard/coupard.c) ([README.md](2001/coupard/README.md]))
 
+Cody fixed this to compile with clang in linux. The problem was C99 does not
+support implicit int:
+
+```c
+coupard.c:31:10: error: parameter 'h' was not declared, defaults to 'int'; ISO C99 and later do not support implicit int [-Wimplicit-int]
+void e(n,h){
+         ^
+coupard.c:31:8: error: parameter 'n' was not declared, defaults to 'int'; ISO C99 and later do not support implicit int [-Wimplicit-int]
+void e(n,h){
+       ^
+
+```
+
+One fix would be to disable that warning. Another one might be to change the C
+standard. The one that was done, to make it more portable, was to just add 'int'
+to the function parameters.
+
 Thanks go to Yusuke for providing a proper command line for macOS (to do with
 sound; see his [/2013/endoh3/README.md](2013/endoh3/README.md) entry where he
 also refers to sound devices in macOS).
