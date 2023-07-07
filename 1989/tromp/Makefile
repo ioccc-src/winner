@@ -40,7 +40,8 @@ include ../../var.mk
 #
 CSILENCE= -Wno-error -Wno-pointer-to-int-cast -Wno-no-return-type -Wno-empty-body \
 	  -Wno-implicit-function-declaration -Wno-string-plus-int -Wno-return-type \
-	  -Wno-unknown-warning-option
+	  -Wno-unknown-warning-option -Wno-deprecated-non-prototype \
+	  -Wno-shorten-64-to-32 -Wno-int-conversion
 
 # Common C compiler warning flags
 #
@@ -87,7 +88,8 @@ ifeq ($(CC),clang)
 #
 CSILENCE+= -Wno-comma -Wno-format-nonliteral -Wno-missing-prototypes \
 	-Wno-missing-variable-declarations -Wno-pedantic \
-	-Wno-poison-system-directories -Wno-strict-prototypes
+	-Wno-poison-system-directories -Wno-strict-prototypes \
+	-Wno-sign-conversion
 #
 CWARN+= -Weverything
 #

@@ -42,7 +42,7 @@ CSILENCE=  -Wno-comma -Wno-implicit-function-declaration -Wno-format-insufficien
 	-Wno-implicit-int -Wno-incompatible-library-redeclaration -Wno-missing-prototypes \
 	-Wno-missing-variable-declarations -Wno-poison-system-directories -Wno-return-type \
 	-Wno-shadow -Wno-shift-op-parentheses -Wno-strict-prototypes -Wno-unreachable-code \
-	-Wno-unused-macros
+	-Wno-unused-macros -Wno-int-conversion -Wno-macro-redefined
 
 # Common C compiler warning flags
 #

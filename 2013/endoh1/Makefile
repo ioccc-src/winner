@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE=
+CSILENCE= -Wno-deprecated-non-prototype -Wno-strict-prototypes
 
 # Common C compiler warning flags
 #
@@ -130,15 +130,19 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo "This next step may take some time to complete:"
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 hello: hello.lazy ${PROG}.c
+	@echo "This next step may take some time to complete:"
 	${CC} ${CFLAGS} -xc hello.lazy -o $@ ${LIBS}
 
 echo: echo.lazy ${PROG}.c
+	@echo "This next step may take some time to complete:"
 	${CC} ${CFLAGS} -xc echo.lazy -o $@ ${LIBS}
 
 tac: tac.lazy ${PROG}.c
+	@echo "This next step may take some time to complete:"
 	${CC} ${CFLAGS} -xc tac.lazy -o $@ ${LIBS}
 
 # alternative executable

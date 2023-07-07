@@ -40,7 +40,7 @@ include ../../var.mk
 #
 CSILENCE= -Wno-absolute-value -Wno-char-subscripts -Wno-dangling-else -Wno-error \
 	-Wno-implicit-function-declaration -Wno-parentheses \
-	-Wno-shift-op-parentheses -Wno-implicit-int
+	-Wno-shift-op-parentheses -Wno-implicit-int -Wno-strict-prototypes
 
 # Common C compiler warning flags
 #
@@ -88,7 +88,7 @@ ifeq ($(CC),clang)
 
 CSILENCE+= -Wno-double-promotion -Wno-float-conversion -Wno-implicit-float-conversion \
 	-Wno-missing-variable-declarations -Wno-poison-system-directories \
-	-Wno-shadow -Wno-shorten-64-to-32 -Wno-sign-conversion
+	-Wno-shadow -Wno-shorten-64-to-32 -Wno-sign-conversion -Wno-declaration-after-statement
 #
 CWARN+= -Weverything
 #

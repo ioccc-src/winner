@@ -38,8 +38,8 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-overlength-strings \
-	-Wno-unused-parameter
+CSILENCE= -Wno-deprecated-non-prototype -Wno-unused-parameter \
+	-Wno-error -Wno-implicit-function-declaration
 
 # Common C compiler warning flags
 #
@@ -80,13 +80,13 @@ LIBS=
 #
 CC= cc
 
-CSILENCE= -Wno-implicit-function-declaration
 # Compiler add-ons or replacements for clang only
 #
 ifeq ($(CC),clang)
 #
-CSILENCE+= -Wno-implicit-int-conversion -Wno-missing-variable-declarations \
-	-Wno-pedantic -Wno-poison-system-directorie
+CSILENCE+= -Wno-deprecated-non-prototype -Wno-implicit-int-conversion \
+	-Wno-missing-variable-declarations -Wno-overlength-strings -Wno-pedantic \
+	-Wno-poison-system-directories -Wno-unused-parameter
 #
 CWARN+= -Weverything
 #

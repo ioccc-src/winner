@@ -129,7 +129,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo This might take a while to complete.
+	@echo "This next step may take some time to complete:"
 	${CC} ${CFLAGS} ${PROG}.c ${LIBS} -o $@
 
 # alternative executable

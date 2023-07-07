@@ -43,7 +43,8 @@ CSILENCE= -Wno-bitwise-op-parentheses -Wno-bool-operation \
 	-Wno-implicit-function-declaration -Wno-implicit-int \
 	-Wno-incompatible-pointer-types -Wno-logical-not-parentheses \
 	-Wno-logical-op-parentheses -Wno-parentheses -Wno-shift-op-parentheses \
-	-Wno-sign-compare -Wno-unsequenced -Wno-unused-parameter
+	-Wno-sign-compare -Wno-unsequenced -Wno-unused-parameter \
+	-Wno-deprecated-non-prototype -Wno-return-type
 
 # Common C compiler warning flags
 #

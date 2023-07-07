@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE=
+CSILENCE= -Wno-strict-prototypes
 
 # Common C compiler warning flags
 #
@@ -85,7 +85,8 @@ ifeq ($(CC),clang)
 #
 CSILENCE+= -Wno-comma -Wno-float-conversion -Wno-implicit-int-conversion \
 	-Wno-missing-prototypes -Wno-missing-variae-declarations \
-	-Wno-poison-system-directories -Wno-shadow
+	-Wno-poison-system-directories -Wno-shadow -Wno-missing-variable-declarations \
+	-Wno-unknown-warning-option
 #
 CWARN+= -Weverything
 #
@@ -140,7 +141,7 @@ jpeg: jpeg.c
 
 jpeg.jpg: jpeg
 	${RM} -f $@
-	@echo "This next step may take some time to run:"
+	@echo "This next step may take some time to complete:"
 	./jpeg > $@
 
 check: ${DATA}

@@ -83,7 +83,9 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-#CSILENCE+=
+CSILENCE+= -Wno-format-nonliteral -Wno-implicit-int-conversion -Wno-missing-prototypes \
+        -Wno-missing-variable-declarations -Wno-poison-system-directories \
+        -Wno-shorten-64-to-32 -Wno-sign-conversion
 #
 CWARN+= -Weverything
 #
@@ -129,6 +131,7 @@ all: data ${TARGET}
 build/${PROG}: src
 	${RM} -rf build
 	${CP} -v -r src build
+	@echo "This next step may take some time to complete:"
 	cd build; CFLAGS="${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}" \
 	    LDFLAGS="${LIBS}" \
 	    CC="${CC}" \

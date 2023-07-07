@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE=
+CSILENCE= -Wno-poison-system-directories -Wno-undef
 
 # Common C compiler warning flags
 #
