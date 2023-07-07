@@ -424,6 +424,10 @@ and to prevent a warning about `gets()` at linking or runtime. Since this
 program is so incredible the extra fixes were deemed worth having and this is why
 it was done.
 
+Cody disabled a warning in the Makefile that proved to be a problem only with
+clang in linux but which was defaulting to an error. This way was the simplest
+way to deal with the problem in question due to the way the entry works.
+
 Yusuke pointed out that `atof` nowadays needs `#include <stdlib.h>` which was
 used in order to get this to work initially (prior to this output was there but
 incomplete).
@@ -604,14 +608,19 @@ which main() calls with the right parameters.
 
 Cody fixed this so it would compile and work with modern compilers. The problem
 was that `srand()` returns void but it was used in a `||` expression. Thus the
-comma operator was needed.  Cody also changed the entry to use `fgets()` instead
-of `gets()` to make it safe for lines greater than 231 in length and to prevent
-a warning at linking or at runtime, the latter of which can be interspersed with
-output of the program.  Note that this now prints a newline after the output but
-this seems like a worthy compromise for making the output incorrect in macOS and
-at the same time it's safer (fixing it to not have the extra newline is more
-problematic than it's worth and in macOS another line of output would be shown
-anyway).
+comma operator was needed.
+
+Cody also fixed it for clang under linux which objected to incompatible pointer
+type (because `time(2)` takes a `time_t *` which in some systems is a `long *`
+but what was being passed to it is an `int`).
+
+Cody also changed the entry to use `fgets()` instead of `gets()` to make it safe
+for lines greater than 231 in length and to prevent a warning at linking or at
+runtime, the latter of which can be interspersed with output of the program.
+Note that this now prints a newline after the output but this seems like a
+worthy compromise for making the output incorrect in macOS and at the same time
+it's safer (fixing it to not have the extra newline is more problematic than
+it's worth and in macOS another line of output would be shown anyway).
 
 A subtlety about this fix: if a line is greater than 231 in length if the
 program chooses that line it might print the first 231 characters or it might
@@ -1443,6 +1452,7 @@ might as well.
 Cody added explicit linking of libm (`-lm`) for systems that do not do this
 (linux does not seem to but macOS does).
 
+He also fixed the Makefile so that it compiles with clang in linux.
 
 ## [2019/karns](2019/karns/prog.c) ([README.md](2019/karns/README.md]))
 
