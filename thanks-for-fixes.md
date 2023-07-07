@@ -64,8 +64,10 @@ Scovell](https://web.archive.org/web/20070120220721/https://thomasscovell.com/ta
 Cody fixed this to not require `-traditional-cpp` which not all compilers
 support (clang does not support it for example). Clang is also more strict about
 the args' types in `main()` and this was also a problem that Cody fixed, making
-it work with both clang and gcc. For the original code with the gcc fix
-described below, see the alternate code section in the README.md file.
+it work with both clang and gcc - in macOS. It was then noticed that with clang
+in linux it did not work so this had to be further fixed which Cody also did.
+For the original code with the gcc fix (noted below), see the alternate code
+section in the README.md file.
 
 Originally Yusuke supplied a patch so that this entry would compile with gcc -
 but not clang - or at least some versions.
@@ -911,6 +913,23 @@ valid, btw.
 
 
 ## [2001/coupard](2001/coupard/coupard.c) ([README.md](2001/coupard/README.md]))
+
+Cody fixed this to compile with clang in linux. The problem was C99 does not
+support implicit int:
+
+```c
+coupard.c:31:10: error: parameter 'h' was not declared, defaults to 'int'; ISO C99 and later do not support implicit int [-Wimplicit-int]
+void e(n,h){
+         ^
+coupard.c:31:8: error: parameter 'n' was not declared, defaults to 'int'; ISO C99 and later do not support implicit int [-Wimplicit-int]
+void e(n,h){
+       ^
+
+```
+
+One fix would be to disable that warning. Another one might be to change the C
+standard. The one that was done, to make it more portable, was to just add 'int'
+to the function parameters.
 
 Thanks go to Yusuke for providing a proper command line for macOS (to do with
 sound; see his [/2013/endoh3/README.md](2013/endoh3/README.md) entry where he
