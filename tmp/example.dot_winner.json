@@ -1,6 +1,6 @@
 {
     "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
-    "winner_JSON_format_version" : "0.2 2023-05-22",
+    "winner_JSON_format_version" : "0.3 2023-06-06",
     "award" : "Award title",
     "IOCCC_contest" : "IOCCC28",
     "year" : 2024,
@@ -56,6 +56,15 @@
 	    "winners_display_via" : "GitHub",
 	    "winners_extra_text" : " - alternative program to try",
 	    "winners_rank" : 40
+	},
+	{
+	    "filename" : "prog.orig.c",
+	    "filetype" : "C",
+	    "created_by" : null,
+	    "winners_show" : true,
+	    "winners_display_via" : "GitHub",
+	    "winners_extra_text" : " - original source",
+	    "winners_rank" : 50
 	},
 	{
 	    "filename" : "raw_data.file",
