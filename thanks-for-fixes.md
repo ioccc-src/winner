@@ -1139,9 +1139,8 @@ the README.md for details.
 ## [2005/giljade](2005/giljade/giljade.c) ([README.md](2005/giljade/README.md]))
 
 After Landon fixed the entry to compile with clang (but see above and below)
-Cody noticed this does not
-work at all in modern systems. He fixed this to work but he notes that the fix
-to let clang compile it breaks the self-test feature.
+Cody noticed this does not work at all in modern systems. He fixed this to work
+but he notes that the fix to let clang compile it breaks the self-test feature.
 
 The problem that was showing up is that with either optimising or if anything
 but 32-bit (as in `-m32`) was used it would not work (at least in 64-bit
@@ -1151,7 +1150,7 @@ and 64-bit. The solution has to do with the size difference between `int` and
 linux (32-bit, 64-bit) and macOS (arm64).
 
 But as noted there is another problem with clang: the self-test feature only
-completely works with the original version ([giljade.alt.c](giljade.alt.c)), not
+completely works with the original version ([giljade.alt.c](giljade.alt.c), not
 the one that will compile with clang ([giljade.c](giljade.c)). The alternate
 version, which will not compile with clang, is the only one that passes the
 self-tests. If your compiler does not have the defect that clang has about arg
@@ -1164,6 +1163,29 @@ For much more details on the problem see [bugs.md](/bugs.md).
 
 Cody added explicit linking of libm (`-lm`) for systems like linux that seem to
 not do it implicitly (like macOS does).
+
+## [2005/mikeash](2005/mikeash/mikeash.c) ([README.md](2005/mikeash/README.md))
+
+Cody fixed this to work in linux. The problem was an unknown escape sequence,
+`\N` which caused a funny compiler error:
+
+```c
+};n b[2048];int i
+mikeash.c: In function 'R':
+mikeash.c:7:1: error: '\N' not followed by '{'
+    7 | ;C!='\n';A()
+      | ^
+mikeash.c:7:1: error: incomplete universal character name \Ne
+```
+
+The problem was that in the string above there was a `\Newline` but this is
+invalid C. This was changed to be `\nNewline` and then, because the code is
+supposed to output itself when fed itself, the reference to `'N'` had to be
+updated in both the string and the code to be `'n'`.
+
+The array size of `c` was updated by 1 out of caution just in case as the array
+is used to store at least part of the string.
+
 
 
 ## [2005/mynx](2005/mynx/mynx.c) ([README.md](2005/mynx/README.md]))
