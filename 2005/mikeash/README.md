@@ -33,7 +33,7 @@ Having problems speaking code?  Do you [LISP][]?  Parenthetically
 speaking, this entry takes advantage of C99 features, while
 speaking parenthetically.  Best of all, it self-reproduces!
 
-John McCarthy might not of imagined it quite like this!  :-)
+John McCarthy might not have imagined it quite like this!  :-)
 
 [LISP]: https://en.wikipedia.org/wiki/Lisp_(programming_language)
 
