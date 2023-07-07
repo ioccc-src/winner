@@ -1217,6 +1217,14 @@ Cody also added the alt code which does scan for https. Futile, maybe, based on
 how https is set up, in which case just enjoy it for what it was. But there
 might be some command line that will let it work that way.
 
+## [2005/toledo](2005/toledo/toledo.c) ([README.md](2005/toledo/README.md))
+
+Cody fixed this to compile with some versions of clang which have an additional
+defect where `main()` can only have 0, 2 or 3 args (it was 4). It now calls
+another function that takes 4 args and which is what used to be `main()`.
+
+The alternate versions were also fixed.
+
 
 ## [2006/birken](2006/birken/birken.c) ([README.md](2006/birken/README.md]))
 
