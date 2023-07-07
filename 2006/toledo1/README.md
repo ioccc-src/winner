@@ -53,8 +53,8 @@ giving initial position.
 ```
 
 It will print move order. The algorithm is so simple that you can read
-it in the source code, at the first glance it can appear checkered :-)
-but don't dismail, jar, jar.
+it on the source code.  At the first glance it can appear checkered.
+Nevertheless, don't be dismayed, jar, jar.  :-)
 
 ## Copyright and CC BY-SA 4.0 License:
 
