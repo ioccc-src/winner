@@ -433,6 +433,12 @@ which you should update and submit, using the instructions above if necessary.
 
 There are none. There was no IOCCC in those years.
 
+## Q: What are the .orig.c files in the directories in winning entries ?
+
+Due to the fact that the original code has sometimes had to change these files
+are the original winning entry or as close to as possible to the original that
+we can find.
+
 ## Q: Why don't you publish non-winners?
 
 Because the publication on the IOCCC site **_IS_**
@@ -545,7 +551,9 @@ Thank you Cody for your help!
 BTW: in this case it's a slight fix and improvement to our original suggested
 code:
 
-	main(){int i=512;do write(1,"  :-)\b\b\b\b",9),usleep(i);while(--i);}
+```c
+main(){int i=512;do write(1,"  :-)\b\b\b\b",9),usleep(i);while(--i);}
+```
 
 BTW: is there such a thing as too fast a CPU ? :-) actually yes for certain code
 which is probably not as uncommon as you think :-) ).
@@ -598,7 +606,7 @@ Thus began the tradition of putting typos in the contest rules and guidelines
 BTW: This posting was made back in the days when AT&amp;T was the evil giant.
 Now, Microsoft makes AT&amp;T look mild and kind in comparison. :-( (IMHO) ).
 
-BTW: See the story about the '[Bill Gates](/1993/mills/mills.hint)' award. :-)
+BTW: See the story about the '[Bill Gates](/1993/mills/README.md)' award. :-)
 
 OK, back to the story.
 
