@@ -54,7 +54,7 @@ altering the behavior ?
 
 Extra credit: Change the program so that it does not SHOUT IN ALL CAPS.
 
-You might also want to read the [dorssel.hint](dorssel.hint) file.
+You might also want to read the [dorssel.md](dorssel.md) file.
 
 ## Author's remarks:
 
@@ -108,11 +108,11 @@ is the same as
 ./dorssel < dorssel.c | ./dorssel
 ```
 
-- The file "dorssel.hint" contains all the information needed to understand this
-program.  For an obfuscated spoiler, try
+- The file [dorssel.md](dorssel.md) contains all the information needed to
+understand this program.  For an obfuscated spoiler, try
 
 ```sh
-./dorssel < dorssel.hint 
+./dorssel < dorssel.md 
 ```
 
 ## Copyright and CC BY-SA 4.0 License:
