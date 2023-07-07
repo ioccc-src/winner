@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-bitwise-conditional-parentheses -Wno-bitwise-op-parentheses \
 	-Wno-deprecated-declarations -Wno-format -Wno-parentheses \
 	-Wno-shift-op-parentheses -Wno-sign-compare -Wno-unused-variable \
-	-Wno-main-return-type -Wno-return-type -Wno-unused-parameter
+	-Wno-main-return-type -Wno-return-type -Wno-unused-parameter -Wno-implicit-function-declaration
 
 # Common C compiler warning flags
 #
@@ -64,7 +64,7 @@ CDEFINE= -DX=1280l -DY=1024l -DZ=0x20000000
 
 # Include files that are needed to compile
 #
-CINCLUDE= -I ${X11_INCDIR} -I ${X11_INCDIR}/X11
+CINCLUDE= -include stdio.h -I ${X11_INCDIR} -I ${X11_INCDIR}/X11
 
 # Optimization
 #

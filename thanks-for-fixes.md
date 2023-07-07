@@ -1443,6 +1443,7 @@ might as well.
 Cody added explicit linking of libm (`-lm`) for systems that do not do this
 (linux does not seem to but macOS does).
 
+He also fixed the Makefile so that it compiles with clang in linux.
 
 ## [2019/karns](2019/karns/prog.c) ([README.md](2019/karns/README.md]))
 
