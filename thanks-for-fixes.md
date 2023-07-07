@@ -424,6 +424,10 @@ and to prevent a warning about `gets()` at linking or runtime. Since this
 program is so incredible the extra fixes were deemed worth having and this is why
 it was done.
 
+Cody disabled a warning in the Makefile that proved to be a problem only with
+clang in linux but which was defaulting to an error. This way was the simplest
+way to deal with the problem in question due to the way the entry works.
+
 Yusuke pointed out that `atof` nowadays needs `#include <stdlib.h>` which was
 used in order to get this to work initially (prior to this output was there but
 incomplete).
