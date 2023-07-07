@@ -652,6 +652,12 @@ missing `int` for the `f` variable. He felt it was important that it works
 because the layout does indeed look to him like a rat is dropping core,
 something that the judges suggested.
 
+## [1995/makarios](1995/makarios/makarios.c) ([README.md](1995/makarios/README.md))
+
+Cody fixed this so that it will compile with versions of clang that has a defect
+which only allows `main()` to have 0, 2 or 3 args. This is done by a new
+function (`pain()` as it's annoying that clang is this way :-) ) that main()
+calls which has the four args.
 
 ## [1996/august](1996/august/august.c) ([README.md](1996/august/README.md]))
 
