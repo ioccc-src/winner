@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-newline-eof -Wno-strict-prototypes
+CSILENCE= -Wno-newline-eof
 
 # Common C compiler warning flags
 #

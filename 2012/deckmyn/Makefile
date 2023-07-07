@@ -85,8 +85,7 @@ CC= cc
 ifeq ($(CC),clang)
 #
 CSILENCE+= -Wno-cast-align -Wno-comma -Wno-implicit-int-conversion \
-	-Wno-poison-system-directorie -Wno-unknown-warning-option \
-	-Wno-poison-system-directories
+	-Wno-poison-system-directorie
 #
 CWARN+= -Weverything
 #

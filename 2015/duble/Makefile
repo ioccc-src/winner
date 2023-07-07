@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-bitwise-op-parentheses -Wno-implicit-int -Wno-int-conversion \
 	    -Wno-logical-op-parentheses -Wno-overlength-strings -Wno-return-type \
 	    -Wno-shift-op-parentheses -Wno-string-plus-int -Wno-unsequenced \
-	    -Wno-unused-value -Wno-strict-prototypes
+	    -Wno-unused-value
 
 # Common C compiler warning flags
 #

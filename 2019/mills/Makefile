@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-for-loop-analysis -Wno-missing-field-initializers -Wno-strict-prototypes
+CSILENCE= -Wno-for-loop-analysis -Wno-missing-field-initializers
 
 # Common C compiler warning flags
 #
@@ -87,8 +87,7 @@ CSILENCE+= -Wno-double-promotion -Wno-float-conversion -Wno-format-nonliteral \
 	-Wno-implicit-float-conversion -Wno-implicit-int-conversion \
 	-Wno-missing-prototypes -Wno-missing-variable-declarations \
 	-Wno-poison-system-directories -Wno-shadow -Wno-shorten-64-to-32 \
-	-Wno-sign-conversion -Wno-strict-prototypes -Wno-vla \
-	-Wno-conditional-uninitialized -Wno-declaration-after-statement
+	-Wno-sign-conversion -Wno-strict-prototypes -Wno-vla
 #
 CWARN+= -Weverything
 #

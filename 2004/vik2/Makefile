@@ -83,7 +83,7 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-CSILENCE+= -Wno-poison-system-directories -Wno-unused-macros
+CSILENCE+= -Wno-poison-system-directories
 #
 CWARN+= -Weverything
 #

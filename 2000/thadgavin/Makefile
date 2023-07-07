@@ -38,8 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-empty-body -Wno-implicit-int -Wno-unsequenced \
-	-Wno-deprecated-non-prototype -Wno-unused-parameter
+CSILENCE= -Wno-empty-body -Wno-implicit-int -Wno-unsequenced
 
 # Common C compiler warning flags
 #

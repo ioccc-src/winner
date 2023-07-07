@@ -40,8 +40,7 @@ include ../../var.mk
 #
 CSILENCE= -Wno-pedantic -Wno-logical-not-parentheses -Wno-implicit-function-declaration \
 	-Wno-incompatible-pointer-types -Wno-int-conversion -Wno-pointer-to-int-cast \
-	-Wno-pointer-integer-compare -Wno-compare-distinct-pointer-types \
-	-Wno-deprecated-non-prototype
+	-Wno-pointer-integer-compare -Wno-compare-distinct-pointer-types
 
 # Common C compiler warning flags
 #
@@ -86,8 +85,7 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-CSILENCE+= -Wno-poison-system-directories -Wno-comma \
-	-Wno-missing-prototypes
+CSILENCE+= -Wno-poison-system-directories -Wno-comma
 #
 CWARN+= -Weverything
 #

@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-implicit-int -Wno-unsequenced -Wno-strict-prototypes
+CSILENCE= -Wno-implicit-int -Wno-unsequenced
 
 # Common C compiler warning flags
 #
@@ -84,7 +84,7 @@ CC= cc
 ifeq ($(CC),clang)
 #
 CSILENCE+= -Wno-comma -Wno-double-promotion -Wno-implicit-float-conversion \
-	-Wno-poison-system-directories -Wno-declaration-after-statement
+	-Wno-poison-system-directories
 #
 CWARN+= -Weverything
 #

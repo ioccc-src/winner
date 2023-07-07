@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-empty-body -Wno-backslash-newline-escape
+CSILENCE= -Wno-empty-body
 
 # Common C compiler warning flags
 #

@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-empty-body -Wno-missing-field-initializers -Wno-strict-prototypes
+CSILENCE= -Wno-empty-body -Wno-missing-field-initializers
 
 # Common C compiler warning flags
 #
@@ -86,7 +86,7 @@ ifeq ($(CC),clang)
 CSILENCE+= -Wno-comma -Wno-float-conversion -Wno-implicit-float-conversion \
 	-Wno-missing-prototypes -Wno-poison-system-directories -Wno-shadow \
 	-Wno-shorten-64-to-32 -Wno-sign-conversion -Wno-strict-prototypes \
-	-Wno-vla -Wno-declaration-after-statement
+	-Wno-vla
 #
 CWARN+= -Weverything
 #

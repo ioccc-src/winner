@@ -38,8 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-error -Wno-implicit-function-declaration \
-	-Wno-deprecated-non-prototype -Wno-strict-prototypes
+CSILENCE= -Wno-error -Wno-implicit-function-declaration
 
 # Common C compiler warning flags
 #

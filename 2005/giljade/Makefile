@@ -43,7 +43,7 @@ CSILENCE= -Wno-bitwise-conditional-parentheses -Wno-bitwise-op-parentheses \
 	-Wno-implicit-function-declaration -Wno-extra-semi -Wno-implicit-int \
 	-Wno-logical-op-parentheses -Wno-return-type -Wno-shift-op-parentheses \
 	-Wno-unused-value -Wno-incompatible-pointer-types -Wno-int-conversion \
-	-Wno-parentheses -Wno-misleading-indentation -Wno-strict-prototypes
+	-Wno-parentheses -Wno-misleading-indentation
 
 # Common C compiler warning flags
 #
@@ -90,8 +90,7 @@ ifeq ($(CC),clang)
 #
 CSILENCE+= -Wno-comma -Wno-format-nonliteral -Wno-missing-prototypes \
 	-Wno-missing-variable-declarations -Wno-poison-system-directories \
-	-Wno-strict-prototypes -Wno-parentheses -Wno-misleading-indentation \
-	-Wno-shorten-64-to-32
+	-Wno-strict-prototypes -Wno-parentheses -Wno-misleading-indentation
 #
 CWARN+= -Weverything
 #

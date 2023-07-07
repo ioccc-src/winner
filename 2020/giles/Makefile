@@ -85,8 +85,7 @@ ifeq ($(CC),clang)
 #
 CSILENCE+= -Wno-disabled-macro-expansion -Wno-float-conversion -Wno-float-equal \
 	-Wno-missing-variable-declarations -Wno-poison-system-directories \
-	-Wno-shadow -Wno-shorten-64-to-32 -Wno-sign-conversion \
-	-Wno-declaration-after-statement
+	-Wno-shadow -Wno-shorten-64-to-32 -Wno-sign-conversion
 #
 CWARN+= -Weverything
 #

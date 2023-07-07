@@ -39,8 +39,7 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-format-security -Wno-implicit-int -Wno-int-to-pointer-cast \
-	-Wno-pointer-to-int-cast -Wno-deprecated-non-prototype \
-	-Wno-incompatible-pointer-types
+	-Wno-pointer-to-int-cast
 
 # Common C compiler warning flags
 #
@@ -86,7 +85,7 @@ CC= cc
 ifeq ($(CC),clang)
 #
 CSILENCE+= -Wno-missing-variable-declarations -Wno-pedantic \
-	-Wno-poison-system-directories -Wno-shadow -Wno-implicit-int-conversion
+	-Wno-poison-system-directories -Wno-shadow
 #
 CWARN+= -Weverything
 #

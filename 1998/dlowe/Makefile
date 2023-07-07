@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-main-return-type -Wno-strict-prototypes
+CSILENCE= -Wno-main-return-type
 
 # Common C compiler warning flags
 #

@@ -42,7 +42,7 @@ CSILENCE= -Wno-bitwise-op-parentheses -Wno-conditional-type-mismatch \
 	-Wno-declaration-after-statement -Wno-dollar-in-identifier-extension \
 	-Wno-error -Wno-implicit-function-declaration \
 	-Wno-incompatible-pointer-types -Wno-int-conversion -Wno-parentheses \
-	-Wno-return-type -Wno-strict-prototypes
+	-Wno-return-type
 
 # Common C compiler warning flags
 #
@@ -135,6 +135,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo "This next step may take some time to run:"
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable

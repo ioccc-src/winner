@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-deprecated-non-prototype
+CSILENCE=
 
 # Common C compiler warning flags
 #
@@ -83,7 +83,7 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-CSILENCE+= -Wno-poison-system-directories -Wno-comma -Wno-shorten-64-to-32
+CSILENCE+= -Wno-poison-system-directories
 #
 CWARN+= -Weverything
 #

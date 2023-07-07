@@ -88,8 +88,7 @@ CC= cc
 ifeq ($(CC),clang)
 #
 CSILENCE= -Wno-unused-value -Wno-misleading-indentation -Wno-parentheses \
-	  -Wno-unknown-warning-option -Wno-poison-system-directories \
-	  -Wno-declaration-after-statement -Wno-padded
+	  -Wno-unknown-warning-option -Wno-poison-system-directories
 #
 CWARN+= -Weverything
 #

@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-bitwise-op-parentheses -Wno-error -Wno-implicit-function-declaration \
 	-Wno-implicit-int -Wno-int-conversion -Wno-int-to-pointer-cast \
 	-Wno-pedantic -Wno-pointer-sign -Wno-pointer-to-int-cast -Wno-return-type \
-	-Wno-unused-but-set-parameter -Wno-unused-value -Wno-deprecated-non-prototype
+	-Wno-unused-but-set-parameter -Wno-unused-value
 
 # Common C compiler warning flags
 #

@@ -39,7 +39,7 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-extra-tokens \
-	-Wno-overlength-strings -Wno-strict-prototypes
+	-Wno-overlength-strings
 
 # Common C compiler warning flags
 #

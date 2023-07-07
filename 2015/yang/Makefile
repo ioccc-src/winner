@@ -87,8 +87,7 @@ ifeq ($(CC),clang)
 CSILENCE+= -Wno-c99-compat -Wno-comma -Wno-double-promotion -Wno-float-conversion \
 	-Wno-implicit-float-conversion -Wno-missing-prototypes \
 	-Wno-missing-variable-declarations -Wno-poison-system-directories \
-	-Wno-unreachable-code -Wno-c++98-compat -Wno-old-style-cast \
-	-Wno-zero-as-null-pointer-constant
+	-Wno-unreachable-code
 #
 CWARN+= -Weverything
 #

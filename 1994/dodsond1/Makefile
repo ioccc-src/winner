@@ -39,8 +39,7 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-empty-body -Wno-error -Wno-implicit-function-declaration \
-	-Wno-missing-braces -Wno-return-type -Wno-deprecated-non-prototype \
-	-Wno-strict-prototypes
+	-Wno-missing-braces -Wno-return-type
 
 # Common C compiler warning flags
 #

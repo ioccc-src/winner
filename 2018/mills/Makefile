@@ -38,8 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-gnu-empty-initializer -Wno-missing-field-initializers \
-	-Wno-strict-prototypes
+CSILENCE= -Wno-gnu-empty-initializer -Wno-missing-field-initializers
 
 # Common C compiler warning flags
 #

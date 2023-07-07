@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-sign-compare -Wno-deprecated-non-prototype -Wno-strict-prototypes
+CSILENCE= -Wno-sign-compare
 
 # Common C compiler warning flags
 #

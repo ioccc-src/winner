@@ -86,7 +86,7 @@ ifeq ($(CC),clang)
 CSILENCE+= -Wno-comma -Wno-conversion -Wno-documentation -Wno-double-promotion \
 	-Wno-missing-prototypes -Wno-missing-variable-declarations \
 	-Wno-poison-system-directories -Wno-redundant-parens -Wno-shadow \
-	-Wno-sign-conversion -Wno-declaration-after-statement
+	-Wno-sign-conversion
 #
 CWARN+= -Weverything
 #
