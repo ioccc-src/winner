@@ -20,7 +20,7 @@ _O: while (!(k['a'] <<= - dup)) {	/*/*\*/
 while(b = 3, i); {
 k['a'] = b,i;
   _0:if(b&&(int)k+
-sin(signal)              / *    ((main) (((struct tag *)b)-> xO)));/*}
+sin(signal)              / *    ((main) (*((struct tag *)b)-> xO)));/*}
   ;
 }
 

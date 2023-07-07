@@ -64,8 +64,10 @@ Scovell](https://web.archive.org/web/20070120220721/https://thomasscovell.com/ta
 Cody fixed this to not require `-traditional-cpp` which not all compilers
 support (clang does not support it for example). Clang is also more strict about
 the args' types in `main()` and this was also a problem that Cody fixed, making
-it work with both clang and gcc. For the original code with the gcc fix
-described below, see the alternate code section in the README.md file.
+it work with both clang and gcc - in macOS. It was then noticed that with clang
+in linux it did not work so this had to be further fixed which Cody also did.
+For the original code with the gcc fix (noted below), see the alternate code
+section in the README.md file.
 
 Originally Yusuke supplied a patch so that this entry would compile with gcc -
 but not clang - or at least some versions.
