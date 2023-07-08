@@ -8,25 +8,24 @@ Ed Lycklama
 make all
 ```
 
-
-With a tip from [Yusuke Endoh](/winners.html#Yusuke_Endoh)  it was indirectly
-noticed that if one slows down the call to `write()` one can see some fun output
-that's not visible with modern systems so Cody added a call to `usleep()`. The
-default time is `0` which disables it (in order to make it as close to original
-as possible; an alt version already exists mostly for fun output). In order to
-change the speed (try 500 or 700) do:
+If you have an old enough compiler you can try:
 
 ```sh
-make CDEFINE+="-DZ=700" clobber all
+make lycklama.orig
 ```
 
-Thank you Yusuke!
+
+
 
 ## To run:
 
 ```sh
 ./lycklama < some_file
 ```
+
+There is an alternate version which slows down the output for a more fun display
+with modern systems. For this reason we encourage you to try that version
+as well. See Alternate code section below. 
 
 ## Try:
 
@@ -40,20 +39,29 @@ Thank you Yusuke!
 
 ./lycklama < Makefile
 
-make CDEFINE+="-DZ=700" clobber all && ./lycklama < lycklama.c
 ```
+
 
 ### Alternative code:
 
-If you have an older compiler that lets you define some object to `#define` and
-then use it in place of `#define` you can run:
+This alternate version slows down the output which will provide more fun
+output. The default time passed to `usleep(3)` is `500` but you can reconfigure
+it like:
+
 
 ```sh
-make alt
+make CDEFINE+="-DZ=700" clobber alt
 ```
 
-Use `./lylycklama.alt` as you would `./lycklama` above.
+Use `./lycklama.alt` as you would `./lycklama` above.
 
+#### Try:
+
+```sh
+./lycklama.alt < lycklama.alt.c
+./lycklama.alt < lycklama.orig.c
+./lycklama.alt < Makefile
+```
 
 ## Judges' remarks:
 

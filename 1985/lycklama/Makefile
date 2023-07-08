@@ -58,7 +58,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE= -DZ=0
+CDEFINE= -DZ=500
 
 # Include files that are needed to compile
 #
