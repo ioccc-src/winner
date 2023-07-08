@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-absolute-value -Wno-keyword-macro
+CSILENCE= -Wno-absolute-value -Wno-keyword-macro -Wno-newline-eof
 
 # Common C compiler warning flags
 #

@@ -83,7 +83,8 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-CSILENCE+= -Wno-missing-variable-declarations -Wno-poison-system-directories
+CSILENCE+= -Wno-missing-variable-declarations -Wno-poison-system-directories \
+	-Wno-shorten-64-to-32 -Wno-sign-conversion
 #
 CWARN+= -Weverything
 #

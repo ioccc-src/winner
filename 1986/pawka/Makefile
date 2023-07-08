@@ -57,7 +57,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE=
+CDEFINE= -Wno-strict-prototypes
 
 # Include files that are needed to compile
 #

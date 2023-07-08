@@ -38,7 +38,8 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-invalid-source-encoding -Wno-invalid-utf8
+CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-invalid-source-encoding \
+	-Wno-invalid-utf8 -Wno-strict-prototypes -Wno-unknown-warning-option
 
 # Common C compiler warning flags
 #

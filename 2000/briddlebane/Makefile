@@ -38,8 +38,9 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-absolute-value -Wno-implicit-int \
-	-Wno-incompatible-function-pointer-types -Wno-unsequenced
+CSILENCE= -Wno-absolute-value -Wno-implicit-int -Wno-deprecated-non-prototype \
+	-Wno-incompatible-function-pointer-types -Wno-unsequenced \
+	-Wno-strict-prototypes
 
 # Common C compiler warning flags
 #

@@ -87,7 +87,7 @@ ifeq ($(CC),clang)
 CSILENCE+= -Wno-comma -Wno-conditional-uninitialized -Wno-date-time \
 	-Wno-implicit-int-conversion -Wno-missing-variable-declarations \
 	-Wno-poison-system-directories -Wno-shorten-64-to-32 -Wno-sign-conversion \
-	-Wno-unreachable-code
+	-Wno-unreachable-code -Wno-declaration-after-statement
 #
 CWARN+= -Weverything
 #

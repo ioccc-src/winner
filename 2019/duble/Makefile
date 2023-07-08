@@ -86,7 +86,9 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-#CSILENCE+=
+CSILENCE+= -Wno-bad-function-cast -Wno-comma -Wno-implicit-int-conversion \
+        -Wno-missing-prototypes -Wno-missing-variable-declarations -Wno-shadow \
+        -Wno-poison-system-directories -Wno-shorten-64-to-32 -Wno-sign-conversion
 #
 CWARN+= -Weverything
 #

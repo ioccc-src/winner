@@ -133,7 +133,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "This next compile may take a while to complete:"
+	@echo "This next step may take some time to run:"
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # alternative executable
@@ -142,7 +142,7 @@ alt: data ${ALT_TARGET}
 	@${TRUE}
 
 ${PROG}.alt: ${PROG}.alt.c
-	@echo "This next compile may take a while to complete:"
+	@echo "This next step may take some time to run:"
 	${CC} ${CFLAGS} $< -o $@ ${LIBS}
 
 # data files
