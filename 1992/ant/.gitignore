@@ -3,3 +3,5 @@ am.safe
 ant
 node.*
 leaf.*
+ant.orig
+prog.orig

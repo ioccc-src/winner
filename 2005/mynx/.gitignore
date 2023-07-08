@@ -2,3 +2,5 @@ mynx
 mynx.alt
 source/config.*
 source/makefile
+mynx.orig
+prog.orig

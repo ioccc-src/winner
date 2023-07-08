@@ -4,3 +4,5 @@ zcat
 receive
 unshark
 unshark.c
+jaw.orig
+prog.orig
