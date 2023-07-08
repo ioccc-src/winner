@@ -16,13 +16,7 @@ make all
 
 ### Alternate code:
 
-The alternate code, [decot.alt.c](decot.alt.c), is the original code that
-requires `-traditional-cpp` and will also run afoul with clang's requirement for
-the second and third arguments to main() being a `char **` (the fixed version's
-main() only has one arg, an int). It is a minor fix to Yusuke's fix. Thank you
-Yusuke and Cody!
-
-To try this version:
+To try the original code that requires `-traditional-cpp`:
 
 ```sh
 make alt

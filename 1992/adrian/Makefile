@@ -42,7 +42,8 @@ CSILENCE= -Wno-bitwise-op-parentheses -Wno-comment -Wno-deprecated-declarations 
 	-Wno-error -Wno-implicit-function-declaration -Wno-format-security \
 	-Wno-logical-op-parentheses -Wno-macro-redefined -Wno-parentheses \
 	-Wno-return-type -Wno-uninitialized -Wno-unused-value -Wno-unused-variable \
-	-Wno-unused-but-set-variable -Wno-unsequenced -Wno-unused-parameter
+	-Wno-unused-but-set-variable -Wno-unsequenced -Wno-unused-parameter \
+	-Wno-empty-translation-unit
 
 # Common C compiler warning flags
 #
@@ -90,7 +91,8 @@ ifeq ($(CC),clang)
 CSILENCE+= -Wno-comma -Wno-float-conversion -Wno-missing-noreturn \
 	-Wno-missing-prototypes -Wno-missing-variable-declarations -Wno-padded \
 	-Wno-poison-system-directories -Wno-shadow -Wno-unreachable-code \
-	-Wno-unused-macros
+	-Wno-unused-macros -Wno-shorten-64-to-32 -Wno-sign-conversion \
+	-Wno-empty-translation-unit
 #
 CWARN+= -Weverything
 #

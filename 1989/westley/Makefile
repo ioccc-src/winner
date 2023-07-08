@@ -39,7 +39,9 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-comment -Wno-error -Wno-implicit-function-declaration \
-	-Wno-logical-op-parentheses
+	-Wno-logical-op-parentheses -Wno-deprecated-non-prototype \
+	-Wno-int-conversion -Wno-return-type \
+	-Wno-comma -Wno-missing-variable-declarations -Wno-unused-value
 
 # Common C compiler warning flags
 #
@@ -138,21 +140,21 @@ alt: data ${ALT_TARGET}
 	@${TRUE}
 
 ver0: ${PROG}
-	./${PROG} < westley.c > ver0.c
+	-./${PROG} < westley.c > ver0.c
 	-${CC} ${CFLAGS} ver0.c -o $@ ${LIBS}
 
 ver1: ${PROG}
-	./${PROG} 1 < westley.c > ver1.c
+	-./${PROG} 1 < westley.c > ver1.c
 	@echo "** NOTE: this version will not compile with clang **"
 	-${CC} ${CFLAGS} ver1.c -o $@ ${LIBS}
 
 ver2: ${PROG}
-	./${PROG} 1 2 < westley.c > ver2.c
+	-./${PROG} 1 2 < westley.c > ver2.c
 	@echo "** NOTE: this version will not compile with clang **"
 	-${CC} ${CFLAGS} ver2.c -o $@ ${LIBS}
 
 ver3: ${PROG}
-	./${PROG} 1 2 3 < westley.c > ver3.c
+	-./${PROG} 1 2 3 < westley.c > ver3.c
 	@echo "** NOTE: this version will not compile with clang **"
 	-${CC} ${CFLAGS} ver3.c -o $@ ${LIBS}
 

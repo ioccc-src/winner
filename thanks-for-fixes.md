@@ -109,12 +109,8 @@ changed the `#o` lines to `#define`. The
 [lycklama.alt.c](1985/lycklama/lycklama.alt.c) is the original source
 code as it provides some fun input for the entry.
 
-Yusuke provided some useful information that amounts to an alternate version but
-which does not actually modify the code except by a provided macro for a
-`usleep()` call which Cody added. This was not put in an alt file because the
-original code is in the alt file but the default to the `usleep()` call is 0,
-making it functionally equivalent not calling it.  See the README.md file
-details.
+Yusuke provided some useful information that amounts to an alternate version
+that Cody added. See the README.md for details.
 
 
 ## [1985/sicherman](1985/sicherman/sicherman.c) ([README.md](1985/sicherman/README.md]))

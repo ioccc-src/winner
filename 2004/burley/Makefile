@@ -85,7 +85,9 @@ CC= cc
 ifeq ($(CC),clang)
 #
 CSILENCE+= -Wno-bad-function-cast -Wno-comma -Wno-missing-variable-declarations \
-	-Wno-shift-sign-overflow -Wno-unknown-warning-option -Wno-poison-system-directories
+	-Wno-shift-sign-overflow -Wno-unknown-warning-option -Wno-poison-system-directories \
+	-Wno-cast-align -Wno-missing-prototypes -Wno-shorten-64-to-32 \
+        -Wno-unreachable-code -Wno-unreachable-code-return
 #
 CWARN+= -Weverything
 #

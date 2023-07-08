@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-format -Wno-parentheses -Wno-string-plus-int
+CSILENCE= -Wno-format -Wno-parentheses -Wno-string-plus-int -Wno-strict-prototypes
 
 # Common C compiler warning flags
 #

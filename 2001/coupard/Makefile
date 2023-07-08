@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-empty-body -Wno-pointer-sign -Wno-return-type
+CSILENCE= -Wno-empty-body -Wno-pointer-sign -Wno-return-type -Wno-deprecated-non-prototype
 
 # Common C compiler warning flags
 #

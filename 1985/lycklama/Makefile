@@ -58,7 +58,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE= -DZ=0
+CDEFINE= -DZ=500
 
 # Include files that are needed to compile
 #
@@ -85,7 +85,7 @@ CC= cc
 ifeq ($(CC),clang)
 #
 CSILENCE+= -Wno-implicit-int-conversion -Wno-poison-system-directories \
-	-Wno-unused-macros
+	-Wno-unused-macros -Wno-strict-prototypes
 #
 CWARN+= -Weverything
 #

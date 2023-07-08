@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-unused-label
+CSILENCE= -Wno-unused-label -Wno-strict-prototypes
 
 # Common C compiler warning flags
 #

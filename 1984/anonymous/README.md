@@ -31,8 +31,9 @@ make alt
 
 #### To run:
 
+NOTE: this version might not work on some systems like macOS.
+
 ```sh
-echo NOTE: this version might not work on some systems.
 ./anonymous.alt
 ```
 
