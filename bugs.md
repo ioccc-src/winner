@@ -527,22 +527,53 @@ This program will crash with numbers with non-binary digits.
 ## STATUS: main() function args not allowed - please help us fix
 
 Although [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for
-some of the versions that are generated (see below tip) it will not work for
-all. He noted that trying to fix it in some cases causes a segfault and in other
-cases it fails to generate some of the files (others are okay) at all (empty
-files).
+some of the versions that are generated (see below tip) it will not work for all
+with the clang compiler. Cody noted that trying to fix it in some cases causes a
+segfault and in other cases it fails to generate some of the files (others are
+okay) at all (empty files).
 
-He gives these tips on the problem: `main()`'s second, third and fourth args are
-supposed to be a `char **`. This didn't use to be the case and some compilers
-like gcc don't complain. `clang` however does. Cody was able to get `main()` to
-be correct BUT a feature is that it uses ROT13 to decrypt the function `znva` to
-be main in _generated files_ (see the [README.md](1989/westley/README.md) for
-details). Since that function does not have the correct types when converted to
-main() it fails to compile.  But as he said changing the type causes either a
-segfault or files not generated at all. `ver1`, `ver2` and `ver3` are the
-problematic ones.  The segfault happens when running the main program. Cody
-fixed that but as noted as for the generated files only `ver0` will compile with
-clang.
+There is another change that was thought up on 08 July 2023 which allows for
+another version to be compiled with clang but it causes some of the versions to
+not be correctly generated (whereas the current way does generate all files but
+is not compilable with clang) so for now this is not in. If it is put in it will
+be an alternate version.
+
+Some versions of clang have an additional defect where in additional to forcing
+the args of `main()` to be of type `int` (for first arg) and the rest to be
+`char **` it also does not allow a fourth arg to main(). This in fact is part of
+the change thought up on 08 July 2023: main() calls a function which has the old
+types of variables. More will be done with this in time.
+
+Cody gives these tips on the problem: `main()`'s second, third and fourth args
+(but on fourth arg see above) are supposed to be a `char **`. This didn't use to
+be the case and some compilers like gcc don't complain. `clang` however does.
+Cody was able to get `main()` to be correct BUT a feature is that it uses ROT13
+to decrypt the function `znva` to be main in _generated files_ (see the
+[README.md](1989/westley/README.md) for details). Since that function does not
+have the correct types when converted to main() it fails to compile.  But as he
+said changing the type causes either a segfault or files not generated at all.
+`ver1`, `ver2` and `ver3` are the problematic ones.  The segfault happens when
+running the main program. Cody fixed that but as noted as for the generated
+files only `ver0` will compile with clang.
+
+## STATUS: known bug - please help us fix
+
+With version 2 it sometimes segfaults even with the same input where other times
+it does not. We don't believe this is because of the fix that lets some versions
+be compiled with clang. An example invocation is:
+
+```sh
+./ver2 < westley.c
+```
+
+Can you find the problem?
+
+### A useful note on changing/fixing this program
+
+It should be noted that in additional to rot13 names there is code that is the
+reverse of other code (also wrt names). See the source file and the README.md
+(in the author's remarks) for more details.
+
 
 # 1990
 
