@@ -235,18 +235,22 @@ Please help us by writing alternative code!
 
 ## STATUS: main() function args not allowed - please help us fix
 
-NOTE: it appears that all of these have been fixed. However some still have
-problems. This is what the status means, however:
+NOTE: it appears that all of these have been fixed except perhaps for
+[1989/westley](1989/westley/westley.c). However some still have problems of some
+kind or another. This is what the status means, however.
 
 Entries with this status have a problem in that the args to main() are not of a
 specific type due to this being allowed in earlier C. Some compilers like clang
-have a deficiency where they do not allow this so these entries do not work with
-clang.
+have a defect where they do not allow this so these entries do not work with
+clang. Some versions of clang also do not allow four args to main() which
+`1989/westley` has.
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) looked at the source
-code of clang and reported that there is no way to override this requirement so
-these entries will fail to compile with clang. That's why in some entries he
-fixed he did it by adding a function called `pain()`. :-)
+code of clang and reported that there is no way to override the requirement of
+arg types so these entries will fail to compile with clang. That's why in some
+entries he fixed he did it by adding a function called `pain()`. :-) He did not
+check for the number of args as that was discovered later but he suspects it's
+the same issue.
 
 **NOTE for macOS users**: please be aware that _gcc_ under macOS **is actually
 clang** despite the fact it might appear to be gcc: no symlink and both gcc and
@@ -528,9 +532,9 @@ This program will crash with numbers with non-binary digits.
 
 Although [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for
 some of the versions that are generated (see below tip) it will not work for all
-with the clang compiler. Cody noted that trying to fix it in some cases causes a
-segfault and in other cases it fails to generate some of the files (others are
-okay) at all (empty files).
+with the clang compiler (gcc works fine). Cody noted that trying to fix it in
+some cases causes a segfault and in other cases it fails to generate some of the
+files (others are okay) at all (empty files).
 
 There is another change that was thought up on 08 July 2023 which allows for
 another version to be compiled with clang but it causes some of the versions to
@@ -936,7 +940,7 @@ not work properly in macOS (at least Ventura). He did some debugging and has
 determined where the crash occurs (depending on invocation of the program) and
 came up with a workaround of sorts but if you have a fix we welcome your help.
 
-With this you'll need XQuartz as described in the [faq](faq.md) and the
+With this you'll need XQuartz as described in the [FAQ](faq.md) and the
 [1996/jonth/README.md](1996/jonth/README.md) file.
 
 Notes from Cody:
@@ -949,7 +953,7 @@ crashes. Earlier invocations it would crash at
 s=XDefaultScreen(V=d[D]=XOpenDisplay(*(h+=!! *h)));
 ```
 
-because `XOPenDisplay()` returned NULL. But using `:0 :0` _appears_ to resolve
+because `XOpenDisplay()` returned NULL. But using `:0 :0` _appears_ to resolve
 that problem. However instead it crashes at this code:
 
 ```c
@@ -1497,138 +1501,12 @@ strange. This might also happen if you specify excessively large board
 dimensions. Try `100 100 100` for instance and see what happens!
 
 ## [2005/giljade](2005/giljade/giljade.c) ([README.md](2005/giljade/README.md))
-## STATUS: known bug - please help us fix
-
-The alternate code will not compile with compilers that do not let you have
-alternate types of the args to `main()`. An example compiler with this defect is
-`clang`. If you have `gcc` you can use `make alt` and there is no problem.
-
-The reason the clang fixed (but see below) version is [giljade.c](giljade.c) is
-that the primary purpose of the entry is a 2D puzzle and this works with the
-clang fix, more or less (if not entirely hard to know with the many layouts it
-generates). The problem is that with the clang fix the self-test version does
-not work for every layout. The author even notes that modifying the code will
-cause this but it has to be changed to let clang compile it due to clang's
-defect.
-
-Now [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work
-in both the clang version (which Landon added) and the original version
-([giljade.alt.c](giljade.alt.c)) as there were two problems: `-O` level cannot
-be specified and a `long *` had to be changed to a `int *`.
-
-### The actual problem
-
-One is supposed to be able to do:
-
-```sh
-./giljade > out
-./giljade out
-```
-
-and see all layouts compile without error. If you wish to see this in action and
-you have a compiler without the defect of clang you can do:
-
-```sh
-make alt
-./giljade.alt > out
-./giljade.alt out
-```
-
-But if you try this with `giljade` you will run into compilation errors,
-seemingly different across different compilers. In macOS it's clang but in linux
-it's probably gcc (the entry uses `cc`).
-
-Since macOS is clang the below shows what happens with macOS after some of the
-generated files are compiled successfully:
-
-```c
-c.c:74:53: error: expected expression
-T;*R=M;*_++=10;F( R=D;putchar(*R)&& _>++R;);}}};O-b*/
-                                                    ^
-c.c:76:72: error: expected expression
-
-                                                                       ^
-c.c:76:72: error: expected '}'
-c.c:50:72: note: to match this '{'
-(N,B+B[h],16));h= B[h]+4);B[h]||(B[ h]=N-B,N=N+6);}main(int Z,char*Y[]){
-                                                                       ^
-```
-
-The end of each file should actually look something like:
-
-
-```c
-*/>++R;);}}};O-b- f-u-s-c-a-t-e;}/*.*dbhn.Lhnd.$d:rdd .,n.,d.$d,$dp.$r>
-*..*b.b:bb.b.b.,b *.":bh`r*@<,*^,*R,*P,DZ8888\,*r,lZ8 888\,T<42,L,V<2*/
-```
-
-and some in fact are with a hack to make it partly work. What is this hack? Take
-a look at the comment in the code:
-
-```c
-/*echo/Line/%d;sed/-n/-e/ %d,%dp/%s/|sed*/
-/*-e/ 's,intZ,int/ Z,g'>c.c;cc/c.c/-Wno-implicit-function-declaration /-c*/
-```
-
-That is actually called via `system()`. But if you observe in
-[giljade.alt.c](2005/giljade/giljade.alt.c) the comment is quite different being
-just:
-
-
-```c
-/*echo/Line/%d;sed/-n/-e/ %d,%dp/%s>*/
-/*c.c;cc/c.c /-c*/
-```
-
-Why? Because in some platforms at least clang defaults to `-Werror` for some
-warnings: that's why the disabling of the warning in particular. But the change
-to make it compile with clang changed the output generated to merge the `int`
-and the arg in `main()` which is of course a big problem. Thus the additional
-`sed` command fixes the problem of `int` and `Z` becoming one word but somewhere
-in the process some of the generated code fails.
-
-What might the translation of the comment end up being? Here's an example:
-
-```
-system("  echo Line 2;sed -n -e 2,77p out>    c.c;cc c.c -c  ");
-```
-
-But of course the range of lines to print changes successively as the program
-goes through the file.
-
-Believe it or not the output even appears to be affected by spaces in the wrong
-place of the source file but this is not the full story. Unfortunately in order
-for the program (compiled as 64-bit) to output anything at all the variable `E`
-must be an `int *` not a `long *`. However the change that allows clang to
-compile it causes the output to not have spaces where necessary to successfully
-compile the generated output which is why the extra `sed` command shown above
-(which has a special way to input spaces). We do not know if the change from
-`long *` to `int *` also messes up the output but we suspect not because it
-works for gcc.
-
-Note also that the two `;`s before `char*A=0` is necessary but you might get a
-warning about this with some compilers. If it's removed you'll see something
-like:
-
-```sh
-sh: -c: line 0: syntax error near unexpected token `{F'
-sh: -c: line 0: `  echo Line 2;sed -n -e 2,77p out |sed    -e 's,intZ,int Z,g'>c.c;cc c.c -Wno-implicit-function-declaration -c  ;char A=0, _, R, Q,D[9999], r,l[9999],T=42,M,V=32;int E,k[9999],B[1<<+21], N=B+1234567,q=0,h=3,j=2,O,b,f,u,s,c,a,t,e,d;C(){F(h=N[3];(B[h]&&+memcmp(N,B+B[h],16));h=B[h]+4);B[h]||(B[h]=N-B,N=N+6);}main(intZ,char Y[]){char U=Z;int  w=Y;'
-```
-
-or so, depending on the comment, when running the program on its output.
-
-Observe too that the `*` part of pointers have been removed! You also see the
-merge of `int` and `Z` as noted earlier. With the two `;`s this is not a
-problem.
-
-Cody will look at this all later on.
-
 ## STATUS: INABIAF - please **DO NOT** fix
 
-It also will very likely segfault or do something strange if the source code
+This entry will very likely segfault or do something strange if the source code
 does not exist.
 
-This entry requires that `sed` and `cc` are in the path.
+This entry requires that `sed` and `make` are in the path.
 
 ## [2005/mynx](2005/mynx/mynx.c) ([README.md](2005/mynx/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
