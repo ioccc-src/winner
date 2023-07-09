@@ -438,10 +438,8 @@ worked fine in macOS).
 
 Cody fixed this for modern systems. It had `1s` in places for a short int which
 was changed to just `1`.  Since it's instructional to see the differences he has
-provided an alternate version with the original code. See below.
-
-Cody provided the original source in [westley.alt.c](1990/westley/westley.alt.c).
-
+provided an alternate version, [westley.alt.c](1990/westley/westley.alt.c) which
+is the original code.
 
 
 ## [1991/brnstnd](1991/brnstnd/brnstnd.c) ([README.md](1991/brnstnd/README.md]))
@@ -667,13 +665,10 @@ calls which has the four args.
 ## [1996/august](1996/august/august.c) ([README.md](1996/august/README.md]))
 
 Cody fixed a segfault in this program that prevented it from working right but
-he notes it hangs in macOS. It works fine in linux. This is because macOS has
-clang, not gcc, even the gcc binary. He observed that with specific compiler
-flags it hangs in linux too and perhaps it's related to this in macOS; maybe
-other flags are needed but he doesn't know (at least not yet). He provided a bit
-more information in [bugs.md](/bugs.md) for anyone who wants to have a go at
-providing a fix for other compilers. As there are a lot of commands to try he
-also added [try.sh](1996/august/try.sh).
+he notes it hangs in macOS. This is because some compilers compile it into an
+infinite loop and this was documented by the judges. It works fine in linux if
+using gcc but macOS, having only clang by default (even the gcc binary) will not
+work.
 
 
 ## [1996/dalbec](1996/dalbec/dalbec.c) ([README.md](1996/dalbec/README.md]))
