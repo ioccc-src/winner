@@ -1,0 +1,42 @@
+
+Using Micro Sphere's Ram Disk with the PRO8 version 3
+
+
+The ROM contains code to treat the Ram Disk as any other disk drive.
+It allows you to use the screen dump with or without the the ram disk
+attatched. Before accessing the ram disk you must have a 63K system.
+Run RCONFIG.COM. When asked if you want to install a new bios answer
+yes. The bios contains the necessary code to allow the Ram Disk and
+drive A: to be swapped. RCONFIG allows you to choose any letter for
+the ram disk and the swap drive letter.
+
+Also select the correct ram disk size for your particular ram disk.
+Exit the program and press the reset button. Your warm boot sign on
+will now reflect the status of the ram disk. It will always say 'Off'
+until you access the ram disk. If the ram disk is not connected or
+not working, you will get a BDOS error SELECT. If it is alive you will
+log on to the ram disk. The ram disk is the drive you chose in the
+configuration program unless you swap it with drive A: by entering the
+letter you chose for the swap code. At this point your ram disk becomes
+drive A: and floppy drive A: can be accessed by using the letter you
+assigned the ram disk. Entering the swap code a second time reverses
+this procedure.
+
+If you don't want the new bios (because you are running Plu Perfect or
+some other enhanced bios) you can still use the Ram Disk code in ROM.
+First run RCONFIG but do not install the new bios. Just set the ram disk
+size and write it to disk. To access the Ram Disk after a reset, you must
+first enter an ESC H to wake it up. It will then be available as drive
+E: only. 
+
+The printer buffer on the ram disk won't work until you access the ram
+disk first.
+
+RAM DISK COMMANDS:
+
+ESC P	pause the ram disk printer buffer (stop printing until another ESC P)
+ESC H	halt the ram disk printer buffer (stop printing and clear buffer)
+
+RF.COM  formats and/or sysgens the Ram Disk.
+
+

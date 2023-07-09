@@ -1,0 +1,47 @@
+
+
+     MAGE.COM is an 8080 assembly language program
+which retrieves files accidentally lost while using
+WORDSTAR.  The program captures an image of your 
+file from computer memory and saves it on a floppy 
+disk.
+
+     MAGE can help with problems such as accidental 
+resets, resets caused by static discharge, power 
+fluctuations, bad sectors on floppy disks, write-
+protected disks, full disks, BDOS errors on disks 
+and various WORDSTAR glitches.  The program will 
+not recover a file after a complete power outage 
+nor under circumstances where you cannot reset the 
+computer.  It can recover only that portion of a 
+file which is in computer memory at the time of the 
+accident.
+
+     The first step in running this program is to 
+hit the reset button on the front panel.  Contrary
+to the Osborne 01 User's Reference Guide, this does
+not initialize computer memory.  The file from 
+WORDSTAR will remain intact in memory.
+
+     Next, insert the floppy containing MAGE.COM
+into one of the disk drives.  Boot the system.
+
+     Running the program is as simple as typing
+"MAGE filenam", where "filenam" is the name you 
+want your file to be saved under.  If you do not 
+specify a name, your file will be saved under the 
+default name " . ".
+
+     When you execute MAGE your file will begin 
+listing to the screen almost immediately.  The 
+program will stop automatically shortly after the 
+last of the recoverable textual material has been 
+reached.  A small amount of empty memory will also 
+be copied at the bottom of your file.  Use WORDSTAR 
+to remove these "nulls".
+
+     As an alternative, MAGE constantly checks for
+keyboard input.  By depressing any key you may halt 
+program execution.  Only the portion of memory al-
+ready listed to the screen will be saved to disk.
+

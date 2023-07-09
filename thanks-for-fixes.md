@@ -1310,7 +1310,6 @@ lets it work in both linux and macOS. The problem was that it relied on 32-bits
 so some `int`s were changed to `long`s. The display problem might or might not
 have been a problem in linux with the old `int`s but this is no longer known.
 
-
 ## [2011/goren](2011/goren/goren.c) ([README.md](2011/goren/README.md]))
 
 Cody fixed this for macOS.  Before the fix it segfaulted. It worked fine under

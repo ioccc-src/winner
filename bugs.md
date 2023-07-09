@@ -1559,7 +1559,7 @@ By design this program is supposed to crash on termination.
 You must type in caps (except in strings) and this program is indeed
 case-sensitive.
 
-## STATUS: known bug - please help us fix
+## STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
 
 The author showed something like this in their remarks:
 
@@ -1569,7 +1569,12 @@ A> IMPORT DDT.COM
 ```
 
 but the `A>` prompt never appears; instead it's just the same as if you
-specified no arg.
+specified no arg which is `>`. It seems like the `A>` might be a typo. That
+being said from the description by the author, if the required files exist in
+the directory, it seems you can do `HALT` 'so the file is saved, and you can
+start the same process with another file'. This does not seem to work but it
+might be not enough information or a misunderstanding.
+
 
 
 # 2007
@@ -1610,11 +1615,10 @@ tends to result in empty output.
 This does not appear to work with macOS, resulting in a segfault (and sometimes
 a bus error).
 
-We're not
-sure if this is to do with the Apple silicon chip or not but it seems like it
-_might_ (see Apple resources below) be but it could also be a wider problem with macOS. It appears that
-Apple does not allow certain combinations of memory protections with the arm64
-processor.
+We're not sure if this is to do with the Apple silicon chip or not but it seems
+like it _might_ (see Apple resources below) be but it could also be a wider
+problem with macOS. It appears that Apple does not allow certain combinations of
+memory protections with the arm64 processor.
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) tried some of the
 workarounds but at this time he could not get it to work. He offers some earlier

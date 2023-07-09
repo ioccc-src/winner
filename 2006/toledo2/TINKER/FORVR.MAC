@@ -1,0 +1,282 @@
+title KAYPRO FORMAT (double density diskette format program) 2.0, Copyright (c) 1982 NLS, Inc.
+subttl Verify portion of format program
+;###############################################################
+;##       High speed diskette verify program                  ##
+;##       Copyright (C) 1982 by Non-Linear Systems, Inc.      ##
+;##       No warranty is made, expressed, or implied.         ##
+;##                                                           ##
+;###############################################################
+;##	Last update : july 13,1982	[001]		      ##
+;##		by jim nickerson			      ##
+;##		will verify b: to be readable		      ##
+;##		fix spelling of verifing=verifying            ##
+;###############################################################
+	.z80
+maxsec	equ	10		; sectors/track
+maxtrk	equ	40		; tracks/disk
+cmnd	equ	10H		; command port
+data	equ	13H		; data port
+secp	equ	12H		; sector port
+trkp	equ	11H		; track port
+status	equ	10H		; status port
+rdcmd	equ	80H		; read sector command
+rdmask	equ	9CH		; read status mask
+wrtcmd	equ	0A0H		; write sector command
+wrtmask	equ	0FCH		; write status mask
+ficmd	equ	0D0H		; force int command
+seekcmd	equ	10H		; seek command
+rstcmd	equ	00		; home command
+bitport	equ	1CH		; system bit port
+cr	equ	0DH		; ascii return
+lf	equ	0AH		; ascii line feed
+bdos	equ	5		; bdos entry point
+
+; print a message
+print	macro	x
+	ld	c,9
+	ld	de,x
+	call	5
+	endm
+
+; get a char from console, up case
+input	macro
+	ld	c,1
+	call	5
+	res	5,a
+	endm
+
+	.8080
+ENT1::		;EXTERNAL ENTRY FOR FORMAT VERIFY
+	.Z80
+;
+	ld	a,0FFH		;RESET ERROR RECORD
+	ld	(some),a	;save it
+
+verify: ld      a,(66H)         ; ‰get and save byte at nmi vector 
+	ex	af,af'
+	ld	a,0C9H		; RET op code
+	ld	(66H),a
+	print	crlf
+	print	crlf
+        print   vermsg          ; tell crt that verify p/g is beginning
+        print   crlf
+        print   crlf
+        call    diskon          ; turn disk drives on
+        call    home            ; home both disk drives
+	xor	a		; zero track number
+vrtrk:	ld	(track),a	; set track number
+        print	back
+        call    tellt           ; tell the track number
+        call    seekb           ; seek track drive B
+        ld      hl,buffb        ; set up dma adrs for disk B
+        ld      (dmaadr),hl
+        xor     a
+verb:   ld      (sector),a      ; set up sector
+        call    read            ; read sector from B
+        call    nz,tellb        ; tell any errors from read
+        ld	a,(sector)      ; next sector
+	inc	a
+	cp	maxsec		; end of track?
+	jr	c,verb  	; another sector yet to do
+vert:   ld	a,(track)	; next track
+	inc	a
+	cp	maxtrk		; end of disk?
+	jp	c,vrtrk
+	ex	af,af'
+	ld	(66H),a		; restore byte at nmi vector
+	ld	a,(some)
+	cp	0		;0=error has been recorded
+	jr	nz,getout
+;tell him about it (pause for cr
+	print	pause
+	input
+	ret
+;
+getout:
+	print	ok
+	ret        		; go back to main p/g
+
+  
+read:	ld	de,rdmask*256+rdcmd
+	;
+action:	call	xlate		; to physical sector number
+	out	(secp),a	; set sector number
+TRYS::	ld	l,1		;better be good first time
+	push	hl
+	ld	hl,(dmaadr)	; address of disk i/o
+alp:	ld	bc,data		; b=0, c=port #
+	ld	a,e
+	;
+	out	(cmnd),a	; read loop
+rl1:	halt			; read in first 256 bytes
+	ini
+	jp	nz,rl1
+rl2:	halt			; read in second 256 bytes (256+256)=512
+	ini
+	jp	nz,rl2
+;	;
+done:	ld	(dmaadr),hl	; save new dma address (auto inc on rd/wrt)
+	call	busy		; wait for crc
+	and	d		; status mask
+	pop	hl		; error re-try count
+	ret	z		; no error
+	dec	l		; down error count
+	jr	z,error		; max error count if Z
+	push	hl
+	ld	hl,(dmaadr)	; correct dma address
+	ld	bc,512
+	or	a
+	sbc	hl,bc
+	jr	alp
+error:	ld	a,0FFH
+	or	a
+	ret			; ret non-zero (error)
+	
+xlate:	ld	hl,tran		; un-skew track (formatted skewed)
+	ld	c,a		; copy disk logical sector number
+	ld	b,0
+	add	hl,bc		; as index into skew table
+	ld	a,(hl)		; got it
+	ret
+
+; new un skew table
+tran:
+	defb	0, 8, 3, 6
+	defb	1, 9, 4, 7
+	defb	2, 5
+;
+
+	;
+seekbv: ld      b,02h           ;select diak mask
+        jr      seekx
+
+seekb:	ld	b,02H
+	jr	seekx		;want actual track
+	in	a,(trkp)	; drive b is always one behind
+	or	a		; except on track 00
+	jr	z,seekx
+	dec	a		; back one
+	out	(trkp),a
+	;
+seekx:	ld	a,ficmd		; force int
+	out	(cmnd),a
+	in	a,(bitport)	; select disk
+	and	0FCH
+	or	b
+	out	(bitport),a	; done
+	ld	a,(track)	; now seek desired track
+	out	(data),a
+	ld	a,seekcmd
+	out	(cmnd),a	; issue command
+
+busy:	halt			; wait for command done
+bsy:	in	a,(status)	; busy? (may be drq not int)
+	bit	0,a
+	jr	nz,bsy
+	ret			; done
+
+home:	in	a,(bitport)	; select drive B
+	and	0FCH
+	push	af		; save
+	set	1,a
+	out	(bitport),a
+	ld	a,rstcmd	; home drive B
+	out	(cmnd),a
+	call	busy		; wait for done
+	pop	af
+	ret	;only want to verify read on b for now
+	set	0,a		; select drive A
+	out	(bitport),a
+	ld	a,rstcmd	; home drive A
+	out	(cmnd),a
+	call	busy		; wait for done
+	ret
+
+diskon:	in	a,(bitport)	; turn on disk drive
+	res	6,a
+	out	(bitport),a
+	ld	b,50		; delay for motor up to speed
+don1:	ld	de,1670
+don2:	dec	de
+	ld	a,d
+	or	e
+	jp	nz,don2
+	djnz	don1
+	ret
+
+outdec:	push	bc		; save number in c
+	ld	a,c		; decimal print the number in c
+	ld	e,'0'		; e hold decimal digit
+hund:	sub	100		; any hundreds digits?
+	jr	c,tens
+	inc	e		; bump hundreds digit
+	jr	hund
+tens:	add	a,100		; put back 100
+	push	af		; save number
+	ld	a,e		; leading zero digit?
+	cp	'0'
+	jr	z,ten1
+	ld	c,2
+	call	bdos		; write digit
+ten1:	pop	af		; recover digit
+	ld	e,'0'		; tens digit
+ten2:	sub	10
+	jr	c,ones
+	inc	e		; bump tens digit
+	jr	ten2
+ones:	add	a,10+'0'
+	push	af		; save number, print digit
+	ld	c,2
+	call	bdos		; tens digit
+	pop	af
+ 	ld	e,a
+	ld	c,2
+	call	bdos		; ones digit
+	pop	bc		; restore number to c
+	ret			; done
+
+;
+tellt:	print	trkmsg		; tell track number
+	ld	bc,(track)
+	call	outdec		; print track number
+	ret
+
+tellb:
+	ld	a,0		;record an error
+	ld	(some),a
+	print	back		; bad sector on drive b
+	print	drvb
+telerr:	call	tellt		; "TRACK XX"
+	print	secmsg		; " SECTOR "
+	ld	a,(sector)	; find physical sector number
+	call	xlate
+	ld	c,a
+	call	outdec		; "XX"
+	print	badmsg
+	print	crlf
+	call	tellt		; still on this track
+	ret
+
+crlf:	defb	cr,lf,'$'
+trkmsg:	defb	'Track ','$'
+secmsg:	defb	' Sector ','$'
+drva:	defb	'Drive A ','$'
+drvb:	defb	'Drive B ','$'
+badmsg:	defb	' {BAD}','$'
+back:	defb	cr,'$'
+ok:	defb	cr,'Format OK',cr,lf,'$'
+pause:	defb	cr,'Please type any key to continue.','$'
+vermsg: defb    'Verifying disk B to be readable',cr,lf,lf
+	defb	'  *** NOTE: only one error per track is displayed (there may be more) ***','$'
+some:	defb	0		;error has occured
+dmaadr:	defw	buff		; dma pointer
+track:	defb	0		; current track
+sector:	defb	0		; current sector
+bytcnt: defs    2               ; sector verify loop count
+adrsa:  defs    2               ; storage area for disk A buffer
+adrsb:  defs    2               ; storage area for disk B buffer
+	DSEG
+buff    equ     $               ; track buffer
+buffb	equ	$+5120          ; read buffer
+	end
+

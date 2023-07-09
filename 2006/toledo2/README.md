@@ -148,7 +148,7 @@ example:
 ./toledo2 DDT.COM
 ```
 
-When the A> prompt appears, do:
+When the `>` prompt appears, do:
 
 ```
 IMPORT DDT.COM

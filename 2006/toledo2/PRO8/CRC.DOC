@@ -1,0 +1,21 @@
+
+
+
+                                 Using CRC
+
+
+
+
+     Type CRC to verify all the files on this disk.
+
+     Type CRC *.* F to generate CRC's for an entire disk and create
+             a CRC file (CRCKLIST.CRC) for checking the CRC's of a
+             copy of the disk etc.
+
+     Omitting the F will suppress creation of a CRCKLIST.CRC file.
+
+     *.* can be replaced with an unambiguous file name for checking
+             just one file.
+
+
+

@@ -1,0 +1,67 @@
+     VT52  is  a VT52 terminal emulator written for Kaypro II and  IV  (non-
+graphic versions).  It contains the following features:
+
+
+               1) Interrupt driven
+               2) 256 byte receive buffer
+               3) automatic flow control
+               4) direct to video emulation of VT52
+               5) Supports application keypad
+               6) Baud rate programming
+               7) Break and null generation
+               8) Additional escape sequences to support EMACS
+
+     Because  of 1 through 3,  VT52 is able to run at high baud rates  (I've 
+used 1 it at 4800) without losing characters.   This is true even on non-sped 
+up Kaypros.
+
+     Because  of  4,  VT52 does a much better job of emulating a  VT52  than 
+other  programs that only translate VT52 escape sequences into Kaypro escape 
+sequences (for example reverse line feed on VT52).
+
+     Keypad  application  mode  is selectable via  the  normal  VT52  escape 
+sequences received from a host computer.   The keypad on the Kaypro does not 
+have all the keys necessary to map into the VT52 keypad,  so I had to choose 
+which keys to map where (see KAYPRO.KEY).   The only key that is lost is PF2 
+(normally  the help key) and this can be mapped to a control key when in  an 
+editor such as VAX's EDT.
+
+     All features such as baud rate selection,  break generation are invoked 
+in terminal mode of VT52 by typing ^\ followed by the appropriate key.   For 
+a list of the commands, type ^\ ? in terminal mode.
+
+     The  escape  sequences  that VT52 has in addition to  the  normal  VT52 
+escape sequences were chosen to allow a much faster screen edit using EMACS.  
+The escape sequences are:
+
+                    ESC @ 1        - Insert space at cursor (cursor stays)
+                    ESC @ 2        - Delete character at cursor
+                    ESC @ 3        - Insert line at cursor line
+                    ESC @ 4        - Delete line at cursor line
+
+     There  are  some area's that still could be improved  in  VT52.   Since 
+source is included,  I invite anyone to do so.  At present, VT52 does not do 
+auto  wrap.   It  acts like a VT52 with auto wrap off (cursor stays in  last 
+column).  This presents no problem when communicating with VAX/VMS.  The VAX 
+can be set to do the wrapping for the terminal.   Also,  VT52 printer escape 
+sequences are not emulated.   That might be a nice feature (but I can't  use 
+it so I didn't bother).
+
+     VT52 is written in Z80 code.   This was necessary to support the mode 2 
+interrupts  used for high speed.   Block move instructions are also used  in 
+the  video  code.   To assemble,  I used Z80MR,  a public domain  Z80  macro 
+assembler  (available  for Micro-Cornucopia,  P.O.  Box  223,  Bend,  Oregon 
+97709).   To re-assemble,  type Z80MR VT52.AAA (similar to ASM).   The other 
+source files are INCLUDED by VT52.AZM.
+
+     If anyone has problems, suggestions, questions, etc. send them to:
+
+     Ray Rizzuto
+     43 Sandra Road
+     Voorhees, N.J. 08043
+     Compuserve ID 72765,700
+
+
+
+
+

@@ -1,0 +1,220 @@
+Z-80 Floppy Disk Test
+
+Original Version: Copyright (c) 1980 by Laboratory Microsystems
+                                        4147 Beethoven Street
+                                        Los Angeles, California 90066
+
+
+
+1.0  General description
+
+The  Z-80 Floppy Disk Test is a general purpose utility for testing or
+initializing a diskette.  It requires a Z-80 microprocessor, at  least
+16  kbytes  of random access memory, two flexible disk drives, and the
+Digital Research CP/M 2.x operating system.  Program mode and area  of
+diskette to be tested are controlled from the keyboard.  Errors may be
+audited on the console or the line printer.  
+
+The proram is available on this diskette in 4 versions.
+
+2DISKTST.COM		Is assembled for the Kaypro 2 (191 K / disk)
+4DISKTST.COM		Is assembled for the Kaypro 4 (390 K / disk)
+8DISKTST.COM		Is assembled for Kaypro's with 96 TPI dbl. sided
+			disk drives ( Like the Pro 8 System from Micro
+			Cornucopia ).
+10DSKTST.COM		Is assembled for the Kaypro 10 and will only test
+			the floppy drive on that system. DO NOT use the
+			disk diagnostic on the HARD DISK !!!!!!!!!!!!!!!!  
+
+The program does not exhaustively check out the disk  drive,  and  any
+errors  detected  by  the  program  must  be  interpreted  with  care.
+Intermittent  errors  occurring  throughout  a  broad  range  of  disk
+addresses  probably  indicate  a  problem  with  the  disk drive unit.
+Errors indicated at consistent addresses within  adjacent  tracks  may
+result  from a worn or damaged flexible disk.  Error free execution of
+the test certainly indicates an intact and usable diskette,  and  also
+is  fairly good evidence of proper operation of your disk drive.  Note
+that the program is rather insensitive to drive  problems  related  to
+head  movement, since the diskette is addressed in a smooth sequential
+manner.
+
+
+2.0  Installation
+
+Mount  your system disk in drive A, and the distribution disk in drive
+B.  Use the PIP utility to transfer the test program onto  the  system
+disk:
+
+        A>pip a:=b:dtst.com [v]
+
+Now  remove  the  distribution  disk  from drive B and store it as the
+backup copy.
+
+
+3.0  Using the Test Program
+
+Put your system disk in drive A, boot up the CP/M operating system, and
+type:
+
+        A>dtst
+
+The test program will load  into  memory  and  print  the  identifying
+message:
+
+        Laboratory Microsystems Disk Test version 1.0
+
+If there is inadequate memory in the transient program area, or if the
+operating  system is not CP/M version 2.0 or greater, the program will
+immediately print a warning message and  exit.   Otherwise,  the  test
+proceeds  to  the initialization dialogue.  The test mode is set via a
+series of questions presented on the system console.  Answers  calling
+for  an  alphabetic  character  may be upper or lower case; a carriage
+return is not required.  Answers calling for  a  number  must  be  two
+digits, or one digit followed by a carriage return.
+
+query                   responses       explanation
+-----                   ---------       -----------
+
+Itemize errors?         Y or N          If   answered  y,  each  error
+                                        detected  is  audited  on  the
+                                        selected  device.  If answered
+                                        N, only the total error  count
+                                        is  printed at the end of each
+                                        pass.
+
+Console or Printer?     C or P          If  itemizing  errors,  select
+                                        the   device   on   which  the
+                                        itemized error listing will be
+                                        printed.
+
+Lock on read or write?  N, R, or W      N = no locks.   R  =  lock  on
+                                        read  mode (no data is written
+                                        to the  disk  ---  useful  for
+                                        detecting any damaged areas on
+                                        the media).  W = lock on write
+                                        (all   data  on  the  disk  is
+                                        destroyed --- this may be used
+                                        to erase a  diskette  by  also
+                                        locking on pattern)
+
+Restore original data?  Y or N          Y  =  restore existing data on
+                                        diskette  after  testing  each
+                                        sector.   N  =  do not restore
+                                        existing data.  Test runs much
+                                        faster when  restore  mode  is
+                                        not used.
+
+Lock on data pattern?   Y or N          Y  =  user  wishes  to specify
+                                        specific data to  be  used  as
+                                        the  test pattern.  N = random
+                                        data pattern is  generated  by
+                                        the test program.
+
+Enter data pattern      hex 00-FF       If  you  answered Y to Lock On
+                                        Pattern, enter the  eight  bit
+                                        data pattern to be used during
+                                        disk testing.  If you answered
+                                        N, this question is bypassed.
+
+Drive to be tested                      Specify  disk drive to be used
+                                        for  diskette   testing.
+
+Test all tracks?        Y or N          Y = test all tracks (00-76) in
+                                        sequence.  N = user wishes  to
+                                        specify  range  of tracks (may
+                                        be used to test only part of a
+                                        diskette, or if disk drive  is
+                                        other  than  Kaypro Format.
+
+First track to test     decimal 00-999  If you answered N to Test  All
+                                        Tracks,   specify   here   the
+                                        number of the first  track  to
+                                        test.
+
+Last track to test      decimal 00-999  If  you answered N to Test All
+                                        Tracks,   specify   here   the
+                                        number  of  the  last track to
+                                        test.  Must  be  the  same  or
+                                        greater than the number of the
+                                        first track to test.
+
+Test all sectors?       Y or N          Y = test all sectors (0-39) in
+                                        sequence.   N = user wishes to
+                                        specify range of sectors  (may
+                                        be  used  to test only part of
+                                        each track, or if  disk  drive
+                                        is  other than Kaypro format.
+
+First sector to test    decimal 0-39    If you answered N to Test  All
+                                        Sectors,   specify   here  the
+                                        number of the first sector  to
+                                        test on each track.
+
+Last sector to test     decimal 0-39    If  you answered N to Test All
+                                        Sectors,  specify   here   the
+                                        number  of  the last sector to
+                                        test on each track.   Must  be
+                                        the  same  or greater than the
+                                        number of the first sector  to
+                                        test.
+
+How many test passes?   decimal 01-99   Enter   the   number  of  test
+                                        passes  to  be  made  on   the
+                                        diskette.   At  least one pass
+                                        is always  made  even  if  you
+                                        enter zero.
+
+After entry of the number of  test  passes,  the  program  immediately
+begins  executing.  The program may be interrupted by pushing any key,
+however response may be delayed for several seconds depending  on  the
+speed  of  the  processor  and  disk  drive.   Do not stop the test by
+resetting the computer system  if  you  are  using  restore  mode,  or
+unpredictable amounts of data may be lost.
+
+
+4.0  Error Listing
+
+Errors  detected  by the program may be itemized on the system console
+or the line printer.  The pass, drive name, track,  and  sector  where
+the error occurred are listed.  All numbers are in decimal.  The error
+type is designated at the right.  In the explanations below, "hardware
+error" signifies an error status code returned from the low level disk
+driver, and usually means a CRC fault or seek incomplete.
+
+
+error type                      explanation
+----------                      -----------
+
+read error - original data      If  running  in restore mode, hardware
+                                read error noted as the original  data
+                                was being loaded into memory.
+
+write error - test data         Hardware  error noted as the test data
+                                pattern  was  being  written  on   the
+                                diskette.
+
+read error - test data          Hardware  error noted as the test data
+                                pattern was being read back  from  the
+                                diskette.
+
+compare error - test data       Difference  was found between the data
+                                pattern  that  was  written   to   the
+                                diskette  and  the  data that was read
+                                back.
+
+write error - restore phase     Hardware error noted as  the  original
+                                data  was  being  written  back to the
+                                diskette.
+
+read error - restore phase      Hardware error noted as  the  restored
+                                original  data was being read back for
+                                verification.
+
+data cannot be restored         Compare  error   found   between   the
+                                original   data   rewritten   to   the
+                                diskette and  the  same  sectors  read
+                                back for verification.
+
+
+
+

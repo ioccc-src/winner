@@ -1,0 +1,18 @@
+		    FILTER.DOC ver 1.1
+		 by Keith Petersen, W8SDZ
+	     	     (revised 1/27/81)
+
+This program copies any ASCII file and filters out (ignores)
+all control characters except CR, LF, and TAB.  It also sets
+the high order bit of all characters to zero so that files
+created with WordStar or other text processing programs can
+be read by MBASIC.  The filtered copy of the of the file is
+created as 'FILTER.FIL' on the default drive.  The source
+file is left intact.  If the original file's EOF (1AH) is
+not at the physical end of the last sector, this program
+will pad the last sector with EOF's.  This is useful for
+'cleaning up' a file which was originally created by MBASIC
+or text editors which do not pad the last sector with EOF's.
+
+Command: FILTER [drive:]<filename.filetype>
+

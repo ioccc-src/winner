@@ -1,0 +1,404 @@
+title KAYPRO FORMAT (double density diskette format program) 2.0, Copyright (C) 1982 NLS, Inc.
+;#######################################################
+;##                                                   ##
+;##     Double density diskette format program        ##
+;##                                                   ##
+;##     Copyright (C) 1982 By Non-Linear Systems, Inc.##
+;##                                                   ##
+;#######################################################
+;##	Last Update: july 13,1982	[001]	      ##
+;##		by jim nickerson		      ##
+;##		     -added verify it's formatted     ##
+;#######################################################
+	.z80
+wboot	equ	0	; restart system entry point (Warm boot)
+bdos	equ	5	; bdos entry
+crlf	equ	0D0AH	; new line codes
+cr	equ	0DH
+lf	equ	0AH
+return	equ	0DH	; ascii return code
+esc	equ	1BH	; ascii esc
+frsttrk	equ	0	; first track #
+lsttrk	equ	39	; last track #
+nsects	equ	10	; last sector #
+data	equ	013H	; controller data port
+cmnd	equ	010H	; controller command port
+status	equ	010H	; status port for controller
+wrtcmd	equ	0F4H	; write track command
+rdcmd   equ     0E4H    ; read track command
+rstcmd	equ	000H	; restore command
+seekcmd	equ	010H	; seek command
+dskcode	equ	012H	; select unit B: double  density
+bitport	equ	01CH	; drive select  port
+maxsec  equ     010     ; maximum number of tracks
+secp    equ     012H    ; sector port
+
+; print a message
+print	macro	x
+	ld	c,9
+	ld	de,x
+	call	bdos
+	endm
+
+; get a char from console, up case
+input	macro
+	ld	c,1
+	call	bdos
+	res	5,a
+	endm
+
+; write cnt number of val bytes into memory (hl)
+bytes	macro	val, cnt
+	local	loop
+	ld	de,cnt
+loop:	ld	(hl),val
+	inc	hl
+	dec	de
+	ld	a,d
+	or	e
+	jr	nz,loop
+	endm
+
+; call bios routine, x=bios jump table #, 0=wboot, 1=const, 2=conin,...
+bios	macro	x
+	local	retadr
+	ld	hl,(1)
+	ld	de,x*3
+	add	hl,de
+	ld	de,retadr
+	push	de
+	jp	(hl)
+retadr:
+	endm
+
+start:
+	call	disdoff
+ask:
+	call	endoff
+	print	prompt		; ask for action command
+	input			; get char from console
+	cp	'F'
+	jp	z,format
+	cp	'S'
+	jp	z,single
+	cp	'E'		; abort?
+	jp	z,newexit		; exit
+	CP	'V'		;VERIFY DISK B READABLE
+	JP	NZ,ASK
+	call	disdoff
+	CALL	ENT1##		;USE CPYVR ROUTINES
+
+	jr	ask		; invalid input, ask again
+;
+; fix so that disk won't turn off if key pressed during format
+;
+disdoff:
+	push	hl	;preserve him
+	push	de
+	ld	hl,(0FA0AH)	;ORIGINAL CONIN ROUTINE
+	ld	(oldconin),hl	;save forreplacement
+	ld	de,0AH
+	add	hl,de
+	ld	(0FA0AH),hl
+	pop	de
+	pop	hl
+	ret
+;
+endoff:
+	push	hl
+	ld	hl,(oldconin)
+	ld	(0FA0AH),hl
+	pop	hl
+	ret
+;
+newexit:
+	ld	hl,(oldconin)
+	ld	(0FA0AH),hl	;set him back to original
+	jp	wboot
+;
+oldconin:
+	defw	0
+;
+;
+
+format:
+	call	disdoff
+	print	diskb
+	input
+	cp	return		; did user push <return> key?
+	jr	nz,ask		; back to prompt line
+	print	newline
+	call	seldsk		; select disk B:
+	call	home		; home disk drive
+	ld	c,frsttrk	; first track #
+form1:	push	bc		; save track number while printing it
+	print	smsg4		; "Track number:"
+	pop	bc
+	call	outdec		; display track number
+	call	settrk		; move to track given by c
+	call	maktrk		; make track image, track # in c
+	call	wrttrk		; format track
+	inc	c		; up track count
+	ld	a,c		; max track+1 reached?
+	cp	lsttrk+1
+	jr	nz, form1	; do another track
+	print	done
+;
+	.8080
+	CALL	ENT1##
+	.Z80
+;
+	jp	ask		; done, more formatting to do?
+
+single:
+	print	smsg1		; ask for track number
+	call	indec		; get integer into reg c
+	cp	esc		; want out?
+	jp	z,ask
+	push	bc
+	print	smsg2		; tell track number to verify with user
+	pop	bc
+	push	bc
+	call	outdec		; print number in reg c
+	print	smsg3		; ask if to continue
+	input
+	pop	bc		; recover sector number
+	cp	return
+	jp	nz,ask		; user wants out
+	call	seldsk		; select disk
+	call	home		; home disk drive
+	call	settrk		; move to track given by c
+ 	call	maktrk		; make track image, track # in c
+	call	wrttrk		; format track
+        jp      ask             ; go back to menu
+
+
+
+maktrk:	ld	hl,tran		; sector skew table
+	push	hl		; store on stack for use
+	ld	hl,track	; hl^ to track image in memory
+	ld	b,nsects	; number of sectors to gen
+
+	bytes	04EH,	80	; post index gap
+	bytes	0,	12
+	bytes	0F6H,	3	; Writes C2
+	bytes	0FCH,	1	; index AM
+	bytes	04EH,	16	; pre ID gap
+
+trksec:	bytes	0,	8
+	bytes	0F5H,	3	; Writes A1
+	bytes	0FEH,	1	; ID AM
+	ld	(hl),c		;	track number
+	inc	hl
+	bytes	0,	1	;	side number = 00
+	ex	(sp),hl		;		pointer to tran table
+	ld	a,(hl)		;		pick up sector number
+	inc	hl		;		next table entry
+	ex	(sp),hl		;		back on stack
+	ld	(hl),a		;	sector number
+	inc	hl
+	bytes	2,	1	;	sector length = 512
+	bytes	0F7H,	1	;	CRC
+	bytes	04EH,	22	; post ID gap
+	bytes	0,	12
+	bytes	0F5H,	3	; writes A1
+	bytes	0FBH,	1	; data AM
+	bytes	0E5H,	512	; data field
+	bytes	0F7H,	1	; CRC
+	bytes	04EH,	26	; post data gap / pre ID gap
+
+	dec	b		; down sector count
+	jp	nz,trksec	; another sector to do in image?
+
+        bytes	04EH,	30	; pre index gap
+        or	a		; clear carry
+	ld	de, track	; compute length of track
+	sbc	hl,de
+	ld	(trklen),hl
+	ex	(sp),hl		; tran tbl adr not needed
+	pop	hl
+	ret			; exit with hl=len of track
+
+tran:	;new translate table
+	defb	0, 8, 3, 6
+	defb	1, 9, 4, 7
+	defb	2, 5
+;
+
+xlate:  push    bc
+        push    hl
+        ld      hl,tran
+        ld      c,a             ;copy disk logical sector number
+        ld      b,0
+        add     hl,bc
+        ld      a,(hl)          ; translated sector number
+        pop     hl
+        pop     bc
+        ret
+
+indec:	ld	c,0		; enter a decimal number into c
+inlp:	push	bc		; save deciamal number in c
+	ld	c,1		; get a console character
+	call	bdos
+	pop	bc
+	cp	'0'
+	ret	c		; ascii value less than '0'
+	cp	'9'+1
+	ret	nc		; ascii value gtr than '9'
+	sub	'0'
+	ld	b,a		; save decimal digit in b
+	ld	a,c
+	add	a,a		; times 2
+	add	a,a		; times 4
+	add	a,c		; times 5
+	add	a,a		; times 10	( a=c*10 )
+	add	a,b		; a=(c*10)+b
+	ld	c,a
+	jr	inlp		; go get another digit
+
+outdec:	push	bc		; save number in c
+	ld	a,c		; decimal print the number in c
+	ld	e,'0'		; e hold decimal digit
+hund:	sub	100		; any hundreds digits?
+	jr	c,tens
+	inc	e		; bump hundreds digit
+	jr	hund
+tens:	add	a,100		; put back 100
+	push	af		; save number
+	ld	a,e		; leading zero digit?
+	cp	'0'
+	jr	z,ten1
+	ld	c,2
+	call	bdos		; write digit
+ten1:	pop	af		; recover digit
+	ld	e,'0'		; tens digit
+ten2:	sub	10
+	jr	c,ones
+	inc	e		; bump tens digit
+	jr	ten2
+ones:	add	a,10+'0'
+	push	af		; save number, print digit
+	ld	c,2
+	call	bdos		; tens digit
+	pop	af
+	ld	e,a
+	ld	c,2
+	call	bdos		; ones digit
+	pop	bc		; restore number to c
+	ret			; done
+
+seldsk:	ld	a,dskcode	; select format disk
+	out	(bitport),a
+	ret
+
+home:	ld	a,rstcmd	; re-zero disk drive
+	out	(cmnd),a
+	jr	busy		; wait for command done
+
+settrk:	push	bc		; seek track
+	ld	a,c		; track #
+	out	(data),a
+	ld	a,seekcmd	; command
+	out	(cmnd),a
+	pop	bc
+	jr	busy
+
+busy:	call	delay		;  delay for controller to set busy bit
+bsy:	in	a,(status)	; wait for not busy
+	bit	0,a
+	jr	nz,bsy
+	ret
+delay:	call	dly
+dly:	ex	(sp),hl
+	ex	(sp),hl
+	ret
+
+wrttrk:	push	bc
+	ld	hl,(trklen)	; length of track in byte
+	ex	de,hl
+	ld	c,data
+	ld	hl,track	; hl^ to track image, de is length
+	ld	a,(66H)		; save byte at nmi
+	push	af
+	ld	a,0C9H		; store return inst at nmi
+	ld	(66H),a
+	ld	a,wrtcmd	; track write command
+	out	(cmnd),a	; issue command
+wrtlp:	halt			; wait for controller
+	outi			; issue data byte pointed to by hl
+	dec	de		; count=count-1
+	ld	a,d		; count zero?
+	or	e
+	jp	nz,wrtlp	; more bytes
+	pop	af		; recover byte at nmi
+	ld	(66H),a
+	pop	bc
+	ret
+
+prompt:
+signon:
+	defb	01AH
+	defw	crlf,crlf
+	defb	'KAYPRO II  Double density diskette format program     13 July 1982'
+	defw	crlf
+	defb	'------------------------------------------------------------------'
+	defw	crlf, crlf
+	defb	'All activity will take place on drive B'
+	defw	crlf, crlf
+	defb	'OPTIONS'
+	defw	crlf
+	defb	'-------'
+	defw	crlf
+	defw	crlf
+	defb	'Exit--------> exit this program and return to CP/M'
+	defw	crlf,crlf
+	defb	'Format------> format the diskette in drive B'
+	defw	crlf
+	defb	'              (it will erase all information on it !)'
+	defw	crlf,crlf
+	defb	'Single------> format 1 track on the diskette in drive B'
+	defw	crlf,crlf
+	defb	'Verify------> verify the diskette in drive B is readable'
+	defw	crlf
+	defb	'              (this is a non destructive test)'
+
+rompt:	defw	crlf,crlf
+	defb	'(E)xit (F)ormat (S)ingle (V)erify'
+	DEFW	CRLF
+	defb	'Please enter ''E'' or ''F'' or ''S'' or ''V'' ==>','$'
+
+diskb:	defw	crlf, crlf
+	defb	'Insert diskette to format into drive B.'
+	defw	crlf
+	defb	'Enter <RETURN> key to format, any other key to abort $'
+
+smsg1:	defw	crlf, crlf
+	defb	'Format a single track of the diskette'
+	defw	crlf
+	defb	'Enter track number (<ESC> key to abort)  xx', 8,8,'$'
+
+done:	defb	cr,'DONE                    ',cr,lf,'$'
+smsg2:	defw	crlf
+smsg4:	defb	return, 'Formatting track:$'
+
+smsg3:	defb	' Enter <RETURN> to format, any other key to abort $'
+
+secmsg: defb    ' Sector ','$'
+
+
+newline:defw	crlf
+	defb	'$'
+
+trklen:	defw	0	; length of track
+
+sector: defs    2       ; sector number
+adrsa:  defs    2       ; format data pointer
+adrsb:  defs    2       ; read buffer pointer
+bytcnt: defs    2       ; byte count
+dmaadr: defw    track   ; dma adrs storage area
+
+	dseg
+track:	; this is a diskette track image to be formed by the program
+
+	end
+

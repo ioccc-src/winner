@@ -1,0 +1,168 @@
+version	equ	0
+	.z80
+	.radix	16
+
+bdos	equ	5
+fcb	equ	5c
+fcb2	equ	6c
+
+cr	equ	0d
+lf	equ	0a
+	
+boot	equ	0
+conin	equ	1
+conout	equ	2
+lstout	equ	5
+dconio	equ	6
+linout	equ	9
+linin	equ	0a
+const	equ	0b
+reset	equ	0d
+seldsk	equ	0e
+openf	equ	0f
+closef	equ	10
+searf	equ	11
+searn	equ	12
+deletf	equ	13
+redseq	equ	14
+wrtseq	equ	15
+creatf	equ	16
+renamf	equ	17
+setdma	equ	1a
+redran	equ	21
+wrtran	equ	22
+filsiz	equ	23
+
+;
+	jp	start
+;
+
+cpm	macro	function,info
+
+	if	not nul function
+	ld	c,function
+	endif
+
+	if	not nul info
+	ld	de,info
+	endif
+
+	call	bdos
+
+endm
+
+;
+
+print	macro	string
+
+	call	type
+	dc	string
+
+endm
+
+;
+;
+
+type::	ex	(sp),hl
+type1::	ld	e,(hl)
+	push	hl
+	cpm	conout
+	pop	hl
+	ld	a,(hl)
+	inc	hl
+	and	a
+	jp	p,type1
+	ex	(sp),hl
+	ret
+
+;
+
+crlf	macro
+	cpm	conout,cr
+	cpm	conout,lf
+endm
+
+
+;		*		  *
+;****************  main entrance  *******************
+;		*		  *
+
+settrk::	
+	ld	hl,(1)
+	ld	de,1Bh
+	add	hl,de
+	jp	(hl)
+setsec::	
+	ld	hl,(1)
+	ld	de,1Eh
+	add	hl,de
+	jp	(hl)
+rd_sector::	
+	ld	hl,(1)
+	ld	de,24h
+	add	hl,de
+	jp	(hl)
+writesec::	
+	ld	hl,(1)
+	ld	de,27h
+	add	hl,de
+	ld	c,1
+	jp	(hl)
+
+start::
+	print	'Autoload version 1.'
+	cpm	conout,version+'0'
+	print	' by Bruce Berryhill'
+	crlf
+which:	crlf
+	print	'Which drive do you want to write the autoload system on? '
+	cpm	conin
+	res	5,a
+	cp	'A'
+	jp	c,which
+	cp	'Q'
+	jp	nc,which
+	sub	'A'
+	ld	e,a
+	cpm	seldsk
+	crlf
+	crlf
+	print	'Enter the command to run on cold boot: '
+	cpm	linin,keybuf
+	ld	hl,keybuf+1
+	ld	b,(hl)
+	inc	hl
+up_loop::
+	ld	a,(hl)
+	cp	'a'
+	jp	c,next
+	cp	'z'+1
+	jp	nc,next
+	res	5,(hl)
+next::	inc	hl
+	djnz	up_loop
+	ld	(hl),0
+	ld	bc,0
+	call	settrk
+	ld	bc,1
+	call	setsec
+	cpm	setdma,80
+	call	rd_sector
+	ld	de,87
+	ld	hl,keybuf+1
+	ld	a,(hl)
+	ld	c,a
+	inc	c
+	inc	c
+	ld	b,0
+	ldir
+	call	writesec
+	crlf
+	print	'Done'
+	crlf
+	jp	0
+
+keybuf::	db	50
+
+	end	start
+
