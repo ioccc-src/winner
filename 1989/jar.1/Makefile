@@ -131,14 +131,15 @@ ${PROG}: ${PROG}.c
 	${RM} -f $@
 	${CP} jar.1.sh $@
 	${CHMOD} +x $@
-	${CC} -c -o /dev/tty jar.1.c
+	@echo NOTE: We will now simulate: ${CC} -c -o /dev/tty jar.1.c
+	${CC} -c -o /dev/stdout jar.1.c 2>/dev/null | ${STRINGS}
 
 # alternative executable
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-${PROG}.alt: ${PROG.alt}.c
+${PROG}.alt: ${PROG}.alt.c
 	@echo "NOTE: The original source might not compile using modern compilers."
 	${RM} -f $@
 	${CP} jar.1.alt.sh $@

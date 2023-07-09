@@ -1,38 +1,86 @@
 # Strangest abuse of the rules
 
-Jari Arkko  
-Laboratory of Information Processing Science  
-Helsinki University of Technology  
-Otakaari 1  
-02150 Espoo  
-Finland  
+Jari Arkko
+Laboratory of Information Processing Science
+Helsinki University of Technology
+Otakaari 1
+02150 Espoo
+Finland
 
-## To build and run:
+## To build:
 
 ```sh
 make clobber all
 ```
 
+## To run:
+
+```sh
+make clobber all
+```
+
+### Alternate code:
+
+One may try:
+
+```
+./jar.1.sh
+```
+
+Or for the original $xurce might not compile using modern compilers, try:
+
+```sh
+make clobber alt
+```
+
+or even:
+
+```sh
+jar.1.alt.sh
+```
+
 ## Judges' remarks:
 
 On many systems the compiler will not allow you to send the object file to
-/dev/tty.  The author suggested:
+`/dev/tty`.  The author suggested:
 
 ```sh
 cc -c -o /dev/tty jar.1.c
 ```
 
-On systems that have symbolic links, we suggest:
+As a last resort the `jar.1.sh` script provided simulates
+writing the raw binary the .o file to the terminal.
 
-```sh
-ln -s /dev/tty jar.1.o
-cc -c jar.1.c
-```
+Abuse of the rules winners usually result in a change of the rules.
+Starting in 1990, compiling entries must result an regular file
+which can be executed.
 
-As a last resort the scripts provided simply cat the .o file to the terminal.
+Under certain conditions that are dependent on such diverse things such as:
 
-Abuse of the rules winners usually result in a change of the rules.  Starting in
-1990, compiling entries must result an regular file which can be executed.
+- compiler type
+- compiler version
+- libc
+- crt0.o
+- operating system
+- terminal application
+- terminal driver
+- various bugs and misfeatures :-)
+
+the output of ray binary to a terminal can produce various effects
+from the mildly annoying beeps to missing seeing the important
+output, to various "ill effects" such as the crashing of the terminal
+application.  Instead we have opted to pipe raw binary thru the
+strings utility before writing to standard output instead of
+`/dev/tty`.
+
+As a historical note, the Makefile does echo the original command
+to standard output, the original shell command that did write raw
+binary to the `/dev/tty` special file.
+
+The use piping raw binary thru stings makes the original 1989 output
+more apparent, as was the case when using dumb CRT terminals (some
+do dumb that they couldn't even process simple ANSI escape sequences)
+were more common.
 
 ## Author's remarks:
 

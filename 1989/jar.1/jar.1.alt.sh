@@ -4,5 +4,5 @@
 # run/compile it
 rm -f jar.1.alt.o
 cc jar.1.alt.c -c
-cat jar.1.alt.o
+cat jar.1.alt.o | strings
 rm -f jar.1.alt.o

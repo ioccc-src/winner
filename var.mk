@@ -187,6 +187,7 @@ SLEEP= sleep
 SORT= sort
 SSH= ssh
 STAT= stat
+STRINGS= strings
 STRIP= strip
 STTY= stty
 SUM= sum
