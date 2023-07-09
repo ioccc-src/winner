@@ -427,6 +427,23 @@ Cody!
 
 # 1984
 
+## [1984/decot](1984/decot/decot.c) ([README.md](1984/decot/README.md)
+## STATUS: INABIAF - please **DO NOT** fix
+
+The purpose of this program is to print out a string of rubbish. In particular
+you should see something like:
+
+```sh
+$ ./decot
+'",x);	/*
+\
+```
+
+without a newline after the `\`. This is not a bug.
+
+
+
+## STATUS: INABIAF - please **DO NOT** fix
 ## [1984/laman](1984/laman/laman.c) ([README.md](1984/laman/README.md)
 ## STATUS: INABIAF - please **DO NOT** fix
 

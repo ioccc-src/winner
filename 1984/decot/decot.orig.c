@@ -12,7 +12,7 @@ struct tag{int x0,*xO;}
 
 *main(i, dup, signal) {
 {
-  for(signal=0;*k *x * __FILE__ *i;) do {
+  for(signal=0;*k * x * __FILE__ *i;) do {
    (printf(&*"'\",x);	/*\n\\", (*((double(tag,u)(*)())&floor))(i)));
 	goto _0;
 

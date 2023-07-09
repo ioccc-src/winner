@@ -46,9 +46,7 @@ for(signal=0;*k *x * __FILE__ *i;) do {
 ```
 
 
-To see what we mean look at the source file in the
-[archive/archive-1984.tar.bz2](/archive-1984.tar.bz2) tarball or
-[decot.alt.c](decot.alt.c).
+To see what we mean look at the [original source file](decot.orig.c).
 
 ## Author's remarks:
 
