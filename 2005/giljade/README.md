@@ -51,24 +51,11 @@ vi out
 Press ^F (control F) repeatedly.
 
 
-### Alternate code:
-
-This version will work only with compilers that let you have alternate types to
-the args of `main()` and will also successfully run its self-test (the other
-version only runs some of them successfully). To use:
+### Self-test feature to try:
 
 ```sh
-make alt
-```
-
-Use `giljade.alt` as you would `giljade` above.
-
-
-#### Try:
-
-```sh
-./giljade.alt > out
-./giljade.alt out
+./giljade > out
+./giljade out
 ```
 
 

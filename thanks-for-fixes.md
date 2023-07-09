@@ -1168,9 +1168,9 @@ the README.md for details.
 
 ## [2005/giljade](2005/giljade/giljade.c) ([README.md](2005/giljade/README.md]))
 
-After Landon fixed the entry to compile with clang (but see above and below)
-Cody noticed this does not work at all in modern systems. He fixed this to work
-but he notes that the fix to let clang compile it breaks the self-test feature.
+After Landon fixed the entry to compile with clang Cody noticed this does not
+work at all in modern systems (see below). He fixed this to work and then he
+later fixed the self-test feature.
 
 The problem that was showing up is that with either optimising or if anything
 but 32-bit (as in `-m32`) was used it would not work (at least in 64-bit
@@ -1179,15 +1179,29 @@ and 64-bit. The solution has to do with the size difference between `int` and
 `long` so that the `long*E` is now `int*E`. This solves a specific problem for
 linux (32-bit, 64-bit) and macOS (arm64).
 
-But as noted there is another problem with clang: the self-test feature only
-completely works with the original version ([giljade.alt.c](giljade.alt.c), not
-the one that will compile with clang ([giljade.c](giljade.c)). The alternate
-version, which will not compile with clang, is the only one that passes the
-self-tests. If your compiler does not have the defect that clang has about arg
-types to `main()` see the Alternate code section in the README.md file at least
-for the self-test feature.
+To get the self-test feature to work it was required to remove from the code:
 
-For much more details on the problem see [bugs.md](/bugs.md).
+```c
+O-b-f-u -s-c-a-t-e;
+```
+
+as it caused a compilation error in some of the generated code but served no
+purpose, didn't affect the output of the puzzle and since the 'string' is
+already in the code there is no problem omitting it.
+
+`main()` was also changed to be in the old format:
+
+```diff
+-(B[h]=N-B,N= N+6);}main(int Z,char**Y ){char*U=Z ;
++(B[h]=N-B,N= N+6);}main(Z,Y )char**Y;{char*U=Z ;
+```
+
+Finally because clang has `-Werror` by default the program was changed to use
+`make` and then `rm -f` on the output of the compiler instead. This change might
+also not have been necessary if using different flags to `cc` but this felt
+cleaner, somehow.
+
+
 
 ## [2005/jetro](2005/jetro/jetro.c) ([README.md](2005/jetro/README.md))
 
