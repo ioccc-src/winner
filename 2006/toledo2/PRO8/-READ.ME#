@@ -1,0 +1,149 @@
+-READ.ME
+
+
+You will not be able to boot this diskette. Boot your PRO8 system from
+your usual system disk.  IMPORTANT: Make a copy of this disk and put it 
+away in a safe place.
+
+If you've done a speed-up modification to your Kaypro you may need to
+switch your machine back to 2.5MHz before using the COPY programs.
+You may try it at 5MHz but go to the slower speed if you have any
+problems. 
+
+When transferring files between different floppy formats and 
+different drive types, it is more efficient to use PIP.COM. 
+
+This disk contains all the files you will need to use and modify your
+PRO8 system. 
+
+Other New Files and their uses.....................................
+
+
+
+CONFIG83.COM	This is your new replacement for the CONFIG program
+		that you got with your Kaypro. It is modified to work
+		with 63k CP/M systems. Use it as you would your old
+		CONFIG. This program also allows you to set 
+		configuration data for the PRO8 system.
+
+RCONFIG.COM	The PRO8 rom Version 3 can support the Micro Sphere
+RF.COM		ram disk. If you have their ram disk see RDISK.DOC 
+RDISK.DOC	for information on these files.	
+
+
+************** NOTES ON THE PRO 8 AND 4+ MODIFICATIONS ****************
+
+** CAUTION **** CAUTION **** CAUTION **** CAUTION **** CAUTION **
+When working on the drive cables (NEAR THE SWITCHING POWER SUPPLY),
+please disconnect the power cord from the power jack located at the 
+rear of the cabinet.  Switching power supplies are touchy creatures. 
+
+Drive Idiosyncrasies:
+
+Jumper options for most drives are located directly behind or near the 
+drive data cable edge connector.  Terminator resistor packs are located
+near the jumper options and are usually socketed.   
+
+************ 
+TEAC DRIVES:
+************
+
+Teac drive ribbon connectors are mounted upside down from other drive 
+manufacturers.  If you mix Teac drives with Tandon drives the drive data 
+cable may be too short. 
+
+To jumper the Teacs change the HS option to the HM option.  The drive select 
+options are set by DS0-DS1.  Drive A: corresponds to DS0; drive B: 
+corresponds to DS1, etc., also remove the IU jumper.
+
+********************
+TANDON 101-4 DRIVES:
+********************
+
+To set up the jumpers do the following:
+1. W9  open
+2. W19 closed 
+3. Jumper on W13 - sets up for 6ms step rate
+4. W10 open
+5. W11 open
+6. W12 open
+7. W14 open
+
+To jumper drive select do the following:
+1. W1 ==> drive A:
+2. W2 ==> drive B:
+3. W3 ==> drive C:
+4. W4 ==> drive D:
+
+The onboard processor only checks the jumper options upon power-up so make 
+sure you power down after the jumpers have been set.
+
+***********
+CDC DRIVES:
+***********
+
+Make sure the "M" option is jumpered and drive selection is done by 
+jumpering drive number 1 for drive A:; 2 for drive B: and so on.
+
+************************
+MITSUBISHI M4853 DRIVES:
+************************
+
+Move the HS jumper option to the HM option.  Drive select options are 
+DS0-DS3, these correspond to drive A: - drive D: respectively.  The 
+terminators are soldered in but there are 7 jumpers located behind the 
+terminator.  Removing these jumpers isolates the terminator from the board.
+  
+4+ Notes:
+
+Teac 55 series are half power drives, therefore four drives can operate 
+off of the KAYPRO power supply with our 4+ decoder board.  Tandon or CDC 
+drives (if you add drive C and D) will require their own power source.
+
+Make sure you only have one terminator (resistor pack) located on the last 
+physical drive of your system. Exceptions to this statement follow: 
+
+If you are using 4 Teac 55 drives then the terminator needs only to be on 
+drive D:.  If you are using drives (for C and D) that require their own 
+power supply then a terminator is required on drive B: as well as on 
+drive D:.  A 600 OHM terminating resistor pack should do the trick.  
+This way when you need to take your KAYPRO and use it independent of your 
+C: and D: drives, drive A: and B: will be protected by the terminator on 
+B:. 
+
+Decoder Board Installation:
+
+Remove the (drive) I/O cable from the mother board at J6. The decoder 
+board plugs onto the exposed male header at J6. The orientation of the 
+decoder board is male right angle pins toward the drives. The micro-clip 
+has to be attached to +5 volts; J5 pin 6 will do.
+
+PRO 8 Notes:
+
+Kaypro II to 4 conversion:   
+When picking up A11 from U59 DO NOT bend out pin 2, just tack on to the 
+exposed part of the pin.  Don't forget to change U73 to the 74S04, this 
+faster part is critical for the select pulse from U72.
+
+** CAUTION **
+It is recommended that a 3 wire soldering iron be used on all modifications.
+This will eliminate the probability of damage to any static sensitive chips
+you may be soldering on.   
+
+****	    If you are having problems and have an old Kaypro check U82 
+(the floppy disk controller). If it is a 1793 disregard the rest of this 
+note. If it is a 1791 you must do the side select circuit a little 
+differently. Bend out pin 6 of U73 and solder from this bent out pin to 
+pin 32 of J6. (Before you had jumpered from U73 pad 6 to J6 pin 32. Remove 
+that jumper). Now bend out pin 13 of U72 (the PIO). Jumper from this bent 
+out pin to the bent out pin 5 of U73. (Originally we jumpered to E40, 
+remove that jumper). The reason for this is that the original design of 
+the Kaypro used this line to strobe or test for busy on the unused side of 
+the system port. This arrangement was never used for anything but it tied 
+up that bit on the PIO. We are just avoiding that traffic by direct 
+jumpering.
+
+
+  
+
+

@@ -1,0 +1,836 @@
+
+                                MDM712
+
+                         (NOTES ON HOW TO USE)
+
+                            Copyright 1983
+
+                                  by
+
+                          Irvin M. Hoff W6FFC
+
+                              27 July 1983
+
+
+NOTE:  MDM712 SUPPORTS AUTO-DIALING AND AUTOMATIC CONTINUOUS REDIALING
+       FOR THE FOLLOWING MODEMS:
+
+                    PMMI 103 S-100 PLUG-IN MODEM
+                    HAYES SMARTMODEM 300 OR 1200 MODEMS
+                    U. S. ROBOTICS 300/1200 MODEM
+
+       (IT CAN STILL BE EASILY USED WITH OTHER EXTERNAL MODEMS
+       WITH MANUAL DIALING SUCH AS THE BELL 212A, RACAL-VADIC, ETC.)
+       IT SUPPORTS UP TO TWO LONG-DISTANCE DIALING SYSTEMS (SUCH AS
+       'MCI', 'SPRINT', 'TYMNET', ETC. FOR TOUCH-TONE DIALING SYSTEMS.
+
+INTRODUCTION:
+------------
+
+     MDM712 enables a computer to communicate with another computer.
+This is normally done by using standard telephone lines but with special
+audio tones sending serial data.  Two common speeds are used, depending
+on the facilities available -- 300 Baud or 1200 Baud.  A "modem" is used
+which provides these audio tones.  This is an acronym for "modulator and
+demodulator".  The one section (modulator) provides the audio tones for
+sending over the telephone line and the other section (demodulator) then
+converts those audio tones back to digital pulses the computer uses to
+receive the incoming data.
+
+     The modem itself is a hardware utility, usually costing around $100
+to $250 for a typical 300 Baud device and from $400 to $800 for a system
+offering 1200 Baud as well as 300 Baud.  Some of these (such as the PMMI
+S-100 modem board) plug directly into the computer itself, while others
+are totally independent of the computer and use an interconnect cable
+(usually a RS-232 type) to control the external modem.  A Bell 212A is
+an excellent example of this type modem.  Other examples would include
+the Racal-Vadic, Hayes Smartmodem, U. S. Robotics, Prentis, etc.
+
+     The program discussed in this guide allows each computer involved
+to directly control its own modem, converting DC pulses into audio tones
+which are sent to (or received from) the telephone line.  (The standard
+1200 baud transmissions use "DFSK" (phase shift keying) instead of "AFSK"
+(audio frequency shift keying).
+
+     For short distances, no modems are required as the computer can
+provide the necessary digital voltages.  This discussion is centered
+around systems intended for use over distances ranging from several
+miles to literally around the world.
+
+
+
+FEATURES:
+--------
+
+     A program to communicate with another computer can range from very
+simple to very complex.  MDM71 is one of the more complex such programs
+available today.  It started in 1977 as a relatively simple program.  It
+was called MODEM2 at that time.  It was intended to be used primarily as
+a means of exchanging programs with other people in other cities.  Since
+that time a number of other (very useful) features have been added, in
+addition to improved methods of program transfer.  A list of some of the
+features offered by this particular program include:
+
+  1)  Ability to talk with another computer via keyboard at each end.
+          (Called the "terminal mode".)
+  2)  Ability to operate a remote mainframe computer such as TYM-SHAR,
+          or special data bank systems now commonplace.  This includes
+          "bulletin board" systems for receiving, sending or just read-
+          ing messges or other types of information.
+  3)  Ability to upload (send) or download (receive) programs from other
+          computers whether TYM-SHAR, data banks, remote hobby systems
+          or just another individual in another location.
+  4)  Ability to copy incoming information on a printer.  If the print-
+          er is too slow to copy the data directly, the extra characters
+          back into a large storage buffer until they can be printed.
+  5)  Ability to copy incoming data into memory for automatic transfer
+          to a disk file.
+  6)  Accomodates any computer clock speed up to 25.5 MHz. in 0.1 Mhz.
+          increments for uniform results.  (The clock speed is actually
+	  of modest interest, it is only used for setting timing loops.)
+  7)  Advanced type of error detection (CRC or Cyclic Redundancy Check)
+	  using automatically generated high-speed lookup tables.
+  8)  Automatic disconnect from the telephone line when using "BYE", "X"
+	  or CTL-D.  Two other disconnect commands with the PMMI modem.
+  9)  This particular program has additional features of special inter-
+	  est to those using the PMMI 103 S-100 plug-in modem, the U. S.
+	  Robotics 300/1200, or the Hayes Smartmodem 300 or 1200.  Those
+          features basically include automatic dialing and redialing (if
+	  requested) until the other computer finally answers.
+        
+               a) Automatic selection of a particular phone number from
+                  a library of names and numbers.
+               b) Automatic dialing for alternate long-distance systems
+                  (where auto-dialing touch-tone modems are used).
+               c) Entry of a hand-typed number.  Although it might be as
+                  simple to manually dial the number as hand-type it, it
+		  can then be automatically redialed indefinitely.
+
+
+USING THE PROGRAM THE FIRST TIME:
+--------------------------------
+ 
+     For now, we shall assume the program is ready to use on your equip-
+ment.  (Normally the user must make some modest changes to the program
+before it can be used.  This includes changing the port numbers and some
+other personal options.  These will be covered later in the section that
+describes how to adapt it to your equipment.)
+
+     When the program is brought up is shows this display (if using the
+PMMI modem):
+ 
+ 
+          MDM712 - (type M for Menu)
+          Version for PMMI S-100 modem starting at port: C0H
+
+          B>>COMMAND: x
+
+
+       The cursor stops at point "x:" waiting for some sort of command.
+Typing a "M" followed immediately by a RETURN, shows the first page of
+a 4-page help guide.  If you do not have a PMMI modem, you would have
+seen this (or a customized heading for your particular equipment):
+
+          MDM712 - (type M for Menu)
+          Version for Non-Pmmi modem
+
+          B>> COMMAND:
+
+
+     In this case only a 3-page help guide is used, since the 4th page
+is used to assist those with the PMMI modem.  It tells them a little
+about changing from originate to answer mode, how to change Baud rates,
+how to disconnect, etc.
+
+     Several commands are similar to those already used for CP/M, such
+as 'ERA', 'DIR' and the ability to change disk drives and user areas.
+This adds tremendous flexibility while remaining in the modem command
+mode.  To change disk drives, just say:
+
+          B>>COMMAND: A: <RET>
+
+     and you are in the same user area on the A: drive.  You can also
+say:
+          A>>COMMAND: A: 12 <RET>
+
+     to change user areas.  When finished (using this example), say:
+
+          A12>>COMMAND: CPM  <RET>
+
+     and you will go back to CP/M with the original driver and user area.
+
+OPTIONS:
+-------
+
+     There are 6 primary options and 13 secondary options that may be
+typed on the command line.  In additon there are over 35 commands ranging
+from single character to three characters that can be used (such as DIR,
+ERA, LOG, etc.)  Those are listed on the menu.  (The exact number varies
+depending on whether you have the PMMI modem, etc.)
+
+
+     Primary Options:    E, L, M, R, S, T
+          E = Echo mode (special type of full duplex)
+          L = Local modem (no remote echo, half duplex)
+          M = Menu display showing features that are available
+          R = Receive a file from remote facility
+          S = Send a file to a remote facility
+	  T = Terminal mode (full duplex, echo provived remotely)
+
+     Secondary Options:  A, B, D, L, O, Q, R, S, T, V, X, 0, 1
+          A = Answer mode (used only by PMMI modems)
+          B = Batch mode -- allows automatic multiple file transfer
+		(This is normally only used from modem-to-modem as
+		no RCP/M system supports batch mode file transfers.)
+          D = Disconnect when done, stay in MDM712
+          L = Local mode when finished with a file transfer
+          O = Originate mode (used only by PMMI modems)
+          Q = Quiet mode, special purpose feature rarely used except if
+                 operating through a "BYE" program.
+          R = Receive data shown on CRT during file transfer
+          S = Send data shown on CRT during file transfer
+          T = Terminal mode when finished with a file transfer
+          V = Visual inspection of an ASCII file being transferred.  Not
+                 often used as most ASCII files are now "squeezed" for
+                 minimum transfer time and disk space.
+          X = Exit to CP/M  when finished, disconnect from phone line
+          0 = Odd parity (PMMI modem)
+          1 = Even parity (PMMI modem)
+	
+
+     Although you can get the following information from the help guide
+in MDM712, showing it here will allow us to discuss the various features
+in somewhat better detail.
+
+
+NOTE:  THIS PROGRAM HAS SUPPORTED THE PMMI 103 S-100 PLUG-IN MODEM SINCE
+       ITS INCEPTION.  IT NOW SUPPORTS THE HAYES SMARTMODEM 300 AND 1200
+       AND THE US ROBOTICS 300/1200 MODEM AS WELL.  IN THE FOLLOWING
+       COMMENTS AN ASTERISK (*) BEHIND THE WORD PMMI MEANS ALL THE COM-
+       MENT IS PERTINENT TO ALL THESE MODEMS.  OTHERWISE IT WOULD BE A
+       LITTLE AWKWARD TO ATTEMPT TO MENTION THEM ALL EACH TIME.
+
+  (*)  THUS INDICATES PMMI, HAYES SMARTMODEM OR US ROBOTICS ALL APPLY.
+
+-   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
+
+
+THE HELP GUIDE, PAGE 1:
+----------------------
+
+                 Single Letter Commands
+
+?  - Display current settings
+M  - Display the menu
+E  - Terminal mode with echo
+L  - Terminal mode with local echo
+T  - Terminal mode
+        For copying text to disk use T (or E or L) FILENAME.TYP
+        Start or Stop toggles described on subsequent screen.
+R  - Receive CP/M file using Christensen Protocol
+S  - Send CP/M file using Christensen Protocol
+        COMMAND: R (or S) FILENAME.TYP
+        R and S can use the following subcommands:
+           B  - Bulk transfer using wildcards (e.g., *.*)
+           D -  Disconnect when done
+           Q  - Quiet mode (no messages to console)
+           T  - Return to terminal mode after transfer
+           V  - View bytes transferred on console
+	   X  - When done, disconnect, go to CP/M
+
+     The single letter commands may also be used on the
+     command line when the program is initially executed.
+
+Hit any KEY to CONTINUE
+
+-   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
+
+
+DISCUSSION OF HELP GUIDE PAGE 1:
+-------------------------------
+
+     There are basically three types of commands that may be used with
+this program:
+               1)  Single-letter commands shown on page one.
+               2)  Three-letter commands shown on page 2, and
+               3)  Control-<char.> commands shown on page 3.
+
+     Going down the list:
+
+  ? - shows current parameters.  As these are closely tied in with some
+          of the other options, we shall show a typical example later
+          in this discussion.
+  M - shows the menu a page at a time.  You may abort after any page is
+	  shown with a control-C.
+  E - terminal mode with echo.  When talking with another terminal also
+          also using MDM712 (or a comparable program), one of you must
+          send an "echo-back" so you can both see what the other person
+          is typing.  This is needed for full-duplex operation.  Usually
+          the person originating the call will type "E" instead of "T".
+          However either may do this.  If "both" use the echo mode, the
+          program usually starts typing a string of feedback characters
+          since both computers are re-sending the same character over
+          and over.  You can stop this by just returning to command mode
+          (type control-E) and then retyping "T" rather than "E".
+  L - terminal mode with local echo.  Shows what you are typing but does
+          not send an echo of the other person's typing back to him.  
+          Can be used at both ends, in place of one person using "E".
+          Both "E" and "L" are useful at times for some types of modems
+          that do not use full-duplex, or for some main frame units that
+          run half-duplex.  The combination of "T", "E" and "L" gives an
+          excellent choice to use on various systems.  Normally the "T"
+          mode is sufficient except when talking with another person and
+          then the "E" mode at one end or "L" mode at both ends will
+          provide normal results.
+  T - if typed as the first (primary) option, puts the program directly
+          into "terminal mode", allowing it to send from the keyboard to
+          the other computer, and to copy anything coming from the other
+          computer with the exception of file transfers (use "R" to re-
+          ceive those).
+  R - used only for receiving files from the other computer.  These are
+          usually sent in binary form with either checksum verification
+          or more commonly, CRC (Cyclic Redundancy Checking).  If ready
+          to receive another file, you have several choices, depending
+          on the program used by the other computer.   After notifying
+          him you are ready (or will be very shortly), you can tr 4 €windows which scroll together.# This command is used to hold column#€titles or row headings in place$ while cells are scrolled. Parameters$€are: € % 1.  Number of rows to become a window%„across the top of the screen.! 2.  Number of columns to become a!!„window at the left of the screen.! € ' The remaining display space becomes the'!€active window which is linked for!#nal window for&€synchronized scrolling€in the vertical direction. € €WINDOW SPLIT TITLES €   Splits active window into 2 o automatically
+          places you in a "ready to go again" situation when the trans-
+          fer is finished.
+ 
+          Another "R" option would be:
+
+               B>>COMMAND: RB <RET>
+ 
+          This is called the "Batch mode" and is an extremely useful way
+          to receive programs automatically, from another computer using
+          a similar program.  He will use the batch mode for sending the
+          programs and that automatically provides the file names at the
+          receiving end.  In this manner, large numbers of programs can
+          be transferred completely automatically, including full disks.
+          (Assuming you care to pay the toll calls for the time it will
+          take!)
+
+          NOTE:  The ideal way to receive batch mode would be:
+
+               B>>COMMAND: RBT <RET>
+
+                 since you may not know in advance how many programs he
+                 will be sending.  When the transfer is complete, you
+                 are automatically in the "T" mode and he can start
+                 typing to you, immediately, with any comments relative
+                 to the progress of the transfer, etc.  (He would use
+                 the "E" mode.)
+
+  S - Send programs.  Similar to "R" but sends instead of receives.  If
+          the other system is ready to receive, you can type:
+ 
+               B>>COMMAND: S HELLO.DOC <RET>
+
+          It will tell you how many records are involved and how many
+          minutes and seconds it will take to send the program.  If the
+          other system is ready to receive, it starts the transfer,
+          showing how many records have been sent.  If any errors occur
+          during transmission, it shows what they are and counts them.
+          It will resend any records not correctly received at the other
+          computer.  If too many consecutive errors occur (normally set
+          at 10), the transfer is terminated.  The batch mode may also
+          be used for sending:
+
+               B>>COMMAND: SB HELLO.*
+
+          will send all files starting with HELLO, or can send just one
+          file, or can send several non-related files in this manner:
+
+               B>>COMMAND: SB HELLO.DOC XDIR.COM TERM.*
+
+          etc.  Be sure to put a space between the various files.  You
+	  can include the 'X' option:
+
+               B>>COMMAND: SBX HELLO.* MDM712.LBR MDM712.AQM
+
+          When the file transfer is completed it disconnects from the
+          phone line and reverts to CP/M.  This allows you to be absent
+          when the file is finished, offering an advantage when sending
+	  lengthy files.
+
+-   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
+
+
+THE HELP GUIDE, PAGE 2:
+----------------------
+
+                Three Letter Commands
+
+CPM - Exit from this program to CP/M
+DIR - List directory and space free (may specify drive)
+ERA - Erase file (may specify drive)
+LOG - Change default drive/user no. (specify drive/user)
+      and reset disks.  e.g. LOG A0: or LOG B: (user # unchanged)
+SPD - Set speed of file output in terminal mode
+TIM - Select Baud rate for "time-to-send" message
+TCC - Toggle CRC/Checksum mode on receive
+TBR - Toggle backspace to rubout conversion
+TLC - Toggle  1) local command immediate
+              2) local command after CTL-^
+TLF - Toggle LF after CR when sending disk file in "T" mode
+TXO - Toggle XOFF testing in terminal mode file output
+NUM - List remote systems
+SET - Set modem baud rate
+BYE - Disconnect, then return to CP/M
+CAL - Dial number
+DSC - Disconnect from the phone line
+
+          The following are terminal text buffer commands:
+
+DEL - Delete memory buffer and file
+WRT - Write memory buffer to disk file
+
+Hit any KEY to CONTINUE
+
+-   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
+
+
+DISCUSSION OF HELP GUIDE, PAGE 2:
+--------------------------------
+
+  CPM - This returns to normal CP/M use, abandoning MDM712.
+          CAUTION: It does not disconnect the modem from the phone line.
+  DIR - Enables the user to see the library of any disk without needing
+          to return to CP/M first.  Can be adjusted when installing the
+          program to show 3, 4, or 5 groups depending on the width of
+          your CRT display.  Normally set to 5 for 80-column displays.
+          Shows the amount of disk spacing remaining on the logged-in
+          default drive.  (You must log in any drive you wish to write
+          on, or to see the correct free disk space remaining.)  See the
+          LOG feature below.
+  ERA - Enables the user to erase any files from any disk without the
+          need to return to CP/M first.  Wild cards (* and ?) accepted.
+  LOG - When a new disk is inserted, you can see the directory and read
+          files from it but cannot write to it without getting a "BDOS
+          ERR".  This command allows you to log in a new disk so you can
+          immediately write on it without first returning to CP/M for a
+          warm boot.  You can select drive and user number.  (This also
+          enables DIR to show the correct free disk space remaining.)
+	  You can say:
+                         LOG <RET> for same drive, user area, new disk 
+                         LOG A
+                         LOG A:
+                         LOG A14     (user areas are 0-15)
+                         LOG A11:
+
+  SPD - Sets the delay between characters and/or delay between lines in
+          the "T" mode when using control-T to upload a pre-typed file.
+          Since most bulletin boards and TYM-SHAR systems normally use
+          line editors that require a delay after they have received a 
+          line, you can add delay between characters (in increments of
+          10 ms.) and/or enter delay between lines (in increments of 100
+          ms.).  This is preset for most systems at 50 and 500 ms.  They
+          can be changed at any time.  Current values can be checked by
+          using the  " ? " command.
+  TIM - This option lets you set the file transfer time from 110 Baud to
+          9600 Baud.  You can preset it (when installing the program) to
+          the value normally used, but at times it is nice to be able to
+          conveniently change the time shown to a different rate.  Some
+          initialization routines (discussed in the install section) can
+          make this change automatically.  This command does not show if
+          using the PMMI* board as the speed is automatically changed to
+          agree with the current Baud rate selection.  It also does not
+          show if the custom overlay uses the SET command to choose var-
+          ious Baud rates as the transfer time is changed automatically.
+  TCC - Most modem programs originally used simple checksum verification
+          of received sectors.  Most now use Cyclic Redundancy Checking
+          which finds certain transmission errors the simple checksum
+          system might overlook.  This toggle allows the user to select
+          checksum for those systems known to not offer CRC.  When set
+          normally to CRC, the program automatically switches to check-
+          sum after trying several times to use CRC.
+  TBR - Some systems use the "rubout" key for backspace.  This toggle
+          allows you to readily adapt to those systems.  Rarely used.
+  TLC - Nearly all computers use "control-characters" to do various
+          tasks such as move the cursor around, clear the screen, reboot
+          the system, etc.  You might want to send a control-E character
+          to the local computer and not have it go to the remote system
+          at the same time.  Say a moment later you would like to send a
+          control-E only to the remote computer.  You would do this:
+
+               control-E              (goes to local computer only)
+               control-^ control-E    (goes to the remote computer only)
+
+          You can reverse the TLC toggle causing this response:
+
+               control-E              (goes to remote computer only)
+               control-^ control-E    (goes to the local computer only)
+
+          All other control-chars. would operate in a similar manner.
+          This gives extra flexibility in using this program for special
+          systems like TYM-SHAR, etc.
+
+          NOTE:  If using control-^ is awkward, you can pick a different
+                 character when installing the program initially.
+
+  TLF - If sending a file while in terminal mode (via CTL-T option) most
+          mainframe computers will not want you to send a line feed.  As
+          all editors include the LF after CR, you have the option with
+          this toggle of sending or not sending a line feed.  If typing
+          manually in the "T" mode, you can get a line feed with CTL-J.
+          It is automatically included after CR with "L" or "E" modes.
+  TXO - Used when uploading pre-typed text files to other systems such
+          as TYM-SHAR or bulletin boards, etc.  Most of those have line
+          editors that take a moment to move the line you just finished
+          from their edit buffer into memory.  The XOFF character halts
+          your system from sending until it is ready for a new line.
+          Used only in the terminal mode.
+  NUM - Not shown if using PMMI*.  This shows the non-PMMI* people the
+          phone library numbers which can be used for manual dialing.
+  SET - Not shown if using PMMI, or if SETUPR is set to "NO" (indicating
+	  no user routine in the overlay for choosing different speeds.)
+  BYE - Disconnects the modem from the phone line, closes any file that
+          may be open and returns to CP/M.
+  CAL - PMMI* command, shows the phone library for auto-dialing.  If not
+          using a PMMI*, this will not be shown, instead NUM is shown.
+          It displays the telephone library.  (Non-PMMI users will find
+          the NUM display beneficial as it can display useful phone num-
+          bers for manual dialing.)
+
+        NOTE:  Use the phone number overlay to easily change the numbers
+               that are stored.  This overlay also accesses up to two
+               alternate long distance dialing systems for the touch-
+               tone auto-dialing modems.
+
+  DSC - Disconnects the modem from the phone line whenever selected.
+  DEL - If copying incoming information into memory, and you decide you
+          do not want to bother saving it to disk after all, this closes
+          (and then deletes) the disk file you had opened.
+  WRT - saves what you have been copying to the disk file already opened
+          for that purpose.  When returning from the "T" mode to command
+          mode, a warning is shown that you may lose what has been saved
+          unless you use WRT (write to disk).
+  
+-   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
+
+
+THE HELP GUIDE, PAGE 3:
+----------------------
+
+  Local Commands while in Terminal Mode
+
+  CTL-@  - Send a break tone for 300 ms.
+  CTL-B  - Change Baud rate
+  CTL-E  - Exit to command mode
+  CTL-L  - Send log-on message
+  CTL-N  - Disconnect from the phone line
+  CTL-P  - Toggle printer
+  CTL-Y  - Start copy into buffer
+  CTL-R  - Stop copy into buffer
+
+                Start & Stop may be toggled as often as desired.
+                A ":" at start of line indicates buffer is copying.
+                XOFF automatically used to stop input when writing
+                   full buffer to disk, XON sent to resume.
+
+  CTL-T  - Transfer ASCII file to remote
+
+  CTL-^  - Send local control character to remote
+
+-   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
+
+
+DISCUSSION OF HELP GUIDE, PAGE 3:
+--------------------------------
+                   
+  CTL-@  - Sends a break character to the other computer.  Used in some
+             TYM-SHAR systems, etc.  (Used only in PMMI mode)
+  CTL-B  - PMMI command, changes the Baud rate from 110-710, in addition
+             changes the file transfer time accordingly.
+  CTL-E  - Returns to command modem from "T", "L", "E" modes.
+  CTL-L  - Will send the log-on message if TRANLOGON is set YES and a
+             message has been included in the LOGON area.  Can use this
+             feature to sign on various bulletin board systems, although
+             that would require an identical password on each.
+  CTL-N  - Disconnect the modem from the phone line.  (CTL-D had been
+             used for this command, but it was too easy to accidently
+             type CTL-D when expecting to hit CTL-S or CTL-E or CTL-X.
+             You can easily change this to whatever you like in the
+             overlay you use for your equipment.)
+  CTL-P  - Toggles the printer on-off.  Very useful feature.  Similar to
+             normal control-P but in this case if the modem is running
+             faster than normal printer speed, the characters just back
+             into a special buffer while the printer tries to catch up.
+             Most dot matrix printers are considerably faster than most
+             telephone modems, however.  Can be toggled at any time you
+             are in the "T", "L" or "E" modes.  Often used to copy items
+             from bulletin boards, etc. that are not worth permanently
+             saving on disk.
+  CTL-Y  - Used only in terminal mode.  If a file was opened prior to
+             going to "T" (terminal) mode, nothing will be saved until
+             control-Y is typed.  This places a ";" (semicolon) at the
+             start of each new line, indicating the memory is "hot" and
+             is now copying for saving to a file.  You can toggle this
+             off by using control-R.
+
+           NOTE:  To open a file use:  COMMAND: T FILENAME.EXT <cr> and
+                  then CTL-Y and CTL-R will control what is copied to
+                  be placed in that file.
+
+  CTL-R  - Stops the copy into memory, shuts off the ";" at start of
+             each line.  These two commands (CTL-Y to start, and CTL-R
+             to stop) control what is being saved.  When returning to
+             command (via CTL-E), you will then be warned to save the
+             information to disk via the WRT command or it will likely
+             be lost.  (You may never use CTL-R although CTL-Y is re-
+             quired to commence saving to memory for the disk file you
+             previously opened.)
+ 
+                    (These commands -- CTL-P, CTL-Y and CTL-R give
+                    MDM712 tremendous versatility.  You can copy
+                    incoming data either to disk or to printer (or
+                    both).  My own printer is a 300 Baud Teletype
+                    Corporation Model 43, yet it works great when I
+                    am using the Bell 212A at 1200 Baud.  The printer
+                    falls behind, but misses nothing as it eventually
+                    catches up with the contents of the large buffer.)
+
+-   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
+
+
+THE HELP GUIDE, SPECIAL PMMI PAGE:
+---------------------------------
+
+      Additional Subcommands for PMMI Modems
+
+Modem control:
+  A - Answer tone for send or receive
+  O - Originate tone for send or receive
+
+Parity options:
+  1 - Set and check for odd parity
+  0 - Set and check for even parity
+         Both ends must be capable of these options
+         which are available only in R and S modes.        
+         The parity checking will be part of the
+         file transfer protocol.
+
+Speed Options:
+      After entering your primary and secondary options,
+      you can set the modem speed by placing a "." after
+      the options followed by the speed e.g., 300, 1200.
+
+      EXAMPLE:  SBOT.600 will set the modem for 600 baud 
+
+
+Hit any KEY to CONTINUE
+
+-   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
+
+
+DISCUSSION OF HELP GUIDE, SPECIAL PMMI PAGE:
+-------------------------------------------
+
+     When using MDM712 with the PMMI board, you will either dial out or
+(far less likely) answer some incoming call.  Since the unit will be in
+"originate mode" about 98% of the time, it is set to automatically come
+up in the originate mode at default speed (300 Baud) whenever a call has
+been completed.  If you want to use answer mode, you need to use the "A"
+command.  If a speed is not included, it will stay at the default speed.
+
+     Until a connection has been made, there are no tones applied to the
+line.  Originate tones at 300 Baud are automatically added at that time.
+
+     In addition to telling the PMMI modem if it should use originate or
+answer tones, you can tell it what Baud rate to use.  A typical command
+(once connection is made to another modem) would be:
+
+               B>>COMMAND: TO.600 <RET>
+
+     This puts the tones on the phone line for originate and at the
+same time sets the PMMI board for 600 Baud.   Another typical response
+might be:
+
+               B>>COMMAND: RABT.450 <RET>
+
+     This places the answer tones on the phone line, sets the program
+for receiving batch mode at 450 Baud and returns to terminal mode when
+the transfer is completed.
+
+     Other optional PMMI commands seem self-explanatory, such as dis-
+connect, etc.
+ 
+-   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
+
+
+PMMI, HAYES AND ROBOTICS AUTO-DIALING AND AUTO-REDIALING:
+--------------------------------------------------------
+
+     There are several very useful and versatile features offered for
+the PMMI, Hayes Smartmodem and Robotics users.  These include alternate
+long distance dialing systems.
+
+     There are several ways to auto-dial.
+
+          1) from the command line
+          2) from the phone number library line
+
+     In addition you can auto-redial from either of these lines.  Once
+the number has auto-dialed and there is no answer, it will ask you if
+you want it to continuously auto-redial until it does receive an answer
+(or you decide to abort).  
+
+     To get the phone library, type CAL <ret> on the command line.  You
+then normally just type the alphabetic character at the start of the ap-
+propriate line.  It will show the number being dialed.  You can also do
+this from the main command line if you know in advance what alphabetic
+character is associated with that particular number:
+
+               B>>COMMAND: CAL P <RET>
+
+     This calls up the "P" line in the library and dials that number,
+then if busy asks if you want it to continue redialing.  You can use:
+
+               B>>COMMAND: CAL 313-749-6569 <RET>
+
+     and it will dial the number specified.  You can then do either of
+these on the library command line, as well.  This gives a tremendous
+versatility.
+
+NOTE:  To access the alternate long distance dialing systems (up to two
+       are offered), use the phone number overlay and fill in the infor-
+       mation regarding your access number, billing number, etc.  It
+       will then show how to enter a special character ahead of each
+       phone number where alternate long distance system is desired.
+       This only works where touch-tone systems are in use.
+
+-   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
+
+
+CASCADING COMMANDS:
+------------------
+
+     Several commands may be used on the same line.  Ones normally used
+are:  A, B, D, E, L, O, Q, R, S, T, V, X (and Baud rate if PMMI).
+
+     A typical PMMI selection might be: RABQ.300
+
+     The commands have been listed previously but will be listed here
+again:
+
+        A) answer tones for PMMI S-100 modem, puts tones online.
+        B) batch mode  (must be used at both ends if used at all)
+                (usually only available modem-to-modem with operators
+                present at each end.)
+        E) echo mode for conversing with a system not offering echo.
+        L) local echo shows what you are sending if no remote echo.
+        O) originate tones for PMMI S-100 modem, puts tones online.
+        Q) quiet mode, suppresses messages on local console.
+        R) receive file transfers with CRC or checksum protocol.
+        S) send file transfers, also shows transfer time.
+        T) terminal mode - operates computer at other end like a remote
+              terminal.  Also stands for "text mode".  When in "T" mode
+              you can copy incoming to printer or to disk, and send pre-
+              typed ASCII text files via CTL-T.
+        V) visual -- lets you see incoming ASCII files while being sent
+              to the disk system.
+
+        NOTE:  The Baud rate is only used for the PMMI S-100 modem.
+               Many of the custom overlays allow use of the SET
+               command to change Baud rate with non-PMMI modems.
+
+-   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
+
+ 
+TYPICAL PARAMETERS SHOWN BY THE "?" COMMAND:
+-------------------------------------------
+
+          B> COMMAND (H for Help): ? <RET>
+
+Mode: CRC
+Printer is OFF
+Backspace is backspace
+Modem speed is 300 baud
+Termianl mode file buffer is inactive
+Unused portion of buffer is 16384 bytes
+Use CTL-^ to send local command to remote
+Linefeed NOT sent after CR for disk file in T-mode
+XOFF testing NOT used in terminal mode file output
+XON NOT automatically tested after CR in terminal mode file output
+
+Char. delay (terminal file mode) is:  50 ms. per character
+Line  delay (terminal file mode) is: 500 ms. per character
+
+-   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
+
+
+DISCUSSION OF TYPICAL PARMETERS SHOWN BY THE "?" COMMAND:
+--------------------------------------------------------
+
+     By this time, most of these parameters are self-explanatory.  They
+primarily show how the options and toggles have been set.  The user can
+check on any of the major parameters at any time by:
+
+          1) Typing control-E to return to command mode and
+          2) Typing  ?  to see the list of current parameters.
+
+-   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
+
+
+INSTALLING THE PROGRAM:
+----------------------
+
+     Although this is obviously the very first thing that needs to be
+done, it was saved until last for several reasons.  The most important
+of these was the need to first explain what some of the options will do
+when selected.
+
+     By this time the user should have a fairly good idea what options
+would work best for him.  When looking at the beginning of the program
+where the these are selected, it should now be rather easy to pick the
+ones that are most useful.
+
+     There are various ways to change the program to suit a specific
+user.  These are discussed to a modest extent in the information file
+called MDM712.INF.  You are offered several methods.  The "easy way" is
+to get MDM712.COM plus the appropriate overlay for your computer.  You
+then edit the overlay (if needed) to suit your local needs, assemble it
+to get a .HEX file then use the simple instruction and DDT.COM to com-
+bine the standard MDM712.COM file with your overlay.  The front end of
+each overlay contains all the information in the front of the MDM712
+source code itself.
+
+     Generally no changes need to be made in specific overlays unless
+you have some particular requirement different from others using the
+same equipment.  (Such as the log-on message, for example.)
+
+     The "hard way" would be to get the MDM712.ASM source code (which
+is around 112k and would take well over an hour to download at 300 Baud)
+and then edit it to suit.  This is likely to be quite unsatisfactory for
+most users as it will not contain the information peculiar to your com-
+puter (which is in the individual overlay you select otherwise.)
+
+     Thus various methods are available, one of which should provide the
+easiest method for your system.  
+
+NOTE:  Although designed with special emphasis on the auto-dialing and
+       redialing capability of the PMMI, Hayes Smartmodem or Robotics,
+       it works quite well on non-PMMI modems.  In the author's system
+       a stock Bell 212A Dataphone is used together with a normal ser-
+       ial I/O that can be programmed to easily switch from 300 to 1200
+       Baud.  The system includes a  Teletype Corp. Model 43 dot matrix
+       300 Baud printer.  A great variety of other computers and modems
+       can use this same program quite easily.  This is likely the most
+       versatile phone modem program currently available for CP/M users.
+
+OUR THANKS TO:
+-------------
+
+     A great number of people have contributed to the growth of this
+program since 1977.  Two people have been particularly helpful to me in
+developing the MDM700 series modem programs:  Keith Petersen (W8SDZ)
+and Frank Gaude' (ex-K6IBE).  Their help and interest have been greatly
+appreciated.
+
+     We hope this verstile program will give you hours of enjoyment and
+fulfill your modem needs.  It has long been a goal of mine to provide
+the same program for the people using the Hayes Smartmodem (or Robotics)
+as for those using the PMMI 103 modem.
+
+
+                                         - Irv Hoff W6FFC
+
