@@ -66,9 +66,8 @@ PDP-11/40 emulator.
 Others are not so easy though we're working on this and over time have added
 alternative code. Most entries do now work and the others we are working on. In
 some cases we replaced the original code with code that works for modern systems
-but one can view the archive for the original code (sometimes the original code
-is in the directory usually as a `winner.alt.c` or `prog.alt.c` but note that
-sometimes authors have that already as well).
+but one can view the original code in the `.orig.c` files (sometimes the
+original code is also in the directory as a `winner.alt.c` or `prog.alt.c`).
 
 ## Q: After running a program my terminal is all messed up! How do I restore my terminal?
 
@@ -150,7 +149,7 @@ packages: one for compiling and one for linking / running.
 ### macOS
 
 If you're using macOS there are at least three ways to obtain it. You can
-download it from the SDL website and install the package. The latter will not
+download it from the SDL website and install the package. That will not
 work well for the IOCCC but these will:
 
 #### MacPorts
@@ -216,6 +215,11 @@ For the original version see the [/archive](/archive) directory where you can
 find all the original winning entries. In some cases the `winner.alt.c` is the
 original source code.
 
+## Q: Since some entries have been modified over time, how can I view the original entry?
+
+See either the `winner.orig.c` or `prog.orig.c`, depending on the year (earlier
+years we did not rename the code to `prog.c` but had it as the winner handle),
+in the winning directories.
 
 ## Q: I found a bug in a previous winner, what should I do?
 
