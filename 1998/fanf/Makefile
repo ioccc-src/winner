@@ -73,7 +73,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -130,7 +130,7 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	@echo "This next step may take some time to complete:"
-	${CC} ${CFLAGS} ${PROG}.c ${LIBS} -o $@
+	${CC} ${CFLAGS} ${PROG}.c ${LDFLAGS} -o $@
 
 # alternative executable
 #

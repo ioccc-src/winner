@@ -73,7 +73,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -131,19 +131,19 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	@echo "This next step may take some time to complete:"
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 hello: hello.lazy ${PROG}.c
 	@echo "This next step may take some time to complete:"
-	${CC} ${CFLAGS} -xc hello.lazy -o $@ ${LIBS}
+	${CC} ${CFLAGS} -xc hello.lazy -o $@ ${LDFLAGS}
 
 echo: echo.lazy ${PROG}.c
 	@echo "This next step may take some time to complete:"
-	${CC} ${CFLAGS} -xc echo.lazy -o $@ ${LIBS}
+	${CC} ${CFLAGS} -xc echo.lazy -o $@ ${LDFLAGS}
 
 tac: tac.lazy ${PROG}.c
 	@echo "This next step may take some time to complete:"
-	${CC} ${CFLAGS} -xc tac.lazy -o $@ ${LIBS}
+	${CC} ${CFLAGS} -xc tac.lazy -o $@ ${LDFLAGS}
 
 # alternative executable
 #

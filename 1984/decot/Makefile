@@ -77,7 +77,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS= -lm
+LDFLAGS= -lm
 
 # C compiler to use
 #
@@ -134,7 +134,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 	@echo "NOTE: this program prints out a string of garbage."
 
 # alternative executable
@@ -144,7 +144,7 @@ alt: data ${ALT_TARGET}
 
 
 ${PROG}.alt: ${PROG}.alt.c
-	${CC} ${CFLAGS} -traditional-cpp $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} -traditional-cpp $< -o $@ ${LDFLAGS}
 # data files
 #
 data: ${DATA}

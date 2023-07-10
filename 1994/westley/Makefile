@@ -73,7 +73,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -130,7 +130,7 @@ ${PROG}: ${PROG}.c
 	@echo "NOTE: this entry has different compiler errors based on compilation line."
 	@echo "The purpose is to find the right error message to win the game!"
 	@echo "NOTE: your terminal should be set to 80 columns, 8 character tabs, and wraparound."
-	-${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	-${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # alternative executable
 #

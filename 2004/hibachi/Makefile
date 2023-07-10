@@ -73,7 +73,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -133,7 +133,7 @@ build/${PROG}: src
 	${CP} -v -r src build
 	@echo "This next step may take some time to complete:"
 	cd build; CFLAGS="${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}" \
-	    LDFLAGS="${LIBS}" \
+	    LDFLAGS="${LDFLAGS}" \
 	    CC="${CC}" \
 	    ${SHELL} ./configure
 	cd build; ${MAKE}

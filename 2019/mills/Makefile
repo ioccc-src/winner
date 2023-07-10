@@ -73,7 +73,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS= -lm
+LDFLAGS= -lm
 
 # C compiler to use
 #
@@ -288,7 +288,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${TARGET}: ${PROG}.c Makefile ${INPUTS}
-	${CC} ${CFLAGS} -o $@ $< $($@) ${LIBS}
+	${CC} ${CFLAGS} -o $@ $< $($@) ${LDFLAGS}
 
 # alternative executable
 #

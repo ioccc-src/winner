@@ -73,7 +73,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -128,14 +128,14 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 ${PROG}_next.c: ${PROG}
 	${RM} -f $@
 	./${PROG} | tee $@
 
 ${PROG}_next: ${PROG}_next.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # alternative executable
 #
@@ -149,19 +149,19 @@ data: ${DATA}
 
 python: ${PROG}
 	${RM} -f ${PROG}_next.c
-	${CC} ${CFLAGS} ${PROG}.c -o ${PROG} ${LIBS}
+	${CC} ${CFLAGS} ${PROG}.c -o ${PROG} ${LDFLAGS}
 	while :; do \
 	    ./${PROG} | tee ${PROG}_next.c; \
-	    ${CC} ${CFLAGS} ${PROG}_next.c -o ./${PROG} ${LIBS}; \
+	    ${CC} ${CFLAGS} ${PROG}_next.c -o ./${PROG} ${LDFLAGS}; \
 	    sleep 1; \
 	done
 
 python3: ${PROG}
 	${RM} -f ${PROG}_next.c
-	${CC} ${CFLAGS} ${PROG}.c -o ${PROG} ${LIBS}
+	${CC} ${CFLAGS} ${PROG}.c -o ${PROG} ${LDFLAGS}
 	while :; do \
 	    ./${PROG} | tee ${PROG}_next.c; \
-	    ${CC} ${CFLAGS} ${PROG}_next.c -o ./${PROG} ${LIBS}; \
+	    ${CC} ${CFLAGS} ${PROG}_next.c -o ./${PROG} ${LDFLAGS}; \
 	done
 
 # both all and alt

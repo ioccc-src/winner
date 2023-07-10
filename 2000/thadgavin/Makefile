@@ -74,7 +74,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS= -lncurses -lm
+LDFLAGS= -lncurses -lm
 
 # C compiler to use
 #
@@ -131,10 +131,10 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	@echo "WARNING: if you are sensitive to rapid movement you should probably avoid this entry."
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 ${PROG}_sdl: ${PROG}.c
-	${CC} ${CFLAGS} -DSDL `${SDL1_CONFIG} --cflags` $< -o $@ ${LIBS} `${SDL1_CONFIG} --libs`
+	${CC} ${CFLAGS} -DSDL `${SDL1_CONFIG} --cflags` $< -o $@ ${LDFLAGS} `${SDL1_CONFIG} --libs`
 
 # alternative executable
 #
@@ -142,11 +142,11 @@ alt: data ${ALT_TARGET}
 	@${TRUE}
 
 ${PROG}.alt: ${PROG}.alt.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 
 ${PROG}.alt_sdl: ${PROG}.alt.c
-	${CC} ${CFLAGS} -DSDL `${SDL1_CONFIG} --cflags` $< -o $@ ${LIBS} `${SDL1_CONFIG} --libs`
+	${CC} ${CFLAGS} -DSDL `${SDL1_CONFIG} --cflags` $< -o $@ ${LDFLAGS} `${SDL1_CONFIG} --libs`
 
 # data files
 #

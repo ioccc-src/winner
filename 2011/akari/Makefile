@@ -75,7 +75,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -134,25 +134,25 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 ${PROG}2.c: ${PROG}
 	./${PROG} ${PROG}.c $@
 
 ${PROG}2: ${PROG}2.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 ${PROG}3.c: ${PROG} ${PROG}.c
 	./${PROG} < ${PROG}.c | ./${PROG} > $@
 
 ${PROG}3: ${PROG}3.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 ${PROG}4.c: ${PROG} ${PROG}.c
 	./${PROG} < ${PROG}.c | ./${PROG} | ./${PROG} > $@
 
 ${PROG}4: ${PROG}4.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # alternative executable
 #

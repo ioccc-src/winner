@@ -78,7 +78,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS= -L ${X11_LIBDIR} -lX11
+LDFLAGS= -L ${X11_LIBDIR} -lX11
 
 # C compiler to use
 #
@@ -135,7 +135,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.tmp.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 ${PROG}.tmp.c: ${PROG}.c
 	${SED} -e 's/\^\ /#define/' -e 's/@/Window(D,/g' $< > $@

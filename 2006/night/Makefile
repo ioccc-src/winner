@@ -77,7 +77,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS= -lncurses
+LDFLAGS= -lncurses
 
 # C compiler to use
 #
@@ -134,7 +134,7 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	@echo "This next step may take some time to run:"
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # alternative executable
 #
@@ -143,7 +143,7 @@ alt: data ${ALT_TARGET}
 
 ${PROG}.alt: ${PROG}.alt.c
 	@echo "This next step may take some time to run:"
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # data files
 #

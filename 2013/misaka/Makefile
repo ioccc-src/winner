@@ -73,7 +73,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -136,66 +136,66 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 horizontal_cat: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 ${PROG}2.c: horizontal_cat ${PROG}.c
 	${RM} -f $@
 	./horizontal_cat ${PROG}.c ${PROG}.c > $@
 
 vertical_cat: ${PROG}2.c
-	${CC} ${CFLAGS} ${PROG}2.c -o $@ ${LIBS}
+	${CC} ${CFLAGS} ${PROG}2.c -o $@ ${LDFLAGS}
 
 ${PROG}3.c: vertical_cat ${PROG}.c
 	${RM} -f $@
 	./vertical_cat ${PROG}.c ${PROG}.c > $@
 
 long_cat: ${PROG}3.c
-	${CC} ${CFLAGS} ${PROG}3.c -o $@ ${LIBS}
+	${CC} ${CFLAGS} ${PROG}3.c -o $@ ${LDFLAGS}
 
 ${PROG}4.c: vertical_cat ${PROG}.c
 	${RM} -f $@
 	./vertical_cat ${PROG}.c ${PROG}.c ${PROG}.c > $@
 
 loong_cat: ${PROG}4.c
-	${CC} ${CFLAGS} ${PROG}4.c -o $@ ${LIBS}
+	${CC} ${CFLAGS} ${PROG}4.c -o $@ ${LDFLAGS}
 
 ${PROG}5.c: vertical_cat ${PROG}.c
 	${RM} -f $@
 	./vertical_cat ${PROG}.c ${PROG}.c ${PROG}.c ${PROG}.c > $@
 
 loooong_cat: ${PROG}5.c
-	${CC} ${CFLAGS} ${PROG}5.c -o $@ ${LIBS}
+	${CC} ${CFLAGS} ${PROG}5.c -o $@ ${LDFLAGS}
 
 ${PROG}6.c: vertical_cat ${PROG}.c
 	${RM} -f $@
 	./vertical_cat ${PROG}.c ${PROG}.c ${PROG}.c ${PROG}.c ${PROG}.c > $@
 
 loooooooong_cat: ${PROG}6.c
-	${CC} ${CFLAGS} ${PROG}6.c -o $@ ${LIBS}
+	${CC} ${CFLAGS} ${PROG}6.c -o $@ ${LDFLAGS}
 
 ${PROG}7.c: vertical_cat horizontal_cat ${PROG}.c
 	${RM} -f $@
 	./vertical_cat ${PROG}.c ${PROG}.c | ./horizontal_cat - - > $@
 
 long_fat_cat: ${PROG}7.c
-	${CC} ${CFLAGS} ${PROG}7.c -o $@ ${LIBS}
+	${CC} ${CFLAGS} ${PROG}7.c -o $@ ${LDFLAGS}
 
 ${PROG}8.c: vertical_cat horizontal_cat ${PROG}.c
 	${RM} -f $@
 	./vertical_cat ${PROG}.c ${PROG}.c | ./horizontal_cat - - - > $@
 
 long_faat_cat: ${PROG}8.c
-	${CC} ${CFLAGS} ${PROG}8.c -o $@ ${LIBS}
+	${CC} ${CFLAGS} ${PROG}8.c -o $@ ${LDFLAGS}
 
 ${PROG}9.c: vertical_cat horizontal_cat ${PROG}.c
 	${RM} -f $@
 	./horizontal_cat ${PROG}.c ${PROG}.c | ./vertical_cat ${PROG}.c - > $@
 
 same_as_long_cat: ${PROG}9.c
-	${CC} ${CFLAGS} ${PROG}9.c -o $@ ${LIBS}
+	${CC} ${CFLAGS} ${PROG}9.c -o $@ ${LDFLAGS}
 
 # Information on the ${PROG} programs
 #

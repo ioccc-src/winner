@@ -75,7 +75,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -134,7 +134,7 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	@echo "NOTE: this will very likely crash without an arg and will enter an infinite loop"
 	@echo "with an arg that is not a number > 0."
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # alternative executable
 #

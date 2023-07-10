@@ -73,7 +73,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -130,10 +130,10 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	@echo "NOTE: This entry is likely to fail and/or dump core on any computer other"
 	@echo "than a Vax-11 or pdp-11."
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 gentab: gentab.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 
 # alternative executable
@@ -142,7 +142,7 @@ alt: data ${ALT_TARGET}
 	@${TRUE}
 
 ${ALT_TARGET}: ${PROG}.alt.c
-	${CC} -include stdio.h -include unistd.h -include stdlib.h ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} -include stdio.h -include unistd.h -include stdlib.h ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # data files
 #

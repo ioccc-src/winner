@@ -78,7 +78,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -136,7 +136,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 	${RM} -f ad.temp adwc.c adbasename.c adecho.c adhead.c adsleep.c
 	${SED} '1s/\..*\./. wc ./' adrian.c > ad.temp
 	-./adrian ad.temp <ad.temp >adwc.c

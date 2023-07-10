@@ -76,7 +76,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -132,7 +132,7 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	@echo "NOTE: This entry uses non-standard args to main() that do not work with some modern compilers."
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # alternative executable
 #
@@ -141,22 +141,22 @@ alt: data ${ALT_TARGET}
 
 ver0: ${PROG}
 	-./${PROG} < westley.c > ver0.c
-	-${CC} ${CFLAGS} ver0.c -o $@ ${LIBS}
+	-${CC} ${CFLAGS} ver0.c -o $@ ${LDFLAGS}
 
 ver1: ${PROG}
 	-./${PROG} 1 < westley.c > ver1.c
 	@echo "** NOTE: this version will not compile with clang **"
-	-${CC} ${CFLAGS} ver1.c -o $@ ${LIBS}
+	-${CC} ${CFLAGS} ver1.c -o $@ ${LDFLAGS}
 
 ver2: ${PROG}
 	-./${PROG} 1 2 < westley.c > ver2.c
 	@echo "** NOTE: this version will not compile with clang **"
-	-${CC} ${CFLAGS} ver2.c -o $@ ${LIBS}
+	-${CC} ${CFLAGS} ver2.c -o $@ ${LDFLAGS}
 
 ver3: ${PROG}
 	-./${PROG} 1 2 3 < westley.c > ver3.c
 	@echo "** NOTE: this version will not compile with clang **"
-	-${CC} ${CFLAGS} ver3.c -o $@ ${LIBS}
+	-${CC} ${CFLAGS} ver3.c -o $@ ${LDFLAGS}
 
 # data files
 #

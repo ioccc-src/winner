@@ -74,7 +74,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -133,7 +133,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto dict.h
 
 ${PROG}: dict.h ${PROG}.c
-	${CC} ${CFLAGS} ${PROG}.c -o $@ ${LIBS}
+	${CC} ${CFLAGS} ${PROG}.c -o $@ ${LDFLAGS}
 
 dict.h:
 	${RM} -f $@

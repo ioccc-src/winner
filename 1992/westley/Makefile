@@ -74,7 +74,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -129,7 +129,7 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	@echo "NOTE: your terminal must wrap at 80 columns for this to work right!"
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 whereami: ${PROG}
 	${RM} -f $@
