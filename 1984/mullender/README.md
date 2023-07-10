@@ -5,11 +5,13 @@ Sjoerd Mullender<br />
 
 Robbert van Renesse
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To run:
 
@@ -17,16 +19,19 @@ make all
 ./mullender
 ```
 
-> NOTE: If your machine is not a VAX-11 or PDP-11, this program will
-> not execute correctly.  In later years, machine dependent
-> code was discouraged.
+> NOTE: If your machine is not a [VAX-11](https://en.wikipedia.org/wiki/VAX-11)
+or [PDP-11](https://en.wikipedia.org/wiki/PDP-11), this program will not execute
+correctly.  In later years, machine dependent code was discouraged.
+
 
 ### Alternate code:
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added the alternative
-code which lets you run this on other systems. He notes though that this was
-only a slight fix and enhancement to the change in the [faq](/faq.md). Thank you
-Cody for your assistance!
+An alternate version exists which allows one to enjoy this entry on systems
+other than a [VAX-11](https://en.wikipedia.org/wiki/VAX-11) or
+[PDP-11](https://en.wikipedia.org/wiki/PDP-11). This version has a delay feature
+as it goes so fast in modern systems. The author later suggested that there was
+a delay in the original system as well.
+
 
 #### To build:
 
@@ -34,6 +39,7 @@ Cody for your assistance!
 ```sh
 make alt
 ```
+
 
 #### To run:
 
@@ -48,8 +54,8 @@ too fast.
 BTW: is there such a thing as too fast a CPU ? :-) Actually yes for certain code
 which is probably not as uncommon as you think :-).
 
-Note that it is an int and it uses `atoi()` which does NOT check for
-overflow! In fact it's argc itself.
+Note that it is an `int` (argc) and it uses `atoi()` which does NOT check for
+overflow!
 
 
 #### Try:
@@ -67,39 +73,38 @@ overflow! In fact it's argc itself.
 ./mullender.alt 100000
 ```
 
-What happens if you hit enter after it writes a line of output?
-
 
 ## Judges' remarks:
 
-Without question, this C program is the one of the most obfuscated
-C program that has ever been received!  Like all great contest
-entries, they result in a change of rules for the following year.
-To prevent a flood of similar programs, we requested that programs
-be non machine specific.
+Without question, this C program is the one of the most obfuscated C program
+that has ever been received!  Like all great contest entries, it resulted in a
+change of rules for the following year.  To prevent a flood of similar programs,
+the rules were changed, requesting non-machine specific code.
 
 This program was selected for the 1987 t-shirt collection.
 
-The C startup routine (via crt0.o) transfers control to a location
-named main.  In this case, main just happens to be in the data area.
-The array of shorts, which has been further obfuscated by use of
-different data types, just happens to form a meaningful set of PDP-11
-and Vax instructions.  The first word is a PDP-11 branch instruction
-that branches to the rest of the PDP code.  On the Vax main is called with
-the calls instruction which uses the first word of the subroutine as a
-mask of registers to be saved.  So on the Vax the first word can be anything.
-The real Vax code starts with the second word.  This small program
-makes direct calls to the write() Unix system call to produce a
-message on the screen.  Can you guess what is printed?  We knew you
-couldn't!  :-)
+The C startup routine (via `crt0.o`) transfers control to a location named main.
+In this case, main just happens to be in the data area.  The array of shorts,
+which has been further obfuscated by use of different data types, just happens
+to form a meaningful set of [PDP-11](https://en.wikipedia.org/wiki/PDP-11) and
+Vax instructions.  The first word is a
+[PDP-11](https://en.wikipedia.org/wiki/PDP-11) branch instruction that branches
+to the rest of the [PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor) code.  On the Vax main is called with the calls
+instruction which uses the first word of the subroutine as a mask of registers
+to be saved.  So on the Vax the first word can be anything.  The real Vax code
+starts with the second word.  This small program makes direct calls to the
+write() Unix system call to produce a message on the screen.  Can you guess what
+is printed?  We knew you couldn't!  :-)
 
 BTW: this remains my (Landon Curt Noll's) all time favorite entries!
 
-Cody found the remarks from [Sjoerd Mullender](/winners.html#Sjoerd_Mullender)
-and added the program that was used by the authors to generate the array that he
+What happens if you hit enter after it writes a line of output?
+
+In 2023 remarks were discovered from [Sjoerd Mullender](/winners.html#Sjoerd_Mullender)
+and so was the program that was used by the authors to generate the array that he
 referred to. Because [a.out.h](a.out.h) is not available in all systems (like macOS) and
-more importantly because he wanted it to be as close to as the original as
-possible he used a copy of
+more importantly because we wanted it to be as close to as the original as
+possible we used a copy of
 <https://raw.githubusercontent.com/dspinellis/unix-history-repo/Research-Release/usr/include/a.out.h>
 in the *fabulous* [Unix History
 Repo](https://github.com/dspinellis/unix-history-repo/tree/Research-Release).
@@ -111,15 +116,16 @@ This tool can be built by running:
 make gentab
 ```
 
-Cody notes that it does not appear to work in modern systems (unbalanced braces)
+We note that it does not appear to work in modern systems (unbalanced braces)
 or something else is wrong but given that this was done a long time ago on a now
-archaic system maybe that is why. He also noted that if the `short`s are not
+archaic system maybe that is why. We also note that if the `short`s are not
 changed to just `int` it prints out a lot of negative numbers but since
-[mullender.c](mullender.c) has a negative number he kept it as is.
+[mullender.c](mullender.c) has a negative number we kept it as is.
 
-Thank you Cody!
 
 ## Author's remarks:
+
+### Notes from the judges:
 
 These remarks, found at
 [https://lainsystems.com/posts/exploring-mullender-dot-c/](https://lainsystems.com/posts/exploring-mullender-dot-c/),
@@ -128,71 +134,92 @@ article for the quote! For a more detailed analysis, taken from the Obfuscated C
 and Other Mysteries, see below. We hope that this is okay with the author of the
 book. Considering that the analysis is entirely the authors' comments we don't
 think this will be a problem. Unfortunately the excerpt was PDF and it did not
-copy paste well. [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) had to
-go back and forth to type so it's possible he made a typo though he also fixed
-some typos found in the extract. As for the other comments:
+copy paste well. We had to go back and forth to type so it's possible he made a
+typo though he also fixed some typos found in the extract. As for the other
+comments:
 
+## Remarks from the author:
 
-I have never known a lot about the VAX assembly, so we used the C compiler to
-create the VAX code. We didn't write it ourselves from scratch as we did with
-the PDP code. This is the reason why the VAX code is more complex, including the
-extra data after the PDP code.
+I have never known a lot about the [VAX](https://en.wikipedia.org/wiki/VAX)
+[assembly](https://en.wikipedia.org/wiki/Assembly_language), so we used the C
+compiler to create the VAX code. We didn't write it ourselves from scratch as we
+did with the [PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor)
+code. This is the reason why the [VAX](https://en.wikipedia.org/wiki/VAX) code
+is more complex, including the extra data after the
+[PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor) code.
 
-Robbert and I were students at the VU (Free University in Amsterdam) at the time
-(mathematics with CS as our major since there was no CS curriculum when we
-started). We had an assignment to create a pair of programs for the computer
-networks course. The programs were supposed to send data reliably from one
-program to the other over an unreliable channel. This channel was simulated with
-a pair of pipes.
+Robbert and I were students at the [VU (Free University in
+Amsterdam)](https://vu.nl/en) at the time (mathematics with CS as our major
+since there was no CS curriculum when we started). We had an assignment to
+create a pair of programs for the computer networks course. The programs were
+supposed to send data reliably from one program to the other over an unreliable
+channel. This channel was simulated with a pair of
+[pipes](https://en.wikipedia.org/wiki/Pipeline_(software)).
 
-We decided for fun to create an obfuscated set of programs, only for the PDP, to
-do this, but circumventing the channel. (I.e. cheating, hence the needed
-obfuscation.) Our programs worked and we handed them in.
+We decided for fun to create an
+[obfuscated](https://en.wikipedia.org/wiki/Obfuscation_(software)) set of
+programs, only for the
+[PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor), to do this, but
+circumventing the channel. (I.e. cheating, hence the needed obfuscation.) Our
+programs worked and we handed them in.
 
 Of course, the teacher had a good laugh and then rejected our submission. (We
 knew him well, so we could get away with this.)
 
-Then the IOCCC came along. I don’t remember how we heard about it, but at the
-time there was a world-wide messaging network Usenet where we read a bunch of
-newsgroups. I’m sure it was announced there and we saw it.
+Then the [IOCCC](https://www.ioccc.org) came along. I don’t remember how we
+heard about it, but at the time there was a world-wide messaging network Usenet
+where we read a bunch of newsgroups. I’m sure it was [announced
+there](https://groups.google.com/g/net.lang.c/c/lx-TAuEyeRI/m/HdOOnNx6LC0J) and we saw
+it.
 
-Since we had just recently created these obfuscated programs we decided we could
+Since we had just recently created these [obfuscated
+programs](https://en.wikipedia.org/wiki/Obfuscation_(software))) we decided we could
 use the same technique for an obfuscated C program. We upped the ante a bit by
-making it “portable”.
+making it "portable".
 
-To add to the obfuscation, we used different formats for the integers in the
-array, some in decimal, some in octal, some in hexadecimal, and when the value
-would fit, some as an ASCII character.
+To add to the
+[obfuscation](https://en.wikipedia.org/wiki/Obfuscation_(software))), we used
+different formats for the integers in the array: some in decimal, some in octal,
+some in hexadecimal, and when the value would fit, some as an ASCII character.
 
 The rest is history.
 
 Since this was the first contest, we hadn't seen any old entries, nor had any of
 the other contestants. Of course we knew about `#define` and tricks you could do
 with that, but we didn't need that for this program. In fact, we made it as
-“standard” as possible. At the time there was this program called `cb` for C
-beautifier which would re-indent your program to make the layout look better. Our
-program is idempotent under `cb`.
+"standard" as possible. At the time there was this program called `cb` or C
+beautifier which would re-indent your program to make the layout look better.
+Our program is idempotent under `cb`.
+
 
 ### More detailed analysis
 
 When this program is compiled, the compiler places the array somewhere in
 memory, just like it places any compiled code somewhere in memory. Usually, the
-C startup code (`crt0.o`) calls a routine named `main`. The loader fills in the address in
-the startup code, but, at least on the old systems where this program
-ran, it doesn't know that the `main` in this program isn't code but data!
+C startup code (`crt0.o`) calls a routine named `main()`. The loader fills in the
+address in the startup code, but at least on the old systems where this program
+rans, it doesn't know that the `main()` in this program isn't code but data!
 
 When the program is run, the C startup code transfers control to the location
 `main`. The contents of the array just happen to be machine instructions for
-both a PDP-11 and a VAX.
+both a [PDP-11](https://en.wikipedia.org/wiki/PDP-11) and a
+[VAX](https://en.wikipedia.org/wiki/VAX).
 
-On the VAX, the routine main is called with the `calls` instruction. This
-instruction uses the first (2-byte) word of the called routine as a mask of
-registers that are to be saved on the stack. In other words, on the VAX the
-first word can be anything. On the PDP, the first word is a branch instruction
+On the [VAX](https://en.wikipedia.org/wiki/VAX), the routine `main()` is called
+with the `calls` instruction. This instruction uses the first (2-byte)
+[word](https://en.wikipedia.org/wiki/Word_(computer_architecture)) of the called
+routine as a mask of
+[registers](https://en.wikipedia.org/wiki/Processor_register) that are to be
+saved on the [stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)).
+In other words, on the VAX the first word can be anything. On the
+[PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor), the first word
+is a [branch](https://en.wikipedia.org/wiki/Branch_(computer_science))
+[instruction](https://en.wikipedia.org/wiki/Instruction_set_architecture#Instructions)
 that branches over the VAX code. The PDP and VAX codes are thus completely
 separate.
 
-The PDP and VAX codes implement the same algorithm:
+The [PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor) and
+[VAX](https://en.wikipedia.org/wiki/VAX) codes implement the same algorithm:
 
 ```c
     for (;;) {
@@ -201,20 +228,26 @@ The PDP and VAX codes implement the same algorithm:
     }
 ```
 
-The result is that the symbols `:-)` move over the screen. `delay` is
-implemented differently on the PDP, where we used a nonexistent system call
-(`sys 55`), and on the VAX where we used a delay loop.
+The result is that the symbols `:-)` move across the screen. `delay` is
+implemented differently on the
+[PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor), where we used a
+nonexistent system call (`sys 55`), and on the
+[VAX](https://en.wikipedia.org/wiki/VAX) where we used a delay loop.
 
 My co-author, Robbert, and I had earlier written a similar program for an
-assignment on the PDP-11. Along came the first Obfuscated C Code Contest, and
+assignment on the [PDP-11](https://en.wikipedia.org/wiki/PDP-11). [Along
+came](https://groups.google.com/g/net.lang.c/c/lx-TAuEyeRI/m/HdOOnNx6LC0J) the
+first [Obfuscated C Code Contest](https://www.ioccc.org), and
 we decided that we should write a program like this, but make it run on two
-different architectures.
+different [architectures](https://en.wikipedia.org/wiki/Computer_architecture).
 
-We didn't think long about what the program should do, so it does something very simple.
+We didn't think long about what the program should do, so it does something very
+simple.
 
-We started with writing the PDP code in assembler. We both knew PDP-11
-assembler, so that was no problem. The assembler code we came up with is as
-follows:
+We started with writing the
+[PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor) code in assembly.
+We both knew [PDP-11](https://en.wikipedia.org/wiki/PDP-11) assembly so that was
+no problem. The assembly code we came up with is as follows:
 
 ```asm
 pdp:
@@ -232,24 +265,35 @@ pdp:
 ```
 
 This is not the code we originally wrote, but it is the code that we ultimately
-used in the program. The string to be printed is shared by the VAX and the PDP
+used in the program. The string to be printed is shared by the
+[VAX](https://en.wikipedia.org/wiki/VAX) and the
+[PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor)
 code and is located between the two sections.
 
 First, the program deals with figuring out the address of the string. Then the
-program counter is saved in a scratch register. Since the program counter points
-at the second instruction, we subtract 2 from the scratch register in the second
-instruction. Then we subtract the length of the string and store the result in
-the location with label 0. This has to do with the calling sequence of system
-calls on the PDP. Following the `sys` instruction is the system call number (4
-for `write`), the address of the buffer (pointed to by label 0), and the length
-of the buffer (9). The file descriptor is in register `r0`. The rest of the code
-implements a delay loop. In each iteration, a non-existing system call (55)
-slows things down.
+[program counter](https://en.wikipedia.org/wiki/Program_counter) is saved in a
+scratch [register](https://en.wikipedia.org/wiki/Processor_register). Since the
+program counter points at the second
+[instruction](https://en.wikipedia.org/wiki/Instruction_set_architecture#Instructions),
+we subtract 2 from the scratch register in the second instruction. Then we
+subtract the length of the string and store the result in the location with
+label 0. This has to do with the calling sequence of [system
+calls](https://en.wikipedia.org/wiki/System_call) on the
+[PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor). Following the
+`sys` instruction is the system call number (4 for `write()`), the address of
+the buffer (pointed to by label 0), and the length of the buffer (9). The [file
+descriptor](https://en.wikipedia.org/wiki/File_descriptor) is in register `r0`.
+The rest of the code implements a delay loop. In each iteration, a non-existing
+system call (55) slows things down.
 
-We assembled this program and extracted the machine code from the resulting
-object file. We used this code in the VAX part. Since neither of us was fluent
-in VAX assembly, we wrote the VAX code in C and massaged the compiler output.
-The VAX assembly program that we came up with is as follows:
+We assembled this program and extracted the [machine
+code](https://en.wikipedia.org/wiki/Machine_code) from the resulting [object
+file](https://en.wikipedia.org/wiki/Object_file). We used this code in the
+[VAX](https://en.wikipedia.org/wiki/VAX) part. Since neither of us was fluent in
+VAX [assembly](https://en.wikipedia.org/wiki/Assembly_language), we wrote the
+VAX code in C and massaged the
+[compiler](https://en.wikipedia.org/wiki/Compiler) output.  The VAX assembly
+program that we came up with is as follows:
 
 
 ```asm
@@ -275,25 +319,40 @@ str: .ascii " :-)\b\b\b\b"
 pdp: .word 4548, 3044, 58820, 9, 4407, 6, 5568, 1, 35076, 0, 9, 5570, 512, 35117, 32386, 496
 ```
 
-The first word (after the label `vax`) is the PDP branch instruction. PDP branch
+The first word (after the label `vax`) is the
+[PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor) [branch
+instruction](https://en.wikipedia.org/wiki/Branch_(computer_science)).
+[PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor) branch
 instructions are octal `400+` the distance divided by 2.  The string that both
-the PDP and VAX programs use is after the `str` label, and the PDP code is after
-the pap label.
+the [PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor) and
+[VAX](https://en.wikipedia.org/wiki/VAX)
+programs use is after the `str` label, and the
+[PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor) code is after the
+pdp label.
 
-On the VAX, the program pushes 9 (the length of the string), the address of the
-string and 1 (the file descriptor) on the stack and calls `write`. Since we
-didn't know the exact calling sequence for system calls, we just copied the
-source for the `write` system call stub into our program. After `write`
-finishes, the program executes a delay loop, after which it jumps back to the
-start of the program.
+On the [VAX](https://en.wikipedia.org/wiki/VAX), the program
+[pushes](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)) 9 (the length
+of the string), the address of the string and 1 (the [file
+descriptor](https://en.wikipedia.org/wiki/File_descriptor) on the
+[stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)) and calls
+`write(2)`. Since we didn't know the exact calling sequence for [system
+calls](https://en.wikipedia.org/wiki/System_call), we just copied the source for
+the `write(2)` system call stub into our program. After `write(2)` finishes, the
+program executes a delay loop, after which it jumps back to the start of the
+program.
 
-We assembled this program, and extracted the machine code from the object file.
-After this we only had to convert the machine code to ASCII and write a little
-bit of C to glue everything together. We wanted to use different formats for
-each constant in the resulting array, and we wanted to choose the format
-randomly. So we wrote a program to choose an appropriate format at random. The
-program we wrote for that follows.  This program actually also extracted the
-machine code from the object file.
+We assembled this program, and extracted the [machine
+code](https://en.wikipedia.org/wiki/Machine_code) from the [object
+file](https://en.wikipedia.org/wiki/Object_file).  After this we only had to
+convert the machine code to [ASCII](https://en.wikipedia.org/wiki/ASCII) and
+write a little bit of C to glue everything together. We wanted to use different
+formats for each constant in the resulting array, and we wanted to choose the
+format randomly. So we wrote a program to choose an appropriate format at
+random. The program we wrote for that follows.  This program actually also
+extracted the machine code from the object file.
+
+> NOTE from judges: see [gentab.c](gentab.c) for a copy of this file that can be
+compiled in modern systems.
 
 ```c
 #include <stdio.h>
@@ -356,13 +415,16 @@ As can be seen, there is a slight preference for decimal, and also a character
 format is sometimes used, but only if the data is a printable ASCII character.
 
 When we ran this program, we were almost completely satisfied with the result.
-The only problem we had was that the program had chosen an octal representation
-for the first word. Since everybody knows what a PDP-11 branch instruction looks
-like (everyone knows that the traditional magic word for an executable, `0407`,
-is a PDP-11 branch), we changed that to decimal. After checking the size of the
-resulting program we saw that it was one byte too long. The limit was 512 bytes,
-and our program was 513 bytes. So we changed the word `and` in the comment to
-`&&`.
+The only problem we had was that the program had chosen an
+[octal](https://en.wikipedia.org/wiki/Octal) representation for the first word.
+Since everybody knows what a [PDP-11](https://en.wikipedia.org/wiki/PDP-11)
+branch instruction looks like (everyone knows that the traditional magic word
+for an executable, `0407`, is a [PDP-11](https://en.wikipedia.org/wiki/PDP-11)
+[branch](https://en.wikipedia.org/wiki/Branch_(computer_science)))), we changed
+that to decimal. After checking the size of the resulting program we saw that it
+was one byte too long. The limit was 512 bytes, and our program was 513 bytes.
+So we changed the word `and` in the comment to `&&`.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

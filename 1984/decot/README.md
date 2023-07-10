@@ -2,17 +2,20 @@
 
 Dave Decot  
 
+
 ## To build:
 
 ```sh
 make all
 ```
 
+
 ## To run:
 
 ```sh
 ./decot
 ```
+
 
 ### Alternate code:
 
@@ -29,6 +32,7 @@ make alt
 This program prints out a string of garbage.
 
 The judges also offer this one comment: understand remarks!
+
 
 ### Historical remarks:
 
@@ -47,6 +51,7 @@ for(signal=0;*k *x * __FILE__ *i;) do {
 
 
 To see what we mean look at the [original source file](decot.orig.c).
+
 
 ## Author's remarks:
 
