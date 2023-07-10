@@ -74,7 +74,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -133,7 +133,7 @@ ${PROG}: ${PROG}.c
 	-${CC} ${CSILENCE} -E ${PROG}.c > ${PROG}2.c
 	@${RM} -f ${PROG}3.c
 	${SED} -e 's/ (/(/g' < ${PROG}2.c > ${PROG}3.c
-	${CC} ${CFLAGS} ${PROG}3.c -o $@ ${LIBS}
+	${CC} ${CFLAGS} ${PROG}3.c -o $@ ${LDFLAGS}
 
 # alternative executable
 #

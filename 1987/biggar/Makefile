@@ -74,7 +74,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -130,7 +130,7 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} -DC="R>0" -DI="if(T)O" -DO="c=write(1,&c,1);" \
 	    -DP="main(){X}" -DR="read(0,&c,1)" -DT="c!=015" \
-	    -DW="while(C)I" -DX="char c;W"  $< -o $@ ${LIBS}
+	    -DW="while(C)I" -DX="char c;W"  $< -o $@ ${LDFLAGS}
 
 # alternative executable
 #

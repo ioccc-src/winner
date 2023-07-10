@@ -73,7 +73,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -142,13 +142,13 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	@echo "NOTE: this entry will crash on no arg specified."
-	${CC} ${CFLAGS} -DB=${B} -DI=${I} -DT=${T} -DS=${S} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} -DB=${B} -DI=${I} -DT=${T} -DS=${S} $< -o $@ ${LDFLAGS}
 
 ${PROG}_le: ${PROG}.c
-	${CC} ${CFLAGS} -DB=${B} -DI=${I} -DT=${T} -DS=${S} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} -DB=${B} -DI=${I} -DT=${T} -DS=${S} $< -o $@ ${LDFLAGS}
 
 ${PROG}_be: ${PROG}.c
-	${CC} ${CFLAGS} -DB=${_B} -DI=${_I} -DT=${_T} -DS=${_S} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} -DB=${_B} -DI=${_I} -DT=${_T} -DS=${_S} $< -o $@ ${LDFLAGS}
 
 test: check_le.sh check_be.sh prog_le prog_be correct
 	./check_le.sh ./prog_le | ${DIFF} -bw - correct

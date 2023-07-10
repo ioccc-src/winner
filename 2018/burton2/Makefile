@@ -75,7 +75,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -146,10 +146,10 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c keywords
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 tac: tac.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 
 # alternative executable
@@ -167,7 +167,7 @@ keywords: ioccc.kw.freq mkkeywords
 	./mkkeywords $< > keywords
 
 fixed_iocccsize: fixed_iocccsize.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 test: prog tac runtest fixed_iocccsize ${EXTRA_DATA}
 	-./runtest | diff - results

@@ -74,7 +74,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -131,7 +131,7 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	@echo "NOTE: This entry might not compile when using modern compilers."
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # alternative executable
 #
@@ -139,7 +139,7 @@ alt: data ${ALT_TARGET}
 	@${TRUE}
 
 ${PROG}.alt: ${PROG}.alt.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # data files
 #

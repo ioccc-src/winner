@@ -73,7 +73,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -138,7 +138,7 @@ all: data ${TARGET} ${MACHINE_SET} ${TAPE_SET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # test the entry
 #

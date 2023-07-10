@@ -77,7 +77,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -132,14 +132,14 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 	${CHMOD} +r fac.oc parse.oc test.oc
 
 # This forms a byte code execution engine written in OC
 #
 ${PROG}.oc: ${PROG}.c
 	${RM} -f $@
-	${CC} ${CFLAGS} -E $< -o $@ ${LIBS} > $@
+	${CC} ${CFLAGS} -E $< -o $@ ${LDFLAGS} > $@
 	${CHMOD} +r $@
 
 # alternative executable

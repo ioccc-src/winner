@@ -79,7 +79,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -140,7 +140,7 @@ ${PROG}: ${PROG}.c
 	X='-DA(X)=#X'; \
 	warning='-Dprocessor'; \
 	$$magic $$warning -Dmagic= $$X "-DX=A($$magic \"$$X\")" \
-		$< -o $@ ${LIBS}
+		$< -o $@ ${LDFLAGS}
 
 
 ${PROG}.ten: ${PROG}.ten.c
@@ -155,13 +155,13 @@ ${PROG}.ten: ${PROG}.ten.c
 	@echo
 	@echo "but running ${PROG} on the resulting binary will crash."
 	@echo
-	${CC} ${CFLAGS} -m32 $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} -m32 $< -o $@ ${LDFLAGS}
 
 ${PROG}.ten.64: ${PROG}.ten.c
 	@echo "WARNING: the file created by this rule will NOT work with the entry itself;"
 	@echo "this is because it works ONLY on 32-bit ELF binaries! This however at least"
 	@echo "lets you see the supplementary program in action."
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 ${PROG}.bed: ${PROG}.bed.c
 	@echo "WARNING: ${PROG}.bed.c must be compiled as 32-bit to use with the entry itself;"
@@ -175,13 +175,13 @@ ${PROG}.bed: ${PROG}.bed.c
 	@echo
 	@echo "but running ${PROG} on the resulting binary will crash."
 	@echo
-	${CC} ${CFLAGS} -m32 $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} -m32 $< -o $@ ${LDFLAGS}
 
 ${PROG}.bed.64: ${PROG}.bed.c
 	@echo "WARNING: the file created by this rule will NOT work with the entry itself;"
 	@echo "this is because it works ONLY on 32-bit ELF binaries! This however at least"
 	@echo "lets you see the supplementary program in action."
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 
 # alternative executable

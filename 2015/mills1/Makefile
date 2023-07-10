@@ -75,7 +75,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS= -lncurses
+LDFLAGS= -lncurses
 
 # C compiler to use
 #
@@ -165,7 +165,7 @@ DG='"Tap to Flap!"'	# Instruction text.
 
 ifdef EMOJI
   # You may need to uncomment some of these, depending on your system
-  # LIBS= -lncursesw
+  # LDFLAGS= -lncursesw
   # CINCLUDE= -I/usr/local/include/ncursesw
 
   ifeq ($(EMOJI),beer)
@@ -291,7 +291,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # alternative executable
 #

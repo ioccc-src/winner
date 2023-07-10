@@ -73,7 +73,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -131,7 +131,7 @@ ${PROG}: ${PROG}.c input.txt
 	@echo "NOTE: use make alt for clang."
 	@echo Now run the following command:
 	${RM} -f $@
-	@echo ${CC} ${CFLAGS} $< -o $@ ${LIBS} '<' input.txt '&&' ./${PROG}
+	@echo ${CC} ${CFLAGS} $< -o $@ ${LDFLAGS} '<' input.txt '&&' ./${PROG}
 
 # alternative executable
 #
@@ -139,7 +139,7 @@ alt: data ${ALT_TARGET}
 	@${TRUE}
 
 ${PROG}.alt: ${PROG}.alt.c input.txt
-	${CC} ${CFLAGS} -Wno-implicit-function-declaration $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} -Wno-implicit-function-declaration $< -o $@ ${LDFLAGS}
 	@echo Now run the following command:
 	@echo ./${PROG}.alt '<' input.txt '&&' ./${PROG}.alt
 

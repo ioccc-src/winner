@@ -75,7 +75,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT} -rdynamic -fno-pi
 
 # Libraries needed to build
 #
-LIBS= -ldl
+LDFLAGS= -ldl
 
 # C compiler to use
 #
@@ -134,10 +134,10 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	@echo "WARNING: ${PROG}.c must be compiled as 32-bit to use with the entry itself;"
 	@echo "if you cannot use -m32 this will NOT work!"
-	${CC} ${CFLAGS} -m32 $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} -m32 $< -o $@ ${LDFLAGS}
 
 ${PROG}.otccex: ${PROG}.otccex.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # alternative executable
 #

@@ -74,7 +74,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -140,7 +140,7 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c rk05.bsd.fs
 	${CC} ${CFLAGS} -DI='"rk05.bsd.fs"' -DA=4096 -DS=0173030 -DW=MAP_PRIVATE -DT= -DX=5 -DY=128 \
-	      -DV=270 -DP='"89!>@@89T=@@89\"89DQ@K89$$89Q1@H0@@@P@1@@"' ${PROG}.c -o $@ ${LIBS}
+	      -DV=270 -DP='"89!>@@89T=@@89\"89DQ@K89$$89Q1@H0@@@P@1@@"' ${PROG}.c -o $@ ${LDFLAGS}
 
 rk05.bsd.fs: empty.fs.bz2 builddisk.bsd bsd.img.bz2
 	${RM} -f $@
@@ -178,7 +178,7 @@ v0: ${PROG}.c Makefile v0.image.fs
 
 v6: empty.fs.bz2 builddisk.v6 v6.img.bz2 rk05.v6.fs
 	${CC} ${CFLAGS} -DI='"rk05.v6.fs"' -DA=4096 -DS=0173030 -DW=MAP_PRIVATE -DT= -DX=5 -DY=128 \
-	      -DV=270 -DP='"89!>@@89T=@@89\"89DQ@K89$$89Q1@H0@@@P@1@@"' ${PROG}.c -o $@ ${LIBS}
+	      -DV=270 -DP='"89!>@@89T=@@89\"89DQ@K89$$89Q1@H0@@@P@1@@"' ${PROG}.c -o $@ ${LDFLAGS}
 
 v6.img.bz2: v6.tape.gz
 	@echo "This IOCCC25 Makefile preserves the state of v6.tape.gz at the time it won."

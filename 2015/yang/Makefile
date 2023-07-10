@@ -74,7 +74,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS= -lm
+LDFLAGS= -lm
 
 # C compiler to use
 #
@@ -138,26 +138,26 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 ${PROG}_c90: ${CSRC}
-	${CC} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT} -std=c90 ${CSRC} -o $@ ${LIBS}
+	${CC} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT} -std=c90 ${CSRC} -o $@ ${LDFLAGS}
 
 ${PROG}_c99: ${CSRC}
-	${CC} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT} -std=c99 ${CSRC} -o $@ ${LIBS}
+	${CC} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT} -std=c99 ${CSRC} -o $@ ${LDFLAGS}
 
 ${PROG}_c11: ${CSRC}
-	${CC} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT} -std=c11 ${CSRC} -o $@ ${LIBS}
+	${CC} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT} -std=c11 ${CSRC} -o $@ ${LDFLAGS}
 
 ${CPLUSPLUSSRC}: ${CSRC}
 	${RM} -f $@
 	${CP} -f -p ${CSRC} $@
 
 ${PROG}_cpp98: ${CPLUSPLUSSRC}
-	${CPLUSPLUS} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT} -std=c++98 ${CPLUSPLUSSRC} -o $@ ${LIBS}
+	${CPLUSPLUS} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT} -std=c++98 ${CPLUSPLUSSRC} -o $@ ${LDFLAGS}
 
 ${PROG}_cpp11: ${CPLUSPLUSSRC}
-	${CPLUSPLUS} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT} -std=c++11 ${CPLUSPLUSSRC} -o $@ ${LIBS}
+	${CPLUSPLUS} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT} -std=c++11 ${CPLUSPLUSSRC} -o $@ ${LDFLAGS}
 
 # alternative executable
 #

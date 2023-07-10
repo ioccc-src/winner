@@ -73,7 +73,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS= -L ${HOMEBREW_PREFIX}/lib -L /usr/local/lib -L /opt/local/lib
+LDFLAGS= -L ${HOMEBREW_PREFIX}/lib -L /usr/local/lib -L /opt/local/lib
 LIBJPEG= -ljpeg
 LIBPNG= -lpng
 
@@ -130,13 +130,13 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS} ${LIBJPEG}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS} ${LIBJPEG}
 
 prog_png: prog.png.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS} ${LIBPNG}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS} ${LIBPNG}
 
 prog_ppm: prog.ppm.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 makegif: makegif.sh
 	${CHMOD} +x $?

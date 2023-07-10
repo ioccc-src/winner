@@ -76,7 +76,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -162,7 +162,7 @@ Darwin: ${PROG}.c
 			-Ds=46 \
 			-DV=${LINES} \
 			-DW=${COLUMNS} \
-			$< -o ${PROG} ${LIBS}
+			$< -o ${PROG} ${LDFLAGS}
 	${LN} ${PROG} $@
 
 FreeBSD: ${PROG}.c
@@ -171,7 +171,7 @@ FreeBSD: ${PROG}.c
 			-Ds=46 \
 			-DV=${LINES} \
 			-DW=${COLUMNS} \
-			$< -o ${PROG} ${LIBS}
+			$< -o ${PROG} ${LDFLAGS}
 	${LN} ${PROG} $@
 
 Linux: ${PROG}.c
@@ -180,7 +180,7 @@ Linux: ${PROG}.c
 			-Ds=0 \
 			-DV=${LINES} \
 			-DW=${COLUMNS} \
-			$< -o ${PROG} ${LIBS}
+			$< -o ${PROG} ${LDFLAGS}
 	${LN} ${PROG} $@
 
 # alternative executable
@@ -197,7 +197,7 @@ Darwin.alt: ${PROG}.alt.c
 			-Ds=46 \
 			-DV=${LINES} \
 			-DW=${COLUMNS} \
-			$< -o ${PROG}.alt ${LIBS}
+			$< -o ${PROG}.alt ${LDFLAGS}
 	${LN} ${PROG}.alt $@
 
 FreeBSD.alt: ${PROG}.alt.c
@@ -206,7 +206,7 @@ FreeBSD.alt: ${PROG}.alt.c
 			-Ds=46 \
 			-DV=${LINES} \
 			-DW=${COLUMNS} \
-			$< -o ${PROG}.alt ${LIBS}
+			$< -o ${PROG}.alt ${LDFLAGS}
 	${LN} ${PROG}.alt $@
 
 Linux.alt: ${PROG}.alt.c
@@ -215,7 +215,7 @@ Linux.alt: ${PROG}.alt.c
 			-Ds=0 \
 			-DV=${LINES} \
 			-DW=${COLUMNS} \
-			$< -o ${PROG}.alt ${LIBS}
+			$< -o ${PROG}.alt ${LDFLAGS}
 	${LN} ${PROG}.alt $@
 
 # data files

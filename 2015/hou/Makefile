@@ -73,7 +73,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS= -lm
+LDFLAGS= -lm
 
 # C compiler to use
 #
@@ -130,13 +130,13 @@ all: data ${TARGET}
 
 ${PROG}: prebuild
 	if [ `./prebuild < prog.c | cut -c-7` == 'non-ISO' ]; then \
-		${CC} ${CFLAGS} -msse2 -mfpmath=sse ${CSRC} -o $@ ${LIBS}; \
+		${CC} ${CFLAGS} -msse2 -mfpmath=sse ${CSRC} -o $@ ${LDFLAGS}; \
 	else \
 		cp $< $@; \
 	fi
 
 prebuild: ${CSRC}
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # alternative executable
 #

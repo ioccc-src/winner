@@ -73,7 +73,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -137,7 +137,7 @@ ${PROG}: ${PROG}.c
 	    echo "echo dgibson.data1 > data.name"; \
 	    echo dgibson.data1 > data.name; \
 	fi
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 	${CHMOD} +x dgibson.sh
 
 # alternative executable

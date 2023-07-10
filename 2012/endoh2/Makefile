@@ -73,7 +73,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LIBS=
+LDFLAGS=
 
 # C compiler to use
 #
@@ -139,7 +139,7 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # alternative executable
 #
@@ -151,70 +151,70 @@ pi.c: ${PROG}
 	./$< > $@
 
 pi: pi.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 314.c: pi
 	${RM} -f $@
 	./$< > $@
 
 314: 314.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 3141.c: 314
 	${RM} -f $@
 	./$< > $@
 
 3141: 3141.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 31415.c: 3141
 	${RM} -f $@
 	./$< > $@
 
 31415: 31415.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 314159.c: 31415
 	${RM} -f $@
 	./$< > $@
 
 314159: 314159.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 3141592.c: 314159
 	${RM} -f $@
 	./$< > $@
 
 3141592: 3141592.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 31415926.c: 3141592
 	${RM} -f $@
 	./$< > $@
 
 31415926: 31415926.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 314159265.c: 31415926
 	${RM} -f $@
 	./$< > $@
 
 314159265: 314159265.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 3141592653.c: 314159265
 	${RM} -f $@
 	./$< > $@
 
 3141592653: 3141592653.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 31415926535.c: 3141592653
 	${RM} -f $@
 	./$< > $@
 
 31415926535: 31415926535.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # you get the transcendental idea ... :-)
 
@@ -223,77 +223,77 @@ e.c: ${PROG}
 	./$< e > $@
 
 e: e.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 271.c: e
 	${RM} -f $@
 	./$< > $@
 
 271: 271.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 2718.c: 271
 	${RM} -f $@
 	./$< > $@
 
 2718: 2718.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 27182.c: 2718
 	${RM} -f $@
 	./$< > $@
 
 27182: 27182.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 271828.c: 27182
 	${RM} -f $@
 	./$< > $@
 
 271828: 271828.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 2718281.c: 271828
 	${RM} -f $@
 	./$< > $@
 
 2718281: 2718281.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 27182818.c: 2718281
 	${RM} -f $@
 	./$< > $@
 
 27182818: 27182818.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 271828182.c: 27182818
 	${RM} -f $@
 	./$< > $@
 
 271828182: 271828182.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 2718281828.c: 271828182
 	${RM} -f $@
 	./$< > $@
 
 2718281828: 2718281828.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 27182818284.c: 2718281828
 	${RM} -f $@
 	./$< > $@
 
 27182818284: 27182818284.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 271828182845.c: 27182818284
 	${RM} -f $@
 	./$< > $@
 
 271828182845: 271828182845.c
-	${CC} ${CFLAGS} $< -o $@ ${LIBS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # data files
 #
