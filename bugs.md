@@ -367,7 +367,7 @@ something was noted by the author, the judges, a consequence of earlier
 requirements for winning entries or the purpose was to do something that might
 appear to be buggy. An example of system specific entries:
 
-[1984/mullender](1984/mullender/mullender.c) (see below and the [faq](/faq.md)
+[1984/mullender](1984/mullender/mullender.c) (see below and the [FAQ](/faq.md)
 for a version that works in modern systems) is very system specific and was
 before system specific winning entries were discouraged. This is an all time
 personal favourite of Landon Curt Noll. Run the alternate code to understand why
@@ -1857,19 +1857,6 @@ is not. Again see his README.md for details!
 
 
 # 2015
-
-## [2015/endoh3](2015/endoh3/prog.c) ([README.md](2015/endoh3/README.md))
-## STATUS: missing files - please provide them
-
-With Yusuke's analysis of his entry which can be found
-[here](https://mame-github-io.translate.goog/ioccc-ja-spoilers/2015/endoh3.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp)
-he shows a tarball with source files that work with his entry, a mock emulator
-for [1984/mullender](1984/mullender/mullender.c). Unfortunately he does not have
-the tarball available for download and only showed a few (which
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added to the repo).
-
-Cody has his email and WILL be contacting him in time but we note it here anyway
-for now.
 
 
 # 2018

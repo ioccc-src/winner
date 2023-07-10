@@ -111,7 +111,7 @@ PROG= prog
 #
 OBJ= ${PROG}.o
 DATA=
-TARGET= ${PROG}
+TARGET= ${PROG} fun bf2pdp11
 #
 ALT_OBJ=
 ALT_TARGET=
@@ -132,6 +132,12 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS} ${BACK_TO}
+
+fun: fun.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS} ${PROG}.c
+
+bf2pdp11: bf2pdp11.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS} ${PROG}.c
 
 # alternative executable
 #
