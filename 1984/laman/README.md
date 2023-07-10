@@ -18,12 +18,12 @@ make all
 ### INABIAF - it's not a bug it's a feature :-)
 
 This entry will very likely crash or do something else if you run it without an
-arg.
+arg. It likely won't do anything at all if the arg is not a positive number.
 
 
 ## Try:
 
-The program accepts ONE POSITIVE argument.  Seeing is believing, so try things
+The program accepts ONE POSITIVE number.  Seeing is believing, so try things
 like:
 
 ```sh

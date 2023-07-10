@@ -37,6 +37,7 @@ NOTE: this version might not work on some systems like macOS.
 ./anonymous.alt
 ```
 
+
 ## Judges' remarks:
 
 The author was too embarrassed that they could write such trash, so I
@@ -55,7 +56,6 @@ for more information on the tattoo. Along with the code, this is what it looks l
 ![1984-anonymous-tattoo.jpg](1984-anonymous-tattoo.jpg)
 
 
-
 ## Author's remarks:
 
 ### On remaining anonymous:
@@ -65,6 +65,7 @@ wished to remain anonymous and they said:
 
 > Yes, I want to keep my anonymity.  But you can tell them that I am well known
 for my connection to the C language.
+
 
 ### On the famous tattoo (see above):
 
@@ -76,6 +77,7 @@ tattoo. It is the first entry to become a tattoo isn't it?
 Landon Curt Noll, the one who told the author about the tattoo, wrote back:
 
 > Yes, to our knowledge it is.
+
 
 ### Regrets:
 
