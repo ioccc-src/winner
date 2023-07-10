@@ -1413,15 +1413,6 @@ Cody fixed this to compile with linux which was having a problem with duplicate
 symbols of `main()`. The fix is through the option `-fcommon` which will let it
 compile like it does with macOS.
 
-The author, Yusuke, supplied the additional source files, which Cody added to
-the repo for us. Yusuke wrote in his [analysis of the
-entry](https://mame-github-io.translate.goog/ioccc-ja-spoilers/2015/endoh3.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp)
-that there are others as well but we don't seem to have them and he didn't
-provide them on his page. Cody contacted him and he sent the tarball but it was
-also hinted that in the README.md there is a program that generates the tarball
-which Cody added as [fun.c](2015/endoh3/fun.c). He also added the tarball itself
-and the files within it less the README file.
-
 
 ## [2015/hou](2015/hou/prog.c) ([README.md](2015/hou/README.md))
 
