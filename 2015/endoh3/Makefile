@@ -126,12 +126,17 @@ BACK_TO= mullender.c
 all: data ${TARGET}
 	@${TRUE}
 
-.PHONY: all alt data everything clean clobber install \
-	love haste waste maker easter_egg sandwich \
-	supernova deep_magic magic charon pluto
+.PHONY: all alt mullender back_to data everything \
+	clean clobber install love haste waste maker \
+	easter_egg sandwich supernova deep_magic magic \
+	charon pluto
 
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS} ${BACK_TO}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+mullender back_to: ${PROG}.c mullender.c
+	${CC} ${CFLAGS} $< -o ${PROG} ${LDFLAGS} ${BACK_TO}
+
 
 # alternative executable
 #
