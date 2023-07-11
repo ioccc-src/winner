@@ -111,7 +111,7 @@ PROG= prog
 #
 OBJ= ${PROG}.o
 DATA=
-TARGET= ${PROG} fun bf2pdp11
+TARGET= ${PROG}
 #
 ALT_OBJ=
 ALT_TARGET=
