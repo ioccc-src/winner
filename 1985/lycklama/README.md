@@ -2,6 +2,7 @@
 
 Ed Lycklama  
 
+
 ## To build:
 
 ```sh
@@ -15,8 +16,6 @@ make lycklama.orig
 ```
 
 
-
-
 ## To run:
 
 ```sh
@@ -27,6 +26,7 @@ There is an alternate version which slows down the output for a more fun display
 with modern systems. For this reason we encourage you to try that version
 as well. See Alternate code section below. 
 
+
 ## Try:
 
 ```sh
@@ -34,6 +34,8 @@ as well. See Alternate code section below.
 
 # notice the difference between the above and this one:
 ./lycklama < lycklama.alt.c
+# also try:
+./lycklama < lycklama.orig.c
 
 ./lycklama < README.md
 
@@ -53,15 +55,15 @@ it like:
 make CDEFINE+="-DZ=700" clobber alt
 ```
 
-Use `./lycklama.alt` as you would `./lycklama` above.
-
 #### Try:
 
 ```sh
+./lycklama.alt < lycklama.c
 ./lycklama.alt < lycklama.alt.c
 ./lycklama.alt < lycklama.orig.c
 ./lycklama.alt < Makefile
 ```
+
 
 ## Judges' remarks:
 
