@@ -60,17 +60,6 @@ A question for inquisitive readers: is the implemented subset of PDP-11
 instructions Turing-complete? (For a clue, see the end of the author's remarks.)
 If in doubt, use [APOUT](https://github.com/DoctorWkt/Apout).
 
-The author provided under the section 'One more thing' a program that when
-compiled with this entry will generate a gzipped tarball which we have added as
-[fun.c](fun.c), built by default through `make all`. To use try:
-
-```sh
-./fun > fun.tar.gz
-```
-
-for some fun :-) but we also added the tarball [fun.tar.gz](fun.tar.gz).
-
-
 ## Author's remarks:
 
 ### Hint / Compatibility
