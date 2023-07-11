@@ -24,7 +24,7 @@ much** for your help!
 
 A good number of the [past winners of the IOCCC](winners.html)
 tested, identified and helped correct and/or improve the write-ups
-of follow IOCCC winners for the year that they won. The list of
+of fellow IOCCC winners for the year that they won. The list of
 those past winners is too long to mention: nevertheless the
 [IOCCC judges](judges.html) **very much appreciate** those who
 helped improve the presentation of their fellow IOCCC winners.
@@ -1412,6 +1412,10 @@ were linking errors.
 Cody fixed this to compile with linux which was having a problem with duplicate
 symbols of `main()`. The fix is through the option `-fcommon` which will let it
 compile like it does with macOS.
+
+Cody also made it easier to enjoy the theme of [Back to the
+Future](https://en.wikipedia.org/wiki/Back_to_the_Future) using this entry by
+simply typing `make back_to` or `make mullender`.
 
 
 ## [2015/hou](2015/hou/prog.c) ([README.md](2015/hou/README.md))

@@ -111,7 +111,7 @@ PROG= prog
 #
 OBJ= ${PROG}.o
 DATA=
-TARGET= ${PROG} fun bf2pdp11
+TARGET= ${PROG}
 #
 ALT_OBJ=
 ALT_TARGET=
@@ -126,18 +126,17 @@ BACK_TO= mullender.c
 all: data ${TARGET}
 	@${TRUE}
 
-.PHONY: all alt data everything clean clobber install \
-	love haste waste maker easter_egg sandwich \
-	supernova deep_magic magic charon pluto
+.PHONY: all alt mullender back_to data everything \
+	clean clobber install love haste waste maker \
+	easter_egg sandwich supernova deep_magic magic \
+	charon pluto
 
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS} ${BACK_TO}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
-fun: fun.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS} ${PROG}.c
+mullender back_to: ${PROG}.c mullender.c
+	${CC} ${CFLAGS} $< -o ${PROG} ${LDFLAGS} ${BACK_TO}
 
-bf2pdp11: bf2pdp11.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS} ${PROG}.c
 
 # alternative executable
 #
