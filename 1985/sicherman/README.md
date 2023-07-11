@@ -30,7 +30,7 @@ Use `sicherman.alt` as you would `sicherman`.
 
 ## Judges' remarks:
 
-This program abuses the C preprocessor so much that some /lib/cpp fail to strip
+This program abuses the C preprocessor so much that some `cpp`s fail to strip
 out all of the comments on the first pass!  If you were able to understand
 [Decot's](/winners.html#Dave_Decot) [entry in 1984](/1984/decot/decot.c), you
 will have a head start on this one.
