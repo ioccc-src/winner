@@ -700,11 +700,12 @@ This entry will crash without enough args (2).
 
 
 ## [1992/kivinen](1992/kivinen/kivinen.c) ([README.md](1992/kivinen/README.md))
-## STATUS: known bug - please help us fix
+## STATUS: INABIAF - please **DO NOT** fix
 
-When you start the program everything starts to move over to the right side and then ends. 
-[Yusuke Endoh](/winners.html#Yusuke_Endoh) pointed out that if you click the
-mouse it takes it back towards the centre but this should probably be fixed.
+When you start the program everything starts to move over to the right side and
+then ends.  [Yusuke Endoh](/winners.html#Yusuke_Endoh) pointed out that if you
+click the mouse it takes it back towards the centre. If you have a fix it's
+welcome but it's not currently considered enough of a problem to fix.
 
 
 ## [1992/lush](1992/lush/lush.c) ([README.md](1992/lush/README.md))
