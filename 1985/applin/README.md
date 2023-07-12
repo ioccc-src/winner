@@ -1,7 +1,7 @@
 # Best one liner
 
-Jack Applin [with help from Robert Heckendorn]
-US  
+Jack Applin [with help from Robert Heckendorn]<br>
+US<br>
 <https://www.cs.colostate.edu/~applin/>
 
 ## To build:
