@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Thu  6 Jul 2023 11:54:19 UTC*
+*Last updated: Wed 12 Jul 2023 11:54:12 UTC*
 
 This document is primarily for [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) as he (that is I :-) ) wanted a way
@@ -15,8 +15,6 @@ keep track of things that have been done already and what hasn't been done (in
 this file the case is mostly _NOT_ been done).
 
 - Find entries with bugs as well INABIAF and add to [bugs.md](/bugs.md).
-    For instance a INABIAF section should be added to [bugs.md](bugs.md) for
-    [2004/jdalbec](2004/jdalbec/jdalbec.) based on the README.md file.
     As far as I am aware the ones that have not been checked are > 2011 (and two
     entries in 2011, vik and zucker) and possibly some of the earlier years. I
     ([Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson)) have spent too
@@ -31,11 +29,13 @@ this file the case is mostly _NOT_ been done).
 - Resolve as many of the issues in [bugs.md](/bugs.md) with the exception of the
 INABIAF ones. This is likely not possible for all (one in particular comes to
 mind that abuses a bug in a now very old gcc version - this obviously cannot be
-fixed) but many certainly can be (and have been) fixed.
+fixed but I added an alt version that does what it used to do) but many
+certainly can be (and most have been) fixed.
 
-- Check for typos in README.md files. Most years have been done. I (Cody) need
-to check the late 80s through mid 1990s plus the last two entries in 2011 and
-the following years. At the same time the formatting is being fixed.
+- Check for typos in README.md files. Although I did up through I believe 2011 I
+have to do another pass through all except that as of 12 July 2023 I went
+through 1984 and 1985. At the same time the formatting has to be / is being
+checked.
     * UPDATE on 06 July 2023: some while back I noticed that _ALL_ years will
     have to be checked again but most of the years checked through 2011 (I think
     it is but I have this vague memory I did a couple more years - that will be
@@ -63,17 +63,6 @@ fix any issues.
     that the years not checked / fixed should only need one pass (but probably
     will have a second pass anyway just to make sure things are good as seeing
     things a second time is a good way to find additional errors).
-    * NOTE: as of 03 May 2023 years up through most of 2011 have been checked
-    except that a few years I am pretty sure I did not check typos (I'd say about
-    1987 or 1988 through 1995 should be rechecked for typos) (but see above item
-    in this list). It's very likely I won't keep this updated until it's
-    finished but I wanted to note it now.
-    * NOTE: a while back (as of 31 May 2023) Cody noticed that some of the files
-    he already checked could be improved wrt formatting so he'll have to have a
-    quick look at the previously edited files; some he has done already but the
-    vast majority have not been checked. These should be relatively easy to fix
-    but will only be done _after_ the rest of the files are processed
-    (presumably with complete changes made :-) ).
 
 - Remove addresses from older winning entries but (if known) keep country code +
 add country code and name to the respective JSON file in the [author](/author)
@@ -105,8 +94,8 @@ run) or else they'll have to be put above the compilation.
     * Make compilation of targets use `|| :` in the Makefiles to allow
     additional targets to compile and/or let warnings/notes be printed. An
     important use of this is that some entries won't compile with clang due to
-    defects but the alternate version will. Whether this is a good idea is TBD
-    but it's noted here as a reminder to be discussed.
+    defects (though as I'm updating this on 12 July 2023 all but one in some
+    versions of clang have been fixed if we consider in some cases alt versions)
     * Update on 06 July 2023: note that in some cases the `|| :` _**CANNOT**_ be
     added to the rule because the following rules require that the previous
     rules run successfully.
