@@ -1,28 +1,14 @@
 #!/usr/bin/env make
 #
-# sgit - run sed on all files under git control
+# sgit - run sed (by default with -i) on all files (or one or more globs) under
+# git control.
 #
-# Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+# The most up to date version of this tool and everything related can be found
+# at https://github.com/xexyl/sgit.
 #
-# Permission to use, copy, modify, and distribute this software and
-# its documentation for any purpose and without fee is hereby granted,
-# provided that the above copyright, this permission notice and text
-# this comment, and the disclaimer below appear in all of the following:
+# - Cody Boone Ferguson / @xexyl
 #
-#       supporting documentation
-#       source copies
-#       source works derived from this source
-#       binaries derived from this source or from derived source
-#
-# LANDON CURT NOLL DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
-# INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO
-# EVENT SHALL LANDON CURT NOLL BE LIABLE FOR ANY SPECIAL, INDIRECT OR
-# CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF
-# USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-# OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-# PERFORMANCE OF THIS SOFTWARE.
-#
-# chongo (Landon Curt Noll, http://www.isthe.com/chongo/index.html) /\oo/\
+# This Makefile was created by Landon Curt Noll.
 #
 # Share and enjoy! :-)
 
