@@ -144,12 +144,14 @@ was an `int`.  He notes that he tried to keep the ASCII art as close to the
 original as possible. The line lengths are the same but some spaces had to be
 changed to non-spaces.
 
-As the fix was it worked for macOS but it did not work for modern linux, not
-before with gcc or after the fix with either gcc or clang, so Cody fixed that
-too. This took some changes and commenting code out (commented out for the ASCII
-art as noted). It was a game of cat and mouse where one fix with one compiler
-caused it to segfault with the other but after commenting out two portions it
-works fine.
+A very funny problem occurred depending on the compiler and whether or not the
+optimiser is enabled that had to be fixed: one compiler would work fine but
+another might enter an infinite loop or segfault but then once the optimiser
+state was changed the compiler that worked no longer worked (in the same was as
+the other one not working) and the one that didn't work did! We encourage you to
+see the README.md file to see how odd this problem was and what Cody did to fix
+it!
+
 
 ## [1986/wall](1986/wall/wall.c) ([README.md](1986/wall/README.md]))
 
