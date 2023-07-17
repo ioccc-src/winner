@@ -113,8 +113,8 @@ ENTRY= bellard
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA= bellard.otccex.c
-TARGET= ${PROG}
+DATA=
+TARGET= ${PROG} ${PROG}.otccex
 #
 ALT_OBJ=
 ALT_TARGET=
@@ -134,7 +134,7 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	@echo "WARNING: ${PROG}.c must be compiled as 32-bit to use with the entry itself;"
 	@echo "if you cannot use -m32 this will NOT work!"
-	${CC} ${CFLAGS} -m32 $< -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS} -m32 $< -o $@ ${LDFLAGS} || :
 
 ${PROG}.otccex: ${PROG}.otccex.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
