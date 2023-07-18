@@ -123,7 +123,7 @@ that Cody added. See the README.md for details.
 
 Cody fixed this _very twisted entry_ to not require `-traditional-cpp`. He'd
 like to refer you to the original file in
-[sicherman.alt.c](1985/sicherman.alt.c) and he suggests that you then compare it
+[sicherman.alt.c](1985/sicherman/sicherman.alt.c) and he suggests that you then compare it
 to [sicherman.c](1985/sicherman/sicherman.c) for some good old C-fashioned fun!
 
 
