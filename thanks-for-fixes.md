@@ -13,9 +13,10 @@ Ferguson](/winners.html#Cody_Boone_Ferguson) who is responsible for many of the
 improvements including many, many complicated bug fixes like
 [2001/anonymous](2001/anonymous/anonymous.c), making entries not require
 `-traditional-cpp`, fixing entries to compile with clang, providing alternate
-code where useful or necessary, typo and consistency fixes. Thank you **very
-much** for your extensive efforts in helping improve the IOCCC presentation of
-past IOCCC winners and making many work with modern systems!
+code where useful or necessary, fixing where possible dead links and otherwise
+removing them, typo and consistency fixes. Thank you **very much** for your
+extensive efforts in helping improve the IOCCC presentation of past IOCCC
+winners and making many work with modern systems!
 
 [Yusuke Endoh](/winners.html#Yusuke_Endoh) supplied a number of
 important bug fixes to a number of past IOCCC winners. Some of
@@ -625,9 +626,11 @@ Cody also changed the entry to use `fgets()` instead of `gets()` to make it safe
 for lines greater than 231 in length and to prevent a warning at linking or at
 runtime, the latter of which can be interspersed with output of the program.
 Note that this now prints a newline after the output but this seems like a
-worthy compromise for making the output incorrect in macOS and at the same time
-it's safer (fixing it to not have the extra newline is more problematic than
-it's worth and in macOS another line of output would be shown anyway).
+worthy compromise for preventing the interspersed output in macOS and at the
+same time it's safer (fixing it to not have the extra newline is more
+problematic than it's worth and in macOS another line of output would be shown
+without the change anyway and the difference is that now it's just a blank line
+rather than an annoying warning).
 
 A subtlety about this fix: if a line is greater than 231 in length if the
 program chooses that line it might print the first 231 characters or it might

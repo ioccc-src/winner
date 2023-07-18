@@ -751,7 +751,7 @@ If not enough args are specified this program will likely crash or do something
 else. This should NOT be fixed.
 
 ## [1994/ldb](1994/ldb/ldb.c) ([README.md](1994/ldb/README.md))
-## STATUS: known bug - please help us fix
+## STATUS: INABIAF - please **DO NOT** fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile
 with modern systems (see the [thanks-for-fixes.md](thanks-for-fixes.md) file for
@@ -761,10 +761,10 @@ also overflow long lines.  Cody changed it to `fgets()` to prevent the display
 problem but this introduces another problem namely that newlines can be printed
 if the line length < 231.
 
-This seems like a worthy compromise but it would be ideal for it to never print
-a newline unless that's the line itself (a blank line).
-
-Cody will be looking at this later on.
+This seems like a worthy compromise to not have messed up output and although it
+would be ideal for it to never print a newline unless that's the line itself it
+might be tampering too much with the entry as it's not a real problem and as a
+one liner it's already quite long.
 
 
 ## [1994/schnitzi](1994/schnitzi/schnitzi.c) ([README.md])(1994/schnitzi/README.md))
