@@ -904,20 +904,27 @@ sings [Ten in the Bed](https://allnurseryrhymes.com/ten-in-the-bed/).
 
 ## [2001/bellard](2001/bellard/bellard.c) ([README.md](2001/bellard/README.md]))
 
-Cody at least partially fixed this but he notes that this will not work without
-(according to the author) i386 linux or else some skill in resolving the
-portability issues. As it is it segfaults in 64-bit linux (and as expected
-macOS). He fixed an earlier segfault so that at least the file can be opened
-(but perhaps that will be wrong in i386 linux / older C?) and he also changed
-some of the macro used to what they evaluate to but mostly he kept it the same.
+Cody fixed this to compile with clang but according to the author this will not
+work without i386 linux. It generates i386 32-bit code (not bytecode) but
+unfortunately it will not work without i386 linux. Cody fixed an earlier
+segfault so that it can at least now open the file and he also changed some of
+the macros used to what they translate to but mostly it was kept the same.
+Yusuke added another change (see below) to make it even more portable across
+compilers besides what Cody did.
 
-Cody also fixed [bellard.otccex.c](bellard.otccex.c) so it does not segfault and
-seemingly works okay (it did not work at all). The main problem was that some
-ints were being used as pointers. Also the Fibonacci sequence (`fib()`) will
-overflow at `n > 48` so this is checked prior to running the function just like
-the author did for the factorial (overflowing at `>12`). Either way
-unfortunately this entry seems to not work in 64-bit linux or macOS. See below
-portability notes as well as another fix in this entry by Yusuke.
+
+Cody also fixed the [supplementary
+bellard.otccex.c](2001/bellard/bellard.otccex.c) so it does not segfault and
+works as well. The main problem was that some ints were being used as pointers.
+This includes, for example, an int used as a `char *`, an int used as a function
+pointer and an int to access `argv` as well as there being invalid access to
+`argv`. He updated the Makefile so that this program will compile by default.
+
+Also the Fibonacci sequence (`fib()`) will overflow at `n > 48` so this is
+checked prior to running the function just like the author did for the factorial
+(overflowing at `>12`). Either way unfortunately this entry seems to not work in
+64-bit linux or macOS. See below portability notes as well as another fix in
+this entry by Yusuke.
 
 ### Portability notes:
 

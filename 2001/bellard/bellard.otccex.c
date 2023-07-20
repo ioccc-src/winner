@@ -107,7 +107,7 @@ main(int argc, char **argv)
     } else {
 	print_num(fib(n), base);
     }
-    printf("fact(%d) with base %d = ", base, n);
+    printf("\nfact(%d) with base %d = ", base, n);
     if (n > 12) {
         printf("Overflow");
     } else {
