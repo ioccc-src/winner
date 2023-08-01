@@ -1,5 +1,6 @@
 # tmp
 
+
 The purpose of the `tmp` directory is to hold temporary files.
 The files in the `tmp` directory will go away leaving behind
 an empty `tmp` directory.
@@ -10,7 +11,9 @@ and the format of those files.
 *NOTE*: The `terms` section may be moved to another file
 later on, after the contents
 
+
 ## terms
+
 
 ### `author`
 
@@ -18,6 +21,7 @@ An individual who was an `author` of at least one winning IOCCC entry.
 
 Some authors have submitted more than one IOCCC entry that won.  Some winning
 IOCCC entries have more than one author.
+
 
 ### `author_handle`
 
@@ -77,6 +81,7 @@ Anonymous `author_handle`'s match this regexp:
 Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$
 ```
 
+
 ### `winner`
 
 An IOCCC entry that won an award for given IOCCC.
@@ -91,6 +96,7 @@ there are a few cases where a `winner` directory contains subdirectories.
 
 Use of subdirectories under a `winner` directory is discouraged and
 may be limited to previous `winner`s that used them.
+
 
 ### `year`
 
@@ -117,6 +123,7 @@ Each `year` will have a file directory under it named:
 The contents of the `.year` file is the year string of the directory. For
 instance, [2020/.year](/2020/.year) has the string: `2020`.
 
+
 ### `dir`
 
 A `dir` is a POSIX safe string that holds an winner.
@@ -130,6 +137,7 @@ A `dir` is a string that matches this regexp:
 Each `winner` is under its own individual directory.  This directory
 is directly under a `year` directory.
 
+
 ### `winner_id`
 
 A string that identifies the winning entry.  The string is of the form:
@@ -137,6 +145,7 @@ A string that identifies the winning entry.  The string is of the form:
 ```
 year_dir
 ```
+
 
 ### `.id`
 
@@ -159,7 +168,14 @@ A `sort_word` match this regexp:
 ^[a-z][0-9a-z]*
 ```
 
+
 ## files
+
+
+### [README.md](README.md)
+
+This file.
+
 
 ### [author-names.txt](author-names.txt)
 
@@ -171,6 +187,7 @@ In the case of anonymous authors the form is:
 Anonymous YYYY
 ```
 
+
 ### [author-wins.csv](author-wins.csv)
 
 A CSV (Comma Separated Values) file: one line per `author`.
@@ -178,6 +195,7 @@ A CSV (Comma Separated Values) file: one line per `author`.
 The first field is an `author_handle`.
 
 The other fields are the `winner_id`'s of all `winner`s won by the `author`.
+
 
 ### [author.csv](author.csv)
 
@@ -214,13 +232,13 @@ via the [macOS](https://www.apple.com/macos/)
 
 8. mv -f tmp.csv author.csv
 
+
 ### [author.numbers](author.numbers)
 
 A [macOS](https://www.apple.com/macos) [Numbers](https://www.apple.com/numbers/)
 spreadsheet contains information about `author`s: one line per `author` with the
 following fields:
 
- 
 1. This field is `sort_word` string.
 
 2. This field is the full name of the `author`.
@@ -228,37 +246,59 @@ following fields:
 3. This field is the `author_handle` of the `author`.
 
 4. This field is the primary URL of `author` or the string `null` if none was
-given.
+   given.
 
 5. This field is the email address of `author` or the string `null` if none was
-given.
+   given.
 
 6. This field is the location ISO 3166 code of `author` or the string `null` is unknown.
-An `author` who does not wish to specify a location ISO 3166 code is encouraged to
-use the code `XX`.  The location ISO 3166 code consists of two UPPER CASE ASCII letters.
+   An `author` who does not wish to specify a location ISO 3166 code is encouraged to
+   use the code `XX`.  The location ISO 3166 code consists of two UPPER CASE ASCII letters.
 
 7. This field is the twitter handle of the `author` or the string `null` if none
-was given.  This field is kept for purely historic record purposes and is
-otherwise not used.
+   was given.  This field is kept for purely historic record purposes and is
+   otherwise not used.
 
 8. This field is the mastodon handle  of the `author` or the string `null` if
-none was given.
+   none was given.
 
 9. This field is the alternate URL of `author` or the string `null` if none
-was given.
+   was given.
+
 
 ### [author_handle.txt](author_handle.txt)
 
 A text file containing `author_handle`s for each `author`: one `author_handle`
 per line.
 
+
+### [check_awards.sh](check_awards.sh)
+
+Script to verify that the award name for each entry as found as a level 1
+markdown header in each entry's `README.md` file.
+
+Run the script from the top level directory.  The output should end in ":1".
+
+For example, this command should not produce any output.
+
+```sh
+tmp/check_awards.sh | grep -v ':1$'
+```
+
+Any output is an indication that either an award name is incorrect, or the
+award is not formed at a level 1 markdown header, or that more than one
+award line as at a level 1 markdown header we found, or the `README.md`
+file is missing, etc.
+
+
 ### [example.author.json](example.author.json)
 
 This is a JSON file containing an example `author/author_handle.json` for a
 fictitious `author`.
 
-An `author/author_handle.json` file will be derived from the contents of the 
+An `author/author_handle.json` file will be derived from the contents of the
 [author.csv](author.csv) file and the [author-wins.csv](author-wins.csv) file.
+
 
 ### [example.dot_winner.json](example.dot_winner.json)
 
@@ -269,22 +309,12 @@ A `year/dir/.winner.json` file will be derived from the contents the `year/dir/.
 the [author-wins.csv](author-wins.csv) file, the `year/dir/.year` file,  and the
 contents of the `year/dir` directory.
 
-### [sql/winners.sql](sql/winners.sql)
 
-This is a SQL file, extracted from another SQL file that was used in the past
-to generate data for the old winners directory tree.
+### [file_list.txt](file_list.txt)
 
-### [winner_id.txt](winner_id.txt)
+A list of files that exist, or should exist once the tools to generate certain files,
+such as the `index.html`, or the `.winner.json` files for each entry, are created.
 
-A text file containing `winner_id` strings: one `winner_id` per line.
-
-### [year-prize.csv](year-prize.csv)
-
-A CSV file: one line per `winner`.
-
-The first field is a `winner_id`.
-
-The second field is the name of the award for given `winner`.
 
 ### [gen_author_json.sh](gen_author_json.sh)
 
@@ -295,3 +325,212 @@ The following command, executed in this directory, created the `author/` directo
 ```sh
 rm -rf ../author ; ./gen_author_json.sh  author_handle.txt author.csv author-wins.csv ../author
 ```
+
+
+### [manifest.numbers](manifest.numbers)
+
+
+A [macOS](https://www.apple.com/macos) [Numbers](https://www.apple.com/numbers/)
+spreadsheet contains information about files, that must already exist, with the
+following fields:
+
+1. IOCCC year as a 4-character string.
+
+2. Directory name number the IOCCC year.
+
+3. If a number, then this is the winners rank showing the order
+   that this file is to be listed for the given entry's in
+   [winners.html](winners.html), or null if the file is not to be listed.
+
+4. Path under the IOCCC/directory.  In a few cases this is a path,
+   not just a simple filename under the IOCCC/directory.
+
+5. This field indicates if the file main program.  This filed is one of:
+
+   main		The main source code to display.
+   alt		The alternative source code.
+   orig		The original version of the source code (may be the same as main).
+   null		Not a primary source code file.
+
+6. The type of file.
+
+7. The name of the program that creates this file, or null is the
+   file an original file.
+
+8. A JSON boolean indicating of the file is listed on `winners.html` or not.
+
+9. A string indicating how the file is to be displayed from `winners.html`.
+   Possible files include:
+
+   browser	The file is to be displayed directly from the browser.
+   github	The file should be linked to the GitHub repo so that
+   		it may be rendered directly by GitHub.  In the future
+		this may changed to allow a suitable browser to
+		directly display this file instead of via GitHub.
+  null		This file not listed in `winners.html`.
+  download	The file is intended to be downloaded from the browser
+  		instead of being displayed.
+
+10. Any text that should be displayed at the end of line in `winners.html`
+    (with a preceding " - "), or null is no such text is to be displayed.
+
+11. This ending filename extension, or null if no extension.
+    This field is temporary and may go away.
+
+NOTE: Cells containing null are a JSON nulls.
+NOTE: Cells containing true or false are JSON booleans.
+NOTE: Empty cells are TBD and need to be filled in.
+NOTE: The winners_rank cells are either JSON null or JSON numbers.
+NOTE: All other cells are JSON strings that need to be double quoted, including the year.
+
+
+### [manifest.csv](manifest.csv)
+
+The [manifest.csv](manifest.csv) is a CSV file that was exported from the
+[manifest.numbers](manifest.numbers) file.
+
+In case of conflict, the data in [manifest.numbers](manifest.numbers) file is
+considered manifestitative over the [manifest.csv](manifest.csv) file.
+
+The [manifest.csv](manifest.csv) is generated from the [manifest.numbers](manifest.numbers) file,
+via the [macOS](https://www.apple.com/macos/)
+[Numbers](https://www.apple.com/numbers/) spreadsheet app, as follows:
+
+0. open [manifest.csv](manifest.csv) in numbers: modify if/as needed
+
+1. File -> Export To -> CSV...
+    * 1a. `[ ]` Include table names (unset)
+    * 1b. Text Encoding: Unicode (UTF-8)
+    * 1c. Click ((Save..))
+
+2. Save As: manifest.csv
+    * 2a. Select the `tmp` directory
+
+3. Click ((Export))
+    * 3a. If needed click ((Replace))
+
+4. open a terminal window
+
+5. cd to the `tmp` directory
+
+6. tr -d '\015' < manifest.csv > tmp.csv
+
+7. echo >> tmp.csv
+
+8. mv -f tmp.csv manifest.csv
+
+
+### [missing-manifest.numbers](missing-manifest.numbers)
+
+
+A [macOS](https://www.apple.com/macos) [Numbers](https://www.apple.com/numbers/)
+spreadsheet contains information about files, that may not yet exist because
+a tool needs to create it, with the following fields:
+
+NOTE: Later on when these files are created, their spreadsheet lines
+      will be moved into the [manifest.numbers](manifest.numbers) spreadsheet.
+
+1. IOCCC year as a 4-character string.
+
+2. Directory name number the IOCCC year.
+
+3. If a number, then this is the winners rank showing the order
+   that this file is to be listed for the given entry's in
+   [winners.html](winners.html), or null if the file is not to be listed.
+
+4. Path under the IOCCC/directory.  In a few cases this is a path,
+   not just a simple filename under the IOCCC/directory.
+
+5. This field indicates if the file main program.  This filed is one of:
+
+   main		The main source code to display.
+   alt		The alternative source code.
+   orig		The original version of the source code (may be the same as main).
+   null		Not a primary source code file.
+
+6. The type of file.
+
+7. The name of the program that creates this file, or null is the
+   file an original file.
+
+8. A JSON boolean indicating of the file is listed on `winners.html` or not.
+
+9. A string indicating how the file is to be displayed from `winners.html`.
+   Possible files include:
+
+   browser	The file is to be displayed directly from the browser.
+   github	The file should be linked to the GitHub repo so that
+   		it may be rendered directly by GitHub.  In the future
+		this may changed to allow a suitable browser to
+		directly display this file instead of via GitHub.
+  null		This file not listed in `winners.html`.
+  download	The file is intended to be downloaded from the browser
+  		instead of being displayed.
+
+10. Any text that should be displayed at the end of line in `winners.html`
+    (with a preceding " - "), or null is no such text is to be displayed.
+
+11. This ending filename extension, or null if no extension.
+    This field is temporary and may go away.
+
+NOTE: Cells containing null are a JSON nulls.
+NOTE: Cells containing true or false are JSON booleans.
+NOTE: Empty cells are TBD and need to be filled in.
+NOTE: The winners_rank cells are either JSON null or JSON numbers.
+NOTE: All other cells are JSON strings that need to be double quoted, including the year.
+
+
+### [missing-manifest.csv](missing-manifest.csv)
+
+The [missing-manifest.csv](missing-manifest.csv) is a CSV file that was exported from the
+[missing-manifest.numbers](missing-manifest.numbers) file.
+
+In case of conflict, the data in [missing-manifest.numbers](missing-manifest.numbers) file is
+considered missing-manifestitative over the [missing-manifest.csv](missing-manifest.csv) file.
+
+The [missing-manifest.csv](missing-manifest.csv) is generated from the [missing-manifest.numbers](missing-manifest.numbers) file,
+via the [macOS](https://www.apple.com/macos/)
+[Numbers](https://www.apple.com/numbers/) spreadsheet app, as follows:
+
+0. open [missing-manifest.csv](missing-manifest.csv) in numbers: modify if/as needed
+
+1. File -> Export To -> CSV...
+    * 1a. `[ ]` Include table names (unset)
+    * 1b. Text Encoding: Unicode (UTF-8)
+    * 1c. Click ((Save..))
+
+2. Save As: missing-manifest.csv
+    * 2a. Select the `tmp` directory
+
+3. Click ((Export))
+    * 3a. If needed click ((Replace))
+
+4. open a terminal window
+
+5. cd to the `tmp` directory
+
+6. tr -d '\015' < missing-manifest.csv > tmp.csv
+
+7. echo >> tmp.csv
+
+8. mv -f tmp.csv missing-manifest.csv
+
+
+### [sql/winners.sql](sql/winners.sql)
+
+This is a SQL file, extracted from another SQL file that was used in the past
+to generate data for the old winners directory tree.
+
+
+### [winner_id.txt](winner_id.txt)
+
+A text file containing `winner_id` strings: one `winner_id` per line.
+
+
+### [year-prize.csv](year-prize.csv)
+
+A CSV file: one line per `winner`.
+
+The first field is a `winner_id`.
+
+The second field is the name of the award for given `winner`.
