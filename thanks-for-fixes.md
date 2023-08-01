@@ -717,6 +717,12 @@ Cody fixed this to compile and work with modern systems. As he loved the
 references in the code that could not compile he just commented out as little as
 possible to get this to compile.
 
+## [1996/jonth](1996/jonth/jonth.c) ([README.md](1996/jonth/README.md]))
+
+Cody fixed this to not segfault under macOS. The problem was that the function
+pointer `w`, which points to `XCreateWindow()`, did not specify the parameters of
+the function in the pointer assignment.
+
 
 ## [1996/westley](1996/westley/westley.c) ([README.md](1996/westley/README.md]))
 
