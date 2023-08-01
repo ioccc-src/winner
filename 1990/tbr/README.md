@@ -13,10 +13,6 @@ US
 make all
 ```
 
-For the original version with `gets()` see the [archive
-tarball](/archive/archive-1990.tar.bz2).
-
-
 ## To run:
 
 ```sh
@@ -77,7 +73,7 @@ applied.
 
 ## Author's remarks:
 
-This program is a rudimentary shell. It does i/o redirection, pipes
+This program is a rudimentary shell. It does I/O redirection, pipes
 and cd. It flags errors on failed `chdir()`, `open()`, `creat()`,
 `execvp()`, `fork()` and a few syntax errors.
 
