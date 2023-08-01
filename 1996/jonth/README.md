@@ -16,8 +16,7 @@ make all
 NOTE: this entry requires `X11/Xlib.h` header file and the X11 library to
 compile. macOS users running Mountain Lion and later will need to download and
 install [XQuartz](https://www.xquartz.org) in order to compile and run this
-entry. But see [bugs.md](/bugs.md) for a known problem with running this under
-macOS and with a workaround of sorts plus more information on where it fails.
+entry.
 
 
 ## To run:

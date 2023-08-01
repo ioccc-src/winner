@@ -2,7 +2,9 @@
 #define I 8;}t(p){r(p?W:o);XClearWindow(V,m);}main(i,f)char**f;{M((T(h=f),
 #define K Y(o,XMapRaised(V,e);)x=3;x--;)for(y=3;y--;r(G))XMapRaised(V,R[D]
 #define N z(x+i,(z(H-x-i,x),x)))x<i||z(x-i,x)|z(H-x+i,x)Y(W,)l=k;l>20&&l>x
-#define XIMOfIC Z;XID(*w)()=XCreateWindow,m,e,o[2],W[2],G[2],R[2][O]);}GC*g
+#define XIMOfIC Z;XID(*w)(Display*,Window,int,int,unsigned,unsigned,unsigned,\
+	int,unsigned, Visual*,unsigned long,XSetWindowAttributes*)=XCreateWindow,\
+	m,e,o[2],W[2],G[2],R[2][O]);}GC*g
 #define E (++D)));}r(XID*z){XSetWindowBackgroundPixmap(V=d[D],m=R[D][x][y],z[
 #define L ;XStoreName(V,e=w(V,RootWindow(V,s),0,0,152,152,2,0,1,0,0,0),"II"+D
 #define B 3][3];Display*V,*d[2];char**h,k=25,b[2500],H=50,D,s,x,y,i;T(){float
