@@ -45,7 +45,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-a] [winners.html]
 	-h		print help message and exit
 	-v level	set verbosity level (def level: $V_FLAG)
 	-V		print version string and exit
-	-a		print all NAME tags (def: print just winner_id NAMEs)
+	-a		print all NAME tags (def: print just winner_id NAME tags)
 
 	winners.html	path of winners.html (def: ./winners.html)
 
@@ -111,7 +111,7 @@ if [[ $# -gt 0 ]]; then
     export WINNERS_HTML="$1"
 fi
 
-# firewall WINNERS_HTML just be a readable file
+# firewall WINNERS_HTML must be a readable file
 #
 if [[ ! -e $WINNERS_HTML ]]; then
     echo "$0: ERROR: winners.html does not exist: $WINNERS_HTML" 1>&2
