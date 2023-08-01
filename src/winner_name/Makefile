@@ -53,6 +53,7 @@ TARGETS= winner_name
 ######################################
 
 all: ${TARGETS}
+	@:
 
 winner_name: winner_name.sh
 	${RM} -f -v $@
