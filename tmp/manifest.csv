@@ -10,7 +10,7 @@
 1984,anonymous,50,anonymous.orig.c,orig,c,null,true,github,original source,c
 1984,anonymous,null,.gitignore,null,gitignore,null,false,null,null,gitignore
 1984,anonymous,null,README.md,null,markdown,null,false,null,null,md
-1984,anonymous,,1984-anonymous-tattoo.jpg,null,image,null,true,browser,,jpg
+1984,anonymous,100,1984-anonymous-tattoo.jpg,null,image,null,true,browser,source code tattoo,jpg
 1984,decot,20,decot.c,main,c,null,true,github,winning source,c
 1984,decot,30,Makefile,null,makefile,null,true,github,how to compile,null
 1984,decot,40,decot.alt.c,alt,c,null,true,github,alternative source,c
@@ -28,8 +28,8 @@
 1984,mullender,50,mullender.orig.c,orig,c,null,true,github,original source,c
 1984,mullender,null,.gitignore,null,gitignore,null,false,null,null,gitignore
 1984,mullender,null,README.md,null,markdown,null,false,null,null,md
-1984,mullender,,a.out.h,null,c,null,true,github,,h
-1984,mullender,,gentab.c,null,c,null,true,github,,c
+1984,mullender,150,a.out.h,null,c,null,true,github,,h
+1984,mullender,150,gentab.c,null,c,null,true,github,tool used by authors to create constants in the source code,c
 1985,applin,20,applin.c,main,c,null,true,github,winning source,c
 1985,applin,30,Makefile,null,makefile,null,true,github,how to compile,null
 1985,applin,50,applin.orig.c,orig,c,null,true,github,original source,c
@@ -132,7 +132,7 @@
 1987,lievaart,50,lievaart.orig.c,orig,c,null,true,github,original source,c
 1987,lievaart,null,.gitignore,null,gitignore,null,false,null,null,gitignore
 1987,lievaart,null,README.md,null,markdown,null,false,null,null,md
-1987,lievaart,,lievaart2.c,null,c,null,true,github,,c
+1987,lievaart,150,lievaart2.c,null,c,null,true,github,source without size restriction,c
 1987,wall,20,wall.c,main,c,null,true,github,winning source,c
 1987,wall,30,Makefile,null,makefile,null,true,github,how to compile,null
 1987,wall,50,wall.orig.c,orig,c,null,true,github,original source,c
@@ -162,7 +162,7 @@
 1988,isaak,50,isaak.orig.c,orig,c,null,true,github,original source,c
 1988,isaak,null,.gitignore,null,gitignore,null,false,null,null,gitignore
 1988,isaak,null,README.md,null,markdown,null,false,null,null,md
-1988,isaak,,isaak.encode,null,,null,true,,,encode
+1988,isaak,180,isaak.encode,null,xxencode,null,true,download,uuencoded sample output,encode
 1988,litmaath,20,litmaath.c,main,c,null,true,github,winning source,c
 1988,litmaath,30,Makefile,null,makefile,null,true,github,how to compile,null
 1988,litmaath,40,litmaath.alt.c,alt,c,null,true,github,alternative source,c
@@ -190,9 +190,8 @@
 1988,spinellis,50,spinellis.orig.c,orig,c,null,true,github,original source,c
 1988,spinellis,null,.gitignore,null,gitignore,null,false,null,null,gitignore
 1988,spinellis,null,README.md,null,markdown,null,false,null,null,md
-1988,spinellis,,input.txt,null,text,null,true,,,txt
-1988,spinellis,,input2.txt,null,text,null,true,,,txt
-1988,spinellis,,spinellis.data,null,,null,true,,,data
+1988,spinellis,150,input.txt,null,text,null,true,github,example input,txt
+1988,spinellis,150,input2.txt,null,text,null,true,github,example input,txt
 1988,westley,20,westley.c,main,c,null,true,github,winning source,c
 1988,westley,30,Makefile,null,makefile,null,true,github,how to compile,null
 1988,westley,40,westley.alt.c,alt,c,null,true,github,alternative source,c
@@ -204,15 +203,15 @@
 1989,fubar,50,fubar.orig.c,orig,c,null,true,github,original source,c
 1989,fubar,null,.gitignore,null,gitignore,null,false,null,null,gitignore
 1989,fubar,null,README.md,null,markdown,null,false,null,null,md
-1989,fubar,,fubar.sh,null,shellscript,null,true,,,sh
+1989,fubar,100,fubar.sh,null,shellscript,null,true,github,how to run fubar in the proper way,sh
 1989,jar.1,20,jar.1.c,main,c,null,true,github,winning source,c
 1989,jar.1,30,Makefile,null,makefile,null,true,github,how to compile,null
 1989,jar.1,40,jar.1.alt.c,alt,c,null,true,github,alternative source,c
 1989,jar.1,50,jar.1.orig.c,orig,c,null,true,github,original source,c
 1989,jar.1,null,.gitignore,null,gitignore,null,false,null,null,gitignore
 1989,jar.1,null,README.md,null,markdown,null,false,null,null,md
-1989,jar.1,,jar.1.alt.sh,null,shellscript,null,true,,,sh
-1989,jar.1,,jar.1.sh,null,shellscript,null,true,,,sh
+1989,jar.1,150,jar.1.alt.sh,null,shellscript,null,true,github,a method to compile,sh
+1989,jar.1,150,jar.1.sh,null,shellscript,null,true,github,a method to compile the alternative source,sh
 1989,jar.2,20,jar.2.c,main,c,null,true,github,winning source,c
 1989,jar.2,30,Makefile,null,makefile,null,true,github,how to compile,null
 1989,jar.2,50,jar.2.orig.c,orig,c,null,true,github,original source,c
@@ -255,10 +254,6 @@
 1989,westley,50,westley.orig.c,orig,c,null,true,github,original source,c
 1989,westley,null,.gitignore,null,gitignore,null,false,null,null,gitignore
 1989,westley,null,README.md,null,markdown,null,false,null,null,md
-1989,westley,,ver0.c,null,c,null,true,github,,c
-1989,westley,,ver1.c,null,c,null,true,github,,c
-1989,westley,,ver2.c,null,c,null,true,github,,c
-1989,westley,,ver3.c,null,c,null,true,github,,c
 1990,baruch,20,baruch.c,main,c,null,true,github,winning source,c
 1990,baruch,30,Makefile,null,makefile,null,true,github,how to compile,null
 1990,baruch,40,baruch.alt.c,alt,c,null,true,github,alternative source,c
@@ -275,7 +270,7 @@
 1990,dds,50,dds.orig.c,orig,c,null,true,github,original source,c
 1990,dds,null,.gitignore,null,gitignore,null,false,null,null,gitignore
 1990,dds,null,README.md,null,markdown,null,false,null,null,md
-1990,dds,,LANDER.BAS,null,basic,null,true,,,BAS
+1990,dds,150,LANDER.BAS,null,basic,null,true,github,example source code input,BAS
 1990,dg,20,dg.c,main,c,null,true,github,winning source,c
 1990,dg,30,Makefile,null,makefile,null,true,github,how to compile,null
 1990,dg,50,dg.orig.c,orig,c,null,true,github,original source,c
@@ -286,8 +281,8 @@
 1990,jaw,50,jaw.orig.c,orig,c,null,true,github,original source,c
 1990,jaw,null,.gitignore,null,gitignore,null,false,null,null,gitignore
 1990,jaw,null,README.md,null,markdown,null,false,null,null,md
-1990,jaw,,btoa,null,,null,true,,,null
-1990,jaw,,shark.sh,null,shellscript,null,true,,,sh
+1990,jaw,150,btoa,null,ruby,null,true,github,bota utility,null
+1990,jaw,150,shark.sh,null,shellscript,null,true,github,shark utility with embedded source,sh
 1990,pjr,20,pjr.c,main,c,null,true,github,winning source,c
 1990,pjr,30,Makefile,null,makefile,null,true,github,how to compile,null
 1990,pjr,50,pjr.orig.c,orig,c,null,true,github,original source,c
@@ -303,7 +298,7 @@
 1990,stig,50,stig.orig.c,orig,c,null,true,github,original source,c
 1990,stig,null,.gitignore,null,gitignore,null,false,null,null,gitignore
 1990,stig,null,README.md,null,markdown,null,false,null,null,md
-1990,stig,,stig.sh,null,shellscript,null,true,,,sh
+1990,stig,100,stig.sh,null,shellscript,null,true,how to compile,,sh
 1990,tbr,20,tbr.c,main,c,null,true,github,winning source,c
 1990,tbr,30,Makefile,null,makefile,null,true,github,how to compile,null
 1990,tbr,50,tbr.orig.c,orig,c,null,true,github,original source,c
@@ -314,7 +309,6 @@
 1990,theorem,50,theorem.orig.c,orig,c,null,true,github,original source,c
 1990,theorem,null,.gitignore,null,gitignore,null,false,null,null,gitignore
 1990,theorem,null,README.md,null,markdown,null,false,null,null,md
-1990,theorem,,theorem_bkp.c,null,c,null,true,github,,c
 1990,westley,20,westley.c,main,c,null,true,github,winning source,c
 1990,westley,30,Makefile,null,makefile,null,true,github,how to compile,null
 1990,westley,40,westley.alt.c,alt,c,null,true,github,alternative source,c
@@ -332,19 +326,19 @@
 1991,brnstnd,null,.gitignore,null,gitignore,null,false,null,null,gitignore
 1991,brnstnd,null,README.md,null,markdown,null,false,null,null,md
 1991,brnstnd,null,sorta.README.md,null,markdown,null,false,null,null,md
-1991,brnstnd,,sorta.i2+2,null,,null,true,,,i2+2
-1991,brnstnd,,sorta.iarg0,null,,null,true,,,iarg0
-1991,brnstnd,,sorta.icalc,null,,null,true,,,icalc
-1991,brnstnd,,sorta.idup,null,,null,true,,,idup
-1991,brnstnd,,sorta.iecho,null,,null,true,,,iecho
-1991,brnstnd,,sorta.ifact1,null,,null,true,,,ifact1
-1991,brnstnd,,sorta.ifact2,null,,null,true,,,ifact2
-1991,brnstnd,,sorta.ifact3,null,,null,true,,,ifact3
-1991,brnstnd,,sorta.iio,null,,null,true,,,iio
-1991,brnstnd,,sorta.irot13,null,,null,true,,,irot13
-1991,brnstnd,,sorta.isleep,null,,null,true,,,isleep
-1991,brnstnd,,sorta.itailrec,null,,null,true,,,itailrec
-1991,brnstnd,,sorta.iwhosort,null,,null,true,,,iwhosort
+1991,brnstnd,,sorta.i2+2,null,sorta,null,true,github,,i2+2
+1991,brnstnd,,sorta.iarg0,null,sorta,null,true,github,,iarg0
+1991,brnstnd,,sorta.icalc,null,sorta,null,true,github,,icalc
+1991,brnstnd,,sorta.idup,null,sorta,null,true,github,,idup
+1991,brnstnd,,sorta.iecho,null,sorta,null,true,github,,iecho
+1991,brnstnd,,sorta.ifact1,null,sorta,null,true,github,,ifact1
+1991,brnstnd,,sorta.ifact2,null,sorta,null,true,github,,ifact2
+1991,brnstnd,,sorta.ifact3,null,sorta,null,true,github,,ifact3
+1991,brnstnd,,sorta.iio,null,sorta,null,true,github,,iio
+1991,brnstnd,,sorta.irot13,null,sorta,null,true,github,,irot13
+1991,brnstnd,,sorta.isleep,null,sorta,null,true,github,,isleep
+1991,brnstnd,,sorta.itailrec,null,sorta,null,true,github,,itailrec
+1991,brnstnd,,sorta.iwhosort,null,sorta,null,true,github,,iwhosort
 1991,buzzard,20,buzzard.c,main,c,null,true,github,winning source,c
 1991,buzzard,30,Makefile,null,makefile,null,true,github,how to compile,null
 1991,buzzard,50,buzzard.orig.c,orig,c,null,true,github,original source,c
