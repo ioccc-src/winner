@@ -152,6 +152,7 @@ theorem_bkp: sorter theorem_bkp.c
 	${CC} ${CFLAGS} theorem_bkp.c -o $@
 
 theorem_bkp.c:
+	${RM} -f $@
 	-./sorter -r 0 0 0 0 < sorter.c > theorem_bkp.c
 
 # alternative executable
@@ -185,6 +186,7 @@ clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
 	${RM} -f sorter.c sorter
 	${RM} -f fibonacci.c fibonacci
+	${RM} -f theorem_bkp.c theorem_bkp
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
