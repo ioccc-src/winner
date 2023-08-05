@@ -56,8 +56,8 @@ uudecode < isaak.encode
 cat isaak.output
 ```
 
-But since Cody fixed it this is not strictly necessary. See the
-[isaak.alt.c](isaak.alt.c) for the original source.
+Since this was fixed, this file is not strictly necessary. See the
+[isaak.orig.c](isaak.orig.c) for the original source.
 
 FYI: We are likely to be more strict about portability in the future.
 

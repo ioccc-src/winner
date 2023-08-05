@@ -73,17 +73,27 @@
 	    "winners_text" : "required argument file"
 	},
 	{
-	    "winners_rank" : 100,
+	    "winners_rank" : 150,
 	    "path" : "magic.txt",
 	    "filetype" : "text",
 	    "src" : null,
 	    "created_by" : null,
 	    "winners_show" : true,
 	    "display_via" : "github",
-	    "winners_text" : "required data file"
+	    "winners_text" : "data file"
 	},
 	{
-	    "winners_rank" : 100,
+	    "winners_rank" : 150,
+	    "path" : "special.src",
+	    "filetype" : "text",
+	    "src" : null,
+	    "created_by" : null,
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "special language source code"
+	},
+	{
+	    "winners_rank" : 180,
 	    "path" : "raw_data.file",
 	    "src" : null,
 	    "filetype" : "data",
