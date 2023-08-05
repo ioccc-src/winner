@@ -108,7 +108,7 @@ ENTRY= spinellis
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA= spinellis.data input.txt input2.txt
+DATA= input.txt input2.txt
 TARGET= ${PROG}
 #
 ALT_OBJ= ${PROG}.alt.o
