@@ -34,7 +34,7 @@ USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-x] [-I] [-i extension] [-o
     -o			    sed options (NOTE: don't pass '-'!)
 				WARNING: use of '-o n' without '-I', can depending on command, empty files
     -s sed		    set path to sed
-    -e command		    append sed command to to list to execute on globs
+    -e command		    append sed command to list of commands to execute on globs
 
 sgit version: $SGIT_VERSION"
 
