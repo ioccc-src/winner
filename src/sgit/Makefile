@@ -39,6 +39,7 @@ TARGETS= sgit
 ######################################
 
 all: ${TARGETS}
+	@:
 
 winner_name: winner_name.sh
 	${RM} -f -v $@
