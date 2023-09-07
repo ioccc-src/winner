@@ -10,14 +10,14 @@ make all
 ```
 
 
-NOTE: this entry uses gets() so you might get a warning about this when
+NOTE: this entry uses `gets()` so you might get a warning about this when
 compiling and running this program with some systems.
 
 ## To run:
 
 ```sh
-	./hague
-	# enter some text
+./hague
+# enter some text
 ```
 
 ## Try:
