@@ -1,9 +1,12 @@
+int e(int x),r(int t,int o);
+#define gets(x)fgets((x),512,stdin)
+#define exit(x) exit((x)),0
 #define D ,close(
 
 char              *c,q              [512              ],m[              256
 ],*v[           99], **u,        *i[3];int         f[2],p;main       (){for
  (m[m        [60]=   m[62      ]=32   ]=m[*      m=124   [m]=       9]=6;
-  e(-8)     ,(c=fgets(q,512,stdin),(c==NULL &&(exit(0),1))||(c[strlen(c)-1]='\0'),1)||(exit(0),0);r(0,0)
+  e(-8)     ,(c=gets(q),       (c[strlen(c)-1]   ='\0'),1)||(exit(0));r(0,0)
    )for(    ;*++        c;);  }r(t,      o){    *i=i        [2]=    0;for
      (u=v  +98           ;m[*--c]         ^9;m [*c]          &32  ?i[*c
        &2]=                *u,u-             v^98              &&++u:
