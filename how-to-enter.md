@@ -16,6 +16,6 @@ to our submission portal.
 will select the [winning entries](https://www.ioccc.org/years.html) announce them
 on the [@IOCCC mastodon feed](https://fosstodon.org/@ioccc), notify the winners
 via email using their previously registered email address, and upload the
-winning code to the [winner repo](https://github.com/ioccc-src/winner) repo
+winning code to the [winner repo](https://github.com/ioccc-src/winner)
 which in turn will cause them to be displayed on the [IOCCC winning entries
 page](https://www.ioccc.org/years.html).

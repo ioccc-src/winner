@@ -34,6 +34,11 @@ entry.
 
 See also the author's remarks for other variations.
 
+### INABIAF - it's not a bug it's a feature! :-)
+
+In modern systems a known issue is that when you start the game everything
+starts to move to the right of the game window but if you click on the window it
+moves back to where it should be.
 
 ## Judges' remarks:
 

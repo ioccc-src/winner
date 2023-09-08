@@ -11,7 +11,8 @@ several thousand changes and important improvements.
 We call out the extensive contributions of [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) who is responsible for many of the
 improvements including many, many complicated bug fixes like
-[2001/anonymous](2001/anonymous/anonymous.c), making entries not require
+[2001/anonymous](2001/anonymous/anonymous.c) and
+[2004/burley](2004/burley/burley.c), making entries not require
 `-traditional-cpp`, fixing entries to compile with clang, providing alternate
 code where useful or necessary, fixing where possible dead links and otherwise
 removing them, typo and consistency fixes. Thank you **very much** for your
@@ -1056,12 +1057,30 @@ Dvorak typists are invited to get lost (or use the original version)! :-)
 
 ## [2004/burley](2004/burley/burley.c) ([README.md](2004/burley/README.md]))
 
-Cody fixed this to compile with clang and also fixed it to work. A problem was
-that `longjmp()` was being used with one arg which compiled because `setjmp.h`
-was not included. Another part of the `setjmp()`/`longjmp()` situation was that
-instead of `jmp_buf` the array `p` was of `int`. Finally the optimiser cannot be
-enabled. As for clang it is because of the defect where the first arg must be an
-int and the rest must be a `char **`.
+Cody fixed this to compile with clang and also fixed it to work.
+
+For clang the problem was that `main()` had one arg, a `char *` and this is not
+allowed in any version of clang. To get it to work took numerous changes.
+
+First the inclusion of `setjmp.h` was necessary. Without this `longjmp()`
+implicitly returned int which was used for the purpose of binary expression but
+this no longer worked.
+
+But by including `setjmp.h` it naturally made the binary expressions invalid (as
+it returns void which no longer is allowed in binary expressions) so the comma
+operator with `0` (`,0`) had to be used (`,1` was tried first but this did not
+work right).
+
+`longjmp()` was being called with one arg which was an element
+of an `int[4][1000]` which had to be changed to a `jmp_buf p[4]` (this due to
+the prototype being included).
+
+`main()` also called itself but this was a problem so it now calls another
+function `poke()` which calls itself instead (this is sometimes necessary
+nowadays).
+
+Finally the optimiser cannot be disabled so the compiler flags were changed for
+this.
 
 
 ## [2004/gavin](2004/gavin/gavin.c) ([README.md](2004/gavin/README.md]))
