@@ -17,7 +17,7 @@ improvements including many, many **very complicated bug fixes** like
 code where useful or necessary, fixing where possible dead links and otherwise
 removing them, typo and consistency fixes. Thank you **very much** for your
 extensive efforts in helping improve the IOCCC presentation of past IOCCC
-winners and making many many entries work with modern systems!
+winners and making many many past entries work with modern systems!
 
 [Yusuke Endoh](/winners.html#Yusuke_Endoh) supplied a number of
 important bug fixes to a number of past IOCCC winners. Some of
