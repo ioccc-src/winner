@@ -413,9 +413,19 @@ Endoh](/winners.html#Yusuke_Endoh).
 Cody fixed this to work with modern compilers; `exit(3)` returns void but the
 function was used in a binary expression so this wouldn't even compile. Cody
 also changed the code to use `fgets()` instead of `gets()` so one would not get
-a warning about the use of `gets()` at linking time or execution, the latter
-case causing confusing output due to the warning being interspersed with the
-program's (which is interactive) output.
+a warning about the use of `gets()` at linking time or execution, the latter of
+which was causing confusing output due to the warning being interspersed with
+the program's interactive output.
+
+Cody later improved the fix improved so that it looks more like the original. A
+problem that usually occurs with `gets()` to `fgets()` is for 'backwards
+compatibility' (so the man page once said) `fgets()` retains the newline and
+`gets()` does not.  In this program if one does not remove the newline it breaks
+the program. This usually requires that one check that `fgets()` does not return
+NULL but with some experimenting this proved to seem to not be a problem here so
+by adding a couple macros that redefine `exit()` and `gets()` a whole binary
+expression could be removed (thus removing an extra `exit()` call) and it now
+almost looks like the same as the original.
 
 
 ## [1990/theorem](1990/theorem/theorem.c) ([README.md](1990/theorem/README.md]))
