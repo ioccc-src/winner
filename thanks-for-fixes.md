@@ -10,19 +10,19 @@ several thousand changes and important improvements.
 
 We call out the extensive contributions of [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) who is responsible for many of the
-improvements including many, many complicated bug fixes like
+improvements including many, many **very complicated bug fixes** like
 [2001/anonymous](2001/anonymous/anonymous.c) and
 [2004/burley](2004/burley/burley.c), making entries not require
 `-traditional-cpp`, fixing entries to compile with clang, providing alternate
 code where useful or necessary, fixing where possible dead links and otherwise
 removing them, typo and consistency fixes. Thank you **very much** for your
 extensive efforts in helping improve the IOCCC presentation of past IOCCC
-winners and making many work with modern systems!
+winners and making many many past entries work with modern systems!
 
 [Yusuke Endoh](/winners.html#Yusuke_Endoh) supplied a number of
 important bug fixes to a number of past IOCCC winners. Some of
-those fixes were very technically challenging. Thank you **very
-much** for your help!
+those fixes were **very technically challenging** like
+[1992/lush](1992/lush/lush.c). Thank you **very much** for your help!
 
 A good number of the [past winners of the IOCCC](winners.html)
 tested, identified and helped correct and/or improve the write-ups
