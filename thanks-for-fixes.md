@@ -388,13 +388,22 @@ judge and user the executioner? :-)
 Yusuke and Cody in conjunction fixed this for modern systems.
 
 Yusuke added the comma operator for a binary expression with `free(3)` which is
-an error because `free()` returns void.
+an error because `free()` returns void. Cody then made it slightly more like the
+original in this way by redefining `free` to have the comma operator itself.
 
 Cody removed the erroneous prototype to `fopen()` which caused a compiler error
 and he also made this use `fgets()` instead of `gets()` to make it safer and to
 prevent an annoying and potentially alarming warning at compiling and/or linking
-and/or runtime. He also changed a file to be a proper `FILE *` and fixed a typo
+and/or runtime.
+
+Cody also changed a file to be a proper `FILE *` and fixed a typo
 in [LANDER.BAS](1990/dds/LANDER.BAS).
+
+Later Cody improved the `gets()`/`fgets()` fix by redefining `gets()` to use
+`fgets()`. Notice that the original entry used `fgets()` in one case as it has
+to read from another file and in this place nothing was changed.
+
+With these improvements the entry looks much more like the original.
 
 
 ## [1990/jaw](1990/jaw/jaw.c) ([README.md](1990/jaw/README.md]))
