@@ -1,9 +1,6 @@
 # Worst Abuse of the C Preprocessor
 
 Ed Luke  
-Mississippi State University  
-P.O. Box 6176  
-Mississippi State, MS 39762  
 US    
 
 
