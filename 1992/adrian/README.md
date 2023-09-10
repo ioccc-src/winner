@@ -1,9 +1,6 @@
 # Most Educational
 
 Adrian Mariano  
-University of Washington  
-2729 72nd Ave SE  
-Mercer Island, WA 98040  
 US  
 
 
