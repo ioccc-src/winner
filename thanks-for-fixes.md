@@ -585,6 +585,11 @@ which can be confusing) and also added the `runme.sh` script to demonstrate it
 (using make was problematic). Cody notes that unfortunately this does not work
 with clang due to different compiler messages.
 
+Cody later improved the `fgets()` change to look more like the original i.e. it
+now uses a redefined `gets()`. This did require modifying the line number with
+`#line 1` under the macro `gets()`. Still this cannot work with clang due to
+different compiler messages. See [bugs.md](/bugs.md) for details.
+
 
 ## [1992/westley](1992/westley/westley.c) ([README.md](1992/westley/README.md]))
 

@@ -1,3 +1,5 @@
+#define gets(_) fgets((_),999,stdin)
+#line 1
 #define f 000:
           char
 	  *s,*
@@ -63,8 +65,8 @@
           ;;;}
 	  ;for
 	  (  ;
-	  fgets
-	  (_,999,stdin);
+	  gets
+	  (_);
 	  )  {
 	  for(
 #define f 301:
