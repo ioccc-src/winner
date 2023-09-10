@@ -594,9 +594,19 @@ different compiler messages. See [bugs.md](/bugs.md) for details.
 ## [1992/westley](1992/westley/westley.c) ([README.md](1992/westley/README.md]))
 
 Cody fixed this to work for clang by changing the third and fourth arg of
-`main()` to be `char **` inside `main()`; clang requires args 2 - 4 to be `char **`.
+`main()` to be `char **` inside `main()`; clang requires args 2 - 4 to be `char
+**` and some versions do not even allow a fourth arg.
+
 He also added the alternate version that the author gave in the remarks that is
 specifically for the USA rather than the world.
+
+NOTE: as noted in the README.md file and the bugs.md, this program and the
+alternate version will very likely crash or
+[nuke](https://en.wikipedia.org/wiki/Nuclear_weapon) the [entire
+world](https://en.wikipedia.org/wiki/Earth) or just the
+[USA](https://en.wikipedia.org/wiki/United_States), respectively, without enough
+args (2). And not that we need the help or anything for this :-) but we do
+encourage you to test this :-) This should not be fixed.
 
 
 ## [1993/jonth](1993/jonth/jonth.c) ([README.md](1993/jonth/README.md]))

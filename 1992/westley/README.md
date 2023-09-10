@@ -1,9 +1,6 @@
 # Best Small Program
 
 Brian Westley (aka Merlyn LeRoy)  
-Digi International  
-1026 Blair Ave.  
-St. Paul, MN  55104  
 US  
 <http://www.westley.org>  
 
@@ -60,7 +57,8 @@ This program and the alternate version will very likely crash or
 [nuke](https://en.wikipedia.org/wiki/Nuclear_weapon) the [entire
 world](https://en.wikipedia.org/wiki/Earth) or just the
 [USA](https://en.wikipedia.org/wiki/United_States), respectively, without enough
-args. This should not be fixed.
+args. And not that we need any help with this or anything :-) but we do
+encourage you to test it. This should not be fixed.
 
 ## Judges' remarks:
 

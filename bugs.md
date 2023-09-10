@@ -712,9 +712,11 @@ welcome but it's not currently considered enough of a problem to fix.
 ## STATUS: doesn't work with some compilers - please provide alternative code
 
 We used a patch from [Yusuke Endoh](/winners.html#Yusuke_Endoh) to get this to
-work but it only works with gcc. Unfortunately due to the way the entry works
-and the fact that other compilers like clang have different warnings and errors
-this simply does not work with them. Can you help us?
+work but it only works with gcc. Cody removed the warnings of `gets()`.
+
+Unfortunately due to the way the entry works and the fact that other compilers
+like clang have different warnings and errors this simply does not work with
+them. Can you help us?
 
 ## [1992/westley](1992/westley/westley.c) ([README.md](1992/westley/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
@@ -723,7 +725,8 @@ This program and the alternate version will very likely crash or
 [nuke](https://en.wikipedia.org/wiki/Nuclear_weapon) the [entire
 world](https://en.wikipedia.org/wiki/Earth) or just the
 [USA](https://en.wikipedia.org/wiki/United_States), respectively, without enough
-args. This should not be fixed! :-)
+args. And not that we need any help with this or anything :-) but we do
+encourage you to test it. This should not be fixed.
 
 # 1993
 
