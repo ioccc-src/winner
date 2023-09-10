@@ -17,8 +17,6 @@ make all
 ./runme.sh
 ```
 
-For the original entry see the [archive tarball](/archive/archive-1992.tar.bz2).
-
 
 ## Judges' remarks:
 
