@@ -380,7 +380,9 @@ To prevent alarming warnings at linking or runtime Cody made the entry use
 `fgets()` rather than `gets()`. He notes that another option would have been to
 redirect `stderr` to `/dev/null` but he did not think of that at the time.
 
-For the original code see the [1992 archive](/archive/archive-1990.tar.bz2).
+Cody later improved upon the `gets()`/`fgets()` fix to make it more like the
+original where the code can refer to `gets()` in the way it originally did. This
+was done through a macro to redefine `gets`.
 
 BTW: Cody asks the following question: if the compiler compiles, the linker
 links and the user executes does that make the compiler the jury, the linker the
