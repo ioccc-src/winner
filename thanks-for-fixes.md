@@ -174,6 +174,10 @@ Though this could be partly remedied through redirecting `stderr` to `/dev/null`
 this would not truly resolve the problem either and in order to avoid the
 warning one would have to always redirect `stderr` to `/dev/null`.
 
+Later Cody improved upon the `gets()`/`fgets()` change to make it more like the
+original by redefining `gets()` to use `fgets()` (with the correct args) so that
+the code can refer to `gets()` instead.
+
 
 ## [1987/westley](1987/westley/westley.c) ([README.md](1987/westley/README.md]))
 
