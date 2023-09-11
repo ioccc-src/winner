@@ -736,8 +736,8 @@ calls which has the four args.
 Cody fixed a segfault in this program that prevented it from working right but
 he notes it hangs in macOS. This is because some compilers compile it into an
 infinite loop and this was documented by the judges. It works fine in linux if
-using gcc but macOS, having only clang by default (even the gcc binary) will not
-work.
+using gcc but macOS, having only clang by default (even the gcc binary
+`/usr/bin/gcc`) will not work.
 
 
 ## [1996/dalbec](1996/dalbec/dalbec.c) ([README.md](1996/dalbec/README.md]))
@@ -897,8 +897,9 @@ other version in.
 Cody fixed both the supplementary program and the program itself (both of which
 segfaulted and once that was fixed only the binary was modified; it was not run
 but according to the author's remarks it should be executed). He managed to do
-this with linux but it will not work with macOS (see [bugs.md](/bugs.md) for why
-this is); _this is **not** a bug, it's a feature_ inherent in what it does!
+this with linux but it will not work with macOS Catalina (10.15). See
+[bugs.md](/bugs.md) for why this is); _this is **not** a bug, it's a feature_
+inherent in what it does!
 
 Below is what it took to fix.
 

@@ -31,7 +31,54 @@
 By tradition, we do not say.
 
 ## Q: How many judging rounds do you have?
+
 Are you trying to trick us? We will not say that either.
+
+## Q: What are the general Makefile rules used in order to clean and build entries for use?
+
+In general the best way to compile everything in an entry directory is to run:
+
+```sh
+make clobber all
+```
+
+If you wish to compile every entry for every year you should go to the top level
+directory and run the same command as above, `make clobber all`.
+
+The `all` rule will build everything necessary except for the alternate
+versions. Every Makefile has an `alt` rule but it will only do something if an
+alternate version exists. To build all the entries along with any alternate code
+you can do from the top level directory:
+
+```
+make clobber everything
+```
+
+If you wish to only build alternate code you can do:
+
+```sh
+make clobber alt
+```
+
+If you wish to not remove the entry binaries and only compile the additional alt
+versions:
+
+```sh
+make alt
+```
+
+
+The following Makefile rules should be in all Makefiles:
+
+- all: build the entry programs (main program and any supplementary program)
+- alt: build alternate code
+- clobber: clean up object files and all binary files (except for those that are
+not compiled)
+- clean: a simpler version of `clobber` that only removes object files. `make
+clobber` depends on `clean` so running `make clobber` will invoke `make clean`.
+- everything: equivalent to `make all alt`.
+
+Are there any other rules? You tell us!
 
 ## Q: How come some entries have code that is incongruent with what the author(s) wrote about the entry?
 
@@ -40,6 +87,7 @@ systems as part of the reworking of the website. If you have this problem in
 some entries you should look at the original code as in `winner.orig.c` or
 `prog.orig.c`. Sometimes the original is in an alt version like `winner.alt.c`
 or `prog.alt.c`.
+
 
 ## Q: I cannot get entry XYZZY from year 19xx to compile!
 
@@ -65,7 +113,7 @@ The microseconds defaults to 10000.
 Thank you Cody!
 
 See also [Yusuke Endoh](/winners.html#Yusuke_Endoh)'s entry
-[2015/endoh3](/2015/endoh3/README.md) entry which lets one compile it and run
+[2015/endoh3](/2015/endoh3/README.md) which lets one compile it and run
 it. Another entry that you can enjoy it under is [Christopher
 Mill](/winners.html#Christopher_Mills)'s entry
 [2018/mills](/2018/mills/README.md) which is a PDP-7 emulator as well as a
@@ -79,6 +127,43 @@ time).
 In some cases we replaced the original code with code that works for modern
 systems but one can view the original code in the `.orig.c` files (sometimes the
 original code is also in the directory as a `winner.alt.c` or `prog.alt.c`).
+Some entries should not have modern system versions replaced. See below.
+
+## Q: I can't get some entries to work in 64-bit systems that don't support 32-bit!
+
+Unfortunately some older entries are non-portable and require 32-bit support of
+32-bit binaries. A problem system here is macOS Catalina (10.15) as as of that
+version macOS no longer supports 32-bit binaries.
+
+There are numerous example entries that require 32-bit binaries. We have tried
+to note these in both the respective Makefiles and README.md files but it is
+possible that some were missed. These entries are very likely in the
+[bugs.md](/bugs.md) file and we welcome any help in making an alternate version
+for 64-bit systems. Many were fixed to work with modern systems but some are
+supposed to only work with 32-bit systems so any updated version of these
+entries should be an alternate version.
+
+## Q: Under macOS I can't compile some entries and/or they don't work right. Why?
+
+If the entry requires gcc and you did not explicitly install gcc in macOS you
+will not be able to run or use these entries. This is because macOS gcc is
+actually clang, even `/usr/bin/gcc`.
+
+## Q: I can't get XYZZY entry to compile with clang. What can I do?
+
+Although we have fixed numerous entries to work with clang (sometimes in an alt
+version but usually in the program itself) there are some that simply cannot be
+fixed or if they are fixable they have not yet been fixed (we are working on
+this but other things have to be done too and all on free time).
+
+This is because clang has some defects where the args of main() are required to
+be a specific type and some versions of clang allow only 1, 2 or 3 args, not 4,
+to main(). In the case of types of args many were changed to the right type and
+then what was main() became another function of the original main() type.
+
+At the same time some entries are not designed to work with clang. There might
+be alternate code added at some point but as above this depends on free time and
+other things that have to be done plus remembering to do it.
 
 ## Q: After running a program my terminal is all messed up! How do I restore my terminal?
 
