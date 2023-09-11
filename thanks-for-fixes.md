@@ -856,6 +856,8 @@ Cody changed this entry to use `fgets()` instead of `gets()` to make it safer
 and to prevent annoying warnings from showing up at compiling, linking and/or
 runtime, the latter interspersed with the output of the program.
 
+Cody later improved the fix to use `gets()` by redefining `gets()` so that the
+code looks like before.
 
 ## [2000/briddlebane](2000/briddlebane/briddlebane.c) ([README.md](2000/briddlebane/README.md]))
 
