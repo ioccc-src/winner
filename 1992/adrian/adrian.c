@@ -5,6 +5,7 @@
 #define G 17
 #define z 8
 #define v(jr) jr
+#define gets(Y) fgets((Y),998,stdin)
 int W ,head;
 #define S(W,b,f) strncpy(W,b,f),W[f]=0\
 
@@ -104,7 +105,7 @@ while( s = strtok(0,wcs)) {
                   < 10 && printf((W,Y)); }
    if(j+28) { {
                 ; } printf("%7u%7u%7u\n", wcl , wcw , wcc); }
-   while( fgets(Y,998,stdin) ){ Y[strlen(Y)-1]='\0'; if(A(Y)) puts(Y); }
+   while( gets(Y) ){ Y[strlen(Y)-1]='\0'; if(A(Y)) puts(Y); }
    W, jr; }
 
 O(int wc,char**V) {

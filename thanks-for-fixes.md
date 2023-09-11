@@ -403,7 +403,7 @@ Later Cody improved the `gets()`/`fgets()` fix by redefining `gets()` to use
 `fgets()`. Notice that the original entry used `fgets()` in one case as it has
 to read from another file and in this place nothing was changed.
 
-With these improvements the entry looks much more like the original.
+With these improvements the entry looks much more like the original!
 
 
 ## [1990/jaw](1990/jaw/jaw.c) ([README.md](1990/jaw/README.md]))
@@ -426,16 +426,15 @@ a warning about the use of `gets()` at linking time or execution, the latter of
 which was causing confusing output due to the warning being interspersed with
 the program's interactive output.
 
-Cody later improved the fix improved so that it looks more like the original. A
-problem that usually occurs with `gets()` to `fgets()` is for 'backwards
-compatibility' (so the man page once said) `fgets()` retains the newline and
-`gets()` does not.  In this program if one does not remove the newline it breaks
-the program. This usually requires that one check that `fgets()` does not return
-NULL but with some experimenting this proved to seem to not be a problem here so
-by adding a couple macros that redefine `exit()` and `gets()` a whole binary
-expression could be removed (thus removing an extra `exit()` call) and it now
-almost looks like the same as the original.
-
+Cody later improved his fix so that it looks more like the original. A problem
+that usually occurs with `gets()` to `fgets()` is for 'backwards compatibility'
+(so the man page once said) `fgets()` retains the newline and `gets()` does not.
+In this program if one does not remove the newline it breaks the program. This
+usually requires that one check that `fgets()` does not return NULL but with
+some experimenting this proved to seem to not be a problem here so by adding a
+couple macros that redefine `exit()` and `gets()` a whole binary expression
+could be removed (thus removing an extra `exit()` call) and it now almost looks
+like the same as the original.
 
 ## [1990/theorem](1990/theorem/theorem.c) ([README.md](1990/theorem/README.md]))
 
@@ -488,10 +487,10 @@ invalid operands to binary expressions were resolved with the comma operator.
 
 ## [1991/dds](1991/dds/dds.c) ([README.md](1991/dds/README.md]))
 
-Cody fixed a segfault that prevented this entry from working at all and made an
-[alternate version](1991/dds/dds.alt.c) that works with `clang`. The alternate
-code, described in the README.md file, is what is needed for clang. Reading it
-might be instructive even if you have gcc.
+Cody fixed a segfault that prevented this entry from working in any condition
+and he also made an [alternate version](1991/dds/dds.alt.c) that works with
+`clang`. The alternate code, described in the README.md file, is what is needed
+for clang.  Reading it might be instructive even if you have gcc.
 
 
 ## [1991/westley](1991/westley/westley.c) ([README.md](1991/westley/README.md]))
@@ -508,15 +507,34 @@ value that works without having to find the correct value.
 
 Cody changed the location that it used `gets()` to be `fgets()` instead to make
 it safer and to prevent annoying warnings during compiling, linking or runtime
-(interspersed with the program's output). One might think that simply changing
-the gets() to fgets() (with stdin) would work but it did not because `fgets()`
-stores the newline and `gets()` does not. The code was relying on not having
-this newline. With `fgets()` the code `if(A(Y)) puts(Y);` ended up printing an
-extra line which made the generation of some files (like `adhead.c`) fail to
-compile. Why? There was a blank line after a `\` at the end of the first line of
-a macro definition!  Thus the code now first trims off the last character of the
-buffer read to get the same correct functionality but in a safe way and
-non obnoxious way.
+(interspersed with the program's output).
+
+Later Cody improved the change to `fgets()` to make it slightly more like the
+original. This still requires the additional stripping of the newline inside the
+loop but now it uses what looks like before, just a call to `gets()`.
+
+One might think that simply changing the gets() to fgets() (with stdin) would
+work but it did not because `fgets()` stores the newline and `gets()` does not.
+The code was relying on not having this newline. With `fgets()` the code
+`if(A(Y)) puts(Y);` ended up printing an extra line which made the generation of
+some files (like `adhead.c`) fail to compile. Why? There was a blank line after
+a `\` at the end of the first line of a macro definition!  Thus the code now
+first trims off the last character of the buffer read to get the same correct
+functionality but in a safe way and non obnoxious way.
+
+But the improvement so that it uses `gets()` could not be changed to have the
+macro do the removal of the extra line (as in with a comma operator or a `&&`)
+as this caused compilation errors with another generated file (`adwc.c`). Thus
+after the `gets()` call in the line that looks like:
+
+```c
+while( gets(Y) ){ Y[strlen(Y)-1]='\0'; if(A(Y)) puts(Y); }
+```
+
+one must keep the `Y[strlen(Y)-1]='\0';` part and keep it there.
+
+This is a complex change due to the way the program and Makefile generate
+additional tools.
 
 
 ## [1992/gson](1992/gson/gson.c) ([README.md](1992/gson/README.md]))
