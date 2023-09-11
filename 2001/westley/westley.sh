@@ -16,8 +16,8 @@ echo "./westley.sort < westley.c 2>/dev/null | diff - westley.c"
 ./westley.sort < westley.c 2>/dev/null | diff - westley.c
 echo "./westley.sort < westley.c 2>/dev/null | diff - westley2.c"
 ./westley.sort < westley.c 2>/dev/null | diff - westley2.c
-echo "./westley.sort < westley.c 2>/dev/null | diff - westley.sorted.c"
-./westley.sort < westley.c 2>/dev/null | diff - westley.sorted.c
+echo "./westley.sort < westley.c 2>/dev/null | diff - westley.sort.c"
+./westley.sort < westley.c 2>/dev/null | diff - westley.sort.c
 echo "./westley.sort < westley.c 2>/dev/null | diff - westley.punch.c"
 ./westley.sort < westley.c 2>/dev/null | diff - westley.punch.c
 
