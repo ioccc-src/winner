@@ -2,7 +2,7 @@
 #include      <stdlib.h>
 #include      <string.h>
 #include      <ctype.h>
-
+#define gets(x) fgets((x), 111, stdin)
 #define            iii\
 (                     I  )                    if (                     ii(I,6\
  )                   )I [               strlen(I  )                     -1]=!1
@@ -30,6 +30,6 @@
  )               printf (       " %s",li1[l1l++]  )                      ;puts
 (                   "."  )       ;}}else{sprintf (    il1,"cat %s;echo",lll[1]
  )              ;system (                    il1  )                   ;}printf
-(                "\n? "  )                ; fgets (   il1, 111    ,      stdin
+(                "\n? "  )                ; gets (                         il1
  )             ;sprintf (  i1l,"%s %s %s",lll[!1  ]        ,lll[1],il1);system
 (                 i1l);  }

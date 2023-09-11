@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#define gets(K) fgets((K)[1],1000,stdin)
 char
 *T="IeJKLMaYQCE]jbZRskc[SldU^V\\X\\|/_<[<:90!\"$434-./2>]s",
 K[3][1000],*F,x,A,*M[2],*J,r[4],*g,N,Y,*Q,W,*k,q,D;X(){r  [r
@@ -25,15 +25,12 @@ j((r[2]=0,R(                                              ))
 ),r[1]-=q)                                                &&
 O(g-=-q)                                                  ;}
 C(){(                                                     J=
-fgets                                                     (K
-[1],1000,stdin))&&C((B(g=K[2]),*r=!(!*r&&(*g++=0)),(*r)[r]=g
--K[2
-],g=
-K[2]
-,r[1
-]&&O
-()))
- ;;}
+gets                                                     (&K
+[1]))&&C((B(g=K[2]),*r=!(!*r&&(*g++=0)),(*r)[r]=g-K[2],g=K[2
+],r[
+1]&&
+O())
+);;}
 main
 (){C
 ((l(

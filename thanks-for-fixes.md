@@ -174,6 +174,10 @@ Though this could be partly remedied through redirecting `stderr` to `/dev/null`
 this would not truly resolve the problem either and in order to avoid the
 warning one would have to always redirect `stderr` to `/dev/null`.
 
+Later Cody improved upon the `gets()`/`fgets()` change to make it more like the
+original by redefining `gets()` to use `fgets()` (with the correct args) so that
+the code can refer to `gets()` instead.
+
 
 ## [1987/westley](1987/westley/westley.c) ([README.md](1987/westley/README.md]))
 
@@ -376,7 +380,9 @@ To prevent alarming warnings at linking or runtime Cody made the entry use
 `fgets()` rather than `gets()`. He notes that another option would have been to
 redirect `stderr` to `/dev/null` but he did not think of that at the time.
 
-For the original code see the [1992 archive](/archive/archive-1990.tar.bz2).
+Cody later improved upon the `gets()`/`fgets()` fix to make it more like the
+original where the code can refer to `gets()` in the way it originally did. This
+was done through a macro to redefine `gets`.
 
 BTW: Cody asks the following question: if the compiler compiles, the linker
 links and the user executes does that make the compiler the jury, the linker the
@@ -657,6 +663,8 @@ Cody made this use `fgets()` not `gets()` to make it safer and to prevent an
 annoying warning with compiling and/or linking and/or runtime, the latter of
 which is unfortunately interspersed with the output of the program itself.
 
+Cody later improved the fix to use `gets()` via a macro so that it looks like
+the original code.
 
 ## [1993/vanb](1993/vanb/vanb.c) ([README.md](1993/vanb/README.md]))
 
@@ -736,8 +744,8 @@ calls which has the four args.
 Cody fixed a segfault in this program that prevented it from working right but
 he notes it hangs in macOS. This is because some compilers compile it into an
 infinite loop and this was documented by the judges. It works fine in linux if
-using gcc but macOS, having only clang by default (even the gcc binary) will not
-work.
+using gcc but macOS, having only clang by default (even the gcc binary
+`/usr/bin/gcc`) will not work.
 
 
 ## [1996/dalbec](1996/dalbec/dalbec.c) ([README.md](1996/dalbec/README.md]))
@@ -848,6 +856,8 @@ Cody changed this entry to use `fgets()` instead of `gets()` to make it safer
 and to prevent annoying warnings from showing up at compiling, linking and/or
 runtime, the latter interspersed with the output of the program.
 
+Cody later improved the fix to use `gets()` by redefining `gets()` so that the
+code looks like before.
 
 ## [2000/briddlebane](2000/briddlebane/briddlebane.c) ([README.md](2000/briddlebane/README.md]))
 
@@ -897,8 +907,9 @@ other version in.
 Cody fixed both the supplementary program and the program itself (both of which
 segfaulted and once that was fixed only the binary was modified; it was not run
 but according to the author's remarks it should be executed). He managed to do
-this with linux but it will not work with macOS (see [bugs.md](/bugs.md) for why
-this is); _this is **not** a bug, it's a feature_ inherent in what it does!
+this with linux but it will not work with macOS Catalina (10.15). See
+[bugs.md](/bugs.md) for why this is); _this is **not** a bug, it's a feature_
+inherent in what it does!
 
 Below is what it took to fix.
 
