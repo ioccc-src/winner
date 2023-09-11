@@ -1,9 +1,6 @@
 # Worst Abuse of the C Preprocessor
 
 Ed Luke  
-Mississippi State University  
-P.O. Box 6176  
-Mississippi State, MS 39762  
 US    
 
 
@@ -19,8 +16,6 @@ make all
 ```sh
 ./runme.sh
 ```
-
-For the original entry see the [archive tarball](/archive/archive-1992.tar.bz2).
 
 
 ## Judges' remarks:
