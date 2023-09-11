@@ -663,6 +663,8 @@ Cody made this use `fgets()` not `gets()` to make it safer and to prevent an
 annoying warning with compiling and/or linking and/or runtime, the latter of
 which is unfortunately interspersed with the output of the program itself.
 
+Cody later improved the fix to use `gets()` via a macro so that it looks like
+the original code.
 
 ## [1993/vanb](1993/vanb/vanb.c) ([README.md](1993/vanb/README.md]))
 
