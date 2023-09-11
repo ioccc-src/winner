@@ -70,6 +70,9 @@ the program so this "strategy" no longer works?
 Notice the clever use of `setjmp()` and `longjmp()` calls.  Can you keep track
 of what state is being saved and restored?
 
+NOTE: the author talks about how it is a single statement. This might not be
+strictly true in 2023 for the fixes for it to work so you can look at the
+original file [burley.orig.c](burley.orig.c) to see what is meant.
 
 ## Author's remarks:
 

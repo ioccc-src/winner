@@ -33,6 +33,14 @@ By tradition, we do not say.
 ## Q: How many judging rounds do you have?
 Are you trying to trick us? We will not say that either.
 
+## Q: How come some entries have code that is incongruent with what the author(s) wrote about the entry?
+
+It is very likely in this case that the code was fixed to work for modern
+systems as part of the reworking of the website. If you have this problem in
+some entries you should look at the original code as in `winner.orig.c` or
+`prog.orig.c`. Sometimes the original is in an alt version like `winner.alt.c`
+or `prog.alt.c`.
+
 ## Q: I cannot get entry XYZZY from year 19xx to compile!
 
 Some winners, particularly winners from long ago, no longer compile on more
@@ -64,9 +72,12 @@ Mill](/winners.html#Christopher_Mills)'s entry
 PDP-11/40 emulator. 
 
 Others are not so easy though we're working on this and over time have added
-alternative code. Most entries do now work and the others we are working on. In
-some cases we replaced the original code with code that works for modern systems
-but one can view the original code in the `.orig.c` files (sometimes the
+alternative code and/or fixed them. Most entries do now work and the others we
+are working on (slowly as other things are also being done and this is on free
+time).
+
+In some cases we replaced the original code with code that works for modern
+systems but one can view the original code in the `.orig.c` files (sometimes the
 original code is also in the directory as a `winner.alt.c` or `prog.alt.c`).
 
 ## Q: After running a program my terminal is all messed up! How do I restore my terminal?
