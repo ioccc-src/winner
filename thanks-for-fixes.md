@@ -444,7 +444,9 @@ like the same as the original.
 
 ## [1990/theorem](1990/theorem/theorem.c) ([README.md](1990/theorem/README.md]))
 
-Cody fixed some bugs that impacted the usability of this program including some
+Cody fixed this to compile with modern systems.
+
+He also fixed some bugs that impacted the usability of this program including some
 segfaults under modern systems (and possibly in some cases earlier systems) with
 this entry.  Originally we noted that the 4 trailing args '0 0 0 0' were
 required on systems that dump core when NULL is dereferenced but this problem
@@ -454,6 +456,7 @@ generated `fibonacci.c` actually works; before it just printed `0` over and over
 again (since it did not work anyway a segfault prevention was added here). He
 also fixed some array addressing (some of which might not be strictly necessary
 but as he was testing the `fibonacci.c` bug he ended up changing it anyway).
+
 Finally he changed this program to use `fgets()` not `gets()` to make it safer
 and to prevent a warning about `gets()` at linking or runtime. Since this
 program is so incredible the extra fixes were deemed worth having and this is why
