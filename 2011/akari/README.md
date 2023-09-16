@@ -50,14 +50,18 @@ You can automate the above by running:
 
 `Akari` is an image downsampling utility that accepts 3 input formats:
 
-* `PGM` (`netpbm` greyscale image).  `Akari` only accepts `PGM` files with this
-header: `P5 <width> <height> 255`.  Images with extra comments _such as the ones
-produced by GIMP will **not be parsed properly**_.
+* [PGM](https://netpbm.sourceforge.net/doc/pgm.html)
+([netpbm](https://netpbm.sourceforge.net/doc/) [greyscale
+image](https://en.wikipedia.org/wiki/Grayscale).  `Akari` only accepts `PGM`
+files with the header: `P5 <width> <height> 255`.  Images with extra comments
+_such as the ones produced by [GIMP](https://www.gimp.org) will **not be parsed
+properly**_.
 
-* PPM (netpbm RGB image).  Only PPM files with this header are
-  accepted: `P6 <width> <height> 255`.
+* [PPM](https://netpbm.sourceforge.net/doc/ppm.html) (netpbm RGB image).  Only
+`PPM` files with the header `P6 <width> <height> 255` are accepted.
 
-* ASCII art (with end of lines in LF bytes only, _**not** CRLF_!)
+* [ASCII art](https://en.wikipedia.org/wiki/ASCII_art) (with [end of
+lines](https://en.wikipedia.org/wiki/Newline) in LF bytes only, _**not** CRLF_!)
 
 Anything that is not parsable as `PGM` or `PPM` will be downsampled as ASCII art.
 
@@ -65,13 +69,13 @@ Anything that is not parsable as `PGM` or `PPM` will be downsampled as ASCII art
 
 `Akari` is an image downsampling utility.  She accepts up to 3 arguments:
 
-First argument is the input image.  If it's `-` or unspecified, `Akari`
+The first argument is the input image.  If it's `-` or unspecified, `Akari`
 will read from stdin.
 
-Second argument is the output image.  If it's `-` or unspecified,
+The second argument is the output image.  If it's `-` or unspecified,
 `Akari` will write to stdout.
 
-Third argument, if specified, causes `Akari` to keep even pixels on even
+The third argument, if specified, causes `Akari` to keep even pixels on even
 [scanlines](https://en.wikipedia.org/wiki/Scan_line). By default `Akari` will
 keep odd pixels on odd [scanlines](https://en.wikipedia.org/wiki/Scan_line).
 
@@ -86,15 +90,18 @@ gcc akari.c -o akari
 
 `Akari` accepts 3 input formats:
 
-* `PGM` (`netpbm greyscale image`).  `Akari` only accepts `PGM` files with this
-  header: `P5 <width> <height> 255`.  Images with extra comments such as
-  the ones produced by GIMP will not be parsed properly.
-* `PPM` (`netpbm RGB image`).  Only `PPM` files with this header are
-  accepted: `P6 <width> <height> 255`.
+* [PGM](https://netpbm.sourceforge.net/doc/pgm.html)
+([netpbm](https://netpbm.sourceforge.net/doc/) [greyscale
+image](https://en.wikipedia.org/wiki/Grayscale).  `Akari` only accepts `PGM`
+files with the header: `P5 <width> <height> 255`.  Images with extra comments
+such as the ones produced by [GIMP](https://www.gimp.org) will not be parsed
+properly.
+ [PPM](https://netpbm.sourceforge.net/doc/ppm.html) (netpbm RGB image).  Only
+`PPM` files with the header `P6 <width> <height> 255` are accepted.
 * ASCII art (with end of lines in LF bytes only, not CR-LF)
 
 This is useful for decoding some curiously interlaced images, such as
-the included example.ppm
+the included [example.ppm](example.ppm).
 
 Anything that is not parsable as `PGM` or `PPM` will be downsampled as
 ASCII art.  Since the source code is formatted as ASCII art, it's only
