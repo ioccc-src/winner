@@ -270,8 +270,8 @@ now works.
 
 ## [1988/spinellis](1988/spinellis/spinellis.c) ([README.md](1988/spinellis/README.md]))
 
-An [alternate version](1988/spinellis/spinellis.alt.c) was provided by Cody for
-this so that it works for compilers like clang. An alternate version had to be
+Cody provided an [alternate version](1988/spinellis/spinellis.alt.c) so that
+this will work with compilers like clang. An alternate version had to be
 provided because not doing so would be tampering with the file too much. It
 would work but it would not show the same creativity. The original file exploits
 a fun mis-feature that works with gcc but not clang. This resulted in a change
