@@ -141,11 +141,11 @@ fi
 # This might not the best performance because it does this on all files of the
 # glob rather than only those files matched by the glob with matching text but
 # it's better than it used to be (it used to run git ls-files on the repo for
-# each sed command so the more you had the slow it would become as it had to get
-# the list of files each time!).
+# each sed command so the more you had the slower it would become as it had to
+# get the list of files each time!).
 #
 # A better approach would be to somehow use git grep to find files that match
-# but this would complicate the command line (at least in anyway I can think of
+# but this would complicate the command line (at least in any way I can think of
 # how to do it) so we do it on all files in the repo.
 #
 # But these would possibly require additional args to the command and
