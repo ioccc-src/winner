@@ -1507,6 +1507,12 @@ removed from SDL2 so the Makefile has to use `sdl-config` and not `sdl2-config`.
 This means that to be strictly technical, the removal of `localtime()` is not
 necessary but this change was left in place anyway.
 
+## [2013/hou](2013/hou/hou.c) ([README.md](2013/hou/README.md))
+
+After the file 2013/hou/doc/example.markdown was moved to
+[2013/hou/doc/example.md](2013/hou/doc/example.md) to match the rest of the repo
+this broke `make` which Cody fixed.
+
 ## [2013/morgan1](2013/morgan1/morgan1.c) ([README.md](2013/morgan1/README.md))
 
 Cody added explicit linking of libm (`-lm`) as not all systems do this

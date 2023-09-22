@@ -110,7 +110,7 @@ PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 DATA= luna.jpg old_default.jpg otherroom.jpg otherroom.scene \
-	doc/camera.png doc/cosine.png doc/draft.png doc/example.markdown
+	doc/camera.png doc/cosine.png doc/draft.png doc/example.md
 TARGET= ${PROG}
 #
 ALT_OBJ=
