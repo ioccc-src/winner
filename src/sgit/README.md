@@ -177,9 +177,8 @@ There are probably other limitations but it works well for what I needed.
 
 ## Bugs
 
-None known but it does not try and determine which files have match the
-patterns. This would likely greatly complicate the script and is I feel
-unneeded.
+None known but it does not try and determine which files match the patterns.
+This would likely greatly complicate the script and is I feel unneeded.
 
 If you specify invalid `sed` commands obviously there will be problems. If you
 specify invalid `sed` options there will possibly be problems as well.
