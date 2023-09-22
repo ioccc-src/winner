@@ -13,7 +13,7 @@ Ferguson](/winners.html#Cody_Boone_Ferguson) who is responsible for many of the
 improvements including many, many **very complicated bug fixes** such as
 [2001/anonymous](2001/anonymous/anonymous.c) and
 [2004/burley](2004/burley/burley.c), making entries not require
-`-traditional-cpp` (which are very complicated fixes), fixing entries to compile
+`-traditional-cpp` (which are **very complicated fixes**), fixing entries to compile
 with clang, providing alternate code where useful or necessary, fixing where
 possible dead links and otherwise removing them, typo and consistency fixes and
 writing the [sgit tool](https://github.com/xexyl/sgit) that we've published on the
