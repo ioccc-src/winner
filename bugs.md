@@ -890,7 +890,7 @@ Since it works there is no need to fix this except for a challenge to yourself.
 
 
 ## [1995/cdua](1995/cdua/cdua.c) ([README.md](1995/cdua/README.md))
-## STATUS: known bug - please help us fix
+## STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
 
 This did not originally compile under macOS and after it did compile under
 macOS, it crashed. [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson)
@@ -902,6 +902,9 @@ seem to be related to making it work under macOS as all that did was removing
 some invalid prototypes and use `printf()` instead of the invalid pointer to it
 (incompatible type). Besides that it happened under linux where there was no
 compilation error or crash.
+
+It's possible this is no longer an issue but if it's encountered again please
+let us know or offer a fix.
 
 
 ## [1995/vanschnitz](1995/vanschnitz/vanschnitz.c) ([README.md](1995/vanschnitz/README.md))
