@@ -63,7 +63,7 @@ substitute you can empty the entire file. For instance **DO NOT** do this:
 
 
 ```sh
-./sgit -o n -e 's/.//g' sgit
+sgit -o n -e 's/.//g' sgit
 ```
 
 because it would empty `sgit`!
@@ -74,8 +74,8 @@ because it would empty `sgit`!
 ## Change in this file (_IN MEMORY ONLY_) `\<sed\>` to `used` but only show lines changed:
 
 ```sh
-./sgit -I -o n -e 's/\<sed\>/used/p' README.md 
-./sgit -I -n -e 's/\<sed\>/used/p' README.md 
+sgit -I -o n -e 's/\<sed\>/used/p' README.md
+sgit -I -n -e 's/\<sed\>/used/p' README.md
 ```
 
 ## Print out matches of `\<sed\>` in all files under git control
@@ -85,13 +85,13 @@ This is a simpler way of running `git --no-pager grep -h -E '\<sed\>'|sed
 needs to be:
 
 ```sh
-./sgit -I -o n -e '/\<sed\>/p' .
+sgit -I -o n -e '/\<sed\>/p' .
 ```
 
 ## With tracing enabled, change references of `\<sed\>` to `used` in this file and save it:
 
 ```sh
-./sgit -e 's/\<sed\>/used/g' -x README.md
+sgit -e 's/\<sed\>/used/g' -x README.md
 
 ```
 
@@ -99,21 +99,21 @@ needs to be:
 ## With tracing enabled, change references of `\<sed\>` to `used`, duplicating the lines, in this file and save it:
 
 ```sh
-./sgit -e 's/\<sed\>/used/p' -x README.md
+sgit -e 's/\<sed\>/used/p' -x README.md
 
 ```
 
 ## Verbosely (level 1) change references of `\<sed\>` to `used` in this file and save it:
 
 ```sh
-./sgit -e 's/\<sed\>/used/g' -v1 README.md
+sgit -e 's/\<sed\>/used/g' -v1 README.md
 
 ```
 
 ## Verbosely (level 3) change references of `\<sed\>` to `used` in this file with a backup as `README.md.bak`
 
 ```sh
-./sgit -i.bak -e 's/\<sed\>/used/g' -v3 README.md
+sgit -i.bak -e 's/\<sed\>/used/g' -v3 README.md
 
 ```
 
@@ -134,21 +134,21 @@ Level 2 would not show how many globs remain after each operation.
 ## Change `\<sed\>` to `used` but only if it's on the first line
 
 ```sh
-./sgit -e '1s/\<sed\>/used/g' README.md
+sgit -e '1s/\<sed\>/used/g' README.md
 ```
 
 Alternatively you could do one of:
 
 
 ```sh
-./sgit -e '1s/\<sed\>/u&/g' README.md
-./sgit -e '1s/\(\<sed\>\)/u\1/g' README.md
+sgit -e '1s/\<sed\>/u&/g' README.md
+sgit -e '1s/\(\<sed\>\)/u\1/g' README.md
 ```
 
 ## Change `\<hack\>` to `crack` but only if it's on the third line
 
 ```sh
-./sgit -e '3s/\<hack\>/crack/g' README.md
+sgit -e '3s/\<hack\>/crack/g' README.md
 ```
 
 
