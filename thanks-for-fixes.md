@@ -10,14 +10,16 @@ several thousand changes and important improvements.
 
 We call out the extensive contributions of [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) who is responsible for many of the
-improvements including many, many **very complicated bug fixes** like
+improvements including many, many **very complicated bug fixes** such as
 [2001/anonymous](2001/anonymous/anonymous.c) and
 [2004/burley](2004/burley/burley.c), making entries not require
-`-traditional-cpp`, fixing entries to compile with clang, providing alternate
-code where useful or necessary, fixing where possible dead links and otherwise
-removing them, typo and consistency fixes. Thank you **very much** for your
-extensive efforts in helping improve the IOCCC presentation of past IOCCC
-winners and making many many past entries work with modern systems!
+`-traditional-cpp` (which are **very complicated fixes**), fixing entries to compile
+with clang, providing alternate code where useful or necessary, fixing where
+possible dead links and otherwise removing them, typo and consistency fixes and
+writing the [sgit tool](https://github.com/xexyl/sgit) that we've published on the
+website. Thank you **very much** for your extensive efforts in helping improve
+the IOCCC presentation of past IOCCC winners and making many many past entries
+work with modern systems!
 
 [Yusuke Endoh](/winners.html#Yusuke_Endoh) supplied a number of
 important bug fixes to a number of past IOCCC winners. Some of
@@ -709,7 +711,8 @@ However `EOF` is not required to be `-1` but merely an int < 0 and this program
 assumed that `getc()` will return `-1` on EOF or error, not `EOF`. On systems
 where `EOF != -1` it could result in an infinite loop.
 
-For an interesting problem that occurred here check the [bugs.md](bugs.md) file.
+For an interesting problem that occurred here and what was done to solve it,
+check the [bugs.md](bugs.md) file.
 
 
 ## [1994/westley](1994/westley/westley.c) ([README.md](1994/westley/README.md]))
@@ -731,8 +734,8 @@ there is such a thing anyway :-) ).
 ## [1995/garry](1995/garry/garry.c) ([README.md](1995/garry/README.md]))
 
 Cody fixed this so that it will compile with modern compilers. The problem was a
-missing `int` for the `f` variable. He felt it was important that it works
-because the layout does indeed look to him like a rat is dropping core,
+missing `int` for the `f` variable. He felt it was even more important that it
+works because the layout does indeed look to him like a rat is dropping core :-),
 something that the judges suggested.
 
 ## [1995/makarios](1995/makarios/makarios.c) ([README.md](1995/makarios/README.md))
@@ -1333,7 +1336,7 @@ not do it implicitly (like macOS does).
 ## [2005/mikeash](2005/mikeash/mikeash.c) ([README.md](2005/mikeash/README.md))
 
 Cody fixed this to work in linux. The problem was an unknown escape sequence,
-`\N` which caused a funny compiler error:
+`\N`, which caused a funny compiler error:
 
 ```c
 };n b[2048];int i
@@ -1503,6 +1506,12 @@ it cannot be). The other problem is that this entry uses SDL functions that were
 removed from SDL2 so the Makefile has to use `sdl-config` and not `sdl2-config`.
 This means that to be strictly technical, the removal of `localtime()` is not
 necessary but this change was left in place anyway.
+
+## [2013/hou](2013/hou/hou.c) ([README.md](2013/hou/README.md))
+
+After the file 2013/hou/doc/example.markdown was moved to
+[2013/hou/doc/example.md](2013/hou/doc/example.md) to match the rest of the repo
+this broke `make` which Cody fixed.
 
 ## [2013/morgan1](2013/morgan1/morgan1.c) ([README.md](2013/morgan1/README.md))
 
