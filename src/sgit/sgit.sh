@@ -1,38 +1,47 @@
 #!/usr/bin/env bash
 #
-# sgit - run sed (by default with -i) on all files (or one or more globs) under
-# git control
+# sgit - run sed (by default with -i) on one or more globs under git control
 #
-# This script allows one to run sed under git control without having to come up
-# with a list of files first and then passing those to the command.
+# This script allows one to run sed on files under git control, based on globs
+# (pattern or exact file name) without having to come up with a list of files
+# first and then passing those directly to sed.
 #
 # It allows for multiple sed commands and multiple globs. By default it uses -i
-# to edit the file in place (WITHOUT BACKUP EXTENSION; use -i option if you want
-# a backup!) but in place editing can be overridden with the -I option. See -h
-# option for all the options.
+# to edit the file in place (WITHOUT BACKUP EXTENSION; use sgit -i option if you
+# want a backup!) but in place editing can be overridden with the -I option. Use
+# -h option to see all the options. The README.md provides much more information
+# on the usage of the script and I recommend you look at that.
 #
-# DISCLAIMER AND WARNING: this is something of a hack and might be error prone.
-# It works for what is needed but possibly could be improved. Even so I like it
-# how it is and I don't think it would do much good to add many more additional
-# features.
+# For a list of warnings see the usage string and more so the README.md file as
+# there are some options that when used together (or an option not used with
+# another) can in some cases empty files (depends on command) or one can end up
+# creating many additional files (if backing up the files for instance with the
+# -i option).
 #
 # - Cody Boone Ferguson (@xexyl)
 #
 
-export SGIT_VERSION="0.0.8-1 19-04-2023" # format: major.minor.patch-release DD-MM-YYYY
+export SGIT_VERSION="0.0.9-1 24-04-2023" # format: major.minor.patch-release DD-MM-YYYY
 
-USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-x] [-I] [-i extension] [-o sed_options] [-s sed] [-e command] <glob...>
+USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-x] [-I] [-i extension] [-o sed_option(s)] [-s sed] [-e command] <glob...>
 
     -h			    print help and exit
     -V			    print version and exit
     -v level		    set verbosity level
     -x			    turn on tracing (set -x)
     -I			    disable in place editing
+
     -i extension	    set backup extension (default none)
 				WARNING: sed -i overwrites existing files
 				WARNING: this will create another file for each file changed
-    -o			    sed options (NOTE: don't pass '-'!)
-				WARNING: use of '-o n' without '-I', can depending on command, empty files
+
+    -o			    append sed options to options list
+				WARNING: use of '-o -n' without '-I', can depending on
+				sed commands, empty files as if both sed -i and sed -n were
+				used together
+
+				NOTE: you must pass the '-' or '--' for long options!
+
     -s sed		    set path to sed
     -e command		    append sed command to list of commands to execute on globs
 
@@ -40,13 +49,14 @@ sgit version: $SGIT_VERSION"
 
 SED="$(type -P sed)"
 export SED
-export SED_OPTIONS=""
 export I_FLAG=
 export VERBOSITY=0
 export EXTENSION=""
 
 # we need an array for sed commands
 declare -a SED_COMMANDS
+# we need an array for sed options
+declare -a SED_OPTIONS
 
 # we need to remove ' ' from the IFS!
 IFS=$'\t\n'
@@ -69,7 +79,7 @@ while getopts :hVv:xIi:o:s:e: flag; do
 	;;
     i)  EXTENSION="$OPTARG"
 	;;
-    o)	SED_OPTIONS="-$OPTARG"
+    o)	SED_OPTIONS+=("$OPTARG")
 	;;
     s)	SED="$OPTARG"
 	;;
@@ -172,14 +182,20 @@ while [[ "$i" -lt "$GLOBS" ]]; do
 
     if [[ "$VERBOSITY" -ge 1 ]]; then
 	if [[ -z "$I_FLAG" ]]; then
+	    # Determine if any sed options were specified. We only need to know
+	    # if the array is empty or not; we do not need to expand it in the
+	    # check.
+	    #
+	    # SC2128 (warning): Expanding an array without an index only gives the first element.
+	    # shellcheck disable=SC2128
 	    if [[ -n "$SED_OPTIONS" ]]; then
-		echo "debug[1]: about to run: git ls-files $1 | xargs $SED -i\"$EXTENSION\" $SED_OPTIONS ${SED_COMMANDS[*]}" 1>&2
+		echo "debug[1]: about to run: git ls-files $1 | xargs $SED -i\"$EXTENSION\" ${SED_OPTIONS[*]} ${SED_COMMANDS[*]}" 1>&2
 	    else
 		echo "debug[1]: about to run: git ls-files $1 | xargs $SED -i\"$EXTENSION\" ${SED_COMMANDS[*]}" 1>&2
 	    fi
 	else
 	    if [[ -n "$SED_OPTIONS" ]]; then
-		echo "debug[1]: about to run: git ls-files $1 | xargs $SED $SED_OPTIONS ${SED_COMMANDS[*]}" 1>&2
+		echo "debug[1]: about to run: git ls-files $1 | xargs $SED ${SED_OPTIONS[*]} ${SED_COMMANDS[*]}" 1>&2
 	    else
 		echo "debug[1]: about to run: git ls-files $1 | xargs $SED ${SED_COMMANDS[*]}" 1>&2
 	    fi
@@ -188,13 +204,13 @@ while [[ "$i" -lt "$GLOBS" ]]; do
 
     if [[ -z "$I_FLAG" ]]; then
 	if [[ -n "$SED_OPTIONS" ]]; then
-	    git ls-files "$1" | xargs "$SED" -i"$EXTENSION" "$SED_OPTIONS" "${SED_COMMANDS[@]}"
+	    git ls-files "$1" | xargs "$SED" -i"$EXTENSION" "${SED_OPTIONS[*]}" "${SED_COMMANDS[@]}"
 	else
 	    git ls-files "$1" | xargs "$SED" -i"$EXTENSION" "${SED_COMMANDS[@]}"
 	fi
     else
 	if [[ -n "$SED_OPTIONS" ]]; then
-	    git ls-files "$1" | xargs "$SED" "$SED_OPTIONS" "${SED_COMMANDS[@]}"
+	    git ls-files "$1" | xargs "$SED" "${SED_OPTIONS[*]}" "${SED_COMMANDS[@]}"
 	else
 	    git ls-files "$1" | xargs "$SED" "${SED_COMMANDS[@]}"
 	fi
