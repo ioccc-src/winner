@@ -23,10 +23,11 @@ you **very much** for your extensive efforts in helping improve the IOCCC
 presentation of past IOCCC winners and making many many past entries work with
 modern systems!
 
-[Yusuke Endoh](/winners.html#Yusuke_Endoh) supplied a number of
-important bug fixes to a number of past IOCCC winners. Some of
-those fixes were **very technically challenging** like
-[1992/lush](1992/lush/lush.c). Thank you **very much** for your help!
+[Yusuke Endoh](/winners.html#Yusuke_Endoh) supplied a number of important bug
+fixes to a number of past IOCCC winners. Some of those fixes were **very
+technically challenging** such as [1989/robison](1989/robison/robison.c),
+[1990/cmills](1990/cmills/cmills.c), [1992/lush](1992/lush/lush.c) and
+[2001/ctk](2001/ctk/ctk.c). Thank you **very much** for your help!
 
 A good number of the [past winners of the IOCCC](winners.html)
 tested, identified and helped correct and/or improve the write-ups
