@@ -1,10 +1,6 @@
 # Best Output
 
 Carlos Duarte  
-Instituto Superior Tecnico  
-Largo da Igreja, 5 R/C DTo  
-Damaia  
-2720 Amadora   
 Portugal  
 
 
@@ -30,8 +26,11 @@ For this alternate, slower version, please see below.
 ```
 
 
+## INABIAF - it's not a bug it's a feature! :-)
+
 NOTE: sometimes the program needs you to press enter a second time to continue
-solving the maze. See [bugs.md](/bugs.md) for more details.
+solving the maze. This is a feature, not a bug. See [bugs.md](/bugs.md) for more
+details.
 
 
 ### Alternate code:
