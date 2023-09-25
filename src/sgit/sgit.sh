@@ -21,7 +21,7 @@
 # - Cody Boone Ferguson (@xexyl)
 #
 
-export SGIT_VERSION="0.0.9-1 24-04-2023" # format: major.minor.patch-release DD-MM-YYYY
+export SGIT_VERSION="0.0.10-1 24-04-2023" # format: major.minor.patch-release DD-MM-YYYY
 
 USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-x] [-I] [-i extension] [-o sed_option(s)] [-s sed] [-e command] <glob...>
 
@@ -93,7 +93,10 @@ while getopts :hVv:xIi:o:s:e: flag; do
 	echo "$USAGE" 1>&2
 	exit 3
 	;;
-   *)
+    *)  echo "$0: ERROR: unexpected value from getopts: $flag" 1>&2
+	echo 1>&2
+	echo "$USAGE" 1>&2
+	exit 3
 	;;
     esac
 done
@@ -104,7 +107,7 @@ shift $(( OPTIND - 1 ));
 
 # check that SED_COMMANDS is not empty!
 if [[ -z "${SED_COMMANDS[*]}" ]]; then
-    echo "$(basename "$0"): ERROR: you must specify at least one sed command" 1>&2
+    echo "$(basename "$0"): ERROR: you must specify at least one sed command and one glob" 1>&2
     echo 1>&2
     echo "$USAGE" 1>&2
     exit 2

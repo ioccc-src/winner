@@ -70,7 +70,7 @@ usage: sgit [-h] [-V] [-v level] [-x] [-I] [-i extension] [-o sed_option(s)] [-s
     -s sed		    set path to sed
     -e command		    append sed command to list of commands to execute on globs
 
-sgit version: 0.0.9-1 24-04-2023
+sgit version: 0.0.10-1 24-04-2023
 ```
 
 You **MUST** specify at least one `sed` command and one glob: the sed command by

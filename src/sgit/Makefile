@@ -1,7 +1,6 @@
 #!/usr/bin/env make
 #
-# sgit - run sed (by default with -i) on all files (or one or more globs) under
-# git control.
+# sgit - run sed (by default with -i) on one or more globs under git control
 #
 # The most up to date version of this tool and everything related can be found
 # at https://github.com/xexyl/sgit.
@@ -22,6 +21,7 @@ CP= cp
 INSTALL= install
 RM= rm
 SHELL= bash
+SHELLCHECK= shellcheck
 
 #CFLAGS= -O3 -g3 --pedantic -Wall -Werror
 CFLAGS= -O3 -g3 --pedantic -Wall
@@ -45,6 +45,10 @@ winner_name: winner_name.sh
 	${RM} -f -v $@
 	${CP} -f -v $? $@
 	${CHMOD} +x $@
+
+
+shellcheck: sgit.sh
+	@${SHELLCHECK} sgit.sh
 
 #################################################
 # .PHONY list of rules that do not create files #
