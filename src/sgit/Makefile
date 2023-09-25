@@ -1,7 +1,6 @@
 #!/usr/bin/env make
 #
-# sgit - run sed (by default with -i) on all files (or one or more globs) under
-# git control.
+# sgit - run sed (by default with -i) on one or more globs under git control
 #
 # The most up to date version of this tool and everything related can be found
 # at https://github.com/xexyl/sgit.
