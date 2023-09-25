@@ -45,7 +45,7 @@ We are pleased to note the many contributions, **made since 2021 Jan 01**,
 on a winner by winner basis.
 
 
-## [1984/anonymous](1984/anonymous/anonymous.c) ([README.md](1984/anonymous/README.md)
+## [1984/anonymous](1984/anonymous/anonymous.c) ([README.md](1984/anonymous/README.md))
 
 Cody fixed this to work for macOS.
 
@@ -611,8 +611,8 @@ Cody fixed this to work for clang by changing the third and fourth arg of
 He also added the alternate version that the author gave in the remarks that is
 specifically for the USA rather than the world.
 
-NOTE: as noted in the README.md file and the bugs.md, this program and the
-alternate version will very likely crash or
+NOTE: as noted in the README.md file and the [bugs.md](/bugs.md), this program and the
+[alternate version](1992/westley/westley.alt.c) will very likely crash or
 [nuke](https://en.wikipedia.org/wiki/Nuclear_weapon) the [entire
 world](https://en.wikipedia.org/wiki/Earth) or just the
 [USA](https://en.wikipedia.org/wiki/United_States), respectively, without enough
