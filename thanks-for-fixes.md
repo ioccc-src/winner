@@ -13,13 +13,15 @@ Ferguson](/winners.html#Cody_Boone_Ferguson) who is responsible for many of the
 improvements including many, many **very complicated bug fixes** such as
 [2001/anonymous](2001/anonymous/anonymous.c) and
 [2004/burley](2004/burley/burley.c), making entries not require
-`-traditional-cpp` (which are **very complicated fixes**), fixing entries to compile
-with clang, providing alternate code where useful or necessary, fixing where
-possible dead links and otherwise removing them, typo and consistency fixes and
-writing the [sgit tool](https://github.com/xexyl/sgit) that we've published on the
-website. Thank you **very much** for your extensive efforts in helping improve
-the IOCCC presentation of past IOCCC winners and making many many past entries
-work with modern systems!
+`-traditional-cpp` (which are **very complicated fixes**), fixing entries to
+compile with clang, fixing entries to work with macOS (some of which are **very
+complicated** such as [1998/schweikh1](1998/schweikh1/schweikh1.c)), providing
+alternate code where useful or necessary, fixing where possible dead links and
+otherwise removing them, typo and consistency fixes and writing the [sgit
+tool](https://github.com/xexyl/sgit) that we've published on the website. Thank
+you **very much** for your extensive efforts in helping improve the IOCCC
+presentation of past IOCCC winners and making many many past entries work with
+modern systems!
 
 [Yusuke Endoh](/winners.html#Yusuke_Endoh) supplied a number of
 important bug fixes to a number of past IOCCC winners. Some of
@@ -838,8 +840,9 @@ enough though this did not seem to be an issue though I cannot explain why. He
 notes that it works fine with `clang` as well as `gcc` (which is what is used
 but in macOS - see below for alternate code - `gcc` is clang).
 
-Additionally Cody provided an alternate version for macOS. See the README.md
-file for details on the alternate version.
+Additionally Cody provided an alternate version for macOS. The fix is
+rather complicated but very interesting. See the README.md file for details on
+how it works and how to use it.
 
 
 ## [1998/schweikh2](1998/schweikh2/schweikh2.c) ([README.md](1998/schweikh2/README.md]))
