@@ -21,6 +21,7 @@ CP= cp
 INSTALL= install
 RM= rm
 SHELL= bash
+SHELLCHECK= shellcheck
 
 #CFLAGS= -O3 -g3 --pedantic -Wall -Werror
 CFLAGS= -O3 -g3 --pedantic -Wall
@@ -44,6 +45,10 @@ winner_name: winner_name.sh
 	${RM} -f -v $@
 	${CP} -f -v $? $@
 	${CHMOD} +x $@
+
+
+shellcheck: sgit.sh
+	@${SHELLCHECK} sgit.sh
 
 #################################################
 # .PHONY list of rules that do not create files #
