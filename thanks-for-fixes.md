@@ -1389,7 +1389,7 @@ for strlen() with malloc(). This prevented it from working.
 
 ## [2006/borsanyi](2006/borsanyi/borsanyi.c) ([README.md](2006/borsanyi/README.md]))
 
-Cody fixed (the Makefile) under some systems where the `lpthread` was not
+Cody fixed the Makefile under some systems where the `lpthread` was not
 implicitly linked in.
 
 
@@ -1406,7 +1406,7 @@ well segfault (for instance it segfaulted on his MacBook Pro with the M1 chip).
 ## [2006/night](2006/night/night.c) ([README.md](2006/night/README.md]))
 
 As Cody is a lost :-) `vim` user he took the author's remarks to add support
-back for arrow keys.
+back for arrow keys in the [alternate version](2006/night/night.alt.c).
 
 
 ## [2006/sloane](2006/sloane/sloane.c) ([README.md](2006/sloane/README.md]))
