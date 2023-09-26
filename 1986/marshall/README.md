@@ -9,11 +9,11 @@ make all
 ```
 
 There is an alternate version. See the Alternate code section for the commentary
-on why this is: there was a funny problem depending on the compiler and flags
-where it would work with one compiler with the optimiser but it would not work
-with the other; and if the optimiser state is changed the previous problematic
-compiler might work but the other one would not! We describe this in more detail
-below and we encourage you to read it.
+on why this is: there was a funny problem in modern systems where depending on
+the compiler and flags it would work with one compiler with the optimiser but it
+would not work with the other; and if the optimiser state is changed the
+previous problematic compiler might work but the other one would not! We
+describe this in more detail below and we encourage you to read it.
 
 
 ## Try:
@@ -30,10 +30,10 @@ you can see if your compiler has the problem as described below.
 
 In some versions of gcc and clang (this was first discovered in fedora linux 38)
 depending on whether or not the optimiser was enabled would cause one compiler
-to segfault but not another but when changing the state of the optimiser the
-opposite would happen: the compiler that did not segfault suddenly did and the
-one that did now worked! Another problem was an infinite loop also depending on
-the optimiser.
+to generate code that segfaults but not another - but when changing the state
+of the optimiser the opposite would happen: the compiler that did not cause a
+segfault suddenly did and the one that did now worked! Another problem was an
+infinite loop also depending on the optimiser.
 
 The alternate code has the original fix for clang which works with some
 compilers depending on the optimiser. When we refer to the code below we refer
