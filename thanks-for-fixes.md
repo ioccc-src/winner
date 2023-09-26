@@ -396,26 +396,27 @@ judge and user the executioner? :-)
 
 ## [1990/dds](1990/dds/dds.c) ([README.md](1990/dds/README.md]))
 
-Yusuke and Cody in conjunction fixed this for modern systems.
+Yusuke and Cody in conjunction fixed this for modern systems (both fixed a
+different compiler error but more fixes were also made).
 
 Yusuke added the comma operator for a binary expression with `free(3)` which is
-an error because `free()` returns void. Cody then made it slightly more like the
+is a compiler error because `free()` returns void. Cody then made it slightly more like the
 original in this way by redefining `free` to have the comma operator itself.
 
-Cody removed the erroneous prototype to `fopen()` which caused a compiler error
-and he also made this use `fgets()` instead of `gets()` to make it safer and to
-prevent an annoying and potentially alarming warning at compiling and/or linking
-and/or runtime.
+Cody fixed another compiler error by removing the erroneous prototype to
+`fopen()`.  Cody also changed a file to be a proper `FILE *` and fixed a typo in
+[LANDER.BAS](1990/dds/LANDER.BAS).
 
-Cody also changed a file to be a proper `FILE *` and fixed a typo
-in [LANDER.BAS](1990/dds/LANDER.BAS).
+Cody also made this use `fgets()` instead of `gets()` to make it safer and to
+prevent an annoying and potentially alarming warning at compiling and/or linking
+and/or runtime, the latter of which is unfortunately interspersed with the
+output of the program.
 
 Later Cody improved the `gets()`/`fgets()` fix by redefining `gets()` to use
 `fgets()`. Notice that the original entry used `fgets()` in one case as it has
 to read from another file and in this place nothing was changed.
 
 With these improvements the entry looks much more like the original!
-
 
 ## [1990/jaw](1990/jaw/jaw.c) ([README.md](1990/jaw/README.md]))
 
