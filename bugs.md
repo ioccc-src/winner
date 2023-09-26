@@ -890,21 +890,17 @@ Since it works there is no need to fix this except for a challenge to yourself.
 
 
 ## [1995/cdua](1995/cdua/cdua.c) ([README.md](1995/cdua/README.md))
-## STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
+## STATUS: INABIAF - please **DO NOT** fix
 
 This did not originally compile under macOS and after it did compile under
 macOS, it crashed. [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson)
 fixed these problems.
 
-However he observed that sometimes the program asks the user to hit return a
-second time to resume solving the maze. It does not always happen. It doesn't
-seem to be related to making it work under macOS as all that did was removing
-some invalid prototypes and use `printf()` instead of the invalid pointer to it
-(incompatible type). Besides that it happened under linux where there was no
-compilation error or crash.
-
-It's possible this is no longer an issue but if it's encountered again please
-let us know or offer a fix.
+It should be noted however that there is a condition where the program will
+prompt you to press return again. This was thought to be a bug but looking at
+the code it can clearly be seen that if `g - a` is 0 then the message is
+supposed to be printed again and one is supposed to press a key as at that point
+it calls `getchar()` via the pointer `m`. So this is a feature not a bug.
 
 
 ## [1995/vanschnitz](1995/vanschnitz/vanschnitz.c) ([README.md](1995/vanschnitz/README.md))

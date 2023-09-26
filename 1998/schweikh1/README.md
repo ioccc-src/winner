@@ -52,11 +52,10 @@ respectively, 44 and 46.  But how does this work? Well the string is:
 
 The first number means: the length starting from 0 up through the `>`. The
 second number is the same starting point but up through the `\0` which is why
-it's +2. Somehow it was basic intuition that made me figure out these two
-numbers and a quick test confirmed it. But what happens if only the first number
-is updated? Most of the output will be just `#define` by itself; in the cases
-where there was text after that it was macros that certainly were not defined.
-There might have been other errors as well.
+it's +2. But what happens if only the first number is updated? Most of the
+output will be just `#define` by itself; in the cases where there was text after
+that it was macros that certainly were not defined.  There might have been other
+errors as well.
 
 This allows for opening the right files. The problem with the macOS is
 `/usr/include` does not exist: instead it's
