@@ -27,7 +27,9 @@ OLD LANDER.BAS
 RUN
 ```
 
-NOTE: this is case sensitive.
+NOTE: this entry is probably one of the only times CAPS LOCK might be worth
+having (though still not useful enough to enable :-) ) as all input has to be
+UPPER CASE.
 
 ## Judges' remarks:
 
