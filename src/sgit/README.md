@@ -25,9 +25,10 @@ Note that you **MUST** pass the `-` to the option and for long options like
 `sed` but prefixing it with `-o` first. This was a stylistic choice but it
 allows one to quote the option arg to pass more than one option instead of
 having to use `sgit -o` more than once. Note that not all options to `sed` have
-been tested.
+been tested. If the option requires an arg or you want to pass more than one
+option you must quote it.
 
-By default it does **in-place editing it does NOT backup files**. If you
+By default it does **in-place editing; it does NOT backup files**. If you
 wish to not edit the file in place (see examples later in this file) you can use
 the `sgit -I` option. Note that the `-n` option (`sgit -o -n`) without `sgit -I`
 can, depending on the sed commands, empty files! This is analogous to using both
@@ -48,7 +49,7 @@ evolution of the script.
 ## Usage
 
 ```sh
-usage: sgit [-h] [-V] [-v level] [-x] [-I] [-i extension] [-o sed_option(s)] [-s sed] [-e command] <glob...>
+usage: sgit [-h] [-V] [-v level] [-x] [-I] [-i extension] [-o sed_option] [-s sed] [-e command] <glob...>
 
     -h			    print help and exit
     -V			    print version and exit
@@ -60,17 +61,19 @@ usage: sgit [-h] [-V] [-v level] [-x] [-I] [-i extension] [-o sed_option(s)] [-s
 				WARNING: sed -i overwrites existing files
 				WARNING: this will create another file for each file changed
 
-    -o			    append sed options to options list
+    -o sed_option	    append sed options to options list
 				WARNING: use of '-o -n' without '-I', can depending on
 				sed commands, empty files as if both sed -i and sed -n were
 				used together
 
-				NOTE: you must pass the '-' or '--' for long options!
+				NOTE: you must pass the '-' for short options and '--' for long options!
+				NOTE: if you pass more than one option or it takes an option arg you must
+				quote it!
 
     -s sed		    set path to sed
     -e command		    append sed command to list of commands to execute on globs
 
-sgit version: 0.0.10-1 24-04-2023
+sgit version: 0.0.11-1 28-04-2023
 ```
 
 You **MUST** specify at least one `sed` command and one glob: the sed command by
@@ -113,6 +116,22 @@ sgit -o -n -e 's/.//g' sgit
 ```
 
 because it would empty `sgit`!
+
+## More about options and the tool itself
+
+A man page exists for this tool with more about the tool and the options. Since
+this file has a number of examples there are no additional examples in it. To
+render it:
+
+```sh
+man sgit
+```
+
+if installed. Otherwise if it's not installed you can do:
+
+```sh
+man ./sgit.1
+```
 
 
 ## Examples
@@ -235,11 +254,6 @@ you have make installed you can just run `make install` either as root or via
 ```sh
 sudo make install
 ```
-
-## Documentation?
-
-Right now this is it but the Makefile is set up so that if a man page is added
-it can easily install it as well.
 
 ## Limitations
 

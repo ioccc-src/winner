@@ -21,9 +21,9 @@
 # - Cody Boone Ferguson (@xexyl)
 #
 
-export SGIT_VERSION="0.0.10-1 24-04-2023" # format: major.minor.patch-release DD-MM-YYYY
+export SGIT_VERSION="0.0.11-1 28-04-2023" # format: major.minor.patch-release DD-MM-YYYY
 
-USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-x] [-I] [-i extension] [-o sed_option(s)] [-s sed] [-e command] <glob...>
+USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-x] [-I] [-i extension] [-o sed_option] [-s sed] [-e command] <glob...>
 
     -h			    print help and exit
     -V			    print version and exit
@@ -35,12 +35,14 @@ USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-x] [-I] [-i extension] [-o
 				WARNING: sed -i overwrites existing files
 				WARNING: this will create another file for each file changed
 
-    -o			    append sed options to options list
+    -o sed_option	    append sed options to options list
 				WARNING: use of '-o -n' without '-I', can depending on
 				sed commands, empty files as if both sed -i and sed -n were
 				used together
 
-				NOTE: you must pass the '-' or '--' for long options!
+				NOTE: you must pass the '-' for short options and '--' for long options!
+				NOTE: if you pass more than one option or it takes an option arg you must
+				quote it!
 
     -s sed		    set path to sed
     -e command		    append sed command to list of commands to execute on globs
@@ -110,7 +112,7 @@ if [[ -z "${SED_COMMANDS[*]}" ]]; then
     echo "$(basename "$0"): ERROR: you must specify at least one sed command and one glob" 1>&2
     echo 1>&2
     echo "$USAGE" 1>&2
-    exit 2
+    exit 3
 fi
 
 # check that sed is executable
@@ -118,17 +120,17 @@ if [[ -z "$SED" ]]; then
     echo "$(basename "$0"): ERROR: sed cannot be empty" 1>&2
     echo 1>&2
     echo "$USAGE" 1>&2
-    exit 2
+    exit 3
 elif [[ ! -f "$SED" ]]; then
     echo "$(basename "$0"): ERROR: sed is not a regular file: $SED" 1>&2
     echo 1>&2
     echo "$USAGE" 1>&2
-    exit 2
+    exit 3
 elif [[ ! -x "$SED" ]]; then
     echo "$(basename "$0"): ERROR: sed is not an executable file: $SED" 1>&2
     echo 1>&2
     echo "$USAGE" 1>&2
-    exit 2
+    exit 3
 fi
 
 # also check number of remaining args
@@ -136,7 +138,7 @@ if [[ "$#" -eq 0 ]]; then
     echo "$(basename "$0"): ERROR: you must specify at least one glob" 1>&2
     echo 1>&2
     echo "$USAGE" 1>&2
-    exit 2
+    exit 3
 fi
 
 # then check that this is a git repo!
@@ -229,3 +231,5 @@ while [[ "$i" -lt "$GLOBS" ]]; do
     fi
 
 done
+
+exit 0
