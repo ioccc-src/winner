@@ -41,7 +41,8 @@ include ../../var.mk
 CSILENCE= -Wno-char-subscripts -Wno-error -Wno-implicit-function-declaration \
 	-Wno-incompatible-library-redeclaration -Wno-return-type -Wno-string-plus-int \
 	-Wno-unknown-escape-sequence -Wno-deprecated-declarations \
-	-Wno-deprecated-non-prototype
+	-Wno-deprecated-non-prototype -Wno-implicit-int -Wno-incompatible-pointer-types \
+	-Wno-unused-value
 
 # Common C compiler warning flags
 #
@@ -98,7 +99,17 @@ endif
 #
 ifeq ($(CC),gcc)
 #
-#CSILENCE+=
+CSILENCE+= -Wno-missing-parameter-type -Wno-builtin-declaration-mismatch -Wno-unknown-warning-option
+#
+#CWARN+=
+#
+endif
+
+# Specific add-ons or replacements for cc only
+#
+ifeq ($(CC),cc)
+#
+CSILENCE+= -Wno-missing-parameter-type -Wno-builtin-declaration-mismatch -Wno-unknown-warning-option
 #
 #CWARN+=
 #
