@@ -18,6 +18,8 @@
 # creating many additional files (if backing up the files for instance with the
 # -i option).
 #
+# A man page also exists for this tool as sgit.1.
+#
 # - Cody Boone Ferguson (@xexyl)
 #
 
