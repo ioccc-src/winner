@@ -44,6 +44,8 @@ Use `natori.alt` as you would `natori`.
 What happens if you run it in the northern hemisphere? Are there any
 differences?
 
+Can you identify any Moon phases that result in the same output of both
+versions?
 
 ## Judges' remarks:
 
