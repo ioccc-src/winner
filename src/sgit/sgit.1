@@ -4,7 +4,7 @@
 .\"
 .\" Dedicated to my wonderful Mum and to my dear cousin Dani.
 .\"
-.TH sgit 1 "28 September 2023" "sgit" "IOCCC tools"
+.TH sgit 1 "29 September 2023" "sgit" "IOCCC tools"
 .SH NAME
 .B sgit
 \- run 
@@ -75,6 +75,9 @@ Any text after the final option is considered a glob.
 At least one
 .BR sed (1)
 command and one glob must be specified.
+A glob of
+.I .
+will match all files under git control from the current working directory.
 If you run the command from a directory that is not a
 .BR git (1)
 repo it is an error.
@@ -99,9 +102,9 @@ Disable in place editing
 Set backup extension (default none)
 .RS
 .PP
-WARNING: sed \-i overwrites existing files
+WARNING: sed \-i overwrites existing backup files
 .br
-WARNING: this will create another file for each file changed
+WARNING: this will create or update a file for each file changed
 .RE
 .TP
 .BI \-o\  sed_option
@@ -125,6 +128,8 @@ and
 were used together
 .br
 NOTE: you must pass the '-' for short options and '--' for long options!
+.br
+NOTE: if you need a space in an option you should quote it!
 .RE
 .TP
 .BI \-s\  sed
@@ -170,3 +175,67 @@ On a more serious note there are no known bugs but if you have an issue with the
 You can find it at
 .br
 .IR <https://github.com/xexyl/sgit/issues> .
+.SH EXAMPLES
+.PP
+Change references (\c
+.B IN MEMORY ONLY
+i.e. \fBWITHOUT in\-place editing\fP\c
+) of the exact word
+.B sed
+(as in \c
+.BR \\\\<sed\\\\> )
+in the
+.B sgit
+script to
+.B used
+but only show changed lines:
+.IR
+.sp
+.RS
+.ft B
+sgit -I -o -n -e 's/\<sed\>/used/p' sgit
+.ft R
+.RE
+.PP
+Print out matches of the exact word
+.B sed
+(as in \c
+.BR \\\\<sed\\\\> )
+in all files under
+.BR git (1)
+control from the current working directory:
+.IR
+.sp
+.RS
+.ft B
+sgit -I -o -n -e '/\<sed\>/p' .
+.ft R
+.sp
+.RE
+The above is a simpler way of running:
+.IR
+.sp
+.RS
+.ft B
+git --no-pager grep -h -E '\<sed\>'|sed 's/^[0-9]*://g'
+.ft R
+.RE
+.sp
+.PP
+With tracing enabled, change references of the exact word
+.B sed
+(as in \c
+.BR \\\\<sed\\\\> )
+in this file and save it:
+.sp
+.RS
+.ft B
+sgit -e 's/\<sed\>/used/g' -x sgit.1
+.ft R
+.RE
+.PP
+For more examples see the following link:
+.IR \<https://github.com/xexyl/sgit#examples\>
+.SH SEE ALSO
+For additional details including the history, script history and other things about the tool, see:
+.IR \<https://github.com/xexyl/sgit#readme\>

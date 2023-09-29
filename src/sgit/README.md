@@ -1,13 +1,13 @@
 # sgit - run sed on files under git control
 
 `sgit` runs `sed(1)` on files that are under git control, based on one or more
-globs (either a pattern or an exact file name). Files not under git control in
-the directory and any subdirectories will not be touched. Depending on the globs
-specified it might or might not recurse into subdirectories. That is the shell
-at work, of course. Running it in a directory that is not a git repository is an
-error.
+globs (either a pattern or an exact file name). Running this from a directory
+that is not a git repository is an error and any files not under git control in
+the directory will not be touched. Depending on the globs specified it might or
+might not recurse into subdirectories. That is the shell at work, of course.
+Running it in a directory that is not a git repository is an error.
 
-This is extremely useful because one need not run extra commands to determine
+`sgit` is extremely useful because one need not run extra commands to determine
 the list of files (which might be very long) and then pass them directly to
 `sed(1)`.
 
@@ -24,21 +24,25 @@ Note that you **MUST** pass the `-` to the option and for long options like
 `--posix` you must pass `--`! In other words use the options like you would with
 `sed` but prefixing it with `-o` first. This was a stylistic choice but it
 allows one to quote the option arg to pass more than one option instead of
-having to use `sgit -o` more than once. Note that not all options to `sed` have
-been tested. If the option requires an arg or you want to pass more than one
-option you must quote it.
+having to use `sgit -o` more than once though you can certainly use the option
+more than once. Note that not all options to `sed` have been tested. If the
+option requires a space (say for an arg) or you want to pass more than one
+option separated by a space and you only use one `-o` you must quote it.
 
-By default it does **in-place editing; it does NOT backup files**. If you
+By default it does **in-place editing and it does NOT backup files**. If you
 wish to not edit the file in place (see examples later in this file) you can use
 the `sgit -I` option. Note that the `-n` option (`sgit -o -n`) without `sgit -I`
 can, depending on the sed commands, empty files! This is analogous to using both
 `-n` and `-i` to `sed` which would do in-place editing without automatic
-printing of the pattern space.
+printing of the pattern space. An example is provided later.
 
 If you wish to provide a backup extension for editing files use `sgit -i`. See
 example below. Note that using `-i` overwrites existing backup files and it will
-also create a file for each file edited. This means that if it ends up editing
-50 files there will be 50 new files created.
+also create or update a file for each file edited. This means that if it ends up
+editing 50 files without a backup file (with the extension provided) there will
+be 50 new files created. Using this option might be of limited use, of course,
+since files under git control can be restored, compared etc. but it's there in
+case one wants it.
 
 See the usage below or run `sgit` by itself (or with the `-h` option) to see the
 rest of the options.
@@ -58,28 +62,27 @@ usage: sgit [-h] [-V] [-v level] [-x] [-I] [-i extension] [-o sed_option] [-s se
     -I			    disable in place editing
 
     -i extension	    set backup extension (default none)
-				WARNING: sed -i overwrites existing files
-				WARNING: this will create another file for each file changed
+				WARNING: sed -i overwrites existing backup files
+				WARNING: this will create or update a file for each file changed
 
-    -o sed_option	    append sed options to options list
+    -o sed_option	    append sed option or options to options list
 				WARNING: use of '-o -n' without '-I', can depending on
 				sed commands, empty files as if both sed -i and sed -n were
 				used together
 
 				NOTE: you must pass the '-' for short options and '--' for long options!
-				NOTE: if you pass more than one option or it takes an option arg you must
-				quote it!
+				NOTE: if you need a space in an option you should quote it!
 
     -s sed		    set path to sed
     -e command		    append sed command to list of commands to execute on globs
 
-sgit version: 0.0.11-1 28-04-2023
+sgit version: 0.0.12-1 29-04-2023
 ```
 
-You **MUST** specify at least one `sed` command and one glob: the sed command by
-way of the `-e` option (just like with `sed`); anything after the last option is
-a glob. You may specify more than one of each. Specify `-e` for each command.
-The sed commands is an array just like the sed options.
+You **MUST** specify at least one `sed` command and one glob: the `sed` command
+by way of the `-e` option (just like with `sed`); anything after the last option
+is a glob. You may specify more than one of each. Specify `-e` for each command.
+The `sed` commands is an array just like the `sed` options.
 
 
 ## A note about the `-i` option and backup extensions
@@ -93,7 +96,7 @@ option .. I'm looking at you, BSD/macOS `sed`).
 ## `sgit -i` WARNING: each file edited will result in another file in the working directory
 
 Of course if you have 50 files that are edited then 50 new files will be
-created just like with `sed` itself.
+created (or otherwise updated) just like with `sed` itself.
 
 # `sgit -i` WARNING: this **WILL OVERWRITE EXISTING BACKUP FILES**!
 
@@ -136,13 +139,13 @@ man ./sgit.1
 
 ## Examples
 
-### Change in this file (_IN MEMORY ONLY_) `\<sed\>` to `used` but only show lines changed:
+### Change references (_**IN MEMORY ONLY**_ i.e. WITHOUT in-place editing) of the exact word `sed` (as in `\<sed\>`) in this file but only show changed lines
 
 ```sh
 sgit -I -o -n -e 's/\<sed\>/used/p' README.md
 ```
 
-### Print out matches of `\<sed\>` in all files under git control
+### Print out matches of the EXACT word `sed` (as in `\<sed\>`) in all files under git control from the current working directory
 
 This is a simpler way of running `git --no-pager grep -h -E '\<sed\>'|sed
 's/^[0-9]*://g'` which itself might or might not be more complicated than it
