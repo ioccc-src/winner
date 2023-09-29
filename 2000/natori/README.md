@@ -1,9 +1,6 @@
 # Best Small Program
 
 NATORI Shin
-Univ. of Tokyo
-Rigakubu 7-goukan 311
-Hongou 7-3-1, Bunkyou-ku, Tokyo
 Japan
 
 
@@ -20,6 +17,9 @@ make
 ./natori
 ```
 
+NOTE: an alternate version exists for those in the southern hemisphere. See the
+Alternate code section below for more details.
+
 
 ## Try:
 
@@ -31,7 +31,7 @@ echo "Do or do not. There is no try."
 ### Alternate code:
 
 The author noted that those in the southern hemisphere might want to change
-`acos(l/2)` into `acos(-l/2)`. 
+`acos(l/2)` into `acos(-l/2)` which we have done in the alternate version.
 
 To run the alternate code that supports the southern hemisphere:
 
@@ -41,6 +41,9 @@ make alt
 
 Use `natori.alt` as you would `natori`.
 
+What happens if you run it in the northern hemisphere? Are there any
+differences?
+
 
 ## Judges' remarks:
 
@@ -49,7 +52,7 @@ Can you figure out how it does it?
 
 The ANSI-C committee, among their multiple misdeeds, broke perfectly
 fun C programs by making it intractable for them to declare their
-own non-traditional prototype for main().  We have had uglify this
+own non-traditional prototype for main().  We have had to uglify this
 program in order to try and prevent C compilers form failing to
 compile due to the unusual arg types of the main() function.
 
