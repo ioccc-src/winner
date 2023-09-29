@@ -14,10 +14,10 @@ make all
 
 ```sh
 ./wall
-# enter some strings
+# enter some numbers
 
 ./wall | some_command
-# enter some strings
+# enter some strings or numbers, depending on command
 ```
 
 
@@ -46,7 +46,6 @@ m*m
 
 ./wall | cat
 ```
-
 
 and enter some input like:
 
