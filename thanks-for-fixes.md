@@ -272,6 +272,11 @@ changing `main()` to call the new function `pain()` (chosen because it's a pain
 that clang requires these args to be `char **` :-) ) with the correct args it
 now works.
 
+## [1988/reddy](1988/reddy/reddy.c) ([README.md](1988/reddy/README.md))
+
+Cody made this use `fgets()` to prevent annoying warnings during compiling,
+linking and runtime, the latter of which being the most annoying.
+
 
 ## [1988/spinellis](1988/spinellis/spinellis.c) ([README.md](1988/spinellis/README.md]))
 
