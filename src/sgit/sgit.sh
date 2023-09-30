@@ -18,10 +18,12 @@
 # creating many additional files (if backing up the files for instance with the
 # -i option).
 #
+# A man page also exists for this tool as sgit.1.
+#
 # - Cody Boone Ferguson (@xexyl)
 #
 
-export SGIT_VERSION="0.0.11-1 28-04-2023" # format: major.minor.patch-release DD-MM-YYYY
+export SGIT_VERSION="0.0.12-1 29-04-2023" # format: major.minor.patch-release DD-MM-YYYY
 
 USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-x] [-I] [-i extension] [-o sed_option] [-s sed] [-e command] <glob...>
 
@@ -32,17 +34,16 @@ USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-x] [-I] [-i extension] [-o
     -I			    disable in place editing
 
     -i extension	    set backup extension (default none)
-				WARNING: sed -i overwrites existing files
-				WARNING: this will create another file for each file changed
+				WARNING: sed -i overwrites existing backup files
+				WARNING: this will create or update a file for each file changed
 
-    -o sed_option	    append sed options to options list
+    -o sed_option	    append sed option or options to options list
 				WARNING: use of '-o -n' without '-I', can depending on
 				sed commands, empty files as if both sed -i and sed -n were
 				used together
 
 				NOTE: you must pass the '-' for short options and '--' for long options!
-				NOTE: if you pass more than one option or it takes an option arg you must
-				quote it!
+				NOTE: if you need a space in an option you should quote it!
 
     -s sed		    set path to sed
     -e command		    append sed command to list of commands to execute on globs
