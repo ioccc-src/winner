@@ -5,36 +5,33 @@ globs (either a pattern or an exact file name). Running this from a directory
 that is not a git repository is an error and any files not under git control in
 the directory will not be touched. Depending on the globs specified it might or
 might not recurse into subdirectories. That is the shell at work, of course.
-Running it in a directory that is not a git repository is an error.
 
 `sgit` is extremely useful because one need not run extra commands to determine
 the list of files (which might be very long) and then pass them directly to
-`sed(1)`.
-
-At least one `sed` command is required with the `-e` option (analogous to `sed
--e`) and at least one glob is required. It is an error if at least one of each
-is not specified.
+`sed(1)`. Since it only acts on files under `git` control you need not worry
+about files that are not under git control being touched or even considered.
 
 You can specify the path to `sed` in case you wish to use a different one. For
 instance in macOS if you have GNU sed installed you might want to use that
 instead. You can do that with the `-s sed` option.
 
 If you wish to provide options to `sed` itself you can so with the `sgit -o`.
-Note that you **MUST** pass the `-` to the option and for long options like
-`--posix` you must pass `--`! In other words use the options like you would with
-`sed` but prefixing it with `-o` first. This was a stylistic choice but it
-allows one to quote the option arg to pass more than one option instead of
-having to use `sgit -o` more than once though you can certainly use the option
-more than once. Note that not all options to `sed` have been tested. If the
-option requires a space (say for an arg) or you want to pass more than one
-option separated by a space and you only use one `-o` you must quote it.
+Note that you **MUST** pass the `-` for short options and the `--` for long
+options!  In other words use the options like you would with `sed` but prefixing
+it with `-o` first.
+
+This was a stylistic choice but it allows one to quote (which is probably always
+preferable) the option arg to pass more than one option instead of having to use
+`sgit -o` more than once though you can certainly use the option more than once.
+If there's a need for a space then you must quote it.  Note that not all options
+to `sed` have been tested.
 
 By default it does **in-place editing and it does NOT backup files**. If you
-wish to not edit the file in place (see examples later in this file) you can use
-the `sgit -I` option. Note that the `-n` option (`sgit -o -n`) without `sgit -I`
-can, depending on the sed commands, empty files! This is analogous to using both
-`-n` and `-i` to `sed` which would do in-place editing without automatic
-printing of the pattern space. An example is provided later.
+wish to not edit the file in place (see [examples](#examples) later in this
+file) you can use the `sgit -I` option. Note that the `-n` option (`sgit -o -n`)
+without `sgit -I` can, depending on the sed commands, empty files! This is
+analogous to using both `-n` and `-i` to `sed` which would do in-place editing
+without automatic printing of the pattern space. An example is provided later.
 
 If you wish to provide a backup extension for editing files use `sgit -i`. See
 example below. Note that using `-i` overwrites existing backup files and it will
@@ -80,7 +77,7 @@ sgit version: 0.0.12-1 29-04-2023
 ```
 
 You **MUST** specify at least one `sed` command and one glob: the `sed` command
-by way of the `-e` option (just like with `sed`); anything after the last option
+by way of the `-e` option (analogous to `sed -e`); anything after the last option
 is a glob. You may specify more than one of each. Specify `-e` for each command.
 The `sed` commands is an array just like the `sed` options.
 
@@ -104,7 +101,7 @@ Please be aware that if a backup file already exists it **WILL** be overwritten!
 This is because it uses `sed -i`.
 
 I won't even try and detect this because it's not how `sed` works and it would
-overly complicate the script.
+overly complicate the script plus it's almost pointless with `git`.
 
 
 # `sgit -o -n` WARNING: invalid use of `sgit -o -n` can empty files!
@@ -122,9 +119,9 @@ because it would empty `sgit`!
 
 ## More about options and the tool itself
 
-A man page exists for this tool with more about the tool and the options. Since
-this file has a number of examples there are no additional examples in it. To
-render it:
+A man page exists for this tool with more about the tool and the options. It has
+some examples but it might be more useful to see the [Examples](#examples) in
+this file instead. To render it:
 
 ```sh
 man sgit
@@ -159,7 +156,6 @@ sgit -I -o -n -e '/\<sed\>/p' .
 
 ```sh
 sgit -e 's/\<sed\>/used/g' -x README.md
-
 ```
 
 
@@ -167,7 +163,6 @@ sgit -e 's/\<sed\>/used/g' -x README.md
 
 ```sh
 sgit -e 's/\<sed\>/used/p' -x README.md
-
 ```
 
 ## Verbosely (level 1) change references of `\<sed\>` to `used` in this file and save it:
@@ -175,18 +170,18 @@ sgit -e 's/\<sed\>/used/p' -x README.md
 ```sh
 sgit -e 's/\<sed\>/used/g' -v1 README.md
 sgit -e 's/\<sed\>/used/g' -v 1 README.md
-
 ```
+
+The two are equivalent but naturally running them in sequence the second one
+would not do anything useful.
 
 ## Verbosely (level 3) change references of `\<sed\>` to `used` in this file with a backup as `README.md.bak`
 
 ```sh
-sgit -i.bak -e 's/\<sed\>/used/g' -v3 README.md
 sgit -i.bak -e 's/\<sed\>/used/g' -v 3 README.md
-
 ```
 
-With that you would see something like:
+With the command you would see something like:
 
 ```sh
 debug[2]: sed commands:  -e	s/\<sed\>/used/g
@@ -197,13 +192,12 @@ debug[1]: about to run: git ls-files README.md | xargs /opt/local/bin/sed -i".ba
 debug[2]: 0 remaining globs
 ```
 
-Level 2 would not show how many globs remain after each operation.
+Level 2 will not show how many globs remain after each operation.
 
 
 ### Verbosely (level 3) change references of `\<used\>` back to `sed` in this file with a backup as `README.md.bak`
 
 ```sh
-sgit -i.bak -e 's/\<used\>/sed/g' -v3 README.md
 sgit -i.bak -e 's/\<used\>/sed/g' -v 3 README.md
 
 ```
@@ -247,11 +241,10 @@ sgit -e '3s/\<sgit\>/gits/g' README.md
 ```
 
 
-
 ## Installation
 
 If you wish to install it you may either copy it to a place in your path or if
-you have make installed you can just run `make install` either as root or via
+you have `make` installed you can just run `make install` either as root or via
 `sudo` like:
 
 ```sh
@@ -283,7 +276,6 @@ control and `sed` is the obvious way to go about it.
 
 Working on the [IOCCC mkiocccentry](https://github.com/ioccc-src/mkiocccentry)
 and the [IOCCC temporary website](https://github.com/ioccc-src/temp-test-ioccc)
-and the [IOCCC temporary website](https://github.com/ioccc-src/temp-test-ioccc)
 repos (and in particular the latter) is what inspired me to finally do something
 about it. The latter repo will eventually be merged into the [IOCCC winner
 repo](https://github.com/ioccc-src/winner) which is the actual [IOCCC
@@ -291,10 +283,10 @@ website](https://www.ioccc.org).
 
 ### Script history
 
-This was originally a quick and dirty hack to modify files under git control
-via `sed`. It started out with some limitations like the inability to deal
-with spaces in `sed` commands, only allowing one glob and it had terrible
-efficiency because it ran git ls-files for each `sed` command.
+This was originally a quick and dirty hack to modify files under git control via
+`sed`. It started out with some limitations like the inability to deal with
+spaces in `sed` commands, only allowing one command (due to a bug) and it had
+terrible efficiency because it ran git ls-files for each `sed` command.
 
 Now it is much more thorough and is more efficient (though not perfect). It
 allows you to specify a path to `sed`, `sed` options and multiple `sed` commands
@@ -310,3 +302,9 @@ than once. Not allowing this was an oversight.
 Pull requests are welcome but I think it's mostly in a good enough state where
 this will probably generally not be needed.
 
+## Dedications
+
+This is dedicated to the [IOCCC](https://www.ioccc.org), the [IOCCC
+judges](https://www.ioccc.org/judges.html) (especially [Landon Curt
+Noll](http://www.isthe.com/chongo/) and above all my dear Mum Dianne and my
+wonderful cousin Dani.

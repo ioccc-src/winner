@@ -12,6 +12,8 @@
 # -h option to see all the options. The README.md provides much more information
 # on the usage of the script and I recommend you look at that.
 #
+# The options are described in more detail in the man page sgit.1.
+#
 # For a list of warnings see the usage string and more so the README.md file as
 # there are some options that when used together (or an option not used with
 # another) can in some cases empty files (depends on command) or one can end up
