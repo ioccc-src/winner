@@ -1,9 +1,6 @@
 # Most Well Rounded
 
 James Bonfield  
-MRC Laboratory of Molecular Biology, 
-Hills Road  
-Cambridge  
 England  
 
 
@@ -13,6 +10,8 @@ England
 make all
 ```
 
+NOTE: there is an alternate version of this program that allows one to slow down
+the game. See the Alternate code section below.
 
 ## To run:
 
@@ -21,12 +20,39 @@ make all
 ```
 
 where:
-	
+
 `[cabbage]` is a CABBAGE description file  (default: `rince.c`)
+
+### Alternate code: slowing down the game
+
+Some people may want to slow down the game by increasing the
+value 17 in the lines:
+
+
+```c
+struct timeval v= {0,1<<17} ;
+```
+
+and
+
+```c
+refresh(),c=select(k,&y,0,0,(v.tv_usec=1<<17,&v))?getch():0;
+```
+
+to another value like 18 or 19. You can do this via the alternate code like:
+
+
+```sh
+make CDEFINE="-DZ=18" clobber alt
+```
+
+Replace 18 with whatever number you wish.
+
+Use `rince.alt` as you would `rince` above.
 
 
 ## Judges' remarks:
-    
+
 The author has provided several CABBAGE files for your amusement:
 
 - [rince.data1](rince.data1) plays
@@ -72,7 +98,7 @@ should be replaced with:
 
 ```c
 select(k,&y,0,0,(v.tv_usec=1<<whatever_you_want,&v))
-```	
+```
 
 where `whatever_you_want` is some integer such as 17 or 19.
 
@@ -83,20 +109,10 @@ compiler in the first place), this program may be used to log
 out very quickly.  Unfortunately, you can't do anything else
 with it.
 
-### Slowing down the game
-
-Some people may want to slow down the game by increasing the
-value 17 in the line:
-
-
-```c
-struct timeval v= {0,1<<17} ;  
-```
-	
-to something like 18 or 19.
+### Additional notes
 
 One may also need to do a `stty sane` if you kill the program
-to restore your terminal state.
+to restore your terminal state. If that does not work try `reset`.
 
 Some people report that `rince` dumps core on their system.
 
@@ -144,7 +160,7 @@ I have compiled in on the following systems:
 
 ---
 ```
-System              OS              Compiler (and flags) 
+System              OS              Compiler (and flags)
 DECstation 5000/240 Ultrix 4.2A     c89 -std
 SPARCstation 1+     SunOS 4.1       gcc -ansi -pedantic
 SPARCstation 10/31  Solaris 2.1     gcc -ansi -pedantic     (*)

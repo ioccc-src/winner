@@ -384,7 +384,8 @@ compilers to compile the code, based on the author's remarks.
 
 ## [1990/cmills](1990/cmills/cmills.c) ([README.md](1990/cmills/README.md]))
 
-Yusuke got this to work in modern systems (it resulted in a bus error).
+Yusuke got this to work in modern systems (it previously resulted in a bus
+error).
 
 To prevent alarming warnings at linking or runtime Cody made the entry use
 `fgets()` rather than `gets()`. He notes that another option would have been to
@@ -626,7 +627,7 @@ NOTE: as noted in the README.md file and the [bugs.md](/bugs.md), this program a
 world](https://en.wikipedia.org/wiki/Earth) or just the
 [USA](https://en.wikipedia.org/wiki/United_States), respectively, without enough
 args (2). And not that we need the help or anything for this :-) but we do
-encourage you to test this :-) This should not be fixed.
+encourage you to test this :-) This should NOT be fixed.
 
 
 ## [1993/jonth](1993/jonth/jonth.c) ([README.md](1993/jonth/README.md]))
@@ -669,6 +670,10 @@ README.md files for details.
 ## [1993/rince](1993/rince/rince.c) ([README.md](1993/rince/README.md]))
 
 Yusuke supplied a patch to get this to work in modern systems.
+
+Cody provided an alternate version to simplify slowing the game down. This was
+based on our suggestion that it might be desired to slow down but done in a way
+that makes it easy to configure at compile time. See the README.md for details.
 
 
 ## [1993/schnitzi](1993/schnitzi/schnitzi.c) ([README.md](1993/schnitzi/README.md]))
