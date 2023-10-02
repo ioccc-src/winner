@@ -33,12 +33,13 @@ USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-s status] [-d] [-n] [-I st
     -h			    print help and exit
     -V			    print version and exit
     -v level		    set verbosity level
-    -s statue		    set contest status to open or closed
+    -s status		    set contest status to open or closed
+
+				NOTE: status must be one of \"open\" or \"closed\"
+
     -d			    update status_date
     -n			    update latest_news date
     -I status_ver	    update IOCCC_status_version
-			    
-				NOTE: status_ver must be one of \"open\" or \"closed\"
 
     status.json		    the file to update
 
