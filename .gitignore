@@ -1,12 +1,6 @@
-*.bak
-*.bku
-*.dSYM
-.*.sv[a-z]
-.*.sw[a-z]
-.su[a-z]
+#
+# sort with: sort -d -u
 .DS_Store
-.sv[a-z]
-.sw[a-z]
 /NOTES
 /archive/1984/
 /archive/1985/
@@ -35,9 +29,12 @@
 /archive/2018/
 /archive/2019/
 /archive/2020/
-/bugs.html
+*.bak
 /bin
-/faq.html
+*.bku
+*.dSYM
 iocccsize
 mkentry
-readme.html
+.su[a-z]
+.*.sv[a-z]
+.*.sw[a-z]

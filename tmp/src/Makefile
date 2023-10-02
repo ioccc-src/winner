@@ -44,7 +44,7 @@ CFLAGS= -O3 -g3 --pedantic -Wall
 # target information #
 ######################
 
-TARGETS= sgit winner_name
+TARGETS= winner_name
 
 ######################################
 # all - default rule - must be first #
