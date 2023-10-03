@@ -18,7 +18,8 @@ compile with clang, fixing entries to work with macOS (some of which are **very
 complicated** such as [1998/schweikh1](1998/schweikh1/schweikh1.c)), providing
 alternate code where useful or necessary, fixing where possible dead links and
 otherwise removing them, typo and consistency fixes and writing the [sgit
-tool](https://github.com/xexyl/sgit) that we've published on the website. Thank
+tool](https://github.com/xexyl/sgit) that we installed locally and have used to
+easily run `sed` on files in the repository to help build the website.  Thank
 you **very much** for your extensive efforts in helping improve the IOCCC
 presentation of past IOCCC winners and making many many past entries work with
 modern systems!
