@@ -41,7 +41,7 @@ USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-s status] [-d] [-n] [-i st
     -n			    update latest_news date
     -i status_ver	    update IOCCC_status_version
 
-				NOTE: version must match the regexp: [0-9]+\.[0-9]+ [0-9]{4}-[0-9]{2}-[0-9]{2} 		
+				NOTE: version must match the regexp: ^[0-9]+\.[0-9]+ [0-9]{4}-[0-9]{2}-[0-9]{2}$
 
     status.json		    the file to update
 
@@ -132,9 +132,9 @@ fi
 
 # check format of IOCCC_status_version if set (-i used, $UPDATE_IOCCC_STATUS_VERSION)
 if [[ -n "$UPDATE_IOCCC_STATUS_VERSION" ]]; then
-    echo "$IOCCC_STATUS_VERSION" | grep -qE '[0-9]+\.[0-9]+ [0-9]{4}-[0-9]{2}-[0-9]{2}'
+    echo "$IOCCC_STATUS_VERSION" | grep -qE '^[0-9]+\.[0-9]+ [0-9]{4}-[0-9]{2}-[0-9]{2}$'
     if [[ "${PIPESTATUS[1]}" -ne 0 ]]; then
-	echo "$0: ERROR: IOCCC_status_version must match the regexp: '[0-9]+\.[0-9]+ [0-9]{4}-[0-9]{2}-[0-9]{2}'" 1>&2
+	echo "$0: ERROR: IOCCC_status_version must match the regexp: '^[0-9]+\.[0-9]+ [0-9]{4}-[0-9]{2}-[0-9]{2}$'" 1>&2
 	exit 3
     fi
 fi
