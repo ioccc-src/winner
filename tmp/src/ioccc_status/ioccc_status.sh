@@ -26,7 +26,7 @@
 # If the -I status_ver option is used the IOCCC_status_version field will be
 # updated.
 #
-export IOCCC_STATUS_VERSION="0.0.2-0 2023-10-04" # major.minor.release-patch YYYY-MM-DD
+export IOCCC_STATUS_SCRIPT_VERSION="0.0.2-0 2023-10-04" # major.minor.release-patch YYYY-MM-DD
 
 USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-s status] [-d] [-n] [-i status_ver] status.json
 
@@ -45,7 +45,7 @@ USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-s status] [-d] [-n] [-i st
 
     status.json		    the file to update
 
-status version: $IOCCC_STATUS_VERSION"
+status version: $IOCCC_STATUS_SCRIPT_VERSION"
 
 export UPDATE_DATE=""
 export UPDATE_NEWS=""
@@ -63,7 +63,7 @@ while getopts :hVv:s:dni: flag; do
     h)	echo "$USAGE" 1>&2
 	exit 2
 	;;
-    V)	echo "$IOCCC_STATUS_VERSION" 1>&2
+    V)	echo "$IOCCC_STATUS_SCRIPT_VERSION" 1>&2
 	exit 2
 	;;
     v)	VERBOSITY="$OPTARG";
