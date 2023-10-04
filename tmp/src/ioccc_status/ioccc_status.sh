@@ -8,25 +8,16 @@
 #	https://xexyl.net		Cody Boone Ferguson
 #	https://ioccc.xexyl.net
 #
-# The script is at this just point a proof of concept but it does work, allowing
-# one to update the date of the latest news, the date of the status, the status
-# version and the status of the contest. It's not required to update all or for
-# that matter any of them.
-#
-# If that is not clear: it might or might not be needed or desired and that is
-# perfectly okay. If it's used but modified that's also okay. It gave me
-# something to do and whether or not it's useful it has served a purpose.
-#
 # If -s option is used, the status field is updated, providing that the status
 # arg is either "closed" or "open".
 #
 # If the -d or -n flags are used then it will update the status_date or
 # latest_news fields, respectively.
 # 
-# If the -I status_ver option is used the IOCCC_status_version field will be
+# If the -i status_ver option is used the IOCCC_status_version field will be
 # updated.
 #
-export IOCCC_STATUS_VERSION="0.0.1-0 2023-10-02" # major.minor.release-patch YYYY-MM-DD
+export IOCCC_STATUS_SCRIPT_VERSION="0.0.2-0 2023-10-04" # major.minor.release-patch YYYY-MM-DD
 
 USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-s status] [-d] [-n] [-i status_ver] status.json
 
@@ -41,9 +32,11 @@ USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-s status] [-d] [-n] [-i st
     -n			    update latest_news date
     -i status_ver	    update IOCCC_status_version
 
+				NOTE: version must match the regexp: ^[0-9]+\.[0-9]+ [0-9]{4}-[0-9]{2}-[0-9]{2}$
+
     status.json		    the file to update
 
-status version: $IOCCC_STATUS_VERSION"
+status version: $IOCCC_STATUS_SCRIPT_VERSION"
 
 export UPDATE_DATE=""
 export UPDATE_NEWS=""
@@ -61,7 +54,7 @@ while getopts :hVv:s:dni: flag; do
     h)	echo "$USAGE" 1>&2
 	exit 2
 	;;
-    V)	echo "$IOCCC_STATUS_VERSION" 1>&2
+    V)	echo "$IOCCC_STATUS_SCRIPT_VERSION" 1>&2
 	exit 2
 	;;
     v)	VERBOSITY="$OPTARG";
@@ -120,11 +113,20 @@ if [[ ! -r $STATUS_JSON_FILE ]]; then
     exit 1
 fi
 
-# check that if -s used that the status ($STATUS) is either 'open' or 'closed'
+# check that if -s ($STATUS_FLAG) used that the status ($STATUS) is either 'open' or 'closed'
 if [[ -n "$STATUS_FLAG" ]]; then
     if [[ "$STATUS" != "open" && "$STATUS" != "closed" ]]; then
 	echo "$0: ERROR: status must be 'open' or 'closed'" 1>&2
-	exit 1
+	exit 3
+    fi
+fi
+
+# check format of IOCCC_status_version if set (-i used, $UPDATE_IOCCC_STATUS_VERSION)
+if [[ -n "$UPDATE_IOCCC_STATUS_VERSION" ]]; then
+    echo "$IOCCC_STATUS_VERSION" | grep -qE '^[0-9]+\.[0-9]+ [0-9]{4}-[0-9]{2}-[0-9]{2}$'
+    if [[ "${PIPESTATUS[1]}" -ne 0 ]]; then
+	echo "$0: ERROR: IOCCC_status_version must match the regexp: '^[0-9]+\.[0-9]+ [0-9]{4}-[0-9]{2}-[0-9]{2}$'" 1>&2
+	exit 3
     fi
 fi
 

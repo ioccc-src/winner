@@ -88,6 +88,30 @@ some entries you should look at the original code as in `winner.orig.c` or
 `prog.orig.c`. Sometimes the original is in an alt version like `winner.alt.c`
 or `prog.alt.c`.
 
+## Q: Why have some entries that originally used `gets()` been modified to use `fgets()`? Doesn't this tamper with the entry too much?
+
+A fine line indeed has to be drawn here but it was decided that it is worth it
+because of alarming warnings that can be displayed, in some systems at runtime
+interspersed with the output of the program.
+
+For instance in macOS the entry [1990/tbr](1990/tbr/README.md) would output the
+warning in such a way that caused confusing output for the entry.
+
+In some cases this is not so easy to fix and in one case at least there is an
+alternate version that has the fix instead due to a problem it creates (correct
+output but segfaults after the output in one of the forms of input).
+
+In some cases it is not possible to fix or at least highly unlikely and so those
+have mainly not been touched except one that has had the buffer size increased
+(which could be done for others that are not possible to change to `fgets()` but
+this has not been done).
+
+In the future we, the judges, would prefer that entries use `fgets()` to prevent
+these problems.
+
+NOTE: due to 'compatibility reasons' `fgets()` stores the newline and `gets()`
+does not. We're not sure how this is compatibility but either way it can cause a
+problem and it is this that has complicated some fixes.
 
 ## Q: I cannot get entry XYZZY from year 19xx to compile!
 
@@ -800,3 +824,77 @@ exaggeration](https://books.google.com/books?id=ms3tce7BgJsC&lpg=PA134&vq=%22the
 p.s. Here is an image of F. D. C. Willard:
 
 [F D C Willard](png/F.D.C.Willard.png)
+
+## Q: Why do Makefiles use `-Weverything` with `clang`? Don't you know that its use is not recommended by clang developers?
+
+The use of `-Weverything` is limited to when one forces `CC=clang`. Users with
+clang compilers are not required to set `CC=clang` but when they do,
+`-Weverything` is enabled with all of its challenges, pedantic warnings, and
+sometimes warnings about things that do not matter, some of which are frankly
+frivolous and often downright dubious.
+
+To enable this feature:
+
+```sh
+make clobber all CC=clang
+```
+
+or:
+
+```sh
+make clobber all 'CWARN+= -Weverything'
+```
+
+though it should be noted that if one tries `-Weverything` with compilers that
+are not `clang` they might see something like:
+
+```sh
+echo 'int main(void) {}' > foo.c ; cc -Weverything foo.c -o foo
+cc: error: unrecognized command-line option '-Weverything'
+```
+
+which means that it can't even be compiled. Thus the proper way to do it is the
+first one.
+
+IOCCC authors who have access to a `clang` compiler might wish to try they their
+hand at compiling with `-Weverything` while using a minimum of `-Wno-foo`
+statements.  Sometimes there is a technical or pedantic issue that
+`-Weverything` warns about that would merit a change to your C code. Of course
+if you're running out of bytes due to rule 2[ab] one might not have much choice.
+Thus is something that obfuscators simply sometimes have to deal with!
+
+If you to try to use minimize the number of `-Wno-foo` options needed with
+`-Weverything`, please mention this in your remarks about the entry, as the
+judges note you attempt to honor it (see also below). In some cases your
+obfuscated code will issue warnings with `-Weverything` no matter what: the
+`-Wno-poison-system-directories` is a common example of this but there are
+others as well.
+
+If you do try for a warning clean `-Weverything`, keep on mind that while _your_
+compile environment might be warning free, a different clang version or a
+different build environment might still have warnings. For instance the warning
+set is different in macOS (which by default is `clang` even when run as `gcc`!)
+than linux! Given that your entry *MUST* work as documented, you may be safer to
+say that your entry keeps the number of warnings and `-Wno-foo` options while
+compiling with `clang -Weverything` at a minimum. Because if you claim zero
+warnings, and we find a warning situation, this may diminish the value of your
+entry as it is not as documented. Thus it might be wise to point this out and
+also if you can test it in multiple platforms (or versions of `clang`, see
+below note) this would be advisable.
+
+NOTE: different versions of `clang` have other differences as well. For instance
+a defect of `clang` (which was fixed in a lot of entries by [Cody Boone
+Ferguson](/winners.html#Cody_Boone_Ferguson) and some were fixed by us, the
+[judges](https://www.ioccc.org/judges.html) as well) is that it requires that
+`main()`'s arguments to be of a specific type. However some versions of `clang`
+are more strict in the number of args allowed. These reasons are part of why
+numerous entries had to be modified so that `main()` calls another function
+instead of doing it all in `main()`. Another reason was that some entries that
+recursively called `main()` caused a crash or otherwise broke the entry in
+modern systems. Some entries do not work in `clang` (or at least do not work
+completely) due to these defects, for instance
+[1989/westley](1989/westley/README.md).
+
+As you can see, using `clang` has some additional problems to work out but if
+you can get your entry to work well in `clang` it might very well be considered
+better than other entries.
