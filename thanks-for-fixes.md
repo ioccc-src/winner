@@ -133,6 +133,10 @@ like to refer you to the original file in
 [sicherman.alt.c](1985/sicherman/sicherman.alt.c) and he suggests that you then compare it
 to [sicherman.c](1985/sicherman/sicherman.c) for some good old C-fashioned fun!
 
+Later on Cody improved the fix so that it looks much more like the original
+entry which can be found in
+[1985/sicherman/sicherman.orig.c](1985/sicherman/sicherman.orig.c).
+
 
 ## [1986/holloway](1986/holloway/holloway.c) ([README.md](1986/holloway/README.md]))
 
