@@ -800,3 +800,77 @@ exaggeration](https://books.google.com/books?id=ms3tce7BgJsC&lpg=PA134&vq=%22the
 p.s. Here is an image of F. D. C. Willard:
 
 [F D C Willard](png/F.D.C.Willard.png)
+
+## Q: Why do Makefiles use `-Weverything` with `clang`? Don't you know that its use is not recommended by clang developers?
+
+The use of `-Weverything` is limited to when one forces `CC=clang`. Users with
+clang compilers are not required to set `CC=clang` but when they do,
+`-Weverything` is enabled with all of its challenges, pedantic warnings, and
+sometimes warnings about things that do not matter, some of which are frankly
+frivolous and often downright dubious.
+
+To enable this feature:
+
+```sh
+make clobber all CC=clang
+```
+
+or:
+
+```sh
+make clobber all 'CWARN+= -Weverything'
+```
+
+though it should be noted that if one tries `-Weverything` with compilers that
+are not `clang` they might see something like:
+
+```sh
+echo 'int main(void) {}' > foo.c ; cc -Weverything foo.c -o foo
+cc: error: unrecognized command-line option '-Weverything'
+```
+
+which means that it can't even be compiled. Thus the proper way to do it is the
+first one.
+
+IOCCC authors who have access to a `clang` compiler might wish to try they their
+hand at compiling with `-Weverything` while using a minimum of `-Wno-foo`
+statements.  Sometimes there is a technical or pedantic issue that
+`-Weverything` warns about that would merit a change to your C code. Of course
+if you're running out of bytes due to rule 2[ab] one might not have much choice.
+Thus is something that obfuscators simply sometimes have to deal with!
+
+If you to try to use minimize the number of `-Wno-foo` options needed with
+`-Weverything`, please mention this in your remarks about the entry, as the
+judges note you attempt to honor it (see also below). In some cases your
+obfuscated code will issue warnings with `-Weverything` no matter what: the
+`-Wno-poison-system-directories` is a common example of this but there are
+others as well.
+
+If you do try for a warning clean `-Weverything`, keep on mind that while _your_
+compile environment might be warning free, a different clang version or a
+different build environment might still have warnings. For instance the warning
+set is different in macOS (which by default is `clang` even when run as `gcc`!)
+than linux! Given that your entry *MUST* work as documented, you may be safer to
+say that your entry keeps the number of warnings and `-Wno-foo` options while
+compiling with `clang -Weverything` at a minimum. Because if you claim zero
+warnings, and we find a warning situation, this may diminish the value of your
+entry as it is not as documented. Thus it might be wise to point this out and
+also if you can test it in multiple platforms (or versions of `clang`, see
+below note) this would be advisable.
+
+NOTE: different versions of `clang` have other differences as well. For instance
+a defect of `clang` (which was fixed in a lot of entries by [Cody Boone
+Ferguson](/winners.html#Cody_Boone_Ferguson) and some were fixed by us, the
+[judges](https://www.ioccc.org/judges.html) as well) is that it requires that
+`main()`'s arguments to be of a specific type. However some versions of `clang`
+are more strict in the number of args allowed. These reasons are part of why
+numerous entries had to be modified so that `main()` calls another function
+instead of doing it all in `main()`. Another reason was that some entries that
+recursively called `main()` caused a crash or otherwise broke the entry in
+modern systems. Some entries do not work in `clang` (or at least do not work
+completely) due to these defects, for instance
+[1989/westley](1989/westley/README.md).
+
+As you can see, using `clang` has some additional problems to work out but if
+you can get your entry to work well in `clang` it might very well be considered
+better than other entries.
