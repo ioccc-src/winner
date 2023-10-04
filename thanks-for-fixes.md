@@ -138,6 +138,17 @@ entry which can be found in
 [1985/sicherman/sicherman.orig.c](1985/sicherman/sicherman.orig.c).
 
 
+## [1986/hague](1986/hague/hague.c) ([README.md](1986/hague/README.md]))
+
+Cody added alt code that uses `fgets()` to avoid alarming and annoying warnings
+about `gets()` being unsafe. The reason this is alt code, at least for now, is
+that although it will print the results in both forms of invocation, after the
+output in one invocation form it will segfault. This might be addressed later on
+or it might be decided that it is worth it, with a caveat in the Makefile or at
+least the README.md file, since it still prints out the correct output, though
+that seems like it might not be so ideal unless it can be fixed (which might be
+done). See the [bugs.md](/bugs.md) file for details.
+
 ## [1986/holloway](1986/holloway/holloway.c) ([README.md](1986/holloway/README.md]))
 
 Cody fixed this to compile and work with clang (it already worked with gcc).

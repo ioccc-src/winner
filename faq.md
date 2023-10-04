@@ -88,6 +88,30 @@ some entries you should look at the original code as in `winner.orig.c` or
 `prog.orig.c`. Sometimes the original is in an alt version like `winner.alt.c`
 or `prog.alt.c`.
 
+## Q: Why have some entries that originally used `gets()` been modified to use `fgets()`? Doesn't this tamper with the entry too much?
+
+A fine line indeed has to be drawn here but it was decided that it is worth it
+because of alarming warnings that can be displayed, in some systems at runtime
+interspersed with the output of the program.
+
+For instance in macOS the entry [1990/tbr](1990/tbr/README.md) would output the
+warning in such a way that caused confusing output for the entry.
+
+In some cases this is not so easy to fix and in one case at least there is an
+alternate version that has the fix instead due to a problem it creates (correct
+output but segfaults after the output in one of the forms of input).
+
+In some cases it is not possible to fix or at least highly unlikely and so those
+have mainly not been touched except one that has had the buffer size increased
+(which could be done for others that are not possible to change to `fgets()` but
+this has not been done).
+
+In the future we, the judges, would prefer that entries use `fgets()` to prevent
+these problems.
+
+NOTE: due to 'compatibility reasons' `fgets()` stores the newline and `gets()`
+does not. We're not sure how this is compatibility but either way it can cause a
+problem and it is this that has complicated some fixes.
 
 ## Q: I cannot get entry XYZZY from year 19xx to compile!
 

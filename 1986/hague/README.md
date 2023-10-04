@@ -9,9 +9,9 @@ UK
 make all
 ```
 
-
-NOTE: this entry uses `gets()` so you might get a warning about this when
-compiling and running this program with some systems.
+There is an alternate version which uses `fgets()`. See the Alternate code
+section below as well as the [bugs.md](/bugs.md) file for more details as to why
+it is worth having as an alternate version.
 
 ## To run:
 
@@ -28,6 +28,30 @@ IOCCC
 International Obfuscated C Code Contest
 Jim Hague
 ```
+
+Also try:
+
+```sh
+echo IOCCC | ./hague
+```
+
+### Alternate code:
+
+Whereas with some entries the change to `fgets()` (see the [FAQ](/faq.md) for
+details on why this has been done) can be done in the original code this entry
+is more complicated in that although both forms of input show the correct
+output, one form segfaults after the output.
+
+If you wish to use this alternate code, do:
+
+```sh
+make alt
+```
+
+Use `hague.alt` as you would `hague` above. As for which form will segfault
+after outputting the text it is when text is piped into the program. Again see
+the [bugs.md](/bugs.md) file for more details.
+
 
 
 ## Judges' remarks:
