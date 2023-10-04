@@ -26,7 +26,7 @@
 # If the -I status_ver option is used the IOCCC_status_version field will be
 # updated.
 #
-export IOCCC_STATUS_VERSION="0.0.1-0 2023-10-02" # major.minor.release-patch YYYY-MM-DD
+export IOCCC_STATUS_VERSION="0.0.2-0 2023-10-04" # major.minor.release-patch YYYY-MM-DD
 
 USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-s status] [-d] [-n] [-i status_ver] status.json
 
@@ -40,6 +40,8 @@ USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-s status] [-d] [-n] [-i st
     -d			    update status_date
     -n			    update latest_news date
     -i status_ver	    update IOCCC_status_version
+
+				NOTE: version must match the regexp: [0-9]+\.[0-9]+ [0-9]{4}-[0-9]{2}-[0-9]{2} 		
 
     status.json		    the file to update
 
@@ -120,11 +122,20 @@ if [[ ! -r $STATUS_JSON_FILE ]]; then
     exit 1
 fi
 
-# check that if -s used that the status ($STATUS) is either 'open' or 'closed'
+# check that if -s ($STATUS_FLAG) used that the status ($STATUS) is either 'open' or 'closed'
 if [[ -n "$STATUS_FLAG" ]]; then
     if [[ "$STATUS" != "open" && "$STATUS" != "closed" ]]; then
 	echo "$0: ERROR: status must be 'open' or 'closed'" 1>&2
-	exit 1
+	exit 3
+    fi
+fi
+
+# check format of IOCCC_status_version if set (-i used, $UPDATE_IOCCC_STATUS_VERSION)
+if [[ -n "$UPDATE_IOCCC_STATUS_VERSION" ]]; then
+    echo "$IOCCC_STATUS_VERSION" | grep -qE '[0-9]+\.[0-9]+ [0-9]{4}-[0-9]{2}-[0-9]{2}'
+    if [[ "${PIPESTATUS[1]}" -ne 0 ]]; then
+	echo "$0: ERROR: IOCCC_status_version must match the regexp: '[0-9]+\.[0-9]+ [0-9]{4}-[0-9]{2}-[0-9]{2}'" 1>&2
+	exit 3
     fi
 fi
 
