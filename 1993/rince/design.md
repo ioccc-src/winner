@@ -2,7 +2,7 @@
 
 Due to the long time this has been slowly evolving, it's hard to describe
 quite whether it's been `implemented`. I think perhaps evolve is a better
-term. I basic concept behind the program is to describe a game as a simple,
+term. The basic concept behind the program is to describe a game as a simple,
 slightly cheaty, cellular automata system, with some of the transitions
 bound to key presses.
 
