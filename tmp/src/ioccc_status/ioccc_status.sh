@@ -8,22 +8,13 @@
 #	https://xexyl.net		Cody Boone Ferguson
 #	https://ioccc.xexyl.net
 #
-# The script is at this just point a proof of concept but it does work, allowing
-# one to update the date of the latest news, the date of the status, the status
-# version and the status of the contest. It's not required to update all or for
-# that matter any of them.
-#
-# If that is not clear: it might or might not be needed or desired and that is
-# perfectly okay. If it's used but modified that's also okay. It gave me
-# something to do and whether or not it's useful it has served a purpose.
-#
 # If -s option is used, the status field is updated, providing that the status
 # arg is either "closed" or "open".
 #
 # If the -d or -n flags are used then it will update the status_date or
 # latest_news fields, respectively.
 # 
-# If the -I status_ver option is used the IOCCC_status_version field will be
+# If the -i status_ver option is used the IOCCC_status_version field will be
 # updated.
 #
 export IOCCC_STATUS_SCRIPT_VERSION="0.0.2-0 2023-10-04" # major.minor.release-patch YYYY-MM-DD
