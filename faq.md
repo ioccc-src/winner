@@ -106,12 +106,17 @@ have mainly not been touched except one that has had the buffer size increased
 (which could be done for others that are not possible to change to `fgets()` but
 this has not been done).
 
+Some entries can be made to look almost identical to the original entry. For
+instance the fix to [1988/reddy](1988/reddy/README.md) required only a single
+`#define` be added.
+
 In the future we, the judges, would prefer that entries use `fgets()` to prevent
 these problems.
 
 NOTE: due to 'compatibility reasons' `fgets()` stores the newline and `gets()`
 does not. We're not sure how this is compatibility but either way it can cause a
 problem and it is this that has complicated some fixes.
+
 
 ## Q: I cannot get entry XYZZY from year 19xx to compile!
 
