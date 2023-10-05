@@ -178,6 +178,22 @@ If the entry requires gcc and you did not explicitly install gcc in macOS you
 will not be able to run or use these entries. This is because macOS gcc is
 actually clang, even `/usr/bin/gcc`.
 
+That being said many (if not most) of these entries have been fixed and some
+others will be looked at, when found.
+
+## Q: What is `cb` that is mentioned in some of the older entries?
+
+This was a C beautifier for Plan 9. There exists a man page and the source code
+can be found
+[here](https://github.com/plan9foundation/plan9/tree/main/sys/src/cmd/cb) at the
+[Plan 9 History, from 1992-09-21 to 2015-01-10 GitHub
+repository](https://github.com/plan9foundation/plan9).
+
+The man page rendered as html can be found
+[here](https://9p.io/magic/man2html/1/cb).
+
+If there is a version for Unix or Linux it cannot be found now.
+
 ## Q: I can't get XYZZY entry to compile with clang. What can I do?
 
 Although we have fixed numerous entries to work with clang (sometimes in an alt
