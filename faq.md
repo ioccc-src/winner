@@ -183,16 +183,11 @@ others will be looked at, when found.
 
 ## Q: What is `cb` that is mentioned in some of the older entries?
 
-This was a C beautifier for Plan 9. There exists a man page and the source code
-can be found
-[here](https://github.com/plan9foundation/plan9/tree/main/sys/src/cmd/cb) at the
-[Plan 9 History, from 1992-09-21 to 2015-01-10 GitHub
-repository](https://github.com/plan9foundation/plan9).
+This was a C beautifier for Unix, both AT&T and Berkeley, but it seems to no
+longer be available, code wise, except for Plan 9, but Plan 9 was never used for
+judging the IOCCC. A Unix man page for `cb`
+[still exists](https://www.ibm.com/docs/en/aix/7.1?topic=c-cb-command).
 
-The man page rendered as html can be found
-[here](https://9p.io/magic/man2html/1/cb).
-
-If there is a version for Unix or Linux it cannot be found now.
 
 ## Q: I can't get XYZZY entry to compile with clang. What can I do?
 
