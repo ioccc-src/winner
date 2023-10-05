@@ -186,7 +186,7 @@ others will be looked at, when found.
 This was a C beautifier for Unix, both AT&T and Berkeley, but it seems to no
 longer be available, code wise, except for Plan 9, but Plan 9 was never used for
 judging the IOCCC. A Unix man page for `cb`
-[still exists](https://www.ibm.com/docs/en/aix/7.1?topic=c-cb-command).
+[still exists](https://www.ibm.com/docs/en/aix/7.3?topic=c-cb-command).
 
 
 ## Q: I can't get XYZZY entry to compile with clang. What can I do?
