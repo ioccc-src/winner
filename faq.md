@@ -904,16 +904,14 @@ also if you can test it in multiple platforms (or versions of `clang`, see
 below note) this would be advisable.
 
 NOTE: different versions of `clang` have other differences as well. For instance
-a defect of `clang` (which was fixed in a lot of entries by [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson) and some were fixed by us, the
-[judges](https://www.ioccc.org/judges.html) as well) is that it requires that
-`main()`'s arguments to be of a specific type. However some versions of `clang`
-are more strict in the number of args allowed. These reasons are part of why
-numerous entries had to be modified so that `main()` calls another function
-instead of doing it all in `main()`. Another reason was that some entries that
-recursively called `main()` caused a crash or otherwise broke the entry in
-modern systems. Some entries do not work in `clang` (or at least do not work
-completely) due to these defects, for instance
+a defect of `clang` that required numerous entries to be fixed is that it
+requires that `main()`'s arguments to be of a specific type. However some
+versions of `clang` are more strict in the number of args allowed. These reasons
+are part of why numerous entries had to be modified so that `main()` calls
+another function instead of doing it all in `main()`. Another reason was that
+some entries that recursively called `main()` caused a crash or otherwise broke
+the entry in modern systems. Some entries do not work in `clang` (or at least do
+not work completely) due to these defects, for instance
 [1989/westley](1989/westley/README.md).
 
 As you can see, using `clang` has some additional problems to work out but if
