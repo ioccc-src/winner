@@ -648,6 +648,16 @@ now uses a redefined `gets()`. This did require modifying the line number with
 `#line 1` under the macro `gets()`. Still this cannot work with clang due to
 different compiler messages. See [bugs.md](/bugs.md) for details.
 
+## [1992/nathan](1992/nathan/nathan.c) ([README.md](1992/nathan/README.md))
+
+Cody added the original file back as it was deemed that the export restrictions
+should no longer be a cause of concern for this entry. Doing this did require a
+change to Cody's [2020/ferguson2](2020/ferguson2/README.md) entry as it's
+referenced.
+
+Cody cynically noted that if he goes quiet, for instance if he no longer
+participates in the IOCCC, that it must be our fault! :-)
+
 
 ## [1992/westley](1992/westley/westley.c) ([README.md](1992/westley/README.md]))
 
@@ -1606,6 +1616,17 @@ He also added explicit linking of libm (`-lm`) for systems that do not do this
 Cody added explicit linking of libm (`-lm`) for systems that do not do this
 (linux doesn't seem to but macOS does).
 
+## [2018/ferguson](2018/ferguson/prog.c) ([README.md](2018/ferguson/README.md))
+
+Cody, with irony well intended :-), fixed the [test.sh
+script](2018/ferguson/test.sh) for portability, shellcheck, making it executable
+and other things, fixed dead links in the man page, updated the test-strings.txt
+file and other things as well.
+
+Landon notes that Cody will probably never finish changes in his entries and
+that's probably true: let's just say that for the IOCCC I'm (Cody) a weasel! :-)
+(but isn't that kind of the point ? :-) )
+
 ## [2018/hou](2018/hou/prog.c) ([README.md](2018/hou/README.md))
 
 Cody added explicit linking of libm (`-lm`) for systems that do not do this
@@ -1669,6 +1690,37 @@ debugging it since it works with `-O0`.
 
 He also added the script [demo.sh](2019/karns/demo.sh) to showcase the entry a
 bit more easily.
+
+## [2020/ferguson2](2020/ferguson1/prog.c) ([README.md](2020/ferguson1/README.md))
+
+Cody, with intentional irony here :-), fixed formatting, links and typos in
+various files.
+
+He improved the [termcaps.c test utility](2020/ferguson1/termcaps.c), bug fixed
+[play.sh](2020/ferguson1/play.sh), fixed other scripts and the Makefile, changed
+some files to be markdown (and fixed problems that he caused in doing so :-) ),
+fixed typos and formatting and he also fixed some issues that occurred when
+files were renamed to `.md` from `.markdown`.
+
+Most importantly he also added some corrections to the vital [Double
+layered chocolate fudge cake recipe](2020/ferguson1/chocolate-cake.md) :-)
+
+Yes the irony here is as rich as the chocolate cake: the question is do you know
+how rich it is? If not and you like chocolate I (that is Cody :-) ) highly
+recommend you give it a go! :-)
+
+## [2020/ferguson2](2020/ferguson2/prog.c) ([README.md](2020/ferguson2/README.md))
+
+Cody, with intentional irony here :-), fixed formatting, links and typos in
+various files.
+
+He also fixed some issues that occurred when files were renamed to `.md` from
+`.markdown`.
+
+Most importantly he also added some corrections to the vital [Double
+layered chocolate fudge cake recipe](2020/ferguson2/chocolate-cake.md),
+enciphered though it is :-)
+
 
 ## [2020/kurdyukov2](2020/kurdyukov2/prog.c) ([README.md](2020/kurdyukov2/README.md))
 
