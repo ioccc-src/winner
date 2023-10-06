@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Wed 12 Jul 2023 11:54:12 UTC*
+*Last updated: Fri 06 Oct 2023 10:45:23 UTC*
 
 This document is primarily for [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) as he (that is I :-) ) wanted a way
@@ -17,7 +17,7 @@ this file the case is mostly _NOT_ been done).
 - Find entries with bugs as well INABIAF and add to [bugs.md](/bugs.md).
     As far as I am aware the ones that have not been checked are > 2011 (and two
     entries in 2011, vik and zucker) and possibly some of the earlier years. I
-    ([Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson)) have spent too
+    ([Cody Boone Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson)) have spent too
     much time when working on formatting the README.md files on finding problems
     out (and in some cases fixing or trying but not yet succeeding to fix an
     entry); if I did not do that I would be done with fixing the README.md files
@@ -29,8 +29,8 @@ this file the case is mostly _NOT_ been done).
 - Resolve as many of the issues in [bugs.md](/bugs.md) with the exception of the
 INABIAF ones. This is likely not possible for all (one in particular comes to
 mind that abuses a bug in a now very old gcc version - this obviously cannot be
-fixed but I added an alt version that does what it used to do) but many
-certainly can be (and most have been) fixed.
+fixed but I added an alt version that does what it used to do so it's fine) but
+many certainly can be - and actually most have been - fixed.
 
 - Check for typos in README.md files. Although I did up through I believe 2011 I
 have to do another pass through all except that as of 12 July 2023 I went
@@ -56,13 +56,14 @@ fix any issues.
     on one line only. Note that earlier spaces were being added to the end of
     the line but after discussion on GitHub it was decided it is preferable to
     have `<br>` instead.
-    * [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) has done many and
-    has some kind of record of what he's done but these can be added later by
-    having a list of years to check. However, as noted on 06 July 2023, all
-    years will have to be checked again so this might not be as important except
-    that the years not checked / fixed should only need one pass (but probably
-    will have a second pass anyway just to make sure things are good as seeing
-    things a second time is a good way to find additional errors).
+    * [Cody Boone
+    Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson) has done
+    many and has some kind of record of what he's done but these can be added
+    later by having a list of years to check. However, as noted on 06 July 2023,
+    all years will have to be checked again so this might not be as important
+    except that the years not checked / fixed should only need one pass (but
+    probably will have a second pass anyway just to make sure things are good as
+    seeing things a second time is a good way to find additional errors).
 
 - Remove addresses from older winning entries but (if known) keep country code +
 add country code and name to the respective JSON file in the [author](/author)
@@ -81,10 +82,6 @@ and then typing the below from the entry's main directory
 ([2004/gavin](2004/gavin)), making sure no output is displayed:
 
 	diff -r . img/fs|grep -v 'Only in'
-
-- Try and see if I (Cody) can make [1985/sicherman](1985/sicherman/sicherman.c)
-even more like its original form. I have some ideas here but it might involve
-some discussion too. See 22 May 2023 commits for the improvements already made.
 
 - Check all Makefiles for notes / warnings on compilation and see if they can be
 copied to _after_ the compilation as they're more likely to be seen this way. In
@@ -124,3 +121,10 @@ there.
     link to point to the right location.
     * Do we need to update the links that point to GitHub raw content? I'm not
     sure.
+
+
+- Remove WHERE CORRECT the references to those who fixed or provided alt code in
+entries in the respective README.md files. This cannot be done without examining
+each because some names are mentioned by the author. For instance I (Cody) can
+think of at least three where I have been mentioned explicitly by the author:
+one in 2018, one in 2019 and one in 2020.
