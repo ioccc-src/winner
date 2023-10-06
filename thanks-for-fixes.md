@@ -1530,9 +1530,11 @@ sure if he wants to be thanked either :-) but we appreciate it nonetheless.
 
 ## [2013/birken](2013/birken/birken.c) ([README.md](2013/birken/README.md]))
 
-Along with the [demo.sh](2013/birken/demo.sh), based on the author's
-recommendations, Cody added an alternate version for this entry which allows one
-to control how fast the painting is done.
+Along with the [demo.sh](2013/birken/demo.sh) that he added, Cody also added an
+alternate version which allows one to control how fast the painting is done,
+based on the author's recommendations, except that Cody made it configurable at
+compile time just like he did with other entries (in all but one it was
+alternate code) that use `usleep()`.
 
 
 ## [2013/cable3](2013/cable3/cable3.c) ([README.md](2013/cable3/README.md]))
