@@ -9,32 +9,33 @@ There are several people who have contributed to the above mentioned
 several thousand changes and important improvements.
 
 We call out the extensive contributions of [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson) who is responsible for many of the
-improvements including many, many **very complicated bug fixes** such as
-[2001/anonymous](2001/anonymous/anonymous.c) and
+Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson) who is
+responsible for many of the improvements including many, many **very complicated
+bug fixes** such as [2001/anonymous](2001/anonymous/anonymous.c) and
 [2004/burley](2004/burley/burley.c), making entries not require
 `-traditional-cpp` (which are **very complicated fixes**), fixing entries to
 compile with clang, fixing entries to work with macOS (some of which are **very
 complicated** such as [1998/schweikh1](1998/schweikh1/schweikh1.c)), providing
 alternate code where useful or necessary, fixing where possible dead links and
-otherwise removing them, typo and consistency fixes and writing the [sgit
-tool](https://github.com/xexyl/sgit) that we installed locally and have used to
-easily run `sed` on files in the repository to help build the website.  Thank
-you **very much** for your extensive efforts in helping improve the IOCCC
-presentation of past IOCCC winners and making many many past entries work with
-modern systems!
+otherwise removing them, typo and consistency fixes, improving **ALL
+_Makefiles_** and writing the [sgit tool](https://github.com/xexyl/sgit) that we
+installed locally and have used to easily run `sed` on files in the repository
+to help build the website.  Thank you **very much** for your extensive efforts
+in helping improve the IOCCC presentation of past IOCCC winners and making many
+many past entries work with modern systems!
 
-[Yusuke Endoh](/winners.html#Yusuke_Endoh) supplied a number of important bug
-fixes to a number of past IOCCC winners. Some of those fixes were **very
-technically challenging** such as [1989/robison](1989/robison/robison.c),
-[1990/cmills](1990/cmills/cmills.c), [1992/lush](1992/lush/lush.c) and
-[2001/ctk](2001/ctk/ctk.c). Thank you **very much** for your help!
+[Yusuke Endoh](https://www.ioccc.org/winners.html#Yusuke_Endoh) supplied a
+number of important bug fixes to a number of past IOCCC winners. Some of those
+fixes were **very technically challenging** such as
+[1989/robison](1989/robison/robison.c), [1990/cmills](1990/cmills/cmills.c),
+[1992/lush](1992/lush/lush.c) and [2001/ctk](2001/ctk/ctk.c). Thank you **very
+much** for your help!
 
-A good number of the [past winners of the IOCCC](winners.html)
-tested, identified and helped correct and/or improve the write-ups
-of fellow IOCCC winners for the year that they won. The list of
-those past winners is too long to mention: nevertheless the
-[IOCCC judges](judges.html) **very much appreciate** those who
+A good number of the [past winners of the
+IOCCC](https://www.ioccc.org/winners.html) tested, identified and helped correct
+and/or improve the write-ups of fellow IOCCC winners for the year that they won.
+The list of those past winners is too long to mention: nevertheless the [IOCCC
+judges](https://www.ioccc.org/judges.html) **very much appreciate** those who
 helped improve the presentation of their fellow IOCCC winners.
 
 
@@ -48,6 +49,17 @@ important contributions to the IOCCC presentation of past IOCCC winners.
 We are pleased to note the many contributions, **made since 2021 Jan 01**,
 on a winner by winner basis.
 
+## Makefile fixes and improvements
+
+Cody made a variety of changes in all Makefiles, sometimes to get an entry to
+work, all noted below, but he also **improved them all** in at least one or two
+ways. For instance he changed the `LIBS` variable to `LDFLAGS` as that is the
+standard variable. This simplifies compiling without having to modify the
+Makefile which can be useful if something changes or if someone is trying to fix
+an entry but forgets to change the Makefile or even if they don't want to make a
+change due to a temporary test. These would of course depend on the compiler
+invocation but since `LDFLAGS` is standard it is more likely to be used by
+default so no need to check the Makefiles.
 
 ## [1984/anonymous](1984/anonymous/anonymous.c) ([README.md](1984/anonymous/README.md))
 
@@ -447,8 +459,7 @@ not having `.` in it). He notes that with an invocation in the try section will
 with macOS show what appears to be an error message but is actually okay. He
 gives more information in the [bugs.md](/bugs.md) file.
 
-NOTE: as `btoa` is not common we used a ruby script from [Yusuke
-Endoh](/winners.html#Yusuke_Endoh).
+NOTE: as `btoa` is not common we used a ruby script from Yusuke.
 
 
 ## [1990/tbr](1990/tbr/tbr.c) ([README.md](1990/tbr/README.md]))
@@ -593,10 +604,10 @@ loop).
 
 ## [1992/kivinen](1992/kivinen/kivinen.c) ([README.md](1992/kivinen/README.md]))
 
-It was observed that on modern systems this goes much too quick. [Yusuke
-Endoh](/winners.html#Yusuke_Endoh) created a patch that calls `usleep()` but
-Cody thought the value was too slow so he made it a macro in the Makefile `Z`,
-defaulting at 15000. You can reconfigure it like:
+It was observed that on modern systems this goes much too quick. Yusuke created
+a patch that calls `usleep()` but Cody thought the value was too slow so he made
+it a macro in the Makefile `Z`, defaulting at 15000. You can reconfigure it
+like:
 
 ```sh
 make clobber Z=1000 all
@@ -648,10 +659,9 @@ encourage you to test this :-) This should NOT be fixed.
 
 ## [1993/jonth](1993/jonth/jonth.c) ([README.md](1993/jonth/README.md]))
 
-Both Cody and [Yusuke Endoh](/winners.html#Yusuke_Endoh) fixed this so that it
-will work with modern systems. Yusuke provided some fixes of the X code and Cody
-fixed the C pre-processor directives so that it would compile. It used to be
-that you could get away with code like:
+Both Cody and Yusuke fixed this so that it will work with modern systems. Yusuke
+provided some fixes of the X code and Cody fixed the C pre-processor directives
+so that it would compile. It used to be that you could get away with code like:
 
 ```c
 G        int i,j
@@ -789,8 +799,7 @@ using gcc but macOS, having only clang by default (even the gcc binary
 Cody proposed a fix for this to compile with clang and Landon implemented it
 after some discussion. The reason Cody did not do it is because he thought it
 was the wrong output but as it happens the try section below was worded a bit
-confusingly. He looked at [Yusuke Endoh's](/winners.html#Yusuke_Endoh) analysis
-found
+confusingly. He looked at Yusuke's] analysis found
 [here](https://mame-github-io.translate.goog/ioccc-ja-spoilers/1996/dalbec.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp)
 but he missed that Yusuke added a '...' after the result which made him think
 the fix was wrong. Cody also made the recommended change of the author to make
@@ -1036,7 +1045,7 @@ checked prior to running the function just like the author did for the factorial
 64-bit linux or macOS. See below portability notes as well as another fix in
 this entry by Yusuke.
 
-### Portability notes:
+## Portability notes:
 
 With a tip from Yusuke we rediscovered the author's [web page for this
 program](https://bellard.org/otcc/) where it is stated that this will only work
@@ -1087,9 +1096,8 @@ also refers to sound devices in macOS).
 
 ## [2001/ctk](2001/ctk/ctk.c) ([README.md](2001/ctk/README.md]))
 
-The ANSI escape codes were no longer valid but [Yusuke
-Endoh](/winners.html#Yusuke_Endoh) provided a patch to fix the ANSI escape
-codes. This works with macOS as well.
+The ANSI escape codes were no longer valid but Yusuke provided a patch to fix
+the ANSI escape codes. This works with macOS as well.
 
 
 ## [2001/dgbeards](2001/dgbeards/dgbeards.c) ([README.md](2001/dgbeards/README.md]))
