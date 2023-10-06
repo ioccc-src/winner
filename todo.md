@@ -83,10 +83,6 @@ and then typing the below from the entry's main directory
 
 	diff -r . img/fs|grep -v 'Only in'
 
-- Try and see if I (Cody) can make [1985/sicherman](1985/sicherman/sicherman.c)
-even more like its original form. I have some ideas here but it might involve
-some discussion too. See 22 May 2023 commits for the improvements already made.
-
 - Check all Makefiles for notes / warnings on compilation and see if they can be
 copied to _after_ the compilation as they're more likely to be seen this way. In
 some cases this will have to be done in the Makefile via `|| :` (that might be
