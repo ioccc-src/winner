@@ -53,13 +53,23 @@ on a winner by winner basis.
 
 Cody made a variety of changes in all Makefiles, sometimes to get an entry to
 work, all noted below, but he also **improved them all** in at least one or two
-ways. For instance he changed the `LIBS` variable to `LDFLAGS` as that is the
-standard variable. This simplifies compiling without having to modify the
-Makefile which can be useful if something changes or if someone is trying to fix
-an entry but forgets to change the Makefile or even if they don't want to make a
-change due to a temporary test. These would of course depend on the compiler
-invocation but since `LDFLAGS` is standard it is more likely to be used by
-default so no need to check the Makefiles.
+ways.
+
+For instance he changed the `LIBS` variable to `LDFLAGS` as that is the standard
+variable. This simplifies compiling without having to modify the Makefile which
+can be useful if something changes or if someone is trying to fix an entry but
+forgets to change the Makefile or even if they don't want to make a change due
+to a temporary test. These would of course depend on the compiler invocation but
+since `LDFLAGS` is standard it is more likely to be used by default so no need
+to check the Makefiles.
+
+Sometimes there were bad characters or rules that caused the entry to fail to
+compile or not work in some way.
+
+Where useful he added some notes to the Makefiles during compilation to let one
+know of certain problems or features that matter.
+
+There were some other fixes as well including typos in the Makefiles.
 
 ## [1984/anonymous](1984/anonymous/anonymous.c) ([README.md](1984/anonymous/README.md))
 
@@ -1602,6 +1612,11 @@ Cody added explicit linking of libm (`-lm`) for systems that do not do this
 (linux doesn't seem to but macOS does).
 
 
+## [2019/burton](2019/burton/prog.c) ([README.md](2019/burton/README.md]))
+
+Cody fixed the Makefile which had a bad character, a '%' instead of a '$' which
+caused a rule to fail.
+
 
 ## [2019/ciura](2019/ciura/prog.c) ([README.md](2019/ciura/README.md]))
 
@@ -1632,6 +1647,17 @@ Cody added explicit linking of libm (`-lm`) for systems that do not do this
 (linux does not seem to but macOS does).
 
 He also fixed the Makefile so that it compiles with clang in linux.
+
+## [2019/endoh](2019/endoh/prog.c) ([README.md](2019/endoh/README.md]))
+
+As this is a backtrace quine having the optimiser enabled is not a good idea so
+Cody disabled it. For this same reason he also added the `-g` flag to the
+compilation as debugging symbols might just be useful for an entry that's
+supposed to segfault :-)
+
+## [2019/poikola](2019/poikola/prog.c) ([README.md[(2019/poikola/README.md))
+
+Cody added a missing rule to the Makefile.
 
 ## [2019/karns](2019/karns/prog.c) ([README.md](2019/karns/README.md]))
 
