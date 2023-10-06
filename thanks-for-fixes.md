@@ -1639,7 +1639,7 @@ Cody reported that with `-O` level > 0 this program segfaults (sometimes?). He's
 not sure why as it worked fine before on the same systems tested but `-O0`
 appears to fix the problem in both macOS and linux. Perhaps this is the problem
 that the author reported where it sometimes segfaults but Cody did not try
-debugging it yet.
+debugging it since it works with `-O0`.
 
 ## [2020/kurdyukov2](2020/kurdyukov2/prog.c) ([README.md](2020/kurdyukov2/README.md))
 
