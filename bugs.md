@@ -736,7 +736,69 @@ work but it only works with gcc. Cody removed the warnings of `gets()`.
 
 Unfortunately due to the way the entry works and the fact that other compilers
 like clang have different warnings and errors this simply does not work with
-them. Can you help us?
+them.
+
+Some tips from Cody:
+
+This entry relies on specific compiler warnings. With gcc it will look something
+like:
+
+```
+[...]
+lush.c: In function 'main':
+lush.c:40: warning: "f" redefined
+   40 |           main
+      |
+lush.c:1: note: this is the location of the previous definition
+    1 | #define gets(_) fgets((_),999,stdin)
+      |
+lush.c:42: warning: "f" redefined
+   42 | #define f 001:
+      |
+lush.c:40: note: this is the location of the previous definition
+   40 |           main
+      |
+lush.c:44: warning: "f" redefined
+   44 | #define f 100:
+      |
+lush.c:42: note: this is the location of the previous definition
+   42 | #define f 001:
+      |
+lush.c:45: warning: "f" redefined
+   45 |          _[i--
+      |
+lush.c:44: note: this is the location of the previous definition
+   44 | #define f 100:
+      |
+lush.c:46: warning: "f" redefined
+   46 | #define f 126:
+      |
+lush.c:45: note: this is the location of the previous definition
+   45 |          _[i--
+      |
+```
+
+Now one can use `sed` to get the `warning:` line correct but there is more to it
+than that. For instance this is what it looks like with clang:
+
+```
+lush.c:40:9: warning: 'f' macro redefined [-Wmacro-redefined]
+#define f 001:
+        ^
+lush.c:1:9: note: previous definition is here
+#define f 000:
+        ^
+lush.c:42:9: warning: 'f' macro redefined [-Wmacro-redefined]
+#define f 100:
+        ^
+lush.c:40:9: note: previous definition is here
+#define f 001:
+        ^
+```
+
+As you might see the part under the `warning:` line is different.
+
+Can you help us?
 
 ## [1992/westley](1992/westley/westley.c) ([README.md](1992/westley/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix

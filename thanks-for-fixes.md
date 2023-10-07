@@ -642,6 +642,9 @@ it moves towards the right but if you click the mouse it goes back.
 Yusuke supplied a patch which makes this work with gcc. Due to how it works (see
 Judges' remarks in the README.md file) this will not work with clang.
 
+Cody also provided the `runme.sh` script to demonstrate it as using make was
+problematic.
+
 Cody made it use `fgets()` instead of `gets()` to prevent annoying warnings
 getting in the way (in linux linking in a binary with `gets()` produces a
 warning that might get in the way with this entry and in macOS at runtime it
@@ -652,8 +655,10 @@ with clang due to different compiler messages.
 
 Cody later improved the `fgets()` change to look more like the original i.e. it
 now uses a redefined `gets()`. This did require modifying the line number with
-`#line 1` under the macro `gets()`. Still this cannot work with clang due to
-different compiler messages. See [bugs.md](/bugs.md) for details.
+`#line 1` under the macro `gets()`.
+
+Still this cannot work with clang due to different compiler messages. See
+[bugs.md](/bugs.md) for details.
 
 ## [1992/nathan](1992/nathan/nathan.c) ([README.md](1992/nathan/README.md))
 
@@ -795,7 +800,9 @@ Cody fixed this so that it would work with macOS. Once it could compile it
 additionally segfaulted under macOS which he also fixed.  Cody also provided the
 [Alternate code](1995/cdua/cdua.alt.c) for fun :-) ) (in particular to make it
 easier to see the program do what it does in systems that are too fast ... if
-there is such a thing anyway :-) ).
+there is such a thing anyway :-) ). See the README.md for details on this.
+
+
 
 
 ## [1995/garry](1995/garry/garry.c) ([README.md](1995/garry/README.md]))
