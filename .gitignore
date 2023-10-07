@@ -38,3 +38,4 @@ mkentry
 .su[a-z]
 .*.sv[a-z]
 .*.sw[a-z]
+indent.c
