@@ -89,7 +89,7 @@ written on an iDevice), but sanity prevailed.
 
 Printed in 8 pt Courier, it makes aesthetically pleasing 8.5 x 11 wall art.
 
-[1]: http://www.ioccc.org/2011/hou/hint.html "Hou Qiming"
+[1]: https://www.ioccc.org/2011/hou/hint.html "Hou Qiming"
 
 ### prog.c vs prog.alt.c
 

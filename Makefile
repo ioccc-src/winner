@@ -10,7 +10,7 @@
 # Bug fixes, corrections and typo fixes are VERY WELCOME.  If you see a problem,
 # first check this URL for a list of known bugs and (mis)features of IOCCC winners:
 #
-#	http://www.ioccc.org/bugs.md
+#	https://www.ioccc.org/bugs.md
 #
 # GitHub pull requests are welcome!  Please see the above URL for details.
 #

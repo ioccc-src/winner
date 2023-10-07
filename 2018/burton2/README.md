@@ -37,7 +37,7 @@ man ./tac.man
 
 ## Judges' remarks:
 
-They say size isn't everything, and in the case of IOCCC [iocccsize.c](http://www.ioccc.org/2018/iocccsize.c)
+They say size isn't everything, and in the case of IOCCC [iocccsize.c](https://www.ioccc.org/2018/iocccsize.c)
 that is saying something!  What is this program weighing and how much does it weigh?
 
 ## Author's remarks:
@@ -167,10 +167,10 @@ determine which tool was correct when there were differences.
 > Nevertheless, the more clearly written code remains a spoiler for this entry.
 
 NB: `iocccsize` gets a different answer from `tac` on its own
-([iocccsize.c]([iocccsize.c](http://www.ioccc.org/2018/iocccsize.c)) source code;
+([iocccsize.c]([iocccsize.c](https://www.ioccc.org/2018/iocccsize.c)) source code;
 `tac` gets the correct answer.  This is due to the aforementioned bugs within `iocccsize`,
 proved by fixing
-[iocccsize.c](http://www.ioccc.org/2018/iocccsize.c) with the included patch, so `iocccsize` reports
+[iocccsize.c](https://www.ioccc.org/2018/iocccsize.c) with the included patch, so `iocccsize` reports
 the correct answer for itself.
 
 ### But wait... There's More!
@@ -293,7 +293,7 @@ sed 's/^# .*$//' | sed 's/^#//' |
 * The code describes its function by careful arrangement of variables up front...
 * ...coupled with a description of the typical IOCCC contestant, or at least the author
 * Why shouldn't trigraph parsing be written in trigraph?
-* Where [iocccsize.c](http://www.ioccc.org/2018/iocccsize.c) mocks, this code flaunts:
+* Where [iocccsize.c](https://www.ioccc.org/2018/iocccsize.c) mocks, this code flaunts:
   "_no matter how well you may think you understand this code, you don't, so don't mess with it. :-)_"
 * `O,0,l,1` are used to confusing effect, local names obscure global names.
 * Globals are used to pass information between routines: don't reorder "unrelated" statements....
@@ -336,7 +336,7 @@ The following reserved word files are included:
 	ioccc.kw.freq   c11 + additional words, sorted on frequency of occurrence in ioccc winners
 
 
-NB: The keyword file used in this code is derived from the list in [iocccsize.c](http://www.ioccc.org/2018/iocccsize.c),
+NB: The keyword file used in this code is derived from the list in [iocccsize.c](https://www.ioccc.org/2018/iocccsize.c),
 which is neither complete (`#define`, `#ifndef`, `#undef` are missing
 -- yes, Virginia knows about `#define` omitted on purpose),
 nor correct (many more are added: `I`, `true`, `bool`, `compl`, ...):

@@ -61,7 +61,7 @@
  *  year.  You should be sure you have the current rules and guidelines
  *  prior to submitting entries.  To obtain them, visit the following URL:
  *
- *	http://www.ioccc.org
+ *	https://www.ioccc.org
  *
  * Because contest rules change from year to year, one should only use this
  * program for the year that it was intended.

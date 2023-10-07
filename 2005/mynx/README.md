@@ -39,7 +39,7 @@ As noted this will not work for https. This is because it does not scan for
 https but also a secure connection needs to be set up before http commands can
 be sent. One would also have to specify a port in the URL. Fortunately or
 unfortunately many more websites use https nowadays so this entry will not work
-as well as it used to.  If one were to try and connect to `http://www.ioccc.org`
+as well as it used to.  If one were to try and connect to `https://www.ioccc.org`
 with this entry they'll just get a 301 error.
 
 In case someone can come up with a clever pipeline or some other hack or

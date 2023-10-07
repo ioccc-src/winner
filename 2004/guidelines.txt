@@ -30,7 +30,7 @@ ABOUT THIS FILE:
     An online submission mechanism will be available after
     26-Jan-2004, 00:00 UTC.  See the following for details,
 
-       http://www.ioccc.org/2004/submit
+       https://www.ioccc.org/2004/submit
 
 HINTS AND SUGGESTIONS:
 
@@ -479,11 +479,11 @@ ANNOUNCEMENT OF WINNERS:
     of their award, and a very brief description of the winning entry
     on the IOCCC web site:
 									  
-	    http://www.ioccc.org/whowon.html				  
+	    https://www.ioccc.org/whowon.html				  
 									  
     We will also submit a brief announcement story to /.:		  
 
-	    http://slashdot.org
+	    https://slashdot.org
 
     that, depending on the willingness of the /. editors, may be posted
     to their site at the same time.
@@ -496,7 +496,7 @@ ANNOUNCEMENT OF WINNERS:
     by the winners has been completed, the winning source will be
     posted to the IOCCC web site:
 
-	    http://www.ioccc.org/years.html
+	    https://www.ioccc.org/years.html
 
     	    NOTE: previous winners are available at that URL
 
@@ -537,7 +537,7 @@ FOR MORE INFORMATION:
 
     Check out the IOCCC Web page:
 
-	http://www.ioccc.org
+	https://www.ioccc.org
 
     It has rules, guidelines and winners of previous contests (1984 to date).
 

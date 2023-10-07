@@ -11,7 +11,7 @@ You may then wish to look at the Author's remarks for even more details.
 
 The IOCCC has its own domain.  The IOCCC has an official home page is now:
 
-	http://www.ioccc.org
+	https://www.ioccc.org
 
 Use make to compile entries.  It is possible that on BSD or non-unix
 systems the makefile needs to be changed.  See the Makefile for details.
@@ -42,7 +42,7 @@ Landon selected Leonid A. Broukhis, a two time IOCCC winner, as a
 co-judge.   Landon and Leo together selected Jeremy Horn and Peter
 Seebach.  The four judges:
 
-	http://www.ioccc.org/judges.html
+	https://www.ioccc.org/judges.html
 
 together worked thru-out the 1998 IOCCC season.
 
@@ -121,7 +121,7 @@ email the fix (patch file or the entire changed file) to the above address.
 
 The next IOCCC is planned to start towards the end of 1999.  Watch:
 
-	http://www.ioccc.org
+	https://www.ioccc.org
 
 for news of the next contest.
 

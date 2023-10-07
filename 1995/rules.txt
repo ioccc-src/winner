@@ -203,7 +203,7 @@ FOR MORE INFORMATION:
 
     Check out the IOCCC Web page:					       |
 
-	http://www.ioccc.org
+	https://www.ioccc.org
 
     It has rules, guidelines and winners of previous contests (1984 to date).  |
 

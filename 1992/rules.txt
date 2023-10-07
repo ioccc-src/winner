@@ -167,7 +167,7 @@ FOR MORE INFORMATION:
 
     See the official IOCCC web site:
 
-	http://www.ioccc.org
+	https://www.ioccc.org
 
     for more updated information.
 

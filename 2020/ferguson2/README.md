@@ -827,9 +827,9 @@ don't think there need be any addition to the recode program - at least not
 that.
 
 
-[1992 Worst Abuse of the Rules]: http://www.ioccc.org/1992/nathan/README.md
-[1998 ASCII / Morse code translator]: http://www.ioccc.org/1998/dorssel/README.md
-[2014 Morse audio transcoder]: http://www.ioccc.org/2014/vik/README.md
+[1992 Worst Abuse of the Rules]: https://www.ioccc.org/1992/nathan/README.md
+[1998 ASCII / Morse code translator]: https://www.ioccc.org/1998/dorssel/README.md
+[2014 Morse audio transcoder]: https://www.ioccc.org/2014/vik/README.md
 [Enigma Message Procedures]: https://web.archive.org/web/20200710094321/http://users.telenet.be/d.rijmenants/en/enigmaproc.htm
 [Interactive Enigma Machine]: http://enigmaco.de/enigma/enigma.html
 [enigma.1]: enigma.1

@@ -33,9 +33,9 @@ WHAT IS NEW IN 1998:
     different.  Contest entries (in the proper form) go to entry@ioccc.org     |
     and questions to the judges go to questions@ioccc.org.		       |
 
-    There is a new web URL:   http://www.ioccc.org			       |
+    There is a new web URL:   https://www.ioccc.org			       |
 
-    We have a new IOCCC judging team.  See http://www.ioccc.org/judges.html    |
+    We have a new IOCCC judging team.  See https://www.ioccc.org/judges.html    |
     for more information.
 
     We added a more explicit comment against using gzip to get around the      |
@@ -791,7 +791,7 @@ FOR MORE INFORMATION:
 
     Check out the IOCCC Web page:
 
-	http://www.ioccc.org						       |
+	https://www.ioccc.org						       |
 
     It has rules, guidelines and winners of previous contests (1984 to date).  |
 
