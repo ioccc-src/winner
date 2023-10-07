@@ -208,7 +208,7 @@ Just say
 
 * Algorithmically, it incorporates the following
 	- (inverse) Burrows-Wheeler transform (used also e.g. in bzip2)
-	- data compression (really expansion :-), run-lenght-encoding,
+	- data compression (really expansion :-), run-length-encoding,
 	  unary coding (this is why it is expansion rather than compression)
 	- approximate string matching
 	- dynamic programming to compute the edit distance
