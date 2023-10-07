@@ -33,9 +33,12 @@ Run this with a single digit argument (or wait a long time).
 The blank line at the beginning of the source is mandatory.
 Do you know why?
 
-NOTE: don't try running [ouroboros.c](ouroboros.c) (note that it's executable)
+NOTE: don't try running `ouroboros.c` (note that it's executable)
 directly with an arg as it'll turn into an infinite loop. The same will happen
 with larger numbers.
+
+NOTE: the file `ouroboros.c` is created by the program itself so this is why it
+is not in the repository.
 
 ## Author's remarks:
 
