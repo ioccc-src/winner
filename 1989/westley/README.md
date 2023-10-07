@@ -11,36 +11,42 @@ make all
 ```
 
 
-NOTE: this entry only partly works with clang; clang requires that the second, third and
-fourth args to `main()` be `char **`. Only `westley.c` and `ver0.c` (see below) will
-compile with clang. It's possible to get `ver1.c` to compile too but this causes
-problems with generating the output of the remaining files so we have opted, at
-least for now, to not do that, as it does not have to output just source code.
-The original source code sometimes segfaults with `ver2` which also happens with
-the fix but it'll only compile with a compiler that does not require the second,
-third and fourth args of `main()` to be a `char **`.
-
+NOTE: this entry only partly works with clang and only some versions of clang,
+due to defects in the compiler. See [bugs.md](/bugs.md) for more details.
 
 ## Try:
 
+Try compiling and running the 4 resulting programs like:
+
 ```sh
+./compile.sh
+```
+
+This will remove the programs and then run:
+
+```
 ./westley < westley.c > ver0.c
 ./westley 1 < westley.c > ver1.c
 ./westley 1 2 < westley.c > ver2.c
 ./westley 1 2 3 < westley.c > ver3.c
 ```
 
+followed by compiling each version.
 
-Try compiling and running the 4 resulting programs. To compile try:
+If you need to specify an alternate compiler path, say because your default
+compiler is clang (or in the case of macOS gcc is clang) you can do so like:
 
 ```sh
-make ver0
-make ver1
-make ver2
-make ver3
+CC=/opt/local/bin/gcc-mp-12 ./compile.sh
 ```
 
-Then run:
+If you wish to delay the script or remove the delay you can do so like:
+
+```sh
+DELAY=0 ./compile.sh
+```
+
+Finally try:
 
 ```sh
 ./westley
@@ -50,6 +56,17 @@ echo Version 1 | ./ver1
 echo Version 2 | ./ver2
 echo Version 3 | ./ver3
 ```
+
+
+### INAFIAB - it's not a feature it's a bug :-(
+
+There might have been a segfault that was fixed in the original code but as we
+no longer know what condition or conditions caused this we cannot be sure. It
+seems like, according to various files, that `ver1` and/or `ver2` also have this
+problem but we also do not know about the status of this. See
+[bugs.md](/bugs.md) for more information.
+
+
 
 ## Judges' remarks:
 
