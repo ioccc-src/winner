@@ -408,10 +408,17 @@ his only reason :-) )
 
 ## [1989/westley](1989/westley/westley.c) ([README.md](1989/westley/README.md]))
 
-Cody got some of the versions (the original and `ver0`) to work with clang. As
-there are some important notes on this in the README.md file we have left the
-details in that file, at least for now. Perhaps the [bugs.md](bugs.md) file is a
-better place but this can be decided later.
+Cody got some of the versions (the original and `ver0`) to work with some
+versions of `clang`. Unfortunately there are some defects in `clang` that break
+this entry either in full or in part.
+
+Cody provided the compile.sh script to generate the files and then try and
+compile them (which ones succeed depend on whether or not clang is the
+compiler). The script allows one to change the path of the compiler if they have
+another one. See the README.md for details.
+
+As there are some important notes on this in the README.md file we have left the
+details in that file and further details are in the [bugs.md](bugs.md) file.
 
 
 ## [1990/baruch](1990/baruch/baruch.c) ([README.md](1990/baruch/README.md]))
