@@ -40,6 +40,7 @@ include ../../var.mk
 #
 CSILENCE= -Wno-expansion-to-defined -Wno-implicit-int -Wno-strict-prototypes
 
+
 # Common C compiler warning flags
 #
 CWARN= -Wall -Wextra -pedantic ${CSILENCE}
@@ -83,7 +84,7 @@ CC= cc
 #
 ifeq ($(CC),clang)
 #
-CSILENCE+= -Wno-poison-system-directories
+CSILENCE+= -Wno-poison-system-directories -Wno-gnu-line-marker
 #
 CWARN+= -Weverything
 #
@@ -154,8 +155,8 @@ ${ALT_TARGET}: ${PROG}.alt.c
 # not an official entry
 #
 # The 'zsmall.c' program was obtained from 'applin.c' by reducing its recursion
-# and running it thru the initial /lib/cpp.  That is, 'zsmall.c' is a small
-# version of the 'large.c' file as produced by the 'applin' make rule below.
+# and running it through the initial /lib/cpp.  That is, 'zsmall.c' is a small
+# version of the 'large.c' file as produced by the 'applin' make rule above.
 zsmall: zsmall.c
 	${CC} ${CFLAGS} zsmall.c -o $@
 
