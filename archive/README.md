@@ -5,7 +5,7 @@ winning source code that was available on the [official IOCCC web
 site](https://www.ioccc.org) as of 2020 Dec 28.  These zip2 compressed
 tarballs represent the "_released_" IOCCC winning source,
 as modified by the IOCCC judges and winning authors
-as of [2020 Dec 28](https://web.archive.org/web/20201228005211/http://www.ioccc.org/).
+as of [2020 Dec 28](https://web.archive.org/web/20201228005211/https://www.ioccc.org/).
 
 Yuo smight wish to note that the `archive/archive-all.tar.bz2` file
 found in this archive produces a somewhat newer version of the
@@ -25,7 +25,7 @@ as well as a newer version of 2012/tromp hint files.
 For your convenience we keep an archive of the zip2 compressed
 tarballs as found in the [Internet Archive Wayback
 Machine](https://web.archive.org) as of [2022 Dec
-28)(https://web.archive.org/web/20201228005211/http://www.ioccc.org/).
+28)(https://web.archive.org/web/20201228005211/https://www.ioccc.org/).
 
 *HINT*: To uncompress a given bzip2 compressed tarball file, use:
 

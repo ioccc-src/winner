@@ -48,7 +48,7 @@ GOALS OF THE CONTEST:
     on the official IOCCC web site on or slightly before start of this IOCCC.
     Please check the IOCCC web site "How to enter" link:
 
- 	http://www.ioccc.org/index.html#enter
+ 	https://www.ioccc.org/index.html#enter
 
     on or after the start of this IOCCC to be sure you are using the correct
     versions of these items before using the IOCCC entry submission URL.
@@ -70,7 +70,7 @@ RULES:
 
        The source to the current IOCCC size tool is found at this URL:
 
-|         http://www.ioccc.org/2018/iocccsize.c
+|         https://www.ioccc.org/2018/iocccsize.c
 
     3) Submissions should be performed using the instructions outlined at:
 
@@ -253,7 +253,7 @@ FOR MORE INFORMATION:
     year.  You should be sure you have the current rules and guidelines
     prior to submitting entries.  To obtain them, visit the IOCCC web page:
 
-        http://www.ioccc.org
+        https://www.ioccc.org
 
     It has rules, guidelines and winners of previous contests (1984 to date).
 

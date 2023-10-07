@@ -74,7 +74,7 @@ For the latest information on how to contact the [IOCCC
 Judges](https://www.ioccc.org/judges.html) please visit
 <https://www.ioccc.org/contact.html>.
 
-    http://www.ioccc.org/contact.html
+    https://www.ioccc.org/contact.html
 
 For news of the next contest watch <https://www.ioccc.org/>.
 

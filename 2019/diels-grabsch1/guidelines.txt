@@ -55,7 +55,7 @@ End of important 2023 update to this historic note.
 
     While we try to post use news at:
 
-        http://www.ioccc.org/index.html#news
+        https://www.ioccc.org/index.html#news
 
     such postings may be delayed or obscured by slow to respond mirrors.
 
@@ -89,7 +89,7 @@ End of important 2023 update to this historic note.
     on the official IOCCC web site on or slightly before start of this IOCCC.
     Please check the IOCCC web site "How to enter" link:
 
- 	http://www.ioccc.org/index.html#enter
+ 	https://www.ioccc.org/index.html#enter
 
     on or after the start of this IOCCC to be sure you are using the correct
     versions of these items before using the IOCCC entry submission URL.
@@ -171,7 +171,7 @@ HINTS AND SUGGESTIONS:
     Rule 2 (the size rule) has been changed.  In particular rule 2 refers to
     the use of an IOCCC size tool.  The source for this tool is found at:
 
-|       http://www.ioccc.org/2019/iocccsize.c
+|       https://www.ioccc.org/2019/iocccsize.c
 
     To further clarify rule 2, we subdivided it into two parts, 2a and 2b.
     Your entry must satisfy both the maximum size rule 2a AND your entry
@@ -920,11 +920,11 @@ End of important 2023 update to this historic note.
     of their award, and a very brief description of the winning entry
     on the IOCCC web site:
 
-        http://www.ioccc.org/whowon.html
+        https://www.ioccc.org/whowon.html
 
     We will also attempt to submit a brief announcement story to /.:
 
-        http://slashdot.org
+        https://slashdot.org
 
     that, depending on the willingness of the /. editors, may be posted
     to their site at the same time.
@@ -937,7 +937,7 @@ End of important 2023 update to this historic note.
     by the winners has been completed, the winning source will be
     posted to the IOCCC web site:
 
-        http://www.ioccc.org/years.html
+        https://www.ioccc.org/years.html
 
         NOTE: previous winners are available at that URL
 
@@ -991,7 +991,7 @@ FOR MORE INFORMATION:
 
     Check out the IOCCC Web page:
 
-        http://www.ioccc.org
+        https://www.ioccc.org
 
     It has rules, guidelines and winners of previous contests (1984 to date).
 

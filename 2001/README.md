@@ -12,7 +12,7 @@ You may then wish to look at the Author's remarks for even more details.
 The IOCCC has a web site and now has a number of international mirrors.  The
 primary site can be found at,
 
-     http://www.ioccc.org
+     https://www.ioccc.org
 
 Use make to compile entries.  It is possible that on non-Un\*x / non-Linux
 systems the makefile needs to be changed.  See the Makefile for details.
@@ -83,7 +83,7 @@ email the fix (patch file or the entire changed file) to the above address.
 
 Watch:
 
-	http://www.ioccc.org/
+	https://www.ioccc.org/
 
 for news of the next contest.
 

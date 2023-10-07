@@ -99,7 +99,7 @@ email the fix (patch file or the entire changed file) to the above address.
 
 The next IOCCC is planned to start towards early spring 2001.  Watch:
 
-	http://www.ioccc.org/
+	https://www.ioccc.org/
 
 for news of the next contest.
 

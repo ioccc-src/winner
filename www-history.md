@@ -8,10 +8,10 @@ viewed at the [Internet Wayback Machine Wayback Machine](https://web.archive.org
 One can view several thousand snapshots showing how the [IOCCC web site has
 evolved](https://web.archive.org/web/20230000000000*/www.ioccc.org) going back
 as far as [1998 Dec 12
-www.ioccc.org](https://web.archive.org/web/19981212030016/http://www.ioccc.org/).
+www.ioccc.org](https://web.archive.org/web/19981212030016/https://www.ioccc.org/).
 
 On 2020 Dec 31, the IOCCC source tree was moved to the [IOCCC winner
-repo](https://web.archive.org/web/20210101211346/http://www.ioccc.org/) on
+repo](https://web.archive.org/web/20210101211346/https://www.ioccc.org/) on
 [GitHub](https://github.com).  From this point on, the [official IOCCC web
 site](https://www.ioccc.org) became a [GitHub Pages](https://pages.github.com)
 web site.
@@ -25,7 +25,7 @@ and the individual years are in the form `archive/archive-YYYY.tar.bz2`.
 
 These files were obtained from the [Internet Wayback
 Machine](https://web.archive.org) from the [snapshot of the website on 2020 Dec
-28](https://web.archive.org/web/20201228005211/http://www.ioccc.org/).  See
+28](https://web.archive.org/web/20201228005211/https://www.ioccc.org/).  See
 `archive/README.md` for details about these bzip2 compressed tarballs.
 
 **XXX**: Change the references to _temp-test-ioccc_ to _winners_

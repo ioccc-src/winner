@@ -11,7 +11,7 @@ You may then wish to look at the Author's remarks for even more details.
 
 The IOCCC has an official home page:
 
-	http://www.ioccc.org
+	https://www.ioccc.org
 
 containing previous winning entries, information about the judges,
 announcements and much more.
