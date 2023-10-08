@@ -17,10 +17,8 @@ make alt
 ./slone.alt
 ```
 
-An alternatively version of this entry exists so that one can actually see what
-is going on. This is also more ideal for those who are overstimulated by fast
-movements. See the alternate code section below.
-
+To see why we recommend the alternate version instead of the original version,
+see the [original code](#original-code) section.
 
 ## Try:
 
@@ -42,7 +40,7 @@ make CDEFINE="-DZ=0" clobber alt
 ./sloane.alt
 ```
 
-### Alternate code:
+### Original code:
 
 Should you wish to see the original without having to mess with the compiler
 line, try:
@@ -57,7 +55,7 @@ photosensitivity please be careful running this version and instead see the
 above!
 
 NOTE: again as above, to see what is going on, we recommend that you instead use
-the real alternate code which we described in the [To build](#to-build) and
+the alternate code which we described in the [To build](#to-build) and
 [try](#try) sections above.
 
 If however you wish to see the original, try:
