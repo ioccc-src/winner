@@ -1573,7 +1573,9 @@ Along with the [demo.sh](2013/birken/demo.sh) that he added, Cody also added an
 alternate version which allows one to control how fast the painting is done,
 based on the author's recommendations, except that Cody made it configurable at
 compile time just like he did with other entries (in all but one it was
-alternate code) that use `usleep()`.
+alternate code) that use `usleep()`. The alternate version and the original
+version were swapped in the `To build`, `To run` and `Try` sections, with what
+is normally `Alternate code` being `Original code`.
 
 
 ## [2013/cable3](2013/cable3/cable3.c) ([README.md](2013/cable3/README.md]))
