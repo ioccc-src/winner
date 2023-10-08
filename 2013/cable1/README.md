@@ -69,10 +69,12 @@ A PC guy as expected.  What about that other Steve?
 ```
 
 Humm .. maybe there is a hidden reason he is leaving the late Micro$oft? :-)
-Why late?  See [this tweet](https://twitter.com/landonnoll/status/401582967123742720).
+Why late? Because:
+
+![tweet about M$ being dead](https://twitter.com/landonnoll/status/401582967123742720)
 
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-An important 2023 update to this historic note:
+An important 2023 update about twitter:
 
 The IOCCC no longer uses twitter.  Today the IOCCC uses Mastodon.
 For more information and to see our IOCCC Mastodon posts, see:
