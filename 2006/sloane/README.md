@@ -17,15 +17,16 @@ make alt
 ./slone.alt
 ```
 
+To see why we recommend the alternate version instead of the original version,
+see the [original code](#original-code) section. 
 
 ## Try:
 
-To see why we recommend the alternate version instead of the original version,
-see the [original code](#original-code) section. The alternate version, which we
-recommend that you use in order to see what is happening with modern systems,
-and to not flash too quickly, which can be problematic for some people, can be
-configured to different speeds by way of the value used in `usleep()`. The
-default is `-DZ=65000` but you can easily change it. To do so try:
+This alternate version, which we recommend that you use in order to see what is
+happening with modern systems, and to not flash too quickly, which can be
+problematic for some people, can be configured to different speeds by way of the
+value used in `usleep()`. The default is `-DZ=65000` but you can easily change
+it. To do so try:
 
 ```sh
 make CDEFINE="-DZ=70000" clobber alt
