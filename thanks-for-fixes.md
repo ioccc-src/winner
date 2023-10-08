@@ -1479,17 +1479,22 @@ back for arrow keys in the [alternate version](2006/night/night.alt.c).
 
 ## [2006/sloane](2006/sloane/sloane.c) ([README.md](2006/sloane/README.md]))
 
-Cody fixed this entry to work with clang which is stricter on the type of args
-to main(). Curiously although clang requires the types of args to be strictly
-correct it allows for only one arg which he made it as the second arg was not
-used and this allows for a closer match to the original format of the entry. He
-also made sure that the Makefile links in `libm` as not all systems do this by
-default. Since the author suggested that the lack of certain `#include`s might
-break the program in some systems he added `-include ...` to the Makefile as
-well.
+Cody fixed this entry to work with clang which has a defect with the args to
+`main()`: it requires specific types: `int` and `char **` for the first and
+latter args. 
+
+Curiously, although clang requires the types of args to be strictly
+correct it allows for only one arg which Cody made it as the second arg was not
+used and this allows for a closer match to the original format of the entry.
+
+He also made sure that the Makefile links in `libm` as not all systems do this by default.
+
+Since the author suggested that the lack of certain `#include`s might break the
+program in some systems he added `-include ...` to the Makefile as well.
 
 The [alternate version](2006/sloane/sloane.alt.c), which allows one to see what
-is going on in modern systems, was provided by Cody.
+is going on in modern systems, and which we recommend one use _first_, was
+provided by Cody.
 
 
 ## [2006/toledo2](2006/toledo2/toledo2.c) ([README.md](2006/toledo2/README.md]))

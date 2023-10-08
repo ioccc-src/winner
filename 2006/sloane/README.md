@@ -7,18 +7,15 @@ US
 ## To build:
 
 ```sh
-make
+make alt
 ```
 
 
 ## To run:
 
 ```sh
-./slone
+./slone.alt
 ```
-
-WARNING: if you are easily overstimulated with fast movement or have
-photosensitivity please be careful running this entry!
 
 An alternatively version of this entry exists so that one can actually see what
 is going on. This is also more ideal for those who are overstimulated by fast
@@ -27,31 +24,49 @@ movements. See the alternate code section below.
 
 ## Try:
 
-```sh
-echo "Do or do not. There is no try."
-```
-
-
-### Alternate code:
-
-The alternate version uses `usleep()` so one can enjoy
-the entry with modern systems and which will not be too stimulating for those
-who have a problem with fast moving text (like himself). It uses the `Z` macro
-as the parameter to `usleep()` which you can override. The default is
-`-DZ=65000`. To compile with the default:
-
-
-```sh
-make alt
-```
-
-If you wish to override the sleep value try something like:
+The version we recommend that you use, in order to see what is happening with
+modern systems, and to not flash too quickly, which can be problematic for some
+people, can be configured to different speeds by way of the value used in
+`usleep()`. The default `-DZ=65000` but you can easily change it. To do so try:
 
 ```sh
 make CDEFINE="-DZ=70000" clobber alt
+./sloane.alt
 ```
 
-Use `sloane.alt` as you would `sloane` above.
+If you wish to make it like the original, as if the below 'alternate code' was
+being used, you can do:
+
+```sh
+make CDEFINE="-DZ=0" clobber alt
+./sloane.alt
+```
+
+### Alternate code:
+
+Should you wish to see the original without having to mess with the compiler
+line, try:
+
+```sh
+make clobber all
+./sloane
+```
+
+WARNING: if you are easily overstimulated with fast movement or have
+photosensitivity please be careful running this version and instead see the
+above!
+
+NOTE: again as above, to see what is going on, we recommend that you instead use
+the real alternate code which we described in the [To build](#to-build) and
+[try](#try) sections above.
+
+If however you wish to see the original, try:
+
+```sh
+make clobber all
+```
+
+Use `sloane` as you would `sloane.alt` above.
 
 
 ## Judges' Comments:
@@ -90,11 +105,11 @@ The donut isn't raytraced.  It's much simpler than that.
 
 ### How is it obfuscated?
 
-There are three main pieces to this program: the donut, the checkerboard,
-and the ASCII logo.  The first two are programmed in a straightforward way
-(with z-buffering even!), but the mathematics for drawing them is
-"optimized".  The ASCII logo has been shrunk into the smallest I could make
-it by any means necessary.
+There are three main pieces to this program: the donut, the checkerboard, and
+the ASCII logo.  The first two are programmed in a straightforward way (with
+[z-buffering](https://en.wikipedia.org/wiki/Z-buffering) even!), but the
+mathematics for drawing them is "optimized".  The ASCII logo has been shrunk
+into the smallest I could make it by any means necessary.
 
 The logo can actually be compressed much better (ironically, by doing
 something simpler), but I didn't discover this until well after submitting.
