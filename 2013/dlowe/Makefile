@@ -109,7 +109,7 @@ PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 DATA=
-TARGET= ${PROG}
+TARGET= ${PROG} sparkl fun
 #
 ALT_OBJ=
 ALT_TARGET=
@@ -128,6 +128,9 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+sparkl: ${PROG}
+	${LN} -sf ${PROG} $@
 
 # alternative executable
 #
