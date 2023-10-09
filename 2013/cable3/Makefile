@@ -44,7 +44,7 @@ CSILENCE= -Wno-bitwise-op-parentheses -Wno-bool-operation \
 	-Wno-incompatible-pointer-types -Wno-logical-not-parentheses \
 	-Wno-logical-op-parentheses -Wno-parentheses -Wno-shift-op-parentheses \
 	-Wno-sign-compare -Wno-unsequenced -Wno-unused-parameter \
-	-Wno-deprecated-non-prototype -Wno-return-type
+	-Wno-deprecated-non-prototype -Wno-return-type -Wno-pointer-type-mismatch
 
 # Common C compiler warning flags
 #
@@ -123,8 +123,8 @@ DATA= bios fd.img runme sc-ioccc.terminal screenshot_autocad.png \
 	screenshot_simcity.png screenshot_win3_on_macosx.png
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -145,6 +145,9 @@ ${PROG}: ${PROG}.c
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} -UKB $< -o $@ ${LDFLAGS}
 
 # data files
 #

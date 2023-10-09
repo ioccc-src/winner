@@ -1829,6 +1829,16 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
 
 # 2013
 
+## [2013/cable3](2013/cable3/cable3.c) ([README.md](2013/cable3/README.md))
+## STATUS: missing files - please provide them
+
+Many fixes and improvements were made by Cody but he observed that the author
+referred to a file that is nowhere to be found: not in the directory or the
+archive.
+
+The file is `hd.img`.
+
+Do you have it? Please provide it!
 
 # 2014
 

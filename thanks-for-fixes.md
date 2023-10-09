@@ -1592,12 +1592,23 @@ This meant that at one point to be strictly technical, the removal of
 `localtime()` wasn't necessary but this change was left in place anyway.
 
 Later on in an updated macOS (problem discovered in macOS Sonoma) the entry
-failed to compile again also due to `localtime()` so the prototype was
-completely removed to solve the problem.
+failed to compile again also due to `localtime()` so he removed the prototype
+entirely to solve the problem.
 
-He also slightly improved the `runme` script to not assume that the program has
-been compiled by running `make clobber all || exit 1`.
+Cody also slightly improved the `runme` script to not assume that the program has
+been compiled by running `make clobber all || exit 1` and he also made it pass
+`shellcheck` (using `[[ .. ]]` over `[ .. ]`).
 
+As well, based on the author's remarks, Cody added the [alternate
+code](2013/cable3/cable3.alt.c) which should be compilable for Windows/MS Visual
+Studio. This is done by in the compile line undefining `KB` (`-UKB`) and then in
+the source code defining `KB` to what the author suggested,
+`(kb=H(8),kbhit())&&(r[1190]=getch(),H(7))`. It need hardly be mentioned that
+this will not link in Unix systems (including macOS).
+
+Finally Cody provided the [bios.asm](2013/cable3/bios.asm) that the author
+referred to, found at the [GitHub repo for the
+entry](https://github.com/adriancable/8086tiny/tree/master).
 
 ## [2013/hou](2013/hou/hou.c) ([README.md](2013/hou/README.md))
 
