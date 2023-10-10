@@ -73,7 +73,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LDFLAGS=
+LDFLAGS= -lm
 
 # C compiler to use
 #
@@ -130,6 +130,8 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	./${PROG} | ${CC} ${CFLAGS} -x c - -o $@ ${LDFLAGS}
+
 
 # alternative executable
 #
