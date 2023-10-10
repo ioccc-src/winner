@@ -2,7 +2,7 @@
 # 
 # ioccc_status.sh - quickly update status.json file
 #
-# Written by Cody Boone Ferguson in 2023
+# Written by Cody Boone Ferguson in 2023:
 #
 #	@xexyl
 #	https://xexyl.net		Cody Boone Ferguson
