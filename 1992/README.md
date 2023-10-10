@@ -1,34 +1,32 @@
-1992 marked the "The Ninth International Obfuscated C Code Contest"
+# 1992 marked the "The Ninth International Obfuscated C Code Contest"
 
-
-Look at the README.md file for the given winner for information
-on how to compile the winner and how to run the winning program.
+Look at the README.md file for the given winning entry for information
+on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
-Use make to compile entries.  It is possible that on BSD or non-unix
-systems the makefile needs to be changed.  See the Makefile for details.
+Use `make` to compile entries.  It is possible that on BSD or non-Unix
+systems the Makefile needs to be changed.  See the Makefile for details.
 
-Read over the makefile for compile/build issues.  Your system may
-require certain changes (add or remove a library, add or remove a
-#define).  A number of compilers had problems optimizing certain
-entries.  Some compilers do optimize, but the resulting program
-does not work.  By default we have left off -O from compile lines.
-You might want to add -O back, or add it back for certain entries
-where performance is important.
+Read over the Makefile for compile/build issues.  Your system may require
+certain changes (add or remove a library, add or remove a `#define` i.e. the
+`-D` flag).  A number of compilers had problems optimizing certain entries.
+Some compilers do optimize, but the resulting program does not work.  By default
+we have left off `-O` from compile lines.  You might want to add `-O` back, or
+add it back for certain entries where performance is important.
 
 This year marked an all time high for number of entries as well as the
 quality of entries.  Nearly twice the usual number of entries made it
 to the final judging rounds.  Even when we raised the standards for
-winning, we still wound giving out a few more awards than in other
+winning, we still wound up giving out a few more awards than in other
 years.  The new size rules size probably contributed to the overall
 high quality.
 
-FYI: By tradition, we do not record the count the number entries,
-     nor do we give our our guess as to the number of entries
-     received.  For folks who wonder, we can say that we consumed
-     about 2000 pages of output (printing between 2 and 4 normal
-     pages per side) during the judging process this year.
+FYI: By tradition, we do not record the count of the number entries,
+nor do we give our our guess as to the number of entries
+received.  For folks who wonder, we can say that we consumed
+about 2000 pages of output (printing between 2 and 4 normal
+pages per side) during the judging process this year.
 
 The new instructions for submitting entries worked well - we were
 able to write scripts to unpack them and eliminate duplicates.
@@ -40,11 +38,11 @@ the "standard" version that the entries were compiled with.
 Name and address information are separated from the actual program
 prior to judging.  This eliminates any chance that we would bias our
 judging for/against any person or group.  In the end, we are surprised
-as you are to see who as won.  Even so, it is worth noting that
-Brian Westley has submitted a winning entry for the past 6 years!
+as you are to see who has won.  Even so, it is worth noting that
+[Brian Westley](https://www.ioccc.org/winners.html#Brian_Westley) has submitted
+a winning entry for the past 6 years!
 
-
-A few notes regarding future contests:
+## A few notes regarding future contests:
 
 We did not give awards to some traditional contest categories such as
 "Best Layout".  We felt that to do so would deny awards to more
@@ -66,8 +64,10 @@ Please send us comments and suggestions what we have expressed above.
 Also include anything else that you would like to see in future contests.
 Send such email to:
 
-	...!{sun,pacbell,uunet,pyramid}!hoptoad!judges
-	judges@toad.com
+```
+...!{sun,pacbell,uunet,pyramid}!hoptoad!judges
+judges@toad.com
+```
 
 
 If you use, distribute or publish these entries in some way, please drop
@@ -76,7 +76,7 @@ us a line.  We enjoy seeing who, where and how the contest is used.
 If you have problems with any of the entries, AND YOU HAVE A FIX, please
 email the fix (patch file or the entire changed file) to the above address.
 
-Credits:
+## Credits:
 
 We would like to thank Barbara Frezza for her role as official chef of
 the contest.  Landon Noll and Larry Bassel appreciated the opportunity
