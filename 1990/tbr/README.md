@@ -23,7 +23,8 @@ make all
 NOTE: globs do not work with this entry. Why?
 
 NOTE: `exit` does not work and neither does `logout`. To exit try sending ctrl-d
-or ctrl-c (or kill it from another terminal :-) ).
+or ctrl-c (or kill it from another terminal :-) ). But why does it not work with
+just `exit` or `logout`? Hint: see the authors' remarks.
 
 
 ## Try:
@@ -41,6 +42,10 @@ vi tbr.c
 What happens if you try using `cd -` to return to previous directory? What about
 `cd` with no args?
 
+### TNABTAF - they're not a bug they're a feature! :-)
+
+The authors include a section called [BUGS](#bugs) that, because they were
+documented, are not considered bugs as such in the context of the contest.
 
 ## Judges' remarks:
 
@@ -51,7 +56,7 @@ Shell source was a major inspiration for the formation of the IOCCC back in
 1984?
 
 
-The author supplied us with a slightly smaller unformatted version
+The authors supplied us with a slightly smaller unformatted version
 of the program which we include below:
 
 ```c
@@ -67,11 +72,11 @@ r(o,0)D o)D*f):4,wait(0):(o?dup2(*f,0)D*f)D o):*i?1 D
 e(x){x<0?write(2,"?\n$ "-x/4,2),x+1||(exit(1),0):5;}
 ```
 
-It has the `exit()` returns void fix but not the `gets()` to `fgets()` fix
-applied.
+It has the `exit()` returns void fix as well as the `gets()` to `fgets()` fix
+applied to it to make it functionally equivalent like the authors intended.
 
 
-## Author's remarks:
+## Authors' remarks:
 
 This program is a rudimentary shell. It does I/O redirection, pipes
 and cd. It flags errors on failed `chdir()`, `open()`, `creat()`,
@@ -87,7 +92,7 @@ system calls) a question mark is printed.
 
 The error value of `chdir()` is doubled so that we don't exit from the parent
 shell on a `chdir()` error (since `e()` exits on `-1` errors only).  All other
-system call failures exit since they are from subshells.
+system call failures exit since they are from sub-shells.
 
 Recursion is sneakily employed to avoid a second call to `fork()`,
 and the line is parsed in a fairly bizarre fashion:  backwards. The

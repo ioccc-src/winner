@@ -1,4 +1,4 @@
-#define gets(x)fgets((x),512,stdin)
+#define gets(x) fgets((x),512,stdin)
 #define exit(x) exit((x)),0
 #define D ,close(
 

@@ -231,10 +231,13 @@ README.md file.
 
 ## [1988/dale](1988/dale/dale.c) ([README.md](1988/dale/README.md]))
 
-Cody fixed this twisted entry (as we called it :-) ) for modern compilers. There
-were two problems to address. One was that the entry required `-traditional-cpp`
+Cody fixed this twisted entry (as we called it :-) ) for modern compilers,
+including making it no longer require `-traditional-cpp`. There were two
+problems here to fix, which Cody did.
+
+One, as noted above, was that the entry required `-traditional-cpp`
 (which <strike>not all compilers support</strike> `clang` does not support)
-which Cody fixed. It needed that option because of two things it did:
+It needed that option in modern systems because of two things it did:
 
 ```c
 #define a(x)get/***/x/***/id())
@@ -248,15 +251,10 @@ p Z=chroot("/");L(!a(u)execv((q(v="/ipu6ljov"),v),C);Z-=kill(l);
 case_2:L(!--V){O/*/*/c*c+c);wait(A+c*c-c);L(!Z)f(A,"\n",c);return(A*getgid());};C++;
 ```
 
-no longer works to create `getuid()` and `getgid()`. The second is that
-
-```c
-for/*/(;;);/*/k()){O/*/*/c);
-```
-
-cannot form `fork())` in modern C compilers. One can put those in directly but
-using the C paste token operator `##` also solves the problem of the `#define
-a` like this diff shows:
+This macro, `a`, formed the functions (the names) `getuid()` and `getgid()`, but
+this no longer works.  The code still uses the macro `a` to form the names but
+it's done differently, using the C token paste operator `##`. It's done like
+thus:
 
 ```diff
 --- i/1988/dale/dale.c
@@ -271,10 +269,20 @@ a` like this diff shows:
 +#define a(x)get##x##id())
 ```
 
-What is quite fun is that at least some C pre-processors can form these
-constructs!
+The second is that
 
-The other problem was that modern compilers do not allow directives like:
+```c
+for/*/(;;);/*/k()){O/*/*/c);
+```
+
+cannot form `fork())` in modern C compilers. Since it was not done through a
+macro it was simply changed to be 'fork()', rather than adding a new macro.
+
+(What is quite fun is that at least some C pre-processors can form these
+constructs! Can you figure out why this is?)
+
+The other problem that could not be resolved by the `-traditional-cpp` was that
+modern compilers do not allow directives like:
 
 ```c
 #define _ define
@@ -290,7 +298,11 @@ so Cody changed the lines to be in the form of:
 #define foo bar
 ```
 
-See the README.md file for details on the original code.
+However, to keep the entry as close to as possible in look, Cody kept the `_`
+macro in place it's just no longer used.
+
+See the README.md file for details on the original code, provided as an alt
+version in case you have an older compiler or wish to try `-traditional-cpp`.
 
 
 ## [1988/isaak](1988/isaak/isaak.c) ([README.md](1988/isaak/README.md]))
@@ -497,6 +509,12 @@ some experimenting this proved to seem to not be a problem here so by adding a
 couple macros that redefine `exit()` and `gets()` a whole binary expression
 could be removed (thus removing an extra `exit()` call) and it now almost looks
 like the same as the original.
+
+Additionally, Cody fixed the shortened version provided by the author in the
+same way as the original entry, first the compile fix and then later on making
+it look more like the original by redefining `exit` and also redefining `gets()`
+to be `fgets()` in the same way that the original entry is. This way the alt
+version is equivalent in function, like the author intended, but more compact.
 
 ## [1990/theorem](1990/theorem/theorem.c) ([README.md](1990/theorem/README.md]))
 
