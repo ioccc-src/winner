@@ -173,12 +173,12 @@ OUR LIKES AND DISLIKES:
     We tend to dislike programs that:
 
 	* are very hardware specific
-	* are very OS or Un*x version specific
+	* are very OS or Unix version specific
 	     (index/strchr differences are ok, but socket/streams specific
 	      code is likely not to be)
 	* dump core or have compiler warnings
 	     (it is ok only if you warn us in the 'remark' header item)
-	* won't compile under both BSD or SYS V like Un*x systems	      |
+	* won't compile under both BSD or SYS V like Unix systems	      |
 	* abusing the build file to get around the size limit
 	* obfuscate by excessive use of ANSI trigraphs
 	* are longer than they need to be
@@ -345,7 +345,7 @@ fix:	n
 title:	chonglab
 entry:	0
 date:	Thu Mar  3 13:23:14 1994
-host:	Un*x v6, pdp11/45
+host:	Unix v6, pdp11/45
 	2.9BSD, pdp11/70
 ---remark---
     This is a non-obfuscated obfuscated C program.

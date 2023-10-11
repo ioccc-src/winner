@@ -272,15 +272,15 @@ OUR LIKES AND DISLIKES:
     .Xdefaults.  If you must do so, be sure to note the required lines
     in the ---remark--- section.
 
-    While we recognize that UN*X is not a universal operating system, the
+    While we recognize that UNIX is not a universal operating system, the
     contest does have a bias towards such systems.  In an effort to expand
     the scope of the contest, we phrase our bias in terms of POSIX P1003.1
-    and P1003.2 standards.  This will allow certain non-UN*X OS users to
+    and P1003.2 standards.  This will allow certain non-UNIX OS users to
     submit entries.  On the other hand, this is a guideline and not a rule.
     We will not reject an entry based on some POSIX technicality.
 
     When dealing with OS and application environments, we suggest that you
-    be reasonable with a nod towards vanilla UN*X-like systems.  POSIX will
+    be reasonable with a nod towards vanilla UNIX-like systems.  POSIX will
     evolve but not as much as the contest, so avoid stuff like POSIX real
     time, security, etc.
 
@@ -389,7 +389,7 @@ fix:	y
 title:	chlejhse
 entry:	0
 date:	Mon Oct 28 00:47:00 1998
-host:	Un*x v6, pdp11/45
+host:	Unix v6, pdp11/45
 	2.9BSD, pdp11/70
 ---remark---
     This is a not-very-obfuscated C program.  It is likely not to win a

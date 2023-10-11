@@ -25,7 +25,7 @@
 1987 biggar	program: "P;" defined on command line
 1987 heckbert	obfuscated fold program
 1987 hines	counts goto's, all ids anagrams of 'goto', all flow w goto
-1987 korn	one-liner that prints a message on a Un*x system
+1987 korn	one-liner that prints a message on a Unix system
 1987 lievaart	very good othello player
 1987 wall	roman numeral -> decimal and vice versa conversion
 1987 westley	individually palindromic lines prints a palindrome

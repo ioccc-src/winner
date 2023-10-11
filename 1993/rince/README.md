@@ -171,7 +171,7 @@ Alliant FX2800      Conentrix 3.0.0 fxc
 ---
 
 \* I never said it worked! The guidelines state that you dislike programs that
-won't *compile* under both BSD or SysV `Un*x`. This compiles, and indeed runs
+won't *compile* under both BSD or SysV `Unix`. This compiles, and indeed runs
 on all the others (both BSD and SysV) correctly.
 
 Alas, on Solaris it compiles, but mysteriously stops displaying output

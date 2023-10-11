@@ -6,7 +6,7 @@ from both Landon Curt Noll and Larry Bassel.
 
 I'm sure you have all seen gross, or down right structurally obscene C
 source code before.  Some people who deal with various parts of the
-UN*X  source wonder if some folks try rather hard to produce such
+UNIX  source wonder if some folks try rather hard to produce such
 down right smelly code.
 
 Now you have the chance to compete with the worst C hackers around
@@ -37,7 +37,7 @@ but dont let the lack of a 780 or 4.2 discourage you!
 
 chongo <flames about the contest will be kindly #ifdef'ed out> /\CC/\
 
-UN*X is a trademark of Usenet Hackers Anonymous
+UNIX is a trademark of Usenet Hackers Anonymous
 
 WARNING: The rules and mailing address for the contest change from year
          to year.  Be sure that you consult the current set of rules
