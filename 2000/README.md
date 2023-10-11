@@ -8,10 +8,10 @@ on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
-Use make to compile entries.  It is possible that on non-Unix / non-Linux
-systems the makefile needs to be changed.  See the Makefile for details.
+Use `make` to compile entries.  It is possible that on non-Unix / non-Linux
+systems the Makefile needs to be changed.  See the Makefile for details.
 
-Read over the makefile for compile/build issues.  Your system may
+Read over the Makefile for compile/build issues.  Your system may
 require certain changes (add or remove a library, add or remove a
 #define).
 
