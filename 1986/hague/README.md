@@ -16,14 +16,14 @@ it is worth having as an alternate version.
 ## To run:
 
 ```sh
-./hague
+./hague 2>/dev/null
 # enter some text
 ```
 
 ## Try:
 
 ```sh
-./hague
+./hague 2>/dev/null
 IOCCC
 International Obfuscated C Code Contest
 Jim Hague
@@ -32,7 +32,7 @@ Jim Hague
 Also try:
 
 ```sh
-echo IOCCC | ./hague
+echo IOCCC | ./hague 2>/dev/null
 ```
 
 ### Alternate code:
