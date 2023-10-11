@@ -8,71 +8,67 @@ Michael Birken
 ## To build:
 
 ```sh
-make
+make alt
 ```
-
-An alternate version which allows one to more easily see what is going on is
-available. See Alternate code section below for more details.
-
-WARNING: if you have a problem with flashing colours please consider whether you
-should try this entry or not. This problem can also occur with the alternate
-version but to a lesser degree depending on how it's configured.
-
 
 ## To run:
 
+To see why we recommend the alternate version instead of the original version,
+see the [original code](#original-code) section. 
+
 ```sh
-./birken < 17_columns_wide_paint_by_numbers_file
+./birken.alt < 17_columns_wide_paint_by_numbers_file
 ```
 
+To see why we recommend the alternate version instead of the original version,
+see the [original code](#original-code) section.
 
 ## Try:
 
-```sh
-./birken < ioccc.txt
-
-perl -e 'map{map{print int(rand()*8);}(0..16);print chr(10);}(0..30);' | tr '[0-4]' ' '| ./birken
-
-./demo.sh
-
-BIRKEN=birken.alt ./demo.sh
-```
-
-
-### Alternate code:
-
-The alternate version for this entry which allows one to control
-how fast the painting is done.
-
-To compile:
-
-
-```sh
-make clobber alt
-```
+This alternate version, which we recommend that you use in order to see what is
+happening with modern systems, and to not flash colours too quickly, which can
+be problematic for some people, can be configured to different speeds by way of
+the value used in `usleep()`. The default is `-DZ=15000`.
 
 Finding the 'right' default value was a fine line; the default, 15000
 microseconds (0.015 seconds), will take quite a while to finish but it allows
 one to more easily see what is going on. Even easier to see would be 25000 but
 these values make it quite slow and one could easily lose interest. Like some
-other entries where this was made an alternate version he made it
-configurable at compile time. If you wish to speed it up by 100% you can instead
-do:
+other entries where this was made an alternate version it is configurable at
+compile time. If you wish to speed it up by 100% you can instead do:
 
 
 ```sh
 make clobber CDEFINE=-DZ=7500 alt
+./birken.alt < ioccc.txt
+
+perl -e 'map{map{print int(rand()*8);}(0..16);print chr(10);}(0..30);' | tr '[0-4]' ' '| ./birken.alt
+
+./demo.sh
 ```
 
-That will speed it up a fair amount but of course it will still take a while to
-finish. If you wish to speed it up 200% you can use instead `3750`. Doing this
-you might find the right value; use ctrl-c to terminate the program early.
+If you wish to speed it up 200% you can use instead `-DZ=3750`. Doing this
+you might find the right value to your liking; use ctrl-c to terminate the
+program early.
 
-Given that the [original](birken.c) version is easy to see without a delay this
-slower value shouldn't be a problem.
+### Original code:
 
-Use `birken.alt` as you would `birken` above.
+Should you wish to see the original without having to mess with the compiler
+line, try:
 
+
+```sh
+make clobber all
+```
+
+Use `birken` as you would `birken.alt` above. To use the demo script with the
+original code, try:
+
+```sh
+BIRKEN=birken ./demo.sh
+```
+
+PLEASE be careful if you are sensitive to flashing colours!
 
 ## Judges' remarks:
 

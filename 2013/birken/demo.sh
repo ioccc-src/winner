@@ -3,7 +3,7 @@
 make clobber everything 2>/dev/null
 
 if [[ -z "$BIRKEN" ]]; then
-    BIRKEN="birken"
+    BIRKEN="birken.alt"
 fi
 
 trap "clear; exit" SIGINT
