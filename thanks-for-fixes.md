@@ -1584,10 +1584,20 @@ Cody fixed this to compile with modern systems. The problems were that
 `localtime()` is used differently and `time.h` being included (with SDL2 in
 macOS - but see below) there was a conflicting function type. This appeared to
 be a problem with macOS and only when SDL2 was included (but which as noted next
-it cannot be). The other problem is that this entry uses SDL functions that were
+it cannot be).
+
+The other problem is that this entry uses SDL functions that were
 removed from SDL2 so the Makefile has to use `sdl-config` and not `sdl2-config`.
-This means that to be strictly technical, the removal of `localtime()` is not
-necessary but this change was left in place anyway.
+This meant that at one point to be strictly technical, the removal of
+`localtime()` wasn't necessary but this change was left in place anyway.
+
+Later on in an updated macOS (problem discovered in macOS Sonoma) the entry
+failed to compile again also due to `localtime()` so the prototype was
+completely removed to solve the problem.
+
+He also slightly improved the `runme` script to not assume that the program has
+been compiled by running `make clobber all || exit 1`.
+
 
 ## [2013/hou](2013/hou/hou.c) ([README.md](2013/hou/README.md))
 
