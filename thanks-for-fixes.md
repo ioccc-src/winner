@@ -1610,6 +1610,23 @@ Finally Cody provided the [bios.asm](2013/cable3/bios.asm) that the author
 referred to, found at the [GitHub repo for the
 entry](https://github.com/adriancable/8086tiny/tree/master).
 
+## [2013/dlowe](2013/dlowe/dlowe.c) ([README.md](2013/dlowe/README.md))
+
+Cody added the source code that we suggested one should compile and run with
+different compilers as [fun.c](2013/dlowe/fun.c). He modified the Makefile so
+that running `make all` will compile it, saving you the effort.
+
+He also provided the script [slen.sh](2013/dlowe/slen.sh) which is based on the
+author's remarks, giving a script that shows the spark line of the file lengths
+(as in `wc -c`), fixing it for shellcheck. These fixes were applied in the
+author's remarks as well.
+
+Since the author called the program `sparkl` Cody modified the Makefile so that
+running `make all` will create a symlink to `dlowe` as `sparkl`. Running `make
+clobber` will delete both and running `make clobber all` will ensure that the
+symlink is created.
+
+
 ## [2013/hou](2013/hou/hou.c) ([README.md](2013/hou/README.md))
 
 After the file 2013/hou/doc/example.markdown was moved to

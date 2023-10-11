@@ -1840,6 +1840,19 @@ The file is `hd.img`.
 
 Do you have it? Please provide it!
 
+## [2013/dlowe](2013/dlowe/dlowe.c) ([README.md](2013/dlowe/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This program will very likely crash or draw something strange with 0 args. Then
+again it might not. :-) This is easy to fix but would add bytes and since the
+author noted it is a feature and not a bug. You of course can try and fix it
+yourself but please do NOT open a pull request for this: just do it as an
+exercise to see if you understand the code.
+
+You can try and answer the questions, too: when will it crash? When will it draw
+something funny (or will it? :-) ) and when will it just do nothing?
+
+
 # 2014
 
 
