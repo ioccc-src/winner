@@ -17,32 +17,31 @@ make alt
 ./slone.alt
 ```
 
-An alternatively version of this entry exists so that one can actually see what
-is going on. This is also more ideal for those who are overstimulated by fast
-movements. See the alternate code section below.
-
+To see why we recommend the alternate version instead of the original version,
+see the [original code](#original-code) section. 
 
 ## Try:
 
-The version we recommend that you use, in order to see what is happening with
-modern systems, and to not flash too quickly, which can be problematic for some
-people, can be configured to different speeds by way of the value used in
-`usleep()`. The default `-DZ=65000` but you can easily change it. To do so try:
+This alternate version, which we recommend that you use in order to see what is
+happening with modern systems, and to not flash too quickly, which can be
+problematic for some people, can be configured to different speeds by way of the
+value used in `usleep()`. The default is `-DZ=65000` but you can easily change
+it. To do so try:
 
 ```sh
 make CDEFINE="-DZ=70000" clobber alt
 ./sloane.alt
 ```
 
-If you wish to make it like the original, as if the below 'alternate code' was
-being used, you can do:
+If you wish to make it like the original, as if the below [Original
+code](#original-code) was being used, you can do:
 
 ```sh
 make CDEFINE="-DZ=0" clobber alt
 ./sloane.alt
 ```
 
-### Alternate code:
+### Original code:
 
 Should you wish to see the original without having to mess with the compiler
 line, try:
@@ -57,7 +56,7 @@ photosensitivity please be careful running this version and instead see the
 above!
 
 NOTE: again as above, to see what is going on, we recommend that you instead use
-the real alternate code which we described in the [To build](#to-build) and
+the alternate code which we described in the [To build](#to-build) and
 [try](#try) sections above.
 
 If however you wish to see the original, try:
