@@ -1,8 +1,6 @@
-2001 marked the "The Sixteenth International Obfuscated C Code Contest"
+# 2001 marked the "The Sixteenth International Obfuscated C Code Contest"
 
-
-Standard IOCCC stuff
---------------------
+## Standard IOCCC stuff
 
 Look at the README.md file for the given winning entry for information
 on how to compile it and how to run the winning program.
@@ -10,11 +8,9 @@ Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
 The IOCCC has a web site and now has a number of international mirrors.  The
-primary site can be found at,
+primary site can be found at <https://www.ioccc.org>.
 
-     https://www.ioccc.org
-
-Use make to compile entries.  It is possible that on non-Un\*x / non-Linux
+Use make to compile entries.  It is possible that on non-Unix / non-Linux
 systems the makefile needs to be changed.  See the Makefile for details.
 
 Read over the makefile for compile/build issues.  Your system may

@@ -15,7 +15,7 @@ The primary site can be found at,
 
 >	<https://www.ioccc.org/>
 
-Use make to compile entries.  It is possible that on non-Un\*x / non-Linux
+Use make to compile entries.  It is possible that on non-Unix / non-Linux
 systems the makefile needs to be changed.  See the Makefile for details.
 
 This year we included most of the information included by the submitters
