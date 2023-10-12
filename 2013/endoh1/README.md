@@ -30,19 +30,22 @@ Be patient with the last one.
 
 ## Judges' remarks:
 
-We liked this entry because it can serve as a standalone program as well as an include file; and, as usual,
-because its input data is at least as obfuscated as the program itself.
+We liked this entry because it can serve as a standalone program as well as an
+include file; and, as usual, because its input data is at least as obfuscated as
+the program itself.
 
-This entry can be considered an abuse of the GCC's optimizer; it takes GCC about 4x longer to compile it
-with -O3 than without, compared to clang's 2x.
+This entry can be considered an abuse of the GCC's optimizer; it takes GCC about
+4x longer to compile it with -O3 than without, compared to clang's 2x.
 
 ## Author's remarks:
 
 ### Remarks
 
-    $ less prog.c
-    $ gcc -o prog prog.c
-    $ ./prog
+```sh
+less endoh1.c
+gcc -o endoh1 endoh1.c
+./endoh1
+```
 
 ... Isn't there any more to it?
 
@@ -51,30 +54,33 @@ Yes, of course.
 This is a tool *for C programmers* to play the [SKI combinator calculus][1],
 especially, [Lazy K][2].
 
-This program will shine when it is used as a library.
-For example, `hello.lazy` is a "Hello world" program written in Lazy K.
+This program will shine when it is used as a library.  For example, `hello.lazy`
+is a "Hello world" program written in Lazy K.
 
-    $ lazy hello.lazy
-    Hello, world!
+```sh
+$ lazy hello.lazy
+Hello, world!
+```
 
 where `lazy` is [a reference implementation of Lazy K][3].
-At the same time, `hello.lazy` is *a valid C program* that uses `prog.c` as a library.
+At the same time, `hello.lazy` is *a valid C program* that uses `endoh1.c` as a library.
 
-    $ gcc -o hello -xc hello.lazy
-    $ ./hello
-    Hello, world!
+```sh
+$ gcc -o hello -xc hello.lazy
+$ ./hello
+Hello, world!
+```
 
 In other words, this program is a kind of [polyglot][4].
 
-The usage is simple:
-you just have to wrap Lazy K program with `#include "prog.c"`.
-Note that `#` is a comment in Lazy K.
+The usage is simple: you just have to wrap Lazy K program with `#include
+"endoh1.c"`.  Note that `#` is a comment in Lazy K.
+
 
 [1]: http://en.wikipedia.org/wiki/SKI_combinator_calculus
-[2]: redacted
-[3]: redacted
+[2]: https://tromp.github.io/cl/lazy-k.html
+[3]: https://github.com/irori/lazyk
 [4]: http://en.wikipedia.org/wiki/Polyglot_%28computing%29
-
 ### Obfuscation
 
 ... is inherent in SKI combinator calculus :-)
@@ -87,38 +93,40 @@ and to satisfy IOCCC's size rule.
 * Short coding
 
 These led to the good obfuscation.
-See Spoiler section in detail, if you need.
+
+See [Spoiler section](#spoiler) in detail, if you need.
 
 ### Limitation
 
 This program supports only "Combinator-calculus style notation" of Lazy K.
 "Unlambda style" and "Iota and Jot" style are not supported.
-Also, it requires a space between identifiers.
-In short, use `(S K)` instead of `(SK)`, "\`sk", `**i*i*i*ii*i*i*ii`,
-or `11111100011100`.
 
-Huge memory may be required to compile the program
-(about 300 MB on my machine).
+Also, it requires a space between identifiers.  In short, use `(S K)` instead of
+`(SK)`, "\`sk", `**i*i*i*ii*i*i*ii`, or `11111100011100`.
 
-In addition, there are some limitations (and workarounds)
-mentioned in Spoiler section.
-But I think it wouldn't matter only when you run the attached programs.
+Huge memory may be required to compile the program (about 300 MB on my machine).
+
+In addition, there are some limitations (and workarounds) mentioned in [Spoiler
+section](#spoiler).
+
+But I think it would only matter when you run the attached programs.
 
 ### Portability
 
-I confirmed that the program successfully worked
-with the following compilers.
+I confirmed that the program successfully worked with the following compilers:
 
-  * gcc 4.6.3 [Linux, Mac OS X]
-  * clang 3.0 [Linux, Mac OS X]
-  * tcc 0.9.26 [Linux]
-    * N.B. tcc 0.9.25 seems to have a bug and fails to run it.
+* gcc 4.6.3 [Linux, Mac OS X]
+* clang 3.0 [Linux, Mac OS X]
+* tcc 0.9.26 [Linux]
+    - N.B. tcc 0.9.25 seems to have a bug and fails to run it.
 
 Recent compilers with `-Wall -W -Wextra -pedantic` say nothing.
 
-    gcc -Wall -W -Wextra -pedantic prog.c
-    clang -Wall -W -Wextra -pedantic prog.c
-    tcc -Wall -W -Wextra -pedantic prog.c
+```sh
+gcc -Wall -W -Wextra -pedantic prog.c
+clang -Wall -W -Wextra -pedantic prog.c
+tcc -Wall -W -Wextra -pedantic prog.c
+```
 
 I think it will work on almost all platforms.  I confirmed:
 
@@ -126,83 +134,89 @@ I think it will work on almost all platforms.  I confirmed:
   * Mac OS X
   * Raspberry PI
 
-To check whether the program is specified on the command line
-or included from another source file,
-the program uses a predefined macro `__INCLUDE_LEVEL__`.
-It is a gcc extention, and also supported by clang.
-If your compiler does not support it,
-you cannot use the program as a library.
-But you can compile and run it as a standalone program, at least.
-In fact, tcc does not support the macro, but does work.
-
-### Spoiler (rot13)
-
-Gur jubyr cebtenz vf vagrecergrq ol znpeb rkcnafvba.
-Sbe rknzcyr, `F (X V)` vf genafyngrq gb n abezny P pbqr, `(f)((x)(v))`,
-be fvzcyl `f(x(v))`.
-Guvf rkcerffvba ergheaf na nofgenpg flagnk gerr,
-naq `cebt.p` rinyhngrf vg.
-Guvf cebtenz hfrf irel fvzcyr "grez erjevgvat" nccebnpu
-sbe rinyhngvat FXV pbzovangbe pnyphyhf.
-Gur erjevgvat ehyrf ner fubja va gur funcr bs gur pbqr.
-
-#### Nohfr bs shapgvba cbvagref
-
-Pbafvqre n frdhrapr bs shapgvba nccyvpngvbaf va P:
-
-    f(k)(k)(k)(k)...
-
-Jung glcr fubhyq `f` unir?
-Hasbeghangryl, P qbrf *abg* cebivqr n "erphefvir glcr",
-fhpu nf `glcrqrs s (*s)();`.
-Fb, V hfrq n urniyl arfgrq shapgvba cbvagre glcr:
-
-    glcrqrs ibvq *(*(*(*...(*(s))()...)())())
-
-Guvf yvzvgf ubj znal nethzragf bar shapgvba pna or pbafrphgviryl nccyvrq gb.
-Ohg lbh pna vapernfr gur ahzore ol gjrnxvat gur qrsvavgvba bs znpeb `c`.
+To check whether the program is specified on the command line or included from
+another source file, the program uses a predefined macro `__INCLUDE_LEVEL__`.
+It is a gcc extension, and also supported by clang.  If your compiler does not
+support it, you cannot use the program as a library.  But you can compile and
+run it as a standalone program, at least.  In fact, tcc does not support the
+macro, but does work.
 
 
-#### Pbqr qhcyvpngvba ol znpebf
+### Spoiler
 
-Arkg, jr arrq gb rapbqr "pybfherf".
-N pybfher vf n shapgvba gbtrgure jvgu na raivebazrag
-juvpu vf n ersrerapr gb aba-ybpny inevnoyr.
+The whole program is interpreted by macro expansion.
+For example, `S (K I)` is translated to a normal C code, `(s)((k)(i))`, or
+simply `s(k(i))`.
 
-Va guvf pnfr, jr arrq fbzrguvat gung:
+This expression returns an abstract syntax tree, and [endoh1.c](endoh1.c)
+evaluates it.
 
-  * vf pnyynoyr vgfrys,
-  * vagreanyyl cbffrffrf n ersrerapr gb nabgure pybfher nf n aba-ybpny inevnoyr, naq
-  * nccyvrf gur vagreany pybfher gb na nethzrag jura vg vf pnyyrq.
+This program uses a very simple "term rewriting" approach for evaluating SKI
+combinator calculus.  The rewriting rules are shown in the shape of the code.
 
-Ubjrire, ab glcr va P vf pnyynoyr naq unf n ersrerapr ng gur fnzr gvzr.
-(Vg vf srnfvoyr ol qlanzvp pbqr trarengvba, ohg vg vf sne sebz cbegnoyr.)
+#### Abuse of function pointers
 
-Fb, V nqqerffrq guvf vffhr ol trarengvat znal shapgvba qrsvavgvbaf
-fgngvpnyyl ol (no)hfvat znpebf:
+Consider a sequence of function applications in C:
 
-    ibvq *k1; ibvq s1(ibvq *l) { erghea nccyl(k1, l); }
-    ibvq *k2; ibvq s2(ibvq *l) { erghea nccyl(k2, l); }
-    ibvq *k3; ibvq s3(ibvq *l) { erghea nccyl(k3, l); }
-    ...
-    ibvq *(u[]) = { s1, s2, s3, ... }
+```c
+s(x)(x)(x)(x)...
+```
 
-naq ol nyybgvat rnpu bs gurz jura n pybfher vf arrqrq.
+What type should `s` have?  Unfortunately, C does *not* provide a "recursive
+type", such as `typedef f (*f)();`.
 
-Guvf yrnqf gb nabgure yvzvgngvba:
-gur ahzore bs cer-qrsvarq pybfherf yvzvgf
-ubj znal vaqragvsvref (`F` `X` `V`) bar cebtenz pna hfr.
-Ohg lbh pna vapernfr guvf ahzore
-ol gjrnxvat gur qrsvavgvba bs znpeb `N` `O` `P` naq `Q`.
-(Abgr gung pybfherf ner nyybggrq bayl jura cnefvat;
-nsgre gur rinyhngvba fgnegf, "bhg bs pybfher" pnaabg bpphe.)
+So, I used a heavily nested function pointer type:
 
-#### Fubeg pbeqvat
+```c
+typedef void *(*(*(*...(*(f))()...)())())
+```
 
-Guvf znetva vf gbb aneebj gb pbagnva n qrgnvyrq rkcynangvba.
-Vafgrnq, V whfg nfx lbh bar dhrfgvba.
-Pna lbh gryy jung `i f[]={0,0,f+6,f+2,f+4,f,f+3,f+5,f+1};` vf?
-V sbhaq guvf ol hfvat FZG fbyire.
+This limits how many arguments one function can be consecutively applied to.
+But you can increase the number by tweaking the definition of macro `p`.
+
+
+#### Code duplication by macros
+
+Next, we need to encode "closures".  A closure is a function together with an
+environment which is a reference to non-local variable.
+
+In this case, we need something that:
+
+* is callable itself,
+* internally possesses a reference to another closure as a non-local variable,
+and
+* applies the internal closure to an argument when it is called.
+
+However, no type in C is callable and has a reference at the same time.
+(It is feasible by dynamic code generation, but it is far from portable.)
+
+So, I addressed this issue by generating many function definitions
+statically by (ab)using macros:
+
+```c
+void *x1; void f1(void *y) { return apply(x1, y); }
+void *x2; void f2(void *y) { return apply(x2, y); }
+void *x3; void f3(void *y) { return apply(x3, y); }
+...
+void *(h[]) = { f1, f2, f3, ... }
+```
+
+and by allotting each of them when a closure is needed.
+
+This leads to another limitation: the number of pre-defined closures limits how
+many identifiers (`S` `K` `I`) one program can use.
+
+But you can increase this number by tweaking the definition of macro `A` `B` `C`
+and `D`.  (Note that closures are allotted only when parsing; after the
+evaluation starts, "out of closure" cannot occur.)
+
+#### Short cording
+
+This margin is too narrow to contain a detailed explanation.  Instead, I just
+ask you one question.  Can you tell what `v
+s[]={0,0,s+6,s+2,s+4,s,s+3,s+5,s+1};` is?  I found this by using SMT solver.
+
+
 
 ## Copyright and CC BY-SA 4.0 License:
 
