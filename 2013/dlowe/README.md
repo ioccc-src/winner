@@ -30,6 +30,11 @@ make
 echo "sparkline of file sizes: $(wc -c * | awk '{print $1}' | xargs ./dlowe)" # or ./slen.sh
 ```
 
+./dlowe 0 
+
+echo "sparkline of file sizes: $(wc -c * | awk '{print $1}' | xargs ./dlowe)" # or ./slen.sh
+```
+
 Alternatively, for the lazy or those short on time, try:
 
 ```sh
@@ -44,7 +49,6 @@ echo 'IOCCC 2013' > ioccc.txt
 rm -f ioccc.txt
 ```
 
-?
 
 To make it simpler to see try showing just the last two lines:
 
