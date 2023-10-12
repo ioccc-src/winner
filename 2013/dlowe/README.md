@@ -32,6 +32,11 @@ echo "sparkline of file sizes: $(wc -c * | awk '{print $1}' | xargs ./dlowe)" # 
 echo "sparkline of file sizes: $(wc -c * | awk '{print $1}' | xargs ./dlowe)" # or ./slen.sh
 ```
 
+./dlowe 0 
+
+echo "sparkline of file sizes: $(wc -c * | awk '{print $1}' | xargs ./dlowe)" # or ./slen.sh
+```
+
 Alternatively, for the lazy or those short on time, try:
 
 ```sh
