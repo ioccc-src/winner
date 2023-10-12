@@ -1852,6 +1852,12 @@ exercise to see if you understand the code.
 You can try and answer the questions, too: when will it crash? When will it draw
 something funny (or will it? :-) ) and when will it just do nothing?
 
+## [2013/hou](2013/hou/hou.c) ([README.md](2013/hou/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+This program will not terminate on its own; you must kill `hou` (but not Qiming
+Hou :-) ) yourself. This should not be fixed.
+
 
 # 2014
 

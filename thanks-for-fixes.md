@@ -1629,6 +1629,14 @@ symlink is created.
 Cody also added the [demo.sh](2013/dlowe/demo.sh) script to more easily try the
 program.
 
+## [2013/endoh4](2013/endoh4/endoh4.c) ([README.md](2013/endoh4/README.md))
+
+Cody added the [run.sh](2013/endoh4/run.sh) script which temporarily turns off
+the cursor as suggested by the author, with the addition that if no file is
+specified it will feed the source code [endoh4.c](2013/endoh4/endoh4.c) to the
+program rather than the file specified. It does not try and detect if the file
+exists or can be read as that will be handled by the shell/program.
+
 
 ## [2013/endoh4](2013/endoh4/endoh4.c) ([README.md](2013/endoh4/README.md))
 
@@ -1641,9 +1649,36 @@ exists or can be read as that will be handled by the shell/program.
 
 ## [2013/hou](2013/hou/hou.c) ([README.md](2013/hou/README.md))
 
-After the file 2013/hou/doc/example.markdown was moved to
+Cody fixed the Makefile so that this would work properly. Before this the use of
+the program just did what the judges' remarks said as far as how it might
+violate rule 2: the program is really just a decompressor to generate the
+real source of the program. So the source of the entry has to be compiled and
+then run, and the output has to be compiled to be `hou`. This allows the real
+program to be used. Thus the Makefile rule looks like:
+
+```makefile
+${PROG}: ${PROG}.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	./${PROG} | ${CC} ${CFLAGS} -xc - -o $@ ${LDFLAGS}
+```
+
+
+
+which then compiles like:
+
+```sh
+cc -std=gnu11 -Wall -Wextra -pedantic -Wno-sign-compare -Wno-strict-prototypes    -O3 hou.c -o hou -lm
+./hou | cc -std=gnu11 -Wall -Wextra -pedantic -Wno-sign-compare -Wno-strict-prototypes    -O3 -xc - -o hou -lm
+```
+
+The `LDFLAGS` were updated to have `-lm` as the author suggested it uses the
+`math.h` library which not all systems link in by default (linux for instance
+does not).
+
+Further, after the file 2013/hou/doc/example.markdown was moved to
 [2013/hou/doc/example.md](2013/hou/doc/example.md) to match the rest of the repo
-this broke `make` which Cody fixed.
+this broke `make` which Cody also fixed.
+
 
 ## [2013/morgan1](2013/morgan1/morgan1.c) ([README.md](2013/morgan1/README.md))
 
