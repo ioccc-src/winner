@@ -24,6 +24,10 @@ make
 ./dlowe 16 32 64 128
 ./dlowe 16 32 64 128 256
 ./dlowe 16 32 64 128 256 512
+
+
+echo "sparkline of file sizes: $(wc -c * | awk '{print $1}' | xargs ./dlowe)" # or ./slen.sh
+
 ./dlowe 0 
 
 echo "sparkline of file sizes: $(wc -c * | awk '{print $1}' | xargs ./dlowe)" # or ./slen.sh
@@ -55,6 +59,7 @@ rm -f ioccc.txt
 diff 1.txt 2.txt
 rm 1.txt 2.txt
 ```
+
 
 ## INABIAF - it's not a bug it's a feature! :-)
 
