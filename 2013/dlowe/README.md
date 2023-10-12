@@ -28,6 +28,34 @@ make
 echo "sparkline of file sizes: $(wc -c * | awk '{print $1}' | xargs ./dlowe)" # or ./slen.sh
 
 ./dlowe 0 
+
+echo "sparkline of file sizes: $(wc -c * | awk '{print $1}' | xargs ./dlowe)" # or ./slen.sh
+```
+
+Alternatively, for the lazy or those short on time, try:
+
+```sh
+./demo.sh
+```
+
+What is different about the above if you do something like:
+
+```sh
+echo 'IOCCC 2013' > ioccc.txt
+./demo.sh
+rm -f ioccc.txt
+```
+
+
+To make it simpler to see try showing just the last two lines:
+
+```sh
+./demo.sh | tail -n 2 > 1.txt
+echo 'IOCCC 2013' > ioccc.txt
+./demo.sh | tail -n 2 > 2.txt
+rm -f ioccc.txt
+diff 1.txt 2.txt
+rm 1.txt 2.txt
 ```
 
 ## INABIAF - it's not a bug it's a feature! :-)
