@@ -12,10 +12,10 @@ The primary IOCCC web site can be found at,
 
 >	<https://www.ioccc.org/>
 
-Use make to compile entries.  It is possible that on non-Unix / non-Linux
-systems the makefile needs to be changed.  See the Makefile for details.
+Use `make` to compile entries.  It is possible that on non-Unix / non-Linux
+systems the Makefile needs to be changed.  See the Makefile for details.
 
-Read over the makefile for compile/build issues.  Your system may require
+Read over the Makefile for compile/build issues.  Your system may require
 certain changes (add or remove a library, add or remove a #define).
 
 Some C compilers are not quite as good as they should be.  If yours is
@@ -46,7 +46,7 @@ A few entries were violating the "2053 significant bytes" rule. If an entry coul
 compliance within a few seconds of looking at the source, it was disqualified.
 
 One entry tried to get around the size limit by putting the code into
-makefile variables and using -D. This is already called out as discouraged
+Makefile variables and using -D. This is already called out as discouraged
 technique in the guidelines, but it is worth a reminder.
 
 Several promising entries attempted to make use of the `syscall` function using literal syscall numbers.

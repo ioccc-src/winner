@@ -13,15 +13,15 @@ The primary IOCCC web site can be found at,
 
 >	<https://www.ioccc.org/>
 
-Use make to compile entries.  It is possible that on non-Unix / non-Linux
-systems the makefile needs to be changed.  See the Makefile for details.
+Use `make` to compile entries.  It is possible that on non-Unix / non-Linux
+systems the Makefile needs to be changed.  See the Makefile for details.
 
 Look at the source and try to figure out what the programs do, and run
 them with various inputs.  If you want to, look at the hints files for
 spoilers - this year we included most of the information included
 by the submitter.
 
-Read over the makefile for compile/build issues.  Your system may require
+Read over the Makefile for compile/build issues.  Your system may require
 certain changes (add or remove a library, add or remove a #define).
 
 Some C compilers are not quite as good as they should be.  If yours is
