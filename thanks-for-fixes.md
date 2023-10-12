@@ -1005,9 +1005,9 @@ other version in.
 Cody fixed both the supplementary program and the program itself (both of which
 segfaulted and once that was fixed only the binary was modified; it was not run
 but according to the author's remarks it should be executed). He managed to do
-this with linux but it will not work with macOS Catalina (10.15). See
-[bugs.md](/bugs.md) for why this is); _this is **not** a bug, it's a feature_
-inherent in what it does!
+this with linux but it will not work with any system that does not allow one to
+compile 32-bit binaries such as macOS. See [bugs.md](/bugs.md) for why this is;
+_this is **not** a bug, it's a feature_ inherent in what it does!
 
 Below is what it took to fix.
 
@@ -1022,14 +1022,17 @@ binary. But again see [bugs.md](/bugs.md) here.
 These also had to be done:
 
 - when `open()`ing the file the file descriptor had to be saved so it could be
-closed prior to executing the program.
-- `munmap()` also had to be called prior to executing the program.
+closed prior to executing the program. This is the `f` variable which is of type
+`l`, a `#define` for `int *`.
+- `munmap()` also had to be called prior to executing the program. This involved
+a new `off_t N` so which was added in the `mmap()` call which was then used in
+the `munmap()` call.
 
 Without those changes the program was not executed after modification which it
-was supposed to do, instead reporting text file busy error.
+was supposed to do; instead it reported text file busy error.
 
-Notice that the location of the calls to `munmap()` and `close()` followed by
-`execv()` _does matter_!
+Notice that the location of `munmap()` and `close()` followed by `execv()` _does
+matter_!
 
 To get this to compile with clang, `main()` had to change from:
 
@@ -1044,7 +1047,8 @@ int main (int cka, char **k) { char *ck = (char *)cka; /* ... */ }
 ```
 
 The following change was also made to be more portable, in case the constants
-`PROT_READ` and/or `PROT_WRITE` are not standardised:
+`PROT_READ` and/or `PROT_WRITE` are not standardised or some platform does not
+follow it:
 
 Change `3` in the call to `mmap()` to be `PROT_READ|PROT_WRITE`: just in case
 `PROT_READ|PROT_WRITE` does not equal 3 (though it seems to be equal in both
@@ -1072,6 +1076,9 @@ Cody also added a [program](anonymous.bed.c) like [anonymous.ten.c](anonymous.te
 [Ten Green Bottles](https://en.wikipedia.org/wiki/Ten_Green_Bottles) but which
 sings [Ten in the Bed](https://allnurseryrhymes.com/ten-in-the-bed/).
 
+As well he added the [try.me.sh](2001/anonymous/try.me.sh) so that one can
+attempt to use the program as it was designed but if compiling as 32-bit fails
+it will at least run the supplementary program as a 64-bit program directly.
 
 ## [2001/bellard](2001/bellard/bellard.c) ([README.md](2001/bellard/README.md]))
 

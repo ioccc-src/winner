@@ -17,17 +17,6 @@ make
 ./anonymous x86_program
 ```
 
-For fun and so that there's another program that is a bit different (it uses a `char
-*[]` array for example) that this program will still work on. To use:
-
-```sh
-make anonymous.bed # if able to use -m32
-./anonymous anonymous.bed
-
-make anonymous.bed.64 # if unable to use -m32
-./anonymous.bed.64
-```
-
 
 ## Try:
 
@@ -37,6 +26,20 @@ make anonymous.bed.64 # if unable to use -m32
 ./anonymous anonymous.bed # if able to use -m32
 ```
 
+NOTE: if the 32-bit version cannot be compiled the script will at least compile
+[anonymous.ten](anonymous.ten.c) as a 64-bit program and run it directly.
+
+For fun and so that there's another program that is a bit different (it uses a `char
+*[]` array for example) that this program will still work on:
+
+```sh
+make anonymous.bed # if able to use -m32
+./anonymous anonymous.bed
+
+make anonymous.bed.64 # if unable to use -m32
+./anonymous.bed.64
+```
+
 What happens if the x86 program has already been modified by this program? The
 judges' remarks below might give you a hint!
 
@@ -44,14 +47,6 @@ What happens if you try it on another file like [anonymous.c](anonymous.c)? Can
 you recompile it okay? What if you run it on `anonymous` itself? Can you run the
 program successfully after it without recompiling?
 
-NOTE: if the 32-bit version cannot be compiled the script will at least run the
-alternate version of the [anonymous.ten](anonymous.ten.c) program.
-
-
-## Judges' remarks:
-
-Is emulation the sincerest form of flattery?  This small program does
-quite a lot of bit twiddling.
 
 ### INABIAF - it's not a bug it's a feature! :-)
 
@@ -64,18 +59,21 @@ that :-(
 If the program cannot be run (for instance under macOS as an ELF file) then
 the program will fail to execute it and might not even touch it.
 
-### WARNING on note from the author
+### A 2023 note about the warning from the author:
 
-The author suggested that this will somewhat destroy the binaries this touches
-but others did not observe this. It does indeed modify the files as the script
-below will show you (though not all files are modified: can you figure out why
-that is?) but others did not notice any problems in using them. Perhaps it's
-something he's not aware of possibly including the fact that the modification
-might or might not be complete. If you follow the try commands below you will
-notice that although the binaries do differ it's not many differences and the
-output of the supplementary program both before and after is the same. See the
-author's warning about this in their remarks.
+The author suggested that this *might* somewhat destroy the binaries this
+touches but after the fix of 2023 this was not observed (yet?). It does indeed
+modify the files (though not all files are modified: can you figure out why that
+is?) but using them after did not result in any problems. It could be that it's
+no longer known exactly what is supposed to happen and possibly that the
+modification might not be entirely correct for that reason though it does appear
+to be correct.
 
+
+## Judges' remarks:
+
+Is emulation the sincerest form of flattery?  This small program does
+quite a lot of bit twiddling.
 
 ## Author's remarks:
 
