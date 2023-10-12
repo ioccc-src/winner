@@ -1,10 +1,10 @@
 # First Obfuscated C Code Contest
 
-In [1984](/years.html#1984), the first contest was held.  The name of the contest was simply
-"`Obfuscated C Code Contest`".
+In [1984](/years.html#1984), the first contest was held.  The name of the
+contest was simply "`Obfuscated C Code Contest`".
 
-Look at the `README.md`file for the given winner for information on how to
-compile the entry and how to run the winning program.  Look at the winning
+Look at the `README.md`file for the given winning entry for information on how
+to compile it and how to run the winning program.  Look at the winning
 source and try to figure how it does what it does!  This year we only had
 remarks from two authors but which came years later.
 

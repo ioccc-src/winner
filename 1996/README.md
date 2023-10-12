@@ -1,31 +1,27 @@
-1996 marked the "The Thirteenth International Obfuscated C Code Contest"
+# 1996 marked the "The Thirteenth International Obfuscated C Code Contest"
 
 
-Standard IOCCC stuff
---------------------
+## Standard IOCCC stuff
 
-Look at the README.md file for the given winner for information
-on how to compile the winner and how to run the winning program.
+Look at the README.md file for the given winning entry for information
+on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
 You may then wish to look at the Author's remarks for even more details.
 
-The IOCCC has an official home page:
-
-	https://www.ioccc.org
+The IOCCC has an official home page: <https://www.ioccc.org>
 
 containing previous winning entries, information about the judges,
 announcements and much more.
 
-Use make to compile entries.  It is possible that on BSD or non-unix
-systems the makefile needs to be changed.  See the Makefile for details.
+Use `make` to compile entries.  It is possible that on BSD or non-Unix
+systems the Makefile needs to be changed.  See the Makefile for details.
 
-Read over the makefile for compile/build issues.  Your system may
+Read over the Makefile for compile/build issues.  Your system may
 require certain changes (add or remove a library, add or remove a
-#define).
+`#define` i.e. the `-D` flag).
 
 
-Where are Larry Bassel and Barbara Frezza?
-------------------------------------------
+## Where are Larry Bassel and Barbara Frezza?
 
 It is not true that Larry Bassel avoided the 13th IOCCC on grounds of
 superstition!  Larry (as well as Landon) is fond of prime numbers.
@@ -39,21 +35,22 @@ sorely missed.  We look forward to her return to the contest
 next year as well.
 
 Both Larry and Barbara have taken important new steps in their
-lives as we wish them the best.  When it is all over, Larry will
+lives and we wish them the best.  When it is all over, Larry will
 be able to produce obfuscated mathematical proofs, and Barbara
-will be able de-obfuscate the many legal obfuscations.  :-)
+will be able deobfuscate the many legal obfuscations.  :-)
 
 
-Remarks on some of the entries
-------------------------------
+## Remarks on some of the entries
 
-This year, Jens Schweikhardt won 3 times ... a new IOCCC record.
-Meanwhile, Brian Westley came up with his 8th winning entry, twice the
-number of the next highest count.  But with people like Schweikhardt
-around, this lead could fall fast.
+This year, [Jens
+Schweikhardt](https://www.ioccc.org/winners.html#Jens_Schweikhardt) won 3 times
+... a new IOCCC record.  Meanwhile, [Brian
+Westley](https://www.ioccc.org/winners.html#Brian_Westley) came up with his 8th
+winning entry, twice the number of the next highest count.  But with people like
+Schweikhardt around, this lead could fall fast.
 
-As we state in the guidelines, the names of the winners are as much
-news to us as they are to you because we keep authorship separate from
+As we stated in the [guidelines](guidelines.txt), the names of the winners are
+as much news to us as they are to you because we keep authorship separate from
 rest of the entry.  Some people have it, we guess!
 
 There were a few very good entries that might have won if it were not
@@ -61,10 +58,9 @@ for the fact that they didn't work.  If you didn't win, but think you
 had a chance: test your program, fix it and submit it next year!
 
 
-A few notes regarding future contests
--------------------------------------
+## A few notes regarding future contests
 
-There is no 1997 contest.
+There will be no 1997 contest.
 
 The next contest will not open until sometime in March 1998, and will
 close sometime around the end of May 1998.  The rules for the 1998
@@ -82,7 +78,9 @@ Please send us comments and suggestions what we have expressed above.
 Also include anything else that you would like to see in future contests.
 Send such email to:
 
-	judges@toad.com
+```
+judges@toad.com
+```
 
 If you use, distribute or publish these entries in some way, please drop
 us a line.  We enjoy seeing who, where and how the contest is used.

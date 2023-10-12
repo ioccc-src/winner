@@ -1,7 +1,6 @@
 # 1995 marked the "The Twelfth International Obfuscated C Code Contest"
 
-
-Look at the README.md file for the given winner for information
+Look at the README.md file for the given winning entry for information
 on how to compile and run the winning program.  Look at the winning source and
 try to figure how it does what it does! You may then wish to look at the
 `Author's remarks` section for even more details.
@@ -15,13 +14,13 @@ systems the `Makefile` needs to be changed.  See the `Makefile` for details.
 
 Read over the `Makefile` for compile/build issues.  Your system may
 require certain changes (add or remove a library, add or remove a
-`#define`).
+`#define` i.e. the `-D` flag).
 
 This year [Sriram Srinivasan](http://www.malhar.net/sriram/) joined the judging.
 
 The moderator of
 [comp.unix.wizards](https://groups.google.com/g/comp.unix.wizards) did not feel
-that the IOCCC was "wizardly" enough to be posted to comp.unix.wizards - we will
+that the IOCCC was "wizardly" enough to be posted to comp.unix.wizards so we will
 no longer post the winners to this newsgroup - we'll let you the reader decide
 for yourself the wizardry of these entries.
 
@@ -60,6 +59,7 @@ Send such email to:
 ...!{sun,pacbell,uunet,pyramid}!hoptoad!judges
 judges@toad.com
 ```
+
 If you use, distribute or publish these entries in some way, please drop
 us a line.  We enjoy seeing who, where and how the contest is used.
 

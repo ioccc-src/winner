@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Fri 06 Oct 2023 10:45:23 UTC*
+*Last updated: Tue 10 Oct 2023 13:08:59 UTC*
 
 This document is primarily for [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) as he (that is I :-) ) wanted a way
@@ -128,3 +128,11 @@ entries in the respective README.md files. This cannot be done without examining
 each because some names are mentioned by the author. For instance I (Cody) can
 think of at least three where I have been mentioned explicitly by the author:
 one in 2018, one in 2019 and one in 2020.
+
+- For the YYYY/README.md files where it refers to emailing the judges fixes
+instead change it to make pull requests. See the
+[1995/README.md](1995/README.md) file for example.
+
+- Check the YYYY/README.md files for other things besides the GitHub pull
+requests rather thane mailing judges. This can be done on the final pass of the
+files.
