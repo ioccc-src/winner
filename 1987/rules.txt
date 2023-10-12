@@ -57,7 +57,7 @@ X	<assume a standard 8 character tab stop>
 
 	    * If you give a 'postal address', please include your Country.
 
-	    * Give the machine and operating system (i.e., Un*x version) on
+	    * Give the machine and operating system (i.e., Unix version) on
 	      which your program ran.
 
 	    * The 'remarks' item is not optional.  Please indicate:
@@ -149,7 +149,7 @@ JUDGING:
 
 	Points will be taken away for programs that:
 
-		* are very hardware or Un*x version specific
+		* are very hardware or Unix version specific
 		* dump core or have compiler warnings
 		  (we won't take points away if you warn us in the remark item)
 		* fail to compile

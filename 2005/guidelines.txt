@@ -198,7 +198,7 @@ OUR LIKES AND DISLIKES:
     if you show some amount of restraint.
 
     You should try to restrict commands used on the build file to
-    POSIX-like or common Un*x-like commands.  You can also compile
+    POSIX-like or common Unix-like commands.  You can also compile
     and use your own programs.  If you do, try to build and execute
     from the current directory.  This restriction is not a hard and
     absolute one.  The intent is to ensure that the building if your
@@ -272,15 +272,15 @@ OUR LIKES AND DISLIKES:
     .Xdefaults.  If you must do so, be sure to note the required lines
     in the program "remarks".
 
-    While we recognize that UN*X is not a universal operating system, the
+    While we recognize that UNIX is not a universal operating system, the
     contest does have a bias towards such systems.  In an effort to expand
     the scope of the contest, we phrase our bias in terms of POSIX P1003.1
-    and P1003.2 standards.  This will allow certain non-UN*X OS users to
+    and P1003.2 standards.  This will allow certain non-UNIX OS users to
     submit entries.  On the other hand, this is a guideline and not a rule.
     We will not reject an entry based on some POSIX technicality.
 
     When dealing with OS and application environments, we suggest that you
-    be reasonable with a nod towards vanilla UN*X-like systems.  POSIX will
+    be reasonable with a nod towards vanilla UNIX-like systems.  POSIX will
     evolve but not as much as the contest, so avoid stuff like POSIX real
     time, security, etc.
 
@@ -309,7 +309,7 @@ OUR LIKES AND DISLIKES:
     while to write remarkable program "remarks".
 
     We dislike C code with trailing control-M's (\r or \015) that results
-    in compilation failures.  Some non-Un*x/non-Linux tools such as
+    in compilation failures.  Some non-Unix/non-Linux tools such as
     MS Visual C and MS Visual C++ leave trailing control-M's on lines.
     Users of such tools should strip off such control-M's before submitting
     their entries.  In some cases tools have a "Save As" option that will

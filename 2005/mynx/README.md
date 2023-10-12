@@ -108,7 +108,7 @@ Manifest:
 
 ```
     mynx.c
-    makefile                pre-built generic Un*x
+    makefile                pre-built generic Unix
     README.TXT
     manual.html
     makefile.in             makefile template

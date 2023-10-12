@@ -64,6 +64,7 @@ diff 1.txt 2.txt
 rm 1.txt 2.txt
 ```
 
+
 ## INABIAF - it's not a bug it's a feature! :-)
 
 This program will very likely crash or draw something funny with 0 args. Then
