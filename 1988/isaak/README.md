@@ -31,7 +31,7 @@ The original entry starts with the line:
 This works on some systems.  Why?  Note that `#include <stdio.h>` is given on
 the last line.  Why is this needed?  Note the unusual calls to sprintf.
 
-This version also relied on being able to define define to something else and
+This version also relied on being able to define `#define` to something else and
 using that macro for `#define`. This version will not likely work on modern
 systems if you can even get it to compile.
 
@@ -39,8 +39,9 @@ systems if you can even get it to compile.
 ## Judges' remarks:
 
 NOTE:  The program relies heavily on ASCII.  Don't even think of running it on
-an EBCDIC machine.  If you name the file anything other than "isaak.c", you must
-change the `#include` on line 7.
+an EBCDIC machine.  If you named the file anything other than [isaak.c](isaak.c),
+you had to change the `#include` on line 6. This limitation has been fixed by
+using the `__FILE__` macro.
 
 NOTE: The use of null comments to separate macros to construct different tokens
 from a single macro (e.g., `"O/**/O"` creates either `++` or `--` by defining
