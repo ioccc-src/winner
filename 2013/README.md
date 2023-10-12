@@ -1,62 +1,66 @@
-2013 marked the "The Twenty Second International Obfuscated C Code Contest"
-===========================================================================
+# 2013 marked the "The Twenty Second International Obfuscated C Code Contest"
 
+## Standard IOCCC stuff
 
-Standard IOCCC stuff
---------------------
-
-Look at the README.md file for the given winner for information
-on how to compile the winner and how to run the winning program.
-Look at the winning source and try to figure how it does what it does!
-You may then wish to look at the Author's remarks for even more details.
+Look at the README.md file for the given winning entry for information on how to
+compile the entry and how to run the winning program.  Look at the winning
+source and try to figure how it does what it does!  You may then wish to look at
+the Author's remarks for even more details.
 
 The IOCCC has a web site and now has a number of international mirrors.
-The primary site can be found at,
+The primary site can be found at: <https://www.ioccc.org/>
 
->	<https://www.ioccc.org/>
+Use make to compile entries.  It is possible that on non-Unix / non-Linux
+systems the Makefile needs to be changed.  See the Makefile for details.
 
-Use make to compile entries.  It is possible that on non-Un\*x / non-Linux
-systems the makefile needs to be changed.  See the Makefile for details.
-
-Read over the makefile for compile/build issues.  Your system may require
-certain changes (add or remove a library, add or remove a #define).
+Read over the Makefile for compile/build issues.  Your system might require
+certain changes (add or remove a library, add or remove a `#define` i.e. `-D`
+flag).
 
 Some ANSI C compilers are not quite as good as they should be.  If
 yours is lacking, you may need to compile using gcc instead of your
 local compiler.
 
 
-Remarks on some of the entries
-------------------------------
+## Remarks on some of the entries
 
 We believe you will again be impressed with this year's winners.
 
-This year, several 8 people won 9 people won 15 awards.  For the
-first time in the history of the contest, one person, Yusuke Endoh,
-won 4 times while Adrian Cable won 3 times!  It is also worth noting
-that Chris Mills previous win was in 1993.  Welcome back Chris!
+This year, 9 won 15 awards.  For the first time in the history of the contest,
+one person, [Yusuke Endoh](https://www.ioccc.org/winners.html#Yusuke_Endoh) won
+4 times while [Adrian Cable](https://www.ioccc.org/winners.html#Adrian_Cable)
+won 3 times!  It is also worth noting that [Chris
+Mills](https://www.ioccc.org/winners.html#Christopher_Mills) last win was in 1993.
+Welcome back Chris!
 
 We, the judges, were very surprised by this as many of the multiple
 winners submitted very different styles of entries.
 
 This year was the first time the IOCCC size tool was used.  Entries
-had to print a value 2053 or less when the -i flag was used.
+had to print a value 2053 or less when the `-i` flag was used.
 
 Several people discovered an undocumented feature in that
 certain comments such as:
 
+```c
 	///*
+```
 
 or:
 
+```c
 	*\
 	/
+```
 
 were not correctly parsed by the tool.  The guidelines stated:
 
-    In cases where the above summary and the algorithm implemented by
-    the IOCCC size tool source code conflict, the algorithm implemented
-    by the IOCCC size tool source code is preferred by the judges.
+
+```
+In cases where the above summary and the algorithm implemented by
+the IOCCC size tool source code conflict, the algorithm implemented
+by the IOCCC size tool source code is preferred by the judges.
+```
 
 so this abuse was allowed (and encouraged).  The judges hope that
 the IOCCC size tool author will patch the tool to block this kind
@@ -65,32 +69,26 @@ of size abuse in future contests.
 There were some outstanding entries that did not win.  Unfortunately
 some very good entries lost because they:
 
-+ were way way oversize and didn't even attempt to justify their
+* were way way oversized and didn't even attempt to justify their
   excess by a clever abuse of the rules
+* depended on a single obfuscation trick
+* could only be run on a particular vendor's platform
+* were very similar to previous winners
+* didn't work as documented
 
-+ depend on a single obfuscation trick
+We hope that the authors of some of those entries will fix and resubmit them
+for the next IOCCC.
 
-+ could only be run on a particular vendor's platform
+There is a risk in submitting an entry that is similar to a well used theme by
+previous winners. Previous winners set a very high bar. A new winner must not
+only compete against other submissions from the current year but they must also
+excel over similar previous winners in some particularly impressive way.
 
-+ were very similar to previous winners
+## Final Comments
 
-+ didn't work as documented
-
-We hope the authors of some of those entries will fix and re-submit
-them for the next IOCCC.
-
-There is a risk in submitting an entry that is similar to a well
-used theme by previous winners.  Previous winners set a very high
-bar.  A new winner must not only compete against other submissions
-from the current year, they must also excel over similar winners
-in some particularly impressive way.
-
-Final Comments
---------------
-
-Please feel free to send us comments and suggestions about the
-competition, this README or anything else that you would like to see in
-future contests.
+Please feel free to send us comments and suggestions about the competition, this
+[README.md](README.md) or anything else that you would like to see in future
+contests.
 
 If you use, distribute or publish these entries in some way, please drop
 us a line.  We enjoy seeing who, where and how the contest is used.
@@ -98,13 +96,10 @@ us a line.  We enjoy seeing who, where and how the contest is used.
 If you have problems with any of the entries, AND YOU HAVE A FIX, please
 send us the fix (patch file or the entire changed file).
 
-For the latest information on how to contact the IOCCC Judges please visit
+For the latest information on how to contact the IOCCC Judges please visit:
+<https://www.ioccc.org/contact.html>.
 
->	<https://www.ioccc.org/contact.html>
-
-For news of the next contest watch:
-
->	<https://www.ioccc.org/>
+For news of the next contest watch: <https://www.ioccc.org/>.
 
 =-=
 
