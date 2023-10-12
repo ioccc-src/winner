@@ -21,7 +21,7 @@ make
 
 ## Try:
 
-To see the original [1984/mullender](/1984/mullender/mullender.c) in action:
+To see the original [mullender](mullender.c) in action:
 
 ```sh
 cc -o prog prog.c mullender.c # or make mullender or make back_to
@@ -93,7 +93,7 @@ hijack the `main()` function call.  And then it interprets `main()` as an
 instruction sequence.
 
 It supports the minimal subset of instructions and addressing modes which are
-needed for [mullender.c](/1984/mullender/mullender.c) to work:
+needed for [mullender.c](mullender.c) to work:
 
 * Instructions
   * BR: branch
@@ -110,7 +110,7 @@ needed for [mullender.c](/1984/mullender/mullender.c) to work:
   * 4: Auto-decrement deferred
   * 6: Index (incomplete)
 
-### Limitation
+### Limitations
 
 Non-trivial combination of instruction and addressing mode may cause undefined
 behavior (unsequenced modification), such as attempting to auto-increment a
@@ -120,7 +120,7 @@ register).
 
 ### One more thing
 
-Note: this program writes a binary file to stdout.
+Note: this program writes a binary file to `stdout`:
 
 ```
 short main[]={5568,1,-30460,12,2782,0,-29921,2056,-4864,6873,770,30054,11886,
