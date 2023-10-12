@@ -25,6 +25,7 @@ make
 ./dlowe 16 32 64 128 256
 ./dlowe 16 32 64 128 256 512
 
+
 ./dlowe 0 
 
 echo "sparkline of file sizes: $(wc -c * | awk '{print $1}' | xargs ./dlowe)" # or ./slen.sh
