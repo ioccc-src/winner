@@ -120,8 +120,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG} ${PROG}.ten ${PROG}.ten.64 ${PROG}.bed ${PROG}.bed.64
 #
-ALT_OBJ= ${PROG}.ten.64.o
-ALT_TARGET= ${PROG}.ten.64
+ALT_OBJ= ${PROG}.ten.64.o ${PROG}.bed.64.o
+ALT_TARGET= ${PROG}.ten.64 ${PROG}.bed.64
 
 
 #################
