@@ -132,9 +132,9 @@ all: data ${TARGET}
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "WARNING: ${PROG}.c must be compiled as 32-bit to use with the entry itself;"
-	@echo "if you cannot use -m32 this will NOT work!"
 	${CC} ${CFLAGS} -m32 $< -o $@ ${LDFLAGS} || :
+	@echo "WARNING: ${PROG}.c must be compiled as 32-bit to use with the entry itself:"
+	@echo "if you cannot use -m32 this will NOT work! This entry also requires i386 linux."
 
 ${PROG}.otccex: ${PROG}.otccex.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}

@@ -1,9 +1,6 @@
 # Best abuse of the rules
 
 Fabrice Bellard  
-451 chemin du mas de Matour  
-34790 Grabels  
-France  
 <https://bellard.org>
 
 

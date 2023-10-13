@@ -1139,14 +1139,24 @@ this program will very likely crash or do something strange like slaughter the
 elves of Imladris :-(
 
 ## [2001/bellard](2001/bellard/bellard.c) ([README.md](2001/bellard/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
 ## STATUS: doesn't work with some platforms - please help us fix
 
+The two statuses might seem contradictory but that is a complicated question.
+The author stated that it only works with i386 linux so on the one hand the fact
+it doesn't work in modern systems is considered a feature and not a bug. But on
+the other hand it would be nice if there was an alternate version which worked
+for modern systems. This does seem quite unlikely but some fixes, described
+next, were made.
+
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed an initial
-segfault and he also fixed the [supplementary program
-bellard.otccex.c](2001/bellard/bellard.otccex.c) but this still crashes. Below
-are some notes about getting this entry to work but the gist of it is that it
-requires i386 linux. Can you fix it for 64-bit linux? We welcome your help! Here
-are some notes of interest:
+segfault (trying to open the file) and he also fixed the [supplementary program
+bellard.otccex.c](2001/bellard/bellard.otccex.c) but this still crashes in
+systems not i386 linux which is what the author stated.
+
+On the other hand if you do have a fix for 64-bit systems you're welcome to
+provide it as an alternate version. If by chance you have a fix so that it works
+for both 32-bit and 64-bit systems that is also okay.
 
 The author said that they compiled it with [gcc version
 2.95.2](https://ftp.gnu.org/gnu/gcc/gcc-2.95.2/gcc-everything-2.95.2.tar.gz). We
@@ -1154,27 +1164,39 @@ don't know if a certain gcc version is necessary but it might be helpful to
 download and compile that version to test it - or it might not.
 
 I (Cody) have no i386 system to test this but perhaps this is why I can't get it
-to work.  Yusuke was able to get this to work with `-m32` but it seems with an
+to work.  Yusuke was able to get this to work with `-m32` but only in an
 emulator.
 
-On the author's [web page for this program](https://bellard.org/otcc/) where it
-is stated it requires i386 linux.
+On the author's [web page for this program](https://bellard.org/otcc/) it is
+explicitly stated that it requires i386 linux.
 
 There I found what should be a more portable version which is included as
 [otccelf.c](2001/bellard/otccelf.c) (after adding some `#include`s and the
-modification by Yusuke noted in the README.md file) but it appears this also
+modification by Yusuke noted in the README.md file) but it appears this *also*
 requires i386 linux; indeed looking at the code it hard codes paths that are
 i386 specific to linux.
 
 Another point of interest is that the author provided de-obfuscated versions
 which might be of value to look at. I might do that as well but this entry is
-very likely never going to work for 64-bit linux.
+very likely never going to work for 64-bit linux so that's not that likely since
+there are other things that are more important.
 
-Or maybe you have a fix for 64-bit CPUs? You might like to look at the otccelf
-version but note that it at least in 64-bit linux (and macOS) have compilation
-errors.
+If you have a fix for 64-bit systems this is welcome as an alternate version, as
+stated above. You might like to look at the otccelf version but note that it (at
+least in 64-bit linux and macOS) has compilation errors.
 
-Either way we welcome your help! Thank you!
+### Aside: why were there changes if INABIAF ?
+
+This is a good question. The reason is we believe it better to fix some obvious
+problems: there were some bugs that would very possibly prevent it from working
+even if it was in i386 linux though Yusuke seemed to get it to work in an
+emulator so perhaps not. Still it's better to have the type of the file pointer
+correct and so that the file can at least be opened in modern systems even if
+the compiler won't work there.
+
+Also the supplementary program, which did not work at all, was fixed (by Cody)
+and it can be run by itself for fun in modern systems, which was not possible
+before the fixes there.
 
 
 ## [2001/cheong](2001/cheong/cheong.c) ([README.md](2001/cheong/README.md))
