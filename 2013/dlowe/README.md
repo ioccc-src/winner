@@ -24,17 +24,9 @@ make
 ./dlowe 16 32 64 128
 ./dlowe 16 32 64 128 256
 ./dlowe 16 32 64 128 256 512
-
-echo "sparkline of file sizes: $(wc -c * | awk '{print $1}' | xargs ./dlowe)" # or ./slen.sh
-
 ./dlowe 0 
 
-echo "sparkline of file sizes: $(wc -c * | awk '{print $1}' | xargs ./dlowe)" # or ./slen.sh
-```
-
-./dlowe 0 
-
-echo "sparkline of file sizes: $(wc -c * | awk '{print $1}' | xargs ./dlowe)" # or ./slen.sh
+echo "sparkline of file sizes: $(wc -c * | awk '{print $1}' | xargs ./dlowe)" # or ./sflen.sh
 ```
 
 Alternatively, for the lazy or those short on time, try:
@@ -51,10 +43,9 @@ echo 'IOCCC 2013' > ioccc.txt
 rm -f ioccc.txt
 ```
 
-
 ?
 
-To make it simpler to see try showing just the last two lines:
+To make it simpler to see try showing just the different line like:
 
 ```sh
 ./demo.sh | tail -n 2 > 1.txt
@@ -79,8 +70,8 @@ something funny (or will it ? :-) ) and when will it do nothing?
 
 We liked how this entry used Unicode, specifically UTF-8, in a somewhat obfuscated way. 
 
-Also, why doesn't it crash, and produces a correct output when called with one argument
-or when all arguments are equal?
+Also, why doesn't it crash but instead produces a correct output when called
+with one argument or when all arguments are equal?
 
 For extra fun, compile and run [fun.c](fun.c):
 
@@ -106,7 +97,7 @@ and with clang (3.3), we get
 -2147483648 0 2147483647
 ```
 
-and with Apple clang version 15.0.0 (clang-1500.0.40.1) we get:
+and with Apple clang version 15.0.0 (clang-1500.0.40.1) in 2023, we get:
 
 ```
 1840985120 -2033041452 35979112
@@ -116,7 +107,6 @@ Which one is correct? :)
 
 NOTE: `make all` will compile [fun.c](fun.c) but to provide a different compiler
 you can do something like:
-
 
 ```sh
 make CC=clang fun
@@ -140,10 +130,10 @@ $ echo "sparkline of file lengths: $(wc -c * | awk '{print $1}' | xargs ./sparkl
 sparkline of file sizes: ▁▁▁▃▃▂▁▂▁▁▉
 ```
 
-NOTE: this has been provided in [slen.sh](slen.sh) so you can try:
+NOTE: this has been provided in [sflen.sh](sflen.sh) so you can try:
 
 ```sh
-./slen.sh
+./sflen.sh
 ```
 
 instead.

@@ -1641,15 +1641,16 @@ Cody added the source code that we suggested one should compile and run with
 different compilers as [fun.c](2013/dlowe/fun.c). He modified the Makefile so
 that running `make all` will compile it, saving you the effort.
 
-He also provided the script [slen.sh](2013/dlowe/slen.sh) which is based on the
-author's remarks, giving a script that shows the spark line of the file lengths
-(as in `wc -c`), fixing it for shellcheck. These fixes were applied in the
-author's remarks as well.
+He also provided the script [sflen.sh](2013/dlowe/sflen.sh), fixing it for
+shellcheck,  which is based on the author's remarks, giving a script that shows
+the spark line of the file lengths (as in `wc -c`). These fixes were applied in
+the author's remarks as well.
 
 Since the author called the program `sparkl` Cody modified the Makefile so that
 running `make all` will create a symlink to `dlowe` as `sparkl`. Running `make
 clobber` will delete both and running `make clobber all` will ensure that the
-symlink is created.
+symlink is created. The `sflen.sh` script also explicitly makes sure to create
+the symlink as it uses it, even though it runs `make clobber all`.
 
 Cody also added the [demo.sh](2013/dlowe/demo.sh) script to more easily try the
 program.
