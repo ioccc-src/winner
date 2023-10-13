@@ -146,6 +146,29 @@ jpeg.jpg: jpeg
 
 check: ${DATA}
 	${RM} -f jpeg2.c
+	@if ! type -P convert >/dev/null 2>&1; then \
+	    echo "The 'convert' tool from ImageMagick could not be found." 1>&2; \
+	    echo ""; 1>&2; \
+	    echo "See the following website for ImageMagick:" 1>&2; \
+	    echo ""; 1>&2; \
+	    echo "    https://imagemagick.org/script/download.php"; 1>&2; \
+	    echo ""; 1>&2; \
+	    echo "or use your OS package manager to install it." 1>&2; \
+	fi
+	@if ! type -P ${RUBY} >/dev/null 2>&1; then \
+	    echo "${RUBY} language could not be found." 1>&2; \
+	    echo "${RUBY} must be installed in order to run the $@ rule." 1>&2; \
+	    echo ""; 1>&2; \
+	    echo "See the following website for ${RUBY}:" 1>&2; \
+	    echo ""; 1>&2; \
+	    echo "    https://www.ruby-lang.org/"; 1>&2; \
+	    echo ""; 1>&2; \
+	    echo "or use your OS package manager to install it." 1>&2; \
+	    ERROR=1; \
+	fi
+	@if type -P ${RUBY} >/dev/null 2>&1 || ! type -P convert >/dev/null 2>&1; then \
+	    exit 1; \
+	fi
 	${RUBY} ocr.rb jpeg.jpg > jpeg2.c
 	${DIFF} jpeg.c jpeg2.c && echo Check succeeded
 

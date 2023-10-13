@@ -17,7 +17,14 @@ make
 make check
 ```
 
-You'll need to have Ruby installed to run all the automated checks.
+You'll need to have both [Ruby](https://www.ruby-lang.org) and
+[ImageMagick](https://imagemagick.org/) installed to run all the automated
+checks.
+
+If you do not have both, however, you can still do the below in the [try](#try)
+section to enjoy the entry. The [Makefile](Makefile) `check` rule will check if
+you have both and if either is not found it will report it and tell you where to
+download one or both before exiting.
 
 ## Try:
 

@@ -1654,6 +1654,26 @@ symlink is created.
 Cody also added the [demo.sh](2013/dlowe/demo.sh) script to more easily try the
 program.
 
+## [2013/endoh2](2013/endoh2/endoh2.c) ([README.md](2013/endoh2/README.md))
+
+Cody fixed the Makefile `check` rule so that it `checks` :-) that both
+[Ruby](https://www.ruby-lang.org) and [ImageMagick](https://imagemagick.org) are
+installed before trying to run the ruby script. To be more technically correct:
+it checks that the `convert` tool of ImageMagick is available (via `type -P`)
+because `convert` is part of the ImageMagick suite.
+
+This is useful because the Ruby script tries to run (via `IO.popen()`) the
+`convert` tool but without ImageMagick being installed, if one is unaware of
+where it comes from it will appear to be an error in the Ruby script (it might
+also appear to be an issue with the script even if you know of `convert`: it was
+another day that Cody remembered it and why it wasn't installed on his MacBook
+Pro even though in the past it had been and is indeed now).
+
+The rule will report the tools not installed and where to find them, if they are
+not installed, and after checking these requirements it will exit if either is
+not found.
+
+The entry can still be enjoyed if you do not have these tools, however.
 
 ## [2013/endoh4](2013/endoh4/endoh4.c) ([README.md](2013/endoh4/README.md))
 
