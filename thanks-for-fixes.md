@@ -1084,19 +1084,24 @@ it will at least run the supplementary program as a 64-bit program directly.
 
 Cody fixed this to compile with clang but according to the author this will not
 work without i386 linux. It generates i386 32-bit code (not bytecode) but
-unfortunately it will not work without i386 linux. Cody fixed an earlier
-segfault so that it can at least now open the file and he also changed some of
-the macros used to what they translate to but mostly it was kept the same.
+unfortunately it will not work without i386 linux. See [bugs.md](/bugs.md).
+
+Cody fixed an earlier segfault so that it can at least now open the file should
+you have an i386 linux machine (it can open it in other platforms too, of
+course, but it won't work). This involved pointer updates and also changing an
+`int` to a `FILE *`. Where possible he left the macros as the same but in the
+case of `main()` this was not possible.
+
 Yusuke added another change (see below) to make it even more portable across
 compilers besides what Cody did.
 
-
-Cody also fixed the [supplementary
+Cody entirely fixed the [supplementary
 bellard.otccex.c](2001/bellard/bellard.otccex.c) so it does not segfault and
-works as well. The main problem was that some ints were being used as pointers.
-This includes, for example, an int used as a `char *`, an int used as a function
-pointer and an int to access `argv` as well as there being invalid access to
-`argv`. He updated the Makefile so that this program will compile by default.
+works as well (it did not work at all). The main problem was that some ints were
+being used as pointers.  This includes, for example, an int used as a `char *`,
+an int used as a function pointer and an int to access `argv` as well as there
+being invalid access to `argv`. He updated the Makefile so that this program
+will compile by default.
 
 Also the Fibonacci sequence (`fib()`) will overflow at `n > 48` so this is
 checked prior to running the function just like the author did for the factorial

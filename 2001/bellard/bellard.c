@@ -14,13 +14,15 @@
 #define f ()
 #define J return
 #define l ae(
+#define n e)
 #define u d!=
 #define F int 
 #define y (j)
 #define r m=
 #define t +4
-F d,z,C,h,P,K,ac,q,G,v,Q,R,D,L,W,M;
-E(int e){
+F d,z,C,h,P,K,ac,q,G,v,R,D,L,W,M;
+FILE *Q;
+E(n{
 x D++=e;
 }
 o f{
@@ -134,43 +136,43 @@ x q++=g;
 g=g>>8;
 }
 }
-A(int e){
+A(n{
 F g;
-p e){
+p n{
 g=k e;
 k e=q-e-4;
 e=g;
 }
 }
-s(int g,int e){
+s(g,n{
 l g);
 k q=e;
 e=q;
 q=q t;
 J e;
 }
-H(e){
-s(184,e);
+H(n{
+s(184,n;
 }
-B(e){
-J s(233,e);
+B(n{
+J s(233,n;
 }
-S(int j,int e){
+S(j,n{
 l 1032325);
-J s(132+j,e);
+J s(132+j,n;
 }
-Z(int e){
+Z(n{
 l 49465);
 H(0);
 l 15);
 l e+144);
 l 192);
 }
-N(int j,int e){
+N(j,n{
 l j+131);
-s((e<512)<<7|5,e);
+s((e<512)<<7|5,n;
 }
-T (int j){
+T y{
 F g,e,m,aa;
 g=1;
 a d b 34){
@@ -224,7 +226,7 @@ w f;
 l 89);
 l 392+(e b 256));
 }
-i a e){
+i a n{
 a e b 256)l 139);
 i l 48655);
 q++;
@@ -267,7 +269,7 @@ k r j;
 c;
 a!g){
 e=e t;
-k e=s(232,k e);
+k e=s(232,k n;
 }
 i a g b 1){
 s(2397439,j);
@@ -279,11 +281,11 @@ s(232,g-q-5);
 a j)s(50305,j);
 }
 }
-O (int j){
+O y{
 F e,g,m;
 a j--b 1)T(1);
 i{
-O (j);
+O y;
 r 0;
 p j b C){
 g=d;
@@ -291,17 +293,17 @@ e=z;
 c;
 a j>8){
 r S(e,m);
-O (j);
+O y;
 }
 i{
 l 80);
-O (j);
+O y;
 l 89);
 a j b 4|j b 5){
-Z(e);
+Z(n;
 }
 i{
-l e);
+l n;
 a g b 37)l 146);
 }
 }
@@ -311,7 +313,7 @@ r S(e,m);
 H(e^1);
 B(5);
 A(m);
-H(e);
+H(n;
 }
 }
 }
@@ -322,19 +324,19 @@ U f{
 w f;
 J S(0,0);
 }
-I (int j){
+I y{
 F m,g,e;
 a d b 288){
 c;
 c;
 r U f;
 c;
-I (j);
+I y;
 a d b 312){
 c;
 g=B(0);
 A(m);
-I (j);
+I y;
 A(g);
 }
 i{
@@ -360,7 +362,7 @@ a u 41){
 e=B(0);
 w f;
 B(g-q-5);
-A(e);
+A(n;
 g=e t;
 }
 }
@@ -372,7 +374,7 @@ A(m);
 i a d b 123){
 c;
 ab(1);
-p u 125)I (j);
+p u 125)I y;
 c;
 }
 i{
@@ -389,7 +391,7 @@ i a u 59)w f;
 c;
 }
 }
-ab (int j){
+ab y{
 F m;
 p d b 256|u-1&!j){
 a d b 256){
@@ -431,7 +433,7 @@ k r G;
 }
 }
 }
-int main(int g,char **e){
+int main(int g, char **e){
 Q=stdin;
 a g-->1){
 *e=e[1];
@@ -444,6 +446,6 @@ P V;
 o f;
 c;
 ab(0);
-J(*(int(*)f)k(P+592))(g,e);
+J(*(int(*)f)k(P+592))(g,n;
 }
 
