@@ -11,24 +11,27 @@ several thousand changes and important improvements.
 We call out the extensive contributions of [Cody Boone
 Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson) who is
 responsible for many of the improvements including many, many **very complicated
-bug fixes** such as [2001/anonymous](2001/anonymous/anonymous.c) and
+bug fixes** such as [2001/anonymous](2001/anonymous/README.md) and
 [2004/burley](2004/burley/burley.c), making entries not require
 `-traditional-cpp` (which are **very complicated fixes**), fixing entries to
 compile with clang, fixing entries to work with macOS (some of which are **very
-complicated** such as [1998/schweikh1](1998/schweikh1/schweikh1.c)), providing
-alternate code where useful or necessary, fixing where possible dead links and
-otherwise removing them, typo and consistency fixes, improving **ALL
-_Makefiles_** and writing the [sgit tool](https://github.com/xexyl/sgit) that we
-installed locally and have used to easily run `sed` on files in the repository
-to help build the website.  Thank you **very much** for your extensive efforts
-in helping improve the IOCCC presentation of past IOCCC winners and making many
-many past entries work with modern systems!
+complicated** such as [1998/schweikh1](1998/schweikh1/README.md)), fixing code
+to work with both 32-bit and 64-bit (such as
+[2001/herrmann2](2001/herrmann2/README.md)) which can be **quite complicated**
+(though not always even if it seems it), providing alternate code where useful
+or necessary, fixing where possible dead links and otherwise removing them, typo
+and consistency fixes, improving **ALL _Makefiles_** and writing the [sgit
+tool](https://github.com/xexyl/sgit) that we installed locally and have used to
+easily run `sed` on files in the repository to help build the website. Thank
+you **very much** for your extensive efforts in helping improve the IOCCC
+presentation of past IOCCC winners and making many many past entries work with
+modern systems!
 
 [Yusuke Endoh](https://www.ioccc.org/winners.html#Yusuke_Endoh) supplied a
 number of important bug fixes to a number of past IOCCC winners. Some of those
 fixes were **very technically challenging** such as
-[1989/robison](1989/robison/robison.c), [1990/cmills](1990/cmills/cmills.c),
-[1992/lush](1992/lush/lush.c) and [2001/ctk](2001/ctk/ctk.c). Thank you **very
+[1989/robison](1989/robison/README.md), [1990/cmills](1990/cmills/README.md),
+[1992/lush](1992/lush/README.md) and [2001/ctk](2001/ctk/README.md). Thank you **very
 much** for your help!
 
 A good number of the [past winners of the
@@ -1169,7 +1172,7 @@ the ANSI escape codes. This works with macOS as well.
 The author provided two changes: one to speed it up and one to make it not crash
 on losing. Cody provided an alternate version which does the former but he felt
 that the idea of crashing on losing (see the README.md for details on why that
-might be) he kept that in.
+might be) too good to get rid of so he kept that in.
 
 He also points out that there is a way to get the computer to automatically lose
 very quickly and he also points out that there is a flaw in the alternate
@@ -1195,7 +1198,7 @@ errors/warnings.
 
 ## [2001/herrmann2](2001/herrmann2/herrmann2.c) ([README.md](2001/herrmann2/README.md]))
 
-Cody fixed this to work with both 64-bit and 32-bit compiles by changing most of
+Cody fixed this to work with both 64-bit and 32-bit compilers by changing most of
 the `int`s (all but that in `main`) to `long`s. He also fixed it to compile with
 clang by changing the args of main to be `int` and `char **` respectively and
 changing specific references to the `argv` arg, casting to `long` (was `int` but
@@ -1217,8 +1220,8 @@ your keyboard instead of the more awkward '`,`' and '`.`'.
 
 Cody added the script [westley.sh](westley.sh) to automate a heap of commands
 that we, the IOCCC judges, suggested, as well as some additional ones that he
-thought would be fun.  He also provided the sort and punch card versions that he
-added, described in the README.md, based on the author's remarks.
+thought would be fun.  He also provided the sort and punch card versions,
+described in the README.md, based on the author's remarks.
 
 ## [2004/arachnid](2004/arachnid/arachnid.c) ([README.md](2004/arachnid/README.md]))
 
@@ -1232,7 +1235,8 @@ Dvorak typists are invited to get lost (or use the original version)! :-)
 Cody fixed this to compile with clang and also fixed it to work.
 
 For clang the problem was that `main()` had one arg, a `char *` and this is not
-allowed in any version of clang. To get it to work took numerous changes.
+allowed in any version of clang. In some versions it is allowed if the arg is an
+`int` but never if it's anything else. To get it to work took numerous changes.
 
 First the inclusion of `setjmp.h` was necessary. Without this `longjmp()`
 implicitly returned int which was used for the purpose of binary expression but
