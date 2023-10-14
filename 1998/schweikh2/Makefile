@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-trigraphs -Wno-sign-compare -Wno-string-plus-int -Wno-switch-bool
+CSILENCE= -Wno-trigraphs -Wno-sign-compare -Wno-string-plus-int -Wno-switch-bool -Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -132,14 +132,12 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${LN} -sf $@ yarng
 
 # alternative executable
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
-
-${PROG}.alt: ${PROG}.alt.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # data files
 #
@@ -157,7 +155,7 @@ everything: all alt
 ###############
 #
 clean:
-	${RM} -f ${OBJ} ${ALT_OBJ}
+	${RM} -f ${OBJ} ${ALT_OBJ} yarng
 	@-if [ -f indent.c ]; then \
 	    echo ${RM} -f indent.c; \
 	    ${RM} -f indent.c; \
