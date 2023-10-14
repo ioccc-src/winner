@@ -1,9 +1,6 @@
 # Most Erratic Behavior
 
 Jens Schweikhardt  
-DFN Network Operation Center  
-Schlartaeckerweg 3 (Home address)  
-D-71384 Weinstadt  
 Germany  
 <http://www.schweikhardt.net>  
 
@@ -18,34 +15,25 @@ make all
 
 
 ```sh
-./schweikh2
-<some number> 
+./yarng
 ```
 
 or
 
 ```sh
-./schweikh2 integer_number
+./yarng integer_number
 ```
 
 ## Try:
 
 ```sh
-./schweikh2 5
-./schweikh2 5
+./yarng 5
 
-./schweikh2
-5
+./yarng
+# watch what it does
 ```
 
-What is the difference here?
-
-What happens if you don't put in any number like the below?
-
-```sh
-./schweikh2
-<ENTER>
-```
+What is the difference there?
 
 
 ## Judges' remarks:
@@ -56,16 +44,14 @@ results different? Why?
 ### Historical remarks:
 
 At the time of judging, some non-gcc compilers that were not fully ANSI standard
-did not compile this entry correctly.
-
-At the time this hint file was written, some gcc and egcs implementations ran
-into problem when building the original entry:
+did not compile this entry correctly. Also at that time, some gcc and egcs
+implementations ran into a problem when building the entry. Doing:
 
 ```sh
 make schweikh2
 ```
 
-This program often produced an error of the form:
+often produced an error of the form:
 
 ```
 gcc -ansi schweikh2.alt.c -o schweikh2.alt
@@ -78,26 +64,27 @@ as: Error: cca00NzV.s, line 58: malformed statement
 because the line:
 
 ```c
-??=line 10 ONE(O(1,1,2,6,0,6))
+#line 10 ONE(O(1,1,2,6,0,6))
 ```
 
-turns into the line:
+turned into the line:
 
 ```c
 # 9 "01\012"
 
 ```
 
-which causes gcc to give to the assembler the following two lines:
+(note, though, how that line is on line 11) which caused gcc to give to the
+assembler the following two lines:
 
 ```asm
-.stabs "whey.c
+.stabs "schweikh2.c
 ",132,0,0,Ltext1
 ```
 
-and the lone `"` after the `#.file` line results in an assembler syntax error.
+and the lone `"` after the `#.file` line resulted in an assembly syntax error.
 
-In some cases one must compile using `gcc -g`:
+In some cases one had to compile using `gcc -g`:
 
 ```sh
 make schweikh2 CFLAGS=-g
@@ -105,25 +92,31 @@ make schweikh2 CFLAGS=-g
 
 to trigger this error.
 
-And with the proper text beyond the `\012`, it may be possible to have
-all kinds of fun adding `inline assembly` via `#line` directives.  :-)
-For extra credit:
+With the proper text beyond the `\012`, it was even possible to have all kinds
+of fun adding inline assembly via `#line` directives.  :-)
+
+#### For extra fun and credit:
 
 If your compiler had this bug, you could transform the line in the C program to
 inject assembly instructions in such a way that the program would compile.
 
-If you were able to do the above, you could try adding assembly instructions so
-that it will compile, execute and do something interesting.
+If you were able to do that, you could have tried adding assembly instructions
+so that it will compile, execute and do something interesting (or uninteresting,
+for that matter :-) ).
 
-If you succeeded in doing this (especially on FreeBSD, Linux or SPARC),
+If you succeeded in doing that (especially on FreeBSD, Linux or SunOS/Solaris),
 you could have emailed the author for a free pat on the back (and maybe you
 still can :-) ).
 
-NOTE: the author submitted the program as `yarng` so when trying the examples
-below change `yarng` to `./schweikh2`.
+Because of this bug, the code was changed to be instead:
 
-However in 2023 it was observed that it is gcc that has a problem with the
-compilation of the _modified_ program, giving an internal compiler error:
+```c
+#line 10 "01\015"
+```
+
+However in 2023 it was observed that _it is gcc_ (at least some versions?) that
+has a problem with the compilation of the _modified_ program, giving an internal
+compiler error:
 
 ```
 :10:16: warning: type defaults to 'int' in declaration of 'zero' [-Wimplicit-int]
@@ -132,8 +125,20 @@ compilation of the _modified_ program, giving an internal compiler error:
 :12:19: internal compiler error: invalid built-in macro "__FILE__"
 ```
 
-so the string `"01\015"` was changed to `ONE(O(1,1,2,6,0,6))` and now it works
-with both clang and gcc.
+so the line:
+
+```c
+#line 10 "01\015"
+```
+
+was changed to:
+
+```c
+#line 10 ONE(O(1,1,2,6,0,6))
+```
+
+and now it works with both clang and gcc.
+
 
 ## Author's remarks:
 
@@ -170,9 +175,9 @@ $ ./yarng 5
 - Ever seen a 'do for ... while' loop?
 
 - I avoided `int` like the plague. Instead I used storage class specifiers
-(`register`, `auto`) to get implicit int. The Standard allows implicit int even in
-casts as you can see in `(void(*)(register))main`. Where implicit int is
-impossible, like in the `int main` declaration I have int split across two
+(`register`, `auto`) to get implicit `int`. The Standard allows implicit `int` even in
+casts as you can see in `(void(*)(register))main`. Where implicit `int` is
+impossible, like in the `int main` declaration I have `int` split across two
 lines. All indent programs I use insert space at the beginning of the
 continuation line and thereby introduce a syntax error.
 
@@ -183,7 +188,7 @@ uttered "Works for me". Don't quote me on that!
 
 - Even if you know how the program works, you just can't predict the output.
 
-- Chained use of token pasting operators ## with shuffled arguments.
+- Chained use of token pasting operators `##` with shuffled arguments.
 
 - So you think you can't assign to `__LINE__` and `__FILE__`? Not so. The `#line`
 preprocessor directive does the trick. But saying `#line 10 "01\n"` is a little

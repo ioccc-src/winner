@@ -948,7 +948,10 @@ Cody fixed the code to not trigger an internal compiler error in gcc:
 :12:19: internal compiler error: invalid built-in macro "__FILE__"
 ```
 
-The string `"01\015"` had to be changed to `ONE(O(1,1,2,6,0,6))`.
+The string `"01\015"` had to be changed to `ONE(O(1,1,2,6,0,6))`. For an
+interesting historical explanation and further details and fun, see the
+[historical remarks](1998/schweikh2/README.md#historical-remarks) in the
+README.md.
 
 
 ## [2000/anderson](2000/anderson/anderson.c) ([README.md](2000/anderson/README.md]))
