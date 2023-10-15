@@ -1791,6 +1791,19 @@ second between commands.
 Cody added explicit linking of libm (`-lm`) as not all systems do this
 implicitly (linux doesn't seem to but macOS does).
 
+## [2014/deak](2014/deak/prog.c) ([README.md](2014/deak/README.md))
+
+Cody fixed the code that the author provided which would be what the program
+would look like if, as the author put it:
+
+> The usage of recognizable elements from the C programming language in the
+application source code is intentionally kept to a bare minimum. If this phrase
+would not be true, the application would be the following:
+
+It did not compile because a value was left off the `return` statement.
+
+Cody added this as alternate code just for fun and so one can more easily see
+the difference to really appreciate the obfuscation.
 
 ## [2014/maffiodo1](2014/maffiodo1/maffiodo1.c) ([README.md](2014/maffiodo1/README.md]))
 

@@ -1,13 +1,16 @@
 # Most underscored argument
 
-    Ferenc Deak  
-    <fritzone@gmail.com>  
+Ferenc Deak<br>
+<fritzone@gmail.com>  
 
 ## To build:
 
 ```sh
 make
 ```
+
+There is an alternate version that the author provided but fixed in 2023 to
+compile. See [alternate code](#alternate-code) below.
 
 ## To run:
 
@@ -21,8 +24,24 @@ make
 ./prog
 ```
 
-Changing bounding box coordinates in the source to explore
+Try changing bounding box coordinates in the source to explore
 various regions of the fractal.
+
+### Alternate code:
+
+The alternate code is included as [prog.alt.c](prog.alt.c) so you can more
+easily see the difference in what it might look like if the C was more
+recognisable. To use, try:
+
+```sh
+make alt
+```
+
+Use `prog.alt` as you would `prog`.
+
+Bonus: the author explains how to configure the program but can you figure out
+how to do it in the alternate code?
+
 
 ## Judges' remarks:
 
@@ -52,25 +71,27 @@ The usage of recognizable elements from the C programming language in the
 application source code is intentionally kept to a bare minimum. If this phrase
 would not be true, the application would be the following:
 
-            double                                 _[]={-2
-            ,1,-1.3                ,1.3,  0,         0,0,0
-            ,0               ,0,50, 80,     0,0,0     ,255
-            ,               8,0};    int      main       (
-                           int j) {if (j==  1 ){ if(
-                   _[12]      >_[10]  )_[17]=1 ;}  if
-               (_[13] >_[11     ] ||_[17]==1)  return
-             ;_[6]   =  _ [13] / _[11]*(_[1]-_[   0])
-            +_[  0];  _ [7]=_[12]/_[10]*(_[3]-_[2] )+_
-            [2];_[8]=_[9]=_[14]=0;l2:_[4]=_[8] * _ [8]
-            ;_[  5]=  _ [9]*_[9];_[9]=2*_[8]*_[9]+ _[7
-             ];_[8   ]  = _ [ 4 ]-_[5]+_[6];_[14   ]++
-               ;if((_ [14]<     _ [15])&&(_[4]+ _[ 5]
-                   <_[16      ])) goto l2;  putchar(
-                           " #@*+   "[( int)  _[14]%
-            5             ]);_ [13   ] ++ ;   main       (
-            0)               ;_[12]++;      _[13]       =0
-            ;if(_                [17]    !=1)      putchar
-            (0xa);                               main(1);}
+```c
+double                                 _[]={-2
+,1,-1.3                ,1.3,  0,         0,0,0
+,0               ,0,50, 80,     0,0,0     ,255
+,               8,0};    int      main       (
+	       int j) {if (j==  1 ){ if(
+       _[12]      >_[10]  )_[17]=1 ;}  if
+   (_[13] >_[11     ] ||_[17]==1)  return 1
+ ;_[6]   =  _ [13] / _[11]*(_[1]-_[   0])
++_[  0];  _ [7]=_[12]/_[10]*(_[3]-_[2] )+_
+[2];_[8]=_[9]=_[14]=0;l2:_[4]=_[8] * _ [8]
+;_[  5]=  _ [9]*_[9];_[9]=2*_[8]*_[9]+ _[7
+ ];_[8   ]  = _ [ 4 ]-_[5]+_[6];_[14   ]++
+   ;if((_ [14]<     _ [15])&&(_[4]+ _[ 5]
+       <_[16      ])) goto l2;  putchar(
+	       " #@*+   "[( int)  _[14]%
+5             ]);_ [13   ] ++ ;   main       (
+0)               ;_[12]++;      _[13]       =0
+;if(_                [17]    !=1)      putchar
+(0xa);                               main(1);}
+```
 
 The application expects no parameters, the only way you can change the behaviour
 is to modify the source code at the indicated location: the line
@@ -81,7 +102,7 @@ fractal to be drawn on the screen.
 ### Compiler warnings
 
 Yes, unfortunately there are compiler warnings of the kind "initialization makes
-integer from pointer without a cast" the provided Makefile automatically
+integer from pointer without a cast" but the provided Makefile automatically
 disables them.
 
 ## Copyright and CC BY-SA 4.0 License:
