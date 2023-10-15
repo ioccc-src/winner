@@ -1790,12 +1790,18 @@ implicitly (linux doesn't seem to but macOS does).
 Cody fixed the build for this entry: it does not require SDL2 but SDL1 so there
 were linking errors.
 
+## [2014/vik](2014/vik/prog.c) ([README.md](2014/vik/README.md))
+
+Cody added an alternate version that is based on the author's remarks that will
+theoretically work for Microsoft Windows compilers (if anything works in Windows
+:-) ). We have no way of testing this and if anything has changed since 2014
+that would break it we do not know.
 
 ## [2015/endoh3](2015/endoh3/prog.c) ([README.md](2015/endoh3/README.md]))
 
 Cody fixed this to compile with linux which was having a problem with duplicate
-symbols of `main()`. The fix is through the option `-fcommon` which will let it
-compile like it does with macOS.
+symbols of `main()`. The fix is through the compiler option `-fcommon` which
+will let it compile like it does with macOS.
 
 Cody also made it easier to enjoy the theme of [Back to the
 Future](https://en.wikipedia.org/wiki/Back_to_the_Future) using this entry by

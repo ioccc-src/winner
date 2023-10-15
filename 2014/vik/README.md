@@ -13,13 +13,15 @@ US
 make
 ```
 
-
 ## To run:
 
 ```sh
 ./prog > foo.c
 ```
 
+There is an alternate version that will theoretically work with Windows
+compilers (if anything in Windows works :-) ). See the [Alternate
+code](#alternate-code) section below.
 
 ## Try:
 
@@ -28,6 +30,18 @@ echo 'Want to hear me beep?' | ./prog > audio_file.raw
 
 echo 'No. I want chocolate!' | ./prog | mplayer -demuxer rawaudio -
 ```
+
+### Alternate code:
+
+The alternate code, [prog.alt.c](prog.alt.c), is based on the author's
+instructions on how to get it to work with Windows. This has not been tested but
+in order to use it you can do:
+
+```sh
+make alt
+```
+
+Use `prog.alt` as you would `prog` above as well as below.
 
 
 ## Judges' remarks:
@@ -59,7 +73,7 @@ I can tell, there are at least six chocolate references in this program.
 This program can convert text to Morse to a raw 44.1kHz stereo audio file.
 Via streaming to mplayer, you can listen to the Morse audio.
 
-Don't forget the last '-' as it makes mplayer read from stdin.
+Don't forget the last '`-`' as it makes mplayer read from stdin.
 
 
 ## Convert audio file with Morse signals to text
@@ -85,6 +99,8 @@ declaration in order for the program to run correctly:
 ```c
 _setmode(_fileno(stdout), 0x8000);
 ```
+
+NOTE: see the [alternate code](prog.alt.c) for this.
 
 ### Known Issues
 
