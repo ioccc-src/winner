@@ -1,7 +1,7 @@
 # Most poetic use of strings
 
-    Arch D. Robison  
-    <arch.d.robison@gmail.com>  
+Arch D. Robison<br>
+<arch.d.robison@gmail.com>  
 
 ## To build:
 
@@ -24,17 +24,17 @@ echo '100000000000000000000*(20*(1+(99477941840441*50)))/31664812345028528' | ./
 
 ## Judges' remarks:
 
-Of integers this prog does a lot,
-plus minus, div times (and what not).
+Of integers this prog does a lot,  
+plus minus, div times (and what not).  
 
-And modulus if remainders the needing,
-on standard input percent be feeding.
+And modulus if remainders the needing,  
+on standard input percent be feeding.  
 
-More than one line can thru give input,
-when interactive one values more than throughput.
+More than one line can thru give input,  
+when interactive one values more than throughput.  
 
-With cut and paste and some time,
-one can compute M(23209).
+With cut and paste and some time,  
+one can compute M(23209).  
 
 ## Author's remarks:
 
@@ -64,7 +64,7 @@ So how to go back, to be Turing complete?
 From standard dot H, to the rescue, q SORT!  
 
 My fixation might hint at a textual bent.          
-Does my program compose a tatoo for your shin?     
+Does my program compose a tattoo for your shin?     
 Play crosswords or translate from Urdu to Tzouby?  
 To give it a whirl, just punch 2 + 2 in.  
 
@@ -73,8 +73,8 @@ Take unary minus and also subtract.
 Summing hairs of a walrus?  No longer a fuss.  
 Parenthetical grouping -- no pushing a stack!  
 
-Try dividing a googol by one forty three,    
-Subtract an octillion - it's simply divine.  
+Try dividing a [googol](https://en.wikipedia.org/wiki/Googol) by one forty three,    
+Subtract an [octillion](https://en.wikipedia.org/wiki/Names_of_large_numbers) - it's simply divine.  
 To compute a remainder, inscribe a percent.  
 For the sign of the answer, see C ninety nine!    
 
@@ -93,14 +93,14 @@ Divide *babbage* (in base seventeen) by *cafe* --
 a nice *fad*, but avoid a division by nix:          
 No errant result, but you could wait all day!       
 
-To grok the internals, ask Queen Cleopatra,  
-or King Tutankhamun; for him it's a romp.    
+To grok the internals, ask [Queen Cleopatra](https://en.wikipedia.org/wiki/Cleopatra),  
+or [King Tutankhamun](https://en.wikipedia.org/wiki/Tutankhamun); for him it's a romp.    
 Addition by cats, and if given two figures,  
 to tell which is bigger, sort down and string CMP!  
 
 Unlawful subtraction, a grade school infraction,   
 starts at the left and works to the right.    
-Yet more innovation: like Henry Ford's cars,  
+Yet more innovation: like [Henry Ford's cars](https://en.wikipedia.org/wiki/Ford_Motor_Company),  
 With a pound and define, mass production of vars!  
 
 The moral is clear, for programmers out there:   
