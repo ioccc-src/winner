@@ -1779,6 +1779,13 @@ Further, after the file 2013/hou/doc/example.markdown was moved to
 this broke `make` which Cody also fixed.
 
 
+## [2013/misaka](2013/misaka/misaka.c) ([README.md)[2013/misaka/README.md))
+
+As there are a lot of commands to try, Cody added the
+[demo.sh](2013/misaka/demo.sh) script to do this, sleeping for approximately 1
+second between commands.
+
+
 ## [2013/morgan1](2013/morgan1/morgan1.c) ([README.md](2013/morgan1/README.md))
 
 Cody added explicit linking of libm (`-lm`) as not all systems do this
