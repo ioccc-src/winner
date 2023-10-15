@@ -5,8 +5,8 @@
 
 ## Thank you honor roll
 
-There are several people who have contributed to the above mentioned
-several thousand changes and important improvements.
+There are several people who have contributed several thousand changes, fixes
+and important improvements.
 
 We call out the extensive contributions of [Cody Boone
 Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson) who is
