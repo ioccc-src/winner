@@ -86,20 +86,20 @@ It also displays the position of 2 famous comets during their last approach:
 With gcc 4.7.2 on Linux Ubuntu 12.10:
 
 ```
-prog.c:38:3: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
-prog.c:40:34: warning: value computed is not used [-Wunused-value]
-prog.c:56:6: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
-prog.c:58:50: warning: value computed is not used [-Wunused-value]
-prog.c:61:5: warning: suggest parentheses around ‘-’ inside ‘>>’ [-Wparentheses]
+morgan1.c:38:3: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+morgan1.c:40:34: warning: value computed is not used [-Wunused-value]
+morgan1.c:56:6: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+morgan1.c:58:50: warning: value computed is not used [-Wunused-value]
+morgan1.c:61:5: warning: suggest parentheses around ‘-’ inside ‘>>’ [-Wparentheses]
 ```
 
 With clang 3.1 on Linux Ubuntu 12.10 :
 
 ```
-prog.c:38:49: warning: '&&' within '||' [-Wlogical-op-parentheses]
-prog.c:38:27: warning: '&&' within '||' [-Wlogical-op-parentheses]
-prog.c:55:13: warning: '&&' within '||' [-Wlogical-op-parentheses]
-prog.c:56:14: warning: '&&' within '||' [-Wlogical-op-parentheses]
+morgan1.c:38:49: warning: '&&' within '||' [-Wlogical-op-parentheses]
+morgan1.c:38:27: warning: '&&' within '||' [-Wlogical-op-parentheses]
+morgan1.c:55:13: warning: '&&' within '||' [-Wlogical-op-parentheses]
+morgan1.c:56:14: warning: '&&' within '||' [-Wlogical-op-parentheses]
 ```
 
 This is due to most of the parentheses and braces being removed when
