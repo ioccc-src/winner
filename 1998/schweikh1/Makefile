@@ -128,6 +128,7 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	@echo "NOTE: for macOS use the alternate code through make alt. See README.md for details."
 
 # alternative executable
 #

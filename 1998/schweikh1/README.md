@@ -14,8 +14,9 @@ Germany
 make all
 ```
 
-An alternate version for this entry works with macOS. See the Alternate code
-section below for more details.
+There is an alternate version of this entry that will work with macOS. See the
+[Alternate code](#alternate-code) section below for details on how it works and
+how to use it.
 
 
 ## To run:
@@ -24,46 +25,85 @@ section below for more details.
 ./schweikh1
 ```
 
+NOTE: a limitation with the entry was that it required `gcc` but this limitation
+has been removed to make it more portable, requiring only `cc`.
+
 ### Alternate code:
 
-As noted above the alternate version works with macOS but there are some
-important notes as well as a description of how it works (spoilers for the
-original version as well).
+As noted above this entry will not work as it stands for macOS and there are
+some important notes as well as a description of how the fixed version works
+(the details of which are relevant to the original entry that no longer works as
+well as the fixed version but are described in the context of the macOS
+adjustments).
 
-With a MacBook Pro Max with the M1 chip some header files report an
-unsupported architecture and unsupported compiler (error, warning).
-However the defines are still found okay.
+#### macOS changes:
 
-For this alternate version you will need the command line tools which you can
-install like:
+As an aside: if you have a Mac with the Apple chip, some of the header files
+will report an unsupported architecture and unsupported compiler (error,
+warning). This will not make the program abort, however, but even with an Intel
+CPU though, the original entry will not work in macOS as it stands because
+`/usr/include` is hard-coded in the code and macOS does not have it.
+
+Nevertheless, although some of it would not work in other systems where
+`/usr/include` exists, the `#define`s would still be found okay, at least until
+a file was not found (this limitation was removed in both versions, see
+[thanks-for-fixes.md](/thanks-for-fixes.md) for details).
+
+However, as noted, macOS does **not** have `/usr/include` so this would not ever
+work for macOS without some changes, described next. For macOS you will need the
+command line tools installed which can be done like:
 
 ```sh
 sudo xcode-select --install
 ```
 
-Finally as far as how this works if you look at line 55 you see a funny command.
-This goes for both versions. Now the key are two magic numbers, one on a
-different line shortly below the string. In the original the numbers are,
-respectively, 44 and 46.  But how does this work? Well the string is:
+An important point is that the original version hard-coded `gcc` but just like
+the entry, the alternate version has also removed this limitation despite `gcc`
+existing (though it's `clang`) in macOS.
+
+Now as far as how this works if you look at the code of
+[schweikh1.c](schweikh1.c), on line 55 you'll see a funny command (this goes for
+the alternate version as well but a bit different).
+
+Now the key is two magic numbers, one (two of this exist) on a different line shortly below the
+string and the other a couple lines further below.
+
+In the original the numbers are, respectively, 44 and 46, but with the gcc
+limitation removed the numbers now are 43 and 45. But how does this work? Well
+the command is:
 
 ```
 "0gcc -ansi -E -dM -undef %s /usr/include/%s>r\0 ("
 ```
 
-The first number means: the length starting from 0 up through the `>`. The
-second number is the same starting point but up through the `\0` which is why
-it's +2. But what happens if only the first number is updated? Most of the
-output will be just `#define` by itself; in the cases where there was text after
-that it was macros that certainly were not defined.  There might have been other
-errors as well.
+which has been changed to be:
 
-This allows for opening the right files. The problem with the macOS is
-`/usr/include` does not exist: instead it's
+```
+"0cc -ansi -E -dM -undef %s /usr/include/%s>r\0 ("
+```
+
+Shortly below that you will see, as noted above, the numbers:
+
+```c
+if ((H = fopen (__FILE__+43, 43+__FILE__)))
+while ((fgets (L, (int)sizeof L, H)) != 0) {
+	I[strcspn (I, 45+__FILE__)] = O = 0;
+```
+
+The first number in the above C means the length starting from 0 up through the
+`>`. The second number is the same starting point but up through the `\0` which
+is why it's `+2`. But what happens if only the first number is updated (from the
+original)? Most of the output will be just `#define` by itself; in the cases
+where there was text after that it was macros that certainly were not defined.
+There might have been other errors as well.
+
+Changing this for macOS allows for opening the right files; the problem with the
+macOS is `/usr/include` does not exist: instead it's
 `/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include` which is why
-the different command line and the different numbers.
+the different command line and the different numbers. The change of the numbers
+can be found in the alternate code and the explanation is the same.
 
 To use this version use:
-
 
 ```sh
 make alt
@@ -71,13 +111,14 @@ make alt
 
 Use `schweikh1.alt` as you would `schweikh1` above.
 
+Bonus exercise: modify the code to provide a different compiler.
 
 ## Judges' remarks:
 
 What does it do?  It seems to print a list of system headers, perhaps
 with words after them.  Curiously, if you look at the list of words
 defined in a given standard header, they are never printed directly
-after that header's name.  Ah-hah!  It's a conformance test for the
+after that header's name.  Aha!  It's a conformance test for the
 standard headers.
 
 This code is a wonder; it's a wonder that it compiles.  I wonder
@@ -90,15 +131,17 @@ Do not read them if you want to figure this out yourself.  "Amendment
 One" refers to "NA1", the add-on to C89 which added some fairly
 crufty internationalization support.
 
-NOTE: Some non-gcc compilers that are not fully ANSI standard do not
-compile this entry correctly.  Using cc by default is not helpful
-most of the time on this entry, because the program has a hardcoded
+#### Historical note:
+
+Some non-gcc compilers that were not fully ANSI standard did not
+compile this entry correctly.  Using cc by default was not helpful
+most of the time on this entry, because the program had a hardcoded
 gcc invocation anyway.  Anyone who uses egcs and has no plain gcc
 will need to frob the source anyway and can be expected to do the
-right thing with `${CC}`. So use gcc.
+right thing with `${CC}`. So one should have used gcc.
 
 
-## Author's remarks
+## Author's remarks:
 
 Important! This program, if it compiles at all, is mis-compiled by many
 compilers due to compiler bugs. It could be the "least likely

@@ -17,13 +17,13 @@ bug fixes** such as [2001/anonymous](2001/anonymous/README.md) and
 compile with clang, fixing entries to work with macOS (some of which are **very
 complicated** such as [1998/schweikh1](1998/schweikh1/README.md)), fixing code
 to work with both 32-bit and 64-bit (such as
-[2001/herrmann2](2001/herrmann2/README.md)) which can be **quite complicated**
-(though not always even if it seems it), providing alternate code where useful
-or necessary, fixing where possible dead links and otherwise removing them, typo
-and consistency fixes, improving **ALL _Makefiles_** and writing the [sgit
-tool](https://github.com/xexyl/sgit) that we installed locally and have used to
-easily run `sed` on files in the repository to help build the website. Thank
-you **very much** for your extensive efforts in helping improve the IOCCC
+[2001/herrmann2](2001/herrmann2/README.md)) which *can be* **quite complicated
+too** (though not always even if it seems it), providing alternate code where
+useful or necessary, fixing where possible dead links and otherwise removing
+them, typo and consistency fixes, improving **ALL _Makefiles_** and writing the
+[sgit tool](https://github.com/xexyl/sgit) that we installed locally and have
+used to easily run `sed` on files in the repository to help build the website.
+Thank you **very much** for your extensive efforts in helping improve the IOCCC
 presentation of past IOCCC winners and making many many past entries work with
 modern systems!
 
@@ -921,20 +921,60 @@ segfault fixes should be made because the program is so beautiful.
 
 ## [1998/schweikh1](1998/schweikh1/schweikh1.c) ([README.md](1998/schweikh1/README.md]))
 
-Cody fixed this for modern systems (it did not work at all). He also made it so
-that if a file fails to open it does not return but rather skips the reading of
-the file. Without this fix the entry did not work.
+Cody fixed this for modern systems (it did not work at all) and added an
+alternate version that works with macOS. Cody also made it ever so slightly more
+portable by removing the hard-coding of `gcc`, instead hard-coding it `cc`. Doing
+this not only lets it work with systems without `gcc` (though in macOS it does
+exist but is actually `clang`) as `cc` always should.
 
-What was wrong? The call to `freopen()` was incorrect with the second arg (the
-mode) being instead `5+__FILE__`. It now is `"r"`. There was also a call to
-`fopen()` that was wrong where the mode was instead `44+__FILE__`. Interestingly
-enough though this did not seem to be an issue though I cannot explain why. He
-notes that it works fine with `clang` as well as `gcc` (which is what is used
-but in macOS - see below for alternate code - `gcc` is clang).
+Getting this entry to work was quite complicated but is also very interesting.
+To see how the macOS fixes works, see the README.md but do note that this
+includes spoilers for both versions! The fixes to get it to work at all are
+described next.
 
-Additionally Cody provided an alternate version for macOS. The fix is
-rather complicated but very interesting. See the README.md file for details on
-how it works and how to use it.
+So what was wrong with the original?
+
+The call to `freopen()` was incorrect with the second arg (the mode) being
+`5+__FILE__`; it is now `"r"`. (Observe that the mode to the `fopen()`
+call is: `44+__FILE__`. This might seem incorrect and indeed it can be changed
+to `"r"` as well but this was not actually necessary so once this was noticed it
+was changed back to the original.)
+
+Another important change is that the files are only closed if the `FILE *H` is
+`!= NULL`. Without this check, because it's almost certain that some files will
+not exist, it would dereference a NULL pointer and very likely crash or halt and
+catch fire :-), preventing the entry from working. Notice how `H` is a funny
+macro defined as:
+
+```c
+%:define H(x) <st%:%:x##.h>
+```
+
+and yet the `FILE *` can be called `H`! This might or might not make sense to
+you but if it doesn't can you figure out why?
+
+Another fix is that previously the program would `return 1` if a file failed to
+open but for the same reason as above, it being very likely some files will not
+exist, the return was removed so that if the statement of the `if` is true the
+`while` loop run, rather than having the loop by itself. It was done this way to
+make it as close to the original as possible and to maintain the obfuscation as
+close as possible as well.
+
+Also crucial, and the final fixes to make it work, is that the arrays `K` and
+`L` had to be increased in size. They were originally (somewhat bewildering at
+first glance) defined as `K[X(*)], L[X(<<)]` but they were changed to
+`K[(X(*))*4], L[4*X(<<)]` though it is no longer clear just how necessary this
+might be.
+
+As noted, a limitation of `gcc` existing was removed by Cody to make it so that
+`gcc` is not required as `cc` should exist in every system with a C compiler and
+as the author stated: as long as the options `-E -dM` of the compiler prints out
+the macros in the form of `gcc -dM` i.e. the lines are in the form `#define
+MACRO value` it will work, assuming that compiler can run, of course.
+
+As for the version for macOS, the even more complicated details are described in
+the [Alternate code](1998/schweikh1/README#alternate-code) section of the
+README.md file as these changes pertain to the described version therein.
 
 
 ## [1998/schweikh2](1998/schweikh2/schweikh2.c) ([README.md](1998/schweikh2/README.md]))
