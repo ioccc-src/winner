@@ -49,6 +49,6 @@ main(argc, argv) char **argv;
 	}
 	else printf(" ");
 
-	printf("};\n");
     }
+    printf("};\n");
 }

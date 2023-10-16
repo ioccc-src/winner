@@ -19,9 +19,10 @@ make all
 ./mullender
 ```
 
-> NOTE: If your machine is not a [VAX-11](https://en.wikipedia.org/wiki/VAX-11)
+NOTE: If your machine is not a [VAX-11](https://en.wikipedia.org/wiki/VAX-11)
 or [PDP-11](https://en.wikipedia.org/wiki/PDP-11), this program will not execute
-correctly.  In later years, machine dependent code was discouraged.
+correctly.  In later years, machine dependent code was discouraged. An alternate
+version that will work with other systems is provided as alternate code below.
 
 
 ### Alternate code:
@@ -29,8 +30,8 @@ correctly.  In later years, machine dependent code was discouraged.
 An alternate version exists which allows one to enjoy this entry on systems
 other than a [VAX-11](https://en.wikipedia.org/wiki/VAX-11) or
 [PDP-11](https://en.wikipedia.org/wiki/PDP-11). This version has a delay feature
-as it goes so fast in modern systems. The author later suggested that there was
-a delay in the original system as well.
+as it goes so fast in modern systems. The author suggested that there was a
+delay in the original code as well.
 
 
 #### To build:
@@ -51,12 +52,11 @@ The default microseconds is 10000. This feature is so you can experiment with
 different speeds in between writes. It can be useful if your CPU is too slow or
 too fast.
 
-BTW: is there such a thing as too fast a CPU ? :-) Actually yes for certain code
-which is probably not as uncommon as you think :-).
-
 Note that it is an `int` (argc) and it uses `atoi()` which does NOT check for
 overflow!
 
+BTW: is there such a thing as too fast a CPU ? :-) Actually yes for certain code
+which is probably not as uncommon as you think :-).
 
 #### Try:
 
@@ -83,44 +83,49 @@ the rules were changed, requesting non-machine specific code.
 
 This program was selected for the 1987 t-shirt collection.
 
-The C startup routine (via `crt0.o`) transfers control to a location named main.
-In this case, main just happens to be in the data area.  The array of shorts,
+The C startup routine (via [crt0.o](https://en.wikipedia.org/wiki/Crt0)) transfers control to a location named `main`.
+In this case, `main` just happens to be in the data area.  The array of `short`s,
 which has been further obfuscated by use of different data types, just happens
 to form a meaningful set of [PDP-11](https://en.wikipedia.org/wiki/PDP-11) and
-Vax instructions.  The first word is a
-[PDP-11](https://en.wikipedia.org/wiki/PDP-11) branch instruction that branches
-to the rest of the [PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor) code.  On the Vax main is called with the calls
-instruction which uses the first word of the subroutine as a mask of registers
-to be saved.  So on the Vax the first word can be anything.  The real Vax code
-starts with the second word.  This small program makes direct calls to the
-write() Unix system call to produce a message on the screen.  Can you guess what
-is printed?  We knew you couldn't!  :-)
+[VAX](https://en.wikipedia.org/wiki/VAX) instructions.
 
-BTW: this remains my (Landon Curt Noll's) all time favorite entries!
+The first word is a [PDP-11](https://en.wikipedia.org/wiki/PDP-11) branch
+instruction that branches to the rest of the
+[PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor) code.
+
+On the VAX `main` is called with the [calls
+instruction](https://jcsites.juniata.edu/faculty/rhodes/org/instr.htm#CALLS)
+which uses the first word of the subroutine as a mask of registers to be saved.
+So on the VAX the first word can be anything.  The real VAX code starts with the
+second word.
+
+This small program makes direct calls to the `write()` Unix system call to
+produce a message on the screen.  Can you guess what is printed?  We knew you
+couldn't!  :-)
 
 What happens if you hit enter after it writes a line of output?
 
-In 2023 remarks were discovered from [Sjoerd Mullender](/winners.html#Sjoerd_Mullender)
-and so was the program that was used by the authors to generate the array that he
-referred to. Because [a.out.h](a.out.h) is not available in all systems (like macOS) and
-more importantly because we wanted it to be as close to as the original as
-possible we used a copy of
+BTW: to this day, 2023, this remains one of my (Landon Curt Noll's) all time
+favorite entries!
+
+
+### gentab.c
+
+In 2023 remarks were discovered from [Sjoerd
+Mullender](/winners.html#Sjoerd_Mullender), one of the authors, and so was the
+program that was used by the authors to generate the array that he referred to.
+Because [a.out.h](a.out.h), which [gentab.c](gentab.c) uses, is not available in
+all systems (like macOS) and more importantly because we wanted it to be as
+close to as the original as possible we used a copy of
 <https://raw.githubusercontent.com/dspinellis/unix-history-repo/Research-Release/usr/include/a.out.h>
 in the *fabulous* [Unix History
 Repo](https://github.com/dspinellis/unix-history-repo/tree/Research-Release).
 
 This tool can be built by running:
 
-
 ```sh
 make gentab
 ```
-
-We note that it does not appear to work in modern systems (unbalanced braces)
-or something else is wrong but given that this was done a long time ago on a now
-archaic system maybe that is why. We also note that if the `short`s are not
-changed to just `int` it prints out a lot of negative numbers but since
-[mullender.c](mullender.c) has a negative number we kept it as is.
 
 
 ## Author's remarks:
@@ -130,7 +135,7 @@ changed to just `int` it prints out a lot of negative numbers but since
 These remarks, found at
 [https://lainsystems.com/posts/exploring-mullender-dot-c/](https://lainsystems.com/posts/exploring-mullender-dot-c/),
 were provided by Sjoerd Mullender years later. We thank the author of the
-article for the quote! For a more detailed analysis, taken from the Obfuscated C
+article for the quote! For a more detailed analysis, taken from the book Obfuscated C
 and Other Mysteries, see below. We hope that this is okay with the author of the
 book. Considering that the analysis is entirely the authors' comments we don't
 think this will be a problem. Unfortunately the excerpt was PDF and it did not
@@ -138,7 +143,7 @@ copy paste well. We had to go back and forth to type so it's possible he made a
 typo though he also fixed some typos found in the extract. As for the other
 comments:
 
-## Remarks from the author:
+### Remarks from the author:
 
 I have never known a lot about the [VAX](https://en.wikipedia.org/wiki/VAX)
 [assembly](https://en.wikipedia.org/wiki/Assembly_language), so we used the C
@@ -160,7 +165,7 @@ We decided for fun to create an
 [obfuscated](https://en.wikipedia.org/wiki/Obfuscation_(software)) set of
 programs, only for the
 [PDP](https://en.wikipedia.org/wiki/Programmed_Data_Processor), to do this, but
-circumventing the channel. (I.e. cheating, hence the needed obfuscation.) Our
+circumventing the channel (i.e. cheating, hence the needed obfuscation.). Our
 programs worked and we handed them in.
 
 Of course, the teacher had a good laugh and then rejected our submission. (We
@@ -196,9 +201,10 @@ Our program is idempotent under `cb`.
 
 When this program is compiled, the compiler places the array somewhere in
 memory, just like it places any compiled code somewhere in memory. Usually, the
-C startup code (`crt0.o`) calls a routine named `main()`. The loader fills in the
-address in the startup code, but at least on the old systems where this program
-rans, it doesn't know that the `main()` in this program isn't code but data!
+C startup code ([crt0.o](https://en.wikipedia.org/wiki/Crt0)) calls a routine
+named `main()`. The loader fills in the address in the startup code, but at
+least on the old systems where this program ran, it doesn't know that the
+`main()` in this program isn't code but data!
 
 When the program is run, the C startup code transfers control to the location
 `main`. The contents of the array just happen to be machine instructions for
@@ -289,7 +295,7 @@ system call (55) slows things down.
 We assembled this program and extracted the [machine
 code](https://en.wikipedia.org/wiki/Machine_code) from the resulting [object
 file](https://en.wikipedia.org/wiki/Object_file). We used this code in the
-[VAX](https://en.wikipedia.org/wiki/VAX) part. Since neither of us was fluent in
+[VAX](https://en.wikipedia.org/wiki/VAX) part. Since neither of us were fluent in
 VAX [assembly](https://en.wikipedia.org/wiki/Assembly_language), we wrote the
 VAX code in C and massaged the
 [compiler](https://en.wikipedia.org/wiki/Compiler) output.  The VAX assembly
@@ -420,7 +426,7 @@ The only problem we had was that the program had chosen an
 Since everybody knows what a [PDP-11](https://en.wikipedia.org/wiki/PDP-11)
 branch instruction looks like (everyone knows that the traditional magic word
 for an executable, `0407`, is a [PDP-11](https://en.wikipedia.org/wiki/PDP-11)
-[branch](https://en.wikipedia.org/wiki/Branch_(computer_science)))), we changed
+[branch](https://en.wikipedia.org/wiki/Branch_(computer_science))), we changed
 that to decimal. After checking the size of the resulting program we saw that it
 was one byte too long. The limit was 512 bytes, and our program was 513 bytes.
 So we changed the word `and` in the comment to `&&`.

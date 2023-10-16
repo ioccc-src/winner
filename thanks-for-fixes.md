@@ -126,9 +126,13 @@ everyone can enjoy it with systems that are not VAX/PDP. We also refer you to
 the [FAQ](faq.md) as there are some winning entries that also let one enjoy it -
 with more to them of course!
 
-Cody also added the [gentab.c](1984/mullender/gentab.c) file, modified to
-compile with modern systems, which the author noted in their remarks (which Cody
-also found).
+Cody also added the [gentab.c](1984/mullender/gentab.c) file, fixed to compile
+with modern systems and so that it would create the proper array (it had
+unbalanced '}'s), which the author noted in their remarks (which Cody also
+found). As this file uses the old header file `a.out.h` that is not available in
+all modern systems, Cody found a copy of it as to what it should have been at
+the time, in the fabulous [Unix History
+Repo](https://github.com/dspinellis/unix-history-repo/tree/Research-Release).
 
 
 ## [1985/applin](1985/applin/applin.c) ([README.md](1985/applin/README.md]))
