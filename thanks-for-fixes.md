@@ -1030,6 +1030,12 @@ segfault when run or not compile at all (gcc and clang respectively).
 
 Cody also provided alternate code that supports the southern hemisphere.
 
+Later on Cody restored the `#include`s in the source code which had been changed
+by us to make it a one-liner again but this was an error as it was not a
+one-liner but rather a small program. At the same point Cody made the code
+itself a one-line like the code is in the original entry. Now it looks much more
+like the original entry but with the two fixes.
+
 
 ## [2000/thadgavin](2000/thadgavin/thadgavin.c) ([README.md](2000/thadgavin/README.md]))
 

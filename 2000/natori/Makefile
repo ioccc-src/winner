@@ -62,7 +62,7 @@ CDEFINE= -Wno-error -Wno-implicit-function-declaration -Wno-implicit-int \
 
 # Include files that are needed to compile
 #
-CINCLUDE= -include stdlib.h -include math.h
+CINCLUDE=
 
 # Optimization
 #
