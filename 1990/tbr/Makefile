@@ -5,7 +5,7 @@
 ################################################################################
 #
 # IOCCC winning entry code may not work on your system.  What was liked/allowed
-# and worked in the past may no longer be the liked/allowed or compile/run today.
+# and worked in the past may no longer be liked/allowed or compile/run today.
 #
 # Bug fixes, corrections and typo fixes are VERY WELCOME.  If you see a problem,
 # first check this URL for a list of known bugs and (mis)features of IOCCC winners:
