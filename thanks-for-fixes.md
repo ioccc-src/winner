@@ -178,14 +178,15 @@ that Cody added. See the README.md for details.
 
 ## [1985/sicherman](1985/sicherman/sicherman.c) ([README.md](1985/sicherman/README.md]))
 
-Cody fixed this _very twisted entry_ to not require `-traditional-cpp`. He'd
-like to refer you to the original file in
-[sicherman.alt.c](1985/sicherman/sicherman.alt.c) and he suggests that you then compare it
-to [sicherman.c](1985/sicherman/sicherman.c) for some good old C-fashioned fun!
+Cody fixed this _very twisted entry_ to not require `-traditional-cpp`.  Fixing
+`-traditional-cpp` is, as noted earlier, very complicated, but Cody would like
+to refer you to the original file
+[sicherman.orig.c](1985/sicherman/sicherman.orig.c) and he suggests that you
+then compare it to [sicherman.c](1985/sicherman/sicherman.c) for some good old
+C-fashioned fun!
 
-Later on Cody improved the fix so that it looks much more like the original
-entry which can be found in
-[1985/sicherman/sicherman.orig.c](1985/sicherman/sicherman.orig.c).
+Later on Cody improved the fix so that it looks much more like the [original
+entry](1985/sicherman/sicherman.c).
 
 
 ## [1986/hague](1986/hague/hague.c) ([README.md](1986/hague/README.md]))
