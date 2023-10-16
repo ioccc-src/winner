@@ -21,12 +21,15 @@ make all
 ./august | head -n 10
 ```
 
-If you have the `primes(6)` tool (sometimes part of BSD Games) you can see
-what of the output in the first `N` (say `15`) lines are primes:
+If you have the `primes(6)` tool (sometimes part of [BSD
+Games](https://github.com/vattam/BSDGames)) you can see
+what of the output in the first `N` (say `15` or `25`) lines are primes:
 
 ```sh
-while read -r n ; do primes "$n" $((n + 1)) ; done < <((./august | head -n 15 ))
+./primes.sh # 15
+./primes.sh 25
 ```
+
 
 ## Judges' remarks:
 
@@ -37,6 +40,9 @@ action of the program?
 If you let it, the program will continue to print a numerical sequence (can you
 guess in what base it is printed by looking at the code?) until you run out of
 memory or until they sell your computer, whichever comes first.
+
+If you use the [primes.sh](primes.sh) script can you figure out if there's
+anything funny going on with the output?
 
 ## Author's remarks:
 
