@@ -1,13 +1,14 @@
-# Strangest appearing program 
+# Strangest appearing program
 
-Ed Lycklama  
+Ed Lycklama<br>
 
 
 ## To build:
 
 ```sh
-make all
+make alt
 ```
+
 
 If you have an old enough compiler you can try:
 
@@ -19,49 +20,67 @@ make lycklama.orig
 ## To run:
 
 ```sh
-./lycklama < some_file
+./lycklama.alt < some_file
 ```
 
-There is an alternate version which slows down the output for a more fun display
-with modern systems. For this reason we encourage you to try that version
-as well. See Alternate code section below. 
-
+To see why we recommend the alternate version instead of the original version,
+see below and the [original code](#original-code) section.
 
 ## Try:
 
-```sh
-./lycklama < lycklama.c
-
-# notice the difference between the above and this one:
-./lycklama < lycklama.alt.c
-# also try:
-./lycklama < lycklama.orig.c
-
-./lycklama < README.md
-
-./lycklama < Makefile
-
-```
-
-
-### Alternative code:
-
-This alternate version slows down the output which will provide more fun
-output. The default time passed to `usleep(3)` is `500` but you can reconfigure
-it like:
+This alternate version, which we recommend you you try first, prior to the
+original, so that you can see what it does in modern systems, slows down the
+output which will provide more fun output. It is slowed down by the `usleep(3)`
+library call with a configurable time to sleep. The default is 500 but you can
+reconfigure it like:
 
 
 ```sh
 make CDEFINE+="-DZ=700" clobber alt
 ```
 
-#### Try:
+which would set it at 700. Then, whether you use the default value or not, try:
 
 ```sh
 ./lycklama.alt < lycklama.c
+
+# notice the difference between the above and this one:
 ./lycklama.alt < lycklama.alt.c
+
+# also try:
 ./lycklama.alt < lycklama.orig.c
+
+./lycklama.alt < README.md
+
 ./lycklama.alt < Makefile
+
+```
+
+### Original code:
+
+As explained above, because modern systems run this entry way too fast to fully
+appreciate what it does, we encourage you to first try the alternate version.
+After this, however, you might wish to try the original version, fixed for
+modern systems. To do this:
+
+```sh
+make all
+```
+
+#### To use:
+
+
+```sh
+./lycklama < some_file
+```
+
+#### Try:
+
+```sh
+./lycklama < lycklama.c
+./lycklama < lycklama.alt.c
+./lycklama < lycklama.orig.c
+./lycklama < Makefile
 ```
 
 

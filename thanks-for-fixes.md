@@ -170,9 +170,7 @@ gave to have fun with finding primes that might seem unusual in a way.
 Cody fixed this to compile with modern compilers. In the past one could get away
 with defining some macro to `#define` and then use `#foo` to have the same
 effect as using `#define` but this does not work in modern systems so Cody
-changed the `#o` lines to `#define`. The
-[lycklama.alt.c](1985/lycklama/lycklama.alt.c) is the original source
-code as it provides some fun input for the entry.
+changed the `#o` lines to `#define`. Also `unistd.h` had to be `#include`d.
 
 Yusuke provided some useful information that amounts to an alternate version
 that Cody added. See the README.md for details.
@@ -346,7 +344,7 @@ README.md file for more details.
 ## [1988/phillipps](1988/phillipps/phillipps.c) ([README.md](1988/phillipps/README.md]))
 
 Cody fixed this for modern systems. It did not compile with clang because it
-requires the second and third args to `main()` to be `char **` but even before
+requires the second and third args of `main()` to be `char **` but even before
 that with gcc it printed random characters. After fixing it for clang by
 changing `main()` to call the new function `pain()` (chosen because it's a pain
 that clang requires these args to be `char **` :-) ) with the correct args it
@@ -376,7 +374,7 @@ thank him for this ghastly point! :-)
 ## [1988/westley](1988/westley/westley.c) ([README.md](1988/westley/README.md]))
 
 The [original version](1988/westley/westley.alt.c), provided as alternate code,
-was fixed by Misha Dynin, based on the judges' remarks so that this would work
+was fixed by Misha Dynin, based on the judges' remarks, so that this would work
 with modern C compilers. We encourage you to try the alternate version to see
 what happens with current compilers! See the README.md files for details.
 
