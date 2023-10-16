@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Tue 10 Oct 2023 13:08:59 UTC*
+*Last updated: Mon 16 Oct 11:22:52 UTC 2023*
 
 This document is primarily for [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) as he (that is I :-) ) wanted a way
@@ -32,10 +32,16 @@ mind that abuses a bug in a now very old gcc version - this obviously cannot be
 fixed but I added an alt version that does what it used to do so it's fine) but
 many certainly can be - and actually most have been - fixed.
 
-- Check for typos in README.md files. Although I did up through I believe 2011 I
-have to do another pass through all except that as of 12 July 2023 I went
-through 1984 and 1985. At the same time the formatting has to be / is being
-checked.
+- Format fix remaining README.md files. As of **16 October 2023** the entries of
+years through 2013 and up through 2014/endoh1 have been checked. As for the
+`YYYY/README.md` files years up through 2001 have had a first pass but some
+things have to be done in those years. These things, such as dealing with old
+email addresses and such, can likely be done with the typo pass (see below).
+
+- *AFTER* the README.md files have been format fixed: check for typos in
+README.md files. Although I did up through I believe 2011 I have to do another
+pass through all except that as of 12 July 2023 I went through 1984 and 1985. At
+the same time the formatting has to be / is being checked.
     * UPDATE on 06 July 2023: some while back I noticed that _ALL_ years will
     have to be checked again but most of the years checked through 2011 (I think
     it is but I have this vague memory I did a couple more years - that will be
@@ -45,9 +51,12 @@ checked.
     * UPDATE on 06 July 2023: note that this does NOT include the
     `YYYY/README.md` files! See the below item for that.
 
-- Go through all year README.md files that is 1984/README.md, 1985/README.md and
-so on. As of *Sun 30 Apr 2023 13:45:52 UTC* the following years have been
-finished: 1984, 1985, 1986, 2004, 2005.
+- Go through all year README.md files: that is 1984/README.md, 1985/README.md and
+so on. As of **Mon 16 Oct 11:22:52 UTC 2023** the following years have had a
+first pass: 1984 through 2001. However there are changes that are required
+namely to do with email addresses that no longer exist. At this point it is not
+determined if this will be done with the typo pass (what should be the final
+pass) or not but it's very possible that it can be just to speed things along.
 
 - Verify which README.md files have not been checked for correct formatting and
 fix any issues.

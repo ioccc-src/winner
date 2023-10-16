@@ -1,7 +1,6 @@
 # Second place award 
 
-Dave Decot  
-
+Dave Decot
 
 ## To build:
 
@@ -9,13 +8,11 @@ Dave Decot
 make all
 ```
 
-
 ## To run:
 
 ```sh
 ./decot
 ```
-
 
 ### Alternate code:
 
@@ -26,7 +23,6 @@ make alt
 ./decot.alt
 ```
 
-
 ## Judges' remarks:
 
 This program prints out a string of garbage.
@@ -36,8 +32,8 @@ The judges also offer this one comment: understand remarks!
 
 ### Historical remarks:
 
-Some new (in 1984) compilers disliked line 15 of the original source, so we changed it
-from:
+Some new (in 1984) compilers disliked line 15 of the original source, so we
+changed it from:
 
 ```c
 for(signal=0;*k * x * __FILE__ *i;) do {
@@ -48,7 +44,6 @@ to:
 ```c
 for(signal=0;*k *x * __FILE__ *i;) do {
 ```
-
 
 To see what we mean look at the [original source file](decot.orig.c).
 

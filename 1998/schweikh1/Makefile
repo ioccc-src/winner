@@ -128,6 +128,7 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	@echo "NOTE: for macOS use the alternate code through make alt. See README.md for details."
 
 # alternative executable
 #
@@ -184,7 +185,7 @@ indent.c: ${PROG}.c
 	    echo "${INDENT} < $< > $@"; \
 	    ${INDENT} < $< > $@; \
 	else \
-	    echo "no intent tool found, ident $< yourself, sorry"; \
+	    echo "no indent tool found, ident $< yourself, sorry"; \
 	    echo "exit 17"; \
 	    exit 17; \
 	fi

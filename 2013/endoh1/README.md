@@ -81,6 +81,7 @@ The usage is simple: you just have to wrap Lazy K program with `#include
 [2]: https://tromp.github.io/cl/lazy-k.html
 [3]: https://github.com/irori/lazyk
 [4]: http://en.wikipedia.org/wiki/Polyglot_%28computing%29
+
 ### Obfuscation
 
 ... is inherent in SKI combinator calculus :-)

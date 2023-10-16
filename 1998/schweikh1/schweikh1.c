@@ -3,9 +3,9 @@
 /*#include H(dlib)*/
 /*#include H(ring)*/
 
-#define x ) == 0 ?__LINE__:0){O =__LINE__;break;} }
-#define X(x) __LINE__ x __LINE__
-#define t(a)\
+#define x ) == 0 ?__LINE__:0){O =__LINE__;break;} }
+#define X(x) __LINE__ x __LINE__
+#define t(a)\
 for (c = 0; c <n##a; ++c) { \
   if (strchr (a[c], 0[__FILE__])) { if (*a[c] == 0[__FILE__]) { \
       if (strcmp (a[c]+__LINE__, I + strlen (I) + __LINE__ - strlen (a[c]) x else { \
@@ -16,7 +16,7 @@ for (c = 0; c <n##a; ++c) { \
 	int
 main (int C, char **V)
 {
-	FILE *G;
+	FILE *H;
 	int c, ne, nn, S = C < 2 ? 060 : *V[1];
 
 	char f[__LINE__][X(*)], K[(X(*))*4], L[4*X(<<)],
@@ -52,17 +52,17 @@ O:
 #line				8 "<%s>:\n"
 				char *I = L + __LINE__;
 				int O = printf (__FILE__, n[nn]) +
-#line				2 "0gcc -ansi -E -dM -undef %s /usr/include/%s>r\0 ("
+#line				2 "0cc -ansi -E -dM -undef %s /usr/include/%s>r\0 ("
 				sprintf (K, 1+__FILE__, f[S-*__FILE__] + __LINE__, n[nn]);
 				O += system (K);
-				if ((G = fopen (__FILE__+44, "r")))
-				while ((fgets (L, (int)sizeof L, G)) != 0) {
-					I[strcspn (I, 46+__FILE__)] = O = 0;
+				if ((H = fopen (__FILE__+43, 43+__FILE__)))
+				while ((fgets (L, (int)sizeof L, H)) != 0) {
+					I[strcspn (I, 45+__FILE__)] = O = 0;
 #line					1 "*r"
 					t (n) t (e)
 					if (0 == O) O = puts (L);
 				}
-				if (G != NULL) nn = fclose (G);
+				if (H != NULL) nn = fclose (H);
 			}
 		}
 	}

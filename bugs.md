@@ -1865,7 +1865,7 @@ Do you have it? Please provide it!
 ## [2013/dlowe](2013/dlowe/dlowe.c) ([README.md](2013/dlowe/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 
-This program will very likely crash or draw something strange with 0 args. Then
+This program will possibly crash or draw something strange with 0 args. Then
 again it might not. :-) This is easy to fix but would add bytes and since the
 author noted it is a feature and not a bug. You of course can try and fix it
 yourself but please do NOT open a pull request for this: just do it as an
@@ -1889,7 +1889,7 @@ Hou :-) ) yourself. This should not be fixed.
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) discovered a bug that
 shows itself in some cases (it works in others) when working on his winning
-[2020 Enigma machine](2020/ferguson2/prog.c) ('Most enigmatic) entry. See his
+[2020 Enigma machine](2020/ferguson2/prog.c) ('Most enigmatic') entry. See his
 [README.md](2020/ferguson2/README.md) for details (search for `vik` in the
 file).
 

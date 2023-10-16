@@ -62,7 +62,7 @@ CDEFINE= -Wno-error -Wno-implicit-function-declaration -Wno-implicit-int \
 
 # Include files that are needed to compile
 #
-CINCLUDE= -include stdlib.h -include math.h
+CINCLUDE=
 
 # Optimization
 #
@@ -183,7 +183,7 @@ indent.c: ${PROG}.c
 	    echo "${INDENT} < $< > $@"; \
 	    ${INDENT} < $< > $@; \
 	else \
-	    echo "no intent tool found, ident $< yourself, sorry"; \
+	    echo "no indent tool found, ident $< yourself, sorry"; \
 	    echo "exit 17"; \
 	    exit 17; \
 	fi

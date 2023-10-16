@@ -32,13 +32,24 @@ There are also some other musical samples, twinkle.abc and menuet.abc.
 
 ## Judges' remarks:
 
-This endoh3ram can tweet out a tune and is small enough to tweet.
+This program can toot out a tune that is small enough to posted to most social
+media platforms that have small message length limits.
+
+This endoh3ram can toot out a tune that is small enough.
+
+### A modern day (2023) note about the award 'Most tweetable 1-liner' and twitter:
+
+The IOCCC no longer endorses the use of what was once twitter, or whatever it
+might be called today. We recommend that you pick a responsible social media
+platform to post the program's output on. Nevertheless the award of this entry
+will remain the same for historical purposes.
 
 ## Author's remarks:
 
 ### Remarks
 
-This is a sound synthesizer for a subset of [ABC music notation](http://en.wikipedia.org/wiki/ABC_notation).
+This is a sound synthesizer for a subset of [ABC music
+notation](http://en.wikipedia.org/wiki/ABC_notation).
 
 Try:
 
@@ -54,14 +65,14 @@ as `padsp` or `aoss`:
 echo "CDEFGABc" | ./endoh3 | padsp tee /dev/dsp > /dev/null
 ```
 
-If you are using Mac OS X, try [sox](http://sox.sourceforge.net/):
+If you are using Mac OS X, try [sox](http://sox.sourceforge.net/) like so:
 
 ```sh
 echo "CDEFGABc" | ./endoh3 | sox -q -traw -r8000 -b8 -e unsigned-integer - -tcoreaudio
 ```
 
-If they do not work, use the attached script to convert the output
-into a wave file format:
+If that does not work, use the attached script to convert the output into a wave
+file format:
 
 ```sh
 echo "CDEFGABc" | ./endoh3 | ruby wavify.rb > cde.wav
@@ -69,19 +80,28 @@ echo "CDEFGABc" | ./endoh3 | ruby wavify.rb > cde.wav
 
 and play `cde.wav`.
 
-You can enjoy some music scores that I attached:
+
+You can also enjoy some music scores that I attached. With `/dev/dsp` you can
+do so like:
+
 
 ```sh
 cat twinkle.abc | ./endoh3 > /dev/dsp
 cat menuet.abc | ./endoh3 > /dev/dsp
 ```
 
+but you should be able to modify it a way to meet your system requirements as
+described above.
+
+
 ### Obfuscation
 
-The following sequence of questions may be helpful to understand the endoh3ram.
+The following sequence of questions may be helpful to understand the `endoh3ram`
+program:
 
 - How does it convert ABC notes into the frequency?
-- What is `89/84.`?  I found it by using Stern-Brocot tree.
+- What is `89/84.`?  I found it by using the [Stern-Brocot
+tree](https://en.wikipedia.org/wiki/Stern-Brocot_tree).
 - How does it generate a wave?  Hint: it generates a saw wave.
 
 ### Limitation
@@ -98,7 +118,7 @@ The following features are supported:
   - `A3` (a dotted quarter note)
   - `A4` (a half note)
 
-The following features are *not* supported:
+The following features are *NOT* supported:
 
 - Sharp and flat: `^C` `_C`
   - But it is possible to emit the half tones.  Do you see how?
@@ -110,10 +130,12 @@ The following features are *not* supported:
 
 ### Known Bugs
 
-You can *not* write a note length immediately followed by a note `E`,
+You can *NOT* write a note length immediately followed by a note `E`,
 such as `C2E2`.
-Can you know why?
-You can work it around by inserting a whitespace: `C2 E2`.
+
+Can you figure out why?
+
+A workaround is inserting a whitespace: `C2 E2`.
 
 ### Portability
 
@@ -130,61 +152,70 @@ I did write a score of the Happy Birthday song too.
 (It does not matter because the song is out-of-copyright in my country.)
 But I do not attach it to protect you from W\*\*\*\*r.
 
-For the same reason, do not play a score that contains only `z1092`.
+For the same reason, do not post a score that contains only `z1092`.
 You know, it is ["the famous song"](http://en.wikipedia.org/wiki/4%E2%80%B233%E2%80%B3).
 
-### Spoiler (rot13)
+### Spoiler
 
-Urer vf n zntvpny rkcerffvba juvpu V sbhaq ol oehgr-sbepr:
+Here is a magical expression which I found by brute-force:
 
 ```c
-(p % 32 + 5) * 9 / 5 % 13 + a / 32 * 12 - 22
+(c % 32 + 5) * 9 / 5 % 13 + n / 32 * 12 - 22
 ```
 
-Vagrerfgvatyl, vg pbairegf na NFPVV ahzore bs NOP abgrf
-gb gur pbeerfcbaqvat gbar ahzore.
+Interestingly, it converts an ASCII number of ABC notes
+to the corresponding tone number.
 
-    'P' (NFPVV  67) =>  3
-    'Q' (NFPVV  68) =>  5
-    'R' (NFPVV  69) =>  7
-    'S' (NFPVV  70) =>  9
-    'T' (NFPVV  71) => 10
-    'N' (NFPVV  65) => 12
-    'O' (NFPVV  66) => 14
-    'p' (NFPVV  99) => 15
-    'q' (NFPVV 100) => 17
-    'r' (NFPVV 101) => 19
-    's' (NFPVV 102) => 20
-    't' (NFPVV 103) => 22
-    'n' (NFPVV  97) => 24
-    'o' (NFPVV  98) => 26
+```
+'C' (ASCII  67) =>  3
+'D' (ASCII  68) =>  5
+'E' (ASCII  69) =>  7
+'F' (ASCII  70) =>  9
+'G' (ASCII  71) => 10
+'A' (ASCII  65) => 12
+'B' (ASCII  66) => 14
+'c' (ASCII  99) => 15
+'d' (ASCII 100) => 17
+'e' (ASCII 101) => 19
+'f' (ASCII 102) => 20
+'g' (ASCII 103) => 22
+'a' (ASCII  97) => 24
+'b' (ASCII  98) => 26
+```
 
-Ol gur jnl, lbh pna jevgr n unys-gbar ol gur sbyybjvat punenpgref.
+By the way, you can write a half-tone by the following characters.
 
-    'X' =>  4 (= P#)
-    'Y' =>  6 (= Q#)
-    'H' =>  8 (= S#)
-    'I' => 11 (= T#)
-    'C' => 13 (= N#)
+```
+'K' =>  4 (= C#)
+'L' =>  6 (= D#)
+'U' =>  8 (= F#)
+'V' => 11 (= G#)
+'P' => 13 (= A#)
+```
 
-Abgr gung gur gbar ahzoref fvzcyl rahzrengr gur frzv-gbar fgrcf.
-Fb jr pna pnyphyngr gur serdhrapl rnfvyl: `cbj(2, a / 12.0)`.
-Gura, ubj pna jr pnyphyngr `cbj` jvgubhg `zngu.u`?
-`cbj(2, 1.0 / 12.0)` vf nccebkvzngrq ol `89/84.`.
-(V sbhaq guvf nccebkvzngvba ol hfvat [Fgrea-Oebpbg gerr](uggc://ra.jvxvcrqvn.bet/jvxv/Fgrea%R2%80%93Oebpbg_gerr).)
-Jr pna tnva gur serdhrapl ol zhygvcylvat gur inyhr `a` gvzrf.
+Note that the tone numbers simply enumerate the semi-tone steps.  So we can
+calculate the frequency easily: `pow(2, n / 12.0)`.  Then, how can we calculate
+`pow` without `math.h`?  `pow(2, 1.0 / 12.0)` is approximated by `89/84.`.  (I
+found this approximation by using the [Stern-Brocot
+tree](http://en.wikipedia.org/wiki/Stern%E2%80%93Brocot_tree).) We can gain the
+frequency by multiplying the value by `n` times.
 
-Svanyyl, gur sbyybjvat pbqr trarengrf n fnj jnir:
+Finally, the following code generates a saw wave:
 
-    sbe(p = 0; p < yra; p++) chgpune(n = a * Q);
+```c
+for(c = 0; c < len; c++) putchar(a = n * D);
+```
 
-jurer `Q` vf n serdhrapl naq `n` vf n inevnoyr jubfr glcr vf pune.
-Ol nffvtavat sybng gb pune inevnoyr, gur vzcyvpvg glcr pbairegvba vf cresbezrq sebz sybng gb pune (zbqhyb 256).
-(Fgevpgyl fcrnxvat, guvf orunivbe vf haqrsvarq nppbeqvat gb 6.3.1.4 va P99;
-lbh pna ercynpr vg jvgu `(ybat)(a*Q)` vs lbh ner crqnagvp.)
+where `D` is a frequency and `a` is a variable whose type is char.  By assigning
+float to char variable, the implicit type conversion is performed from float to
+char (modulo 256).
 
-Nyy gung jnf yrsg jnf gb pbzovar naq pbaqrafr gur pbzcbaragf.
-Gur xrl vf fdhnfuvat gurz vagb whfg bar sbe-ybbc.
+(Strictly speaking, this behavior is undefined according to 6.3.1.4 in C99; you
+can replace it with `(long)(n*D)` if you are pedantic.)
+
+All that was left was to combine and condense the components.  The key is
+squashing them into just one for-loop.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

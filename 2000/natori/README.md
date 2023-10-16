@@ -23,9 +23,8 @@ Alternate code section below for more details.
 
 ## Try:
 
-```sh
-echo "Do or do not. There is no try."
-```
+Try modifying the code so that it will show another Moon phase based on input
+or else just by the code itself. Bonus points if you can make it show all!
 
 
 ### Alternate code:
@@ -45,7 +44,8 @@ What happens if you run it in the northern hemisphere? Are there any
 differences?
 
 Can you identify any Moon phases that result in the same output of both
-versions?
+versions? Or are there any?
+
 
 ## Judges' remarks:
 

@@ -1,6 +1,6 @@
 # Third place
 
-Mike Laman  
+Mike Laman
 
 ## To build:
 

@@ -1,7 +1,7 @@
 # Smallest large system simulator
 
-    Yves-Marie Morgan  
-    <yves-marie.morgan@parrot.com>  
+Yves-Marie Morgan<br>
+<yves-marie.morgan@parrot.com>
 
 ## To build:
 
@@ -37,33 +37,36 @@ observing site.
 
 ### Instructions
 
-It displays the position of the 8 planets of the solar system around the sun.
+It displays the position of the 8 planets of the solar system around the Sun.
 The date given in the command line is in the format YYYY/MM/DD (year, month and
 day). The direction keys can be used to move in time :
 
-    Left  : go back 1 day.
-    Right : go forward 1 day.
-    Down  : go back 20 days.
-    Up    : go forward 20 days.
+* Left  : go back 1 day.
+* Right : go forward 1 day.
+* Down  : go back 20 days.
+* Up    : go forward 20 days.
 
-It handles correctly all leap years and the switch between julian calendar and
-gregorian calendar (10 days missing between 1582/10/04 and 1582/10/15).
+It handles correctly all leap years and the switch between [Julian
+calendar](https://en.wikipedia.org/wiki/Julian_calendar) and
+[Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar) (10 days
+missing between 1582/10/04 and 1582/10/15).
 
 The scale is logarithmic to be able to display the 8 planets without having
-Mercury, Venus, Earth and Mars squizzed around the sun.
+Mercury, Venus, Earth and Mars squeezed around the Sun.
 
-The size is not proportinal either.
+The size is not proportional either.
 
 ### Bonus
 
-It also displays the position of 2 famous comets during their last approach :
-- The first one arround the third IOCCC.
+It also displays the position of 2 famous comets during their last approach:
+
+- The first one around the third IOCCC.
 - The second one between the thirteenth and fourteenth IOCCC.
 
 ### Limitations
 
 * ASCII character set is assumed.
-* a c99 compiler is required (for some math.h functions).
+* A C99 compiler is required (for some `math.h` functions).
 * The position should be correct for years between (-1000; +3000)
 * The approximations done in the formula are OK for displaying the
   position around the sun but not for other applications like ephemeride or
@@ -72,33 +75,40 @@ It also displays the position of 2 famous comets during their last approach :
 ### Obfuscation
 
 * Reuse of 1 letter variables.
-* Only the main function with some for loops.
+* Only the main function with some `for` loops.
 * Constants for orbital elements encoded in a string.
-* Hexadecimal and decimal values used inconsitentely.
-* Comparisons order are not consitent.
+* Hexadecimal and decimal values used inconsistently.
+* Comparisons order are not consistent.
 * A lot of stuff is done in the different parts of the for loop.
 
 ### Compilation warnings
 
-with gcc 4.7.2 on Linux Ubuntu 12.10 :
-* prog.c:38:3: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
-* prog.c:40:34: warning: value computed is not used [-Wunused-value]
-* prog.c:56:6: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
-* prog.c:58:50: warning: value computed is not used [-Wunused-value]
-* prog.c:61:5: warning: suggest parentheses around ‘-’ inside ‘>>’ [-Wparentheses]
+With gcc 4.7.2 on Linux Ubuntu 12.10:
 
-with clang 3.1 on Linux Ubuntu 12.10 :
-* prog.c:38:49: warning: '&&' within '||' [-Wlogical-op-parentheses]
-* prog.c:38:27: warning: '&&' within '||' [-Wlogical-op-parentheses]
-* prog.c:55:13: warning: '&&' within '||' [-Wlogical-op-parentheses]
-* prog.c:56:14: warning: '&&' within '||' [-Wlogical-op-parentheses]
+```
+morgan1.c:38:3: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+morgan1.c:40:34: warning: value computed is not used [-Wunused-value]
+morgan1.c:56:6: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+morgan1.c:58:50: warning: value computed is not used [-Wunused-value]
+morgan1.c:61:5: warning: suggest parentheses around ‘-’ inside ‘>>’ [-Wparentheses]
+```
 
-Due to most parentheses and braces removed when unecessary.
+With clang 3.1 on Linux Ubuntu 12.10 :
+
+```
+morgan1.c:38:49: warning: '&&' within '||' [-Wlogical-op-parentheses]
+morgan1.c:38:27: warning: '&&' within '||' [-Wlogical-op-parentheses]
+morgan1.c:55:13: warning: '&&' within '||' [-Wlogical-op-parentheses]
+morgan1.c:56:14: warning: '&&' within '||' [-Wlogical-op-parentheses]
+```
+
+This is due to most of the parentheses and braces being removed when
+unnecessary.
 
 To verify the display, you can look at one of this programs :
-* xephem : http://www.clearskyinstitute.com/xephem/
-* homeplanet : http://www.fourmilab.ch/homeplanet/
-* http://www.theplanetstoday.com/
+* xephem : https://web.archive.org/web/20130310133219/http://www.clearskyinstitute.com/xephem/
+* homeplanet : https://www.fourmilab.ch/homeplanet/
+* https://www.theplanetstoday.com
 
 ## Copyright and CC BY-SA 4.0 License:
 

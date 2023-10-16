@@ -59,7 +59,7 @@ rm 1.txt 2.txt
 
 ## INABIAF - it's not a bug it's a feature! :-)
 
-This program will very likely crash or draw something funny with 0 args. Then
+This program will possibly crash or draw something funny with 0 args. Then
 again it might not. :-) This is not a bug and should NOT be fixed.
 
 Ask yourself the following questions: when will it crash, when will it draw
