@@ -95,13 +95,25 @@ Scovell](https://web.archive.org/web/20070120220721/https://thomasscovell.com/ta
 
 ## [1984/decot](1984/decot/decot.c) ([README.md](1984/decot/README.md]))
 
-Cody fixed this to not require `-traditional-cpp` which not all compilers
-support (clang does not support it for example). Clang is also more strict about
-the args' types in `main()` and this was also a problem that Cody fixed, making
-it work with both clang and gcc - in macOS. It was then noticed that with clang
-in linux it did not work so this had to be further fixed which Cody also did.
-For the original code with the gcc fix (noted below), see the alternate code
-section in the README.md file.
+Cody fixed this to not require `-traditional-cpp` which some compilers like
+clang do not support. Fixing `-traditional-cpp` is, as noted earlier, very
+complicated, but we encourage you to look at the alternate code (which is the
+original code with a minor modification made by the judges) and the fixed
+code, to see what had to be done.
+
+Clang is also more strict about the type of args in `main()` and this was also a
+problem that Cody fixed, making it work with both clang and gcc.
+
+These fixes worked fine in macOS but it turned out that in some cases with clang
+in linux it did not work so this had to be further fixed which Cody also did. It
+is no longer clear what the problem was as in fedora 38 with clang 16.0.6 the
+only difference is it causes additional warnings but it seems to work just fine.
+It seems unlikely that a fix was made just for warnings so it is presumed that
+there was another problem so the change is kept in place.
+
+A note about the fix is that the `#define`d macros that were used still exist
+but are not used; they are left in just to make it look more like the original
+entry. Nevertheless they cannot be used.
 
 Originally Yusuke supplied a patch so that this entry would compile with gcc -
 but not clang - or at least some versions.
@@ -109,26 +121,29 @@ but not clang - or at least some versions.
 
 ## [1984/mullender](1984/mullender/mullender.c) ([README.md](1984/mullender/README.md]))
 
-Cody provided an alternate version which was an improved version from the judges
-so that everyone can enjoy it with systems that are not VAX/PDP. We also refer you
-to the [FAQ](faq.md) as there are some winning entries that also let one enjoy
-it - with more to them of course!
+Cody provided an alternate version, an improved version of the judges, so that
+everyone can enjoy it with systems that are not VAX/PDP. We also refer you to
+the [FAQ](faq.md) as there are some winning entries that also let one enjoy it -
+with more to them of course!
 
 Cody also added the [gentab.c](1984/mullender/gentab.c) file, modified to
-compile with modern systems, which the author noted in their remarks which Cody
-also found.
+compile with modern systems, which the author noted in their remarks (which Cody
+also found).
 
 
 ## [1985/applin](1985/applin/applin.c) ([README.md](1985/applin/README.md]))
 
-Yusuke provided a patch to get this to not crash and Cody fixed this to
-work with macOS (it printed the string `H????` in a seemingly infinite loop,
-each time printing another `?`).
+Both Cody and Yusuke fixed this; Yusuke got this to not crash and Cody fixed it
+to work with macOS.
 
-The problem with the crash is that it destructively rewrites string literals but
-with `strdup()` it's safe.
+The crash was because it destructively rewrites string literals. However with
+`strdup()` it's safe.
 
-For macOS it's because there was no prototype for `execlp()` and macOS has
+The problem with macOS is that although it didn't crash, it printed `H????` in a
+seemingly infinite loop, each time printing another `?`, probably until it ran
+out of memory.
+
+The fix for macOS is that there was no prototype for `execlp()` and macOS has
 problems with missing prototypes for some functions (this was also seen when
 Cody fixed [1984/anonymous](/1984/anonymous/anonymous.c) for macOS as well).
 Ironically this fix was discovered through linux!

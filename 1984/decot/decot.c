@@ -1,3 +1,8 @@
+#define x =
+#define double(a,b) int
+#define char k['a']
+#define union static struct
+
 int b,
 k['a'] = {sizeof(
     int(*)())
