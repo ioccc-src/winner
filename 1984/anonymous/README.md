@@ -2,7 +2,6 @@
 
 Anonymous
 
-
 ## To build:
 
 ```sh
@@ -19,9 +18,8 @@ make all
 
 The original version of this entry was added, by request,
 in order to show the code that was turned into the
-[tattoo](https://web.archive.org/web/20070120220721/https://thomasscovell.com/tattoo.php).
-See below in this file for the image.
-
+[tattoo](https://web.archive.org/web/20070120220721/https://thomasscovell.com/tattoo.php),
+as the alternate code. See below in the tattoo side-by-side with the code.
 
 #### To build:
 
@@ -37,7 +35,6 @@ NOTE: this version might not work on some systems like macOS.
 ./anonymous.alt
 ```
 
-
 ## Judges' remarks:
 
 The author was too embarrassed that they could write such trash, so I
@@ -50,11 +47,10 @@ program.  What reads like a read may be written like a write!
 In 2005 someone by the name of Thomas Scovell got a tattoo of this entry. See
 his [web
 page](https://web.archive.org/web/20070120220721/https://thomasscovell.com/tattoo.php)
-for more information on the tattoo. Along with the code, this is what it looks like:
-
+on the Internet Wayback Machine for more information on the tattoo. Along with
+the code, this is what it looks like:
 
 ![1984-anonymous-tattoo.jpg](1984-anonymous-tattoo.jpg)
-
 
 ## Author's remarks:
 
