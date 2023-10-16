@@ -139,6 +139,9 @@ main.c: prog
 	${RM} -f $@
 	./${PROG} > $@
 
+rake: Rakefile rake.sh
+	@./rake.sh
+
 # alternative executable
 #
 alt: data ${ALT_TARGET}

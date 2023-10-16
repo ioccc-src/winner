@@ -1,8 +1,9 @@
 # Most square (YODA award)
 
-    Yusuke Endoh  
-    <mame@ruby-lang.org>  
-    <https://github.com/mame/>  
+Yusuke Endoh<br>
+<mame@ruby-lang.org><br>
+<https://github.com/mame/>  
+Mastodon: [@mame@ruby.social](https://ruby.social/@mame)  
 
 ## To build:
 
@@ -25,10 +26,34 @@ make main
 ./main Hello
 ```
 
+Also try:
+
+```sh
+make rake
+```
+
+which will run the [rake.sh](rake.sh) script and then `prog` if all is built
+okay. If `rake` is not installed then it will check that `gem` is installed. If
+`gem` is not installed it will tell you where to get it and then tell you how to
+install `rake`. Otherwise, if `rake` is installed it will try running `rake `
+and if that fails to run it will tell you to run a `gem` command as either root
+or via sudo and then to try running `make rake` or `./rake.sh` again. If `rake`
+succeeds it will run `./prog` which can be used to build `main.c`.
+
+What is the difference between running `./prog` and `main`?
+
+
 ## Judges' remarks:
 
 Big terminals with tiny fonts have their uses in certain cases.
 One of them is:
+
+```sh
+make treacl
+./treacl
+```
+
+which is shorthand for:
 
 ```sh
 ./prog < prog.c > treacle.c
@@ -36,7 +61,8 @@ make treacle
 ./treacle
 ```
 
-When using a smart phone to read the output, you may need to
+
+When using a smartphone to read the output, you may need to
 step back to see the bigger picture because that picture is worth
 more than 1000 words.
 
@@ -48,7 +74,7 @@ You may want to use a large display with a very small-font terminal.
 
 ### Spoiler
 
-Decompress `src.zip` if you need explanation.
+See [spoilers.md](spoilers.md).
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -1,8 +1,9 @@
 # Best use of bioinformatics
 
-    Yusuke Endoh  
-    <mame@ruby-lang.org>  
-    <https://github.com/mame/>  
+Yusuke Endoh<br>
+<mame@ruby-lang.org><br>
+<https://github.com/mame/><br>
+Mastodon: [@mame@ruby.social](https://ruby.social/@mame)  
 
 ## To build:
 
