@@ -74,7 +74,7 @@ CFLAGS= ${CSTD} ${CWARN} ${ARCH} ${CDEFINE} ${CINCLUDE} ${OPT}
 
 # Libraries needed to build
 #
-LDFLAGS=
+LDFLAGS= -ldl
 
 # C compiler to use
 #
@@ -154,7 +154,7 @@ everything: all alt
 ###############
 #
 clean:
-	${RM} -f ${OBJ} ${ALT_OBJ}
+	${RM} -f ${OBJ} ${ALT_OBJ} err static_assert t.c thread_local volatile
 	@-if [ -f indent.c ]; then \
 	    echo ${RM} -f indent.c; \
 	    ${RM} -f indent.c; \

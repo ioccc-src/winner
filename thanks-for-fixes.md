@@ -212,31 +212,45 @@ and gcc.
 
 ## [1986/marshall](1986/marshall/marshall.c) ([README.md](1986/marshall/README.md]))
 
-Cody got this to compile and work with clang. It did not work with clang because
-it is more strict about the second and third args to `main()` and the third arg
-was an `int`.  He notes that he tried to keep the ASCII art as close to the
-original as possible. The line lengths are the same but some spaces had to be
-changed to non-spaces.
+Cody got this to compile and work with clang and gcc. The optimiser being
+enabled in one compiler let it work but broke it in the other; and disabling it
+would let it work in the one that didn't work but suddenly the one that worked
+would be broken. See below and the README.md file for more details.
 
-A very funny problem occurred depending on the compiler and whether or not the
-optimiser is enabled that had to be fixed: one compiler would work fine but
+This problem was only after getting clang to compile, of course. It did not
+compile it because it is more strict about the second and third args to `main()`
+and the third arg was an `int`.  Cody notes that he tried to keep the ASCII art
+as close to the original as possible. The line lengths are the same but some
+spaces had to be changed to non-spaces.
+
+As noted above, a very funny problem occurred depending on the compiler and whether or not the
+optimiser was enabled that had to be fixed: one compiler would work fine but
 another might enter an infinite loop or segfault but then once the optimiser
 state was changed the compiler that worked no longer worked (in the same was as
-the other one not working) and the one that didn't work did! We encourage you to
-see the README.md file to see how odd this problem was and what Cody did to fix
-it!
+the other one not working) and the one that didn't work did!
+
+We encourage you to see the README.md file to see how odd this problem was and
+what Cody did to fix it!
 
 
 ## [1986/wall](1986/wall/wall.c) ([README.md](1986/wall/README.md]))
 
-We used a patch provided by Yusuke to make this work with gcc (in particular the
-patch uses `strdup()` on two strings).
-
 Cody fixed this so that it does not require `-traditional-cpp`. This took a fair
-bit of tinkering as this entry *is* strange. The original code is provided to
-allow one to easily see how different C was in those days. See the README.md
-file for details.
+bit of tinkering as this entry *is* strange; fixing `-traditional-cpp` is, as noted earlier, very
+complicated, but we encourage you to look at [original
+code](1986/wall/wall.orig.c) to see how different C was in 1986.
 
+Yusuke originally patched this to use `strdup()` on two strings and this let it
+work with gcc but it still requires `-traditional-cpp`. The [alternate
+code](1986/wall/wall.alt.c) is the version patched by Yusuke should you wish to
+try it with a compiler that has the `-traditional-cpp`.
+
+If you'd like to see the difference between the version that requires
+`-traditional-cpp` and the fixed version, try:
+
+```sh
+git diff 82cbf069a781d64802fc59b36778c0b02be4043e..a74abb69b7e9b87e305b529941bf46f97ffff341 1986/wall/wall.c
+```
 
 ## [1987/wall](1987/wall/wall.c) ([README.md](1987/wall/README.md]))
 
@@ -1856,6 +1870,24 @@ it is a file with spoilers.
 
 Cody fixed the build for this entry: it does not require SDL2 but SDL1 so there
 were linking errors.
+
+
+## [2014/skeggs](2014/skeggs/prog.c) ([README.md](2014/skeggs/README.md))
+
+Cody fixed the Makefile to compile this entry in modern systems. The problem was
+that the `CDEFINE` variable in the Makefile was missing `'`s: the `#define CC`
+is an actual string that is, in the Makefile, is `"${CC} -fPIC"`, which
+translates to whatever the compiler is followed by a space followed by `-fPIC`
+but without the `'`s it was incomplete and so would not compile. Cody didn't
+have a chance to really look at the compiler error.
+
+Yusuke suggested that one should use `-ldl` in the Makefile. This was not
+originally done because it seemed to work but since it uses `dlsym()` it was
+added later to make it more portable.
+
+The program creates files in the working directory as part of how it works (see
+the README.md file for details) so Cody made sure that `make clobber` (via `make
+clean`) removes those files and so that they are ignored by `.gitignore`.
 
 ## [2014/vik](2014/vik/prog.c) ([README.md](2014/vik/README.md))
 
