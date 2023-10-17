@@ -1,9 +1,7 @@
 # Most illegible code
 
-Michael H. Pawka  
-Naval Ocean Systems Center  
-San Diego, Ca  
-92152  
+Michael H. Pawka<br>
+US
 
 ## To build:
 

@@ -1,7 +1,7 @@
 # Most adaptable program
 
-Jack Applin    
-US   
+Jack Applin<br>
+US<br>
 <https://www.cs.colostate.edu/~applin/>
 
 ## To build:

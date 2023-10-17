@@ -1,6 +1,6 @@
 # Worst abuse of the C preprocessor
 
-Jim Hague    
+Jim Hague<br>
 UK  
 
 ## To build:
@@ -62,7 +62,7 @@ others.
 
 This program was selected for the 1987 t-shirt collection.
 
-Think Morse code when you ponder this program.  Note how use of
+Think Morse code when you ponder this program.  Note how the use of
 similar variables can be obfuscating!  The author noted that this
 program implements the international Morse standard.  Now for extra
 credit, what Morse message does the program spell out?
