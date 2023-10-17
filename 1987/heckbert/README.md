@@ -1,7 +1,6 @@
 # Best Obfuscator of Programs
 
-Paul Heckbert  
-Pixar  
+Paul Heckbert<br>
 
 ## To build:
 
@@ -12,15 +11,20 @@ make all
 On System V systems, we had to compile with `-Dindex=strchr`.
 To compile on a 16 bit machine, change 300000 to 30000.
 
+## To run:
 
+```sh
+./heckbert col < file
+```
+
+where col is the number of columns to fold at and file is the file to fold.
 
 ## Try:
 
 ```sh
 ./heckbert 40 < heckbert.c > ph.c; make ph
 ./ph 21 < heckbert.c > bar.c; make bar
-# or more generally fold some other file at a positive column:
-./ph col < file
+
 ```
 
 Ask yourself what happens to `foo.md` if you try:
@@ -41,9 +45,10 @@ Try not to
 [Fold, Spindle or Mutilate](https://repository.library.brown.edu/studio/item/bdr:788264/PDF/)
 files. :-)
 
-The judges used this program to fold up very long lines which the
-BSD fold(1) was unable to process. This program has been added
-to the contest tool chest.
+The judges used this program to fold up<br>
+very long lines which the BSD fold(1)<br>
+was unable to process. This program has<br>
+been added to the contest tool chest.
 
 ## Author's remarks:
 

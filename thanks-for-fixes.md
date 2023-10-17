@@ -273,6 +273,17 @@ If you'd like to see the difference between the version that requires
 git diff 82cbf069a781d64802fc59b36778c0b02be4043e..a74abb69b7e9b87e305b529941bf46f97ffff341 1986/wall/wall.c
 ```
 
+## [1987/heckbert](1987/heckbert/heckbert.c) ([README.md](1987/heckbert/README.md))
+
+Cody made this look more like the original entry by restoring the `#define` of
+`define`. It's not used but it now looks closer to the original.
+
+Also because `index(3)` is deprecated and in some systems requires the inclusion
+of `strings.h` and because it's identical in use to `strchr(3)` (and we noted
+that for System V we had to do this) Cody added to the Makefile
+`-Dindex=strchr`.
+
+
 ## [1987/wall](1987/wall/wall.c) ([README.md](1987/wall/README.md]))
 
 Cody made this safer by using `fgets()` instead of `gets()`. This prevents an
