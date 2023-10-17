@@ -650,6 +650,18 @@ and he also made an [alternate version](1991/dds/dds.alt.c) that works with
 `clang`. The alternate code, described in the README.md file, is what is needed
 for clang.  Reading it might be instructive even if you have gcc.
 
+## [1991/fine](1991/fine/fine.c) ([README.md](1991/fine/README.md))
+
+Cody made it look much more like the original entry even after the fix that
+increased the count in characters from 80 to 106, getting it back down to just 85.
+This was done by redefining `main` at the compiler line so that it looks like
+the original where one didn't have to worry about the type of args of main() and
+there were other fewer restrictions and also by removing a cast that was
+not strictly necessary (this does create a new warning: `ordered comparison
+between pointer and integer ('char **' and 'int')` but it works just fine).
+
+Cody also added the [demo.sh](1991/fine/demo.sh) script which feeds the program
+some fun input for fun but mostly different output.
 
 ## [1991/westley](1991/westley/westley.c) ([README.md](1991/westley/README.md]))
 
