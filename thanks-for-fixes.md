@@ -247,6 +247,12 @@ and the third arg was an `int`.
 We encourage you to read the README.md file to see how odd this problem was and
 what Cody did to fix it!
 
+## [1986/pawka](1986/pawka/pawka.c) ([README.md](1986/pawka/README.md))
+
+Cody noticed and fixed a funny mistake in the Makefile where a
+`-Wno-strict-prototypes` was in the wrong location, suggesting that there is a
+`-D` needed to compile the entry.
+
 
 ## [1986/wall](1986/wall/wall.c) ([README.md](1986/wall/README.md]))
 
