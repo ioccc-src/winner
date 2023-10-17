@@ -1,6 +1,6 @@
 # Grand prize for most well-rounded in confusion
 
-Carl Shapiro  
+Carl Shapiro
 
 ## To build:
 
@@ -23,7 +23,7 @@ To make news & mail happy we split the last line into seven lines.
 This program was selected for the 1987 t-shirt collection.
 
 We found this program is be simply a**maze**ing! Run this program without
-arguments and notice the output. 
+arguments and notice the output.
 
 ## Author's remarks:
 
