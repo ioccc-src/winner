@@ -1,43 +1,52 @@
 # Best Output
 
-Thor AAge Eldby  
-European Technology Partner  
-Roedtvetvn 20                (Home address)  
-0955 Oslo  
+Thor Eldby<br>
 Norway  
 
 
 ## To build:
 
 ```sh
-make all
+make alt
 ```
 
 
 ## To run:
 
 ```sh
-./eldby 
+./eldby.alt
 ```
 
-WARNING: on modern systems this is very fast and could be a problem for those
-susceptible to photosensitivity. Please try this one with caution if this
-applies to you! The same goes for people who can be overstimulated. See below
-for alternate version if you want to see it go slower or if seeing things move
-by too fast is a problem for you.
+To see why we recommend the alternate version instead of the original version,
+see the [original code](#original-code) section. 
 
 NOTE: to reset the sanity of your terminal after this program ends try `reset`.
 
+## Try:
 
-### Alternate code:
-
-The default sleep duration is `35000` but you can change it at compilation like:
+This alternate version, which we recommend that you use in order to see what is
+happening with modern systems, and to not flash too quickly, which can be
+problematic for some people, can be configured to different speeds by way of the
+value used in `usleep()`. The default is `-DZ=35000` but you can easily change
+it. To do so try:
 
 ```sh
 make CFLAGS+="-DZ=20000" clobber alt
+./eldby.alt
 ```
 
-Use `eldby.alt` as you would `eldby`.
+### Original code:
+
+Besides the fact that modern systems make it impossible to see what this program
+does the rapid movement can be a problem for some people. It is for these
+reasons that we recommend you first try the alternate version as described
+above. If however you wish to see the original version in modern systems, try:
+
+```sh
+make all
+```
+
+Use `./eldby` as you would `./eldby.alt` above.
 
 
 ## Judges' remarks:
