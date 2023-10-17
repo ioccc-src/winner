@@ -19,18 +19,10 @@ echo text | ./fine
 ## Try:
 
 ```sh
-echo "green terra
-vex
-tang
-vend onyx
-cheryl be flashy
-rail
-clerk
-the rug gary lenT
-" | ./fine
+./demo.sh
 ```
 
-Read the last line backwards! Credit goes to [Merlyn LeRoy (Brian
+Make sure that you read the last line backwards! Credit goes to [Merlyn LeRoy (Brian
 Westley)](/winners.html#Brian_Westley) for that. See his 22 August 1992
 [rec.puzzles
 post](https://groups.google.com/g/rec.puzzles/c/z_xVPMRVBtg/m/lyEYSAeBD4gJ). To
@@ -43,13 +35,17 @@ rotated from `the rug gary lent`!
 This filter, 80 chars plus a newline, fits into a single line on most 
 terminals (unless your terminal has a line wrap mis-feature :-)).
 
+Note in 2023: fixing this entry to work with modern systems increased the size,
+originally to 106 characters but dropped down to 85 with clever use of the
+Makefile and removal of a cast that was not strictly necessary.
+
 This entry is likely one of the smallest C implementations of this
 filter, excluding programs that resort to command line or include 
 file tricks.
 
 How does this program work?  Which 3 bytes of C code can be changed
 into 2 bytes, allowing the program to still work, but also stripping 
-the high bit off of some input?
+the high bit off some input?
 
 ## Author's remarks:
 

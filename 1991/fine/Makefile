@@ -39,7 +39,7 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-bitwise-op-parentheses -Wno-error -Wno-implicit-function-declaration \
-	-Wno-int-conversion -Wno-pointer-to-int-cast
+	-Wno-int-conversion -Wno-pointer-to-int-cast -Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -58,7 +58,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE=
+CDEFINE= -D'main(a,b)'='int main(a,b)char**b;'
 
 # Include files that are needed to compile
 #
