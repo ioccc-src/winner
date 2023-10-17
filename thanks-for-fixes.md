@@ -1668,8 +1668,12 @@ Cody added the following words of wisdom: 'this is not a pipe'.
 ## [2011/richards](2011/richards/richards.c) ([README.md](2011/richards/README.md]))
 
 Cody fixed a minor problem that showed up in both linux and macOS. He notes
-however that as of this time this entry does not work properly with macOS. See
-[bugs.md](/bugs.md) for more details.
+however that as of this time this entry does not work properly with macOS at
+least with the silicon chip (Intel has not been tested) and it is quite possibly
+an inherent problem in macOS to do with executing code in in memory/JIT and in
+particular with the silicon chip. See [bugs.md](/bugs.md) for more details and a
+document from Apple about how it might be fixed if anyone is brave enough to
+try.
 
 
 ## [2011/vik](2011/vik/vik.c) ([README.md](2011/vik/README.md]))
