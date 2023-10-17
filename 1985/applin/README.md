@@ -18,7 +18,7 @@ make all
 
 ## Judges' remarks:
 
-One liner programs are short but twisted.  This `Hello, world!` version
+One liner programs are short but twisted.  This "Hello, world!" version
 certainly takes its time saying hello.
 
 ## Author's remarks:
