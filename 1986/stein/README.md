@@ -1,6 +1,6 @@
 # Best one liner 
 
-Jan Stein  
+Jan Stein
 
 ## To build:
 
