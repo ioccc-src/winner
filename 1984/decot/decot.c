@@ -3,7 +3,11 @@
 #define char k['a']
 #define union static struct
 
-int b,
+extern double floor(double);
+double (x1, y1) b;
+/*char x {sizeof(
+     double(%s,%D)(*)()) */
+int
 k['a'] = {sizeof(
     int(*)())
 ,};

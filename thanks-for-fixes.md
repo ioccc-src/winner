@@ -115,9 +115,26 @@ A note about the fix is that the `#define`d macros that were used still exist
 but are not used; they are left in just to make it look more like the original
 entry. Nevertheless they cannot be used.
 
+Later on Cody improved the fix to make it look rather more like the original by
+bringing back an extern declaration (slightly changing it to match the symbol
+that it is i.e. `extern double floor(double);` instead of `extern int floor;`)
+and `double (x1, y1) b;`, commenting out only the code:
+
+```c
+char x {sizeof(
+     double(%s,%D)(*)())
+```
+
+and changing the type of `k` to be an `int`.
+
 Originally Yusuke supplied a patch so that this entry would compile with gcc -
 but not clang - or at least some versions.
 
+To see the difference from start to fixed:
+
+```sh
+diff 1984/decot/decot.orig.c 1984/decot/decot.c
+```
 
 ## [1984/mullender](1984/mullender/mullender.c) ([README.md](1984/mullender/README.md]))
 
@@ -127,8 +144,8 @@ the [FAQ](faq.md) as there are some winning entries that also let one enjoy it -
 with more to them of course!
 
 Cody also added the [gentab.c](1984/mullender/gentab.c) file, fixed to compile
-with modern systems and so that it would create the proper array (it had
-unbalanced '}'s), which the author noted in their remarks (which Cody also
+and work with modern systems and so that it would create the proper array (it
+had unbalanced '}'s), which the author noted in their remarks (which Cody also
 found). As this file uses the old header file `a.out.h` that is not available in
 all modern systems, Cody found a copy of it as to what it should have been at
 the time, in the fabulous [Unix History
