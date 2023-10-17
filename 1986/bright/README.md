@@ -1,6 +1,6 @@
 # Most useful obfuscation 
 
-Walter Bright  
+Walter Bright
 
 ## To build:
 
