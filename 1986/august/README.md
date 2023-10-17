@@ -1,6 +1,6 @@
 # Best complex task done in a complex way
 
-Lennart Augustsson   
+Lennart Augustsson<br>
 <https://web.archive.org/web/20090831055828/http://www.cs.chalmers.se/~augustss>
 
 ## To build:
@@ -15,13 +15,12 @@ make all
 ./august
 ```
 
-
 NOTE: this entry is very likely to core dump after its output.
 
 ## Judges' remarks:
 
 This program computes a specific mathematical value.  Simply compile
-and give it an infinite amount of stack space and cpu time.  Otherwise
+and give it an infinite amount of stack space and CPU time.  Otherwise
 just be satisfied with the approximation displayed just before the core
 dump.
 
