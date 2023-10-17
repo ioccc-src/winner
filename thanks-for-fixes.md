@@ -240,11 +240,11 @@ and the third arg was an `int`.  Cody notes that he tried to keep the ASCII art
 as close to the original as possible. The line lengths are the same but some
 spaces had to be changed to non-spaces.
 
-As noted above, a very funny problem occurred depending on the compiler and whether or not the
-optimiser was enabled that had to be fixed: one compiler would work fine but
-another might enter an infinite loop or segfault but then once the optimiser
-state was changed the compiler that worked no longer worked (in the same was as
-the other one not working) and the one that didn't work did!
+As noted above, a very funny problem occurred depending on the compiler and
+whether or not the optimiser was enabled that had to be fixed: one compiler
+would work fine but another might enter an infinite loop or segfault but then
+once the optimiser state was changed the compiler that worked no longer worked
+(in the same was as the other one not working) and the one that didn't work did!
 
 We encourage you to see the README.md file to see how odd this problem was and
 what Cody did to fix it!
@@ -253,8 +253,8 @@ what Cody did to fix it!
 ## [1986/wall](1986/wall/wall.c) ([README.md](1986/wall/README.md]))
 
 Cody fixed this so that it does not require `-traditional-cpp`. This took a fair
-bit of tinkering as this entry *is* strange; fixing `-traditional-cpp` is, as noted earlier, very
-complicated, but we encourage you to look at [original
+bit of tinkering as this entry *is* strange; fixing `-traditional-cpp` is, as
+noted earlier, very complicated, but we encourage you to look at [original
 code](1986/wall/wall.orig.c) to see how different C was in 1986.
 
 Yusuke originally patched this to use `strdup()` on two strings and this let it
