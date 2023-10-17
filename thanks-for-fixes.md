@@ -144,12 +144,13 @@ The crash was because it destructively rewrites string literals. However with
 `strdup()` it's safe.
 
 The problem with macOS is that although it didn't crash, it printed `H????` in a
-seemingly infinite loop, each time printing another `?`, probably until it ran
+seemingly infinite loop, each time printing another `?`, probably until it runs
 out of memory.
 
 The fix for macOS is that there was no prototype for `execlp()` and macOS has
 problems with missing prototypes for some functions (this was also seen when
-Cody fixed [1984/anonymous](/1984/anonymous/anonymous.c) for macOS as well).
+Cody fixed [1984/anonymous](/1984/anonymous/anonymous.c) for macOS as well). As
+this is a one-liner the include of `unistd.h` was done in the Makefile.
 Ironically this fix was discovered through linux!
 
 NOTE: originally this entry did not print a newline prior to returning to the
@@ -157,6 +158,12 @@ shell, after the output (despite having `\n` in the string - can you figure out
 why?) but to make it more friendly to users Cody made it print a `\n` prior to
 returning to the shell. The original version does not have this change.
 
+## [1985/august](1985/august/august.c) ([README.md](1985/august/README.md))
+
+Cody added the script [primes.sh](1985/august/primes.sh) which allows one to
+check the output for the first N prime numbers of the output, where N is either
+the default or user specified. The inspiration was the previous 'try' command he
+gave to have fun with finding primes that might seem unusual in a way.
 
 ## [1985/lycklama](1985/lycklama/lycklama.c) ([README.md](1985/lycklama/README.md]))
 
