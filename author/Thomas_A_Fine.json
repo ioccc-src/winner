@@ -10,8 +10,8 @@
     "url" : "http://hea-www.harvard.edu/~fine/",
     "alt_url" : null,
     "deprecated_twitter_handle" : null,
-    "mastodon" : null,
-    "mastodon_url" : null,
+    "mastodon" : "@thomasafine@social.linux.pizza",
+    "mastodon_url" : "https://social.linux.pizza/@thomasafine",
     "github" : null,
     "affiliation" : null,
     "winning_entry_set" : [
