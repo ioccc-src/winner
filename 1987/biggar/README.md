@@ -1,10 +1,7 @@
 # Best Abuse of the Rules
 
-Mark Biggar   
-UNiSYS - System Development Group, Santa Monica  
-2525 Colorado AV MD 91-01  
-Santa Monica, CA  
-90406  
+Mark Biggar<br>
+US
 
 ## To build:
 
@@ -22,7 +19,7 @@ some_command | ./biggar | od -c
 ## Try:
 
 ```sh
-cat biggar.c | ./biggar | od -c
+./biggar < biggar.c | od -c
 ```
 
 ## Judges' remarks:
@@ -37,14 +34,13 @@ so what if the Makefiles grow a little!  :-)
 
 One vendor's lint got hung in an infinite loop over this entry!
 
-> FYI:  We will let Mark get away with this truly sick entry this time, but 
-> for the future on we have placed a limit on the size of a compile line.
+FYI:  We will let Mark get away with this truly sick entry this time, but 
+for the future on we have placed a limit on the size of a compile line.
 
 NOTE: originally we made a comment in [Larry Wall's
 entry](../wall/README.md) regarding Mark's contribution but it seems to have
 been lost in time. If anyone knows about its whereabouts we'd appreciate letting
 us know. Thanks!
-
 
 Passes BSD and UTS lint.  At least one version of lint is thrown into
 an infinite loop by this entry.
