@@ -125,6 +125,45 @@ does not. We're not sure how this is compatibility but either way it can cause a
 problem and it is this that has complicated most of the fixes though again some
 can look almost identical.
 
+## Q: How can I easily see what was changed in order to get an entry to work in modern systems?
+
+Although the [thanks-for-fixes.md](/thanks-for-fixes.md) file sometimes gives
+commands to tell you how to do this, in general you can do:
+
+```sh
+diff entry.c entry.orig.c
+diff prog.c prog.orig.c
+```
+
+to see it as if you wanted to make it go back to the original and, to see the
+difference to fix it, you can do:
+
+```sh
+diff entry.orig.c entry.c
+diff prog.orig.c prog.c
+```
+
+For instance to see how [2001/anonymous](2001/anonymous/README.md) was fixed you
+can do:
+
+```sh
+diff 2001/anonymous/anonymous.orig.c 2001/anonymous/anonymous.c
+```
+
+You might be quite surprised how little some entries had to be changed and at
+the same time how much other entries had to be changed, often with quite complex
+differences! In some cases if the line is rather long, like the above mentioned
+one, it will be harder to see what changed but in other cases like
+[1984/decot](1984/decot/README.md) it's a lot easier:
+
+```sh
+diff 1984/decot/decot.orig.c 1984/decot/decot.c
+```
+
+Well, at least it's easier see the differences on a line-by-line basis but maybe
+not what actually changed, especially since it's easier to know what was fixed
+when you have compiler errors :-)
+
 
 ## Q: I cannot get entry XYZZY from year 19xx to compile!
 
