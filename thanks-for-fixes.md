@@ -161,8 +161,8 @@ The crash was because it destructively rewrites string literals. However with
 `strdup()` it's safe.
 
 The problem with macOS is that although it didn't crash, it printed `H????` in a
-seemingly infinite loop, each time printing another `?`, probably until it runs
-out of memory.
+seemingly infinite loop, each time printing another `?`, and it probably would
+have until it runs out of memory.
 
 The fix for macOS is that there was no prototype for `execlp()` and macOS has
 problems with missing prototypes for some functions (this was also seen when
@@ -902,7 +902,7 @@ calls which has the four args.
 Cody fixed a segfault in this program that prevented it from working right but
 he notes it hangs in macOS. This is because some compilers compile it into an
 infinite loop and this was documented by the judges. It works fine in linux if
-using gcc but macOS, having only clang by default (even the gcc binary
+using gcc but macOS, having only clang by default, (even the gcc binary
 `/usr/bin/gcc`) will not work.
 
 
@@ -926,7 +926,8 @@ Cody provided an [alternate version](1996/eldby/eldby.alt.c) which uses
 `usleep()` in between writing the output to make it easier to see what is going
 on with faster systems and importantly also for those who are sensitive to text
 flashing by rapidly (it affects him too but he also thinks it moves too fast
-nowadays anyway).
+nowadays anyway). We recommend that you try the alternate version first due to
+these reasons.
 
 
 ## [1996/gandalf](1996/gandalf/gandalf.c) ([README.md](1996/gandalf/README.md]))
