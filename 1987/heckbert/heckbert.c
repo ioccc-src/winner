@@ -1,5 +1,6 @@
 #include <ctype.h>
 #include <stdio.h>
+#define _ define
 #define A putchar
 #define B return
 #define C index

@@ -58,7 +58,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE=
+CDEFINE= -Dindex=strchr
 
 # Include files that are needed to compile
 #
