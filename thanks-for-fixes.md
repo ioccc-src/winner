@@ -229,24 +229,22 @@ and gcc.
 
 ## [1986/marshall](1986/marshall/marshall.c) ([README.md](1986/marshall/README.md]))
 
-Cody got this to compile and work with clang and gcc. The optimiser being
+Cody got this to compile and work with clang and gcc. He noted that he tried to
+keep the ASCII art as close to the original as possible. The line lengths are
+the same but some spaces had to be changed to non-spaces.
+
+This fix was very interesting and quite amusing, showing up problems with
+compilers. This is a brief summary but much more is explained in the README.md,
+giving which compilers had which problems in which systems: the optimiser being
 enabled in one compiler let it work but broke it in the other; and disabling it
 would let it work in the one that didn't work but suddenly the one that worked
-would be broken. See below and the README.md file for more details.
+would be broken.
 
 This problem was only after getting clang to compile, of course. It did not
 compile it because it is more strict about the second and third args to `main()`
-and the third arg was an `int`.  Cody notes that he tried to keep the ASCII art
-as close to the original as possible. The line lengths are the same but some
-spaces had to be changed to non-spaces.
+and the third arg was an `int`.
 
-As noted above, a very funny problem occurred depending on the compiler and
-whether or not the optimiser was enabled that had to be fixed: one compiler
-would work fine but another might enter an infinite loop or segfault but then
-once the optimiser state was changed the compiler that worked no longer worked
-(in the same was as the other one not working) and the one that didn't work did!
-
-We encourage you to see the README.md file to see how odd this problem was and
+We encourage you to read the README.md file to see how odd this problem was and
 what Cody did to fix it!
 
 
