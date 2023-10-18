@@ -1,8 +1,8 @@
 # Best abuse of the rules
 
-Diomidis Spinellis  
-Greece  
-<https://www.spinellis.gr/>  
+Diomidis Spinellis<br>
+GR<br>
+<https://www.spinellis.gr/><br>
 Mastodon: <https://mstdn.social/@DSpinellis>
 
 ## To build:
@@ -46,7 +46,7 @@ be compiled from within a Makefile without the need of human intervention.
 ## Author's remarks:
 
 This program can be configured to do almost everything.  The configuration is
-done during compile time by typing in, C code, that one would like the program
+done during compile time by typing in C code that one would like the program
 to perform.  A trivial example is given in the `how to compile' section but the
 possibilities are clearly limited only by your imagination and programming
 skills.
