@@ -1,10 +1,7 @@
 # Most useful Obfuscated C program
 
-Amperif Corporation  
-9232 Eton Avenue  
-Chatsworth, CA  
-91311  
-U.S.A.  
+Gopi Reddy
+US
 
 
 ## To build:
@@ -19,8 +16,16 @@ make all
 ```sh
 ./reddy
 char *(*(fun[16])();
+char *(*(*(*(*(*fun[32])))))();
 ```
 
+What happens if you input:
+
+```
+char *(*(*(*(*(*fun[32])))))());
+```
+
+? What can you do about it?
 
 ## Judges' remarks:
 

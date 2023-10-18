@@ -434,6 +434,8 @@ same code.
 Cody made this use `fgets()` to prevent annoying warnings during compiling,
 linking and runtime, the latter of which being the most annoying.
 
+Cody also restored the name of the winner in the README.md file that was missing
+by some crazy chance.
 
 ## [1988/spinellis](1988/spinellis/spinellis.c) ([README.md](1988/spinellis/README.md]))
 
