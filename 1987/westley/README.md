@@ -30,7 +30,7 @@ Use `westley.alt` as you would `westley` above.
 
 ## Judges' remarks:
 
-Putchar must exist in the C library and not just as a macro.
+`putchar()` must exist in the C library and not just as a macro.
 If it fails to compile, add the line:  `#include <stdio.h>`  at the
 top of the program.
 
