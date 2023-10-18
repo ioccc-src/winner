@@ -283,6 +283,12 @@ of `strings.h` and because it's identical in use to `strchr(3)` (and we noted
 that for System V we had to do this) Cody added to the Makefile
 `-Dindex=strchr`.
 
+## [1987/lievaart](1987/lievaart/lievaart.c) ([README.md](1987/lievaart/README.md))
+
+Cody made this ever so slightly like the original code by adding back the
+`#define D define` even though it's unused. This was done for both versions as
+well (the one with the board and the one without, the entry itself with the
+limitations of the contest).
 
 ## [1987/wall](1987/wall/wall.c) ([README.md](1987/wall/README.md]))
 
