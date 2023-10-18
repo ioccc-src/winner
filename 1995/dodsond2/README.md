@@ -1,7 +1,7 @@
 # Best Game
 
 Don Dodson  
-US  
+US
 
 ## To build:
 

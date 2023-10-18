@@ -4,7 +4,7 @@ Sean Barrett
 Software Construction Company  
 430 Southwest Parkway, #1906  
 College Station, TX 77840  
-US  
+US
 
 ## To build:
 
@@ -201,7 +201,7 @@ you in a normal way.  It only prints 'Ok.' after you define a word).
 
 
 ```sh
-2 3 + . cr 
+2 3 + . cr
 
 ```
 

@@ -5,7 +5,7 @@ Digi International
 1906 James Ave.  
 St. Paul, MN  55105  
 US  
-<http://www.westley.org>  
+<http://www.westley.org>
 
 
 ## To build:

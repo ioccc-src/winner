@@ -4,7 +4,7 @@ Sean Barrett
 University of Maryland  
 5407 20th Place   
 Hyattsville MD 20782   
-US  
+US
 
 ## To build:
 

@@ -2,7 +2,7 @@
 
 John Dalbec  
 US  
-<https://jpdalbec.people.ysu.edu>  
+<https://jpdalbec.people.ysu.edu>
 
 ## To build:
 

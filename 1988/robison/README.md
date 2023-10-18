@@ -1,7 +1,7 @@
 # Best abuse of C constructs
 
 Arch D. Robison<br>
-US  
+US
 
 ## To build:
 
@@ -28,7 +28,7 @@ The first and second parameters are optional.  You might also try:
 The following might make an interesting benchmark:
 
 ```sh
-./robison 100    
+./robison 100
 
 ```
 

@@ -1,7 +1,7 @@
 # Worst Abuse of the C Preprocessor
 
 Ed Luke  
-US    
+US
 
 
 ## To build:

@@ -2,7 +2,7 @@
 
 Mauro Persano  
 Brazil  
-<mauro_persano@yahoo.com>  
+<mauro_persano@yahoo.com>
 
 ## To build:
 

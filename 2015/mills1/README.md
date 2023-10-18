@@ -1,6 +1,6 @@
 # "For the Birds!" Award
 
-Chris Mills  
+Chris Mills
 
 ## To build:
 
@@ -68,7 +68,7 @@ From the Makefile:
 			    # Change to your native tongue.
 		    # NOTE: The string MUST be enclosed inside double quotes.
 
-Enjoy! 
+Enjoy!
 
     TAP!! TAP!! TAP!!
     FLAP! FLAP! FLAP!

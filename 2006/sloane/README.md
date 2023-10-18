@@ -1,7 +1,7 @@
 # Homer's Favorite
 
 Andy Sloane  
-US  
+US
 
 
 ## To build:
@@ -18,7 +18,7 @@ make alt
 ```
 
 To see why we recommend the alternate version instead of the original version,
-see the [original code](#original-code) section. 
+see the [original code](#original-code) section.
 
 ## Try:
 

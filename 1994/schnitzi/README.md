@@ -5,7 +5,7 @@ ISX Corporation
 1165 Northchase Pkwy, Suite 120  
 Marietta, GA 30067  
 US  
-<http://computronium.org/ioccc.html>  
+<http://computronium.org/ioccc.html>
 
 
 ## To build:
@@ -68,7 +68,7 @@ would be run as follows:
 
 ```sh
 schnitzi < info
-``` 
+```
 
 The program generates interesting results when its source file is
 used as input:

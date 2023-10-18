@@ -3,7 +3,7 @@
 Cody Boone Ferguson <ioccc@xexyl.net>    
 <https://ioccc.xexyl.net>   
 <https://xexyl.net>  
-Mastodon: [@xexyl@fosstodon.org](https://fosstodon.org/@xexyl)    
+Mastodon: [@xexyl@fosstodon.org](https://fosstodon.org/@xexyl)
 
 
 ## To build:
@@ -15,10 +15,10 @@ make
 ## To run:
 
 ```sh
-./prog  
+./prog
 
 # get recode help:
-./recode -h  
+./recode -h
 
 # general syntax for recode passing to Enigma machine:  
 ./recode [options] | ./prog - 2>/dev/null  
@@ -26,14 +26,14 @@ make
 ./recode [options]  
   
 # recode prompts for settings; pass to Enigma machine:  
-./recode | ./prog - 2>/dev/null   
+./recode | ./prog - 2>/dev/null
 
 # recode reads from input file, prompts for settings; pass to Enigma machine:  
-./recode -finput | ./prog - 2>/dev/null  
+./recode -finput | ./prog - 2>/dev/null
 
 # recode reads config from string or file; pass to Enigma machine after
 # prompting for input:
-./recode -R<string|file> | ./prog - 2>/dev/null  
+./recode -R<string|file> | ./prog - 2>/dev/null
 
 # write config to output file; pass to Enigma machine after prompting for input:  
 ./recode -o<config> | ./prog - 2>/dev/null  
@@ -42,7 +42,7 @@ make
 ./recode -r
   
 # show Enigma machine settings after selection / generation:    
-./recode -v  
+./recode -v
 
 ```
 
@@ -64,7 +64,7 @@ echo IOCCC | ./prog | ./prog
 echo testing test tests | ./recode  
 echo testing test tests | ./recode | ./prog - 2>/dev/null  
 echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode  
-echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode | ./prog - 2>/dev/null  
+echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode | ./prog - 2>/dev/null
 
 # even more obfuscated fun saving and reading from files:
 #
@@ -112,7 +112,7 @@ There is a good deal of useful documentation that is provided with this entry:
 
 * [chocolate-cake.html][] (or [chocolate-cake.md](chocolate-cake.md) if reading on GitHub)   
 	- Because most of us could use some *Double-layered Chocolate Fudge Cake*!  
-	- NOTE: see [recode.html][] (or [recode.md](recode.md) for details about how to decrypt this!  
+	- NOTE: see [recode.html][] (or [recode.md](recode.md) for details about how to decrypt this!
 
 
 [recode.html]: recode.html

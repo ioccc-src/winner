@@ -1,7 +1,7 @@
 # Best Output
 
 Carlos Duarte  
-Portugal  
+Portugal
 
 
 ## To build:

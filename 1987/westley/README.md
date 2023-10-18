@@ -2,7 +2,7 @@
 
 Brian Westley (aka Merlyn Leroy on usenet)<br>
 US<br>
-<http://www.westley.org>  
+<http://www.westley.org>
 
 ## To build:
 

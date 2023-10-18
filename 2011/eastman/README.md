@@ -1,7 +1,7 @@
 # Best ball
 
 Peter Eastman  
-<peter.eastman@gmail.com>  
+<peter.eastman@gmail.com>
 
 
 ## To build:

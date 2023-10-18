@@ -2,10 +2,10 @@
 
 Aaron Grothe  
 US  
-<ajgrothe@yahoo.com>  
+<ajgrothe@yahoo.com>
 
 David Madore  
-<http://www.madore.org/~david/>  
+<http://www.madore.org/~david/>
 
 ## To build:
 

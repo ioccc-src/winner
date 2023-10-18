@@ -5,7 +5,7 @@ DFN Network Operation Center
 Schlartaeckerweg 3 (home address)  
 D-71384 Weinstadt  
 Germany  
-<http://www.schweikhardt.net>  
+<http://www.schweikhardt.net>
 
 ## To build:
 
@@ -48,7 +48,7 @@ Nicaean Concilium in 325 Anno Domini.) The algorithm is attributed
 to the famous mathematician Carl Friedrich Gauss ["Meyers Handbuch
 ueber das Weltall", Meyer, 5th Edition, 1973, p149] and is suitable
 for anni domini within the Gregorian Calendar, that is, from 1582 AD
-to 2199 AD: 
+to 2199 AD:
 
 ```
 Let J be the year.
@@ -70,7 +70,7 @@ The interesting Sunday is either:
 ```
 March 22 + d + e   or
 April d + e - 9    (only one of them is a valid date)
-``` 
+```
 
 with the following exceptions:
 
@@ -119,7 +119,7 @@ these easy to remember language elements is justified in my opinion.
 Try to be as precise as can be and no one will comprehend what you mean.
 
 #### The formula:
-      
+
 
 ```
 comprehension = 1/(2**precision)

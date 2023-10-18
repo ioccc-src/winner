@@ -2,7 +2,7 @@
 
 Don Yang<br>
 <omoikane@uguu.org><br>
-<http://uguu.org/>  
+<http://uguu.org/>
 
 ## To build:
 

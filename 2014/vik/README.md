@@ -4,7 +4,7 @@ Daniel Vik
 US  
 <daniel@vik.cc>  
 <https://www.vik.cc/>  
-<http://danielvik.com/>  
+<http://danielvik.com/>
 
 
 ## To build:

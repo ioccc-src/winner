@@ -1,7 +1,7 @@
 # Best abuse of system calls
 
 Paul Dale<br>
-Australia  
+Australia
 
 ## To build:
 

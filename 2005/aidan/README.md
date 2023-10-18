@@ -2,7 +2,7 @@
 
 Aidan Thornton  
 United Kingdom  
-<makomk@lycos.co.uk>  
+<makomk@lycos.co.uk>
 
 
 ## To build:
@@ -26,7 +26,7 @@ where `seed` is a number.
 ## Try:
 
 ```sh
-./aidan < insane1.sudoku 
+./aidan < insane1.sudoku
 
 ./aidan 42
 ```

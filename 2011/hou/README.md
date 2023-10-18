@@ -1,7 +1,7 @@
 # Best self documenting program
 
 Hou Qiming   
-<hqm03ster@gmail.com>  
+<hqm03ster@gmail.com>
 
 ## To build:
 

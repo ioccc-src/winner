@@ -1,7 +1,7 @@
 # Grand Prize
 
 Roemer B. Lievaart  
-Netherlands   
+Netherlands
 
 ## To build:
 

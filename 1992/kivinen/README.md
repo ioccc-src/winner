@@ -4,7 +4,7 @@ Tero Kivinen
 Helsinki University of Technology  
 Klovinrinne 6b  
 02180 Espoo  
-Finland  
+Finland
 
 
 ## To build:

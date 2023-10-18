@@ -4,7 +4,7 @@ Fabrice Bellard
 451 chemin du mas de Matour  
 34790 Grabels  
 France  
-<https://bellard.org>  
+<https://bellard.org>
 
 ## To build:
 

@@ -38,7 +38,7 @@ Be sure not to run out of fuel!
 
 ## Author's remarks:
 
-This is the DDS-BASIC Interpreter (Version 1.00). 
+This is the DDS-BASIC Interpreter (Version 1.00).
 
 ### Immediate commands:
 

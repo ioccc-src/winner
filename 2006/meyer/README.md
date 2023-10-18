@@ -1,7 +1,7 @@
 # Best Game
 
 Raphael Meyer  
-US  
+US
 
 ## To build:
 

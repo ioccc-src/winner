@@ -4,7 +4,7 @@ Larry Jones
 SDRC  
 2000 Eastman Dr  
 Milford, OH 45150    
-US  
+US
 
 
 ## To build:
@@ -24,7 +24,7 @@ char*a??(??)=??<
 
 but we were able to get it to compile with modern compilers by specifying the
 `-ansi` flag with a tip from [Yusuke Endoh](/winners.html#Yusuke_Endoh). Thank
-you Yusuke! 
+you Yusuke!
 
 
 ## To run:

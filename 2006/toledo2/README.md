@@ -3,7 +3,7 @@
 Oscar Toledo G.  
 Familia Toledo  
 Mexico  
-<https://nanochess.org>  
+<https://nanochess.org>
 
 
 ## To build:
@@ -106,7 +106,7 @@ RUN
 20 PRINT A             
 30 NEXT A              
 LIST                   
-RUN                    
+RUN
 
 10 INPUT A
 20 INPUT B

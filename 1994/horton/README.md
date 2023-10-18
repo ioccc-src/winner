@@ -23,7 +23,7 @@ make all
 Running this program without enough args will very likely crash or do something
 else.
 
-## Try: 
+## Try:
 
 ```sh
 ./horton 3 2 1 0

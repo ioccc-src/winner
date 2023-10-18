@@ -2,7 +2,7 @@
 
 Brian Westley (aka Merlyn LeRoy)  
 US  
-<http://www.westley.org>  
+<http://www.westley.org>
 
 
 ## To build:
@@ -67,7 +67,7 @@ To find the approximate place where this entry was judged, type:
 ```sh
 ./whereami 37 -122	(- means west of meridian)
 ```
-   
+
 
 ## Author's remarks:
 

@@ -1,7 +1,7 @@
 # Most Irrational
 
 Steinar Hamre  
-Norway  
+Norway
 
 ## To build:
 

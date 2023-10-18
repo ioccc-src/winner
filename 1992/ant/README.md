@@ -5,7 +5,7 @@ Mortice Kern Systems Inc.
 Unit 1, 14 Weber Street North  
 Waterloo, Ontario  
 N2J 3G4  
-Canada  
+Canada
 
 ## To build:
 

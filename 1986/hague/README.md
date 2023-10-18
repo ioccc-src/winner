@@ -1,7 +1,7 @@
 # Worst abuse of the C preprocessor
 
 Jim Hague<br>
-UK  
+UK
 
 ## To build:
 

@@ -1,7 +1,7 @@
 # Most useful
 
 Kimmo Fredriksson    
-<kimmo.k.k.fredriksson@gmail.com>   
+<kimmo.k.k.fredriksson@gmail.com>
 
 ## To build:
 

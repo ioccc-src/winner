@@ -4,7 +4,7 @@ Jon Thingvold
 University of Oslo  
 Sogn Studentby 8231  
 N 0858 Oslo  
-Norway  
+Norway
 
 
 ## To build:

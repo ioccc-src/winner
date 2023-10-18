@@ -1,7 +1,7 @@
 # Best simple task performed in a complex way
 
 Bruce Holloway<br>
-US  
+US
 
 ## To build:
 

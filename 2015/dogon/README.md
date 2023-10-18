@@ -1,7 +1,7 @@
 # Most Crafty
 
     Gil Dogon  
-    <http://sokoban-gild.com>  
+    <http://sokoban-gild.com>
 
 ## To build:
 

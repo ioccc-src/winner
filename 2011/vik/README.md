@@ -2,7 +2,7 @@
 
 Daniel Vik  
 <daniel@vik.cc>  
-<http://www.danielvik.com>  
+<http://www.danielvik.com>
 
 
 ## To build:

@@ -1,7 +1,7 @@
 # Most self-aware
 
 Volker Diels-Grabsch  
-<https://njh.eu>  
+<https://njh.eu>
 
 
 ## To build:

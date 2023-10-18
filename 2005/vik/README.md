@@ -3,7 +3,7 @@
 Daniel Vik  
 US  
 <daniel@vik.cc>  
-<https://www.vik.cc>  
+<https://www.vik.cc>
 
 ## To build:
 

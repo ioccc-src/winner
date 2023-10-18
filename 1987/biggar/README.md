@@ -30,7 +30,7 @@ increases the size of Makefiles.
 
 With only slight variations, this program can be set to many uses.
 Consider how easy it would be to release `Unix` source in this form;
-so what if the Makefiles grow a little!  :-) 
+so what if the Makefiles grow a little!  :-)
 
 One vendor's lint got hung in an infinite loop over this entry!
 

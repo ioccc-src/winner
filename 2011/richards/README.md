@@ -1,7 +1,7 @@
 # Most surprisingly portable
 
 Gregor Richards  
-<Richards@codu.org>  
+<Richards@codu.org>
 
 
 ## To build:

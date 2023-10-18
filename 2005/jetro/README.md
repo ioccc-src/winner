@@ -2,7 +2,7 @@
 
 Jetro Lauha  
 Finland  
-<http://jet.ro>  
+<http://jet.ro>
 
 ## To build:
 

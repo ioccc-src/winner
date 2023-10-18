@@ -1,6 +1,6 @@
 # Most likely to be awarded
 
-Marcin Ciura <mciura@gmail.com>  
+Marcin Ciura <mciura@gmail.com>
 
 ## To build:
 

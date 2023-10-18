@@ -1,7 +1,7 @@
 # Best small program
 
 Maarten Litmaath<br>
-The Netherlands  
+The Netherlands
 
 ## To build:
 

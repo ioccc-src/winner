@@ -1,7 +1,7 @@
 # Most Well-rounded Hash
 
     Qiming Hou <hqm03ster@gmail.com>  
-    <http://www.houqiming.net/>  
+    <http://www.houqiming.net/>
 
 ## To build:
 

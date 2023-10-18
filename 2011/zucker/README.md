@@ -2,7 +2,7 @@
 
 Matt Zucker  
 <mzucker1@swarthmore.edu>  
-<https://mzucker.github.io/swarthmore/>  
+<https://mzucker.github.io/swarthmore/>
 
 ## To build:
 

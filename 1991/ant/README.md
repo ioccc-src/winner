@@ -4,7 +4,7 @@ Anthony C Howe
 Mortice Kern Systems Inc.	#CL-23  
 35 King St. N			268 Phillip St.  
 Waterloo, On			Waterloo, On		 
-Canada, N2J 2W9			Canada, N2L 6G9  
+Canada, N2J 2W9			Canada, N2L 6G9
 
 ## To build:
 
@@ -93,7 +93,7 @@ Buffer Gap Scheme [Fin80][net90], write a useful and *portable*
 program, and meet the requirements of the IOCCC.  I initially 
 planned to have a mini `curses` built-in like the IOCCC Tetris entry 
 from a previous year, however this was not as portable as using a
-`curses` library with `TERMINFO`/`TERMCAP` support.  
+`curses` library with `TERMINFO`/`TERMCAP` support.
 
 I plan to post follow-ups such as unobfuscated versions and bugs fixes to
 comp.editors.  Reposts of the editor.101, gap.doc, and editor.102 can be found

@@ -5,7 +5,7 @@ DFN Network Operation Center
 Schlartaeckerweg 3 (home address)  
 D-71384 Weinstadt  
 Germany  
-<http://www.schweikhardt.net>   
+<http://www.schweikhardt.net>
 
 
 ## To build:
@@ -95,7 +95,7 @@ indent to the max (although the result does compile):
 
 Looking at the indented source is even *less* fun, because the nice
 diamond pattern has been replaced by something that looks like, uhm,
-modem noise. 
+modem noise.
 
 Lint the source. It's clean. How obfuscated...
 
@@ -131,13 +131,13 @@ On ANSI/ISO C conformant systems (where long is at least 32 bits)
 overflow will occur in the default case (first operand 1, increment 1)
 only for more than 11 operators. Because a bit mask is used that needs
 twice the number of operands in bits (plus a sentinel value) on those
-systems the first parameter must not exceed 15. 
+systems the first parameter must not exceed 15.
 
 If long is at least 64 bits overflow will occur for more than 19
 operators but you will probably wait quite some time for every of the
 `4^19 = 274,877,906,944` combinations to be evaluated... While I'm at it,
 on a 50 MHz SPARC, `4^11` expressions are evaluated in about 3 cpu
-minutes (`gcc -O3`). 
+minutes (`gcc -O3`).
 
 ### Sample arguments:
 

@@ -4,7 +4,7 @@ Daniel Fischer
 VNetx.com GbR  
 Salenbergstrasse 11		(home address)  
 D 72250 Freudenstadt  
-German Federal Republic  
+German Federal Republic
 
 ## To build:
 

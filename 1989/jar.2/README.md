@@ -5,7 +5,7 @@ Laboratory of Information Processing Science
 Helsinki University of Technology  
 Otakaari 1  
 02150 Espoo  
-Finland  
+Finland
 
 ## To build:
 

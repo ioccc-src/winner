@@ -1,7 +1,7 @@
 # Best Computed Graphics
 
 Thomas Stewart  
-US  
+US
 
 ## To build:
 

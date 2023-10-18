@@ -4,7 +4,7 @@ Andreas Gustafsson
 Helsinki University of Technology  
 Arentikuja 1 D 305		 
 00410 Helsinki  
-Finland  
+Finland
 
 
 ## To build:
@@ -31,7 +31,7 @@ it located in one of the following places:
 /usr/share/lib/spell/words
 /usr/ucblib/dict/words
 /dev/null			# <-- for machines with nothing to say
-```  
+```
 
 Then using the proper dictionary:
 
@@ -88,7 +88,7 @@ obfuscated shell script:
 ```sh
 #!/bin/sh
 z=a-z];tr [A-Z\] \[$z|sed s/[\^$z[\^$z*/_/g|tr _ \\012|grep ..|sort -u
-``` 
+```
 
 Using articles from alt.folklore.computers is likely to make
 a more professional-looking dictionary than rec.arts.erotica.

@@ -1,7 +1,7 @@
 # Best Handwriting
 
     Etienne Duble <etienne.duble@imag.fr>  
-    <http://lig-membres.imag.fr/duble>  
+    <http://lig-membres.imag.fr/duble>
 
 ## To build:
 
@@ -24,7 +24,7 @@ DRAFT=1 ./prog < prog.c
 
 ./prog
 > [type]
-(...observe...) 
+(...observe...)
 
 ./prog < prog.c
 ```

@@ -3,7 +3,7 @@
 Yusuke Endoh<br>
 <mame@ruby-lang.org><br>
 <https://github.com/mame/>  
-Mastodon: [@mame@ruby.social](https://ruby.social/@mame)  
+Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 
 ## To build:
 

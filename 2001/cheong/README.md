@@ -2,7 +2,7 @@
 
 Raymond Cheong  
 US  
-<http://www.raymondcheong.com/index.html> 
+<http://www.raymondcheong.com/index.html>
 
 
 ## To build:

@@ -5,7 +5,7 @@ University of Oslo
 Gaustadveien 10B  
 N 0372 Oslo  
 Norway  
-http://www.uio.no/~jonth/  
+http://www.uio.no/~jonth/
 
 ## To build:
 

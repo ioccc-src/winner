@@ -4,7 +4,7 @@ Andrew T. Shapiro
 CSES/CIRES University of Colorado  
 Campus Box 216  
 Boulder, CO 80309-0216  
-US  
+US
 
 
 ## To build:
@@ -52,7 +52,7 @@ this program. Note that this alt file is currently missing. See
 ## Author's remarks:
 
 The basic theme (pun) of this program is:
-    
+
 
 > "This time (everything) is not where it should be."
 >       ~~~~
@@ -82,7 +82,7 @@ main() returns random value to invocation environment, value type used
 inconsistently, value type declared inconsistently, function argument 
 (number) used inconsistently, function returns value which is always 
 ignored, function returns value which is sometimes ignored.
-All of which are harmless (famous last words). 
+All of which are harmless (famous last words).
 
 This may or may not work on non ASCII systems (I could not find one to
 test it on.)

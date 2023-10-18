@@ -2,7 +2,7 @@
 
 Szabolcs Borsanyi    
 Germany  
-<borsanyi@uni-wuppertal.de>  
+<borsanyi@uni-wuppertal.de>
 
 ## To build:
 

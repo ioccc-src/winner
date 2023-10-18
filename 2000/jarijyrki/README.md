@@ -10,7 +10,7 @@ Jyrki Holopainen
 Forsellesintie 1-3A10  
 02700 Kauniainen  
 Finland  
-<https://web.archive.org/web/20061205082106/http://personal.eunet.fi/pp/halo/>  
+<https://web.archive.org/web/20061205082106/http://personal.eunet.fi/pp/halo/>
 
 
 ## To build:
@@ -117,7 +117,7 @@ Click the mouse or use the arrow keys.
 The currently selected cell is always in the edit state.  Press any key to add a
 character at the end of the formula; press backspace to delete the last one.
 
-##### Formulas   
+##### Formulas
 
 ```
 123.45

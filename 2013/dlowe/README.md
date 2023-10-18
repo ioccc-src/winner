@@ -24,7 +24,7 @@ make
 ./dlowe 16 32 64 128
 ./dlowe 16 32 64 128 256
 ./dlowe 16 32 64 128 256 512
-./dlowe 0 
+./dlowe 0
 
 echo "sparkline of file sizes: $(wc -c * | awk '{print $1}' | xargs ./dlowe)" # or ./sflen.sh
 ```
@@ -68,7 +68,7 @@ something funny (or will it ? :-) ) and when will it do nothing?
 
 ## Judges' remarks:
 
-We liked how this entry used Unicode, specifically UTF-8, in a somewhat obfuscated way. 
+We liked how this entry used Unicode, specifically UTF-8, in a somewhat obfuscated way.
 
 Also, why doesn't it crash but instead produces a correct output when called
 with one argument or when all arguments are equal?
@@ -82,10 +82,10 @@ int main() {
 }
 ```
 
-with gcc and clang. 
+with gcc and clang.
 
 
-With GCC (4.7.2), we get 
+With GCC (4.7.2), we get
 
 ```
 -2147483648 -2147483648 -2147483648

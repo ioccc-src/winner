@@ -2,7 +2,7 @@
 
 Taketo Konno  
 Japan  
-<inaniwa3@gmail.com>  
+<inaniwa3@gmail.com>
 
 ## To build:
 

@@ -1,6 +1,6 @@
 # Most likely to top the charts
 
-Qiming Hou  
+Qiming Hou
 
 ## To build:
 

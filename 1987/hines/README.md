@@ -1,7 +1,7 @@
 # Worst Style
 
 Spencer Hines<br>
-US  
+US
 
 ## To build:
 

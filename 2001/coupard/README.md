@@ -5,7 +5,7 @@ Lineo, Inc.
 ATTN : Pierre-Philippe Coupard  
 390 South 400 West  
 Lindon, UT 84042  
-US  
+US
 
 
 ## To build:

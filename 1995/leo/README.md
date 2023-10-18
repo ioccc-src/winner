@@ -3,7 +3,7 @@
 Leonid A. Broukhis  
 46728 Crawford St., apt. 20  
 Fremont, CA 94539   
-US  
+US
 
 ## To build:
 
@@ -182,7 +182,7 @@ to be
              \                       \.__
                                       |
 
-```  
+```
 
 and so on: the horisontal symmetry has been lost. That's why
 the opening for step 1 is not a single line but a cross:

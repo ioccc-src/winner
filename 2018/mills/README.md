@@ -1,6 +1,6 @@
 # Best of show
 
-Christopher Mills <mrxo@sonic.net>  
+Christopher Mills <mrxo@sonic.net>
 
 ## To build:
 
@@ -212,7 +212,7 @@ you should see:
         Use, duplication or disclosure is subject to
         restrictions stated in Contract with Western
         Electric Company, Inc.
-        # 
+        #
 
 You are now running a single-user session of v6 UNIX.  You might want to start
 with `stty -lcase` because otherwise everything will be IN ALL CAPS.
@@ -382,7 +382,7 @@ Now `ls` will work, and we can try some other things while we are here:
         bi.s    
         @ a.out
         Hello, World!
-        @ 
+        @
 
 The last command is invoking the compiler for an extremely early version of
 the [B programming language] [3], the predecessor to C.  Thompson missed the

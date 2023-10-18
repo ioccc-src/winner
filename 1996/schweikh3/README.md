@@ -5,7 +5,7 @@ DFN Network Operation Center
 Schlartaeckerweg 3 (home address)  
 D-71384 Weinstadt  
 Germany  
-<http://www.schweikhardt.net>  
+<http://www.schweikhardt.net>
 
 ## To build:
 
@@ -18,7 +18,7 @@ make all
 **WARNING: DO NOT RUN this program without reading this text down to the end!**
 It may render your system unusable for a limited amount of time
 or force you to reboot using the Big Red Button!  This is **NOT** a joke.
-You have been warned.  
+You have been warned.
 
 ```sh
 ./schweikh3

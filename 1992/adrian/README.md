@@ -1,7 +1,7 @@
 # Most Educational
 
 Adrian Mariano  
-US  
+US
 
 
 ## To build:

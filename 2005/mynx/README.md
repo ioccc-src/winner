@@ -2,7 +2,7 @@
 
 Anthony Howe  
 <achowe@snert.com>  
-<http://www.snert.com>  
+<http://www.snert.com>
 
 
 ## To build:
@@ -43,7 +43,7 @@ as well as it used to.  If one were to try and connect to `https://www.ioccc.org
 with this entry they'll just get a 301 error.
 
 In case someone can come up with a clever pipeline or some other hack or
-workaround (perhaps [stunnel](https://www.stunnel.org)), 
+workaround (perhaps [stunnel](https://www.stunnel.org)),
 
 To compile:
 

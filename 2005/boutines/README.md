@@ -2,7 +2,7 @@
 
 Francois Boutines  
 Toulouse, France  
-<francois.boutines@gmail.com>  
+<francois.boutines@gmail.com>
 
 ## To build:
 

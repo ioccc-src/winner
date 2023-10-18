@@ -2,7 +2,7 @@
 
 Eryk Kopczynski  
 Poland  
-<http://www.mimuw.edu.pl/~erykk/>  
+<http://www.mimuw.edu.pl/~erykk/>
 
 
 ## To build:

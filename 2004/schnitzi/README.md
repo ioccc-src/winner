@@ -2,7 +2,7 @@
 
 Mark Schnitzius  
 Australia  
-<http://computronium.org/ioccc.html>  
+<http://computronium.org/ioccc.html>
 
 ## To build:
 

@@ -2,7 +2,7 @@
 
 Merlyn LeRoy (Brian Westley)  
 US
-<http://www.westley.org>  
+<http://www.westley.org>
 
 ## To build:
 

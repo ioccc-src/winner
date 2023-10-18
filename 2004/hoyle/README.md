@@ -2,7 +2,7 @@
 
 Jonathan Hoyle  
 US  
-<http://www.jonhoyle.com>  
+<http://www.jonhoyle.com>
 
 ## To build:
 

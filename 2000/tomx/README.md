@@ -5,7 +5,7 @@ Mishybi Plamoottil
 Parottukonam  
 Nalanchira P.O, Trivandrum-695015  
 India  
-<https://web.archive.org/web/20010720192926/http://tomx.tripod.com/>  
+<https://web.archive.org/web/20010720192926/http://tomx.tripod.com/>
 
 ## To build:
 

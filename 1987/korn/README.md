@@ -1,7 +1,7 @@
 # Best One Liner
 
 David Korn   
-US   
+US
 
 ## To build:
 
@@ -33,7 +33,7 @@ Several points are important to understand this program:
 characters, or `'h'`, or a string)  Consider the fact that:
 
 
-	    char *x;  
+	    char *x;
 
 
   defines a pointer to a `char` (i.e. an address), and that the `=` assigns
@@ -46,11 +46,11 @@ characters, or `'h'`, or a string)  Consider the fact that:
 3. Note that the following expressions yield the same value:
 
 
-        x[3]	*(x+3)	  *(3+x)  
+        x[3]	*(x+3)	  *(3+x)
 
-   since addition is commutative.  What can be said about the value:  
+   since addition is commutative.  What can be said about the value:
 
-        3[x]  
+        3[x]
 
     ?
 

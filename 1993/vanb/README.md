@@ -4,7 +4,7 @@ David Van Brackle
 ISX Corporation  
 1165 Northchase Parkway, Suite 120  
 Marietta, GA 30067  
-US  
+US
 
 
 ## To build:
@@ -46,7 +46,7 @@ hex numbers:		x or X follow by hex digits
 decimal numbers:	d or D follow by decimal digits
 octal numbers:		octal digits
 grouping:		()
-```  
+```
 
 No spaces are allowed in the expression.  To avoid shell expansion,
 one should surround the expression in single quotes.

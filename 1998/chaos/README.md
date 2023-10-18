@@ -4,7 +4,7 @@ Alan De Smet
 8531 Greenway Blvd. #206  
 Middleton, WI 53562  
 US  
-<http://www.highprogrammer.com/alan/>  
+<http://www.highprogrammer.com/alan/>
 
 
 ## To build:

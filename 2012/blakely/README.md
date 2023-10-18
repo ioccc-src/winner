@@ -2,7 +2,7 @@
 
 Philip Blakely  
 UK  
-<pmblakely@gmail.com>  
+<pmblakely@gmail.com>
 
 ## To build:
 

@@ -1,7 +1,7 @@
 # Most Versatile Source
 
 Jyrki Holopainen  
-Finland  
+Finland
 
 
 ## To build:

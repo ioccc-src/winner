@@ -1,7 +1,7 @@
 # Most underscored argument
 
 Ferenc Deak<br>
-<fritzone@gmail.com>  
+<fritzone@gmail.com>
 
 ## To build:
 

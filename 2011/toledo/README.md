@@ -3,7 +3,7 @@
 Oscar Toledo G.    
 Mexico  
 <biyubi@gmail.com>   
-<https://nanochess.org>  
+<https://nanochess.org>
 
 ## To build:
 
@@ -99,7 +99,7 @@ Keys for player 2:
 * Left arrow  - Turn left
 * Right arrow - Turn right
 
-> Note: Numeric keys don't work. 
+> Note: Numeric keys don't work.
 
 If you don't like the keys assignment, you can change it in the
 Makefile.
@@ -184,7 +184,7 @@ Not really, just kidding :D
                                   .,,++=++-,.                @+      ==+              
                                         .,-++==+-,.          +@    ==+                
                                               ..,+++=+-,..   .@. +=+                  
-                                                     .,-+++++,@@==                    
+                                                     .,-+++++,@@==
 
 ```
 

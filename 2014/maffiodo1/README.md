@@ -2,7 +2,7 @@
 
     Sandro Maffiodo  
     <smaffer@gmail.com>  
-    <http://www.assezeta.com/sandromaffiodo>  
+    <http://www.assezeta.com/sandromaffiodo>
 
 
 ## To build:

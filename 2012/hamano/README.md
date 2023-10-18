@@ -1,7 +1,7 @@
 # Most elementary use of C - Silver award
 
 Tsukasa Hamano  
-<hamano@cuspy.org>  
+<hamano@cuspy.org>
 
 ## To build:
 

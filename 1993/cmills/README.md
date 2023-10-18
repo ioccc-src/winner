@@ -4,7 +4,7 @@ Chris Mills
 Pagine Corporation  
 1961-A Concourse Drive  
 San Jose, CA 95131  
-US  
+US
 
 ## To build:
 
@@ -32,7 +32,7 @@ where:
 ## Judges' remarks:
 
 From the San Jose Mercury News (May 15, 1993 page 20A "West Hackers 
-trounce East in computer quiz game"): 
+trounce East in computer quiz game"):
 
 
 >	"Since 1984, a contest has been held on Usenet for the most

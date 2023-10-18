@@ -5,7 +5,7 @@ Sequent Computer Systems, Inc
 15450 SW Koll Parkway  
 Beaverton, OR  
 97006  
-US  
+US
 
 ## To build:
 
@@ -45,7 +45,7 @@ is not in the repository.
 In a nutshell, this is probably the slowest and most
 obnoxious factorial program ever written.  Unfortunately, 
 the name of the C source must be "ouroboros.c"; the name is 
-hard-coded into the program.  
+hard-coded into the program.
 
 The source is a legal shell script and a legal C program.  
 The shell script compiles itself, and then executes the

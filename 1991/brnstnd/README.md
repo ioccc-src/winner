@@ -1,7 +1,7 @@
 # Best Of Show
 
 Daniel J. Bernstein  
-New York University  
+New York University
 
 
 ## To build:

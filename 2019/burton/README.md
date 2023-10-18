@@ -1,6 +1,6 @@
 # Best one-liner
 
-Dave Burton  
+Dave Burton
 
 ## To build:
 
@@ -63,7 +63,7 @@ This program follows FreeBSD and macOS, the arbiters of correct for these purpos
 ### Limits:
 
 Requires the C locale and ASCII character set.   
-Input should be less than ten million octets "toavoidthisproblem".   
+Input should be less than ten million octets "toavoidthisproblem".
 
 ### See Also:
 

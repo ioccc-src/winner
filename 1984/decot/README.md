@@ -1,4 +1,4 @@
-# Second place award 
+# Second place award
 
 Dave Decot
 

@@ -2,7 +2,7 @@
 
     Cel Skeggs  
     <ioccc@celskeggs.com>  
-    <http://www.celskeggs.com>  
+    <http://www.celskeggs.com>
 
 ## To build:
 

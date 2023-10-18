@@ -1,6 +1,6 @@
 # Most Compact
 
-    Chris Mills  
+    Chris Mills
 
 ## To build:
 
@@ -18,7 +18,7 @@ make
 
 ```sh
 printf '000I\236\f\31H\260\240\301\203' > ioccc.Z
-./prog ioccc.Z 
+./prog ioccc.Z
 
 dd bs=1k count=4096 < /dev/urandom > test1
 compress < test1 > test1.Z

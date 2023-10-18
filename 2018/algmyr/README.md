@@ -1,6 +1,6 @@
 # Most cacophonic
 
-Anton Älgmyr  
+Anton Älgmyr
 
 ## To build:
 

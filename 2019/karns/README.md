@@ -1,6 +1,6 @@
 # Most in need of whitespace
 
-Joshua Karns  
+Joshua Karns
 
 
 ## To build:

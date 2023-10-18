@@ -1,7 +1,7 @@
 # Best abuse of the rules
 
 Dave Burton  
-<http://ioccc.snox.net>  
+<http://ioccc.snox.net>
 
 ## To build:
 
@@ -48,37 +48,37 @@ that is saying something!  What is this program weighing and how much does it we
 tac computes C program size  
 (obfuscated / otherwise)  
 by splitting code as tokens small,  
-ignoring space, then counting all.  
+ignoring space, then counting all.
 
 It tries quite hard to act the same  
 as counting tool of I-OCCC fame.  
 Some bugs were fixed, it's faster too,
-and does more things, just add some glue!  
+and does more things, just add some glue!
 
 It does far more than print the size:  
 the token part's a better prize!  
 With each upon on a single line,  
-how many things can you design?  
+how many things can you design?
 
 Included is a keyword sorter,  
 de-obfuscator, freq reporter.  
 With code produced as little parts,  
-just add your own creative arts.  
+just add your own creative arts.
 
 But first you have to figure out  
 the braces part, without a doubt!  
 And then the code - it isn't easy:  
-for as else?  That's rather cheesy!  
+for as else?  That's rather cheesy!
 
 The rest of it is standard fare:  
 expressions strange, the globals bare,  
 confusing symbols one and oh,  
-and precedence you have to know.  
+and precedence you have to know.
 
 The keyword list was made external,  
 because of standards change eternal.
 Thus other languages can now,  
-be counted just like C, somehow!  
+be counted just like C, somehow!
 
 I hope you find this code obscure  
 enough to win, and thus procure  

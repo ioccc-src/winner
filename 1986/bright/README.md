@@ -1,4 +1,4 @@
-# Most useful obfuscation 
+# Most useful obfuscation
 
 Walter Bright
 

@@ -1,7 +1,7 @@
 # Best one-liner
 
     Dave Burton  
-    <http://ioccc.snox.net>  
+    <http://ioccc.snox.net>
 
 ## To build:
 

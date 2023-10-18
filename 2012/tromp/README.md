@@ -2,7 +2,7 @@
 
 John Tromp  
 <john.tromp@gmail.com>  
-<http://tromp.github.io/>  
+<http://tromp.github.io/>
 
 
 ## To build:

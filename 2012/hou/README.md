@@ -2,7 +2,7 @@
 
 Qiming Hou  
 <hqm03ster@gmail.com>  
-<http://www.houqiming.net>  
+<http://www.houqiming.net>
 
 ## To build:
 
@@ -75,7 +75,7 @@ the regular expression would be replaced by the format string. In case of a
 conflict, rules appearing earlier would take precedence. One can refer to the
 original text in the format string using `%s`. Other `%` characters in the
 format string must be escaped with another `%`. The space character can be used
-in the regular expression by escaping it with `[]` or `""`. 
+in the regular expression by escaping it with `[]` or `""`.
 
 The following regular expression operators are supported:
 

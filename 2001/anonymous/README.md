@@ -1,7 +1,7 @@
 # Dishonorable mention
 
 The author wishes to remain anonymous  
-Great Britain  
+Great Britain
 
 
 ## To build:

@@ -2,7 +2,7 @@
 
 Philip Blakely    
 Cambridge, UK  
-<pmblakely@gmail.com>  
+<pmblakely@gmail.com>
 
 ## To build:
 
@@ -32,7 +32,7 @@ Zoom out and make your terminal window 53 or more lines deep.
 This program plays [Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 (see also [here](https://conwaylife.com)), computes Pi to 16 digits
 if given its own source as input, and allows to check if your garden
-is a [Garden of Eden](http://en.wikipedia.org/wiki/Garden_of_Eden_%28cellular_automaton%29), all in one source. 
+is a [Garden of Eden](http://en.wikipedia.org/wiki/Garden_of_Eden_%28cellular_automaton%29), all in one source.
 
 If you have enough time to spare, put the plan of your garden in a text file, 
 and run:

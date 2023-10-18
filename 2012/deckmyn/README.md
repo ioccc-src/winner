@@ -1,7 +1,7 @@
 # Most notable and best tool
 
 Alex Deckmyn  
-<alex.deckmyn@gmail.com>  
+<alex.deckmyn@gmail.com>
 
 ## To build:
 
@@ -105,7 +105,7 @@ string.
 The code is quite sensitive. Errors in the input can lead to strange results.
 The code does not read beyond the end of the music input, but that is about the
 only error checking available. Any input that is not according to the rules in
-the [manual](deckmyn.md), may cause errors. 
+the [manual](deckmyn.md), may cause errors.
 
 The program has no special hardware limitations or requirements, other than 8bit
 char (signed or unsigned) and two's complement negatives.

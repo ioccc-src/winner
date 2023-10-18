@@ -1,7 +1,7 @@
 # Best solved puzzle
 
 Shinichiro Hamaji  
-<shinichiro.hamaji@gmail.com>  
+<shinichiro.hamaji@gmail.com>
 
 ## To build:
 

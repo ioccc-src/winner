@@ -2,7 +2,7 @@
 
 Jens Schweikhardt  
 Germany  
-<http://www.schweikhardt.net>  
+<http://www.schweikhardt.net>
 
 
 ## To build:

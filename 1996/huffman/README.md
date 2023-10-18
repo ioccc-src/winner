@@ -6,7 +6,7 @@ Applied Innovation Inc
 Dublin, OH 43016  
 US  
 <http://www.huffmancoding.com>  
-huffmancoding@gmail.com  
+huffmancoding@gmail.com
 
 ## To build:
 
@@ -23,7 +23,7 @@ echo 'Huffman Decoding' | ./huffman
 NOTE: this program uses `gets()` so you will likely get a warning when compiling
 and/or running on modern systems.
 
-## Try: 
+## Try:
 
 ```sh
 echo 'seeing or feeling is believing' | ./huffman

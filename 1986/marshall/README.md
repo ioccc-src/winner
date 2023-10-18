@@ -1,6 +1,6 @@
 # Best layout
 
-Eric Marshall   
+Eric Marshall
 
 ## To build:
 

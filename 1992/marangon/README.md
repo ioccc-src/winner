@@ -4,7 +4,7 @@ Marangoni Andrea
 Department of Computer Science at Milano  
 Via Pausula, 72  
 62014 Corridonia (MC)  
-Italy  
+Italy
 
 ## To build:
 

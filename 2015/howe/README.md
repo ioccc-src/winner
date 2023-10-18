@@ -2,7 +2,7 @@
 
 Anthony Howe <achowe@snert.com>  
 Montreal, Quebec, Canada  
-<http://www.snert.com/>  
+<http://www.snert.com/>
 
 ## To build:
 

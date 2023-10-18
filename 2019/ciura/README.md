@@ -1,6 +1,6 @@
 # Most alphabetic
 
-Marcin Ciura  
+Marcin Ciura
 
 
 ## To build:

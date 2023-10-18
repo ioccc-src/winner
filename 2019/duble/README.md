@@ -1,7 +1,7 @@
 # Best collaborative graphics
 
 Etienne Duble  
-<https://lig-membres.imag.fr/duble>  
+<https://lig-membres.imag.fr/duble>
 
 ## To build:
 

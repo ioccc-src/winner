@@ -3,7 +3,7 @@
 Stig Hemmer  
 Norwegian Institute of Technology  
 N-7034 Trondheim-NTH  
-Norway   
+Norway
 
 ## To build:
 

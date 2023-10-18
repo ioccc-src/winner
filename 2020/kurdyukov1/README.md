@@ -1,7 +1,7 @@
 # Best utility
 
 Ilya Kurdyukov  
-<https://github.com/ilyakurdyukov>  
+<https://github.com/ilyakurdyukov>
 
 ## To build:
 
@@ -27,7 +27,7 @@ echo IOCCC | ./prog
 
 ### Alternate code
 
-An even smaller alternate version of this entry, prog.alt.c, is provided.  This code does not contain any headers, nor any workaround for WIN32 based platforms.  
+An even smaller alternate version of this entry, prog.alt.c, is provided.  This code does not contain any headers, nor any workaround for WIN32 based platforms.
 
 To compile this alternate version:
 
@@ -71,7 +71,7 @@ Added a macro hack to make stdin work in binary mode under Windows (tested under
 
 ### Bonus
 
-- `prog.extra.c` the same with the sine function (so smaller), and in different shapes. 
+- `prog.extra.c` the same with the sine function (so smaller), and in different shapes.
 
 - `prog.x86_64.asm` contains same program, but written on assembly for x86_64 Linux, for the sake of less executable size. Which is 500 bytes long (where 120 is for ELF headers) after compilation. Algorithm details is slightly differ (like constants packing), just to make smaller binary code. It's interesting to compare density of binary code and obfuscated C.
 

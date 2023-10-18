@@ -1,7 +1,7 @@
 # Best AI
 
 Doug Beardsley  
-US  
+US
 
 
 ## To build:

@@ -5,7 +5,7 @@ Ecole Normale Superieure de Lyon
 Laboratoire d'Informatique Parallele  
 42, Rue H.Berlioz   
 69009 Lyon   
-France  
+France
 
 ## To build:
 

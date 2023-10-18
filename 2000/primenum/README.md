@@ -1,6 +1,6 @@
 # Best Abuse of CPP
 
-Raymond Cheong  
+Raymond Cheong
 
 ## To build:
 
@@ -12,7 +12,7 @@ make
 ## To run:
 
 ```sh
-echo n | ./primenum n 
+echo n | ./primenum n
 
 ```
 

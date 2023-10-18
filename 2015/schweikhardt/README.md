@@ -1,7 +1,7 @@
 # Best Documented
 
     Jens Schweikhardt  
-    <http://www.schweikhardt.net>  
+    <http://www.schweikhardt.net>
 
 ## To build:
 

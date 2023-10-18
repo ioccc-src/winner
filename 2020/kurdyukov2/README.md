@@ -1,7 +1,7 @@
 # Least detailed
 
 Ilya Kurdyukov  
-<https://github.com/ilyakurdyukov>  
+<https://github.com/ilyakurdyukov>
 
 ## To build:
 

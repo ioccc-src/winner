@@ -5,7 +5,7 @@ Inmos UK
 1000 Aztec West  
 Almondsbury  
 Bristol  
-UK BS12 4SQ  
+UK BS12 4SQ
 
 ## To build:
 

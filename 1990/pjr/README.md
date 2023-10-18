@@ -6,7 +6,7 @@ Pyramid House
 Solatron Road  
 Farnborough  
 Hants GU14 7PL  
-England, U.K.  
+England, U.K.
 
 ## To build:
 

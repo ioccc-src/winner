@@ -4,7 +4,7 @@ Teemu Rantanen
 Helsinki University of Technology  
 Melkonkatu 5 A 8  
 00210 Helsinki  
-Finland  
+Finland
 
 ## To build:
 

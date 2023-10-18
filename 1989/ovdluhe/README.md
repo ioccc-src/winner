@@ -4,7 +4,7 @@ Oskar von der Luehe
 Institut fuer Astronomie  
 ETH - Zentrum  
 8092 Zuerich  
-Switzerland  
+Switzerland
 
 ## To build:
 

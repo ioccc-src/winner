@@ -1,6 +1,6 @@
 # Most in need of wide space
 
-Edward Giles  
+Edward Giles
 
 ## To build:
 

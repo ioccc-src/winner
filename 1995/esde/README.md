@@ -3,7 +3,7 @@
 Sebastian Deorowicz  
 ul. Radzionkowska 71a  
 42-605 Tarnowskie Gory   
-Poland  
+Poland
 
 ## To build:
 
@@ -20,7 +20,7 @@ make all
 where data-file contains lines of < 255 chars in length.
 
 
-## Try: 
+## Try:
 
 ```sh
 ./esde esde.data Johanson
@@ -31,7 +31,7 @@ where data-file contains lines of < 255 chars in length.
 ## Judges' remarks:
 
 When reading the source be careful to distinguish between variable
-names and library functions.  
+names and library functions.
 
 If you still don't know what it does, try
 [https://en.wikipedia.org/wiki/Soundex](https://en.wikipedia.org/wiki/Soundex).

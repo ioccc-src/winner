@@ -1,6 +1,6 @@
 # Most connected
 
-Scott Vokes  
+Scott Vokes
 
 ## To build:
 

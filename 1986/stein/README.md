@@ -1,4 +1,4 @@
-# Best one liner 
+# Best one liner
 
 Jan Stein
 

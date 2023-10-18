@@ -3,7 +3,7 @@
 Cody Boone Ferguson <weasel@xexyl.net>   
 [https://ioccc.xexyl.net](https://ioccc.xexyl.net)  
 [https://xexyl.net](https://xexyl.net)  
-Mastodon: [@xexyl@fosstodon.org](https://fosstodon.org/@xexyl)      
+Mastodon: [@xexyl@fosstodon.org](https://fosstodon.org/@xexyl)
 
 ## To build:
 
@@ -288,7 +288,7 @@ isn't insolent enough to say the user is a monkey for certain!*
 Skip to [Obfuscation](#obfuscation).
 
 I noted that there are a number of additional features and here I will document
-some of them. 
+some of them.
 
 ### <a name="keyboards">Keyboards</a>
 
@@ -400,7 +400,7 @@ If you do one of:
  
 It will search for **`MONKEY`** in both cases; in other words it's the last one.
 If the string is too long given the value of **`S`** (see 
-**[How to build](#build)**) it will be truncated. 
+**[How to build](#build)**) it will be truncated.
 
 If you actually do want to search for a string starting with a **`-`** you must
 disable further parsing of options by using the **`-`** option itself; for
@@ -553,7 +553,7 @@ range. Note here that **`rand()`** returns an **`int`** and **`strtol()`**
 returns a **`long`** but I compare the return value of **`rand()`** to the
 mutation rate; if there are any systems where the widths differ this *shouldn't
 matter* because of truncation but I do in any case specifically check for **`R <
-0 || R > 100`**. Either way the invalid range returns the typewriter to Eric. 
+0 || R > 100`**. Either way the invalid range returns the typewriter to Eric.
 
 
 7.  **`test`**
@@ -577,7 +577,7 @@ Generation  109 Offspring 13: TEST
 In this case I also enabled quiet mode but I didn't join the options; the
 **`-r101`** reports that it's out of range and sets monkey mode. I then specify
 the target string and then set a valid mutation rate. This disabled monkey mode
-which means that it'll use the genetic algorithm. 
+which means that it'll use the genetic algorithm.
 
 One more example of monkey mode:
 
@@ -860,7 +860,7 @@ behaviour of the program in a number of ways (see the
 capped to be no greater than **`SIZE_MAX - 1`**. This is handled by the C
 preprocessor.
 
-**`S`**    
+**`S`**
 
 This determines the maximum size of the target string but it **must be at least
 38**; this is because **`38 >= 29`** and because **`strlen("METHINKS IT IS LIKE

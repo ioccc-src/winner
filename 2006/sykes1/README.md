@@ -2,7 +2,7 @@
 
 Stephen Sykes  
 Finland  
-<https://web.archive.org/web/20160316092728/http://www.stephensykes.com/>  
+<https://web.archive.org/web/20160316092728/http://www.stephensykes.com/>
 
 ## To build:
 
@@ -24,7 +24,7 @@ Next point your browser to the file: `sykes1.html`.
 ./sykes1 10
 ```
 
-Refresh your browser.  
+Refresh your browser.
 
 ### Also try:
 

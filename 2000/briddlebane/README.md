@@ -1,8 +1,8 @@
 # Best Abuse of User
 
-Moxen N. Briddlebane  
+Moxen N. Briddlebane
 
-Lord Zarbon  
+Lord Zarbon
 
 
 ## To build:

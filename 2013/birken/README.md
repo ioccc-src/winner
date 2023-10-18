@@ -2,7 +2,7 @@
 
 Michael Birken  
 <o__1@hotmail.com>  
-<http://www.meatfighter.com/>  
+<http://www.meatfighter.com/>
 
 
 ## To build:
@@ -14,7 +14,7 @@ make alt
 ## To run:
 
 To see why we recommend the alternate version instead of the original version,
-see the [original code](#original-code) section. 
+see the [original code](#original-code) section.
 
 ```sh
 ./birken.alt < 17_columns_wide_paint_by_numbers_file

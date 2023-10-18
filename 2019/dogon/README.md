@@ -1,6 +1,6 @@
 # Best use of space and time
 
-Gil Dogon  
+Gil Dogon
 
 ## To build:
 

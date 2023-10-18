@@ -6,7 +6,7 @@ University of Warwick
 Wrestlingworth  
 Sandy Beds  
 SG19 2HA  
-England  
+England
 
 ## To build:
 
@@ -52,7 +52,7 @@ enjoyment high.
        ___   hapehfunoyr    |   /\   Qvnzbaqf. Gurl pna rvgure or sbhaq ylvat
       /@@@\    obhyqre      |  <  >  nebhaq (vs bayl!) be znahsnpgher ol chfuvat
       \@@@/                 |   \/   gjb 'pehfunoyr' ebpxf gbtrgure.
-			    |              
+			    |
 
     Gur trareny vqrn bs gur tnzr vf gb pbyyrpg nyy gur qvnzbaqf. Guvf zhfg
     or qbar va gur zvavzhz nzbhag bs zbirf. V'ir nyybjrq n znetva bs 5

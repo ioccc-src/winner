@@ -3,7 +3,7 @@
 Daniel Vik  
 US  
 <https://www.vik.cc/>  
-<http://www.danielvik.com>  
+<http://www.danielvik.com>
 
 ## To build:
 

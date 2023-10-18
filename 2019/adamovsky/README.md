@@ -1,6 +1,6 @@
 # Most functional interpreter
 
-Ondřej Adamovský <oa@cmail.cz>  
+Ondřej Adamovský <oa@cmail.cz>
 
 ## To build:
 

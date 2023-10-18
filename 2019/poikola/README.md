@@ -1,7 +1,7 @@
 # Most calendrical
 
 Timo Poikola  
-<https://ig.fi/other/ioccc>  
+<https://ig.fi/other/ioccc>
 
 ## To build:
 

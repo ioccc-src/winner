@@ -3,7 +3,7 @@
 Vincent Weaver  
 US  
 <vince@deater.net>  
-<http://www.deater.net/weave/>  
+<http://www.deater.net/weave/>
 
 ## To build:
 

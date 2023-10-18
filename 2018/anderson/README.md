@@ -1,6 +1,6 @@
 # Most able to divine code gaps
 
-Derek Anderson  
+Derek Anderson
 
 ## To build:
 

@@ -1,7 +1,7 @@
 # Most likely to succeed
 
     Yves-Marie Morgan  
-    <yves-marie.morgan@parrot.com>  
+    <yves-marie.morgan@parrot.com>
 
 ## To build:
 
