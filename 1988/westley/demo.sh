@@ -13,5 +13,3 @@ sleep 1
 
 echo "$ ./westley"
 ./westley
-
-echo
