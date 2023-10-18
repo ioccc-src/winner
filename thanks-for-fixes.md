@@ -307,7 +307,12 @@ the code can refer to `gets()` instead.
 
 Cody fixed this for modern systems. The problem was `'assignment to cast is
 illegal, lvalue casts are not supported'`. For the original file see the
-README.md file.
+README.md file. Unfortunately this ruins some symmetry. To try and resolve this
+as much as possible at first code was commented out but later on the commented
+out code was removed and another part changed so that, although it has some code
+no longer there, it has a closer match in symmetry and since the code was
+commented out it's probably not a big deal to have it removed instead as it does
+look more symmetrical now.
 
 Cody also added to the Makefile `-include stdio.h` in the nowadays very
 unlikely(?) but nevertheless suggested case that `putchar()` is not available.
