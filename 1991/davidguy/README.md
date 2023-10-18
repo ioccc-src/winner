@@ -4,7 +4,7 @@ David Applegate
 School of Computer Science	
 Carnegie Mellon University	
 Pittsburgh PA 15213		
-US				
+US
 
 
 Guy Jacobson  
