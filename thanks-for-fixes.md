@@ -127,6 +127,10 @@ char x {sizeof(
 
 and changing the type of `k` to be an `int`.
 
+Additionally, because of the `#define union static struct` there is no need to
+have in the code `static struct` as we can have it like the original code which
+has it as `union`.
+
 Originally Yusuke supplied a patch so that this entry would compile with gcc -
 but not clang - or at least some versions.
 
