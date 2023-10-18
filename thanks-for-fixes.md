@@ -460,6 +460,9 @@ was fixed by Misha Dynin, based on the judges' remarks, so that this would work
 with modern C compilers. We encourage you to try the alternate version to see
 what happens with current compilers! See the README.md files for details.
 
+Cody added the [demo.sh](1988/westley/demo.sh) script to show the magic of the
+entry as seeing the code with the result at once is far more beautiful.
+
 
 ## [1989/fubar](1989/fubar/fubar.c) ([README.md](1989/fubar/README.md]))
 
