@@ -12,19 +12,19 @@ contributed thousands, that we wish to thank.
 We call out the extensive contributions of [Cody Boone
 Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson) who is
 responsible for many of the improvements including many, many **very complicated
-bug fixes** such as [2001/anonymous](2001/anonymous/README.md) and
-[2004/burley](2004/burley/README.md), making entries not require
-`-traditional-cpp` (which are **very complicated fixes**), fixing entries to
-compile with clang, fixing entries to work with macOS (some of which are **very
-complicated** such as [1998/schweikh1](1998/schweikh1/README.md)), fixing code
-to work with both 32-bit and 64-bit (such as
-[2001/herrmann2](2001/herrmann2/README.md)) which *can be* **quite complicated
-too** (though not always even if it seems it), providing alternate code where
-useful or necessary, fixing where possible dead links and otherwise removing
-them, typo and consistency fixes, improving **ALL _Makefiles_** and writing the
-[sgit tool](https://github.com/xexyl/sgit) that we installed locally and have
-used to easily run `sed` on files in the repository to help build the website.
-Thank you **very much** for your extensive efforts in helping improve the IOCCC
+bug fixes** ([1988/phillipps](1988/phillipps/README.md),
+[2001/anonymous](2001/anonymous/README.md), [2004/burley](2004/burley/README.md)
+and others) making entries not require `-traditional-cpp` (which are **very
+complicated fixes**), fixing entries to compile with clang, fixing entries to
+work with macOS (some of which are **very complicated** like
+[1998/schweikh1](1998/schweikh1/README.md)), fixing code to work with both
+32-bit and 64-bit (e.g.  [2001/herrmann2](2001/herrmann2/README.md)) which *can
+be* **quite complicated**, providing alternate code where useful/necessary,
+fixing where possible dead links or removing them, typo/consistency fixes,
+improving **ALL _Makefiles_** and writing the [sgit
+tool](https://github.com/xexyl/sgit) that we installed locally and have used to
+easily run `sed` on files in the repository to help build the website.  **Thank
+you very much** for your extensive efforts in helping improve the IOCCC
 presentation of past IOCCC winners and making many many past entries work with
 modern systems!
 
@@ -32,7 +32,7 @@ modern systems!
 number of important bug fixes to a number of past IOCCC winners. Some of those
 fixes were **very technically challenging** such as
 [1989/robison](1989/robison/README.md), [1990/cmills](1990/cmills/README.md),
-[1992/lush](1992/lush/README.md) and [2001/ctk](2001/ctk/README.md). Thank you **very
+[1992/lush](1992/lush/README.md) and [2001/ctk](2001/ctk/README.md). **Thank you very
 much** for your help!
 
 A good number of the [past winners of the
@@ -405,10 +405,11 @@ README.md file for more details.
 
 Cody fixed this for modern systems. It did not compile with clang because it
 requires the second and third args of `main()` to be `char **` but even before
-that with gcc it printed random characters. After fixing it for clang by
-changing `main()` to call the new function `pain()` (chosen because it's a pain
-that clang requires these args to be `char **` :-) ) with the correct args it
-now works.
+that with gcc it printed random characters.
+
+After fixing it for clang by changing `main()` to call the new function `pain()`
+(chosen because it's a pain that clang requires these args to be `char **` :-) )
+with the correct args it now works.
 
 ## [1988/reddy](1988/reddy/reddy.c) ([README.md](1988/reddy/README.md))
 
