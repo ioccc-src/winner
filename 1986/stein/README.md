@@ -8,6 +8,12 @@ Jan Stein
 make all
 ```
 
+## To run:
+
+```sh
+./stein $(printf "\015\015"); echo
+```
+
 ## Judges' remarks:
 
 NOTE: to avoid problems with news and mail, the single line was split
@@ -15,14 +21,16 @@ into 3 lines.  Join all lines into a single line to recreate
 the original file.
 
 
-Try the program with the following argument:
+The 015 in the above printf command produces a control-N.
+
+One some machines, a control-M control-N arg is needed
+to get the command to output cleanly:
 
 ```sh
-./stein ^N^N
+./stein $(printf "\014\015"); echo
 ```
 
-(^N is ASCII control-N).  One some machines, ^M^L is needed to get it to
-output cleanly.  Your system may require another set of characters.
+Your system may require another set of characters.
 In time, you will figure out what it does. :-)
 
 ## Author's remarks:
