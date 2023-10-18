@@ -58,6 +58,6 @@ _,
 **
 a;
 {
-				return
+				return!
 pain(t,(int)_,
 (char *)a);}

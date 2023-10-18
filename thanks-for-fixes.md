@@ -25,8 +25,8 @@ fixing where possible dead links or removing them, typo/consistency fixes,
 improving **ALL _Makefiles_** and writing [sgit](https://github.com/xexyl/sgit)
 that we installed locally to easily run `sed` on files in the repo to help build
 the website. **Thank you very much** for your extensive efforts in helping
-improve the IOCCC presentation of past IOCCC winners and fixing almost all for
-modern systems!
+improve the IOCCC presentation of past IOCCC winners and fixing almost all past
+entries for modern systems!
 
 [Yusuke Endoh](https://www.ioccc.org/winners.html#Yusuke_Endoh) supplied a
 number of important bug fixes to a number of past IOCCC winners. Some of those
@@ -369,7 +369,7 @@ for/*/(;;);/*/k()){O/*/*/c);
 ```
 
 cannot form `fork())` in modern C compilers. Since it was not done through a
-macro it was simply changed to be 'fork()', rather than adding a new macro.
+macro it was simply changed to be `fork()`, rather than adding a new macro.
 
 (What is quite fun is that at least some C pre-processors can form these
 constructs! Can you figure out why this is?)
