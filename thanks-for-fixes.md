@@ -25,7 +25,7 @@ typo/consistency fixes, improving **ALL _Makefiles_** and writing
 [sgit](https://github.com/xexyl/sgit) that we installed locally and used to
 easily run `sed` on files in the repo to help build the website. **Thank you
 very much** for your extensive efforts in helping improve the IOCCC presentation
-of past IOCCC winners and fixing so many past entries for modern systems!
+of past IOCCC winners and fixing so many for modern systems!
 
 [Yusuke Endoh](https://www.ioccc.org/winners.html#Yusuke_Endoh) supplied a
 number of important bug fixes to a number of past IOCCC winners. Some of those
