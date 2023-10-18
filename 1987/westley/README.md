@@ -31,12 +31,10 @@ Use `westley.alt` as you would `westley` above.
 ## Judges' remarks:
 
 `putchar()` must exist in the C library and not just as a macro.
-If it fails to compile, add the line:  `#include <stdio.h>`  at the
-top of the program.
+If it fails to compile, bug your OS/compiler vendor.
 
 Line by line symmetry performed better than any C beautifier.  Think
 of if it as a C ink blot.  :-)
-
 
 ## Author's remarks:
 

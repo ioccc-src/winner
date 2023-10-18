@@ -39,7 +39,7 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-for-loop-analysis -Wno-unused-value \
-	-Wno-deprecated-non-prototype -Wno-strict-prototypes
+	-Wno-deprecated-non-prototype -Wno-strict-prototypes -Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -62,7 +62,7 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE=
+CINCLUDE= -include stdio.h
 
 # Optimization
 #

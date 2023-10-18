@@ -309,6 +309,8 @@ Cody fixed this for modern systems. The problem was `'assignment to cast is
 illegal, lvalue casts are not supported'`. For the original file see the
 README.md file.
 
+Cody also added to the Makefile `-include stdio.h` in the nowadays very
+unlikely(?) but nevertheless suggested case that `putchar()` is not available.
 
 ## [1988/dale](1988/dale/dale.c) ([README.md](1988/dale/README.md]))
 
