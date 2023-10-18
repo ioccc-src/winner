@@ -408,6 +408,10 @@ function, a redefinition of `exit()`, was not being called in main(). The
 original version is in [1988/isaak/isaak.alt.c](1988/isaak/isaak.alt.c). See the
 README.md file for more details.
 
+## [1988/litmaath](1988/litmaath/litmaath.c) ([README.md](1988/litmaath/README.md))
+
+Cody added the alt code which is code that we suggested at the time of
+publication, in the remarks, to help understand the entry, and for fun.
 
 ## [1988/phillipps](1988/phillipps/phillipps.c) ([README.md](1988/phillipps/README.md]))
 
