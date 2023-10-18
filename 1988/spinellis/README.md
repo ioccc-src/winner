@@ -1,8 +1,8 @@
 # Best abuse of the rules
 
-Diomidis Spinellis<br>
-GR<br>
-<https://www.spinellis.gr/><br>
+Diomidis Spinellis\
+GR\
+<https://www.spinellis.gr/>\
 Mastodon: <https://mstdn.social/@DSpinellis>
 
 ## To build:

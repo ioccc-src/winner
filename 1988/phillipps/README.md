@@ -1,6 +1,6 @@
 # Least likely to compile successfully
 
-Ian Phillipps<br>
+Ian Phillipps\
 UK
 
 ## To build:

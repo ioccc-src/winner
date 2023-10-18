@@ -1,7 +1,7 @@
 # Most timely rendered
 
-Christopher Mills<br>
-<mrxo@sonic.net><br>
+Christopher Mills\
+<mrxo@sonic.net>
 
 ## To build:
 

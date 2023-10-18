@@ -1,6 +1,6 @@
 # Strangest appearing program
 
-Ed Lycklama<br>
+Ed Lycklama
 
 
 ## To build:

@@ -1,6 +1,6 @@
 # Grand prize in most well-rounded in confusion
 
-Larry Wall<br>
+Larry Wall\
 US
 
 ## To build:

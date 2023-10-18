@@ -1,6 +1,6 @@
 # Worst Style
 
-Spencer Hines<br>
+Spencer Hines\
 US
 
 ## To build:

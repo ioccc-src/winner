@@ -1,6 +1,6 @@
 # Smallest large system simulator
 
-Yves-Marie Morgan<br>
+Yves-Marie Morgan\
 <yves-marie.morgan@parrot.com>
 
 ## To build:

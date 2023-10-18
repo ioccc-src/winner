@@ -1,6 +1,6 @@
 # Best Abuse of the Rules
 
-Mark Biggar<br>
+Mark Biggar\
 US
 
 ## To build:

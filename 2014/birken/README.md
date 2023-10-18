@@ -1,12 +1,12 @@
 # Best use of port 1701
 
-Michael Birken<br>
+Michael Birken\
 <o__1@hotmail.com><br>\
-<http://www.meatfighter.com/><br>
-<br>
-Alexander Prishchepov<br>
-<alepov-github@yahoo.com><br>
-<https://github.com/sans17/><br>
+<http://www.meatfighter.com/>
+
+Alexander Prishchepov\
+<alepov-github@yahoo.com>\
+<https://github.com/sans17/>
 
 ## To build:
 

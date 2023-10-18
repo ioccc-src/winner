@@ -1,7 +1,7 @@
 # Best One Liner
 
-Thomas A. Fine<br>
-US<br>
+Thomas A. Fine\
+US\
 [@thomasafine@social.linux.pizza](https://social.linux.pizza/@thomasafine)
 
 ## To build:
@@ -32,7 +32,7 @@ rotated from `the rug gary lent`!
 
 ## Judges' remarks:
 
-This filter, 80 chars plus a newline, fits into a single line on most\
+This filter, 80 chars plus a newline, fits into a single line on most
 terminals (unless your terminal has a line wrap mis-feature :-)).
 
 Note in 2023: fixing this entry to work with modern systems increased the size,
@@ -40,11 +40,11 @@ originally to 106 characters but dropped down to 85 with clever use of the
 Makefile and removal of a cast that was not strictly necessary.
 
 This entry is likely one of the smallest C implementations of this
-filter, excluding programs that resort to command line or include\
+filter, excluding programs that resort to command line or include
 file tricks.
 
 How does this program work?  Which 3 bytes of C code can be changed
-into 2 bytes, allowing the program to still work, but also stripping\
+into 2 bytes, allowing the program to still work, but also stripping
 the high bit off some input?
 
 ## Author's remarks:

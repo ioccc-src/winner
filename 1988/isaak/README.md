@@ -1,6 +1,6 @@
 # Best visuals
 
-Mark Isaak<br>
+Mark Isaak\
 US
 
 ## To build:

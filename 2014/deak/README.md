@@ -1,6 +1,6 @@
 # Most underscored argument
 
-Ferenc Deak<br>
+Ferenc Deak\
 <fritzone@gmail.com>
 
 ## To build:

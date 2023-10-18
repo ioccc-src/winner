@@ -1,6 +1,6 @@
 # Best small program
 
-Maarten Litmaath<br>
+Maarten Litmaath\
 The Netherlands
 
 ## To build:

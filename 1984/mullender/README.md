@@ -1,8 +1,7 @@
 # Grand Prize
 
-Sjoerd Mullender<br>
-<https://github.com/sjoerdmullender><br>
-<br>
+Sjoerd Mullender\
+<https://github.com/sjoerdmullender>\
 
 Robbert van Renesse
 

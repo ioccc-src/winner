@@ -1,7 +1,7 @@
 # Most catty
 
-Don Yang<br>
-<omoikane@uguu.org><br>
+Don Yang\
+<omoikane@uguu.org>\
 <http://uguu.org/>
 
 ## To build:
@@ -62,7 +62,7 @@ they tall, fat, long or squat, this source code is sure to amuse.
 
 #### Slight diversion
 
-While one of the judges was reviewing this entry on the stern of the\
+While one of the judges was reviewing this entry on the stern of the
 [Island Sky](http://www.noble-caledonia.co.uk/information/detail.asp?id=2&spid=76)
 in the middle of the Atlantic Ocean waiting for the
 [total solar eclipse of 2013](http://en.wikipedia.org/wiki/Solar_eclipse_of_November_3,_2013)

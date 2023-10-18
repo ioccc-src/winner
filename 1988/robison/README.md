@@ -1,6 +1,6 @@
 # Best abuse of C constructs
 
-Arch D. Robison<br>
+Arch D. Robison\
 US
 
 ## To build:

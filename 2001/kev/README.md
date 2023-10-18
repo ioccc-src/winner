@@ -1,8 +1,8 @@
 # Best Curses Game
 
-Kevin Pulo<br>
-Australia<br>
-<http://www.kev.pulo.com.au/><br>
+Kevin Pulo\
+Australia\
+<http://www.kev.pulo.com.au/>\
 Mastodon: <https://fosstodon.org/@devkev>
 
 

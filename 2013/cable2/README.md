@@ -1,7 +1,7 @@
 # Best of show
 
-Adrian Cable<br>
-<adrian.cable@gmail.com><br>
+Adrian Cable\
+<adrian.cable@gmail.com>\
 
 ## To build:
 
@@ -44,7 +44,7 @@ How about about hand-written C code:
 ```
 
 Sometimes typeset text will work, if the typeset has characters that
-are enough to the supported handwritten shapes.  For example<br>
+are enough to the supported handwritten shapes.  For example
 Menlo, 160 pt:
 
 ```sh

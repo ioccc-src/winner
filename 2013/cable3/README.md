@@ -1,6 +1,6 @@
 # Largest small system emulator
 
-Adrian Cable<br>
+Adrian Cable\
 <adrian.cable@gmail.com>
 
 

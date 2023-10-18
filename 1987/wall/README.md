@@ -1,6 +1,6 @@
 # Most Useful Obfuscation
 
-Larry Wall<br>
+Larry Wall\
 US
 
 ## To build:

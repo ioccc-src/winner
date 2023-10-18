@@ -1,6 +1,6 @@
 # Most illegible code
 
-Michael H. Pawka<br>
+Michael H. Pawka\
 US
 
 ## To build:

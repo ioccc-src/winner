@@ -1,7 +1,7 @@
 # Best Layout
 
-Brian Westley (aka Merlyn Leroy on usenet)<br>
-US<br>
+Brian Westley (aka Merlyn Leroy on usenet)\
+US\
 <http://www.westley.org>
 
 ## To build:

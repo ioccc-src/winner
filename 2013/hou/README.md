@@ -1,8 +1,8 @@
 # Best use of 1 Infinite Loop
 
-Qiming Hou<br>
-<hqm03ster@gmail.com><br>
-<http://www.houqiming.net><br>
+Qiming Hou\
+<hqm03ster@gmail.com>\
+<http://www.houqiming.net>\
 
 ## To build:
 
@@ -133,7 +133,7 @@ restrictions](self-imposed-restrictions) section below for more details.
 * The building process does not involve any OS tool beyond cc and make. No gzip
 compression! `a.c.gz` doesn't fit in 2053 bytes, anyway.
 * Neither [hou.c](hou.c) nor `a.c` (the *real* decompressed source) uses
-`#define` (or `cc -D`) at all.\
+`#define` (or `cc -D`) at all.
 * The source code is not required at runtime.
 * `a.c` does not drop optional features to reduce size. There are pure
 optimization code that can be dropped without affecting the converged output

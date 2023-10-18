@@ -1,6 +1,6 @@
 # Most poetic use of strings
 
-Arch D. Robison<br>
+Arch D. Robison\
 <arch.d.robison@gmail.com>
 
 ## To build:
