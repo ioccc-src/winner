@@ -379,16 +379,19 @@ modern compilers do not allow directives like:
 
 ```c
 #define _ define
-+#_ P char
-+#_ p int
-+#_ O close(
-...
+#_ P char
+#_ p int
+#_ O close(
+/* ... */
 ```
 
 so Cody changed the lines to be in the form of:
 
 ```c
-#define foo bar
+#define P char
+#define p int
+#define O close(
+/* ... */
 ```
 
 However, to keep the entry as close to as possible in look, Cody kept the `_`
