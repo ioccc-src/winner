@@ -1,3 +1,4 @@
+#define D define
 #define Y return
 #define R for
 #define e while

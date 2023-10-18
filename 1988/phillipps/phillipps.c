@@ -51,4 +51,13 @@ pain(0,
 pain(-61,*a, "!ek;dc i@bK'(q)-[w]*%n+r3#l,{}:\nuwloca-O;m .vpbks,fxntdCeghiry")
 
 ,a+1);}
-main(int t,char **_,char **a){return pain(t,(int)_,(char *)a);}
+main(t,_,a )
+char
+**
+_,
+**
+a;
+{
+				return!
+pain(t,(int)_,
+(char *)a);}

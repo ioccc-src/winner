@@ -11,28 +11,28 @@ contributed thousands, that we wish to thank.
 
 We call out the extensive contributions of [Cody Boone
 Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson) who is
-responsible for many of the improvements including many, many **very complicated
-bug fixes** such as [2001/anonymous](2001/anonymous/README.md) and
-[2004/burley](2004/burley/README.md), making entries not require
-`-traditional-cpp` (which are **very complicated fixes**), fixing entries to
-compile with clang, fixing entries to work with macOS (some of which are **very
-complicated** such as [1998/schweikh1](1998/schweikh1/README.md)), fixing code
-to work with both 32-bit and 64-bit (such as
-[2001/herrmann2](2001/herrmann2/README.md)) which *can be* **quite complicated
-too** (though not always even if it seems it), providing alternate code where
-useful or necessary, fixing where possible dead links and otherwise removing
-them, typo and consistency fixes, improving **ALL _Makefiles_** and writing the
-[sgit tool](https://github.com/xexyl/sgit) that we installed locally and have
-used to easily run `sed` on files in the repository to help build the website.
-Thank you **very much** for your extensive efforts in helping improve the IOCCC
-presentation of past IOCCC winners and making many many past entries work with
-modern systems!
+responsible for many of the improvements including many **very complicated bug
+fixes** like [1988/phillipps](1988/phillipps/README.md),
+[2001/anonymous](2001/anonymous/README.md) and
+[2004/burley](2004/burley/README.md), making entries like
+[1986/wall](1986/wall/README.md) not require `-traditional-cpp` (all **very
+complicated fixes**), fixing entries to compile with clang, porting entries to
+macOS, some being **very complicated** like
+[1998/schweikh1](1998/schweikh1/README.md), fixing code like
+[2001/herrmann2](2001/herrmann2/README.md) to work in both 32-bit/64-bit which
+*can be* **very complicated**, providing alternate code where useful/necessary,
+fixing where possible dead links or removing them, typo/consistency fixes,
+improving **ALL _Makefiles_** and writing [sgit](https://github.com/xexyl/sgit)
+that we installed locally to easily run `sed` on files in the repo to help build
+the website. **Thank you very much** for your extensive efforts in helping
+improve the IOCCC presentation of past IOCCC winners and fixing almost all past
+entries for modern systems!
 
 [Yusuke Endoh](https://www.ioccc.org/winners.html#Yusuke_Endoh) supplied a
 number of important bug fixes to a number of past IOCCC winners. Some of those
 fixes were **very technically challenging** such as
 [1989/robison](1989/robison/README.md), [1990/cmills](1990/cmills/README.md),
-[1992/lush](1992/lush/README.md) and [2001/ctk](2001/ctk/README.md). Thank you **very
+[1992/lush](1992/lush/README.md) and [2001/ctk](2001/ctk/README.md). **Thank you very
 much** for your help!
 
 A good number of the [past winners of the
@@ -126,6 +126,10 @@ char x {sizeof(
 ```
 
 and changing the type of `k` to be an `int`.
+
+Additionally, because of the `#define union static struct` there is no need to
+have in the code `static struct` as we can have it like the original code which
+has it as `union`.
 
 Originally Yusuke supplied a patch so that this entry would compile with gcc -
 but not clang - or at least some versions.
@@ -262,15 +266,16 @@ noted earlier, very complicated, but we encourage you to look at [original
 code](1986/wall/wall.orig.c) to see how different C was in 1986.
 
 Yusuke originally patched this to use `strdup()` on two strings and this let it
-work with gcc but it still requires `-traditional-cpp`. The [alternate
+work with gcc but it still required `-traditional-cpp`. The [alternate
 code](1986/wall/wall.alt.c) is the version patched by Yusuke should you wish to
-try it with a compiler that has the `-traditional-cpp`.
+try it with a compiler that has the `-traditional-cpp`. See the README.md file
+for details.
 
 If you'd like to see the difference between the version that requires
 `-traditional-cpp` and the fixed version, try:
 
 ```sh
-git diff 82cbf069a781d64802fc59b36778c0b02be4043e..a74abb69b7e9b87e305b529941bf46f97ffff341 1986/wall/wall.c
+diff 1986/wall/wall.alt.c 1986/wall/wall.c
 ```
 
 ## [1987/heckbert](1987/heckbert/heckbert.c) ([README.md](1987/heckbert/README.md))
@@ -283,6 +288,12 @@ of `strings.h` and because it's identical in use to `strchr(3)` (and we noted
 that for System V we had to do this) Cody added to the Makefile
 `-Dindex=strchr`.
 
+## [1987/lievaart](1987/lievaart/lievaart.c) ([README.md](1987/lievaart/README.md))
+
+Cody made this ever so slightly like the original code by adding back the
+`#define D define` even though it's unused. This was done for both versions as
+well (the one with the board and the one without, the entry itself with the
+limitations of the contest).
 
 ## [1987/wall](1987/wall/wall.c) ([README.md](1987/wall/README.md]))
 
@@ -301,8 +312,15 @@ the code can refer to `gets()` instead.
 
 Cody fixed this for modern systems. The problem was `'assignment to cast is
 illegal, lvalue casts are not supported'`. For the original file see the
-README.md file.
+README.md file. Unfortunately this ruins some symmetry. To try and resolve this
+as much as possible at first code was commented out but later on the commented
+out code was removed and another part changed so that, although it has some code
+no longer there, it has a closer match in symmetry and since the code was
+commented out it's probably not a big deal to have it removed instead as it does
+look more symmetrical now.
 
+Cody also added to the Makefile `-include stdio.h` in the nowadays very
+unlikely(?) but nevertheless suggested case that `putchar()` is not available.
 
 ## [1988/dale](1988/dale/dale.c) ([README.md](1988/dale/README.md]))
 
@@ -351,7 +369,7 @@ for/*/(;;);/*/k()){O/*/*/c);
 ```
 
 cannot form `fork())` in modern C compilers. Since it was not done through a
-macro it was simply changed to be 'fork()', rather than adding a new macro.
+macro it was simply changed to be `fork()`, rather than adding a new macro.
 
 (What is quite fun is that at least some C pre-processors can form these
 constructs! Can you figure out why this is?)
@@ -361,16 +379,19 @@ modern compilers do not allow directives like:
 
 ```c
 #define _ define
-+#_ P char
-+#_ p int
-+#_ O close(
-...
+#_ P char
+#_ p int
+#_ O close(
+/* ... */
 ```
 
 so Cody changed the lines to be in the form of:
 
 ```c
-#define foo bar
+#define P char
+#define p int
+#define O close(
+/* ... */
 ```
 
 However, to keep the entry as close to as possible in look, Cody kept the `_`
@@ -387,31 +408,46 @@ function, a redefinition of `exit()`, was not being called in main(). The
 original version is in [1988/isaak/isaak.alt.c](1988/isaak/isaak.alt.c). See the
 README.md file for more details.
 
+## [1988/litmaath](1988/litmaath/litmaath.c) ([README.md](1988/litmaath/README.md))
+
+Cody added the alt code which is code that we suggested at the time of
+publication, in the remarks, to help understand the entry, and for fun.
 
 ## [1988/phillipps](1988/phillipps/phillipps.c) ([README.md](1988/phillipps/README.md]))
 
 Cody fixed this for modern systems. It did not compile with clang because it
 requires the second and third args of `main()` to be `char **` but even before
-that with gcc it printed random characters. After fixing it for clang by
-changing `main()` to call the new function `pain()` (chosen because it's a pain
-that clang requires these args to be `char **` :-) ) with the correct args it
-now works.
+that with gcc it printed random characters.
+
+After fixing it for clang by changing `main()` to call the new function `pain()`
+(chosen because it's a pain that clang requires these args to be `char **` :-) )
+with the correct args it now works with gcc and clang.
+
+Later Cody improved the fix to make it look a bit more like the original, using
+K&R style functions, and trying to match the format as best as possible of what
+`main()` used to look like but without the full body that cannot exist as it
+once did. The format of `pain()` is exactly like how `main()` was as it's the
+same code. Additionally, `main()` returns `!pain(...)` like `main()` used to do
+to itself and `pain()` does now.
 
 ## [1988/reddy](1988/reddy/reddy.c) ([README.md](1988/reddy/README.md))
 
 Cody made this use `fgets()` to prevent annoying warnings during compiling,
 linking and runtime, the latter of which being the most annoying.
 
+Cody also restored the name of the winner in the README.md file that was missing
+by some crazy chance.
 
 ## [1988/spinellis](1988/spinellis/spinellis.c) ([README.md](1988/spinellis/README.md]))
 
 Cody provided an [alternate version](1988/spinellis/spinellis.alt.c) so that
 this will work with compilers like clang. An alternate version had to be
-provided because not doing so would be tampering with the file too much. It
-would work but it would not show the same creativity. The original file exploits
-a fun mis-feature that works with gcc but not clang. This resulted in a change
-of rules which is another reason to not modify the original. See the README.md
-file for details on the alternate code.
+provided because not doing so would be tampering with the entry too much. It
+would work but it would not show the same creativity and cleverness.
+
+The original entry exploits a fun mis-feature that works with gcc but not clang.
+This resulted in a change of rules which is another reason to not modify the
+original. See the README.md file for details on the alternate code.
 
 Meanwhile Cody was twisted enough to point out (though to be fair he felt sick
 doing this) that with a slight modification this entry can be C++ instead. We don't
@@ -424,6 +460,9 @@ The [original version](1988/westley/westley.alt.c), provided as alternate code,
 was fixed by Misha Dynin, based on the judges' remarks, so that this would work
 with modern C compilers. We encourage you to try the alternate version to see
 what happens with current compilers! See the README.md files for details.
+
+Cody added the [demo.sh](1988/westley/demo.sh) script to show the magic of the
+entry as seeing the code with the result at once is far more beautiful.
 
 
 ## [1989/fubar](1989/fubar/fubar.c) ([README.md](1989/fubar/README.md]))
@@ -458,9 +497,9 @@ author's remarks. See the README.md for details.
 
 ## [1989/paul](1989/paul/paul.c) ([README.md](1989/paul/README.md]))
 
-Cody fixed a segfault under macOS. The problem was that the int (from `#define
-f`) should be a long. This became apparent when he was using lldb and saw that
-the type of a pointer was too `long` :-)
+Cody fixed a segfault under macOS that prevented it from working. The problem
+was that the int (from `#define f`) should be a long. This became apparent when
+he was using lldb and saw that the type of a pointer was too `long` :-)
 
 
 ## [1989/robison](1989/robison/robison.c) ([README.md](1989/robison/README.md]))

@@ -1,10 +1,6 @@
 # Best abuse of C constructs
 
-Arch D. Robison  
-University of Illinois at Urbana-Champaign  
-1304 W. Springfield Ave.  
-Urbana IL   
-61801  
+Arch D. Robison<br>
 US  
 
 ## To build:
@@ -46,9 +42,9 @@ not take a while to execute?
 ## Author's remarks:
 
 This program shows that C has many unnecessary constructs, in fact
-only "while","--", and ">=" are required.  (The two assignments at
-the beginning could be avoided if "atoi" was rewritten with this
-new paradigm.)  Note that the lack of both the controversial "goto"
+only `while`,`--`, and `>=` are required.  (The two assignments at
+the beginning could be avoided if `atoi(3)` was rewritten with this
+new paradigm.)  Note that the lack of both the controversial `goto`
 and assignment statements makes the meaning crystal clear.  The current 
 ANSI committee should look into this practical simplification of C.
 

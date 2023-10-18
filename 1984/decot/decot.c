@@ -21,7 +21,7 @@ int dup, signal;
 	goto _0;
 
 _O: while (!(k['a'] <<= - dup)) {	/*/*\*/
-	static struct tag u = {4};
+	union tag u x{4};
   }
 }
 

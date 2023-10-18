@@ -103,6 +103,7 @@ ifeq ($(CC),gcc)
 #
 #CWARN+=
 #
+CFLAGS+= -traditional-cpp
 endif
 
 
@@ -136,8 +137,11 @@ ${PROG}: ${PROG}.c
 
 # alternative executable
 #
-alt: data ${ALT_TARGET}
+alt: ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # data files
 #

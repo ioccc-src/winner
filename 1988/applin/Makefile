@@ -131,9 +131,9 @@ all: data ${TARGET}
 #
 # This entry took 75 minutes to compile on a Amdahl 5980-300E
 # (a 55658 Dhyrstone/sec/cpu machine) using the System V cpp.
-# (The GNU cpp when defined as BIG_CPP took only 45 seconds)
+# (The GNU cpp when defined as BIG_CPP took only 45 seconds.)
 # Your cpp may not be able to compile it due to a common bug
-# that results in ${CPP} running out of space.  The routine
+# that results in cpp running out of space.  The routine
 # 'zsmall' is a smaller version of the applin.c entry.
 #
 ${PROG}: ${PROG}.c

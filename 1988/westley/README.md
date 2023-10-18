@@ -10,8 +10,8 @@ US
 make all
 ```
 
-NOTE: this version is a fixed version for modern C compilers. See the Alternate
-code section below for how to use the original.
+NOTE: this version is a fixed version for modern C compilers. See the [Alternate
+code](#alternate-code) section below for how to use the original.
 
 
 ## Try:
@@ -19,6 +19,14 @@ code section below for how to use the original.
 ```sh
 ./westley
 ```
+
+Also try:
+
+```sh
+./demo.sh
+```
+
+to show the code with followed by the result so you can truly see the magic.
 
 ## Judges' remarks:
 

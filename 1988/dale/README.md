@@ -1,6 +1,6 @@
 # Best abuse of system calls
 
-Paul Dale  
+Paul Dale<br>
 Australia  
 
 ## To build:
@@ -40,7 +40,8 @@ If you have an old enough compiler you can try the original version in
 make clobber alt
 ```
 
-Use `dale.alt` as you would `dale` above.
+Use `dale.alt` as you would `dale` above. To understand the differences in more
+detail, see [thanks-for-fixes.md](/thanks-for-fixes.md).
 
 
 ## Judges' remarks

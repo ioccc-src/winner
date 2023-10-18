@@ -26,9 +26,14 @@ might enjoy looking at the original source in [wall.alt.c](wall.alt.c).
 # if you have an old enough compiler:
 make alt
 
-# or with gcc:
+# or if you have gcc:
+make CC=gcc alt
+
+# or if you have a compiler that supports -traditional-cpp that's not gcc:
 make CFLAGS+="-traditional-cpp" alt
 ```
+
+NOTE: gcc in macOS is actually clang even the binary `/usr/bin/gcc`.
 
 Use `./wall.alt` as you would `./wall`.
 

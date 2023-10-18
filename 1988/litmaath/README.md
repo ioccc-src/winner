@@ -1,6 +1,6 @@
 # Best small program
 
-Maarten Litmaath  
+Maarten Litmaath<br>
 The Netherlands  
 
 ## To build:
@@ -15,7 +15,8 @@ make
 ./litmaath some text
 ```
 
-There is an alternate version provided. See the Alternate code section below.
+There is an alternate version provided. See the [Alternate
+code](#alternate-code) section below.
 
 ## Try:
 
@@ -25,9 +26,13 @@ There is an alternate version provided. See the Alternate code section below.
 
 ### Alternate code:
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) added the
-[litmaath.alt.c](litmaath.alt.c) which we described in our remarks below. To
-use:
+
+This alternate code, added to help understand the entry and for fun, is code
+that we suggested at the time of the entry publication but which we never put in
+a file.
+
+#### To build:
+
 
 ```sh
 make alt
@@ -35,7 +40,11 @@ make alt
 
 Use `litmaath.alt` as you would `litmaath` above.
 
-Thank you Cody!
+#### Try:
+
+```sh
+./litmaath.alt six was afraid of seven because seven eight nine
+```
 
 
 ## Judges' remarks:
@@ -50,10 +59,12 @@ while (<condition>)
 
 Did you notice that the body is empty?
 
+Furthermore, it's interesting to note that only two variables are
+used to achieve everything.
 
 The best one can do to understand how the program works is to give it
 two small strings as arguments, and follow the program closely.  One
-could make the body of the 'while' loop an 'fprintf' with interesting
+could make the body of the `while` loop an `fprintf` with interesting
 variables like:
 
 
@@ -64,14 +75,12 @@ fprintf(stderr,
      (long) argv[1], argv[1] && *argv[1] ? *argv[1] : '@', argc);
 ```
 
+... which is what the [alternate code](#alternate-code) is.
 
-Furthermore, it's interesting to note that only two variables are
-used to achieve everything.
 
 ## Author's remarks:
 
 No remarks were provided by the author.
-
 
 ## Copyright and CC BY-SA 4.0 License:
 

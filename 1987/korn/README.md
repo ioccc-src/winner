@@ -1,10 +1,6 @@
 # Best One Liner
 
 David Korn   
-AT&T Bell Labs  
-MH 3C-526B, AT&T Bell Labs   
-Murray Hill, NJ   
-07974   
 US   
 
 ## To build:
@@ -13,15 +9,21 @@ US
 make all
 ```
 
+## To use:
+
+```sh
+./korn
+```
+
 ## Judges' remarks:
 
 The Judges believe that this is the best one line entry ever received.
-Compile on a `UNIX` system, or at least using a C implementation that
+Compile on a UNIX system, or at least one using a C implementation that
 fakes it.  Very few people are able to determine what this program
 does by visual inspection.  I suggest that you stop reading this
 section right now and see if you are one of the few people who can.
 
-Several points are important to understand in this program:
+Several points are important to understand this program:
 
 1. What is the symbol `unix` and what is its value in the program?  Clearly
 `unix` is not a function, and since `unix` is not declared to be a data type
@@ -34,9 +36,8 @@ characters, or `'h'`, or a string)  Consider the fact that:
 	    char *x;  
 
 
-  defines a pointer to a character (i.e. an address), and that the `=` assigns
+  defines a pointer to a `char` (i.e. an address), and that the `=` assigns
   things of compatible types.  Since:
-
 
         x = "have";
 
@@ -53,8 +54,12 @@ characters, or `'h'`, or a string)  Consider the fact that:
 
     ?
 
-David Korn's `/bin/ksh` provides us with a greatly improved version of
-the /bin/sh.  The source for v7's /bin/sh greatly inspired this contest.
+[David
+Korn](https://news.slashdot.org/story/01/02/06/2030205/david-korn-tells-all)'s
+[/bin/ksh](https://en.wikipedia.org/wiki/KornShell) provides us with a greatly
+improved version of the [/bin/sh](https://en.wikipedia.org/wiki/Bourne_shell).
+The source for [v7](https://en.wikipedia.org/wiki/Version_7_Unix)'s /bin/sh
+greatly inspired this contest.
 
 ## Author's remarks:
 
