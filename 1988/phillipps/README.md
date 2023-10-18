@@ -1,12 +1,7 @@
 # Least likely to compile successfully
 
-Ian Phillipps  
-Cambridge Consultants Ltd  
-Science Park  
-Milton Road  
-Cambridge CB4 4DW  
-England  
-
+Ian Phillipps<br>
+UK
 
 ## To build:
 
