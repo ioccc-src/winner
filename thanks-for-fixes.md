@@ -18,14 +18,14 @@ and others) making entries not require `-traditional-cpp` (which are **very
 complicated fixes**), fixing entries to compile with clang, fixing entries to
 work with macOS (some being **very complicated** like
 [1998/schweikh1](1998/schweikh1/README.md)), fixing code to work with both
-32-bit/64-bit (e.g. [2001/herrmann2](2001/herrmann2/README.md)) which *can be*
-**quite complicated**, providing alternate code where useful/necessary, fixing
-where possible dead links or removing them, typo/consistency fixes, improving
-**ALL _Makefiles_** and writing [sgit](https://github.com/xexyl/sgit) that we
-installed locally and used to easily run `sed` on files in the repository to
-help build the website. **Thank you very much** for your extensive efforts in
-helping improve the IOCCC presentation of past IOCCC winners and fixing many
-many past entries for modern systems!
+32-bit/64-bit which *can be* **very complicated** like
+[2001/herrmann2](2001/herrmann2/README.md) , providing alternate code where
+useful/necessary, fixing where possible dead links or removing them,
+typo/consistency fixes, improving **ALL _Makefiles_** and writing
+[sgit](https://github.com/xexyl/sgit) that we installed locally and used to
+easily run `sed` on files in the repo to help build the website. **Thank you
+very much** for your extensive efforts in helping improve the IOCCC presentation
+of past IOCCC winners and fixing so many past entries for modern systems!
 
 [Yusuke Endoh](https://www.ioccc.org/winners.html#Yusuke_Endoh) supplied a
 number of important bug fixes to a number of past IOCCC winners. Some of those
