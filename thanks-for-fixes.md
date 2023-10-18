@@ -427,7 +427,8 @@ Later Cody improved the fix to make it look a bit more like the original, using
 K&R style functions, and trying to match the format as best as possible of what
 `main()` used to look like but without the full body that cannot exist as it
 once did. The format of `pain()` is exactly like how `main()` was as it's the
-same code.
+same code. Additionally, `main()` returns `!pain(...)` like `main()` used to do
+to itself and `pain()` does now.
 
 ## [1988/reddy](1988/reddy/reddy.c) ([README.md](1988/reddy/README.md))
 
