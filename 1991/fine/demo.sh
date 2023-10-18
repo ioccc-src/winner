@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+#
+# demo.sh - script to demonstrate IOCCC entry 1991/fine
+#
 
 make all || exit 1
 
