@@ -177,7 +177,7 @@ A `sort_word` match this regexp:
 This file.
 
 
-### [author-names.txt](author-names.txt)
+### [author_names.txt](author_names.txt)
 
 A text file of full names of each `author`: one full name per line.
 
@@ -188,7 +188,7 @@ Anonymous YYYY
 ```
 
 
-### [author-wins.csv](author-wins.csv)
+### [author_wins.csv](author_wins.csv)
 
 A CSV (Comma Separated Values) file: one line per `author`.
 
@@ -297,7 +297,7 @@ This is a JSON file containing an example `author/author_handle.json` for a
 fictitious `author`.
 
 An `author/author_handle.json` file will be derived from the contents of the
-[author.csv](author.csv) file and the [author-wins.csv](author-wins.csv) file.
+[author.csv](author.csv) file and the [author_wins.csv](author_wins.csv) file.
 
 
 ### [example.dot_winner.json](example.dot_winner.json)
@@ -306,7 +306,7 @@ This is a JSON file containing an example `year/dir/.winner.json` for a
 fictitious `winner`.
 
 A `year/dir/.winner.json` file will be derived from the contents the `year/dir/.id` file,
-the [author-wins.csv](author-wins.csv) file, the `year/dir/.year` file,  and the
+the [author_wins.csv](author_wins.csv) file, the `year/dir/.year` file,  and the
 contents of the `year/dir` directory.
 
 
@@ -316,6 +316,27 @@ A list of files that exist, or should exist once the tools to generate certain f
 such as the `index.html`, or the `.winner.json` files for each entry, are created.
 
 
+### [fix_numbers_csv.sh](fix_numbers_csv.sh)
+
+This tool will fix the [manifest.csv](manifest.csv) and [missing_manifest.csv](missing_manifest.csv)
+files, removing carriage returns and appending a newline if it was missing.
+
+This tool also creates / updates [full_manifest.csv](full_manifest.csv).
+
+
+### [full_manifest.csv](full_manifest.csv)
+
+Combined and sorted [manifest.csv](manifest.csv) and [missing_manifest.csv](missing_manifest.csv).
+
+This file is formed by the [fix_numbers_csv.sh](fix_numbers_csv.sh) tool.
+
+
+### [full_manifest.numbers](full_manifest.numbers)
+
+This file is formed by opening [manifest.csv](manifest.csv) in numbers
+and saving the result as a numbers file.
+
+
 ### [gen_author_json.sh](gen_author_json.sh)
 
 Temporary tool used to generate the `author/author_handle.json` files.
@@ -323,7 +344,7 @@ Temporary tool used to generate the `author/author_handle.json` files.
 The following command, executed in this directory, created the `author/` directory:
 
 ```sh
-rm -rf ../author ; ./gen_author_json.sh  author_handle.txt author.csv author-wins.csv ../author
+rm -rf ../author ; ./gen_author_json.sh  author_handle.txt author.csv author_wins.csv ../author
 ```
 
 
@@ -409,18 +430,10 @@ via the [macOS](https://www.apple.com/macos/)
 3. Click ((Export))
     * 3a. If needed click ((Replace))
 
-4. open a terminal window
-
-5. cd to the `tmp` directory
-
-6. tr -d '\015' < manifest.csv > tmp.csv
-
-7. echo >> tmp.csv
-
-8. mv -f tmp.csv manifest.csv
+4. execute ./[fix_numbers_csv.sh](fix_numbers_csv.sh)
 
 
-### [missing-manifest.numbers](missing-manifest.numbers)
+### [missing_manifest.numbers](missing_manifest.numbers)
 
 
 A [macOS](https://www.apple.com/macos) [Numbers](https://www.apple.com/numbers/)
@@ -480,40 +493,32 @@ NOTE: The winners_rank cells are either JSON null or JSON numbers.
 NOTE: All other cells are JSON strings that need to be double quoted, including the year.
 
 
-### [missing-manifest.csv](missing-manifest.csv)
+### [missing_manifest.csv](missing_manifest.csv)
 
-The [missing-manifest.csv](missing-manifest.csv) is a CSV file that was exported from the
-[missing-manifest.numbers](missing-manifest.numbers) file.
+The [missing_manifest.csv](missing_manifest.csv) is a CSV file that was exported from the
+[missing_manifest.numbers](missing_manifest.numbers) file.
 
-In case of conflict, the data in [missing-manifest.numbers](missing-manifest.numbers) file is
-considered missing-manifestitative over the [missing-manifest.csv](missing-manifest.csv) file.
+In case of conflict, the data in [missing_manifest.numbers](missing_manifest.numbers) file is
+considered missing_manifestitative over the [missing_manifest.csv](missing_manifest.csv) file.
 
-The [missing-manifest.csv](missing-manifest.csv) is generated from the [missing-manifest.numbers](missing-manifest.numbers) file,
+The [missing_manifest.csv](missing_manifest.csv) is generated from the [missing_manifest.numbers](missing_manifest.numbers) file,
 via the [macOS](https://www.apple.com/macos/)
 [Numbers](https://www.apple.com/numbers/) spreadsheet app, as follows:
 
-0. open [missing-manifest.csv](missing-manifest.csv) in numbers: modify if/as needed
+0. open [missing_manifest.csv](missing_manifest.csv) in numbers: modify if/as needed
 
 1. File -> Export To -> CSV...
     * 1a. `[ ]` Include table names (unset)
     * 1b. Text Encoding: Unicode (UTF-8)
     * 1c. Click ((Save..))
 
-2. Save As: missing-manifest.csv
+2. Save As: missing_manifest.csv
     * 2a. Select the `tmp` directory
 
 3. Click ((Export))
     * 3a. If needed click ((Replace))
 
-4. open a terminal window
-
-5. cd to the `tmp` directory
-
-6. tr -d '\015' < missing-manifest.csv > tmp.csv
-
-7. echo >> tmp.csv
-
-8. mv -f tmp.csv missing-manifest.csv
+4. execute ./[fix_numbers_csv.sh](fix_numbers_csv.sh)
 
 
 ### [sql/winners.sql](sql/winners.sql)
@@ -527,7 +532,7 @@ to generate data for the old winners directory tree.
 A text file containing `winner_id` strings: one `winner_id` per line.
 
 
-### [year-prize.csv](year-prize.csv)
+### [year_prize.csv](year_prize.csv)
 
 A CSV file: one line per `winner`.
 
