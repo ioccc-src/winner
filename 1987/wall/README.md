@@ -1,6 +1,6 @@
 # Most Useful Obfuscation
 
-Larry Wall  
+Larry Wall<br>
 US
 
 ## To build:
@@ -59,12 +59,12 @@ quit # for the cat version
 ## Judges' remarks:
 
 
-What we found amazing was how the flow of control was transferred
-between subroutines.  Careful inspection will show that the array of
-pointers to functions named `vi` refers to functions which seem to not
-be directly called.  Even so, these pointers to functions are being
-used as an argument to `signal()` (used both with and without an arg - but
-how?).  Can you determine why this is being done and how it is being exploited?
+What we found amazing was how the flow of control was transferred between
+subroutines.  Careful inspection will show that the array of pointers to
+functions named `vi` refers to functions which seem to not be directly called.
+Even so, these pointers to functions are being used as an argument to
+`signal(3)` (used both with and without an arg - but how?).  Can you determine
+why this is being done and how it is being exploited?
 
 Some compilers complained about this file, so we changed: `=++I` to `= ++I`.
 
