@@ -1,6 +1,6 @@
 # Most percussive
 
-Nathan Otterness  
+Nathan Otterness\
 <https://github.com/yalue>
 
 ## To build:

@@ -1,6 +1,6 @@
 # Most in need of transparency
 
-Don Yang  
+Don Yang\
 <http://uguu.org/>
 
 ## To build:

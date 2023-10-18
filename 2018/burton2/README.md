@@ -1,6 +1,6 @@
 # Best abuse of the rules
 
-Dave Burton  
+Dave Burton\
 <http://ioccc.snox.net>
 
 ## To build:
@@ -45,45 +45,45 @@ that is saying something!  What is this program weighing and how much does it we
 ### tac - tokenize and count C and derivative languages:
 
 ```
-tac computes C program size  
-(obfuscated / otherwise)  
-by splitting code as tokens small,  
+tac computes C program size\
+(obfuscated / otherwise)\
+by splitting code as tokens small,\
 ignoring space, then counting all.
 
-It tries quite hard to act the same  
-as counting tool of I-OCCC fame.  
+It tries quite hard to act the same\
+as counting tool of I-OCCC fame.\
 Some bugs were fixed, it's faster too,
 and does more things, just add some glue!
 
-It does far more than print the size:  
-the token part's a better prize!  
-With each upon on a single line,  
+It does far more than print the size:\
+the token part's a better prize!\
+With each upon on a single line,\
 how many things can you design?
 
-Included is a keyword sorter,  
-de-obfuscator, freq reporter.  
-With code produced as little parts,  
+Included is a keyword sorter,\
+de-obfuscator, freq reporter.\
+With code produced as little parts,\
 just add your own creative arts.
 
-But first you have to figure out  
-the braces part, without a doubt!  
-And then the code - it isn't easy:  
+But first you have to figure out\
+the braces part, without a doubt!\
+And then the code - it isn't easy:\
 for as else?  That's rather cheesy!
 
-The rest of it is standard fare:  
-expressions strange, the globals bare,  
-confusing symbols one and oh,  
+The rest of it is standard fare:\
+expressions strange, the globals bare,\
+confusing symbols one and oh,\
 and precedence you have to know.
 
-The keyword list was made external,  
+The keyword list was made external,\
 because of standards change eternal.
-Thus other languages can now,  
+Thus other languages can now,\
 be counted just like C, somehow!
 
-I hope you find this code obscure  
-enough to win, and thus procure  
-a public place for all to see  
-how badly I can butcher C!  
+I hope you find this code obscure\
+enough to win, and thus procure\
+a public place for all to see\
+how badly I can butcher C!\
 ```
 
 ### Said another way....
@@ -204,7 +204,7 @@ winning entry keywords are checked first.
 
 > An interesting aside: as might be expected, obfuscation has changed the frequency of
 > keyword distribution over time.  The top five for the decades:
-> 
+>\
 >       1980s       1990s       2000s       2010s
 >         -----       -----       -----       -----
 >         94 if       532 char    375 if      254 int
@@ -271,9 +271,9 @@ sed 's/^# .*$//' | sed 's/^#//' |
 
 * I assume you noticed the [braces][2]?
 
-  _Every brace is sacred,  
-  Every brace is great.  
-  If a brace is wasted,  
+  _Every brace is sacred,\
+  Every brace is great.\
+  If a brace is wasted,\
   Clang gets quite irate_.
 
 * Keywords follow the 2010s top five, without the `if`, for interesting flow control.

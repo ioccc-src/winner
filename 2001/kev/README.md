@@ -37,7 +37,7 @@ paddle. See below Alternate code.
 ## Try:
 
 ```sh
-./kev 
+./kev\
 ./kev localhost
 ```
 

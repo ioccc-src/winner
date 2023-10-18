@@ -1,9 +1,9 @@
 # Most Obfuscated Syntax
 
-Michael Savastio  
-Securicor Telesciences  
-925 1/2 Anchor St, Apt 2  
-Philadelphia, PA  19124  
+Michael Savastio\
+Securicor Telesciences\
+925 1/2 Anchor St, Apt 2\
+Philadelphia, PA  19124\
 US
 
 ## To build:

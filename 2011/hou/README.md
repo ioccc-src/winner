@@ -1,6 +1,6 @@
 # Best self documenting program
 
-Hou Qiming   
+Hou Qiming\
 <hqm03ster@gmail.com>
 
 ## To build:

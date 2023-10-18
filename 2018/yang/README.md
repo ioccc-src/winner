@@ -1,6 +1,6 @@
 # Most shifty
 
-    Don Yang  
+    Don Yang\
     <http://uguu.org/>
 
 ## To build:

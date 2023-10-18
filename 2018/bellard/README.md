@@ -1,6 +1,6 @@
 # Most inflationary
 
-Fabrice Bellard  
+Fabrice Bellard\
 <https://bellard.org/>
 
 ## To build:
@@ -68,7 +68,7 @@ as the algorithms already have a significant complexity.
 Although the program was optimized to decompress its built-in image,
 it accepts to decompress image files from its standard
 input. Examples:
-  
+\
 ```sh
 ./prog d < lena512.bin > lena512.ppm
 ./prog d < fruits.bin > fruits.ppm

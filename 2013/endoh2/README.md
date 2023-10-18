@@ -1,8 +1,8 @@
 # Most recyclable
 
-Yusuke Endoh  
-<mame@ruby-lang.org>  
-<https://github.com/mame/>  
+Yusuke Endoh\
+<mame@ruby-lang.org>\
+<https://github.com/mame/>\
 Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 
 ## To build:
@@ -35,7 +35,7 @@ cat jpeg.c
 Next look at `jpeg.jpg` in an image viewer program.
 
 ## Judges' remarks:
-    
+\
 This is a program which, when fed its own source, generates a program that
 almost is its whitespace inverse, which, in its order, generates a JPEG file
 (speaking of file size abuse, that is about 16.4 times larger than a PBM file

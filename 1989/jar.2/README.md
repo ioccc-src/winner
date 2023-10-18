@@ -1,10 +1,10 @@
 # Best of show
 
-Jari Arkko, Ora Lassila, Esko Nuutila  
-Laboratory of Information Processing Science  
-Helsinki University of Technology  
-Otakaari 1  
-02150 Espoo  
+Jari Arkko, Ora Lassila, Esko Nuutila\
+Laboratory of Information Processing Science\
+Helsinki University of Technology\
+Otakaari 1\
+02150 Espoo\
 Finland
 
 ## To build:
@@ -35,7 +35,7 @@ is impressive enough to win the Best of show award.
 ## Author's remarks:
 
 This program implements a Lisp interpreter in 1465 bytes of source.
-Some sophisticated features supported, eg. functionals and recursion.  
+Some sophisticated features supported, eg. functionals and recursion.\
 The special-forms/functions/variables implemented are:
 
 - \+

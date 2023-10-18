@@ -1,7 +1,7 @@
 # Best data utility
 
-Szabolcs Borsanyi    
-Germany  
+Szabolcs Borsanyi\
+Germany\
 <borsanyi@uni-wuppertal.de>
 
 ## To build:

@@ -1,10 +1,10 @@
 # Most Fun
 
-David Lowe		
-US					
+David Lowe\
+US\
 <https://github.com/dlowe>
 
-Neil Mix  
+Neil Mix\
 US
 
 ## To build:
@@ -54,7 +54,7 @@ around the border of the playing board, and decide when and where to drop
 it into the board.  Sound easy?  Of course, there's a catch...
 
 ### Controls
-     
+\
 Only three controls:
 
 'a' moves the current letter one position counterclockwise around

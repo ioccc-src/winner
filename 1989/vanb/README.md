@@ -1,10 +1,10 @@
 # Best one liner
 
-David Van Brackle  
-Department of Computer Science  
-University of Central Florida  
-Orlando, Florida   
-32816  
+David Van Brackle\
+Department of Computer Science\
+University of Central Florida\
+Orlando, Florida\
+32816\
 US
 
 
@@ -17,21 +17,21 @@ make all
 ## Try:
 
 ```sh
-./vanb the rug gary lent	
+./vanb the rug gary lent\
 ./vanb unix is better than os/2
 ```
 
 ## Judges' remarks:
 
 This program computes all proper subsets of the set of
-arguments passed to it.  Each subset is printed with one 
+arguments passed to it.  Each subset is printed with one\
 element on each line, followed by a line of ten dashes.
 
 
 
 ## Author's remarks:
 
-The program has the following charming and possibly 
+The program has the following charming and possibly\
 non-portable features:
 
 * It has no local or global variables, only the command-line parameters.

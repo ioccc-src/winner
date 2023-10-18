@@ -1,7 +1,7 @@
 # Best use of cocoa - Bronze award
 
-Daniel Vik  
-<daniel@vik.cc>  
+Daniel Vik\
+<daniel@vik.cc>\
 <http://danielvik.com/>
 
 

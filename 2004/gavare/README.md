@@ -1,7 +1,7 @@
 # Best Use of Light and Spheres
 
-Anders Gavare  
-Sweden  
+Anders Gavare\
+Sweden\
 <https://gavare.se>
 
 ## To build:

@@ -1,10 +1,10 @@
 # Best self-modifying program
 
-Jay Vosburgh  
-Sequent Computer Systems, Inc  
-15450 SW Koll Parkway  
-Beaverton, OR  
-97006  
+Jay Vosburgh\
+Sequent Computer Systems, Inc\
+15450 SW Koll Parkway\
+Beaverton, OR\
+97006\
 US
 
 ## To build:
@@ -43,16 +43,16 @@ is not in the repository.
 ## Author's remarks:
 
 In a nutshell, this is probably the slowest and most
-obnoxious factorial program ever written.  Unfortunately, 
-the name of the C source must be "ouroboros.c"; the name is 
+obnoxious factorial program ever written.  Unfortunately,\
+the name of the C source must be "ouroboros.c"; the name is\
 hard-coded into the program.
 
-The source is a legal shell script and a legal C program.  
+The source is a legal shell script and a legal C program.\
 The shell script compiles itself, and then executes the
-resulting binary, giving the source as input.  The program 
+resulting binary, giving the source as input.  The program\
 works by successively modifying #define lines each pass through.
 
-Both `indent` and `cb` will damage the program, `indent` 
+Both `indent` and `cb` will damage the program, `indent`\
 much more so.
 
 ## Copyright and CC BY-SA 4.0 License:

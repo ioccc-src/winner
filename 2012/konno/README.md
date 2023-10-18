@@ -1,7 +1,7 @@
 # Best one liner
 
-Taketo Konno  
-Japan  
+Taketo Konno\
+Japan\
 <inaniwa3@gmail.com>
 
 ## To build:

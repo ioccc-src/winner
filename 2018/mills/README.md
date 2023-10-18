@@ -124,13 +124,13 @@ the system to look at the first partition on the first RK05 fixed disk, find
 the `rkunix` file and load it.  You should eventually see the following:
 
         >boot
-        
+\
         40Boot
         : rk(0,0)rkunix
-        
+\
         Berkeley UNIX (Rev. 2.9.1) Sun Nov 20 14:55:50 PST 1983
         mem = 135872
-    
+\
         CONFIGURE SYSTEM:
         xp ? csr 176700 vector 254 skipped:  No CSR
         rk 0 csr 177400 vector 220 attached
@@ -148,8 +148,8 @@ the `rkunix` file and load it.  You should eventually see the following:
         vp ? csr 177500 vector 174 skipped:  No autoconfig routines
         lp ? csr 177514 vector 200 skipped:  No CSR
         Erase=^?, kill=^U, intr=^C
-        # 
-    
+        #\
+\
 Congratulations, you are running BSD UNIX 2.9 in single-user mode as root.
 
 On the other hand, if you did a typo somewhere, the boot loader has probably
@@ -208,7 +208,7 @@ you should see:
         @rkunix
         mem = 1035
         RESTRICTED RIGHTS
-        
+\
         Use, duplication or disclosure is subject to
         restrictions stated in Contract with Western
         Electric Company, Inc.
@@ -225,7 +225,7 @@ Assuming you're more careful than that, we can try a few commands:
         @rkunix
         mem = 1035
         RESTRICTED RIGHTS
-        
+\
         Use, duplication or disclosure is subject to
         restrictions stated in Contract with Western
         Electric Company, Inc.
@@ -347,39 +347,39 @@ Now `ls` will work, and we can try some other things while we are here:
         password: dmr
         @ ln dd dmr .
         @ ls
-        dd      
-        system  
-        as.s    
+        dd\
+        system\
+        as.s\
         b_readme
-        bi.s    
-        bl.s    
-        db.s    
-        hello.b 
-        ops.s   
-        .       
+        bi.s\
+        bl.s\
+        db.s\
+        hello.b\
+        ops.s\
+        .\
         @ cat b_readme
         Here is how to compile and run hello.b:
-        
+\
           @ bc hello.b hello.s
           @ as ops.s bl.s hello.s bi.s
           I
           II
-          ops.s   
-          bl.s    
-          hello.s 
-          bi.s    
+          ops.s\
+          bl.s\
+          hello.s\
+          bi.s\
           @ a.out
           Hello, World!
-        
-        
+\
+\
         @ bc hello.b hello.s
         @ as ops.s bl.s hello.s bi.s
         I
         II
-        ops.s   
-        bl.s    
-        hello.s 
-        bi.s    
+        ops.s\
+        bl.s\
+        hello.s\
+        bi.s\
         @ a.out
         Hello, World!
         @

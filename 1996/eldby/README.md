@@ -51,14 +51,14 @@ Use `./eldby` as you would `./eldby.alt` above.
 
 ## Judges' remarks:
 
-We were impressed by the author's ability to render spheres in 3D 
+We were impressed by the author's ability to render spheres in 3D\
 in a very small chunk of code.
 
 
 ## Author's remarks:
 
 This program shows flying spheres. The program eats CPU on lesser
-equipped systems. The program will run until termination. Terminal 
+equipped systems. The program will run until termination. Terminal\
 must be vt100 or better with 80 columns and 24 rows or more.
 
 

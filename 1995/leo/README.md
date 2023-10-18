@@ -1,8 +1,8 @@
 # Best Use of Obfuscation
 
-Leonid A. Broukhis  
-46728 Crawford St., apt. 20  
-Fremont, CA 94539   
+Leonid A. Broukhis\
+46728 Crawford St., apt. 20\
+Fremont, CA 94539\
 US
 
 ## To build:
@@ -167,7 +167,7 @@ Step 6:
 
 depending on the desired "hairiness". The original (paper-based)
 algorithm was "hairy", but it didn't look as good on the screen.
-    
+\
 The program cannot handle non-hairy mode 100% correctly - step 6 happens
 to be
 
@@ -190,7 +190,7 @@ the opening for step 1 is not a single line but a cross:
 ```
                                 \./
                                 / \
-    
+\
 ```
 
 To watch it repeatedly (as a screensaver), use:
@@ -207,7 +207,7 @@ The command line:
 
 draws the same as above. Try:
 
-```sh    
+```sh\
 ./leo Variable 1 1 | cat - /dev/tty | gs -
 ```
 
@@ -224,7 +224,7 @@ if you want to pipe the output to a printer.
 begin 664 spoiler1
 M*%1H92!C;VQO;B J:7,J('1H92!S96-R970@<W=I=&-H("T@=&AE('-P86-E
 =(&)E9F]R92!I="!I<R!N;W0@82!M:7-T86ME*0II
- 
+\
 end
 ```
 

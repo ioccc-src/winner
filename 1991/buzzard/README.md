@@ -1,9 +1,9 @@
 # Best Output
 
-Sean Barrett  
-University of Maryland  
-5407 20th Place   
-Hyattsville MD 20782   
+Sean Barrett\
+University of Maryland\
+5407 20th Place\
+Hyattsville MD 20782\
 US
 
 ## To build:
@@ -79,7 +79,7 @@ Rot13 to read:
     OHTF:
 
     Lbh pna'g punatr gung ng fgneg lbh'er snpvat qbja ("fbhgu").
-	    
+\
     Gur qenjvat nytbevguz pnaabg unaqyr bcra fcnprf (gjb fhpprfvir
     fvqr-pbeevqbef jvgu ab jnyy orgjrra gurz).  Va snpg, vg pnaabg unaqyr
     fznyy qbt-yrtf cebcreyl, nygubhtu gur reebe vf fhogyr.

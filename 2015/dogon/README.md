@@ -1,6 +1,6 @@
 # Most Crafty
 
-    Gil Dogon  
+    Gil Dogon\
     <http://sokoban-gild.com>
 
 ## To build:

@@ -1,7 +1,7 @@
 # Best Emulator
 
-Stephen Sykes  
-<sds@maxisat.fi>  
+Stephen Sykes\
+<sds@maxisat.fi>\
 <https://web.archive.org/web/20160316092728/http://www.stephensykes.com/>
 
 ## To build:
@@ -154,8 +154,8 @@ RUN
 
 Many other old programs will run in this emulator too. Files with a `.PRG`
 extension should work. (Look, for instance, here:
-<http://www.zimmers.net/anonftp/pub/cbm/pet/ALLFILES.html>, 
-or try this one: <http://www.zimmers.net/anonftp/pub/cbm/pet/games/english/dungeon.prg>) 
+<http://www.zimmers.net/anonftp/pub/cbm/pet/ALLFILES.html>,\
+or try this one: <http://www.zimmers.net/anonftp/pub/cbm/pet/games/english/dungeon.prg>)\
 The filenames must be upper case in order to be loaded by the emulator.
 
 You can save programs too - try
@@ -302,7 +302,7 @@ What does this do?
 ```sh
 ./sykes pet.rom -1
 ```
-        
+\
 Have fun!
 
 ## Copyright and CC BY-SA 4.0 License:

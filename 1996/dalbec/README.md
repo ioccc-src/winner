@@ -1,9 +1,9 @@
 # Best Numerical Obfuscation
 
-John Dalbec  
-20 Squire's Ct.	(home address)  
-Canfield, OH 44406  
-US  
+John Dalbec\
+20 Squire's Ct.	(home address)\
+Canfield, OH 44406\
+US\
 <https://jpdalbec.people.ysu.edu>
 
 

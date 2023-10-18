@@ -1,10 +1,10 @@
 # Most conspiratorial
 
-Aaron Grothe  
-US  
+Aaron Grothe\
+US\
 <ajgrothe@yahoo.com>
 
-David Madore  
+David Madore\
 <http://www.madore.org/~david/>
 
 ## To build:
@@ -86,8 +86,8 @@ this case a recipe) back:
 
 ```sh
 ./grothe \
-    -cookie_recipe.txt 
-    1-/dev/urandom 2-/dev/urandom 
+    -cookie_recipe.txt\
+    1-/dev/urandom 2-/dev/urandom\
     1+cookie_piece1.dat 2+cookie_piece2.dat 3+cookie_piece3.dat 4+cookie_piece4.dat
 ```
 

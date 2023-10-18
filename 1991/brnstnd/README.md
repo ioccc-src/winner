@@ -1,6 +1,6 @@
 # Best Of Show
 
-Daniel J. Bernstein  
+Daniel J. Bernstein\
 New York University
 
 

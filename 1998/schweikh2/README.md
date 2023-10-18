@@ -1,7 +1,7 @@
 # Most Erratic Behavior
 
-Jens Schweikhardt  
-Germany  
+Jens Schweikhardt\
+Germany\
 <http://www.schweikhardt.net>
 
 

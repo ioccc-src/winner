@@ -1,9 +1,9 @@
 # ANSI Committee's Worst Abuse of C
 
-Larry Jones  
-SDRC  
-2000 Eastman Dr  
-Milford, OH 45150    
+Larry Jones\
+SDRC\
+2000 Eastman Dr\
+Milford, OH 45150\
 US
 
 

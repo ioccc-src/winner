@@ -1,8 +1,8 @@
 # PiE in the sky award
 
-Yusuke Endoh  
-<mame@ruby-lang.org>  
-<https://github.com/mame/>  
+Yusuke Endoh\
+<mame@ruby-lang.org>\
+<https://github.com/mame/>\
 Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 
 ## To build:
@@ -22,7 +22,7 @@ gcc -o pi pi.c
 and:
 
 ```sh
-./endoh2 e > e.c  
+./endoh2 e > e.c\
 gcc -o e e.c
 ./e > 271.c
 ```

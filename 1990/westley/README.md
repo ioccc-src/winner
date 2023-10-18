@@ -1,10 +1,10 @@
 # Best Layout
 
-Brian Westley (Merlyn LeRoy on usenet)  
-DigiBoard, Inc.  
-1026 Blair Ave.  
-St. Paul, MN  55104    
-US  
+Brian Westley (Merlyn LeRoy on usenet)\
+DigiBoard, Inc.\
+1026 Blair Ave.\
+St. Paul, MN  55104\
+US\
 <http://www.westley.org>
 
 
@@ -51,7 +51,7 @@ Use `westley.alt` as you would `westley`.
 
 ## Judges' remarks:
 
-If you would rather "Daisy" someone other than Westley, rename 
+If you would rather "Daisy" someone other than Westley, rename\
 the program as needed.  :-)
 
 Read each block of code as if it were a piece of correspondence.
@@ -65,15 +65,15 @@ charlie,
 		signed charlotte
 ```
 
-The original source had control-L's after each code block.  To 
-make it easier on news readers, we converted each control-L to 
+The original source had control-L's after each code block.  To\
+make it easier on news readers, we converted each control-L to\
 a blank line.
 
 
 ## Author's remarks:
 
-This is a "Picking the Daisy" simulation.  Now, instead of mangling a 
-daisy, simply run this program with the number of petals desired as 
+This is a "Picking the Daisy" simulation.  Now, instead of mangling a\
+daisy, simply run this program with the number of petals desired as\
 the argument.
 
 This is a good counter-example to peoples' complaints that C doesn't
@@ -84,7 +84,7 @@ set, statement not reached, return(e) and return.  Lint dumps core
 on some systems.  My personal favorite lint complaint is
 
 **_"warning: eroticism unused in function main"._**
-    
+\
 Also obviously, `(char)lotte` and `(char*)lie` are incompatible types...
 
 

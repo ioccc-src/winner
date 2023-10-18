@@ -1,7 +1,7 @@
 # Most sonorous output
 
-Jetro Lauha  
-Finland  
+Jetro Lauha\
+Finland\
 <http://jet.ro>
 
 ## To build:

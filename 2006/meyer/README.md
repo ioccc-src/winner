@@ -1,6 +1,6 @@
 # Best Game
 
-Raphael Meyer  
+Raphael Meyer\
 US
 
 ## To build:

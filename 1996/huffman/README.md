@@ -1,11 +1,11 @@
 # Best Obfuscated Character Set Utility
 
-Ken Huffman  
-Applied Innovation Inc  
-5800 Innovation Dr.  
-Dublin, OH 43016  
-US  
-<http://www.huffmancoding.com>  
+Ken Huffman\
+Applied Innovation Inc\
+5800 Innovation Dr.\
+Dublin, OH 43016\
+US\
+<http://www.huffmancoding.com>\
 huffmancoding@gmail.com
 
 ## To build:
@@ -53,7 +53,7 @@ This filter program is really not obfuscated code.  It compiles cleanly
 with an ANSI C compiler and comes with user documentation that even a
 blind person could read.
 
-The program is a bidirectional filter with the output of the program 
+The program is a bidirectional filter with the output of the program\
 suitable for its input.  The output of this program, when used as input,
 undoes the original program filtering.
 

@@ -1,6 +1,6 @@
 # Most Complete Use of CPP
 
-    Dominik Muth 
+    Dominik Muth\
     <muth.ioccc@freenet.de>
 
 ## To build:

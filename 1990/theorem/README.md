@@ -1,9 +1,9 @@
 # Best of Show
 
-Adrian Mariano  
-University of Washington  
-2729 72nd Ave SE  
-Mercer Island, WA 98040  
+Adrian Mariano\
+University of Washington\
+2729 72nd Ave SE\
+Mercer Island, WA 98040\
 US
 
 
@@ -69,7 +69,7 @@ operators:
 ```
 
 The symbol `^` is the power operator.  Note that it only supports
-integer powers.  Also note that all expressions are evaluated strictly 
+integer powers.  Also note that all expressions are evaluated strictly\
 left to right.  (i.e., parenthesis aren't supported).
 
 Try running the program with the following args:
@@ -80,14 +80,14 @@ Try running the program with the following args:
 ./theorem 'x^2/y+x' 0 1 0.1 6
 ```
 
-But wait, there is more!  You also get, free of charge, a 
+But wait, there is more!  You also get, free of charge, a\
 reversing filter!  Try:
 
 ```sh
 ./theorem -r 0 0 0 0 < theorem.c > sorter.c
 ```
 
-Still not impressed?  The author throws in for free, a 
+Still not impressed?  The author throws in for free, a\
 sort program! Try:
 
 ```sh

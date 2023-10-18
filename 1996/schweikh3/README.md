@@ -1,10 +1,10 @@
 # Best Utility
 
-Jens Schweikhardt  
-DFN Network Operation Center  
-Schlartaeckerweg 3 (home address)  
-D-71384 Weinstadt  
-Germany  
+Jens Schweikhardt\
+DFN Network Operation Center\
+Schlartaeckerweg 3 (home address)\
+D-71384 Weinstadt\
+Germany\
 <http://www.schweikhardt.net>
 
 ## To build:
@@ -101,14 +101,14 @@ memory models due to the identifier `far` (to be honest: this is
 untested :-) ).
 
 Does your indent cope with backslash/newline pairs inbetween
-keywords like in "re\<newline>turn"? Solaris' indent inserts spaces 
+keywords like in "re\<newline>turn"? Solaris' indent inserts spaces\
 and thereby renders the source uncompilable...
 
 The indented source will exhibit different semantics when indenting
 changes the number of lines (due to using the `__LINE__` macro in an
 expression).
 
-And what about sizeof `__TIME__`?  This one's for the philosophers 
+And what about sizeof `__TIME__`?  This one's for the philosophers\
 and physicists among us programmers. What is it? `sizeof (char *)`? -- no.
 `strlen ("hh:mm:ss")`? -- no. It's the same as `sizeof __DATE__ -
 sizeof "no"` :-)

@@ -1,10 +1,10 @@
 # Worst Abuse of the C Preprocessor
 
-Brian Westley (Merlyn LeRoy on Usenet)  
-Digi International  
-1906 James Ave.  
-St. Paul, MN  55105  
-US  
+Brian Westley (Merlyn LeRoy on Usenet)\
+Digi International\
+1906 James Ave.\
+St. Paul, MN  55105\
+US\
 <http://www.westley.org>
 
 
@@ -104,7 +104,7 @@ with "verbose" turned on).
 The goal of the game is to escape the dungeon.
 
 Here is a walk-through for the game, including a few dead-ends:
-    
+\
 ### SPOILER
 
 ```sh

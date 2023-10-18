@@ -1,7 +1,7 @@
 # Best One-liner
 
-Yusuke Endoh  
-<https://github.com/mame/>  
+Yusuke Endoh\
+<https://github.com/mame/>\
 Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 
 ## To build:
@@ -30,7 +30,7 @@ make
 
 ## Alternate code:
 
-An alternate version of this entry, `prog.alt.c`, is provided.  
+An alternate version of this entry, `prog.alt.c`, is provided.\
 This alternate code does not contain improvements suggested by [Gil
 Dogon](/winners.html#Gil_Dogon); it is
 the author's original entry.

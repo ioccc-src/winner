@@ -1,9 +1,9 @@
 # Best Game
 
-Marangoni Andrea  
-Department of Computer Science at Milano  
-Via Pausula, 72  
-62014 Corridonia (MC)  
+Marangoni Andrea\
+Department of Computer Science at Milano\
+Via Pausula, 72\
+62014 Corridonia (MC)\
 Italy
 
 ## To build:

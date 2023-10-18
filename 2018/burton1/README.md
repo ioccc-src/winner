@@ -1,6 +1,6 @@
 # Best one-liner
 
-    Dave Burton  
+    Dave Burton\
     <http://ioccc.snox.net>
 
 ## To build:
@@ -209,7 +209,7 @@ page 71, remarks:
 > that accepts a variable number of arguments, because there is no portable way
 > for the called function to determine how many arguments where actually passed
 > to it in a given call.
-> ... 
+> ...\
 > `printf`, the most common C function with a variable number of arguments,
 > ... is also non-portable and must be modified for different environments.
 

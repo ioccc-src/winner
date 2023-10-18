@@ -1,8 +1,8 @@
 # Most Portable Chess Set
 
-Oscar Toledo G.  
-Familia Toledo  
-Mexico  
+Oscar Toledo G.\
+Familia Toledo\
+Mexico\
 <https://nanochess.org>
 
 

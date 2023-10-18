@@ -1,8 +1,8 @@
 # Best sparkling utility
 
-J. David Lowe  
-US  
-<j.david.lowe@gmail.com>  
+J. David Lowe\
+US\
+<j.david.lowe@gmail.com>\
 <https://github.com/dlowe>
 
 ## To build:

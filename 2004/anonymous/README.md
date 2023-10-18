@@ -1,7 +1,7 @@
 # Best use of "Precious" Lines
 
-The author wishes to remain anonymous  
-Singapore  
+The author wishes to remain anonymous\
+Singapore\
 <https://web.archive.org/web/20040324155828/http://bicoherent.topcities.com/>
 
 ## To build:
@@ -50,7 +50,7 @@ which when translated from [Black
 Speech](https://www.glyphweb.com/arda/b/blackspeech.html) means:
 
 > [One Ring](https://www.glyphweb.com/arda/o/onering.html) to rule them all, [One
-Ring](https://www.glyphweb.com/arda/o/onering.html) to find them,  
+Ring](https://www.glyphweb.com/arda/o/onering.html) to find them,\
 > [One Ring](https://www.glyphweb.com/arda/o/onering.html) to bring them all and in the darkness bind them.
 
 

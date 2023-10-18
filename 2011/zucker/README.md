@@ -1,7 +1,7 @@
 # Most shiny
 
-Matt Zucker  
-<mzucker1@swarthmore.edu>  
+Matt Zucker\
+<mzucker1@swarthmore.edu>\
 <https://mzucker.github.io/swarthmore/>
 
 ## To build:
@@ -109,7 +109,7 @@ to a number of considerations:
     by the source code itself: the geometric construction of a
     reflection ray at an object's surface, given the incoming
     direction and surface normal.
-    
+\
 #### Further details (contains spoilers):
 
 The program is not quite a traditional ray tracer, but a "sphere

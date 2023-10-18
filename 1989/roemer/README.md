@@ -1,9 +1,9 @@
 # Best layout
 
-Lievaart, Roemer B.  
-VU-Informatica, Amsterdam  
-Marcusstraat 29/2,   
-NL 1091 TJ Amsterdam  
+Lievaart, Roemer B.\
+VU-Informatica, Amsterdam\
+Marcusstraat 29/2,\
+NL 1091 TJ Amsterdam\
 Netherlands
 
 ## To build:

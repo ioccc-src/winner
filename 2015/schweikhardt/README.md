@@ -1,6 +1,6 @@
 # Best Documented
 
-    Jens Schweikhardt  
+    Jens Schweikhardt\
     <http://www.schweikhardt.net>
 
 ## To build:

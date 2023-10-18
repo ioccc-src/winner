@@ -1,6 +1,6 @@
 # Best AI
 
-Doug Beardsley  
+Doug Beardsley\
 US
 
 

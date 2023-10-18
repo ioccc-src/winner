@@ -1,11 +1,11 @@
 # Most Unusual Data Structure
 
-Peter J Ruczynski  
-Pyramid Technology Ltd.  
-Pyramid House    
-Solatron Road  
-Farnborough  
-Hants GU14 7PL  
+Peter J Ruczynski\
+Pyramid Technology Ltd.\
+Pyramid House\
+Solatron Road\
+Farnborough\
+Hants GU14 7PL\
 England, U.K.
 
 ## To build:
@@ -25,7 +25,7 @@ make all
 This program prints out a string.  Can you figure out how
 it is done?
 
-By use of pointers to functions returning a struct of pointers 
+By use of pointers to functions returning a struct of pointers\
 to functions!
 
 Note that some compilers will be unable to compile the expression `X=g()...` in

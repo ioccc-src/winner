@@ -1,10 +1,10 @@
 # Most Space Efficient
 
-Jens Schweikhardt  
-DFN Network Operation Center  
-Schlartaeckerweg 3 (Home address)  
-D-71384 Weinstadt  
-Germany  
+Jens Schweikhardt\
+DFN Network Operation Center\
+Schlartaeckerweg 3 (Home address)\
+D-71384 Weinstadt\
+Germany\
 <http://www.schweikhardt.net>
 
 ## To build:
@@ -183,7 +183,7 @@ otherwise.
 
 `find(1)`, `ln(1)`, `rm(1)`
 
-    
+\
 ### Why I think it is obfuscated
 
 - The code is commented but this gives only an *extremely* faint clue.

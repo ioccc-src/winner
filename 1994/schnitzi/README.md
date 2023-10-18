@@ -1,10 +1,10 @@
 # Best Layout
 
-Mark Schnitzius  
-ISX Corporation  
-1165 Northchase Pkwy, Suite 120  
-Marietta, GA 30067  
-US  
+Mark Schnitzius\
+ISX Corporation\
+1165 Northchase Pkwy, Suite 120\
+Marietta, GA 30067\
+US\
 <http://computronium.org/ioccc.html>
 
 
@@ -72,7 +72,7 @@ schnitzi < info
 
 The program generates interesting results when its source file is
 used as input:
-   
+\
 ```sh
     	schnitzi < schnitzi.c
 ```
@@ -83,11 +83,11 @@ version of itself work identically (you'll need to redirect the
 output of the above command into a separate file and compile it).
 You might notice some differences in the flipped version, though.
 First off, a secret message becomes visible that was not visible
-in the original program.  Also, much of the code shows up in 
+in the original program.  Also, much of the code shows up in\
 different places in the flipped program than it appeared in the
-first program.  My first version of this program was perfectly 
+first program.  My first version of this program was perfectly\
 symmetrical along the diagonal, but later found out there were
-interesting ways to break the symmetry.  The best way to see this 
+interesting ways to break the symmetry.  The best way to see this\
 is to load both the original and flipped versions of the program
 into an editor and switch back and forth between them rapidly.
 

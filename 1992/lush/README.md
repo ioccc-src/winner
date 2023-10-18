@@ -1,6 +1,6 @@
 # Worst Abuse of the C Preprocessor
 
-Ed Luke  
+Ed Luke\
 US
 
 
@@ -21,7 +21,7 @@ make all
 ## Judges' remarks:
 
 The program uses error messages issued by the C Preprocessor to
-generate its message to the world.  One program's error is another 
+generate its message to the world.  One program's error is another\
 program's data!
 
 

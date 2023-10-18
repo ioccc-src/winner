@@ -1,9 +1,9 @@
 # Worst Abuse of the Rules
 
-Szymon Rusinkiewicz  
-Massachusetts Institute of Technology  
-305 Memorial Dr., Room 005B  
-Cambridge, Ma  02139    
+Szymon Rusinkiewicz\
+Massachusetts Institute of Technology\
+305 Memorial Dr., Room 005B\
+Cambridge, Ma  02139\
 US
 
 ## To build:
@@ -26,7 +26,7 @@ make all
 
 ## Judges' remarks:
 
-Nearly every year, one or more people would submit what they claimed 
+Nearly every year, one or more people would submit what they claimed\
 was the world's smallest self reproducing program.  While the sizes
 of these submissions varied, a quick glance would reveal that they
 were too big, until this entry came along.

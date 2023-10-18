@@ -1,6 +1,6 @@
 # Most Pointed Reaction
 
-Don Yang   
+Don Yang\
 <http://uguu.org/>
 
 
@@ -14,7 +14,7 @@ make
 ## To run:
 
 ```sh
-echo Some text | ./prog 
+echo Some text | ./prog\
 ```
 
 

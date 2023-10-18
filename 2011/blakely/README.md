@@ -1,7 +1,7 @@
 # Most devolving
 
-Philip Blakely    
-Cambridge, UK  
+Philip Blakely\
+Cambridge, UK\
 <pmblakely@gmail.com>
 
 ## To build:
@@ -34,7 +34,7 @@ This program plays [Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 if given its own source as input, and allows to check if your garden
 is a [Garden of Eden](http://en.wikipedia.org/wiki/Garden_of_Eden_%28cellular_automaton%29), all in one source.
 
-If you have enough time to spare, put the plan of your garden in a text file, 
+If you have enough time to spare, put the plan of your garden in a text file,\
 and run:
 
 ```sh

@@ -1,9 +1,9 @@
 # Best game
 
-John Tromp  
-Centre for Mathematics and Computer Science (CWI)  
-Oetgensstraat 7  
-1701CK Heerhugowaard  
+John Tromp\
+Centre for Mathematics and Computer Science (CWI)\
+Oetgensstraat 7\
+1701CK Heerhugowaard\
 Netherlands
 
 ## To build:

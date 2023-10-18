@@ -1,10 +1,10 @@
 # Best Utility
 
-Anthony C Howe  
-Mortice Kern Systems Inc.  
-Unit 1, 14 Weber Street North  
-Waterloo, Ontario  
-N2J 3G4  
+Anthony C Howe\
+Mortice Kern Systems Inc.\
+Unit 1, 14 Weber Street North\
+Waterloo, Ontario\
+N2J 3G4\
 Canada
 
 ## To build:
@@ -44,7 +44,7 @@ Like much of POSIX, obfuscation has its place.  Your task is to
 figure out where.
 
 This entry comes complete with a Posix-like command description.
-Interested POSIX balloters should lobby the IEEE for an obfuscated 
+Interested POSIX balloters should lobby the IEEE for an obfuscated\
 P1003 subcommittee.
 
 

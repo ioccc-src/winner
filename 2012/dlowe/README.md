@@ -1,8 +1,8 @@
 # Best way to lose a life
 
-J. David Lowe  
+J. David Lowe\
 US
-<j.david.lowe@gmail.com>  
+<j.david.lowe@gmail.com>\
 <https://github.com/dlowe>
 
 ## To build:

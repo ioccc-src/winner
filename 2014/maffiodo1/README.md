@@ -1,7 +1,7 @@
 # Homage to a classic game
 
-    Sandro Maffiodo  
-    <smaffer@gmail.com>  
+    Sandro Maffiodo\
+    <smaffer@gmail.com>\
     <http://www.assezeta.com/sandromaffiodo>
 
 

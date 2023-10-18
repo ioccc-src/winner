@@ -1,15 +1,15 @@
 # Best of Show
 
-Jari Arkko  
-Kauppalantie 25A7   
-02700 Kauniainen   
-Finland  
-<http://www.arkko.com>    
-  
-Jyrki Holopainen  
-Forsellesintie 1-3A10  
-02700 Kauniainen  
-Finland  
+Jari Arkko\
+Kauppalantie 25A7\
+02700 Kauniainen\
+Finland\
+<http://www.arkko.com>\
+\
+Jyrki Holopainen\
+Forsellesintie 1-3A10\
+02700 Kauniainen\
+Finland\
 <https://web.archive.org/web/20061205082106/http://personal.eunet.fi/pp/halo/>
 
 

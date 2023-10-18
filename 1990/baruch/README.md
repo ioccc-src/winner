@@ -1,15 +1,15 @@
 # Best Small Program
 
-Baruch Nissenbaum  
-Tel-Aviv University  
-The Faculty of Engineering  
-Tel-Aviv  
+Baruch Nissenbaum\
+Tel-Aviv University\
+The Faculty of Engineering\
+Tel-Aviv\
 Israel
 
-Doron Osovlanski  
-CADTECH - CAD/CAM Systems Ltd  
-24 Ben-Yosef St.  
-Givat-Shmuel   51905  
+Doron Osovlanski\
+CADTECH - CAD/CAM Systems Ltd\
+24 Ben-Yosef St.\
+Givat-Shmuel   51905\
 Israel
 
 ## To build:

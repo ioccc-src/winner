@@ -1,9 +1,9 @@
 # Most humorous output
 
-Oskar von der Luehe  
-Institut fuer Astronomie  
-ETH - Zentrum  
-8092 Zuerich  
+Oskar von der Luehe\
+Institut fuer Astronomie\
+ETH - Zentrum\
+8092 Zuerich\
 Switzerland
 
 ## To build:
@@ -22,7 +22,7 @@ Run the program this way:
 ./ovdluhe < textfile
 ```
 
-The program stops when it reaches the end of the template buffer 
+The program stops when it reaches the end of the template buffer\
 by chance or is killed.
 
 ## Try:

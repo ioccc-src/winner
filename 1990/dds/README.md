@@ -1,8 +1,8 @@
 # Best Language Tool
 
-Diomidis Spinellis  
-Greece  
-<https://www.spinellis.gr/>  
+Diomidis Spinellis\
+Greece\
+<https://www.spinellis.gr/>\
 Mastodon: <https://mstdn.social/@DSpinellis>
 
 ## To build:
@@ -57,7 +57,7 @@ This is the DDS-BASIC Interpreter (Version 1.00).
 - NEXT variable
 - GOSUB exp
 - RETURN
-- GOTO exp			
+- GOTO exp\
 - IF exp THEN exp
 - INPUT variable
 - PRINT string
@@ -90,7 +90,7 @@ Boolean expressions evaluate to 0 for false and 1 for true.
 
 - Free format positioning of tokens on the line.
 - No space is allowed before the line number.
-- Exactly one space is needed between the OLD or SAVE command and 
+- Exactly one space is needed between the OLD or SAVE command and\
   the filename.
 - ALL INPUT MUST BE UPPERCASE.
 

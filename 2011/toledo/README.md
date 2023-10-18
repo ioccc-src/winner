@@ -1,8 +1,8 @@
 # Best non-chess game
 
-Oscar Toledo G.    
-Mexico  
-<biyubi@gmail.com>   
+Oscar Toledo G.\
+Mexico\
+<biyubi@gmail.com>\
 <https://nanochess.org>
 
 ## To build:
@@ -41,13 +41,13 @@ you remove both the X11 include files and replace them with
 ```c
 #include "layer.c"
 ```
-	
+\
 you ought to be able to compile and run this program on Windows.
 
 ## Author's remarks:
 
 ```
-        /=========\                 
+        /=========\\
         \==\   /==/                ||
            || ||   /====\  |\/=\   ||      //==\   ==\ |=\
            || ||       ||  ||  ||  ||  //  ||       =| | |
@@ -145,7 +145,7 @@ Not really, just kidding :D
   Katherine & Rose.
 * Vectorial scalable graphics, do you want a bigger viewport? Change variables M
   `&` `N`.
-* Half of the program is formatted as 3D cube. View with tabs at 8 columns and a 
+* Half of the program is formatted as 3D cube. View with tabs at 8 columns and a\
   square font.
 * The other half of the program is unprintable source code, so no typing from
   paper, you have to write a converter of tabs and form-feeds to its C escaped
@@ -165,25 +165,25 @@ Not really, just kidding :D
 
 ```
 
-                                       ....,,,,---++++++--,,..                        
-                     .,,,.......     .$@@@@@@@@@@@@$$@@@@@@@@@@@@@@#+                 
-                     @@@@@###@@@@$$$@@@@$$$@@@-......-@+......,,,,,,##                
-                     =++==++++++++=@@$==#$$$$$---,,,,@@@,,,,,,-------@@,..........,,. 
+                                       ....,,,,---++++++--,,..\
+                     .,,,.......     .$@@@@@@@@@@@@$$@@@@@@@@@@@@@@#+\
+                     @@@@@###@@@@$$$@@@@$$$@@@-......-@+......,,,,,,##\
+                     =++==++++++++=@@$==#$$$$$---,,,,@@@,,,,,,-------@@,..........,,.\
         ,===#$$$$$$###$####=======@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+=##$@@@@@@@@.
         +@,,++++++++=+=========++++===++++++++++-+++@@-,,,,,,,,---+++=++++--,,...   @.
         .@.                      .......,,,,-----++=@=++==@$=+--,,...               @.
          $#         S P O I L E R              .,,-#@--,,,@$.....                   @.
          .@                           ..,--+==++-,,,,.,,,,=@+++++====+++++---,,,....@.
-          @+                ..,,-+++++++-,,..              @.         ....,,,,,---+@@ 
-          ,@       ..,--+++=+++,,..                        $#                   .==+  
-           @#--++==++-,,..                                 ,@  S P O I L E R  .==+    
-           ,#@@$+,,.                                        @.               ==+      
-               .,,+++++,,.            S P O I L E R         $=             +=+        
-                     ..,-==++-,.                            ,@           ---          
-                            .,-+=+++,..                      @.       .++-            
-                                  .,,++=++-,.                @+      ==+              
-                                        .,-++==+-,.          +@    ==+                
-                                              ..,+++=+-,..   .@. +=+                  
+          @+                ..,,-+++++++-,,..              @.         ....,,,,,---+@@\
+          ,@       ..,--+++=+++,,..                        $#                   .==+\
+           @#--++==++-,,..                                 ,@  S P O I L E R  .==+\
+           ,#@@$+,,.                                        @.               ==+\
+               .,,+++++,,.            S P O I L E R         $=             +=+\
+                     ..,-==++-,.                            ,@           ---\
+                            .,-+=+++,..                      @.       .++-\
+                                  .,,++=++-,.                @+      ==+\
+                                        .,-++==+-,.          +@    ==+\
+                                              ..,+++=+-,..   .@. +=+\
                                                      .,-+++++,@@==
 
 ```

@@ -1,9 +1,9 @@
 # Best X11 Program
 
-Teemu Rantanen  
-Helsinki University of Technology  
-Melkonkatu 5 A 8  
-00210 Helsinki  
+Teemu Rantanen\
+Helsinki University of Technology\
+Melkonkatu 5 A 8\
+00210 Helsinki\
 Finland
 
 ## To build:
@@ -33,7 +33,7 @@ The author has provided us a spoiler version:
 
 	make tvr.alt
 	./tvr.alt altmode screensize/2 < colormapfile
-    
+\
 where `altmode` `1` - `4` correspond to mode `0` - `3` in the original entry and
 `altmode 0` calculates Mandelbrot/Julian sets correctly.
 

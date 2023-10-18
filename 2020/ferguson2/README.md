@@ -1,8 +1,8 @@
 # Most enigmatic
 
-Cody Boone Ferguson <ioccc@xexyl.net>    
-<https://ioccc.xexyl.net>   
-<https://xexyl.net>  
+Cody Boone Ferguson <ioccc@xexyl.net>\
+<https://ioccc.xexyl.net>\
+<https://xexyl.net>\
 Mastodon: [@xexyl@fosstodon.org](https://fosstodon.org/@xexyl)
 
 
@@ -20,28 +20,28 @@ make
 # get recode help:
 ./recode -h
 
-# general syntax for recode passing to Enigma machine:  
-./recode [options] | ./prog - 2>/dev/null  
-# general syntax for recode without passing to Enigma machine:  
-./recode [options]  
-  
-# recode prompts for settings; pass to Enigma machine:  
+# general syntax for recode passing to Enigma machine:\
+./recode [options] | ./prog - 2>/dev/null\
+# general syntax for recode without passing to Enigma machine:\
+./recode [options]\
+\
+# recode prompts for settings; pass to Enigma machine:\
 ./recode | ./prog - 2>/dev/null
 
-# recode reads from input file, prompts for settings; pass to Enigma machine:  
+# recode reads from input file, prompts for settings; pass to Enigma machine:\
 ./recode -finput | ./prog - 2>/dev/null
 
 # recode reads config from string or file; pass to Enigma machine after
 # prompting for input:
 ./recode -R<string|file> | ./prog - 2>/dev/null
 
-# write config to output file; pass to Enigma machine after prompting for input:  
-./recode -o<config> | ./prog - 2>/dev/null  
-  
-# pseudo-randomly select settings  
+# write config to output file; pass to Enigma machine after prompting for input:\
+./recode -o<config> | ./prog - 2>/dev/null\
+\
+# pseudo-randomly select settings\
 ./recode -r
-  
-# show Enigma machine settings after selection / generation:    
+\
+# show Enigma machine settings after selection / generation:\
 ./recode -v
 
 ```
@@ -51,19 +51,19 @@ make
 ## Try:
 
 ```sh
-# IOCCC obfuscated!  
-echo IOCCC | ./prog  
-  
-# IOCCC obfuscated and de-obfuscated!:  
-echo IOCCC | ./prog | ./prog  
-  
-# more input fun:  
-./prog - < try.this.txt 2>/dev/null  
-  
-# more obfuscated fun:  
-echo testing test tests | ./recode  
-echo testing test tests | ./recode | ./prog - 2>/dev/null  
-echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode  
+# IOCCC obfuscated!\
+echo IOCCC | ./prog\
+\
+# IOCCC obfuscated and de-obfuscated!:\
+echo IOCCC | ./prog | ./prog\
+\
+# more input fun:\
+./prog - < try.this.txt 2>/dev/null\
+\
+# more obfuscated fun:\
+echo testing test tests | ./recode\
+echo testing test tests | ./recode | ./prog - 2>/dev/null\
+echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode\
 echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode | ./prog - 2>/dev/null
 
 # even more obfuscated fun saving and reading from files:
@@ -71,7 +71,7 @@ echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode | ./prog - 
 # initial clean up:
 rm -f conf input output output2
 # encrypt "testing test tests" with randomised settings saved in conf, saving
-# original string to input and original output to output:  
+# original string to input and original output to output:\
 echo testing test tests | tee input | ./recode -r -oconf | ./prog - 2>/dev/null >output
 # configure Enigma machine from conf file and read from output file, thus decrypting:
 ./recode -Rconf -foutput | ./prog - 2>/dev/null > output2
@@ -106,12 +106,12 @@ There is a good deal of useful documentation that is provided with this entry:
 ```
 
 
-* [recode.html][] (or [recode.md](recode.md) if reading on GitHub)   
+* [recode.html][] (or [recode.md](recode.md) if reading on GitHub)\
 	- Some useful information about [recode.c](recode.c)
 
 
-* [chocolate-cake.html][] (or [chocolate-cake.md](chocolate-cake.md) if reading on GitHub)   
-	- Because most of us could use some *Double-layered Chocolate Fudge Cake*!  
+* [chocolate-cake.html][] (or [chocolate-cake.md](chocolate-cake.md) if reading on GitHub)\
+	- Because most of us could use some *Double-layered Chocolate Fudge Cake*!\
 	- NOTE: see [recode.html][] (or [recode.md](recode.md) for details about how to decrypt this!
 
 

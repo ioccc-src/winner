@@ -1,9 +1,9 @@
 # Obfuscated Intelligence Award
 
-Mark Schnitzius  
-1700 Woodbury Rd. #1208  
-Orlando, FL 32828  
-US  
+Mark Schnitzius\
+1700 Woodbury Rd. #1208\
+Orlando, FL 32828\
+US\
 <http://computronium.org/ioccc.html>
 
 
@@ -58,7 +58,7 @@ What is cat?
 
 After this program prints the contents of 'file', ask it
 some questions related to the text.
-    
+\
 The author suggests the following questions when using
 [schnitzi.info](schnitzi.info):
 
@@ -72,7 +72,7 @@ The author suggests the following questions when using
 - Is it true that Elvis is alive?
 - Do colorless green ideas sleep furiously?
 
-We suggest you try using the body (minus the header and signature line) 
+We suggest you try using the body (minus the header and signature line)\
 of a Usenet article.  You might want to try something from alt.flame.  :-)
 
 NOTE: If you have a ' in the question this entry might fail.

@@ -1,7 +1,7 @@
 # Best One Liner
 
-Stephen Sykes  
-Finland  
+Stephen Sykes\
+Finland\
 <https://web.archive.org/web/20160316092728/http://www.stephensykes.com/>
 
 ## To build:

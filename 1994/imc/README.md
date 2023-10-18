@@ -1,10 +1,10 @@
 # Most Obfuscated Algorithm
 
-Ian Collier  
-Oxford University  
-57 Wyndham Avenue        (home address)  
-Bolton  
-BL3 4LG  
+Ian Collier\
+Oxford University\
+57 Wyndham Avenue        (home address)\
+Bolton\
+BL3 4LG\
 England
 
 ## To build:

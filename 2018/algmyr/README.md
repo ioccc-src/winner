@@ -31,7 +31,7 @@ echo '<<<<<<  /\_/\_/\  _-_-_-_  !!!!!  :.:.:.:  >>>>>> ****** ~~~~~~~' |
     ./prog | aplay -c1 -fFLOAT_LE -r44100
 
 # Assuming sox:
-echo -n ' MENE MENE TEKEL UPHARSIN ' | ./prog | 
+echo -n ' MENE MENE TEKEL UPHARSIN ' | ./prog |\
     sox -t raw -c 1 -r 44100 -L -e floating-point -b 32 - -n spectrogram -d 10 -X 300
 
 # now open spectrogram.png with a graphics viewer or editor

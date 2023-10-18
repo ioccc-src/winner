@@ -1,8 +1,8 @@
 # Most Well Rounded
 
-Diomidis Spinellis  
-Greece  
-<https://www.spinellis.gr/>  
+Diomidis Spinellis\
+Greece\
+<https://www.spinellis.gr/>\
 Mastodon: <https://mstdn.social/@DSpinellis>
 
 
@@ -46,7 +46,7 @@ make dds
 ```
 
 For example, the author suggests trying:
-    
+\
 ```sh
 ./dds LANDER.BAS 2>/dev/null
 ./a.out 2>/dev/null
@@ -112,13 +112,13 @@ compiler called `cc` in your path in order to work.
 ### Program commands:
 
 
-- variable names A to Z		
-- FOR var = exp TO exp		
-- GOSUB exp			
-- GOTO exp			
-- INPUT variable			
-- PRINT exp			
-- REM any text			
+- variable names A to Z\
+- FOR var = exp TO exp\
+- GOSUB exp\
+- GOTO exp\
+- INPUT variable\
+- PRINT exp\
+- REM any text\
 - variables initialized to 0 on RUN
 - NEXT variable
 - RETURN

@@ -1,9 +1,9 @@
 # Best Game
 
-Chris Mills  
-Wyse Technology  
-3471 N. 1st St.  
-San Jose CA 95134  
+Chris Mills\
+Wyse Technology\
+3471 N. 1st St.\
+San Jose CA 95134\
 US
 
 ## To build:

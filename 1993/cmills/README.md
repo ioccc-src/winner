@@ -1,9 +1,9 @@
 # "Bill Gates" Award
 
-Chris Mills  
-Pagine Corporation  
-1961-A Concourse Drive  
-San Jose, CA 95131  
+Chris Mills\
+Pagine Corporation\
+1961-A Concourse Drive\
+San Jose, CA 95131\
 US
 
 ## To build:
@@ -20,7 +20,7 @@ entry.
 ## To run:
 
 ```sh
-DISPLAY="your_X_server_display" 
+DISPLAY="your_X_server_display"\
 export DISPLAY
 ./cmills [speed]	# must be run on an X11 server
 ```
@@ -31,7 +31,7 @@ where:
 
 ## Judges' remarks:
 
-From the San Jose Mercury News (May 15, 1993 page 20A "West Hackers 
+From the San Jose Mercury News (May 15, 1993 page 20A "West Hackers\
 trounce East in computer quiz game"):
 
 
@@ -47,7 +47,7 @@ trounce East in computer quiz game"):
 [The expression on Bill Gates' face was a sight to behold, as reported
 to us by several who were there].
 
-You must set `$DISPLAY` in your environment or the program will 
+You must set `$DISPLAY` in your environment or the program will\
 dump core.  This is not a bug as the author documented it as
 a feature.  :-)
 

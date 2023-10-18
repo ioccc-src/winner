@@ -1,7 +1,7 @@
 # Most discourteous interpreter
 
-Arne "Timwi" Heizmann  
-Germany  
+Arne "Timwi" Heizmann\
+Germany\
 <timwi@gmx.net>
 
 ## To build:

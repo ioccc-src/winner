@@ -1,10 +1,10 @@
 # Best X11 Entry
 
-Jon Thingvold  
-University of Oslo  
-Gaustadveien 10B  
-N 0372 Oslo  
-Norway  
+Jon Thingvold\
+University of Oslo\
+Gaustadveien 10B\
+N 0372 Oslo\
+Norway\
 http://www.uio.no/~jonth/
 
 ## To build:

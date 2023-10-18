@@ -111,13 +111,13 @@ produces:
 
      sins ohennAu
     T-teooclelp tiThoWy
-    
+\
     g
-    nlakuafy 
+    nlakuafy\
     e
     sselW usnsofueB Aoee pasfUsuslhe ooM ot Wou moy
     me neltAl -no IoyI mhuyakse  inT-l chu ghenn ffo? fnsoe yhyye
-    ue nnfrlass heUthole saounlcesyee pee 
+    ue nnfrlass heUthole saounlcesyee pee\
     t,
     T0:0% 3.210888
     o',,vU
@@ -132,12 +132,12 @@ produces:
     T0:0% 2.995950
     d whecedhencrysesil yr bn,
     we hh y thiwt
-    
-    
+\
+\
     hut fithlot,
     Fmdy s he alt
     Vh th no dh foud bobt werw:s Aotnf Fhwi't whe, eusu
-    
+\
     lhh thele wewcond ary soupfy wind tDont couc ths:
     er fucwald oncli hen bos, f
     T0:1% 2.878945
@@ -157,11 +157,11 @@ reduce and the generated snippets will improve quickly:
     As, I nos you,
     Yov not to nalll,
     Tr tot wonds.
-    
+\
     First Sondy, llt lrte, our, tw.
-    
+\
     First.
-    
+\
     BRUTUS:
     Helsting the kith gops of hoch Whay, fars surd what to,
     The cownens golt te.
@@ -169,11 +169,11 @@ reduce and the generated snippets will improve quickly:
     eplerrotrur tandans one wiok thy or thach and cullice ded yourssting
     And wours:
     Whed ur surt.
-    
+\
     SINENIUS:
     On we lain bith
     rerytund: tich lon hyivetetgor.
-    
+\
     VOLUONIA:
     He brich nom dove worthan then wise,
     T0:13% 2.254926
@@ -189,7 +189,7 @@ validation cycle:
     y fath onother,
     I sucess,
     For I me the west crare.
-    
+\
     TRANIO:
     Whow and'd have not to had you you one in my lapteny she very ame come me a gut and shourd aghir you as ignested; shend to make I strem
     To h
@@ -212,12 +212,12 @@ validation cycle:
     We
     got you? before
     I say.
-    
+\
     Farstred dentlentecaly, sir, I it one bosticield
     All me the backnour mino,
     Whith capitaned mid! but stell the ifvemion
     Willerity.
-    
+\
     First Cumfol of
     T1:0% 1.885619
 
@@ -331,26 +331,26 @@ lacks history:
 produces:
 
     UERond w,
-    
-    
+\
+\
     Gir:
     KINof s, mesther s thouth.
     E:
     KINTret, at fu,
     GOMy t, as sth kesewit sooos atse ang k, ck,
     Sotheouserivesthecowhet been's, t he, h nre; t and, har wiread of pincer cedst sur has, ut:
-    
+\
     T14:67% 2.465115
     UKESpan,
     NGaromy soreate e m esewfoure pamitherarjulthengeoly tl.
     NG s at e! w.
-    
+\
     WAllinoully?
     Wamisw ofilem:
     I'delandinarrstath har aksubly s cath Whern t Is, weciss:
-    
+\
     GLat s; llde.
-    Y aterit dsthence 
+    Y aterit dsthence\
     T14:67% 2.465404
 
 It is able to guess at what character is likely to follow the current one

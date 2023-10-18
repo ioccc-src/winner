@@ -1,9 +1,9 @@
 # Best One Liner
 
-Brian Westley (Merlyn LeRoy on Usenet)  
-1906 James Ave.  
-St. Paul, MN  55105  
-US  
+Brian Westley (Merlyn LeRoy on Usenet)\
+1906 James Ave.\
+St. Paul, MN  55105\
+US\
 <http://www.westley.org>
 
 

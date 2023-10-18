@@ -1,22 +1,22 @@
 # Best Entropy-reducer
 
-James A. Woods  
-Research Institute for Advanced Computer Science  
-MS 230-5  
-NASA Ames Research Center  
-Moffett Field, CA 94131  
+James A. Woods\
+Research Institute for Advanced Computer Science\
+MS 230-5\
+NASA Ames Research Center\
+Moffett Field, CA 94131\
 US
 
-Karl F. Fox  
-Morning Star Technologies, Inc.  
-1760 Zollinger Road  
-Columbus, OH 43221  
+Karl F. Fox\
+Morning Star Technologies, Inc.\
+1760 Zollinger Road\
+Columbus, OH 43221\
 US
 
-Paul Eggert  
-Twin Sun Inc.  
-360 N. Sepulveda Blvd. #2055  
-El Segundo, CA 90245  
+Paul Eggert\
+Twin Sun Inc.\
+360 N. Sepulveda Blvd. #2055\
+El Segundo, CA 90245\
 US
 
 ## To build:
@@ -74,15 +74,15 @@ cmp ../README.md README.md
 ### ABSTRACT
 
 #### Minimal, Universal File Bundling (or, Functional Obfuscation in a Self-Decoding Unix Shell Archive)
- 
-James A. Woods  
-Universities Space Research Association  
+\
+James A. Woods\
+Universities Space Research Association\
 NASA Ames Research Center
 
 ---
 
 > "Use an algorithm, go to jail."
-> 			
+>\
 > -- anon., circa 1988, pre-Morris worm era
 
 ----
@@ -122,7 +122,7 @@ environment.
 >   And he shows them pearly white
 >   Just a jackknife has Macheath, dear--
 >   And he keeps it out of sight.
->   
+>\
 >   -- Bertolt Brecht, Threepenny Opera
 
 ----------------------------------------------

@@ -1,10 +1,10 @@
 # Worst Abuse of the Rules
 
-Nathan Sidwell  
-Inmos UK  
-1000 Aztec West  
-Almondsbury  
-Bristol  
+Nathan Sidwell\
+Inmos UK\
+1000 Aztec West\
+Almondsbury\
+Bristol\
 UK BS12 4SQ
 
 ## To build:

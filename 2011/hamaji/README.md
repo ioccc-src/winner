@@ -1,6 +1,6 @@
 # Best solved puzzle
 
-Shinichiro Hamaji  
+Shinichiro Hamaji\
 <shinichiro.hamaji@gmail.com>
 
 ## To build:
@@ -56,7 +56,7 @@ Game of Life](http://en.wikipedia.org/wiki/Conway's_Game_of_Life):
        1
        .
       112
-    
+\
     1  X
     1   X
     3 XXX
@@ -105,8 +105,8 @@ There are two solutions:
 
 ```
       11
-    
-    1 X 
+\
+    1 X\
     1  X
 ```
 
@@ -114,9 +114,9 @@ and
 
 ```
       11
-    
+\
     1  X
-    1 X 
+    1 X\
 ```
 
 ### Detail
@@ -192,7 +192,7 @@ Note that the behavior of `scanf()` differs on linux and mac, but this
 program supports both semantics.
 
 This program should not depend on `sizeof(int)`, `sizeof(void*)`, ASCII,
-memory layout, undefined evaluation order (e.g., `a[i++]=i`), etc. 
+memory layout, undefined evaluation order (e.g., `a[i++]=i`), etc.\
 This program won't work if the size of `long long` literal is less than 8.
 By grepping the source code of gcc
 

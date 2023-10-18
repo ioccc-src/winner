@@ -1,6 +1,6 @@
 # Most misleading indentation
 
-tsoj <tsoj.tsoj@gmx.de>  
+tsoj <tsoj.tsoj@gmx.de>\
 <https://gitlab.com/tsoj>
 
 ## To build:
@@ -33,13 +33,13 @@ reverse indentation style.
 ## Author's remarks:
 
 #### Controls
-- Movement:  
+- Movement:\
 `w` (forwards), `a` (left), `s` (backwards), `d` (right)
-- Fire:  
+- Fire:\
 `space`
-- Quit:  
+- Quit:\
 `q`
-- Pause:  
+- Pause:\
 `p`, then use any other key to resume
 
 ```
@@ -79,7 +79,7 @@ cc -std=c99 -O3 prog.c -o prog
 - `-Wno-maybe-uninitialized`
 - You may experience a mild [motion aftereffect](https://en.wikipedia.org/wiki/Motion_aftereffect) when playing for too long
 #### High score
-Score will be shown in the top left corner.  
+Score will be shown in the top left corner.\
 My best was **156**. If you beat that I'll send you the image of a very expensive chocolate.
 #### Features
 - Procedural star generation

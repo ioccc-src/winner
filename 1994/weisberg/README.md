@@ -1,10 +1,10 @@
 # Best Short Program
 
-Jeff Weisberg  
-University of Rochester  
-Dept of Electrical Engineering  
-Computer Studies Bldg  
-Rochester, NY 14627  
+Jeff Weisberg\
+University of Rochester\
+Dept of Electrical Engineering\
+Computer Studies Bldg\
+Rochester, NY 14627\
 US
 
 ## To build:

@@ -1,8 +1,8 @@
 # Strangest Abuse of the Rules
 
-Stig Hemmer  
-Norwegian Institute of Technology  
-N-7034 Trondheim-NTH  
+Stig Hemmer\
+Norwegian Institute of Technology\
+N-7034 Trondheim-NTH\
 Norway
 
 ## To build:

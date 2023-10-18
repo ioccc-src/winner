@@ -1,7 +1,7 @@
 # Most eye-crossing
 
-Immanuel Herrmann  
-Germany  
+Immanuel Herrmann\
+Germany\
 <https://web.archive.org/web/20071018081145/http://pcpool.mathematik.uni-freiburg.de/~immi/>
 
 
@@ -34,7 +34,7 @@ If you use vi(m) you can see a pattern in [herrmann2.cup](herrmann2.cup) and
 
 
 ```
-/[pon]                                                                                                                                          
+/[pon]\
 ```
 
 and

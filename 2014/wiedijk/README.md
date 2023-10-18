@@ -1,6 +1,6 @@
 # Most functional
 
-    Freek Wiedijk  
+    Freek Wiedijk\
     <freek@cs.ru.nl>
 
 ## To build:

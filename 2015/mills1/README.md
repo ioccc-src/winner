@@ -114,7 +114,7 @@ command line:
  * `-DI`: Impulse velocity of a flap (scaled by 256).  Make this smaller
    if you want an intense tapping experience!
  * `-DB`: Sprite for player when gliding.
- * `-DF`: Sprite for player when flapping.  
+ * `-DF`: Sprite for player when flapping.\
  * `-DG`: Instruction text.  Change to your native tongue.
 
 Feel free to try out physics or play field options to make the game more

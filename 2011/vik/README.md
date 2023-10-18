@@ -1,7 +1,7 @@
 # Most sound
 
-Daniel Vik  
-<daniel@vik.cc>  
+Daniel Vik\
+<daniel@vik.cc>\
 <http://www.danielvik.com>
 
 
@@ -38,7 +38,7 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
 Alternatively, you can use:
 
 ```sh
-./vik file.mod > file.raw; ./raw2wav file.raw > file.wav 
+./vik file.mod > file.raw; ./raw2wav file.raw > file.wav\
 ```
 
 It is possible to download a number of Mod files from [The Mod

@@ -1,7 +1,7 @@
 # Most Diffused Reaction
 
-Yusuke Endoh  
-<https://github.com/mame/>  
+Yusuke Endoh\
+<https://github.com/mame/>\
 Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 
 Someone Anonymous

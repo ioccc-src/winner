@@ -1,7 +1,7 @@
 # Most functional
 
-John Tromp  
-<john.tromp@gmail.com>  
+John Tromp\
+<john.tromp@gmail.com>\
 <http://tromp.github.io/>
 
 

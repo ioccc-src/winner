@@ -1,7 +1,7 @@
 # Most ambiguous language
 
-V. Chia  
-Singapore  
+V. Chia\
+Singapore\
 <bi@mncw.tk>
 
 ## To build:

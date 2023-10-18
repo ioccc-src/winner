@@ -1,7 +1,7 @@
 # Worst Abuse of the Rules
 
-David Lowe  
-US  
+David Lowe\
+US\
 <https://github.com/dlowe>
 
 

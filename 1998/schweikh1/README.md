@@ -1,10 +1,10 @@
 # CPP Abuse
 
-Jens Schweikhardt  
-DFN Network Operation Center  
-Schlartaeckerweg 3 (Home address)  
-D-71384 Weinstadt  
-Germany    
+Jens Schweikhardt\
+DFN Network Operation Center\
+Schlartaeckerweg 3 (Home address)\
+D-71384 Weinstadt\
+Germany\
 <http://www.schweikhardt.net>
 
 
@@ -219,7 +219,7 @@ C compilers.
    must resemble one of the canonical forms, `"foo.h"` or `<bar.h>`.
    This lets us write things like
 
-     ```c 
+     ```c\
      #define HEADER "foo.h"
      #include HEADER
      ```
@@ -235,7 +235,7 @@ C compilers.
 
    is rejected by tcc version 4.1.2, the TenDRA compiler:
    ```
-   "t.c", line 3: Error:  
+   "t.c", line 3: Error:\
    [ISO 6.8.3.3]: Invalid result for '##' operator in macro 'H'.
    ```
 

@@ -1,10 +1,10 @@
 # Grand Prize
 
-Brian Westley (Merlyn LeRoy on usenet)  
-DigiBoard, Inc.  
-1026 Blair Ave.  
-St. Paul, MN  55104  
-US   
+Brian Westley (Merlyn LeRoy on usenet)\
+DigiBoard, Inc.\
+1026 Blair Ave.\
+St. Paul, MN  55104\
+US\
 <http://www.westley.org>
 
 
@@ -30,7 +30,7 @@ a move on a tic-tac-toe board:
 		4 5 6
 		7 8 9
 
-If you omit `move_location`, then the computer moves first.  For your 
+If you omit `move_location`, then the computer moves first.  For your\
 next move, recompile `nextmove.c` and play it again:
 
 ```sh
@@ -48,9 +48,9 @@ make ttt
 ./ttt next_move
 
 ```
-  
-The shell script determines when the game is over, and automatically 
-replaces `merlyn.c` (copied from [westley.c](westley.c) with an improved version after a loss.  The [ttt](ttt.sh) script 
+\
+The shell script determines when the game is over, and automatically\
+replaces `merlyn.c` (copied from [westley.c](westley.c) with an improved version after a loss.  The [ttt](ttt.sh) script\
 has two other modes:
 
 ```sh

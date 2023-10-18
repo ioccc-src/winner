@@ -1,7 +1,7 @@
 # Most algorithms in one program
 
-Merlyn LeRoy (Brian Westley)  
-US  
+Merlyn LeRoy (Brian Westley)\
+US\
 <http://www.westley.org>
 
 ## To build:
@@ -86,7 +86,7 @@ Also requires two's complement (I think).
 
 The source code will run if ROT13'ed and/or reversed, using a
 different algorithm for each version (hereafter referred to as
-`ver0` (original), `ver1` (ROT13), `ver2` (reversed), and `ver3` 
+`ver0` (original), `ver1` (ROT13), `ver2` (reversed), and `ver3`\
 (ROT13 and reversed)).
 
 When compiling these versions, one needs to define 'trgpune'

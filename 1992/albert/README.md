@@ -1,9 +1,9 @@
 # Most Useful Program
 
-Albert van der Horst  
-S P&A R&C  
-Oranjestraat 8  
-3511 RA   UTRECHT  
+Albert van der Horst\
+S P&A R&C\
+Oranjestraat 8\
+3511 RA   UTRECHT\
 The Netherlands
 
 ## To build:
@@ -59,7 +59,7 @@ make alt
 Use `albert.alt` as you would `albert` above.
 
 ## Judges' remarks:
-    
+\
 We were impressed with the speed at which it was able to factor
 arbitrarily large numbers consisting of factors that fit into
 a long.
@@ -68,8 +68,8 @@ a long.
 
 The Obfuscated version of the Horst algorithm.
 
-This program will factor unlimited length numbers and print the 
-factors in ascending order. Numbers of one digit (e.g. 8) 
+This program will factor unlimited length numbers and print the\
+factors in ascending order. Numbers of one digit (e.g. 8)\
 are rejected without notice.
 
 It quits as soon as there is at most one factor left, but that factor will not

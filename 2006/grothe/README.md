@@ -1,6 +1,6 @@
 # Most Obfuscated Audio
 
-Aaron Grothe  
+Aaron Grothe\
 US
 
 ## To build:
@@ -135,7 +135,7 @@ AM](https://web.archive.org/web/20070612152538if_/http://silcnet.org/priikone/pr
 for a bit more information on the program (search for `Tempest-AM Radio Signal
 Transmitter`).
 
-The paper 
+The paper\
 [Soft Tempest: Hidden Data Transmission Using Electromagnetic
 Emanations](https://www.cl.cam.ac.uk/~mgk25/ih98-tempest.pdf) by Markus G.
 Kuhn's and Ross J. Anderson's.

@@ -46,7 +46,7 @@ detail, see [thanks-for-fixes.md](/thanks-for-fixes.md).
 
 ## Judges' remarks
 
-This entry has a very twisted flow of control via recursion, iteration 
+This entry has a very twisted flow of control via recursion, iteration\
 and multi-processing.  Try to understand what is being done with the
 system calls.
 

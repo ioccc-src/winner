@@ -133,7 +133,7 @@ restrictions](self-imposed-restrictions) section below for more details.
 * The building process does not involve any OS tool beyond cc and make. No gzip
 compression! `a.c.gz` doesn't fit in 2053 bytes, anyway.
 * Neither [hou.c](hou.c) nor `a.c` (the *real* decompressed source) uses
-`#define` (or `cc -D`) at all. 
+`#define` (or `cc -D`) at all.\
 * The source code is not required at runtime.
 * `a.c` does not drop optional features to reduce size. There are pure
 optimization code that can be dropped without affecting the converged output
@@ -175,9 +175,9 @@ doesn't copy saved sessions across different endianness.
 
 ```
      3225  3225  3225  9  9    3225  3225
-     1     1  1  1  1  1  1    1     1  1  
-     4225  1226  1  1  1  1    1222  1226  
-        1  1     1  1  1  1    1     1 1   
+     1     1  1  1  1  1  1    1     1  1\
+     4225  1226  1  1  1  1    1222  1226\
+        1  1     1  1  1  1    1     1 1\
      4226  1     4226  8  4222 4226  1  1
 ```
 

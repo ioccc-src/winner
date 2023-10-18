@@ -1,9 +1,9 @@
 # Best X Program
 
-Tero Kivinen  
-Helsinki University of Technology  
-Klovinrinne 6b  
-02180 Espoo  
+Tero Kivinen\
+Helsinki University of Technology\
+Klovinrinne 6b\
+02180 Espoo\
 Finland
 
 

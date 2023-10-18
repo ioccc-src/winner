@@ -1,7 +1,7 @@
 # Best one liner
 
-Taketo Konno    
-Japan  
+Taketo Konno\
+Japan\
 <inaniwa3@gmail.com>
 
 ## To build:
@@ -26,8 +26,8 @@ make
 
 ## Judges' remarks:
 
-This tiny program outputs what looks like a tiny keyboard.  
-OK, so the letters are missing. But that is no problem because 
+This tiny program outputs what looks like a tiny keyboard.\
+OK, so the letters are missing. But that is no problem because\
 this program identifies the lower case letters that were pressed!
 
 It is one of those minimal keyboards without all of those
@@ -47,7 +47,7 @@ This program ignores non-lower case letters.
 
 ### Obfuscation
 
-* `for` is not used. 
+* `for` is not used.\
 * A part of the program is encrypted.
 
 ## Copyright and CC BY-SA 4.0 License:

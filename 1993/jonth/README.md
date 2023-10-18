@@ -1,9 +1,9 @@
 # Most Obfuscated X Program
 
-Jon Thingvold  
-University of Oslo  
-Sogn Studentby 8231  
-N 0858 Oslo  
+Jon Thingvold\
+University of Oslo\
+Sogn Studentby 8231\
+N 0858 Oslo\
 Norway
 
 
@@ -31,7 +31,7 @@ entry.
 Use `h` and `l` to shift objects left or right.  Use `k` to
 rotate and press SPACE to drop.
 
-This program's output may be even more obfuscated when played 
+This program's output may be even more obfuscated when played\
 on inverse video.  :-)
 
 
@@ -39,7 +39,7 @@ on inverse video.  :-)
 
 This is `jonth` (`jon's t(h)etris`) for the X Window System.
 
-This program is also an example of data abstraction.  The X array is 
+This program is also an example of data abstraction.  The X array is\
 after initialization hidden by the well defined macros `t`, `u` and `F`.
 
 This program is highly portable as it runs on a "Notebook" size SPARC.

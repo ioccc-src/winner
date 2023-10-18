@@ -141,7 +141,7 @@ o | Move empty spot backwards
 ```
 
 **NOTE:** as a measure of alleviating counter-productivity due to addiction to
-this game, particularly for those hardcore gamers who insist on solving a 
+this game, particularly for those hardcore gamers who insist on solving a\
 10x10x10 puzzle during work hours, and also to give an upper bound to user
 frustration when the program generates an unsolvable puzzle (which it does
 roughly half the time, just to hook you), the program will, after a very large
@@ -448,24 +448,24 @@ program, and what the various state numbers are meant to do:
 
 ```
         0  | Function return value
-        1  | Function argument 1 
-        2  | Function argument 2 
-        3  | Function argument 3 
-        4  | Scratch register 1 
-        5  | Scratch register 2 
-        6  | Scratch register 3 
-        7  | Scratch register 4 
-        8  | Value of original argv :-) 
-        9  | Value of original argc :-) 
-        11 | Zero register (always set to 0) 
-        12 | Width of board 
-        13 | Length of board 
-        14 | Height of board 
-        15 | Current position of hole 
-        16 | Random seed for rand_r() 
-        18 | Scratch register used by state 18 :-) 
-        31 | field width for printing tiles 
-        32 | Start of board data 
+        1  | Function argument 1\
+        2  | Function argument 2\
+        3  | Function argument 3\
+        4  | Scratch register 1\
+        5  | Scratch register 2\
+        6  | Scratch register 3\
+        7  | Scratch register 4\
+        8  | Value of original argv :-)\
+        9  | Value of original argc :-)\
+        11 | Zero register (always set to 0)\
+        12 | Width of board\
+        13 | Length of board\
+        14 | Height of board\
+        15 | Current position of hole\
+        16 | Random seed for rand_r()\
+        18 | Scratch register used by state 18 :-)\
+        31 | field width for printing tiles\
+        32 | Start of board data\
 ```
 
 (**CAVEAT:** not all of these mappings ended up in the final version of the
@@ -481,22 +481,22 @@ to be on all tested architectures.)
 #### State number assignments
 
 ```
-        1  | showhelp 
-        2  | showhelp 
-        3  | is 2D: start init 
-        4  | is 3D: start init 
-        5  | find allocation type 
-        6  | MASS init, bottom-up 
-        7  | MASS init, top-down 
-        8  | main program 
-        9  | generate() outer loop 
-        13 | render() 
-        14 | render() loop 
-        15 | exit(0) 
-        16 | pick a tile that hasn't occurred yet 
-        17 | inner loop of 16.  
-        18 | main loop 
-        19 | checkwin() loop 
+        1  | showhelp\
+        2  | showhelp\
+        3  | is 2D: start init\
+        4  | is 3D: start init\
+        5  | find allocation type\
+        6  | MASS init, bottom-up\
+        7  | MASS init, top-down\
+        8  | main program\
+        9  | generate() outer loop\
+        13 | render()\
+        14 | render() loop\
+        15 | exit(0)\
+        16 | pick a tile that hasn't occurred yet\
+        17 | inner loop of 16.\
+        18 | main loop\
+        19 | checkwin() loop\
 ```
 
 Note that some of the manually-implemented states (those not implemented by

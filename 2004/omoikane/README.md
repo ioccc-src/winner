@@ -1,7 +1,7 @@
 # Best Utility
 
-Don Yang  
-US  
+Don Yang\
+US\
 <http://uguu.org/>
 
 ## To build:

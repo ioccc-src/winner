@@ -1,10 +1,10 @@
 # Best minimal use of C
 
-Arch D. Robison  
-University of Illinois  
-1304 W. Springfield Ave.  
-Urbana, IL  
-61801  
+Arch D. Robison\
+University of Illinois\
+1304 W. Springfield Ave.\
+Urbana, IL\
+61801\
 US
 
 ## To build:

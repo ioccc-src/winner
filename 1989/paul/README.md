@@ -1,10 +1,10 @@
 # Most complex algorithm
 
-Paul E. Black  
-CIRRUS LOGIC, Inc.  
-1463 Centre Pointe Dr.  
-Milpitas, CA   
-95035   
+Paul E. Black\
+CIRRUS LOGIC, Inc.\
+1463 Centre Pointe Dr.\
+Milpitas, CA\
+95035\
 US
 
 ## To build:

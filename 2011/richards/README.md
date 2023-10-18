@@ -1,6 +1,6 @@
 # Most surprisingly portable
 
-Gregor Richards  
+Gregor Richards\
 <Richards@codu.org>
 
 

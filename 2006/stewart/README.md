@@ -1,6 +1,6 @@
 # Best Computed Graphics
 
-Thomas Stewart  
+Thomas Stewart\
 US
 
 ## To build:
@@ -23,7 +23,7 @@ NOTE: `convert(1)` belongs to [ImageMagick](https://imagemagick.org/index.php).
 ## Try:
 
 ```sh
-./stewart 400 1000000 maze > maze.xbm 
+./stewart 400 1000000 maze > maze.xbm\
 convert maze.xbm maze.png
 ```
 

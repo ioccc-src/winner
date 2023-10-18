@@ -1,10 +1,10 @@
 # Best Abuse of the C Preprocessor
 
-David Gibson  
-University of Cape Town  
-1 Sweet Valley Road  
-Bergvliet  
-7945  
+David Gibson\
+University of Cape Town\
+1 Sweet Valley Road\
+Bergvliet\
+7945\
 South Africa
 
 ## To build:
@@ -20,7 +20,7 @@ make all
 ```
 
 where:
-	
+\
 `datafile` is the initial pattern (default: [dgibson.data1](dgibson.data1))
 
 ## Try:
@@ -30,7 +30,7 @@ where:
 ```
 
 ## Judges' remarks:
-    
+\
 We have provided the shell script [dgibson.sh](dgibson.sh) to make it easier
 to run this entry.  Run this shell script several times to
 see what happens.

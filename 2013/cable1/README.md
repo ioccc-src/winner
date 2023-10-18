@@ -1,6 +1,6 @@
 # Most partisan 1-liner
 
-Adrian Cable    
+Adrian Cable\
 <adrian.cable@gmail.com>
 
 ## To build:

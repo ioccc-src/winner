@@ -1,9 +1,9 @@
 # Best Data Hiding
 
-Daniel Fischer  
-VNetx.com GbR  
-Salenbergstrasse 11		(home address)  
-D 72250 Freudenstadt  
+Daniel Fischer\
+VNetx.com GbR\
+Salenbergstrasse 11		(home address)\
+D 72250 Freudenstadt\
 German Federal Republic
 
 ## To build:

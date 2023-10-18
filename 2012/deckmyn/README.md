@@ -1,6 +1,6 @@
 # Most notable and best tool
 
-Alex Deckmyn  
+Alex Deckmyn\
 <alex.deckmyn@gmail.com>
 
 ## To build:

@@ -1,6 +1,6 @@
 # Most Well-rounded Hash
 
-    Qiming Hou <hqm03ster@gmail.com>  
+    Qiming Hou <hqm03ster@gmail.com>\
     <http://www.houqiming.net/>
 
 ## To build:
@@ -103,7 +103,7 @@ Tested platforms:
 * Linux 3.18.7, Rasperberry Pi 2, clang 3.0-6.2, (works)
 * Linux 3.18.7, Rasperberry Pi 2, gcc 4.6.3, (works)
 * Mac OS X 10, x64, Apple LLVM version 6.1.0 (clang-602.0.53), (works)
-* Windows 8.1, x86, MSVC 2012 (works) 
+* Windows 8.1, x86, MSVC 2012 (works)\
 * Windows 8.1, x64, MSVC 2012 (works)
 * Windows 8.1, x86, MinGW gcc 4.6.2 (fails, prints error message)
 * Windows 8.1, x86, MinGW gcc 4.6.2 with -msse2 -mfpmath=sse (works)

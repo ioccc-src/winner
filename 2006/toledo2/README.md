@@ -1,8 +1,8 @@
 # Best of Show
 
-Oscar Toledo G.  
-Familia Toledo  
-Mexico  
+Oscar Toledo G.\
+Familia Toledo\
+Mexico\
 <https://nanochess.org>
 
 
@@ -103,9 +103,9 @@ LIST
 RUN
 
 10 FOR A=1 TO 10
-20 PRINT A             
-30 NEXT A              
-LIST                   
+20 PRINT A\
+30 NEXT A\
+LIST\
 RUN
 
 10 INPUT A

@@ -1,7 +1,7 @@
 # Best 2D puzzle
 
-Gil Dogon  
-Israel  
+Gil Dogon\
+Israel\
 <gil_jade@netvision.net.il>
 
 

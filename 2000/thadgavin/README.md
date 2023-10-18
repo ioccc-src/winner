@@ -1,9 +1,9 @@
 # Most Portable Output
 
-Thaddaeus Frogley  
-UK  
-  
-Gavin Buttimore  
+Thaddaeus Frogley\
+UK\
+\
+Gavin Buttimore\
 UK
 
 

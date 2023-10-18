@@ -1,6 +1,6 @@
 # Best abuse of the rules
 
-Fabrice Bellard  
+Fabrice Bellard\
 <https://bellard.org>
 
 
@@ -63,7 +63,7 @@ or by giving the C source to its standard input.
 - Self compilation iterated...
 
         ./bellard bellard.c bellard.c bellard.otccex.c 10
-    
+\
     An alternate syntax is to use it as a script interpreter: you can
     put `#!/usr/local/bin/otcc` at the beginning of your C source if
     you installed `otcc` at this place.

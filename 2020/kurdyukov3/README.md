@@ -1,6 +1,6 @@
 # Bset slaml prragom
 
-Ilya Kurdyukov  
+Ilya Kurdyukov\
 <https://github.com/ilyakurdyukov>
 
 ## To build:

@@ -1,6 +1,6 @@
 # Best ball
 
-Peter Eastman  
+Peter Eastman\
 <peter.eastman@gmail.com>
 
 

@@ -1,11 +1,11 @@
 # Best Game
 
-James Bonfield  
-University of Warwick  
-7 Water End  
-Wrestlingworth  
-Sandy Beds  
-SG19 2HA  
+James Bonfield\
+University of Warwick\
+7 Water End\
+Wrestlingworth\
+Sandy Beds\
+SG19 2HA\
 England
 
 ## To build:
@@ -29,26 +29,26 @@ This entry has been updated to allow most ANSI C compilers.
 This program is a simple puzzle type game. (I'll leave you to play
 it to see the rest of it .. :-) .)  The general idea was to try and
 write the smallest playable game, but keep the playability and
-enjoyment high. 
-    
+enjoyment high.\
+\
 ### Instructions (rot13 to read):
 
 
     Xrl gb znc:-
 
 			    |
-     ######                 | | | /\   /--\  ==|    /\ | |  Qverpgbany xrlf 
+     ######                 | | | /\   /--\  ==|    /\ | |  Qverpgbany xrlf\
      ######  Fbyvq Jnyy     | ----||    \/     /\   ||----  (haybpx qbbef bs
      ######                 |     \/  ==|     \--/  \/       gur fnzr qverpgvba)
-			    |               
+			    |\
 			    |   <<                    >>    Qbbef. Haybpxrq ol
 	     Oynax fcnpr    |   <<   iiiiii  ^^^^^^   >>    gur nobir xrlf.
 			    |   <<                    >>
-			    |              
-       ___                  | b__B\   B__B   ^__^   /B__b   
+			    |\
+       ___                  | b__B\   B__B   ^__^   /B__b\
       /   \  'Pehfunoyr'    | \___/  /----\ /----\  \___/  Gur sbhe fcevgrf sbe
       \___/    obhyqre      |  _/_\  _/  \_ _/  \_  /_\_   lbhe punenpgre :-)
-			    |                    
+			    |\
        ___   hapehfunoyr    |   /\   Qvnzbaqf. Gurl pna rvgure or sbhaq ylvat
       /@@@\    obhyqre      |  <  >  nebhaq (vs bayl!) be znahsnpgher ol chfuvat
       \@@@/                 |   \/   gjb 'pehfunoyr' ebpxf gbtrgure.

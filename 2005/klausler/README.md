@@ -1,7 +1,7 @@
 # Abuse of the rules
 
-Peter Klausler  
-US  
+Peter Klausler\
+US\
 <pmk@cray.com>
 
 ## To build:

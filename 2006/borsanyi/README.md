@@ -1,7 +1,7 @@
 # Most Useful
 
-Szabolcs Borsanyi  
-United Kingdom  
+Szabolcs Borsanyi\
+United Kingdom\
 s.borsanyi at sussex dot ac dot uk
 
 

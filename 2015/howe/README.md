@@ -1,7 +1,7 @@
 # Most Different
 
-Anthony Howe <achowe@snert.com>  
-Montreal, Quebec, Canada  
+Anthony Howe <achowe@snert.com>\
+Montreal, Quebec, Canada\
 <http://www.snert.com/>
 
 ## To build:
@@ -116,43 +116,43 @@ a region of edits are highly unlikely.
 
 ### Support Files
 
-* ``prog-test.sh``  
+* ``prog-test.sh``\
 Basic test program verifies known test edit distances and patch support.
 
 * ``avgtime.sh``
 
-* ``makeholes.c``  
+* ``makeholes.c``\
 Random edits (holes) made to a file in-place.
 
 ### References
 
-Wu, Manber, Myers, and Miller; August 1989;  
-"An O(NP) Sequence Comparison Algorithm";  
+Wu, Manber, Myers, and Miller; August 1989;\
+"An O(NP) Sequence Comparison Algorithm";\
 <http://myerslab.mpi-cbg.de/wp-content/uploads/2014/06/np_diff.pdf>
 
-Fowler, Noll, Vo; 1994  
+Fowler, Noll, Vo; 1994\
 <http://www.isthe.com/chongo/tech/comp/fnv/index.html>
 
-Fowler, Noll, Vo on Wikipedia  
+Fowler, Noll, Vo on Wikipedia\
 <https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function>
 
-"diff", The Open Group Base Specifications Issue 7  
-IEEE Std 1003.1, 2013 Edition  
+"diff", The Open Group Base Specifications Issue 7\
+IEEE Std 1003.1, 2013 Edition\
 <http://pubs.opengroup.org/onlinepubs/9699919799/utilities/diff.html>
 
-Eugene W. Myers; "An O(ND) Difference Algorithm and Its Variations";  
-Algorithmica, 1986, pages. 251-266  
+Eugene W. Myers; "An O(ND) Difference Algorithm and Its Variations";\
+Algorithmica, 1986, pages. 251-266\
 <http://www.xmailserver.org/diff2.pdf>
 
-Webb Miller and Eugene W. Myers; "A File Comparison Program";  
-Software-Practice And Experience, Vol. 15(11). 1025-1040 (November 1985)  
+Webb Miller and Eugene W. Myers; "A File Comparison Program";\
+Software-Practice And Experience, Vol. 15(11). 1025-1040 (November 1985)\
 <http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.189.70&rep=rep1&type=pdf>
 
-D.S. Hirschberg, "A linear space algorithm for computing maximal common subsequence problem";  
-Comm. of ACM, Vol. 18, June 1975, pages 341-343  
+D.S. Hirschberg, "A linear space algorithm for computing maximal common subsequence problem";\
+Comm. of ACM, Vol. 18, June 1975, pages 341-343\
 <http://www.mathcs.emory.edu/~cheung/Courses/323/Syllabus/DynProg/Docs/Hirschberg-LCS-1975.pdf>
 
-Which hashing algorithm is best for uniqueness and speed?  
+Which hashing algorithm is best for uniqueness and speed?\
 <http://programmers.stackexchange.com/questions/49550/which-hashing-algorithm-is-best-for-uniqueness-and-speed>
 
 [Wu+89]: http://myerslab.mpi-cbg.de/wp-content/uploads/2014/06/np_diff.pdf

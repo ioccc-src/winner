@@ -1,10 +1,10 @@
 # Worst Abuse of the C Preprocessor
 
-Jens Schweikhardt   
-DFN Network Operation Center  
-Schlartaeckerweg 3 (home address)  
-D-71384 Weinstadt  
-Germany  
+Jens Schweikhardt\
+DFN Network Operation Center\
+Schlartaeckerweg 3 (home address)\
+D-71384 Weinstadt\
+Germany\
 <http://www.schweikhardt.net>
 
 ## To build:
@@ -30,8 +30,8 @@ To find the day that Easter falls on in the current year:
 
 ## Judges' remarks:
 
-Look at the source.  There is something very odd going on here.  
-Where does the real code come from if everything is a C pre-processor 
+Look at the source.  There is something very odd going on here.\
+Where does the real code come from if everything is a C pre-processor\
 statement?
 
 Clearly this is either the Best Use or the Worst Abuse of the
@@ -115,7 +115,7 @@ these easy to remember language elements is justified in my opinion.
 
 
 ### The moral:
-      
+\
 Try to be as precise as can be and no one will comprehend what you mean.
 
 #### The formula:

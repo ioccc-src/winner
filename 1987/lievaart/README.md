@@ -1,6 +1,6 @@
 # Grand Prize
 
-Roemer B. Lievaart  
+Roemer B. Lievaart\
 Netherlands
 
 ## To build:

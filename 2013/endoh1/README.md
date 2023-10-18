@@ -1,8 +1,8 @@
 # Most lazy SKIer
 
-Yusuke Endoh  
-<mame@ruby-lang.org>  
-<https://github.com/mame/>  
+Yusuke Endoh\
+<mame@ruby-lang.org>\
+<https://github.com/mame/>\
 Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 
 ## To build:
@@ -22,7 +22,7 @@ make
 ```sh
 ./endoh1 hello.lazy
 ./hello
-echo Hello | ./echo 
+echo Hello | ./echo\
 ./tac < endoh1.c
 ```
 

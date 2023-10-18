@@ -1,6 +1,6 @@
 # Most useful
 
-Kimmo Fredriksson    
+Kimmo Fredriksson\
 <kimmo.k.k.fredriksson@gmail.com>
 
 ## To build:

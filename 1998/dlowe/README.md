@@ -1,7 +1,7 @@
 # Best Utility
 
-David Lowe  
-US  
+David Lowe\
+US\
 <j.david.lowe@gmail.com>
 <https://github.com/dlowe>
 

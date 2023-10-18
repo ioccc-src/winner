@@ -1,9 +1,9 @@
 # Best Game
 
-Leonid A. Broukhis  
-Moscow Centre of SPARC Technology  
-123481 Liberty St.,  
-89-1-95 Moscow  
+Leonid A. Broukhis\
+Moscow Centre of SPARC Technology\
+123481 Liberty St.,\
+89-1-95 Moscow\
 Russia
 
 
@@ -34,12 +34,12 @@ where:
 
 
 ## Judges' remarks:
-    
+\
 By default, the number of colors is 6.  You may specify a
 value of between 1 and 15 colors.  See the author's notes
 for instructions of how to play.
 
-We look forward to more entries from the newer members of the 
+We look forward to more entries from the newer members of the\
 International Internet community.
 
 

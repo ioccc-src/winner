@@ -80,7 +80,7 @@ rather quick don't you think?
  production ready for modern machines.
  * 2006: First version of Golly by Andrew Trevorrow and Tomas Rokicki. Brings
  the delights of [hashlife](https://en.wikipedia.org/wiki/Hashlife) to the masses.
- 
+\
 Which brings us to the present moment in time.
 
 ### Full documentation and keys UI.

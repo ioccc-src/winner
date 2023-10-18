@@ -1,7 +1,7 @@
 # EDAMAME Award
 
-Michael Birken  
-US  
+Michael Birken\
+US\
 <o__1 at hotmail dot com>
 
 

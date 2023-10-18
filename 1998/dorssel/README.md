@@ -1,9 +1,9 @@
 # Obsolescent Feature
 
-Frans van Dorsselaer  
-Bakker Industrial Automation  
-Kaiserstraat 35  
-NL-2311 GP   Leiden  
+Frans van Dorsselaer\
+Bakker Industrial Automation\
+Kaiserstraat 35\
+NL-2311 GP   Leiden\
 The Netherlands
 
 ## To build:
@@ -112,7 +112,7 @@ is the same as
 understand this program.  For an obfuscated spoiler, try
 
 ```sh
-./dorssel < dorssel.md 
+./dorssel < dorssel.md\
 ```
 
 ## Copyright and CC BY-SA 4.0 License:

@@ -1,8 +1,8 @@
 # Don't tread on me award
 
-Cody Boone Ferguson <ioccc@xexyl.net>    
-<https://ioccc.xexyl.net>   
-<https://xexyl.net>  
+Cody Boone Ferguson <ioccc@xexyl.net>\
+<https://ioccc.xexyl.net>\
+<https://xexyl.net>\
 Mastodon: [@xexyl@fosstodon.org](https://fosstodon.org/@xexyl)
 
 ## To build:
@@ -23,48 +23,48 @@ and non-zero).
 
 ### Variables:
 
-* **`WAIT`**	    
+* **`WAIT`**\
 	    	positive or negative integer that changes how long to wait for
 		a key press prior to moving again. < 0 blocks which allows
 		for complete control over movement at your own pace. Default
 		231; you can move faster by holding down or rapidly pressing an
 		arrow key.
 
-* **`WALLS`**	  
+* **`WALLS`**\
 	        whether the walls are passable or impassable. Default passable,
 		1; 0 makes walls impassable where you die if you hit a wall.
 
-* **`EVADE`**  	
+* **`EVADE`**\
 	        how many movements the Snake moves before the bug (well
 		insect; see notes below about why bugs) will move to
 		another location in the field. Default 300; 0 disables.
 
-* **`SIZE`**   
+* **`SIZE`**\
 	        initial size of the Snake. Note that it grows by one per
 		move so at the default 5 it will not initially be 5
 		characters long! < 0 is likely an immediate win.
 
-* **`MAXSIZE`**   	
+* **`MAXSIZE`**\
 	        the maximum size the Snake can become before the game is
 		won. < 0 is the maximum size based on terminal dimensions;
 		any other size will be capped based on the terminal
 		dimensions to prevent problems. Note that when **`SIZE+GROW >=
 		MAXSIZE`** you win _before_ you grow to the full size!
 
-* **`GROW`**   
+* **`GROW`**\
 	        size to grow every time you eat a bug. Default 5; negative
 		values are allowed. 'Negativity' creates for fun gameplay modes with
 		enough creativity. See [gameplay.html][] ([gameplay.md][] on
 		GitHub) as well as [play.sh](play.sh) for some examples.
 
-* **`SHED`**	    
+* **`SHED`**\
 	        every **`SHED`** movements you will grow (> 0), shrink (< 0) or
 		stay the same length (0) by the **`SHEDS`** (below) value. Again
 		with creativity you can create some fun gameplay modes.  NOTE:
 		the concept of shedding in this game is a misnomer; see notes
 		below.
-    
-* **`SHEDS`**	    
+\
+* **`SHEDS`**\
 	        every **`SHED`** movements will impact what this value means: grow
 		(> 0), shrink (< 0) or not at all (0). Exception: if the snake
 		eats a bug the counter isn't incremented. Again with creativity
@@ -75,7 +75,7 @@ and non-zero).
 		NOTE: the concept of shedding in this game is a misnomer; see
 		notes below.
 
-* **`CANNIBAL`**   		
+* **`CANNIBAL`**\
 	        whether you can go through the Snake or not. Default is 0
 		(cannot - die if you try).
 
@@ -154,7 +154,7 @@ Here are some other features of the game:
 
 *   A drawing/practising mode (**`WAIT`** < 0 makes `timeout()` block).
 
-*   Computer plays the game (**WAIT=0**).  
+*   Computer plays the game (**WAIT=0**).\
 	- **EPILEPSY/STIMULATION OVERLOAD WARNING** included in the relevant
 	section (this goes for a low **`EVADE`** value too).
 

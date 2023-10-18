@@ -1,8 +1,8 @@
 # Abusing The Rules
 
-Diomidis Spinellis  
-Greece  
-<https://www.spinellis.gr/>  
+Diomidis Spinellis\
+Greece\
+<https://www.spinellis.gr/>\
 Mastodon: <https://mstdn.social/@DSpinellis>
 
 ## To build:

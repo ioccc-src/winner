@@ -1,6 +1,6 @@
 # Best utility
 
-Ilya Kurdyukov  
+Ilya Kurdyukov\
 <https://github.com/ilyakurdyukov>
 
 ## To build:

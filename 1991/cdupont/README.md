@@ -1,10 +1,10 @@
 # Most Useful Label
 
-Christian Dupont  
-Ecole Normale Superieure de Lyon   
-Laboratoire d'Informatique Parallele  
-42, Rue H.Berlioz   
-69009 Lyon   
+Christian Dupont\
+Ecole Normale Superieure de Lyon\
+Laboratoire d'Informatique Parallele\
+42, Rue H.Berlioz\
+69009 Lyon\
 France
 
 ## To build:
@@ -40,7 +40,7 @@ Spoiler, rot13 to read:
 
     Gur fbhepr pbqr ubyqf gur yrggref bs gur zrffntr. Rnpu yrggre, pbzovarq
     jvgu nabgure xrl yrggre, vf hfrq gb pbzchgr gur pbbeqvangrf bs gur arkg
-    yrggre naq xrl. Guhf, gur zrffntr vf pbqr.  Gung vf jul V hfr fvyyl 
+    yrggre naq xrl. Guhf, gur zrffntr vf pbqr.  Gung vf jul V hfr fvyyl\
     pbzzragf, zbfg bsgra onqyl fcnprq.
 
     Gur fcnpr punenpgre frdhrapr orgjrra gur jbeqf vf tvira ol n fvzcyr

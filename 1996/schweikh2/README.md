@@ -1,10 +1,10 @@
 # Best Algorithm
 
-Jens Schweikhardt  
-DFN Network Operation Center  
-Schlartaeckerweg 3 (home address)  
-D-71384 Weinstadt  
-Germany  
+Jens Schweikhardt\
+DFN Network Operation Center\
+Schlartaeckerweg 3 (home address)\
+D-71384 Weinstadt\
+Germany\
 <http://www.schweikhardt.net>
 
 
@@ -144,7 +144,7 @@ minutes (`gcc -O3`).
 ```sh
 $ ./schweikh2 6
 $ ./schweikh2 7 0
-$ ./schweikh2 7 7 0 
+$ ./schweikh2 7 7 0\
 $ ./schweikh2 8 9 -1 -67/21
 $ ./schweikh2 8 2 2/5 -98/25
 $ ./schweikh2 2 1/0 1 1/0
@@ -152,7 +152,7 @@ $ ./schweikh2 2 1/0 1 1/0
 
 ### Miscellaneous
 
-The diamond pattern can be continued without a break. 
+The diamond pattern can be continued without a break.\
 For a nice printout try this on your Bourne compatible shell:
 
 ```sh

@@ -1,12 +1,12 @@
 # Best Utility
 
-Bernd Meyer  
-Monash University, Melbourne, Australia  
-1/832 Blackburn Rd  
-Clayton, VIC 3168  
-Australia  
-<https://web.archive.org/web/20030212213342/http://byron.csse.monash.edu.au/realindex.html>  
-    
+Bernd Meyer\
+Monash University, Melbourne, Australia\
+1/832 Blackburn Rd\
+Clayton, VIC 3168\
+Australia\
+<https://web.archive.org/web/20030212213342/http://byron.csse.monash.edu.au/realindex.html>\
+\
 ## To build:
 
 ```sh
@@ -52,7 +52,7 @@ Create a large reverse video xterm, say 200 columns wide and try:
 ```
 
 Produce an even smaller output:
-  
+\
 ```sh
 ./bmeyer -2 200 < lavabus.pgm > lavabus.glic2
 ```

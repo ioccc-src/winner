@@ -1,6 +1,6 @@
 # Most Educational
 
-Adrian Mariano  
+Adrian Mariano\
 US
 
 
@@ -27,7 +27,7 @@ NOTE: if you do not specify an arg to the program it will segfault.
 
 
 ## Judges' remarks:
-    
+\
 Once you get past the obfuscation, you have an opportunity to learn
 about regular expressions and state machines.
 
@@ -128,10 +128,10 @@ typing
 It will read stdin and print out all the lines which the automaton
 accepts.  If the file cannot be opened, a system error message will
 be printed.  If the input contains errors, then an error message along
-with the number of the offending line will be printed to stderr.  The 
-number of rules for each state is limited to 17.  If more than 17 rules 
-are present, you get the error `too_many_rules`, and the state that was 
-being processed is printed.  Error `no_destination` occurs if you specify a 
+with the number of the offending line will be printed to stderr.  The\
+number of rules for each state is limited to 17.  If more than 17 rules\
+are present, you get the error `too_many_rules`, and the state that was\
+being processed is printed.  Error `no_destination` occurs if you specify a\
 set of characters, but no destination state, and error `too_many_states`
 occurs if your automaton has more than 257 states.
 
@@ -144,8 +144,8 @@ Running:
 will perform a function similar to that of the unix from command.
 
 If no filename is specified on the command line, then `"adgrep.c"` is used
-as the specification for the automaton.  (This file has been renamed 
-to `adrian.c` by the judges.)  In this case, the program will search for 
+as the specification for the automaton.  (This file has been renamed\
+to `adrian.c` by the judges.)  In this case, the program will search for\
 matches to the regular expression:
 
 
@@ -234,7 +234,7 @@ shorter than 999 characters.
 The other info files are adrian.grep.[1-6] which contain the six
 examples that appear above, and from, which is used to emulate the
 unix from command.  For reasons of clarity, the name "from" should
-probably not be changed if possible.  I wouldn't want to be accused of 
+probably not be changed if possible.  I wouldn't want to be accused of\
 confusing people by giving the input files weird names.
 
 If you want to change the default input filename (line 80) you must be

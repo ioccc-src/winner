@@ -1,7 +1,7 @@
 # Most ingenious puzzle solution
 
-Aidan Thornton  
-United Kingdom  
+Aidan Thornton\
+United Kingdom\
 <makomk@lycos.co.uk>
 
 
@@ -122,7 +122,7 @@ Now, with modern computers this **can** be solved using brute force, e.g.:
 
 ```c
 #include <stdio.h> /* sudoku-bfi.c */
-#define S(t) for(n=0;n<9;v[n++]=0);for(n=0;n<81;n++)if(i[n]){z=1<<i[n];if(v[t]\ 
+#define S(t) for(n=0;n<9;v[n++]=0);for(n=0;n<81;n++)if(i[n]){z=1<<i[n];if(v[t]\\
 &z)for(;;){if(p<0)goto d;if(i[p]++<9)goto f;i[p]=0;p=s[p];}v[t]|=z;}
 int i[82],s[81],v[9],n,p,z;int main(void){for(n=0;n<81;){p=getchar()^48;if(p==
 30)p=0;if(p<10)i[n++]=p;}i[81]=0;p=-1;f:S(n%9)S(n/9)S(n%9/3+n/27*3)if(p>80)goto
@@ -256,7 +256,7 @@ hurry.
 but I don't feel like learning curses just for this. Besides, I spent enough
 of the time swearing as it is.
 
-* If you mistype a sudoku (e.g. from a paper/magazine) - and you will - it 
+* If you mistype a sudoku (e.g. from a paper/magazine) - and you will - it\
 can't help you figure out where the mistake is, sadly.
 
 ### Portability

@@ -1,7 +1,7 @@
 # Most surreptitious
 
-Don Yang  
-<omoikane@uguu.org>  
+Don Yang\
+<omoikane@uguu.org>\
 <http://uguu.org/>
 
 ## To build:

@@ -1,7 +1,7 @@
 # Best Small Program
 
-Brian Westley (aka Merlyn LeRoy)  
-US  
+Brian Westley (aka Merlyn LeRoy)\
+US\
 <http://www.westley.org>
 
 
@@ -132,10 +132,10 @@ is reasonably accurate.
 
 ### Here are some cities you might like to try:
 
-- New York	    41   -74       
-- London	    52   0             
-- Moscow	    56   38           
-- New Delhi	    29   77    
+- New York	    41   -74\
+- London	    52   0\
+- Moscow	    56   38\
+- New Delhi	    29   77\
 - Sydney	    -34  151
 - Los Angeles	    34   -118
 - Paris		    45   2

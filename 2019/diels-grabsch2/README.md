@@ -1,6 +1,6 @@
 # Most self-aware
 
-Volker Diels-Grabsch  
+Volker Diels-Grabsch\
 <https://njh.eu>
 
 

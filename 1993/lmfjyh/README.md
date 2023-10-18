@@ -1,6 +1,6 @@
 # Most Versatile Source
 
-Jyrki Holopainen  
+Jyrki Holopainen\
 Finland
 
 
@@ -52,7 +52,7 @@ done with this bug; see the author's remarks for more details.
 
 
 ## Judges' remarks:
-    
+\
 There's more than one way to get around disk quotas. :-)
 
 
@@ -170,7 +170,7 @@ These failed miserably:
 	    "dbx: fatal error: Is a directory"
 
 - gdb   - Printed almost the same error message ": Is a directory".
-	It was, however, possible to step through the code but 
+	It was, however, possible to step through the code but\
 	not list it.
 
 #### Lints

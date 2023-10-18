@@ -1,6 +1,6 @@
 # Best abuse of CPP
 
-Don Yang  
+Don Yang\
 <http://uguu.org/>
 
 ## To build:

@@ -1,7 +1,7 @@
 # Best short program
 
-Seonghoon Kang  
-<kang.seonghoon@mearie.org>  
+Seonghoon Kang\
+<kang.seonghoon@mearie.org>\
 <http://mearie.org>
 
 

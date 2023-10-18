@@ -1,7 +1,7 @@
 # Best painting tool
 
-Michael Birken  
-<o__1@hotmail.com>  
+Michael Birken\
+<o__1@hotmail.com>\
 <http://www.meatfighter.com/>
 
 

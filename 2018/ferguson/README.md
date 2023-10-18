@@ -1,8 +1,8 @@
 # Best use of weasel words
 
-Cody Boone Ferguson <weasel@xexyl.net>   
-[https://ioccc.xexyl.net](https://ioccc.xexyl.net)  
-[https://xexyl.net](https://xexyl.net)  
+Cody Boone Ferguson <weasel@xexyl.net>\
+[https://ioccc.xexyl.net](https://ioccc.xexyl.net)\
+[https://xexyl.net](https://xexyl.net)\
 Mastodon: [@xexyl@fosstodon.org](https://fosstodon.org/@xexyl)
 
 ## To build:
@@ -166,7 +166,7 @@ monkey; I thought the monkey had it too easy: unlike his limited keyboard I have
 **`isprint()`** returns non-zero except that only capital letters are included;
 the file [prog.alt.c](prog.alt.c) has a slightly smaller keyboard. There are some
 additional features I have added (including two Easter eggs); amongst others:
-ability to change the target string and maximum length. See 
+ability to change the target string and maximum length. See\
 **[How it works](#how)**, **[Hints](#hints)** and **[How to build](#build)** for
 more details.
 
@@ -236,7 +236,7 @@ exist. The second to last example limitation example note (it's improved in the
 final but this is relevant) they give is:
 
 > The judges might not have a pet fish named Eric, so might want to state:
-> 
+>\
 > 	This entry factors integers between 1 and 2305567963945518424753102147331756070.
 > 	Attempting to factor anything else will cause the program to insult your
 > 	pet fish Eric, or in the case that you lack such a pet, will insult the
@@ -362,7 +362,7 @@ with the following options:
 
 
 	    -qr5
-    
+\
 3.  Look at the first few lines again and compare it to the output of step \#1.
 With the default string most modern systems shouldn't take much time to - given
 decent parameters - come to an answer here but if necessary kill the program.
@@ -397,9 +397,9 @@ If you do one of:
 ./weasel "METHINKS IT IS A" "MONKEY"
 ./weasel METHINKS IT IS A MONKEY
 ```
- 
+\
 It will search for **`MONKEY`** in both cases; in other words it's the last one.
-If the string is too long given the value of **`S`** (see 
+If the string is too long given the value of **`S`** (see\
 **[How to build](#build)**) it will be truncated.
 
 If you actually do want to search for a string starting with a **`-`** you must
@@ -425,9 +425,9 @@ command line. Because of the joining of arguments this means that the first two
 examples of the last set of three above are equivalent i.e. the following two
 are equivalent:
 
-	    -q- 
+	    -q-\
 	    -q --
-	    
+\
 As for the caveat I referenced what does the following do?
 
 ```sh
@@ -662,7 +662,7 @@ people. Take the following invocations:
 	    (1) $ echo test > test
 	    (2) $ ./weasel test
 	    (3) $ ./weasel < test
-	    (4) $ cat test | ./weasel 
+	    (4) $ cat test | ./weasel\
 	    (5) $ < test-strings.txt ./weasel
 	    (6) $ cat | ./weasel
 
@@ -746,7 +746,7 @@ Skip to [Obfuscation](#obfuscation).
 
 There is a type of input error, as I said, that might appear to be a bug. What
 actually is going on though is due to a technicality on how spaces are printed
-and the fact the program does not accept spaces other than a literal space 
+and the fact the program does not accept spaces other than a literal space\
 **` `**; when a character in the string to be found isn't in the keyboard the
 program prints an error message and then exits (returning 1). But since the
 keyboard doesn't have **`'\n'`** if you were to type a **`'`** and send a
@@ -1141,7 +1141,7 @@ talented! :)** I do wonder if he tested that bit of C code though:
 for(;P("\n"),R=;P("|"))for(e=C;e=P("_"+(*u++/
 8)%2))P("|"+(*u/4)%2);
 ```
-	   
+\
 How is **`R=;`** valid? Since I don't have the context maybe there is something
 I'm missing but either way it's a funny piece. It could also be for irony itself
 (actually I had previously thought of somehow implementing something like that

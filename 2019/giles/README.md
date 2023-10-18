@@ -62,7 +62,7 @@ Interesting fact: The size of the program from `./iocccsize -i` is 2019.
 ./prog input [output [size [dry [wet [damping]]]]]
 prog.exe input [output [size [dry [wet [damping]]]]]
 ```
-    
+\
 * `input`: The path to the input file. Required.
 * `output`: The path to the output file. Optional, defaults to `out.wav`.
 * `size`: The perceived size of the room, i.e. the approximate amount of time

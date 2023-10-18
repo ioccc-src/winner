@@ -1,10 +1,10 @@
 # Worst Abuse of the C Preprocessor and Most Likely To Amaze
 
-Mark Schnitzius & David Van Brackle  
-ISX Corporation  
-1165 Northchase Parkway  
-Suite 120  
-Marietta, GA  30067   
+Mark Schnitzius & David Van Brackle\
+ISX Corporation\
+1165 Northchase Parkway\
+Suite 120\
+Marietta, GA  30067\
 US
 
 ## To build:
@@ -53,7 +53,7 @@ never be placed on top of a smaller disk.
 
 Our program solves the Towers of Hanoi problem.  Well, that's
 not exactly true; actually, it's the compiler that solves the
-problem.  The resulting program just prints out the correct 
+problem.  The resulting program just prints out the correct\
 solution.
 
 How do you trick a compiler into actually solving the problem?
@@ -70,7 +70,7 @@ gcc hanoi.c -o hanoi -Dn=4
 A default value of `5` will be used for `n` if you do not define
 it on the command line.  The value of `n` cannot be greater than
 fifteen (the compiler we used to test has a limit on the #include
-depth).  The compiler then solves the problem using binary 
+depth).  The compiler then solves the problem using binary\
 arithmetic based on whether particular symbols are defined or not.
 
 To loop, the program `#include`s itself.  This is, of course,
@@ -97,7 +97,7 @@ gcc hanoi.c -E -Dn=5 | grep -v \# | grep -v ^\$
 
 For an odd number of disks, the program will provide a
 solution wherein the disks end up on peg 2; for an even
-number of disks, they will end on peg 3.  This should 
+number of disks, they will end on peg 3.  This should\
 provide some hint as to what sort of algorithm is used.
 
 We have included a [spoiler](spoiler.c) version of the program, with

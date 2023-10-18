@@ -1,6 +1,6 @@
 # Best Handwriting
 
-    Etienne Duble <etienne.duble@imag.fr>  
+    Etienne Duble <etienne.duble@imag.fr>\
     <http://lig-membres.imag.fr/duble>
 
 ## To build:
@@ -184,7 +184,7 @@ simple text documents.
 Thus, if you try for example:
 
 ```sh
-$ ./prog < prog.c 
+$ ./prog < prog.c\
 ```
 
 You will not get something that looks like C code. (but you can still try, if

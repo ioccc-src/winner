@@ -1,9 +1,9 @@
 # Best Obfuscated Algorithm
 
-E. Jay Berkenbilt  
-Engineering Research Associates  
-1595 Springhill Road  
-Vienna, VA 22182-2235  
+E. Jay Berkenbilt\
+Engineering Research Associates\
+1595 Springhill Road\
+Vienna, VA 22182-2235\
 US
 
 ## To build:
@@ -44,7 +44,7 @@ We note that this also works under macOS just fine.
 #### Output solution to Towers of Hanoi for five rings:
 
 ```sh
-./ejb 5			
+./ejb 5\
 ```
 
 The format of the output for the Towers of Hanoi case is simply a
@@ -53,7 +53,7 @@ text description of how to solve the puzzle.
 #### Output solution to the Patience puzzle for six rings:
 
 ```sh
-./ejb -6	
+./ejb -6\
 ```
 
 

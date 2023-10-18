@@ -1,11 +1,11 @@
 # Best Output
 
-Ian Collier  
-Oxford University  
-The Queen's College  
-High Street  
-Oxford  
-OX1 4AW  
+Ian Collier\
+Oxford University\
+The Queen's College\
+High Street\
+Oxford\
+OX1 4AW\
 England
 
 ## To build:
@@ -20,7 +20,7 @@ make all
 # text mode
 ./imc -text
 
-./imc 
+./imc\
 ```
 
 ## Judges' remarks:

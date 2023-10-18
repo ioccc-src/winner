@@ -1,6 +1,6 @@
 # Dishonorable mention
 
-The author wishes to remain anonymous  
+The author wishes to remain anonymous\
 Great Britain
 
 

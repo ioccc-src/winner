@@ -1,7 +1,7 @@
 # Best One-Liner
 
-Eryk Kopczynski  
-Poland  
+Eryk Kopczynski\
+Poland\
 <http://www.mimuw.edu.pl/~erykk/>
 
 

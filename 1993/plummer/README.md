@@ -1,8 +1,8 @@
 # Best One Liner
 
-Mark Plummer  
-2901 Reckord Road  
-Fallston, MD, 21047  
+Mark Plummer\
+2901 Reckord Road\
+Fallston, MD, 21047\
 US
 
 
@@ -65,7 +65,7 @@ enough args.
 
 
 ## Judges' remarks:
-    
+\
 For extra credit: What happens when 'number' contains non-numeric
 characters, and why?
 

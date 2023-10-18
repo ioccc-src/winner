@@ -1,6 +1,6 @@
 # Least detailed
 
-Ilya Kurdyukov  
+Ilya Kurdyukov\
 <https://github.com/ilyakurdyukov>
 
 ## To build:

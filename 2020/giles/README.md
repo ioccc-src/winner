@@ -1,6 +1,6 @@
 # Most phony
 
-Edward Giles  
+Edward Giles\
 <https://id523a.com/>
 
 ## To build:

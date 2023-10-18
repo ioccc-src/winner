@@ -1,6 +1,6 @@
 # Best small program
 
-Volker Diels-Grabsch  
+Volker Diels-Grabsch\
 <https://njh.eu>
 
 

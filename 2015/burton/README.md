@@ -196,7 +196,7 @@ This is my workaday compiler.  gcc is also clean with -ansi, and -std=c99.
 
 clang 3.6.0 lives up to its namesake, resounding on non-problems.
 To stifle these complaints:
-    
+\
 	-Wno-return-type -Wno-parentheses -Wno-empty-body
 
 

@@ -1,7 +1,7 @@
 # Best of Show
 
-Mauro Persano  
-Brazil  
+Mauro Persano\
+Brazil\
 <mauro_persano@yahoo.com>
 
 ## To build:

@@ -1,7 +1,7 @@
 # Best Utility
 
-Mary Ann Horton  
-US 
+Mary Ann Horton\
+US\
 <https://maryannhorton.com>
 
 ## To build:
