@@ -6,7 +6,7 @@
 make all || exit 1
 
 echo -n "Green terra <-> "
-echo "Green terra" |./fine
+echo "Green terra" | ./fine
 
 echo -n "Vex <-> "
 echo "Vex" | ./fine
