@@ -11,21 +11,22 @@ contributed thousands, that we wish to thank.
 
 We call out the extensive contributions of [Cody Boone
 Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson) who is
-responsible for many of the improvements including many, many **very complicated
-bug fixes** ([1988/phillipps](1988/phillipps/README.md),
-[2001/anonymous](2001/anonymous/README.md), [2004/burley](2004/burley/README.md)
-and others) making entries not require `-traditional-cpp` (which are **very
-complicated fixes**), fixing entries to compile with clang, fixing entries to
-work with macOS (some being **very complicated** like
-[1998/schweikh1](1998/schweikh1/README.md)), fixing code to work with both
-32-bit/64-bit which *can be* **very complicated** (like
-[2001/herrmann2](2001/herrmann2/README.md)), providing alternate code where
-useful/necessary, fixing where possible dead links or removing them,
-typo/consistency fixes, improving **ALL _Makefiles_** and writing
-[sgit](https://github.com/xexyl/sgit) that we installed locally and used to
-easily run `sed` on files in the repo to help build the website. **Thank you
-very much** for your extensive efforts in helping improve the IOCCC presentation
-of past IOCCC winners and fixing so many for modern systems!
+responsible for many of the improvements including many **very complicated bug
+fixes** like [1988/phillipps](1988/phillipps/README.md),
+[2001/anonymous](2001/anonymous/README.md) and
+[2004/burley](2004/burley/README.md), making entries like
+[1986/wall](1986/wall/README.md) not require `-traditional-cpp` (all **very
+complicated fixes**), fixing entries to compile with clang, porting entries to
+macOS, some being **very complicated** like
+[1998/schweikh1](1998/schweikh1/README.md), fixing code like
+[2001/herrmann2](2001/herrmann2/README.md) to work in both 32-bit/64-bit which
+*can be* **very complicated**, providing alternate code where useful/necessary,
+fixing where possible dead links or removing them, typo/consistency fixes,
+improving **ALL _Makefiles_** and writing [sgit](https://github.com/xexyl/sgit)
+that we installed locally to easily run `sed` on files in the repo to help build
+the website. **Thank you very much** for your extensive efforts in helping
+improve the IOCCC presentation of past IOCCC winners and fixing almost all for
+modern systems!
 
 [Yusuke Endoh](https://www.ioccc.org/winners.html#Yusuke_Endoh) supplied a
 number of important bug fixes to a number of past IOCCC winners. Some of those
@@ -261,15 +262,16 @@ noted earlier, very complicated, but we encourage you to look at [original
 code](1986/wall/wall.orig.c) to see how different C was in 1986.
 
 Yusuke originally patched this to use `strdup()` on two strings and this let it
-work with gcc but it still requires `-traditional-cpp`. The [alternate
+work with gcc but it still required `-traditional-cpp`. The [alternate
 code](1986/wall/wall.alt.c) is the version patched by Yusuke should you wish to
-try it with a compiler that has the `-traditional-cpp`.
+try it with a compiler that has the `-traditional-cpp`. See the README.md file
+for details.
 
 If you'd like to see the difference between the version that requires
 `-traditional-cpp` and the fixed version, try:
 
 ```sh
-git diff 82cbf069a781d64802fc59b36778c0b02be4043e..a74abb69b7e9b87e305b529941bf46f97ffff341 1986/wall/wall.c
+diff 1986/wall/wall.alt.c 1986/wall/wall.c
 ```
 
 ## [1987/heckbert](1987/heckbert/heckbert.c) ([README.md](1987/heckbert/README.md))
