@@ -441,11 +441,12 @@ by some crazy chance.
 
 Cody provided an [alternate version](1988/spinellis/spinellis.alt.c) so that
 this will work with compilers like clang. An alternate version had to be
-provided because not doing so would be tampering with the file too much. It
-would work but it would not show the same creativity. The original file exploits
-a fun mis-feature that works with gcc but not clang. This resulted in a change
-of rules which is another reason to not modify the original. See the README.md
-file for details on the alternate code.
+provided because not doing so would be tampering with the entry too much. It
+would work but it would not show the same creativity and cleverness.
+
+The original entry exploits a fun mis-feature that works with gcc but not clang.
+This resulted in a change of rules which is another reason to not modify the
+original. See the README.md file for details on the alternate code.
 
 Meanwhile Cody was twisted enough to point out (though to be fair he felt sick
 doing this) that with a slight modification this entry can be C++ instead. We don't
