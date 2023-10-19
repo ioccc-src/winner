@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Mon 16 Oct 11:22:52 UTC 2023*
+*Last updated: Thu 19 Oct 18:57:35 UTC 2023*
 
 This document is primarily for [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) as he (that is I :-) ) wanted a way
@@ -145,3 +145,6 @@ instead change it to make pull requests. See the
 - Check the YYYY/README.md files for other things besides the GitHub pull
 requests rather thane mailing judges. This can be done on the final pass of the
 files.
+
+- Consider adding a `1987/lievaart/lievaart3.alt.c` that doesn't forfeit the
+game if you input invalid input.
