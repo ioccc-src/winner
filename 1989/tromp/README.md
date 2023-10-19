@@ -39,12 +39,11 @@ high scores (up to 20 runs saved) so one can see who has the highest score. The
 file might look like:
 
 ```
-330 by cody
-136 by cody
+330 by luser
+136 by loser
 ```
 
-.... hey, I haven't played in a very long time and the lower one was hitting
-space (default drop) in rapid succession :-)
+... or so, where in this case the luser is the winner and the loser is the loser :-)
 
 
 ### Alternate code:
