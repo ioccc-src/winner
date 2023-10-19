@@ -18,6 +18,8 @@ Israel
 make all
 ```
 
+There is [alternate code](#alternate-code) for those using Turbo-C or MSC.
+
 ## To run:
 
 ```sh
@@ -36,21 +38,21 @@ Why is there no output?
 
 ### Alternate code:
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) provided alternate code
-for users using Turbo-C or MSC, based on the authors' remarks below, except
-that he did not change the `" #Q"` string as that showed worse looking output
-instead of improved output though he has no way to test the compilers in
-question. YMMV. Thank you Cody (though we all think <strike>[no
-one](https://en.wiktionary.org/wiki/no_one#Pronoun)</strike> [very
-few](https://en.wikipedia.org/wiki/0)
+This alternate code is for the [very few](https://en.wikipedia.org/wiki/0)
 [users](https://en.wikipedia.org/wiki/Microsoft_Windows)
-[here](https://www.ioccc.org) will need it :-) )!
+[here](https://www.ioccc.org) who will need it but nonetheless if you're using
+Turbo-C or MSC, the code is based on the authors' remarks except that the `"
+#Q"` string was not changed as that showed worse looking output instead of
+improved output though admittedly we have no way to test the compilers in
+question. YMMV.
 
-To compile:
+#### To build:
 
 ```sh
 make alt
 ```
+
+#### To use:
 
 Use `baruch.alt` as you would `baruch`.
 

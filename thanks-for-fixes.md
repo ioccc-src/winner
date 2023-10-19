@@ -560,8 +560,17 @@ details in that file and further details are in the [bugs.md](bugs.md) file.
 
 ## [1990/baruch](1990/baruch/baruch.c) ([README.md](1990/baruch/README.md]))
 
-Cody added an [alternate version](1990/baruch/baruch.alt.c) which allows certain
-compilers to compile the code, based on the author's remarks.
+Cody added an [alternate version](1990/baruch/baruch.alt.c) which allows Turbo-C
+and MSC to compile this code, based on the authors' remarks, except that Cody
+did not change the `" #Q"` string as that showed worse looking output
+instead of improved output though he has no way to test the compilers in
+question. YMMV.
+
+Although this is appreciated we agree with him that <strike>no one</strike>
+[very few](https://en.wikipedia.org/wiki/0)
+[users](https://en.wikipedia.org/wiki/Microsoft_Windows)
+[here](https://www.ioccc.org) will need it! :-)
+
 
 
 ## [1990/cmills](1990/cmills/cmills.c) ([README.md](1990/cmills/README.md]))
