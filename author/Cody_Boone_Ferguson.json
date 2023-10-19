@@ -12,7 +12,7 @@
     "deprecated_twitter_handle" : null,
     "mastodon" : "@xexyl@fosstodon.org",
     "mastodon_url" : "https://fosstodon.org/@xexyl",
-    "github" : null,
+    "github" : "@xexyl",
     "affiliation" : null,
     "winning_entry_set" : [
 	{ "winner_id" : "2018_ferguson" },
