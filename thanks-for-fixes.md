@@ -514,13 +514,14 @@ he was using lldb and saw that the type of a pointer was too `long` :-)
 
 
 ## [1989/robison](1989/robison/robison.c) ([README.md](1989/robison/README.md]))
+cd 1989/robison ; make orig_prog_diff
 
 Yusuke Endoh fixed this to compile under modern systems. To see the changes
 made, try:
 
 
 ```sh
-git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..9d63c37f490da333fbb1ed7db9571902570d4bad 1989/robison/robison.c
+cd 1989/robison ; make orig_prog_diff
 ```
 
 (It adds the C token pasting operator `##` instead of `/**/`.)
@@ -528,19 +529,21 @@ git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..9d63c37f490da333fbb1ed7db9571
 
 ## [1989/tromp](1989/tromp/tromp.c) ([README.md](1989/tromp/README.md]))
 
-We used a patch from Yusuke to get this to compile under gcc.
+Cody and Yusuke fixed this entry: Yusuke fixed this to compile with gcc and Cody
+fixed it for clang and made some other fixes as well.
 
-Cody fixed this to work with clang by further changing the variable `a` to be
-not the third argument to `main()` but instead be a variable declared in
-`main()`.
+To get it to work with clang the variable `a` had to not be the third argument
+to `main()` but instead be a variable in `main()`.
 
-Cody also bug fixed it so that the high score file would work (it was not even
-being created) and after this making sure the terminal stayed sane (the letter
-'`u`' could not be typed and echo was disabled outright after the segfault fix /
-high score file was reinstated). Although we appreciate the help here, he
-cynically noted that he had to have an IOCCC
-[Tetris](https://en.wikipedia.org/wiki/Tetris) working (this of course was not
-his only reason :-) )
+Cody also fixed a segfault and made it so the that the high score file would
+work (it was not even being created but it was supposed to be).
+
+Another problem Cody fixed was that the terminal was left in an insane state where you
+could not type '`u`' and echo was completely disabled.
+
+Although we appreciate the help here, he cynically noted that he had to have an
+IOCCC [Tetris](https://en.wikipedia.org/wiki/Tetris) working (this of course was
+not his only reason :-) )
 
 
 ## [1989/westley](1989/westley/westley.c) ([README.md](1989/westley/README.md]))
