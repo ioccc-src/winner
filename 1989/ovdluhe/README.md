@@ -38,14 +38,14 @@ by chance or is killed.
 ### Alternate code:
 
 The author suggested that one varies the definition of `P` from 2 through 10. As
-it's a `#define` it's easy to set up which [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson) did for us. To use try:
+it's a `#define` it's easy to set up. To use try:
 
 ```sh
 make CFLAGS="-DP=9" clobber alt
 ```
 
 Use `ovdluhe.alt` as you would `ovdluhe`.
+
 
 ## Judges' remarks:
 

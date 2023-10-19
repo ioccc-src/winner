@@ -494,8 +494,16 @@ you know how?
 
 ## [1989/ovdluhe](1989/ovdluhe/ovdluhe.c) ([README.md](1989/ovdluhe/README.md]))
 
-Cody provided an [alternate version](1989/ovdluhe/ovdluhe.alt.c) based on the
-author's remarks. See the README.md for details.
+Cody fixed an infinite loop where the program would print the same thing over
+and over again, flooding the screen. The problem is that there was a `for` loop
+that by necessity had to not have an increment stage but only in the `if` path
+(in the loop itself) did the pointer get updated. Looking at the code it might
+be that it can work just as well by adding the increment in the loop itself but
+this was not done.
+
+Cody also provided an [alternate version](1989/ovdluhe/ovdluhe.alt.c) based on the
+author's remarks. See the README.md for details. The fix described above was
+fixed in this version too, after it was discovered and fixed.
 
 
 ## [1989/paul](1989/paul/paul.c) ([README.md](1989/paul/README.md]))
