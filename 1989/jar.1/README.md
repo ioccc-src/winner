@@ -1,10 +1,10 @@
 # Strangest abuse of the rules
 
-Jari Arkko
-Laboratory of Information Processing Science
-Helsinki University of Technology
-Otakaari 1
-02150 Espoo
+Jari Arkko\
+Laboratory of Information Processing Science\
+Helsinki University of Technology\
+Otakaari 1\
+02150 Espoo\
 Finland
 
 ## To build:
@@ -36,7 +36,7 @@ make clobber alt
 or even:
 
 ```sh
-jar.1.alt.sh
+./jar.1.alt.sh
 ```
 
 ## Judges' remarks:
@@ -66,7 +66,7 @@ Under certain conditions that are dependent on such diverse things such as:
 - terminal driver
 - various bugs and misfeatures :-)
 
-the output of ray binary to a terminal can produce various effects
+the output of raw binary to a terminal can produce various effects
 from the mildly annoying beeps to missing seeing the important
 output, to various "ill effects" such as the crashing of the terminal
 application.  Instead we have opted to pipe raw binary thru the
