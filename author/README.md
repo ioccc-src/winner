@@ -88,11 +88,11 @@ And there must be the following JSON members:
 
 ```json
 "email" : "user0@example.com",
-"url" : "https:\/\/a.host0.example.com\/index.html",
-"alt_url" : "https:\/\/b.host0.example.com\/index.html",
+"url" : "https://a.host0.example.com/index.html",
+"alt_url" : "https://b.host0.example.com/index.html",
 "deprecated_twitter_handle" : "@something",
 "mastodon" : "@mastodon0@example.com",
-"mastodon_url" : "https:\/\/example.org\/@mastodon0",
+"mastodon_url" : "https://example.org/@mastodon0",
 "github" : "@github0",
 "affiliation" : "an affiliation group",
 ```
@@ -158,11 +158,11 @@ Here is a fictitious author_handle.json example:
     "location_code" : "AU",
     "location_name" : "Australia",
     "email" : "user0@example.com",
-    "url" : "https:\/\/a.host0.example.com\/index.html",
-    "alt_url" : "https:\/\/b.host0.example.com\/index.html",
+    "url" : "https://a.host0.example.com/index.html",
+    "alt_url" : "https://b.host0.example.com/index.html",
     "deprecated_twitter_handle" : "@something",
     "mastodon" : "@mastodon0@example.com",
-    "mastodon_url" : "https:\/\/example.org\/@mastodon0",
+    "mastodon_url" : "https://example.org/@mastodon0",
     "github" : "@github0",
     "affiliation" : "an affiliation group",
     "winning_entry_set" : [
