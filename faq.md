@@ -128,42 +128,88 @@ can look almost identical.
 ## Q: How can I easily see what was changed in order to get an entry to work in modern systems?
 
 Although the [thanks-for-fixes.md](/thanks-for-fixes.md) file sometimes gives
-commands to tell you how to do this, in general you can do:
+commands to tell you how to do this, we have set up make rules to easily do
+this. For these you should be in the directory of the entry you wish to see the
+diff output.
+
+If you want to see the difference from the _original_ source try:
 
 ```sh
-diff entry.c entry.orig.c
-diff prog.c prog.orig.c
+make orig_prog_diff
 ```
 
-to see it as if you wanted to make it go back to the original and, to see the
-difference to fix it, you can do:
+
+```
+make: [Makefile:158: orig_prog_diff] Error 1 (ignored)
+```
+
+but this is perfectly fine and expected.
+
+
+If however you wish to see the difference between the alt code and the entry
+itself, try:
 
 ```sh
-diff entry.orig.c entry.c
-diff prog.orig.c prog.c
+make alt_prog_diff
 ```
 
-For instance to see how [2001/anonymous](2001/anonymous/README.md) was fixed you
-can do:
+NOTE: this might show at the end something like:
+
+```
+make: [Makefile:163: alt_prog_diff] Error 1 (ignored)
+```
+
+The `alt_prog_diff` rule will do nothing if no alt file exists.
+
+If the alt code is the same as the original, say
+[1984/anonymous](1984/anonymous/README.md), there is no point in using this
+rule.
+
+As some examples we'll first look at one, that has really long lines which
+will make it harder to see what is different,
+[2001/anonymous](2001/anonymous/README.md). What you would do is `cd
+2001/anonymous` and then do:
 
 ```sh
-diff 2001/anonymous/anonymous.orig.c 2001/anonymous/anonymous.c
+make orig_prog_diff
 ```
+
+and then be really confused! :-)
+
+But for an entry like [1991/dds](1991/dds/README.md), you can see the
+differences much more easily. `1991/dds` is a good example where it's very
+simple to see what is different as it's just a couple lines.
 
 You might be quite surprised how little some entries had to be changed and at
 the same time how much other entries had to be changed, often with quite complex
 differences! In some cases if the line is rather long, like the above mentioned
 one, it will be harder to see what changed but in other cases like
-[1984/decot](1984/decot/README.md) it's a lot easier:
-
-```sh
-diff 1984/decot/decot.orig.c 1984/decot/decot.c
-```
+[1984/decot](1984/decot/README.md) or [1986/wall](1986/wall/README.md) it's a
+lot easier.
 
 Well, at least it's easier see the differences on a line-by-line basis but maybe
 not what actually changed, especially since it's easier to know what was fixed
-when you have compiler errors :-)
+when you have compiler errors :-) (though there are, as noted, some examples
+where it's quite easy to see the differences).
 
+[1991/dds](1991/dds/README.md) is also a good example to see the alt difference
+very easily. To do that `cd 1991/dds` and then do:
+
+```sh
+make alt_prog_diff
+```
+
+and you'll see a single line changed and very simply.
+
+### Tip: if you have `colordiff` installed it's a lot easier to see the differences
+
+To use these rules but provide a different `diff`, for instance `colordiff`,
+just do:
+
+```sh
+make DIFF=colordiff orig_prog_diff # for original diff
+make DIFF=colordiff alt_prog_diff # for alt diff
+```
 
 ## Q: I cannot get entry XYZZY from year 19xx to compile!
 
