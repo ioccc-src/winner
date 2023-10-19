@@ -10,9 +10,9 @@
     "url" : "http://www.spinellis.gr",
     "alt_url" : null,
     "deprecated_twitter_handle" : null,
-    "mastodon" : "@DSpinellis@mstdn.social",
-    "mastodon_url" : "https://mstdn.social/@DSpinellis",
-    "github" : null,
+    "mastodon" : "@CoolSWEng@mastodon.acm.org",
+    "mastodon_url" : "https://mastodon.acm.org/@CoolSWEng",
+    "github" : "@dspinellis",
     "affiliation" : null,
     "winning_entry_set" : [
 	{ "winner_id" : "1988_spinellis" },
