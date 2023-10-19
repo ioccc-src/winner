@@ -558,6 +558,15 @@ so, the program drops a core file into the directory.
 
 # 1989
 
+
+## [1989/fubar](1989/fubar/fubar.c) ([README.md](1989/fubar/README.md))
+## STATUS: INABIAF - please **DO NOT** fix
+
+Specifying too large a number (or < 0) to either `fubar` or the source code file
+(it's executable) that it generates will cause the program to enter an infinite
+loop, trying to compile code with syntax errors. At least in one system any
+number larger than 20 did this.
+
 ## [1989/robison](1989/robison/robison.c) ([README.md](1989/robison/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 

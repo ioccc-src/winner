@@ -25,17 +25,19 @@ make all
 ./fubar 2
 ```
 
+### INABIAF - it's not a bug it's a feature! :-)
+
+If you use either `fubar` or `ouroboros.c` (it's executable, see below) with a
+number < 0 or larger than, say 20, it's very likely that the program will turn
+into an infinite loop trying to compile code with syntax errors.
 
 ## Judges' remarks:
 
-Run this with a single digit argument (or wait a long time).
+Run this with a single digit argument (or wait a long time and risk an infinite
+loop as described above).
 
 The blank line at the beginning of the source is mandatory.
 Do you know why?
-
-NOTE: don't try running `ouroboros.c` (note that it's executable)
-directly with an arg as it'll turn into an infinite loop. The same will happen
-with larger numbers.
 
 NOTE: the file `ouroboros.c` is created by the program itself so this is why it
 is not in the repository.
@@ -43,16 +45,16 @@ is not in the repository.
 ## Author's remarks:
 
 In a nutshell, this is probably the slowest and most
-obnoxious factorial program ever written.  Unfortunately,\
-the name of the C source must be "ouroboros.c"; the name is\
+obnoxious factorial program ever written.  Unfortunately,
+the name of the C source must be `ouroboros.c`; the name is
 hard-coded into the program.
 
-The source is a legal shell script and a legal C program.\
+The source is a legal shell script and a legal C program.
 The shell script compiles itself, and then executes the
-resulting binary, giving the source as input.  The program\
+resulting binary, giving the source as input.  The program
 works by successively modifying #define lines each pass through.
 
-Both `indent` and `cb` will damage the program, `indent`\
+Both `indent` and `cb` will damage the program, `indent`
 much more so.
 
 ## Copyright and CC BY-SA 4.0 License:
