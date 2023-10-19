@@ -290,7 +290,10 @@ that for System V we had to do this) Cody added to the Makefile
 
 ## [1987/lievaart](1987/lievaart/lievaart.c) ([README.md](1987/lievaart/README.md))
 
-Cody made this ever so slightly like the original code by adding back the
+Cody fixed two infinite loops showing just `You:` by detecting invalid input
+which the program was documented to do. But see [bugs.md](/bugs.md).
+
+Cody also made this ever so slightly like the original code by adding back the
 `#define D define` even though it's unused. This was done for both versions as
 well (the one with the board and the one without, the entry itself with the
 limitations of the contest).

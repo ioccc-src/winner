@@ -537,12 +537,16 @@ or any others.
 # 1987
 
 ## [1987/lievaart](1987/lievaart/lievaart.c) ([README.md](1987/lievaart/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+## STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
 
-Two issues to be aware of: if you input invalid input (as in invalid characters
-like `.`) it might enter an infinite loop printing the same thing over and over.
-Also if you don't enter a valid number it will prompt you again.
+Cody fixed this to not enter an infinite loop (it was documented to detect this
+but it no longer worked). However this will forfeit the game for the user and
+it's not clear at this time if it was supposed to just act like you input `99`
+(see the README.md for details here) but that seems probable.
 
+Another issue might be that certain input when prompted for input will just
+prompt you again for input but it might be that I (Cody) do not remember how to
+play the game and it's expected this way.
 
 # 1988
 
