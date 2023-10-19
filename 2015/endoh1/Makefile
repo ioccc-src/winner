@@ -141,6 +141,10 @@ OREGONATOR_MODEL = -Delta_u="Du*laplacian(u)+(u-u*u-F*v*(u-Q)/(u+Q))/E" \
 all: ${TARGET} ${DATA}
 	@${TRUE}
 
+.PHONY: all alt data everything orig_prog_diff alt_prog_diff \
+	clean clobber install love haste waste maker easter_egg \
+	sandwich supernova deep_magic magic charon pluto
+
 ${PROG}: gray-scott-1
 	${RM} -f $@
 	${CP} gray-scott-1 $@
@@ -207,6 +211,18 @@ data: ${DATA}
 #
 everything: all alt
 	@${TRUE}
+
+# diff orig source and source
+#
+orig_prog_diff: ${PROG}.orig.c ${PROG}.c
+	@-${DIFF} -u ${PROG}.orig.c ${PROG}.c
+
+# diff alt source and source
+#
+alt_prog_diff: ${PROG}.c
+	@-if [[ -e ${PROG}.alt.c ]]; then \
+	    ${DIFF} -u ${PROG}.alt.c ${PROG}.c; \
+	fi
 
 
 ###############

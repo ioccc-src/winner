@@ -61,41 +61,39 @@ all:
 	done
 	@echo '=-=-= ${YEAR} complete make $@ =-=-='
 
-.PHONY: all alt data everything clean clobber install \
-        love haste waste maker easter_egg sandwich \
-        supernova deep_magic magic charon pluto
-
-# alternative executable
-#
-alt:
-	@echo '=-=-= ${YEAR} begin make $@ =-=-='
-	@echo
-	@for i in ${WINNERS} ; do \
-	    echo "=-= start ${YEAR}/$$i =-="; \
-	    echo "(cd $$i && $(MAKE) $@)"; \
-	    (cd $$i && $(MAKE) $@); \
-	    echo "=-= end ${YEAR}/$$i =-="; \
-	    echo; \
-	done
-	@echo '=-=-= ${YEAR} complete make $@ =-=-='
-
-# data files
-#
-data:
-	@echo '=-=-= ${YEAR} begin make $@ =-=-='
-	@echo
-	@for i in ${WINNERS} ; do \
-	    echo "=-= start ${YEAR}/$$i =-="; \
-	    echo "(cd $$i && $(MAKE) $@)"; \
-	    (cd $$i && $(MAKE) $@); \
-	    echo "=-= end ${YEAR}/$$i =-="; \
-	    echo; \
-	done
-	@echo '=-=-= ${YEAR} complete make $@ =-=-='
-
-# both all and alt
+.PHONY: all alt data everything orig_prog_diff alt_prog_diff \
+	clean clobber install love haste waste maker easter_egg \
+	sandwich supernova deep_magic magic charon pluto
 #
 everything:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+# diff orig source and source
+#
+orig_prog_diff:
+	@echo '=-=-= ${YEAR} begin make $@ =-=-='
+	@echo
+	@for i in ${WINNERS} ; do \
+	    echo "=-= start ${YEAR}/$$i =-="; \
+	    echo "(cd $$i && $(MAKE) $@)"; \
+	    (cd $$i && $(MAKE) $@); \
+	    echo "=-= end ${YEAR}/$$i =-="; \
+	    echo; \
+	done
+	@echo '=-=-= ${YEAR} complete make $@ =-=-='
+
+# diff alt source and source
+#
+alt_prog_diff:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
 	@for i in ${WINNERS} ; do \

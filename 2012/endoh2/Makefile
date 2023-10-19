@@ -134,9 +134,9 @@ ALT_C= pi.c 314.c 3141.c 31415.c 314159.c 3141592.c \
 all: data ${TARGET}
 	@${TRUE}
 
-.PHONY: all alt data everything clean clobber install \
-	love haste waste maker easter_egg sandwich \
-	supernova deep_magic magic charon pluto
+.PHONY: all alt data everything orig_prog_diff alt_prog_diff \
+	clean clobber install love haste waste maker easter_egg \
+	sandwich supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
@@ -304,6 +304,18 @@ data: ${DATA}
 #
 everything: all alt
 	@${TRUE}
+
+# diff orig source and source
+#
+orig_prog_diff: ${PROG}.orig.c ${PROG}.c
+	@-${DIFF} -u ${PROG}.orig.c ${PROG}.c
+
+# diff alt source and source
+#
+alt_prog_diff: ${PROG}.c
+	@-if [[ -e ${PROG}.alt.c ]]; then \
+	    ${DIFF} -u ${PROG}.alt.c ${PROG}.c; \
+	fi
 
 
 ###############
