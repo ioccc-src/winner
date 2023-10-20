@@ -19,13 +19,31 @@ make all
 ```sh
 ./jar.2
 [enter some lisp]
+
+./jar.2 < some_lisp_file
+
 ```
+
 
 NOTE: this entry will likely segfault on invalid input.
 
+## Try:
+
+```sh
+./try.me.sh
+
+cat chocolate_cake.lisp ; ./jar.2 < chocolate_cake.lisp
+
+./try.me.sh chocolate_cake.lisp
+
+./try.me.sh try.me.txt
+
+```
+
+
 ## Judges' remarks:
 
-This is the most useful program entered this year. It is a
+This is the most useful program submitted this year. It is a
 rather large subset of lisp.  It has no error recovery, and
 performs rather poorly in a number of cases.  Even so, placing
 all this functionality in such a small, densely packed program,
@@ -35,7 +53,7 @@ is impressive enough to win the Best of show award.
 ## Author's remarks:
 
 This program implements a Lisp interpreter in 1465 bytes of source.
-Some sophisticated features supported, eg. functionals and recursion.\
+Some sophisticated features supported, e.g. functionals and recursion.
 The special-forms/functions/variables implemented are:
 
 - \+
@@ -61,24 +79,24 @@ prints out the return values. End execution by typing an end-of-file
 character.
 
 ```lisp
-	(+ 2.5 3.1)
-	(defun fib (n)
-	   (if (< n 2)
-	       1
-	       (+ (fib (- n 2)) (fib (- n 1)))))
-	(fib 10)
-	(defun ! (x) (if (equal x 0) 1 (* x (! (- x 1)))))
-	(! 7)
-	(defun fn1 (fn) (+ (fn 1 2) (fn 3 4)))
-	(defun fn2 (a b) (+ a b))
-	(fn1 (function +))
-	(fn1 (function fn2))
-	(fn1 (function (lambda (z1 z2) (+ z1 z2))))
-	(quote a)
-	(cons (quote (a b)) (quote (c d e)))
-	(cons (quote (f)) ())
-	(car (quote (a b c)))
-	(cdr (cdr (quote (g h i))))
+(+ 2.5 3.1)
+(defun fib (n)
+   (if (< n 2)
+       1
+       (+ (fib (- n 2)) (fib (- n 1)))))
+(fib 10)
+(defun ! (x) (if (equal x 0) 1 (* x (! (- x 1)))))
+(! 7)
+(defun fn1 (fn) (+ (fn 1 2) (fn 3 4)))
+(defun fn2 (a b) (+ a b))
+(fn1 (function +))
+(fn1 (function fn2))
+(fn1 (function (lambda (z1 z2) (+ z1 z2))))
+(quote a)
+(cons (quote (a b)) (quote (c d e)))
+(cons (quote (f)) ())
+(car (quote (a b c)))
+(cdr (cdr (quote (g h i))))
 ```
 
 

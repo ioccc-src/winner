@@ -538,6 +538,14 @@ code like:
 He notes that there _is_ a way to get it (or something close to it) to work. Do
 you know how?
 
+Cody also provided the [try.me.sh](1989/jar.2/try.me.sh) script and the
+supplementary files [try.me.txt](1989/jar.2/try.me.txt),
+[fib.lisp](1989/jar.2/fib.lisp) and
+[chocolate_cake.lisp](1989/jar.2/chocolate_cake.lisp). The `try.me.txt` comes
+from the author and the `fib.lisp` comes from Yusuke. Cody wrote the script and
+offered us some chocolate cake :-) See README.md for details on how to use the
+script.
+
 
 ## [1989/ovdluhe](1989/ovdluhe/ovdluhe.c) ([README.md](1989/ovdluhe/README.md]))
 

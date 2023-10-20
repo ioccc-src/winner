@@ -39,7 +39,7 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-implicit-function-declaration -Wno-missing-braces -Wno-parentheses \
-	-Wno-deprecated-non-prototype -Wno-pedantic -Wno-strict-prototypes
+	-Wno-deprecated-non-prototype -Wno-pedantic -Wno-strict-prototypes -Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -130,8 +130,9 @@ all: data ${TARGET}
 	sandwich supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo NOTE: invalid input will cause this entry to dump core.
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	@echo
+	@echo NOTE: invalid input will cause this entry to dump core. See README.md for details.
 
 # alternative executable
 #
