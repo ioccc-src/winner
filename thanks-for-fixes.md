@@ -502,10 +502,25 @@ entry as seeing the code with the result at once is far more beautiful.
 
 ## [1989/fubar](1989/fubar/fubar.c) ([README.md](1989/fubar/README.md]))
 
-Cody got this to work with modern systems. The `main()` issues were an
+Cody got this to work with modern systems. The main issues were that an
 `#include` had to be added along with fixing the path (due to `.` not being in
 `$PATH`) to files referred to in the code.
 
+
+## [1989/jar.1](1989/jar.1/jar.1.c) ([README.md](1989/jar.1/README.md]))
+
+To prevent annoying output to `/dev/tty` we changed the code to simulate the
+output via `strings(1)` but Cody removed the ill-famed `useless use of cat` to
+shut ShellCheck up. Why is it ill-famed? Because there is no such thing as a
+useless cat, that's why! For instance, the fact they even exist is proof that
+the Earth is **NOT** flat: because if it was they would have pushed everything
+off it by now! :-) They're also a great joy to all ailurophiles and yes they
+most certainly do have a personality and they can be very sociable.
+
+Whilst he was at it, Cody made it so that one need not run the alt script or alt
+code directly, to match that of the main entry. As we simulate the functionality
+anyway, and since one may still run the code or the script (for the original
+entry and the alt code) anyway, it works out well.
 
 ## [1989/jar.2](1989/jar.2/jar.2.c) ([README.md](1989/jar.2/README.md]))
 
