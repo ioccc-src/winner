@@ -290,8 +290,40 @@ that for System V we had to do this) Cody added to the Makefile
 
 ## [1987/lievaart](1987/lievaart/lievaart.c) ([README.md](1987/lievaart/README.md))
 
-Cody fixed two infinite loops showing just `You:` by detecting invalid input
-which the program was documented to do. But see [bugs.md](/bugs.md).
+Cody added back the documented checks for invalid input which no longer worked
+and instead resulted in either accepting the level, whether or not it was a
+number or out of range (see below on range). For the move it entered an infinite
+loop, prompting the player with `"You:"` but not letting the player input
+anything so that the screen was flooded and the game could not play.
+
+For both the level and move it did a `scanf()` with a `%d` specifier but this
+resulted in, if invalid input, either proceeding (for the level), presumably
+incorrectly done as it might not even be a number (see below) or printing
+`"You:"` in an infinite loop, expecting input again but not letting the player
+input anything, both as noted above.
+
+The fix is that now the specifier is a `%2s` for a `char A[100]`. For the level
+if `atoi(A)>10||<0` (see next part) or `!isdigit(*A)` it goes back and prompts
+again. The level is checked for >=0||<=10, perhaps incorrectly or perhaps not, because
+in the code that variable is checked for `<10` and if that is the case it is
+incremented by 2. I do not know the rules of the game and neither do I know what
+the author had in mind so I chosen 10 as the maximum.
+
+As for the move the `do..while` loop works properly now that it does it in two
+steps (`scanf("%2s", A); m=atoi(A);`) so there's no need to check the value
+explicitly, again. Thus it will prompt until valid input is entered, but only
+showing `"You:"` once per prompting.
+
+In the case of the level prior to prompting for the level it does a `*A='\0';`
+and in the case of the move it does it after the `m=atoi(A);`. This is done this
+way because the check for the value of the level (`atoi(A)`) is done in the
+`if()` that also checks for a digit (though it does `(u=atoi(A))>10||u<0` first,
+thus checking the level, and `|| !isdigit(*A)`). Of course since `-` is not a
+digit the `<0` is superfluous but it's done anyway. If that `if` is 1 then it
+immediately goes back to the prompting of the level.
+
+But for the move it can happen after due to the fact the condition of the
+`do..while` loop will take care of things.
 
 Cody also made this ever so slightly like the original code by adding back the
 `#define D define` even though it's unused. This was done for both versions as
