@@ -1,6 +1,6 @@
 (quote ......................)
 (quote ||||||||||||||||||||||)
-(quote [[[--hexa-layered--]]])
+(quote [[[------six-------]]])
 (quote [[[----layered-----]]])
 (quote [[[---chocolate----]]])
 (quote [[[-----fudge------]]])
