@@ -592,10 +592,20 @@ To get it to work with clang the variable `a` had to not be the third argument
 to `main()` but instead be a variable in `main()`.
 
 Cody also fixed a segfault and made it so the that the high score file would
-work (it was not even being created but it was supposed to be).
+work (it was not even being created but it was supposed to be). This was
+happening due to a file pointer being declared as a `long` and more
+significantly is the command in `popen(3)` was not correct.
 
 Another problem Cody fixed was that the terminal was left in an insane state where you
 could not type '`u`' and echo was completely disabled.
+
+Cody later on fixed the alt version, provided by the author, so that it would
+compile with clang, not abort (with an alarm), would have the tetriminos fall,
+it would write to the high score file (the command to `popen(3)` was incorrect
+here too but as can be seen it differs from the submitted version), could use
+`stty` properly (and thus turn on echo again - it did not work because it was in
+the `popen(3)` call rather than using `system(3)`), a couple compiler errors and
+various other things, so that now the alt version, which is better, can be used.
 
 Although we appreciate the help here, he cynically noted that he had to have an
 IOCCC [Tetris](https://en.wikipedia.org/wiki/Tetris) working (this of course was
