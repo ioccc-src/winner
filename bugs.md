@@ -559,7 +559,8 @@ number larger than 20 did this.
 ## [1989/robison](1989/robison/robison.c) ([README.md](1989/robison/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 
-This program will crash with numbers with non-binary digits.
+This program will very likely crash or break into tiny bits :-) if you feed it
+numbers with non-binary digits.
 
 
 ## [1989/westley](1989/westley/westley.c) ([README.md](1989/westley/README.md))
