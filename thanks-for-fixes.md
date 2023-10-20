@@ -565,9 +565,12 @@ Cody fixed a segfault under macOS that prevented it from working. The problem
 was that the int (from `#define f`) should be a long. This became apparent when
 he was using lldb and saw that the type of a pointer was too `long` :-)
 
+Cody also provided the [alternate version](1989/paul/paul.alt.c)
+which has the trace function that the author included but commented out. See the
+README.md for details.
+
 
 ## [1989/robison](1989/robison/robison.c) ([README.md](1989/robison/README.md]))
-cd 1989/robison ; make orig_prog_diff
 
 Yusuke Endoh fixed this to compile under modern systems. To see the changes
 made, try:
