@@ -15,8 +15,8 @@ NOTE: this will run the program itself.
 make clobber all
 ```
 
-There is an alternate version with a slight difference. See [Alternate
-code](#alternate-code) below.
+There is an alternate version with a slight difference that you may wish to try.
+See [Alternate code](#alternate-code) below.
 
 ## To run:
 
