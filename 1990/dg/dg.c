@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#define d define
+
 #define b12(x) 12 x
 #define a13(x) x 13
 #define a16(x) x 16

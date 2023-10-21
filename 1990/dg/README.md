@@ -49,23 +49,25 @@ which we have done for the wider audience.
 If my preprocessor could hack it, I could write this as one single line rather
 than 4, but when I do that I get a complaint "defines nested too deeply".
 
-Spoiler: (rot13 to read)
+### Obfuscation spoiler:
 
-    Guvf vf nabgure ebg13 wbo (oryvrir vg be abg) - gur #qrsvarf ner n
-    abiry jnl bs nqqvat gbxraf: '#qrsvar o12(k) 12 k' zrnaf gung ng
-    fbzr cbvag va gur fbhepr n 12 vf sbyybjrq ol gur pbzcerffrq arfgrq
-    qrsvarf. Gur o12 trgf gur cerivbhf pbzcerffvba nf na nethzrag, naq
-    cercraqf gur 12, guhf znxvat nabgure fgrc va gur erperngvba bs gur
-    fbhepr. Gur nkk() qrsvarf qb gur fnzr, ohg nqq gbxraf nsgre.
+This is another rot13 job (believe it or not) - the `#defines` are a
+novel way of adding tokens: `#define b12(x) 12 x` means that at
+some point in the source a `12` is followed by the compressed nested
+`#define`s. The `b12` gets the previous compression as an argument, and
+prepends the `12`, thus making another step in the recreation of the
+source. The `axx()` `#define`s do the same, but add tokens after.
 
-    Nf sbe gur ebg13 nytbevguz, vg eryvrf ba vaqrk() gb svaq vs gur
-    punenpgre vf va gur frg N-Mn-m. y[] vf na neenl gung trgf svyyrq
-    jvgu:
+As for the rot13 algorithm, it relies on `index(3)` to find if the
+character is in the set `A-Za-z`. `l[]` is an array that gets filled
+with:
 
-    "abcdefghijklmmmmnopqrstuvwxyzzzzABCDEFGHIJKLMMMMNOPQRSTUVWXYZZZZ"
+```
+"nopqrstuvwxyzzzzabcdefghijklmmmmNOPQRSTUVWXYZZZZABCDEFGHIJKLMMMM"
+```
 
-    Vs vaqrk() fnlf gur pune vf va gur nycunorg, gura kbe gur bssfrg
-    jvgu 16 gb genafyngr, naq bhgchg, bgurejvfr cnff vg hapunatrq.
+If `index(3)` says the char is in the alphabet, then XOR the offset
+with `16` to translate, and output, otherwise pass it unchanged.
 
 ## Copyright and CC BY-SA 4.0 License:
 
