@@ -661,6 +661,26 @@ links and the user executes does that make the compiler the jury, the linker the
 judge and user the executioner? :-)
 
 
+## [1990/dg](1990/dg/dg.c) ([README.md](1990/dg/README.md]))
+
+Cody fixed this for modern systems. There were two problems to be resolved.
+
+One can no longer do:
+
+```c
+#define d define
+
+#d b12(x) 12 x
+
+/* etc. */
+```
+
+so the use of `#d` is now instead `#define` (the macro was originally deleted
+but later Cody added it back to make it more like the original).
+
+The second problem was suggested by the judges at the time of judging, to do
+with if the C preprocessor botches single quotes in cpp expansion.
+
 ## [1990/dds](1990/dds/dds.c) ([README.md](1990/dds/README.md]))
 
 Yusuke and Cody in conjunction fixed this for modern systems (both fixed a
