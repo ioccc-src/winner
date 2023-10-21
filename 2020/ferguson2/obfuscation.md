@@ -3,7 +3,10 @@
 *   Strings identifying what it is are encrypted by the Enigma itself (with its
 default settings). The strings are: `Position`, `Setting`, `Ring`, `Plugboard pair`
 `Reflector`. Together these would be a dead giveaway to anyone familiar with the
-Enigma machine and some of them by themselves would be a dead giveaway too.
+Enigma machine and some of them by themselves would be a dead giveaway too. I
+can't even explain how I did this (although I'm sure at one point I could have)
+but I do think it's pretty cool to have the text encrypted by the program and
+still be capable of printing it correctly all without giving anything away.
 
 *   Digraphs. This isn't necessarily obfuscation itself but it does cause some
 beautifiers problems and it can be useful in layout as well (in some contexts

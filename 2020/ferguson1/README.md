@@ -63,7 +63,7 @@ and non-zero).
 		with creativity you can create some fun gameplay modes.  NOTE:
 		the concept of shedding in this game is a misnomer; see notes
 		below.
-\
+
 * **`SHEDS`**\
 	        every **`SHED`** movements will impact what this value means: grow
 		(> 0), shrink (< 0) or not at all (0). Exception: if the snake
@@ -217,7 +217,7 @@ information on the entry (some of which is deliberately not true - a variation
 of misleading comments). These files are probably insignificant.
 
 I have more information about this entry at
-<https://ioccc.xexyl.net/2020/snake]>.
+<https://ioccc.xexyl.net/2020/snake>.
 
 As noted for the files I recommend looking at the html files with a browser
 unless on GitHub in which case I recommend the markdown files; this particularly
@@ -258,7 +258,8 @@ very important.
 
 *   'The screen keeps showing bugs!' Well yes, that's rather the point! Help out
     by eating them. Keep eating them until you win! Then you will have the
-    satisfaction of getting rid of the non-bug bugs! :)
+    satisfaction of getting rid of the non-bug bugs (okay, insects, but that
+    ruins a great pun and joke)! :)
 
 *   The Snake in the game doesn't fly (yes there are [flying snakes][]). For
     other snake madness see the reports of '[human snakes][]'.
