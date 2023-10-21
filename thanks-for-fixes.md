@@ -290,8 +290,40 @@ that for System V we had to do this) Cody added to the Makefile
 
 ## [1987/lievaart](1987/lievaart/lievaart.c) ([README.md](1987/lievaart/README.md))
 
-Cody fixed two infinite loops showing just `You:` by detecting invalid input
-which the program was documented to do. But see [bugs.md](/bugs.md).
+Cody added back the documented checks for invalid input which no longer worked
+and instead resulted in either accepting the level, whether or not it was a
+number or out of range (see below on range). For the move it entered an infinite
+loop, prompting the player with `"You:"` but not letting the player input
+anything so that the screen was flooded and the game could not play.
+
+For both the level and move it did a `scanf()` with a `%d` specifier but this
+resulted in, if invalid input, either proceeding (for the level), presumably
+incorrectly done as it might not even be a number (see below) or printing
+`"You:"` in an infinite loop, expecting input again but not letting the player
+input anything, both as noted above.
+
+The fix is that now the specifier is a `%2s` for a `char A[100]`. For the level
+if `atoi(A)>10||<0` (see next part) or `!isdigit(*A)` it goes back and prompts
+again. The level is checked for >=0||<=10, perhaps incorrectly or perhaps not, because
+in the code that variable is checked for `<10` and if that is the case it is
+incremented by 2. I do not know the rules of the game and neither do I know what
+the author had in mind so I chosen 10 as the maximum.
+
+As for the move the `do..while` loop works properly now that it does it in two
+steps (`scanf("%2s", A); m=atoi(A);`) so there's no need to check the value
+explicitly, again. Thus it will prompt until valid input is entered, but only
+showing `"You:"` once per prompting.
+
+In the case of the level prior to prompting for the level it does a `*A='\0';`
+and in the case of the move it does it after the `m=atoi(A);`. This is done this
+way because the check for the value of the level (`atoi(A)`) is done in the
+`if()` that also checks for a digit (though it does `(u=atoi(A))>10||u<0` first,
+thus checking the level, and `|| !isdigit(*A)`). Of course since `-` is not a
+digit the `<0` is superfluous but it's done anyway. If that `if` is 1 then it
+immediately goes back to the prompting of the level.
+
+But for the move it can happen after due to the fact the condition of the
+`do..while` loop will take care of things.
 
 Cody also made this ever so slightly like the original code by adding back the
 `#define D define` even though it's unused. This was done for both versions as
@@ -470,10 +502,25 @@ entry as seeing the code with the result at once is far more beautiful.
 
 ## [1989/fubar](1989/fubar/fubar.c) ([README.md](1989/fubar/README.md]))
 
-Cody got this to work with modern systems. The `main()` issues were an
+Cody got this to work with modern systems. The main issues were that an
 `#include` had to be added along with fixing the path (due to `.` not being in
 `$PATH`) to files referred to in the code.
 
+
+## [1989/jar.1](1989/jar.1/jar.1.c) ([README.md](1989/jar.1/README.md]))
+
+To prevent annoying output to `/dev/tty` we changed the code to simulate the
+output via `strings(1)` but Cody removed the ill-famed `useless use of cat` to
+shut ShellCheck up. Why is it ill-famed? Because there is no such thing as a
+useless cat, that's why! For instance, the fact they even exist is proof that
+the Earth is **NOT** flat: because if it was they would have pushed everything
+off it by now! :-) They're also a great joy to all ailurophiles and yes they
+most certainly do have a personality and they can be very sociable.
+
+Whilst he was at it, Cody made it so that one need not run the alt script or alt
+code directly, to match that of the main entry. As we simulate the functionality
+anyway, and since one may still run the code or the script (for the original
+entry and the alt code) anyway, it works out well.
 
 ## [1989/jar.2](1989/jar.2/jar.2.c) ([README.md](1989/jar.2/README.md]))
 
@@ -490,6 +537,14 @@ code like:
 
 He notes that there _is_ a way to get it (or something close to it) to work. Do
 you know how?
+
+Cody also provided the [try.me.sh](1989/jar.2/try.me.sh) script and the
+supplementary files [try.me.txt](1989/jar.2/try.me.txt),
+[fib.lisp](1989/jar.2/fib.lisp) and
+[chocolate_cake.lisp](1989/jar.2/chocolate_cake.lisp). The `try.me.txt` comes
+from the author and the `fib.lisp` comes from Yusuke. Cody wrote the script and
+offered us some chocolate cake :-) See README.md for details on how to use the
+script.
 
 
 ## [1989/ovdluhe](1989/ovdluhe/ovdluhe.c) ([README.md](1989/ovdluhe/README.md]))
@@ -510,9 +565,12 @@ Cody fixed a segfault under macOS that prevented it from working. The problem
 was that the int (from `#define f`) should be a long. This became apparent when
 he was using lldb and saw that the type of a pointer was too `long` :-)
 
+Cody also provided the [alternate version](1989/paul/paul.alt.c)
+which has the trace function that the author included but commented out. See the
+README.md for details.
+
 
 ## [1989/robison](1989/robison/robison.c) ([README.md](1989/robison/README.md]))
-cd 1989/robison ; make orig_prog_diff
 
 Yusuke Endoh fixed this to compile under modern systems. To see the changes
 made, try:
@@ -534,10 +592,20 @@ To get it to work with clang the variable `a` had to not be the third argument
 to `main()` but instead be a variable in `main()`.
 
 Cody also fixed a segfault and made it so the that the high score file would
-work (it was not even being created but it was supposed to be).
+work (it was not even being created but it was supposed to be). This was
+happening due to a file pointer being declared as a `long` and more
+significantly is the command in `popen(3)` was not correct.
 
 Another problem Cody fixed was that the terminal was left in an insane state where you
 could not type '`u`' and echo was completely disabled.
+
+Cody later on fixed the alt version, provided by the author, so that it would
+compile with clang, not abort (with an alarm), would have the tetriminos fall,
+it would write to the high score file (the command to `popen(3)` was incorrect
+here too but as can be seen it differs from the submitted version), could use
+`stty` properly (and thus turn on echo again - it did not work because it was in
+the `popen(3)` call rather than using `system(3)`), a couple compiler errors and
+various other things, so that now the alt version, which is better, can be used.
 
 Although we appreciate the help here, he cynically noted that he had to have an
 IOCCC [Tetris](https://en.wikipedia.org/wiki/Tetris) working (this of course was

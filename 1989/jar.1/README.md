@@ -9,11 +9,18 @@ Finland
 
 ## To build:
 
+NOTE: this will run the program itself.
+
 ```sh
 make clobber all
 ```
 
+There is an alternate version with a slight difference that you may wish to try.
+See [Alternate code](#alternate-code) below.
+
 ## To run:
+
+NOTE: this will run the program itself:
 
 ```sh
 make clobber all
@@ -21,23 +28,25 @@ make clobber all
 
 ### Alternate code:
 
-One may try:
+This code, which prints something slightly different, is provided as well.
 
-```
-./jar.1.sh
-```
+#### To build:
 
-Or for the original $xurce might not compile using modern compilers, try:
+NOTE: this will run the program itself.
 
 ```sh
 make clobber alt
 ```
 
-or even:
+#### To run:
+
+Alternatively, you can run it directly:
+
 
 ```sh
 ./jar.1.alt.sh
 ```
+
 
 ## Judges' remarks:
 

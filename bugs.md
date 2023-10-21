@@ -536,17 +536,6 @@ or any others.
 
 # 1987
 
-## [1987/lievaart](1987/lievaart/lievaart.c) ([README.md](1987/lievaart/README.md))
-## STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
-
-Cody fixed this to not enter an infinite loop (it was documented to detect this
-but it no longer worked). However this will forfeit the game for the user and
-it's not clear at this time if it was supposed to just act like you input `99`
-(see the README.md for details here) but that seems probable.
-
-Another issue might be that certain input when prompted for input will just
-prompt you again for input but it might be that I (Cody) do not remember how to
-play the game and it's expected this way.
 
 # 1988
 
@@ -570,7 +559,8 @@ number larger than 20 did this.
 ## [1989/robison](1989/robison/robison.c) ([README.md](1989/robison/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 
-This program will crash with numbers with non-binary digits.
+This program will very likely crash or break into tiny bits :-) if you feed it
+numbers with non-binary digits.
 
 
 ## [1989/westley](1989/westley/westley.c) ([README.md](1989/westley/README.md))

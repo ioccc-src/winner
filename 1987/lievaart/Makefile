@@ -62,11 +62,11 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE=
+CINCLUDE= -include stdio.h
 
 # Optimization
 #
-OPT= -O3
+OPT=
 
 # Default flags for ANSI C compilation
 #

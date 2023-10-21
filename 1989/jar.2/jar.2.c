@@ -1,4 +1,6 @@
 #include <stdio.h>
+#define d define
+#define a include
 #include <string.h>
 #include <ctype.h>
 #define p char*

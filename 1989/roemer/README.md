@@ -1,9 +1,6 @@
 # Best layout
 
 Lievaart, Roemer B.\
-VU-Informatica, Amsterdam\
-Marcusstraat 29/2,\
-NL 1091 TJ Amsterdam\
 Netherlands
 
 ## To build:
@@ -20,18 +17,18 @@ make all
 
 ## Judges' remarks:
 
-Do you know what this program does?  If you do, look again,
-there is more here than meets the PI.
+Do you know what this program does?  If you do, look again, there is more here
+than meets the PI.
 
 ## Author's remarks:
 
-Passes lint, but not with the strictest options, for it
-contains some "null-statements", as well two identifiers
-which are, if compilers only take 6 characters, the same.  It
-also uses write(2), so not totally system independent.
+Passes lint, but not with the strictest options, for it contains some
+"null-statements", as well two identifiers which are, if compilers only take 6
+characters, the same.  It also uses `write(2)`, so not totally system
+independent.
 
-You are very much invited to pass this program through a C-beautifier. (First
-strip newlines and tabs, if your `cb` can't do that.)
+You are very much invited to pass this program through a C-beautifier (first
+strip newlines and tabs, if your `cb` can't do that).
 
 ## Copyright and CC BY-SA 4.0 License:
 
