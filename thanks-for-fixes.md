@@ -824,6 +824,8 @@ The key to the string is that it rotates the character by `+1`. This was not
 immediately clear until reading the author's remarks so there was an alt version
 that was something of a kludge, running `make a` instead.
 
+Cody also fixed a typo in LANDER.BAS.
+
 
 ## [1991/fine](1991/fine/fine.c) ([README.md](1991/fine/README.md))
 
