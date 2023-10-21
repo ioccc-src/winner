@@ -788,8 +788,13 @@ slightly more like the original, even though it's unused.
 
 Cody fixed a segfault that prevented this entry from working in any condition
 and he also made an [alternate version](1991/dds/dds.alt.c) that works with
-`clang`. The alternate code, described in the README.md file, is what is needed
+`clang`.
+
+The alternate code, described in the README.md file, is what is needed
 for clang.  Reading it might be instructive even if you have gcc.
+
+Later on Cody improved the fix for clang by a slight modification to the
+Makefile so that the compiled program is the same as with gcc: `a.out`.
 
 ## [1991/fine](1991/fine/fine.c) ([README.md](1991/fine/README.md))
 
