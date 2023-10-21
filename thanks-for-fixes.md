@@ -15,10 +15,11 @@ responsible for many of the improvements including many **very complicated bug
 fixes** like [1988/phillipps](1988/phillipps/README.md),
 [2001/anonymous](2001/anonymous/README.md) and
 [2004/burley](2004/burley/README.md), making entries like
-[1986/wall](1986/wall/README.md) not require `-traditional-cpp` (all **very
-complicated fixes**), fixing entries to compile with clang, porting entries to
-macOS, some being **very complicated** like
-[1998/schweikh1](1998/schweikh1/README.md), fixing code like
+[1986/wall](1986/wall/README.md) not need `-traditional-cpp` (all **very
+complicated fixes**), fixing entries to work with clang (some being **very
+complicated** like [1991/dds](1991/dds/README.md)), porting entries to
+macOS (some being **very complicated** like
+[1998/schweikh1](1998/schweikh1/README.md)), fixing code like
 [2001/herrmann2](2001/herrmann2/README.md) to work in both 32-bit/64-bit which
 *can be* **very complicated**, providing alternate code where useful/necessary,
 fixing where possible dead links or removing them, typo/consistency fixes,
@@ -787,14 +788,42 @@ slightly more like the original, even though it's unused.
 ## [1991/dds](1991/dds/dds.c) ([README.md](1991/dds/README.md]))
 
 Cody fixed a segfault that prevented this entry from working in any condition
-and he also made an [alternate version](1991/dds/dds.alt.c) that works with
-`clang`.
+and he also made it work for clang. Clang (at least in some systems?) defaults
+to having `-Wno-error` and the code that the entry generates had some warnings
+that were causing compilation to fail as it just ran `cc a.c`. It ran it by what
+was once `system(q-6);` but with clang this was not enough..
 
-The alternate code, described in the README.md file, is what is needed
-for clang.  Reading it might be instructive even if you have gcc.
+The following had to be added to the string `s` (which to fix the segfault was
+changed from `char*s` to `char s[]`):
 
-Later on Cody improved the fix for clang by a slight modification to the
-Makefile so that the compiled program is the same as with gcc: `a.out`.
+```
+!.Xop.fssps!.Xop.sfuvso.uzqf!.Xop.jnqmjdju.gvodujpo.efdmbsbujpo
+```
+and then the call to `system()` had to be changed to:
+
+```c
+system(q-69);
+```
+
+An important point is that the placement of this string in the `s` array does
+matter. This is because of the code:
+
+```c
+*o=fopen(q-3,"w");
+```
+
+which means the file name that translates to `a.c` has to be at the end of the
+string. Thus the end of the string actually looks like:
+
+```
+!.Xop.fssps!.Xop.sfuvso.uzqf!.Xop.jnqmjdju.gvodujpo.efdmbsbujpo!b/d
+```
+
+With these changes in place it will compile and work with both gcc and clang.
+The key to the string is that it rotates the character by `+1`. This was not
+immediately clear until reading the author's remarks so there was an alt version
+that was something of a kludge, running `make a` instead.
+
 
 ## [1991/fine](1991/fine/fine.c) ([README.md](1991/fine/README.md))
 

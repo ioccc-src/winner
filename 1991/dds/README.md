@@ -12,9 +12,6 @@ Mastodon: <https://mstdn.social/@DSpinellis>
 make all
 ```
 
-There is an alt version for those who use `clang`. See [Alternate
-code](#alternate-code) below.
-
 ## To run:
 
 ```sh
@@ -22,23 +19,9 @@ code](#alternate-code) below.
 ./a.out 2>/dev/null
 ```
 
-The segfault which was always triggered was due to the code `*q>' '&&(*q)--;`.
-This seems odd at first glance but it's pointing to `s` which was read-only
-memory as a `char *s`.  It's now a `char s[]`.
-
-
-NOTE: for `clang` you'll likely have to use the alternate code described below.
-
-
 ## Try:
 
-With gcc, make and run as follows:
-
-```sh
-make dds
-```
-
-For example, the author suggests trying:
+The author suggests trying:
 
 ```sh
 ./dds LANDER.BAS 2>/dev/null
@@ -54,49 +37,6 @@ What happens if you give the program a C program like itself? Try:
 You'll get errors yes but what does the generated file look like? What about
 other types of files?
 
-
-### Alternate code:
-
-This alternate code allows this entry to work successfully even with clang.
-Unfortunately it's something of a hack or maybe even a kludge.  This however
-seems important because it works well and allows for not messing with the `s`
-string which is quite complicated.  Even changing the length could break
-functionality and indeed the length would have to be longer for this to work
-with clang.
-
-How does it work? The original code (which you will see in [dds.c](dds.c)) does
-a `return system(q-6);` which equates to `return system("cc a.c");` but clang by
-default, at least in macOS, has default `-Werror` and there were some warnings.
-This means that the compilation failed with clang (because it didn't use `make`
-so no [Makefile](Makefile) was used). In particular it would fail (at least with
-[LANDER.BAS](LANDER.BAS)) due to a return from `main()` without a return value
-and the use of functions not yet declared.
-
-Now as noted since the string `s` is complicated and to not inadvertently mess
-something up it was changed so that the code uses `system("make a");` and then an
-appropriate rule was added to the Makefile. Thus for the alternative version you
-now need both `make` and `cc`. If you use gcc you can just use the original
-version.
-
-#### To build:
-
-```sh
-make alt
-```
-
-#### To run:
-
-```sh
-./dds.alt some_basic_program.bas 2>/dev/null
-./a.out 2>/dev/null
-```
-
-#### Try:
-
-```sh
-./dds LANDER.BAS 2>/dev/null
-./a.out 2>/dev/null
-```
 
 ### INABIAF - it's not a bug it's a feature! :-)
 
