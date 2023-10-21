@@ -869,6 +869,10 @@ why two places, not one!). Why 100 when the longest string is < 100? Because a
 shorter value caused strange output and it's easier to just choose a larger
 value that works without having to find the correct value.
 
+Cody also fixed the `ttt.sh` script that prevented the game from working and he
+also improved it so that warnings/errors/about to compile messages are not shown
+unless the `-e` option is used.  This is because the errors being shown kind of
+ruins the experience. Finally he made it pass ShellCheck.
 
 ## [1992/adrian](1992/adrian/adrian.c) ([README.md](1992/adrian/README.md]))
 
