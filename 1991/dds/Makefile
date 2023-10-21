@@ -133,7 +133,7 @@ ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 a: a.c
-	${CC} ${CFLAGS} -Wno-return-type $< -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS} -Wno-return-type $< -o a.out ${LDFLAGS}
 
 # alternative executable
 #

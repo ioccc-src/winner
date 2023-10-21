@@ -12,6 +12,8 @@ Mastodon: <https://mstdn.social/@DSpinellis>
 make all
 ```
 
+There is an alt version for those who use `clang`. See [Alternate
+code](#alternate-code) below.
 
 ## To run:
 
@@ -27,15 +29,6 @@ memory as a `char *s`.  It's now a `char s[]`.
 
 NOTE: for `clang` you'll likely have to use the alternate code described below.
 
-### INABIAF - it's not a bug it's a feature! :-)
-
-Please note that if the BASIC file cannot be opened for reading or the output
-file cannot be opened for writing then this program will very likely crash or do
-something funny.
-
-These are a mild nuisance but are considered a feature not a bug. We challenge
-you to fix it for learning if you wish. See also [bugs.md](/bugs.md).
-
 
 ## Try:
 
@@ -46,7 +39,7 @@ make dds
 ```
 
 For example, the author suggests trying:
-\
+
 ```sh
 ./dds LANDER.BAS 2>/dev/null
 ./a.out 2>/dev/null
@@ -64,33 +57,56 @@ other types of files?
 
 ### Alternate code:
 
-The alternate code allows this entry to work successfully even with clang.
+This alternate code allows this entry to work successfully even with clang.
 Unfortunately it's something of a hack or maybe even a kludge.  This however
 seems important because it works well and allows for not messing with the `s`
 string which is quite complicated.  Even changing the length could break
 functionality and indeed the length would have to be longer for this to work
 with clang.
 
-How does it work? The code (which you will see in [dds.c](dds.c)) does a `return
-system(q-6);` which equates to `return system("cc a.c");` but clang by default,
-at least in macOS, has default -Werror and there were some warnings. This means
-that the compilation failed with clang (because it didn't use `make` so no
-[Makefile](Makefile) was used). In particular it would fail (at least with
+How does it work? The original code (which you will see in [dds.c](dds.c)) does
+a `return system(q-6);` which equates to `return system("cc a.c");` but clang by
+default, at least in macOS, has default `-Werror` and there were some warnings.
+This means that the compilation failed with clang (because it didn't use `make`
+so no [Makefile](Makefile) was used). In particular it would fail (at least with
 [LANDER.BAS](LANDER.BAS)) due to a return from `main()` without a return value
 and the use of functions not yet declared.
 
 Now as noted since the string `s` is complicated and to not inadvertently mess
 something up it was changed so that the code uses `system("make a");` and then an
 appropriate rule was added to the Makefile. Thus for the alternative version you
-now need both `make` and `cc`. If you use gcc you can change the `system()` call
-to what was given in this description to get a more authentic feel. If you do
-this you must then run `./a.out` not `./a`! Thus to use the alternative version:
+now need both `make` and `cc`. If you use gcc you can just use the original
+version.
+
+#### To build:
 
 ```sh
-make clobber alt
-./dds.alt LANDER.BAS 2>/dev/null
-./a 2>/dev/null
+make alt
 ```
+
+#### To run:
+
+```sh
+./dds.alt some_basic_program.bas 2>/dev/null
+./a.out 2>/dev/null
+```
+
+#### Try:
+
+```sh
+./dds LANDER.BAS 2>/dev/null
+./a.out 2>/dev/null
+```
+
+### INABIAF - it's not a bug it's a feature! :-)
+
+Please note that if the BASIC file cannot be opened for reading or the output
+file cannot be opened for writing then this program will very likely crash or do
+something funny.
+
+These are a mild nuisance but are considered a feature not a bug. We challenge
+you to fix it for learning if you wish. See also [bugs.md](/bugs.md).
+
 
 ## Judges' remarks:
 
@@ -103,22 +119,23 @@ C programs by way of an obfuscated algorithm.
 
 ## Author's remarks:
 
-This program is a companion to the DDS-BASIC interpreter program that
-was submitted to the contest in 1990.  This compiles BASIC programs into
-executable commands.  The input format is almost identical to the input
-format of the DDS-BASIC interpreter.  The program needs an executable C
-compiler called `cc` in your path in order to work.
+This program is a companion to the [DDS-BASIC interpreter
+program](/1990/dds/README.md) that was submitted to [the contest in
+1990](/years.html#1990).  This compiles BASIC programs into executable commands.
+The input format is almost identical to the input format of the DDS-BASIC
+interpreter.  The program needs an executable C compiler called `cc` in your
+path in order to work.
 
 ### Program commands:
 
 
-- variable names A to Z\
-- FOR var = exp TO exp\
-- GOSUB exp\
-- GOTO exp\
-- INPUT variable\
-- PRINT exp\
-- REM any text\
+- variable names A to Z
+- FOR var = exp TO exp
+- GOSUB exp
+- GOTO exp
+- INPUT variable
+- PRINT exp
+- REM any text
 - variables initialized to 0 on RUN
 - NEXT variable
 - RETURN
@@ -137,7 +154,7 @@ Many system calls and C library calls can be used.
 - Exactly one space is needed after the FOR and NEXT tokens
 - ALL INPUT MUST BE UPPERCASE.
 
-Error checking / error reports:
+### Error checking / error reports:
 
 The compiler silently ignores many errors.
 Other errors may produce errors in later phases of the compilation.
