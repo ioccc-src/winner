@@ -666,8 +666,9 @@ Yusuke and Cody in conjunction fixed this for modern systems (both fixed a
 different compiler error but more fixes were also made).
 
 Yusuke added the comma operator for a binary expression with `free(3)` which is
-is a compiler error because `free()` returns void. Cody then made it slightly more like the
-original in this way by redefining `free` to have the comma operator itself.
+is a compiler error because `free()` returns void. Cody then made it slightly
+more like the original in this way by redefining `free` to have the comma
+operator itself.
 
 Cody fixed another compiler error by removing the erroneous prototype to
 `fopen()`.  Cody also changed a file to be a proper `FILE *` and fixed a typo in
@@ -692,6 +693,12 @@ with macOS show what appears to be an error message but is actually okay. He
 gives more information in the [bugs.md](/bugs.md) file.
 
 NOTE: as `btoa` is not common we used a ruby script from Yusuke.
+
+
+## [1990/scjones](1990/scjones/scjones.c) ([README.md](1990/scjones/README.md]))
+
+Yusuke suggested `-ansi` to get the entry to compile due to trigraphs and Cody
+suggested `-trigraphs`. Both work but we used Yusuke's idea.
 
 
 ## [1990/tbr](1990/tbr/tbr.c) ([README.md](1990/tbr/README.md]))
@@ -752,12 +759,15 @@ incomplete).
 Cody fixed the paths in the Makefile so that this would build in linux (it
 worked fine in macOS).
 
+He also changed the Makefile to use `bash` not `zsh` as not all systems have
+`zsh` and the Makefile actually sets `SHELL` to `bash`.
+
 
 ## [1990/westley](1990/westley/westley.c) ([README.md](1990/westley/README.md]))
 
 Cody fixed this for modern systems. It had `1s` in places for a short int which
 was changed to just `1`.  Since it's instructional to see the differences he has
-provided an alternate version, [westley.alt.c](1990/westley/westley.alt.c) which
+provided an alternate version, [westley.alt.c](1990/westley/westley.alt.c), which
 is the original code.
 
 
@@ -882,9 +892,7 @@ Cody made it use `fgets()` instead of `gets()` to prevent annoying warnings
 getting in the way (in linux linking in a binary with `gets()` produces a
 warning that might get in the way with this entry and in macOS at runtime it
 prints a warning which often is interspersed with the output of the program
-which can be confusing) and also added the `runme.sh` script to demonstrate it
-(using make was problematic). Cody notes that unfortunately this does not work
-with clang due to different compiler messages.
+which can be confusing).
 
 Cody later improved the `fgets()` change to look more like the original i.e. it
 now uses a redefined `gets()`. This did require modifying the line number with
