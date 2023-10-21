@@ -1,9 +1,6 @@
 # ANSI Committee's Worst Abuse of C
 
 Larry Jones\
-SDRC\
-2000 Eastman Dr\
-Milford, OH 45150\
 US
 
 
@@ -12,19 +9,6 @@ US
 ```sh
 make all
 ```
-
-Modern compilers failed to compile this entry:
-
-```c
-scjones.c:1:7: error: expected ';' after top level declarator
-char*a??(??)=??<
-      ^
-      ;
-```
-
-but we were able to get it to compile with modern compilers by specifying the
-`-ansi` flag with a tip from [Yusuke Endoh](/winners.html#Yusuke_Endoh). Thank
-you Yusuke!
 
 
 ## To run:
