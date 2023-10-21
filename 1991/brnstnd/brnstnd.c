@@ -1,4 +1,5 @@
 #include <stdio.h>
+#define D define
 #define H(x,y,z) f(p){--p;c=x-_+1];f(c>0){y+1]=z[c];z[c]=y];y]=y+1];}}
 #define O(x,y) F(x,int U;int T=0;d=M(U=1);W{f(c==y)b g[T++]=c;f(T==U)g=realloc(g,U<<=1);}g[T]=0;)
 #define W Y((c=k?K[--k]:getchar())-EOF)
