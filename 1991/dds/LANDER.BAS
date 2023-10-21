@@ -1,7 +1,7 @@
 10 REM Lunar Lander
 20 REM By Diomidis Spinellis
 25 REM Compiler version
-30 PRINT "You aboard the Lunar Lander about to leave the spacecraft."
+30 PRINT "You board the Lunar Lander about to leave the spacecraft."
 60 GOSUB 4000
 70 GOSUB 1000
 80 GOSUB 2000
