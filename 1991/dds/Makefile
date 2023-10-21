@@ -114,8 +114,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ= ${PROG}.alt.o
-ALT_TARGET= ${PROG}.alt
+ALT_OBJ=
+ALT_TARGET=
 
 
 #################
@@ -131,9 +131,6 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
-
-a: a.c
-	${CC} ${CFLAGS} -Wno-return-type $< -o a.out ${LDFLAGS}
 
 # alternative executable
 #
