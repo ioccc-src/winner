@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Fri 20 Oct 11:59:47 UTC 2023*
+*Last updated: Sat 21 Oct 2023 11:04:58 UTC*
 
 This document is primarily for [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) as he (that is I :-) ) wanted a way
@@ -145,3 +145,10 @@ instead change it to make pull requests. See the
 - Check the YYYY/README.md files for other things besides the GitHub pull
 requests rather thane mailing judges. This can be done on the final pass of the
 files.
+
+- When adding to the FAQ about `make` rules `make sure` :-) that this text is
+added:
+>    The Makefile default assumes `cc` which might be a gcc-based compiler, or a
+    clang-based compiler, or some other compiler. Only by forcing `CC=clang` or
+    `CC=gcc` will one invoke a specific compiler. Even so different versions or
+    compilers might do different things, have different defects or other issues.
