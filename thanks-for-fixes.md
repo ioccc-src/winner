@@ -780,6 +780,9 @@ be changed as well in order to get this to compile. In particular the macro `C`,
 defined as `C =G` to make `+=` and similar operators no longer works.  The
 invalid operands to binary expressions were resolved with the comma operator.
 
+Later on, Cody added back the macro `#define D define` to make it look ever so
+slightly more like the original, even though it's unused.
+
 
 ## [1991/dds](1991/dds/dds.c) ([README.md](1991/dds/README.md]))
 
