@@ -61,7 +61,9 @@ which would set it at 700. Then, whether you use the default value or not, try:
 As explained above, because modern systems run this entry way too fast to fully
 appreciate what it does, we encourage you to first try the alternate version.
 After this, however, you might wish to try the original version, fixed for
-modern systems. To do this:
+modern systems.
+
+#### To build:
 
 ```sh
 make all
