@@ -25,11 +25,11 @@ see the [original code](#original-code) section.
 This alternate version, which we recommend that you use in order to see what is
 happening with modern systems, and to not flash too quickly, which can be
 problematic for some people, can be configured to different speeds by way of the
-value used in `usleep()`. The default is `-DZ=65000` but you can easily change
+value used in `usleep()`. The default is `-DS=65000` but you can easily change
 it. To do so try:
 
 ```sh
-make CDEFINE="-DZ=70000" clobber alt
+make CDEFINE="-DS=70000" clobber alt
 ./sloane.alt
 ```
 
@@ -37,7 +37,7 @@ If you wish to make it like the original, as if the below [Original
 code](#original-code) was being used, you can do:
 
 ```sh
-make CDEFINE="-DZ=0" clobber alt
+make CDEFINE="-DS=0" clobber alt
 ./sloane.alt
 ```
 
