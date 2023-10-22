@@ -1050,8 +1050,17 @@ the original code.
 ## [1993/vanb](1993/vanb/vanb.c) ([README.md](1993/vanb/README.md]))
 
 Cody fixed this to work with clang. The problem was that the third arg to main()
-was not a `char **`. Instead `O5()` (which was `main()`) is now its own function
-which main() calls with the right parameters.
+was not a `char **`. Instead `O5()` (which was `main()` via `-DO5=main`) is now
+its own function which main() calls with the right parameters.
+
+Later Cody fixed it again to look much more like the original where only a
+single line is added, that of `main()`, which calls `O5()`. This was done through
+`-include stdio.h` at the compiler (in the Makefile) and by removing the `O3`
+variable (an int) at the top of the file, instead making it a `char **` in
+`main()` (`O5()` had three args) but then passing in `0` to `O5()` for the third
+arg (as it was 0 at file scope already this is perfectly fine and it means
+there's no need to cast it to an int in the function call though that would also
+work).
 
 
 ## [1994/ldb](1994/ldb/ldb.c) ([README.md](1994/ldb/README.md]))
