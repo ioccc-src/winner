@@ -1921,11 +1921,20 @@ implicitly (linux doesn't seem to but macOS does).
 
 ## [2012/kang](2012/kang/kang.c) ([README.md](2012/kang/README.md]))
 
-Cody changed the code to accept the proper German for four 'vier' where before
-it was spelt with the sound of V (fier not vier). But was this a bug or a
-feature? He's on the fence here but he went ahead and did it anyway as it seems
-useful and not having it fixed somewhat lessens the usability, especially for
-those who know German and expect it to be 'vier' :-)
+Cody added alt code that fixes the problem where in German 'v' sounds like 'f'
+which the program has as 'f'. Thus with the original version it would translate
+'fier' to '4' when the word is 'vier'. Originally this was updated in the
+original code but it was noticed that this caused _other_ words to be incorrect
+so it was set as an alt version since the code was already there. It might also
+be considered a feature and not a bug so an alt version is the better way to go
+about it. Using both allows one to experience different capabilities and also
+enjoy or appreciate the entry more.
+
+Cody also added two scripts, [en.sh](2012/kang/en.sh) and
+[de.sh](2012/kang/de.sh) which counts from 0 through 13 in English and German.
+In the German script it uses the umlaut and also does it without the umlaut (add
+an 'e'). Both scripts can use either version to see the differences. See the
+README.md file for details.
 
 
 ## [2012/vik](2012/vik/vik.c) ([README.md](2012/vik/README.md]))
