@@ -8,4 +8,4 @@ while read -r f; do
     # NOTE: ./weasel $* $f would just be the final word
     sleep 2
 done < test-strings.txt || exit 1
-echo "All done. Goodbye."
+echo "All done. Goodbye, you old monkeying weasel!"

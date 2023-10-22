@@ -103,7 +103,7 @@ more thorough than this.
 program; if you're familiar with genetic algorithms there won't be any problem
 following this section but it might be of some value to read anyway. There is a
 randomised mode that doesn't use a genetic algorithm; it can be triggered a
-number of ways but the **`-m`** option enables it specially (I discuss this
+number of ways but the `-m` option enables it specially (I discuss this
 thoroughly in **[Hints](#hints)**).
 
 **[Hints](#hints):** Perhaps the longest part of this document because in it I
@@ -116,16 +116,16 @@ don't need this unless there is something specific you're after.
 **[Obfuscation](#obfuscation):** Some of the techniques that might not be used.
 
 **[How to build](#build):** Here I describe briefly
-[the constants that can be redefined](#constants) **`S`** and **`N`**: the
-maximum size of the chromosome (target string; the maximum length is **`S - 1`**
+[the constants that can be redefined](#constants) `S` and `N`: the
+maximum size of the chromosome (target string; the maximum length is `S - 1`
 but it must be >= the default 38) and the number of offspring, respectively. I
 also give [example compiler invocations](#compiling), [portability
 notes](#portability), an [more portability notes](#bugs) and a [note on
 rpm.md](#rpm).
 
-On the subject of **`S`** and **`N`**: As the judges' suggested runs imply you
-can change the target string at runtime; **`make test`** runs a script
-*`test.sh`* which reads from the file *`test-strings.txt`*, running the program
+On the subject of `S` and `N`: As the judges' suggested runs imply you
+can change the target string at runtime; `make test` runs a script
+`test.sh` which reads from the file `test-strings.txt`, running the program
 for each string in the file, waiting approximately two seconds before
 continuing.  I explain how to pass options to the script in part of
 **[Hints](#test)**.
@@ -162,8 +162,8 @@ He refers to the [Infinite Monkey Theorem][] (Wikipedia). As he points out the
 operative phrase is *given enough time*; but even if it's extremely unlikely
 *technically the probability is greater than 0*. He simplified it for the
 monkey; I thought the monkey had it too easy: unlike his limited keyboard I have
-(besides space) every character in the ASCII range **`0<=126`** that
-**`isprint()`** returns non-zero except that only capital letters are included;
+(besides space) every character in the ASCII range `0<=126` that
+`isprint()` returns non-zero except that only capital letters are included;
 the file [prog.alt.c](prog.alt.c) has a slightly smaller keyboard. There are some
 additional features I have added (including two Easter eggs); amongst others:
 ability to change the target string and maximum length. See\
@@ -171,8 +171,8 @@ ability to change the target string and maximum length. See\
 more details.
 
 In its simplest invocation this program will work its way (using a genetic
-algorithm) towards the solution of the string **`METHINKS IT IS LIKE A WEASEL`**
-(note that I use **`toupper()`** so it doesn't matter what case the input is the
+algorithm) towards the solution of the string `METHINKS IT IS LIKE A WEASEL`
+(note that I use `toupper()` so it doesn't matter what case the input is the
 comparison and output will always be capitalised).
 
 [Infinite Monkey Theorem]: https://en.wikipedia.org/wiki/Infinite_monkey_theorem
@@ -201,7 +201,7 @@ try and show the way they work) for those interested I will cite the summary:
 **SPOILER WARNING: Some of the below might help you follow the code more
 easily.**
 
-For each *generation* there is a total of **`N`** *offspring*; generation 0 is
+For each *generation* there is a total of `N` *offspring*; generation 0 is
 the pseudo-randomly initialised array *without parents.* Each offspring has its
 own *chromosome* to be compared to the *target string* and a *fitness score*;
 the higher the fitness score the more likely it will be a *parent of the next
@@ -220,11 +220,11 @@ every character will be assigned a value*). Before mutation the offspring
 chromosome will be printed; after mutation it will show what it was mutated to
 (on the same output line). After the new generation has been sequenced the loop
 goes back to the top and it starts all over until the maximum number of
-generations **`SIZE_MAX - 1`** is reached or the target chromosome has been
+generations `SIZE_MAX - 1` is reached or the target chromosome has been
 found.
 
 Note that the generation is checked *before the scoring takes place* by a prefix
-increment equality check; when the generation is **`SIZE_MAX - 1`** the fitness
+increment equality check; when the generation is `SIZE_MAX - 1` the fitness
 test loop will not be entered; instead the outer loop will end after printing:
 
 > Too many attempts, blaming the monkey Eric even if he isn't typing or doesn't exist. Bye.
@@ -236,7 +236,7 @@ exist. The second to last example limitation example note (it's improved in the
 final but this is relevant) they give is:
 
 > The judges might not have a pet fish named Eric, so might want to state:
->\
+>
 > 	This entry factors integers between 1 and 2305567963945518424753102147331756070.
 > 	Attempting to factor anything else will cause the program to insult your
 > 	pet fish Eric, or in the case that you lack such a pet, will insult the
@@ -248,7 +248,7 @@ After the final message they ask:
 
 The answer is this: **it is the primorial prime of 97:** the product of all
 prime numbers less than or equal to N; **and the primorial prime of `N == 97` is
-`2305567963945518424753102147331756070`**. There is no reference to this number
+`2305567963945518424753102147331756070`. There is no reference to this number
 in my entry but it's nonetheless possible to **change the default target to it
 without modifying the source code**; there are two hints in this very
 paragraph; the first sentence in fact: the answer to the judges' question and
@@ -261,12 +261,12 @@ second time for the same entry.
 
 ### On <del>user</del> monkey errors
 
-If the generation reaches **`SIZE_MAX - 1`** I consider it a monkey (or if you
+If the generation reaches `SIZE_MAX - 1` I consider it a monkey (or if you
 insist: user) error; if the user insists on being so petulant enough as to try
 such a ridiculous set of parameters in an attempt to make it be no more
 successful than a monkey typing *then it shouldn't be any more successful than a
 monkey; if it by chance reaches the target it's because a monkey could too!*
-Either way unless the number reaches **`SIZE_MAX - 1`** the monkey Eric won't be
+Either way unless the number reaches `SIZE_MAX - 1` the monkey Eric won't be
 blamed. It should be noted that depending on the parameters (size of chromosome,
 number of offspring, the string itself) the program could take quite a lot of
 system resources; and whether the OS kills it, Eric the monkey falls asleep or
@@ -296,8 +296,8 @@ Skip to [Options](#options).
 
 The keyboard, as noted, has more than just the alphabet and space. To be
 precise the following characters are acceptable; it equates to this in C (note
-it includes a literal space **`' '`** but it doesn't include other
-**`isspace()`** characters) and this is why some of the characters are escaped:
+it includes a literal space `' '` but it doesn't include other
+`isspace()` characters) and this is why some of the characters are escaped:
 
 	    const char keyboard[]=" !\"#$<%:>&'()*+,-./0123456789;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`{|}~";
 
@@ -316,7 +316,7 @@ Skip to [Spoilers](#spoiler).
 
 There are a number of options you can pass to the program besides the target
 string; some I will document here (the summary being in the man page). You can
-join options but there is a caveat with spaces and **`-r`** option as well as
+join options but there is a caveat with spaces and `-r` option as well as
 the target string (see below).
 
 **Enable quiet output:**
@@ -332,7 +332,7 @@ output) and the final answer.
 
 	    -r<num>
 
-Please note that there cannot be a space between the **`-r`** and the number.
+Please note that there cannot be a space between the `-r` and the number.
 This is to simplify the parsing of options. As for combining options you can do
 any of the following (amongst others):
 
@@ -342,9 +342,9 @@ any of the following (amongst others):
 	    -q -r5
 
 The third invocation will set quiet output and have no valid value to parse for
-the mutation rate and **`strtol()`** in this case returns 0. **`strtol()`** can
+the mutation rate and `strtol()` in this case returns 0. `strtol()` can
 legitimately return 0 but in no instance is it valid input in this program: the
-valid mutation rate is **`>= 1 && <= 100`**.
+valid mutation rate is `>= 1 && <= 100`.
 
 When the mutation rate is out of range it does something interesting: take a
 look at the output and compare it to the output when the range is valid. Can you
@@ -371,12 +371,12 @@ decent parameters - come to an answer here but if necessary kill the program.
 offspring output. If you still don't see what it is and want to know see
 **[Spoilers](#spoiler)** below.
 
-Finally any argument that doesn't start with a **`-`** passed into the program
-will become the target string. The same rule applies to the number for **`-r`**:
+Finally any argument that doesn't start with a `-` passed into the program
+will become the target string. The same rule applies to the number for `-r`:
 it must be a single parameter which means you'll need to quote the string if it
 has more than one word (that is it contains spaces) or anything else interpreted
 specially by your shell e.g. parentheses. For instance if you just want to find
-**`METHINKS`** you could do one of:
+`METHINKS` you could do one of:
 
 ```sh
 ./weasel METHINKS
@@ -384,7 +384,7 @@ specially by your shell e.g. parentheses. For instance if you just want to find
 ./weasel 'METHINKS'
 ```
 
-If you wanted **`YOU ARE A MONKEY`**:
+If you wanted `YOU ARE A MONKEY`:
 
 ```sh
 ./weasel "YOU ARE A MONKEY"
@@ -398,12 +398,12 @@ If you do one of:
 ./weasel METHINKS IT IS A MONKEY
 ```
 \
-It will search for **`MONKEY`** in both cases; in other words it's the last one.
-If the string is too long given the value of **`S`** (see\
+It will search for `MONKEY` in both cases; in other words it's the last one.
+If the string is too long given the value of `S` (see\
 **[How to build](#build)**) it will be truncated.
 
-If you actually do want to search for a string starting with a **`-`** you must
-disable further parsing of options by using the **`-`** option itself; for
+If you actually do want to search for a string starting with a `-` you must
+disable further parsing of options by using the `-` option itself; for
 example if you were to do any of:
 
 ```sh
@@ -412,14 +412,14 @@ example if you were to do any of:
 ./weasel -q -- -test
 ```
 
-The target string will be: **`-TEST`**. This means though that here:
+The target string will be: `-TEST`. This means though that here:
 
 ```sh
 ./weasel -q -- -test -r5
 ```
 
-The string to be searched would actually be **`-r5`** and the mutation rate
-will remain the default because after the **`-`** option is seen it will no
+The string to be searched would actually be `-r5` and the mutation rate
+will remain the default because after the `-` option is seen it will no
 longer parse additional options: only target strings if anything left on the
 command line. Because of the joining of arguments this means that the first two
 examples of the last set of three above are equivalent i.e. the following two
@@ -437,8 +437,8 @@ As for the caveat I referenced what does the following do?
 In fact it will set quiet output and set the target string to be '5'. So the
 mutation rate will be out of range, thus enabling that Easter egg, but it will
 likely come to an answer fairly quickly because it's just a single character. A
-note on the parsing of the **`-`** option; if the program is currently parsing
-**`argv[N]`**, for example, and it encounters a **`--`** then depending on where
+note on the parsing of the `-` option; if the program is currently parsing
+`argv[N]`, for example, and it encounters a `--` then depending on where
 the other options are in the command line it might still parse the options. Thus
 you have:
 
@@ -466,11 +466,11 @@ If you were instead to do one of (for example):
 ./weasel -q -q- -r
 ```
 
-Then it *would* set quiet output then see the **`--`** (the **`-`** option
-itself) and then the target string would *literally* be set to **`-r`** because
-it no longer cares about the **`-`** for option parsing. In other words options
-are only parsed if the first character is **`-`** and if the parser hasn't seen
-the **`-`** - *in an earlier element of `argv`. This is not a bug!*
+Then it *would* set quiet output then see the `--` (the `-` option
+itself) and then the target string would *literally* be set to `-r` because
+it no longer cares about the `-` for option parsing. In other words options
+are only parsed if the first character is `-` and if the parser hasn't seen
+the `-` - *in an earlier element of `argv`. This is not a bug!*
 
 ### <a name="spoiler">Spoilers</a>
 
@@ -485,20 +485,20 @@ select characters for every character in the target string; that is to say if
 the string is of length 28 (the default) then all 28 characters in each
 offspring of each generation will be assigned a pseudo-randomly positioned
 character in the keyboard. If you want to enable this specially you can use the
-**`-m`** option (*-m for monkey*).
+`-m` option (*-m for monkey*).
 
 ### <a name="invocations">Example Invocations</a>
 
 Skip to [Input Error Example](#error).
 
 The following examples are used to demonstrate better the command line parsing.
-In order to do that though I had to first document the **`-m`** option because
+In order to do that though I had to first document the `-m` option because
 if the mutation rate is out of range monkey mode is activated (that's the first
 Easter egg). But what happens if you later set a valid mutation rate? Should
 monkey mode be disabled? If yes how do we know if monkey mode was specially
 requested?  There are at least two ways to go about it: I took the monkey safe
 ('fool safe') method; *if you explicitly request monkey mode you cannot disable
-it in the same invocation of `weasel`*!
+it in the same invocation of `weasel`!
 
 ```sh
 $ ./weasel -qr101r5r101r1r test
@@ -514,51 +514,51 @@ Generation 16844        Offspring 22: TEST
 
 So in this case I joined the options in the following order:
 
-1.  **`-q`**
+1.  `-q`
 
     Quiet output.
 
 
-2.  **`-r101`**
+2.  `-r101`
 
     Mutation rate 101 (out of range).
 
 
-3.  **`-r5`**
+3.  `-r5`
 
     Mutation rate of 5 but note that during parsing I only print invalid mutation
 rate (only after parsing do I print the final mutation rate whatever it ends up
 being); so while it appears there is a bug, showing mutation rate out of range
-three times, this is expected (given the next one, **`-r101`**). This means here
+three times, this is expected (given the next one, `-r101`). This means here
 the typewriter was taken from Eric the monkey.
 
 
-4.  **`-r101`**
+4.  `-r101`
 
     Mutation rate to 101: this too is out of range (this is the second mutation rate
 out of range message). The typewriter returns to Eric.
 
 
-5.  **`-r1`**
+5.  `-r1`
 
 
     Set mutation rate to 1. Take that typewriter away!
 
 
-6.  **`-r`**
+6.  `-r`
 
     Set mutation rate to 0; when there are no valid characters passed to
-**`strtol()`** it should return 0: this is the third message about being out of
-range. Note here that **`rand()`** returns an **`int`** and **`strtol()`**
-returns a **`long`** but I compare the return value of **`rand()`** to the
+`strtol()` it should return 0: this is the third message about being out of
+range. Note here that `rand()` returns an `int` and `strtol()`
+returns a `long` but I compare the return value of `rand()` to the
 mutation rate; if there are any systems where the widths differ this *shouldn't
-matter* because of truncation but I do in any case specifically check for **`R <
-0 || R > 100`**. Either way the invalid range returns the typewriter to Eric.
+matter* because of truncation but I do in any case specifically check for `R <
+0 || R > 100`. Either way the invalid range returns the typewriter to Eric.
 
 
-7.  **`test`**
+7.  `test`
 
-    Finally I requested it find the string **`test`** (will search for **`TEST`**).
+    Finally I requested it find the string `test` (will search for `TEST`).
 
 Given that it was a short string it did find the answer relatively quickly, even
 in monkey mode.
@@ -575,7 +575,7 @@ Generation  109 Offspring 13: TEST
 ```
 
 In this case I also enabled quiet mode but I didn't join the options; the
-**`-r101`** reports that it's out of range and sets monkey mode. I then specify
+`-r101` reports that it's out of range and sets monkey mode. I then specify
 the target string and then set a valid mutation rate. This disabled monkey mode
 which means that it'll use the genetic algorithm.
 
@@ -595,7 +595,7 @@ Here I also requested quiet output and then *explicitly requested that Eric the
 monkey types.* After this I set the mutation rate to be 101 which would have
 set monkey mode (*in this case only temporarily as I later set it to a valid
 number*) but since I have also requested monkey mode that won't matter. Then I
-set the string to **`test`** and then set a valid mutation rate of 5. Now note
+set the string to `test` and then set a valid mutation rate of 5. Now note
 that it is actually set to 5 but also note that monkey mode remains active: it
 also took a lot longer to come to a conclusion for even four characters. This
 example does demonstrate one other thing in a subtle way though.
@@ -616,10 +616,10 @@ Whereas with quiet output:
 
 Of course it isn't only down to the printing but the point is it slows it down
 significantly. Adding an option to print every X lines would go over the limit
-(**`iocccsize -i`** reports 2052!).
+(`iocccsize -i` reports 2052!).
 
 Finally I'll show a default example in normal output (I omit many lines showing
-instead **[...]**). Note that the real/user/sys times are from the **`time`**
+instead **[...]**). Note that the real/user/sys times are from the `time`
 bash shell built-in utility: that isn't output from my entry.
 
 
@@ -650,9 +650,9 @@ Keep in mind the way I display the generations and the fact that generation 0
 has no parents; it is generation 1 that starts working towards the goal. You'll
 see also **(mutation)** at the end of the line at this point (if you enable
 monkey mode you'll find that it shows something else). The lines that only have
-`**` are separators: you won't see this between generation 0 and 1 but you will
+`` are separators: you won't see this between generation 0 and 1 but you will
 between future generations - as well as the final answer (if the answer is in
-generation 0 you won't see the `**`).
+generation 0 you won't see the ``).
 
 <a name="test"></a>
 One final thing to consider is that **the program doesn't directly read from a
@@ -666,17 +666,17 @@ people. Take the following invocations:
 	    (5) $ < test-strings.txt ./weasel
 	    (6) $ cat | ./weasel
 
-Only the first invocation of **`./weasel`** will search for **`TEST`** because
-the string **`test`** was explicitly passed to the program (If the file *`test`*
-wasn't found by that path it would still have searched for **`TEST`**).
+Only the first invocation of `./weasel` will search for `TEST` because
+the string `test` was explicitly passed to the program (If the file `test`
+wasn't found by that path it would still have searched for `TEST`).
 
 The second invocation will search for the default string if there is a file or
-directory called *`test`*; else you will get an error about no such file or
+directory called `test`; else you will get an error about no such file or
 directory (unless your shell for some reason doesn't consider it an error; bash
 most certainly does consider it an error and halts).
 
-The third invocation would if there exists a file *`test`* cat that file and
-pipe the output to **`./weasel`**; *however it will search for the default
+The third invocation would if there exists a file `test` cat that file and
+pipe the output to `./weasel`; *however it will search for the default
 string.* If there is no such file to cat then an error will be reported but
 without quiet mode you'd probably not even see the error.
 
@@ -684,15 +684,15 @@ The fourth invocation will also search for the default string unless the file
 doesn't exist in which case you'd get an error like in the second invocation.
 
 The fifth invocation will actually search for the default string even with the
-file *`test-strings.txt`* existing. As far as I am aware it's equivalent to the
+file `test-strings.txt` existing. As far as I am aware it's equivalent to the
 third invocation except that the file exists in this case.
 
-The final invocation will search for the default and then read from *`stdin`*;
+The final invocation will search for the default and then read from `stdin`;
 it won't do anything with it however.
 
 What this amounts to is *if you want input from a file you have to read from the
 file and pass each string to the program itself*. I've included a script
-*`test.sh`* and a file of sample input *`test-strings.txt`* that you can play
+`test.sh` and a file of sample input `test-strings.txt` that you can play
 with.
 
 
@@ -711,7 +711,7 @@ chmod +x test.sh
 
 The script will first try compiling the program (if necessary) and if it fails
 for any reason it will exit; else it will read each line in the file
-*`test-strings.txt`* (if the file doesn't exist or can't be read the script will
+`test-strings.txt` (if the file doesn't exist or can't be read the script will
 exit with return status of 1) and pass it to the program. After finding the
 string it'll sleep approximately 2 seconds and then read the next string
 (passing it to the program, continuing until all the strings have been read and
@@ -724,21 +724,21 @@ stops when there are no more strings in the file - so if you try:
 ./test.sh -q test
 ```
 
-The final string **`test`** won't be searched for; it will however run the program
+The final string `test` won't be searched for; it will however run the program
 in all invocations with quiet output enabled. The following are some notes about
 how the shell and the program interact with each other:
 
 Because the script quotes the strings that it reads from the file if you were to
-put in the file: **`-q STRING`** quiet mode would be enabled; however the
+put in the file: `-q STRING` quiet mode would be enabled; however the
 default string would be searched for. If the quotes were removed from the script
 it would print the final word specified. To be specific with the quotes: if in
-the file you had the line **`-q STRING -m TEST`** it would enable quiet output
+the file you had the line `-q STRING -m TEST` it would enable quiet output
 and monkey typewriter mode; but it would search for the default string. Without
 the quotes on the other hand it would enable quiet output, monkey typewriter and
-search for **`TEST`**. In other words **if you want to pass options to the
+search for `TEST`. In other words **if you want to pass options to the
 script you will have to directly pass the options to the script** like the above
 example shows (but the strings will still only be read from the
-*`test-strings.txt`* file).
+`test-strings.txt` file).
 
 ### <a name="error">Input Error Example</a>
 
@@ -747,10 +747,10 @@ Skip to [Obfuscation](#obfuscation).
 There is a type of input error, as I said, that might appear to be a bug. What
 actually is going on though is due to a technicality on how spaces are printed
 and the fact the program does not accept spaces other than a literal space\
-**` `**; when a character in the string to be found isn't in the keyboard the
+` `; when a character in the string to be found isn't in the keyboard the
 program prints an error message and then exits (returning 1). But since the
-keyboard doesn't have **`'\n'`** if you were to type a **`'`** and send a
-**`'\n'`** before the closing **`'`** you might see something like:
+keyboard doesn't have `'\n'` if you were to type a `'` and send a
+`'\n'` before the closing `'` you might see something like:
 
 ```sh
 $ ./weasel '!!
@@ -760,16 +760,16 @@ $ ./weasel '!!
 ' not in keyboard " !"#$<%:>&'()*+,-./0123456789;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`{|}~"
 ```
 
-I showed that **`'`** is in the keyboard already; however the user sent a
-**`\n`** (hence the secondary prompt **`>`** on line two) before literally typing the
-closing **`'`** (also line two). But in order to make it clear what character is invalid I
-surround the character with **`'`**s so what you actually see after typing the
-closing **`'`** and hitting Enter (or however you send the **`'\n'`**) there is
-the third blank line; *but then the program prints* **`'`** followed by the
-invalid character (**`'\n'`** itself which means another line break) and then
-finally the closing **`'`**.  Specifically **`isspace()` characters aren't
+I showed that `'` is in the keyboard already; however the user sent a
+`\n` (hence the secondary prompt `>` on line two) before literally typing the
+closing `'` (also line two). But in order to make it clear what character is invalid I
+surround the character with `'`s so what you actually see after typing the
+closing `'` and hitting Enter (or however you send the `'\n'`) there is
+the third blank line; *but then the program prints* `'` followed by the
+invalid character (`'\n'` itself which means another line break) and then
+finally the closing `'`.  Specifically `isspace()` characters aren't
 distinctly seen like a letter, digit or symbol is: `isprint('\n') == 0 &&
-isspace('\n') == 1`**. You can add these characters but the output will be
+isspace('\n') == 1`. You can add these characters but the output will be
 rather confusing and hard to read.
 
 ## **4. <a name="obfuscation">Obfuscation</a>**
@@ -780,10 +780,10 @@ Skip to [Beauty](#beauty).
 
 The following might be some of the techniques used in this entry:
 
-1.  Helpful and descriptive names for all variables and constants (like **`S`**)
+1.  Helpful and descriptive names for all variables and constants (like `S`)
 as well as some C keywords.
 
-2.  The way **`main()`** is declared is:
+2.  The way `main()` is declared is:
 
 ```c
 /* Special C main() handler (encapsulation): */
@@ -798,13 +798,13 @@ encapsulation and executing code is it actually nothing? And if it's nothing why
 is it there? If it is something what is it doing? Could it be both? Or maybe it
 really isn't nothing or nothing? :)
 
-3. A special C parser called **`H()`**. It might help to observe that there
+3. A special C parser called `H()`. It might help to observe that there
 might be recursive calls and much of the program might use it. Or so it seems.
 Then again it might not help to not notice it.
 
 4.  Digraphs. In their simplest form it's probably not a big deal but consider:
 some source code formatters don't like them at all (neither, incidentally, does
-**`splint`**, which completely baulks). There also is a trick; if you try
+`splint`, which completely baulks). There also is a trick; if you try
 translating them then depending upon how you do it there can be functional
 changes in the program!
 
@@ -854,31 +854,31 @@ be made clear in the comments! :)*
 
 Skip to [Compilation](#compiling).
 
-These two **`#define`**d constants can be redefined at compilation to modify the
+These two `#define`d constants can be redefined at compilation to modify the
 behaviour of the program in a number of ways (see the
 **[Compilation](#compiling)** subsection for example invocations). Both are
-capped to be no greater than **`SIZE_MAX - 1`**. This is handled by the C
+capped to be no greater than `SIZE_MAX - 1`. This is handled by the C
 preprocessor.
 
-**`S`**
+`S`
 
 This determines the maximum size of the target string but it **must be at least
-38**; this is because **`38 >= 29`** and because **`strlen("METHINKS IT IS LIKE
-A WEASEL") == 28`** (which is the default target string - it would hardly be an
+38**; this is because `38 >= 29` and because `strlen("METHINKS IT IS LIKE
+A WEASEL") == 28` (which is the default target string - it would hardly be an
 implementation of the Weasel program otherwise).
 
-There is obviously a reason **`38`** is the chosen size but the only hints I
+There is obviously a reason `38` is the chosen size but the only hints I
 provide are those in **[How it works](#how)** and specifically an Easter egg I
 referenced there (it's *not the only Easter egg* but it's the only Easter egg I
 won't spoil; yes this ironically and amusingly means I've left a rotten egg
 somewhere!).
 
-**`N`**
+`N`
 
 This is the number of offspring per generation. Anything less than 4 will be set
 to 3 (that's not a typo!) and this is part of an Easter egg.
 
-Be aware that depending on the size of **`S`** and **`N`** (individually and
+Be aware that depending on the size of `S` and `N` (individually and
 together) the program will use varying amounts of memory and the larger the
 values the more memory it'll require.
 
@@ -892,23 +892,23 @@ The following options **must always be passed to the compiler:**
 -DQ='typedef' -D'g(o)'='goto o;' -D'w(x)'="x:" -D'H(main)'='r(main)'
 ```
 
-If you want to increase the number of offspring to **`50`** and the size of the
-chromosome to **`75`** you would pass to the compiler:
+If you want to increase the number of offspring to `50` and the size of the
+chromosome to `75` you would pass to the compiler:
 
 ```sh
 -DQ='typedef' -D'g(o)'='goto o;' -D'w(x)'="x:" -D'H(main)'='r(main)' -DN=50 -DS=75
 ```
 
-If you wanted to change **`N`** to **`3`**:
+If you wanted to change `N` to `3`:
 
 ```sh
 -DQ='typedef' -D'g(o)'='goto o;' -D'w(x)'="x:" -D'H(main)'='r(main)' -DN=3
 ```
 
-Remember that it cannot be less than **`3`**; *more correctly if it's less than
-4 it's redefined to 3* so you could have passed in **`-DN=2`** and have the same
-result. Remember too that **`S`** cannot be less than **`38`**. Both **`S`** and
-**`N`** are capped at **`SIZE_MAX - 1`**.
+Remember that it cannot be less than `3`; *more correctly if it's less than
+4 it's redefined to 3* so you could have passed in `-DN=2` and have the same
+result. Remember too that `S` cannot be less than `38`. Both `S` and
+`N` are capped at `SIZE_MAX - 1`.
 
 ### <a name="portability">Portability</a>
 
@@ -917,7 +917,7 @@ Skip to [An aside on bugs](#bugs).
 This entry requires at least C99 even if you translate digraphs. The program
 doesn't require third-party libraries and should work on any Unix based system.
 It works on both 64-bit and 32-bit (but inevitably some data type sizes will be
-smaller and this I believe includes **`SIZE_MAX`**). I don't think Windows gcc
+smaller and this I believe includes `SIZE_MAX`). I don't think Windows gcc
 ports would have many issues (if any) either but I have no way to test this.
 Originally I tested it on the below systems.
 
@@ -982,12 +982,12 @@ Skip to [Installing](#rpm).
 
 Any undocumented bugs are the result of insolent monkeys tampering with any
 number of things. That includes but is not limited to running the program on a
-non-ASCII system; non little-endian; meddling with **`S`** or **`N`** too much,
-changing the references to **`SIZE_MAX`** to be larger than **`SIZE_MAX`** or a
-signed value (**`size_t`** is unsigned) or too small of a value; changing data
+non-ASCII system; non little-endian; meddling with `S` or `N` too much,
+changing the references to `SIZE_MAX` to be larger than `SIZE_MAX` or a
+signed value (`size_t` is unsigned) or too small of a value; changing data
 types or variables; expecting really long strings - including but not limited to
-the complete works of Shakespeare (hint: **`isprint('\n') == 0`** so it won't
-ever find any string with **`'\n'`**) - to be found by the program in a quick
+the complete works of Shakespeare (hint: `isprint('\n') == 0` so it won't
+ever find any string with `'\n'`) - to be found by the program in a quick
 and easy fashion if ever; or any other meddling including being petulant and/or
 unreasonable monkeys. I will say though that there is at least one place I see
 after having won that could be slightly more efficient (can you find it?); I am
@@ -1142,7 +1142,7 @@ for(;P("\n"),R=;P("|"))for(e=C;e=P("_"+(*u++/
 8)%2))P("|"+(*u/4)%2);
 ```
 \
-How is **`R=;`** valid? Since I don't have the context maybe there is something
+How is `R=;` valid? Since I don't have the context maybe there is something
 I'm missing but either way it's a funny piece. It could also be for irony itself
 (actually I had previously thought of somehow implementing something like that
 for the contest but decided for the message by itself in the end). I would
@@ -1174,7 +1174,7 @@ so happy to have had you in my life.
 But I want to also dedicate it to (and thank) my dear friend [Martijn
 Schoemaker](https://www.ficture.nl) whom provided me with the spark a very long
 time ago (and whom has stood by me and helped me in more ways than he can know -
-**`#including C`**); if it wasn't for you Martijn I wouldn't have been able to
+`#including C`); if it wasn't for you Martijn I wouldn't have been able to
 win so consider this a recursive thank you thank you! :)
 
 I would also like to give thanks and much love to my dear friend Vicky Wilmore
