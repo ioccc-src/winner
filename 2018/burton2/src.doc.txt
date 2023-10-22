@@ -1,0 +1,81 @@
+memory map: M (offset, length)
+	0,256	  tokenization flags
+	256,128	  keyword length offset map
+	384,640	  keyword strings (453 chars)
+	1024,32	  option bit map
+	1056,32   getopt string
+	1088,256  trigraph map
+
+freecode: trinary, alphabet  0 { 1 } 2 ;
+	using three trits, the alphabet A-Z with a space/null can be encoded:
+		0 space/null, 1 A, 2 B, 3 C, ...
+	although this encoding is not the only one
+	code is free-form, space agnostic (one or more spaces are required for it to be 'free')
+	decoding is context dependent, typically using 3 or more trits
+	the program comments use b(3) and the alphabet encoding above,
+	but they are not cleanly split on 3-trit boundaries(!)
+
+i A		cw
+  B
+i C		cc
+  D
+i E		cx
+p F[]		keywords, token init, options init, option string, trigraph init
+  G
+i H		comment history
+i I		ci
+  J
+i K		ck
+i L		cl
+c M[2053]	memory: token flags, keyword table, option table, trigraph table
+  N
+p O		start of whitespace
+  P
+  Q
+i R		ts
+  S
+i T		tk
+d U		defined usage message (-DU="\"help text\"")
+  V
+d W		defined reserved word string (-DW=\"keywords\")
+  X
+  Y
+i Z		256
+i a		global
+i b(i)		decode freecode using i bits
+i c		global
+i d(s,i)	is a keyword?
+p e		end of buffer
+v f(i,i)	compat
+v g(i,i)	compat_words
+i h(s,i)	print i chars of s, or until null
+p i		buffer
+i j()		lexer
+  k
+i l		10 / newline
+i m(c)		want(c), handles escapes
+  n		global
+i o		global
+  p
+p q		keyword index table
+i r(i,i)	print arg1 as int to stdout/err by arg2, trailed by space/newline
+  s		start of token
+  t
+  u
+i v		cmd line flags
+  w
+  x
+  y
+p z		current pointer
+
+functions
+
+i h(s,i)	print i chars of s, or until null
+i r(i,i)	print arg1 as int to stdout/err by arg2, trailed by space/newline
+i m(c)		want(c), handles escapes
+i d(s,i)	is a keyword?
+i j()		lexer
+v g(i,i)	compat_words
+v f(i,i)	compat
+i b(i)		decode freecode using i bits
+i main(c,pp)	init, options, read, count, print

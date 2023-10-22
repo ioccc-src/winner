@@ -30,7 +30,7 @@ mkkeywords		reads one of the files from variations, produces string for prog.c
 ioccc.kw.freq		keywords used by iocccsize, sorted by frequency in 201x ioccc winners
 unob.sh			a more robust unobfuscation script; requires variations/c11 in cur dir
 tokenfix		patches up prog -t output for ::, >>>, ...
-src.doc.rot13		the answers, or at least significant help
+src.doc.txt		the answers, or at least significant help
 tac.c			more clearly written code, offered as a replacement of iocccsize.c
 patch			fixes single quotes in iocccsize.c, adds #ifndef, removes "I"
 fixed_iocccsize.c	iocccsize with patch applied, and nop -c argument added
