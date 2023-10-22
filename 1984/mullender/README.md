@@ -19,7 +19,7 @@ make all
 ./mullender
 ```
 
-NOTE: If your machine is not a [VAX-11](https://en.wikipedia.org/wiki/VAX-11)
+NOTE: if your machine is not a [VAX-11](https://en.wikipedia.org/wiki/VAX-11)
 or [PDP-11](https://en.wikipedia.org/wiki/PDP-11), this program will not execute
 correctly.  In later years, machine dependent code was discouraged. An alternate
 version that will work with other systems is provided as alternate code below.
@@ -83,10 +83,11 @@ the rules were changed, requesting non-machine specific code.
 
 This program was selected for the 1987 t-shirt collection.
 
-The C startup routine (via [crt0.o](https://en.wikipedia.org/wiki/Crt0)) transfers control to a location named `main`.
-In this case, `main` just happens to be in the data area.  The array of `short`s,
-which has been further obfuscated by use of different data types, just happens
-to form a meaningful set of [PDP-11](https://en.wikipedia.org/wiki/PDP-11) and
+The C startup routine (via [crt0.o](https://en.wikipedia.org/wiki/Crt0))
+transfers control to a location named `main`.  In this case, `main` just happens
+to be in the data area.  The array of `short`s, which has been further
+obfuscated by use of different data types, just happens to form a meaningful set
+of [PDP-11](https://en.wikipedia.org/wiki/PDP-11) and
 [VAX](https://en.wikipedia.org/wiki/VAX) instructions.
 
 The first word is a [PDP-11](https://en.wikipedia.org/wiki/PDP-11) branch
@@ -121,12 +122,26 @@ close to as the original as possible we used a copy of
 in the *fabulous* [Unix History
 Repo](https://github.com/dspinellis/unix-history-repo/tree/Research-Release).
 
-This tool can be built by running:
+#### To build:
+
+`gentab.c` can be built like:
+
 
 ```sh
 make gentab
 ```
 
+#### To use:
+
+```sh
+./gentab file
+```
+
+#### Try:
+
+```sh
+./gentab gentab
+```
 
 ## Author's remarks:
 
