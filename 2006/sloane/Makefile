@@ -40,7 +40,7 @@ include ../../var.mk
 #
 CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-implicit-int \
 	-Wno-pedantic -Wno-return-type -Wno-shift-op-parentheses -Wno-unsequenced \
-	-Wno-deprecated-non-prototype -Wno-main
+	-Wno-deprecated-non-prototype -Wno-main -Wno-unused-parameter
 
 # Common C compiler warning flags
 #
@@ -59,7 +59,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE= -DZ=65000
+CDEFINE= -DS=65000
 
 # Include files that are needed to compile
 #
