@@ -11,6 +11,8 @@ Seonghoon Kang\
 make
 ```
 
+There is alternate code which fixes some German at the expense of other German.
+See [Alternate code](#alternate-code) below.
 
 ## To run:
 
@@ -25,28 +27,49 @@ echo "full spelling of an English cardinal numeral less than a quadrillion" | ./
 echo Nineteen hundred and eighty-four | ./kang
 echo uno | ./kang
 echo trois | ./kang
-echo vier | ./kang
+echo fier | ./kang # notice the issue here, see alternate code instead
 echo "shest'" | ./kang
 
+./en.sh # English 0 through 13
+
+./de.sh # German 0 through 13 with both umlauts and without (additional 'e')
 ```
 
 How does it have no `u` or `o` in a string in the source code and yet it gets
 `uno` right?
 
-### Also try:
+### Alternate code:
 
-For those who speak Germans:
+This alternate code fixes the program that would throw off those who know German
+where the sound of 'V' is 'F' and so the program had the letter be 'F'. A
+problem, however, with changing it is that it breaks other words. Thus there is
+the alternate version instead which fixes the problem.
+
+#### To build:
 
 ```sh
-for i in eins zwei drei vier fuenf sechs sieben acht neun zehn elf zwoelf dreizehn ; \
-do
-    echo "$i"|./kang;
-done
-
+make alt
 ```
 
-What does it get right? What does it get wrong? Finally why does it get what it
-gets wrong wrong?
+#### To use:
+
+```sh
+echo vier | ./kang.alt
+echo uno | ./kang.alt
+```
+
+#### Also try:
+
+
+```sh
+KANG=kang.alt ./de.sh # German 0 through 13 both with and without umlaut
+KANG=kang.alt ./en.sh # English 0 through 13
+```
+
+What does it get right? What does it get wrong? How does it compare to the
+original entry without the change of `f` to `v`?
+
+Finally why does it get what it gets wrong wrong? 
 
 
 ## Judges' remarks:
