@@ -27,6 +27,6 @@ A),m   =cos(B);for(k        =0;k<   1840;k++)y=-k
 g)*m-c*         d*e-f*g-l*d*n);if(D>z[o]    )z[o]
 =D,b[o]             =" ..,,-++=#$@"[      N>0?N:0
        ]  ;  }                                   printf(
-       "\x1b["       "H"           );usleep(S);for(k       =1;1841
+       "\x1b["       "H"           );usleep(S);for(k=1;1841
        >k;k++)       putchar       (k%80?b       [k]:10)
        ;  A +=       0.053;B       +=0.037       ;  }  }
