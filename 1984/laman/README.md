@@ -36,7 +36,7 @@ This code should run you in circles.
 
 ## Judges' remarks:
 
-Some new compilers dislike lines 6 and 10 of the source, so we changed
+Some new compilers (in 1984) dislike lines 6 and 10 of the source, so we changed
 them from:
 
 ```c

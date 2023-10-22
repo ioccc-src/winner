@@ -8,6 +8,13 @@ Col. G. L. Sicherman
 make all
 ```
 
+## To use:
+
+```sh
+./sicherman < file
+
+echo foo | ./sicherman
+```
 
 ## Try:
 
@@ -15,18 +22,35 @@ make all
 ./sicherman  < sicherman.c
 
 echo IOCCC | ./sicherman
+
+./sicherman < sicherman.c | ./sicherman
 ```
 
 ### Alternate code:
 
-If you do have a compiler that supports `-traditional-cpp` you may compile the
-original like:
+This alternate version, which is the original entry, requires either an old
+enough compiler or a compiler that supports `-traditional-cpp`. If you have such
+a compiler you can try this version.
+
+#### To build:
+
 
 ```sh
 make alt
 ```
 
-Use `sicherman.alt` as you would `sicherman`.
+#### To run:
+
+```sh
+./sicherman.alt < file
+```
+
+#### Try:
+
+
+```sh
+./sicherman.alt < README.md | ./sicherman.alt
+```
 
 ## Judges' remarks:
 

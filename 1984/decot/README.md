@@ -16,10 +16,19 @@ make all
 
 ### Alternate code:
 
-To try the original code that requires `-traditional-cpp`:
+This alternate code, the original, requires a compiler that supports
+`-traditional-cpp` or an old enough compiler. If you have such a compiler you
+can use this entry.
+
+#### To build:
 
 ```sh
 make alt
+```
+
+#### To run:
+
+```sh
 ./decot.alt
 ```
 
@@ -45,7 +54,8 @@ to:
 for(signal=0;*k *x * __FILE__ *i;) do {
 ```
 
-To see what we mean look at the [original source file](decot.orig.c).
+To see what we mean look at the [original source file](decot.orig.c). The
+[alternate code](decot.alt.c) is the version that we modified.
 
 
 ## Author's remarks:
