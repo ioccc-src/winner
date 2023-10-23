@@ -9,7 +9,6 @@ Australia
 make all
 ```
 
-### INABIAF - it's not a bug it's a feature! :-)
 
 ### Bugs and (Mis)features
 
