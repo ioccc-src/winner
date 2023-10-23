@@ -38,11 +38,6 @@ make alt
 
 Use `./lievaart.alt` as you would `./lievaart` above.
 
-### INABIAF - it's not a bug it's a feature! :-)
-
-If you enter invalid input the program will enter an infinite loop displaying a
-string like `"You:"` repeatedly (for instance if you input `.`). If you enter an
-incorrect value it will prompt you again until you input a proper value.
 
 ## Judges' remarks:
 
