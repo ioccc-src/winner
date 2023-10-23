@@ -65,7 +65,7 @@ enough args.
 
 
 ## Judges' remarks:
-\
+
 For extra credit: What happens when 'number' contains non-numeric
 characters, and why?
 

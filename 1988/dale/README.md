@@ -9,6 +9,18 @@ Australia
 make all
 ```
 
+
+### Bugs and (Mis)features
+
+This entry a listed in [bugs.md](/bugs.md) as:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [bugs.md](/bugs.md#1988dale-readmemd).
+
+
 ## Try:
 
 ```sh
@@ -25,11 +37,6 @@ behaviour?
 ./dale $(printf "the following files exist in this directory:\n%s\n" *)
 ./dale "$(printf "the following files exist in this directory:\n%s\n" *)"
 ```
-
-### INABIAF - it's not a bug it's a feature! :-)
-
-In linux it might happen that core dumps are created when running this entry
-even though it works fine and you don't see any message about dumping core.
 
 ### Alternate code
 

@@ -8,17 +8,22 @@ Mike Laman
 make all
 ```
 
+### Bugs and (Mis)features
+
+This entry a listed in [bugs.md](/bugs.md) as:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [bugs.md](/bugs.md#1984laman-readmemd).
+
+
 ## To run:
 
 ```sh
 ./laman <positive number>
 ```
-
-
-### INABIAF - it's not a bug it's a feature :-)
-
-This entry will very likely crash or do something else if you run it without an
-arg. It likely won't do anything at all if the arg is not a positive number.
 
 
 ## Try:

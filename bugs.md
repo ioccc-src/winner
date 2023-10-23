@@ -443,12 +443,11 @@ without a newline after the `\`. This is not a bug.
 
 
 
-## STATUS: INABIAF - please **DO NOT** fix
-## [1984/laman](1984/laman/laman.c) ([README.md](1984/laman/README.md)
+## [1984/laman](1984/laman/laman.c) ([README.md](1984/laman/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 
 This entry will very likely crash or do something else if you run it without an
-arg.
+arg. It likely won't do anything at all if the arg is not a positive number.
 
 # 1985
 
@@ -543,7 +542,8 @@ or any others.
 ## STATUS: INABIAF - please **DO NOT** fix
 
 In linux it might happen that despite no error message or message about doing
-so, the program drops a core file into the directory.
+so, the program drops a core file into the directory even though the entry works
+and does not crash.
 
 # 1989
 
@@ -551,10 +551,12 @@ so, the program drops a core file into the directory.
 ## [1989/fubar](1989/fubar/fubar.c) ([README.md](1989/fubar/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 
-Specifying too large a number (or < 0) to either `fubar` or the source code file
-(it's executable) that it generates will cause the program to enter an infinite
-loop, trying to compile code with syntax errors. At least in one system any
-number larger than 20 did this.
+If you use either `fubar` or `ouroboros.c` (it's executable, see README.md for
+details) with a number < 0 or larger than, say 20, it's very likely that the
+program will turn into an infinite loop trying to compile code with syntax
+errors.
+
+
 
 ## [1989/robison](1989/robison/robison.c) ([README.md](1989/robison/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
