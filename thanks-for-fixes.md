@@ -578,7 +578,7 @@ made, try:
 
 
 ```sh
-cd 1989/robison ; make orig_prog_diff
+cd 1989/robison ; make diff_orig_prog
 ```
 
 (It adds the C token pasting operator `##` instead of `/**/`.)

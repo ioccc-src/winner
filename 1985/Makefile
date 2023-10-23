@@ -61,7 +61,7 @@ all:
 	done
 	@echo '=-=-= ${YEAR} complete make $@ =-=-='
 
-.PHONY: all alt data everything orig_prog_diff alt_prog_diff \
+.PHONY: all alt data everything diff_orig_prog diff_alt_prog \
 	clean clobber install love haste waste maker easter_egg \
 	sandwich supernova deep_magic magic charon pluto
 #
@@ -79,7 +79,7 @@ everything:
 
 # diff orig source and source
 #
-orig_prog_diff:
+diff_orig_prog:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
 	@for i in ${WINNERS} ; do \
@@ -93,7 +93,7 @@ orig_prog_diff:
 
 # diff alt source and source
 #
-alt_prog_diff:
+diff_alt_prog:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
 	@for i in ${WINNERS} ; do \

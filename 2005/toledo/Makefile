@@ -124,7 +124,7 @@ ALT_TARGET= ${PROG}2 ${PROG}3
 all: data ${TARGET}
 	@${TRUE}
 
-.PHONY: all alt data everything orig_prog_diff alt_prog_diff \
+.PHONY: all alt data everything diff_orig_prog diff_alt_prog \
 	clean clobber install love haste waste maker easter_egg \
 	sandwich supernova deep_magic magic charon pluto
 
@@ -154,12 +154,12 @@ everything: all alt
 
 # diff orig source and source
 #
-orig_prog_diff: ${PROG}.orig.c ${PROG}.c
+diff_orig_prog: ${PROG}.orig.c ${PROG}.c
 	@-${DIFF} -u ${PROG}.orig.c ${PROG}.c
 
 # diff alt source and source
 #
-alt_prog_diff: ${PROG}.c
+diff_alt_prog: ${PROG}.c
 	@-if [[ -e ${PROG}.alt.c ]]; then \
 	    ${DIFF} -u ${PROG}.alt.c ${PROG}.c; \
 	fi

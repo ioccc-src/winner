@@ -135,12 +135,12 @@ diff output.
 If you want to see the difference from the _original_ source try:
 
 ```sh
-make orig_prog_diff
+make diff_orig_prog
 ```
 
 
 ```
-make: [Makefile:158: orig_prog_diff] Error 1 (ignored)
+make: [Makefile:158: diff_orig_prog] Error 1 (ignored)
 ```
 
 but this is perfectly fine and expected.
@@ -150,16 +150,16 @@ If however you wish to see the difference between the alt code and the entry
 itself, try:
 
 ```sh
-make alt_prog_diff
+make diff_alt_prog
 ```
 
 NOTE: this might show at the end something like:
 
 ```
-make: [Makefile:163: alt_prog_diff] Error 1 (ignored)
+make: [Makefile:163: diff_alt_prog] Error 1 (ignored)
 ```
 
-The `alt_prog_diff` rule will do nothing if no alt file exists.
+The `diff_alt_prog` rule will do nothing if no alt file exists.
 
 If the alt code is the same as the original, say
 [1984/anonymous](1984/anonymous/README.md), there is no point in using this
@@ -171,7 +171,7 @@ will make it harder to see what is different,
 2001/anonymous` and then do:
 
 ```sh
-make orig_prog_diff
+make diff_orig_prog
 ```
 
 and then be really confused! :-)
@@ -196,7 +196,7 @@ where it's quite easy to see the differences).
 very easily. To do that `cd 1991/dds` and then do:
 
 ```sh
-make alt_prog_diff
+make diff_alt_prog
 ```
 
 and you'll see a single line changed and very simply.
@@ -207,8 +207,8 @@ To use these rules but provide a different `diff`, for instance `colordiff`,
 just do:
 
 ```sh
-make DIFF=colordiff orig_prog_diff # for original diff
-make DIFF=colordiff alt_prog_diff # for alt diff
+make DIFF=colordiff diff_orig_prog # for original diff
+make DIFF=colordiff diff_alt_prog # for alt diff
 ```
 
 ## Q: I cannot get entry XYZZY from year 19xx to compile!
