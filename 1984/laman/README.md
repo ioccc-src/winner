@@ -20,6 +20,16 @@ make all
 This entry will very likely crash or do something else if you run it without an
 arg. It likely won't do anything at all if the arg is not a positive number.
 
+### Bugs and (Mis)features
+
+This entry a listed in [bugs.md](/bugs.md) as:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [bugs.md](/bugs.md)(1984-laman-laman.c).
+
 
 ## Try:
 
