@@ -443,12 +443,11 @@ without a newline after the `\`. This is not a bug.
 
 
 
-## STATUS: INABIAF - please **DO NOT** fix
-## [1984/laman](1984/laman/laman.c) ([README.md](1984/laman/README.md)
+## [1984/laman](1984/laman/laman.c) ([README.md](1984/laman/README.md))
 ## STATUS: INABIAF - please **DO NOT** fix
 
 This entry will very likely crash or do something else if you run it without an
-arg.
+arg. It likely won't do anything at all if the arg is not a positive number.
 
 # 1985
 
