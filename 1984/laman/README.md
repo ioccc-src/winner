@@ -22,8 +22,7 @@ This entry a listed in [bugs.md](/bugs.md) as:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [bugs.md](/bugs.md#1984-laman-laman.c).
-
+For more detailed information see [bugs.md](/bugs.md#1984laman-readmemd).
 
 ## Try:
 
