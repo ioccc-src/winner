@@ -51,7 +51,8 @@ all:
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
-.PHONY: all alt data everything diff_orig_prog diff_alt_prog \
+.PHONY: all alt data everything diff_orig_prog diff_prog_orig \
+	diff_alt_prog diff_prog_alt diff_orig_alt diff_alt_orig \
 	clean clobber install love haste waste maker easter_egg \
 	sandwich supernova deep_magic magic charon pluto
 
@@ -91,6 +92,11 @@ everything:
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+
+#####################
+# make a difference #
+#####################
+#
 # diff orig source and source
 #
 diff_orig_prog:
@@ -103,9 +109,55 @@ diff_orig_prog:
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+# diff source and orig source
+#
+diff_prog_orig:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@-for i in [12][0-9][0-9][0-9]; do \
+            if [ -f $$i/Makefile ]; then \
+                echo "cd $$i; make $@"; \
+                (cd $$i; make $@); \
+            fi; \
+        done
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
 # diff alt source and source
 #
 diff_alt_prog:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@-for i in [12][0-9][0-9][0-9]; do \
+            if [ -f $$i/Makefile ]; then \
+                echo "cd $$i; make $@"; \
+                (cd $$i; make $@); \
+            fi; \
+        done
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# diff source and alt source
+#
+diff_prog_alt:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@-for i in [12][0-9][0-9][0-9]; do \
+            if [ -f $$i/Makefile ]; then \
+                echo "cd $$i; make $@"; \
+                (cd $$i; make $@); \
+            fi; \
+        done
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+# diff orig and alt
+#
+diff_orig_alt:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@-for i in [12][0-9][0-9][0-9]; do \
+            if [ -f $$i/Makefile ]; then \
+                echo "cd $$i; make $@"; \
+                (cd $$i; make $@); \
+            fi; \
+        done
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+diff_alt_orig:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	@-for i in [12][0-9][0-9][0-9]; do \
             if [ -f $$i/Makefile ]; then \
