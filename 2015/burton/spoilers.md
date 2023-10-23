@@ -3,7 +3,7 @@
 
 Calc is a recursive-descent parser.  It allocates from the stack deep enough
 that all expressions are exhausted before the recursion stack depth reaches the
-allocations.  The memory map and source is documented in src.doc.rot13.  Tokens
+allocations.  The memory map and source is documented in src.doc.txt.  Tokens
 are encoded using values 0-20, where 0 is an invalid token, 1 is minus, 2 is
 space, 3 is plus, etc.  The necessary constants are derived at the start of the program,
 using the guarantee that globals are initialized to zero; so a correct null pointer

@@ -1963,20 +1963,20 @@
 2013,cable2,120,multi_color.bmp,null,image,null,true,browser,PC bitmap image,bmp
 2013,cable2,120,typeset.bmp,null,image,null,true,browser,PC bitmap image,bmp
 2013,cable3,null,README.md,null,markdown,null,false,null,null,md
-2013,cable3,,bios,null,,null,true,,,null
+2013,cable3,null,bios,null,binary,null,false,null,custom BIOS,null
 2013,cable3,null,fd.img,null,binary,null,false,null,DOS boot sector,img
 2013,cable3,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
-2013,cable3,,runme,null,,null,true,,,null
-2013,cable3,,sc-ioccc.terminal,null,,null,true,,,terminal
-2013,cable3,,screenshot_autocad.png,null,image,null,true,browser,,png
-2013,cable3,,screenshot_flightsim4.png,null,image,null,true,browser,,png
-2013,cable3,,screenshot_lotus123.png,null,image,null,true,browser,,png
-2013,cable3,,screenshot_qbasic.png,null,image,null,true,browser,,png
-2013,cable3,,screenshot_simcity.png,null,image,null,true,browser,,png
-2013,cable3,,screenshot_win3_on_macosx.png,null,image,null,true,browser,,png
 2013,cable3,20,cable3.c,main,c,null,true,github,winning source,c
 2013,cable3,30,Makefile,null,makefile,null,true,github,how to compile,null
 2013,cable3,50,cable3.orig.c,orig,c,null,true,github,original source,c
+2013,cable3,100,runme,null,shellscript,null,true,github,how to run,null
+2013,cable3,100,screenshot_autocad.png,null,image,null,true,browser,Screenshots of some of these applications running on macOS,png
+2013,cable3,100,screenshot_flightsim4.png,null,image,null,true,browser,Screenshots of some of these applications running on macOS,png
+2013,cable3,100,screenshot_lotus123.png,null,image,null,true,browser,Screenshots of some of these applications running on macOS,png
+2013,cable3,100,screenshot_qbasic.png,null,image,null,true,browser,Screenshots of some of these applications running on macOS,png
+2013,cable3,100,screenshot_simcity.png,null,image,null,true,browser,Screenshots of some of these applications running on macOS,png
+2013,cable3,100,screenshot_win3_on_macosx.png,null,image,null,true,browser,Screenshots of some of these applications running on macOS,png
+2013,cable3,150,sc-ioccc.terminal,null,xml,null,true,browser,configuration file will correctly display console applications,cOSfor m
 2013,dlowe,null,README.md,null,markdown,null,false,null,null,md
 2013,dlowe,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
 2013,dlowe,20,dlowe.c,main,c,null,true,github,winning source,c
@@ -1993,16 +1993,16 @@
 2013,endoh1,150,tac.lazy,null,c,null,true,github,lazy input,lazy
 2013,endoh2,null,README.md,null,markdown,null,false,null,null,md
 2013,endoh2,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
-2013,endoh2,,ocr.rb,null,ruby,null,true,,,rb
 2013,endoh2,20,endoh2.c,main,c,null,true,github,winning source,c
 2013,endoh2,30,Makefile,null,makefile,null,true,github,how to compile,null
 2013,endoh2,50,endoh2.orig.c,orig,c,null,true,github,original source,c
+2013,endoh2,100,ocr.rb,null,ruby,null,true,github,test suite support file,rb
 2013,endoh3,null,README.md,null,markdown,null,false,null,null,md
 2013,endoh3,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
-2013,endoh3,,wavify.rb,null,ruby,null,true,,,rb
 2013,endoh3,20,endoh3.c,main,c,null,true,github,winning source,c
 2013,endoh3,30,Makefile,null,makefile,null,true,github,how to compile,null
 2013,endoh3,50,endoh3.orig.c,orig,c,null,true,github,original source,c
+2013,endoh3,100,wavify.rb,null,ruby,null,true,github,post process output to form a WAV sound file,rb
 2013,endoh3,150,flea-waltz.abc,null,text,null,true,github,sample input,abc
 2013,endoh3,150,menuet.abc,null,text,null,true,github,sample input,abc
 2013,endoh3,150,test.abc,null,text,null,true,github,sample input,abc
@@ -2162,30 +2162,30 @@
 2013,endoh4,200,solids/trapezohedron/t08-octagonal-trapezohedron.txt,null,text,null,true,github,3D object coordinates ,txt
 2013,endoh4,200,solids/trapezohedron/t10-decagonal-trapezohedron.txt,null,text,null,true,github,3D object coordinates ,txt
 2013,hou,null,README.md,null,markdown,null,false,null,null,md
-2013,hou,,doc/camera.png,null,image,null,true,browser,,png
-2013,hou,,doc/cosine.png,null,image,null,true,browser,,png
-2013,hou,,doc/draft.png,null,image,null,true,browser,,png
+2013,hou,null,doc/camera.png,null,image,null,null,null,documentation support image,png
+2013,hou,null,doc/cosine.png,null,image,null,null,null,documentation support image,png
+2013,hou,null,doc/draft.png,null,image,null,null,null,documentation support image,png
 2013,hou,null,doc/example.md,null,markdown,null,false,null,null,md
 2013,hou,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
-2013,hou,,old_default.scene,null,,null,true,,,scene
-2013,hou,,otherroom.scene,null,,null,true,,,scene
 2013,hou,20,hou.c,main,c,null,true,github,winning source,c
 2013,hou,30,Makefile,null,makefile,null,true,github,how to compile,null
 2013,hou,50,hou.orig.c,orig,c,null,true,github,original source,c
 2013,hou,150,luna.jpg,null,image,null,true,browser,sample image data,jpg
 2013,hou,150,old_default.jpg,null,image,null,true,browser,sample image data,jpg
+2013,hou,150,old_default.scene,null,text,null,true,text,sample input,scene
 2013,hou,150,otherroom.jpg,null,image,null,true,browser,sample image data,jpg
+2013,hou,150,otherroom.scene,null,text,null,true,text,sample input,scene
 2013,mills,null,README.md,null,markdown,null,false,null,null,md
 2013,mills,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
-2013,mills,20,mills.c,main,c,null,true,github,winning source,c
+2013,mills,20,mills.c,main,c,null,true,text,winning source,c
 2013,mills,30,Makefile,null,makefile,null,true,github,how to compile,null
 2013,mills,50,mills.orig.c,orig,c,null,true,github,original source,c
 2013,misaka,null,README.md,null,markdown,null,false,null,null,md
-2013,misaka,,bf.pl,null,perl,null,true,,,pl
 2013,misaka,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
 2013,misaka,20,misaka.c,main,c,null,true,github,winning source,c
 2013,misaka,30,Makefile,null,makefile,null,true,github,how to compile,null
 2013,misaka,50,misaka.orig.c,orig,c,null,true,github,original source,c
+2013,misaka,100,bf.pl,null,perl,null,true,github,BF interpreter,pl
 2013,misaka,200,spoiler.html,null,html,null,true,browser,SPOILER WARNING,html
 2013,morgan1,null,README.md,null,markdown,null,false,null,null,md
 2013,morgan1,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
@@ -2213,25 +2213,25 @@
 2014,deak,30,Makefile,null,makefile,null,true,github,how to compile,null
 2014,deak,50,prog.orig.c,orig,c,null,true,github,original source,c
 2014,endoh1,null,README.md,null,markdown,null,false,null,null,md
-2014,endoh1,,Rakefile,null,,null,true,,,null
-2014,endoh1,,alpha.rb,null,ruby,null,true,,,rb
-2014,endoh1,,assemble.rb,null,ruby,null,true,,,rb
-2014,endoh1,,ast-def.rb,null,ruby,null,true,,,rb
-2014,endoh1,,gen-prog.rb,null,ruby,null,true,,,rb
-2014,endoh1,,gen-table.rb,null,ruby,null,true,,,rb
 2014,endoh1,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
-2014,endoh1,,link.rb,null,ruby,null,true,,,rb
-2014,endoh1,,machine.rb,null,ruby,null,true,,,rb
-2014,endoh1,,parse.rb,null,ruby,null,true,,,rb
 2014,endoh1,null,read_me.md,null,markdown,null,false,null,null,md
-2014,endoh1,,register.rb,null,ruby,null,true,,,rb
-2014,endoh1,,serialize.rb,null,ruby,null,true,,,rb
-2014,endoh1,,src.rb,null,ruby,null,true,,,rb
-2014,endoh1,,tool.rb,null,ruby,null,true,,,rb
 2014,endoh1,20,prog.c,main,c,null,true,github,winning source,c
 2014,endoh1,30,Makefile,null,makefile,null,true,github,how to compile,null
 2014,endoh1,50,prog.orig.c,orig,c,null,true,github,original source,c
+2014,endoh1,100,Rakefile,null,ruby,null,true,github,Ruby makefile,null
+2014,endoh1,150,alpha.rb,null,ruby,null,true,github,support program for Rakefile,rb
+2014,endoh1,150,assemble.rb,null,ruby,null,true,github,support program for Rakefile,rb
+2014,endoh1,150,ast-def.rb,null,ruby,null,true,github,support program for Rakefile,rb
+2014,endoh1,150,gen-prog.rb,null,ruby,null,true,github,support program for Rakefile,rb
+2014,endoh1,150,gen-table.rb,null,ruby,null,true,github,support program for Rakefile,rb
+2014,endoh1,150,link.rb,null,ruby,null,true,github,support program for Rakefile,rb
+2014,endoh1,150,machine.rb,null,ruby,null,true,github,support program for Rakefile,rb
+2014,endoh1,150,parse.rb,null,ruby,null,true,github,support program for Rakefile,rb
 2014,endoh1,150,prog-tmpl.c,null,c,null,true,github,source code template used by gen-prog,c
+2014,endoh1,150,register.rb,null,ruby,null,true,github,support program for Rakefile,rb
+2014,endoh1,150,serialize.rb,null,ruby,null,true,github,support program for Rakefile,rb
+2014,endoh1,150,src.rb,null,ruby,null,true,github,support program for Rakefile,rb
+2014,endoh1,150,tool.rb,null,ruby,null,true,github,support program for Rakefile,rb
 2014,endoh1,150,vm.c,null,c,null,true,github,source code of the VM,c
 2014,endoh2,null,README.md,null,markdown,null,false,null,null,md
 2014,endoh2,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
@@ -2239,21 +2239,21 @@
 2014,endoh2,30,Makefile,null,makefile,null,true,github,how to compile,null
 2014,endoh2,50,prog.orig.c,orig,c,null,true,github,original source,c
 2014,maffiodo1,null,README.md,null,markdown,null,false,null,null,md
-2014,maffiodo1,,giana.rgba,null,,null,true,,,rgba
+2014,maffiodo1,null,giana.rgba,null,binary,null,false,null,raw RGBA image,rgba
 2014,maffiodo1,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
-2014,maffiodo1,,mario.rgba,null,,null,true,,,rgba
-2014,maffiodo1,,screenshot-giana.png,null,image,null,true,browser,,png
-2014,maffiodo1,,screenshot-mario.png,null,image,null,true,browser,,png
+2014,maffiodo1,null,mario.rgba,null,binary,null,false,null,raw RGBA image,rgba
 2014,maffiodo1,20,prog.c,main,c,null,true,github,winning source,c
 2014,maffiodo1,30,Makefile,null,makefile,null,true,github,how to compile,null
 2014,maffiodo1,50,prog.orig.c,orig,c,null,true,github,original source,c
+2014,maffiodo1,100,screenshot-giana.png,null,image,null,true,browser,gameplay screenshot,png
+2014,maffiodo1,100,screenshot-mario.png,null,image,null,true,browser,gameplay screenshot,png
 2014,maffiodo1,150,giana8.wav,null,wav,null,true,browser,sound file for game,wav
 2014,maffiodo1,150,giana.level,null,text,null,true,github,game level data,level
 2014,maffiodo1,150,mario8.wav,null,wav,null,true,browser,sound file for game,wav
 2014,maffiodo1,150,mario.level,null,text,null,true,github,game level data,level
 2014,maffiodo2,null,README.md,null,markdown,null,false,null,null,md
 2014,maffiodo2,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
-2014,maffiodo2,,image.rgb,null,,null,true,,,rgb
+2014,maffiodo2,null,image.rgb,null,null,null,false,null,sample input in the form of a raw RGB image,rgb
 2014,maffiodo2,20,prog.c,main,c,null,true,github,winning source,c
 2014,maffiodo2,30,Makefile,null,makefile,null,true,github,how to compile,null
 2014,maffiodo2,50,prog.orig.c,orig,c,null,true,github,original source,c
@@ -2286,41 +2286,41 @@
 2014,wiedijk,30,Makefile,null,makefile,null,true,github,how to compile,null
 2014,wiedijk,50,prog.orig.c,orig,c,null,true,github,original source,c
 2015,burton,null,README.md,null,markdown,null,false,null,null,md
-2015,burton,,calc.man,null,man,null,true,,,man
 2015,burton,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
-2015,burton,,road.to.obscurity,null,,null,true,,,obscurity
 2015,burton,null,spoilers.md,null,markdown,null,false,null,null,md
-2015,burton,,src.doc.rot13,null,,null,true,,,rot13
 2015,burton,20,prog.c,main,c,null,true,github,winning source,c
 2015,burton,30,Makefile,null,makefile,null,true,github,how to compile,null
 2015,burton,40,prog.alt.c,alt,c,null,true,github,alternative source,c
 2015,burton,50,prog.orig.c,orig,c,null,true,github,original source,c
+2015,burton,100,calc.man,null,man,null,true,github,man page for integer expression calculator,man
 2015,burton,150,calc.1,null,man,null,true,github,man page for integer expression calculator,1
+2015,burton,150,road.to.obscurity,null,text,null,true,github,notes on the development of the obfuscated calculator,obscurity
 2015,burton,150,rule2.c,null,c,null,true,github,iocccsize reformatted to exactly 4096 octets,c
 2015,burton,150,test32.out,null,text,null,true,github,test suite comparison data for 32-bit systems,out
 2015,burton,150,test.in,null,text,null,true,github,test suite input data,in
 2015,burton,150,test.out,null,text,null,true,github,test suite comparison data,out
+2015,burton,200,src.doc.txt,null,text,null,true,github,SPOILER WARNING hints about the source,rot13
 2015,dogon,null,README.md,null,markdown,null,false,null,null,md
 2015,dogon,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
 2015,dogon,20,prog.c,main,c,null,true,github,winning source,c
 2015,dogon,30,Makefile,null,makefile,null,true,github,how to compile,null
 2015,dogon,50,prog.orig.c,orig,c,null,true,github,original source,c
 2015,duble,null,README.md,null,markdown,null,false,null,null,md
-2015,duble,,codes.txt,null,text,null,true,github,,txt
 2015,duble,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
-2015,duble,,lorem-ipsum.txt,null,text,null,true,github,,txt
 2015,duble,20,prog.c,main,c,null,true,github,winning source,c
 2015,duble,30,Makefile,null,makefile,null,true,github,how to compile,null
 2015,duble,40,prog.alt.c,alt,c,null,true,github,alternative source,c
 2015,duble,50,prog.orig.c,orig,c,null,true,github,original source,c
+2015,duble,100,codes.txt,null,text,null,true,github,show how each character is drawn,txt
+2015,duble,100,lorem-ipsum.txt,null,text,null,true,github,sample input,txt
 2015,endoh1,null,README.md,null,markdown,null,false,null,null,md
-2015,endoh1,,center.txt,null,text,null,true,github,,txt
 2015,endoh1,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
-2015,endoh1,,ioccc.txt,null,text,null,true,github,,txt
-2015,endoh1,,line.txt,null,text,null,true,github,,txt
 2015,endoh1,20,prog.c,main,c,null,true,github,winning source,c
 2015,endoh1,30,Makefile,null,makefile,null,true,github,how to compile,null
 2015,endoh1,50,prog.orig.c,orig,c,null,true,github,original source,c
+2015,endoh1,100,center.txt,null,text,null,true,github,sample input,txt
+2015,endoh1,100,ioccc.txt,null,text,null,true,github,sample input,txt
+2015,endoh1,100,line.txt,null,text,null,true,github,sample input,txt
 2015,endoh2,null,README.md,null,markdown,null,false,null,null,md
 2015,endoh2,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
 2015,endoh2,20,prog.c,main,c,null,true,github,winning source,c
@@ -2353,9 +2353,9 @@
 2015,howe,100,avgtime.sh,null,shellscript,null,true,github,how to run,sh
 2015,howe,100,makeholes.c,null,c,null,true,github,add random holes to a file,c
 2015,howe,100,prog-test.sh,null,shellscript,null,true,github,how to run,sh
-2015,howe,200,spoiler/Makefile,null,,null,true,,SPOILER WARNING,null
-2015,howe,200,spoiler/err.h,null,c,null,true,github,SPOILER WARNING,h
-2015,howe,200,spoiler/prog.c,null,c,null,true,github,SPOILER WARNING,c
+2015,howe,200,spoiler/Makefile,null,makefile,null,true,github,SPOILER WARNING how to make the spoiler,null
+2015,howe,210,spoiler/err.h,null,c,null,true,github,SPOILER WARNING,h
+2015,howe,210,spoiler/prog.c,null,c,null,true,github,SPOILER WARNING,c
 2015,mills1,null,README.md,null,markdown,null,false,null,null,md
 2015,mills1,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
 2015,mills1,20,prog.c,main,c,null,true,github,winning source,c
@@ -2411,7 +2411,6 @@
 2018,anderson,30,Makefile,null,makefile,null,true,github,how to compile,null
 2018,anderson,40,prog.alt.c,alt,c,null,true,github,alternative source,c
 2018,anderson,50,prog.orig.c,orig,c,null,true,github,original source,c
-2018,bellard,,Lenna.png,null,image,null,true,browser,,png
 2018,bellard,null,README.md,null,markdown,null,false,null,null,md
 2018,bellard,null,fruits.bin,null,binary,null,false,null,binary support file,bin
 2018,bellard,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
@@ -2420,26 +2419,21 @@
 2018,bellard,20,prog.c,main,c,null,true,github,winning source,c
 2018,bellard,30,Makefile,null,makefile,null,true,github,how to compile,null
 2018,bellard,50,prog.orig.c,orig,c,null,true,github,original source,c
+2018,bellard,100,Lenna.png,null,image,null,true,browser,sample image data,png
 2018,burton1,null,README.md,null,markdown,null,false,null,null,md
 2018,burton1,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
-2018,burton1,,scripthd,null,,null,true,,,null
 2018,burton1,20,prog.c,main,c,null,true,github,winning source,c
 2018,burton1,30,Makefile,null,makefile,null,true,github,how to compile,null
 2018,burton1,40,prog.alt.c,alt,c,null,true,github,alternative source,c
 2018,burton1,50,prog.orig.c,orig,c,null,true,github,original source,c
+2018,burton1,100,scripthd,null,shellscript,null,true,github,driver program - adds several nice-to-have features,null
 2018,burton2,null,README.md,null,markdown,null,false,null,null,md
-2018,burton2,,READ_ME.txt,null,text,null,true,github,,txt
 2018,burton2,null,discrepancies.md,null,markdown,null,false,null,null,md
 2018,burton2,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
-2018,burton2,,ioc_without_quote,null,,null,true,,,null
-2018,burton2,,mkkeywords,null,,null,true,,,null
-2018,burton2,,patch,null,patch,null,true,,,null
-2018,burton2,,results,null,,null,true,,,null
-2018,burton2,,spotcheck,null,shellscript,null,true,github,script to run the tests,null
-2018,burton2,,spotdiff,null,,null,true,,,null
 2018,burton2,20,prog.c,main,c,null,true,github,winning source,c
 2018,burton2,30,Makefile,null,makefile,null,true,github,how to compile,null
 2018,burton2,50,prog.orig.c,orig,c,null,true,github,original source,c
+2018,burton2,100,READ_ME.txt,null,text,null,true,github,author supplied README,txt
 2018,burton2,100,freqcount,null,shellscript,null,true,github,frequency count utility,null
 2018,burton2,100,tac.man,null,man,null,true,github,tokenize and count man page,man
 2018,burton2,120,fixed_iocccsize.c,null,c,null,true,github,iocccsize with patch applied,c
@@ -2450,7 +2444,9 @@
 2018,burton2,150,iocccbug05.c,null,c,null,true,github,test cases demonstrating problems with iocccsize,c
 2018,burton2,150,iocccbug06.c,null,c,null,true,github,test cases demonstrating problems with iocccsize,c
 2018,burton2,150,ioccc.kw.freq,null,text,null,true,github,"keywords used by iocccsize, sorted by frequency in 201x ioccc winners",freq
+2018,burton2,150,ioc_without_quote,null,c,null,true,github,test suite data,null
 2018,burton2,150,manpage.sh,null,shellscript,null,true,github,turns ASCII versions of man into real man pages,sh
+2018,burton2,150,mkkeywords,null,shellscript,null,true,github,"reads one of the files from variations, produces string for prog.c",null
 2018,burton2,150,results.k,null,text,null,true,github,results with -k,k
 2018,burton2,150,tac.c,null,c,null,true,github,tokenize and count C-like languages,c
 2018,burton2,150,test01.c,null,c,null,true,github,test case source code,c
@@ -2478,8 +2474,12 @@
 2018,burton2,200,java8,null,text,null,true,github,reserved words for a Java v8,null
 2018,burton2,200,kandr2,null,text,null,true,github,reserved words for a given C standard,null
 2018,burton2,200,kandr,null,text,null,true,github,reserved words for a given C standard,null
+2018,burton2,200,patch,null,patch,null,true,github,patch to fix iocccsize source,null
+2018,burton2,200,results,null,text,null,true,github,results without -k,null
+2018,burton2,200,runtest,null,shellscript,null,true,github,test suite,null
+2018,burton2,200,spotcheck,null,shellscript,null,true,github,script to test a lot of files vs iocccsize,null
 2018,burton2,200,v7unix,null,text,null,true,github,reserved words for a given C standard,null
-2018,burton2,250,runtest,null,,null,true,github,results without -k,null
+2018,burton2,250,spotdiff,null,shellscript,null,true,github,summarize the results of spotcheck,null
 2018,burton2,300,src.doc.txt,null,text,null,true,github,SPOILER WARNING hints about the source,txt
 2018,ciura,null,README.md,null,markdown,null,false,null,null,md
 2018,ciura,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
@@ -2489,40 +2489,40 @@
 2018,ciura,50,prog.orig.c,orig,c,null,true,github,original source,c
 2018,endoh1,null,README.md,null,markdown,null,false,null,null,md
 2018,endoh1,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
-2018,endoh1,,golem.txt,null,text,null,true,github,,txt
-2018,endoh1,,invisible.txt,null,text,null,true,github,,txt
-2018,endoh1,,smily.txt,null,text,null,true,github,,txt
 2018,endoh1,20,prog.c,main,c,null,true,github,winning source,c
 2018,endoh1,30,Makefile,null,makefile,null,true,github,how to compile,null
 2018,endoh1,50,prog.orig.c,orig,c,null,true,github,original source,c
+2018,endoh1,100,golem.txt,null,text,null,true,github,input data,txt
+2018,endoh1,100,invisible.txt,null,text,null,true,github,input data,txt
+2018,endoh1,100,smily.txt,null,text,null,true,github,input data,txt
 2018,endoh2,null,README.md,null,markdown,null,false,null,null,md
 2018,endoh2,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
 2018,endoh2,20,prog.c,main,c,null,true,github,winning source,c
 2018,endoh2,30,Makefile,null,makefile,null,true,github,how to compile,null
 2018,endoh2,50,prog.orig.c,orig,c,null,true,github,original source,c
 2018,endoh2,100,run.sh,null,shellscript,null,true,github,how to run,sh
-2018,ferguson,,FILES,null,,null,true,,,null
 2018,ferguson,null,README.md,null,markdown,null,false,null,null,md
 2018,ferguson,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
 2018,ferguson,null,hint.css,null,css,null,false,null,CSS for hint page ,css
 2018,ferguson,null,rpm.md,null,markdown,null,false,null,null,md
-2018,ferguson,,test-strings.txt,null,text,null,true,github,,txt
-2018,ferguson,,weasel.man,null,man,null,true,,,man
+2018,ferguson,null,test-strings.txt,null,text,null,false,null,test.sh support file,txt
 2018,ferguson,20,prog.c,main,c,null,true,github,winning source,c
 2018,ferguson,30,Makefile,null,makefile,null,true,github,how to compile,null
 2018,ferguson,40,prog.alt.c,alt,c,null,true,github,alternative source,c
 2018,ferguson,50,prog.orig.c,orig,c,null,true,github,original source,c
+2018,ferguson,100,FILES,null,text,null,true,github,information about various files,null
 2018,ferguson,100,test.sh,null,shellscript,null,true,github,run the test suite,sh
+2018,ferguson,100,weasel.man,null,man,null,true,github,weasel man page,man
 2018,ferguson,150,weasel.1,null,man,null,true,github,weasel program man page,1
 2018,ferguson,150,weasel.spec,null,spec,null,true,github,RPM spec file,spec
 2018,giles,null,README.md,null,markdown,null,false,null,null,md
 2018,giles,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
-2018,giles,,ioccc.txt,null,text,null,true,github,,txt
-2018,giles,,sand.alt.txt,null,text,null,true,github,,txt
-2018,giles,,sand.txt,null,text,null,true,github,,txt
 2018,giles,20,prog.c,main,c,null,true,github,winning source,c
 2018,giles,30,Makefile,null,makefile,null,true,github,how to compile,null
 2018,giles,50,prog.orig.c,orig,c,null,true,github,original source,c
+2018,giles,100,ioccc.txt,null,text,null,true,github,sample input,txt
+2018,giles,100,sand.alt.txt,null,text,null,true,github,sample input,txt
+2018,giles,100,sand.txt,null,text,null,true,github,sample input,txt
 2018,hou,null,README.md,null,markdown,null,false,null,null,md
 2018,hou,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
 2018,hou,20,prog.c,main,c,null,true,github,winning source,c
@@ -2540,20 +2540,20 @@
 2018,mills,50,prog.orig.c,orig,c,null,true,github,original source,c
 2018,poikola,null,README.md,null,markdown,null,false,null,null,md
 2018,poikola,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
-2018,poikola,,poikola.tex,null,tex,null,true,,,tex
 2018,poikola,20,prog.c,main,c,null,true,github,winning source,c
 2018,poikola,30,Makefile,null,makefile,null,true,github,how to compile,null
 2018,poikola,50,prog.orig.c,orig,c,null,true,github,original source,c
+2018,poikola,150,poikola.tex,null,tex,null,true,github,supplied documentation,tex
 2018,poikola,150,prog-doc.c,null,c,null,true,github,minor change to winning source,c
 2018,vokes,null,README.md,null,markdown,null,false,null,null,md
-2018,vokes,,example-1.txt,null,text,null,true,github,,txt
-2018,vokes,,example-2.txt,null,text,null,true,github,,txt
-2018,vokes,,example-tab.txt,null,text,null,true,github,,txt
 2018,vokes,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
-2018,vokes,,ioccc.txt,null,text,null,true,github,,txt
 2018,vokes,20,prog.c,main,c,null,true,github,winning source,c
 2018,vokes,30,Makefile,null,makefile,null,true,github,how to compile,null
 2018,vokes,50,prog.orig.c,orig,c,null,true,github,original source,c
+2018,vokes,100,example-1.txt,null,text,null,true,github,sample input,txt
+2018,vokes,100,example-2.txt,null,text,null,true,github,sample input,txt
+2018,vokes,100,example-tab.txt,null,text,null,true,github,sample input,txt
+2018,vokes,100,ioccc.txt,null,text,null,true,github,sample input,txt
 2018,yang,null,README.md,null,markdown,null,false,null,null,md
 2018,yang,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
 2018,yang,20,prog.c,main,c,null,true,github,winning source,c
@@ -2677,16 +2677,16 @@
 2019,mills,50,prog.orig.c,orig,c,null,true,github,original source,c
 2019,poikola,null,README.md,null,markdown,null,false,null,null,md
 2019,poikola,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
-2019,poikola,,poikola.tex,null,tex,null,true,,,tex
 2019,poikola,20,prog.c,main,c,null,true,github,winning source,c
 2019,poikola,30,Makefile,null,makefile,null,true,github,how to compile,null
 2019,poikola,50,prog.orig.c,orig,c,null,true,github,original source,c
+2019,poikola,100,poikola.tex,null,tex,null,true,github,supplied documentation,tex
 2019,yang,null,README.md,null,markdown,null,false,null,null,md
 2019,yang,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
-2019,yang,,sample_input.txt,null,text,null,true,github,,txt
 2019,yang,20,prog.c,main,c,null,true,github,winning source,c
 2019,yang,30,Makefile,null,makefile,null,true,github,how to compile,null
 2019,yang,50,prog.orig.c,orig,c,null,true,github,original source,c
+2019,yang,100,sample_input.txt,null,text,null,true,github,sample input,txt
 2019,yang,150,violet.c,null,c,null,true,github,"source formatter as ASCII Violet
 2019,yang,200,spoiler.html,null,html,null,true,browser,SPOILER WARNING,html
 2020,burton,null,README.md,null,markdown,null,false,null,null,md
