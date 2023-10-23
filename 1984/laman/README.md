@@ -8,12 +8,6 @@ Mike Laman
 make all
 ```
 
-## To run:
-
-```sh
-./laman <positive number>
-```
-
 ### Bugs and (Mis)features
 
 This entry a listed in [bugs.md](/bugs.md) as:
@@ -23,6 +17,14 @@ STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [bugs.md](/bugs.md#1984laman-readmemd).
+
+
+## To run:
+
+```sh
+./laman <positive number>
+```
+
 
 ## Try:
 

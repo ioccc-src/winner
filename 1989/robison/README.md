@@ -1,10 +1,6 @@
 # Best minimal use of C
 
 Arch D. Robison\
-University of Illinois\
-1304 W. Springfield Ave.\
-Urbana, IL\
-61801\
 US
 
 ## To build:
@@ -12,6 +8,16 @@ US
 ```sh
 make all
 ```
+
+### Bugs and (Mis)features
+
+This entry a listed in [bugs.md](/bugs.md) as:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [bugs.md](/bugs.md#1989robison-readmemd).
 
 
 ## To run:

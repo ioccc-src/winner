@@ -1,10 +1,6 @@
 # Best self-modifying program
 
 Jay Vosburgh\
-Sequent Computer Systems, Inc\
-15450 SW Koll Parkway\
-Beaverton, OR\
-97006\
 US
 
 ## To build:
@@ -12,6 +8,18 @@ US
 ```sh
 make all
 ```
+
+
+### Bugs and (Mis)features
+
+This entry a listed in [bugs.md](/bugs.md) as:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [bugs.md](/bugs.md#1989fubar-readmemd).
+
 
 ## To run:
 
@@ -25,11 +33,6 @@ make all
 ./fubar 2
 ```
 
-### INABIAF - it's not a bug it's a feature! :-)
-
-If you use either `fubar` or `ouroboros.c` (it's executable, see below) with a
-number < 0 or larger than, say 20, it's very likely that the program will turn
-into an infinite loop trying to compile code with syntax errors.
 
 ## Judges' remarks:
 
