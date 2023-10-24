@@ -130,42 +130,51 @@ can look almost identical.
 Although the [thanks-for-fixes.md](/thanks-for-fixes.md) file sometimes gives
 commands to tell you how to do this, we have set up make rules to easily do
 this. For these you should be in the directory of the entry you wish to see the
-diff output.
+diff output of.
 
-If you want to see the difference from the _original_ source try:
+When we say `entry` below, in a file name, we mean either the winner name or
+`prog`. For instance one of Landon's all time favourite entries is
+[1984/mullender](1984/mullender/README.md) so the file names would be:
+`mullender.orig.c`, `mullender.alt.c` and `mullender.c`. For later years, it
+would be instead `prog.orig.c`, `prog.alt.c` and `prog.c`.
 
-```sh
-make diff_orig_prog
+The following `make` rules exist:
+
+* `make diff_orig_prog`:
+    - This rule will show the diff of the _original_ source to the
+    current source (that is `entry.orig.c` to `entry.c`).
+* `make make diff_alt_orig`:
+    - This rule will show the diff of the alt code to the original
+    code (that is `entry.alt.c` to `entry.orig.c`). If no alt code exists
+    nothing will be shown.
+* `make diff_alt_prog`:
+    - This rule will show the diff of the alt code to the entry as it
+    stands (that is `entry.alt.c` to `entry.c`).
+* `make diff_orig_alt`:
+    - This rule will show the diff of the original code to the alt code
+    (that is `entry.orig.c` to `entry.alt.c`).
+* `make diff_prog_alt`:
+    - This rule will show the diff of the entry to the alt code (that is
+    `entry.c` to `entry.alt.c`).
+* `make diff_prog_orig`:
+    - This rule will show the diff of the entry to the original code (that is
+    `entry.c` to `entry.orig.c`).
+
+
+Note that you might see something like:
+
+```
+make: [Makefile:170: diff_orig_prog] Error 1 (ignored)
 ```
 
+at the end of the output but this is completely normal if there are differences.
 
-```
-make: [Makefile:158: diff_orig_prog] Error 1 (ignored)
-```
+If the alt code is the same as the original, say with
+[1984/anonymous](1984/anonymous/README.md), then naturally there is no point in
+running the rule and the same applies for all the other rules but this system
+allows for easily seeing the diffs.
 
-but this is perfectly fine and expected.
-
-
-If however you wish to see the difference between the alt code and the entry
-itself, try:
-
-```sh
-make diff_alt_prog
-```
-
-NOTE: this might show at the end something like:
-
-```
-make: [Makefile:163: diff_alt_prog] Error 1 (ignored)
-```
-
-The `diff_alt_prog` rule will do nothing if no alt file exists.
-
-If the alt code is the same as the original, say
-[1984/anonymous](1984/anonymous/README.md), there is no point in using this
-rule.
-
-As some examples we'll first look at one, that has really long lines which
+As some examples we'll first look at one that has really long lines which
 will make it harder to see what is different,
 [2001/anonymous](2001/anonymous/README.md). What you would do is `cd
 2001/anonymous` and then do:
@@ -207,9 +216,13 @@ To use these rules but provide a different `diff`, for instance `colordiff`,
 just do:
 
 ```sh
-make DIFF=colordiff diff_orig_prog # for original diff
-make DIFF=colordiff diff_alt_prog # for alt diff
+make DIFF=colordiff diff_orig_prog # for orig to prog diff
+make DIFF=colordiff diff_alt_prog # for alt to prog diff
 ```
+
+Obviously if you want to view the alt code or the orig code you can just open
+the files as described above.
+
 
 ## Q: I cannot get entry XYZZY from year 19xx to compile!
 
@@ -246,9 +259,11 @@ alternative code and/or fixed them. Most entries do now work and the others we
 are working on (slowly as other things are also being done and this is on free
 time).
 
-In some cases we replaced the original code with code that works for modern
-systems but one can view the original code in the `.orig.c` files (sometimes the
-original code is also in the directory as a `winner.alt.c` or `prog.alt.c`).
+In some cases we replaced the original code (not the `.orig.c` file!) with code
+that works for modern systems but one can view the original code in the
+`.orig.c` files (sometimes the original code is also in the directory as a
+`winner.alt.c` or `prog.alt.c`).
+
 Some entries should not have modern system versions replaced. See below.
 
 ## Q: I can't get some entries to work in 64-bit systems that don't support 32-bit!
@@ -274,12 +289,7 @@ actually clang, even `/usr/bin/gcc`.
 That being said many (if not most) of these entries have been fixed and some
 others will be looked at, when found.
 
-## Q: What is `cb` that is mentioned in some of the older entries?
-
-This was a C beautifier for Unix, both AT&T and Berkeley, but it seems to no
-longer be available, code wise, except for Plan 9, but Plan 9 was never used for
-judging the IOCCC. A Unix man page for `cb`
-[still exists](https://www.ibm.com/docs/en/aix/7.3?topic=c-cb-command).
+See also below.
 
 
 ## Q: I can't get XYZZY entry to compile with clang. What can I do?
@@ -297,6 +307,14 @@ then what was main() became another function of the original main() type.
 At the same time some entries are not designed to work with clang. There might
 be alternate code added at some point but as above this depends on free time and
 other things that have to be done plus remembering to do it.
+
+## Q: What is `cb` that is mentioned in some of the older entries?
+
+This was a C beautifier for Unix, both AT&T and Berkeley, but it seems to no
+longer be available, code wise, except for Plan 9, but Plan 9 was never used for
+judging the IOCCC. A Unix man page for `cb`
+[still exists](https://www.ibm.com/docs/en/aix/7.3?topic=c-cb-command).
+
 
 ## Q: After running a program my terminal is all messed up! How do I restore my terminal?
 
@@ -402,6 +420,13 @@ brew install sdl2 sdl12-compat
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
+##### NOTE: there might be extra SDL packages required
+
+In the case that some entries do not work even with SDL1/SDL2 installed it might
+be that you need additional SDL libraries. See the entry's README.md for
+details. If something is not noted you're welcome to report it as an issue or
+fix it and make a new pull request.
+
 ## Q: How do I compile and run entries that use sound in macOS?
 
 This might depend on the entry but in some cases like
@@ -443,12 +468,6 @@ and/or number of rows have also changed.
 For the original version see the [/archive](/archive) directory where you can
 find all the original winning entries. In some cases the `winner.alt.c` is the
 original source code.
-
-## Q: Since some entries have been modified over time, how can I view the original entry?
-
-See either the `winner.orig.c` or `prog.orig.c`, depending on the year (earlier
-years we did not rename the code to `prog.c` but had it as the winner handle),
-in the winning directories.
 
 ## Q: I found a bug in a previous winner, what should I do?
 
