@@ -11,30 +11,32 @@ contributed thousands, that we wish to thank.
 
 We call out the extensive contributions of [Cody Boone
 Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson) who is
-responsible for many of the improvements including many **very complicated bug
-fixes** like [1988/phillipps](1988/phillipps/README.md),
-[2001/anonymous](2001/anonymous/README.md) and
-[2004/burley](2004/burley/README.md), making entries like
-[1986/wall](1986/wall/README.md) not need `-traditional-cpp` (all **very
-complicated fixes**), fixing entries to work with clang (some being **very
-complicated** like [1991/dds](1991/dds/README.md)), porting entries to
-macOS (some being **very complicated** like
-[1998/schweikh1](1998/schweikh1/README.md)), fixing code like
-[2001/herrmann2](2001/herrmann2/README.md) to work in both 32-bit/64-bit which
-*can be* **very complicated**, providing alternate code where useful/necessary,
-fixing where possible dead links or removing them, typo/consistency fixes,
-improving **ALL _Makefiles_** and writing [sgit](https://github.com/xexyl/sgit)
-that we installed locally to easily run `sed` on files in the repo to help build
-the website. **Thank you very much** for your extensive efforts in helping
-improve the IOCCC presentation of past IOCCC winners and fixing almost all past
-entries for modern systems!
+responsible for most of the improvements including many **very complicated bug
+fixes** like [1988/phillipps](/thanks-for-fixes.md#1988phillipps-readmemd),
+[2001/anonymous](/thanks-for-fixes.md#2001anonymous-readmemd) and
+[2004/burley](/thanks-for-fixes.md#2004burley-readmemd), making entries like
+[1986/wall](/thanks-for-fixes.md#1986wall-readmemd) not need `-traditional-cpp`
+(all **very complicated fixes**), fixing entries to work with clang (some being
+**very complicated** like [1991/dds](/thanks-for-fixes.md#1991dds-readmemd)),
+porting entries to macOS (some being **very complicated** like
+[1998/schweikh1](/thanks-for-fixes.md#1998schweikh1-readmemd)), fixing code like
+[2001/herrmann2](/thanks-for-fixes.md#2001herrmann2-readmemd) to work in both
+32-bit/64-bit which *can be* **very complicated**, providing alternate code
+where useful/necessary, fixing where possible dead links or removing them,
+typo/consistency fixes, improving **ALL _Makefiles_** and writing
+[sgit](https://github.com/xexyl/sgit) that we installed locally to easily run
+`sed` on files in the repo to help build the website. **THANK YOU VERY MUCH**
+for your extensive efforts in helping improve the IOCCC presentation of past
+IOCCC winners and fixing almost all past entries for modern systems!
 
 [Yusuke Endoh](https://www.ioccc.org/winners.html#Yusuke_Endoh) supplied a
 number of important bug fixes to a number of past IOCCC winners. Some of those
 fixes were **very technically challenging** such as
-[1989/robison](1989/robison/README.md), [1990/cmills](1990/cmills/README.md),
-[1992/lush](1992/lush/README.md) and [2001/ctk](2001/ctk/README.md). **Thank you very
-much** for your help!
+[1989/robison](/thanks-for-fixes.md#1989robison-readmemd),
+[1990/cmills](https://github.com/ioccc-src/temp-test-ioccc/blob/master/thanks-for-fixes.md#1990cmills-readmemd),
+[1992/lush](/thanks-for-fixes.md#1992lush-readmemd) and
+[2001/ctk](/thanks-for-fixes.md#2001ctk-readmemd). **THANK YOU VERY MUCH** for
+your help!
 
 A good number of the [past winners of the
 IOCCC](https://www.ioccc.org/winners.html) tested, identified and helped correct
@@ -75,6 +77,26 @@ Where useful he added some notes to the Makefiles during compilation to let one
 know of certain problems or features that matter.
 
 There were some other fixes as well including typos in the Makefiles.
+
+A lot of these fixes were done with his [sgit
+tool](https://github.com/xexyl/sgit).
+
+## Typo fixes and consistency improvements
+
+Cody made many, many typ0 (... :-) ) fixes throughout the README.md files,
+scripts, other data files, Makefiles (see above) etc.
+
+He also updated the formatting of the README.md files (after renaming the old
+files to README.md) to proper markdown.
+
+Where possible he made the presentation of the entries much more consistent
+across the entries of all the years as well as other files. This is not possible
+for everything (the remarks of authors, for instance, cannot be and should not
+be made consistent but adding markdown where necessary in the remarks is).
+
+A lot of these fixes were done with his [sgit
+tool](https://github.com/xexyl/sgit) but many were done manually as well.
+
 
 ## [1984/anonymous](1984/anonymous/anonymous.c) ([README.md](1984/anonymous/README.md))
 
@@ -138,7 +160,7 @@ but not clang - or at least some versions.
 To see the difference from start to fixed:
 
 ```sh
-diff 1984/decot/decot.orig.c 1984/decot/decot.c
+cd 1984/decot ; make diff_orig_prog
 ```
 
 ## [1984/mullender](1984/mullender/mullender.c) ([README.md](1984/mullender/README.md]))
@@ -276,7 +298,7 @@ If you'd like to see the difference between the version that requires
 `-traditional-cpp` and the fixed version, try:
 
 ```sh
-diff 1986/wall/wall.alt.c 1986/wall/wall.c
+cd 1986/wall ; make diff_alt_prog
 ```
 
 ## [1987/heckbert](1987/heckbert/heckbert.c) ([README.md](1987/heckbert/README.md))
@@ -361,12 +383,14 @@ unlikely(?) but nevertheless suggested case that `putchar()` is not available.
 ## [1988/dale](1988/dale/dale.c) ([README.md](1988/dale/README.md]))
 
 Cody fixed this twisted entry (as we called it :-) ) for modern compilers,
-including making it no longer require `-traditional-cpp`. There were two
-problems here to fix, which Cody did.
+including making it no longer require `-traditional-cpp`. Fixing
+`-traditional-cpp` is, as noted earlier, very complicated, but we encourage you
+to compare the fix from the original entry. There was another problem to resolve
+as well, however.
 
-One, as noted above, was that the entry required `-traditional-cpp`
-(which <strike>not all compilers support</strike> `clang` does not support)
-It needed that option in modern systems because of two things it did:
+First of all, as noted above, the entry required `-traditional-cpp` (which
+<strike>not all compilers support</strike> `clang` does not support) It needed
+that option in modern systems because of two things it did:
 
 ```c
 #define a(x)get/***/x/***/id())
@@ -440,7 +464,7 @@ version in case you have an older compiler or wish to try `-traditional-cpp`.
 ## [1988/isaak](1988/isaak/isaak.c) ([README.md](1988/isaak/README.md]))
 
 Cody fixed this to work for modern systems. The problem was that the important
-function, a redefinition of `exit()`, was not being called in main(). The
+function, a redefinition of `exit()`, was not being called in `main()`. The
 original version is in [1988/isaak/isaak.alt.c](1988/isaak/isaak.alt.c). See the
 README.md file for more details.
 
@@ -453,11 +477,12 @@ publication, in the remarks, to help understand the entry, and for fun.
 
 Cody fixed this for modern systems. It did not compile with clang because it
 requires the second and third args of `main()` to be `char **` but even before
-that with gcc it printed random characters.
+that with gcc it printed garbage and then crashed.
 
-After fixing it for clang by changing `main()` to call the new function `pain()`
-(chosen because it's a pain that clang requires these args to be `char **` :-) )
-with the correct args it now works with gcc and clang.
+After fixing it for clang by changing the very `main()` (in fact it called
+itself up to 12 times!) to call the new function `pain()` (chosen because it's a
+pain that clang requires these args to be `char **` :-), which is just as
+recursive, with the correct args it now works with both gcc and clang.
 
 Later Cody improved the fix to make it look a bit more like the original, using
 K&R style functions, and trying to match the format as best as possible of what
@@ -1370,7 +1395,7 @@ These also had to be done:
 closed prior to executing the program. This is the `f` variable which is of type
 `l`, a `#define` for `int *`.
 - `munmap()` also had to be called prior to executing the program. This involved
-a new `off_t N` so which was added in the `mmap()` call which was then used in
+a new `off_t N` which was added in the `mmap()` call which was then used in
 the `munmap()` call.
 
 Without those changes the program was not executed after modification which it
@@ -1473,7 +1498,7 @@ by Yusuke.
 ## [2001/cheong](2001/cheong/cheong.c) ([README.md](2001/cheong/README.md]))
 
 Cody fixed this to work with clang by adding another function that is allowed to
-have a third arg as an int, not a `char **`. He chose pain() because it's a four
+have a third arg as an int, not a `char **`. He chose `pain()` because it's a four
 letter word that would match the format and because it's pain that clang forces
 this. :-) This fix makes a point of the author's notes on portability no longer
 valid, btw.
@@ -1525,7 +1550,7 @@ version that the author did not note. Do you know what these are?
 Cody fixed this so that the when compiling the code the program is not executed
 itself by itself which just showed the usage string and exited. The [script
 herrmann1.sh](2001/herrmann1/herrmann1.sh) is used to compile the program but
-it's also how you invoke the program. 
+it's also how you invoke the program.
 
 He also fixed the [script herrmann1.sh](2001/herrmann1/herrmann1.sh) for
 shellcheck. In particular there were quite a few:
@@ -1542,7 +1567,7 @@ errors/warnings.
 
 Cody fixed this to work with both 64-bit and 32-bit compilers by changing most of
 the `int`s (all but that in `main`) to `long`s. He also fixed it to compile with
-clang by changing the args of main to be `int` and `char **` respectively and
+clang by changing the args of main to be `int` and `char **`, respectively, and
 changing specific references to the `argv` arg, casting to `long` (was `int` but
 the 64-bit fix requires `long`) which was its old type. The original file, used
 for demonstration purposes, as well as if you want to see if your system works
@@ -1857,7 +1882,7 @@ back for arrow keys in the [alternate version](2006/night/night.alt.c).
 
 Cody fixed this entry to work with clang which has a defect with the args to
 `main()`: it requires specific types: `int` and `char **` for the first and
-latter args. 
+latter args.
 
 The [alternate version](2006/sloane/sloane.alt.c), which allows one to see what
 is going on in modern systems, and which we recommend one use _first_, was
