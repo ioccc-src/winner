@@ -686,7 +686,7 @@ This entry will also enter an infinite loop if input is not a number > 0.
 
 # 1991
 
-## [1991/dds](1991/dds/dds.c) ([README.md)(1991/dds/README.md))
+## [1991/dds](1991/dds/dds.c) ([README.md](1991/dds/README.md))
 ### STATUS: INABIAF - please **DO NOT** fix
 
 If the BASIC file cannot be opened for reading or the output file cannot be
