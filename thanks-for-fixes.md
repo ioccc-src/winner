@@ -11,8 +11,9 @@ contributed thousands, that we wish to thank.
 
 We call out the extensive contributions of [Cody Boone
 Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson) who is
-responsible for most of the improvements including many **very complicated bug
-fixes** like [1988/phillipps](/thanks-for-fixes.md#1988phillipps-readmemd),
+responsible for most of the improvements and fixes including many **very
+complicated bug fixes** like
+[1988/phillipps](/thanks-for-fixes.md#1988phillipps-readmemd),
 [2001/anonymous](/thanks-for-fixes.md#2001anonymous-readmemd) and
 [2004/burley](/thanks-for-fixes.md#2004burley-readmemd), making entries like
 [1986/wall](/thanks-for-fixes.md#1986wall-readmemd) not need `-traditional-cpp`
@@ -666,7 +667,9 @@ Although this is appreciated we agree with him that <strike>no one</strike>
 [users](https://en.wikipedia.org/wiki/Microsoft_Windows)
 [here](https://www.ioccc.org) will need it! :-)
 
-
+Cody also made the code look more like the original, removing the `int` from
+the variables, adding instead `-Wno-implicit-int`. The newline added by the
+judges was retained.
 
 ## [1990/cmills](1990/cmills/cmills.c) ([README.md](1990/cmills/README.md]))
 
