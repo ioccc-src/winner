@@ -44,7 +44,7 @@ cp war-and-peace.txt nuked.tmp
 ./avgtime.sh 100 ./prog war-and-peace.txt nuked.tmp
 ```
 
-### Alternate code
+### Alternate code:
 
 An alternate version of this entry, `prog.alt.c`, is provided.
 This alternate code does not use a 64 bit FNV hash.

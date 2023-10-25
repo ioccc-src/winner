@@ -39,7 +39,7 @@ If you have gcc < 2.3.3 (i.e. the entry can compile):
 ```
 
 
-### Alternate code
+### Alternate code:
 
 To use:
 
