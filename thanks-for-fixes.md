@@ -1963,6 +1963,12 @@ implicitly (linux doesn't seem to but macOS does).
 Cody added explicit linking of libm (`-lm`) as not all systems do this
 implicitly (linux doesn't seem to but macOS does).
 
+## [2012/endoh2](2012/endoh2/endoh2.c) ([README.md](2012/endoh2/README.md))
+
+Cody fixed a typo in the ruby script
+[find-font-table.rb](2012/endoh2/find-font-table.rb).
+
+
 ## [2012/grothe](2012/grothe/grothe.c) ([README.md](2012/grothe/README.md))
 
 Cody restored the original code from the archive.
