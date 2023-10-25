@@ -1992,20 +1992,30 @@ Cody restored the original code from the archive.
 
 ## [2012/kang](2012/kang/kang.c) ([README.md](2012/kang/README.md]))
 
-Cody added alt code that fixes the problem where in German 'v' sounds like 'f'
-which the program has as 'f'. Thus with the original version it would translate
-'fier' to '4' when the word is 'vier'. Originally this was updated in the
-original code but it was noticed that this caused _other_ words to be incorrect
-so it was set as an alt version since the code was already there. It might also
-be considered a feature and not a bug so an alt version is the better way to go
-about it. Using both allows one to experience different capabilities and also
-enjoy or appreciate the entry more.
+Cody added alt code that fixes a problem where in German 'v' sounds like 'f'
+which the program has as 'f': with the original version it would translate
+'fier' to '4' when the word is 'vier'. But see below.
 
-Cody also added two scripts, [en.sh](2012/kang/en.sh) and
-[de.sh](2012/kang/de.sh) which counts from 0 through 13 in English and German.
-In the German script it uses the umlaut and also does it without the umlaut (add
-an 'e'). Both scripts can use either version to see the differences. See the
-README.md file for details.
+Originally this was updated in the original code but it was noticed that this
+caused _other_ German (and maybe other languages?) words to be incorrect so it
+was set as an alt version since the code was already there. It might also be
+considered a feature and not a bug so an alt version is the better way to go
+about it. Using both, however, allows one to experience different capabilities
+and also enjoy or appreciate the entry even more, given how simple the
+difference is.
+
+Cody also added five scripts: [en.sh](2012/kang/en.sh),
+[de.sh](2012/kang/de.sh), [en.alt.sh](2012/kang/en.alt.sh) and
+[de.alt.sh](2012/de.alt.sh) which count from 0 through 13 in English and German
+using the original entry and the alt version respectively.
+
+In the German scripts it uses the umlaut and also does it without the umlaut
+(add an 'e'). Notice how the program picks up on this! All scripts can use
+either version but the `.alt.sh` versions default to the `alt` version whereas
+the other defaults to the submitted entry. See the README.md for details.
+
+The fifth script, [try.sh](2012/kang/try.sh), runs a sequence of commands to
+show different languages and numbers.
 
 
 ## [2012/vik](2012/vik/vik.c) ([README.md](2012/vik/README.md]))
