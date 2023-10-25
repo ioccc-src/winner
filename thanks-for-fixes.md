@@ -1144,8 +1144,6 @@ easier to see the program do what it does in systems that are too fast ... if
 there is such a thing anyway :-) ). See the README.md for details on this.
 
 
-
-
 ## [1995/garry](1995/garry/garry.c) ([README.md](1995/garry/README.md]))
 
 Cody fixed the alt code so that it will compile with modern compilers. The
@@ -1170,6 +1168,14 @@ Cody fixed this so that it will compile with versions of clang that has a defect
 which only allows `main()` to have 0, 2 or 3 args. This is done by a new
 function (`pain()` as it's annoying that clang is this way :-) ) that main()
 calls which has the four args.
+
+## [1995/vanschnitz](1995/vanschnitz/vanschnitz.c) ([README.md](1995/vanschnitz/README.md))
+
+Cody added the authors' spoiler as a C file as in 2023 we have decided that in
+most cases all the code should be available for the wider audience, without
+having to extract it. The exception is when the files are created by the entry
+or the entry decrypts the text or whatever else.
+
 
 ## [1996/august](1996/august/august.c) ([README.md](1996/august/README.md]))
 
