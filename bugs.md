@@ -428,7 +428,7 @@ Cody!
 # 1984
 
 ## [1984/decot](1984/decot/decot.c) ([README.md](1984/decot/README.md)
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 The purpose of this program is to print out a string of rubbish. In particular
 you should see something like:
@@ -444,7 +444,7 @@ without a newline after the `\`. This is not a bug.
 
 
 ## [1984/laman](1984/laman/laman.c) ([README.md](1984/laman/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 This entry will very likely crash or do something else if you run it without an
 arg. It likely won't do anything at all if the arg is not a positive number.
@@ -456,14 +456,14 @@ arg. It likely won't do anything at all if the arg is not a positive number.
 
 
 ## [1986/august](1986/august/august.c) ([README.md](1986/august/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 
 This entry is known to segfault after printing its output. It was documented by
 the judges and shouldn't be fixed.
 
 ## [1986/hague](1986/hague/hague.c) ([README.md](1986/hague/README.md))
-## STATUS: uses gets() - change to fgets() if possible
+### STATUS: uses gets() - change to fgets() if possible
 
 This entry uses `gets()` which is unsafe. In particular the buffer size is a
 mere 81 and it does not read a single string at command invocation but instead
@@ -492,7 +492,7 @@ this alt version is to be determined later but it's might very well not be.
 
 
 ## [1986/holloway](1986/holloway/holloway.c) ([README.md](1986/holloway/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for modern
 systems but he points out a warning that should NOT be fixed; he experimented
@@ -539,7 +539,7 @@ or any others.
 # 1988
 
 ## [1988/dale](1988/dale/dale.c) ([README.md](1988/dale/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 In linux it might happen that despite no error message or message about doing
 so, the program drops a core file into the directory even though the entry works
@@ -549,7 +549,7 @@ and does not crash.
 
 
 ## [1989/fubar](1989/fubar/fubar.c) ([README.md](1989/fubar/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 If you use either `fubar` or `ouroboros.c` (it's executable, see README.md for
 details) with a number < 0 or larger than, say 20, it's very likely that the
@@ -559,14 +559,14 @@ errors.
 
 
 ## [1989/robison](1989/robison/robison.c) ([README.md](1989/robison/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 This program will very likely crash or break into tiny bits :-) if you feed it
 numbers with non-binary digits.
 
 
 ## [1989/westley](1989/westley/westley.c) ([README.md](1989/westley/README.md))
-## STATUS: main() function args not allowed - please help us fix
+### STATUS: main() function args not allowed - please help us fix
 
 Although [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for
 some of the versions that are generated (see below tip) it will not work for all
@@ -602,7 +602,7 @@ files not generated at all.  `ver1`, `ver2` and `ver3` are the problematic ones.
 The segfault happens when running the main program. Cody fixed that but as noted
 as for the generated files only `ver0` will compile with clang.
 
-## STATUS: known bug - please help us fix
+### STATUS: known bug - please help us fix
 
 With version 2 it sometimes segfaults even with the same input where other times
 it does not. We don't believe this is because of the fix that lets some versions
@@ -625,7 +625,7 @@ reverse of other code (also wrt names). See the source file and the README.md
 
 
 ## [1990/jaw](1990/jaw/jaw.c) ([README.md](1990/jaw/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the scripts to
 work in modern systems. He notes however that the command in the try section,
@@ -668,7 +668,7 @@ so it should stay with this note.
 
 
 ## [1990/theorem](1990/theorem/theorem.c) ([README.md](1990/theorem/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed many bugs that
 prevented this from working properly (including segfaults) but one thing to note
@@ -677,7 +677,7 @@ will enter an infinite loop, printing 0 over and over again; another condition
 where this occurred was fixed but this one should not be fixed. Thank you.
 
 ## [1990/westley](1990/westley/westley.c) ([README.md](1990/westley/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 This entry will very likely crash or do something strange without an arg.
 
@@ -686,15 +686,15 @@ This entry will also enter an infinite loop if input is not a number > 0.
 
 # 1991
 
-## [1991/dds](1991/dds/dds.c) ([README.md)(1991/dds/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+## [1991/dds](1991/dds/dds.c) ([README.md](1991/dds/README.md))
+### STATUS: INABIAF - please **DO NOT** fix
 
 If the BASIC file cannot be opened for reading or the output file cannot be
 opened for writing the program will very likely crash or do something funny.
 This is not a bug but a feature.  Please do not fix this except for the
 challenge to yourself.
 
-## STATUS: uses gets() - change to fgets() if possible
+### STATUS: uses gets() - change to fgets() if possible
 
 That being said the compiled code uses `gets()` not `fgets()`. Can you fix this?
 It's quite complicated to do: the `s` array is certainly relevant and you can
@@ -704,7 +704,7 @@ and call it correctly but it might take more work to get the generated code
 sorted. This will be looked at later.
 
 ## [1991/westley](1991/westley/westley.c) ([README.md](1991/westley/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 There is a very simple way to always win. The program doesn't catch you and as
 someone called Cody's late grandmother said to him: 'it's not cheating unless
@@ -718,13 +718,13 @@ possibility. Can you find out how?
 # 1992
 
 ## [1992/buzzard.1](1992/buzzard.1/buzzard.1.c) ([README.md](1992/buzzard.1/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 This entry will crash without enough args (2).
 
 
 ## [1992/kivinen](1992/kivinen/kivinen.c) ([README.md](1992/kivinen/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 When you start the program everything starts to move over to the right side and
 then ends.  [Yusuke Endoh](/winners.html#Yusuke_Endoh) pointed out that if you
@@ -733,7 +733,7 @@ welcome but it's not currently considered enough of a problem to fix.
 
 
 ## [1992/lush](1992/lush/lush.c) ([README.md](1992/lush/README.md))
-## STATUS: doesn't work with some compilers - please provide alternative code
+### STATUS: doesn't work with some compilers - please provide alternative code
 
 We used a patch from [Yusuke Endoh](/winners.html#Yusuke_Endoh) to get this to
 work but it only works with gcc. Cody removed the warnings of `gets()`.
@@ -805,7 +805,7 @@ As you might see the part under the `warning:` line is different.
 Can you help us?
 
 ## [1992/westley](1992/westley/westley.c) ([README.md](1992/westley/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 This program and the alternate version will very likely crash or
 [nuke](https://en.wikipedia.org/wiki/Nuclear_weapon) the [entire
@@ -817,13 +817,13 @@ encourage you to test it. This should not be fixed.
 # 1993
 
 ## [1993/plummber](1993/plummer/plummer.c) ([README.md](1993/plummer/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 If not enough args are specified this program will likely crash or do something
 else. This should NOT be fixed.
 
 ## [1993/lmfjyh](1993/lmfjyh/lmfjyh.c) ([README.md](1993/lmfjyh/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 This entry relied on a bug in gcc that was fixed with gcc version 2.3.3. This
 cannot be fixed for modern systems as the bug is long gone.
@@ -834,13 +834,13 @@ An alternate version, however, does exist. See the README.md file for details.
 # 1994
 
 ## [1994/horton[(1994/horton/horton.c) ([README.md](1994/horton/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 If not enough args are specified this program will likely crash or do something
 else. This should NOT be fixed.
 
 ## [1994/ldb](1994/ldb/ldb.c) ([README.md](1994/ldb/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile
 with modern systems (see the [thanks-for-fixes.md](thanks-for-fixes.md) file for
@@ -857,7 +857,7 @@ one liner it's already quite long.
 
 
 ## [1994/schnitzi](1994/schnitzi/schnitzi.c) ([README.md])(1994/schnitzi/README.md))
-## STATUS: uses gets() - change to fgets() if possible
+### STATUS: uses gets() - change to fgets() if possible
 
 The buffer size of this entry is 100 which is very easily overflowed
 with `gets()` which it uses. Changing it to use `fgets()` is difficult. Even
@@ -939,7 +939,7 @@ can be compiled and the output of that new program when fed itself can also be
 compiled!
 
 ## [1994/shapiro](1994/shapiro/shapiro.c) ([README.md](1994/shapiro/README.md))
-## STATUS: missing file - please provide it
+### STATUS: missing file - please provide it
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) noted that the
 README.md file refers to an alternative version of the code that is not
@@ -976,7 +976,7 @@ Since it works there is no need to fix this except for a challenge to yourself.
 
 
 ## [1995/cdua](1995/cdua/cdua.c) ([README.md](1995/cdua/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 This did not originally compile under macOS and after it did compile under
 macOS, it crashed. [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson)
@@ -990,7 +990,7 @@ it calls `getchar()` via the pointer `m`. So this is a feature not a bug.
 
 
 ## [1995/vanschnitz](1995/vanschnitz/vanschnitz.c) ([README.md](1995/vanschnitz/README.md))
-## STATUS: missing file - please provide it
+### STATUS: missing file - please provide it
 
 The authors stated that they included a version that allows people with just K&R
 compilers to use the program but this file is missing. Can you provide it?
@@ -1001,7 +1001,7 @@ We would appreciate anyone who has it or even just knows the name! Thank you.
 # 1996
 
 ## [1996/august](1996/august/august.c) ([README.md](1996/august/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
 this program that prevented it from working in gcc. It is known, however, that
@@ -1010,7 +1010,7 @@ loop. See the README.md file for an example command that this can happen with.
 
 
 ## [1996/gandalf](1996/gandalf/gandalf.c) ([README.md](1996/gandalf/README.md))
-## STATUS: missing or dead link - please provide them
+### STATUS: missing or dead link - please provide them
 
 The link was http://www.tc3.co.uk/~gandalf/G.HTML but this no longer exists as
 it was instead requiring a login / password.
@@ -1018,7 +1018,7 @@ it was instead requiring a login / password.
 Do you have an updated link? We welcome your help!
 
 ## [1996/jonth](1996/jonth/jonth.c) ([README.md](1996/jonth/README.md))
-## STATUS: missing or dead link - please provide them
+### STATUS: missing or dead link - please provide them
 
 As well the link which was http://www.uio.no/~jonth is no longer valid and
 there's no archive on the Internet Wayback Machine. Do you know of a proper URL?
@@ -1032,7 +1032,7 @@ There was no IOCCC in 1997.
 # 1998
 
 ## [1998/dlowe](1998/dlowe/dlowe.c) ([README.md](1998/dlowe/README.md))
-## STATUS: missing or dead link - please provide them
+### STATUS: missing or dead link - please provide them
 
 The domain http://pootpoot.com no longer exists as it once did. The judges have
 given a script that can be used to make a similar page (**warning: not checked
@@ -1041,13 +1041,13 @@ would like to set it up?  We'll gladly thank you in the README.md file and link
 to the page as well!  You'll have IOCCC fame for reviving a pootifier! :-)
 
 ## [1998/dloweneil](1998/dloweneil/dloweneil.c) ([README.md](1998/dloweneil/README.md))
-## STATUS: missing or dead link - please provide them
+### STATUS: missing or dead link - please provide them
 
 See above entry [1998/dlowe](1998/dlowe/dlowe.c).
 
 
 ## [1998/schnitzi](1998/schnitzi/schnitzi.c) ([README.md](1998/schnitzi/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work for
 modern systems but he notes a couple compile warnings to ignore.
@@ -1089,7 +1089,7 @@ There was no IOCCC in 1999.
 # 2000
 
 [2000/primenum](2000/primenum/primenum.c) ([README.md](2000/primenum/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 This program does not do what you might think it does! Running it like:
 
@@ -1106,7 +1106,7 @@ fix this (in fact it was originally done but rolled back).
 As well there is a known crash that's also a feature.
 
 ## [2000/rince](2000/rince/rince.c) ([README.md](2000/rince/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 If `DISPLAY` is not set the program will very likely crash, do something strange
 (or if you're very unlucky your computer might [halt and catch
@@ -1116,7 +1116,7 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing))! :-) ).
 # 2001
 
 ## [2001/anonymous](2001/anonymous/anonymous.c) ([README.md](2001/anonymous/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this so that it
 doesn't segfault and then also fixed the functionality of it (but see below).
@@ -1136,15 +1136,15 @@ can run ELF binaries but cannot compile 32-bit binaries.
 
 Other BSD Unices were not tested.
 
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 Note also that if you don't specify a file or you specify a non-32-bit ELF file
 this program will very likely crash or do something strange like slaughter the
 elves of Imladris :-(
 
 ## [2001/bellard](2001/bellard/bellard.c) ([README.md](2001/bellard/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
-## STATUS: doesn't work with some platforms - please help us fix
+### STATUS: INABIAF - please **DO NOT** fix
+### STATUS: doesn't work with some platforms - please help us fix
 
 The two statuses might seem contradictory but that is a complicated question.
 The author stated that it only works with i386 linux so on the one hand the fact
@@ -1204,28 +1204,28 @@ before the fixes there.
 
 
 ## [2001/cheong](2001/cheong/cheong.c) ([README.md](2001/cheong/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 This program will very likely crash or do something different without an arg.
 
 ## [2001/dgbeards](2001/dgbeards/dgbeards.c) ([README.md](2001/dgbeards/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 This program deliberately crashes if it loses (which is what it aims to do).
 
 ## [2001/herrmann1](2001/herrmann1/herrmann1.c) ([README.md](2001/herrmann1/README.md)
-## STATUS: missing files - please provide them
+### STATUS: missing files - please provide them
 
 The author referred to the file `herrmann1.turing` but it does not exist not even
 in the archive. Do you have a copy? Please provide it!
 
-## STATUS: missing files - please provide them
+### STATUS: missing files - please provide them
 
 The author also referred to the file `times2.turing` but this is also missing in
 the archive. Do you have a copy? Please provide it!
 
 
-## STATUS: known bug - please help us fix
+### STATUS: known bug - please help us fix
 
 There is also a bug in part. During compilation you're supposed to see some
 animation but this does not seem to work with modern gcc versions. It appears
@@ -1234,7 +1234,7 @@ appreciate your help!
 
 
 ## [2001/kev](2001/kev/kev.c) ([README.md](2001/kev/README.md)
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 Sometimes when one player presses `q` it will result in broken pipe on the other
 end.
@@ -1255,14 +1255,14 @@ Although it is independent of endianness both systems need the same character
 set. In other words both have to be ASCII or EBCDIC - not one of each.
 
 ## [2001/ollinger](2001/ollinger/ollinger.c) ([README.md)(2001/ollinger/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 This program will very likely crash or do something else without an arg.
 
 
 
 ## [2001/schweikh](2001/schweikh/schweikh.c) ([README.md](2001/schweikh/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 This program will very likely crash or do something else if you do not give it
 two args.
@@ -1285,7 +1285,7 @@ There was no IOCCC in 2003.
 # 1998
 
 ## [1998/schnitzi](1998/schnitzi/schnitzi.c) ([README.md](1998/schnitzi/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work for
 modern systems but he notes a couple compile warnings to ignore.
@@ -1327,7 +1327,7 @@ There was no IOCCC in 1999.
 # 2000
 
 [2000/primenum](2000/primenum/primenum.c) ([README.md](2000/primenum/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 This program does not do what you might think it does! Running it like:
 
@@ -1346,7 +1346,7 @@ fix this (in fact it was originally done but rolled back).
 
 
 ## [2001/bellard](2001/bellard/bellard.c) ([README.md](2001/bellard/README.md))
-## STATUS: probable bug (possibly depending on system) - please help test and if necessary fix
+### STATUS: probable bug (possibly depending on system) - please help test and if necessary fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed an initial
 segfault and he also fixed the [supplementary
@@ -1362,12 +1362,12 @@ a certain gcc version is necessary but it might be helpful to download and
 compile that version to test it.
 
 ## [2001/westley](2001/westley/westley.c) ([README.md](2001/westley/README.md))
-## STATUS: missing files - please provide them
+### STATUS: missing files - please provide them
 
 The author referred to the file `card.gif` but this appears to be missing. Do
 you have it? If you do please provide it and thank you!
 
-## STATUS: uses gets() - change to fgets() if possible (in some cases getline() works)
+### STATUS: uses gets() - change to fgets() if possible (in some cases getline() works)
 
 The code also uses `gets()` which, without redirecting stderr to `/dev/null`,
 can show an obnoxious warning every time it's run. In the script
@@ -1390,8 +1390,8 @@ There was no IOCCC in 2003.
 
 
 ## [2004/gavin](2004/gavin/gavin.c) ([README.md](2004/gavin//README.md))
-## STATUS: compiled executable crashes - please help us fix
-## STATUS: doesn't work with some platforms - please help us fix
+### STATUS: compiled executable crashes - please help us fix
+### STATUS: doesn't work with some platforms - please help us fix
 
 Segmentation fault will occur in some systems. For instance on macOS with the
 arm64 chip:
@@ -1492,7 +1492,7 @@ The current ([Makefile](2004/gavin/Makefile) was modified to try and
 fit into the current IOCCC build environment.
 
 ## [2004/sds](2004/sds/sds.c) ([README.md](2004/sds/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 The generated code will very likely segfault or do something not intended if not
 given the right args. See the README.md file for the correct syntax.
@@ -1501,7 +1501,7 @@ given the right args. See the README.md file for the correct syntax.
 # 2005
 
 ## [2005/anon](2005/anon/anon.c) ([README.md](2005/anon/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 This program sometimes will create unsolvable puzzles :-) just to hook you.
 As a protection against this - and to prevent you from spending too much time on
@@ -1514,7 +1514,7 @@ strange. This might also happen if you specify excessively large board
 dimensions. Try `100 100 100` for instance and see what happens!
 
 ## [2005/giljade](2005/giljade/giljade.c) ([README.md](2005/giljade/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 This entry will very likely segfault or do something strange if the source code
 does not exist.
@@ -1522,7 +1522,7 @@ does not exist.
 This entry requires that `sed` and `make` are in the path.
 
 ## [2005/mynx](2005/mynx/mynx.c) ([README.md](2005/mynx/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) notes that, though
 probably obvious, this entry will not work with https. He added an alt version
@@ -1536,7 +1536,7 @@ to including the [IOCCC website](https://www.ioccc.org) itself.
 # 2006
 
 ## [2006/hamre](2006/hamre/hamre.c) ([README.md](2006/hamre/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 This program will very likely crash or do something completely irrational :-) if
 you don't supply it with an argument.
@@ -1547,18 +1547,18 @@ operators supported.
 Don't try dividing by 0 (zero).
 
 ## [2006/monge](2006/monge/monge.c) ([README.md](2006/monge/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 Incorrect formulas will ungracefully crash the program.
 
 ## [2006/stewart](2006/stewart/stewart.c) ([README.md](2006/stewart/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 This program will very likely crash or do something funny if the file does not
 exist or cannot be opened.
 
 ## [2006/toledo2](2006/toledo2/toledo2.c) ([README.md](2006/toledo2/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this program to
 not crash in macOS (it appeared to work fine in fedora linux on an `x86_64`
@@ -1572,7 +1572,7 @@ By design this program is supposed to crash on termination.
 You must type in caps (except in strings) and this program is indeed
 case-sensitive.
 
-## STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
+### STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
 
 The author showed something like this in their remarks:
 
@@ -1601,14 +1601,14 @@ These years did not have an IOCCC.
 # 2011
 
 ## [2011/dlowe](2011/dlowe/dlowe.c) ([README.md](2011/dlowe/README.md))
-## STATUS: missing or dead link - please provide them
+### STATUS: missing or dead link - please provide them
 
 The author's website, http://www.pootpoot.net, no longer exists as it once did,
 instead being something else entirely. The Internet Wayback Machine, although it
 archived it, did not load scripts. Do you know if the domain was moved? Do you
 have an archive or mirror? Please provide us it! Thank you.
 
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 The author states the following:
 
@@ -1623,7 +1623,7 @@ tends to result in empty output.
 
 
 ## [2011/richards](2011/richards/richards.c) ([README.md](2011/richards/README.md))
-## STATUS: doesn't work with some platforms - please help us fix
+### STATUS: doesn't work with some platforms - please help us fix
 
 This does not appear to work with macOS, resulting in a segfault (and sometimes
 a bus error).
@@ -1834,7 +1834,7 @@ Do you have a fix? We welcome it!
 
 
 ## [2011/vik](2011/vik/vik.c) ([README.md](2011/vik/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 The author stated that the program will crash if no argument is passed to the
 program though we note that your computer might also [halt and catch
@@ -1844,7 +1844,7 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
 # 2012
 
 ## [2012/vik](2012/vik/vik.c) ([README.md](2012/vik/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 The author stated that the program will crash if no argument is passed to the
 program or if invalid arguments or images of mismatching sizes or unsupported
@@ -1856,7 +1856,7 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
 # 2013
 
 ## [2013/cable3](2013/cable3/cable3.c) ([README.md](2013/cable3/README.md))
-## STATUS: missing files - please provide them
+### STATUS: missing files - please provide them
 
 Many fixes and improvements were made by Cody but he observed that the author
 referred to a file that is nowhere to be found: not in the directory or the
@@ -1867,7 +1867,7 @@ The file is `hd.img`.
 Do you have it? Please provide it!
 
 ## [2013/dlowe](2013/dlowe/dlowe.c) ([README.md](2013/dlowe/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 This program will possibly crash or draw something strange with 0 args. Then
 again it might not. :-) This is easy to fix but would add bytes and since the
@@ -1879,7 +1879,7 @@ You can try and answer the questions, too: when will it crash? When will it draw
 something funny (or will it? :-) ) and when will it just do nothing?
 
 ## [2013/hou](2013/hou/hou.c) ([README.md](2013/hou/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 This program will not terminate on its own; you must kill `hou` (but not Qiming
 Hou :-) ) yourself. This should not be fixed.
@@ -1889,7 +1889,7 @@ Hou :-) ) yourself. This should not be fixed.
 
 
 ## [2014/vik](2014/vik/prog.c) ([README.md](2014/vik/README.md))
-## STATUS: known bug - please help us fix
+### STATUS: known bug - please help us fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) discovered a bug that
 shows itself in some cases (it works in others) when working on his winning
@@ -1907,14 +1907,14 @@ is not. Again see his README.md for details!
 # 2018
 
 ## [2018/algmyr](2018/algmyr/algmyr.c) ([README.md)(2018/algmyr/README.md]))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 This entry is known to crash if a file cannot be opened. This is noted by the
 author and is easy enough to fix but need not be.
 
 
 ## [2018/hou](2018/hou/prog.c) ([README.md](2018/hou/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 When you run it you will see something like:
 
@@ -1930,7 +1930,7 @@ but this is expected and the file `ioccc.html` will be generated properly.
 # 2019
 
 ## [2019/duble](2019/duble/prog.c) ([README.md](2019/duble/README.md)
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 This program will very likely leave sockets lying about in the current working
 directory. For instance [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson)
@@ -1964,7 +1964,7 @@ find . -name '.[A-Z]*' -delete
 though one might want to check that the program is not currently running. :-)
 
 ## [2019/ciura](2019/ciura/prog.c) ([README.md](2019/ciura/README.md))
-## STATUS: known bug - please help us fix
+### STATUS: known bug - please help us fix
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the scripts so
 that the locale is correct (or at least correct for the commands to be run
@@ -1978,13 +1978,13 @@ help!
 
 
 ## [2019/endoh](2019/endoh/prog.c) ([README.md](2019/endoh/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 As a backtrace quine this entry is **SUPPOSED to segfault** so this should not be
 touched either.
 
 ## [2019/poikola](2019/poikola/prog.c) ([README.md](2019/poikola/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 This program will not validate input so it might fail or get stuck if invoked
 erroneously.
@@ -1993,7 +1993,7 @@ erroneously.
 # 2020
 
 ## [2020/burton](2020/burton/prog.c) ([README.md](2020/burton/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 This entry is known to crash if no arg is specified. Although easy to fix it is
 documented and should not be fixed (of course you may fix it to see if you can
@@ -2003,7 +2003,7 @@ It will also show funny output with more than one arg. This should not be fixed
 either. But can you figure out why this happens?
 
 ## [2020/ferguson1](2020/ferguson1/prog.c) ([README.md](2020/ferguson1/README.md))
-## STATUS: INABIAF - please **DO NOT** fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 There are some things that might appear to be bugs but are actually features or
 things that are misinterpreted as bugs. See his
