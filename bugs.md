@@ -568,26 +568,22 @@ numbers with non-binary digits.
 ## [1989/westley](1989/westley/westley.c) ([README.md](1989/westley/README.md))
 ### STATUS: main() function args not allowed - please help us fix
 
-Although [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for
-some of the versions that are generated (see below tip) it will not work for all
-with the clang compiler (gcc works fine) and in some versions of clang it will
-not work at all due to yet another defect (see below also).
+This entry is a big problem for clang due to the way it is designed. Earlier a
+change was made to let it compile with clang but although it appeared to work
+with gcc, all generated versions (see the README.md for details), this was
+either a mistake or it no longer does.
+
+Thus the original was copied and this does not work at all in clang. It is very
+easy to get the first one or two to work with clang but the others result in
+compilation failures even besides clang.
+
+The problems with clang is that it does not allow `int` for any arg in `main()`
+except the first one, argc, and some versions of clang do not even allow a
+fourth arg at all (0, 2 or 3 args only).
 
 Cody noted that trying to fix it in some cases causes a segfault and in other
 cases it fails to generate some of the files (others are okay) at all (empty
-files).
-
-There is another change that was thought up on 08 July 2023 which allows for
-another version to be compiled with clang but it causes some of the versions to
-not be correctly generated (whereas the current way does generate all files but
-is not compilable with clang) so for now this is not in. If it is put in it will
-be an alternate version.
-
-Some versions of clang have an additional defect where in additional to forcing
-the args of `main()` to be of type `int` (for first arg) and the rest to be
-`char **` it also does not allow a fourth arg to main(). This in fact is part of
-the change thought up on 08 July 2023: main() calls a function which has the old
-types of variables.
+files). These changes were never committed.
 
 Cody gives these tips on the problem: `main()`'s second, third and fourth args
 (but on fourth arg see above) are supposed to be a `char **`. This didn't use to
@@ -597,10 +593,14 @@ to decrypt the function `znva` to be main in _generated files_ (see the
 [README.md](1989/westley/README.md) for details).
 
 Since that function does not have the correct types when converted to main() it
-fails to compile.  But as he said changing the type causes either a segfault or
-files not generated at all.  `ver1`, `ver2` and `ver3` are the problematic ones.
-The segfault happens when running the main program. Cody fixed that but as noted
-as for the generated files only `ver0` will compile with clang.
+fails to compile.  But as he said changing the type causes either a segfault,
+files not generated at all or files ended up with syntax errors. `ver1`, `ver2`
+and `ver3` are the problematic ones.
+
+The file [westley.alt.c](1989/westley/westley.alt.c) will compile with clang
+but although it can perform some of its functions it will generate code that
+does not work.
+
 
 ### STATUS: known bug - please help us fix
 
