@@ -1,6 +1,6 @@
-# -1,"All other cells (i.e., excluding year, winners_rank, winners_show) are JSON strings that need to be double quoted and JSON encoded.",,,,,,,,,
+# -1,All other cells (excluding year + winners_rank + winners_show) are JSON strings that need to be double quoted and JSON encoded.,,,,,,,,,
 # -2,The year cells must be JSON numbers.  The winners_rank cells must be a JSON number or JSON null.  The winners_show cells must be JSON booleans.,,,,,,,,,
-# -3,"Empty cells are filled in with red, and need to be filled in (i.e., TBD).",,,,,,,,,
+# -3,Empty cells are filled in with red and need to be filled in and are TBD.,,,,,,,,,
 # -4,Any cell containing null is a JSON null value.,,,,,,,,,
 # year,dir,winners_rank,path,src,filetype,created_by,winners_show,display_via,winners_text,ext
 1984,anonymous,null,.winner.json,null,json,jwinner,false,null,null,json

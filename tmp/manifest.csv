@@ -1,6 +1,6 @@
-# -1,"All other cells (i.e., excluding year, winners_rank, winners_show) are JSON strings that need to be double quoted and JSON encoded.",,,,,,,,,
+# -1,All other cells (excluding year + winners_rank + winners_show) are JSON strings that need to be double quoted and JSON encoded.,,,,,,,,,
 # -2,The year cells must be JSON numbers.  The winners_rank cells must be a JSON number or JSON null.  The winners_show cells must be JSON booleans.,,,,,,,,,
-# -3,"Empty cells are filled in with red, and need to be filled in (i.e., TBD).",,,,,,,,,
+# -3,Empty cells are filled in with red and need to be filled in and are TBD.,,,,,,,,,
 # -4,Any cell containing null is a JSON null value.,,,,,,,,,
 # year,dir,winners_rank,path,src,filetype,created_by,winners_show,display_via,winners_text,ext
 1984,anonymous,null,README.md,null,markdown,null,false,null,null,md
@@ -734,7 +734,7 @@
 1996,schweikh3,20,schweikh3.c,main,c,null,true,github,winning source,c
 1996,schweikh3,30,Makefile,null,makefile,null,true,github,how to compile,null
 1996,schweikh3,50,schweikh3.orig.c,orig,c,null,true,github,original source,c
-1996,schweikh3,100,schweikh3.info,null,text,null,true,github,"example output from various
+1996,schweikh3,100,schweikh3.info,null,text,null,true,github,example output from various systems,info
 1996,westley,null,README.md,null,markdown,null,false,null,null,md
 1996,westley,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
 1996,westley,20,westley.c,main,c,null,true,github,winning source,c
@@ -1909,9 +1909,9 @@
 2013,birken,null,pen6.gif,null,image,null,false,null,stages of single square rotruding from the bottom,gif
 2013,birken,null,pen7.gif,null,image,null,false,null,stages of single square rotruding from the bottom,gif
 2013,birken,null,pen8.gif,null,image,null,false,null,stages of single square rotruding from the bottom,gif
-2013,birken,null,platform0.gif,null,image,null,false,null,"stages of 5 red squares is deposited above a row containing 3 red
-2013,birken,null,platform1.gif,null,image,null,false,null,"stages of 5 red squares is deposited above a row containing 3 red
-2013,birken,null,platform2.gif,null,image,null,false,null,"stages of 5 red squares is deposited above a row containing 3 red
+2013,birken,null,platform0.gif,null,image,null,false,null,stages of 5 red squares is deposited above a row containing 3 red squares,gif
+2013,birken,null,platform1.gif,null,image,null,false,null,stages of 5 red squares is deposited above a row containing 3 red squares,gif
+2013,birken,null,platform2.gif,null,image,null,false,null,stages of 5 red squares is deposited above a row containing 3 red squares,gif
 2013,birken,null,triple0.gif,null,image,null,false,null,stages of constructed of rectangular regions ,gif
 2013,birken,null,triple1.gif,null,image,null,false,null,stages of constructed of rectangular regions ,gif
 2013,birken,20,birken.c,main,c,null,true,github,winning source,c
@@ -2443,10 +2443,10 @@
 2018,burton2,150,iocccbug04.c,null,c,null,true,github,test cases demonstrating problems with iocccsize,c
 2018,burton2,150,iocccbug05.c,null,c,null,true,github,test cases demonstrating problems with iocccsize,c
 2018,burton2,150,iocccbug06.c,null,c,null,true,github,test cases demonstrating problems with iocccsize,c
-2018,burton2,150,ioccc.kw.freq,null,text,null,true,github,"keywords used by iocccsize, sorted by frequency in 201x ioccc winners",freq
+2018,burton2,150,ioccc.kw.freq,null,text,null,true,github,keywords used by iocccsize: sorted by frequency in 201x ioccc winners,freq
 2018,burton2,150,ioc_without_quote,null,c,null,true,github,test suite data,null
 2018,burton2,150,manpage.sh,null,shellscript,null,true,github,turns ASCII versions of man into real man pages,sh
-2018,burton2,150,mkkeywords,null,shellscript,null,true,github,"reads one of the files from variations, produces string for prog.c",null
+2018,burton2,150,mkkeywords,null,shellscript,null,true,github,reads one of the files from variations produces string for prog.c,null
 2018,burton2,150,results.k,null,text,null,true,github,results with -k,k
 2018,burton2,150,tac.c,null,c,null,true,github,tokenize and count C-like languages,c
 2018,burton2,150,test01.c,null,c,null,true,github,test case source code,c
@@ -2642,7 +2642,7 @@
 2019,giles,30,Makefile,null,makefile,null,true,github,how to compile,null
 2019,giles,50,prog.orig.c,orig,c,null,true,github,original source,c
 2019,giles,100,BlockDiagram.png,null,image,null,true,browser,block-diagram of the internal structure of the reverb algorithm,png
-2019,giles,150,MonodyVocals.wav,null,wav,null,true,browser,"Monody by TheFatRat, featuring Laura
+2019,giles,150,MonodyVocals.wav,null,wav,null,true,browser,Monody by TheFatRat featuring Laura Brehm,wav
 2019,karns,null,README.md,null,markdown,null,false,null,null,md
 2019,karns,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
 2019,karns,20,prog.c,main,c,null,true,github,winning source,c
@@ -2687,7 +2687,7 @@
 2019,yang,30,Makefile,null,makefile,null,true,github,how to compile,null
 2019,yang,50,prog.orig.c,orig,c,null,true,github,original source,c
 2019,yang,100,sample_input.txt,null,text,null,true,github,sample input,txt
-2019,yang,150,violet.c,null,c,null,true,github,"source formatter as ASCII Violet
+2019,yang,150,violet.c,null,c,null,true,github,source formatter as ASCII Violet Evergarden,c
 2019,yang,200,spoiler.html,null,html,null,true,browser,SPOILER WARNING,html
 2020,burton,null,README.md,null,markdown,null,false,null,null,md
 2020,burton,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
@@ -2840,7 +2840,3 @@
 2020,yang,50,prog.orig.c,orig,c,null,true,github,original source,c
 2020,yang,150,cppp.cc,null,c,null,true,github,encode large file C Pre-PreProcessor source,cc
 2020,yang,200,spoiler.html,null,html,null,true,browser,SPOILER WARNING,html
-Brehm",wav
-Evergarden",c
-squares",gif
-systems",info
