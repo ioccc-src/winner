@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-char-subscripts -Wno-constant-conversion -Wno-empty-body \
 	-Wno-implicit-function-declaration -Wno-parentheses -Wno-unsequenced \
 	-Wno-unused-variable -Wno-strict-prototypes \
-	-Wno-extra-semi -Wno-non-literal-null-conversion
+	-Wno-extra-semi -Wno-non-literal-null-conversion -Wno-implicit-int
 
 # Common C compiler warning flags
 #
