@@ -9,7 +9,7 @@ Yves-Marie Morgan\
 make
 ```
 
-## To run:
+## To use:
 
 For the console version (ncurses):
 

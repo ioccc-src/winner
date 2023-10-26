@@ -14,7 +14,7 @@ make all
 
 To get this to compile with a modern CPP, we had to replace `#D` with `#define`.
 
-## To run:
+## To use:
 
 Run the program this way:
 

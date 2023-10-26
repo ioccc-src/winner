@@ -12,7 +12,7 @@ Canada
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./ant 'ERE' [file ...]

@@ -12,7 +12,7 @@ France\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./bellard

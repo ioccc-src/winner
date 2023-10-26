@@ -11,7 +11,7 @@ make all
 On System V systems, we had to compile with `-Dindex=strchr`.
 To compile on a 16 bit machine, change 300000 to 30000.
 
-## To run:
+## To use:
 
 ```sh
 ./heckbert col < file

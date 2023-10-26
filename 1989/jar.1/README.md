@@ -18,7 +18,7 @@ make clobber all
 There is an alternate version with a slight difference that you may wish to try.
 See [Alternate code](#alternate-code) below.
 
-## To run:
+## To use:
 
 NOTE: this will run the program itself:
 
@@ -38,7 +38,7 @@ NOTE: this will run the program itself.
 make clobber alt
 ```
 
-#### To run:
+#### To use:
 
 Alternatively, you can run it directly:
 

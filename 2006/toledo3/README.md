@@ -13,7 +13,7 @@ make
 ```
 
 
-## To run:
+## To use:
 
 ```sh
 ./toledo3 [1 | 2 | 3 [b]]

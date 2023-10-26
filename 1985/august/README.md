@@ -9,7 +9,7 @@ Lennart Augustsson\
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./august

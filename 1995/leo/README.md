@@ -11,7 +11,7 @@ US
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./leo [ deep ] [ right ] [ Variable ] [ cycle [ freq ] ]

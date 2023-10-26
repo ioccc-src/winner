@@ -10,7 +10,7 @@ Montreal, Quebec, Canada\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./prog file1 file2

@@ -8,7 +8,7 @@ Scott Vokes
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./prog < example-1.txt

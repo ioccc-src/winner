@@ -9,7 +9,7 @@ Ilya Kurdyukov\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./prog text_file output_length context_length random_seed

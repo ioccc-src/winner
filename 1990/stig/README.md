@@ -11,7 +11,7 @@ Norway
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 make all

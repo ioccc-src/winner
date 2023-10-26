@@ -11,7 +11,7 @@ make alt
 ```
 
 
-## To run:
+## To use:
 
 ```sh
 ./slone.alt

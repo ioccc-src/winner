@@ -12,7 +12,7 @@ make all
 There is [Alternate code](#alternate-code) available for if you have an old
 enough compiler.
 
-## To run:
+## To use:
 
 ```sh
 ./lievaart

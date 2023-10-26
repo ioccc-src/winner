@@ -13,7 +13,7 @@ make
 ```
 
 
-## To run:
+## To use:
 
 ```sh
 ./kev # in one terminal

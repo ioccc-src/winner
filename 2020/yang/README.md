@@ -9,7 +9,7 @@ Don Yang\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./prog [PIN] < input.txt > output.c

@@ -9,7 +9,7 @@ Netherlands
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./tromp [drops_per_sec  [cmd_string]]

@@ -13,7 +13,7 @@ France
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./cdupont

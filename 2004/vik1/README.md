@@ -12,7 +12,7 @@ US\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./vik1 [arg]

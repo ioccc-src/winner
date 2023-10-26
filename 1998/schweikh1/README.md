@@ -19,7 +19,7 @@ There is an alternate version of this entry that will work with macOS. See the
 how to use it.
 
 
-## To run:
+## To use:
 
 ```sh
 ./schweikh1

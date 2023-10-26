@@ -11,7 +11,7 @@ Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./endoh2 > pi.c

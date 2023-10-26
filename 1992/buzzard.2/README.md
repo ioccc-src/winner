@@ -12,7 +12,7 @@ US
 make all
 ```
 
-## To run:
+## To use:
 
 First:
 

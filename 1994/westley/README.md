@@ -20,7 +20,7 @@ will get different error messages and one compiler line will make you win the
 game!
 
 
-## To run:
+## To use:
 
 There is no running as such. See below.
 

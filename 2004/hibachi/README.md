@@ -10,7 +10,7 @@ Canada\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 cd build; ./hibachi-start.sh &

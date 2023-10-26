@@ -25,7 +25,7 @@ make thadgavin_sdl
 Use `thadgavin_sdl` as you would `thadgavin` below.
 
 
-## To run:
+## To use:
 
 ```sh
 ./thadgavin
@@ -88,7 +88,7 @@ less than dazzling. We could not test this entry in DOS mode.
 
 ## Authors' remarks:
 
-### To run under DOS:
+### To use under DOS:
 
 Compile using DJGPP as follows:
 
@@ -96,7 +96,7 @@ Compile using DJGPP as follows:
 gcc thadgavin.c -o thadgavin.exe -Wall -lm -O6 -mpentium -fomit-frame-pointer -ffast-math
 ```
 
-### To run under Windows, X-Windows or MacOS using the Simple DirectMedia Layer:
+### To use under Windows, X-Windows or MacOS using the Simple DirectMedia Layer:
 
 ```sh
 gcc -O6 -lpthread -g -o thadgavin thadgavin.c -lSDL -DSDL -lm

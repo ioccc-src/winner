@@ -13,7 +13,7 @@ India\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./tomx

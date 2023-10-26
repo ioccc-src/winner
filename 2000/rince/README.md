@@ -13,7 +13,7 @@ England
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./rince number number2

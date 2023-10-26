@@ -8,7 +8,7 @@ Anton Älgmyr
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 cat prog.c | ./prog           # Printing garbage might break your font

@@ -10,7 +10,7 @@ US\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./klausler arg1 arg2 | head

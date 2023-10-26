@@ -8,7 +8,7 @@ Christopher Mills <mrxo@sonic.net>
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./prog

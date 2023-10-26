@@ -13,7 +13,7 @@ make all
 ```
 
 
-## To run:
+## To use:
 
 ```sh
 echo foo bar | ./dg

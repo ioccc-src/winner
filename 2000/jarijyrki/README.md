@@ -22,7 +22,7 @@ make
 You will need X11 header files and libraries installed to build this program.
 
 
-## To run:
+## To use:
 
 ```sh
 ./jarijyrki < infile.info > outfile.info

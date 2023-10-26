@@ -9,7 +9,7 @@ Kimmo Fredriksson\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./fredriksson [-icvtnk#] regexp < file

@@ -12,7 +12,7 @@ The Netherlands
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./dorssel

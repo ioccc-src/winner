@@ -8,7 +8,7 @@ Ondřej Adamovský <oa@cmail.cz>
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./prog file.unl

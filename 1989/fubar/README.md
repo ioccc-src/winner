@@ -21,7 +21,7 @@ STATUS: INABIAF - please **DO NOT** fix
 For more detailed information see [bugs.md](/bugs.md#1989fubar-readmemd).
 
 
-## To run:
+## To use:
 
 ```sh
 ./fubar <number>

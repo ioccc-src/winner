@@ -14,7 +14,7 @@ make all
 ```
 
 
-## To run:
+## To use:
 
 To have the computer guess:
 

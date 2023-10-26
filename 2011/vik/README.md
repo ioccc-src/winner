@@ -12,7 +12,7 @@ make
 ```
 
 
-## To run:
+## To use:
 
 ```sh
 ./vik file.mod > audio_file.raw

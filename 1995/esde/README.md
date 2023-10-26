@@ -11,7 +11,7 @@ Poland
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./esde data-file word

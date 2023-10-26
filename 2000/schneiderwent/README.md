@@ -9,7 +9,7 @@ WI, US
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./schneiderwent datafile

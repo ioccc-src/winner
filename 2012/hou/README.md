@@ -10,7 +10,7 @@ Qiming Hou\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./hou syntax-file file-to-process

@@ -14,7 +14,7 @@ make tromp32		# On a 32-bit machine
 ```
 
 
-## To run:
+## To use:
 
 ```sh
 ./tromp [-b]
@@ -23,7 +23,7 @@ make tromp32		# On a 32-bit machine
 Use `./tromp32` as you would `./tromp` if on a 32-bit machine.
 
 
-## To run:
+## To use:
 
 ```sh
 cat ascii-prog.blc data | ./tromp -b

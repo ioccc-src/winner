@@ -9,7 +9,7 @@ Arch D. Robison\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./robison

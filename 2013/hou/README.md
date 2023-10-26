@@ -10,7 +10,7 @@ Qiming Hou\
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./hou [scene-file-name] [options]

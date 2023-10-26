@@ -10,7 +10,7 @@ US\
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./applin

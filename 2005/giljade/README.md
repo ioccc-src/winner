@@ -23,7 +23,7 @@ version but it's a complicated one. See also the [bugs.md](/bugs.md) file for
 more information.
 
 
-## To run:
+## To use:
 
 ```sh
 ./giljade

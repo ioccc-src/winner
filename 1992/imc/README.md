@@ -14,7 +14,7 @@ England
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 # text mode

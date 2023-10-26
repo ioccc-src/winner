@@ -9,7 +9,7 @@ Alex Deckmyn\
 make
 ```
 
-## To run:
+## To use:
 
 A shell interpreter with proper backtick interpolation is required.
 

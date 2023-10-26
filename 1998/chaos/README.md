@@ -23,7 +23,7 @@ make chaos_nohalf
 ```
 
 
-## To run:
+## To use:
 
 
 ```sh

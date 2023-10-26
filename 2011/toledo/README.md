@@ -11,7 +11,7 @@ Mexico\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./toledo

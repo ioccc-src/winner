@@ -9,7 +9,7 @@ US
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./stewart width_and_height iterations file > file.xbm

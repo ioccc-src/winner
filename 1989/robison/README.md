@@ -20,7 +20,7 @@ STATUS: INABIAF - please **DO NOT** fix
 For more detailed information see [bugs.md](/bugs.md#1989robison-readmemd).
 
 
-## To run:
+## To use:
 
 ```sh
 ./robison

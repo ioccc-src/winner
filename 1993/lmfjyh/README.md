@@ -30,7 +30,7 @@ There is an alternate version which simply does what the program did with gcc <
 2.3.3.
 
 
-## To run:
+## To use:
 
 If you have gcc < 2.3.3 (i.e. the entry can compile):
 

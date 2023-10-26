@@ -8,7 +8,7 @@ Dave Decot
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./decot
@@ -26,7 +26,7 @@ can use this entry.
 make alt
 ```
 
-#### To run:
+#### To use:
 
 ```sh
 ./decot.alt

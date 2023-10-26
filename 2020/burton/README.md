@@ -9,7 +9,7 @@ Dave Burton
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./prog arg ...

@@ -10,7 +10,7 @@ UK\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./rosten [number]

@@ -16,7 +16,7 @@ compile. macOS users running Mountain Lion and later will need to download and
 install [XQuartz](https://www.xquartz.org) in order to compile and run this
 entry.
 
-## To run:
+## To use:
 
 ```sh
 ./dlowe

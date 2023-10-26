@@ -11,7 +11,7 @@ make all
 ```
 
 
-## To run:
+## To use:
 
 ```sh
 cat august.c test.oc | ./august > test.oo

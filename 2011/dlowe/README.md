@@ -11,7 +11,7 @@ US\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./dlowe -<n_iterations> corpus1/ [...] corpus0/ < start.net > trained.net

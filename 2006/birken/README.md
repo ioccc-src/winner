@@ -12,7 +12,7 @@ make
 ```
 
 
-## To run:
+## To use:
 
 ```sh
 ./birken < file.tofu

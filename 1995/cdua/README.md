@@ -19,7 +19,7 @@ how fast your computer is :-) (and you can also use both to see the difference).
 For this alternate, slower version, please see below.
 
 
-## To run:
+## To use:
 
 ```sh
 ./cdua

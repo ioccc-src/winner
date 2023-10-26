@@ -13,7 +13,7 @@ There is an alternate version which uses `fgets()`. See the Alternate code
 section below as well as the [bugs.md](/bugs.md) file for more details as to why
 it is worth having as an alternate version.
 
-## To run:
+## To use:
 
 ```sh
 ./hague 2>/dev/null

@@ -9,7 +9,7 @@ Timo Poikola\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./prog 512 ./prog

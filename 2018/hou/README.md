@@ -8,7 +8,7 @@ Qiming Hou
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./prog < input.json > output.html

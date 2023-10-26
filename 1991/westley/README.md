@@ -14,7 +14,7 @@ US\
 make all
 ```
 
-## To run:
+## To use:
 
 Make and run as follows:
 

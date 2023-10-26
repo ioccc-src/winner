@@ -13,7 +13,7 @@ Germany\
 make all
 ```
 
-## To run:
+## To use:
 
 If "dir" is the directory (or a directory tree) where you keep
 all your favorite pictures off the Internet or from

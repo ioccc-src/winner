@@ -20,7 +20,7 @@ US
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./davidguy ip_address:server.screen

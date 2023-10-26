@@ -13,7 +13,7 @@ David Madore\
 make
 ```
 
-## To run:
+## To use:
 
 To create a shared secret shared among `M` people with `N+1` needed to reconstruct:
 

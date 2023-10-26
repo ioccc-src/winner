@@ -9,7 +9,7 @@ Nathan Otterness\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./prog

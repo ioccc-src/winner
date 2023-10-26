@@ -13,7 +13,7 @@ make
 This will build a bunch of versions of the code. See the author's details for
 information on all of these builds.
 
-## To run:
+## To use:
 
 ```sh
 ./horizontal_cat [files...] > [output]

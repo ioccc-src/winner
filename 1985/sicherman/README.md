@@ -39,7 +39,7 @@ a compiler you can try this version.
 make alt
 ```
 
-#### To run:
+#### To use:
 
 ```sh
 ./sicherman.alt < file

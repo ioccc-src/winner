@@ -10,7 +10,7 @@ make
 ```
 
 
-## To run:
+## To use:
 
 ```sh
 ./getwords.sh en | grep .. | ./prog string

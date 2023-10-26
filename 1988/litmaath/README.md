@@ -9,7 +9,7 @@ The Netherlands
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./litmaath some text

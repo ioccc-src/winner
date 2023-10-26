@@ -10,7 +10,7 @@ Singapore\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./anonymous

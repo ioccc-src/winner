@@ -12,7 +12,7 @@ Finland
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./tvr mode screensize/2 < colormapfile

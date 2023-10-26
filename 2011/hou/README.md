@@ -9,7 +9,7 @@ Hou Qiming\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./hou 'expression'

@@ -82,7 +82,7 @@ Makefiles.
 See also the judges' remarks below.
 
 
-## To run:
+## To use:
 
 ```sh
 ./prog

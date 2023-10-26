@@ -9,7 +9,7 @@ US
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./dodsond2

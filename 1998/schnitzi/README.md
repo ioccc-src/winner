@@ -15,7 +15,7 @@ make all
 ```
 
 
-## To run:
+## To use:
 
 ```sh
 ./schnitzi 5 > sort.c

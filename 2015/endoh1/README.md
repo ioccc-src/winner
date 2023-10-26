@@ -12,7 +12,7 @@ Someone Anonymous
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./prog

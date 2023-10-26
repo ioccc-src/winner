@@ -14,7 +14,7 @@ Germany\
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./schweikh2

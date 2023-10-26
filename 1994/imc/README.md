@@ -13,7 +13,7 @@ England
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./imc [NUMBER]

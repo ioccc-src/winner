@@ -11,7 +11,7 @@ Mastodon: [@xexyl@fosstodon.org](https://fosstodon.org/@xexyl)
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./weasel

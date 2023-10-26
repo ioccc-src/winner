@@ -9,7 +9,7 @@ US
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./grothe carrier_freq pixelclock horizontal_total < some_input.txt

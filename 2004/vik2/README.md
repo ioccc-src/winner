@@ -11,7 +11,7 @@ US\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./vik2

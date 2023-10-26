@@ -10,7 +10,7 @@ Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./prog <a number of arguments>
