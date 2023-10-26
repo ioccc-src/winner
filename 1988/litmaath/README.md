@@ -31,7 +31,7 @@ This alternate code, added to help understand the entry and for fun, is code
 that we suggested at the time of the entry publication but which we never put in
 a file.
 
-#### To build:
+### Alternate build:
 
 
 ```sh

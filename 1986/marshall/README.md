@@ -98,7 +98,7 @@ If the optimiser is enabled, however, we will see that it works fine before the
 change to `_exit()`.
 
 
-#### To use:
+### Alternate use:
 
 Due to the different conflicting problems with gcc and clang, we instead offer
 the problematic code as an alternate version whereas [marshall.c](marshall.c)

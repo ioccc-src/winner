@@ -20,13 +20,13 @@ This alternate code, the original, requires a compiler that supports
 `-traditional-cpp` or an old enough compiler. If you have such a compiler you
 can use this entry.
 
-#### To build:
+### Alternate build:
 
 ```sh
 make alt
 ```
 
-#### To use:
+### Alternate use:
 
 ```sh
 ./decot.alt

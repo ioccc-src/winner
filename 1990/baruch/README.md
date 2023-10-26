@@ -40,13 +40,13 @@ Turbo-C or MSC, the code is based on the authors' remarks except that the `"
 improved output though admittedly we have no way to test the compilers in
 question. YMMV.
 
-#### To build:
+### Alternate build:
 
 ```sh
 make alt
 ```
 
-#### To use:
+### Alternate use:
 
 Use `baruch.alt` as you would `baruch`.
 

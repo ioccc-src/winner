@@ -26,7 +26,7 @@ program.  See the [Alternate code](#alternate-code) section below for details.
 As noted above a smaller version can be used in case your `cpp` has a hard time
 with this entry.
 
-#### To build:
+### Alternate build:
 
 ```sh
 make alt

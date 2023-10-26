@@ -20,7 +20,7 @@ make all
 If you have an old compiler or a compiler that supports `-traditional-cpp` you
 might enjoy looking at the original source in [wall.alt.c](wall.alt.c).
 
-#### To build:
+### Alternate build:
 
 ```sh
 # if you have an old enough compiler:

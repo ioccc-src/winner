@@ -35,14 +35,14 @@ judges noted that the C pre-processed version (with the `#include`s
 left intact) looked very much like a rat "dropping core".  See
 [garry.alt.c](garry.alt.c) and judge for yourself!
 
-#### To build:
+### Alternate build:
 
 
 ```sh
 make alt
 ```
 
-#### To use:
+### Alternate use:
 
 ```sh
 ./garry.alt <input_file >output_file

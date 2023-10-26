@@ -63,13 +63,13 @@ appreciate what it does, we encourage you to first try the alternate version.
 After this, however, you might wish to try the original version, fixed for
 modern systems.
 
-#### To build:
+### Alternate build:
 
 ```sh
 make all
 ```
 
-#### To use:
+### Alternate use:
 
 
 ```sh

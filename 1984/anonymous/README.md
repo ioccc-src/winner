@@ -21,13 +21,13 @@ in order to show the code that was turned into the
 [tattoo](https://web.archive.org/web/20070120220721/https://thomasscovell.com/tattoo.php),
 as the alternate code. See below in the tattoo side-by-side with the code.
 
-#### To build:
+### Alternate build:
 
 ```sh
 make alt
 ```
 
-#### To use:
+### Alternate use:
 
 NOTE: this version might not work on some systems like macOS.
 
