@@ -30,7 +30,7 @@ make all
 ```
 
 
-### Alternate code:
+## Alternate code:
 
 To build the alternative code try:
 

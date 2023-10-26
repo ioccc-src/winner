@@ -27,7 +27,7 @@ Try modifying the code so that it will show another Moon phase based on input
 or else just by the code itself. Bonus points if you can make it show all!
 
 
-### Alternate code:
+## Alternate code:
 
 The author noted that those in the southern hemisphere might want to change
 `acos(l/2)` into `acos(-l/2)` which we have done in the alternate version.

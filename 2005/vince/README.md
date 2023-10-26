@@ -29,7 +29,7 @@ another) while the X11 server is running.
 echo "Do or do not. There is no try."
 ```
 
-### Alternate code:
+## Alternate code:
 
 The [vince.alt.c](vince.alt.c) code of the submission will run on SGI IRIX and
 also has the recursive CPP macro (which sneaked in accidentally) removed.

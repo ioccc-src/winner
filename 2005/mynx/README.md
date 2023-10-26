@@ -33,7 +33,7 @@ Some have pointed out that this will not work for https initially
 for two reasons. For a starting point see the alternate code section below.
 
 
-### Alternate code:
+## Alternate code:
 
 As noted this will not work for https. This is because it does not scan for
 https but also a secure connection needs to be set up before http commands can

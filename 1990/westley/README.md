@@ -38,7 +38,7 @@ This program will enter an infinite loop if input is not a number > 0.
 ./westley 5
 ```
 
-### Alternate code:
+## Alternate code:
 
 If you have an old enough compiler try and to see how C has changed over the years:
 

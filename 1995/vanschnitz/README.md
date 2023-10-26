@@ -26,7 +26,7 @@ make clobber all LEVEL=6
 ./vanschnitz
 ```
 
-### Alternate code:
+## Alternate code:
 
 The authors provided a spoiler version of the program. Originally uuencoded we
 have decoded it for the wider audience in [spoiler.c](spoiler.c). The

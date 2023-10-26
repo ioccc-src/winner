@@ -48,7 +48,7 @@ place and the winner is the
 loser](https://web.archive.org/web/20181023221954/https://www.chicagotribune.com/news/ct-xpm-2002-07-31-0207310310-story.html) :-)
 
 
-### Alternate code:
+## Alternate code:
 
 The author provided an alternate version of the code with some improvements. See
 the judges' additional remarks in the author's remarks, for more details.

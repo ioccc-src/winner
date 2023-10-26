@@ -45,7 +45,7 @@ It is possible to download a number of Mod files from [The Mod
 Archive](http://modarchive.org).
 
 
-### Alternate code:
+## Alternate code:
 
 Assuming that `make` is similar enough try:
 

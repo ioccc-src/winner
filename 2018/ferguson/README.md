@@ -28,7 +28,7 @@ make
 make test
 ```
 
-### Alternate code:
+## Alternate code:
 
 The author provided an alternate version which has a simpler keyboard for the
 monkey Eric. See his comments under the 'keyboards' section, briefly referred to

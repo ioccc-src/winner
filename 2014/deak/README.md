@@ -27,7 +27,7 @@ compile. See [alternate code](#alternate-code) below.
 Try changing bounding box coordinates in the source to explore
 various regions of the fractal.
 
-### Alternate code:
+## Alternate code:
 
 The alternate code is included as [prog.alt.c](prog.alt.c) so you can more
 easily see the difference in what it might look like if the C was more

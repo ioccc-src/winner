@@ -29,7 +29,7 @@ make
 ./prog unwinnable.txt
 ```
 
-### Alternate code:
+## Alternate code:
 
 An alternate version of this entry, [prog.alt.c](prog.alt.c), is provided.  This
 alternate code lacks the additional rule to flag all unprobed cells.  See the

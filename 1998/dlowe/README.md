@@ -27,7 +27,7 @@ make all
 
 Why is there different output?
 
-### Alternate code:
+## Alternate code:
 
 NOTE: The original entry was just a text based pootifier.  To build
 that version try:

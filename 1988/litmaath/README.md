@@ -24,7 +24,7 @@ code](#alternate-code) section below.
 ./litmaath eschew obfuscation
 ```
 
-### Alternate code:
+## Alternate code:
 
 
 This alternate code, added to help understand the entry and for fun, is code

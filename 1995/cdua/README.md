@@ -33,7 +33,7 @@ solving the maze. This is a feature, not a bug. See [bugs.md](/bugs.md) for more
 details.
 
 
-### Alternate code:
+## Alternate code:
 
 This version uses `usleep(3)` with the `Z` (defined in the Makefile, default
 `3000`) microseconds to make it easier to see the maze being solved in real

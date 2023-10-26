@@ -37,7 +37,7 @@ arg. It might also print strange output with more than one arg.
 ./prog 128 128 128 128
 ```
 
-### Alternate code:
+## Alternate code:
 
 By default, this code compiles for Little Endian machines.
 An alternate version is also compiled for Big Endian machines.

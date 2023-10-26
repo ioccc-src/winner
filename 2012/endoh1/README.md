@@ -32,7 +32,7 @@ this by default.
 
 
 
-### Alternate code:
+## Alternate code:
 
 An alternate version of this entry, `endoh1.alt.c`, is provided.
 This alternate code is a de-obfuscated version of `endoh1.c`.

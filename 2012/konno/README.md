@@ -24,7 +24,7 @@ NOTE: N is an integer from 0 to 255.
 ./konno 30
 ```
 
-### Alternate code:
+## Alternate code:
 
 An alternate version of this entry, [konno.alt.c](konno.alt.c), is provided.
 This alternate code is an unobfuscated version of the winning code.

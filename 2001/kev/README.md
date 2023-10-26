@@ -42,7 +42,7 @@ paddle. See below Alternate code.
 ```
 
 
-### Alternate code:
+## Alternate code:
 
 To use:
 

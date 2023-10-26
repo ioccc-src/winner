@@ -67,7 +67,7 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
 ```
 
 
-### Alternate code:
+## Alternate code:
 
 For those few who might use Windows, To compile:
 

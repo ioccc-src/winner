@@ -73,7 +73,7 @@ diff herrmann2.alt.c herrmann2.orig.c && echo "output matches with original code
 ```
 
 
-### Alternate code:
+## Alternate code:
 
 If you wish to use the original version that does not work for all platforms,
 you can make use of the [herrmann2.alt.c](herrmann2.alt.c) by running:

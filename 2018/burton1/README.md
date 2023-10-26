@@ -22,7 +22,7 @@ make
 ./prog < prog.c
 ```
 
-### Alternate code:
+## Alternate code:
 
 An alternate version of this entry, [prog.alt.c](prog.alt.c), is provided
 This alternate code was supposed to compile without warnings, however
