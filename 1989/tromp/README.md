@@ -16,6 +16,7 @@ make all
 ```
 
 ## Try:
+
 ```sh
 ./tromp 5
 
@@ -53,18 +54,21 @@ loser](https://web.archive.org/web/20181023221954/https://www.chicagotribune.com
 The author provided an alternate version of the code with some improvements. See
 the judges' additional remarks in the author's remarks, for more details.
 
-### Alternate use:
+### Alternate build:
 
 ```sh
 make alt
 ```
+
+### Alternate use:
 
 Use `tromp.alt` as you would `tromp` above.
 
 NOTE: testing more than one user updating the high score file, one of the
 benefits of the alt version, has not been done.
 
-The original unmodified alternate code is provided later.
+The original unmodified alternate code, which will no longer work right if it
+even compiles, is provided later in the author's remarks.
 
 ## Judges' remarks:
 
