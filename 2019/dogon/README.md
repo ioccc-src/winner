@@ -8,7 +8,7 @@ Gil Dogon
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./prog < pattern.mc

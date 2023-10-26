@@ -18,7 +18,7 @@ perl -MConfig -e 'print "$Config{archlibexp}/CORE\n"'
 ```
 
 
-## To run:
+## To use:
 
 ```sh
 ./dlowe [file ...]

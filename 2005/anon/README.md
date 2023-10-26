@@ -13,7 +13,7 @@ NOTE: if your shell does not support `stty` then see the alternate version
 described in the section below.
 
 
-## To run:
+## To use:
 
 ```sh
 ./anon x y [z]

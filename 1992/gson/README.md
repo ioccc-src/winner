@@ -14,7 +14,7 @@ make all
 ```
 
 
-## To run:
+## To use:
 
 ```sh
 ./ag word word2 word3 < /path/to/dictionary

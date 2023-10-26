@@ -10,7 +10,7 @@ Japan\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./konno N

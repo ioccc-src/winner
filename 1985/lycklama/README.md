@@ -17,7 +17,7 @@ make lycklama.orig
 ```
 
 
-## To run:
+## To use:
 
 ```sh
 ./lycklama.alt < some_file

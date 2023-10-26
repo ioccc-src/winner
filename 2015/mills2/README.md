@@ -8,7 +8,7 @@
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./prog compressed_file.Z

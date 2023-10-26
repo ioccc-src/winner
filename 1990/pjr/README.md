@@ -14,7 +14,7 @@ England, U.K.
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./pjr

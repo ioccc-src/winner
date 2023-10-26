@@ -13,7 +13,7 @@ Australia\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./bmeyer

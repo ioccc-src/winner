@@ -9,7 +9,7 @@ Shinichiro Hamaji\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./hamaji < a_nonogram_file

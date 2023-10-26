@@ -12,7 +12,7 @@ Canada, N2J 2W9			Canada, N2L 6G9
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./ant some_file

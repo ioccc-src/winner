@@ -14,7 +14,7 @@ Alexander Prishchepov\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./prog < some_secret_or_something
@@ -71,7 +71,7 @@ a client-side downloader.  The hidden transmitted data cannot be reconstructed
 or even detected from the binary content of the traffic between the client and
 the server.
 
-## To run web server
+## To use web server
 
 ```sh
 ./prog < secret_file_to_be_downloaded
@@ -83,7 +83,7 @@ Try using the program's source code as the secret file:
 ./prog < prog.c
 ```
 
-## To run client-side downloader
+## To use client-side downloader
 
 ```sh
 ./prog http://host[:port]

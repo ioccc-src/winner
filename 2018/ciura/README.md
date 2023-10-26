@@ -8,7 +8,7 @@ Marcin Ciura <mciura@gmail.com>
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./prog < text

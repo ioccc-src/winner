@@ -9,7 +9,7 @@ Tsukasa Hamano\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./hamano < textfile > output.pdf

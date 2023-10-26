@@ -13,7 +13,7 @@ make
 An alternate version that should compile in Windows/MS Visual Studio is
 available. See the [Alternate code](#alternate-code) section below.
 
-## To run:
+## To use:
 
 ```sh
 ./cable3 bios-image-file floppy-image-file [harddisk-image-file]
@@ -194,7 +194,7 @@ stty cooked echo
 
 See the [runme](runme) script.
 
-## To run the emulator - floppy mode only
+## To use the emulator - floppy mode only
 
 The simplest use of the emulator is with a single floppy boot disk image, like
 the fd.img provided, which is a FreeDOS boot disk.
@@ -210,7 +210,7 @@ stty cbreak raw -echo min 0
 stty cooked echo
 ```
 
-## To run the emulator - floppy + HD mode
+## To use the emulator - floppy + HD mode
 
 Easiest to start with is to try a ready-made 40MB hard disk image containing a
 whole bunch of software: <http://bitly.com/1bU8URK>

@@ -9,7 +9,7 @@ Fabrice Bellard\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./prog > lena.ppm

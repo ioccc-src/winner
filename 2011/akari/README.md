@@ -10,7 +10,7 @@ Don Yang\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./akari [ input_file | - ] [ output_file | - ]  [even]

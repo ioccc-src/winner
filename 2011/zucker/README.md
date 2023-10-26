@@ -10,7 +10,7 @@ Matt Zucker\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./zucker > image.ppm

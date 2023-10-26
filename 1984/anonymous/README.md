@@ -8,7 +8,7 @@ Anonymous
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./anonymous
@@ -27,7 +27,7 @@ as the alternate code. See below in the tattoo side-by-side with the code.
 make alt
 ```
 
-#### To run:
+#### To use:
 
 NOTE: this version might not work on some systems like macOS.
 

@@ -13,7 +13,7 @@ make all
 ```
 
 
-## To run:
+## To use:
 
 ```sh
 ./mullender
@@ -42,7 +42,7 @@ make alt
 ```
 
 
-#### To run:
+#### To use:
 
 ```sh
 ./mullender.alt [microseconds]

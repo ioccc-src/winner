@@ -14,7 +14,7 @@ make all
 
 There is [alternate code](#alternate-code) for those using Turbo-C or MSC.
 
-## To run:
+## To use:
 
 ```sh
 echo 4 | ./baruch

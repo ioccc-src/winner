@@ -10,7 +10,7 @@ Germany\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./borsanyi < some_data_file

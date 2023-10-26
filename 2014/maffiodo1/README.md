@@ -15,7 +15,7 @@ make
 ```
 
 
-## To run:
+## To use:
 
 ```sh
 cat mario.level | ./prog 320 200 800 300 128 144 mario.rgba mario8.wav 10343679

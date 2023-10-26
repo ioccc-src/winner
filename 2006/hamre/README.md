@@ -9,7 +9,7 @@ Norway
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./hamre math_expression_string

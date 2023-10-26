@@ -10,7 +10,7 @@ Germany\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./timwi < bf_program

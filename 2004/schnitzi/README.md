@@ -10,7 +10,7 @@ Australia\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./schnitzi

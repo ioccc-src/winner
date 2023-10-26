@@ -11,7 +11,7 @@ US
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./rcm < rfc1951.gz

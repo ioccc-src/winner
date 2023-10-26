@@ -9,7 +9,7 @@ Adrian Cable\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./cable2 file.bmp [color]

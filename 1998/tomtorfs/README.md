@@ -13,7 +13,7 @@ Belgium\
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./tomtorfs tomtorfs.c 32 04C11DB7 1 FFFFFFFF FFFFFFFF

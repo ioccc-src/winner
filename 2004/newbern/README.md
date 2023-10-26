@@ -11,7 +11,7 @@ make
 ```
 
 
-## To run:
+## To use:
 
 ```sh
 ./newbern [file.dat arg]

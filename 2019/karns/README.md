@@ -10,7 +10,7 @@ make
 ```
 
 
-## To run:
+## To use:
 
 ```sh
 ./prog < textfile_that_fits_on_the_screen

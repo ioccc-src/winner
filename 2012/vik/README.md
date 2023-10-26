@@ -14,7 +14,7 @@ make
 This entry requires [Zlib](https://www.zlib.net).
 
 
-## To run:
+## To use:
 
 To embed text (from file or command line):
 

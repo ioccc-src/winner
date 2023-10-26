@@ -14,7 +14,7 @@ make
 ```
 
 
-## To run:
+## To use:
 
 ```sh
 ./monge expression ...

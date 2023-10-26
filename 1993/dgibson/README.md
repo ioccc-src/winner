@@ -13,7 +13,7 @@ South Africa
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./dgibson.sh [datafile]

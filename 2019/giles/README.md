@@ -8,7 +8,7 @@ Edward Giles
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./prog infile.wav outfile.wav

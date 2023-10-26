@@ -14,7 +14,7 @@ make all
 ```
 
 
-## To run:
+## To use:
 
 ```sh
 ./theorem expression x1 x2 h y1

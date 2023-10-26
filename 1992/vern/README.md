@@ -14,7 +14,7 @@ Berkeley, CA 94720  US
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./vern 3		# <-- default is 2

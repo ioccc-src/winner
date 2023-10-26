@@ -11,7 +11,7 @@ mike@mikeash.com\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./mikeash

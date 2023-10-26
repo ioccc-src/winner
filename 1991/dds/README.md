@@ -12,7 +12,7 @@ Mastodon: <https://mstdn.social/@DSpinellis>
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./dds basic_program 2>/dev/null

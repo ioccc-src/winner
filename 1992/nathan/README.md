@@ -13,7 +13,7 @@ UK BS12 4SQ
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./nathan

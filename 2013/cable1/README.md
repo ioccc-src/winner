@@ -9,7 +9,7 @@ Adrian Cable\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./cable1 name group1 group2

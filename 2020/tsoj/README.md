@@ -9,7 +9,7 @@ tsoj <tsoj.tsoj@gmx.de>\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./prog

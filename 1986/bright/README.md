@@ -8,7 +8,7 @@ Walter Bright
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./bright some_file

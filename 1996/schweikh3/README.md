@@ -13,7 +13,7 @@ Germany\
 make all
 ```
 
-## To run:
+## To use:
 
 **WARNING: DO NOT RUN this program without reading this text down to the end!**
 It may render your system unusable for a limited amount of time

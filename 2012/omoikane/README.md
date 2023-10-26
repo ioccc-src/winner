@@ -10,7 +10,7 @@ Don Yang\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./nyaruko [seed.txt] < original.bin > output.c

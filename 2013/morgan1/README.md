@@ -9,7 +9,7 @@ Yves-Marie Morgan\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 echo "2013/10/03" | ./morgan1

@@ -10,7 +10,7 @@ Toulouse, France\
 make
 ```
 
-## To run:
+## To use:
 
 You will need an [SVG](https://www.w3.org/TR/SVG11/expanded-toc.html) viewer.
 Look here to find some [SVG Viewer

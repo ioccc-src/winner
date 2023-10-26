@@ -13,7 +13,7 @@ There is an alternate version, the original, that can't be compiled in modern
 systems but can be if you have an old enough compiler. See [Alternate
 code](#alternate-code) below.
 
-## To run:
+## To use:
 
 ```sh
 ./isaak

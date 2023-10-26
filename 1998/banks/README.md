@@ -13,7 +13,7 @@ US\
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 cat horizon.sc pittsburgh.sc | ./banks

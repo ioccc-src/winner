@@ -10,7 +10,7 @@ US\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./jdalbec number ...

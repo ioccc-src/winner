@@ -12,7 +12,7 @@ make
 ```
 
 
-## To run:
+## To use:
 
 ```sh
 ./borsanyi string > file.gif

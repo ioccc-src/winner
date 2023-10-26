@@ -19,7 +19,7 @@ install [XQuartz](https://www.xquartz.org) in order to compile and run this
 entry.
 
 
-## To run:
+## To use:
 
 ```sh
 ./jonth :0 :0

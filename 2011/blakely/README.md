@@ -10,7 +10,7 @@ Cambridge, UK\
 make
 ```
 
-## To run:
+## To use:
 
 Zoom out and make your terminal window 53 or more lines deep.
 

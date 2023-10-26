@@ -8,7 +8,7 @@ Jan Stein
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./stein $(printf "\015\015"); echo

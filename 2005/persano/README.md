@@ -10,7 +10,7 @@ Brazil\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./persano p q [num frames]

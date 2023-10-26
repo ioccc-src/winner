@@ -12,7 +12,7 @@ make
 There is an alternate version that the author provided but fixed in 2023 to
 compile. See [alternate code](#alternate-code) below.
 
-## To run:
+## To use:
 
 ```sh
 ./prog

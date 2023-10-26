@@ -14,7 +14,7 @@ huffmancoding@gmail.com
 make all
 ```
 
-## To run:
+## To use:
 
 ```sh
 echo 'Huffman Decoding' | ./huffman

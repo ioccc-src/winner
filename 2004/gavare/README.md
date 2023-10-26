@@ -10,7 +10,7 @@ Sweden\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./gavare

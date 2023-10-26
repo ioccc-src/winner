@@ -9,7 +9,7 @@ Don Yang\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./prog sample_input.txt a b c d

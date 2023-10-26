@@ -10,7 +10,7 @@ Stephen Sykes\
 make
 ```
 
-## To run:
+## To use:
 
 ```sh
 ./sykes binary_file

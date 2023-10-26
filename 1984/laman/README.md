@@ -19,7 +19,7 @@ STATUS: INABIAF - please **DO NOT** fix
 For more detailed information see [bugs.md](/bugs.md#1984laman-readmemd).
 
 
-## To run:
+## To use:
 
 ```sh
 ./laman <positive number>
