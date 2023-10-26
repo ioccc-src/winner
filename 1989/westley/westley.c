@@ -20,5 +20,5 @@ gnat&&gnat<='z'||'a'<=gnat&&gnat<='m'||'N'<=gnat&&gnat<='Z'
 enupgrt&&1==enrA((&&)2&gnat(&&	     )1-^tang(&&ABBA!(;)85- =tang
 (&&)'a\'=gnat(&&)1-==gnat(&&)4	      ==ABBA(&&tang!;))))0(enupgrt=
  gnat(&&)tang!((||)))0(rahcteg        =gnat(&&tang((&&ABBA;;)1-'A'=!
-'Z'=tang(&&ABBA{)enrA/***/);gnat	^-1&&znva(tang+1,gnat,1+gnat); 
+'Z'=tang(&&ABBA{)enrA/***/);gnat	^-1&&znva(tang+1,gnat,1+gnat);
  main(ABBA&2/*//*\\**/,tang,gnat	,ABBA/**//*/(avnz/**/);}/*//**/

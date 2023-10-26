@@ -30,17 +30,6 @@ Try compiling and running the 4 resulting programs like:
 ./compile.sh
 ```
 
-This will remove the programs and then run:
-
-```
-./westley < westley.c > ver0.c
-./westley 1 < westley.c > ver1.c
-./westley 1 2 < westley.c > ver2.c
-./westley 1 2 3 < westley.c > ver3.c
-```
-
-followed by compiling each version.
-
 If you need to specify an alternate compiler path, say because your default
 compiler is clang (or in the case of macOS gcc is clang) you can do so like:
 
@@ -60,39 +49,35 @@ Finally try:
 ./westley
 # input some lines of text, sending EOF (usually ctrl-d) to end
 
-echo IOCCC | ./westley
-echo IOCCC | ./westley 1
-echo IOCCC | ./westley 1 2
-echo IOCCC | ./westley 1 2 3
-
-echo IOCCC | ./ver0
-echo Version 1 | ./ver1
-echo Version 2 | ./ver2
-echo Version 3 | ./ver3
+./try.sh # demo of some input
 ```
 
 ## Alternate code:
 
 The alternate code allows SOME of the features to work with clang but some of
-the code it generates (see [compile.sh](compile.sh), which does not use this
-version) is not compilable even in gcc let alone clang.  Nevertheless the main
-feature should work for clang.
+the code it generates (see [compile.alt.sh](compile.alt.sh) is not compilable
+even in gcc let alone clang.  Nevertheless the main feature should work and the
+same goes for the `alt.ver0` and `alt.ver1`; currently `alt.ver2` and `alt.ver3`
+will not compile even with gcc but it is nonetheless generated for when it is
+(hopefully) fixed.
 
-### To build:
+### Alternate build:
 
 ```sh
 make alt
 ```
 
-### Try:
+### Alternate try:
 
 ```sh
-echo IOCCC | ./westley.alt
-echo IOCCC | ./westley.alt 1
-echo IOCCC | ./westley.alt 1 2
-echo IOCCC | ./westley.alt 1 2 3
-```
+./westley.alt
+# input some text
 
+# generate alt code versions:
+./compile.alt.sh
+
+./try.alt.sh # demo of some input
+```
 
 
 ## Judges' remarks:
