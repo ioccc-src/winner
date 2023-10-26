@@ -41,7 +41,7 @@ make CDEFINE="-DS=0" clobber alt
 ./sloane.alt
 ```
 
-### Original code:
+## Original code:
 
 Should you wish to see the original without having to mess with the compiler
 line, try:

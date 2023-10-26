@@ -56,7 +56,7 @@ which would set it at 700. Then, whether you use the default value or not, try:
 
 ```
 
-### Original code:
+## Original code:
 
 As explained above, because modern systems run this entry way too fast to fully
 appreciate what it does, we encourage you to first try the alternate version.
