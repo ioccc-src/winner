@@ -1,7 +1,8 @@
 
 /**//*/};)/**/main(/*//**/tang 	  ,gnat/**//*/,ABBA~,0-0(avnz;)0-0,tang,raeN
-,ABBA(niam&&)))2-]--tang-[kri	  - =raeN(&&0<)/*clerk*/,noon,raeN){(!tang&&
-noon!=-1&&(gnat&2)&&((raeN&&(    getchar(noon+0)))||(1-raeN&&(trgpune(noon
+,ABBA(niam&&)))2-]--tang-[kri	  - =raeN(&&0<)/*clerk*/,noon,raeN)char
+**gnat, **noon, **raeN;{int	gn = gnat, ra = raeN, no = noon; (!tang&&
+no!=-1&&(gn&2)&&((raeN&&(	getchar(no+0)))||(1-ra&&(trgpune(no
 )))))||tang&&znva(/*//**/tang   ,tang,tang/**|**//*/((||)))0(enupgrt=raeN
 (&&tang!(||)))0(rahcteg=raeN(  &&1==tang((&&1-^)gnat=raeN(;;;)tang,gnat
 ,ABBA,0(avnz;)gnat:46+]552&)191+gnat([kri?0>]652%)191+gnat([kri=gnat

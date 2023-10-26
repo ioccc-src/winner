@@ -13,9 +13,7 @@
 #
 #	CC=/opt/local/bin/gcc-mp-12 ./compile.sh	
 #
-# We sleep (by default) for approximately 1 second after each command so that
-# the you can read what is being done. If this is too fast you can change it in
-# a similar way to the above but using the variable DELAY like so:
+# If you wish to slow down the script you can use the DELAY variable like:
 #
 #	DELAY=2 ./compile.sh
 #
@@ -36,11 +34,11 @@ if [[ -z "$CC" ]]; then
 fi
 
 # get sleep duration
-# we cannot use the form '${DELAY:=5}' because at least in some versions of bash
+# we cannot use the form '${DELAY:=0}' because at least in some versions of bash
 # it tries to invoke the command and obviously that won't work. Thus we check if
 # it's empty before setting the default.
 if [[ -z "$DELAY" ]]; then
-    DELAY=2
+    DELAY=0
 fi
 
 # make clobber to make the directory clean and then compile westley which we

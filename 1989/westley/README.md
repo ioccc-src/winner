@@ -10,9 +10,17 @@ US\
 make all
 ```
 
+### Bugs and (Mis)features
 
-NOTE: this entry only partly works with clang and only some versions of clang,
-due to defects in the compiler. See [bugs.md](/bugs.md) for more details.
+This entry a listed in [bugs.md](/bugs.md) as:
+
+```
+STATUS: main() function args not allowed - please help us fix
+STATUS: known bug - please help us fix
+```
+
+For more detailed information see [bugs.md](/bugs.md#1989westley-readmemd).
+
 
 ## Try:
 
@@ -51,20 +59,39 @@ Finally try:
 ```sh
 ./westley
 # input some lines of text, sending EOF (usually ctrl-d) to end
+
+echo IOCCC | ./westley
+echo IOCCC | ./westley 1
+echo IOCCC | ./westley 1 2
+echo IOCCC | ./westley 1 2 3
+
 echo IOCCC | ./ver0
 echo Version 1 | ./ver1
 echo Version 2 | ./ver2
 echo Version 3 | ./ver3
 ```
 
+## Alternate code:
 
-### INAFIAB - it's not a feature it's a bug :-(
+The alternate code allows SOME of the features to work with clang but some of
+the code it generates (see [compile.sh](compile.sh), which does not use this
+version) is not compilable even in gcc let alone clang.  Nevertheless the main
+feature should work for clang.
 
-There might have been a segfault that was fixed in the original code but as we
-no longer know what condition or conditions caused this we cannot be sure. It
-seems like, according to various files, that `ver1` and/or `ver2` also have this
-problem but we also do not know about the status of this. See
-[bugs.md](/bugs.md) for more information.
+### To build:
+
+```sh
+make alt
+```
+
+### Try:
+
+```sh
+echo IOCCC | ./westley.alt
+echo IOCCC | ./westley.alt 1
+echo IOCCC | ./westley.alt 1 2
+echo IOCCC | ./westley.alt 1 2 3
+```
 
 
 

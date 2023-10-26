@@ -24,11 +24,7 @@ echo "full spelling of an English cardinal numeral less than a quadrillion" | ./
 ## Try:
 
 ```sh
-echo Nineteen hundred and eighty-four | ./kang
-echo uno | ./kang
-echo trois | ./kang
-echo fier | ./kang # notice the issue here, see alternate code instead
-echo "shest'" | ./kang
+./try.sh # try various languages
 
 ./en.sh # English 0 through 13
 
@@ -42,8 +38,11 @@ How does it have no `u` or `o` in a string in the source code and yet it gets
 
 This alternate code fixes the program that would throw off those who know German
 where the sound of 'V' is 'F' and so the program had the letter be 'F'. A
-problem, however, with changing it is that it breaks other words. Thus there is
-the alternate version instead which fixes the problem.
+problem, however, with changing it is that it breaks other words including in
+German. Thus there is the alternate version instead which fixes a problem for
+Germans that causes other problems for Germans so if you're German you'll just
+have to deal with it :-) It is, however, good as you can appreciate the entry
+even more.
 
 #### To build:
 
@@ -58,12 +57,12 @@ echo vier | ./kang.alt
 echo uno | ./kang.alt
 ```
 
-#### Also try:
+#### Try:
 
 
 ```sh
-KANG=kang.alt ./de.sh # German 0 through 13 both with and without umlaut
-KANG=kang.alt ./en.sh # English 0 through 13
+./de.alt.sh # German 0 through 13 both with and without umlaut
+./en.alt.sh # English 0 through 13
 ```
 
 What does it get right? What does it get wrong? How does it compare to the
@@ -83,6 +82,19 @@ colloquial year numbers of the last millennium.
 
 We've added a linefeed to the print format for convenience.
 
+Can you explain why:
+
+```sh
+echo f hundr|./kang
+```
+
+correctly reports 500 but:
+
+```sh
+echo hundr|./kang
+```
+
+does not report 100, instead printing 0?
 
 ## Author's remarks:
 

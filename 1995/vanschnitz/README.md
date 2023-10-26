@@ -31,16 +31,18 @@ make clobber all LEVEL=6
 The authors provided a spoiler version of the program. Originally uuencoded we
 have decoded it for the wider audience in [spoiler.c](spoiler.c). The
 `uuencode`d blob is still available in their remarks below. They encourage you
-to first try and figure it out without it.
+to first try and figure out the program without the spoiler.
 
 
 ## Judges' remarks:
 
-Warning: in the past, values of LEVEL>8 have been known to cause compilers (and
-in one case a system) to crash during compilation. We tested it in 2023 on a
-MacBook Pro with the M1 chip and found that LEVEL > 6 caused problems.
+Back in 1995, values of `LEVEL>8` caused some compilers (and in one case a
+system) to crash during compilation. In 2023 with modern systems this is not
+really a problem.
 
-For a bad/slow time try LEVEL=15.
+Back in 1995 we also suggested that for a bad/slow time to try `LEVEL=15` but
+this is not a big deal in 2023 either.
+
 
 ## Authors' remarks:
 

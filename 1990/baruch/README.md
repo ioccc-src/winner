@@ -1,15 +1,9 @@
 # Best Small Program
 
 Baruch Nissenbaum\
-Tel-Aviv University\
-The Faculty of Engineering\
-Tel-Aviv\
 Israel
 
 Doron Osovlanski\
-CADTECH - CAD/CAM Systems Ltd\
-24 Ben-Yosef St.\
-Givat-Shmuel   51905\
 Israel
 
 ## To build:
@@ -59,7 +53,7 @@ Use `baruch.alt` as you would `baruch`.
 
 ## Judges' remarks:
 
-This program reads an integer between 4 and 99 from the stdin.
+This program reads an integer between 4 and 99 from the `stdin`.
 
 NOTE: The original program did not have a newline at the end of the file.  We
 added a final newline to the file to make unpacking easy.
@@ -95,7 +89,7 @@ long enough..
 
 ### For PC users:
 
-In order to compile the program under Turbo-C or MSC,  `'int '` should be inserted
+In order to compile the program under Turbo-C or MSC,  `int ` should be inserted
 at the beginning of the program.  For better looking results it is recommended
 to replace the `" #Q"` string with `" \261\2"`.
 
