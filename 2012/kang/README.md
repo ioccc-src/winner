@@ -57,7 +57,7 @@ echo vier | ./kang.alt
 echo uno | ./kang.alt
 ```
 
-#### Try:
+### Alternate try:
 
 
 ```sh

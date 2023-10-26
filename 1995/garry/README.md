@@ -48,7 +48,7 @@ make alt
 ./garry.alt <input_file >output_file
 ```
 
-#### Try:
+### Alternate try:
 
 ```sh
 

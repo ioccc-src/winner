@@ -58,7 +58,7 @@ overflow!
 BTW: is there such a thing as too fast a CPU ? :-) Actually yes for certain code
 which is probably not as uncommon as you think :-).
 
-#### Try:
+### Alternate try:
 
 
 ```sh
@@ -137,7 +137,7 @@ make gentab
 ./gentab file
 ```
 
-#### Try:
+### Alternate try:
 
 ```sh
 ./gentab gentab

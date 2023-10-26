@@ -76,7 +76,7 @@ make all
 ./lycklama < some_file
 ```
 
-#### Try:
+### Alternate try:
 
 ```sh
 ./lycklama < lycklama.c
