@@ -568,14 +568,10 @@ numbers with non-binary digits.
 ## [1989/westley](1989/westley/westley.c) ([README.md](1989/westley/README.md))
 ### STATUS: main() function args not allowed - please help us fix
 
-This entry is a big problem for clang due to the way it is designed. Earlier a
-change was made to let it compile with clang but although it appeared to work
-with gcc, all generated versions (see the README.md for details), this was
-either a mistake or it no longer does.
-
-Thus the original was copied and this does not work at all in clang. It is very
-easy to get the first one or two to work with clang but the others result in
-compilation failures even besides clang.
+This entry is a big problem for clang due to the way it is designed. An alt
+code, added by Cody, was made that lets the program work and some of the
+generated files work but as `ver2` and `ver3` cannot be compiled even with gcc
+(syntax errors) this is in the alt version.
 
 The problems with clang is that it does not allow `int` for any arg in `main()`
 except the first one, argc, and some versions of clang do not even allow a
@@ -585,21 +581,8 @@ Cody noted that trying to fix it in some cases causes a segfault and in other
 cases it fails to generate some of the files (others are okay) at all (empty
 files). These changes were never committed.
 
-Cody gives these tips on the problem: `main()`'s second, third and fourth args
-(but on fourth arg see above) are supposed to be a `char **`. This didn't use to
-be the case and some compilers like gcc don't complain. `clang` however does.
-Cody was able to get `main()` to be correct BUT a feature is that it uses ROT13
-to decrypt the function `znva` to be main in _generated files_ (see the
-[README.md](1989/westley/README.md) for details).
-
-Since that function does not have the correct types when converted to main() it
-fails to compile.  But as he said changing the type causes either a segfault,
-files not generated at all or files ended up with syntax errors. `ver1`, `ver2`
-and `ver3` are the problematic ones.
-
 The file [westley.alt.c](1989/westley/westley.alt.c) will compile with clang
-but although it can perform some of its functions it will generate code that
-does not work.
+but although it can perform some of its functions.
 
 
 ### STATUS: known bug - please help us fix

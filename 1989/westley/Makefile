@@ -140,6 +140,9 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
+${ALT_TARGET}: ${PROG}.alt.c
+	${CC} ${CFLAGS} -Dznva=main $< -o $@ ${LDFLAGS}
+
 ver0: ${PROG}
 	-./${PROG} < westley.c > ver0.c
 	-${CC} ${CFLAGS} ver0.c -o $@ ${LDFLAGS}
@@ -158,6 +161,25 @@ ver3: ${PROG}
 	-./${PROG} 1 2 3 < westley.c > ver3.c
 	@echo "** NOTE: this version will not compile with clang **"
 	-${CC} ${CFLAGS} ver3.c -o $@ ${LDFLAGS}
+
+alt.ver0: ${PROG}.alt
+	-./${PROG}.alt < westley.alt.c > alt.ver0.c
+	-${CC} ${CFLAGS} -Dznva=main alt.ver0.c -o $@ ${LDFLAGS}
+
+alt.ver1: ${PROG}.alt
+	-./${PROG}.alt 1 < westley.alt.c > alt.ver1.c
+	-${CC} ${CFLAGS} -Dznva=main alt.ver1.c -o $@ ${LDFLAGS}
+
+alt.ver2: ${PROG}.alt
+	-./${PROG}.alt 1 2 < westley.alt.c > alt.ver2.c
+	@echo "** NOTE: this alt version will not currently compile **"
+	-${CC} ${CFLAGS} -Dznva=main alt.ver2.c -o $@ ${LDFLAGS}
+
+alt.ver3: ${PROG}.alt
+	-./${PROG}.alt 1 2 3 < westley.alt.c > alt.ver3.c
+	@echo "** NOTE: this alt version will not currently compile **"
+	-${CC} ${CFLAGS} -Dznva=main alt.ver3.c -o $@ ${LDFLAGS}
+
 
 # data files
 #

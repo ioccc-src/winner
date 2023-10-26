@@ -40,7 +40,7 @@ make alt
 
 Use `litmaath.alt` as you would `litmaath` above.
 
-#### Try:
+### Alternate try:
 
 ```sh
 ./litmaath.alt six was afraid of seven because seven eight nine

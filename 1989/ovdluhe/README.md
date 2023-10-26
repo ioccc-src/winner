@@ -38,13 +38,25 @@ by chance or is killed.
 ## Alternate code:
 
 The author suggested that one varies the definition of `P` from 2 through 10. As
-it's a `#define` it's easy to set up. To use try:
+it's a `#define` it's easy to set up.
+
+
+### Alternate build:
+
 
 ```sh
 make CFLAGS="-DP=9" clobber alt
 ```
 
-Use `ovdluhe.alt` as you would `ovdluhe`.
+You do not have to define `P` but if you do you can replace the value with
+whatever you wish, as long as it's an int.
+
+
+### Alternate use:
+
+```sh
+./ovdluhe.alt
+```
 
 
 ## Judges' remarks:

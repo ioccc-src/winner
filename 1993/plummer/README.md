@@ -52,7 +52,7 @@ make clobber CDEFINE="-DZ=50" alt
 ```
 
 
-#### Try:
+### Alternate try:
 
 ```sh
 ./plummer.alt xyzzyzzyx 5555

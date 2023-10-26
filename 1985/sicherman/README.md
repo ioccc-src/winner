@@ -45,7 +45,7 @@ make alt
 ./sicherman.alt < file
 ```
 
-#### Try:
+### Alternate try:
 
 
 ```sh

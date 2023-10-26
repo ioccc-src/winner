@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# compile.sh - compile westley.c, generate the alt versions and then attempt to
+# compile.sh - compile westley.alt.c, generate the alt versions and then attempt to
 # compile them.
 #
 # To change what compiler is used you can do something like:
@@ -43,35 +43,20 @@ if [[ -z "$DELAY" ]]; then
     DELAY=0
 fi
 
-# make clobber to make the directory clean and then compile westley which we
-# need to run everything else. Exit if make westley fails as there would be
+# make clobber to make the directory clean and then compile westley.alt which we
+# need to run everything else. Exit if make westley.alt fails as there would be
 # nothing further that could be done in that case:
-echo "$ make clobber westley"
+echo "$ make clobber westley.alt"
 sleep "$DELAY"
-make CC="$CC" clobber westley || exit 1
+make CC="$CC" clobber westley.alt || exit 1
 sleep "$DELAY"
 
 # run commands previously in the try section of the README.md, showing what the
 # commands are as we go:
 
-echo "$ ./westley < westley.c > ver0.c" 1>&2
-./westley < westley.c > ver0.c
-sleep "$DELAY"
-echo "$ ./westley 1 < westley.c > ver1.c" 1>&2
-./westley 1 < westley.c > ver1.c
-sleep "$DELAY"
-echo "$ ./westley 1 2 < westley.c > ver2.c" 1>&2
-./westley 1 2 < westley.c > ver2.c
-sleep "$DELAY"
-echo "$ ./westley 1 2 3 < westley.c > ver3.c" 1>&2
-./westley 1 2 3 < westley.c > ver3.c
-sleep "$DELAY"
-
-# now compile the files by running make alt
+# now generate and compile the files
 #
-
-echo "Compiling generated versions ..." 1>&2
+echo "Generating and compiling alt versions ..." 1>&2
 sleep "$DELAY"
-echo "$ make CC=$CC ver0 ver1 ver2 ver3" 1>&2
-sleep "$DELAY"
-make CC="$CC" ver0 ver1 ver2 ver3
+echo "$ make CC=$CC alt.ver0 alt.ver1 alt.ver2 alt.ver3" 1>&2
+make CC="$CC" alt.ver0 alt.ver1 alt.ver2 alt.ver3
