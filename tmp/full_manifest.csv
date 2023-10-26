@@ -1,4 +1,4 @@
-# year,dir,winners_rank,path,src,filetype,created_by,winners_show,display_via,winners_text,ext
+# year,dir,winners_rank,path,prog,filetype,created_by,winners_show,display_via,winners_text,ext
 1984,anonymous,null,README.md,null,markdown,null,false,null,null,md
 1984,anonymous,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
 1984,anonymous,null,.winner.json,null,json,jwinner,false,null,null,json
@@ -1207,7 +1207,7 @@
 1998,schnitzi,30,Makefile,null,makefile,null,true,github,how to compile,null
 1998,schnitzi,50,schnitzi.orig.c,orig,c,null,true,github,original source,c
 1998,schnitzi,300,1998_schnitzi.tar.bz2,null,tbz2,mkwinnertbz2,true,download,download winning source,bz2
-1998,schweikh1,null,README.md,null,markdown,null,false,github,null,md
+1998,schweikh1,null,README.md,null,markdown,null,false,null,null,md
 1998,schweikh1,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
 1998,schweikh1,null,.winner.json,null,json,jwinner,false,null,null,json
 1998,schweikh1,10,index.html,null,html,readme2index,true,browser,click here first,html
@@ -1296,7 +1296,7 @@
 2000,dlowe,50,dlowe.orig.c,orig,c,null,true,github,original source,c
 2000,dlowe,300,2000_dlowe.tar.bz2,null,tbz2,mkwinnertbz2,true,download,download winning source,bz2
 2000,jarijyrki,null,README.md,null,markdown,null,false,null,null,md
-2000,jarijyrki,null,finance.sheet,null,spreadsheet,null,true,null,spreadsheet,sheet
+2000,jarijyrki,null,finance.sheet,null,spreadsheet,null,false,null,spreadsheet,sheet
 2000,jarijyrki,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
 2000,jarijyrki,null,.winner.json,null,json,jwinner,false,null,null,json
 2000,jarijyrki,10,index.html,null,html,readme2index,true,browser,click here first,html
@@ -1925,13 +1925,13 @@
 2006,sloane,50,sloane.orig.c,orig,c,null,true,github,original source,c
 2006,sloane,300,2006_sloane.tar.bz2,null,tbz2,mkwinnertbz2,true,download,download winning source,bz2
 2006,stewart,null,README.md,null,markdown,null,false,null,null,md
-2006,stewart,null,build,null,shellscript,null,false,github,how to compile,null
 2006,stewart,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
 2006,stewart,null,.winner.json,null,json,jwinner,false,null,null,json
 2006,stewart,10,index.html,null,html,readme2index,true,browser,click here first,html
 2006,stewart,20,stewart.c,main,c,null,true,github,winning source,c
 2006,stewart,30,Makefile,null,makefile,null,true,github,how to compile,null
 2006,stewart,50,stewart.orig.c,orig,c,null,true,github,original source,c
+2006,stewart,100,build,null,shellscript,null,true,github,how to compile,null
 2006,stewart,150,altar,null,text,null,true,github,sample input,null
 2006,stewart,150,box2,null,text,null,true,github,sample input,null
 2006,stewart,150,box3,null,text,null,true,github,sample input,null
@@ -2290,8 +2290,8 @@
 2011,borsanyi,300,2011_borsanyi.tar.bz2,null,tbz2,mkwinnertbz2,true,download,download winning source,bz2
 2011,dlowe,null,README.md,null,markdown,null,false,null,null,md
 2011,dlowe,null,dlowe-aux-data/english-trained.net,null,binary,null,false,null,trained neural network,net
-2011,dlowe,null,dlowe-aux-data/ioccc-winlose-trained.net,null,null,null,null,null,null,net
-2011,dlowe,null,dlowe-aux-data/png-trained.net,null,binary,null,null,null,null,net
+2011,dlowe,null,dlowe-aux-data/ioccc-winlose-trained.net,null,null,null,false,null,null,net
+2011,dlowe,null,dlowe-aux-data/png-trained.net,null,binary,null,false,null,null,net
 2011,dlowe,null,dlowe-aux-data.tar.bz2,null,tgz,null,false,null,IOCCC win lose trained network,bz2
 2011,dlowe,null,dlowe-aux-data/xor-trained.net,null,binary,null,false,null,trained neural network,net
 2011,dlowe,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
@@ -2906,9 +2906,9 @@
 2013,endoh4,200,solids/trapezohedron/t10-decagonal-trapezohedron.txt,null,text,null,true,github,3D object coordinates ,txt
 2013,endoh4,300,2013_endoh4.tar.bz2,null,tbz2,mkwinnertbz2,true,download,download winning source,bz2
 2013,hou,null,README.md,null,markdown,null,false,null,null,md
-2013,hou,null,doc/camera.png,null,image,null,null,null,documentation support image,png
-2013,hou,null,doc/cosine.png,null,image,null,null,null,documentation support image,png
-2013,hou,null,doc/draft.png,null,image,null,null,null,documentation support image,png
+2013,hou,null,doc/camera.png,null,image,null,false,null,documentation support image,png
+2013,hou,null,doc/cosine.png,null,image,null,false,null,documentation support image,png
+2013,hou,null,doc/draft.png,null,image,null,false,null,documentation support image,png
 2013,hou,null,doc/example.md,null,markdown,null,false,null,null,md
 2013,hou,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
 2013,hou,null,.winner.json,null,json,jwinner,false,null,null,json
@@ -2919,15 +2919,15 @@
 2013,hou,100,doc/example.html,null,html,md2html,true,browser,detailed information about entry,html
 2013,hou,150,luna.jpg,null,image,null,true,browser,sample image data,jpg
 2013,hou,150,old_default.jpg,null,image,null,true,browser,sample image data,jpg
-2013,hou,150,old_default.scene,null,text,null,true,text,sample input,scene
+2013,hou,150,old_default.scene,null,text,null,true,github,sample input,scene
 2013,hou,150,otherroom.jpg,null,image,null,true,browser,sample image data,jpg
-2013,hou,150,otherroom.scene,null,text,null,true,text,sample input,scene
+2013,hou,150,otherroom.scene,null,text,null,true,github,sample input,scene
 2013,hou,300,2013_hou.tar.bz2,null,tbz2,mkwinnertbz2,true,download,download winning source,bz2
 2013,mills,null,README.md,null,markdown,null,false,null,null,md
 2013,mills,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
 2013,mills,null,.winner.json,null,json,jwinner,false,null,null,json
 2013,mills,10,index.html,null,html,readme2index,true,browser,click here first,html
-2013,mills,20,mills.c,main,c,null,true,text,winning source,c
+2013,mills,20,mills.c,main,c,null,true,github,winning source,c
 2013,mills,30,Makefile,null,makefile,null,true,github,how to compile,null
 2013,mills,50,mills.orig.c,orig,c,null,true,github,original source,c
 2013,mills,300,2013_mills.tar.bz2,null,tbz2,mkwinnertbz2,true,download,download winning source,bz2
@@ -3409,7 +3409,7 @@
 2018,mills,null,bsd.img.bz2,null,bzip2,null,false,null,bz2 compressed BSD disk image,bz2
 2018,mills,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
 2018,mills,null,v0.image.fs,null,binary,null,false,null,filesystem image,fs
-2018,mills,null,v6.tape.gz,null,gzip,null,true,null,compressed filesystem image,gz
+2018,mills,null,v6.tape.gz,null,gzip,null,false,null,compressed filesystem image,gz
 2018,mills,null,.winner.json,null,json,jwinner,false,null,null,json
 2018,mills,10,index.html,null,html,readme2index,true,browser,click here first,html
 2018,mills,20,prog.c,main,c,null,true,github,winning source,c
@@ -3583,14 +3583,14 @@
 2019,lynn,250,hint.hs,null,text,null,true,github,spoiler for compiler macros,hs
 2019,lynn,300,2019_lynn.tar.bz2,null,tbz2,mkwinnertbz2,true,download,download winning source,bz2
 2019,mills,null,Eugene_Onegin.cp11_1.188,null,binary,null,false,null,training data from Eugene Onegin poetry,188
-2019,mills,null,Eugene_Onegin.txt.gz,null,gzip,null,true,null,compressed Eugene Onegin poetry,gz
+2019,mills,null,Eugene_Onegin.txt.gz,null,gzip,null,false,null,compressed Eugene Onegin poetry,gz
 2019,mills,null,IOCCC-Rules-Guidelines.cp98_0.175,null,binary,null,false,null,training data from IOCCC rules and guidelines from 1984 thru 2019,175
-2019,mills,null,IOCCC-Rules-Guidelines.txt.gz,null,gzip,null,true,null,compressed IOCCC rules and guidelines from 1984 thru 2019,gz
-2019,mills,null,IOCCC-hints.cp09_1.809,null,binary,null,null,null,training data from IOCCC hints file text for 1984 thru 2018,809
-2019,mills,null,IOCCC-hints.txt.gz,null,gzip,null,true,null,compressed IOCCC hints file text for 1984 thru 2018,gz
+2019,mills,null,IOCCC-Rules-Guidelines.txt.gz,null,gzip,null,false,null,compressed IOCCC rules and guidelines from 1984 thru 2019,gz
+2019,mills,null,IOCCC-hints.cp09_1.809,null,binary,null,false,null,training data from IOCCC hints file text for 1984 thru 2018,809
+2019,mills,null,IOCCC-hints.txt.gz,null,gzip,null,false,null,compressed IOCCC hints file text for 1984 thru 2018,gz
 2019,mills,null,README.md,null,markdown,null,false,null,null,md
-2019,mills,null,Shakespeare.cp04_1.633,null,binary,null,null,null,training data from Shakespeare text,633
-2019,mills,null,Shakespeare.txt.gz,null,gzip,null,true,null,compressed Shakespeare text,gz
+2019,mills,null,Shakespeare.cp04_1.633,null,binary,null,false,null,training data from Shakespeare text,633
+2019,mills,null,Shakespeare.txt.gz,null,gzip,null,false,null,compressed Shakespeare text,gz
 2019,mills,null,.gitignore,null,gitignore,null,false,null,list of files that should not be committed under git,gitignore
 2019,mills,null,.winner.json,null,json,jwinner,false,null,null,json
 2019,mills,10,index.html,null,html,readme2index,true,browser,click here first,html

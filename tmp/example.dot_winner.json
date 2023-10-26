@@ -15,7 +15,7 @@
 	{
 	    "winners_rank" : 10,
 	    "path" : "index.html",
-	    "src" : null,
+	    "prog" : null,
 	    "filetype" : "html",
 	    "created_by" : "readme2index",
 	    "winners_show" : true,
@@ -25,7 +25,7 @@
 	{
 	    "winners_rank" : 20,
 	    "path" : "prog.c",
-	    "src" : "main",
+	    "prog" : "main",
 	    "filetype" : "c",
 	    "created_by" : null,
 	    "winners_show" : true,
@@ -35,7 +35,7 @@
 	{
 	    "winners_rank" : 30,
 	    "path" : "Makefile",
-	    "src" : null,
+	    "prog" : null,
 	    "filetype" : "makefile",
 	    "created_by" : null,
 	    "winners_show" : true,
@@ -45,7 +45,7 @@
 	{
 	    "winners_rank" : 40,
 	    "path" : "prog.alt.c",
-	    "src" : "alt",
+	    "prog" : "alt",
 	    "filetype" : "c",
 	    "created_by" : null,
 	    "winners_show" : true,
@@ -55,7 +55,7 @@
 	{
 	    "winners_rank" : 50,
 	    "path" : "prog.orig.c",
-	    "src" : "orig",
+	    "prog" : "orig",
 	    "filetype" : "c",
 	    "created_by" : null,
 	    "winners_show" : true,
@@ -65,7 +65,7 @@
 	{
 	    "winners_rank" : 100,
 	    "path" : "chocolate_cake.jpg",
-	    "src" : null,
+	    "prog" : null,
 	    "filetype" : "image",
 	    "created_by" : null,
 	    "winners_show" : true,
@@ -76,7 +76,7 @@
 	    "winners_rank" : 150,
 	    "path" : "magic.txt",
 	    "filetype" : "text",
-	    "src" : null,
+	    "prog" : null,
 	    "created_by" : null,
 	    "winners_show" : true,
 	    "display_via" : "github",
@@ -86,7 +86,7 @@
 	    "winners_rank" : 150,
 	    "path" : "special.src",
 	    "filetype" : "text",
-	    "src" : null,
+	    "prog" : null,
 	    "created_by" : null,
 	    "winners_show" : true,
 	    "display_via" : "github",
@@ -95,7 +95,7 @@
 	{
 	    "winners_rank" : 180,
 	    "path" : "raw_data.file",
-	    "src" : null,
+	    "prog" : null,
 	    "filetype" : "data",
 	    "created_by" : null,
 	    "winners_show" : true,
@@ -105,7 +105,7 @@
 	{
 	    "winners_rank" : 200,
 	    "path" : "spoiler.html",
-	    "src" : null,
+	    "prog" : null,
 	    "filetype" : "html",
 	    "created_by" : "md2html",
 	    "winners_show" : true,
@@ -115,7 +115,7 @@
 	{
 	    "winners_rank" : 300,
 	    "path" : "2024_dirname.tar.bz2",
-	    "src" : null,
+	    "prog" : null,
 	    "filetype" : "tbz2",
 	    "created_by" : "mkwinnertbz2",
 	    "winners_show" : true,
@@ -125,7 +125,7 @@
 	{
 	    "winners_rank" : null,
 	    "path" : ".gitignore",
-	    "src" : null,
+	    "prog" : null,
 	    "filetype" : "gitignore",
 	    "created_by" : null,
 	    "winners_show" : false,
@@ -135,7 +135,7 @@
 	{
 	    "winners_rank" : null,
 	    "path" : ".winner.json",
-	    "src" : null,
+	    "prog" : null,
 	    "filetype" : "json",
 	    "created_by" : "jwinner",
 	    "winners_show" : false,
@@ -145,7 +145,7 @@
 	{
 	    "winners_rank" : null,
 	    "path" : "README.md",
-	    "src" : null,
+	    "prog" : null,
 	    "filetype" : "markdown",
 	    "created_by" : null,
 	    "winners_show" : false,

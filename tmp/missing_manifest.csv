@@ -1,8 +1,8 @@
-# -1,All other cells (excluding year + winners_rank + winners_show) are JSON strings that need to be double quoted and JSON encoded.,,,,,,,,,
+# -1,All other cells (excluding year+winners_rank+winners_show) are JSON strings that must not contain commas NOR quotes NOR newlines.,,,,,,,,,
 # -2,The year cells must be JSON numbers.  The winners_rank cells must be a JSON number or JSON null.  The winners_show cells must be JSON booleans.,,,,,,,,,
 # -3,Empty cells are filled in with red and need to be filled in and are TBD.,,,,,,,,,
-# -4,Any cell containing null is a JSON null value.,,,,,,,,,
-# year,dir,winners_rank,path,src,filetype,created_by,winners_show,display_via,winners_text,ext
+# -4,Any cell containing null is a JSON null value. Any cell containing true or false is a JSON boolean value.,,,,,,,,,
+# year,dir,winners_rank,path,prog,filetype,created_by,winners_show,display_via,winners_text,ext
 1984,anonymous,null,.winner.json,null,json,jwinner,false,null,null,json
 1984,anonymous,10,index.html,null,html,readme2index,true,browser,click here first,html
 1984,anonymous,300,1984_anonymous.tar.bz2,null,tbz2,mkwinnertbz2,true,download,download winning source,bz2
@@ -957,6 +957,12 @@
 2020,ferguson1,100,HACKING.html,null,html,md2html,true,browser,information for herpetologist hackers,html
 2020,ferguson1,100,cannibalism.log.html,null,html,md2html,true,browser,about the snake game,html
 2020,ferguson1,100,crazy.log.html,null,html,md2html,true,browser,about some screen dumps,html
+2020,ferguson1,150,bugs.html,null,html,md2html,true,browser,bugs and mis-features,html
+2020,ferguson1,150,chocolate-cake.html,null,html,md2html,true,browser,chocolate cake recipe,html
+2020,ferguson1,150,gameplay.html,null,html,md2html,true,browser,how to play,html
+2020,ferguson1,150,terminals.html,null,html,md2html,true,browser,terminal capability documentation,html
+2020,ferguson1,150,troubleshooting.html,null,html,md2html,true,browser,troubleshooting,html
+2020,ferguson1,200,spoilers.html,null,html,md2html,true,browser,SPOILER WARNING,html
 2020,ferguson1,300,2020_ferguson1.tar.bz2,null,tbz2,mkwinnertbz2,true,download,download winning source,bz2
 2020,ferguson2,null,.winner.json,null,json,jwinner,false,null,null,json
 2020,ferguson2,10,index.html,null,html,readme2index,true,browser,click here first,html

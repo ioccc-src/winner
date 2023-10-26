@@ -1,6 +1,5 @@
 # tmp
 
-
 The purpose of the `tmp` directory is to hold temporary files.
 The files in the `tmp` directory will go away leaving behind
 an empty `tmp` directory.
@@ -111,6 +110,7 @@ A `year` string matches this regexp:
 ```
 
 The `year` directories reside directly below the top level directory.
+
 
 ### `.year`
 
@@ -309,6 +309,11 @@ A `year/dir/.winner.json` file will be derived from the contents the `year/dir/.
 the [author_wins.csv](author_wins.csv) file, the `year/dir/.year` file,  and the
 contents of the `year/dir` directory.
 
+The 11 field names in [manifest.numbers](manifest.numbers),
+[missing_manifest.numbers](missing_manifest.numbers), and
+[full_manifest.numbers](full_manifest.numbers) match the JSON member
+names found in [example.dot_winner.json](example.dot_winner.json).
+
 
 ### [file_list.txt](file_list.txt)
 
@@ -330,11 +335,32 @@ Combined and sorted [manifest.csv](manifest.csv) and [missing_manifest.csv](miss
 
 This file is formed by the [fix_numbers_csv.sh](fix_numbers_csv.sh) tool.
 
+See [manifest.numbers](manifest.numbers) for information on this file format
+as it has the exact same format.
+
+In case of conflict, the data in [full_manifest.csv](full_manifest.csv) file is
+considered authoritative over the [full_manifest.numbers](full_manifest.numbers) file.
+
 
 ### [full_manifest.numbers](full_manifest.numbers)
 
 This file is formed by opening [manifest.csv](manifest.csv) in numbers
 and saving the result as a numbers file.
+
+In case of conflict, the data in [full_manifest.csv](full_manifest.csv) file is
+considered authoritative over the [full_manifest.numbers](full_manifest.numbers) file.
+
+**NOTE**: Due to the way that the macOS numbers program imports CSV
+files, some values of false may be turned into FALSE, some values
+of true may be turned into TRUE, and some values of null may be
+turned into NULL.  JSON does not allow UPPER case FALSE, nor TRUE,
+nor NULL, so the UPPER case values of fields should be used in JSON
+in their lower case form.
+
+The 11 field names in [manifest.numbers](manifest.numbers),
+[missing_manifest.numbers](missing_manifest.numbers), and
+[full_manifest.numbers](full_manifest.numbers) match the JSON member
+names found in [example.dot_winner.json](example.dot_winner.json).
 
 
 ### [gen_author_json.sh](gen_author_json.sh)
@@ -355,54 +381,113 @@ A [macOS](https://www.apple.com/macos) [Numbers](https://www.apple.com/numbers/)
 spreadsheet contains information about files, that must already exist, with the
 following fields:
 
-1. IOCCC year as a 4-character string.
+1. year:
 
-2. Directory name number the IOCCC year.
+   IOCCC year as a 4-character string.  Normally this would be a 4 digit year string,
+   however it may also be a string such as "mock".
 
-3. If a number, then this is the winners rank showing the order
+   NOTE: If year begins with "#", then dir is a comment, and the
+   rest of the row is to be ignored.  Rows of this form do NOT
+   contain manifest information for a file.
+
+2. dir:
+
+   Directory name number the IOCCC year.
+
+3. winners_rank:
+
+   If a number, then this is the winners rank showing the order
    that this file is to be listed for the given entry's in
    [winners.html](winners.html), or null if the file is not to be listed.
 
-4. Path under the IOCCC/directory.  In a few cases this is a path,
+4. path:
+
+   Path under the IOCCC/directory.  In a few cases this is a path,
    not just a simple filename under the IOCCC/directory.
 
-5. This field indicates if the file main program.  This filed is one of:
+5. prog:
+
+   This field indicates if the file main program.  This filed is one of:
 
    main		The main source code to display.
    alt		The alternative source code.
    orig		The original version of the source code (may be the same as main).
-   null		Not a primary source code file.
+   null		Not a primary, nor alternative, nor original source code file.
 
-6. The type of file.
+6. filetype:
 
-7. The name of the program that creates this file, or null is the
+   The type of file.
+
+7. created_by:
+
+   The name of the program that creates this file, or null is the
    file an original file.
 
-8. A JSON boolean indicating of the file is listed on `winners.html` or not.
+   NOTE: A null created_by value indicates that the file is part
+   of the primary content.  A non-null created_by value indicates
+   that the contents of the file is created by given program from
+   primary content files.
 
-9. A string indicating how the file is to be displayed from `winners.html`.
+   NOTE: The created_by values for [manifest.numbers](manifest.numbers)
+   MUST always be null.  This is because every file with primary
+   content (i.e., content not created by some tool) MUST be listed
+   in the [manifest.numbers](manifest.numbers) file and MUST NOT
+   listed in the [missing_manifest.numbers](missing_manifest.numbers) file.
+
+   NOTE: The created_by values for [missing_manifest.numbers](missing_manifest.numbers) '
+   MUST always be non-null.  This is because every file that is NOT a primary
+   content file (i.e., content that is created by some tool) MUST
+   be listed in the [missing_manifest.numbers](missing_manifest.numbers)
+   file and MUST NOT listed in the  [manifest.numbers](manifest.numbers) file.
+
+8. winners_show:
+
+   A JSON boolean indicating of the file is listed on `winners.html` or not.
+
+   The winners_show value must be either true or false.
+
+   NOTE: When winners_show is false, display_via MUST be null.
+
+9. display_via:
+
+   A string indicating how the file is to be displayed from `winners.html`.
    Possible files include:
 
    browser	The file is to be displayed directly from the browser.
    github	The file should be linked to the GitHub repo so that
-   		it may be rendered directly by GitHub.  In the future
+		it may be rendered directly by GitHub.  In the future
 		this may changed to allow a suitable browser to
 		directly display this file instead of via GitHub.
-  null		This file not listed in `winners.html`.
-  download	The file is intended to be downloaded from the browser
-  		instead of being displayed.
+   download	The file is intended to be downloaded from the browser
+		instead of being displayed.
+   null		This file not listed in `winners.html`.
 
-10. Any text that should be displayed at the end of line in `winners.html`
+   NOTE: When display_via is null, winners_show MUST be false.
+
+10. winners_text:
+
+    Any text that should be displayed at the end of line in `winners.html`
     (with a preceding " - "), or null is no such text is to be displayed.
 
-11. This ending filename extension, or null if no extension.
+11. ext:
+
+    This ending filename extension, or null if no extension.
     This field is temporary and may go away.
 
-NOTE: Cells containing null are a JSON nulls.
+The 11 field names in [manifest.numbers](manifest.numbers),
+[missing_manifest.numbers](missing_manifest.numbers), and
+[full_manifest.numbers](full_manifest.numbers) match the JSON member
+names found in [example.dot_winner.json](example.dot_winner.json).
+
+NOTE: Cells containing null are a JSON NULLs.
 NOTE: Cells containing true or false are JSON booleans.
 NOTE: Empty cells are TBD and need to be filled in.
 NOTE: The winners_rank cells are either JSON null or JSON numbers.
 NOTE: All other cells are JSON strings that need to be double quoted, including the year.
+NOTE: Do not put commas, nor quotes, nor newlines in fields as these are bound to cause problems.
+
+In case of conflict, the data in [manifest.numbers](manifest.numbers) file is
+considered authoritative over the [manifest.csv](manifest.csv) file.
 
 
 ### [manifest.csv](manifest.csv)
@@ -411,7 +496,7 @@ The [manifest.csv](manifest.csv) is a CSV file that was exported from the
 [manifest.numbers](manifest.numbers) file.
 
 In case of conflict, the data in [manifest.numbers](manifest.numbers) file is
-considered manifestitative over the [manifest.csv](manifest.csv) file.
+considered authoritative over the [manifest.csv](manifest.csv) file.
 
 The [manifest.csv](manifest.csv) is generated from the [manifest.numbers](manifest.numbers) file,
 via the [macOS](https://www.apple.com/macos/)
@@ -435,62 +520,20 @@ via the [macOS](https://www.apple.com/macos/)
 
 ### [missing_manifest.numbers](missing_manifest.numbers)
 
-
 A [macOS](https://www.apple.com/macos) [Numbers](https://www.apple.com/numbers/)
 spreadsheet contains information about files, that may not yet exist because
 a tool needs to create it, with the following fields:
 
-NOTE: Later on when these files are created, their spreadsheet lines
-      will be moved into the [manifest.numbers](manifest.numbers) spreadsheet.
+In case of conflict, the data in [missing_manifest.numbers](missing_manifest.numbers) file is
+considered authoritative over the [missing_manifest.csv](missing_manifest.csv) file.
 
-1. IOCCC year as a 4-character string.
+See [manifest.numbers](manifest.numbers) for information on this file format
+as it has the exact same format.
 
-2. Directory name number the IOCCC year.
-
-3. If a number, then this is the winners rank showing the order
-   that this file is to be listed for the given entry's in
-   [winners.html](winners.html), or null if the file is not to be listed.
-
-4. Path under the IOCCC/directory.  In a few cases this is a path,
-   not just a simple filename under the IOCCC/directory.
-
-5. This field indicates if the file main program.  This filed is one of:
-
-   main		The main source code to display.
-   alt		The alternative source code.
-   orig		The original version of the source code (may be the same as main).
-   null		Not a primary source code file.
-
-6. The type of file.
-
-7. The name of the program that creates this file, or null is the
-   file an original file.
-
-8. A JSON boolean indicating of the file is listed on `winners.html` or not.
-
-9. A string indicating how the file is to be displayed from `winners.html`.
-   Possible files include:
-
-   browser	The file is to be displayed directly from the browser.
-   github	The file should be linked to the GitHub repo so that
-   		it may be rendered directly by GitHub.  In the future
-		this may changed to allow a suitable browser to
-		directly display this file instead of via GitHub.
-  null		This file not listed in `winners.html`.
-  download	The file is intended to be downloaded from the browser
-  		instead of being displayed.
-
-10. Any text that should be displayed at the end of line in `winners.html`
-    (with a preceding " - "), or null is no such text is to be displayed.
-
-11. This ending filename extension, or null if no extension.
-    This field is temporary and may go away.
-
-NOTE: Cells containing null are a JSON nulls.
-NOTE: Cells containing true or false are JSON booleans.
-NOTE: Empty cells are TBD and need to be filled in.
-NOTE: The winners_rank cells are either JSON null or JSON numbers.
-NOTE: All other cells are JSON strings that need to be double quoted, including the year.
+The 11 field names in [manifest.numbers](manifest.numbers),
+[missing_manifest.numbers](missing_manifest.numbers), and
+[full_manifest.numbers](full_manifest.numbers) match the JSON member
+names found in [example.dot_winner.json](example.dot_winner.json).
 
 
 ### [missing_manifest.csv](missing_manifest.csv)
@@ -499,7 +542,7 @@ The [missing_manifest.csv](missing_manifest.csv) is a CSV file that was exported
 [missing_manifest.numbers](missing_manifest.numbers) file.
 
 In case of conflict, the data in [missing_manifest.numbers](missing_manifest.numbers) file is
-considered missing_manifestitative over the [missing_manifest.csv](missing_manifest.csv) file.
+considered authoritative over the [missing_manifest.csv](missing_manifest.csv) file.
 
 The [missing_manifest.csv](missing_manifest.csv) is generated from the [missing_manifest.numbers](missing_manifest.numbers) file,
 via the [macOS](https://www.apple.com/macos/)
