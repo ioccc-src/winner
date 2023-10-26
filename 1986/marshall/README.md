@@ -23,7 +23,7 @@ to read it for entertainment if nothing else.
 ./marshall
 ```
 
-### Alternate code:
+## Alternate code:
 
 As some changes had to be made due to the problem of conflicting compiler
 options briefly noted above we provide the code that demonstrates the problem so

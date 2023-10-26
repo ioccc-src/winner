@@ -28,7 +28,7 @@ make all
 ```
 
 
-### Alternate code:
+## Alternate code:
 
 While it may not have been the intention of the author, the
 judges noted that the C pre-processed version (with the `#include`s

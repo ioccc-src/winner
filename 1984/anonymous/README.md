@@ -14,7 +14,7 @@ make all
 ./anonymous
 ```
 
-### Alternate code:
+## Alternate code:
 
 The original version of this entry was added, by request,
 in order to show the code that was turned into the

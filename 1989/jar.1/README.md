@@ -26,7 +26,7 @@ NOTE: this will run the program itself:
 make clobber all
 ```
 
-### Alternate code:
+## Alternate code:
 
 This code, which prints something slightly different, is provided as well.
 

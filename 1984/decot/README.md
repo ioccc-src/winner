@@ -14,7 +14,7 @@ make all
 ./decot
 ```
 
-### Alternate code:
+## Alternate code:
 
 This alternate code, the original, requires a compiler that supports
 `-traditional-cpp` or an old enough compiler. If you have such a compiler you

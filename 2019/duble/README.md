@@ -61,7 +61,7 @@ find . -name '.[A-Z]*' -delete
 
 though one might want to check that the program is not currently running. :-)
 
-### Alternate code:
+## Alternate code:
 
 An alternate version of this entry, [prog.alt.c](prog.alt.c), is provided.  This alternate
 code might not work as well on macOS.

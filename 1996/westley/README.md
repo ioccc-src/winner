@@ -39,7 +39,7 @@ And for a good time, try:
 sh ./clock3
 ```
 
-### Alternate code:
+## Alternate code:
 
 An alternate version of this entry, [westley.alt.c](westley.alt.c), is provided.
 This version is the original code and does not contain the above mentioned

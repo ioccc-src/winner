@@ -39,7 +39,7 @@ show correctly!
 ```
 
 
-### Alternate code:
+## Alternate code:
 
 The author provided a version for the US which we added. To build:
 

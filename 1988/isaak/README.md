@@ -19,7 +19,7 @@ code](#alternate-code) below.
 ./isaak
 ```
 
-### Alternate code:
+## Alternate code:
 
 The original version of this code is in [isaak.alt.c](isaak.alt.c).
 The original entry starts with the line:

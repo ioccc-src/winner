@@ -28,7 +28,7 @@ available. See the [Alternate code](#alternate-code) section below.
 
 NOTE: to quit the program type `QUITEMU`.
 
-### Alternate code:
+## Alternate code:
 
 An alternate version, which should compile in Windows, is provided. To use try:
 

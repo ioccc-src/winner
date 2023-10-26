@@ -34,7 +34,7 @@ NOTE: an alternate version exists. See Alternate code section below.
 
 ```
 
-### Alternate code:
+## Alternate code:
 
 To use:
 

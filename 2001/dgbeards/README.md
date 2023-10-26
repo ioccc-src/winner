@@ -18,7 +18,7 @@ make
 ```
 
 
-### Alternate code:
+## Alternate code:
 
 The author provided a way to speed it up a bit and also how to make it so it
 doesn't crash on losing.  The idea that it crashes on losing was too good to

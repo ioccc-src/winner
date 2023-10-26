@@ -34,7 +34,7 @@ echo "full spelling of an English cardinal numeral less than a quadrillion" | ./
 How does it have no `u` or `o` in a string in the source code and yet it gets
 `uno` right?
 
-### Alternate code:
+## Alternate code:
 
 This alternate code fixes the program that would throw off those who know German
 where the sound of 'V' is 'F' and so the program had the letter be 'F'. A

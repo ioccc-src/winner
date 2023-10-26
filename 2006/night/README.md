@@ -29,7 +29,7 @@ echo "Do or do not. There is no try."
 ```
 
 
-### Alternate code:
+## Alternate code:
 
 To compile:
 

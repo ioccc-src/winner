@@ -21,7 +21,7 @@ make
 ./prog < README.md
 ```
 
-### Alternate code:
+## Alternate code:
 
 An alternate version of this entry, `prog.alt.c`, is provided.  As mentioned in
 the Author's remarks, the alternate version lacks a useful bug fix.

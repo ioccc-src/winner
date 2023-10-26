@@ -22,7 +22,7 @@ make
 ./gavare > ioccc_ray.ppm
 ```
 
-### Alternate code:
+## Alternate code:
 
 The author provided [on their web page for the
 entry](https://gavare.se/ioccc/ioccc_gavare.c.html) an unobfuscated version that was used

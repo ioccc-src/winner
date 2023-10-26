@@ -30,7 +30,7 @@ echo 3 | ./baruch
 
 Why is there no output?
 
-### Alternate code:
+## Alternate code:
 
 This alternate code is for the [very few](https://en.wikipedia.org/wiki/0)
 [users](https://en.wikipedia.org/wiki/Microsoft_Windows)

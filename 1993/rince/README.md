@@ -23,7 +23,7 @@ where:
 
 `[cabbage]` is a CABBAGE description file  (default: `rince.c`)
 
-### Alternate code: slowing down the game
+## Alternate code: slowing down the game
 
 Some people may want to slow down the game by increasing the
 value 17 in the lines:

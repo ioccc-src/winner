@@ -26,7 +26,7 @@ echo IOCCC | ./sicherman
 ./sicherman < sicherman.c | ./sicherman
 ```
 
-### Alternate code:
+## Alternate code:
 
 This alternate version, which is the original entry, requires either an old
 enough compiler or a compiler that supports `-traditional-cpp`. If you have such

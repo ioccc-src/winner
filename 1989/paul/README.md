@@ -18,7 +18,7 @@ out. See [alternate code](#alternate-code) below for more details.
 ./paul
 ```
 
-### Alternate code:
+## Alternate code:
 
 This version was described by the author like:
 

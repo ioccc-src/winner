@@ -26,7 +26,7 @@ make
 ```
 
 
-### Alternate code:
+## Alternate code:
 
 An alternate version of this entry, [westley.alt.c](westley.alt.c), is provided.
 This alternate code might be less portable.

@@ -36,7 +36,7 @@ QWERTY keyboards.  Rogue players, vi users, and Dvorak typists are
 invited to get lost (or use the alt version)!
 
 
-### Alternate code:
+## Alternate code:
 
 To use:
 

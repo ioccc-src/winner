@@ -35,7 +35,7 @@ Also try:
 echo IOCCC | ./hague 2>/dev/null
 ```
 
-### Alternate code:
+## Alternate code:
 
 Whereas with some entries the change to `fgets()` (see the [FAQ](/faq.md) for
 details on why this has been done) can be done in the original code this entry

@@ -21,7 +21,7 @@ program.  See the [Alternate code](#alternate-code) section below for details.
 ./applin
 ```
 
-### Alternate code:
+## Alternate code:
 
 As noted above a smaller version can be used in case your `cpp` has a hard time
 with this entry.

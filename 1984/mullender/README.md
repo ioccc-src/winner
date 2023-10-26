@@ -25,7 +25,7 @@ correctly.  In later years, machine dependent code was discouraged. An alternate
 version that will work with other systems is provided as alternate code below.
 
 
-### Alternate code:
+## Alternate code:
 
 An alternate version exists which allows one to enjoy this entry on systems
 other than a [VAX-11](https://en.wikipedia.org/wiki/VAX-11) or

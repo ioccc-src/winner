@@ -55,7 +55,7 @@ You might enjoy looking at the output of:
 cc -E westley.alt.c
 ```
 
-### Alternate code:
+## Alternate code:
 
 To see if your compiler has the problem described above try:
 

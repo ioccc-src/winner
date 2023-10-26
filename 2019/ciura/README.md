@@ -34,7 +34,7 @@ make
 ```
 
 
-### Alternate code:
+## Alternate code:
 
 There is an alternate version of this code that flushes stdout after writing a newline.
 See the Author's remarks for more information.
