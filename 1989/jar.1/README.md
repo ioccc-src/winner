@@ -30,7 +30,7 @@ make clobber all
 
 This code, which prints something slightly different, is provided as well.
 
-#### To build:
+### Alternate build:
 
 NOTE: this will run the program itself.
 
@@ -38,7 +38,7 @@ NOTE: this will run the program itself.
 make clobber alt
 ```
 
-#### To use:
+### Alternate use:
 
 Alternatively, you can run it directly:
 

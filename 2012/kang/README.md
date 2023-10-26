@@ -44,13 +44,13 @@ Germans that causes other problems for Germans so if you're German you'll just
 have to deal with it :-) It is, however, good as you can appreciate the entry
 even more.
 
-#### To build:
+### Alternate build:
 
 ```sh
 make alt
 ```
 
-#### To use:
+### Alternate use:
 
 ```sh
 echo vier | ./kang.alt

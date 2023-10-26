@@ -37,7 +37,7 @@ using that macro for `#define`.
 This version will not likely work on modern systems if you can even get it to
 compile.
 
-#### To build:
+### Alternate build:
 
 ```sh
 make alt

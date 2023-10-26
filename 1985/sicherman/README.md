@@ -32,14 +32,14 @@ This alternate version, which is the original entry, requires either an old
 enough compiler or a compiler that supports `-traditional-cpp`. If you have such
 a compiler you can try this version.
 
-#### To build:
+### Alternate build:
 
 
 ```sh
 make alt
 ```
 
-#### To use:
+### Alternate use:
 
 ```sh
 ./sicherman.alt < file

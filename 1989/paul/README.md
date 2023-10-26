@@ -28,13 +28,13 @@ the program.  Besides it is fun to watch the tape zooming back
 and forth as the program runs.  A much better debugger or trace
 could easily be added.
 
-#### To build:
+### Alternate build:
 
 ```sh
 make alt
 ```
 
-#### To use:
+### Alternate use:
 
 ```sh
 ./paul.alt

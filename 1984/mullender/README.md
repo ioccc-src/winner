@@ -34,7 +34,7 @@ as it goes so fast in modern systems. The author suggested that there was a
 delay in the original code as well.
 
 
-#### To build:
+### Alternate build:
 
 
 ```sh
@@ -42,7 +42,7 @@ make alt
 ```
 
 
-#### To use:
+### Alternate use:
 
 ```sh
 ./mullender.alt [microseconds]
@@ -122,7 +122,7 @@ close to as the original as possible we used a copy of
 in the *fabulous* [Unix History
 Repo](https://github.com/dspinellis/unix-history-repo/tree/Research-Release).
 
-#### To build:
+### Alternate build:
 
 `gentab.c` can be built like:
 
@@ -131,7 +131,7 @@ Repo](https://github.com/dspinellis/unix-history-repo/tree/Research-Release).
 make gentab
 ```
 
-#### To use:
+### Alternate use:
 
 ```sh
 ./gentab file
