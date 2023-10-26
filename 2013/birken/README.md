@@ -51,7 +51,7 @@ If you wish to speed it up 200% you can use instead `-DZ=3750`. Doing this
 you might find the right value to your liking; use ctrl-c to terminate the
 program early.
 
-### Original code:
+## Original code:
 
 Should you wish to see the original without having to mess with the compiler
 line, try:

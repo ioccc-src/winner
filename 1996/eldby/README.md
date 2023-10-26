@@ -35,7 +35,7 @@ make CFLAGS+="-DZ=20000" clobber alt
 ./eldby.alt
 ```
 
-### Original code:
+## Original code:
 
 Besides the fact that modern systems make it impossible to see what this program
 does the rapid movement can be a problem for some people. It is for these
