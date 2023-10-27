@@ -9,13 +9,23 @@ Lennart Augustsson\
 make all
 ```
 
+### Bugs and (Mis)features
+
+This entry a listed in [bugs.md](/bugs.md) as:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [bugs.md](/bugs.md#1986august-readmemd).
+
+
 ## Try:
 
 ```sh
 ./august
 ```
 
-NOTE: this entry is very likely to core dump after its output.
 
 ## Judges' remarks:
 
