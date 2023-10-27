@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# gen_file_list.sh - generate tmp/file_list.txt for entry directories under a year
+# gen_file_list.sh - generate tmp/file_list.found.txt for entry directories under a year
 #
 # Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
 #
@@ -122,7 +122,7 @@ fi
 # move to TOPDIR
 #
 cd "$TOPDIR" || echo "$0: ERROR: cd $TOPDIR failed, error code: $status" 1>&2 || exit 10
-export FILE_LIST="tmp/file_list.txt"
+export FILE_LIST="tmp/file_list.found.txt"
 
 # make clobber
 #
@@ -135,7 +135,7 @@ fi
 
 # find files under 4 character dirs
 #
-TMPFILE="tmp/tmp.file_list.txt.$$"
+TMPFILE="tmp/tmp.file_list.found.txt.$$"
 trap 'rm -f $TMPFILE; exit' 0 1 2 3 15
 find -- ???? -mindepth 2 -type f -print | sort -d > "$TMPFILE"
 if [[ ! -s $TMPFILE ]]; then

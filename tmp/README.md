@@ -350,7 +350,7 @@ entries where the "created_by" (5th) field is non-null.  See
 This file is formed by the [fix_numbers_csv.sh](fix_numbers_csv.sh) tool.
 
 
-### [file_list.txt](file_list.txt)
+### [file_list.found.txt](file_list.found.txt)
 
 A list of files that exist, or should exist once the tools to generate certain files,
 such as the `index.html`, or the `.winner.json` files for each entry, are created.
@@ -413,7 +413,10 @@ rm -rf ../author ; ./gen_author_json.sh  author_handle.txt author.csv author_win
 
 ### [gen_file_list.sh](gen_file_list.sh)
 
-After doing a `make clobber` this tool updates, if needed, [file_list.txt](file_list.txt).
+The list of paths of files in winners.
+
+After doing a `make clobber` this tool updates, if needed,
+form [file_list.found.txt](file_list.found.txt).
 
 
 ### [manifest.numbers](manifest.numbers)
