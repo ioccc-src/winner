@@ -355,7 +355,7 @@ This file is formed by the [fix_numbers_csv.sh](fix_numbers_csv.sh) tool.
 A list of files that exist, or should exist once the tools to generate certain files,
 such as the `index.html`, or the `.winner.json` files for each entry, are created.
 
-This file is created by [gen_file_list.sh}(gen_file_list.sh).
+This file is created by [gen_file_list.found.sh](gen_file_list.found.sh).
 
 
 ### [fix_numbers_csv.sh](fix_numbers_csv.sh)
@@ -411,7 +411,7 @@ rm -rf ../author ; ./gen_author_json.sh  author_handle.txt author.csv author_win
 ```
 
 
-### [gen_file_list.sh](gen_file_list.sh)
+### [gen_file_list.found.sh](gen_file_list.found.sh)
 
 The list of paths of files in winners.
 

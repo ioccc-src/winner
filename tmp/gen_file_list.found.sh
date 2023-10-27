@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# gen_file_list.sh - generate tmp/file_list.found.txt for entry directories under a year
+# gen_file_list.found.sh - generate tmp/file_list.found.txt for entry directories under a year
 #
 # Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
 #
