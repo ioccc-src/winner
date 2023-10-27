@@ -8,6 +8,10 @@ Dave Decot
 make all
 ```
 
+NOTE: there is an [alternate version](#alternate-code) which will only work if
+you have an old enough compiler or a compiler that supports `-traditional-cpp`.
+The original code was fixed in 2023 to not require this.
+
 ## To use:
 
 ```sh
@@ -18,7 +22,7 @@ make all
 
 This alternate code, the original, requires a compiler that supports
 `-traditional-cpp` or an old enough compiler. If you have such a compiler you
-can use this entry.
+can use this version.
 
 ### Alternate build:
 
@@ -55,7 +59,12 @@ for(signal=0;*k *x * __FILE__ *i;) do {
 ```
 
 To see what we mean look at the [original source file](decot.orig.c). The
-[alternate code](decot.alt.c) is the version that we modified.
+[alternate code](decot.alt.c) is the version that has this modification. The
+fixed version has instead:
+
+```c
+for(signal=0;*k *= * __FILE__ *i;) do {
+```
 
 
 ## Author's remarks:
