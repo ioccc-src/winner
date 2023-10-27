@@ -320,6 +320,8 @@ names found in [example.dot_winner.json](example.dot_winner.json).
 A list of files that exist, or should exist once the tools to generate certain files,
 such as the `index.html`, or the `.winner.json` files for each entry, are created.
 
+This file is created by [gen_file_list.sh}(gen_file_list.sh).
+
 
 ### [fix_numbers_csv.sh](fix_numbers_csv.sh)
 
@@ -372,6 +374,11 @@ The following command, executed in this directory, created the `author/` directo
 ```sh
 rm -rf ../author ; ./gen_author_json.sh  author_handle.txt author.csv author_wins.csv ../author
 ```
+
+
+### [gen_file_list.sh](gen_file_list.sh)
+
+After doing a `make clobber` this tool updates, if needed, [file_list.txt](file_list.txt).
 
 
 ### [manifest.numbers](manifest.numbers)
