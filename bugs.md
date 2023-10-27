@@ -506,48 +506,6 @@ Whether or not it is worth making the entry itself (since the output is correct)
 this alt version is to be determined later but it's might very well not be.
 
 
-## [1986/holloway](1986/holloway/holloway.c) ([README.md](1986/holloway/README.md))
-### STATUS: INABIAF - please **DO NOT** fix
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this for modern
-systems but he points out a warning that should NOT be fixed; he experimented
-with trying to fix it but it did not work, either segfaulting or not displaying
-the correct output. Thus:
-
-
-```c
-holloway.c:15:11: warning: incompatible pointer types initializing 'char *' with an expression of type 'char **'; dereference with * [-Wincompatible-pointer-types]
-    char *t = s;
-          ^   ~
-              *
-```
-
-is NOT a problem and should NOT be changed. Neither are:
-
-```c
-holloway.c:14:1: warning: return type defaults to 'int' [-Wreturn-type]
-   14 | main(m1,s) char **s; {
-      | ^~~~
-holloway.c: In function 'main':
-holloway.c:14:1: warning: type of 'm1' defaults to 'int' [-Wmissing-parameter-type]
-holloway.c:15:15: warning: initialization of 'char *' from incompatible pointer type 'char **' [-Wincompatible-pointer-types]
-   15 |     char *t = s;
-      |               ^
-holloway.c:23:22: warning: this statement may fall through [-Wimplicit-fallthrough=]
-   23 |             for(a=f;a<j;++a)if(tab1[a]&&!(tab1[a]%((long)l(n))))return(a);
-      |                      ^
-holloway.c:24:9: note: here
-   24 |         case g:
-      |         ^~~~
-holloway.c:34:1: warning: control reaches end of non-void function [-Wreturn-type]
-   34 | }
-      | ^
-
-```
-
-or any others.
-
-
 # 1987
 
 
