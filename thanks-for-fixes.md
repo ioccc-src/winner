@@ -2351,6 +2351,39 @@ debugging it since it works with `-O0`.
 He also added the script [demo.sh](2019/karns/demo.sh) to showcase the entry a
 bit more easily.
 
+## [2020/endoh3](2020/endoh3/prog.c) ([README.md](2020/endoh3/README.md))
+
+Cody fixed the script [run_clock.sh](2020/endoh3/run_clock.sh) which gave a
+funny error when running it:
+
+```sh
+$ ./run_clock.sh 
+-bash: ./run_clock.sh: cannot execute: required file not found
+```
+
+If run from within vim a different error message occurred:
+
+```
+/bin/bash: ./run_clock.sh: /usr/bin/end: bad interpreter: No such file or directory
+```
+
+though this was only noticed later on after it was fixed.
+
+What was wrong? A typo in the shebang which had `/usr/bin/end` instead of
+`/usr/bin/env`. Anyone who knows Cody would know that he'd zoom in on that quite
+quick.
+
+Cody also reported (during the preview period of 2020) for some systems (at some
+point?) like macOS the use of `make clock` would not work due possibly to a
+timing issue so Yusuke changed it to compile the [clock.c](2020/endoh3/clock.c)
+file directly (this might have been fixed in the Makefile later on but it
+doesn't hurt to keep it in and this way it isn't a problem in any system). How
+Cody remembers this minor detail more than three years ago is something that
+many people might wonder but he also once told us that if someone moves
+something of his even a millimetre from where it was he knows it so he might be
+called unusual (and he argues, with pride, eccentric :-) ) :-)
+
+
 ## [2020/ferguson2](2020/ferguson1/prog.c) ([README.md](2020/ferguson1/README.md))
 
 Cody, with intentional irony here :-), fixed formatting, links and typos in
