@@ -363,65 +363,65 @@ Some of the changes required:
 
 - Instead of using the `c_`, defined as `c_(cc)c cc=`, like:
 
-	c_(+)o
+	    c_(+)o
 
-	/* ... */
+	    /* ... */
 
-	:c_(+)' '-1;
-	}}c_(&)'z'+5;
+	    :c_(+)' '-1;
+	    }}c_(&)'z'+5;
 
     use:
 
-	:c +=o[c&__LINE__-007];
+	    :c +=o[c&__LINE__-007];
 
-	/* ... */
+	    /* ... */
 
-	:c+=' '-1;
-	}}c&='z'+5;
+	    :c+=' '-1;
+	    }}c&='z'+5;
 
     Observe however that this macro is still used in the code like:
 
-	main(;c_(=(*cc);*cc++)c,for);
+	   main(;c_(=(*cc);*cc++)c,for);
 
 - Instead of code like:
 
-	main(0xb+(c>>5),C_(s))
-	_'\v'
-	:__ _'\f':
-	main(c,C_(s));
+	    main(0xb+(c>>5),C_(s))
+	    _'\v'
+	    :__ _'\f':
+	    main(c,C_(s));
 
     use instead:
 
-	main(;c_(=(*cc);*cc++)c,for);
-	#define _O(s)s
-	switch(0xb+(c>>5)){
-	_'\v'
-	:__ _'\f':
-	switch(c){;
+	    main(;c_(=(*cc);*cc++)c,for);
+	    #define _O(s)s
+	    switch(0xb+(c>>5)){
+	    _'\v'
+	    :__ _'\f':
+	    switch(c){;
 
 - The macro:
 
-	#define C_(sand)_O(sand)witch
+	    #define C_(sand)_O(sand)witch
 
     could not be used like:
 
-	C_(s));_
+	    C_(s));_
 
     to create:
 
-	switch);_
+	    switch);_
 
     and neither could the macro:
 
-	#define O_(O)_O(O)stem(ccc(
+	    #define O_(O)_O(O)stem(ccc(
 
     be used like:
 
-	:O_(sy)";kkt -oa, dijszdijs QQ"))_C
+	    :O_(sy)";kkt -oa, dijszdijs QQ"))_C
 
     to create:
 
-	:system(ccc(";kkt -oa, dijszdijs QQ"));return
+	    :system(ccc(";kkt -oa, dijszdijs QQ"));return
 
 
 ## [1987/heckbert](1987/heckbert/heckbert.c) ([README.md](1987/heckbert/README.md))
