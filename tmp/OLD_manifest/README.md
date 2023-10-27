@@ -172,15 +172,6 @@ A `sort_word` match this regexp:
 ## files
 
 
-### [OLD_manifest](OLD_manifest)
-
-The files in the [OLD_manifest](OLD_manifest) were in the top of
-the tmp directory as of 2023 Oct 26.  They represent the first
-complete manifest that matched the winner file directories.
-
-These files in this directory are kept as a temporary snapshot for now.
-
-
 ### [README.md](README.md)
 
 This file.
@@ -300,16 +291,16 @@ award line as at a level 1 markdown header we found, or the `README.md`
 file is missing, etc.
 
 
-### [check_path_list.sh](check_path_list.sh)
+### [check_file_list.sh](check_file_list.sh)
 
-Look for problems with path_list.required.txt, path_list.manifest.txt,
-and path_list.found.txt files.   In particular, the files found in
+Look for problems with file_list.required.txt, file_list.full_manifest.txt,
+and file_list.found.txt files.   In particular, the files found in
 winning directories are compared with the list of required files
 as well as the complete manifest list of files.
 
-If all is OK, [check_path_list.sh](check_path_list.sh) exits 0 and prints
+If all is OK, [check_file_list.sh](check_file_list.sh) exits 0 and prints
 nothing.  If there are missing required files, or extra files found
-then [check_path_list.sh](check_path_list.sh) will exit non-zero and
+then [check_file_list.sh](check_file_list.sh) will exit non-zero and
 print information about problems.
 
 
@@ -331,15 +322,95 @@ A `year/dir/.winner.json` file will be derived from the contents the `year/dir/.
 the [author_wins.csv](author_wins.csv) file, the `year/dir/.year` file,  and the
 contents of the `year/dir` directory.
 
-The 11 field names in [manifest.numbers](manifest.numbers) match
-the JSON member names found in
-[example.dot_winner.json](example.dot_winner.json).
+The 11 field names in [manifest.numbers](manifest.numbers),
+[missing_manifest.numbers](missing_manifest.numbers), and
+[full_manifest.numbers](full_manifest.numbers) match the JSON member
+names found in [example.dot_winner.json](example.dot_winner.json).
 
 
-### [fix_manifest_csv.sh](fix_manifest_csv.sh)
+### [file_list.full_manifest.txt](file_list.full_manifest.txt)
 
-This tool will fix the [manifest.csv](manifest.csv) by
- removing carriage returns and appending a newline if it was missing.
+This is the list of file paths, both primary and constructed
+files from winners.
+
+This is the sorted combined [file_list.built.txt](file_list.built.txt)
+and [file_list.required.txt](file_list.required.txt) files.
+
+This file is formed by the [fix_numbers_csv.sh](fix_numbers_csv.sh) tool.
+
+
+### [file_list.built.txt](file_list.built.txt)
+
+A list of file paths (from the top directory) of winner directories,
+that are built from other primary content files.
+
+These paths are formed from [full_manifest.numbers](full_manifest.numbers)
+entries where the "created_by" (5th) field is null.  See
+[manifest.numbers](manifest.numbers) for details on the fields.
+
+This file is formed by the [fix_numbers_csv.sh](fix_numbers_csv.sh) tool.
+
+
+### [file_list.required.txt](file_list.required.txt)
+
+A list of file paths (from the top directory) of winner directories,
+that are required to exist.
+
+These paths are formed from [full_manifest.numbers](full_manifest.numbers)
+entries where the "created_by" (5th) field is non-null.  See
+[manifest.numbers](manifest.numbers) for details on the fields.
+
+This file is formed by the [fix_numbers_csv.sh](fix_numbers_csv.sh) tool.
+
+
+### [file_list.found.txt](file_list.found.txt)
+
+A list of files that exist, or should exist once the tools to generate certain files,
+such as the `index.html`, or the `.winner.json` files for each entry, are created.
+
+This file is created by [gen_file_list.found.sh](gen_file_list.found.sh).
+
+
+### [fix_numbers_csv.sh](fix_numbers_csv.sh)
+
+This tool will fix the [manifest.csv](manifest.csv) and [missing_manifest.csv](missing_manifest.csv)
+files, removing carriage returns and appending a newline if it was missing.
+
+This tool also creates / updates [full_manifest.csv](full_manifest.csv).
+
+
+### [full_manifest.csv](full_manifest.csv)
+
+Combined and sorted [manifest.csv](manifest.csv) and [missing_manifest.csv](missing_manifest.csv).
+
+This file is formed by the [fix_numbers_csv.sh](fix_numbers_csv.sh) tool.
+
+See [manifest.numbers](manifest.numbers) for information on this file format
+as it has the exact same format.
+
+In case of conflict, the data in [full_manifest.csv](full_manifest.csv) file is
+considered authoritative over the [full_manifest.numbers](full_manifest.numbers) file.
+
+
+### [full_manifest.numbers](full_manifest.numbers)
+
+This file is formed by opening [manifest.csv](manifest.csv) in numbers
+and saving the result as a numbers file.
+
+In case of conflict, the data in [full_manifest.csv](full_manifest.csv) file is
+considered authoritative over the [full_manifest.numbers](full_manifest.numbers) file.
+
+**NOTE**: Due to the way that the macOS numbers program imports CSV
+files, some values of false may be turned into FALSE, some values
+of true may be turned into TRUE, and some values of null may be
+turned into NULL.  JSON does not allow UPPER case FALSE, nor TRUE,
+nor NULL, so the UPPER case values of fields should be used in JSON
+in their lower case form.
+
+The 11 field names in [manifest.numbers](manifest.numbers),
+[missing_manifest.numbers](missing_manifest.numbers), and
+[full_manifest.numbers](full_manifest.numbers) match the JSON member
+names found in [example.dot_winner.json](example.dot_winner.json).
 
 
 ### [gen_author_json.sh](gen_author_json.sh)
@@ -353,20 +424,20 @@ rm -rf ../author ; ./gen_author_json.sh  author_handle.txt author.csv author_win
 ```
 
 
-### [gen_path_list.found.sh](gen_path_list.found.sh)
+### [gen_file_list.found.sh](gen_file_list.found.sh)
 
 The list of paths of files in winners.
 
 After doing a `make clobber` this tool updates, if needed,
-form [path_list.found.txt](path_list.found.txt).
+form [file_list.found.txt](file_list.found.txt).
 
 
 ### [manifest.numbers](manifest.numbers)
 
 
 A [macOS](https://www.apple.com/macos) [Numbers](https://www.apple.com/numbers/)
-spreadsheet contains information about files in winner directories under year directories.
-This file as the following fields:
+spreadsheet contains information about files, that must already exist, with the
+following fields:
 
 1. year:
 
@@ -401,6 +472,18 @@ This file as the following fields:
    of the primary content.  A non-null created_by value indicates
    that the contents of the file is created by given program from
    primary content files.
+
+   NOTE: The created_by values for [manifest.numbers](manifest.numbers)
+   MUST always be null.  This is because every file with primary
+   content (i.e., content not created by some tool) MUST be listed
+   in the [manifest.numbers](manifest.numbers) file and MUST NOT
+   listed in the [missing_manifest.numbers](missing_manifest.numbers) file.
+
+   NOTE: The created_by values for [missing_manifest.numbers](missing_manifest.numbers) '
+   MUST always be non-null.  This is because every file that is NOT a primary
+   content file (i.e., content that is created by some tool) MUST
+   be listed in the [missing_manifest.numbers](missing_manifest.numbers)
+   file and MUST NOT listed in the  [manifest.numbers](manifest.numbers) file.
 
 6. prog:
 
@@ -449,9 +532,10 @@ This file as the following fields:
     Any text that should be displayed at the end of line in `winners.html`
     (with a preceding " - "), or null is no such text is to be displayed.
 
-The 11 field names in [manifest.numbers](manifest.numbers), must
-match the JSON member names found in
-[example.dot_winner.json](example.dot_winner.json).
+The 11 field names in [manifest.numbers](manifest.numbers),
+[missing_manifest.numbers](missing_manifest.numbers), and
+[full_manifest.numbers](full_manifest.numbers) match the JSON member
+names found in [example.dot_winner.json](example.dot_winner.json).
 
 NOTE: Cells containing null are a JSON NULLs.
 NOTE: Cells containing true or false are JSON booleans.
@@ -476,7 +560,7 @@ The [manifest.csv](manifest.csv) is generated from the [manifest.numbers](manife
 via the [macOS](https://www.apple.com/macos/)
 [Numbers](https://www.apple.com/numbers/) spreadsheet app, as follows:
 
-0. open [manifest.numbers](manifest.numbers) in numbers: modify if/as needed
+0. open [manifest.csv](manifest.csv) in numbers: modify if/as needed
 
 1. File -> Export To -> CSV...
     * 1a. `[ ]` Include table names (unset)
@@ -489,67 +573,59 @@ via the [macOS](https://www.apple.com/macos/)
 3. Click ((Export))
     * 3a. If needed click ((Replace))
 
-4. execute ./[fix_manifest_csv.sh](fix_manifest_csv.sh)
+4. execute ./[fix_numbers_csv.sh](fix_numbers_csv.sh)
 
 
-### [path_list.built.txt](path_list.built.txt)
+### [missing_manifest.numbers](missing_manifest.numbers)
 
-A list of file paths (from the top directory) of winner directories,
-that are built from other primary content files.
+A [macOS](https://www.apple.com/macos) [Numbers](https://www.apple.com/numbers/)
+spreadsheet contains information about files, that may not yet exist because
+a tool needs to create it, with the following fields:
 
-These paths are formed from [manifest.numbers](manifest.numbers)
-entries where the "created_by" (5th) field is null.  See
-[manifest.numbers](manifest.numbers) for details on the fields.
+In case of conflict, the data in [missing_manifest.numbers](missing_manifest.numbers) file is
+considered authoritative over the [missing_manifest.csv](missing_manifest.csv) file.
 
-This file is formed by the [fix_manifest_csv.sh](fix_manifest_csv.sh) tool.
+See [manifest.numbers](manifest.numbers) for information on this file format
+as it has the exact same format.
 
-
-### [path_list.found.txt](path_list.found.txt)
-
-A list of files that exist, or should exist once the tools to generate certain files,
-such as the `index.html`, or the `.winner.json` files for each entry, are created.
-
-This file is created by [gen_path_list.found.sh](gen_path_list.found.sh).
+The 11 field names in [manifest.numbers](manifest.numbers),
+[missing_manifest.numbers](missing_manifest.numbers), and
+[full_manifest.numbers](full_manifest.numbers) match the JSON member
+names found in [example.dot_winner.json](example.dot_winner.json).
 
 
-### [path_list.manifest.txt](path_list.manifest.txt)
+### [missing_manifest.csv](missing_manifest.csv)
 
-This is the list of file paths, both primary and constructed
-files from winners.
+The [missing_manifest.csv](missing_manifest.csv) is a CSV file that was exported from the
+[missing_manifest.numbers](missing_manifest.numbers) file.
 
-This file is formed by the [fix_manifest_csv.sh](fix_manifest_csv.sh) tool.
+In case of conflict, the data in [missing_manifest.numbers](missing_manifest.numbers) file is
+considered authoritative over the [missing_manifest.csv](missing_manifest.csv) file.
 
+The [missing_manifest.csv](missing_manifest.csv) is generated from the [missing_manifest.numbers](missing_manifest.numbers) file,
+via the [macOS](https://www.apple.com/macos/)
+[Numbers](https://www.apple.com/numbers/) spreadsheet app, as follows:
 
-### [path_list.required.txt](path_list.required.txt)
+0. open [missing_manifest.csv](missing_manifest.csv) in numbers: modify if/as needed
 
-A list of file paths (from the top directory) of winner directories,
-that are required to exist.
+1. File -> Export To -> CSV...
+    * 1a. `[ ]` Include table names (unset)
+    * 1b. Text Encoding: Unicode (UTF-8)
+    * 1c. Click ((Save..))
 
-These paths are formed from [manifest.numbers](manifest.numbers)
-entries where the "created_by" (5th) field is non-null.  See
-[manifest.numbers](manifest.numbers) for details on the fields.
+2. Save As: missing_manifest.csv
+    * 2a. Select the `tmp` directory
 
-This file is formed by the [fix_manifest_csv.sh](fix_manifest_csv.sh) tool.
+3. Click ((Export))
+    * 3a. If needed click ((Replace))
+
+4. execute ./[fix_numbers_csv.sh](fix_numbers_csv.sh)
 
 
 ### [sql/winners.sql](sql/winners.sql)
 
 This is a SQL file, extracted from another SQL file that was used in the past
 to generate data for the old winners directory tree.
-
-
-### [src](src)
-
-This is a temporary location for potential tools that are used to
-build and maintain the www.ioccc.org web site.
-
-Eventually a separate build-ioccc repo will hold these tools.
-
-
-### [winner_dir.txt](winner_dir.txt)
-
-A list of paths to winner directories that reside
-under year directories.
 
 
 ### [winner_id.txt](winner_id.txt)
