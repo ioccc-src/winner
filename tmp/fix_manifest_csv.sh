@@ -16,8 +16,6 @@
 export MANIFEST_CSV="manifest.csv"
 export TMP_CSV
 
-# fix manifest CSV
-#
 if [[ ! -f $MANIFEST_CSV ]]; then
     echo "$0: ERROR: MANIFEST_CSV is missing: $MANIFEST_CSV" 1>&2
     exit 10
@@ -46,9 +44,12 @@ if [[ $status -ne 0 ]]; then
     exit 13
 fi
 if [[ ! -s $TMP_CSV ]]; then
-    printf "$0: ERROR: TMP_CSV: tr -d '\\\015' < %s > %s produced a empty file" "$MANIFEST_CSV" "$TMP_CSV" 1>&2
+    printf "$0: ERROR: TMP_CSV: tr -d '\\\015' < %s > %s produced an empty file" "$MANIFEST_CSV" "$TMP_CSV" 1>&2
     exit 14
 fi
+
+# fix manifest CSV
+#
 
 # sort manifest CSV file
 #

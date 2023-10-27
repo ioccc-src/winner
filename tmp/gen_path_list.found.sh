@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #
-# gen_path_list.found.sh - generate tmp/path_list.found.txt for entry directories under a year
+# gen_path_list.found.sh - generate tmp/path_list.found.txt for entry
+# directories under a year
 #
 # XXX - This is a temporary utility that will be replaced when
 #	the .winner.json files are built
