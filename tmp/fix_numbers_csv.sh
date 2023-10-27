@@ -129,7 +129,7 @@ fi
 export REQUIRED_FILE_LIST="file_list.required.txt"
 export TMP_FILE="tmp.$$.$REQUIRED_FILE_LIST"
 trap 'rm -f $TMP_FILE; exit' 0 1 2 3 15
-awk -F, '$1 !~ "^#" && $5 == "null" { print $1 "/" $2 "/" $4; }' "$FULL_MANIFEST_CSV" | sort -u -k1d > "$TMP_FILE"
+awk -F, '$1 !~ "^#" && $5 == "null" { print $1 "/" $2 "/" $4; }' "$FULL_MANIFEST_CSV" | sort -t/ > "$TMP_FILE"
 if [[ ! -s $TMP_FILE ]]; then
     echo "$0: ERROR: TMP_FILE, for required file list, is empty: $TMP_CSV" 1>&2
     exit 19
@@ -162,7 +162,7 @@ fi
 export BUILT_FILE_LIST="file_list.built.txt"
 export TMP_FILE="tmp.$$.$BUILT_FILE_LIST"
 trap 'rm -f $TMP_FILE; exit' 0 1 2 3 15
-awk -F, '$1 !~ "^#" && $5 != "null" { print $1 "/" $2 "/" $4; }' "$FULL_MANIFEST_CSV" | sort -u -k1d > "$TMP_FILE"
+awk -F, '$1 !~ "^#" && $5 != "null" { print $1 "/" $2 "/" $4; }' "$FULL_MANIFEST_CSV" | sort -t/ > "$TMP_FILE"
 if [[ ! -s $TMP_FILE ]]; then
     echo "$0: ERROR: TMP_FILE, for built file list, is empty: $TMP_CSV" 1>&2
     exit 22
@@ -195,7 +195,7 @@ fi
 export FULL_MANIFEST_LIST="file_list.full_manifest.txt"
 export TMP_FILE="tmp.$$.$BUILT_FILE_LIST"
 trap 'rm -f $TMP_FILE; exit' 0 1 2 3 15
-cat "$REQUIRED_FILE_LIST" "$BUILT_FILE_LIST" | sort -u -k1d > "$TMP_FILE"
+cat "$REQUIRED_FILE_LIST" "$BUILT_FILE_LIST" | sort -t/ > "$TMP_FILE"
 if [[ ! -s $TMP_FILE ]]; then
     echo "$0: ERROR: TMP_FILE, for full_manifest file list, is empty: $TMP_CSV" 1>&2
     exit 25

@@ -137,7 +137,7 @@ fi
 #
 TMPFILE="tmp/tmp.file_list.found.txt.$$"
 trap 'rm -f $TMPFILE; exit' 0 1 2 3 15
-find -- ???? -mindepth 2 -type f -print | sort -d > "$TMPFILE"
+find -- ???? -mindepth 2 -type f -print | sort -t/ > "$TMPFILE"
 if [[ ! -s $TMPFILE ]]; then
     echo "$0: ERROR: TMPFILE: $TMPFILE is empty" 1>&2
     exit 12
