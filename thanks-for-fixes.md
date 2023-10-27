@@ -856,8 +856,8 @@ more like the original in this way by redefining `free` to have the comma
 operator itself.
 
 Cody fixed another compiler error by removing the erroneous prototype to
-`fopen()`.  Cody also changed a file to be a proper `FILE *` and fixed a typo in
-[LANDER.BAS](1990/dds/LANDER.BAS).
+`fopen()`.  Cody also changed a `char *` used for file I/O to be a proper `FILE
+*` and fixed a typo in [LANDER.BAS](1990/dds/LANDER.BAS).
 
 Cody also made this use `fgets()` instead of `gets()` to make it safer and to
 prevent an annoying and potentially alarming warning at compiling and/or linking
@@ -973,7 +973,7 @@ slightly more like the original, even though it's unused.
 
 Cody fixed a segfault that prevented this entry from working in any condition
 and he also made it work for clang. Clang (at least in some systems?) defaults
-to having `-Wno-error` and the code that the entry generates had some warnings
+to having `-Werror` and the code that the entry generates had some warnings
 that were causing compilation to fail as it just ran `cc a.c`. It ran it by what
 was once `system(q-6);` but with clang this was not enough..
 
