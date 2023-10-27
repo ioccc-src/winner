@@ -1447,9 +1447,31 @@ like the original entry but with the two fixes.
 Cody fixed the code and added an appropriate make rule so that the SDL version
 works independent from the curses version (using the same code).
 
-To see the craziness of the SDL fix (because of a terrible design choice of the
-SDL1 developers) see the log for commit
-dd0b26b5d6325e8b6fdef1232156c8bb8c66613f. Be prepared for a surprise!
+Due to a terrible design choice of the SDL1 developers something had to be
+changed. As was noted in the log:
+
+```
+The SDL version did not work for a number of reasons. First of all the
+code requires that SDL is defined. Second the path wrong header file was
+included. Third the SDL1 developers thought it would be a great idea
+(but obviously it's a terrible idea) to redefine main() (!!) so that any
+program that uses SDL1 has to have the same args as their definition.
+This program had 'main()' so the error message was:
+
+    thadgavin.c:60:1: error: conflicting types for 'SDL_main'
+    main()
+    ^
+    /opt/local/include/SDL/SDL_main.h:34:14: note: expanded from macro 'main'
+    #define main SDL_main
+		 ^
+    /opt/local/include/SDL/SDL_main.h:35:12: note: previous declaration is here
+    extern int SDL_main(int argc, char *argv[]);
+	       ^
+    1 warning and 1 error generated.
+    make: *** [thadgavin_sdl] Error 1
+
+Thus main() was changed to 'int main(int argc, char **argv)'.
+```
 
 Cody also added an alternate version to help see what is going on in more modern
 systems and in case you're sensitive to rapidly moving swirling. See the
@@ -1464,10 +1486,11 @@ Cody fixed both the supplementary program and the program itself (both of which
 segfaulted and once that was fixed only the binary was modified; it was not run
 but according to the author's remarks it should be executed). He managed to do
 this with linux but it will not work with any system that does not allow one to
-compile 32-bit binaries such as macOS. See [bugs.md](/bugs.md) for why this is;
-_this is **not** a bug, it's a feature_ inherent in what it does!
+compile 32-bit binaries such as macOS. See
+[bugs.md](/bugs.md#2001anonymous-readmemd) for why this is; _this is **not** a
+bug, it's a feature_ inherent in what it does!
 
-Below is what it took to fix.
+The following had to be done to fix this:
 
 - `#include <sys/mman.h>` for `mmap()` and `munmap()`.
 - have `main()` call another function which is no longer a recursive function;
@@ -1530,9 +1553,15 @@ Finally to see from start to finish:
 git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..4bc03de321612869aebf855850c6500df95cb6ef anonymous.c
 ```
 
+or to not use `git`:
+
+```sh
+make diff_orig_prog
+```
+
 Cody also added a [program](anonymous.bed.c) like [anonymous.ten.c](anonymous.ten.c)
 [Ten Green Bottles](https://en.wikipedia.org/wiki/Ten_Green_Bottles) but which
-sings [Ten in the Bed](https://allnurseryrhymes.com/ten-in-the-bed/).
+sings [Ten in the Bed](https://allnurseryrhymes.com/ten-in-the-bed/) instead.
 
 As well he added the [try.me.sh](2001/anonymous/try.me.sh) so that one can
 attempt to use the program as it was designed but if compiling as 32-bit fails
@@ -1607,19 +1636,19 @@ void e(n,h){
 
 ```
 
-One fix would be to disable that warning. Another one might be to change the C
-standard. The one that was done, to make it more portable, was to just add 'int'
-to the function parameters.
+The easiest fix is to just disable the warning which is what was done.
+Originally the code was changed to use `int` but to make it more like the
+original this was undone.
 
-Thanks go to Yusuke for providing a proper command line for macOS (to do with
-sound; see his [/2013/endoh3/README.md](2013/endoh3/README.md) entry where he
-also refers to sound devices in macOS).
+Yusuke for providing a proper command line for macOS (to do with sound; see his
+[/2013/endoh3/README.md](2013/endoh3/README.md) entry where he also refers to
+sound devices in macOS).
 
 
 ## [2001/ctk](2001/ctk/ctk.c) ([README.md](2001/ctk/README.md]))
 
 The ANSI escape codes were no longer valid but Yusuke provided a patch to fix
-the ANSI escape codes. This works with macOS as well.
+the ANSI escape codes. Cody tested this for macOS and it works fine.
 
 
 ## [2001/dgbeards](2001/dgbeards/dgbeards.c) ([README.md](2001/dgbeards/README.md]))
