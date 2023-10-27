@@ -241,9 +241,12 @@ can enjoy this entry. Try:
 ```sh
 make alt
 ./mullender.alt [microseconds]
+./mullender.alt2 [microseconds]
 ```
 
-The microseconds defaults to 10000.
+The microseconds defaults to 10000 but has a minimum value of 1000. The
+`mullender.alt2` is like the first alt except that it will start over once the
+program times out.
 
 Thank you Cody!
 

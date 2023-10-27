@@ -40,7 +40,8 @@ main(argc, argv) char **argv;
 		fmt = "0x%x"; break;
 	}
 
-	if (32 <= n && n < 127 && (rand() % 4)) fmt = "'%c'";
+	if (n == '\\' || n == '\'') fmt = "'\\%c'";
+	else if (32 <= n && n < 127 && (rand() % 4)) fmt = "'%c'";
 	printf(n < 8 ? "%d" : fmt, n);
 	printf(",");
 	if (pos++ == 8) {
