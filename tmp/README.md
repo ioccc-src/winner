@@ -315,6 +315,17 @@ The 11 field names in [manifest.numbers](manifest.numbers),
 names found in [example.dot_winner.json](example.dot_winner.json).
 
 
+### [file_list.full_manifest.txt](file_list.full_manifest.txt)
+
+This is the list of file paths, both primary and constructed
+files from winners.
+
+This is the sorted combined [file_list.built.txt](file_list.built.txt)
+and [file_list.required.txt](file_list.required.txt) files.
+
+This file is formed by the [fix_numbers_csv.sh](fix_numbers_csv.sh) tool.
+
+
 ### [file_list.built.txt](file_list.built.txt)
 
 A list of file paths (from the top directory) of winner directories,
@@ -323,6 +334,8 @@ that are built from other primary content files.
 These paths are formed from [full_manifest.numbers](full_manifest.numbers)
 entries where the "created_by" (5th) field is null.  See
 [manifest.numbers](manifest.numbers) for details on the fields.
+
+This file is formed by the [fix_numbers_csv.sh](fix_numbers_csv.sh) tool.
 
 
 ### [file_list.required.txt](file_list.required.txt)
@@ -333,6 +346,8 @@ that are required to exist.
 These paths are formed from [full_manifest.numbers](full_manifest.numbers)
 entries where the "created_by" (5th) field is non-null.  See
 [manifest.numbers](manifest.numbers) for details on the fields.
+
+This file is formed by the [fix_numbers_csv.sh](fix_numbers_csv.sh) tool.
 
 
 ### [file_list.txt](file_list.txt)

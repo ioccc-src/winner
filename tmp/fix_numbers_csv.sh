@@ -130,16 +130,20 @@ export REQUIRED_FILE_LIST="file_list.required.txt"
 export TMP_FILE="tmp.$$.$REQUIRED_FILE_LIST"
 trap 'rm -f $TMP_FILE; exit' 0 1 2 3 15
 awk -F, '$1 !~ "^#" && $5 = "null" { print $1 "/" $2 "/" $4; }' "$FULL_MANIFEST_CSV" | sort -u -k1d > "$TMP_FILE"
+if [[ ! -s $TMP_FILE ]]; then
+    echo "$0: ERROR: TMP_FILE, for required file list, is empty: $TMP_CSV" 1>&2
+    exit 19
+fi
 if ! cmp -s "$TMP_FILE" "$REQUIRED_FILE_LIST"; then
 
-    # replace build required file
+    # replace required file
     #
     echo "$0: updating $REQUIRED_FILE_LIST"
     mv -f -v "$TMP_FILE" "$REQUIRED_FILE_LIST"
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: mv -f -v $TMP_FILE $REQUIRED_FILE_LIST failed, error: $status" 1>&2
-	exit 19
+	exit 20
     fi
 
 else
@@ -149,7 +153,7 @@ else
     rm -f "$TMP_FILE"
     if [[ -e $TMP_CSV ]]; then
 	echo "$0: ERROR: TMP_FILE cannot be removed for cleanup: $TMP_FILE" 1>&2
-	exit 20
+	exit 21
     fi
 fi
 
@@ -159,16 +163,20 @@ export BUILT_FILE_LIST="file_list.built.txt"
 export TMP_FILE="tmp.$$.$BUILT_FILE_LIST"
 trap 'rm -f $TMP_FILE; exit' 0 1 2 3 15
 awk -F, '$1 !~ "^#" && $5 != "null" { print $1 "/" $2 "/" $4; }' "$FULL_MANIFEST_CSV" | sort -u -k1d > "$TMP_FILE"
+if [[ ! -s $TMP_FILE ]]; then
+    echo "$0: ERROR: TMP_FILE, for built file list, is empty: $TMP_CSV" 1>&2
+    exit 22
+fi
 if ! cmp -s "$TMP_FILE" "$BUILT_FILE_LIST"; then
 
-    # replace build built file
+    # replace built file
     #
     echo "$0: updating $BUILT_FILE_LIST"
     mv -f -v "$TMP_FILE" "$BUILT_FILE_LIST"
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: mv -f -v $TMP_FILE $BUILT_FILE_LIST failed, error: $status" 1>&2
-	exit 21
+	exit 23
     fi
 
 else
@@ -178,7 +186,40 @@ else
     rm -f "$TMP_FILE"
     if [[ -e $TMP_CSV ]]; then
 	echo "$0: ERROR: TMP_FILE cannot be removed for cleanup: $TMP_FILE" 1>&2
-	exit 22
+	exit 24
+    fi
+fi
+
+# build full_manifest file list
+#
+export FULL_MANIFEST_LIST="file_list.full_manifest.txt"
+export TMP_FILE="tmp.$$.$BUILT_FILE_LIST"
+trap 'rm -f $TMP_FILE; exit' 0 1 2 3 15
+cat "$REQUIRED_FILE_LIST" "$BUILT_FILE_LIST" | sort -u -k1d > "$TMP_FILE"
+if [[ ! -s $TMP_FILE ]]; then
+    echo "$0: ERROR: TMP_FILE, for full_manifest file list, is empty: $TMP_CSV" 1>&2
+    exit 25
+fi
+if ! cmp -s "$TMP_FILE" "$FULL_MANIFEST_LIST"; then
+
+    # replace full_manifest file
+    #
+    echo "$0: updating $FULL_MANIFEST_LIST"
+    mv -f -v "$TMP_FILE" "$FULL_MANIFEST_LIST"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: mv -f -v $TMP_FILE $FULL_MANIFEST_LIST failed, error: $status" 1>&2
+	exit 26
+    fi
+
+else
+
+    # full_manifest file list is OK, remove the tmp file
+    #
+    rm -f "$TMP_FILE"
+    if [[ -e $TMP_CSV ]]; then
+	echo "$0: ERROR: TMP_FILE cannot be removed for cleanup: $TMP_FILE" 1>&2
+	exit 27
     fi
 fi
 
