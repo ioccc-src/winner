@@ -58,6 +58,7 @@
 1985,august,20,august.c,null,main,c,true,github,winning source,c
 1985,august,30,Makefile,null,null,makefile,true,github,how to compile,null
 1985,august,50,august.orig.c,null,orig,c,true,github,original source,c
+1985,august,100,primes.sh,null,null,shellscript,true,github,how to run if you have the primes utility,sh
 1985,august,300,1985_august.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1985,lycklama,null,README.md,null,null,markdown,false,null,null,md
 1985,lycklama,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
@@ -122,6 +123,7 @@
 1986,hague,10,index.html,readme2index,null,html,true,browser,click here first,html
 1986,hague,20,hague.c,null,main,c,true,github,winning source,c
 1986,hague,30,Makefile,null,null,makefile,true,github,how to compile,null
+1986,hague,40,hague.alt.c,null,null,c,true,github,alternative source,c
 1986,hague,50,hague.orig.c,null,orig,c,true,github,original source,c
 1986,hague,300,1986_hague.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1986,holloway,null,README.md,null,null,markdown,false,null,null,md
@@ -328,6 +330,7 @@
 1988,westley,30,Makefile,null,null,makefile,true,github,how to compile,null
 1988,westley,40,westley.alt.c,null,alt,c,true,github,alternative source,c
 1988,westley,50,westley.orig.c,null,orig,c,true,github,original source,c
+1988,westley,100,demo.sh,null,null,shellscript,true,github,how to run,sh
 1988,westley,300,1988_westley.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1989,fubar,null,README.md,null,null,markdown,false,null,null,md
 1989,fubar,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
@@ -359,6 +362,10 @@
 1989,jar.2,20,jar.2.c,null,main,c,true,github,winning source,c
 1989,jar.2,30,Makefile,null,null,makefile,true,github,how to compile,null
 1989,jar.2,50,jar.2.orig.c,null,orig,c,true,github,original source,c
+1989,jar.2,100,chocolate_cake.lisp,null,null,lisp,true,github,input file,lisp
+1989,jar.2,100,fib.lisp,null,null,lisp,true,github,input file,lisp
+1989,jar.2,100,try.me.sh,null,null,shellscript,true,github,how to run,sh
+1989,jar.2,100,try.me.txt,null,null,text,true,github,input file,txt
 1989,jar.2,300,1989_jar.2.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1989,ovdluhe,null,README.md,null,null,markdown,false,null,null,md
 1989,ovdluhe,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
@@ -377,6 +384,7 @@
 1989,paul,10,index.html,readme2index,null,html,true,browser,click here first,html
 1989,paul,20,paul.c,null,main,c,true,github,winning source,c
 1989,paul,30,Makefile,null,null,makefile,true,github,how to compile,null
+1989,paul,40,paul.alt.c,null,null,c,true,github,alternative source,c
 1989,paul,50,paul.orig.c,null,orig,c,true,github,original source,c
 1989,paul,300,1989_paul.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1989,robison,null,README.md,null,null,markdown,false,null,null,md
@@ -423,7 +431,12 @@
 1989,westley,10,index.html,readme2index,null,html,true,browser,click here first,html
 1989,westley,20,westley.c,null,main,c,true,github,winning source,c
 1989,westley,30,Makefile,null,null,makefile,true,github,how to compile,null
+1989,westley,40,westley.alt.c,null,null,c,true,github,alternative source,c
 1989,westley,50,westley.orig.c,null,orig,c,true,github,original source,c
+1989,westley,100,compile.alt.sh,null,null,shellscript,true,github,generate and compile alt versions,sh
+1989,westley,100,compile.sh,null,null,shellscript,true,github,generate and compile versions,sh
+1989,westley,100,try.alt.sh,null,null,shellscript,true,github,run alt versions,sh
+1989,westley,100,try.sh,null,null,shellscript,true,github,run versions,sh
 1989,westley,300,1989_westley.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1990,baruch,null,README.md,null,null,markdown,false,null,null,md
 1990,baruch,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
@@ -509,6 +522,7 @@
 1990,tbr,10,index.html,readme2index,null,html,true,browser,click here first,html
 1990,tbr,20,tbr.c,null,main,c,true,github,winning source,c
 1990,tbr,30,Makefile,null,null,makefile,true,github,how to compile,null
+1990,tbr,40,tbr.alt.c,null,null,c,true,github,alternative source,c
 1990,tbr,50,tbr.orig.c,null,orig,c,true,github,original source,c
 1990,tbr,300,1990_tbr.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1990,theorem,null,README.md,null,null,markdown,false,null,null,md
@@ -597,7 +611,6 @@
 1991,dds,10,index.html,readme2index,null,html,true,browser,click here first,html
 1991,dds,20,dds.c,null,main,c,true,github,winning source,c
 1991,dds,30,Makefile,null,null,makefile,true,github,how to compile,null
-1991,dds,40,dds.alt.c,null,alt,c,true,github,alternative source,c
 1991,dds,50,dds.orig.c,null,orig,c,true,github,original source,c
 1991,dds,150,LANDER.BAS,null,null,basic,true,github,BASIC source code,BAS
 1991,dds,300,1991_dds.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
@@ -609,6 +622,7 @@
 1991,fine,20,fine.c,null,main,c,true,github,winning source,c
 1991,fine,30,Makefile,null,null,makefile,true,github,how to compile,null
 1991,fine,50,fine.orig.c,null,orig,c,true,github,original source,c
+1991,fine,100,demo.sh,null,null,shellscript,true,github,how to run,sh
 1991,fine,300,1991_fine.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1991,rince,null,README.md,null,null,markdown,false,null,null,md
 1991,rince,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
@@ -867,6 +881,7 @@
 1993,rince,10,index.html,readme2index,null,html,true,browser,click here first,html
 1993,rince,20,rince.c,null,main,c,true,github,winning source,c
 1993,rince,30,Makefile,null,null,makefile,true,github,how to compile,null
+1993,rince,40,rince.alt.c,null,null,c,true,github,alternative source,c
 1993,rince,50,rince.orig.c,null,orig,c,true,github,original source,c
 1993,rince,100,design.html,md2html,null,html,true,browser,implementation notes,html
 1993,rince,100,rince.data1,null,null,CABBAGE,true,github,CABBAGE data file,data1
@@ -2781,7 +2796,13 @@
 2012,kang,10,index.html,readme2index,null,html,true,browser,click here first,html
 2012,kang,20,kang.c,null,main,c,true,github,winning source,c
 2012,kang,30,Makefile,null,null,makefile,true,github,how to compile,null
+2012,kang,40,kang.alt.c,null,null,c,true,github,alternative source,c
 2012,kang,50,kang.orig.c,null,orig,c,true,github,original source,c
+2012,kang,100,de.alt.sh,null,null,shellscript,true,github,German words for 0 through 13 for alt,sh
+2012,kang,100,de.sh,null,null,shellscript,true,github,German words for 0 through 13,sh
+2012,kang,100,en.alt.sh,null,null,shellscript,true,github,English words for 1 through 13 for alt,sh
+2012,kang,100,en.sh,null,null,shellscript,true,github,English words for 1 through 13,sh
+2012,kang,100,try.sh,null,null,shellscript,true,github,how to run,sh
 2012,kang,300,2012_kang.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2012,konno,null,README.md,null,null,markdown,false,null,null,md
 2012,konno,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
@@ -2907,6 +2928,7 @@
 2013,cable1,null,README.md,null,null,markdown,false,null,null,md
 2013,cable1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
 2013,cable1,null,.id,null,null,id,false,null,winner id string,id
+2013,cable1,null,ms-tweet.jpg,null,null,image,false,null,tweet image,jpg
 2013,cable1,null,.winner.json,jwinner,null,json,false,null,null,json
 2013,cable1,10,index.html,readme2index,null,html,true,browser,click here first,html
 2013,cable1,20,cable1.c,null,main,c,true,github,winning source,c
@@ -2937,6 +2959,7 @@
 2013,cable3,10,index.html,readme2index,null,html,true,browser,click here first,html
 2013,cable3,20,cable3.c,null,main,c,true,github,winning source,c
 2013,cable3,30,Makefile,null,null,makefile,true,github,how to compile,null
+2013,cable3,40,cable3.alt.c,null,null,c,true,github,alternative source,c
 2013,cable3,50,cable3.orig.c,null,orig,c,true,github,original source,c
 2013,cable3,100,runme,null,null,shellscript,true,github,how to run,null
 2013,cable3,100,screenshot_autocad.png,null,null,image,true,browser,Screenshots of some of these applications running on macOS,png
@@ -2946,6 +2969,7 @@
 2013,cable3,100,screenshot_simcity.png,null,null,image,true,browser,Screenshots of some of these applications running on macOS,png
 2013,cable3,100,screenshot_win3_on_macosx.png,null,null,image,true,browser,Screenshots of some of these applications running on macOS,png
 2013,cable3,150,sc-ioccc.terminal,null,null,xml,true,browser,configuration file will correctly display console applications,cOSfor m
+2013,cable3,200,bios.asm,null,null,asm,true,github,BIOS source in assembly,asm
 2013,cable3,300,2013_cable3.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2013,dlowe,null,README.md,null,null,markdown,false,null,null,md
 2013,dlowe,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
@@ -2955,6 +2979,9 @@
 2013,dlowe,20,dlowe.c,null,main,c,true,github,winning source,c
 2013,dlowe,30,Makefile,null,null,makefile,true,github,how to compile,null
 2013,dlowe,50,dlowe.orig.c,null,orig,c,true,github,original source,c
+2013,dlowe,100,demo.sh,null,null,shellscript,true,github,how to run,sh
+2013,dlowe,100,fun.c,null,null,c,true,github,compile and run for extra run,c
+2013,dlowe,100,sflen.sh,null,null,shellscript,true,github,generate sparkline of file lengths,sh
 2013,dlowe,300,2013_dlowe.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2013,endoh1,null,README.md,null,null,markdown,false,null,null,md
 2013,endoh1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
@@ -3003,6 +3030,7 @@
 2013,endoh4,30,Makefile,null,null,makefile,true,github,how to compile,null
 2013,endoh4,50,endoh4.orig.c,null,orig,c,true,github,original source,c
 2013,endoh4,100,cube.txt,null,null,text,true,github,3D object coordinates ,txt
+2013,endoh4,100,run.sh,null,null,shellscript,true,github,how to run,sh
 2013,endoh4,200,solids/antiprism/a04-square-antiprism.txt,null,null,text,true,github,3D object coordinates ,txt
 2013,endoh4,200,solids/antiprism/a05-pentagonal-antiprism.txt,null,null,text,true,github,3D object coordinates ,txt
 2013,endoh4,200,solids/antiprism/a06-hexagonal-antiprism.txt,null,null,text,true,github,3D object coordinates ,txt
@@ -3188,6 +3216,7 @@
 2013,misaka,30,Makefile,null,null,makefile,true,github,how to compile,null
 2013,misaka,50,misaka.orig.c,null,orig,c,true,github,original source,c
 2013,misaka,100,bf.pl,null,null,perl,true,github,BF interpreter,pl
+2013,misaka,100,demo.sh,null,null,shellscript,true,github,how to run,sh
 2013,misaka,200,spoiler.html,null,null,html,true,browser,SPOILER WARNING,html
 2013,misaka,300,2013_misaka.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2013,morgan1,null,README.md,null,null,markdown,false,null,null,md
@@ -3233,19 +3262,22 @@
 2014,deak,10,index.html,readme2index,null,html,true,browser,click here first,html
 2014,deak,20,prog.c,null,main,c,true,github,winning source,c
 2014,deak,30,Makefile,null,null,makefile,true,github,how to compile,null
+2014,deak,40,prog.alt.c,null,null,c,true,github,alternative source,c
 2014,deak,50,prog.orig.c,null,orig,c,true,github,original source,c
 2014,deak,300,2014_deak.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2014,endoh1,null,README.md,null,null,markdown,false,null,null,md
 2014,endoh1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
 2014,endoh1,null,.id,null,null,id,false,null,winner id string,id
-2014,endoh1,null,read_me.md,null,null,markdown,false,null,null,md
+2014,endoh1,null,spoilers.md,null,null,markdown,false,null,spoilers about Q(uine)R code generator,md
 2014,endoh1,null,.winner.json,jwinner,null,json,false,null,null,json
 2014,endoh1,10,index.html,readme2index,null,html,true,browser,click here first,html
 2014,endoh1,20,prog.c,null,main,c,true,github,winning source,c
 2014,endoh1,30,Makefile,null,null,makefile,true,github,how to compile,null
 2014,endoh1,50,prog.orig.c,null,orig,c,true,github,original source,c
 2014,endoh1,100,Rakefile,null,null,ruby,true,github,Ruby makefile,null
+2014,endoh1,100,rake.sh,null,null,shellscript,true,github,make rake script,sh
 2014,endoh1,100,read_me.html,md2html,null,html,true,browser,about the Q(uine)R code generator,html
+2014,endoh1,100,spoilers.html,md2html,null,html,true,browser,spoilers about Q(uine)R code generator,html
 2014,endoh1,150,alpha.rb,null,null,ruby,true,github,support program for Rakefile,rb
 2014,endoh1,150,assemble.rb,null,null,ruby,true,github,support program for Rakefile,rb
 2014,endoh1,150,ast-def.rb,null,null,ruby,true,github,support program for Rakefile,rb
@@ -3334,6 +3366,7 @@
 2014,vik,10,index.html,readme2index,null,html,true,browser,click here first,html
 2014,vik,20,prog.c,null,main,c,true,github,winning source,c
 2014,vik,30,Makefile,null,null,makefile,true,github,how to compile,null
+2014,vik,40,prog.alt.c,null,null,c,true,github,alternative source,c
 2014,vik,50,prog.orig.c,null,orig,c,true,github,original source,c
 2014,vik,300,2014_vik.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2014,wiedijk,null,README.md,null,null,markdown,false,null,null,md
@@ -3605,6 +3638,7 @@
 2018,burton2,200,ansi,null,null,text,true,github,reserved words for a given C standard,null
 2018,burton2,200,author-README.txt,null,null,text,true,github,author supplied README,txt
 2018,burton2,200,c++11,null,null,text,true,github,reserved words for a given C standard,null
+2018,burton2,200,c11,null,null,text,true,github,reserved words for a given C standard,null
 2018,burton2,200,c++14,null,null,text,true,github,reserved words for a given C standard,null
 2018,burton2,200,c++98,null,null,text,true,github,reserved words for a given C standard,null
 2018,burton2,200,c99,null,null,text,true,github,reserved words for a given C standard,null
@@ -3910,6 +3944,7 @@
 2019,poikola,20,prog.c,null,main,c,true,github,winning source,c
 2019,poikola,30,Makefile,null,null,makefile,true,github,how to compile,null
 2019,poikola,50,prog.orig.c,null,orig,c,true,github,original source,c
+2019,poikola,100,poikola.pdf,null,null,pdf,true,github,make docs output,pdf
 2019,poikola,100,poikola.tex,null,null,tex,true,github,supplied documentation,tex
 2019,poikola,300,2019_poikola.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2019,yang,null,README.md,null,null,markdown,false,null,null,md

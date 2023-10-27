@@ -58,6 +58,7 @@
 1985/august/august.c
 1985/august/august.orig.c
 1985/august/index.html
+1985/august/primes.sh
 1985/lycklama/.gitignore
 1985/lycklama/.id
 1985/lycklama/.winner.json
@@ -120,6 +121,7 @@
 1986/hague/1986_hague.tar.bz2
 1986/hague/Makefile
 1986/hague/README.md
+1986/hague/hague.alt.c
 1986/hague/hague.c
 1986/hague/hague.orig.c
 1986/hague/index.html
@@ -324,6 +326,7 @@
 1988/westley/1988_westley.tar.bz2
 1988/westley/Makefile
 1988/westley/README.md
+1988/westley/demo.sh
 1988/westley/index.html
 1988/westley/westley.alt.c
 1988/westley/westley.c
@@ -356,9 +359,13 @@
 1989/jar.2/1989_jar.2.tar.bz2
 1989/jar.2/Makefile
 1989/jar.2/README.md
+1989/jar.2/chocolate_cake.lisp
+1989/jar.2/fib.lisp
 1989/jar.2/index.html
 1989/jar.2/jar.2.c
 1989/jar.2/jar.2.orig.c
+1989/jar.2/try.me.sh
+1989/jar.2/try.me.txt
 1989/ovdluhe/.gitignore
 1989/ovdluhe/.id
 1989/ovdluhe/.winner.json
@@ -376,6 +383,7 @@
 1989/paul/Makefile
 1989/paul/README.md
 1989/paul/index.html
+1989/paul/paul.alt.c
 1989/paul/paul.c
 1989/paul/paul.orig.c
 1989/robison/.gitignore
@@ -421,7 +429,12 @@
 1989/westley/1989_westley.tar.bz2
 1989/westley/Makefile
 1989/westley/README.md
+1989/westley/compile.alt.sh
+1989/westley/compile.sh
 1989/westley/index.html
+1989/westley/try.alt.sh
+1989/westley/try.sh
+1989/westley/westley.alt.c
 1989/westley/westley.c
 1989/westley/westley.orig.c
 1990/baruch/.gitignore
@@ -508,6 +521,7 @@
 1990/tbr/Makefile
 1990/tbr/README.md
 1990/tbr/index.html
+1990/tbr/tbr.alt.c
 1990/tbr/tbr.c
 1990/tbr/tbr.orig.c
 1990/theorem/.gitignore
@@ -596,7 +610,6 @@
 1991/dds/LANDER.BAS
 1991/dds/Makefile
 1991/dds/README.md
-1991/dds/dds.alt.c
 1991/dds/dds.c
 1991/dds/dds.orig.c
 1991/dds/index.html
@@ -606,6 +619,7 @@
 1991/fine/1991_fine.tar.bz2
 1991/fine/Makefile
 1991/fine/README.md
+1991/fine/demo.sh
 1991/fine/fine.c
 1991/fine/fine.orig.c
 1991/fine/index.html
@@ -867,6 +881,7 @@
 1993/rince/design.html
 1993/rince/design.md
 1993/rince/index.html
+1993/rince/rince.alt.c
 1993/rince/rince.c
 1993/rince/rince.data1
 1993/rince/rince.data2
@@ -2779,9 +2794,15 @@
 2012/kang/2012_kang.tar.bz2
 2012/kang/Makefile
 2012/kang/README.md
+2012/kang/de.alt.sh
+2012/kang/de.sh
+2012/kang/en.alt.sh
+2012/kang/en.sh
 2012/kang/index.html
+2012/kang/kang.alt.c
 2012/kang/kang.c
 2012/kang/kang.orig.c
+2012/kang/try.sh
 2012/konno/.gitignore
 2012/konno/.id
 2012/konno/.winner.json
@@ -2912,6 +2933,7 @@
 2013/cable1/cable1.c
 2013/cable1/cable1.orig.c
 2013/cable1/index.html
+2013/cable1/ms-tweet.jpg
 2013/cable2/.gitignore
 2013/cable2/.id
 2013/cable2/.winner.json
@@ -2934,6 +2956,8 @@
 2013/cable3/Makefile
 2013/cable3/README.md
 2013/cable3/bios
+2013/cable3/bios.asm
+2013/cable3/cable3.alt.c
 2013/cable3/cable3.c
 2013/cable3/cable3.orig.c
 2013/cable3/fd.img
@@ -2952,9 +2976,12 @@
 2013/dlowe/2013_dlowe.tar.bz2
 2013/dlowe/Makefile
 2013/dlowe/README.md
+2013/dlowe/demo.sh
 2013/dlowe/dlowe.c
 2013/dlowe/dlowe.orig.c
+2013/dlowe/fun.c
 2013/dlowe/index.html
+2013/dlowe/sflen.sh
 2013/endoh1/.gitignore
 2013/endoh1/.id
 2013/endoh1/.winner.json
@@ -3003,6 +3030,7 @@
 2013/endoh4/endoh4.c
 2013/endoh4/endoh4.orig.c
 2013/endoh4/index.html
+2013/endoh4/run.sh
 2013/endoh4/solids/antiprism/a04-square-antiprism.txt
 2013/endoh4/solids/antiprism/a05-pentagonal-antiprism.txt
 2013/endoh4/solids/antiprism/a06-hexagonal-antiprism.txt
@@ -3185,6 +3213,7 @@
 2013/misaka/Makefile
 2013/misaka/README.md
 2013/misaka/bf.pl
+2013/misaka/demo.sh
 2013/misaka/index.html
 2013/misaka/misaka.c
 2013/misaka/misaka.orig.c
@@ -3232,6 +3261,7 @@
 2014/deak/Makefile
 2014/deak/README.md
 2014/deak/index.html
+2014/deak/prog.alt.c
 2014/deak/prog.c
 2014/deak/prog.orig.c
 2014/endoh1/.gitignore
@@ -3253,10 +3283,12 @@
 2014/endoh1/prog-tmpl.c
 2014/endoh1/prog.c
 2014/endoh1/prog.orig.c
+2014/endoh1/rake.sh
 2014/endoh1/read_me.html
-2014/endoh1/read_me.md
 2014/endoh1/register.rb
 2014/endoh1/serialize.rb
+2014/endoh1/spoilers.html
+2014/endoh1/spoilers.md
 2014/endoh1/src.rb
 2014/endoh1/tool.rb
 2014/endoh1/vm.c
@@ -3333,6 +3365,7 @@
 2014/vik/Makefile
 2014/vik/README.md
 2014/vik/index.html
+2014/vik/prog.alt.c
 2014/vik/prog.c
 2014/vik/prog.orig.c
 2014/wiedijk/.gitignore
@@ -3571,6 +3604,7 @@
 2018/burton2/c++11
 2018/burton2/c++14
 2018/burton2/c++98
+2018/burton2/c11
 2018/burton2/c99
 2018/burton2/discrepancies.html
 2018/burton2/discrepancies.md
@@ -3908,6 +3942,7 @@
 2019/poikola/Makefile
 2019/poikola/README.md
 2019/poikola/index.html
+2019/poikola/poikola.pdf
 2019/poikola/poikola.tex
 2019/poikola/prog.c
 2019/poikola/prog.orig.c

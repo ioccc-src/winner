@@ -1229,7 +1229,6 @@
 2004/hibachi/src/hibachi-start.sh
 2004/hibachi/src/hibachi-start.sh.in
 2004/hibachi/src/hibachi.c
-2004/hibachi/src/localhost/.DS_Store
 2004/hibachi/src/localhost/CHANGES-OBFUSCATED.TXT
 2004/hibachi/src/localhost/CHANGES-SPOILER.TXT
 2004/hibachi/src/localhost/Img/cygwin-icon.gif
@@ -1245,7 +1244,6 @@
 2004/hibachi/src/localhost/index.html
 2004/hibachi/src/localhost/reference/rfc2616.html
 2004/hibachi/src/localhost/style.css
-2004/hibachi/src/localhost/test/.DS_Store
 2004/hibachi/src/localhost/test/perl/index.html
 2004/hibachi/src/localhost/test/perl/yahoo-ticker.pl
 2004/hibachi/src/localhost/test/perl/yahoo-ticker.pl.in

@@ -2,6 +2,9 @@
 #
 # gen_file_list.found.sh - generate tmp/file_list.found.txt for entry directories under a year
 #
+# XXX - This is a temporary utility that will be replaced when
+#	the .winner.json files are built
+#
 # Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
@@ -137,7 +140,7 @@ fi
 #
 TMPFILE="tmp/tmp.file_list.found.txt.$$"
 trap 'rm -f $TMPFILE; exit' 0 1 2 3 15
-find -- ???? -mindepth 2 -type f -print | sort -t/ > "$TMPFILE"
+find -- ???? -mindepth 2 ! -name .DS_Store -type f -print | sort -t/ > "$TMPFILE"
 if [[ ! -s $TMPFILE ]]; then
     echo "$0: ERROR: TMPFILE: $TMPFILE is empty" 1>&2
     exit 12

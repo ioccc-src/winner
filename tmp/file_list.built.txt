@@ -775,6 +775,7 @@
 2014/endoh1/2014_endoh1.tar.bz2
 2014/endoh1/index.html
 2014/endoh1/read_me.html
+2014/endoh1/spoilers.html
 2014/endoh2/.winner.json
 2014/endoh2/2014_endoh2.tar.bz2
 2014/endoh2/index.html

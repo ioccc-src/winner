@@ -779,6 +779,7 @@
 2014,endoh1,null,.winner.json,jwinner,null,json,false,null,null,json
 2014,endoh1,10,index.html,readme2index,null,html,true,browser,click here first,html
 2014,endoh1,100,read_me.html,md2html,null,html,true,browser,about the Q(uine)R code generator,html
+2014,endoh1,100,spoilers.html,md2html,null,html,true,browser,spoilers about Q(uine)R code generator,html
 2014,endoh1,300,2014_endoh1.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2014,endoh2,null,.winner.json,jwinner,null,json,false,null,null,json
 2014,endoh2,10,index.html,readme2index,null,html,true,browser,click here first,html

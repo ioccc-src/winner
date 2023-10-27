@@ -291,6 +291,19 @@ award line as at a level 1 markdown header we found, or the `README.md`
 file is missing, etc.
 
 
+### [check_file_list.sh](check_file_list.sh)
+
+Look for problems with file_list.required.txt, file_list.full_manifest.txt,
+and file_list.found.txt files.   In particular, the files found in
+winning directories are compared with the list of required files
+as well as the complete manifest list of files.
+
+If all is OK, [check_file_list.sh](check_file_list.sh) exits 0 and prints
+nothing.  If there are missing required files, or extra files found
+then [check_file_list.sh](check_file_list.sh) will exit non-zero and
+print information about problems.
+
+
 ### [example.author.json](example.author.json)
 
 This is a JSON file containing an example `author/author_handle.json` for a

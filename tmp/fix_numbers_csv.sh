@@ -49,12 +49,12 @@ for i in "$MANIFEST_CSV" "$MISSING_MANIFEST_CSV"; do
 	    exit 12
 	fi
 
-	# sort file and remove duplicates
+	# sort file
 	#
-	sort -u -t, -k1,1 -k2d,2 -k3g,3 -k4d,10 "$TMP_CSV" -o "$TMP_CSV"
+	sort -t, -k1,1 -k2d,2 -k3g,3 -k4d,10 "$TMP_CSV" -o "$TMP_CSV"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
-	    printf "$0: ERROR: sort -u -t, -k1,1 -k2d,2 -k3g,3 -k4d,10 %s -o %s failed, error: %s\n" "$TMP_CSV" "$TMP_CSV" "$status" 1>&2
+	    printf "$0: ERROR: sort -t, -k1,1 -k2d,2 -k3g,3 -k4d,10 %s -o %s failed, error: %s\n" "$TMP_CSV" "$TMP_CSV" "$status" 1>&2
 	    exit 13
 	fi
 
@@ -96,7 +96,8 @@ done
 #
 TMP_CSV="tmp.$$.$FULL_MANIFEST_CSV"
 sed -e '/^# -/d' "$MANIFEST_CSV" "$MISSING_MANIFEST_CSV" |
-    sort -u -t, -k1,1 -k2d,2 -k3g,3 -k4d,10 > "$TMP_CSV"
+    sort -u |
+    sort -t, -k1,1 -k2d,2 -k3g,3 -k4d,10 > "$TMP_CSV"
 if [[ ! -s $TMP_CSV ]]; then
     echo "$0: ERROR: sorted $MANIFEST_CSV $MISSING_MANIFEST_CSV is empty" 1>&2
     exit 16
