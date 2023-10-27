@@ -72,8 +72,8 @@ a blank line.
 
 ## Author's remarks:
 
-This is a "Picking the Daisy" simulation.  Now, instead of mangling a\
-daisy, simply run this program with the number of petals desired as\
+This is a "Picking the Daisy" simulation.  Now, instead of mangling a
+daisy, simply run this program with the number of petals desired as
 the argument.
 
 This is a good counter-example to peoples' complaints that C doesn't
@@ -84,7 +84,7 @@ set, statement not reached, return(e) and return.  Lint dumps core
 on some systems.  My personal favorite lint complaint is
 
 **_"warning: eroticism unused in function main"._**
-\
+
 Also obviously, `(char)lotte` and `(char*)lie` are incompatible types...
 
 
