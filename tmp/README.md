@@ -498,7 +498,12 @@ following fields:
 
    The type of file.
 
-8. winners_show:
+8. ext:
+
+    This ending filename extension, or null if no extension.
+    This field is temporary and may go away.
+
+9. winners_show:
 
    A JSON boolean indicating of the file is listed on `winners.html` or not.
 
@@ -506,7 +511,7 @@ following fields:
 
    NOTE: When winners_show is false, display_via MUST be null.
 
-9. display_via:
+10. display_via:
 
    A string indicating how the file is to be displayed from `winners.html`.
    Possible files include:
@@ -522,15 +527,10 @@ following fields:
 
    NOTE: When display_via is null, winners_show MUST be false.
 
-10. winners_text:
+11. winners_text:
 
     Any text that should be displayed at the end of line in `winners.html`
     (with a preceding " - "), or null is no such text is to be displayed.
-
-11. ext:
-
-    This ending filename extension, or null if no extension.
-    This field is temporary and may go away.
 
 The 11 field names in [manifest.numbers](manifest.numbers),
 [missing_manifest.numbers](missing_manifest.numbers), and
