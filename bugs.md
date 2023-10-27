@@ -449,6 +449,21 @@ without a newline after the `\`. This is not a bug.
 This entry will very likely crash or do something else if you run it without an
 arg. It likely won't do anything at all if the arg is not a positive number.
 
+## [1984/mullender](1984/mullender/mullender.c) ([README.md](1984/mullender/README.md)
+### STATUS: INABIAF - please **DO NOT** fix
+
+Although there are two alt versions added by Cody that will work in modern
+systems, if you do not have a [VAX-11](https://en.wikipedia.org/wiki/VAX-11) or
+[PDP-11](https://en.wikipedia.org/wiki/PDP-11) to run the original entry on it
+will not work. See the README.md for details on the alternate versions.
+
+Cody added and fixed the [gentab.c](1984/mullender/gentab.c) which is from the
+author's (or one of them, Mullender) remarks found by Cody. Cody fixed this to
+compile and work (as best as he can determine: he has no VAX-11 or PDP-11 or
+emulator to test it) but running the code on the binary itself produces a
+`short[]` that can compile in modern systems.
+
+
 # 1985
 
 

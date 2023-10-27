@@ -112,8 +112,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ= ${PROG}.alt.o
-ALT_TARGET= ${PROG}.alt
+ALT_OBJ= ${PROG}.alt.o ${PROG}.alt2.o
+ALT_TARGET= ${PROG}.alt ${PROG}.alt2
 
 
 #################
@@ -142,8 +142,11 @@ gentab: gentab.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-${ALT_TARGET}: ${PROG}.alt.c
-	${CC} -include stdio.h -include unistd.h -include stdlib.h ${CFLAGS} $< -o $@ ${LDFLAGS}
+${PROG}.alt: ${PROG}.alt.c
+	${CC} -include stdio.h -include unistd.h -include stdlib.h ${CFLAGS} -Wno-implicit-int $< -o $@ ${LDFLAGS}
+
+${PROG}.alt2: ${PROG}.alt2.c
+	${CC} -include stdio.h -include unistd.h -include stdlib.h ${CFLAGS} -Wno-implicit-int $< -o $@ ${LDFLAGS}
 
 # data files
 #

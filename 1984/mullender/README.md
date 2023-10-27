@@ -9,56 +9,37 @@ Robbert van Renesse
 ## To build:
 
 ```sh
-make all
+make alt
 ```
 
+NOTE: the original code will not work on any system other than
+[VAX-11](https://en.wikipedia.org/wiki/VAX-11) and
+[PDP-11](https://en.wikipedia.org/wiki/PDP-11) and this is why we encourage you
+to use the alt version instead. See [original code](#original-code) below for
+the original version.
 
 ## To use:
 
 ```sh
-./mullender
-```
-
-NOTE: if your machine is not a [VAX-11](https://en.wikipedia.org/wiki/VAX-11)
-or [PDP-11](https://en.wikipedia.org/wiki/PDP-11), this program will not execute
-correctly.  In later years, machine dependent code was discouraged. An alternate
-version that will work with other systems is provided as alternate code below.
-
-
-## Alternate code:
-
-An alternate version exists which allows one to enjoy this entry on systems
-other than a [VAX-11](https://en.wikipedia.org/wiki/VAX-11) or
-[PDP-11](https://en.wikipedia.org/wiki/PDP-11). This version has a delay feature
-as it goes so fast in modern systems. The author suggested that there was a
-delay in the original code as well.
-
-
-### Alternate build:
-
-
-```sh
-make alt
-```
-
-
-### Alternate use:
-
-```sh
 ./mullender.alt [microseconds]
+
+./mullender.alt2 [microseconds] # starts over after it times out
 ```
 
-The default microseconds is 10000. This feature is so you can experiment with
+The default microseconds is 10000 and it is also the lowest it can be as any
+lower doesn't work very well. This feature is so you can experiment with
 different speeds in between writes. It can be useful if your CPU is too slow or
-too fast.
+too fast (:-) ).
 
-Note that it is an `int` (argc) and it uses `atoi()` which does NOT check for
+The author stated that the original version also had a delay.
+
+Note that the microseconds is argc and it uses `atoi()` which does NOT check for
 overflow!
 
 BTW: is there such a thing as too fast a CPU ? :-) Actually yes for certain code
 which is probably not as uncommon as you think :-).
 
-### Alternate try:
+### Try:
 
 
 ```sh
@@ -71,6 +52,44 @@ which is probably not as uncommon as you think :-).
 ./mullender.alt 20000
 
 ./mullender.alt 100000
+
+./mullender.alt2 500
+# wait for 500 microseconds and see what happens
+```
+
+What happens if you hit enter after it reaches the end of the line? Why?
+
+
+## Original code:
+
+This original code will only execute correctly if your machine is a
+[VAX-11](https://en.wikipedia.org/wiki/VAX-11) or
+[PDP-11](https://en.wikipedia.org/wiki/PDP-11). In the following years, 1985 on,
+machine dependent code was discouraged.
+
+
+### Original build:
+
+
+```sh
+make all
+```
+
+### Bugs and (Mis)features:
+
+This entry a listed in [bugs.md](/bugs.md) as:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [bugs.md](/bugs.md#1984mullender-readmemd).
+
+
+### Original use:
+
+```sh
+./mullender
 ```
 
 
@@ -122,7 +141,7 @@ close to as the original as possible we used a copy of
 in the *fabulous* [Unix History
 Repo](https://github.com/dspinellis/unix-history-repo/tree/Research-Release).
 
-### Alternate build:
+### gentab build:
 
 `gentab.c` can be built like:
 
@@ -131,17 +150,20 @@ Repo](https://github.com/dspinellis/unix-history-repo/tree/Research-Release).
 make gentab
 ```
 
-### Alternate use:
+### gentab use:
 
 ```sh
 ./gentab file
 ```
 
-### Alternate try:
+### gentab try:
 
 ```sh
-./gentab gentab
+./gentab gentab > g.c
 ```
+
+NOTE: it is highly unlikely that you will be able to compile and run the output
+of `gentab` but it should at least compile.
 
 ## Author's remarks:
 
