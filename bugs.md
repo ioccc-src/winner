@@ -477,34 +477,6 @@ emulator to test it) but running the code on the binary itself produces a
 This entry is known to segfault after printing its output. It was documented by
 the judges and shouldn't be fixed.
 
-## [1986/hague](1986/hague/hague.c) ([README.md](1986/hague/README.md))
-### STATUS: uses gets() - change to fgets() if possible
-
-This entry uses `gets()` which is unsafe. In particular the buffer size is a
-mere 81 and it does not read a single string at command invocation but instead
-until the program is terminated. This size can be increased to start out but it
-would be better if it used `fgets()`.
-
-The way this entry is formed has made it not as simple as some of the others
-that have been addressed at least in part. It is easy to get it to use `fgets()`
-and this has been done in the [alternate code](1986/hague/hague.alt.c) but it
-will segfault after outputting the (correct) text in one of the forms. In
-particular whereas this:
-
-```sh
-./hague.alt
-foo
-
-works the following will print out the correct output but then segfault:
-
-```
-```sh
-echo foo | ./hague.alt
-```
-
-Whether or not it is worth making the entry itself (since the output is correct)
-this alt version is to be determined later but it's might very well not be.
-
 
 # 1987
 
