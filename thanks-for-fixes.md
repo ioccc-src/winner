@@ -287,7 +287,7 @@ replaced for actual code so that instead of having the while loop condition as:
 loop as calling it will result in incorrect output, once you even get it to
 compile. See above where the loop has a body but the modification only has it
 commented out.
-	
+
 
 
 ## [1986/hague](1986/hague/hague.c) ([README.md](1986/hague/README.md]))
@@ -341,9 +341,10 @@ Cody noticed and fixed a funny mistake in the Makefile where a
 ## [1986/wall](1986/wall/wall.c) ([README.md](1986/wall/README.md]))
 
 Cody fixed this so that it does not require `-traditional-cpp`. This took a fair
-bit of tinkering as this entry *is* strange; fixing `-traditional-cpp` is, as
+bit of tinkering as this entry *very twisted*; fixing `-traditional-cpp` is, as
 noted earlier, very complicated, but we encourage you to look at [original
-code](1986/wall/wall.orig.c) to see how different C was in 1986.
+code](1986/wall/wall.orig.c) to see how different C was in 1986, as well as
+below.
 
 Yusuke originally patched this to use `strdup()` on two strings and this let it
 work with gcc but it still required `-traditional-cpp`. The [alternate
@@ -357,6 +358,71 @@ If you'd like to see the difference between the version that requires
 ```sh
 cd 1986/wall ; make diff_alt_prog
 ```
+
+Some of the changes required:
+
+- Instead of using the `c_`, defined as `c_(cc)c cc=`, like:
+
+	c_(+)o
+
+	/* ... */
+
+	:c_(+)' '-1;
+	}}c_(&)'z'+5;
+
+    use:
+
+	:c +=o[c&__LINE__-007];
+
+	/* ... */
+
+	:c+=' '-1;
+	}}c&='z'+5;
+
+    Observe however that this macro is still used in the code like:
+
+	main(;c_(=(*cc);*cc++)c,for);
+
+- Instead of code like:
+
+	main(0xb+(c>>5),C_(s))
+	_'\v'
+	:__ _'\f':
+	main(c,C_(s));
+
+    use instead:
+
+	main(;c_(=(*cc);*cc++)c,for);
+	#define _O(s)s
+	switch(0xb+(c>>5)){
+	_'\v'
+	:__ _'\f':
+	switch(c){;
+
+- The macro:
+
+	#define C_(sand)_O(sand)witch
+
+    could not be used like:
+
+	C_(s));_
+
+    to create:
+
+	switch);_
+
+    and neither could the macro:
+
+	#define O_(O)_O(O)stem(ccc(
+
+    be used like:
+
+	:O_(sy)";kkt -oa, dijszdijs QQ"))_C
+
+    to create:
+
+	:system(ccc(";kkt -oa, dijszdijs QQ"));return
+
 
 ## [1987/heckbert](1987/heckbert/heckbert.c) ([README.md](1987/heckbert/README.md))
 
@@ -2442,7 +2508,7 @@ Cody fixed the script [run_clock.sh](2020/endoh3/run_clock.sh) which gave a
 funny error when running it:
 
 ```sh
-$ ./run_clock.sh 
+$ ./run_clock.sh
 -bash: ./run_clock.sh: cannot execute: required file not found
 ```
 
