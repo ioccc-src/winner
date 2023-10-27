@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-empty-body -Wno-pointer-sign -Wno-return-type -Wno-deprecated-non-prototype
+CSILENCE= -Wno-empty-body -Wno-pointer-sign -Wno-return-type -Wno-deprecated-non-prototype -Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -124,8 +124,7 @@ ALT_TARGET=
 all: data ${TARGET}
 	@${TRUE}
 
-.PHONY: all alt data everything diff_orig_prog diff_prog_orig \
-	diff_alt_prog diff_prog_alt diff_orig_alt diff_alt_orig \
+.PHONY: all alt data everything orig_prog_diff alt_prog_diff \
 	clean clobber install love haste waste maker easter_egg \
 	sandwich supernova deep_magic magic charon pluto
 
@@ -147,45 +146,16 @@ data: ${DATA}
 everything: all alt
 	@${TRUE}
 
-
-#####################
-# make a difference #
-#####################
-#
 # diff orig source and source
 #
-diff_orig_prog: ${PROG}.orig.c ${PROG}.c
+orig_prog_diff: ${PROG}.orig.c ${PROG}.c
 	@-${DIFF} -u ${PROG}.orig.c ${PROG}.c
-
-# diff source and orig source
-#
-diff_prog_orig: ${PROG}.c ${PROG}.orig.c
-	@-${DIFF} -u ${PROG}.c ${PROG}.orig.c
 
 # diff alt source and source
 #
-diff_alt_prog: ${PROG}.c
+alt_prog_diff: ${PROG}.c
 	@-if [[ -e ${PROG}.alt.c ]]; then \
 	    ${DIFF} -u ${PROG}.alt.c ${PROG}.c; \
-	fi
-
-# diff source and alt source
-#
-diff_prog_alt: ${PROG}.c
-	@-if [[ -e ${PROG}.alt.c ]]; then \
-	    ${DIFF} -u ${PROG}.c ${PROG}.alt.c; \
-	fi
-
-# diff orig and alt
-#
-diff_orig_alt: ${PROG}.orig.c
-	@-if [[ -e ${PROG}.alt.c ]]; then \
-	    ${DIFF} -u ${PROG}.orig.c ${PROG}.alt.c; \
-	fi
-
-diff_alt_orig:
-	@-if [[ -e ${PROG}.alt.c ]]; then \
-	    ${DIFF} -u ${PROG}.alt.c ${PROG}.orig.c; \
 	fi
 
 
