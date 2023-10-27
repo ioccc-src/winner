@@ -9,14 +9,6 @@ Ed Lycklama
 make alt
 ```
 
-
-If you have an old enough compiler you can try:
-
-```sh
-make lycklama.orig
-```
-
-
 ## To use:
 
 ```sh
@@ -63,20 +55,20 @@ appreciate what it does, we encourage you to first try the alternate version.
 After this, however, you might wish to try the original version, fixed for
 modern systems.
 
-### Alternate build:
+### Original build:
 
 ```sh
 make all
 ```
 
-### Alternate use:
+### Original use:
 
 
 ```sh
 ./lycklama < some_file
 ```
 
-### Alternate try:
+### Original try:
 
 ```sh
 ./lycklama < lycklama.c
