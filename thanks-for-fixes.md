@@ -24,7 +24,7 @@ being **EXTREMELY CHALLENGING** like
 (some being **EXTREMELY CHALLENGING** like
 [1998/schweikh1](/thanks-for-fixes.md#1998schweikh1-readmemd)), fixing code like
 [2001/herrmann2](/thanks-for-fixes.md#2001herrmann2-readmemd) to work in both
-32-bit/64-bit which *can be* **VERY CHALLENGING**, providing alternate code
+32-bit/64-bit which *can be* **EXTREMELY CHALLENGING**, providing alternate code
 where useful/necessary, fixing where possible dead links or removing them,
 typo/consistency fixes, improving **ALL _Makefiles_** and writing
 [sgit](https://github.com/xexyl/sgit) that we installed locally to easily run
@@ -34,7 +34,7 @@ IOCCC winners and fixing almost all past entries for modern systems!
 
 [Yusuke Endoh](https://www.ioccc.org/winners.html#Yusuke_Endoh) supplied a
 number of important bug fixes to a number of past IOCCC winners. Some of those
-fixes were **VERY TECHNICALLY CHALLENGING** such as
+fixes were **EXTREMELY TECHNICALLY CHALLENGING** such as
 [1989/robison](/thanks-for-fixes.md#1989robison-readmemd),
 [1990/cmills](https://github.com/ioccc-src/temp-test-ioccc/blob/master/thanks-for-fixes.md#1990cmills-readmemd),
 [1992/lush](/thanks-for-fixes.md#1992lush-readmemd) and
