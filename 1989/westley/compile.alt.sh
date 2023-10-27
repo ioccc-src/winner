@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 #
-# compile.sh - compile westley.alt.c, generate the alt versions and then attempt to
-# compile them.
+# compile.alt.sh - compile westley.alt.c then generate and compile alt versions
 #
 # To change what compiler is used you can do something like:
 #

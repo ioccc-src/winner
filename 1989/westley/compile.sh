@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 #
-# compile.sh - compile westley.c, generate the alt versions and then attempt to
-# compile them.
+# compile.sh - compile westley.c then generate and compile versions
 #
 # To change what compiler is used you can do something like:
 #
@@ -67,7 +66,7 @@ echo "$ ./westley 1 2 3 < westley.c > ver3.c" 1>&2
 ./westley 1 2 3 < westley.c > ver3.c
 sleep "$DELAY"
 
-# now compile the files by running make alt
+# now compile the files by running make
 #
 
 echo "Compiling generated versions ..." 1>&2
