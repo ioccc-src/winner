@@ -512,7 +512,7 @@ to compare the fix from the original entry. There was another problem to resolve
 as well, however.
 
 First of all, as noted above, the entry required `-traditional-cpp` (which
-<strike>not all compilers support</strike> `clang` does not support) It needed
+<strike>not all compilers support</strike> `clang` does not support). It needed
 that option in modern systems because of two things it did:
 
 ```c
