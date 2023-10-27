@@ -236,11 +236,58 @@ Cody fixed this _very twisted entry_ to not require `-traditional-cpp`.  Fixing
 to refer you to the original file
 [sicherman.orig.c](1985/sicherman/sicherman.orig.c) and he suggests that you
 then compare it to [sicherman.c](1985/sicherman/sicherman.c) for some good old
-C-fashioned fun!
+C-fashioned fun (alternatively, see below explanation)!
 
 Later on Cody improved the fix so that it looks much more like the [original
 entry](1985/sicherman/sicherman.c). He did this one more time and it's about as
 close to the original as one can get without causing a compilation error.
+
+To get this to all work the following changes were made. If you really want to
+understand this you can do the following from the directory:
+
+```sh
+make diff_orig_prog
+```
+
+- The `C` macro was changed from `/b/` (which is `/*/`) to `/**/`. It could not
+be changed to use the token paste C preprocessor operator for reasons that will
+be explained below. No other macro had to be changed.
+- The code:
+
+	C="Lint says "argument Manual isn't used."  What's that
+	    mean?"; while (write((read(C_C('"'-'/*"'/*"*/))?__:__-_+
+
+    had to be changed to:
+
+	"Lint says argument Manual isn't used."  "What's that\
+	mean?"; while (write((read(('"'-'/*"'/*"*/))?__:__-_+
+
+    because C cannot be assigned to (see above) and because the string is broken
+    up where it has symbols that are not strings.
+- In that function, `subr()`, although `C` could stay in the arg list, since it
+translates to `/**` it cannot have a type. Nothing else had to change in the
+function except that the variables previously only in `main()`, `_` and `__`,
+had to be at the top of the file (in addition to the ones in `main()`).
+- The args to `main()` had to be commented out along with the code `up.) (In the
+C Manual)`.
+- The code in `main()` is the significant change as the macros had to be
+replaced for actual code so that instead of having the while loop condition as:
+
+        while (read(0,&__,1) & write((_=(_=C_C_(__),C)),
+        _C_,1)) _=C-V+subr(&V);
+
+    we have it as:
+
+	while (read(0,&__,1) & write((_=(_=~' '&__,/*/)),
+	_C_,1)) _=/*/-('\b'b'\b'>=_|_>'\t'b'\n'))?__:__-_+
+	'\b'b'\b'|((_-52)%('\b'b'\b'+~' '&'\t'b'\n')+1),1),
+	&_,1))/*_=C-V+subr(&V)*/;
+
+- Finally, the function `subr()` cannot be called in the body of the `while()`
+loop as calling it will result in incorrect output, once you even get it to
+compile. See above where the loop has a body but the modification only has it
+commented out.
+	
 
 
 ## [1986/hague](1986/hague/hague.c) ([README.md](1986/hague/README.md]))
