@@ -9,7 +9,7 @@ main(/*C,V)
 char **V;*/
 /*	C program. (If you don't
  *	understand it look it
- *	up.) (In the C manual*/)
+ *	up.) (In the C Manual*/)
 {
 	char _,__;
 	while (read(0,&__,1) & write((_=(_=~' '&__,/*/)),
