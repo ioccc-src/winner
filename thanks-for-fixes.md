@@ -556,9 +556,6 @@ for/*/(;;);/*/k()){O/*/*/c);
 cannot form `fork())` in modern C compilers. Since it was not done through a
 macro it was simply changed to be `fork()`, rather than adding a new macro.
 
-(What is quite fun is that at least some C pre-processors can form these
-constructs! Can you figure out why this is?)
-
 The other problem that could not be resolved by the `-traditional-cpp` was that
 modern compilers do not allow directives like:
 
