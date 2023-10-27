@@ -412,20 +412,7 @@ following fields:
    Path under the IOCCC/directory.  In a few cases this is a path,
    not just a simple filename under the IOCCC/directory.
 
-5. prog:
-
-   This field indicates if the file main program.  This filed is one of:
-
-   main		The main source code to display.
-   alt		The alternative source code.
-   orig		The original version of the source code (may be the same as main).
-   null		Not a primary, nor alternative, nor original source code file.
-
-6. filetype:
-
-   The type of file.
-
-7. created_by:
+5. created_by:
 
    The name of the program that creates this file, or null is the
    file an original file.
@@ -446,6 +433,19 @@ following fields:
    content file (i.e., content that is created by some tool) MUST
    be listed in the [missing_manifest.numbers](missing_manifest.numbers)
    file and MUST NOT listed in the  [manifest.numbers](manifest.numbers) file.
+
+6. prog:
+
+   This field indicates if the file main program.  This filed is one of:
+
+   main		The main source code to display.
+   alt		The alternative source code.
+   orig		The original version of the source code (may be the same as main).
+   null		Not a primary, nor alternative, nor original source code file.
+
+7. filetype:
+
+   The type of file.
 
 8. winners_show:
 
