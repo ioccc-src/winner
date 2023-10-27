@@ -254,13 +254,13 @@ be changed to use the token paste C preprocessor operator for reasons that will
 be explained below. No other macro had to be changed.
 - The code:
 
-	C="Lint says "argument Manual isn't used."  What's that
-	    mean?"; while (write((read(C_C('"'-'/*"'/*"*/))?__:__-_+
+	    C="Lint says "argument Manual isn't used."  What's that
+		mean?"; while (write((read(C_C('"'-'/*"'/*"*/))?__:__-_+
 
     had to be changed to:
 
-	"Lint says argument Manual isn't used."  "What's that\
-	mean?"; while (write((read(('"'-'/*"'/*"*/))?__:__-_+
+	    "Lint says argument Manual isn't used."  "What's that\
+	    mean?"; while (write((read(('"'-'/*"'/*"*/))?__:__-_+
 
     because C cannot be assigned to (see above) and because the string is broken
     up where it has symbols that are not strings.
@@ -273,15 +273,15 @@ C Manual)`.
 - The code in `main()` is the significant change as the macros had to be
 replaced for actual code so that instead of having the while loop condition as:
 
-        while (read(0,&__,1) & write((_=(_=C_C_(__),C)),
-        _C_,1)) _=C-V+subr(&V);
+	    while (read(0,&__,1) & write((_=(_=C_C_(__),C)),
+	    _C_,1)) _=C-V+subr(&V);
 
     we have it as:
 
-	while (read(0,&__,1) & write((_=(_=~' '&__,/*/)),
-	_C_,1)) _=/*/-('\b'b'\b'>=_|_>'\t'b'\n'))?__:__-_+
-	'\b'b'\b'|((_-52)%('\b'b'\b'+~' '&'\t'b'\n')+1),1),
-	&_,1))/*_=C-V+subr(&V)*/;
+	    while (read(0,&__,1) & write((_=(_=~' '&__,/*/)),
+	    _C_,1)) _=/*/-('\b'b'\b'>=_|_>'\t'b'\n'))?__:__-_+
+	    '\b'b'\b'|((_-52)%('\b'b'\b'+~' '&'\t'b'\n')+1),1),
+	    &_,1))/*_=C-V+subr(&V)*/;
 
 - Finally, the function `subr()` cannot be called in the body of the `while()`
 loop as calling it will result in incorrect output, once you even get it to
