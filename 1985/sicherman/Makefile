@@ -39,7 +39,8 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-comment -Wno-deprecated-non-prototype -Wno-main -Wno-pedantic \
-	-Wno-return-type -Wno-strict-prototypes -Wno-unused-parameter -Wno-implicit-int
+	-Wno-return-type -Wno-strict-prototypes -Wno-unused-parameter -Wno-implicit-int \
+	-Wno-implicit-function-declaration -Wno-unused-value -Wno-multichar
 
 # Common C compiler warning flags
 #
@@ -62,7 +63,7 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE= -include unistd.h
+CINCLUDE=
 
 # Optimization
 #
