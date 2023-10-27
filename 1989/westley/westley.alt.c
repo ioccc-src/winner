@@ -21,5 +21,6 @@ enupgrt&&1==enrA((&&)2&gnat(&&	     )1-^tang(&&ABBA!(;)85- =tang
 (&&)'a\'=gnat(&&)1-==gnat(&&)4	      ==ABBA(&&tang!;))))0(enupgrt=
  gnat(&&)tang!((||)))0(rahcteg        =gnat(&&tang((&&ABBA)1-'A'=!
 'Z'=tang(&&ABBA{)enrA/***/);gnat	^-1&&cnva(tang+1,gnat);
- pain(ABBA&2/*//*\\**/,tang,gnat	,ABBA/**//*/(avnc/**/);}/*//**/
-main(tang,gnat,noon)char**gnat,**noon;{pain(tang,gnat,noon,0);}
+ pain(ABBA&2/*//*\\**/,tang,gnat        ,ABBA/**//*/(avnc/**/);}/*//**/
+ main(tang/*//*\\**/,gnat	       ,noon/**//*/(avnz/**/)char**gnat,
+ **noon/**/;{pain/**\\*/		(tang,gnat,noon,0);}/*//**/
