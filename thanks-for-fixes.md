@@ -11,15 +11,17 @@ contributed thousands, that we wish to thank.
 
 We call out the extensive contributions of [Cody Boone
 Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson) who is
-responsible for most of the improvements and fixes including many **very
+responsible for most of the improvements and fixes including many **extremely
 complicated bug fixes** like
 [1988/phillipps](/thanks-for-fixes.md#1988phillipps-readmemd),
 [2001/anonymous](/thanks-for-fixes.md#2001anonymous-readmemd) and
 [2004/burley](/thanks-for-fixes.md#2004burley-readmemd), making entries like
+[1985/sicherman](/thanks-for-fixes.md#1985sicherman-readmemd) and
 [1986/wall](/thanks-for-fixes.md#1986wall-readmemd) not need `-traditional-cpp`
-(all **very complicated fixes**), fixing entries to work with clang (some being
-**very complicated** like [1991/dds](/thanks-for-fixes.md#1991dds-readmemd)),
-porting entries to macOS (some being **very complicated** like
+(all **extremely complicated fixes**), fixing entries to work with clang (some
+being **extremely complicated** like
+[1991/dds](/thanks-for-fixes.md#1991dds-readmemd)), porting entries to macOS
+(some being **very complicated** like
 [1998/schweikh1](/thanks-for-fixes.md#1998schweikh1-readmemd)), fixing code like
 [2001/herrmann2](/thanks-for-fixes.md#2001herrmann2-readmemd) to work in both
 32-bit/64-bit which *can be* **very complicated**, providing alternate code
@@ -237,7 +239,8 @@ then compare it to [sicherman.c](1985/sicherman/sicherman.c) for some good old
 C-fashioned fun!
 
 Later on Cody improved the fix so that it looks much more like the [original
-entry](1985/sicherman/sicherman.c).
+entry](1985/sicherman/sicherman.c). He did this one more time and it's about as
+close to the original as one can get without causing a compilation error.
 
 
 ## [1986/hague](1986/hague/hague.c) ([README.md](1986/hague/README.md]))
