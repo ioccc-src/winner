@@ -56,7 +56,7 @@ trap 'rm -f $TMP_FILE; exit' 0 1 2 3 15
 comm -23 "$REQUIRED_PATH_LIST" "$FOUND_LIST" | sort -t/ > "$TMP_FILE"
 if [[ -s $TMP_FILE ]]; then
     COUNT=$(wc -l < "$TMP_FILE" | sed -e 's/^ *//')
-    echo "# $0: Waning: missing required file count: $COUNT"
+    echo "# $0: Warning: missing required file count: $COUNT"
     EXIT_CODE=18	# exit 18
     echo "#"
     echo "# $0: missing required file list starts below"
@@ -72,7 +72,7 @@ trap 'rm -f $TMP_FILE; exit' 0 1 2 3 15
 comm -13 "$MANIFEST_LIST" "$FOUND_LIST" | sort -t/ > "$TMP_FILE"
 if [[ -s $TMP_FILE ]]; then
     COUNT=$(wc -l < "$TMP_FILE" | sed -e 's/^ *//')
-    echo "# $0: Waning: found files not in the manifest count: $COUNT"
+    echo "# $0: Warning: found files not in the manifest count: $COUNT"
     EXIT_CODE=19	# exit 19
     echo "#"
     echo "# $0: found files not in the manifest list starts below"

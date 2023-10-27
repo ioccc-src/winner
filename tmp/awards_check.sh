@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# check_awards - check the award lines in README.md files
+# awards_check - check the award lines in README.md files
 #
 # XXX - This is a temporary utility that will be replaced when
 #	the .winner.json files are built
@@ -10,19 +10,20 @@
 # generate as it was not worth getting everything correct. It was initially
 # generated like:
 #
-#	echo '#!/bin/bash' > bin/check_awards.sh ; ( while read -r g ; do
+#	echo '#!/bin/bash' > bin/awards_check.sh ; ( while read -r g ; do
 #	    echo grep "$g";
 #	done < <(sed -e 's,_,/,g' -e 's/"/\\"/g' tmp/year-auth-prize.csv |
 #	    awk -F, '{print grep "\x22" $2 "\x22" " " $1 "/" "README.md"}' ); )
-#	    >> bin/check_awards.sh
+#	    >> bin/awards_check.sh
 #
 # To determine how many entries have a mismatch in award compared to the CSV
 # file do:
 #
-#	sh bin/check_awards.sh | grep :0
+#	sh tmp/awards_check.sh | grep :0
 #
-# It must be run in the top level directory. It shouldn't be necessary in future
-# IOCCC contests as the problem should not occur again.
+# It must be run in the tmp/ subdirectory. It shouldn't be necessary in future
+# IOCCC contests as the problem should not occur again (hence it's a temporary
+# file :-) )
 #
 # This was a hack and not the prettiest hack made by Cody Boone Ferguson
 # (@xexyl) to quickly check all entries from 1984 through 2020. It probably could
