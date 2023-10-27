@@ -272,7 +272,7 @@ A text file containing `author_handle`s for each `author`: one `author_handle`
 per line.
 
 
-### [check_awards.sh](check_awards.sh)
+### [awards_check.sh](awards_check.sh)
 
 Script to verify that the award name for each entry as found as a level 1
 markdown header in each entry's `README.md` file.
@@ -282,7 +282,7 @@ Run the script from the top level directory.  The output should end in ":1".
 For example, this command should not produce any output.
 
 ```sh
-tmp/check_awards.sh | grep -v ':1$'
+tmp/awards_check.sh | grep -v ':1$'
 ```
 
 Any output is an indication that either an award name is incorrect, or the
