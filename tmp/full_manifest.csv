@@ -1,6 +1,7 @@
 # year,dir,winners_rank,path,created_by,prog,filetype,winners_show,display_via,winners_text,ext
 1984,anonymous,null,README.md,null,null,markdown,false,null,null,md
 1984,anonymous,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1984,anonymous,null,.id,null,null,id,false,null,winner id string,id
 1984,anonymous,null,.winner.json,jwinner,null,json,false,null,null,json
 1984,anonymous,10,index.html,readme2index,null,html,true,browser,click here first,html
 1984,anonymous,20,anonymous.c,null,main,c,true,github,winning source,c
@@ -11,6 +12,7 @@
 1984,anonymous,300,1984_anonymous.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1984,decot,null,README.md,null,null,markdown,false,null,null,md
 1984,decot,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1984,decot,null,.id,null,null,id,false,null,winner id string,id
 1984,decot,null,.winner.json,jwinner,null,json,false,null,null,json
 1984,decot,10,index.html,readme2index,null,html,true,browser,click here first,html
 1984,decot,20,decot.c,null,main,c,true,github,winning source,c
@@ -20,6 +22,7 @@
 1984,decot,300,1984_decot.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1984,laman,null,README.md,null,null,markdown,false,null,null,md
 1984,laman,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1984,laman,null,.id,null,null,id,false,null,winner id string,id
 1984,laman,null,.winner.json,jwinner,null,json,false,null,null,json
 1984,laman,10,index.html,readme2index,null,html,true,browser,click here first,html
 1984,laman,20,laman.c,null,main,c,true,github,winning source,c
@@ -28,6 +31,7 @@
 1984,laman,300,1984_laman.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1984,mullender,null,README.md,null,null,markdown,false,null,null,md
 1984,mullender,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1984,mullender,null,.id,null,null,id,false,null,winner id string,id
 1984,mullender,null,.winner.json,jwinner,null,json,false,null,null,json
 1984,mullender,10,index.html,readme2index,null,html,true,browser,click here first,html
 1984,mullender,20,mullender.c,null,main,c,true,github,winning source,c
@@ -39,6 +43,7 @@
 1984,mullender,300,1984_mullender.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1985,applin,null,README.md,null,null,markdown,false,null,null,md
 1985,applin,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1985,applin,null,.id,null,null,id,false,null,winner id string,id
 1985,applin,null,.winner.json,jwinner,null,json,false,null,null,json
 1985,applin,10,index.html,readme2index,null,html,true,browser,click here first,html
 1985,applin,20,applin.c,null,main,c,true,github,winning source,c
@@ -47,6 +52,7 @@
 1985,applin,300,1985_applin.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1985,august,null,README.md,null,null,markdown,false,null,null,md
 1985,august,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1985,august,null,.id,null,null,id,false,null,winner id string,id
 1985,august,null,.winner.json,jwinner,null,json,false,null,null,json
 1985,august,10,index.html,readme2index,null,html,true,browser,click here first,html
 1985,august,20,august.c,null,main,c,true,github,winning source,c
@@ -55,6 +61,7 @@
 1985,august,300,1985_august.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1985,lycklama,null,README.md,null,null,markdown,false,null,null,md
 1985,lycklama,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1985,lycklama,null,.id,null,null,id,false,null,winner id string,id
 1985,lycklama,null,.winner.json,jwinner,null,json,false,null,null,json
 1985,lycklama,10,index.html,readme2index,null,html,true,browser,click here first,html
 1985,lycklama,20,lycklama.c,null,main,c,true,github,winning source,c
@@ -64,6 +71,7 @@
 1985,lycklama,300,1985_lycklama.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1985,shapiro,null,README.md,null,null,markdown,false,null,null,md
 1985,shapiro,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1985,shapiro,null,.id,null,null,id,false,null,winner id string,id
 1985,shapiro,null,.winner.json,jwinner,null,json,false,null,null,json
 1985,shapiro,10,index.html,readme2index,null,html,true,browser,click here first,html
 1985,shapiro,20,shapiro.c,null,main,c,true,github,winning source,c
@@ -72,6 +80,7 @@
 1985,shapiro,300,1985_shapiro.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1985,sicherman,null,README.md,null,null,markdown,false,null,null,md
 1985,sicherman,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1985,sicherman,null,.id,null,null,id,false,null,winner id string,id
 1985,sicherman,null,.winner.json,jwinner,null,json,false,null,null,json
 1985,sicherman,10,index.html,readme2index,null,html,true,browser,click here first,html
 1985,sicherman,20,sicherman.c,null,main,c,true,github,winning source,c
@@ -81,6 +90,7 @@
 1985,sicherman,300,1985_sicherman.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1986,applin,null,README.md,null,null,markdown,false,null,null,md
 1986,applin,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1986,applin,null,.id,null,null,id,false,null,winner id string,id
 1986,applin,null,.winner.json,jwinner,null,json,false,null,null,json
 1986,applin,10,index.html,readme2index,null,html,true,browser,click here first,html
 1986,applin,20,applin.c,null,main,c,true,github,winning source,c
@@ -89,6 +99,7 @@
 1986,applin,300,1986_applin.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1986,august,null,README.md,null,null,markdown,false,null,null,md
 1986,august,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1986,august,null,.id,null,null,id,false,null,winner id string,id
 1986,august,null,.winner.json,jwinner,null,json,false,null,null,json
 1986,august,10,index.html,readme2index,null,html,true,browser,click here first,html
 1986,august,20,august.c,null,main,c,true,github,winning source,c
@@ -97,6 +108,7 @@
 1986,august,300,1986_august.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1986,bright,null,README.md,null,null,markdown,false,null,null,md
 1986,bright,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1986,bright,null,.id,null,null,id,false,null,winner id string,id
 1986,bright,null,.winner.json,jwinner,null,json,false,null,null,json
 1986,bright,10,index.html,readme2index,null,html,true,browser,click here first,html
 1986,bright,20,bright.c,null,main,c,true,github,winning source,c
@@ -105,6 +117,7 @@
 1986,bright,300,1986_bright.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1986,hague,null,README.md,null,null,markdown,false,null,null,md
 1986,hague,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1986,hague,null,.id,null,null,id,false,null,winner id string,id
 1986,hague,null,.winner.json,jwinner,null,json,false,null,null,json
 1986,hague,10,index.html,readme2index,null,html,true,browser,click here first,html
 1986,hague,20,hague.c,null,main,c,true,github,winning source,c
@@ -113,6 +126,7 @@
 1986,hague,300,1986_hague.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1986,holloway,null,README.md,null,null,markdown,false,null,null,md
 1986,holloway,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1986,holloway,null,.id,null,null,id,false,null,winner id string,id
 1986,holloway,null,.winner.json,jwinner,null,json,false,null,null,json
 1986,holloway,10,index.html,readme2index,null,html,true,browser,click here first,html
 1986,holloway,20,holloway.c,null,main,c,true,github,winning source,c
@@ -121,6 +135,7 @@
 1986,holloway,300,1986_holloway.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1986,marshall,null,README.md,null,null,markdown,false,null,null,md
 1986,marshall,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1986,marshall,null,.id,null,null,id,false,null,winner id string,id
 1986,marshall,null,.winner.json,jwinner,null,json,false,null,null,json
 1986,marshall,10,index.html,readme2index,null,html,true,browser,click here first,html
 1986,marshall,20,marshall.c,null,main,c,true,github,winning source,c
@@ -130,6 +145,7 @@
 1986,marshall,300,1986_marshall.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1986,pawka,null,README.md,null,null,markdown,false,null,null,md
 1986,pawka,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1986,pawka,null,.id,null,null,id,false,null,winner id string,id
 1986,pawka,null,.winner.json,jwinner,null,json,false,null,null,json
 1986,pawka,10,index.html,readme2index,null,html,true,browser,click here first,html
 1986,pawka,20,pawka.c,null,main,c,true,github,winning source,c
@@ -138,6 +154,7 @@
 1986,pawka,300,1986_pawka.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1986,stein,null,README.md,null,null,markdown,false,null,null,md
 1986,stein,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1986,stein,null,.id,null,null,id,false,null,winner id string,id
 1986,stein,null,.winner.json,jwinner,null,json,false,null,null,json
 1986,stein,10,index.html,readme2index,null,html,true,browser,click here first,html
 1986,stein,20,stein.c,null,main,c,true,github,winning source,c
@@ -146,6 +163,7 @@
 1986,stein,300,1986_stein.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1986,wall,null,README.md,null,null,markdown,false,null,null,md
 1986,wall,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1986,wall,null,.id,null,null,id,false,null,winner id string,id
 1986,wall,null,.winner.json,jwinner,null,json,false,null,null,json
 1986,wall,10,index.html,readme2index,null,html,true,browser,click here first,html
 1986,wall,20,wall.c,null,main,c,true,github,winning source,c
@@ -155,6 +173,7 @@
 1986,wall,300,1986_wall.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1987,biggar,null,README.md,null,null,markdown,false,null,null,md
 1987,biggar,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1987,biggar,null,.id,null,null,id,false,null,winner id string,id
 1987,biggar,null,.winner.json,jwinner,null,json,false,null,null,json
 1987,biggar,10,index.html,readme2index,null,html,true,browser,click here first,html
 1987,biggar,20,biggar.c,null,main,c,true,github,winning source,c
@@ -163,6 +182,7 @@
 1987,biggar,300,1987_biggar.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1987,heckbert,null,README.md,null,null,markdown,false,null,null,md
 1987,heckbert,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1987,heckbert,null,.id,null,null,id,false,null,winner id string,id
 1987,heckbert,null,.winner.json,jwinner,null,json,false,null,null,json
 1987,heckbert,10,index.html,readme2index,null,html,true,browser,click here first,html
 1987,heckbert,20,heckbert.c,null,main,c,true,github,winning source,c
@@ -171,6 +191,7 @@
 1987,heckbert,300,1987_heckbert.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1987,hines,null,README.md,null,null,markdown,false,null,null,md
 1987,hines,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1987,hines,null,.id,null,null,id,false,null,winner id string,id
 1987,hines,null,.winner.json,jwinner,null,json,false,null,null,json
 1987,hines,10,index.html,readme2index,null,html,true,browser,click here first,html
 1987,hines,20,hines.c,null,main,c,true,github,winning source,c
@@ -180,6 +201,7 @@
 1987,hines,300,1987_hines.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1987,korn,null,README.md,null,null,markdown,false,null,null,md
 1987,korn,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1987,korn,null,.id,null,null,id,false,null,winner id string,id
 1987,korn,null,.winner.json,jwinner,null,json,false,null,null,json
 1987,korn,10,index.html,readme2index,null,html,true,browser,click here first,html
 1987,korn,20,korn.c,null,main,c,true,github,winning source,c
@@ -188,6 +210,7 @@
 1987,korn,300,1987_korn.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1987,lievaart,null,README.md,null,null,markdown,false,null,null,md
 1987,lievaart,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1987,lievaart,null,.id,null,null,id,false,null,winner id string,id
 1987,lievaart,null,.winner.json,jwinner,null,json,false,null,null,json
 1987,lievaart,10,index.html,readme2index,null,html,true,browser,click here first,html
 1987,lievaart,20,lievaart.c,null,main,c,true,github,winning source,c
@@ -199,6 +222,7 @@
 1987,lievaart,300,1987_lievaart.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1987,wall,null,README.md,null,null,markdown,false,null,null,md
 1987,wall,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1987,wall,null,.id,null,null,id,false,null,winner id string,id
 1987,wall,null,.winner.json,jwinner,null,json,false,null,null,json
 1987,wall,10,index.html,readme2index,null,html,true,browser,click here first,html
 1987,wall,20,wall.c,null,main,c,true,github,winning source,c
@@ -207,6 +231,7 @@
 1987,wall,300,1987_wall.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1987,westley,null,README.md,null,null,markdown,false,null,null,md
 1987,westley,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1987,westley,null,.id,null,null,id,false,null,winner id string,id
 1987,westley,null,.winner.json,jwinner,null,json,false,null,null,json
 1987,westley,10,index.html,readme2index,null,html,true,browser,click here first,html
 1987,westley,20,westley.c,null,main,c,true,github,winning source,c
@@ -216,6 +241,7 @@
 1987,westley,300,1987_westley.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1988,applin,null,README.md,null,null,markdown,false,null,null,md
 1988,applin,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1988,applin,null,.id,null,null,id,false,null,winner id string,id
 1988,applin,null,.winner.json,jwinner,null,json,false,null,null,json
 1988,applin,10,index.html,readme2index,null,html,true,browser,click here first,html
 1988,applin,20,applin.c,null,main,c,true,github,winning source,c
@@ -225,6 +251,7 @@
 1988,applin,300,1988_applin.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1988,dale,null,README.md,null,null,markdown,false,null,null,md
 1988,dale,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1988,dale,null,.id,null,null,id,false,null,winner id string,id
 1988,dale,null,.winner.json,jwinner,null,json,false,null,null,json
 1988,dale,10,index.html,readme2index,null,html,true,browser,click here first,html
 1988,dale,20,dale.c,null,main,c,true,github,winning source,c
@@ -234,6 +261,7 @@
 1988,dale,300,1988_dale.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1988,isaak,null,README.md,null,null,markdown,false,null,null,md
 1988,isaak,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1988,isaak,null,.id,null,null,id,false,null,winner id string,id
 1988,isaak,null,.winner.json,jwinner,null,json,false,null,null,json
 1988,isaak,10,index.html,readme2index,null,html,true,browser,click here first,html
 1988,isaak,20,isaak.c,null,main,c,true,github,winning source,c
@@ -244,6 +272,7 @@
 1988,isaak,300,1988_isaak.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1988,litmaath,null,README.md,null,null,markdown,false,null,null,md
 1988,litmaath,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1988,litmaath,null,.id,null,null,id,false,null,winner id string,id
 1988,litmaath,null,.winner.json,jwinner,null,json,false,null,null,json
 1988,litmaath,10,index.html,readme2index,null,html,true,browser,click here first,html
 1988,litmaath,20,litmaath.c,null,main,c,true,github,winning source,c
@@ -253,6 +282,7 @@
 1988,litmaath,300,1988_litmaath.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1988,phillipps,null,README.md,null,null,markdown,false,null,null,md
 1988,phillipps,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1988,phillipps,null,.id,null,null,id,false,null,winner id string,id
 1988,phillipps,null,.winner.json,jwinner,null,json,false,null,null,json
 1988,phillipps,10,index.html,readme2index,null,html,true,browser,click here first,html
 1988,phillipps,20,phillipps.c,null,main,c,true,github,winning source,c
@@ -261,6 +291,7 @@
 1988,phillipps,300,1988_phillipps.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1988,reddy,null,README.md,null,null,markdown,false,null,null,md
 1988,reddy,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1988,reddy,null,.id,null,null,id,false,null,winner id string,id
 1988,reddy,null,.winner.json,jwinner,null,json,false,null,null,json
 1988,reddy,10,index.html,readme2index,null,html,true,browser,click here first,html
 1988,reddy,20,reddy.c,null,main,c,true,github,winning source,c
@@ -269,6 +300,7 @@
 1988,reddy,300,1988_reddy.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1988,robison,null,README.md,null,null,markdown,false,null,null,md
 1988,robison,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1988,robison,null,.id,null,null,id,false,null,winner id string,id
 1988,robison,null,.winner.json,jwinner,null,json,false,null,null,json
 1988,robison,10,index.html,readme2index,null,html,true,browser,click here first,html
 1988,robison,20,robison.c,null,main,c,true,github,winning source,c
@@ -277,6 +309,7 @@
 1988,robison,300,1988_robison.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1988,spinellis,null,README.md,null,null,markdown,false,null,null,md
 1988,spinellis,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1988,spinellis,null,.id,null,null,id,false,null,winner id string,id
 1988,spinellis,null,.winner.json,jwinner,null,json,false,null,null,json
 1988,spinellis,10,index.html,readme2index,null,html,true,browser,click here first,html
 1988,spinellis,20,spinellis.c,null,main,c,true,github,winning source,c
@@ -288,6 +321,7 @@
 1988,spinellis,300,1988_spinellis.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1988,westley,null,README.md,null,null,markdown,false,null,null,md
 1988,westley,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1988,westley,null,.id,null,null,id,false,null,winner id string,id
 1988,westley,null,.winner.json,jwinner,null,json,false,null,null,json
 1988,westley,10,index.html,readme2index,null,html,true,browser,click here first,html
 1988,westley,20,westley.c,null,main,c,true,github,winning source,c
@@ -297,6 +331,7 @@
 1988,westley,300,1988_westley.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1989,fubar,null,README.md,null,null,markdown,false,null,null,md
 1989,fubar,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1989,fubar,null,.id,null,null,id,false,null,winner id string,id
 1989,fubar,null,.winner.json,jwinner,null,json,false,null,null,json
 1989,fubar,10,index.html,readme2index,null,html,true,browser,click here first,html
 1989,fubar,20,fubar.c,null,main,c,true,github,winning source,c
@@ -306,6 +341,7 @@
 1989,fubar,300,1989_fubar.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1989,jar.1,null,README.md,null,null,markdown,false,null,null,md
 1989,jar.1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1989,jar.1,null,.id,null,null,id,false,null,winner id string,id
 1989,jar.1,null,.winner.json,jwinner,null,json,false,null,null,json
 1989,jar.1,10,index.html,readme2index,null,html,true,browser,click here first,html
 1989,jar.1,20,jar.1.c,null,main,c,true,github,winning source,c
@@ -317,6 +353,7 @@
 1989,jar.1,300,1989_jar.1.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1989,jar.2,null,README.md,null,null,markdown,false,null,null,md
 1989,jar.2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1989,jar.2,null,.id,null,null,id,false,null,winner id string,id
 1989,jar.2,null,.winner.json,jwinner,null,json,false,null,null,json
 1989,jar.2,10,index.html,readme2index,null,html,true,browser,click here first,html
 1989,jar.2,20,jar.2.c,null,main,c,true,github,winning source,c
@@ -325,6 +362,7 @@
 1989,jar.2,300,1989_jar.2.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1989,ovdluhe,null,README.md,null,null,markdown,false,null,null,md
 1989,ovdluhe,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1989,ovdluhe,null,.id,null,null,id,false,null,winner id string,id
 1989,ovdluhe,null,.winner.json,jwinner,null,json,false,null,null,json
 1989,ovdluhe,10,index.html,readme2index,null,html,true,browser,click here first,html
 1989,ovdluhe,20,ovdluhe.c,null,main,c,true,github,winning source,c
@@ -334,6 +372,7 @@
 1989,ovdluhe,300,1989_ovdluhe.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1989,paul,null,README.md,null,null,markdown,false,null,null,md
 1989,paul,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1989,paul,null,.id,null,null,id,false,null,winner id string,id
 1989,paul,null,.winner.json,jwinner,null,json,false,null,null,json
 1989,paul,10,index.html,readme2index,null,html,true,browser,click here first,html
 1989,paul,20,paul.c,null,main,c,true,github,winning source,c
@@ -342,6 +381,7 @@
 1989,paul,300,1989_paul.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1989,robison,null,README.md,null,null,markdown,false,null,null,md
 1989,robison,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1989,robison,null,.id,null,null,id,false,null,winner id string,id
 1989,robison,null,.winner.json,jwinner,null,json,false,null,null,json
 1989,robison,10,index.html,readme2index,null,html,true,browser,click here first,html
 1989,robison,20,robison.c,null,main,c,true,github,winning source,c
@@ -350,6 +390,7 @@
 1989,robison,300,1989_robison.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1989,roemer,null,README.md,null,null,markdown,false,null,null,md
 1989,roemer,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1989,roemer,null,.id,null,null,id,false,null,winner id string,id
 1989,roemer,null,.winner.json,jwinner,null,json,false,null,null,json
 1989,roemer,10,index.html,readme2index,null,html,true,browser,click here first,html
 1989,roemer,20,roemer.c,null,main,c,true,github,winning source,c
@@ -358,6 +399,7 @@
 1989,roemer,300,1989_roemer.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1989,tromp,null,README.md,null,null,markdown,false,null,null,md
 1989,tromp,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1989,tromp,null,.id,null,null,id,false,null,winner id string,id
 1989,tromp,null,.winner.json,jwinner,null,json,false,null,null,json
 1989,tromp,10,index.html,readme2index,null,html,true,browser,click here first,html
 1989,tromp,20,tromp.c,null,main,c,true,github,winning source,c
@@ -367,6 +409,7 @@
 1989,tromp,300,1989_tromp.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1989,vanb,null,README.md,null,null,markdown,false,null,null,md
 1989,vanb,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1989,vanb,null,.id,null,null,id,false,null,winner id string,id
 1989,vanb,null,.winner.json,jwinner,null,json,false,null,null,json
 1989,vanb,10,index.html,readme2index,null,html,true,browser,click here first,html
 1989,vanb,20,vanb.c,null,main,c,true,github,winning source,c
@@ -375,6 +418,7 @@
 1989,vanb,300,1989_vanb.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1989,westley,null,README.md,null,null,markdown,false,null,null,md
 1989,westley,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1989,westley,null,.id,null,null,id,false,null,winner id string,id
 1989,westley,null,.winner.json,jwinner,null,json,false,null,null,json
 1989,westley,10,index.html,readme2index,null,html,true,browser,click here first,html
 1989,westley,20,westley.c,null,main,c,true,github,winning source,c
@@ -383,6 +427,7 @@
 1989,westley,300,1989_westley.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1990,baruch,null,README.md,null,null,markdown,false,null,null,md
 1990,baruch,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1990,baruch,null,.id,null,null,id,false,null,winner id string,id
 1990,baruch,null,.winner.json,jwinner,null,json,false,null,null,json
 1990,baruch,10,index.html,readme2index,null,html,true,browser,click here first,html
 1990,baruch,20,baruch.c,null,main,c,true,github,winning source,c
@@ -392,6 +437,7 @@
 1990,baruch,300,1990_baruch.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1990,cmills,null,README.md,null,null,markdown,false,null,null,md
 1990,cmills,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1990,cmills,null,.id,null,null,id,false,null,winner id string,id
 1990,cmills,null,.winner.json,jwinner,null,json,false,null,null,json
 1990,cmills,10,index.html,readme2index,null,html,true,browser,click here first,html
 1990,cmills,20,cmills.c,null,main,c,true,github,winning source,c
@@ -400,6 +446,7 @@
 1990,cmills,300,1990_cmills.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1990,dds,null,README.md,null,null,markdown,false,null,null,md
 1990,dds,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1990,dds,null,.id,null,null,id,false,null,winner id string,id
 1990,dds,null,.winner.json,jwinner,null,json,false,null,null,json
 1990,dds,10,index.html,readme2index,null,html,true,browser,click here first,html
 1990,dds,20,dds.c,null,main,c,true,github,winning source,c
@@ -409,6 +456,7 @@
 1990,dds,300,1990_dds.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1990,dg,null,README.md,null,null,markdown,false,null,null,md
 1990,dg,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1990,dg,null,.id,null,null,id,false,null,winner id string,id
 1990,dg,null,.winner.json,jwinner,null,json,false,null,null,json
 1990,dg,10,index.html,readme2index,null,html,true,browser,click here first,html
 1990,dg,20,dg.c,null,main,c,true,github,winning source,c
@@ -417,6 +465,7 @@
 1990,dg,300,1990_dg.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1990,jaw,null,README.md,null,null,markdown,false,null,null,md
 1990,jaw,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1990,jaw,null,.id,null,null,id,false,null,winner id string,id
 1990,jaw,null,.winner.json,jwinner,null,json,false,null,null,json
 1990,jaw,10,index.html,readme2index,null,html,true,browser,click here first,html
 1990,jaw,20,jaw.c,null,main,c,true,github,winning source,c
@@ -427,6 +476,7 @@
 1990,jaw,300,1990_jaw.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1990,pjr,null,README.md,null,null,markdown,false,null,null,md
 1990,pjr,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1990,pjr,null,.id,null,null,id,false,null,winner id string,id
 1990,pjr,null,.winner.json,jwinner,null,json,false,null,null,json
 1990,pjr,10,index.html,readme2index,null,html,true,browser,click here first,html
 1990,pjr,20,pjr.c,null,main,c,true,github,winning source,c
@@ -435,6 +485,7 @@
 1990,pjr,300,1990_pjr.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1990,scjones,null,README.md,null,null,markdown,false,null,null,md
 1990,scjones,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1990,scjones,null,.id,null,null,id,false,null,winner id string,id
 1990,scjones,null,.winner.json,jwinner,null,json,false,null,null,json
 1990,scjones,10,index.html,readme2index,null,html,true,browser,click here first,html
 1990,scjones,20,scjones.c,null,main,c,true,github,winning source,c
@@ -443,6 +494,7 @@
 1990,scjones,300,1990_scjones.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1990,stig,null,README.md,null,null,markdown,false,null,null,md
 1990,stig,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1990,stig,null,.id,null,null,id,false,null,winner id string,id
 1990,stig,null,.winner.json,jwinner,null,json,false,null,null,json
 1990,stig,10,index.html,readme2index,null,html,true,browser,click here first,html
 1990,stig,20,stig.c,null,main,c,true,github,winning source,c
@@ -452,6 +504,7 @@
 1990,stig,300,1990_stig.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1990,tbr,null,README.md,null,null,markdown,false,null,null,md
 1990,tbr,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1990,tbr,null,.id,null,null,id,false,null,winner id string,id
 1990,tbr,null,.winner.json,jwinner,null,json,false,null,null,json
 1990,tbr,10,index.html,readme2index,null,html,true,browser,click here first,html
 1990,tbr,20,tbr.c,null,main,c,true,github,winning source,c
@@ -460,6 +513,7 @@
 1990,tbr,300,1990_tbr.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1990,theorem,null,README.md,null,null,markdown,false,null,null,md
 1990,theorem,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1990,theorem,null,.id,null,null,id,false,null,winner id string,id
 1990,theorem,null,.winner.json,jwinner,null,json,false,null,null,json
 1990,theorem,10,index.html,readme2index,null,html,true,browser,click here first,html
 1990,theorem,20,theorem.c,null,main,c,true,github,winning source,c
@@ -468,6 +522,7 @@
 1990,theorem,300,1990_theorem.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1990,westley,null,README.md,null,null,markdown,false,null,null,md
 1990,westley,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1990,westley,null,.id,null,null,id,false,null,winner id string,id
 1990,westley,null,.winner.json,jwinner,null,json,false,null,null,json
 1990,westley,10,index.html,readme2index,null,html,true,browser,click here first,html
 1990,westley,20,westley.c,null,main,c,true,github,winning source,c
@@ -477,6 +532,7 @@
 1990,westley,300,1990_westley.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1991,ant,null,README.md,null,null,markdown,false,null,null,md
 1991,ant,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1991,ant,null,.id,null,null,id,false,null,winner id string,id
 1991,ant,null,.winner.json,jwinner,null,json,false,null,null,json
 1991,ant,10,index.html,readme2index,null,html,true,browser,click here first,html
 1991,ant,20,ant.c,null,main,c,true,github,winning source,c
@@ -485,6 +541,7 @@
 1991,ant,300,1991_ant.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1991,brnstnd,null,README.md,null,null,markdown,false,null,null,md
 1991,brnstnd,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1991,brnstnd,null,.id,null,null,id,false,null,winner id string,id
 1991,brnstnd,null,sorta.README.md,null,null,markdown,false,null,null,md
 1991,brnstnd,null,.winner.json,jwinner,null,json,false,null,null,json
 1991,brnstnd,10,index.html,readme2index,null,html,true,browser,click here first,html
@@ -508,6 +565,7 @@
 1991,brnstnd,300,1991_brnstnd.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1991,buzzard,null,README.md,null,null,markdown,false,null,null,md
 1991,buzzard,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1991,buzzard,null,.id,null,null,id,false,null,winner id string,id
 1991,buzzard,null,.winner.json,jwinner,null,json,false,null,null,json
 1991,buzzard,10,index.html,readme2index,null,html,true,browser,click here first,html
 1991,buzzard,20,buzzard.c,null,main,c,true,github,winning source,c
@@ -516,6 +574,7 @@
 1991,buzzard,300,1991_buzzard.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1991,cdupont,null,README.md,null,null,markdown,false,null,null,md
 1991,cdupont,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1991,cdupont,null,.id,null,null,id,false,null,winner id string,id
 1991,cdupont,null,.winner.json,jwinner,null,json,false,null,null,json
 1991,cdupont,10,index.html,readme2index,null,html,true,browser,click here first,html
 1991,cdupont,20,cdupont.c,null,main,c,true,github,winning source,c
@@ -524,6 +583,7 @@
 1991,cdupont,300,1991_cdupont.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1991,davidguy,null,README.md,null,null,markdown,false,null,null,md
 1991,davidguy,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1991,davidguy,null,.id,null,null,id,false,null,winner id string,id
 1991,davidguy,null,.winner.json,jwinner,null,json,false,null,null,json
 1991,davidguy,10,index.html,readme2index,null,html,true,browser,click here first,html
 1991,davidguy,20,davidguy.c,null,main,c,true,github,winning source,c
@@ -532,6 +592,7 @@
 1991,davidguy,300,1991_davidguy.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1991,dds,null,README.md,null,null,markdown,false,null,null,md
 1991,dds,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1991,dds,null,.id,null,null,id,false,null,winner id string,id
 1991,dds,null,.winner.json,jwinner,null,json,false,null,null,json
 1991,dds,10,index.html,readme2index,null,html,true,browser,click here first,html
 1991,dds,20,dds.c,null,main,c,true,github,winning source,c
@@ -542,6 +603,7 @@
 1991,dds,300,1991_dds.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1991,fine,null,README.md,null,null,markdown,false,null,null,md
 1991,fine,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1991,fine,null,.id,null,null,id,false,null,winner id string,id
 1991,fine,null,.winner.json,jwinner,null,json,false,null,null,json
 1991,fine,10,index.html,readme2index,null,html,true,browser,click here first,html
 1991,fine,20,fine.c,null,main,c,true,github,winning source,c
@@ -550,6 +612,7 @@
 1991,fine,300,1991_fine.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1991,rince,null,README.md,null,null,markdown,false,null,null,md
 1991,rince,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1991,rince,null,.id,null,null,id,false,null,winner id string,id
 1991,rince,null,.winner.json,jwinner,null,json,false,null,null,json
 1991,rince,10,index.html,readme2index,null,html,true,browser,click here first,html
 1991,rince,20,rince.c,null,main,c,true,github,winning source,c
@@ -558,6 +621,7 @@
 1991,rince,300,1991_rince.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1991,westley,null,README.md,null,null,markdown,false,null,null,md
 1991,westley,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1991,westley,null,.id,null,null,id,false,null,winner id string,id
 1991,westley,null,.winner.json,jwinner,null,json,false,null,null,json
 1991,westley,10,index.html,readme2index,null,html,true,browser,click here first,html
 1991,westley,20,westley.c,null,main,c,true,github,winning source,c
@@ -567,6 +631,7 @@
 1991,westley,300,1991_westley.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1992,adrian,null,README.md,null,null,markdown,false,null,null,md
 1992,adrian,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1992,adrian,null,.id,null,null,id,false,null,winner id string,id
 1992,adrian,null,.winner.json,jwinner,null,json,false,null,null,json
 1992,adrian,10,index.html,readme2index,null,html,true,browser,click here first,html
 1992,adrian,20,adrian.c,null,main,c,true,github,winning source,c
@@ -583,6 +648,7 @@
 1992,adrian,300,1992_adrian.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1992,albert,null,README.md,null,null,markdown,false,null,null,md
 1992,albert,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1992,albert,null,.id,null,null,id,false,null,winner id string,id
 1992,albert,null,.winner.json,jwinner,null,json,false,null,null,json
 1992,albert,10,index.html,readme2index,null,html,true,browser,click here first,html
 1992,albert,20,albert.c,null,main,c,true,github,winning source,c
@@ -592,6 +658,7 @@
 1992,albert,300,1992_albert.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1992,ant,null,README.md,null,null,markdown,false,null,null,md
 1992,ant,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1992,ant,null,.id,null,null,id,false,null,winner id string,id
 1992,ant,null,.winner.json,jwinner,null,json,false,null,null,json
 1992,ant,10,index.html,readme2index,null,html,true,browser,click here first,html
 1992,ant,20,ant.c,null,main,c,true,github,winning source,c
@@ -602,6 +669,7 @@
 1992,ant,300,1992_ant.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1992,buzzard.1,null,README.md,null,null,markdown,false,null,null,md
 1992,buzzard.1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1992,buzzard.1,null,.id,null,null,id,false,null,winner id string,id
 1992,buzzard.1,null,.winner.json,jwinner,null,json,false,null,null,json
 1992,buzzard.1,10,index.html,readme2index,null,html,true,browser,click here first,html
 1992,buzzard.1,20,buzzard.1.c,null,main,c,true,github,winning source,c
@@ -611,6 +679,7 @@
 1992,buzzard.2,null,README.md,null,null,markdown,false,null,null,md
 1992,buzzard.2,null,buzzard.2.README.md,null,null,markdown,false,null,null,md
 1992,buzzard.2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1992,buzzard.2,null,.id,null,null,id,false,null,winner id string,id
 1992,buzzard.2,null,.winner.json,jwinner,null,json,false,null,null,json
 1992,buzzard.2,10,index.html,readme2index,null,html,true,browser,click here first,html
 1992,buzzard.2,20,buzzard.2.c,null,main,c,true,github,winning source,c
@@ -631,6 +700,7 @@
 1992,buzzard.2,300,1992_buzzard.2.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1992,gson,null,README.md,null,null,markdown,false,null,null,md
 1992,gson,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1992,gson,null,.id,null,null,id,false,null,winner id string,id
 1992,gson,null,.winner.json,jwinner,null,json,false,null,null,json
 1992,gson,10,index.html,readme2index,null,html,true,browser,click here first,html
 1992,gson,20,gson.c,null,main,c,true,github,winning source,c
@@ -640,6 +710,7 @@
 1992,gson,300,1992_gson.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1992,imc,null,README.md,null,null,markdown,false,null,null,md
 1992,imc,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1992,imc,null,.id,null,null,id,false,null,winner id string,id
 1992,imc,null,.winner.json,jwinner,null,json,false,null,null,json
 1992,imc,10,index.html,readme2index,null,html,true,browser,click here first,html
 1992,imc,20,imc.c,null,main,c,true,github,winning source,c
@@ -648,6 +719,7 @@
 1992,imc,300,1992_imc.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1992,kivinen,null,README.md,null,null,markdown,false,null,null,md
 1992,kivinen,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1992,kivinen,null,.id,null,null,id,false,null,winner id string,id
 1992,kivinen,null,.winner.json,jwinner,null,json,false,null,null,json
 1992,kivinen,10,index.html,readme2index,null,html,true,browser,click here first,html
 1992,kivinen,20,kivinen.c,null,main,c,true,github,winning source,c
@@ -656,6 +728,7 @@
 1992,kivinen,300,1992_kivinen.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1992,lush,null,README.md,null,null,markdown,false,null,null,md
 1992,lush,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1992,lush,null,.id,null,null,id,false,null,winner id string,id
 1992,lush,null,.winner.json,jwinner,null,json,false,null,null,json
 1992,lush,10,index.html,readme2index,null,html,true,browser,click here first,html
 1992,lush,20,lush.c,null,main,c,true,github,winning source,c
@@ -665,6 +738,7 @@
 1992,lush,300,1992_lush.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1992,marangon,null,README.md,null,null,markdown,false,null,null,md
 1992,marangon,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1992,marangon,null,.id,null,null,id,false,null,winner id string,id
 1992,marangon,null,.winner.json,jwinner,null,json,false,null,null,json
 1992,marangon,10,index.html,readme2index,null,html,true,browser,click here first,html
 1992,marangon,20,marangon.c,null,main,c,true,github,winning source,c
@@ -673,6 +747,7 @@
 1992,marangon,300,1992_marangon.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1992,nathan,null,README.md,null,null,markdown,false,null,null,md
 1992,nathan,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1992,nathan,null,.id,null,null,id,false,null,winner id string,id
 1992,nathan,null,.winner.json,jwinner,null,json,false,null,null,json
 1992,nathan,10,index.html,readme2index,null,html,true,browser,click here first,html
 1992,nathan,20,nathan.c,null,main,c,true,github,winning source,c
@@ -681,6 +756,7 @@
 1992,nathan,300,1992_nathan.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1992,vern,null,README.md,null,null,markdown,false,null,null,md
 1992,vern,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1992,vern,null,.id,null,null,id,false,null,winner id string,id
 1992,vern,null,.winner.json,jwinner,null,json,false,null,null,json
 1992,vern,10,index.html,readme2index,null,html,true,browser,click here first,html
 1992,vern,20,vern.c,null,main,c,true,github,winning source,c
@@ -689,6 +765,7 @@
 1992,vern,300,1992_vern.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1992,westley,null,README.md,null,null,markdown,false,null,null,md
 1992,westley,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1992,westley,null,.id,null,null,id,false,null,winner id string,id
 1992,westley,null,.winner.json,jwinner,null,json,false,null,null,json
 1992,westley,10,index.html,readme2index,null,html,true,browser,click here first,html
 1992,westley,20,westley.c,null,main,c,true,github,winning source,c
@@ -698,6 +775,7 @@
 1992,westley,300,1992_westley.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1993,ant,null,README.md,null,null,markdown,false,null,null,md
 1993,ant,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1993,ant,null,.id,null,null,id,false,null,winner id string,id
 1993,ant,null,.winner.json,jwinner,null,json,false,null,null,json
 1993,ant,10,index.html,readme2index,null,html,true,browser,click here first,html
 1993,ant,20,ant.c,null,main,c,true,github,winning source,c
@@ -708,6 +786,7 @@
 1993,ant,300,1993_ant.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1993,cmills,null,README.md,null,null,markdown,false,null,null,md
 1993,cmills,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1993,cmills,null,.id,null,null,id,false,null,winner id string,id
 1993,cmills,null,.winner.json,jwinner,null,json,false,null,null,json
 1993,cmills,10,index.html,readme2index,null,html,true,browser,click here first,html
 1993,cmills,20,cmills.c,null,main,c,true,github,winning source,c
@@ -716,6 +795,7 @@
 1993,cmills,300,1993_cmills.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1993,dgibson,null,README.md,null,null,markdown,false,null,null,md
 1993,dgibson,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1993,dgibson,null,.id,null,null,id,false,null,winner id string,id
 1993,dgibson,null,.winner.json,jwinner,null,json,false,null,null,json
 1993,dgibson,10,index.html,readme2index,null,html,true,browser,click here first,html
 1993,dgibson,20,dgibson.c,null,main,c,true,github,winning source,c
@@ -731,6 +811,7 @@
 1993,ejb,null,README.md,null,null,markdown,false,null,null,md
 1993,ejb,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
 1993,ejb,null,hanoi.md,null,null,markdown,false,null,null,md
+1993,ejb,null,.id,null,null,id,false,null,winner id string,id
 1993,ejb,null,patience.md,null,null,markdown,false,null,null,md
 1993,ejb,null,.winner.json,jwinner,null,json,false,null,null,json
 1993,ejb,10,index.html,readme2index,null,html,true,browser,click here first,html
@@ -742,6 +823,7 @@
 1993,ejb,300,1993_ejb.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1993,jonth,null,README.md,null,null,markdown,false,null,null,md
 1993,jonth,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1993,jonth,null,.id,null,null,id,false,null,winner id string,id
 1993,jonth,null,.winner.json,jwinner,null,json,false,null,null,json
 1993,jonth,10,index.html,readme2index,null,html,true,browser,click here first,html
 1993,jonth,20,jonth.c,null,main,c,true,github,winning source,c
@@ -750,6 +832,7 @@
 1993,jonth,300,1993_jonth.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1993,leo,null,README.md,null,null,markdown,false,null,null,md
 1993,leo,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1993,leo,null,.id,null,null,id,false,null,winner id string,id
 1993,leo,null,.winner.json,jwinner,null,json,false,null,null,json
 1993,leo,10,index.html,readme2index,null,html,true,browser,click here first,html
 1993,leo,20,leo.c,null,main,c,true,github,winning source,c
@@ -758,6 +841,7 @@
 1993,leo,300,1993_leo.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1993,lmfjyh,null,README.md,null,null,markdown,false,null,null,md
 1993,lmfjyh,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1993,lmfjyh,null,.id,null,null,id,false,null,winner id string,id
 1993,lmfjyh,null,.winner.json,jwinner,null,json,false,null,null,json
 1993,lmfjyh,10,index.html,readme2index,null,html,true,browser,click here first,html
 1993,lmfjyh,20,lmfjyh.c,null,main,c,true,github,winning source,c
@@ -767,6 +851,7 @@
 1993,lmfjyh,300,1993_lmfjyh.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1993,plummer,null,README.md,null,null,markdown,false,null,null,md
 1993,plummer,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1993,plummer,null,.id,null,null,id,false,null,winner id string,id
 1993,plummer,null,.winner.json,jwinner,null,json,false,null,null,json
 1993,plummer,10,index.html,readme2index,null,html,true,browser,click here first,html
 1993,plummer,20,plummer.c,null,main,c,true,github,winning source,c
@@ -777,6 +862,7 @@
 1993,rince,null,README.md,null,null,markdown,false,null,null,md
 1993,rince,null,design.md,null,null,markdown,false,null,null,md
 1993,rince,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1993,rince,null,.id,null,null,id,false,null,winner id string,id
 1993,rince,null,.winner.json,jwinner,null,json,false,null,null,json
 1993,rince,10,index.html,readme2index,null,html,true,browser,click here first,html
 1993,rince,20,rince.c,null,main,c,true,github,winning source,c
@@ -790,6 +876,7 @@
 1993,rince,300,1993_rince.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1993,schnitzi,null,README.md,null,null,markdown,false,null,null,md
 1993,schnitzi,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1993,schnitzi,null,.id,null,null,id,false,null,winner id string,id
 1993,schnitzi,null,.winner.json,jwinner,null,json,false,null,null,json
 1993,schnitzi,10,index.html,readme2index,null,html,true,browser,click here first,html
 1993,schnitzi,20,schnitzi.c,null,main,c,true,github,winning source,c
@@ -799,6 +886,7 @@
 1993,schnitzi,300,1993_schnitzi.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1993,vanb,null,README.md,null,null,markdown,false,null,null,md
 1993,vanb,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1993,vanb,null,.id,null,null,id,false,null,winner id string,id
 1993,vanb,null,.winner.json,jwinner,null,json,false,null,null,json
 1993,vanb,10,index.html,readme2index,null,html,true,browser,click here first,html
 1993,vanb,20,vanb.c,null,main,c,true,github,winning source,c
@@ -807,6 +895,7 @@
 1993,vanb,300,1993_vanb.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1994,dodsond1,null,README.md,null,null,markdown,false,null,null,md
 1994,dodsond1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1994,dodsond1,null,.id,null,null,id,false,null,winner id string,id
 1994,dodsond1,null,.winner.json,jwinner,null,json,false,null,null,json
 1994,dodsond1,10,index.html,readme2index,null,html,true,browser,click here first,html
 1994,dodsond1,20,dodsond1.c,null,main,c,true,github,winning source,c
@@ -815,6 +904,7 @@
 1994,dodsond1,300,1994_dodsond1.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1994,dodsond2,null,README.md,null,null,markdown,false,null,null,md
 1994,dodsond2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1994,dodsond2,null,.id,null,null,id,false,null,winner id string,id
 1994,dodsond2,null,.winner.json,jwinner,null,json,false,null,null,json
 1994,dodsond2,10,index.html,readme2index,null,html,true,browser,click here first,html
 1994,dodsond2,20,dodsond2.c,null,main,c,true,github,winning source,c
@@ -824,6 +914,7 @@
 1994,dodsond2,300,1994_dodsond2.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1994,horton,null,README.md,null,null,markdown,false,null,null,md
 1994,horton,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1994,horton,null,.id,null,null,id,false,null,winner id string,id
 1994,horton,null,.winner.json,jwinner,null,json,false,null,null,json
 1994,horton,10,index.html,readme2index,null,html,true,browser,click here first,html
 1994,horton,20,horton.c,null,main,c,true,github,winning source,c
@@ -835,6 +926,7 @@
 1994,horton,300,1994_horton.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1994,imc,null,README.md,null,null,markdown,false,null,null,md
 1994,imc,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1994,imc,null,.id,null,null,id,false,null,winner id string,id
 1994,imc,null,.winner.json,jwinner,null,json,false,null,null,json
 1994,imc,10,index.html,readme2index,null,html,true,browser,click here first,html
 1994,imc,20,imc.c,null,main,c,true,github,winning source,c
@@ -843,6 +935,7 @@
 1994,imc,300,1994_imc.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1994,ldb,null,README.md,null,null,markdown,false,null,null,md
 1994,ldb,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1994,ldb,null,.id,null,null,id,false,null,winner id string,id
 1994,ldb,null,.winner.json,jwinner,null,json,false,null,null,json
 1994,ldb,10,index.html,readme2index,null,html,true,browser,click here first,html
 1994,ldb,20,ldb.c,null,main,c,true,github,winning source,c
@@ -851,6 +944,7 @@
 1994,ldb,300,1994_ldb.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1994,schnitzi,null,README.md,null,null,markdown,false,null,null,md
 1994,schnitzi,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1994,schnitzi,null,.id,null,null,id,false,null,winner id string,id
 1994,schnitzi,null,.winner.json,jwinner,null,json,false,null,null,json
 1994,schnitzi,10,index.html,readme2index,null,html,true,browser,click here first,html
 1994,schnitzi,20,schnitzi.c,null,main,c,true,github,winning source,c
@@ -860,6 +954,7 @@
 1994,schnitzi,300,1994_schnitzi.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1994,shapiro,null,README.md,null,null,markdown,false,null,null,md
 1994,shapiro,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1994,shapiro,null,.id,null,null,id,false,null,winner id string,id
 1994,shapiro,null,shapiro.md,null,null,markdown,false,null,null,md
 1994,shapiro,null,.winner.json,jwinner,null,json,false,null,null,json
 1994,shapiro,10,index.html,readme2index,null,html,true,browser,click here first,html
@@ -870,6 +965,7 @@
 1994,shapiro,300,1994_shapiro.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1994,smr,null,README.md,null,null,markdown,false,null,null,md
 1994,smr,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1994,smr,null,.id,null,null,id,false,null,winner id string,id
 1994,smr,null,.winner.json,jwinner,null,json,false,null,null,json
 1994,smr,10,index.html,readme2index,null,html,true,browser,click here first,html
 1994,smr,20,smr.c,null,main,c,true,github,winning source,c
@@ -878,6 +974,7 @@
 1994,smr,300,1994_smr.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1994,tvr,null,README.md,null,null,markdown,false,null,null,md
 1994,tvr,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1994,tvr,null,.id,null,null,id,false,null,winner id string,id
 1994,tvr,null,.winner.json,jwinner,null,json,false,null,null,json
 1994,tvr,10,index.html,readme2index,null,html,true,browser,click here first,html
 1994,tvr,20,tvr.c,null,main,c,true,github,winning source,c
@@ -889,6 +986,7 @@
 1994,tvr,300,1994_tvr.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1994,weisberg,null,README.md,null,null,markdown,false,null,null,md
 1994,weisberg,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1994,weisberg,null,.id,null,null,id,false,null,winner id string,id
 1994,weisberg,null,.winner.json,jwinner,null,json,false,null,null,json
 1994,weisberg,10,index.html,readme2index,null,html,true,browser,click here first,html
 1994,weisberg,20,weisberg.c,null,main,c,true,github,winning source,c
@@ -897,6 +995,7 @@
 1994,weisberg,300,1994_weisberg.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1994,westley,null,README.md,null,null,markdown,false,null,null,md
 1994,westley,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1994,westley,null,.id,null,null,id,false,null,winner id string,id
 1994,westley,null,.winner.json,jwinner,null,json,false,null,null,json
 1994,westley,10,index.html,readme2index,null,html,true,browser,click here first,html
 1994,westley,20,westley.c,null,main,c,true,github,winning source,c
@@ -906,6 +1005,7 @@
 1994,westley,300,1994_westley.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1995,cdua,null,README.md,null,null,markdown,false,null,null,md
 1995,cdua,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1995,cdua,null,.id,null,null,id,false,null,winner id string,id
 1995,cdua,null,.winner.json,jwinner,null,json,false,null,null,json
 1995,cdua,10,index.html,readme2index,null,html,true,browser,click here first,html
 1995,cdua,20,cdua.c,null,main,c,true,github,winning source,c
@@ -915,6 +1015,7 @@
 1995,cdua,300,1995_cdua.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1995,dodsond1,null,README.md,null,null,markdown,false,null,null,md
 1995,dodsond1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1995,dodsond1,null,.id,null,null,id,false,null,winner id string,id
 1995,dodsond1,null,.winner.json,jwinner,null,json,false,null,null,json
 1995,dodsond1,10,index.html,readme2index,null,html,true,browser,click here first,html
 1995,dodsond1,20,dodsond1.c,null,main,c,true,github,winning source,c
@@ -924,6 +1025,7 @@
 1995,dodsond1,300,1995_dodsond1.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1995,dodsond2,null,README.md,null,null,markdown,false,null,null,md
 1995,dodsond2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1995,dodsond2,null,.id,null,null,id,false,null,winner id string,id
 1995,dodsond2,null,.winner.json,jwinner,null,json,false,null,null,json
 1995,dodsond2,10,index.html,readme2index,null,html,true,browser,click here first,html
 1995,dodsond2,20,dodsond2.c,null,main,c,true,github,winning source,c
@@ -932,6 +1034,7 @@
 1995,dodsond2,300,1995_dodsond2.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1995,esde,null,README.md,null,null,markdown,false,null,null,md
 1995,esde,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1995,esde,null,.id,null,null,id,false,null,winner id string,id
 1995,esde,null,.winner.json,jwinner,null,json,false,null,null,json
 1995,esde,10,index.html,readme2index,null,html,true,browser,click here first,html
 1995,esde,20,esde.c,null,main,c,true,github,winning source,c
@@ -942,6 +1045,7 @@
 1995,esde,300,1995_esde.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1995,garry,null,README.md,null,null,markdown,false,null,null,md
 1995,garry,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1995,garry,null,.id,null,null,id,false,null,winner id string,id
 1995,garry,null,.winner.json,jwinner,null,json,false,null,null,json
 1995,garry,10,index.html,readme2index,null,html,true,browser,click here first,html
 1995,garry,20,garry.c,null,main,c,true,github,winning source,c
@@ -954,6 +1058,7 @@
 1995,garry,300,1995_garry.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1995,heathbar,null,README.md,null,null,markdown,false,null,null,md
 1995,heathbar,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1995,heathbar,null,.id,null,null,id,false,null,winner id string,id
 1995,heathbar,null,.winner.json,jwinner,null,json,false,null,null,json
 1995,heathbar,10,index.html,readme2index,null,html,true,browser,click here first,html
 1995,heathbar,20,heathbar.c,null,main,c,true,github,winning source,c
@@ -962,6 +1067,7 @@
 1995,heathbar,300,1995_heathbar.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1995,leo,null,README.md,null,null,markdown,false,null,null,md
 1995,leo,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1995,leo,null,.id,null,null,id,false,null,winner id string,id
 1995,leo,null,.winner.json,jwinner,null,json,false,null,null,json
 1995,leo,10,index.html,readme2index,null,html,true,browser,click here first,html
 1995,leo,20,leo.c,null,main,c,true,github,winning source,c
@@ -970,6 +1076,7 @@
 1995,leo,300,1995_leo.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1995,makarios,null,README.md,null,null,markdown,false,null,null,md
 1995,makarios,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1995,makarios,null,.id,null,null,id,false,null,winner id string,id
 1995,makarios,null,.winner.json,jwinner,null,json,false,null,null,json
 1995,makarios,10,index.html,readme2index,null,html,true,browser,click here first,html
 1995,makarios,20,makarios.c,null,main,c,true,github,winning source,c
@@ -978,6 +1085,7 @@
 1995,makarios,300,1995_makarios.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1995,savastio,null,README.md,null,null,markdown,false,null,null,md
 1995,savastio,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1995,savastio,null,.id,null,null,id,false,null,winner id string,id
 1995,savastio,null,.winner.json,jwinner,null,json,false,null,null,json
 1995,savastio,10,index.html,readme2index,null,html,true,browser,click here first,html
 1995,savastio,20,savastio.c,null,main,c,true,github,winning source,c
@@ -986,6 +1094,7 @@
 1995,savastio,300,1995_savastio.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1995,schnitzi,null,README.md,null,null,markdown,false,null,null,md
 1995,schnitzi,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1995,schnitzi,null,.id,null,null,id,false,null,winner id string,id
 1995,schnitzi,null,.winner.json,jwinner,null,json,false,null,null,json
 1995,schnitzi,10,index.html,readme2index,null,html,true,browser,click here first,html
 1995,schnitzi,20,schnitzi.c,null,main,c,true,github,winning source,c
@@ -994,6 +1103,7 @@
 1995,schnitzi,300,1995_schnitzi.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1995,spinellis,null,README.md,null,null,markdown,false,null,null,md
 1995,spinellis,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1995,spinellis,null,.id,null,null,id,false,null,winner id string,id
 1995,spinellis,null,.winner.json,jwinner,null,json,false,null,null,json
 1995,spinellis,10,index.html,readme2index,null,html,true,browser,click here first,html
 1995,spinellis,20,spinellis.c,null,main,c,true,github,winning source,c
@@ -1002,6 +1112,7 @@
 1995,spinellis,300,1995_spinellis.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1995,vanschnitz,null,README.md,null,null,markdown,false,null,null,md
 1995,vanschnitz,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1995,vanschnitz,null,.id,null,null,id,false,null,winner id string,id
 1995,vanschnitz,null,.winner.json,jwinner,null,json,false,null,null,json
 1995,vanschnitz,10,index.html,readme2index,null,html,true,browser,click here first,html
 1995,vanschnitz,20,vanschnitz.c,null,main,c,true,github,winning source,c
@@ -1011,6 +1122,7 @@
 1995,vanschnitz,300,1995_vanschnitz.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1996,august,null,README.md,null,null,markdown,false,null,null,md
 1996,august,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1996,august,null,.id,null,null,id,false,null,winner id string,id
 1996,august,null,.winner.json,jwinner,null,json,false,null,null,json
 1996,august,10,index.html,readme2index,null,html,true,browser,click here first,html
 1996,august,20,august.c,null,main,c,true,github,winning source,c
@@ -1023,6 +1135,7 @@
 1996,august,300,1996_august.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1996,dalbec,null,README.md,null,null,markdown,false,null,null,md
 1996,dalbec,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1996,dalbec,null,.id,null,null,id,false,null,winner id string,id
 1996,dalbec,null,.winner.json,jwinner,null,json,false,null,null,json
 1996,dalbec,10,index.html,readme2index,null,html,true,browser,click here first,html
 1996,dalbec,20,dalbec.c,null,main,c,true,github,winning source,c
@@ -1031,6 +1144,7 @@
 1996,dalbec,300,1996_dalbec.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1996,eldby,null,README.md,null,null,markdown,false,null,null,md
 1996,eldby,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1996,eldby,null,.id,null,null,id,false,null,winner id string,id
 1996,eldby,null,.winner.json,jwinner,null,json,false,null,null,json
 1996,eldby,10,index.html,readme2index,null,html,true,browser,click here first,html
 1996,eldby,20,eldby.c,null,main,c,true,github,winning source,c
@@ -1040,6 +1154,7 @@
 1996,eldby,300,1996_eldby.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1996,gandalf,null,README.md,null,null,markdown,false,null,null,md
 1996,gandalf,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1996,gandalf,null,.id,null,null,id,false,null,winner id string,id
 1996,gandalf,null,.winner.json,jwinner,null,json,false,null,null,json
 1996,gandalf,10,index.html,readme2index,null,html,true,browser,click here first,html
 1996,gandalf,20,gandalf.c,null,main,c,true,github,winning source,c
@@ -1048,6 +1163,7 @@
 1996,gandalf,300,1996_gandalf.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1996,huffman,null,README.md,null,null,markdown,false,null,null,md
 1996,huffman,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1996,huffman,null,.id,null,null,id,false,null,winner id string,id
 1996,huffman,null,.winner.json,jwinner,null,json,false,null,null,json
 1996,huffman,10,index.html,readme2index,null,html,true,browser,click here first,html
 1996,huffman,20,huffman.c,null,main,c,true,github,winning source,c
@@ -1056,6 +1172,7 @@
 1996,huffman,300,1996_huffman.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1996,jonth,null,README.md,null,null,markdown,false,null,null,md
 1996,jonth,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1996,jonth,null,.id,null,null,id,false,null,winner id string,id
 1996,jonth,null,.winner.json,jwinner,null,json,false,null,null,json
 1996,jonth,10,index.html,readme2index,null,html,true,browser,click here first,html
 1996,jonth,20,jonth.c,null,main,c,true,github,winning source,c
@@ -1064,6 +1181,7 @@
 1996,jonth,300,1996_jonth.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1996,rcm,null,README.md,null,null,markdown,false,null,null,md
 1996,rcm,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1996,rcm,null,.id,null,null,id,false,null,winner id string,id
 1996,rcm,null,rfc1951.gz,null,null,gzip,false,null,null,gz
 1996,rcm,null,rfc1952.gz,null,null,gzip,false,null,null,gz
 1996,rcm,null,.winner.json,jwinner,null,json,false,null,null,json
@@ -1074,6 +1192,7 @@
 1996,rcm,300,1996_rcm.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1996,schweikh1,null,README.md,null,null,markdown,false,null,null,md
 1996,schweikh1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1996,schweikh1,null,.id,null,null,id,false,null,winner id string,id
 1996,schweikh1,null,.winner.json,jwinner,null,json,false,null,null,json
 1996,schweikh1,10,index.html,readme2index,null,html,true,browser,click here first,html
 1996,schweikh1,20,schweikh1.c,null,main,c,true,github,winning source,c
@@ -1083,6 +1202,7 @@
 1996,schweikh1,300,1996_schweikh1.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1996,schweikh2,null,README.md,null,null,markdown,false,null,null,md
 1996,schweikh2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1996,schweikh2,null,.id,null,null,id,false,null,winner id string,id
 1996,schweikh2,null,.winner.json,jwinner,null,json,false,null,null,json
 1996,schweikh2,10,index.html,readme2index,null,html,true,browser,click here first,html
 1996,schweikh2,20,schweikh2.c,null,main,c,true,github,winning source,c
@@ -1093,6 +1213,7 @@
 1996,schweikh2,300,1996_schweikh2.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1996,schweikh3,null,README.md,null,null,markdown,false,null,null,md
 1996,schweikh3,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1996,schweikh3,null,.id,null,null,id,false,null,winner id string,id
 1996,schweikh3,null,.winner.json,jwinner,null,json,false,null,null,json
 1996,schweikh3,10,index.html,readme2index,null,html,true,browser,click here first,html
 1996,schweikh3,20,schweikh3.c,null,main,c,true,github,winning source,c
@@ -1102,6 +1223,7 @@
 1996,schweikh3,300,1996_schweikh3.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1996,westley,null,README.md,null,null,markdown,false,null,null,md
 1996,westley,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1996,westley,null,.id,null,null,id,false,null,winner id string,id
 1996,westley,null,.winner.json,jwinner,null,json,false,null,null,json
 1996,westley,10,index.html,readme2index,null,html,true,browser,click here first,html
 1996,westley,20,westley.c,null,main,c,true,github,winning source,c
@@ -1114,6 +1236,7 @@
 1996,westley,300,1996_westley.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1998,banks,null,README.md,null,null,markdown,false,null,null,md
 1998,banks,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1998,banks,null,.id,null,null,id,false,null,winner id string,id
 1998,banks,null,.winner.json,jwinner,null,json,false,null,null,json
 1998,banks,10,index.html,readme2index,null,html,true,browser,click here first,html
 1998,banks,20,banks.c,null,main,c,true,github,winning source,c
@@ -1128,6 +1251,7 @@
 1998,banks,300,1998_banks.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1998,bas1,null,README.md,null,null,markdown,false,null,null,md
 1998,bas1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1998,bas1,null,.id,null,null,id,false,null,winner id string,id
 1998,bas1,null,.winner.json,jwinner,null,json,false,null,null,json
 1998,bas1,10,index.html,readme2index,null,html,true,browser,click here first,html
 1998,bas1,20,bas1.c,null,main,c,true,github,winning source,c
@@ -1136,6 +1260,7 @@
 1998,bas1,300,1998_bas1.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1998,bas2,null,README.md,null,null,markdown,false,null,null,md
 1998,bas2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1998,bas2,null,.id,null,null,id,false,null,winner id string,id
 1998,bas2,null,.winner.json,jwinner,null,json,false,null,null,json
 1998,bas2,10,index.html,readme2index,null,html,true,browser,click here first,html
 1998,bas2,20,bas2.c,null,main,c,true,github,winning source,c
@@ -1144,6 +1269,7 @@
 1998,bas2,300,1998_bas2.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1998,chaos,null,README.md,null,null,markdown,false,null,null,md
 1998,chaos,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1998,chaos,null,.id,null,null,id,false,null,winner id string,id
 1998,chaos,null,.winner.json,jwinner,null,json,false,null,null,json
 1998,chaos,10,index.html,readme2index,null,html,true,browser,click here first,html
 1998,chaos,20,chaos.c,null,main,c,true,github,winning source,c
@@ -1157,6 +1283,7 @@
 1998,chaos,300,1998_chaos.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1998,df,null,README.md,null,null,markdown,false,null,null,md
 1998,df,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1998,df,null,.id,null,null,id,false,null,winner id string,id
 1998,df,null,.winner.json,jwinner,null,json,false,null,null,json
 1998,df,10,index.html,readme2index,null,html,true,browser,click here first,html
 1998,df,20,df.c,null,main,c,true,github,winning source,c
@@ -1165,6 +1292,7 @@
 1998,df,300,1998_df.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1998,dlowe,null,README.md,null,null,markdown,false,null,null,md
 1998,dlowe,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1998,dlowe,null,.id,null,null,id,false,null,winner id string,id
 1998,dlowe,null,.winner.json,jwinner,null,json,false,null,null,json
 1998,dlowe,10,index.html,readme2index,null,html,true,browser,click here first,html
 1998,dlowe,20,dlowe.c,null,main,c,true,github,winning source,c
@@ -1174,6 +1302,7 @@
 1998,dlowe,300,1998_dlowe.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1998,dloweneil,null,README.md,null,null,markdown,false,null,null,md
 1998,dloweneil,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1998,dloweneil,null,.id,null,null,id,false,null,winner id string,id
 1998,dloweneil,null,.winner.json,jwinner,null,json,false,null,null,json
 1998,dloweneil,10,index.html,readme2index,null,html,true,browser,click here first,html
 1998,dloweneil,20,dloweneil.c,null,main,c,true,github,winning source,c
@@ -1183,6 +1312,7 @@
 1998,dorssel,null,README.md,null,null,markdown,false,null,null,md
 1998,dorssel,null,dorssel.md,null,null,markdown,false,null,null,md
 1998,dorssel,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1998,dorssel,null,.id,null,null,id,false,null,winner id string,id
 1998,dorssel,null,.winner.json,jwinner,null,json,false,null,null,json
 1998,dorssel,10,index.html,readme2index,null,html,true,browser,click here first,html
 1998,dorssel,20,dorssel.c,null,main,c,true,github,winning source,c
@@ -1192,6 +1322,7 @@
 1998,dorssel,300,1998_dorssel.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1998,fanf,null,README.md,null,null,markdown,false,null,null,md
 1998,fanf,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1998,fanf,null,.id,null,null,id,false,null,winner id string,id
 1998,fanf,null,.winner.json,jwinner,null,json,false,null,null,json
 1998,fanf,10,index.html,readme2index,null,html,true,browser,click here first,html
 1998,fanf,20,fanf.c,null,main,c,true,github,winning source,c
@@ -1201,6 +1332,7 @@
 1998,fanf,300,1998_fanf.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1998,schnitzi,null,README.md,null,null,markdown,false,null,null,md
 1998,schnitzi,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1998,schnitzi,null,.id,null,null,id,false,null,winner id string,id
 1998,schnitzi,null,.winner.json,jwinner,null,json,false,null,null,json
 1998,schnitzi,10,index.html,readme2index,null,html,true,browser,click here first,html
 1998,schnitzi,20,schnitzi.c,null,main,c,true,github,winning source,c
@@ -1209,6 +1341,7 @@
 1998,schnitzi,300,1998_schnitzi.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1998,schweikh1,null,README.md,null,null,markdown,false,null,null,md
 1998,schweikh1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1998,schweikh1,null,.id,null,null,id,false,null,winner id string,id
 1998,schweikh1,null,.winner.json,jwinner,null,json,false,null,null,json
 1998,schweikh1,10,index.html,readme2index,null,html,true,browser,click here first,html
 1998,schweikh1,20,schweikh1.c,null,main,c,true,github,winning source,c
@@ -1219,6 +1352,7 @@
 1998,schweikh1,300,1998_schweikh1.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1998,schweikh2,null,README.md,null,null,markdown,false,null,null,md
 1998,schweikh2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1998,schweikh2,null,.id,null,null,id,false,null,winner id string,id
 1998,schweikh2,null,.winner.json,jwinner,null,json,false,null,null,json
 1998,schweikh2,10,index.html,readme2index,null,html,true,browser,click here first,html
 1998,schweikh2,20,schweikh2.c,null,main,c,true,github,winning source,c
@@ -1227,6 +1361,7 @@
 1998,schweikh2,300,1998_schweikh2.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1998,schweikh3,null,README.md,null,null,markdown,false,null,null,md
 1998,schweikh3,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1998,schweikh3,null,.id,null,null,id,false,null,winner id string,id
 1998,schweikh3,null,.winner.json,jwinner,null,json,false,null,null,json
 1998,schweikh3,10,index.html,readme2index,null,html,true,browser,click here first,html
 1998,schweikh3,20,schweikh3.c,null,main,c,true,github,winning source,c
@@ -1237,6 +1372,7 @@
 1998,schweikh3,300,1998_schweikh3.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1998,tomtorfs,null,README.md,null,null,markdown,false,null,null,md
 1998,tomtorfs,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+1998,tomtorfs,null,.id,null,null,id,false,null,winner id string,id
 1998,tomtorfs,null,.winner.json,jwinner,null,json,false,null,null,json
 1998,tomtorfs,10,index.html,readme2index,null,html,true,browser,click here first,html
 1998,tomtorfs,20,tomtorfs.c,null,main,c,true,github,winning source,c
@@ -1246,6 +1382,7 @@
 1998,tomtorfs,300,1998_tomtorfs.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2000,anderson,null,README.md,null,null,markdown,false,null,null,md
 2000,anderson,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2000,anderson,null,.id,null,null,id,false,null,winner id string,id
 2000,anderson,null,.winner.json,jwinner,null,json,false,null,null,json
 2000,anderson,10,index.html,readme2index,null,html,true,browser,click here first,html
 2000,anderson,20,anderson.c,null,main,c,true,github,winning source,c
@@ -1254,6 +1391,7 @@
 2000,anderson,300,2000_anderson.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2000,bellard,null,README.md,null,null,markdown,false,null,null,md
 2000,bellard,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2000,bellard,null,.id,null,null,id,false,null,winner id string,id
 2000,bellard,null,.winner.json,jwinner,null,json,false,null,null,json
 2000,bellard,10,index.html,readme2index,null,html,true,browser,click here first,html
 2000,bellard,20,bellard.c,null,main,c,true,github,winning source,c
@@ -1262,6 +1400,7 @@
 2000,bellard,300,2000_bellard.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2000,bmeyer,null,README.md,null,null,markdown,false,null,null,md
 2000,bmeyer,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2000,bmeyer,null,.id,null,null,id,false,null,winner id string,id
 2000,bmeyer,null,.winner.json,jwinner,null,json,false,null,null,json
 2000,bmeyer,10,index.html,readme2index,null,html,true,browser,click here first,html
 2000,bmeyer,20,bmeyer.c,null,main,c,true,github,winning source,c
@@ -1273,6 +1412,7 @@
 2000,bmeyer,300,2000_bmeyer.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2000,briddlebane,null,README.md,null,null,markdown,false,null,null,md
 2000,briddlebane,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2000,briddlebane,null,.id,null,null,id,false,null,winner id string,id
 2000,briddlebane,null,.winner.json,jwinner,null,json,false,null,null,json
 2000,briddlebane,10,index.html,readme2index,null,html,true,browser,click here first,html
 2000,briddlebane,20,briddlebane.c,null,main,c,true,github,winning source,c
@@ -1281,6 +1421,7 @@
 2000,briddlebane,300,2000_briddlebane.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2000,dhyang,null,README.md,null,null,markdown,false,null,null,md
 2000,dhyang,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2000,dhyang,null,.id,null,null,id,false,null,winner id string,id
 2000,dhyang,null,.winner.json,jwinner,null,json,false,null,null,json
 2000,dhyang,10,index.html,readme2index,null,html,true,browser,click here first,html
 2000,dhyang,20,dhyang.c,null,main,c,true,github,winning source,c
@@ -1289,6 +1430,7 @@
 2000,dhyang,300,2000_dhyang.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2000,dlowe,null,README.md,null,null,markdown,false,null,null,md
 2000,dlowe,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2000,dlowe,null,.id,null,null,id,false,null,winner id string,id
 2000,dlowe,null,.winner.json,jwinner,null,json,false,null,null,json
 2000,dlowe,10,index.html,readme2index,null,html,true,browser,click here first,html
 2000,dlowe,20,dlowe.c,null,main,c,true,github,winning source,c
@@ -1298,6 +1440,7 @@
 2000,jarijyrki,null,README.md,null,null,markdown,false,null,null,md
 2000,jarijyrki,null,finance.sheet,null,null,spreadsheet,false,null,spreadsheet,sheet
 2000,jarijyrki,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2000,jarijyrki,null,.id,null,null,id,false,null,winner id string,id
 2000,jarijyrki,null,.winner.json,jwinner,null,json,false,null,null,json
 2000,jarijyrki,10,index.html,readme2index,null,html,true,browser,click here first,html
 2000,jarijyrki,20,jarijyrki.c,null,main,c,true,github,winning source,c
@@ -1306,6 +1449,7 @@
 2000,jarijyrki,300,2000_jarijyrki.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2000,natori,null,README.md,null,null,markdown,false,null,null,md
 2000,natori,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2000,natori,null,.id,null,null,id,false,null,winner id string,id
 2000,natori,null,.winner.json,jwinner,null,json,false,null,null,json
 2000,natori,10,index.html,readme2index,null,html,true,browser,click here first,html
 2000,natori,20,natori.c,null,main,c,true,github,winning source,c
@@ -1315,6 +1459,7 @@
 2000,natori,300,2000_natori.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2000,primenum,null,README.md,null,null,markdown,false,null,null,md
 2000,primenum,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2000,primenum,null,.id,null,null,id,false,null,winner id string,id
 2000,primenum,null,.winner.json,jwinner,null,json,false,null,null,json
 2000,primenum,10,index.html,readme2index,null,html,true,browser,click here first,html
 2000,primenum,20,primenum.c,null,main,c,true,github,winning source,c
@@ -1323,6 +1468,7 @@
 2000,primenum,300,2000_primenum.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2000,rince,null,README.md,null,null,markdown,false,null,null,md
 2000,rince,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2000,rince,null,.id,null,null,id,false,null,winner id string,id
 2000,rince,null,.winner.json,jwinner,null,json,false,null,null,json
 2000,rince,10,index.html,readme2index,null,html,true,browser,click here first,html
 2000,rince,20,rince.c,null,main,c,true,github,winning source,c
@@ -1332,6 +1478,7 @@
 2000,rince,300,2000_rince.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2000,robison,null,README.md,null,null,markdown,false,null,null,md
 2000,robison,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2000,robison,null,.id,null,null,id,false,null,winner id string,id
 2000,robison,null,.winner.json,jwinner,null,json,false,null,null,json
 2000,robison,10,index.html,readme2index,null,html,true,browser,click here first,html
 2000,robison,20,robison.c,null,main,c,true,github,winning source,c
@@ -1340,6 +1487,7 @@
 2000,robison,300,2000_robison.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2000,schneiderwent,null,README.md,null,null,markdown,false,null,null,md
 2000,schneiderwent,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2000,schneiderwent,null,.id,null,null,id,false,null,winner id string,id
 2000,schneiderwent,null,.winner.json,jwinner,null,json,false,null,null,json
 2000,schneiderwent,10,index.html,readme2index,null,html,true,browser,click here first,html
 2000,schneiderwent,20,schneiderwent.c,null,main,c,true,github,winning source,c
@@ -1349,6 +1497,7 @@
 2000,schneiderwent,300,2000_schneiderwent.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2000,thadgavin,null,README.md,null,null,markdown,false,null,null,md
 2000,thadgavin,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2000,thadgavin,null,.id,null,null,id,false,null,winner id string,id
 2000,thadgavin,null,.winner.json,jwinner,null,json,false,null,null,json
 2000,thadgavin,10,index.html,readme2index,null,html,true,browser,click here first,html
 2000,thadgavin,20,thadgavin.c,null,main,c,true,github,winning source,c
@@ -1358,6 +1507,7 @@
 2000,thadgavin,300,2000_thadgavin.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2000,tomx,null,README.md,null,null,markdown,false,null,null,md
 2000,tomx,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2000,tomx,null,.id,null,null,id,false,null,winner id string,id
 2000,tomx,null,.winner.json,jwinner,null,json,false,null,null,json
 2000,tomx,10,index.html,readme2index,null,html,true,browser,click here first,html
 2000,tomx,20,tomx.c,null,main,c,true,github,winning source,c
@@ -1367,6 +1517,7 @@
 2000,tomx,300,2000_tomx.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2001,anonymous,null,README.md,null,null,markdown,false,null,null,md
 2001,anonymous,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2001,anonymous,null,.id,null,null,id,false,null,winner id string,id
 2001,anonymous,null,.winner.json,jwinner,null,json,false,null,null,json
 2001,anonymous,10,index.html,readme2index,null,html,true,browser,click here first,html
 2001,anonymous,20,anonymous.c,null,main,c,true,github,winning source,c
@@ -1378,6 +1529,7 @@
 2001,anonymous,300,2001_anonymous.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2001,bellard,null,README.md,null,null,markdown,false,null,null,md
 2001,bellard,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2001,bellard,null,.id,null,null,id,false,null,winner id string,id
 2001,bellard,null,.winner.json,jwinner,null,json,false,null,null,json
 2001,bellard,10,index.html,readme2index,null,html,true,browser,click here first,html
 2001,bellard,20,bellard.c,null,main,c,true,github,winning source,c
@@ -1388,6 +1540,7 @@
 2001,bellard,300,2001_bellard.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2001,cheong,null,README.md,null,null,markdown,false,null,null,md
 2001,cheong,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2001,cheong,null,.id,null,null,id,false,null,winner id string,id
 2001,cheong,null,.winner.json,jwinner,null,json,false,null,null,json
 2001,cheong,10,index.html,readme2index,null,html,true,browser,click here first,html
 2001,cheong,20,cheong.c,null,main,c,true,github,winning source,c
@@ -1396,6 +1549,7 @@
 2001,cheong,300,2001_cheong.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2001,coupard,null,README.md,null,null,markdown,false,null,null,md
 2001,coupard,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2001,coupard,null,.id,null,null,id,false,null,winner id string,id
 2001,coupard,null,.winner.json,jwinner,null,json,false,null,null,json
 2001,coupard,10,index.html,readme2index,null,html,true,browser,click here first,html
 2001,coupard,20,coupard.c,null,main,c,true,github,winning source,c
@@ -1404,6 +1558,7 @@
 2001,coupard,300,2001_coupard.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2001,ctk,null,README.md,null,null,markdown,false,null,null,md
 2001,ctk,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2001,ctk,null,.id,null,null,id,false,null,winner id string,id
 2001,ctk,null,.winner.json,jwinner,null,json,false,null,null,json
 2001,ctk,10,index.html,readme2index,null,html,true,browser,click here first,html
 2001,ctk,20,ctk.c,null,main,c,true,github,winning source,c
@@ -1412,6 +1567,7 @@
 2001,ctk,300,2001_ctk.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2001,dgbeards,null,README.md,null,null,markdown,false,null,null,md
 2001,dgbeards,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2001,dgbeards,null,.id,null,null,id,false,null,winner id string,id
 2001,dgbeards,null,.winner.json,jwinner,null,json,false,null,null,json
 2001,dgbeards,10,index.html,readme2index,null,html,true,browser,click here first,html
 2001,dgbeards,20,dgbeards.c,null,main,c,true,github,winning source,c
@@ -1421,6 +1577,7 @@
 2001,dgbeards,300,2001_dgbeards.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2001,herrmann1,null,README.md,null,null,markdown,false,null,null,md
 2001,herrmann1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2001,herrmann1,null,.id,null,null,id,false,null,winner id string,id
 2001,herrmann1,null,.winner.json,jwinner,null,json,false,null,null,json
 2001,herrmann1,10,index.html,readme2index,null,html,true,browser,click here first,html
 2001,herrmann1,20,herrmann1.c,null,main,c,true,github,winning source,c
@@ -1433,6 +1590,7 @@
 2001,herrmann1,300,2001_herrmann1.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2001,herrmann2,null,README.md,null,null,markdown,false,null,null,md
 2001,herrmann2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2001,herrmann2,null,.id,null,null,id,false,null,winner id string,id
 2001,herrmann2,null,.winner.json,jwinner,null,json,false,null,null,json
 2001,herrmann2,10,index.html,readme2index,null,html,true,browser,click here first,html
 2001,herrmann2,20,herrmann2.c,null,main,c,true,github,winning source,c
@@ -1444,6 +1602,7 @@
 2001,herrmann2,300,2001_herrmann2.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2001,jason,null,README.md,null,null,markdown,false,null,null,md
 2001,jason,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2001,jason,null,.id,null,null,id,false,null,winner id string,id
 2001,jason,null,.winner.json,jwinner,null,json,false,null,null,json
 2001,jason,10,index.html,readme2index,null,html,true,browser,click here first,html
 2001,jason,20,jason.c,null,main,c,true,github,winning source,c
@@ -1452,6 +1611,7 @@
 2001,jason,300,2001_jason.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2001,kev,null,README.md,null,null,markdown,false,null,null,md
 2001,kev,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2001,kev,null,.id,null,null,id,false,null,winner id string,id
 2001,kev,null,.winner.json,jwinner,null,json,false,null,null,json
 2001,kev,10,index.html,readme2index,null,html,true,browser,click here first,html
 2001,kev,20,kev.c,null,main,c,true,github,winning source,c
@@ -1461,6 +1621,7 @@
 2001,kev,300,2001_kev.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2001,ollinger,null,README.md,null,null,markdown,false,null,null,md
 2001,ollinger,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2001,ollinger,null,.id,null,null,id,false,null,winner id string,id
 2001,ollinger,null,.winner.json,jwinner,null,json,false,null,null,json
 2001,ollinger,10,index.html,readme2index,null,html,true,browser,click here first,html
 2001,ollinger,20,ollinger.c,null,main,c,true,github,winning source,c
@@ -1469,6 +1630,7 @@
 2001,ollinger,300,2001_ollinger.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2001,rosten,null,README.md,null,null,markdown,false,null,null,md
 2001,rosten,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2001,rosten,null,.id,null,null,id,false,null,winner id string,id
 2001,rosten,null,.winner.json,jwinner,null,json,false,null,null,json
 2001,rosten,10,index.html,readme2index,null,html,true,browser,click here first,html
 2001,rosten,20,rosten.c,null,main,c,true,github,winning source,c
@@ -1477,6 +1639,7 @@
 2001,rosten,300,2001_rosten.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2001,schweikh,null,README.md,null,null,markdown,false,null,null,md
 2001,schweikh,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2001,schweikh,null,.id,null,null,id,false,null,winner id string,id
 2001,schweikh,null,.winner.json,jwinner,null,json,false,null,null,json
 2001,schweikh,10,index.html,readme2index,null,html,true,browser,click here first,html
 2001,schweikh,20,schweikh.c,null,main,c,true,github,winning source,c
@@ -1485,6 +1648,7 @@
 2001,schweikh,300,2001_schweikh.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2001,westley,null,README.md,null,null,markdown,false,null,null,md
 2001,westley,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2001,westley,null,.id,null,null,id,false,null,winner id string,id
 2001,westley,null,.winner.json,jwinner,null,json,false,null,null,json
 2001,westley,10,index.html,readme2index,null,html,true,browser,click here first,html
 2001,westley,20,westley.c,null,main,c,true,github,winning source,c
@@ -1497,6 +1661,7 @@
 2001,westley,300,2001_westley.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2001,williams,null,README.md,null,null,markdown,false,null,null,md
 2001,williams,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2001,williams,null,.id,null,null,id,false,null,winner id string,id
 2001,williams,null,.winner.json,jwinner,null,json,false,null,null,json
 2001,williams,10,index.html,readme2index,null,html,true,browser,click here first,html
 2001,williams,20,williams.c,null,main,c,true,github,winning source,c
@@ -1505,6 +1670,7 @@
 2001,williams,300,2001_williams.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2004,anonymous,null,README.md,null,null,markdown,false,null,null,md
 2004,anonymous,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2004,anonymous,null,.id,null,null,id,false,null,winner id string,id
 2004,anonymous,null,.winner.json,jwinner,null,json,false,null,null,json
 2004,anonymous,10,index.html,readme2index,null,html,true,browser,click here first,html
 2004,anonymous,20,anonymous.c,null,main,c,true,github,winning source,c
@@ -1513,6 +1679,7 @@
 2004,anonymous,300,2004_anonymous.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2004,arachnid,null,README.md,null,null,markdown,false,null,null,md
 2004,arachnid,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2004,arachnid,null,.id,null,null,id,false,null,winner id string,id
 2004,arachnid,null,.winner.json,jwinner,null,json,false,null,null,json
 2004,arachnid,10,index.html,readme2index,null,html,true,browser,click here first,html
 2004,arachnid,20,arachnid.c,null,main,c,true,github,winning source,c
@@ -1523,6 +1690,7 @@
 2004,arachnid,300,2004_arachnid.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2004,burley,null,README.md,null,null,markdown,false,null,null,md
 2004,burley,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2004,burley,null,.id,null,null,id,false,null,winner id string,id
 2004,burley,null,.winner.json,jwinner,null,json,false,null,null,json
 2004,burley,10,index.html,readme2index,null,html,true,browser,click here first,html
 2004,burley,20,burley.c,null,main,c,true,github,winning source,c
@@ -1531,6 +1699,7 @@
 2004,burley,300,2004_burley.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2004,gavare,null,README.md,null,null,markdown,false,null,null,md
 2004,gavare,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2004,gavare,null,.id,null,null,id,false,null,winner id string,id
 2004,gavare,null,.winner.json,jwinner,null,json,false,null,null,json
 2004,gavare,10,index.html,readme2index,null,html,true,browser,click here first,html
 2004,gavare,20,gavare.c,null,main,c,true,github,winning source,c
@@ -1541,6 +1710,7 @@
 2004,gavin,null,README.md,null,null,markdown,false,null,null,md
 2004,gavin,null,gavin.md,null,null,markdown,false,null,null,md
 2004,gavin,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2004,gavin,null,.id,null,null,id,false,null,winner id string,id
 2004,gavin,null,.winner.json,jwinner,null,json,false,null,null,json
 2004,gavin,10,index.html,readme2index,null,html,true,browser,click here first,html
 2004,gavin,20,gavin.c,null,main,c,true,github,winning source,c
@@ -1555,6 +1725,7 @@
 2004,gavin,300,2004_gavin.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2004,hibachi,null,README.md,null,null,markdown,false,null,null,md
 2004,hibachi,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2004,hibachi,null,.id,null,null,id,false,null,winner id string,id
 2004,hibachi,null,src/localhost/Img/cygwin-icon.gif,null,null,image,false,null,image for home page,gif
 2004,hibachi,null,src/localhost/Img/freebsd.gif,null,null,image,false,null,image for home page,gif
 2004,hibachi,null,src/localhost/Img/hibachi-256-oc-nc-300x150.gif,null,null,image,false,null,image for home page,gif
@@ -1601,6 +1772,7 @@
 2004,hibachi,300,2004_hibachi.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2004,hoyle,null,README.md,null,null,markdown,false,null,null,md
 2004,hoyle,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2004,hoyle,null,.id,null,null,id,false,null,winner id string,id
 2004,hoyle,null,.winner.json,jwinner,null,json,false,null,null,json
 2004,hoyle,10,index.html,readme2index,null,html,true,browser,click here first,html
 2004,hoyle,20,hoyle.c,null,main,c,true,github,winning source,c
@@ -1610,6 +1782,7 @@
 2004,hoyle,300,2004_hoyle.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2004,jdalbec,null,README.md,null,null,markdown,false,null,null,md
 2004,jdalbec,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2004,jdalbec,null,.id,null,null,id,false,null,winner id string,id
 2004,jdalbec,null,.winner.json,jwinner,null,json,false,null,null,json
 2004,jdalbec,10,index.html,readme2index,null,html,true,browser,click here first,html
 2004,jdalbec,20,jdalbec.c,null,main,c,true,github,winning source,c
@@ -1618,6 +1791,7 @@
 2004,jdalbec,300,2004_jdalbec.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2004,kopczynski,null,README.md,null,null,markdown,false,null,null,md
 2004,kopczynski,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2004,kopczynski,null,.id,null,null,id,false,null,winner id string,id
 2004,kopczynski,null,.winner.json,jwinner,null,json,false,null,null,json
 2004,kopczynski,10,index.html,readme2index,null,html,true,browser,click here first,html
 2004,kopczynski,20,kopczynski.c,null,main,c,true,github,winning source,c
@@ -1634,6 +1808,7 @@
 2004,kopczynski,300,2004_kopczynski.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2004,newbern,null,README.md,null,null,markdown,false,null,null,md
 2004,newbern,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2004,newbern,null,.id,null,null,id,false,null,winner id string,id
 2004,newbern,null,.winner.json,jwinner,null,json,false,null,null,json
 2004,newbern,10,index.html,readme2index,null,html,true,browser,click here first,html
 2004,newbern,20,newbern.c,null,main,c,true,github,winning source,c
@@ -1643,6 +1818,7 @@
 2004,newbern,300,2004_newbern.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2004,omoikane,null,README.md,null,null,markdown,false,null,null,md
 2004,omoikane,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2004,omoikane,null,.id,null,null,id,false,null,winner id string,id
 2004,omoikane,null,.winner.json,jwinner,null,json,false,null,null,json
 2004,omoikane,10,index.html,readme2index,null,html,true,browser,click here first,html
 2004,omoikane,20,omoikane.c,null,main,c,true,github,winning source,c
@@ -1652,6 +1828,7 @@
 2004,omoikane,300,2004_omoikane.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2004,schnitzi,null,README.md,null,null,markdown,false,null,null,md
 2004,schnitzi,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2004,schnitzi,null,.id,null,null,id,false,null,winner id string,id
 2004,schnitzi,null,.winner.json,jwinner,null,json,false,null,null,json
 2004,schnitzi,10,index.html,readme2index,null,html,true,browser,click here first,html
 2004,schnitzi,20,schnitzi.c,null,main,c,true,github,winning source,c
@@ -1662,6 +1839,7 @@
 2004,schnitzi,300,2004_schnitzi.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2004,sds,null,README.md,null,null,markdown,false,null,null,md
 2004,sds,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2004,sds,null,.id,null,null,id,false,null,winner id string,id
 2004,sds,null,.winner.json,jwinner,null,json,false,null,null,json
 2004,sds,10,index.html,readme2index,null,html,true,browser,click here first,html
 2004,sds,20,sds.c,null,main,c,true,github,winning source,c
@@ -1670,6 +1848,7 @@
 2004,sds,300,2004_sds.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2004,vik1,null,README.md,null,null,markdown,false,null,null,md
 2004,vik1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2004,vik1,null,.id,null,null,id,false,null,winner id string,id
 2004,vik1,null,.winner.json,jwinner,null,json,false,null,null,json
 2004,vik1,10,index.html,readme2index,null,html,true,browser,click here first,html
 2004,vik1,20,vik1.c,null,main,c,true,github,winning source,c
@@ -1678,6 +1857,7 @@
 2004,vik1,300,2004_vik1.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2004,vik2,null,README.md,null,null,markdown,false,null,null,md
 2004,vik2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2004,vik2,null,.id,null,null,id,false,null,winner id string,id
 2004,vik2,null,.winner.json,jwinner,null,json,false,null,null,json
 2004,vik2,10,index.html,readme2index,null,html,true,browser,click here first,html
 2004,vik2,20,vik2.c,null,main,c,true,github,winning source,c
@@ -1688,6 +1868,7 @@
 2004,vik2,300,2004_vik2.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2005,aidan,null,README.md,null,null,markdown,false,null,null,md
 2005,aidan,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2005,aidan,null,.id,null,null,id,false,null,winner id string,id
 2005,aidan,null,.winner.json,jwinner,null,json,false,null,null,json
 2005,aidan,10,index.html,readme2index,null,html,true,browser,click here first,html
 2005,aidan,20,aidan.c,null,main,c,true,github,winning source,c
@@ -1706,6 +1887,7 @@
 2005,aidan,300,2005_aidan.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2005,anon,null,README.md,null,null,markdown,false,null,null,md
 2005,anon,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2005,anon,null,.id,null,null,id,false,null,winner id string,id
 2005,anon,null,.winner.json,jwinner,null,json,false,null,null,json
 2005,anon,10,index.html,readme2index,null,html,true,browser,click here first,html
 2005,anon,20,anon.c,null,main,c,true,github,winning source,c
@@ -1714,6 +1896,7 @@
 2005,anon,300,2005_anon.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2005,boutines,null,README.md,null,null,markdown,false,null,null,md
 2005,boutines,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2005,boutines,null,.id,null,null,id,false,null,winner id string,id
 2005,boutines,null,.winner.json,jwinner,null,json,false,null,null,json
 2005,boutines,10,index.html,readme2index,null,html,true,browser,click here first,html
 2005,boutines,20,boutines.c,null,main,c,true,github,winning source,c
@@ -1724,6 +1907,7 @@
 2005,boutines,300,2005_boutines.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2005,chia,null,README.md,null,null,markdown,false,null,null,md
 2005,chia,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2005,chia,null,.id,null,null,id,false,null,winner id string,id
 2005,chia,null,.winner.json,jwinner,null,json,false,null,null,json
 2005,chia,10,index.html,readme2index,null,html,true,browser,click here first,html
 2005,chia,20,chia.c,null,main,c,true,github,winning source,c
@@ -1732,6 +1916,7 @@
 2005,chia,300,2005_chia.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2005,giljade,null,README.md,null,null,markdown,false,null,null,md
 2005,giljade,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2005,giljade,null,.id,null,null,id,false,null,winner id string,id
 2005,giljade,null,.winner.json,jwinner,null,json,false,null,null,json
 2005,giljade,10,index.html,readme2index,null,html,true,browser,click here first,html
 2005,giljade,20,giljade.c,null,main,c,true,github,winning source,c
@@ -1740,6 +1925,7 @@
 2005,giljade,300,2005_giljade.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2005,jetro,null,README.md,null,null,markdown,false,null,null,md
 2005,jetro,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2005,jetro,null,.id,null,null,id,false,null,winner id string,id
 2005,jetro,null,.winner.json,jwinner,null,json,false,null,null,json
 2005,jetro,10,index.html,readme2index,null,html,true,browser,click here first,html
 2005,jetro,20,jetro.c,null,main,c,true,github,winning source,c
@@ -1748,6 +1934,7 @@
 2005,jetro,300,2005_jetro.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2005,klausler,null,README.md,null,null,markdown,false,null,null,md
 2005,klausler,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2005,klausler,null,.id,null,null,id,false,null,winner id string,id
 2005,klausler,null,.winner.json,jwinner,null,json,false,null,null,json
 2005,klausler,10,index.html,readme2index,null,html,true,browser,click here first,html
 2005,klausler,20,klausler.c,null,main,c,true,github,winning source,c
@@ -1756,6 +1943,7 @@
 2005,klausler,300,2005_klausler.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2005,mikeash,null,README.md,null,null,markdown,false,null,null,md
 2005,mikeash,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2005,mikeash,null,.id,null,null,id,false,null,winner id string,id
 2005,mikeash,null,.winner.json,jwinner,null,json,false,null,null,json
 2005,mikeash,10,index.html,readme2index,null,html,true,browser,click here first,html
 2005,mikeash,20,mikeash.c,null,main,c,true,github,winning source,c
@@ -1764,6 +1952,7 @@
 2005,mikeash,300,2005_mikeash.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2005,mynx,null,README.md,null,null,markdown,false,null,null,md
 2005,mynx,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2005,mynx,null,.id,null,null,id,false,null,winner id string,id
 2005,mynx,null,source/mynx.c,null,null,c,false,null,copy of the winning source,c
 2005,mynx,null,.winner.json,jwinner,null,json,false,null,null,json
 2005,mynx,10,index.html,readme2index,null,html,true,browser,click here first,html
@@ -1779,6 +1968,7 @@
 2005,mynx,300,2005_mynx.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2005,persano,null,README.md,null,null,markdown,false,null,null,md
 2005,persano,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2005,persano,null,.id,null,null,id,false,null,winner id string,id
 2005,persano,null,.winner.json,jwinner,null,json,false,null,null,json
 2005,persano,10,index.html,readme2index,null,html,true,browser,click here first,html
 2005,persano,20,persano.c,null,main,c,true,github,winning source,c
@@ -1793,6 +1983,7 @@
 2005,sykes,null,chess,null,null,binary,false,null,chess program for Commodore PET,null
 2005,sykes,null,edit-2-n.901447-24.bin,null,null,binary,false,null,editor for Commodore PET,bin
 2005,sykes,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2005,sykes,null,.id,null,null,id,false,null,winner id string,id
 2005,sykes,null,kernal-2.901465-03.bin,null,null,binary,false,null,Commodore PET kernel,bin
 2005,sykes,null,nullfill.bin,null,null,binary,false,null,block of binary zeros,bin
 2005,sykes,null,.winner.json,jwinner,null,json,false,null,null,json
@@ -1803,6 +1994,7 @@
 2005,sykes,300,2005_sykes.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2005,timwi,null,README.md,null,null,markdown,false,null,null,md
 2005,timwi,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2005,timwi,null,.id,null,null,id,false,null,winner id string,id
 2005,timwi,null,.winner.json,jwinner,null,json,false,null,null,json
 2005,timwi,10,index.html,readme2index,null,html,true,browser,click here first,html
 2005,timwi,20,timwi.c,null,main,c,true,github,winning source,c
@@ -1811,6 +2003,7 @@
 2005,timwi,300,2005_timwi.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2005,toledo,null,README.md,null,null,markdown,false,null,null,md
 2005,toledo,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2005,toledo,null,.id,null,null,id,false,null,winner id string,id
 2005,toledo,null,.winner.json,jwinner,null,json,false,null,null,json
 2005,toledo,10,index.html,readme2index,null,html,true,browser,click here first,html
 2005,toledo,20,toledo.c,null,main,c,true,github,winning source,c
@@ -1821,6 +2014,7 @@
 2005,toledo,300,2005_toledo.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2005,vik,null,README.md,null,null,markdown,false,null,null,md
 2005,vik,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2005,vik,null,.id,null,null,id,false,null,winner id string,id
 2005,vik,null,.winner.json,jwinner,null,json,false,null,null,json
 2005,vik,10,index.html,readme2index,null,html,true,browser,click here first,html
 2005,vik,20,vik.c,null,main,c,true,github,winning source,c
@@ -1833,6 +2027,7 @@
 2005,vik,300,2005_vik.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2005,vince,null,README.md,null,null,markdown,false,null,null,md
 2005,vince,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2005,vince,null,.id,null,null,id,false,null,winner id string,id
 2005,vince,null,.winner.json,jwinner,null,json,false,null,null,json
 2005,vince,10,index.html,readme2index,null,html,true,browser,click here first,html
 2005,vince,20,vince.c,null,main,c,true,github,winning source,c
@@ -1842,6 +2037,7 @@
 2005,vince,300,2005_vince.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2006,birken,null,README.md,null,null,markdown,false,null,null,md
 2006,birken,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2006,birken,null,.id,null,null,id,false,null,winner id string,id
 2006,birken,null,.winner.json,jwinner,null,json,false,null,null,json
 2006,birken,10,index.html,readme2index,null,html,true,browser,click here first,html
 2006,birken,20,birken.c,null,main,c,true,github,winning source,c
@@ -1864,6 +2060,7 @@
 2006,birken,300,2006_birken.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2006,borsanyi,null,README.md,null,null,markdown,false,null,null,md
 2006,borsanyi,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2006,borsanyi,null,.id,null,null,id,false,null,winner id string,id
 2006,borsanyi,null,.winner.json,jwinner,null,json,false,null,null,json
 2006,borsanyi,10,index.html,readme2index,null,html,true,browser,click here first,html
 2006,borsanyi,20,borsanyi.c,null,main,c,true,github,winning source,c
@@ -1872,6 +2069,7 @@
 2006,borsanyi,300,2006_borsanyi.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2006,grothe,null,README.md,null,null,markdown,false,null,null,md
 2006,grothe,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2006,grothe,null,.id,null,null,id,false,null,winner id string,id
 2006,grothe,null,.winner.json,jwinner,null,json,false,null,null,json
 2006,grothe,10,index.html,readme2index,null,html,true,browser,click here first,html
 2006,grothe,20,grothe.c,null,main,c,true,github,winning source,c
@@ -1884,6 +2082,7 @@
 2006,grothe,300,2006_grothe.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2006,hamre,null,README.md,null,null,markdown,false,null,null,md
 2006,hamre,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2006,hamre,null,.id,null,null,id,false,null,winner id string,id
 2006,hamre,null,.winner.json,jwinner,null,json,false,null,null,json
 2006,hamre,10,index.html,readme2index,null,html,true,browser,click here first,html
 2006,hamre,20,hamre.c,null,main,c,true,github,winning source,c
@@ -1892,6 +2091,7 @@
 2006,hamre,300,2006_hamre.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2006,meyer,null,README.md,null,null,markdown,false,null,null,md
 2006,meyer,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2006,meyer,null,.id,null,null,id,false,null,winner id string,id
 2006,meyer,null,.winner.json,jwinner,null,json,false,null,null,json
 2006,meyer,10,index.html,readme2index,null,html,true,browser,click here first,html
 2006,meyer,20,meyer.c,null,main,c,true,github,winning source,c
@@ -1900,6 +2100,7 @@
 2006,meyer,300,2006_meyer.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2006,monge,null,README.md,null,null,markdown,false,null,null,md
 2006,monge,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2006,monge,null,.id,null,null,id,false,null,winner id string,id
 2006,monge,null,.winner.json,jwinner,null,json,false,null,null,json
 2006,monge,10,index.html,readme2index,null,html,true,browser,click here first,html
 2006,monge,20,monge.c,null,main,c,true,github,winning source,c
@@ -1908,6 +2109,7 @@
 2006,monge,300,2006_monge.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2006,night,null,README.md,null,null,markdown,false,null,null,md
 2006,night,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2006,night,null,.id,null,null,id,false,null,winner id string,id
 2006,night,null,.winner.json,jwinner,null,json,false,null,null,json
 2006,night,10,index.html,readme2index,null,html,true,browser,click here first,html
 2006,night,20,night.c,null,main,c,true,github,winning source,c
@@ -1917,6 +2119,7 @@
 2006,night,300,2006_night.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2006,sloane,null,README.md,null,null,markdown,false,null,null,md
 2006,sloane,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2006,sloane,null,.id,null,null,id,false,null,winner id string,id
 2006,sloane,null,.winner.json,jwinner,null,json,false,null,null,json
 2006,sloane,10,index.html,readme2index,null,html,true,browser,click here first,html
 2006,sloane,20,sloane.c,null,main,c,true,github,winning source,c
@@ -1926,6 +2129,7 @@
 2006,sloane,300,2006_sloane.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2006,stewart,null,README.md,null,null,markdown,false,null,null,md
 2006,stewart,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2006,stewart,null,.id,null,null,id,false,null,winner id string,id
 2006,stewart,null,.winner.json,jwinner,null,json,false,null,null,json
 2006,stewart,10,index.html,readme2index,null,html,true,browser,click here first,html
 2006,stewart,20,stewart.c,null,main,c,true,github,winning source,c
@@ -1974,6 +2178,7 @@
 2006,stewart,300,2006_stewart.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2006,sykes1,null,README.md,null,null,markdown,false,null,null,md
 2006,sykes1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2006,sykes1,null,.id,null,null,id,false,null,winner id string,id
 2006,sykes1,null,.winner.json,jwinner,null,json,false,null,null,json
 2006,sykes1,10,index.html,readme2index,null,html,true,browser,click here first,html
 2006,sykes1,20,sykes1.c,null,main,c,true,github,winning source,c
@@ -1983,6 +2188,7 @@
 2006,sykes1,300,2006_sykes1.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2006,sykes2,null,README.md,null,null,markdown,false,null,null,md
 2006,sykes2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2006,sykes2,null,.id,null,null,id,false,null,winner id string,id
 2006,sykes2,null,.winner.json,jwinner,null,json,false,null,null,json
 2006,sykes2,10,index.html,readme2index,null,html,true,browser,click here first,html
 2006,sykes2,20,sykes2.c,null,main,c,true,github,winning source,c
@@ -1992,6 +2198,7 @@
 2006,sykes2,300,2006_sykes2.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2006,toledo1,null,README.md,null,null,markdown,false,null,null,md
 2006,toledo1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2006,toledo1,null,.id,null,null,id,false,null,winner id string,id
 2006,toledo1,null,.winner.json,jwinner,null,json,false,null,null,json
 2006,toledo1,10,index.html,readme2index,null,html,true,browser,click here first,html
 2006,toledo1,20,toledo1.c,null,main,c,true,github,winning source,c
@@ -2222,6 +2429,7 @@
 2006,toledo2,null,XDIR.COM,null,null,binary,false,null,MS-DOS command file,COM
 2006,toledo2,null,XSUB.COM,null,null,binary,false,null,MS-DOS command file,COM
 2006,toledo2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2006,toledo2,null,.id,null,null,id,false,null,winner id string,id
 2006,toledo2,null,.winner.json,jwinner,null,json,false,null,null,json
 2006,toledo2,10,index.html,readme2index,null,html,true,browser,click here first,html
 2006,toledo2,20,toledo2.c,null,main,c,true,github,winning source,c
@@ -2247,6 +2455,7 @@
 2006,toledo2,300,2006_toledo2.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2006,toledo3,null,README.md,null,null,markdown,false,null,null,md
 2006,toledo3,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2006,toledo3,null,.id,null,null,id,false,null,winner id string,id
 2006,toledo3,null,.winner.json,jwinner,null,json,false,null,null,json
 2006,toledo3,10,index.html,readme2index,null,html,true,browser,click here first,html
 2006,toledo3,20,toledo3.c,null,main,c,true,github,winning source,c
@@ -2258,6 +2467,7 @@
 2006,toledo3,300,2006_toledo3.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2011,akari,null,README.md,null,null,markdown,false,null,null,md
 2011,akari,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2011,akari,null,.id,null,null,id,false,null,winner id string,id
 2011,akari,null,.winner.json,jwinner,null,json,false,null,null,json
 2011,akari,10,index.html,readme2index,null,html,true,browser,click here first,html
 2011,akari,20,akari.c,null,main,c,true,github,winning source,c
@@ -2268,6 +2478,7 @@
 2011,akari,300,2011_akari.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2011,blakely,null,README.md,null,null,markdown,false,null,null,md
 2011,blakely,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2011,blakely,null,.id,null,null,id,false,null,winner id string,id
 2011,blakely,null,.winner.json,jwinner,null,json,false,null,null,json
 2011,blakely,10,index.html,readme2index,null,html,true,browser,click here first,html
 2011,blakely,20,blakely.c,null,main,c,true,github,winning source,c
@@ -2279,6 +2490,7 @@
 2011,blakely,300,2011_blakely.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2011,borsanyi,null,README.md,null,null,markdown,false,null,null,md
 2011,borsanyi,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2011,borsanyi,null,.id,null,null,id,false,null,winner id string,id
 2011,borsanyi,null,.winner.json,jwinner,null,json,false,null,null,json
 2011,borsanyi,10,index.html,readme2index,null,html,true,browser,click here first,html
 2011,borsanyi,20,borsanyi.c,null,main,c,true,github,winning source,c
@@ -2295,6 +2507,7 @@
 2011,dlowe,null,dlowe-aux-data.tar.bz2,null,null,tgz,false,null,IOCCC win lose trained network,bz2
 2011,dlowe,null,dlowe-aux-data/xor-trained.net,null,null,binary,false,null,trained neural network,net
 2011,dlowe,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2011,dlowe,null,.id,null,null,id,false,null,winner id string,id
 2011,dlowe,null,.winner.json,jwinner,null,json,false,null,null,json
 2011,dlowe,10,index.html,readme2index,null,html,true,browser,click here first,html
 2011,dlowe,20,dlowe.c,null,main,c,true,github,winning source,c
@@ -2347,6 +2560,7 @@
 2011,dlowe,300,2011_dlowe.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2011,eastman,null,README.md,null,null,markdown,false,null,null,md
 2011,eastman,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2011,eastman,null,.id,null,null,id,false,null,winner id string,id
 2011,eastman,null,.winner.json,jwinner,null,json,false,null,null,json
 2011,eastman,10,index.html,readme2index,null,html,true,browser,click here first,html
 2011,eastman,20,eastman.c,null,main,c,true,github,winning source,c
@@ -2355,6 +2569,7 @@
 2011,eastman,300,2011_eastman.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2011,fredriksson,null,README.md,null,null,markdown,false,null,null,md
 2011,fredriksson,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2011,fredriksson,null,.id,null,null,id,false,null,winner id string,id
 2011,fredriksson,null,.winner.json,jwinner,null,json,false,null,null,json
 2011,fredriksson,10,index.html,readme2index,null,html,true,browser,click here first,html
 2011,fredriksson,20,fredriksson.c,null,main,c,true,github,winning source,c
@@ -2363,6 +2578,7 @@
 2011,fredriksson,300,2011_fredriksson.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2011,goren,null,README.md,null,null,markdown,false,null,null,md
 2011,goren,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2011,goren,null,.id,null,null,id,false,null,winner id string,id
 2011,goren,null,.winner.json,jwinner,null,json,false,null,null,json
 2011,goren,10,index.html,readme2index,null,html,true,browser,click here first,html
 2011,goren,20,goren.c,null,main,c,true,github,winning source,c
@@ -2371,6 +2587,7 @@
 2011,goren,300,2011_goren.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2011,hamaji,null,README.md,null,null,markdown,false,null,null,md
 2011,hamaji,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2011,hamaji,null,.id,null,null,id,false,null,winner id string,id
 2011,hamaji,null,.winner.json,jwinner,null,json,false,null,null,json
 2011,hamaji,10,index.html,readme2index,null,html,true,browser,click here first,html
 2011,hamaji,20,hamaji.c,null,main,c,true,github,winning source,c
@@ -2387,6 +2604,7 @@
 2011,hamaji,300,2011_hamaji.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2011,hou,null,README.md,null,null,markdown,false,null,null,md
 2011,hou,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2011,hou,null,.id,null,null,id,false,null,winner id string,id
 2011,hou,null,.winner.json,jwinner,null,json,false,null,null,json
 2011,hou,10,index.html,readme2index,null,html,true,browser,click here first,html
 2011,hou,20,hou.c,null,main,c,true,github,winning source,c
@@ -2395,6 +2613,7 @@
 2011,hou,300,2011_hou.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2011,konno,null,README.md,null,null,markdown,false,null,null,md
 2011,konno,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2011,konno,null,.id,null,null,id,false,null,winner id string,id
 2011,konno,null,.winner.json,jwinner,null,json,false,null,null,json
 2011,konno,10,index.html,readme2index,null,html,true,browser,click here first,html
 2011,konno,20,konno.c,null,main,c,true,github,winning source,c
@@ -2403,6 +2622,7 @@
 2011,konno,300,2011_konno.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2011,richards,null,README.md,null,null,markdown,false,null,null,md
 2011,richards,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2011,richards,null,.id,null,null,id,false,null,winner id string,id
 2011,richards,null,.winner.json,jwinner,null,json,false,null,null,json
 2011,richards,10,index.html,readme2index,null,html,true,browser,click here first,html
 2011,richards,20,richards.c,null,main,c,true,github,winning source,c
@@ -2411,6 +2631,7 @@
 2011,richards,300,2011_richards.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2011,toledo,null,README.md,null,null,markdown,false,null,null,md
 2011,toledo,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2011,toledo,null,.id,null,null,id,false,null,winner id string,id
 2011,toledo,null,.winner.json,jwinner,null,json,false,null,null,json
 2011,toledo,10,index.html,readme2index,null,html,true,browser,click here first,html
 2011,toledo,20,toledo.c,null,main,c,true,github,winning source,c
@@ -2420,6 +2641,7 @@
 2011,toledo,300,2011_toledo.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2011,vik,null,README.md,null,null,markdown,false,null,null,md
 2011,vik,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2011,vik,null,.id,null,null,id,false,null,winner id string,id
 2011,vik,null,.winner.json,jwinner,null,json,false,null,null,json
 2011,vik,10,index.html,readme2index,null,html,true,browser,click here first,html
 2011,vik,20,vik.c,null,main,c,true,github,winning source,c
@@ -2432,6 +2654,7 @@
 2011,vik,300,2011_vik.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2011,zucker,null,README.md,null,null,markdown,false,null,null,md
 2011,zucker,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2011,zucker,null,.id,null,null,id,false,null,winner id string,id
 2011,zucker,null,.winner.json,jwinner,null,json,false,null,null,json
 2011,zucker,10,index.html,readme2index,null,html,true,browser,click here first,html
 2011,zucker,20,zucker.c,null,main,c,true,github,winning source,c
@@ -2440,6 +2663,7 @@
 2011,zucker,300,2011_zucker.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2012,blakely,null,README.md,null,null,markdown,false,null,null,md
 2012,blakely,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2012,blakely,null,.id,null,null,id,false,null,winner id string,id
 2012,blakely,null,.winner.json,jwinner,null,json,false,null,null,json
 2012,blakely,10,index.html,readme2index,null,html,true,browser,click here first,html
 2012,blakely,20,blakely.c,null,main,c,true,github,winning source,c
@@ -2449,6 +2673,7 @@
 2012,deckmyn,null,README.md,null,null,markdown,false,null,null,md
 2012,deckmyn,null,deckmyn.md,null,null,markdown,false,null,null,md
 2012,deckmyn,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2012,deckmyn,null,.id,null,null,id,false,null,winner id string,id
 2012,deckmyn,null,.winner.json,jwinner,null,json,false,null,null,json
 2012,deckmyn,10,index.html,readme2index,null,html,true,browser,click here first,html
 2012,deckmyn,20,deckmyn.c,null,main,c,true,github,winning source,c
@@ -2461,6 +2686,7 @@
 2012,dlowe,null,README.md,null,null,markdown,false,null,null,md
 2012,dlowe,null,dead.d,null,null,binary,false,null,data file,d
 2012,dlowe,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2012,dlowe,null,.id,null,null,id,false,null,winner id string,id
 2012,dlowe,null,splash.d,null,null,binary,false,null,data file,d
 2012,dlowe,null,sprites.d,null,null,binary,false,null,data file,d
 2012,dlowe,null,.winner.json,jwinner,null,json,false,null,null,json
@@ -2471,6 +2697,7 @@
 2012,dlowe,300,2012_dlowe.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2012,endoh1,null,README.md,null,null,markdown,false,null,null,md
 2012,endoh1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2012,endoh1,null,.id,null,null,id,false,null,winner id string,id
 2012,endoh1,null,.winner.json,jwinner,null,json,false,null,null,json
 2012,endoh1,10,index.html,readme2index,null,html,true,browser,click here first,html
 2012,endoh1,20,endoh1.c,null,main,c,true,github,winning source,c
@@ -2498,6 +2725,7 @@
 2012,endoh1,300,2012_endoh1.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2012,endoh2,null,README.md,null,null,markdown,false,null,null,md
 2012,endoh2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2012,endoh2,null,.id,null,null,id,false,null,winner id string,id
 2012,endoh2,null,.winner.json,jwinner,null,json,false,null,null,json
 2012,endoh2,10,index.html,readme2index,null,html,true,browser,click here first,html
 2012,endoh2,20,endoh2.c,null,main,c,true,github,winning source,c
@@ -2513,6 +2741,7 @@
 2012,grothe,null,cookie_piece4.dat,null,null,binary,false,null,binary support file,dat
 2012,grothe,null,cookie_recipe_restore.txt,null,null,text,false,null,encoded cookie recipe,txt
 2012,grothe,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2012,grothe,null,.id,null,null,id,false,null,winner id string,id
 2012,grothe,null,.winner.json,jwinner,null,json,false,null,null,json
 2012,grothe,10,index.html,readme2index,null,html,true,browser,click here first,html
 2012,grothe,20,grothe.c,null,main,c,true,github,winning source,c
@@ -2522,6 +2751,7 @@
 2012,grothe,300,2012_grothe.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2012,hamano,null,README.md,null,null,markdown,false,null,null,md
 2012,hamano,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2012,hamano,null,.id,null,null,id,false,null,winner id string,id
 2012,hamano,null,.winner.json,jwinner,null,json,false,null,null,json
 2012,hamano,10,index.html,readme2index,null,html,true,browser,click here first,html
 2012,hamano,20,hamano.c,null,main,c,true,github,winning source,c
@@ -2530,6 +2760,7 @@
 2012,hamano,300,2012_hamano.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2012,hou,null,README.md,null,null,markdown,false,null,null,md
 2012,hou,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2012,hou,null,.id,null,null,id,false,null,winner id string,id
 2012,hou,null,.winner.json,jwinner,null,json,false,null,null,json
 2012,hou,10,index.html,readme2index,null,html,true,browser,click here first,html
 2012,hou,20,hou.c,null,main,c,true,github,winning source,c
@@ -2545,6 +2776,7 @@
 2012,hou,300,2012_hou.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2012,kang,null,README.md,null,null,markdown,false,null,null,md
 2012,kang,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2012,kang,null,.id,null,null,id,false,null,winner id string,id
 2012,kang,null,.winner.json,jwinner,null,json,false,null,null,json
 2012,kang,10,index.html,readme2index,null,html,true,browser,click here first,html
 2012,kang,20,kang.c,null,main,c,true,github,winning source,c
@@ -2553,6 +2785,7 @@
 2012,kang,300,2012_kang.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2012,konno,null,README.md,null,null,markdown,false,null,null,md
 2012,konno,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2012,konno,null,.id,null,null,id,false,null,winner id string,id
 2012,konno,null,.winner.json,jwinner,null,json,false,null,null,json
 2012,konno,10,index.html,readme2index,null,html,true,browser,click here first,html
 2012,konno,20,konno.c,null,main,c,true,github,winning source,c
@@ -2562,6 +2795,7 @@
 2012,konno,300,2012_konno.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2012,omoikane,null,README.md,null,null,markdown,false,null,null,md
 2012,omoikane,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2012,omoikane,null,.id,null,null,id,false,null,winner id string,id
 2012,omoikane,null,.winner.json,jwinner,null,json,false,null,null,json
 2012,omoikane,10,index.html,readme2index,null,html,true,browser,click here first,html
 2012,omoikane,30,Makefile,null,null,makefile,true,github,how to compile,null
@@ -2575,6 +2809,7 @@
 2012,tromp,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
 2012,tromp,null,hilbert.Blc,null,null,binary,false,null,sample input,Blc
 2012,tromp,null,how.md,null,null,markdown,false,null,null,md
+2012,tromp,null,.id,null,null,id,false,null,winner id string,id
 2012,tromp,null,inflate.Blc,null,null,binary,false,null,sample input,Blc
 2012,tromp,null,oddindices.Blc,null,null,binary,false,null,sample input,Blc
 2012,tromp,null,parse.Blc,null,null,binary,false,null,sample input,Blc
@@ -2593,6 +2828,7 @@
 2012,tromp,300,2012_tromp.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2012,vik,null,README.md,null,null,markdown,false,null,null,md
 2012,vik,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2012,vik,null,.id,null,null,id,false,null,winner id string,id
 2012,vik,null,.winner.json,jwinner,null,json,false,null,null,json
 2012,vik,10,index.html,readme2index,null,html,true,browser,click here first,html
 2012,vik,20,vik.c,null,main,c,true,github,winning source,c
@@ -2604,6 +2840,7 @@
 2012,vik,300,2012_vik.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2012,zeitak,null,README.md,null,null,markdown,false,null,null,md
 2012,zeitak,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2012,zeitak,null,.id,null,null,id,false,null,winner id string,id
 2012,zeitak,null,.winner.json,jwinner,null,json,false,null,null,json
 2012,zeitak,10,index.html,readme2index,null,html,true,browser,click here first,html
 2012,zeitak,20,zeitak.c,null,main,c,true,github,winning source,c
@@ -2614,6 +2851,7 @@
 2012,zeitak,300,2012_zeitak.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2013,birken,null,README.md,null,null,markdown,false,null,null,md
 2013,birken,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2013,birken,null,.id,null,null,id,false,null,winner id string,id
 2013,birken,null,multi2.gif,null,null,image,false,null,stages of multi-square emitters,gif
 2013,birken,null,multi3.gif,null,null,image,false,null,stages showing multi-square emitters,gif
 2013,birken,null,multi4.gif,null,null,image,false,null,stages showing multi-square emitters,gif
@@ -2668,6 +2906,7 @@
 2013,birken,300,2013_birken.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2013,cable1,null,README.md,null,null,markdown,false,null,null,md
 2013,cable1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2013,cable1,null,.id,null,null,id,false,null,winner id string,id
 2013,cable1,null,.winner.json,jwinner,null,json,false,null,null,json
 2013,cable1,10,index.html,readme2index,null,html,true,browser,click here first,html
 2013,cable1,20,cable1.c,null,main,c,true,github,winning source,c
@@ -2676,6 +2915,7 @@
 2013,cable1,300,2013_cable1.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2013,cable2,null,README.md,null,null,markdown,false,null,null,md
 2013,cable2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2013,cable2,null,.id,null,null,id,false,null,winner id string,id
 2013,cable2,null,.winner.json,jwinner,null,json,false,null,null,json
 2013,cable2,10,index.html,readme2index,null,html,true,browser,click here first,html
 2013,cable2,20,cable2.c,null,main,c,true,github,winning source,c
@@ -2692,6 +2932,7 @@
 2013,cable3,null,bios,null,null,binary,false,null,custom BIOS,null
 2013,cable3,null,fd.img,null,null,binary,false,null,DOS boot sector,img
 2013,cable3,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2013,cable3,null,.id,null,null,id,false,null,winner id string,id
 2013,cable3,null,.winner.json,jwinner,null,json,false,null,null,json
 2013,cable3,10,index.html,readme2index,null,html,true,browser,click here first,html
 2013,cable3,20,cable3.c,null,main,c,true,github,winning source,c
@@ -2708,6 +2949,7 @@
 2013,cable3,300,2013_cable3.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2013,dlowe,null,README.md,null,null,markdown,false,null,null,md
 2013,dlowe,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2013,dlowe,null,.id,null,null,id,false,null,winner id string,id
 2013,dlowe,null,.winner.json,jwinner,null,json,false,null,null,json
 2013,dlowe,10,index.html,readme2index,null,html,true,browser,click here first,html
 2013,dlowe,20,dlowe.c,null,main,c,true,github,winning source,c
@@ -2716,6 +2958,7 @@
 2013,dlowe,300,2013_dlowe.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2013,endoh1,null,README.md,null,null,markdown,false,null,null,md
 2013,endoh1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2013,endoh1,null,.id,null,null,id,false,null,winner id string,id
 2013,endoh1,null,.winner.json,jwinner,null,json,false,null,null,json
 2013,endoh1,10,index.html,readme2index,null,html,true,browser,click here first,html
 2013,endoh1,20,endoh1.c,null,main,c,true,github,winning source,c
@@ -2728,6 +2971,7 @@
 2013,endoh1,300,2013_endoh1.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2013,endoh2,null,README.md,null,null,markdown,false,null,null,md
 2013,endoh2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2013,endoh2,null,.id,null,null,id,false,null,winner id string,id
 2013,endoh2,null,.winner.json,jwinner,null,json,false,null,null,json
 2013,endoh2,10,index.html,readme2index,null,html,true,browser,click here first,html
 2013,endoh2,20,endoh2.c,null,main,c,true,github,winning source,c
@@ -2737,6 +2981,7 @@
 2013,endoh2,300,2013_endoh2.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2013,endoh3,null,README.md,null,null,markdown,false,null,null,md
 2013,endoh3,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2013,endoh3,null,.id,null,null,id,false,null,winner id string,id
 2013,endoh3,null,.winner.json,jwinner,null,json,false,null,null,json
 2013,endoh3,10,index.html,readme2index,null,html,true,browser,click here first,html
 2013,endoh3,20,endoh3.c,null,main,c,true,github,winning source,c
@@ -2751,6 +2996,7 @@
 2013,endoh3,300,2013_endoh3.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2013,endoh4,null,README.md,null,null,markdown,false,null,null,md
 2013,endoh4,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2013,endoh4,null,.id,null,null,id,false,null,winner id string,id
 2013,endoh4,null,.winner.json,jwinner,null,json,false,null,null,json
 2013,endoh4,10,index.html,readme2index,null,html,true,browser,click here first,html
 2013,endoh4,20,endoh4.c,null,main,c,true,github,winning source,c
@@ -2911,6 +3157,7 @@
 2013,hou,null,doc/draft.png,null,null,image,false,null,documentation support image,png
 2013,hou,null,doc/example.md,null,null,markdown,false,null,null,md
 2013,hou,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2013,hou,null,.id,null,null,id,false,null,winner id string,id
 2013,hou,null,.winner.json,jwinner,null,json,false,null,null,json
 2013,hou,10,index.html,readme2index,null,html,true,browser,click here first,html
 2013,hou,20,hou.c,null,main,c,true,github,winning source,c
@@ -2925,6 +3172,7 @@
 2013,hou,300,2013_hou.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2013,mills,null,README.md,null,null,markdown,false,null,null,md
 2013,mills,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2013,mills,null,.id,null,null,id,false,null,winner id string,id
 2013,mills,null,.winner.json,jwinner,null,json,false,null,null,json
 2013,mills,10,index.html,readme2index,null,html,true,browser,click here first,html
 2013,mills,20,mills.c,null,main,c,true,github,winning source,c
@@ -2933,6 +3181,7 @@
 2013,mills,300,2013_mills.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2013,misaka,null,README.md,null,null,markdown,false,null,null,md
 2013,misaka,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2013,misaka,null,.id,null,null,id,false,null,winner id string,id
 2013,misaka,null,.winner.json,jwinner,null,json,false,null,null,json
 2013,misaka,10,index.html,readme2index,null,html,true,browser,click here first,html
 2013,misaka,20,misaka.c,null,main,c,true,github,winning source,c
@@ -2943,6 +3192,7 @@
 2013,misaka,300,2013_misaka.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2013,morgan1,null,README.md,null,null,markdown,false,null,null,md
 2013,morgan1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2013,morgan1,null,.id,null,null,id,false,null,winner id string,id
 2013,morgan1,null,.winner.json,jwinner,null,json,false,null,null,json
 2013,morgan1,10,index.html,readme2index,null,html,true,browser,click here first,html
 2013,morgan1,20,morgan1.c,null,main,c,true,github,winning source,c
@@ -2951,6 +3201,7 @@
 2013,morgan1,300,2013_morgan1.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2013,morgan2,null,README.md,null,null,markdown,false,null,null,md
 2013,morgan2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2013,morgan2,null,.id,null,null,id,false,null,winner id string,id
 2013,morgan2,null,.winner.json,jwinner,null,json,false,null,null,json
 2013,morgan2,10,index.html,readme2index,null,html,true,browser,click here first,html
 2013,morgan2,20,morgan2.c,null,main,c,true,github,winning source,c
@@ -2959,6 +3210,7 @@
 2013,morgan2,300,2013_morgan2.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2013,robison,null,README.md,null,null,markdown,false,null,null,md
 2013,robison,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2013,robison,null,.id,null,null,id,false,null,winner id string,id
 2013,robison,null,.winner.json,jwinner,null,json,false,null,null,json
 2013,robison,10,index.html,readme2index,null,html,true,browser,click here first,html
 2013,robison,20,robison.c,null,main,c,true,github,winning source,c
@@ -2967,6 +3219,7 @@
 2013,robison,300,2013_robison.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2014,birken,null,README.md,null,null,markdown,false,null,null,md
 2014,birken,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2014,birken,null,.id,null,null,id,false,null,winner id string,id
 2014,birken,null,.winner.json,jwinner,null,json,false,null,null,json
 2014,birken,10,index.html,readme2index,null,html,true,browser,click here first,html
 2014,birken,20,prog.c,null,main,c,true,github,winning source,c
@@ -2975,6 +3228,7 @@
 2014,birken,300,2014_birken.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2014,deak,null,README.md,null,null,markdown,false,null,null,md
 2014,deak,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2014,deak,null,.id,null,null,id,false,null,winner id string,id
 2014,deak,null,.winner.json,jwinner,null,json,false,null,null,json
 2014,deak,10,index.html,readme2index,null,html,true,browser,click here first,html
 2014,deak,20,prog.c,null,main,c,true,github,winning source,c
@@ -2983,6 +3237,7 @@
 2014,deak,300,2014_deak.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2014,endoh1,null,README.md,null,null,markdown,false,null,null,md
 2014,endoh1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2014,endoh1,null,.id,null,null,id,false,null,winner id string,id
 2014,endoh1,null,read_me.md,null,null,markdown,false,null,null,md
 2014,endoh1,null,.winner.json,jwinner,null,json,false,null,null,json
 2014,endoh1,10,index.html,readme2index,null,html,true,browser,click here first,html
@@ -3008,6 +3263,7 @@
 2014,endoh1,300,2014_endoh1.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2014,endoh2,null,README.md,null,null,markdown,false,null,null,md
 2014,endoh2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2014,endoh2,null,.id,null,null,id,false,null,winner id string,id
 2014,endoh2,null,.winner.json,jwinner,null,json,false,null,null,json
 2014,endoh2,10,index.html,readme2index,null,html,true,browser,click here first,html
 2014,endoh2,20,prog.c,null,main,c,true,github,winning source,c
@@ -3017,6 +3273,7 @@
 2014,maffiodo1,null,README.md,null,null,markdown,false,null,null,md
 2014,maffiodo1,null,giana.rgba,null,null,binary,false,null,raw RGBA image,rgba
 2014,maffiodo1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2014,maffiodo1,null,.id,null,null,id,false,null,winner id string,id
 2014,maffiodo1,null,mario.rgba,null,null,binary,false,null,raw RGBA image,rgba
 2014,maffiodo1,null,.winner.json,jwinner,null,json,false,null,null,json
 2014,maffiodo1,10,index.html,readme2index,null,html,true,browser,click here first,html
@@ -3032,6 +3289,7 @@
 2014,maffiodo1,300,2014_maffiodo1.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2014,maffiodo2,null,README.md,null,null,markdown,false,null,null,md
 2014,maffiodo2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2014,maffiodo2,null,.id,null,null,id,false,null,winner id string,id
 2014,maffiodo2,null,image.rgb,null,null,null,false,null,sample input in the form of a raw RGB image,rgb
 2014,maffiodo2,null,.winner.json,jwinner,null,json,false,null,null,json
 2014,maffiodo2,10,index.html,readme2index,null,html,true,browser,click here first,html
@@ -3041,6 +3299,7 @@
 2014,maffiodo2,300,2014_maffiodo2.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2014,morgan,null,README.md,null,null,markdown,false,null,null,md
 2014,morgan,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2014,morgan,null,.id,null,null,id,false,null,winner id string,id
 2014,morgan,null,.winner.json,jwinner,null,json,false,null,null,json
 2014,morgan,10,index.html,readme2index,null,html,true,browser,click here first,html
 2014,morgan,20,prog.c,null,main,c,true,github,winning source,c
@@ -3049,6 +3308,7 @@
 2014,morgan,300,2014_morgan.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2014,sinon,null,README.md,null,null,markdown,false,null,null,md
 2014,sinon,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2014,sinon,null,.id,null,null,id,false,null,winner id string,id
 2014,sinon,null,.winner.json,jwinner,null,json,false,null,null,json
 2014,sinon,10,index.html,readme2index,null,html,true,browser,click here first,html
 2014,sinon,20,prog.c,null,main,c,true,github,winning source,c
@@ -3060,6 +3320,7 @@
 2014,sinon,300,2014_sinon.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2014,skeggs,null,README.md,null,null,markdown,false,null,null,md
 2014,skeggs,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2014,skeggs,null,.id,null,null,id,false,null,winner id string,id
 2014,skeggs,null,.winner.json,jwinner,null,json,false,null,null,json
 2014,skeggs,10,index.html,readme2index,null,html,true,browser,click here first,html
 2014,skeggs,20,prog.c,null,main,c,true,github,winning source,c
@@ -3068,6 +3329,7 @@
 2014,skeggs,300,2014_skeggs.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2014,vik,null,README.md,null,null,markdown,false,null,null,md
 2014,vik,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2014,vik,null,.id,null,null,id,false,null,winner id string,id
 2014,vik,null,.winner.json,jwinner,null,json,false,null,null,json
 2014,vik,10,index.html,readme2index,null,html,true,browser,click here first,html
 2014,vik,20,prog.c,null,main,c,true,github,winning source,c
@@ -3076,6 +3338,7 @@
 2014,vik,300,2014_vik.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2014,wiedijk,null,README.md,null,null,markdown,false,null,null,md
 2014,wiedijk,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2014,wiedijk,null,.id,null,null,id,false,null,winner id string,id
 2014,wiedijk,null,.winner.json,jwinner,null,json,false,null,null,json
 2014,wiedijk,10,index.html,readme2index,null,html,true,browser,click here first,html
 2014,wiedijk,20,prog.c,null,main,c,true,github,winning source,c
@@ -3084,6 +3347,7 @@
 2014,wiedijk,300,2014_wiedijk.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2015,burton,null,README.md,null,null,markdown,false,null,null,md
 2015,burton,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2015,burton,null,.id,null,null,id,false,null,winner id string,id
 2015,burton,null,spoilers.md,null,null,markdown,false,null,null,md
 2015,burton,null,.winner.json,jwinner,null,json,false,null,null,json
 2015,burton,10,index.html,readme2index,null,html,true,browser,click here first,html
@@ -3103,6 +3367,7 @@
 2015,burton,300,2015_burton.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2015,dogon,null,README.md,null,null,markdown,false,null,null,md
 2015,dogon,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2015,dogon,null,.id,null,null,id,false,null,winner id string,id
 2015,dogon,null,.winner.json,jwinner,null,json,false,null,null,json
 2015,dogon,10,index.html,readme2index,null,html,true,browser,click here first,html
 2015,dogon,20,prog.c,null,main,c,true,github,winning source,c
@@ -3111,6 +3376,7 @@
 2015,dogon,300,2015_dogon.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2015,duble,null,README.md,null,null,markdown,false,null,null,md
 2015,duble,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2015,duble,null,.id,null,null,id,false,null,winner id string,id
 2015,duble,null,.winner.json,jwinner,null,json,false,null,null,json
 2015,duble,10,index.html,readme2index,null,html,true,browser,click here first,html
 2015,duble,20,prog.c,null,main,c,true,github,winning source,c
@@ -3122,6 +3388,7 @@
 2015,duble,300,2015_duble.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2015,endoh1,null,README.md,null,null,markdown,false,null,null,md
 2015,endoh1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2015,endoh1,null,.id,null,null,id,false,null,winner id string,id
 2015,endoh1,null,.winner.json,jwinner,null,json,false,null,null,json
 2015,endoh1,10,index.html,readme2index,null,html,true,browser,click here first,html
 2015,endoh1,20,prog.c,null,main,c,true,github,winning source,c
@@ -3133,6 +3400,7 @@
 2015,endoh1,300,2015_endoh1.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2015,endoh2,null,README.md,null,null,markdown,false,null,null,md
 2015,endoh2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2015,endoh2,null,.id,null,null,id,false,null,winner id string,id
 2015,endoh2,null,.winner.json,jwinner,null,json,false,null,null,json
 2015,endoh2,10,index.html,readme2index,null,html,true,browser,click here first,html
 2015,endoh2,20,prog.c,null,main,c,true,github,winning source,c
@@ -3141,6 +3409,7 @@
 2015,endoh2,300,2015_endoh2.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2015,endoh3,null,README.md,null,null,markdown,false,null,null,md
 2015,endoh3,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2015,endoh3,null,.id,null,null,id,false,null,winner id string,id
 2015,endoh3,null,.winner.json,jwinner,null,json,false,null,null,json
 2015,endoh3,10,index.html,readme2index,null,html,true,browser,click here first,html
 2015,endoh3,20,prog.c,null,main,c,true,github,winning source,c
@@ -3151,6 +3420,7 @@
 2015,endoh3,300,2015_endoh3.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2015,endoh4,null,README.md,null,null,markdown,false,null,null,md
 2015,endoh4,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2015,endoh4,null,.id,null,null,id,false,null,winner id string,id
 2015,endoh4,null,.winner.json,jwinner,null,json,false,null,null,json
 2015,endoh4,10,index.html,readme2index,null,html,true,browser,click here first,html
 2015,endoh4,20,prog.c,null,main,c,true,github,winning source,c
@@ -3160,6 +3430,7 @@
 2015,endoh4,300,2015_endoh4.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2015,hou,null,README.md,null,null,markdown,false,null,null,md
 2015,hou,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2015,hou,null,.id,null,null,id,false,null,winner id string,id
 2015,hou,null,.winner.json,jwinner,null,json,false,null,null,json
 2015,hou,10,index.html,readme2index,null,html,true,browser,click here first,html
 2015,hou,20,prog.c,null,main,c,true,github,winning source,c
@@ -3168,6 +3439,7 @@
 2015,hou,300,2015_hou.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2015,howe,null,README.md,null,null,markdown,false,null,null,md
 2015,howe,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2015,howe,null,.id,null,null,id,false,null,winner id string,id
 2015,howe,null,.winner.json,jwinner,null,json,false,null,null,json
 2015,howe,10,index.html,readme2index,null,html,true,browser,click here first,html
 2015,howe,20,prog.c,null,main,c,true,github,winning source,c
@@ -3183,6 +3455,7 @@
 2015,howe,300,2015_howe.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2015,mills1,null,README.md,null,null,markdown,false,null,null,md
 2015,mills1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2015,mills1,null,.id,null,null,id,false,null,winner id string,id
 2015,mills1,null,.winner.json,jwinner,null,json,false,null,null,json
 2015,mills1,10,index.html,readme2index,null,html,true,browser,click here first,html
 2015,mills1,20,prog.c,null,main,c,true,github,winning source,c
@@ -3191,6 +3464,7 @@
 2015,mills1,300,2015_mills1.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2015,mills2,null,README.md,null,null,markdown,false,null,null,md
 2015,mills2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2015,mills2,null,.id,null,null,id,false,null,winner id string,id
 2015,mills2,null,.winner.json,jwinner,null,json,false,null,null,json
 2015,mills2,10,index.html,readme2index,null,html,true,browser,click here first,html
 2015,mills2,20,prog.c,null,main,c,true,github,winning source,c
@@ -3201,6 +3475,7 @@
 2015,mills2,300,2015_mills2.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2015,muth,null,README.md,null,null,markdown,false,null,null,md
 2015,muth,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2015,muth,null,.id,null,null,id,false,null,winner id string,id
 2015,muth,null,.winner.json,jwinner,null,json,false,null,null,json
 2015,muth,10,index.html,readme2index,null,html,true,browser,click here first,html
 2015,muth,20,prog.c,null,main,c,true,github,winning source,c
@@ -3224,6 +3499,7 @@
 2015,muth,300,2015_muth.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2015,schweikhardt,null,README.md,null,null,markdown,false,null,null,md
 2015,schweikhardt,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2015,schweikhardt,null,.id,null,null,id,false,null,winner id string,id
 2015,schweikhardt,null,.winner.json,jwinner,null,json,false,null,null,json
 2015,schweikhardt,10,index.html,readme2index,null,html,true,browser,click here first,html
 2015,schweikhardt,20,prog.c,null,main,c,true,github,winning source,c
@@ -3232,6 +3508,7 @@
 2015,schweikhardt,300,2015_schweikhardt.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2015,yang,null,README.md,null,null,markdown,false,null,null,md
 2015,yang,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2015,yang,null,.id,null,null,id,false,null,winner id string,id
 2015,yang,null,.winner.json,jwinner,null,json,false,null,null,json
 2015,yang,10,index.html,readme2index,null,html,true,browser,click here first,html
 2015,yang,20,prog.c,null,main,c,true,github,winning source,c
@@ -3241,6 +3518,7 @@
 2015,yang,300,2015_yang.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2018,algmyr,null,README.md,null,null,markdown,false,null,null,md
 2018,algmyr,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2018,algmyr,null,.id,null,null,id,false,null,winner id string,id
 2018,algmyr,null,.winner.json,jwinner,null,json,false,null,null,json
 2018,algmyr,10,index.html,readme2index,null,html,true,browser,click here first,html
 2018,algmyr,20,prog.c,null,main,c,true,github,winning source,c
@@ -3250,6 +3528,7 @@
 2018,algmyr,300,2018_algmyr.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2018,anderson,null,README.md,null,null,markdown,false,null,null,md
 2018,anderson,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2018,anderson,null,.id,null,null,id,false,null,winner id string,id
 2018,anderson,null,.winner.json,jwinner,null,json,false,null,null,json
 2018,anderson,10,index.html,readme2index,null,html,true,browser,click here first,html
 2018,anderson,20,prog.c,null,main,c,true,github,winning source,c
@@ -3260,6 +3539,7 @@
 2018,bellard,null,README.md,null,null,markdown,false,null,null,md
 2018,bellard,null,fruits.bin,null,null,binary,false,null,binary support file,bin
 2018,bellard,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2018,bellard,null,.id,null,null,id,false,null,winner id string,id
 2018,bellard,null,lena512.bin,null,null,binary,false,null,binary support file,bin
 2018,bellard,null,vintage_cars.bin,null,null,binary,false,null,binary support file,bin
 2018,bellard,null,.winner.json,jwinner,null,json,false,null,null,json
@@ -3271,6 +3551,7 @@
 2018,bellard,300,2018_bellard.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2018,burton1,null,README.md,null,null,markdown,false,null,null,md
 2018,burton1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2018,burton1,null,.id,null,null,id,false,null,winner id string,id
 2018,burton1,null,.winner.json,jwinner,null,json,false,null,null,json
 2018,burton1,10,index.html,readme2index,null,html,true,browser,click here first,html
 2018,burton1,20,prog.c,null,main,c,true,github,winning source,c
@@ -3282,6 +3563,7 @@
 2018,burton2,null,README.md,null,null,markdown,false,null,null,md
 2018,burton2,null,discrepancies.md,null,null,markdown,false,null,null,md
 2018,burton2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2018,burton2,null,.id,null,null,id,false,null,winner id string,id
 2018,burton2,null,.winner.json,jwinner,null,json,false,null,null,json
 2018,burton2,10,index.html,readme2index,null,html,true,browser,click here first,html
 2018,burton2,20,prog.c,null,main,c,true,github,winning source,c
@@ -3339,6 +3621,7 @@
 2018,burton2,300,src.doc.txt,null,null,text,true,github,SPOILER WARNING hints about the source,txt
 2018,ciura,null,README.md,null,null,markdown,false,null,null,md
 2018,ciura,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2018,ciura,null,.id,null,null,id,false,null,winner id string,id
 2018,ciura,null,.winner.json,jwinner,null,json,false,null,null,json
 2018,ciura,10,index.html,readme2index,null,html,true,browser,click here first,html
 2018,ciura,20,prog.c,null,main,c,true,github,winning source,c
@@ -3348,6 +3631,7 @@
 2018,ciura,300,2018_ciura.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2018,endoh1,null,README.md,null,null,markdown,false,null,null,md
 2018,endoh1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2018,endoh1,null,.id,null,null,id,false,null,winner id string,id
 2018,endoh1,null,.winner.json,jwinner,null,json,false,null,null,json
 2018,endoh1,10,index.html,readme2index,null,html,true,browser,click here first,html
 2018,endoh1,20,prog.c,null,main,c,true,github,winning source,c
@@ -3359,6 +3643,7 @@
 2018,endoh1,300,2018_endoh1.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2018,endoh2,null,README.md,null,null,markdown,false,null,null,md
 2018,endoh2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2018,endoh2,null,.id,null,null,id,false,null,winner id string,id
 2018,endoh2,null,.winner.json,jwinner,null,json,false,null,null,json
 2018,endoh2,10,index.html,readme2index,null,html,true,browser,click here first,html
 2018,endoh2,20,prog.c,null,main,c,true,github,winning source,c
@@ -3369,6 +3654,7 @@
 2018,ferguson,null,README.md,null,null,markdown,false,null,null,md
 2018,ferguson,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
 2018,ferguson,null,hint.css,null,null,css,false,null,CSS for hint page ,css
+2018,ferguson,null,.id,null,null,id,false,null,winner id string,id
 2018,ferguson,null,rpm.md,null,null,markdown,false,null,null,md
 2018,ferguson,null,test-strings.txt,null,null,text,false,null,test.sh support file,txt
 2018,ferguson,null,.winner.json,jwinner,null,json,false,null,null,json
@@ -3386,6 +3672,7 @@
 2018,ferguson,300,2018_ferguson.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2018,giles,null,README.md,null,null,markdown,false,null,null,md
 2018,giles,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2018,giles,null,.id,null,null,id,false,null,winner id string,id
 2018,giles,null,.winner.json,jwinner,null,json,false,null,null,json
 2018,giles,10,index.html,readme2index,null,html,true,browser,click here first,html
 2018,giles,20,prog.c,null,main,c,true,github,winning source,c
@@ -3397,6 +3684,7 @@
 2018,giles,300,2018_giles.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2018,hou,null,README.md,null,null,markdown,false,null,null,md
 2018,hou,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2018,hou,null,.id,null,null,id,false,null,winner id string,id
 2018,hou,null,.winner.json,jwinner,null,json,false,null,null,json
 2018,hou,10,index.html,readme2index,null,html,true,browser,click here first,html
 2018,hou,20,prog.c,null,main,c,true,github,winning source,c
@@ -3408,6 +3696,7 @@
 2018,mills,null,boot.dat,null,null,binary,false,null,binary support file,dat
 2018,mills,null,bsd.img.bz2,null,null,bzip2,false,null,bz2 compressed BSD disk image,bz2
 2018,mills,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2018,mills,null,.id,null,null,id,false,null,winner id string,id
 2018,mills,null,v0.image.fs,null,null,binary,false,null,filesystem image,fs
 2018,mills,null,v6.tape.gz,null,null,gzip,false,null,compressed filesystem image,gz
 2018,mills,null,.winner.json,jwinner,null,json,false,null,null,json
@@ -3418,6 +3707,7 @@
 2018,mills,300,2018_mills.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2018,poikola,null,README.md,null,null,markdown,false,null,null,md
 2018,poikola,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2018,poikola,null,.id,null,null,id,false,null,winner id string,id
 2018,poikola,null,.winner.json,jwinner,null,json,false,null,null,json
 2018,poikola,10,index.html,readme2index,null,html,true,browser,click here first,html
 2018,poikola,20,prog.c,null,main,c,true,github,winning source,c
@@ -3428,6 +3718,7 @@
 2018,poikola,300,2018_poikola.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2018,vokes,null,README.md,null,null,markdown,false,null,null,md
 2018,vokes,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2018,vokes,null,.id,null,null,id,false,null,winner id string,id
 2018,vokes,null,.winner.json,jwinner,null,json,false,null,null,json
 2018,vokes,10,index.html,readme2index,null,html,true,browser,click here first,html
 2018,vokes,20,prog.c,null,main,c,true,github,winning source,c
@@ -3440,6 +3731,7 @@
 2018,vokes,300,2018_vokes.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2018,yang,null,README.md,null,null,markdown,false,null,null,md
 2018,yang,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2018,yang,null,.id,null,null,id,false,null,winner id string,id
 2018,yang,null,.winner.json,jwinner,null,json,false,null,null,json
 2018,yang,10,index.html,readme2index,null,html,true,browser,click here first,html
 2018,yang,20,prog.c,null,main,c,true,github,winning source,c
@@ -3449,6 +3741,7 @@
 2018,yang,300,2018_yang.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2019,adamovsky,null,README.md,null,null,markdown,false,null,null,md
 2019,adamovsky,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2019,adamovsky,null,.id,null,null,id,false,null,winner id string,id
 2019,adamovsky,null,.winner.json,jwinner,null,json,false,null,null,json
 2019,adamovsky,10,index.html,readme2index,null,html,true,browser,click here first,html
 2019,adamovsky,20,prog.c,null,main,c,true,github,winning source,c
@@ -3463,6 +3756,7 @@
 2019,burton,null,256,null,null,binary,false,null,test suite data,null
 2019,burton,null,README.md,null,null,markdown,false,null,null,md
 2019,burton,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2019,burton,null,.id,null,null,id,false,null,winner id string,id
 2019,burton,null,newlines,null,null,text,false,null,more useful interface.,null
 2019,burton,null,.winner.json,jwinner,null,json,false,null,null,json
 2019,burton,10,index.html,readme2index,null,html,true,browser,click here first,html
@@ -3476,6 +3770,7 @@
 2019,burton,300,2019_burton.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2019,ciura,null,README.md,null,null,markdown,false,null,null,md
 2019,ciura,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2019,ciura,null,.id,null,null,id,false,null,winner id string,id
 2019,ciura,null,.winner.json,jwinner,null,json,false,null,null,json
 2019,ciura,10,index.html,readme2index,null,html,true,browser,click here first,html
 2019,ciura,20,prog.c,null,main,c,true,github,winning source,c
@@ -3493,6 +3788,7 @@
 2019,ciura,300,2019_ciura.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2019,diels-grabsch1,null,README.md,null,null,markdown,false,null,null,md
 2019,diels-grabsch1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2019,diels-grabsch1,null,.id,null,null,id,false,null,winner id string,id
 2019,diels-grabsch1,null,.winner.json,jwinner,null,json,false,null,null,json
 2019,diels-grabsch1,10,index.html,readme2index,null,html,true,browser,click here first,html
 2019,diels-grabsch1,20,prog.c,null,main,c,true,github,winning source,c
@@ -3502,6 +3798,7 @@
 2019,diels-grabsch1,300,2019_diels-grabsch1.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2019,diels-grabsch2,null,README.md,null,null,markdown,false,null,null,md
 2019,diels-grabsch2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2019,diels-grabsch2,null,.id,null,null,id,false,null,winner id string,id
 2019,diels-grabsch2,null,.winner.json,jwinner,null,json,false,null,null,json
 2019,diels-grabsch2,10,index.html,readme2index,null,html,true,browser,click here first,html
 2019,diels-grabsch2,20,prog.c,null,main,c,true,github,winning source,c
@@ -3510,6 +3807,7 @@
 2019,diels-grabsch2,300,2019_diels-grabsch2.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2019,dogon,null,README.md,null,null,markdown,false,null,null,md
 2019,dogon,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2019,dogon,null,.id,null,null,id,false,null,winner id string,id
 2019,dogon,null,.winner.json,jwinner,null,json,false,null,null,json
 2019,dogon,10,index.html,readme2index,null,html,true,browser,click here first,html
 2019,dogon,20,prog.c,null,main,c,true,github,winning source,c
@@ -3531,6 +3829,7 @@
 2019,dogon,300,2019_dogon.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2019,duble,null,README.md,null,null,markdown,false,null,null,md
 2019,duble,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2019,duble,null,.id,null,null,id,false,null,winner id string,id
 2019,duble,null,.winner.json,jwinner,null,json,false,null,null,json
 2019,duble,10,index.html,readme2index,null,html,true,browser,click here first,html
 2019,duble,20,prog.c,null,main,c,true,github,winning source,c
@@ -3541,6 +3840,7 @@
 2019,duble,300,2019_duble.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2019,endoh,null,README.md,null,null,markdown,false,null,null,md
 2019,endoh,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2019,endoh,null,.id,null,null,id,false,null,winner id string,id
 2019,endoh,null,.winner.json,jwinner,null,json,false,null,null,json
 2019,endoh,10,index.html,readme2index,null,html,true,browser,click here first,html
 2019,endoh,20,prog.c,null,main,c,true,github,winning source,c
@@ -3549,6 +3849,7 @@
 2019,endoh,300,2019_endoh.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2019,giles,null,README.md,null,null,markdown,false,null,null,md
 2019,giles,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2019,giles,null,.id,null,null,id,false,null,winner id string,id
 2019,giles,null,.winner.json,jwinner,null,json,false,null,null,json
 2019,giles,10,index.html,readme2index,null,html,true,browser,click here first,html
 2019,giles,20,prog.c,null,main,c,true,github,winning source,c
@@ -3559,6 +3860,7 @@
 2019,giles,300,2019_giles.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2019,karns,null,README.md,null,null,markdown,false,null,null,md
 2019,karns,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2019,karns,null,.id,null,null,id,false,null,winner id string,id
 2019,karns,null,.winner.json,jwinner,null,json,false,null,null,json
 2019,karns,10,index.html,readme2index,null,html,true,browser,click here first,html
 2019,karns,20,prog.c,null,main,c,true,github,winning source,c
@@ -3569,6 +3871,7 @@
 2019,karns,300,2019_karns.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2019,lynn,null,README.md,null,null,markdown,false,null,null,md
 2019,lynn,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2019,lynn,null,.id,null,null,id,false,null,winner id string,id
 2019,lynn,null,.winner.json,jwinner,null,json,false,null,null,json
 2019,lynn,10,index.html,readme2index,null,html,true,browser,click here first,html
 2019,lynn,20,prog.c,null,main,c,true,github,winning source,c
@@ -3592,6 +3895,7 @@
 2019,mills,null,Shakespeare.cp04_1.633,null,null,binary,false,null,training data from Shakespeare text,633
 2019,mills,null,Shakespeare.txt.gz,null,null,gzip,false,null,compressed Shakespeare text,gz
 2019,mills,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2019,mills,null,.id,null,null,id,false,null,winner id string,id
 2019,mills,null,.winner.json,jwinner,null,json,false,null,null,json
 2019,mills,10,index.html,readme2index,null,html,true,browser,click here first,html
 2019,mills,20,prog.c,null,main,c,true,github,winning source,c
@@ -3600,6 +3904,7 @@
 2019,mills,300,2019_mills.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2019,poikola,null,README.md,null,null,markdown,false,null,null,md
 2019,poikola,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2019,poikola,null,.id,null,null,id,false,null,winner id string,id
 2019,poikola,null,.winner.json,jwinner,null,json,false,null,null,json
 2019,poikola,10,index.html,readme2index,null,html,true,browser,click here first,html
 2019,poikola,20,prog.c,null,main,c,true,github,winning source,c
@@ -3609,6 +3914,7 @@
 2019,poikola,300,2019_poikola.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2019,yang,null,README.md,null,null,markdown,false,null,null,md
 2019,yang,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2019,yang,null,.id,null,null,id,false,null,winner id string,id
 2019,yang,null,.winner.json,jwinner,null,json,false,null,null,json
 2019,yang,10,index.html,readme2index,null,html,true,browser,click here first,html
 2019,yang,20,prog.c,null,main,c,true,github,winning source,c
@@ -3620,6 +3926,7 @@
 2019,yang,300,2019_yang.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2020,burton,null,README.md,null,null,markdown,false,null,null,md
 2020,burton,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2020,burton,null,.id,null,null,id,false,null,winner id string,id
 2020,burton,null,.winner.json,jwinner,null,json,false,null,null,json
 2020,burton,10,index.html,readme2index,null,html,true,browser,click here first,html
 2020,burton,20,prog.c,null,main,c,true,github,winning source,c
@@ -3631,6 +3938,7 @@
 2020,burton,300,2020_burton.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2020,carlini,null,README.md,null,null,markdown,false,null,null,md
 2020,carlini,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2020,carlini,null,.id,null,null,id,false,null,winner id string,id
 2020,carlini,null,.winner.json,jwinner,null,json,false,null,null,json
 2020,carlini,10,index.html,readme2index,null,html,true,browser,click here first,html
 2020,carlini,20,prog.c,null,main,c,true,github,winning source,c
@@ -3639,6 +3947,7 @@
 2020,carlini,300,2020_carlini.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2020,endoh1,null,README.md,null,null,markdown,false,null,null,md
 2020,endoh1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2020,endoh1,null,.id,null,null,id,false,null,winner id string,id
 2020,endoh1,null,.winner.json,jwinner,null,json,false,null,null,json
 2020,endoh1,10,index.html,readme2index,null,html,true,browser,click here first,html
 2020,endoh1,20,prog.c,null,main,c,true,github,winning source,c
@@ -3655,6 +3964,7 @@
 2020,endoh1,300,2020_endoh1.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2020,endoh2,null,README.md,null,null,markdown,false,null,null,md
 2020,endoh2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2020,endoh2,null,.id,null,null,id,false,null,winner id string,id
 2020,endoh2,null,.winner.json,jwinner,null,json,false,null,null,json
 2020,endoh2,10,index.html,readme2index,null,html,true,browser,click here first,html
 2020,endoh2,20,prog.c,null,main,c,true,github,winning source,c
@@ -3667,6 +3977,7 @@
 2020,endoh2,300,2020_endoh2.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2020,endoh3,null,README.md,null,null,markdown,false,null,null,md
 2020,endoh3,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2020,endoh3,null,.id,null,null,id,false,null,winner id string,id
 2020,endoh3,null,.winner.json,jwinner,null,json,false,null,null,json
 2020,endoh3,10,index.html,readme2index,null,html,true,browser,click here first,html
 2020,endoh3,20,prog.c,null,main,c,true,github,winning source,c
@@ -3686,6 +3997,7 @@
 2020,ferguson1,null,gameplay.md,null,null,markdown,false,null,null,md
 2020,ferguson1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
 2020,ferguson1,null,halfwidth_vs_fullwidth.png,null,null,image,false,null,image for bugs.md,png
+2020,ferguson1,null,.id,null,null,id,false,null,winner id string,id
 2020,ferguson1,null,ioccc-cake.jpg,null,null,image,false,null,image for chocolate cake,jpg
 2020,ferguson1,null,spoilers.md,null,null,markdown,false,null,null,md
 2020,ferguson1,null,terminals.md,null,null,markdown,false,null,null,md
@@ -3718,6 +4030,7 @@
 2020,ferguson2,null,cake.jpg,null,null,image,false,null,image for chocolate cake,jpg
 2020,ferguson2,null,chocolate-cake.md,null,null,markdown,false,null,null,md
 2020,ferguson2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2020,ferguson2,null,.id,null,null,id,false,null,winner id string,id
 2020,ferguson2,null,ioccc-cake.jpg,null,null,image,false,null,image for chocolate cake,jpg
 2020,ferguson2,null,obfuscation.md,null,null,markdown,false,null,null,md
 2020,ferguson2,null,recode.md,null,null,markdown,false,null,null,md
@@ -3739,6 +4052,7 @@
 2020,giles,null,README.md,null,null,markdown,false,null,null,md
 2020,giles,null,dtmf.bin,null,null,binary,false,null,binary support file,bin
 2020,giles,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2020,giles,null,.id,null,null,id,false,null,winner id string,id
 2020,giles,null,.winner.json,jwinner,null,json,false,null,null,json
 2020,giles,10,index.html,readme2index,null,html,true,browser,click here first,html
 2020,giles,20,prog.c,null,main,c,true,github,winning source,c
@@ -3748,6 +4062,7 @@
 2020,giles,300,2020_giles.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2020,kurdyukov1,null,README.md,null,null,markdown,false,null,null,md
 2020,kurdyukov1,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2020,kurdyukov1,null,.id,null,null,id,false,null,winner id string,id
 2020,kurdyukov1,null,.winner.json,jwinner,null,json,false,null,null,json
 2020,kurdyukov1,10,index.html,readme2index,null,html,true,browser,click here first,html
 2020,kurdyukov1,20,prog.c,null,main,c,true,github,winning source,c
@@ -3760,6 +4075,7 @@
 2020,kurdyukov1,300,2020_kurdyukov1.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2020,kurdyukov2,null,README.md,null,null,markdown,false,null,null,md
 2020,kurdyukov2,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2020,kurdyukov2,null,.id,null,null,id,false,null,winner id string,id
 2020,kurdyukov2,null,.winner.json,jwinner,null,json,false,null,null,json
 2020,kurdyukov2,10,index.html,readme2index,null,html,true,browser,click here first,html
 2020,kurdyukov2,20,prog.c,null,main,c,true,github,winning source,c
@@ -3772,6 +4088,7 @@
 2020,kurdyukov2,300,2020_kurdyukov2.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2020,kurdyukov3,null,README.md,null,null,markdown,false,null,null,md
 2020,kurdyukov3,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2020,kurdyukov3,null,.id,null,null,id,false,null,winner id string,id
 2020,kurdyukov3,null,.winner.json,jwinner,null,json,false,null,null,json
 2020,kurdyukov3,10,index.html,readme2index,null,html,true,browser,click here first,html
 2020,kurdyukov3,20,prog.c,null,main,c,true,github,winning source,c
@@ -3783,6 +4100,7 @@
 2020,kurdyukov3,300,2020_kurdyukov3.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2020,kurdyukov4,null,README.md,null,null,markdown,false,null,null,md
 2020,kurdyukov4,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2020,kurdyukov4,null,.id,null,null,id,false,null,winner id string,id
 2020,kurdyukov4,null,.winner.json,jwinner,null,json,false,null,null,json
 2020,kurdyukov4,10,index.html,readme2index,null,html,true,browser,click here first,html
 2020,kurdyukov4,20,prog.c,null,main,c,true,github,winning source,c
@@ -3794,6 +4112,7 @@
 2020,kurdyukov4,300,2020_kurdyukov4.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2020,otterness,null,README.md,null,null,markdown,false,null,null,md
 2020,otterness,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2020,otterness,null,.id,null,null,id,false,null,winner id string,id
 2020,otterness,null,.winner.json,jwinner,null,json,false,null,null,json
 2020,otterness,10,index.html,readme2index,null,html,true,browser,click here first,html
 2020,otterness,20,prog.c,null,main,c,true,github,winning source,c
@@ -3802,6 +4121,7 @@
 2020,otterness,300,2020_otterness.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2020,tsoj,null,README.md,null,null,markdown,false,null,null,md
 2020,tsoj,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2020,tsoj,null,.id,null,null,id,false,null,winner id string,id
 2020,tsoj,null,.winner.json,jwinner,null,json,false,null,null,json
 2020,tsoj,10,index.html,readme2index,null,html,true,browser,click here first,html
 2020,tsoj,20,prog.c,null,main,c,true,github,winning source,c
@@ -3810,6 +4130,7 @@
 2020,tsoj,300,2020_tsoj.tar.bz2,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2020,yang,null,README.md,null,null,markdown,false,null,null,md
 2020,yang,null,.gitignore,null,null,gitignore,false,null,list of files that should not be committed under git,gitignore
+2020,yang,null,.id,null,null,id,false,null,winner id string,id
 2020,yang,null,.winner.json,jwinner,null,json,false,null,null,json
 2020,yang,10,index.html,readme2index,null,html,true,browser,click here first,html
 2020,yang,20,prog.c,null,main,c,true,github,winning source,c
