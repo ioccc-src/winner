@@ -8,6 +8,9 @@ Col. G. L. Sicherman
 make all
 ```
 
+NOTE: there is an [alternate version](#alternate-code) for those who have an old
+enough compiler or have a compiler that supports the option `-traditional-cpp`.
+
 ## To use:
 
 ```sh
