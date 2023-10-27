@@ -124,6 +124,64 @@ else
     fi
 fi
 
+# build required file list
+#
+export REQUIRED_FILE_LIST="file_list.required.txt"
+export TMP_FILE="tmp.$$.$REQUIRED_FILE_LIST"
+trap 'rm -f $TMP_FILE; exit' 0 1 2 3 15
+awk -F, '$1 !~ "^#" && $5 = "null" { print $1 "/" $2 "/" $4; }' "$FULL_MANIFEST_CSV" | sort -u -k1d > "$TMP_FILE"
+if ! cmp -s "$TMP_FILE" "$REQUIRED_FILE_LIST"; then
+
+    # replace build required file
+    #
+    echo "$0: updating $REQUIRED_FILE_LIST"
+    mv -f -v "$TMP_FILE" "$REQUIRED_FILE_LIST"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: mv -f -v $TMP_FILE $REQUIRED_FILE_LIST failed, error: $status" 1>&2
+	exit 19
+    fi
+
+else
+
+    # required file list is OK, remove the tmp file
+    #
+    rm -f "$TMP_FILE"
+    if [[ -e $TMP_CSV ]]; then
+	echo "$0: ERROR: TMP_FILE cannot be removed for cleanup: $TMP_FILE" 1>&2
+	exit 20
+    fi
+fi
+
+# build the built file list
+#
+export BUILT_FILE_LIST="file_list.built.txt"
+export TMP_FILE="tmp.$$.$BUILT_FILE_LIST"
+trap 'rm -f $TMP_FILE; exit' 0 1 2 3 15
+awk -F, '$1 !~ "^#" && $5 != "null" { print $1 "/" $2 "/" $4; }' "$FULL_MANIFEST_CSV" | sort -u -k1d > "$TMP_FILE"
+if ! cmp -s "$TMP_FILE" "$BUILT_FILE_LIST"; then
+
+    # replace build built file
+    #
+    echo "$0: updating $BUILT_FILE_LIST"
+    mv -f -v "$TMP_FILE" "$BUILT_FILE_LIST"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: mv -f -v $TMP_FILE $BUILT_FILE_LIST failed, error: $status" 1>&2
+	exit 21
+    fi
+
+else
+
+    # built file list is OK, remove the tmp file
+    #
+    rm -f "$TMP_FILE"
+    if [[ -e $TMP_CSV ]]; then
+	echo "$0: ERROR: TMP_FILE cannot be removed for cleanup: $TMP_FILE" 1>&2
+	exit 22
+    fi
+fi
+
 # All Done!!! -- Jessica Noll, Age 2
 #
 exit 0

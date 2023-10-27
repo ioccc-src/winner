@@ -315,6 +315,26 @@ The 11 field names in [manifest.numbers](manifest.numbers),
 names found in [example.dot_winner.json](example.dot_winner.json).
 
 
+### [file_list.built.txt](file_list.built.txt)
+
+A list of file paths (from the top directory) of winner directories,
+that are built from other primary content files.
+
+These paths are formed from [full_manifest.numbers](full_manifest.numbers)
+entries where the "created_by" (5th) field is null.  See
+[manifest.numbers](manifest.numbers) for details on the fields.
+
+
+### [file_list.required.txt](file_list.required.txt)
+
+A list of file paths (from the top directory) of winner directories,
+that are required to exist.
+
+These paths are formed from [full_manifest.numbers](full_manifest.numbers)
+entries where the "created_by" (5th) field is non-null.  See
+[manifest.numbers](manifest.numbers) for details on the fields.
+
+
 ### [file_list.txt](file_list.txt)
 
 A list of files that exist, or should exist once the tools to generate certain files,
