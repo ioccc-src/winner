@@ -2501,6 +2501,11 @@ debugging it since it works with `-O0`.
 He also added the script [demo.sh](2019/karns/demo.sh) to showcase the entry a
 bit more easily.
 
+## [2020/endoh2](2020/endoh2/prog.c) ([README.md](2020/endoh2/README.md))
+
+Cody copied the files from the spoiler.zip file that was password protected with
+a password that was no longer known from his preview of 2020.
+
 ## [2020/endoh3](2020/endoh3/prog.c) ([README.md](2020/endoh3/README.md))
 
 Cody fixed the script [run_clock.sh](2020/endoh3/run_clock.sh) which gave a
