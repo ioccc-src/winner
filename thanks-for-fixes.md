@@ -763,28 +763,26 @@ not his only reason :-) )
 ## [1989/westley](1989/westley/westley.c) ([README.md](1989/westley/README.md]))
 
 Cody got some of the versions (the original and `ver0` and `ver1`) to work with some
-versions of `clang`. Unfortunately there are some defects in `clang` that break
-this entry either in full or in part. In particular the first arg to `main()`
-has to be an int and the rest have to be a `char **` but some versions do not
-allow four args. So to get past this another function was added, `pain()`, which
-takes the place of `main()` and which `main()` calls.
+versions of `clang`; all the versions work with gcc.
 
-This was added as alt code because some of the code generated cannot be compiled
-by gcc either. To make use of this several scripts were added by Cody.
+Unfortunately there are some defects in `clang` that break this entry either in
+full or in part. In particular the first arg to `main()` has to be an int and
+the rest have to be a `char **` but some versions do not allow four args. So to
+get past this another function was added, `pain()`, which takes the place of
+`main()` and which `main()` calls.
+
+Originally alt code, Cody got it to all versions to work with gcc so it is no
+longer an alt version.
+
+To make use of this several scripts were added by Cody.
 
 The [compile.sh](1989/westley/compile.sh) script that removes the generated
 code, rebuilds the program and regenerates the other code and then compiles it
 will work for compilers like gcc and one can then use the
 [try.sh](1989/westley/try.sh) script to see example input and output.
 
-The [compile.alt.sh](1989/westley/compile.alt.sh) script does the same but for
-the alt code, which as noted above, can only compile the first two generated
-versions, at least at this time. The [try.alt.sh](1989/westley/try.alt.sh)
-script is like the [try.sh](1989/westley/try.sh) script but it uses the alt code
-and alt generated versions instead.
-
-Both scripts allow one to specify the compiler which is probably more useful for
-`compile.sh`.
+The `compile.sh` script allows one to specify the compiler with the `CC`
+environmental variable; see the README.md for details.
 
 
 ## [1990/baruch](1990/baruch/baruch.c) ([README.md](1990/baruch/README.md]))
