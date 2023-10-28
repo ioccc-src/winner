@@ -40,7 +40,7 @@ CC=/opt/local/bin/gcc-mp-12 ./compile.sh
 If you wish to delay the script or remove the delay you can do so like:
 
 ```sh
-DELAY=0 ./compile.sh
+DELAY=2 ./compile.sh
 ```
 
 Finally try:
@@ -50,33 +50,6 @@ Finally try:
 # input some lines of text, sending EOF (usually ctrl-d) to end
 
 ./try.sh # demo of some input
-```
-
-## Alternate code:
-
-The alternate code allows SOME of the features to work with clang but some of
-the code it generates (see [compile.alt.sh](compile.alt.sh) is not compilable
-even in gcc let alone clang.  Nevertheless the main feature should work and the
-same goes for the `alt.ver0` and `alt.ver1`; currently `alt.ver2` and `alt.ver3`
-will not compile even with gcc but it is nonetheless generated for when it is
-(hopefully) fixed.
-
-### Alternate build:
-
-```sh
-make alt
-```
-
-### Alternate try:
-
-```sh
-./westley.alt
-# input some text
-
-# generate alt code versions:
-./compile.alt.sh
-
-./try.alt.sh # demo of some input
 ```
 
 
