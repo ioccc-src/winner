@@ -146,7 +146,6 @@ ver0: ${PROG}
 
 ver1: ${PROG}
 	-./${PROG} 1 < westley.c > ver1.c
-	@echo "** NOTE: this version will not compile with clang **"
 	-${CC} ${CFLAGS} ver1.c -o $@ ${LDFLAGS}
 
 ver2: ${PROG}
