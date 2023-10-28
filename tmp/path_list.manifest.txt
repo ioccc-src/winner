@@ -38,6 +38,7 @@
 1984/mullender/gentab.c
 1984/mullender/index.html
 1984/mullender/mullender.alt.c
+1984/mullender/mullender.alt2.c
 1984/mullender/mullender.c
 1984/mullender/mullender.orig.c
 1985/applin/.gitignore
@@ -429,12 +430,9 @@
 1989/westley/1989_westley.tar.bz2
 1989/westley/Makefile
 1989/westley/README.md
-1989/westley/compile.alt.sh
 1989/westley/compile.sh
 1989/westley/index.html
-1989/westley/try.alt.sh
 1989/westley/try.sh
-1989/westley/westley.alt.c
 1989/westley/westley.c
 1989/westley/westley.orig.c
 1990/baruch/.gitignore
@@ -4007,7 +4005,12 @@
 2020/endoh2/index.html
 2020/endoh2/prog.c
 2020/endoh2/prog.orig.c
-2020/endoh2/spoiler.zip
+2020/endoh2/spoiler/code.c
+2020/endoh2/spoiler/gen.rb
+2020/endoh2/spoiler/glyphs.txt
+2020/endoh2/spoiler/prog.c
+2020/endoh2/spoiler/spoiler.md
+2020/endoh2/spoiler/tmpl.txt
 2020/endoh2/yoda.txt
 2020/endoh3/.gitignore
 2020/endoh3/.id

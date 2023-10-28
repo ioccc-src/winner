@@ -36,6 +36,7 @@
 1984,mullender,10,index.html,readme2index,null,html,html,true,browser,click here first
 1984,mullender,20,mullender.c,null,main,c,c,true,github,winning source
 1984,mullender,30,Makefile,null,null,makefile,null,true,github,how to compile
+1984,mullender,40,mullender.alt2.c,null,alt,c,c,true,github,alternative source
 1984,mullender,40,mullender.alt.c,null,alt,c,c,true,github,alternative source
 1984,mullender,50,mullender.orig.c,null,orig,c,c,true,github,original source
 1984,mullender,150,a.out.h,null,null,c,h,true,github,head file for system who lack it
@@ -431,11 +432,8 @@
 1989,westley,10,index.html,readme2index,null,html,html,true,browser,click here first
 1989,westley,20,westley.c,null,main,c,c,true,github,winning source
 1989,westley,30,Makefile,null,null,makefile,null,true,github,how to compile
-1989,westley,40,westley.alt.c,null,null,c,c,true,github,alternative source
 1989,westley,50,westley.orig.c,null,orig,c,c,true,github,original source
-1989,westley,100,compile.alt.sh,null,null,shellscript,sh,true,github,generate and compile alt versions
 1989,westley,100,compile.sh,null,null,shellscript,sh,true,github,generate and compile versions
-1989,westley,100,try.alt.sh,null,null,shellscript,sh,true,github,run alt versions
 1989,westley,100,try.sh,null,null,shellscript,sh,true,github,run versions
 1989,westley,300,1989_westley.tar.bz2,mkwinnertbz2,null,tbz2,bz2,true,download,download winning source
 1990,baruch,null,README.md,null,null,markdown,md,false,null,null
@@ -4008,7 +4006,12 @@
 2020,endoh2,100,bear.txt,null,null,text,txt,true,github,sample input
 2020,endoh2,100,hello.txt,null,null,text,txt,true,github,sample input
 2020,endoh2,100,yoda.txt,null,null,text,txt,true,github,sample input
-2020,endoh2,200,spoiler.zip,null,null,zip,zip,true,download,SPOILER WARNING in encrypted zip form
+2020,endoh2,200,spoiler/code.c,null,null,c,c,true,github,SPOILER WARNING - main logic for the program
+2020,endoh2,200,spoiler/gen.rb,null,null,ruby,rb,true,github,SPOILER WARNING - compose all items and generate prog.c
+2020,endoh2,200,spoiler/glyphs.txt,null,null,text,txt,true,github,SPOILER WARNING - font data
+2020,endoh2,200,spoiler/prog.c,null,null,c,c,true,github,SPOILER WARNING - generated source
+2020,endoh2,200,spoiler/spoiler.md,null,null,markdown,md,true,github,SPOILER WARNING - about the spoiler
+2020,endoh2,200,spoiler/tmpl.txt,null,null,text,txt,true,github,SPOILER WARNING - template for the program
 2020,endoh2,300,2020_endoh2.tar.bz2,mkwinnertbz2,null,tbz2,bz2,true,download,download winning source
 2020,endoh3,null,README.md,null,null,markdown,md,false,null,null
 2020,endoh3,null,.gitignore,null,null,gitignore,gitignore,false,null,list of files that should not be committed under git
