@@ -43,7 +43,7 @@ cat akari4.c
 You can automate the above by running:
 
 ```sh
-./try.me.sh
+./try.sh
 ```
 
 ## Judges' remarks:

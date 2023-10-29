@@ -254,8 +254,8 @@
 1989/jar.2/fib.lisp
 1989/jar.2/jar.2.c
 1989/jar.2/jar.2.orig.c
-1989/jar.2/try.me.sh
-1989/jar.2/try.me.txt
+1989/jar.2/try.sh
+1989/jar.2/try.txt
 1989/ovdluhe/.gitignore
 1989/ovdluhe/.id
 1989/ovdluhe/Makefile
@@ -1078,7 +1078,7 @@
 2001/anonymous/anonymous.c
 2001/anonymous/anonymous.orig.c
 2001/anonymous/anonymous.ten.c
-2001/anonymous/try.me.sh
+2001/anonymous/try.sh
 2001/bellard/.gitignore
 2001/bellard/.id
 2001/bellard/Makefile
@@ -1849,7 +1849,7 @@
 2011/akari/akari.c
 2011/akari/akari.orig.c
 2011/akari/example.ppm
-2011/akari/try.me.sh
+2011/akari/try.sh
 2011/blakely/.gitignore
 2011/blakely/.id
 2011/blakely/3.dat
@@ -1922,7 +1922,7 @@
 2011/dlowe/dlowe.c
 2011/dlowe/dlowe.orig.c
 2011/dlowe/earlystop.pl
-2011/dlowe/try.me.sh
+2011/dlowe/try.sh
 2011/eastman/.gitignore
 2011/eastman/.id
 2011/eastman/Makefile

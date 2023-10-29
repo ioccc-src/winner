@@ -686,10 +686,10 @@ code like:
 He notes that there _is_ a way to get it (or something close to it) to work. Do
 you know how?
 
-Cody also provided the [try.me.sh](1989/jar.2/try.me.sh) script and the
-supplementary files [try.me.txt](1989/jar.2/try.me.txt),
+Cody also provided the [try.sh](1989/jar.2/try.sh) script and the
+supplementary files [try.txt](1989/jar.2/try.txt),
 [fib.lisp](1989/jar.2/fib.lisp) and
-[chocolate_cake.lisp](1989/jar.2/chocolate_cake.lisp). The `try.me.txt` comes
+[chocolate_cake.lisp](1989/jar.2/chocolate_cake.lisp). The `try.txt` comes
 from the author and the `fib.lisp` comes from Yusuke. Cody wrote the script and
 offered us some chocolate cake :-) See README.md for details on how to use the
 script.
@@ -1626,7 +1626,7 @@ Cody also added a [program](anonymous.bed.c) like [anonymous.ten.c](anonymous.te
 [Ten Green Bottles](https://en.wikipedia.org/wiki/Ten_Green_Bottles) but which
 sings [Ten in the Bed](https://allnurseryrhymes.com/ten-in-the-bed/) instead.
 
-As well he added the [try.me.sh](2001/anonymous/try.me.sh) so that one can
+As well he added the [try.sh](2001/anonymous/try.sh) so that one can
 attempt to use the program as it was designed but if compiling as 32-bit fails
 it will at least run the supplementary program as a 64-bit program directly.
 

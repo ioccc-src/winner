@@ -30,13 +30,13 @@ NOTE: this entry will likely segfault on invalid input.
 ## Try:
 
 ```sh
-./try.me.sh
+./try.sh
 
 cat chocolate_cake.lisp ; ./jar.2 < chocolate_cake.lisp
 
-./try.me.sh chocolate_cake.lisp
+./try.sh chocolate_cake.lisp
 
-./try.me.sh try.me.txt
+./try.sh try.txt
 
 ```
 

@@ -365,8 +365,8 @@
 1989,jar.2,50,jar.2.orig.c,null,orig,c,c,true,github,original source
 1989,jar.2,100,chocolate_cake.lisp,null,null,lisp,lisp,true,github,input file
 1989,jar.2,100,fib.lisp,null,null,lisp,lisp,true,github,input file
-1989,jar.2,100,try.me.sh,null,null,shellscript,sh,true,github,how to run
-1989,jar.2,100,try.me.txt,null,null,text,txt,true,github,input file
+1989,jar.2,100,try.sh,null,null,shellscript,sh,true,github,how to run
+1989,jar.2,100,try.txt,null,null,text,txt,true,github,input file
 1989,jar.2,300,1989_jar.2.tar.bz2,mkwinnertbz2,null,tbz2,bz2,true,download,download winning source
 1989,ovdluhe,null,README.md,null,null,markdown,md,false,null,null
 1989,ovdluhe,null,.gitignore,null,null,gitignore,gitignore,false,null,list of files that should not be committed under git
@@ -1538,7 +1538,7 @@
 2001,anonymous,50,anonymous.orig.c,null,orig,c,c,true,github,original source
 2001,anonymous,100,anonymous.bed.c,null,null,c,c,true,github,roll over song C source
 2001,anonymous,100,anonymous.ten.c,null,null,c,c,true,github,green bottles song C source
-2001,anonymous,150,try.me.sh,null,null,shellscript,sh,true,github,how to run
+2001,anonymous,150,try.sh,null,null,shellscript,sh,true,github,how to run
 2001,anonymous,300,2001_anonymous.tar.bz2,mkwinnertbz2,null,tbz2,bz2,true,download,download winning source
 2001,bellard,null,README.md,null,null,markdown,md,false,null,null
 2001,bellard,null,.gitignore,null,null,gitignore,gitignore,false,null,list of files that should not be committed under git
@@ -2487,7 +2487,7 @@
 2011,akari,30,Makefile,null,null,makefile,null,true,github,how to compile
 2011,akari,50,akari.orig.c,null,orig,c,c,true,github,original source
 2011,akari,100,example.ppm,null,null,image,ppm,true,browser,input image
-2011,akari,150,try.me.sh,null,null,shellscript,sh,true,github,how to run
+2011,akari,150,try.sh,null,null,shellscript,sh,true,github,how to run
 2011,akari,300,2011_akari.tar.bz2,mkwinnertbz2,null,tbz2,bz2,true,download,download winning source
 2011,blakely,null,README.md,null,null,markdown,md,false,null,null
 2011,blakely,null,.gitignore,null,null,gitignore,gitignore,false,null,list of files that should not be committed under git
@@ -2538,7 +2538,7 @@
 2011,dlowe,150,dlowe-aux-data/png-0/proguard_obfuscate.gif,null,null,image,gif,true,browser,Non-png gif images
 2011,dlowe,150,dlowe-aux-data/png-0/scripts_encryptor__screnc_-31918.gif,null,null,image,gif,true,browser,Non-png gif images
 2011,dlowe,150,dlowe-aux-data/png-0/visual_panel.gif,null,null,image,gif,true,browser,Non-png gif images
-2011,dlowe,150,try.me.sh,null,null,shellscript,sh,true,github,how to run
+2011,dlowe,150,try.sh,null,null,shellscript,sh,true,github,how to run
 2011,dlowe,200,dlowe-aux-data/english-0/040604.txt,null,null,text,txt,true,github,training text for neural networks
 2011,dlowe,200,dlowe-aux-data/english-0/2001-2002.txt,null,null,text,txt,true,github,training text for neural networks
 2011,dlowe,200,dlowe-aux-data/english-0/CFP_TSI_Graphes_appel.txt,null,null,text,txt,true,github,training text for neural networks
