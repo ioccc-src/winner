@@ -263,6 +263,8 @@ understand this you can do the following from the directory:
 make diff_orig_prog
 ```
 
+and then read the following:
+
 - The `C` macro was changed from `/b/` (which is `/*/`) to `/**/`. It could not
 be changed to use the token paste C preprocessor operator for reasons that will
 be explained below. No other macro had to be changed.
@@ -279,7 +281,7 @@ be explained below. No other macro had to be changed.
     because C cannot be assigned to (see above) and because the string is broken
     up where it has symbols that are not strings.
 - In that function, `subr()`, although `C` could stay in the arg list, since it
-translates to `/**` it cannot have a type. Nothing else had to change in the
+translates to `/**/` it cannot have a type. Nothing else had to change in the
 function except that the variables previously only in `main()`, `_` and `__`,
 had to be at the top of the file (in addition to the ones in `main()`).
 - The args to `main()` had to be commented out along with the code `up.) (In the
@@ -327,18 +329,18 @@ keep the ASCII art as close to the original as possible. The line lengths are
 the same but some spaces had to be changed to non-spaces.
 
 This fix was very interesting and quite amusing, showing up problems with
-compilers. This is a brief summary but much more is explained in the README.md,
-giving which compilers had which problems in which systems: the optimiser being
-enabled in one compiler let it work but broke it in the other; and disabling it
-would let it work in the one that didn't work but suddenly the one that worked
-would be broken.
+compilers. This is a brief summary but much more is explained in the
+[compilers.md](1986/marshall/compilers.md) file, giving which compilers had
+which problems in which systems: the optimiser being enabled in one compiler let
+it work but broke it in the other; and disabling it would let it work in the one
+that didn't work but suddenly the one that worked would be broken.
 
 This problem was only after getting clang to compile, of course. It did not
 compile it because it is more strict about the second and third args to `main()`
 and the third arg was an `int`.
 
-We encourage you to read the README.md file to see how odd this problem was and
-what Cody did to fix it!
+We encourage you to read the compilers.md file to see how odd this problem was
+and what Cody did to fix it, if nothing else but for entertainment!
 
 ## [1986/pawka](1986/pawka/pawka.c) ([README.md](1986/pawka/README.md))
 
