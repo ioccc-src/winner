@@ -21,7 +21,7 @@ make
 ## Try:
 
 ```sh
-./try.me.sh
+./try.sh
 
 ./anonymous anonymous.bed # if able to use -m32
 ```

@@ -44,7 +44,7 @@ make clobber CDEFINE=-DZ=7500 alt
 
 perl -e 'map{map{print int(rand()*8);}(0..16);print chr(10);}(0..30);' | tr '[0-4]' ' '| ./birken.alt
 
-./demo.sh
+./try.sh
 ```
 
 If you wish to speed it up 200% you can use instead `-DZ=3750`. Doing this
@@ -65,7 +65,7 @@ Use `birken` as you would `birken.alt` above. To use the demo script with the
 original code, try:
 
 ```sh
-BIRKEN=birken ./demo.sh
+BIRKEN=birken ./try.sh
 ```
 
 PLEASE be careful if you are sensitive to flashing colours!

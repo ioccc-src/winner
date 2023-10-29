@@ -46,7 +46,7 @@ seq -f '%.0f  ' 45 | ./horizontal_cat - misaka.c
 Alternately you can just try:
 
 ```sh
-./demo.sh
+./try.sh
 ```
 
 NOTE: Use - for standard input.  For example:

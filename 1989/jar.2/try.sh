@@ -5,7 +5,7 @@
 make all || exit 1
 
 if [[ "$#" -lt 1 ]]; then
-    FILES="try.me.txt fib.lisp chocolate_cake.lisp"
+    FILES="try.txt fib.lisp chocolate_cake.lisp"
 else
     FILES="$*"
 fi

@@ -43,7 +43,7 @@ Try these pre-trained networks:
 ./dlowe dlowe-aux-data.tar.bz2 < dlowe-aux-data/png-trained.net
 ```
 
-You can run `./try.me.sh` to do the same thing.
+You can run `./try.sh` to do the same thing.
 
 NOTE: The `dlowe-aux-data/` directory was created by:
 

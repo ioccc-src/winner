@@ -327,7 +327,7 @@
 1988/westley/1988_westley.tar.bz2
 1988/westley/Makefile
 1988/westley/README.md
-1988/westley/demo.sh
+1988/westley/try.sh
 1988/westley/index.html
 1988/westley/westley.alt.c
 1988/westley/westley.c
@@ -365,8 +365,8 @@
 1989/jar.2/index.html
 1989/jar.2/jar.2.c
 1989/jar.2/jar.2.orig.c
-1989/jar.2/try.me.sh
-1989/jar.2/try.me.txt
+1989/jar.2/try.sh
+1989/jar.2/try.txt
 1989/ovdluhe/.gitignore
 1989/ovdluhe/.id
 1989/ovdluhe/.winner.json
@@ -617,7 +617,7 @@
 1991/fine/1991_fine.tar.bz2
 1991/fine/Makefile
 1991/fine/README.md
-1991/fine/demo.sh
+1991/fine/try.sh
 1991/fine/fine.c
 1991/fine/fine.orig.c
 1991/fine/index.html
@@ -1538,7 +1538,7 @@
 2001/anonymous/anonymous.orig.c
 2001/anonymous/anonymous.ten.c
 2001/anonymous/index.html
-2001/anonymous/try.me.sh
+2001/anonymous/try.sh
 2001/bellard/.gitignore
 2001/bellard/.id
 2001/bellard/.winner.json
@@ -2487,7 +2487,7 @@
 2011/akari/akari.orig.c
 2011/akari/example.ppm
 2011/akari/index.html
-2011/akari/try.me.sh
+2011/akari/try.sh
 2011/blakely/.gitignore
 2011/blakely/.id
 2011/blakely/.winner.json
@@ -2569,7 +2569,7 @@
 2011/dlowe/dlowe.orig.c
 2011/dlowe/earlystop.pl
 2011/dlowe/index.html
-2011/dlowe/try.me.sh
+2011/dlowe/try.sh
 2011/eastman/.gitignore
 2011/eastman/.id
 2011/eastman/.winner.json
@@ -2882,7 +2882,7 @@
 2013/birken/boo.txt
 2013/birken/bub.txt
 2013/birken/cheepcheep.txt
-2013/birken/demo.sh
+2013/birken/try.sh
 2013/birken/format.txt
 2013/birken/gurin.txt
 2013/birken/happyface.txt
@@ -2974,7 +2974,7 @@
 2013/dlowe/2013_dlowe.tar.bz2
 2013/dlowe/Makefile
 2013/dlowe/README.md
-2013/dlowe/demo.sh
+2013/dlowe/try.sh
 2013/dlowe/dlowe.c
 2013/dlowe/dlowe.orig.c
 2013/dlowe/fun.c
@@ -3211,7 +3211,7 @@
 2013/misaka/Makefile
 2013/misaka/README.md
 2013/misaka/bf.pl
-2013/misaka/demo.sh
+2013/misaka/try.sh
 2013/misaka/index.html
 2013/misaka/misaka.c
 2013/misaka/misaka.orig.c
@@ -3895,7 +3895,7 @@
 2019/karns/2019_karns.tar.bz2
 2019/karns/Makefile
 2019/karns/README.md
-2019/karns/demo.sh
+2019/karns/try.sh
 2019/karns/index.html
 2019/karns/maze
 2019/karns/prog.c

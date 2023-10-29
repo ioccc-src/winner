@@ -644,7 +644,7 @@ was fixed by Misha Dynin, based on the judges' remarks, so that this would work
 with modern C compilers. We encourage you to try the alternate version to see
 what happens with current compilers! See the README.md files for details.
 
-Cody added the [demo.sh](1988/westley/demo.sh) script to show the magic of the
+Cody added the [try.sh](1988/westley/try.sh) script to show the magic of the
 entry as seeing the code with the result at once is far more beautiful.
 
 
@@ -686,10 +686,10 @@ code like:
 He notes that there _is_ a way to get it (or something close to it) to work. Do
 you know how?
 
-Cody also provided the [try.me.sh](1989/jar.2/try.me.sh) script and the
-supplementary files [try.me.txt](1989/jar.2/try.me.txt),
+Cody also provided the [try.sh](1989/jar.2/try.sh) script and the
+supplementary files [try.txt](1989/jar.2/try.txt),
 [fib.lisp](1989/jar.2/fib.lisp) and
-[chocolate_cake.lisp](1989/jar.2/chocolate_cake.lisp). The `try.me.txt` comes
+[chocolate_cake.lisp](1989/jar.2/chocolate_cake.lisp). The `try.txt` comes
 from the author and the `fib.lisp` comes from Yusuke. Cody wrote the script and
 offered us some chocolate cake :-) See README.md for details on how to use the
 script.
@@ -1016,7 +1016,7 @@ there were other fewer restrictions and also by removing a cast that was
 not strictly necessary (this does create a new warning: `ordered comparison
 between pointer and integer ('char **' and 'int')` but it works just fine).
 
-Cody also added the [demo.sh](1991/fine/demo.sh) script which feeds the program
+Cody also added the [try.sh](1991/fine/try.sh) script which feeds the program
 some fun input for fun but mostly different output.
 
 ## [1991/westley](1991/westley/westley.c) ([README.md](1991/westley/README.md]))
@@ -1626,7 +1626,7 @@ Cody also added a [program](anonymous.bed.c) like [anonymous.ten.c](anonymous.te
 [Ten Green Bottles](https://en.wikipedia.org/wiki/Ten_Green_Bottles) but which
 sings [Ten in the Bed](https://allnurseryrhymes.com/ten-in-the-bed/) instead.
 
-As well he added the [try.me.sh](2001/anonymous/try.me.sh) so that one can
+As well he added the [try.sh](2001/anonymous/try.sh) so that one can
 attempt to use the program as it was designed but if compiling as 32-bit fails
 it will at least run the supplementary program as a 64-bit program directly.
 
@@ -2190,7 +2190,7 @@ sure if he wants to be thanked either :-) but we appreciate it nonetheless.
 
 ## [2013/birken](2013/birken/birken.c) ([README.md](2013/birken/README.md]))
 
-Along with the [demo.sh](2013/birken/demo.sh) that he added, Cody also added an
+Along with the [try.sh](2013/birken/try.sh) that he added, Cody also added an
 alternate version which allows one to control how fast the painting is done,
 based on the author's recommendations, except that Cody made it configurable at
 compile time just like he did with other entries (in all but one it was
@@ -2248,7 +2248,7 @@ clobber` will delete both and running `make clobber all` will ensure that the
 symlink is created. The `sflen.sh` script also explicitly makes sure to create
 the symlink as it uses it, even though it runs `make clobber all`.
 
-Cody also added the [demo.sh](2013/dlowe/demo.sh) script to more easily try the
+Cody also added the [try.sh](2013/dlowe/try.sh) script to more easily try the
 program.
 
 ## [2013/endoh2](2013/endoh2/endoh2.c) ([README.md](2013/endoh2/README.md))
@@ -2326,7 +2326,7 @@ this broke `make` which Cody also fixed.
 ## [2013/misaka](2013/misaka/misaka.c) ([README.md)[2013/misaka/README.md))
 
 As there are a lot of commands to try, Cody added the
-[demo.sh](2013/misaka/demo.sh) script to do this, sleeping for approximately 1
+[try.sh](2013/misaka/try.sh) script to do this, sleeping for approximately 1
 second between commands.
 
 
@@ -2496,7 +2496,7 @@ appears to fix the problem in both macOS and linux. Perhaps this is the problem
 that the author reported where it sometimes segfaults but Cody did not try
 debugging it since it works with `-O0`.
 
-He also added the script [demo.sh](2019/karns/demo.sh) to showcase the entry a
+He also added the script [try.sh](2019/karns/try.sh) to showcase the entry a
 bit more easily.
 
 ## [2020/endoh2](2020/endoh2/prog.c) ([README.md](2020/endoh2/README.md))

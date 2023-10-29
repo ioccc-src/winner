@@ -23,7 +23,7 @@ code](#alternate-code) section below for how to use the original.
 Also try:
 
 ```sh
-./demo.sh
+./try.sh
 ```
 
 to show the code with followed by the result so you can truly see the magic.

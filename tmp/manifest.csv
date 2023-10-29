@@ -331,7 +331,7 @@
 1988,westley,30,Makefile,null,null,makefile,null,true,github,how to compile
 1988,westley,40,westley.alt.c,null,alt,c,c,true,github,alternative source
 1988,westley,50,westley.orig.c,null,orig,c,c,true,github,original source
-1988,westley,100,demo.sh,null,null,shellscript,sh,true,github,how to run
+1988,westley,100,try.sh,null,null,shellscript,sh,true,github,how to run
 1988,westley,300,1988_westley.tar.bz2,mkwinnertbz2,null,tbz2,bz2,true,download,download winning source
 1989,fubar,null,README.md,null,null,markdown,md,false,null,null
 1989,fubar,null,.gitignore,null,null,gitignore,gitignore,false,null,list of files that should not be committed under git
@@ -365,8 +365,8 @@
 1989,jar.2,50,jar.2.orig.c,null,orig,c,c,true,github,original source
 1989,jar.2,100,chocolate_cake.lisp,null,null,lisp,lisp,true,github,input file
 1989,jar.2,100,fib.lisp,null,null,lisp,lisp,true,github,input file
-1989,jar.2,100,try.me.sh,null,null,shellscript,sh,true,github,how to run
-1989,jar.2,100,try.me.txt,null,null,text,txt,true,github,input file
+1989,jar.2,100,try.sh,null,null,shellscript,sh,true,github,how to run
+1989,jar.2,100,try.txt,null,null,text,txt,true,github,input file
 1989,jar.2,300,1989_jar.2.tar.bz2,mkwinnertbz2,null,tbz2,bz2,true,download,download winning source
 1989,ovdluhe,null,README.md,null,null,markdown,md,false,null,null
 1989,ovdluhe,null,.gitignore,null,null,gitignore,gitignore,false,null,list of files that should not be committed under git
@@ -620,7 +620,7 @@
 1991,fine,20,fine.c,null,main,c,c,true,github,winning source
 1991,fine,30,Makefile,null,null,makefile,null,true,github,how to compile
 1991,fine,50,fine.orig.c,null,orig,c,c,true,github,original source
-1991,fine,100,demo.sh,null,null,shellscript,sh,true,github,how to run
+1991,fine,100,try.sh,null,null,shellscript,sh,true,github,how to run
 1991,fine,300,1991_fine.tar.bz2,mkwinnertbz2,null,tbz2,bz2,true,download,download winning source
 1991,rince,null,README.md,null,null,markdown,md,false,null,null
 1991,rince,null,.gitignore,null,null,gitignore,gitignore,false,null,list of files that should not be committed under git
@@ -1538,7 +1538,7 @@
 2001,anonymous,50,anonymous.orig.c,null,orig,c,c,true,github,original source
 2001,anonymous,100,anonymous.bed.c,null,null,c,c,true,github,roll over song C source
 2001,anonymous,100,anonymous.ten.c,null,null,c,c,true,github,green bottles song C source
-2001,anonymous,150,try.me.sh,null,null,shellscript,sh,true,github,how to run
+2001,anonymous,150,try.sh,null,null,shellscript,sh,true,github,how to run
 2001,anonymous,300,2001_anonymous.tar.bz2,mkwinnertbz2,null,tbz2,bz2,true,download,download winning source
 2001,bellard,null,README.md,null,null,markdown,md,false,null,null
 2001,bellard,null,.gitignore,null,null,gitignore,gitignore,false,null,list of files that should not be committed under git
@@ -2487,7 +2487,7 @@
 2011,akari,30,Makefile,null,null,makefile,null,true,github,how to compile
 2011,akari,50,akari.orig.c,null,orig,c,c,true,github,original source
 2011,akari,100,example.ppm,null,null,image,ppm,true,browser,input image
-2011,akari,150,try.me.sh,null,null,shellscript,sh,true,github,how to run
+2011,akari,150,try.sh,null,null,shellscript,sh,true,github,how to run
 2011,akari,300,2011_akari.tar.bz2,mkwinnertbz2,null,tbz2,bz2,true,download,download winning source
 2011,blakely,null,README.md,null,null,markdown,md,false,null,null
 2011,blakely,null,.gitignore,null,null,gitignore,gitignore,false,null,list of files that should not be committed under git
@@ -2538,7 +2538,7 @@
 2011,dlowe,150,dlowe-aux-data/png-0/proguard_obfuscate.gif,null,null,image,gif,true,browser,Non-png gif images
 2011,dlowe,150,dlowe-aux-data/png-0/scripts_encryptor__screnc_-31918.gif,null,null,image,gif,true,browser,Non-png gif images
 2011,dlowe,150,dlowe-aux-data/png-0/visual_panel.gif,null,null,image,gif,true,browser,Non-png gif images
-2011,dlowe,150,try.me.sh,null,null,shellscript,sh,true,github,how to run
+2011,dlowe,150,try.sh,null,null,shellscript,sh,true,github,how to run
 2011,dlowe,200,dlowe-aux-data/english-0/040604.txt,null,null,text,txt,true,github,training text for neural networks
 2011,dlowe,200,dlowe-aux-data/english-0/2001-2002.txt,null,null,text,txt,true,github,training text for neural networks
 2011,dlowe,200,dlowe-aux-data/english-0/CFP_TSI_Graphes_appel.txt,null,null,text,txt,true,github,training text for neural networks
@@ -2900,7 +2900,7 @@
 2013,birken,100,boo.txt,null,null,text,txt,true,github,sprites in this textual format
 2013,birken,100,bub.txt,null,null,text,txt,true,github,sprites in this textual format
 2013,birken,100,cheepcheep.txt,null,null,text,txt,true,github,sprites in this textual format
-2013,birken,100,demo.sh,null,null,shellscript,sh,true,github,demo script with the original code
+2013,birken,100,try.sh,null,null,shellscript,sh,true,github,demo script with the original code
 2013,birken,100,format.txt,null,null,text,txt,true,github,sprites in this textual format
 2013,birken,100,gurin.txt,null,null,text,txt,true,github,sprites in this textual format
 2013,birken,100,happyface.txt,null,null,text,txt,true,github,sprites in this textual format
@@ -2977,7 +2977,7 @@
 2013,dlowe,20,dlowe.c,null,main,c,c,true,github,winning source
 2013,dlowe,30,Makefile,null,null,makefile,null,true,github,how to compile
 2013,dlowe,50,dlowe.orig.c,null,orig,c,c,true,github,original source
-2013,dlowe,100,demo.sh,null,null,shellscript,sh,true,github,how to run
+2013,dlowe,100,try.sh,null,null,shellscript,sh,true,github,how to run
 2013,dlowe,100,fun.c,null,null,c,c,true,github,compile and run for extra run
 2013,dlowe,100,sflen.sh,null,null,shellscript,sh,true,github,generate sparkline of file lengths
 2013,dlowe,300,2013_dlowe.tar.bz2,mkwinnertbz2,null,tbz2,bz2,true,download,download winning source
@@ -3214,7 +3214,7 @@
 2013,misaka,30,Makefile,null,null,makefile,null,true,github,how to compile
 2013,misaka,50,misaka.orig.c,null,orig,c,c,true,github,original source
 2013,misaka,100,bf.pl,null,null,perl,pl,true,github,BF interpreter
-2013,misaka,100,demo.sh,null,null,shellscript,sh,true,github,how to run
+2013,misaka,100,try.sh,null,null,shellscript,sh,true,github,how to run
 2013,misaka,200,spoiler.html,null,null,html,html,true,browser,SPOILER WARNING
 2013,misaka,300,2013_misaka.tar.bz2,mkwinnertbz2,null,tbz2,bz2,true,download,download winning source
 2013,morgan1,null,README.md,null,null,markdown,md,false,null,null
@@ -3898,7 +3898,7 @@
 2019,karns,20,prog.c,null,main,c,c,true,github,winning source
 2019,karns,30,Makefile,null,null,makefile,null,true,github,how to compile
 2019,karns,50,prog.orig.c,null,orig,c,c,true,github,original source
-2019,karns,100,demo.sh,null,null,shellscript,sh,true,github,run the demo
+2019,karns,100,try.sh,null,null,shellscript,sh,true,github,run the demo
 2019,karns,100,maze,null,null,text,null,true,github,input maze map
 2019,karns,300,2019_karns.tar.bz2,mkwinnertbz2,null,tbz2,bz2,true,download,download winning source
 2019,lynn,null,README.md,null,null,markdown,md,false,null,null
