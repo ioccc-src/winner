@@ -3106,7 +3106,6 @@
 2020/ferguson2/Makefile
 2020/ferguson2/README.md
 2020/ferguson2/cake.jpg
-2020/ferguson2/chocolate-cake.html
 2020/ferguson2/chocolate-cake.md
 2020/ferguson2/enigma.1
 2020/ferguson2/input.txt
@@ -3118,7 +3117,6 @@
 2020/ferguson2/prog.orig.c
 2020/ferguson2/recode.1
 2020/ferguson2/recode.c
-2020/ferguson2/recode.html
 2020/ferguson2/recode.md
 2020/ferguson2/try.this.txt
 2020/giles/.gitignore

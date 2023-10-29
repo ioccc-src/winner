@@ -3282,7 +3282,6 @@
 2014/endoh1/prog.c
 2014/endoh1/prog.orig.c
 2014/endoh1/rake.sh
-2014/endoh1/read_me.html
 2014/endoh1/register.rb
 2014/endoh1/serialize.rb
 2014/endoh1/spoilers.html
@@ -4009,6 +4008,7 @@
 2020/endoh2/spoiler/gen.rb
 2020/endoh2/spoiler/glyphs.txt
 2020/endoh2/spoiler/prog.c
+2020/endoh2/spoiler/spoiler.html
 2020/endoh2/spoiler/spoiler.md
 2020/endoh2/spoiler/tmpl.txt
 2020/endoh2/yoda.txt
@@ -4028,7 +4028,9 @@
 2020/ferguson1/.winner.json
 2020/ferguson1/2020_ferguson1.tar.bz2
 2020/ferguson1/COMPILING.html
+2020/ferguson1/COMPILING.html
 2020/ferguson1/COMPILING.md
+2020/ferguson1/HACKING.html
 2020/ferguson1/HACKING.html
 2020/ferguson1/HACKING.md
 2020/ferguson1/Makefile
@@ -4037,11 +4039,14 @@
 2020/ferguson1/bugs.md
 2020/ferguson1/cake.jpg
 2020/ferguson1/cannibalism.log.html
+2020/ferguson1/cannibalism.log.html
 2020/ferguson1/cannibalism.log.md
 2020/ferguson1/chocolate-cake.html
 2020/ferguson1/chocolate-cake.md
 2020/ferguson1/crazy.log.html
+2020/ferguson1/crazy.log.html
 2020/ferguson1/crazy.log.md
+2020/ferguson1/gameplay.html
 2020/ferguson1/gameplay.html
 2020/ferguson1/gameplay.md
 2020/ferguson1/halfwidth_vs_fullwidth.png
@@ -4076,6 +4081,7 @@
 2020/ferguson2/index.html
 2020/ferguson2/input.txt
 2020/ferguson2/ioccc-cake.jpg
+2020/ferguson2/obfuscation.html
 2020/ferguson2/obfuscation.key
 2020/ferguson2/obfuscation.md
 2020/ferguson2/obfuscation.txt

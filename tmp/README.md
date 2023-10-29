@@ -329,7 +329,7 @@ fictitious `winner`.
 
 A `year/dir/.winner.json` file will be derived from the contents the `year/dir/.id` file,
 the [author_wins.csv](author_wins.csv) file, the `year/dir/.year` file,  and the
-contents of the `year/dir` directory.
+the [manifest.csv](manifest.csv) file.
 
 The 11 field names in [manifest.numbers](manifest.numbers) match
 the JSON member names found in
