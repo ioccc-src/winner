@@ -97,6 +97,7 @@
 1986/marshall/.id
 1986/marshall/Makefile
 1986/marshall/README.md
+1986/marshall/compilers.md
 1986/marshall/marshall.alt.c
 1986/marshall/marshall.c
 1986/marshall/marshall.orig.c
@@ -431,9 +432,9 @@
 1991/fine/.id
 1991/fine/Makefile
 1991/fine/README.md
-1991/fine/try.sh
 1991/fine/fine.c
 1991/fine/fine.orig.c
+1991/fine/try.sh
 1991/rince/.gitignore
 1991/rince/.id
 1991/rince/Makefile
@@ -2159,7 +2160,6 @@
 2013/birken/boo.txt
 2013/birken/bub.txt
 2013/birken/cheepcheep.txt
-2013/birken/try.sh
 2013/birken/format.txt
 2013/birken/gurin.txt
 2013/birken/happyface.txt
@@ -2198,6 +2198,7 @@
 2013/birken/toad.txt
 2013/birken/triple0.gif
 2013/birken/triple1.gif
+2013/birken/try.sh
 2013/cable1/.gitignore
 2013/cable1/.id
 2013/cable1/Makefile
@@ -2239,7 +2240,7 @@
 2013/dlowe/.id
 2013/dlowe/Makefile
 2013/dlowe/README.md
-2013/dlowe/try.sh
+2013/dlowe/demo.sh
 2013/dlowe/dlowe.c
 2013/dlowe/dlowe.orig.c
 2013/dlowe/fun.c
@@ -2454,10 +2455,10 @@
 2013/misaka/Makefile
 2013/misaka/README.md
 2013/misaka/bf.pl
-2013/misaka/try.sh
 2013/misaka/misaka.c
 2013/misaka/misaka.orig.c
 2013/misaka/spoiler.html
+2013/misaka/try.sh
 2013/morgan1/.gitignore
 2013/morgan1/.id
 2013/morgan1/Makefile
@@ -2974,7 +2975,7 @@
 2019/karns/.id
 2019/karns/Makefile
 2019/karns/README.md
-2019/karns/try.sh
+2019/karns/demo.sh
 2019/karns/maze
 2019/karns/prog.c
 2019/karns/prog.orig.c

@@ -141,6 +141,8 @@
 1986/marshall/1986_marshall.tar.bz2
 1986/marshall/Makefile
 1986/marshall/README.md
+1986/marshall/compilers.html
+1986/marshall/compilers.md
 1986/marshall/index.html
 1986/marshall/marshall.alt.c
 1986/marshall/marshall.c
@@ -327,8 +329,8 @@
 1988/westley/1988_westley.tar.bz2
 1988/westley/Makefile
 1988/westley/README.md
-1988/westley/try.sh
 1988/westley/index.html
+1988/westley/try.sh
 1988/westley/westley.alt.c
 1988/westley/westley.c
 1988/westley/westley.orig.c
@@ -617,10 +619,10 @@
 1991/fine/1991_fine.tar.bz2
 1991/fine/Makefile
 1991/fine/README.md
-1991/fine/try.sh
 1991/fine/fine.c
 1991/fine/fine.orig.c
 1991/fine/index.html
+1991/fine/try.sh
 1991/rince/.gitignore
 1991/rince/.id
 1991/rince/.winner.json
@@ -2882,7 +2884,6 @@
 2013/birken/boo.txt
 2013/birken/bub.txt
 2013/birken/cheepcheep.txt
-2013/birken/try.sh
 2013/birken/format.txt
 2013/birken/gurin.txt
 2013/birken/happyface.txt
@@ -2922,6 +2923,7 @@
 2013/birken/toad.txt
 2013/birken/triple0.gif
 2013/birken/triple1.gif
+2013/birken/try.sh
 2013/cable1/.gitignore
 2013/cable1/.id
 2013/cable1/.winner.json
@@ -2974,7 +2976,7 @@
 2013/dlowe/2013_dlowe.tar.bz2
 2013/dlowe/Makefile
 2013/dlowe/README.md
-2013/dlowe/try.sh
+2013/dlowe/demo.sh
 2013/dlowe/dlowe.c
 2013/dlowe/dlowe.orig.c
 2013/dlowe/fun.c
@@ -3211,11 +3213,11 @@
 2013/misaka/Makefile
 2013/misaka/README.md
 2013/misaka/bf.pl
-2013/misaka/try.sh
 2013/misaka/index.html
 2013/misaka/misaka.c
 2013/misaka/misaka.orig.c
 2013/misaka/spoiler.html
+2013/misaka/try.sh
 2013/morgan1/.gitignore
 2013/morgan1/.id
 2013/morgan1/.winner.json
@@ -3282,6 +3284,7 @@
 2014/endoh1/prog.c
 2014/endoh1/prog.orig.c
 2014/endoh1/rake.sh
+2014/endoh1/read_me.html
 2014/endoh1/register.rb
 2014/endoh1/serialize.rb
 2014/endoh1/spoilers.html
@@ -3894,7 +3897,7 @@
 2019/karns/2019_karns.tar.bz2
 2019/karns/Makefile
 2019/karns/README.md
-2019/karns/try.sh
+2019/karns/demo.sh
 2019/karns/index.html
 2019/karns/maze
 2019/karns/prog.c
@@ -4008,7 +4011,6 @@
 2020/endoh2/spoiler/gen.rb
 2020/endoh2/spoiler/glyphs.txt
 2020/endoh2/spoiler/prog.c
-2020/endoh2/spoiler/spoiler.html
 2020/endoh2/spoiler/spoiler.md
 2020/endoh2/spoiler/tmpl.txt
 2020/endoh2/yoda.txt
@@ -4028,9 +4030,7 @@
 2020/ferguson1/.winner.json
 2020/ferguson1/2020_ferguson1.tar.bz2
 2020/ferguson1/COMPILING.html
-2020/ferguson1/COMPILING.html
 2020/ferguson1/COMPILING.md
-2020/ferguson1/HACKING.html
 2020/ferguson1/HACKING.html
 2020/ferguson1/HACKING.md
 2020/ferguson1/Makefile
@@ -4039,14 +4039,11 @@
 2020/ferguson1/bugs.md
 2020/ferguson1/cake.jpg
 2020/ferguson1/cannibalism.log.html
-2020/ferguson1/cannibalism.log.html
 2020/ferguson1/cannibalism.log.md
 2020/ferguson1/chocolate-cake.html
 2020/ferguson1/chocolate-cake.md
 2020/ferguson1/crazy.log.html
-2020/ferguson1/crazy.log.html
 2020/ferguson1/crazy.log.md
-2020/ferguson1/gameplay.html
 2020/ferguson1/gameplay.html
 2020/ferguson1/gameplay.md
 2020/ferguson1/halfwidth_vs_fullwidth.png
@@ -4081,7 +4078,6 @@
 2020/ferguson2/index.html
 2020/ferguson2/input.txt
 2020/ferguson2/ioccc-cake.jpg
-2020/ferguson2/obfuscation.html
 2020/ferguson2/obfuscation.key
 2020/ferguson2/obfuscation.md
 2020/ferguson2/obfuscation.txt
