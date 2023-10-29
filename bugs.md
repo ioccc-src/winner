@@ -512,21 +512,7 @@ numbers with non-binary digits.
 
 
 ## [1989/westley](1989/westley/westley.c) ([README.md](1989/westley/README.md))
-### STATUS: main() function args not allowed - please help us fix
-
-This entry is a big problem for clang due to the way it is designed; only the
-first (the same as the original) and second (`ver1.c`) will compile with clang.
-However all will compile with clang. Cody has made good progress and he intends
-to work on it more, hopefully solving it, but at this time only gcc will fully
-work. This is better than it was when there had to be alt code because some
-versions did not compile with any compiler, not just clang.
-
-The `ver2` and `ver3` cannot be compiled with clang due to wrong arg types to
-`main()` and in some versions of clang, too many args to `main()`.
-
-With gcc, however, all the versions work.
-
-### STATUS: known bug - please help us fix
+### STATUS: INABIAF - please **DO NOT** fix
 
 With version 2 it sometimes segfaults even with the same input where other times
 it does not. We don't believe this is because of the fix that lets some versions
@@ -536,7 +522,7 @@ be compiled with clang. An example invocation is:
 ./ver2 < westley.c
 ```
 
-Can you find the problem?
+We consider it not worth fixing at least at this time.
 
 ### A useful note on changing/fixing this program
 
