@@ -226,7 +226,7 @@
 1988/westley/.id
 1988/westley/Makefile
 1988/westley/README.md
-1988/westley/demo.sh
+1988/westley/try.sh
 1988/westley/westley.alt.c
 1988/westley/westley.c
 1988/westley/westley.orig.c
@@ -431,7 +431,7 @@
 1991/fine/.id
 1991/fine/Makefile
 1991/fine/README.md
-1991/fine/demo.sh
+1991/fine/try.sh
 1991/fine/fine.c
 1991/fine/fine.orig.c
 1991/rince/.gitignore
@@ -2159,7 +2159,7 @@
 2013/birken/boo.txt
 2013/birken/bub.txt
 2013/birken/cheepcheep.txt
-2013/birken/demo.sh
+2013/birken/try.sh
 2013/birken/format.txt
 2013/birken/gurin.txt
 2013/birken/happyface.txt
@@ -2239,7 +2239,7 @@
 2013/dlowe/.id
 2013/dlowe/Makefile
 2013/dlowe/README.md
-2013/dlowe/demo.sh
+2013/dlowe/try.sh
 2013/dlowe/dlowe.c
 2013/dlowe/dlowe.orig.c
 2013/dlowe/fun.c
@@ -2454,7 +2454,7 @@
 2013/misaka/Makefile
 2013/misaka/README.md
 2013/misaka/bf.pl
-2013/misaka/demo.sh
+2013/misaka/try.sh
 2013/misaka/misaka.c
 2013/misaka/misaka.orig.c
 2013/misaka/spoiler.html
@@ -2974,7 +2974,7 @@
 2019/karns/.id
 2019/karns/Makefile
 2019/karns/README.md
-2019/karns/demo.sh
+2019/karns/try.sh
 2019/karns/maze
 2019/karns/prog.c
 2019/karns/prog.orig.c

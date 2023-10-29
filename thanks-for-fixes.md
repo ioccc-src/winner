@@ -644,7 +644,7 @@ was fixed by Misha Dynin, based on the judges' remarks, so that this would work
 with modern C compilers. We encourage you to try the alternate version to see
 what happens with current compilers! See the README.md files for details.
 
-Cody added the [demo.sh](1988/westley/demo.sh) script to show the magic of the
+Cody added the [try.sh](1988/westley/try.sh) script to show the magic of the
 entry as seeing the code with the result at once is far more beautiful.
 
 
@@ -1016,7 +1016,7 @@ there were other fewer restrictions and also by removing a cast that was
 not strictly necessary (this does create a new warning: `ordered comparison
 between pointer and integer ('char **' and 'int')` but it works just fine).
 
-Cody also added the [demo.sh](1991/fine/demo.sh) script which feeds the program
+Cody also added the [try.sh](1991/fine/try.sh) script which feeds the program
 some fun input for fun but mostly different output.
 
 ## [1991/westley](1991/westley/westley.c) ([README.md](1991/westley/README.md]))
@@ -2190,7 +2190,7 @@ sure if he wants to be thanked either :-) but we appreciate it nonetheless.
 
 ## [2013/birken](2013/birken/birken.c) ([README.md](2013/birken/README.md]))
 
-Along with the [demo.sh](2013/birken/demo.sh) that he added, Cody also added an
+Along with the [try.sh](2013/birken/try.sh) that he added, Cody also added an
 alternate version which allows one to control how fast the painting is done,
 based on the author's recommendations, except that Cody made it configurable at
 compile time just like he did with other entries (in all but one it was
@@ -2248,7 +2248,7 @@ clobber` will delete both and running `make clobber all` will ensure that the
 symlink is created. The `sflen.sh` script also explicitly makes sure to create
 the symlink as it uses it, even though it runs `make clobber all`.
 
-Cody also added the [demo.sh](2013/dlowe/demo.sh) script to more easily try the
+Cody also added the [try.sh](2013/dlowe/try.sh) script to more easily try the
 program.
 
 ## [2013/endoh2](2013/endoh2/endoh2.c) ([README.md](2013/endoh2/README.md))
@@ -2326,7 +2326,7 @@ this broke `make` which Cody also fixed.
 ## [2013/misaka](2013/misaka/misaka.c) ([README.md)[2013/misaka/README.md))
 
 As there are a lot of commands to try, Cody added the
-[demo.sh](2013/misaka/demo.sh) script to do this, sleeping for approximately 1
+[try.sh](2013/misaka/try.sh) script to do this, sleeping for approximately 1
 second between commands.
 
 
@@ -2496,7 +2496,7 @@ appears to fix the problem in both macOS and linux. Perhaps this is the problem
 that the author reported where it sometimes segfaults but Cody did not try
 debugging it since it works with `-O0`.
 
-He also added the script [demo.sh](2019/karns/demo.sh) to showcase the entry a
+He also added the script [try.sh](2019/karns/try.sh) to showcase the entry a
 bit more easily.
 
 ## [2020/endoh2](2020/endoh2/prog.c) ([README.md](2020/endoh2/README.md))

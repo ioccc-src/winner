@@ -19,7 +19,7 @@ echo text | ./fine
 ## Try:
 
 ```sh
-./demo.sh
+./try.sh
 ```
 
 Make sure that you read the last line backwards! Credit goes to [Merlyn LeRoy (Brian
