@@ -15,8 +15,7 @@ make all
 This entry a listed in [bugs.md](/bugs.md) as:
 
 ```
-STATUS: main() function args not allowed - please help us fix
-STATUS: known bug - please help us fix
+STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [bugs.md](/bugs.md#1989westley-readmemd).
