@@ -100,6 +100,18 @@ be made consistent but adding markdown where necessary in the remarks is).
 A lot of these fixes were done with his [sgit
 tool](https://github.com/xexyl/sgit) but many were done manually as well.
 
+## A note about changes `fgets()` 
+
+Although this is discussed in the [FAQ](/faq.md) we want to say here simply that
+the problem with `gets()` is that in some systems a warning can be interspersed
+with the output which can be confusing, to say nothing of the annoyance of it. A
+good example was [1990/tbr](/thanks-for-fixes.md#1990tbr-readmemd) where one
+would see:
+
+
+```sh
+$ warning: this program uses gets(), which is unsafe.
+```
 
 ## [1984/anonymous](1984/anonymous/anonymous.c) ([README.md](1984/anonymous/README.md))
 
@@ -292,14 +304,9 @@ commented out.
 
 ## [1986/hague](1986/hague/hague.c) ([README.md](1986/hague/README.md]))
 
-Cody added alt code that uses `fgets()` to avoid alarming and annoying warnings
-about `gets()` being unsafe. The reason this is alt code, at least for now, is
-that although it will print the results in both forms of invocation, after the
-output in one invocation form it will segfault. This might be addressed later on
-or it might be decided that it is worth it, with a caveat in the Makefile or at
-least the README.md file, since it still prints out the correct output, though
-that seems like it might not be so ideal unless it can be fixed (which might be
-done). See the [bugs.md](/bugs.md) file for details.
+Cody made this use `fgets()` to avoid alarming and annoying messages about
+`gets()` being unsafe, sometimes interspersed with the output of the program.
+For more details about that see the [FAQ](/faq.md).
 
 ## [1986/holloway](1986/holloway/holloway.c) ([README.md](1986/holloway/README.md]))
 

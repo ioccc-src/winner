@@ -63,7 +63,7 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE= -include stdio.h -include unistd.h
+CINCLUDE= -include stdio.h -include unistd.h -include string.h
 
 # Optimization
 #
@@ -114,8 +114,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ= ${PROG}.alt.o
-ALT_TARGET= ${PROG}.alt
+ALT_OBJ=
+ALT_TARGET=
 
 
 #################
@@ -131,8 +131,6 @@ all: data ${TARGET}
 	sandwich supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: this entry uses gets() so you might get a warning about this"
-	@echo "      when compiling and running this program with some systems."
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # alternative executable
