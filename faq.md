@@ -223,6 +223,13 @@ make DIFF=colordiff diff_alt_prog # for alt to prog diff
 Obviously if you want to view the alt code or the orig code you can just open
 the files as described above.
 
+## Q: Sometimes the author's or authors' remarks do not match the source! Why and what can I do about it?
+
+This is very likely to happen when an entry was fixed for modern systems. When
+you look at the remarks of the author you should look at the `prog.orig.c` or
+the `winner.orig.c` file. You might also find value in the above `diff` make
+rules.
+
 
 ## Q: I cannot get entry XYZZY from year 19xx to compile!
 
