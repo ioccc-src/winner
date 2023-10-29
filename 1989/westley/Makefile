@@ -132,7 +132,6 @@ all: data ${TARGET}
 	sandwich supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: This entry uses non-standard args to main() that do not work with some modern compilers."
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # alternative executable
