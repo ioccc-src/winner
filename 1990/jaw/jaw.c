@@ -1,5 +1,5 @@
 #define C char
-#define F X,perror("oops"),1
+#define F X,fprintf(stderr,"oops\n"),1
 #define G getchar()
 #define I ;if(
 #define P putchar

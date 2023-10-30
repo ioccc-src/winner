@@ -933,9 +933,15 @@ With these improvements the entry looks much more like the original!
 ## [1990/jaw](1990/jaw/jaw.c) ([README.md](1990/jaw/README.md]))
 
 Cody fixed the script to work properly in modern environments (to do with `$PATH`
-not having `.` in it). He notes that with an invocation in the try section will
-with macOS show what appears to be an error message but is actually okay. He
-gives more information in the [bugs.md](/bugs.md) file.
+not having `.` in it). Other adjustments were made as well.
+
+He also changed the `perror(3)` call to `fprintf(3)` because in macOS when errno
+is 0 it shows what looks like an error.
+
+He added the [try.sh](1990/jaw/try.sh) to run the commands that we suggested at
+the time. However, there is a known bug still, see [bugs.md](bugs.md) for
+details.
+
 
 NOTE: as `btoa` is not common we used a ruby script from Yusuke.
 

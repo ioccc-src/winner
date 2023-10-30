@@ -579,46 +579,11 @@ You are welcome to try and fix it if you can!
 ### Source code: [1990/jaw/jaw.c](1990/jaw/jaw.c)
 ### Information: [1990/jaw/README.md](1990/jaw/README.md)
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the scripts to
-work in modern systems. He notes however that the command in the try section,
-the one to test the official C entry, **appears** (the keyword!) to not work
-with macOS, giving:
-
-
-```sh
-$ echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
-oops: Undefined error: 0
-oops: Undefined error: 0
-```
-
-However this is because the entry uses `perror()` and it just so happens that
-the default `errno` of 0 gives that result. For instance if you run the
-following C program under macOS you will get undefined error but if you do it
-under Linux you'll likely get success.
-
-
-```c
-#include <stdio.h>
-#include <errno.h>
-#include <string.h>
-int main()
-{
-    errno = 0;
-    printf("%d, %s\n", errno, strerror(errno));
-}
-```
-
-In fact the condition which is in the `a()` function on line 18 of the entry
-namely:
-
-	I k>16)
-
-is true on both linux and macOS, with `k` being equal to 22!
-
-Should the entry use `perror()`? Perhaps not but we're not sure of its purpose
-so it should stay with this note.
-
-If you want to try and fix this (mis)feature, you are welcome to try.
+It seems like the scripts do not work correctly, where not all files are
+extracted. Some work was done to get them to work some but it does not appear
+that all files can be extracted. For instance in the [try.sh](1990/jaw/try.sh)
+script which Cody added it is supposed to add the README.md file to the archive
+and it did at one point (or so he recalls) but now it doesn't seem to happen.
 
 
 ## 1990 theorem
