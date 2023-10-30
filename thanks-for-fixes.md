@@ -21,9 +21,9 @@ CHALLENGING bug fixes** like
 (all **EXTREMELY CHALLENGING**), fixing entries to work with clang (some being
 **EXTREMELY CHALLENGING** like
 [1991/dds](/thanks-for-fixes.md#1991dds-readmemd)) or as much as possible (like
-[1989/westley](/thanks-for-fixes.md#1989westley-readmemd) which is **INCREDIBLY
-HARD, _MUCH, MUCH MORE SO_ than any other fix!**), porting entries to macOS (some being
-**EXTREMELY CHALLENGING** like
+[1989/westley](/thanks-for-fixes.md#1989westley-readmemd), a true masterpiece
+that is **INCREDIBLY HARD, _MUCH, MUCH MORE SO_ than any other fix!**), porting
+entries to macOS (some being **EXTREMELY CHALLENGING** like
 [1998/schweikh1](/thanks-for-fixes.md#1998schweikh1-readmemd)), fixing code like
 [2001/herrmann2](/thanks-for-fixes.md#2001herrmann2-readmemd) to work in both
 32-bit/64-bit which *can be* **EXTREMELY CHALLENGING**, providing alternate code
@@ -179,6 +179,15 @@ To see the difference from start to fixed:
 ```sh
 cd 1984/decot ; make diff_orig_prog
 ```
+
+## [1984/laman](1984/laman/laman.c) ([README.md](1984/laman/README.md]))
+
+Cody fixed this to not crash when no arg is specified. Note that if the arg is
+not a positive number it will not do anything useful or anything at all.
+
+This was fixed on 30 October 2023 after the bug status was changed from INABIAF
+(it's not a bug it's a feature) to bug.
+
 
 ## [1984/mullender](1984/mullender/mullender.c) ([README.md](1984/mullender/README.md]))
 
@@ -1131,7 +1140,7 @@ from stdin after starting the program). Ideally `fgets()` would be used but this
 is a more problematic.  Previously it had a buffer size of 256 which could
 easily overflow. In this entry `gets()` is used in a more complicated way:
 first `m` is set to `*++p` in a for loop where `p` is argv. Later `m` is set to
-point to `h` which was of size \256. `gets()` is called as `m = gets(m)`) but
+point to `h` which was of size 256. `gets()` is called as `m = gets(m)`) but
 trying to change it to use `fgets()` proved more a problem. Since the input must
 come from the command line Cody changed the buffer size to `ARG_MAX+1` which
 should be enough (again theoretically) especially since the command expects
@@ -1139,6 +1148,9 @@ redirecting a dictionary file as part of the command line. This also makes it
 possible for longer strings to be read (in case the `gets()` was not used in a
 loop).
 
+Cody also added the [mkdict.sh](1992/gson/mkdict.sh) script that the author
+included in their remarks. See the README.md for its purpose. It was NOT fixed
+for ShellCheck because the author deliberately obfuscated it.
 
 ## [1992/kivinen](1992/kivinen/kivinen.c) ([README.md](1992/kivinen/README.md]))
 

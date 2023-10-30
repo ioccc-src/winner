@@ -394,19 +394,15 @@ An example where a crash is not a bug: [2019/endoh](2019/endoh/endoh.c) is
 supposed to crash. There are others that are also supposed to crash or that are
 known to segfault but are considered features.
 
-As of 10 April 2023 the definition changed for a second time (the first time was
-07 April 2023). If something is noted by the author as a known bug or limitation
-it need not be fixed **unless it impacts the usability** of the program or **it removes
-instructional value**. An example where a crash undocumented needn't be fixed is
-[1984/laman](1984/laman/laman.c).  On the other hand the fixes made by [Cody
-Boone Ferguson](/winners.html#Cody_Boone_Ferguson) in
-[1990/theorem](1990/theorem/theorem.c) were useful.
+An important note is that if the README.md of the entry has a bug status that
+says it can be fixed it can be. Otherwise it should not be.
 
 Nonetheless we challenge you to fix these entries for educational/instructional
 value and/or enjoyment but we kindly request that you **DO NOT** submit a pull
-request! If you can't figure it out you're invited to look at the git diffs,
-where there are some (some were fixed earlier on but rolled back as both Cody
-and Landon individually felt that the fix was tampering with the entry).
+request unless it's a bug or (mis)feature we would like you to fix! If you can't
+figure it out you're invited to look at the git diffs, where there are some
+(some were fixed earlier on but rolled back as both Cody and Landon individually
+felt that the fix was tampering with the entry).
 
 NOTE: in the case of `gets()` we've fixed some to avoid the warning of the
 compiler, linker or even during runtime, depending on the system. In [some cases
@@ -466,24 +462,15 @@ $ ./decot
 without a newline after the `\`. This is not a bug.
 
 
-## 1984 laman
-
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1984/laman/laman.c](1984/laman/laman.c)
-### Information: [1984/laman/README.md](1984/laman/README.md)
-
-This entry will very likely crash or do something else if you run it without an
-arg. It likely won't do anything at all if the arg is not a positive number.
-
-
 ## 1984 mullender
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1984/mullender/mullender.c](1984/mullender/mullender.c)
 ### Information: [1984/mullender/README.md](1984/mullender/README.md)
 
-Although there are two alt versions added by Cody that will work in modern
-systems, if you do not have a [VAX-11](https://en.wikipedia.org/wiki/VAX-11) or
+Although there is an alt version and supplementary program added by Cody that
+will work in modern systems, if you do not have a
+[VAX-11](https://en.wikipedia.org/wiki/VAX-11) or
 [PDP-11](https://en.wikipedia.org/wiki/PDP-11) to run the original entry on it
 will not work. See the README.md for details on the alternate versions.
 

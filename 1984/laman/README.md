@@ -10,17 +10,6 @@ make all
 ```
 
 
-### Bugs and (Mis)features
-
-The current status of this entry is:
-
-```
-STATUS: known bug - please help us fix
-```
-
-For more detailed information see [1984 laman in bugs.md](/bugs.md#1984-laman).
-
-
 ## To use:
 
 ```sh
