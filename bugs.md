@@ -652,23 +652,16 @@ If you want to try and fix this (mis)feature, you are welcome to try.
 
 ## 1991 dds
 
-### STATUS: INABIAF - please **DO NOT** fix
+### STATUS: uses gets() - change to fgets() if possible
 ### Source code: [1991/dds/dds.c](1991/dds/dds.c)
 ### Information: [1991/dds/README.md](1991/dds/README.md)
 
-If the BASIC file cannot be opened for reading or the output file cannot be
-opened for writing the program will very likely crash or do something funny.
-This is not a bug but a feature.  Please do not fix this except for the
-challenge to yourself.
-
-### STATUS: uses gets() - change to fgets() if possible
-
-That being said the compiled code uses `gets()` not `fgets()`. Can you fix this?
-It's quite complicated to do: the `s` array is certainly relevant and you can
-see a bit of the magic in the [thanks](/thanks-for-fixes.md) and the README.md
-file for how it works. It's easy enough to get the code to refer to `fgets()`
-and call it correctly but it might take more work to get the generated code
-sorted. This will be looked at later.
+The compiled code uses `gets()` not `fgets()`. Can you fix this?  It's quite
+complicated to do: the `s` array is certainly relevant and you can see a bit of
+the magic in the [thanks](/thanks-for-fixes.md) and the README.md file for how
+it works. It's easy enough to get the code to refer to `fgets()` and call it
+correctly but it might take more work to get the generated code sorted. This
+will be looked at later.
 
 
 ## 1991 westley

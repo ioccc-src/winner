@@ -1032,10 +1032,12 @@ slightly more like the original, even though it's unused.
 ## [1991/dds](1991/dds/dds.c) ([README.md](1991/dds/README.md]))
 
 Cody fixed a segfault that prevented this entry from working in any condition
-and he also made it work for clang. Clang (at least in some systems?) defaults
-to having `-Werror` and the code that the entry generates had some warnings
-that were causing compilation to fail as it just ran `cc a.c`. It ran it by what
-was once `system(q-6);` but with clang this was not enough..
+and he also made it work for clang. He also added checks for NULL `FILE *`s.
+
+Clang (at least in some systems?) defaults to having `-Werror` and the code that
+the entry generates had some warnings that were causing compilation to fail as
+it just ran `cc a.c`. It ran it by what was once `system(q-6);` but with clang
+this was not enough.
 
 The following had to be added to the string `s` (which to fix the segfault was
 changed from `char*s` to `char s[]`):
