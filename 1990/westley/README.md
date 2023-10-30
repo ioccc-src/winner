@@ -15,30 +15,13 @@ make all
 ```
 
 
-### Bugs and (Mis)features
-
-The current status of this entry is:
-
-```
-STATUS: known bug - please help us fix
-```
-
-For more detailed information see [1990 westley in bugs.md](/bugs.md#1990-westley).
-
-
 ## To use:
 
 ```sh
-./westley number
+./westley <number
 ```
 
-
-### INABIAF - it's not a bug it's a feature :-)
-
-This entry will very likely crash or do something else without an arg.
-
-This program will enter an infinite loop if input is not a number > 0.
-
+The number should be greater than 0.
 
 ## Try:
 

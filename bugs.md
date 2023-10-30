@@ -634,19 +634,6 @@ will enter an infinite loop, printing 0 over and over again; another condition
 where this occurred was fixed but this one should not be fixed. Thank you.
 
 
-## 1990 westley
-
-### STATUS: known bug - please help us fix
-### Source code: [1990/westley/westley.c](1990/westley/westley.c)
-### Information: [1990/westley/README.md](1990/westley/README.md)
-
-This entry will very likely crash or do something strange without an arg.
-
-This entry will also enter an infinite loop if input is not a number > 0.
-
-If you want to try and fix this (mis)feature, you are welcome to try.
-
-
 # 1991
 
 

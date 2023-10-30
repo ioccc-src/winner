@@ -1015,6 +1015,11 @@ was changed to just `1`.  Since it's instructional to see the differences he has
 provided an alternate version, [westley.alt.c](1990/westley/westley.alt.c), which
 is the original code.
 
+He also fixed the code to not enter an infinite loop if arg is a number not > 0
+and to not crash if no arg is specified.
+
+The alt code did NOT have arg checks added as it is actually a copy of the
+original code.
 
 ## [1991/brnstnd](1991/brnstnd/brnstnd.c) ([README.md](1991/brnstnd/README.md]))
 
