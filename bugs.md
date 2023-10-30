@@ -448,7 +448,7 @@ Cody!
 # 1984
 
 
-## 1984/decot
+## 1984 decot
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1984/decot/dedot.c](1984/decot/decot.c)
@@ -476,7 +476,7 @@ This entry will very likely crash or do something else if you run it without an
 arg. It likely won't do anything at all if the arg is not a positive number.
 
 
-## 1984/mullender
+## 1984 mullender
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1984/mullender/mullender.c](1984/mullender/mullender.c)
@@ -502,7 +502,7 @@ There was no known bugs and (Mis)features for 1985.
 # 1986
 
 
-## 1986/august
+## 1986 august
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1986/august/august.c](1986/august/august.c)
@@ -521,7 +521,7 @@ There was no known bugs and (Mis)features for 1987.
 # 1988
 
 
-## 1988/dale
+## 1988 dale
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1988/dale/dale.c](1988/dale/dale.c)
@@ -535,7 +535,7 @@ and does not crash.
 # 1989
 
 
-## 1989/fubar
+## 1989 fubar
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1989/fubar/fubar.c](1989/fubar/fubar.c)
@@ -547,7 +547,7 @@ program will turn into an infinite loop trying to compile code with syntax
 errors.
 
 
-## 1989/robison
+## 1989 robison
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1989/robison/robison.c](1989/robison/robison.c)
@@ -557,7 +557,7 @@ This program will very likely crash or break into tiny bits :-) if you feed it
 numbers with non-binary digits.
 
 
-## 1989/westley
+## 1989 westley
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1989/westley/westley.c](1989/westley/westley.c)
@@ -583,7 +583,7 @@ reverse of other code (also wrt names). See the source file and the README.md
 # 1990
 
 
-## 1990/jaw
+## 1990 jaw
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1990/jaw/jaw.c](1990/jaw/jaw.c)
@@ -629,7 +629,7 @@ Should the entry use `perror()`? Perhaps not but we're not sure of its purpose
 so it should stay with this note.
 
 
-## 1990/theorem
+## 1990 theorem
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1990/theorem/theorem.c](1990/theorem/theorem.c)
@@ -642,7 +642,7 @@ will enter an infinite loop, printing 0 over and over again; another condition
 where this occurred was fixed but this one should not be fixed. Thank you.
 
 
-## 1990/westley
+## 1990 westley
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1990/westley/westley.c](1990/westley/westley.c)
@@ -656,7 +656,7 @@ This entry will also enter an infinite loop if input is not a number > 0.
 # 1991
 
 
-## 1991/dds
+## 1991 dds
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1991/dds/dds.c](1991/dds/dds.c)
@@ -677,7 +677,7 @@ and call it correctly but it might take more work to get the generated code
 sorted. This will be looked at later.
 
 
-## 1991/westley
+## 1991 westley
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1991/westley/westley.c](1991/westley/westley.c)
@@ -694,7 +694,7 @@ possibility. Can you find out how?
 
 # 1992
 
-## 1992/buzzard.1
+## 1992 buzzard.1
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1992/buzzard.1/buzzard.1.c](1992/buzzard.1/buzzard.1.c)
@@ -703,7 +703,7 @@ possibility. Can you find out how?
 This entry will crash without enough args (2).
 
 
-## 1992/kivinen
+## 1992 kivinen
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1992/kivinen/kivinen.c](1992/kivinen/kivinen.c)
@@ -715,7 +715,7 @@ click the mouse it takes it back towards the centre. If you have a fix it's
 welcome but it's not currently considered enough of a problem to fix.
 
 
-## 1992/lush
+## 1992 lush
 
 ### STATUS: doesn't work with some compilers - please provide alternative code
 ### Source code: [1992/lush/lush.c](1992/lush/lush.c)
@@ -791,7 +791,7 @@ As you might see the part under the `warning:` line is different.
 Can you help us?
 
 
-## 1992/westley
+## 1992 westley
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1992/westley/westley.c](1992/westley/westley.c)
@@ -808,7 +808,7 @@ encourage you to test it. This should not be fixed.
 # 1993
 
 
-## 1993/plummber
+## 1993 plummber
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1993/plummer/plummer.c](1993/plummer/plummer.c)
@@ -818,7 +818,7 @@ If not enough args are specified this program will likely crash or do something
 else. This should NOT be fixed.
 
 
-## 1993/lmfjyh
+## 1993 lmfjyh
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1993/lmfjyh/lmfjyh.c](1993/lmfjyh/lmfjyh.c)
@@ -833,7 +833,7 @@ An alternate version, however, does exist. See the README.md file for details.
 # 1994
 
 
-## 1994/horton
+## 1994 horton
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1994/horton/horton.c](1994/horton/horton.c)
@@ -843,7 +843,7 @@ If not enough args are specified this program will likely crash or do something
 else. This should NOT be fixed.
 
 
-## 1994/ldb
+## 1994 ldb
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1994/ldb/ldb.c](1994/ldb/ldb.c)
@@ -863,7 +863,7 @@ might be tampering too much with the entry as it's not a real problem and as a
 one liner it's already quite long.
 
 
-## 1994/schnitzi
+## 1994 schnitzi
 
 ### STATUS: uses gets() - change to fgets() if possible
 ### Source code: [1994/schnitzi/schnitzi.c](1994/schnitzi/schnitzi.c)
@@ -949,7 +949,7 @@ can be compiled and the output of that new program when fed itself can also be
 compiled!
 
 
-## 1994/shapiro
+## 1994 shapiro
 
 ### STATUS: missing file - please provide it
 ### Source code: [1994/shapiro/shapiro.c](1994/shapiro/shapiro.c)
@@ -989,7 +989,7 @@ Since it works there is no need to fix this except for a challenge to yourself.
 # 1995
 
 
-## 1995/cdua
+## 1995 cdua
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1995/cdua/cdua.c](1995/cdua/cdua.c)
@@ -1006,7 +1006,7 @@ supposed to be printed again and one is supposed to press a key as at that point
 it calls `getchar()` via the pointer `m`. So this is a feature not a bug.
 
 
-## 1995/vanschnitz
+## 1995 vanschnitz
 
 ### STATUS: missing file - please provide it
 ### Source code: [1995/vanschnitz/vanschnitz.c](1995/vanschnitz/vanschnitz.c)
@@ -1021,7 +1021,7 @@ We would appreciate anyone who has it or even just knows the name! Thank you.
 # 1996
 
 
-## 1996/august
+## 1996 august
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1996/august/august.c](1996/august/august.c)
@@ -1033,7 +1033,7 @@ some compilers (like clang) will compile the code so that it enters an infinite
 loop. See the README.md file for an example command that this can happen with.
 
 
-## 1996/gandalf
+## 1996 gandalf
 
 ### STATUS: missing or dead link - please provide them
 ### Source code: [1996/gandalf/gandalf.c](1996/gandalf/gandalf.c)
@@ -1045,7 +1045,7 @@ it was instead requiring a login / password.
 Do you have an updated link? We welcome your help!
 
 
-## 1996/jonth
+## 1996 jonth
 
 ### STATUS: missing or dead link - please provide them
 ### Source code: [1996/jonth/jonth.c](1996/jonth/jonth.c)
@@ -1064,7 +1064,7 @@ There was no IOCCC in 1997.
 # 1998
 
 
-## 1998/dlowe
+## 1998 dlowe
 
 ### STATUS: missing or dead link - please provide them
 ### Source code: [1998/dlowe/dlowe.c](1998/dlowe/dlowe.c)
@@ -1077,7 +1077,7 @@ would like to set it up?  We'll gladly thank you in the README.md file and link
 to the page as well!  You'll have IOCCC fame for reviving a pootifier! :-)
 
 
-## 1998/dloweneil
+## 1998 dloweneil
 
 ### STATUS: missing or dead link - please provide them
 ### Source code: [1998/dloweneil/dloweneil.c](1998/dloweneil/dloweneil.c)
@@ -1086,7 +1086,7 @@ to the page as well!  You'll have IOCCC fame for reviving a pootifier! :-)
 See above entry [1998/dlowe](1998/dlowe/dlowe.c).
 
 
-## 1998/schnitzi
+## 1998 schnitzi
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1998/schnitzi/schnitzi.c](1998/schnitzi/schnitzi.c)
@@ -1133,7 +1133,7 @@ There was no IOCCC in 1999.
 # 2000
 
 
-## 2000/primenum
+## 2000 primenum
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2000/primenum/primenum.c](2000/primenum/primenum.c)
@@ -1154,7 +1154,7 @@ fix this (in fact it was originally done but rolled back).
 As well there is a known crash that's also a feature.
 
 
-## 2000/rince
+## 2000 rince
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2000/rince/rince.c](2000/rince/rince.c)
@@ -1168,7 +1168,7 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing))! :-) ).
 # 2001
 
 
-## 2001/anonymous
+## 2001 anonymous
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/anonymous/anonymous.c](2001/anonymous/anonymous.c)
@@ -1197,7 +1197,7 @@ this program will very likely crash or do something strange like slaughter the
 elves of Imladris :-(
 
 
-## 2001/bellard
+## 2001 bellard
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### STATUS: doesn't work with some platforms - please help us fix
@@ -1261,7 +1261,7 @@ and it can be run by itself for fun in modern systems, which was not possible
 before the fixes there.
 
 
-## 2001/cheong
+## 2001 cheong
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/cheong/cheong.c](2001/cheong/cheong.c)
@@ -1270,7 +1270,7 @@ before the fixes there.
 This program will very likely crash or do something different without an arg.
 
 
-## 2001/dgbeards
+## 2001 dgbeards
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/dgbeards/dgbeards.c](2001/dgbeards/dgbeards.c)
@@ -1279,7 +1279,7 @@ This program will very likely crash or do something different without an arg.
 This program deliberately crashes if it loses (which is what it aims to do).
 
 
-## 2001/herrmann1
+## 2001 herrmann1
 
 ### STATUS: missing files - please provide them
 ### Source code: [2001/herrmann1/herrmann1.c](2001/herrmann1/herrmann1.c)
@@ -1301,7 +1301,7 @@ that version 2.95 works but maybe others do as well. Do you have a fix? We would
 appreciate your help!
 
 
-## 2001/kev
+## 2001 kev
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/kev/kev.c](2001/kev/kev.c)
@@ -1326,7 +1326,7 @@ Although it is independent of endianness both systems need the same character
 set. In other words both have to be ASCII or EBCDIC - not one of each.
 
 
-## 2001/ollinger
+## 2001 ollinger
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/ollinger/ollinger.c](2001/ollinger/ollinger.c)
@@ -1335,7 +1335,7 @@ set. In other words both have to be ASCII or EBCDIC - not one of each.
 This program will very likely crash or do something else without an arg.
 
 
-## 2001/schweikh
+## 2001 schweikh
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/schweikh/schweikh.c](2001/schweikh/schweikh.c)
@@ -1363,7 +1363,7 @@ There was no IOCCC in 2003.
 # 2004
 
 
-## 2004/gavin
+## 2004 gavin
 
 ### STATUS: compiled executable crashes - please help us fix
 ### STATUS: doesn't work with some platforms - please help us fix
@@ -1469,7 +1469,7 @@ The current ([Makefile](2004/gavin/Makefile) was modified to try and
 fit into the current IOCCC build environment.
 
 
-## 2004/sds
+## 2004 sds
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2004/sds/sds.c](2004/sds/sds.c)
@@ -1482,7 +1482,7 @@ given the right args. See the README.md file for the correct syntax.
 # 2005
 
 
-## 2005/anon
+## 2005 anon
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2005/anon/anon.c](2005/anon/anon.c)
@@ -1499,7 +1499,7 @@ strange. This might also happen if you specify excessively large board
 dimensions. Try `100 100 100` for instance and see what happens!
 
 
-## 2005/giljade
+## 2005 giljade
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2005/giljade/giljade.c](2005/giljade/giljade.c)
@@ -1511,7 +1511,7 @@ does not exist.
 This entry requires that `sed` and `make` are in the path.
 
 
-## 2005/mynx
+## 2005 mynx
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2005/mynx/mynx.c](2005/mynx/mynx.c)
@@ -1529,7 +1529,7 @@ to including the [IOCCC website](https://www.ioccc.org) itself.
 # 2006
 
 
-## 2006/hamre
+## 2006 hamre
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2006/hamre/hamre.c](2006/hamre/hamre.c)
@@ -1544,7 +1544,7 @@ operators supported.
 Don't try dividing by 0 (zero).
 
 
-## 2006/monge
+## 2006 monge
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2006/monge/monge.c](2006/monge/monge.c)
@@ -1553,7 +1553,7 @@ Don't try dividing by 0 (zero).
 Incorrect formulas will ungracefully crash the program.
 
 
-## 2006/stewart
+## 2006 stewart
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2006/stewart/stewart.c](2006/stewart/stewart.c)
@@ -1563,7 +1563,7 @@ This program will very likely crash or do something funny if the file does not
 exist or cannot be opened.
 
 
-## 2006/toledo2
+## 2006 toledo2
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2006/toledo2/toledo2.c](2006/toledo2/toledo2.c)
@@ -1621,7 +1621,7 @@ There was no IOCCC in 2010.
 # 2011
 
 
-## 2011/dlowe
+## 2011 dlowe
 
 ### STATUS: missing or dead link - please provide them
 ### Source code: [2011/dlowe/dlowe.c](2011/dlowe/dlowe.c)
@@ -1646,7 +1646,7 @@ tends to result in empty output.
 * Will crash and die horribly if it runs out of memory.
 
 
-## 2011/richards
+## 2011 richards
 
 ### STATUS: doesn't work with some platforms - please help us fix
 ### Source code: [2011/richards/richards.c](2011/richards/richards.c)
@@ -1858,7 +1858,7 @@ defined.
 Do you have a fix? We welcome it!
 
 
-## 2011/vik
+## 2011 vik
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2011/vik/vik.c](2011/vik/vik.c)
@@ -1872,7 +1872,7 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
 # 2012
 
 
-## 2012/vik
+## 2012 vik
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2012/vik/vik.c](2012/vik/vik.c)
@@ -1888,7 +1888,7 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
 # 2013
 
 
-## 2013/cable3
+## 2013 cable3
 
 ### STATUS: missing files - please provide them
 ### Source code: [2013/cable3/cable3.c](2013/cable3/cable3.c)
@@ -1903,7 +1903,7 @@ The file is `hd.img`.
 Do you have it? Please provide it!
 
 
-## 2013/dlowe
+## 2013 dlowe
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2013/dlowe/dlowe.c](2013/dlowe/dlowe.c)
@@ -1919,7 +1919,7 @@ You can try and answer the questions, too: when will it crash? When will it draw
 something funny (or will it? :-) ) and when will it just do nothing?
 
 
-## 2013/hou
+## 2013 hou
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2013/hou/hou.c](2013/hou/hou.c)
@@ -1932,7 +1932,7 @@ Hou :-) ) yourself. This should not be fixed.
 # 2014
 
 
-## 2014/vik
+## 2014 vik
 
 ### STATUS: known bug - please help us fix
 ### Source code: [2014/vik/prog.c](2014/vik/prog.c)
@@ -1967,7 +1967,7 @@ There was no IOCCC in 2017.
 # 2018
 
 
-## 2018/algmyr
+## 2018 algmyr
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2018/algmyr/algmyr.c](2018/algmyr/algmyr.c)
@@ -1977,7 +1977,7 @@ This entry is known to crash if a file cannot be opened. This is noted by the
 author and is easy enough to fix but need not be.
 
 
-## 2018/hou
+## 2018 hou
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2018/hou/prog.c](2018/hou/prog.c)
@@ -1997,7 +1997,7 @@ but this is expected and the file `ioccc.html` will be generated properly.
 # 2019
 
 
-## 2019/duble
+## 2019 duble
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/duble/prog.c](2019/duble/prog.c)
@@ -2035,7 +2035,7 @@ find . -name '.[A-Z]*' -delete
 though one might want to check that the program is not currently running. :-)
 
 
-## 2019/ciura
+## 2019 ciura
 
 ### STATUS: known bug - please help us fix
 ### Source code: [2019/ciura/prog.c](2019/ciura/prog.c)
@@ -2052,7 +2052,7 @@ they did work for some. If you can identify the problem we would appreciate the
 help!
 
 
-## 2019/endoh
+## 2019 endoh
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/endoh/prog.c](2019/endoh/prog.c)
@@ -2062,7 +2062,7 @@ As a backtrace quine this entry is **SUPPOSED to segfault** so this should not b
 touched either.
 
 
-## 2019/poikola
+## 2019 poikola
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2019/poikola/prog.c](2019/poikola/prog.c)
@@ -2075,7 +2075,7 @@ erroneously.
 # 2020
 
 
-## 2020/burton
+## 2020 burton
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2020/burton/prog.c](2020/burton/prog.c)
@@ -2089,7 +2089,7 @@ It will also show funny output with more than one arg. This should not be fixed
 either. But can you figure out why this happens?
 
 
-## 2020/ferguson1
+## 2020 ferguson1
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2020/ferguson1/prog.c](2020/ferguson1/prog.c)

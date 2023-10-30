@@ -17,7 +17,7 @@ The current status of this entry is:
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [bugs.md#1984/laman](/bugs.md#1984-laman).
+For more detailed information see [1984 laman in bugs.md](/bugs.md#1984-laman).
 
 
 ## To use:
