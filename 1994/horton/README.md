@@ -11,17 +11,6 @@ make all
 ```
 
 
-### Bugs and (Mis)features
-
-The current status of this entry is:
-
-```
-STATUS: known bug - please help us fix
-```
-
-For more detailed information see [1994 horton in bugs.md](/bugs.md#1994-horton).
-
-
 ## To use:
 
 ```sh
@@ -30,12 +19,6 @@ For more detailed information see [1994 horton in bugs.md](/bugs.md#1994-horton)
 
 `A`, `B`, `C` and `D` are numeric arguments.
 
-### INABIAF - it's not a bug it's a feature! :-)
-
-Running this program without enough args will very likely crash or do something
-else.
-
-## Try:
 
 ```sh
 ./horton 3 2 1 0

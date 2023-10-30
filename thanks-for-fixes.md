@@ -1289,6 +1289,12 @@ arg (as it was 0 at file scope already this is perfectly fine and it means
 there's no need to cast it to an int in the function call though that would also
 work).
 
+## [1994/horton](1994/horton/horton.c) ([README.md](1994/horton/README.md))
+
+Cody fixed this to check that four args were specified. With the use of the C
+pre-processor macro and inclusion of stdlib.h in the Makefile the layout of the
+source is exactly the same column width and no additional lines were added.
+
 
 ## [1994/ldb](1994/ldb/ldb.c) ([README.md](1994/ldb/README.md]))
 

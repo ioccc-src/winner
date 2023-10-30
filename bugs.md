@@ -832,18 +832,6 @@ An alternate version, however, does exist. See the README.md file for details.
 # 1994
 
 
-## 1994 horton
-
-### STATUS: known bug - please help us fix
-### Source code: [1994/horton/horton.c](1994/horton/horton.c)
-### Information: [1994/horton/README.md](1994/horton/README.md)
-
-If not enough args are specified this program will likely crash or do something
-else.
-
-If you want to try and fix this (mis)feature, you are welcome to try.
-
-
 ## 1994 ldb
 
 ### STATUS: INABIAF - please **DO NOT** fix

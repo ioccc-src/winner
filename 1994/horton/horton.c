@@ -1,6 +1,6 @@
 #define S(r, c) f[r][c] = 1;
 
-char f[96][160]; main(argc, argv) char **argv; { double x, y, atof(); int
+char f[96][160]; main(argc, argv) char **argv; {if(A<5)E;double x, y; int
 r									,
 c									,
 bi									,
