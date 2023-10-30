@@ -566,9 +566,24 @@ It should be noted that in additional to rot13 names there is code that is the
 reverse of other code (also wrt names). See the source file and the README.md
 (in the author's remarks) for more details.
 
-Fixing the (Mis)feature is likely to be a difficult challenge.
-You are welcome to try and fix it if you can!
+Fixing the (Mis)feature is likely to be a very difficult challenge.  You are
+welcome to try and fix it if you can!
 
+### A tip from Cody:
+
+The reason this is crashing is that the array `irk` is being accessed way out of
+bounds by the int `gnat`. For instance:
+
+```
+Program terminated with signal SIGSEGV, Segmentation fault.
+#0  0x0000000000401335 in main (ABBA@entry=<optimized out>, tang@entry=<optimized out>, gnat@entry=<optimized out>, Near@entry=<optimized out>)
+    at ver2.c:23
+23	&&gnat!({)Near,noon,/*krelc*/)<0&&(Near= -  	irk[-gnat--]-2)))&&main(ABBA,
+(gdb) p gnat
+$1 = -518733305
+```
+
+The real trouble is that the code is generated and in a complex way.
 
 # 1990
 
