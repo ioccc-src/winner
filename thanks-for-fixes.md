@@ -2154,6 +2154,11 @@ Since the author suggested that the lack of certain `#include`s might break the
 program in some systems he added `-include ...` to the Makefile as well.
 
 
+## [2006/stewart](2006/stewart/stewart.c) ([README.md](2006/stewart/README.md]))
+
+Cody fixed it so that if the file cannot be opened it exits rather than trying
+to read from the file.
+
 ## [2006/toledo2](2006/toledo2/toledo2.c) ([README.md](2006/toledo2/README.md]))
 
 Cody fixed a segfault in this program which was making it fail to work under

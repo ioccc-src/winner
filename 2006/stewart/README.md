@@ -10,17 +10,6 @@ make
 ```
 
 
-### Bugs and (Mis)features
-
-The current status of this entry is:
-
-```
-STATUS: known bug - please help us fix
-```
-
-For more detailed information see [2006 stewart in bugs.md](/bugs.md#2006-stewart).
-
-
 ## To use:
 
 ```sh
@@ -47,11 +36,6 @@ where `FILE` is one of:
         pentagon pentagons rings rings2 spirals spirals2 spirals3
         spirals4 squares stars stars2 tree tree2 tree3 tree4 triangle
 
-
-### INABIAF - it's not a bug it's a feature! :-)
-
-This program will very likely crash or do something funny if the file does not
-exist or cannot be opened.
 
 ## Judges' remarks:
 
