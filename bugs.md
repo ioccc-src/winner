@@ -805,18 +805,6 @@ encourage you to test it. This should not be fixed.
 # 1993
 
 
-## 1993 plummber
-
-### STATUS: known bug - please help us fix
-### Source code: [1993/plummer/plummer.c](1993/plummer/plummer.c)
-### Information: [1993/plummer/README.md](1993/plummer/README.md)
-
-If not enough args are specified this program will likely crash or do something
-else.
-
-If you want to try and fix this (mis)feature, you are welcome to try.
-
-
 ## 1993 lmfjyh
 
 ### STATUS: INABIAF - please **DO NOT** fix

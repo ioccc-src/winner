@@ -1251,9 +1251,11 @@ this was made the alternate version, not the actual entry.
 
 ## [1993/plummer](1993/plummer/plummer.c) ([README.md](1993/plummer/README.md]))
 
-Cody added an [alternate version](1993/plummer/plummer.alt.c) which uses
-`usleep()` so you can see what is happening with faster systems. See the
-README.md files for details.
+Cody added check for two args.
+
+Cody also added an [alternate version](1993/plummer/plummer.alt.c) which uses
+`usleep()` so you can see what is happening with faster systems. This version
+also checks for two args. See the README.md files for details.
 
 
 ## [1993/rince](1993/rince/rince.c) ([README.md](1993/rince/README.md]))
