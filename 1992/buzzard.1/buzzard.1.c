@@ -1,7 +1,7 @@
 #define A(c,a,b) t=b;t+=a;_(c)
 #define	B(b,a) P(u,a)t=0;t-=a;R t+=u;t+=1;t/=2;_(b)
 #define b(x) x(g)
-#define C ;main(argc,argv)char**argv;{for(;!w;){q=0;l
+#define C ;main(argc,argv)char**argv;{if(argc<3)exit(1);for(;!w;){q=0;l
 #define c(y) x
 #define D(c,a,b) t=a;t/=b;_(c)
 #define d(x) S(x,x,1)

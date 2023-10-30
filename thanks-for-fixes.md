@@ -1131,6 +1131,10 @@ one must keep the `Y[strlen(Y)-1]='\0';` part and keep it there.
 This is a complex change due to the way the program and Makefile generate
 additional tools.
 
+## [1992/buzzard.1](1992/buzzard.1/buzzard.1.c) ([README.md](1992/buzzard.1/README.md))
+
+Cody added a check for the right number of args, exiting 1 if not enough (2)
+used.
 
 ## [1992/gson](1992/gson/gson.c) ([README.md](1992/gson/README.md]))
 

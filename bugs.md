@@ -688,16 +688,6 @@ possibility. Can you find out how?
 
 # 1992
 
-## 1992 buzzard.1
-
-### STATUS: known bug - please help us fix
-### Source code: [1992/buzzard.1/buzzard.1.c](1992/buzzard.1/buzzard.1.c)
-### Information: [1992/buzzard.1/README.md](1992/buzzard.1/README.md)
-
-This entry will crash without enough args (2).
-
-If you want to try and fix this (mis)feature, you are welcome to try.
-
 
 ## 1992 kivinen
 

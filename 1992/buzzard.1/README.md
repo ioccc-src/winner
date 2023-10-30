@@ -1,9 +1,6 @@
 # Most Obfuscated Algorithm
 
 Sean Barrett\
-Software Construction Company\
-430 Southwest Parkway, #1906\
-College Station, TX 77840\
 US
 
 
@@ -12,17 +9,6 @@ US
 ```sh
 make all
 ```
-
-
-### Bugs and (Mis)features
-
-The current status of this entry is:
-
-```
-STATUS: known bug - please help us fix
-```
-
-For more detailed information see [1992 buzzard.1 in bugs.md](/bugs.md#1992-buzzard.1).
 
 
 ## To use:
