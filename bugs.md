@@ -682,8 +682,8 @@ someone called Cody's late grandmother said to him: 'it's not cheating unless
 you're caught'. :-)
 
 Please don't try and fix it as it's not a bug and was actually documented as a
-possibility. Can you find out how?
-
+possibility. Can you find out how? There's also a way to make it so that even
+when you're cheating it ends up winning! Can you figure that out as well?
 
 
 # 1992
