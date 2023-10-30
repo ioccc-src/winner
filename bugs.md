@@ -788,19 +788,6 @@ As you might see the part under the `warning:` line is different.
 Can you help us?
 
 
-## 1992 westley
-
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1992/westley/westley.c](1992/westley/westley.c)
-### Information: [1992/westley/README.md](1992/westley/README.md)
-
-This program and the alternate version will very likely crash or
-[nuke](https://en.wikipedia.org/wiki/Nuclear_weapon) the [entire
-world](https://en.wikipedia.org/wiki/Earth) or just the
-[USA](https://en.wikipedia.org/wiki/United_States), respectively, without enough
-args. And not that we need any help with this or anything :-) but we do
-encourage you to test it. This should not be fixed.
-
 
 # 1993
 

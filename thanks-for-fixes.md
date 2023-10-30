@@ -1209,15 +1209,18 @@ Cody fixed this to work for clang by changing the third and fourth arg of
 **` and some versions do not even allow a fourth arg.
 
 He also added the alternate version that the author gave in the remarks that is
-specifically for the USA rather than the world.
+specifically for the USA rather than the world. This had to be fixed for clang
+as well to make the args of `main()` be the correct type and by moving the body
+of main() to another function, `pain()`, which does the work since not all
+versions of clang support four args to `main()`.
 
-NOTE: as noted in the README.md file and the [bugs.md](/bugs.md), this program and the
-[alternate version](1992/westley/westley.alt.c) will very likely crash or
-[nuke](https://en.wikipedia.org/wiki/Nuclear_weapon) the [entire
+Cody also added an arg check because the program and the
+[alternate version](1992/westley/westley.alt.c) might have crashed or
+[nuked](https://en.wikipedia.org/wiki/Nuclear_weapon) the [entire
 world](https://en.wikipedia.org/wiki/Earth) or just the
 [USA](https://en.wikipedia.org/wiki/United_States), respectively, without enough
-args (2). And not that we need the help or anything for this :-) but we do
-encourage you to test this :-) This should NOT be fixed.
+args (2). And not that we need the help or anything for this :-) but we
+encourage you to try the original :-)
 
 
 ## [1993/jonth](1993/jonth/jonth.c) ([README.md](1993/jonth/README.md]))
