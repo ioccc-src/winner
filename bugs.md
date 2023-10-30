@@ -785,6 +785,12 @@ lush.c:40:9: note: previous definition is here
 
 As you might see the part under the `warning:` line is different.
 
+The entry is supposed to show warnings and then print:
+
+```
+Hello World.
+```
+
 Can you help us?
 
 
