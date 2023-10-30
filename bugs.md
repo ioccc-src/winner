@@ -1333,14 +1333,6 @@ set. In other words both have to be ASCII or EBCDIC - not one of each.
 
 ## 2001 ollinger
 
-### STATUS: known bug - please help us fix
-### Source code: [2001/ollinger/ollinger.c](2001/ollinger/ollinger.c)
-### Information: [2001/ollinger/README.md](2001/ollinger/README.md0
-
-This program will very likely crash or do something else without an arg.
-
-If you want to try and fix this (mis)feature, you are welcome to try.
-
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/schweikh/schweikh.c](2001/schweikh/schweikh.c)

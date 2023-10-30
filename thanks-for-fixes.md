@@ -1830,6 +1830,10 @@ the paddles move even when holding down the movement keys.
 Cody also provided an alternate version which lets you use the arrow keys on
 your keyboard instead of the more awkward '`,`' and '`.`'.
 
+## [2001/ollinger](2001/ollinger/ollinger.c) ([README.md](2001/ollinger/README.md))
+
+Cody fixed to not crash if not enough args, exiting 1 instead.
+
 ## [2001/schweikh](2001/schweikh/schweikh.c) ([README.md](2001/schweikh/README.md]))
 
 Cody fixed this to not crash if not enough args as this was not documented by
