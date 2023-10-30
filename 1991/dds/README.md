@@ -12,6 +12,19 @@ Mastodon: <https://mstdn.social/@DSpinellis>
 make all
 ```
 
+
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+STATUS: uses gets() - change to fgets() if possible
+```
+
+For more detailed information see [1991 dds in bugs.md](/bugs.md#1991-dds).
+
+
 ## To use:
 
 ```sh

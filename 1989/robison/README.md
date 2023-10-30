@@ -9,15 +9,16 @@ US
 make all
 ```
 
+
 ### Bugs and (Mis)features
 
-This entry a listed in [bugs.md](/bugs.md) as:
+The current status of this entry is:
 
 ```
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [bugs.md](/bugs.md#1989robison-readmemd).
+For more detailed information see [1989 robison in bugs.md](/bugs.md#1989-robison).
 
 
 ## To use:

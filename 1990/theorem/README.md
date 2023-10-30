@@ -14,6 +14,17 @@ make all
 ```
 
 
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [1990 theorem in bugs.md](/bugs.md#1990-theorem).
+
+
 ## To use:
 
 ```sh

@@ -21,6 +21,17 @@ install [XQuartz](https://www.xquartz.org) in order to compile and run this
 entry.
 
 
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: known bug - please help us fix
+```
+
+For more detailed information see [1992 kivinen in bugs.md](/bugs.md#1992-kivinen).
+
+
 ## Try:
 
 

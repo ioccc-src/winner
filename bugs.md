@@ -537,7 +537,7 @@ and does not crash.
 
 ## 1989 fubar
 
-### STATUS: INABIAF - please **DO NOT** fix
+### STATUS: known bug - please help us fix
 ### Source code: [1989/fubar/fubar.c](1989/fubar/fubar.c)
 ### Information: [1989/fubar/README.md](1989/fubar/README.md)
 
@@ -545,6 +545,8 @@ If you use either `fubar` or `ouroboros.c` (it's executable, see README.md for
 details) with a number < 0 or larger than, say 20, it's very likely that the
 program will turn into an infinite loop trying to compile code with syntax
 errors.
+
+If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 ## 1989 robison
@@ -559,7 +561,7 @@ numbers with non-binary digits.
 
 ## 1989 westley
 
-### STATUS: INABIAF - please **DO NOT** fix
+### STATUS: known bug - please help us fix
 ### Source code: [1989/westley/westley.c](1989/westley/westley.c)
 ### Information: [1989/westley/README.md](1989/westley/README.md)
 
@@ -571,13 +573,14 @@ be compiled with clang. An example invocation is:
 ./ver2 < westley.c
 ```
 
-We consider it not worth fixing at least at this time.
-
 ### A useful note on changing/fixing this program
 
 It should be noted that in additional to rot13 names there is code that is the
 reverse of other code (also wrt names). See the source file and the README.md
 (in the author's remarks) for more details.
+
+Fixing the (Mis)feature is likely to be a difficult challenge.
+You are welcome to try and fix it if you can!
 
 
 # 1990
@@ -585,7 +588,7 @@ reverse of other code (also wrt names). See the source file and the README.md
 
 ## 1990 jaw
 
-### STATUS: INABIAF - please **DO NOT** fix
+### STATUS: known bug - please help us fix
 ### Source code: [1990/jaw/jaw.c](1990/jaw/jaw.c)
 ### Information: [1990/jaw/README.md](1990/jaw/README.md)
 
@@ -604,7 +607,7 @@ oops: Undefined error: 0
 However this is because the entry uses `perror()` and it just so happens that
 the default `errno` of 0 gives that result. For instance if you run the
 following C program under macOS you will get undefined error but if you do it
-under linux you'll likely get success.
+under Linux you'll likely get success.
 
 
 ```c
@@ -628,6 +631,8 @@ is true on both linux and macOS, with `k` being equal to 22!
 Should the entry use `perror()`? Perhaps not but we're not sure of its purpose
 so it should stay with this note.
 
+If you want to try and fix this (mis)feature, you are welcome to try.
+
 
 ## 1990 theorem
 
@@ -644,13 +649,15 @@ where this occurred was fixed but this one should not be fixed. Thank you.
 
 ## 1990 westley
 
-### STATUS: INABIAF - please **DO NOT** fix
+### STATUS: known bug - please help us fix
 ### Source code: [1990/westley/westley.c](1990/westley/westley.c)
 ### Information: [1990/westley/README.md](1990/westley/README.md)
 
 This entry will very likely crash or do something strange without an arg.
 
 This entry will also enter an infinite loop if input is not a number > 0.
+
+If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 # 1991
@@ -696,23 +703,26 @@ possibility. Can you find out how?
 
 ## 1992 buzzard.1
 
-### STATUS: INABIAF - please **DO NOT** fix
+### STATUS: known bug - please help us fix
 ### Source code: [1992/buzzard.1/buzzard.1.c](1992/buzzard.1/buzzard.1.c)
 ### Information: [1992/buzzard.1/README.md](1992/buzzard.1/README.md)
 
 This entry will crash without enough args (2).
 
+If you want to try and fix this (mis)feature, you are welcome to try.
+
 
 ## 1992 kivinen
 
-### STATUS: INABIAF - please **DO NOT** fix
+### STATUS: known bug - please help us fix
 ### Source code: [1992/kivinen/kivinen.c](1992/kivinen/kivinen.c)
 ### Information: [1992/kivinen/README.md])1992/kivinen/README.md_
 
 When you start the program everything starts to move over to the right side and
 then ends.  [Yusuke Endoh](/winners.html#Yusuke_Endoh) pointed out that if you
-click the mouse it takes it back towards the centre. If you have a fix it's
-welcome but it's not currently considered enough of a problem to fix.
+click the mouse it takes it back towards the centre.
+
+If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 ## 1992 lush
@@ -810,12 +820,14 @@ encourage you to test it. This should not be fixed.
 
 ## 1993 plummber
 
-### STATUS: INABIAF - please **DO NOT** fix
+### STATUS: known bug - please help us fix
 ### Source code: [1993/plummer/plummer.c](1993/plummer/plummer.c)
 ### Information: [1993/plummer/README.md](1993/plummer/README.md)
 
 If not enough args are specified this program will likely crash or do something
-else. This should NOT be fixed.
+else.
+
+If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 ## 1993 lmfjyh
@@ -835,12 +847,14 @@ An alternate version, however, does exist. See the README.md file for details.
 
 ## 1994 horton
 
-### STATUS: INABIAF - please **DO NOT** fix
+### STATUS: known bug - please help us fix
 ### Source code: [1994/horton/horton.c](1994/horton/horton.c)
 ### Information: [1994/horton/README.md](1994/horton/README.md)
 
 If not enough args are specified this program will likely crash or do something
-else. This should NOT be fixed.
+else.
+
+If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 ## 1994 ldb
@@ -1263,11 +1277,13 @@ before the fixes there.
 
 ## 2001 cheong
 
-### STATUS: INABIAF - please **DO NOT** fix
+### STATUS: known bug - please help us fix
 ### Source code: [2001/cheong/cheong.c](2001/cheong/cheong.c)
 ### Information: [2001/cheong/README.md](2001/cheong/README.md)
 
 This program will very likely crash or do something different without an arg.
+
+If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 ## 2001 dgbeards
@@ -1300,6 +1316,8 @@ animation but this does not seem to work with modern gcc versions. It appears
 that version 2.95 works but maybe others do as well. Do you have a fix? We would
 appreciate your help!
 
+If you want to try and fix this (mis)feature, you are welcome to try.
+
 
 ## 2001 kev
 
@@ -1328,16 +1346,18 @@ set. In other words both have to be ASCII or EBCDIC - not one of each.
 
 ## 2001 ollinger
 
-### STATUS: INABIAF - please **DO NOT** fix
+### STATUS: known bug - please help us fix
 ### Source code: [2001/ollinger/ollinger.c](2001/ollinger/ollinger.c)
 ### Information: [2001/ollinger/README.md](2001/ollinger/README.md0
 
 This program will very likely crash or do something else without an arg.
 
+If you want to try and fix this (mis)feature, you are welcome to try.
+
 
 ## 2001 schweikh
 
-### STATUS: INABIAF - please **DO NOT** fix
+### STATUS: known bug - please help us fix
 ### Source code: [2001/schweikh/schweikh.c](2001/schweikh/schweikh.c)
 ### Information: [2001/schweikh/README.md](2001/schweikh/README.md)
 
@@ -1348,6 +1368,8 @@ Note also that the glob pattern must match the whole string. See the author's
 comments for details and a workaround.
 
 There's also no way to escape meta characters.
+
+If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 # 2002
@@ -1484,7 +1506,7 @@ given the right args. See the README.md file for the correct syntax.
 
 ## 2005 anon
 
-### STATUS: INABIAF - please **DO NOT** fix
+### STATUS: known bug - please help us fix
 ### Source code: [2005/anon/anon.c](2005/anon/anon.c)
 ### Information: [2005/anon/README.md](2005/anon/README.md)
 
@@ -1497,6 +1519,8 @@ details on this.
 If you specify more than three args the program might also crash or do something
 strange. This might also happen if you specify excessively large board
 dimensions. Try `100 100 100` for instance and see what happens!
+
+If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 ## 2005 giljade
@@ -1531,7 +1555,7 @@ to including the [IOCCC website](https://www.ioccc.org) itself.
 
 ## 2006 hamre
 
-### STATUS: INABIAF - please **DO NOT** fix
+### STATUS: known bug - please help us fix
 ### Source code: [2006/hamre/hamre.c](2006/hamre/hamre.c)
 ### Information: [2006/hamre/README.md](2006/hamre/README.md)
 
@@ -1543,24 +1567,31 @@ operators supported.
 
 Don't try dividing by 0 (zero).
 
+If you want to try and fix this (mis)feature, you are welcome to try.
+
 
 ## 2006 monge
 
-### STATUS: INABIAF - please **DO NOT** fix
+### STATUS: known bug - please help us fix
 ### Source code: [2006/monge/monge.c](2006/monge/monge.c)
 ### Information: [2006/monge/README.md](2006/monge/README.md)
 
 Incorrect formulas will ungracefully crash the program.
 
+Fixing the (Mis)feature is likely to be a difficult challenge.
+You are welcome to try and fix it if you can!
+
 
 ## 2006 stewart
 
-### STATUS: INABIAF - please **DO NOT** fix
+### STATUS: known bug - please help us fix
 ### Source code: [2006/stewart/stewart.c](2006/stewart/stewart.c)
 ### Information: [2006/stewart/README.md](2006/stewart/README.md)
 
 This program will very likely crash or do something funny if the file does not
 exist or cannot be opened.
+
+If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 ## 2006 toledo2
@@ -1632,7 +1663,7 @@ instead being something else entirely. The Internet Wayback Machine, although it
 archived it, did not load scripts. Do you know if the domain was moved? Do you
 have an archive or mirror? Please provide us it! Thank you.
 
-### STATUS: INABIAF - please **DO NOT** fix
+### STATUS: known bug - please help us fix
 
 The author states the following:
 
@@ -1644,6 +1675,8 @@ tends to result in empty output.
 * Leaks memory and file descriptors while processing files.
 
 * Will crash and die horribly if it runs out of memory.
+
+If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 ## 2011 richards
@@ -1947,6 +1980,8 @@ file).
 He provides a tip in testing the problem: it might help to use his Enigma
 machine to find problems as it will allow you to verify what is correct and what
 is not. Again see his README.md for details!
+
+If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 # 2015

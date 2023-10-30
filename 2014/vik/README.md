@@ -13,6 +13,18 @@ US\
 make
 ```
 
+
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: known bug - please help us fix
+```
+
+For more detailed information see [2014 vik in bugs.md](/bugs.md#2014-vik).
+
+
 ## To use:
 
 ```sh

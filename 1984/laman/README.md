@@ -2,6 +2,7 @@
 
 Mike Laman
 
+
 ## To build:
 
 ```sh
@@ -14,7 +15,7 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+STATUS: known bug - please help us fix
 ```
 
 For more detailed information see [1984 laman in bugs.md](/bugs.md#1984-laman).

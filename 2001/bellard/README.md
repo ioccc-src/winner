@@ -11,6 +11,18 @@ make
 ```
 
 
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+STATUS: doesn't work with some platforms - please help us fix
+```
+
+For more detailed information see [2001 bellard in bugs.md](/bugs.md#2001-bellard).
+
+
 ## To use:
 
 ```sh

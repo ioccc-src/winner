@@ -14,6 +14,17 @@ make all
 ```
 
 
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: missing file - please provide it
+```
+
+For more detailed information see [1994 shapiro in bugs.md](/bugs.md#1994-shapiro).
+
+
 ## To use:
 
 ```sh

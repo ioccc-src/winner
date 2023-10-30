@@ -11,6 +11,18 @@ make
 ```
 
 
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: compiled executable crashes - please help us fix
+STATUS: doesn't work with some platforms - please help us fix
+```
+
+For more detailed information see [2004 gavin in bugs.md](/bugs.md#2004-gavin).
+
+
 ## To use:
 
 ```sh

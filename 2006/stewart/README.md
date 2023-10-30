@@ -9,6 +9,18 @@ US
 make
 ```
 
+
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: known bug - please help us fix
+```
+
+For more detailed information see [2006 stewart in bugs.md](/bugs.md#2006-stewart).
+
+
 ## To use:
 
 ```sh

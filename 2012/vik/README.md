@@ -14,6 +14,17 @@ make
 This entry requires [Zlib](https://www.zlib.net).
 
 
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2012 vik in bugs.md](/bugs.md#2012-vik).
+
+
 ## To use:
 
 To embed text (from file or command line):

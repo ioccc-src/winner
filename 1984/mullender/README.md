@@ -18,6 +18,18 @@ NOTE: the original code will not work on any system other than
 to use the alt version instead. See [original code](#original-code) below for
 the original version.
 
+
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [1984 mullender in bugs.md](/bugs.md#1984-mullender).
+
+
 ## To use:
 
 ```sh
@@ -74,16 +86,6 @@ machine dependent code was discouraged.
 ```sh
 make all
 ```
-
-### Bugs and (Mis)features:
-
-This entry a listed in [bugs.md](/bugs.md) as:
-
-```
-STATUS: INABIAF - please **DO NOT** fix
-```
-
-For more detailed information see [bugs.md](/bugs.md#1984mullender-readmemd).
 
 
 ### Original use:

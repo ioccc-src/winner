@@ -9,6 +9,18 @@ Etienne Duble\
 make
 ```
 
+
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2019 duble in bugs.md](/bugs.md#2019-duble).
+
+
 ## To use:
 
 ```sh

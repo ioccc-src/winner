@@ -15,6 +15,17 @@ make all
 ```
 
 
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: uses gets() - change to fgets() if possible
+```
+
+For more detailed information see [1994 schnitzi in bugs.md](/bugs.md#1994-schnitzi).
+
+
 ## To use:
 
 ```sh

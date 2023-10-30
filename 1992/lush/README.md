@@ -11,6 +11,17 @@ make all
 ```
 
 
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: doesn't work with some compilers - please provide alternative code
+```
+
+For more detailed information see [1992 lush in bugs.md](/bugs.md#1992-lush).
+
+
 ## To use:
 
 ```sh

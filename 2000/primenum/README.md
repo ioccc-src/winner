@@ -9,6 +9,17 @@ make
 ```
 
 
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2000 primenum in bugs.md](/bugs.md#2000-primenum).
+
+
 ## To use:
 
 ```sh

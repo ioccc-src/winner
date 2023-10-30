@@ -16,6 +16,17 @@ make all
 ```
 
 
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: missing or dead link - please provide them
+```
+
+For more detailed information see [1996 gandalf in bugs.md](/bugs.md#1996-gandalf).
+
+
 ## To use:
 
 ```sh

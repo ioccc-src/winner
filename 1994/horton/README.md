@@ -10,6 +10,18 @@ US\
 make all
 ```
 
+
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: known bug - please help us fix
+```
+
+For more detailed information see [1994 horton in bugs.md](/bugs.md#1994-horton).
+
+
 ## To use:
 
 ```sh

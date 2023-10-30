@@ -9,6 +9,18 @@ Dave Burton
 make
 ```
 
+
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2020 burton in bugs.md](/bugs.md#2020-burton).
+
+
 ## To use:
 
 ```sh

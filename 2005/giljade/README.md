@@ -23,6 +23,17 @@ version but it's a complicated one. See also the [bugs.md](/bugs.md) file for
 more information.
 
 
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2005 giljade in bugs.md](/bugs.md#2005-giljade).
+
+
 ## To use:
 
 ```sh

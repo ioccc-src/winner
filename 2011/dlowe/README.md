@@ -11,6 +11,19 @@ US\
 make
 ```
 
+
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: missing or dead link - please provide them
+STATUS: known bug - please help us fix
+```
+
+For more detailed information see [2011 dlowe in bugs.md](/bugs.md#2011-dlowe).
+
+
 ## To use:
 
 ```sh

@@ -12,13 +12,13 @@ make all
 
 ### Bugs and (Mis)features
 
-This entry a listed in [bugs.md](/bugs.md) as:
+The current status of this entry is:
 
 ```
 STATUS: INABIAF - please **DO NOT** fix
 ```
 
-For more detailed information see [bugs.md](/bugs.md#1988dale-readmemd).
+For more detailed information see [1988 dale in bugs.md](/bugs.md#1988-dale).
 
 
 ## Try:

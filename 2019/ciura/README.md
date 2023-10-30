@@ -10,6 +10,17 @@ make
 ```
 
 
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: known bug - please help us fix
+```
+
+For more detailed information see [2019 ciura in bugs.md](/bugs.md#2019-ciura).
+
+
 ## To use:
 
 ```sh

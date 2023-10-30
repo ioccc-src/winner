@@ -11,6 +11,18 @@ Mastodon: [@xexyl@fosstodon.org](https://fosstodon.org/@xexyl)
 make
 ```
 
+
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2020 ferguson1 in bugs.md](/bugs.md#2020-ferguson1).
+
+
 ## To use:
 
 ```sh

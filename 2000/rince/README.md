@@ -13,6 +13,18 @@ England
 make
 ```
 
+
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2000 rince in bugs.md](/bugs.md#2000-rince).
+
+
 ## To use:
 
 ```sh

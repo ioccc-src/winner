@@ -19,6 +19,17 @@ how fast your computer is :-) (and you can also use both to see the difference).
 For this alternate, slower version, please see below.
 
 
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [1995 cdua in bugs.md](/bugs.md#1995-cdua).
+
+
 ## To use:
 
 ```sh

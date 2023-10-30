@@ -12,6 +12,18 @@ NOTE: there is an [alternate version](#alternate-code) which will only work if
 you have an old enough compiler or a compiler that supports `-traditional-cpp`.
 The original code was fixed in 2023 to not require this.
 
+
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [1984 decot in bugs.md](/bugs.md#1984-decot).
+
+
 ## To use:
 
 ```sh

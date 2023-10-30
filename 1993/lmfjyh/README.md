@@ -30,6 +30,17 @@ There is an alternate version which simply does what the program did with gcc <
 2.3.3.
 
 
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [1993 lmfjyh in bugs.md](/bugs.md#1993-lmfjyh).
+
+
 ## To use:
 
 If you have gcc < 2.3.3 (i.e. the entry can compile):

@@ -3,12 +3,26 @@
 Immanuel Herrmann\
 Germany\
 <https://web.archive.org/web/20071018081145/http://pcpool.mathematik.uni-freiburg.de/~immi/>
-\
+
+
 ## To build:
 
 ```sh
 make
 ```
+
+
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: missing files - please provide them
+STATUS: known bug - please help us fix
+```
+
+For more detailed information see [2001 herrmann1 in bugs.md](/bugs.md#2001-herrmann1).
+
 
 ## To use:
 
@@ -22,6 +36,7 @@ need an older compiler perhaps gcc 2.95.
 
 NOTE: some files are missing and are not found in the archive either. See
 [bugs.md](/bugs.md) for more details.
+
 
 ## Try:
 

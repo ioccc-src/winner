@@ -13,6 +13,18 @@ make
 ```
 
 
+### Bugs and (Mis)features
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
+```
+
+For more detailed information see [2006 toledo2 in bugs.md](/bugs.md#2006-toledo2).
+
+
 ## To use:
 
 ```sh
