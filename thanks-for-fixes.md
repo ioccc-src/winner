@@ -1830,6 +1830,12 @@ the paddles move even when holding down the movement keys.
 Cody also provided an alternate version which lets you use the arrow keys on
 your keyboard instead of the more awkward '`,`' and '`.`'.
 
+## [2001/schweikh](2001/schweikh/schweikh.c) ([README.md](2001/schweikh/README.md]))
+
+Cody fixed this to not crash if not enough args as this was not documented by
+the author. The other problems are documented so were not fixed. See
+README.md for details.
+
 
 ## [2001/westley](2001/westley/westley.c) ([README.md](2001/westley/README.md]))
 

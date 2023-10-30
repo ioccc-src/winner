@@ -1342,21 +1342,14 @@ This program will very likely crash or do something else without an arg.
 If you want to try and fix this (mis)feature, you are welcome to try.
 
 
-## 2001 schweikh
-
-### STATUS: known bug - please help us fix
+### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/schweikh/schweikh.c](2001/schweikh/schweikh.c)
 ### Information: [2001/schweikh/README.md](2001/schweikh/README.md)
 
-This program will very likely crash or do something else if you do not give it
-two args.
-
-Note also that the glob pattern must match the whole string. See the author's
-comments for details and a workaround.
+The glob pattern must match the whole string. See the author's comments for
+details and a workaround.
 
 There's also no way to escape meta characters.
-
-If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 # 2002
@@ -1567,18 +1560,6 @@ Incorrect formulas will ungracefully crash the program.
 
 Fixing the (Mis)feature is likely to be a difficult challenge.
 You are welcome to try and fix it if you can!
-
-
-## 2006 stewart
-
-### STATUS: known bug - please help us fix
-### Source code: [2006/stewart/stewart.c](2006/stewart/stewart.c)
-### Information: [2006/stewart/README.md](2006/stewart/README.md)
-
-This program will very likely crash or do something funny if the file does not
-exist or cannot be opened.
-
-If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 ## 2006 toledo2
