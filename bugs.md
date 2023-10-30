@@ -1262,17 +1262,6 @@ and it can be run by itself for fun in modern systems, which was not possible
 before the fixes there.
 
 
-## 2001 cheong
-
-### STATUS: known bug - please help us fix
-### Source code: [2001/cheong/cheong.c](2001/cheong/cheong.c)
-### Information: [2001/cheong/README.md](2001/cheong/README.md)
-
-This program will very likely crash or do something different without an arg.
-
-If you want to try and fix this (mis)feature, you are welcome to try.
-
-
 ## 2001 dgbeards
 
 ### STATUS: INABIAF - please **DO NOT** fix

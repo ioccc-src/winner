@@ -1751,6 +1751,7 @@ letter word that would match the format and because it's pain that clang forces
 this. :-) This fix makes a point of the author's notes on portability no longer
 valid, btw.
 
+He also fixed it to check the number of args.
 
 ## [2001/coupard](2001/coupard/coupard.c) ([README.md](2001/coupard/README.md]))
 
