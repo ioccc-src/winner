@@ -1044,11 +1044,16 @@ slightly more like the original, even though it's unused.
 
 Cody fixed a segfault that prevented this entry from working in any condition
 and he also made it work for clang. He also added checks for NULL `FILE *`s.
+Furthermore he changed it so that the C from the BASIC uses `fgets()`, not
+`gets()`. For the magic of clang and `fgets()` see below.
 
 Clang (at least in some systems?) defaults to having `-Werror` and the code that
 the entry generates had some warnings that were causing compilation to fail as
 it just ran `cc a.c`. It ran it by what was once `system(q-6);` but with clang
 this was not enough.
+
+(Cody stupidly did the below manually until he thought to write a simple program
+to do the conversions which he used for `gets()` to `fgets()`.)
 
 The following had to be added to the string `s` (which to fix the segfault was
 changed from `char*s` to `char s[]`):
@@ -1076,10 +1081,58 @@ string. Thus the end of the string actually looks like:
 !.Xop.fssps!.Xop.sfuvso.uzqf!.Xop.jnqmjdju.gvodujpo.efdmbsbujpo!b/d
 ```
 
-With these changes in place it will compile and work with both gcc and clang.
+But then there is the matter of getting the C to use `fgets()`. As can be seen
+above it's not as simple as changing `gets()` to `fgets()`. This was more magic
+characters that had to be updated and some added. The C code:
+
+```c
+atoi(gets(b))
+```
+
+is in the string:
+
+```
+bupj)hfut)c**
+```
+
+which was changed to be (in C):
+
+```c
+atoi(fgets(b,99,stdin))
+```
+
+which in the program is:
+
+```
+bupj)ghfut)c-::-tuejo**
+```
+
+That's fine and well but since the code does not include `stdio.h` there
+obviously would be a compilation error. Thus the compiler line had to updated to
+have `-include stdio.h` which in this rotated string is:
+
+```
+.jodmvef!tuejp/i
+```
+
+which had to be added after:
+
+```
+efdmbsbujpo!
+```
+
+which is the end of the warning disabled for clang as described above.
+
+But now the `system(q-69);` had to be changed to `system(q-86);`.
+
+With these changes in place it will compile and work with both gcc and clang and
+the C code generated will use `fgets()`, not `gets()`, therefore removing the
+annoying warnings. Note that the array passed to `fgets()` is an int but that
+was the same for `gets()` and is not necessary to update to a `char[]`.
+
 The key to the string is that it rotates the character by `+1`. This was not
 immediately clear until reading the author's remarks so there was an alt version
-that was something of a kludge, running `make a` instead.
+that was something of a kludge, running `make a` instead but that was removed.
 
 Cody also fixed a typo in LANDER.BAS.
 

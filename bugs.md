@@ -604,18 +604,6 @@ where this occurred was fixed but this one should not be fixed. Thank you.
 
 ## 1991 dds
 
-### STATUS: uses gets() - change to fgets() if possible
-### Source code: [1991/dds/dds.c](1991/dds/dds.c)
-### Information: [1991/dds/README.md](1991/dds/README.md)
-
-The compiled code uses `gets()` not `fgets()`. Can you fix this?  It's quite
-complicated to do: the `s` array is certainly relevant and you can see a bit of
-the magic in the [thanks](/thanks-for-fixes.md) and the README.md file for how
-it works. It's easy enough to get the code to refer to `fgets()` and call it
-correctly but it might take more work to get the generated code sorted. This
-will be looked at later.
-
-
 ## 1991 westley
 
 ### STATUS: INABIAF - please **DO NOT** fix
