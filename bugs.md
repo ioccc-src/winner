@@ -231,7 +231,7 @@ Entries with this status do not work under some OSes and/or architectures (and/o
 something else?). Please help us to fix it!
 
 
-## STATUS: doesn't work with some compilers - please provide alternative code
+## STATUS: doesn't work with some compilers - please provide alternative code or fix for all compilers
 
 NOTE: we're still locating entries and working on fixes with this status so we're not yet
 ready for help. We will remove this when we are.
@@ -652,7 +652,7 @@ If you want to try and fix this (mis)feature, you are welcome to try.
 
 ## 1992 lush
 
-### STATUS: doesn't work with some compilers - please provide alternative code
+### STATUS: doesn't work with some compilers - please provide alternative code or fix for all compilers
 ### Source code: [1992/lush/lush.c](1992/lush/lush.c)
 ### Information: [1992/lush/README.md](1992/lush/README.md)
 
@@ -937,8 +937,7 @@ We would appreciate anyone who has it or even just knows the name! Thank you.
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
 this program that prevented it from working in gcc. It is known, however, that
-some compilers (like clang) will compile the code so that it enters an infinite
-loop. See the README.md file for an example command that this can happen with.
+some compilers will compile the code so that it enters an infinite loop.
 
 
 ## 1996 gandalf
