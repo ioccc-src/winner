@@ -1516,23 +1516,6 @@ to including the [IOCCC website](https://www.ioccc.org) itself.
 # 2006
 
 
-## 2006 hamre
-
-### STATUS: known bug - please help us fix
-### Source code: [2006/hamre/hamre.c](2006/hamre/hamre.c)
-### Information: [2006/hamre/README.md](2006/hamre/README.md)
-
-This program will very likely crash or do something completely irrational :-) if
-you don't supply it with an argument.
-
-As well supplying more arguments will possibly limit the number of nested
-operators supported.
-
-Don't try dividing by 0 (zero).
-
-If you want to try and fix this (mis)feature, you are welcome to try.
-
-
 ## 2006 monge
 
 ### STATUS: known bug - please help us fix
