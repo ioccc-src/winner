@@ -13,17 +13,6 @@ make all
 ```
 
 
-### Bugs and (Mis)features
-
-The current status of this entry is:
-
-```
-STATUS: known bug - please help us fix
-```
-
-For more detailed information see [1993 plummer in bugs.md](/bugs.md#1993-plummer).
-
-
 ## To use:
 
 ```sh
@@ -68,11 +57,6 @@ make clobber CDEFINE="-DZ=50" alt
 ```sh
 ./plummer.alt xyzzyzzyx 5555
 ```
-
-### INABIAF - it's not a bug it's a feature :-)
-
-This entry will very likely crash or do something else if you run it without
-enough args.
 
 
 ## Judges' remarks:

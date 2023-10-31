@@ -11,16 +11,16 @@ for i in "${@?${usage?$0 file...}}";do<"$i"||exit;done
 #
 PATH=$PATH:. a=atob m=unshark z=zcat
 r="rm -f $a $m* $z" v="cc -Wno-implicit-function-declaration -o $z $m.c"
-trap "$r;exit 1" 1 2 13 15
+trap '$r;exit 1' 1 2 13 15
 echo decoding...
-(:|compress|./btoa|$a|$z)2>$m>&2||(sed '1,9s/./#define & /
+(:|compress|./btoa|./$a|./$z)2>$m>&2||(sed '1,9s/./#define & /
 s/@/[w]/g
 s/C/char /g
 s/I/;if(/g
 s/W/;while(/g
 s/Y/%lx /g
 s/}/;}/g'>$m.c<<_&&
-FX,perror("$m bite: resend"),1;
+FX,fprintf(stderr,"$m bite: resend\n"),1;
 GgetC()
 H(w=g())
 K[69001]
@@ -43,5 +43,5 @@ Z,h@=w;n=8;f=Q+e;i=o=HIo<0)X,1;P(i)WH+1){Iw==Q&e){Z;m=n=8;f=QIH<0)X}
 c=wIw>=f)U++=i,w=oWw>=Q)U++=h@,w=t@;P(i=h@)Wp>D+Q)P(*--p)
 I(w=f)<1l<<k)t@=o,h[f++]=i;o=c}X}
 _
-($v)&&ln $z $a)&&$a<<\w>$m-&&$z<$m->$m&&tar xvf $m&&$r
+($v)&&ln -f $z $a)&&./$a<<\w>./$m-&&./$z<./$m->./$m&&tar xvf ./$m&&$r
 Z

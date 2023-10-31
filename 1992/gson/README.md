@@ -1,9 +1,6 @@
 # Most Humorous Output
 
 Andreas Gustafsson\
-Helsinki University of Technology\
-Arentikuja 1 D 305\
-00410 Helsinki\
 Finland
 
 
@@ -69,16 +66,16 @@ The name of the game:
 AG is short for either Anagram Generator or simply AnaGram.  It might also be
 construed to mean Alphabet Game, and by pure coincidence it happens to be the
 author's initials.
-\
-\
+
+
 ### What it does
-\
+
 AG takes one or more words as arguments, and tries to find anagrams of those
 words, i.e. words or sentences containing exactly the same letters.
 
 
 ### How to use it
-\
+
 To run AG, you need a dictionary file consisting of distinct words in the
 natural language of your choice, one word on each line.  If your machine doesn't
 have one already, you can make your own dictionary by concatenating a few
@@ -102,7 +99,7 @@ limit can be changed using a numeric command line option, as in
 `./ag -4 international obfuscated c code contest </usr/dict/words`.
 
 ### Bugs
-\
+
 - There is no error checking.
 - Standard input must be seekable, so you can't pipe the dictionary into AG.
 - The input sentence and each line in the dictionary may contain at most 32
@@ -115,8 +112,8 @@ less.
 
 
 ### Obfuscatory notes
-\
-As you can see, AG takes advantage of the new '92 whitespace rules to
+
+As you can see, AG takes advantage of the new '92 whitespace rules' to
 achieve a clear, readable, self-documenting layout.  The identifiers
 have been chosen in a way appropriate for an alphabet game, and common
 sources of bugs such as goto statements and malloc/free have been
@@ -124,135 +121,139 @@ eliminated.  As AG also refrains from abusing the preprocessor, it
 doesn't really have much to offer in terms of "surface obfuscation".
 Instead, it tries to achieve both its speed and its obscurity through a
 careful choice of algorithms.  Some of the finer points of those
-algorithms are outlined in the rot-13 encoded spoiler below.
+algorithms are outlined in the spoiler below.
 
 ### How it works:  (ROT13 to read)
 
+Here follows a description of some of the data structures and
+algorithms used by AG.  It is by no means complete, but it may help
+you get an idea about the general principles.
 
-	Urer sbyybjf n qrfpevcgvba bs fbzr bs gur qngn fgehpgherf naq
-	nytbevguzf hfrq ol NT.  Vg vf ol ab zrnaf pbzcyrgr, ohg vg znl uryc
-	lbh trg na vqrn nobhg gur trareny cevapvcyrf.
-\
-	--
-\
-	Vagreanyyl, NT ercerfragf jbeqf naq fragraprf nf neenlf bs 32
-	4-ovg vagrtre ryrzragf.  Rnpu ryrzrag ercerfragf gur ahzore bs
-	gvzrf n yrggre bpphef va gur jbeq/fragrapr.  Gurer ner 32 ryrzragf
-	orpnhfr 32 vf n pbairavrag cbjre bs gjb ynetre guna gur ahzore bs
-	yrggref va zbfg jrfgrea nycunorgf, naq gur ryrzragf ner 4 ovgf
-	rnpu orpnhfr gur fnzr yrggre vf hayvxryl gb bpphe zber guna 15
-	gvzrf va n cenpgvpny nantenz trarengvba ceboyrz.
-\
-	Gurfr 32*4-ovg neenlf ner npghnyyl fgberq va zrzbel va n
-	"ovg-genafcbfrq" sbezng, nf neenlf bs sbhe "ybat" inyhrf.  Vg vf
-	nffhzrq gung n "ybat" vf ng yrnfg 32 ovgf.  Gur svefg 4-ovg yrggre
-	pbhag vf sbezrq ol gur yrnfg fvtavsvpnag (2^0) ovg va rnpu bs gur
-	sbhe ybatf, gur arkg bar vf sbezrq ol gur 2^1 ovgf, rgp.
-\
-	Guvf fgbentr sbezng znxrf vg cbffvoyr gb nqq be fhogenpg gjb fhpu
-	irpgbef bs 32 4-ovg inyhrf va cnenyyry ol fvzhyngvat n frg bs 32
-	ovanel shyy nqqref va fbsgjner hfvat ovgjvfr ybtvpny bcrengvbaf.
-	R.t., nyy gur YFO:f bs gur erfhyg ner sbezrq va cnenyyry ol gnxvat
-	gur rkpyhfvir BE bs gur YFO:f va rnpu fhzznaq, naq 32 pneel ovgf
-	ner sbezrq va cnenyyry va n fvzvyne jnl hfvat n ybtvpny NAQ.
-	Guhf, 32 vaqrcraqrag 4-ovg nqqvgvbaf pna or cresbezrq ol whfg sbhe
-	vgrengvbaf bs n ybbc pbagnvavat fbzr 32-ovg ovgjvfr ybtvpny
-	bcrengvbaf, ohg ab nevguzrgvp bcrengvbaf bgure guna gubfr vzcyvrq
-	ol neenl vaqrkvat.
-\
-	Fhogenpgvba jbexf fvzvyneyl, naq va snpg NT bayl vzcyrzragf
-	fhogenpgvba qverpgyl, unaqyvat nqqvgvba ol zrnaf bs gur vqragvgl
-	n+o = n-(0-o).
-\
-	Va nqqvgvba gb guvf 32*4-ovg ercerfragngvba, NT nyfb sbezf n fb-pnyyrq
-	"fvtangher" gung vf gur ovgjvfr BE bs gur sbhe ybatf, juvpu vf
-	rdhvinyrag gb fnlvat gung gur fvtangher bs n jbeq pbagnvaf n ybtvpny 1
-	va gur ovg cbfvgvbaf pbeerfcbaqvat gb yrggref bppheevat ng yrnfg bapr
-	va gung jbeq.
-\
-	Gur svefg guvat NT qbrf vf gb pbafgehpg n ybbxhc gnoyr bs 256
-	ybatf, bar sbe rnpu 8-ovg punenpgre inyhr.  Gur ragel sbe n
-	punenpgre jvyy or mreb vs gung punenpgre qbrfa'g nccrne va gur
-	fragrapr tvira ba gur pbzznaq yvar, be vg jvyy unir n fvatyr ovg
-	frg vs gur punenpgre qbrf nccrne va gur fragrapr.  Ol nqqvat
-	gbtrgure gur ovg znfxf sbe nyy gur yrggref va gur vachg fragrapr
-	hfvat gur genafcbfr nqqvgvba zrgubq qrfpevorq nobir, NT sbezf gur
-	32*4 ovg neenl ercerfragngvba bs gur vachg fragrapr.
-\
-	Gur arkg npgvba cresbezrq vf ernqvat gur qvpgvbanel.  Gubfr jbeqf gung
-	pbagnva yrggref abg va gur vachg fragrapr ner vzzrqvngryl qvfpneqrq.
-	Jbeqf pbagnvavat gur evtug yrggref ohg va rkprffvir ahzoref ner
-	ryvzvangrq va n frcnengr purpx vaibyivat gur 32*4 ovg neenl.
-\
-	Gur erznvavat jbeqf, juvpu jvyy or ersreerq gb nf "pnaqvqngr jbeqf",
-	ner fgberq va 32*4-ovg ercerfragngvba, gbtrgure jvgu gurve fvtangherf\
-	naq bssfrgf vagb gur qvpgvbanel svyr fb gung gur cynva-grkg irefvba bs
-	n jbeq pna yngre or sbhaq sbe cevagvat.  Guvf vasbezngvba vf xrcg va n
-	ybpny "fgehpg" va gur qvpgvbanel-ernqvat shapgvba, naq zrzbel vf
-	nyybpngrq sbe rnpu pnaqvqngr jbeq fvzcyl ol znxvat nabgure erphefvir
-	pnyy gb gung shapgvba.
-\
-	Rnpu fgehpg fb nyybpngrq vf yvaxrq vagb n svkrq-fvmr unfu gnoyr bs
-	4096 ragevrf vaqrkrq ol gur 12 ybj ovgf bs gur jbeq'f fvtangher.\
-	Jura gur qvpgvbanel-ernqvat shapgvba rapbhagref raq-bs-svyr, nyy gur
-	pnaqvqngr jbeqf unir orra fgberq va arfgrq npgvingvba erpbeqf ba gur
-	fgnpx, npprffvoyr guebhtu gur unfu gnoyr.
-\
-	Trarengvat gur nantenzf vf gura qbar ol genirefvat gur unfu gnoyr naq
-	fhogenpgvat gur yrggref bs rnpu jbeq va gur unfu gnoyr sebz gur
-	"pheerag fragrapr", juvpu vavgvnyyl vf gur fragrapr tvira ba gur
-	pbzznaq yvar.
-\
-	Gur fhogenpgvba vf cresbezrq va cnenyyry ba gur 4-ovg yrggre pbhagf
-	nf qrfpevorq nobir, naq vs nyy 32 erfhygf ner mreb, na nantenz unf
-	orra sbhaq.  Vs gur erfhyg vf artngvir sbe bar be zber bs gur yrggref
-	(nf vaqvpngrq ol bar be zber "1" va n irpgbe bs 32 obeebj ovgf
-	erghearq ol gur fhogenpgvba ebhgvar), gur jbeq qvq abg zngpu gur
-	pheerag fragrapr naq vf vtaberq.  Svanyyl, vs gur erfhyg pbagnvarq
-	bayl abaartngvir yrggre pbhagf, jr unir sbhaq n cnegvny nantenz:\
-	n jbeq pbagnvavat fbzr, ohg abg nyy, bs gur yrggref va gur pheerag
-	fragrapr.  Va guvf pnfr jr erphefviryl gel gb svaq na nantenz bs gur
-	erznvavat yrggref.  Gur qrcgu bs gur erphefvba vf yvzvgrq gb gur
-	znkvzhz ahzore bs jbeqf va gur nantenz, nf fcrpvsvrq ol gur hfre.
-\
-	Jura gur qrrcrfg erphefvba yriry unf orra ernpurq, na bcgvzvmngvba pna
-	or nccyvrq: orpnhfr ab shegure erphefvba jvyy or qbar, gurer vf ab
-	arrq gb ybbx sbe cnegvny nantenzf, naq gurersber NT bayl arrqf gb
-	purpx sbe jbeqf gung pbagnva rknpgyl gur fnzr yrggref nf gur pheerag
-	fragrapr.  Gubfr jbeqf pna or sbhaq fvzcyl ol vaqrkvat gur unfu gnoyr
-	jvgu gur fvtangher bs gur pheerag fragrapr.
-\
-	Rira jura abg ba gur qrrcrfg erphefvba yriry, NT trarenyyl nibvqf
-	rknzvavat nyy gur ragevrf bs gur unfu gnoyr.  Gur vqrn vf gung jr ner
-	abg vagrerfgrq va unfu ohpxrgf jubfr jbeqf pbagnva nal yrggref abg
-	va gur pheerag fragrapr; gurfr ohpxrgf ner rknpgyl gubfr jubfr vaqrk
-	unf n ybtvpny bar va n ovg cbfvgvba jurer gur fvtangher bs gur pheerag
-	fragrapr unf n mreb.  Chg nabgure jnl, jr jnag gb ybbc guebhtu bayl
-	gubfr unfu ohpxrg vaqvprf "v" gung pbagnva mrebrf va nyy gur ovg
-	cbfvgvbaf jurer gur fvtangher "f" bs gur pheerag fragrapr pbagnvaf
-	n mreb; guvf pna or rkcerffrq va P nf (v & ~f == 0).
-\
-	Vg vf cbffvoyr gb ybbc guebhtu nyy fhpu ahzoref va na rssvpvrag jnl ol
-	gnxvat nqinagntr bs pregnva cebcregvrf bs ovanel nevguzrgvp: ol
-	sbepvat gur ovgf pbeerfcbaqvat gb mrebrf va "f" gb barf, jr pna znxr
-	gur pneevrf trarengrq va vaperzragvat "v" cebcntngr fgenvtug npebff
-	gubfr ovgf gung fubhyq erznva mreb.  Sbe rknzcyr, gur sbyybjvat
-	cebtenz cevagf nyy gubfr 16-ovg vagrtref gung pbagnva mrebrf va nyy
-	rira ovg cbfvgvbaf:
-\
-	    znva(){vag v=0,f=0kNNNN;qb{cevags("%04k\g",v);}juvyr(v=((v|~f)+1)&f);}
-\
-	NT hfrf n fvzvyne zrgubq ohg jbexf va gur bccbfvgr qverpgvba, svaqvat
-	gur arkg ybjre inyhr jvgu mrebrf va tvira ovg cbfvgvbaf ol cebcntngvat
-	obeebjf npebff gubfr ovgf.  Fbzr nqqvgvbany nqwhfgzragf ner znqr
-	gb gur unfu gnoyr vaqrk jura vavgvngvat n erphefvir frnepu, hfvat
-	fvzvyne ovg-gjvqqyvat grpuavdhrf.
-\
-	Jurarire na nantenz unf orra sbhaq, vg vf cevagrq ol genirefvat n
-	yvaxrq yvfg sbezrq ol fgehpgf va gur npgvingvba erpbeqf bs gur
-	erphefvir vaibpngvbaf bs gur frnepu shapgvba, frrxvat gb gur ortvaavat
-	bs gur jbeq zngpurq ol gung vaibpngvba, naq pbclvat gur punenpgref bs
-	gur jbeq qverpgyl sebz fgnaqneq vachg gb fgnaqneq bhgchg.
+--
+
+Internally, AG represents words and sentences as arrays of 32
+4-bit integer elements.  Each element represents the number of
+times a letter occurs in the word/sentence.  There are 32 elements
+because 32 is a convenient power of two larger than the number of
+letters in most western alphabets, and the elements are 4 bits
+each because the same letter is unlikely to occur more than 15
+times in a practical anagram generation problem.
+
+These `32*4`-bit arrays are actually stored in memory in a
+"bit-transposed" format, as arrays of four "long" values.  It is
+assumed that a "long" is at least 32 bits.  The first 4-bit letter
+count is formed by the least significant (2^0) bit in each of the
+four longs, the next one is formed by the 2^1 bits, etc.
+
+This storage format makes it possible to add or subtract two such
+vectors of 32 4-bit values in parallel by simulating a set of 32
+binary full adders in software using bitwise logical operations.
+E.g., all the LSB:s of the result are formed in parallel by taking
+the exclusive OR of the LSB:s in each summand, and 32 carry bits
+are formed in parallel in a similar way using a logical AND.
+Thus, 32 independent 4-bit additions can be performed by just four
+iterations of a loop containing some 32-bit bitwise logical
+operations, but no arithmetic operations other than those implied
+by array indexing.
+
+Subtraction works similarly, and in fact AG only implements
+subtraction directly, handling addition by means of the identity
+`a+b = a-(0-b)`.
+
+In addition to this `32*4`-bit representation, AG also forms a so-called
+"signature" that is the bitwise OR of the four longs, which is
+equivalent to saying that the signature of a word contains a logical 1
+in the bit positions corresponding to letters occurring at least once
+in that word.
+
+The first thing AG does is to construct a lookup table of 256
+longs, one for each 8-bit character value.  The entry for a
+character will be zero if that character doesn't appear in the
+sentence given on the command line, or it will have a single bit
+set if the character does appear in the sentence.  By adding
+together the bit masks for all the letters in the input sentence
+using the transpose addition method described above, AG forms the
+`32*4` bit array representation of the input sentence.
+
+The next action performed is reading the dictionary.  Those words that
+contain letters not in the input sentence are immediately discarded.
+Words containing the right letters but in excessive numbers are
+eliminated in a separate check involving the `32*4` bit array.
+
+The remaining words, which will be referred to as "candidate words",
+are stored in `32*4`-bit representation, together with their signatures\
+and offsets into the dictionary file so that the plain-text version of
+a word can later be found for printing.  This information is kept in a
+local "struct" in the dictionary-reading function, and memory is
+allocated for each candidate word simply by making another recursive
+call to that function.
+
+Each struct so allocated is linked into a fixed-size hash table of
+4096 entries indexed by the 12 low bits of the word's signature.\
+When the dictionary-reading function encounters end-of-file, all the
+candidate words have been stored in nested activation records on the
+stack, accessible through the hash table.
+
+Generating the anagrams is then done by traversing the hash table and
+subtracting the letters of each word in the hash table from the
+"current sentence", which initially is the sentence given on the
+command line.
+
+The subtraction is performed in parallel on the 4-bit letter counts
+as described above, and if all 32 results are zero, an anagram has
+been found.  If the result is negative for one or more of the letters
+(as indicated by one or more "1" in a vector of 32 borrow bits
+returned by the subtraction routine), the word did not match the
+current sentence and is ignored.  Finally, if the result contained
+only non-negative letter counts, we have found a partial anagram:\
+a word containing some, but not all, of the letters in the current
+sentence.  In this case we recursively try to find an anagram of the
+remaining letters.  The depth of the recursion is limited to the
+maximum number of words in the anagram, as specified by the user.
+
+When the deepest recursion level has been reached, an optimization can
+be applied: because no further recursion will be done, there is no
+need to look for partial anagrams, and therefore AG only needs to
+check for words that contain exactly the same letters as the current
+sentence.  Those words can be found simply by indexing the hash table
+with the signature of the current sentence.
+
+Even when not on the deepest recursion level, AG generally avoids
+examining all the entries of the hash table.  The idea is that we are
+not interested in hash buckets whose words contain any letters not
+in the current sentence; these buckets are exactly those whose index
+has a logical one in a bit position where the signature of the current
+sentence has a zero.  Put another way, we want to loop through only
+those hash bucket indices "i" that contain zeroes in all the bit
+positions where the signature "s" of the current sentence contains
+a zero; this can be expressed in C as (i & ~s == 0).
+
+It is possible to loop through all such numbers in an efficient way by
+taking advantage of certain properties of binary arithmetic: by
+forcing the bits corresponding to zeroes in "s" to ones, we can make
+the carries generated in incrementing "i" propagate straight across
+those bits that should remain zero.  For example, the following
+program prints all those 16-bit integers that contain zeroes in all
+even bit positions:
+
+
+```c
+main(){int i=0,s=0xAAAA;do{printf("%04x\t",i);}while(i=((i|~s)+1)&s);}
+```
+
+
+AG uses a similar method but works in the opposite direction, finding
+the next lower value with zeroes in given bit positions by propagating
+borrows across those bits.  Some additional adjustments are made
+to the hash table index when initiating a recursive search, using
+similar bit-twiddling techniques.
+
+Whenever an anagram has been found, it is printed by traversing a
+linked list formed by structs in the activation records of the
+recursive invocations of the search function, seeking to the beginning
+of the word matched by that invocation, and copying the characters of
+the word directly from standard input to standard output.
+
 
 
 ## Copyright and CC BY-SA 4.0 License:

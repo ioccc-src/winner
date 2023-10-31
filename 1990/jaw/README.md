@@ -67,7 +67,7 @@ shark.sh, contains a 'jaw.c' embedded within it!
 The sender must have `compress` and `btoa`. To send, try:
 
 ```sh
-sh shark.sh jaw.* README.md > receive
+./shark.sh jaw.* README.md > receive
 ```
 
 The resulting file, `receive`, unpacks the input files
@@ -86,7 +86,7 @@ cmp ../README.md README.md
 ### ABSTRACT
 
 #### Minimal, Universal File Bundling (or, Functional Obfuscation in a Self-Decoding Unix Shell Archive)
-\
+
 James A. Woods\
 Universities Space Research Association\
 NASA Ames Research Center
@@ -94,7 +94,7 @@ NASA Ames Research Center
 ---
 
 > "Use an algorithm, go to jail."
->\
+>
 > -- anon., circa 1988, pre-Morris worm era
 
 ----
@@ -134,7 +134,7 @@ environment.
 >   And he shows them pearly white
 >   Just a jackknife has Macheath, dear--
 >   And he keeps it out of sight.
->\
+>
 >   -- Bertolt Brecht, Threepenny Opera
 
 ----------------------------------------------

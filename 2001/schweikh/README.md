@@ -16,7 +16,7 @@ make
 The current status of this entry is:
 
 ```
-STATUS: known bug - please help us fix
+STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2001 schweikh in bugs.md](/bugs.md#2001-schweikh).

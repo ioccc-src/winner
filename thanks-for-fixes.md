@@ -21,9 +21,9 @@ CHALLENGING bug fixes** like
 (all **EXTREMELY CHALLENGING**), fixing entries to work with clang (some being
 **EXTREMELY CHALLENGING** like
 [1991/dds](/thanks-for-fixes.md#1991dds-readmemd)) or as much as possible (like
-[1989/westley](/thanks-for-fixes.md#1989westley-readmemd) which is **INCREDIBLY
-HARD, _MUCH, MUCH MORE SO_ than any other fix!**), porting entries to macOS (some being
-**EXTREMELY CHALLENGING** like
+[1989/westley](/thanks-for-fixes.md#1989westley-readmemd), a true masterpiece
+that is **INCREDIBLY HARD, _MUCH, MUCH MORE SO_ than any other fix!**), porting
+entries to macOS (some being **EXTREMELY CHALLENGING** like
 [1998/schweikh1](/thanks-for-fixes.md#1998schweikh1-readmemd)), fixing code like
 [2001/herrmann2](/thanks-for-fixes.md#2001herrmann2-readmemd) to work in both
 32-bit/64-bit which *can be* **EXTREMELY CHALLENGING**, providing alternate code
@@ -179,6 +179,15 @@ To see the difference from start to fixed:
 ```sh
 cd 1984/decot ; make diff_orig_prog
 ```
+
+## [1984/laman](1984/laman/laman.c) ([README.md](1984/laman/README.md]))
+
+Cody fixed this to not crash when no arg is specified. Note that if the arg is
+not a positive number it will not do anything useful or anything at all.
+
+This was fixed on 30 October 2023 after the bug status was changed from INABIAF
+(it's not a bug it's a feature) to bug.
+
 
 ## [1984/mullender](1984/mullender/mullender.c) ([README.md](1984/mullender/README.md]))
 
@@ -924,9 +933,15 @@ With these improvements the entry looks much more like the original!
 ## [1990/jaw](1990/jaw/jaw.c) ([README.md](1990/jaw/README.md]))
 
 Cody fixed the script to work properly in modern environments (to do with `$PATH`
-not having `.` in it). He notes that with an invocation in the try section will
-with macOS show what appears to be an error message but is actually okay. He
-gives more information in the [bugs.md](/bugs.md) file.
+not having `.` in it). Other adjustments were made as well.
+
+He also changed the `perror(3)` call to `fprintf(3)` because in macOS when errno
+is 0 it shows what looks like an error.
+
+He added the [try.sh](1990/jaw/try.sh) to run the commands that we suggested at
+the time. However, there is a known bug still, see [bugs.md](bugs.md) for
+details.
+
 
 NOTE: as `btoa` is not common we used a ruby script from Yusuke.
 
@@ -1006,6 +1021,11 @@ was changed to just `1`.  Since it's instructional to see the differences he has
 provided an alternate version, [westley.alt.c](1990/westley/westley.alt.c), which
 is the original code.
 
+He also fixed the code to not enter an infinite loop if arg is a number not > 0
+and to not crash if no arg is specified.
+
+The alt code did NOT have arg checks added as it is actually a copy of the
+original code.
 
 ## [1991/brnstnd](1991/brnstnd/brnstnd.c) ([README.md](1991/brnstnd/README.md]))
 
@@ -1023,10 +1043,17 @@ slightly more like the original, even though it's unused.
 ## [1991/dds](1991/dds/dds.c) ([README.md](1991/dds/README.md]))
 
 Cody fixed a segfault that prevented this entry from working in any condition
-and he also made it work for clang. Clang (at least in some systems?) defaults
-to having `-Werror` and the code that the entry generates had some warnings
-that were causing compilation to fail as it just ran `cc a.c`. It ran it by what
-was once `system(q-6);` but with clang this was not enough..
+and he also made it work for clang. He also added checks for NULL `FILE *`s.
+Furthermore he changed it so that the C from the BASIC uses `fgets()`, not
+`gets()`. For the magic of clang and `fgets()` see below.
+
+Clang (at least in some systems?) defaults to having `-Werror` and the code that
+the entry generates had some warnings that were causing compilation to fail as
+it just ran `cc a.c`. It ran it by what was once `system(q-6);` but with clang
+this was not enough.
+
+(Cody stupidly did the below manually until he thought to write a simple program
+to do the conversions which he used for `gets()` to `fgets()`.)
 
 The following had to be added to the string `s` (which to fix the segfault was
 changed from `char*s` to `char s[]`):
@@ -1054,10 +1081,58 @@ string. Thus the end of the string actually looks like:
 !.Xop.fssps!.Xop.sfuvso.uzqf!.Xop.jnqmjdju.gvodujpo.efdmbsbujpo!b/d
 ```
 
-With these changes in place it will compile and work with both gcc and clang.
+But then there is the matter of getting the C to use `fgets()`. As can be seen
+above it's not as simple as changing `gets()` to `fgets()`. This was more magic
+characters that had to be updated and some added. The C code:
+
+```c
+atoi(gets(b))
+```
+
+is in the string:
+
+```
+bupj)hfut)c**
+```
+
+which was changed to be (in C):
+
+```c
+atoi(fgets(b,99,stdin))
+```
+
+which in the program is:
+
+```
+bupj)ghfut)c-::-tuejo**
+```
+
+That's fine and well but since the code does not include `stdio.h` there
+obviously would be a compilation error. Thus the compiler line had to updated to
+have `-include stdio.h` which in this rotated string is:
+
+```
+.jodmvef!tuejp/i
+```
+
+which had to be added after:
+
+```
+efdmbsbujpo!
+```
+
+which is the end of the warning disabled for clang as described above.
+
+But now the `system(q-69);` had to be changed to `system(q-86);`.
+
+With these changes in place it will compile and work with both gcc and clang and
+the C code generated will use `fgets()`, not `gets()`, therefore removing the
+annoying warnings. Note that the array passed to `fgets()` is an int but that
+was the same for `gets()` and is not necessary to update to a `char[]`.
+
 The key to the string is that it rotates the character by `+1`. This was not
 immediately clear until reading the author's remarks so there was an alt version
-that was something of a kludge, running `make a` instead.
+that was something of a kludge, running `make a` instead but that was removed.
 
 Cody also fixed a typo in LANDER.BAS.
 
@@ -1122,6 +1197,10 @@ one must keep the `Y[strlen(Y)-1]='\0';` part and keep it there.
 This is a complex change due to the way the program and Makefile generate
 additional tools.
 
+## [1992/buzzard.1](1992/buzzard.1/buzzard.1.c) ([README.md](1992/buzzard.1/README.md))
+
+Cody added a check for the right number of args, exiting 1 if not enough (2)
+used.
 
 ## [1992/gson](1992/gson/gson.c) ([README.md](1992/gson/README.md]))
 
@@ -1131,7 +1210,7 @@ from stdin after starting the program). Ideally `fgets()` would be used but this
 is a more problematic.  Previously it had a buffer size of 256 which could
 easily overflow. In this entry `gets()` is used in a more complicated way:
 first `m` is set to `*++p` in a for loop where `p` is argv. Later `m` is set to
-point to `h` which was of size \256. `gets()` is called as `m = gets(m)`) but
+point to `h` which was of size 256. `gets()` is called as `m = gets(m)`) but
 trying to change it to use `fgets()` proved more a problem. Since the input must
 come from the command line Cody changed the buffer size to `ARG_MAX+1` which
 should be enough (again theoretically) especially since the command expects
@@ -1139,6 +1218,9 @@ redirecting a dictionary file as part of the command line. This also makes it
 possible for longer strings to be read (in case the `gets()` was not used in a
 loop).
 
+Cody also added the [mkdict.sh](1992/gson/mkdict.sh) script that the author
+included in their remarks. See the README.md for its purpose. It was NOT fixed
+for ShellCheck because the author deliberately obfuscated it.
 
 ## [1992/kivinen](1992/kivinen/kivinen.c) ([README.md](1992/kivinen/README.md]))
 
@@ -1197,15 +1279,18 @@ Cody fixed this to work for clang by changing the third and fourth arg of
 **` and some versions do not even allow a fourth arg.
 
 He also added the alternate version that the author gave in the remarks that is
-specifically for the USA rather than the world.
+specifically for the USA rather than the world. This had to be fixed for clang
+as well to make the args of `main()` be the correct type and by moving the body
+of main() to another function, `pain()`, which does the work since not all
+versions of clang support four args to `main()`.
 
-NOTE: as noted in the README.md file and the [bugs.md](/bugs.md), this program and the
-[alternate version](1992/westley/westley.alt.c) will very likely crash or
-[nuke](https://en.wikipedia.org/wiki/Nuclear_weapon) the [entire
+Cody also added an arg check because the program and the
+[alternate version](1992/westley/westley.alt.c) might have crashed or
+[nuked](https://en.wikipedia.org/wiki/Nuclear_weapon) the [entire
 world](https://en.wikipedia.org/wiki/Earth) or just the
 [USA](https://en.wikipedia.org/wiki/United_States), respectively, without enough
-args (2). And not that we need the help or anything for this :-) but we do
-encourage you to test this :-) This should NOT be fixed.
+args (2). And not that we need the help or anything for this :-) but we
+encourage you to try the original :-)
 
 
 ## [1993/jonth](1993/jonth/jonth.c) ([README.md](1993/jonth/README.md]))
@@ -1239,9 +1324,11 @@ this was made the alternate version, not the actual entry.
 
 ## [1993/plummer](1993/plummer/plummer.c) ([README.md](1993/plummer/README.md]))
 
-Cody added an [alternate version](1993/plummer/plummer.alt.c) which uses
-`usleep()` so you can see what is happening with faster systems. See the
-README.md files for details.
+Cody added check for two args.
+
+Cody also added an [alternate version](1993/plummer/plummer.alt.c) which uses
+`usleep()` so you can see what is happening with faster systems. This version
+also checks for two args. See the README.md files for details.
 
 
 ## [1993/rince](1993/rince/rince.c) ([README.md](1993/rince/README.md]))
@@ -1276,6 +1363,12 @@ variable (an int) at the top of the file, instead making it a `char **` in
 arg (as it was 0 at file scope already this is perfectly fine and it means
 there's no need to cast it to an int in the function call though that would also
 work).
+
+## [1994/horton](1994/horton/horton.c) ([README.md](1994/horton/README.md))
+
+Cody fixed this to check that four args were specified. With the use of the C
+pre-processor macro and inclusion of stdlib.h in the Makefile the layout of the
+source is exactly the same column width and no additional lines were added.
 
 
 ## [1994/ldb](1994/ldb/ldb.c) ([README.md](1994/ldb/README.md]))
@@ -1739,6 +1832,7 @@ letter word that would match the format and because it's pain that clang forces
 this. :-) This fix makes a point of the author's notes on portability no longer
 valid, btw.
 
+He also fixed it to check the number of args.
 
 ## [2001/coupard](2001/coupard/coupard.c) ([README.md](2001/coupard/README.md]))
 
@@ -1817,6 +1911,16 @@ the paddles move even when holding down the movement keys.
 
 Cody also provided an alternate version which lets you use the arrow keys on
 your keyboard instead of the more awkward '`,`' and '`.`'.
+
+## [2001/ollinger](2001/ollinger/ollinger.c) ([README.md](2001/ollinger/README.md))
+
+Cody fixed to not crash if not enough args, exiting 1 instead.
+
+## [2001/schweikh](2001/schweikh/schweikh.c) ([README.md](2001/schweikh/README.md]))
+
+Cody fixed this to not crash if not enough args as this was not documented by
+the author. The other problems are documented so were not fixed. See
+README.md for details.
 
 
 ## [2001/westley](2001/westley/westley.c) ([README.md](2001/westley/README.md]))
@@ -2141,6 +2245,11 @@ by default.
 Since the author suggested that the lack of certain `#include`s might break the
 program in some systems he added `-include ...` to the Makefile as well.
 
+
+## [2006/stewart](2006/stewart/stewart.c) ([README.md](2006/stewart/README.md]))
+
+Cody fixed it so that if the file cannot be opened it exits rather than trying
+to read from the file.
 
 ## [2006/toledo2](2006/toledo2/toledo2.c) ([README.md](2006/toledo2/README.md]))
 

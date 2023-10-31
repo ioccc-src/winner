@@ -59,11 +59,11 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE=
+CDEFINE= -DE='exit(1)' -DA=argc
 
 # Include files that are needed to compile
 #
-CINCLUDE=
+CINCLUDE= -include stdlib.h
 
 # Optimization
 #

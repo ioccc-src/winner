@@ -394,19 +394,15 @@ An example where a crash is not a bug: [2019/endoh](2019/endoh/endoh.c) is
 supposed to crash. There are others that are also supposed to crash or that are
 known to segfault but are considered features.
 
-As of 10 April 2023 the definition changed for a second time (the first time was
-07 April 2023). If something is noted by the author as a known bug or limitation
-it need not be fixed **unless it impacts the usability** of the program or **it removes
-instructional value**. An example where a crash undocumented needn't be fixed is
-[1984/laman](1984/laman/laman.c).  On the other hand the fixes made by [Cody
-Boone Ferguson](/winners.html#Cody_Boone_Ferguson) in
-[1990/theorem](1990/theorem/theorem.c) were useful.
+An important note is that if the README.md of the entry has a bug status that
+says it can be fixed it can be. Otherwise it should not be.
 
 Nonetheless we challenge you to fix these entries for educational/instructional
 value and/or enjoyment but we kindly request that you **DO NOT** submit a pull
-request! If you can't figure it out you're invited to look at the git diffs,
-where there are some (some were fixed earlier on but rolled back as both Cody
-and Landon individually felt that the fix was tampering with the entry).
+request unless it's a bug or (mis)feature we would like you to fix! If you can't
+figure it out you're invited to look at the git diffs, where there are some
+(some were fixed earlier on but rolled back as both Cody and Landon individually
+felt that the fix was tampering with the entry).
 
 NOTE: in the case of `gets()` we've fixed some to avoid the warning of the
 compiler, linker or even during runtime, depending on the system. In [some cases
@@ -466,24 +462,15 @@ $ ./decot
 without a newline after the `\`. This is not a bug.
 
 
-## 1984 laman
-
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1984/laman/laman.c](1984/laman/laman.c)
-### Information: [1984/laman/README.md](1984/laman/README.md)
-
-This entry will very likely crash or do something else if you run it without an
-arg. It likely won't do anything at all if the arg is not a positive number.
-
-
 ## 1984 mullender
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1984/mullender/mullender.c](1984/mullender/mullender.c)
 ### Information: [1984/mullender/README.md](1984/mullender/README.md)
 
-Although there are two alt versions added by Cody that will work in modern
-systems, if you do not have a [VAX-11](https://en.wikipedia.org/wiki/VAX-11) or
+Although there is an alt version and supplementary program added by Cody that
+will work in modern systems, if you do not have a
+[VAX-11](https://en.wikipedia.org/wiki/VAX-11) or
 [PDP-11](https://en.wikipedia.org/wiki/PDP-11) to run the original entry on it
 will not work. See the README.md for details on the alternate versions.
 
@@ -579,9 +566,24 @@ It should be noted that in additional to rot13 names there is code that is the
 reverse of other code (also wrt names). See the source file and the README.md
 (in the author's remarks) for more details.
 
-Fixing the (Mis)feature is likely to be a difficult challenge.
-You are welcome to try and fix it if you can!
+Fixing the (Mis)feature is likely to be a very difficult challenge.  You are
+welcome to try and fix it if you can!
 
+### A tip from Cody:
+
+The reason this is crashing is that the array `irk` is being accessed way out of
+bounds by the int `gnat`. For instance:
+
+```
+Program terminated with signal SIGSEGV, Segmentation fault.
+#0  0x0000000000401335 in main (ABBA@entry=<optimized out>, tang@entry=<optimized out>, gnat@entry=<optimized out>, Near@entry=<optimized out>)
+    at ver2.c:23
+23	&&gnat!({)Near,noon,/*krelc*/)<0&&(Near= -  	irk[-gnat--]-2)))&&main(ABBA,
+(gdb) p gnat
+$1 = -518733305
+```
+
+The real trouble is that the code is generated and in a complex way.
 
 # 1990
 
@@ -592,46 +594,11 @@ You are welcome to try and fix it if you can!
 ### Source code: [1990/jaw/jaw.c](1990/jaw/jaw.c)
 ### Information: [1990/jaw/README.md](1990/jaw/README.md)
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the scripts to
-work in modern systems. He notes however that the command in the try section,
-the one to test the official C entry, **appears** (the keyword!) to not work
-with macOS, giving:
-
-
-```sh
-$ echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
-oops: Undefined error: 0
-oops: Undefined error: 0
-```
-
-However this is because the entry uses `perror()` and it just so happens that
-the default `errno` of 0 gives that result. For instance if you run the
-following C program under macOS you will get undefined error but if you do it
-under Linux you'll likely get success.
-
-
-```c
-#include <stdio.h>
-#include <errno.h>
-#include <string.h>
-int main()
-{
-    errno = 0;
-    printf("%d, %s\n", errno, strerror(errno));
-}
-```
-
-In fact the condition which is in the `a()` function on line 18 of the entry
-namely:
-
-	I k>16)
-
-is true on both linux and macOS, with `k` being equal to 22!
-
-Should the entry use `perror()`? Perhaps not but we're not sure of its purpose
-so it should stay with this note.
-
-If you want to try and fix this (mis)feature, you are welcome to try.
+It seems like the scripts do not work correctly, where not all files are
+extracted. Some work was done to get them to work some but it does not appear
+that all files can be extracted. For instance in the [try.sh](1990/jaw/try.sh)
+script which Cody added it is supposed to add the README.md file to the archive
+and it did at one point (or so he recalls) but now it doesn't seem to happen.
 
 
 ## 1990 theorem
@@ -647,42 +614,10 @@ will enter an infinite loop, printing 0 over and over again; another condition
 where this occurred was fixed but this one should not be fixed. Thank you.
 
 
-## 1990 westley
-
-### STATUS: known bug - please help us fix
-### Source code: [1990/westley/westley.c](1990/westley/westley.c)
-### Information: [1990/westley/README.md](1990/westley/README.md)
-
-This entry will very likely crash or do something strange without an arg.
-
-This entry will also enter an infinite loop if input is not a number > 0.
-
-If you want to try and fix this (mis)feature, you are welcome to try.
-
-
 # 1991
 
 
 ## 1991 dds
-
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1991/dds/dds.c](1991/dds/dds.c)
-### Information: [1991/dds/README.md](1991/dds/README.md)
-
-If the BASIC file cannot be opened for reading or the output file cannot be
-opened for writing the program will very likely crash or do something funny.
-This is not a bug but a feature.  Please do not fix this except for the
-challenge to yourself.
-
-### STATUS: uses gets() - change to fgets() if possible
-
-That being said the compiled code uses `gets()` not `fgets()`. Can you fix this?
-It's quite complicated to do: the `s` array is certainly relevant and you can
-see a bit of the magic in the [thanks](/thanks-for-fixes.md) and the README.md
-file for how it works. It's easy enough to get the code to refer to `fgets()`
-and call it correctly but it might take more work to get the generated code
-sorted. This will be looked at later.
-
 
 ## 1991 westley
 
@@ -695,21 +630,11 @@ someone called Cody's late grandmother said to him: 'it's not cheating unless
 you're caught'. :-)
 
 Please don't try and fix it as it's not a bug and was actually documented as a
-possibility. Can you find out how?
-
+possibility. Can you find out how? There's also a way to make it so that even
+when you're cheating it ends up winning! Can you figure that out as well?
 
 
 # 1992
-
-## 1992 buzzard.1
-
-### STATUS: known bug - please help us fix
-### Source code: [1992/buzzard.1/buzzard.1.c](1992/buzzard.1/buzzard.1.c)
-### Information: [1992/buzzard.1/README.md](1992/buzzard.1/README.md)
-
-This entry will crash without enough args (2).
-
-If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 ## 1992 kivinen
@@ -798,36 +723,17 @@ lush.c:40:9: note: previous definition is here
 
 As you might see the part under the `warning:` line is different.
 
+The entry is supposed to show warnings and then print:
+
+```
+Hello World.
+```
+
 Can you help us?
 
 
-## 1992 westley
-
-### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1992/westley/westley.c](1992/westley/westley.c)
-### Information: [1992/westley/README.md](1992/westley/README.md)
-
-This program and the alternate version will very likely crash or
-[nuke](https://en.wikipedia.org/wiki/Nuclear_weapon) the [entire
-world](https://en.wikipedia.org/wiki/Earth) or just the
-[USA](https://en.wikipedia.org/wiki/United_States), respectively, without enough
-args. And not that we need any help with this or anything :-) but we do
-encourage you to test it. This should not be fixed.
-
 
 # 1993
-
-
-## 1993 plummber
-
-### STATUS: known bug - please help us fix
-### Source code: [1993/plummer/plummer.c](1993/plummer/plummer.c)
-### Information: [1993/plummer/README.md](1993/plummer/README.md)
-
-If not enough args are specified this program will likely crash or do something
-else.
-
-If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 ## 1993 lmfjyh
@@ -843,18 +749,6 @@ An alternate version, however, does exist. See the README.md file for details.
 
 
 # 1994
-
-
-## 1994 horton
-
-### STATUS: known bug - please help us fix
-### Source code: [1994/horton/horton.c](1994/horton/horton.c)
-### Information: [1994/horton/README.md](1994/horton/README.md)
-
-If not enough args are specified this program will likely crash or do something
-else.
-
-If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 ## 1994 ldb
@@ -1275,17 +1169,6 @@ and it can be run by itself for fun in modern systems, which was not possible
 before the fixes there.
 
 
-## 2001 cheong
-
-### STATUS: known bug - please help us fix
-### Source code: [2001/cheong/cheong.c](2001/cheong/cheong.c)
-### Information: [2001/cheong/README.md](2001/cheong/README.md)
-
-This program will very likely crash or do something different without an arg.
-
-If you want to try and fix this (mis)feature, you are welcome to try.
-
-
 ## 2001 dgbeards
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -1346,30 +1229,15 @@ set. In other words both have to be ASCII or EBCDIC - not one of each.
 
 ## 2001 ollinger
 
-### STATUS: known bug - please help us fix
-### Source code: [2001/ollinger/ollinger.c](2001/ollinger/ollinger.c)
-### Information: [2001/ollinger/README.md](2001/ollinger/README.md0
 
-This program will very likely crash or do something else without an arg.
-
-If you want to try and fix this (mis)feature, you are welcome to try.
-
-
-## 2001 schweikh
-
-### STATUS: known bug - please help us fix
+### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2001/schweikh/schweikh.c](2001/schweikh/schweikh.c)
 ### Information: [2001/schweikh/README.md](2001/schweikh/README.md)
 
-This program will very likely crash or do something else if you do not give it
-two args.
-
-Note also that the glob pattern must match the whole string. See the author's
-comments for details and a workaround.
+The glob pattern must match the whole string. See the author's comments for
+details and a workaround.
 
 There's also no way to escape meta characters.
-
-If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 # 2002
@@ -1580,18 +1448,6 @@ Incorrect formulas will ungracefully crash the program.
 
 Fixing the (Mis)feature is likely to be a difficult challenge.
 You are welcome to try and fix it if you can!
-
-
-## 2006 stewart
-
-### STATUS: known bug - please help us fix
-### Source code: [2006/stewart/stewart.c](2006/stewart/stewart.c)
-### Information: [2006/stewart/README.md](2006/stewart/README.md)
-
-This program will very likely crash or do something funny if the file does not
-exist or cannot be opened.
-
-If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 ## 2006 toledo2
