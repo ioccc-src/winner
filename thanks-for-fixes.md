@@ -1463,6 +1463,9 @@ Cody fixed a segfault in this program that prevented it from working right but
 he notes that some compilers compile it into an infinite loop (an example where
 this happens is macOS).
 
+Cody also added the [try.sh](1996/august/try.sh) script that runs all the
+commands given in the try section to simplify it as there are quite a lot of
+commands.
 
 ## [1996/dalbec](1996/dalbec/dalbec.c) ([README.md](1996/dalbec/README.md]))
 
