@@ -131,7 +131,6 @@ all: data ${TARGET}
 	sandwich supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: This entry might not compile when using modern compilers."
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 hatcat: ${PROG}
