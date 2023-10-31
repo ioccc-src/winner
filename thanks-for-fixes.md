@@ -1418,10 +1418,12 @@ automate the spoiler commands to make it easier to see the game in action.
 ## [1995/cdua](1995/cdua/cdua.c) ([README.md](1995/cdua/README.md]))
 
 Cody fixed this so that it would work with macOS. Once it could compile it
-additionally segfaulted under macOS which he also fixed.  Cody also provided the
-[Alternate code](1995/cdua/cdua.alt.c) for fun :-) ) (in particular to make it
-easier to see the program do what it does in systems that are too fast ... if
-there is such a thing anyway :-) ). See the README.md for details on this.
+additionally segfaulted under macOS which he also fixed.
+
+Cody also provided the [Alternate code](1995/cdua/cdua.alt.c) for fun :-) ) (in
+particular to make it easier to see the program do what it does in systems that
+are too fast ... if there is such a thing anyway :-) ). See the README.md for
+details on this.
 
 
 ## [1995/garry](1995/garry/garry.c) ([README.md](1995/garry/README.md]))
@@ -2201,6 +2203,11 @@ for strlen() with malloc(). This prevented it from working.
 
 Cody fixed the Makefile under some systems where the `lpthread` was not
 implicitly linked in.
+
+## [2006/hamre](2006/hamre/hamre.c) ([README.md](2006/hamre/README.md))
+
+Cody fixed this so that it will not crash without an arg after it was suggested
+this should be fixed.
 
 
 ## [2006/monge](2006/monge/monge.c) ([README.md](2006/monge/README.md]))
