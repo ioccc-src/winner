@@ -10,17 +10,6 @@ make
 ```
 
 
-### Bugs and (Mis)features
-
-The current status of this entry is:
-
-```
-STATUS: known bug - please help us fix
-```
-
-For more detailed information see [2006 hamre in bugs.md](/bugs.md#2006-hamre).
-
-
 ## To use:
 
 ```sh
@@ -32,16 +21,6 @@ For more detailed information see [2006 hamre in bugs.md](/bugs.md#2006-hamre).
 ```sh
 ./hamre '-1+4/3*(2+1/(3/2*(7/2-7/3+1/6)))/2'
 ```
-
-### INABIAF - it's not a bug it's a feature! :-)
-
-This program will very likely crash or do something completely irrational :-) if you
-don't supply it with an argument.
-
-As well supplying more arguments will possibly limit the number of nested
-operators supported.
-
-Don't try dividing by 0 (zero).
 
 ## Judges' remarks:
 
