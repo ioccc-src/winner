@@ -578,10 +578,11 @@ It should be noted that in additional to rot13 names there is code that is the
 reverse of other code (also wrt names). See the source file and the README.md
 (in the author's remarks) for more details.
 
-Fixing the (Mis)feature is likely to be a very difficult challenge.  You are
-welcome to try and fix it if you can!
+Fixing the (Mis)feature is likely to be a very difficult challenge especially
+without breaking something else which is far more likely (see below in tips from
+Cody). You are welcome to try and fix it if you can!
 
-### A tip from Cody:
+### Tips from Cody:
 
 The reason this is crashing is that the array `irk` is being accessed way out of
 bounds by the int `gnat`. For instance:
@@ -595,7 +596,88 @@ Program terminated with signal SIGSEGV, Segmentation fault.
 $1 = -518733305
 ```
 
-The real trouble is that the code is generated and in a complex way.
+### Magic of the entry:
+
+The real trouble is that the code is generated and in a complex way or rather
+ways.
+
+I will explain this a little bit (though it might be more than a bit according
+to many :-) ) but that is all I can do for now. The program, when used without
+any args, will print out what it reads. If one arg is specified it will do a
+ROT13 of it. If two args are specified it will print out the text backwards
+(_WITHOUT ROT13!_). If three args are specified it will do both **_reversal AND
+ROT13_**.
+
+So `ver0` is the same as the main program; `ver1` is the ROT13 of the code (but
+see below); `ver2` will reverse the code and `ver3` will both reverse and ROT13
+the code. But it's trickier than that as one might expect.
+
+The comments are processed too. Furthermore it happens that the last line
+becomes the first and the first line becomes the last! Now if you look at the
+code you'll see on the first line:
+
+```c
+/**//*/};)/**/pain(/*//**/tang 	  ,gnat/**//*/,ABBA~,0-0(avnz;)0-0,tang,raeN
+```
+
+In `ver0` it'll be the same but the others are more interesting.
+
+In `ver1` you'll see on the last line:
+
+```c
+cnva((vag)NOON&2/*//*\\**/,gnat,tang	,NOON/**//*/(niam/**/);}/*//**/
+```
+
+and on the first line:
+
+```c
+/**//*/};)/**/cnva(/*//**/gnat 	  ,tang/**//*/,NOON~,0-0(niam;)0-0,gnat,enrA
+```
+
+Observe that the ROT13 of `pain` is `cnva` and the ROT13 of `main` is `znva`.
+The ROT13 of `NOON` is `ABBA`. `vag` is ROT13 of `int`, `gnat` and `tang` are
+ROT13 of each other as well which is the reverse of the original (this is not
+because it goes backwards (it doesn't in this version) but because they are
+ROT13 pairs!). `main` spelt backwards is `niam` and `pain` spelt backwards is
+`niap`. Furthermore see the Makefile for other defines that had to be specified
+and for ver2 and ver3 (that both work with gcc) one had to be undefined (search
+for `CDEFINE` and `-U`). These details will be important momentarily.
+
+As far as `NOON` and `ABBA` being ROT13 pairs, notice how `NOON` is not in the
+original code but `ABBA` is; but in other versions it becomes `NOON` and they
+also have `abba` which the original code does not!
+
+Now notice how the `avnz` in the first line got changed to `niam`, its ROT13
+value.  Notice also how some of these are in comments!
+
+`main()` is in there somewhere and that had to be changed to call `pain()` (see
+the [entry in the thanks file](/thanks-for-fixes.md#1989westley-readmemd) for
+details on how as this was not as straight forward as it is for other entries)
+as well. Now if you notice on that line you have in a comment `niam`. If you
+were to change that to `niap` (pain backwards) that function would end up as
+`pain()` in generated code! That's assuming that it's just the reversal version,
+of course but ver1 is the ROT13 version.
+
+These facts are bad enough but then you throw in the reverse of it without ROT13
+and then another version that has the reversal _and_ ROT13 then you can see it's
+nigh impossible to fix if not impossible.
+
+The fix to get it to even compile with clang and then get the first two
+(counting the original, `ver0`) to work was the hardest fix I made due to how
+the comments in reverse and ROT13 of it all works together, especially allowing
+all versions to compile with gcc. The only reason that it doesn't work
+completely with clang is the arg types of main() (see if you can figure out how
+the change of `main()` in `westley.c` is not carried over to versions 2 and 3!);
+originally none of them compiled with clang.
+
+But it was possible to get the ROT13 code to compile with clang but the other
+versions, reversed as well as ROT13 and reversed code, proved much more
+problematic. I got it to compile (or maybe mostly compile) all versions with
+clang but I then carried it over to gcc in another system and it had syntax
+errors.
+
+That's about all I can say for how it works as other things have to be done too.
+Enjoy! :-)
 
 # 1990
 
