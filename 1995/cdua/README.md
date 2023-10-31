@@ -6,17 +6,17 @@ Portugal
 
 ## To build:
 
+We recommend that you try this alternate version first. For reasons why this is
+see the [original code](#original-code) section below.
+
 ```sh
-make all
+make alt
 ```
 
-NOTE: on modern systems this was hard to see it solve it in real time because it
-goes so quickly so an alternate version which makes it easier with
-modern systems to see the maze actually being solved in real time. We encourage
-you to use that version but we keep the original here to both preserve the
-original code (the bug fixes notwithstanding) and it will also let you see just
-how fast your computer is :-) (and you can also use both to see the difference).
-For this alternate, slower version, please see below.
+This alternate version uses `usleep(3)` with `Z` (defined in the Makefile,
+default `3000`) microseconds to make it easier to see the maze being solved in
+real time. You can redefine `Z` to reconfigure it in case it's going too slow,
+too fast :-) or you're doing some strange experiment like making it 100000.
 
 
 ### Bugs and (Mis)features
@@ -33,45 +33,24 @@ For more detailed information see [1995 cdua in bugs.md](/bugs.md#1995-cdua).
 ## To use:
 
 ```sh
-./cdua
+./cdua.alt
 ```
 
+## Try:
 
-## INABIAF - it's not a bug it's a feature! :-)
-
-NOTE: sometimes the program needs you to press enter a second time to continue
-solving the maze. This is a feature, not a bug. See [bugs.md](/bugs.md) for more
-details.
-
-
-## Alternate code:
-
-This version uses `usleep(3)` with the `Z` (defined in the Makefile, default
-`3000`) microseconds to make it easier to see the maze being solved in real
-time. You can redefine Z to reconfigure it in case it's going too slow, too
-fast :-) or you're doing some strange experiment like making it 100000.
-
-To compile and use without reconfiguring the 3000
-microseconds, try:
-
-```sh
-make clobber alt
-./cdua.alt # press enter
-```
-
-Use `cdua.alt` as you would `cdua` above.
-
-To use a 1500 for `Z` try something like:
+To use 1500 for `Z` do:
 
 ```sh
 make CFLAGS="-DZ=1500" clobber alt
-./cdua.alt # press enter and watch it move a bit slower
+
+./cdua.alt # press enter and watch it go much faster!
 ```
 
-Also try:
+You might also like to try:
 
 ```sh
 make CFLAGS="-DZ=65000" clobber alt
+
 ./cdua.alt # press enter and watch it go much slower!
 ```
 
@@ -80,6 +59,27 @@ Do you see anything strange in this version when `Z` is a high value like
 Why?
 
 
+## Original code:
+
+With modern systems this was hard to see it solve it in real time because it
+goes so quickly which is why we recommend the alternate version first: you can
+actually see it being solved in real time rather than have it go by in a flash.
+
+If you wish to use the original version, for instance if you wish to see how
+fast your computer is :-) or use both to see the difference, you can do so.
+
+## ## Original build:
+
+```sh
+make all
+```
+
+### Original use:
+
+```
+./cdua
+```
+
 ## Judges' remarks:
 
 This could be used as the basis of an a-maze-ing screen exerciser.
@@ -87,10 +87,10 @@ This could be used as the basis of an a-maze-ing screen exerciser.
 
 ## Author's remarks:
 
-A program that generates a maze, and then solves it, all this being
-seen by the user.  Some highlights of obfuscation are: 3 steps
-functions in one - main(), several recursive calls with conditional
-actions, and just one (big and ugly) statement to solve the maze.
+A program that generates a maze, and then solves it, all this being seen by the
+user.  Some highlights of obfuscation are: 3 steps functions in one - `main()`,
+several recursive calls with conditional actions, and just one (big and ugly)
+statement to solve the maze.
 
 
 ## Copyright and CC BY-SA 4.0 License:
