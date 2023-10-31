@@ -12,17 +12,6 @@ make all
 ```
 
 
-### Bugs and (Mis)features
-
-The current status of this entry is:
-
-```
-STATUS: INABIAF - please **DO NOT** fix
-```
-
-For more detailed information see [1992 westley in bugs.md](/bugs.md#1992-westley).
-
-
 ## To use:
 
 If lost:
@@ -54,22 +43,22 @@ show correctly!
 
 The author provided a version for the US which we added. To build:
 
+### Alternate build:
+
+
 ```sh
 make alt
 ```
 
-Use `westley.alt` as you would `whereami` above.
+### Alternate use:
+
+
+```sh
+./westley.alt lat long
+```
 
 NOTE: this alternative version also needs a terminal that wraps at 80 columns.
 
-### INABIAF - it's not a bug it's a feature! :-)
-
-This program and the alternate version will very likely crash or
-[nuke](https://en.wikipedia.org/wiki/Nuclear_weapon) the [entire
-world](https://en.wikipedia.org/wiki/Earth) or just the
-[USA](https://en.wikipedia.org/wiki/United_States), respectively, without enough
-args. And not that we need any help with this or anything :-) but we do
-encourage you to test it. This should not be fixed.
 
 ## Judges' remarks:
 
