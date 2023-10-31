@@ -16,7 +16,7 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: INABIAF - please **DO NOT** fix
+STATUS: doesn't work with some compilers - please provide alternative code or fix for more compilers
 ```
 
 For more detailed information see [1996 august in bugs.md](/bugs.md#1996-august).
@@ -30,10 +30,9 @@ cat august.c test.oc | ./august > test.oo
 ```
 
 
-NOTE: Some compilers like clang will compile this code into infinite loops!  If
-the above cat line (or one of the ones later in the try section) does not
-execute in a very short amount of time, then you may need to fix your compiler
-or use gcc.
+NOTE: some compilers will compile this code into infinite loops!  If the above
+cat line (or one of the ones later in the try section) does not execute in a
+very short amount of time, then you may need to fix your compiler or use gcc.
 
 The above should print a `!` followed by a newline.
 

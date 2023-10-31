@@ -231,7 +231,7 @@ Entries with this status do not work under some OSes and/or architectures (and/o
 something else?). Please help us to fix it!
 
 
-## STATUS: doesn't work with some compilers - please provide alternative code or fix for all compilers
+## STATUS: doesn't work with some compilers - please provide alternative code or fix for more compilers
 
 NOTE: we're still locating entries and working on fixes with this status so we're not yet
 ready for help. We will remove this when we are.
@@ -240,21 +240,33 @@ Some entries do not work with some compilers. A good example is
 [1992/lush](1992/lush/lush.c) which uses error messages from the compiler to
 generate its output.
 
-Please help us by writing alternative code!
+If you can provide code that works for multiple compilers without too much
+tampering this is okay though it's probably not possible with the above
+mentioned entry; otherwise it would be better to provide alternate code. In some
+cases it might be better to provide alternate code anyway. Use a judgement call
+here as best you can manage.
+
 
 
 ## STATUS: main() function args not allowed - please help us fix
 
-NOTE: it appears that all of these have been fixed except perhaps for
-[1989/westley](1989/westley/westley.c) which has only been partly fixed. However
-some still have problems of some kind or another. This is what the status means,
-however.
+NOTE: it appears that most if not all of these have been fixed except perhaps
+for [1989/westley](1989/westley/westley.c) but this has probably been fixed as
+much as possible given the nature of how it generates code: the entry itself
+compiles but two versions of code it generates does not work with clang.
+
+However some still might have problems of some kind or another and some might
+not yet be located as an additional defect of clang was noticed where `main()`
+is not allowed four args or one arg.
+
+This is what the status means, however.
 
 Entries with this status have a problem in that the args to main() are not of a
-specific type due to this being allowed in earlier C. Some compilers like clang
-have a defect where they do not allow this so these entries do not work with
-clang. Some versions of clang also do not allow four args to main() which
-`1989/westley` has.
+specific type or there are too many due to this being allowed in earlier C. Some
+compilers like clang have a defect where they do not allow this and some
+versions have an additional defect where they only allow 0, 2 or 3 args, the
+latter of which affected `1989/westley`, so these entries do not work with
+clang.
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) looked at the source
 code of clang and reported that there is no way to override the requirement of
@@ -268,14 +280,14 @@ clang** despite the fact it might appear to be gcc: no symlink and both gcc and
 clang exist but the gcc is clang which you'll see if you run `gcc --version`.
 
 A tip and some fix methods from Cody: in the older days args to main() not given
-a type were implicit ints but when they're required to be char ** this can cause
-a problem. In some cases Cody was able to use a char * inside main() (see
-[1989/tromp/tromp.c](1989/tromp/tromp.c) and
+a type were implicit ints but when they're required to be `char **` this can
+cause a problem. In some cases Cody was able to use a `char *` inside `main()`
+(see [1989/tromp/tromp.c](1989/tromp/tromp.c) and
 [1986/holloway/holloway.c](1986/holloway) for two examples though done slightly
 differently). In other cases he was able to dereference the pointers to be used
-like an int. He used other various techniques to get them to compile. In some
-cases this introduced a problem but typically if not always that problem exists
-with compilers that are less strict.
+like an int and other times a cast was necessary. He used other various
+techniques to get them to compile. In some cases this introduced a problem but
+typically if not always that problem exists with compilers that are less strict.
 
 
 ## STATUS: compiled executable crashes - please help us fix
@@ -331,10 +343,10 @@ other ways.  Compilers and linkers tend to warn about its use (and as noted in
 macOS it also happens at execution) and this is a good way to find entries that
 use it even if it's not visible in the code.
 
-_NOTE_: this status is _NOT necessarily mutually exclusive_ with the _INABIAF_ (it's a
-bug not a feature) status. The reason for this is due to warnings during
-compiling, linking and/or runtime, sometimes causing confusing output (as noted
-above).
+_NOTE_: this status is _NOT necessarily mutually exclusive_ with the _INABIAF_
+(it's not a bug it's a feature) status. The reason for this is due to warnings
+during compiling, linking and/or runtime, sometimes causing confusing output (as
+noted above).
 
 
 ## STATUS: missing file(s) - please provide them
@@ -566,10 +578,11 @@ It should be noted that in additional to rot13 names there is code that is the
 reverse of other code (also wrt names). See the source file and the README.md
 (in the author's remarks) for more details.
 
-Fixing the (Mis)feature is likely to be a very difficult challenge.  You are
-welcome to try and fix it if you can!
+Fixing the (Mis)feature is likely to be a very difficult challenge especially
+without breaking something else which is far more likely (see below in tips from
+Cody). You are welcome to try and fix it if you can!
 
-### A tip from Cody:
+### Tips from Cody:
 
 The reason this is crashing is that the array `irk` is being accessed way out of
 bounds by the int `gnat`. For instance:
@@ -583,7 +596,88 @@ Program terminated with signal SIGSEGV, Segmentation fault.
 $1 = -518733305
 ```
 
-The real trouble is that the code is generated and in a complex way.
+### Magic of the entry:
+
+The real trouble is that the code is generated and in a complex way or rather
+ways.
+
+I will explain this a little bit (though it might be more than a bit according
+to many :-) ) but that is all I can do for now. The program, when used without
+any args, will print out what it reads. If one arg is specified it will do a
+ROT13 of it. If two args are specified it will print out the text backwards
+(_WITHOUT ROT13!_). If three args are specified it will do both **_reversal AND
+ROT13_**.
+
+So `ver0` is the same as the main program; `ver1` is the ROT13 of the code (but
+see below); `ver2` will reverse the code and `ver3` will both reverse and ROT13
+the code. But it's trickier than that as one might expect.
+
+The comments are processed too. Furthermore it happens that the last line
+becomes the first and the first line becomes the last! Now if you look at the
+code you'll see on the first line:
+
+```c
+/**//*/};)/**/pain(/*//**/tang 	  ,gnat/**//*/,ABBA~,0-0(avnz;)0-0,tang,raeN
+```
+
+In `ver0` it'll be the same but the others are more interesting.
+
+In `ver1` you'll see on the last line:
+
+```c
+cnva((vag)NOON&2/*//*\\**/,gnat,tang	,NOON/**//*/(niam/**/);}/*//**/
+```
+
+and on the first line:
+
+```c
+/**//*/};)/**/cnva(/*//**/gnat 	  ,tang/**//*/,NOON~,0-0(niam;)0-0,gnat,enrA
+```
+
+Observe that the ROT13 of `pain` is `cnva` and the ROT13 of `main` is `znva`.
+The ROT13 of `NOON` is `ABBA`. `vag` is ROT13 of `int`, `gnat` and `tang` are
+ROT13 of each other as well which is the reverse of the original (this is not
+because it goes backwards (it doesn't in this version) but because they are
+ROT13 pairs!). `main` spelt backwards is `niam` and `pain` spelt backwards is
+`niap`. Furthermore see the Makefile for other defines that had to be specified
+and for ver2 and ver3 (that both work with gcc) one had to be undefined (search
+for `CDEFINE` and `-U`). These details will be important momentarily.
+
+As far as `NOON` and `ABBA` being ROT13 pairs, notice how `NOON` is not in the
+original code but `ABBA` is; but in other versions it becomes `NOON` and they
+also have `abba` which the original code does not!
+
+Now notice how the `avnz` in the first line got changed to `niam`, its ROT13
+value.  Notice also how some of these are in comments!
+
+`main()` is in there somewhere and that had to be changed to call `pain()` (see
+the [entry in the thanks file](/thanks-for-fixes.md#1989westley-readmemd) for
+details on how as this was not as straight forward as it is for other entries)
+as well. Now if you notice on that line you have in a comment `niam`. If you
+were to change that to `niap` (pain backwards) that function would end up as
+`pain()` in generated code! That's assuming that it's just the reversal version,
+of course but ver1 is the ROT13 version.
+
+These facts are bad enough but then you throw in the reverse of it without ROT13
+and then another version that has the reversal _and_ ROT13 then you can see it's
+nigh impossible to fix if not impossible.
+
+The fix to get it to even compile with clang and then get the first two
+(counting the original, `ver0`) to work was the hardest fix I made due to how
+the comments in reverse and ROT13 of it all works together, especially allowing
+all versions to compile with gcc. The only reason that it doesn't work
+completely with clang is the arg types of main() (see if you can figure out how
+the change of `main()` in `westley.c` is not carried over to versions 2 and 3!);
+originally none of them compiled with clang.
+
+But it was possible to get the ROT13 code to compile with clang but the other
+versions, reversed as well as ROT13 and reversed code, proved much more
+problematic. I got it to compile (or maybe mostly compile) all versions with
+clang but I then carried it over to gcc in another system and it had syntax
+errors.
+
+That's about all I can say for how it works as other things have to be done too.
+Enjoy! :-)
 
 # 1990
 
@@ -652,7 +746,7 @@ If you want to try and fix this (mis)feature, you are welcome to try.
 
 ## 1992 lush
 
-### STATUS: doesn't work with some compilers - please provide alternative code or fix for all compilers
+### STATUS: doesn't work with some compilers - please provide alternative code or fix for more compilers
 ### Source code: [1992/lush/lush.c](1992/lush/lush.c)
 ### Information: [1992/lush/README.md](1992/lush/README.md)
 
@@ -931,14 +1025,16 @@ We would appreciate anyone who has it or even just knows the name! Thank you.
 
 ## 1996 august
 
-### STATUS: INABIAF - please **DO NOT** fix
+### STATUS: doesn't work with some compilers - please provide alternative code or fix for more compilers
 ### Source code: [1996/august/august.c](1996/august/august.c)
 ### Information: [1996/august/README.md](1996/august/README.md)
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
 this program that prevented it from working in gcc. It is known, however, that
-some compilers will compile the code so that it enters an infinite loop.
+some compilers will compile the code so that it enters an infinite loop (an
+example is in macOS).
 
+If you can fix this we welcome it!
 
 ## 1996 gandalf
 
