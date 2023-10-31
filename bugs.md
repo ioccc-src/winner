@@ -428,27 +428,6 @@ Of course if you're the author you're welcome to fix your own entry, prefer your
 own fix or suggest that they're fixed!
 
 
-## STATUS: requires a compiler supporting `-traditional-cpp` - alternate code requested
-
-### NOTE: all of these appear to be fixed
-
-Entries with this status need a compiler that support `-traditional-cpp`. `gcc`
-supports this but `clang` does not.
-
-Please be advised that, as noted above, gcc under macOS is actually gcc even if it
-looks like it's gcc (the programs are the same, they're not symlinks but both
-are clang).
-
-If you do wish to provide an alternate version of the program that does not need
-compiler supporting you are welcome to summit such code via a
-[GitHub pull request](https://github.com/ioccc-src/temp-test-ioccc/pulls) and we
-will be happy to credit you in the [thanks file](thanks-for-fixes.md).
-
-NOTE: as of commit fa8a9b8b28a6b69a6b4efd74a45402f745e280b3 we believe that all
-the entries with this problem have been fixed due [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson)'s pursuit in fixing entries. Thanks
-Cody!
-
 
 # List of entries by year, sorted in alphabetical order per year
 
