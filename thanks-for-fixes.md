@@ -1460,10 +1460,8 @@ or the entry decrypts the text or whatever else.
 ## [1996/august](1996/august/august.c) ([README.md](1996/august/README.md]))
 
 Cody fixed a segfault in this program that prevented it from working right but
-he notes it hangs in macOS. This is because some compilers compile it into an
-infinite loop and this was documented by the judges. It works fine in linux if
-using gcc but macOS, having only clang by default, (even the gcc binary
-`/usr/bin/gcc`) will not work.
+he notes that some compilers compile it into an infinite loop (an example where
+this happens is macOS).
 
 
 ## [1996/dalbec](1996/dalbec/dalbec.c) ([README.md](1996/dalbec/README.md]))

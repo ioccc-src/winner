@@ -231,7 +231,7 @@ Entries with this status do not work under some OSes and/or architectures (and/o
 something else?). Please help us to fix it!
 
 
-## STATUS: doesn't work with some compilers - please provide alternative code or fix for all compilers
+## STATUS: doesn't work with some compilers - please provide alternative code or fix for more compilers
 
 NOTE: we're still locating entries and working on fixes with this status so we're not yet
 ready for help. We will remove this when we are.
@@ -240,21 +240,33 @@ Some entries do not work with some compilers. A good example is
 [1992/lush](1992/lush/lush.c) which uses error messages from the compiler to
 generate its output.
 
-Please help us by writing alternative code!
+If you can provide code that works for multiple compilers without too much
+tampering this is okay though it's probably not possible with the above
+mentioned entry; otherwise it would be better to provide alternate code. In some
+cases it might be better to provide alternate code anyway. Use a judgement call
+here as best you can manage.
+
 
 
 ## STATUS: main() function args not allowed - please help us fix
 
-NOTE: it appears that all of these have been fixed except perhaps for
-[1989/westley](1989/westley/westley.c) which has only been partly fixed. However
-some still have problems of some kind or another. This is what the status means,
-however.
+NOTE: it appears that most if not all of these have been fixed except perhaps
+for [1989/westley](1989/westley/westley.c) but this has probably been fixed as
+much as possible given the nature of how it generates code: the entry itself
+compiles but two versions of code it generates does not work with clang.
+
+However some still might have problems of some kind or another and some might
+not yet be located as an additional defect of clang was noticed where `main()`
+is not allowed four args or one arg.
+
+This is what the status means, however.
 
 Entries with this status have a problem in that the args to main() are not of a
-specific type due to this being allowed in earlier C. Some compilers like clang
-have a defect where they do not allow this so these entries do not work with
-clang. Some versions of clang also do not allow four args to main() which
-`1989/westley` has.
+specific type or there are too many due to this being allowed in earlier C. Some
+compilers like clang have a defect where they do not allow this and some
+versions have an additional defect where they only allow 0, 2 or 3 args, the
+latter of which affected `1989/westley`, so these entries do not work with
+clang.
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) looked at the source
 code of clang and reported that there is no way to override the requirement of
@@ -268,14 +280,14 @@ clang** despite the fact it might appear to be gcc: no symlink and both gcc and
 clang exist but the gcc is clang which you'll see if you run `gcc --version`.
 
 A tip and some fix methods from Cody: in the older days args to main() not given
-a type were implicit ints but when they're required to be char ** this can cause
-a problem. In some cases Cody was able to use a char * inside main() (see
-[1989/tromp/tromp.c](1989/tromp/tromp.c) and
+a type were implicit ints but when they're required to be `char **` this can
+cause a problem. In some cases Cody was able to use a `char *` inside `main()`
+(see [1989/tromp/tromp.c](1989/tromp/tromp.c) and
 [1986/holloway/holloway.c](1986/holloway) for two examples though done slightly
 differently). In other cases he was able to dereference the pointers to be used
-like an int. He used other various techniques to get them to compile. In some
-cases this introduced a problem but typically if not always that problem exists
-with compilers that are less strict.
+like an int and other times a cast was necessary. He used other various
+techniques to get them to compile. In some cases this introduced a problem but
+typically if not always that problem exists with compilers that are less strict.
 
 
 ## STATUS: compiled executable crashes - please help us fix
@@ -331,10 +343,10 @@ other ways.  Compilers and linkers tend to warn about its use (and as noted in
 macOS it also happens at execution) and this is a good way to find entries that
 use it even if it's not visible in the code.
 
-_NOTE_: this status is _NOT necessarily mutually exclusive_ with the _INABIAF_ (it's a
-bug not a feature) status. The reason for this is due to warnings during
-compiling, linking and/or runtime, sometimes causing confusing output (as noted
-above).
+_NOTE_: this status is _NOT necessarily mutually exclusive_ with the _INABIAF_
+(it's not a bug it's a feature) status. The reason for this is due to warnings
+during compiling, linking and/or runtime, sometimes causing confusing output (as
+noted above).
 
 
 ## STATUS: missing file(s) - please provide them
@@ -652,7 +664,7 @@ If you want to try and fix this (mis)feature, you are welcome to try.
 
 ## 1992 lush
 
-### STATUS: doesn't work with some compilers - please provide alternative code or fix for all compilers
+### STATUS: doesn't work with some compilers - please provide alternative code or fix for more compilers
 ### Source code: [1992/lush/lush.c](1992/lush/lush.c)
 ### Information: [1992/lush/README.md](1992/lush/README.md)
 
@@ -931,14 +943,16 @@ We would appreciate anyone who has it or even just knows the name! Thank you.
 
 ## 1996 august
 
-### STATUS: INABIAF - please **DO NOT** fix
+### STATUS: doesn't work with some compilers - please provide alternative code or fix for more compilers
 ### Source code: [1996/august/august.c](1996/august/august.c)
 ### Information: [1996/august/README.md](1996/august/README.md)
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
 this program that prevented it from working in gcc. It is known, however, that
-some compilers will compile the code so that it enters an infinite loop.
+some compilers will compile the code so that it enters an infinite loop (an
+example is in macOS).
 
+If you can fix this we welcome it!
 
 ## 1996 gandalf
 
