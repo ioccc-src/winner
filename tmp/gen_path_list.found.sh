@@ -125,7 +125,7 @@ fi
 
 # move to TOPDIR
 #
-cd "$TOPDIR" || echo "$0: ERROR: cd $TOPDIR failed, error code: $status" 1>&2 || exit 10
+cd "$TOPDIR" || echo "$0: ERROR: cd $TOPDIR failed" 1>&2 || exit 10
 export PATH_LIST="tmp/path_list.found.txt"
 
 # make clobber
