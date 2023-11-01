@@ -31,7 +31,7 @@
 
 # setup
 #
-export VERSION="1.0 2023-10-31"
+export VERSION="1.0.1 2023-10-31"
 NAME=$(basename "$0"); export NAME
 #
 export V_FLAG=0
@@ -59,7 +59,7 @@ Exit codes:
      0	    all OK
      2	    -h and help string printed or -V and version string printed
      3	    command line error
-     4	    cannot find writiable winner directory
+     4	    cannot find writable winner directory
  >= 10	    internal error
 
 $NAME version: $VERSION"
@@ -164,6 +164,9 @@ export INDEX_PATH="$FULL_WINNER_PATH/index.html"
 export TMP_FILE="$FULL_WINNER_PATH/tmp.$$.index.html"
 trap 'rm -f $TMP_FILE; exit' 0 1 2 3 15
 cat > "$TMP_FILE" << EOF
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- DO NOT EDIT nor MODIFY THIS FILE !!! -->
+<!-- DO NOT EDIT nor MODIFY THIS FILE !!! -->
 <!-- DO NOT EDIT nor MODIFY THIS FILE !!! -->
 <!-- file: $WINNER_PATH/index.html created by: $NAME version: $VERSION -->
 <HTML>

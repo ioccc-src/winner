@@ -555,6 +555,12 @@ Eventually a separate build-ioccc repo will hold these tools.
 
 A tool to run another tool over all winner directories.
 
+Example:
+
+```sh
+./run_all.sh -v 3 ./fake.gen_index.sh
+```
+
 
 ### [winner_dir.txt](winner_dir.txt)
 
