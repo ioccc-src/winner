@@ -179,8 +179,8 @@ cat > "$TMP_FILE" << EOF
 
 <BODY>
 
-<FONT SIZE="7">$YEAR $WINNER</FONT>
-<BR>
+<H1>$YEAR $WINNER</H1>
+
 XXX - fake content until readme2index is working - XXX
 
 <HR SIZE="4" WIDTH="100%">
