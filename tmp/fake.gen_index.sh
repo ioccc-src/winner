@@ -31,7 +31,7 @@
 
 # setup
 #
-export VERSION="1.0.3 2023-10-31"
+export VERSION="1.0.4 2023-10-31"
 NAME=$(basename "$0"); export NAME
 #
 export V_FLAG=0
@@ -124,10 +124,16 @@ case "$#" in
 esac
 export FULL_WINNER_PATH="$TOPDIR/$WINNER_PATH"
 
-# for validator doc string
+# form full URL
 #
-VALIDATOR_DOC=$(echo "https://$DOMAIN$DOCPATH/$YEAR/$WINNER/index.html" | sed -e 's;/;%2F;g' -e 's;:;%3A;')
-export VALIDATOR_DOC
+export URL_PATH="https://$DOMAIN$DOCPATH/$YEAR/$WINNER"
+export URL_BASENAME="index.html"
+export URL="$URL_PATH/$URL_BASENAME"
+
+# form Nu Html Checker doc url string
+#
+VALIDATOR_ENCODED_URL=$(echo "$URL" | sed -e 's;/;%2F;g' -e 's;:;%3A;')
+export VALIDATOR_ENCODED_URL
 
 # print running info if verbose
 #
@@ -141,8 +147,10 @@ if [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: YEAR=$YEAR" 1>&2
     echo "$0: debug[5]: WINNER=$WINNER" 1>&2
     echo "$0: debug[5]: WINNER_PATH=$WINNER_PATH" 1>&2
-    echo "$0: debug[5]: FULL_WINNER_PATH=$FULL_WINNER_PATH" 1>&2
-    echo "$0: debug[5]: VALIDATOR_DOC=$VALIDATOR_DOC" 1>&2
+    echo "$0: debug[5]: URL_PATH=$URL_PATH" 1>&2
+    echo "$0: debug[5]: URL_BASENAME=$URL_BASENAME" 1>&2
+    echo "$0: debug[5]: URL=$URL" 1>&2
+    echo "$0: debug[5]: VALIDATOR_ENCODED_URL=$VALIDATOR_ENCODED_URL" 1>&2
 fi
 
 # make is easier to process CSV files
@@ -196,9 +204,9 @@ cat > "$TMP_FILE" << EOF
 
 <hr style="width:50%;text-align:left;margin-left:0">
 
-<!-- Start WWW nu validator -->
-<p><a href="https://validator.w3.org/nu/?doc=$VALIDATOR_DOC">Validate this web page</a></p>
-<!-- End WWW nu validator -->
+<!-- Start Nu Html Checker -->
+<p><a href="https://validator.w3.org/nu/?doc=$VALIDATOR_ENCODED_URL">Nu Html check $URL</a></p>
+<!-- End Nu Html Checker -->
 
 </body>
 </html>
