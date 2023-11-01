@@ -40,13 +40,6 @@ For more detailed information see [2005 giljade in bugs.md](/bugs.md#2005-giljad
 ./giljade
 ```
 
-### INABIAF - it's not a bug it's a feature! :-)
-
-If the program source file is not lying in the same directory this program will
-very likely crash or do something strange.
-
-This entry requires that both `sed` and `cc` are in the path.
-
 
 ## Try:
 
