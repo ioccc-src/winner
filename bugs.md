@@ -1534,28 +1534,20 @@ not crash in macOS (it appeared to work fine in fedora linux on an `x86_64`
 architecture but he does not know if it crashed in macOS Ventura due to the fact
 it is an `arm64` CPU - the Apple silicon chip). This fix, BTW, is a mix of a fix
 by [Yusuke Endoh](/winners.html#Yusuke_Endoh) and Cody's. Nevertheless there are
-two features that are not bugs and one bug (see below).
+two features that are not bugs.
 
 By design this program is supposed to crash on termination.
 
 You must type in caps (except in strings) and this program is indeed
 case-sensitive.
 
-### STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
+### STATUS: missing files - please provide them
 
-The author showed something like this in their remarks:
-
-```sh
-./toledo2 DDT.COM
-A> IMPORT DDT.COM
-```
-
-but the `A>` prompt never appears; instead it's just the same as if you
-specified no arg which is `>`. It seems like the `A>` might be a typo. That
-being said from the description by the author, if the required files exist in
-the directory, it seems you can do `HALT` 'so the file is saved, and you can
-start the same process with another file'. This does not seem to work but it
-might be not enough information or a misunderstanding.
+A file is missing from the archive linked to by the author so we have not been
+able to add it. Cody tried a few of the other zip files at the website linked to
+but no luck. Do you have the proper file? The file is `IMPORT.COM`. If you do
+please provide a link or make a pull request, adding it to the repo, after
+testing it to make sure it works in the program.
 
 
 # 2007

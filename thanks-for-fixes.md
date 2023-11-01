@@ -2274,6 +2274,10 @@ macOS - it did not seem to be a problem under linux, at least not fedora. The
 problem was wrong variable types - implicit `int`s instead of `FILE *`s. It now
 works with both macOS and linux.
 
+Cody also added the (untested) alt code that is based on the author's remarks to
+port this to systems that have the non-standard `kbhit()` and `getch()` (not the
+one from curses) which is typically (always?) in `conio.h`.
+
 
 ## [2006/toledo3](2006/toledo3/toledo3.c) ([README.md](2006/toledo3/README.md]))
 
