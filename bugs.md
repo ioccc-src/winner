@@ -1246,9 +1246,9 @@ explicitly stated that it requires i386 linux.
 
 There I found what should be a more portable version which is included as
 [otccelf.c](2001/bellard/otccelf.c) (after adding some `#include`s and the
-modification by Yusuke noted in the README.md file) but it appears this *also*
-requires i386 linux; indeed looking at the code it hard codes paths that are
-i386 specific to linux.
+modification by Yusuke noted in the [thanks-for-fixes.md](/thanks-for-fixes.md)
+file) but it appears this *also* requires i386 linux; indeed looking at the code
+it hard codes paths that are i386 specific to linux.
 
 Another point of interest is that the author provided de-obfuscated versions
 which might be of value to look at. I might do that as well but this entry is
