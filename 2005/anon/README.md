@@ -18,7 +18,7 @@ described in the section below.
 The current status of this entry is:
 
 ```
-STATUS: known bug - please help us fix
+STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2005 anon in bugs.md](/bugs.md#2005-anon).

@@ -1478,7 +1478,7 @@ given the right args. See the README.md file for the correct syntax.
 
 ## 2005 anon
 
-### STATUS: known bug - please help us fix
+### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2005/anon/anon.c](2005/anon/anon.c)
 ### Information: [2005/anon/README.md](2005/anon/README.md)
 
@@ -1491,8 +1491,6 @@ details on this.
 If you specify more than three args the program might also crash or do something
 strange. This might also happen if you specify excessively large board
 dimensions. Try `100 100 100` for instance and see what happens!
-
-If you want to try and fix this (mis)feature, you are welcome to try.
 
 
 ## 2005 giljade
