@@ -31,7 +31,7 @@
 
 # setup
 #
-export VERSION="1.0.4 2023-10-31"
+export VERSION="1.0.5 2023-10-31"
 NAME=$(basename "$0"); export NAME
 #
 export V_FLAG=0
@@ -127,8 +127,10 @@ export FULL_WINNER_PATH="$TOPDIR/$WINNER_PATH"
 # form full URL
 #
 export URL_PATH="https://$DOMAIN$DOCPATH/$YEAR/$WINNER"
-export URL_BASENAME="index.html"
+export URL_BASENAME=".inventory.html"
 export URL="$URL_PATH/$URL_BASENAME"
+export GITHUB_URL_PATH="$GITHUB_REPO/$YEAR/$WINNER"
+export GITHUB_URL="$GITHUB_URL_PATH/$URL_BASENAME"
 
 # form Nu Html Checker doc url string
 #
@@ -150,6 +152,8 @@ if [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: URL_PATH=$URL_PATH" 1>&2
     echo "$0: debug[5]: URL_BASENAME=$URL_BASENAME" 1>&2
     echo "$0: debug[5]: URL=$URL" 1>&2
+    echo "$0: debug[5]: GITHUB_URL_PATH=$GITHUB_URL_PATH" 1>&2
+    echo "$0: debug[5]: GITHUB_URL=$GITHUB_URL" 1>&2
     echo "$0: debug[5]: VALIDATOR_ENCODED_URL=$VALIDATOR_ENCODED_URL" 1>&2
 fi
 
