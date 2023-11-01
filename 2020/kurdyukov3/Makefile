@@ -102,7 +102,7 @@ endif
 
 
 ##############################
-# Special flags for this entry
+# Special Makefile variables for this entry
 ##############################
 #
 ENTRY= kurdyukov3

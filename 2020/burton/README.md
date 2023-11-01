@@ -27,10 +27,6 @@ For more detailed information see [2020 burton in bugs.md](/bugs.md#2020-burton)
 ./prog arg ...
 ```
 
-### INABIAF - it's not a bug it's a feature :-)
-
-This entry will very likely crash or do something else if you run it without an
-arg. It might also print strange output with more than one arg.
 
 ## Try:
 

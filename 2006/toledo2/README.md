@@ -12,6 +12,10 @@ Mexico\
 make
 ```
 
+There is [alternate code](#alternate-code) that is based on the author's notes
+for DOS/Windows. This cannot be tested by us, not even to compile, but it appears
+that it should be fine, after the proper header files were added.
+
 
 ### Bugs and (Mis)features
 
@@ -19,7 +23,7 @@ The current status of this entry is:
 
 ```
 STATUS: INABIAF - please **DO NOT** fix
-STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
+STATUS: missing files - please provide them
 ```
 
 For more detailed information see [2006 toledo2 in bugs.md](/bugs.md#2006-toledo2).
@@ -35,13 +39,6 @@ To end execution press `ctrl-z`. As mentioned in the author's remarks and in the
 below section, it is supposed to crash on termination though some noted this
 does not seem to happen in macOS. He asks ironically: 'if it's supposed to crash
 and it does not crash is it actually a bug or is it a feature? :-)'
-
-### INABIAF - it's not a bug it's a feature! :-)
-
-By design this program is supposed to crash on termination.
-
-You must type in caps (except in strings) and this program is indeed
-case-sensitive.
 
 
 ## Try:
@@ -61,14 +58,23 @@ RUN
 
 To end the program hit ctrl-z.
 
-### IABINAF - it's a bug it's not a feature! :-)
+## Alternate code:
 
-Although the program does not crash when reading in `C.BIOS` it appears that the
-CP/M emulator does not work as expected at least according to the author's
-remarks.
+This version, as noted, should work for DOS/Windows. It uses non-standard
+functions in place of `read(2)` and `write(2)`.
 
-See also [bugs.md](/bugs.md) for more details.
+### Alternate build:
 
+```sh
+make alt
+```
+
+### Alternate use:
+
+The author noted that for PC/DOS you will have to add `ANSI.SYS` to your
+`CONFIG.SYS` but this is also not something we can test.
+
+Use `toledeo2.alt` as you would `toledo2` above.
 
 ## Judges' remarks:
 
@@ -166,7 +172,7 @@ When the `>` prompt appears, do:
 IMPORT DDT.COM
 ```
 
-When it ends, do `HALT`, so the file is saved, and you can start
+When it ends, do `HALT`, so the file is closed, and you can start
 the same process with another file.
 
 At this time I have tested successfully the following software
@@ -199,10 +205,14 @@ ANSI terminal:
         write   -->  putchar(7[o])
         system  -->  nothing
 
+Notice that you'll have to do `#include <conio.h>` as well.
+
 Also add the following to trap Ctrl-C:
 
         #include <signal.h>
         signal(SIGINT, SIG_IGN);
+
+NOTE: this is what the [alternate code](#alternate-code) is for!
 
 NOTE from the judges: in Unix like systems `getch()` is part of curses but this
 is not what is needed.

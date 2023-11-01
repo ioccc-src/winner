@@ -667,11 +667,22 @@ Enjoy! :-)
 ### Source code: [1990/jaw/jaw.c](1990/jaw/jaw.c)
 ### Information: [1990/jaw/README.md](1990/jaw/README.md)
 
-It seems like the scripts do not work correctly, where not all files are
-extracted. Some work was done to get them to work some but it does not appear
-that all files can be extracted. For instance in the [try.sh](1990/jaw/try.sh)
-script which Cody added it is supposed to add the README.md file to the archive
-and it did at one point (or so he recalls) but now it doesn't seem to happen.
+The command:
+
+```sh
+echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
+```
+
+just prints:
+
+```
+$ echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
+oops
+oops
+```
+
+Do you have a fix? We welcome it (Cody does have an idea and will look at it
+later but we also don't know what it's supposed to do now)!
 
 
 ## 1990 theorem
@@ -708,6 +719,20 @@ when you're cheating it ends up winning! Can you figure that out as well?
 
 
 # 1992
+
+## 1992 gson
+
+### STATUS: uses gets() - change to fgets() if possible
+### Source code: [1992/gson/gson.c](1992/gson/gson.c)
+### Information: [1992/gson/README.md])1992/gson/README.md_
+
+Cody changed it so that the buffer size is `ARG_MAX+1` to try and get past the
+problem of `gets()` being used in a more complex way.
+
+It would be ideal if it were to use `fgets()` though. This will probably be
+looked at later but you're welcome to try and fix this too! A tip on how
+`gets()` is being used is in the [thanks-for-fixes.md](thanks-for-fixes.md)
+file.
 
 
 ## 1992 kivinen
@@ -1130,13 +1155,15 @@ This program does not do what you might think it does! Running it like:
 will seemingly wait for input exactly because it is waiting for input. See the
 README.md file or look at the source.
 
-Although the name of the program suggests it prints prime numbers
-this is not the case. This is by design. See the author's comments
-for more details or better yet look at the code and if necessary
-try it out.  Please do not try and fix this.
+Although the name of the program suggests it prints prime numbers this is not
+the case. This is by design. See the author's comments for more details or
+better yet look at the code and if necessary try it out.  Please do not try and
+fix this.
 
-A crash in the program is known as well. This is also a feature.
-Please do not try to fix the crashing of this code.
+A crash in the program is known as well. This is also a feature.  Please do not
+try to fix the crashing of this code except to challenge yourself (if you think
+that it'll be worth your two second fix :-) ).  If you do fix it please do not
+make a pull request.
 
 
 ## 2000 rince
@@ -1521,28 +1548,20 @@ not crash in macOS (it appeared to work fine in fedora linux on an `x86_64`
 architecture but he does not know if it crashed in macOS Ventura due to the fact
 it is an `arm64` CPU - the Apple silicon chip). This fix, BTW, is a mix of a fix
 by [Yusuke Endoh](/winners.html#Yusuke_Endoh) and Cody's. Nevertheless there are
-two features that are not bugs and one bug (see below).
+two features that are not bugs.
 
 By design this program is supposed to crash on termination.
 
 You must type in caps (except in strings) and this program is indeed
 case-sensitive.
 
-### STATUS: possible bug (possibly depending on system) - please help test and if necessary fix
+### STATUS: missing files - please provide them
 
-The author showed something like this in their remarks:
-
-```sh
-./toledo2 DDT.COM
-A> IMPORT DDT.COM
-```
-
-but the `A>` prompt never appears; instead it's just the same as if you
-specified no arg which is `>`. It seems like the `A>` might be a typo. That
-being said from the description by the author, if the required files exist in
-the directory, it seems you can do `HALT` 'so the file is saved, and you can
-start the same process with another file'. This does not seem to work but it
-might be not enough information or a misunderstanding.
+A file is missing from the archive linked to by the author so we have not been
+able to add it. Cody tried a few of the other zip files at the website linked to
+but no luck. Do you have the proper file? The file is `IMPORT.COM`. If you do
+please provide a link or make a pull request, adding it to the repo, after
+testing it to make sure it works in the program.
 
 
 # 2007

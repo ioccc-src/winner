@@ -932,16 +932,19 @@ With these improvements the entry looks much more like the original!
 
 ## [1990/jaw](1990/jaw/jaw.c) ([README.md](1990/jaw/README.md]))
 
-Cody fixed the script to work properly in modern environments (to do with `$PATH`
-not having `.` in it). Other adjustments were made as well.
+Cody fixed the script to work properly in modern environments including paths,
+writing to and extracting from stdout, (to do with `$PATH`
+not having `.` in it) and relying on the exit code in the commands to allow for
+`&& ...`.
 
 He also changed the `perror(3)` call to `fprintf(3)` because in macOS when errno
 is 0 it shows what looks like an error.
 
 He added the [try.sh](1990/jaw/try.sh) to run the commands that we suggested at
-the time. However, there is a known bug still, see [bugs.md](bugs.md) for
-details.
+the time.
 
+However, there is a known bug still, see [1990 jaw in
+bugs.md](/bugs.md#1990-jaw) for details.
 
 NOTE: as `btoa` is not common we used a ruby script from Yusuke.
 
@@ -1657,6 +1660,11 @@ itself a one-line like the code is in the original entry. Now it looks much more
 like the original entry but with the two fixes.
 
 
+## [2000/primenum](2000/primenum/primenum.c) ([README.md](2000/primenum/README.md]))
+
+Cody made this more portable by changing the `void main` to `int main`.
+
+
 ## [2000/thadgavin](2000/thadgavin/thadgavin.c) ([README.md](2000/thadgavin/README.md]))
 
 Cody fixed the code and added an appropriate make rule so that the SDL version
@@ -1896,15 +1904,21 @@ SC2248 (style): Prefer double quoting even when variables don't contain special 
 
 errors/warnings.
 
+
 ## [2001/herrmann2](2001/herrmann2/herrmann2.c) ([README.md](2001/herrmann2/README.md]))
 
-Cody fixed this to work with both 64-bit and 32-bit compilers by changing most of
-the `int`s (all but that in `main`) to `long`s. He also fixed it to compile with
-clang by changing the args of main to be `int` and `char **`, respectively, and
-changing specific references to the `argv` arg, casting to `long` (was `int` but
-the 64-bit fix requires `long`) which was its old type. The original file, used
-for demonstration purposes, as well as if you want to see if your system works
-with the original code, is the alternate version. See the README.md for details.
+Cody fixed this to work with both 64-bit and 32-bit compilers by changing most
+of the `int`s (all but that in `main(int ...)`) to `long`s. He also fixed it to
+compile with clang by changing the args of main to be `int` and `char **`,
+respectively, and changing specific references to the `argv` arg, casting to
+`long` (was `int` but the 64-bit fix requires `long`) which was its old type.
+
+The original file, used for demonstration purposes, as well as if you want to
+see if your system works with the original code, is the alternate version. See
+the README.md for details.
+
+For some reason the original code was missing (presumingly because it had been
+added to `.gitignore` by accident) but Cody restored it from the archive.
 
 
 ## [2001/kev](2001/kev/kev.c) ([README.md](2001/kev/README.md]))
@@ -2265,6 +2279,10 @@ Cody fixed a segfault in this program which was making it fail to work under
 macOS - it did not seem to be a problem under linux, at least not fedora. The
 problem was wrong variable types - implicit `int`s instead of `FILE *`s. It now
 works with both macOS and linux.
+
+Cody also added the (untested) alt code that is based on the author's remarks to
+port this to systems that have the non-standard `kbhit()` and `getch()` (not the
+one from curses) which is typically (always?) in `conio.h`.
 
 
 ## [2006/toledo3](2006/toledo3/toledo3.c) ([README.md](2006/toledo3/README.md]))
