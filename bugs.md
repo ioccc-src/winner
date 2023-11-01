@@ -1130,13 +1130,15 @@ This program does not do what you might think it does! Running it like:
 will seemingly wait for input exactly because it is waiting for input. See the
 README.md file or look at the source.
 
-Although the name of the program suggests it prints prime numbers
-this is not the case. This is by design. See the author's comments
-for more details or better yet look at the code and if necessary
-try it out.  Please do not try and fix this.
+Although the name of the program suggests it prints prime numbers this is not
+the case. This is by design. See the author's comments for more details or
+better yet look at the code and if necessary try it out.  Please do not try and
+fix this.
 
-A crash in the program is known as well. This is also a feature.
-Please do not try to fix the crashing of this code.
+A crash in the program is known as well. This is also a feature.  Please do not
+try to fix the crashing of this code except to challenge yourself (if you think
+that it'll be worth your two second fix :-) ).  If you do fix it please do not
+make a pull request.
 
 
 ## 2000 rince
