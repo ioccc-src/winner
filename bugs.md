@@ -667,11 +667,22 @@ Enjoy! :-)
 ### Source code: [1990/jaw/jaw.c](1990/jaw/jaw.c)
 ### Information: [1990/jaw/README.md](1990/jaw/README.md)
 
-It seems like the scripts do not work correctly, where not all files are
-extracted. Some work was done to get them to work some but it does not appear
-that all files can be extracted. For instance in the [try.sh](1990/jaw/try.sh)
-script which Cody added it is supposed to add the README.md file to the archive
-and it did at one point (or so he recalls) but now it doesn't seem to happen.
+The command:
+
+```sh
+echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
+```
+
+just prints:
+
+```
+$ echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
+oops
+oops
+```
+
+Do you have a fix? We welcome it (Cody does have an idea and will look at it
+later but we also don't know what it's supposed to do now)!
 
 
 ## 1990 theorem
