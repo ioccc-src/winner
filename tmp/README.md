@@ -336,6 +336,11 @@ the JSON member names found in
 [example.dot_winner.json](example.dot_winner.json).
 
 
+### [fake.gen_index.sh](fake.gen_index.sh)
+
+Generate a fake index.html for a given winner.
+
+
 ### [fix_manifest_csv.sh](fix_manifest_csv.sh)
 
 This tool will fix the [manifest.csv](manifest.csv) by
@@ -544,6 +549,11 @@ This is a temporary location for potential tools that are used to
 build and maintain the www.ioccc.org web site.
 
 Eventually a separate build-ioccc repo will hold these tools.
+
+
+### [run_all.sh](run_all.sh)
+
+A tool to run another tool over all winner directories.
 
 
 ### [winner_dir.txt](winner_dir.txt)
