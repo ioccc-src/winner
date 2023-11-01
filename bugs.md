@@ -1130,10 +1130,13 @@ This program does not do what you might think it does! Running it like:
 will seemingly wait for input exactly because it is waiting for input. See the
 README.md file or look at the source.
 
-It also has main() return void even though this is non-standard. Please do not
-fix this (in fact it was originally done but rolled back).
+Although the name of the program suggests it prints prime numbers
+this is not the case. This is by design. See the author's comments
+for more details or better yet look at the code and if necessary
+try it out.  Please do not try and fix this.
 
-As well there is a known crash that's also a feature.
+A crash in the program is known as well. This is also a feature.
+Please do not try to fix the crashing of this code.
 
 
 ## 2000 rince

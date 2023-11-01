@@ -2,6 +2,7 @@
 
 Raymond Cheong
 
+
 ## To build:
 
 ```sh
@@ -29,19 +30,13 @@ echo n | ./primenum n
 
 NOTE: `n` is an integer.
 
-### INABIAF - it's not a bug it's a feature! :-)
-
-Although the name of the program suggests it prints prime numbers this is not
-the case. This is by design. See the author's comments for more details or
-better yet look at the code and if necessary try it out.
-
-A crash in the program is known as well. This is also a feature.
 
 ## Try:
 
 ```sh
 echo IOCCC 23209 | ./primenum 23209
 ```
+
 
 ## Judges' remarks:
 
@@ -51,6 +46,7 @@ out what it does, run it.  It may surprise you.
 
 This entry won, not because the obfuscation is impenetrable, but because
 it successfully fooled half of the judges, including me.
+
 
 ## Author's remarks:
 
