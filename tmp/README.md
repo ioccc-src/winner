@@ -197,13 +197,83 @@ Anonymous YYYY
 ```
 
 
-### [author_wins.csv](author_wins.csv)
+### [author_wins.numbers](author_wins.numbers)
 
-A CSV (Comma Separated Values) file: one line per `author`.
+A [macOS](https://www.apple.com/macos) [Numbers](https://www.apple.com/numbers/)
+spreadsheet: one line per `author`.
 
 The first field is an `author_handle`.
 
 The other fields are the `winner_id`'s of all `winner`s won by the `author`.
+
+
+### [author_wins.csv](author_wins.csv)
+
+The [author_wins.csv](author_wins.csv) is a CSV file that was exported from the
+[author_wins.numbers](author_wins.numbers) file.
+
+In case of conflict, the data in [author_wins.numbers](author_wins.numbers) file is
+considered authoritative over the [author_wins.csv](author_wins.csv) file.
+
+The [author_wins.csv.csv](author_wins.csv) is generated from the [author_wins.numbers](author_wins.numbers) file,
+via the [macOS](https://www.apple.com/macos/)
+[Numbers](https://www.apple.com/numbers/) spreadsheet app, as follows:
+
+0. open [author_wins.numbers](author_wins.numbers) in numbers: modify if/as needed
+
+1. File -> Export To -> CSV...
+    * 1a. `[ ]` Include table names (unset)
+    * 1b. Text Encoding: Unicode (UTF-8)
+    * 1c. Click ((Save..))
+
+2. Save As: author_wins.csv
+    * 2a. Select the `tmp` directory
+
+3. Click ((Export))
+    * 3a. If needed click ((Replace))
+
+4. open a terminal window
+
+5. cd to the `tmp` directory
+
+6. tr -d '\015' < author_wins.csv > tmp.csv
+
+7. echo >> tmp.csv
+
+8. mv -f tmp.csv author_wins.csv
+
+
+### [author.numbers](author.numbers)
+
+A [macOS](https://www.apple.com/macos) [Numbers](https://www.apple.com/numbers/)
+spreadsheet contains information about `author`s: one line per `author` with the
+following fields:
+
+1. This field is `sort_word` string.
+
+2. This field is the full name of the `author`.
+
+3. This field is the `author_handle` of the `author`.
+
+4. This field is the primary URL of `author` or the string `null` if none was
+   given.
+
+5. This field is the email address of `author` or the string `null` if none was
+   given.
+
+6. This field is the location ISO 3166 code of `author` or the string `null` is unknown.
+   An `author` who does not wish to specify a location ISO 3166 code is encouraged to
+   use the code `XX`.  The location ISO 3166 code consists of two UPPER CASE ASCII letters.
+
+7. This field is the twitter handle of the `author` or the string `null` if none
+   was given.  This field is kept for purely historic record purposes and is
+   otherwise not used.
+
+8. This field is the mastodon handle  of the `author` or the string `null` if
+   none was given.
+
+9. This field is the alternate URL of `author` or the string `null` if none
+   was given.
 
 
 ### [author.csv](author.csv)
@@ -240,39 +310,6 @@ via the [macOS](https://www.apple.com/macos/)
 7. echo >> tmp.csv
 
 8. mv -f tmp.csv author.csv
-
-
-### [author.numbers](author.numbers)
-
-A [macOS](https://www.apple.com/macos) [Numbers](https://www.apple.com/numbers/)
-spreadsheet contains information about `author`s: one line per `author` with the
-following fields:
-
-1. This field is `sort_word` string.
-
-2. This field is the full name of the `author`.
-
-3. This field is the `author_handle` of the `author`.
-
-4. This field is the primary URL of `author` or the string `null` if none was
-   given.
-
-5. This field is the email address of `author` or the string `null` if none was
-   given.
-
-6. This field is the location ISO 3166 code of `author` or the string `null` is unknown.
-   An `author` who does not wish to specify a location ISO 3166 code is encouraged to
-   use the code `XX`.  The location ISO 3166 code consists of two UPPER CASE ASCII letters.
-
-7. This field is the twitter handle of the `author` or the string `null` if none
-   was given.  This field is kept for purely historic record purposes and is
-   otherwise not used.
-
-8. This field is the mastodon handle  of the `author` or the string `null` if
-   none was given.
-
-9. This field is the alternate URL of `author` or the string `null` if none
-   was given.
 
 
 ### [author_handle.txt](author_handle.txt)
@@ -596,7 +633,7 @@ The [year_prize.csv](year_prize.csv) is a CSV file that was exported from the
 In case of conflict, the data in [year_prize.numbers](year_prize.numbers) file is
 considered authoritative over the [year_prize.csv](year_prize.csv) file.
 
-The [year_prize.csv.csv](year_prize.csv) is generated from the [year_prize.numbers.numbers](year_prize.numbers) file,
+The [year_prize.csv.csv](year_prize.csv) is generated from the [year_prizes.numbers](year_prize.numbers) file,
 via the [macOS](https://www.apple.com/macos/)
 [Numbers](https://www.apple.com/numbers/) spreadsheet app, as follows:
 
