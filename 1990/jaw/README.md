@@ -1,22 +1,12 @@
 # Best Entropy-reducer
 
 James A. Woods\
-Research Institute for Advanced Computer Science\
-MS 230-5\
-NASA Ames Research Center\
-Moffett Field, CA 94131\
 US
 
 Karl F. Fox\
-Morning Star Technologies, Inc.\
-1760 Zollinger Road\
-Columbus, OH 43221\
 US
 
 Paul Eggert\
-Twin Sun Inc.\
-360 N. Sepulveda Blvd. #2055\
-El Segundo, CA 90245\
 US
 
 ## To build:
@@ -24,9 +14,6 @@ US
 ```sh
 make all
 ```
-
-NOTE: see the [bugs.md](/bugs.md) file for information on what appears to be a
-bug in macOS but is actually not.
 
 
 ### Bugs and (Mis)features
