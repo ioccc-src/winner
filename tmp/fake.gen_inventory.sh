@@ -59,7 +59,7 @@ Exit codes:
      0	    all OK
      2	    -h and help string printed or -V and version string printed
      3	    command line error
-     4	    cannot find writiable winner directory
+     4	    cannot find writable winner directory
  >= 10	    internal error
 
 $NAME version: $VERSION"
