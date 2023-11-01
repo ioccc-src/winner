@@ -51,6 +51,7 @@ overflow!
 BTW: is there such a thing as too fast a CPU ? :-) Actually yes for certain code
 which is probably not as uncommon as you think :-).
 
+
 ### Try:
 
 
@@ -166,6 +167,7 @@ make gentab
 
 NOTE: it is highly unlikely that you will be able to compile and run the output
 of `gentab` but it should at least compile.
+
 
 ## Author's remarks:
 
