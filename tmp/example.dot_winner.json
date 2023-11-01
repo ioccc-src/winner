@@ -63,16 +63,6 @@
 	    "winners_text" : "original source"
 	},
 	{
-	    "winners_rank" : 80,
-	    "path" : ".inventory.html",
-	    "created_by" : "winner2nventory",
-	    "prog" : "orig",
-	    "filetype" : "c",
-	    "winners_show" : true,
-	    "display_via" : "github",
-	    "winners_text" : "original source"
-	},
-	{
 	    "winners_rank" : 100,
 	    "path" : "chocolate_cake.jpg",
 	    "created_by" : null,
@@ -131,6 +121,16 @@
 	    "winners_show" : true,
 	    "display_via" : "download_only",
 	    "winners_text" : "download winning source"
+	},
+	{
+	    "winners_rank" : 900,
+	    "path" : ".inventory.html",
+	    "created_by" : "winner2nventory",
+	    "prog" : "orig",
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "original source"
 	},
 	{
 	    "winners_rank" : null,
