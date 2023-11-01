@@ -1904,15 +1904,21 @@ SC2248 (style): Prefer double quoting even when variables don't contain special 
 
 errors/warnings.
 
+
 ## [2001/herrmann2](2001/herrmann2/herrmann2.c) ([README.md](2001/herrmann2/README.md]))
 
-Cody fixed this to work with both 64-bit and 32-bit compilers by changing most of
-the `int`s (all but that in `main`) to `long`s. He also fixed it to compile with
-clang by changing the args of main to be `int` and `char **`, respectively, and
-changing specific references to the `argv` arg, casting to `long` (was `int` but
-the 64-bit fix requires `long`) which was its old type. The original file, used
-for demonstration purposes, as well as if you want to see if your system works
-with the original code, is the alternate version. See the README.md for details.
+Cody fixed this to work with both 64-bit and 32-bit compilers by changing most
+of the `int`s (all but that in `main(int ...)`) to `long`s. He also fixed it to
+compile with clang by changing the args of main to be `int` and `char **`,
+respectively, and changing specific references to the `argv` arg, casting to
+`long` (was `int` but the 64-bit fix requires `long`) which was its old type.
+
+The original file, used for demonstration purposes, as well as if you want to
+see if your system works with the original code, is the alternate version. See
+the README.md for details.
+
+For some reason the original code was missing (presumingly because it had been
+added to `.gitignore` by accident) but Cody restored it from the archive.
 
 
 ## [2001/kev](2001/kev/kev.c) ([README.md](2001/kev/README.md]))

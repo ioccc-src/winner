@@ -75,8 +75,9 @@ diff herrmann2.alt.c herrmann2.orig.c && echo "output matches with original code
 
 ## Alternate code:
 
-If you wish to use the original version that does not work for all platforms,
-you can make use of the [herrmann2.alt.c](herrmann2.alt.c) by running:
+If you wish to use the original version that does not work for all platforms
+(and will not even compile with some versions of clang), you can make use of the
+[herrmann2.alt.c](herrmann2.alt.c) by running:
 
 ```sh
 make alt
