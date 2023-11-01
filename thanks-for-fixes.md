@@ -1657,6 +1657,11 @@ itself a one-line like the code is in the original entry. Now it looks much more
 like the original entry but with the two fixes.
 
 
+## [2000/primenum](2000/primenum/primenum.c) ([README.md](2000/primenum/README.md]))
+
+Cody made this more portable by changing the `void main` to `int main`.
+
+
 ## [2000/thadgavin](2000/thadgavin/thadgavin.c) ([README.md](2000/thadgavin/README.md]))
 
 Cody fixed the code and added an appropriate make rule so that the SDL version
