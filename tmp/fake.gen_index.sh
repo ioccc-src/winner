@@ -31,7 +31,7 @@
 
 # setup
 #
-export VERSION="1.0.1 2023-10-31"
+export VERSION="1.0.2 2023-10-31"
 NAME=$(basename "$0"); export NAME
 #
 export V_FLAG=0
@@ -187,7 +187,7 @@ XXX - fake content until readme2index is working - XXX
 
 <!-- Start WWW validator - v2.0 -->
 <P>
-<A HREF="http://validator.w3.org/check/referer">validate web page</A>
+<A HREF="https://validator.w3.org/nu/">validate web page</A>
 </P>
 <!-- End WWW validator - v2.0 -->
 
