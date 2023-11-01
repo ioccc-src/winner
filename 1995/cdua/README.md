@@ -36,6 +36,7 @@ For more detailed information see [1995 cdua in bugs.md](/bugs.md#1995-cdua).
 ./cdua.alt
 ```
 
+
 ## Try:
 
 To use 1500 for `Z` do:
@@ -68,17 +69,20 @@ actually see it being solved in real time rather than have it go by in a flash.
 If you wish to use the original version, for instance if you wish to see how
 fast your computer is :-) or use both to see the difference, you can do so.
 
-## ## Original build:
+
+#### Original build:
 
 ```sh
 make all
 ```
+
 
 ### Original use:
 
 ```
 ./cdua
 ```
+
 
 ## Judges' remarks:
 
