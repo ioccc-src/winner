@@ -210,15 +210,7 @@ via the [macOS](https://www.apple.com/macos/)
 3. Click ((Export))
     * 3a. If needed click ((Replace))
 
-4. open a terminal window
-
-5. cd to the `tmp` directory
-
-6. tr -d '\015' < author_wins.csv > tmp.csv
-
-7. echo >> tmp.csv
-
-8. mv -f tmp.csv author_wins.csv
+4. Execute ./[fix_csv.sh](fix_csv.sh)
 
 
 ### [author.numbers](author.numbers)
@@ -279,15 +271,7 @@ via the [macOS](https://www.apple.com/macos/)
 3. Click ((Export))
     * 3a. If needed click ((Replace))
 
-4. open a terminal window
-
-5. cd to the `tmp` directory
-
-6. tr -d '\015' < author.csv > tmp.csv
-
-7. echo >> tmp.csv
-
-8. mv -f tmp.csv author.csv
+4. Execute ./[fix_csv.sh](fix_csv.sh)
 
 
 ### [author_handle.txt](author_handle.txt)
@@ -361,10 +345,25 @@ Generate a fake index.html for a given winner.
 Generate a fake .inventory.html for a given winner.
 
 
-### [fix_manifest_csv.sh](fix_manifest_csv.sh)
+### [fix_csv.sh](fix_csv.sh)
 
-This tool will fix the [manifest.csv](manifest.csv) by
- removing carriage returns and appending a newline if it was missing.
+This tool will fix CSV files exported by
+[macOS](https://www.apple.com/macos)
+[Numbers](https://www.apple.com/numbers/) by removing carriage
+returns and appending a newline if it was missing.
+
+Fixing involves these actions:
+
+```sh
+tr -d '\015' < input.csv > tmp.csv
+echo >> tmp.csv
+mv -f tmp.csv input.csv
+```
+
+This tool also forms [path_list.built.txt](path_list.built.txt),
+[path_list.manifest.txt](path_list.manifest.txt), and
+[path_list.required.txt](path_list.required.txt) from
+[manifest.csv](manifest.csv).
 
 
 ### [gen_author_json.sh](gen_author_json.sh)
@@ -514,7 +513,7 @@ via the [macOS](https://www.apple.com/macos/)
 3. Click ((Export))
     * 3a. If needed click ((Replace))
 
-4. execute ./[fix_manifest_csv.sh](fix_manifest_csv.sh)
+4. Execute ./[fix_csv.sh](fix_csv.sh)
 
 
 ### [path_list.built.txt](path_list.built.txt)
@@ -526,7 +525,7 @@ These paths are formed from [manifest.numbers](manifest.numbers)
 entries where the "created_by" (5th) field is null.  See
 [manifest.numbers](manifest.numbers) for details on the fields.
 
-This file is formed by the [fix_manifest_csv.sh](fix_manifest_csv.sh) tool.
+This file is formed by the [fix_csv.sh](fix_csv.sh) tool.
 
 
 ### [path_list.found.txt](path_list.found.txt)
@@ -542,7 +541,7 @@ This file is created by [gen_path_list.found.sh](gen_path_list.found.sh).
 This is the list of file paths, both primary and constructed
 files from winners.
 
-This file is formed by the [fix_manifest_csv.sh](fix_manifest_csv.sh) tool.
+This file is formed by the [fix_csv.sh](fix_csv.sh) tool.
 
 
 ### [path_list.required.txt](path_list.required.txt)
@@ -554,7 +553,7 @@ These paths are formed from [manifest.numbers](manifest.numbers)
 entries where the "created_by" (5th) field is non-null.  See
 [manifest.numbers](manifest.numbers) for details on the fields.
 
-This file is formed by the [fix_manifest_csv.sh](fix_manifest_csv.sh) tool.
+This file is formed by the [fix_csv.sh](fix_csv.sh) tool.
 
 
 ### [sql/winners.sql](sql/winners.sql)
@@ -629,12 +628,4 @@ via the [macOS](https://www.apple.com/macos/)
 3. Click ((Export))
     * 3a. If needed click ((Replace))
 
-4. open a terminal window
-
-5. cd to the `tmp` directory
-
-6. tr -d '\015' < year_prize.csv > tmp.csv
-
-7. echo >> tmp.csv
-
-8. mv -f tmp.csv year_prize.csv
+4. Execute ./[fix_csv.sh](fix_csv.sh)

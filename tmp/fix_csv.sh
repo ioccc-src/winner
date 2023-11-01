@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# fix_numbers_csv - fix the exported manifest CSV file, form path_list.* files
+# fix_csv - fix the exported CSV files, form path_list.* files
 #
 # When Apple numbers exports a CSV file from manifest.numbers,
 # and exports a CSV file from missing-manifest.numbers,
@@ -223,6 +223,88 @@ else
 	exit 29
     fi
 fi
+
+# fix other CSV files
+#
+# We will fix author.csv, author_wins.csv, and year_prize.csv
+#
+for csv in author.csv author_wins.csv year_prize.csv; do
+
+    # verify that a CSV file exists
+    #
+    if [[ ! -f $csv ]]; then
+	echo "$0: ERROR: CSV is missing: $csv" 1>&2
+	exit 30
+    fi
+    if [[ ! -s $csv ]]; then
+	echo "$0: ERROR: CSV is empty: $csv" 1>&2
+	exit 31
+    fi
+
+    # setup temp CSV file
+    #
+    TMP_CSV="tmp.$$.$csv"
+    rm -f "$TMP_CSV"
+    if [[ -e $TMP_CSV ]]; then
+	echo "$0: ERROR: TMP_CSV cannot be removed: $TMP_CSV" 1>&2
+	exit 32
+    fi
+
+    # remove carriage returns in CSV file
+    #
+    trap 'rm -f $TMP_CSV; exit' 0 1 2 3 15
+    tr -d '\015' < "$csv" > "$TMP_CSV"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	printf "$0: ERROR: TMP_CSV: tr -d '\\\015' < %s > %s failed, error: %s\n" "$csv" "$TMP_CSV" "$status" 1>&2
+	exit 33
+    fi
+    if [[ ! -s $TMP_CSV ]]; then
+	printf "$0: ERROR: TMP_CSV: tr -d '\\\015' < %s > %s produced an empty file" "$csv" "$TMP_CSV" 1>&2
+	exit 34
+    fi
+
+    # sort CSV file
+    #
+    sort -t, -k1d,1 -k2d,2 "$TMP_CSV" -o "$TMP_CSV"
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	printf "$0: ERROR: sort -t, -k1d,1 -k2d,2 %s -o %s failed, error: %s\n" "$TMP_CSV" "$TMP_CSV" "$status" 1>&2
+	exit 35
+    fi
+
+    # append newline if last line of CSV file if not empty
+    #
+    LAST_CHAR=$(tail -c 1 "$TMP_CSV")
+    if [[ -n $LAST_CHAR ]]; then
+	echo "" >> "$TMP_CSV"
+    fi
+
+    # replace CSV file if different
+    #
+    if ! cmp -s "$TMP_CSV" "$csv"; then
+
+	# replace CSV file with a better formatted version
+	#
+	echo "$0: updating $csv"
+	mv -f -v "$TMP_CSV" "$csv"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: mv -f -v $TMP_CSV $csv failed, error: $status" 1>&2
+	    exit 36
+	fi
+
+    else
+
+	# CSV file is OK, remove the tmp file
+	#
+	rm -f "$TMP_CSV"
+	if [[ -e $TMP_CSV ]]; then
+	    echo "$0: ERROR: TMP_CSV cannot be removed for cleanup: $TMP_CSV" 1>&2
+	    exit 77
+	fi
+    fi
+done
 
 # All Done!!! -- Jessica Noll, Age 2
 #
