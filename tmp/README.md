@@ -341,6 +341,11 @@ the JSON member names found in
 Generate a fake index.html for a given winner.
 
 
+### [fake.gen_inventory.sh](fake.gen_inventory.sh)
+
+Generate a fake .inventory.html for a given winner.
+
+
 ### [fix_manifest_csv.sh](fix_manifest_csv.sh)
 
 This tool will fix the [manifest.csv](manifest.csv) by
