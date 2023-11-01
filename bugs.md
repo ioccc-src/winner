@@ -720,6 +720,20 @@ when you're cheating it ends up winning! Can you figure that out as well?
 
 # 1992
 
+## 1992 gson
+
+### STATUS: uses gets() - change to fgets() if possible
+### Source code: [1992/gson/gson.c](1992/gson/gson.c)
+### Information: [1992/gson/README.md])1992/gson/README.md_
+
+Cody changed it so that the buffer size is `ARG_MAX+1` to try and get past the
+problem of `gets()` being used in a more complex way.
+
+It would be ideal if it were to use `fgets()` though. This will probably be
+looked at later but you're welcome to try and fix this too! A tip on how
+`gets()` is being used is in the [thanks-for-fixes.md](thanks-for-fixes.md)
+file.
+
 
 ## 1992 kivinen
 
