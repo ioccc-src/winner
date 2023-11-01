@@ -38,6 +38,13 @@ echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
 which should apply the identity transformation to a minimal holoalphabetic
 sentence.
 
+
+Also try:
+
+```sh
+./try.sh
+```
+
 ## Judges' remarks:
 
 
