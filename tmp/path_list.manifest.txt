@@ -1,5 +1,4 @@
 1984/anonymous/.gitignore
-1984/anonymous/.id
 1984/anonymous/.inventory.html
 1984/anonymous/.winner.json
 1984/anonymous/1984-anonymous-tattoo.jpg
@@ -11,7 +10,6 @@
 1984/anonymous/anonymous.orig.c
 1984/anonymous/index.html
 1984/decot/.gitignore
-1984/decot/.id
 1984/decot/.inventory.html
 1984/decot/.winner.json
 1984/decot/1984_decot.tar.bz2
@@ -22,7 +20,6 @@
 1984/decot/decot.orig.c
 1984/decot/index.html
 1984/laman/.gitignore
-1984/laman/.id
 1984/laman/.inventory.html
 1984/laman/.winner.json
 1984/laman/1984_laman.tar.bz2
@@ -32,7 +29,6 @@
 1984/laman/laman.c
 1984/laman/laman.orig.c
 1984/mullender/.gitignore
-1984/mullender/.id
 1984/mullender/.inventory.html
 1984/mullender/.winner.json
 1984/mullender/1984_mullender.tar.bz2
@@ -46,7 +42,6 @@
 1984/mullender/mullender.c
 1984/mullender/mullender.orig.c
 1985/applin/.gitignore
-1985/applin/.id
 1985/applin/.inventory.html
 1985/applin/.winner.json
 1985/applin/1985_applin.tar.bz2
@@ -56,7 +51,6 @@
 1985/applin/applin.orig.c
 1985/applin/index.html
 1985/august/.gitignore
-1985/august/.id
 1985/august/.inventory.html
 1985/august/.winner.json
 1985/august/1985_august.tar.bz2
@@ -67,7 +61,6 @@
 1985/august/index.html
 1985/august/primes.sh
 1985/lycklama/.gitignore
-1985/lycklama/.id
 1985/lycklama/.inventory.html
 1985/lycklama/.winner.json
 1985/lycklama/1985_lycklama.tar.bz2
@@ -78,7 +71,6 @@
 1985/lycklama/lycklama.c
 1985/lycklama/lycklama.orig.c
 1985/shapiro/.gitignore
-1985/shapiro/.id
 1985/shapiro/.inventory.html
 1985/shapiro/.winner.json
 1985/shapiro/1985_shapiro.tar.bz2
@@ -88,7 +80,6 @@
 1985/shapiro/shapiro.c
 1985/shapiro/shapiro.orig.c
 1985/sicherman/.gitignore
-1985/sicherman/.id
 1985/sicherman/.inventory.html
 1985/sicherman/.winner.json
 1985/sicherman/1985_sicherman.tar.bz2
@@ -99,7 +90,6 @@
 1985/sicherman/sicherman.c
 1985/sicherman/sicherman.orig.c
 1986/applin/.gitignore
-1986/applin/.id
 1986/applin/.inventory.html
 1986/applin/.winner.json
 1986/applin/1986_applin.tar.bz2
@@ -109,7 +99,6 @@
 1986/applin/applin.orig.c
 1986/applin/index.html
 1986/august/.gitignore
-1986/august/.id
 1986/august/.inventory.html
 1986/august/.winner.json
 1986/august/1986_august.tar.bz2
@@ -119,7 +108,6 @@
 1986/august/august.orig.c
 1986/august/index.html
 1986/bright/.gitignore
-1986/bright/.id
 1986/bright/.inventory.html
 1986/bright/.winner.json
 1986/bright/1986_bright.tar.bz2
@@ -129,7 +117,6 @@
 1986/bright/bright.orig.c
 1986/bright/index.html
 1986/hague/.gitignore
-1986/hague/.id
 1986/hague/.inventory.html
 1986/hague/.winner.json
 1986/hague/1986_hague.tar.bz2
@@ -140,7 +127,6 @@
 1986/hague/hague.orig.c
 1986/hague/index.html
 1986/holloway/.gitignore
-1986/holloway/.id
 1986/holloway/.inventory.html
 1986/holloway/.winner.json
 1986/holloway/1986_holloway.tar.bz2
@@ -150,7 +136,6 @@
 1986/holloway/holloway.orig.c
 1986/holloway/index.html
 1986/marshall/.gitignore
-1986/marshall/.id
 1986/marshall/.inventory.html
 1986/marshall/.winner.json
 1986/marshall/1986_marshall.tar.bz2
@@ -163,7 +148,6 @@
 1986/marshall/marshall.c
 1986/marshall/marshall.orig.c
 1986/pawka/.gitignore
-1986/pawka/.id
 1986/pawka/.inventory.html
 1986/pawka/.winner.json
 1986/pawka/1986_pawka.tar.bz2
@@ -173,7 +157,6 @@
 1986/pawka/pawka.c
 1986/pawka/pawka.orig.c
 1986/stein/.gitignore
-1986/stein/.id
 1986/stein/.inventory.html
 1986/stein/.winner.json
 1986/stein/1986_stein.tar.bz2
@@ -183,7 +166,6 @@
 1986/stein/stein.c
 1986/stein/stein.orig.c
 1986/wall/.gitignore
-1986/wall/.id
 1986/wall/.inventory.html
 1986/wall/.winner.json
 1986/wall/1986_wall.tar.bz2
@@ -194,7 +176,6 @@
 1986/wall/wall.c
 1986/wall/wall.orig.c
 1987/biggar/.gitignore
-1987/biggar/.id
 1987/biggar/.inventory.html
 1987/biggar/.winner.json
 1987/biggar/1987_biggar.tar.bz2
@@ -204,7 +185,6 @@
 1987/biggar/biggar.orig.c
 1987/biggar/index.html
 1987/heckbert/.gitignore
-1987/heckbert/.id
 1987/heckbert/.inventory.html
 1987/heckbert/.winner.json
 1987/heckbert/1987_heckbert.tar.bz2
@@ -214,7 +194,6 @@
 1987/heckbert/heckbert.orig.c
 1987/heckbert/index.html
 1987/hines/.gitignore
-1987/hines/.id
 1987/hines/.inventory.html
 1987/hines/.winner.json
 1987/hines/1987_hines.tar.bz2
@@ -225,7 +204,6 @@
 1987/hines/hines.orig.c
 1987/hines/index.html
 1987/korn/.gitignore
-1987/korn/.id
 1987/korn/.inventory.html
 1987/korn/.winner.json
 1987/korn/1987_korn.tar.bz2
@@ -235,7 +213,6 @@
 1987/korn/korn.c
 1987/korn/korn.orig.c
 1987/lievaart/.gitignore
-1987/lievaart/.id
 1987/lievaart/.inventory.html
 1987/lievaart/.winner.json
 1987/lievaart/1987_lievaart.tar.bz2
@@ -248,7 +225,6 @@
 1987/lievaart/lievaart2.alt.c
 1987/lievaart/lievaart2.c
 1987/wall/.gitignore
-1987/wall/.id
 1987/wall/.inventory.html
 1987/wall/.winner.json
 1987/wall/1987_wall.tar.bz2
@@ -258,7 +234,6 @@
 1987/wall/wall.c
 1987/wall/wall.orig.c
 1987/westley/.gitignore
-1987/westley/.id
 1987/westley/.inventory.html
 1987/westley/.winner.json
 1987/westley/1987_westley.tar.bz2
@@ -269,7 +244,6 @@
 1987/westley/westley.c
 1987/westley/westley.orig.c
 1988/applin/.gitignore
-1988/applin/.id
 1988/applin/.inventory.html
 1988/applin/.winner.json
 1988/applin/1988_applin.tar.bz2
@@ -280,7 +254,6 @@
 1988/applin/applin.orig.c
 1988/applin/index.html
 1988/dale/.gitignore
-1988/dale/.id
 1988/dale/.inventory.html
 1988/dale/.winner.json
 1988/dale/1988_dale.tar.bz2
@@ -291,7 +264,6 @@
 1988/dale/dale.orig.c
 1988/dale/index.html
 1988/isaak/.gitignore
-1988/isaak/.id
 1988/isaak/.inventory.html
 1988/isaak/.winner.json
 1988/isaak/1988_isaak.tar.bz2
@@ -303,7 +275,6 @@
 1988/isaak/isaak.encode
 1988/isaak/isaak.orig.c
 1988/litmaath/.gitignore
-1988/litmaath/.id
 1988/litmaath/.inventory.html
 1988/litmaath/.winner.json
 1988/litmaath/1988_litmaath.tar.bz2
@@ -314,7 +285,6 @@
 1988/litmaath/litmaath.c
 1988/litmaath/litmaath.orig.c
 1988/phillipps/.gitignore
-1988/phillipps/.id
 1988/phillipps/.inventory.html
 1988/phillipps/.winner.json
 1988/phillipps/1988_phillipps.tar.bz2
@@ -324,7 +294,6 @@
 1988/phillipps/phillipps.c
 1988/phillipps/phillipps.orig.c
 1988/reddy/.gitignore
-1988/reddy/.id
 1988/reddy/.inventory.html
 1988/reddy/.winner.json
 1988/reddy/1988_reddy.tar.bz2
@@ -334,7 +303,6 @@
 1988/reddy/reddy.c
 1988/reddy/reddy.orig.c
 1988/robison/.gitignore
-1988/robison/.id
 1988/robison/.inventory.html
 1988/robison/.winner.json
 1988/robison/1988_robison.tar.bz2
@@ -344,7 +312,6 @@
 1988/robison/robison.c
 1988/robison/robison.orig.c
 1988/spinellis/.gitignore
-1988/spinellis/.id
 1988/spinellis/.inventory.html
 1988/spinellis/.winner.json
 1988/spinellis/1988_spinellis.tar.bz2
@@ -357,7 +324,6 @@
 1988/spinellis/spinellis.c
 1988/spinellis/spinellis.orig.c
 1988/westley/.gitignore
-1988/westley/.id
 1988/westley/.inventory.html
 1988/westley/.winner.json
 1988/westley/1988_westley.tar.bz2
@@ -369,7 +335,6 @@
 1988/westley/westley.c
 1988/westley/westley.orig.c
 1989/fubar/.gitignore
-1989/fubar/.id
 1989/fubar/.inventory.html
 1989/fubar/.winner.json
 1989/fubar/1989_fubar.tar.bz2
@@ -380,7 +345,6 @@
 1989/fubar/fubar.sh
 1989/fubar/index.html
 1989/jar.1/.gitignore
-1989/jar.1/.id
 1989/jar.1/.inventory.html
 1989/jar.1/.winner.json
 1989/jar.1/1989_jar.1.tar.bz2
@@ -393,7 +357,6 @@
 1989/jar.1/jar.1.orig.c
 1989/jar.1/jar.1.sh
 1989/jar.2/.gitignore
-1989/jar.2/.id
 1989/jar.2/.inventory.html
 1989/jar.2/.winner.json
 1989/jar.2/1989_jar.2.tar.bz2
@@ -407,7 +370,6 @@
 1989/jar.2/try.sh
 1989/jar.2/try.txt
 1989/ovdluhe/.gitignore
-1989/ovdluhe/.id
 1989/ovdluhe/.inventory.html
 1989/ovdluhe/.winner.json
 1989/ovdluhe/1989_ovdluhe.tar.bz2
@@ -418,7 +380,6 @@
 1989/ovdluhe/ovdluhe.c
 1989/ovdluhe/ovdluhe.orig.c
 1989/paul/.gitignore
-1989/paul/.id
 1989/paul/.inventory.html
 1989/paul/.winner.json
 1989/paul/1989_paul.tar.bz2
@@ -429,7 +390,6 @@
 1989/paul/paul.c
 1989/paul/paul.orig.c
 1989/robison/.gitignore
-1989/robison/.id
 1989/robison/.inventory.html
 1989/robison/.winner.json
 1989/robison/1989_robison.tar.bz2
@@ -439,7 +399,6 @@
 1989/robison/robison.c
 1989/robison/robison.orig.c
 1989/roemer/.gitignore
-1989/roemer/.id
 1989/roemer/.inventory.html
 1989/roemer/.winner.json
 1989/roemer/1989_roemer.tar.bz2
@@ -449,7 +408,6 @@
 1989/roemer/roemer.c
 1989/roemer/roemer.orig.c
 1989/tromp/.gitignore
-1989/tromp/.id
 1989/tromp/.inventory.html
 1989/tromp/.winner.json
 1989/tromp/1989_tromp.tar.bz2
@@ -460,7 +418,6 @@
 1989/tromp/tromp.c
 1989/tromp/tromp.orig.c
 1989/vanb/.gitignore
-1989/vanb/.id
 1989/vanb/.inventory.html
 1989/vanb/.winner.json
 1989/vanb/1989_vanb.tar.bz2
@@ -470,7 +427,6 @@
 1989/vanb/vanb.c
 1989/vanb/vanb.orig.c
 1989/westley/.gitignore
-1989/westley/.id
 1989/westley/.inventory.html
 1989/westley/.winner.json
 1989/westley/1989_westley.tar.bz2
@@ -482,7 +438,6 @@
 1989/westley/westley.c
 1989/westley/westley.orig.c
 1990/baruch/.gitignore
-1990/baruch/.id
 1990/baruch/.inventory.html
 1990/baruch/.winner.json
 1990/baruch/1990_baruch.tar.bz2
@@ -493,7 +448,6 @@
 1990/baruch/baruch.orig.c
 1990/baruch/index.html
 1990/cmills/.gitignore
-1990/cmills/.id
 1990/cmills/.inventory.html
 1990/cmills/.winner.json
 1990/cmills/1990_cmills.tar.bz2
@@ -503,7 +457,6 @@
 1990/cmills/cmills.orig.c
 1990/cmills/index.html
 1990/dds/.gitignore
-1990/dds/.id
 1990/dds/.inventory.html
 1990/dds/.winner.json
 1990/dds/1990_dds.tar.bz2
@@ -514,7 +467,6 @@
 1990/dds/dds.orig.c
 1990/dds/index.html
 1990/dg/.gitignore
-1990/dg/.id
 1990/dg/.inventory.html
 1990/dg/.winner.json
 1990/dg/1990_dg.tar.bz2
@@ -524,7 +476,6 @@
 1990/dg/dg.orig.c
 1990/dg/index.html
 1990/jaw/.gitignore
-1990/jaw/.id
 1990/jaw/.inventory.html
 1990/jaw/.winner.json
 1990/jaw/1990_jaw.tar.bz2
@@ -537,7 +488,6 @@
 1990/jaw/shark.sh
 1990/jaw/try.sh
 1990/pjr/.gitignore
-1990/pjr/.id
 1990/pjr/.inventory.html
 1990/pjr/.winner.json
 1990/pjr/1990_pjr.tar.bz2
@@ -547,7 +497,6 @@
 1990/pjr/pjr.c
 1990/pjr/pjr.orig.c
 1990/scjones/.gitignore
-1990/scjones/.id
 1990/scjones/.inventory.html
 1990/scjones/.winner.json
 1990/scjones/1990_scjones.tar.bz2
@@ -557,7 +506,6 @@
 1990/scjones/scjones.c
 1990/scjones/scjones.orig.c
 1990/stig/.gitignore
-1990/stig/.id
 1990/stig/.inventory.html
 1990/stig/.winner.json
 1990/stig/1990_stig.tar.bz2
@@ -568,7 +516,6 @@
 1990/stig/stig.orig.c
 1990/stig/stig.sh
 1990/tbr/.gitignore
-1990/tbr/.id
 1990/tbr/.inventory.html
 1990/tbr/.winner.json
 1990/tbr/1990_tbr.tar.bz2
@@ -579,7 +526,6 @@
 1990/tbr/tbr.c
 1990/tbr/tbr.orig.c
 1990/theorem/.gitignore
-1990/theorem/.id
 1990/theorem/.inventory.html
 1990/theorem/.winner.json
 1990/theorem/1990_theorem.tar.bz2
@@ -589,7 +535,6 @@
 1990/theorem/theorem.c
 1990/theorem/theorem.orig.c
 1990/westley/.gitignore
-1990/westley/.id
 1990/westley/.inventory.html
 1990/westley/.winner.json
 1990/westley/1990_westley.tar.bz2
@@ -600,7 +545,6 @@
 1990/westley/westley.c
 1990/westley/westley.orig.c
 1991/ant/.gitignore
-1991/ant/.id
 1991/ant/.inventory.html
 1991/ant/.winner.json
 1991/ant/1991_ant.tar.bz2
@@ -610,7 +554,6 @@
 1991/ant/ant.orig.c
 1991/ant/index.html
 1991/brnstnd/.gitignore
-1991/brnstnd/.id
 1991/brnstnd/.inventory.html
 1991/brnstnd/.winner.json
 1991/brnstnd/1991_brnstnd.tar.bz2
@@ -635,7 +578,6 @@
 1991/brnstnd/sorta.itailrec
 1991/brnstnd/sorta.iwhosort
 1991/buzzard/.gitignore
-1991/buzzard/.id
 1991/buzzard/.inventory.html
 1991/buzzard/.winner.json
 1991/buzzard/1991_buzzard.tar.bz2
@@ -645,7 +587,6 @@
 1991/buzzard/buzzard.orig.c
 1991/buzzard/index.html
 1991/cdupont/.gitignore
-1991/cdupont/.id
 1991/cdupont/.inventory.html
 1991/cdupont/.winner.json
 1991/cdupont/1991_cdupont.tar.bz2
@@ -655,7 +596,6 @@
 1991/cdupont/cdupont.orig.c
 1991/cdupont/index.html
 1991/davidguy/.gitignore
-1991/davidguy/.id
 1991/davidguy/.inventory.html
 1991/davidguy/.winner.json
 1991/davidguy/1991_davidguy.tar.bz2
@@ -665,7 +605,6 @@
 1991/davidguy/davidguy.orig.c
 1991/davidguy/index.html
 1991/dds/.gitignore
-1991/dds/.id
 1991/dds/.inventory.html
 1991/dds/.winner.json
 1991/dds/1991_dds.tar.bz2
@@ -676,7 +615,6 @@
 1991/dds/dds.orig.c
 1991/dds/index.html
 1991/fine/.gitignore
-1991/fine/.id
 1991/fine/.inventory.html
 1991/fine/.winner.json
 1991/fine/1991_fine.tar.bz2
@@ -687,7 +625,6 @@
 1991/fine/index.html
 1991/fine/try.sh
 1991/rince/.gitignore
-1991/rince/.id
 1991/rince/.inventory.html
 1991/rince/.winner.json
 1991/rince/1991_rince.tar.bz2
@@ -697,7 +634,6 @@
 1991/rince/rince.c
 1991/rince/rince.orig.c
 1991/westley/.gitignore
-1991/westley/.id
 1991/westley/.inventory.html
 1991/westley/.winner.json
 1991/westley/1991_westley.tar.bz2
@@ -708,7 +644,6 @@
 1991/westley/westley.c
 1991/westley/westley.orig.c
 1992/adrian/.gitignore
-1992/adrian/.id
 1992/adrian/.inventory.html
 1992/adrian/.winner.json
 1992/adrian/1992_adrian.tar.bz2
@@ -726,7 +661,6 @@
 1992/adrian/adrian.orig.c
 1992/adrian/index.html
 1992/albert/.gitignore
-1992/albert/.id
 1992/albert/.inventory.html
 1992/albert/.winner.json
 1992/albert/1992_albert.tar.bz2
@@ -737,7 +671,6 @@
 1992/albert/albert.orig.c
 1992/albert/index.html
 1992/ant/.gitignore
-1992/ant/.id
 1992/ant/.inventory.html
 1992/ant/.winner.json
 1992/ant/1992_ant.tar.bz2
@@ -749,7 +682,6 @@
 1992/ant/ant.test.mk
 1992/ant/index.html
 1992/buzzard.1/.gitignore
-1992/buzzard.1/.id
 1992/buzzard.1/.inventory.html
 1992/buzzard.1/.winner.json
 1992/buzzard.1/1992_buzzard.1.tar.bz2
@@ -759,7 +691,6 @@
 1992/buzzard.1/buzzard.1.orig.c
 1992/buzzard.1/index.html
 1992/buzzard.2/.gitignore
-1992/buzzard.2/.id
 1992/buzzard.2/.inventory.html
 1992/buzzard.2/.winner.json
 1992/buzzard.2/1992_buzzard.2.tar.bz2
@@ -782,7 +713,6 @@
 1992/buzzard.2/index.html
 1992/buzzard.2/third
 1992/gson/.gitignore
-1992/gson/.id
 1992/gson/.inventory.html
 1992/gson/.winner.json
 1992/gson/1992_gson.tar.bz2
@@ -793,7 +723,6 @@
 1992/gson/index.html
 1992/gson/mkdict.sh
 1992/imc/.gitignore
-1992/imc/.id
 1992/imc/.inventory.html
 1992/imc/.winner.json
 1992/imc/1992_imc.tar.bz2
@@ -803,7 +732,6 @@
 1992/imc/imc.orig.c
 1992/imc/index.html
 1992/kivinen/.gitignore
-1992/kivinen/.id
 1992/kivinen/.inventory.html
 1992/kivinen/.winner.json
 1992/kivinen/1992_kivinen.tar.bz2
@@ -813,7 +741,6 @@
 1992/kivinen/kivinen.c
 1992/kivinen/kivinen.orig.c
 1992/lush/.gitignore
-1992/lush/.id
 1992/lush/.inventory.html
 1992/lush/.winner.json
 1992/lush/1992_lush.tar.bz2
@@ -824,7 +751,6 @@
 1992/lush/lush.orig.c
 1992/lush/runme.sh
 1992/marangon/.gitignore
-1992/marangon/.id
 1992/marangon/.inventory.html
 1992/marangon/.winner.json
 1992/marangon/1992_marangon.tar.bz2
@@ -834,7 +760,6 @@
 1992/marangon/marangon.c
 1992/marangon/marangon.orig.c
 1992/nathan/.gitignore
-1992/nathan/.id
 1992/nathan/.inventory.html
 1992/nathan/.winner.json
 1992/nathan/1992_nathan.tar.bz2
@@ -844,7 +769,6 @@
 1992/nathan/nathan.c
 1992/nathan/nathan.orig.c
 1992/vern/.gitignore
-1992/vern/.id
 1992/vern/.inventory.html
 1992/vern/.winner.json
 1992/vern/1992_vern.tar.bz2
@@ -854,7 +778,6 @@
 1992/vern/vern.c
 1992/vern/vern.orig.c
 1992/westley/.gitignore
-1992/westley/.id
 1992/westley/.inventory.html
 1992/westley/.winner.json
 1992/westley/1992_westley.tar.bz2
@@ -865,7 +788,6 @@
 1992/westley/westley.c
 1992/westley/westley.orig.c
 1993/ant/.gitignore
-1993/ant/.id
 1993/ant/.inventory.html
 1993/ant/.winner.json
 1993/ant/1993_ant.tar.bz2
@@ -877,7 +799,6 @@
 1993/ant/ant.txt
 1993/ant/index.html
 1993/cmills/.gitignore
-1993/cmills/.id
 1993/cmills/.inventory.html
 1993/cmills/.winner.json
 1993/cmills/1993_cmills.tar.bz2
@@ -887,7 +808,6 @@
 1993/cmills/cmills.orig.c
 1993/cmills/index.html
 1993/dgibson/.gitignore
-1993/dgibson/.id
 1993/dgibson/.inventory.html
 1993/dgibson/.winner.json
 1993/dgibson/1993_dgibson.tar.bz2
@@ -903,7 +823,6 @@
 1993/dgibson/dgibson.sh
 1993/dgibson/index.html
 1993/ejb/.gitignore
-1993/ejb/.id
 1993/ejb/.inventory.html
 1993/ejb/.winner.json
 1993/ejb/1993_ejb.tar.bz2
@@ -917,7 +836,6 @@
 1993/ejb/patience.html
 1993/ejb/patience.md
 1993/jonth/.gitignore
-1993/jonth/.id
 1993/jonth/.inventory.html
 1993/jonth/.winner.json
 1993/jonth/1993_jonth.tar.bz2
@@ -927,7 +845,6 @@
 1993/jonth/jonth.c
 1993/jonth/jonth.orig.c
 1993/leo/.gitignore
-1993/leo/.id
 1993/leo/.inventory.html
 1993/leo/.winner.json
 1993/leo/1993_leo.tar.bz2
@@ -937,7 +854,6 @@
 1993/leo/leo.c
 1993/leo/leo.orig.c
 1993/lmfjyh/.gitignore
-1993/lmfjyh/.id
 1993/lmfjyh/.inventory.html
 1993/lmfjyh/.winner.json
 1993/lmfjyh/1993_lmfjyh.tar.bz2
@@ -948,7 +864,6 @@
 1993/lmfjyh/lmfjyh.c
 1993/lmfjyh/lmfjyh.orig.c
 1993/plummer/.gitignore
-1993/plummer/.id
 1993/plummer/.inventory.html
 1993/plummer/.winner.json
 1993/plummer/1993_plummer.tar.bz2
@@ -959,7 +874,6 @@
 1993/plummer/plummer.c
 1993/plummer/plummer.orig.c
 1993/rince/.gitignore
-1993/rince/.id
 1993/rince/.inventory.html
 1993/rince/.winner.json
 1993/rince/1993_rince.tar.bz2
@@ -976,7 +890,6 @@
 1993/rince/rince.data4
 1993/rince/rince.orig.c
 1993/schnitzi/.gitignore
-1993/schnitzi/.id
 1993/schnitzi/.inventory.html
 1993/schnitzi/.winner.json
 1993/schnitzi/1993_schnitzi.tar.bz2
@@ -987,7 +900,6 @@
 1993/schnitzi/schnitzi.info
 1993/schnitzi/schnitzi.orig.c
 1993/vanb/.gitignore
-1993/vanb/.id
 1993/vanb/.inventory.html
 1993/vanb/.winner.json
 1993/vanb/1993_vanb.tar.bz2
@@ -997,7 +909,6 @@
 1993/vanb/vanb.c
 1993/vanb/vanb.orig.c
 1994/dodsond1/.gitignore
-1994/dodsond1/.id
 1994/dodsond1/.inventory.html
 1994/dodsond1/.winner.json
 1994/dodsond1/1994_dodsond1.tar.bz2
@@ -1007,7 +918,6 @@
 1994/dodsond1/dodsond1.orig.c
 1994/dodsond1/index.html
 1994/dodsond2/.gitignore
-1994/dodsond2/.id
 1994/dodsond2/.inventory.html
 1994/dodsond2/.winner.json
 1994/dodsond2/1994_dodsond2.tar.bz2
@@ -1018,7 +928,6 @@
 1994/dodsond2/dodsond2.orig.c
 1994/dodsond2/index.html
 1994/horton/.gitignore
-1994/horton/.id
 1994/horton/.inventory.html
 1994/horton/.winner.json
 1994/horton/1994_horton.tar.bz2
@@ -1031,7 +940,6 @@
 1994/horton/horton.orig.c
 1994/horton/index.html
 1994/imc/.gitignore
-1994/imc/.id
 1994/imc/.inventory.html
 1994/imc/.winner.json
 1994/imc/1994_imc.tar.bz2
@@ -1041,7 +949,6 @@
 1994/imc/imc.orig.c
 1994/imc/index.html
 1994/ldb/.gitignore
-1994/ldb/.id
 1994/ldb/.inventory.html
 1994/ldb/.winner.json
 1994/ldb/1994_ldb.tar.bz2
@@ -1051,7 +958,6 @@
 1994/ldb/ldb.c
 1994/ldb/ldb.orig.c
 1994/schnitzi/.gitignore
-1994/schnitzi/.id
 1994/schnitzi/.inventory.html
 1994/schnitzi/.winner.json
 1994/schnitzi/1994_schnitzi.tar.bz2
@@ -1062,7 +968,6 @@
 1994/schnitzi/schnitzi.c
 1994/schnitzi/schnitzi.orig.c
 1994/shapiro/.gitignore
-1994/shapiro/.id
 1994/shapiro/.inventory.html
 1994/shapiro/.winner.json
 1994/shapiro/1994_shapiro.tar.bz2
@@ -1074,7 +979,6 @@
 1994/shapiro/shapiro.md
 1994/shapiro/shapiro.orig.c
 1994/smr/.gitignore
-1994/smr/.id
 1994/smr/.inventory.html
 1994/smr/.winner.json
 1994/smr/1994_smr.tar.bz2
@@ -1084,7 +988,6 @@
 1994/smr/smr.c
 1994/smr/smr.orig.c
 1994/tvr/.gitignore
-1994/tvr/.id
 1994/tvr/.inventory.html
 1994/tvr/.winner.json
 1994/tvr/1994_tvr.tar.bz2
@@ -1097,7 +1000,6 @@
 1994/tvr/tvr.color
 1994/tvr/tvr.orig.c
 1994/weisberg/.gitignore
-1994/weisberg/.id
 1994/weisberg/.inventory.html
 1994/weisberg/.winner.json
 1994/weisberg/1994_weisberg.tar.bz2
@@ -1107,7 +1009,6 @@
 1994/weisberg/weisberg.c
 1994/weisberg/weisberg.orig.c
 1994/westley/.gitignore
-1994/westley/.id
 1994/westley/.inventory.html
 1994/westley/.winner.json
 1994/westley/1994_westley.tar.bz2
@@ -1118,7 +1019,6 @@
 1994/westley/westley.c
 1994/westley/westley.orig.c
 1995/cdua/.gitignore
-1995/cdua/.id
 1995/cdua/.inventory.html
 1995/cdua/.winner.json
 1995/cdua/1995_cdua.tar.bz2
@@ -1129,7 +1029,6 @@
 1995/cdua/cdua.orig.c
 1995/cdua/index.html
 1995/dodsond1/.gitignore
-1995/dodsond1/.id
 1995/dodsond1/.inventory.html
 1995/dodsond1/.winner.json
 1995/dodsond1/1995_dodsond1.tar.bz2
@@ -1140,7 +1039,6 @@
 1995/dodsond1/index.html
 1995/dodsond1/try.this.txt
 1995/dodsond2/.gitignore
-1995/dodsond2/.id
 1995/dodsond2/.inventory.html
 1995/dodsond2/.winner.json
 1995/dodsond2/1995_dodsond2.tar.bz2
@@ -1150,7 +1048,6 @@
 1995/dodsond2/dodsond2.orig.c
 1995/dodsond2/index.html
 1995/esde/.gitignore
-1995/esde/.id
 1995/esde/.inventory.html
 1995/esde/.winner.json
 1995/esde/1995_esde.tar.bz2
@@ -1162,7 +1059,6 @@
 1995/esde/esde.orig.c
 1995/esde/index.html
 1995/garry/.gitignore
-1995/garry/.id
 1995/garry/.inventory.html
 1995/garry/.winner.json
 1995/garry/1995_garry.tar.bz2
@@ -1176,7 +1072,6 @@
 1995/garry/garry.test.sh
 1995/garry/index.html
 1995/heathbar/.gitignore
-1995/heathbar/.id
 1995/heathbar/.inventory.html
 1995/heathbar/.winner.json
 1995/heathbar/1995_heathbar.tar.bz2
@@ -1186,7 +1081,6 @@
 1995/heathbar/heathbar.orig.c
 1995/heathbar/index.html
 1995/leo/.gitignore
-1995/leo/.id
 1995/leo/.inventory.html
 1995/leo/.winner.json
 1995/leo/1995_leo.tar.bz2
@@ -1196,7 +1090,6 @@
 1995/leo/leo.c
 1995/leo/leo.orig.c
 1995/makarios/.gitignore
-1995/makarios/.id
 1995/makarios/.inventory.html
 1995/makarios/.winner.json
 1995/makarios/1995_makarios.tar.bz2
@@ -1206,7 +1099,6 @@
 1995/makarios/makarios.c
 1995/makarios/makarios.orig.c
 1995/savastio/.gitignore
-1995/savastio/.id
 1995/savastio/.inventory.html
 1995/savastio/.winner.json
 1995/savastio/1995_savastio.tar.bz2
@@ -1216,7 +1108,6 @@
 1995/savastio/savastio.c
 1995/savastio/savastio.orig.c
 1995/schnitzi/.gitignore
-1995/schnitzi/.id
 1995/schnitzi/.inventory.html
 1995/schnitzi/.winner.json
 1995/schnitzi/1995_schnitzi.tar.bz2
@@ -1226,7 +1117,6 @@
 1995/schnitzi/schnitzi.c
 1995/schnitzi/schnitzi.orig.c
 1995/spinellis/.gitignore
-1995/spinellis/.id
 1995/spinellis/.inventory.html
 1995/spinellis/.winner.json
 1995/spinellis/1995_spinellis.tar.bz2
@@ -1236,7 +1126,6 @@
 1995/spinellis/spinellis.c
 1995/spinellis/spinellis.orig.c
 1995/vanschnitz/.gitignore
-1995/vanschnitz/.id
 1995/vanschnitz/.inventory.html
 1995/vanschnitz/.winner.json
 1995/vanschnitz/1995_vanschnitz.tar.bz2
@@ -1247,7 +1136,6 @@
 1995/vanschnitz/vanschnitz.c
 1995/vanschnitz/vanschnitz.orig.c
 1996/august/.gitignore
-1996/august/.id
 1996/august/.inventory.html
 1996/august/.winner.json
 1996/august/1996_august.tar.bz2
@@ -1261,7 +1149,6 @@
 1996/august/test.oc
 1996/august/try.sh
 1996/dalbec/.gitignore
-1996/dalbec/.id
 1996/dalbec/.inventory.html
 1996/dalbec/.winner.json
 1996/dalbec/1996_dalbec.tar.bz2
@@ -1271,7 +1158,6 @@
 1996/dalbec/dalbec.orig.c
 1996/dalbec/index.html
 1996/eldby/.gitignore
-1996/eldby/.id
 1996/eldby/.inventory.html
 1996/eldby/.winner.json
 1996/eldby/1996_eldby.tar.bz2
@@ -1282,7 +1168,6 @@
 1996/eldby/eldby.orig.c
 1996/eldby/index.html
 1996/gandalf/.gitignore
-1996/gandalf/.id
 1996/gandalf/.inventory.html
 1996/gandalf/.winner.json
 1996/gandalf/1996_gandalf.tar.bz2
@@ -1292,7 +1177,6 @@
 1996/gandalf/gandalf.orig.c
 1996/gandalf/index.html
 1996/huffman/.gitignore
-1996/huffman/.id
 1996/huffman/.inventory.html
 1996/huffman/.winner.json
 1996/huffman/1996_huffman.tar.bz2
@@ -1302,7 +1186,6 @@
 1996/huffman/huffman.orig.c
 1996/huffman/index.html
 1996/jonth/.gitignore
-1996/jonth/.id
 1996/jonth/.inventory.html
 1996/jonth/.winner.json
 1996/jonth/1996_jonth.tar.bz2
@@ -1312,7 +1195,6 @@
 1996/jonth/jonth.c
 1996/jonth/jonth.orig.c
 1996/rcm/.gitignore
-1996/rcm/.id
 1996/rcm/.inventory.html
 1996/rcm/.winner.json
 1996/rcm/1996_rcm.tar.bz2
@@ -1324,7 +1206,6 @@
 1996/rcm/rfc1951.gz
 1996/rcm/rfc1952.gz
 1996/schweikh1/.gitignore
-1996/schweikh1/.id
 1996/schweikh1/.inventory.html
 1996/schweikh1/.winner.json
 1996/schweikh1/1996_schweikh1.tar.bz2
@@ -1335,7 +1216,6 @@
 1996/schweikh1/schweikh1.c
 1996/schweikh1/schweikh1.orig.c
 1996/schweikh2/.gitignore
-1996/schweikh2/.id
 1996/schweikh2/.inventory.html
 1996/schweikh2/.winner.json
 1996/schweikh2/1996_schweikh2.tar.bz2
@@ -1347,7 +1227,6 @@
 1996/schweikh2/schweikh2.c
 1996/schweikh2/schweikh2.orig.c
 1996/schweikh3/.gitignore
-1996/schweikh3/.id
 1996/schweikh3/.inventory.html
 1996/schweikh3/.winner.json
 1996/schweikh3/1996_schweikh3.tar.bz2
@@ -1358,7 +1237,6 @@
 1996/schweikh3/schweikh3.info
 1996/schweikh3/schweikh3.orig.c
 1996/westley/.gitignore
-1996/westley/.id
 1996/westley/.inventory.html
 1996/westley/.winner.json
 1996/westley/1996_westley.tar.bz2
@@ -1372,7 +1250,6 @@
 1996/westley/westley.c
 1996/westley/westley.orig.c
 1998/banks/.gitignore
-1998/banks/.id
 1998/banks/.inventory.html
 1998/banks/.winner.json
 1998/banks/1998_banks.tar.bz2
@@ -1388,7 +1265,6 @@
 1998/banks/pyramids.sc
 1998/banks/river.sc
 1998/bas1/.gitignore
-1998/bas1/.id
 1998/bas1/.inventory.html
 1998/bas1/.winner.json
 1998/bas1/1998_bas1.tar.bz2
@@ -1398,7 +1274,6 @@
 1998/bas1/bas1.orig.c
 1998/bas1/index.html
 1998/bas2/.gitignore
-1998/bas2/.id
 1998/bas2/.inventory.html
 1998/bas2/.winner.json
 1998/bas2/1998_bas2.tar.bz2
@@ -1408,7 +1283,6 @@
 1998/bas2/bas2.orig.c
 1998/bas2/index.html
 1998/chaos/.gitignore
-1998/chaos/.id
 1998/chaos/.inventory.html
 1998/chaos/.winner.json
 1998/chaos/1998_chaos.tar.bz2
@@ -1423,7 +1297,6 @@
 1998/chaos/pyramid.data
 1998/chaos/xwing.data
 1998/df/.gitignore
-1998/df/.id
 1998/df/.inventory.html
 1998/df/.winner.json
 1998/df/1998_df.tar.bz2
@@ -1433,7 +1306,6 @@
 1998/df/df.orig.c
 1998/df/index.html
 1998/dlowe/.gitignore
-1998/dlowe/.id
 1998/dlowe/.inventory.html
 1998/dlowe/.winner.json
 1998/dlowe/1998_dlowe.tar.bz2
@@ -1444,7 +1316,6 @@
 1998/dlowe/dlowe.orig.c
 1998/dlowe/index.html
 1998/dloweneil/.gitignore
-1998/dloweneil/.id
 1998/dloweneil/.inventory.html
 1998/dloweneil/.winner.json
 1998/dloweneil/1998_dloweneil.tar.bz2
@@ -1454,7 +1325,6 @@
 1998/dloweneil/dloweneil.orig.c
 1998/dloweneil/index.html
 1998/dorssel/.gitignore
-1998/dorssel/.id
 1998/dorssel/.inventory.html
 1998/dorssel/.winner.json
 1998/dorssel/1998_dorssel.tar.bz2
@@ -1466,7 +1336,6 @@
 1998/dorssel/dorssel.orig.c
 1998/dorssel/index.html
 1998/fanf/.gitignore
-1998/fanf/.id
 1998/fanf/.inventory.html
 1998/fanf/.winner.json
 1998/fanf/1998_fanf.tar.bz2
@@ -1477,7 +1346,6 @@
 1998/fanf/fanf.orig.c
 1998/fanf/index.html
 1998/schnitzi/.gitignore
-1998/schnitzi/.id
 1998/schnitzi/.inventory.html
 1998/schnitzi/.winner.json
 1998/schnitzi/1998_schnitzi.tar.bz2
@@ -1487,7 +1355,6 @@
 1998/schnitzi/schnitzi.c
 1998/schnitzi/schnitzi.orig.c
 1998/schweikh1/.gitignore
-1998/schweikh1/.id
 1998/schweikh1/.inventory.html
 1998/schweikh1/.winner.json
 1998/schweikh1/1998_schweikh1.tar.bz2
@@ -1499,7 +1366,6 @@
 1998/schweikh1/schweikh1.c
 1998/schweikh1/schweikh1.orig.c
 1998/schweikh2/.gitignore
-1998/schweikh2/.id
 1998/schweikh2/.inventory.html
 1998/schweikh2/.winner.json
 1998/schweikh2/1998_schweikh2.tar.bz2
@@ -1509,7 +1375,6 @@
 1998/schweikh2/schweikh2.c
 1998/schweikh2/schweikh2.orig.c
 1998/schweikh3/.gitignore
-1998/schweikh3/.id
 1998/schweikh3/.inventory.html
 1998/schweikh3/.winner.json
 1998/schweikh3/1998_schweikh3.tar.bz2
@@ -1521,7 +1386,6 @@
 1998/schweikh3/schweikh3.c
 1998/schweikh3/schweikh3.orig.c
 1998/tomtorfs/.gitignore
-1998/tomtorfs/.id
 1998/tomtorfs/.inventory.html
 1998/tomtorfs/.winner.json
 1998/tomtorfs/1998_tomtorfs.tar.bz2
@@ -1532,7 +1396,6 @@
 1998/tomtorfs/tomtorfs.c
 1998/tomtorfs/tomtorfs.orig.c
 2000/anderson/.gitignore
-2000/anderson/.id
 2000/anderson/.inventory.html
 2000/anderson/.winner.json
 2000/anderson/2000_anderson.tar.bz2
@@ -1542,7 +1405,6 @@
 2000/anderson/anderson.orig.c
 2000/anderson/index.html
 2000/bellard/.gitignore
-2000/bellard/.id
 2000/bellard/.inventory.html
 2000/bellard/.winner.json
 2000/bellard/2000_bellard.tar.bz2
@@ -1552,7 +1414,6 @@
 2000/bellard/bellard.orig.c
 2000/bellard/index.html
 2000/bmeyer/.gitignore
-2000/bmeyer/.id
 2000/bmeyer/.inventory.html
 2000/bmeyer/.winner.json
 2000/bmeyer/2000_bmeyer.tar.bz2
@@ -1565,7 +1426,6 @@
 2000/bmeyer/lenna.glic
 2000/bmeyer/michael.pgm
 2000/briddlebane/.gitignore
-2000/briddlebane/.id
 2000/briddlebane/.inventory.html
 2000/briddlebane/.winner.json
 2000/briddlebane/2000_briddlebane.tar.bz2
@@ -1575,7 +1435,6 @@
 2000/briddlebane/briddlebane.orig.c
 2000/briddlebane/index.html
 2000/dhyang/.gitignore
-2000/dhyang/.id
 2000/dhyang/.inventory.html
 2000/dhyang/.winner.json
 2000/dhyang/2000_dhyang.tar.bz2
@@ -1585,7 +1444,6 @@
 2000/dhyang/dhyang.orig.c
 2000/dhyang/index.html
 2000/dlowe/.gitignore
-2000/dlowe/.id
 2000/dlowe/.inventory.html
 2000/dlowe/.winner.json
 2000/dlowe/2000_dlowe.tar.bz2
@@ -1595,7 +1453,6 @@
 2000/dlowe/dlowe.orig.c
 2000/dlowe/index.html
 2000/jarijyrki/.gitignore
-2000/jarijyrki/.id
 2000/jarijyrki/.inventory.html
 2000/jarijyrki/.winner.json
 2000/jarijyrki/2000_jarijyrki.tar.bz2
@@ -1606,7 +1463,6 @@
 2000/jarijyrki/jarijyrki.c
 2000/jarijyrki/jarijyrki.orig.c
 2000/natori/.gitignore
-2000/natori/.id
 2000/natori/.inventory.html
 2000/natori/.winner.json
 2000/natori/2000_natori.tar.bz2
@@ -1617,7 +1473,6 @@
 2000/natori/natori.c
 2000/natori/natori.orig.c
 2000/primenum/.gitignore
-2000/primenum/.id
 2000/primenum/.inventory.html
 2000/primenum/.winner.json
 2000/primenum/2000_primenum.tar.bz2
@@ -1627,7 +1482,6 @@
 2000/primenum/primenum.c
 2000/primenum/primenum.orig.c
 2000/rince/.gitignore
-2000/rince/.id
 2000/rince/.inventory.html
 2000/rince/.winner.json
 2000/rince/2000_rince.tar.bz2
@@ -1638,7 +1492,6 @@
 2000/rince/rince.c
 2000/rince/rince.orig.c
 2000/robison/.gitignore
-2000/robison/.id
 2000/robison/.inventory.html
 2000/robison/.winner.json
 2000/robison/2000_robison.tar.bz2
@@ -1648,7 +1501,6 @@
 2000/robison/robison.c
 2000/robison/robison.orig.c
 2000/schneiderwent/.gitignore
-2000/schneiderwent/.id
 2000/schneiderwent/.inventory.html
 2000/schneiderwent/.winner.json
 2000/schneiderwent/2000_schneiderwent.tar.bz2
@@ -1659,7 +1511,6 @@
 2000/schneiderwent/schneiderwent.data
 2000/schneiderwent/schneiderwent.orig.c
 2000/thadgavin/.gitignore
-2000/thadgavin/.id
 2000/thadgavin/.inventory.html
 2000/thadgavin/.winner.json
 2000/thadgavin/2000_thadgavin.tar.bz2
@@ -1670,7 +1521,6 @@
 2000/thadgavin/thadgavin.c
 2000/thadgavin/thadgavin.orig.c
 2000/tomx/.gitignore
-2000/tomx/.id
 2000/tomx/.inventory.html
 2000/tomx/.winner.json
 2000/tomx/2000_tomx.tar.bz2
@@ -1681,7 +1531,6 @@
 2000/tomx/tomx.c
 2000/tomx/tomx.orig.c
 2001/anonymous/.gitignore
-2001/anonymous/.id
 2001/anonymous/.inventory.html
 2001/anonymous/.winner.json
 2001/anonymous/2001_anonymous.tar.bz2
@@ -1694,7 +1543,6 @@
 2001/anonymous/index.html
 2001/anonymous/try.sh
 2001/bellard/.gitignore
-2001/bellard/.id
 2001/bellard/.inventory.html
 2001/bellard/.winner.json
 2001/bellard/2001_bellard.tar.bz2
@@ -1706,7 +1554,6 @@
 2001/bellard/index.html
 2001/bellard/otccelf.c
 2001/cheong/.gitignore
-2001/cheong/.id
 2001/cheong/.inventory.html
 2001/cheong/.winner.json
 2001/cheong/2001_cheong.tar.bz2
@@ -1716,7 +1563,6 @@
 2001/cheong/cheong.orig.c
 2001/cheong/index.html
 2001/coupard/.gitignore
-2001/coupard/.id
 2001/coupard/.inventory.html
 2001/coupard/.winner.json
 2001/coupard/2001_coupard.tar.bz2
@@ -1726,7 +1572,6 @@
 2001/coupard/coupard.orig.c
 2001/coupard/index.html
 2001/ctk/.gitignore
-2001/ctk/.id
 2001/ctk/.inventory.html
 2001/ctk/.winner.json
 2001/ctk/2001_ctk.tar.bz2
@@ -1736,7 +1581,6 @@
 2001/ctk/ctk.orig.c
 2001/ctk/index.html
 2001/dgbeards/.gitignore
-2001/dgbeards/.id
 2001/dgbeards/.inventory.html
 2001/dgbeards/.winner.json
 2001/dgbeards/2001_dgbeards.tar.bz2
@@ -1747,7 +1591,6 @@
 2001/dgbeards/dgbeards.orig.c
 2001/dgbeards/index.html
 2001/herrmann1/.gitignore
-2001/herrmann1/.id
 2001/herrmann1/.inventory.html
 2001/herrmann1/.winner.json
 2001/herrmann1/2001_herrmann1.tar.bz2
@@ -1761,7 +1604,6 @@
 2001/herrmann1/index.html
 2001/herrmann1/plus1.turing
 2001/herrmann2/.gitignore
-2001/herrmann2/.id
 2001/herrmann2/.inventory.html
 2001/herrmann2/.winner.json
 2001/herrmann2/2001_herrmann2.tar.bz2
@@ -1774,7 +1616,6 @@
 2001/herrmann2/herrmann2.orig.c
 2001/herrmann2/index.html
 2001/jason/.gitignore
-2001/jason/.id
 2001/jason/.inventory.html
 2001/jason/.winner.json
 2001/jason/2001_jason.tar.bz2
@@ -1784,7 +1625,6 @@
 2001/jason/jason.c
 2001/jason/jason.orig.c
 2001/kev/.gitignore
-2001/kev/.id
 2001/kev/.inventory.html
 2001/kev/.winner.json
 2001/kev/2001_kev.tar.bz2
@@ -1795,7 +1635,6 @@
 2001/kev/kev.c
 2001/kev/kev.orig.c
 2001/ollinger/.gitignore
-2001/ollinger/.id
 2001/ollinger/.inventory.html
 2001/ollinger/.winner.json
 2001/ollinger/2001_ollinger.tar.bz2
@@ -1805,7 +1644,6 @@
 2001/ollinger/ollinger.c
 2001/ollinger/ollinger.orig.c
 2001/rosten/.gitignore
-2001/rosten/.id
 2001/rosten/.inventory.html
 2001/rosten/.winner.json
 2001/rosten/2001_rosten.tar.bz2
@@ -1815,7 +1653,6 @@
 2001/rosten/rosten.c
 2001/rosten/rosten.orig.c
 2001/schweikh/.gitignore
-2001/schweikh/.id
 2001/schweikh/.inventory.html
 2001/schweikh/.winner.json
 2001/schweikh/2001_schweikh.tar.bz2
@@ -1825,7 +1662,6 @@
 2001/schweikh/schweikh.c
 2001/schweikh/schweikh.orig.c
 2001/westley/.gitignore
-2001/westley/.id
 2001/westley/.inventory.html
 2001/westley/.winner.json
 2001/westley/2001_westley.tar.bz2
@@ -1839,7 +1675,6 @@
 2001/westley/westley.sh
 2001/westley/westley.sort.c
 2001/williams/.gitignore
-2001/williams/.id
 2001/williams/.inventory.html
 2001/williams/.winner.json
 2001/williams/2001_williams.tar.bz2
@@ -1849,7 +1684,6 @@
 2001/williams/williams.c
 2001/williams/williams.orig.c
 2004/anonymous/.gitignore
-2004/anonymous/.id
 2004/anonymous/.inventory.html
 2004/anonymous/.winner.json
 2004/anonymous/2004_anonymous.tar.bz2
@@ -1859,7 +1693,6 @@
 2004/anonymous/anonymous.orig.c
 2004/anonymous/index.html
 2004/arachnid/.gitignore
-2004/arachnid/.id
 2004/arachnid/.inventory.html
 2004/arachnid/.winner.json
 2004/arachnid/2004_arachnid.tar.bz2
@@ -1871,7 +1704,6 @@
 2004/arachnid/arachnid.txt
 2004/arachnid/index.html
 2004/burley/.gitignore
-2004/burley/.id
 2004/burley/.inventory.html
 2004/burley/.winner.json
 2004/burley/2004_burley.tar.bz2
@@ -1881,7 +1713,6 @@
 2004/burley/burley.orig.c
 2004/burley/index.html
 2004/gavare/.gitignore
-2004/gavare/.id
 2004/gavare/.inventory.html
 2004/gavare/.winner.json
 2004/gavare/2004_gavare.tar.bz2
@@ -1892,7 +1723,6 @@
 2004/gavare/gavare.r3.c
 2004/gavare/index.html
 2004/gavin/.gitignore
-2004/gavin/.id
 2004/gavin/.inventory.html
 2004/gavin/.winner.json
 2004/gavin/2004_gavin.tar.bz2
@@ -1909,7 +1739,6 @@
 2004/gavin/lilo.conf
 2004/gavin/prim
 2004/hibachi/.gitignore
-2004/hibachi/.id
 2004/hibachi/.inventory.html
 2004/hibachi/.winner.json
 2004/hibachi/2004_hibachi.tar.bz2
@@ -1957,7 +1786,6 @@
 2004/hibachi/src/localhost/test/shell/test2.sh
 2004/hibachi/src/makefile.in
 2004/hoyle/.gitignore
-2004/hoyle/.id
 2004/hoyle/.inventory.html
 2004/hoyle/.winner.json
 2004/hoyle/2004_hoyle.tar.bz2
@@ -1968,7 +1796,6 @@
 2004/hoyle/hoyle.orig.c
 2004/hoyle/index.html
 2004/jdalbec/.gitignore
-2004/jdalbec/.id
 2004/jdalbec/.inventory.html
 2004/jdalbec/.winner.json
 2004/jdalbec/2004_jdalbec.tar.bz2
@@ -1978,7 +1805,6 @@
 2004/jdalbec/jdalbec.c
 2004/jdalbec/jdalbec.orig.c
 2004/kopczynski/.gitignore
-2004/kopczynski/.id
 2004/kopczynski/.inventory.html
 2004/kopczynski/.winner.json
 2004/kopczynski/2004_kopczynski.tar.bz2
@@ -1996,7 +1822,6 @@
 2004/kopczynski/kopczynski.c
 2004/kopczynski/kopczynski.orig.c
 2004/newbern/.gitignore
-2004/newbern/.id
 2004/newbern/.inventory.html
 2004/newbern/.winner.json
 2004/newbern/2004_newbern.tar.bz2
@@ -2007,7 +1832,6 @@
 2004/newbern/newbern.dat
 2004/newbern/newbern.orig.c
 2004/omoikane/.gitignore
-2004/omoikane/.id
 2004/omoikane/.inventory.html
 2004/omoikane/.winner.json
 2004/omoikane/2004_omoikane.tar.bz2
@@ -2018,7 +1842,6 @@
 2004/omoikane/omoikane.info
 2004/omoikane/omoikane.orig.c
 2004/schnitzi/.gitignore
-2004/schnitzi/.id
 2004/schnitzi/.inventory.html
 2004/schnitzi/.winner.json
 2004/schnitzi/2004_schnitzi.tar.bz2
@@ -2030,7 +1853,6 @@
 2004/schnitzi/schnitzi.inp1
 2004/schnitzi/schnitzi.orig.c
 2004/sds/.gitignore
-2004/sds/.id
 2004/sds/.inventory.html
 2004/sds/.winner.json
 2004/sds/2004_sds.tar.bz2
@@ -2040,7 +1862,6 @@
 2004/sds/sds.c
 2004/sds/sds.orig.c
 2004/vik1/.gitignore
-2004/vik1/.id
 2004/vik1/.inventory.html
 2004/vik1/.winner.json
 2004/vik1/2004_vik1.tar.bz2
@@ -2050,7 +1871,6 @@
 2004/vik1/vik1.c
 2004/vik1/vik1.orig.c
 2004/vik2/.gitignore
-2004/vik2/.id
 2004/vik2/.inventory.html
 2004/vik2/.winner.json
 2004/vik2/2004_vik2.tar.bz2
@@ -2062,7 +1882,6 @@
 2004/vik2/vik2.possible.cat.death.c
 2004/vik2/vik2_1.c
 2005/aidan/.gitignore
-2005/aidan/.id
 2005/aidan/.inventory.html
 2005/aidan/.winner.json
 2005/aidan/2005_aidan.tar.bz2
@@ -2082,7 +1901,6 @@
 2005/aidan/tough1.sudoku
 2005/aidan/wp.sudoku
 2005/anon/.gitignore
-2005/anon/.id
 2005/anon/.inventory.html
 2005/anon/.winner.json
 2005/anon/2005_anon.tar.bz2
@@ -2092,7 +1910,6 @@
 2005/anon/anon.orig.c
 2005/anon/index.html
 2005/boutines/.gitignore
-2005/boutines/.id
 2005/boutines/.inventory.html
 2005/boutines/.winner.json
 2005/boutines/2005_boutines.tar.bz2
@@ -2104,7 +1921,6 @@
 2005/boutines/eqn.png
 2005/boutines/index.html
 2005/chia/.gitignore
-2005/chia/.id
 2005/chia/.inventory.html
 2005/chia/.winner.json
 2005/chia/2005_chia.tar.bz2
@@ -2114,7 +1930,6 @@
 2005/chia/chia.orig.c
 2005/chia/index.html
 2005/giljade/.gitignore
-2005/giljade/.id
 2005/giljade/.inventory.html
 2005/giljade/.winner.json
 2005/giljade/2005_giljade.tar.bz2
@@ -2124,7 +1939,6 @@
 2005/giljade/giljade.orig.c
 2005/giljade/index.html
 2005/jetro/.gitignore
-2005/jetro/.id
 2005/jetro/.inventory.html
 2005/jetro/.winner.json
 2005/jetro/2005_jetro.tar.bz2
@@ -2134,7 +1948,6 @@
 2005/jetro/jetro.c
 2005/jetro/jetro.orig.c
 2005/klausler/.gitignore
-2005/klausler/.id
 2005/klausler/.inventory.html
 2005/klausler/.winner.json
 2005/klausler/2005_klausler.tar.bz2
@@ -2144,7 +1957,6 @@
 2005/klausler/klausler.c
 2005/klausler/klausler.orig.c
 2005/mikeash/.gitignore
-2005/mikeash/.id
 2005/mikeash/.inventory.html
 2005/mikeash/.winner.json
 2005/mikeash/2005_mikeash.tar.bz2
@@ -2154,7 +1966,6 @@
 2005/mikeash/mikeash.c
 2005/mikeash/mikeash.orig.c
 2005/mynx/.gitignore
-2005/mynx/.id
 2005/mynx/.inventory.html
 2005/mynx/.winner.json
 2005/mynx/2005_mynx.tar.bz2
@@ -2171,7 +1982,6 @@
 2005/mynx/source/makefile.in
 2005/mynx/source/mynx.c
 2005/persano/.gitignore
-2005/persano/.id
 2005/persano/.inventory.html
 2005/persano/.winner.json
 2005/persano/2005_persano.tar.bz2
@@ -2181,7 +1991,6 @@
 2005/persano/persano.c
 2005/persano/persano.orig.c
 2005/sykes/.gitignore
-2005/sykes/.id
 2005/sykes/.inventory.html
 2005/sykes/.winner.json
 2005/sykes/2005_sykes.tar.bz2
@@ -2199,7 +2008,6 @@
 2005/sykes/sykes.c
 2005/sykes/sykes.orig.c
 2005/timwi/.gitignore
-2005/timwi/.id
 2005/timwi/.inventory.html
 2005/timwi/.winner.json
 2005/timwi/2005_timwi.tar.bz2
@@ -2209,7 +2017,6 @@
 2005/timwi/timwi.c
 2005/timwi/timwi.orig.c
 2005/toledo/.gitignore
-2005/toledo/.id
 2005/toledo/.inventory.html
 2005/toledo/.winner.json
 2005/toledo/2005_toledo.tar.bz2
@@ -2221,7 +2028,6 @@
 2005/toledo/toledo2.c
 2005/toledo/toledo3.c
 2005/vik/.gitignore
-2005/vik/.id
 2005/vik/.inventory.html
 2005/vik/.winner.json
 2005/vik/2005_vik.tar.bz2
@@ -2235,7 +2041,6 @@
 2005/vik/vik.c
 2005/vik/vik.orig.c
 2005/vince/.gitignore
-2005/vince/.id
 2005/vince/.inventory.html
 2005/vince/.winner.json
 2005/vince/2005_vince.tar.bz2
@@ -2246,7 +2051,6 @@
 2005/vince/vince.c
 2005/vince/vince.orig.c
 2006/birken/.gitignore
-2006/birken/.id
 2006/birken/.inventory.html
 2006/birken/.winner.json
 2006/birken/2006_birken.tar.bz2
@@ -2270,7 +2074,6 @@
 2006/birken/zuse.tofu
 2006/birken/zuse2.tofu
 2006/borsanyi/.gitignore
-2006/borsanyi/.id
 2006/borsanyi/.inventory.html
 2006/borsanyi/.winner.json
 2006/borsanyi/2006_borsanyi.tar.bz2
@@ -2280,7 +2083,6 @@
 2006/borsanyi/borsanyi.orig.c
 2006/borsanyi/index.html
 2006/grothe/.gitignore
-2006/grothe/.id
 2006/grothe/.inventory.html
 2006/grothe/.winner.json
 2006/grothe/2006_grothe.tar.bz2
@@ -2294,7 +2096,6 @@
 2006/grothe/test.txt
 2006/grothe/twinkle.txt
 2006/hamre/.gitignore
-2006/hamre/.id
 2006/hamre/.inventory.html
 2006/hamre/.winner.json
 2006/hamre/2006_hamre.tar.bz2
@@ -2304,7 +2105,6 @@
 2006/hamre/hamre.orig.c
 2006/hamre/index.html
 2006/meyer/.gitignore
-2006/meyer/.id
 2006/meyer/.inventory.html
 2006/meyer/.winner.json
 2006/meyer/2006_meyer.tar.bz2
@@ -2314,7 +2114,6 @@
 2006/meyer/meyer.c
 2006/meyer/meyer.orig.c
 2006/monge/.gitignore
-2006/monge/.id
 2006/monge/.inventory.html
 2006/monge/.winner.json
 2006/monge/2006_monge.tar.bz2
@@ -2324,7 +2123,6 @@
 2006/monge/monge.c
 2006/monge/monge.orig.c
 2006/night/.gitignore
-2006/night/.id
 2006/night/.inventory.html
 2006/night/.winner.json
 2006/night/2006_night.tar.bz2
@@ -2335,7 +2133,6 @@
 2006/night/night.c
 2006/night/night.orig.c
 2006/sloane/.gitignore
-2006/sloane/.id
 2006/sloane/.inventory.html
 2006/sloane/.winner.json
 2006/sloane/2006_sloane.tar.bz2
@@ -2346,7 +2143,6 @@
 2006/sloane/sloane.c
 2006/sloane/sloane.orig.c
 2006/stewart/.gitignore
-2006/stewart/.id
 2006/stewart/.inventory.html
 2006/stewart/.winner.json
 2006/stewart/2006_stewart.tar.bz2
@@ -2396,7 +2192,6 @@
 2006/stewart/tree4
 2006/stewart/triangle
 2006/sykes1/.gitignore
-2006/sykes1/.id
 2006/sykes1/.inventory.html
 2006/sykes1/.winner.json
 2006/sykes1/2006_sykes1.tar.bz2
@@ -2407,7 +2202,6 @@
 2006/sykes1/sykes1.c
 2006/sykes1/sykes1.orig.c
 2006/sykes2/.gitignore
-2006/sykes2/.id
 2006/sykes2/.inventory.html
 2006/sykes2/.winner.json
 2006/sykes2/2006_sykes2.tar.bz2
@@ -2418,7 +2212,6 @@
 2006/sykes2/sykes2.orig.c
 2006/sykes2/sykes2.sh
 2006/toledo1/.gitignore
-2006/toledo1/.id
 2006/toledo1/.inventory.html
 2006/toledo1/.winner.json
 2006/toledo1/2006_toledo1.tar.bz2
@@ -2428,7 +2221,6 @@
 2006/toledo1/toledo1.c
 2006/toledo1/toledo1.orig.c
 2006/toledo2/.gitignore
-2006/toledo2/.id
 2006/toledo2/.inventory.html
 2006/toledo2/.winner.json
 2006/toledo2/2006_toledo2.tar.bz2
@@ -2677,7 +2469,6 @@
 2006/toledo2/toledo2.c
 2006/toledo2/toledo2.orig.c
 2006/toledo3/.gitignore
-2006/toledo3/.id
 2006/toledo3/.inventory.html
 2006/toledo3/.winner.json
 2006/toledo3/2006_toledo3.tar.bz2
@@ -2690,7 +2481,6 @@
 2006/toledo3/toledo3.c
 2006/toledo3/toledo3.orig.c
 2011/akari/.gitignore
-2011/akari/.id
 2011/akari/.inventory.html
 2011/akari/.winner.json
 2011/akari/2011_akari.tar.bz2
@@ -2702,7 +2492,6 @@
 2011/akari/index.html
 2011/akari/try.sh
 2011/blakely/.gitignore
-2011/blakely/.id
 2011/blakely/.inventory.html
 2011/blakely/.winner.json
 2011/blakely/2011_blakely.tar.bz2
@@ -2715,7 +2504,6 @@
 2011/blakely/index.html
 2011/blakely/t0_3.dat
 2011/borsanyi/.gitignore
-2011/borsanyi/.id
 2011/borsanyi/.inventory.html
 2011/borsanyi/.winner.json
 2011/borsanyi/2011_borsanyi.tar.bz2
@@ -2728,7 +2516,6 @@
 2011/borsanyi/data.3
 2011/borsanyi/index.html
 2011/dlowe/.gitignore
-2011/dlowe/.id
 2011/dlowe/.inventory.html
 2011/dlowe/.winner.json
 2011/dlowe/2011_dlowe.tar.bz2
@@ -2787,7 +2574,6 @@
 2011/dlowe/index.html
 2011/dlowe/try.sh
 2011/eastman/.gitignore
-2011/eastman/.id
 2011/eastman/.inventory.html
 2011/eastman/.winner.json
 2011/eastman/2011_eastman.tar.bz2
@@ -2797,7 +2583,6 @@
 2011/eastman/eastman.orig.c
 2011/eastman/index.html
 2011/fredriksson/.gitignore
-2011/fredriksson/.id
 2011/fredriksson/.inventory.html
 2011/fredriksson/.winner.json
 2011/fredriksson/2011_fredriksson.tar.bz2
@@ -2807,7 +2592,6 @@
 2011/fredriksson/fredriksson.orig.c
 2011/fredriksson/index.html
 2011/goren/.gitignore
-2011/goren/.id
 2011/goren/.inventory.html
 2011/goren/.winner.json
 2011/goren/2011_goren.tar.bz2
@@ -2817,7 +2601,6 @@
 2011/goren/goren.orig.c
 2011/goren/index.html
 2011/hamaji/.gitignore
-2011/hamaji/.id
 2011/hamaji/.inventory.html
 2011/hamaji/.winner.json
 2011/hamaji/2011_hamaji.tar.bz2
@@ -2835,7 +2618,6 @@
 2011/hamaji/samurai.nono
 2011/hamaji/soccer.nono
 2011/hou/.gitignore
-2011/hou/.id
 2011/hou/.inventory.html
 2011/hou/.winner.json
 2011/hou/2011_hou.tar.bz2
@@ -2845,7 +2627,6 @@
 2011/hou/hou.orig.c
 2011/hou/index.html
 2011/konno/.gitignore
-2011/konno/.id
 2011/konno/.inventory.html
 2011/konno/.winner.json
 2011/konno/2011_konno.tar.bz2
@@ -2855,7 +2636,6 @@
 2011/konno/konno.c
 2011/konno/konno.orig.c
 2011/richards/.gitignore
-2011/richards/.id
 2011/richards/.inventory.html
 2011/richards/.winner.json
 2011/richards/2011_richards.tar.bz2
@@ -2865,7 +2645,6 @@
 2011/richards/richards.c
 2011/richards/richards.orig.c
 2011/toledo/.gitignore
-2011/toledo/.id
 2011/toledo/.inventory.html
 2011/toledo/.winner.json
 2011/toledo/2011_toledo.tar.bz2
@@ -2876,7 +2655,6 @@
 2011/toledo/toledo.c
 2011/toledo/toledo.orig.c
 2011/vik/.gitignore
-2011/vik/.id
 2011/vik/.inventory.html
 2011/vik/.winner.json
 2011/vik/2011_vik.tar.bz2
@@ -2890,7 +2668,6 @@
 2011/vik/vik.c
 2011/vik/vik.orig.c
 2011/zucker/.gitignore
-2011/zucker/.id
 2011/zucker/.inventory.html
 2011/zucker/.winner.json
 2011/zucker/2011_zucker.tar.bz2
@@ -2900,7 +2677,6 @@
 2011/zucker/zucker.c
 2011/zucker/zucker.orig.c
 2012/blakely/.gitignore
-2012/blakely/.id
 2012/blakely/.inventory.html
 2012/blakely/.winner.json
 2012/blakely/2012_blakely.tar.bz2
@@ -2910,7 +2686,6 @@
 2012/blakely/blakely.orig.c
 2012/blakely/index.html
 2012/deckmyn/.gitignore
-2012/deckmyn/.id
 2012/deckmyn/.inventory.html
 2012/deckmyn/.winner.json
 2012/deckmyn/2012_deckmyn.tar.bz2
@@ -2924,7 +2699,6 @@
 2012/deckmyn/example_greensleeves
 2012/deckmyn/index.html
 2012/dlowe/.gitignore
-2012/dlowe/.id
 2012/dlowe/.inventory.html
 2012/dlowe/.winner.json
 2012/dlowe/2012_dlowe.tar.bz2
@@ -2937,7 +2711,6 @@
 2012/dlowe/splash.d
 2012/dlowe/sprites.d
 2012/endoh1/.gitignore
-2012/endoh1/.id
 2012/endoh1/.inventory.html
 2012/endoh1/.winner.json
 2012/endoh1/2012_endoh1.tar.bz2
@@ -2966,7 +2739,6 @@
 2012/endoh1/pour-out.txt
 2012/endoh1/tanada.txt
 2012/endoh2/.gitignore
-2012/endoh2/.id
 2012/endoh2/.inventory.html
 2012/endoh2/.winner.json
 2012/endoh2/2012_endoh2.tar.bz2
@@ -2978,7 +2750,6 @@
 2012/endoh2/find-font-table.rb
 2012/endoh2/index.html
 2012/grothe/.gitignore
-2012/grothe/.id
 2012/grothe/.inventory.html
 2012/grothe/.winner.json
 2012/grothe/2012_grothe.tar.bz2
@@ -2994,7 +2765,6 @@
 2012/grothe/grothe.orig.c
 2012/grothe/index.html
 2012/hamano/.gitignore
-2012/hamano/.id
 2012/hamano/.inventory.html
 2012/hamano/.winner.json
 2012/hamano/2012_hamano.tar.bz2
@@ -3004,7 +2774,6 @@
 2012/hamano/hamano.orig.c
 2012/hamano/index.html
 2012/hou/.gitignore
-2012/hou/.id
 2012/hou/.inventory.html
 2012/hou/.winner.json
 2012/hou/2012_hou.tar.bz2
@@ -3021,7 +2790,6 @@
 2012/hou/patho.pl
 2012/hou/perl-notes.txt
 2012/kang/.gitignore
-2012/kang/.id
 2012/kang/.inventory.html
 2012/kang/.winner.json
 2012/kang/2012_kang.tar.bz2
@@ -3037,7 +2805,6 @@
 2012/kang/kang.orig.c
 2012/kang/try.sh
 2012/konno/.gitignore
-2012/konno/.id
 2012/konno/.inventory.html
 2012/konno/.winner.json
 2012/konno/2012_konno.tar.bz2
@@ -3048,7 +2815,6 @@
 2012/konno/konno.c
 2012/konno/konno.orig.c
 2012/omoikane/.gitignore
-2012/omoikane/.id
 2012/omoikane/.inventory.html
 2012/omoikane/.winner.json
 2012/omoikane/2012_omoikane.tar.bz2
@@ -3059,7 +2825,6 @@
 2012/omoikane/nyaruko.orig.c
 2012/omoikane/spoiler.html
 2012/tromp/.gitignore
-2012/tromp/.id
 2012/tromp/.inventory.html
 2012/tromp/.winner.json
 2012/tromp/2012_tromp.tar.bz2
@@ -3083,7 +2848,6 @@
 2012/tromp/uni.blc
 2012/tromp/uni8.Blc
 2012/vik/.gitignore
-2012/vik/.id
 2012/vik/.inventory.html
 2012/vik/.winner.json
 2012/vik/2012_vik.tar.bz2
@@ -3096,7 +2860,6 @@
 2012/vik/vik.c
 2012/vik/vik.orig.c
 2012/zeitak/.gitignore
-2012/zeitak/.id
 2012/zeitak/.inventory.html
 2012/zeitak/.winner.json
 2012/zeitak/2012_zeitak.tar.bz2
@@ -3108,7 +2871,6 @@
 2012/zeitak/zeitak.c
 2012/zeitak/zeitak.orig.c
 2013/birken/.gitignore
-2013/birken/.id
 2013/birken/.inventory.html
 2013/birken/.winner.json
 2013/birken/2013_birken.tar.bz2
@@ -3164,7 +2926,6 @@
 2013/birken/triple1.gif
 2013/birken/try.sh
 2013/cable1/.gitignore
-2013/cable1/.id
 2013/cable1/.inventory.html
 2013/cable1/.winner.json
 2013/cable1/2013_cable1.tar.bz2
@@ -3175,7 +2936,6 @@
 2013/cable1/index.html
 2013/cable1/ms-tweet.jpg
 2013/cable2/.gitignore
-2013/cable2/.id
 2013/cable2/.inventory.html
 2013/cable2/.winner.json
 2013/cable2/2013_cable2.tar.bz2
@@ -3191,7 +2951,6 @@
 2013/cable2/multi_color.bmp
 2013/cable2/typeset.bmp
 2013/cable3/.gitignore
-2013/cable3/.id
 2013/cable3/.inventory.html
 2013/cable3/.winner.json
 2013/cable3/2013_cable3.tar.bz2
@@ -3213,7 +2972,6 @@
 2013/cable3/screenshot_simcity.png
 2013/cable3/screenshot_win3_on_macosx.png
 2013/dlowe/.gitignore
-2013/dlowe/.id
 2013/dlowe/.inventory.html
 2013/dlowe/.winner.json
 2013/dlowe/2013_dlowe.tar.bz2
@@ -3226,7 +2984,6 @@
 2013/dlowe/index.html
 2013/dlowe/sflen.sh
 2013/endoh1/.gitignore
-2013/endoh1/.id
 2013/endoh1/.inventory.html
 2013/endoh1/.winner.json
 2013/endoh1/2013_endoh1.tar.bz2
@@ -3240,7 +2997,6 @@
 2013/endoh1/rot13.ed
 2013/endoh1/tac.lazy
 2013/endoh2/.gitignore
-2013/endoh2/.id
 2013/endoh2/.inventory.html
 2013/endoh2/.winner.json
 2013/endoh2/2013_endoh2.tar.bz2
@@ -3251,7 +3007,6 @@
 2013/endoh2/index.html
 2013/endoh2/ocr.rb
 2013/endoh3/.gitignore
-2013/endoh3/.id
 2013/endoh3/.inventory.html
 2013/endoh3/.winner.json
 2013/endoh3/2013_endoh3.tar.bz2
@@ -3267,7 +3022,6 @@
 2013/endoh3/wavify.rb
 2013/endoh3/yankee.abc
 2013/endoh4/.gitignore
-2013/endoh4/.id
 2013/endoh4/.inventory.html
 2013/endoh4/.winner.json
 2013/endoh4/2013_endoh4.tar.bz2
@@ -3426,7 +3180,6 @@
 2013/endoh4/solids/trapezohedron/t08-octagonal-trapezohedron.txt
 2013/endoh4/solids/trapezohedron/t10-decagonal-trapezohedron.txt
 2013/hou/.gitignore
-2013/hou/.id
 2013/hou/.inventory.html
 2013/hou/.winner.json
 2013/hou/2013_hou.tar.bz2
@@ -3446,7 +3199,6 @@
 2013/hou/otherroom.jpg
 2013/hou/otherroom.scene
 2013/mills/.gitignore
-2013/mills/.id
 2013/mills/.inventory.html
 2013/mills/.winner.json
 2013/mills/2013_mills.tar.bz2
@@ -3456,7 +3208,6 @@
 2013/mills/mills.c
 2013/mills/mills.orig.c
 2013/misaka/.gitignore
-2013/misaka/.id
 2013/misaka/.inventory.html
 2013/misaka/.winner.json
 2013/misaka/2013_misaka.tar.bz2
@@ -3469,7 +3220,6 @@
 2013/misaka/spoiler.html
 2013/misaka/try.sh
 2013/morgan1/.gitignore
-2013/morgan1/.id
 2013/morgan1/.inventory.html
 2013/morgan1/.winner.json
 2013/morgan1/2013_morgan1.tar.bz2
@@ -3479,7 +3229,6 @@
 2013/morgan1/morgan1.c
 2013/morgan1/morgan1.orig.c
 2013/morgan2/.gitignore
-2013/morgan2/.id
 2013/morgan2/.inventory.html
 2013/morgan2/.winner.json
 2013/morgan2/2013_morgan2.tar.bz2
@@ -3489,7 +3238,6 @@
 2013/morgan2/morgan2.c
 2013/morgan2/morgan2.orig.c
 2013/robison/.gitignore
-2013/robison/.id
 2013/robison/.inventory.html
 2013/robison/.winner.json
 2013/robison/2013_robison.tar.bz2
@@ -3499,7 +3247,6 @@
 2013/robison/robison.c
 2013/robison/robison.orig.c
 2014/birken/.gitignore
-2014/birken/.id
 2014/birken/.inventory.html
 2014/birken/.winner.json
 2014/birken/2014_birken.tar.bz2
@@ -3509,7 +3256,6 @@
 2014/birken/prog.c
 2014/birken/prog.orig.c
 2014/deak/.gitignore
-2014/deak/.id
 2014/deak/.inventory.html
 2014/deak/.winner.json
 2014/deak/2014_deak.tar.bz2
@@ -3520,7 +3266,6 @@
 2014/deak/prog.c
 2014/deak/prog.orig.c
 2014/endoh1/.gitignore
-2014/endoh1/.id
 2014/endoh1/.inventory.html
 2014/endoh1/.winner.json
 2014/endoh1/2014_endoh1.tar.bz2
@@ -3549,7 +3294,6 @@
 2014/endoh1/tool.rb
 2014/endoh1/vm.c
 2014/endoh2/.gitignore
-2014/endoh2/.id
 2014/endoh2/.inventory.html
 2014/endoh2/.winner.json
 2014/endoh2/2014_endoh2.tar.bz2
@@ -3559,7 +3303,6 @@
 2014/endoh2/prog.c
 2014/endoh2/prog.orig.c
 2014/maffiodo1/.gitignore
-2014/maffiodo1/.id
 2014/maffiodo1/.inventory.html
 2014/maffiodo1/.winner.json
 2014/maffiodo1/2014_maffiodo1.tar.bz2
@@ -3577,7 +3320,6 @@
 2014/maffiodo1/screenshot-giana.png
 2014/maffiodo1/screenshot-mario.png
 2014/maffiodo2/.gitignore
-2014/maffiodo2/.id
 2014/maffiodo2/.inventory.html
 2014/maffiodo2/.winner.json
 2014/maffiodo2/2014_maffiodo2.tar.bz2
@@ -3588,7 +3330,6 @@
 2014/maffiodo2/prog.c
 2014/maffiodo2/prog.orig.c
 2014/morgan/.gitignore
-2014/morgan/.id
 2014/morgan/.inventory.html
 2014/morgan/.winner.json
 2014/morgan/2014_morgan.tar.bz2
@@ -3598,7 +3339,6 @@
 2014/morgan/prog.c
 2014/morgan/prog.orig.c
 2014/sinon/.gitignore
-2014/sinon/.id
 2014/sinon/.inventory.html
 2014/sinon/.winner.json
 2014/sinon/2014_sinon.tar.bz2
@@ -3611,7 +3351,6 @@
 2014/sinon/prog.orig.c
 2014/sinon/spoiler.html
 2014/skeggs/.gitignore
-2014/skeggs/.id
 2014/skeggs/.inventory.html
 2014/skeggs/.winner.json
 2014/skeggs/2014_skeggs.tar.bz2
@@ -3621,7 +3360,6 @@
 2014/skeggs/prog.c
 2014/skeggs/prog.orig.c
 2014/vik/.gitignore
-2014/vik/.id
 2014/vik/.inventory.html
 2014/vik/.winner.json
 2014/vik/2014_vik.tar.bz2
@@ -3632,7 +3370,6 @@
 2014/vik/prog.c
 2014/vik/prog.orig.c
 2014/wiedijk/.gitignore
-2014/wiedijk/.id
 2014/wiedijk/.inventory.html
 2014/wiedijk/.winner.json
 2014/wiedijk/2014_wiedijk.tar.bz2
@@ -3642,7 +3379,6 @@
 2014/wiedijk/prog.c
 2014/wiedijk/prog.orig.c
 2015/burton/.gitignore
-2015/burton/.id
 2015/burton/.inventory.html
 2015/burton/.winner.json
 2015/burton/2015_burton.tar.bz2
@@ -3663,7 +3399,6 @@
 2015/burton/test.out
 2015/burton/test32.out
 2015/dogon/.gitignore
-2015/dogon/.id
 2015/dogon/.inventory.html
 2015/dogon/.winner.json
 2015/dogon/2015_dogon.tar.bz2
@@ -3673,7 +3408,6 @@
 2015/dogon/prog.c
 2015/dogon/prog.orig.c
 2015/duble/.gitignore
-2015/duble/.id
 2015/duble/.inventory.html
 2015/duble/.winner.json
 2015/duble/2015_duble.tar.bz2
@@ -3686,7 +3420,6 @@
 2015/duble/prog.c
 2015/duble/prog.orig.c
 2015/endoh1/.gitignore
-2015/endoh1/.id
 2015/endoh1/.inventory.html
 2015/endoh1/.winner.json
 2015/endoh1/2015_endoh1.tar.bz2
@@ -3699,7 +3432,6 @@
 2015/endoh1/prog.c
 2015/endoh1/prog.orig.c
 2015/endoh2/.gitignore
-2015/endoh2/.id
 2015/endoh2/.inventory.html
 2015/endoh2/.winner.json
 2015/endoh2/2015_endoh2.tar.bz2
@@ -3709,7 +3441,6 @@
 2015/endoh2/prog.c
 2015/endoh2/prog.orig.c
 2015/endoh3/.gitignore
-2015/endoh3/.id
 2015/endoh3/.inventory.html
 2015/endoh3/.winner.json
 2015/endoh3/2015_endoh3.tar.bz2
@@ -3721,7 +3452,6 @@
 2015/endoh3/prog.c
 2015/endoh3/prog.orig.c
 2015/endoh4/.gitignore
-2015/endoh4/.id
 2015/endoh4/.inventory.html
 2015/endoh4/.winner.json
 2015/endoh4/2015_endoh4.tar.bz2
@@ -3732,7 +3462,6 @@
 2015/endoh4/prog.c
 2015/endoh4/prog.orig.c
 2015/hou/.gitignore
-2015/hou/.id
 2015/hou/.inventory.html
 2015/hou/.winner.json
 2015/hou/2015_hou.tar.bz2
@@ -3742,7 +3471,6 @@
 2015/hou/prog.c
 2015/hou/prog.orig.c
 2015/howe/.gitignore
-2015/howe/.id
 2015/howe/.inventory.html
 2015/howe/.winner.json
 2015/howe/2015_howe.tar.bz2
@@ -3759,7 +3487,6 @@
 2015/howe/spoiler/err.h
 2015/howe/spoiler/prog.c
 2015/mills1/.gitignore
-2015/mills1/.id
 2015/mills1/.inventory.html
 2015/mills1/.winner.json
 2015/mills1/2015_mills1.tar.bz2
@@ -3769,7 +3496,6 @@
 2015/mills1/prog.c
 2015/mills1/prog.orig.c
 2015/mills2/.gitignore
-2015/mills2/.id
 2015/mills2/.inventory.html
 2015/mills2/.winner.json
 2015/mills2/2015_mills2.tar.bz2
@@ -3781,7 +3507,6 @@
 2015/mills2/prog.c
 2015/mills2/prog.orig.c
 2015/muth/.gitignore
-2015/muth/.id
 2015/muth/.inventory.html
 2015/muth/.winner.json
 2015/muth/2015_muth.tar.bz2
@@ -3806,7 +3531,6 @@
 2015/muth/tape_empty.h
 2015/muth/tape_five.h
 2015/schweikhardt/.gitignore
-2015/schweikhardt/.id
 2015/schweikhardt/.inventory.html
 2015/schweikhardt/.winner.json
 2015/schweikhardt/2015_schweikhardt.tar.bz2
@@ -3816,7 +3540,6 @@
 2015/schweikhardt/prog.c
 2015/schweikhardt/prog.orig.c
 2015/yang/.gitignore
-2015/yang/.id
 2015/yang/.inventory.html
 2015/yang/.winner.json
 2015/yang/2015_yang.tar.bz2
@@ -3827,7 +3550,6 @@
 2015/yang/prog.orig.c
 2015/yang/spoiler.html
 2018/algmyr/.gitignore
-2018/algmyr/.id
 2018/algmyr/.inventory.html
 2018/algmyr/.winner.json
 2018/algmyr/2018_algmyr.tar.bz2
@@ -3838,7 +3560,6 @@
 2018/algmyr/prog.orig.c
 2018/algmyr/spoiler.png
 2018/anderson/.gitignore
-2018/anderson/.id
 2018/anderson/.inventory.html
 2018/anderson/.winner.json
 2018/anderson/2018_anderson.tar.bz2
@@ -3849,7 +3570,6 @@
 2018/anderson/prog.c
 2018/anderson/prog.orig.c
 2018/bellard/.gitignore
-2018/bellard/.id
 2018/bellard/.inventory.html
 2018/bellard/.winner.json
 2018/bellard/2018_bellard.tar.bz2
@@ -3863,7 +3583,6 @@
 2018/bellard/prog.orig.c
 2018/bellard/vintage_cars.bin
 2018/burton1/.gitignore
-2018/burton1/.id
 2018/burton1/.inventory.html
 2018/burton1/.winner.json
 2018/burton1/2018_burton1.tar.bz2
@@ -3875,7 +3594,6 @@
 2018/burton1/prog.orig.c
 2018/burton1/scripthd
 2018/burton2/.gitignore
-2018/burton2/.id
 2018/burton2/.inventory.html
 2018/burton2/.winner.json
 2018/burton2/2018_burton2.tar.bz2
@@ -3936,7 +3654,6 @@
 2018/burton2/unob.sh
 2018/burton2/v7unix
 2018/ciura/.gitignore
-2018/ciura/.id
 2018/ciura/.inventory.html
 2018/ciura/.winner.json
 2018/ciura/2018_ciura.tar.bz2
@@ -3947,7 +3664,6 @@
 2018/ciura/prog.c
 2018/ciura/prog.orig.c
 2018/endoh1/.gitignore
-2018/endoh1/.id
 2018/endoh1/.inventory.html
 2018/endoh1/.winner.json
 2018/endoh1/2018_endoh1.tar.bz2
@@ -3960,7 +3676,6 @@
 2018/endoh1/prog.orig.c
 2018/endoh1/smily.txt
 2018/endoh2/.gitignore
-2018/endoh2/.id
 2018/endoh2/.inventory.html
 2018/endoh2/.winner.json
 2018/endoh2/2018_endoh2.tar.bz2
@@ -3971,7 +3686,6 @@
 2018/endoh2/prog.orig.c
 2018/endoh2/run.sh
 2018/ferguson/.gitignore
-2018/ferguson/.id
 2018/ferguson/.inventory.html
 2018/ferguson/.winner.json
 2018/ferguson/2018_ferguson.tar.bz2
@@ -3991,7 +3705,6 @@
 2018/ferguson/weasel.man
 2018/ferguson/weasel.spec
 2018/giles/.gitignore
-2018/giles/.id
 2018/giles/.inventory.html
 2018/giles/.winner.json
 2018/giles/2018_giles.tar.bz2
@@ -4004,7 +3717,6 @@
 2018/giles/sand.alt.txt
 2018/giles/sand.txt
 2018/hou/.gitignore
-2018/hou/.id
 2018/hou/.inventory.html
 2018/hou/.winner.json
 2018/hou/2018_hou.tar.bz2
@@ -4015,7 +3727,6 @@
 2018/hou/prog.c
 2018/hou/prog.orig.c
 2018/mills/.gitignore
-2018/mills/.id
 2018/mills/.inventory.html
 2018/mills/.winner.json
 2018/mills/2018_mills.tar.bz2
@@ -4029,7 +3740,6 @@
 2018/mills/v0.image.fs
 2018/mills/v6.tape.gz
 2018/poikola/.gitignore
-2018/poikola/.id
 2018/poikola/.inventory.html
 2018/poikola/.winner.json
 2018/poikola/2018_poikola.tar.bz2
@@ -4041,7 +3751,6 @@
 2018/poikola/prog.c
 2018/poikola/prog.orig.c
 2018/vokes/.gitignore
-2018/vokes/.id
 2018/vokes/.inventory.html
 2018/vokes/.winner.json
 2018/vokes/2018_vokes.tar.bz2
@@ -4055,7 +3764,6 @@
 2018/vokes/prog.c
 2018/vokes/prog.orig.c
 2018/yang/.gitignore
-2018/yang/.id
 2018/yang/.inventory.html
 2018/yang/.winner.json
 2018/yang/2018_yang.tar.bz2
@@ -4066,7 +3774,6 @@
 2018/yang/prog.orig.c
 2018/yang/spoiler.html
 2019/adamovsky/.gitignore
-2019/adamovsky/.id
 2019/adamovsky/.inventory.html
 2019/adamovsky/.winner.json
 2019/adamovsky/2019_adamovsky.tar.bz2
@@ -4081,7 +3788,6 @@
 2019/adamovsky/sierpinski.unl
 2019/adamovsky/spam.unl
 2019/burton/.gitignore
-2019/burton/.id
 2019/burton/.inventory.html
 2019/burton/.winner.json
 2019/burton/2019_burton.tar.bz2
@@ -4097,7 +3803,6 @@
 2019/burton/prog.clean.c
 2019/burton/prog.orig.c
 2019/ciura/.gitignore
-2019/ciura/.id
 2019/ciura/.inventory.html
 2019/ciura/.winner.json
 2019/ciura/2019_ciura.tar.bz2
@@ -4116,7 +3821,6 @@
 2019/ciura/ru.sh
 2019/ciura/wrapprog.py
 2019/diels-grabsch1/.gitignore
-2019/diels-grabsch1/.id
 2019/diels-grabsch1/.inventory.html
 2019/diels-grabsch1/.winner.json
 2019/diels-grabsch1/2019_diels-grabsch1.tar.bz2
@@ -4127,7 +3831,6 @@
 2019/diels-grabsch1/prog.c
 2019/diels-grabsch1/prog.orig.c
 2019/diels-grabsch2/.gitignore
-2019/diels-grabsch2/.id
 2019/diels-grabsch2/.inventory.html
 2019/diels-grabsch2/.winner.json
 2019/diels-grabsch2/2019_diels-grabsch2.tar.bz2
@@ -4137,7 +3840,6 @@
 2019/diels-grabsch2/prog.c
 2019/diels-grabsch2/prog.orig.c
 2019/dogon/.gitignore
-2019/dogon/.id
 2019/dogon/.inventory.html
 2019/dogon/.winner.json
 2019/dogon/2019_dogon.tar.bz2
@@ -4160,7 +3862,6 @@
 2019/dogon/prog.orig.c
 2019/dogon/unlimited-novelty.mc
 2019/duble/.gitignore
-2019/duble/.id
 2019/duble/.inventory.html
 2019/duble/.winner.json
 2019/duble/2019_duble.tar.bz2
@@ -4172,7 +3873,6 @@
 2019/duble/prog.c
 2019/duble/prog.orig.c
 2019/endoh/.gitignore
-2019/endoh/.id
 2019/endoh/.inventory.html
 2019/endoh/.winner.json
 2019/endoh/2019_endoh.tar.bz2
@@ -4182,7 +3882,6 @@
 2019/endoh/prog.c
 2019/endoh/prog.orig.c
 2019/giles/.gitignore
-2019/giles/.id
 2019/giles/.inventory.html
 2019/giles/.winner.json
 2019/giles/2019_giles.tar.bz2
@@ -4194,7 +3893,6 @@
 2019/giles/prog.c
 2019/giles/prog.orig.c
 2019/karns/.gitignore
-2019/karns/.id
 2019/karns/.inventory.html
 2019/karns/.winner.json
 2019/karns/2019_karns.tar.bz2
@@ -4206,7 +3904,6 @@
 2019/karns/prog.c
 2019/karns/prog.orig.c
 2019/lynn/.gitignore
-2019/lynn/.id
 2019/lynn/.inventory.html
 2019/lynn/.winner.json
 2019/lynn/2019_lynn.tar.bz2
@@ -4223,7 +3920,6 @@
 2019/lynn/prog.orig.c
 2019/lynn/scc.hs
 2019/mills/.gitignore
-2019/mills/.id
 2019/mills/.inventory.html
 2019/mills/.winner.json
 2019/mills/2019_mills.tar.bz2
@@ -4241,7 +3937,6 @@
 2019/mills/prog.c
 2019/mills/prog.orig.c
 2019/poikola/.gitignore
-2019/poikola/.id
 2019/poikola/.inventory.html
 2019/poikola/.winner.json
 2019/poikola/2019_poikola.tar.bz2
@@ -4253,7 +3948,6 @@
 2019/poikola/prog.c
 2019/poikola/prog.orig.c
 2019/yang/.gitignore
-2019/yang/.id
 2019/yang/.inventory.html
 2019/yang/.winner.json
 2019/yang/2019_yang.tar.bz2
@@ -4266,7 +3960,6 @@
 2019/yang/spoiler.html
 2019/yang/violet.c
 2020/burton/.gitignore
-2020/burton/.id
 2020/burton/.inventory.html
 2020/burton/.winner.json
 2020/burton/2020_burton.tar.bz2
@@ -4279,7 +3972,6 @@
 2020/burton/prog.c
 2020/burton/prog.orig.c
 2020/carlini/.gitignore
-2020/carlini/.id
 2020/carlini/.inventory.html
 2020/carlini/.winner.json
 2020/carlini/2020_carlini.tar.bz2
@@ -4289,7 +3981,6 @@
 2020/carlini/prog.c
 2020/carlini/prog.orig.c
 2020/endoh1/.gitignore
-2020/endoh1/.id
 2020/endoh1/.inventory.html
 2020/endoh1/.winner.json
 2020/endoh1/2020_endoh1.tar.bz2
@@ -4307,7 +3998,6 @@
 2020/endoh1/prog.orig.c
 2020/endoh1/unwinnable.txt
 2020/endoh2/.gitignore
-2020/endoh2/.id
 2020/endoh2/.inventory.html
 2020/endoh2/.winner.json
 2020/endoh2/2020_endoh2.tar.bz2
@@ -4326,7 +4016,6 @@
 2020/endoh2/spoiler/tmpl.txt
 2020/endoh2/yoda.txt
 2020/endoh3/.gitignore
-2020/endoh3/.id
 2020/endoh3/.inventory.html
 2020/endoh3/.winner.json
 2020/endoh3/2020_endoh3.tar.bz2
@@ -4338,7 +4027,6 @@
 2020/endoh3/prog.orig.c
 2020/endoh3/run_clock.sh
 2020/ferguson1/.gitignore
-2020/ferguson1/.id
 2020/ferguson1/.inventory.html
 2020/ferguson1/.winner.json
 2020/ferguson1/2020_ferguson1.tar.bz2
@@ -4379,7 +4067,6 @@
 2020/ferguson1/troubleshooting.html
 2020/ferguson1/troubleshooting.md
 2020/ferguson2/.gitignore
-2020/ferguson2/.id
 2020/ferguson2/.inventory.html
 2020/ferguson2/.winner.json
 2020/ferguson2/2020_ferguson2.tar.bz2
@@ -4403,7 +4090,6 @@
 2020/ferguson2/recode.md
 2020/ferguson2/try.this.txt
 2020/giles/.gitignore
-2020/giles/.id
 2020/giles/.inventory.html
 2020/giles/.winner.json
 2020/giles/2020_giles.tar.bz2
@@ -4415,7 +4101,6 @@
 2020/giles/prog.c
 2020/giles/prog.orig.c
 2020/kurdyukov1/.gitignore
-2020/kurdyukov1/.id
 2020/kurdyukov1/.inventory.html
 2020/kurdyukov1/.winner.json
 2020/kurdyukov1/2020_kurdyukov1.tar.bz2
@@ -4429,7 +4114,6 @@
 2020/kurdyukov1/prog.x86.asm
 2020/kurdyukov1/prog.x86_64.asm
 2020/kurdyukov2/.gitignore
-2020/kurdyukov2/.id
 2020/kurdyukov2/.inventory.html
 2020/kurdyukov2/.winner.json
 2020/kurdyukov2/2020_kurdyukov2.tar.bz2
@@ -4443,7 +4127,6 @@
 2020/kurdyukov2/prog.ppm.c
 2020/kurdyukov2/sample.jpg
 2020/kurdyukov3/.gitignore
-2020/kurdyukov3/.id
 2020/kurdyukov3/.inventory.html
 2020/kurdyukov3/.winner.json
 2020/kurdyukov3/2020_kurdyukov3.tar.bz2
@@ -4456,7 +4139,6 @@
 2020/kurdyukov3/prog.extra.c
 2020/kurdyukov3/prog.orig.c
 2020/kurdyukov4/.gitignore
-2020/kurdyukov4/.id
 2020/kurdyukov4/.inventory.html
 2020/kurdyukov4/.winner.json
 2020/kurdyukov4/2020_kurdyukov4.tar.bz2
@@ -4469,7 +4151,6 @@
 2020/kurdyukov4/prog.orig.c
 2020/kurdyukov4/rand.c
 2020/otterness/.gitignore
-2020/otterness/.id
 2020/otterness/.inventory.html
 2020/otterness/.winner.json
 2020/otterness/2020_otterness.tar.bz2
@@ -4479,7 +4160,6 @@
 2020/otterness/prog.c
 2020/otterness/prog.orig.c
 2020/tsoj/.gitignore
-2020/tsoj/.id
 2020/tsoj/.inventory.html
 2020/tsoj/.winner.json
 2020/tsoj/2020_tsoj.tar.bz2
@@ -4489,7 +4169,6 @@
 2020/tsoj/prog.c
 2020/tsoj/prog.orig.c
 2020/yang/.gitignore
-2020/yang/.id
 2020/yang/.inventory.html
 2020/yang/.winner.json
 2020/yang/2020_yang.tar.bz2

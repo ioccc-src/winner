@@ -147,28 +147,6 @@ year_dir
 ```
 
 
-### `.id`
-
-Each `winner` directory will have a file directory under it named:
-
-```
-.id
-```
-
-The contents of `_.id_` file is the `winner_id` string for that `winner`.
-
-* `sort_word`
-
-A string that is used to determine the position within the `winners.html` file;
-an `author` and the `winners` they submitted are to be listed.
-
-A `sort_word` match this regexp:
-
-```re
-^[a-z][0-9a-z]*
-```
-
-
 ## files
 
 
@@ -597,10 +575,11 @@ Eventually a separate build-ioccc repo will hold these tools.
 
 A tool to run another tool over all winner directories.
 
-Example:
+Examples:
 
 ```sh
 ./run_all.sh -v 3 ./fake.gen_index.sh
+./run_all.sh ./fake.gen_inventory.sh
 ```
 
 
