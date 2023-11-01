@@ -16,7 +16,7 @@ make all
 The current status of this entry is:
 
 ```
-STATUS: doesn't work with some compilers - please provide alternative code or fix for all compilers
+STATUS: doesn't work with some compilers - please provide alternative code or fix for more compilers
 ```
 
 For more detailed information see [1992 lush in bugs.md](/bugs.md#1992-lush).
