@@ -31,7 +31,7 @@
 
 # setup
 #
-export VERSION="1.0.2 2023-10-31"
+export VERSION="1.0.3 2023-10-31"
 NAME=$(basename "$0"); export NAME
 #
 export V_FLAG=0
@@ -126,7 +126,7 @@ export FULL_WINNER_PATH="$TOPDIR/$WINNER_PATH"
 
 # for validator doc string
 #
-VALIDATOR_DOC=$(echo "https://$DOMAIN/$DOCPATH/$YEAR/$WINNER/index.html" | sed -e 's;/;%2F;g' -e 's;:;%3A;')
+VALIDATOR_DOC=$(echo "https://$DOMAIN$DOCPATH/$YEAR/$WINNER/index.html" | sed -e 's;/;%2F;g' -e 's;:;%3A;')
 export VALIDATOR_DOC
 
 # print running info if verbose
