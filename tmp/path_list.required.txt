@@ -338,6 +338,7 @@
 1990/jaw/jaw.c
 1990/jaw/jaw.orig.c
 1990/jaw/shark.sh
+1990/jaw/try.sh
 1990/pjr/.gitignore
 1990/pjr/.id
 1990/pjr/Makefile

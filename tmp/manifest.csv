@@ -484,6 +484,7 @@
 1990,jaw,20,jaw.c,null,main,c,c,true,github,winning source
 1990,jaw,30,Makefile,null,null,makefile,null,true,github,how to compile
 1990,jaw,50,jaw.orig.c,null,orig,c,c,true,github,original source
+1990,jaw,100,try.sh,null,null,shellscript,sh,true,github,how to run
 1990,jaw,150,btoa,null,null,ruby,null,true,github,bota utility
 1990,jaw,150,shark.sh,null,null,shellscript,sh,true,github,shark utility with embedded source
 1990,jaw,300,1990_jaw.tar.bz2,mkwinnertbz2,null,tbz2,bz2,true,download,download winning source
