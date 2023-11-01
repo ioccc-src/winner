@@ -88,8 +88,9 @@ tool](https://github.com/xexyl/sgit).
 
 ## Typo fixes and consistency improvements
 
-Cody made many, many typ0 (... :-) ) fixes throughout the README.md files,
-scripts, other data files, Makefiles (see above) etc.
+Cody, being the IOCCC's resident corrections officer :-) (and a fine one at
+that, according to us :-) ), made many, many typ0 (... :-) ) fixes throughout
+the README.md files, scripts, other data files, Makefiles (see above) etc.
 
 He also updated the formatting of the README.md files (after renaming the old
 files to README.md) to proper markdown.
@@ -114,6 +115,15 @@ would see:
 ```sh
 $ warning: this program uses gets(), which is unsafe.
 ```
+
+whereas without the warning it's much easier to see that it's a prompt.
+
+In some entries this change is not possible, in one-liners it might make them
+too long and in some entries it's more complicated than others because of the
+annoying fact that for '"compatibility" reasons' `fgets()` retains the newline
+and `gets()` does not. Nevertheless some of the entries have been updated this
+way for the reasons described above and in the [FAQ](/faq.md).
+
 
 ## [1984/anonymous](1984/anonymous/anonymous.c) ([README.md](1984/anonymous/README.md))
 
