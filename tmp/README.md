@@ -578,10 +578,47 @@ under year directories.
 A text file containing `winner_id` strings: one `winner_id` per line.
 
 
-### [year_prize.csv](year_prize.csv)
+### [year_prize.numbers](year_prize.numbers)
 
-A CSV file: one line per `winner`.
+A [macOS](https://www.apple.com/macos) [Numbers](https://www.apple.com/numbers/)
+spreadsheet: one line per `winner`.
 
 The first field is a `winner_id`.
 
 The second field is the name of the award for given `winner`.
+
+
+### [year_prize.csv](year_prize.csv)
+
+The [year_prize.csv](year_prize.csv) is a CSV file that was exported from the
+[year_prize.numbers](year_prize.numbers) file.
+
+In case of conflict, the data in [year_prize.numbers](year_prize.numbers) file is
+considered authoritative over the [year_prize.csv](year_prize.csv) file.
+
+The [year_prize.csv.csv](year_prize.csv) is generated from the [year_prize.numbers.numbers](year_prize.numbers) file,
+via the [macOS](https://www.apple.com/macos/)
+[Numbers](https://www.apple.com/numbers/) spreadsheet app, as follows:
+
+0. open [year_prize.numbers](year_prize.numbers) in numbers: modify if/as needed
+
+1. File -> Export To -> CSV...
+    * 1a. `[ ]` Include table names (unset)
+    * 1b. Text Encoding: Unicode (UTF-8)
+    * 1c. Click ((Save..))
+
+2. Save As: year_prize.csv
+    * 2a. Select the `tmp` directory
+
+3. Click ((Export))
+    * 3a. If needed click ((Replace))
+
+4. open a terminal window
+
+5. cd to the `tmp` directory
+
+6. tr -d '\015' < year_prize.csv > tmp.csv
+
+7. echo >> tmp.csv
+
+8. mv -f tmp.csv year_prize.csv
