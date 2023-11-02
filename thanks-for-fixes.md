@@ -1571,6 +1571,22 @@ linux and further changes for macOS. He also fixed a segfault (after printing
 garbage) when the arg specified evaluated to 0. It was decided that these
 segfault fixes should be made because the program is so beautiful.
 
+Later on Cody improved the fixes by checking that the arg is a number `>0 &&
+<27` as that was noted by the author as a requirement and again since it's such
+a beautiful program it is worth it, especially as the larger the number the
+larger the resulting program becomes. It can be gigabytes in length if it
+doesn't crash. At this point since the author stated it has no `while`,
+`do...while`, `for`, `if/else`, `switch`, `?:` Cody removed the if statement by
+doing:
+
+```c
+((V[1]&&((atoi(V[1])>0&&atoi(V[1])<27)||(exit(1),1))));
+```
+
+Cody also added the [try.sh](1998/schnitzi/try.sh) script to help users try the
+commands (as well as some added by him) we recommended.
+
+
 ## [1998/schweikh1](1998/schweikh1/schweikh1.c) ([README.md](1998/schweikh1/README.md]))
 
 Cody fixed this for modern systems (it did not work at all) and added an
