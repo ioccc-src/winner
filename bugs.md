@@ -875,21 +875,60 @@ one liner it's already quite long.
 ### Source code: [1994/schnitzi/schnitzi.c](1994/schnitzi/schnitzi.c)
 ### Information: [1994/schnitzi/README.md](1994/schnitzi/README.md)
 
-The buffer size of this entry is 100 which is very easily overflowed
-with `gets()` which it uses. Changing it to use `fgets()` is difficult. Even
-changing the buffer size can cause compilation errors and even when that is
-fixed it will not translate to the generated file. The buffer size was changed
-but to make it the same functionality it was changed back.
+NOTE: the generated code of all versions, when fed its own source, will differ
+even when it works. See the author's remarks in the README.md for details.
+Increasing the buffer size and having it, when fed its own source code,
+generate code that will compile with the same buffer size is difficult: it just
+uses the original size. Cody explains this further down.
+
+Getting it to use `fgets()` is even harder as when fed its own code it will
+generate code that cannot even compile let alone use `fgets(3)`.
+
+In both cases, changing the buffer size and changing it to use `fgets(3)`, will
+cause compilation errors without other adjustments.
+
+See the below magic for details. Along with the author's remarks in the
+README.md file it might prove possible to get it to use `fgets(3)`. Cody,
+writing this on 02 November 2023, only just noticed the author's remarks and
+will later on look at this if nobody takes up the challenge. More important work
+like getting to a place that the next contest can run must be done first.
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) explains the magic of
-how this entry works which will be necessary if this entry is to be fixed, below.
+how this entry works, which will be necessary if this entry is to be fixed,
+below.
+
+You might wish to run the command:
+
+```sh
+make diff_orig_prog
+```
+
+to see what had to change for the buffer size, when looking at the below.
+Furthermore you will want to look at:
+
+
+```sh
+diff schnitzi.alt.c schnitzi.alt2.c
+```
+
+as the `fgets()` version can compile it just can't generate compilable code (let
+alone using `fgets()`) when fed itself (to reiterate, just changing the call to
+`fgets(3)` does not mean it can compile and there's a further problem in that
+`fgets(3)` retains the newline whereas `gets(3)` does not). Nevertheless looking
+at these commands will be of help to understand how it works.
+
+For the alternate versions the other functionality is unaffected.
 
 ### The magic of [1994/schnitzi](1994/schnitzi/schnitzi.c) and how it flips text
 
 The problem is getting the generated code to use `fgets()` (once it even
-compiles which is easy to do) and also have the updated buffer size be the same.
-The generated output, when changed to `fgets()` failed to compile. The buffer
-size, when using `gets()` is still the same.
+compiles which was easy to do) and also have the updated buffer size be the
+same (which was easy to do too at least in the original version). The generated
+output, when changed to `fgets()` failed to compile and it also used `gets(3)`
+and these are the bugs here.
+
+The buffer size, when using `gets()` is still the same but as noted above the
+original code has had a buffer size increase.
 
 The real problem is with formatting the code. Take a look at the interesting
 comment as well as the `int r=0,x,y=0` at the top of the file. If you look at
