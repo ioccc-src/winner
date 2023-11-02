@@ -1,9 +1,6 @@
 # Best Layout
 
 Mark Schnitzius\
-ISX Corporation\
-1165 Northchase Pkwy, Suite 120\
-Marietta, GA 30067\
 US\
 <http://computronium.org/ioccc.html>
 
@@ -13,6 +10,11 @@ US\
 ```sh
 make all
 ```
+
+There are two alternate versions, one that has an increased buffer size and one
+that uses `fgets()`; neither are completely functional.
+See below section bugs and (mis)features for details and the [alternate
+code](#alternate-code) section for how to use.
 
 
 ### Bugs and (Mis)features
@@ -36,20 +38,37 @@ For more detailed information see [1994 schnitzi in bugs.md](/bugs.md#1994-schni
 ## Try:
 
 ```sh
-./schnitzi < /etc/motd
-./schnitzi < /etc/passwd
+./schnitzi < /etc/motd 2>/dev/null
+./schnitzi < /etc/passwd 2>/dev/null
+
+./schnitzi < schnitzi.c > schnitzi2.c 2>/dev/null
+make schnitzi2
+./schnitzi2 < README.md
 ```
 
 
 ## Alternate code:
 
-To build the alternative code try:
+The first version, `schnitzi.alt.c`, uses `fgets(3)` but when fed its own code
+it will generate code that still uses `gets(3)`. What's more is it will not
+compile. Other functionality works fine.
+
+The second version, `schnitzi.alt2.c`, has an increased buffer size but when fed
+its own source code it will generate code that can compile but with the original
+buffer size. This is due to a comment which is explained in more detail in
+[1994/schnitzi in bugs.md](/bugs.md#1994-schnitzi).
+
+
+### Alternate build:
 
 ```sh
 make alt
 ```
 
-Use `schnitzi.alt` as you would `schnitzi`.
+### Alternate use:
+
+Use `schnitzi.alt` and `schnitzi.alt2` as you would `schnitzi` above except that
+feeding the source code to it will not work right.
 
 
 ## Judges' remarks:
@@ -65,6 +84,7 @@ find out why?
 
 
 ## Author's remarks:
+
 
 ### SPOILER:
 
@@ -83,7 +103,7 @@ schnitzi < info
 
 The program generates interesting results when its source file is
 used as input:
-\
+
 ```sh
     	schnitzi < schnitzi.c
 ```
@@ -94,11 +114,11 @@ version of itself work identically (you'll need to redirect the
 output of the above command into a separate file and compile it).
 You might notice some differences in the flipped version, though.
 First off, a secret message becomes visible that was not visible
-in the original program.  Also, much of the code shows up in\
+in the original program.  Also, much of the code shows up in
 different places in the flipped program than it appeared in the
-first program.  My first version of this program was perfectly\
+first program.  My first version of this program was perfectly
 symmetrical along the diagonal, but later found out there were
-interesting ways to break the symmetry.  The best way to see this\
+interesting ways to break the symmetry.  The best way to see this
 is to load both the original and flipped versions of the program
 into an editor and switch back and forth between them rapidly.
 

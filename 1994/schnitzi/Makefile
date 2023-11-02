@@ -130,13 +130,25 @@ all: data ${TARGET}
 	sandwich supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: the buffer size of this entry is very small at 100."
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+${PROG}2: ${PROG}2.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # alternative executable
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	@echo "NOTE: this version has fgets() but will not generate code that can be compiled."
+	@echo "Other functionality is not affected."
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+${PROG}.alt2: ${PROG}.alt2.c
+	@echo "NOTE: this version has an increased buffer size and will generate code that can"
+	@echo "compile but the buffer size is not increased. Other functionality is unaffected."
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # data files
 #

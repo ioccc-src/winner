@@ -1409,6 +1409,24 @@ program chooses that line it might print the first 231 characters or it might
 print (up to) the next 231 characters and so on.
 
 
+## [1994/schnitzi](1994/schnitzi/schnitzi.c) ([README.md](1994/schnitzi/README.md]))
+
+Cody added two alt versions, [one which uses
+`fgets()`](1994/schnitzi/schnitzi.alt.c) but when fed its own source code cannot
+generate code that compile and another [one with a bigger buffer
+size](1994/schnitzi/schnitzi.alt2.c) which, when fed its own source code, will
+generate compilable code but not with the same buffer size but rather the
+original buffer size. Cody explains this in the at [1994/schnitzi in
+bugs.md](/bugs.md#1994-schnitzi).
+
+The purpose for these versions it both demonstrate how the magic works behind it
+and to help others, should they wish to, get the code to work with `fgets(3)`, with
+or without an increase in buffer size. See [1994/schnitzi in
+bugs.md](/bugs.md#1994-schnitzi) where Cody also explains the magic for more
+details. Later on, if nobody takes up the task, Cody might resume it, but for
+now there is more important work to do so that the next contest can run.
+
+
 ## [1994/shapiro](1994/shapiro/shapiro.c) ([README.md](1994/shapiro/README.md]))
 
 Cody fixed a bug on systems where `EOF != -1`. The problem is that `getc()` and
