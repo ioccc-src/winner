@@ -30,7 +30,7 @@ where
 This entry will segfault if the file cannot be opened. This is not a bug.
 
 
-## Try:
+### Try:
 
 ```sh
 ./schnitzi schnitzi.info

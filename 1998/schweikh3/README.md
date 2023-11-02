@@ -7,11 +7,13 @@ D-71384 Weinstadt\
 Germany\
 <http://www.schweikhardt.net>
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -25,7 +27,8 @@ find dir -type f -print | ./schweikh3
 
 Maybe you will not need to buy another 10 Gb disk to store them.  :-)
 
-## Try:
+
+### Try:
 
 If you're in this winning entry's directory:
 
@@ -37,7 +40,6 @@ Notice that the tool finds a duplicate file, that of the man page.
 
 
 ## Judges' remarks:
-
 
 Try this:
 
@@ -58,7 +60,8 @@ anyway. :-)
 NOTE: Some non-gcc compilers that are not fully ANSI standard do not compile
 this entry correctly.
 
-## Author's remarks
+
+## Author's remarks:
 
 The source is expected to conform to IEEE Std 1003.1-1990 ("POSIX").
 Thank God the IEEE does not standardize a coding style...
@@ -224,6 +227,7 @@ In the remote event that the input has more than 8192 files with
 the same size (on systems where `sizeof (char *) == 4`, or 4096 when
 `sizeof (char *) == 8`), increase the manifest constant 32767 on line
 31.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

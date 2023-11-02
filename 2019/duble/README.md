@@ -3,6 +3,7 @@
 Etienne Duble\
 <https://lig-membres.imag.fr/duble>
 
+
 ## To build:
 
 ```sh
@@ -10,7 +11,7 @@ make
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -27,7 +28,8 @@ For more detailed information see [2019 duble in bugs.md](/bugs.md#2019-duble).
 ./prog file
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog /tmp/drawing
@@ -86,10 +88,12 @@ make alt
 
 Use `prog.alt` as you would `prog` above.
 
+
 ## Judges' remarks:
 
 After starting the program, use the cursor keys, then try some modes, like `p`
 or `l` (they toggle).
+
 
 ## Author's remarks:
 
@@ -222,6 +226,7 @@ And I obtained `prog.c`. With this version, no need to touch `sysctl` parameters
 and it works on macOS too!
 I must confess it was challenging to remain below the size limit with this little
 change.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

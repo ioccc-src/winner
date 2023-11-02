@@ -11,7 +11,7 @@ make all
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 ./brnstnd < sorta.i2+2

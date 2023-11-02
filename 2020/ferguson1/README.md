@@ -5,6 +5,7 @@ Cody Boone Ferguson <ioccc@xexyl.net>\
 <https://xexyl.net>\
 Mastodon: [@xexyl@fosstodon.org](https://fosstodon.org/@xexyl)
 
+
 ## To build:
 
 ```sh
@@ -12,7 +13,7 @@ make
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -92,8 +93,7 @@ and non-zero).
 		(cannot - die if you try).
 
 
-
-## Try:
+### Try:
 
 ```sh
 make test
@@ -116,6 +116,7 @@ CANNIBAL=1 WALLS=1 WAIT=0 EVADE=1 MAXSIZE=10 ./prog
 ./snake-colours
 # allows for configuring colours
 ```
+
 
 ## Judges' remarks:
 
@@ -147,6 +148,7 @@ Because most of us could use some *Double-layered Chocolate Fudge Cake*!
 * [spoilers.html][] ([spoilers.md][] on GitHub)
 
 Read ***ONLY*** if you really must give up trying to de-obfuscate!
+
 
 ## Author's remarks:
 
@@ -613,6 +615,7 @@ email but I'm more likely to respond to mastodon messages.
 [terminals.md]: terminals.md
 [troubleshooting.html]: troubleshooting.html
 [troubleshooting.md]: troubleshooting.md
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -14,7 +14,7 @@ make
 This entry requires [Zlib](https://www.zlib.net).
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -68,7 +68,7 @@ pixel formats though we note that your computer might also [halt and catch
 fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
 
 
-## Try:
+### Try:
 
 ```sh
 ./vik e ioccc.png chocolate.png > chocolate-in-ioccc.png

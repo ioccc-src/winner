@@ -4,11 +4,13 @@ Arne "Timwi" Heizmann\
 Germany\
 <timwi@gmx.net>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,11 +18,13 @@ make
 ./timwi < bf_program
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 (echo "20 : ,-->+.>+.<<[>[>>+>+<<<-]>[>>+>+<<<-]>"; echo "[<+>-]>[<<<+>>>-]>[-]<<<<.<-]") | ./timwi
 ```
+
 
 ## Judges' remarks:
 
@@ -36,6 +40,7 @@ small [quines][] work, some don't.
 Why?
 
 [quines]: https://en.wikipedia.org/wiki/Quine_(computing)
+
 
 ## Author's remarks:
 
@@ -87,6 +92,7 @@ The program will first read in all the input integers, but it will begin
 execution immediately and only read program instructions as they are needed.
 Yet there is no global variable storing how far it has read! Perhaps the
 hardest thing to figure out is how it finds the matching square brackets.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

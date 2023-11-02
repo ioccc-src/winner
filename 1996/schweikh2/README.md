@@ -14,6 +14,7 @@ Germany\
 make all
 ```
 
+
 ## To use:
 
 ```sh
@@ -31,7 +32,7 @@ The program accepts up to 4 parameters:
 3. The goal value or 0/0 [default: 42]
 
 
-## Try:
+### Try:
 
 ```sh
 ./schweikh2 15 1 0 0/0
@@ -55,7 +56,6 @@ while :; do grep -v '#' schweikh2.c; done
 
 ## Judges' remarks:
 
-
 The original program, with only slight obfuscations, may be found
 in `hunni.c`.  The perl script, obfuscates it appropriately:
 
@@ -64,6 +64,7 @@ perl ./hunni.pl < hunni.c
 ```
 
 This entry was another crowd pleaser at the IOCCC BOF.
+
 
 ## Author's remarks:
 
@@ -158,6 +159,7 @@ For a nice printout try this on your Bourne compatible shell:
 ```sh
 % while :; do grep -v '#' schweikh2.c; done
 ```
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

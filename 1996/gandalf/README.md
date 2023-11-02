@@ -16,7 +16,7 @@ make all
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -33,7 +33,8 @@ For more detailed information see [1996 gandalf in bugs.md](/bugs.md#1996-gandal
 ./gandalf
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 PATH=.:$PATH

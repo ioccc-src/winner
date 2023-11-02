@@ -3,11 +3,13 @@
 Dave Burton\
 <http://ioccc.snox.net>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 ./prog [-tcksri] < file.c
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog -i < prog.c
@@ -35,10 +38,12 @@ If you get really stuck, try:
 man ./tac.man
 ```
 
+
 ## Judges' remarks:
 
 They say size isn't everything, and in the case of IOCCC [iocccsize.c](https://www.ioccc.org/2018/iocccsize.c)
 that is saying something!  What is this program weighing and how much does it weigh?
+
 
 ## Author's remarks:
 
@@ -409,6 +414,7 @@ Try:
 ./manpage -h | ./manpage -R | less
 ./manpage -h | ./manpage -P | lpr
 ```
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

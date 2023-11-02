@@ -17,7 +17,7 @@ See below section bugs and (mis)features for details and the [alternate
 code](#alternate-code) section for how to use.
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -35,7 +35,7 @@ For more detailed information see [1994 schnitzi in bugs.md](/bugs.md#1994-schni
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 ./schnitzi < /etc/motd 2>/dev/null
@@ -73,7 +73,6 @@ feeding the source code to it will not work right.
 
 ## Judges' remarks:
 
-
 Try:
 
 	./schnitzi < schnitzi.c
@@ -84,7 +83,6 @@ find out why?
 
 
 ## Author's remarks:
-
 
 ### SPOILER:
 

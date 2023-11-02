@@ -6,11 +6,13 @@ Melkonkatu 5 A 8\
 00210 Helsinki\
 Finland
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -18,7 +20,8 @@ make all
 ./tvr mode screensize/2 < colormapfile
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./tvr 0 128 < tvr.color		(for color displays)
@@ -48,6 +51,7 @@ watch what happens.
 The fractally minded may be able to detect that mode 0 does not calculate
 Mandelbrot/Julian sets correctly.  Can you find the bug?  Better still, can you
 fix it without breaking something else?
+
 
 ## Author's remarks:
 
@@ -215,6 +219,7 @@ top left corner of the screen.
 should be checked exactly (by comparing `x*x+y*y` with `2*2`), or else artifacts
 are introduced.  The result of this error is a "bubbly" appearance (at least in
 mono).
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

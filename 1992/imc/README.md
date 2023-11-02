@@ -8,11 +8,13 @@ Oxford\
 OX1 4AW\
 England
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -22,6 +24,7 @@ make all
 
 ./imc\
 ```
+
 
 ## Judges' remarks:
 
@@ -34,6 +37,7 @@ Of course, the source (layout) is self-documenting!  :-)
 NOTE: The original winning source assumed that exit() returned a value which cause
 problems for some systems where exit() returns a void.  The file [imc.c](imc.c) has been
 modified to avoid this problem.
+
 
 ## Author's remarks:
 
@@ -163,6 +167,7 @@ Here are a couple of good pictures to draw:
 ./imc -s 512,512 -f 600000 -l 512 -m 16 -c.00805,.74274 > screen1.ras
 ./imc -s512,512 -j-.523,-.535 > screen2.ras
 ```
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

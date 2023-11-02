@@ -3,11 +3,13 @@
 Jim Hague\
 UK
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -16,7 +18,8 @@ make all
 # enter some text
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./hague 2>/dev/null
@@ -45,9 +48,11 @@ similar variables can be obfuscating!  The author noted that this
 program implements the international Morse standard.  Now for extra
 credit, what Morse message does the program spell out?
 
+
 ## Author's remarks:
 
 No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

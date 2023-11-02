@@ -3,11 +3,13 @@
     Jens Schweikhardt\
     <http://www.schweikhardt.net>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -17,11 +19,13 @@ make
 
 where n is a base 16 number of any size.
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog 19
 ```
+
 
 ## Judges' remarks:
 
@@ -76,6 +80,7 @@ build some very complex structures.  :-)
 
 p.s. We appreciated that apart from a few powers of 2, the source
 code is magic number free.
+
 
 ## Author's remarks:
 
@@ -780,6 +785,7 @@ better *remove* some of the RAM, use an ancient box, or reduce available
 memory resources with the ulimit(1) built-in of your shell.
 
 For all intents and purposes, the *Not Overflowing Type* keeps the promise!
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

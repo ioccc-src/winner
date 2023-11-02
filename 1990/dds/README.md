@@ -5,6 +5,7 @@ Greece\
 <https://www.spinellis.gr/>\
 Mastodon: <https://mstdn.social/@DSpinellis>
 
+
 ## To build:
 
 ```sh
@@ -18,7 +19,8 @@ make all
 ./dds
 ```
 
-## Try:
+
+### Try:
 
 Give the following lines as input:
 
@@ -30,6 +32,7 @@ RUN
 NOTE: this entry is probably one of the only times CAPS LOCK might be worth
 having (though still not useful enough to enable :-) ) as all input has to be
 UPPER CASE.
+
 
 ## Judges' remarks:
 
@@ -122,6 +125,7 @@ the return type of functions, not freeing memory, `#defin`ing define, and joinin
 lines.  In its present 1536 character form the program is reasonably portable
 (it may fail to run in a tagged object architecture) and nicely formatted (it
 fits in an `80*25` screen).
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

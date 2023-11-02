@@ -4,11 +4,13 @@ Philip Blakely\
 UK\
 <pmblakely@gmail.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,7 +18,8 @@ make
 ./blakely "RPN formula" resolution > output.gif
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./blakely "xx*yy*+" 64 > paraboloid.gif
@@ -25,6 +28,7 @@ make
 
 time ./blakely 0 250 > flat.gif
 ```
+
 
 ## Judges' remarks:
 
@@ -37,6 +41,7 @@ Very impressive!
 The checkerboard pattern in the output can be broken. Could you figure out how?
 
 Larger GIF files confuse some image viewers.
+
 
 ## Author's remarks:
 
@@ -143,6 +148,7 @@ cos](https://en.wikipedia.org/wiki/Sine_and_cosine) are not used.
 
 (Note that the author may or may not be able to answer all of the above
 questions.)
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -3,11 +3,13 @@
 Ilya Kurdyukov\
 <https://github.com/ilyakurdyukov>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 ./prog
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 echo IOCCC | ./prog
@@ -37,11 +40,13 @@ make alt
 
 Use `prog.alt` as you would `prog` above.
 
+
 ## Judges' remarks:
 
 This hash of a C code makes a hash out of input.
 Do you understand how?
 You should get a-round-to-it figuring it out!
+
 
 ## Author's remarks:
 
@@ -76,6 +81,7 @@ Added a macro hack to make stdin work in binary mode under Windows (tested under
 - `prog.x86_64.asm` contains same program, but written on assembly for x86_64 Linux, for the sake of less executable size. Which is 500 bytes long (where 120 is for ELF headers) after compilation. Algorithm details is slightly differ (like constants packing), just to make smaller binary code. It's interesting to compare density of binary code and obfuscated C.
 
 - `prog.x86.asm` and for x86, although the headers are smaller, but the binary code is larger due to fewer registers and lack of 64-bit multiply.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

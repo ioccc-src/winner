@@ -3,11 +3,13 @@
 Maarten Litmaath\
 The Netherlands
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -18,7 +20,8 @@ make
 There is an alternate version provided. See the [Alternate
 code](#alternate-code) section below.
 
-## Try:
+
+### Try:
 
 ```sh
 ./litmaath eschew obfuscation
@@ -81,6 +84,7 @@ fprintf(stderr,
 ## Author's remarks:
 
 No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

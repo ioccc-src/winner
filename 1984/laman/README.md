@@ -17,7 +17,7 @@ make all
 ```
 
 
-## Try:
+### Try:
 
 The program accepts ONE POSITIVE number.  Seeing is believing, so try things
 like:
@@ -29,6 +29,7 @@ like:
 ```
 
 This code should run you in circles.
+
 
 ## Judges' remarks:
 
@@ -49,9 +50,11 @@ to:
 
 I hope you have a C beautifier!
 
+
 ## Author's remarks:
 
 No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

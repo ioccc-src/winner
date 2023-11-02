@@ -3,17 +3,20 @@
 Michael H. Pawka\
 US
 
+
 ## To build:
 
 ```sh
 make all
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./pawka
 ```
+
 
 ## Judges' remarks:
 
@@ -21,9 +24,11 @@ The judges found this entry to be one of hardest to read without the
 aid of `/lib/cpp` and a good editor.  When run, the program asks if it
 is obfuscated, of all things!
 
+
 ## Author's remarks:
 
 No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

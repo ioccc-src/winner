@@ -20,7 +20,8 @@ make alt
 To see why we recommend the alternate version instead of the original version,
 see the [original code](#original-code) section.
 
-## Try:
+
+### Try:
 
 This alternate version, which we recommend that you use in order to see what is
 happening with modern systems, and to not flash too quickly, which can be
@@ -40,6 +41,7 @@ code](#original-code) was being used, you can do:
 make CDEFINE="-DS=0" clobber alt
 ./sloane.alt
 ```
+
 
 ## Original code:
 

@@ -3,11 +3,13 @@
 Adrian Cable\
 <adrian.cable@gmail.com>\
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 ./cable2 file.bmp [color]
 ```
 
-## Try:
+
+### Try:
 
 Here is an OCR example that shows all 94 supported ASCII characters:
 
@@ -57,11 +60,13 @@ And as an added IOCCC bonus: :-)
 ./cable2 bonus.bmp
 ```
 
+
 ## Judges' remarks:
 
 We can confirm that this is the first time the IOCCC has been used
 to peer-review a new research. We had quite a bit of fun with a sharpie and a
 scanner.
+
 
 ## Author's remarks:
 
@@ -157,6 +162,7 @@ and endianness conversion would make the source too large for IOCCC rule 2).
 `clang` warns about unused expression results, missing type specifiers, and
 incompatible pointer conversions - all just a fun consequence of the
 obfuscations.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

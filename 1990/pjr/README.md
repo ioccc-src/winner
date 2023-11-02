@@ -8,17 +8,20 @@ Farnborough\
 Hants GU14 7PL\
 England, U.K.
 
+
 ## To build:
 
 ```sh
 make all
 ```
 
+
 ## To use:
 
 ```sh
 ./pjr
 ```
+
 
 ## Judges' remarks:
 
@@ -71,6 +74,7 @@ Rot13:
     By the way, there is actually a piece of code which is not used
     in the original program! I leave it as an intellectual exercise
     to the reader to find out what it is.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

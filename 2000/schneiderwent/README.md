@@ -3,11 +3,13 @@
 Craig Schneiderwent\
 WI, US
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 ./schneiderwent datafile
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./schneiderwent schneiderwent.data
@@ -23,6 +26,7 @@ make
 ```
 
 What's the difference?
+
 
 ## Judges' remarks:
 
@@ -33,6 +37,7 @@ from every character in a C string.
 Translating the messages into your language of preference while
 keeping the program portable between different encodings
 (Chinese, Japanese, Russian - anyone?) may be an entertaining task.
+
 
 ## Author's remarks:
 
@@ -75,6 +80,7 @@ setjmp/longjmp combination.
 * The trigraphs are not there as obfuscation nor are they there to annoy the
 judges - it's just the easiest way to get around the absence of square brackets
 in a normal 3270 environment.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

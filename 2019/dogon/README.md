@@ -2,11 +2,13 @@
 
 Gil Dogon
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -14,7 +16,8 @@ make
 ./prog < pattern.mc
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog < glider.mc
@@ -27,6 +30,7 @@ make
 
 ./prog < message.mc
 ```
+
 
 ## Judges' remarks:
 
@@ -49,6 +53,7 @@ We truly have not much more to add, except two things:
   to 0x10000000, otherwise the entry will promptly crash.
 
 In the interest of saving lives, this entry was not fuzzed.
+
 
 ## Author's remarks:
 
@@ -236,6 +241,7 @@ hs0 << 8, hs1w8 = hs1 >> 8, hs1e8 = hs1 << 8, ts0 = hs0w8 ^ hs0e8, ts1 = (hs0w8
 
 This uses only 19 bitwise operations and six shifts to calculate the inner 6x6
 next generation bits of the input 8x8 !
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

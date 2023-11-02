@@ -4,11 +4,13 @@ Yusuke Endoh\
 <https://github.com/mame/>\
 Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,7 +18,8 @@ make
 ./prog <a number of arguments>
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog @ @ @ @ @ @
@@ -43,12 +46,14 @@ make alt
 
 Use `prog.alt` as you would `prog` above.
 
+
 ## Judges' remarks:
 
 For this one liner it is best to avoid prime numbers. The output groups
 factors in the x-y dimensions. How many factors can be represented before you
 run out of command line argument space? How could you modify the program to
 experiment with numbers that have more or larger factors?
+
 
 ## Author's remarks:
 
@@ -69,6 +74,7 @@ Diagrams](http://www.datapointed.net/visualizations/math/factorization/animated-
 `prog.alt.c` is the original version that I submitted. [Gil
 Dogon](/winners.html#Gil_Dogon) kindly improved it during the review.  Thank
 you!
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

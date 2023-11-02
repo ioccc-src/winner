@@ -7,6 +7,7 @@ Cambridge\
 CB2 2QH\
 England
 
+
 ## To build:
 
 ```sh
@@ -14,7 +15,7 @@ make
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -36,12 +37,14 @@ For more detailed information see [2000 rince in bugs.md](/bugs.md#2000-rince).
 If `DISPLAY` is not set the program will very likely crash or do something
 different.
 
-## Try:
+
+### Try:
 
 ```sh
 make dmy2jd
 ./rince 0.001 `./dmy2jd  7.8 1 1610`
 ```
+
 
 ## Judges' remarks:
 
@@ -50,6 +53,7 @@ before reading the author's remarks below.
 
 The judges verified the correctness of output for recent dates through visual
 observation.
+
 
 ## Author's remarks:
 
@@ -360,6 +364,7 @@ Jean Meeus. Published by Willmann-Bell Inc.
 
 [2] Astronomical algorithms (1st ed): pages 285-299.
 Jean Meeus. Published by Willmann-Bell Inc.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

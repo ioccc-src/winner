@@ -7,6 +7,7 @@ Suite 120\
 Marietta, GA  30067\
 US
 
+
 ## To build:
 
 ```sh
@@ -14,7 +15,7 @@ make all
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -31,7 +32,8 @@ For more detailed information see [1995 vanschnitz in bugs.md](/bugs.md#1995-van
 ./vanschnitz
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 make clobber all LEVEL=6
@@ -195,6 +197,7 @@ to try to decipher the program without it...
     M"@HC96YD:68@("\J("-E;'-E(&]F("-I9FYD968@24Y)5$E!3$E:140@*B\*
     `
     end
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

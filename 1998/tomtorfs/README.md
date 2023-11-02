@@ -7,11 +7,13 @@ Cuperuslei 12          (home address)\
 Belgium\
 <https://web.archive.org/web/20010520021948/http://members.nbci.com/tomtorfs/>
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -19,7 +21,8 @@ make all
 ./tomtorfs tomtorfs.c 32 04C11DB7 1 FFFFFFFF FFFFFFFF
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 echo "abscond conferrable" > file.A
@@ -30,11 +33,13 @@ echo "adorn condolence too" > file.C
 ./tomtorfs file.C 32 04C11DB7 1 FFFFFFFF FFFFFFFF
 ```
 
+
 ## Judges' remarks:
 
 If you don't believe the program is correct, try and compare the output
 of the program with the value of CRC computed by PKZIP or any other
 archiver that uses the CRC-32 algorithm.
+
 
 ## Author's remarks:
 
@@ -131,6 +136,7 @@ at them they should become obvious also.
 
 Ross N. Williams, whose CRC guide was very useful to me
 for writing this. You can find it in [crc.txt](crc.txt).
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

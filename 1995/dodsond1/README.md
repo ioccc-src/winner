@@ -6,11 +6,13 @@ AG Communication Systems\
 Glendale, AZ 85308\
 US
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -18,11 +20,13 @@ make all
 ./dodsond1 < text_file
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./dodsond1 < README.md
 ```
+
 
 ## Judges' remarks:
 
@@ -39,6 +43,7 @@ You might consider giving the following input:
 
 	./dodsond1 < try.this.txt
 
+
 ## Author's remarks:
 
 Istha ogrampra akesta Englishwa extta aswa inputwa andwa
@@ -54,6 +59,7 @@ written as `ainma`.
 
 The program construction is also very obfuscated, with all of the
 code being inside the ()'s of one of the 6 `orfa` loops.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -4,11 +4,13 @@ Jack Applin\
 US\
 <https://www.cs.colostate.edu/~applin/>
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -16,7 +18,8 @@ make all
 ./applin
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 sh applin.c
@@ -27,14 +30,15 @@ sh applin.c
 
 ## Judges' remarks:
 
-
 The judges were so amused by this little program that we created an
 award just for it.  This program is portable to the C and Fortran 77
 compilers as well as executable by the Bourne shell!
 
+
 ## Author's remarks:
 
 No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

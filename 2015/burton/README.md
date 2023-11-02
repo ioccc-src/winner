@@ -3,11 +3,13 @@
     Dave Burton <ioccc@snox.net>
     <http://snox.net/ioccc>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -23,7 +25,8 @@ or:
 
 Type in expressions on standard input.
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog '?0x3343<<2'
@@ -63,6 +66,7 @@ make alt
 
 Use `prog.alt` as you would `prog` above.
 
+
 ## Judges' remarks:
 
 "Look, Ma, no ~~hands~~ digits!"
@@ -72,6 +76,7 @@ modulo, are easy to find. Where are addition and subtraction?
 
 We were impressed with the level of detail the author "blogged" the obfuscation
 process.
+
 
 ## Author's remarks:
 
@@ -223,6 +228,7 @@ PATH=. eprog < test.in | diff - test.out
 ### Spoilers:
 
 If you do not want to puzzle out how it works, see [spoilers.md](spoilers.md).
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

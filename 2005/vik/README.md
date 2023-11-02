@@ -5,11 +5,13 @@ US\
 <daniel@vik.cc>\
 <https://www.vik.cc>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -17,17 +19,20 @@ make
 ./vik [file.map]
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./vik maze.map
 ```
+
 
 ## Judges' remarks:
 
 An amazing use of the X libraries with twisty code passages, all different.  One
 risks running in code path circles as `main()` is called again and again. Be
 sure to pay attention to commas! :-)
+
 
 ## Author's remarks:
 
@@ -145,6 +150,7 @@ The program does not run that smooth under
 [Cygwin](https://en.wikipedia.org/wiki/Cygwin). It seems to be a priority issue
 with Cygwin and it can easily be solved by increasing the priority of the
 application a little bit.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

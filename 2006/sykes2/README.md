@@ -4,11 +4,13 @@ Stephen Sykes\
 Finland\
 <https://web.archive.org/web/20160316092728/http://www.stephensykes.com/>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,7 +18,8 @@ make
 ./sykes2
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./sykes2.sh
@@ -30,6 +33,7 @@ a nice show of time.
 As they say, "Lather, rinse, repeat"! :-)
 
 If you have the time :-), figure out how this small 1-line entry works!
+
 
 ## Author's remarks:
 
@@ -53,6 +57,7 @@ easily be declared as int at the expense of 4 more characters.
 
 I'm not sure of the effects on a hard disk of rewriting the same file
 multiple times per second for a long time.  Run at your own risk!
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

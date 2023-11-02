@@ -23,7 +23,7 @@ make
 where `seed` is a number.
 
 
-## Try:
+### Try:
 
 ```sh
 ./aidan < insane1.sudoku

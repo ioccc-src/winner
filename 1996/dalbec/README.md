@@ -20,7 +20,8 @@ make all
 ./dalbec
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./dalbec 3 | head -n 29

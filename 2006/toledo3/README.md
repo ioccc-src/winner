@@ -20,7 +20,7 @@ make
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 ./toledo3 1

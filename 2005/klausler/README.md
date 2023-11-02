@@ -4,11 +4,13 @@ Peter Klausler\
 US\
 <pmk@cray.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,11 +18,13 @@ make
 ./klausler arg1 arg2 | head
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./klausler peter klausler | head
 ```
+
 
 ## Judges' remarks:
 
@@ -31,6 +35,7 @@ a critical header file.
 In other words: make use of other words!  :-)
 
 Rules might have to be changed!
+
 
 ## Author's remarks:
 
@@ -62,6 +67,7 @@ late one night. And now I honestly do not know how it works, so please don't
 ask. Upon reviewing the program after its unexpected honor, I guess that it's
 remarkable only for its complete lack of macros, sneaky naming, `main()`
 recursion, or other tricks. Enjoy!
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

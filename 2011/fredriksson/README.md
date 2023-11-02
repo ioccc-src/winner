@@ -3,11 +3,13 @@
 Kimmo Fredriksson\
 <kimmo.k.k.fredriksson@gmail.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 ./fredriksson [-icvtnk#] regexp < file
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./fredriksson -k1 -i POOT < /etc/group
@@ -26,6 +29,7 @@ ulimit -s unlimited
 NOTE: you need to be allowed to change your stack size or else the last command
 will likely cause the program to dump core.
 
+
 ## Judges' remarks:
 
 The author of this entry was making sure that it does not win the "Best Short
@@ -34,6 +38,7 @@ On the inside, it is a [Burrows-Wheeler
 transform](https://en.wikipedia.org/wiki/Burrows-Wheeler_transform) decompressor
 that produces the source code of the actual obfuscated approximate `grep`
 program and calls it. As an exercise, try writing the compressor.
+
 
 ## Author's remarks:
 
@@ -279,6 +284,7 @@ Just say
   A character is a whitespace if `isspace()` returns non-zero value. Even
   if deleting even one of those chars breaks the program! (This does not
   apply to the generated source `ag.c`.)
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

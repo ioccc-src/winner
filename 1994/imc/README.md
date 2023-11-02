@@ -7,11 +7,13 @@ Bolton\
 BL3 4LG\
 England
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -21,7 +23,8 @@ make all
 
 where `[NUMBER]` is an optional number. Default is 5.
 
-## Try:
+
+### Try:
 
 ```sh
 ./imc 3
@@ -31,6 +34,7 @@ where `[NUMBER]` is an optional number. Default is 5.
 ./imc 6
 ./imc 13
 ```
+
 
 ## Judges' remarks:
 
@@ -87,6 +91,7 @@ which will be left between adjacent rows of the magic square.
 The square which is returned will (or should) be a permutation of the
 numbers 1 to `n*n` in which all rows and columns and the two diagonals
 add up to `n*(n*n+1)/2`.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

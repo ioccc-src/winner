@@ -3,11 +3,13 @@
 Hou Qiming\
 <hqm03ster@gmail.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 ./hou 'expression'
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./hou '11/26+222/31'
@@ -28,6 +31,7 @@ make
 ```
 
 What does the last one mean?
+
 
 ## Judges' remarks:
 
@@ -81,6 +85,7 @@ The parser is functionally equivalent to a normal arithmetic parser for all
 valid inputs.  For another fun challenge: try to determine how it parses the
 command line argument.
 
+
 ## Author's remarks:
 
 ### Obfuscations
@@ -118,6 +123,7 @@ executed by the button panel.
 Both hash functions were found using a separate search program. Another program
 was used to find a way to format one hash function as example input such that
 it produces something resembling the bitmask hash table as part of its output.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

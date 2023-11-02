@@ -4,11 +4,13 @@ Yusuke Endoh\
 <https://github.com/mame/>\
 Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,12 +18,14 @@ make
 ./prog < textfile > output.gif
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog < golem.txt > golem.gif
 ./prog < smily.txt > smily.gif
 ```
+
 
 ## Judges' remarks:
 
@@ -36,6 +40,7 @@ You should only give this program printable ASCII characters.
 
 Unfortunately this won't run on your PDP8, if you had one, as it needs at
 least 2MiB of memory to run in.
+
 
 ## Author's remarks:
 
@@ -61,6 +66,7 @@ The program itself has a hidden message.
 ```sh
 ./prog < prog.c > prog.gif
 ```
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -3,6 +3,7 @@
 Paul E. Black\
 US
 
+
 ## To build:
 
 ```sh
@@ -12,7 +13,8 @@ make all
 There is an alternate version with a trace routine that the author had commented
 out. See [alternate code](#alternate-code) below for more details.
 
-## Try:
+
+### Try:
 
 ```sh
 ./paul
@@ -55,6 +57,7 @@ and joining lines 12 and 13 together without a space.
 
 However as this is no longer a problem the trailing `\` has been restored in all
 versions, both the original and the fixed for modern systems version.
+
 
 ## Author's remarks:
 
@@ -139,6 +142,7 @@ trace subroutine, but I felt it was important for understanding
 the program.  Besides it is fun to watch the tape zooming back
 and forth as the program runs.  A much better debugger or trace
 could easily be added.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -12,7 +12,7 @@ make
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -38,7 +38,7 @@ NOTE: some files are missing and are not found in the archive either. See
 [bugs.md](/bugs.md) for more details.
 
 
-## Try:
+### Try:
 
 ```sh
 ./herrmann1.sh 'prg=herrmann1.times2'
@@ -50,6 +50,7 @@ NOTE: some files are missing and are not found in the archive either. See
 ./herrmann1.sh 'prg=herrmann1.gcd'
 ```
 
+
 ## Judges' remarks:
 
 There are some clear hints in the source code as to the
@@ -57,6 +58,7 @@ purpose of this program.  Perhaps the only way to figure out what is
 going on is to look at the differences between the runs of the C
 preprocessor!  Computer Science students should recognize what is going
 on.
+
 
 ## Author's remarks:
 
@@ -393,6 +395,7 @@ beginning.
 
 - On SunOS, I had to remove the `-q` option from diff in the build
 script.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

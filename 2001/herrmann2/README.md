@@ -18,7 +18,8 @@ make
 ./herrmann2
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./herrmann2 < herrmann2.ioccc

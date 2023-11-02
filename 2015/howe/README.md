@@ -4,11 +4,13 @@ Anthony Howe <achowe@snert.com>\
 Montreal, Quebec, Canada\
 <http://www.snert.com/>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -18,7 +20,8 @@ make
 ./prog -d file1 file2
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog prog.alt.c prog.c
@@ -57,6 +60,7 @@ make alt
 
 Use `prog.alt` as you would `prog` above.
 
+
 ## Judges' remarks:
 
 This is the best use of the FNV that we have seen in the IOCCC so far!
@@ -80,6 +84,7 @@ might be easier than the academic papers it was inspired by.
 
 NOTE: Unlike the original entry source, prog.alt.c, prog.c uses a
 64 bit FNV hash and fixes a function call warning.
+
 
 ## Author's remarks:
 
@@ -170,6 +175,7 @@ Which hashing algorithm is best for uniqueness and speed?\
 [Hir75]: http://www.mathcs.emory.edu/~cheung/Courses/323/Syllabus/DynProg/Docs/Hirschberg-LCS-1975.pdf
 
 [HshCmp]: http://programmers.stackexchange.com/questions/49550/which-hashing-algorithm-is-best-for-uniqueness-and-speed
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

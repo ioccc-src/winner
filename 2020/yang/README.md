@@ -3,11 +3,13 @@
 Don Yang\
 <http://uguu.org/>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 ./prog [PIN] < input.txt > output.c
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 echo "International Obfuscated C Code Contest 2020" | ./prog 23209 > code.c
@@ -35,6 +38,7 @@ cc -DPIN=23209 code.c -o decoded	# wait for it ...
 # weeeeeeeeeeeeee! You are having a good time!
 ```
 
+
 ## Judges' remarks:
 
 You might think of this entry as code obfuscater with a code.
@@ -44,6 +48,7 @@ What is compiling this entry about?
 
 This winning entry also comes with a [JavaScript timelapse
 spoiler](spoiler.html) that shows how this entry was written.
+
 
 ## Author's remarks:
 
@@ -144,6 +149,7 @@ For people eager to encode large files, an extra utility has been packaged
 with this entry to preprocess the generated output to make them more
 acceptable to typical compilers.  View the [cppp.cc](cppp.cc) source and
 then compile it with a c++ compiler of your choice.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

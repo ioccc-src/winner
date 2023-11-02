@@ -4,11 +4,13 @@ Yusuke Endoh\
 <https://github.com/mame/>\
 Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,7 +18,8 @@ make
 ./prog
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog | tee prog_next.c
@@ -32,6 +35,7 @@ make python3
 
 NOTE: to interrupt the loop send intr (typically ctrl-C).
 
+
 ## Judges' remarks:
 
 And now for something completely different: A program whose metabolic
@@ -39,8 +43,8 @@ processes are a matter of interest only to historians. It has kicked the bucket
 and departed to that mysterious country from whose bourne no traveller returns!
 This is an EX-tremely obfuscated program!
 
-## Author's remarks:
 
+## Author's remarks:
 
 A high-context work that combines parrots that new hackers like and parrots that
 old hackers like. One is an internet meme called [Party
@@ -89,6 +93,7 @@ opening.
          /                                   |
         |                                     |
 ```
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

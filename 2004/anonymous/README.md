@@ -4,11 +4,13 @@ The author wishes to remain anonymous\
 Singapore\
 <https://web.archive.org/web/20040324155828/http://bicoherent.topcities.com/>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,12 +18,14 @@ make
 ./anonymous
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./anonymous "ash nazg durhbatuluhk, ash nazg gimbatul, \
     ash nazg thrakatuluhk, agh burzhumh-ishi krimpatul." >anonymous.pgm
 ```
+
 
 ## Judges' remarks:
 
@@ -103,6 +107,7 @@ Perälä](https://alboin.fi)'s [Tengwar Cursive
 font](https://alboin.fi/tengwar.htm). Currently, only the glyphs used in the
 [Ring inscription](https://www.glyphweb.com/arda/r/ringinscription.html) are
 included in the font.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

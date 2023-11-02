@@ -4,6 +4,7 @@ Merlyn LeRoy (Brian Westley)\
 US\
 <http://www.westley.org>
 
+
 ## To build:
 
 ```sh
@@ -11,7 +12,7 @@ make all
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -22,7 +23,7 @@ STATUS: known bug - please help us fix
 For more detailed information see [1989 westley in bugs.md](/bugs.md#1989-westley).
 
 
-## Try:
+### Try:
 
 Try compiling and running the 4 resulting programs like:
 
@@ -54,7 +55,6 @@ Finally try:
 
 
 ## Judges' remarks:
-
 
 There is a secret way to get ONE of the versions to print out
 "`Hello, world!\n`".  Can you find how to do it?
@@ -175,6 +175,7 @@ lumpier `R` (for Ritchie).  Judicious use of spaces and tabs
 helped here.  It barely fits on an 80x24 screen.  Squint.  Note
 that the code must start with a blank line, or the reversed version
 will lack a terminating newline.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

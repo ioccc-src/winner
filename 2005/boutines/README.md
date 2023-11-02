@@ -4,11 +4,13 @@ Francois Boutines\
 Toulouse, France\
 <francois.boutines@gmail.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -22,7 +24,8 @@ The following will create an `SVG` file:
 ruby -e '20.times{puts "#{rand} #{rand}"}' | ./boutines > test.svg
 ```
 
-## Try:
+
+### Try:
 
 After running the above, use [ImageMagick](https://imagemagick.org/index.php)'s
 `convert` tool to convert the image to a png file:
@@ -45,6 +48,7 @@ others.
 
 Can you explain the author's remark "[generated files] are not as scalable as
 their name suggests"?
+
 
 ## Author's remarks:
 
@@ -163,6 +167,7 @@ viewport and potentially every
 ### Example Output
 
 > ![Voronoi diagram of two regular pentagon vertices](Voronoi.png)
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

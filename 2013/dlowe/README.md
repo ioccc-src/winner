@@ -5,6 +5,7 @@ US\
 <j.david.lowe@gmail.com>\
 <https://github.com/dlowe>
 
+
 ## To build:
 
 ```sh
@@ -12,7 +13,7 @@ make
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -29,7 +30,8 @@ For more detailed information see [2013 dlowe in bugs.md](/bugs.md#2013-dlowe).
 ./dlowe [numbers...]
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./dlowe 0 1 2 3 4 5 6 7
@@ -185,6 +187,7 @@ As I was writing up this description, I discovered I'm not the first person to
 write an obfuscated C sparkline utility! Vicent Martí created
 [this one](https://gist.github.com/vmg/1368661) years (!) ago. (My
 implementation is completely independent.)
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

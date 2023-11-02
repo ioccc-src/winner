@@ -7,11 +7,13 @@ D-71384 Weinstadt\
 Germany\
 <http://www.schweikhardt.net>
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -23,6 +25,7 @@ You have been warned.
 ```sh
 ./schweikh3
 ```
+
 
 ## Judges' remarks:
 
@@ -47,6 +50,7 @@ NOTE: On some systems such as SunOS, one may need to compile with:
 	      -I. -D_POSIX_SOURCE '-Ddifftime(a,b)=(double)(b-a)' \
 	      schweikh3.c -o schweikh3
 ```
+
 
 ## Author's remarks:
 
@@ -170,6 +174,7 @@ system that I observe thrashing (Linux) this works (although the
 value returned by time seems to 'hang' sometimes when the OS thrashes.
 Exceeding a threshold of 5 seconds may be detected only after half a
 minute or so.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

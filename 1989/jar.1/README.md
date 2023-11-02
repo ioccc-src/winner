@@ -7,6 +7,7 @@ Otakaari 1\
 02150 Espoo\
 Finland
 
+
 ## To build:
 
 NOTE: this will run the program itself.
@@ -17,6 +18,7 @@ make clobber all
 
 There is an alternate version with a slight difference that you may wish to try.
 See [Alternate code](#alternate-code) below.
+
 
 ## To use:
 
@@ -91,11 +93,13 @@ more apparent, as was the case when using dumb CRT terminals (some
 do dumb that they couldn't even process simple ANSI escape sequences)
 were more common.
 
+
 ## Author's remarks:
 
 This program is (supposedly) the smallest C program able to print "Hello
 world.". The compilation itself produces the desired printout and the program
 need not be actually run.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

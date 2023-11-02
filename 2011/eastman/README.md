@@ -18,7 +18,7 @@ make
 ```
 
 
-## Try:
+### Try:
 
 Quit the program.  Resize your terminal window.  Run it again.
 

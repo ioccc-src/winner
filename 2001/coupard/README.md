@@ -22,7 +22,7 @@ make
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 ./coupard > /dev/audio

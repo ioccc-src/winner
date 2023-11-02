@@ -7,11 +7,13 @@ Waterloo, Ontario\
 N2J 3G4\
 Canada
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -22,7 +24,7 @@ make all
 where `Makefile` is a Makefile to use.
 
 
-## Try:
+### Try:
 
 ```sh
 ./ant ant.test.mk
@@ -39,7 +41,6 @@ make am
 
 ## Judges' remarks:
 
-
 Like much of POSIX, obfuscation has its place.  Your task is to
 figure out where.
 
@@ -51,6 +52,7 @@ P1003 subcommittee.
 ## Author's remarks:
 
 See the file [ant.README](ant.README).
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

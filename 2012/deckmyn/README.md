@@ -3,11 +3,13 @@
 Alex Deckmyn\
 <alex.deckmyn@gmail.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -17,11 +19,13 @@ A shell interpreter with proper backtick interpolation is required.
 ./deckmyn "`cat deckmyn.c`" "`cat musicfile.txt`" > sheetmusic.pbm
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./deckmyn "`cat deckmyn.c`" "`cat example_greensleeves`" > greensleeves.pbm
 ```
+
 
 ## Judges' remarks:
 
@@ -36,6 +40,7 @@ Ironically, the way this entry is called from the command line is an abuse of [C
 Shell](https://en.wikipedia.org/wiki/C_shell).
 Please use [Bourne-family shells](https://en.wikipedia.org/wiki/Bourne_shell) to
 run this entry.
+
 
 ## Author's remarks:
 
@@ -137,6 +142,7 @@ maintaining a diversified code base. It is therefore not... Oh all right.
 - The actual output of the music is done by one print command including a 800+
 character nested conditional expression.
 - `printf()` is also used for its return value.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

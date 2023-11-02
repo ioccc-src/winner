@@ -4,11 +4,13 @@
     <omoikane@uguu.org>\
     <http://uguu.org/>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,17 +18,20 @@ make
 cp -f sinon.c run.c; ./hecate.sh
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 cp -f sinon.c run.c; ./hecate.sh; ./glock.sh; sleep 3; ./glock.sh; sleep 1; ./hecate.sh
 ```
+
 
 ## Judges' remarks:
 
 Try to figure out how this entry determines the optimization level with
 which it had been compiled. Is this an example of undefined behavior
 or unspecified behavior?
+
 
 ## Author's remarks:
 
@@ -110,6 +115,7 @@ Process for making Sinon is included in spoiler.html.
 
 Layout of this code is based on Asada Shino, also known as "Sinon",
 from Sword Art Online.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -7,6 +7,7 @@ Computer Studies Bldg\
 Rochester, NY 14627\
 US
 
+
 ## To build:
 
 ```sh
@@ -41,6 +42,7 @@ This entry confuses some C-preprocessors and some C-beautifiers.
 We found one cpp that processed this source differently when
 it was read on stdin instead of via `cc -E`.
 
+
 ## Author's remarks:
 
 ### Description
@@ -71,6 +73,7 @@ take full advantage of the UR300 micro-architecture to achieve blindingly fast
 speed. It was ported to C specifically for the IOCCC. In the
 conversion/obfuscation step some of (much of) the blazing speed was lost, but as
 a bonus, the understandability of the code was reduced to zero.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

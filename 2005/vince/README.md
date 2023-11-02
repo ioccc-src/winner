@@ -5,6 +5,7 @@ US\
 <vince@deater.net>\
 <http://www.deater.net/weave/>
 
+
 ## To build:
 
 Before building, make sure that you have the OpenGL development libraries
@@ -13,6 +14,7 @@ installed.
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -23,7 +25,8 @@ make
 Under macOS run from within an console tab (whether xterm, the default or
 another) while the X11 server is running.
 
-## Try:
+
+### Try:
 
 ```sh
 echo "Do or do not. There is no try."
@@ -42,6 +45,7 @@ make alt
 
 Use `vince.alt` as you would `vince` above.
 
+
 ## Judges' remarks:
 
 This beauteous entry makes use of visual `{}`s and whitespace to instruct the
@@ -52,6 +56,7 @@ effect! :-)
 NOTE: when hitting space bar make sure that the program window is in focus!
 
 Challenge: Try modifying the texture to something of your own design.
+
 
 ## Author's remarks:
 
@@ -117,6 +122,7 @@ problem.
 - 2 = Can't open [glx](https://en.wikipedia.org/wiki/GLX).
 - 3 = Can't open 16bpp visual.
 - 4 = can't open source file.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

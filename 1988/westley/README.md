@@ -4,6 +4,7 @@ Merlyn LeRoy (Brian Westley)\
 US
 <http://www.westley.org>
 
+
 ## To build:
 
 ```sh
@@ -14,7 +15,7 @@ NOTE: this version is a fixed version for modern C compilers. See the [Alternate
 code](#alternate-code) section below for how to use the original.
 
 
-## Try:
+### Try:
 
 ```sh
 ./westley
@@ -27,6 +28,7 @@ Also try:
 ```
 
 to show the code with followed by the result so you can truly see the magic.
+
 
 ## Judges' remarks:
 
@@ -70,7 +72,6 @@ Does it show the same output as `westley`?
 ## Author's remarks:
 
 No remarks were provided by the author.
-
 
 
 ## Copyright and CC BY-SA 4.0 License:

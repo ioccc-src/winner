@@ -3,11 +3,13 @@
 Chris Mills\
 US
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -16,7 +18,7 @@ make all
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 ./cmills 5000
@@ -24,7 +26,6 @@ make all
 
 
 ## Judges' remarks:
-
 
 The Makefile uses several `-D` defines. The following is is a list of the macros
 that may be changed:
@@ -40,6 +41,7 @@ but do you know why? This is not so strange as it might seem if you look at [C's
 history](https://www.bell-labs.com/usr/dmr/www/chist.html). Example code where
 this occurs is in John Lions' Commentary on the Sixth Edition UNIX Operating System.
 
+
 ## Author's remarks:
 
 This is a blackjack program.  It does splits, doubling down, insurance, etc.
@@ -52,6 +54,7 @@ the program, hit `EOF` or type `0` or a negative number for you wager.
 
 The way it deals with splits is particularly cool (IMHO).  You can split many
 times, and it will show all hands as they are played.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

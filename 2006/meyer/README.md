@@ -3,11 +3,13 @@
 Raphael Meyer\
 US
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 ./meyer
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./meyer
@@ -30,12 +33,14 @@ a 0 1
 NOTE: if you do not input three different 'words' it will block. You can input
 more text to fulfil the program's requirements.
 
+
 ## Judges' remarks:
 
 This entry turns a newspaper solitaire puzzle into a competition
 with the computer to be the last one moving.  The object of this
 [source code](meyer.c) is to determine the object of this [source
 code](meyer.c)!  :-)
+
 
 ## Author's remarks:
 
@@ -130,6 +135,7 @@ number: [1-9].
 The game can be aborted with `q`.
 
 The one who can do the last move wins the game.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

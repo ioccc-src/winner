@@ -12,7 +12,7 @@ make all
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -37,7 +37,7 @@ echo x y z | ./sort
 where `n` and `x`, `y` and `z` are numbers.
 
 
-## Try:
+### Try:
 
 ```sh
 ./try.sh

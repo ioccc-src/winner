@@ -22,7 +22,7 @@ There is an alternate version that supports arrow keys. See the alternate code
 section below.
 
 
-## Try:
+### Try:
 
 ```sh
 echo "Do or do not. There is no try."

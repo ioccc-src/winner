@@ -4,11 +4,13 @@ Matt Zucker\
 <mzucker1@swarthmore.edu>\
 <https://mzucker.github.io/swarthmore/>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,7 +18,8 @@ make
 ./zucker > image.ppm
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./zucker "Hello\!\!\!" > hello.ppm
@@ -34,12 +37,14 @@ open image.ppm
 which will open `Preview.app` which will let you look at the image no problem.
 No need to install additional software.
 
+
 ## Judges' remarks:
 
 The rendered image is centered and is output as a 600 by 220 pixel PPM.
 The vector font is proportional.
 
 This entry uses no local variables. None! At! All!
+
 
 ## Author's remarks:
 
@@ -175,6 +180,7 @@ final text on top of a hand-generated ASCII "stencil".  The programs
 were not submitted as entries for this year's IOCCC, not because they
 lack obfuscation, but because neither is written in C (they are in C++
 and Python, respectively).
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

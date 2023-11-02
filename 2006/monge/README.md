@@ -14,7 +14,7 @@ make
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -32,7 +32,7 @@ For more detailed information see [2006 monge in bugs.md](/bugs.md#2006-monge).
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 ./monge "z = 0" "z = z*z*z + c; Abs2(z) < 4"

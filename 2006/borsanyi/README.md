@@ -19,7 +19,7 @@ make
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 ./borsanyi ioccc@example.com > example.gif

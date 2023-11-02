@@ -31,7 +31,7 @@ You will need X11 header files and libraries installed to build this program.
 You will need a system capable of displaying the results of X Window programs.
 
 
-## Try:
+### Try:
 
 ```sh
 ./jarijyrki < finance.sheet > myedits.info

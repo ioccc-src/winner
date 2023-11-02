@@ -3,11 +3,13 @@
 Fabrice Bellard\
 <https://bellard.org/>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 ./prog > lena.ppm
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 eog lena.ppm # On Linux
@@ -24,6 +27,7 @@ open -a Preview lena.ppm # On macOS
 pngtopnm < Lenna.png | pnmscale 0.25 | cjpeg -arithmetic -dct float -quality 14 > small.jpg
 ```
 ### NOTE: Lenna.png is from https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png
+
 
 ## Judges' remarks:
 
@@ -38,6 +42,7 @@ We could understand some of the arithmetic but none of the magic.
 
 Deciphering the mechanism used for data encoding to make use of whitespace,
 braces and semicolons should be a slightly easier task.
+
 
 ## Author's remarks:
 
@@ -86,6 +91,7 @@ the output.
 
 [1]: https://commons.wikimedia.org/wiki/File%3AFruits_oranges%2C_jardin_japonais_2.JPG
 [2]: https://commons.wikimedia.org/wiki/File%3ARed_Bull_Jungfrau_Stafette%2C_10th_stage_-_vintage_cars_%282%29.jpg
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

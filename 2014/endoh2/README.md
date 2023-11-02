@@ -5,11 +5,13 @@ Yusuke Endoh\
 <https://github.com/mame/>\
 Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -17,7 +19,8 @@ make
 ./prog < input > output
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 echo Hello | ./prog
@@ -27,11 +30,13 @@ make hello
 ./hello
 ```
 
+
 ## Judges' remarks:
 
 If you look closely at the source, you will see code that appears
 to puts C code that includes itself.  How and why?  Perhaps it is
 in the DNA code of the code? Perhaps there are 23 reasons? :-)
+
 
 ## Author's remarks:
 
@@ -53,6 +58,7 @@ Enjoy DNA programming!
 
 * The synthesized helix of course follows the base-pairing rules for DNA:
   A is bonding only to T, and C is bonding only to G.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

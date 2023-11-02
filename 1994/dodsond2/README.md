@@ -6,17 +6,20 @@ AG Communication Systems\
 Phoenix, AZ 85023\
 US
 
+
 ## To build:
 
 ```sh
 make all
 ```
 
+
 ## To use:
 
 ```sh
 ./dodsond2
 ```
+
 
 ## Judges' remarks:
 
@@ -52,6 +55,7 @@ this fun "_abuse of the rules_" style hack.
 It is worth noting that without this compression "_abuse of the rules_"
 style hack, the [dodsond2.c](dodsond2.c) is further obfuscated.
 
+
 ## Author's remarks:
 
 Go searching for the Wumpus in the Caverns of Doom!  But be careful...
@@ -80,6 +84,7 @@ gives you a bonus on your score.
 You can quit at any time by typing `q`.  Typing `i` will tell
 you how many arrows you are carrying.  `l` prints the description
 of the current room again.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -3,6 +3,7 @@
 Timo Poikola\
 <https://ig.fi/other/ioccc>
 
+
 ## To build:
 
 ```sh
@@ -10,7 +11,7 @@ make
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -33,7 +34,8 @@ sleep 86400; make clobber prog
 ./prog 512 ./prog
 ```
 
-## Try:
+
+### Try:
 
 If you don't have a few days, try:
 
@@ -50,6 +52,7 @@ TZ=UTC48 make clobber prog
 This program will not validate input so it might fail or get stuck if invoked
 erroneously.
 
+
 ## Judges' remarks:
 
 Do you have the time to see what this program does?  Think again, come back and
@@ -62,6 +65,7 @@ is the least even prime.
 The source code layout and some of the variable names honors the ski jumping
 accomplishments of [Matti
 Nyk&auml;nen](https://en.wikipedia.org/wiki/Matti_Nyk%C3%A4nen).
+
 
 ## Author's remarks:
 
@@ -238,6 +242,7 @@ with 224-[bit](https://en.wikipedia.org/wiki/Bit) output could take too much
 
 I would like to say _thanks_ to PSP, because there were not too many
 interruptions during the coding phase.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

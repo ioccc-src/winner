@@ -3,11 +3,13 @@
 Christopher Mills\
 <mrxo@sonic.net>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 ./mills
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./mills &
@@ -24,9 +27,11 @@ make
 While that is running, point your favorite browser at:
 [http://localhost:8224](http://localhost:8224).
 
+
 ## Judges' remarks:
 
 Who will be the first to post an image rendered during a leap-second?
+
 
 ## Author's remarks:
 
@@ -119,6 +124,7 @@ spherical symmetry of the source code.  In addition, I have altered the word
 `sin_port` to the more family-friendly version `win_port` (via
 `-Dwin_port="sin_addr.s_addr=htonl(2130706433),R.sin_port"`) to protect against
 curious impressionable youth trying to learn about sockets on Internet.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

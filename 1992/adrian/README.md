@@ -11,7 +11,7 @@ make all
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 ./adrian adrian.grep.try < README.md
@@ -27,6 +27,7 @@ NOTE: if you do not specify an arg to the program it will segfault.
 
 
 ## Judges' remarks:
+
 \
 Once you get past the obfuscation, you have an opportunity to learn
 about regular expressions and state machines.

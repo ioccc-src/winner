@@ -13,6 +13,7 @@ US
 make all
 ```
 
+
 ## To use:
 
 ```sh
@@ -27,7 +28,7 @@ or ctrl-c (or kill it from another terminal :-) ). But why does it not work with
 just `exit` or `logout`? Hint: see the authors' remarks.
 
 
-## Try:
+### Try:
 
 ```sh
 ./tbr
@@ -46,6 +47,7 @@ What happens if you try using `cd -` to return to previous directory? What about
 
 The authors include a section called [BUGS](#bugs) that, because they were
 documented, are not considered bugs as such in the context of the contest.
+
 
 ## Judges' remarks:
 

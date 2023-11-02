@@ -25,7 +25,6 @@ make chaos_nohalf
 
 ## To use:
 
-
 ```sh
 ./chaos
 ```

@@ -11,7 +11,7 @@ make all
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -37,7 +37,7 @@ very short amount of time, then you may need to fix your compiler or use gcc.
 The above should print a `!` followed by a newline.
 
 
-## Try:
+### Try:
 
 ```sh
 cat august.c fac.oc | ./august > fac.oo

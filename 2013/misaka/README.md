@@ -4,6 +4,7 @@ Don Yang\
 <omoikane@uguu.org>\
 <http://uguu.org/>
 
+
 ## To build:
 
 ```sh
@@ -13,6 +14,7 @@ make
 This will build a bunch of versions of the code. See the author's details for
 information on all of these builds.
 
+
 ## To use:
 
 ```sh
@@ -20,7 +22,8 @@ information on all of these builds.
 ./vertical_cat [files...] > [output]
 ```
 
-## Try:
+
+### Try:
 
 To understand the various intermediate source files that are built, try:
 
@@ -55,6 +58,7 @@ NOTE: Use - for standard input.  For example:
 ./vertical_cat - -
 ```
 
+
 ## Judges' remarks:
 
 There is more to cat than [mere cats](http://cheezburger.com/1680494336).  Be
@@ -77,6 +81,7 @@ While I'm sure most [cats](https://rationalwiki.org/wiki/Fun:Cat) would have
 preferred otherwise, the flying fish was returned to *swim with the fishes*. :-)
 No [cats](https://rationalwiki.org/wiki/Fun:Cat) were harmed in the process of
 judging this entry.
+
 
 ## Author's remarks:
 
@@ -280,6 +285,7 @@ stackable figure:
 
 * [Google images](http://google.co.jp/search?q=%E3%83%9F%E3%82%B5%E3%82%AB%E7%9B%9B%E3%82%8A&tbm=isch)
 * [Kotobukiya](http://main.kotobukiya.co.jp/figure/tsubucole_tmi_misakamori/)
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -3,6 +3,7 @@
 Thomas Stewart\
 US
 
+
 ## To build:
 
 ```sh
@@ -21,7 +22,8 @@ NOTE: you cannot specify a different width from height; it's one number.
 
 NOTE: `convert(1)` belongs to [ImageMagick](https://imagemagick.org/index.php).
 
-## Try:
+
+### Try:
 
 ```sh
 ./stewart 400 1000000 maze > maze.xbm\
@@ -43,6 +45,7 @@ Note the interesting choice of using a `#define` in the output.
 The selection of input files makes this one endlessly fun to play
 with.  Many image viewers will be able to read the results, as will
 a reasonably experienced user who can parse formats in their mind.  :-)
+
 
 ## Author's remarks:
 
@@ -192,6 +195,7 @@ where one would expect decimal.  Shifts instead of divides.
 Using `xbm` as the output format.  This might confuse someone who doesn't
 have an X background.  It happens to be easy but is probably a very bad
 choice from a file size standpoint.  1024x1024 image is 641k in size.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

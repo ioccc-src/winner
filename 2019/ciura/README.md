@@ -10,7 +10,7 @@ make
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -28,7 +28,7 @@ For more detailed information see [2019 ciura in bugs.md](/bugs.md#2019-ciura).
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 ./getwords.sh en | grep .. | ./prog aeiouvwxyz

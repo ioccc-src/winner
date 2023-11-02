@@ -4,11 +4,13 @@ Edward Rosten\
 UK\
 <https://www.edwardrosten.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -21,7 +23,8 @@ program.  Use at your own risk.
 
 NOTE: number is floating point.
 
-## Try:
+
+### Try:
 
 ```sh
 ./rosten 1.03
@@ -34,10 +37,12 @@ For some abuse, try:
 ./rosten 0.99
 ```
 
+
 ## Judges' remarks:
 
 Friction can be your friend if it does not rub you (or your mouse
 cursor) in the wrong way.  :-)
+
 
 ## Author's remarks:
 
@@ -155,6 +160,7 @@ The DEC compiler of this version: `DEC C V5.6-079 on Digital UNIX V4.0 (Rev.
 can't compile the code. It thinks that preprocessor lines can not have
 whitespace preceding the `#`. Moving the preprocessor directives to the
 beginning of the line wrecks the layout but makes it compile.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

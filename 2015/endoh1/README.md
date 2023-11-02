@@ -6,11 +6,13 @@ Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 
 Someone Anonymous
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -21,11 +23,12 @@ make
 Connect to port http://localhost:10333 with your browser.
 
 
-## Try:
+### Try:
 
 ```sh
 echo "Do or do not. There is no try."
 ```
+
 
 ## Judges' remarks:
 
@@ -37,6 +40,7 @@ In case you didn't recognise the portrait of [Alan
 Turing](https://en.wikipedia.org/wiki/Alan_Turing), there are some
 pointers to his features like eyes with "`stdeye-o`" and "`<--mouth`". Can you
 find any other tributes?
+
 
 ## Author's remarks:
 
@@ -215,6 +219,7 @@ field data to the browser on each frame.
 * [3] Fette, I. and A. Melnikov, "The WebSocket Protocol", RFC 6455, DOI 10.17487/RFC6455, December 2011, <http://www.rfc-editor.org/info/rfc6455>.
 * [4] Eastlake 3rd, D. and P. Jones, "US Secure Hash Algorithm 1 (SHA1)", RFC 3174, DOI 10.17487/RFC3174, September 2001, <http://www.rfc-editor.org/info/rfc3174>.
 * [5] Josefsson, S., "The Base16, Base32, and Base64 Data Encodings", RFC 4648, DOI 10.17487/RFC4648, October 2006, <http://www.rfc-editor.org/info/rfc4648>.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -6,17 +6,20 @@ Statenweg 154 B     (home address)\
 3039 JN Rotterdam\
 The Netherlands
 
+
 ## To build:
 
 ```sh
 make all
 ```
 
+
 ## To use:
 
 ```sh
 ./bas2 < bas2.c
 ```
+
 
 ## Judges' remarks:
 
@@ -36,6 +39,7 @@ a way that differs from a strict reading of one of the
 official IOCCC rules.  What is the rule and what is the octet
 value?
 
+
 ## Author's remarks:
 
 The main obfuscation is the way characters are recognized, which is
@@ -49,6 +53,7 @@ done by matching the bit patterns.  Minor obfuscations are:
 the character).
 
 - `?` and `||` instead of if statements.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

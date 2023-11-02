@@ -4,11 +4,13 @@ V. Chia\
 Singapore\
 <bi@mncw.tk>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,11 +18,13 @@ make
 ./chia
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 echo "Do or do not. There is no try."
 ```
+
 
 ## Judges' remarks:
 
@@ -28,6 +32,7 @@ Have you had your morning cup of Java?  You might want a
 second cup before parsing this entry.  And give your C
 pre-processor a triple shot as it tries to handle parameters
 for "stringification".
+
 
 ## Author's remarks:
 
@@ -63,6 +68,7 @@ when they see macro parameters that don't look like C tokens.
 [Pascal]: https://en.wikipedia.org/wiki/Pascal_(programming_language)
 [Visual Basic]: https://en.wikipedia.org/wiki/Visual_Basic_(classic)
 [Java]: https://en.wikipedia.org/wiki/Java_(programming_language)
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

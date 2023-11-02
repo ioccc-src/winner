@@ -4,11 +4,13 @@ Don Yang\
 US\
 <http://uguu.org/>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,11 +18,13 @@ make
 ./omoikane infile layout outfile
 ```
 
-## Try:
+
+### Try:
 
 ```
 ./omoikane omoikane.info omoikane.info omoikane.output
 ```
+
 
 ## Judges' remarks:
 
@@ -33,6 +37,7 @@ checksum; if you have to change it, you might as well change it!
 
 This program was submitted under the name `Rinia`, so the Author's
 Comments refer to it as such.
+
 
 ## Author's remarks:
 
@@ -170,6 +175,7 @@ still fail...
 NOTE: the text above is also included as an info file but in original format, so
 that the checksum would match. The above was formatted in markdown for GitHub
 and the IOCCC website.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

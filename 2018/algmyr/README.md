@@ -2,6 +2,7 @@
 
 Anton Älgmyr
 
+
 ## To build:
 
 ```sh
@@ -9,7 +10,7 @@ make
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -30,7 +31,8 @@ cat prog.c | ./prog           # Printing garbage might break your font
 
 NOTE: this entry will crash if a file specified cannot be opened.
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog -h | ./prog -d 1 0
@@ -49,6 +51,7 @@ echo -n ' MENE MENE TEKEL UPHARSIN ' | ./prog |\
 # now open spectrogram.png with a graphics viewer or editor
 ```
 
+
 ## Judges' remarks:
 
 Be warned, this is not your garden variety text-to-speech program! Earplugs are advised,
@@ -58,6 +61,7 @@ Pixels are numbered, amplitudes are weighed, frequencies are divided,
 and the message can be displayed in fiery letters, but don't be alarmed.
 
 How does decoding of the waveform work? Can you encode an arbitrary text in a sound sample?
+
 
 ## Author's remarks:
 
@@ -189,6 +193,7 @@ myself. :(
 
 The reported size of the source code using the size tool is very intentionally
 2018.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

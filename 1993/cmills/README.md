@@ -6,6 +6,7 @@ Pagine Corporation\
 San Jose, CA 95131\
 US
 
+
 ## To build:
 
 ```sh
@@ -16,6 +17,7 @@ NOTE: this entry requires `X11/Xlib.h` header file and the X11 library to
 compile. macOS users running Mountain Lion and later will need to download and
 install [XQuartz](https://www.xquartz.org) in order to compile and run this
 entry.
+
 
 ## To use:
 
@@ -28,6 +30,7 @@ export DISPLAY
 where:
 
 `speed` is update speed from 1 to 9 (default is 9).
+
 
 ## Judges' remarks:
 
@@ -62,6 +65,7 @@ the program.
 
 This program makes your windows about as useful as their windows. :-)
 
+
 ## Author's remarks:
 
 The program uses a single backing pixmap (which is the size of the
@@ -72,6 +76,7 @@ a separate backing pixmap for each subwindow.
 
 The chance that a window breaks is based on it's kinetic energy,
 which in turn is based on it's area and speed.  How silly!
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

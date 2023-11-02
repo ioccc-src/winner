@@ -4,11 +4,13 @@ Yusuke Endoh\
 <https://github.com/mame/>\
 Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,7 +18,8 @@ make
 ./prog
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./run_clock
@@ -35,12 +38,14 @@ make alt
 
 Use `prog.alt` as you would `prog` above.
 
+
 ## Judges' remarks:
 
 You may be tempted to use a mirror. Resist the temptation! Try figuring out how the clock hands are drawn.
 Can you change the program to make it draw a familiar (non-mirrored) clock face? Can you add the second hand?
 
 When using the `run_clock` shell script, your perception of time might depend on what time it is.
+
 
 ## Author's remarks:
 
@@ -51,6 +56,7 @@ make clock
 ```
 
 Note: You need to recompile it each run.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

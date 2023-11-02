@@ -4,11 +4,13 @@ Yusuke Endoh
 <https://github.com/mame/>\
 Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,7 +18,8 @@ make
 ./prog
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 
@@ -43,6 +46,7 @@ make alt
 
 Use `prog.alt` as you would `prog` above.
 
+
 ## Judges' remarks:
 
 When playing Minesweeper, a misclick might ruin a game, so why not leave the
@@ -55,6 +59,7 @@ encounter any problems?
 
 The submission was in violation of the "2053" size rule by one character, likely
 a late typo. It was easy to fix.
+
 
 ## Author's remarks:
 
@@ -183,6 +188,7 @@ Thus, I implemented an additional rule to flag all unprobed cells in such a case
 Ilya Kurdyukov also pointed out a warning "ignoring return value of 'fscanf'" only when "-O3" is used.  So I changed the code a little to pretend to use the return value of fscanf.
 
 Don Yang (omoikane) contributed another example map "megumin.txt" which is the Explosion Arch-Wizard.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

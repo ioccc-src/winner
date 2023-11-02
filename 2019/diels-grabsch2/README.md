@@ -18,7 +18,7 @@ make
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 sha512sum prog.c || shasum -a 512 prog.c

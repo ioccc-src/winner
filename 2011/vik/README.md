@@ -12,7 +12,7 @@ make
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -39,7 +39,7 @@ program though we note that your computer might also [halt and catch
 fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
 
 
-## Try:
+### Try:
 
 ```sh
 ./vik randowan.mod | mplayer -demuxer rawaudio -

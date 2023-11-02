@@ -6,11 +6,13 @@ Nashua, NH 03060
 US
 <http://jorendorff.blogspot.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -18,11 +20,13 @@ make
 ./jason
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 echo "Do or do not. There is no try."
 ```
+
 
 ## Judges' remarks:
 
@@ -37,6 +41,7 @@ expect that from something this small.
 
 Of particular interest:  Go ahead, run it through the preprocessor.  You
 *still* won't see the words that are used in the game.
+
 
 ## Author's remarks:
 
@@ -134,6 +139,7 @@ in the source code.)
 The trick, of course, is to drop items in empty rooms to mark them.  That way
 you usually know if you're in a room you've seen before.  It greatly aids
 mapping.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

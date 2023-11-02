@@ -14,7 +14,7 @@ An alternate version that should compile in Windows/MS Visual Studio is
 available. See the [Alternate code](#alternate-code) section below.
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -32,7 +32,7 @@ For more detailed information see [2013 cable3 in bugs.md](/bugs.md#2013-cable3)
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 ./runme

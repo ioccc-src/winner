@@ -4,11 +4,13 @@ Qiming Hou\
 <hqm03ster@gmail.com>\
 <http://www.houqiming.net>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,7 +18,8 @@ make
 ./hou syntax-file file-to-process
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 less hou.c
@@ -40,12 +43,14 @@ hou html.txt hou.c >> hou.htm
 start hou.htm
 ```
 
+
 ## Judges' remarks:
 
 What a versatile entry! It can be used to check the size of IOCCC entries *and*
 to publish them as HTML.
 
 For extra credit: what is the meaning of the number `2321237`?
+
 
 ## Author's remarks:
 
@@ -135,6 +140,7 @@ As an extra tweak, the text message actually does something useful. Remove the
 [1][Russ Cox, Regular Expression Matching: the Virtual Machine Approach](http://swtch.com/~rsc/regexp/regexp2.html)
 
 [2][Regular Expression Matching Can Be Simple And Fast (but is slow in Java, Perl, PHP, Python, Ruby, ...)](http://swtch.com/~rsc/regexp/regexp1.html)
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

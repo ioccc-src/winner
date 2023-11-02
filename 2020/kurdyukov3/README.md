@@ -3,11 +3,13 @@
 Ilya Kurdyukov\
 <https://github.com/ilyakurdyukov>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 ./prog
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 # first input to try
@@ -40,6 +43,7 @@ make alt
 
 Use `prog.alt` as you would `prog` above.
 
+
 ## Judges' remarks:
 
 It is interesting how well smeonoe can raed txet wtih lots of tyops in it.
@@ -53,6 +57,7 @@ languages) is called
 jumbled or if other words were formed one could not read it: we know of some who
 can in fact do exactly that).
 
+
 ## Author's remarks:
 
 ### Letter Mixer ###
@@ -64,6 +69,7 @@ cat input.txt | ./prog
 ```
 
 The program can work with letters that are not represented in English, as long as these letters are encoded in the higher part of the single-byte character set (use `iconv` to convert from UTF-8 and back).
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

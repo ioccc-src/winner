@@ -7,11 +7,13 @@ D-71384 Weinstadt\
 Germany\
 <http://www.schweikhardt.net>
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -19,7 +21,8 @@ make all
 ./schweikh1
 ```
 
-## Try:
+
+### Try:
 
 To find the day that Easter falls on in the current year:
 
@@ -36,6 +39,7 @@ statement?
 
 Clearly this is either the Best Use or the Worst Abuse of the
 C Preprocessor that the judges have seen this year!
+
 
 ## Author's remarks:
 
@@ -139,6 +143,7 @@ problems on other systems.
 ### Usage
 
 The program is run without arguments. It prints all dates in order.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

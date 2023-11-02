@@ -5,11 +5,13 @@ Greece\
 <https://www.spinellis.gr/>\
 Mastodon: <https://mstdn.social/@DSpinellis>
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -17,8 +19,8 @@ make all
 ./spinellis < spinellis.c
 ```
 
-## Judges' remarks:
 
+## Judges' remarks:
 
 While the code does not abuse the rules, its output surely does!
 
@@ -35,6 +37,7 @@ for spelling errors is considered very important for programs that are
 so heavily commented.  This program is exactly 3217 characters long
 through judicious use of white space.  Rule abuse?  Would I _ever_ abuse
 the rules?
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

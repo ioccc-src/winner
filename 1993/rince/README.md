@@ -13,6 +13,7 @@ make all
 NOTE: there is an alternate version of this program that allows one to slow down
 the game. See the Alternate code section below.
 
+
 ## To use:
 
 ```sh

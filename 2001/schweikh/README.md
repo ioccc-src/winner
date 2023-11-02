@@ -4,6 +4,7 @@ Jens Schweikhardt\
 Germany\
 <http://www.schweikhardt.net/>
 
+
 ## To build:
 
 ```sh
@@ -11,7 +12,7 @@ make
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -38,7 +39,8 @@ comments for details and a workaround.
 
 There's also no way to escape meta characters.
 
-## Try:
+
+### Try:
 
 ```sh
 ./schweikh foo 'f??'; echo $?
@@ -46,9 +48,11 @@ There's also no way to escape meta characters.
 ./schweikh bar 'f??'; echo $?
 ```
 
+
 ## Judges' remarks:
 
 Do you get the pattern here?
+
 
 ## Author's remarks:
 
@@ -101,6 +105,7 @@ straightforward; for `*` start out with `*foo` and `foo*` against `foo`.
 How does it deal with sequences of adjacent `*`? How could this be
 improved? If all else fails, recode the `?:` operators with if/else and
 try again. For extra credit implement character classes like `[a-z]`.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

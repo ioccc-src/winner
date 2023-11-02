@@ -6,6 +6,7 @@ anonymous organization\
 Newton, MA 02159\
 US
 
+
 ## To build:
 
 ```sh
@@ -19,11 +20,13 @@ make all
 echo foo bar | ./dg
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 echo "to C or not to C" | ./dg
 ```
+
 
 ## Judges' remarks:
 
@@ -68,6 +71,7 @@ with:
 
 If `index(3)` says the char is in the alphabet, then XOR the offset
 with `16` to translate, and output, otherwise pass it unchanged.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

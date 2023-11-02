@@ -6,11 +6,13 @@ Massachusetts Institute of Technology\
 Cambridge, Ma  02139\
 US
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -18,11 +20,13 @@ make all
 ./smr
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./smr > smr.out ; diff -s smr.out smr.c
 ```
+
 
 ## Judges' remarks:
 
@@ -42,10 +46,12 @@ In the future, the contest rules will specify a minimum size that is one
 character larger than this entry, forever eliminating this sort of program from
 the contest.  After all, how many variations can one make on this entry? :-)
 
+
 ## Author's remarks:
 
 The world's smallest self-replicating program. Guaranteed.
 Produces a listing of itself on stdout.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

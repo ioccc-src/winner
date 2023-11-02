@@ -6,11 +6,13 @@ Unit 1, 14 Weber Street North\
 Waterloo, Ontario, N2J 3G4\
 Canada
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -18,7 +20,8 @@ make all
 ./ant 'ERE' [file ...]
 ```
 
-## Try:
+
+### Try:
 
 You may also want to try the author's test suite:
 
@@ -26,12 +29,14 @@ You may also want to try the author's test suite:
 make -f ant.test.mk
 ```
 
+
 ## Judges' remarks:
 
 See the author's POSIX P1003.2-like documentation file ant.txt for more
 information.
 
 This program demonstrates that POSIX doesn't guarantee readability.  :-)
+
 
 ## Author's remarks:
 
@@ -45,6 +50,7 @@ Some of the features of my entry are:
 -  Make driven test script.
 -  Can be compiled with ANSI or K&R C.
 -  Not a toy, but actually useful and usable on systems that use DOS.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -2,17 +2,20 @@
 
 Jan Stein
 
+
 ## To build:
 
 ```sh
 make all
 ```
 
+
 ## To use:
 
 ```sh
 ./stein $(printf "\015\015"); echo
 ```
+
 
 ## Judges' remarks:
 
@@ -33,9 +36,11 @@ to get the command to output cleanly:
 Your system may require another set of characters.
 In time, you will figure out what it does. :-)
 
+
 ## Author's remarks:
 
 No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

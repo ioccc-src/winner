@@ -3,13 +3,15 @@
 Bruce Holloway\
 US
 
+
 ## To build:
 
 ```sh
 make all
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./holloway
@@ -23,9 +25,11 @@ performed in a very complex way.  The judges and the author defy you
 to determine how it does it.  It is a good thing that K&R didn't use
 this version as the first C program!
 
+
 ## Author's remarks:
 
 No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

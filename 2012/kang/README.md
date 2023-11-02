@@ -14,6 +14,7 @@ make
 There is alternate code which fixes some German at the expense of other German.
 See [Alternate code](#alternate-code) below.
 
+
 ## To use:
 
 ```sh
@@ -21,7 +22,7 @@ echo "full spelling of an English cardinal numeral less than a quadrillion" | ./
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 ./try.sh # try various languages
@@ -95,6 +96,7 @@ echo hundr|./kang
 ```
 
 does not report 100, instead printing 0?
+
 
 ## Author's remarks:
 

@@ -4,6 +4,7 @@ Qiming Hou\
 <hqm03ster@gmail.com>\
 <http://www.houqiming.net>\
 
+
 ## To build:
 
 ```sh
@@ -11,7 +12,7 @@ make all
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -32,7 +33,8 @@ Follow the instructions in `stdout`, preferably with an auto-refreshing PPM
 image viewer ready.  Refresh the image every time the output refreshes, all
 effects should be more or less recognizable when you see 16.
 
-## Try:
+
+### Try:
 
 ```sh
 ./hou BIG
@@ -58,6 +60,7 @@ of the invocations above:
 This program does not terminate by itself: you must kill `hou` (but not Qiming
 Hou :-) ) in order to end the program. This should not be fixed.
 
+
 ## Judges' remarks:
 
 You could consider that this program violates the source code size
@@ -78,6 +81,7 @@ cc -Wall hou.c -o hou -lm
 
 but there is no need to do this as the Makefile takes care of it without even
 needing to create a temporary file.
+
 
 ## Author's remarks:
 
@@ -243,6 +247,7 @@ There are a few other tweaks:
 
 * The decoder uses an O(n^2) algorithm to avoid the gigabytes-sized hash table
 frequently found in other PPM implementations.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

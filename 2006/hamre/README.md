@@ -3,6 +3,7 @@
 Steinar Hamre\
 Norway
 
+
 ## To build:
 
 ```sh
@@ -16,11 +17,13 @@ make
 ./hamre math_expression_string
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./hamre '-1+4/3*(2+1/(3/2*(7/2-7/3+1/6)))/2'
 ```
+
 
 ## Judges' remarks:
 
@@ -31,6 +34,7 @@ A rational person might want to attempt the
 of supporting a new operator by way of an existing macro
 in the source.  And can you determine which macro this is
 and understand the purpose of its arguments?
+
 
 ## Author's remarks:
 
@@ -70,6 +74,7 @@ smaller numbers are much easier to remember. Also the macros really
 help hide most of the uses of these numbers away. All macros and
 variables are easy-to-remember single character abbreviations, from
 some language, meaningful to the purpose(s) of the macro, I hope.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

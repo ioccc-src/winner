@@ -14,7 +14,7 @@ make all
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -41,7 +41,8 @@ h - step size
 y1 - initial value  (y(x1) == y1)
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./theorem y 0 1 0.1 1

@@ -6,11 +6,13 @@ University of Maryland\
 Hyattsville MD 20782\
 US
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -18,11 +20,13 @@ make all
 ./buzzard
 ```
 
+
 ## Judges' remarks:
 
 You will be A-mazed.
 
 You are invited to try to cheat, ... if you can figure out how!  :-)
+
 
 ## Author's remarks:
 
@@ -93,6 +97,7 @@ Rot13 to read:
     gb ernpu vagb neovgenel cnepryf bs zrzbel.
 
     Gur cebtenz nffhzrf gung gnof ner frg gb 8 punenpgref.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

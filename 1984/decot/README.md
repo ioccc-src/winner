@@ -2,6 +2,7 @@
 
 Dave Decot
 
+
 ## To build:
 
 ```sh
@@ -13,7 +14,7 @@ you have an old enough compiler or a compiler that supports `-traditional-cpp`.
 The original code was fixed in 2023 to not require this.
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -47,6 +48,7 @@ make alt
 ```sh
 ./decot.alt
 ```
+
 
 ## Judges' remarks:
 
@@ -82,6 +84,7 @@ for(signal=0;*k *= * __FILE__ *i;) do {
 ## Author's remarks:
 
 No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

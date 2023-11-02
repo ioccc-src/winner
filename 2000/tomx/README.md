@@ -7,11 +7,13 @@ Nalanchira P.O, Trivandrum-695015\
 India\
 <https://web.archive.org/web/20010720192926/http://tomx.tripod.com/>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -19,7 +21,8 @@ make
 ./tomx
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 rm -f ./tomx
@@ -36,6 +39,7 @@ make -f tomx.c
 ./tomx
 ```
 
+
 ## Judges' remarks:
 
 Polyglots have come and gone, but this was the first one we'd seen
@@ -43,6 +47,7 @@ where one language *used* another to perform its tasks.  An interesting
 approach.  Admittedly, it's not all that obfuscated - but there's more
 to it than you might think, since you have to make sure that your
 changes don't change the shell code or the Makefile.
+
 
 ## Author's remarks:
 
@@ -112,6 +117,7 @@ do the same as `make clean` :-)). Also: `./tomx.c all`
 
 5. Be careful about the tabs in the source code. Removing them
 or converting tabs to spaces can be disastrous.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -3,11 +3,13 @@
 Don Yang\
 <http://uguu.org/>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -25,7 +27,8 @@ cat d
 cat a b c d | ./prog
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog prog.c a b c d e
@@ -52,10 +55,12 @@ cat a b c d e | ./prog | diff - prog.c
 ./prog violet.c | ruby violet.c
 ```
 
+
 ## Judges' remarks:
 
 Do you understand how this program works?  You may have to go over and over the
 output again.
+
 
 ## Author's remarks:
 
@@ -224,6 +229,7 @@ depending on `sizeof(int)`.
 Violet is named after [Violet
 Evergarden](https://en.wikipedia.org/wiki/Violet_Evergarden) in the story with
 the same name, the character who is highly skilled in writing letters.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -3,17 +3,20 @@
 David Korn\
 US
 
+
 ## To build:
 
 ```sh
 make all
 ```
 
+
 ## To use:
 
 ```sh
 ./korn
 ```
+
 
 ## Judges' remarks:
 
@@ -60,6 +63,7 @@ Korn](https://news.slashdot.org/story/01/02/06/2030205/david-korn-tells-all)'s
 improved version of the [/bin/sh](https://en.wikipedia.org/wiki/Bourne_shell).
 The source for [v7](https://en.wikipedia.org/wiki/Version_7_Unix)'s /bin/sh
 greatly inspired this contest.
+
 
 ## Author's remarks:
 

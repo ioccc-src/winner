@@ -9,6 +9,7 @@ Ed Lycklama
 make alt
 ```
 
+
 ## To use:
 
 ```sh
@@ -18,7 +19,8 @@ make alt
 To see why we recommend the alternate version instead of the original version,
 see below and the [original code](#original-code) section.
 
-## Try:
+
+### Try:
 
 This alternate version, which we recommend you you try first, prior to the
 original, so that you can see what it does in modern systems, slows down the
@@ -48,6 +50,7 @@ which would set it at 700. Then, whether you use the default value or not, try:
 
 ```
 
+
 ## Original code:
 
 As explained above, because modern systems run this entry way too fast to fully
@@ -55,14 +58,15 @@ appreciate what it does, we encourage you to first try the alternate version.
 After this, however, you might wish to try the original version, fixed for
 modern systems.
 
+
 ### Original build:
 
 ```sh
 make all
 ```
 
-### Original use:
 
+### Original use:
 
 ```sh
 ./lycklama < some_file
@@ -87,6 +91,7 @@ The program itself looks like tty noise.
 ## Author's remarks:
 
 No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

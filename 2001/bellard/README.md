@@ -11,7 +11,7 @@ make
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -30,7 +30,7 @@ For more detailed information see [2001 bellard in bugs.md](/bugs.md#2001-bellar
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 ./bellard bellard.otccex.c

@@ -2,6 +2,7 @@
 
 Col. G. L. Sicherman
 
+
 ## To build:
 
 ```sh
@@ -11,6 +12,7 @@ make all
 NOTE: there is an [alternate version](#alternate-code) for those who have an old
 enough compiler or have a compiler that supports the option `-traditional-cpp`.
 
+
 ## To use:
 
 ```sh
@@ -19,7 +21,8 @@ enough compiler or have a compiler that supports the option `-traditional-cpp`.
 echo foo | ./sicherman
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./sicherman  < sicherman.c
@@ -55,6 +58,7 @@ make alt
 ./sicherman.alt < README.md | ./sicherman.alt
 ```
 
+
 ## Judges' remarks:
 
 This program abuses the C preprocessor so much that some `cpp`s fail to strip
@@ -81,6 +85,7 @@ results in diff reporting a difference on some machines.
 ## Author's remarks:
 
 No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

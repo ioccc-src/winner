@@ -3,11 +3,13 @@
 Lennart Augustsson\
 <https://web.archive.org/web/20090831055828/http://www.cs.chalmers.se/~augustss>
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make all
 ./august
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./august | head -n 10
@@ -44,9 +47,11 @@ memory or until they sell your computer, whichever comes first.
 If you use the [primes.sh](primes.sh) script can you figure out if there's
 anything funny going on with the output?
 
+
 ## Author's remarks:
 
 No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

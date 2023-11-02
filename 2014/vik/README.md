@@ -14,7 +14,7 @@ make
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -35,7 +35,8 @@ There is an alternate version that will theoretically work with Windows
 compilers (if anything in Windows works :-) ). See the [Alternate
 code](#alternate-code) section below.
 
-## Try:
+
+### Try:
 
 ```sh
 echo 'Want to hear me beep?' | ./prog > audio_file.raw

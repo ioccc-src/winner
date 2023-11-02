@@ -3,11 +3,13 @@
 John Williams
 US
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,11 +17,13 @@ make
 ./williams
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 echo "Do or do not. There is no try."
 ```
+
 
 ## Judges' remarks:
 
@@ -31,6 +35,7 @@ The formatting really wants a wide screen; if you can't read it that way, it's
 the standard "three triangles around a circular" logo for nukes.
 
 This is a pretty straightforward game.
+
 
 ## Author's remarks:
 
@@ -62,6 +67,7 @@ some rather obfuscated math in the program.  It uses fixed-point
 arithmetic, resulting in the overuse of bitwise shift operators.
 Another example is `(x|1)`, which is used in a couple different ways.
 The purpose of `A/(x|1)` is probably obvious, but what does `(x|1)%2` do?
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

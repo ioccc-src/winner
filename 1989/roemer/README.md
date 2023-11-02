@@ -3,22 +3,26 @@
 Lievaart, Roemer B.\
 Netherlands
 
+
 ## To build:
 
 ```sh
 make all
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./roemer
 ```
 
+
 ## Judges' remarks:
 
 Do you know what this program does?  If you do, look again, there is more here
 than meets the PI.
+
 
 ## Author's remarks:
 
@@ -29,6 +33,7 @@ independent.
 
 You are very much invited to pass this program through a C-beautifier (first
 strip newlines and tabs, if your `cb` can't do that).
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

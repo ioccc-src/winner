@@ -8,11 +8,13 @@ Lawrence Berkeley Laboratory\
 1 Cyclotron Rd.\
 Berkeley, CA 94720  US
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -20,8 +22,8 @@ make all
 ./vern 3		# <-- default is 2
 ```
 
-## Try:
 
+### Try:
 
 You might start off by giving the following input:
 
@@ -31,6 +33,7 @@ You might start off by giving the following input:
 71 52
 67 57		# (this may take a while)
 ```
+
 
 ## Judges' remarks:
 
@@ -51,6 +54,7 @@ NOTE: Move values must be restricted to the range 00 to 77.
 
 NOTE: Because some mailers have problems with the original winning source,
 a slightly modified version with shorter lines has been provided.
+
 
 ## Author's remarks:
 
@@ -151,6 +155,7 @@ instances of this value are computed, added up, and then divided by 100.
 Sometimes the value produced will be 63 or 65 instead of 64 (but I've never
 observed any other values), so the result is then rounded to the nearest
 multiple of 4, and then the other constants are derived from it.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -17,7 +17,7 @@ for DOS/Windows. This cannot be tested by us, not even to compile, but it appear
 that it should be fine, after the proper header files were added.
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -41,7 +41,7 @@ does not seem to happen in macOS. He asks ironically: 'if it's supposed to crash
 and it does not crash is it actually a bug or is it a feature? :-)'
 
 
-## Try:
+### Try:
 
 ```sh
 ./toledo2
@@ -75,6 +75,7 @@ The author noted that for PC/DOS you will have to add `ANSI.SYS` to your
 `CONFIG.SYS` but this is also not something we can test.
 
 Use `toledeo2.alt` as you would `toledo2` above.
+
 
 ## Judges' remarks:
 

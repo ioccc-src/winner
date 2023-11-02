@@ -4,11 +4,13 @@ Taketo Konno\
 Japan\
 <inaniwa3@gmail.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,13 +18,15 @@ make
 ./konno lower_case_word
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./konno qwerty
 ./konno ioccc
 ./konno "the quick brown fox jumps over the lazy dog"
 ```
+
 
 ## Judges' remarks:
 
@@ -39,6 +43,7 @@ how this program works and does what it does.  Can you
 extend this program to deal with a full QWERTY keyboard?
 Can you then minimize the size of that code?
 
+
 ## Author's remarks:
 
 ### Limitation
@@ -49,6 +54,7 @@ This program ignores non-lower case letters.
 
 * `for` is not used.\
 * A part of the program is encrypted.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

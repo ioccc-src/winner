@@ -5,11 +5,13 @@ US\
 <https://www.vik.cc/>\
 <http://www.danielvik.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -17,11 +19,13 @@ make
 ./vik2
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 echo "Do or do not. There is no try."
 ```
+
 
 ## Judges' remarks:
 
@@ -30,6 +34,7 @@ is that, in most cases, running the
 [preprocessor](https://en.wikipedia.org/wiki/C_preprocessor) on them doesn't
 help you decipher the obfuscated code.  That's assuming your preprocessor can
 take it at all.
+
 
 ## Author's remarks:
 
@@ -227,6 +232,7 @@ with 512Mb ram and a lot of disk.
 
 	 (*) Before cpp crashed.
 ```
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

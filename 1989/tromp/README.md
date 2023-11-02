@@ -3,11 +3,13 @@
 John Tromp\
 Netherlands
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make all
 ./tromp [drops_per_sec  [cmd_string]]
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./tromp 5
@@ -69,6 +72,7 @@ benefits of the alt version, has not been done.
 
 The original unmodified alternate code, which will no longer work right if it
 even compiles, is provided later in the author's remarks.
+
 
 ## Judges' remarks:
 
@@ -162,6 +166,7 @@ can only by stopped by 'q' or by the `kill -9' command.
 ```
 
 NOTE: the alternate version was fixed for modern systems in 2023.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -3,6 +3,7 @@
 Dave Burton
 <http://snox.net/ioccc>
 
+
 ## To build:
 
 ```sh
@@ -10,7 +11,7 @@ make
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -28,7 +29,7 @@ For more detailed information see [2020 burton in bugs.md](/bugs.md#2020-burton)
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 ./prog 128
@@ -51,6 +52,7 @@ By default, this code compiles for Little Endian machines.
 An alternate version is also compiled for Big Endian machines.
 
 Use `prog_be` as you would `prog` above.
+
 
 ## Judges' remarks:
 
@@ -76,6 +78,7 @@ This code may be tested by:
 ```sh
 make test
 ```
+
 
 ## Author's remarks:
 
@@ -124,6 +127,7 @@ You might be interested to compile it both ways on the same host, and try:
 ```sh
 ./prog 1; ./prog_be 1
 ```
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

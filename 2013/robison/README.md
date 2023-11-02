@@ -3,11 +3,13 @@
 Arch D. Robison\
 <arch.d.robison@gmail.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,12 +17,14 @@ make
 ./robison
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 echo '1*2*3*4*5*6*7*8*9%1000' | ./robison
 echo '100000000000000000000*(20*(1+(99477941840441*50)))/31664812345028528' | ./robison
 ```
+
 
 ## Judges' remarks:
 
@@ -35,6 +39,7 @@ when interactive one values more than throughput.
 
 With cut and paste and some time,\
 one can compute M(23209).
+
 
 ## Author's remarks:
 
@@ -105,6 +110,7 @@ With a pound and define, mass production of vars!
 
 The moral is clear, for programmers out there:\
 With the C lib for strings, you can hack with a flair.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

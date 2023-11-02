@@ -13,7 +13,7 @@ NOTE: if your shell does not support `stty` then see the alternate version
 described in the section below.
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -31,7 +31,7 @@ For more detailed information see [2005 anon in bugs.md](/bugs.md#2005-anon).
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 ./anon 4 4

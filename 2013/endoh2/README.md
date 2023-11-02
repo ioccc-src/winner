@@ -5,11 +5,13 @@ Yusuke Endoh\
 <https://github.com/mame/>\
 Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -26,7 +28,8 @@ section to enjoy the entry. The [Makefile](Makefile) `check` rule will check if
 you have both and if either is not found it will report it and tell you where to
 download one or both before exiting.
 
-## Try:
+
+### Try:
 
 ```sh
 cat jpeg.c
@@ -34,7 +37,9 @@ cat jpeg.c
 
 Next look at `jpeg.jpg` in an image viewer program.
 
+
 ## Judges' remarks:
+
 \
 This is a program which, when fed its own source, generates a program that
 almost is its whitespace inverse, which, in its order, generates a JPEG file
@@ -44,6 +49,7 @@ program...)
 
 Don't pay attention to the OCR ~~behind the ruby curtain~~ --- it's a
 straightforward bitmap comparison.
+
 
 ## Author's remarks:
 
@@ -95,6 +101,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 ```
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

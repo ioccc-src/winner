@@ -4,6 +4,7 @@ Stephen Sykes\
 Finland\
 <https://web.archive.org/web/20160316092728/http://www.stephensykes.com/>
 
+
 ## To build:
 
 ```sh
@@ -11,7 +12,7 @@ make
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -28,7 +29,8 @@ For more detailed information see [2004 sds in bugs.md](/bugs.md#2004-sds).
 ./sds
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./sds < sds.c > encoder.c
@@ -55,6 +57,7 @@ diff remarks.md README.md # notice how similar they are
 The generated code will very likely crash or do something else if not given a
 proper command line. This is not a bug but a feature.
 
+
 ## Judges' remarks:
 
 Why not use the program to hide another program in the program? It
@@ -66,6 +69,7 @@ messages, or how useful they'd be.  Or, of course, whether all those
 horribly badly formatted emails spammers send might contain secret
 messages.  Annoyingly, it's a little too obvious that SOMETHING has
 been done to a message for us to hide one in the remarks.  :)
+
 
 ## Author's remarks:
 
@@ -139,6 +143,7 @@ This program is obfuscated in a number of ways:
 The program (and the encoder program) should compile on any
 reasonable compiler.  In particular, they are known to compile under
 GNU C.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

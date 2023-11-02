@@ -3,11 +3,13 @@
     Etienne Duble <etienne.duble@imag.fr>\
     <http://lig-membres.imag.fr/duble>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 echo Some text | ./prog
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 echo Hello, world | ./prog
@@ -47,6 +50,7 @@ Beautiful penmanship! However, your fonts may vary.
 
 How does this entry compress the font it uses? What's the purpose of lrand48()?
 Why does the program dump core, when it does :) ?
+
 
 ## Author's remarks:
 
@@ -207,6 +211,7 @@ I saved the best for last: usually, programs that handle an "interactive mode"
 have to check whether their standard input is a terminal or not (by using
 `isatty()`). Did you notice that this program does not perform any such
 detection, but still behaves (or seems to behave) appropriately?
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

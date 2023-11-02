@@ -3,11 +3,13 @@
 Yves-Marie Morgan\
 <yves-marie.morgan@parrot.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 echo "2013/10/03" | ./morgan1
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 echo "1985/10/28" | ./morgan1
@@ -25,6 +28,7 @@ echo "1996/12/31" | ./morgan1
 
 Try pressing the arrow keys when your focus is in the window.
 
+
 ## Judges' remarks:
 
 To verify the output, try echoing the date of an evening with a clear sky.
@@ -32,6 +36,7 @@ Use binoculars and/or telescope as needed.  In some cases you may need
 to wait for a better time of the evening.  In a few cases, such as
 the South Pole in the summer, you may need to move to a different
 observing site.
+
 
 ## Author's remarks:
 
@@ -109,6 +114,7 @@ To verify the display, you can look at one of this programs :
 * xephem : https://web.archive.org/web/20130310133219/http://www.clearskyinstitute.com/xephem/
 * homeplanet : https://www.fourmilab.ch/homeplanet/
 * https://www.theplanetstoday.com
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

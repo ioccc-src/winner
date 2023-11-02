@@ -5,11 +5,13 @@ Familia Toledo\
 Mexico\
 <https://nanochess.org>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -17,7 +19,8 @@ make
 ./toledo [a ...]
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./toledo a
@@ -37,12 +40,14 @@ make alt
 
 Use `toledo2` and `toledo3` as you would `toledo` above.
 
+
 ## Judges' remarks:
 
 Challenge yourself with your ability to look 5, 6 or more moves ahead.
 Challenge your knowledge of C operator precedence.  The following is the
 move analysis via recursion while it executes moves.  All while playing
 by the rules of C and Chess within a single function!
+
 
 ## Author's remarks:
 
@@ -144,6 +149,7 @@ empty arguments!
 and compiles faster... but I'm still not seeing the difference.
 * Uses only one string, very easy to
 [i18n](https://en.wikipedia.org/wiki/Internationalization_and_localization) ;)
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

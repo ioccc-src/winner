@@ -11,6 +11,7 @@ US\
 make
 ```
 
+
 ## To use:
 
 ```sh
@@ -18,7 +19,7 @@ make
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 ./cheong 1024

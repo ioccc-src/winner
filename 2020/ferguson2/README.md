@@ -12,6 +12,7 @@ Mastodon: [@xexyl@fosstodon.org](https://fosstodon.org/@xexyl)
 make
 ```
 
+
 ## To use:
 
 ```sh
@@ -48,7 +49,8 @@ make
 
 **NOTE**: in [recode](recode.c) no spaces between options and option arguments are allowed.
 
-## Try:
+
+### Try:
 
 ```sh
 # IOCCC obfuscated!
@@ -92,6 +94,7 @@ echo | ./recode -v
 
 do?
 
+
 ## Judges' remarks:
 
 This code is an [enigma](https://youtu.be/ybkkiGtJmkM).  Try to decode it!
@@ -117,6 +120,7 @@ There is a good deal of useful documentation that is provided with this entry:
 
 [recode.html]: recode.html
 [chocolate-cake.html]: chocolate-cake.html
+
 
 ## Author's remarks:
 
@@ -919,6 +923,7 @@ email but I'm more likely to respond to mastodon messages.
 [Heer]: https://en.wikipedia.org/wiki/German_Army_(1935%E2%80%931945)
 [Luftwaffe]: https://en.wikipedia.org/wiki/Luftwaffe
 [Enigma]: https://www.cryptomuseum.com/crypto/enigma/index.htm
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

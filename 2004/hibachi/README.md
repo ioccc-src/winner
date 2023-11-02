@@ -4,11 +4,13 @@ Anthony Howe\
 Canada\
 <http://www.snert.com/>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,7 +18,8 @@ make
 cd build; ./hibachi-start.sh &
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 cd build; ./hibachi-start.sh &
@@ -27,6 +30,7 @@ finished make sure to kill `hibachi`.
 
 NOTE: you must be in the `build` directory when running `hibachi` for this to
 work.
+
 
 ## Judges' remarks:
 
@@ -40,6 +44,7 @@ submitted with its own [configure](build/configure) script.
 
 NOTE: the author states there is a tarball `hibachi.tgz` but this was extracted
 so the file does not exist here.
+
 
 ## Author's remarks:
 
@@ -187,6 +192,7 @@ style](https://wiki.c2.com/?OneTrueBraceStyle).
     Most Likely to Cook Apache
     Best Interpretation of RFC 2616
     Winner of The Far Too Much Free Time Award
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

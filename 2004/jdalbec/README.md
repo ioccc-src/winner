@@ -4,11 +4,13 @@ John Dalbec\
 US\
 <https://jpdalbec.people.ysu.edu>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,7 +18,8 @@ make
 ./jdalbec number ...
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./jdalbec 1
@@ -25,10 +28,12 @@ make
 
 ```
 
+
 ## Judges' remarks:
 
 We still aren't sure whether or not this is a useful program, but
 it's the first atomic fission we've seen in the IOCCC.
+
 
 ## Author's remarks:
 
@@ -175,6 +180,7 @@ type, a structure, a structure member, a macro parameter, and a variable.).
 - By using the Sb function to create sub-buffers from either end.
 - By naming everything after chemical elements or pairs of elements.
 - Because it says so in the source. ;)
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

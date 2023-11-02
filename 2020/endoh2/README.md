@@ -4,11 +4,13 @@ Yusuke Endoh\
 <https://github.com/mame/>\
 Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,7 +18,8 @@ make
 ./prog
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog
@@ -28,6 +31,7 @@ make
 ./prog bear.txt
 ```
 
+
 ## Judges' remarks:
 
 Clever use of the C99 complex data type. The [spoiler](spoiler/) directory
@@ -36,6 +40,7 @@ shapes.
 
 With the source from the [spoiler](spoiler/) directory could you make the code
 render for a larger terminal window?  How about adding more glyphs?
+
 
 ## Author's remarks:
 
@@ -53,6 +58,7 @@ See spoiler.zip for the source code.
 [The 16th most common password on the Internet in 2017 (according to Splash Data)][1] the password is.
 
 [1]: https://en.wikipedia.org/wiki/List_of_the_most_common_passwords
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

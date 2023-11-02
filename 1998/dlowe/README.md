@@ -5,11 +5,13 @@ US\
 <j.david.lowe@gmail.com>
 <https://github.com/dlowe>
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -18,7 +20,7 @@ make all
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -29,7 +31,7 @@ STATUS: missing or dead link - please provide them
 For more detailed information see [1998 dlowe in bugs.md](/bugs.md#1998-dlowe).
 
 
-## Try:
+### Try:
 
 ```sh
 ./dlowe < README.md
@@ -50,6 +52,7 @@ make dlowe.alt
 ```
 
 What's the difference between this and `dlowe`?
+
 
 ## Judges' remarks:
 
@@ -97,6 +100,7 @@ For further information see:
 https://web.archive.org/web/20040326083431/http://www.pootpoot.com/poot/pootify/?URL=http%3A%2F%2Fwww.ioccc.org
 ```
 
+
 ## Author's remarks:
 
 This program is a text filter, it reads stdin and outputs the
@@ -111,6 +115,7 @@ Suggested uses: add to your `MANROFFSEQ` environment variable for man page
 enjoyment; use it to turn the GPL into the `PPL`; see what happens when you
 run `perl4` programs after they've been run through it; "encrypt" sensitive
 (but unnecessary) documents...
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -4,11 +4,13 @@
     <ioccc@celskeggs.com>\
     <http://www.celskeggs.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,7 +18,8 @@ make
 ./prog
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 echo "Do or do not. There is no try."
@@ -25,6 +28,7 @@ echo "Do or do not. There is no try."
 HINT: Try pressing the left and right arrow keys as needed.
 Also try pressing space/enter to select options.
 Pressing Q or Escape may end the fun before you are ready. :-)
+
 
 ## Judges' remarks:
 
@@ -39,6 +43,7 @@ Now you may observe, while it is running, that some C source code
 is being written to a file and then compiled.  And yet that compiled
 code is somehow executed from main.  But how?  How is main able to
 call code that was written and compiled just in time for execution?
+
 
 ## Author's remarks:
 
@@ -225,6 +230,7 @@ I ran out of time to test it on more systems.
    `$ ./iocccsize -i <REMARKS.MD`
 
    `5092`
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -5,11 +5,13 @@ Ron McFarland\
 Cincinnati, Ohio 45249\
 US
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -17,13 +19,15 @@ make all
 ./rcm < rfc1951.gz
 ```
 
-## Try:
+
+### Try:
 
 For more information try:
 
 ```sh
 ./rcm < rfc1952.gz
 ```
+
 
 ## Judges' remarks:
 
@@ -32,6 +36,7 @@ For a good noop try:
 ```sh
 gzip -c < rcm.c | ./rcm
 ```
+
 
 ## Author's remarks:
 
@@ -75,6 +80,7 @@ source file size to execution time."
 of constants and tables be defined.  Which means the program
 itself had to be squeezed down to about 1,100 IOCCC countable
 bytes."
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

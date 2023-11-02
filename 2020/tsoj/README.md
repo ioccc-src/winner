@@ -3,11 +3,13 @@
 tsoj <tsoj.tsoj@gmx.de>\
 <https://gitlab.com/tsoj>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 ./prog
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 # Make your terminal as large as possible, possibly reduce your font size
@@ -23,12 +26,14 @@ make
 ./prog
 ```
 
+
 ## Judges' remarks:
 
 This game does not use curses, but you may end up cursing.
 
 The code is made more difficult to read using an innovative, right justified,
 reverse indentation style.
+
 
 ## Author's remarks:
 
@@ -95,6 +100,7 @@ My best was **156**. If you beat that I'll send you the image of a very expensiv
 #### Tips
 - Adjust your terminal size for different experiences
 - Run this program in a virtual console to immerse yourself in the game
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

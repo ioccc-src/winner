@@ -11,8 +11,8 @@ Germany\
 make all
 ```
 
-## To use:
 
+## To use:
 
 ```sh
 ./yarng
@@ -24,7 +24,8 @@ or
 ./yarng integer_number
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./yarng 5
@@ -248,6 +249,7 @@ implementation and state of the scheduling algorithm, the system
 load, number and temporal distribution of asynchronous events and
 last but not least the phase of the moon. God _does_ play dice.
 Type `yarng` and watch Him roll.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -2,11 +2,13 @@
 
 Marcin Ciura <mciura@gmail.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -14,7 +16,8 @@ make
 ./prog < text
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog < Makefile
@@ -41,6 +44,7 @@ This text was processed by prog. You may get confused.
 We're not really sure: prog.c wasn't commented.
 Who has been thoroughly puzzled by prog? Also how obfuscated is prog?
 Having been written in C, how large of a vocabulary has it?
+
 
 ## Author's remarks:
 
@@ -251,6 +255,7 @@ I have tested it on:
 
 For a clean compile under C89 and C90, add `-Woverlength-strings`
 to `CSILENCE`.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

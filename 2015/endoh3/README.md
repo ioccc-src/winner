@@ -19,7 +19,7 @@ make
 ```
 
 
-## Try:
+### Try:
 
 To see the original [mullender](mullender.c) in action:
 
@@ -58,6 +58,7 @@ instructions
 [Turing-complete](https://en.wikipedia.org/wiki/Turing_completeness)? (For a
 clue, see the end of the author's remarks.) If in doubt, use
 [APOUT](https://github.com/DoctorWkt/Apout).
+
 
 ## Author's remarks:
 
@@ -237,6 +238,7 @@ short main[]={5568,1,-30460,12,2782,0,-29921,2056,-4864,6873,770,30054,11886,
 -16401,-23136,-28110,11874,-18945,1879,2,0,-32256,-20996,-18169,29220,12,0,0,0,
 335,-27277,-30776,20480,0};
 ```
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

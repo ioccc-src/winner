@@ -5,11 +5,13 @@ Familia Toledo\
 Mexico\
 <https://nanochess.org>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -20,13 +22,14 @@ make
 where `[0-9][0-9]` is a two digit number.
 
 
-## Try:
+### Try:
 
 ```sh
 ./toledo1 00
 ./toledo1 30
 ./toledo1 99
 ```
+
 
 ## Judges' remarks:
 
@@ -35,6 +38,7 @@ is not circular, but at least one starting point yields a circular path.
 
 Why do some of the "illegal" starting points work more or less as could
 be expected, and some dump core?
+
 
 ## Author's remarks:
 
@@ -55,6 +59,7 @@ giving initial position.
 It will print move order. The algorithm is so simple that you can read
 it on the source code.  At the first glance it can appear checkered.
 Nevertheless, don't be dismayed, jar, jar.  :-)
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -19,7 +19,7 @@ make
 ```
 
 
-## Try:
+### Try:
 
 On terminal supports 24 bit color, has black background, and size at least 125x38, try:
 

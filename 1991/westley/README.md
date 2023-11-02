@@ -15,7 +15,7 @@ make all
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -50,7 +50,8 @@ make nextmove
 ./nextmove move_location | tee nextmove.c
 ```
 
-## Try:
+
+### Try:
 
 We have provided the shell script, [ttt](ttt.sh), to make it easier to play the game:
 

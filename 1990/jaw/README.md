@@ -9,6 +9,7 @@ US
 Paul Eggert\
 US
 
+
 ## To build:
 
 ```sh
@@ -16,7 +17,7 @@ make all
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -27,7 +28,7 @@ STATUS: known bug - please help us fix
 For more detailed information see [1990 jaw in bugs.md](/bugs.md#1990-jaw).
 
 
-## Try:
+### Try:
 
 To test the official C entry, one might try:
 
@@ -45,8 +46,8 @@ Also try:
 ./try.sh
 ```
 
-## Judges' remarks:
 
+## Judges' remarks:
 
 The program, in its base form, implements two useful utilities:
 
@@ -232,6 +233,7 @@ rm /tmp/shark$$*
 To which we add:
 
 - June 1990: 'shark' wins the IOCCC, finally! :-)
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

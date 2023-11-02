@@ -18,7 +18,7 @@ make
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 dd bs=1024 count=2048 < /dev/zero | compress > ref.Z

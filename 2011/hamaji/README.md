@@ -3,11 +3,13 @@
 Shinichiro Hamaji\
 <shinichiro.hamaji@gmail.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 ./hamaji < a_nonogram_file
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./hamaji < dragon.nono
@@ -26,6 +29,7 @@ make
 ./hamaji < penguin.nono
 ./hamaji < samurai.nono
 ```
+
 
 ## Judges' remarks:
 
@@ -43,6 +47,7 @@ files and then compare your solution with this program!
 NOTE: NONOGRAM (r) is a registered Trademark and is used with permission. See
 <https://web.archive.org/web/20110128130704/http://nonogram.com/> for more
 information.
+
 
 ## Author's remarks:
 
@@ -226,6 +231,7 @@ You can reproduce [dragon.nono](dragon.nono) from [hamaji.c](hamaji.c) using
 ```sh
 perl c2nono.pl hamaji.c | ./hamaji
 ```
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -6,11 +6,13 @@ Securicor Telesciences\
 Philadelphia, PA  19124\
 US
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -19,15 +21,18 @@ make all
 # enter a number such as 100
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 echo 42 | ./savastio
 ```
 
+
 ## Judges' remarks:
 
 I know an l when I see a 1.
+
 
 ## Author's remarks:
 
@@ -60,6 +65,7 @@ In order to prevent the user from wasting too much time computing
 useless factorials, the maximum factorial that can be computed is
 429539!  This limit was selected through extensive research in
 time management studies and the factorial arts.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -3,6 +3,7 @@
 Ferenc Deak\
 <fritzone@gmail.com>
 
+
 ## To build:
 
 ```sh
@@ -12,13 +13,15 @@ make
 There is an alternate version that the author provided but fixed in 2023 to
 compile. See [alternate code](#alternate-code) below.
 
+
 ## To use:
 
 ```sh
 ./prog
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog
@@ -49,6 +52,7 @@ We consider this entry a tribute to all "Abuse of the C preprocessor"
 and Mandelbrot fractal drawing entries we've seen over the years.
 
 We liked the use of unary notation facilitated by variadic macros.
+
 
 ## Author's remarks:
 
@@ -104,6 +108,7 @@ fractal to be drawn on the screen.
 Yes, unfortunately there are compiler warnings of the kind "initialization makes
 integer from pointer without a cast" but the provided Makefile automatically
 disables them.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

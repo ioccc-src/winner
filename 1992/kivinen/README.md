@@ -21,7 +21,7 @@ install [XQuartz](https://www.xquartz.org) in order to compile and run this
 entry.
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -32,8 +32,7 @@ STATUS: known bug - please help us fix
 For more detailed information see [1992 kivinen in bugs.md](/bugs.md#1992-kivinen).
 
 
-## Try:
-
+### Try:
 
 ```sh
 ./kivinen
@@ -50,6 +49,7 @@ See also the author's remarks for other variations.
 In modern systems a known issue is that when you start the game everything
 starts to move to the right of the game window but if you click on the window it
 moves back to where it should be.
+
 
 ## Judges' remarks:
 

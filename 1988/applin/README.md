@@ -4,6 +4,7 @@ Jack Applin\
 US\
 <https://www.cs.colostate.edu/~applin/>
 
+
 ## To build:
 
 ```sh
@@ -15,7 +16,8 @@ the source of the alt code), of [applin.c](applin.c), can be found in
 [applin.alt.c](applin.alt.c).  Your machine may have an easier time with this
 program.  See the [Alternate code](#alternate-code) section below for details.
 
-## Try:
+
+### Try:
 
 ```sh
 ./applin

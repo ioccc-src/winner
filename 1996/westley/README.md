@@ -25,8 +25,8 @@ NOTE: the original version had a display problem in modern systems which
 somewhat affected the usability of the program. See the Alternate code section
 for details on the original version.
 
-## Try:
 
+### Try:
 
 ```sh
 sh ./clock2

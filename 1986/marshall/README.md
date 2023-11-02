@@ -2,6 +2,7 @@
 
 Eric Marshall
 
+
 ## To build:
 
 ```sh
@@ -17,7 +18,7 @@ might work but the other one would not. We describe this in more detail in
 if nothing else.
 
 
-## Try:
+### Try:
 
 ```sh
 ./marshall
@@ -59,10 +60,10 @@ from printing a program!
 This program was selected for the 1987 t-shirt collection.
 
 
-
 ## Author's remarks:
 
 No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

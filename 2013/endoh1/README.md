@@ -5,11 +5,13 @@ Yusuke Endoh\
 <https://github.com/mame/>\
 Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -17,7 +19,8 @@ make
 ./endoh1 [file.lazy]
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./endoh1 hello.lazy
@@ -28,6 +31,7 @@ echo Hello | ./echo\
 
 Be patient with the last one.
 
+
 ## Judges' remarks:
 
 We liked this entry because it can serve as a standalone program as well as an
@@ -36,6 +40,7 @@ the program itself.
 
 This entry can be considered an abuse of the GCC's optimizer; it takes GCC about
 4x longer to compile it with -O3 than without, compared to clang's 2x.
+
 
 ## Author's remarks:
 
@@ -216,7 +221,6 @@ evaluation starts, "out of closure" cannot occur.)
 This margin is too narrow to contain a detailed explanation.  Instead, I just
 ask you one question.  Can you tell what `v
 s[]={0,0,s+6,s+2,s+4,s,s+3,s+5,s+1};` is?  I found this by using SMT solver.
-
 
 
 ## Copyright and CC BY-SA 4.0 License:

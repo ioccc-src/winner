@@ -2,11 +2,13 @@
 
 Anonymous
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -35,6 +37,7 @@ NOTE: this version might not work on some systems like macOS.
 ./anonymous.alt
 ```
 
+
 ## Judges' remarks:
 
 The author was too embarrassed that they could write such trash, so I
@@ -51,6 +54,7 @@ on the Internet Wayback Machine for more information on the tattoo. Along with
 the code, this is what it looks like:
 
 ![1984-anonymous-tattoo.jpg](1984-anonymous-tattoo.jpg)
+
 
 ## Author's remarks:
 
@@ -82,6 +86,7 @@ one-liner and not moving the `int i` into an arg of main (so that the line would
 have started with main). On the other hand the author likes the "two line look"
 and the way `hell o` was split. :-) And they like the fact that it ends in a
 smily face: `;}`.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

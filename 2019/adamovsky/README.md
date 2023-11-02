@@ -2,11 +2,13 @@
 
 Ondřej Adamovský <oa@cmail.cz>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -14,7 +16,8 @@ make
 ./prog file.unl
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog spam.unl
@@ -23,6 +26,7 @@ make
 
 ./prog advent.unl
 ```
+
 
 ## Judges' remarks:
 
@@ -38,6 +42,7 @@ bytes which crashed it:
 ```
 
 Functional programming is not a panacea against core dumps, after all.
+
 
 ## Author's remarks:
 
@@ -266,6 +271,7 @@ be applied.
 [7]: https://en.wikipedia.org/wiki/Combinatory_logic         "Combinatory Logic on Wikipedia"
 [8]: https://inazz.jp/unlambda/                              "Online Unlambda interpreter"
 [9]: http://ioccc.org/2014/birken/hint.html                  "Best use of port 1701"
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

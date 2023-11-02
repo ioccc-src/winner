@@ -6,11 +6,13 @@ Mortice Kern Systems Inc.	#CL-23\
 Waterloo, On			Waterloo, On\
 Canada, N2J 2W9			Canada, N2L 6G9
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -21,12 +23,14 @@ make all
 NOTE: the file must already exist and not specifying any arg will make the
 program exit without doing anything.
 
-## Try:
+
+### Try:
 
 ```sh
 cp README.md hill
 ./ant hill
 ```
+
 
 ## Judges' remarks:
 
@@ -43,6 +47,7 @@ exit this like in normal vi(m) and then exit `./ant` differently.
 NOTE: to enter form feed you should be able to hit `ctrl-L`. This will allow you
 to exit insert mode rather than ESC like in normal vi(m). See the author's
 commands section for other commands.
+
 
 ## Author's remarks:
 
@@ -122,6 +127,7 @@ screen with long lines.  Paging up and down should work correctly, however.
 	ISBN 0-13-822305-X, chapter 5
 
 [net90]	"Editor 101/102" articles from comp.editors
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

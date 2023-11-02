@@ -6,11 +6,13 @@ Salenbergstrasse 11		(home address)\
 D 72250 Freudenstadt\
 German Federal Republic
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -40,6 +42,7 @@ Extra credit questions:
 - Where are the words stored?
 - How many words does this entry use?
 - Can you add more words to the program and still make it work?
+
 
 ## Author's remarks:
 
@@ -149,6 +152,7 @@ but still is declared before `main()`. The `5[O]()` in `main()` calls
 this function.  Similarly, most indexing operations have been
 changed to this form; and I tried to write each such operation
 different.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

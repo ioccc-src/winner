@@ -3,6 +3,7 @@
 Roemer B. Lievaart\
 Netherlands
 
+
 ## To build:
 
 ```sh
@@ -12,6 +13,7 @@ make all
 There is [Alternate code](#alternate-code) available for if you have an old
 enough compiler.
 
+
 ## To use:
 
 ```sh
@@ -19,7 +21,8 @@ enough compiler.
 # enter a level and start playing as described below
 ```
 
-## Try:
+
+### Try:
 
 To see what it would have looked like without the size restrictions:
 
@@ -68,6 +71,7 @@ logic and displays the board after each move! See above for how to use this.
 ## Author's remarks:
 
 No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -4,11 +4,13 @@ Yusuke Endoh\
 <https://github.com/mame/>\
 Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,13 +18,15 @@ make
 ./prog
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 cat prog.c
 
 ./prog | diff - prog.c
 ```
+
 
 ## Judges' remarks:
 
@@ -47,6 +51,7 @@ Where did those underscores come from?  Well [RTFS](http://acronyms.thefreedicti
 
 If you are still puzzled, look at prog.c with your favorite text editor.
 
+
 ## Author's remarks:
 
 **Follow this instruction literally!**
@@ -63,6 +68,7 @@ terminal supports bold.
 Hint 2: Do `wc -c prog.c`.  This is very long one-liner.
 
 Spoiler: Open the source with an editor like `vim` or `emacs`.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

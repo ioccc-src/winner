@@ -3,11 +3,13 @@
 Yves-Marie Morgan\
 <yves-marie.morgan@parrot.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -23,11 +25,13 @@ For the graphical version (X11):
 ./morgan2 X
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 echo "Do or do not. There is no try."
 ```
+
 
 ## Judges' remarks:
 
@@ -35,6 +39,7 @@ The judges enjoyed playing the game almost to completion; if we remember
 correctly, we managed to place 59 or 60 dominoes. We wonder, what would be
 faster: to play the game to completion or to write an unobfuscated version of
 it?
+
 
 ## Author's remarks:
 
@@ -139,6 +144,7 @@ morgan2.c:23:24: warning: adding 'int' to a string does not append to the string
 ```
 
 **!!!!! HAVE FUN !!!!!**
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

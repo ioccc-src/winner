@@ -4,6 +4,7 @@ Yusuke Endoh\
 <https://github.com/mame/>\
 Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 
+
 ## To build:
 
 ```sh
@@ -11,7 +12,7 @@ make
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -28,16 +29,19 @@ For more detailed information see [2019 endoh in bugs.md](/bugs.md#2019-endoh).
 ./prog
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 gdb ./prog || lldb ./prog
 ```
 
+
 ## Judges' remarks:
 
 The purpose of this program is to crash. You'll want to have memorized `man 7
 ascii` when debugging it to reveal its purpose.
+
 
 ## Author's remarks:
 
@@ -116,6 +120,7 @@ By using this, you can confirm that it is actually a quine.
 gdb -q -x prog.c ./prog | sed -n -r 's/#.*:([0-9]+)/\1/p' | awk '{printf "%c",$1}' > prog2.c
 diff prog.c prog2.c
 ```
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

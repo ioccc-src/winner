@@ -31,7 +31,8 @@ Where lat and long correspond to your latitude and longitude.
 NOTE: you **MUST** have a terminal that wraps at 80 columns (!) in order for this to
 show correctly!
 
-## Try:
+
+### Try:
 
 ```sh
 ./whereami 47 -122	(- means west of meridian)

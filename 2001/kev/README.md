@@ -13,7 +13,7 @@ make
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -45,7 +45,7 @@ There is an alternate version which lets you use the arrow keys to control your
 paddle. See below Alternate code.
 
 
-## Try:
+### Try:
 
 ```sh
 ./kev\
@@ -79,7 +79,6 @@ box.
 
 
 ## Author's remarks:
-
 
 **NETWORK PONG!**
 

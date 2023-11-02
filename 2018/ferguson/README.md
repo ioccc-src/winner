@@ -5,11 +5,13 @@ Cody Boone Ferguson <weasel@xexyl.net>\
 [https://xexyl.net](https://xexyl.net)\
 Mastodon: [@xexyl@fosstodon.org](https://fosstodon.org/@xexyl)
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -17,7 +19,8 @@ make
 ./weasel
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./weasel words
@@ -33,6 +36,7 @@ make test
 The author provided an alternate version which has a simpler keyboard for the
 monkey Eric. See his comments under the 'keyboards' section, briefly referred to
 in the 'what it is' section.
+
 
 ## Judges' remarks:
 
@@ -55,6 +59,7 @@ If you find yourself in an evolutionary dead end, try:
 ```sh
 man ./weasel.man
 ```
+
 
 ## Author's remarks:
 
@@ -1217,6 +1222,7 @@ email but I'm more likely to respond to mastodon messages.
 
 [https://ioccc.xexyl.net/2018/weasel]: https://ioccc.xexyl.net/2018/weasel
 [errata page]: https://ioccc.xexyl.net/2018/weasel/errata
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

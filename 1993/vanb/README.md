@@ -24,7 +24,7 @@ where `exp` is an octal expression. See below for how it can also have
 hexadecimal and decimal numbers.
 
 
-## Try:
+### Try:
 
 ```sh
 ./vanb '1+1'
@@ -36,6 +36,7 @@ What happens if you use something other than valid digits?
 
 
 ## Judges' remarks:
+
 \
 The octal expression may contain:
 

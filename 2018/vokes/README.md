@@ -2,11 +2,13 @@
 
 Scott Vokes
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -14,13 +16,15 @@ make
 ./prog < example-1.txt
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog < example-2.txt
 ./prog < example-tab.txt
 ./prog < ioccc.txt
 ```
+
 
 ## Judges' remarks:
 
@@ -30,6 +34,7 @@ might have a meltdown trying to work it all out.
 This entry is designed to mislead in many ways. However, if you find yourself
 wanting to know the possibilities for navigating a graph, you will get the
 answer you seek with no hocus pocus.
+
 
 ## Author's remarks:
 
@@ -212,6 +217,7 @@ under "Obfuscations".
 - The implementation depends on the characters '0', '1', ... '9' having
   the values 48 through 57, rather than using `isdigit()`. As noted
   above, this program has nothing to do with a hand.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -19,7 +19,7 @@ real time. You can redefine `Z` to reconfigure it in case it's going too slow,
 too fast :-) or you're doing some strange experiment like making it 100000.
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -37,7 +37,7 @@ For more detailed information see [1995 cdua in bugs.md](/bugs.md#1995-cdua).
 ```
 
 
-## Try:
+### Try:
 
 To use 1500 for `Z` do:
 
@@ -70,7 +70,7 @@ If you wish to use the original version, for instance if you wish to see how
 fast your computer is :-) or use both to see the difference, you can do so.
 
 
-#### Original build:
+### Original build:
 
 ```sh
 make all

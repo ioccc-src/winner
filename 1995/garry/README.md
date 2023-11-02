@@ -18,7 +18,8 @@ make all
 ./garry <input_file >output_file
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 
@@ -58,9 +59,7 @@ GARRY=garry.alt ./garry.test.sh
 ```
 
 
-
 ## Judges' remarks:
-
 
 The author was kind enough to provide a less obfuscated version of
 the source called [garry.fmt.c](garry.fmt.c).

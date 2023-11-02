@@ -8,11 +8,13 @@ US\
 <http://www.huffmancoding.com>\
 huffmancoding@gmail.com
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -23,7 +25,8 @@ echo 'Huffman Decoding' | ./huffman
 NOTE: this program uses `gets()` so you will likely get a warning when compiling
 and/or running on modern systems.
 
-## Try:
+
+### Try:
 
 ```sh
 echo 'seeing or feeling is believing' | ./huffman
@@ -47,6 +50,7 @@ And if you really can't see what is going on, here is an extra spoiler:
 
 This entry was very well received at the IOCCC BOF.
 
+
 ## Author's remarks:
 
 This filter program is really not obfuscated code.  It compiles cleanly
@@ -62,6 +66,7 @@ characters.  The user is encouraged to use the program's source as input
 to the executable.
 
 This program is best appreciated on a tactile monitor.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

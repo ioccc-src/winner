@@ -8,11 +8,13 @@ Alexander Prishchepov\
 <alepov-github@yahoo.com>\
 <https://github.com/sans17/>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -22,7 +24,8 @@ make
 ./prog http://host[:port]
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog < README.md
@@ -46,6 +49,7 @@ What happens if you specify instead of a regular file something like
 
 But there's more! Try opening in a browser the same address and then see what
 happens. This is explained by the authors when explaining their inspiration.
+
 
 ## Judges' remarks:
 
@@ -211,6 +215,7 @@ resulting in compiler warnings:
 ```
 
 It may be necessary to restore some of these under certain environments.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

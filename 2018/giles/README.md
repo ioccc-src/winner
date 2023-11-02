@@ -2,6 +2,7 @@
 
     Edward Giles
 
+
 ## To build:
 
 This entry requires SDL2 to be installed.
@@ -88,7 +89,8 @@ See also the judges' remarks below.
 ./prog
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog ioccc.txt
@@ -96,6 +98,7 @@ See also the judges' remarks below.
 ./prog sand.txt
 ./prog sand.alt.txt
 ```
+
 
 ## Judges' remarks:
 
@@ -112,6 +115,7 @@ sudo apt install libsdl2-dev 	 # Debian
 brew install sdl2		 # macOS via Homebrew
 sudo port install libsdl2	 # macOS via MacPorts
 ```
+
 
 ## Author's remarks:
 
@@ -139,6 +143,7 @@ to observe this high-level layout than the code's actual function.
 The preprocessor is used to both obfuscate the code as a whole and abbreviate
 the calls to SDL. Additionally, throughout the code, the variables were named
 so that they are short and easily confused with each other.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

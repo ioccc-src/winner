@@ -2,11 +2,13 @@
 
 Christopher Mills <mrxo@sonic.net>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -14,7 +16,8 @@ make
 ./prog
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog
@@ -78,6 +81,7 @@ At the "@" prompt, type `rkunix`. You might want to type `stty -lcase` as
 otherwise the output will be in all caps.
 
 NOTE: To quit v6, press Control-E.
+
 
 ## Author's remarks:
 
@@ -723,6 +727,7 @@ time...
 [16]: http://simh.trailing-edge.com            "SimH"
 [17]: http://bitsavers.trailing-edge.com       "Bitsavers.org"
 [18]: https://www.bell-labs.com/usr/dmr/www/   "DMR Homepage"
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

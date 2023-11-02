@@ -5,6 +5,7 @@ US
 <j.david.lowe@gmail.com>\
 <https://github.com/dlowe>
 
+
 ## To build:
 
 ```sh
@@ -16,13 +17,15 @@ compile. macOS users running Mountain Lion and later will need to download and
 install [XQuartz](https://www.xquartz.org) in order to compile and run this
 entry.
 
+
 ## To use:
 
 ```sh
 ./dlowe
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./dlowe
@@ -31,6 +34,7 @@ entry.
 Watch for a while if you like, then press a key within the window.
 
 Use up and down keys to escape death.
+
 
 ## Judges' remarks:
 
@@ -106,6 +110,7 @@ precedence.
 
 Lots of magic numbers, abuse of the relationships between magic numbers, and
 abuse of the arithmetic properties of magic numbers.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

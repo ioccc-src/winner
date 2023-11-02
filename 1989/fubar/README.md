@@ -3,6 +3,7 @@
 Jay Vosburgh\
 US
 
+
 ## To build:
 
 ```sh
@@ -10,7 +11,7 @@ make all
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -27,7 +28,8 @@ For more detailed information see [1989 fubar in bugs.md](/bugs.md#1989-fubar).
 ./fubar <number>
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./fubar 2
@@ -45,6 +47,7 @@ Do you know why?
 NOTE: the file `ouroboros.c` is created by the program itself so this is why it
 is not in the repository.
 
+
 ## Author's remarks:
 
 In a nutshell, this is probably the slowest and most
@@ -59,6 +62,7 @@ works by successively modifying #define lines each pass through.
 
 Both `indent` and `cb` will damage the program, `indent`
 much more so.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

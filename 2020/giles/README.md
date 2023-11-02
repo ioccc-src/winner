@@ -3,11 +3,13 @@
 Edward Giles\
 <https://id523a.com/>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 ./prog
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog < pi.wav
@@ -26,9 +29,11 @@ make
 # Use an audio player to play jenny.wav
 ```
 
+
 ## Judges' remarks:
 
 A cross platform utility for both encoding and decoding tones.
+
 
 ## Author's remarks:
 
@@ -97,6 +102,7 @@ Each tone in a DTMF signal is a combination of two frequencies. The lower freque
 This program determines which frequencies are present in the input by passing it through a set of 8 virtual resonators, each tuned to one of the frequencies used for DTMF. These can be implemented using only basic arithmetic, and they are able to 'select' a specific frequency from the input sound, blocking all other frequencies from reaching the output. The loudness of the sound output from each resonator can therefore be used as a measure of how much of a particular frequency was present in the input. The program then decides, over the course of one tone, which row frequency and which column frequency were most prominent.
 
 Tones are generated using those same resonators by providing [an impulse](https://en.wikipedia.org/wiki/Kronecker_delta#Digital_signal_processing) as input. An impulse can be thought of as consisting of sine-waves at all frequencies, and when it is put through one of the resonators, the result is a single pure sine wave.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

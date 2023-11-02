@@ -7,11 +7,13 @@ US\
 David Madore\
 <http://www.madore.org/~david/>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -29,7 +31,8 @@ more shared files with their proper numbers):
 ./grothe I-sharedI J-sharedJ K-sharedK ... +reconstructed
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./grothe -grothe.c 1+grothe.c.1 2+grothe.c.2
@@ -38,6 +41,7 @@ more shared files with their proper numbers):
 
 ./grothe 1-cookie_piece1.dat 2-cookie_piece2.dat 4-cookie_piece4.dat 4+cookie_recipe_restore.txt
 ```
+
 
 ## Judges' remarks:
 
@@ -55,6 +59,7 @@ The judges also took some liberty obfuscating this entry a little more.
 
 How does this entry work? The only place multiplication is used is
 to perform the `atoi()` conversion.
+
 
 ## Author's remarks:
 
@@ -138,6 +143,7 @@ need to be so trying to figure it out can be a bit tough.
 
 * David Madore's implementation of Shamir's Secret Sharing - <http://www.madore.org/~david/programs/programs-1.36.html>
 * Steve's Recipe Database - source for the $25k Cookie Recipe - <https://www.mealsteps.com>
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

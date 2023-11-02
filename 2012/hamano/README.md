@@ -3,11 +3,13 @@
 Tsukasa Hamano\
 <hamano@cuspy.org>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 ./hamano < textfile > output.pdf
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./hamano < README.md > hint.pdf
@@ -42,6 +45,7 @@ cc -Wno-implicit-function-declaration -xc hello.pdf -o hello2
 ./hello2 | gcc -Wno-implicit-function-declaration -xc - -o ./hello3
 ./hello3
 ```
+
 
 ## Judges' remarks:
 
@@ -71,6 +75,7 @@ Don't forget to take a look at the generated PDF. Perhaps you might even want
 to compile the output with a C compiler.  When you run it, what does it
 output?
 
+
 ## Author's remarks:
 
 This program obfuscate text file into PDF file with [Dancing men
@@ -91,6 +96,7 @@ PDF Readers:
 
 This program is obfuscated by using classical methods.  But can you find the
 embedded font in the fragmented glyph?
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

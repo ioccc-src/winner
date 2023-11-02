@@ -24,7 +24,8 @@ perl -MConfig -e 'print "$Config{archlibexp}/CORE\n"'
 ./dlowe [file ...]
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 echo "13 14 15 16 17 + - * / p" | ./dlowe

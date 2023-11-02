@@ -4,11 +4,13 @@ Jonathan Hoyle\
 US\
 <http://www.jonhoyle.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,7 +18,8 @@ make
 ./hoyle point ...
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./hoyle 10 0.5
@@ -37,12 +40,14 @@ make alt
 
 Use `hoyle.alt.c` as you would `hoyle` above.
 
+
 ## Judges' remarks:
 
 This obfuscation functions at several levels.  Note the clever
 use of use of `#define`s.  The `#define do(if,else)`, for example,
 is delightful.  The code itself contains a bunch of curves
 designed to throw you off axis.  :-)
+
 
 ## Author's remarks:
 
@@ -72,6 +77,7 @@ Note that:
 ```
 
 will produce the same graph, since the `y-axis` is auto scaling.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

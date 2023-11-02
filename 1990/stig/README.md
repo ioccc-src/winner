@@ -5,11 +5,13 @@ Norwegian Institute of Technology\
 N-7034 Trondheim-NTH\
 Norway
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -23,7 +25,8 @@ NOTE: that's not a typo or mistake but one can also do:
 ./o
 ```
 
-## Judges' remarks
+
+## Judges' remarks:
 
 We changed the alias that the author's suggested alias from a
 C-shell alias to a zsh alias.
@@ -33,6 +36,7 @@ Note that `shst.c` is renamed to [stig.c](stig.c) in the distribution.
 WARNING: This program's `how to compile` is too specific to a particular shell.
 The obfuscation of this program is more related to shell obfuscation than C
 obfuscation.  This type of entry will not be permitted in future contests.
+
 
 ## Author's remarks:
 
@@ -50,6 +54,7 @@ If everything works correctly it create an executable named `o` which checks
 whether your compiler supports nested comments. I've stolen the `"/*/*/0*/**/1"`
 from somewhere so don't give me any points for it. Of course neither ANSI nor
 K&R support nested comments when properly implemented, but what the heck.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

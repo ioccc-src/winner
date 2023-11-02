@@ -5,6 +5,7 @@ US\
 <j.david.lowe@gmail.com>\
 <https://github.com/dlowe>
 
+
 ## To build:
 
 ```sh
@@ -12,7 +13,7 @@ make
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -38,7 +39,8 @@ Then to use `trained.net`:
 ./dlowe file [file ...] < trained.net
 ```
 
-## Try:
+
+### Try:
 
 Try these pre-trained networks:
 
@@ -64,6 +66,7 @@ NOTE: The `dlowe-aux-data/` directory was created by:
 ```sh
 tar -jxf dlowe-aux-data.tar.bz2
 ```
+
 
 ## Judges' remarks:
 
@@ -176,6 +179,7 @@ We created the [xor-trained.net](dlowe-aux-data/xor-trained.net) as follows:
 	    Data that XORs to 1
 
 **NOTE**: The directory args **must end in a** `/` for them to work.
+
 
 ## Author's remarks:
 
@@ -342,6 +346,7 @@ shame to waste it.
 by a network trained to recognize [IOCCC winners](/winners.html) ;)
 
 ... but mostly zombies!
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

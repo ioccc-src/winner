@@ -7,11 +7,13 @@ Bergvliet\
 7945\
 South Africa
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -23,13 +25,16 @@ where:
 \
 `datafile` is the initial pattern (default: [dgibson.data1](dgibson.data1))
 
-## Try:
+
+### Try:
 
 ```sh
 ./dgibson.sh dgibson.data3
 ```
 
+
 ## Judges' remarks:
+
 \
 We have provided the shell script [dgibson.sh](dgibson.sh) to make it easier
 to run this entry.  Run this shell script several times to
@@ -48,6 +53,7 @@ memory and lots of time!
 
 Good luck trying to use a debugger on this entry!  Life is not
 always pretty.
+
 
 ## Author's remarks:
 
@@ -74,6 +80,7 @@ When writing this program, my goal was to make each cell in the life
 grid expand to the code which calculates the fate of that cell.  In
 addition, the resulting program is a single expression, which makes it
 necessary to recurse on main in two "directions" simultaneously.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

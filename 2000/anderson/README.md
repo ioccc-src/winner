@@ -21,7 +21,7 @@ echo something | ./anderson
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 echo Obfuscate | ./anderson

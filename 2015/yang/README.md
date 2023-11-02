@@ -18,7 +18,7 @@ echo Some text | ./prog\
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 echo IOCCC 2015 | ./prog | tee output.c

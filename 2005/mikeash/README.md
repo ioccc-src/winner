@@ -5,11 +5,13 @@ US\
 mike@mikeash.com\
 <https://mikeash.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -17,7 +19,8 @@ make
 ./mikeash
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./mikeash < mikeash.c
@@ -26,6 +29,7 @@ make
 
 NOTE: the author stated that they tested this under i386 machines but this works
 under 64-bit (x86_64, arm64) machines too.
+
 
 ## Judges' remarks:
 
@@ -36,6 +40,7 @@ speaking parenthetically.  Best of all, it self-reproduces!
 John McCarthy might not have imagined it quite like this!  :-)
 
 [LISP]: https://en.wikipedia.org/wiki/Lisp_(programming_language)
+
 
 ## Author's remarks:
 
@@ -154,6 +159,7 @@ Linux on i386, but it should run elsewhere. It requires ASCII due to
 hardcoding various character constants. Other than this requirement, it
 should run anywhere there's a conforming C99 compiler and a standard
 C library.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

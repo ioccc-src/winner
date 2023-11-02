@@ -2,11 +2,13 @@
 
 Derek Anderson
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -14,7 +16,8 @@ make
 ./prog < textfile
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog < prog.c
@@ -38,9 +41,11 @@ make alt
 
 Use `prog.alt` as you would `prog` above.
 
+
 ## Judges' remarks:
 
 With this entry, you won't need to turn your monitor [upside down](http://en.wikipedia.org/wiki/River_%28typography%29)!
+
 
 ## Author's remarks:
 
@@ -84,6 +89,7 @@ variable assignment, such as `j=k`. There is some filler fluff, such as
 `0-0+0`, but all that sort should be rather easy to spot. It was mostly
 added for the purpose of making certain things line up right, and only
 secondarily to obfuscate.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

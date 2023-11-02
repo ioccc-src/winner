@@ -3,11 +3,13 @@
     Dominik Muth\
     <muth.ioccc@freenet.de>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 make -B [MACHINE=your_machine.h] [TAPE=your_tape.h] [X=[0|1|2|3|4|5|6|7|8|9]] [V=[0|1|2]] run
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 make -B V=2 run
@@ -27,11 +30,13 @@ make -B MACHINE=machine_times2.h TAPE=tape_five.h V=1 run
 make -B MACHINE=machine_chaos_5_2.h X=5 run
 ```
 
+
 ## Judges' remarks:
 
 This is something we were fearing all along: that the C preprocessor is Turing-complete
 even without conditionals and recursive file inclusion as some kind of a
 [rewriting system](https://en.wikipedia.org/wiki/Rewriting). Now we have the proof!
+
 
 ## Author's remarks:
 
@@ -106,6 +111,7 @@ There must be a state "`A`" defined, which becomes the initial state of the mach
 To halt the machine, use the keyword "`break`" as in
 
 	#define A_1 (2, break)
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

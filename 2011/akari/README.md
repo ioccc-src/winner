@@ -4,11 +4,13 @@ Don Yang\
 <omoikane@uguu.org>\
 <http://uguu.org/>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,7 +18,8 @@ make
 ./akari [ input_file | - ] [ output_file | - ]  [even]
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./akari < example.ppm > odd_output.ppm
@@ -46,6 +49,7 @@ You can automate the above by running:
 ./try.sh
 ```
 
+
 ## Judges' remarks:
 
 `Akari` is an image downsampling utility that accepts 3 input formats:
@@ -64,6 +68,7 @@ properly**_.
 lines](https://en.wikipedia.org/wiki/Newline) in LF bytes only, _**not** CRLF_!)
 
 Anything that is not parsable as `PGM` or `PPM` will be downsampled as ASCII art.
+
 
 ## Author's remarks:
 
@@ -150,6 +155,7 @@ It takes quite a bit of skill and obfuscation to interleave a
 C program 4 levels deep, it's much easier to interleave something like
 a `brainf#$%` program in a C program, for example.  For comparison, a
 `brainf#$%` program is embedded inside [akari.c](akari.c).
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -30,7 +30,7 @@ There is an alternate version which simply does what the program did with gcc <
 2.3.3.
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -63,6 +63,7 @@ done with this bug; see the author's remarks for more details.
 
 
 ## Judges' remarks:
+
 \
 There's more than one way to get around disk quotas. :-)
 

@@ -3,11 +3,13 @@
 Nathan Otterness\
 <https://github.com/yalue>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 ./prog
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 wget -O cvikl.mid 'http://www.kunstderfuge.com/-/midi.asp?file=beethoven/symphony_6_1_(c)cvikl.mid'
@@ -27,6 +30,7 @@ wget -O entertainer.mid https://www.midiworld.com/download/3857
 # Play output.mid with your favorite player
 ```
 
+
 ## Judges' remarks:
 
 In an entry that boasts not using literals, one would expect to see straightforward ways to produce
@@ -34,6 +38,7 @@ small integers like `!(x^x)<<!(x^x)`, etc. but this entry is trickier than that.
 apart from reading stdin and writing to stdout, would take a while.
 
 While doing that, you can be audibly *entertained* by a sample of its output.
+
 
 ## Author's remarks:
 
@@ -143,6 +148,7 @@ codes can be interpreted as follows:
  - `9`: The input file was too large.
  - `10`: The input file's MIDI header was incorrect (but this isn't checked
    very thoroughly).
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

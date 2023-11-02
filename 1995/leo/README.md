@@ -5,11 +5,13 @@ Leonid A. Broukhis\
 Fremont, CA 94539\
 US
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -19,7 +21,8 @@ make all
 
 See the author's information below on these details.
 
-## Try:
+
+### Try:
 
 ```sh
 ./leo 1 | cat - /dev/tty | gs -
@@ -264,6 +267,7 @@ Special thanks:
 - to PostScript syntax designers for the curly braces;
 - to Dmitry Mendeleyev for his periodic table of elements;
 - to Hydrogen for having 2 more isotopes.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

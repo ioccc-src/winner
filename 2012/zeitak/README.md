@@ -3,11 +3,13 @@
     Adar Zeitak\
     <aa4z2@walla.co.il>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -18,7 +20,8 @@ make
 where `file.c` is the file to be checked for nesting errors. For example, you may
 try [incorrect.c](incorrect.c) and the program itself.
 
-## Try:
+
+### Try:
 
 ```sh
 ./zeitak < zeitak.c
@@ -43,6 +46,7 @@ make alt
 
 Use `zeitak.alt` as you would `zeitak` above.
 
+
 ## Judges' remarks:
 
 This is an extremely subtle and twisted piece of Gold award winning code!
@@ -53,7 +57,8 @@ At one point we spent
 minutes](https://web.archive.org/web/20130925190722/https://twitter.com/ioccc/status/252162898800033792)
 just to understand 18 key characters of this code.
 
-## Author's remarks
+
+## Author's remarks:
 
 ### Nesting Errors Detector
 
@@ -122,6 +127,7 @@ only function calls, typecasts, array lookups and pointer operators.
 	- Ubuntu 9.04 32-bit with GCC
 	- Windows 7 32-bit with GCC
 	- Windows 7 32-bit with OpenWatcom
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

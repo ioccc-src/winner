@@ -6,11 +6,13 @@ US\
 <https://www.vik.cc/>\
 <http://danielvik.com/>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -18,7 +20,8 @@ make
 ./vik1 [arg]
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./vik1
@@ -28,6 +31,7 @@ make
 ```
 
 Can you figure out how to cheat?
+
 
 ## Judges' remarks:
 
@@ -39,6 +43,7 @@ The author posted a video of this on YouTube:
 <https://www.youtube.com/watch?v=xTseqWCtAUA>.
 
 Happy touring on the road and in the code!
+
 
 ## Author's remarks:
 
@@ -144,6 +149,7 @@ The program requires a display with 24 bit color depth. It also assumes
 that the byte order of the colors are as on my Linux PC. That is, The
 colors are represented by a 32 bit value where the bytes (from high to
 low) are { 0, RED, GREEN, BLUE }.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

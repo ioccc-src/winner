@@ -3,11 +3,13 @@
     Freek Wiedijk\
     <freek@cs.ru.nl>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,11 +17,13 @@ make
 ./prog
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 cc -E prog.c | indent | sed '1,/5.*prog/d'
 ```
+
 
 ## Judges' remarks:
 
@@ -28,6 +32,7 @@ C11 features definitely help this entry to be as concise as it is.
 The judges would like to think that they had almost understood how this entry works.
 
 If you win a bet by demonstrating this entry, please let us know.
+
 
 ## Author's remarks:
 
@@ -56,6 +61,7 @@ If you win a bet by demonstrating this entry, please let us know.
 - uses `Y` to implement factorial on native `int`s
 - 10! seconds = 6 weeks
 - answers the ultimate question of life, the universe and everything
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

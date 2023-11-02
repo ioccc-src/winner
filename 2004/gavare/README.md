@@ -4,11 +4,13 @@ Anders Gavare\
 Sweden\
 <https://gavare.se>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,7 +18,8 @@ make
 ./gavare
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./gavare > ioccc_ray.ppm
@@ -37,7 +40,6 @@ make alt
 Use `gavare.r3` as you would `gavare` above.
 
 
-
 ## Judges' remarks:
 
 For users of systems that distinguish between text and binary mode
@@ -51,6 +53,7 @@ best results.
 
 The judges were able to figure out how to control position
 (in all 3 coordinates), size, and color (to some extent) of the balls.
+
 
 ## Author's remarks:
 
@@ -85,6 +88,7 @@ text editors will make all reserved words turn BOLD when printed on
 paper.  Since I care for the global environment, we shouldn't waste any
 more laser toner, or ink, than necessary. Everyone should write C code
 with no reserved words, and our world will be a better place.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

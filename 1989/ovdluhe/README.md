@@ -6,6 +6,7 @@ ETH - Zentrum\
 8092 Zuerich\
 Switzerland
 
+
 ## To build:
 
 ```sh
@@ -13,6 +14,7 @@ make all
 ```
 
 To get this to compile with a modern CPP, we had to replace `#D` with `#define`.
+
 
 ## To use:
 
@@ -25,7 +27,8 @@ Run the program this way:
 The program stops when it reaches the end of the template buffer\
 by chance or is killed.
 
-## Try:
+
+### Try:
 
 ```sh
 ./ovdluhe < ./ovdluhe.c
@@ -66,7 +69,6 @@ such as mailboxes, man pages and usenet articles are especially
 recommended.  You will get different output each time you run it.
 
 
-
 ## Author's remarks:
 
 This program implements an "Eddington ape" - it generates
@@ -85,6 +87,7 @@ sentences can be dramatically random.
 
 You might want to vary the definition of P between 2 and 10 and
 observe the result.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

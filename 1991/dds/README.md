@@ -13,7 +13,6 @@ make all
 ```
 
 
-
 ## To use:
 
 ```sh
@@ -21,7 +20,8 @@ make all
 ./a.out 2>/dev/null
 ```
 
-## Try:
+
+### Try:
 
 The author suggests trying:
 

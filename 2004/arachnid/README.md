@@ -19,7 +19,7 @@ make
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 ./arachnid arachnid.info

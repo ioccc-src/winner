@@ -23,7 +23,8 @@ make all
 
 The number should be greater than 0.
 
-## Try:
+
+### Try:
 
 ```sh
 ./westley 1

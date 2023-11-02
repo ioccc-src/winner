@@ -12,7 +12,7 @@ make
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -33,7 +33,7 @@ You can specify a port by appending to the domain `:port`. See notes below on
 the issue of https.
 
 
-## Try:
+### Try:
 
 ```sh
 ./mynx http://www.textfiles.com

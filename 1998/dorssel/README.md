@@ -6,11 +6,13 @@ Kaiserstraat 35\
 NL-2311 GP   Leiden\
 The Netherlands
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -21,7 +23,8 @@ make all
 echo text | ./dorssel
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 echo Simple as 123 | ./dorssel
@@ -30,6 +33,7 @@ echo '.... --- .--  -.. --- . ...  .. -  -.. ---  - .... .- -' | ./dorssel
 echo 'HOW DOES IT DO THAT' | ./dorssel
 echo 'HOW DOES IT DO THAT' | ./dorssel | ./dorssel
 ```
+
 
 ## Judges' remarks:
 
@@ -55,6 +59,7 @@ altering the behavior ?
 Extra credit: Change the program so that it does not SHOUT IN ALL CAPS.
 
 You might also want to read the [dorssel.md](dorssel.md) file.
+
 
 ## Author's remarks:
 
@@ -114,6 +119,7 @@ understand this program.  For an obfuscated spoiler, try
 ```sh
 ./dorssel < dorssel.md\
 ```
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

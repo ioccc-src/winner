@@ -2,6 +2,7 @@
 
 Paul Heckbert\
 
+
 ## To build:
 
 ```sh
@@ -11,6 +12,7 @@ make all
 On System V systems, we had to compile with `-Dindex=strchr`.
 To compile on a 16 bit machine, change 300000 to 30000.
 
+
 ## To use:
 
 ```sh
@@ -19,7 +21,8 @@ To compile on a 16 bit machine, change 300000 to 30000.
 
 where col is the number of columns to fold at and file is the file to fold.
 
-## Try:
+
+### Try:
 
 ```sh
 ./heckbert 40 < heckbert.c > ph.c; make ph
@@ -32,6 +35,7 @@ Ask yourself what happens to `foo.md` if you try:
 ```sh
 ./ph 40 < README.md > foo.md
 ```
+
 
 ## Judges' remarks:
 
@@ -50,9 +54,11 @@ very long lines which the BSD fold(1)\
 was unable to process. This program has\
 been added to the contest tool chest.
 
+
 ## Author's remarks:
 
 No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

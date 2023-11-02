@@ -2,11 +2,13 @@
 
 Christopher Mills
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,7 +18,8 @@ make cpclean
 ./prog Shakespeare.txt
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 make test-64bit
@@ -35,6 +38,7 @@ less Eugene_Onegin.output.txt
 However, as the binary model files used to produce the output are in an
 implementation-specific format, your mileage may vary.
 
+
 ## Judges' remarks:
 
 Can a machine learn?
@@ -45,6 +49,7 @@ But can a machine learn to write like Shakespeare? Can it write rules and
 guidelines for the IOCCC?
 
 You decide. :-)
+
 
 ## Author's remarks:
 
@@ -661,6 +666,7 @@ The list of hyperparameters follows:
  [42]: https://arxiv.org/abs/1412.6980
  [43]: https://www.fast.ai/2018/07/02/adam-weight-decay/
  [44]: http://karpathy.github.io/2015/05/21/rnn-effectiveness/
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

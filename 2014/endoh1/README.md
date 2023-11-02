@@ -5,11 +5,13 @@ Yusuke Endoh\
 <https://github.com/mame/>\
 Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -17,7 +19,8 @@ make
 ./prog > foo.c
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog > main.c
@@ -66,6 +69,7 @@ When using a smartphone to read the output, you may need to
 step back to see the bigger picture because that picture is worth
 more than 1000 words.
 
+
 ## Author's remarks:
 
 ### Remarks
@@ -75,6 +79,7 @@ You may want to use a large display with a very small-font terminal.
 ### Spoiler
 
 See [spoilers.md](spoilers.md).
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

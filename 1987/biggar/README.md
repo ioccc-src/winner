@@ -3,6 +3,7 @@
 Mark Biggar\
 US
 
+
 ## To build:
 
 ```sh
@@ -16,11 +17,13 @@ make all
 some_command | ./biggar | od -c
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./biggar < biggar.c | od -c
 ```
+
 
 ## Judges' remarks:
 
@@ -49,6 +52,7 @@ an infinite loop by this entry.
 ## Author's remarks:
 
 No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

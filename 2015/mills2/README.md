@@ -2,11 +2,13 @@
 
     Chris Mills
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -14,7 +16,8 @@ make
 ./prog compressed_file.Z
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 printf '000I\236\f\31H\260\240\301\203' > ioccc.Z
@@ -29,6 +32,7 @@ compress < test2 > test2.Z
 time ./prog test2.Z | cmp - test2
 ```
 
+
 ## Judges' remarks:
 
 Without ASCII art, the source code of this entry would have been exactly 256
@@ -37,6 +41,7 @@ impressive, even taking into account the missing atob functionality. Now we wish
 for a compress(1)-like compressor using a similar idea.
 
 Why is the sad smiley on line 12 in that particular place?
+
 
 ## Author's remarks:
 
@@ -125,6 +130,7 @@ you will get a weird big-endian version of `compress`, which might have come to
 pass in an alternate universe where the vax on which `compress` was authored
 had been big-endian.  Luckily for us, it wasn't, and neither are most of the
 systems you might want to compile this for.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -4,6 +4,7 @@ Jetro Lauha\
 Finland\
 <http://jet.ro>
 
+
 ## To build:
 
 This entry requires SDL to be installed.
@@ -24,11 +25,13 @@ make
 ./jetro
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 echo "Do or do not. There is no try."
 ```
+
 
 ## Judges' remarks:
 
@@ -39,6 +42,7 @@ into the SDL documentation.
 
 Can you figure out how the notes are encoded and program a different melody?
 
+
 ## Author's remarks:
 
 To compile the entry you need SDL library, which is used only for audio
@@ -46,6 +50,7 @@ output. To run the entry make sure you have audio output available. The entry
 plays 22KHz 16 bit mono music with a small softsynth. When the music plays,
 you can stop the application by pressing enter, as the code will just wait
 with one call to getchar() before it quits.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

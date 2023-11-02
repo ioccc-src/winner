@@ -11,6 +11,7 @@ Michael Birken\
 make alt
 ```
 
+
 ## To use:
 
 To see why we recommend the alternate version instead of the original version,
@@ -23,7 +24,8 @@ see the [original code](#original-code) section.
 To see why we recommend the alternate version instead of the original version,
 see the [original code](#original-code) section.
 
-## Try:
+
+### Try:
 
 This alternate version, which we recommend that you use in order to see what is
 happening with modern systems, and to not flash colours too quickly, which can
@@ -51,6 +53,7 @@ If you wish to speed it up 200% you can use instead `-DZ=3750`. Doing this
 you might find the right value to your liking; use ctrl-c to terminate the
 program early.
 
+
 ## Original code:
 
 Should you wish to see the original without having to mess with the compiler
@@ -69,6 +72,7 @@ BIRKEN=birken ./try.sh
 ```
 
 PLEASE be careful if you are sensitive to flashing colours!
+
 
 ## Judges' remarks:
 

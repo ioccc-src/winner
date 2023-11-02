@@ -4,11 +4,13 @@ Don Yang\
 <omoikane@uguu.org>\
 <http://uguu.org/>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -23,7 +25,8 @@ gcc output.c -o output
 ./output > regenerated.bin
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 echo "A quick brown fox jumps over the lazy dog" | ./nyaruko > output.c
@@ -34,10 +37,12 @@ cc -o output output.c
 ./output
 ```
 
+
 ## Judges' remarks:
 
 The judges have nothing to add that has not already been written about in the
 [spoiler.html](spoiler.html) (requires JavaScript) file!  :-)
+
 
 ## Author's remarks:
 
@@ -145,6 +150,7 @@ default, this means `Nyaruko` may not faithfully encode files on MingW.
 [spoiler.html](spoiler.html) - Contains full recording of how the code went from
 blank state to an obfuscated program, gzipped to fit under 1MB. Requires
 JavaScript.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

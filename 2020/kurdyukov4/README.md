@@ -3,11 +3,13 @@
 Ilya Kurdyukov\
 <https://github.com/ilyakurdyukov>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 ./prog text_file output_length context_length random_seed
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog Shakespeare.txt 2000 10 1
@@ -30,6 +33,7 @@ make
 > Performance depends on the number of same hashes found.
 > Too many identical strings if the context length is small.
 > -- Author
+
 
 ## Judges' remarks:
 
@@ -62,6 +66,7 @@ discussed in [Morgoth's Ring](https://en.wikipedia.org/wiki/Morgoth%27s_Ring),
 volume X of [History of Middle-earth
 (HoMe)](https://en.wikipedia.org/wiki/The_History_of_Middle-earth). Now can you
 appreciate the award title a bit better?
+
 
 ## Author's remarks:
 
@@ -139,6 +144,7 @@ enevolences, and I thank thee for it. KING HENRY VI: Master lieutenant comes. Ma
 ster lieutenant comes. Master lieutenant, pray you,-- CORIOLANUS: What's that to
  him? CHRISTOPHER: At Pembroke, Sir James Blunt, And Rice ap Thomas with a virtu
 ```
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

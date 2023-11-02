@@ -3,6 +3,7 @@
 Lennart Augustsson\
 <https://web.archive.org/web/20090831055828/http://www.cs.chalmers.se/~augustss>
 
+
 ## To build:
 
 ```sh
@@ -10,7 +11,7 @@ make all
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -21,7 +22,7 @@ STATUS: INABIAF - please **DO NOT** fix
 For more detailed information see [1986 august in bugs.md](/bugs.md#1986-august).
 
 
-## Try:
+### Try:
 
 ```sh
 ./august
@@ -38,9 +39,11 @@ dump.
 This program will pass lint on your system assuming your lint is brave
 enough to try and parse it correctly.
 
+
 ## Author's remarks:
 
 No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

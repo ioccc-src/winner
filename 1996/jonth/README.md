@@ -7,6 +7,7 @@ N 0372 Oslo\
 Norway\
 http://www.uio.no/~jonth/
 
+
 ## To build:
 
 ```sh
@@ -19,7 +20,7 @@ install [XQuartz](https://www.xquartz.org) in order to compile and run this
 entry.
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -36,17 +37,19 @@ For more detailed information see [1996 jonth in bugs.md](/bugs.md#1996-jonth).
 ./jonth :0 :0
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./jonth host1:0 host2:0
 ```
 
-## Judges' remarks:
 
+## Judges' remarks:
 
 For extra credit, figure out how you can cheat by taking over a square already
 occupied by an opponent.
+
 
 ## Author's remarks:
 
@@ -62,6 +65,7 @@ If one (or both) windows look like a copy of the window(s) below, try
 `xrefresh(1)` command.
 
 Have a `nice(1)` day.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

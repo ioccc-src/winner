@@ -4,11 +4,13 @@ Mark Schnitzius\
 Australia\
 <http://computronium.org/ioccc.html>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,7 +18,8 @@ make
 ./schnitzi
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./schnitzi <schnitzi.inp0 2>/dev/null| vi
@@ -48,6 +51,7 @@ another one e.g. `u`.
 This exemplifies the meaning of Visual Editor, but we don't think
 that any benchmarking sites are going to use this to tout the
 performance of the latest hardware!
+
 
 ## Author's remarks:
 
@@ -171,6 +175,7 @@ is a right-click menu option on the top window bar.
 
 I would like to remind the Pixar Animation Studios that I retain
 royalties on this technique.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

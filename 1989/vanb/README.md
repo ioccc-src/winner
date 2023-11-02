@@ -14,19 +14,20 @@ US
 make all
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./vanb the rug gary lent
 ./vanb unix is better than os/2
 ```
 
+
 ## Judges' remarks:
 
 This program computes all proper subsets of the set of
 arguments passed to it.  Each subset is printed with one
 element on each line, followed by a line of ten dashes.
-
 
 
 ## Author's remarks:
@@ -42,6 +43,7 @@ non-portable features:
 
 * It uses the fact that if the high bit is set in a character variable, the
 value is negative.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

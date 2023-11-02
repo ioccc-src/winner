@@ -4,11 +4,13 @@ Stephen Sykes\
 Finland\
 <https://web.archive.org/web/20160316092728/http://www.stephensykes.com/>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -18,7 +20,8 @@ make
 
 Next point your browser to the file: `sykes1.html`.
 
-## Try:
+
+### Try:
 
 ```sh
 ./sykes1 10
@@ -63,6 +66,7 @@ For extra credit, understand what happens when you give this entry
 an negative number argument, and why.
 
 See the author's remarks for how to make your own shapes as well.
+
 
 ## Author's remarks:
 
@@ -245,6 +249,7 @@ The generated GIF is not compressed.  This could be argued as an
 advantage - at least I don't violate any of those old Unisys patents!
 
 The pieces aren't really those colors.  Unless you make your own.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

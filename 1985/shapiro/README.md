@@ -2,13 +2,15 @@
 
 Carl Shapiro
 
+
 ## To build:
 
 ```sh
 make all
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./shapiro
@@ -25,9 +27,11 @@ This program was selected for the 1987 t-shirt collection.
 We found this program is be simply a**maze**ing! Run this program without
 arguments and notice the output.
 
+
 ## Author's remarks:
 
 No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

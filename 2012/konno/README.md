@@ -4,11 +4,13 @@ Taketo Konno\
 Japan\
 <inaniwa3@gmail.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -18,7 +20,8 @@ make
 
 NOTE: N is an integer from 0 to 255.
 
-## Try:
+
+### Try:
 
 ```sh
 ./konno 30
@@ -37,12 +40,14 @@ make alt
 
 Use `konno.alt` as you would `konno` above.
 
+
 ## Judges' remarks:
 
 This entry is a good one-liner to analyze completely.
 
 For extra credit, what are the minimal changes to convert it to
 64-bit integers so that it could print 32 lines?
+
 
 ## Author's remarks:
 
@@ -81,6 +86,7 @@ operation. What is the operation doing?
 ### Limitation
 
 This program assumes that the size of `int` is 4.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

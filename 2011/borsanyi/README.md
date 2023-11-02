@@ -4,11 +4,13 @@ Szabolcs Borsanyi\
 Germany\
 <borsanyi@uni-wuppertal.de>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,13 +18,15 @@ make
 ./borsanyi < some_data_file
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./borsanyi < data.1
 ./borsanyi < data.2
 ./borsanyi < data.3
 ```
+
 
 ## Judges' remarks:
 
@@ -42,6 +46,7 @@ use `malloc(3)` or `alloca(3)`. How does it build the histogram?
 
 While the input does not need to be sorted, the histogram output is sorted.
 How does it put the data into buckets?  Why does it `fork()` 22 times?
+
 
 ## Author's remarks:
 
@@ -74,6 +79,7 @@ great help.
 * I tried to use as few keywords as possible, hence there are no loops.
 * Multi-process approach for optimal use of resources.
 * Some bin size obfuscation.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

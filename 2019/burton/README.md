@@ -2,11 +2,13 @@
 
 Dave Burton
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -14,17 +16,20 @@ make
 ./prog < prog.c
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 echo "Do or do not. There is no try."
 ```
+
 
 ## Judges' remarks:
 
 A tiny, but punctually correct way of POSIX counting for text files. This one
 line, one word, 127 character beauty continues to expand the number of classic
 unix utilities available as winning entries.
+
 
 ## Author's remarks:
 
@@ -85,6 +90,7 @@ cc -Wall -Wextra -Weverything -pedantic -include stdio.h -o prog.clean prog.clea
 
 The flags are not supported.  Although they could easily be added into `cow`.
 This exercise left to the reader.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

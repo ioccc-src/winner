@@ -7,6 +7,7 @@ US\
 Neil Mix\
 US
 
+
 ## To build:
 
 ```sh
@@ -14,8 +15,7 @@ make all
 ```
 
 
-
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -41,6 +41,7 @@ of the playing field.
 
 Pressing `d` drops the current letter onto the board.
 
+
 ## Judges' remarks:
 
 Read the authors' remarks below to find out how to play.  We believe that your
@@ -49,6 +50,7 @@ experience may mirror one of our experiences:
 > Originally, I didn't appreciate the game.  Then I actually read the
 > description of the controls.  I started playing.  I struggled.
 > I spelled my first "poot".  I was hooked ...
+
 
 ## Author's remarks:
 
@@ -160,6 +162,7 @@ places.
 
 
 Good Luck!
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

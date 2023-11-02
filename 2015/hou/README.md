@@ -3,11 +3,13 @@
     Qiming Hou <hqm03ster@gmail.com>\
     <http://www.houqiming.net/>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,11 +17,13 @@ make
 echo IOCCC | ./prog
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 echo "" | ./prog
 ```
+
 
 ## Judges' remarks:
 
@@ -46,6 +50,7 @@ What happens with a large file? Something over 256K
 ```
 
 Where does that message come from?
+
 
 ## Author's remarks:
 
@@ -107,6 +112,7 @@ Tested platforms:
 * Windows 8.1, x64, MSVC 2012 (works)
 * Windows 8.1, x86, MinGW gcc 4.6.2 (fails, prints error message)
 * Windows 8.1, x86, MinGW gcc 4.6.2 with -msse2 -mfpmath=sse (works)
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

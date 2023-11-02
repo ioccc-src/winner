@@ -7,11 +7,13 @@ Covina, CA 91722\
 US\
 <http://uguu.org>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -19,7 +21,8 @@ make
 ./dhyang
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 make saitou
@@ -38,6 +41,7 @@ make aku
 ./aku | diff - aku.c
 ```
 
+
 ## Judges' remarks:
 
 A beautiful combination of solving several different problems, but
@@ -46,6 +50,7 @@ programs have *one* interesting layout; this one has four.
 
 It may be informative to run the code through a "beautifier", to
 study it, but the layout itself is where most of the interest lies.
+
 
 ## Author's remarks:
 
@@ -73,6 +78,7 @@ but you know, size...
 [dhyang.c](dhyang.c) and all its output compiles with gcc if your OS uses ASCII
 character set.  No file is included and all functions assume default int return
 type (a source of compile warnings).
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

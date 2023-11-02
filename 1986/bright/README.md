@@ -2,11 +2,13 @@
 
 Walter Bright
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -14,13 +16,15 @@ make all
 ./bright some_file
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./bright bright.c
 
 ./bright bright
 ```
+
 
 ## Judges' remarks:
 
@@ -31,9 +35,11 @@ excessive shifting to obfuscate an otherwise useful binary display
 program.  This gives you a small example of what it is like to
 maintain the Bourne shell! :-}
 
+
 ## Author's remarks:
 
 No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

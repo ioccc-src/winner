@@ -7,11 +7,14 @@ Clayton, VIC 3168\
 Australia\
 <https://web.archive.org/web/20030212213342/http://byron.csse.monash.edu.au/realindex.html>\
 \
+
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -19,7 +22,8 @@ make
 ./bmeyer
 ```
 
-## Try:
+
+### Try:
 
 In a video window (white text on black background):
 
@@ -66,6 +70,7 @@ Decompress that smaller glic-file:
 Compare the `new.pgm` file to the [lavabus.pgm](lavabus.pgm) file by viewing
 them.
 
+
 ## Judges' remarks:
 
 Don't even think of supplying different compression factors (the
@@ -103,6 +108,7 @@ on writing the value to memory), there is a small but very real
 chance any given file produced might not be portable.
 
 The [Makefile](Makefile) defaults to `-O3` and no `asm()` call.
+
 
 ## Author's remarks:
 
@@ -383,6 +389,7 @@ en/decoded\[4\].
     prosecute unauthorized use, but eventually granted that, having been in use
     for image compression testing for so long, it was now a useful benchmark.
     (Note:  This picture doesn't show very much.)
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

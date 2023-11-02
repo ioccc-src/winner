@@ -27,7 +27,7 @@ where:
 NOTE: an alternate version exists. See Alternate code section below.
 
 
-## Try:
+### Try:
 
 ```sh
 ./plummer 01234567890876543210 xxx
@@ -63,6 +63,7 @@ make clobber CDEFINE="-DZ=50" alt
 
 For extra credit: What happens when 'number' contains non-numeric
 characters, and why?
+
 
 ## Author's remarks:
 

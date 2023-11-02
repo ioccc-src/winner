@@ -34,6 +34,7 @@ where:
 
 
 ## Judges' remarks:
+
 \
 By default, the number of colors is 6.  You may specify a
 value of between 1 and 15 colors.  See the author's notes

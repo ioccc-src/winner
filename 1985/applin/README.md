@@ -4,26 +4,31 @@ Jack Applin [with help from Robert Heckendorn]\
 US\
 <https://www.cs.colostate.edu/~applin/>
 
+
 ## To build:
 
 ```sh
 make all
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./applin
 ```
+
 
 ## Judges' remarks:
 
 One liner programs are short but twisted.  This "Hello, world!" version
 certainly takes its time saying hello.
 
+
 ## Author's remarks:
 
 No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

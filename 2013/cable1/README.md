@@ -3,11 +3,13 @@
 Adrian Cable\
 <adrian.cable@gmail.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 ./cable1 name group1 group2
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./cable1 obama republican democrat
@@ -24,6 +27,7 @@ make
 ./cable1 kennedy republican democrat
 ./cable1 lincoln republican democrat
 ```
+
 
 ## Judges' remarks:
 
@@ -86,6 +90,7 @@ End of important 2023 update to this historic note.
 
 So how does a one line C source know so much?  Hint: it doesn't.
 
+
 ## Author's remarks:
 
 ### Presidents of the United States of America!
@@ -122,6 +127,7 @@ table?
 
 `clang` warns about a missing type specifier for `main()`, and that implicit
 function declarations are invalid in C99 (but still accepts them).
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -19,7 +19,7 @@ make
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 ./kopczynski < kopczynski-8a

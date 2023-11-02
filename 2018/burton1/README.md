@@ -3,11 +3,13 @@
     Dave Burton\
     <http://ioccc.snox.net>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 ./prog < any-file
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog < prog
@@ -34,9 +37,11 @@ To compile this alternate version:
 make alt
 ```
 
+
 ## Judges' remarks:
 
 One line, one array, one loop and one statement but it prints many bytes. It won.
+
 
 ## Author's remarks:
 
@@ -248,6 +253,7 @@ cat prog.c prog.alt.c
 ```
 
 to compare the differences (`diff` is not helpful on a one-liner).
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -17,7 +17,7 @@ make
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 ./prog < README.md

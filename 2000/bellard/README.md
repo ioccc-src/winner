@@ -6,11 +6,13 @@ Fabrice Bellard\
 France\
 <https://bellard.org>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -18,11 +20,13 @@ make
 ./bellard
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 Do. Or do not. There is no try. :-)
 ```
+
 
 ## Judges' remarks:
 
@@ -44,6 +48,7 @@ of time (the usual method would take ages !).
 
 The program uses >= 64 bit 'long long' type. It should run on any
 system with a gcc compiler.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

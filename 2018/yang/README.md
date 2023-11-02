@@ -3,11 +3,13 @@
     Don Yang\
     <http://uguu.org/>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -17,7 +19,8 @@ more generated2.c
 more generated3.c
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./left < prog.c
@@ -30,6 +33,7 @@ more generated3.c
 ./msg1
 ./msg2
 ```
+
 
 ## Judges' remarks:
 
@@ -56,6 +60,7 @@ The final message can be revealed using
 
 But what combinations will generate `./msg3`, `./msg4`, `./msg5`, `./msg6`,
 `./msg7`, `./msg8` and finally `./msg9`?
+
 
 ## Author's remarks:
 
@@ -169,6 +174,7 @@ Nuko has been verified to work with these compiler / OS combinations:
 
 Nuko compiles without warnings with all compilers above, even with
 `-Wall -Wextra -pedantic` for gcc and clang.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

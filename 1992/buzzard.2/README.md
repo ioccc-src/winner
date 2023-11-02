@@ -6,11 +6,13 @@ Software Construction Company\
 College Station, TX 77840\
 US
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -61,9 +63,11 @@ make alt
 
 Use `buzzard.2.alt` as you would `buzzard.2` above.
 
+
 ## Judges' remarks:
 
 Have fun!
+
 
 ## Author's remarks:
 
@@ -249,6 +253,7 @@ C source.
 
 Software Construction Company gets credit for rekindling my interest in FORTH
 and thus indirectly inspiring me to write this program.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

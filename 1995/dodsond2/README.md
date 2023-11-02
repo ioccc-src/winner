@@ -3,11 +3,13 @@
 Don Dodson\
 US
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -15,12 +17,14 @@ make all
 ./dodsond2
 ```
 
+
 ## Judges' remarks:
 
 An amazing entry!
 
 The official chef enjoyed solving the maze, which she did on the first
 attempt.
+
 
 ## Author's remarks:
 
@@ -32,6 +36,7 @@ from a position with a `U` or `D` on the map.  To simulate the feeling of being
 in an unknown labyrinth, areas which you have not visited cannot be seen.
 
 Reach the north-west left corner of level 1 to exit.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

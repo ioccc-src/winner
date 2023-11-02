@@ -3,6 +3,7 @@
 Ian Phillipps\
 UK
 
+
 ## To build:
 
 ```sh
@@ -19,6 +20,7 @@ and thus represents a new departure in text compression standards.
 
 The judges thought that this program looked like what you would get
 by pounding on the keys of an old typewriter at random.
+
 
 ## Author's remarks:
 

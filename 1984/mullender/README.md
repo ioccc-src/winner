@@ -19,7 +19,7 @@ to use the alt version instead. See [original code](#original-code) below for
 the original version.
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -54,7 +54,6 @@ which is probably not as uncommon as you think :-).
 
 ### Try:
 
-
 ```sh
 ./mullender.alt
 
@@ -67,7 +66,7 @@ which is probably not as uncommon as you think :-).
 ./mullender.alt 100000
 
 ./mullender.alt2 500
-# wait for 500 microseconds and see what happens
+\# wait for 500 microseconds and see what happens
 ```
 
 What happens if you hit enter after it reaches the end of the line? Why? What
@@ -83,7 +82,6 @@ machine dependent code was discouraged.
 
 
 ### Original build:
-
 
 ```sh
 make all

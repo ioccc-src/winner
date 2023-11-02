@@ -3,6 +3,7 @@
 Arch D. Robison\
 US
 
+
 ## To build:
 
 ```sh
@@ -10,7 +11,7 @@ make all
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -28,7 +29,8 @@ For more detailed information see [1989 robison in bugs.md](/bugs.md#1989-robiso
 # enter valid expressions
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./robison
@@ -50,6 +52,7 @@ echo 100 / 100 | ./robison # <-- what happens here ?
 This program will very likely crash or break into tiny bits :-) if you feed it
 numbers with non-binary digits.
 
+
 ## Judges' remarks:
 
 Sites with punch card facilities will be happy to note that
@@ -60,6 +63,7 @@ constructs that the C language supports.
 
 For an interesting document on APL, see
 <https://computerhistory.org/blog/the-apl-programming-language-source-code/>.
+
 
 ## Author's remarks:
 
@@ -94,6 +98,7 @@ large binary numbers.
 To obtain a `C--` reference, simply rip out the irrelevant pages
 from your K&R C manual.  To obtain a `C--` compiler, simply rip
 out the irrelevant bytes from your `cc` compiler.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

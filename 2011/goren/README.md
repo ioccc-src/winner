@@ -18,7 +18,7 @@ echo "some text" | ./goren
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 echo "Hello, world!" | ./goren

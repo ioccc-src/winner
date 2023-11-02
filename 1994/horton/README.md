@@ -4,6 +4,7 @@ Mary Ann Horton\
 US\
 <https://maryannhorton.com>
 
+
 ## To build:
 
 ```sh
@@ -42,6 +43,7 @@ Use `horton.alt` as you would `horton` above.
 Try to figure out how this program prints, for a given slope, the
 right character.  And for extra credit, try to figure out which
 character is at the bottom on this hint file.  :-)
+
 
 ## Author's remarks:
 
@@ -98,6 +100,7 @@ Sept/Oct 1992; Pages 28-31
        M  ," MMMMMM"MM""M ,MMMMM,M,    M
       ,      MMMM,MMMM"M"M"M,MM,M,",    "
 ```
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

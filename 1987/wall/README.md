@@ -3,6 +3,7 @@
 Larry Wall\
 US
 
+
 ## To build:
 
 ```sh
@@ -21,7 +22,7 @@ make all
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 ./wall | bc | ./wall
@@ -58,7 +59,6 @@ quit # for the cat version
 
 ## Judges' remarks:
 
-
 What we found amazing was how the flow of control was transferred between
 subroutines.  Careful inspection will show that the array of pointers to
 functions named `vi` refers to functions which seem to not be directly called.
@@ -72,6 +72,7 @@ Some compilers complained about this file, so we changed: `=++I` to `= ++I`.
 ## Author's remarks:
 
 No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

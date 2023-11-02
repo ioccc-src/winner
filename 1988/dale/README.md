@@ -3,6 +3,7 @@
 Paul Dale\
 Australia
 
+
 ## To build:
 
 ```sh
@@ -10,7 +11,7 @@ make all
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -21,7 +22,7 @@ STATUS: INABIAF - please **DO NOT** fix
 For more detailed information see [1988 dale in bugs.md](/bugs.md#1988-dale).
 
 
-## Try:
+### Try:
 
 ```sh
 ./dale hello world
@@ -51,13 +52,14 @@ Use `dale.alt` as you would `dale` above. To understand the differences in more
 detail, see [thanks-for-fixes.md](/thanks-for-fixes.md).
 
 
-## Judges' remarks
+## Judges' remarks:
 
 This entry has a very twisted flow of control via recursion, iteration
 and multi-processing.  Try to understand what is being done with the
 system calls.
 
 NOTE: This program assumes the ASCII character set is being used.
+
 
 ## Author's remarks:
 

@@ -5,11 +5,13 @@ Yusuke Endoh\
 <https://github.com/mame/>\
 Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -29,11 +31,13 @@ gcc -o e e.c
 
 ...
 
-## Try:
+
+### Try:
 
 ```sh
 ./everything.sh
 ```
+
 
 ## Judges' remarks:
 
@@ -43,6 +47,7 @@ printing quasi-[quine](https://en.wikipedia.org/wiki/Quine_(computing) in [ASCII
 art](https://en.wikipedia.org/wiki/ASCII_art) with a compressed font in it; what
 else to wish for in this program? [Virtual
 machine](https://en.wikipedia.org/wiki/Virtual_machine) emulation?
+
 
 ## Author's remarks:
 
@@ -149,6 +154,7 @@ You can do `make everything` for the process (with no `cat`).
 
 Note: The executable may return a failure (non-zero) exit status
 unless `-std=c99` option is given.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

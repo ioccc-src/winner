@@ -4,11 +4,13 @@
     <smaffer@gmail.com>\
     <http://www.assezeta.com/sandromaffiodo>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,11 +18,13 @@ make
 ./prog arg
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 cat image.rgb | ./prog '  .,:;!$#@'
 ```
+
 
 ## Judges' remarks:
 
@@ -30,6 +34,7 @@ to social media that has a small size limit.
 
 Who will be the first to tweet this source?  How many re-tweets will such tweet
 get?  And how many people will really understand the tweet?
+
 
 ## Author's remarks:
 
@@ -88,6 +93,7 @@ d=80,e,j;g(){j+=getchar();}main(){for(;;){j=0;g();if(j<0)break;g(g());putchar(" 
 ```
 
 This alternative version have a **fixed ramp**. It's smaller but it's not so fun to use...
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

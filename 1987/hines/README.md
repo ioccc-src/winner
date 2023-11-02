@@ -3,11 +3,13 @@
 Spencer Hines\
 US
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make all
 ./hines file.c
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./hines hines.c
@@ -32,6 +35,7 @@ make alt
 
 Use `hines.alt` as you would `hines` above.
 
+
 ## Judges' remarks:
 
 This program was designed to maximize the bother function for
@@ -47,6 +51,7 @@ See the Communications of the ACM, March 1987, Page 195-196.
 ## Author's remarks:
 
 No remarks were provided by the author.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

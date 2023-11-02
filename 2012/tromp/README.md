@@ -31,13 +31,14 @@ cat binary-prog.Blc data | ./tromp
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 (cat hilbert.Blc; echo -n 1234) | ./tromp
 (cat oddindices.Blc; echo; cat primes.blc | ./tromp -b) | ./tromp
 cat primes.blc | ./tromp -b | ./primes.pl
 ```
+
 
 ## Judges' remarks:
 

@@ -4,11 +4,13 @@ Philip Blakely\
 Cambridge, UK\
 <pmblakely@gmail.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -18,7 +20,8 @@ Zoom out and make your terminal window 53 or more lines deep.
 ./blakely < blakely.c | head -300
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./blakely < 3.dat | head -100
@@ -26,6 +29,7 @@ Zoom out and make your terminal window 53 or more lines deep.
 ./blakely < evolve_to_3.dat | head -55
 ./blakely < t0_3.dat
 ```
+
 
 ## Judges' remarks:
 
@@ -40,6 +44,7 @@ and run:
 ```sh
 ./blakely - < garden.txt
 ```
+
 
 ## Author's remarks:
 
@@ -223,6 +228,7 @@ this code would probably take us at least up to the heat-death of the
 universe.
 
 The command `./blakely - < blakely.c` is therefore *not* recommended.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

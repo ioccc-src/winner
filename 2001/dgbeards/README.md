@@ -11,7 +11,7 @@ make
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -49,7 +49,7 @@ version that the author did not note?
 This game crashes if it loses.
 
 
-## Try:
+### Try:
 
 See if you can figure out how to make the computer always lose. It's a very
 simple thing to do. Read the author's remarks for clues.

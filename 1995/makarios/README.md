@@ -6,11 +6,13 @@ The Software Bungalow\
 Mountain View, CA 94041\
 US
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -18,10 +20,12 @@ make all
 ./makarios
 ```
 
+
 ## Judges' remarks:
 
 The judges were impressed that such a small program could do so much!
 Can you figure out how it does it?
+
 
 ## Author's remarks:
 
@@ -29,6 +33,7 @@ This program takes no arguments. It emits the base 8 representation
 of prime palindromes (palindromic in base 8, of course).
 
 `^_^`
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

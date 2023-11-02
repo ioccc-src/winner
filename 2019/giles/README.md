@@ -2,11 +2,13 @@
 
 Edward Giles
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -14,13 +16,15 @@ make
 ./prog infile.wav outfile.wav
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 play MonodyVocals.wav
 ./prog MonodyVocals.wav
 play out.wav
 ```
+
 
 ## Judges' remarks:
 
@@ -29,6 +33,7 @@ actually are in, or the great outdoors with mountains and canyons, when
 recording your outgoing voicemail message?  Then don't waste another minute!
 Record yourself, send the audio file through this entry, and let your callers be
 surprised.
+
 
 ## Author's remarks:
 
@@ -226,6 +231,7 @@ A few other miscellaneous obfuscations have also been done:
 * `for(s=14[f]=0;s<f[13];s++)` is used instead of `f[14]=0;
 for(s=0;s<f[13];s++)`
 * The line that contains `printf("Hello, world!");` is mostly commented out.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

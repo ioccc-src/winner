@@ -18,7 +18,7 @@ make all
 ```
 
 
-## Try:
+### Try:
 
 Determine where your system dictionary is located.  You may find
 it located in one of the following places:
@@ -253,7 +253,6 @@ linked list formed by structs in the activation records of the
 recursive invocations of the search function, seeking to the beginning
 of the word matched by that invocation, and copying the characters of
 the word directly from standard input to standard output.
-
 
 
 ## Copyright and CC BY-SA 4.0 License:

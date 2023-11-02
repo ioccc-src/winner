@@ -6,12 +6,12 @@ US
 
 ## To build:
 
-
 ```sh
 make all
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./reddy
@@ -27,11 +27,13 @@ char *(*(*(*(*(*fun[32])))))());
 
 ? What can you do about it?
 
+
 ## Judges' remarks:
 
 This is a somewhat restricted version of a useful program that has been
 posted to Usenet.  What is unusual is what it is able to do so much
 in such little space.
+
 
 ## Author's remarks:
 

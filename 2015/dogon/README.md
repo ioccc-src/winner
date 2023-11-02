@@ -3,11 +3,13 @@
     Gil Dogon\
     <http://sokoban-gild.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 ./prog
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog
@@ -47,6 +50,7 @@ etc.
 
 Press the ESC key
 
+
 ## Judges' remarks:
 
 You are in a twisty maze blocks, almost all alike.
@@ -59,6 +63,7 @@ How many function keys does your keyboard have?  Can you generate very high
 number function keys such as F30 or F31?  :-)
 
 *Textures? We don't need no stinking textures.*
+
 
 ## Author's remarks:
 
@@ -187,6 +192,7 @@ Similar technique is used on the RGB components so their brightness can be
 adjusted simultaneously by the expression: `o=o*b>>8`. Of course some spare bits
 are needed between the components, so they are spread in the long long and
 reordered as RBG.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

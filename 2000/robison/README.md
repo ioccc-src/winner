@@ -5,11 +5,13 @@ Arch D. Robison\
 Champaign IL 61821\
 US
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -17,11 +19,13 @@ make
 ./robison
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 echo "Do or do not. There is no try."
 ```
+
 
 ## Judges' remarks:
 
@@ -33,6 +37,7 @@ a game when its position is hopeless.
 
 Unfortunately, due to the contest rules, we're unable to grant the
 author a patent he applied for.  :-)
+
 
 ## Author's remarks:
 
@@ -182,6 +187,7 @@ I claim, by letters patently absurd:
 #### FIG. 4
 
 [See attached listing.]
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

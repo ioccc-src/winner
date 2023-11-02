@@ -6,11 +6,13 @@ Statenweg 154 B    (home address)\
 3039 JN Rotterdam\
 The Netherlands
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -32,6 +34,7 @@ or:
 ./bas1 | gunzip | gs -sDEVICE=pgmraw -sOutputFile='|xv -' -
 ```
 
+
 ## Judges' remarks:
 
 The output is supposed to be a 3D maze, but it is somewhat more
@@ -41,7 +44,8 @@ Escher's](https://en.wikipedia.org/wiki/M._C._Escher)
 
 When trying to run the program with command line arguments, be generous.
 
-## Author's remarks
+
+## Author's remarks:
 
 ### BEMAZING
 
@@ -82,6 +86,7 @@ Try running `Bemazing` with command line arguments and see what
 happens.  (But note that the program only guarantees that there
 actually is a route from entrance to exit if you run it without
 command line arguments.)
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

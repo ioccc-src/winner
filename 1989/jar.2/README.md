@@ -7,6 +7,7 @@ Otakaari 1\
 02150 Espoo\
 Finland
 
+
 ## To build:
 
 ```sh
@@ -27,7 +28,8 @@ make all
 
 NOTE: this entry will likely segfault on invalid input.
 
-## Try:
+
+### Try:
 
 ```sh
 ./try.sh
@@ -113,6 +115,7 @@ All list operations, including the ones in the interpreter, are
 made using string representations of the lists. These operations
 must count parentheses and skip whitespace. This leads to extremely
 poor performance!
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -10,7 +10,7 @@ make
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -31,7 +31,7 @@ echo n | ./primenum n
 NOTE: `n` is an integer.
 
 
-## Try:
+### Try:
 
 ```sh
 echo IOCCC 23209 | ./primenum 23209
@@ -104,6 +104,7 @@ argument, otherwise the "bugs" in the program will cause it to crash!
 
 - Try also
   `echo THIS MESSAGE IS IN ALL CAPS | ./primenum 32`
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -4,11 +4,13 @@ Stephen Sykes\
 <sds@maxisat.fi>\
 <https://web.archive.org/web/20160316092728/http://www.stephensykes.com/>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -16,7 +18,8 @@ make
 ./sykes binary_file
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./sykes pet.rom
@@ -31,6 +34,7 @@ Also try:
 ```
 
 for some good [chess](https://en.wikipedia.org/wiki/Chess) fun.
+
 
 ## Judges' remarks:
 
@@ -61,6 +65,7 @@ dd bs=2k count=1 if=/dev/zero of=nullfill.bin
 
 For your convenience, we have added the above mentioned files to this entry directory.
 They are used to form the `pet.rom` file.
+
 
 ## Author's remarks:
 
@@ -304,6 +309,7 @@ What does this do?
 ```
 \
 Have fun!
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -5,11 +5,13 @@ Yusuke Endoh\
 <https://github.com/mame/>\
 Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -17,7 +19,8 @@ make
 ./endoh3
 ```
 
-## Try:
+
+### Try:
 
 Trying this out will depend on how your system can play sounds. The author's
 remarks include some options for different operating systems.
@@ -29,6 +32,7 @@ echo 'CDEFGABc' | ./endoh3 | ruby wavify.rb > cde.wav
 ```
 
 There are also some other musical samples, twinkle.abc and menuet.abc.
+
 
 ## Judges' remarks:
 
@@ -43,6 +47,7 @@ The IOCCC no longer endorses the use of what was once twitter, or whatever it
 might be called today. We recommend that you pick a responsible social media
 platform to post the program's output on. Nevertheless the award of this entry
 will remain the same for historical purposes.
+
 
 ## Author's remarks:
 

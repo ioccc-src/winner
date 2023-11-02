@@ -6,11 +6,13 @@ Oranjestraat 8\
 3511 RA   UTRECHT\
 The Netherlands
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -18,7 +20,8 @@ make all
 ./albert number
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./albert 1234567890123456789
@@ -58,11 +61,14 @@ make alt
 
 Use `albert.alt` as you would `albert` above.
 
+
 ## Judges' remarks:
+
 \
 We were impressed with the speed at which it was able to factor
 arbitrarily large numbers consisting of factors that fit into
 a long.
+
 
 ## Author's remarks:
 
@@ -132,6 +138,7 @@ recursion and is quite jumpy.  This program shares these disadvantages in a
 modified form.
 4. The Conversion is to be found in Knuth, not so the Observation.  The
 Observation: "if it ends in a zero, it is divisible by ten".
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

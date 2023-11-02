@@ -6,17 +6,20 @@ Via Pausula, 72\
 62014 Corridonia (MC)\
 Italy
 
+
 ## To build:
 
 ```sh
 make all
 ```
 
+
 ## To use:
 
 ```sh
 ./marangon
 ```
+
 
 ## Judges' remarks:
 
@@ -33,11 +36,13 @@ directory, assumed that exit returns a value which cause problems for some
 systems where exit returns a void.  The file [marangon.c](marangon.c) avoids
 this problem.
 
+
 ## Author's remarks:
 
 It starts off by creating a table with number 5 in all places.  The CPU melts
 the numbers and you must return them in original state.  When you increase a
 number, all the other eight numbers next to it decrease and vice-versa.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

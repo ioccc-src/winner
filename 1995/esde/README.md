@@ -5,11 +5,13 @@ ul. Radzionkowska 71a\
 42-605 Tarnowskie Gory\
 Poland
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -20,13 +22,14 @@ make all
 where data-file contains lines of < 255 chars in length.
 
 
-## Try:
+### Try:
 
 ```sh
 ./esde esde.data Johanson
 ./esde esde.data2 read
 ./esde README.md date
 ```
+
 
 ## Judges' remarks:
 
@@ -69,6 +72,7 @@ These are the codes:
 
 An info file should be a text file consisting of lines of text (max. 256 bytes
 in each line).
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

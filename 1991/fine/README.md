@@ -4,11 +4,13 @@ Thomas A. Fine\
 US\
 [@thomasafine@social.linux.pizza](https://social.linux.pizza/@thomasafine)
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -16,7 +18,8 @@ make all
 echo text | ./fine
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./try.sh
@@ -46,6 +49,7 @@ file tricks.
 How does this program work?  Which 3 bytes of C code can be changed
 into 2 bytes, allowing the program to still work, but also stripping
 the high bit off some input?
+
 
 ## Author's remarks:
 
@@ -88,7 +92,6 @@ high bit clear.  The high bit can be ignored without changing the size
 of the program.  Also, if you know you are only dealing with seven bit
 data, the size can be reduced by one byte.  These are left as exercises
 for the student.
-
 
 
 ## Copyright and CC BY-SA 4.0 License:

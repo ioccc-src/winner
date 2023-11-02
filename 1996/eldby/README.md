@@ -22,7 +22,8 @@ see the [original code](#original-code) section.
 
 NOTE: to reset the sanity of your terminal after this program ends try `reset`.
 
-## Try:
+
+### Try:
 
 This alternate version, which we recommend that you use in order to see what is
 happening with modern systems, and to not flash too quickly, which can be
@@ -34,6 +35,7 @@ it. To do so try:
 make CFLAGS+="-DZ=20000" clobber alt
 ./eldby.alt
 ```
+
 
 ## Original code:
 

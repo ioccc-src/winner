@@ -4,6 +4,7 @@ Tony Finch
 United Kingdom
 <https://dotat.at>
 
+
 ## To build:
 
 ```sh
@@ -12,6 +13,7 @@ make all
 
 NOTE: This may take a while.  Some systems may have problems building\
 this entry because of the system resources it requires.
+
 
 ## To use:
 
@@ -47,6 +49,7 @@ sample expressions that you can use:
 )
 ```
 
+
 ## Judges' remarks:
 
 This program translates lambda expressions into combinator
@@ -78,6 +81,7 @@ combinator expressions on standard output.
 
 What do you have to do to make this program work with an old non-ANSI C
 preprocessor?
+
 
 ## Author's remarks:
 
@@ -419,6 +423,7 @@ conference on Lisp and Functional Programming, 1990.
 
 Wadler, P., 1995. How to Declare an Imperative. Proceedings of the ACM
 International Logic Programming Symposium, 1995.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

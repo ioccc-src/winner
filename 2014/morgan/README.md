@@ -3,11 +3,13 @@
     Yves-Marie Morgan\
     <yves-marie.morgan@parrot.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 ./prog [arg ..]
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 make
@@ -34,12 +37,14 @@ make
 ls
 ```
 
+
 ## Judges' remarks:
 
 Think of this as a Maker Faire's make.  :-)
 
 It works reasomably well.  While not super ultra-featured, it does fair well with the Makefile we supplied.
 Not only that, it helped uncover a bug we had in our special Makefile rules.
+
 
 ## Author's remarks:
 
@@ -89,6 +94,7 @@ with gcc 4.8.2 on Linux Ubuntu 14.04 64-bit :
 * prog.c:22:15: warning: return makes integer from pointer without a cast [enabled by default]
 * prog.c:23:72: warning: signed and unsigned type in conditional expression [-Wsign-compare]
 * prog.c:12:11: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

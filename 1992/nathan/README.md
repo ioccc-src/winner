@@ -7,11 +7,13 @@ Almondsbury\
 Bristol\
 UK BS12 4SQ
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -19,7 +21,8 @@ make all
 ./nathan
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./nathan obfuscate < nathan.c > foobarf.c
@@ -82,7 +85,8 @@ were/are.  Certain US federal officials can get away with shipping arms to
 certain nations in apparent violation of US laws, but I personally can't
 re-distribute a program contest winner to the network!
 
-## Author's remarks
+
+## Author's remarks:
 
 ### Program use
 
@@ -128,6 +132,7 @@ misnamed. The program is kept simply (one for statement), by
 serious overuse of , and ? :. These are really confusing when used
 together, nested or put in argument lists (is that a comma
 operator, or argument separator?)
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

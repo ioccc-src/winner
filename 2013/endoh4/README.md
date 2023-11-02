@@ -5,11 +5,13 @@ Yusuke Endoh\
 <https://github.com/mame/>\
 Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -22,7 +24,8 @@ The second form is preferable as it will temporarily make the cursor invisible
 as recommended by the author. If no file is specified in `run.sh` command line
 it will feed to the program [endoh4.c](endoh4.c).
 
-## Try:
+
+### Try:
 
 ```sh
 ./run.sh cube.txt
@@ -38,11 +41,13 @@ For an example, if you are a football/soccer fan, try:
 ./run.sh solids/archimedian-solid/a11-truncated-icosahedron.txt
 ```
 
+
 ## Judges' remarks:
 
 This program is formatted as the net for a tetrahedron (hint: try feeding the
 program it's own source code like `./run.sh`).  When it runs there is an
 animation for the computation to work out the convex hull.
+
 
 ## Author's remarks:
 

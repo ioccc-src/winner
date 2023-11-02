@@ -4,6 +4,7 @@ Nicolas Ollinger
 France
 <https://www.univ-orleans.fr/lifo/Members/Nicolas.Ollinger/>
 
+
 ## To build:
 
 ```sh
@@ -11,7 +12,7 @@ make
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -32,7 +33,8 @@ For more detailed information see [2001 ollinger in bugs.md](/bugs.md#2001-ollin
 
 This program will very likely crash or do something else without an arg.
 
-## Try:
+
+### Try:
 
 ```sh
 ./ollinger 1000 | cut -c -200
@@ -41,9 +43,11 @@ This program will very likely crash or do something else without an arg.
 Try the above command in a large window, say 200 chars wide and 100
 high (200x100) with a tiny font.
 
+
 ## Judges' remarks:
 
 Do get lost in the programs line of thought!  :-)
+
 
 ## Author's remarks:
 
@@ -122,6 +126,7 @@ The main loop simply iterates this transition function on each cell.
 "The rest is silence" (Hamlet, V.2)
 
 Enjoy!
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

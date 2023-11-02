@@ -21,7 +21,7 @@ NOTE: you need to input a number first. See judges' remarks below for
 information on how to play.
 
 
-## Try:
+### Try:
 
 ```sh
 echo "Do or do not. There is no try."
@@ -73,6 +73,7 @@ of what state is being saved and restored?
 NOTE: the author talks about how it is a single statement. This might not be
 strictly true in 2023 for the fixes for it to work so you can look at the
 original file [burley.orig.c](burley.orig.c) to see what is meant.
+
 
 ## Author's remarks:
 

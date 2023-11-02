@@ -7,17 +7,20 @@ University Park, PA 16802\
 US\
 <https://blog.aerojockey.com/post/iocccsim>
 
+
 ## To build:
 
 ```sh
 make all
 ```
 
+
 ## To use:
 
 ```sh
 cat horizon.sc pittsburgh.sc | ./banks
 ```
+
 
 ## Judges' remarks:
 
@@ -32,6 +35,7 @@ a `select()` system call.  More on building in the author remarks.
 Carl Banks linked to (on his old website) an interesting article about this
 entry, a flight simulator in just 1536 bytes, which can be found at
 <https://web.archive.org/web/20040201120708/http://www.idg.co.nz/magazine/pcworld/oct99/code.htm>.
+
 
 ## Author's remarks:
 
@@ -201,6 +205,7 @@ the simulator expects.
 The best advice is to set time step size to your system timer
 resolution.  Try a longer period if you're getting too much
 flicker.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

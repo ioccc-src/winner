@@ -20,13 +20,15 @@ make all
 
 NOTE: this program will crash without two args.
 
-## Try:
+
+### Try:
 
 ```sh
 ./buzzard.1 0 10
 ./buzzard.1 56 720
 ./buzzard.1 1 521
 ```
+
 
 ## Judges' remarks:
 
@@ -38,6 +40,7 @@ cat babble.cppcb
 ```
 
 Notice how many statements it takes to do anything useful?
+
 
 ## Author's remarks:
 
@@ -238,6 +241,7 @@ my attention.
 
 `buzzard.1` was originally named 'cb', for obvious reasons, and is
 dedicated to the memory of Charles Barrett.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

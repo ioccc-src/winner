@@ -11,7 +11,7 @@ make
 ```
 
 
-### Bugs and (Mis)features
+### Bugs and (Mis)features:
 
 The current status of this entry is:
 
@@ -29,7 +29,7 @@ For more detailed information see [2001 anonymous in bugs.md](/bugs.md#2001-anon
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 ./try.sh
@@ -85,6 +85,7 @@ to be correct.
 
 Is emulation the sincerest form of flattery?  This small program does
 quite a lot of bit twiddling.
+
 
 ## Author's remarks:
 

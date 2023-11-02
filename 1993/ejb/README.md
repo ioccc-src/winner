@@ -6,11 +6,13 @@ Engineering Research Associates\
 Vienna, VA 22182-2235\
 US
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -23,6 +25,7 @@ where:
 ```sh
 level   a value from -128 to 127
 ```
+
 
 ## Judges' remarks:
 
@@ -37,7 +40,8 @@ the argument 127 to this program and want to see it finish!
 
 We note that this also works under macOS just fine.
 
-## Author's remarks
+
+## Author's remarks:
 
 ### What this program does
 
@@ -91,6 +95,7 @@ preprocessor at all.  The only functions it uses are `atoi()`, `malloc()`,
 architecture it runs on have bytes that are at least eight bits long and
 pointers that are at least four bytes long.  In addition, it requires an ANSI
 compiler since it uses "signed char" and ANSI-style function declarations.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

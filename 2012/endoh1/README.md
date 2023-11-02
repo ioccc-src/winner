@@ -5,11 +5,13 @@ Yusuke Endoh\
 <https://github.com/mame/>\
 Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -17,7 +19,8 @@ make
 ./endoh1 < configuration.txt
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./endoh1 < endoh1.c
@@ -45,6 +48,7 @@ make alt
 
 Use `endoh1.alt` as you would `endoh1` above.
 
+
 ## Judges' remarks:
 
 Let's play [Jeopardy!](https://en.wikipedia.org/wiki/Jeopardy!)
@@ -59,6 +63,7 @@ as fluids are not squeezable) has a few quirks that the judges were
 happy to experiment with.
 
 One configuration file was inspired by an [XKCD what if? entry](http://whatif.xkcd.com/6/).
+
 
 ## Author's remarks:
 
@@ -199,6 +204,7 @@ after the contest.
 
 The judges and HAMANO Tsukasa (The silver medalist at this IOCCC) kindly
 provided many configuration files.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -3,11 +3,13 @@
 Aaron Grothe\
 US
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 ./grothe carrier_freq pixelclock horizontal_total < some_input.txt
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./grothe 65000000 10000000 1344 < twinkle.txt
@@ -31,6 +34,7 @@ There are other text files you may wish to try:
 ./grothe 65000000 10000000 1344 < olympic.txt
 ./grothe 65000000 10000000 1344 < test.txt
 ```
+
 
 ## Judges' remarks:
 

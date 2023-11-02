@@ -3,11 +3,13 @@
 Nicholas Carlini <nicholas@carlini.com>\
 <https://nicholas.carlini.com>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,12 +17,14 @@ make
 ./prog
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 # Play with a friend, P1 and P2, squares are numbered 1..9
 ./prog
 ```
+
 
 ## Judges' remarks:
 
@@ -28,6 +32,7 @@ This program consists of a single print statement wrapped in a while loop. You
 would not think that this would amount to much, but you would be very, very
 wrong. A clue to what is happening and how this works is encoded in the
 ASCII art of the program source.
+
 
 ## Author's remarks:
 
@@ -316,6 +321,7 @@ Notice there is now no initial `printf()`. In order make sure the program doesn'
 block before the first `printf()`, but we initialize the `scanf()` format to the null
 string so that it returns right away without blocking. The first time the `printf()`
 call runs, it writes out `"%hhd"` to create the `scanf()` format string.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

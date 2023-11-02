@@ -20,6 +20,7 @@ US
 make all
 ```
 
+
 ## To use:
 
 ```sh
@@ -28,7 +29,8 @@ make all
 
 where `ip_address` in an IP address of an X server.
 
-## Try:
+
+### Try:
 
 ```sh
 ./davidguy 127.0.0.1:0.0
@@ -45,8 +47,8 @@ cp -f davidguy guydavid
 
 Can you determine why this makes a difference?
 
-## Judges' remarks:
 
+## Judges' remarks:
 
 We permitted this type of entry to win because:
 
@@ -128,6 +130,7 @@ memory accesses, .17 shifts, and 1.3 logic operations.  The net
 result is that the time to transfer the bits to the X server, and
 for the X server to draw them on the screen, dominates the time to
 compute the next generation.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

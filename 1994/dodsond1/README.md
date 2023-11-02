@@ -6,11 +6,13 @@ AG Communication Systems\
 Phoenix, AZ 85023\
 US
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -20,11 +22,13 @@ make all
 
 NOTE: At the prompt, try entering `E3`.
 
+
 ## Judges' remarks:
 
 The program plays the game that the layout of the source implies.
 The source, on the other hand, implies a language along the
 lines of Lisp.  :-)
+
 
 ## Author's remarks:
 
@@ -34,6 +38,7 @@ a move.  Enter your move as an upper-case  character followed by a number.
 The program uses a single function for 4 different purposes -- to
 determine if a valid move exists, to verify that a move is valid, to
 make a move, and to determine the value of a move.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

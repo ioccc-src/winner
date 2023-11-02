@@ -6,6 +6,7 @@ Israel
 Doron Osovlanski\
 Israel
 
+
 ## To build:
 
 ```sh
@@ -14,6 +15,7 @@ make all
 
 There is [alternate code](#alternate-code) for those using Turbo-C or MSC.
 
+
 ## To use:
 
 ```sh
@@ -21,7 +23,8 @@ echo 4 | ./baruch
 echo 7 | ./baruch
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 echo 2 | ./baruch
@@ -92,6 +95,7 @@ long enough..
 In order to compile the program under Turbo-C or MSC,  `int ` should be inserted
 at the beginning of the program.  For better looking results it is recommended
 to replace the `" #Q"` string with `" \261\2"`.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

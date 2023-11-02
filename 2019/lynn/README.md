@@ -3,11 +3,13 @@
 Ben Lynn
 <https://crypto.stanford.edu/~blynn/>
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -15,7 +17,8 @@ make
 ./prog
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 (./prog < fib.hs; cat prog.c) > fib.c
@@ -23,9 +26,11 @@ cc fib.c -o fib
 ./fib
 ```
 
+
 ## Judges' remarks:
 
 A fully functional compiler. The example prints out the 30th Fibonacci number.
+
 
 ## Author's remarks:
 
@@ -289,6 +294,7 @@ strange-looking comment.
 
 [My website reveals how this compiler
 works](https://crypto.stanford.edu/~blynn/compiler/ioccc.html).
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

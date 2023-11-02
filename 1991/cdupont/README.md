@@ -7,17 +7,20 @@ Laboratoire d'Informatique Parallele\
 69009 Lyon\
 France
 
+
 ## To build:
 
 ```sh
 make all
 ```
 
+
 ## To use:
 
 ```sh
 ./cdupont
 ```
+
 
 ## Judges' remarks:
 
@@ -34,6 +37,7 @@ NOTE: One should remove the final trailing newline to obtain the
 original source file.  This step is not needed to compile
 this entry.
 
+
 ## Author's remarks:
 
 Spoiler, rot13 to read:
@@ -49,6 +53,7 @@ Spoiler, rot13 to read:
 
     Guvf jnl, nal zrffntr pna or zvkrq vagb n pbqr, fvapr gur xrlf nyybj
     lbh gb cynpr gur zrnavatshy yrggref jurerire lbh jnag.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

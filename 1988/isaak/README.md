@@ -3,6 +3,7 @@
 Mark Isaak\
 US
 
+
 ## To build:
 
 ```sh
@@ -12,6 +13,7 @@ make all
 There is an alternate version, the original, that can't be compiled in modern
 systems but can be if you have an old enough compiler. See [Alternate
 code](#alternate-code) below.
+
 
 ## To use:
 
@@ -45,6 +47,7 @@ make alt
 
 Use `isaak.alt` as you would `isaak` above.
 
+
 ## Judges' remarks:
 
 The program relies heavily on ASCII.  Don't even think of running it on
@@ -74,6 +77,7 @@ Since this was fixed, this file is not strictly necessary. See the
 [isaak.alt.c](isaak.alt.c) for the original source.
 
 FYI: We are likely to be more strict about portability in the future.
+
 
 ## Author's remarks:
 

@@ -2,11 +2,13 @@
 
 Chris Mills
 
+
 ## To build:
 
 ```sh
 make
 ```
+
 
 ## To use:
 
@@ -14,13 +16,15 @@ make
 ./prog
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./prog
 ```
 
 Press the up arrow and the down arrow at the right time.
+
 
 ## Judges' remarks:
 
@@ -72,6 +76,7 @@ Enjoy!
 
     TAP!! TAP!! TAP!!
     FLAP! FLAP! FLAP!
+
 
 ## Author's remarks:
 
@@ -153,6 +158,7 @@ Again, if this is too complicated, maybe just go and get that Mac.
 Future versions of the game will include monitization via the freemium model
 with micropayments for customization options, play-to-win and of course
 live-streamed targeted video advertising.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

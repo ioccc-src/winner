@@ -3,13 +3,15 @@
 Arch D. Robison\
 US
 
+
 ## To build:
 
 ```sh
 make all
 ```
 
-## Try:
+
+### Try:
 
 ```sh
 ./robison 80 10
@@ -22,6 +24,7 @@ The first and second parameters are optional.  You might also try:
 ./robison 80 2   # <--- can you find the bug?
 ./robison 80 -246
 ```
+
 
 ## Judges' remarks:
 
@@ -47,6 +50,7 @@ the beginning could be avoided if `atoi(3)` was rewritten with this
 new paradigm.)  Note that the lack of both the controversial `goto`
 and assignment statements makes the meaning crystal clear.  The current\
 ANSI committee should look into this practical simplification of C.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

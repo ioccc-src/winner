@@ -21,7 +21,7 @@ NOTE: an alternate version exists for those in the southern hemisphere. See the
 Alternate code section below for more details.
 
 
-## Try:
+### Try:
 
 Try modifying the code so that it will show another Moon phase based on input
 or else just by the code itself. Bonus points if you can make it show all!

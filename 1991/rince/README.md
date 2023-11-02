@@ -8,11 +8,13 @@ Sandy Beds\
 SG19 2HA\
 England
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -20,9 +22,11 @@ make all
 ./rince
 ```
 
+
 ## Judges' remarks:
 
 This entry has been updated to allow most ANSI C compilers.
+
 
 ## Author's remarks:
 
@@ -67,6 +71,7 @@ enjoyment high.\
     jnf qbar gb xrrc gur fbhepr nf ybj nf cbffvoyr (nf V bayl hfrq 3 va gur
     znc).  Gb haybpx n qbbe fvzcyl chfu n xrl vagb gur pbeerfcbaqvat qbbe.
     Gnxr pner gung vg'f snpvat va gur pbeerpg qverpgvba.
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

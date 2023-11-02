@@ -6,11 +6,13 @@ The Software Bungalow\
 Mountain View, CA 94041\
 US
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -20,7 +22,8 @@ make all
 
 where num is a non-negative number.
 
-## Try:
+
+### Try:
 
 ```sh
 ./heathbar 4253 2281
@@ -32,7 +35,8 @@ where num is a non-negative number.
 The main reason we liked this entry was mainly because the main
 effect of the source was self documenting!  :-)
 
-## Author's remarks
+
+## Author's remarks:
 
 Run this program with two non-negative integer arguments
 (e.g. `./heathbar 1234 999`).
@@ -65,6 +69,7 @@ bits through a simulated cascade of hardware adders. I hope my
 diligent effort to write especially clear code gets me extra points!
 
 P.S. What does "obfuscated" mean?
+
 
 ## Copyright and CC BY-SA 4.0 License:
 

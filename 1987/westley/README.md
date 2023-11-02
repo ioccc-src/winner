@@ -4,11 +4,13 @@ Brian Westley (aka Merlyn Leroy on usenet)\
 US\
 <http://www.westley.org>
 
+
 ## To build:
 
 ```sh
 make all
 ```
+
 
 ## To use:
 
@@ -35,6 +37,7 @@ If it fails to compile, bug your OS/compiler vendor.
 
 Line by line symmetry performed better than any C beautifier.  Think
 of if it as a C ink blot.  :-)
+
 
 ## Author's remarks:
 

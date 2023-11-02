@@ -39,7 +39,7 @@ program as the program does not call `endwin()`. Using `reset` will clear the
 screen.
 
 
-## Try:
+### Try:
 
 ```sh
 echo "Do or do not. There is no try."
