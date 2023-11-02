@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Sat 21 Oct 2023 11:04:58 UTC*
+*Last updated: Thu 02 Nov 2023 12:32:15 UTC*
 
 This document is primarily for [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) as he (that is I :-) ) wanted a way
@@ -38,18 +38,9 @@ years through 2013 and up through 2014/endoh1 have been checked. As for the
 things have to be done in those years. These things, such as dealing with old
 email addresses and such, can likely be done with the typo pass (see below).
 
-- *AFTER* the README.md files have been format fixed: check for typos in
-README.md files. Although I did up through I believe 2011 I have to do another
-pass through all except that as of 12 July 2023 I went through 1984 and 1985. At
-the same time the formatting has to be / is being checked.
-    * UPDATE on 06 July 2023: some while back I noticed that _ALL_ years will
-    have to be checked again but most of the years checked through 2011 (I think
-    it is but I have this vague memory I did a couple more years - that will be
-    checked when I return to this item) can be checked more quickly.
-    * UPDATE on 06 July 2023: see below list under the item _Verify which
-    README.md files have not been checked for correct formatting_ as well.
-    * UPDATE on 06 July 2023: note that this does NOT include the
-    `YYYY/README.md` files! See the below item for that.
+- Typo fix ALL markdown files. For the README.md files years 1984-1989 have been
+done (along with the format fixes) except that YYYY/README.md files have not
+been completed. See below item for details on that.
 
 - Go through all year README.md files: that is 1984/README.md, 1985/README.md and
 so on. As of **Mon 16 Oct 11:22:52 UTC 2023** the following years have had a
@@ -59,12 +50,15 @@ determined if this will be done with the typo pass (what should be the final
 pass) or not but it's very possible that it can be just to speed things along.
 
 - Verify which README.md files have not been checked for correct formatting and
-fix any issues.
+fix any issues found.
     * This includes author information: not only at first column but making sure
-    that the lines end with `<br>` so that the rendered output does not end up
+    that the lines end with `\` so that the rendered output does not end up
     on one line only. Note that earlier spaces were being added to the end of
     the line but after discussion on GitHub it was decided it is preferable to
-    have `<br>` instead.
+    have `\` instead.
+	NOTE that this has been done already BUT it was not done manually so
+	there are some lines that should not end in `\` including some in code
+	blocks.
     * [Cody Boone
     Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson) has done
     many and has some kind of record of what he's done but these can be added
@@ -73,15 +67,18 @@ fix any issues.
     except that the years not checked / fixed should only need one pass (but
     probably will have a second pass anyway just to make sure things are good as
     seeing things a second time is a good way to find additional errors).
+    * NOTE that as of some days ago (today being 02 November 2023) the years
+    1984-1989 have been checked for formatting and other issues including typos.
+    Whether a quick final pass will be made is not determined yet.
 
-- Remove addresses from older winning entries but (if known) keep country code +
-add country code and name to the respective JSON file in the [author](/author)
-subdirectory. As of half past 4 Pacific time on 22 April 2023 only the years
-through 1986 have been done entirely. This should not take much time but I
-(Cody) am bored with it for now and would rather do other more important things.
-This will likely not be updated until after it's done (and when I remember to
-remove it - I expect that when I go for it I'll do it in one sitting or maybe a
-few sittings with a few brief breaks).
+- Remove addresses from older winning entries but (if known) keep country code
+and if known add it and the name to the respective JSON file in the
+[author](/author) subdirectory. As of half past 4 Pacific time on 22 April 2023
+only the years through 1986 have been done entirely. This should not take much
+time but I (Cody) am bored with it for now and would rather do other more
+important things.  This will likely not be updated until after it's done (and
+when I remember to remove it - I expect that when I go for it I'll do it in one
+sitting or maybe a few sittings with a few brief breaks).
 
 - NOTE: do this AFTER everything else is done! Verify that
 [2004/gavin](2004/gavin/)'s [img/fs.tar](2004/gavin/img/fs.tar) contains the
@@ -137,18 +134,13 @@ entries in the respective README.md files. This cannot be done without examining
 each because some names are mentioned by the author. For instance I (Cody) can
 think of at least three where I have been mentioned explicitly by the author:
 one in 2018, one in 2019 and one in 2020.
+    * NOTE: this _appears_ to be done as of some time back from this writing (02
+    November 2023). This is being verified as each README.md file is checked.
 
 - For the YYYY/README.md files where it refers to emailing the judges fixes
 instead change it to make pull requests. See the
 [1995/README.md](1995/README.md) file for example.
 
 - Check the YYYY/README.md files for other things besides the GitHub pull
-requests rather thane mailing judges. This can be done on the final pass of the
+requests rather than emailing judges. This can be done on the final pass of the
 files.
-
-- When adding to the FAQ about `make` rules `make sure` :-) that this text is
-added:
->    The Makefile default assumes `cc` which might be a gcc-based compiler, or a
-    clang-based compiler, or some other compiler. Only by forcing `CC=clang` or
-    `CC=gcc` will one invoke a specific compiler. Even so different versions or
-    compilers might do different things, have different defects or other issues.

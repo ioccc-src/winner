@@ -1,8 +1,8 @@
 <HTML>
 <BODY TEXT="#000000">
 
-<center><img alt="IOCCC" SRC="png/ioccc.png"></center><br>
-<center><font size="6"><I>The International Obfuscated C Code Contest </I></font></center><br>
+<center><img alt="IOCCC" SRC="png/ioccc.png"></center>\
+<center><font size="6"><I>The International Obfuscated C Code Contest </I></font></center>\
 
 <P>
 <CENTER>
@@ -17,22 +17,26 @@
 <A HREF="years.html">Winning entries</A>
 <BR><BR>
 <A HREF="bugs.md">Known Bugs &amp; (Mis)features</A> |
-<A HREF="how-to-bugfix.md">How to fix an IOCCC winner</A> |
+<A HREF="how-to-help.md">How to help</A> |
 <A HREF="thanks-for-fixes.md">Thanks for the fixes</A> |
 <A HREF="www-history.md">A bit of web site history</A>
 </CENTER>
 
 <HR>
 
+
 # The IOCCC FAQ
+
 
 ## Q: How many entries do you receive each year?
 
 By tradition, we do not say.
 
+
 ## Q: How many judging rounds do you have?
 
 Are you trying to trick us? We will not say that either.
+
 
 ## Q: What are the general Makefile rules used in order to clean and build entries for use?
 
@@ -80,6 +84,13 @@ clobber` depends on `clean` so running `make clobber` will invoke `make clean`.
 
 Are there any other rules? You tell us!
 
+NOTE about the above rules: the Makefile default assumes `cc` which might be a
+gcc-based compiler, or a clang-based compiler, or some other compiler. Only by
+forcing `CC=clang` or `CC=gcc` will one invoke a specific compiler to, say,
+enable or disable additional warnings or flags. Even so different versions or
+compilers might do different things, have different defects or other issues.
+
+
 ## Q: How come some entries have code that is incongruent with what the author(s) wrote about the entry?
 
 It is very likely in this case that the code was fixed to work for modern
@@ -87,6 +98,7 @@ systems as part of the reworking of the website. If you have this problem in
 some entries you should look at the original code as in `winner.orig.c` or
 `prog.orig.c`. Sometimes the original is in an alt version like `winner.alt.c`
 or `prog.alt.c`.
+
 
 ## Q: Why have some entries that originally used `gets()` been modified to use `fgets()`? Doesn't this tamper with the entry too much?
 
@@ -124,6 +136,7 @@ NOTE: due to 'compatibility reasons' `fgets()` stores the newline and `gets()`
 does not. We're not sure how this is compatibility but either way it can cause a
 problem and it is this that has complicated most of the fixes though again some
 can look almost identical.
+
 
 ## Q: How can I easily see what was changed in order to get an entry to work in modern systems?
 
@@ -210,6 +223,7 @@ make diff_alt_prog
 
 and you'll see a single line changed and very simply.
 
+
 ### Tip: if you have `colordiff` installed it's a lot easier to see the differences
 
 To use these rules but provide a different `diff`, for instance `colordiff`,
@@ -222,6 +236,7 @@ make DIFF=colordiff diff_alt_prog # for alt to prog diff
 
 Obviously if you want to view the alt code or the orig code you can just open
 the files as described above.
+
 
 ## Q: Sometimes the author's or authors' remarks do not match the source! Why and what can I do about it?
 
@@ -276,6 +291,7 @@ that works for modern systems but one can view the original code in the
 
 Some entries should not have modern system versions replaced. See below.
 
+
 ## Q: I can't get some entries to work in 64-bit systems that don't support 32-bit!
 
 Unfortunately some older entries are non-portable and require 32-bit support of
@@ -289,6 +305,7 @@ possible that some were missed. These entries are very likely in the
 for 64-bit systems. Many were fixed to work with modern systems but some are
 supposed to only work with 32-bit systems so any updated version of these
 entries should be an alternate version.
+
 
 ## Q: Under macOS I can't compile some entries and/or they don't work right. Why?
 
@@ -318,6 +335,7 @@ At the same time some entries are not designed to work with clang. There might
 be alternate code added at some point but as above this depends on free time and
 other things that have to be done plus remembering to do it.
 
+
 ## Q: What is `cb` that is mentioned in some of the older entries?
 
 This was a C beautifier for Unix, both AT&T and Berkeley, but it seems to no
@@ -340,11 +358,13 @@ In macOS Mountain Lion and beyond to run X11 applications one needs to install
 [XQuartz](https://www.xquartz.org). This will let you compile, link and run X11
 applications.
 
+
 ## Q: How do I compile and run entries that use SDL1/SDL2 ?
 
 This depends on your operating system but below are instructions for linux and
 macOS with alternative methods for macOS and different package managers with
 linux.
+
 
 ### Red Hat based linux
 
@@ -369,6 +389,7 @@ export SDL2_INCLUDE_ROOT=/usr
 
 but this might not be necessary in more modern days especially as we use
 `sdl-config` and `sdl2-config` which should find the proper paths.
+
 
 ### Debian based linux
 
@@ -403,11 +424,13 @@ feature of the package manager to determine which packages you need to install.
 Note that you might have to install both the library and the developmental
 packages: one for compiling and one for linking / running.
 
+
 ### macOS
 
 If you're using macOS there are at least three ways to obtain it. You can
 download it from the SDL website and install the package. That will not
 work well for the IOCCC but these will:
+
 
 #### MacPorts
 
@@ -418,6 +441,7 @@ If you haven't already, install
 ```sh
 sudo port install libsdl libsdl2
 ```
+
 
 #### Homebrew
 
@@ -430,12 +454,13 @@ brew install sdl2 sdl12-compat
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
-##### NOTE: there might be extra SDL packages required
+### NOTE: there might be extra SDL packages required
 
 In the case that some entries do not work even with SDL1/SDL2 installed it might
 be that you need additional SDL libraries. See the entry's README.md for
 details. If something is not noted you're welcome to report it as an issue or
 fix it and make a new pull request.
+
 
 ## Q: How do I compile and run entries that use sound in macOS?
 
@@ -448,6 +473,7 @@ you can use either MacPorts or Homebrew. See below for instructions for each.
 Usually the README.md file will explain how to use it in linux so we do not
 include this here, at least for now.
 
+
 ### MacPorts
 
 If you haven't already, install
@@ -457,6 +483,7 @@ If you haven't already, install
 ```sh
 sudo port install sox
 ```
+
 
 ### Homebrew
 
@@ -469,6 +496,7 @@ brew install sox
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
+
 ## Q: How did entry XYZZY win? It breaks rule 2!
 
 As entries have been fixed it is entirely possible that some of the entries no
@@ -478,6 +506,7 @@ and/or number of rows have also changed.
 For the original version see the [/archive](/archive) directory where you can
 find all the original winning entries. In some cases the `winner.alt.c` is the
 original source code.
+
 
 ## Q: I found a bug in a previous winner, what should I do?
 
@@ -498,6 +527,7 @@ More generally please see the file [how-to-bugfix.md](/how-to-bugfix.md). Note
 that this file is not a tutorial on how to fix X, Y and Z problems but rather
 what to do to get the fix in.
 
+
 ## Q: Do you have a list of entries with known problems and/or features that might appear to be bugs but are not?
 
 Yes! Please see [bugs.md](/bugs.md) for a list of known bugs and/or issues of a
@@ -506,6 +536,7 @@ variety of kinds.
 Note that just because an entry is not in the bugs file does not mean there is
 not an issue and note that some issues are simply missing files, dead URL(s) or
 something like that.
+
 
 ## Q: Are there types of entries that are submitted so frequently that the judges get tired of them?
 
@@ -518,6 +549,7 @@ The [guidelines](guidelines.html) say:
 We like variety. However too often we see (please look at the winning examples
 given to be aware of the level of the competition):
 
+
 ### maze generator
 - [1985/shapiro](years.html#1985_shapiro)
 
@@ -529,13 +561,15 @@ given to be aware of the level of the competition):
 
 - [1998/bas1](years.html#1998_bas1)
 
-### tic-tac-toe game
+
+### tic-tac-toe/noughts and crosses/Xs and Os game
 
 - [1991/westley](years.html#1991_westley)
 
 - [1996/jonth](years.html#1996_jonth)
 
 - [2020/carlini](years.html#2020_carlini)
+
 
 ### solitaire/Othello game
 
@@ -561,6 +595,7 @@ given to be aware of the level of the competition):
 _As you can see, just a list of primes (let alone small primes) does not cut it
 anymore._
 
+
 ### self reproducing program
 
 - [1990/scjones](years.html#1990_scjones)
@@ -568,6 +603,7 @@ anymore._
 - [1994/smr](years.html#1994_smr) - _do not claim your program is the smallest one without seeing this!
 
 - [2000/dhyang](years.html#2000_dhyang) - _unless you beat this one, your chances are slim_
+
 
 ### entries that just print "Hello, world!"
 
@@ -587,6 +623,7 @@ anymore._
 
 _**...it's so 20th century...**_
 
+
 ### entries that use some complex state machine/table to print something
 
 - [1988/isaak](years.html#1988_isaak)
@@ -596,6 +633,7 @@ _**...it's so 20th century...**_
 - [2018/ciura](years.html#2018_ciura)
 
 - [2018/giles](years.html#2018_giles)
+
 
 ### rot13
 
@@ -607,6 +645,7 @@ _**...it's so 20th century...**_
 
 - [1991/fine](years.html#1991_fine)
 
+
 ### **pi** or **e** computation
 
 - [1986/august](years.html#1986_august)
@@ -616,6 +655,7 @@ _**...it's so 20th century...**_
 - [1988/westley](years.html#1988_westley)
 
 - [1989/roemer](years.html#1989_roemer)
+
 
 #### Hints on overused themes
 
@@ -631,9 +671,11 @@ explain near the beginning of your remarks why you are submitting a entry based
 on an 'overused theme' and why the judges should not simply toss it out as being
 boring.
 
+
 ## Q: What should I write in the 'remarks' (remarks.md) section of my entry, if anything at all?
 
 As much or as little as you wish.
+
 
 ### What helps:
 
@@ -646,6 +688,7 @@ As much or as little as you wish.
 - what are the limitations of your entry in respect of portability and/or input data
 
 - how it works (if you are really condescending)
+
 
 ### What does not help:
 
@@ -695,17 +738,20 @@ which you should update and submit, using the instructions above if necessary.
 
 There are none. There was no IOCCC in those years.
 
+
 ## Q: What are the .orig.c files in the directories in winning entries ?
 
 Due to the fact that the original code has sometimes had to change these files
 are the original winning entry or as close to as possible to the original that
 we can find.
 
+
 ## Q: Why don't you publish non-winners?
 
 Because the publication on the IOCCC site **_IS_**
 the award! Anyone is free to put their IOCCC hopefuls, lookalikes and/or
 non-winners on their web page for everyone to see.
+
 
 ## Q: How much time does it take to judge the contest?
 
@@ -734,14 +780,17 @@ If it can compile and run on Windows and/or Mac  (see
 even better. Being able to compile with other compilers like clang is also a
 good thing.
 
+
 ## Q: I would like to mirror the IOCCC web site. May I do so?
 
 We are not accepting mirror requests at this time, sorry.
+
 
 ## Q: I want to publish some parts of the IOCCC in an article, or book, or newsletter, or use then in class/instructional notes, or quote from the IOCCC. May I do so?
 
 Please ask the [IOCCC judges](/judges.html) first. Please send your request using the
 instructions on the [contacting the IOCCC Judges](/contact.html) page.
+
 
 ## Q: What are the grand prize / Best of Show winners?
 
@@ -790,6 +839,7 @@ from the judges, they used the following awards:
 These could be considered the 'best entry' for those years with 1 or
 more other entries that came in close behind.
 
+
 ## Q: I managed to get entry XYZZY from year 19xx to compile; now it fails to run!
 
 switch(19xx/XYZZY) {
@@ -833,6 +883,7 @@ break;
 compilers.
 
 }
+
 
 ## Q: How did the IOCCC get started?
 
@@ -922,10 +973,11 @@ for more details.
 <TD><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="/png/by-sa-3.0-88x31.png" /></a></TD>
 <TD><P>&copy; Copyright 1984-2020,
 [Leo Broukhis, Landon Curt Noll](/judges.html)
-- All rights reserved<br>
+- All rights reserved\
 This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
 <TD>&nbsp;<!--<a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
 </TR></TABLE>
+
 
 ## Q: Why do you sometimes use the first person plural?
 
@@ -962,6 +1014,7 @@ exaggeration](https://books.google.com/books?id=ms3tce7BgJsC&lpg=PA134&vq=%22the
 p.s. Here is an image of F. D. C. Willard:
 
 [F D C Willard](png/F.D.C.Willard.png)
+
 
 ## Q: Why do Makefiles use `-Weverything` with `clang`? Don't you know that its use is not recommended by clang developers?
 
