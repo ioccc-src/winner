@@ -1,9 +1,6 @@
 # Best Flow Control
 
 Mark Schnitzius
-ISX Corporation
-1280 West Peachtree St. Apt. 1507
-Atlanta, GA 30309
 US
 <http://computronium.org/ioccc.html>
 
@@ -29,29 +26,35 @@ For more detailed information see [1998 schnitzi in bugs.md](/bugs.md#1998-schni
 ## To use:
 
 ```sh
-./schnitzi 5 > sort.c
+./schnitzi n > sort.c
 make sort
+./sort
+# enter three numbers, space separated
+
+echo x y z | ./sort
 ```
+
+where `n` and `x`, `y` and `z` are numbers.
 
 
 ## Try:
 
 ```sh
-./schnitzi 3 > sort.c
-make sort
-echo 123 > data
-echo 234 >> data
-echo 413 >> data
-echo 134 >> data
-echo 324 >> data
-./sort < data
+./try.sh
 ```
 
-### INABIAF - it's not a bug it's a feature :-)
+What happens if at the command line you don't specify `n` numbers that the
+program expects? For instance try:
 
-NOTE: the larger the number given to the program the longer the output becomes
-and quite substantially so.  Doing `./schnitzi 9` will actually print 771999
-lines!
+```sh
+./schnitzi 5 > sort.c
+make sort
+
+# try running the next command four or five times:
+echo 2 5 3 1 | ./sort
+```
+
+Why does this happen?
 
 
 ## Judges' remarks:
@@ -81,9 +84,9 @@ the letter 'e'.
 
 The IOCCC has been no stranger to this concept.  Several winning entries from
 years past have accomplished interesting feats while completely avoiding the use
-of certain C constructs thought to be essential (e.g. 1988's
-[robison.c](//1988/robison/robison.c)).  If you have to ask why they would do it
-this way, then this contest just isn't for you.
+of certain C constructs thought to be essential (e.g.
+[1988/robison.c](/1988/robison/robison.c)).  If you have to ask why they would
+do it this way, then this contest just isn't for you.
 
 In continuing with this fine tradition, this program suggests to the ANSI
 committee some new practical simplifications for the C language.  For instance,

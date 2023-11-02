@@ -133,13 +133,18 @@ The problem was to do with the way that the `read(2)` function was redefined.
 With macOS the second arg needs to be a `void *` and this also necessitated some
 casts to `int` (on the second arg) in the call to `write(2)` (in `read()`).
 
+Later Cody corrected the mistake where the `"hello, world!"` string was on one
+line rather than two lines which the author told us (Landon) that they liked.
+Thus now it is like the original where the first line ends with `"hell\` and
+the second line starts with `o, world!\n"`.
+
 By request, the original code is provided as
 [anonymous.alt.c](1984/anonymous/anonymous.alt.c) so that one can look at it and
 the famous tattoo:
 
 ![1984-anonymous-tattoo.jpg](1984/anonymous/1984-anonymous-tattoo.jpg)
 
-which was done in 2005 by [Thomas
+...which was done in 2005 by [Thomas
 Scovell](https://web.archive.org/web/20070120220721/https://thomasscovell.com/tattoo.php).
 
 
@@ -1570,6 +1575,22 @@ segfault. This showed itself in two parts which required two fixes, one for
 linux and further changes for macOS. He also fixed a segfault (after printing
 garbage) when the arg specified evaluated to 0. It was decided that these
 segfault fixes should be made because the program is so beautiful.
+
+Later on Cody improved the fixes by checking that the arg is a number `>0 &&
+<27` as that was noted by the author as a requirement and again since it's such
+a beautiful program it is worth it, especially as the larger the number the
+larger the resulting program becomes. It can be gigabytes in length if it
+doesn't crash. At this point since the author stated it has no `while`,
+`do...while`, `for`, `if/else`, `switch`, `?:` Cody removed the if statement by
+doing:
+
+```c
+((V[1]&&((atoi(V[1])>0&&atoi(V[1])<27)||(exit(1),1))));
+```
+
+Cody also added the [try.sh](1998/schnitzi/try.sh) script to help users try the
+commands (as well as some added by him) we recommended.
+
 
 ## [1998/schweikh1](1998/schweikh1/schweikh1.c) ([README.md](1998/schweikh1/README.md]))
 

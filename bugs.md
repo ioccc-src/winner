@@ -469,7 +469,7 @@ Cody added and fixed the [gentab.c](1984/mullender/gentab.c) which is from the
 author's (or one of them, Mullender) remarks found by Cody. Cody fixed this to
 compile and work (as best as he can determine: he has no VAX-11 or PDP-11 or
 emulator to test it) but running the code on the binary itself produces a
-`short[]` that can compile in modern systems.
+`short[]` that can compile in modern systems though it'll not work.
 
 
 # 1985
@@ -1138,37 +1138,21 @@ See above entry [1998/dlowe](1998/dlowe/dlowe.c).
 ### Source code: [1998/schnitzi/schnitzi.c](1998/schnitzi/schnitzi.c)
 ### Information: [1998/schnitzi/README.md](1998/schnitzi/README.md)
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to work for
-modern systems but he notes a couple compile warnings to ignore.
-
-First if you get the warning:
-
-	warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-	   11 | void  g(){ O=j; printf(_); }
-	      |                 ^~~~~~
-
-
-please do NOT change it! Doing so will break the generated output.
-
-Another warning that was introduced but should be ignored (it's required) is:
-
-
-	warning: assignment to 'char *' from incompatible pointer type 'char **' [-Wincompatible-pointer-types]
-	   55 | main(int v,char **c){ O=r_; _d=c;
-	      |                               ^
-
-Please DO NOT change this either.
-
-If there are any other warnings triggered by your compiler please DO NOT fix
-those either!
-
-Another important note is that as the number passed into the program gets bigger
-the number of lines of output gets substantially larger. For instance:
+A point worth considering is that as the number passed into the program gets
+bigger the number of lines of output gets substantially larger. For instance:
 
 ```sh
 $ ./schnitzi 9|wc -l
   771999
 ```
+
+The larger the number the bigger the file can become too, even becoming
+gigabytes in size. The range is checked for `>0 && <27` as not having this can
+be a problem including a segfault.
+
+If you use the generated program and do not give enough numbers in input
+something funny will happen, very possibly with different results per run. This
+is in the README.md file as something to try and ponder.
 
 
 # 1999
