@@ -133,13 +133,18 @@ The problem was to do with the way that the `read(2)` function was redefined.
 With macOS the second arg needs to be a `void *` and this also necessitated some
 casts to `int` (on the second arg) in the call to `write(2)` (in `read()`).
 
+Later Cody corrected the mistake where the `"hello, world!"` string was on one
+line rather than two lines which the author told us (Landon) that they liked.
+Thus now it is like the original where the first line ends with `"hell\` and
+the second line starts with `o, world!\n"`.
+
 By request, the original code is provided as
 [anonymous.alt.c](1984/anonymous/anonymous.alt.c) so that one can look at it and
 the famous tattoo:
 
 ![1984-anonymous-tattoo.jpg](1984/anonymous/1984-anonymous-tattoo.jpg)
 
-which was done in 2005 by [Thomas
+...which was done in 2005 by [Thomas
 Scovell](https://web.archive.org/web/20070120220721/https://thomasscovell.com/tattoo.php).
 
 

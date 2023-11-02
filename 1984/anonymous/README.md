@@ -19,7 +19,7 @@ make all
 The original version of this entry was added, by request,
 in order to show the code that was turned into the
 [tattoo](https://web.archive.org/web/20070120220721/https://thomasscovell.com/tattoo.php),
-as the alternate code. See below in the tattoo side-by-side with the code.
+as the alternate code. See below for the tattoo side-by-side with the code.
 
 ### Alternate build:
 
@@ -41,8 +41,8 @@ The author was too embarrassed that they could write such trash, so I
 promised to protect their identity.  I will say that the author of this
 program has a well known connection with the C programming language.
 
-This program is a unique variation on the age old "Hello, world"
-program.  What reads like a read may be written like a write!
+This program is a unique variation on the age old "hello, world!" program.  What
+reads like a read may be written like a write!
 
 In 2005 someone by the name of Thomas Scovell got a tattoo of this entry. See
 his [web
@@ -77,12 +77,11 @@ Landon Curt Noll, the one who told the author about the tattoo, wrote back:
 
 ### Regrets:
 
-Landon Curt Noll wrote that the author, if they had to do it over again, regrets not
-making the program a one-liner and not moving the `int i` into an arg of main
-(so that the line would have started with main). On the other hand the author
-likes the "two line look" and the way `hell o` was split. :-) And they like the
-fact that it ends in a smily face: `;}`
-
+Landon Curt Noll wrote that the author regrets not making the program a
+one-liner and not moving the `int i` into an arg of main (so that the line would
+have started with main). On the other hand the author likes the "two line look"
+and the way `hell o` was split. :-) And they like the fact that it ends in a
+smily face: `;}`.
 
 ## Copyright and CC BY-SA 4.0 License:
 
