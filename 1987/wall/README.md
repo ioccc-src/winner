@@ -40,7 +40,7 @@ m*m
 
 ```
 
-### Also try:
+You may also wish to try:
 
 ```sh
 ./wall | bc

@@ -42,7 +42,8 @@ To see if your compiler has the problems noted:
 make alt
 ```
 
-### Alternate run:
+
+### Alternate try:
 
 ```sh
 ./marshall.alt

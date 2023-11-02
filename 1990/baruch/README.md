@@ -64,6 +64,7 @@ This program reads an integer between 4 and 99 from the `stdin`.
 NOTE: The original program did not have a newline at the end of the file.  We
 added a final newline to the file to make unpacking easy.
 
+
 ## Authors' remarks:
 
 The goal of this work was to write a program that solves the classic [n-queens

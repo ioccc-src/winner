@@ -62,6 +62,7 @@ explain this further.
 We are pleased that this entry has helped bring new 'life' into
 the contest.
 
+
 ## Authors' remarks:
 
 The program is a fully-functional X client.  It talks directly to
