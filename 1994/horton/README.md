@@ -25,7 +25,7 @@ make all
 ./horton 3 2 1 0
 ```
 
-### Alternative code:
+### Alternate code:
 
 This confuses cb greatly. See [horton.alt.c](horton.alt.c) for an unobfuscated/enhanced
 version. To run this alternate version:

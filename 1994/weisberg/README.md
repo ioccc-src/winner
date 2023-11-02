@@ -21,7 +21,7 @@ make all
 ./weisberg
 ```
 
-### Alternative code:
+### Alternate code:
 
 If you liked what you saw from the above program, and happen to
 have some 512 Megabytes of virtual memory lying around with to do,

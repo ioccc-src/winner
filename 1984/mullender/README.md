@@ -401,8 +401,8 @@ extracted the machine code from the object file.
 compiled in modern systems.
 
 ```c
-#include <stdio.h>
-#include <a.out.h>
+\#include <stdio.h>
+\#include <a.out.h>
 
 main(argc, argv) char **argv;
 {
