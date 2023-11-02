@@ -964,6 +964,7 @@
 1994,schnitzi,10,index.html,readme2index,null,html,html,true,browser,click here first
 1994,schnitzi,20,schnitzi.c,null,main,c,c,true,github,winning source
 1994,schnitzi,30,Makefile,null,null,makefile,null,true,github,Makefile
+1994,schnitzi,40,schnitzi.alt2.c,null,alt,c,c,true,github,alternate alternative source
 1994,schnitzi,40,schnitzi.alt.c,null,alt,c,c,true,github,alternative source
 1994,schnitzi,50,schnitzi.orig.c,null,orig,c,c,true,github,original source
 1994,schnitzi,300,1994_schnitzi.tar.bz2,mkwinnertbz2,null,tbz2,bz2,true,download,download winning source
@@ -1353,6 +1354,7 @@
 1998,schnitzi,20,schnitzi.c,null,main,c,c,true,github,winning source
 1998,schnitzi,30,Makefile,null,null,makefile,null,true,github,Makefile
 1998,schnitzi,50,schnitzi.orig.c,null,orig,c,c,true,github,original source
+1998,schnitzi,100,try.sh,null,null,shellscript,sh,true,github,how to run
 1998,schnitzi,300,1998_schnitzi.tar.bz2,mkwinnertbz2,null,tbz2,bz2,true,download,download winning source
 1998,schnitzi,900,.inventory.html,winner2nventory,null,html,html,true,browser,full inventory of all winner files
 1998,schweikh1,null,README.md,null,null,markdown,md,false,null,markdown source for index.html

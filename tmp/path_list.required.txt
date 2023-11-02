@@ -583,6 +583,7 @@
 1994/schnitzi/Makefile
 1994/schnitzi/README.md
 1994/schnitzi/schnitzi.alt.c
+1994/schnitzi/schnitzi.alt2.c
 1994/schnitzi/schnitzi.c
 1994/schnitzi/schnitzi.orig.c
 1994/shapiro/.gitignore
@@ -818,6 +819,7 @@
 1998/schnitzi/README.md
 1998/schnitzi/schnitzi.c
 1998/schnitzi/schnitzi.orig.c
+1998/schnitzi/try.sh
 1998/schweikh1/.gitignore
 1998/schweikh1/Makefile
 1998/schweikh1/README.md
