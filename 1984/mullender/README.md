@@ -70,7 +70,8 @@ which is probably not as uncommon as you think :-).
 # wait for 500 microseconds and see what happens
 ```
 
-What happens if you hit enter after it reaches the end of the line? Why?
+What happens if you hit enter after it reaches the end of the line? Why? What
+happens after some time of waiting?
 
 
 ## Original code:
@@ -165,8 +166,8 @@ make gentab
 ./gentab gentab > g.c
 ```
 
-NOTE: it is highly unlikely that you will be able to compile and run the output
-of `gentab` but it should at least compile.
+NOTE: it is highly unlikely that you will be able to run the output of `gentab`
+but it should at least compile.
 
 
 ## Author's remarks:

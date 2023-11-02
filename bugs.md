@@ -469,7 +469,7 @@ Cody added and fixed the [gentab.c](1984/mullender/gentab.c) which is from the
 author's (or one of them, Mullender) remarks found by Cody. Cody fixed this to
 compile and work (as best as he can determine: he has no VAX-11 or PDP-11 or
 emulator to test it) but running the code on the binary itself produces a
-`short[]` that can compile in modern systems.
+`short[]` that can compile in modern systems though it'll not work.
 
 
 # 1985
