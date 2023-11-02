@@ -51,8 +51,8 @@ The author provided a version for the US which we added. To build:
 make alt
 ```
 
-### Alternate use:
 
+### Alternate use:
 
 ```sh
 ./westley.alt lat long

@@ -51,6 +51,7 @@ question. YMMV.
 make alt
 ```
 
+
 ### Alternate use:
 
 Use `baruch.alt` as you would `baruch`.

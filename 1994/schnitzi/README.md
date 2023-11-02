@@ -65,6 +65,7 @@ buffer size. This is due to a comment which is explained in more detail in
 make alt
 ```
 
+
 ### Alternate use:
 
 Use `schnitzi.alt` and `schnitzi.alt2` as you would `schnitzi` above except that
