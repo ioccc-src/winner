@@ -17,7 +17,8 @@ make all
 ./wall
 ```
 
-### Alternate code:
+
+## Alternate code:
 
 If you have an old compiler or a compiler that supports `-traditional-cpp` you
 might enjoy looking at the original source in [wall.alt.c](wall.alt.c).

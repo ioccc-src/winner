@@ -30,6 +30,7 @@ make all
 
 Mode may be a value from 0 to 12.
 
+
 ## Alternate code:
 
 The author has provided us a spoiler version:
