@@ -32,6 +32,7 @@ make
 ./prog unwinnable.txt
 ```
 
+
 ## Alternate code:
 
 An alternate version of this entry, [prog.alt.c](prog.alt.c), is provided.  This

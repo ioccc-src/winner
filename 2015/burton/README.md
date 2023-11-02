@@ -52,6 +52,7 @@ grep '[0-9]' prog.c
 man ./calc.1
 ```
 
+
 ## Alternate code:
 
 An alternate version of this entry, `prog.alt.c`, is provided.

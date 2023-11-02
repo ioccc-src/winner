@@ -32,6 +32,7 @@ DRAFT=1 ./prog < prog.c
 ./prog < prog.c
 ```
 
+
 ## Alternate code:
 
 An alternate version of this entry, prog.alt.c, is provided.  This alternate

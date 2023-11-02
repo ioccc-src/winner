@@ -49,6 +49,7 @@ Fourth:
 Sorry, this is third!
 ```
 
+
 ## Alternate code:
 
 An alternate version of this entry, [buzzard.2.alt.c](buzzard.2.alt.c), is

@@ -38,6 +38,7 @@ by chance or is killed.
 ./ovdluhe < README.md
 ```
 
+
 ## Alternate code:
 
 The author suggested that one varies the definition of `P` from 2 through 10. As
@@ -45,7 +46,6 @@ it's a `#define` it's easy to set up.
 
 
 ### Alternate build:
-
 
 ```sh
 make CFLAGS="-DP=9" clobber alt

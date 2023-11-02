@@ -21,6 +21,7 @@ code](#alternate-code) below.
 ./isaak
 ```
 
+
 ## Alternate code:
 
 The original version of this code is in [isaak.alt.c](isaak.alt.c).
@@ -38,6 +39,7 @@ using that macro for `#define`.
 
 This version will not likely work on modern systems if you can even get it to
 compile.
+
 
 ### Alternate build:
 

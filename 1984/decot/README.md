@@ -31,11 +31,13 @@ For more detailed information see [1984 decot in bugs.md](/bugs.md#1984-decot).
 ./decot
 ```
 
+
 ## Alternate code:
 
 This alternate code, the original, requires a compiler that supports
 `-traditional-cpp` or an old enough compiler. If you have such a compiler you
 can use this version.
+
 
 ### Alternate build:
 

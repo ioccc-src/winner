@@ -25,6 +25,7 @@ and try:
 rm -f spinellis ; cc spinellis.c -o spinellis < input2.txt && ./spinellis
 ```
 
+
 ## Alternate code:
 
 For clang try the alt code like:

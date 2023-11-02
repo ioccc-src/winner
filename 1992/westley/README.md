@@ -44,8 +44,8 @@ show correctly!
 
 The author provided a version for the US which we added. To build:
 
-### Alternate build:
 
+### Alternate build:
 
 ```sh
 make alt

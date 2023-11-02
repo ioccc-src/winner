@@ -27,6 +27,7 @@ make
 ./toledo a b
 ```
 
+
 ## Alternate code:
 
 Two alternate versions of this entry, [toledo2.c](toledo2.c) and

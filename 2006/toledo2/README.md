@@ -58,10 +58,12 @@ RUN
 
 To end the program hit ctrl-z.
 
+
 ## Alternate code:
 
 This version, as noted, should work for DOS/Windows. It uses non-standard
 functions in place of `read(2)` and `write(2)`.
+
 
 ### Alternate build:
 

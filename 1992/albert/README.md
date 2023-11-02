@@ -27,6 +27,7 @@ make all
 ./albert 1234567890123456789
 ```
 
+
 ## Alternate code:
 
 An alternate version of this entry, [albert.alt.c](albert.alt.c), is provided.

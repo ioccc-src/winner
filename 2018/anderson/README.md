@@ -25,6 +25,7 @@ make
 ./prog < README.md
 ```
 
+
 ## Alternate code:
 
 An alternate version of this entry, [prog.alt.c](prog.alt.c), is provided.

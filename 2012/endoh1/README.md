@@ -34,7 +34,6 @@ Also try using `endoh1_color` as you would `endoh1` above. `make` will compile
 this by default.
 
 
-
 ## Alternate code:
 
 An alternate version of this entry, `endoh1.alt.c`, is provided.

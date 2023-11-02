@@ -40,6 +40,7 @@ make clobber all LEVEL=6
 ./vanschnitz
 ```
 
+
 ## Alternate code:
 
 The authors provided a spoiler version of the program. Originally uuencoded we

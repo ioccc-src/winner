@@ -27,21 +27,22 @@ code](#alternate-code) section below.
 ./litmaath eschew obfuscation
 ```
 
-## Alternate code:
 
+## Alternate code:
 
 This alternate code, added to help understand the entry and for fun, is code
 that we suggested at the time of the entry publication but which we never put in
 a file.
 
-### Alternate build:
 
+### Alternate build:
 
 ```sh
 make alt
 ```
 
 Use `litmaath.alt` as you would `litmaath` above.
+
 
 ### Alternate try:
 

@@ -31,6 +31,7 @@ To see what it would have looked like without the size restrictions:
 # enter a level and start playing as described below
 ```
 
+
 ## Alternate code:
 
 If you have an old enough compiler you might wish to try using it. To use:

@@ -31,6 +31,7 @@ try [incorrect.c](incorrect.c) and the program itself.
 NOTE: it prints an error and exits on the first nesting error so it will not
 detect multiple issues!
 
+
 ## Alternate code:
 
 An alternate version of this entry, [zeitak.alt.c](zeitak.alt.c), is provided.

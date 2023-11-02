@@ -47,6 +47,7 @@ cp war-and-peace.txt nuked.tmp
 ./avgtime.sh 100 ./prog war-and-peace.txt nuked.tmp
 ```
 
+
 ## Alternate code:
 
 An alternate version of this entry, `prog.alt.c`, is provided.

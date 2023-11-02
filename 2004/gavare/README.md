@@ -25,6 +25,7 @@ make
 ./gavare > ioccc_ray.ppm
 ```
 
+
 ## Alternate code:
 
 The author provided [on their web page for the

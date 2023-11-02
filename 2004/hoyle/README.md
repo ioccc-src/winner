@@ -27,6 +27,7 @@ make
 ./hoyle 2 0 1 0 -0.001
 ```
 
+
 ## Alternate code:
 
 An alternate version of this entry, [hoyle.alt.c](hoyle.alt.c), is provided.

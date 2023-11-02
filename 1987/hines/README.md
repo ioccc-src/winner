@@ -24,6 +24,7 @@ make all
 ./hines hines.c
 ```
 
+
 ## Alternate code:
 
 An alternate version of this entry is in [hines.alt.c](hines.alt.c). With older

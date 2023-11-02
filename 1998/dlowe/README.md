@@ -41,6 +41,7 @@ For more detailed information see [1998 dlowe in bugs.md](/bugs.md#1998-dlowe).
 
 Why is there different output?
 
+
 ## Alternate code:
 
 NOTE: The original entry was just a text based pootifier.  To build

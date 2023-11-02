@@ -24,12 +24,14 @@ if nothing else.
 ./marshall
 ```
 
+
 ## Alternate code:
 
 Due to the different [conflicting problems](compilers.md) with gcc and clang, we
 instead offer the problematic code as an alternate version whereas
 [marshall.c](marshall.c) has both the infinite loop and the complicated arg to
 `_exit()` commented out, changing the value passed into `_exit()` to `1`.
+
 
 ### Alternate build:
 

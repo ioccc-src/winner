@@ -33,6 +33,7 @@ echo 3 | ./baruch
 
 Why is there no output?
 
+
 ## Alternate code:
 
 This alternate code is for the [very few](https://en.wikipedia.org/wiki/0)
@@ -42,6 +43,7 @@ Turbo-C or MSC, the code is based on the authors' remarks except that the `"
 #Q"` string was not changed as that showed worse looking output instead of
 improved output though admittedly we have no way to test the compilers in
 question. YMMV.
+
 
 ### Alternate build:
 

@@ -35,6 +35,7 @@ echo "full spelling of an English cardinal numeral less than a quadrillion" | ./
 How does it have no `u` or `o` in a string in the source code and yet it gets
 `uno` right?
 
+
 ## Alternate code:
 
 This alternate code fixes the program that would throw off those who know German
@@ -44,6 +45,7 @@ German. Thus there is the alternate version instead which fixes a problem for
 Germans that causes other problems for Germans so if you're German you'll just
 have to deal with it :-) It is, however, good as you can appreciate the entry
 even more.
+
 
 ### Alternate build:
 
@@ -58,8 +60,8 @@ echo vier | ./kang.alt
 echo uno | ./kang.alt
 ```
 
-### Alternate try:
 
+### Alternate try:
 
 ```sh
 ./de.alt.sh # German 0 through 13 both with and without umlaut

@@ -20,6 +20,7 @@ out. See [alternate code](#alternate-code) below for more details.
 ./paul
 ```
 
+
 ## Alternate code:
 
 This version was described by the author like:
@@ -29,6 +30,7 @@ trace subroutine, but I felt it was important for understanding
 the program.  Besides it is fun to watch the tape zooming back
 and forth as the program runs.  A much better debugger or trace
 could easily be added.
+
 
 ### Alternate build:
 

@@ -26,6 +26,7 @@ make
 # And watch closely for 15-20 seconds
 ```
 
+
 ## Alternate code:
 
 An alternate version of this entry, `prog.alt.c`, is provided.  This alternate code uses Unicode letters.

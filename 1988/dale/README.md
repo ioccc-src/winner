@@ -39,6 +39,7 @@ behaviour?
 ./dale "$(printf "the following files exist in this directory:\n%s\n" *)"
 ```
 
+
 ## Alternate code:
 
 If you have an old enough compiler you can try the original version in

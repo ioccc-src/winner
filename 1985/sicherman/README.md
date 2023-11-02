@@ -32,14 +32,15 @@ echo IOCCC | ./sicherman
 ./sicherman < sicherman.c | ./sicherman
 ```
 
+
 ## Alternate code:
 
 This alternate version, which is the original entry, requires either an old
 enough compiler or a compiler that supports `-traditional-cpp`. If you have such
 a compiler you can try this version.
 
-### Alternate build:
 
+### Alternate build:
 
 ```sh
 make alt
@@ -51,8 +52,8 @@ make alt
 ./sicherman.alt < file
 ```
 
-### Alternate try:
 
+### Alternate try:
 
 ```sh
 ./sicherman.alt < README.md | ./sicherman.alt

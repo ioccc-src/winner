@@ -33,6 +33,7 @@ The number should be greater than 0.
 ./westley 5
 ```
 
+
 ## Alternate code:
 
 If you have an old enough compiler try and to see how C has changed over the years:

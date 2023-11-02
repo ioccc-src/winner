@@ -28,6 +28,7 @@ echo IOCCC | ./prog
 ./prog < prog.x86_64.asm
 ```
 
+
 ## Alternate code:
 
 An even smaller alternate version of this entry, prog.alt.c, is provided.  This code does not contain any headers, nor any workaround for WIN32 based platforms.

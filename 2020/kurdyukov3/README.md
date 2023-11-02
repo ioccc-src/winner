@@ -31,6 +31,7 @@ echo International Obfuscated C Code Contest | ./prog
 ./prog < input.txt
 ```
 
+
 ## Alternate code:
 
 There is an alternate version of this code in `prog.alt.c` where the main code is a macro.

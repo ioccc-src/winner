@@ -44,6 +44,7 @@ echo 'Want to hear me beep?' | ./prog > audio_file.raw
 echo 'No. I want chocolate!' | ./prog | mplayer -demuxer rawaudio -
 ```
 
+
 ## Alternate code:
 
 The alternate code, [prog.alt.c](prog.alt.c), is based on the author's

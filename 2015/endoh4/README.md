@@ -31,6 +31,7 @@ make
 ./prog $(< Makefile)
 ```
 
+
 ## Alternate code:
 
 An alternate version of this entry, `prog.alt.c`, is provided.\

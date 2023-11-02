@@ -28,6 +28,7 @@ how to use it.
 NOTE: a limitation with the entry was that it required `gcc` but this limitation
 has been removed to make it more portable, requiring only `cc`.
 
+
 ## Alternate code:
 
 As noted above this entry will not work as it stands for macOS and there are
