@@ -829,8 +829,8 @@ source file in that form. Why? Because anyone familiar with the Weasel program
 won't recognise the string and put together what it is by looking at the source
 code.
 
-In case you wondered deciphering #5 won't decipher #7 (neither will deciphering
-\#7 help you decipher #5).
+In case you wondered deciphering #5 won't decipher #7 (neither will
+deciphering #7 help you decipher #5).
 
 ### <a name="beauty">Beauty</a>
 

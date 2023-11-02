@@ -65,8 +65,7 @@ which is probably not as uncommon as you think :-).
 
 ./mullender.alt 100000
 
-./mullender.alt2 500
-\# wait for 500 microseconds and see what happens
+./mullender.alt2 500	# wait for 500 microseconds and see what happens
 ```
 
 What happens if you hit enter after it reaches the end of the line? Why? What
