@@ -1541,6 +1541,8 @@ Cody fixed this to not segfault under macOS. The problem was that the function
 pointer `w`, which points to `XCreateWindow()`, did not specify the parameters of
 the function in the pointer assignment.
 
+NOTE: if there is no X server running this program will still crash.
+
 
 ## [1996/westley](1996/westley/westley.c) ([README.md](1996/westley/README.md]))
 
@@ -1589,7 +1591,7 @@ doing:
 ```
 
 Cody also added the [try.sh](1998/schnitzi/try.sh) script to help users try the
-commands (as well as some added by him) we recommended.
+commands that we recommended as well as some added by him.
 
 
 ## [1998/schweikh1](1998/schweikh1/schweikh1.c) ([README.md](1998/schweikh1/README.md]))
@@ -1609,7 +1611,7 @@ So what was wrong with the original?
 
 The call to `freopen()` was incorrect with the second arg (the mode) being
 `5+__FILE__`; it is now `"r"`. (Observe that the mode to the `fopen()`
-call is: `44+__FILE__`. This might seem incorrect and indeed it can be changed
+call is: `43+__FILE__`. This might seem incorrect and indeed it can be changed
 to `"r"` as well but this was not actually necessary so once this was noticed it
 was changed back to the original.)
 
