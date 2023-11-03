@@ -1,8 +1,6 @@
 # Strangest Abuse of the Rules
 
 Stig Hemmer\
-Norwegian Institute of Technology\
-N-7034 Trondheim-NTH\
 Norway
 
 
@@ -29,7 +27,7 @@ NOTE: that's not a typo or mistake but one can also do:
 ## Judges' remarks:
 
 We changed the alias that the author's suggested alias from a
-C-shell alias to a zsh alias.
+C-shell alias to a Bourne-like shell alias.
 
 Note that `shst.c` is renamed to [stig.c](stig.c) in the distribution.
 
@@ -41,8 +39,8 @@ obfuscation.  This type of entry will not be permitted in future contests.
 ## Author's remarks:
 
 If you like shell programming you may also admire my creative quoting. (I use
-echo to create an alias which when run calls cc with the -D option to create a C
-macro with double quotes in it. ARRRRRGGGHHH!)
+`echo` to create an alias which when run calls cc with the `-D` option to create
+a C macro with double quotes in it. ARRRRRGGGHHH!)
 
 The program is totally portable, but the compile commands are very shell
 specific so don't be TOO mad at me if they don't work for you.
