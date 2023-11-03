@@ -1000,8 +1000,10 @@ like the same as the original.
 Additionally, Cody fixed the shortened version provided by the author in the
 same way as the original entry, first the compile fix and then later on making
 it look more like the original by redefining `exit` and also redefining `gets()`
-to be `fgets()` in the same way that the original entry is. This way the alt
-version is equivalent in function, like the author intended, but more compact.
+to be `fgets()` in the same way that the original entry is. This way the [alt
+version](1990/tbr/README.md#alternate-code) is equivalent in function, like the
+author intended, but more compact.
+
 
 ## [1990/theorem](1990/theorem/theorem.c) ([README.md](1990/theorem/README.md]))
 
