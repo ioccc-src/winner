@@ -1,11 +1,8 @@
 # Most Space Efficient
 
-Jens Schweikhardt\
-DFN Network Operation Center\
-Schlartaeckerweg 3 (Home address)\
-D-71384 Weinstadt\
-Germany\
-<http://www.schweikhardt.net>
+Jens Schweikhardt <schweikh@schweikhardt.net>\
+<http://www.schweikhardt.net>\
+Germany
 
 
 ## To build:
@@ -22,7 +19,7 @@ all your favorite pictures off the Internet or from
 `alt.binaries.pictures.*`, do
 
 ```sh
-find dir -type f -print | ./schweikh3
+find dir -type f -print | ./samefile
 ```
 
 Maybe you will not need to buy another 10 Gb disk to store them.  :-)
@@ -33,7 +30,7 @@ Maybe you will not need to buy another 10 Gb disk to store them.  :-)
 If you're in this winning entry's directory:
 
 ```sh
-find . -type f -print | ./schweikh3
+find . -type f -print | ./samefile
 ```
 
 Notice that the tool finds a duplicate file, that of the man page.
@@ -44,21 +41,17 @@ Notice that the tool finds a duplicate file, that of the man page.
 Try this:
 
 ```sh
-cp schweikh3 file1
-cp schweikh3 file2
-cp schweikh3.c file3
-ln file3 file4
-
-find . -type f -name 'file?' | ./schweikh3
+./try.sh
 ```
 
 This program is not as smart as to detect identity of JPEG files with the same
 picture but with different compression levels. On the other hand compression can
-make it thing look/sound/feel different so these probably aren't duplicates
+make a thing look/sound/feel different so these probably aren't duplicates
 anyway. :-)
 
-NOTE: Some non-gcc compilers that are not fully ANSI standard do not compile
-this entry correctly.
+Some time after this entry won, the Internet Systems Consortium (ISC) added the
+samefile utility to its treasure of software gems! See the author's page about
+the tool as well at <http://www.schweikhardt.net/samefile>.
 
 
 ## Author's remarks:
@@ -66,11 +59,17 @@ this entry correctly.
 The source is expected to conform to IEEE Std 1003.1-1990 ("POSIX").
 Thank God the IEEE does not standardize a coding style...
 
+
 ###    What this program does
 
 This is best explained in the man page. The troff source for this
-man page can be found in the file samefile.1. To render try: `man
-./samefile.1`. Otherwise:
+man page can be found in the file samefile.1. To render try:
+
+```sh
+`man ./samefile.1
+```
+
+Otherwise:
 
 
 **SAMEFILE(1)                User Manuals               SAMEFILE(1)**
@@ -80,21 +79,23 @@ man page can be found in the file samefile.1. To render try: `man
 
    **samefile** - find identical files
 
+
 **SYNOPSIS**
 
-   **./samefile**
+   ./samefile
+   
 
 **DESCRIPTION**
 
-**samefile**  reads  a  list  of file names (one file name per
-line) from stdin.  For each file name pair with  identical
+`samefile`  reads  a  list  of file names (one file name per
+line) from `stdin`.  For each file name pair with  identical
 contents, a line consisting of six tab separated fields is
 output: The size in bytes, two file names,  the  character
 `=`  if the two files are on the same device, `X` otherwise,
 and the link counts of the two files.  The  output
 is sorted in reverse order by size.
 
-samefile uses two stages to give optimum performance.
+`samefile` uses two stages to give optimum performance.
 
 In  the  first  stage,  all  non-plain  files are silently
 ignored (directories, devices,  FIFOs,  sockets,  symbolic
@@ -186,7 +187,7 @@ otherwise.
 
 `find(1)`, `ln(1)`, `rm(1)`
 
-\
+
 ### Why I think it is obfuscated
 
 - The code is commented but this gives only an *extremely* faint clue.

@@ -1669,6 +1669,19 @@ interesting historical explanation and further details and fun, see the
 README.md.
 
 
+## [1998/schweikh3](1998/schweikh3/schweikh3.c) ([README.md](1998/schweikh3/README.md]))
+
+Cody added the [try.sh](1998/schweikh3/try.sh) script to make it easier to try
+the commands that we suggested. One command was not added, that of the to use
+command.
+
+Cody also made the Makefile rule `all` symlink the entry to `samefile` as that
+is the name of the program.
+
+There actually is a web page for the tool and this was added to the author
+information for the entry. It has not been added to any JSON file.
+
+
 ## [2000/anderson](2000/anderson/anderson.c) ([README.md](2000/anderson/README.md]))
 
 Cody changed this entry to use `fgets()` instead of `gets()` to make it safer
