@@ -1,11 +1,6 @@
 # Most Unusual Data Structure
 
 Peter J Ruczynski\
-Pyramid Technology Ltd.\
-Pyramid House\
-Solatron Road\
-Farnborough\
-Hants GU14 7PL\
 England, U.K.
 
 
@@ -15,6 +10,10 @@ England, U.K.
 make all
 ```
 
+There is an [alternate version](#alternate-code) that does something different
+that can be used if your compiler is incapable of compiling `X=g()...` in
+`main()`. It can be used for another purpose too.
+
 
 ## To use:
 
@@ -23,23 +22,44 @@ make all
 ```
 
 
-## Judges' remarks:
-
-This program prints out a string.  Can you figure out how
-it is done?
-
-By use of pointers to functions returning a struct of pointers\
-to functions!
+## Alternate code:
 
 Note that some compilers will be unable to compile the expression `X=g()...` in
-main() due to lack of temporary stack space.  One might want to try replacing
-main with:
+`main()` due to lack of temporary stack space.  One might want to try replacing
+`main()` with:
 
 ```c
 main(){X=s().v().o().o().l().S().d().l().i().o().w().N();}
 ```
 
-if this is a problem.
+if this is a problem, which is what this alternate code is.
+
+NOTE: it prints something else and it is what the author suggested one try as
+well.
+
+
+### Alternate build:
+
+
+```sh
+make alt
+```
+
+
+### Alternate use:
+
+```sh
+./pjr.alt
+```
+
+
+## Judges' remarks:
+
+This program prints out a string.  Can you figure out how
+it is done?
+
+By use of pointers to functions returning a struct of pointers
+to functions!
 
 
 ### Spoiler:
@@ -48,32 +68,34 @@ This program prints out the string:
 
 > the quick brown fox jumped over the lazy dog
 
-by use of pointers to functions returning a struct of pointers
-to functions!
-
 
 ## Author's remarks:
 
-Rot13:
 
-    Vg vf fvzcyr gb znxr gur cebtenz cevag bgure fgevatf.  Rnpu
-    nycunorgvpny punenpgre sebz n gb m vf cevagrq bhg nf vgf
-    bccbfvgr:
+It is simple to make the program print other strings.  Each
+alphabetical character from a to z is printed out as its
+opposite:
 
-    	n->m o->l p->k rgp
+```c
+a->z b->y c->x etc
+```
 
-    Gb rapbqr n arj fgevat vachg gur fgevat nf vg vf zrnag gb pbzr bhg:
+To encode a new string input the string as it is meant to come out:
 
-    	K=f().i().b().b().y().F().q().y().v().b().j().A();
+```c
+X=s().v().o().o().l().S().d().l().i().o().w().N();
+```
 
-    Abgr: F() ercerfragf n fcnpr naq A() n arjyvar.  Guvf jvyy abj
-    cebqhpr...
+Note: `S()` represents a space and `N()` a newline.  This will now
+produce...
 
-    	uryyb jbeyq
+```
+hello world
+```
 
-    By the way, there is actually a piece of code which is not used
-    in the original program! I leave it as an intellectual exercise
-    to the reader to find out what it is.
+By the way, there is actually a piece of code which is not used
+in the original program! I leave it as an intellectual exercise
+to the reader to find out what it is.
 
 
 ## Copyright and CC BY-SA 4.0 License:

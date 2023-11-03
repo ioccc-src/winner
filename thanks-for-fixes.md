@@ -900,26 +900,6 @@ links and the user executes does that make the compiler the jury, the linker the
 judge and user the executioner? :-)
 
 
-## [1990/dg](1990/dg/dg.c) ([README.md](1990/dg/README.md]))
-
-Cody fixed this for modern systems. There were two problems to be resolved.
-
-One can no longer do:
-
-```c
-#define d define
-
-#d b12(x) 12 x
-
-/* etc. */
-```
-
-so the use of `#d` is now instead `#define` (the macro was originally deleted
-but later Cody added it back to make it more like the original).
-
-The second problem was suggested by the judges at the time of judging, to do
-with if the C preprocessor botches single quotes in cpp expansion.
-
 ## [1990/dds](1990/dds/dds.c) ([README.md](1990/dds/README.md]))
 
 Yusuke and Cody in conjunction fixed this for modern systems (both fixed a
@@ -945,6 +925,27 @@ to read from another file and in this place nothing was changed.
 
 With these improvements the entry looks much more like the original!
 
+
+## [1990/dg](1990/dg/dg.c) ([README.md](1990/dg/README.md]))
+
+Cody fixed this for modern systems. There were two problems to be resolved.
+
+One can no longer do:
+
+```c
+#define d define
+
+#d b12(x) 12 x
+
+/* etc. */
+```
+
+so the use of `#d` is now instead `#define` (the macro was originally deleted
+but later Cody added it back to make it more like the original).
+
+The second problem was suggested by the judges at the time of judging, to do
+with if the C preprocessor botches single quotes in cpp expansion.
+
 ## [1990/jaw](1990/jaw/jaw.c) ([README.md](1990/jaw/README.md]))
 
 Cody fixed the script to work properly in modern environments including paths,
@@ -962,6 +963,13 @@ However, there is a known bug still, see [1990 jaw in
 bugs.md](/bugs.md#1990-jaw) for details.
 
 NOTE: as `btoa` is not common we used a ruby script from Yusuke.
+
+
+## [1990/pjr](1990/pjr/pjr.c) ([README.md](1990/pjr/README.md]))
+
+Cody added the [alt code](1990/pjr/pjr.alt.c) which was suggested by the judges
+in the case that your compiler cannot compile `X=g()...` but it actually does
+something else and is recommended by the author as well.
 
 
 ## [1990/scjones](1990/scjones/scjones.c) ([README.md](1990/scjones/README.md]))
@@ -992,8 +1000,10 @@ like the same as the original.
 Additionally, Cody fixed the shortened version provided by the author in the
 same way as the original entry, first the compile fix and then later on making
 it look more like the original by redefining `exit` and also redefining `gets()`
-to be `fgets()` in the same way that the original entry is. This way the alt
-version is equivalent in function, like the author intended, but more compact.
+to be `fgets()` in the same way that the original entry is. This way the [alt
+version](1990/tbr/README.md#alternate-code) is equivalent in function, like the
+author intended, but more compact.
+
 
 ## [1990/theorem](1990/theorem/theorem.c) ([README.md](1990/theorem/README.md]))
 
@@ -1152,7 +1162,11 @@ The key to the string is that it rotates the character by `+1`. This was not
 immediately clear until reading the author's remarks so there was an alt version
 that was something of a kludge, running `make a` instead but that was removed.
 
-Cody also fixed a typo in LANDER.BAS.
+Cody also fixed a typo in LANDER.BAS and made it so that if a file could not be
+opened for reading or a file could not be opened for writing it would not crash.
+The definition of whether that should be a bug to fix or a feature to not fix
+was pondered and changed numerous times and ultimately that problem with this
+entry was fixed. It has not been done in all.
 
 
 ## [1991/fine](1991/fine/fine.c) ([README.md](1991/fine/README.md))
@@ -1541,6 +1555,8 @@ Cody fixed this to not segfault under macOS. The problem was that the function
 pointer `w`, which points to `XCreateWindow()`, did not specify the parameters of
 the function in the pointer assignment.
 
+NOTE: if there is no X server running this program will still crash.
+
 
 ## [1996/westley](1996/westley/westley.c) ([README.md](1996/westley/README.md]))
 
@@ -1589,7 +1605,7 @@ doing:
 ```
 
 Cody also added the [try.sh](1998/schnitzi/try.sh) script to help users try the
-commands (as well as some added by him) we recommended.
+commands that we recommended as well as some added by him.
 
 
 ## [1998/schweikh1](1998/schweikh1/schweikh1.c) ([README.md](1998/schweikh1/README.md]))
@@ -1609,7 +1625,7 @@ So what was wrong with the original?
 
 The call to `freopen()` was incorrect with the second arg (the mode) being
 `5+__FILE__`; it is now `"r"`. (Observe that the mode to the `fopen()`
-call is: `44+__FILE__`. This might seem incorrect and indeed it can be changed
+call is: `43+__FILE__`. This might seem incorrect and indeed it can be changed
 to `"r"` as well but this was not actually necessary so once this was noticed it
 was changed back to the original.)
 
@@ -1665,6 +1681,19 @@ The string `"01\015"` had to be changed to `ONE(O(1,1,2,6,0,6))`. For an
 interesting historical explanation and further details and fun, see the
 [historical remarks](1998/schweikh2/README.md#historical-remarks) in the
 README.md.
+
+
+## [1998/schweikh3](1998/schweikh3/schweikh3.c) ([README.md](1998/schweikh3/README.md]))
+
+Cody added the [try.sh](1998/schweikh3/try.sh) script to make it easier to try
+the commands that we suggested. One command was not added, that of the to use
+command.
+
+Cody also made the Makefile rule `all` symlink the entry to `samefile` as that
+is the name of the program.
+
+There actually is a web page for the tool and this was added to the author
+information for the entry. It has not been added to any JSON file.
 
 
 ## [2000/anderson](2000/anderson/anderson.c) ([README.md](2000/anderson/README.md]))

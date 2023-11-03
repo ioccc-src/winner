@@ -474,7 +474,7 @@ emulator to test it) but running the code on the binary itself produces a
 
 # 1985
 
-There was no known bugs and (Mis)features for 1985.
+There are no known bugs and (Mis)features for entries in 1985.
 
 
 # 1986
@@ -493,7 +493,7 @@ the judges and shouldn't be fixed.
 
 # 1987
 
-There was no known bugs and (Mis)features for 1987.
+There are no known bugs and (Mis)features for entries in 1987.
 
 
 # 1988
@@ -1942,7 +1942,7 @@ If you want to try and fix this (mis)feature, you are welcome to try.
 
 # 2015
 
-There was no known bugs and (Mis)features for 2015.
+There are no known bugs and (Mis)features for entries in 2015.
 
 
 # 2016

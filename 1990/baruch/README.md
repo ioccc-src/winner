@@ -38,10 +38,10 @@ Why is there no output?
 
 This alternate code is for the [very few](https://en.wikipedia.org/wiki/0)
 [users](https://en.wikipedia.org/wiki/Microsoft_Windows)
-[here](https://www.ioccc.org) who will need it but nonetheless if you're using
-Turbo-C or MSC, the code is based on the authors' remarks except that the `"
-#Q"` string was not changed as that showed worse looking output instead of
-improved output though admittedly we have no way to test the compilers in
+[here](https://www.ioccc.org) who will need it. Nonetheless if you're using
+Turbo-C or MSC, the code is available, based on the authors' remarks except that
+the `" #Q"` string was not changed as that showed worse looking output instead
+of improved output though admittedly we have no way to test the compilers in
 question. YMMV.
 
 
@@ -71,7 +71,7 @@ The goal of this work was to write a program that solves the classic [n-queens
 problem](https://en.wikipedia.org/wiki/Eight_queens_puzzle), with a board size
 of up to 99x99, while keeping the program as short as possible.
 
-The program finds all possibilities to place N chess queens on a NxN
+The program finds all possibilities to place N chess queens on an NxN
 [chessboard](https://en.wikipedia.org/wiki/Chessboard) so that no queen is in
 range of any other queen (not in the same column row or diagonal).  For each
 solution the chess board and the place of the queens is printed to stdout.
@@ -90,9 +90,8 @@ even more simple we used a very limited subset of C:
 
 In short, it contains no C language that might confuse the innocent reader. :-)
 
-This program demonstrates the claim that in C, any program
-can be written using a single 'for' statement, as long as it is
-long enough..
+This program demonstrates the claim that in C, any program can be written using
+a single 'for' statement, as long as it is long enough.
 
 ### For PC users:
 

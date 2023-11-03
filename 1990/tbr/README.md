@@ -13,6 +13,27 @@ US
 make all
 ```
 
+There is an [alternate version](#alternate-code) to this program.
+
+
+### A note about the fixes of this entry in 2023:
+
+In 2023 it was noticed that in some systems like macOS there was confusing
+output due to a warning at runtime that was interspersed with the output of the
+program. For instance it would show:
+
+```sh
+$ ./tbr
+$ warning: this program uses gets(), which is unsafe.
+```
+
+which kind of hid the prompt. Thus the entry was changed to use `fgets(3)` which
+is referred to later in this file.
+
+Also `exit(3)` returns void but the entry was using it in a binary expression so
+this entry would not compile in modern systems. This fix is also referred to
+below, in the [alternate version](#alternate-code) section.
+
 
 ## To use:
 
@@ -54,14 +75,7 @@ The authors include a section called [BUGS](#bugs) that, because they were
 documented, are not considered bugs as such in the context of the contest.
 
 
-## Judges' remarks:
-
-This program touches on a well known Unix utility, the 6th edition Bourne Shell
-(`/bin/sh`), whose original source was considered to be extremely obfuscated by
-many people (although Steve Bourne might disagree). Did you know that the Bourne
-Shell source was a major inspiration for the formation of the IOCCC back in
-1984?
-
+## Alternate code:
 
 The authors supplied us with a slightly smaller unformatted version
 of the program which we include below:
@@ -79,8 +93,32 @@ r(o,0)D o)D*f):4,wait(0):(o?dup2(*f,0)D*f)D o):*i?1 D
 e(x){x<0?write(2,"?\n$ "-x/4,2),x+1||(exit(1),0):5;}
 ```
 
-It has the `exit()` returns void fix as well as the `gets()` to `fgets()` fix
-applied to it to make it functionally equivalent like the authors intended.
+and in the [alternate source](tbr.alt.c). It has the `exit()` returns void fix
+as well as the `gets()` to `fgets()` fix applied to it to make it functionally
+equivalent like the authors intended.
+
+
+### Alternate build:
+
+```sh
+make alt
+```
+
+
+### Alternate use:
+
+```sh
+./tbr.alt
+```
+
+
+## Judges' remarks:
+
+This program touches on a well known Unix utility, the 6th edition Bourne Shell
+(`/bin/sh`), whose original source was considered to be extremely obfuscated by
+many people (although Steve Bourne might disagree). Did you know that the Bourne
+Shell source was a major inspiration for the formation of the IOCCC back in
+1984?
 
 
 ## Authors' remarks:

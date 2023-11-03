@@ -121,7 +121,7 @@ The Speed of DDS-BASIC Interpreter (Version 1.00) relative to Microsoft Advanced
 BASIC 3.31 is approximately 60%.
 
 The code size could be further reduced by doing ugly things like not declaring
-the return type of functions, not freeing memory, `#defin`ing define, and joining
+the return type of functions, not freeing memory, defining define, and joining
 lines.  In its present 1536 character form the program is reasonably portable
 (it may fail to run in a tagged object architecture) and nicely formatted (it
 fits in an `80*25` screen).
