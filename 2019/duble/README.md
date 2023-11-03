@@ -43,12 +43,16 @@ Open another window / terminal.
 
 Open more terminals and repeat...
 
-### INABIAF - it's not a bug it's a feature! :-)
-
-
 WARNING: if the file is deleted it might lock any session still in use. These
 will have to be killed from another shell session or by closing the terminal
 tab.
+
+This is supposed to happen.  As is written in the
+[The Jargon File](http://catb.org/jargon/html/F/feature.html):
+
+```
+That's not a bug, that's a feature.
+```
 
 NOTE: this entry might leave sockets lying about in the current working
 directory which you'll have to delete manually. Here's an example in macOS:

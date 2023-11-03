@@ -52,10 +52,15 @@ diff remarks.md README.md # notice how similar they are
 ./sds < remarks.md
 ```
 
-### INABIAF - it's not a bug it's a feature! :-)
-
 The generated code will very likely crash or do something else if not given a
 proper command line. This is not a bug but a feature.
+
+This is supposed to happen.  As is written in the
+[The Jargon File](http://catb.org/jargon/html/F/feature.html):
+
+```
+That's not a bug, that's a feature.
+```
 
 
 ## Judges' remarks:

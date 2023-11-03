@@ -70,11 +70,15 @@ diff 1.txt 2.txt
 rm 1.txt 2.txt
 ```
 
-
-## INABIAF - it's not a bug it's a feature! :-)
-
 This program will possibly crash or draw something funny with 0 args. Then
-again it might not. :-) This is not a bug and should NOT be fixed.
+again it might not. :-)
+
+This is supposed to happen.  As is written in the
+[The Jargon File](http://catb.org/jargon/html/F/feature.html):
+
+```
+That's not a bug, that's a feature.
+```
 
 Ask yourself the following questions: when will it crash, when will it draw
 something funny (or will it ? :-) ) and when will it do nothing?

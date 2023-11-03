@@ -44,11 +44,16 @@ For more detailed information see [1992 kivinen in bugs.md](/bugs.md#1992-kivine
 
 See also the author's remarks for other variations.
 
-### INABIAF - it's not a bug it's a feature! :-)
-
 In modern systems a known issue is that when you start the game everything
 starts to move to the right of the game window but if you click on the window it
 moves back to where it should be.
+
+This is supposed to happen.  As is written in the
+[The Jargon File](http://catb.org/jargon/html/F/feature.html):
+
+```
+That's not a bug, that's a feature.
+```
 
 
 ## Judges' remarks:

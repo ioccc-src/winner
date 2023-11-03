@@ -39,12 +39,16 @@ What happens if you give the program a C program like itself? Try:
 You'll get errors yes but what does the generated file look like? What about
 other types of files?
 
-
-### INABIAF - it's not a bug it's a feature! :-)
-
 Please note that if the BASIC file cannot be opened for reading or the output
 file cannot be opened for writing then this program will very likely crash or do
 something funny.
+
+This is supposed to happen.  As is written in the
+[The Jargon File](http://catb.org/jargon/html/F/feature.html):
+
+```
+That's not a bug, that's a feature.
+```
 
 These are a mild nuisance but are considered a feature not a bug. We challenge
 you to fix it for learning if you wish. See also [bugs.md](/bugs.md).

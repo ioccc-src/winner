@@ -38,9 +38,14 @@ For more detailed information see [2006 monge in bugs.md](/bugs.md#2006-monge).
 ./monge "z = 0" "z = z*z*z + c; Abs2(z) < 4"
 ```
 
-### INABIAF - it's not a bug it's a feature! :-)
-
 Incorrect formulas will ungracefully crash the program.
+
+This is supposed to happen.  As is written in the
+[The Jargon File](http://catb.org/jargon/html/F/feature.html):
+
+```
+That's not a bug, that's a feature.
+```
 
 
 ## Judges' remarks:

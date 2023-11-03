@@ -29,9 +29,14 @@ For more detailed information see [2001 ollinger in bugs.md](/bugs.md#2001-ollin
 ./ollinger integer
 ```
 
-### INABIAF - it's not a bug it's a feature! :-)
-
 This program will very likely crash or do something else without an arg.
+
+This is supposed to happen.  As is written in the
+[The Jargon File](http://catb.org/jargon/html/F/feature.html):
+
+```
+That's not a bug, that's a feature.
+```
 
 
 ### Try:

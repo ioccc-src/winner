@@ -47,10 +47,15 @@ echo -100 x 100 + 1 | ./robison
 echo 100 / 100 | ./robison # <-- what happens here ?
 ```
 
-### INABIAF - it's not a bug it's a feature! :-)
+NOTE: This program will very likely crash or break into tiny bits
+:-) if you feed it numbers with non-binary digits.
 
-This program will very likely crash or break into tiny bits :-) if you feed it
-numbers with non-binary digits.
+This is supposed to happen.  As is written in the
+[The Jargon File](http://catb.org/jargon/html/F/feature.html):
+
+```
+That's not a bug, that's a feature.
+```
 
 
 ## Judges' remarks:

@@ -29,8 +29,6 @@ For more detailed information see [2001 schweikh in bugs.md](/bugs.md#2001-schwe
 ./schweikh string string2
 ```
 
-### INABIAF - it's not a bug it's a feature! :-)
-
 This program will very likely crash or do something else if you do not give it
 two args.
 
@@ -38,6 +36,13 @@ Note also that the glob pattern must match the whole string. See the author's
 comments for details and a workaround.
 
 There's also no way to escape meta characters.
+
+This is supposed to happen.  As is written in the
+[The Jargon File](http://catb.org/jargon/html/F/feature.html):
+
+```
+That's not a bug, that's a feature.
+```
 
 
 ### Try:

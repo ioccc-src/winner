@@ -25,9 +25,14 @@ where
 
 `file` is a file containing some text.
 
-### INABIAF - it's not a bug it's a feature! :-)
-
 This entry will segfault if the file cannot be opened. This is not a bug.
+
+This is supposed to happen.  As is written in the
+[The Jargon File](http://catb.org/jargon/html/F/feature.html):
+
+```
+That's not a bug, that's a feature.
+```
 
 
 ### Try:

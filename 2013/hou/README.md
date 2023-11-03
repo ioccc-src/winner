@@ -55,10 +55,15 @@ of the invocations above:
 
 ![./hou otherroom.scene - Other room](otherroom.jpg)
 
-### INABIAF - it's not a bug it's a feature! :-)
-
 This program does not terminate by itself: you must kill `hou` (but not Qiming
-Hou :-) ) in order to end the program. This should not be fixed.
+Hou :-) ) in order to end the program.
+
+This is supposed to happen.  As is written in the
+[The Jargon File](http://catb.org/jargon/html/F/feature.html):
+
+```
+That's not a bug, that's a feature.
+```
 
 
 ## Judges' remarks:

@@ -43,7 +43,12 @@ vi tbr.c
 What happens if you try using `cd -` to return to previous directory? What about
 `cd` with no args?
 
-### TNABTAF - they're not a bug they're a feature! :-)
+This is supposed to happen.  As is written in the
+[The Jargon File](http://catb.org/jargon/html/F/feature.html):
+
+```
+That's not a bug, that's a feature.
+```
 
 The authors include a section called [BUGS](#bugs) that, because they were
 documented, are not considered bugs as such in the context of the contest.

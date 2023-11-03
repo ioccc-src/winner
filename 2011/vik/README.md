@@ -32,11 +32,16 @@ For more detailed information see [2011 vik in bugs.md](/bugs.md#2011-vik).
 An alternate version for Windows is available. See the Alternate code section
 below.
 
-### INABIAF - it's not a bug it's a feature! :-)
-
 The author stated that the program will crash if no argument is passed tot he
 program though we note that your computer might also [halt and catch
 fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
+
+This is supposed to happen.  As is written in the
+[The Jargon File](http://catb.org/jargon/html/F/feature.html):
+
+```
+That's not a bug, that's a feature.
+```
 
 
 ### Try:

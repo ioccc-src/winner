@@ -58,9 +58,6 @@ What happens if you try it on another file like [anonymous.c](anonymous.c)? Can
 you recompile it okay? What if you run it on `anonymous` itself? Can you run the
 program successfully after it without recompiling?
 
-
-### INABIAF - it's not a bug it's a feature! :-)
-
 If you do not specify a 32-bit ELF binary as the arg of this program it will
 very likely crash or do something terribly wrong like slaughtering all the
 [elves](https://www.glyphweb.com/arda/e/elves.html) of
@@ -69,6 +66,14 @@ that :-(
 
 If the program cannot be run (for instance under macOS as an ELF file) then
 the program will fail to execute it and might not even touch it.
+
+This is supposed to happen.  As is written in the
+[The Jargon File](http://catb.org/jargon/html/F/feature.html):
+
+```
+That's not a bug, that's a feature.
+```
+
 
 ### A 2023 note about the warning from the author:
 

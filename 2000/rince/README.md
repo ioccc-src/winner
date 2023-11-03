@@ -32,10 +32,15 @@ For more detailed information see [2000 rince in bugs.md](/bugs.md#2000-rince).
 ./rince number number2
 ```
 
-### INABIAF - it's not a bug it's a feature! :-)
-
 If `DISPLAY` is not set the program will very likely crash or do something
 different.
+
+This is supposed to happen.  As is written in the
+[The Jargon File](http://catb.org/jargon/html/F/feature.html):
+
+```
+That's not a bug, that's a feature.
+```
 
 
 ### Try:

@@ -47,10 +47,15 @@ TZ=UTC48 make clobber prog
 ./prog 512 ./prog
 ```
 
-### INABIAF - it's not a bug it's a feature! :-)
-
 This program will not validate input so it might fail or get stuck if invoked
 erroneously.
+
+This is supposed to happen.  As is written in the
+[The Jargon File](http://catb.org/jargon/html/F/feature.html):
+
+```
+That's not a bug, that's a feature.
+```
 
 
 ## Judges' remarks:

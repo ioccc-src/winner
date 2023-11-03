@@ -44,9 +44,14 @@ make alt
 Use `dgbeards.alt` as you would `dgbeards` above. Can you find a flaw in this
 version that the author did not note?
 
-## INABIAF - it's not a bug it's a feature! :-)
-
 This game crashes if it loses.
+
+This is supposed to happen.  As is written in the
+[The Jargon File](http://catb.org/jargon/html/F/feature.html):
+
+```
+That's not a bug, that's a feature.
+```
 
 
 ### Try:

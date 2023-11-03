@@ -138,7 +138,12 @@ at the [International Obfuscated C Code Contest judges'
 room](https://www.ioccc.org/https://www.ioccc.org/judges.html) they believe that
 you can win tic-tac-toe, that there can be acceptable draws.
 
-### INABIAF - it's not a bug it's a feature! :-)
+This is supposed to happen.  As is written in the
+[The Jargon File](http://catb.org/jargon/html/F/feature.html):
+
+```
+That's not a bug, that's a feature.
+```
 
 Try not to cheat (even though it's very easy :-) ), the computer has not learned
 how to catch you doing it.
