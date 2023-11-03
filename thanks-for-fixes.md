@@ -1153,7 +1153,11 @@ The key to the string is that it rotates the character by `+1`. This was not
 immediately clear until reading the author's remarks so there was an alt version
 that was something of a kludge, running `make a` instead but that was removed.
 
-Cody also fixed a typo in LANDER.BAS.
+Cody also fixed a typo in LANDER.BAS and made it so that if a file could not be
+opened for reading or a file could not be opened for writing it would not crash.
+The definition of whether that should be a bug to fix or a feature to not fix
+was pondered and changed numerous times and ultimately that problem with this
+entry was fixed. It has not been done in all.
 
 
 ## [1991/fine](1991/fine/fine.c) ([README.md](1991/fine/README.md))
