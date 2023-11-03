@@ -965,6 +965,13 @@ bugs.md](/bugs.md#1990-jaw) for details.
 NOTE: as `btoa` is not common we used a ruby script from Yusuke.
 
 
+## [1990/pjr](1990/pjr/pjr.c) ([README.md](1990/pjr/README.md]))
+
+Cody added the [alt code](1990/pjr/pjr.alt.c) which was suggested by the judges
+in the case that your compiler cannot compile `X=g()...` but it actually does
+something else and is recommended by the author as well.
+
+
 ## [1990/scjones](1990/scjones/scjones.c) ([README.md](1990/scjones/README.md]))
 
 Yusuke suggested `-ansi` to get the entry to compile due to trigraphs and Cody
