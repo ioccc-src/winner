@@ -43,5 +43,5 @@ Z,h@=w;n=8;f=Q+e;i=o=HIo<0)X,1;P(i)WH+1){Iw==Q&e){Z;m=n=8;f=QIH<0)X}
 c=wIw>=f)U++=i,w=oWw>=Q)U++=h@,w=t@;P(i=h@)Wp>D+Q)P(*--p)
 I(w=f)<1l<<k)t@=o,h[f++]=i;o=c}X}
 _
-($v);echo 1>&2;ln -f $z $a);./$a<<\w>./$m-&&./$z<./$m->./$m;tar xvf ../$m.tar&&$r
+($v);echo 1>&2;ln -f $z $a);./$a<<\w>$m-&&./$z<$m->$m;tar xvf ../$m.tar&&$r
 Z
