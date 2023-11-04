@@ -2851,3 +2851,10 @@ Cody added `-L`/`-I` paths to the Makefile to let this compile more easily if
 the user has installed the appropriate library with
 [MacPorts](https://www.macports.org) (with the default MacPorts prefix
 `/opt/local`).
+
+
+## [2020/tsoj](2020/tsoj/prog.c) ([README.md](2020/tsoj/README.md))
+
+Cody added [alternate code](2020/tsoj/README.md#alternate-code) that will feel
+more at home for vi users. One might still end up cursing (see the README.md
+file) but probably a lot less :-)

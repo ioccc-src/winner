@@ -11,6 +11,10 @@ make
 ```
 
 
+There is an [alternate version](#alternate-code) which has controls that will
+make much more sense to those familiar with vi.
+
+
 ## To use:
 
 ```sh
@@ -25,6 +29,30 @@ make
 # then...
 ./prog
 ```
+
+
+## Alternate code:
+
+This version has the difference of moving forwards, left, backwards and right,
+where instead of `w`, `a`, `s` and `d`, you can use `k`, `h`, `j` and `l`.
+
+
+### Alternate build:
+
+```sh
+make alt
+```
+
+### Alternate use:
+
+```sh
+# Make your terminal as large as possible, possibly reduce your font size
+# then...
+./prog.alt
+```
+
+..and maybe curse less than you might otherwise, but still probably curse (see
+below) :-)
 
 
 ## Judges' remarks:
@@ -54,6 +82,8 @@ reverse indentation style.
 /______\
   /\/\
 ```
+
+
 #### Compile and run
 ###### Linux
 ```
