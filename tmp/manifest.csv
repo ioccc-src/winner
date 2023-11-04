@@ -494,6 +494,7 @@
 1990,pjr,10,index.html,readme2index,null,html,html,true,browser,click here first
 1990,pjr,20,pjr.c,null,main,c,c,true,github,winning source
 1990,pjr,30,Makefile,null,null,makefile,null,true,github,Makefile
+1990,pjr,50,pjr.alt.c,null,alt,c,c,true,github,alternative source
 1990,pjr,50,pjr.orig.c,null,orig,c,c,true,github,original source
 1990,pjr,300,1990_pjr.tar.bz2,mkwinnertbz2,null,tbz2,bz2,true,download,download winning source
 1990,pjr,900,.inventory.html,winner2nventory,null,html,html,true,browser,full inventory of all winner files
@@ -1386,6 +1387,7 @@
 1998,schweikh3,50,schweikh3.orig.c,null,orig,c,c,true,github,original source
 1998,schweikh3,100,samefile.1.dupe,null,null,man,dupe,true,github,samefile man page
 1998,schweikh3,100,samefile.1,null,null,man,1,true,github,samefile man page
+1998,schweikh3,150,try.sh,null,null,shellscript,sh,true,github,how to run
 1998,schweikh3,300,1998_schweikh3.tar.bz2,mkwinnertbz2,null,tbz2,bz2,true,download,download winning source
 1998,schweikh3,900,.inventory.html,winner2nventory,null,html,html,true,browser,full inventory of all winner files
 1998,tomtorfs,null,README.md,null,null,markdown,md,false,null,markdown source for index.html

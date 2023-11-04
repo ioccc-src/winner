@@ -293,6 +293,7 @@
 1990/pjr/.gitignore
 1990/pjr/Makefile
 1990/pjr/README.md
+1990/pjr/pjr.alt.c
 1990/pjr/pjr.c
 1990/pjr/pjr.orig.c
 1990/scjones/.gitignore
