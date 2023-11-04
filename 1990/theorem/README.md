@@ -1,9 +1,6 @@
 # Best of Show
 
 Adrian Mariano\
-University of Washington\
-2729 72nd Ave SE\
-Mercer Island, WA 98040\
 US
 
 
@@ -48,10 +45,10 @@ y1 - initial value  (y(x1) == y1)
 ./theorem y 0 1 0.1 1
 ```
 
-If the two args passed to `fibonacci` and `theorem_bkp` equals 0 it will
+If the two args passed to `fibonacci` and `theorem_bkp` add to 0 it will
 print 0 over and over again in an infinite loop. In this case it should not be
-fixed (another condition where this occurred was fixed as it affected usability
-of the program).
+fixed (another condition where this occurred was fixed in 2023 as it affected
+usability of the program).
 
 This is supposed to happen.  As is written in the
 [The Jargon File](http://catb.org/jargon/html/F/feature.html):
@@ -60,23 +57,15 @@ This is supposed to happen.  As is written in the
 That's not a bug, that's a feature.
 ```
 
-BTW: why can't the fix:
-
-```c
-if (a[1]==NULL||a[2]==NULL||a[3]==NULL||a[4]==NULL||a[5]==NULL) return 1;
-```
-
-be changed to just test the value of `A` when `a` is argv and `A` is argc?
-
 
 ## Judges' remarks:
 
 The program's source implements four functions, all from the
 same source file!
 
-When you compile theorem.c as is and run with 5 args, it numerically solves the
-equation `y'=f(x,y)`, with a step size of `h` (see above usage), over the
-interval `x=[x1,x2]`, with the initial condition of `y(x1)=y1`.
+When you compile [theorem.c](theorem.c) as is and run with 5 args, it
+numerically solves the equation `y'=f(x,y)`, with a step size of `h` (see above
+usage), over the interval `x=[x1,x2]`, with the initial condition of `y(x1)=y1`.
 
 The 'expression' `f(x,y)` is any function of `x` and `y` with the
 operators:
@@ -86,7 +75,7 @@ operators:
 ```
 
 The symbol `^` is the power operator.  Note that it only supports
-integer powers.  Also note that all expressions are evaluated strictly\
+integer powers.  Also note that all expressions are evaluated strictly
 left to right.  (i.e., parenthesis aren't supported).
 
 Try running the program with the following args:
@@ -97,14 +86,14 @@ Try running the program with the following args:
 ./theorem 'x^2/y+x' 0 1 0.1 6
 ```
 
-But wait, there is more!  You also get, free of charge, a\
+But wait, there is more!  You also get, free of charge, a
 reversing filter!  Try:
 
 ```sh
 ./theorem -r 0 0 0 0 < theorem.c > sorter.c
 ```
 
-Still not impressed?  The author throws in for free, a\
+Still not impressed?  The author throws in for free, a
 sort program! Try:
 
 ```sh
@@ -134,7 +123,7 @@ Program available on 9 track and cartridge cassette.  Neither [Ginsu
 knife](https://ginsu.com) nor [Swiss army
 knife](https://en.wikipedia.org/wiki/Swiss_Army_knife) included! :-)
 
-When this program was first shown at the 1990 Summer Usenix conference, it
+When this program was first shown at the 1990 Summer USENIX conference, it
 received a standing ovation; a first for a contest entry.
 
 
@@ -144,7 +133,8 @@ Differential equations are solved via the Runge-Kutta method, which guarantees
 local error proportional to `h^5`, and total error across a finite interval is at
 most a constant times `h^4`.
 
-Sorting is accomplished with a standard shell sort.
+Sorting is accomplished with a standard [shell
+sort](https://en.wikipedia.org/wiki/Shellsort).
 
 Note that the sorting and reversing is limited to files with fewer than 500
 lines, each less than 99 characters long.
