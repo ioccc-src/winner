@@ -1,9 +1,6 @@
 # Best Layout
 
 Brian Westley (Merlyn LeRoy on usenet)\
-DigiBoard, Inc.\
-1026 Blair Ave.\
-St. Paul, MN  55104\
 US\
 <http://www.westley.org>
 
@@ -18,7 +15,7 @@ make all
 ## To use:
 
 ```sh
-./westley <number
+./westley <number>
 ```
 
 The number should be greater than 0.
@@ -36,18 +33,28 @@ The number should be greater than 0.
 
 ## Alternate code:
 
+The alternate code is provided to show how C changed.
+
+
+### Alternate build:
+
 If you have an old enough compiler try and to see how C has changed over the years:
 
 ```sh
 make alt
 ```
 
-Use `westley.alt` as you would `westley`.
+### Alternate use:
+
+
+```sh
+./westley.alt <number>
+```
 
 
 ## Judges' remarks:
 
-If you would rather "Daisy" someone other than Westley, rename\
+If you would rather "Daisy" someone other than Westley, rename
 the program as needed.  :-)
 
 Read each block of code as if it were a piece of correspondence.
@@ -61,8 +68,8 @@ charlie,
 		signed charlotte
 ```
 
-The original source had control-L's after each code block.  To\
-make it easier on news readers, we converted each control-L to\
+The original source had control-L's after each code block.  To
+make it easier on news readers, we converted each control-L to
 a blank line.
 
 
