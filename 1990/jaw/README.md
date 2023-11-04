@@ -17,17 +17,6 @@ make all
 ```
 
 
-### Bugs and (Mis)features:
-
-The current status of this entry is:
-
-```
-STATUS: known bug - please help us fix
-```
-
-For more detailed information see [1990 jaw in bugs.md](/bugs.md#1990-jaw).
-
-
 ### Try:
 
 To test the official C entry, one might try:
@@ -40,7 +29,7 @@ which should apply the identity transformation to a minimal holoalphabetic
 sentence.
 
 
-Also try:
+#### Also try:
 
 ```sh
 ./try.sh

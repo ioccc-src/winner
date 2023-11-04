@@ -658,31 +658,8 @@ errors.
 That's about all I can say for how it works as other things have to be done too.
 Enjoy! :-)
 
+
 # 1990
-
-
-## 1990 jaw
-
-### STATUS: known bug - please help us fix
-### Source code: [1990/jaw/jaw.c](1990/jaw/jaw.c)
-### Information: [1990/jaw/README.md](1990/jaw/README.md)
-
-The command:
-
-```sh
-echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
-```
-
-just prints:
-
-```
-$ echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
-oops
-oops
-```
-
-Do you have a fix? We welcome it (Cody does have an idea and will look at it
-later but we also don't know what it's supposed to do now)!
 
 
 ## 1990 theorem
@@ -700,8 +677,6 @@ where this occurred was fixed but this one should not be fixed. Thank you.
 
 # 1991
 
-
-## 1991 dds
 
 ## 1991 westley
 

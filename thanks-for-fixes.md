@@ -959,10 +959,9 @@ is 0 it shows what looks like an error.
 He added the [try.sh](1990/jaw/try.sh) to run the commands that we suggested at
 the time.
 
-However, there is a known bug still, see [1990 jaw in
-bugs.md](/bugs.md#1990-jaw) for details.
-
-NOTE: as `btoa` is not common we used a ruby script from Yusuke.
+NOTE: as `btoa` is not common we used a ruby script from Yusuke but with a minor
+fix applied by Cody that made the program just show `oops` twice from invalid
+input.
 
 
 ## [1990/pjr](1990/pjr/pjr.c) ([README.md](1990/pjr/README.md]))
@@ -1020,14 +1019,24 @@ again (since it did not work anyway a segfault prevention was added here). He
 also fixed some array addressing (some of which might not be strictly necessary
 but as he was testing the `fibonacci.c` bug he ended up changing it anyway).
 
-Finally he changed this program to use `fgets()` not `gets()` to make it safer
+BTW: why can't the fix:
+
+```c
+if (a[1]==NULL||a[2]==NULL||a[3]==NULL||a[4]==NULL||a[5]==NULL) return 1;
+```
+
+be changed to just test the value of `A` when `a` is argv and `A` is argc?
+
+
+Finally Cody changed this program to use `fgets()` not `gets()` to make it safer
 and to prevent a warning about `gets()` at linking or runtime. Since this
 program is so incredible the extra fixes were deemed worth having and this is why
 it was done.
 
-Cody disabled a warning in the Makefile that proved to be a problem only with
-clang in linux but which was defaulting to an error. This way was the simplest
-way to deal with the problem in question due to the way the entry works.
+Cody later disabled a warning in the Makefile that proved to be a problem only
+with clang in linux but which was defaulting to an error. This way was the
+simplest way to deal with the problem in question due to the way the entry
+works.
 
 Yusuke pointed out that `atof` nowadays needs `#include <stdlib.h>` which was
 used in order to get this to work initially (prior to this output was there but
