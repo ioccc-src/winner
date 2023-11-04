@@ -132,7 +132,7 @@ and cd. It flags errors on failed `chdir()`, `open()`, `creat()`,
 
 This program is obfuscated in a few notable ways: apart from the layout (an
 unformatted (but crunched) version is included for people who want to put this
-through cb) it makes clever use of a write statement, so that the same statement
+through `cb`) it makes clever use of a `write()` statement, so that the same statement
 can be used to print errors and the prompt. By calling the error function with
 the value `-8`, the pointer offset in the expression `"?\n$ "-x/4` goes from 0
 to 2.  Presto!  A prompt. For errors with numbers smaller than `-4` (i.e., UNIX
@@ -158,6 +158,7 @@ eliminate more than a few characters (we can't see how to make it
 any smaller!).  550 characters is pretty lean for a shell that does
 this much.
 
+
 ### BUGS
 
 The syntax of the shell has not been fully explored, but if you try
@@ -172,20 +173,20 @@ example:
 cat > foo > bar
 ```
 
-cats to foo, since it was pushed last, but
+cats to `foo`, since it was pushed last, but
 
 ```sh
 cat > > foo bar
 ```
 
-cats to bar, since bar was pushed under foo (remember we're
+cats to `bar`, since `bar` was pushed under `foo` (remember we're
 parsing right-left).
 
-Depending on your flavor of Unix, cd without an argument will
+Depending on your flavor of Unix, `cd` without an argument will
 either produce an error or just do nothing.
 
 There is just one error message, the question mark, but hey, that's
-all ed does too.
+all `ed(1)` does too.
 
 
 ## Copyright and CC BY-SA 4.0 License:
