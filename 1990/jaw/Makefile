@@ -142,7 +142,7 @@ atob: zcat
 ${PROG}:
 	${RM} -f $@
 	echo 'PATH=;export PATH;./atob|./zcat' > $@
-	${CHMOD} 0555 $@
+	${CHMOD} 0755 $@
 
 # alternative executable
 #

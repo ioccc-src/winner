@@ -948,10 +948,9 @@ with if the C preprocessor botches single quotes in cpp expansion.
 
 ## [1990/jaw](1990/jaw/jaw.c) ([README.md](1990/jaw/README.md]))
 
-Cody fixed the script to work properly in modern environments including paths,
-writing to and extracting from stdout, (to do with `$PATH`
-not having `.` in it) and relying on the exit code in the commands to allow for
-`&& ...`.
+Cody fixed the script to work properly in modern environments including writing
+to and extracting from `stdout` and relying on the exit code in the commands to
+allow for `&& ...`.
 
 He also changed the `perror(3)` call to `fprintf(3)` because in macOS when errno
 is 0 it shows what looks like an error.
@@ -961,7 +960,7 @@ the time.
 
 NOTE: as `btoa` is not common we used a ruby script from Yusuke but with a minor
 fix applied by Cody that made the program just show `oops` twice from invalid
-input.
+input but which now works.
 
 
 ## [1990/pjr](1990/pjr/pjr.c) ([README.md](1990/pjr/README.md]))
