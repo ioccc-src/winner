@@ -60,14 +60,16 @@ experiment with numbers that have more or larger factors?
 
 Visual factorization 1-liner.  Try:
 
-    gcc -o prog prog.c
-    ./prog @
-    ./prog @ @
-    ./prog @ @ @
-    ./prog @ @ @ @
-    ./prog @ @ @ @ @ @
-    ./prog @ @ @ @ @ @ @ @
-    ./prog @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
+```sh
+gcc -o prog prog.c
+./prog @
+./prog @ @
+./prog @ @ @
+./prog @ @ @ @
+./prog @ @ @ @ @ @
+./prog @ @ @ @ @ @ @ @
+./prog @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
+```
 
 Inspired by [Animated Factorization
 Diagrams](http://www.datapointed.net/visualizations/math/factorization/animated-diagrams/).

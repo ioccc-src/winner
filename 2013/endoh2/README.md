@@ -57,9 +57,9 @@ straightforward bitmap comparison.
 
 * LZ77-like compression for font and template data
 * tiny JPEG encoder
-  * Zig-zag space-filling curve
-  * Discrete cosine transform
-  * JPEG Huffman encoding (cheating)
+    * Zig-zag space-filling curve
+    * Discrete cosine transform
+    * JPEG Huffman encoding (cheating)
 
 ### Notes
 

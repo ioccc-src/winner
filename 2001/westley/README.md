@@ -1,7 +1,7 @@
 # Best position-independent code
 
-Brian Westley
-US
+Brian Westley\
+US\
 <http://www.westley.org>
 
 
@@ -202,9 +202,11 @@ comment), there are technically `28!` different programs, or
 `304,888,344,611,713,860,501,504,000,000` different versions,
 all legal C.
 
+```
 \* except in Florida voting machines
 
 \*\* all cards must be face down, nine-edge first, of course.
+```
 
 
 ## Copyright and CC BY-SA 4.0 License:

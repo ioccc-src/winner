@@ -173,18 +173,24 @@ standards compliant). This is used to print the usage instructions.
 
 Compiling using
 
-    gcc -Wall -Wextra -pedantic
+```sh
+gcc -Wall -Wextra -pedantic
+```
 
 gives only `-Wmisleading-indentation` which is sensible considering the source code. While
 
-    clang -Wall -Wextra -pedantic
+```sh
+clang -Wall -Wextra -pedantic
+```
 
 is a bit more pessimistic and gives `-Wempty-body` (I like loops without
 bodies), `-Wstring-plus-int` (since apparently some people think string+int is a
 concatenation) and one of the weirder warnings I have seen from me splitting a
 negative constant with whitespace. Compiling using
 
-    clang -Wall -Wextra -pedantic -Weverything
+```sh
+clang -Wall -Wextra -pedantic -Weverything
+```
 
 produces a few page faults of warnings and makes me feel generally bad about
 myself. :(

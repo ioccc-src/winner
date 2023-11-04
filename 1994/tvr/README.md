@@ -35,9 +35,11 @@ Mode may be a value from 0 to 12.
 
 The author has provided us a spoiler version:
 
-	make tvr.alt
-	./tvr.alt altmode screensize/2 < colormapfile
-\
+```sh
+make tvr.alt
+./tvr.alt altmode screensize/2 < colormapfile
+```
+
 where `altmode` `1` - `4` correspond to mode `0` - `3` in the original entry and
 `altmode 0` calculates Mandelbrot/Julian sets correctly.
 

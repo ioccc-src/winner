@@ -33,7 +33,7 @@ See the author's information below on these details.
 If you don't have gs or an equivalent postscript viewer, try:
 
 ```sh
-	echo "" | ./leo 1 > foo.ps
+echo "" | ./leo 1 > foo.ps
 ```
 
 and send foo.ps to your local postscript printer or open it in an appropriate
@@ -193,7 +193,6 @@ the opening for step 1 is not a single line but a cross:
 ```
                                 \./
                                 / \
-\
 ```
 
 To watch it repeatedly (as a screensaver), use:

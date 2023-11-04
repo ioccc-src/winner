@@ -307,7 +307,7 @@ What does this do?
 ```sh
 ./sykes pet.rom -1
 ```
-\
+
 Have fun!
 
 

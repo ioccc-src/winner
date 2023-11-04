@@ -221,19 +221,19 @@ C compilers.
    must resemble one of the canonical forms, `"foo.h"` or `<bar.h>`.
    This lets us write things like
 
-     ```c\
-     #define HEADER "foo.h"
-     #include HEADER
-     ```
+ ```c
+ #define HEADER "foo.h"
+ #include HEADER
+ ```
 
    I could not find a compiler rejecting this. However, if we're
    torturing the preprocessor a little more, by using token pasting,
    at least one compiler falls over.
 
-   ```c
-     #define H(x) <st##x##.h>
-     #include H(dio)              /* expands to <stdio.h> */
-   ```
+```c
+#define H(x) <st##x##.h>
+#include H(dio)              /* expands to <stdio.h> */
+```
 
    is rejected by tcc version 4.1.2, the TenDRA compiler:
    ```
@@ -253,21 +253,21 @@ C compilers.
    ISO 6.8.4. ISO 6.1.4 defines string literals as s-char-sequences,
    which may include octal escape sequences. Let's look at
 
-   ```c
-     #include <stdio.h>
-     #line 42 "foo\0bar"
-     int main (void) {
-       printf ("%s %d\n", __FILE__, (int)sizeof __FILE__);
-       return 0;
-     }
-   ```
+```c
+#include <stdio.h>
+#line 42 "foo\0bar"
+int main (void) {
+   printf ("%s %d\n", __FILE__, (int)sizeof __FILE__);
+   return 0;
+}
+```
 
    This is supposed to output `'foo 8'`. Here's what happens in RL:
 
-   ```
-   foo 4        gcc 2.7.2.1, lcc
-   foo\0bar 9   tcc 4.1.2, Sunsoft cc turn "\0" into "\\0", ugh!
-   ```
+```
+foo 4        gcc 2.7.2.1, lcc
+foo\0bar 9   tcc 4.1.2, Sunsoft cc turn "\0" into "\\0", ugh!
+```
 
    (I have written a bug report for gcc. Newer versions and egcs are ok.)
 

@@ -4,8 +4,8 @@ Jari Arkko\
 Kauppalantie 25A7\
 02700 Kauniainen\
 Finland\
-<http://www.arkko.com>\
-\
+<http://www.arkko.com>
+
 Jyrki Holopainen\
 Forsellesintie 1-3A10\
 02700 Kauniainen\

@@ -135,37 +135,47 @@ numbers from 8 to 11.
 2. We know that [Euler
 characteristics](https://en.wikipedia.org/wiki/Euler_characteristic) is the number of "vertexes"
 
+```
 	    #
+```
 
-   minus the number of "edges"
+minus the number of "edges"
 
+```
 	   ## # #. .#
 	      # .# #.   ('.' must be empty)
+```
 
-   plus the number of "faces"
+plus the number of "faces"
 
+```
 	   ##
 	   ##
+```
 
 3. If we fill all these patterns to 2x2 squares,
 
+```
 	   #? ## #? #. .# ##
 	   ?? ?? #? .# #. ##
 	   +1 -1 -1 -1 -1 +1
+```
 
-   substitute all possible "values" of `?` and sum them up, we get that it is
-   enough to calculate:
+substitute all possible "values" of `?` and sum them up, we get that it is
+enough to calculate:
 
+```
 	   #. .# ##
 	   .. #. #.
 	   +1 -1 -1
+```
 
-   Note now it is simple and obfuscated enough to be used as
-   a "magic trick".
+Note now it is simple and obfuscated enough to be used as
+a "magic trick".
 
 4. I make a 16-character array; when indexed by 4-bit value which
-   represents the 2x2 squares, it will return a number to add/subtract
-   `{-1,0,+1}`
+represents the 2x2 squares, it will return a number to add/subtract
+`{-1,0,+1}`
 
 5. We convert lines of input to bitmaps (`N-bit` integers). Additionally, it is
 heavily obfuscated by using negative numbers (two's complement).  For example,
@@ -180,14 +190,16 @@ we use 15-character string.)
 
 7. Since the rule found in (3) did not produce any funny messages, I changed it until it did. (The `#` character to find vertexes is in the top right corner, not the top left one.) The following messages will also work instead of `has dirtiest IF`:
 
-	   HighlandYachter
-	   TestDirtiestTen
-	   has lintiest IF
-	   TighterLaughter
-	   HustlerDaughter
-	   TighterDemoThen
+```
+HighlandYachter
+TestDirtiestTen
+has lintiest IF
+TighterLaughter
+HustlerDaughter
+TighterDemoThen
+```
 
-   They can be mixed, of course!
+They can be mixed, of course!
 
 8. NOTE: item 8 was removed by the judges so as to not spoil the challenge of
 figuring how arguments can be used to alter the exit value.

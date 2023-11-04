@@ -1,8 +1,8 @@
 # Homage to a classic game
 
-    Sandro Maffiodo\
-    <smaffer@gmail.com>\
-    <http://www.assezeta.com/sandromaffiodo>
+Sandro Maffiodo\
+<smaffer@gmail.com>\
+<http://www.assezeta.com/sandromaffiodo>
 
 
 ## To build:

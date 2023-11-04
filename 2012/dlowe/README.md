@@ -1,7 +1,7 @@
 # Best way to lose a life
 
 J. David Lowe\
-US
+US\
 <j.david.lowe@gmail.com>\
 <https://github.com/dlowe>
 

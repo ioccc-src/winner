@@ -1,7 +1,7 @@
 # Most functional
 
-    Freek Wiedijk\
-    <freek@cs.ru.nl>
+Freek Wiedijk\
+<freek@cs.ru.nl>
 
 
 ## To build:
@@ -51,8 +51,10 @@ If you win a bet by demonstrating this entry, please let us know.
 - recursion implemented through Curry's paradoxical combinator `Y`
 - the readable implementation of `Y` is on lines 29-30:
 
-	W_f = \x.f(xx)
-	Y = \f.W_f W_f
+```
+W_f = \x.f(xx)
+Y = \f.W_f W_f
+```
 
 - a mixture of strict and lazy evaluation, with a `_` force function
   (John Tromp notes that if Turing's fixed-point combinator

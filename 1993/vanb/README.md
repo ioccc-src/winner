@@ -37,7 +37,6 @@ What happens if you use something other than valid digits?
 
 ## Judges' remarks:
 
-\
 The octal expression may contain:
 
 ```
@@ -93,7 +92,7 @@ what grammar non-terminal to parse. `**O7` is the next character.
 `O3` is an intermediate result. Whenever you see a construct like:
 
 ```
-      !(expression with O2)?
+!(expression with O2)?
 ```
 
 it's decrementing & testing `O2` to see what state it's in. Comparisons

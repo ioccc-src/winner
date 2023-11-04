@@ -73,46 +73,52 @@ Program received signal SIGSEGV, Segmentation fault.
 
 Okay, check the backtrace.
 
-    (gdb) backtrace
-    #0  0x0000000000000000 in ?? ()
-    #1  0x0000555555555201 in x23 () at prog.c:35
-    #2  0x000055555555571a in x64 () at prog.c:100
-    #3  0x0000555555555747 in x65 () at prog.c:101
-    #4  0x0000555555555774 in x66 () at prog.c:102
-    #5  0x00005555555557ce in x69 () at prog.c:105
-    #6  0x0000555555555828 in x6e () at prog.c:110
-    #7  0x0000555555555747 in x65 () at prog.c:101
+```
+(gdb) backtrace
+#0  0x0000000000000000 in ?? ()
+#1  0x0000555555555201 in x23 () at prog.c:35
+#2  0x000055555555571a in x64 () at prog.c:100
+#3  0x0000555555555747 in x65 () at prog.c:101
+#4  0x0000555555555774 in x66 () at prog.c:102
+#5  0x00005555555557ce in x69 () at prog.c:105
+#6  0x0000555555555828 in x6e () at prog.c:110
+#7  0x0000555555555747 in x65 () at prog.c:101
     ...
+```
 
 See the line numbers and lookup the ASCII table.
 
-     35 = '#'
-    100 = 'd'
-    101 = 'e'
-    102 = 'f'
-    105 = 'i'
-    110 = 'n'
-    101 = 'e'
-    ...
+```
+ 35 = '#'
+100 = 'd'
+101 = 'e'
+102 = 'f'
+105 = 'i'
+110 = 'n'
+101 = 'e'
+...
+```
 
 ### One more thing:
 
 The original program can be used as a GDB command file.
 
-    $ gdb -q -x prog.c ./prog | cat
-    Reading symbols from ./prog...done.
+```
+gdb -q -x prog.c ./prog | cat
+Reading symbols from ./prog...done.
 
-    Program received signal SIGSEGV, Segmentation fault.
-    0x0000000000000000 in ?? ()
-    #0  0x0000000000000000 in ?? ()
-    #1  0x0000555555555201 in x23 () at prog.c:35
-    #2  0x000055555555571a in x64 () at prog.c:100
-    #3  0x0000555555555747 in x65 () at prog.c:101
-    #4  0x0000555555555774 in x66 () at prog.c:102
-    #5  0x00005555555557ce in x69 () at prog.c:105
-    #6  0x0000555555555828 in x6e () at prog.c:110
-    #7  0x0000555555555747 in x65 () at prog.c:101
-    ...
+Program received signal SIGSEGV, Segmentation fault.
+0x0000000000000000 in ?? ()
+#0  0x0000000000000000 in ?? ()
+#1  0x0000555555555201 in x23 () at prog.c:35
+#2  0x000055555555571a in x64 () at prog.c:100
+#3  0x0000555555555747 in x65 () at prog.c:101
+#4  0x0000555555555774 in x66 () at prog.c:102
+#5  0x00005555555557ce in x69 () at prog.c:105
+#6  0x0000555555555828 in x6e () at prog.c:110
+#7  0x0000555555555747 in x65 () at prog.c:101
+...
+```
 
 By using this, you can confirm that it is actually a quine.
 

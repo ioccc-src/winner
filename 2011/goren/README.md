@@ -61,8 +61,10 @@ a pipe.  But what IS a pipe? This program tries to provide an answer.
 
 Magritte's [test for pipes](http://en.wikipedia.org/wiki/The_Treachery_of_Images) is:
 
->    The famous pipe. How people reproached me for it! And yet, could
->    you stuff my pipe? No, it's just a representation, is it not?
+```
+The famous pipe. How people reproached me for it! And yet, could
+you stuff my pipe? No, it's just a representation, is it not?
+```
 
 Accordingly, this program only approves pipes which can be used for
 stuffing data.

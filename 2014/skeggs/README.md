@@ -1,8 +1,8 @@
 # Most dynamic
 
-    Cel Skeggs\
-    <ioccc@celskeggs.com>\
-    <http://www.celskeggs.com>
+Cel Skeggs\
+<ioccc@celskeggs.com>\
+<http://www.celskeggs.com>
 
 
 ## To build:
@@ -79,29 +79,29 @@ The current size is a third to a half of the original size before compression.
 
 Due to this, it does LOTS of things that subtly annoy compilers!
 
- * (10) data argument not used by format string
+* (10) data argument not used by format string
 
-   This occurs because some of the fprintf invocations don't use all their
-   parameters. The program should still work fine!
+  This occurs because some of the fprintf invocations don't use all their
+  parameters. The program should still work fine!
 
- * (1) using the result of an assignment as a condition without parentheses
+* (1) using the result of an assignment as a condition without parentheses
 
-   Somewhere, I needed to set a variable and then branch on the result. The
-   shortest way was to combine them. Some self-proclaimed "EXPERTS" think this
-   is a bad programming practice, but what do they know? :P
+  Somewhere, I needed to set a variable and then branch on the result. The
+  shortest way was to combine them. Some self-proclaimed "EXPERTS" think this
+  is a bad programming practice, but what do they know? :P
 
- * (1) implicit declaration of function 'time' is invalid in C99
+* (1) implicit declaration of function 'time' is invalid in C99
 
-   An `#include` statement is expensive, and I'm broke.
+  An `#include` statement is expensive, and I'm broke.
 
- * (1) control may reach end of non-void function
+* (1) control may reach end of non-void function
 
-   Turns out that sometimes, a return statement is too much. This will never
-   actually occur, but some C compilers think they know more about my program
-   than I do! :P
+  Turns out that sometimes, a return statement is too much. This will never
+  actually occur, but some C compilers think they know more about my program
+  than I do! :P
 
- * (?) Under some systems, `-fPIC` is irrelevant for shared libraries. If so,
-   you should remove it from the Makefile.
+* (?) Under some systems, `-fPIC` is irrelevant for shared libraries. If so,
+  you should remove it from the Makefile.
 
 ## OBFUSCATION? WHAT OBFUSCATION? THIS IS A PERFECTLY NORMAL C PROGRAM!
 
@@ -180,56 +180,56 @@ This program is a very easy program to cause to fail!
 
 Some things to check
 
- * On line 16, where it says `%cinclude "prog.c"`, is `prog.c` the name of the
-   original source code file?
- * Do you have ncurses installed?
- * Does your system have `ncurses.h` (like a nice system) or
-   `ncurses/ncurses.h` (like a rude system) ?
+* On line 16, where it says `%cinclude "prog.c"`, is `prog.c` the name of the
+  original source code file?
+* Do you have ncurses installed?
+* Does your system have `ncurses.h` (like a nice system) or
+  `ncurses/ncurses.h` (like a rude system) ?
 
-   If it's the latter (or some other path), you'll need to update line 97.
+  If it's the latter (or some other path), you'll need to update line 97.
 
-   (I had to do this under Cygwin.)
- * Does your system need `-fPIC` (or other arcane invocations) to compile a
-   shared library? If so, make sure that you include it in the -DCC argument in
-   the build script.
- * Does your system have a vague dislike for `-fPIC`? (Like Cygwin.) You might
-   need to remove it from the build script.
- * Does your system support `__attribute__((constructor))`? It needs to.
- * Check the file `err`. Maybe it will help you figure out why a runtime-
-   generated program failed. The failing program should be found in `t.c`.
- * Can't run a beautifier on the source code? I'm not going to help you there.
+  (I had to do this under Cygwin.)
+* Does your system need `-fPIC` (or other arcane invocations) to compile a
+  shared library? If so, make sure that you include it in the -DCC argument in
+  the build script.
+* Does your system have a vague dislike for `-fPIC`? (Like Cygwin.) You might
+  need to remove it from the build script.
+* Does your system support `__attribute__((constructor))`? It needs to.
+* Check the file `err`. Maybe it will help you figure out why a runtime-
+  generated program failed. The failing program should be found in `t.c`.
+* Can't run a beautifier on the source code? I'm not going to help you there.
 
 I've tested it on the following platforms, in case you need to try it on one:
 
- * 64-bit Windows 7 32-bit Cygwin with gcc 4.8.2 and standards c89, c90, c99,
-   and c11. Note that the program ran as 32-bit due to the version of cygwin.
- * 64-bit Arch Linux with gcc 4.9.1 and standards c89, c90, c99, c11.
- * 64-bit Arch Linux with clang 3.5.0 and standards c89 and c11.
+* 64-bit Windows 7 32-bit Cygwin with gcc 4.8.2 and standards c89, c90, c99,
+  and c11. Note that the program ran as 32-bit due to the version of cygwin.
+* 64-bit Arch Linux with gcc 4.9.1 and standards c89, c90, c99, c11.
+* 64-bit Arch Linux with clang 3.5.0 and standards c89 and c11.
 
 I ran out of time to test it on more systems.
 
 ### Q&A
 
- * Who am I?
+* Who am I?
 
-   Yes.
+  Yes.
 
- * Why doesn't your program require a pet fish license?
+* Why doesn't your program require a pet fish license?
 
-   THE LEMONLORD's pet LEMONFISH was not rendered in the game, and so does not
-   require a pet fish license.
+  THE LEMONLORD's pet LEMONFISH was not rendered in the game, and so does not
+  require a pet fish license.
 
- * Was this inspired by anything?
+* Was this inspired by anything?
 
-   Yes, this was inspired by a minigame from an open-source codebase of Space
-   Station 13. I didn't, however, look at the minigame at all during the
-   development of this entry.
+  Yes, this was inspired by a minigame from an open-source codebase of Space
+  Station 13. I didn't, however, look at the minigame at all during the
+  development of this entry.
 
- * What's the length of this REMARKS file according to the iocccsize tool?
+* What's the length of this REMARKS file according to the iocccsize tool?
 
-   `$ ./iocccsize -i <REMARKS.MD`
+  `$ ./iocccsize -i <REMARKS.MD`
 
-   `5092`
+  `5092`
 
 
 ## Copyright and CC BY-SA 4.0 License:

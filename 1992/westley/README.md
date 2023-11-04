@@ -35,7 +35,7 @@ show correctly!
 ### Try:
 
 ```sh
-./whereami 47 -122	(- means west of meridian)
+./whereami 47 -122	# NOTE: - means west of meridian
 ./whereami 47 122
 ```
 
@@ -66,7 +66,7 @@ NOTE: this alternative version also needs a terminal that wraps at 80 columns.
 To find the approximate place where this entry was judged, type:
 
 ```sh
-./whereami 37 -122	(- means west of meridian)
+./whereami 37 -122	# NOTE: - means west of meridian
 ```
 
 
@@ -155,8 +155,10 @@ n="bnaBCOCXdBBHGYdAP[A M E R I C A].AqandkmavX|ELC}BOCd"
 The code will test the 80-column wrap and document itself if it is
 joined together as one 160-character line and listed.  You should see:
 
-	main(l,a,n,d)...
-	[A M E R I C A]...
+```c
+main(l,a,n,d)...
+[A M E R I C A]...
+```
 
 ...going down the left edge if your terminal auto-wraps at 80 characters.
 

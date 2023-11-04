@@ -32,22 +32,24 @@ cat prog.c
 
 At this point you might be wondering, [WTF](http://acronyms.thefreedictionary.com/WTF)?\*
 
-    * What The Freak (polite form)
+* What The Freak (polite form)
 
-    * What's This For? (you may be wondering)
+* What's This For? (you may be wondering)
 
-    * What the Fish (python form)
+* What the Fish (python form)
 
 How is this code obfuscated?  Well look again:
 
-    less prog.c
+```sh
+less prog.c
 
-    more prog.c
+more prog.c
+```
 
 Where did those underscores come from?  Well [RTFS](http://acronyms.thefreedictionary.com/RTFS)!\*\*
 
-    ** Read the Freaking Source (polite form)
-    ** Read The Freakin' Screen (polite form)
+** Read the Freaking Source (polite form)
+** Read The Freakin' Screen (polite form)
 
 If you are still puzzled, look at prog.c with your favorite text editor.
 
@@ -56,9 +58,11 @@ If you are still puzzled, look at prog.c with your favorite text editor.
 
 **Follow this instruction literally!**
 
-    cat prog.c
-    gcc -w -o prog prog.c
-    ./prog
+```sh
+cat prog.c
+gcc -w -o prog prog.c
+./prog
+```
 
 You will do a double take.
 

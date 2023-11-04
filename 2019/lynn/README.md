@@ -1,6 +1,6 @@
 # Most functional compiler
 
-Ben Lynn
+Ben Lynn\
 <https://crypto.stanford.edu/~blynn/>
 
 

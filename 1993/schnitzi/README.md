@@ -63,7 +63,7 @@ What is cat?
 
 After this program prints the contents of 'file', ask it
 some questions related to the text.
-\
+
 The author suggests the following questions when using
 [schnitzi.info](schnitzi.info):
 

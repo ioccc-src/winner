@@ -1,7 +1,7 @@
 # Best Utility
 
-Garry Glendown
-Germany
+Garry Glendown\
+Germany\
 <https://web.archive.org/web/20011221120305/http://insider.regio.net/~garry/>
 
 
@@ -22,7 +22,6 @@ make all
 ### Try:
 
 ```sh
-
 ./garry.test.sh
 
 ./garry < README.md
@@ -54,7 +53,6 @@ make alt
 ### Alternate try:
 
 ```sh
-
 GARRY=garry.alt ./garry.test.sh
 
 ./garry.alt < README.md

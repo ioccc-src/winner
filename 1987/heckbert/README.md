@@ -1,6 +1,6 @@
 # Best Obfuscator of Programs
 
-Paul Heckbert\
+Paul Heckbert
 
 
 ## To build:

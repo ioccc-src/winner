@@ -114,74 +114,80 @@ This will immediately start outputting gibberish to the output, e.g.
 
 produces:
 
-     sins ohennAu
-    T-teooclelp tiThoWy
-\
-    g
-    nlakuafy\
-    e
-    sselW usnsofueB Aoee pasfUsuslhe ooM ot Wou moy
-    me neltAl -no IoyI mhuyakse  inT-l chu ghenn ffo? fnsoe yhyye
-    ue nnfrlass heUthole saounlcesyee pee\
-    t,
-    T0:0% 3.210888
-    o',,vU
-     An ,hTf lnm  Far rur:s moilt WoEgrv wonds mith Aog thernw
-    Rni So
-    co Nnd :
-    For an bImy pgafoun:
-    Wf'r hom wortiverita
-    int fod mous Eheledet,
-    Tho he theket nonS wnu-ang dorlaMSp
-    nrocWiSe tflg 'o.
-    T0:0% 2.995950
-    d whecedhencrysesil yr bn,
-    we hh y thiwt
-\
-\
-    hut fithlot,
-    Fmdy s he alt
-    Vh th no dh foud bobt werw:s Aotnf Fhwi't whe, eusu
-\
-    lhh thele wewcond ary soupfy wind tDont couc ths:
-    er fucwald oncli hen bos, f
-    T0:1% 2.878945
+```
+sins ohennAu
+T-teooclelp tiThoWy
+
+g
+nlakuafy
+e
+sselW usnsofueB Aoee pasfUsuslhe ooM ot Wou moy
+me neltAl -no IoyI mhuyakse  inT-l chu ghenn ffo? fnsoe yhyye
+ue nnfrlass heUthole saounlcesyee pee
+t,
+T0:0% 3.210888
+o',,vU
+ An ,hTf lnm  Far rur:s moilt WoEgrv wonds mith Aog thernw
+Rni So
+co Nnd :
+For an bImy pgafoun:
+Wf'r hom wortiverita
+int fod mous Eheledet,
+Tho he theket nonS wnu-ang dorlaMSp
+nrocWiSe tflg 'o.
+T0:0% 2.995950
+d whecedhencrysesil yr bn,
+we hh y thiwt
+
+
+hut fithlot,
+Fmdy s he alt
+Vh th no dh foud bobt werw:s Aotnf Fhwi't whe, eusu
+
+lhh thele wewcond ary soupfy wind tDont couc ths:
+er fucwald oncli hen bos, f
+T0:1% 2.878945
+```
 
 The gibberish is the networks attempt to write a play.  So far, it's not very
 successful!  Between the chunks of gibberish are training progress reports
 that look like
 
-    T0:1% 2.878945
+```
+T0:1% 2.878945
+```
 
 This tells you that we are 1% through training epoch 0, and that the training
 [loss][6] is about 2.88.  As the training continues, the training loss will
 reduce and the generated snippets will improve quickly:
 
-    ses, kuth
-    LAs of the wish,
-    As, I nos you,
-    Yov not to nalll,
-    Tr tot wonds.
-\
-    First Sondy, llt lrte, our, tw.
-\
-    First.
-\
-    BRUTUS:
-    Helsting the kith gops of hoch Whay, fars surd what to,
-    The cownens golt te.
-    T0:12% 2.259114
-    eplerrotrur tandans one wiok thy or thach and cullice ded yourssting
-    And wours:
-    Whed ur surt.
-\
-    SINENIUS:
-    On we lain bith
-    rerytund: tich lon hyivetetgor.
-\
-    VOLUONIA:
-    He brich nom dove worthan then wise,
-    T0:13% 2.254926
+```
+ses, kuth
+LAs of the wish,
+As, I nos you,
+Yov not to nalll,
+Tr tot wonds.
+
+First Sondy, llt lrte, our, tw.
+
+First.
+
+BRUTUS:
+Helsting the kith gops of hoch Whay, fars surd what to,
+The cownens golt te.
+T0:12% 2.259114
+eplerrotrur tandans one wiok thy or thach and cullice ded yourssting
+And wours:
+Whed ur surt.
+
+SINENIUS:
+On we lain bith
+rerytund: tich lon hyivetetgor.
+
+VOLUONIA:
+He brich nom dove worthan then wise,
+T0:13% 2.254926
+```
 
 It's already started to figure out things about Shakespeare plays -- how to
 spell short English words, how long lines tend to be, and that characters take
@@ -191,40 +197,42 @@ turns speaking with their names capitalized.  The training loss has dropped to
 Eventually, we will finish with the training data set and move on to a
 validation cycle:
 
-    y fath onother,
-    I sucess,
-    For I me the west crare.
-\
-    TRANIO:
-    Whow and'd have not to had you you one in my lapteny she very ame come me a gut and shourd aghir you as ignested; shend to make I strem
-    To h
-    T0:99% 1.924063
-     notnce gaud and is nicked thou day, ha the dusing you disaid: in thim, you things in ere thee thus erile Iht that tare theme my hast thesp thou shay: thou not eaten-or-ho-bess resing: I the but had d
-    T0:99% 1.923128
-    V0:0% 1.678907
-    V0:9% 1.700527
-    V0:18% 1.733179
-    V0:27% 1.714891
-    V0:36% 1.716672
-    V0:45% 1.782946
-    V0:54% 1.835629
-    V0:63% 1.876108
-    V0:72% 1.906814
-    V0:81% 1.924096
-    V0:90% 1.954492
-    V0:99% 1.969287
-    serfs you'll alliencseard:
-    We
-    got you? before
-    I say.
-\
-    Farstred dentlentecaly, sir, I it one bosticield
-    All me the backnour mino,
-    Whith capitaned mid! but stell the ifvemion
-    Willerity.
-\
-    First Cumfol of
-    T1:0% 1.885619
+```
+y fath onother,
+I sucess,
+For I me the west crare.
+
+TRANIO:
+Whow and'd have not to had you you one in my lapteny she very ame come me a gut and shourd aghir you as ignested; shend to make I strem
+To h
+T0:99% 1.924063
+ notnce gaud and is nicked thou day, ha the dusing you disaid: in thim, you things in ere thee thus erile Iht that tare theme my hast thesp thou shay: thou not eaten-or-ho-bess resing: I the but had d
+T0:99% 1.923128
+V0:0% 1.678907
+V0:9% 1.700527
+V0:18% 1.733179
+V0:27% 1.714891
+V0:36% 1.716672
+V0:45% 1.782946
+V0:54% 1.835629
+V0:63% 1.876108
+V0:72% 1.906814
+V0:81% 1.924096
+V0:90% 1.954492
+V0:99% 1.969287
+serfs you'll alliencseard:
+We
+got you? before
+I say.
+
+Farstred dentlentecaly, sir, I it one bosticield
+All me the backnour mino,
+Whith capitaned mid! but stell the ifvemion
+Willerity.
+
+First Cumfol of
+T1:0% 1.885619
+```
 
 Validation cycles are used to test the network to see if it has learned to
 generalize -- how well performs on data it hasn't seen before (as opposed to
@@ -232,7 +240,9 @@ the training data that the network will see many times as it trains).  Progress
 on the validation set is also displayed with a validation progress report that
 looks like
 
-    V0:36% 1.716672
+```
+V0:36% 1.716672
+```
 
 which means we are 36% of the way through the validation for epoch 0, and the
 validation loss is about 1.72.  Comparing the validation loss and the
@@ -335,28 +345,30 @@ lacks history:
 
 produces:
 
-    UERond w,
-\
-\
-    Gir:
-    KINof s, mesther s thouth.
-    E:
-    KINTret, at fu,
-    GOMy t, as sth kesewit sooos atse ang k, ck,
-    Sotheouserivesthecowhet been's, t he, h nre; t and, har wiread of pincer cedst sur has, ut:
-\
-    T14:67% 2.465115
-    UKESpan,
-    NGaromy soreate e m esewfoure pamitherarjulthengeoly tl.
-    NG s at e! w.
-\
-    WAllinoully?
-    Wamisw ofilem:
-    I'delandinarrstath har aksubly s cath Whern t Is, weciss:
-\
-    GLat s; llde.
-    Y aterit dsthence\
-    T14:67% 2.465404
+```
+UERond w,
+
+
+Gir:
+KINof s, mesther s thouth.
+E:
+KINTret, at fu,
+GOMy t, as sth kesewit sooos atse ang k, ck,
+Sotheouserivesthecowhet been's, t he, h nre; t and, har wiread of pincer cedst sur has, ut:
+
+T14:67% 2.465115
+UKESpan,
+NGaromy soreate e m esewfoure pamitherarjulthengeoly tl.
+NG s at e! w.
+
+WAllinoully?
+Wamisw ofilem:
+I'delandinarrstath har aksubly s cath Whern t Is, weciss:
+
+GLat s; llde.
+Y aterit dsthence
+T14:67% 2.465404
+```
 
 It is able to guess at what character is likely to follow the current one
 (by doing a [linear regression][13]), but it lacks any history beyond that to

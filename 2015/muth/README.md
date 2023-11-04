@@ -1,7 +1,7 @@
 # Most Complete Use of CPP
 
-    Dominik Muth\
-    <muth.ioccc@freenet.de>
+Dominik Muth\
+<muth.ioccc@freenet.de>
 
 
 ## To build:
@@ -73,17 +73,23 @@ Implementing your own Turing machine is easy. Take a look at the supplied header
 
 Every symbol used (except "`_`") must be explicitly declared using
 
-	#define sym_SYMBOL(sym, _SYMBOL) sym
+```c
+#define sym_SYMBOL(sym, _SYMBOL) sym
+```
 
 Example:
 
-    #define sym_1(sym, _1) sym
+```c
+#define sym_1(sym, _1) sym
+```
 
 #### Tape
 
 The initial content of the tape must be defined in the tape header using a triple like:
 
-	#define tape ((((,),...l2), l1), c, (r1, (r2..., (,))))
+```c
+#define tape ((((,),...l2), l1), c, (r1, (r2..., (,))))
+```
 
 - `l1`, `l2`, ... are the symbols to the left
 - `c` is the symbol at the current position
@@ -110,7 +116,9 @@ There must be a state "`A`" defined, which becomes the initial state of the mach
 
 To halt the machine, use the keyword "`break`" as in
 
-	#define A_1 (2, break)
+```c
+#define A_1 (2, break)
+```
 
 
 ## Copyright and CC BY-SA 4.0 License:

@@ -52,7 +52,7 @@ This program ignores non-lower case letters.
 
 ### Obfuscation
 
-* `for` is not used.\
+* `for` is not used.
 * A part of the program is encrypted.
 
 

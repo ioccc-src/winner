@@ -1,6 +1,6 @@
 # Most Compact
 
-    Chris Mills
+Chris Mills
 
 
 ## To build:

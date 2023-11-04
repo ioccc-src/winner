@@ -32,8 +32,10 @@ On terminal supports 24 bit color, has black background, and size at least 125x3
 
 It is said by some students of Astronomy:
 
-    Oh, Be A Fine Gal, Kiss Me!
-    Oh, Be A Fine Gentleman, Kiss Me!
+```
+Oh, Be A Fine Gal, Kiss Me!
+Oh, Be A Fine Gentleman, Kiss Me!
+```
 
 Many [Mnemonic variations](http://www.star.ucl.ac.uk/%7Epac/obafgkmrns.html) exist.
 You might wish, on a star, to better understand the colors being displayed.

@@ -40,12 +40,16 @@ This is a configurable banner-like program.
 
 - To convert a character glyph into a data file:
 
-	./newbern char < some_nicely_shaped_text >> data_file
+```sh
+./newbern char < some_nicely_shaped_text >> data_file
+```
 
 
 - To print a string using glyphs from a data file:
 
-	./newbern data_file a_string
+```sh
+./newbern data_file a_string
+```
 
 ### Extra functionality
 

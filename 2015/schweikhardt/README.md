@@ -1,7 +1,7 @@
 # Best Documented
 
-    Jens Schweikhardt\
-    <http://www.schweikhardt.net>
+Jens Schweikhardt\
+<http://www.schweikhardt.net>
 
 
 ## To build:
@@ -229,6 +229,7 @@ the myriad of possible amino acids there are 23 from which proteins are
 built. In biochemistry, each is assigned a TLI (see [Proteinogenic amino
 acid](https://en.wikipedia.org/wiki/Proteinogenic_amino_acid)):
 
+```
     ala	Alanine
     cys	Cysteine
     asp	Aspartic acid
@@ -255,15 +256,18 @@ acid](https://en.wikipedia.org/wiki/Proteinogenic_amino_acid)):
 	glx	Glutamic acid or Glutamine
 	xle	Leucine or Isoleucine
     unk Unknown
+``
 
 My own research results complete this list (not yet in Wikipedia due to
 the rule "[No original
 research](https://en.wikipedia.org/wiki/Wikipedia:No_original_research)"):
 
+```
 	and	Androgynine
 	xor	Xenoricine
 	not	Notanamine
 	tla	Triletramine
+```
 
 Interestingly, the TLI are the perfect mnemonics for C language source.
 For example, `met` is "Main's Exit Type" (`int`), `ala` is "A Large
@@ -460,31 +464,33 @@ Since the program frees all memory in all possible execution paths, even when
 it must bail out,
 valgrind should be happy. An early version of my program however reported this:
 
-    $ valgrind --leak-check=full --show-leak-kinds=all ./prog 6
-    [...]
-    ==14615== HEAP SUMMARY:
-    ==14615==     in use at exit: 4,096 bytes in 1 blocks
-    ==14615==   total heap usage: 4 allocs, 3 frees, 4,108 bytes allocated
-    ==14615==
-    ==14615== 4,096 bytes in 1 blocks are still reachable in loss record 1 of 1
-    ==14615==    at 0x4C236C0: malloc (in /usr/local/lib/valgrind/vgpreload_memcheck-amd64-freebsd.so)
-    ==14615==    by 0x4F62175: ??? (in /lib/libc.so.7)
-    ==14615==    by 0x4F62073: ??? (in /lib/libc.so.7)
-    ==14615==    by 0x4F514EE: ??? (in /lib/libc.so.7)
-    ==14615==    by 0x4F51265: vfprintf_l (in /lib/libc.so.7)
-    ==14615==    by 0x4F3E001: printf (in /lib/libc.so.7)
-    ==14615==    by 0x40101E: phe (in ./prog)
-    ==14615==    by 0x400A9F: main (in ./prog)
-    ==14615==
-    ==14615== LEAK SUMMARY:
-    ==14615==    definitely lost: 0 bytes in 0 blocks
-    ==14615==    indirectly lost: 0 bytes in 0 blocks
-    ==14615==      possibly lost: 0 bytes in 0 blocks
-    ==14615==    still reachable: 4,096 bytes in 1 blocks
-    ==14615==         suppressed: 0 bytes in 0 blocks
-    ==14615==
-    ==14615== For counts of detected and suppressed errors, rerun with: -v
-    ==14615== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+```
+valgrind --leak-check=full --show-leak-kinds=all ./prog 6
+[...]
+==14615== HEAP SUMMARY:
+==14615==     in use at exit: 4,096 bytes in 1 blocks
+==14615==   total heap usage: 4 allocs, 3 frees, 4,108 bytes allocated
+==14615==
+==14615== 4,096 bytes in 1 blocks are still reachable in loss record 1 of 1
+==14615==    at 0x4C236C0: malloc (in /usr/local/lib/valgrind/vgpreload_memcheck-amd64-freebsd.so)
+==14615==    by 0x4F62175: ??? (in /lib/libc.so.7)
+==14615==    by 0x4F62073: ??? (in /lib/libc.so.7)
+==14615==    by 0x4F514EE: ??? (in /lib/libc.so.7)
+==14615==    by 0x4F51265: vfprintf_l (in /lib/libc.so.7)
+==14615==    by 0x4F3E001: printf (in /lib/libc.so.7)
+==14615==    by 0x40101E: phe (in ./prog)
+==14615==    by 0x400A9F: main (in ./prog)
+==14615==
+==14615== LEAK SUMMARY:
+==14615==    definitely lost: 0 bytes in 0 blocks
+==14615==    indirectly lost: 0 bytes in 0 blocks
+==14615==      possibly lost: 0 bytes in 0 blocks
+==14615==    still reachable: 4,096 bytes in 1 blocks
+==14615==         suppressed: 0 bytes in 0 blocks
+==14615==
+==14615== For counts of detected and suppressed errors, rerun with: -v
+==14615== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+```
 
 From which I concluded that `printf` allocated a single 4K block for
 which no matching free existed. But how to free memory allocated deep
@@ -499,30 +505,32 @@ of C99 7.19.5.1, "The fclose function", was encouraging:
 
 So I `fclose(stdout)` before returning and now:
 
-    $ valgrind --leak-check=full --show-leak-kinds=all ./prog 6
-    ==14571== Memcheck, a memory error detector
-    ==14571== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
-    ==14571== Using Valgrind-3.10.0 and LibVEX; rerun with -h for copyright info
-    ==14571== Command: ./prog 6
-    ==14571==
-    0000000000000006
-    0000000000000003 1
-    000000000000000A 2
-    0000000000000005 3
-    0000000000000010 4
-    0000000000000008 5
-    0000000000000004 6
-    0000000000000002 7
-    0000000000000001 8
-    ==14571==
-    ==14571== HEAP SUMMARY:
-    ==14571==     in use at exit: 0 bytes in 0 blocks
-    ==14571==   total heap usage: 4 allocs, 4 frees, 4,120 bytes allocated
-    ==14571==
-    ==14571== All heap blocks were freed -- no leaks are possible
-    ==14571==
-    ==14571== For counts of detected and suppressed errors, rerun with: -v
-    ==14571== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+```
+valgrind --leak-check=full --show-leak-kinds=all ./prog 6
+==14571== Memcheck, a memory error detector
+==14571== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==14571== Using Valgrind-3.10.0 and LibVEX; rerun with -h for copyright info
+==14571== Command: ./prog 6
+==14571==
+0000000000000006
+0000000000000003 1
+000000000000000A 2
+0000000000000005 3
+0000000000000010 4
+0000000000000008 5
+0000000000000004 6
+0000000000000002 7
+0000000000000001 8
+==14571==
+==14571== HEAP SUMMARY:
+==14571==     in use at exit: 0 bytes in 0 blocks
+==14571==   total heap usage: 4 allocs, 4 frees, 4,120 bytes allocated
+==14571==
+==14571== All heap blocks were freed -- no leaks are possible
+==14571==
+==14571== For counts of detected and suppressed errors, rerun with: -v
+==14571== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+```
 
 A squeaky clean valgrind result!
 
@@ -532,10 +540,10 @@ FlexeLint is a commercial lint tool by [Gimpel
 Software](http://www.gimpel.com/html/index.htm). It supports nearly a
 thousand checks, broadly categorized into 4 levels,
 
-  1.  Syntax errors only (messages 1 to 399)
-  2.  Warnings (messages 400 to 699)
-  3.  Informational messages (700 to 899)
-  4.  Elective notes (900 to 1000 and > 9000)
+1. Syntax errors only (messages 1 to 399)
+2. Warnings (messages 400 to 699)
+3. Informational messages (700 to 899)
+4. Elective notes (900 to 1000 and > 9000)
 
 There is an [on-line
 demonstrator](http://www.gimpel-online.com/OnlineTesting.html) you can
@@ -543,6 +551,7 @@ use for checking your C programs and I highly recommend trying it. For a start,
 paste the well know first program in the form and press "Analyze Code". Note
 the FlexeLint configuration options in comments (no space between `/*` and `lint`).
 
+```c
     /*lint -w4            turn on everything */
     /*lint +esym(534,*)   no demonstrator defaults */
     /*lint -e966          indirectly included header file not used */
@@ -555,7 +564,7 @@ the FlexeLint configuration options in comments (no space between `/*` and `lint
         printf("hello, world\n");
         return 0;
     }
-
+```
 
 Possible checks include those for MISRA 2004 compliance verification.
 The [Motor Industry Software Reliability
@@ -581,7 +590,7 @@ the remaining messages by addressing them or suppressing them in such a way
 that the set of suppressions was minimal. At the end of the day, this is
 what remained:
 
-
+```
     //  === Tested with FlexeLint 9.00L on FreeBSD 11 ===
     //  Compiler:
     //  "4.2.1 Compatible FreeBSD Clang 3.6.1 (tags/RELEASE_361/final 237755)"
@@ -643,6 +652,7 @@ what remained:
     -elib(9047)      // FILE pointer dereferenced
     -esym(9058,__*)  // tag not used outside typedef
     -e9092           // NULL does not expand to a pointer (but plain 0)
+```
 
 ### Compulsory obfuscations
 

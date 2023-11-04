@@ -43,60 +43,56 @@ it) or when you type `^D` (EOF).
 
 ### Hints on how to cheat
 
-Rot13 to read:
+You can, of course, cheat by looking at the maze map.  The question
+you need to ask yourself, though, is what sequence of characters
+marks the place where you can escape the maze?
 
-    Lbh pna, bs pbhefr, purng ol ybbxvat ng gur znmr znc.  Gur dhrfgvba
-    lbh arrq gb nfx lbhefrys, gubhtu, vf jung frdhrapr bs punenpgref
-    znexf gur cynpr jurer lbh pna rfpncr gur znmr?
-
-    Gur nytbevguz vf dhvgr ovmneer--gur cevznel arfgrq ybbc gung
-    trarengrf vg tbrf gbc gb obggbz ba gur qvfcynl, ybbcvat sbejneq
-    gura onpxjneq sebz gur pheerag cbfvgvba gb qenj gur yrsg fvqr naq
-    gura gur evtug fvqr.
+The algorithm is quite bizarre--the primary nested loop that
+generates it goes top to bottom on the display, looping forward
+then backward from the current position to draw the left side and
+then the right side.
 
 ### Advanced usage notes
 
-Rot13 to read:
+The program can also be run from other files containing mazes.  The
+maze should be laid out graphically in the obvious format; newlines
+separate physical rows in the maze; a space indicates a corridor,
+and any other character is a wall.  Tabs are also considered walls,
+so make sure to convert tabs to spaces before using it.
 
-    Gur cebtenz pna nyfb or eha sebz bgure svyrf pbagnvavat znmrf.  Gur
-    znmr fubhyq or ynvq bhg tencuvpnyyl va gur boivbhf sbezng; arjyvarf
-    frcnengr culfvpny ebjf va gur znmr; n fcnpr vaqvpngrf n pbeevqbe,
-    naq nal bgure punenpgre vf n jnyy.  Gnof ner nyfb pbafvqrerq jnyyf,
-    fb znxr fher gb pbaireg gnof gb fcnprf orsber hfvat vg.
+Usage: buzzard [filename [escape-char [start-x start-yNNN
 
-    Hfntr: ohmmneq [svyranzr [rfpncr-pune [fgneg-k fgneg-l]]]
+Filename is the name of the file containing the maze.  This
+defaults to 'buzzard.c'.
 
-    Svyranzr vf gur anzr bs gur svyr pbagnvavat gur znmr.  Guvf
-    qrsnhygf gb 'ohmmneq.p'.
+Escape-char is the character in the maze that represents the exit.
+You can put more than one exit in the maze (for example, you could
+make all '!'s in the maze be exits).
 
-    Rfpncr-pune vf gur punenpgre va gur znmr gung ercerfragf gur rkvg.
-    Lbh pna chg zber guna bar rkvg va gur znmr (sbe rknzcyr, lbh pbhyq
-    znxr nyy '!'f va gur znmr or rkvgf).
+Start-x and start-y mark the coordinates where you begin playing.
+Y coordinate is down the rows in the files, X is to the right
+through the characters of each line.  Both X and Y begin counting
+from 0.  The default is start-x = 4, start-y = 5, which is needed
+for the buzzard.c, but would probably be inappropriate for other
+mazes.
 
-    Fgneg-k naq fgneg-l znex gur pbbeqvangrf jurer lbh ortva cynlvat.
-    L pbbeqvangr vf qbja gur ebjf va gur svyrf, K vf gb gur evtug
-    guebhtu gur punenpgref bs rnpu yvar.  Obgu K naq L ortva pbhagvat
-    sebz 0.  Gur qrsnhyg vf fgneg-k = 4, fgneg-l = 5, juvpu vf arrqrq
-    sbe gur ohmmneq.p, ohg jbhyq cebonoyl or vanccebcevngr sbe bgure
-    znmrf.
+BUGS:
 
-    OHTF:
+You can't change that at start you're facing down ("south").
 
-    Lbh pna'g punatr gung ng fgneg lbh'er snpvat qbja ("fbhgu").
-\
-    Gur qenjvat nytbevguz pnaabg unaqyr bcra fcnprf (gjb fhpprfvir
-    fvqr-pbeevqbef jvgu ab jnyy orgjrra gurz).  Va snpg, vg pnaabg unaqyr
-    fznyy qbt-yrtf cebcreyl, nygubhtu gur reebe vf fhogyr.
+The drawing algorithm cannot handle open spaces (two successive
+side-corridors with no wall between them).  In fact, it cannot handle
+small dog-legs properly, although the error is subtle.
 
-    Gur rkvg vf qenja yvxr n abezny pbeevqbe sebz gur fvqr ivrj;
-    vg'f bayl qvfcynlrq nf gur rkvg jura lbh ner snpvat vg.
+The exit is drawn like a normal corridor from the side view;
+it's only displayed as the exit when you are facing it.
 
-    Vzcebcre pbzznaqyvar nethzragf ner abg unaqyrq avpryl.
+Improper command line arguments are not handled nicely.
 
-    Znmrf jvgu bcravatf ng gur rqtrf jvyy pnhfr gur qenjvat cebtenz
-    gb ernpu vagb neovgenel cnepryf bs zrzbel.
+Mazes with openings at the edges will cause the drawing program
+to reach into arbitrary parcels of memory.
 
-    Gur cebtenz nffhzrf gung gnof ner frg gb 8 punenpgref.
+The program assumes that tabs are set to 8 characters.
 
 
 ## Copyright and CC BY-SA 4.0 License:

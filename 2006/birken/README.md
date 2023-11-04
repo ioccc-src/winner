@@ -2,7 +2,7 @@
 
 Michael Birken\
 US\
-<o__1 at hotmail dot com>
+<o__1@hotmail.com>
 
 
 ## To build:

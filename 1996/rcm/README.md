@@ -62,14 +62,15 @@ meets and actually exceeds specification."
 
 #### The Program Metrics Argument:
 
-"The program source is less than 3,100 characters in length and uncompresses
-file
+"The program source is less than 3,100 characters in length and uncompresses file
 [emacs-19.34b.tar.gz](https://ftp.gnu.org/old-gnu/emacs/emacs-19.34b.tar.gz) in
 about 130 seconds on my HP 9000/735.  The now obsolete source file `inflate.c'
 from the GNU gzip source tree is 31,613 characters in length and uncompresses
 the emacs distribution file in slightly under 25 seconds.  Thus:
 
-            3100 / 130 = 23.85       -vs-      31613 / 25 = 1264.52
+```
+3100 / 130 = 23.85       -vs-      31613 / 25 = 1264.52
+```
 
 which represents a better than 530% improvement in the ratio of
 source file size to execution time."

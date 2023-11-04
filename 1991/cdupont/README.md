@@ -40,19 +40,19 @@ this entry.
 
 ## Author's remarks:
 
-Spoiler, rot13 to read:
+Spoiler:
 
-    Gur fbhepr pbqr ubyqf gur yrggref bs gur zrffntr. Rnpu yrggre, pbzovarq
-    jvgu nabgure xrl yrggre, vf hfrq gb pbzchgr gur pbbeqvangrf bs gur arkg
-    yrggre naq xrl. Guhf, gur zrffntr vf pbqr.  Gung vf jul V hfr fvyyl\
-    pbzzragf, zbfg bsgra onqyl fcnprq.
+The source code holds the letters of the message. Each letter, combined
+with another key letter, is used to compute the coordinates of the next
+letter and key. Thus, the message is code.  That is why I use silly\
+comments, most often badly spaced.
 
-    Gur fcnpr punenpgre frdhrapr orgjrra gur jbeqf vf tvira ol n fvzcyr
-    pbzchgngvba ba na bpgny pbafgnag (tvira urer nf na urk inyhr, bs
-    pbhefr).
+The space character sequence between the words is given by a simple
+computation on an octal constant (given here as an hex value, of
+course).
 
-    Guvf jnl, nal zrffntr pna or zvkrq vagb n pbqr, fvapr gur xrlf nyybj
-    lbh gb cynpr gur zrnavatshy yrggref jurerire lbh jnag.
+This way, any message can be mixed into a code, since the keys allow
+you to place the meaningful letters wherever you want.
 
 
 ## Copyright and CC BY-SA 4.0 License:

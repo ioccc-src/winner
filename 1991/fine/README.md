@@ -55,12 +55,12 @@ the high bit off some input?
 
 The author wishes to thank J Greely for the last 6 bytes.
 
-Here's about how it does it:  [rot13 to read]
+Here's about how it does it:
 
 NOTE:  Bits are referred to as 76543210, high to low.
 
 1.  Get the character in variable `a`.  Note the fun way we check for `EOF`.
-(thanks J).
+    (thanks J).
 
 2.  Reverse bit 6, and strip bit 5.  Bit 6 determines (mostly) whether
     or not this character is a letter.  Bit 5 would determine case if

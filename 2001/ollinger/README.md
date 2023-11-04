@@ -1,7 +1,7 @@
 # Best of Show
 
-Nicolas Ollinger
-France
+Nicolas Ollinger\
+France\
 <https://www.univ-orleans.fr/lifo/Members/Nicolas.Ollinger/>
 
 
@@ -80,35 +80,36 @@ Q: Are there types of entries that are submitted so frequently that the
 A: Yes, there are types of entries that show up over and over again.
    The guidelines say:
 
-	    We tend to dislike programs that:
-	    are similar to previous winners
+```
+We tend to dislike programs that:
+are similar to previous winners
 
-      We like variety. However too often we see (please look at the winning
-      examples given to be aware of the level of the competition):
-
-(snip)
-
-	    generating small primes (below is the list of all
-				     prime related winners)
-		  1985/august
-		  1988/applin
-		  1994/weisberg
-		  1995/makarios
-		  1996/dalbec
-		  2000/bellard
-
-	    As you can see, just a list of primes (let alone small primes)
-	     does not cut it anymore.
+We like variety. However too often we see (please look at the winning
+examples given to be aware of the level of the competition):
 
 (snip)
 
-	    entries that use some complex state machine/table to print
-	    something
+generating small primes (below is the list of all prime related winners)
 
-		  1988/isaak
-		  1988/phillipps
+	1985/august
+	1988/applin
+	1994/weisberg
+	1995/makarios
+	1996/dalbec
+	2000/bellard
 
-	    Unbeaten for 12 years and counting...
+As you can see, just a list of primes (let alone small primes)
+does not cut it anymore.
+
+(snip)
+
+entries that use some complex state machine/table to print something
+
+	  1988/isaak
+	  1988/phillipps
+
+Unbeaten for 12 years and counting...
+```
 
 I think this is enough motivation for trying to submit a program which uses
 some complex state machine/table to generate small primes and print them.

@@ -1,7 +1,7 @@
 # Balanced use of obfuscation - Gold award
 
-    Adar Zeitak\
-    <aa4z2@walla.co.il>
+Adar Zeitak\
+<aa4z2@walla.co.il>
 
 
 ## To build:
@@ -82,7 +82,9 @@ around it's position.
 * Ignores parenthesis inside strings or character constants, so no errors
   will be detected in the following line:
 
-        printf(")");
+```c
+printf(")");
+```
 
 * Doesn't get confused by the [1984/anonymous](/1984/anonymous/anonymous.c) entry!
 
@@ -91,7 +93,9 @@ around it's position.
 * Escapes (e.g. `\"`) are ignored, so the following line will produce
   an error:
 
-        printf("\"");
+```c
+printf("\"");
+```
 
 #### Obfuscation
 
@@ -125,9 +129,10 @@ only function calls, typecasts, array lookups and pointer operators.
   at least two bytes long.
 
 * The program was tested on the following platforms:
-	- Ubuntu 9.04 32-bit with GCC
-	- Windows 7 32-bit with GCC
-	- Windows 7 32-bit with OpenWatcom
+
+- Ubuntu 9.04 32-bit with GCC
+- Windows 7 32-bit with GCC
+- Windows 7 32-bit with OpenWatcom
 
 
 ## Copyright and CC BY-SA 4.0 License:

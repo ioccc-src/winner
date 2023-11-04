@@ -1,7 +1,8 @@
 # Most Useful
 
-    Dave Burton <ioccc@snox.net>
-    <http://snox.net/ioccc>
+Dave Burton\
+<ioccc@snox.net>\
+<http://snox.net/ioccc>
 
 
 ## To build:
@@ -194,17 +195,20 @@ long`.  Changing the two `long long` typedefs to `long`, and compiling with `gcc
 -m32` yields a program that operates on 32-bit values, with wrap-around of
 shifts mod 32:
 
-	1<<48
-	65536	0x00010000
+```
+1<<48
+65536	0x00010000
+```
 
 gcc 4.2.1 without arguments compiles cleanly (e.g. cc prog.c -o prog).
 This is my workaday compiler.  gcc is also clean with -ansi, and -std=c99.
 
 clang 3.6.0 lives up to its namesake, resounding on non-problems.
 To stifle these complaints:
-\
-	-Wno-return-type -Wno-parentheses -Wno-empty-body
 
+```
+-Wno-return-type -Wno-parentheses -Wno-empty-body
+```
 
 When invoked with -ansi -pedantic, there are two warnings, which can be ignored:
 

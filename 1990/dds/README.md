@@ -24,7 +24,7 @@ make all
 
 Give the following lines as input:
 
-```
+```basic
 OLD LANDER.BAS
 RUN
 ```

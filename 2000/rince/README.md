@@ -129,13 +129,13 @@ from inside the monitor whilst standing on your head. In case of
 confusion, please consult the following chart (\*):
 
 ```
-			       N
-			       ^
-			       |
-			 E <---+---> W
-			       |
-			       v
-			       S
+	       N
+	       ^
+	       |
+	 E <---+---> W
+	       |
+	       v
+	       S
 ```
 
 (\*) Not to scale.

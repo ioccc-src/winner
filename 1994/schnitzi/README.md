@@ -76,7 +76,9 @@ feeding the source code to it will not work right.
 
 Try:
 
-	./schnitzi < schnitzi.c
+```sh
+./schnitzi < schnitzi.c
+```
 
 Compare the output of the program with its source.  Sure the output
 is different, but there is more than meets the `diff`'s eye.  Can you
@@ -104,7 +106,7 @@ The program generates interesting results when its source file is
 used as input:
 
 ```sh
-    	schnitzi < schnitzi.c
+schnitzi < schnitzi.c
 ```
 
 The result of this command is a program which does the exact same

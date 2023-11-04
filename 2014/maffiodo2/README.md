@@ -1,8 +1,8 @@
 # Most tweetable entry
 
-    Sandro Maffiodo\
-    <smaffer@gmail.com>\
-    <http://www.assezeta.com/sandromaffiodo>
+Sandro Maffiodo\
+<smaffer@gmail.com>\
+<http://www.assezeta.com/sandromaffiodo>
 
 
 ## To build:

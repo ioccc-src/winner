@@ -65,7 +65,7 @@ As for the rot13 algorithm, it relies on `index(3)` to find if the
 character is in the set `A-Za-z`. `l[]` is an array that gets filled
 with:
 
-```
+```c
 "nopqrstuvwxyzzzzabcdefghijklmmmmNOPQRSTUVWXYZZZZABCDEFGHIJKLMMMM"
 ```
 

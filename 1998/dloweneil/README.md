@@ -47,9 +47,11 @@ Pressing `d` drops the current letter onto the board.
 Read the authors' remarks below to find out how to play.  We believe that your
 experience may mirror one of our experiences:
 
-> Originally, I didn't appreciate the game.  Then I actually read the
-> description of the controls.  I started playing.  I struggled.
-> I spelled my first "poot".  I was hooked ...
+```
+Originally, I didn't appreciate the game.  Then I actually read the
+description of the controls.  I started playing.  I struggled.
+I spelled my first "poot".  I was hooked ...
+```
 
 
 ## Author's remarks:
@@ -69,7 +71,7 @@ around the border of the playing board, and decide when and where to drop
 it into the board.  Sound easy?  Of course, there's a catch...
 
 ### Controls
-\
+
 Only three controls:
 
 'a' moves the current letter one position counterclockwise around
@@ -159,7 +161,6 @@ places.
 - Sound.
 
 - Some way of quitting gracefully.
-
 
 Good Luck!
 

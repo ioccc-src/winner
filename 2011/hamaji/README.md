@@ -61,7 +61,7 @@ Game of Life](http://en.wikipedia.org/wiki/Conway's_Game_of_Life):
        1
        .
       112
-\
+
     1  X
     1   X
     3 XXX
@@ -110,8 +110,8 @@ There are two solutions:
 
 ```
       11
-\
-    1 X\
+
+    1 X
     1  X
 ```
 
@@ -119,9 +119,9 @@ and
 
 ```
       11
-\
+
     1  X
-    1 X\
+    1 X
 ```
 
 ### Detail

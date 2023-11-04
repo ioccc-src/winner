@@ -1,7 +1,7 @@
 # Best of show
 
 Adrian Cable\
-<adrian.cable@gmail.com>\
+<adrian.cable@gmail.com>
 
 
 ## To build:

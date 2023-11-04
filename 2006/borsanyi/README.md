@@ -2,7 +2,7 @@
 
 Szabolcs Borsanyi\
 United Kingdom\
-s.borsanyi at sussex dot ac dot uk
+<s.borsanyi@sussex.ac.uk>
 
 
 ## To build:

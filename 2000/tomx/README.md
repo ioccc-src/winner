@@ -95,9 +95,11 @@ the `main()`, leaving the complexities of the C file elsewhere and making this
 source still acceptable to `make` and `sh`. The following modification to the
 last few lines will compile the IOCCC's famous [mkentry.c](mkentry.c).
 
-    .PHONY: /* true clean */\
-    #undef   true\
-    #include "mkentry.c"
+```
+.PHONY: /* true clean */
+#undef   true
+#include "mkentry.c"
+```
 
 Ain't that useful?
 

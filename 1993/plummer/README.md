@@ -39,7 +39,6 @@ NOTE: an alternate version exists. See Alternate code section below.
 
 To use:
 
-
 ```sh
 make alt
 ```

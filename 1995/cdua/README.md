@@ -79,7 +79,7 @@ make all
 
 ### Original use:
 
-```
+```sh
 ./cdua
 ```
 

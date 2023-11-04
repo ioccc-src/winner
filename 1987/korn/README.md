@@ -35,27 +35,30 @@ Several points are important to understand this program:
 2. What is the value of the symbol `"have"`?  (hint: the value is NOT 4
 characters, or `'h'`, or a string)  Consider the fact that:
 
+```c
+char *x;
+```
 
-	    char *x;
+defines a pointer to a `char` (i.e. an address), and that the `=` assigns
+things of compatible types.  Since:
 
+```c
+x = "have";
+```
 
-  defines a pointer to a `char` (i.e. an address), and that the `=` assigns
-  things of compatible types.  Since:
-
-        x = "have";
-
-  is legal C, what type of value is `"have"`?
+is legal C, what type of value is `"have"`?
 
 3. Note that the following expressions yield the same value:
 
+```c
+x[3]	*(x+3)	  *(3+x)
+```
 
-        x[3]	*(x+3)	  *(3+x)
+since addition is commutative.  What can be said about this value?
 
-   since addition is commutative.  What can be said about the value:
-
-        3[x]
-
-    ?
+```c
+3[x]
+```
 
 [David
 Korn](https://news.slashdot.org/story/01/02/06/2030205/david-korn-tells-all)'s

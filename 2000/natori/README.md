@@ -1,6 +1,6 @@
 # Best Small Program
 
-NATORI Shin
+NATORI Shin\
 Japan
 
 

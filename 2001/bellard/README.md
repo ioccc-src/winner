@@ -66,19 +66,25 @@ or by giving the C source to its standard input.
 
 - Sample compilation and execution:
 
-        ./bellard bellard.otccex.c 10
+```sh
+./bellard bellard.otccex.c 10
+```
 
 - Self compilation:
 
-        ./bellard bellard.c bellard.otccex.c 10
+```sh
+./bellard bellard.c bellard.otccex.c 10
+```
 
 - Self compilation iterated...
 
-        ./bellard bellard.c bellard.c bellard.otccex.c 10
-\
-    An alternate syntax is to use it as a script interpreter: you can
-    put `#!/usr/local/bin/otcc` at the beginning of your C source if
-    you installed `otcc` at this place.
+```sh
+./bellard bellard.c bellard.c bellard.otccex.c 10
+```
+
+An alternate syntax is to use it as a script interpreter: you can
+put `#!/usr/local/bin/otcc` at the beginning of your C source if
+you installed `otcc` at this place.
 
 ### Supported C language subset (read joint example [bellard.otccex.c](bellard.otccex.c) to have an introduction to `OTCC` dialect)
 

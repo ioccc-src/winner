@@ -35,7 +35,6 @@ where:
 
 ## Judges' remarks:
 
-\
 By default, the number of colors is 6.  You may specify a
 value of between 1 and 15 colors.  See the author's notes
 for instructions of how to play.
@@ -78,16 +77,16 @@ backspaces. Do "disable scrolling" on cmdtool or similar emulators.
 
 ```
 judges-385> ./leo
-    (1296): 6433
-    ?? 12       # one 3 is a bull, another is a cow, and 4 is a cow
-    (160): 5363
-    ?? 02       # both 3's are cows
-    (21): 4231
-    ?? 22       # 2 and 3 are bulls, 4 and 1 are cows
-    (2): 4132
-    ?? 13       # 3 is a bull; 1, 2 and 4 are cows
-    (1): 1234
-    ?? 40       # you may enter everything there
+(1296): 6433
+?? 12       # one 3 is a bull, another is a cow, and 4 is a cow
+(160): 5363
+?? 02       # both 3's are cows
+(21): 4231
+?? 22       # 2 and 3 are bulls, 4 and 1 are cows
+(2): 4132
+?? 13       # 3 is a bull; 1, 2 and 4 are cows
+(1): 1234
+?? 40       # you may enter everything there
 ```
 
 ##### EXAMPLE: Guess the computer's number

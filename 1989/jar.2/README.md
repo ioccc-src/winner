@@ -22,9 +22,7 @@ make all
 [enter some lisp]
 
 ./jar.2 < some_lisp_file
-
 ```
-
 
 NOTE: this entry will likely segfault on invalid input.
 
@@ -39,7 +37,6 @@ cat chocolate_cake.lisp ; ./jar.2 < chocolate_cake.lisp
 ./try.sh chocolate_cake.lisp
 
 ./try.sh try.txt
-
 ```
 
 

@@ -54,7 +54,7 @@ make schweikh2
 
 often produced an error of the form:
 
-```
+```sh
 gcc -ansi schweikh2.alt.c -o schweikh2.alt
 as: Error: cca00NzV.s, line 58: Missing " at end of string
      "

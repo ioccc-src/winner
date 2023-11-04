@@ -41,7 +41,6 @@ su
 Make a floppy with an ext2 filesystem (`mke2fs /dev/fd0` replacing `fd0` with
 whatever the floppy device is!),  mount it under `/mnt/floppy` and then:
 
-
 ```sh
 cp kernel fs.tar lilo.conf boot.b /mnt/floppy
 ```
@@ -175,7 +174,9 @@ Accesses to data in the string are made relative to the define `V`,
 so these may need updating as appropriate (`0x90200` is the address
 at which a Linux bootloader loads an x86 kernel image).
 
+```
 \* ;-)
+```
 
 
 ## Copyright and CC BY-SA 4.0 License:

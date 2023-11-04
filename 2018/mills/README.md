@@ -127,33 +127,35 @@ At this point, type the rather cryptic command `rk(0,0)rkunix` -- this tells
 the system to look at the first partition on the first RK05 fixed disk, find
 the `rkunix` file and load it.  You should eventually see the following:
 
-        >boot
-\
-        40Boot
-        : rk(0,0)rkunix
-\
-        Berkeley UNIX (Rev. 2.9.1) Sun Nov 20 14:55:50 PST 1983
-        mem = 135872
-\
-        CONFIGURE SYSTEM:
-        xp ? csr 176700 vector 254 skipped:  No CSR
-        rk 0 csr 177400 vector 220 attached
-        hk ? csr 177440 vector 210 skipped:  No CSR
-        rl ? csr 174400 vector 160 skipped:  No CSR
-        rp ? csr 176700 vector 254 skipped:  No CSR
-        ht 0 csr 172440 vector 224 skipped:  No CSR
-        tm 0 csr 172520 vector 224 skipped:  No CSR
-        ts 0 csr 172520 vector 224 skipped:  No CSR
-        dh ? csr 160020 vector 370 skipped:  No CSR
-        dm ? csr 170500 vector 360 skipped:  No autoconfig routines
-        dz ? csr 160110 vector 320 skipped:  No CSR
-        dz ? csr 160110 vector 320 skipped:  No CSR
-        dn 0 csr 175200 vector 300 skipped:  No autoconfig routines
-        vp ? csr 177500 vector 174 skipped:  No autoconfig routines
-        lp ? csr 177514 vector 200 skipped:  No CSR
-        Erase=^?, kill=^U, intr=^C
-        #\
-\
+``
+>boot
+
+40Boot
+: rk(0,0)rkunix
+
+Berkeley UNIX (Rev. 2.9.1) Sun Nov 20 14:55:50 PST 1983
+mem = 135872
+
+CONFIGURE SYSTEM:
+xp ? csr 176700 vector 254 skipped:  No CSR
+rk 0 csr 177400 vector 220 attached
+hk ? csr 177440 vector 210 skipped:  No CSR
+rl ? csr 174400 vector 160 skipped:  No CSR
+rp ? csr 176700 vector 254 skipped:  No CSR
+ht 0 csr 172440 vector 224 skipped:  No CSR
+tm 0 csr 172520 vector 224 skipped:  No CSR
+ts 0 csr 172520 vector 224 skipped:  No CSR
+dh ? csr 160020 vector 370 skipped:  No CSR
+dm ? csr 170500 vector 360 skipped:  No autoconfig routines
+dz ? csr 160110 vector 320 skipped:  No CSR
+dz ? csr 160110 vector 320 skipped:  No CSR
+dn 0 csr 175200 vector 300 skipped:  No autoconfig routines
+vp ? csr 177500 vector 174 skipped:  No autoconfig routines
+lp ? csr 177514 vector 200 skipped:  No CSR
+Erase=^?, kill=^U, intr=^C
+#
+```
+
 Congratulations, you are running BSD UNIX 2.9 in single-user mode as root.
 
 On the other hand, if you did a typo somewhere, the boot loader has probably
@@ -166,15 +168,17 @@ root prompt.  Most of the commands you are familiar with work here (this was
 only a quarter of a century ago -- how much could things have changed?).
 Let's try some:
 
-        # ls
-        .cshrc       .profile     boot         hkunix       mnt          tmp
-        .login       2.9stamp     dev          lib          mullender.c  unix
-        .msgsrc      bin          etc          lost+found   rkunix       usr
-        # df
-        Filesystem  Mounted on  kbytes    used    free  % used
-        /dev/rk0    /             1958    1688     270     86%
-        # bin/cc mullender.c
-        # ./a.out
+```
+# ls
+.cshrc       .profile     boot         hkunix       mnt          tmp
+.login       2.9stamp     dev          lib          mullender.c  unix
+.msgsrc      bin          etc          lost+found   rkunix       usr
+# df
+Filesystem  Mounted on  kbytes    used    free  % used
+/dev/rk0    /             1958    1688     270     86%
+# bin/cc mullender.c
+# ./a.out
+```
 
 The program you've just run was the [winner of the first IOCCC contest from
 1984] [1]  (or was it 1894?), a personal favorite of mine.  It is rather
@@ -204,19 +208,23 @@ disk image.  Type `make v6` to build it, then type `./prog` to run it.
 
 You should see the boot loader prompt which is a single `@`:
 
-        @
+```
+@
+```
 
 At this point, you again must type a special incantation: `rkunix`.  After that
 you should see:
 
-        @rkunix
-        mem = 1035
-        RESTRICTED RIGHTS
-\
-        Use, duplication or disclosure is subject to
-        restrictions stated in Contract with Western
-        Electric Company, Inc.
-        #
+```
+@rkunix
+mem = 1035
+RESTRICTED RIGHTS
+
+Use, duplication or disclosure is subject to
+restrictions stated in Contract with Western
+Electric Company, Inc.
+#
+```
 
 You are now running a single-user session of v6 UNIX.  You might want to start
 with `stty -lcase` because otherwise everything will be IN ALL CAPS.
@@ -226,35 +234,37 @@ may need to use Control-E to quit the simulation.
 
 Assuming you're more careful than that, we can try a few commands:
 
-        @rkunix
-        mem = 1035
-        RESTRICTED RIGHTS
-\
-        Use, duplication or disclosure is subject to
-        restrictions stated in Contract with Western
-        Electric Company, Inc.
-        # STTY -LCASE
-        # ls
-        bin
-        dev
-        etc
-        hpunix
-        lib
-        mnt
-        rkunix
-        rpunix
-        tmp
-        unix
-        usr
-        # cat > foo.c
-        main()
-        {
-            printf("Hello, World!\n");
-        }
-	^D
-        # cc foo.c
-        # ./a.out
-        Hello, World!
+```
+@rkunix
+mem = 1035
+RESTRICTED RIGHTS
+
+Use, duplication or disclosure is subject to
+restrictions stated in Contract with Western
+Electric Company, Inc.
+# STTY -LCASE
+# ls
+bin
+dev
+etc
+hpunix
+lib
+mnt
+rkunix
+rpunix
+tmp
+unix
+usr
+# cat > foo.c
+main()
+{
+    printf("Hello, World!\n");
+}
+^D
+# cc foo.c
+# ./a.out
+Hello, World!
+```
 
 Why is Version 6 interesting?  Well, it was the oldest version that I could
 find a boot image of that had a C compiler...  This C compiler is recognizably
@@ -306,15 +316,19 @@ You can try out this version by typing `make v0`.  Since this version is a
 native PDP-7 emulation, it gets its own binary.  Type `./v0` to run it.  You
 should see the login prompt.
 
-        login:
+```
+login:
+```
 
 There are two user accounts `ken` and `dmr`, with the passwords `ken` and `dmr`
 respectively.  Let's try the Dennis Richie's `dmr` account:
 
-        login: dmr
-        password: dmr
-        @ ls
-        .       ?
+```
+login: dmr
+password: dmr
+@ ls
+.       ?
+```
 
 Even though this is not Ken's doing, I feel this gives me licence to
 include this quote from the BSD `fortune` program:
@@ -339,7 +353,9 @@ directory has a hard link to `dd`, which is the directory that holds all
 of the user home directories (this will eventually become `/`, the root
 path).  We can do
 
-        @ ln dd dmr .
+```
+@ ln dd dmr .
+```
 
 To make the new link (note that `ln` doesn't support paths either, so you have
 to give it three arguments -- a directory in the current dir, a file in that
@@ -347,46 +363,48 @@ directory, and the new name).
 
 Now `ls` will work, and we can try some other things while we are here:
 
-        login: dmr
-        password: dmr
-        @ ln dd dmr .
-        @ ls
-        dd\
-        system\
-        as.s\
-        b_readme
-        bi.s\
-        bl.s\
-        db.s\
-        hello.b\
-        ops.s\
-        .\
-        @ cat b_readme
-        Here is how to compile and run hello.b:
-\
-          @ bc hello.b hello.s
-          @ as ops.s bl.s hello.s bi.s
-          I
-          II
-          ops.s\
-          bl.s\
-          hello.s\
-          bi.s\
-          @ a.out
-          Hello, World!
-\
-\
-        @ bc hello.b hello.s
-        @ as ops.s bl.s hello.s bi.s
-        I
-        II
-        ops.s\
-        bl.s\
-        hello.s\
-        bi.s\
-        @ a.out
-        Hello, World!
-        @
+```
+login: dmr
+password: dmr
+@ ln dd dmr .
+@ ls
+dd
+system
+as.s
+b_readme
+bi.s
+bl.s
+db.s
+hello.b
+ops.s
+.
+@ cat b_readme
+Here is how to compile and run hello.b:
+
+@ bc hello.b hello.s
+@ as ops.s bl.s hello.s bi.s
+I
+II
+ops.s
+bl.s
+hello.s
+bi.s
+@ a.out
+Hello, World!
+
+
+@ bc hello.b hello.s
+@ as ops.s bl.s hello.s bi.s
+I
+II
+ops.s
+bl.s
+hello.s
+bi.s
+@ a.out
+Hello, World!
+@
+```
 
 The last command is invoking the compiler for an extremely early version of
 the [B programming language] [3], the predecessor to C.  Thompson missed the

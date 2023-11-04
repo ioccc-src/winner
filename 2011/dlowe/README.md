@@ -112,9 +112,11 @@ that did not win were flushed to `/dev/null`.
 
 The [earlystop.pl](earlystop.pl) tool wrote:
 
-    training 1 to 1001...
-    training 1001 to 2001...
-    prior error = 56.746974766043; current error = 58.095691135305
+```
+training 1 to 1001...
+training 1001 to 2001...
+prior error = 56.746974766043; current error = 58.095691135305
+```
 
 The resulting `ioccc-winlose-trained.net` file was included in the
 [dlowe-aux-data.tar.bz2](dlowe-aux-data.tar.bz2) tarball.

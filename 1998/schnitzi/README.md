@@ -1,7 +1,7 @@
 # Best Flow Control
 
-Mark Schnitzius
-US
+Mark Schnitzius\
+US\
 <http://computronium.org/ioccc.html>
 
 

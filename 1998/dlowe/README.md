@@ -2,7 +2,7 @@
 
 David Lowe\
 US\
-<j.david.lowe@gmail.com>
+<j.david.lowe@gmail.com>\
 <https://github.com/dlowe>
 
 

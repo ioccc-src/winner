@@ -3,7 +3,7 @@
 Albert van der Horst\
 S P&A R&C\
 Oranjestraat 8\
-3511 RA   UTRECHT\
+3511 RA UTRECHT\
 The Netherlands
 
 
@@ -65,7 +65,6 @@ Use `albert.alt` as you would `albert` above.
 
 ## Judges' remarks:
 
-\
 We were impressed with the speed at which it was able to factor
 arbitrarily large numbers consisting of factors that fit into
 a long.

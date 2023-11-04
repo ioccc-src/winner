@@ -236,11 +236,9 @@ those bits that should remain zero.  For example, the following
 program prints all those 16-bit integers that contain zeroes in all
 even bit positions:
 
-
 ```c
 main(){int i=0,s=0xAAAA;do{printf("%04x\t",i);}while(i=((i|~s)+1)&s);}
 ```
-
 
 AG uses a similar method but works in the opposite direction, finding
 the next lower value with zeroes in given bit positions by propagating

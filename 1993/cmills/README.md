@@ -38,14 +38,16 @@ From the San Jose Mercury News (May 15, 1993 page 20A "West Hackers\
 trounce East in computer quiz game"):
 
 
->	"Since 1984, a contest has been held on Usenet for the most
->	unreadable, creative, bizarre but working C program", Gates
->	said. "What is the name of this contest?"
->
->	"Windows," shot back Gassee, naming Microsoft's premier product
->	- a product over which Apple sued Microsoft five years ago. Not
->	the right answer - it's "The Obfuscated C Contest [sic]" - but
->	it brought down the house of Apple partisans...
+```
+"Since 1984, a contest has been held on Usenet for the most
+unreadable, creative, bizarre but working C program", Gates
+said. "What is the name of this contest"
+
+"Windows," shot back Gassee, naming Microsoft's premier product
+- a product over which Apple sued Microsoft five years ago. Not
+the right answer - it's "The Obfuscated C Contest [sic]" - but
+it brought down the house of Apple partisans...
+```
 
 [The expression on Bill Gates' face was a sight to behold, as reported
 to us by several who were there].

@@ -186,12 +186,12 @@ style](https://wiki.c2.com/?OneTrueBraceStyle).
 
 ### Suggested IOCCC Categories
 
-    Best Utility
-    Best Support
-    Most Portable Package
-    Most Likely to Cook Apache
-    Best Interpretation of RFC 2616
-    Winner of The Far Too Much Free Time Award
+* Best Utility
+* Best Support
+* Most Portable Package
+* Most Likely to Cook Apache
+* Best Interpretation of RFC 2616
+* Winner of The Far Too Much Free Time Award
 
 
 ## Copyright and CC BY-SA 4.0 License:

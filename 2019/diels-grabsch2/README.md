@@ -75,7 +75,9 @@ are step 1 and step 2 achieved then?
 
 Regarding step 1, note that the large string literal
 
-	"`x{bh}ndbq..."
+```
+"`x{bh}ndbq..."
+```
 
 in the last line doesn't look like C code.  Moreover, it is too short
 to contain even a compressed representation of all preceding and

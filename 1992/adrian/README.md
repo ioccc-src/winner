@@ -28,7 +28,6 @@ NOTE: if you do not specify an arg to the program it will segfault.
 
 ## Judges' remarks:
 
-\
 Once you get past the obfuscation, you have an opportunity to learn
 about regular expressions and state machines.
 
@@ -79,43 +78,49 @@ character list.
 
 ### Example 2: `^abc`
 
-    <q0> a <q1>
-    <q1> b <q2>
-    <q2> c [q3]
-    [q3] . [q3]
-
+```
+<q0> a <q1>
+<q1> b <q2>
+<q2> c [q3]
+[q3] . [q3]
+```
 
 ### Example 3: `abc$`
 
-    <q0> a <q1> . <q0>
-    <q1> b <q2> a <q1> . <q0>
-    <q2> c [q3] a <q1> . <q0>
-    [q3] . <q1>
-
+```
+<q0> a <q1> . <q0>
+<q1> b <q2> a <q1> . <q0>
+<q2> c [q3] a <q1> . <q0>
+[q3] . <q1>
+```
 
 ### Example 4: `^(abc)*$`
 
-    [q0] a <q1>
-    <q1> b <q2>
-    <q2> c [q0]
-
+```
+[q0] a <q1>
+<q1> b <q2>
+<q2> c [q0]
+```
 
 ### Example 5: `^[ab][cd][ef]$`
 
-    <q0> ab <q1>
-    <q1> cd <q2>
-    <q2> ef [q3]
-    [q3]
-
+```
+<q0> ab <q1>
+<q1> cd <q2>
+<q2> ef [q3]
+[q3]
+```
 
 ### Example 6: `^(abc|efg)$`
 
-    <q0> a <q1> e <q3>
-    <q1> b <q2>
-    <q2> c [q5]
-    <q3> f <q4>
-    <q4> g [q5]
-    [q5]
+```
+<q0> a <q1> e <q3>
+<q1> b <q2>
+<q2> c [q5]
+<q3> f <q4>
+<q4> g [q5]
+[q5]
+```
 
 
 With the automaton specification in 'filename', invoke the program by
@@ -149,8 +154,9 @@ as the specification for the automaton.  (This file has been renamed\
 to `adrian.c` by the judges.)  In this case, the program will search for\
 matches to the regular expression:
 
-
-	    ^.[^|C][^w[Q]*(Q|[w[]c).*|^.[C|]$
+```
+^.[^|C][^w[Q]*(Q|[w[]c).*|^.[C|]$
+```
 
 I suggest using `adgrep.c` as input, and storing the output in `adwc.c`:
 
@@ -166,7 +172,9 @@ displays the number of lines, words, and bytes in the input file.
 Another possibly interesting automaton can be created by slightly
 adjusting the `adgrep.c` file.  Change the first line to read
 
-		 /* . echo| . */
+```c
+/* . echo| . */
+```
 
 and repeat the process above
 
@@ -176,7 +184,9 @@ and repeat the process above
 
 The new file now contains all lines which match
 
-            ^.[^5|m^]*[m^]([e=p,;]|[^e=+p,;].*)$
+```
+^.[^5|m^]*[m^]([e=p,;]|[^e=+p,;].*)$
+```
 
 Compile and run.  This is an echo clone.  Note the efficient algorithm
 employed.
@@ -185,11 +195,15 @@ employed.
 Two other adjustments to the first line also yield useful results. By
 changing it to
 
-            /* . head; . */
+```c
+/* . head; . */
+```
 
 you can search for matches to
 
-            ^.[^W]*W..*$
+```
+^.[^W]*W..*$
+```
 
 By some freak happenstance, lines of adgrep.c which match this regular
 expression form a unix head command.  It prints the first ten lines of
@@ -198,12 +212,16 @@ specified).
 
 By setting the first line to
 
-            /* . basename . */
+```c
+/* . basename . */
+```
 
 a clone of the unix basename command can be unearthed. The automaton will
 search for
 
-	   ^.[^j]*jr.*$
+```
+^.[^j]*jr.*$
+```
 
 on standard input.  And the program which results by running adgrep.c
 through this filter requires two parameters.  The first is meant to be a
@@ -213,11 +231,15 @@ The resulting base name is printed to stdout.
 
 Lastly, by setting the first line to
 
-            /* . sleep . */
+```c
+/* . sleep . */
+```
 
 you can search for
 
-            ^.[^(~][^s]*sl.*$
+```
+^.[^(~][^s]*sl.*$
+```
 
 Filtering adgrep.c through this search yields a clone of the sleep
 command.  Invoke with a single integer parameter, and it will pause

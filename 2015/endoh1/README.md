@@ -158,15 +158,17 @@ This specifies a color used for rendering.
 Some interesting parameters are included in `Makefile`.  Do one of the following
 command and open `http://127.0.0.1:10333`.
 
-    $ make gray-scott-1 && tcpserver -v 127.0.0.1 10333 ./gray-scott-1 ioccc.txt
-    $ make gray-scott-1 && tcpserver -v 127.0.0.1 10333 ./gray-scott-1 center.txt
-    $ make gray-scott-1 && tcpserver -v 127.0.0.1 10333 ./gray-scott-1 line.txt
-    $ make gray-scott-2 && tcpserver -v 127.0.0.1 10333 ./gray-scott-2 ioccc.txt
-    $ make gray-scott-3 && tcpserver -v 127.0.0.1 10333 ./gray-scott-3 ioccc.txt
-    $ make gray-scott-4 && tcpserver -v 127.0.0.1 10333 ./gray-scott-4 ioccc.txt
-    $ make fitzhugh-nagumo-1 && tcpserver -v 127.0.0.1 10333 ./fitzhugh-nagumo-1 ioccc.txt
-    $ make fitzhugh-nagumo-2 && tcpserver -v 127.0.0.1 10333 ./fitzhugh-nagumo-2 ioccc.txt
-    $ make oregonator && tcpserver -v 127.0.0.1 10333 ./oregonator ioccc.txt
+```
+make gray-scott-1 && tcpserver -v 127.0.0.1 10333 ./gray-scott-1 ioccc.txt
+make gray-scott-1 && tcpserver -v 127.0.0.1 10333 ./gray-scott-1 center.txt
+make gray-scott-1 && tcpserver -v 127.0.0.1 10333 ./gray-scott-1 line.txt
+make gray-scott-2 && tcpserver -v 127.0.0.1 10333 ./gray-scott-2 ioccc.txt
+make gray-scott-3 && tcpserver -v 127.0.0.1 10333 ./gray-scott-3 ioccc.txt
+make gray-scott-4 && tcpserver -v 127.0.0.1 10333 ./gray-scott-4 ioccc.txt
+make fitzhugh-nagumo-1 && tcpserver -v 127.0.0.1 10333 ./fitzhugh-nagumo-1 ioccc.txt
+make fitzhugh-nagumo-2 && tcpserver -v 127.0.0.1 10333 ./fitzhugh-nagumo-2 ioccc.txt
+make oregonator && tcpserver -v 127.0.0.1 10333 ./oregonator ioccc.txt
+```
 
 These examples are created by drawing (and modifying) the pattern files of
 [Ready](https://github.com/GollyGang/ready), a cross-platform implementation of

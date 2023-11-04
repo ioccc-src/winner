@@ -22,7 +22,7 @@ make all
 # text mode
 ./imc -text
 
-./imc\
+./imc
 ```
 
 

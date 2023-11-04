@@ -46,9 +46,9 @@ and thanks for the virtual memories!  :-)
 NOTE: On some systems such as SunOS, one may need to compile with:
 
 ```make
-	    ${CC} ${CFLAGS} \
-	      -I. -D_POSIX_SOURCE '-Ddifftime(a,b)=(double)(b-a)' \
-	      schweikh3.c -o schweikh3
+	${CC} ${CFLAGS} \
+	  -I. -D_POSIX_SOURCE '-Ddifftime(a,b)=(double)(b-a)' \
+	  schweikh3.c -o schweikh3
 ```
 
 

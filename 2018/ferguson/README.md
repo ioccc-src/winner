@@ -64,14 +64,14 @@ man ./weasel.man
 
 ## Author's remarks:
 
-    0. Preface
-    1. What it is
-    2. How it works
-    3. Hints (Keyboards, Options, Spoilers, Example Invocations)
-    4. Obfuscation (Techniques, Beauty)
-    5. How to build (S and N Constants, Compilation, Portability, Installing)
-    6. Final thoughts
-    7. Winning comments, thanks, dedications, links, etc.
+0. Preface
+1. What it is
+2. How it works
+3. Hints (Keyboards, Options, Spoilers, Example Invocations)
+4. Obfuscation (Techniques, Beauty)
+5. How to build (S and N Constants, Compilation, Portability, Installing)
+6. Final thoughts
+7. Winning comments, thanks, dedications, links, etc.
 
 ## **0. Preface**
 

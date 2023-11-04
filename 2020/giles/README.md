@@ -92,12 +92,14 @@ $ ./prog 867-5309 | aplay
 
 Each tone in a DTMF signal is a combination of two frequencies. The lower frequency determines which row the digit is in, and the higher frequency determines the column. There are 4 possible row frequencies and 4 possible column frequencies.
 
+```
 |            | **1209 Hz** | **1336 Hz** | **1477 Hz** | **1633 Hz** |
 |------------|-------------|-------------|-------------|-------------|
 | **697 Hz** | 1           | 2 abc       | 3 def       | A           |
 | **770 Hz** | 4 ghi       | 5 jkl       | 6 mno       | B           |
 | **852 Hz** | 7 pqrs      | 8 tuv       | 9 wxyz      | C           |
 | **941 Hz** | *           | 0           | #           | D           |
+```
 
 This program determines which frequencies are present in the input by passing it through a set of 8 virtual resonators, each tuned to one of the frequencies used for DTMF. These can be implemented using only basic arithmetic, and they are able to 'select' a specific frequency from the input sound, blocking all other frequencies from reaching the output. The loudness of the sound output from each resonator can therefore be used as a measure of how much of a particular frequency was present in the input. The program then decides, over the course of one tone, which row frequency and which column frequency were most prominent.
 

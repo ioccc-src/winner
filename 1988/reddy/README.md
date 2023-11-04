@@ -19,13 +19,11 @@ char *(*(fun[16])();
 char *(*(*(*(*(*fun[32])))))();
 ```
 
-What happens if you input:
+What happens if you input, and what you do about it?
 
-```
+```c
 char *(*(*(*(*(*fun[32])))))());
 ```
-
-? What can you do about it?
 
 
 ## Judges' remarks:

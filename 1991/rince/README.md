@@ -33,45 +33,45 @@ This entry has been updated to allow most ANSI C compilers.
 This program is a simple puzzle type game. (I'll leave you to play
 it to see the rest of it .. :-) .)  The general idea was to try and
 write the smallest playable game, but keep the playability and
-enjoyment high.\
-\
-### Instructions (rot13 to read):
+enjoyment high.
 
+### Instructions:
 
-    Xrl gb znc:-
+Key to map:
 
-			    |
-     ######                 | | | /\   /--\  ==|    /\ | |  Qverpgbany xrlf\
-     ######  Fbyvq Jnyy     | ----||    \/     /\   ||----  (haybpx qbbef bs
-     ######                 |     \/  ==|     \--/  \/       gur fnzr qverpgvba)
-			    |\
-			    |   <<                    >>    Qbbef. Haybpxrq ol
-	     Oynax fcnpr    |   <<   iiiiii  ^^^^^^   >>    gur nobir xrlf.
-			    |   <<                    >>
-			    |\
-       ___                  | b__B\   B__B   ^__^   /B__b\
-      /   \  'Pehfunoyr'    | \___/  /----\ /----\  \___/  Gur sbhe fcevgrf sbe
-      \___/    obhyqre      |  _/_\  _/  \_ _/  \_  /_\_   lbhe punenpgre :-)
-			    |\
-       ___   hapehfunoyr    |   /\   Qvnzbaqf. Gurl pna rvgure or sbhaq ylvat
-      /@@@\    obhyqre      |  <  >  nebhaq (vs bayl!) be znahsnpgher ol chfuvat
-      \@@@/                 |   \/   gjb 'pehfunoyr' ebpxf gbtrgure.
-			    |
+```
+			|
+ ######                 | | | /\   /--\  ==|    /\ | |  Directonal keys\
+ ######  Solid Wall     | ----||    \/     /\   ||----  (unlock doors of
+ ######                 |     \/  ==|     \--/  \/       the same direction)
+			|\
+			|   <<                    >>    Doors. Unlocked by
+	 Blank space    |   <<   vvvvvv  ^^^^^^   >>    the above keys.
+			|   <<                    >>
+			|\
+   ___                  | o__O\   O__O   ^__^   /O__o\
+  /   \  'Crushable'    | \___/  /----\ /----\  \___/  The four sprites for
+  \___/    boulder      |  _/_\  _/  \_ _/  \_  /_\_   your character :-)
+			|\
+   ___   uncrushable    |   /\   Diamonds. They can either be found lying
+  /@@@\    boulder      |  <  >  around (if only!) or manufacture by pushing
+  \@@@/                 |   \/   two 'crushable' rocks together.
+			|
 
-    Gur trareny vqrn bs gur tnzr vf gb pbyyrpg nyy gur qvnzbaqf. Guvf zhfg
-    or qbar va gur zvavzhz nzbhag bs zbirf. V'ir nyybjrq n znetva bs 5
-    zbirf juvpu oevatf gur zbirf nyybjrq gb 484. (nygre gur inyhr bs 'h' va
-    gur cebtenz gb frg gur znk zbirf nyybjrq)
+The general idea of the game is to collect all the diamonds. This must
+be done in the minimum amount of moves. I've allowed a margin of 5
+moves which brings the moves allowed to 484. (alter the value of 'u' in
+the program to set the max moves allowed)
 
-    Gurer ner gjb glcrf bs obhyqref. Obgu pna or chfurq nebhaq, ohg bayl
-    gur ubyybj (pehfunoyr) barf pna or ghearq vagb qvnzbaqf (ol chfuvat vg
-    bagb nabgure ubyybj bar).
+There are two types of boulders. Both can be pushed around, but only
+the hollow (crushable) ones can be turned into diamonds (by pushing it
+onto another hollow one).
 
-    Bs gur sbhe glcrf bs qbbef (naq xrlf) bayl 3 unir orra qrsvarq. Guvf
-    jnf qbar gb xrrc gur fbhepr nf ybj nf cbffvoyr (nf V bayl hfrq 3 va gur
-    znc).  Gb haybpx n qbbe fvzcyl chfu n xrl vagb gur pbeerfcbaqvat qbbe.
-    Gnxr pner gung vg'f snpvat va gur pbeerpg qverpgvba.
-
+Of the four types of doors (and keys) only 3 have been defined. This
+was done to keep the source as low as possible (as I only used 3 in the
+map).  To unlock a door simply push a key into the corresponding door.
+Take care that it's facing in the correct direction.
+```
 
 ## Copyright and CC BY-SA 4.0 License:
 

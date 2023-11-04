@@ -35,7 +35,7 @@ unix utilities available as winning entries.
 
 ### Synopsis:
 
-Feed it anything on stdin.\
+Feed it anything on stdin.
 The output should look familiar.
 
 Compiles cleanly with:
@@ -67,13 +67,13 @@ This program follows FreeBSD and macOS, the arbiters of correct for these purpos
 
 ### Limits:
 
-Requires the C locale and ASCII character set.\
+Requires the C locale and ASCII character set.
 Input should be less than ten million octets "toavoidthisproblem".
 
 ### See Also:
 
-You can enjoy this code from beginning to end.\
-No whitespace was harmed in the creation of this program.\
+You can enjoy this code from beginning to end.
+No whitespace was harmed in the creation of this program.
 All your base belong to us, but the constants seem a bit ... off?
 
 ### Bonus

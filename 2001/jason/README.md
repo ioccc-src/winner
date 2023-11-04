@@ -1,9 +1,9 @@
 # Best Of Show
 
-Jason Orendorff
-5 Buchanan St.
-Nashua, NH 03060
-US
+Jason Orendorff\
+5 Buchanan St.\
+Nashua, NH 03060\
+US\
 <http://jorendorff.blogspot.com>
 
 
@@ -49,14 +49,13 @@ TED Shroyer came up with the idea that made it possible to hide all
 the text.  Thanks, TED.  You won.  :)
 
 ```sh
-$ cc -o jason jason.c
-$ ./jason
+cc -o jason jason.c
+./jason
 you are in a maze of twisty little passages
 caves lead:  left forward back
 you see
    a lamp
 > _
-
 ```
 
 This program is a rather nostalgic little labyrinth game.  Start

@@ -66,12 +66,12 @@ distribute winners outside of the US.
 Nathan Sidwell stated that he was willing to distribute the winning source.  To
 read HIS instructions of how to obtain his winning program one was able to run:
 
+```sh
+make nathan
+./nathan
+```
 
-	make nathan
-	./nathan
-
-
-    to learn how to get a copy of the code.
+to learn how to get a copy of the code.
 
 See the 1992/nathan.c file in the
 [../../archive/archive-1992.tar.bz2](archive/archive-1992.tar.bz2) tarball if

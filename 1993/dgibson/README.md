@@ -22,7 +22,7 @@ make all
 ```
 
 where:
-\
+
 `datafile` is the initial pattern (default: [dgibson.data1](dgibson.data1))
 
 

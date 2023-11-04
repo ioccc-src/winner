@@ -1,6 +1,6 @@
 # Best one-liner
 
-Dave Burton
+Dave Burton\
 <http://snox.net/ioccc>
 
 

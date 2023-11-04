@@ -23,7 +23,7 @@ output due to a warning at runtime that was interspersed with the output of the
 program. For instance it would show:
 
 ```sh
-$ ./tbr
+./tbr
 $ warning: this program uses gets(), which is unsafe.
 ```
 
@@ -39,7 +39,7 @@ below, in the [alternate version](#alternate-code) section.
 
 ```sh
 ./tbr
-# enter some shell commands
+$ enter some shell commands
 ```
 
 NOTE: globs do not work with this entry. Why?
@@ -53,11 +53,14 @@ just `exit` or `logout`? Hint: see the authors' remarks.
 
 ```sh
 ./tbr
-ls -l tbr tbr.c
+$ ls -l tbr tbr.c
+
 # notice how the following does not work:
 ls tbr*
+
 # try figuring out how this entry works in an editor:
 vi tbr.c
+
 # then figure out how to exit vi :-)
 ```
 

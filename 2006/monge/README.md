@@ -1,7 +1,7 @@
 # Best Compiled Graphics
 
-Maurizio Monge
-Italy
+Maurizio Monge\
+Italy\
 <maurizio.monge at gmail dot com>
 
 
@@ -74,7 +74,9 @@ effort to work on both `i386` and `x86_64`. Portable it is! :)
 
 1. Run:
 
-        ./monge "z = 0" "z = z*z + c; Abs2(z) < 4"
+```
+./monge "z = 0" "z = z*z + c; Abs2(z) < 4"
+```
 
 2. Keep clicking with left or right button to zoom in or out.
 
@@ -145,15 +147,21 @@ Here are a few examples of fractals you can draw:
 
 - Newton-Mandelbrot:
 
-        ./monge "z=0" "p=z; z=z-(z*z*z + (c-1)*z - c)/(3*z*z+c-1); Abs2(p-z) > 0.001"
+```
+./monge "z=0" "p=z; z=z-(z*z*z + (c-1)*z - c)/(3*z*z+c-1); Abs2(p-z) > 0.001"
+```
 
 - Phoenix, Mandelbrot version:
 
-        ./monge "z=0; q=0" "t=z; z=z*z+Re(c)+Im(c)*q; q=t; Abs2(z)<4"
+```
+./monge "z=0; q=0" "t=z; z=z*z+Re(c)+Im(c)*q; q=t; Abs2(z)<4"
+```
 
 - Phoenix, Julia version for `c=0.56667-i*0.5`:
 
-        ./monge "z=c; c=0.56667-i*0.5; q=0" "t=z; z=z*z+Re(c)+Im(c)*q; q=t; Abs2(z)<4"
+```
+./monge "z=c; c=0.56667-i*0.5; q=0" "t=z; z=z*z+Re(c)+Im(c)*q; q=t; Abs2(z)<4"
+```
 
 ### Compilation and portability
 

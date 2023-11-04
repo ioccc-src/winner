@@ -52,7 +52,9 @@ of the submitters hidden until all the prize winners have been selected.
 
 ### Usage
 
+```
 ./dlowe [file ...]
+```
 
 ### Synopsis
 

@@ -182,21 +182,21 @@ programs is the conditional (given that we have loops).
 Since all you can do in the given operation output set is
 assignment, we implement "conditional assignment":
 
-```
+```c
 if (x) y = z;
 ```
 
 To implement this, we constrain x to be either 0 or 1, and
 simply compute:
 
-```
+```c
 y = (z * x) + (y * (1-x));
 ```
 
 This is more obscured by factoring out common terms and restricting
 ourselves to two operand operations:
 
-```
+```c
 temp = z;                       (temp == z)
 temp -= y;                      (temp == z-y)
 temp *= x;                      (temp == (z-y)*x)
@@ -210,7 +210,7 @@ Next we imagine we have a [pc](https://en.wikipedia.org/wiki/Program_counter).
 we're not currently coming up on statement pc.  To handle this, we simply make
 every operation conditional on the pc having the correct value:
 
-```
+```c
 if (pc == some_constant) y = z;
 ```
 

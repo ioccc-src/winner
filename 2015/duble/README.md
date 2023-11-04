@@ -1,7 +1,7 @@
 # Best Handwriting
 
-    Etienne Duble <etienne.duble@imag.fr>\
-    <http://lig-membres.imag.fr/duble>
+Etienne Duble <etienne.duble@imag.fr>\
+<http://lig-membres.imag.fr/duble>
 
 
 ## To build:
@@ -161,7 +161,9 @@ macro `O_o` at the top of the source file.
 In order to comply with the size rule, I encoded only a part of the visible ASCII
 chars:
 
-    a-z, A-Z, '.' ':' ',' ';' '!' and '?'.
+```
+a-z, A-Z, '.' ':' ',' ';' '!' and '?'.
+```
 
 Uppercase and lowercase chars are rendered the same. The program also understand
 the space and the linefeed (\n).  Other chars are simply ignored (most of the

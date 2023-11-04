@@ -32,7 +32,9 @@ Can you figure out how it does it?
 This program takes no arguments. It emits the base 8 representation
 of prime palindromes (palindromic in base 8, of course).
 
-`^_^`
+```
+^_^
+```
 
 
 ## Copyright and CC BY-SA 4.0 License:

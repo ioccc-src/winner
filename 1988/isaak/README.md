@@ -28,7 +28,7 @@ The original version of this code is in [isaak.alt.c](isaak.alt.c).
 The original entry starts with the line:
 
 ```c
-	main(){};
+main(){};
 ```
 
 This works on some systems.  Why?  Note that `#include <stdio.h>` is given on

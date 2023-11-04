@@ -19,7 +19,7 @@ make all
 ## To use:
 
 ```sh
-./vern 3		# <-- default is 2
+./vern 3	# <-- default is 2
 ```
 
 
@@ -31,7 +31,7 @@ You might start off by giving the following input:
 63 43
 76 55
 71 52
-67 57		# (this may take a while)
+67 57		# <-- this may take a while
 ```
 
 
@@ -47,7 +47,6 @@ For a real quick game try:
 
 65 55
 66 46
-
 ```
 
 NOTE: Move values must be restricted to the range 00 to 77.

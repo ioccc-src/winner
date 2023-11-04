@@ -21,7 +21,7 @@ rm -f spinellis ; cc spinellis.c -o spinellis < input.txt && ./spinellis
 
 and try:
 
-```
+```sh
 rm -f spinellis ; cc spinellis.c -o spinellis < input2.txt && ./spinellis
 ```
 
@@ -36,7 +36,7 @@ cc spinellis.alt.c -o spinellis.alt < input.txt && ./spinellis.alt
 
 and try:
 
-```
+```sh
 cc spinellis.alt.c -o spinellis.alt < input2.txt && ./spinellis.alt
 ```
 

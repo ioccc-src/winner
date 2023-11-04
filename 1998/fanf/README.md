@@ -1,7 +1,7 @@
 # Most Obfuscated Translator
 
-Tony Finch
-United Kingdom
+Tony Finch\
+United Kingdom\
 <https://dotat.at>
 
 
@@ -179,24 +179,24 @@ couple of simple optimisations. For example, note that `K (a b)` is the
 same as `S (K a) (K b)`, because
 
 ```
-    	K (a b) x
-    ->	a b
+    K (a b) x
+->	a b
 ```
 
     and
 
 ```
-    	S (K a) (K b) x
-    ->	K a x (K b x)
-    ->	a b
+    S (K a) (K b) x
+->	K a x (K b x)
+->	a b
 ```
 
 Also, `S (K a) I` is the same as just `a` because
 
 ```
-    	S (K a) I x
-    ->	K a x (I x)
-    ->	a x
+    S (K a) I x
+->	K a x (I x)
+->	a x
 ```
 
 The program simply reads a lambda expression from the standard input,

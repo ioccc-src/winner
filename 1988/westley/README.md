@@ -1,7 +1,7 @@
 # Best layout
 
 Merlyn LeRoy (Brian Westley)\
-US
+US\
 <http://www.westley.org>
 
 

@@ -5,8 +5,7 @@ Monash University, Melbourne, Australia\
 1/832 Blackburn Rd\
 Clayton, VIC 3168\
 Australia\
-<https://web.archive.org/web/20030212213342/http://byron.csse.monash.edu.au/realindex.html>\
-\
+<https://web.archive.org/web/20030212213342/http://byron.csse.monash.edu.au/realindex.html>
 
 
 ## To build:
@@ -56,7 +55,7 @@ Create a large reverse video xterm, say 200 columns wide and try:
 ```
 
 Produce an even smaller output:
-\
+
 ```sh
 ./bmeyer -2 200 < lavabus.pgm > lavabus.glic2
 ```
@@ -113,6 +112,7 @@ The [Makefile](Makefile) defaults to `-O3` and no `asm()` call.
 ## Author's remarks:
 
 This program is called `GLICBAWLS`
+
 
 #### Function
 
@@ -197,13 +197,11 @@ considerably better. And don't even *think* about using it for
 so-called "artistic" images (i.e. anything that wasn't scanned
 from a photo or camera)....
 
-### WARNING
 
+### WARNING
 
 `Glicball` is rather CPU and FPU intensive. Don't run it on anything slow.
 Things start to be usable around 300+MHz, with 600+ being highly desirable.
-
-
 
 
 ### Compile Instructions

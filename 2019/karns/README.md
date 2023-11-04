@@ -54,14 +54,14 @@ movement as one step?
 ## Author's remarks:
 
 ### The Program:
-\
+
 This program is pretty simple! It performs a breadth first search on the
 specified graph. The graph can be any ascii text file  that has an 'at'
 character, which is going to be the starting location, and a '!' character
 which will be the destination.
 
 The nodes on this graph that are spaces are connected with any directly
-adjacent nodes that are also spaces. Nodes that aren't spaces are not\
+adjacent nodes that are also spaces. Nodes that aren't spaces are not
 connected with anything.
 
 ### Compiling and Running:
@@ -83,7 +83,7 @@ cat <input file> | ./tbfs
 Examples:
 
 ```sh
-./tbfs < maze\
+./tbfs < maze
 ./tbfs < prog.c
 ```
 

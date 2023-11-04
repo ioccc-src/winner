@@ -42,15 +42,19 @@ time ./sykes1 19186
 This was done on a CentOS 7 server with `Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz`
 with 16 cores (via HyperThreading):
 
-    real	7m48.287s
-    user	7m48.223s
-    sys	0m0.004s
+```
+real	7m48.287s
+user	7m48.223s
+sys	0m0.004s
+```
 
 and done with macOS Ventura with the Max M1 chip:
 
-    real	8m26.466s
-    user	8m23.134s
-    sys	0m2.981s
+```
+real	8m26.466s
+user	8m23.134s
+sys	0m2.981s
+```
 
 
 ## Judges' remarks:
