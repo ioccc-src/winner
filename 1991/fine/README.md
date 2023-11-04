@@ -28,7 +28,8 @@ echo text | ./fine
 Make sure that you read the last line backwards! Credit goes to [Merlyn LeRoy (Brian
 Westley)](/winners.html#Brian_Westley) for that. See his 22 August 1992
 [rec.puzzles
-post](https://groups.google.com/g/rec.puzzles/c/z_xVPMRVBtg/m/lyEYSAeBD4gJ). To
+post](https://groups.google.com/g/rec.puzzles/c/z_xVPMRVBtg/m/lyEYSAeBD4gJ).
+Some others come from his 1989 entry as well. To
 those who have a harder time reading backwards it says: `Gary lent the rug`,
 rotated from `the rug gary lent`!
 

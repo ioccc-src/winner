@@ -22,5 +22,11 @@ echo -n "Rail <-> "
 echo "Rail" | ./fine
 echo -n "Clerk <-> "
 echo "Clerk" | ./fine
+echo -n "Ones <-> "
+echo "Ones" | ./fine
+echo -n "Fur <-> "
+echo "Fur" | ./fine
+echo -n "Er <-> "
+echo "Er" | ./fine
 echo -n "The rug gary lenT <-> "
 echo "The rug gary lenT" | ./fine
