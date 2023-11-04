@@ -41,14 +41,15 @@ sentence.
 The program, in its base form, implements two useful utilities:
 
 
-- `atob` - ascii to binary conversion
+- `atob` - ASCII to binary conversion
 - `zcat` - decompression filter
 
 Included with this entry is a shell script (with comments edited down to reduce
 it to 1530 bytes) which implements the complete shark utility. The script,
-shark.sh, contains a 'jaw.c' embedded within it!
+[shark.sh](shark.sh), contains a `jaw.c` embedded within it!
 
 The sender must have `compress` and `btoa`. To send, try:
+
 
 ```sh
 ./shark.sh jaw.* README.md > receive
@@ -65,8 +66,12 @@ cmp ../jaw.c jaw.c
 cmp ../README.md README.md
 ```
 
+NOTE: a limitation is that the script should be in the parent directory of the
+directory it is run from.
+
 
 ## Authors' remarks:
+
 
 ### ABSTRACT
 
@@ -76,13 +81,15 @@ James A. Woods\
 Universities Space Research Association\
 NASA Ames Research Center
 
+
 ---
 
 > "Use an algorithm, go to jail."
 >
-> -- anon., circa 1988, pre-Morris worm era
+> -- anon., circa 1988, pre-[Morris worm](https://en.wikipedia.org/wiki/Morris_worm) era
 
 ----
+
 
 Myriad formats have been proposed for network-mailable data. A major difficulty
 undermining the popularity of most file/message bundlers is that the sender
@@ -90,11 +97,12 @@ assumes prior installation of the computational dual of such bundling software
 by the receiver. Command shell archives alleviate this problem somewhat, but
 still require standardization for the function of data compression and
 mail-transparency encoding. On Unix, these coding format quandaries are overcome
-by planting a novel Trojan Horse in the archive header to perform
-negotiation-less decoding.
+by planting a novel [Trojan
+Horse](https://en.wikipedia.org/wiki/Trojan_horse_(computing)) in the archive
+header to perform negotiation-less decoding.
 
 Specifically, we outline the development of an extraordinarily compact portable
-(un)bundler to (dis)assemble data-compressed, binary-to-ASCII-converted,
+bundler/extractor to (dis)assemble data-compressed, binary-to-ASCII-converted,
 length-split, and checksummed directory structures using standard Unix tools.
 Miniature versions of counterparts to a Lempel-Ziv coder (`compress` or
 `squeeze`) and an efficient bit packetizer (`btoa`) are compiled on-the-fly at
@@ -102,7 +110,7 @@ mail destination sites where they may not already exist. These are written in
 purposefully obfuscated-C to accompany similarly-shrunk shell command glue. This
 resulting shell archiver is dubbed `shark`.
 
-`shark` procedure overhead consumes as few as three dozen shell lines (or
+`shark` procedure overhead consumes as few as three dozen shell commands (or
 `~1100` bytes), commensurate with the size of many Internet mail headers; it
 amortizes favorably with message size. `shark` is portable across Unix
 variants, while the underlying technique is inherently generalizable to other
@@ -115,11 +123,11 @@ environment.
 
 ----------------------------------------------
 
->   Oh, the shark has pretty teeth, dear--
->   And he shows them pearly white
->   Just a jackknife has Macheath, dear--
->   And he keeps it out of sight.
->
+>   Oh, the shark has pretty teeth, dear--\
+>   And he shows them pearly white\
+>   Just a jackknife has Macheath, dear--\
+>   And he keeps it out of sight.\
+> \
 >   -- Bertolt Brecht, Threepenny Opera
 
 ----------------------------------------------
@@ -190,39 +198,39 @@ rm /tmp/shark$$*
 
 ### Shark history:
 
-- May 1987: Karl Fox introduces 1023-byte zcat.c to USENET.
+- May 1987: Karl Fox introduces 1023-byte `zcat.c` to USENET.
 	     It's too late for the 4th IOCCC.
 
 - May 21, 1987: James A. Woods extends idea to construct self
-	     decompressing shar Trojan horse, utilizing 'cc', 'shar',
-	     'zcat', & 'btoa'; size: 2303 bytes.
+	     decompressing `shar` Trojan horse, utilizing `cc`, `shar`,
+	     `zcat`, & `btoa`; size: 2303 bytes.
 
-- May 23, 1987: 'jaw' trims 250 bytes without much thought.
+- May 23, 1987: `jaw` trims 250 bytes without much thought.
 
-- June 2, 1987: 52 lines of shell, 1991 bytes, now made with 'tar',
+- June 2, 1987: 52 lines of shell, 1991 bytes, now made with `tar`,
 	     short-circuit C-compile at far end, dual-use main.c,
 	     portability mods. (jaw)
 
 - Mar-May 1988: abortive run at 5th IOCCC.
-	     jaw.c - 1529 bytes. compile line: 152 bytes.
-	     generated funny code with execvp() to invoke shell.
+	     `jaw.c` - 1529 bytes. compile line: 152 bytes.
+	     generated funny code with `execvp()` to invoke shell.
 
 - Aug 29, 1988: production version, now at 1830 bytes.
 
 - Jan 1990: Paul Eggert does tour-de-force shark re-engineering.
 
-- May 24, 1990: collaboration yields 999-byte jaw.c core (see above)
+- May 24, 1990: collaboration yields 999-byte `jaw.c` core (see above)
 	     and 1530-byte production shell code (w/comments).
 	     Eggert comes through with lion's share of improvements.
-	     7th IOCCC code now faster than the btoa/zcat it replaces.
+	     7th IOCCC code now faster than the `btoa`/`zcat` it replaces.
 
-- May 1990: 'jaw' develops experimental replacement using
+- May 1990: `jaw` develops experimental replacement using
 	     Dan Bernstein's high-compression 'squeeze'.
 
 
 To which we add:
 
-- June 1990: 'shark' wins the IOCCC, finally! :-)
+- June 1990: `shark` wins the IOCCC, finally! :-)
 
 
 ## Copyright and CC BY-SA 4.0 License:
