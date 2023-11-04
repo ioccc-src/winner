@@ -1387,6 +1387,7 @@
 1998/schweikh3/samefile.1.dupe
 1998/schweikh3/schweikh3.c
 1998/schweikh3/schweikh3.orig.c
+1998/schweikh3/try.sh
 1998/tomtorfs/.gitignore
 1998/tomtorfs/.inventory.html
 1998/tomtorfs/.winner.json
