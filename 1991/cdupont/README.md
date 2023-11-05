@@ -1,13 +1,3 @@
-# Most Useful Label
-
-Christian Dupont\
-Ecole Normale Superieure de Lyon\
-Laboratoire d'Informatique Parallele\
-42, Rue H.Berlioz\
-69009 Lyon\
-France
-
-
 ## To build:
 
 ```sh
@@ -40,11 +30,9 @@ this entry.
 
 ## Author's remarks:
 
-Spoiler:
-
 The source code holds the letters of the message. Each letter, combined
 with another key letter, is used to compute the coordinates of the next
-letter and key. Thus, the message is code.  That is why I use silly\
+letter and key. Thus, the message is code.  That is why I use silly
 comments, most often badly spaced.
 
 The space character sequence between the words is given by a simple
