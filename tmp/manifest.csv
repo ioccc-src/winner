@@ -4170,6 +4170,7 @@
 2020,tsoj,10,index.html,readme2index,null,html,html,true,browser,click here first
 2020,tsoj,20,prog.c,null,main,c,c,true,github,winning source
 2020,tsoj,30,Makefile,null,null,makefile,null,true,github,Makefile
+2020,tsoj,50,prog.alt.c,null,alt,c,c,true,github,alternative source
 2020,tsoj,50,prog.orig.c,null,orig,c,c,true,github,original source
 2020,tsoj,300,2020_tsoj.tar.bz2,mkwinnertbz2,null,tbz2,bz2,true,download,download winning source
 2020,tsoj,900,.inventory.html,winner2nventory,null,html,html,true,browser,full inventory of all winner files

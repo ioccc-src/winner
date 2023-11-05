@@ -3509,6 +3509,7 @@
 2020/tsoj/Makefile
 2020/tsoj/README.md
 2020/tsoj/index.html
+2020/tsoj/prog.alt.c
 2020/tsoj/prog.c
 2020/tsoj/prog.orig.c
 2020/yang/.gitignore
