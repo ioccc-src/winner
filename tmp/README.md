@@ -418,8 +418,8 @@ This file as the following fields:
 
 5. created_by:
 
-   The name of the program that creates this file, or null is the
-   file an original file.
+   The name of the program that creates this file, or null if the
+   file is an original file.
 
    NOTE: A null created_by value indicates that the file is part
    of the primary content.  A non-null created_by value indicates

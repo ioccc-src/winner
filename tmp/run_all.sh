@@ -137,7 +137,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: WINNER_DIR_TXT=$WINNER_DIR_TXT" 1>&2
 fi
 
-# make is easier to process CSV files
+# make it easier to process CSV files
 #
 IFS="$IFS,"
 
@@ -163,11 +163,11 @@ if [[ ! -e $TOOL ]]; then
     exit 5
 fi
 if [[ ! -f $TOOL ]]; then
-    echo  "$0: ERROR: TOOL is not a file: $TOOL" 1>&2
+    echo  "$0: ERROR: TOOL is not a regular file: $TOOL" 1>&2
     exit 5
 fi
 if [[ ! -x $TOOL ]]; then
-    echo  "$0: ERROR: TOOL is not a executable file: $TOOL" 1>&2
+    echo  "$0: ERROR: TOOL is not an executable file: $TOOL" 1>&2
     exit 5
 fi
 
