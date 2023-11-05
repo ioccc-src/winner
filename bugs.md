@@ -1068,11 +1068,22 @@ Do you have an updated link? We welcome your help!
 
 ## 1996 jonth
 
-### STATUS: missing or dead link - please provide them
+### STATUS: INABIAF - please **DO NOT** fix
+
+### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1996/jonth/jonth.c](1996/jonth/jonth.c)
 ### Information: [1996/jonth/README.md](1996/jonth/README.md)
 
-As well the link which was http://www.uio.no/~jonth is no longer valid and
+If X is not running this program will very likely crash or do something funny.
+This should NOT be fixed.
+
+NOTE: the two boards will be on top of each other so you will have to drag one
+off the other so that you can properly play.
+
+
+### STATUS: missing or dead link - please provide them
+
+As well: the link which was http://www.uio.no/~jonth is no longer valid and
 there's no archive on the Internet Wayback Machine. Do you know of a proper URL?
 We greatly appreciate your help here!
 
