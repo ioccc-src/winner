@@ -1,11 +1,3 @@
-# Best Utility
-
-David Lowe\
-US\
-<j.david.lowe@gmail.com>\
-<https://github.com/dlowe>
-
-
 ## To build:
 
 ```sh
@@ -48,7 +40,7 @@ NOTE: The original entry was just a text based pootifier.  To build
 that version try:
 
 ```sh
-make dlowe.alt
+make alt
 ./dlowe.alt < anyfile > pootfile
 ```
 
