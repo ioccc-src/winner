@@ -113,8 +113,8 @@ ENTRY= ant
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA=
-TARGET= ${PROG}
+DATA= README.md
+TARGET= ${PROG} hill mole
 #
 ALT_OBJ=
 ALT_TARGET=
@@ -132,8 +132,16 @@ all: data ${TARGET}
 	clean clobber install love haste waste maker easter_egg \
 	sandwich supernova deep_magic magic charon pluto
 
-${PROG}: ${PROG}.c
+${PROG}: ${PROG}.c hill
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+hill: README.md
+	${RM} -f $@
+	${CP} -f -v $? $@
+
+mole: ${PROG}.c hill
+	${RM} -f $@
+	${CAT} ${PROG}.c hill > $@
 
 # alternative executable
 #

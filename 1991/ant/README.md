@@ -27,8 +27,13 @@ program exit without doing anything.
 ### Try:
 
 ```sh
-cp README.md hill
+make hill
 ./ant hill
+```
+
+```sh
+make mole
+./ant mole
 ```
 
 
