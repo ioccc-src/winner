@@ -61,6 +61,7 @@ important contributions to the IOCCC presentation of past IOCCC winners.
 We are pleased to note the many contributions, **made since 2021 Jan 01**,
 on a winner by winner basis.
 
+
 ## Makefile fixes and improvements
 
 Cody made a variety of changes in all Makefiles, sometimes to get an entry to
@@ -86,6 +87,7 @@ There were some other fixes as well including typos in the Makefiles.
 A lot of these fixes were done with his [sgit
 tool](https://github.com/xexyl/sgit).
 
+
 ## Typo fixes and consistency improvements
 
 Cody, being the IOCCC's resident corrections officer :-) (and a fine one at
@@ -102,6 +104,7 @@ be made consistent but adding markdown where necessary in the remarks is).
 
 A lot of these fixes were done with his [sgit
 tool](https://github.com/xexyl/sgit) but many were done manually as well.
+
 
 ## A note about changes `fgets()` 
 
@@ -195,6 +198,7 @@ To see the difference from start to fixed:
 cd 1984/decot ; make diff_orig_prog
 ```
 
+
 ## [1984/laman](1984/laman/laman.c) ([README.md](1984/laman/README.md]))
 
 Cody fixed this to not crash when no arg is specified. Note that if the arg is
@@ -249,12 +253,14 @@ shell, after the output (despite having `\n` in the string - can you figure out
 why?) but to make it more friendly to users Cody made it print a `\n` prior to
 returning to the shell. The original version does not have this change.
 
+
 ## [1985/august](1985/august/august.c) ([README.md](1985/august/README.md))
 
 Cody added the script [primes.sh](1985/august/primes.sh) which allows one to
 check the output for the first N prime numbers of the output, where N is either
 the default or user specified. The inspiration was the previous 'try' command he
 gave to have fun with finding primes that might seem unusual in a way.
+
 
 ## [1985/lycklama](1985/lycklama/lycklama.c) ([README.md](1985/lycklama/README.md]))
 
@@ -329,12 +335,12 @@ compile. See above where the loop has a body but the modification only has it
 commented out.
 
 
-
 ## [1986/hague](1986/hague/hague.c) ([README.md](1986/hague/README.md]))
 
 Cody made this use `fgets()` to avoid alarming and annoying messages about
 `gets()` being unsafe, sometimes interspersed with the output of the program.
 For more details about that see the [FAQ](/faq.md).
+
 
 ## [1986/holloway](1986/holloway/holloway.c) ([README.md](1986/holloway/README.md]))
 
@@ -365,6 +371,7 @@ and the third arg was an `int`.
 
 We encourage you to read the compilers.md file to see how odd this problem was
 and what Cody did to fix it, if nothing else but for entertainment!
+
 
 ## [1986/pawka](1986/pawka/pawka.c) ([README.md](1986/pawka/README.md))
 
@@ -459,6 +466,7 @@ Some of the changes required:
 	    :system(ccc(";kkt -oa, dijszdijs QQ"));return
 
 
+
 ## [1987/heckbert](1987/heckbert/heckbert.c) ([README.md](1987/heckbert/README.md))
 
 Cody made this look more like the original entry by restoring the `#define` of
@@ -468,6 +476,7 @@ Also because `index(3)` is deprecated and in some systems requires the inclusion
 of `strings.h` and because it's identical in use to `strchr(3)` (and we noted
 that for System V we had to do this) Cody added to the Makefile
 `-Dindex=strchr`.
+
 
 ## [1987/lievaart](1987/lievaart/lievaart.c) ([README.md](1987/lievaart/README.md))
 
@@ -513,6 +522,7 @@ Cody also made this ever so slightly like the original code by adding back the
 well (the one with the board and the one without, the entry itself with the
 limitations of the contest).
 
+
 ## [1987/wall](1987/wall/wall.c) ([README.md](1987/wall/README.md]))
 
 Cody made this safer by using `fgets()` instead of `gets()`. This prevents an
@@ -539,6 +549,7 @@ look more symmetrical now.
 
 Cody also added to the Makefile `-include stdio.h` in the nowadays very
 unlikely(?) but nevertheless suggested case that `putchar()` is not available.
+
 
 ## [1988/dale](1988/dale/dale.c) ([README.md](1988/dale/README.md]))
 
@@ -625,10 +636,12 @@ function, a redefinition of `exit()`, was not being called in `main()`. The
 original version is in [1988/isaak/isaak.alt.c](1988/isaak/isaak.alt.c). See the
 README.md file for more details.
 
+
 ## [1988/litmaath](1988/litmaath/litmaath.c) ([README.md](1988/litmaath/README.md))
 
 Cody added the alt code which is code that we suggested at the time of
 publication, in the remarks, to help understand the entry, and for fun.
+
 
 ## [1988/phillipps](1988/phillipps/phillipps.c) ([README.md](1988/phillipps/README.md]))
 
@@ -648,6 +661,7 @@ once did. The format of `pain()` is exactly like how `main()` was as it's the
 same code. Additionally, `main()` returns `!pain(...)` like `main()` used to do
 to itself and `pain()` does now.
 
+
 ## [1988/reddy](1988/reddy/reddy.c) ([README.md](1988/reddy/README.md))
 
 Cody made this use `fgets()` to prevent annoying warnings during compiling,
@@ -655,6 +669,7 @@ linking and runtime, the latter of which being the most annoying.
 
 Cody also restored the name of the winner in the README.md file that was missing
 by some crazy chance.
+
 
 ## [1988/spinellis](1988/spinellis/spinellis.c) ([README.md](1988/spinellis/README.md]))
 
@@ -704,6 +719,7 @@ Whilst he was at it, Cody made it so that one need not run the alt script or alt
 code directly, to match that of the main entry. As we simulate the functionality
 anyway, and since one may still run the code or the script (for the original
 entry and the alt code) anyway, it works out well.
+
 
 ## [1989/jar.2](1989/jar.2/jar.2.c) ([README.md](1989/jar.2/README.md]))
 
@@ -882,6 +898,7 @@ Cody also made the code look more like the original, removing the `int` from
 the variables, adding instead `-Wno-implicit-int`. The newline added by the
 judges was retained.
 
+
 ## [1990/cmills](1990/cmills/cmills.c) ([README.md](1990/cmills/README.md]))
 
 Yusuke got this to work in modern systems (it previously resulted in a bus
@@ -945,6 +962,7 @@ but later Cody added it back to make it more like the original).
 
 The second problem was suggested by the judges at the time of judging, to do
 with if the C preprocessor botches single quotes in cpp expansion.
+
 
 ## [1990/jaw](1990/jaw/jaw.c) ([README.md](1990/jaw/README.md]))
 
@@ -1041,6 +1059,7 @@ Yusuke pointed out that `atof` nowadays needs `#include <stdlib.h>` which was
 used in order to get this to work initially (prior to this output was there but
 incomplete).
 
+
 ## [1990/stig](1990/stig/stig.c) ([README.md](1990/stig/README.md))
 
 Cody fixed the paths in the Makefile so that this would build in linux (it
@@ -1062,6 +1081,7 @@ and to not crash if no arg is specified.
 
 The alt code did NOT have arg checks added as it is actually a copy of the
 original code.
+
 
 ## [1991/brnstnd](1991/brnstnd/brnstnd.c) ([README.md](1991/brnstnd/README.md]))
 
@@ -1192,6 +1212,7 @@ some fun input for fun but mostly different output. He added a great string from
 Brian Westley and Cody also added several of his own (can you figure out exactly
 which ones? :-) )
 
+
 ## [1991/rince](1991/rince/rince.c) ([README.md](1991/rince/README.md))
 
 Cody fixed it so that the messages that show if you won or lost will be seen
@@ -1220,6 +1241,7 @@ Cody also fixed the `ttt.sh` script that prevented the game from working and he
 also improved it so that warnings/errors/about to compile messages are not shown
 unless the `-e` option is used.  This is because the errors being shown kind of
 ruins the experience. Finally he made it pass ShellCheck.
+
 
 ## [1992/adrian](1992/adrian/adrian.c) ([README.md](1992/adrian/README.md]))
 
@@ -1254,10 +1276,12 @@ one must keep the `Y[strlen(Y)-1]='\0';` part and keep it there.
 This is a complex change due to the way the program and Makefile generate
 additional tools.
 
+
 ## [1992/buzzard.1](1992/buzzard.1/buzzard.1.c) ([README.md](1992/buzzard.1/README.md))
 
 Cody added a check for the right number of args, exiting 1 if not enough (2)
 used.
+
 
 ## [1992/gson](1992/gson/gson.c) ([README.md](1992/gson/README.md]))
 
@@ -1278,6 +1302,7 @@ loop).
 Cody also added the [mkdict.sh](1992/gson/mkdict.sh) script that the author
 included in their remarks. See the README.md for its purpose. It was NOT fixed
 for ShellCheck because the author deliberately obfuscated it.
+
 
 ## [1992/kivinen](1992/kivinen/kivinen.c) ([README.md](1992/kivinen/README.md]))
 
@@ -1317,6 +1342,7 @@ now uses a redefined `gets()`. This did require modifying the line number with
 
 Still this cannot work with clang due to different compiler messages. See
 [bugs.md](/bugs.md) for details.
+
 
 ## [1992/nathan](1992/nathan/nathan.c) ([README.md](1992/nathan/README.md))
 
@@ -1406,6 +1432,7 @@ which is unfortunately interspersed with the output of the program itself.
 Cody later improved the fix to use `gets()` via a macro so that it looks like
 the original code.
 
+
 ## [1993/vanb](1993/vanb/vanb.c) ([README.md](1993/vanb/README.md]))
 
 Cody fixed this to work with clang. The problem was that the third arg to main()
@@ -1420,6 +1447,7 @@ variable (an int) at the top of the file, instead making it a `char **` in
 arg (as it was 0 at file scope already this is perfectly fine and it means
 there's no need to cast it to an int in the function call though that would also
 work).
+
 
 ## [1994/horton](1994/horton/horton.c) ([README.md](1994/horton/README.md))
 
@@ -1526,12 +1554,13 @@ which only allows `main()` to have 0, 2 or 3 args. This is done by a new
 function (`pain()` as it's annoying that clang is this way :-) ) that main()
 calls which has the four args.
 
+
 ## [1995/vanschnitz](1995/vanschnitz/vanschnitz.c) ([README.md](1995/vanschnitz/README.md))
 
-Cody added the authors' spoiler as a C file as in 2023 we have decided that in
-most cases all the code should be available for the wider audience, without
-having to extract it. The exception is when the files are created by the entry
-or the entry decrypts the text or whatever else.
+Cody added the authors' [spoiler as a C file](1995/vanschnitz/spoiler.c) as in
+2023 we have decided that in most cases all the code should be available for the
+wider audience, without having to extract it. The exception is when the files
+are created by the entry or the entry decrypts the text or whatever else.
 
 
 ## [1996/august](1996/august/august.c) ([README.md](1996/august/README.md]))
@@ -1543,6 +1572,7 @@ this happens is macOS).
 Cody also added the [try.sh](1996/august/try.sh) script that runs all the
 commands given in the try section to simplify it as there are quite a lot of
 commands.
+
 
 ## [1996/dalbec](1996/dalbec/dalbec.c) ([README.md](1996/dalbec/README.md]))
 
@@ -1574,6 +1604,7 @@ Cody fixed this to compile and work with modern systems. As he loved the
 references in the code that could not compile he just commented out as little as
 possible to get this to compile.
 
+
 ## [1996/jonth](1996/jonth/jonth.c) ([README.md](1996/jonth/README.md]))
 
 Cody fixed this to not segfault under macOS. The problem was that the function
@@ -1601,6 +1632,7 @@ README.md file.
 
 Cody added a call to `endwin()` to restore terminal sanity (echo etc.) when
 exiting the program.
+
 
 ## [1998/fanf](1998/fanf/fanf.c) ([README.md](1998/fanf/README.md))
 
@@ -1729,6 +1761,7 @@ runtime, the latter interspersed with the output of the program.
 
 Cody later improved the fix to use `gets()` by redefining `gets()` so that the
 code looks like before.
+
 
 ## [2000/briddlebane](2000/briddlebane/briddlebane.c) ([README.md](2000/briddlebane/README.md]))
 
@@ -1893,6 +1926,7 @@ As well he added the [try.sh](2001/anonymous/try.sh) so that one can
 attempt to use the program as it was designed but if compiling as 32-bit fails
 it will at least run the supplementary program as a 64-bit program directly.
 
+
 ## [2001/bellard](2001/bellard/bellard.c) ([README.md](2001/bellard/README.md]))
 
 Cody fixed this to compile with clang but according to the author this will not
@@ -1922,6 +1956,7 @@ checked prior to running the function just like the author did for the factorial
 64-bit linux or macOS. See below portability notes as well as another fix in
 this entry by Yusuke.
 
+
 ## Portability notes:
 
 With a tip from Yusuke we rediscovered the author's [web page for this
@@ -1947,6 +1982,7 @@ this. :-) This fix makes a point of the author's notes on portability no longer
 valid, btw.
 
 He also fixed it to check the number of args.
+
 
 ## [2001/coupard](2001/coupard/coupard.c) ([README.md](2001/coupard/README.md]))
 
@@ -1988,6 +2024,7 @@ might be) too good to get rid of so he kept that in.
 He also points out that there is a way to get the computer to automatically lose
 very quickly and he also points out that there is a flaw in the alternate
 version that the author did not note. Do you know what these are?
+
 
 ## [2001/herrmann1](2001/herrmann1/herrmann1.c) ([README.md](2001/herrmann1/README.md]))
 
@@ -2032,9 +2069,11 @@ the paddles move even when holding down the movement keys.
 Cody also provided an alternate version which lets you use the arrow keys on
 your keyboard instead of the more awkward '`,`' and '`.`'.
 
+
 ## [2001/ollinger](2001/ollinger/ollinger.c) ([README.md](2001/ollinger/README.md))
 
 Cody fixed to not crash if not enough args, exiting 1 instead.
+
 
 ## [2001/schweikh](2001/schweikh/schweikh.c) ([README.md](2001/schweikh/README.md]))
 
@@ -2049,6 +2088,7 @@ Cody added the script [westley.sh](westley.sh) to automate a heap of commands
 that we, the IOCCC judges, suggested, as well as some additional ones that he
 thought would be fun.  He also provided the sort and punch card versions,
 described in the README.md, based on the author's remarks.
+
 
 ## [2004/arachnid](2004/arachnid/arachnid.c) ([README.md](2004/arachnid/README.md]))
 
@@ -2095,6 +2135,7 @@ provided, found under the [img/](2004/gavin/img/) directory. Note that the
 done this way to prevent extraction from the entry directory overwriting the
 files and causing `make clobber` to wipe some of them out.
 
+
 ## [2004/jdalbec](2004/jdalbec/jdalbec.c) ([README.md](2004/jdalbec/README.md))
 
 Cody fixed this to compile with gcc (it worked with clang). The problem was the
@@ -2135,6 +2176,7 @@ Cody and Landon individually fixed this to work with clang. Cody then turned the
 second arg to main, which clang requires to be a `char **`, to be not the same
 name as a function defined earlier in the code and to use that variable which
 `main()` used.
+
 
 ## [2004/vik2](2004/vik2/vik2.c) ([README.md](2004/vik2/README.md))
 
@@ -2267,6 +2309,7 @@ cleaner, somehow.
 Cody added explicit linking of libm (`-lm`) for systems like linux that seem to
 not do it implicitly (like macOS does).
 
+
 ## [2005/mikeash](2005/mikeash/mikeash.c) ([README.md](2005/mikeash/README.md))
 
 Cody fixed this to work in linux. The problem was an unknown escape sequence,
@@ -2290,7 +2333,6 @@ The array size of `c` was updated by 1 out of caution just in case as the array
 is used to store at least part of the string.
 
 
-
 ## [2005/mynx](2005/mynx/mynx.c) ([README.md](2005/mynx/README.md]))
 
 Cody fixed this so that the [configure](source/configure) script (which is not
@@ -2300,6 +2342,7 @@ needed but part of the entry) would work with compilers that have by default
 Cody also added the alt code which does scan for https. Futile, maybe, based on
 how https is set up, in which case just enjoy it for what it was. But there
 might be some command line that will let it work that way.
+
 
 ## [2005/toledo](2005/toledo/toledo.c) ([README.md](2005/toledo/README.md))
 
@@ -2320,6 +2363,7 @@ for strlen() with malloc(). This prevented it from working.
 
 Cody fixed the Makefile under some systems where the `lpthread` was not
 implicitly linked in.
+
 
 ## [2006/hamre](2006/hamre/hamre.c) ([README.md](2006/hamre/README.md))
 
@@ -2376,6 +2420,7 @@ program in some systems he added `-include ...` to the Makefile as well.
 Cody fixed it so that if the file cannot be opened it exits rather than trying
 to read from the file.
 
+
 ## [2006/toledo2](2006/toledo2/toledo2.c) ([README.md](2006/toledo2/README.md]))
 
 Cody fixed a segfault in this program which was making it fail to work under
@@ -2395,6 +2440,7 @@ modern (64-bit) systems.  The crash appears to only occur in macOS but the fix
 lets it work in both linux and macOS. The problem was that it relied on 32-bits
 so some `int`s were changed to `long`s. The display problem might or might not
 have been a problem in linux with the old `int`s but this is no longer known.
+
 
 ## [2011/goren](2011/goren/goren.c) ([README.md](2011/goren/README.md]))
 
@@ -2424,15 +2470,18 @@ Cody, though he feels slightly sick :-), added a version for Windows based on
 the author's comments (along with looking up the function for the right header
 file). To build try the alt rule of the Makefile.
 
+
 ## [2012/blakely](2012/blakely/blakely.c) ([README.md](2012/blakely/README.md))
 
 Cody added explicit linking of libm (`-lm`) as not all systems do this
 implicitly (linux doesn't seem to but macOS does).
 
+
 ## [2012/endoh1](2012/endoh1/endoh1.c) ([README.md](2012/endoh1/README.md))
 
 Cody added explicit linking of libm (`-lm`) as not all systems do this
 implicitly (linux doesn't seem to but macOS does).
+
 
 ## [2012/endoh2](2012/endoh2/endoh2.c) ([README.md](2012/endoh2/README.md))
 
@@ -2443,6 +2492,7 @@ Cody fixed a typo in the ruby script
 ## [2012/grothe](2012/grothe/grothe.c) ([README.md](2012/grothe/README.md))
 
 Cody restored the original code from the archive.
+
 
 ## [2012/kang](2012/kang/kang.c) ([README.md](2012/kang/README.md]))
 
@@ -2525,6 +2575,7 @@ Finally Cody provided the [bios.asm](2013/cable3/bios.asm) that the author
 referred to, found at the [GitHub repo for the
 entry](https://github.com/adriancable/8086tiny/tree/master).
 
+
 ## [2013/dlowe](2013/dlowe/dlowe.c) ([README.md](2013/dlowe/README.md))
 
 Cody added the source code that we suggested one should compile and run with
@@ -2544,6 +2595,7 @@ the symlink as it uses it, even though it runs `make clobber all`.
 
 Cody also added the [try.sh](2013/dlowe/try.sh) script to more easily try the
 program.
+
 
 ## [2013/endoh2](2013/endoh2/endoh2.c) ([README.md](2013/endoh2/README.md))
 
@@ -2565,6 +2617,7 @@ not installed, and after checking these requirements it will exit if either is
 not found.
 
 The entry can still be enjoyed if you do not have these tools, however.
+
 
 ## [2013/endoh4](2013/endoh4/endoh4.c) ([README.md](2013/endoh4/README.md))
 
@@ -2629,6 +2682,7 @@ second between commands.
 Cody added explicit linking of libm (`-lm`) as not all systems do this
 implicitly (linux doesn't seem to but macOS does).
 
+
 ## [2014/deak](2014/deak/prog.c) ([README.md](2014/deak/README.md))
 
 Cody fixed the code that the author provided which would be what the program
@@ -2642,6 +2696,7 @@ It did not compile because a value was left off the `return` statement.
 
 Cody added this as alternate code just for fun and so one can more easily see
 the difference to really appreciate the obfuscation.
+
 
 ## [2014/endoh1](2014/endoh1/prog.c) ([README.md](2014/endoh1/README.md]))
 
@@ -2657,6 +2712,7 @@ it will verify that `prog` is executable and if it is it will run it.
 **_Barely_** worth noting but done nonetheless, Cody renamed the `read_me.md`
 file to [spoilers.md](2014/endoh1/spoilers.md) to be clearer in its purpose as
 it is a file with spoilers.
+
 
 ## [2014/maffiodo1](2014/maffiodo1/prog.c) ([README.md](2014/maffiodo1/README.md]))
 
@@ -2681,12 +2737,14 @@ The program creates files in the working directory as part of how it works (see
 the README.md file for details) so Cody made sure that `make clobber` (via `make
 clean`) removes those files and so that they are ignored by `.gitignore`.
 
+
 ## [2014/vik](2014/vik/prog.c) ([README.md](2014/vik/README.md))
 
 Cody added an alternate version that is based on the author's remarks that will
 theoretically work for Microsoft Windows compilers (if anything works in Windows
 :-) ). We have no way of testing this and if anything has changed since 2014
 that would break it we do not know.
+
 
 ## [2015/endoh3](2015/endoh3/prog.c) ([README.md](2015/endoh3/README.md]))
 
@@ -2713,10 +2771,12 @@ files from compiling properly, trying instead to compile already compiled code.
 He also added explicit linking of libm (`-lm`) for systems that do not do this
 (linux seems to not but macOS does).
 
+
 ## [2018/bellard](2018/bellard/prog.c) ([README.md](2018/bellard/README.md))
 
 Cody added explicit linking of libm (`-lm`) for systems that do not do this
 (linux doesn't seem to but macOS does).
+
 
 ## [2018/ferguson](2018/ferguson/prog.c) ([README.md](2018/ferguson/README.md))
 
@@ -2728,6 +2788,7 @@ file and other things as well.
 Landon notes that Cody will probably never finish changes in his entries and
 that's probably true: let's just say that for the IOCCC I'm (Cody) a weasel! :-)
 (but isn't that kind of the point ? :-) )
+
 
 ## [2018/hou](2018/hou/prog.c) ([README.md](2018/hou/README.md))
 
@@ -2764,12 +2825,14 @@ Cody made the author's statement that the entry compiles cleanly true by fixing
 versions of C` (in main()). Not strictly necessary but if he's making fixes he
 might as well.
 
+
 ## [2019/dogon](2019/dogon/prog.c) ([README.md](2019/dogon/README.md))
 
 Cody added explicit linking of libm (`-lm`) for systems that do not do this
 (linux does not seem to but macOS does).
 
 He also fixed the Makefile so that it compiles with clang in linux.
+
 
 ## [2019/endoh](2019/endoh/prog.c) ([README.md](2019/endoh/README.md]))
 
@@ -2778,9 +2841,11 @@ Cody disabled it. For this same reason he also added the `-g` flag to the
 compilation as debugging symbols might just be useful for an entry that's
 supposed to segfault :-)
 
+
 ## [2019/poikola](2019/poikola/prog.c) ([README.md[(2019/poikola/README.md))
 
 Cody added a missing rule to the Makefile.
+
 
 ## [2019/karns](2019/karns/prog.c) ([README.md](2019/karns/README.md]))
 
@@ -2793,10 +2858,12 @@ debugging it since it works with `-O0`.
 He also added the script [try.sh](2019/karns/try.sh) to showcase the entry a
 bit more easily.
 
+
 ## [2020/endoh2](2020/endoh2/prog.c) ([README.md](2020/endoh2/README.md))
 
 Cody copied the files from the spoiler.zip file that was password protected with
 a password that was no longer known from his preview of 2020.
+
 
 ## [2020/endoh3](2020/endoh3/prog.c) ([README.md](2020/endoh3/README.md))
 
@@ -2848,6 +2915,7 @@ layered chocolate fudge cake recipe](2020/ferguson1/chocolate-cake.md) :-)
 Yes the irony here is as rich as the chocolate cake: the question is do you know
 how rich it is? If not and you like chocolate I (that is Cody :-) ) highly
 recommend you give it a go! :-)
+
 
 ## [2020/ferguson2](2020/ferguson2/prog.c) ([README.md](2020/ferguson2/README.md))
 
