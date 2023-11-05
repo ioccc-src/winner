@@ -1,12 +1,3 @@
-# Best Utility
-
-Anthony C Howe\
-Mortice Kern Systems Inc.	#CL-23\
-35 King St. N			268 Phillip St.\
-Waterloo, On			Waterloo, On\
-Canada, N2J 2W9			Canada, N2L 6G9
-
-
 ## To build:
 
 ```sh
@@ -75,7 +66,7 @@ results depending on the implementation of `curses`.
 -    W		    write buffer to file
 -    R		    refresh the screen
 -    Q		    quit
-\
+
 ### Exit status
 
 -    0		    success
@@ -98,10 +89,10 @@ to provide more portable code, since the compiler should handle the translation
 of them into the native character set.  Note that `'\f'` (form-feed) was used to
 exit insert mode because K&R C had no escape constant for the escape-key.
 
-My goals for this project were to learn and experiment with the\
-Buffer Gap Scheme [Fin80][net90], write a useful and *portable*\
-program, and meet the requirements of the IOCCC.  I initially\
-planned to have a mini `curses` built-in like the IOCCC Tetris entry\
+My goals for this project were to learn and experiment with the
+Buffer Gap Scheme [Fin80][net90], write a useful and *portable*
+program, and meet the requirements of the IOCCC.  I initially
+planned to have a mini `curses` built-in like the IOCCC Tetris entry
 from a previous year, however this was not as portable as using a
 `curses` library with `TERMINFO`/`TERMCAP` support.
 
