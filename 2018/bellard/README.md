@@ -1,9 +1,3 @@
-# Most inflationary
-
-Fabrice Bellard\
-<https://bellard.org/>
-
-
 ## To build:
 
 ```sh

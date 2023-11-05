@@ -1,12 +1,3 @@
-# Best X11 Program
-
-Teemu Rantanen\
-Helsinki University of Technology\
-Melkonkatu 5 A 8\
-00210 Helsinki\
-Finland
-
-
 ## To build:
 
 ```sh

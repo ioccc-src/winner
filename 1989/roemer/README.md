@@ -1,9 +1,3 @@
-# Best layout
-
-Lievaart, Roemer B.\
-Netherlands
-
-
 ## To build:
 
 ```sh

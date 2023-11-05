@@ -1,9 +1,3 @@
-# Most phony
-
-Edward Giles\
-<https://id523a.com/>
-
-
 ## To build:
 
 ```sh

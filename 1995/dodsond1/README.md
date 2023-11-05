@@ -1,12 +1,3 @@
-# Most Humorous
-
-Don Dodson\
-AG Communication Systems\
-4101 W Union Hills Dr #1104\
-Glendale, AZ 85308\
-US
-
-
 ## To build:
 
 ```sh

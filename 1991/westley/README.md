@@ -1,13 +1,3 @@
-# Grand Prize
-
-Brian Westley (Merlyn LeRoy on usenet)\
-DigiBoard, Inc.\
-1026 Blair Ave.\
-St. Paul, MN  55104\
-US\
-<http://www.westley.org>
-
-
 ## To build:
 
 ```sh

@@ -1,8 +1,3 @@
-# Second place award
-
-Dave Decot
-
-
 ## To build:
 
 ```sh

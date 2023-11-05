@@ -1,10 +1,3 @@
-# Best painting tool
-
-Michael Birken\
-<o__1@hotmail.com>\
-<http://www.meatfighter.com/>
-
-
 ## To build:
 
 ```sh

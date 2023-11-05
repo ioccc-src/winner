@@ -1,9 +1,3 @@
-# Most useful Obfuscated C program
-
-Gopi Reddy\
-US
-
-
 ## To build:
 
 ```sh

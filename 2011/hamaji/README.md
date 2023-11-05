@@ -1,9 +1,3 @@
-# Best solved puzzle
-
-Shinichiro Hamaji\
-<shinichiro.hamaji@gmail.com>
-
-
 ## To build:
 
 ```sh

@@ -1,9 +1,3 @@
-# Best One Liner
-
-David Korn\
-US
-
-
 ## To build:
 
 ```sh

@@ -1,9 +1,3 @@
-# Best small program
-
-Maarten Litmaath\
-The Netherlands
-
-
 ## To build:
 
 ```sh

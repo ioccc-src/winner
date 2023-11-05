@@ -1,9 +1,3 @@
-# Best of Show
-
-Lennart Augustsson\
-<https://web.archive.org/web/20090831055828/http://www.cs.chalmers.se/~augustss>
-
-
 ## To build:
 
 ```sh

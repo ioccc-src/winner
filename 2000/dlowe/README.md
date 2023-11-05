@@ -1,10 +1,3 @@
-# Worst Abuse of the Rules
-
-David Lowe\
-US\
-<https://github.com/dlowe>
-
-
 ## To build:
 
 ```sh

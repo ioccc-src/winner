@@ -1,9 +1,3 @@
-# Best visuals
-
-Mark Isaak\
-US
-
-
 ## To build:
 
 ```sh

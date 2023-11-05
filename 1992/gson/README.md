@@ -1,9 +1,3 @@
-# Most Humorous Output
-
-Andreas Gustafsson\
-Finland
-
-
 ## To build:
 
 ```sh

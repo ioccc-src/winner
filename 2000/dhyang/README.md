@@ -1,13 +1,3 @@
-# Best Layout
-
-Don Yang\
-UCSD\
-259 E. Bellbrook St.\
-Covina, CA 91722\
-US\
-<http://uguu.org>
-
-
 ## To build:
 
 ```sh

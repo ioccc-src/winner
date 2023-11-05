@@ -1,9 +1,3 @@
-# Most complex algorithm
-
-Paul E. Black\
-US
-
-
 ## To build:
 
 ```sh

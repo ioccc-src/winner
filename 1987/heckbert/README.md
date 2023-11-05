@@ -1,8 +1,3 @@
-# Best Obfuscator of Programs
-
-Paul Heckbert
-
-
 ## To build:
 
 ```sh

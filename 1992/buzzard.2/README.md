@@ -1,12 +1,3 @@
-# Best Language Tool
-
-Sean Barrett\
-Software Construction Company\
-430 Southwest Parkway, #1906\
-College Station, TX 77840\
-US
-
-
 ## To build:
 
 ```sh

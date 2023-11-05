@@ -1,13 +1,3 @@
-# Worst Abuse of the C Preprocessor
-
-Jens Schweikhardt\
-DFN Network Operation Center\
-Schlartaeckerweg 3 (home address)\
-D-71384 Weinstadt\
-Germany\
-<http://www.schweikhardt.net>
-
-
 ## To build:
 
 ```sh

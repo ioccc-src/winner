@@ -1,10 +1,3 @@
-# Best Small Program
-
-Brian Westley (aka Merlyn LeRoy)\
-US\
-<http://www.westley.org>
-
-
 ## To build:
 
 ```sh

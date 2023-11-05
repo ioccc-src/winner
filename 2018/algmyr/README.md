@@ -1,8 +1,3 @@
-# Most cacophonic
-
-Anton Älgmyr
-
-
 ## To build:
 
 ```sh

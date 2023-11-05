@@ -1,8 +1,3 @@
-# "For the Birds!" Award
-
-Chris Mills
-
-
 ## To build:
 
 ```sh

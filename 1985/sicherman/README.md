@@ -1,8 +1,3 @@
-# Worst abuse of the C preprocessor
-
-Col. G. L. Sicherman
-
-
 ## To build:
 
 ```sh

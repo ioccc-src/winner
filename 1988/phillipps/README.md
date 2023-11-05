@@ -1,9 +1,3 @@
-# Least likely to compile successfully
-
-Ian Phillipps\
-UK
-
-
 ## To build:
 
 ```sh

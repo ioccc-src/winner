@@ -1,10 +1,3 @@
-# Best use of 1 Infinite Loop
-
-Qiming Hou\
-<hqm03ster@gmail.com>\
-<http://www.houqiming.net>
-
-
 ## To build:
 
 ```sh

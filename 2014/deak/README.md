@@ -1,9 +1,3 @@
-# Most underscored argument
-
-Ferenc Deak\
-<fritzone@gmail.com>
-
-
 ## To build:
 
 ```sh

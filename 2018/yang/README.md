@@ -1,9 +1,3 @@
-# Most shifty
-
-Don Yang\
-<http://uguu.org/>
-
-
 ## To build:
 
 ```sh

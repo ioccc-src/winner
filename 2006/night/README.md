@@ -1,10 +1,3 @@
-# Best Abuse of Computation
-
-Christopher Night\
-US\
-<https://web.archive.org/web/20090415070532/https://www.people.fas.harvard.edu/~night>
-
-
 ## To build:
 
 ```sh

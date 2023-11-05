@@ -1,11 +1,3 @@
-# Best Curses Game
-
-Kevin Pulo\
-Australia\
-<http://www.kev.pulo.com.au/>\
-Mastodon: <https://fosstodon.org/@devkev>
-
-
 ## To build:
 
 ```sh

@@ -1,9 +1,3 @@
-# Best Output
-
-Thor Eldby\
-Norway
-
-
 ## To build:
 
 ```sh

@@ -1,9 +1,3 @@
-# Grand prize in most well-rounded in confusion
-
-Larry Wall\
-US
-
-
 ## To build:
 
 ```sh

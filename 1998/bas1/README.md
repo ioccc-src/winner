@@ -1,12 +1,3 @@
-# Best Encapsulation
-
-Bas de Bakker\
-Pica, Centre for Library Automation\
-Statenweg 154 B    (home address)\
-3039 JN Rotterdam\
-The Netherlands
-
-
 ## To build:
 
 ```sh

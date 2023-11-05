@@ -1,8 +1,3 @@
-# Most useful obfuscation
-
-Walter Bright
-
-
 ## To build:
 
 ```sh

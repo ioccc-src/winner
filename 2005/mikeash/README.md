@@ -1,11 +1,3 @@
-# Best use of parenthesis
-
-Michael Ash\
-US\
-mike@mikeash.com\
-<https://mikeash.com>
-
-
 ## To build:
 
 ```sh

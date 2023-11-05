@@ -1,14 +1,3 @@
-# Best of Show
-
-Vern Paxson\
-Lawrence Berkeley Laboratory\
-Computer Systems Engineering\
-Bldg. 46A, Room 1123\
-Lawrence Berkeley Laboratory\
-1 Cyclotron Rd.\
-Berkeley, CA 94720  US
-
-
 ## To build:
 
 ```sh

@@ -1,9 +1,3 @@
-# Bset slaml prragom
-
-Ilya Kurdyukov\
-<https://github.com/ilyakurdyukov>
-
-
 ## To build:
 
 ```sh

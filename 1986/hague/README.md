@@ -1,9 +1,3 @@
-# Worst abuse of the C preprocessor
-
-Jim Hague\
-UK
-
-
 ## To build:
 
 ```sh

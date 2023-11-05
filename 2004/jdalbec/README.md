@@ -1,10 +1,3 @@
-# Best Abuse of the Periodic Table
-
-John Dalbec\
-US\
-<https://jpdalbec.people.ysu.edu>
-
-
 ## To build:
 
 ```sh

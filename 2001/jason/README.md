@@ -1,12 +1,3 @@
-# Best Of Show
-
-Jason Orendorff\
-5 Buchanan St.\
-Nashua, NH 03060\
-US\
-<http://jorendorff.blogspot.com>
-
-
 ## To build:
 
 ```sh

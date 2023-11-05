@@ -1,10 +1,3 @@
-# Most sound
-
-Daniel Vik\
-<daniel@vik.cc>\
-<http://www.danielvik.com>
-
-
 ## To build:
 
 ```sh

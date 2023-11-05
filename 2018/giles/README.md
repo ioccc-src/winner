@@ -1,8 +1,3 @@
-# Most unstable
-
-Edward Giles
-
-
 ## To build:
 
 This entry requires SDL2 to be installed.

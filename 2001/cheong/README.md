@@ -1,10 +1,3 @@
-# Best short program
-
-Raymond Cheong\
-US\
-<http://www.raymondcheong.com/index.html>
-
-
 ## To build:
 
 ```sh

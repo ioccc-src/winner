@@ -1,10 +1,3 @@
-# Most Useful
-
-Szabolcs Borsanyi\
-United Kingdom\
-<s.borsanyi@sussex.ac.uk>
-
-
 ## To build:
 
 ```sh

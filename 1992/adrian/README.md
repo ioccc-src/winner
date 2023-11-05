@@ -1,9 +1,3 @@
-# Most Educational
-
-Adrian Mariano\
-US
-
-
 ## To build:
 
 ```sh

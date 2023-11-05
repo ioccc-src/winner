@@ -1,9 +1,3 @@
-# Most notable and best tool
-
-Alex Deckmyn\
-<alex.deckmyn@gmail.com>
-
-
 ## To build:
 
 ```sh

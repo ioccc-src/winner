@@ -1,12 +1,3 @@
-# Most Obfuscated Packaging
-
-Don Dodson\
-AG Communication Systems\
-17239 N. 19th Ave. #1003\
-Phoenix, AZ 85023\
-US
-
-
 ## To build:
 
 ```sh

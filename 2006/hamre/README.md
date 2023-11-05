@@ -1,9 +1,3 @@
-# Most Irrational
-
-Steinar Hamre\
-Norway
-
-
 ## To build:
 
 ```sh

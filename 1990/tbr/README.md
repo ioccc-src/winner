@@ -1,12 +1,3 @@
-# Best Utility
-
-Byron Rakitzis\
-US
-
-Sean Dorward\
-US
-
-
 ## To build:
 
 ```sh

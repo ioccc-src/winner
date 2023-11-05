@@ -1,12 +1,3 @@
-# Best X Program
-
-Tero Kivinen\
-Helsinki University of Technology\
-Klovinrinne 6b\
-02180 Espoo\
-Finland
-
-
 ## To build:
 
 If your machine support the X Window System, Version 11:

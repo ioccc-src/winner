@@ -1,9 +1,3 @@
-# Most functional
-
-Freek Wiedijk\
-<freek@cs.ru.nl>
-
-
 ## To build:
 
 ```sh

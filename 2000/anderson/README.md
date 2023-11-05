@@ -1,12 +1,3 @@
-# Best Use of Flags
-
-Glyn Anderson\
-Jl. Raya Serang KM 18.2\
-Desa Bojong\
-Cikupa, Tangerang, 15710\
-Indonesia
-
-
 ## To build:
 
 ```sh

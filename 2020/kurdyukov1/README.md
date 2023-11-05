@@ -1,9 +1,3 @@
-# Best utility
-
-Ilya Kurdyukov\
-<https://github.com/ilyakurdyukov>
-
-
 ## To build:
 
 ```sh

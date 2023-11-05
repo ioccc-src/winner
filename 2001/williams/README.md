@@ -1,9 +1,3 @@
-# Best Graphic Game
-
-John Williams\
-US
-
-
 ## To build:
 
 ```sh

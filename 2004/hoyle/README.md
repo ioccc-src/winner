@@ -1,10 +1,3 @@
-# Most Functional Output
-
-Jonathan Hoyle\
-US\
-<http://www.jonhoyle.com>
-
-
 ## To build:
 
 ```sh

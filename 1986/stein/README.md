@@ -1,8 +1,3 @@
-# Best one liner
-
-Jan Stein
-
-
 ## To build:
 
 ```sh

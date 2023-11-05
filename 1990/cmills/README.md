@@ -1,9 +1,3 @@
-# Best Game
-
-Chris Mills\
-US
-
-
 ## To build:
 
 ```sh

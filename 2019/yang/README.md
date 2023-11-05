@@ -1,9 +1,3 @@
-# Most in need of transparency
-
-Don Yang\
-<http://uguu.org/>
-
-
 ## To build:
 
 ```sh

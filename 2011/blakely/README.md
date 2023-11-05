@@ -1,10 +1,3 @@
-# Most devolving
-
-Philip Blakely\
-Cambridge, UK\
-<pmblakely@gmail.com>
-
-
 ## To build:
 
 ```sh

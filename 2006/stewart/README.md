@@ -1,9 +1,3 @@
-# Best Computed Graphics
-
-Thomas Stewart\
-US
-
-
 ## To build:
 
 ```sh

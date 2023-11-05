@@ -1,8 +1,3 @@
-# Best one-liner
-
-Dave Burton
-
-
 ## To build:
 
 ```sh

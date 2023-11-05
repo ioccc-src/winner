@@ -1,9 +1,3 @@
-# Best Output
-
-Carlos Duarte\
-Portugal
-
-
 ## To build:
 
 We recommend that you try this alternate version first. For reasons why this is

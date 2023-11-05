@@ -1,8 +1,3 @@
-# Best 3D puzzle
-
-Anonymous
-
-
 ## To build:
 
 ```sh

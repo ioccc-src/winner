@@ -1,8 +1,3 @@
-# Best Abuse of CPP
-
-Raymond Cheong
-
-
 ## To build:
 
 ```sh

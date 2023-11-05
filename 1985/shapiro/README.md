@@ -1,8 +1,3 @@
-# Grand prize for most well-rounded in confusion
-
-Carl Shapiro
-
-
 ## To build:
 
 ```sh

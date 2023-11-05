@@ -1,9 +1,3 @@
-# Most timely rendered
-
-Christopher Mills\
-<mrxo@sonic.net>
-
-
 ## To build:
 
 ```sh

@@ -1,10 +1,3 @@
-# Most functional
-
-John Tromp\
-<john.tromp@gmail.com>\
-<http://tromp.github.io/>
-
-
 ## To build:
 
 ```sh

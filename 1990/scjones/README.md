@@ -1,9 +1,3 @@
-# ANSI Committee's Worst Abuse of C
-
-Larry Jones\
-US
-
-
 ## To build:
 
 ```sh

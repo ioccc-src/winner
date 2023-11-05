@@ -1,10 +1,3 @@
-# Best of show
-
-Jack Applin\
-US\
-<https://www.cs.colostate.edu/~applin/>
-
-
 ## To build:
 
 ```sh

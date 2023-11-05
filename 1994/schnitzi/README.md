@@ -1,10 +1,3 @@
-# Best Layout
-
-Mark Schnitzius\
-US\
-<http://computronium.org/ioccc.html>
-
-
 ## To build:
 
 ```sh

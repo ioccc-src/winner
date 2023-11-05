@@ -1,9 +1,3 @@
-# Best Font Engine
-
-Jeff Newbern\
-US
-
-
 ## To build:
 
 ```sh

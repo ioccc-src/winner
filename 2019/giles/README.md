@@ -1,8 +1,3 @@
-# Most in need of wide space
-
-Edward Giles
-
-
 ## To build:
 
 ```sh

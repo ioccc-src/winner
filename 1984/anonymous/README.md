@@ -1,8 +1,3 @@
-# Dishonorable mention
-
-Anonymous
-
-
 ## To build:
 
 ```sh

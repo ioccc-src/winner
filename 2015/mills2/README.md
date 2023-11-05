@@ -1,8 +1,3 @@
-# Most Compact
-
-Chris Mills
-
-
 ## To build:
 
 ```sh

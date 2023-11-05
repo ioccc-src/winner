@@ -1,10 +1,3 @@
-# Most catty
-
-Don Yang\
-<omoikane@uguu.org>\
-<http://uguu.org/>
-
-
 ## To build:
 
 ```sh

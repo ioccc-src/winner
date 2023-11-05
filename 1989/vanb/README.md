@@ -1,13 +1,3 @@
-# Best one liner
-
-David Van Brackle\
-Department of Computer Science\
-University of Central Florida\
-Orlando, Florida\
-32816\
-US
-
-
 ## To build:
 
 ```sh

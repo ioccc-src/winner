@@ -1,9 +1,3 @@
-# Best one-liner
-
-Dave Burton\
-<http://ioccc.snox.net>
-
-
 ## To build:
 
 ```sh

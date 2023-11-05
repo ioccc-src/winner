@@ -1,11 +1,3 @@
-# Best Use of Obfuscation
-
-Leonid A. Broukhis\
-46728 Crawford St., apt. 20\
-Fremont, CA 94539\
-US
-
-
 ## To build:
 
 ```sh

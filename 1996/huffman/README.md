@@ -1,14 +1,3 @@
-# Best Obfuscated Character Set Utility
-
-Ken Huffman\
-Applied Innovation Inc\
-5800 Innovation Dr.\
-Dublin, OH 43016\
-US\
-<http://www.huffmancoding.com>\
-huffmancoding@gmail.com
-
-
 ## To build:
 
 ```sh

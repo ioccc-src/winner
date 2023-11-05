@@ -1,10 +1,3 @@
-# Most Space Efficient
-
-Jens Schweikhardt <schweikh@schweikhardt.net>\
-<http://www.schweikhardt.net>\
-Germany
-
-
 ## To build:
 
 ```sh

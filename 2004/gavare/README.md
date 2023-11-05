@@ -1,10 +1,3 @@
-# Best Use of Light and Spheres
-
-Anders Gavare\
-Sweden\
-<https://gavare.se>
-
-
 ## To build:
 
 ```sh

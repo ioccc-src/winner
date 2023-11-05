@@ -1,10 +1,3 @@
-# Best Non-Use of Curses
-
-Mark Schnitzius\
-Australia\
-<http://computronium.org/ioccc.html>
-
-
 ## To build:
 
 ```sh

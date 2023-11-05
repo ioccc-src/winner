@@ -1,10 +1,3 @@
-# Best one-liner
-
-Jens Schweikhardt\
-Germany\
-<http://www.schweikhardt.net/>
-
-
 ## To build:
 
 ```sh

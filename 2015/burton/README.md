@@ -1,10 +1,3 @@
-# Most Useful
-
-Dave Burton\
-<ioccc@snox.net>\
-<http://snox.net/ioccc>
-
-
 ## To build:
 
 ```sh

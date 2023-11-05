@@ -1,11 +1,3 @@
-# Best abuse of the rules
-
-Diomidis Spinellis\
-GR\
-<https://www.spinellis.gr/>\
-Mastodon: <https://mstdn.social/@DSpinellis>
-
-
 ## To build:
 
 ```sh

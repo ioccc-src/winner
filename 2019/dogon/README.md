@@ -1,8 +1,3 @@
-# Best use of space and time
-
-Gil Dogon
-
-
 ## To build:
 
 ```sh

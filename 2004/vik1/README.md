@@ -1,12 +1,3 @@
-# Best X11 Game
-
-Daniel Vik\
-US\
-<daniel@vik.cc>\
-<https://www.vik.cc/>\
-<http://danielvik.com/>
-
-
 ## To build:
 
 ```sh

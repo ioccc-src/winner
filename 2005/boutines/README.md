@@ -1,10 +1,3 @@
-# Most superfluous output
-
-Francois Boutines\
-Toulouse, France\
-<francois.boutines@gmail.com>
-
-
 ## To build:
 
 ```sh

@@ -1,9 +1,3 @@
-# Best abuse of lámatyávë
-
-Ilya Kurdyukov\
-<https://github.com/ilyakurdyukov>
-
-
 ## To build:
 
 ```sh

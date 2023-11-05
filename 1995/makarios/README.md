@@ -1,12 +1,3 @@
-# Best Short Program
-
-Selene Makarios & Heather Downs\
-The Software Bungalow\
-900 High School Way, #2202\
-Mountain View, CA 94041\
-US
-
-
 ## To build:
 
 ```sh
