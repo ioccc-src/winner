@@ -1,10 +1,3 @@
-# Best one liner
-
-Taketo Konno\
-Japan\
-<inaniwa3@gmail.com>
-
-
 ## To build:
 
 ```sh

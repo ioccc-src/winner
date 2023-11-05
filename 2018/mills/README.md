@@ -1,8 +1,3 @@
-# Best of show
-
-Christopher Mills <mrxo@sonic.net>
-
-
 ## To build:
 
 ```sh

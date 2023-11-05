@@ -1,13 +1,3 @@
-# Best Abuse of the C Preprocessor
-
-David Gibson\
-University of Cape Town\
-1 Sweet Valley Road\
-Bergvliet\
-7945\
-South Africa
-
-
 ## To build:
 
 ```sh

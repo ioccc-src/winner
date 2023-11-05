@@ -1,13 +1,3 @@
-# Best Self-Documenting
-
-Tom Torfs\
-De Nayer Instituut\
-Cuperuslei 12          (home address)\
-2220 Heist-op-den-Berg\
-Belgium\
-<https://web.archive.org/web/20010520021948/http://members.nbci.com/tomtorfs/>
-
-
 ## To build:
 
 ```sh

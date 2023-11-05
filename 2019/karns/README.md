@@ -1,8 +1,3 @@
-# Most in need of whitespace
-
-Joshua Karns
-
-
 ## To build:
 
 ```sh

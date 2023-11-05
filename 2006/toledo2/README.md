@@ -1,11 +1,3 @@
-# Best of Show
-
-Oscar Toledo G.\
-Familia Toledo\
-Mexico\
-<https://nanochess.org>
-
-
 ## To build:
 
 ```sh

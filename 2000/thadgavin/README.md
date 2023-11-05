@@ -1,12 +1,3 @@
-# Most Portable Output
-
-Thaddaeus Frogley\
-UK
-
-Gavin Buttimore\
-UK
-
-
 ## To build:
 
 ```sh

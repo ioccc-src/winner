@@ -1,9 +1,3 @@
-# Most Unusual Data Structure
-
-Peter J Ruczynski\
-England, U.K.
-
-
 ## To build:
 
 ```sh

@@ -1,9 +1,3 @@
-# Best Abuse of the Rules
-
-Mark Biggar\
-US
-
-
 ## To build:
 
 ```sh

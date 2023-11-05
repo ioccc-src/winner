@@ -1,9 +1,3 @@
-# Most Versatile Source
-
-Jyrki Holopainen\
-Finland
-
-
 ## To build:
 
 This entry will not compile with gcc < 2.3.3 as it relied on a bug which was

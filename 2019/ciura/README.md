@@ -1,8 +1,3 @@
-# Most alphabetic
-
-Marcin Ciura
-
-
 ## To build:
 
 ```sh

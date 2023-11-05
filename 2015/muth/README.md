@@ -1,9 +1,3 @@
-# Most Complete Use of CPP
-
-Dominik Muth\
-<muth.ioccc@freenet.de>
-
-
 ## To build:
 
 ```sh

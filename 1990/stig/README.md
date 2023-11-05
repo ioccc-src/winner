@@ -1,9 +1,3 @@
-# Strangest Abuse of the Rules
-
-Stig Hemmer\
-Norway
-
-
 ## To build:
 
 ```sh

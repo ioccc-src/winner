@@ -1,9 +1,3 @@
-# Best self-modifying program
-
-Jay Vosburgh\
-US
-
-
 ## To build:
 
 ```sh

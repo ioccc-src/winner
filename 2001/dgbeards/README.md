@@ -1,9 +1,3 @@
-# Best AI
-
-Doug Beardsley\
-US
-
-
 ## To build:
 
 ```sh

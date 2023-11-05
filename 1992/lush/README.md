@@ -1,9 +1,3 @@
-# Worst Abuse of the C Preprocessor
-
-Ed Luke\
-US
-
-
 ## To build:
 
 ```sh

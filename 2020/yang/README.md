@@ -1,9 +1,3 @@
-# Best abuse of CPP
-
-Don Yang\
-<http://uguu.org/>
-
-
 ## To build:
 
 ```sh

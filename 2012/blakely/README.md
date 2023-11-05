@@ -1,10 +1,3 @@
-# Most GIFted expressions
-
-Philip Blakely\
-UK\
-<pmblakely@gmail.com>
-
-
 ## To build:
 
 ```sh

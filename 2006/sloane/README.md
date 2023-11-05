@@ -1,9 +1,3 @@
-# Homer's Favorite
-
-Andy Sloane\
-US
-
-
 ## To build:
 
 ```sh

@@ -1,9 +1,3 @@
-# Best of Show
-
-Adrian Mariano\
-US
-
-
 ## To build:
 
 ```sh

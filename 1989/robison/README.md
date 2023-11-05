@@ -1,9 +1,3 @@
-# Best minimal use of C
-
-Arch D. Robison\
-US
-
-
 ## To build:
 
 ```sh

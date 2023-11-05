@@ -1,10 +1,3 @@
-# Best Utility
-
-Don Yang\
-US\
-<http://uguu.org/>
-
-
 ## To build:
 
 ```sh

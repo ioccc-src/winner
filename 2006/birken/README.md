@@ -1,10 +1,3 @@
-# EDAMAME Award
-
-Michael Birken\
-US\
-<o__1@hotmail.com>
-
-
 ## To build:
 
 ```sh

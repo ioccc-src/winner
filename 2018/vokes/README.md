@@ -1,8 +1,3 @@
-# Most connected
-
-Scott Vokes
-
-
 ## To build:
 
 ```sh

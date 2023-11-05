@@ -1,12 +1,3 @@
-# Obfuscated Intelligence Award
-
-Mark Schnitzius\
-1700 Woodbury Rd. #1208\
-Orlando, FL 32828\
-US\
-<http://computronium.org/ioccc.html>
-
-
 ## To build:
 
 ```sh

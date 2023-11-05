@@ -1,10 +1,3 @@
-# Best use of the WWW
-
-Anthony Howe\
-<achowe@snert.com>\
-<http://www.snert.com>
-
-
 ## To build:
 
 ```sh

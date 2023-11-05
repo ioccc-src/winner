@@ -1,10 +1,3 @@
-# Best One-liner
-
-Laurion Burchall\
-US\
-<https://web.archive.org/web/20070711215750/http://www.netspace.org/users/ldb/>
-
-
 ## To build:
 
 ```sh

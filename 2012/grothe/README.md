@@ -1,13 +1,3 @@
-# Most conspiratorial
-
-Aaron Grothe\
-US\
-<ajgrothe@yahoo.com>
-
-David Madore\
-<http://www.madore.org/~david/>
-
-
 ## To build:
 
 ```sh

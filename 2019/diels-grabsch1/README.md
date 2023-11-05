@@ -1,9 +1,3 @@
-# Best small program
-
-Volker Diels-Grabsch\
-<https://njh.eu>
-
-
 ## To build:
 
 ```sh

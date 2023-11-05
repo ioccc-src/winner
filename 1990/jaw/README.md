@@ -1,15 +1,3 @@
-# Best Entropy-reducer
-
-James A. Woods\
-US
-
-Karl F. Fox\
-US
-
-Paul Eggert\
-US
-
-
 ## To build:
 
 ```sh

@@ -1,9 +1,3 @@
-# Best abuse of the rules
-
-Dave Burton\
-<http://ioccc.snox.net>
-
-
 ## To build:
 
 ```sh

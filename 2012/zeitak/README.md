@@ -1,9 +1,3 @@
-# Balanced use of obfuscation - Gold award
-
-Adar Zeitak\
-<aa4z2@walla.co.il>
-
-
 ## To build:
 
 ```sh

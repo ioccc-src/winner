@@ -1,10 +1,3 @@
-# Most eye-crossing
-
-Immanuel Herrmann\
-Germany\
-<https://web.archive.org/web/20071018081145/http://pcpool.mathematik.uni-freiburg.de/~immi/>
-
-
 ## To build:
 
 ```sh

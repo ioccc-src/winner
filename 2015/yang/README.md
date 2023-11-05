@@ -1,9 +1,3 @@
-# Most Pointed Reaction
-
-Don Yang\
-<http://uguu.org/>
-
-
 ## To build:
 
 ```sh

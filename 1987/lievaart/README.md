@@ -1,9 +1,3 @@
-# Grand Prize
-
-Roemer B. Lievaart\
-Netherlands
-
-
 ## To build:
 
 ```sh

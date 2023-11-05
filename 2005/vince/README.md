@@ -1,11 +1,3 @@
-# Most beauteous visuals
-
-Vincent Weaver\
-US\
-<vince@deater.net>\
-<http://www.deater.net/weave/>
-
-
 ## To build:
 
 Before building, make sure that you have the OpenGL development libraries

@@ -1,11 +1,3 @@
-# Interesting Algorithm
-
-Sebastian Deorowicz\
-ul. Radzionkowska 71a\
-42-605 Tarnowskie Gory\
-Poland
-
-
 ## To build:
 
 ```sh

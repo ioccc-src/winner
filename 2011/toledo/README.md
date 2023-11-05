@@ -1,11 +1,3 @@
-# Best non-chess game
-
-Oscar Toledo G.\
-Mexico\
-<biyubi@gmail.com>\
-<https://nanochess.org>
-
-
 ## To build:
 
 ```sh

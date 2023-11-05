@@ -1,9 +1,3 @@
-# Best simple task performed in a complex way
-
-Bruce Holloway\
-US
-
-
 ## To build:
 
 ```sh

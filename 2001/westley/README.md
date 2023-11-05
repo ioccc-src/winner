@@ -1,10 +1,3 @@
-# Best position-independent code
-
-Brian Westley\
-US\
-<http://www.westley.org>
-
-
 ## To build:
 
 ```sh

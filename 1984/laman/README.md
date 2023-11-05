@@ -1,8 +1,3 @@
-# Third place
-
-Mike Laman
-
-
 ## To build:
 
 ```sh

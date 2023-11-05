@@ -1,10 +1,3 @@
-# Best Utility
-
-Mary Ann Horton\
-US\
-<https://maryannhorton.com>
-
-
 ## To build:
 
 ```sh

@@ -1,9 +1,3 @@
-# Most Timely Output
-
-Craig Schneiderwent\
-WI, US
-
-
 ## To build:
 
 ```sh

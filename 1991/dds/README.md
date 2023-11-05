@@ -1,11 +1,3 @@
-# Most Well Rounded
-
-Diomidis Spinellis\
-Greece\
-<https://www.spinellis.gr/>\
-Mastodon: <https://mstdn.social/@DSpinellis>
-
-
 ## To build:
 
 ```sh

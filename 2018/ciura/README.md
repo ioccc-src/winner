@@ -1,9 +1,3 @@
-# Most likely to be awarded
-
-Marcin Ciura\
-<mciura@gmail.com>
-
-
 ## To build:
 
 ```sh

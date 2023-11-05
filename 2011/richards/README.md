@@ -1,9 +1,3 @@
-# Most surprisingly portable
-
-Gregor Richards\
-<Richards@codu.org>
-
-
 ## To build:
 
 ```sh

@@ -1,8 +1,3 @@
-# Most likely to top the charts
-
-Qiming Hou
-
-
 ## To build:
 
 ```sh

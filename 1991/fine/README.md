@@ -1,10 +1,3 @@
-# Best One Liner
-
-Thomas A. Fine\
-US\
-[@thomasafine@social.linux.pizza](https://social.linux.pizza/@thomasafine)
-
-
 ## To build:
 
 ```sh

@@ -1,9 +1,3 @@
-# Most percussive
-
-Nathan Otterness\
-<https://github.com/yalue>
-
-
 ## To build:
 
 ```sh

@@ -1,11 +1,3 @@
-# Best Abuse of CPP
-
-Daniel Vik\
-US\
-<https://www.vik.cc/>\
-<http://www.danielvik.com>
-
-
 ## To build:
 
 ```sh

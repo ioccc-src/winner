@@ -1,14 +1,3 @@
-# Best Output
-
-Ian Collier\
-Oxford University\
-The Queen's College\
-High Street\
-Oxford\
-OX1 4AW\
-England
-
-
 ## To build:
 
 ```sh

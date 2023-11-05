@@ -1,14 +1,3 @@
-# Best Layout
-
-Dean Swift\
-Trinome Communications\
-7, Jeffries Passage\
-Guildford\
-Surrey\
-GU1 4AP\
-England
-
-
 ## To build:
 
 ```sh

@@ -1,10 +1,3 @@
-# Most Obfuscated Translator
-
-Tony Finch\
-United Kingdom\
-<https://dotat.at>
-
-
 ## To build:
 
 ```sh

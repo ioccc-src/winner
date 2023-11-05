@@ -1,9 +1,3 @@
-# Best Calculated Risk
-
-Brent Burley\
-US
-
-
 ## To build:
 
 ```sh

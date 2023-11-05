@@ -1,11 +1,3 @@
-# Best RFC Obfuscation
-
-Ron McFarland\
-7941 Fawncreek Drive\
-Cincinnati, Ohio 45249\
-US
-
-
 ## To build:
 
 ```sh

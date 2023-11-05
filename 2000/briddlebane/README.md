@@ -1,10 +1,3 @@
-# Best Abuse of User
-
-Moxen N. Briddlebane
-
-Lord Zarbon
-
-
 ## To build:
 
 ```sh

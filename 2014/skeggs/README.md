@@ -1,10 +1,3 @@
-# Most dynamic
-
-Cel Skeggs\
-<ioccc@celskeggs.com>\
-<http://www.celskeggs.com>
-
-
 ## To build:
 
 ```sh

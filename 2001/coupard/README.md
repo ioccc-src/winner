@@ -1,13 +1,3 @@
-# Most obfuscated sound
-
-Pierre-Philippe Coupard\
-Lineo, Inc.\
-ATTN : Pierre-Philippe Coupard\
-390 South 400 West\
-Lindon, UT 84042\
-US
-
-
 ## To build:
 
 ```sh

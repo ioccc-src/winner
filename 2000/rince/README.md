@@ -1,13 +1,3 @@
-# Astronomically Obfuscated
-
-James Bonfield\
-MRC Laboratory of Molcular Biology\
-Hills Road\
-Cambridge\
-CB2 2QH\
-England
-
-
 ## To build:
 
 ```sh

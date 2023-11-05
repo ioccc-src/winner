@@ -1,9 +1,3 @@
-# Best Handwriting
-
-Etienne Duble <etienne.duble@imag.fr>\
-<http://lig-membres.imag.fr/duble>
-
-
 ## To build:
 
 ```sh

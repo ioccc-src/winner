@@ -1,9 +1,3 @@
-# Most Useful Obfuscation
-
-Larry Wall\
-US
-
-
 ## To build:
 
 ```sh

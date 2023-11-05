@@ -1,9 +1,3 @@
-# Most Obfuscated Algorithm
-
-Sean Barrett\
-US
-
-
 ## To build:
 
 ```sh

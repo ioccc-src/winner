@@ -1,9 +1,3 @@
-# Least detailed
-
-Ilya Kurdyukov\
-<https://github.com/ilyakurdyukov>
-
-
 ## To build:
 
 ```sh

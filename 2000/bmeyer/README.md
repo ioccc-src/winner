@@ -1,13 +1,3 @@
-# Best Utility
-
-Bernd Meyer\
-Monash University, Melbourne, Australia\
-1/832 Blackburn Rd\
-Clayton, VIC 3168\
-Australia\
-<https://web.archive.org/web/20030212213342/http://byron.csse.monash.edu.au/realindex.html>
-
-
 ## To build:
 
 ```sh

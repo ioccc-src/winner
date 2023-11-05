@@ -1,9 +1,3 @@
-# Most functional compiler
-
-Ben Lynn\
-<https://crypto.stanford.edu/~blynn/>
-
-
 ## To build:
 
 ```sh

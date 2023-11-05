@@ -1,9 +1,3 @@
-# Most poetic use of strings
-
-Arch D. Robison\
-<arch.d.robison@gmail.com>
-
-
 ## To build:
 
 ```sh

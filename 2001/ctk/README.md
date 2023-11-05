@@ -1,11 +1,3 @@
-# Worst Driver
-
-Chris King\
-115 Foster Center Road\
-Foster, RI, 02825\
-US
-
-
 ## To build:
 
 ```sh

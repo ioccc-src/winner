@@ -1,12 +1,3 @@
-# Best Small Program
-
-Baruch Nissenbaum\
-Israel
-
-Doron Osovlanski\
-Israel
-
-
 ## To build:
 
 ```sh

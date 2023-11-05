@@ -1,11 +1,3 @@
-# Best use of weasel words
-
-Cody Boone Ferguson <weasel@xexyl.net>\
-[https://ioccc.xexyl.net](https://ioccc.xexyl.net)\
-[https://xexyl.net](https://xexyl.net)\
-Mastodon: [@xexyl@fosstodon.org](https://fosstodon.org/@xexyl)
-
-
 ## To build:
 
 ```sh

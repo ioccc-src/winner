@@ -1,9 +1,3 @@
-# Most self-aware
-
-Volker Diels-Grabsch\
-<https://njh.eu>
-
-
 ## To build:
 
 ```sh

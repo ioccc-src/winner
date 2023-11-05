@@ -1,10 +1,3 @@
-# Most Erratic Behavior
-
-Jens Schweikhardt\
-Germany\
-<http://www.schweikhardt.net>
-
-
 ## To build:
 
 ```sh

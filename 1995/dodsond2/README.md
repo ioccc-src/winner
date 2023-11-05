@@ -1,9 +1,3 @@
-# Best Game
-
-Don Dodson\
-US
-
-
 ## To build:
 
 ```sh

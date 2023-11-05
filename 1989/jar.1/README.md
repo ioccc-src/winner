@@ -1,13 +1,3 @@
-# Strangest abuse of the rules
-
-Jari Arkko\
-Laboratory of Information Processing Science\
-Helsinki University of Technology\
-Otakaari 1\
-02150 Espoo\
-Finland
-
-
 ## To build:
 
 NOTE: this will run the program itself.

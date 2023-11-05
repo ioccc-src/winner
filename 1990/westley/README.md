@@ -1,10 +1,3 @@
-# Best Layout
-
-Brian Westley (Merlyn LeRoy on usenet)\
-US\
-<http://www.westley.org>
-
-
 ## To build:
 
 ```sh

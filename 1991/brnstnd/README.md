@@ -1,9 +1,3 @@
-# Best Of Show
-
-Daniel J. Bernstein\
-US
-
-
 ## To build:
 
 ```sh

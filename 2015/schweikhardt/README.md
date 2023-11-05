@@ -1,9 +1,3 @@
-# Best Documented
-
-Jens Schweikhardt\
-<http://www.schweikhardt.net>
-
-
 ## To build:
 
 ```sh

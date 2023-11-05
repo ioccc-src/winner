@@ -1,13 +1,3 @@
-# Most Fun
-
-David Lowe\
-US\
-<https://github.com/dlowe>
-
-Neil Mix\
-US
-
-
 ## To build:
 
 ```sh

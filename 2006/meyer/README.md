@@ -1,9 +1,3 @@
-# Best Game
-
-Raphael Meyer\
-US
-
-
 ## To build:
 
 ```sh

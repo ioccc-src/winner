@@ -1,10 +1,3 @@
-# Most ambiguous language
-
-V. Chia\
-Singapore\
-<bi@mncw.tk>
-
-
 ## To build:
 
 ```sh

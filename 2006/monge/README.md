@@ -1,10 +1,3 @@
-# Best Compiled Graphics
-
-Maurizio Monge\
-Italy\
-<maurizio.monge at gmail dot com>
-
-
 ## To build:
 
 Make sure you have the SDL1 (not SDL2!) development environment installed.

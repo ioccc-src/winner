@@ -1,9 +1,3 @@
-# Best game
-
-John Tromp\
-Netherlands
-
-
 ## To build:
 
 ```sh

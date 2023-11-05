@@ -1,8 +1,3 @@
-# Best layout
-
-Eric Marshall
-
-
 ## To build:
 
 ```sh

@@ -1,10 +1,3 @@
-# Best of Show - Most Shrinkable
-
-Don Yang\
-<omoikane@uguu.org>\
-<http://uguu.org/>
-
-
 ## To build:
 
 ```sh

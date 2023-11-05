@@ -1,9 +1,3 @@
-# Most functional interpreter
-
-Ondřej Adamovský\
-<oa@cmail.cz>
-
-
 ## To build:
 
 ```sh

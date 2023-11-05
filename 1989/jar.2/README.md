@@ -1,13 +1,3 @@
-# Best of show
-
-Jari Arkko, Ora Lassila, Esko Nuutila\
-Laboratory of Information Processing Science\
-Helsinki University of Technology\
-Otakaari 1\
-02150 Espoo\
-Finland
-
-
 ## To build:
 
 ```sh

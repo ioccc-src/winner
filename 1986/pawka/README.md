@@ -1,9 +1,3 @@
-# Most illegible code
-
-Michael H. Pawka\
-US
-
-
 ## To build:
 
 ```sh

@@ -1,9 +1,3 @@
-# Best abuse of the rules
-
-Fabrice Bellard\
-<https://bellard.org>
-
-
 ## To build:
 
 ```sh

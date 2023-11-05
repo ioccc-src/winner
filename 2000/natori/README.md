@@ -1,9 +1,3 @@
-# Best Small Program
-
-NATORI Shin\
-Japan
-
-
 ## To build:
 
 ```sh

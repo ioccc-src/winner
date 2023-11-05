@@ -1,10 +1,3 @@
-# Most shiny
-
-Matt Zucker\
-<mzucker1@swarthmore.edu>\
-<https://mzucker.github.io/swarthmore/>
-
-
 ## To build:
 
 ```sh

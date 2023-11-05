@@ -1,11 +1,3 @@
-# Most tweetable 1-liner
-
-Yusuke Endoh\
-<mame@ruby-lang.org>\
-<https://github.com/mame/>\
-Mastodon: [@mame@ruby.social](https://ruby.social/@mame)
-
-
 ## To build:
 
 ```sh

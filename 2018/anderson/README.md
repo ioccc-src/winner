@@ -1,8 +1,3 @@
-# Most able to divine code gaps
-
-Derek Anderson
-
-
 ## To build:
 
 ```sh

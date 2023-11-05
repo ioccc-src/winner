@@ -1,9 +1,3 @@
-# Worst Style
-
-Spencer Hines\
-US
-
-
 ## To build:
 
 ```sh

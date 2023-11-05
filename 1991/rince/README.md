@@ -1,14 +1,3 @@
-# Best Game
-
-James Bonfield\
-University of Warwick\
-7 Water End\
-Wrestlingworth\
-Sandy Beds\
-SG19 2HA\
-England
-
-
 ## To build:
 
 ```sh

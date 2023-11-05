@@ -1,8 +1,3 @@
-# Strangest appearing program
-
-Ed Lycklama
-
-
 ## To build:
 
 ```sh

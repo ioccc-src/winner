@@ -1,9 +1,3 @@
-# Best of Show
-
-Gavin Barraclough\
-UK
-
-
 ## To build:
 
 ```sh

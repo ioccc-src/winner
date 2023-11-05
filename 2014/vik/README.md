@@ -1,12 +1,3 @@
-# Best handling of beeps
-
-Daniel Vik\
-US\
-<daniel@vik.cc>\
-<https://www.vik.cc/>\
-<http://danielvik.com/>
-
-
 ## To build:
 
 ```sh

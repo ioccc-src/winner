@@ -1,9 +1,3 @@
-# Most Well Rounded
-
-James Bonfield\
-England
-
-
 ## To build:
 
 ```sh

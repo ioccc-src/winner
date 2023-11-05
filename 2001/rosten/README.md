@@ -1,10 +1,3 @@
-# Best abuse of the user
-
-Edward Rosten\
-UK\
-<https://www.edwardrosten.com>
-
-
 ## To build:
 
 ```sh

@@ -1,10 +1,3 @@
-# Best Abuse of the Guidelines
-
-Anthony Howe\
-Canada\
-<http://www.snert.com/>
-
-
 ## To build:
 
 ```sh

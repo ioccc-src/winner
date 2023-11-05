@@ -1,9 +1,3 @@
-# Dishonorable mention
-
-The author wishes to remain anonymous\
-Great Britain
-
-
 ## To build:
 
 ```sh

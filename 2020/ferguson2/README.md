@@ -1,11 +1,3 @@
-# Most enigmatic
-
-Cody Boone Ferguson <ioccc@xexyl.net>\
-<https://ioccc.xexyl.net>\
-<https://xexyl.net>\
-Mastodon: [@xexyl@fosstodon.org](https://fosstodon.org/@xexyl)
-
-
 ## To build:
 
 ```sh

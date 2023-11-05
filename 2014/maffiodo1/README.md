@@ -1,10 +1,3 @@
-# Homage to a classic game
-
-Sandro Maffiodo\
-<smaffer@gmail.com>\
-<http://www.assezeta.com/sandromaffiodo>
-
-
 ## To build:
 
 This entry requires SDL to be installed. See the [faq.md](/faq.md) if you don't

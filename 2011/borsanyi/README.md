@@ -1,10 +1,3 @@
-# Best data utility
-
-Szabolcs Borsanyi\
-Germany\
-<borsanyi@uni-wuppertal.de>
-
-
 ## To build:
 
 ```sh

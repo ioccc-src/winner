@@ -1,13 +1,3 @@
-# Worst Abuse of the C Preprocessor and Most Likely To Amaze
-
-Mark Schnitzius & David Van Brackle\
-ISX Corporation\
-1165 Northchase Parkway\
-Suite 120\
-Marietta, GA  30067\
-US
-
-
 ## To build:
 
 ```sh

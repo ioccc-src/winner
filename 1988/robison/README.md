@@ -1,9 +1,3 @@
-# Best abuse of C constructs
-
-Arch D. Robison\
-US
-
-
 ## To build:
 
 ```sh

@@ -1,10 +1,3 @@
-# Best short program
-
-Seonghoon Kang\
-<kang.seonghoon@mearie.org>\
-<http://mearie.org>
-
-
 ## To build:
 
 ```sh

@@ -1,10 +1,3 @@
-# Best of Show
-
-Nicolas Ollinger\
-France\
-<https://www.univ-orleans.fr/lifo/Members/Nicolas.Ollinger/>
-
-
 ## To build:
 
 ```sh

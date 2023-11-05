@@ -1,9 +1,3 @@
-# Most partisan 1-liner
-
-Adrian Cable\
-<adrian.cable@gmail.com>
-
-
 ## To build:
 
 ```sh

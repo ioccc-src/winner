@@ -1,19 +1,3 @@
-# Best X11 Graphics
-
-David Applegate\
-School of Computer Science\
-Carnegie Mellon University\
-Pittsburgh PA 15213\
-US
-
-
-Guy Jacobson\
-AT&T Bell Laboratories\
-600 Mountain Avenue\
-Murray Hill NJ 07974\
-US
-
-
 ## To build:
 
 ```sh

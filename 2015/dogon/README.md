@@ -1,9 +1,3 @@
-# Most Crafty
-
-Gil Dogon\
-<http://sokoban-gild.com>
-
-
 ## To build:
 
 ```sh

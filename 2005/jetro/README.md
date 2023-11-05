@@ -1,10 +1,3 @@
-# Most sonorous output
-
-Jetro Lauha\
-Finland\
-<http://jet.ro>
-
-
 ## To build:
 
 This entry requires SDL to be installed.

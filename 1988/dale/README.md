@@ -1,9 +1,3 @@
-# Best abuse of system calls
-
-Paul Dale\
-Australia
-
-
 ## To build:
 
 ```sh

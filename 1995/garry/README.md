@@ -1,10 +1,3 @@
-# Best Utility
-
-Garry Glendown\
-Germany\
-<https://web.archive.org/web/20011221120305/http://insider.regio.net/~garry/>
-
-
 ## To build:
 
 ```sh

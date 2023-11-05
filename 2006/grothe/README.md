@@ -1,9 +1,3 @@
-# Most Obfuscated Audio
-
-Aaron Grothe\
-US
-
-
 ## To build:
 
 ```sh

@@ -1,14 +1,3 @@
-# Best use of port 1701
-
-Michael Birken\
-<o__1@hotmail.com><br>\
-<http://www.meatfighter.com/>
-
-Alexander Prishchepov\
-<alepov-github@yahoo.com>\
-<https://github.com/sans17/>
-
-
 ## To build:
 
 ```sh
