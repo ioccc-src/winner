@@ -405,16 +405,16 @@ This file as the following fields:
 
    Directory name number the IOCCC year.
 
-3. winners_rank:
+3. path:
+
+   Path under the IOCCC/directory.  In a few cases this is a path,
+   not just a simple filename under the IOCCC/directory.
+
+4. winners_rank:
 
    If a number, then this is the winners rank showing the order
    that this file is to be listed for the given entry's in
    [winners.html](winners.html), or null if the file is not to be listed.
-
-4. path:
-
-   Path under the IOCCC/directory.  In a few cases this is a path,
-   not just a simple filename under the IOCCC/directory.
 
 5. created_by:
 
@@ -439,12 +439,7 @@ This file as the following fields:
 
    The type of file.
 
-8. ext:
-
-    This ending filename extension, or null if no extension.
-    This field is temporary and may go away.
-
-9. winners_show:
+8. winners_show:
 
    A JSON boolean indicating of the file is listed on `winners.html` or not.
 
@@ -452,7 +447,7 @@ This file as the following fields:
 
    NOTE: When winners_show is false, display_via MUST be null.
 
-10. display_via:
+9. display_via:
 
    A string indicating how the file is to be displayed from `winners.html`.
    Possible files include:
@@ -468,10 +463,15 @@ This file as the following fields:
 
    NOTE: When display_via is null, winners_show MUST be false.
 
-11. winners_text:
+10. winners_text:
 
     Any text that should be displayed at the end of line in `winners.html`
     (with a preceding " - "), or null is no such text is to be displayed.
+
+11. ext:
+
+    This ending filename extension, or null if no extension.
+    This field is not used.
 
 The 11 field names in [manifest.numbers](manifest.numbers), must
 match the JSON member names found in

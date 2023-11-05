@@ -53,10 +53,10 @@ fi
 
 # sort manifest CSV file
 #
-sort -t, -k1,1 -k2d,2 -k3g,3 -k4d,10 "$TMP_CSV" -o "$TMP_CSV"
+sort -t, -k1,1 -k2d,2 -k4g,4 -k3d,3 -k5d,10 "$TMP_CSV" -o "$TMP_CSV"
 status="$?"
 if [[ $status -ne 0 ]]; then
-    printf "$0: ERROR: sort -t, -k1,1 -k2d,2 -k3g,3 -k4d,10 %s -o %s failed, error: %s\n" "$TMP_CSV" "$TMP_CSV" "$status" 1>&2
+    printf "$0: ERROR: sort -t, -k1,1 -k2d,2 -k4g,4 -k3d,3 -k5d,10 %s -o %s failed, error: %s\n" "$TMP_CSV" "$TMP_CSV" "$status" 1>&2
     exit 15
 fi
 
@@ -97,7 +97,7 @@ fi
 TMP_CSV="tmp.$$.$MANIFEST_CSV"
 sed -e '/^# -/d' "$MANIFEST_CSV" |
     sort -u |
-    sort -t, -k1,1 -k2d,2 -k3g,3 -k4d,10 > "$TMP_CSV"
+    sort -t, -k1,1 -k2d,2 -k4g,4 -k3d,3 -k5d,10 > "$TMP_CSV"
 if [[ ! -s $TMP_CSV ]]; then
     echo "$0: ERROR: sorted $MANIFEST_CSV is empty" 1>&2
     exit 18
@@ -130,7 +130,7 @@ fi
 export REQUIRED_PATH_LIST="path_list.required.txt"
 export TMP_FILE="tmp.$$.$REQUIRED_PATH_LIST"
 trap 'rm -f $TMP_FILE; exit' 0 1 2 3 15
-awk -F, '$1 !~ "^#" && $5 == "null" { print $1 "/" $2 "/" $4; }' "$MANIFEST_CSV" | sort -t/ > "$TMP_FILE"
+awk -F, '$1 !~ "^#" && $5 == "null" { print $1 "/" $2 "/" $3; }' "$MANIFEST_CSV" | sort -t/ > "$TMP_FILE"
 if [[ ! -s $TMP_FILE ]]; then
     echo "$0: ERROR: TMP_FILE, for required file list, is empty: $TMP_CSV" 1>&2
     exit 21
@@ -163,7 +163,7 @@ fi
 export BUILT_PATH_LIST="path_list.built.txt"
 export TMP_FILE="tmp.$$.$BUILT_PATH_LIST"
 trap 'rm -f $TMP_FILE; exit' 0 1 2 3 15
-awk -F, '$1 !~ "^#" && $5 != "null" { print $1 "/" $2 "/" $4; }' "$MANIFEST_CSV" | sort -t/ > "$TMP_FILE"
+awk -F, '$1 !~ "^#" && $5 != "null" { print $1 "/" $2 "/" $3; }' "$MANIFEST_CSV" | sort -t/ > "$TMP_FILE"
 if [[ ! -s $TMP_FILE ]]; then
     echo "$0: ERROR: TMP_FILE, for built file list, is empty: $TMP_CSV" 1>&2
     exit 24

@@ -226,7 +226,7 @@ cat > "$TMP_FILE" << EOF
 </html>
 EOF
 
-# update index.html if needed
+# update .inventory.html if needed
 #
 if ! cmp -s "$TMP_FILE" "$INVENTORY_PATH"; then
 
