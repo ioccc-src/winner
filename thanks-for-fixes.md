@@ -1189,7 +1189,7 @@ between pointer and integer ('char **' and 'int')` but it works just fine).
 
 Cody also added the [try.sh](1991/fine/try.sh) script which feeds the program
 some fun input for fun but mostly different output. He added a great string from
-Brian Westley and Cody also added a few of his own (can you figure out exactly
+Brian Westley and Cody also added several of his own (can you figure out exactly
 which ones? :-) )
 
 
