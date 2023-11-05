@@ -170,8 +170,8 @@ It seems unlikely that a fix was made just for warnings so it is presumed that
 there was another problem so the change is kept in place.
 
 A note about the fix is that the `#define`d macros that were used still exist
-but are not used; they are left in just to make it look more like the original
-entry. Nevertheless they cannot be used.
+but most are not used; they are left in just to make it look more like the
+original entry. Nevertheless they cannot be used.
 
 Later on Cody improved the fix to make it look rather more like the original by
 bringing back an extern declaration (slightly changing it to match the symbol
@@ -221,7 +221,7 @@ Cody further added the second alt version,
 starts over after it times out.
 
 Cody also added the [gentab.c](1984/mullender/gentab.c) file, fixed to compile
-(and work!, though see [bugs.md](#1984mullender-readmemd) with modern systems
+(and work, though see [bugs.md](#1984mullender-readmemd)) with modern systems
 and so that it would create the proper array (it had unbalanced '}'s), which the
 author noted in their remarks (which Cody also found). As this file uses the old
 header file `a.out.h` that is not available in all modern systems, Cody found a
@@ -346,7 +346,7 @@ For more details about that see the [FAQ](/faq.md).
 
 Cody fixed this to compile and work with clang (it already worked with gcc).
 The problem was that clang is more strict about the type of second arg to
-main(). However simply changing it to a `char **` and updating the `*s` to `**s`
+`main()`. However simply changing it to a `char **` and updating the `*s` to `**s`
 caused a segfault. By adding a new variable, `char *t`, initialising it to `s`
 and then using `t` instead of `s` it compiles and runs successfully under clang
 and gcc.
@@ -358,19 +358,20 @@ Cody got this to compile and work with clang and gcc. He noted that he tried to
 keep the ASCII art as close to the original as possible. The line lengths are
 the same but some spaces had to be changed to non-spaces.
 
-This fix was very interesting and quite amusing, showing up problems with
-compilers. This is a brief summary but much more is explained in the
+This fix was very interesting and quite amusing, showing up problems with two
+different compilers. This is a brief summary but much more is explained in the
 [compilers.md](1986/marshall/compilers.md) file, giving which compilers had
 which problems in which systems: the optimiser being enabled in one compiler let
 it work but broke it in the other; and disabling it would let it work in the one
-that didn't work but suddenly the one that worked would be broken.
+that didn't work but suddenly the one that worked wouldn't work.
 
 This problem was only after getting clang to compile, of course. It did not
 compile it because it is more strict about the second and third args to `main()`
 and the third arg was an `int`.
 
-We encourage you to read the compilers.md file to see how odd this problem was
-and what Cody did to fix it, if nothing else but for entertainment!
+We encourage you to read the [compilers.md](1986/marshall/compilers.md) file to
+see how odd this problem was and what Cody did to fix it, if nothing else but
+for entertainment!
 
 
 ## [1986/pawka](1986/pawka/pawka.c) ([README.md](1986/pawka/README.md))
