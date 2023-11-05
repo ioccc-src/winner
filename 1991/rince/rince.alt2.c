@@ -1,5 +1,5 @@
 #include <curses.h>
-int u=484,X[]={-1,0,0,1},Y[]={0,1,-1,0},x,y,D,i,j,a;
+int u=MAX_MOVES,X[]={-1,0,0,1},Y[]={0,1,-1,0},x,y,D,i,j,a;
 char o,m,*t,*O="MNOH",*k="hjkl",*s="######\0######\0######\0      \0      \0      \0  ___ \0 /   \\\0 \\___/\0  ___ \0 /@@@\\\0 \\@@@/\0| | /\\\0----||\0    \\/\0  /--\\\0   \\/ \0 ==|  \0 ==|  \0   /\\ \0  \\--/\0 /O__o\0 \\___/\0 /_\\_ \0  <<  \0  <<  \0  <<  \0      \0vvvvvv\0      \0      \0^^^^^^\0      \0  /\\  \0 <  > \0  \\/  \0o__O\\ \0\\___/ \0 _/_\\ \0 O__O \0/----\\\0_/  \\_\0 ^__^ \0/----\\\0_/  \\_" ,
 M[12][22]={"AAAAAAAAAAAAAAAAAAAAAA" ,"ALCABBBBBBBABBCBBCABBA", "ACCABAKAAABAFBABABAEBA", "ABBBBABBIBBBBBEEABACLA", "ACCBNIBBAAAAGALBBBABCA", "AAAAAAAJACBABBCABAABCA", "ALLAACCBACBAAALLCABBBA", "ABDLAAABABCAAAALCABBLA", "ABCBIBBBBBBBBAAAAACBBA", "ABCCAABBADBBBBDBDBDBCA", "ALBBACCCCDBCABBBDBBBBA", "AAAAAAAAAAAAAAAAAAAAAA" };main(){initscr();clear();
 noecho();cbreak();x=y=4;D=39,o='M';m=M[y][x] ;while(D&&u){for(i=j=a=0;j<7;!(mvaddstr(

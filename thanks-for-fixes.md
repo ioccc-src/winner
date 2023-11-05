@@ -1192,6 +1192,20 @@ some fun input for fun but mostly different output. He added a great string from
 Brian Westley and Cody also added several of his own (can you figure out exactly
 which ones? :-) )
 
+## [1991/rince](1991/rince/rince.c) ([README.md](1991/rince/README.md))
+
+Cody fixed it so that the messages that show if you won or lost will be seen
+after the end of the game. The reason it did not work before is curses was ended
+at the end of the program which clears the screen. To make it look most like the
+original entry Cody left the message before ending curses in and printed another
+message of the same kind after `endwin()` was called with the exception that he
+added a newline at the end of the screen to be more user friendly.
+
+Cody also added two alt versions, one to remove the maximum number of moves you
+may make and another to let you configure the maximum number of moves, even if
+that is making it harder to win. Naturally the above fix was applied to these
+versions too.
+
 
 ## [1991/westley](1991/westley/westley.c) ([README.md](1991/westley/README.md]))
 
