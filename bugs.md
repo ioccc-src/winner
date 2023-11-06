@@ -677,6 +677,18 @@ where this occurred was fixed but this one should not be fixed. Thank you.
 
 # 1991
 
+## 1991 buzzard
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [1991/buzzard/buzzard.c](1991/buzzard/buzzard.c)
+### Information: [1991/buzzard/README.md](1991/buzzard/README.md)
+
+If the maze file cannot be opened, either because the path specified does not
+exist or because the default (whatever the source file was at compilation time)
+file does not exist in the directory, this program will very likely crash.
+
+This is a feature, not a bug.
+
 
 ## 1991 westley
 

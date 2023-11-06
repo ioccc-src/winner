@@ -1097,6 +1097,22 @@ Later on, Cody added back the macro `#define D define` to make it look ever so
 slightly more like the original, even though it's unused.
 
 
+## [1991/buzzard](1991/buzzard/buzzard.c) ([README.md](1991/buzzard/README.md]))
+
+Cody fixed this so that the coordinates being specified would not crash the
+program. This happened because the function that calls `atoi(3)` took an arg
+without any type specified and as an implicit int it was not a `char *` which
+crashed the program in modern systems.
+
+Cody also made the file name in the code (which is the default maze file) not
+hard-coded but instead be `__FILE__`.
+
+Finally Cody added the [alternate
+version](1991/buzzard/README.md#alternate-code) which will possibly feel more at
+home with those familiar with vi(m) (it certainly does feel more at home with
+him): `k` for forward, `h` for left and `l` for right.
+
+
 ## [1991/dds](1991/dds/dds.c) ([README.md](1991/dds/README.md]))
 
 Cody fixed a segfault that prevented this entry from working in any condition
