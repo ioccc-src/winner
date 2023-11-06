@@ -1,11 +1,17 @@
 merlyn
 merlyn.c
+merlyn.alt.c
 nextmove
 nextmove.c
+nextmove.alt.c
 ttt
+ttt.alt
 ttt_game
 ttt_game.c
+ttt_game.alt.c
 westley
+westley.alt
+ttt.alt_old.c
 ttt_old.c
 westley.orig
 prog.orig

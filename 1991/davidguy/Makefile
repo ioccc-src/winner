@@ -40,7 +40,7 @@ include ../../var.mk
 #
 CSILENCE= -Wno-bitwise-op-parentheses -Wno-error -Wno-implicit-function-declaration \
 	-Wno-int-to-pointer-cast -Wno-return-type -Wno-sign-compare \
-	-Wno-deprecated-non-prototype
+	-Wno-deprecated-non-prototype -Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -63,7 +63,7 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE=
+CINCLUDE= -include sys/types.h -include sys/socket.h -include unistd.h
 
 # Optimization
 #

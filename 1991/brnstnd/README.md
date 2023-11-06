@@ -21,7 +21,7 @@ For info on more examples, read the [sorta.README.md](sorta.README.md) file.
 
 The author wished to win the "most useful program" award and documented this in
 the source code.  The judges were unmoved by this blatant attempt to influence
-the contest and rejected this idea...  so we gave it the `Best of Show`
+the contest and rejected this idea...  so we gave it the "Best of Show"
 instead!!
 
 NOTE: One should remove the final trailing newline to obtain the
@@ -51,12 +51,12 @@ instance, not to mention infinite-depth tail recursion.
 
 SORTA ignores its arguments (though it makes them available to the
 script); it takes all commands, character by character, from its
-standard input. Unrecognized commands are repeated with a '?'.
+standard input. Unrecognized commands are repeated with a `'?'`.
 
-SORTA maintains an `i stack` for integers and an `s stack` for strings. It also
+SORTA maintains an `i` stack for integers and an `s` stack for strings. It also
 keeps track of `programs`, one for each character.  Operations are silently
 ignored if the relevant stacks are too low, except as noted for `s`, `S`, and
-`!`. If the `i stack` or `s stack` (or the stack of buffered macro commands)
+`!`. If the `i` stack or `s` stack (or the stack of buffered macro commands)
 grows too high, SORTA will exit silently with exit code 2. (Compile parameter
 `-Do=250` controls what 'too high' means; you should not make `o` larger than
 250.) I don't think it's possible to crash the interpreter.
@@ -68,24 +68,24 @@ delimiters.
 ### Basic operations
 
 - `q`: quit
-- `number`: push that number on top of the i stack
-- `"string"`: push that string on top of the s stack, no length limit
-- `[string]`: push that string on top of the s stack, no length limit
-- `#`: make top of i stack non-destructively in ASCII, push result onto s stack
-- ` ` `: print top of s stack non-destructively
-- `$`: print top of s stack non-destructively without newline
-- `d`: drop (pop) top of i stack
-- `D`: dup (duplicate) top of i stack
+- `number`: push that number on top of the `i` stack
+- `"string"`: push that string on top of the `s` stack, no length limit
+- `[string]`: push that string on top of the `s` stack, no length limit
+- `#`: make top of `i` stack non-destructively in ASCII, push result onto `s` stack
+- ` ` `: print top of `s` stack non-destructively
+- `$`: print top of `s` stack non-destructively without newline
+- `d`: drop (pop) top of `i` stack
+- `D`: dup (duplicate) top of `i` stack
 - `'`: dup top of s stack
 - `s`: pop top of i stack. If it is `n`, swap `(n+1)`th-top of `i` stack with top.
 	`1s`, for example, swaps the top two elements; `2s` swaps the top with the
-	third down; etc. This always pops the top of the `i stack`, even upon
+	third down; etc. This always pops the top of the `i` stack, even upon
 	failure.
-- `S`: pop top of `i stack`, then act just like `s` but upon `s stack`
-- `l`: pop top of `s stack`, push its length onto `i stack`
+- `S`: pop top of `i` stack, then act just like `s` but upon `s` stack
+- `l`: pop top of `s` stack, push its length onto `i` stack
 - `a`: push argc onto i stack
-- `A`: pop top of `i stack`, push `argv[i]` on top of `s stack`
-- `T`: concatenate top two elements of `s stack`
+- `A`: pop top of `i` stack, push `argv[i]` on top of `s` stack
+- `T`: concatenate top two elements of `s` stack
 - ` _ `: negate top of i stack
 - `+`: pop top two elements of i stack, add, push back sum
 - ` * `: pop top two elements of i stack, multiply, push back product
@@ -97,17 +97,17 @@ delimiters.
 
 ### System operations
 
-- `o`: pop top of `s stack` and top two of `i stack`; `open(s1,i2,i1);` leave
-result on `i stack`
-- `O`: pop top of `i stack`, `close()` it
-- `u`: pop top of `i stack`, `dup()` it, push result back on
-- `F`: `fork()`, push result on `i stack`. This is not always safe while SORTA is
+- `o`: pop top of `s` stack and top two of `i` stack; `open(s1,i2,i1);` leave
+result on `i` stack
+- `O`: pop top of `i` stack, `close()` it
+- `u`: pop top of `i` stack, `dup()` it, push result back on
+- `F`: `fork()`, push result on `i` stack. This is not always safe while SORTA is
 reading keyboard input or a script, as the forked programs share file
 descriptors. It is always safe inside a program (see below).
-- `P`: `pipe()`, push two ends `<p0> <p1>` onto `i stack`. In case of trouble,
-`push <?> <-1>` onto `i stack`.
-- `w`: `wait()`, push successful result (or -1 if no children) on `i stack`
-- `!`: `execvp()` top of the `s stack`. Arguments are the next things down on
+- `P`: `pipe()`, push two ends `<p0> <p1>` onto `i` stack. In case of trouble,
+`push <?> <-1>` onto `i` stack.
+- `w`: `wait()`, push successful result (or -1 if no children) on `i` stack
+- `!`: `execvp()` top of the `s` stack. Arguments are the next things down on
 the s stack, in reverse order from popping; the first character of
 each string is lopped off. There must be an empty string somewhere
 in the s stack to terminate the argument list. If the execve()

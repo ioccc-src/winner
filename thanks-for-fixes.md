@@ -1129,6 +1129,14 @@ him): `k` for forward, `h` for left and `l` for right. This version also has a
 more useful way to exit, just entering `q` followed by enter.
 
 
+## [1991/davidguy](1991/davidguy/davidguy.c) ([README.md](1991/davidguy/README.md]))
+
+As some systems like macOS can be particular about not declaring functions Cody
+added to the Makefile some `-include` options. These appear to not be strictly
+necessary but it was done due to other syscalls being a problem not being
+declared first.
+
+
 ## [1991/dds](1991/dds/dds.c) ([README.md](1991/dds/README.md]))
 
 Cody fixed a segfault that prevented this entry from working in any condition
@@ -1281,6 +1289,12 @@ Cody also fixed the `ttt.sh` script that prevented the game from working and he
 also improved it so that warnings/errors/about to compile messages are not shown
 unless the `-e` option is used.  This is because the errors being shown kind of
 ruins the experience. Finally he made it pass ShellCheck.
+
+Cody also added the alt version which is based on the author's remarks, a
+version that supposedly (:-) ) always wins.
+
+Cody also fixed the make clobber rule where a file was left lying about when it
+should have been removed.
 
 
 ## [1992/adrian](1992/adrian/adrian.c) ([README.md](1992/adrian/README.md]))
