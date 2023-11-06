@@ -31,7 +31,7 @@
 
 # setup
 #
-export VERSION="1.0 2023-10-31"
+export VERSION="1.0.1 2023-11-06"
 NAME=$(basename "$0"); export NAME
 EXIT_CODE=0
 #
@@ -39,7 +39,7 @@ export V_FLAG=0
 export CAP_D_FLAG=0
 export DOMAIN="ioccc-src.github.io"
 export DOCPATH="/temp-test-ioccc"
-export GITHUB_REPO="https://github.com/ioccc-src/temp-test-ioccc"
+export GITHUB_REPO="https://github.com/ioccc-src/temp-test-ioccc/blob/master"
 export TOPDIR=".."
 export WINNER_DIR_TXT="winner_dir.txt"
 
@@ -133,6 +133,7 @@ esac
 #
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: V_FLAG=$V_FLAG" 1>&2
+    echo "$0: debug[3]: CAP_D_FLAG=$CAP_D_FLAG" 1>&2
     echo "$0: debug[3]: DOMAIN=$DOMAIN" 1>&2
     echo "$0: debug[3]: DOCPATH=$DOCPATH" 1>&2
     echo "$0: debug[3]: GITHUB_REPO=$GITHUB_REPO" 1>&2

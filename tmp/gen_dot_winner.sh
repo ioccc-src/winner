@@ -46,7 +46,7 @@ export PANDOC="/opt/homebrew/bin/pandoc"
 export V_FLAG=0
 export DOMAIN="ioccc-src.github.io"
 export DOCPATH="/temp-test-ioccc"
-export GITHUB_REPO="https://github.com/ioccc-src/temp-test-ioccc"
+export GITHUB_REPO="https://github.com/ioccc-src/temp-test-ioccc/blob/master"
 export TOPDIR=".."
 
 # usage
@@ -61,7 +61,7 @@ export USAGE="usage: $0 [-h] [-v level]
 	-d www.domain.org	change domain (def: $DOMAIN)
 	-p /path/to/docroot	use path under domain to document root (def: $DOCPATH)
 	-g github_url		path to the GitHub repo (def: $GITHUB_REPO)
-	-t topdir		path to top of the local GitHub repo tree (def: $TOPDIR)
+	-t topdir		path to top of the local tree (def: $TOPDIR)
 	-P /path/to/pandoc	path to the pandoc tool (def: $PANDOC)
 
 	year[/dir]		path to winner directory (or just year if there is a path arg
