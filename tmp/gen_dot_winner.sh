@@ -625,11 +625,11 @@ for i in "${!WINNERS_RANK[@]}"; do
     # case: display via browser or download via browser
     #
     case ${DISPLAY_VIA[$i]} in
-    github)	USE_URL="$GITHUB_URL_PATH/$WINNER_PATH/${FILE_PATH[$i]}" ;;
+    github)	USE_URL="$GITHUB_URL_PATH/${FILE_PATH[$i]}" ;;
     browser)	USE_URL="$URL_PATH/${FILE_PATH[$i]}" ;;
     download)	USE_URL="$URL_PATH/${FILE_PATH[$i]}" ;;
     null)	USE_URL="$URL_PATH/${FILE_PATH[$i]}" ;;
-    *)		USE_URL="$GITHUB_URL_PATH/$WINNER_PATH/${FILE_PATH[$i]}" ;;
+    *)		USE_URL="$GITHUB_URL_PATH/${FILE_PATH[$i]}" ;;
     esac
     export USE_URL
 
