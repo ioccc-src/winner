@@ -59,7 +59,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE= -D'main(a,b)'='int main(a,b)char**b;'
+CDEFINE= -D'main(a,b)'='int main(a,b)char**b;' -DB='(int)b'
 
 # Include files that are needed to compile
 #

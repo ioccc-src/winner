@@ -27,5 +27,5 @@ p=P(d+1);q=P(d);if
 (abs(y)		),++i)D(g+2*i+(s==-1),"--");}else if
 (abs(y)		==p)D(g-s*(2*p+1),"|");else D(g-
 (abs(y)		*s*2),(s==1)^(y>0)?"\\":"/");}d-=s;}puts(
-"");h=0;}}f+=(b=='r')-(b=='l');f&=3;if(b=='f'){if(!m(1,0))continue;
+"");h=0;}}f+=(b=='l')-(b=='h');f&=3;if(b=='q')return 0;if(b=='k'){if(!m(1,0))continue;
 A+=X(f);B+=X(f-1);}}W((b=getchar())!=-1&&m(0,0)==1);return 0;}

@@ -1084,6 +1084,21 @@ The alt code did NOT have arg checks added as it is actually a copy of the
 original code.
 
 
+## [1991/ant](1991/ant/ant.c) ([README.md](1991/ant/README.md]))
+
+Cody added [alt code](1991/ant/ant.alt.c) that will be a bit easier to use for
+those familiar with vim in the following ways:
+
+- Use `0` to go to first column.
+- Use `$` to go to last column.
+- Hit ESC to go back to command mode (instead of form-feed, ctrl-L).
+- Use `w` to go forwards one word.
+- Use `b` to go backwards one word.
+- Use `q` to exit.
+
+The other keys were left unchanged.
+
+
 ## [1991/brnstnd](1991/brnstnd/brnstnd.c) ([README.md](1991/brnstnd/README.md]))
 
 Cody fixed this for modern systems. There were two invalid operands to binary
@@ -1095,6 +1110,23 @@ invalid operands to binary expressions were resolved with the comma operator.
 
 Later on, Cody added back the macro `#define D define` to make it look ever so
 slightly more like the original, even though it's unused.
+
+
+## [1991/buzzard](1991/buzzard/buzzard.c) ([README.md](1991/buzzard/README.md]))
+
+Cody fixed this so that the coordinates being specified would not crash the
+program. This happened because the function that calls `atoi(3)` took an arg
+without any type specified and as an implicit int it was not a `char *` which
+crashed the program in modern systems.
+
+Cody also made the file name in the code (which is the default maze file) not
+hard-coded but instead be `__FILE__`.
+
+Finally Cody added the [alternate
+version](1991/buzzard/README.md#alternate-code) which will possibly feel more at
+home with those familiar with vi(m) (it certainly does feel more at home with
+him): `k` for forward, `h` for left and `l` for right. This version also has a
+more useful way to exit, just entering `q` followed by enter.
 
 
 ## [1991/dds](1991/dds/dds.c) ([README.md](1991/dds/README.md]))
@@ -1201,12 +1233,19 @@ entry was fixed. It has not been done in all.
 ## [1991/fine](1991/fine/fine.c) ([README.md](1991/fine/README.md))
 
 Cody made it look much more like the original entry even after the fix that
-increased the count in characters from 80 to 106, getting it back down to just 85.
+increased the count in characters from 80 to 106, getting it back down to just
+85 (and later back down to 80, see below).
+
 This was done by redefining `main` at the compiler line so that it looks like
 the original where one didn't have to worry about the type of args of main() and
 there were other fewer restrictions and also by removing a cast that was
 not strictly necessary (this does create a new warning: `ordered comparison
-between pointer and integer ('char **' and 'int')` but it works just fine).
+between pointer and integer ('char **' and 'int')` but it works just `fine`).
+
+That was `fine` as well but Cody decided to drop it back down to its original 80
+which also resolved the warning described above. This was by more clever use of
+the Makefile which now has a `-DB=(int)b` so that `B` can be used in place where
+`(int)b` used to be necessary.
 
 Cody also added the [try.sh](1991/fine/try.sh) script which feeds the program
 some fun input for fun but mostly different output. He added a great string from

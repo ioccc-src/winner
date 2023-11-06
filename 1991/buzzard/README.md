@@ -4,11 +4,46 @@
 make all
 ```
 
+There is an [alternate version](#alternate-code) which might feel more at home
+for vi(m) users in navigation.
+
+
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [1991 buzzard in
+bugs.md](/bugs.md#1991-buzzard).
+
 
 ## To use:
 
 ```sh
 ./buzzard
+```
+
+## Alternate code:
+
+This version changes the keys `f` for forward, `l` for left and `r` for right to
+`k` for forward, `l` for right and `h` for left, which is more natural for those
+who use vi(m). Also one can just hit `q` followed by enter to quit the maze.
+
+
+### Alternate build:
+
+```sh
+make alt
+```
+
+
+### Alternate use:
+
+```sh
+./buzzard.alt
 ```
 
 
@@ -21,13 +56,13 @@ You are invited to try to cheat, ... if you can figure out how!  :-)
 
 ## Author's remarks:
 
+
 ### How to play
 
-When the game starts, you are at the far end of the maze from the
-exit, looking down a corridor.  To move forward, type `f` and press
-return.  To turn 90 degrees right, type `r`; left, `l`.  You can
-put multiple commands on one line, and the new view will be drawn
-after all the moves.
+When the game starts, you are at the far end of the maze from the exit, looking
+down a corridor.  To move forward, type `f` and press return.  To turn 90
+degrees right, type `r`; and for left, `l`.  You can put multiple commands on
+one line, and the new view will be drawn after all the moves.
 
 The game ends if you get out the exit (you'll know it when you see
 it) or when you type `^D` (EOF).
@@ -51,10 +86,14 @@ separate physical rows in the maze; a space indicates a corridor,
 and any other character is a wall.  Tabs are also considered walls,
 so make sure to convert tabs to spaces before using it.
 
-Usage: buzzard [filename [escape-char [start-x start-yNNN
+Usage:
+
+```sh
+./buzzard [filename [escape-char [start-x start-yNNN
+```
 
 Filename is the name of the file containing the maze.  This
-defaults to 'buzzard.c'.
+defaults to `buzzard.c` or rather `__FILE__`.
 
 Escape-char is the character in the maze that represents the exit.
 You can put more than one exit in the maze (for example, you could
@@ -67,7 +106,7 @@ from 0.  The default is start-x = 4, start-y = 5, which is needed
 for the buzzard.c, but would probably be inappropriate for other
 mazes.
 
-BUGS:
+### BUGS:
 
 You can't change that at start you're facing down ("south").
 
