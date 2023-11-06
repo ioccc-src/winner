@@ -30,7 +30,7 @@ bugs.md](/bugs.md#1991-buzzard).
 
 This version changes the keys `f` for forward, `l` for left and `r` for right to
 `k` for forward, `l` for right and `h` for left, which is more natural for those
-who use vi(m).
+who use vi(m). Also one can just hit `q` followed by enter to quit the maze.
 
 
 ### Alternate build:
