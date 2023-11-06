@@ -56,13 +56,13 @@ This is self-explanatory.
     1=D  1s# " | "T 1s#T " is "T D&1sD&&  #T$ld " (" 1=2 ")"T `ld
     1=D  1s# " ^ "T 1s#T " is "T 1=D&2sD&1sD&&&D&  #T$ld " (" 1=2 ")"T `ld
 
-`icalc` shows off SORTA's understanding of integer arithmetic. You can run
+`icalc` shows off `SORTA`'s understanding of integer arithmetic. You can run
 it with up to two arguments; the arguments have default values of 27182
-and 3145. Notice that sorta doesn't have a language primitive for
+and 3145. Notice that `SORTA` doesn't have a language primitive for
 converting a string to a number, yet `icalc` is performing arithmetic on
-its arguments. Can you see how? (Hint: Try `./brnstnd "2 2+" 3 < sorta.icalc`.
+its arguments. Can you see how? (Hint: Try `./sorta "2 2+" 3 < sorta.icalc`.
 Look at program A.) `icalc` also provides a useful binary output routine,
-and if you can't remember offhand that `D2sD3s&2sD&1sD&&&D&` means xor,
+and if you can't remember offhand that `D2sD3s&2sD&1sD&&&D&` means XOR,
 you can just look it up here.
 
 
@@ -74,7 +74,7 @@ you can just look it up here.
     0""1=y`
 
 This script prints out the maximum file descriptor available from
-repeated dup()s---usually NOFILE - 1. Can you see how it works?
+repeated `dup(2)`s---usually `NOFILE - 1`. Can you see how it works?
 
 
 # [sorta.iecho](sorta.iecho)
@@ -83,9 +83,9 @@ repeated dup()s---usually NOFILE - 1. Can you see how it works?
     [1s1+DA$ld1s1_+D=sD=x]:xld      [ given n (argc-n), print args ]ld
     0a1_+D=x""`                     [ simulation of /bin/echo ]ld
 
-This is a clone of /bin/echo, minus any argument processing and escape
-interpretation. (Note that, unlike some shells' echo, /bin/echo prints a
-newline even with no arguments.) Try sorta foo bar < iecho.
+This is a clone of `/bin/echo`, minus any argument processing and escape
+interpretation. (Note that, unlike some shells' echo, `/bin/echo` prints a
+newline even with no arguments.) Try `./sorta foo bar < iecho`.
 
 
 # [sorta.ifact1](sorta.ifact1)
@@ -105,8 +105,8 @@ multiply by 2, print it, multiply by 3, print it, etc.
     1=f 1=f 1=f 1=f 1=f 1=f 1=f 1=f 1=f 1=f
 
 `ifact1` does a lot of repeated work. `ifact2` takes advantage of this by
-keeping the current `n!` n on the stack. Each call to routine f (1=f)
-increments n by 1 and prints out the factorial.
+keeping the current `n!` `n` on the stack. Each call to routine `f (1=f)`
+increments `n` by `1` and prints out the factorial.
 
 
 # [sorta.ifact3](sorta.ifact3)
@@ -117,7 +117,7 @@ increments n by 1 and prints out the factorial.
     0 1 10 1=x
 
 Finally, `ifact3` removes all the redundancy from `ifact2`, and exhibits
-proper documentation of stack routines. You can replace the 10 by
+proper documentation of stack routines. You can replace the `10` by
 anything in this version.
 
 
@@ -127,7 +127,7 @@ anything in this version.
 
     ["] "2 2+":xT ["]T " produces "T 1=x#T " which should be 4."T`
 
-Notice that "2 2+" is a literal string inside the program.
+Notice that `"2 2+"` is a literal string inside the program.
 
 
 # [sorta.irot13](sorta.irot13)
@@ -144,7 +144,7 @@ Notice that "2 2+" is a literal string inside the program.
     0Ou1=x  [ in a more complex spawner, this would be done under a fork ]ld
 
 Despite its name, `irot13` is meant to show how to exec a program with
-redirection from within sorta. You run it as `./brnstnd blah < irot13`; it
+redirection from within `sorta`. You run it as `./sorta blah < irot13`; it
 opens `blah` and runs a (BSD-style) `tr` command to rotate all letters by 13
 spots. `1A 0 0 o` opens `argv[1]`; the ` ' ` keeps the filename around for
 subroutine `h` to print a nice error message if necessary. `0Ou` closes
@@ -170,8 +170,8 @@ This script illustrates the classic fork-exec-wait.
     [3*#" "T$ldD=f]:f
     1=f
 
-The sole purpose of this script is to prove that sorta can do infinite
-tail recursion (in this case, in program `f`). Do `./brnstnd < itailrec | more`
+The sole purpose of this script is to prove that `sorta` can do infinite
+tail recursion (in this case, in program `f`). Do `./sorta < itailrec | more`
 and watch the powers of 3 (mod your computer's word size) flow by.
 
 

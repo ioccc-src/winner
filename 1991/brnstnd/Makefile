@@ -133,6 +133,7 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${LN} -sf $@ sorta
 
 # alternative executable
 #
