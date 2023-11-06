@@ -1125,7 +1125,8 @@ hard-coded but instead be `__FILE__`.
 Finally Cody added the [alternate
 version](1991/buzzard/README.md#alternate-code) which will possibly feel more at
 home with those familiar with vi(m) (it certainly does feel more at home with
-him): `k` for forward, `h` for left and `l` for right.
+him): `k` for forward, `h` for left and `l` for right. This version also has a
+more useful way to exit, just entering `q` followed by enter.
 
 
 ## [1991/dds](1991/dds/dds.c) ([README.md](1991/dds/README.md]))
