@@ -636,7 +636,7 @@ for i in "${!WINNERS_RANK[@]}"; do
     # print inventory item
     #
     cat >> "$TMP_DOT_INVENTORY_MD" << EOF
-| ${WINNER_TEXT[$i]} | [${FILE_PATH[$i]}]($URL) |
+| ${WINNER_TEXT[$i]} | [${FILE_PATH[$i]}]($USE_URL) |
 EOF
 done
 
