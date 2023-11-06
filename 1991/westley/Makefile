@@ -117,8 +117,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG} ttt
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt ttt.alt
 
 
 #################
@@ -190,6 +190,60 @@ ttt_game.c: westley.c
 	${CP} -f westley.c ttt_game.c
 	${CHMOD} +w ttt_game.c
 
+
+# alt version
+#
+# the hint file gives nextmove.alt.c as an example, provide a build rule for it
+#
+nextmove.alt: nextmove.alt.c ttt_alt
+	${CC} ${CFLAGS} -DP=putchar -DN="P(10)" -DQ="P(34)" -DF="S(&X)" \
+	    -DJ=z[4] -DK=J[14] \
+	    -DH="w[]={146,7,292,73,448,56,84,273,325,297,108,324,22,40,48,40,17,325}" \
+	    nextmove.alt.c -o nextmove.alt
+
+# the ttt_alt script has been added by the judges to make playing westley.alt easy
+#
+ttt_alt: ttt_alt.sh
+	${RM} -f ttt_alt
+	${CP} -f ttt_alt.sh ttt_alt
+	${CHMOD} +x ttt_alt
+
+# used by the ttt_alt shell script when playing westley.alt
+#
+# The ttt_alt script controls what goes into merlyn.alt.c, and how it is used.
+# The merlyn.alt program and source represent the best (hopefully) state that
+# the program has evolved into thus far.  The ttt_alt_game program and source
+# represent the current state of the game.
+#
+merlyn.alt: merlyn.alt.c ttt_alt
+	@${CC} ${CFLAGS} -DP=putchar -DN="P(10)" -DQ="P(34)" -DF="S(&X)" \
+	    -DJ=z[4] -DK=J[14] \
+	    -DH="w[]={146,7,292,73,448,56,84,273,325,297,108,324,22,40,48,40,17,325}" \
+	    merlyn.alt.c -o merlyn.alt
+ttt_alt_game: ttt_alt_game.c ttt_alt
+	@${CC} ${CFLAGS} -DP=putchar -DN="P(10)" -DQ="P(34)" -DF="S(&X)" \
+	    -DJ=z[4] -DK=J[14] \
+	    -DH="w[]={146,7,292,73,448,56,84,273,325,297,108,324,22,40,48,40,17,325}" \
+	    ttt_alt_game.c -o ttt_alt_game
+
+# The upper level makefile wants to make these source files if they don't
+# already exist.
+#
+merlyn.alt.c: westley.alt.c
+	${RM} -f merlyn.alt.c
+	${CP} -f westley.alt.c merlyn.alt.c
+	${CHMOD} +w merlyn.alt.c
+nextmove.alt.c: westley.alt.c
+	${RM} -f nextmove.alt.c
+	${CP} -f westley.alt.c nextmove.alt.c
+	${CHMOD} +w nextmove.alt.c
+ttt_alt_game.c: westley.alt.c
+	${RM} -f ttt_alt_game.c
+	${CP} -f westley.alt.c ttt_alt_game.c
+	${CHMOD} +w ttt_alt_game.c
+
+
+
 # data files
 #
 data: ${DATA}
@@ -256,8 +310,10 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -f merlyn merlyn.c nextmove.c nextmove.c
+	${RM} -f merlyn merlyn.c nextmove nextmove.c
+	${RM} -f merlyn.alt merlyn.alt.c nextmove.alt nextmove.alt.c
 	${RM} -f ttt_game ttt_game.c ttt_old.c ttt_new.c nextmove
+	${RM} -f ttt.alt_game ttt.alt_game.c ttt.alt_old.c ttt_.altnew.c nextmove.alt
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

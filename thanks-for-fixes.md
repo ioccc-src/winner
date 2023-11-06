@@ -1282,6 +1282,12 @@ also improved it so that warnings/errors/about to compile messages are not shown
 unless the `-e` option is used.  This is because the errors being shown kind of
 ruins the experience. Finally he made it pass ShellCheck.
 
+Cody also added the alt version which is based on the author's remarks, a
+version that supposedly (:-) ) always wins.
+
+Cody also fixed the make clobber rule where a file was left lying about when it
+should have been removed.
+
 
 ## [1992/adrian](1992/adrian/adrian.c) ([README.md](1992/adrian/README.md]))
 
