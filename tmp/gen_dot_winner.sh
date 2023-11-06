@@ -31,7 +31,7 @@
 
 # setup
 #
-export VERSION="1.0.0 2023-11-05"
+export VERSION="1.0.1 2023-11-06"
 NAME=$(basename "$0"); export NAME
 export DOT_WINNER_JSON_BASENAME=".winner.json"
 export DOT_INVENTORY_MD_BASENAME=".inventory.md"
@@ -625,11 +625,11 @@ for i in "${!WINNERS_RANK[@]}"; do
     # case: display via browser or download via browser
     #
     case ${DISPLAY_VIA[$i]} in
-    github)	USE_URL="$GITHUB_URL_PATH/$FULL_WINNER_PATH/${FILE_PATH[$i]}" ;;
+    github)	USE_URL="$GITHUB_URL_PATH/$WINNER_PATH/${FILE_PATH[$i]}" ;;
     browser)	USE_URL="$URL_PATH/${FILE_PATH[$i]}" ;;
     download)	USE_URL="$URL_PATH/${FILE_PATH[$i]}" ;;
     null)	USE_URL="$URL_PATH/${FILE_PATH[$i]}" ;;
-    *)		USE_URL="$GITHUB_URL_PATH/$FULL_WINNER_PATH/${FILE_PATH[$i]}" ;;
+    *)		USE_URL="$GITHUB_URL_PATH/$WINNER_PATH/${FILE_PATH[$i]}" ;;
     esac
     export USE_URL
 
