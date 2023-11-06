@@ -372,9 +372,9 @@ rm -rf ../author ; ./gen_author_json.sh  author_handle.txt author.csv author_win
 ```
 
 
-### [gen_dot_winner.sh](gen_dot_winner.sh)
+### [gen_winner_json.sh](gen_winner_json.sh)
 
-Generate a `.winner.json` and `.inventory.html' for a given winner.
+Generate a `.winner.json` and `inventory.html' for a given winner.
 
 
 ### [gen_path_list.found.sh](gen_path_list.found.sh)
@@ -578,7 +578,7 @@ Examples:
 
 ```sh
 ./run_all.sh -v 3 ./fake.gen_index.sh
-./run_all.sh -v 1 ./gen_dot_winner.sh
+./run_all.sh -v 1 ./gen_winner_json.sh
 ```
 
 

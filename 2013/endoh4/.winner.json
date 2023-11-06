@@ -1550,7 +1550,7 @@
 	    "winners_text" : "download winning source"
 	},
 	{
-	    "file_path" : ".inventory.html",
+	    "file_path" : "inventory.html",
 	    "winners_rank" : 900,
 	    "created_by" : "winner2nventory",
 	    "prog" : null,
