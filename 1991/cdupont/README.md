@@ -21,7 +21,7 @@ sorryfor_this_unused_but_very_needed_label:
 ```
 
 Notice that if you C beautify (cb) or pre-process this program, it
-will no longer work correctly, or at all.  (go ahead, try it... :-))
+will no longer work correctly, if at all.  (go ahead, try it... :-))
 
 NOTE: One should remove the final trailing newline to obtain the
 original source file.  This step is not needed to compile
@@ -36,7 +36,7 @@ letter and key. Thus, the message is code.  That is why I use silly
 comments, most often badly spaced.
 
 The space character sequence between the words is given by a simple
-computation on an octal constant (given here as an hex value, of
+computation in an octal constant (given here as an hex value, of
 course).
 
 This way, any message can be mixed into a code, since the keys allow
