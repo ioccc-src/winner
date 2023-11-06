@@ -1233,12 +1233,19 @@ entry was fixed. It has not been done in all.
 ## [1991/fine](1991/fine/fine.c) ([README.md](1991/fine/README.md))
 
 Cody made it look much more like the original entry even after the fix that
-increased the count in characters from 80 to 106, getting it back down to just 85.
+increased the count in characters from 80 to 106, getting it back down to just
+85 (and later back down to 80, see below).
+
 This was done by redefining `main` at the compiler line so that it looks like
 the original where one didn't have to worry about the type of args of main() and
 there were other fewer restrictions and also by removing a cast that was
 not strictly necessary (this does create a new warning: `ordered comparison
-between pointer and integer ('char **' and 'int')` but it works just fine).
+between pointer and integer ('char **' and 'int')` but it works just `fine`).
+
+That was `fine` as well but Cody decided to drop it back down to its original 80
+which also resolved the warning described above. This was by more clever use of
+the Makefile which now has a `-DB=(int)b` so that `B` can be used in place where
+`(int)b` used to be necessary.
 
 Cody also added the [try.sh](1991/fine/try.sh) script which feeds the program
 some fun input for fun but mostly different output. He added a great string from
