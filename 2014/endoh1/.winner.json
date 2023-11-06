@@ -1,0 +1,293 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "winner_JSON_format_version" : "0.5 2023-11-04",
+    "award" : "Most square (YODA award)",
+    "year" : 2014,
+    "dir" : "endoh1",
+    "winner_id" : "2014_endoh1",
+    "author_set" : [
+	{ "author_handle" : "Yusuke_Endoh" }
+    ],
+    "manifest" : [
+	{
+	    "file_path" : "index.html",
+	    "winners_rank" : 10,
+	    "created_by" : "readme2index",
+	    "prog" : null,
+	    "filetype" : "html",
+	    "winners_show" : true,
+	    "display_via" : "browser",
+	    "winners_text" : "click here first"
+	},
+	{
+	    "file_path" : "prog.c",
+	    "winners_rank" : 20,
+	    "created_by" : null,
+	    "prog" : "main",
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "winning source"
+	},
+	{
+	    "file_path" : "Makefile",
+	    "winners_rank" : 30,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "makefile",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "Makefile"
+	},
+	{
+	    "file_path" : "prog.orig.c",
+	    "winners_rank" : 50,
+	    "created_by" : null,
+	    "prog" : "orig",
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "original source"
+	},
+	{
+	    "file_path" : "Rakefile",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "ruby",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "Ruby makefile"
+	},
+	{
+	    "file_path" : "rake.sh",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "make rake script"
+	},
+	{
+	    "file_path" : "read_me.html",
+	    "winners_rank" : 100,
+	    "created_by" : "md2html",
+	    "prog" : null,
+	    "filetype" : "html",
+	    "winners_show" : true,
+	    "display_via" : "browser",
+	    "winners_text" : "about the Q(uine)R code generator"
+	},
+	{
+	    "file_path" : "spoilers.html",
+	    "winners_rank" : 100,
+	    "created_by" : "md2html",
+	    "prog" : null,
+	    "filetype" : "html",
+	    "winners_show" : true,
+	    "display_via" : "browser",
+	    "winners_text" : "spoilers about Q(uine)R code generator"
+	},
+	{
+	    "file_path" : "alpha.rb",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "ruby",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "assemble.rb",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "ruby",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "ast-def.rb",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "ruby",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "gen-prog.rb",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "ruby",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "gen-table.rb",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "ruby",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "link.rb",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "ruby",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "machine.rb",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "ruby",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "parse.rb",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "ruby",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "prog-tmpl.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "source code template used by gen-prog"
+	},
+	{
+	    "file_path" : "register.rb",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "ruby",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "serialize.rb",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "ruby",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "src.rb",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "ruby",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "tool.rb",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "ruby",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "support program for Rakefile"
+	},
+	{
+	    "file_path" : "vm.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "source code of the VM"
+	},
+	{
+	    "file_path" : "2014_endoh1.tar.bz2",
+	    "winners_rank" : 300,
+	    "created_by" : "mkwinnertbz2",
+	    "prog" : null,
+	    "filetype" : "tbz2",
+	    "winners_show" : true,
+	    "display_via" : "download",
+	    "winners_text" : "download winning source"
+	},
+	{
+	    "file_path" : ".inventory.html",
+	    "winners_rank" : 900,
+	    "created_by" : "winner2nventory",
+	    "prog" : null,
+	    "filetype" : "html",
+	    "winners_show" : true,
+	    "display_via" : "browser",
+	    "winners_text" : "full inventory of all winner files"
+	},
+	{
+	    "file_path" : ".gitignore",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "gitignore",
+	    "winners_show" : false,
+	    "display_via" : "github",
+	    "winners_text" : "list of files that should not be committed under git"
+	},
+	{
+	    "file_path" : ".winner.json",
+	    "winners_rank" : null,
+	    "created_by" : "jwinner",
+	    "prog" : null,
+	    "filetype" : "json",
+	    "winners_show" : false,
+	    "display_via" : "github",
+	    "winners_text" : "description of winner in JSON"
+	},
+	{
+	    "file_path" : "README.md",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "markdown",
+	    "winners_show" : false,
+	    "display_via" : "github",
+	    "winners_text" : "markdown source for index.html"
+	},
+	{
+	    "file_path" : "spoilers.md",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "markdown",
+	    "winners_show" : false,
+	    "display_via" : "github",
+	    "winners_text" : "spoilers about Q(uine)R code generator"
+	}
+    ]
+}

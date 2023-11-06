@@ -1,0 +1,563 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "winner_JSON_format_version" : "0.5 2023-11-04",
+    "award" : "Best painting tool",
+    "year" : 2013,
+    "dir" : "birken",
+    "winner_id" : "2013_birken",
+    "author_set" : [
+	{ "author_handle" : "Michael_Birken" }
+    ],
+    "manifest" : [
+	{
+	    "file_path" : "index.html",
+	    "winners_rank" : 10,
+	    "created_by" : "readme2index",
+	    "prog" : null,
+	    "filetype" : "html",
+	    "winners_show" : true,
+	    "display_via" : "browser",
+	    "winners_text" : "click here first"
+	},
+	{
+	    "file_path" : "birken.c",
+	    "winners_rank" : 20,
+	    "created_by" : null,
+	    "prog" : "main",
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "winning source"
+	},
+	{
+	    "file_path" : "Makefile",
+	    "winners_rank" : 30,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "makefile",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "Makefile"
+	},
+	{
+	    "file_path" : "birken.alt.c",
+	    "winners_rank" : 40,
+	    "created_by" : null,
+	    "prog" : "alt",
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "alternative source"
+	},
+	{
+	    "file_path" : "birken.orig.c",
+	    "winners_rank" : 50,
+	    "created_by" : null,
+	    "prog" : "orig",
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "original source"
+	},
+	{
+	    "file_path" : "belmont.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "bloober.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "bomberman.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "boo.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "bub.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "cheepcheep.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "format.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "gurin.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "happyface.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "helloworld.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "hilbert.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "ioccc.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "koopaparatroopa.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "lakitu.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "landon.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "leo.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "mario.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "mspacman.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "names.png",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "image",
+	    "winners_show" : true,
+	    "display_via" : "browser",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "palette.png",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "image",
+	    "winners_show" : true,
+	    "display_via" : "browser",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "paranaplant.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "rhino.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "rotations.png",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "image",
+	    "winners_show" : true,
+	    "display_via" : "browser",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "samus.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "simon.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "snoo.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "toad.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sprites in this textual format"
+	},
+	{
+	    "file_path" : "try.sh",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "demo script with the original code"
+	},
+	{
+	    "file_path" : "2013_birken.tar.bz2",
+	    "winners_rank" : 300,
+	    "created_by" : "mkwinnertbz2",
+	    "prog" : null,
+	    "filetype" : "tbz2",
+	    "winners_show" : true,
+	    "display_via" : "download",
+	    "winners_text" : "download winning source"
+	},
+	{
+	    "file_path" : ".inventory.html",
+	    "winners_rank" : 900,
+	    "created_by" : "winner2nventory",
+	    "prog" : null,
+	    "filetype" : "html",
+	    "winners_show" : true,
+	    "display_via" : "browser",
+	    "winners_text" : "full inventory of all winner files"
+	},
+	{
+	    "file_path" : ".gitignore",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "gitignore",
+	    "winners_show" : false,
+	    "display_via" : "github",
+	    "winners_text" : "list of files that should not be committed under git"
+	},
+	{
+	    "file_path" : ".winner.json",
+	    "winners_rank" : null,
+	    "created_by" : "jwinner",
+	    "prog" : null,
+	    "filetype" : "json",
+	    "winners_show" : false,
+	    "display_via" : "github",
+	    "winners_text" : "description of winner in JSON"
+	},
+	{
+	    "file_path" : "README.md",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "markdown",
+	    "winners_show" : false,
+	    "display_via" : "github",
+	    "winners_text" : "markdown source for index.html"
+	},
+	{
+	    "file_path" : "multi2.gif",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "image",
+	    "winners_show" : false,
+	    "display_via" : "browser",
+	    "winners_text" : "stages of multi-square emitters"
+	},
+	{
+	    "file_path" : "multi3.gif",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "image",
+	    "winners_show" : false,
+	    "display_via" : "browser",
+	    "winners_text" : "stages showing multi-square emitters"
+	},
+	{
+	    "file_path" : "multi4.gif",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "image",
+	    "winners_show" : false,
+	    "display_via" : "browser",
+	    "winners_text" : "stages showing multi-square emitters"
+	},
+	{
+	    "file_path" : "multi5.gif",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "image",
+	    "winners_show" : false,
+	    "display_via" : "browser",
+	    "winners_text" : "stages of multi-square emitters"
+	},
+	{
+	    "file_path" : "pen0.gif",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "image",
+	    "winners_show" : false,
+	    "display_via" : "browser",
+	    "winners_text" : "stages of single square rotruding from the bottom"
+	},
+	{
+	    "file_path" : "pen1.gif",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "image",
+	    "winners_show" : false,
+	    "display_via" : "browser",
+	    "winners_text" : "stages of single square rotruding from the bottom"
+	},
+	{
+	    "file_path" : "pen2.gif",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "image",
+	    "winners_show" : false,
+	    "display_via" : "browser",
+	    "winners_text" : "stages of single square rotruding from the bottom"
+	},
+	{
+	    "file_path" : "pen4.gif",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "image",
+	    "winners_show" : false,
+	    "display_via" : "browser",
+	    "winners_text" : "stages of single square rotruding from the bottom"
+	},
+	{
+	    "file_path" : "pen5.gif",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "image",
+	    "winners_show" : false,
+	    "display_via" : "browser",
+	    "winners_text" : "stages of single square rotruding from the bottom"
+	},
+	{
+	    "file_path" : "pen6.gif",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "image",
+	    "winners_show" : false,
+	    "display_via" : "browser",
+	    "winners_text" : "stages of single square rotruding from the bottom"
+	},
+	{
+	    "file_path" : "pen7.gif",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "image",
+	    "winners_show" : false,
+	    "display_via" : "browser",
+	    "winners_text" : "stages of single square rotruding from the bottom"
+	},
+	{
+	    "file_path" : "pen8.gif",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "image",
+	    "winners_show" : false,
+	    "display_via" : "browser",
+	    "winners_text" : "stages of single square rotruding from the bottom"
+	},
+	{
+	    "file_path" : "platform0.gif",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "image",
+	    "winners_show" : false,
+	    "display_via" : "browser",
+	    "winners_text" : "stages of 5 red squares above a row of 3 red squares"
+	},
+	{
+	    "file_path" : "platform1.gif",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "image",
+	    "winners_show" : false,
+	    "display_via" : "browser",
+	    "winners_text" : "stages of 5 red squares above a row of 3 red squares"
+	},
+	{
+	    "file_path" : "platform2.gif",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "image",
+	    "winners_show" : false,
+	    "display_via" : "browser",
+	    "winners_text" : "stages of 5 red squares above a row of 3 red squares"
+	},
+	{
+	    "file_path" : "triple0.gif",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "image",
+	    "winners_show" : false,
+	    "display_via" : "browser",
+	    "winners_text" : "stages of constructed of rectangular regions "
+	},
+	{
+	    "file_path" : "triple1.gif",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "image",
+	    "winners_show" : false,
+	    "display_via" : "browser",
+	    "winners_text" : "stages of constructed of rectangular regions "
+	}
+    ]
+}

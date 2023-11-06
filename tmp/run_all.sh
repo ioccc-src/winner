@@ -36,6 +36,7 @@ NAME=$(basename "$0"); export NAME
 EXIT_CODE=0
 #
 export V_FLAG=0
+export CAP_D_FLAG=0
 export DOMAIN="ioccc-src.github.io"
 export DOCPATH="/temp-test-ioccc"
 export GITHUB_REPO="https://github.com/ioccc-src/temp-test-ioccc"
@@ -44,12 +45,13 @@ export WINNER_DIR_TXT="winner_dir.txt"
 
 # usage
 #
-export USAGE="usage: $0 [-h] [-v level] [-d www.domain.org] [-p /path/to/docroot] [-g github_url ] [-t topdir]
-    [-w winner_dir.txt]
+export USAGE="usage: $0 [-h] [-v level] [-D level]
+    [-d www.domain.org] [-p /path/to/docroot] [-g github_url ] [-t topdir] [-w winner_dir.txt]
     tool
 
 	-h		print help message and exit
 	-v level	set verbosity level (def level: $V_FLAG)
+	-D level	set verbosity level (via -v level) in tool: (def level: $CAP_D_FLAG)
 
 	-d www.domain.org	change domain (def: $DOMAIN)
 	-p /path/to/docroot	use path under domain to document root (def: $DOCPATH)
@@ -67,19 +69,21 @@ Exit codes:
      4	    cannot find writable winner directory
      5	    tool is not an executable file
      6	    missing winner directory as found in winner_dir.txt
-     7	    a tool run faoled
+     7	    tool exited non-zero
  >= 10	    internal error
 
 $NAME version: $VERSION"
 
 # parse command line
 #
-while getopts :hv:d:p:g:t:w: flag; do
+while getopts :hv:D:d:p:g:t:w: flag; do
   case "$flag" in
     h) echo "$USAGE"
 	exit 2
 	;;
     v) V_FLAG="$OPTARG"
+	;;
+    D) CAP_D_FLAG="$OPTARG"
 	;;
     d) DOMAIN="$OPTARG"
     	;;
@@ -193,13 +197,13 @@ done
 #
 for dir in $(< "$WINNER_DIR_TXT"); do
     if [[ $V_FLAG -ge 1 ]]; then
-        echo "$0: debug[1]: $TOOL -d $DOMAIN -p $DOCPATH -g $GITHUB_REPO -t $TOPDIR -- $dir" 1>&2
+        echo "$0: debug[1]: $TOOL -d $DOMAIN -p $DOCPATH -g $GITHUB_REPO -t $TOPDIR -v $CAP_D_FLAG -- $dir" 1>&2
     fi
-    $TOOL -d "$DOMAIN" -p "$DOCPATH" -g "$GITHUB_REPO" -t "$TOPDIR" -- "$dir"
+    $TOOL -d "$DOMAIN" -p "$DOCPATH" -g "$GITHUB_REPO" -t "$TOPDIR" -v "$CAP_D_FLAG" -- "$dir"
     status="$?"
     if [[ $status -ne 0 ]]; then
-        echo "$0: Warning: $TOOL -d $DOMAIN -p $DOCPATH -g $GITHUB_REPO -t $TOPDIR -- $dir exit code: $status" 1>&2
-	EXIT_CODE="7"
+        echo "$0: Warning: $TOOL -d $DOMAIN -p $DOCPATH -g $GITHUB_REPO -t $TOPDIR -v $CAP_D_FLAG -- $dir exit code: $status" 1>&2
+	EXIT_CODE="7"	# exit 7
     elif [[ $V_FLAG -ge 3 ]]; then
 	echo "$0: debug[3]: success" 1>&2
     fi

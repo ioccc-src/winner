@@ -632,6 +632,8 @@
 1991/rince/Makefile
 1991/rince/README.md
 1991/rince/index.html
+1991/rince/rince.alt.c
+1991/rince/rince.alt2.c
 1991/rince/rince.c
 1991/rince/rince.orig.c
 1991/westley/.gitignore

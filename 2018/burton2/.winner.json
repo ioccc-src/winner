@@ -1,0 +1,613 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "winner_JSON_format_version" : "0.5 2023-11-04",
+    "award" : "Best abuse of the rules",
+    "year" : 2018,
+    "dir" : "burton2",
+    "winner_id" : "2018_burton2",
+    "author_set" : [
+	{ "author_handle" : "Dave_Burton" }
+    ],
+    "manifest" : [
+	{
+	    "file_path" : "index.html",
+	    "winners_rank" : 10,
+	    "created_by" : "readme2index",
+	    "prog" : null,
+	    "filetype" : "html",
+	    "winners_show" : true,
+	    "display_via" : "browser",
+	    "winners_text" : "click here first"
+	},
+	{
+	    "file_path" : "prog.c",
+	    "winners_rank" : 20,
+	    "created_by" : null,
+	    "prog" : "main",
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "winning source"
+	},
+	{
+	    "file_path" : "Makefile",
+	    "winners_rank" : 30,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "makefile",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "Makefile"
+	},
+	{
+	    "file_path" : "prog.orig.c",
+	    "winners_rank" : 50,
+	    "created_by" : null,
+	    "prog" : "orig",
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "original source"
+	},
+	{
+	    "file_path" : "READ_ME.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "author supplied README"
+	},
+	{
+	    "file_path" : "discrepancies.html",
+	    "winners_rank" : 100,
+	    "created_by" : "md2html",
+	    "prog" : null,
+	    "filetype" : "html",
+	    "winners_show" : true,
+	    "display_via" : "browser",
+	    "winners_text" : "field-by-field difference between iocccsize and ion"
+	},
+	{
+	    "file_path" : "freqcount",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "frequency count utility"
+	},
+	{
+	    "file_path" : "tac.man",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "man",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "tokenize and count man page"
+	},
+	{
+	    "file_path" : "fixed_iocccsize.c",
+	    "winners_rank" : 120,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "iocccsize with patch applied"
+	},
+	{
+	    "file_path" : "ioc_without_quote",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test suite data"
+	},
+	{
+	    "file_path" : "ioccc.kw.freq",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "iocccsize keywords: sorted by 201x frequency"
+	},
+	{
+	    "file_path" : "iocccbug01.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test cases demonstrating problems with iocccsize"
+	},
+	{
+	    "file_path" : "iocccbug02.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test cases demonstrating problems with iocccsize"
+	},
+	{
+	    "file_path" : "iocccbug03.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test cases demonstrating problems with iocccsize"
+	},
+	{
+	    "file_path" : "iocccbug04.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test cases demonstrating problems with iocccsize"
+	},
+	{
+	    "file_path" : "iocccbug05.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test cases demonstrating problems with iocccsize"
+	},
+	{
+	    "file_path" : "iocccbug06.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test cases demonstrating problems with iocccsize"
+	},
+	{
+	    "file_path" : "manpage.sh",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "turns ASCII versions of man into real man pages"
+	},
+	{
+	    "file_path" : "mkkeywords",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "reads a file from variations produces string for prog.c"
+	},
+	{
+	    "file_path" : "results.k",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "results with -k"
+	},
+	{
+	    "file_path" : "tac.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "tokenize and count C-like languages"
+	},
+	{
+	    "file_path" : "test01.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test case source code"
+	},
+	{
+	    "file_path" : "test02.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test case source code"
+	},
+	{
+	    "file_path" : "test03.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test case source code"
+	},
+	{
+	    "file_path" : "test04.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test case source code"
+	},
+	{
+	    "file_path" : "test05.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test case source code"
+	},
+	{
+	    "file_path" : "test06.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test case source code"
+	},
+	{
+	    "file_path" : "test07.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test case source code"
+	},
+	{
+	    "file_path" : "test08.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test case source code"
+	},
+	{
+	    "file_path" : "test09.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test case source code"
+	},
+	{
+	    "file_path" : "test10.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test case source code"
+	},
+	{
+	    "file_path" : "test11.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test case source code"
+	},
+	{
+	    "file_path" : "test12.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test case source code"
+	},
+	{
+	    "file_path" : "test13.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test case source code"
+	},
+	{
+	    "file_path" : "test14.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test case source code"
+	},
+	{
+	    "file_path" : "tokenfix.sh",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "short post-filter"
+	},
+	{
+	    "file_path" : "unob.sh",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "refined version of de-obfuscator"
+	},
+	{
+	    "file_path" : "ansi",
+	    "winners_rank" : 200,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "reserved words for a given C standard"
+	},
+	{
+	    "file_path" : "author-README.txt",
+	    "winners_rank" : 200,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "author supplied README"
+	},
+	{
+	    "file_path" : "c++11",
+	    "winners_rank" : 200,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "reserved words for a given C standard"
+	},
+	{
+	    "file_path" : "c++14",
+	    "winners_rank" : 200,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "reserved words for a given C standard"
+	},
+	{
+	    "file_path" : "c++98",
+	    "winners_rank" : 200,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "reserved words for a given C standard"
+	},
+	{
+	    "file_path" : "c11",
+	    "winners_rank" : 200,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "reserved words for a given C standard"
+	},
+	{
+	    "file_path" : "c99",
+	    "winners_rank" : 200,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "reserved words for a given C standard"
+	},
+	{
+	    "file_path" : "java8",
+	    "winners_rank" : 200,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "reserved words for a Java v8"
+	},
+	{
+	    "file_path" : "kandr",
+	    "winners_rank" : 200,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "reserved words for a given C standard"
+	},
+	{
+	    "file_path" : "kandr2",
+	    "winners_rank" : 200,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "reserved words for a given C standard"
+	},
+	{
+	    "file_path" : "patch",
+	    "winners_rank" : 200,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "patch",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "patch to fix iocccsize source"
+	},
+	{
+	    "file_path" : "results",
+	    "winners_rank" : 200,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "results without -k"
+	},
+	{
+	    "file_path" : "runtest",
+	    "winners_rank" : 200,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test suite"
+	},
+	{
+	    "file_path" : "spotcheck",
+	    "winners_rank" : 200,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "script to test a lot of files vs iocccsize"
+	},
+	{
+	    "file_path" : "v7unix",
+	    "winners_rank" : 200,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "reserved words for a given C standard"
+	},
+	{
+	    "file_path" : "spotdiff",
+	    "winners_rank" : 250,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "summarize the results of spotcheck"
+	},
+	{
+	    "file_path" : "2018_burton2.tar.bz2",
+	    "winners_rank" : 300,
+	    "created_by" : "mkwinnertbz2",
+	    "prog" : null,
+	    "filetype" : "tbz2",
+	    "winners_show" : true,
+	    "display_via" : "download",
+	    "winners_text" : "download winning source"
+	},
+	{
+	    "file_path" : "src.doc.txt",
+	    "winners_rank" : 300,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "SPOILER WARNING hints about the source"
+	},
+	{
+	    "file_path" : ".inventory.html",
+	    "winners_rank" : 900,
+	    "created_by" : "winner2nventory",
+	    "prog" : null,
+	    "filetype" : "html",
+	    "winners_show" : true,
+	    "display_via" : "browser",
+	    "winners_text" : "full inventory of all winner files"
+	},
+	{
+	    "file_path" : ".gitignore",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "gitignore",
+	    "winners_show" : false,
+	    "display_via" : "github",
+	    "winners_text" : "list of files that should not be committed under git"
+	},
+	{
+	    "file_path" : ".winner.json",
+	    "winners_rank" : null,
+	    "created_by" : "jwinner",
+	    "prog" : null,
+	    "filetype" : "json",
+	    "winners_show" : false,
+	    "display_via" : "github",
+	    "winners_text" : "description of winner in JSON"
+	},
+	{
+	    "file_path" : "README.md",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "markdown",
+	    "winners_show" : false,
+	    "display_via" : "github",
+	    "winners_text" : "markdown source for index.html"
+	},
+	{
+	    "file_path" : "discrepancies.md",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "markdown",
+	    "winners_show" : false,
+	    "display_via" : "github",
+	    "winners_text" : "markdown source for discrepancies.html"
+	}
+    ]
+}

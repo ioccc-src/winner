@@ -1,0 +1,233 @@
+{
+    "no_comment" : "mandatory comment: because comments were removed from the original JSON spec",
+    "winner_JSON_format_version" : "0.5 2023-11-04",
+    "award" : "Best Language Tool",
+    "year" : 1992,
+    "dir" : "buzzard.2",
+    "winner_id" : "1992_buzzard.2",
+    "author_set" : [
+	{ "author_handle" : "Sean_Barrett" }
+    ],
+    "manifest" : [
+	{
+	    "file_path" : "index.html",
+	    "winners_rank" : 10,
+	    "created_by" : "readme2index",
+	    "prog" : null,
+	    "filetype" : "html",
+	    "winners_show" : true,
+	    "display_via" : "browser",
+	    "winners_text" : "click here first"
+	},
+	{
+	    "file_path" : "buzzard.2.c",
+	    "winners_rank" : 20,
+	    "created_by" : null,
+	    "prog" : "main",
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "winning source"
+	},
+	{
+	    "file_path" : "Makefile",
+	    "winners_rank" : 30,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "makefile",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "Makefile"
+	},
+	{
+	    "file_path" : "buzzard.2.alt.c",
+	    "winners_rank" : 40,
+	    "created_by" : null,
+	    "prog" : "alt",
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "alternative source"
+	},
+	{
+	    "file_path" : "buzzard.2.orig.c",
+	    "winners_rank" : 50,
+	    "created_by" : null,
+	    "prog" : "orig",
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "original source"
+	},
+	{
+	    "file_path" : "buzzard.2.README.html",
+	    "winners_rank" : 100,
+	    "created_by" : "md2html",
+	    "prog" : null,
+	    "filetype" : "html",
+	    "winners_show" : true,
+	    "display_via" : "browser",
+	    "winners_text" : "author description of files"
+	},
+	{
+	    "file_path" : "buzzard.2.design",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "FORTH",
+	    "winners_show" : true,
+	    "display_via" : "browser",
+	    "winners_text" : "about the FORTH language"
+	},
+	{
+	    "file_path" : "demo1.1st",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "FORTH",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "FORTH source"
+	},
+	{
+	    "file_path" : "demo1.th",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "FORTH",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "FORTH source"
+	},
+	{
+	    "file_path" : "demo2.th",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "FORTH",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "FORTH source"
+	},
+	{
+	    "file_path" : "demo3.th",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "FORTH",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "FORTH source"
+	},
+	{
+	    "file_path" : "demo4.th",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "FORTH",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "FORTH source"
+	},
+	{
+	    "file_path" : "demo5.th",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "FORTH",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "FORTH source"
+	},
+	{
+	    "file_path" : "demo6.th",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "FORTH",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "FORTH source"
+	},
+	{
+	    "file_path" : "help.th",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "FORTH",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "FORTH source"
+	},
+	{
+	    "file_path" : "third",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "FORTH",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "the third source"
+	},
+	{
+	    "file_path" : "1992_buzzard.2.tar.bz2",
+	    "winners_rank" : 300,
+	    "created_by" : "mkwinnertbz2",
+	    "prog" : null,
+	    "filetype" : "tbz2",
+	    "winners_show" : true,
+	    "display_via" : "download",
+	    "winners_text" : "download winning source"
+	},
+	{
+	    "file_path" : ".inventory.html",
+	    "winners_rank" : 900,
+	    "created_by" : "winner2nventory",
+	    "prog" : null,
+	    "filetype" : "html",
+	    "winners_show" : true,
+	    "display_via" : "browser",
+	    "winners_text" : "full inventory of all winner files"
+	},
+	{
+	    "file_path" : ".gitignore",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "gitignore",
+	    "winners_show" : false,
+	    "display_via" : "github",
+	    "winners_text" : "list of files that should not be committed under git"
+	},
+	{
+	    "file_path" : ".winner.json",
+	    "winners_rank" : null,
+	    "created_by" : "jwinner",
+	    "prog" : null,
+	    "filetype" : "json",
+	    "winners_show" : false,
+	    "display_via" : "github",
+	    "winners_text" : "description of winner in JSON"
+	},
+	{
+	    "file_path" : "README.md",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "markdown",
+	    "winners_show" : false,
+	    "display_via" : "github",
+	    "winners_text" : "markdown source for index.html"
+	},
+	{
+	    "file_path" : "buzzard.2.README.md",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "markdown",
+	    "winners_show" : false,
+	    "display_via" : "github",
+	    "winners_text" : "markdown source for cannibalism.log.html"
+	}
+    ]
+}

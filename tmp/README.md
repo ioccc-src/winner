@@ -340,11 +340,6 @@ the JSON member names found in
 Generate a fake index.html for a given winner.
 
 
-### [fake.gen_inventory.sh](fake.gen_inventory.sh)
-
-Generate a fake .inventory.html for a given winner.
-
-
 ### [fix_csv.sh](fix_csv.sh)
 
 This tool will fix CSV files exported by
@@ -375,6 +370,11 @@ The following command, executed in this directory, created the `author/` directo
 ```sh
 rm -rf ../author ; ./gen_author_json.sh  author_handle.txt author.csv author_wins.csv ../author
 ```
+
+
+### [gen_dot_winner.sh](gen_dot_winner.sh)
+
+Generate a `.winner.json` and `.inventory.html' for a given winner.
 
 
 ### [gen_path_list.found.sh](gen_path_list.found.sh)
@@ -578,7 +578,7 @@ Examples:
 
 ```sh
 ./run_all.sh -v 3 ./fake.gen_index.sh
-./run_all.sh ./fake.gen_inventory.sh
+./run_all.sh -v 1 ./gen_dot_winner.sh
 ```
 
 
