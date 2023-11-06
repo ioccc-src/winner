@@ -51,7 +51,7 @@ instance, not to mention infinite-depth tail recursion.
 
 SORTA ignores its arguments (though it makes them available to the
 script); it takes all commands, character by character, from its
-standard input. Unrecognized commands are repeated with a `'?'`.
+standard input. Unrecognized commands are repeated with a '?'.
 
 SORTA maintains an `i` stack for integers and an `s` stack for strings. It also
 keeps track of `programs`, one for each character.  Operations are silently
@@ -72,28 +72,28 @@ delimiters.
 - `"string"`: push that string on top of the `s` stack, no length limit
 - `[string]`: push that string on top of the `s` stack, no length limit
 - `#`: make top of `i` stack non-destructively in ASCII, push result onto `s` stack
-- ` ` `: print top of `s` stack non-destructively
+- `` ` ``: print top of `s` stack non-destructively
 - `$`: print top of `s` stack non-destructively without newline
 - `d`: drop (pop) top of `i` stack
 - `D`: dup (duplicate) top of `i` stack
-- `'`: dup top of s stack
-- `s`: pop top of i stack. If it is `n`, swap `(n+1)`th-top of `i` stack with top.
+- `'`: dup top of `s` stack
+- `s`: pop top of `i` stack. If it is `n`, swap `(n+1)`th-top of `i` stack with top.
 	`1s`, for example, swaps the top two elements; `2s` swaps the top with the
 	third down; etc. This always pops the top of the `i` stack, even upon
 	failure.
 - `S`: pop top of `i` stack, then act just like `s` but upon `s` stack
 - `l`: pop top of `s` stack, push its length onto `i` stack
-- `a`: push argc onto i stack
+- `a`: push argc onto `i` stack
 - `A`: pop top of `i` stack, push `argv[i]` on top of `s` stack
 - `T`: concatenate top two elements of `s` stack
-- ` _ `: negate top of i stack
-- `+`: pop top two elements of i stack, add, push back sum
-- ` * `: pop top two elements of i stack, multiply, push back product
-- `/`: pop top two elements of i stack, divide, push back quotient
-- `>`: pop top two elements of i stack, compare, push back 1 or 0 as in C
-- `&`: pop top two elements of i stack, nand, push back bitwise result
-	Note that nand is sufficient to construct all bitwise operations, as
-	demonstrated by icalc below.
+- `_`: negate top of `i` stack
+- `+`: pop top two elements of `i` stack, add, push back sum
+- `*`: pop top two elements of `i` stack, multiply, push back product
+- `/`: pop top two elements of `i` stack, divide, push back quotient
+- `>`: pop top two elements of `i` stack, compare, push back 1 or 0 as in C
+- `&`: pop top two elements of `i` stack, NAND, push back bitwise result
+	Note that NAND is sufficient to construct all bitwise operations, as
+	demonstrated by `icalc` in [sorta.README.md](sorta.README.md).
 
 ### System operations
 
@@ -106,31 +106,31 @@ reading keyboard input or a script, as the forked programs share file
 descriptors. It is always safe inside a program (see below).
 - `P`: `pipe()`, push two ends `<p0> <p1>` onto `i` stack. In case of trouble,
 `push <?> <-1>` onto `i` stack.
-- `w`: `wait()`, push successful result (or -1 if no children) on `i` stack
+- `w`: `wait()`, push successful result (or `-1` if no children) on `i` stack
 - `!`: `execvp()` top of the `s` stack. Arguments are the next things down on
-the s stack, in reverse order from popping; the first character of
+the `s` stack, in reverse order from popping; the first character of
 each string is lopped off. There must be an empty string somewhere
-in the s stack to terminate the argument list. If the execve()
-fails, any operation involving current members of the s stack has
-undefined effects, and -1 is pushed onto the i stack.
+in the `s` stack to terminate the argument list. If the `execve()`
+fails, any operation involving current members of the `s` stack has
+undefined effects, and `-1` is pushed onto the `i` stack.
 
 ### High-level language operations
 
-- :x: copy the top of the s stack into a program labeled by character x
-- =x: pop the top of the i stack. If it was nonzero, execute the program
- labeled by character x. Note that a digit at the end of a program
- will merge with any digits after =x; in that case you usually want
+- `:x`: copy the top of the `s` stack into a program labeled by character `x`
+- `=x`: pop the top of the `i` stack. If it was nonzero, execute the program
+ labeled by character `x`. Note that a digit at the end of a program
+ will merge with any digits after `=x`; in that case you usually want
  to add a space at the end of the program.
 
-Common idioms: To drop the top of the s stack, ld. To do a <, 1s>. To
-unconditionally execute the program labeled by character x, 1=x (or any
-nonzero number followed by =x). To print the top of the i stack
-non-destructively, `# ` ` (or `#$` if you don't want the newline). To
+Common idioms: To drop the top of the `s` stack, `ld`. To do a `<`, `1s>`. To
+unconditionally execute the program labeled by character `x`, `1=x` (or any
+nonzero number followed by `=x`). To print the top of the `i` stack
+non-destructively, `#` (or `#$` if you don't want the newline). To
 subtract, `_+`. To do mod or and or any of the other missing operations,
 combine the available operations as illustrated below. To introduce a
 comment, `[ this is a comment string which is promptly eliminated ]ld`.
 
-SORTA's requirements: it wants `fork()`, `execvp()`, `open()`,
+`SORTA`'s requirements: it wants `fork()`, `execvp()`, `open()`,
 `close()`, `dup()`, `pipe()`, and `wait()`, so it obviously won't even compile
 on a non-UNIX machine. It also assumes that you have a size-256
 character set and that the characters between `'0'` and `'9'` are exactly
@@ -155,17 +155,16 @@ Without documentation and example scripts, someone would find it
 a challenge to figure out what the arrays are used for, let alone
 that SORTA is a scripting language.
 
-Another nice feature is that the SORTA language itself encourages
-you to write not merely obfuscated but plain incomprehensible
-scripts (like the examples below---after working with the language
-for a while, I guess I can read it pretty easily, but I also think
-FORTH is a beautiful language). The numbers running around
-everywhere will make people think of ASCII, even though the code is
-not ASCII-dependent.  What's your first thought when you see
-several arrays[256]? This is pretty standard obfuscation otherwise.
-I like the way that unbalanced macro braces can throw off the
-reader in `if(c>0){y+1]=z[c];`, and I had fun covering the
-alphabet with `#define`s, but that's nothing special.
+Another nice feature is that the SORTA language itself encourages you to write
+not merely obfuscated but plain incomprehensible scripts (like the [examples in
+sorta.README.md](sorta.README.md) ---after working with the language for a
+while, I guess I can read it pretty easily, but I also think FORTH is a
+beautiful language). The numbers running around everywhere will make people
+think of ASCII, even though the code is not ASCII-dependent.  What's your first
+thought when you see several `arrays[256]`? This is pretty standard obfuscation
+otherwise.  I like the way that unbalanced macro braces can throw off the reader
+in `if(c>0){y+1]=z[c];`, and I had fun covering the alphabet with `#define`s,
+but that's nothing special.
 
 Possible future extensions to SORTA include string extraction and
 matching, reading from files into strings, and encrypting the string
