@@ -106,15 +106,15 @@ be computed by a boolean circuit.  In addition, intermediate values
 computed by the circuit can be shared between neighboring cells,
 reducing the number of gates per cell required.  These ideas
 have been used before, to compute the next generation through a
-series of bit blits.  Instead of doing this, we map values in the
-circuit to bits in registers, so that the next generation can be
-computed efficiently within registers, minimizing memory accesses.
-As a result, the computation of the next generation is performed
-with about 1.6 instructions per life cell, consisting of .125
-memory accesses, .17 shifts, and 1.3 logic operations.  The net
-result is that the time to transfer the bits to the X server, and
-for the X server to draw them on the screen, dominates the time to
-compute the next generation.
+series of [bit blits](https://en.wikipedia.org/wiki/Bit_blit).
+
+Instead of doing this, we map values in the circuit to bits in registers, so
+that the next generation can be computed efficiently within registers,
+minimizing memory access.  As a result, the computation of the next generation
+is performed with about 1.6 instructions per life cell, consisting of .125
+memory accesses, .17 shifts, and 1.3 logic operations.  The net result is that
+the time to transfer the bits to the X server, and for the X server to draw them
+on the screen, dominates the time to compute the next generation.
 
 
 ## Copyright and CC BY-SA 4.0 License:

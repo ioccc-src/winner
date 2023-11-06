@@ -1129,6 +1129,14 @@ him): `k` for forward, `h` for left and `l` for right. This version also has a
 more useful way to exit, just entering `q` followed by enter.
 
 
+## [1991/davidguy](1991/davidguy/davidguy.c) ([README.md](1991/davidguy/README.md]))
+
+As some systems like macOS can be particular about not declaring functions Cody
+added to the Makefile some `-include` options. These appear to not be strictly
+necessary but it was done due to other syscalls being a problem not being
+declared first.
+
+
 ## [1991/dds](1991/dds/dds.c) ([README.md](1991/dds/README.md]))
 
 Cody fixed a segfault that prevented this entry from working in any condition
