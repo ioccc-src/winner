@@ -1084,6 +1084,21 @@ The alt code did NOT have arg checks added as it is actually a copy of the
 original code.
 
 
+## [1991/ant](1991/ant/ant.c) ([README.md](1991/ant/README.md]))
+
+Cody added [alt code](1991/ant/ant.alt.c) that will be a bit easier to use for
+those familiar with vim in the following ways:
+
+- Use `0` to go to first column.
+- Use `$` to go to last column.
+- Hit ESC to go back to command mode (instead of form-feed, ctrl-L).
+- Use `w` to go forwards one word.
+- Use `b` to go backwards one word.
+- Use `q` to exit.
+
+The other keys were left unchanged.
+
+
 ## [1991/brnstnd](1991/brnstnd/brnstnd.c) ([README.md](1991/brnstnd/README.md]))
 
 Cody fixed this for modern systems. There were two invalid operands to binary
