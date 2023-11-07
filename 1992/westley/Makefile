@@ -39,7 +39,8 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-bitwise-op-parentheses -Wno-error -Wno-implicit-function-declaration \
-	-Wno-parentheses -Wno-pedantic -Wno-deprecated-non-prototype -Wno-int-conversion
+	-Wno-parentheses -Wno-pedantic -Wno-deprecated-non-prototype -Wno-int-conversion \
+	-Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -129,17 +130,21 @@ all: data ${TARGET}
 	sandwich supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: your terminal must wrap at 80 columns for this to work right!"
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
-
-whereami: ${PROG}
-	${RM} -f $@
-	${LN} $< $@
+	${RM} -f whereami
+	${LN} $@ whereami
+	@echo "NOTE: your terminal must be at least 80 columns wide for this to work right"
 
 # alternative executable
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${RM} -f whereami.alt
+	${LN} $@ whereami.alt
+	@echo "NOTE: your terminal must be at least 80 columns wide for this to work right"
 
 # data files
 #
@@ -206,7 +211,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -f whereami
+	${RM} -f whereami whereami.alt
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

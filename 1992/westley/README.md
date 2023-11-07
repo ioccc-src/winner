@@ -4,25 +4,32 @@
 make all
 ```
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+STATUS: known bug - please help us fix
+```
+
+For more detailed information see [1992 westley in bugs.md](/bugs.md#1992-westley).
+
+
 
 ## To use:
 
 If lost:
 
-```sh
-make whereami
-```
-
-Then run:
 
 ```sh
 ./whereami lat long
 ```
 
-Where lat and long correspond to your latitude and longitude.
+Where `lat` and `long` correspond to your latitude and longitude.
 
-NOTE: you **MUST** have a terminal that wraps at 80 columns (!) in order for this to
-show correctly!
+NOTE: you **MUST** have a terminal that is at least 80 columns for this to show
+properly.
 
 
 ### Try:
@@ -48,10 +55,10 @@ make alt
 ### Alternate use:
 
 ```sh
-./westley.alt lat long
+./whereami.alt lat long
 ```
 
-NOTE: this alternative version also needs a terminal that wraps at 80 columns.
+NOTE: this alternative version also needs a terminal with at least 80 columns.
 
 
 ## Judges' remarks:
@@ -66,24 +73,24 @@ To find the approximate place where this entry was judged, type:
 ## Author's remarks:
 
 Run the program with your latitude & longitude as integer
-arguments; it will produce a map made up of '!' with the given
-position marked with either a '"' (if the position is over a '!')
-or a '#' (if the position is over a space).  Southern latitudes
+arguments; it will produce a map made up of `'!'` with the given
+position marked with either a `'"'` (if the position is over a `'!'`)
+or a `#` (if the position is over a space).  Southern latitudes
 and western longitudes are entered as negative numbers.  For
-example, to find San Francisco, run with "prog 38 -122".  The
+example, to find San Francisco, run with `./whereami 38 -122`.  The
 resolution of the map is five degrees horizontally, ten degrees
 vertically.  The map is a Mercator projection with equal spacing
 of the latitudes, so the areas near the poles are very distorted.
 Latitudes near the poles and Antarctica are not shown.
 
-The program requires the ASCII character set, putchar(), atoi(),
+The program requires the ASCII character set, `putchar()`, `atoi()`,
 and a display that auto-wraps at 80 characters(!).  If your display
 does not work this way, you will have to massage the output;
-for example, you can pipe it to a file and edit it with vi,
+for example, you can redirect it to a file and edit it with vi,
 which will do auto-wrap for you.
 
-Lint complains that main() returns a random value and I'm not
-checking the value that putchar() returns.  Scandalous!
+Lint complains that `main()` returns a random value and I'm not
+checking the value that `putchar()` returns.  Scandalous!
 
 If you run it with fewer than 2 arguments, it will likely
 give you an exception, as it will access arguments that
@@ -91,15 +98,15 @@ don't exist and characters before a string constant.
 
 ### How it works:
 
-The map is printed as one long string of ' ' and '!' characters,
+The map is printed as one long string of `' '` and `'!'` characters,
 with the auto-wrap used to stack up slices of 80.  The map data is
-a string; the first character is how many '!'s are printed
-('A'=1, 'B'=2, etc), the second character is how many ' 's, the
-third is how many '!'s, etc.  ASCII characters less than 'A'
+a string; the first character is how many `!`s are printed
+(`'A'`=1, `'B'`=2, etc), the second character is how many `' '`s, the
+third is how many `!`s, etc.  ASCII characters less than `'A'`
 print no characters but still change the polarity, so any map
-of ' 's and '!'s is possible.  This is done in the putchar()
+of `' '`s and `'!'`s is possible.  This is done in the `putchar()`
 argument as `33^l&1`, where `l` is the character `position+4`; if
-`l` is odd, ' ' is printed, if `l` is even, '!' is printed.
+`l` is odd, `' '` is printed, if `l` is even, `'!'` is printed.
 
 The position of latitude & longitude is changed into a single
 character position within the one long string via the first
@@ -113,16 +120,18 @@ are opposite because latitude is decreasing and longitude is
 increasing as you go from upper left to lower right.  The offset
 is where the origin (latitude=0, longitude=0) is found.
 
-The position counting down to zero changes the putchar() from
-printing ('!' or ' ') to printing ('"' or '#').
+The position counting down to zero changes the `putchar()` from
+printing (`'!'` or `' '`) to printing (`'"'` or `'#'`).
 
-The "H E L L O,   W O R L D!" string inside the data string
-prints the line of blanks past Tierra del Fuego and the last
+The `"H E L L O,   W O R L D!"` string inside the data string
+prints the line of blanks past [Tierra del
+Fuego](https://en.wikipedia.org/wiki/Tierra_del_Fuego) and the last
 blank line.  It's just for show, really.
 
 Since the resolution is coarse, a few coastal cities are shown to
 be just off the map; this is an unavoidable artifact.  The map
 is reasonably accurate.
+
 
 ### Here are some cities you might like to try:
 
@@ -136,6 +145,7 @@ is reasonably accurate.
 - Rio de Janeiro    -23  -43
 - Beijing	    40   116
 - Tokyo		    36   140
+
 
 For a domestic (US) version with higher resolution, try:
 

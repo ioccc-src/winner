@@ -817,6 +817,42 @@ Hello World.
 Can you help us?
 
 
+## 1992 westley
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [1992/westley/westley.c](1992/westley/westley.c)
+### Information: [1992/westley/README.md](1992/westley/README.md)
+
+Cody improved the usability of this program by making it so that as long as the
+terminal columns is >= 80 it will display properly, rather than having to wrap
+at 80 columns. However due to the nature of the program if the terminal is < 80
+in column width it will not display right.  To see the number of columns in your
+terminal try:
+
+```sh
+echo $COLUMNS
+```
+
+
+### STATUS: known bug - please help us fix
+
+The author suggested that the alternate version, which Cody added (but fixed for
+modern systems), should print
+
+```c
+main(l,a,n,d)...
+[A M E R I C A]...
+```
+
+...going down the left edge if your terminal auto-wraps at 80 characters.
+
+This however does not seem to work. It does not appear to be because of the fix
+for modern systems as it doesn't work for gcc either, even before any changes.
+This might be a misunderstanding or it might be that having 80 columns (resized)
+does not count (though the output before the fix of the 80 column requirement
+showed was correct when at 80-columns so it seems like this could be a bug if
+not a misunderstanding).
+
 
 # 1993
 

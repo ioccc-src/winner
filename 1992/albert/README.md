@@ -42,8 +42,8 @@ Both albert and albert.orig loop without printing anything, although
 the first factor is 101 and is usually found in an instant.
 ```
 
-The [albert.c](albert.c) file is the fixed file, whereas the
-[albert.alt.c](albert.alt.c) is the file before applying Leo Broukhis' fix.
+The [albert.alt.c](albert.c) file is the fixed file, whereas the
+[albert.c](albert.c) is the file before applying Leo Broukhis' fix.
 
 To compile this alternate version:
 
@@ -65,8 +65,8 @@ a long.
 
 The Obfuscated version of the Horst algorithm.
 
-This program will factor unlimited length numbers and print the\
-factors in ascending order. Numbers of one digit (e.g. 8)\
+This program will factor unlimited length numbers and print the
+factors in ascending order. Numbers of one digit (e.g. 8)
 are rejected without notice.
 
 It quits as soon as there is at most one factor left, but that factor will not

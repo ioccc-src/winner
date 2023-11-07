@@ -1307,9 +1307,9 @@ Later Cody improved the change to `fgets()` to make it slightly more like the
 original. This still requires the additional stripping of the newline inside the
 loop but now it uses what looks like before, just a call to `gets()`.
 
-One might think that simply changing the gets() to fgets() (with stdin) would
-work but it did not because `fgets()` stores the newline and `gets()` does not.
-The code was relying on not having this newline. With `fgets()` the code
+One might think that simply changing the `gets()` to `fgets()` (with `stdin`)
+would work but it did not because `fgets()` stores the newline and `gets()` does
+not.  The code was relying on not having this newline. With `fgets()` the code
 `if(A(Y)) puts(Y);` ended up printing an extra line which made the generation of
 some files (like `adhead.c`) fail to compile. Why? There was a blank line after
 a `\` at the end of the first line of a macro definition!  Thus the code now
@@ -1329,6 +1329,15 @@ one must keep the `Y[strlen(Y)-1]='\0';` part and keep it there.
 
 This is a complex change due to the way the program and Makefile generate
 additional tools.
+
+
+## [1992/albert](1992/albert/albert.c) ([README.md](1992/albert/README.md]))
+
+Cody fixed this to compile with modern systems. Note that in 1996 a bug fix was
+applied to the code, provided as the alt code as that version is not obfuscated.
+Thus Cody's fixed applies to the original entry. The problems were that
+`malloc.h` is not the correct header file now and a non-void (implicit int)
+function returning without a value. The function was changed to return void.
 
 
 ## [1992/buzzard.1](1992/buzzard.1/buzzard.1.c) ([README.md](1992/buzzard.1/README.md))
@@ -1420,6 +1429,19 @@ specifically for the USA rather than the world. This had to be fixed for clang
 as well to make the args of `main()` be the correct type and by moving the body
 of main() to another function, `pain()`, which does the work since not all
 versions of clang support four args to `main()`.
+
+Cody also removed the restriction that one has to have a terminal that wraps at
+80 columns so that as long as the terminal's columns (try `echo $COLUMNS`) is >=
+80 it should work. As most people have wider terminals than back in 1992 this
+should help make it much easier to use. Note that if the number of columns is <
+80 it will not work right. The way this was done is that every 80 iterations in
+the final loop it prints another newline. This fix has another bonus in that
+resizing the terminal after running it should not mess up the display either,
+unless of course it becomes too small.
+
+Cody added the [try.sh](1992/westley/try.sh) script that shows the different
+cities that the author recommended one try, labelling each city and printing a
+newline before the next city.
 
 Cody also added an arg check because the program and the
 [alternate version](1992/westley/westley.alt.c) might have crashed or
