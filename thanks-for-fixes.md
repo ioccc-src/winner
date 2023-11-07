@@ -1421,12 +1421,14 @@ as well to make the args of `main()` be the correct type and by moving the body
 of main() to another function, `pain()`, which does the work since not all
 versions of clang support four args to `main()`.
 
-Cody also removed the restriction that one has a terminal that wraps at 80
-columns so that as long as the terminal's columns count (try `echo $COLUMNS`) is
->= 80 it should work. As most people have wider terminals than back in 1992 this
+Cody also removed the restriction that one has to have a terminal that wraps at
+80 columns so that as long as the terminal's columns (try `echo $COLUMNS`) is >=
+80 it should work. As most people have wider terminals than back in 1992 this
 should help make it much easier to use. Note that if the number of columns is <
 80 it will not work right. The way this was done is that every 80 iterations in
-the final loop it prints another newline.
+the final loop it prints another newline. This fix has another bonus in that
+resizing the terminal after running it should not mess up the display either,
+unless of course it becomes too small.
 
 Cody also added an arg check because the program and the
 [alternate version](1992/westley/westley.alt.c) might have crashed or
