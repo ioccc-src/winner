@@ -1331,6 +1331,15 @@ This is a complex change due to the way the program and Makefile generate
 additional tools.
 
 
+## [1992/albert](1992/albert/albert.c) ([README.md](1992/albert/README.md]))
+
+Cody fixed this to compile with modern systems. Note that in 1996 a bug fix was
+applied to the code, provided as the alt code as that version is not obfuscated.
+Thus Cody's fixed applies to the original entry. The problems were that
+`malloc.h` is not the correct header file now and a non-void (implicit int)
+function returning without a value. The function was changed to return void.
+
+
 ## [1992/buzzard.1](1992/buzzard.1/buzzard.1.c) ([README.md](1992/buzzard.1/README.md))
 
 Cody added a check for the right number of args, exiting 1 if not enough (2)
