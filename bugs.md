@@ -834,6 +834,25 @@ echo $COLUMNS
 ```
 
 
+### STATUS: known bug - please help us fix
+
+The author suggested that the alternate version, which Cody added (but fixed for
+modern systems), should print
+
+```c
+main(l,a,n,d)...
+[A M E R I C A]...
+```
+
+...going down the left edge if your terminal auto-wraps at 80 characters.
+
+This however does not seem to work. It does not appear to be because of the fix
+for modern systems as it doesn't work for gcc either, even before any changes.
+This might be a misunderstanding or it might be that having 80 columns (resized)
+does not count (though the output before the fix of the 80 column requirement
+showed was correct when at 80-columns so it seems like this could be a bug if
+not a misunderstanding).
+
 
 # 1993
 

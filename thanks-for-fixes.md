@@ -1430,6 +1430,10 @@ the final loop it prints another newline. This fix has another bonus in that
 resizing the terminal after running it should not mess up the display either,
 unless of course it becomes too small.
 
+Cody added the [try.sh](1992/westley/try.sh) script that shows the different
+cities that the author recommended one try, labelling each city and printing a
+newline before the next city.
+
 Cody also added an arg check because the program and the
 [alternate version](1992/westley/westley.alt.c) might have crashed or
 [nuked](https://en.wikipedia.org/wiki/Nuclear_weapon) the [entire
