@@ -12,8 +12,6 @@ make all
 
 ```
 
-NOTE: this program will crash without two args.
-
 
 ### Try:
 
@@ -59,19 +57,19 @@ short strings.
 arguments.
 
 ```sh
-% ./buzzard.1 0 <num>
+./buzzard.1 0 <num>
 ```
 
 will print out the factorial of `<num>`.
 
-```
-% ./buzzard.1 <num1> <num2>
+```sh
+./buzzard.1 <num1> <num2>
 ```
 
 will print out the largest common factor of `num1` and `num2`.
 
 ```sh
-% ./buzzard.1 1 <num2>
+./buzzard.1 1 <num2>
 ```
 
 will print out a factor of `num2` if it's composite, or else
@@ -102,7 +100,7 @@ Some of them are mere obfuscation fodder, put in to encourage
 you to run it through CPP.
 
 
-### What it doesn't quite do right as an emulator
+### What it doesn't do quite right as an emulator
 
 Because of the definitional constraints, calls to `atoi(argv[#])` also appear
 inside the loop.  These could be put outside--the initial values of the
@@ -166,12 +164,12 @@ T               end of output section and program	Terminate
 You can figure out the other macros yourself.  In the sample program, I've
 actually implemented subroutines by saving a return address in a variable and
 then jumping to a routine-- specifically, a routine that converts a number into
-bcd, so it can be output by the hexadecimal output statement.
+BCD, so it can be output by the hexadecimal output statement.
 
 
 ### How it works, i.e., how to get useful programs from a op= b
 
-The essential statement to be able to do to do interesting
+The essential statement to be able to make interesting
 programs is the conditional (given that we have loops).
 Since all you can do in the given operation output set is
 assignment, we implement "conditional assignment":
@@ -180,7 +178,7 @@ assignment, we implement "conditional assignment":
 if (x) y = z;
 ```
 
-To implement this, we constrain x to be either 0 or 1, and
+To implement this, we constrain `x` to be either 0 or 1, and
 simply compute:
 
 ```c
@@ -216,7 +214,7 @@ numbers can only be in some limited range.  Then we use successive additions and
 divisions to reduce that number down to `-1`, `0`, or `1`.  You could, for
 instance, do this by using mod by `2` and div by `2` to count bits, stopping
 after, say, `32` iterations.  The number you get is between `0..32`, so another
-`6` iterations on it reduces it to 0..6.  Three iterations on this produces
+`6` iterations on it reduces it to `0..6`.  Three iterations on this produces
 `0..2` (`3` would be `7`), and then two iterations on this produces 0 or 1.
 Instead I use a shorter two-divide approach that assumes I'm allowed to use
 numbers slightly larger than the numbers I'm operating on.
