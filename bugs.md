@@ -817,6 +817,22 @@ Hello World.
 Can you help us?
 
 
+## 1992 westley
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [1992/westley/westley.c](1992/westley/westley.c)
+### Information: [1992/westley/README.md](1992/westley/README.md)
+
+Cody improved the usability of this program by making it so that as long as the
+terminal columns is >= 80 it will display properly. However due to the nature of
+the program if the terminal is < 80 in column width it will not display right.
+To see the number of columns in your terminal try:
+
+```sh
+echo $COLUMNS
+```
+
+
 
 # 1993
 

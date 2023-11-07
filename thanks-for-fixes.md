@@ -1307,9 +1307,9 @@ Later Cody improved the change to `fgets()` to make it slightly more like the
 original. This still requires the additional stripping of the newline inside the
 loop but now it uses what looks like before, just a call to `gets()`.
 
-One might think that simply changing the gets() to fgets() (with stdin) would
-work but it did not because `fgets()` stores the newline and `gets()` does not.
-The code was relying on not having this newline. With `fgets()` the code
+One might think that simply changing the `gets()` to `fgets()` (with `stdin`)
+would work but it did not because `fgets()` stores the newline and `gets()` does
+not.  The code was relying on not having this newline. With `fgets()` the code
 `if(A(Y)) puts(Y);` ended up printing an extra line which made the generation of
 some files (like `adhead.c`) fail to compile. Why? There was a blank line after
 a `\` at the end of the first line of a macro definition!  Thus the code now
@@ -1420,6 +1420,13 @@ specifically for the USA rather than the world. This had to be fixed for clang
 as well to make the args of `main()` be the correct type and by moving the body
 of main() to another function, `pain()`, which does the work since not all
 versions of clang support four args to `main()`.
+
+Cody also removed the restriction that one has a terminal that wraps at 80
+columns so that as long as the terminal's columns count (try `echo $COLUMNS`) is
+>= 80 it should work. As most people have wider terminals than back in 1992 this
+should help make it much easier to use. Note that if the number of columns is <
+80 it will not work right. The way this was done is that every 80 iterations in
+the final loop it prints another newline.
 
 Cody also added an arg check because the program and the
 [alternate version](1992/westley/westley.alt.c) might have crashed or
