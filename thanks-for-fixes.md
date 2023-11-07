@@ -2198,7 +2198,7 @@ the prototype being included).
 function `poke()` which calls itself instead (this is sometimes necessary
 nowadays).
 
-Finally the optimiser cannot be disabled so the compiler flags were changed for
+Finally the optimiser cannot be enabled so the compiler flags were changed for
 this.
 
 
