@@ -1439,9 +1439,21 @@ the final loop it prints another newline. This fix has another bonus in that
 resizing the terminal after running it should not mess up the display either,
 unless of course it becomes too small.
 
+Cody added the programs [whereami.c](1992/westley/whereami.c) and
+[whereami.alt](1992/westley/whereami.alt.c) which correspond to the entry and
+the alt code but which, by way of curses, checks for the number of columns; if
+all is good it will try compiling the program or alt program, respectively, and
+then if successful run the program. Otherwise, if there are not enough columns
+it is an error. It is always an error if the compilation of the program itself
+(westley.c, westley.alt.c) fails.
+
 Cody added the [try.sh](1992/westley/try.sh) script that shows the different
 cities that the author recommended one try, labelling each city and printing a
-newline before the next city.
+newline before the next city. The try.sh script uses the `whereami` code, if it
+can be compiled and linked, but otherwise it uses `westley` code instead, either
+the entry or alt code. The try.sh cannot be deceived by way of `COLUMNS=81
+./try.sh` but the `whereami`/`whereami.alt` code can be deceived if directly
+called. This is a feature, not a bug: or maybe a limitation of curses.
 
 Cody also added an arg check because the program and the
 [alternate version](1992/westley/westley.alt.c) might have crashed or
