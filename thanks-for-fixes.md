@@ -1417,7 +1417,10 @@ commands that we suggested and some additional ones that provide for some fun.
 
 ## [1992/gson](1992/gson/gson.c) ([README.md](1992/gson/README.md]))
 
-Cody changed the buffer size in such a way that `gets()` should be safe
+Cody fixed a crash that prevented this entry from working in some cases in some
+systems (like macOS) by disabling the optimiser in the Makefile.
+
+Cody also changed the buffer size in such a way that `gets()` should be safe
 (theoretically) as it comes from the command line (though it can also read input
 from stdin after starting the program). Ideally `fgets()` would be used but this
 is a more problematic.  Previously it had a buffer size of 256 which could

@@ -4,6 +4,16 @@
 make all
 ```
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: uses gets() - change to fgets() if possible
+```
+
+For more detailed information see [1992 gson in bugs.md](/bugs.md#1992-gson).
+
 
 ## To use:
 
@@ -92,7 +102,7 @@ number of words in the anagrams is limited to 3 by default.  This
 limit can be changed using a numeric command line option, as in
 `./ag -4 international obfuscated c code contest </usr/dict/words`.
 
-### Bugs
+### Bugs and limitations
 
 - There is no error checking.
 - Standard input must be seekable, so you can't pipe the dictionary into AG.
@@ -117,7 +127,7 @@ Instead, it tries to achieve both its speed and its obscurity through a
 careful choice of algorithms.  Some of the finer points of those
 algorithms are outlined in the spoiler below.
 
-### How it works:  (ROT13 to read)
+### How it works:
 
 Here follows a description of some of the data structures and
 algorithms used by AG.  It is by no means complete, but it may help
@@ -134,16 +144,16 @@ each because the same letter is unlikely to occur more than 15
 times in a practical anagram generation problem.
 
 These `32*4`-bit arrays are actually stored in memory in a
-"bit-transposed" format, as arrays of four "long" values.  It is
-assumed that a "long" is at least 32 bits.  The first 4-bit letter
-count is formed by the least significant (2^0) bit in each of the
-four longs, the next one is formed by the 2^1 bits, etc.
+"bit-transposed" format, as arrays of four `long` values.  It is
+assumed that a `long` is at least 32 bits.  The first 4-bit letter
+count is formed by the least significant (`2^0`) bit in each of the
+four `long`s, the next one is formed by the `2^1` bits, etc.
 
 This storage format makes it possible to add or subtract two such
 vectors of 32 4-bit values in parallel by simulating a set of 32
 binary full adders in software using bitwise logical operations.
-E.g., all the LSB:s of the result are formed in parallel by taking
-the exclusive OR of the LSB:s in each summand, and 32 carry bits
+E.g., all the LSBs of the result are formed in parallel by taking
+the exclusive OR of the LSBs in each summand, and 32 carry bits
 are formed in parallel in a similar way using a logical AND.
 Thus, 32 independent 4-bit additions can be performed by just four
 iterations of a loop containing some 32-bit bitwise logical
@@ -155,13 +165,13 @@ subtraction directly, handling addition by means of the identity
 `a+b = a-(0-b)`.
 
 In addition to this `32*4`-bit representation, AG also forms a so-called
-"signature" that is the bitwise OR of the four longs, which is
+"signature" that is the bitwise OR of the four `long`s, which is
 equivalent to saying that the signature of a word contains a logical 1
 in the bit positions corresponding to letters occurring at least once
 in that word.
 
 The first thing AG does is to construct a lookup table of 256
-longs, one for each 8-bit character value.  The entry for a
+`long`s, one for each 8-bit character value.  The entry for a
 character will be zero if that character doesn't appear in the
 sentence given on the command line, or it will have a single bit
 set if the character does appear in the sentence.  By adding
@@ -175,15 +185,15 @@ Words containing the right letters but in excessive numbers are
 eliminated in a separate check involving the `32*4` bit array.
 
 The remaining words, which will be referred to as "candidate words",
-are stored in `32*4`-bit representation, together with their signatures\
+are stored in `32*4`-bit representation, together with their signatures
 and offsets into the dictionary file so that the plain-text version of
 a word can later be found for printing.  This information is kept in a
-local "struct" in the dictionary-reading function, and memory is
+local `struct` in the dictionary-reading function, and memory is
 allocated for each candidate word simply by making another recursive
 call to that function.
 
-Each struct so allocated is linked into a fixed-size hash table of
-4096 entries indexed by the 12 low bits of the word's signature.\
+Each `struct` so allocated is linked into a fixed-size hash table of
+4096 entries indexed by the 12 low bits of the word's signature.
 When the dictionary-reading function encounters end-of-file, all the
 candidate words have been stored in nested activation records on the
 stack, accessible through the hash table.
@@ -196,10 +206,10 @@ command line.
 The subtraction is performed in parallel on the 4-bit letter counts
 as described above, and if all 32 results are zero, an anagram has
 been found.  If the result is negative for one or more of the letters
-(as indicated by one or more "1" in a vector of 32 borrow bits
+(as indicated by one or more `1`s in a vector of 32 borrow bits
 returned by the subtraction routine), the word did not match the
 current sentence and is ignored.  Finally, if the result contained
-only non-negative letter counts, we have found a partial anagram:\
+only non-negative letter counts, we have found a partial anagram:
 a word containing some, but not all, of the letters in the current
 sentence.  In this case we recursively try to find an anagram of the
 remaining letters.  The depth of the recursion is limited to the
@@ -218,14 +228,14 @@ not interested in hash buckets whose words contain any letters not
 in the current sentence; these buckets are exactly those whose index
 has a logical one in a bit position where the signature of the current
 sentence has a zero.  Put another way, we want to loop through only
-those hash bucket indices "i" that contain zeroes in all the bit
-positions where the signature "s" of the current sentence contains
-a zero; this can be expressed in C as (i & ~s == 0).
+those hash bucket indices `i` that contain zeroes in all the bit
+positions where the signature `s` of the current sentence contains
+a zero; this can be expressed in C as (`i & ~s == 0`).
 
 It is possible to loop through all such numbers in an efficient way by
 taking advantage of certain properties of binary arithmetic: by
-forcing the bits corresponding to zeroes in "s" to ones, we can make
-the carries generated in incrementing "i" propagate straight across
+forcing the bits corresponding to zeroes in `s` to ones, we can make
+the carries generated in incrementing `i` propagate straight across
 those bits that should remain zero.  For example, the following
 program prints all those 16-bit integers that contain zeroes in all
 even bit positions:
@@ -241,7 +251,7 @@ to the hash table index when initiating a recursive search, using
 similar bit-twiddling techniques.
 
 Whenever an anagram has been found, it is printed by traversing a
-linked list formed by structs in the activation records of the
+linked list formed by `struct`s in the activation records of the
 recursive invocations of the search function, seeking to the beginning
 of the word matched by that invocation, and copying the characters of
 the word directly from standard input to standard output.
