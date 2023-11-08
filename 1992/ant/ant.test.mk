@@ -180,7 +180,7 @@ error.1:
 #  Target where dependency does not exist.
 error.2: unknown
 
-#  Receipe command causes error.
+#  Recipe command causes error.
 error.3: t1 fail t2
 fail:
 	ls -l unknown

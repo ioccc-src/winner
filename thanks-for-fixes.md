@@ -1387,6 +1387,25 @@ Thus Cody's fixed applies to the original entry. The problems were that
 function returning without a value. The function was changed to return void.
 
 
+## [1992/ant](1992/ant/ant.c) ([README.md](1992/ant/README.md]))
+
+Cody fixed the Makefile so that the program will actually work with it (or at
+least the rule to clobber files and link `am` to `ant`). The issue was that the
+variables in the Makefile could not be evaluated in the same way as it's not as
+feature-rich as other implementations of `make`. Thus the use of `${RM}` and
+`${CP}` were in the respective rules changed to `rm` and `cp`, for two examples.
+A new rule had to be added as well. The variable situation might be because they
+are obtained from the root variable Makefile `var.mk` via `include` which the
+program might not support (this has not been tested, however) and also because
+it appears that the syntax for this program is to use `$()` rather than `${}`.
+
+Cody also fixed another problem, unrelated, in the Makefile with the `.PHONY`
+rule where a line was not ended with a `\` but should have been.
+
+The author stated that in some systems like DOS with Turbo C, it might be
+necessary to include `time.h` so Cody did this as well.
+
+
 ## [1992/buzzard.1](1992/buzzard.1/buzzard.1.c) ([README.md](1992/buzzard.1/README.md))
 
 Cody added a check for the right number of args, exiting 1 if not enough (2)

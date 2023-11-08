@@ -113,7 +113,7 @@ PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 DATA=
-TARGET= ${PROG} am
+TARGET= ${PROG}
 #
 ALT_OBJ=
 ALT_TARGET=
@@ -129,15 +129,18 @@ all: data ${TARGET}
 .PHONY: all alt data everything diff_orig_prog diff_prog_orig \
 	diff_alt_prog diff_prog_alt diff_orig_alt diff_alt_orig \
 	clean clobber install love haste waste maker easter_egg \
-	sandwich supernova deep_magic magic charon pluto
+	sandwich supernova deep_magic magic charon pluto \
 	supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
-am: ${PROG}
-	${RM} -f $@
-	${LN} $< $@
+am: ant
+	rm -f am
+	ln ant am
+	cp am am.safe
+	cp am.safe am
+	rm -f am.safe
 
 # alternative executable
 #
@@ -215,11 +218,16 @@ clobber: clean
 	    echo 'ate sandwich'; \
 	fi
 
-am_clobber: clean am
-	${RM} -f am.safe
-	${CP} am am.safe
-	${CP} am.safe am
-	${RM} -f am.safe
+am_clean:
+	rm -f ant.o am.o
+	@-if [ -f indent.c ]; then \
+	    echo ${RM} -f indent.c; \
+	    ${RM} -f indent.c; \
+	fi
+
+
+am_clobber: am_clean
+	rm -f am.safe
 
 install:
 	@echo "Dr. Spock says that is not logical!"

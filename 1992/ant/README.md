@@ -8,7 +8,7 @@ make all
 ## To use:
 
 ```sh
-./am Makefile
+./ant Makefile
 ```
 
 where `Makefile` is a Makefile to use.
@@ -16,16 +16,17 @@ where `Makefile` is a Makefile to use.
 
 ### Try:
 
+First build the tool itself with our Makefile:
+
 ```sh
-./ant ant.test.mk
+./ant Makefile am
 ```
 
-We also suggest that you try:
+Now use `am` to do some things:
 
 ```sh
-make am
 ./am Makefile am_clobber	# clobber everything except am
-./am Makefile all
+./am ant.test.mk		# run the test Makefile with am
 ```
 
 
@@ -34,8 +35,8 @@ make am
 Like much of POSIX, obfuscation has its place.  Your task is to
 figure out where.
 
-This entry comes complete with a Posix-like command description.
-Interested POSIX balloters should lobby the IEEE for an obfuscated\
+This entry comes complete with a POSIX-like command description.
+Interested POSIX balloters should lobby the IEEE for an obfuscated
 P1003 subcommittee.
 
 

@@ -35,7 +35,7 @@ None.
 
 OPERANDS
 
-makefile	This required argument, is a pathname of a description
+makefile	This required argument is a pathname of a description
 		file, which is also referred to as the "makfile".  A
 		pathname of "-", shall *NOT* denote the standard input.
 
@@ -123,7 +123,7 @@ MAKEFILE EXECUTION
 Command lines shall be processed one at a time by writing the command
 line to standard output, unless prefixed with an at-sign (@), and
 executing the command(s) in the line.  Commands shall be executed by
-passing the command line to the command interpreter via the system()
+passing the command line to the command interpreter via the system(3)
 function.
 
 The environment for the command being executed shall contain all of the
@@ -168,7 +168,7 @@ rules for the same target are ignored.  There is *no* support for
 adding prerequisites to a target's prerequisite list once a target
 rule is defined.
 
-There are no special targets or inference rule support.  
+There are no special targets and no inference rule support.  
 
 
 MACROS
@@ -191,7 +191,7 @@ the definition of environment variables, excluding parentheses, ( and ),
 which are used for delimiters.
 
 Macros can appear anywhere in the makefile, except within other macro 
-references (ie. no nesting).  Macros in target and command lines shall 
+references (i.e. no nesting).  Macros in target and command lines shall 
 be evaluated when the line is read.  Macros in macro definition lines 
 shall be evaluated *IMMEDIATELY*.  A macro that has not been defined 
 shall evaluate to a null string without causing any error condition.  
@@ -233,7 +233,7 @@ tested on
 
 For all machines, the compile command line should be
 
-	cc -O -o am am.c
+	cc -O -o ant ant.c
 
 The value RULES represents the number of slots available to record
 target rules, dependencies, and commands.  The default value chosen
@@ -261,9 +261,9 @@ REFERENCES
 
 FILES
 
-howe.c		Obfuscated source
-howe.README	Manual for AM
-howe.test.mk	Test makefile
+ant.c		Obfuscated source
+ant.README	Manual for AM
+ant.test.mk	Test makefile
 
 
 BUGS
