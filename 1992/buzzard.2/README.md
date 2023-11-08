@@ -7,7 +7,8 @@ make all
 
 ## To use:
 
-First:
+First, you must make sure that first is made first (even though `make all`
+should do it :-) ):
 
 ```sh
 make first
@@ -16,7 +17,10 @@ make first
 Second:
 
 ```sh
+# get help:
 echo help | cat third help.th - | ./first
+
+# try out a demo:
 cat third demo5.th | ./first
 ```
 
@@ -102,7 +106,7 @@ To do something interesting, you need to feed first the file
 [third](third) first.  In unix, you can do
 
 ```sh
-% cat third help.th - | ./first
+cat third help.th - | ./first
 ```
 
 to do this.  Hopefully most operating systems will provide a way to do this.  It
@@ -112,17 +116,18 @@ minutes on an 8086 PC); `THIRD` will prompt you when it is finished.  The file
 part.
 
 For more information on what you can do once you've piped [third](third) into
-first, type 'help' and consult FORTH manuals for further reference.  Six sample
-THIRD programs are included in the files demo[1-6].th.
-[buzzard.2.README.md](buzzard.2.README.md) has more information.
+first, type 'help' and consult
+[FORTH](https://en.wikipedia.org/wiki/Forth_(programming_language)) manuals for
+further reference.  Six sample THIRD programs are included in the files
+demo[1-6].th.  [buzzard.2.README.md](buzzard.2.README.md) has more information.
 
-Keep in mind that you are still running first, and are for the most part limited
-by `first`'s tokenizer (notably, unknown words will attempt to be parsed as
-integers.)  It is possible to build a new parser that parses by hand, reading a
-single character at a time; however, such a parser cannot easily use the
+Keep in mind that you are still running `first`, and are for the most part
+limited by `first`'s tokenizer (notably, unknown words will attempt to be parsed
+as integers.)  It is possible to build a new parser that parses by hand, reading
+a single character at a time; however, such a parser cannot easily use the
 existing dictionary, and so would have to implement its own, thus requiring
-reimplementing all of first and third a second time--I did not care to tackle
-this project.
+reimplementing all of `first` and `third` a second time--I did not care to
+tackle this project.
 
 
 ### Compiling
@@ -133,16 +138,16 @@ on smaller machines; `m[]` needs to be at least 2000 long, though.
 I say `first` is portable mainly because it uses native types.  Unlike
 [FORTH](https://en.wikipedia.org/wiki/Forth_(programming_language), which
 traditionally allows byte and multi-byte operations, all operations are
-performed on C `int`s.  That means first code is only as portable as the same
-code would be in C.  As in C, the result of dividing -1 by 2 is machine (or
+performed on C `int`s.  That means `first` code is only as portable as the same
+code would be in C.  As in C, the result of dividing `-1` by `2` is machine (or
 rather compiler) dependent.
 
 ### How is first obfuscated?
 
 `first` is obfuscated in several ways.  Some minor obfuscations like
 `&w[&m[1]][s]` for `s+m[w+1]` were in the original source but are no longer
-because, apparently, ANSI doesn't allow it (gcc -ansi -pedantic doesn't mind it,
-though.)
+because, apparently, ANSI doesn't allow it (`gcc -ansi -pedantic` doesn't mind
+it, though.)
 
 Other related obfuscations are still present.  The top of the stack is cached in
 a variable, which increases performance massively if the compiler can figure out
@@ -153,47 +158,51 @@ register allocate it.)
 More significant are the design obfuscations.  `m[0]` is the "dictionary
 pointer", used when compiling words, and `m[1]` is the return stack index.  Both
 are used as integer offsets into `m`.  Both are kept in `m`, instead of as
-separate pointers, because they are then accessible to first programs, which is
-a crucial property of first.  Similarly the way words are stored in the
+separate pointers, because they are then accessible to `first` programs, which
+is a crucial property of `first`.  Similarly the way words are stored in the
 dictionary is not obvious, so it can be difficult to follow exactly what the
 compiler words are doing.
 
 Assuming you've waded through all that, you still have to penetrate the most
 significant obfuscation.  Traditionally, the question is whether a reader can
 answer the question "what will this do when I run it".  A reader who has
-deciphered first to this point may think they know the answer to this question,
-but they may not know the answer to the more important question, "what will this
-program do when given the right input?"  FORTH aficionados, and especially FORTH
-implementers, may recognize the similarity of the internal compiler format to
-many FORTH internal representations, and, being aware that FORTH interpreters
-can often be self-compiling, may be suspicious that this program can compile
-FORTH, or a significant subset of it, or at least be capable of doing so if fed
-the right input.  Of course, the name "THIRD" should be a dead giveaway, if the
-name "first" wasn't.  (These numbers were largely chosen because they were five
-letters long, like "FORTH", and would not require truncation to five letters,
-which would be a dead giveaway.  Besides, THIRD represents a step backwards, in
-more ways than one.)
+deciphered `first` to this point may think they know the answer to this
+question, but they may not know the answer to the more important question, "what
+will this program do when given the right input?"
+[FORTH](https://en.wikipedia.org/wiki/Forth_(programming_language)) aficionados,
+and especially FORTH implementers, may recognize the similarity of the internal
+compiler format to many FORTH internal representations, and, being aware that
+FORTH interpreters can often be self-compiling, may be suspicious that this
+program can compile FORTH, or a significant subset of it, or at least be capable
+of doing so if fed the right input.  Of course, the name "THIRD" should be a
+dead giveaway, if the name "first" wasn't.  (These numbers were largely chosen
+because they were five letters long, like "FORTH", and would not require
+truncation to five letters, which would be a dead giveaway.  Besides, THIRD
+represents a step backwards, in more ways than one.)
 
 
 ### What exactly is `first`, then?
 
 `first` is a tiny interpreter which implements a sufficient pseudo-subset of
-FORTH to allow it to bootstrap a relatively complete version of FORTH (based
-loosely on forth79), which I call THIRD.  Complete relative to what, I'm not
-sure.
+[FORTH](https://en.wikipedia.org/wiki/Forth_(programming_language)) to allow it
+to bootstrap a relatively complete version of FORTH (based loosely on forth79),
+which I call THIRD.  Complete relative to what, I'm not sure.
 
-I believe first is close to the smallest amount of code possible to get this
+I believe `first` is close to the smallest amount of code possible to get this
 effect *using forth-style primitives*, and still have some efficiency (it is
 possible to get by without multiplication if you have addition, obviously).  In
-the design file, design, I give a justification for why each primitive in first
-was included.
+the design file, design, I give a justification for why each primitive in
+`first` was included.
 
-THIRD is sorta slow, because first has so few primitives that many things that
-are primitives in FORTH (like swap) take a significant amount of time in THIRD.
+THIRD is sorta slow, because `first` has so few primitives that many things that
+are primitives in
+[FORTH](https://en.wikipedia.org/wiki/Forth_(programming_language)) (like swap)
+take a significant amount of time in THIRD.
 
-When you get the 'Ok.' message from third, try out some sample FORTH code (first
+When you get the `Ok.` message from third, try out some sample
+[FORTH](https://en.wikipedia.org/wiki/Forth_(programming_language)) code (first
 has no way of knowing if keyboard input is waiting, so it can't actually prompt
-you in a normal way.  It only prints 'Ok.' after you define a word).
+you in a normal way.  It only prints `'Ok.'` after you define a word).
 
 
 ```sh
@@ -230,18 +239,19 @@ using by typing:
 here .
 ```
 
-The number THIRD replies with is the number of machine words (ints) that the
-dictionary (the first code) takes up, plus the 512 ints for the return stack.
+The number THIRD replies with is the number of machine words (`int`s) that the
+dictionary (the first code) takes up, plus the 512 `int`s for the return stack.
 If you compile the basic THIRD system without the help word (strings take up one
-int per character in the string!), you should find that you're using around 1000
-ints (plus the return stack).
+`int` per character in the string!), you should find that you're using around
+1000 `int`s (plus the return stack).
 
-Thus THIRD gives you a relatively complete FORTH system in less than 700 chars
-of C source + about 1000 ints of memory--and it's portable too (you could copy
-over the THIRD memory dump to another machine, in theory).  If the above numbers
-seem to you to be mixing apples and oranges (C source and compiled THIRD code),
-note that you should in theory be able to stick the compiled THIRD code into the
-C source.
+Thus THIRD gives you a relatively complete
+[FORTH](https://en.wikipedia.org/wiki/Forth_(programming_language)) system in
+less than 700 chars of C source + about 1000 `int`s of memory--and it's portable
+too (you could copy over the THIRD memory dump to another machine, in theory).
+If the above numbers seem to you to be mixing apples and oranges (C source and
+compiled THIRD code), note that you should in theory be able to stick the
+compiled THIRD code into the C source.
 
 Software Construction Company gets credit for rekindling my interest in FORTH
 and thus indirectly inspiring me to write this program.
