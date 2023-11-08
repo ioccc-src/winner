@@ -6,13 +6,13 @@ help.th			online listing of THIRD primitives
 	
 # FIRST demos:
 
-Use  `first < {demo}`.
+Use  `./first < <demo>`.
 
 demo1.1st		prints Hello World! assuming ASCII
 
 # THIRD demos:
 
-Use `cat third {demo} | first`.
+Use `cat third <demo> | ./first`.
 
 demo1.th		prints Hello World! regardless of character set
 demo2.th		demonstrates a simple loop
@@ -23,7 +23,7 @@ demo6.th		demonstrates switching from compiler to execution mode
 
 # Interactive THIRD:
 
-Use `cat third - | first`.
+Use `cat third - | ./first`.
 
 To include the primitive on-line help, use
-`cat third help.th - | first`.
+`cat third help.th - | ./first`.
