@@ -5,6 +5,20 @@ make all
 ```
 
 
+An [alternate version](#alternate-code) exists that fixes a bug.
+
+
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: known bug - please help us fix
+```
+
+For more detailed information see [1992 albert in bugs.md](/bugs.md#1992-albert).
+
+
 ## To use:
 
 ```sh
@@ -45,11 +59,17 @@ the first factor is 101 and is usually found in an instant.
 The [albert.alt.c](albert.c) file is the fixed file, whereas the
 [albert.c](albert.c) is the file before applying Leo Broukhis' fix.
 
+
+### Alternate build:
+
 To compile this alternate version:
 
 ```sh
 make alt
 ```
+
+
+### Alternate use:
 
 Use `albert.alt` as you would `albert` above.
 
@@ -94,7 +114,7 @@ cc albert.c -o 4294967297
 or some such.
 
 There are no data files used, and it is not possible to feed input
-via stdin.
+via `stdin`.
 
 I think this program is a nice example of algorithmic obfuscation.  Several
 times two similar algorithms are merged into one. Then you need quite some
@@ -124,7 +144,7 @@ Here are some hints, but they may not be too helpful:
 82, part 4, a real Dutch treat.  Assembly, C and Forth version have been around
 for some years.
 2. Does fractal programming exist after all?
-3. You remember the ToomCook algorithm in Knuth?  It uses iteration instead of
+3. You remember the Toom-Cook algorithm in Knuth?  It uses iteration instead of
 recursion and is quite jumpy.  This program shares these disadvantages in a
 modified form.
 4. The Conversion is to be found in Knuth, not so the Observation.  The
