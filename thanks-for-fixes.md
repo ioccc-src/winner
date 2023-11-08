@@ -12,22 +12,22 @@ contributed thousands, that we wish to thank.
 We call out the extensive contributions of [Cody Boone
 Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson) who is
 responsible for most of the improvements and fixes including many **EXTREMELY
-CHALLENGING bug fixes** like
+HARD bug fixes** like
 [1988/phillipps](/thanks-for-fixes.md#1988phillipps-readmemd),
 [2001/anonymous](/thanks-for-fixes.md#2001anonymous-readmemd) and
 [2004/burley](/thanks-for-fixes.md#2004burley-readmemd), making entries like
 [1985/sicherman](/thanks-for-fixes.md#1985sicherman-readmemd) and
 [1986/wall](/thanks-for-fixes.md#1986wall-readmemd) not need `-traditional-cpp`
-(all **EXTREMELY CHALLENGING**), fixing entries to work with clang (some being
-**EXTREMELY CHALLENGING** like
+(all **EXTREMELY HARD**), fixing entries to work with clang (some being
+**EXTREMELY HARD** like
 [1991/dds](/thanks-for-fixes.md#1991dds-readmemd)) or as much as possible (like
 [1989/westley](/thanks-for-fixes.md#1989westley-readmemd), a true masterpiece
 that is **INCREDIBLY HARD, _MUCH, MUCH MORE SO_ than any other fix!**), porting
-entries to macOS (some being **EXTREMELY CHALLENGING** like
+entries to macOS (some being **EXTREMELY HARD** like
 [1998/schweikh1](/thanks-for-fixes.md#1998schweikh1-readmemd)), fixing code like
 [2001/herrmann2](/thanks-for-fixes.md#2001herrmann2-readmemd) to work in both
-32-bit/64-bit which *can be* **EXTREMELY CHALLENGING**, providing alternate code
-where useful/necessary, fixing where possible dead links or removing them,
+32-bit/64-bit which *can be* **EXTREMELY HARD**, providing alternate code
+where useful/necessary, fixing where possible/removing dead links,
 typo/consistency fixes, improving **ALL _Makefiles_** and writing
 [sgit](https://github.com/xexyl/sgit) that we installed locally to easily run
 `sed` on files in the repo to help build the website. **THANK YOU VERY MUCH**
@@ -122,9 +122,15 @@ $ warning: this program uses gets(), which is unsafe.
 whereas without the warning it's much easier to see that it's a prompt.
 
 In some entries this change is not possible, in one-liners it might make them
-too long and in some entries it's more complicated than others because of the
-annoying fact that for '"compatibility" reasons' `fgets()` retains the newline
-and `gets()` does not. Nevertheless some of the entries have been updated this
+too long (though it's also been possible to do this in some cases) and in some
+entries it's more complicated than others because of the annoying fact that for
+'"compatibility" reasons' `fgets()` retains the newline and `gets()` does not.
+Some entries like [1992/adrian](1992/adrian/README.md) are more complicated in
+other ways due to the code generating other output; and because of how it works
+it would generate code that could not be compiled, simply because of spaces
+being added (a number of other fixes in that entry were also made)!
+
+Nevertheless some of the entries have been updated this
 way for the reasons described above and in the [FAQ](/faq.md).
 
 
@@ -143,7 +149,7 @@ the second line starts with `o, world!\n"`.
 
 By request, the original code is provided as
 [anonymous.alt.c](1984/anonymous/anonymous.alt.c) so that one can look at it and
-the famous tattoo:
+the famous tattoo which we also include here:
 
 ![1984-anonymous-tattoo.jpg](1984/anonymous/1984-anonymous-tattoo.jpg)
 
@@ -1299,27 +1305,68 @@ should have been removed.
 
 ## [1992/adrian](1992/adrian/adrian.c) ([README.md](1992/adrian/README.md]))
 
-Cody changed the location that it used `gets()` to be `fgets()` instead to make
-it safer and to prevent annoying warnings during compiling, linking or runtime
-(interspersed with the program's output).
+Cody fixed the code so that it will try opening the file the code was compiled
+from (`__FILE__`), not	`adgrep.c`, as
+the latter does not exist: `adgrep` is simply a link to `adrian` as `adgrep` is
+what the program was submitted as but the winner is `adrian`.
+
+Not fixing this would cause the program to crash if no arg was specified as the
+file did not exist. In doing this, at first the change to check for a NULL file
+was added. Then it was noticed that the problem is that `adgrep.c` was an
+incorrect reference that was never fixed in any of the files, not the code or
+the documentation. A fun fact is that one can do:
+
+```c
+W= fopen(wc>= 2 ? V[1] : __FILE__,"rt");if(!W)exit(1);
+```
+
+but one _CANNOT_ do:
+
+```c
+W= fopen(wc>= 2 ? V[1] : __FILE__,"rt");if(!W)exit(1);
+if (W==NULL)exit(1);
+```
+
+because `adwc.c` will be empty! The difference is it is on a newline, the check.
+This is an example of how a simple change in code can break it and this is also
+true of another change as further below.
+
+Cody also restored a slightly more obscure line of code that had been changed:
+
+```diff
+-   putc("}|uutsrq`_^bji`[Zkediml[PO]a_M__]ISOYIRGTNR"[i]+i-9,stderr);
++   putc(i["}|uutsrq`_^bji`[Zkediml[PO]a_M__]ISOYIRGTNR"]+i-9,stderr);
+```
+
+though it's questionable how much more (if at all) obscure that is.
+
+Cody also changed the location that it used `gets()` to be `fgets()` instead to
+make it safer and to prevent annoying warnings during compiling, linking or
+runtime (interspersed with the program's output). This was complicated because
+of how the other source files are generated, as noted above; simply changing the
+code could cause invalid output in the program which made other files fail to
+compile (for this example specifically, see below).
+
+One might think that simply changing the `gets()` to `fgets()` (with `stdin`)
+would work but it did not because `fgets()` stores the newline and `gets()` does
+not. That is well known but this code was relying on not having this newline
+(see also above).
+
+With `fgets()` the code `if(A(Y)) puts(Y);` ended up printing an extra line
+which made the generation of some files (like `adhead.c`) fail to compile. Why?
+There was a blank line after a `\` at the end of the first line of a macro
+definition!  Thus the code now first trims off the last character of the buffer
+read to get the same correct functionality but in a safe and non obnoxious way.
 
 Later Cody improved the change to `fgets()` to make it slightly more like the
 original. This still requires the additional stripping of the newline inside the
 loop but now it uses what looks like before, just a call to `gets()`.
 
-One might think that simply changing the `gets()` to `fgets()` (with `stdin`)
-would work but it did not because `fgets()` stores the newline and `gets()` does
-not.  The code was relying on not having this newline. With `fgets()` the code
-`if(A(Y)) puts(Y);` ended up printing an extra line which made the generation of
-some files (like `adhead.c`) fail to compile. Why? There was a blank line after
-a `\` at the end of the first line of a macro definition!  Thus the code now
-first trims off the last character of the buffer read to get the same correct
-functionality but in a safe way and non obnoxious way.
-
 But the improvement so that it uses `gets()` could not be changed to have the
 macro do the removal of the extra line (as in with a comma operator or a `&&`)
-as this caused compilation errors with another generated file (`adwc.c`). Thus
-after the `gets()` call in the line that looks like:
+as this, as might be expected from the above, caused compilation errors with
+another generated file (`adwc.c`)! Thus after the `gets()` call in the line that
+looks like:
 
 ```c
 while( gets(Y) ){ Y[strlen(Y)-1]='\0'; if(A(Y)) puts(Y); }
@@ -1327,8 +1374,8 @@ while( gets(Y) ){ Y[strlen(Y)-1]='\0'; if(A(Y)) puts(Y); }
 
 one must keep the `Y[strlen(Y)-1]='\0';` part and keep it there.
 
-This is a complex change due to the way the program and Makefile generate
-additional tools.
+These fixes are complex changes due to the way the program and Makefile generate
+the additional tools.
 
 
 ## [1992/albert](1992/albert/albert.c) ([README.md](1992/albert/README.md]))

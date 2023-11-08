@@ -23,7 +23,7 @@ int L=0,j= -28;
 void E(int i, int m,char*c)
 {   
  for(; i<43; i+=3) 
-   putc("}|uutsrq`_^bji`[Zkediml[PO]a_M__]ISOYIRGTNR"[i]+i-9,stderr);
+   putc(i["}|uutsrq`_^bji`[Zkediml[PO]a_M__]ISOYIRGTNR"]+i-9,stderr);
  fprintf(stderr,"(%d): %s\n" ,m,c);
  exit(1);
 }
@@ -77,7 +77,7 @@ main(int sl,char *j[]){
  v(s = V[1]; if (*V=strrchr(s,'/'))s=*V+1;  if(( !strncmp( s + (jr=strlen(s)) -
   (q=strlen(V[2]) ),V[2],q))&&jr!=q) s[jr-q] = 0;  puts(s); )
  int e,p,C=0,Q ,basename;
- W= fopen(wc>= 2 ? V[1] : "adgrep.c","rt");
+ W= fopen(wc>= 2 ? V[1] : __FILE__,"rt");if(!W)exit(1);
 echo| m^ e| 5| (int) .8| echo|
 wc |C ==o[o[C] .e] . 
 e| e==+p,p; s[o[C] .e ] 
