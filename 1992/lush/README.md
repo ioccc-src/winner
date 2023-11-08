@@ -26,7 +26,7 @@ For more detailed information see [1992 lush in bugs.md](/bugs.md#1992-lush).
 ## Judges' remarks:
 
 The program uses error messages issued by the C Preprocessor to
-generate its message to the world.  One program's error is another\
+generate its message to the world.  One program's error is another
 program's data!
 
 
