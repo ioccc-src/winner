@@ -760,6 +760,69 @@ you did change it to fprintf, even if you have the right number of args, you'd
 have to remove the outer `()` pair.
 
 
+### STATUS: known bug - please help us fix
+### Source code: [1992/albert/westley.c](1992/westley/westley.c)
+### Information: [1992/albert/README.md](1992/westley/README.md)
+
+Leo Broukhis, before he was an IOCCC judge, sent the IOCCC judges an email:
+
+```
+From: leo _at_ zycad -dot- com (Leo Broukhis)
+Date: Tue, 30 Jan 96 17:37:51 PST
+To: judges _at_ toad -dot- com
+Subject: IOCCC 1992 - a bug
+
+Dear Judges,
+
+albert.c (even in its fixed form) still has a bug. Although I don't
+remember the number that exposed the bug (afair, resulting in coredump)
+in albert.orig.c that has been fixed in albert.c,
+
+I've found a number exposing another bug: 10000000001 (that's 9 0's).
+Both albert and albert.orig loop without printing anything, although
+the first factor is 101 and is usually found in an instant.
+```
+
+
+A quick debugging session from Cody suggests that the problem with this value
+is that:
+
+```c
+if ( ppp->qq!=48 ) return;
+```
+
+is never reached because the value is never 48 (it is in other cases but not for
+the example input). It varies in value at this point. Observe that the next
+lines of code are:
+
+```c
+while ( ppp->qq==48 )
+{
+    printf("%ld\n",qqq-45);
+    *pp = ppp;
+    ppp = ppp->p;
+}
+
+```
+
+so it is expected that that value is 48, before printing the numbers, but if
+it's not it should not proceed at all, not even to go past that loop. In other
+words that loop should always be entered for at least one iteration. The check
+for the `!= 48` is also required.
+
+Perhaps more useful to know is that at this point in the code the code:
+
+```c
+if ((((( !(aa=setjmp(ppp->ppp))||aa==aaaaaa )))))
+```
+
+appears to be entered because of the return value of `setjmp()`, not the other
+condition.
+
+The alt version does fix the problem but it is not obfuscated and not like the
+entry itself. Can you fix the actual entry? You are welcome to try and do so.
+
+
 ## 1992 gson
 
 ### STATUS: uses gets() - change to fgets() if possible
