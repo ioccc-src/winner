@@ -24,12 +24,17 @@ If lost:
 
 ```sh
 ./whereami lat long
+
+# or, if you don't have curses installed:
+./westley lat long
 ```
 
 Where `lat` and `long` correspond to your latitude and longitude.
 
 NOTE: you **MUST** have a terminal that is at least 80 columns for this to show
-properly.
+properly. The `whereami` and `whereami.alt` code checks this but it is not
+prohibitive if it cannot be compiled and linked (it uses curses); instead one
+should just use the `westley` and `westley.alt` programs directly.
 
 
 ### Try:
@@ -37,6 +42,10 @@ properly.
 ```sh
 ./whereami 47 -122	# NOTE: - means west of meridian
 ./whereami 47 122
+
+# or if you don't have curses installed:
+./westley 47 -122
+./westley 47 122
 ```
 
 
@@ -56,6 +65,9 @@ make alt
 
 ```sh
 ./whereami.alt lat long
+
+# or if you don't have curses installed:
+./westley.alt lat long
 ```
 
 NOTE: this alternative version also needs a terminal with at least 80 columns.
@@ -67,6 +79,9 @@ To find the approximate place where this entry was judged, type:
 
 ```sh
 ./whereami 37 -122	# NOTE: - means west of meridian
+
+# or if you don't have curses installed:
+./westley 37 -122	# NOTE: - means west of meridian
 ```
 
 
@@ -95,6 +110,7 @@ checking the value that `putchar()` returns.  Scandalous!
 If you run it with fewer than 2 arguments, it will likely
 give you an exception, as it will access arguments that
 don't exist and characters before a string constant.
+
 
 ### How it works:
 
