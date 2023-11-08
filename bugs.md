@@ -707,6 +707,59 @@ when you're cheating it ends up winning! Can you figure that out as well?
 
 # 1992
 
+## 1992 adrian
+
+### STATUS: known bug - please help us fix
+### Source code: [1992/adrian/westley.c](1992/westley/westley.c)
+### Information: [1992/adrian/README.md](1992/westley/README.md)
+
+The author states that:
+
+```
+If the input contains errors, then an error message along
+with the number of the offending line will be printed to stderr.  The
+number of rules for each state is limited to 17.  If more than 17 rules
+are present, you get the error 'too_many_rules', and the state that was
+being processed is printed.  Error 'no_destination' occurs if you specify a
+set of characters, but no destination state, and error 'too_many_states'
+occurs if your automaton has more than 257 states.
+```
+
+but only `no_destination` appears to occur. It is possible that this is invalid
+test cases but it's also possible it simply is a bug.
+
+You are welcome to try and fix these problem(s).
+
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [1992/adrian/westley.c](1992/westley/westley.c)
+### Information: [1992/adrian/README.md](1992/westley/README.md)
+
+The author stated that if the file cannot be opened then it will print a system
+error but this is not the case unless it's showing a fault. However this was
+instead fixed by Cody as part of another problem that was detected so that the
+program just exits 1 if the file cannot be opened.
+
+Also, if _some_ of the programs are not given an arg they will very likely crash
+or do something funny. For instance `adsleep` and `adbasename`. This is very
+simple to fix but the author explicitly noted that this will segfault and it is
+that that is the error message.
+
+Another thing is that the code:
+
+```c
+printf((W,Y));
+```
+
+appears to be wrong because `W` is a `FILE *` and `Y` is a `char[]` but if one
+changes it to use `fprintf()` on the file (which, incidentally, is opened in
+read only mode which is another reason) with the `%s` specifier it will make
+`adhead` not work: it'll print nothing at all! So this code should not be
+changed either even if it appears to be wrong. Notice too a curious thing: if
+you did change it to fprintf, even if you have the right number of args, you'd
+have to remove the outer `()` pair.
+
+
 ## 1992 gson
 
 ### STATUS: uses gets() - change to fgets() if possible

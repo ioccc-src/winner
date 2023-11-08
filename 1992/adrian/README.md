@@ -4,6 +4,17 @@
 make all
 ```
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: known bug - please help us fix
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [1992 adrian in bugs.md](/bugs.md#1992-adrian).
+
 
 ### Try:
 
@@ -17,7 +28,8 @@ For the slow minded, try:
 ./adsleep 32767
 ```
 
-NOTE: if you do not specify an arg to the program it will segfault.
+NOTE: if you do not specify an arg some of the programs such as `adsleep` it
+will very likely segfault do something funny. This is supposed to happen.
 
 
 ## Judges' remarks:
@@ -32,9 +44,9 @@ NOTE: Some compilers have had trouble optimizing this entry.
 
 ### ADrian's GREP (adgrep)
 
-For those confused by the complexity of full-blown egrep style regular
-expressions, this program offers an alternative.  It implements an
-equivalent search, using a deterministic finite automaton.
+For those confused by the complexity of full-blown `egrep(1)` style regular
+expressions, this program offers an alternative.  It implements an equivalent
+search, using a deterministic finite automaton.
 
 A deterministic finite automaton consists of a finite set of states,
 along with transition rules to move from one state to another, an initial
@@ -48,25 +60,30 @@ accepting states, then the string is accepted.
 The deterministic finite automaton is specified as a series of rules for
 each state:
 
-       <state> chars1 <dest1> chars2 <dest2> ...
+```
+<state> chars1 <dest1> chars2 <dest2> ...
+```
 
-`chars1` is a list of characters (only the first 8 are significant) which
+`chars1` is a list of characters (_only the first 8_ are significant) which
 should trigger a transition to `<dest1>`.  `<dest1>` is another state which
 should have a similar specification somewhere.  A state is accepting if
-it is specified in square brackets: `[final]`, and state strings are
-significant to only eight characters.
+it is specified in square brackets: `[final]`; state strings are
+significant to only eight characters like `chars1`.
+
 
 ### Example 1: matches `^abc$`
 
-    <q0> a <q1>          The first state to appear is the start state
-    <q1> b <q2>
-    <q2> c [q3]
-    [q3]
+```
+<q0> a <q1>          The first state to appear is the start state
+<q1> b <q2>
+<q2> c [q3]
+[q3]
+```
 
 Technically, a deterministic finite automaton should have a rule for each
 possible input character at each state.  To simplify descriptions of the
 automata, if no rule is present, the string will not be accepted. Also,
-the `'.'` character matches any character if it occurs first in the
+the `.` character matches any character if it occurs first in the
 character list.
 
 
@@ -116,55 +133,55 @@ character list.
 [q5]
 ```
 
-
-With the automaton specification in 'filename', invoke the program by
+With the automaton specification in `filename`, invoke the program by
 typing
 
 ```sh
-./adgrep 'filename'
+./adrian filename
 ```
 
 
-It will read stdin and print out all the lines which the automaton
+It will read the file and print out all the lines which the automaton
 accepts.  If the file cannot be opened, a system error message will
 be printed.  If the input contains errors, then an error message along
-with the number of the offending line will be printed to stderr.  The\
-number of rules for each state is limited to 17.  If more than 17 rules\
-are present, you get the error `too_many_rules`, and the state that was\
-being processed is printed.  Error `no_destination` occurs if you specify a\
+with the number of the offending line will be printed to stderr.  The
+number of rules for each state is limited to 17.  If more than 17 rules
+are present, you get the error `too_many_rules`, and the state that was
+being processed is printed.  Error `no_destination` occurs if you specify a
 set of characters, but no destination state, and error `too_many_states`
 occurs if your automaton has more than 257 states.
 
 Running:
 
 ```sh
-./adgrep from < your_mailbox
+./adrian from < your_mailbox
 ```
 
-will perform a function similar to that of the unix from command.
+will perform a function similar to that of the unix `from` command.
 
-If no filename is specified on the command line, then `"adgrep.c"` is used
-as the specification for the automaton.  (This file has been renamed\
-to `adrian.c` by the judges.)  In this case, the program will search for\
+If no filename is specified on the command line, then `__FILE__` is used
+as the specification for the automaton.  (Originally `"adgrep.c"` the file was renamed
+to `adrian.c` by the judges but for more portability the arg was changed to
+`__FILE__`.)  In this case, the program will search for
 matches to the regular expression:
 
 ```
 ^.[^|C][^w[Q]*(Q|[w[]c).*|^.[C|]$
 ```
 
-I suggest using `adgrep.c` as input, and storing the output in `adwc.c`:
+I suggest using `adrian.c` as input, and storing the output in `adwc.c`:
 
 ```sh
-./adgrep < adgrep.c > adwc.c
+./adrian < adrian.c > adwc.c
 ```
 
-Compiling the new file, `mywc.c`, yields a clone of the unix wc command. It
-runs on one file (defaulting to `"adgrep.c"` if no file is given) and
-displays the number of lines, words, and bytes in the input file.
-
+Compiling the new file, `adwc.c`, yields a clone of the unix `wc` command. It
+runs on one file, defaulting to `"adrian.c"` if no file is given (again, this
+was changed to be `__FILE__`) and displays the number of lines, words, and bytes
+in the input file.
 
 Another possibly interesting automaton can be created by slightly
-adjusting the `adgrep.c` file.  Change the first line to read
+adjusting the `adrian.c` file.  Change the first line to read
 
 ```c
 /* . echo| . */
@@ -173,7 +190,7 @@ adjusting the `adgrep.c` file.  Change the first line to read
 and repeat the process above
 
 ```sh
-./adgrep <adgrep.c > adecho.c
+./adrian <adrian.c > adecho.c
 ```
 
 The new file now contains all lines which match
@@ -182,7 +199,7 @@ The new file now contains all lines which match
 ^.[^5|m^]*[m^]([e=p,;]|[^e=+p,;].*)$
 ```
 
-Compile and run.  This is an echo clone.  Note the efficient algorithm
+Compile and run.  This is an `echo(1)` clone.  Note the efficient algorithm
 employed.
 
 
@@ -199,10 +216,10 @@ you can search for matches to
 ^.[^W]*W..*$
 ```
 
-By some freak happenstance, lines of adgrep.c which match this regular
-expression form a unix head command.  It prints the first ten lines of
-the file specified on the command line (or adgrep.c if no file is
-specified).
+By some freak happenstance, lines of `adrian.c` which match this regular
+expression form a unix `head(1)` command.  It prints the first ten lines of
+the file specified on the command line or adrian.c if no file is
+specified (again this was changed to `__FILE__`).
 
 By setting the first line to
 
@@ -210,14 +227,14 @@ By setting the first line to
 /* . basename . */
 ```
 
-a clone of the unix basename command can be unearthed. The automaton will
+a clone of the unix `basename(1)` command can be unearthed. The automaton will
 search for
 
 ```
 ^.[^j]*jr.*$
 ```
 
-on standard input.  And the program which results by running adgrep.c
+on standard input.  And the program which results by running `adrian.c`
 through this filter requires two parameters.  The first is meant to be a
 filename, and the second, an extension.  All leading pathname components
 are removed from the filename, and the extension is removed if present.
@@ -235,11 +252,11 @@ you can search for
 ^.[^(~][^s]*sl.*$
 ```
 
-Filtering adgrep.c through this search yields a clone of the sleep
-command.  Invoke with a single integer parameter, and it will pause
-for that many seconds.
+Filtering `adrian.c` through this search yields a clone of the `sleep(1)`
+command.  Invoke with a single integer parameter, and it will pause for that
+many seconds.
 
-If either adbasename or adsleep is invoked with too few parameters,
+If either `adbasename` or `adsleep` is invoked with too few parameters,
 the program will print the error message:
 
 > Segmentation fault (core dumped)
@@ -248,15 +265,16 @@ the program will print the error message:
 machine.)  The four programs which read from stdin require lines
 shorter than 999 characters.
 
-The other info files are adrian.grep.[1-6] which contain the six
+The other info files are `adrian.grep.[1-6]` which contain the six
 examples that appear above, and from, which is used to emulate the
-unix from command.  For reasons of clarity, the name "from" should
-probably not be changed if possible.  I wouldn't want to be accused of\
+unix `from` command.  For reasons of clarity, the name `"from"` should
+probably not be changed if possible.  I wouldn't want to be accused of
 confusing people by giving the input files weird names.
 
 If you want to change the default input filename (line 80) you must be
 careful to choose a name that doesn't match the wrong search patterns,
-introducing extra lines into one of the programs.
+introducing extra lines into one of the programs (again, this was changed to be
+`__FILE__`).
 
 The program will produce at least one warning and possible several
 when compiled depending on the compiler.
