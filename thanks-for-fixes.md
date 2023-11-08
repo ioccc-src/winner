@@ -1399,6 +1399,9 @@ are obtained from the root variable Makefile `var.mk` via `include` which the
 program might not support (this has not been tested, however) and also because
 it appears that the syntax for this program is to use `$()` rather than `${}`.
 
+Cody also fixed another problem, unrelated, in the Makefile with the `.PHONY`
+rule where a line was not ended with a `\` but should have been.
+
 The author stated that in some systems like DOS with Turbo C, it might be
 necessary to include `time.h` so Cody did this as well.
 
