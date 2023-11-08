@@ -1411,6 +1411,9 @@ necessary to include `time.h` so Cody did this as well.
 Cody added a check for the right number of args, exiting 1 if not enough (2)
 used.
 
+He also added the [try.sh](1991/buzzard.1/try.sh) script to try out some
+commands that we suggested and some additional ones that provide for some fun.
+
 
 ## [1992/gson](1992/gson/gson.c) ([README.md](1992/gson/README.md]))
 

@@ -16,9 +16,7 @@ make all
 ### Try:
 
 ```sh
-./buzzard.1 0 10
-./buzzard.1 56 720
-./buzzard.1 1 521
+./try.sh
 ```
 
 
@@ -45,9 +43,10 @@ What you shouldn't think about `buzzard.1`:
 
 I didn't just submit the post-C-preprocessed output as an entry.
 
+
 #### Cute trick warning
 
-`buzzard.1` contains only a numeric printf, yet sometimes it prints out
+`buzzard.1` contains only a numeric `printf(3)`, yet sometimes it prints out
 short strings.
 
 
