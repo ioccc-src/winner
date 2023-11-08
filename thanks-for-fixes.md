@@ -2005,9 +2005,8 @@ Cody fixed both the supplementary program and the program itself (both of which
 segfaulted and once that was fixed only the binary was modified; it was not run
 but according to the author's remarks it should be executed). He managed to do
 this with linux but it will not work with any system that does not allow one to
-compile 32-bit binaries such as macOS. See
-[bugs.md](/bugs.md#2001anonymous-readmemd) for why this is; _this is **not** a
-bug, it's a feature_ inherent in what it does!
+compile 32-bit ELF binaries. See [bugs.md](/bugs.md#2001anonymous-readmemd) for
+why this is; _this is **not** a bug, it's a feature_ inherent in what it does!
 
 The following had to be done to fix this:
 
