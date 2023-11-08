@@ -35,17 +35,6 @@ For more detailed information see [1992 kivinen in bugs.md](/bugs.md#1992-kivine
 
 See also the author's remarks for other variations.
 
-In modern systems a known issue is that when you start the game everything
-starts to move to the right of the game window but if you click on the window it
-moves back to where it should be.
-
-This is supposed to happen.  As is written in the
-[The Jargon File](http://catb.org/jargon/html/F/feature.html):
-
-```
-That's not a bug, that's a feature.
-```
-
 
 ## Judges' remarks:
 
@@ -55,18 +44,18 @@ you have with the program.  :-)
 NOTE: Some systems do not need (or have) `-lsocket -lresolv -lnsl`.
 Such systems should compile using `-lX11`.
 
-NOTE: The original winning source `kivinen.orig.c`, found in the archive
-directory, assumed that exit returned a value which cause problems for some
-systems where exit returns void.  The file [kivinen.c](kivinen.c) avoids this problem.
+NOTE: The original winning source [kivinen.orig.c](kivinen.orig.c) assumed that
+exit returned a value which cause problems for some systems where exit returns
+void.  The file [kivinen.c](kivinen.c) avoids this problem.
 
 
 ## Author's remarks:
 
 ### X Entertainment Kit
 
-This kit includes three games from the early of video games for
-The X Window System Version 11 Release 5. It should work with
-earlier releases, though.
+This kit includes three games from the early era of video games designed for
+the X Window System Version 11 Release 5. It should work with earlier releases,
+though.
 
 
 #### Space Invaders
