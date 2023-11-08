@@ -163,25 +163,6 @@ adgrep: ${PROG}
 # alternative executable
 #
 alt: data ${ALT_TARGET}
-	${RM} -f ad.alt.temp adwc.alt.c adbasename.alt.c adecho.alt.c adhead.alt.c adsleep.alt.c
-	${SED} '1s/\..*\./. wc ./' adrian.alt.c > ad.alt.temp
-	-./adrian.alt ad.alt.temp <ad.alt.temp >adwc.alt.c
-	${CC} ${CFLAGS} -o adwc.alt adwc.alt.c
-	${SED} '1s/\..*\./. basename ./' adrian.alt.c > ad.alt.temp
-	-./adrian.alt ad.alt.temp <ad.alt.temp >adbasename.alt.c
-	${CC} ${CFLAGS} -o adbasename.alt adbasename.alt.c
-	${SED} '1s/\..*\./. echo| ./' adrian.alt.c > ad.alt.temp
-	-./adrian.alt ad.alt.temp <ad.alt.temp >adecho.alt.c
-	${CC} ${CFLAGS} -o adecho.alt adecho.alt.c
-	${SED} '1s/\..*\./. head; ./' adrian.alt.c > ad.alt.temp
-	-./adrian.alt ad.alt.temp <ad.alt.temp >adhead.alt.c
-	${CC} ${CFLAGS} -o adhead.alt adhead.alt.c
-	${SED} '1s/\..*\./. sleep ./' adrian.alt.c > ad.alt.temp
-	-./adrian.alt ad.alt.temp <ad.alt.temp >adsleep.alt.c
-	${CC} ${CFLAGS} -o adsleep.alt adsleep.alt.c
-	${RM} -f ad.alt.temp
-
-
 	@${TRUE}
 
 # data files
