@@ -1461,6 +1461,16 @@ included in their remarks. See the README.md for its purpose. It was NOT fixed
 for ShellCheck because the author deliberately obfuscated it.
 
 
+## [1992/imc](1992/imc/imc.c) ([README.md](1992/imc/README.md]))
+
+The original code, [imc.orig.c](1992/imc/imc.orig.c), assumed that `exit(3)`
+returned a value but this will cause problems where `exit(3)` returns void. The
+source code was modified to avoid this problem but like Cody did with otherfixes
+he made this more like the original by redefining `exit` to use the comma
+operator so that it could be used in binary expressions.
+
+
+
 ## [1992/kivinen](1992/kivinen/kivinen.c) ([README.md](1992/kivinen/README.md]))
 
 It was observed that on modern systems this goes much too quick. Yusuke created
