@@ -1329,7 +1329,7 @@ should have been removed.
 Cody fixed the code so that it will try opening the file the code was compiled
 from (`__FILE__`), not	`adgrep.c`, as
 the latter does not exist: `adgrep` is simply a link to `adrian` as `adgrep` is
-what the program was submitted as but the winner is `adrian`.
+what the program was submitted as but the winner is `adrian.c`.
 
 Not fixing this would cause the program to crash if no arg was specified as the
 file did not exist. In doing this, at first the change to check for a NULL file
@@ -1430,7 +1430,8 @@ necessary to include `time.h` so Cody did this as well.
 ## [1992/buzzard.1](1992/buzzard.1/buzzard.1.c) ([README.md](1992/buzzard.1/README.md))
 
 Cody added a check for the right number of args, exiting 1 if not enough (2)
-used.
+used. This was not originally done but at a time it was changed to be considered
+a bug so it was fixed at that point as it only took a few seconds.
 
 He also added the [try.sh](1991/buzzard.1/try.sh) script to try out some
 commands that we suggested and some additional ones that provide for some fun.
