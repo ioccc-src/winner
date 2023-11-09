@@ -4,8 +4,22 @@
 make all
 ```
 
-NOTE: there is an alternate version of this program that allows one to slow down
-the game. See the Alternate code section below.
+NOTE: there are two alternate versions of this program, both allowing one to
+slow down the game and the second one with movements more familiar to vi users.
+See the [Alternate code](#alternate-code) section below.
+
+
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [1993 rince in bugs.md](/bugs.md#1993-rince).
+
+
 
 
 ## To use:
@@ -18,7 +32,8 @@ where:
 
 `[cabbage]` is a CABBAGE description file  (default: `rince.c`)
 
-## Alternate code: slowing down the game
+
+## Alternate code
 
 Some people may want to slow down the game by increasing the
 value 17 in the lines:
@@ -34,7 +49,15 @@ and
 refresh(),c=select(k,&y,0,0,(v.tv_usec=1<<17,&v))?getch():0;
 ```
 
-to another value like 18 or 19. You can do this via the alternate code like:
+to another value like 18 or 19 which you can do with the alternate code.
+
+In the case of [rince.alt2.c](rince.alt2.c) the movement keys for the default
+game are slightly different and will feel more familiar to vi users: `h` for
+left, `l` for right (that was not changed) and `k` for fire (that was also not
+changed).
+
+
+### Alternate build:
 
 
 ```sh
@@ -43,7 +66,10 @@ make CDEFINE="-DZ=18" clobber alt
 
 Replace 18 with whatever number you wish.
 
-Use `rince.alt` as you would `rince` above.
+
+### Alternate use:
+
+Use `rince.alt` or `rince.alt2` as you would `rince` above.
 
 
 ## Judges' remarks:
@@ -65,37 +91,6 @@ considered finished when all the `m`s are then `M`s.
 
 For a brief design description, see [design.md](design.md).
 
-The `select(2)` from SunOS says:
-
-```
-BUGS
-
-...
-
-select() should probably return the time remaining from  the
-original  timeout,  if  any,  by modifying the time value in
-place.  This may be implemented in future  versions  of  the
-system.   Thus,  it  is  unwise  to  assume that the timeout
-pointer will be unmodified by the select() call.
-```
-
-Systems such as Linux do return the remaining time in timeout
-field (0 if no keys were pressed), but `rince` assumes that
-timeout remains unmodified.
-
-It has been suggested that:
-
-```c
-select(k,&y,0,0,&v)
-```
-
-should be replaced with:
-
-```c
-select(k,&y,0,0,(v.tv_usec=1<<whatever_you_want,&v))
-```
-
-where `whatever_you_want` is some integer such as 17 or 19.
 
 ### WARNING for SunOS 4.1.x:
 
@@ -104,14 +99,12 @@ compiler in the first place), this program may be used to log
 out very quickly.  Unfortunately, you can't do anything else
 with it.
 
-### Additional notes
 
-One may also need to do a `stty sane` if you kill the program
-to restore your terminal state. If that does not work try `reset`.
+### Additional notes
 
 Some people report that `rince` dumps core on their system.
 
-On some systems that use gcc, the curses.h used by gcc (typically
+On some systems that use gcc, the `curses.h` used by gcc (typically
 `/usr/local/include/curses.h` if not `/usr/include/curses.h`) is not compatible
 with the curses library (typically `/lib/libcurses.a` for static libraries)
 used. It has been suggested that the following gcc command may help:
@@ -149,11 +142,11 @@ Levels      : Ahh well... it's not *totally* generic.
 
 The proper definition for usage would be: `./rince [data_filename]`
 
+
 ### Portability
 
 I have compiled in on the following systems:
 
----
 ```
 System              OS              Compiler (and flags)
 DECstation 5000/240 Ultrix 4.2A     c89 -std
@@ -163,21 +156,20 @@ DECAlpha 3000/500   OSF/1 V1.2      c89 -std
 SGI Indigo (R4000)  IRIX 4.0.5F     cc -ansi
 Alliant FX2800      Conentrix 3.0.0 fxc
 ```
----
 
 \* I never said it worked! The guidelines state that you dislike programs that
 won't *compile* under both BSD or SysV `Unix`. This compiles, and indeed runs
 on all the others (both BSD and SysV) correctly.
 
 Alas, on Solaris it compiles, but mysteriously stops displaying output
-after a while until you quit with control C, when it all catches up again.
-I think the problem may lie in either select(), or curses, (or perhaps
+after a while until you quit with control-c, when it all catches up again.
+I think the problem may lie in either `select(2)`, or curses, (or perhaps
 conflict of the two).
 
-The use of `select()` no doubt makes it less portable to STRICT SysV
-machines. However I have tested this on several so-called SysV
-machines, and all of them support `select()`. In fact, the `select()` they
-support appears to be more portable between them than their `poll()` call.
+The use of `select(2)` no doubt makes it less portable to STRICT SysV machines.
+However I have tested this on several so-called SysV machines, and all of them
+support `select(2)`. In fact, the `select(2)` they support appears to be more
+portable between them than their `poll()` call.
 
 
 ### Obfuscation
@@ -201,7 +193,7 @@ Of course, all the usual obfuscation lurks within, such as combining
 multiple for loops into single ones; warped and twisted logic; plus a
 plethora of other minor oddities. It's up to you to discover some of them
 of course... Sometimes I have sacrificed length for obfuscation. It is all
-too easy to change the arguments in main to one character identifiers, but
+too easy to change the arguments in `main()` to one character identifiers, but
 in my opinion they add to obfuscation in this case by being longer.
 
 `lint` complains about lots of things. Firstly the use of curses immediately
@@ -218,7 +210,7 @@ insufficient memory) is performed.
 
 There is no 'end of game' checking method. Hence games like Sokoban rely
 on the user to decide when they have had enough. Also, there is no quit
-mechanism other than control C.
+mechanism other than control-c.
 
 
 ## Copyright and CC BY-SA 4.0 License:
