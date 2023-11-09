@@ -1570,6 +1570,14 @@ args (2). And not that we need the help or anything for this :-) but we
 encourage you to try the original :-)
 
 
+## [1993/cmills](1993/cmills/cmills.c) ([README.md](1993/cmills/README.md]))
+
+Yusuke suggested that with modern systems this goes too fast so he added a call
+to `usleep(3)` in a patch he made. Cody made it configurable at compilation by
+using a macro. This is in the alt version which is the recommended one to try
+first.
+
+
 ## [1993/dgibson](1993/dgibson/dgibson.c) ([README.md](1993/dgibson/README.md]))
 
 Cody fixed the script to work which assumed that `.` is in the path.
