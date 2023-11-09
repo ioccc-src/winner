@@ -30,16 +30,16 @@ By default, the number of colors is 6.  You may specify a
 value of between 1 and 15 colors.  See the author's notes
 for instructions of how to play.
 
-We look forward to more entries from the newer members of the\
+We look forward to more entries from the newer members of the
 International Internet community.
 
 
 ## Author's remarks:
 
 This program plays
-[Mastermind](https://en.wikipedia.org/wiki/Mastermind_(board_game), if you call it by a name ending by
-'d', otherwise it _solves_ Mastermind. Call it without parameters
-to use 6 digits (colors), or indicate the number of possible digits
+[Mastermind](https://en.wikipedia.org/wiki/Mastermind_(board_game), if you call
+it by a name ending by 'd', otherwise it _solves_ Mastermind. Call it without
+parameters to use 6 digits (colors), or indicate the number of possible digits
 (you cannot change the number of positions so easily).
 
 The number in parentheses is the number of possible combinations,
@@ -57,17 +57,22 @@ this.  An expression giving `(bulls * 16 + cows)` from two numbers
 is, however, quite straightforward :-) , as well as the arithmetic
 of binary coded colors-base numbers is.
 
+
 ### Limitations: maximum number of digits (colors) is 14 (1..F).
 
 Suggestions: Use terminal (or emulator) with non-destructive
 backspaces. Do "disable scrolling" on cmdtool or similar emulators.
 
-#### Bugs: Please don't type ^D at the prompt!!
+
+#### Bugs
+
+Please don't type ^D at the prompt!!
+
 
 ##### EXAMPLE: Suppose we think of 1234
 
 ```
-judges-385> ./leo
+$ ./leo
 (1296): 6433
 ?? 12       # one 3 is a bull, another is a cow, and 4 is a cow
 (160): 5363
@@ -83,7 +88,7 @@ judges-385> ./leo
 ##### EXAMPLE: Guess the computer's number
 
 ```
-judges-387> ./mind
+$ ./mind
 (1296): ???? 1122   # my strategy isn't the best, just as example
 00
 (256): ???? 3344

@@ -111,7 +111,7 @@ PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 DATA=
-TARGET= ${PROG}
+TARGET= ${PROG} mind
 #
 ALT_OBJ=
 ALT_TARGET= mind
