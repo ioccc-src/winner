@@ -38,7 +38,8 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-deprecated-non-prototype -Wno-unused-value
+CSILENCE= -Wno-deprecated-non-prototype -Wno-unused-value -Wno-unused-parameter \
+	  -Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -112,8 +113,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################

@@ -4,6 +4,16 @@
 make all
 ```
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [1993 vanb in bugs.md](/bugs.md#1993-vanb).
+
 
 ## To use:
 
@@ -33,8 +43,8 @@ The octal expression may contain:
 ```
 unary operators:	+, -
 binary operators	+, -, *, /, %
-hex numbers:		x or X follow by hex digits
-decimal numbers:	d or D follow by decimal digits
+hex numbers:		x or X followed by hex digits
+decimal numbers:	d or D followed by decimal digits
 octal numbers:		octal digits
 grouping:		()
 ```
@@ -57,12 +67,12 @@ decimal `-46` would be entered as `-d46` and not `d-46`.
 0. Of course, the fact that the program takes input and produces output in
 octal, rather than a more useful system like decimal, makes it "special".
 
-1. The entire program consists of a single expression, returned from main.
+1. The entire program consists of a single expression, returned from `main()`.
 
-2. There are no global or local variables other than the parameters to main.
+2. There are no global or local variables other than the parameters to `main()`.
 
 3. All of the constants in the program are expressed in octal - including the
-printf string.
+`printf(3)` string.
 
 4. The variables are given names which cause visual confusion with the octal
 constants.
@@ -77,8 +87,8 @@ time, to make the program harder to understand.
 
 ### How It Works:
 
-It's a recursive descent parser, calling `main`
-for all of its recursion. `O2` is a state variable, telling main
+It's a recursive descent parser, calling `main()`
+for all of its recursion. `O2` is a state variable, telling `main()`
 what grammar non-terminal to parse. `**O7` is the next character.
 `O3` is an intermediate result. Whenever you see a construct like:
 
@@ -86,10 +96,10 @@ what grammar non-terminal to parse. `**O7` is the next character.
 !(expression with O2)?
 ```
 
-it's decrementing & testing `O2` to see what state it's in. Comparisons
+it's decrementing and testing `O2` to see what state it's in. Comparisons
 involving `**O7` and octal constants are looking for certain characters.
 
-Here's the grammar `('e'` denotes the empty string) :
+Here's the grammar (`'e'` denotes the empty string) :
 
 
 ```
@@ -103,7 +113,7 @@ Here's the grammar `('e'` denotes the empty string) :
 <X>  ::=  [0-9]<X> | [A-F]<X> | [a-f]<X> | e
 <O>  ::=  [0-7]<O> | e
 ```
-\
+
 Here's how the grammar nonterminals map to octal state numbers:
 
 ```
