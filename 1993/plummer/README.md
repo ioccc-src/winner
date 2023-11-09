@@ -4,6 +4,8 @@
 make all
 ```
 
+There is an [alternate version](#alternate-code) that lets you slow down the
+output of the program for modern systems.
 
 ## To use:
 
@@ -16,7 +18,6 @@ where:
 - number is a number    (try 21701)
 - arg is any argument
 
-NOTE: an alternate version exists. See Alternate code section below.
 
 
 ### Try:
@@ -29,19 +30,28 @@ NOTE: an alternate version exists. See Alternate code section below.
 
 ## Alternate code:
 
-To use:
+This version sleeps in between writes for a compiled in constant microseconds
+via `usleep(3)`, defaulting at 200.
+
+
+### Alternate build:
+
 
 ```sh
 make alt
 ```
-
-Use `plummer.alt` as you would `plummer`.
 
 If you wish to change the time to sleep (default `200`) you can do so like:
 
 ```sh
 make clobber CDEFINE="-DZ=50" alt
 ```
+
+
+### Alternate use:
+
+
+Use `plummer.alt` as you would `plummer`.
 
 
 ### Alternate try:
@@ -77,6 +87,8 @@ return causes the line just written to be overwritten. `lint` (and most
 compilers) complain that there is no control path leading to a return from
 `main()`.  At 125 characters, it still fits on a single line (for those of us
 who don't mind ruining our eyes with 132 column screens).
+
+### Spoiler:
 
 The first statement points the base of `l` (the argument vector) to
 be the first argument by incrementing it.  It then assigns `O` to
