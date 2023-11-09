@@ -1570,6 +1570,11 @@ args (2). And not that we need the help or anything for this :-) but we
 encourage you to try the original :-)
 
 
+## [1993/dgibson](1993/dgibson/dgibson.c) ([README.md](1993/dgibson/README.md]))
+
+Cody fixed the script to work which assumed that `.` is in the path.
+
+
 ## [1993/jonth](1993/jonth/jonth.c) ([README.md](1993/jonth/README.md]))
 
 Both Cody and Yusuke fixed this so that it will work with modern systems. Yusuke

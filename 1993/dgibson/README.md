@@ -25,7 +25,7 @@ where:
 
 ## Judges' remarks:
 
-\
+
 We have provided the shell script [dgibson.sh](dgibson.sh) to make it easier
 to run this entry.  Run this shell script several times to
 see what happens.
@@ -69,7 +69,7 @@ small.
 When writing this program, my goal was to make each cell in the life
 grid expand to the code which calculates the fate of that cell.  In
 addition, the resulting program is a single expression, which makes it
-necessary to recurse on main in two "directions" simultaneously.
+necessary to recurse `main()` in two "directions" simultaneously.
 
 
 ## Copyright and CC BY-SA 4.0 License:
