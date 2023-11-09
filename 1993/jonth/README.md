@@ -1,13 +1,13 @@
 ## To build:
 
-```sh
-make all
-```
-
 NOTE: this entry requires `X11/Xlib.h` header file and the X11 library to
 compile. macOS users running Mountain Lion and later will need to download and
 install [XQuartz](https://www.xquartz.org) in order to compile and run this
 entry.
+
+```sh
+make all
+```
 
 
 ## To use:
@@ -22,7 +22,7 @@ entry.
 Use `h` and `l` to shift objects left or right.  Use `k` to
 rotate and press SPACE to drop.
 
-This program's output may be even more obfuscated when played\
+This program's output may be even more obfuscated when played
 on inverse video.  :-)
 
 
@@ -30,7 +30,7 @@ on inverse video.  :-)
 
 This is `jonth` (`jon's t(h)etris`) for the X Window System.
 
-This program is also an example of data abstraction.  The X array is\
+This program is also an example of data abstraction.  The X array is
 after initialization hidden by the well defined macros `t`, `u` and `F`.
 
 This program is highly portable as it runs on a "Notebook" size SPARC.
