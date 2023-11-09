@@ -4,6 +4,16 @@
 make all
 ```
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: missing file - please provide it
+```
+
+For more detailed information see [1993 ant in bugs.md](/bugs.md#1993-ant).
+
 
 ## To use:
 
@@ -23,8 +33,8 @@ make -f ant.test.mk
 
 ## Judges' remarks:
 
-See the author's POSIX P1003.2-like documentation file ant.txt for more
-information.
+See the author's POSIX P1003.2-like documentation file [ant.txt](ant.txt) for
+more information.
 
 This program demonstrates that POSIX doesn't guarantee readability.  :-)
 
@@ -33,14 +43,15 @@ This program demonstrates that POSIX doesn't guarantee readability.  :-)
 
 Some of the features of my entry are:
 
--  "Lengthy" POSIX.2 style specification and manual :) :)\
+-  "Lengthy" POSIX.2 style specification and manual :) :)
 -  Useful subset of POSIX.2 Extended Regular Expressions.
--  Recursive ERE parser/compiler that generates an NFA railroad.\
+-  Recursive ERE parser/compiler that generates an NFA railroad.
 -  Lazy NFA to DFA evaluation to improve performance speed.
 -  Code tested on a variety of platforms.
 -  Make driven test script.
 -  Can be compiled with ANSI or K&R C.
 -  Not a toy, but actually useful and usable on systems that use DOS.
+-  See also [ant.txt](ant.txt).
 
 
 ## Copyright and CC BY-SA 4.0 License:
