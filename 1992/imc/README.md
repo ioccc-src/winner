@@ -23,21 +23,23 @@ output.
 
 Of course, the source (layout) is self-documenting!  :-)
 
-NOTE: The original winning source assumed that exit() returned a value which cause
-problems for some systems where exit() returns a void.  The file [imc.c](imc.c) has been
-modified to avoid this problem.
+NOTE: The original winning source assumed that `exit(3)` returned a value which
+cause problems for some systems where `exit(3)` returns a void.  The file
+[imc.c](imc.c) has been modified to avoid this problem. The original file also
+declared argc to be a `long` which was fixed.
+
 
 
 ## Author's remarks:
 
 ### Portability
 
-This program depends upon the ASCII character set, and makes certain
-assumptions about the architecture. It naughtily declares the first
-argument to main as a long, and passes a pointer to long instead of char
-to fwrite, giving a length value of 32 bytes for an array of 8 longs. I
-guess that makes this program OK on most flavours of unix, but not on
-PCs.
+This program depends upon the ASCII character set, and makes certain assumptions
+about the architecture. It naughtily declares the first argument to `main()` as
+a `long`, and passes a pointer to `long` instead of `char` to `fwrite(3)`,
+giving a length value of 32 bytes for an array of 8 `long`s. I guess that makes
+this program OK on most flavours of unix, but not on PCs.
+
 
 ### About the program
 
@@ -45,9 +47,9 @@ This program has several parameters; each of them has a default, so the
 program runs happily without any parameters. If you supply an incorrect
 parameter, an obfuscated error message results! :-) Should you want to
 run the program without knowing what it does, then supplying the single
-letter t as a parameter is a good move. Otherwise, direct the output
+letter `t` as a parameter is a good move. Otherwise, direct the output
 into a file. The resulting file is most useful on SunOS, where the
-`file` command will tell you what to do with it. For best results with
+`file(1)` command will tell you what to do with it. For best results with
 the `t` option, you may want to change the definition of the `I` macro :-)
 Details appear later, though the formatting of the code is a large clue.
 
@@ -56,8 +58,8 @@ All the code in this program appears between the `;` and `)` in
 merely because it makes the code so much more impenetrable :-) In fact
 running a pretty printer on the code hardly improves it at all. This
 program has the obligatory macros with unmatched parentheses, and the
-cleverly arranged macro names and parameters to spell out "Ian Colliers
-Obfuscated C Code". If you expand macros, bear in mind that the more
+cleverly arranged macro names and parameters to spell out `"Ian Colliers
+Obfuscated C Code"`. If you expand macros, bear in mind that the more
 complex ones are best left as macros, because they have well-defined and
 nontrivial (IMHO) functions. These macros help to give the program's
 parameter format its flexibility. The parameters are sorted out in a
@@ -69,20 +71,20 @@ you see a `,` doesn't mean it has anything to do with commas! So I hope
 you will agree that this program is more than a little obfuscated...
 
 This is a Mandelbrot/Julia drawer. Normally it produces a monochrome
-Sun-format raster file. The version of xloadimage we have is able to
-view such files, and so is Sun's screenload command. [Note: the header
+Sun-format raster file. The version of `xloadimage` we have is able to
+view such files, and so is Sun's `screenload` command. [Note: the header
 contains eight 4-byte integers, the byte order in which depends upon the
 machine. On Sun workstations they are stored MSB first].
 
 The program may be asked to produce text output instead of a raster
 file. Then the characters defined in the `I` macro will be used to create
 up to 16 different shades of grey. Quite a respectable picture can be
-gained by printing a `130x110` output on a dot matrix 132 column printer
-with the linefeed set to 7 points. Text output also gives a good picture
-when used in an X window with small characters having a square aspect
-ratio.
+gained by printing a `130x110` output on a [dot matrix 132 column
+printer](https://en.wikipedia.org/wiki/Dot_matrix_printing) with the linefeed
+set to 7 points. Text output also gives a good picture when used in an X window
+with small characters having a square aspect ratio.
 
-The options accepted by the program follow. Each option is a letter; it
+The options accepted by the program follow. Each option is a single letter; it
 may be preceded with a minus sign (or any character in `[!-/]`) and may be
 followed by other letters, so for example:
 
@@ -105,7 +107,7 @@ be appended to the single-letter option, so
 
 all mean the same (note that in `-size123` all characters following the
 initial `s` are ignored). Numbers need not be specified, as each has a
-default value. In all cases except `j` and `t`, and `s` whenever it
+default value. In all cases except for `j`, `t`, and `s` whenever it
 appears before `t`, specifying an option without numbers has no effect.
 (specifying `-s -t` has the effect of producing text with the default
 raster size; not a good idea!).
@@ -114,28 +116,30 @@ raster size; not a good idea!).
 
 The options of this program are:
 
-`-centre x y`  (float x,y) Centre the picture at `x+iy` in the complex
-			 plane (default `x=0 y=0`)
+```
+-centre x y  (float x,y) Centre the picture at x+iy in the complex
+			 plane (default x=0 y=0)
 
 
-`-factor f`    (float f)   Use `f` pixels per unit of the plane (default
-			 `f=x/4` where `x` is the width)
+-factor f    (float f)   Use f pixels per unit of the plane (default
+			 f=x/4 where x is the width)
 
 
-`-julia  x y`  (float x,y) Draw a julia set. Use `x+iy` as the constant
-			 to add after squaring (default `x=0 y=0`)
+-julia  x y  (float x,y) Draw a julia set. Use x+iy as the constant
+			 to add after squaring (default x=0 y=0)
 
-`-limit  l`    (int l)     Use `l` iterations maximum (default `l=128`)
+-limit  l    (int l)     Use l iterations maximum (default l=128)
 
-`-mask   m`    (int m)     Use `m` as a mask in deciding the colour of each
-			 pixel (see below) (default `m=1`)
+-mask   m    (int m)     Use m as a mask in deciding the colour of each
+			 pixel (see below) (default m=1)
 
-`-size   x y`  (int x,y)   Produce an x-by-y output (default for raster
-			 `x=768 y=768`; default for text `x=63 y=23`)
+-size   x y  (int x,y)   Produce an x-by-y output (default for raster
+			 x=768 y=768; default for text x=63 y=23)
 
-`-text`                    Produce text instead of raster.
+-text                    Produce text instead of raster.
+```
 
-The colour of each point is determined by taking the bit-and of the
+The colour of each point is determined by taking the bitwise AND of the
 number of iterations and the mask. For a raster, the point is black
 (1-bit) if the result is zero, white otherwise. For text, the result of
 the operation determines the greyness of the character produced, with a

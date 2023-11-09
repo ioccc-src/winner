@@ -1,5 +1,5 @@
 #include		     <stdio.h> 
-#define			  ext(a) (exit(a),0)
+#define			  exit(a) (exit(a),0)
 #define I		  " .:\';+<?F7RQ&%#*"
 #define a			"%s?\n"
 #define n			"0?\n"
@@ -9,7 +9,7 @@
 #define L			sscanf
 #define i			stderr
 #define e			stdout
-#define r		       ext   (1)
+#define r		       exit   (1)
 #define s(O,B)	   L(++J,O,&B)!=1&&c>++q&&L(v[q],O,&B)!=1&&--q
 #define F(U,S,C,A) t=0,*++J&&(t=L(J,U,&C,&A)),(!t&&c>++q&&!(t=L(v[q],U,\
 		   &C,&A)))?--q:(t<2&&c>++q&&!(t=L(v[q],S,&A))&&--q
@@ -38,13 +38,13 @@
   )||(perror("malloc"),r),S-=(N/2)/f,x+=(U/2)/f):A==1?(B<U?(A=2,V
 	=    0,Q=x-B/f,j ||(R=Q),W&&E('\n',e),E(46,i)):(W&&E('\n',
 	     e),E('\n',i  ),h[1]=N,h[2]=U,h[4]=q,W||(fwrite(h,1,32,
-	      e),fwrite   (J,1,q,e)),free(J),ext(0))):A==2?(V<N?(j?
+	      e),fwrite   (J,1,q,e)),free(J),exit(0))):A==2?(V<N?(j?
 		(H=V/f	   +S,M=Q):(G=V/f+S,H=M=0),Y=0,A=03):((m&0x80
 		   )	   ||(m=0x80,p++),b&&(J[p++]=0),A=1,B++)):((Y
 			    <k&&(P=H*H)+(z=M*M)<4.)?(M=2*H*M+R,H=P-z
 			     +G,Y++):(W&&E(I[0x0f*(Y&K)/K],e),Y&K?J
 			         [p]&=~m:(J[p]|=m),(m>>=1)||/*/
-				  (m=128,u--),A==6?ext(1):B<u
+				  (m=128,u--),A==6?exit(1):B<u
 				 .	  e=3,l=2*c*/(       m
 					     =0x80,
 					    p++),V++
