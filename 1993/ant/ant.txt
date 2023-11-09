@@ -91,7 +91,7 @@ None.
 7.1.1. MATCHING A SINGLE CHARACTER
 
 An ERE ordinary character, a special character preceded by a
-backslash, or a period shall match a single character.  A bracket
+backslash (\), or a period (.) shall match a single character.  A bracket
 expression shall match a single character.  An ERE matching a single
 character enclosed in parentheses shall match the same as the ERE
 without parentheses would have matched.
@@ -203,12 +203,12 @@ The following rules and definitions apply to bracket expressions:
 	range point is the starting range point of a subsequent range
 	expression is undefined.
 
-	The hyphen character shall be treated as itself if it occurs
+	The hyphen (-) character shall be treated as itself if it occurs
 	first (after an initial ^, if any) or last in the list, or as
 	an ending range point in a range expression.  As examples, the
 	expressions  [-ac]  and  [ac-] are equivalent and match any of
-	the characters a, c, or -; the expressions  [^-ac]  and [^ac-]
-	are equivalent and match ant character except a, c, -; the
+	the characters a, c, or -; the expressions  [^-ac] and [^ac-]
+	are equivalent and match any character except a, c, or -; the
 	expression  [%--]  matches any of the characters between % and
 	- inclusive;  the expression  [--@]  matches any of the
 	characters between - and @ inclusive; and the expression
@@ -240,7 +240,7 @@ characters from EREs matching a single character:
 
     3)  When an ERE matching a single character or an ERE enclosed in
 	parentheses is followed by the special character question-mark
-	(?), together with that question mark it shall match what zero
+	(?), together with that question mark (?) it shall match what zero
 	or one consecutive occurrences of the ERE would match.  For
 	example, the ERE b?c matches the second character in the
 	string acabbbcde.
@@ -353,10 +353,10 @@ the command line with -DARRAY=nn, where 255 < nn < INT_MAX.
 
 11. FILES
 
-ag.c		Obfuscated source
-ag.txt		Manual for AG
+ant.c		Obfuscated source
+ant.txt		Manual for AG
 agag.c		Unobfuscated source
-test.mk		Makefile test driver for AG.
+ant.test.mk	Makefile test driver for AG.
 
 
 12. BUGS
