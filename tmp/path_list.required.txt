@@ -351,6 +351,7 @@
 1991/buzzard/.gitignore
 1991/buzzard/Makefile
 1991/buzzard/README.md
+1991/buzzard/buzzard.alt.c
 1991/buzzard/buzzard.c
 1991/buzzard/buzzard.orig.c
 1991/cdupont/.gitignore
@@ -385,13 +386,14 @@
 1991/westley/.gitignore
 1991/westley/Makefile
 1991/westley/README.md
+1991/westley/ttt.alt.sh
 1991/westley/ttt.sh
+1991/westley/westley.alt.c
 1991/westley/westley.c
 1991/westley/westley.orig.c
 1992/adrian/.gitignore
 1992/adrian/Makefile
 1992/adrian/README.md
-1992/adrian/adrian.alt.c
 1992/adrian/adrian.c
 1992/adrian/adrian.grep.1
 1992/adrian/adrian.grep.2
@@ -419,6 +421,7 @@
 1992/buzzard.1/README.md
 1992/buzzard.1/buzzard.1.c
 1992/buzzard.1/buzzard.1.orig.c
+1992/buzzard.1/try.sh
 1992/buzzard.2/.gitignore
 1992/buzzard.2/Makefile
 1992/buzzard.2/README.md
@@ -468,6 +471,7 @@
 1992/nathan/README.md
 1992/nathan/nathan.c
 1992/nathan/nathan.orig.c
+1992/nathan/try.sh
 1992/vern/.gitignore
 1992/vern/Makefile
 1992/vern/README.md
@@ -476,9 +480,13 @@
 1992/westley/.gitignore
 1992/westley/Makefile
 1992/westley/README.md
+1992/westley/try.sh
 1992/westley/westley.alt.c
+1992/westley/westley.alt.orig.c
 1992/westley/westley.c
 1992/westley/westley.orig.c
+1992/westley/whereami.alt.c
+1992/westley/whereami.c
 1993/ant/.gitignore
 1993/ant/Makefile
 1993/ant/README.md
@@ -489,6 +497,7 @@
 1993/cmills/.gitignore
 1993/cmills/Makefile
 1993/cmills/README.md
+1993/cmills/cmills.alt.c
 1993/cmills/cmills.c
 1993/cmills/cmills.orig.c
 1993/dgibson/.gitignore
@@ -551,6 +560,7 @@
 1993/vanb/.gitignore
 1993/vanb/Makefile
 1993/vanb/README.md
+1993/vanb/vanb.alt.c
 1993/vanb/vanb.c
 1993/vanb/vanb.orig.c
 1994/dodsond1/.gitignore
