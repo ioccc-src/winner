@@ -1642,6 +1642,19 @@ arg (as it was 0 at file scope already this is perfectly fine and it means
 there's no need to cast it to an int in the function call though that would also
 work).
 
+Cody also added the alt code, provided by the author, which is:
+
+```
+... a version of the program before it got formatted into the VIII,
+augmented with comments showing where each state begins. N1 and N2 are
+notes.
+```
+
+but fixed to work with clang as well.
+
+NOTE: the `N1` and `N2` are provided as notes in the README.md file describing
+this code. Other code is also described there.
+
 
 ## [1994/horton](1994/horton/horton.c) ([README.md](1994/horton/README.md))
 
