@@ -141,7 +141,7 @@ chris: ${PROG}
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-${PROG}: ${PROG}.c
+${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # data files
