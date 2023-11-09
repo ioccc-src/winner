@@ -10,13 +10,10 @@ For instance, assume you wish to make a boulder `o` roll off a hill `/`
 A standard automata would have 2 rules something like this:
 
 ```
-<pre>
 
 		o..			...	  
 		\..  -->  'o'		.o.  -->  '.'    
 		...			.\.   
-
-</pre>
 ```
 
 However, the system I devised, in order to keep things small and neat(!),
@@ -27,7 +24,6 @@ Hence:
 	.o.	  ...
 	.\.  -->  .\o
 	...	  ...
-
 ```
 
 This does of course have the odd problem with clashes. What if we want to

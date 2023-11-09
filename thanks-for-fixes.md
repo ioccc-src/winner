@@ -1610,7 +1610,11 @@ also checks for two args. See the README.md files for details.
 
 ## [1993/rince](1993/rince/rince.c) ([README.md](1993/rince/README.md]))
 
-Yusuke supplied a patch to get this to work in modern systems.
+Yusuke supplied a patch to get this to work in modern systems. This fix also
+applies the compatibility issue of `select(2)` described in the README.md file.
+
+Cody added a call to `endwin()` to help with terminal sanity after the program
+ends.
 
 Cody provided an alternate version to simplify slowing the game down. This was
 based on our suggestion that it might be desired to slow down but done in a way

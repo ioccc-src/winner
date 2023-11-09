@@ -120,4 +120,5 @@ int main(int open, U**exit) {
     t=(j*I*a(Q--,--Q)));
     t->y=J[Y][c]; J[Y][c]=t;
     fgets(t->x,20,C); }
+    endwin();
 }

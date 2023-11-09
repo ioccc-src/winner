@@ -5,7 +5,7 @@ make all
 ```
 
 NOTE: there is an alternate version of this program that allows one to slow down
-the game. See the Alternate code section below.
+the game. See the [Alternate code](#alternate-code) section below.
 
 
 ## To use:
@@ -18,7 +18,8 @@ where:
 
 `[cabbage]` is a CABBAGE description file  (default: `rince.c`)
 
-## Alternate code: slowing down the game
+
+## Alternate code
 
 Some people may want to slow down the game by increasing the
 value 17 in the lines:
@@ -34,7 +35,10 @@ and
 refresh(),c=select(k,&y,0,0,(v.tv_usec=1<<17,&v))?getch():0;
 ```
 
-to another value like 18 or 19. You can do this via the alternate code like:
+to another value like 18 or 19 which you can do with the alternate code.
+
+
+### Alternate build:
 
 
 ```sh
@@ -42,6 +46,9 @@ make CDEFINE="-DZ=18" clobber alt
 ```
 
 Replace 18 with whatever number you wish.
+
+
+### Alternate use:
 
 Use `rince.alt` as you would `rince` above.
 
@@ -97,6 +104,7 @@ select(k,&y,0,0,(v.tv_usec=1<<whatever_you_want,&v))
 
 where `whatever_you_want` is some integer such as 17 or 19.
 
+
 ### WARNING for SunOS 4.1.x:
 
 If you are running SunOS 4.1.x (assuming you can find an ANSI
@@ -106,12 +114,9 @@ with it.
 
 ### Additional notes
 
-One may also need to do a `stty sane` if you kill the program
-to restore your terminal state. If that does not work try `reset`.
-
 Some people report that `rince` dumps core on their system.
 
-On some systems that use gcc, the curses.h used by gcc (typically
+On some systems that use gcc, the `curses.h` used by gcc (typically
 `/usr/local/include/curses.h` if not `/usr/include/curses.h`) is not compatible
 with the curses library (typically `/lib/libcurses.a` for static libraries)
 used. It has been suggested that the following gcc command may help:
