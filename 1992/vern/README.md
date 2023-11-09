@@ -5,6 +5,19 @@ make all
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: known bug - please help us fix
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [1992 vern in bugs.md](/bugs.md#1992-vern).
+
+
+
 ## To use:
 
 ```sh
@@ -46,15 +59,15 @@ a slightly modified version with shorter lines has been provided.
 
 ## Author's remarks:
 
-This program plays chess.  You play the white pieces and the program
-the black pieces.  Moves are entered as a two-digit number specifying
-the coordinates of the piece to be moved followed by another two-digit
-number specifying the coordinates of where to move it.  Rows and
-columns are numbered starting with (0,0) for the upper-left-hand corner
-(black's queen's rook) and going to (7,7) for the lower-right-hand
-corner (white's king's rook).  For example, the PK4 opening for white
-is indicated as "64 44".  Moves are read using `scanf()` so care should
-be taken to not enter the wrong number of fields.
+This program plays chess.  You play the white pieces and the program the black
+pieces.  Moves are entered as a two-digit number specifying the coordinates of
+the piece to be moved followed by another two-digit number specifying the
+coordinates of where to move it.  Rows and columns are numbered starting with
+`(0,0)` for the upper-left-hand corner (black's queen's rook) and going to
+`(7,7)` for the lower-right-hand corner (white's king's rook).  For example, the
+`PK4` opening for white is indicated as `"64 44" (without the quotes)`.  Moves
+are read using `scanf()` so care should be taken to not enter the wrong number
+of fields.
 
 If the move you enter is illegal then you are just prompted again to
 move.  If the move is legal then the new position is displayed and the
@@ -62,14 +75,14 @@ program starts computing its response.  For every 64 board positions it
 examines a "." is printed.  Once it has chosen its move it simply
 displays the board updated to reflect the move.
 
-Your move is prompted for using a string like "1351 9 2 >".  The first
+Your move is prompted for using a string like `"1351 9 2 >"`.  The first
 number is how many board positions the program examined when computing
 its previous response.  The second number is its anticipated value for
 the move it just made (with larger numbers meaning an ultimately better
 board position for it), and the third number is the evaluation it
 assigns to the your current position (larger numbers meaning better
-positions for you).  A ">" indicates that you are not in check; for
-check it is changed to "!".
+positions for you).  A `>` indicates that you are not in check; for
+check it is changed to `!`.
 
 There are a few limitations on play:
 
@@ -89,17 +102,16 @@ recognized per se, but when selecting its move the program assigns a
 stalemate position a value of 0 so it will try for a stalemate if its
 other options are worse.
 
-The program takes one optional argument indicating the ply (lookahead)
-it should use.  The default is 2, which is enough to keep it from
-making flaming blunders.  The higher the ply, the better the play, and
-the longer you have to wait.  For example, at a ply of 2, a response to
-the PK4 opening takes about 1.8 CPU seconds on a SPARC ELC when
-compiled -O with Sun cc.  A ply of 3 takes 13 CPU seconds (and results
-in a different response to PK4) and a ply of 4 takes a little under 4
-CPU minutes (and for PK4 comes up with the same response as a ply of
-3).  A ply of 3 is in general good enough to avoid not only flaming
-blunders but also immediately stupid moves altogether.  A ply of 4
-will find all mate-in-two's.
+The program takes one optional argument indicating the ply (lookahead) it should
+use.  The default is 2, which is enough to keep it from making flaming blunders.
+The higher the ply, the better the play, and the longer you have to wait.  For
+example, at a ply of 2, a response to the `PK4` opening takes about 1.8 CPU
+seconds on a SPARC ELC when compiled `-O` with Sun `cc`.  A ply of 3 takes 13
+CPU seconds (and results in a different response to `PK4`) and a ply of 4 takes
+a little under 4 CPU minutes (and for `PK4` comes up with the same response as a
+ply of 3).  A ply of 3 is in general good enough to avoid not only flaming
+blunders but also immediately stupid moves altogether.  A ply of 4 will find all
+mate-in-two's.
 
 
 ### Obfuscation
@@ -111,7 +123,15 @@ As can be seen from the build file, certain combinations of these
 characters followed by a particular whitespace character are expanded
 at build time into much-needed text.  Without this hack the program
 wouldn't pass the character limit.  A nice side effect is that the
-initial source is gloriously difficult to peruse.
+initial source is gloriously difficult to peruse. In particular, the Makefile
+does:
+
+```sh
+sed <vern.c 's/{ /(/g;s/} /)/g;s/;       /#define /' | \
+    sed 's/}      /=/g;s/{        /i/g' >vern.tmp.c
+```
+
+and compiles `vern.tmp.c`.
 
 Second, the rather ho-hum step has been taking of naming each variable
 with a one or two letter identifier to render it meaningless (and save
@@ -126,23 +146,23 @@ called they return 1 if the current move is illegal for that piece and
 indicating the type of the piece (though the type can also be determined
 by comparing the function pointer with the function itself).
 
-Fourth, there are no independent routines for generating potential
-moves.  Instead, the program generates its moves by brute force: for
-every piece it controls on the board, it attempts to move it to every
-square on the board.  Those moves that are legal it then explores to
-see their effects (using alpha-beta search).  This tactic somewhat
-obfuscates the algorithm used by the program.
+Fourth, there are no independent routines for generating potential moves.
+Instead, the program generates its moves by brute force: for every piece it
+controls on the board, it attempts to move it to every square on the board.
+Those moves that are legal it then explores to see their effects (using
+[alpha-beta search](https://en.wikipedia.org/wiki/Alpha-beta_pruning)).  This
+tactic somewhat obfuscates the algorithm used by the program.
 
-Finally, there are three key constants that occur throughout the program:  64,
-8, and 3 (lg 8).  Rather than making these available at compile-time, which
-provides a hint as to what the program is up to, they are computed
+Finally, there are three key constants that occur throughout the program:  `64`,
+`8`, and `3` (`lg 8`).  Rather than making these available at compile-time,
+which provides a hint as to what the program is up to, they are computed
 probabilistically at run-time.  An instance of the ["Inspection
 Paradox"](https://en.wikipedia.org/wiki/Renewal_theory#Inspection_paradox) is
-used which happens to produce a value that on average is close to .64.  10000
-instances of this value are computed, added up, and then divided by 100.
-Sometimes the value produced will be 63 or 65 instead of 64 (but I've never
-observed any other values), so the result is then rounded to the nearest
-multiple of 4, and then the other constants are derived from it.
+used which happens to produce a value that on average is close to `.64`.
+`10000` instances of this value are computed, added up, and then divided by
+`100`.  Sometimes the value produced will be `63` or `65` instead of `64` (but
+I've never observed any other values), so the result is then rounded to the
+nearest multiple of `4`, and then the other constants are derived from it.
 
 
 ## Copyright and CC BY-SA 4.0 License:
