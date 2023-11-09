@@ -9,28 +9,31 @@ make all
 
 ```sh
 ./nathan
+# enter some text
 ```
 
 
 ### Try:
 
+To see some other fun uses:
+
 ```sh
-./nathan obfuscate < nathan.c > foobarf.c
-./nathan - obfuscate < foobarf.c > barfoof.c
-diff nathan.c barfoof.c
+./try.sh
 ```
 
 
 ## Judges' remarks:
+
 
 ### WARNING:
 
 The judges make no claim as to the strength or security
 of this program.  It is likely to be nil, or the next
 best thing to it.  Still, you might consider installing
-it in /usr/games/nathan.  :-)
+it in `/usr/games/nathan`.  :-)
 
-### NOTE:
+
+### Note from the judges about the winning category::
 
 The 'winning' category is also open to question.  One could say
 that it is a 'file obfuscator'.  One could also say that it
@@ -45,7 +48,7 @@ rules entries are ones that tend to 'stretch' the limits and
 take the contest into unexpected territory.
 
 
-### Historical notes from the judges about this entry
+### Historical notes from the judges about this entry:
 
 The US International Traffic in Arms Regulations controls certain exportations
 going out of the United States.  The U.S.  Munitions List gives the specific
@@ -83,13 +86,13 @@ re-distribute a program contest winner to the network!
 This program is a hello world text encryptor/decryptor. It uses an
 enigma (I think) style encryption algorithm, where the encryption
 key character is modified by a value, determined from the previous
-character.  Non-printable characters (those with ASCII values < ' '
-or > 0x7e) are passed unaltered, thus any kind of file may be
+character.  Non-printable characters (those with ASCII values < `' '`
+or > `0x7e`) are passed unaltered, thus any kind of file may be
 successfully processed, but if the original is printable, the
-processed file will be too. The input is read from stdin, and the
-output presented to stdout. The key, a text string, is presented as
+processed file will be too. The input is read from `stdin`, and the
+output presented to `stdout`. The key, a text string, is presented as
 a command argument. This is optional, and if omitted, the file is
-self-{de,en}crypted. To specify decryption, a "-" should be given
+self-{de,en}crypted. To specify decryption, a `-` should be given
 before the key. (Actually encryption and decryption proper inverse
 operations, so you can use decrypt to scramble and encrypt to
 descramble, if you're perverse.)
@@ -102,7 +105,7 @@ portable across many platforms. It passes `gcc -ansi -pedantic -O
 -Wall` with no warnings (You may get assignment in conditional
 warnings on other platforms though).  Because I've heard that
 conditional jumps slow down fast processors, I've eliminated all
-the ifs from the code, indeed, as its only one statement, it should
+the `if`s from the code; indeed, as its only one statement, it should
 compile to one instruction and a suitably designed CISC machine. To
 speed compilation, there is only one statement in the loop, so that
 another scoping level does not need to be opened.
@@ -116,12 +119,11 @@ In spite of the fact that it looks like a nice friendly hello world
 program, it isn't (as documented above). (Short lines have been padded,
 as you'll find if you look at an encrypted copy of the source.)
 
-I've also named some of the macros from commonly used functions,
-just to keep things muddy. Of course, all the variables are
-misnamed. The program is kept simply (one for statement), by
-serious overuse of , and ? :. These are really confusing when used
-together, nested or put in argument lists (is that a comma
-operator, or argument separator?)
+I've also named some of the macros from commonly used functions, just to keep
+things muddy. Of course, all the variables are misnamed. The program is kept
+simply (one for statement), by serious overuse of `,` and `?:`. These are really
+confusing when used together, nested or put in argument lists (is that a comma
+operator, or argument separator?).
 
 
 ## Copyright and CC BY-SA 4.0 License:

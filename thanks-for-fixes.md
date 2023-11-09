@@ -1470,7 +1470,6 @@ he made this more like the original by redefining `exit` to use the comma
 operator so that it could be used in binary expressions.
 
 
-
 ## [1992/kivinen](1992/kivinen/kivinen.c) ([README.md](1992/kivinen/README.md]))
 
 It was observed that on modern systems this goes much too quick. Yusuke created
@@ -1520,6 +1519,9 @@ referenced.
 
 Cody cynically noted that if he goes quiet, for instance if he no longer
 participates in the IOCCC, that it must be our fault! :-)
+
+Cody also added the [try.sh](1992/nathan/try.sh) script that runs a few commands
+that we suggested as well as one he provided.
 
 
 ## [1992/westley](1992/westley/westley.c) ([README.md](1992/westley/README.md]))
