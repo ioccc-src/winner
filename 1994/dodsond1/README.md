@@ -11,7 +11,9 @@ make all
 ./dodsond1
 ```
 
-NOTE: At the prompt, try entering `E3`.
+## Try:
+
+At the prompt, try entering `E3`.
 
 
 ## Judges' remarks:
