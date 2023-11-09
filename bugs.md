@@ -1011,6 +1011,62 @@ cannot be fixed for modern systems as the bug is long gone.
 An alternate version, however, does exist. See the README.md file for details.
 
 
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [1993/schnitzi/schnitzi.c](1993/schnitzi/schnitzi.c)
+### Information: [1993/schnitzi/README.md](1993/schnitzi/README.md)
+
+If the file cannot be opened it will very likely segfault. This should not be
+fixed except for an exercise to yourself, should you wish to try.
+
+This program uses `system(3)` so if you provide invalid characters in the
+question you might cause an error. For instance don't do this:
+
+```sh
+$ ./schnitzi schnitzi.info
+This program answers questions about paragraphs
+of text posed to it in English.  It is written
+in C.  Mark Schnitzius is the author of this
+program.
+
+The Loch Ness monster has been captured.  Elvis
+is alive.  Hostler was a woman.  The NASA moon
+landings were clearly faked.
+
+
+? What is foo'?
+```
+
+because doing so will result in something like:
+
+```
+sh: -c: line 0: unexpected EOF while looking for matching `''
+sh: -c: line 1: syntax error: unexpected end of file
+```
+
+with the program terminating. Other characters will also cause this problem.
+
+Of course if you do something like:
+
+```
+What is 'foo'?
+```
+
+it will work fine.
+
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [1993/vanb/vanb.c](1993/vanb/vanb.c)
+### Information: [1993/vanb/README.md](1993/vanb/README.md)
+
+No spaces are allowed in the expression.
+
+The program does no error checking so erroneous expressions will produce
+spurious results.
+
+The unary `-` is an operator so decimal `-46` should be entered as `-d46` and
+not `d-46`.
+
+
 # 1994
 
 
