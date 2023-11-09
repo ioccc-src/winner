@@ -1616,9 +1616,11 @@ applies the compatibility issue of `select(2)` described in the README.md file.
 Cody added a call to `endwin()` to help with terminal sanity after the program
 ends.
 
-Cody provided an alternate version to simplify slowing the game down. This was
-based on our suggestion that it might be desired to slow down but done in a way
-that makes it easy to configure at compile time. See the README.md for details.
+Cody provided two alternate versions to simplify slowing the game down and, for
+the second one, to make movement keys (of the default game) more familiar to vi
+users. The slowing down was based on our suggestion that it might be desired to
+slow down but Cody did it in such a way that makes it easy to configure at
+compile time. See the README.md for details.
 
 
 ## [1993/schnitzi](1993/schnitzi/schnitzi.c) ([README.md](1993/schnitzi/README.md]))

@@ -1012,6 +1012,17 @@ An alternate version, however, does exist. See the README.md file for details.
 
 
 ### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [1993/rince/rince.c](1993/rince/rince.c)
+### Information: [1993/rince/README.md](1993/rince/README.md)
+
+Although the code checks if the file can be opened or not, badly formatted files
+will cause problems. No other checks are performed either.
+
+There is no end of game checking method so you will have to quit the game
+through ctrl-c or such.
+
+
+### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1993/schnitzi/schnitzi.c](1993/schnitzi/schnitzi.c)
 ### Information: [1993/schnitzi/README.md](1993/schnitzi/README.md)
 

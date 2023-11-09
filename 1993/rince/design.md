@@ -26,12 +26,11 @@ Hence:
 	...	  ...
 ```
 
-This does of course have the odd problem with clashes. What if we want to
-roll two down boulders down simultaneously towards the same square.
-I perform no buffering, and so this situation is just a 'fight it out' and
-let which ever transition has priority win. Such a case may produce the
-following change of maps (depending on which 'roll' transition is used
-first).
+This does of course have the odd problem with clashes. What if we want to roll
+two boulders down simultaneously towards the same square.  I perform no
+buffering, and so this situation is just a 'fight it out' and let which ever
+transition has priority win. Such a case may produce the following change of
+maps (depending on which 'roll' transition is used first).
 
 ```
 	o.o			..o	    o..
@@ -40,7 +39,7 @@ first).
 ```
 
 I claim that it is possible to perform all of the 3x3 to 1x1 transitions in a
-3x3 to 3x3 based system. One other feature added in is a work around for the 'no
+3x3 to 3x3 based system. One other feature added in is a workaround for the 'no
 buffering' problem. If we define a space ship (as in the [Space
 Invaders](https://en.wikipedia.org/wiki/Space_Invaders) example) to fly right,
 and we are 'walking through' our map from top-left to bottom-right, then it is
@@ -84,7 +83,7 @@ is written as: `eabcdfghi512346789K`.
 
 If there are no keys needed for this transition, the character `*1` should
 be used instead. Now the format of the game description file is now
-the following: (angle brackets denote an 'entity' to be defined).
+the following (angle brackets denote an 'entity' to be defined):
 
 
 ```
