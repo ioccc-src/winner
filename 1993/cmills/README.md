@@ -1,7 +1,18 @@
 ## To build:
 
+We recommend you try the alt version first as with modern systems the original
+goes too fast. See the [original code](#original-code) section below to run the
+original.
+
+
 ```sh
-make all
+make alt
+```
+
+To configure how many microseconds to sleep before updates try:
+
+```sh
+make clobber CDEFINE="-DZ=200" alt
 ```
 
 NOTE: this entry requires `X11/Xlib.h` header file and the X11 library to
@@ -10,12 +21,24 @@ install [XQuartz](https://www.xquartz.org) in order to compile and run this
 entry.
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: known bug - please help us fix
+```
+
+For more detailed information see [1993 cmills in bugs.md](/bugs.md#1993-cmills).
+
+
+
 ## To use:
 
 ```sh
-DISPLAY="your_X_server_display"\
+DISPLAY="your_X_server_display"
 export DISPLAY
-./cmills [speed]	# must be run on an X11 server
+./cmills.alt [speed]	# must be run on an X11 server
 ```
 
 where:
@@ -23,9 +46,26 @@ where:
 `speed` is update speed from 1 to 9 (default is 9).
 
 
+## Original code:
+
+We recommend the version that uses `usleep(3)` to more easily see what is going
+on but you can use the original without any delays if you wish.
+
+
+### Original build:
+
+```sh
+make all
+```
+
+### Original use:
+
+Use `cmills` as you would `cmills.alt` above.
+
+
 ## Judges' remarks:
 
-From the San Jose Mercury News (May 15, 1993 page 20A "West Hackers\
+From the San Jose Mercury News (May 15, 1993 page 20A "West Hackers
 trounce East in computer quiz game"):
 
 
@@ -43,7 +83,7 @@ it brought down the house of Apple partisans...
 [The expression on Bill Gates' face was a sight to behold, as reported
 to us by several who were there].
 
-You must set `$DISPLAY` in your environment or the program will\
+You must set `$DISPLAY` in your environment or the program will
 dump core.  This is not a bug as the author documented it as
 a feature.  :-)
 

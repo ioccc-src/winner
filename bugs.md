@@ -999,6 +999,16 @@ not a misunderstanding).
 # 1993
 
 
+### STATUS: known bug - please help us fix
+### Source code: [1993/cmills/cmills.c](1993/cmills/cmills.c)
+### Information: [1993/cmills/README.md](1993/cmills/README.md)
+
+We are unsure if this is a problem with multiple platforms but in macOS at least
+the program appears to just shows a black screen.
+
+Can you fix it? We welcome your help.
+
+
 ## 1993 lmfjyh
 
 ### STATUS: INABIAF - please **DO NOT** fix

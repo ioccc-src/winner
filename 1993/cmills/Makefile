@@ -57,11 +57,11 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE=
+CDEFINE= -DZ=100
 
 # Include files that are needed to compile
 #
-CINCLUDE= -I ${X11_INCDIR} -I ${X11_INCDIR}/X11
+CINCLUDE= -I ${X11_INCDIR} -I ${X11_INCDIR}/X11 -include unistd.h
 
 # Optimization
 #
@@ -113,8 +113,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -140,6 +140,9 @@ chris: ${PROG}
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}: ${PROG}.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # data files
 #
