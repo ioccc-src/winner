@@ -1,11 +1,5 @@
 ## To build:
 
-This entry will not compile with gcc < 2.3.3 as it relied on a bug which was
-fixed in gcc 2.3.3 which was fixed a very long time ago now. There is an
-alternate version for [those of
-us](https://www.collinsdictionary.com/dictionary/english/everyone) with gcc >=
-2.3.3. See Alternate code section below for more details.
-
 If you have gcc < 2.3.3 you can build this entry like:
 
 ```sh
@@ -18,10 +12,16 @@ would print `Hello World!` when compiled.
 For an explanation of why and how this works see the author's remarks. The gist
 of the entry itself, however, is the file name _itself **is** the code_.
 
-NOTE: we delete the bogus file whether or not the compilation succeeds.
+NOTE: we delete the temporary file whether or not the compilation succeeds
+because it is an unsafe filename and not doing so would cause problems for
+anyone running `make`.
 
-There is an alternate version which simply does what the program did with gcc <
-2.3.3.
+This entry will not compile with gcc < 2.3.3 as it relies on a bug which was
+fixed in gcc 2.3.3 which was fixed a very long time ago now. There is an
+alternate version for [those of
+us](https://www.collinsdictionary.com/dictionary/english/everyone) with gcc >=
+2.3.3. See [Alternate code](#alternate-code) section below for more details.
+
 
 
 ### Bugs and (Mis)features:
@@ -46,11 +46,18 @@ If you have gcc < 2.3.3 (i.e. the entry can compile):
 
 ## Alternate code:
 
-To use:
+This version does what the code did but in a way that will work with modern
+compilers. We'd like to say there's something special about it but there isn't.
+
+
+### Alternate build:
+
 
 ```sh
 make alt
 ```
+
+### Alternate use:
 
 Use `lmfjyh.alt` as you would `lmfjyh` above. Note that other code could also be
 done with this bug; see the author's remarks for more details.
@@ -58,13 +65,13 @@ done with this bug; see the author's remarks for more details.
 
 ## Judges' remarks:
 
-\
 There's more than one way to get around disk quotas. :-)
 
 
 ## Author's remarks:
 
 "Practical and efficient method of compressing source code".
+
 
 ### Introduction
 
@@ -74,6 +81,7 @@ best with C-source code.
 
 As an example, I have taken a simple "Hello world!" program
 that should be familiar to all C-programmers.
+
 
 #### Listing 1: A simple "Hello World" program
 
@@ -85,13 +93,15 @@ main()
 }
 ```
 
+
 ### Packing method
 
 Normally a file name is used only to identify the file, but this new
-revolutionary method introduces a totally new concept: THE FILE NAME IS THE
-PROGRAM. There is no need to waste valuable disk space to store source code. The
-program is embedded in the file name, only a minor portion of it is inside the
-file.
+revolutionary method introduces a totally new concept: **THE FILE NAME _IS_ THE
+PROGRAM**. There is no need to waste valuable disk space to store source code.
+The program is embedded in the file name, only a minor portion of it is inside
+the file.
+
 
 #### Listing 2: Compressed "Hello world"
 
@@ -129,7 +139,7 @@ code in a source file as presented in listing 1.
 In a UNIX environment it is possible to write almost any program by
 including the code in file names. Since `/` is used to separate
 path components and cannot therefore exist in a file name, all
-features of C-language cannot be used.
+features of the C language cannot be used.
 
 In C, the `/` is used as a division operator and it may also be a
 part of a comment start and end identifier. This, however, is not a
@@ -155,6 +165,7 @@ Any ANSI conforming C-compiler that runs under a REAL operating
 system should be able to compile the code (there might be problems
 with some older UNIX variants).
 
+
 ### Compilers
 
 These worked:
@@ -168,16 +179,19 @@ These failed miserably:
 - cc (SunOS/Solaris)      - could not start cpp properly
 - cc/xlc (AIX)            - could not open source
 
+
 ### Other tools
+
 
 #### Debuggers: (tested at SunOS 4.1.2)
 
-- dbx   - Quit with a very 'informative' error message:
-	    "dbx: fatal error: Is a directory"
+- `dbx`   - Quit with a very 'informative' error message:
+	    `"dbx: fatal error: Is a directory"`
 
-- gdb   - Printed almost the same error message ": Is a directory".
-	It was, however, possible to step through the code but\
+- gdb   - Printed almost the same error message `": Is a directory"`.
+	It was, however, possible to step through the code but
 	not list it.
+
 
 #### Lints
 
@@ -186,14 +200,13 @@ None of the lints tested environments were able to parse the file.
 
 ### Conclusions
 
-The method can be used to compress any types of files and the
-compression ratios are even better when compressing other files
-than C-source.  For example plain text files may be compressed with
-INFINITE compression ratio. It is trivial task to compress a 100
-kilobytes long text file in about 400 files whose lengths are zero
-bytes.  The drawback is that the files must be unpacked before they
-can be used, so a large amount of temporary disk space is needed,
-while C-source is totally usable in the compressed form.
+The method can be used to compress any type of file and the compression ratios
+are even better when compressing files other than C source.  For example plain
+text files may be compressed with INFINITE compression ratio. It is trivial task
+to compress a 100 kilobytes long text file in about 400 files whose lengths are
+zero bytes.  The drawback is that the files must be unpacked before they can be
+used, so a large amount of temporary disk space is needed, while C source is
+totally usable in the compressed form.
 
 Evidently, there is a long way to go before this new programming
 technique may be widely used, since currently there are only few
