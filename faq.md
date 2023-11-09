@@ -503,9 +503,14 @@ As entries have been fixed it is entirely possible that some of the entries no
 longer fit within the year's size restrictions. Invariably the length of columns
 and/or number of rows have also changed.
 
-For the original version see the [/archive](/archive) directory where you can
-find all the original winning entries. In some cases the `winner.alt.c` is the
-original source code.
+The `winner.orig.c` file contains the original source code that was
+subjected to rule 2 of the given IOCCC.  You may also wish to see
+the [/archive](/archive) directory where you can find all the
+original winning entries as compressed tar files for a given year.
+
+In some cases the entry may have abused rule 2 and declared an
+"abuse of the rules" (although now blatant abuse of the rules to
+get around rule 2 size limits is discouraged).
 
 
 ## Q: I found a bug in a previous winner, what should I do?
