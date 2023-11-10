@@ -1837,7 +1837,8 @@ Note that the alt code does not use `fgets(3)` but rather `gets(3)`.
 
 Cody converted the spoiler compiler options (provided by the author) to be
 compiler commands and added a script [spoiler.sh](1994/westley/spoiler.sh) to
-automate the spoiler commands to make it easier to see the game in action.
+automate the spoiler commands to make it easier to see the game in action from
+start to finish.
 
 
 ## [1995/cdua](1995/cdua/cdua.c) ([README.md](1995/cdua/README.md]))

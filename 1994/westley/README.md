@@ -94,7 +94,8 @@ with "verbose" turned on).
 The goal of the game is to escape the dungeon.
 
 Here is a walk-through for the game, including a few dead-ends:
-\
+
+
 ### SPOILER
 
 ```sh
