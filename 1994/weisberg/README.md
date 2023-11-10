@@ -31,10 +31,11 @@ a core file.  :-)
 
 This entry confuses some C-preprocessors and some C-beautifiers.
 We found one cpp that processed this source differently when
-it was read on stdin instead of via `cc -E`.
+it was read on `stdin` instead of via `cc -E`.
 
 
 ## Author's remarks:
+
 
 ### Description
 
@@ -46,15 +47,17 @@ run to completion, so as an added feature, it will cease execution upon
 reception of a signal (any will do equally well), as well as in the
 event of a system shutdown or reboot.
 
+
 ### Bugs
 
-The alternative version ([weisberg.alt](weisberg.alt.c)) has never actually run
+The alternative version ([weisberg.alt.c](weisberg.alt.c)) has never actually run
 to completion. After running for close to a week it had reached somewhere around
 250e6, when it became necessary to test the reboot feature (which worked
 remarkably well). As there are quite a lot of primes to be found before reaching
-`INT_MAX`, the output produced can be quite overwhelming, it recommended to pipe
+`INT_MAX`, the output produced can be quite overwhelming so it's recommended to pipe
 the output through your favorite pager (`more` or `less`), and not output to a
 paper output device (unless you have *LOTS* of paper).
+
 
 ### Technical
 
