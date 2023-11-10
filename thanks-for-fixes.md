@@ -62,6 +62,84 @@ We are pleased to note the many contributions, **made since 2021 Jan 01**,
 on a winner by winner basis.
 
 
+## Notes about changing `gets()` to `fgets()` in some entries:
+
+Although this is discussed in the [FAQ](/faq.md) we want to say here simply that
+the problem with `gets()` is that in some systems a warning can be interspersed
+with the output which can be confusing, to say nothing of the annoyance of it
+(which can be fixed via `2>/dev/null` - and this is done with some entries in
+the to use/try sections - but which makes it more burdensome to run as there are
+a lot of entries that use it still).
+
+A good example was [1990/tbr](/thanks-for-fixes.md#1990tbr-readmemd) where one
+would see:
+
+```sh
+$ warning: this program uses gets(), which is unsafe.
+```
+
+whereas without the warning it's much easier to see that it's a prompt.
+
+In some entries this change is not possible, in one-liners it might make them
+too long (though it's also been possible to do it in some cases) and in some
+entries it's more complicated than others because of the annoying fact that for
+'"compatibility" reasons' `fgets()` retains the newline and `gets()` does not.
+
+Some entries like [1992/adrian](1992/adrian/README.md) were more complicated in
+other ways due to the code generating other output and because of how it works
+it would generate code that could not be compiled, simply because of spaces
+being added; nevertheless Cody did make this fix along with a number of other
+fixes in that entry.
+
+In any case some of the entries have been updated this way for the reasons
+described above and in the [FAQ](/faq.md).
+
+See also [bugs.md](/bugs.md) for a further discussion on the matter.
+
+
+## A note about bugs versus (mis)features:
+
+Over time, when working on making fixes for compilers, different platforms
+and other such things, the definition of a feature versus a bug has changed,
+sometimes even for just specific entries, and this has happened a number of
+times as well, back and forth.
+
+The main definition of a feature that is most common is that if the judges or
+the author (or authors) note that it crashes without the right number of args,
+then this is, although technically a bug, considered a feature for the contest.
+In general if something is documented then it is a feature and not a bug.
+
+A counterexample is [1990/theorem](#1990theorem-readmemd) which is considered
+such a beautiful program that along with a change to `fgets(3)` it had arg
+checks added. There are some other examples for reasons like this, a good one
+being [1998/schnitzi](#1993schnitzi-readmemd), also because it's such a
+beautiful program (other fixes were made as well which is shown below also).
+Both of these entries were fixed by Cody.
+
+But there are some others that are more questionable and border on tampering
+with the entry especially as some of them were documented by the author. These
+happened over time where sometimes we, the judges, changed the status to
+bug/(mis)-feature and when verifying the consistency, Cody fixed them as they
+only took a few seconds to fix; others he changed back to feature status and
+they were not fixed as the problems were documented by the author or us.
+
+Of course it can be argued that by fixing these things it makes it more user
+friendly for modern enjoyment but even so it's very often the wrong way to go
+about it. If the author does not mention it t hen it can be considered a bug
+that can be fixed.
+
+See the [bugs.md](/bugs.md) for more information regarding this situation and
+for many entries with a variety types of bugs that you can look at fixing too,
+if you wish to help! You will be thanked in this file should you do so. Fixing
+does not have to be just code: it can be a Makefile fix or something else
+entirely, even typos (in data files: usually not good idea in code even in
+comments though it happened once). An example that has happened several times is
+that if the optimiser is enabled the program might crash, sometimes in one
+platform and not others but other times in multiple platforms. This counts as a
+fix too, which you will see below should you look at the very long list of
+fixes, including the next section!
+
+
 ## Makefile fixes and improvements
 
 Cody made a variety of changes in all Makefiles, sometimes to get an entry to
@@ -82,17 +160,22 @@ compile or not work in some way.
 Where useful he added some notes to the Makefiles during compilation to let one
 know of certain problems or features that matter.
 
-There were some other fixes as well including typos in the Makefiles.
+There were some other fixes as well including typos in the Makefiles (though
+that usually does not mean it is worth a thank you note). Other times it was
+enabling or disabling the optimiser, sometimes causing other problems that also
+had to be fixed, a good example being [1986/marshall](#1986marshall-readmemd)
+(see the [compilers.md](1986/marshall/compilers.md) for the amusing details and
+all that had to be done to fix it).
 
-A lot of these fixes were done with his [sgit
+A lot of the fixes with the Makefiles that Cody made were done with his [sgit
 tool](https://github.com/xexyl/sgit).
 
 
 ## Typo fixes and consistency improvements
 
 Cody, being the IOCCC's resident corrections officer :-) (and a fine one at
-that, according to us :-) ), made many, many typ0 (... :-) ) fixes throughout
-the README.md files, scripts, other data files, Makefiles (see above) etc.
+that, we think :-) ), made many, many typ0 (... :-) ) fixes throughout the
+README.md files, scripts, other data files, Makefiles (see above) etc.
 
 He also updated the formatting of the README.md files (after renaming the old
 files to README.md) to proper markdown.
@@ -103,35 +186,7 @@ for everything (the remarks of authors, for instance, cannot be and should not
 be made consistent but adding markdown where necessary in the remarks is).
 
 A lot of these fixes were done with his [sgit
-tool](https://github.com/xexyl/sgit) but many were done manually as well.
-
-
-## A note about changes `fgets()` 
-
-Although this is discussed in the [FAQ](/faq.md) we want to say here simply that
-the problem with `gets()` is that in some systems a warning can be interspersed
-with the output which can be confusing, to say nothing of the annoyance of it. A
-good example was [1990/tbr](/thanks-for-fixes.md#1990tbr-readmemd) where one
-would see:
-
-
-```sh
-$ warning: this program uses gets(), which is unsafe.
-```
-
-whereas without the warning it's much easier to see that it's a prompt.
-
-In some entries this change is not possible, in one-liners it might make them
-too long (though it's also been possible to do this in some cases) and in some
-entries it's more complicated than others because of the annoying fact that for
-'"compatibility" reasons' `fgets()` retains the newline and `gets()` does not.
-Some entries like [1992/adrian](1992/adrian/README.md) are more complicated in
-other ways due to the code generating other output; and because of how it works
-it would generate code that could not be compiled, simply because of spaces
-being added (a number of other fixes in that entry were also made)!
-
-Nevertheless some of the entries have been updated this
-way for the reasons described above and in the [FAQ](/faq.md).
+tool](https://github.com/xexyl/sgit) as well but many were done manually too.
 
 
 ## [1984/anonymous](1984/anonymous/anonymous.c) ([README.md](1984/anonymous/README.md))
@@ -177,7 +232,7 @@ there was another problem so the change is kept in place.
 
 A note about the fix is that the `#define`d macros that were used still exist
 but most are not used; they are left in just to make it look more like the
-original entry. Nevertheless they cannot be used.
+original entry. Nevertheless those cannot be used.
 
 Later on Cody improved the fix to make it look rather more like the original by
 bringing back an extern declaration (slightly changing it to match the symbol
@@ -369,7 +424,9 @@ different compilers. This is a brief summary but much more is explained in the
 [compilers.md](1986/marshall/compilers.md) file, giving which compilers had
 which problems in which systems: the optimiser being enabled in one compiler let
 it work but broke it in the other; and disabling it would let it work in the one
-that didn't work but suddenly the one that worked wouldn't work.
+that didn't work but suddenly the one that worked wouldn't work. And by 'not
+working' it did not work in more than one way and for different platforms it had
+other problems as well.
 
 This problem was only after getting clang to compile, of course. It did not
 compile it because it is more strict about the second and third args to `main()`
@@ -503,7 +560,7 @@ The fix is that now the specifier is a `%2s` for a `char A[100]` (yes 100 is
 overkill; there's no good reason for it here: it was just arbitrarily selected).
 
 For the level if `atoi(A)>10||<0` (see next part) or `!isdigit(*A)` it goes back
-and prompts again. The level is checked for >=0||<=10, perhaps incorrectly or
+and prompts again. The level is checked for `>=0||<=10`, perhaps incorrectly or
 perhaps not, because in the code that variable is checked for `<10` and if that
 is the case it is incremented by 2. I do not know the rules of the game and
 neither do I know what the author had in mind so I chosen 10 as the maximum.
@@ -527,7 +584,7 @@ But for the move it can happen after due to the fact the condition of the
 Cody also made this ever so slightly like the original code by adding back the
 `#define D define` even though it's unused. This was done for both versions as
 well (the one with the board and the one without, the entry itself with the
-limitations of the contest).
+size constraints of the contest).
 
 
 ## [1987/wall](1987/wall/wall.c) ([README.md](1987/wall/README.md]))
