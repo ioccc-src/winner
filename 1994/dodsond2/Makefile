@@ -39,7 +39,7 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-return-type \
-	-Wno-deprecated-non-prototype -Wno-strict-prototypes
+	-Wno-deprecated-non-prototype -Wno-strict-prototypes -Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -58,7 +58,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE=
+CDEFINE= -DW=3
 
 # Include files that are needed to compile
 #
@@ -114,8 +114,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -137,6 +137,9 @@ ${PROG}: ${PROG}.c
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # data files
 #

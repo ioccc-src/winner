@@ -15,7 +15,7 @@
 #define M isdigit
 #define N 30
 #define P getchar()
-G a[N][3],b[N],c[N],d[N],e[N],f[N],g[N],i,j=0,k,l=0;
+G a[N][3],b[N],c[N],d[N],e[N],f[N],g[N],i=W>0?W:0,j=(W>0?W:0)*20,k,l=0;
 main(){m();n();A;}m(){G o;srandom(getpid());do{I(o=0;
 o<N;e[o++]=3){J(o,0)=J(o,1)=J(o,2)=-1;c[o]=d[o]=g[o]=0;
 b[o]=N*2;}r(0);s();}F(s());t();}s(){G o,p;I(o=0;o<N;o++){
@@ -33,8 +33,8 @@ c[J(r,0)]||c[J(r,1)]||c[J(r,2)]);F(1){E"You are in room %d\n",r);
 K(f[r]){i++;E"You found an arrow\n");j+=20;f[r]=0;}K(b[r]==0){
 E"Wumpus meat\n");j-=100;A;}K(d[r]){E"You fell in a pit\n");j-=50;
 A;}K(r==k){K(i){i--;l++;j-=20;E"You are missing an arrow!\n");
-}K(l==3){E"You catch the robber and recover all 3 arrows!\n");
-i=3;j+=200;k=-1;}L{E"The robber scurries away\n");do{k=D;}
+}K(l>=3+(W>0?W:0)){E"You catch the robber and recover all %d arrows!\n",(W>0?W:0)+3);
+i=(W>0?W:0)+3;j+=200;k=-1;}L{E"The robber scurries away\n");do{k=D;}
 F((c[k])||(d[k])||(b[k]==0)||(k==r));}}K(c[r]){c[r]=0;c[D]=1;r=D;
 E"The bats pick you up and drop you in room %d\n",r);j-=10;}L{
 K(b[r]<3)E"You smell a wumpus\n");
@@ -45,7 +45,7 @@ K(!g[r]){j+=10;g[r]=1;}do{v=P;K(v=='s')q(r);K(v=='l')break;
 K(v=='i')E"You have %d arrow%c\n",i,i-1?'s':' ');K(v=='q')A;}
 F(!M(v));K(M(v)){n=v-'0';v=P;K(M(v))n=n*10+v-'0';
 K((J(r,0)==n)||(J(r,1)==n)||(J(r,2)==n))r=n;}}}}q(r)G r;{G z,n;
-char v;K(i==0){E"You have no arrow\n");H;}i--;
+char v;K(i==0){E"You have no arrows\n");H;}i--;
 E"Shoot into which rooms?  ");I(z=0;z<4;z++){j-=20*z;do{v=P;
 K((v=='\n')&&(i>0)){j-=50;E"You have %d arrow%c\n",i,i-1?'s':' ');H;}else K(i==0)H;}F(!M(v));
 n=v-'0';v=P;K(M(v))n=10*n+v-'0';K((J(r,0)==n)||(J(r,1)==n)||(J(r,2)
