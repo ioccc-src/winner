@@ -111,12 +111,12 @@ First off, a secret message becomes visible that was not visible
 in the original program.  Also, much of the code shows up in
 different places in the flipped program than it appeared in the
 first program.  My first version of this program was perfectly
-symmetrical along the diagonal, but later found out there were
+symmetrical along the diagonal, but I later found out there were
 interesting ways to break the symmetry.  The best way to see this
 is to load both the original and flipped versions of the program
 into an editor and switch back and forth between them rapidly.
 
-C tokens longer than a character (such as "main") proved difficult
+C tokens longer than a character (such as `main()`) proved difficult
 to use in both the original and flipped versions (after flipping,
 they show up as a string of single letters on successive lines).
 However, I found that it was possible to get around this through
@@ -125,9 +125,7 @@ used nearly every single-character token in the "shared" area;
 however, it proved to be too large for contest guidelines (although
 the code itself is only about 300 characters, the extra whitespace
 needed to pad it put it over the limit -- it nearly filled a 79 by
-79 area, adding up to over 4000 total characters).  I will provide
-this other version to anyone interested -- contact me by email
-at schnitzi@east.isx.com.
+79 area, adding up to over 4000 total characters).
 
 
 ## Copyright and CC BY-SA 4.0 License:
