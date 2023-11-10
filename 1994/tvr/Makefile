@@ -63,7 +63,7 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE= -I ${X11_INCDIR} -I ${X11_INCDIR}/X11
+CINCLUDE= -I ${X11_INCDIR} -I ${X11_INCDIR}/X11 -include stdio.h
 
 # Optimization
 #
