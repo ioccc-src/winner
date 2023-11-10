@@ -4,6 +4,17 @@
 make all
 ```
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: known bug - please help us fix
+STATUS: uses gets() - change to fgets() if possible
+```
+
+For more detailed information see [1994 tvr in bugs.md](/bugs.md#1994-tvr).
+
 
 ## To use:
 
@@ -54,9 +65,11 @@ fix it without breaking something else?
 
 This program contains four pairs of fractals/effects and three methods of
 animating them. There are two windows for a pair of fractals, one of which
-contains static fractal (e.g. Mandelbrot set) and the other an animating one
-(e.g. Julian set) which is derived from the same formula as the static one. Only
-one pair of fractals can be displayed in one process.
+contains static fractal (e.g. [Mandelbrot
+set](https://en.wikipedia.org/wiki/Mandelbrot_set)) and the other an animating
+one (e.g. [Julia set](https://en.wikipedia.org/wiki/Julia_set)) which is derived
+from the same formula as the static one. Only one pair of fractals can be
+displayed in one process.
 
 To animate the fractal, you must move your mouse on the static
 fractal window and the animated fractal will be calculated based
@@ -64,14 +77,13 @@ on mouse coordinates. If you are on one of the two non-stable
 modes (more about them later) you can stabilize the picture by
 pressing a mouse button. Pressing it does nothing on stable mode.
 
-
 The three modes are:
 
 - non-stable mode with simple 'attractor searcher'
 - non-stable mode
 - stable mode
 
-On Mandelbrot/Julian mode the stable mode calculates normal Julian set according
+On Mandelbrot/Julia mode the stable mode calculates normal Julia set according
 to the Mandelbrot coordinates (mouse position). On non-stable modes the picture
 slowly transforms to the same picture as on the stable mode but transformation
 can take some time. Usually, and especially if changes are relatively small
@@ -83,11 +95,9 @@ when you first move your mouse to non-black areas of the Mandelbrot set, then
 back to near the center. In some cases 'attractor searcher' can be seen as
 noise.
 
-
-The first of the fractal pairs is Mandelbrot/Julian set as mentioned before. The
-second is a variation of that. The third makes nice 3d-look-a-like effects and
+The first of the fractal pairs is Mandelbrot/Julia set as mentioned before. The
+second is a variation of that. The third makes nice 3D-look-a-like effects and
 the fourth is a variation of that with more nice effects.
-
 
 
 ### Usage:
@@ -103,8 +113,9 @@ actual `screenlength/width`. I.e. if you use 128 as a second parameter, you will
 get two 256x256 windows.
 
 The program needs reasonable values for both of these parameters to
-operate. A good first try could be "0 128" or "8 128". The `colormap` has
-to be redirected into the programs standard input via the `colormapfile`.
+operate. A good first try could be `0 128` or `8 128`. The `colormap` has
+to be redirected into the programs standard input via the `colormapfile`
+parameter as shown above.
 
 Note that you will need approximately `(second_parameter^2)*64` bytes of free
 main memory or the machine will swap heavily (memory references are quite random
@@ -179,7 +190,7 @@ Mandelbrot set is calculated from the formula
 		       n+1   n    0
 ```
 
-and the Julian set is calculated from the formula
+and the Julia set is calculated from the formula
 
 ```
 
@@ -193,7 +204,7 @@ where `C` is the same throughout the picture.  Both calculation are finished
 when `|Z| >= 2.0`.  For the other fractals, the basic methods are the same but
 the formula is different (look at the source ;) )
 
-Note that Mandelbrot and Julian on this program aren't exactly correct. Find out
+Note that Mandelbrot and Julia on this program aren't exactly correct. Find out
 why ;)
 
 
@@ -203,7 +214,7 @@ why ;)
 happen if a request of some of the resources fails e.g. getting colors.
 - No expose event handling.
 - It may be possible that the program starts drawing before window is mapped as
-there is no XSync(). In that case drawn data is lost. Also, some window manager
+there is no `XSync()`. In that case drawn data is lost. Also, some window manager
 configurations places the second window on top of the first and again drawn
 data will be lost. By default, windows are placed next to the other in the
 top left corner of the screen.

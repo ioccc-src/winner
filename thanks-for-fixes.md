@@ -1823,6 +1823,16 @@ For an interesting problem that occurred here and what was done to solve it,
 check the [bugs.md](bugs.md) file.
 
 
+## [1994/tvr](1994/tvr/tvr.c) ([README.md](1994/tvr/README.md]))
+
+Cody made this use `fgets(3)` instead of `gets(3)`. In this case the newline had
+to be terminated but it was a pretty straightforward fix. `gets()` was defined
+to use `fgets()` and the inclusion of `stdio.h` had to be added but to make it
+more like the original entry this was done in the Makefile.
+
+Note that the alt code does not use `fgets(3)` but rather `gets(3)`.
+
+
 ## [1994/westley](1994/westley/westley.c) ([README.md](1994/westley/README.md]))
 
 Cody converted the spoiler compiler options (provided by the author) to be

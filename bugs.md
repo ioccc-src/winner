@@ -1332,6 +1332,32 @@ if it checked for `!= EOF`.
 Since it works there is no need to fix this except for a challenge to yourself.
 
 
+## 1994 tvr
+
+### STATUS: known bug - please help us fix
+### Source code: [1994/tvr/tvr.c](1994/tvr/tvr.c)
+### Information: [1994/tvr/README.md](1994/tvr/README.md)
+
+
+
+The judges said the following in their remarks:
+
+```
+The fractally minded may be able to detect that mode 0 does not calculate
+Mandelbrot/Julian sets correctly.  Can you find the bug?  Better still, can you
+fix it without breaking something else?
+```
+
+You are welcome to try and fix it and open a pull request, providing that it
+doesn't break something else.
+
+
+### STATUS: uses gets() - change to fgets() if possible
+
+Although the entry itself was changed to use `fgets(3)` the alt code was not. It
+would be better if both used `fgets(3)`.
+
+
 # 1995
 
 

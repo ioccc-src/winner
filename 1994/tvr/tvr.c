@@ -1,4 +1,5 @@
 #include <X11/Xlib.h>
+#define gets(B) fgets((B),C-(B)+256,stdin),(B[strlen(B)-1]='\0'),1
 #define M     typedef
 #define N(	 a)=r=(a)+j
 #define S f(; G; )D[B[R=i[--G]]=F+=F<p]++
