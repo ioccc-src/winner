@@ -58,13 +58,13 @@ The usage is:
 
 where the first three are literal words, `cycle` is a positive integer (0 is
 ignored), and `freq` is an integer (default = 0) that's supposed to be in the
-range 0..100 (bigger values are allowed, however).  Invalid parameters and
-options usually stop the command line parsing (but not always, why?). The actual
+range `0..100` (bigger values are allowed, however).  Invalid parameters and
+options usually stop the command line parsing (not always but why?). The actual
 position of the word options does not matter, so `./leo right Variable 1 70` is
 equivalent to `./leo 0 0 0 1 Variable 70 right`, etc.
 
-If `Variable' is used, `cycle' is almost ignored (see below) but has
-to be present if you want to enter `freq' (and you usually do).
+If `Variable` is used, `cycle` is almost ignored (see below) but has
+to be present if you want to enter `freq` (and you usually do).
 
 Some options to try (besides the obvious):
 
@@ -77,7 +77,9 @@ This draws the basic pattern I invented in high school:
 You take a big sheet of "arithmetic" paper and draw a line
 of length 1 (between 2 crossings) at the center of the sheet:
 
+```
 				|
+```
 
 This makes 2 open ends (I think the notion of an "open end" doesn't
 require explanations) in step 1. Now, until there are open ends in step N,
@@ -162,7 +164,7 @@ Step 6:
 
 depending on the desired "hairiness". The original (paper-based)
 algorithm was "hairy", but it didn't look as good on the screen.
-\
+
 The program cannot handle non-hairy mode 100% correctly - step 6 happens
 to be
 
@@ -179,7 +181,7 @@ to be
 
 ```
 
-and so on: the horisontal symmetry has been lost. That's why
+and so on: the horizontal symmetry has been lost. That's why
 the opening for step 1 is not a single line but a cross:
 
 ```
@@ -187,7 +189,7 @@ the opening for step 1 is not a single line but a cross:
                                 / \
 ```
 
-To watch it repeatedly (as a screensaver), use:
+To watch it repeatedly (as a screen saver), use:
 
 ```sh
 ./leo 2 | cat - /dev/tty | gs -
@@ -201,7 +203,7 @@ The command line:
 
 draws the same as above. Try:
 
-```sh\
+```sh
 ./leo Variable 1 1 | cat - /dev/tty | gs -
 ```
 
@@ -218,7 +220,7 @@ if you want to pipe the output to a printer.
 begin 664 spoiler1
 M*%1H92!C;VQO;B J:7,J('1H92!S96-R970@<W=I=&-H("T@=&AE('-P86-E
 =(&)E9F]R92!I="!I<R!N;W0@82!M:7-T86ME*0II
-\
+
 end
 ```
 
@@ -231,7 +233,7 @@ as far as it is > 1. To figure out what difference
 ```
 
 and other values of `cycle`; smaller values usually require
-smaller values of `freq` for the patterns to be non-trivial
+smaller values of `freq` for the patterns to be non-trivial.
 
 The options `deep` and `right` make the patterns to be drawn in different
 manners. Try all the examples above with `deep` and with `right`.
@@ -256,8 +258,10 @@ even want to explain what it does. You've been warned!
 Special thanks:
 
 - to PostScript syntax designers for the curly braces;
-- to Dmitry Mendeleyev for his periodic table of elements;
-- to Hydrogen for having 2 more isotopes.
+- to [Dmitry Mendeleyev](https://en.wikipedia.org/wiki/Dmitri_Mendeleev) for his
+[periodic table of elements](https://en.wikipedia.org/wiki/Periodic_table);
+- to [Hydrogen](https://en.wikipedia.org/wiki/Hydrogen) for having 2 more
+[isotopes](https://en.wikipedia.org/wiki/Isotope).
 
 
 ## Copyright and CC BY-SA 4.0 License:
