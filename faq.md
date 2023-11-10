@@ -297,9 +297,12 @@ Some entries should not have modern system versions replaced. See below.
 
 ## Q: I can't get some entries to work in 64-bit systems that don't support 32-bit!
 
-Unfortunately some older entries are non-portable and require 32-bit support of
+Unfortunately some older entries are non-portable and require 32-bit support or
 32-bit binaries. A problem system here is macOS Catalina (10.15) as as of that
-version macOS no longer supports 32-bit binaries.
+version macOS no longer supports 32-bit binaries. If the entry acts on a certain
+type of binary, say ELF, then that will also be a problem depending on the
+entry. For example [2001/anonymous](2001/anonymous/README.md) requires 32-bit
+ELF binaries.
 
 There are numerous example entries that require 32-bit binaries. We have tried
 to note these in both the respective Makefiles and README.md files but it is
@@ -308,6 +311,9 @@ possible that some were missed. These entries are very likely in the
 for 64-bit systems. Many were fixed to work with modern systems but some are
 supposed to only work with 32-bit systems so any updated version of these
 entries should be an alternate version.
+
+Other entries like [2001/herrmann2](/thanks-for-fixes.md#2001herrmann2-readmemd)
+now work with 32-bit AND 64-bit systems.
 
 
 ## Q: Under macOS I can't compile some entries and/or they don't work right. Why?
