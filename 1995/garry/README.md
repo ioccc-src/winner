@@ -64,7 +64,7 @@ This program is a file filter, designed to do environment-expansion and
 incorporating the ability to create binary from escaped data in the
 environment variables.
 
-The calling syntax is pretty simple, just use it with stdio-redirection
+The calling syntax is pretty simple, just use it with `stdio`-redirection
 or inside pipelines, e.g.:
 
 ```sh
@@ -79,10 +79,12 @@ cat all_my_files/* | ./garry | lp
 
 The syntax of the conversion of the input file is as follows: To include the
 value of an environment variable in the output file, place the name of the
-variable between "$"-signs in the input, e.g.:
+variable between `$`-signs in the input, e.g.:
 
-	My Home-Directory is: $HOME$
-	I'm using the path: $PATH$
+```
+My Home-Directory is: $HOME$
+I'm using the path: $PATH$
+```
 
 Unknown Env-variables or malformed expressions are ignored and kept intact.
 

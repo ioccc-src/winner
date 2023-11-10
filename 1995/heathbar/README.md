@@ -37,7 +37,7 @@ end, I made three critical observations:
 
 1. If there's one thing computers are good at, it's math.
 2. Simple operations take less time than complicated ones.
-3. Every C program seems to contain the word "main".
+3. Every C program seems to contain the word `main`.
 
 Based on #1, I knew that the Fastest Program had to be one that
 performed addition. From #2, I reasoned that it ought to directly
@@ -46,7 +46,7 @@ high-level, fuzzy-logic, artificial-intelligence, neural-net,
 client-server, object-oriented abstractions like the C language "+"
 operator. And it was obvious from #3 that the program should
 resemble, as closely as possible, a long sequence of the familiar
-word "main" repeated over and over, so the computer would be
+word `main` repeated over and over, so the computer would be
 comfortable running the program and wouldn't get distracted dealing
 with unfamiliar variable names.
 
