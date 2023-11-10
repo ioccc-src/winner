@@ -1760,7 +1760,12 @@ bugs.md](/bugs.md#1994-dodsond2) for more details.
 
 Cody fixed this to check that four args were specified. With the use of the C
 pre-processor macro and inclusion of stdlib.h in the Makefile the layout of the
-source is exactly the same column width and no additional lines were added.
+source is exactly the same column width and no additional lines were added. This
+was done during one of the times where this was changed to bug status, for
+better or worse.
+
+Cody also fixed the Makefile which was causing alt code to be compiled when it
+shouldn't be.
 
 
 ## [1994/ldb](1994/ldb/ldb.c) ([README.md](1994/ldb/README.md]))
