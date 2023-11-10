@@ -70,7 +70,7 @@ It is simple to make the program print other strings.  Each
 alphabetical character from a to z is printed out as its
 opposite:
 
-```c
+```
 a->z b->y c->x etc
 ```
 
