@@ -5,10 +5,51 @@ make all
 ```
 
 
+There is an [alternate version](#alternate-code) that allows you to cheat,
+giving you a configurable amount of arrows at the start of the game.
+
+
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+STATUS: known bug - please help us fix
+```
+
+For more detailed information see [1994 dodsond2 in bugs.md](/bugs.md#1994-dodsond2).
+
+
 ## To use:
 
 ```sh
 ./dodsond2
+```
+
+## Alternate code:
+
+This version allows you to choose how many arrows to start with, instead of the
+default 0. If one tried specifying a value < 0 it will set it to 0.
+
+### Alternate build:
+
+
+```sh
+make alt
+```
+
+The default number of arrows in this version is 3 but if you want to change it,
+say to 5, try:
+
+```sh
+make clobber CDEFINE="-DW=5" alt
+```
+
+### Alternate use:
+
+```sh
+./dodsond2.alt
 ```
 
 
@@ -50,19 +91,19 @@ style hack, the [dodsond2.c](dodsond2.c) is further obfuscated.
 ## Author's remarks:
 
 Go searching for the Wumpus in the Caverns of Doom!  But be careful...
-There are pits and bats waiting to seal your fate, as well as a\
-stealthy robber lurking in the shadows.  Move through the rooms by\
-typing the number of the adjacent room you wish to visit.  You can\
-feel a breeze if there is a pit in an adjacent room.  A rustling sound\
-will tell you that bats are nearby.  The scent of the evil Wumpus can\
+There are pits and bats waiting to seal your fate, as well as a
+stealthy robber lurking in the shadows.  Move through the rooms by
+typing the number of the adjacent room you wish to visit.  You can
+feel a breeze if there is a pit in an adjacent room.  A rustling sound
+will tell you that bats are nearby.  The scent of the evil Wumpus can
 be detected from 2 rooms away.
 
-To win, you must find one or more arrows, determine where the Wumpus\
-is, and shoot him, all without falling into a pit or becoming the\
-next meal for the Wumpus.  To shoot an arrow, type `s`.  Then give a\
-list of the rooms you want to shoot into.  The rooms must be\
-connected in the order you list them, or else the arrow may bounce\
-back and hit you.  An arrow can go through as many as four rooms.\
+To win, you must find one or more arrows, determine where the Wumpus
+is, and shoot him, all without falling into a pit or becoming the
+next meal for the Wumpus.  To shoot an arrow, type `s`.  Then give a
+list of the rooms you want to shoot into.  The rooms must be
+connected in the order you list them, or else the arrow may bounce
+back and hit you.  An arrow can go through as many as four rooms.
 But beware that shooting an arrow and missing the Wumpus may
 awaken him.
 
