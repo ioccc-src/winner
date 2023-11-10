@@ -1,4 +1,13 @@
+<!DOCTYPE html>
 <HTML>
+<head>
+<style>
+img {
+  max-width: 100%;
+  height: auto;
+}
+</style>
+</head>
 <BODY TEXT="#000000">
 
 <center><img alt="IOCCC" SRC="png/ioccc.png"></center>\
@@ -96,8 +105,10 @@ compilers might do different things, have different defects or other issues.
 It is very likely in this case that the code was fixed to work for modern
 systems as part of the reworking of the website. If you have this problem in
 some entries you should look at the original code as in `winner.orig.c` or
-`prog.orig.c`. Sometimes the original is in an alt version like `winner.alt.c`
-or `prog.alt.c`.
+`prog.orig.c`. `winner` is the directory name. For instance, one of Landon's
+favourite entries of all time is [1984/mullender](1984/mullender/README.md) and
+the winner there would be `mullender`. Sometimes the original is in an alt
+version like `winner.alt.c` or `prog.alt.c`.
 
 
 ## Q: Why have some entries that originally used `gets()` been modified to use `fgets()`? Doesn't this tamper with the entry too much?
@@ -151,7 +162,7 @@ When we say `entry` below, in a file name, we mean either the winner name or
 `mullender.orig.c`, `mullender.alt.c` and `mullender.c`. For later years, it
 would be instead `prog.orig.c`, `prog.alt.c` and `prog.c`.
 
-The following `make` rules exist:
+The following `make` rules exist to make a difference:
 
 * `make diff_orig_prog`:
     - This rule will show the diff of the _original_ source to the
@@ -352,11 +363,39 @@ usually away with `stty echo`. Sometimes you can also get away with `stty sane`.
 will too but it won't reset the terminal).
 
 
-## Q: How do I get X11 entries to work with macOS Mountain Lion and later?
+<a name="#X11macos"></a>
+## Q: How do I get X11 entries to work with macOS?
 
-In macOS Mountain Lion and beyond to run X11 applications one needs to install
-[XQuartz](https://www.xquartz.org). This will let you compile, link and run X11
-applications.
+As an example we will use [1993/jonth](1993/jonth/README.md) which works well
+with macOS.
+
+First of all you will need to install the [most recent
+XQuartz](https://www.xquartz.orgl), preferably on an [Apple supported version of
+macOS, preferably the most recent version](https://support.apple.com/macos).
+Then open the "XQuartz" application (usually located in
+`/Applications/Utilities/XQuartz.app`) by typing at the command line:
+
+```sh
+open /Applications/Utilities/XQuartz.app
+```
+
+With the "XQuartz" application open you will get an [X Window System
+Manager](https://www.x.org/wiki/) launched with an [Xterm window
+shell](https://en.wikipedia.org/wiki/Xterm) started:
+
+<img alt="xterm-launch in macOS" src="png/xquartz-shell.png">
+
+At this point you need to cd to the winning directory and compile it. For example:
+
+<img alt="compiling an entry in xterm in macOS" src="png/xquartz-entry-compile.png">
+
+And then run the program as directed by the `README.md` file. For example with
+`1993/jonth`:
+
+<img alt="running 1993/jonth in macOS" src="png/xquartz-1993-jonth.png">
+
+Note that you can compile the code in your regular terminal prior to opening
+XQuartz, should you wish to.
 
 
 ## Q: How do I compile and run entries that use SDL1/SDL2 ?
@@ -1092,3 +1131,5 @@ not work completely) due to these defects, for instance
 As you can see, using `clang` has some additional problems to work out but if
 you can get your entry to work well in `clang` it might very well be considered
 better than other entries.
+</body>
+</html>
