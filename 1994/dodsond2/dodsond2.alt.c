@@ -33,7 +33,7 @@ c[J(r,0)]||c[J(r,1)]||c[J(r,2)]);F(1){E"You are in room %d\n",r);
 K(f[r]){i++;E"You found an arrow\n");j+=20;f[r]=0;}K(b[r]==0){
 E"Wumpus meat\n");j-=100;A;}K(d[r]){E"You fell in a pit\n");j-=50;
 A;}K(r==k){K(i){i--;l++;j-=20;E"You are missing an arrow!\n");
-}K(l>=3+(W>0?W:0)){E"You catch the robber and recover all %d arrows!\n",(W>0?W:0)+3);
+}K(l==3+(W>0?W:0)){E"You catch the robber and recover all %d arrows!\n",(W>0?W:0)+3);
 i=(W>0?W:0)+3;j+=200;k=-1;}L{E"The robber scurries away\n");do{k=D;}
 F((c[k])||(d[k])||(b[k]==0)||(k==r));}}K(c[r]){c[r]=0;c[D]=1;r=D;
 E"The bats pick you up and drop you in room %d\n",r);j-=10;}L{
