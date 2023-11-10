@@ -10,7 +10,8 @@ make alt
 This alternate version uses `usleep(3)` with `Z` (defined in the Makefile,
 default `3000`) microseconds to make it easier to see the maze being solved in
 real time. You can redefine `Z` to reconfigure it in case it's going too slow,
-too fast :-) or you're doing some strange experiment like making it 100000.
+too fast :-) or you're doing some strange experiment like making it 100000
+(which is actually fun :-) ).
 
 
 ### Bugs and (Mis)features:
@@ -86,7 +87,7 @@ This could be used as the basis of an a-maze-ing screen exerciser.
 ## Author's remarks:
 
 A program that generates a maze, and then solves it, all this being seen by the
-user.  Some highlights of obfuscation are: 3 steps functions in one - `main()`,
+user.  Some highlights of obfuscation are: 3 step function in one - `main()`,
 several recursive calls with conditional actions, and just one (big and ugly)
 statement to solve the maze.
 
