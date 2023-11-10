@@ -114,10 +114,10 @@ PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 DATA= gtface.data
-TARGET= ${PROG} gtface ${PROG}.alt
+TARGET= ${PROG} gtface
 #
-ALT_OBJ= ${PROG}.alt.o
-ALT_TARGET= ${PROG}.alt
+ALT_OBJ= ${PROG}.alt.o gtface.o
+ALT_TARGET= ${PROG}.alt gtface
 
 
 #################
