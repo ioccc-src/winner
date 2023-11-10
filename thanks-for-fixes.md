@@ -1888,6 +1888,12 @@ to specify which one to use is to make it easier on the user as typing
 running `./garry.alt.test.sh`.
 
 
+## [1995/leo](1995/leo/leo.c) ([README.md](1995/leo/README.md]))
+
+At our change in how to deal with spoilers, Cody uudecoded the spoiler provided
+by the author, putting it in [spoiler1.md](1995/leo/spoiler1.md).
+
+
 ## [1995/makarios](1995/makarios/makarios.c) ([README.md](1995/makarios/README.md))
 
 Cody fixed this so that it will compile with versions of clang that has a defect
