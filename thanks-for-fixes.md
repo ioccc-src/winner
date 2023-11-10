@@ -1859,6 +1859,12 @@ are too fast ... if there is such a thing anyway :-) ). See the README.md for
 details on this.
 
 
+## [1995/dodsond1](1995/dodsond1/dodsond1.c) ([README.md](1995/dodsond1/README.md]))
+
+Cody added the [try.sh](1995/dodsond1/try.sh) script that uses the text file he
+provided which is input we suggested one try with the entry.
+
+
 ## [1995/garry](1995/garry/garry.c) ([README.md](1995/garry/README.md]))
 
 Cody fixed the alt code so that it will compile with modern compilers. The
