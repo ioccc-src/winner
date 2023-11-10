@@ -1,17 +1,9 @@
 <!DOCTYPE html>
 <HTML>
-<head>
-<style>
-img {
-  max-width: 100%;
-  height: auto;
-}
-</style>
-</head>
 <BODY TEXT="#000000">
 
-<center><img alt="IOCCC" SRC="png/ioccc.png"></center>\
-<center><font size="6"><I>The International Obfuscated C Code Contest </I></font></center>\
+<center><img alt="IOCCC" SRC="png/ioccc.png"></center><br>
+<center><font size="6"><I>The International Obfuscated C Code Contest </I></font></center><br>
 
 <P>
 <CENTER>
