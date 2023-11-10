@@ -1212,8 +1212,10 @@ the entry generates had some warnings that were causing compilation to fail if
 `cc` is clang as it just ran `cc a.c`. It ran it by what was once `system(q-6);`
 but if `cc` is clang like in macOS this is not enough.
 
-(Cody stupidly did the below manually until he thought to write a simple program
-to do the conversions which he used for `gets()` to `fgets()`.)
+(Cody said he stupidly did the below manually until he thought to write a simple
+program to do the conversions which he used for `gets()` to `fgets()` and for
+making the generated code return a value from `main()` rather than just
+`return;`).
 
 The following had to be added to the string `s` (which to fix the segfault was
 changed from `char*s` to `char s[]`):
@@ -1286,25 +1288,30 @@ which is the end of the warning disabled for clang as described above.
 But now the `system(q-69);` had to be changed to `system(q-86);`.
 
 Then, later on, Cody discovered that in some systems, clang triggers even more
-warnings so this had to be corrected too. Thus the string had to be changed to,
-in full:
+warnings so this had to be corrected too so the string was updated again and
+the `system(q-86)` had to be changed to `system(q-104)`.
+
+But then to prevent the need for disabling a warning and to be more correct
+code, the generated code was changed to `return 1;` rather than just `return;`.
+Thus in full the string became:
 
 ```c
-char s[]="Qjou!s\\311^-g\\311^-n\\311^-c\\::^-q-ma%mO1JBHm%BQ-aP1J[O1HB%[Q<nbj\
-o)*|gps)<<*txjudi)m*|aQdbtf!::::;sfuvso<aQefgbvmu;aQ<m,,a%CQ<csfbla%bQ<aN2!Q\
-\ndbtf!aP2Q;m>aP2Q<a%!D12J!JGJHJOJQJFJSJJJMHS%HD12D12N3!N4\nJUJT%UQm>aP4HC%T\
-Qs\\q,,^>m,2<m>aP4HC%SD12N1\nJNQm>s\\..q^aHC%NHb%GN1!D32P3%RN1UP1D12JPQUaP1H\
-R%PN4\nQ<g\\(aP3Q(^>aP2Q,2<n\\(aP3Q(^>aP4Hb%OD12D12N2!N3\nJVP3Q,,<jg)aP3Q=>n\
-\\(aP3Q(^*m>g\\(aP3Q(^<fmtf!m,,aHC%QN1!N1\nJ#Qqsjoug)#&e]o#-aP1Q*aHb%#Qqvut)\
-aP1Q*aHb%FN1\nQm>::::aHC%VP3Q>bupj)ghfut)c-::-tuejo**aHb%JD12JON1!Qjg)a%LN1U\
-P1D12JIQUaP1HL%IQ*m>aN2!N2\nP2Q<fmtf!m,,aHC%MN1!N2>P2Q>aN2\nP2Hbdd!.Xop.fssp\
-s!.Xop.sfuvso.uzqf!.Xop.jnqmjdju.gvodujpo.efdmbsbujpo!.Xop.jnqmjdju.jou!.jod\
-mvef!tuejp/i!b/d";
+char s[]="Qjou!s\\311^-g\\311^-n\\311^-c\\::^-q-ma%mO1JBHm%BQ-aP1J[O1HB%[Q<n\
+bjo)*|gps)<<*txjudi)m*|aQdbtf!::::;sfuvso!2<aQefgbvmu;aQ<m,,a%CQ<csfbla%bQ<a\
+N2!Q\ndbtf!aP2Q;m>aP2Q<a%!D12J!JGJHJOJQJFJSJJJMHS%HD12D12N3!N4\nJUJT%UQm>aP4\
+HC%TQs\\q,,^>m,2<m>aP4HC%SD12N1\nJNQm>s\\..q^aHC%NHb%GN1!D32P3%RN1UP1D12JPQU\
+aP1HR%PN4\nQ<g\\(aP3Q(^>aP2Q,2<n\\(aP3Q(^>aP4Hb%OD12D12N2!N3\nJVP3Q,,<jg)aP3\
+Q=>n\\(aP3Q(^*m>g\\(aP3Q(^<fmtf!m,,aHC%QN1!N1\nJ#Qqsjoug)#&e]o#-aP1Q*aHb%#Qq\
+vut)aP1Q*aHb%FN1\nQm>::::aHC%VP3Q>bupj)ghfut)c-::-tuejo**aHb%JD12JON1!Qjg)a%\
+LN1UP1D12JIQUaP1HL%IQ*m>aN2!N2\nP2Q<fmtf!m,,aHC%MN1!N2>P2Q>aN2\nP2Hbdd!.Xop.\
+fssps!.Xop.jnqmjdju.gvodujpo.efdmbsbujpo!.Xop.jnqmjdju.jou!.jodmvef!tuejp/i!\
+b/d";
 ```
 
-and then the `system(q-86)` had to be changed to `system(q-104)`. It is hoped
-that this is the last time the string has to be updated to work with all
-versions of clang but if not the above is how it works.
+and it now is `system(q-87);`.
+
+It is hoped that this is the last time the string has to be updated to work with
+all versions of clang but if not the above is how it works.
 
 With these changes in place it will compile and work with both gcc and clang and
 the C code generated will use `fgets()`, not `gets()`, therefore removing the
