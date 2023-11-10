@@ -1865,6 +1865,11 @@ Cody added the [try.sh](1995/dodsond1/try.sh) script that uses the text file he
 provided which is input we suggested one try with the entry.
 
 
+## [1995/esde](1995/esde/esde.c) ([README.md](1995/esde/README.md]))
+
+Cody added the [try.sh](1995/esde/try.sh) script.
+
+
 ## [1995/garry](1995/garry/garry.c) ([README.md](1995/garry/README.md]))
 
 Cody fixed the alt code so that it will compile with modern compilers. The
