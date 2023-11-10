@@ -17,9 +17,7 @@ where data-file contains lines of < 255 chars in length.
 ### Try:
 
 ```sh
-./esde esde.data Johanson
-./esde esde.data2 read
-./esde README.md date
+./try.sh
 ```
 
 
@@ -45,10 +43,10 @@ Soundex code begins with the first letter of the word followed by a
 three-digit code. This is the algorithm:
 
 0. Every letter in the word beyond the first letter is replaced by a digit.
-1. Replace all pairs of the same code by single code (ex. R011235 -> R01235).
-2. Remove all 0-codes (ex. R01235 -> R1235).
-3. If length of code is > 4, get only first 4 codes (ex. R1235 -> R123).
-4. If length of code is < 4, add zeros (ex. T12 -> T120).
+1. Replace all pairs of the same code by single code (e.g. `R011235` -> `R01235`).
+2. Remove all zeroes (e.g. `R01235` -> `R1235`).
+3. If length of code is > 4, get only first 4 characters (e.g. `R1235` -> `R123`).
+4. If length of code is < 4, add zeros (e.g. `T12` -> `T120`).
 
 These are the codes:
 
