@@ -1382,6 +1382,47 @@ it was instead requiring a login / password.
 Do you have an updated link? We welcome your help!
 
 
+## 1996 huffman
+
+### STATUS: uses gets() - change to fgets() if possible
+### Source code: [1996/huffman/huffman.c](1996/huffman/huffman.c)
+### Information: [1996/huffman/README.md](1996/huffman/README.md)
+
+The changing to using `fgets(3)` in this entry is a bit more complicated. It can
+almost be done except that some of the output of the
+[try.sh](1996/huffman/try.sh) is wrong, especially the last one.
+
+This diff almost does it but not quite:
+
+```diff
+diff --git i/1996/huffman/huffman.c w/1996/huffman/huffman.c
+index a5745bc7f4fa28b834c004f4cf19633e40ad9165..5e5e5334f33f9dbd95c70eddece3189d9bcff5e9 100644
+--- i/1996/huffman/huffman.c
++++ w/1996/huffman/huffman.c
+@@ -1,15 +1,16 @@
+ #define x char
+ #define z else
+ #define w gets
++#define gets(b) ((b)[0]='\0',(fgets((b), 100, stdin)))
+ #define r if
+ #define u int
+ #define s main
+ #define v putchar
+ #define y while
+ #define t " A?B?K?L?CIF?MSP?E?H?O?R?DJG?NTQ?????U?V?????X???????Z????W??Y??"
+- s (   )  {   x* c  ,  b[ 5  * 72   ]; u  a, e  ,  d   [  9
++ s (   )  {   x* c  ,  b[ 5  * 72  ]; u  a, e  ,  d   [  9
+ *9 *9 ]  ;    y  (w  ( b) ){            r  ( 0   [ b] -7 *
+ 5        )    {  c  =     b    ;       y  (  (*    c  -  6
+ * 7 )* *  c )c =  c+ 1  ;   r ((   -0 )  [ c  ] &&  w (  b   +
+   8 *  5*    3        ) && w          (b   +8      *5  * 6) )
+   { a       =  0; y     (                  a       [     b  ]
+```
+
+But since it does not for the time being it is advisable to just redirect stderr
+to /dev/null (`2>/dev/null`).
+
+
 ## 1996 jonth
 
 ### STATUS: INABIAF - please **DO NOT** fix

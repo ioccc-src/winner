@@ -1971,6 +1971,12 @@ either different output or the same output that we briefly pointed out.
 BTW: it is perilous to try the patience of
 [Gandalf](https://www.glyphweb.com/arda/g/gandalf.html). Go ahead, try it! :-)
 
+
+## [1996/huffman](1996/huffman/huffman.c) ([README.md](1996/huffman/README.md]))
+
+Cody added the [try.sh](1996/huffman/try.sh) script.
+
+
 ## [1996/jonth](1996/jonth/jonth.c) ([README.md](1996/jonth/README.md]))
 
 Cody fixed this to not segfault under macOS. The problem was that the function
