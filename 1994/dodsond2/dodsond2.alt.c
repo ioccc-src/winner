@@ -15,7 +15,7 @@
 #define M isdigit
 #define N 30
 #define P getchar()
-G a[N][3],b[N],c[N],d[N],e[N],f[N],g[N],i=W>0?W:0,j=(W>0?W:0)*20,k,l=0;
+G a[N][3],b[N],c[N],d[N],e[N],f[N],g[N],i=W>0?W:0,j=0,k,l=0;
 main(){m();n();A;}m(){G o;srandom(getpid());do{I(o=0;
 o<N;e[o++]=3){J(o,0)=J(o,1)=J(o,2)=-1;c[o]=d[o]=g[o]=0;
 b[o]=N*2;}r(0);s();}F(s());t();}s(){G o,p;I(o=0;o<N;o++){
