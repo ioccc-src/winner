@@ -23,7 +23,7 @@ For more information try:
 
 ## Judges' remarks:
 
-For a good noop try:
+For a good no-op try:
 
 ```sh
 gzip -c < rcm.c | ./rcm
@@ -39,7 +39,9 @@ similar unimportant fluff, this program is a fully compliant
 `gzip` compressed file on standard input, and it will write the fully
 uncompressed original file to standard output.
 
+
 ### ObJustifications for this entry:
+
 
 #### The Design Trade-off Argument:
 
@@ -47,14 +49,17 @@ uncompressed original file to standard output.
 carefully offset by 184 redundant and unnecessary '`{`', '`}`', and '`;`'
 characters in the source file."
 
+
 #### The Design Review Argument:
 
 "Using only 216 characters out of a maximum of 256, the build file
 meets and actually exceeds specification."
 
+
 #### The Program Metrics Argument:
 
-"The program source is less than 3,100 characters in length and uncompresses file
+"The program source is less than 3,100 characters in length and uncompresses the
+file
 [emacs-19.34b.tar.gz](https://ftp.gnu.org/old-gnu/emacs/emacs-19.34b.tar.gz) in
 about 130 seconds on my HP 9000/735.  The now obsolete source file `inflate.c'
 from the GNU gzip source tree is 31,613 characters in length and uncompresses
@@ -66,6 +71,7 @@ the emacs distribution file in slightly under 25 seconds.  Thus:
 
 which represents a better than 530% improvement in the ratio of
 source file size to execution time."
+
 
 #### The Whining Programmer's Argument:
 
