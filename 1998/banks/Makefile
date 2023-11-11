@@ -40,7 +40,7 @@ include ../../var.mk
 #
 CSILENCE= -Wno-empty-body -Wno-error -Wno-implicit-function-declaration \
 	-Wno-unsequenced -Wno-incompatible-pointer-types \
-	-Wno-bitwise-instead-of-logical -Wno-strict-prototypes
+	-Wno-bitwise-instead-of-logical -Wno-strict-prototypes -Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -117,8 +117,8 @@ OBJ= ${PROG}.o
 DATA= bb.sc horizon.sc mountains.sc pittsburgh.sc pyramids.sc river.sc
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -140,6 +140,11 @@ ${PROG}: ${PROG}.c
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.c
+	${CC} ${CFLAGS} -UIT -UDT -DIT=XK_f -DDT=XK_d -DUP=XK_Up -DDN=XK_Down -DLT=XK_Left -DRT=XK_Right \
+	-DCS=XK_Return -Ddt=0.02 $< -o $@ ${LDFLAGS}
+
 
 # data files
 #
