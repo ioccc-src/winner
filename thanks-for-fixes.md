@@ -1951,6 +1951,12 @@ Cody fixed this to compile and work with modern systems. As he loved the
 references in the code that could not compile he just commented out as little as
 possible to get this to compile.
 
+Cody also added the rather useful [try.sh](1996/gandalf/try.sh) script to
+really demonstrate the different ways of running the program ends up showing
+either different output or the same output that we briefly pointed out.
+
+BTW: it is perilous to try the patience of
+[Gandalf](https://www.glyphweb.com/arda/g/gandalf.html). Go ahead, try it! :-)
 
 ## [1996/jonth](1996/jonth/jonth.c) ([README.md](1996/jonth/README.md]))
 
