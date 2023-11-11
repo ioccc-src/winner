@@ -1997,6 +1997,15 @@ on other systems (the other file is
 the Makefile despite the fact that very few probably use Solaris nowadays.
 
 
+
+## [1996/schweikh2](1996/schweikh2/schweikh2.c) ([README.md](1996/schweikh2/README.md]))
+
+Cody added the [try.sh](1996/schweikh2/try.sh) script with a few commands to try
+along with a shorter version of something the author suggested one try (it is
+suggested that one try the longer version too but it will run in an infinite
+loop so having it in a script is less desired).
+
+
 ## [1996/westley](1996/westley/westley.c) ([README.md](1996/westley/README.md]))
 
 Cody fixed a segfault in this entry as well as it displaying environmental

@@ -25,7 +25,7 @@ The program accepts up to 4 parameters:
 ### Try:
 
 ```sh
-./schweikh2 15 1 0 0/0
+./try.sh
 ```
 
 What happens if you pass only three parameters like the below?
@@ -40,15 +40,20 @@ The author also suggests:
 while :; do grep -v '#' schweikh2.c; done
 ```
 
-(and we do too) which works with `sh`, `bash`, `ksh` and `zsh` as well.
+(and we do too) which works with `sh`, `bash`, `ksh` and `zsh` as well. Press
+ctrl-c to stop it. Observe how the [try.sh](try.sh) script does this a number of
+times.
 
 
 ## Judges' remarks:
 
 The original program, with only slight obfuscations, may be found
-in `hunni.c`.  The perl script, obfuscates it appropriately:
+in [hunni.c](hunni.c). The perl script, [hunni.pl](hunni.pl), obfuscates it
+appropriately. Try:
 
 ```sh
+less hunni.c
+
 perl ./hunni.pl < hunni.c
 ```
 
@@ -60,6 +65,7 @@ This entry was another crowd pleaser at the IOCCC BOF.
 Note: the source must be viewed with tabstop 8. To appreciate the
 beauty have your eyes half closed.
 
+
 ### Why I think this program is obfuscated:
 
 C is a free format language. It is therefore a question of style how
@@ -69,16 +75,16 @@ I put spaces around operators, after opening braces and before closing
 braces. I have generalized this rule by putting whitespace after *any*
 non-white space character (with the exception of preprocessor directives).
 There are no recognizable keywords anymore. There are no recognizable
-string literals any more. The main function is invisible. All operators
-longer than one character have gone. They have been replaced by macro
+string literals any more. The `main()` function is invisible. All operators
+longer than one character are gone. They have been replaced by macro
 calls with quite a number of arguments. The keys are the token pasting
-and stringizing macros e and O. The "arcane rules of token pasting"
-[K&R2] are used up to three levels, `H(O,r)R(O,r)` (!) which is needed to make
-one 8-character token from 8 characters ('unsigned'). BTW, C has no 9 or
+and stringizing macros `e` and `O`. The "arcane rules of token pasting"
+[K&R2] are used up to three levels: `H(O,r)R(O,r)` (!) which is needed to make
+one 8-character token from 8 characters (`unsigned`). BTW, C has no 9 or
 more character reserved words, so a fourth level is only required if
 you intend to generate object names from 9 or more components. The final
 round even swaps the tokens, so all keywords must be spelled backwards
-(sort of, can you spot printf in the P macro?).
+(sort of, can you spot `printf` in the `P` macro?).
 
 Try to indent the source. The unbalanced parentheses confuse Solaris'
 indent to the max (although the result does compile):
@@ -112,18 +118,18 @@ divided by their greatest common divisor.
 
 The program accepts up to 4 parameters:
 
-1. The number of operators in the expression [default: 9]
-2. The value of the first operand [1]
-3. The (possibly negative) increment to the next operand [1]
-4. The goal value or 0/0 [42]
+1. The number of operators in the expression [default: 9].
+2. The value of the first operand [1].
+3. The (possibly negative) increment to the next operand [1].
+4. The goal value or 0/0 [42].
 
-On ANSI/ISO C conformant systems (where long is at least 32 bits)
+On ANSI/ISO C conformant systems (where `long` is at least 32 bits)
 overflow will occur in the default case (first operand 1, increment 1)
 only for more than 11 operators. Because a bit mask is used that needs
 twice the number of operands in bits (plus a sentinel value) on those
 systems the first parameter must not exceed 15.
 
-If long is at least 64 bits overflow will occur for more than 19
+If `long` is at least 64 bits overflow will occur for more than 19
 operators but you will probably wait quite some time for every of the
 `4^19 = 274,877,906,944` combinations to be evaluated... While I'm at it,
 on a 50 MHz SPARC, `4^11` expressions are evaluated in about 3 cpu
@@ -142,7 +148,7 @@ minutes (`gcc -O3`).
 
 ### Miscellaneous
 
-The diamond pattern can be continued without a break.\
+The diamond pattern can be continued without a break.
 For a nice printout try this on your Bourne compatible shell:
 
 ```sh
