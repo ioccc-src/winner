@@ -1,6 +1,6 @@
     ***** SOLARIS 2.5 (sparc):
 
-    % prog
+    % schweikh3
     Trying to malloc 2048M+0K+0 bytes..nope
     Trying to malloc 1024M+0K+0 bytes..nope
     Trying to malloc 512M+0K+0 bytes..nope
@@ -41,7 +41,7 @@
 
     ***** FreeBSD 2.1 (i386):
 
-    % prog
+    % schweikh3
     Trying to malloc 2048M+0K+0 bytes..nope
     Trying to malloc 1024M+0K+0 bytes..nope
     Trying to malloc 512M+0K+0 bytes..nope
@@ -82,7 +82,7 @@
     Nov 24 18:11:56 /kernel: swap_pager: out of space
     Nov 24 18:11:57 /kernel: Process 5 killed by vm_fault -- out of swap
 
-    % prog c
+    % schweikh3 c
     Trying to calloc 2048M+0K+0 bytes..nope
     Trying to calloc 1024M+0K+0 bytes..nope
     Trying to calloc 512M+0K+0 bytes..nope
@@ -96,7 +96,7 @@
 
     ***** Linux 1.2.13 (i386):
 
-    % prog
+    % schweikh3
     Trying to malloc 2048M+0K+0 bytes..nope
     Trying to malloc 1024M+0K+0 bytes..nope
     Trying to malloc 512M+0K+0 bytes..nope
@@ -132,7 +132,7 @@
     Able to malloc 23M+1023K+1023 bytes
     23294 kilo bytes ok  malloc lied! Thrashing
 
-    % prog c
+    % schweikh3 c
     Trying to calloc 2048M+0K+0 bytes..nope
     Trying to calloc 1024M+0K+0 bytes..nope
     Trying to calloc 512M+0K+0 bytes..nope
