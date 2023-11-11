@@ -14,6 +14,7 @@ cat parse.oo fac.oc | ./august | ./august
 
 rm august.oc
 make august.oc
+sed -i'' '/^#/d' august.oc
 cat august.c august.oc | ./august > august.oo
 cat august.oo test.oo | ./august
 cat august.oo august.oo fac.oo | ./august

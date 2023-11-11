@@ -1370,20 +1370,6 @@ We would appreciate anyone who has it or even just knows the name! Thank you.
 # 1996
 
 
-## 1996 august
-
-### STATUS: doesn't work with some compilers - please provide alternative code or fix for more compilers
-### Source code: [1996/august/august.c](1996/august/august.c)
-### Information: [1996/august/README.md](1996/august/README.md)
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed a segfault in
-this program that prevented it from working in gcc. It is known, however, that
-some compilers will compile the code so that it enters an infinite loop (an
-example is in macOS).
-
-If you can fix this we welcome it!
-
-
 ## 1996 gandalf
 
 ### STATUS: missing or dead link - please provide them
