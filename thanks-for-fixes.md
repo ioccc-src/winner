@@ -1758,9 +1758,16 @@ As in some places it would properly say that you have '1 arrow' or else, if you
 have any other number of arrows (including 0), it would say 'arrows', Cody fixed
 a place where it always said 'arrows'. A minor fix and not that important.
 
-Cody notes that there is a (mis)feature in the program that might want to be
-fixed that he has not had the time to fix yet; see [1991/dodsond2 in
-bugs.md](/bugs.md#1994-dodsond2) for more details.
+Cody also fixed the problem where one could only get the arrows back from the
+robber if the robber stole as many arrows as you ever found rather than that
+minus how many you have shot. In other words if you had three arrows and shot
+one and found no more you could never get the arrows back from the robber
+because you could never lose all three since you spent one. This bug manifested
+itself in another way too: once you got the arrows back the counter was not
+reset so you could only get the arrows back once even if the robber stole more.
+Now the counters are reset. The way this bug was fixed is that there is now a
+counter for how many you have found and how many you shot in addition to the two
+that already existed, how many you had and how many were stolen.
 
 
 ## [1994/horton](1994/horton/horton.c) ([README.md](1994/horton/README.md))

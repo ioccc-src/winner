@@ -1126,29 +1126,6 @@ _before you choose where to shoot_.
 When you shoot it will move you to that room so if you end up shooting into a
 pit room you will end up dying even though you didn't explicitly move there.
 
-### STATUS: known bug - please help us fix
-
-A (mis)feature is that one must have had all arrows stolen in order to recover
-all the arrows from the robber. This means that if you end up shooting an arrow
-you can never recover all the arrows from the robber because the count of arrows
-stolen can never be high enough. There are a number of ways this might be fixed,
-some of which Cody notes:
-
-- If you have zero arrows and you come across the robber you could give them all
-back. This is not correct though because if you never had that many arrows you
-would end up getting arrows back that you never had in the first place.
-- A new variable, an `int`, could be added that keeps track of the number of
-arrows you have fired and then if you come across the robber and they took the
-number of arrows with the difference of the number fired then you would give
-back how many (the difference) the robber stole rather than all the arrows. This
-would be the right approach but there are certainly other ways to go about it.
-
-A tip is that the number of arrows stolen is `l` and the number of arrows you
-have is `i`. For the alt version that Cody added the starting number of arrows
-is in the constant `W`, defaulting to 3.
-
-You are welcome to try and fix this (mis)feature.
-
 
 ## 1994 ldb
 
@@ -1405,6 +1382,7 @@ some compilers will compile the code so that it enters an infinite loop (an
 example is in macOS).
 
 If you can fix this we welcome it!
+
 
 ## 1996 gandalf
 

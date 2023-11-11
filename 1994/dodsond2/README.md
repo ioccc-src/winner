@@ -15,7 +15,6 @@ The current status of this entry is:
 
 ```
 STATUS: INABIAF - please **DO NOT** fix
-STATUS: known bug - please help us fix
 ```
 
 For more detailed information see [1994 dodsond2 in bugs.md](/bugs.md#1994-dodsond2).
