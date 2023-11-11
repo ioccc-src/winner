@@ -2067,7 +2067,7 @@ doesn't crash. At this point since the author stated it has no `while`,
 doing:
 
 ```c
-((V[1]&&((atoi(V[1])>0&&atoi(V[1])<27)||(exit(1),1))));
+((V[1]&&((atoi(V[1])>0&&atoi(V[1])<27))||(exit(1),1)));
 ```
 
 Cody also added the [try.sh](1998/schnitzi/try.sh) script to help users try the

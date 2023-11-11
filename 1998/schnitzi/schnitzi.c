@@ -53,7 +53,7 @@ void d (){ O=g; *r=y[k]; _=r; k=k+1; m=k<z; w=_t; l=p_; j=p; }
 void y_(){ O=g; *r=x[17][1]+k; _=r; j=q_; }
 void r_(){ O=_b; _=x[17]; s=(char**)_d; s=s+1; i=*s; q=0; }
 main(int v,char **V){
-((V[1]&&((atoi(V[1])>0&&atoi(V[1])<27)||(exit(1),1))));
+((V[1]&&((atoi(V[1])>0&&atoi(V[1])<27))||(exit(1),1)));
  q=0; O=r_; _d=V;
   x: (O)(); goto x; }
 

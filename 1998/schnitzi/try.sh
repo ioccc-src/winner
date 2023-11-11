@@ -65,3 +65,4 @@ echo 1>&2
 echo "Using stdin/stdout:" 1>&2
 echo "$ echo 5 10 7 9 1 | ./sort" 1>&2
 echo "5 10 7 9 1" | ./sort
+echo 1>&2
