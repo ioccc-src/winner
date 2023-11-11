@@ -33,6 +33,10 @@ As the script asks, care to guess why these execute differently?  Only the
 compiler knows ... ok maybe other things like the author, the judges and perhaps
 you too?
 
+BTW: it is perilous to 'try' the patience of
+[Gandalf](https://www.glyphweb.com/arda/g/gandalf.html). Go ahead, 'try' it! :-)
+
+
 
 ## Judges' remarks:
 
@@ -41,9 +45,6 @@ For misleading C pre-processor output, try:
 ```sh
 cc -E gandalf.c
 ```
-
-BTW: it is perilous to try the patience of
-[Gandalf](https://www.glyphweb.com/arda/g/gandalf.html). Go ahead, try it! :-)
 
 
 ## Author's remarks:
