@@ -31,7 +31,7 @@ make
 
 ## Judges' remarks:
 
-We were able to write our own program performing the same trick using the (still
+We were able to [write our own program](rand.c) performing the same trick using the (still
 non-standard, for some reason) library function `memmem()`, but that way it
 works too fast regardless of the context length, and it's much less fun.
 

@@ -26,21 +26,16 @@ For more detailed information see [1996 gandalf in bugs.md](/bugs.md#1996-gandal
 ### Try:
 
 ```sh
-PATH=.:$PATH
-./hatcat
-./cathat
+./try.sh
 ```
 
-And next try:
+As the script asks, care to guess why these execute differently?  Only the
+compiler knows ... ok maybe other things like the author, the judges and perhaps
+you too?
 
-```sh
-./cathat
-`pwd`/cathat
-```
+BTW: it is perilous to 'try' the patience of
+[Gandalf](https://www.glyphweb.com/arda/g/gandalf.html). Go ahead, 'try' it! :-)
 
-Care to guess why these execute differently?  Only the
-compiler knows ... ok maybe other things like the author,
-the judges and maybe you too?
 
 
 ## Judges' remarks:

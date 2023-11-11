@@ -34,13 +34,7 @@ The above should print a `!` followed by a newline.
 ### Try:
 
 ```sh
-cat august.c fac.oc | ./august > fac.oo
-./august < fac.oo
-
-cat august.c fac.oc | ./august | ./august
-
-cat august.c parse.oc | ./august > parse.oo
-cat parse.oo fac.oc | ./august | ./august
+./try.sh
 ```
 
 
@@ -79,13 +73,6 @@ And if you have lots of spare time, you can recurse one level deeper:
 cat august.oo august.oo august.oo fac.oo | ./august
 ```
 
-NOTE: to run all the commands in the above sections you can also use the
-[try.sh](try.sh) script like:
-
-```sh
-./try.sh
-```
-
 We (the judges) recommend that you spend some time studying this
 entry as it surely will make the 'best of the IOCCC' list.  It was
 very well received by those who attended the IOCCC BOF.
@@ -108,8 +95,8 @@ compiler that compiles from OC (Obfuscated C, a subset of C) into the
 byte code that the interpreter understands.
 
 The language the compiler understands is a subset of C (the grammar
-is in grammar.small) with the functions getchar() and putchar()
-available.  The subset has the types `int', `char', and pointers to
+is below) with the functions `getchar(3)` and `putchar(3)`
+available.  The subset has the types `int`, `char`, and pointers to
 those (it has function pointers too, but not with the proper
 syntax).  Arrays can only be global.  There is a rather limited set
 of operators, and control constructs.
@@ -117,10 +104,10 @@ of operators, and control constructs.
 The compiler has absolutely no error checking, so things
 can go wrong.  But this is what seasoned C programmers are used to.
 
-Assume that the interpreter has been compiled (source in prog.c and
-binary in prog) and that we have this in a file named `test.oc`:
+Assume that the interpreter has been compiled (source in [august.c](august.c)
+and binary in august) and that we have this in a file named `test.oc`:
 
-```
+```c
 main() { putchar('!'); putchar('\n'); exit(0); }
 ```
 
@@ -155,22 +142,26 @@ command from the Makefile, but add the `-E` flag and change 60000 to 40000,
 i.e.:
 
 ```sh
-cc -E -DZ=40000 .... august.c > prog.oc
+cc -E -DZ=40000 .... august.c > august.oc
 ```
 
-If `prog.oc` contain some junk line starting with a `#' (most likely
-it does) then remove it.
+If `august.oc` contain some junk line starting with a `#` (most likely
+it does) then remove it like:
+
+```sh
+sed -i'' '/^#/d' august.oc
+```
 
 OK, we can now compile the interpreter:
 
 ```sh
-cat august.c prog.oc | ./august > prog.oo
+cat august.c august.oc | ./august > august.oo
 ```
 
 And we can run it:
 
 ```sh
-cat prog.oo test.oo | ./august
+cat august.oo test.oo | ./august
 ```
 
 Here we have the interpreter interpreting another interpreter that runs
@@ -178,13 +169,13 @@ the program.  Did you think that was too fast?  Just throw in another
 level of interpretation:
 
 ```sh
-cat prog.oo prog.oo test.oo | ./august
+cat august.oo august.oo test.oo | ./august
 ```
 
 And another...
 
 ```sh
-cat prog.oo prog.oo prog.oo test.oo | ./august
+cat august.oo august.oo august.oo test.oo | ./august
 ```
 
 ---
@@ -199,7 +190,7 @@ Anyway, the bytecode from the compiler is first optimized in
 an external optimizer (not supplied here); this brings down the
 size of it by about 30%.  The remaining code is then LZ-compressed
 (roughly) with a sliding window of 255 bytes.  The most common
-occuring bytes are then encoded using `" \n\t;{}"` to avoid having
+occurring bytes are then encoded using `" \n\t;{}"` to avoid having
 them counted as significant.  About 200 bytes of the interpreter
 handles the unpacking of the byte code (this is a lot, but it pays
 off).
@@ -208,7 +199,7 @@ Despite all this work I still had to put a lot of code in the
 compilation command.  This disturbs me.  It is possible to compress
 the code further with a better entropy coder (e.g. an arithmetic
 coder), but decompression then takes up too much code.  Maybe this
-would be a way to fit it all into the 1536 bytes, but I'm don't have
+would be a way to fit it all into the 1536 bytes, but I don't have
 time to try it.
 
 ---
@@ -282,6 +273,7 @@ stars:		"*"*
 ```
 
 ---
+
 
 Well, that is enough ranting for now.
 

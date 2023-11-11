@@ -39,7 +39,8 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-char-subscripts -Wno-error -Wno-implicit-function-declaration \
-	-Wno-int-to-pointer-cast -Wno-empty-body -Wno-deprecated-non-prototype
+	-Wno-int-to-pointer-cast -Wno-empty-body -Wno-deprecated-non-prototype\
+	-Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -109,7 +110,7 @@ ENTRY= westley
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA= clock1 clock2 clock3
+DATA= clock1.sh clock2.sh clock3.sh
 TARGET= ${PROG}
 #
 ALT_OBJ= westley.alt.o

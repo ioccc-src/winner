@@ -23,8 +23,8 @@ To find the day that Easter falls on in the current year:
 
 ## Judges' remarks:
 
-Look at the source.  There is something very odd going on here.\
-Where does the real code come from if everything is a C pre-processor\
+Look at the source.  There is something very odd going on here.
+Where does the real code come from if everything is a C pre-processor
 statement?
 
 Clearly this is either the Best Use or the Worst Abuse of the
@@ -39,10 +39,12 @@ This program is an implementation of an algorithm that calculates
 the date of the Sunday following the first full moon after the
 spring equinox. (Also known as "Easter", defined this way by the
 Nicaean Concilium in 325 Anno Domini.) The algorithm is attributed
-to the famous mathematician Carl Friedrich Gauss ["Meyers Handbuch
-ueber das Weltall", Meyer, 5th Edition, 1973, p149] and is suitable
-for anni domini within the Gregorian Calendar, that is, from 1582 AD
-to 2199 AD:
+to the famous mathematician [Carl Friedrich
+Gauss](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss) ["Meyers Handbuch
+ueber das Weltall" 'Handbook About Space', Meyer, 5th Edition, 1973, p149] and is suitable
+for anni domini within the [Gregorian
+Calendar](https://en.wikipedia.org/wiki/Gregorian_calendar), that is, from ad 1582
+to ad 2199:
 
 ```
 Let J be the year.
@@ -70,18 +72,18 @@ with the following exceptions:
 
 ```
 April 26 must always be changed to April 19
-April 25 must be changed to April 18 if d is 28 and a greater than 10
+April 25 must be changed to April 18 if d is 28 and a is greater than 10
 ```
 
 ### Example:
 
 ```
 J = 1962, M = 24, N = 5
-a = J % 19 = 5
-b = J %  4 = 2
-c = J %  7 = 2
-d = 119 % 30 = 29
-e = 191 % 7 = 2
+a = J % 19 == 5
+b = J %  4 == 2
+c = J %  7 == 2
+d = 119 % 30 == 29
+e = 191 % 7 == 2
 ```
 
 March 53 is invalid, so the result is April 22 1962.
@@ -101,7 +103,7 @@ Nobody can learn that by heart so I gently remind the reader by
 defining a macro that expresses this clearly (line 25). This goes up
 to the definition of a translation unit. Unfortunately, due to the
 IOCCC's size restrictions, I had to abbreviate some syntactic
-elements. "ae" actually reads "assignment expression". I had to stop
+elements. `ae` actually reads "assignment expression". I had to stop
 at some arbitrary point, so don't waste your time trying to find out
 how preprocessing tokens form type qualifier lists, cast expressions
 or direct abstract declarators. Assuming the reader knows about
@@ -109,8 +111,9 @@ these easy to remember language elements is justified in my opinion.
 
 
 ### The moral:
-\
+
 Try to be as precise as can be and no one will comprehend what you mean.
+
 
 #### The formula:
 
@@ -118,6 +121,7 @@ Try to be as precise as can be and no one will comprehend what you mean.
 ```
 comprehension = 1/(2**precision)
 ```
+
 
 #### The interpretation:
 
@@ -130,7 +134,8 @@ This leads to an error due to the redefinition of main. The `-I` option makes
 sure the working /usr/include/errno.h is found first, which shouldn't cause any
 problems on other systems.
 
-### Usage
+
+### Usage:
 
 The program is run without arguments. It prints all dates in order.
 

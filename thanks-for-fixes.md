@@ -1758,9 +1758,16 @@ As in some places it would properly say that you have '1 arrow' or else, if you
 have any other number of arrows (including 0), it would say 'arrows', Cody fixed
 a place where it always said 'arrows'. A minor fix and not that important.
 
-Cody notes that there is a (mis)feature in the program that might want to be
-fixed that he has not had the time to fix yet; see [1991/dodsond2 in
-bugs.md](/bugs.md#1994-dodsond2) for more details.
+Cody also fixed the problem where one could only get the arrows back from the
+robber if the robber stole as many arrows as you ever found rather than that
+minus how many you have shot. In other words if you had three arrows and shot
+one and found no more you could never get the arrows back from the robber
+because you could never lose all three since you spent one. This bug manifested
+itself in another way too: once you got the arrows back the counter was not
+reset so you could only get the arrows back once even if the robber stole more.
+Now the counters are reset. The way this bug was fixed is that there is now a
+counter for how many you have found and how many you shot in addition to the two
+that already existed, how many you had and how many were stolen.
 
 
 ## [1994/horton](1994/horton/horton.c) ([README.md](1994/horton/README.md))
@@ -1912,9 +1919,12 @@ are created by the entry or the entry decrypts the text or whatever else.
 
 ## [1996/august](1996/august/august.c) ([README.md](1996/august/README.md]))
 
-Cody fixed a segfault in this program that prevented it from working right but
-he notes that some compilers compile it into an infinite loop (an example where
-this happens is macOS).
+Cody fixed a segfault in this program that prevented it from working right and
+also fixed an infinite loop in the try commands. The problem with the infinite
+loop is that the file `august.oc` had to have lines starting with `#` removed
+and it was not being done. After this is done with say `sed(1)` (like `sed -i''
+'/^#/d' august.oc` which has been added to both the remarks and the try.sh
+script as described below) the code can proceed. This problem existed in macOS.
 
 Cody also added the [try.sh](1996/august/try.sh) script that runs all the
 commands given in the try section to simplify it as there are quite a lot of
@@ -1924,15 +1934,18 @@ commands.
 ## [1996/dalbec](1996/dalbec/dalbec.c) ([README.md](1996/dalbec/README.md]))
 
 Cody proposed a fix for this to compile with clang and Landon implemented it
-after some discussion. The reason Cody did not do it is because he thought it
-was the wrong output but as it happens the try section below was worded a bit
-confusingly. He looked at Yusuke's] analysis found
+after some discussion (though Cody changed the function name). The reason Cody
+did not do it is because he thought it was the wrong output but as it happens
+the try section below was worded a bit confusingly. He looked at Yusuke's
+analysis found
 [here](https://mame-github-io.translate.goog/ioccc-ja-spoilers/1996/dalbec.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp)
 but he missed that Yusuke added a '...' after the result which made him think
-the fix was wrong. Cody also made the recommended change of the author to make
-it so that each number is printed on a line by itself rather than having a long
-string of numbers on the same line. This was not put in an alternate version but
-perhaps it should be.
+the fix was wrong.
+
+Cody also made the recommended change of the author to make it so that each
+number is printed on a line by itself rather than having a long string of
+numbers on the same line. This was not put in an alternate version but perhaps
+it should be.
 
 
 ## [1996/eldby](1996/eldby/eldby.c) ([README.md](1996/eldby/README.md]))
@@ -1951,6 +1964,18 @@ Cody fixed this to compile and work with modern systems. As he loved the
 references in the code that could not compile he just commented out as little as
 possible to get this to compile.
 
+Cody also added the rather useful [try.sh](1996/gandalf/try.sh) script to
+really demonstrate the different ways of running the program ends up showing
+either different output or the same output that we briefly pointed out.
+
+BTW: it is perilous to try the patience of
+[Gandalf](https://www.glyphweb.com/arda/g/gandalf.html). Go ahead, try it! :-)
+
+
+## [1996/huffman](1996/huffman/huffman.c) ([README.md](1996/huffman/README.md]))
+
+Cody added the [try.sh](1996/huffman/try.sh) script.
+
 
 ## [1996/jonth](1996/jonth/jonth.c) ([README.md](1996/jonth/README.md]))
 
@@ -1959,6 +1984,26 @@ pointer `w`, which points to `XCreateWindow()`, did not specify the parameters o
 the function in the pointer assignment.
 
 NOTE: if there is no X server running this program will still crash.
+
+
+## [1996/schweikh1](1996/schweikh1/schweikh1.c) ([README.md](1996/schweikh1/README.md]))
+
+The author stated that `-I/usr/include` is needed by gcc in Solaris because
+`errno.h` has two identical extern declarations of `errno`. That leads to an
+error due to the redefinition of `main` but the `-I` option makes sure the
+working `/usr/include/rrno.h` is found first, which shouldn't cause any problems
+on other systems (the other file is
+`gcc-lib/sparc-sun-solaris2.5/2.7.2/include/errno.h`). Thus Cody added this to
+the Makefile despite the fact that very few probably use Solaris nowadays.
+
+
+
+## [1996/schweikh2](1996/schweikh2/schweikh2.c) ([README.md](1996/schweikh2/README.md]))
+
+Cody added the [try.sh](1996/schweikh2/try.sh) script with a few commands to try
+along with a shorter version of something the author suggested one try (it is
+suggested that one try the longer version too but it will run in an infinite
+loop so having it in a script is less desired).
 
 
 ## [1996/westley](1996/westley/westley.c) ([README.md](1996/westley/README.md]))
@@ -1973,6 +2018,13 @@ which is now empty (it doesn't appear to be needed at all at least modernly).
 Note that you should check the [westley.alt.c](1996/westley/westley.alt.c) file
 when reading the author's comments. To see how to use the original, see the
 README.md file.
+
+Cody also added the two scripts, [try.sh](1996/westley/try.sh) and
+[try.alt.sh](1996/westley/try.alt.sh) to show automate showing the different
+clocks, both with the fixed version and the original (alt) version.
+
+Also, to fix any potential problem with displaying in GitHub the scripts
+provided by the author, Cody added '.sh'.
 
 
 ## [1998/chaos](1998/chaos/chaos.c) ([README.md](1998/chaos/README.md]))

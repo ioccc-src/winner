@@ -66,9 +66,7 @@ where `a==0`.
 4. The fact that `main()` is a single expression and so beautifies poorly.
 
 5. The fact that `main()` is used:
-
     - to compute powers in modular arithmetic.
-
     - to recursively call itself in the main loop.
 
 
