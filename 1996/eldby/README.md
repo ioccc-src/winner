@@ -36,11 +36,18 @@ make CFLAGS+="-DZ=20000" clobber alt
 Besides the fact that modern systems make it impossible to see what this program
 does the rapid movement can be a problem for some people. It is for these
 reasons that we recommend you first try the alternate version as described
-above. If however you wish to see the original version in modern systems, try:
+above.
+
+
+### Original build:
+
+If however you wish to see the original version in modern systems, try:
 
 ```sh
 make all
 ```
+
+### Original use:
 
 Use `./eldby` as you would `./eldby.alt` above.
 
@@ -55,7 +62,7 @@ in a very small chunk of code.
 
 This program shows flying spheres. The program eats CPU on lesser
 equipped systems. The program will run until termination. Terminal
-must be vt100 or better with 80 columns and 24 rows or more.
+must be VT100 or better with 80 columns and 24 rows or more.
 
 
 ## Copyright and CC BY-SA 4.0 License:

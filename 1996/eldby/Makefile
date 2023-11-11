@@ -62,7 +62,7 @@ CDEFINE= -DZ=35000
 
 # Include files that are needed to compile
 #
-CINCLUDE=
+CINCLUDE= -include stdio.h -include unistd.h
 
 # Optimization
 #
