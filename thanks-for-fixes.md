@@ -1934,15 +1934,18 @@ commands.
 ## [1996/dalbec](1996/dalbec/dalbec.c) ([README.md](1996/dalbec/README.md]))
 
 Cody proposed a fix for this to compile with clang and Landon implemented it
-after some discussion. The reason Cody did not do it is because he thought it
-was the wrong output but as it happens the try section below was worded a bit
-confusingly. He looked at Yusuke's] analysis found
+after some discussion (though Cody changed the function name). The reason Cody
+did not do it is because he thought it was the wrong output but as it happens
+the try section below was worded a bit confusingly. He looked at Yusuke's
+analysis found
 [here](https://mame-github-io.translate.goog/ioccc-ja-spoilers/1996/dalbec.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp)
 but he missed that Yusuke added a '...' after the result which made him think
-the fix was wrong. Cody also made the recommended change of the author to make
-it so that each number is printed on a line by itself rather than having a long
-string of numbers on the same line. This was not put in an alternate version but
-perhaps it should be.
+the fix was wrong.
+
+Cody also made the recommended change of the author to make it so that each
+number is printed on a line by itself rather than having a long string of
+numbers on the same line. This was not put in an alternate version but perhaps
+it should be.
 
 
 ## [1996/eldby](1996/eldby/eldby.c) ([README.md](1996/eldby/README.md]))
