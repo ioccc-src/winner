@@ -1986,6 +1986,17 @@ the function in the pointer assignment.
 NOTE: if there is no X server running this program will still crash.
 
 
+## [1996/schweikh1](1996/schweikh1/schweikh1.c) ([README.md](1996/schweikh1/README.md]))
+
+The author stated that `-I/usr/include` is needed by gcc in Solaris because
+`errno.h` has two identical extern declarations of `errno`. That leads to an
+error due to the redefinition of `main` but the `-I` option makes sure the
+working `/usr/include/rrno.h` is found first, which shouldn't cause any problems
+on other systems (the other file is
+`gcc-lib/sparc-sun-solaris2.5/2.7.2/include/errno.h`). Thus Cody added this to
+the Makefile despite the fact that very few probably use Solaris nowadays.
+
+
 ## [1996/westley](1996/westley/westley.c) ([README.md](1996/westley/README.md]))
 
 Cody fixed a segfault in this entry as well as it displaying environmental
