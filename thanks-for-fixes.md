@@ -1980,6 +1980,13 @@ Note that you should check the [westley.alt.c](1996/westley/westley.alt.c) file
 when reading the author's comments. To see how to use the original, see the
 README.md file.
 
+Cody also added the two scripts, [try.sh](1996/westley/try.sh) and
+[try.alt.sh](1996/westley/try.alt.sh) to show automate showing the different
+clocks, both with the fixed version and the original (alt) version.
+
+Also, to fix any potential problem with displaying in GitHub the scripts
+provided by the author, Cody added '.sh'.
+
 
 ## [1998/chaos](1998/chaos/chaos.c) ([README.md](1998/chaos/README.md]))
 
