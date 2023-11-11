@@ -2027,6 +2027,16 @@ Also, to fix any potential problem with displaying in GitHub the scripts
 provided by the author, Cody added '.sh'.
 
 
+## [1998/banks](1998/banks/banks.c) ([README.md](1998/banks/README.md]))
+
+Cody set up the Makefile to have an alt build (using the same code) for those
+who do not have a page up or page down key and added the
+[keysym.h](1998/banks/keysym.h) header file as a reference for other keys one
+can use if they wish to modify the controls. One can certainly do this even if
+they do have page up and page down but this gives a default for those who don't
+have them like with Macs.
+
+
 ## [1998/chaos](1998/chaos/chaos.c) ([README.md](1998/chaos/README.md]))
 
 Cody added a call to `endwin()` to restore terminal sanity (echo etc.) when

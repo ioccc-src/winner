@@ -4,12 +4,97 @@
 make all
 ```
 
+For those who do not have a Page Up or Page Down key, see [alternate
+code](#alternate-code) below. The same method may be used if you wish to
+redefine other keys but the alt build sets a default for those without page up
+and page down.
+
 
 ## To use:
 
 ```sh
 cat horizon.sc pittsburgh.sc | ./banks
 ```
+
+See the author's remarks in [scenery](#scenery) for more details on the scenery
+files.
+
+
+## Try:
+
+For a fun time after running the above command, hold down the up arrow and left
+arrow for about 10 seconds and see what happens. Or, if you wish to really use
+it in a non-silly way, see the author's remarks for the real controls. Perhaps
+you can regain control?
+
+
+## Alternate code:
+
+If you do not have access to a page up or page down key, for instance you're
+using a Mac, you can use the alt code (though it actually uses the same code)
+that will redefine the keys to increase throttle and decrease throttle. This
+same method can be used with the original code but this is sets up a default for
+the missing keys of Macs.
+
+The keys were somewhat arbitrarily selected but it was decided to make them on
+the left side of the keyboard as one might have a harder time using the arrows
+at the same time as typing on the right side.
+
+
+### Alternate build:
+
+As the Makefile allows you to configure the keys to use you may redefine the
+keys. This can be done for both versions but if you don't have certain keys it's
+even more important. In the main program increasing throttle is by page up and
+decreasing throttle is page down. In the alt build it is `f` and `d`
+respectively as these are letters on the left side of the keyboard which is
+easier to use if one is using the right side for movement.
+
+To use the default changes:
+
+```sh
+make alt
+```
+
+If however you wish to change these, see the header file [keysym.h](keysym.h)
+for the definitions of other characters that you might wish to use. The name of
+the macro in the header file is what you need to set the macros in the Makefile
+to, depending on what controls you wish to redefine.
+
+For instance if you want to use 'u' to increase throttle and 'd' to decrease
+throttle you would do:
+
+```sh
+make clobber CDEFINE="-UIT -UDT -DIT=XK_u -DDT=XK_d -DUP=XK_Up -DDN=XK_Down -DLT=XK_Left -DRT=XK_Right \
+	-DCS=XK_Return" alt
+```
+
+because in the header file you can see that `XK_u` corresponds to `u` and `XK_d`
+corresponds to `d`:
+
+```c
+#define XK_d                             0x0064  /* U+0064 LATIN SMALL LETTER D */
+#define XK_u                             0x0075  /* U+0075 LATIN SMALL LETTER U */
+```
+
+Note that you must specify all keys and other `-D` macros if you redefine any of
+them.
+
+The upper case letters would be `XK_U` and `XK_D` and you can search the header
+file for 'LATIN CAPITAL D', for example.
+
+See [alternate build instructions](#alternate-build-instructions) for the proper
+macro names. You may do the above for the entry itself as well, of course, if
+you do not like the defaults selected.
+
+Note that the [keysym.h](keysym.h) file is not complete from X11; it's just the
+more likely candidates (and some that are probably unlikely :-) ).
+
+
+### Alternate use:
+
+Use `banks.alt` as you would `banks` but for use the different keys as
+configured at compilation.
 
 
 ## Judges' remarks:
@@ -20,7 +105,7 @@ tight, well, we can just point them at this one.  This program really
 pushes the envelope!
 
 The provided Makefile should work; you will need an X-ish system, and
-a `select()` system call.  More on building in the author remarks.
+a `select(2)` system call.  More on building in the author remarks.
 
 Carl Banks linked to (on his old website) an interesting article about this
 entry, a flight simulator in just 1536 bytes, which can be found at
@@ -37,7 +122,7 @@ Use the keyboard to fly the airplane.  The arrow keys represent
 the control stick.  Press the Up Arrow key to push the stick
 forward.  Press the left arrow key to move the stick left, and
 so on.  Press Enter to re-center the stick.  Use Page Up and Page
-Down increase and decrease the throttle, respectively.  (The
+Down to increase and decrease the throttle, respectively.  (The
 rudder is automatically coordinated with the turn rate, so
 rudder pedals are not represented.)
 
@@ -57,7 +142,7 @@ single-engine propeller driven airplane.
 * The airplane is modeled as a six degree-of-freedom rigid body, accurately
 reflecting its dynamics (for normal flight conditions, at least).
 
-* Fly through a virtual 3-D world, while sitting at your X console.
+* Fly through a virtual 3D world, while sitting at your X console.
 
 * Loadable scenery files.
 
@@ -138,7 +223,7 @@ You can simulate flying through a cloud bank as well:
 You will usually want at least a horizon, though.
 
 The format of scenery files is simple, by the way.  They're just
-a list of 3-D coordinates, and the simulator simply draws line
+a list of 3D coordinates, and the simulator simply draws line
 segments from point to point as listed in the scenery file.  `0 0
 0` is used to end a series of consecutive line segments.  Note
 that in the coordinate system used, _the third coordinate
@@ -146,6 +231,7 @@ represents **altitude** in a negative sense: negative numbers are
 positive altitudes_.
 
 I'm sure you'll be making your own scenery files very soon!!!
+
 
 ### Alternate Build Instructions
 
