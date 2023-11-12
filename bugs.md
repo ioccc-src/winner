@@ -1041,7 +1041,8 @@ Can you fix it? We welcome your help.
 This entry relied on a bug in gcc that was fixed with gcc version 2.3.3. This
 cannot be fixed for modern systems as the bug is long gone.
 
-An alternate version, however, does exist. See the README.md file for details.
+An alternate version that will work for modern systems, however, does exist. See
+the README.md file for details.
 
 
 ### STATUS: INABIAF - please **DO NOT** fix
