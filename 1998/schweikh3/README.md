@@ -4,10 +4,29 @@
 make all
 ```
 
+The author stated:
+
+```
+In the remote event that the input has more than `8192` files with
+the same size (on systems where `sizeof (char *) == 4`, or `4096` when
+`sizeof (char *) == 8`), increase the manifest constant 32767 on line
+31.
+```
+
+so we changed the constant to be `SZ` defined in the Makefile. To change the
+value you can do something like:
+
+```sh
+make clobber CDEFINE="-DM0=sizeof -DM1=long -DM2=void \
+	-DM3=realloc -DM4=calloc -DM5=free -DSZ=55555" all
+```
+
+or whatever you wish to redefine it to.
+
 
 ## To use:
 
-If "dir" is the directory (or a directory tree) where you keep
+If `dir` is the directory (or a directory tree) where you keep
 all your favorite pictures off the Internet or from
 `alt.binaries.pictures.*`, do
 
@@ -15,7 +34,7 @@ all your favorite pictures off the Internet or from
 find dir -type f -print | ./samefile
 ```
 
-Maybe you will not need to buy another 10 Gb disk to store them.  :-)
+Maybe you will not need to buy another 10 GB disk to store them.  :-)
 
 
 ### Try:
@@ -23,19 +42,13 @@ Maybe you will not need to buy another 10 Gb disk to store them.  :-)
 If you're in this winning entry's directory:
 
 ```sh
-find . -type f -print | ./samefile
+./try.sh
 ```
 
-Notice that the tool finds a duplicate file, that of the man page.
+Notice that the tool finds some files that are duplicates.
 
 
 ## Judges' remarks:
-
-Try this:
-
-```sh
-./try.sh
-```
 
 This program is not as smart as to detect identity of JPEG files with the same
 picture but with different compression levels. On the other hand compression can
@@ -56,7 +69,7 @@ Thank God the IEEE does not standardize a coding style...
 ###    What this program does
 
 This is best explained in the man page. The troff source for this
-man page can be found in the file samefile.1. To render try:
+man page can be found in the file [samefile.1](samefile.1). To render try:
 
 ```sh
 `man ./samefile.1
@@ -65,23 +78,24 @@ man page can be found in the file samefile.1. To render try:
 Otherwise:
 
 
-**SAMEFILE(1)                User Manuals               SAMEFILE(1)**
+### SAMEFILE(1)                User Manuals               SAMEFILE(1)
 
 
-**NAME**
+#### NAME
 
-   **samefile** - find identical files
+`samefile` - find identical files
 
 
-**SYNOPSIS**
+#### SYNOPSIS
 
-   ./samefile
-   
+```sh
+./samefile
+``` 
 
-**DESCRIPTION**
+#### DESCRIPTION
 
 `samefile`  reads  a  list  of file names (one file name per
-line) from `stdin`.  For each file name pair with  identical
+line) from `stdin`.  For each file name pair with identical
 contents, a line consisting of six tab separated fields is
 output: The size in bytes, two file names,  the  character
 `=`  if the two files are on the same device, `X` otherwise,
@@ -104,10 +118,10 @@ binary tree.
 In the second stage all files having  the  same  size  are
 compared  against  each  other.  The rules of mathematical
 logic are applied to reduce  work  and  output  noise:  if
-files  A,  B,  and C have the same size and samefile finds
-that A = B and A = C then it will not compare B against  C
-(and  will not output a line for B and C) but only for A =
-B and A = C. The algorithm  will  detect  equality  across
+files  `A`,  `B`,  and `C` have the same size and samefile finds
+that `A = B` and `A = C` then it will not compare `B` against `C`
+(and will not output a line for `B` and `C`) but only for `A =
+B` and `A = C`. The algorithm  will  detect  equality  across
 arbitrarily  long chains.  Note however, that because only
 the first filename per inode gets into  the  first  stage,
 the  output  for a group of identical files with different
@@ -116,13 +130,13 @@ identical  files  of size 100 in an inode group consisting
 of the three inodes with numbers 10, 20 and 30:
 
 ```sh
-       $ ls -i   # output edited for readability:
-          10 file1     20 file4     30 file6
-          10 file2     20 file5
-          10 file3
-       $ ls | ./samefile
-       100     file1   file4   =       3       2
-       100     file1   file6   =       3       1
+$ ls -i   # output edited for readability:
+  10 file1     20 file4     30 file6
+  10 file2     20 file5
+  10 file3
+$ ls | ./samefile
+100     file1   file4   =       3       2
+100     file1   file6   =       3       1
 ```
 
 The sum of the sizes in the first column is the amount  of
@@ -135,24 +149,24 @@ Note  that it is not enough to just remove `file4` and `file6`
 exists.)
 
 
-**LIMITATIONS**
+#### LIMITATIONS
 
 `samefile` was written with no limits in mind. The number of
 input lines is unlimited. The size of the actual files  is
 only limited by available virtual memory needed to compare
 one pair of files.  The only hard limit is the  constraint
-that there should not be more than about 8192 files having
+that there should not be more than about `8192` files having
 the same size. Experience has shown that there are  rarely
 more than a couple dozen files of the same size.
 
-**EXAMPLES**
+#### EXAMPLES
 
 For everybody:
 
 What are the duplicates under my home directory?
 
 ```sh
-       $ find $HOME | ./samefile
+find $HOME | ./samefile
 ```
 
 For the sysadmin folks:
@@ -160,23 +174,23 @@ For the sysadmin folks:
 Report all duplicate files under /usr larger than 16k:
 
 ```sh
-       $ find /usr -size +16384c -a -type f | ./samefile
+find /usr -size +16384c -a -type f | ./samefile
 ```
 
 For the ftp and WWW admins:
 How much space is wasted below our site's /pub directory?
 
 ```sh
-       $ find /pub -type f | samefile | awk '{sum += $1} END {print sum}'
+find /pub -type f | samefile | awk '{sum += $1} END {print sum}'
 ```
 
 
-**EXIT STATUS**
+#### EXIT STATUS
 
 If  `samefile` runs out of memory the exit status is 1, zero
 otherwise.
 
-**SEE ALSO**
+#### SEE ALSO
 
 `find(1)`, `ln(1)`, `rm(1)`
 
@@ -194,19 +208,19 @@ otherwise.
   of files across arbitrarily long chains? In my private unobfuscated
   source there are 17 lines describing just that. A classical case for
   the well known `/* You're not supposed to understand this */` comment.
-- Would Dijkstra consider this goto harmful?
-- The only string literal is split in more than a dozen substrings
+- Would Dijkstra consider this `goto` harmful?
+- The only string literal is split in more than a dozen substrings.
 - For the task at hand the code is pretty terse. Some dynamic memory
   is even freed as soon as it's no longer needed. I have tried to
   make the preprocessor directives as short as possible. This means
-  no spaces after #include and no spaces after some of the macro
+  no spaces after `#include` and no spaces after some of the macro
   names.
 
 Are you an algorithms guru? If so you should know why the output
-appears sorted without any use of `qsort()` or `system("sort")`.
+appears sorted without any use of `qsort(3)` or `system("sort")`.
 
 Rewrite (hah!) the program to use memory mapping of files instead
-of `read()`. Does this affect performance noticeably?
+of `read(2)`. Does this affect performance noticeably?
 
 It's easy to write a script that takes `samefile`'s output and
 hard links (or symlinks) identical files. Writing such a script is
@@ -214,11 +228,11 @@ left as an exercise for the deobfuscator.
 
 When you run `samefile` on some directory tree, try to estimate
 how much you think it will find. Is the actual result anywhere
-near your estimate? How many copies of the GPL COPYING file
+near your estimate? How many copies of the GPL `COPYING` file
 are there on your filesystems? :-)
 
-In the remote event that the input has more than 8192 files with
-the same size (on systems where `sizeof (char *) == 4`, or 4096 when
+In the remote event that the input has more than `8192` files with
+the same size (on systems where `sizeof (char *) == 4`, or `4096` when
 `sizeof (char *) == 8`), increase the manifest constant 32767 on line
 31.
 

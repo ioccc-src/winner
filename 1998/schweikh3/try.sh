@@ -12,3 +12,6 @@ echo "$ ln -f file3 file4"
 ln -f file3 file4
 echo "$ find . -type f -name 'file?' | ./samefile"
 find . -type f -name 'file?' | ./samefile
+
+echo "find . -type f -print | ./samefile" 1>&2
+find . -type f -print | ./samefile

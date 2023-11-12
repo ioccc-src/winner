@@ -2163,6 +2163,19 @@ command.
 Cody also made the Makefile rule `all` symlink the entry to `samefile` as that
 is the name of the program.
 
+The author stated that:
+
+```
+In the remote event that the input has more than `8192` files with
+the same size (on systems where `sizeof (char *) == 4`, or `4096` when
+`sizeof (char *) == 8`), increase the manifest constant 32767 on line
+31.
+```
+
+so Cody changed the constant to a macro in the Makefile called `SZ` so one can
+more easily do this (though it indeed seems highly unlikely). See the README.md
+for more details.
+
 There actually is a web page for the tool and this was added to the author
 information for the entry. It has not been added to any JSON file.
 
@@ -2170,12 +2183,13 @@ information for the entry. It has not been added to any JSON file.
 ## [1998/tomtorfs](1998/tomtorfs/tomtorfs.c) ([README.md](1998/tomtorfs/README.md]))
 
 Cody fixed the assumption that `EOF` is `-1` (the author noted that it assumes
-it is `-1` but the standard only guarantees that it's a value `< 0`) and that 1
-is a valid code to return failure (it seems unlikely that it wouldn't be but
-since the author suggested it it was changed to `EXIT_FAILURE`). To make it so
-the lines end at the same columns as the original the `EXIT_FAILURE` change was
-done by redefining `exit(3)` to be `exit(a) return EXIT_FAILURE` and `1` was
-passed to it (`return` was used because the original program  had `return 1`).
+it is `-1` and it's indeed a valid concern as the standard only guarantees that
+it's a value `< 0`) and that `1` is a valid code to return failure (it seems
+unlikely that it wouldn't be but since the author suggested it it was changed to
+`EXIT_FAILURE`). To make it so the lines end at the same columns as the original
+the `EXIT_FAILURE` change was done by redefining `exit(3)` to be `exit(a) return
+EXIT_FAILURE` and `1` was passed to it (`return` was used because the original
+program  had `return 1`).
 
 Cody also added the [try.sh](1998/tomtorfs/try.sh) script to try out a few
 commands that we recommended.
