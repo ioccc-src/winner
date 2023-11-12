@@ -4,6 +4,10 @@
 make all
 ```
 
+There is an alternate version available that has a key configuration that will
+be more familiar to vi(m) users and also allows one to quit. See [alternate
+code](#alternate-code) below.
+
 
 ### Bugs and (Mis)features:
 
@@ -32,6 +36,27 @@ of the playing field.
 Pressing `d` drops the current letter onto the board.
 
 
+## Alternate code:
+
+This version has it so that where in addition to `a` moving you
+anticlockwise/counterclockwise `h` does as well; and in addition to `s` moving
+clockwise `l` does as well. Instead of using `d` to drop the letter you can do
+`j` or space. Finally to quit this version you can press `q`.
+
+
+### Alternate build:
+
+```sh
+make alt
+```
+
+### Alternate use:
+
+```sh
+./pootris.alt
+```
+
+
 ## Judges' remarks:
 
 Read the authors' remarks below to find out how to play.  We believe that your
@@ -54,25 +79,27 @@ I spelled my first "poot".  I was hooked ...
 
 ### Synopsis
 
-The object of this game is to spell "POOT" as much as possible.  There
+The object of this game is to spell `POOT` as much as possible.  There
 is no time pressure.  You're given one letter at a time (sort of randomly
 chosen from the set 'P', 'O', and 'T') and you get to move it freely
 around the border of the playing board, and decide when and where to drop
 it into the board.  Sound easy?  Of course, there's a catch...
 
+
 ### Controls
 
 Only three controls:
 
-'a' moves the current letter one position counterclockwise around
-    the border of the playing field.
+`a`: moves the current letter one position counterclockwise around
+     the border of the playing field.
 
-'s' moves the current letter one position clockwise around the border
-    of the playing field.
+`s`: moves the current letter one position clockwise around the border
+     of the playing field.
 
-'d' drops the current letter onto the board.
+`d`: drops the current letter onto the board.
 
 To quit, send a fatal signal to the process.
+
 
 ### Rules of motion
 
@@ -93,6 +120,7 @@ a side wall.
 
 The letters stop when they hit another letter or the bottom of the board.
 
+
 ### Rules of spelling
 
 - When you spell `POOT` on the board, in any direction, the letters comprising
@@ -102,6 +130,7 @@ disappeared letters will 'fall'.
 - Letters can be used in multiple spellings of `POOT`.
 
 - Chain reactions are possible.
+
 
 ### Rules of scoring
 
@@ -135,10 +164,11 @@ systems when dropping pieces into the game board.
 
 - Simple and silly ones: short, meaningless (and sometimes misleading (see `x`))
 variable names; hard-coded ASCII numeric values used for character constants;
-using goto for fun and profit; reusing and re-purposing variables in different
+using `goto` for fun and profit; reusing and re-purposing variables in different
 places.
 
 - The game itself is simple, but still weird and quite difficult.
+
 
 ### Some things I wish I could have fit into this, but didn't have the space:
 
