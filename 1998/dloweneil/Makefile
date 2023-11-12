@@ -111,8 +111,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG} pootris
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt pootris.alt
 
 
 #################
@@ -138,6 +138,14 @@ pootris: ${PROG}
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+pootris.alt: ${PROG}.alt
+	${RM} -f $@
+	${CP} $< $@
+
 
 # data files
 #

@@ -2048,6 +2048,13 @@ Cody added a call to `endwin()` to restore terminal sanity (echo etc.) when
 exiting the program.
 
 
+## [1998/dloweneil](1998/dloweneil/dloweneil.c) ([README.md](1998/dloweneil/README.md]))
+
+Cody added [alt code](1998/dloweneil/dloweneil.alt.c) which has vi(m) movement
+(in addition to the other keys except for dropping it's not `d` but `j` or
+space) keys as well as allowing one to quit the game.
+
+
 ## [1998/dorssel](1998/dorssel/dorssel.c) ([README.md](1998/dorssel/README.md]))
 
 Cody added the [try.sh](1998/dorssel/try.sh) script.
