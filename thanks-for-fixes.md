@@ -1391,15 +1391,16 @@ should have been removed.
 ## [1992/adrian](1992/adrian/adrian.c) ([README.md](1992/adrian/README.md]))
 
 Cody fixed the code so that it will try opening the file the code was compiled
-from (`__FILE__`), not	`adgrep.c`, as
-the latter does not exist: `adgrep` is simply a link to `adrian` as `adgrep` is
-what the program was submitted as but the winner is `adrian.c`.
+from (`__FILE__`), not	`adgrep.c`, as the latter does not exist: `adgrep` is
+simply a link to `adrian` as `adgrep` is what the program was submitted as but
+the winner is `adrian.c`.
 
-Not fixing this would cause the program to crash if no arg was specified as the
-file did not exist. In doing this, at first the change to check for a NULL file
-was added. Then it was noticed that the problem is that `adgrep.c` was an
-incorrect reference that was never fixed in any of the files, not the code or
-the documentation. A fun fact is that one can do:
+Not fixing the above problem would have also cause the program to crash if no
+arg was specified as the file doesn't exist. In making the above fix, at first
+the change to check for a `NULL` file was added. Then it was noticed that the
+problem is that `adgrep.c` was an incorrect reference that never existed and it
+was never fixed in any of the files, not the code or the documentation, and thus
+was entirely incorrect code. A fun fact is that one can do:
 
 ```c
 W= fopen(wc>= 2 ? V[1] : __FILE__,"rt");if(!W)exit(1);
@@ -1423,24 +1424,24 @@ Cody also restored a slightly more obscure line of code that had been changed:
 +   putc(i["}|uutsrq`_^bji`[Zkediml[PO]a_M__]ISOYIRGTNR"]+i-9,stderr);
 ```
 
-though it's questionable how much more (if at all) obscure that is.
+though it's questionable how much more (if at all) obscure that is :-)
 
 Cody also changed the location that it used `gets()` to be `fgets()` instead to
 make it safer and to prevent annoying warnings during compiling, linking or
 runtime (interspersed with the program's output). This was complicated because
-of how the other source files are generated, as noted above; simply changing the
-code could cause invalid output in the program which made other files fail to
-compile (for this example specifically, see below).
+of how the other source files are generated (as above); simply changing the code
+could cause invalid output in the program which made other files fail to compile
+(for this example specifically, see below).
 
 One might think that simply changing the `gets()` to `fgets()` (with `stdin`)
 would work but it did not because `fgets()` stores the newline and `gets()` does
-not. That is well known but this code was relying on not having this newline
-(see also above).
+not. That is well known but this code was relying on not having this newline in
+a different way (see also above).
 
 With `fgets()` the code `if(A(Y)) puts(Y);` ended up printing an extra line
 which made the generation of some files (like `adhead.c`) fail to compile. Why?
-There was a blank line after a `\` at the end of the first line of a macro
-definition!  Thus the code now first trims off the last character of the buffer
+There was a blank line after a `\` at the end of the first line of a _macro
+definition_! Thus the code now first trims off the last character of the buffer
 read to get the same correct functionality but in a safe and non obnoxious way.
 
 Later Cody improved the change to `fgets()` to make it slightly more like the
@@ -1467,9 +1468,10 @@ the additional tools.
 
 Cody fixed this to compile with modern systems. Note that in 1996 a bug fix was
 applied to the code, provided as the alt code as that version is not obfuscated.
-Thus Cody's fixed applies to the original entry. The problems were that
-`malloc.h` is not the correct header file now and a non-void (implicit int)
-function returning without a value. The function was changed to return void.
+Thus Cody's fix applies to the original entry. The problems were that `malloc.h`
+is not the correct header file now (at least in some systems?) and a non-void
+(implicit int) function returning without a value. That function was changed to
+return void.
 
 
 ## [1992/ant](1992/ant/ant.c) ([README.md](1992/ant/README.md]))
@@ -1495,7 +1497,8 @@ necessary to include `time.h` so Cody did this as well.
 
 Cody added a check for the right number of args, exiting 1 if not enough (2)
 used. This was not originally done but at a time it was changed to be considered
-a bug so it was fixed at that point as it only took a few seconds.
+a bug so it was fixed at that point as it only took a few seconds and had to be
+verified that it was consistent with the [bugs.md](/bugs.md) file.
 
 He also added the [try.sh](1991/buzzard.1/try.sh) script to try out some
 commands that we suggested and some additional ones that provide for some fun.
@@ -1522,14 +1525,15 @@ loop).
 
 Cody also added the [mkdict.sh](1992/gson/mkdict.sh) script that the author
 included in their remarks. See the README.md for its purpose. It was NOT fixed
-for ShellCheck because the author deliberately obfuscated it.
+for ShellCheck because the author deliberately obfuscated it so **PLEASE DO NOT
+FIX THIS**.
 
 
 ## [1992/imc](1992/imc/imc.c) ([README.md](1992/imc/README.md]))
 
 The original code, [imc.orig.c](1992/imc/imc.orig.c), assumed that `exit(3)`
 returned a value but this will cause problems where `exit(3)` returns void. The
-source code was modified to avoid this problem but like Cody did with otherfixes
+source code was modified to avoid this problem but like Cody did with other fixes
 he made this more like the original by redefining `exit` to use the comma
 operator so that it could be used in binary expressions.
 
@@ -1537,8 +1541,8 @@ operator so that it could be used in binary expressions.
 ## [1992/kivinen](1992/kivinen/kivinen.c) ([README.md](1992/kivinen/README.md]))
 
 It was observed that on modern systems this goes much too quick. Yusuke created
-a patch that calls `usleep()` but Cody thought the value was too slow so he made
-it a macro in the Makefile `Z`, defaulting at 15000. You can reconfigure it
+a patch that calls `usleep(3)` but Cody thought the value was too slow so he
+made it a macro in the Makefile `Z`, defaulting at 15000. You can reconfigure it
 like:
 
 ```sh
