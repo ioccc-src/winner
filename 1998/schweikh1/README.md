@@ -5,8 +5,9 @@ make all
 ```
 
 There is an alternate version of this entry that will work with macOS. See the
-[Alternate code](#alternate-code) section below for details on how it works and
-how to use it.
+[Alternate code](#alternate-code) section below. We recommend you look at it
+even if you don't have a Mac, unless you want to figure it out yourself, as it
+includes some interesting details about the entry.
 
 
 ## To use:
@@ -15,9 +16,6 @@ how to use it.
 ./schweikh1
 ```
 
-NOTE: a limitation with the entry was that it required `gcc` but this limitation
-has been removed to make it more portable, requiring only `cc`.
-
 
 ## Alternate code:
 
@@ -25,82 +23,24 @@ As noted above this entry will not work as it stands for macOS and there are
 some important notes as well as a description of how the fixed version works
 (the details of which are relevant to the original entry that no longer works as
 well as the fixed version but are described in the context of the macOS
-adjustments).
+adjustments). For details of what had to change, see [macos.md](macos.md).
+Unless you wish to figure it out yourself, we recommend that you read this even
+if you don't have a Mac as it has some interesting details about the entry.
 
-#### macOS changes:
 
-As an aside: if you have a Mac with the Apple chip, some of the header files
-will report an unsupported architecture and unsupported compiler (error,
-warning). This will not make the program abort, however, but even with an Intel
-CPU though, the original entry will not work in macOS as it stands because
-`/usr/include` is hard-coded in the code and macOS does not have it.
+### Alternate build:
 
-Nevertheless, although some of it would not work in other systems where
-`/usr/include` exists, the `#define`s would still be found okay, at least until
-a file was not found (this limitation was removed in both versions, see
-[thanks-for-fixes.md](/thanks-for-fixes.md) for details).
-
-However, as noted, macOS does **not** have `/usr/include` so this would not ever
-work for macOS without some changes, described next. For macOS you will need the
-command line tools installed which can be done like:
-
-```sh
-sudo xcode-select --install
-```
-
-An important point is that the original version hard-coded `gcc` but just like
-the entry, the alternate version has also removed this limitation despite `gcc`
-existing (though it's `clang`) in macOS.
-
-Now as far as how this works if you look at the code of
-[schweikh1.c](schweikh1.c), on line 55 you'll see a funny command (this goes for
-the alternate version as well but a bit different).
-
-Now the key is two magic numbers, one (two of this exist) on a different line shortly below the
-string and the other a couple lines further below.
-
-In the original the numbers are, respectively, 44 and 46, but with the gcc
-limitation removed the numbers now are 43 and 45. But how does this work? Well
-the command is:
-
-```
-"0gcc -ansi -E -dM -undef %s /usr/include/%s>r\0 ("
-```
-
-which has been changed to be:
-
-```
-"0cc -ansi -E -dM -undef %s /usr/include/%s>r\0 ("
-```
-
-Shortly below that you will see, as noted above, the numbers:
-
-```c
-if ((H = fopen (__FILE__+43, 43+__FILE__)))
-while ((fgets (L, (int)sizeof L, H)) != 0) {
-	I[strcspn (I, 45+__FILE__)] = O = 0;
-```
-
-The first number in the above C means the length starting from 0 up through the
-`>`. The second number is the same starting point but up through the `\0` which
-is why it's `+2`. But what happens if only the first number is updated (from the
-original)? Most of the output will be just `#define` by itself; in the cases
-where there was text after that it was macros that certainly were not defined.
-There might have been other errors as well.
-
-Changing this for macOS allows for opening the right files; the problem with the
-macOS is `/usr/include` does not exist: instead it's
-`/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include` which is why
-the different command line and the different numbers. The change of the numbers
-can be found in the alternate code and the explanation is the same.
-
-To use this version use:
 
 ```sh
 make alt
 ```
 
+
+### Alternate build:
+
 Use `schweikh1.alt` as you would `schweikh1` above.
+
+### Alternate try:
 
 Bonus exercise: modify the code to provide a different compiler.
 
@@ -123,6 +63,7 @@ Do not read them if you want to figure this out yourself.  "Amendment
 One" refers to "NA1", the add-on to C89 which added some fairly
 crufty internationalization support.
 
+
 #### Historical note:
 
 Some non-gcc compilers that were not fully ANSI standard did not
@@ -130,7 +71,8 @@ compile this entry correctly.  Using cc by default was not helpful
 most of the time on this entry, because the program had a hardcoded
 gcc invocation anyway.  Anyone who uses egcs and has no plain gcc
 will need to frob the source anyway and can be expected to do the
-right thing with `${CC}`. So one should have used gcc.
+right thing with `${CC}`. This limitation was removed in 2023 but in the past
+one should have used gcc.
 
 
 ## Author's remarks:
@@ -162,16 +104,17 @@ Bug your vendor for an upgrade.
 The format of the info file is straightforward and described in the file
 itself. Just load it in your favorite editor.
 
+
 ### Requirements
 
 `gcc` (the GNU C compiler) must be available at runtime. It is assumed that your
-C implementation keeps headers as files in the /usr/include directory. The info
-file must be readable and reside in the current working directory. The current
-working directory must be writable in order to create a temporary file (which is
-removed upon program termination). In case you don't have gcc at runtime, not
-all is lost if your compiler or preprocessor can produce a list of defined
-macros in the format output by `gcc -dM`, i.e. lines of the form `#define MACRO
-value`.
+C implementation keeps headers as files in the `/usr/include` directory. The
+[info](info) file must be readable and reside in the current working directory.
+The current working directory must be writable in order to create a temporary
+file (which is removed upon program termination). In case you don't have gcc at
+runtime, not all is lost if your compiler or preprocessor can produce a list of
+defined macros in the format output by `gcc -dM`, i.e. lines of the form
+`#define MACRO value`.
 
 Edit the source at line 55 in this case.
 
@@ -180,7 +123,7 @@ Edit the source at line 55 in this case.
 ISO C has a very strict idea of visibility of identifiers. All possible
 macros are explicitly enumerated. In a compliant implementation no other
 macros can be defined, because you could write strictly conforming
-programs that may fail to compile due to syntax errors: suppose
+programs that may fail to compile due to syntax errors: supposing that
 `<stdio.h>` defines `PIPE_BUF`, then the conforming
 
 ```c
@@ -199,6 +142,7 @@ int main (void)
 
 is expected to compile and meet the assertion. If it does not, your
 compiler compiles some other language than ISO C.
+
 
 ### Why I think my program is obfuscated
 
@@ -232,7 +176,7 @@ C compilers.
    ```
 
    To be honest, I don't know if the rules for pp-tokens and token
-   pasting don't forbid what I do (and tcc is correct in rejecting it).
+   pasting don't forbid what I do (and thus tcc is correct in rejecting it).
    In this case, all other compilers I tried are buggy, or the Standard
    itself :-)
 
@@ -263,21 +207,21 @@ foo\0bar 9   tcc 4.1.2, Sunsoft cc turn "\0" into "\\0", ugh!
 
 3. The `%:` and `%:%:` digraphs test for conformance to Amendment One.
 
-Ask your local guru if C allows the same case label in the same switch
-statement to appear more than once. Ask him/her to think real hard.
-The answer will be "no". The true guru will cite a constraint in
-ISO 6.6.4.2. Then make fun of the guru's answer by waving `case __LINE__:`
-under his/her nose. Easy money from a bet! Make sure your guru has
-no chance to use Standardese weasel words as an escape: can I have
+    Ask your local guru if C allows the same case label in the same switch
+    statement to appear more than once. Ask him/her to think real hard.
+    The answer will be "no". The true guru will cite a constraint in
+    ISO 6.6.4.2. Then make fun of the guru's answer by waving `case __LINE__:`
+    under his/her nose. Easy money from a bet! Make sure your guru has
+    no chance to use Standardese weasel words as an escape: can I have
 
 ```c
   case <some_token>:
   case <some_token>:
 ```
 
-in the same switch? (Note that you need the [invisible] newline. You
-can generously allow the additional constraint that no `#undef`s or
-`#define`s are allowed between the two cases.)
+    in the same switch? (Note that you need the [invisible] newline. You
+    can generously allow the additional constraint that no `#undef`s or
+    `#define`s are allowed between the two cases.)
 
 Lots of integer constants and string literals come into the source
 via `__LINE__` and `__FILE__` which are redefined at various places.
@@ -289,7 +233,7 @@ This makes the source and header input depend on ASCII.
 A few old obfuscations, like one character identifiers, not too
 many macros, a `goto O`, "needless" assignments to satisfy lint
 with its "function value ignored" warnings. My lint has nothing
-to complain.
+to complain about.
 
 There's more whitespace in the Standard than just space, tab and newline. In
 particular, there are vertical tab and form-feed that can be used in certain
@@ -303,12 +247,13 @@ printer when you make a hard copy of the source...
 
 While I'm at it, the rules state that only space, tab and newline
 are ignored for the count (plus '`{`', '`}`', '`;`' followed by
-whitespace). The mkentry.c program, however, uses `isspace()` which
-returns nonzero for vtab and form-feed and other characters as well.
-I could have used a lot more ^K and ^L probably undetected by your
+whitespace). The [mkentry.c](../mkentry.c) program, however, uses `isspace(3)` which
+returns nonzero for `\v` and `\f` and other characters as well.
+I could have used a lot more `^K` and `^L` probably undetected by your
 counter but decided to err on the side of safety. I use a perl
 script to compute the character count according to the rules.
 The advantages of an independent clean room approach...
+
 
 ```perl
 #!/usr/bin/perl -w
@@ -320,10 +265,17 @@ print length ($_),"\n";
 
 ```
 
+To use, try:
+
+```sh
+perl ./charcount.pl schweikh1.c
+```
+
+
 I have tried, as suggested in the guidelines, to let the code look
 like ordinary C code. Apart from a few long lines I think I left
 the indentation like I would in RL. You should however not try to
-use indent on the source. The code is extremely fragile because of the
+use `indent` on the source. The code is extremely fragile because of the
 myriads of `__LINE__` macros -- indenting is a sure way to break
 the program. Don't even think of maintaining that beast; I've
 had my share of core dumps during development :-) A test suite

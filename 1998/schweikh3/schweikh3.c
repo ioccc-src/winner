@@ -28,7 +28,7 @@
 
 /* HE WHO SAYS */
 
-Z I A<:32767/      M0(I )]; Z g     stat S,T; Z        size_t    y B f{
+Z I A<:   SZ/      M0(I )]; Z g     stat S,T; Z        size_t    y B f{
 I n ; g f *  x     ; dev_t d  ;    ino_t i; } f B      t{ M1     s,c; f
 *l; g t*L,*R; }    t; D(a,t)D(E    ,f)Z t*J(t*p,I      n){ H!   p){ p=
 a(); p    _ s =S      O; p _       c=1; p              _ L=p    _ R=0;

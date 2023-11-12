@@ -1391,15 +1391,16 @@ should have been removed.
 ## [1992/adrian](1992/adrian/adrian.c) ([README.md](1992/adrian/README.md]))
 
 Cody fixed the code so that it will try opening the file the code was compiled
-from (`__FILE__`), not	`adgrep.c`, as
-the latter does not exist: `adgrep` is simply a link to `adrian` as `adgrep` is
-what the program was submitted as but the winner is `adrian.c`.
+from (`__FILE__`), not	`adgrep.c`, as the latter does not exist: `adgrep` is
+simply a link to `adrian` as `adgrep` is what the program was submitted as but
+the winner is `adrian.c`.
 
-Not fixing this would cause the program to crash if no arg was specified as the
-file did not exist. In doing this, at first the change to check for a NULL file
-was added. Then it was noticed that the problem is that `adgrep.c` was an
-incorrect reference that was never fixed in any of the files, not the code or
-the documentation. A fun fact is that one can do:
+Not fixing the above problem would have also cause the program to crash if no
+arg was specified as the file doesn't exist. In making the above fix, at first
+the change to check for a `NULL` file was added. Then it was noticed that the
+problem is that `adgrep.c` was an incorrect reference that never existed and it
+was never fixed in any of the files, not the code or the documentation, and thus
+was entirely incorrect code. A fun fact is that one can do:
 
 ```c
 W= fopen(wc>= 2 ? V[1] : __FILE__,"rt");if(!W)exit(1);
@@ -1423,24 +1424,24 @@ Cody also restored a slightly more obscure line of code that had been changed:
 +   putc(i["}|uutsrq`_^bji`[Zkediml[PO]a_M__]ISOYIRGTNR"]+i-9,stderr);
 ```
 
-though it's questionable how much more (if at all) obscure that is.
+though it's questionable how much more (if at all) obscure that is :-)
 
 Cody also changed the location that it used `gets()` to be `fgets()` instead to
 make it safer and to prevent annoying warnings during compiling, linking or
 runtime (interspersed with the program's output). This was complicated because
-of how the other source files are generated, as noted above; simply changing the
-code could cause invalid output in the program which made other files fail to
-compile (for this example specifically, see below).
+of how the other source files are generated (as above); simply changing the code
+could cause invalid output in the program which made other files fail to compile
+(for this example specifically, see below).
 
 One might think that simply changing the `gets()` to `fgets()` (with `stdin`)
 would work but it did not because `fgets()` stores the newline and `gets()` does
-not. That is well known but this code was relying on not having this newline
-(see also above).
+not. That is well known but this code was relying on not having this newline in
+a different way (see also above).
 
 With `fgets()` the code `if(A(Y)) puts(Y);` ended up printing an extra line
 which made the generation of some files (like `adhead.c`) fail to compile. Why?
-There was a blank line after a `\` at the end of the first line of a macro
-definition!  Thus the code now first trims off the last character of the buffer
+There was a blank line after a `\` at the end of the first line of a _macro
+definition_! Thus the code now first trims off the last character of the buffer
 read to get the same correct functionality but in a safe and non obnoxious way.
 
 Later Cody improved the change to `fgets()` to make it slightly more like the
@@ -1467,9 +1468,10 @@ the additional tools.
 
 Cody fixed this to compile with modern systems. Note that in 1996 a bug fix was
 applied to the code, provided as the alt code as that version is not obfuscated.
-Thus Cody's fixed applies to the original entry. The problems were that
-`malloc.h` is not the correct header file now and a non-void (implicit int)
-function returning without a value. The function was changed to return void.
+Thus Cody's fix applies to the original entry. The problems were that `malloc.h`
+is not the correct header file now (at least in some systems?) and a non-void
+(implicit int) function returning without a value. That function was changed to
+return void.
 
 
 ## [1992/ant](1992/ant/ant.c) ([README.md](1992/ant/README.md]))
@@ -1495,7 +1497,8 @@ necessary to include `time.h` so Cody did this as well.
 
 Cody added a check for the right number of args, exiting 1 if not enough (2)
 used. This was not originally done but at a time it was changed to be considered
-a bug so it was fixed at that point as it only took a few seconds.
+a bug so it was fixed at that point as it only took a few seconds and had to be
+verified that it was consistent with the [bugs.md](/bugs.md) file.
 
 He also added the [try.sh](1991/buzzard.1/try.sh) script to try out some
 commands that we suggested and some additional ones that provide for some fun.
@@ -1522,14 +1525,15 @@ loop).
 
 Cody also added the [mkdict.sh](1992/gson/mkdict.sh) script that the author
 included in their remarks. See the README.md for its purpose. It was NOT fixed
-for ShellCheck because the author deliberately obfuscated it.
+for ShellCheck because the author deliberately obfuscated it so **PLEASE DO NOT
+FIX THIS**.
 
 
 ## [1992/imc](1992/imc/imc.c) ([README.md](1992/imc/README.md]))
 
 The original code, [imc.orig.c](1992/imc/imc.orig.c), assumed that `exit(3)`
 returned a value but this will cause problems where `exit(3)` returns void. The
-source code was modified to avoid this problem but like Cody did with otherfixes
+source code was modified to avoid this problem but like Cody did with other fixes
 he made this more like the original by redefining `exit` to use the comma
 operator so that it could be used in binary expressions.
 
@@ -1537,16 +1541,17 @@ operator so that it could be used in binary expressions.
 ## [1992/kivinen](1992/kivinen/kivinen.c) ([README.md](1992/kivinen/README.md]))
 
 It was observed that on modern systems this goes much too quick. Yusuke created
-a patch that calls `usleep()` but Cody thought the value was too slow so he made
-it a macro in the Makefile `Z`, defaulting at 15000. You can reconfigure it
-like:
+a patch that calls `usleep(3)` but Cody thought the value was too slow so he
+made it a macro in the Makefile `Z`, defaulting at 15000. This was made an [alt
+version](1992/kivinen/kivinen.alt.c) and it is recommended one use the alt
+version first. See the README.md file to see how to reconfigure it.
 
-```sh
-make clobber Z=1000 all
-```
-
-This was not made an alternate version because it moves so fast that it's nigh
-impossible to use otherwise.
+Cody also made the fixed version (the code relied on `exit(3)` returning to use
+in binary expressions) (and alt code from it) more like the original by renaming
+the `ext` macro to be `exit` which uses the comma operator. He made it so the
+line lengths match the original code, at least as best as possible (if not
+perfectly), including start and end columns, often (if not all) with the same
+start and end character.
 
 Yusuke also noted that there is a bug in the program where right after starting
 it moves towards the right but if you click the mouse it goes back.
@@ -2045,9 +2050,13 @@ exiting the program.
 
 ## [1998/fanf](1998/fanf/fanf.c) ([README.md](1998/fanf/README.md))
 
-Cody fixed this for Linux. The problem was the intermediate steps to get to the
-final code that is compiled. The entry itself is what was essentially what used
-to be compiled. Now it works with both Linux and macOS (and BSD?).
+Cody fixed this to compile. The problem was the intermediate steps to get to the
+final code that is compiled. The code is now what it essentially becomes when
+processed completely. The intermediate steps can now be performed to see how it
+expands but it can still compile and be used.
+
+Cody also added the [try.sh](1998/fanf/try.sh) script to show the output of some
+of the expressions that we selected.
 
 
 ## [1998/schnitzi](1998/schnitzi/schnitzi.c) ([README.md](1998/schnitzi/README.md]))
@@ -2055,8 +2064,9 @@ to be compiled. Now it works with both Linux and macOS (and BSD?).
 Cody fixed invalid data types which prevented this entry from working, causing a
 segfault. This showed itself in two parts which required two fixes, one for
 linux and further changes for macOS. He also fixed a segfault (after printing
-garbage) when the arg specified evaluated to 0. It was decided that these
-segfault fixes should be made because the program is so beautiful.
+garbage) when the arg specified evaluated to 0. It was decided by us, the
+judges, that these segfault fixes should be made because the program is so
+beautiful.
 
 Later on Cody improved the fixes by checking that the arg is a number `>0 &&
 <27` as that was noted by the author as a requirement and again since it's such
@@ -2081,16 +2091,16 @@ alternate version that works with macOS. Cody also made it ever so slightly more
 portable by removing the hard-coding of `gcc`, instead hard-coding it `cc`. Doing
 this not only lets it work with systems without `gcc` (though in macOS it does
 exist but is actually `clang`) as `cc` always should.
-
 Getting this entry to work was quite complicated but is also very interesting.
-To see how the macOS fixes works, see the README.md but do note that this
-includes spoilers for both versions! The fixes to get it to work at all are
-described next.
+
+To see how the macOS fixes works, see the [macos.md](1998/schweikh1/macos.md)
+file but do note that this includes spoilers for both versions! The fixes to get
+it to work at all are described next.
 
 So what was wrong with the original?
 
-The call to `freopen()` was incorrect with the second arg (the mode) being
-`5+__FILE__`; it is now `"r"`. (Observe that the mode to the `fopen()`
+The call to `freopen(3)` was incorrect with the second arg (the mode) being
+`5+__FILE__`; it is now `"r"`. (Observe that the mode to the `fopen(3)`
 call is: `43+__FILE__`. This might seem incorrect and indeed it can be changed
 to `"r"` as well but this was not actually necessary so once this was noticed it
 was changed back to the original.)
@@ -2127,9 +2137,9 @@ as the author stated: as long as the options `-E -dM` of the compiler prints out
 the macros in the form of `gcc -dM` i.e. the lines are in the form `#define
 MACRO value` it will work, assuming that compiler can run, of course.
 
-As for the version for macOS, the even more complicated details are described in
-the [Alternate code](1998/schweikh1/README#alternate-code) section of the
-README.md file as these changes pertain to the described version therein.
+Cody also added the perl script that the author provided that they used to
+compute the character count in the code according to the contest rules of 1998
+in the file [charcount.pl](1998/schweikh1/charcount.pl).
 
 
 ## [1998/schweikh2](1998/schweikh2/schweikh2.c) ([README.md](1998/schweikh2/README.md]))
@@ -2158,8 +2168,36 @@ command.
 Cody also made the Makefile rule `all` symlink the entry to `samefile` as that
 is the name of the program.
 
+The author stated that:
+
+```
+In the remote event that the input has more than `8192` files with
+the same size (on systems where `sizeof (char *) == 4`, or `4096` when
+`sizeof (char *) == 8`), increase the manifest constant 32767 on line
+31.
+```
+
+so Cody changed the constant to a macro in the Makefile called `SZ` so one can
+more easily do this (though it indeed seems highly unlikely). See the README.md
+for more details.
+
 There actually is a web page for the tool and this was added to the author
 information for the entry. It has not been added to any JSON file.
+
+
+## [1998/tomtorfs](1998/tomtorfs/tomtorfs.c) ([README.md](1998/tomtorfs/README.md]))
+
+Cody fixed the assumption that `EOF` is `-1` (the author noted that it assumes
+it is `-1` and it's indeed a valid concern as the standard only guarantees that
+it's a value `< 0`) and that `1` is a valid code to return failure (it seems
+unlikely that it wouldn't be but since the author suggested it it was changed to
+`EXIT_FAILURE`). To make it so the lines end at the same columns as the original
+the `EXIT_FAILURE` change was done by redefining `exit(3)` to be `exit(a) return
+EXIT_FAILURE` and `1` was passed to it (`return` was used because the original
+program  had `return 1`).
+
+Cody also added the [try.sh](1998/tomtorfs/try.sh) script to try out a few
+commands that we recommended.
 
 
 ## [2000/anderson](2000/anderson/anderson.c) ([README.md](2000/anderson/README.md]))

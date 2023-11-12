@@ -58,7 +58,7 @@ ARCH=
 # Defines that are needed to compile
 #
 CDEFINE= -DM0=sizeof -DM1=long -DM2=void \
-	-DM3=realloc -DM4=calloc -DM5=free
+	-DM3=realloc -DM4=calloc -DM5=free -DSZ=32767
 
 # Include files that are needed to compile
 #

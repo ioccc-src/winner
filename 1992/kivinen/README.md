@@ -3,14 +3,14 @@
 If your machine support the X Window System, Version 11:
 
 ```sh
-make all
+make alt
 ```
 
-NOTE: this entry requires `X11/Xlib.h` header file and the X11 library to
-compile. macOS users running Mountain Lion and later will need to download and
-install [XQuartz](https://www.xquartz.org) in order to compile and run this
-entry.
+We recommend the alt version first as the original goes too fast on modern
+systems. See [original code](#original-code) for the original should you wish to
+see what we mean.
 
+You can reconfigure the value to `usleep(3)`; see [try](#try) section below.
 
 ### Bugs and (Mis)features:
 
@@ -26,14 +26,44 @@ For more detailed information see [1992 kivinen in bugs.md](/bugs.md#1992-kivine
 ### Try:
 
 ```sh
-./kivinen
+./kivinen.alt
 
-./kivinen a
+./kivinen.alt a
 
-./kivinen a b
+./kivinen.alt a b
 ```
 
 See also the author's remarks for other variations.
+
+Also try changing the speed this game moves. For instance if you wish to change
+the `usleep(3)` value to `30000` from `20000`, try:
+
+```sh
+make clobber CDEFINE="-DZ=30000" alt # make it slower
+
+make clobber CDEFINE="-DZ=10000" alt # make it faster
+```
+
+Then use the same syntax as above and described by the author.
+
+
+## Original code:
+
+As noted above, the alt version is recommended because the code goes too fast in
+modern systems. If you wish to see the original you may do so with the original
+code.
+
+
+### Original build:
+
+```sh
+make all
+```
+
+
+### Original use:
+
+Use `kivinen` as you would `kivinen.alt`.
 
 
 ## Judges' remarks:

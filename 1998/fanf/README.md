@@ -4,7 +4,7 @@
 make all
 ```
 
-NOTE: This may take a while.  Some systems may have problems building\
+NOTE: this may take a while.  Some systems may have problems building
 this entry because of the system resources it requires.
 
 
@@ -15,35 +15,25 @@ this entry because of the system resources it requires.
 ```
 
 
-### To use:
+### Try:
 
-Enter an expression on standard input.  Here are some
-sample expressions that you can use:
+Enter an expression on standard input.  To try some we have selected:
 
-```
-((\a(\b(\c(d)))) e)
-
-
-(\f\g\x
-  (
-    (g x) (f x)
-  ) K K z
-)
-
-
-(\f(\f\g\x( (f((\a(g(b))) e)) (g x) ) K K z))
-
-
-(Y\f\n
-  ((= n 0)
-   1
-   (* n (f (- n 1)))
-  )
-)
+```sh
+./try.sh
 ```
 
 
 ## Judges' remarks:
+
+
+### Historical aside:
+
+At a time the code in [fanf.c](fanf.c) was that of [fanf.orig.c](fanf.orig.c)
+but to get this to compile in modern systems it had to be translated to what you
+now see. The intermediate steps can still be performed but they might be
+different from the past. This should be kept in mind as you read the below
+remarks.
 
 This program translates lambda expressions into combinator
 expressions.  But you do not need to know Lambda Calculus to be
@@ -56,19 +46,20 @@ Notice how large the code grows from the [fanf.c](fanf.c) into the final
 `fanftmp2.c` C program.  Take a look at that final C program again,
 can you begin to understand what it is doing?
 
-Look at the first stage of the C pre-processing:
+Look at the first stage of the C pre-processing which was done like:
 
 ```sh
 cc fanf.c -E > fanftmp1.c
 ```
 
-Skip to the bottom of `fanftmp1.c` (after all of the `#include` header
-stuff ... look for a line of the form:  `# 2 "fanf.c"`  near the bottom)
+Skip to the bottom of `fanftmp1.c` (after all of the C pre-processor header
+stuff ... look for a line of the form:  `# 38 "fanf.c"`  near the bottom)
 and look at the resulting code.  This code, when C pre-processed
 will expand into over 342 times the original code (ignoring `#include`
 headers) to produce `fanftmp2.c`.  That program in turn, when compiled
 translates a single lambda expression on standard input into
 combinator expressions on standard output.
+
 
 ### Extra credit question:
 
@@ -88,7 +79,7 @@ for translating lambda expressions into combinator expressions.
 The syntax of lambda expressions recognised by the program is as
 follows: The basic atoms are variables which are single characters other
 than backslash or parentheses, e.g. `a` or `b` or `@`. Variables are
-combined by function application which is written e.g. `(f a)` which is
+combined by function application which is written as e.g. `(f a)` which is
 the function `f` applied to the argument `a`. Application groups to the
 left, so `(f a b c)` is equivalent to `(((f a) b) c)`. Functions are
 created from lambda terms which are written in the form `\a(expr)` which
@@ -131,30 +122,34 @@ The algorithm for translating lambda expressions into combinator
 expressions works as follows. There are three forms of lambda expression
 to consider: variables, applications, and abstractions.
 
-trans `v`	-> `v`				(variable)
-trans `a b`	-> (trans `a`) (trans `b`)	(application)
-trans `\ab`	-> abs a (trans `b`)		(abstraction)
+```
+trans v 	-> v				(variable)
+trans a b	-> (trans a) (trans  b )	(application)
+trans \ab	-> abs a (trans b)		(abstraction)
+```
 
 There are a further three cases to consider for the body of lambda
 expressions, where we need to do the magic that transforms away the
 variables.
 
-abs a `f x`	-> `S` (abs a `f`) (abs a `x`)
-abs a `b`	-> `K b`			(b != a)
-abs a `a`	-> `I`
+```
+abs a f x	-> S (abs a f) (abs a x)
+abs a b 	-> K b	       (b != a)
+abs a a		-> I
+```
 
 E.g. suppose we had combinator expressions for `+` and `3` and we wanted
 to see what the combinator expression for doubling 3 looked like:
 
 ```
-    trans `\x(+ x x) 3`
-->	(trans `\x(+ x x)`) (trans `3`)
-->	(abs x (trans `+ x x`)) `3`
-->	(abs x `+ x x`) `3`
-->	`S` (abs x `+ x`) (abs x `x`) `3`
-->	`S` (`S` (abs x `+`) (abs x `x`)) `I` `3`
-->	`S` (`S` (`K +`) `I`) `I` `3`
-->	`S (S (K +) I) I 3`
+    trans \x(+ x x) 3
+->	(trans \x(+ x x)) (trans 3)
+->	(abs x (trans + x x)) 3
+->	(abs x + x x) 3
+->	S (abs x + x) (abs x x) 3
+->	S (S (abs x +) (abs x x)) I 3
+->	S (S (K +) I) I 3
+->	S (S (K +) I) I 3
 ```
 
 We can then check that this evaluates to the expected result:
@@ -176,7 +171,7 @@ same as `S (K a) (K b)`, because
 ->	a b
 ```
 
-    and
+and
 
 ```
     S (K a) (K b) x
@@ -220,7 +215,7 @@ It is fairly well known that the lambda calculus (and hence SK
 combinators) can compute anything, but mere computation is no use if you
 cannot communicate with the world. This is why `OFL` includes a few
 concessions to reality: a combinator `E` for representing characters and
-testing them for equality, two IO combinators, `G` and `P`, for reading
+testing them for equality, two I/O combinators, `G` and `P`, for reading
 and writing characters respectively, and a combinator `J` for
 representing `false`. I also implemented the `Y` combinator directly
 rather than in terms of the primitive combinators, since it only
@@ -239,7 +234,7 @@ the expression evaluates to `J`.
 
 `K` and `J` are used to represent `true` and `false` respectively; they
 correspond exactly to the standard lambda calculus representations of
-true and false, viz. `\t\f(t)` and `\t\f(f)` respectively. In this way a
+`true` and `false`, viz. `\t\f(t)` and `\t\f(f)` respectively. In this way a
 conditional expression can just be written `cond then else`, which is
 even more terse than C `cond ? then : else`. An expression that
 compares a character with `a`, say, can be written in the rather
@@ -247,7 +242,7 @@ obfuscated form `E('a') char then else`.
 
 The `P` combinator, like the `E` combinator, starts off by evaluating
 its first argument and checking that it is some form of `E`. It then
-writes that character on stdout, and finally it calls its second
+writes that character on `stdout`, and finally it calls its second
 argument as a function with the argument `I`, i.e.
 
 ```
@@ -256,7 +251,7 @@ P x f  ->  f I
 
 with a side-effect.
 
-The `G` combinator just reads a character from stdin then calls its
+The `G` combinator just reads a character from `stdin` then calls its
 argument as a function with the appropriate `E` combinator as an
 argument, i.e.
 
@@ -268,12 +263,12 @@ with a side-effect.
 
 One of the problems with non-strict languages is that it is hard to
 predict in advance in which order side-effects will occur. In my program
-I used a monadic IO structure like that used by the programming language
+I used a monadic I/O structure like that used by the programming language
 Haskell; this allows one to write programs that manipulate external
 state in a manner remarkably similar to imperative programming languages
 like C. An examination of my program should provide an illustration of
 how well this technique works in practice. (In particular, I used the
-CPS form of the IO monad from page 6 of "Imperative Functional
+CPS form of the I/O monad from page 6 of "Imperative Functional
 Programming".)
 
 The `Y` combinator is used for implementing recursive functions. It has
@@ -342,8 +337,8 @@ of the program that is then interpreted.
 The first pass of the compiler is implemented via the C preprocessor. It
 implements one optimisation, namely function in-lining. Unfortunately,
 this optimisation always increases object code size and execution time.
-The opposite optimisation, common sub-expression elimination, (which
-would offer improvements in code size and execution time) has not been
+The opposite optimisation, common sub-expression elimination (which
+would offer improvements in code size and execution time), has not been
 implemented. The output of this pass is a C program that may be compiled
 by a normal C compiler.
 

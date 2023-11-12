@@ -1026,8 +1026,8 @@ not exist in the archive. Do you have it? Please provide it!
 ### Source code: [1993/cmills/cmills.c](1993/cmills/cmills.c)
 ### Information: [1993/cmills/README.md](1993/cmills/README.md)
 
-We are unsure if this is a problem with multiple platforms but in macOS at least
-the program appears to just shows a black screen.
+In multiple platforms, both macOS and also linux (in particular a RHEL 9.3
+system), this entry just shows a blank screen.
 
 Can you fix it? We welcome your help.
 
@@ -1041,7 +1041,8 @@ Can you fix it? We welcome your help.
 This entry relied on a bug in gcc that was fixed with gcc version 2.3.3. This
 cannot be fixed for modern systems as the bug is long gone.
 
-An alternate version, however, does exist. See the README.md file for details.
+An alternate version that will work for modern systems, however, does exist. See
+the README.md file for details.
 
 
 ### STATUS: INABIAF - please **DO NOT** fix

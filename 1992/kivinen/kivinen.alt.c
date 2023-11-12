@@ -35,5 +35,5 @@
       (s[w]		      ==S.window)x&&v||			 w ^1?
       XUnmapWindow		   (d,s[w])		  ,s[w]=0,c--:
       0,l=1; if(!x&&l)j=			    -j,l=0; if(l&x&&!v
-      )u=~19,c--,l=0;t=(!x||!v)		     &&(y<5&&t<0||y>95&&t>0)?0
-	 :t;s[1]?X(1,y+=x&v?t:t/(x+1),130):exit(++c);};return(c);}
+      )u=~19,c--,l=0;t=(!x||!v)		   &&(y<5&&t<0||y>95&&t>0)?0:t
+      ;s[1]?X(1,y+=x&v?t:t/(x+1),130):exit(++c);usleep(Z);};return c;}

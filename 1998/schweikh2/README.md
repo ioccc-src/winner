@@ -89,6 +89,7 @@ to trigger this error.
 With the proper text beyond the `\012`, it was even possible to have all kinds
 of fun adding inline assembly via `#line` directives.  :-)
 
+
 #### For extra fun and credit:
 
 If your compiler had this bug, you could transform the line in the C program to
@@ -136,6 +137,7 @@ and now it works with both clang and gcc.
 
 ## Author's remarks:
 
+
 ### What this program does
 
 My entry is a `yarng`, which stands for, you guessed it, yet another
@@ -147,7 +149,7 @@ non-deterministic factors.  Here's how it works:
 1. an alarm is scheduled to be delivered in a second
 2. an infinite loop is entered that just increments a counter
 3. on delivery of the alarm signal, the counter's LSB is printed.
-4. while some other counter is not zero, go to 1)
+4. while some other counter is not zero, go to step (1)
 5. exit
 
 The `yarng` therefore produces output at a rate of 1 baud. The number of
@@ -175,7 +177,7 @@ impossible, like in the `int main` declaration I have `int` split across two
 lines. All indent programs I use insert space at the beginning of the
 continuation line and thereby introduce a syntax error.
 
-- `main` (ab)used as a signal handler. Shocking. Yeah, this leads to undefined
+- `main()` (ab)used as a signal handler. Shocking. Yeah, this leads to undefined
 behaviour. I have yet to see a system where it does not work. If it doesn't work
 for you, I'd appreciate if you mail me about it.  Uh-oh, Schweikh did it,
 uttered "Works for me". Don't quote me on that!
@@ -190,7 +192,7 @@ lame and I came up with `??=line 10 ONE(O(1,1,2,6,0,6))`.
 
 - `__LINE__` is used as the signal number argument to `signal()`. If indenting or
 other editing changes the number of lines the program is likely to be killed
-after one second... Thanks to POSIX for specifying SIGALRM as 14.  You're SOL if
+after one second... Thanks to POSIX for specifying `SIGALRM` as `14`.  You're SOL if
 your system does not conform. Get a real OS.
 
 - All strings (or characters) needed are crammed into `__FILE__` using octal
@@ -205,13 +207,14 @@ and as a plain identifier in `main`'s parameters. The rule is that whenever
 `ONE` is followed by `(` it must be the macro.
 
 - A quote from Kernighan and Plauger, _The Elements of Programming Style_, 2nd
-Ed., page 21: "A useful way to decide if some piece of code is clear or not is
+Ed., page 21: `"A useful way to decide if some piece of code is clear or not is
 the 'telephone test.' If someone could understand your code when read aloud
-over the telephone, it's clear enough. If not then it needs rewriting." Now try
+over the telephone, it's clear enough. If not then it needs rewriting."` Now try
 the telephone test for 'one = zero = atoi (ONE[zero-1])'.
 
 - Don't you love the aesthetics of symmetry: `write (1, 1+__FILE__+1, 1)`
 (telephone test this as well; is it 1, One, ONE, one? Maybe won?).
+
 
 ### Where does the randomness come from?
 
@@ -221,7 +224,7 @@ this number?
 
 - The accuracy of the clock driving the CPU.
 - The accuracy of the clock driving the timer responsible for alarm signals.
-- On multitasking OS's: The total time the process is scheduled to run between
+- On multitasking OSes: The total time the process is scheduled to run between
 successive invocations of the signal handler.
 
 How about the randomness of the `yarng`? To measure these properties I
@@ -230,7 +233,7 @@ expect from a generator with uniform distribution (all sequences
 equally likely to occur).
 
 It is interesting to note that `yarng`'s maximum deviations are less
-than or equal to `rand()`'s. Randomness however tends to degrade under
+than or equal to `rand(3)`'s. Randomness however tends to degrade under
 high load averages on my system (Linux). This could be avoided by
 allowing the process one second of execution time instead of wall
 clock time (using the `SIGVTALRM` sent by the virtual timer
