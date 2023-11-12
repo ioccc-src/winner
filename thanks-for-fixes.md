@@ -2060,8 +2060,9 @@ to be compiled. Now it works with both Linux and macOS (and BSD?).
 Cody fixed invalid data types which prevented this entry from working, causing a
 segfault. This showed itself in two parts which required two fixes, one for
 linux and further changes for macOS. He also fixed a segfault (after printing
-garbage) when the arg specified evaluated to 0. It was decided that these
-segfault fixes should be made because the program is so beautiful.
+garbage) when the arg specified evaluated to 0. It was decided by us, the
+judges, that these segfault fixes should be made because the program is so
+beautiful.
 
 Later on Cody improved the fixes by checking that the arg is a number `>0 &&
 <27` as that was noted by the author as a requirement and again since it's such
