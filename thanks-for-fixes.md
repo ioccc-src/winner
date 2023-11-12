@@ -1542,15 +1542,16 @@ operator so that it could be used in binary expressions.
 
 It was observed that on modern systems this goes much too quick. Yusuke created
 a patch that calls `usleep(3)` but Cody thought the value was too slow so he
-made it a macro in the Makefile `Z`, defaulting at 15000. You can reconfigure it
-like:
+made it a macro in the Makefile `Z`, defaulting at 15000. This was made an [alt
+version](1992/kivinen/kivinen.alt.c) and it is recommended one use the alt
+version first. See the README.md file to see how to reconfigure it.
 
-```sh
-make clobber Z=1000 all
-```
-
-This was not made an alternate version because it moves so fast that it's nigh
-impossible to use otherwise.
+Cody also made the fixed version (the code relied on `exit(3)` returning to use
+in binary expressions) (and alt code from it) more like the original by renaming
+the `ext` macro to be `exit` which uses the comma operator. He made it so the
+line lengths match the original code, at least as best as possible (if not
+perfectly), including start and end columns, often (if not all) with the same
+start and end character.
 
 Yusuke also noted that there is a bug in the program where right after starting
 it moves towards the right but if you click the mouse it goes back.
