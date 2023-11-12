@@ -2050,9 +2050,13 @@ exiting the program.
 
 ## [1998/fanf](1998/fanf/fanf.c) ([README.md](1998/fanf/README.md))
 
-Cody fixed this for Linux. The problem was the intermediate steps to get to the
-final code that is compiled. The entry itself is what was essentially what used
-to be compiled. Now it works with both Linux and macOS (and BSD?).
+Cody fixed this to compile. The problem was the intermediate steps to get to the
+final code that is compiled. The code is now what it essentially becomes when
+processed completely. The intermediate steps can now be performed to see how it
+expands but it can still compile and be used.
+
+Cody also added the [try.sh](1998/fanf/try.sh) script to show the output of some
+of the expressions that we selected.
 
 
 ## [1998/schnitzi](1998/schnitzi/schnitzi.c) ([README.md](1998/schnitzi/README.md]))

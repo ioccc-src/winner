@@ -130,8 +130,10 @@ all: data ${TARGET}
 	sandwich supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "This next step may take some time to complete:"
-	${CC} ${CFLAGS} ${PROG}.c ${LDFLAGS} -o $@
+	@echo "This may take some time to complete:"
+	${CC} ${PROG}.c -E > ${PROG}tmp1.c
+	${CC} ${PROG}tmp1.c -E > ${PROG}tmp2.c
+	${CC} ${CFLAGS} ${PROG}tmp2.c ${LDFLAGS} -o $@
 
 # alternative executable
 #
