@@ -1,7 +1,7 @@
 # Information about this entry
 
 Morse codes for letters and digits use sequences of 1 to 5 (inclusive)
-Morse symbols (denoted as '.' or '-'), e.g.
+Morse symbols (denoted as `.` or `-`), e.g.
 
 ```
 E .
@@ -16,7 +16,7 @@ to be a bit set to 0, `.` to be a bit set to 1.  Characters in C are at
 least 8 bits, but they are either signed or unsigned.  To be portable,
 I've used only values from 0 to 127 (inclusive) (both in the encoding
 of Morse codes, as well as in subexpressions in the program).  Hence we
-can use type char (using unsigned char for an extra bit would have made
+can use type `char` (using `unsigned char` for an extra bit would have made
 the source code excessively large ;-)
 
 The least significant bit contains the first symbol of a Morse code, so
@@ -28,7 +28,7 @@ Z > 0...1100
 3 > 0..00111
 ```
 
-The dots have still to be determined.  But we also need to encode the
+The dots still have to be determined.  But we also need to encode the
 length of the sequence.  Since there are only 4 different kind of lengths,
 two bits would suffice, e.g.
 
@@ -60,7 +60,7 @@ length 4: 00.1xxxx     Z > 00.11100
 length 5: 0.1xxxxx     3 > 0.100111
 ```
 
-With 1 bit still to be chosen freely (let's assume it is 0).  Now we can do
+with 1 bit still to be chosen freely (let's assume it is 0).  Now we can do
 
 ```c
 do {
@@ -95,8 +95,8 @@ do {
 ```
 
 The last shift will always result in `00100010`, hence the test for `>35`.
-Note that the calculation for the next value of `encoding` is done at int
-precision, so that the actual value of the char remains `<= 127`.
+Note that the calculation for the next value of `encoding` is done at `int`
+precision, so that the actual value of the `char` remains `<= 127`.
 
 The character `'-'` (ASCII 45) and `'.'` (ASCII 46) are conveniently in
 sequence, so the putchar can simply be
@@ -106,9 +106,9 @@ putchar(45 + encoding % 2);
 ```
 
 I used the modulo operator this time, because `+` takes precedence over `&`.
-The assignment can be incorporated into the while control test, and a
-do-while loop with a body of a single expression statement can be written
-as a while loop with a comma operator in the test:
+The assignment can be incorporated into the `while` control test, and a
+`do-while` loop with a body of a single expression statement can be written
+as a `while` loop with a comma operator in the test:
 
 ```c
 while(putchar(45 + encoding % 2), encoding = encoding + 32 >> 1);
@@ -128,16 +128,16 @@ of the array initializer ! The test also stops when at most 5 symbols
 have been shifted in.
 
 The encoded character is then looked up in the encoding string with
-`memchr()` (why `memchr()` is explained later).  Either a `?` (when there are
+`memchr(3)` (why `memchr(3)` is explained later).  Either a `?` (when there are
 more than 5 consecutive Morse symbols, or if the sequence is unknown)
 or the decoded character is printed.  Or a `' '` if there was an extra
 space in the source line.  Note the use of "or" in these last sentences,
 as they explain the use of the conditional operator.
 
-The `strspn` calls need either `" .-"` or `".-"` as argument.  Of course they
+The `strspn(3)` calls need either `" .-"` or `".-"` as argument.  Of course they
 are overlapped.  I put these strings between the encodings for digits
 and letters.  This is OK, since neither of these characters, or the `'\0'`,
-is a valid encoding !  We must, however, use `memchr()` instead of `strchr()` in
+is a valid encoding !  We must, however, use `memchr(3)` instead of `strchr(3)` in
 the decoding lookup because of this `'\0'`.  Since it is far more obscure
 this way, I hope you'll forgive me.
 
@@ -163,11 +163,11 @@ while (more lines) {
 ```
 
 Because of the *two* `while(more characters)` loops are the same, I've
-exchanged the `if(line is in morse)` and the two while loops (so there
-is *single* while loop).  However, we must now store the `if(line is in
+exchanged the `if(line is in morse)` and the two `while` loops (so there
+is *single* `while` loop).  However, we must now store the `if(line is in
 morse)` test for efficiency (it would be stupid to test the entire line
 for every character).  This is done in `l[0]` !  (the first encoding is
-thus in `l[1]`).  The `memchr()` decoding lookup is not disturbed, because the
+thus in `l[1]`).  The `memchr(3)` decoding lookup is not disturbed, because the
 test is always `0` for Morse lines, and `'\0'` is not a possible encoding.
 `l[0]` is also used as the temporary shift character while encoding a
 line of text.  This does not disturb the `if (line is in morse)` test,
@@ -191,15 +191,15 @@ l[35] - l[998]  input line
 ---
 
 Selected notes:
-- We don't need to declare `isalnum()` (or include ctype.h) as its implicit
+- We don't need to declare `isalnum(3)` (or include ctype.h) as its implicit
   declaration is correct (int argument, int result).  This is not so for
-  `strlen()`, `strspn()`, and `memchr()` as they use `size_t`.
+  `strlen(3)`, `strspn(3)`, and `memchr(3)` as they use `size_t`.
 - During development, my gcc 2.7.2.3 had an internal compiler error (signal
   6) on code that was correct !
 - lclint 2.4b thinks that "the observer is modified" a couple of times,
   whereas it is not.  Well, it is, but there is a sequence point in between.
 - lclint 2.4b parses line 13 as <error>, whereas it is correct code.
-- lclint 2.4b is positive the second while loop is infinite, whereas it is
+- lclint 2.4b is positive the second `while` loop is infinite, whereas it is
   not.
 
 ---

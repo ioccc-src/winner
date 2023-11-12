@@ -2048,6 +2048,11 @@ Cody added a call to `endwin()` to restore terminal sanity (echo etc.) when
 exiting the program.
 
 
+## [1998/dorssel](1998/dorssel/dorssel.c) ([README.md](1998/dorssel/README.md]))
+
+Cody added the [try.sh](1998/dorssel/try.sh) script.
+
+
 ## [1998/fanf](1998/fanf/fanf.c) ([README.md](1998/fanf/README.md))
 
 Cody fixed this to compile. The problem was the intermediate steps to get to the

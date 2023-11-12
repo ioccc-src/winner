@@ -18,11 +18,13 @@ echo text | ./dorssel
 ### Try:
 
 ```sh
-echo Simple as 123 | ./dorssel
-echo 'Binary as simple as 1, 10 11.' | ./dorssel
-echo '.... --- .--  -.. --- . ...  .. -  -.. ---  - .... .- -' | ./dorssel
-echo 'HOW DOES IT DO THAT' | ./dorssel
-echo 'HOW DOES IT DO THAT' | ./dorssel | ./dorssel
+./try.sh
+```
+
+Also try:
+
+```sh
+./dorssel < dorssel.md
 ```
 
 
@@ -47,7 +49,17 @@ what values may they be changed without altering the behavior?
 altering the behavior ?
 
 
-Extra credit: Change the program so that it does not SHOUT IN ALL CAPS.
+### Extra credit: 
+
+Try doing what the last part of the last command in [try.sh](try.sh) suggests.
+As in, do the following:
+
+```sh
+echo ". -..- . .-. -.-. .. ... .
+-.-. .... .- -. --. .  - .... .  .--. .-. --- --. .-. .- --  ... ---  .. -  -.. --- . ...  -. --- -  ... .... --- ..- -" | ./dorssel
+```
+
+and make the necessary adjustments.
 
 You might also want to read the [dorssel.md](dorssel.md) file.
 
@@ -56,7 +68,8 @@ You might also want to read the [dorssel.md](dorssel.md) file.
 
 ### Usage
 
-This program converts ASCII to Morse code, and vice versa.
+This program converts ASCII to [Morse
+code](https://en.wikipedia.org/wiki/Morse_code), and vice versa.
 
 The program reads in lines from standard input and writes its result to
 standard output.  The direction of conversion is determined on a per
@@ -66,8 +79,8 @@ characters.  Otherwise, some characters may be lost in the conversion.
 
 - Encoding to Morse code: The program knows the Morse codes for all Latin
 letters (a-z, case insensitive) and decimal digits (0-9).  Any other characters
-are replaced by an ASCII space ' '.  Morse code per converted character is
-written as a sequence of '.' and '-' characters, each sequence followed by a
+are replaced by an ASCII space, `' '`.  Morse code per converted character is
+written as a sequence of `.` and `-` characters, each sequence followed by a
 space.
 
 - Decoding from Morse code: Morse code should be typed as sequences of `.` and
@@ -108,7 +121,7 @@ is the same as
 understand this program.  For an obfuscated spoiler, try
 
 ```sh
-./dorssel < dorssel.md\
+./dorssel < dorssel.md
 ```
 
 
