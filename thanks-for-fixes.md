@@ -2086,16 +2086,16 @@ alternate version that works with macOS. Cody also made it ever so slightly more
 portable by removing the hard-coding of `gcc`, instead hard-coding it `cc`. Doing
 this not only lets it work with systems without `gcc` (though in macOS it does
 exist but is actually `clang`) as `cc` always should.
-
 Getting this entry to work was quite complicated but is also very interesting.
-To see how the macOS fixes works, see the README.md but do note that this
-includes spoilers for both versions! The fixes to get it to work at all are
-described next.
+
+To see how the macOS fixes works, see the [macos.md](1998/schweikh1/macos.md)
+file but do note that this includes spoilers for both versions! The fixes to get
+it to work at all are described next.
 
 So what was wrong with the original?
 
-The call to `freopen()` was incorrect with the second arg (the mode) being
-`5+__FILE__`; it is now `"r"`. (Observe that the mode to the `fopen()`
+The call to `freopen(3)` was incorrect with the second arg (the mode) being
+`5+__FILE__`; it is now `"r"`. (Observe that the mode to the `fopen(3)`
 call is: `43+__FILE__`. This might seem incorrect and indeed it can be changed
 to `"r"` as well but this was not actually necessary so once this was noticed it
 was changed back to the original.)
@@ -2132,9 +2132,9 @@ as the author stated: as long as the options `-E -dM` of the compiler prints out
 the macros in the form of `gcc -dM` i.e. the lines are in the form `#define
 MACRO value` it will work, assuming that compiler can run, of course.
 
-As for the version for macOS, the even more complicated details are described in
-the [Alternate code](1998/schweikh1/README#alternate-code) section of the
-README.md file as these changes pertain to the described version therein.
+Cody also added the perl script that the author provided that they used to
+compute the character count in the code according to the contest rules of 1998
+in the file [charcount.pl](1998/schweikh1/charcount.pl).
 
 
 ## [1998/schweikh2](1998/schweikh2/schweikh2.c) ([README.md](1998/schweikh2/README.md]))
