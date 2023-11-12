@@ -2167,6 +2167,20 @@ There actually is a web page for the tool and this was added to the author
 information for the entry. It has not been added to any JSON file.
 
 
+## [1998/tomtorfs](1998/tomtorfs/tomtorfs.c) ([README.md](1998/tomtorfs/README.md]))
+
+Cody fixed the assumption that `EOF` is `-1` (the author noted that it assumes
+it is `-1` but the standard only guarantees that it's a value `< 0`) and that 1
+is a valid code to return failure (it seems unlikely that it wouldn't be but
+since the author suggested it it was changed to `EXIT_FAILURE`). To make it so
+the lines end at the same columns as the original the `EXIT_FAILURE` change was
+done by redefining `exit(3)` to be `exit(a) return EXIT_FAILURE` and `1` was
+passed to it (`return` was used because the original program  had `return 1`).
+
+Cody also added the [try.sh](1998/tomtorfs/try.sh) script to try out a few
+commands that we recommended.
+
+
 ## [2000/anderson](2000/anderson/anderson.c) ([README.md](2000/anderson/README.md]))
 
 Cody changed this entry to use `fgets()` instead of `gets()` to make it safer

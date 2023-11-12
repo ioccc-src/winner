@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define exit(a) return EXIT_FAILURE
 
 int main(int a,char     **A){FILE*B;typedef     unsigned long C;C b
-[8]; if(!(a==7&&(B=     fopen(1[A],"rb"))))     return 1;for(7[b]=0
+[8]; if(!(a==7&&(B=     fopen(1[A],"rb"))))     exit(1); for(7[b]=0
 ;7[b]<5;7[b]++)b[7[     b]]=strtoul(A[2+7[b     ]],0,16-!7[b]*6);5[
 b]=3[b]                 ; while     ((6[b]=     getc(B)
-)!=(C)-                 1){if(2     [b])for     (7[b]=0
+) !=EOF                 ){if(2      [b])for     (7[b]=0
 ;7[b]<4                 ;7[b]++     )if(((6     [b]>>7[
 b])^(6[                 b]>>(7-7[b])))&1)6[     b] ^=(1
 <<7[b])                 ^(1<<(7-7[b]));5[b]     ^= 6[b]
