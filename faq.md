@@ -361,7 +361,7 @@ usually away with `stty echo`. Sometimes you can also get away with `stty sane`.
 will too but it won't reset the terminal).
 
 
-<a id="#X11macos"></a>
+<a name="X11macos"></a>
 ## Q: How do I get X11 entries to work with macOS?
 
 As an example we will use [1993/jonth](1993/jonth/README.md) which works well
