@@ -2248,7 +2248,8 @@ commands that we recommended.
 
 Cody changed this entry to use `fgets()` instead of `gets()` to make it safer
 and to prevent annoying warnings from showing up at compiling, linking and/or
-runtime, the latter interspersed with the output of the program.
+runtime, the latter interspersed with the output of the program. This involved
+changing the `K` arg to `gets(3)` to `&K` in `fgets(3)`.
 
 Cody later improved the fix to use `gets()` by redefining `gets()` so that the
 code looks like before.
@@ -2328,6 +2329,17 @@ systems and in case you're sensitive to rapidly moving swirling. See the
 README.md for details on that. Note that this alternate version only will impact
 the curses and the SDL versions as Cody does not have a DOS system to test the
 other version in.
+
+
+## [2000/tomx](2000/tomx/tomx.c) ([README.md](2000/tomx/README.md]))
+
+Cody added the [alt code](2000/tomx/README.md#alternate-code) based on the
+author's remarks with a fix for modern systems and he also added the two
+scripts, [try.sh](2000/tomx/try.sh) and [try.alt.sh](2000/tomx/try.alt.sh) for
+the main code and the alt code respectively.
+
+And although the scripts do `chmod +x` on the source code (see the README.md for
+details) the source code is now executable by default.
 
 
 ## [2001/anonymous](2001/anonymous/anonymous.c) ([README.md](2001/anonymous/README.md]))
