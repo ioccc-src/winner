@@ -2061,6 +2061,9 @@ done in modern systems) to be `_int`.
 
 ## [1998/dlowe](1998/dlowe/dlowe.c) ([README.md](1998/dlowe/README.md]))
 
+Cody made the program more portable by changing the void return type of `main()`
+to be `int` (in both versions).
+
 Cody added the scripts [try.sh](1998/dlowe/try.sh),
 [pootify.sh](1998/dlowe/pootify.sh) and
 [pootify.cgi.sh](1998/dlowe/pootify.cgi.sh) for a fun example use of the
