@@ -2045,7 +2045,7 @@ have them like with Macs.
 ## [1998/chaos](1998/chaos/chaos.c) ([README.md](1998/chaos/README.md]))
 
 Cody added a call to `endwin()` to restore terminal sanity (echo etc.) when
-exiting the program.
+exiting the program (in both versions).
 
 
 ## [1998/df](1998/df/df.c) ([README.md](1998/df/README.md]))

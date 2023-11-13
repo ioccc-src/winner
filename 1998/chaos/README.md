@@ -29,7 +29,7 @@ a nice example of a compact collection of obfuscations.
 Can you figure out why, in some cases, it wants to read itself?
 
 
-## Selected Author's Comments:
+## Author's remarks:
 
 ### Usage
 
@@ -48,13 +48,13 @@ interrupted by user input.
 
 ### Features (aka Bugs):
 
-Memory malloced is never freed.  This shouldn't be a big deal,
+Memory `malloc(3)`ed is never freed.  This shouldn't be a big deal,
 since only one block is ever allocated, and the OS should recover it.
 
 My local flavor of lint doesn't seem to like the fact that I never
-`return` from main.  Feh, what does it know?  Otherwise, ignoring
+`return` from `main()`.  Feh, what does it know?  Otherwise, ignoring
 lint's over protectiveness ("Of course I'm not using all of the
-functions defined in curses.h!"), it's lint clean.
+functions defined in `curses.h`!"), it's lint clean.
 
 If the compiler happens to generate the byte sequence "AlWuzEre"
 in the executable by chance, the program may be unable to locate
