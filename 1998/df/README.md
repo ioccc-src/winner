@@ -23,7 +23,7 @@ the program are used.
 Curiously, the program only works if its source is in the directory
 it's run in.  More curiously, the program would fail if the program's
 name's second letter wasn't `r` (the source has been changed for your
-convenience and this restriction does no longer exist).
+convenience and this restriction no longer exist).
 
 Modern design has come a long way since the unreadable, tightly-coupled
 systems we used to have.
@@ -44,7 +44,7 @@ itself. You can guess a letter simply by typing it in. If your C
 implementation requires it, you may have to hit Return before it
 is recognized.  In this case, you can also type multiple guesses
 on the same line (completely solve it by entering
-"abcdefghijklmnopqrstuvwxyz"). Execution stops when all underscores
+`abcdefghijklmnopqrstuvwxyz`). Execution stops when all underscores
 have been replaced.
 
 The program offers a number of different words to guess, `time()` is
@@ -76,7 +76,7 @@ to `#define`. I have also included comments in the code, and vital
 code in the comments. And of course there is code that doesn't do
 anything but will crash the program if it is removed (just like
 those comments I mentioned above). Additionally, since you said
-you'd be preprocessing entries ignoring includes I figured I should
+you'd be preprocessing entries ignoring `#include`s I figured I should
 use some more of them instead of other obfuscation methods.  Did
 I mention that preprocessed or beautified sources will crash or
 hang your system? The program will also crash on non-ASCII machines.
@@ -99,7 +99,7 @@ These restrictions have been removed for your convenience.
 The following lines describe how this program works; if you don't
 want to know it at this time, please skip them. If this entry would
 by some mistake win the contest, please do not rot13 this - I hate
-rot13'd spoilers since it is somewhat complicated on a Mac to
+rot13 spoilers since it is somewhat complicated on a Mac to
 reverse them. Anyone out there should have enough discipline and
 rot13 shouldn't be required, really. After all, we are not children
 anymore :-)
@@ -123,7 +123,7 @@ spread over six lines in the source; decoding starts on a line
 after a tab and a whitespace have been found, and stops on a newline.
 The grin after the "Demonic Smiley" actually is one encoded letter
 while the string is completely ignored; and the `cut` in "cut here"
-is required while "here" is not.
+is required while `here` is not.
 
 "For extra credit", explain why the words are sorted alphabetically
 (because I extracted them from a dictionary :-) )
@@ -131,17 +131,16 @@ is required while "here" is not.
 The file name had to fulfill the restrictions mentioned above
 because `__FILE__+1` was used as a second parameter to `fopen()`. (It
 essentially was `fopen(__FILE__,__FILE__+1)` ). This was an extra joke
-that does no longer exist in the released version.
+that doesn't exist in the released version.
 
-You probably discovered that the `while(FILE)` in main is not a while loop
+You probably discovered that the `while(FILE)` in `main()` is not a while loop
 but the statement that opens the file and initializes the dictionary.
-Similarly, int and signed have been redefined (to save space, of
-course).
+Similarly, `int` and `signed` have been redefined (to save space, of course).
 
 The main function (the guessing part) is between the last `#else..#endif`,
 but still is declared before `main()`. The `5[O]()` in `main()` calls
 this function.  Similarly, most indexing operations have been
-changed to this form; and I tried to write each such operation
+changed to this form and I tried to write each such operation
 different.
 
 
