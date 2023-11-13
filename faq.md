@@ -1,20 +1,17 @@
 # FAQ Table of Contents
 
 ## Section  0 - [History of the IOCCC](#faq0)
-
-### FAQ  0.0 - [How did the IOCCC get started?](#faq0_0)
-### FAQ  0.1 - [Why are some years missing IOCCC winners?](#faq0_1)
-### FAQ  0.2 - [Why do some IOCCC winners receive the Grand Prize or Best of Show award?](#faq0_2)
+    - [0.0 - How did the IOCCC get started?](#faq0_0)
+    - [0.1 - Why are some years missing IOCCC winners?](#faq0_1)
+    - [0.2 - Why do some IOCCC winners receive the Grand Prize or Best of Show award?](#faq0_2)
 
 ## Section  1 - [Submitting entries to a new IOCCC](#faq1)
-
-### FAQ  1.0 - [What types of entries have been over-submitted to the IOCCC?](#faq1_0)
-### FAQ  1.1 - [What should I put in my entry's Makefile?](#faq1_1)
-### FAQ  1.2 - [May I use a different source or compiled filename than prog.c or prog?](#faq1_2)
-### FAQ  1.3 - [What platform should I assume for my entry?](#faq1_3)
+    - [1.0 - What types of entries have been over-submitted to the IOCCC?](#faq1_0)
+    - [1.1 - What should I put in my entry's Makefile?](#faq1_1)
+    - [1.2 - May I use a different source or compiled filename than prog.c or prog?](#faq1_2)
+    - [1.3 - What platform should I assume for my entry?](#faq1_3)
 
 ## Section  2 - [IOCCC Judging process](#faq2)
-
 ### FAQ  2.0 - [How many entries do the judges receive for a given IOCCC?](#faq2_0)
 ### FAQ  2.1 - [What should I put in the remarks.md file of my entry?](#faq2_1)
 ### FAQ  2.2 - [Why don't you publish non-winners?](#faq2_2)
