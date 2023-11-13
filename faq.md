@@ -863,7 +863,7 @@ make clobber all 'CWARN+= -Weverything'
 ```
 
 though it should be noted that if one tries `-Weverything` with compilers that
-are not `clang` they might see something like:
+are not `clang` they _might_ see something like:
 
 ```sh
 echo 'int main(void) {}' > foo.c ; cc -Weverything foo.c -o foo
@@ -871,44 +871,68 @@ cc: error: unrecognized command-line option '-Weverything'
 ```
 
 which means that it can't even be compiled. Thus the proper way to do it is the
-first one.
+first way, `make clobber all CC=clang`.
 
-IOCCC authors who have access to a `clang` compiler might wish to try they their
+IOCCC authors who have access to `clang` might wish to try their
 hand at compiling with `-Weverything` while using a minimum of `-Wno-foo`
 statements.  Sometimes there is a technical or pedantic issue that
-`-Weverything` warns about that would merit a change to your C code. Of course
+`-Weverything` warns about that would merit a change to your C code; often,
+however, it is not even possible to fix let alone is it worth it. Of course
 if you're running out of bytes due to rule 2[ab] one might not have much choice.
-Thus is something that obfuscators simply sometimes have to deal with!
+This is something that obfuscators simply sometimes have to deal with!
 
-If you to try to use minimize the number of `-Wno-foo` options needed with
+If you try to minimize the number of `-Wno-foo` options needed with
 `-Weverything`, please mention this in your remarks about the entry, as the
 judges note you attempt to honor it (see also below). In some cases your
 obfuscated code will issue warnings with `-Weverything` no matter what: the
 `-Wno-poison-system-directories` is a common example of this but there are
-others as well.
+others as well, sometimes depending on the version of `clang`.
 
-If you do try for a warning clean `-Weverything`, keep on mind that while _your_
+If you do try for a compile with `clang -Weverything`, keep on mind that while _your_
 compile environment might be warning free, a different clang version or a
 different build environment might still have warnings. For instance the warning
-set is different in macOS (which by default is `clang` even when run as `gcc`!)
-than linux! Given that your entry *MUST* work as documented, you may be safer to
+set is different in macOS (which by default is `clang`: even when run as `gcc`!)
+than linux (due to versions and possibly other things)!
+
+Given that your entry **MUST** work as documented, you may be safer to
 say that your entry keeps the number of warnings and `-Wno-foo` options while
-compiling with `clang -Weverything` at a minimum. Because if you claim zero
+compiling with `clang -Weverything` at a minimum. You might want to say the
+version number and platform too as an extra safety net. Because if you claim zero
 warnings, and we find a warning situation, this may diminish the value of your
 entry as it is not as documented. Thus it might be wise to point this out and
-also if you can test it in multiple platforms (or versions of `clang`, see
+if you can test it in multiple platforms (or versions of `clang`, see
 below note) this would be advisable.
 
 NOTE: different versions of `clang` have other differences as well. For instance
-a defect of `clang` that required numerous entries to be fixed is that it
+a defect of `clang` that required numerous entries to be fixed for clang is that it
 requires that `main()`'s arguments to be of a specific type. However some
 versions of `clang` are more strict in the number of args allowed. These reasons
 are part of why numerous entries had to be modified so that `main()` calls
-another function instead of doing it all in `main()`. Another reason was that
+another function instead of doing it all in `main()` (another reason was that
 some entries that recursively called `main()` caused a crash or otherwise broke
-the entry in modern systems. Some entries do not work in `clang` (or at least do
+the entry in modern systems). Some entries do not work in `clang` (or at least do
 not work completely) due to these defects, for instance
-[1989/westley](1989/westley/README.md).
+[1989/westley](1989/westley/README.md); [Cody Boone
+Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson) was able to
+get much of it to work and looking at that entry might be of value to your
+submissions, at least if you can figure the code out :-). To see the
+differences, try from `1989/westley`:
+
+```sh
+make diff_orig_prog
+```
+
+If you have `colordiff` try:
+
+```sh
+make DIFF=colordiff diff_orig_prog
+```
+
+Alternatively you can try:
+
+```sh
+git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..eb9e69fde657acc8c85a618a8a99af4c2f93b21d westley.c
+```
 
 As you can see, using `clang` has some additional problems to work out but if
 you can get your entry to work well in `clang` it might very well be considered
@@ -918,7 +942,7 @@ better than other entries.
 ## <a name="faq4"></a>Section 4: Changes made to IOCCC winners
 
 
-### <a name="faq4_0"></a>FAQ 4.0: Why are some winning author remarks incongruent with the winning IOCCC code?
+### <a name="faq4_0"></a>FAQ 4.0: Why are some winning entry remarks incongruent with the winning IOCCC code?
 
 It is very likely in this case that the code was fixed to work for modern
 systems as part of the reworking of the website. If you have this problem in
@@ -926,7 +950,8 @@ some entries you should look at the original code as in `winner.orig.c` or
 `prog.orig.c`. `winner` is the directory name. For instance, one of Landon's
 favourite entries of all time is [1984/mullender](1984/mullender/README.md) and
 the winner there would be `mullender`. Sometimes the original is in an alt
-version like `winner.alt.c` or `prog.alt.c`.
+version like `winner.alt.c` or `prog.alt.c`. In fact it is advisable to look at
+the original code when reading the author's (and sometimes authors') remarks.
 
 
 ### <a name="faq4_1"></a>FAQ 4.1: Why were some calls to the libc function gets changed to use fgets?
