@@ -2042,6 +2042,12 @@ they do have page up and page down but this gives a default for those who don't
 have them like with Macs.
 
 
+## [1998/bas2](1998/bas2/bas2.c) ([README.md](1998/bas2/README.md]))
+
+Cody added the [try.sh](1998/bas2/try.sh) script which runs some default actions
+as well as allowing one to pass in different file names or strings.
+
+
 ## [1998/chaos](1998/chaos/chaos.c) ([README.md](1998/chaos/README.md]))
 
 Cody added a call to `endwin()` to restore terminal sanity (echo etc.) when
@@ -2059,6 +2065,7 @@ by changing the typedef `lint` (to `int` - see the code for why this has to be
 done in modern systems) to be `_int`.
 
 
+## [1998/dlowe](1998/dlowe/dlowe.c) ([README.md](1998/dlowe/README.md]))
 ## [1998/dlowe](1998/dlowe/dlowe.c) ([README.md](1998/dlowe/README.md]))
 
 Cody made the program more portable by changing the void return type of `main()`

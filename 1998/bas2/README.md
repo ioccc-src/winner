@@ -8,11 +8,22 @@ make all
 ## To use:
 
 ```sh
-./bas2 < bas2.c
+./bas2 < file
+echo text | ./bas2
+```
+
+
+## Try:
+
+```sh
+./try.sh
+
+./try.sh "foo bar" "baz" "IOCCC 1998/bas2" README.md
 ```
 
 
 ## Judges' remarks:
+
 
 ### Questions to ponder:
 
@@ -21,6 +32,7 @@ output?
 
 The program was not designed to process files with a certain octet value, what
 value is that?
+
 
 ### Hint and Extra Credit:
 
@@ -40,10 +52,10 @@ done by matching the bit patterns.  Minor obfuscations are:
 
 - Useless variable names.
 
-- Recursive main() instead of 2 loops (over input characters and over bits in
+- Recursive `main()` instead of 2 loops (over input characters and over bits in
 the character).
 
-- `?` and `||` instead of if statements.
+- `?:` and `||` instead of if statements.
 
 
 ## Copyright and CC BY-SA 4.0 License:
