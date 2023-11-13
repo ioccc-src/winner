@@ -53,7 +53,7 @@ make alt
 ### Alternate use:
 
 ```sh
-./pootris.alt
+./pootris.alt [X size of board] [Y size of board]
 ```
 
 
