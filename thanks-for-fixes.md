@@ -2048,6 +2048,17 @@ Cody added a call to `endwin()` to restore terminal sanity (echo etc.) when
 exiting the program.
 
 
+## [1998/dlowe](1998/dlowe/dlowe.c) ([README.md](1998/dlowe/README.md]))
+
+Cody added the scripts [try.sh](1998/dlowe/try.sh),
+[pootify.sh](1998/dlowe/pootify.sh) and
+[pootify.cgi.sh](1998/dlowe/pootify.cgi.sh) for a fun example use of the
+program, a local pootifier of web pages and a CGI pootifier. It should be noted
+that the CGI version might have an issue with modern systems; see [historical
+remarks](1998/dlowe/README.md#historical-remarks) for more details on the
+pootify scripts.
+
+
 ## [1998/dloweneil](1998/dloweneil/dloweneil.c) ([README.md](1998/dloweneil/README.md]))
 
 Cody added [alt code](1998/dloweneil/dloweneil.alt.c) which has vi(m) movement
