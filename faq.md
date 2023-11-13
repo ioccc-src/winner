@@ -1,840 +1,163 @@
-<!DOCTYPE html>
-<HTML>
-<BODY TEXT="#000000">
+# FAQ Table of Contents
 
-<center><img alt="IOCCC" SRC="png/ioccc.png"></center><br>
-<center><font size="6"><I>The International Obfuscated C Code Contest </I></font></center><br>
+## Section  0 - [History of the IOCCC](#faq0)
 
-<P>
-<CENTER>
-<A HREF="judges.html">The judges</A> |
-<A HREF="main.html">IOCCC home page</A> |
-<B>FAQ</B> |
-<A HREF="index.html#enter">How to enter</A> |
-<A HREF="contact.html">Contacting the IOCCC</A>
-<BR><BR>
-<A HREF="index.html#news">IOCCC news</A> |
-<A HREF="winners.html">People who have won</A> |
-<A HREF="years.html">Winning entries</A>
-<BR><BR>
-<A HREF="bugs.md">Known Bugs &amp; (Mis)features</A> |
-<A HREF="how-to-help.md">How to help</A> |
-<A HREF="thanks-for-fixes.md">Thanks for the fixes</A> |
-<A HREF="www-history.md">A bit of web site history</A>
-</CENTER>
+### FAQ  0.0 - [How did the IOCCC get started?](#faq0_0)
+### FAQ  0.1 - [Why are some years missing IOCCC winners?](#faq0_1)
+### FAQ  0.2 - [Why do some IOCCC winners receive the Grand Prize or Best of Show award?](#faq0_2)
 
-<HR>
+## Section  1 - [Submitting entries to a new IOCCC](#faq1)
+
+### FAQ  1.0 - [What types of entries have been over-submitted to the IOCCC?](#faq1_0)
+### FAQ  1.1 - [What should I put in my entry's Makefile?](#faq1_1)
+### FAQ  1.2 - [May I use a different source or compiled filename than prog.c or prog?](#faq1_2)
+### FAQ  1.3 - [What platform should I assume for my entry?](#faq1_3)
+
+## Section  2 - [IOCCC Judging process](#faq2)
+
+### FAQ  2.0 - [How many entries do the judges receive for a given IOCCC?](#faq2_0)
+### FAQ  2.1 - [What should I put in the remarks.md file of my entry?](#faq2_1)
+### FAQ  2.2 - [Why don't you publish non-winners?](#faq2_2)
+### FAQ  2.3 - [How much time does it take to judge the contest?](#faq2_3)
+### FAQ  2.4 - [How many judging rounds do you have?](#faq2_4)
+
+## Section  3 - [Compiling and running IOCCC winners](#faq3)
+
+### FAQ  3.0 - [What Makefile are available to build or clean up IOCCC winners?](#faq3_0)
+### FAQ  3.1 - [Why doesn't this IOCCC winner compile?](#faq3_1)
+### FAQ  3.2 - [Why does a IOCCC winner fail on my 64-bit system?](#faq3_2)
+### FAQ  3.3 - [Why do some IOCCC winners fail to compile under macOS?](#faq3_3)
+### FAQ  3.4 - [Why does clang or gcc fail to compile an IOCCC winner?](#faq3_4)
+### FAQ  3.5 - [What is this cb tool that is mentioned in the IOCCC?](#faq3_5)
+### FAQ  3.6 - [An IOCCC winner missed by my terminal application, how do I fix this?](#faq3_6)
+### FAQ  3.7 - [How do I compile and use on macOS, an IOCCC winner that requires X11?](#faq3_7)
+### FAQ  3.8 - [How do I compile an IOCCC winner that requires SDL1 or SDL2?](#faq3_8)
+### FAQ  3.9 - [How do I compile and use on macOS, an IOCCC winner that requires sound?](#faq3_9)
+### FAQ  3.10 - [Why do Makefiles use -Weverything with clang?](#faq3_10)
+
+## Section  4 - [Changes made to IOCCC winners](#faq4)
+
+### FAQ  4.0 - [Why are some winning author remarks incongruent with the winning IOCCC code?](#faq4_0)
+### FAQ  4.1 - [Why were some calls to the libc function gets changed to use fgets?](#faq4_1)
+### FAQ  4.2 - [What was changed in an IOCCC winner source code?](#faq4_2)
+### FAQ  4.3 - [Why do author remarks sometimes not match the source?](#faq4_3)
+### FAQ  4.4 - [What is the meaning of the file ending in .orig.c in IOCCC winners?](#faq4_4)
+
+## Section  5 - [Updating or correcting IOCCC web site content](#faq5)
+
+### FAQ  5.0 - [Why does an IOCCC winner fail to compile or or fail run?](#faq5_0)
+### FAQ  5.1 - [How do I report a bug in an IOCCC winner?](#faq5_1)
+
+## Section  6 - [Miscellaneous IOCCC](#faq6)
+
+### FAQ  6.0 - [How did an entry breaks the size rule 2, win the IOCCC?](#faq6_0)
+### FAQ  6.1 - [Is there a list of known bugs and misfeatures of IOCCC winners?](#faq6_1)
+### FAQ  6.2 - [May I mirror the IOCCC web site?](#faq6_2)
+### FAQ  6.3 - [May I use parts of the IOCCC in an article, book, newsletter, or instructional material?](#faq6_3)
+### FAQ  6.4 - [Why do you sometimes use the first person plural?](#faq6_4)
 
 
 # The IOCCC FAQ
 
 
-## Q: How many entries do you receive each year?
+## <a name="faq0"></a>Section 0: History of the IOCCC
 
-By tradition, we do not say.
 
+### <a name="faq0_0"></a>FAQ 0.0: How did the IOCCC get started?
 
-## Q: How many judging rounds do you have?
+One day (1984 March 23 to be exact), Larry Bassel and I (Landon Curt
+Noll) were working for National Semiconductor's Genix porting group, we
+were both in our offices trying to fix some very broken code.
 
-Are you trying to trick us? We will not say that either.
+Larry had been trying to fix a bug in the classic Bourne shell (C code #defined
+to death to sort of look like Algol) and I had been working on the finger
+program from early BSD (a bug ridden finger implementation to be sure).
 
+We happened to both wander (at the same time) out to the hallway
+in Building 7C to clear our heads.
 
-## Q: What are the general Makefile rules used in order to clean and build entries for use?
+We began to compare notes: '_You won't believe the code I am trying to fix_'.
 
-In general the best way to compile everything in an entry directory is to run:
+And: '_Well you cannot imagine the brain damage level of the code I'm trying to
+fix'_.
 
-```sh
-make clobber all
-```
+As well as: '_It's more than bad code, the author really had to try to make it
+this bad!_
 
-If you wish to compile every entry for every year you should go to the top level
-directory and run the same command as above, `make clobber all`.
+After a few minutes we wandered back into my office where I posted a
+[flame to
+net.lang.c](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=789%40nsc.UUCP&rnum=3&filter=0")
+inviting people to try and out obfuscate the UN\*X source code we had just been working on.
 
-The `all` rule will build everything necessary except for the alternate
-versions. Every Makefile has an `alt` rule but it will only do something if an
-alternate version exists. To build all the entries along with any alternate code
-you can do from the top level directory:
+BTW: I (Landon Curt Noll) had to post this [typo
+correction](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=795%40nsc.UUCP&rnum=10&filter=0).
+Thus began the tradition of putting typos in the contest rules and guidelines
+... to make them more obfuscated of course! :-)
 
-```
-make clobber everything
-```
+BTW: This posting was made back in the days when AT&amp;T was the evil giant.
+Now, Microsoft makes AT&amp;T look mild and kind in comparison. :-( (IMHO) ).
 
-If you wish to only build alternate code you can do:
+BTW: See the story about the '[Bill Gates](/1993/mills/README.md)' award. :-)
 
-```sh
-make clobber alt
-```
+OK, back to the story.
 
-If you wish to not remove the entry binaries and only compile the additional alt
-versions:
+We (Larry and I) received a number of entries by email.
+When we began to receive messages from outside of the US, Larry and I
+decided to include International in the name.
 
-```sh
-make alt
-```
+The
+[1st IOCCC winners](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=837%40nsc.UUCP&rnum=2&filter=0)
+were posted on 17 April 1984.
 
+There were 4 winners in 1984:
 
-The following Makefile rules should be in all Makefiles:
+1. [(dis)honorable mention](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=842%40nsc.UUCP&rnum=8&filter=0)
+2.  [3rd place](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=843%40nsc.UUCP&rnum=7&filter=0)
+3. [2nd place](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=844%40nsc.UUCP&rnum=6&filter=0)
+4. [1st place](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=845%40nsc.UUCP&rnum=5&filter=0)
 
-- all: build the entry programs (main program and any supplementary program)
-- alt: build alternate code
-- clobber: clean up object files and all binary files (except for those that are
-not compiled)
-- clean: a simpler version of `clobber` that only removes object files. `make
-clobber` depends on `clean` so running `make clobber` will invoke `make clean`.
-- everything: equivalent to `make all alt`.
+BTW: The (dis)honorable mention wished to remain anonymous.
+While many have asked who it was, we have continued to follow the
+author's wish to remain anonymous.
 
-Are there any other rules? You tell us!
+A few years ago, we asked the author if they still wanted to remain anonymous.
+They said: '_Yes, I want to keep my anonymity.  But you can tell them that I am well known for my connection to the
+C language_'. It was not until 2001 that another [anonymous
+entry](/years.html#2001_anonymous) received an award.
 
-NOTE about the above rules: the Makefile default assumes `cc` which might be a
-gcc-based compiler, or a clang-based compiler, or some other compiler. Only by
-forcing `CC=clang` or `CC=gcc` will one invoke a specific compiler to, say,
-enable or disable additional warnings or flags. Even so different versions or
-compilers might do different things, have different defects or other issues.
+BTW: The [1984 winner](/years.html#1984_mullender) remains one of my (Landon Curt Noll) all time favorites.
 
+The name used in the posting of the [1st IOCCC
+winner](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=837%40nsc.UUCP&rnum=2&filter=0)
+posting was **I**nternational **O**bfuscated **C** **C**ode **C**ontest or
+**IOCCC** for short.
 
-## Q: How come some entries have code that is incongruent with what the author(s) wrote about the entry?
+The posting said '_1st annual_', so in 1985 we held the [2nd IOCCC contest](/years.html#1985)
+and the tradition continues as the longest running contest on the Internet.
 
-It is very likely in this case that the code was fixed to work for modern
-systems as part of the reworking of the website. If you have this problem in
-some entries you should look at the original code as in `winner.orig.c` or
-`prog.orig.c`. `winner` is the directory name. For instance, one of Landon's
-favourite entries of all time is [1984/mullender](1984/mullender/README.md) and
-the winner there would be `mullender`. Sometimes the original is in an alt
-version like `winner.alt.c` or `prog.alt.c`.
+P.S. Part of the inspiration for making the IOCCC a contest goes to the
+[Bulwer-Lytton fiction contest](http://www.bulwer-lytton.com/).
 
+P^2.S. See the [overall README](/all/README) for more details.
 
-## Q: Why have some entries that originally used `gets()` been modified to use `fgets()`? Doesn't this tamper with the entry too much?
 
-A fine line indeed has to be drawn here but it was decided that it is worth it
-because of alarming warnings that can be displayed, in some systems at runtime
-interspersed with the output of the program.
+### <a name="faq0_1"></a>FAQ 0.1: Why are some years missing IOCCC winners?
 
-For instance in macOS the entry [1990/tbr](1990/tbr/README.md) would output the
-warning in such a way that caused confusing output for the entry, looking like:
+Some years, such as 1997, 1999, 2002-2003, 2007-2010, 2016-2017, 2021-2023, no IOCCC was held.
 
-```sh
-$ ./tbr
-$ warning: this program uses gets(), which is unsafe.
-# nothing here, what to do?
-```
+While we try to hold the IOCCC every year, sometime the other demands on the IOCCC judges
+so not permit us to hold a new IOCCC.
 
-In some cases changing the code to use `fgets()` is not so easy to fix and in
-one case at least there is an alternate version that has the fix instead due to
-a problem it creates (correct output but segfaults after the output in one of
-the forms of input).
+The pause during the 2021-2023 period was due to the IOCCC judges developing tools to
+make is much more likely for the IOCCC to be held in a yearly basis later on.
 
-In some cases it is not possible to fix or at least it is highly unlikely and so
-those have mainly not been touched except one that has had the buffer size
-increased (which could be done for others that are not possible to change to
-`fgets()` though this has not been done).
 
-Some entries can be made to look almost identical to the original entry. For
-instance the fix to [1988/reddy](1988/reddy/README.md) required only a single
-`#define` be added.
-
-In the future we, the judges, would prefer that entries use `fgets()` to prevent
-these problems.
-
-NOTE: due to 'compatibility reasons' `fgets()` stores the newline and `gets()`
-does not. We're not sure how this is compatibility but either way it can cause a
-problem and it is this that has complicated most of the fixes though again some
-can look almost identical.
-
+### <a name="faq0_2"></a>FAQ 0.2: Why do some IOCCC winners receive the Grand Prize or Best of Show award?
 
-## Q: How can I easily see what was changed in order to get an entry to work in modern systems?
-
-Although the [thanks-for-fixes.md](/thanks-for-fixes.md) file sometimes gives
-commands to tell you how to do this, we have set up make rules to easily do
-this. For these you should be in the directory of the entry you wish to see the
-diff output of.
-
-When we say `entry` below, in a file name, we mean either the winner name or
-`prog`. For instance one of Landon's all time favourite entries is
-[1984/mullender](1984/mullender/README.md) so the file names would be:
-`mullender.orig.c`, `mullender.alt.c` and `mullender.c`. For later years, it
-would be instead `prog.orig.c`, `prog.alt.c` and `prog.c`.
-
-The following `make` rules exist to make a difference:
-
-* `make diff_orig_prog`:
-    - This rule will show the diff of the _original_ source to the
-    current source (that is `entry.orig.c` to `entry.c`).
-* `make make diff_alt_orig`:
-    - This rule will show the diff of the alt code to the original
-    code (that is `entry.alt.c` to `entry.orig.c`). If no alt code exists
-    nothing will be shown.
-* `make diff_alt_prog`:
-    - This rule will show the diff of the alt code to the entry as it
-    stands (that is `entry.alt.c` to `entry.c`).
-* `make diff_orig_alt`:
-    - This rule will show the diff of the original code to the alt code
-    (that is `entry.orig.c` to `entry.alt.c`).
-* `make diff_prog_alt`:
-    - This rule will show the diff of the entry to the alt code (that is
-    `entry.c` to `entry.alt.c`).
-* `make diff_prog_orig`:
-    - This rule will show the diff of the entry to the original code (that is
-    `entry.c` to `entry.orig.c`).
-
-
-Note that you might see something like:
-
-```
-make: [Makefile:170: diff_orig_prog] Error 1 (ignored)
-```
-
-at the end of the output but this is completely normal if there are differences.
-
-If the alt code is the same as the original, say with
-[1984/anonymous](1984/anonymous/README.md), then naturally there is no point in
-running the rule and the same applies for all the other rules but this system
-allows for easily seeing the diffs.
-
-As some examples we'll first look at one that has really long lines which
-will make it harder to see what is different,
-[2001/anonymous](2001/anonymous/README.md). What you would do is `cd
-2001/anonymous` and then do:
-
-```sh
-make diff_orig_prog
-```
-
-and then be really confused! :-)
-
-But for an entry like [1991/dds](1991/dds/README.md), you can see the
-differences much more easily. `1991/dds` is a good example where it's very
-simple to see what is different as it's just a couple lines.
-
-You might be quite surprised how little some entries had to be changed and at
-the same time how much other entries had to be changed, often with quite complex
-differences! In some cases if the line is rather long, like the above mentioned
-one, it will be harder to see what changed but in other cases like
-[1984/decot](1984/decot/README.md) or [1986/wall](1986/wall/README.md) it's a
-lot easier.
-
-Well, at least it's easier see the differences on a line-by-line basis but maybe
-not what actually changed, especially since it's easier to know what was fixed
-when you have compiler errors :-) (though there are, as noted, some examples
-where it's quite easy to see the differences).
-
-[1991/dds](1991/dds/README.md) is also a good example to see the alt difference
-very easily. To do that `cd 1991/dds` and then do:
-
-```sh
-make diff_alt_prog
-```
-
-and you'll see a single line changed and very simply.
-
-
-### Tip: if you have `colordiff` installed it's a lot easier to see the differences
-
-To use these rules but provide a different `diff`, for instance `colordiff`,
-just do:
-
-```sh
-make DIFF=colordiff diff_orig_prog # for orig to prog diff
-make DIFF=colordiff diff_alt_prog # for alt to prog diff
-```
-
-Obviously if you want to view the alt code or the orig code you can just open
-the files as described above.
-
-
-## Q: Sometimes the author's or authors' remarks do not match the source! Why and what can I do about it?
-
-This is very likely to happen when an entry was fixed for modern systems. When
-you look at the remarks of the author you should look at the `prog.orig.c` or
-the `winner.orig.c` file. You might also find value in the above `diff` make
-rules.
-
-
-## Q: I cannot get entry XYZZY from year 19xx to compile!
-
-Some winners, particularly winners from long ago, no longer compile on more
-modern systems because the C language has evolved (i.e. the modern C compilers
-are much more strict in what they accept as a valid program), or the entry
-depended on operation system and library features that where common back then
-but are different/missing today.
-
-E.g. it is highly unlikely that you'll be able to execute
-[1984/mullender](years.html#1984/mullender) on a computer you're using to read
-this FAQ. However for that entry [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson) added alternative code so that you
-can enjoy this entry. Try:
-
-```sh
-make alt
-./mullender.alt [microseconds]
-./mullender.alt2 [microseconds]
-```
-
-The microseconds defaults to 10000 but has a minimum value of 1000. The
-`mullender.alt2` is like the first alt except that it will start over once the
-program times out.
-
-Thank you Cody!
-
-See also [Yusuke Endoh](/winners.html#Yusuke_Endoh)'s entry
-[2015/endoh3](/2015/endoh3/README.md) which lets one compile it and run
-it. Another entry that you can enjoy it under is [Christopher
-Mill](/winners.html#Christopher_Mills)'s entry
-[2018/mills](/2018/mills/README.md) which is a PDP-7 emulator as well as a
-PDP-11/40 emulator. 
-
-Others are not so easy though we're working on this and over time have added
-alternative code and/or fixed them. Most entries do now work and the others we
-are working on (slowly as other things are also being done and this is on free
-time).
-
-In some cases we replaced the original code (not the `.orig.c` file!) with code
-that works for modern systems but one can view the original code in the
-`.orig.c` files (sometimes the original code is also in the directory as a
-`winner.alt.c` or `prog.alt.c`).
-
-Some entries should not have modern system versions replaced. See below.
-
-
-## Q: I can't get some entries to work in 64-bit systems that don't support 32-bit!
-
-Unfortunately some older entries are non-portable and require 32-bit support or
-32-bit binaries. A problem system here is macOS Catalina (10.15) as as of that
-version macOS no longer supports 32-bit binaries. If the entry acts on a certain
-type of binary, say ELF, then that will also be a problem depending on the
-entry. For example [2001/anonymous](2001/anonymous/README.md) requires 32-bit
-ELF binaries.
-
-There are numerous example entries that require 32-bit binaries. We have tried
-to note these in both the respective Makefiles and README.md files but it is
-possible that some were missed. These entries are very likely in the
-[bugs.md](/bugs.md) file and we welcome any help in making an alternate version
-for 64-bit systems. Many were fixed to work with modern systems but some are
-supposed to only work with 32-bit systems so any updated version of these
-entries should be an alternate version.
-
-Other entries like [2001/herrmann2](/thanks-for-fixes.md#2001herrmann2-readmemd)
-now work with 32-bit AND 64-bit systems.
-
-
-## Q: Under macOS I can't compile some entries and/or they don't work right. Why?
-
-If the entry requires gcc and you did not explicitly install gcc in macOS you
-will not be able to run or use these entries. This is because macOS gcc is
-actually clang, even `/usr/bin/gcc`.
-
-That being said many (if not most) of these entries have been fixed and some
-others will be looked at, when found.
-
-See also below.
-
-
-## Q: I can't get XYZZY entry to compile with clang. What can I do?
-
-Although we have fixed numerous entries to work with clang (sometimes in an alt
-version but usually in the program itself) there are some that simply cannot be
-fixed or if they are fixable they have not yet been fixed (we are working on
-this but other things have to be done too and all on free time).
-
-This is because clang has some defects where the args of main() are required to
-be a specific type and some versions of clang allow only 1, 2 or 3 args, not 4,
-to main(). In the case of types of args many were changed to the right type and
-then what was main() became another function of the original main() type.
-
-At the same time some entries are not designed to work with clang. There might
-be alternate code added at some point but as above this depends on free time and
-other things that have to be done plus remembering to do it.
-
-
-## Q: What is `cb` that is mentioned in some of the older entries?
-
-This was a C beautifier for Unix, both AT&T and Berkeley, but it seems to no
-longer be available, code wise, except for Plan 9, but Plan 9 was never used for
-judging the IOCCC. A Unix man page for `cb`
-[still exists](https://www.ibm.com/docs/en/aix/7.3?topic=c-cb-command).
-
-
-## Q: After running a program my terminal is all messed up! How do I restore my terminal?
-
-The simplest way to do this is to type `reset`. If echo was disabled you can get
-usually away with `stty echo`. Sometimes you can also get away with `stty sane`.
-`reset` does the most but note that it will clear the screen (obviously `clear`
-will too but it won't reset the terminal).
-
-
-<a name="X11macos"></a>
-## Q: How do I get X11 entries to work with macOS?
-
-As an example we will use [1993/jonth](1993/jonth/README.md) which works well
-with macOS.
-
-First of all you will need to install the [most recent
-XQuartz](https://www.xquartz.orgl), preferably on an [Apple supported version of
-macOS, preferably the most recent version](https://support.apple.com/macos).
-Then open the "XQuartz" application (usually located in
-`/Applications/Utilities/XQuartz.app`) by typing at the command line:
-
-```sh
-open /Applications/Utilities/XQuartz.app
-```
-
-With the "XQuartz" application open you will get an [X Window System
-Manager](https://www.x.org/wiki/) launched with an [Xterm window
-shell](https://en.wikipedia.org/wiki/Xterm) started:
-
-<img alt="xterm-launch in macOS" src="png/xquartz-shell.png">
-
-At this point you need to cd to the winning directory and compile it. For example:
-
-<img alt="compiling an entry in xterm in macOS" src="png/xquartz-entry-compile.png">
-
-And then run the program as directed by the `README.md` file. For example with
-`1993/jonth`:
-
-<img alt="running 1993/jonth in macOS" src="png/xquartz-1993-jonth.png">
-
-Note that you can compile the code in your regular terminal prior to opening
-XQuartz, should you wish to.
-
-
-## Q: How do I compile and run entries that use SDL1/SDL2 ?
-
-This depends on your operating system but below are instructions for linux and
-macOS with alternative methods for macOS and different package managers with
-linux.
-
-
-### Red Hat based linux
-
-Execute one of the following as root or via sudo:
-
-```sh
-dnf install SDL2 SDL2-devel sdl12-compat sdl12-compat-devel
-yum install SDL2 SDL2-devel sdl12-compat sdl12-compat-devel
-```
-
-In the past it was said that one might need to run `make` like:
-
-```sh
-make ... SDL2_INCLUDE_ROOT=/usr
-```
-
-or set the following environment variable:
-
-```sh
-export SDL2_INCLUDE_ROOT=/usr
-```
-
-but this might not be necessary in more modern days especially as we use
-`sdl-config` and `sdl2-config` which should find the proper paths.
-
-
-### Debian based linux
-
-Execute the following as root or via sudo:
-
-```sh
-apt install libsdl1.2debian libsdl1.2-dev libsdl2-dev
-```
-
-and then try `make all` again.
-
-In the past it was said that one might need to run `make` like:
-
-```sh
-make ... SDL2_INCLUDE_ROOT=/usr
-```
-
-or set the following environment variable:
-
-```sh
-export SDL2_INCLUDE_ROOT=/usr
-```
-
-but this might not be necessary in more modern days especially as we use
-`sdl-config` and `sdl2-config` which should find the proper paths.
-
-
-### Other linux distributions
-
-Use your package manager to install the appropriate packages. Try the search
-feature of the package manager to determine which packages you need to install.
-Note that you might have to install both the library and the developmental
-packages: one for compiling and one for linking / running.
-
-
-### macOS
-
-If you're using macOS there are at least three ways to obtain it. You can
-download it from the SDL website and install the package. That will not
-work well for the IOCCC but these will:
-
-
-#### MacPorts
-
-If you haven't already, install
-[MacPorts](https://www.macports.org/install.php). Then run:
-
-
-```sh
-sudo port install libsdl libsdl2
-```
-
-
-#### Homebrew
-
-If you have not already done so, install [Homebrew](https://brew.sh).
-
-Then to install SDL and SDL2, execute the following command:
-
-```sh
-brew install sdl2 sdl12-compat
-eval "$(/opt/homebrew/bin/brew shellenv)"
-```
-
-### NOTE: there might be extra SDL packages required
-
-In the case that some entries do not work even with SDL1/SDL2 installed it might
-be that you need additional SDL libraries. See the entry's README.md for
-details. If something is not noted you're welcome to report it as an issue or
-fix it and make a new pull request.
-
-
-## Q: How do I compile and run entries that use sound in macOS?
-
-This might depend on the entry but in some cases like
-[2001/coupard](2001/coupard/coupard.c) one needs to do more work in order to get
-it to work. In this case you should be able to use the Swiss Army Knife of sound
-processing programs, [SoX](https://sox.sourceforge.net). To install this easily
-you can use either MacPorts or Homebrew. See below for instructions for each.
-
-Usually the README.md file will explain how to use it in linux so we do not
-include this here, at least for now.
-
-
-### MacPorts
-
-If you haven't already, install
-[MacPorts](https://www.macports.org/install.php). Then run:
-
-
-```sh
-sudo port install sox
-```
-
-
-### Homebrew
-
-If you have not already done so, install [Homebrew](https://brew.sh).
-
-Then to install SoX, execute the following command:
-
-```sh
-brew install sox
-eval "$(/opt/homebrew/bin/brew shellenv)"
-```
-
-
-## Q: How did entry XYZZY win? It breaks rule 2!
-
-As entries have been fixed it is entirely possible that some of the entries no
-longer fit within the year's size restrictions. Invariably the length of columns
-and/or number of rows have also changed.
-
-The `winner.orig.c` file contains the original source code that was
-subjected to rule 2 of the given IOCCC.  You may also wish to see
-the [/archive](/archive) directory where you can find all the
-original winning entries as compressed tar files for a given year.
-
-In some cases the entry may have abused rule 2 and declared an
-"abuse of the rules" (although now blatant abuse of the rules to
-get around rule 2 size limits is discouraged).
-
-
-## Q: I found a bug in a previous winner, what should I do?
-
-We do not 'maintain' the contest winners as such. The code is made available on an 'AS
-IS' basis. If you have a FIX for an entry, we suggest that you try and email it
-to the authors and to submit your fixes in a [GitHub pull
-request](https://github.com/ioccc-src/temp-test-ioccc/pulls) (with ONE PULL
-REQUEST *PER* FIX, please!). 
-
-Note that just because you have a fix does not mean it'll be accepted. This
-might be because the author objects or it doesn't fit in some way or another. Of
-course if the entry does not work we'll certainly be more inclined to accept the
-fix. If it is accepted we'll be happy to credit you in the entry's _README.md_
-file. If you're a previous winner we will happily link to your entries; if
-you're not we can link to your website if you wish.
-
-More generally please see the file [how-to-bugfix.md](/how-to-bugfix.md). Note
-that this file is not a tutorial on how to fix X, Y and Z problems but rather
-what to do to get the fix in.
-
-
-## Q: Do you have a list of entries with known problems and/or features that might appear to be bugs but are not?
-
-Yes! Please see [bugs.md](/bugs.md) for a list of known bugs and/or issues of a
-variety of kinds.
-
-Note that just because an entry is not in the bugs file does not mean there is
-not an issue and note that some issues are simply missing files, dead URL(s) or
-something like that.
-
-
-## Q: Are there types of entries that are submitted so frequently that the judges get tired of them?
-
-Yes, there are types of entries that show up over and over again.
-
-The [guidelines](guidelines.html) say:
-
-> _We tend to dislike programs that: are similar to previous winners_
-
-We like variety. However too often we see (please look at the winning examples
-given to be aware of the level of the competition):
-
-
-### maze generator
-- [1985/shapiro](years.html#1985_shapiro)
-
-- [1991/buzzard](years.html#1991_buzzard)
-
-- [1995/cdua](years.html#1995_cdua)
-
-- [1995/dodsond2](years.html#1995_dodsond2)
-
-- [1998/bas1](years.html#1998_bas1)
-
-
-### tic-tac-toe/noughts and crosses/Xs and Os game
-
-- [1991/westley](years.html#1991_westley)
-
-- [1996/jonth](years.html#1996_jonth)
-
-- [2020/carlini](years.html#2020_carlini)
-
-
-### solitaire/Othello game
-
-- [1987/lievaart](years.html#1987_lievaart)
-
-- [1994/dodsond1](years.html#1994_dodsond1)
-
-
-### generating small primes (below is the list of all prime related winners)
-
-- [1985/august](years.html#1985_august)
-
-- [1988/applin](years.html#1988_applin)
-
-- [1994/weisberg](years.html#1994_weisberg)
-
-- [1995/makarios](years.html#1995_makarios)
-
-- [1996/dalbec](years.html#1996_dalbec)
-
-- [2000/bellard](years.html#2000_bellard)
-
-_As you can see, just a list of primes (let alone small primes) does not cut it
-anymore._
-
-
-### self reproducing program
-
-- [1990/scjones](years.html#1990_scjones)
-
-- [1994/smr](years.html#1994_smr) - _do not claim your program is the smallest one without seeing this!
-
-- [2000/dhyang](years.html#2000_dhyang) - _unless you beat this one, your chances are slim_
-
-
-### entries that just print "Hello, world!"
-
-- [1984/anonymous](years.html#1984_anonymous)
-
-- [1985/applin](years.html#1985_applin)
-
-- [1986/applin](years.html#1986_applin)
-
-- [1986/holloway](years.html#1986_holloway)
-
-- [1989/jar.1](years.html#1989_jar.1)
-
-- [1992/lush](years.html#1992_lush)
-
-- [2000/tomx](years.html#2000_tomx)
-
-_**...it's so 20th century...**_
-
-
-### entries that use some complex state machine/table to print something
-
-- [1988/isaak](years.html#1988_isaak)
-
-- [1988/phillipps](years.html#1988_phillipps)
-
-- [2018/ciura](years.html#2018_ciura)
-
-- [2018/giles](years.html#2018_giles)
-
-
-### rot13
-
-- [1985/sicherman](years.html#1985_sicherman)
-
-- [1989/westley](years.html#1989_westley)
-
-- [1990/dg](years.html#1990_dg)
-
-- [1991/fine](years.html#1991_fine)
-
-
-### **pi** or **e** computation
-
-- [1986/august](years.html#1986_august)
-
-- [1988/robison](years.html#1988_robison)
-
-- [1988/westley](years.html#1988_westley)
-
-- [1989/roemer](years.html#1989_roemer)
-
-
-#### Hints on overused themes
-
-HINT: It is not fatal to send in those types of entries, it is just MUCH
-HARDER to win. Such an entry would have to do something _really unique **AND**
-interesting_ to even make it into the final judging rounds. Entries that
-reuse these 'worn out' themes frequently lose to other entries that do
-something different.
-
-HINT: If you really MUST send in an entry based on an 'overused theme', be sure
-that it is obfuscated in several new and novel ways. Be sure to _clearly_
-explain near the beginning of your remarks why you are submitting a entry based
-on an 'overused theme' and why the judges should not simply toss it out as being
-boring.
-
-
-## Q: What should I write in the 'remarks' (remarks.md) section of my entry, if anything at all?
-
-As much or as little as you wish.
-
-
-### What helps:
-
-- explaining what your entry does
-
-- how to entice it to do what it is supposed to do
-
-- what obfuscations are used
-
-- what are the limitations of your entry in respect of portability and/or input data
-
-- how it works (if you are really condescending)
-
-
-### What does not help:
-
-- admitting that your entry is not very obfuscated (you see, the contest is
-called the **IOCCC**, not the **INVOCCC** :-) ); but even if you do not admit
-it, not very obfuscated entries have a minuscule chance to win (although
-[2000/tomx](years.html#2000_tomx) is a notable counterexample).
-
-- mentioning your name or any identifying information in the remark section (or
-in the C code for that matter) - we like to be unbiased during the judging
-rounds; we look at the author name only if an entry wins. See the guidelines if
-this is not clear!
-
-- leaving the remark section empty.
-
-
-## Q: I am confused: what should I put to the 'build' section?
-
-The 'build' section must contain UNIX shell-style commands to compile your C
-language entry **in a file named prog.c** and produce an executable file. More
-than one command is allowed, as far as the size rule is followed.  Usually one
-(or more) of these commands will be an invocation of a C compiler (use **cc** or
-**gcc**), but there may be exceptions (or not anymore, see
-[2000/tomx](years.html#2000_tomx)).
-
-If your entry depends on a particular source file name during compilation or execution, you will have to put a line
-
-	
-	    cp prog.c desired_name.c
-
-
-before the compiler invocation line.
-
-
-If in doubt, put
-
-	    cc -o prog prog.c
-
-in the 'build' section.
-
-Note however that with the [mkiocccentry
-tool](https://github.com/ioccc-src/mkiocccentry) we have an example Makefile
-which you should update and submit, using the instructions above if necessary.
-
-
-## Q: What happened to the winners for 1997, 1999 2002, 2003, 2007 - 2010, 2016, 2017, 2021 and 2022 ?
-
-There are none. There was no IOCCC in those years.
-
-
-## Q: What are the .orig.c files in the directories in winning entries ?
-
-Due to the fact that the original code has sometimes had to change these files
-are the original winning entry or as close to as possible to the original that
-we can find.
-
-
-## Q: Why don't you publish non-winners?
-
-Because the publication on the IOCCC site **_IS_**
-the award! Anyone is free to put their IOCCC hopefuls, lookalikes and/or
-non-winners on their web page for everyone to see.
-
-
-## Q: How much time does it take to judge the contest?
-
-It takes a fair amount of time to setup, run, answer email, process entries,
-review entries, trim down the set entries to a set of winners, doing the
-write-up of the winners, announcing the winners, reviewing final edits of the
-winning entry set, posting the winners, being flamed :-), tell folks who send in
-late entries to wait until the next contest, etc... It takes a few weekends and
-a number nights of study and work ... which is hard given that we are busy with
-many other activities as well.
-
-Note that we do not contact the author if an entry does not compile or does not
-work as advertised, we might attempt to fix obvious compilation problems or
-incompatibilities, but no more than that - so be sure that your entry does work
-on at least a couple different platforms, at least one of them being UNIX or
-POSIX-conforming.
-
-
-## Q: What platform should I assume for my entry?
-
-Your entry must compile with GCC and run under at least one flavor of UNIX (e.g.
-Linux or Solaris). To improve chances to win, it should work under both BSD and
-SysV style UNIX (think **stty cbreak**), and should not depend on endianness.
-If it can compile and run on Windows and/or Mac  (see
-[2000/thadgavin](/years.html#2000_thadgavin) for one example, amongst others),
-even better. Being able to compile with other compilers like clang is also a
-good thing.
-
-
-## Q: I would like to mirror the IOCCC web site. May I do so?
-
-We are not accepting mirror requests at this time, sorry.
-
-
-## Q: I want to publish some parts of the IOCCC in an article, or book, or newsletter, or use then in class/instructional notes, or quote from the IOCCC. May I do so?
-
-Please ask the [IOCCC judges](/judges.html) first. Please send your request using the
-instructions on the [contacting the IOCCC Judges](/contact.html) page.
-
-
-## Q: What are the grand prize / Best of Show winners?
+In some years, the IOCCC judges discover a truly amazing IOCCC winner that
+stands out among all of the other IOCCC entries received that year.
+For such an IOCCC winner, the IOCCC judges award a "Grand Prize"
+or "Best of Show award.
 
 In 1984-1987, the grand prize winners are:
 
@@ -882,183 +205,644 @@ These could be considered the 'best entry' for those years with 1 or
 more other entries that came in close behind.
 
 
-## Q: I managed to get entry XYZZY from year 19xx to compile; now it fails to run!
+## <a name="faq1"></a>Section 1: Submitting entries to a new IOCCC
 
-switch(19xx/XYZZY) {
 
-    case [1984/mullender](years.html#1984_mullender):
+### <a name="faq1_0"></a>FAQ 1.0: What types of entries have been over-submitted to the IOCCC?
 
-try the alternative code added by [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) like:
+There are types of entries that show up over and over again.  The
+IOCCC judges, and we suspect the public that enjoy viewing the
+results of the IOCCC, like variety.
+
+While it is possible to win a new IOCCC with one of these
+__over-submitted__ types of entries, level of the competition from
+previous IOCCC winners make it more challenging to be successful.
+
+
+It is also important to note that the [guidelines](guidelines.html) say:
+
+> _We tend to dislike programs that: are similar to previous winners_
+
+
+#### maze generator
+- [1985/shapiro](years.html#1985_shapiro)
+
+- [1991/buzzard](years.html#1991_buzzard)
+
+- [1995/cdua](years.html#1995_cdua)
+
+- [1995/dodsond2](years.html#1995_dodsond2)
+
+- [1998/bas1](years.html#1998_bas1)
+
+
+#### tic-tac-toe/noughts and crosses/Xs and Os game
+
+- [1991/westley](years.html#1991_westley)
+
+- [1996/jonth](years.html#1996_jonth)
+
+- [2020/carlini](years.html#2020_carlini)
+
+
+#### solitaire/Othello game
+
+- [1987/lievaart](years.html#1987_lievaart)
+
+- [1994/dodsond1](years.html#1994_dodsond1)
+
+
+#### generating small primes (below is the list of all prime related winners)
+
+- [1985/august](years.html#1985_august)
+
+- [1988/applin](years.html#1988_applin)
+
+- [1994/weisberg](years.html#1994_weisberg)
+
+- [1995/makarios](years.html#1995_makarios)
+
+- [1996/dalbec](years.html#1996_dalbec)
+
+- [2000/bellard](years.html#2000_bellard)
+
+_As you can see, just a list of primes (let alone small primes) does not cut it
+anymore._
+
+
+#### self reproducing program
+
+- [1990/scjones](years.html#1990_scjones)
+
+- [1994/smr](years.html#1994_smr) - _do not claim your program is the smallest one without seeing this!
+
+- [2000/dhyang](years.html#2000_dhyang) - _unless you beat this one, your chances are slim_
+
+
+#### entries that just print "Hello, world!"
+
+- [1984/anonymous](years.html#1984_anonymous)
+
+- [1985/applin](years.html#1985_applin)
+
+- [1986/applin](years.html#1986_applin)
+
+- [1986/holloway](years.html#1986_holloway)
+
+- [1989/jar.1](years.html#1989_jar.1)
+
+- [1992/lush](years.html#1992_lush)
+
+- [2000/tomx](years.html#2000_tomx)
+
+_**...it's so 20th century...**_
+
+
+#### entries that use some complex state machine/table to print something
+
+- [1988/isaak](years.html#1988_isaak)
+
+- [1988/phillipps](years.html#1988_phillipps)
+
+- [2018/ciura](years.html#2018_ciura)
+
+- [2018/giles](years.html#2018_giles)
+
+
+#### rot13
+
+- [1985/sicherman](years.html#1985_sicherman)
+
+- [1989/westley](years.html#1989_westley)
+
+- [1990/dg](years.html#1990_dg)
+
+- [1991/fine](years.html#1991_fine)
+
+
+#### **pi** or **e** computation
+
+- [1986/august](years.html#1986_august)
+
+- [1988/robison](years.html#1988_robison)
+
+- [1988/westley](years.html#1988_westley)
+
+- [1989/roemer](years.html#1989_roemer)
+
+
+#### Hints on overused themes
+
+HINT: It is not fatal to send in those types of entries, it is just MUCH
+HARDER to win. Such an entry would have to do something _really unique **AND**
+interesting_ to even make it into the final judging rounds. Entries that
+reuse these 'worn out' themes frequently lose to other entries that do
+something different.
+
+HINT: If you really MUST send in an entry based on an 'overused theme', be sure
+that it is obfuscated in several new and novel ways. Be sure to _clearly_
+explain near the beginning of your remarks why you are submitting a entry based
+on an 'overused theme' and why the judges should not simply toss it out as being
+boring.
+
+
+### <a name="faq1_1"></a>FAQ 1.1: What should I put in my entry's Makefile?
+
+We recommend starting with the [sample
+Makefile](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example)
+as found in the [mkiocccentry GitHub repo](https://github.com/ioccc-src/mkiocccentry),
+(renamed as `Makefile` of course) as a starting point for your
+entry's `Makefile`.
+
+The `Makefile` is a file used by the `make(1)` command that contains
+rules and UNIX shell-style commands.
+
+The first and default rule should be the "all" rule and should build your entry's executable file.
+
+If your entry depends on a particular source file name during compilation or execution,
+your `Makefile` should copy `prog.c` into the desired filename.  For example:
+
+If you are not familiar `Makefile`s, you might consider the following tutorials:
+
+- [GNU make](https://www.gnu.org/software/make/manual/make.html#Introduction)
+- [What is a Makefile and how does it work?](https://opensource.com/article/18/8/what-how-makefile)
+- [Learn Makefiles](https://makefiletutorial.com)
+
+For the `make(1)` _connoisseur_: As of 2023, IOCCC judges use [GNU
+make compatible](https://www.gnu.org/software/make/) `make(1)`
+command that is compatible with GNU Make version 3.81.
+
+
+### <a name="faq1_2"></a>FAQ 1.2: May I use a different source or compiled filename than prog.c or prog?
+
+While your entry's source filename, as submitted, must be `prog.c`, your entry's `Makefile`
+may copy `prog.c` to a different filename as part of the compiling/building process.  For example:
+
+```make
+all: desired_name
+
+desired_name: desired_name.c
+	cc desired_name.c -o $@
+
+desired_name.c: prog.c
+	rm -f $@
+	cp -f prog.c $@
+
+clobber:
+	rm -f desired_name.c desired_name
+```
+
+We recommend that the `make clobber` rule remove files that your entry
+creates as part of the compiling/building process.
+
+You may also copy the compiled `prog` into a different file as part of compiling process.
+For example:
+
+```make
+different_name: prog
+	rm -f $@
+	cp -f prog $@
+```
+
+
+### <a name="faq1_3"></a>FAQ 1.3: What platform should I assume for my entry?
+
+Your entry must compile with GCC and run under at least one flavor of UNIX (e.g.
+Linux or Solaris). To improve chances to win, it should work under both BSD and
+SysV style UNIX (think **stty cbreak**), and should not depend on endianness.
+If it can compile and run on Windows and/or Mac  (see
+[2000/thadgavin](/years.html#2000_thadgavin) for one example, amongst others),
+even better. Being able to compile with other compilers like clang is also a
+good thing.
+
+
+## <a name="faq2"></a>Section 2: IOCCC Judging process
+
+
+### <a name="faq2_0"></a>FAQ 2.0: How many entries do the judges receive for a given IOCCC?
+
+By tradition, we do not say.
+
+
+### <a name="faq2_1"></a>FAQ 2.1: What should I put in the remarks.md file of my entry?
+
+While you may put in as much or as little as you wish into your entry's
+`remarks.md` file, we do have few important suggestions:
+
+We recommend that you explain how to use your entry.  Explain the
+command line (if any command line options and arguments are used)
+and any input or actions if applicable.
+
+We highly recommend that you explain why you think your entry is
+well obfuscated.
+
+For those entries that win the IOCCC, we often use much of text from the
+`remarks.md` file in the _Author's remarks_ section of the `README.md` file.
+For this reason, a well written `remarks.md` file is considered a plus.
+
+While not required, consider adding bit of humor to your `remarks.md`
+as most people who are not humor impaired, as well as the IOCCC judges
+appreciate the opportunity for a fun read as well as a chuckle or two.
+
+
+#### What helps:
+
+- explaining what your entry does
+
+- how to entice it to do what it is supposed to do
+
+- what obfuscations are used
+
+- what are the limitations of your entry in respect of portability and/or input data
+
+- how it works (if you are really condescending)
+
+
+#### What does not help:
+
+- admitting that your entry is not very obfuscated (you see, the contest is
+called the **IOCCC**, not the **INVOCCC** :-) ); but even if you do not admit
+it, not very obfuscated entries have a minuscule chance to win (although
+[2000/tomx](years.html#2000_tomx) is a notable counterexample).
+
+- mentioning your name or any identifying information in the remark section (or
+in the C code for that matter) - we like to be unbiased during the judging
+rounds; we look at the author name only if an entry wins. See the guidelines if
+this is not clear!
+
+- leaving the remark section empty.
+
+
+### <a name="faq2_1"></a>FAQ 2.2: Why don't you publish non-winners?
+
+Because the publication on the IOCCC site **_IS_** the award!
+Anyone is free to put their IOCCC hopefuls, lookalikes and/or
+non-winners on their web page for everyone to see.
+
+
+### <a name="faq2_3"></a>FAQ 2.3: How much time does it take to judge the contest?
+
+It takes a fair amount of time to setup, run, answer email, process entries,
+review entries, trim down the set entries to a set of winners, doing the
+write-up of the winners, announcing the winners, reviewing final edits of the
+winning entry set, posting the winners, being flamed :-), tell folks who send in
+late entries to wait until the next contest, etc... It takes a few weekends and
+a number nights of study and work ... which is hard given that we are busy with
+many other activities as well.
+
+Note that we do not contact the author if an entry does not compile or does not
+work as advertised, we might attempt to fix obvious compilation problems or
+incompatibilities, but no more than that - so be sure that your entry does work
+on at least a couple different platforms, at least one of them being UNIX or
+POSIX-conforming.
+
+
+### <a name="faq2_4"></a>FAQ 2.4: How many judging rounds do you have?
+
+By tradition, we do not say how many judging rounds we have in a given IOCCC.
+
+We often report when the IOCCC judges start the 1st round, and
+when usually when the IOCCC judges start near final judging rounds, and
+sometimes the final judging round, so you may guess that we have at
+least 3 rounds.  :-)  The actual number of rounds is certainly more than 3.
+
+
+## <a name="faq3"></a>Section 3: Compiling and running IOCCC winners
+
+
+### <a name="faq3_0"></a>FAQ 3.0: What Makefile are available to build or clean up IOCCC winners?
+
+In general the best way to compile everything in an entry directory is to run:
+
+```sh
+make clobber all
+```
+
+If you wish to compile every entry for every year you should go to the top level
+directory and run the same command as above, `make clobber all`.
+
+The `all` rule will build everything necessary except for the alternate
+versions. Every Makefile has an `alt` rule but it will only do something if an
+alternate version exists. To build all the entries along with any alternate code
+you can do from the top level directory:
+
+```
+make clobber everything
+```
+
+If you wish to only build alternate code you can do:
+
+```sh
+make clobber alt
+```
+
+If you wish to not remove the entry binaries and only compile the additional alt
+versions:
+
+```sh
+make alt
+```
+
+The following Makefile rules should be in all Makefiles:
+
+- all: build the entry programs (main program and any supplementary program)
+- alt: build alternate code
+- clobber: clean up object files and all binary files (except for those that are
+not compiled)
+- clean: a simpler version of `clobber` that only removes object files. `make
+clobber` depends on `clean` so running `make clobber` will invoke `make clean`.
+- everything: equivalent to `make all alt`.
+
+Are there any other rules? You tell us!
+
+NOTE about the above rules: the Makefile default assumes `cc` which might be a
+gcc-based compiler, or a clang-based compiler, or some other compiler. Only by
+forcing `CC=clang` or `CC=gcc` will one invoke a specific compiler to, say,
+enable or disable additional warnings or flags. Even so different versions or
+compilers might do different things, have different defects or other issues.
+
+
+### <a name="faq3_1"></a>FAQ 3.1: Why doesn't this IOCCC winner compile?
+
+Some winners, particularly winners from long ago, no longer compile on more
+modern systems because the C language has evolved (i.e. the modern C compilers
+are much more strict in what they accept as a valid program), or the entry
+depended on operation system and library features that where common back then
+but are different/missing today.
+
+E.g., it is highly unlikely that you'll be able to execute
+[1984/mullender](years.html#1984/mullender) on a computer you're using to read
+this FAQ. However for that entry [Cody Boone
+Ferguson](/winners.html#Cody_Boone_Ferguson) added alternative code so that you
+can enjoy this entry. Try:
 
 ```sh
 make alt
 ./mullender.alt [microseconds]
+./mullender.alt2 [microseconds]
 ```
 
-where microseconds is the number of microseconds to sleep between writes.
-Default 10000. This is useful to see different speeds as well as if your CPU is
-too slow or too fast for the entry. See the
-[README.md](/1984/mullender/README.md) for more details.
+The microseconds defaults to 10000 but has a minimum value of 1000. The
+`mullender.alt2` is like the first alt except that it will start over once the
+program times out.
 
-Thank you Cody for your help!
+See also [Yusuke Endoh](/winners.html#Yusuke_Endoh)'s entry
+[2015/endoh3](/2015/endoh3/README.md) which lets one compile it and run
+it. Another entry that you can enjoy it under is [Christopher
+Mill](/winners.html#Christopher_Mills)'s entry
+[2018/mills](/2018/mills/README.md) which is a PDP-7 emulator as well as a
+PDP-11/40 emulator.
 
-BTW: in this case it's a slight fix and improvement to our original suggested
-code:
+Others are not so easy though we're working on this and over time have added
+alternative code and/or fixed them. Most entries do now work and the others we
+are working on (slowly as other things are also being done and this is on free
+time).
 
-```c
-main(){int i=512;do write(1,"  :-)\b\b\b\b",9),usleep(i);while(--i);}
+In some cases we replaced the original code (not the `.orig.c` file!) with code
+that works for modern systems but one can view the original code in the
+`.orig.c` files (sometimes the original code is also in the directory as a
+`winner.alt.c` or `prog.alt.c`).
+
+
+### <a name="faq3_2"></a>FAQ 3.2: Why does a IOCCC winner fail on my 64-bit system?
+
+Unfortunately some older entries are non-portable and require 32-bit support or
+32-bit binaries. A problem system here is macOS Catalina (10.15) as as of that
+version macOS no longer supports 32-bit binaries. If the entry acts on a certain
+type of binary, say ELF, then that will also be a problem depending on the
+entry. For example [2001/anonymous](2001/anonymous/README.md) requires 32-bit
+ELF binaries.
+
+There are numerous example entries that require 32-bit binaries. We have tried
+to note these in both the respective Makefiles and README.md files but it is
+possible that some were missed. These entries are very likely in the
+[bugs.md](/bugs.md) file and we welcome any help in making an alternate version
+for 64-bit systems. Many were fixed to work with modern systems but some are
+supposed to only work with 32-bit systems so any updated version of these
+entries should be an alternate version.
+
+Other entries like [2001/herrmann2](/thanks-for-fixes.md#2001herrmann2-readmemd)
+now work with 32-bit AND 64-bit systems.
+
+
+### <a name="faq3_3"></a>FAQ 3.3: Why do some IOCCC winners fail to compile under macOS?
+
+If the entry requires gcc and you did not explicitly install gcc in macOS you
+will not be able to run or use these entries. This is because macOS gcc is
+actually clang, even `/usr/bin/gcc`.
+
+That being said many (if not most) of these entries have been fixed and some
+others will be looked at, when found.
+
+
+### <a name="faq3_4"></a>FAQ 3.4: Why does clang or gcc fail to compile an IOCCC winner?
+
+Although we have fixed numerous entries to work with clang (sometimes in an alt
+version but usually in the program itself) there are some that simply cannot be
+fixed or if they are fixable they have not yet been fixed (we are working on
+this but other things have to be done too and all on free time).
+
+This is because clang has some defects where the args of main() are required to
+be a specific type and some versions of clang allow only 1, 2 or 3 args, not 4,
+to main(). In the case of types of args many were changed to the right type and
+then what was main() became another function of the original main() type.
+
+At the same time some entries are not designed to work with clang. There might
+be alternate code added at some point but as above this depends on free time and
+other things that have to be done plus remembering to do it.
+
+
+### <a name="faq3_5"></a>FAQ 3.5: What is this cb tool that is mentioned in the IOCCC?
+
+This was a C beautifier for Unix, both AT&T and Berkeley, but it seems to no
+longer be available, code wise, except for Plan 9, but Plan 9 was never used for
+judging the IOCCC. A Unix man page for `cb`
+[still exists](https://www.ibm.com/docs/en/aix/7.3?topic=c-cb-command).
+
+
+### <a name="faq3_6"></a>FAQ 3.6: An IOCCC winner missed by my terminal application, how do I fix this?
+
+The simplest way to do this is to type `reset`. If echo was disabled you can get
+usually away with `stty echo`. Sometimes you can also get away with `stty sane`.
+`reset` does the most but note that it will clear the screen (obviously `clear`
+will too but it won't reset the terminal).
+
+
+### <a name="faq3_7"></a><a name="X11macos"></a>FAQ 3.7: How do I compile and use on macOS, an IOCCC winner that requires X11?
+
+As an example we will use [1993/jonth](1993/jonth/README.md) which works well
+with macOS.
+
+First of all you will need to install the [most recent
+XQuartz](https://www.xquartz.orgl), preferably on an [Apple supported version of
+macOS, preferably the most recent version](https://support.apple.com/macos).
+Then open the "XQuartz" application (usually located in
+`/Applications/Utilities/XQuartz.app`) by typing at the command line:
+
+```sh
+open /Applications/Utilities/XQuartz.app
 ```
 
-BTW: is there such a thing as too fast a CPU ? :-) actually yes for certain code
-which is probably not as uncommon as you think :-) ).
+With the "XQuartz" application open you will get an [X Window System
+Manager](https://www.x.org/wiki/) launched with an [Xterm window
+shell](https://en.wikipedia.org/wiki/Xterm) started:
 
-break;
+<img alt="xterm-launch in macOS" src="png/xquartz-shell.png">
 
-- case [1991/davidguy](years.html#1991_davidguy): disable access
-control of your X server (**xhost +**). If it does not help (or if you
-see black screen), restart the X server without access control and with visual
-depth of 8 bits or less.
+At this point you need to cd to the winning directory and compile it. For example:
 
-break;
+<img alt="compiling an entry in xterm in macOS" src="png/xquartz-entry-compile.png">
 
-- default: Try enabling `-fwritable-strings` for GCC or its equivalent for other
-compilers.
+And then run the program as directed by the `README.md` file. For example with
+`1993/jonth`:
 
-}
+<img alt="running 1993/jonth in macOS" src="png/xquartz-1993-jonth.png">
 
-
-## Q: How did the IOCCC get started?
-
-One day (23 March 1984 to be exact), Larry Bassel and I (Landon Curt
-Noll) were working for National Semiconductor's Genix porting group, we
-were both in our offices trying to fix some very broken code.
-
-Larry had been trying to fix a bug in the classic Bourne shell (C code #defined
-to death to sort of look like Algol) and I had been working on the finger
-program from early BSD (a bug ridden finger implementation to be sure).
-
-We happened to both wander (at the same time) out to the hallway
-in Building 7C to clear our heads.
-
-We began to compare notes: '_You won't believe the code I am trying to fix_'.
-
-And: '_Well you cannot imagine the brain damage level of the code I'm trying to
-fix'_.
-
-As well as: '_It's more than bad code, the author really had to try to make it
-this bad!_
-
-After a few minutes we wandered back into my office where I posted a
-[flame to
-net.lang.c](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=789%40nsc.UUCP&rnum=3&filter=0")
-inviting people to try and out obfuscate the UN\*X source code we had just been working on.
-
-BTW: I (Landon Curt Noll) had to post this [typo
-correction](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=795%40nsc.UUCP&rnum=10&filter=0).
-Thus began the tradition of putting typos in the contest rules and guidelines
-... to make them more obfuscated of course! :-)
-
-BTW: This posting was made back in the days when AT&amp;T was the evil giant.
-Now, Microsoft makes AT&amp;T look mild and kind in comparison. :-( (IMHO) ).
-
-BTW: See the story about the '[Bill Gates](/1993/mills/README.md)' award. :-)
-
-OK, back to the story.
-
-We (Larry and I) received a number of entries by email.
-When we began to receive messages from outside of the US, Larry and I
-decided to include International in the name.
-
-The
-[1st IOCCC winners](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=837%40nsc.UUCP&rnum=2&filter=0)
-were posted on 17 April 1984.
+Note that you can compile the code in your regular terminal prior to opening
+XQuartz, should you wish to.
 
 
-There were 4 winners in 1984:
+### <a name="faq3_8"></a>FAQ 3.8: How do I compile an IOCCC winner that requires SDL1 or SDL2?
 
-1. [(dis)honorable mention](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=842%40nsc.UUCP&rnum=8&filter=0)
-2.  [3rd place](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=843%40nsc.UUCP&rnum=7&filter=0)
-3. [2nd place](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=844%40nsc.UUCP&rnum=6&filter=0)
-4. [1st place](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=845%40nsc.UUCP&rnum=5&filter=0)
+This depends on your operating system but below are instructions for Linux and
+macOS with alternative methods for macOS and different package managers with Linux.
 
-BTW: The (dis)honorable mention wished to remain anonymous.
-While many have asked who it was, we have continued to follow the
-author's wish to remain anonymous.
+#### Red Hat based linux
 
-A few years ago, we asked the author if they still wanted to remain anonymous.
-They said: '_Yes, I want to keep my anonymity.  But you can tell them that I am well known for my connection to the
-C language_'. It was not until 2001 that another [anonymous
-entry](/years.html#2001_anonymous) received an award.
+Execute one of the following as root or via sudo:
 
-BTW: The [1984 winner](/years.html#1984_mullender) remains one of my (Landon
-Curt Noll) all time favorites.
+```sh
+dnf install SDL2 SDL2-devel sdl12-compat sdl12-compat-devel
+yum install SDL2 SDL2-devel sdl12-compat sdl12-compat-devel
+```
 
+In the past it was said that one might need to run `make` like:
 
-The name used in the posting of the [1st IOCCC
-winner](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=837%40nsc.UUCP&rnum=2&filter=0)
-posting was **I**nternational **O**bfuscated **C** **C**ode **C**ontest or
-**IOCCC** for short.
+```sh
+make ... SDL2_INCLUDE_ROOT=/usr
+```
 
-The posting said '_1st annual_', so in 1985 we held the [2nd IOCCC contest](/years.html#1985)
-and the tradition continues as the longest running contest on the Internet.
+or set the following environment variable:
 
-P.S. Part of the inspiration for making the IOCCC a contest goes to the
-[Bulwer-Lytton fiction contest](http://www.bulwer-lytton.com/).
+```sh
+export SDL2_INCLUDE_ROOT=/usr
+```
 
-<P>
-
-P^2.S. See the
-[overall README](/all/README)
-for more details.
-
-<TABLE><TR>
-<TD><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="/png/by-sa-3.0-88x31.png" /></a></TD>
-<TD><P>&copy; Copyright 1984-2020,
-[Leo Broukhis, Landon Curt Noll](/judges.html)
-- All rights reserved\
-This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</P></TD>
-<TD>&nbsp;<!--<a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>--></TD>
-</TR></TABLE>
+but this might not be necessary in more modern days especially as we use
+`sdl-config` and `sdl2-config` which should find the proper paths.
 
 
-## Q: Why do you sometimes use the first person plural?
+#### Debian based linux
 
-As a precedent for [first person
-plural](https://en.wikipedia.org/wiki/Nosism), we may sight [Two-,
-Three-, and Four-Atom Exchange Effects in bcc in
-3He](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.35.1442) and
-the co-authorship of [F. D. C.
-Willard](https://en.wikipedia.org/wiki/F._D._C._Willard) as well
-as the [APS New Open Access
-Initiative](https://journals.aps.org/2014/04/01/aps-announces-a-new-open-access-initiative).
+Execute the following as root or via sudo:
 
-The number of [IOCCC judges](https://www.ioccc.org/judges.html) has
-always been "> 1" such that IOCCC judges often prefer to themselves
-in the plural, sometimes [in the common
-plural](https://en.wikipedia.org/wiki/Plural), sometimes in the
-[first person plural](https://en.wikipedia.org/wiki/Nosism), there
-may be some who reject such a practice.  Therefore please consider
-that when you believe that just one of the [IOCCC
-judges](https://www.ioccc.org/judges.html) is in action, you may
-consider that [F. D. C.
-Willard](https://en.wikipedia.org/wiki/F._D._C._Willard) has been
-consulted, agreed, and has authorized the statement thus allowing
-the [in the common plural](https://en.wikipedia.org/wiki/Plural)
-to be used without offense.
+```sh
+apt install libsdl1.2debian libsdl1.2-dev libsdl2-dev
+```
 
-And while some might claim that [F. D. C.
-Willard](https://en.wikipedia.org/wiki/F._D._C._Willard) died in
-1982, we suggest that the [Schrödinger's
-cat](https://en.wikipedia.org/wiki/Schrödinger%27s_cat) superposition
-may still be in effect and the 1982 [report of death was an
-exaggeration](https://books.google.com/books?id=ms3tce7BgJsC&lpg=PA134&vq=%22the%20report%20of%20my%20death%20was%20an%20exaggeration%22&pg=PA134#v=onepage&q=%22the%20report%20of%20my%20death%20was%20an%20exaggeration%22&f=false).
+and then try `make all` again.
 
-p.s. Here is an image of F. D. C. Willard:
+In the past it was said that one might need to run `make` like:
 
-[F D C Willard](png/F.D.C.Willard.png)
+```sh
+make ... SDL2_INCLUDE_ROOT=/usr
+```
+
+or set the following environment variable:
+
+```sh
+export SDL2_INCLUDE_ROOT=/usr
+```
+
+but this might not be necessary in more modern days especially as we use
+`sdl-config` and `sdl2-config` which should find the proper paths.
 
 
-## Q: Why do Makefiles use `-Weverything` with `clang`? Don't you know that its use is not recommended by clang developers?
+#### Other linux distributions
+
+Use your package manager to install the appropriate packages. Try the search
+feature of the package manager to determine which packages you need to install.
+Note that you might have to install both the library and the developmental
+packages: one for compiling and one for linking / running.
+
+
+#### macOS
+
+If you're using macOS there are at least three ways to obtain it. You can
+download it from the SDL website and install the package. That will not
+work well for the IOCCC but these will:
+
+
+##### MacPorts
+
+If you haven't already, install
+[MacPorts](https://www.macports.org/install.php). Then run:
+
+
+```sh
+sudo port install libsdl libsdl2
+```
+
+
+##### Homebrew
+
+If you have not already done so, install [Homebrew](https://brew.sh).
+
+Then to install SDL and SDL2, execute the following command:
+
+```sh
+brew install sdl2 sdl12-compat
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+#### NOTE: there might be extra SDL packages required
+
+In the case that some entries do not work even with SDL1/SDL2 installed it might
+be that you need additional SDL libraries. See the entry's README.md for
+details. If something is not noted you're welcome to report it as an issue or
+fix it and make a new pull request.
+
+
+### <a name="faq3_9"></a>FAQ 3.9: How do I compile and use on macOS, an IOCCC winner that requires sound?
+
+This might depend on the entry but in some cases like
+[2001/coupard](2001/coupard/coupard.c) one needs to do more work in order to get
+it to work. In this case you should be able to use the Swiss Army Knife of sound
+processing programs, [SoX](https://sox.sourceforge.net). To install this easily
+you can use either MacPorts or Homebrew. See below for instructions for each.
+
+Usually the README.md file will explain how to use it in linux so we do not
+include this here, at least for now.
+
+
+#### MacPorts
+
+If you haven't already, install
+[MacPorts](https://www.macports.org/install.php). Then run:
+
+
+```sh
+sudo port install sox
+```
+
+
+#### Homebrew
+
+If you have not already done so, install [Homebrew](https://brew.sh).
+
+Then to install SoX, execute the following command:
+
+```sh
+brew install sox
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+
+### <a name="faq3_10"></a>FAQ 3.10: Why do Makefiles use -Weverything with clang?
+
+While we know that use of `-Weverything` is generally not recommended
+by `clang` C compiler developers, we do use the `-Weverything`
+option in a certain case in IOCCC winner `Makefile`s.
 
 The use of `-Weverything` is limited to when one forces `CC=clang`. Users with
 clang compilers are not required to set `CC=clang` but when they do,
@@ -1129,5 +913,312 @@ not work completely) due to these defects, for instance
 As you can see, using `clang` has some additional problems to work out but if
 you can get your entry to work well in `clang` it might very well be considered
 better than other entries.
-</body>
-</html>
+
+
+## <a name="faq4"></a>Section 4: Changes made to IOCCC winners
+
+
+### <a name="faq4_0"></a>FAQ 4.0: Why are some winning author remarks incongruent with the winning IOCCC code?
+
+It is very likely in this case that the code was fixed to work for modern
+systems as part of the reworking of the website. If you have this problem in
+some entries you should look at the original code as in `winner.orig.c` or
+`prog.orig.c`. `winner` is the directory name. For instance, one of Landon's
+favourite entries of all time is [1984/mullender](1984/mullender/README.md) and
+the winner there would be `mullender`. Sometimes the original is in an alt
+version like `winner.alt.c` or `prog.alt.c`.
+
+
+### <a name="faq4_1"></a>FAQ 4.1: Why were some calls to the libc function gets changed to use fgets?
+
+Some may wonder: "Doesn't this tamper with the entry too much?"
+
+A fine line indeed has to be drawn here but it was decided that it is worth it
+because of alarming warnings that can be displayed, in some systems at runtime
+interspersed with the output of the program.
+
+For instance in macOS the entry [1990/tbr](1990/tbr/README.md) would output the
+warning in such a way that caused confusing output for the entry, looking like:
+
+```sh
+$ ./tbr
+$ warning: this program uses gets(), which is unsafe.
+# nothing here, what to do?
+```
+
+In some cases changing the code to use `fgets()` is not so easy to fix and in
+one case at least there is an alternate version that has the fix instead due to
+a problem it creates (correct output but segfaults after the output in one of
+the forms of input).
+
+In some cases it is not possible to fix or at least it is highly unlikely and so
+those have mainly not been touched except one that has had the buffer size
+increased (which could be done for others that are not possible to change to
+`fgets()` though this has not been done).
+
+
+Some entries can be made to look almost identical to the original entry. For
+instance the fix to [1988/reddy](1988/reddy/README.md) required only a single
+`#define` be added.
+
+In the future we, the judges, would prefer that entries use `fgets()` to prevent
+these problems.
+
+NOTE: due to 'compatibility reasons' `fgets()` stores the newline and `gets()`
+does not. We're not sure how this is compatibility but either way it can cause a
+problem and it is this that has complicated most of the fixes though again some
+can look almost identical.
+
+
+### <a name="faq4_2"></a>FAQ 4.2: What was changed in an IOCCC winner source code?
+
+We have set up make rules to easily do see what was changed in the IOCCC
+winner source.  Using the `Makefile` in the winner directory, use
+one of the following _make(1)_ rules:
+
+The following `make` rules exist to make a difference:
+
+* `make diff_orig_prog`:
+    - This rule will show the diff of the _original_ source to the
+    current source (that is `entry.orig.c` to `entry.c`).
+* `make make diff_alt_orig`:
+    - This rule will show the diff of the alt code to the original
+    code (that is `entry.alt.c` to `entry.orig.c`). If no alt code exists
+    nothing will be shown.
+* `make diff_alt_prog`:
+    - This rule will show the diff of the alt code to the entry as it
+    stands (that is `entry.alt.c` to `entry.c`).
+* `make diff_orig_alt`:
+    - This rule will show the diff of the original code to the alt code
+    (that is `entry.orig.c` to `entry.alt.c`).
+* `make diff_prog_alt`:
+    - This rule will show the diff of the entry to the alt code (that is
+    `entry.c` to `entry.alt.c`).
+* `make diff_prog_orig`:
+    - This rule will show the diff of the entry to the original code (that is
+    `entry.c` to `entry.orig.c`).
+
+For instance one of Landon's all time favourite entries is
+[1984/mullender](1984/mullender/README.md) so the file names would be:
+`mullender.orig.c`, `mullender.alt.c` and `mullender.c`. For later years, it
+would be instead `prog.orig.c`, `prog.alt.c` and `prog.c`.
+
+Note that you might see something like:
+
+```
+make: [Makefile:170: diff_orig_prog] Error 1 (ignored)
+```
+
+at the end of the output but this is completely normal if there are differences.
+
+If the alt code is the same as the original, say with
+[1984/anonymous](1984/anonymous/README.md), then naturally there is no point in
+running the rule and the same applies for all the other rules but this system
+allows for easily seeing the diffs.
+
+As some examples we'll first look at one that has really long lines which
+will make it harder to see what is different,
+[2001/anonymous](2001/anonymous/README.md). What you would do is `cd
+2001/anonymous` and then do:
+
+```sh
+make diff_orig_prog
+```
+
+and then be really confused! :-)
+
+But for an entry like [1991/dds](1991/dds/README.md), you can see the
+differences much more easily. `1991/dds` is a good example where it's very
+simple to see what is different as it's just a couple lines.
+
+You might be quite surprised how little some entries had to be changed and at
+the same time how much other entries had to be changed, often with quite complex
+differences! In some cases if the line is rather long, like the above mentioned
+one, it will be harder to see what changed but in other cases like
+[1984/decot](1984/decot/README.md) or [1986/wall](1986/wall/README.md) it's a
+lot easier.
+
+Well, at least it's easier see the differences on a line-by-line basis but maybe
+not what actually changed, especially since it's easier to know what was fixed
+when you have compiler errors :-) (though there are, as noted, some examples
+where it's quite easy to see the differences).
+
+[1991/dds](1991/dds/README.md) is also a good example to see the alt difference
+very easily. To do that `cd 1991/dds` and then do:
+
+```sh
+make diff_alt_prog
+```
+
+and you'll see a single line changed and very simply.
+
+
+#### Tip: if you have `colordiff` installed it's a lot easier to see the differences
+
+To use these rules but provide a different `diff`, for instance `colordiff`,
+just do:
+
+```sh
+make DIFF=colordiff diff_orig_prog # for orig to prog diff
+make DIFF=colordiff diff_alt_prog # for alt to prog diff
+```
+
+Obviously if you want to view the alt code or the orig code you can just open
+the files as described above.
+
+
+### <a name="faq4_3"></a>FAQ 4.3: Why do author remarks sometimes not match the source?
+
+This is very likely to happen when an entry was fixed for modern systems. When
+you look at the remarks of the author you should look at the `prog.orig.c` or
+the `winner.orig.c` file. You might also find value in the above `diff` make
+rules.
+
+
+### <a name="faq4_4"></a>FAQ 4.4: What is the meaning of the file ending in .orig.c in IOCCC winners?
+
+Due to the fact that the original code has sometimes had to change these files
+are the original winning entry or as close to as possible to the original that
+we can find.
+
+
+## <a name="faq5"></a>Section 5: Updating or correcting IOCCC web site content
+
+
+### <a name="faq5_0"></a>FAQ 5.0: Why does an IOCCC winner fail to compile or or fail run?
+
+What may have worked years ago may not work well or work at all today.
+Please note that the IOCCC judges do **NOT** support IOCCC winners.
+Nevertheless, there may be a number of reasons why an IOCCC winner
+may fail to compile or run well or fail to run on your system.
+
+In some cases the American National Standards Institute's ANSI C
+committee has damaged the C standard to the point where perfectly
+valid C programs no longer compile with modern compilers.  As such
+some old IOCCC winners cannot no longer be compiled with modern compilers.
+
+In some cases programs that may have worked on an old computer system
+longer work on modern computers.  Some IOCCC winners do not work well,
+or no longer work on modern computers or modern operating systems.
+Some IOCCC winners fail to compile under clang, or gcc.
+Some IOCCC winners require operating system services that
+may not be present on your system.
+
+In some cases the IOCCC winner simply has bugs or (Mis)features.
+
+If you are having problems compiling or running an IOCCC winner,
+we recommend that you look in [bugs.md](/bugs.md) to see if
+there is a known bugs or (Mis)feature.  In some cases what you
+may think is a bug is actually an feature that was intentionally
+written by the authors.  In some cases the problem is well
+known and we are looking for someone to attempt to fix it.
+
+In some cases there is an alternate version of the IOCCC winner
+that you may wish to try.
+
+It also possible that you may have discovered a bug in an IOCCC
+winner.  If so, you are invited to try an fix the IOCCC winner and
+submit that fix by way of a [GitHub pull
+request](https://github.com/ioccc-src/temp-test-ioccc/pulls).  Please
+see the FAQ <a href="#pullrequst">How do I report a bug in an IOCCC
+winner?</a> for details.
+
+
+### <a name="faq5_1"></a><a name="pullrequst"></a>FAQ 5.1: How do I report a bug in an IOCCC winner?
+
+We do not 'maintain' the contest winners as such. The code is made available on an 'AS
+IS' basis. If you have a FIX for an entry, we suggest that you try and email it
+to the authors and to submit your fixes in a [GitHub pull
+request](https://github.com/ioccc-src/temp-test-ioccc/pulls) (with ONE PULL
+REQUEST *PER* FIX, please!).
+
+Note that just because you have a fix does not mean it'll be accepted. This
+might be because the author objects or it doesn't fit in some way or another. Of
+course if the entry does not work we'll certainly be more inclined to accept the
+fix. If it is accepted we'll be happy to credit you in the entry's _README.md_
+file. If you're a previous winner we will happily link to your entries; if
+you're not we can link to your website if you wish.
+
+More generally please see the file [how-to-bugfix.md](/how-to-bugfix.md). Note
+that this file is not a tutorial on how to fix X, Y and Z problems but rather
+what to do to get the fix in.
+
+
+## <a name="faq6"></a>Section 6: Miscellaneous IOCCC
+
+
+### <a name="faq6_0"></a>FAQ 6.0: How did an entry breaks the size rule 2, win the IOCCC?
+
+As entries have been fixed it is entirely possible that some of the entries no
+longer fit within the year's size restrictions. Invariably the length of columns
+and/or number of rows have also changed.
+
+The `winner.orig.c` file contains the original source code that was
+subjected to rule 2 of the given IOCCC.  You may also wish to see
+the [/archive](/archive) directory where you can find all the
+original winning entries as compressed tar files for a given year.
+
+In some cases the entry may have abused rule 2 and declared an
+"abuse of the rules" (although now blatant abuse of the rules to
+get around rule 2 size limits is discouraged).
+
+
+### <a name="faq6_1"></a>FAQ 6.1: Is there a list of known bugs and misfeatures of IOCCC winners?
+
+Yes! Please see [bugs.md](/bugs.md) for a list of known bugs and/or issues of a
+variety of kinds.
+
+Note that just because an entry is not in the bugs file does not mean there is
+not an issue and note that some issues are simply missing files, dead URL(s) or
+something like that.
+
+
+### c<a name="faq6_2"></a>FAQ 6.2: May I mirror the IOCCC web site?
+
+We are not accepting mirror requests at this time, sorry.
+
+
+### <a name="faq6_3"></a>FAQ 6.3: May I use parts of the IOCCC in an article, book, newsletter, or instructional material?
+
+While IOCCC judges look favorably on most requests to use IOCCC material,
+we request that you ask the [IOCCC judges](/judges.html) first.
+
+Please send your request using the instructions on the [contacting
+the IOCCC Judges](/contact.html) page.
+
+
+### <a name="faq6_4"></a>FAQ 6.4: Why do you sometimes use the first person plural?
+
+As a precedent for [first person
+plural](https://en.wikipedia.org/wiki/Nosism), we may sight [Two-,
+Three-, and Four-Atom Exchange Effects in bcc in
+3He](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.35.1442) and
+the co-authorship of [F. D. C.
+Willard](https://en.wikipedia.org/wiki/F._D._C._Willard) as well
+as the [APS New Open Access
+Initiative](https://journals.aps.org/2014/04/01/aps-announces-a-new-open-access-initiative).
+
+The number of [IOCCC judges](https://www.ioccc.org/judges.html) has
+always been "> 1" such that IOCCC judges often prefer to themselves
+in the plural, sometimes [in the common
+plural](https://en.wikipedia.org/wiki/Plural), sometimes in the
+[first person plural](https://en.wikipedia.org/wiki/Nosism), there
+may be some who reject such a practice.  Therefore please consider
+that when you believe that just one of the [IOCCC
+judges](https://www.ioccc.org/judges.html) is in action, you may
+consider that [F. D. C.
+Willard](https://en.wikipedia.org/wiki/F._D._C._Willard) has been
+consulted, agreed, and has authorized the statement thus allowing
+the [in the common plural](https://en.wikipedia.org/wiki/Plural)
+to be used without offense.
+
+And while some might claim that [F. D. C.
+Willard](https://en.wikipedia.org/wiki/F._D._C._Willard) died in
+1982, we suggest that the [Schrödinger's
+cat](https://en.wikipedia.org/wiki/Schrödinger%27s_cat) superposition
+may still be in effect and the 1982 [report of death was an
+exaggeration](https://books.google.com/books?id=ms3tce7BgJsC&lpg=PA134&vq=%22the%20report%20of%20my%20death%20was%20an%20exaggeration%22&pg=PA134#v=onepage&q=%22the%20report%20of%20my%20death%20was%20an%20exaggeration%22&f=false).
+
+p.s. Here is an image of F. D. C. Willard:
+
+[F D C Willard](png/F.D.C.Willard.png)
