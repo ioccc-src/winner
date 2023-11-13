@@ -10,19 +10,19 @@ make all
 If `lpr` on your system can print PostScript:
 
 ```sh
-./bas1 | gunzip | lpr
+./bemazing | gunzip | lpr
 ```
 
 else, while in X Window System,
 
 ```sh
-./bas1 | gunzip | gv -
+./bemazing | gunzip | gv -
 ```
 
 or:
 
 ```sh
-./bas1 | gunzip | gs -sDEVICE=pgmraw -sOutputFile='|xv -' -
+./bemazing | gunzip | gs -sDEVICE=pgmraw -sOutputFile='|xv -' -
 ```
 
 
@@ -47,18 +47,20 @@ creates a 3D maze of beams.  Try to go from the entrance (the
 unfinished beam in one corner) to the exit (the unfinished beam in the
 opposite corner) or vice versa.
 
-For maximum portability, `Bemazing` is not tied to any window system,
-but creates postscript.  The picture it makes will fit on either A4 or
-letter size paper.
+For maximum portability, `Bemazing` is not tied to any window system, but
+creates postscript output.  The picture it makes will fit on either A4 or letter
+size paper.
 
 In addition, because postscript is rather verbose, `Bemazing` creates
-the postscript in gzip format, in order to save precious bits on your
-hard disk for the latest version of GNU Emacs (after all, you wouldn't
+the postscript in `gzip(1)` format, in order to save precious bits on your
+hard disk for the latest version of [GNU
+Emacs](https://www.gnu.org/software/emacs/) (after all, you wouldn't
 want to use an editor without a psychoanalyze-pinhead function, now
 would you).  Again for maximum portability, `Bemazing` will take special
 care that the binary output will not contain any newline or return
 characters that may get weird treatment on systems that do not use the
 One True Line Separator.
+
 
 ### NOTES
 
