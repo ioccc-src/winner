@@ -62,7 +62,7 @@ CDEFINE= -DZ=30 -DZS=150000
 
 # Include files that are needed to compile
 #
-CINCLUDE= -include unistd.h
+CINCLUDE= -include unistd.h -include stdlib.h
 
 # Optimization
 #
@@ -112,10 +112,10 @@ PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 DATA=
-TARGET= ${PROG}
+TARGET= ${PROG} ${PROG}_sdl
 #
-ALT_OBJ= ${PROG}.alt.o
-ALT_TARGET= ${PROG}.alt
+ALT_OBJ= ${PROG}.alt.o ${PROG}.alt_sdl.o
+ALT_TARGET= ${PROG}.alt ${PROG}.alt_sdl
 
 
 #################
@@ -145,9 +145,9 @@ alt: data ${ALT_TARGET}
 ${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
-
 ${PROG}.alt_sdl: ${PROG}.alt.c
 	${CC} ${CFLAGS} -DSDL `${SDL1_CONFIG} --cflags` $< -o $@ ${LDFLAGS} `${SDL1_CONFIG} --libs`
+
 
 # data files
 #
