@@ -1,6 +1,22 @@
 #!/usr/bin/env bash
+#
+# try.sh - show IOCCC winner 1996/gandalf
+#
+# BTW: it is absolutely perilous to 'try' the patience of Gandalf: go ahead,
+# 'try it'! :-)
+#
 
-make all 1>/dev/null || exit 1
+# make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
+# this way allows us to have the user specify a different compiler in an easy
+# way.
+if [[ -z "$CC" ]]; then
+    CC="cc"
+fi
+
+make CC="$CC" all >/dev/null || exit 1
+
+# clear screen after compilation so that only the entry is shown
+clear
 
 # remove temporary files to show later
 rm -f hatcat.txt cathat.txt hatcat2.txt cathat2.txt hatcat3.txt cathat3.txt
