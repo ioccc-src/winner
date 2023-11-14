@@ -4,6 +4,9 @@
 make
 ```
 
+There is an alternate version that compiles [mkentry.c](mkentry.c). See
+[alternate code](#alternate-code).
+
 
 ## To use:
 
@@ -15,18 +18,29 @@ make
 ### Try:
 
 ```sh
-rm -f ./tomx
-chmod +x ./tomx.c
-./tomx.c
-./tomx
+./try.sh
 ```
 
-as well as:
+
+## Alternate code:
+
+This alternate code is based on the author's remarks with a slight fix so that
+it will do what it once did, compile and run [mkentry.c](mkentry.c). You can use
+it in a similar way as [tomx.c](tomx.c), both executing the source file and
+using it as a Makefile and running the code ends up running `mkentry`.
+
+
+### Alternate build:
 
 ```sh
-rm -f ./tomx
-make -f tomx.c
-./tomx
+make alt
+```
+
+
+### Alternate try:
+
+```sh
+./try.alt.sh
 ```
 
 
@@ -45,13 +59,14 @@ changes don't change the shell code or the Makefile.
 
 This program works as a C source file, a Makefile and also as a shell
 (`/bin/sh`) script. But unlike some other multi-language programs, this one is
-NOT meant to print "Hello, world" in all 3 cases (At least in the true sense
-;-)). The C, make and shell code build upon each other to create a C program (?)
+NOT meant to print `Hello, world` in all 3 cases (At least in the true sense
+;-)). The C, Makefile and shell code build upon each other to create a C program (?)
 which when executed as a shell script will compile itself through the C compiler
 using a Makefile! - Pretty useful, Eh?
 
 Probably, this is the first entry ever to fully satisfy Rule #1 ("Your entry
 must be a complete program") in the strictest sense;-)
+
 
 ### Top 5 reasons (IMHO) why this code is an entry for IOCCC
 
@@ -67,7 +82,7 @@ C (But again, there was NO obfuscated make/shscript contest)
 obfuscation should be in C and not elsewhere???. Mmmmm...).
 
 3. Extending Argument #2... Obfuscation done in the C code
-(comments?) create obfuscated code for the other 2 languages.
+(comments?) creates obfuscated code for the other 2 languages.
 This opens new possibilities to be explored in depth in future
 `IOCCC`s.
 

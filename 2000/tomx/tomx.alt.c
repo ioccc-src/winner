@@ -4,7 +4,7 @@
 true /*:all
 
 CC=cc
-PROG=tomx
+PROG=mkentry
 
 false :
 	make -f $0 $1
@@ -19,4 +19,5 @@ clean:
 	rm $(PROG)
 
 .PHONY: /* true clean */
-	int main() {return!printf("Hello, world\n");}
+#undef   true
+#include "mkentry.c"
