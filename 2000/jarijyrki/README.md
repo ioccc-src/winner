@@ -44,7 +44,7 @@ Now try running:
 
 And observe that it matches what you had in the previous run!
 
-NOTE: changing the dimension parameters (see the authors' comments) renders
+NOTE: changing the dimension parameters (see the authors' remarks) renders
 existing spreadsheet files unusable.
 
 
@@ -53,10 +53,11 @@ existing spreadsheet files unusable.
 This entry is one of those that makes you wonder why some commercial software
 needs tens to hundreds of <strike>megabytes</strike>gigabytes to install!  This
 entry does not simply do the basics, it includes graphing features.  All this
-program needs now is a flight simulator!
+program needs now is a [flight simulator](1998/banks/README.md)!
 
 
 ## Author's remarks:
+
 
 ### 1. OVERVIEW
 
@@ -79,9 +80,12 @@ supports are:
 * Loading and saving spreadsheets
 * Visual style configuration
 
+
 ### 2. USAGE INSTRUCTIONS
 
+
 #### 2.1. Quick Guide
+
 
 ##### Starting
 
@@ -89,18 +93,22 @@ supports are:
 ./jarijyrki < finance.sheet > myedits.info
 ```
 
+
 ##### Stopping
 
 Use the ESC key.
+
 
 ##### Movement
 
 Click the mouse or use the arrow keys.
 
+
 ##### Editing
 
 The currently selected cell is always in the edit state.  Press any key to add a
 character at the end of the formula; press backspace to delete the last one.
+
 
 ##### Formulas
 
@@ -112,6 +120,7 @@ C1 C2 *
 D1 D2 /
 ```
 
+
 ##### Pie charts
 
 ```
@@ -119,6 +128,7 @@ A1 A2 A3 ...
 ```
 
 Finish the formula with `@` to create the pie chart.
+
 
 ##### Histograms
 
@@ -132,7 +142,8 @@ Finish the formula with `!` to create the histogram.
 #### 2.2. Starting and Loading Spreadsheets
 
 To start the spreadsheet program with an existing
-spreadsheet, use the following command line:
+spreadsheet, for instance [finance.sheet](finance.sheet), use the following
+command line:
 
 ```sh
 ./jarijyrki < finance.sheet
@@ -147,10 +158,11 @@ supported by the program.
 To start the program with an empty sheet, use
 
 ```sh
-    ./jarijyrki < /dev/null
+./jarijyrki < /dev/null
 ```
 
 Alternatively, `/dev/zero` could be used but that may not exist on all systems.
+
 
 #### 2.3. Exiting and Saving Spreadsheets
 
@@ -164,12 +176,13 @@ a file, the following typical command line would be used:
 ./jarijyrki < finance.sheet > myedits.info
 ```
 
+
 #### 2.4. Visual Overview
 
 On top of the window the Formula Area shows the formula (or text) of the
 currently selected cell. The program starts with `A1` as being the current cell.
-Below the Formula Area is the Column Letters Area: A, B, and so on.
-Correspondingly, on the left side of the window is the Row Numbers Area: 1, 2,
+Below the Formula Area is the Column Letters Area: `A`, `B`, and so on.
+Correspondingly, on the left side of the window is the Row Numbers Area: `1`, `2`,
 and so on.  The rest of the window is dedicated to the actual spreadsheet cells.
 
 The example spreadsheet, [finance.sheet](finance.sheet), provided with this
@@ -181,6 +194,7 @@ form, and on the bottom right corner is a histogram showing the yearly
 development. If you scroll the window you can see additional data from the
 spreadsheet.
 
+
 #### 2.5. Movement and Scrolling
 
 Use arrow keys to move left, right, up, and down among the cells.  You may also
@@ -190,8 +204,9 @@ Note that it is not possible to move around the formula; the formula can only be
 edited from its end by adding or removing characters.
 
 Going beyond the borders of the window results in scrolling the current view. It
-is not possible to go up from first row or left from the first column; but it is
+is not possible to go up from the first row or left from the first column; but it is
 possible to wrap back to start from the last row and last column.
+
 
 #### 2.6. Formulas
 
@@ -200,8 +215,7 @@ plus) are first pushed to the stack and then the operation is performed. If a
 formula on a cell produces *exactly* one result then that is shown in the cell.
 Otherwise, the formula is interpreted as a string and shown as it is.
 
-An example of a simple formula, simply specifying a number
-is
+An example of a simple formula, simply specifying a number is
 
 ```
 123.50
@@ -238,6 +252,7 @@ the last character. Any resulting recalculations are immediately visible. (Note
 how much nicer this feature is as you get used to it, compared to the behaviour
 of certain commercial spreadsheet programs.)
 
+
 #### 2.7. Graphical Formulas
 
 The program supports two types of graphical representations of the data in the
@@ -258,6 +273,7 @@ The histograms are drawn in a similar manner, by using the `!` operator:
 A1 A2 A3 A3 !
 ```
 
+
 #### 2.8. Errors in Formulas
 
 The program detects recursive reference attempts, references cells not
@@ -271,6 +287,7 @@ Errors are signalled by showing the formula on a cell instead of the numerical
 value supposedly returned by it.
 
 Division by zero results in an IEEE Inf number.
+
 
 #### 2.9. Compilation Parameters and Configuration
 
