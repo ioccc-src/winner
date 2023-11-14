@@ -1626,7 +1626,8 @@ it is an error. It is always an error if the compilation of the program itself
 (westley.c, westley.alt.c) fails.
 
 Cody added the [try.sh](1992/westley/try.sh) script that shows the different
-cities that the author recommended one try, labelling each city and printing a
+cities that the author recommended one try as well as the one recommended by the
+judges (approximate judging location), labelling each city and printing a
 newline before the next city. The try.sh script uses the `whereami` code, if it
 can be compiled and linked, but otherwise it uses `westley` code instead, either
 the entry or alt code. The try.sh cannot be deceived by way of `COLUMNS=81

@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
-# 
-# script to run westley on a variety of locations to show different cities in
-# the world.
+#
+# try.sh - script to show IOCCC winner 1992/westley
+#
+# This script runs westley on a variety of locations to show different cities in
+# the world, based on the author's remarks and the judges' remarks.
 #
 # This script will first try compiling the code and alt code (alt = US only with
 # higher resolution, based on the author's remarks) and then if all is OK it
 # tries to make the whereami and whereami.alt programs. If that fails the
 # programs used will be westley and westley.alt; otherwise the programs will be
-# whereami and whereami.alt.
+# whereami and whereami.alt. One can pass CC=foo to set the compiler, defaulting
+# to cc.
 #
 # The difference between whereami and westley is that the former first checks
 # that the number of columns is at least 80. The programs whereami and
@@ -20,8 +23,8 @@
 # use for that purpose if nothing else.
 #
 # If westley or westley.alt cannot compile then it is an error and the script
-# will exit 3, corresponding to the code if westley.c or westley.alt.c cannot be
-# compiled by the whereami.c and whereami.alt.c programs.
+# will exit 4, corresponding to the same code that whereami.c and whereami.alt.c
+# exit with if westley.c or westley.alt.c cannot be compiled.
 #
 # If whereami or whereami.alt cannot compile or link, say because libcurses is
 # not installed, then it is not an error as such but westley and westley.alt
@@ -39,7 +42,7 @@
 #
 # If whereami and whereami.alt can be built it is run once, ahead of time, and
 # if it exits non-zero then we exit to prevent repeatedly showing the error
-# message.
+# message. Otherwise we will call westley or westley.alt directly.
 #
 # Usage: ./try.sh
 #
@@ -47,20 +50,26 @@
 WESTLEY=""
 WESTLEY_ALT=""
 
-make westley westley.alt >/dev/null || exit 1
-make whereami whereami.alt >/dev/null
+# get CC
+if [[ -z "$CC" ]]; then
+    CC="cc"
+fi
+
+make CC="$CC" westley westley.alt >/dev/null || exit 4
+make CC="$CC" whereami whereami.alt >/dev/null || exit 4
 
 # get the path to the right programs
 if [[ -x "whereami" ]]; then
     WESTLEY="whereami"
-    ./"$WESTLEY" 0 0 >/dev/null || exit 1
+    CC="$CC" ./"$WESTLEY" 0 0 >/dev/null || exit 1
 else
     WESTLEY="westley"
 fi
 if [[ -x "whereami.alt" ]]; then
     WESTLEY_ALT="whereami.alt"
+    CC="$CC" ./"$WESTLEY_ALT" 0 0 >/dev/null || exit 1
 else
-    WESTLEY_ALT="westley"
+    WESTLEY_ALT="westley.alt"
 fi
 
 echo "New York:" 1>&2
