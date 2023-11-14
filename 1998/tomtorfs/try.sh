@@ -1,7 +1,19 @@
 #!/usr/bin/env bash
 #
-# script to demonstrate 1998/tomtorfs
+# try.sh - demonstrate IOCCC winner 1998/tomtorfs
 #
+
+# make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
+# this way allows us to have the user specify a different compiler in an easy
+# way.
+if [[ -z "$CC" ]]; then
+    CC="cc"
+fi
+
+make CC="$CC" all >/dev/null || exit 1
+
+# clear screen after compilation so that only the entry is shown
+clear
 
 rm -f file.A file.B file.C
 
