@@ -28,8 +28,9 @@
 - [3.6  - An IOCCC winner missed by my terminal application, how do I fix this?](#faq3_6)
 - [3.7  - How do I compile and use on macOS, an IOCCC winner that requires X11?](#faq3_7)
 - [3.8  - How do I compile an IOCCC winner that requires SDL1 or SDL2?](#faq3_8)
-- [3.9  - How do I compile and use on macOS, an IOCCC winner that requires sound?](#faq3_9)
-- [3.10 - Why do Makefiles use -Weverything with clang?](#faq3_10)
+- [3.9  - How do I compile an IOCCC winner that requires (n)curses?](#faq3_9)
+- [3.10 - How do I compile and use on macOS, an IOCCC winner that requires sound?](#faq3_10)
+- [3.11 - Why do Makefiles use -Weverything with clang?](#faq3_11)
 
 ## Section  4 - [Changes made to IOCCC winners](#faq4)
 - [4.0  - Why are some winning author remarks incongruent with the winning IOCCC code?](#faq4_0)
@@ -796,7 +797,52 @@ details. If something is not noted you're welcome to report it as an issue or
 fix it and make a new pull request.
 
 
-### <a name="faq3_9"></a>FAQ 3.9: How do I compile and use on macOS, an IOCCC winner that requires sound?
+### <a name="faq3_9"></a>FAQ 3.9: How do I compile an IOCCC winner that requires (n)curses?
+
+This depends on your operating system but below are instructions for Linux and
+macOS with alternative methods for macOS and different package managers with Linux.
+
+#### Red Hat based linux
+
+Execute one of the following as root or via sudo:
+
+```sh
+dnf install ncurses ncurses-devel
+yum install ncurses ncurses-devel
+```
+
+
+#### Debian based linux
+
+Execute the following as root or via sudo:
+
+```sh
+apt-get install libncurses5-dev libncursesw5-dev
+```
+
+and then try `make all` again.
+
+
+#### Other linux distributions
+
+Use your package manager to install the appropriate packages. Try the search
+feature of the package manager to determine which packages you need to install.
+Note that you might have to install both the library and the developmental
+packages: one for compiling and one for linking / running.
+
+
+#### macOS
+
+With macOS it should already be installed. If it is not you might have to do:
+
+```sh
+xcode-select --install
+```
+
+and agree to the terms and conditions and proceed with the install.
+
+
+### <a name="faq3_10"></a>FAQ 3.10: How do I compile and use on macOS, an IOCCC winner that requires sound?
 
 This might depend on the entry but in some cases like
 [2001/coupard](2001/coupard/coupard.c) one needs to do more work in order to get
@@ -831,7 +877,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
 
-### <a name="faq3_10"></a>FAQ 3.10: Why do Makefiles use -Weverything with clang?
+### <a name="faq3_11"></a>FAQ 3.10: Why do Makefiles use -Weverything with clang?
 
 While we know that use of `-Weverything` is generally not recommended
 by `clang` C compiler developers, we do use the `-Weverything`

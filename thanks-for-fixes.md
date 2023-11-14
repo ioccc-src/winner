@@ -2302,12 +2302,16 @@ Cody made this more portable by changing the `void main` to `int main`.
 Cody fixed the code and added an appropriate make rule so that the SDL version
 works independent from the curses version (using the same code).
 
+Cody also added alt code to allow one to slow down the code. This code also, at
+least for the curses mode, allows one to quit at any time by pressing 'q'. See
+below for more details.
+
 Due to a terrible design choice of the SDL1 developers something had to be
 changed. As was noted in the log:
 
 ```
 The SDL version did not work for a number of reasons. First of all the
-code requires that SDL is defined. Second the path wrong header file was
+code requires that SDL is defined. Second the path[sic] wrong header file was
 included. Third the SDL1 developers thought it would be a great idea
 (but obviously it's a terrible idea) to redefine main() (!!) so that any
 program that uses SDL1 has to have the same args as their definition.

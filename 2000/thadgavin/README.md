@@ -1,73 +1,98 @@
 ## To build:
 
-```sh
-make
-```
-
-NOTE: the author suggested `-O6` but at least some gcc versions support no more
-than level 3 which is what the Makefile has.
-
-To use the SDL version that works independently from the curses version:
-
-```sh
-make thadgavin_sdl
-```
-
-Use `thadgavin_sdl` as you would `thadgavin` below.
-
-
-## To use:
-
-```sh
-./thadgavin
-```
-
-WARNING: if you are sensitive to rapid movement or if you want to see better
-what is going on then please see the Alternate code section.
-
-NOTE: in curses mode you might want to type `reset` after execution of this
-program as the program does not call `endwin()`. Using `reset` will clear the
-screen.
-
-
-### Try:
-
-```sh
-echo "Do or do not. There is no try."
-```
-
-
-## Alternate code:
-
-An alternate version exists which allows you to slow down the printing of the
-characters, useful for those with modern systems or those who are sensitive to
-rapid moving swirling. To use:
+If you don't have curses or SDL1 installed both modes will fail to compile. In
+that case see the [FAQ 3.8 - How do I compile an IOCCC winner that requires SDL1
+or SDL2?](/faq.md#faq_38) and [FAQ 3.9  - How do I compile an IOCCC winner that
+requires (n)curses?](/faq.md#faq3_9) for more information.
 
 
 ```sh
 make alt
 ```
 
-To make the SDL version:
+We recommend that you use the alternate code in modern systems. See the
+[original code](#original-code) section for more details on why this is.
+
+
+## To use:
 
 ```sh
-make thadgavin.alt_sdl
+./thadgavin.alt
 ```
 
-If you wish to reconfigure the delay you can do so like:
+You can press 'q' at any time to exit.
+
+### Try:
+
+If you have SDL1 installed:
 
 ```sh
-make -DZ=50 clobber alt
-make -DZS=5000 clobber thadgavin.alt_sdl
+./thadgavin_sdl
 ```
 
-Use `thadgavin.alt` and `thadgavin.alt_sdl` as you would `thadgavin` and
-`thadgavin_sdl` above.
+Whereas the curses version has an early exit the SDL version does not. You will
+have to kill it yourself.
 
-The default for the curses alt version is 30 and for SDL it is 150000. The
-different macros is because the curses version is already slower but it's better
-to not tie the two values together. The reason for such drastically different
-numbers is because curses is already slower than SDL.
+You might also care to reconfigure the speed at which the programs run. The code
+calls `usleep(3)` with two default values, one for SDL and one for curses. The
+curses and SDL macros are defined respectively in the Makefile:
+
+```
+-DZ=30 -DZS=150000
+```
+
+which corresponds to how long the program sleeps (in microseconds) between
+output. In the code if either is undefined (`#ifndef..#endif`) they will be set
+to the defaults as above so that you don't have to specify both just to
+configure one. To change the SDL one to something like `15000` you can do:
+
+```sh
+make CDEFINE="-DZS=15000" clobber alt
+```
+
+and to change the curses one to `40`:
+
+```sh
+make CDEFINE="-DZ=40" clobber alt
+```
+
+Then use the program(s) in the same way.
+
+The different macros is because the curses version is already much slower and so
+it's better to not tie the two values together.
+
+
+## Original code:
+
+WARNING: if you are sensitive to rapid movement or if you want to see better
+what is going on then please use the alternate code as described above. If you
+wish to see the original entry see below.
+
+NOTE: in curses mode you might want to type `reset` after execution of this
+program as the program does not call `endwin()`. Using `reset` will clear the
+screen. The alt code, as noted above, allows one to quit early so this is not a
+problem there.
+
+
+### Original build:
+
+```sh
+make all
+```
+
+### Original use:
+
+```sh
+./thadgavin
+```
+
+### Original try:
+
+If you have SDL1 installed:
+
+```sh
+./thadgavin_sdl
+```
 
 
 ## Judges' remarks:
@@ -80,6 +105,7 @@ less than dazzling. We could not test this entry in DOS mode.
 
 ## Authors' remarks:
 
+
 ### To use under DOS:
 
 Compile using DJGPP as follows:
@@ -88,10 +114,19 @@ Compile using DJGPP as follows:
 gcc thadgavin.c -o thadgavin.exe -Wall -lm -O6 -mpentium -fomit-frame-pointer -ffast-math
 ```
 
-### To use under Windows, X-Windows or MacOS using the Simple DirectMedia Layer:
+
+### To use under Windows, X-Windows or macOS using the Simple DirectMedia Layer:
 
 ```sh
 gcc -O6 -lpthread -g -o thadgavin thadgavin.c -lSDL -DSDL -lm
+```
+
+
+### To use curses:
+
+
+```sh
+gcc -O6 -lpthread -g -o thadgavin thadgavin.c -lncurses -lm
 ```
 
 
@@ -116,7 +151,7 @@ char ', possible loss of data
 
 But don't worry, this is completely normal.
 
-Recommended dosage:
+### Recommended dosage:
 
 At least 3 minutes taken 3 times a day when tired.
 

@@ -1,4 +1,9 @@
-
+#ifndef Z
+#define Z 30
+#endif
+#ifndef ZS
+#define ZS 150000
+#endif
                       int
                    X=320      ,Y=200,
                  n=0,m,     x,y,   j=1024;
@@ -37,6 +42,7 @@
          out,C8),m     )W W W; ++h; } dosmemput
    (v,X*Y,0xA0000   ); } else{       r.x.ax=
  0x13;            __dpmi_int(    0x10,&r); } }
+		     void E(void){}
                    #elif defined(SDL)
               #include <SDL.h>
           SDL_Surface    *s; void
@@ -45,6 +51,7 @@
      (s,0,0,0,        0); usleep(ZS); } else {  SDL_Init( 
        SDL_INIT_VIDEO); s=SDL_SetVideoMode
        (X,Y,8,0);       v=s->pixels; } }
+		void E(void){}
                   #else
                #include "curses.h"
              void F(i){ if(i){ for(y=0;
@@ -54,7 +61,10 @@
         ",:+"   "=@#"   ]); usleep(Z); } ;  refresh
         (); }     else{          initscr
         (),x=     COLS&~1,X=x<X?x:X,y=
-         LINES      &~1,Y=y<Y?y:Y; } }
+         LINES      &~1,Y=y<Y?y:Y; 
+		nodelay(stdscr,1);}}
+	     void E(void){if(getch()=='q')
+		{endwin();exit(0);}}
           #endif
 
 main(int argc, char **argv)
@@ -88,6 +98,8 @@ main(int argc, char **argv)
 
             if (f>T*2)
                 C[0]=sin(f)+sin(f*2)/2;
+
         }
+	E();
     }
 }
