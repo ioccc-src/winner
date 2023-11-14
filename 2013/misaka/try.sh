@@ -1,7 +1,19 @@
 #!/usr/bin/env bash
+#
+# try.sh - demonstrate IOCCC winner 2013/misaka
+#
 
-# make sure code compiled
-make all || exit 1
+# make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
+# this way allows us to have the user specify a different compiler in an easy
+# way.
+if [[ -z "$CC" ]]; then
+    CC="cc"
+fi
+
+make CC="$CC" all >/dev/null || exit 1
+
+# clear screen after compilation so that only the entry is shown
+clear
 
 echo "$ seq 1 12 | ./horizontal_cat - - -"
 seq 1 12 | ./horizontal_cat - - -
