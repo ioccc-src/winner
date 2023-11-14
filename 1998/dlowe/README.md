@@ -33,6 +33,12 @@ For more detailed information see [1998 dlowe in bugs.md](/bugs.md#1998-dlowe).
 
 Why is there different output?
 
+Also try:
+
+```sh
+./try.sh
+```
+
 
 ## Alternate code:
 
@@ -58,8 +64,10 @@ a CGI program: <https://web.archive.org/web/20001025182142/http://pootpoot.com/p
 We are sure that you will find that new web page to make a much
 more consistent level of quality.  :-)
 
-A CGI script such as:
 
+### Historical remarks:
+
+A CGI script such as:
 
 ```sh
 #!/bin/sh
@@ -85,9 +93,35 @@ else
 fi
 ```
 
-can be used to pootify web pages.
+could be used to pootify web pages. It was noticed in 2023, however, that
+`lynx(1)` does not work well and `links(1)` does not have the same security
+protections that `lynx(1)` does. Thus it might be unwise to use as a CGI script.
 
-For further information see:
+The [pootify.sh](pootify.sh) script has been added which is a modification to
+the above which can be used to render html files locally with the added bonus
+that one can use `file://` URLs. If one uses it as a CGI script (whether
+modifying it to use `lynx(1)` or not) they might want to uncomment the check in
+the script for `file://` based URLs. It has not been tested as a CGI script with
+lynx(1) so it's maybe possible that it would work this way.
+
+You can use this script, however, to download and generate html files that you
+can look at locally in a browser or pipe through `less(1)`. For instance:
+
+```sh
+./pootify.sh URL=https://microsoft.com | less
+
+./pootify.sh -r URL=https://microsoft.com > ms.html
+```
+
+where the first one would show the text as rendered but without links, images
+etc. and the second one would write the html to ms.html so that you could open
+it in a browser.
+
+If one does use it as a CGI script you'll want to check out
+[pootify.cgi.sh](pootify.cgi.sh) which forbids `file://` based URLs and which
+uses `lynx(1)` with the option referred to above.
+
+For an old example of it working as a CGI script see:
 
 ```sh
 https://web.archive.org/web/20040326083431/http://www.pootpoot.com/poot/pootify/?URL=http%3A%2F%2Fwww.ioccc.org
@@ -96,8 +130,8 @@ https://web.archive.org/web/20040326083431/http://www.pootpoot.com/poot/pootify/
 
 ## Author's remarks:
 
-This program is a text filter, it reads stdin and outputs the
-"corrected" text to stdout.
+This program is a text filter, it reads `stdin` and outputs the
+"corrected" text to `stdout`.
 
 It is obfuscated in that the code is painful to look at and
 its purpose and mode of operation are not terribly obvious.

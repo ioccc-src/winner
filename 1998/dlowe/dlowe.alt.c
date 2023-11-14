@@ -2,7 +2,7 @@
 #define PO(o,t)\
 (((o>64)&&(o<91))?(((t>96)&&(t<123))?(t-32):(t)):(((t>64)&&(t<91))?(t+32):(t)))
 
-      void main() {                                       char *poo="poot",
+      int main() {                                       char *poo="poot",
       *Poo="pootpoot"     ,O[9],o;int     t, T;(t=0)||    (*O='\0');while(
       (o=        getc(   stdin   ))!=(   EOF))if  (((o>        64)&&
       (o<         91))   ||((     o>96   )&&(o     <123        ))) (
@@ -14,5 +14,5 @@
       ("%c",                                                  PO(*(O
       +T),*(                                                  poo+T)
 
-) ); printf( "%c", o ) ; } else printf("%s%c", O, o); ( t =0) || (*O='\0'); } }
+) ); printf( "%c", o ) ; } else printf("%s%c", O, o); ( t =0) || (*O='\0'); } return 0;}
 

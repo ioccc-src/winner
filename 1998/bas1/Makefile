@@ -40,7 +40,7 @@ include ../../var.mk
 #
 CSILENCE= -Wno-bitwise-conditional-parentheses -Wno-bitwise-op-parentheses \
 	-Wno-empty-body -Wno-invalid-source-encoding -Wno-main -Wno-parentheses \
-	-Wno-shift-op-parentheses -Wno-deprecated-non-prototype
+	-Wno-shift-op-parentheses -Wno-deprecated-non-prototype -Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -114,7 +114,7 @@ PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 DATA=
-TARGET= ${PROG}
+TARGET= ${PROG} bemazing
 #
 ALT_OBJ=
 ALT_TARGET=
@@ -134,6 +134,10 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+bemazing: ${PROG}
+	${RM} -f $@
+	${CP} $< $@
 
 # alternative executable
 #

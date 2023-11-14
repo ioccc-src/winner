@@ -2042,10 +2042,42 @@ they do have page up and page down but this gives a default for those who don't
 have them like with Macs.
 
 
+## [1998/bas2](1998/bas2/bas2.c) ([README.md](1998/bas2/README.md]))
+
+Cody added the [try.sh](1998/bas2/try.sh) script which runs some default actions
+as well as allowing one to pass in different file names or strings.
+
+
 ## [1998/chaos](1998/chaos/chaos.c) ([README.md](1998/chaos/README.md]))
 
 Cody added a call to `endwin()` to restore terminal sanity (echo etc.) when
-exiting the program.
+exiting the program (in both versions).
+
+
+## [1998/df](1998/df/df.c) ([README.md](1998/df/README.md]))
+
+Cody changed a `int *` used for `fopen(3)` to be a `FILE *` to be more correct
+and prevent any possible problems in some systems (which has happened).
+
+Cody also made the fixed version look more like the original version by using
+the old style of `main()` args so that it read `i,love_unix` more naturally, and
+by changing the typedef `lint` (to `int` - see the code for why this has to be
+done in modern systems) to be `_int`.
+
+
+## [1998/dlowe](1998/dlowe/dlowe.c) ([README.md](1998/dlowe/README.md]))
+## [1998/dlowe](1998/dlowe/dlowe.c) ([README.md](1998/dlowe/README.md]))
+
+Cody made the program more portable by changing the void return type of `main()`
+to be `int` (in both versions).
+
+Cody added the scripts [try.sh](1998/dlowe/try.sh),
+[pootify.sh](1998/dlowe/pootify.sh) and
+[pootify.cgi.sh](1998/dlowe/pootify.cgi.sh) for a fun example use of the
+program, a local pootifier of web pages and a CGI pootifier. It should be noted
+that the CGI version might have an issue with modern systems; see [historical
+remarks](1998/dlowe/README.md#historical-remarks) for more details on the
+pootify scripts.
 
 
 ## [1998/dloweneil](1998/dloweneil/dloweneil.c) ([README.md](1998/dloweneil/README.md]))

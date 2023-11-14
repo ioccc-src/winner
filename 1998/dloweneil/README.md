@@ -53,7 +53,7 @@ make alt
 ### Alternate use:
 
 ```sh
-./pootris.alt
+./pootris.alt [X size of board] [Y size of board]
 ```
 
 
@@ -145,8 +145,8 @@ than one way simultaneously.
 - Several different coordinate systems are used.  There's the "real" X by Y
 system used for curses, the "inside the box" X by Y system used for moving
 things around and finding instances of `POOT` inside the box, and the position
-of the current letter, which is a single value from 0 to `2 * xsize + 2 * ysize
-- 1`.
+of the current letter, which is a single value from `0` to
+`2 * xsize + 2 * ysize - 1`.
 
 - The fact that `x%3` is a perfect hash function for `x` values `P`, `O` and `T`
 is used.
