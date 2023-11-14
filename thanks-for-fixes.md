@@ -758,6 +758,9 @@ was fixed by Misha Dynin, based on the judges' remarks, so that this would work
 with modern C compilers. We encourage you to try the alternate version to see
 what happens with current compilers! See the README.md files for details.
 
+Cody changed the `int`s to be `float` as that's what they are printed as: not
+strictly necessary but nonetheless more correct, even if not warned against.
+
 Cody added the [try.sh](1988/westley/try.sh) script to show the magic of the
 entry as seeing the code with the result at once is far more beautiful.
 
@@ -1623,7 +1626,8 @@ it is an error. It is always an error if the compilation of the program itself
 (westley.c, westley.alt.c) fails.
 
 Cody added the [try.sh](1992/westley/try.sh) script that shows the different
-cities that the author recommended one try, labelling each city and printing a
+cities that the author recommended one try as well as the one recommended by the
+judges (approximate judging location), labelling each city and printing a
 newline before the next city. The try.sh script uses the `whereami` code, if it
 can be compiled and linked, but otherwise it uses `westley` code instead, either
 the entry or alt code. The try.sh cannot be deceived by way of `COLUMNS=81

@@ -1,15 +1,22 @@
 #!/usr/bin/env bash
+#
+# try.sh - demonstrate IOCCC winner 1988/westley
+#
 
-clear
-
-if [[ ! -x "westley" ]]; then
-    echo "$ cc westley.c -o westley"
-    cc -std=gnu89 -Wno-error -Wno-implicit-function-declaration -Wno-return-type    -O3 westley.c -o westley || exit 1
+# make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
+# this way allows us to have the user specify a different compiler in an easy
+# way.
+if [[ -z "$CC" ]]; then
+    CC="cc"
 fi
 
-echo "$ cat westley.c"
+make CC="$CC" all >/dev/null || exit 1
+
+# clear screen after compilation so that only the entry is shown
+clear
+
+echo "$ cat westley.c" 1>&2
 cat westley.c
 sleep 1
-
-echo "$ ./westley"
+echo "$ ./westley" 1>&2
 ./westley

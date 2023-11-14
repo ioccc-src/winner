@@ -1,9 +1,18 @@
 #!/usr/bin/env bash
 #
-# demo.sh - script to demonstrate IOCCC entry 1991/fine
+# try.sh - script to demonstrate IOCCC winner 1991/fine
 #
 
-make all || exit 1
+# make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
+# this way allows us to have the user specify a different compiler in an easy
+# way.
+if [[ -z "$CC" ]]; then
+    CC="cc"
+fi
+make CC="$CC" all >/dev/null || exit 1
+
+# clear screen to remove any compiler message to make the entry stand out more
+clear
 
 echo -n "Green terra <-> "
 echo "Green terra" | ./fine
