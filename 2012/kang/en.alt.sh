@@ -5,7 +5,17 @@
 # What does it get right and what does it get wrong? Why does it get what it
 # gets wrong wrong?
 
-make everything || exit 1
+# make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
+# this way allows us to have the user specify a different compiler in an easy
+# way.
+if [[ -z "$CC" ]]; then
+    CC="cc"
+fi
+
+make CC="$CC" everything >/dev/null || exit 1
+
+# clear screen after compilation so that only the entry is shown
+clear
 
 # set up path to program if not set
 if [[ -z "$KANG" ]]; then
