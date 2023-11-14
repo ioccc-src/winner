@@ -18,7 +18,7 @@ if [[ -z "$BIRKEN" ]]; then
     BIRKEN="birken.alt"
 fi
 
-trap "clear; exit" SIGINT
+trap 'reset; exit' 0 1 2 3 15
 
 for i in *.txt; do
     NAME="$(echo "$i" | awk '{ print toupper(substr($1,1,1)) substr($1,2)}'|sed -e 's/\.txt//g' \

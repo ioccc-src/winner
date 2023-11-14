@@ -42,9 +42,16 @@ perl -e 'map{map{print int(rand()*8);}(0..16);print chr(10);}(0..30);' | tr '[0-
 ./try.sh
 ```
 
-If you wish to speed it up 200% you can use instead `-DZ=3750`. Doing this
-you might find the right value to your liking; use ctrl-c to terminate the
-program early.
+If you wish to speed that up 200% you can use instead `-DZ=3750`. Doing this you
+might find the right value to your liking; use ctrl-c to terminate the program
+early but note that the terminal is likely to be messed up. Try:
+
+
+```sh
+reset
+```
+
+to make it sane again (running to completion will do that for you).
 
 
 ## Original code:
@@ -69,8 +76,8 @@ PLEASE be careful if you are sensitive to flashing colours!
 
 ## Judges' remarks:
 
-This program also wins the "Most amusing abuse of the iocccsize tool" award; although not the
-absolute best: it is possible to achieve 0 by writing:
+This program also wins the "Most amusing abuse of the iocccsize tool" award;
+although not the absolute best: it is possible to achieve 0 by writing:
 
 ```c
     /* *\

@@ -3040,13 +3040,17 @@ sure if he wants to be thanked either :-) but we appreciate it nonetheless.
 
 ## [2013/birken](2013/birken/birken.c) ([README.md](2013/birken/README.md]))
 
-Along with the [try.sh](2013/birken/try.sh) that he added, Cody also added an
-alternate version which allows one to control how fast the painting is done,
+Cody changed the `return 0;` at the end of the program to be `return
+system("reset");` so that as long as it runs to completion the terminal will be
+sane and the cursor will be visible.
+
+Cody also added the [try.sh](2013/birken/try.sh) script and the
+alternate version (that has the above fix) which allows one to control how fast the painting is done,
 based on the author's recommendations, except that Cody made it configurable at
-compile time just like he did with other entries (in all but one it was
-alternate code) that use `usleep()`. The alternate version and the original
-version were swapped in the `To build`, `To run` and `Try` sections, with what
-is normally `Alternate code` being `Original code`.
+compile time just like he did with other entries that use `usleep(3)`. The
+alternate version and the original version were swapped in the `To build`, `To
+run` and `Try` sections, with what is normally `Alternate code` being `Original
+code`.
 
 
 ## [2013/cable3](2013/cable3/cable3.c) ([README.md](2013/cable3/README.md]))
