@@ -1,7 +1,37 @@
 #!/usr/bin/env bash
+#
+# try.sh - show IOCCC winner 1996/huffman
+#
+#   ...
+#
+#   So, that's to end the story for you and me
+#   If you still give a listen, you just may
+#   Hear a big wolf-man or little piggy say
+#   Little pig, little pig, let me in
+#   Not by the hair of my chinny, chin, chin
+#   Little pig, little pig, let me in
+#   Not by the hair of my chinny, chin, chin
+#   Well, I'm huffin', I'm puffin', I'll blow your house in
+#   Huffin', puffin', blow your house in
+#   Huffin', puffin', blow your house in
+#   Huffin' and a puffin' and I'll blow your house in!
+#   And the moral of the story is
+#   band with no talent can easily amuse
+#   Idiots with a stupid, puppet show
+#
+# :-)
 
-make all >/dev/null || exit 1
+# make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
+# this way allows us to have the user specify a different compiler in an easy
+# way.
+if [[ -z "$CC" ]]; then
+    CC="cc"
+fi
 
+make CC="$CC" all >/dev/null || exit 1
+
+# clear screen after compilation so that only the entry is shown
+clear
 
 echo "$ echo 'seeing or feeling is believing' | ./huffman" 1>&2
 echo 'seeing or feeling is believing' | ./huffman 2>/dev/null
