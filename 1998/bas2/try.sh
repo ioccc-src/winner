@@ -1,13 +1,19 @@
 #!/usr/bin/env bash
 # 
-# try.sh - demonstrate 1998/bas2
-#
-# If any args are specified it checks if it's a readable file and if it is it
-# feeds it to the program. If not it assumes it's a string and feeds that to the
-# program.
+# try.sh - demonstrate IOCCC winner 1998/bas2
 #
 
-make all || exit 1
+# make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
+# this way allows us to have the user specify a different compiler in an easy
+# way.
+if [[ -z "$CC" ]]; then
+    CC="cc"
+fi
+
+make CC="$CC" all >/dev/null || exit 1
+
+# clear screen after compilation so that only the entry is shown
+clear
 
 echo "$ ./bas2 < bas2.c" 1>&2
 ./bas2 < bas2.c
