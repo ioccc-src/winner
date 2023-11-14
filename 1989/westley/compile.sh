@@ -5,39 +5,44 @@
 # To change what compiler is used you can do something like:
 #
 #	CC=/path/to/cc ./compile.sh
+#	CC=gcc ./compile.sh
 #
-# The following example was run on a MacBook Pro with the M1 Max which which
-# could not normally compile everything because macOS's compiler, even when run
-# as gcc, is actually clang:
+# The path is only necessary if the default using the shell would result in the
+# wrong one for instance in macOS /usr/bin/gcc is actually clang but if you have
+# gcc installed elsewhere you can specify the path. If CC is unset it will be
+# set to 'cc'.
 #
-#	CC=/opt/local/bin/gcc-mp-12 ./compile.sh	
+# The following example was run on a MacBook Pro (with the M1 Max) which which
+# could not normally compile everything by default because clang can only compile some of
+# the versions due to defects in clang. Getting clang to compile any version was
+# an incredible challenge but some versions of the generated code can be
+# compiled with clang. Nevertheless if you have gcc from, say, MacPorts,
+# installed, you could do:
 #
-# We sleep (by default) for approximately 1 second after each command so that
-# the you can read what is being done. If this is too fast you can change it in
-# a similar way to the above but using the variable DELAY like so:
+#	CC=/opt/local/bin/gcc-mp-13 ./compile.sh	
+#
+# If you don't specify a path the shell/script will figure it out.
+#
+# We sleep (by default) for 0 seconds after each command but one can set that to
+# a different value so that it's easier for them to read what is being done. For
+# instance to change it to 2 seconds:
 #
 #	DELAY=2 ./compile.sh
 #
 # You can of course use both variables in the same command line like:
 #
-#	CC=/opt/local/bin/gcc-mp-12 DELAY=2 ./compile.sh
-#	DELAY=2 CC=/opt/local/bin/gcc-mp-12 ./compile.sh
+#	CC=/opt/local/bin/gcc-mp-13 DELAY=2 ./compile.sh
+#	DELAY=2 CC=/opt/local/bin/gcc-mp-13 ./compile.sh
 #
 # ...and so on.
 
 # get the compiler using default cc if not specified in the command line
 #
-# we cannot use the form '${CC:=cc}' because at least in some versions of bash
-# it tries to invoke the command which would be an error by itself. Thus we just
-# check if it's empty before we set it.
 if [[ -z "$CC" ]]; then
     CC="cc"
 fi
 
 # get sleep duration
-# we cannot use the form '${DELAY:=5}' because at least in some versions of bash
-# it tries to invoke the command and obviously that won't work. Thus we check if
-# it's empty before setting the default.
 if [[ -z "$DELAY" ]]; then
     DELAY=0
 fi
@@ -45,7 +50,8 @@ fi
 # make clobber to make the directory clean and then compile westley which we
 # need to run everything else. Exit if make westley fails as there would be
 # nothing further that could be done in that case:
-echo "$ make clobber westley"
+#
+echo "$ make clobber westley" 1>&2
 sleep "$DELAY"
 make CC="$CC" clobber westley || exit 1
 sleep "$DELAY"
