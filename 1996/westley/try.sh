@@ -1,6 +1,19 @@
 #!/usr/bin/env bash
+# 
+# try.sh - demonstrate IOCCC winner 1996/westley
+#
 
-make everything 1>/dev/null || exit 1
+# make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
+# this way allows us to have the user specify a different compiler in an easy
+# way.
+if [[ -z "$CC" ]]; then
+    CC="cc"
+fi
+
+make CC="$CC" everything >/dev/null || exit 1
+
+# clear screen after compilation so that only the entry is shown
+clear
 
 echo "Showing grandfather clock:" 1>&2
 WESTLEY=./westley ./clock1.sh
