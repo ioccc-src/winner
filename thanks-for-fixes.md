@@ -3041,8 +3041,10 @@ sure if he wants to be thanked either :-) but we appreciate it nonetheless.
 ## [2013/birken](2013/birken/birken.c) ([README.md](2013/birken/README.md]))
 
 Cody changed the `return 0;` at the end of the program to be `return
-system("reset");` so that as long as it runs to completion the terminal will be
-sane and the cursor will be visible.
+system("reset");` (via redefining `exit(3)` so that the column ending would be
+the same) so that as long as it runs to completion the terminal will be sane and
+the cursor will be visible. Using `atexit(3)` will not work if the program is
+killed and signals are ugly so this was not done.
 
 Cody also added the [try.sh](2013/birken/try.sh) script and the
 alternate version (that has the above fix) which allows one to control how fast the painting is done,
