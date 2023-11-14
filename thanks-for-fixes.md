@@ -2304,6 +2304,20 @@ Cody also added the [try.sh](2000/primenum/try.sh) script.
 Cody added the [try.sh](2000/rince/try.sh) script.
 
 
+## [2000/robison](2000/robison/robison.c) ([README.md](2000/robison/README.md]))
+
+Cody fixed an infinite loop that occurred if invalid input was entered, flooding
+the screen with:
+
+```
+Black position and direction: illegal
+```
+
+This was fixed by having the `scanf(3)` read in a string and then use `atoi(3)`
+on it to assign to the `int`s, much like with `1987/lievaart`. The strings are
+`char[5]` and the `%` specifier is `%4s` which is enough for the game.
+
+
 ## [2000/thadgavin](2000/thadgavin/thadgavin.c) ([README.md](2000/thadgavin/README.md]))
 
 Cody fixed the code and added an appropriate make rule so that the SDL version
