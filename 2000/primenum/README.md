@@ -29,7 +29,7 @@ NOTE: `n` is an integer.
 ### Try:
 
 ```sh
-echo IOCCC 23209 | ./primenum 23209
+./try.sh
 ```
 
 
@@ -44,6 +44,7 @@ it successfully fooled half of the judges, including me.
 
 
 ## Author's remarks:
+
 
 ### Description
 
@@ -61,8 +62,8 @@ syntax "mistakes" (e.g. `LessThanOrEqualTo`) and blatant "errors" (e.g.
 `Zero`).  This program clearly requires "debugging."
 
 As a result of these "bugs", the program does not calculate primes at all.
-Instead, the program reads input from stdin and returns garbled text on
-stdout.  Fortunately, you can recover the original message simply by
+Instead, the program reads input from `stdin` and returns garbled text on
+`stdout`.  Fortunately, you can recover the original message simply by
 running the program a second time.  Try:
 
 ```sh

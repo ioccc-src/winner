@@ -2296,6 +2296,13 @@ like the original entry but with the two fixes.
 
 Cody made this more portable by changing the `void main` to `int main`.
 
+Cody also added the [try.sh](2000/primenum/try.sh) script.
+
+
+## [2000/rince](2000/rince/rince.c) ([README.md](2000/rince/README.md]))
+
+Cody added the [try.sh](2000/rince/try.sh) script.
+
 
 ## [2000/thadgavin](2000/thadgavin/thadgavin.c) ([README.md](2000/thadgavin/README.md]))
 
