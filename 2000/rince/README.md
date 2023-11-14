@@ -1,7 +1,7 @@
 ## To build:
 
 ```sh
-make
+make all
 ```
 
 
@@ -36,8 +36,7 @@ That's not a bug, that's a feature.
 ### Try:
 
 ```sh
-make dmy2jd
-./rince 0.001 `./dmy2jd  7.8 1 1610`
+./try.sh
 ```
 
 
@@ -89,6 +88,7 @@ A Julian day is defined to be the number of days since January 1st in the year
 [dmy2jd.c](dmy2jd.c). Run it with `day_float month year` as arguments. See below
 for an example.
 
+
 ### What it does
 
 This program plots the positions of the four [Galilean
@@ -98,8 +98,8 @@ moons](https://en.wikipedia.org/wiki/Galilean_moons) of
 location on Earth, but I assure you that the
 [parallax](https://en.wikipedia.org/wiki/Parallax#Astronomy) is minimal!
 
-The moons are labelled with Roman numerals from I to IV. I being the
-closest to the planet and IV being the furthest. They are:
+The moons are labelled with Roman numerals from `I` to `IV`, `I` being the
+closest to the planet and `IV` being the furthest. They are:
 
 ```
 I     Io
@@ -129,6 +129,7 @@ confusion, please consult the following chart (\*):
 ```
 
 (\*) Not to scale.
+
 
 ### History
 
@@ -174,9 +175,9 @@ orbit the sun, and not leave a moon behind!
 Thus we can plot Galileo's discoveries using the following three plots:
 
 ```sh
-./rince 0 `./dmy2jd  7.8 1 1610`
-./rince 0 `./dmy2jd  8.8 1 1610`
-./rince 0 `./dmy2jd 10.8 1 1610`
+./rince 0 $(./dmy2jd  7.8 1 1610)
+./rince 0 $(./dmy2jd  8.8 1 1610)
+./rince 0 $(./dmy2jd 10.8 1 1610)
 ```
 
 However we can go one better by seeing what Galileo would have seen if it
@@ -184,14 +185,14 @@ wasn't cloudy on the 9th. Try:
 
 
 ```sh
-./rince 0 `./dmy2jd 9.85 1 1610`
+./rince 0 $(./dmy2jd 9.85 1 1610)
 ```
 
 to see what he was missing out on. I wonder what he'd have made of that!
 
 Galileo discovered the fourth moon a few days later.
 
-I've tried typing these dates in to two Java based Jovian moon plotters,
+I've tried typing these dates into two Java based Jovian moon plotters,
 but both I tried had problems dealing with dates earlier than 1900. More
 professional software, such as the
 [SkyMap](http://www.bmsoftware.com/skymappro9.htm) gets these values
@@ -203,6 +204,7 @@ Scaliger](https://en.wikipedia.org/wiki/Joseph_Justus_Scaliger) in the 16th
 Century, so clearly this program has a long history :-) A more complete
 description of the origins of Julian Days can be found at
 <https://web.archive.org/web/20001206152200/http://aa.usno.navy.mil/AA/faq/docs/millennium.html>.
+
 
 ### Assumptions
 
@@ -226,7 +228,9 @@ If this is not the case the program will crash.
     Pro](http://www.bmsoftware.com/skymappro9.htm) show that there is a good
     similarity (but not much more) up to about 500BC.
 
-6. The code definitely is not portable - it will produce incorrect results if run from the surface of Mars.
+6. The code definitely is not portable - it will produce incorrect results if
+run from the surface of [Mars](https://science.nasa.gov/mars/).
+
 
 ### Obfuscations
 
@@ -255,7 +259,7 @@ common tricks. Taken through the standard rounds listed in the
 4. C pre-process the source ignoring `#define` and `#include` lines
 
     This does a good job of expanding out the code, but it does not
-    clarify things greatly. The use of `#defines` has been restricted
+    clarify things greatly. The use of `#define`s has been restricted
     primarily to a space-saving mechanism.
 
     Additionally, the use of `typedef`s means that the types used are
@@ -263,7 +267,7 @@ common tricks. Taken through the standard rounds listed in the
 
 5. Run it through a C beautifier.
 
-    GNU indent seems to do a reasonable job, provided that the
+    GNU `indent(1)` seems to do a reasonable job, provided that the
     `#define`s are expanded first. This doesn't lay the algorithm
     particularly bare though as most of the obfuscations are not
     simple code layouts.
@@ -274,10 +278,11 @@ common tricks. Taken through the standard rounds listed in the
     by taking a large string and breaking this down into a series of
     opcodes (which I have termed J-code). These are then executed.
 
-    To get to the real method of how it works, you need to decode
-    the opcode string (which deliberately contains as many `;`, `{` and
-    `}` symbols as possible), which will give you a reverse-polish
-    notation chunk of mathematics.
+    To get to the real method of how it works, you need to decode the opcode
+    string (which deliberately contains as many `;`, `{` and `}` symbols as
+    possible), which will give you a [Reverse Polish
+    notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation) chunk of
+    mathematics.
 
     Sensible people amongst you will simply refer to the referenced book :-)
 
@@ -294,9 +299,9 @@ common tricks. Taken through the standard rounds listed in the
     I'm sorry to say that there are several warnings issued by the
     compiler.
 
-    Firstly, the return type for `X()` is not specified, so it defaults to int.
+    Firstly, the return type for `X()` is not specified, so it defaults to `int`.
     Horror of all horrors - this function does not return an integer type (it
-    doesn't contain any specific returns). The return value from `X()` is not
+    doesn't contain any specific `return`s). The return value from `X()` is not
     accessed. The same problem occurs in `main()` - it does not return. However
     `main()` never exits unless there is a serious error.
 
@@ -318,11 +323,11 @@ common tricks. Taken through the standard rounds listed in the
 	-Dusleep={time_t v[2]={0,10000};select(0,0,0,0,v);}
     ```
 
-    gcc complains about "unreachable code at beginning of switch
+    `gcc` complains about "unreachable code at beginning of switch
     statement", although removing some of this code will prevent
     the algorithm from working.
 
-    gcc also suggests that I should be using extra parenthesis, but
+    `gcc` also suggests that I should be using extra parenthesis, but
     I'm taking this as good comment :-)
 
 In addition to the above, the program has the following useful(?)
