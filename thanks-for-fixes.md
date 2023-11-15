@@ -2265,6 +2265,13 @@ Cody fixed this to compile in systems that require one to explicitly link in
 `libm`.
 
 
+## [2000/dhyang](2000/dhyang/dhyang.c) ([README.md](2000/dhyang/README.md]))
+
+Cody made this more portable by changing the `void main` to `int main`.
+
+He also added the [try.sh](2000/dhyang/try.sh) script.
+
+
 ## [2000/dlowe](2000/dlowe/dlowe.c) ([README.md](2000/dlowe/README.md]))
 
 Cody fixed this to compile with more recent perl versions; the symbol that's now
