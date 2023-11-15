@@ -4,20 +4,32 @@
 #
 #   ...
 #
-#   So, that's to end the story for you and me
-#   If you still give a listen, you just may
+#   Well the wolf-man fell dead
+#   As you can plainly see
+#   And that's the end the story for you and me
+#   You still give a listen, you just may
 #   Hear a big wolf-man or little piggy say
 #   Little pig, little pig, let me in
 #   Not by the hair of my chinny, chin, chin
 #   Little pig, little pig, let me in
 #   Not by the hair of my chinny, chin, chin
-#   Well, I'm huffin', I'm puffin', I'll blow your house in
+#   Well I'm huffin', I'm puffin'
+#   I'll blow your house in
 #   Huffin', puffin', blow your house in
 #   Huffin', puffin', blow your house in
-#   Huffin' and a puffin' and I'll blow your house in!
-#   And the moral of the story is
-#   band with no talent can easily amuse
-#   Idiots with a stupid, puppet show
+#   Huffin', puffin', blow your house in
+#   Huffin' and a puffin' and
+#   I'll blow your house in!
+#   Huffin' and a puffin' and
+#   I'll blow your house in!
+#   Huffin' and a puffin' and
+#   I'll blow your house in!
+#   Huffin' and a puffin' and
+#   I'll blow your house in!
+# 
+#   And the moral of the story is, that
+#   bands with no talent can easily amuse
+#   Idiots with a stupid puppet show.
 #
 # :-)
 
