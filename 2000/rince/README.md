@@ -39,6 +39,9 @@ That's not a bug, that's a feature.
 ./try.sh
 ```
 
+This will run the program several times with different parameters to show
+different types of things. See the author's remarks for more details.
+
 
 ## Judges' remarks:
 
