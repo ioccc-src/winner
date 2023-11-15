@@ -1507,6 +1507,234 @@ There was no IOCCC in 1999.
 # 2000
 
 
+## 2000 dlowe
+
+### STATUS: doesn't work with some platforms - please help us fix
+### Source code: [2000/dlowe/dlowe.c](2000/dlowe/dlowe.c)
+### Information: [2000/dlowe/README.md](2000/dlowe/README.md)
+
+This **MIGHT** be better described as doesn't work with some versions of perl:
+the author states that in perl < 5.6.0 there is a bug with a core dump in what
+they said is in `Perl_sv_upgrade`. This does not exist in the code, seemingly,
+but it might be that this is impossible to fix without getting a perl upgrade.
+In any event the below details a problem. Another bug that happens in linux also
+is below.
+
+In macOS this program crashes. A tip from Cody is that the code that crashes is:
+
+```c
+perl_eval_sv
+(newSVpv("_:$_=               <> ; defined               or exit; @ARGV"
+"=split; __:$_=             shift;defined or             goto _; chomp "
+";(m*^\\x70oO"              "\\x74$*i)?(pri"              "nt \"$_ w\\x"
+"61s h\\145r\\x"            "65!\\n\"):((m*"            "^\\s\\*(-?\\d+"
+"(\\.\\d+)?)\\s"            "\\*$*)?(push@SS            ,$1):(&{chr(((o"
+"rd)%39)+3**4)x2             } )); goto __;             sub ff { @SS= ("
+")} sub __{print            \"stack empty\\"            "n\"} sub ss{$#"
+"SS<0 and goto &            __; print $SS[$"            "#SS].\"\\n\"} "
+"sub SS{ $#SS<0              and goto &__ ;              print pop @SS}"
+"sub _ { print              \"divide by zer"            "o\\n\"}sub ii{"
+"map{ print\"$_"            "\\n\" } reverse            @SS} sub AUTOLO"
+"AD { print\"un"            "implemented\\n"            "\"} sub gg{ $#"
+"SS<0 and goto              &__;push@SS,$SS[            $#SS]} sub uu{ "
+"$#SS<1 and goto            &__;$SS[ $#SS]+=            $SS[$#SS-1];$SS"
+"[$#SS-1]=$SS[$"            "#SS]-$SS[$#SS-"            "1]; $SS[$#SS]-"
+"=$SS[$#SS-1]}                   ",0),0                   );
+```
+
+and in particular it appears that it is the perl itself. In other words if one
+changes it to be:
+
+```c
+perl_eval_sv(newSVpv("",0),0);
+```
+
+it will not crash. But of course it won't do anything either. So it's more
+specifically that the call to `newSVpv()` crashes the code but _INSIDE_
+(key point!) the call to `perl_eval_sv()` that does it. Given what the author
+stated and that the version of perl is < than 5.6.0 that might be exactly what
+is going on.
+
+The example command above _should_ print:
+
+```sh
+$ echo "13 14 15 16 17 + - * / p" | ./dlowe
+-0.0515873015873016
+```
+
+and that's what it shows in linux.
+
+Note that with different perl libraries in macOS (for instance from
+[Homebrew](https://brew.sh) and [MacPorts](https://www.macports.org) it will
+likely print different warnings when compiling. It was observed that with
+Homebrew it does not report any warnings but with MacPorts it results in a total
+of 92 warnings! Nonetheless neither works okay and both crash.
+
+
+### STATUS: known bug - please help us fix
+
+The author gives an example command:
+
+```sh
+echo "7 P 6 d P P 8 p" | ./dlowe | tr 876 tpo
+```
+
+which should print out `poot` but it doesn't, not in linux and not in macOS.
+This might in part be because `./dlowe` will show not a number with `876` but
+rather
+
+```sh
+$ echo "7 P 6 d P P 8 p" | ./dlowe
+7668
+```
+
+In linux it doesn't crash but it doesn't print anything out either.
+
+In macOS it crashes; it might appear to not crash in macOS but this is because
+of the pipeline. If you remove the `| tr 876 tpo` part of the command you will
+see that it does indeed crash!
+
+Other commands do work, however, and give the appropriate output, such as:
+
+```sh
+$ echo 1 2 + p | ./dlowe
+3
+```
+
+so something is wrong with some commands/operators.
+
+Another feature that does work in linux is:
+
+```sh
+$ echo poot | ./dlowe
+poot was here!
+```
+
+Can you help fix these problems?
+
+Cody provided the C code that creates an unformatted perl script that will just
+print 'unimplemented' for operators but it seems to work in some other ways (see
+below for how to go further than unimplemented) which is the exact perl from the
+C program except that it has the `#!/usr/bin/env perl` and `use warnings;` as
+well. A note below might suggest that doing this creates incomplete perl.
+Anyway:
+
+```c
+#include <stdio.h>
+int main(void)
+{
+    printf("#!/usr/bin/env perl\nuse warnings;_:$_=               <> ; defined               or exit; @ARGV"
+	"=split; __:$_=             shift;defined or             goto _; chomp "
+	";(m*^\\x70oO"              "\\x74$*i)?(pri"              "nt \"$_ w\\x"
+	"61s h\\145r\\x"            "65!\\n\"):((m*"            "^\\s\\*(-?\\d+"
+	"(\\.\\d+)?)\\s"            "\\*$*)?(push@SS            ,$1):(&{chr(((o"
+	"rd)%%39)+3**4)x2             } )); goto __;             sub ff { @SS= ("
+	")} sub __{print            \"stack empty\\"            "n\"} sub ss{$#"
+	"SS<0 and goto &            __; print $SS[$"            "#SS].\"\\n\"} "
+	"sub SS{ $#SS<0              and goto &__ ;              print pop @SS}"
+	"sub _ { print              \"divide by zer"            "o\\n\"}sub ii{"
+	"map{ print\"$_"            "\\n\" } reverse            @SS} sub AUTOLO"
+	"AD { print\"un"            "implemented\\n"            "\"} sub gg{ $#"
+	"SS<0 and goto              &__;push@SS,$SS[            $#SS]} sub uu{ "
+	"$#SS<1 and goto            &__;$SS[ $#SS]+=            $SS[$#SS-1];$SS"
+	"[$#SS-1]=$SS[$"            "#SS]-$SS[$#SS-"            "1]; $SS[$#SS]-"
+	"=$SS[$#SS-1]}");
+}
+```
+
+Compiling this you can generate:
+
+
+```perl
+#!/usr/bin/env perl
+use warnings;_:$_=               <> ; defined               or exit; @ARGV=split; __:$_=             shift;defined or             goto _; chomp ;(m*^\x70oO\x74$*i)?(print "$_ w\x61s h\145r\x65!\n"):((m*^\s\*(-?\d+(\.\d+)?)\s\*$*)?(push@SS            ,$1):(&{chr(((ord)%39)+3**4)x2             } )); goto __;             sub ff { @SS= ()} sub __{print            "stack empty\n"} sub ss{$#SS<0 and goto &            __; print $SS[$#SS]."\n"} sub SS{ $#SS<0              and goto &__ ;              print pop @SS}sub _ { print              "divide by zero\n"}sub ii{map{ print"$_\n" } reverse            @SS} sub AUTOLOAD { print"unimplemented\n"} sub gg{ $#SS<0 and goto              &__;push@SS,$SS[            $#SS]} sub uu{ $#SS<1 and goto            &__;$SS[ $#SS]+=            $SS[$#SS-1];$SS[$#SS-1]=$SS[$#SS]-$SS[$#SS-1]; $SS[$#SS]-=$SS[$#SS-1]}
+```
+
+Here is example input/output:
+
+```
+p
+stack empty
+5 p
+5
+5 + 5 p
+unimplemented
+5
+P
+5
+p
+5
+```
+
+So you can see that if one uses operators it just shows 'unimplemented' (observe
+how this does not happen in the C program in linux!) but if one uses 'p' by
+itself it will print what's on the stack (for example).
+
+To not get 'unimplemented' you can remove from the perl:
+
+
+```perl
+sub AUTOLOAD { print"unimplemented\n"} 
+```
+
+(Note that the author stated this was used for exception handling so another
+possibility is that the C code doesn't generate the correct perl and indeed even
+spaces is known to break the perl in at least one way, syntax errors, but maybe
+others too.)
+
+Here is an example run of several operations in the perl script after removing
+that subroutine:
+
+```sh
+$ echo 5 5 p | ./dlowe.pl
+5
+$ echo 5 5 + p | ./dlowe.pl
+5
+Undefined subroutine &main::UU called at ./pl.pl line 2, <> line 1.
+$ echo 5 5 * p | ./dlowe.pl
+5
+Undefined subroutine &main::ww called at ./pl.pl line 2, <> line 1.
+$ echo 5 5 - p | ./dlowe.pl
+5
+Undefined subroutine &main::WW called at ./pl.pl line 2, <> line 1.
+$ echo 5 5 / p | ./dlowe.pl
+5
+Undefined subroutine &main::YY called at ./pl.pl line 2, <> line 1.
+$ echo 5 P | ./dlowe.pl
+5$ echo p | ./dlowe.pl
+stack empty
+$ echo P | ./dlowe.pl
+stack empty
+```
+
+Note the undefined subroutine error: that happens with commands that are not
+even in the program. Again the author used `AUTOLOAD` for exception handling so
+it seems likely that there is something missing (which the below shows as well).
+For instance inputting `D` followed by `XX`:
+
+```
+Undefined subroutine &main::nn called at ./pl.pl line 2, <> line 6.
+Undefined subroutine &main::[[ called at ./pl.pl line 2, <> line 1.
+```
+
+That means then that in linux despite the subroutines seemingly not existing it
+works in the code, at least in some cases.
+
+As far as the unimplemented error goes: the author stated that it means there is
+invalid input. But as can be seen by the input I (Cody) gave the input is not
+actually incorrect. It is also curious to note that it ends up printing what's
+on the stack at that point:
+
+```sh
+$ echo 5 5 + p | ./dlowe.pl
+unimplemented
+5
+```
+
+which might (?) suggest that the `+` operator is unimplemented. Unfortunately it
+has been many years since I have used perl and I was never a guru either.
+
+
 ## 2000 primenum
 
 ### STATUS: INABIAF - please **DO NOT** fix

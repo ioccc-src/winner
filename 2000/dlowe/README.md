@@ -4,11 +4,25 @@
 make
 ```
 
-The following bit of perl may help determining the values you need:
+The following bit of perl may help determine the values you need:
 
 ```sh
 perl -MConfig -e 'print "$Config{archlibexp}/CORE\n"'
 ```
+
+... just in case the Makefile does not figure this out for you.
+
+
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: doesn't work with some platforms - please help us fix
+STATUS: known bug - please help us fix
+```
+
+For more detailed information see [2000 dlowe in bugs.md](/bugs.md#2000-dlowe).
 
 
 ## To use:
@@ -34,7 +48,7 @@ hand it qualifies as the Worst Abuse of the Rules.  As a previous winner\*
 David Lowe continues to inflict the highest quality "poot" on the
 Judges.
 
-The program also contains an undocumented command for Chad and Chongo.
+The program also contains an undocumented command for Chad and Chongo (Landon).
 The judges' remarks contain a clue to the hidden command :-).
 
 * The IOCCC uses an anonymous judging process which keeps the identity
@@ -51,8 +65,9 @@ of the submitters hidden until all the prize winners have been selected.
 
 ### Synopsis
 
-This is a reverse polish calculator, loosely based on the `dc(1)` unix
-calculator.
+This is a [Reverse Polish
+calculator](https://en.wikipedia.org/wiki/Reverse_Polish_notation), loosely
+based on the `dc(1)` unix calculator.
 
 # Syntax
 
@@ -89,10 +104,11 @@ modulus operator actually returns `(p1 - (p2 * (p1 / p2)))`, but with
 the innermost division calculated at integer precision.  This is
 usually what you expect (e.g. `echo "12 8 % p" | ./dlowe == 4`)
 
-Commands are read from stdin or from a list of files named on
+Commands are read from `stdin` or from a list of files named on
 the command line.  Unlike `dc(1)`, multiple commands on the same line
 must be space separated.  Commands are only executed when a newline
 or EOF is encountered.
+
 
 ### Diagnostics:
 
@@ -106,6 +122,7 @@ Floating point exception (core dumped) (or something to that effect)
 		         This bug appears to be fixed in perl5.6.0
 
 ```
+
 
 ### Examples:
 
@@ -130,7 +147,7 @@ poot
 
 We all know that Perl and other VHLLs (very high level languages)
 are particularly well-suited for (among other things) string
-handling, I/O, and powerful built-in datatypes, and (relatively)
+handling, I/O, and powerful built-in data types, and (relatively)
 poorly suited for number crunching and other processor-intensive
 tasks - areas where C is strongest.  This program takes this
 knowledge to its extreme conclusion, using each language for its
@@ -151,7 +168,7 @@ Unfortunately, Perl is an evolving beast - that includes the
 embedding API and the XS API.  The code was developed under
 `Perl 5.005_03`, successfully tested against `Perl 5.6.0`, `Perl 5.005_02`
 and `Perl 5.004_04`, and according to the version delta documentation,
-should work as-is with Perl 5.002` and later (which has been around
+should work as-is with `Perl 5.002` and later (which has been around
 since February 1996).  To clarify - it's not the Perl code itself
 that may be non-portable, it's the C code for embedding Perl and for
 calling C from Perl.
@@ -161,13 +178,13 @@ You may have problems linking if, for example, you have multiple
 overlapping versions of Perl installed (which might not be a problem
 for scripts, but causes problems with embedding the interpreter).
 More commonly, you may get non-fatal warnings from the linker, caused
-by slight misconfigurations of Perl on your system.
+by slight mis-configurations of Perl on your system.
 
-Some compilers also complain that "third argument of `main' is
+Some compilers also complain that "third argument of `main()` is
 deprecated" or something to that effect.  But in Perl prior to
-`5.6.0`, the header file "proto.h" actually had a prototype for main,
-so applications which embed Perl must use the three argument form
-of main.
+`5.6.0`, the header file "proto.h" actually had a prototype for `main()`, so
+applications which embed Perl must use the three argument form of `main()`.
+
 
 ### Aside: history...
 
@@ -176,9 +193,10 @@ years he won the IOCCC.  I hope this program helps you to realize that
 this was no fluke - that Perl and Obfuscation are as inseparable as,
 say, camels and humps.
 
+
 ### Obfuscated?
 
-- Reverse polish notation is pretty strange, in and of itself.
+- Reverse Polish notation is pretty strange, in and of itself.
 
 - The layout of the program is three roughly symmetrical "stacks"
 of code.  This layout is quite sensitive in places - my C indenter
@@ -224,7 +242,7 @@ input.
 - Because of the "interesting" way that commands are interpreted,
 all of the commands have synonyms.  For example, if you find it
 easier to remember, `=` is synonymous with `d`.  This also makes it
-possible to write (even more) obfuscated reverse polish commands
+possible to write (even more) obfuscated reverse Polish commands
 (I figure this explanation moves the synonyms from 'bug' to
 'feature'!)
 
@@ -247,7 +265,8 @@ beautifier won't help too much, either ;)
 
 If you don't change the rules, it'll be embedded Ada next year!
 
-### AutoDefend
+
+### Auto defend
 
 A. Isn't this the obfuscated C contest?  What's this Perl `$#_&&$_`?
 
