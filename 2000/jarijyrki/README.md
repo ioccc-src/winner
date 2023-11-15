@@ -306,14 +306,13 @@ compile time parameters:
 ```
 
 These definitions can be used to change the user interface of the program with
-respect to special keys. The four first ones define the movement operations and
-the latter two ones define the program termination and character deletion keys.
+respect to special keys. The first four define the movement operations and
+the latter two define the program termination and character deletion keys.
 Typical modifications to these parameters include changing character deletion to
 the key the user is most familiar with, which could also be `XK_Delete`.
 `XK_Escape` might be better in some cases as one of the function keys. Likewise
 for the arrow keys.
 
----
 
 ```
 -DU=40
@@ -323,7 +322,6 @@ This parameter defines the maximum dimensions of the stored and handled
 spreadsheet (but see section 4.4 for a warning about changing this without
 thinking about the consequences!).
 
----
 
 ```
 -DT=98
@@ -332,7 +330,6 @@ thinking about the consequences!).
 This parameter defines the maximum length of a formula in one cell. Note the
 warning in section 4.4.
 
----
 
 ```
 -Dz="(T+1)*U*U"
@@ -342,7 +339,6 @@ Defines the number of bytes in a spreadsheet file. The number is automatically
 adjusted when the spreadsheet size parameters are changed. Note the warning in
 section 4.4.
 
----
 
 ```
 -DQ=80
@@ -354,7 +350,6 @@ be necessary on your system if the default font sizes differ from those in the
 systems we've tested the program with. `S` also defines the size of the left
 (`x1`) and top margins (`x2`).
 
----
 
 ```
 -DN=10
@@ -363,7 +358,6 @@ systems we've tested the program with. `S` also defines the size of the left
 This is the x-indentation of text inside a cell. Changing this may be necessary
 to suit other font sizes and different X environments.
 
----
 
 ```
 -DB=5
@@ -372,7 +366,6 @@ to suit other font sizes and different X environments.
 This is the y-indentation of text inside a cell. Changing this may be necessary
 to suit other font sizes and different X environments.
 
----
 
 ```
 -DG=23
@@ -380,7 +373,6 @@ to suit other font sizes and different X environments.
 
 This parameter is the number of cell rows visible at one time.
 
----
 
 ```
 -Dp=7
@@ -389,7 +381,6 @@ This parameter is the number of cell rows visible at one time.
 This parameter is one smaller than the number of cells columns visible at one
 time.
 
----
 
 
 ```
@@ -404,33 +395,36 @@ at-one-time-visible cell row/column amounts.  Hence, we recommend changing the
 Experimentation with `M` and `H` can be used to get other types of effect such
 as adding a margin also at the bottom of the window.
 
----
 
 ### 3. IMPLEMENTATION
 
 It's better to just read the code. But note the use of stack in the
 implementation of `@` and `!` operators, and note the use of `*#i` in one of the
 macros (can you see why?).  Extreme compression has been the key in writing this
-program. With compression have come the use of ASCII code numbers instead of
+program. With compression comes the use of ASCII code numbers instead of
 character constants and so on. (This particular obfuscation is not really a
 desirable one as it is not completely portable. But it certainly was a necessary
 one.)
 
 What does `i(=)` do or does it do anything? Why?
 
+
 ### 4. WARNINGS AND CAVEATS
+
 
 #### 4.1. X11 Paths in Compilation
 
 The given Makefile may have to be edited to insert correct library and include
 file path names.
 
+
 #### 4.2. Font Sizes
 
-We've tested the program with limited amount of X servers.  It is possible that
+We've tested the program with a limited amount of X servers.  It is possible that
 other systems use default font sizes or other parameters that cause the visual
 looks to be different or perhaps even unusable; if this happens, changing
 compile-time parameters explained in section 2.8 might help.
+
 
 #### 4.3. Screen Sizes
 
@@ -438,6 +432,7 @@ The size of the window as it comes up - a parameter as defined in compile-time -
 has been set suitable for a small laptop screen.  Larger screens may benefit
 from setting these parameters higher.  Smaller screens require changing the
 parameters so that all of the window becomes visible.
+
 
 #### 4.4. Spreadsheet Dimension Changes
 
@@ -451,14 +446,16 @@ the actual allocated memory area.
 - Any change in the dimension parameter renders existing spreadsheet files
 unusable.
 
+
 #### 4.5. ASCII Reliance
 
 The software relies on running on ASCII-based code system.  Why? Because `32` is
 shorter than `' '`.
 
+
 #### 4.6. Command Line Single Character Defines
 
-The use of single character (e.g. `G` or `p`) for a -D option might break
+The use of single character (e.g. `G` or `p`) for a `-D` option might break
 certain systems, if those characters are used in the included X header files in
 certain kinds of places.  If this happens, you may move the offending character
 to a new name by exchanging it on the command line and in the program with
