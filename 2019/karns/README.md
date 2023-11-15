@@ -26,7 +26,7 @@ The last two can be done in a sequence, first showing the respective files at
 the terminal, like:
 
 ```sh
-./demo.sh
+./try.sh
 ```
 
 

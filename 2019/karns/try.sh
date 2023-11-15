@@ -5,8 +5,17 @@
 # Doesn't run the program on README.md as it's longer and slower.
 #
 
-# make prog first and exit if failure
-make || exit
+# make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
+# this way allows us to have the user specify a different compiler in an easy
+# way.
+if [[ -z "$CC" ]]; then
+    CC="cc"
+fi
+
+make CC="$CC" all >/dev/null || exit 1
+
+# clear screen after compilation so that only the entry is shown
+clear
 
 # display prog.c to the user
 echo "$ cat prog.c"

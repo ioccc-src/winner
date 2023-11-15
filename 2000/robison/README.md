@@ -12,13 +12,6 @@ make
 ```
 
 
-### Try:
-
-```sh
-echo "Do or do not. There is no try."
-```
-
-
 ## Judges' remarks:
 
 The program plays almost always reasonably, but does not always detect
@@ -33,26 +26,31 @@ author a patent he applied for.  :-)
 
 ## Author's remarks:
 
+
 ### TITLE OF INVENTION
 
 Highly Compressed Program for Playing Hygienic Checkers
+
 
 ### FIELD OF INVENTION
 
 The present invention generally relates to
 [checkers](https://en.wikipedia.org/wiki/Checkers).
 
+
 ### BACKGROUND OF THE INVENTION
 
-Within the field of [checkers](https://en.wikipedia.org/wiki/Checkers), the
+Within the field of [Checkers](https://en.wikipedia.org/wiki/Checkers), the
 problem of finding a hygienic opponent is difficult, as good opponents are
 peculiar to the tavern habitat of cracker-barrels, pot-belly stoves, tobacco,
 and spittoons.
 
+
 ### BRIEF SUMMARY OF THE INVENTION
 
-The present invention plays [checkers](https://en.wikipedia.org/wiki/Checkers)
+The present invention plays [Checkers](https://en.wikipedia.org/wiki/Checkers)
 without spitting.
+
 
 ### BRIEF DESCRIPTION OF SEVERAL VIEWS OF THE INVENTION
 
@@ -63,6 +61,7 @@ FIG. 2 shows a numbering of directions.
 FIG. 3 shows a sample board.
 
 FIG. 4 shows a method in accordance with the present invention.
+
 
 ### DETAILED DESCRIPTION OF THE INVENTION
 
@@ -85,7 +84,7 @@ said loser.
 
 FIG. 4 shows a C program in accordance with the present invention.  Control flow
 is straightforward: control enters routine `main()`, executes a plurality of
-statements, and exits via `return` statement.  FIG. 4 presumes that type `int`
+statements, and exits via a `return` statement.  FIG. 4 presumes that type `int`
 is `32 bits` and `short` is `16 bits`, which are essential to the preferred
 embodiment of the invention.  FIG. 4 also presumes that the host computer uses
 ASCII encoding for characters. It should be obvious that practitioners skilled
@@ -94,6 +93,7 @@ in the art of C programming can remove said limitations.
 The disclosure here describes a particular embodiment of the present invention,
 and other embodiments within the spirit of this disclosure are possible, as well
 as consumption of spirits while playing.
+
 
 ### CLAIMS
 
@@ -110,10 +110,10 @@ I claim, by letters patently absurd:
     and beta cuts.
 
 3.  The method of claim 1, further comprising the step of formatting the
-    source code with short lines, in order to impress manager with
+    source code with short lines, in order to impress the manager with
     high productivity, when measured in lines of code.
 
-4.  The method of claim 3, further comprising the step for telling
+4.  The method of claim 3, further comprising the step for telling the
     skeptical manager that this is the well-known technique of
     "linear programming".
 
@@ -128,6 +128,7 @@ I claim, by letters patently absurd:
 7.  A method for a computer-based system that uses a single shared code
     sequence to either sum a plurality of bits in an N-bit word or reverses
     them, in lg(N) time, depending upon a parameter.
+
 
 ### DRAWINGS
 

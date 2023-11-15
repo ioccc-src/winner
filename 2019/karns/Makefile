@@ -114,7 +114,7 @@ PROG= prog
 #
 OBJ= ${PROG}.o
 CSRC= ${PROG}.o
-DATA= maze demo.sh
+DATA= maze try.sh
 TARGET= ${PROG}
 #
 ALT_OBJ=
@@ -141,8 +141,8 @@ ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 	${LN} -sf ${PROG} tbfs
 
-test: prog
-	${CAT} prog.c | ./prog
+test: ${PROG}
+	./${PROG} < ${PROG}.c
 
 
 # alternative executable
