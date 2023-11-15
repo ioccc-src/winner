@@ -27,7 +27,7 @@
 #   Huffin' and a puffin' and
 #   I'll blow your house in!
 # 
-#   And the moral of the story is, that
+#   And the moral of the story is that
 #   bands with no talent can easily amuse
 #   Idiots with a stupid puppet show.
 #
