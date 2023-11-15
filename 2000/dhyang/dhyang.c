@@ -47,7 +47,7 @@
    x^(p?6:0):(p  =   34      X            X           X )
    ;}s(){for(x=  n   ();     (           x^           ( p
   ?6:0))==32;x=  n    ()     )   ;return x            ; }
-  void/**/main X      ()     {           r           =  p
+   int/**/main X      ()     {           r           =  p
   =0;w=sprintf  (X     X     X         X X           X o
   ,"char*d=");  for          (    f=1;f <            * d
   +143;)if(33-(  b=d         [      f++ X           ]  )
