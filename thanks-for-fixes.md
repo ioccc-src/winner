@@ -334,6 +334,16 @@ Yusuke provided some useful information that amounts to an alternate version
 that Cody added. See the README.md for details.
 
 
+## [1985/shapiro](1985/shapiro/shapiro.c) ([README.md](1985/shapiro/README.md]))
+
+Cody added the alt code which allows one to resize the maze and he also added
+the [try.alt.sh](1985/shapiro/try.alt.sh) script that randomly selects sizes
+(five times) and compiles and runs it. After the five runs it prompts you to
+enter a number, in an infinite loop, exiting if any non-digits are in input
+(this includes negative numbers which in the code actually sets it back to 39,
+the default).
+
+
 ## [1985/sicherman](1985/sicherman/sicherman.c) ([README.md](1985/sicherman/README.md]))
 
 Cody fixed this _very twisted entry_ to not require `-traditional-cpp`.  Fixing

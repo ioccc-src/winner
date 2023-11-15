@@ -4,12 +4,52 @@
 make all
 ```
 
+There is alternate code which allows one to change the size of the maze. See
+[alternate code](#alternate-code) below.
 
-### Try:
+
+### To run:
 
 ```sh
 ./shapiro
 ```
+
+## Alternate code:
+
+The code has a define `C` set to 39 but this can be modified to change the size
+of the maze. The alt code allows one to easily do this.
+
+
+### Alternate build:
+
+
+```sh
+make alt
+```
+
+### Alternate try:
+
+If you wish to change the value you can do it like:
+
+```sh
+make clobber CDEFINE="-DC=5" alt
+```
+
+Note that if it is not a number then obviously there will be a compilation
+error. If it's <= 0 || >= 5000 then it is set to 39, the default.
+
+You might also wish to try:
+
+```sh
+./try.alt.sh
+```
+
+This script will compile the program five times with a random value and then
+prompt you in an infinite loop for values to try, exiting only if non-digits are
+in the input.
+
+Also try printing out various sized mazes and solving them with pencil or pen or
+in your head.
 
 
 ## Judges' remarks:
