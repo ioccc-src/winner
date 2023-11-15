@@ -66,7 +66,7 @@ version end up allowing any number of movements?
 
 ## Judges' remarks:
 
-In 2023 this entry was been updated to allow most ANSI C compilers to compile
+In 2023 this entry was updated to allow most ANSI C compilers to compile
 the code and to fix a bug where the win or lose message was not seen.
 
 
