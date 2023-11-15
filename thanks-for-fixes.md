@@ -2258,6 +2258,8 @@ changing the `K` arg to `gets(3)` to `&K` in `fgets(3)`.
 Cody later improved the fix to use `gets()` by redefining `gets()` so that the
 code looks like before.
 
+Cody also added the [try.sh](2000/anderson/try.sh) script.
+
 
 ## [2000/briddlebane](2000/briddlebane/briddlebane.c) ([README.md](2000/briddlebane/README.md]))
 
