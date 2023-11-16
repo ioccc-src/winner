@@ -132,7 +132,7 @@ P V(P n, P o) {
 	R s;
 }
 main(P db, F *bd[]){
-	srand(0);
+	srand(time(0));
 	N o[500];
 	F T[256];
 

@@ -4,6 +4,9 @@
 make
 ```
 
+There is an alternate version based on the author's remarks. See [alternate
+code](#alternate-code) below for more details.
+
 
 ### Bugs and (Mis)features:
 
@@ -27,16 +30,28 @@ For more detailed information see [2001 dgbeards in bugs.md](/bugs.md#2001-dgbea
 
 The author provided a way to speed it up a bit and also how to make it so it
 doesn't crash on losing.  The idea that it crashes on losing was too good to
-lose but this alternate version has the former change.
+lose but this alternate version has the former change. If you wish to remove
+this you can look at the author's remarks and make the change.
 
-To compile:
+
+### Alternate build:
 
 ```sh
 make alt
 ```
 
-Use `dgbeards.alt` as you would `dgbeards` above. Can you find a flaw in this
-version that the author did not note?
+
+### Alternate use:
+
+```sh
+./dgbeards.alt
+```
+
+
+### Try:
+
+See if you can figure out how to make the computer always lose ('win' :-) ).
+It's a very simple thing to do. Read the author's remarks for clues.
 
 This game crashes if it loses.
 
@@ -46,12 +61,6 @@ This is supposed to happen.  As is written in the
 ```
 That's not a bug, that's a feature.
 ```
-
-
-### Try:
-
-See if you can figure out how to make the computer always lose. It's a very
-simple thing to do. Read the author's remarks for clues.
 
 
 ## Judges' remarks:
@@ -100,6 +109,7 @@ can be captured.
 
 5. Castling is not allowed.
 
+
 #### Q: How do you use this program?
 
 A: The program is fairly straightforward.  When you start the program,
@@ -128,6 +138,7 @@ You can also specify a command line argument of a single digit to change
 the search depth of the program.  If no argument is specified, it
 defaults to a depth of 3.
 
+
 #### Q: Are there any limitations in your program?
 
 A: Yes.  The first of the limitations is that you can only play legal
@@ -140,6 +151,7 @@ It also does not detect the end of the game.  It can see sure wins or
 losses several moves ahead, but does not announce the end of a game or
 the winner.  Given the existing code it is easy to do this, but it was
 deemed unnecessary fluff.
+
 
 #### Q: What is the playing strength of this program?
 
@@ -163,14 +175,15 @@ In such positions, it will often just shuffle pieces around aimlessly
 until a tactical exchange presents itself.
 
 A small amount of randomness has been added to make the program a more
-interesting opponent.  To avoid a call to `srand()`, `rand()` and the
-extra code for the required include files, the `time()` function is used as
+interesting opponent.  To avoid a call to `srand(3)`, `rand(3)` and the
+extra code for the required include files, the `time(3)` function is used as
 the source of random data.  It is a slow function, and since it is
 executed inside the search loop, there is a significant performance
-decrease.  To make it faster, replace the `time()` call with `rand()` and add
+decrease.  To make it faster, replace the `time(3)` call with `rand(3)` and add
 the line `srand(time(0));` to the beginning of `main()`.  I used the more
-inefficient `time()` function to illustrate a different (and somewhat
+inefficient `time(3)` function to illustrate a different (and somewhat
 obfuscated?) way of generating random numbers.
+
 
 #### Q: Why is this program obfuscated?
 
@@ -200,7 +213,7 @@ hide the real purpose of strings.  These layers of obscurity cannot be
 penetrated by just preprocessing and beautifying the program.
 
 Fifth, various small obfuscations have been used in places all over the
-program.  Short circuit evaluation is used as a substitute for if()
+program.  Short circuit evaluation is used as a substitute for `if()`
 statements in some places.  The ternary operator is used.  In the
 author's opinion, use of the ternary operator is almost always a strong
 argument for employee turnover.
@@ -210,6 +223,7 @@ obfuscation, you are confronted by the fact that the game that it
 implements is an obscure game.  Casual inspection of the program might
 lead one to believe that it is an implementation of classic chess, but
 this is not so.
+
 
 #### Q: What about the compiler warnings?
 
@@ -226,7 +240,7 @@ value computed is not used
 
 The `value computed is not used` warning happens because I use the `&&`
 operator and take advantage of short circuit evaluation instead of using
-an if() statement.
+an `if()` statement.
 
 The `suggest parentheses...` warnings are given because of expressions
 that depend on operator precedence details in the C language.
@@ -234,6 +248,7 @@ Eliminating these warnings would reduce obfuscation.
 
 The other warnings are there because it would require more code to
 eliminate them and that can't be done given the size limit.
+
 
 #### Q: Why does this program crash when it loses?
 
@@ -245,12 +260,12 @@ obfuscated program.
 [Judge's note:  This was followed by a description of the bug, and
 the comment:]
 
-(Note, if this program wins, the author thinks it would be good to leave
+Note, if this program wins, the author thinks it would be good to leave
 this information out of the remarks and encourage others to try and
-figure it out for themselves)
+figure it out for themselves.
 
-[should you be too lazy to figure it out yourself, here's the author's
-fix.]
+[Should you be too lazy (or time-efficient or affected by 'real life' :-) ) to
+figure it out yourself, here's the author's fix.]
 
 This bug can be fixed in a number of ways, but there is a way that adds only one
 byte to the source code.  In the statement `s=(e=-V(n-1,o))>s?Y=G,e:s;` change

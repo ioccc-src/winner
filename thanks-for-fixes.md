@@ -2536,8 +2536,7 @@ that the idea of crashing on losing (see the README.md for details on why that
 might be) too good to get rid of so he kept that in.
 
 He also points out that there is a way to get the computer to automatically lose
-very quickly and he also points out that there is a flaw in the alternate
-version that the author did not note. Do you know what these are?
+very quickly. Do you know what it is?
 
 
 ## [2001/herrmann1](2001/herrmann1/herrmann1.c) ([README.md](2001/herrmann1/README.md]))
