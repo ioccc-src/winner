@@ -2521,7 +2521,8 @@ the ANSI escape codes. This works with both linux and macOS.
 
 Cody fixed this so that it should always restore terminal sanity (echo enabled
 etc.) after exiting even if you don't press 'q', if you crash or if you kill the
-program prematurely.
+program prematurely. This was done by adding an explicit call to `e()` at the
+end of `main()`.
 
 Cody also added the [alt code](2001/ctk/README.md#alternate-code) that adds
 vi(m) movement keys.
