@@ -94,6 +94,14 @@ In some entries this change is not possible, in one-liners it might make them
 too long (though it's also been possible to do it in some cases) and in some
 entries it's more complicated than others because of the annoying fact that for
 '"compatibility" reasons' `fgets()` retains the newline and `gets()` does not.
+As the v7 man page used to say:
+
+```
+BUGS
+
+The fgets(3) function retains the newline while gets(3) does not, all in the
+name of backward compatibility.
+```
 
 Some entries like [1992/adrian](1992/adrian/README.md) were more complicated in
 other ways due to the code generating other output and because of how it works
