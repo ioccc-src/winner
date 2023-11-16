@@ -2268,6 +2268,13 @@ code looks like before.
 Cody also added the [try.sh](2000/anderson/try.sh) script.
 
 
+## [2000/bmeyer](2000/bmeyer/bmeyer.c) ([README.md](2000/bmeyer/README.md]))
+
+Cody added the [try.sh](2000/bmeyer/try.sh) script with some improvements to the
+commands we recommended like not assuming the number of columns one has in their
+terminal.
+
+
 ## [2000/briddlebane](2000/briddlebane/briddlebane.c) ([README.md](2000/briddlebane/README.md]))
 
 Cody fixed this to compile in systems that require one to explicitly link in

@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+#
+# try.sh - demonstrate IOCCC winner 2000/bmeyer
+#
+
+# make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
+# this way allows us to have the user specify a different compiler in an easy
+# way.
+if [[ -z "$CC" ]]; then
+    CC="cc"
+fi
+
+make CC="$CC" all >/dev/null || exit 1
+
+# clear screen after compilation so that only the entry is shown
+clear
+
+# We need to have the column count for later on. It is not an error if it cannot
+# be determined: we just use a default value.
+#
+# try getting the columns the simple way first: tput cols
+COLUMNS="$(tput cols)"
+# ^--^ SC2181 (style): Check exit code directly with e.g. 'if ! mycmd;', not indirectly with $?.
+# shellcheck disable=SC2181
+if [[ "$?" -ne 0 ]]; then
+    # if tput failed for any reason try stty(1) with awk(1):
+    # Disable this warning of shellcheck as it's wrong: awk needs single quotes.
+    # ^-----------^ SC2016 (info): Expressions don't expand in single quotes, use double quotes for that.
+    # shellcheck disable=SC2016
+    COLUMNS="$(stty size|awk '{print $NF}')"
+    
+    if [[ "$?" -ne 0 ]]; then
+	COLUMNS=150
+    fi
+fi
+
+echo "Warning: if you don't have white text on a black background the output" 1>&2
+echo "might not be as correct or visually appealing." 1>&2
+echo 1>&2
+
+if [[ "$COLUMNS" -lt 81 ]]; then
+    echo "Warning: your terminal is < 81 columns and this might cause output" 1>&2
+    echo "issues." 1>&2
+    echo 1>&2
+fi
+
+
+read -r -n 1 -p "Press any key to start: "
+echo "$ ./glicbawls < michael.pgm > michael.glic" 1>&2
+./glicbawls < michael.pgm > michael.glic
+echo "Now compare the michael.pgm to the screen output." 1>&2
+
+read -r -n 1 -p "Press any key to continue: "
+echo "$ ./glicbawls < michael.pgm 2>/dev/null | ./glicbawls > new.pgm" 1>&2
+./glicbawls < michael.pgm 2>/dev/null | ./glicbawls > new.pgm
+
+echo "Now compare the michael.pgm to the screen output." 1>&2
+
+read -r -n 1 -p "Press any key to continue: "
+echo "Now compare the new.pgm file to the michael.pgm file."
+
+read -r -n 1 -p "Press any key to continue: "
+
+read -r -n -p 1 "Press any key to trying and use your screen width on lava bus pic: "
+
+echo "$ ./glicbawls $COLUMNS < lavabus.pgm > lavabus.glic" 1>&2
+./glicbawls "$COLUMNS" < lavabus.pgm > lavabus.glic
+
+read -r -n 1 -p "Press any key to continue: "
+
+echo "$ ./glicbawls -2 "$COLUMNS" < lavabus.pgm > lavabus.glic2"
+./glicbawls -2 "$COLUMNS" < lavabus.pgm > lavabus.glic2
+
+read -r -n 1 -p "Press any key to decompress the smaller glic-file: "
+echo "$ ./glicbawls -2 150 < lavabus.glic2 > new.pgm" 1>&2
+./glicbawls -2 150 < lavabus.glic2 > new.pgm
+
+echo "Now compare the new.pgm file to the lavabus.pgm file." 1>&2

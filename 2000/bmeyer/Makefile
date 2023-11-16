@@ -133,6 +133,8 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${RM} -f glicbawls
+	${CP} -f $@ glicbawls
 
 # alternative executable
 #
