@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define X(s) (!(s&3)-((s&3)==2))
 #define W while
-char Z[82][82],A,B,f,g=26;z(q)char**q;{return atoi(q);}m(d,l){return
+char Z[82][82],A,B,f,g=26;z(q)char*q;{return atoi(q);}m(d,l){return
 Z[   B       +    X      (   f     +
 3) * d+l *X(f+ 2 )][ A+X ( f ) * d +
 l* X           (     f     + 3 ) ] ;}int

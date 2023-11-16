@@ -1627,22 +1627,19 @@ the final loop it prints another newline. This fix has another bonus in that
 resizing the terminal after running it should not mess up the display either,
 unless of course it becomes too small.
 
-Cody added the programs [whereami.c](1992/westley/whereami.c) and
-[whereami.alt](1992/westley/whereami.alt.c) which correspond to the entry and
-the alt code but which, by way of curses, checks for the number of columns; if
-all is good it will try compiling the program or alt program, respectively, and
-then if successful run the program. Otherwise, if there are not enough columns
-it is an error. It is always an error if the compilation of the program itself
-(westley.c, westley.alt.c) fails.
+Cody added the scripts [whereami.sh](1992/westley/whereami.sh) and
+[whereami.alt.sh](1992/westley/whereami.alt.sh) which correspond to the entry and
+the alt code but first check that the number of columns is at least 80 and if
+not it is an error.
 
 Cody added the [try.sh](1992/westley/try.sh) script that shows the different
 cities that the author recommended one try as well as the one recommended by the
 judges (approximate judging location), labelling each city and printing a
-newline before the next city. The try.sh script uses the `whereami` code, if it
-can be compiled and linked, but otherwise it uses `westley` code instead, either
-the entry or alt code. The try.sh cannot be deceived by way of `COLUMNS=81
-./try.sh` but the `whereami`/`whereami.alt` code can be deceived if directly
-called. This is a feature, not a bug: or maybe a limitation of curses.
+newline before the next city. The try.sh script uses the `whereami.sh` and
+`whereami.alt.sh` scripts, as long as they're executable (if they're not it
+first tries to make it executable and if it fails to do so it just uses
+`westley` or `westley.alt`. The scripts can be deceived by `COLUMNS=80 ./try.sh`
+(or `COLUMNS=80 ./whereami.sh` etc.) but this is a feature, not a bug.
 
 Cody also added an arg check because the program and the
 [alternate version](1992/westley/westley.alt.c) might have crashed or
@@ -1650,7 +1647,7 @@ Cody also added an arg check because the program and the
 world](https://en.wikipedia.org/wiki/Earth) or just the
 [USA](https://en.wikipedia.org/wiki/United_States), respectively, without enough
 args (2). And not that we need the help or anything for this :-) but we
-encourage you to try the original :-)
+encourage you to try the original without two args :-)
 
 
 ## [1993/cmills](1993/cmills/cmills.c) ([README.md](1993/cmills/README.md]))
@@ -2269,6 +2266,13 @@ Cody later improved the fix to use `gets()` by redefining `gets()` so that the
 code looks like before.
 
 Cody also added the [try.sh](2000/anderson/try.sh) script.
+
+
+## [2000/bmeyer](2000/bmeyer/bmeyer.c) ([README.md](2000/bmeyer/README.md]))
+
+Cody added the [try.sh](2000/bmeyer/try.sh) script with some improvements to the
+commands we recommended like not assuming the number of columns one has in their
+terminal.
 
 
 ## [2000/briddlebane](2000/briddlebane/briddlebane.c) ([README.md](2000/briddlebane/README.md]))

@@ -28,13 +28,6 @@ evening of Dec 22, 2000).
 Can you find out how it stores the insult strings?  Can you then take
 an insult and figure out when it will be uttered?
 
-[sc] The code also contained a buffer overflow bug which I have fixed!
-The array size of `s` should be 1079 characters long.  (From 0 to 1078
-inclusive!).  Without this it results in an error in the encoding of
-"decrepit" -- For a 32bit little endian machine using GCC (because of
-the way it assigns variables to memory) it will terminate "decrepit"
-with the character `'\200'` (the last value of `F`) instead of `'\0'`.
-
 
 ## Author's remarks:
 

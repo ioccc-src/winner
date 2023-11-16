@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Thu 02 Nov 2023 12:32:15 UTC*
+*Last updated: Thu 16 Nov 2023 11:20:54 UTC**
 
 This document is primarily for [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) as he (that is I :-) ) wanted a way
@@ -144,3 +144,11 @@ instead change it to make pull requests. See the
 - Check the YYYY/README.md files for other things besides the GitHub pull
 requests rather than emailing judges. This can be done on the final pass of the
 files.
+
+- In the entries with the alt code that use `usleep(3)` make the macro name
+consistent across all entries. At one point `Z` was used but in one entry `Z`
+was taken so this would not work. It appears at this time (16 November 2023)
+that it might be that `S` will work in all cases (currently?) though one has two
+values so the second would could be changed to `SS` (which is convenient as it's
+for SDL). This is low priority but it would be nice to have done as it would
+make it consistent and easy to remember.

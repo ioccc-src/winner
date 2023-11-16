@@ -17,47 +17,11 @@ make
 In a video window (white text on black background):
 
 ```sh
-./bmeyer < michael.pgm > michael.glic
+./try.sh
 ```
 
-Compare the `michael.pgm` to the screen output.
-
-To test that you are compressing and decompressing the same way the
-author was, try:
-
-```sh
-./bmeyer < lenna.glic
-```
-
-Also try in a reverse video window:
-
-```sh
-./bmeyer < michael.pgm 2>/dev/null | ./bmeyer > new.pgm
-```
-
-Compare the [michael.pgm](michael.pgm) to the screen output.  Compare the
-`new.pgm` file to the [michael.pgm](michael.pgm) file.
-
-Create a large reverse video xterm, say 200 columns wide and try:
-
-```sh
-./bmeyer 200 < lavabus.pgm > lavabus.glic
-```
-
-Produce an even smaller output:
-
-```sh
-./bmeyer -2 200 < lavabus.pgm > lavabus.glic2
-```
-
-Decompress that smaller glic-file:
-
-```sh
-./bmeyer -2 200 < lavabus.glic2 > new.pgm
-```
-
-Compare the `new.pgm` file to the [lavabus.pgm](lavabus.pgm) file by viewing
-them.
+The script will suggest you compare the output of the program with images,
+prompting you to press any key to continue so that you may do so.
 
 
 ## Judges' remarks:
@@ -72,7 +36,7 @@ bmeyer: bmeyer.c
 	CC -DY="__setfpucw(0x127f)" -O6 $? -o $@ -lm
 ```
 
-However many compilers use -O3 as the maximum level for -O optimization.
+However many compilers use `-O3` as the maximum level for `-O` optimization.
 
 And on linux/x86, glibc 2.1:
 
@@ -85,14 +49,14 @@ Compile with the maximum possible optimization on your system.
 If your system has 80-bit internal representation of floating
 point values (x86, some Motorola processors) and you want the
 compressed format to be portable across platforms, you need
-to set your FPU to use 64 bit mode. See the extra build lines
-in the Makefile, and read the author's remarks below.
+to set your FPU to use 64 bit mode. Read the author's remarks
+below for more details.
 
 If you cannot work out how to get into 64 bit mode, you can
 try using `-ffloat-store` if you compile with GCC (this may have
 a performance penalty). The resulting binary will have a good
 chance to produce portable files, but due to the resulting
-double-rounding (first internally to 80 bit, then to 64 bit
+double-rounding (first internally set to 80 bit, then to 64 bit
 on writing the value to memory), there is a small but very real
 chance any given file produced might not be portable.
 
@@ -110,20 +74,20 @@ This program is called `GLICBAWLS`
 Squares".
 
 And that's exactly what this program does --- feed it a .PGM file
-(either raw [i.e. P5] or ascii [i.e. P2]) on stdin, and it will
+(either raw [i.e. P5] or ASCII [i.e. P2]) on stdin, and it will
 output a compressed version to stdout. Feed it a compressed file
 on stdin, and it will decompress it to stdout --- as either raw or
-ascii .PGM, depending on what format it was compressed from. For
+ASCII .PGM, depending on what format it was compressed from. For
 example:
 
 ```sh
-./bmeyer < michael.pgm > michael.glic
+./glicbawls < michael.pgm > michael.glic
 ```
 
 and then
 
 ```sh
-./bmeyer < michael.glic > michael.decoded.pgm
+./glicbawls < michael.glic > michael.decoded.pgm
 ```
 
 As it turns out, `glicbawls` compresses greyscale images (or, more
@@ -133,7 +97,7 @@ program developed for my PhD thesis). Of course, this might take
 some time, so a progress indicator is provided.  To make things
 more interesting, instead of a boring bar or percentage display,
 an ASCII rendition of the image being compressed/decompressed is
-output to stderr (assuming white text on black background). If you
+output to `stderr` (assuming white text on black background). If you
 have trouble recognizing the image, try squinting at it ;-).
 
 If you still have trouble, simply use a terminal or xterm with
@@ -141,7 +105,7 @@ more than 80 columns, and tell `glicbawls` about it by giving the
 number of columns as an argument. For example
 
 ```sh
-./bmeyer 260 <lavabus.pgm >lavabus.glic
+./glicbawls 260 <lavabus.pgm >lavabus.glic
 ```
 
 will allow `glicbawls` to use up to 260 columns, which makes things
@@ -154,32 +118,32 @@ compression mode. In that mode, the decoded pixel values are
 allowed to differ from the originals, but there is an upper limit
 on the magnitude of the difference. For example, if a maximum
 error of 2 is allowed, an original pixel value of 37 could be
-decoded as 35,36,37, 38 or 39. In order to use this mode, simply
+decoded as 35, 36, 37, 38 or 39. In order to use this mode, simply
 give the maximum allowed error as an argument, with a dash (`-`)
-before it. For example
+before it. For example:
 
 ```sh
-./bmeyer -2 < graph.pgm > graph.2.glic
+./glicbawls -2 < graph.pgm > graph.2.glic
 ```
 
 will compress in a way that allows decompression with a maximum
-error of two. You can combine both types of arguments, i.e.
+error of two. You can combine both types of arguments, i.e.:
 
 ```sh
-./bmeyer -3 180 < graph.pgm >graph.3.glic
+./glicbawls -3 180 < graph.pgm >graph.3.glic
 ```
 
 will compress with a maximum error of 3, using a 180 column
-terminal for the progress display, and
+terminal for the progress display, and:
 
 ```sh
-./bmeyer -3 180 < graph.3.glic > graph.3maxerr.pgm
+./glicbawls -3 180 < graph.3.glic > graph.3maxerr.pgm
 ```
 
 will decompress the result on such a terminal.
 
 But wait, there is more --- you can also feed `glicbawls` .PPM files
-(i.e.  colour images), raw or ascii, your choice. `Glicbawls` will
+(i.e.  colour images), raw or ASCII, your choice. `glicbawls` will
 compress and decompress them just fine. However, it only does
 "reasonably well" on them; It beats PNG easily, but there are
 certainly programs out there that can compress colour images
@@ -190,7 +154,7 @@ from a photo or camera)....
 
 ### WARNING
 
-`Glicball` is rather CPU and FPU intensive. Don't run it on anything slow.
+`glicball` is rather CPU and FPU intensive. Don't run it on anything slow.
 Things start to be usable around 300+MHz, with 600+ being highly desirable.
 
 
@@ -208,7 +172,7 @@ Fortunately, just about all current FPUs can be put into IEEE 64
 bit mode (or at least something close enough for
 `glicbawls`). Unfortunately, there is no standard way of doing
 so. For this reason, the build file contains *three* compile
-lines; One for machines that already use 64 bit mode by default
+lines; one for machines that already use 64 bit mode by default
 (most RISC processors), one for linux/x86 machines using libc4,
 libc5 or glibc2.0, and one for linux/x86 machines using glibc2.1
 (glibc2.1 no longer exports the `__setfpucw()` function, necessitating
@@ -226,10 +190,10 @@ own compressed files, but you may be unable to exchange files with
 
 Most of the obfuscation of this program was driven by the
 desperate struggle to fit all of `glicbawls`' features into code
-that fits the IOCCC's size limits. All identifiers names are
+that fits the IOCCC's size limits. All identifiers' names are
 single-character, which was only possible by ruthless exploitation
 of scope. There is a function `M()` that handles nearly all input
-from stdin, handles all output to stdout, and also recursively
+from `stdin`, handles all output to `stdout`, and also recursively
 calculates one of the mathematical expressions needed for error
 modelling. There is a function that calculates `(A^(-1)*b)*x` with `A`
 being a matrix and `b` and `x` being vectors, and does so in a very
@@ -241,7 +205,7 @@ value when control flow reaches the loops. Lots of functions use
 the same two global scratch variables.  Variables change their
 meaning all the time, and the differences between compressing and
 decompressing are handled in rather subtle ways all over the
-program. The string that holds the ascii values for displaying the
+program. The string that holds the ASCII values for displaying the
 progress image doubles as a description on how to find a pixel's
 causal neighbours. And then there are a few `#define`s that really
 are just in there to save a few characters, but as an added
@@ -254,9 +218,9 @@ are a true wizard, it is unlikely to gain you any insights into
 what is actually going on....\[0\]
 
 
-### Bugs, Assumptions and TODOs
+### Bugs, Assumptions and TODO
 
-`Glicbawls` assumes that characters are 8 bit wide, and that the
+`glicbawls` assumes that characters are 8 bit wide, and that the
 character set used is ASCII. If one of these isn't true, all hell
 will break loose.
 
@@ -271,12 +235,12 @@ When decompressing a near-lossless encoded image, the maximum
 allowed error is required as a command line parameter. This should
 really be saved in the compressed file!
 
-`Glicbawls` relies on the decimal representation of all integers
+`glicbawls` relies on the decimal representation of all integers
 having less than 255 digits. While ANSI C does not guarantee this,
 it seems rather unlikely that anyone in the foreseeable future
 would use images with `10^255` rows, columns or different levels of
 grey.  Also, it is assumed that any integer used can be cast to a
-double and back without loss of precision. This limits the number
+`double` and back without loss of precision. This limits the number
 of rows, columns and grey levels to 9 quintillion, which should
 also be sufficient for the next few years.
 
@@ -287,8 +251,8 @@ million in a lottery.  But if it happens to you, don't say I
 didn't warn you! Instead, go out and buy a lightning rod and a
 lottery ticket ;-)
 
-At one point, a pointer to int is used as the target of a `"%1[#]"`
-conversion in a scanf, which makes gcc rather unhappy, but
+At one point, a pointer to `int` is used as the target of a `"%1[#]"`
+conversion in a `scanf(3)`, which makes gcc rather unhappy, but
 shouldn't really cause anyone any trouble. The same goes for a
 couple of assignments which are used as truth values.
 
@@ -300,23 +264,25 @@ the scope of an info file, and would also be quite difficult in
 pure ASCII, so the following is just a rough outline, and contains
 some compression-speak...
 
-The image is handled in scanline ordering. For each pixel, an
-expected value is calculated by creating a least squares predictor
-of order 12 based on all of the previously encoded/decoded
-pixels. However, the contribution of each pixel is weighted
-according to its Manhattan-distance from the current pixel,
-D. That weight used is `pow(0.8,D)`. \[1\] \[2\] \[3\]
-
+The image is handled in [scanline](https://en.wikipedia.org/wiki/Scan_line)
+ordering. For each pixel, an expected value is calculated by creating a least
+squares predictor of order 12 based on all of the previously encoded/decoded
+pixels. However, the contribution of each pixel is weighted according to its
+[Manhattan-distance](https://en.wikipedia.org/wiki/Taxicab_geometry) from the
+current pixel, `D`. That weight used is `pow(0.8,D)`. \[1\] \[2\] \[3\]
 
 In a similar way, the prediction *errors* for all previous pixels
 are combined --- a weighted average (with weight `pow(0.7,D)`) of
 the squares of all previous prediction errors is taken, and the
 square root of the (appropriately scaled) result is called sigma.
 
-The predicted value and sigma are then used as the parameters of a
-Student or t-distribution (which is similar to a normal
-distribution, but has more weight in the tails), providing a
-probability distribution for the current pixel.
+The predicted value and sigma are then used as the parameters of a [Student or
+t-distribution](https://en.wikipedia.org/wiki/Student%27s_t-distribution) (which
+is similar to a [normal
+distribution](https://en.wikipedia.org/wiki/Normal_distribution), but has more
+weight in the tails), providing a [probability
+distribution](https://en.wikipedia.org/wiki/Probability_distribution) for the
+current pixel.
 
 Next, the possible interval of values for the current pixel is
 halved, and through integration of the probability distribution, a
@@ -332,13 +298,13 @@ en/decoded\[4\].
 
 [0] Yes, this could be seen as a challenge....
 [1] Actually, the weight is `pow(0.8,D)/s`, where `s` is the sigma
-    used for en/decoding the particular previous pixel. Dividing
+    used for encoding/decoding the particular previous pixel. Dividing
     by `s` is a rather arbitrary action justified only by the
     improvement in results.  Mathematically, I can only justify
     dividing by `s^2`, or not dividing at all....
 [2] Obviously, these least squares predictors are not calculated
     from scratch for each pixel. Some clever reuse of earlier
-    results allows O(1) calculation, rather than the
+    results allows `O(1)` calculation, rather than the
     `O(previous_rows*columns)` this description would suggest.
 [3] As anyone who has ever tried local least squares knows from
     bitter experience, there is a lot of numerical instability
@@ -346,7 +312,7 @@ en/decoded\[4\].
     averaging predictor to the equation system the least squares
     predictor is calculated from.  The weight that is given to
     this bias is constantly adjusted throughout coding/decoding,
-    thus justifying the 'a' in "glicbawls".
+    thus justifying the 'a' in `glicbawls`.
 [4] In the case of near-lossless coding, the interval is not
     necessarily *halved*, but rather split at a convenient point
     (the split points are chosen in such a way as to minimise the
@@ -359,7 +325,7 @@ en/decoded\[4\].
 
 [Lavabus](lavabus.pgm) was taken by the judge, Landon Curt Noll.
 [Michael](michael.pgm) was provided by the author.  [Lenna](lenna.glic) is a
-1972 Playboy centerfold.
+1972 Playboy centerfold (doesn't show very much).
 
 - [michael.pgm](michael.pgm)
 
@@ -367,8 +333,9 @@ en/decoded\[4\].
 
 - [lavabus.pgm](lavabus.pgm)
 
-    A bus that was trapped by lava from Kilauea volcano in Hawaii, US.  Nobody
-    was in the bus at the time, BTW.  Photo date: 1981.
+    A bus that was trapped by lava from [Kilauea
+    volcano](https://en.wikipedia.org/wiki/Kīlauea) in Hawaii, US.  Nobody was
+    in the bus at the time, BTW.  Photo date: 1981.
 
 - [lenna.glic](lenna.glic)
 
