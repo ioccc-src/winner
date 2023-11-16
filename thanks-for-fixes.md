@@ -2638,7 +2638,7 @@ README.md for details.
 
 ## [2001/westley](2001/westley/westley.c) ([README.md](2001/westley/README.md]))
 
-Cody added the script [westley.sh](westley.sh) to automate a heap of commands
+Cody added the script [try.sh](try.sh) to automate a heap of commands
 that we, the IOCCC judges, suggested, as well as some additional ones that he
 thought would be fun.  He also provided the sort and punch card versions,
 described in the README.md, based on the author's remarks.
