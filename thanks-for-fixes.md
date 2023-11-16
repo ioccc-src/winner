@@ -80,6 +80,16 @@ $ warning: this program uses gets(), which is unsafe.
 
 whereas without the warning it's much easier to see that it's a prompt.
 
+Another great example is:
+
+```sh
+$ cd 1990/cmills
+$ ./cmills
+Shuffle...
+warning: this program uses gets(), which is unsafe.
+Total $1000.  Wager?
+```
+
 In some entries this change is not possible, in one-liners it might make them
 too long (though it's also been possible to do it in some cases) and in some
 entries it's more complicated than others because of the annoying fact that for
@@ -93,6 +103,9 @@ fixes in that entry.
 
 In any case some of the entries have been updated this way for the reasons
 described above and in the [FAQ](/faq.md).
+
+Where possible `gets` has been redefined to be `fgets` with the appropriate arg.
+This is not always possible but if often is.
 
 See also [bugs.md](/bugs.md) for a further discussion on the matter.
 
@@ -408,9 +421,7 @@ commented out.
 
 ## [1986/hague](1986/hague/hague.c) ([README.md](1986/hague/README.md]))
 
-Cody made this use `fgets()` to avoid alarming and annoying messages about
-`gets()` being unsafe, sometimes interspersed with the output of the program.
-For more details about that see the [FAQ](/faq.md).
+Cody made this use `fgets()`.
 
 
 ## [1986/holloway](1986/holloway/holloway.c) ([README.md](1986/holloway/README.md]))
@@ -599,15 +610,7 @@ size constraints of the contest).
 
 ## [1987/wall](1987/wall/wall.c) ([README.md](1987/wall/README.md]))
 
-Cody made this safer by using `fgets()` instead of `gets()`. This prevents an
-annoying and potentially alarming warning at compiling, linking or runtime.
-Though this could be partly remedied through redirecting `stderr` to `/dev/null`
-this would not truly resolve the problem either and in order to avoid the
-warning one would have to always redirect `stderr` to `/dev/null`.
-
-Later Cody improved upon the `gets()`/`fgets()` change to make it more like the
-original by redefining `gets()` to use `fgets()` (with the correct args) so that
-the code can refer to `gets()` instead.
+Cody made this use `fgets(3)`.
 
 
 ## [1987/westley](1987/westley/westley.c) ([README.md](1987/westley/README.md]))
@@ -738,11 +741,7 @@ to itself and `pain()` does now.
 
 ## [1988/reddy](1988/reddy/reddy.c) ([README.md](1988/reddy/README.md))
 
-Cody made this use `fgets()` to prevent annoying warnings during compiling,
-linking and runtime, the latter of which being the most annoying.
-
-Cody also restored the name of the winner in the README.md file that was missing
-by some crazy chance.
+Cody made this use `fgets(3)`.
 
 
 ## [1988/spinellis](1988/spinellis/spinellis.c) ([README.md](1988/spinellis/README.md]))
@@ -981,17 +980,7 @@ judges was retained.
 Yusuke got this to work in modern systems (it previously resulted in a bus
 error).
 
-To prevent alarming warnings at linking or runtime Cody made the entry use
-`fgets()` rather than `gets()`. He notes that another option would have been to
-redirect `stderr` to `/dev/null` but he did not think of that at the time.
-
-Cody later improved upon the `gets()`/`fgets()` fix to make it more like the
-original where the code can refer to `gets()` in the way it originally did. This
-was done through a macro to redefine `gets`.
-
-BTW: Cody asks the following question: if the compiler compiles, the linker
-links and the user executes does that make the compiler the jury, the linker the
-judge and user the executioner? :-)
+Cody made this use `fgets(3)`.
 
 
 ## [1990/dds](1990/dds/dds.c) ([README.md](1990/dds/README.md]))
@@ -1008,16 +997,7 @@ Cody fixed another compiler error by removing the erroneous prototype to
 `fopen()`.  Cody also changed a `char *` used for file I/O to be a proper `FILE
 *` and fixed a typo in [LANDER.BAS](1990/dds/LANDER.BAS).
 
-Cody also made this use `fgets()` instead of `gets()` to make it safer and to
-prevent an annoying and potentially alarming warning at compiling and/or linking
-and/or runtime, the latter of which is unfortunately interspersed with the
-output of the program.
-
-Later Cody improved the `gets()`/`fgets()` fix by redefining `gets()` to use
-`fgets()`. Notice that the original entry used `fgets()` in one case as it has
-to read from another file and in this place nothing was changed.
-
-With these improvements the entry looks much more like the original!
+Cody also made this use `fgets(3)`.
 
 
 ## [1990/dg](1990/dg/dg.c) ([README.md](1990/dg/README.md]))
@@ -1074,21 +1054,12 @@ suggested `-trigraphs`. Both work but we used Yusuke's idea.
 ## [1990/tbr](1990/tbr/tbr.c) ([README.md](1990/tbr/README.md]))
 
 Cody fixed this to work with modern compilers; `exit(3)` returns void but the
-function was used in a binary expression so this wouldn't even compile. Cody
-also changed the code to use `fgets()` instead of `gets()` so one would not get
-a warning about the use of `gets()` at linking time or execution, the latter of
+function was used in a binary expression so this wouldn't even compile.
+
+Cody also changed the code to use `fgets()` instead of `gets()` so one would not get
+a warning about the use of `gets(3)` at linking time or execution, the latter of
 which was causing confusing output due to the warning being interspersed with
 the program's interactive output.
-
-Cody later improved his fix so that it looks more like the original. A problem
-that usually occurs with `gets()` to `fgets()` is for 'backwards compatibility'
-(so the man page once said) `fgets()` retains the newline and `gets()` does not.
-In this program if one does not remove the newline it breaks the program. This
-usually requires that one check that `fgets()` does not return NULL but with
-some experimenting this proved to seem to not be a problem here so by adding a
-couple macros that redefine `exit()` and `gets()` a whole binary expression
-could be removed (thus removing an extra `exit()` call) and it now almost looks
-like the same as the original.
 
 Additionally, Cody fixed the shortened version provided by the author in the
 same way as the original entry, first the compile fix and then later on making
@@ -1121,11 +1092,10 @@ if (a[1]==NULL||a[2]==NULL||a[3]==NULL||a[4]==NULL||a[5]==NULL) return 1;
 
 be changed to just test the value of `A` when `a` is argv and `A` is argc?
 
+Cody also changed the code to use `fgets(3)`.
 
-Finally Cody changed this program to use `fgets()` not `gets()` to make it safer
-and to prevent a warning about `gets()` at linking or runtime. Since this
-program is so incredible the extra fixes were deemed worth having and this is why
-it was done.
+Since this program is so incredible the extra fixes were deemed worth having and
+this is why it was done.
 
 Cody later disabled a warning in the Makefile that proved to be a problem only
 with clang in linux but which was defaulting to an error. This way was the
@@ -1256,8 +1226,8 @@ string. Thus the end of the string actually looks like:
 !.Xop.fssps!.Xop.sfuvso.uzqf!.Xop.jnqmjdju.gvodujpo.efdmbsbujpo!b/d
 ```
 
-But then there is the matter of getting the C to use `fgets()`. As can be seen
-above it's not as simple as changing `gets()` to `fgets()`. This was more magic
+But then there is the matter of getting the C to use `fgets(3)`. As can be seen
+above it's not as simple as changing `gets(3)` to `fgets(3)`. This was more magic
 characters that had to be updated and some added. The C code:
 
 ```c
@@ -1327,8 +1297,8 @@ It is hoped that this is the last time the string has to be updated to work with
 all versions of clang but if not the above is how it works.
 
 With these changes in place it will compile and work with both gcc and clang and
-the C code generated will use `fgets()`, not `gets()`, therefore removing the
-annoying warnings. Note that the array passed to `fgets()` is an int but that
+the C code generated will use `fgets(3)`, not `gets(3)`, therefore removing the
+annoying warnings. Note that the array passed to `fgets(3)` is an int but that
 was the same for `gets()` and is not necessary to update to a `char[]`.
 
 The key to the string is that it rotates the character by `+1`. This was not
@@ -1439,33 +1409,27 @@ Cody also restored a slightly more obscure line of code that had been changed:
 
 though it's questionable how much more (if at all) obscure that is :-)
 
-Cody also changed the location that it used `gets()` to be `fgets()` instead to
-make it safer and to prevent annoying warnings during compiling, linking or
-runtime (interspersed with the program's output). This was complicated because
-of how the other source files are generated (as above); simply changing the code
-could cause invalid output in the program which made other files fail to compile
-(for this example specifically, see below).
+Cody also changed the location that it used `gets()` to be `fgets(3)`.
+This was complicated because of how the other source files are generated (as
+above); simply changing the code could cause invalid output in the program which
+made other files fail to compile (for this example specifically, see below).
 
-One might think that simply changing the `gets()` to `fgets()` (with `stdin`)
-would work but it did not because `fgets()` stores the newline and `gets()` does
+One might think that simply changing the `gets(3)` to `fgets(3)` (with `stdin`)
+would work but it did not because `fgets(3)` stores the newline and `gets(3)` does
 not. That is well known but this code was relying on not having this newline in
 a different way (see also above).
 
-With `fgets()` the code `if(A(Y)) puts(Y);` ended up printing an extra line
+With `fgets(3)` the code `if(A(Y)) puts(Y);` ended up printing an extra line
 which made the generation of some files (like `adhead.c`) fail to compile. Why?
 There was a blank line after a `\` at the end of the first line of a _macro
 definition_! Thus the code now first trims off the last character of the buffer
 read to get the same correct functionality but in a safe and non obnoxious way.
 
-Later Cody improved the change to `fgets()` to make it slightly more like the
-original. This still requires the additional stripping of the newline inside the
-loop but now it uses what looks like before, just a call to `gets()`.
-
-But the improvement so that it uses `gets()` could not be changed to have the
-macro do the removal of the extra line (as in with a comma operator or a `&&`)
-as this, as might be expected from the above, caused compilation errors with
-another generated file (`adwc.c`)! Thus after the `gets()` call in the line that
-looks like:
+In this case the macro for `gets` could not be changed to have the macro do the
+removal of the extra line (as in with a comma operator or a `&&`) as this, as
+might be expected from the above, caused compilation errors with another
+generated file (`adwc.c`)! Thus after the `gets(3)` call in the line that looks
+like:
 
 ```c
 while( gets(Y) ){ Y[strlen(Y)-1]='\0'; if(A(Y)) puts(Y); }
@@ -1522,18 +1486,18 @@ commands that we suggested and some additional ones that provide for some fun.
 Cody fixed a crash that prevented this entry from working in some cases in some
 systems (like macOS) by disabling the optimiser in the Makefile.
 
-Cody also changed the buffer size in such a way that `gets()` should be safe
+Cody also changed the buffer size in such a way that `gets(3)` should be safe
 (theoretically) as it comes from the command line (though it can also read input
-from stdin after starting the program). Ideally `fgets()` would be used but this
+from stdin after starting the program). Ideally `fgets(3)` would be used but this
 is a more problematic.  Previously it had a buffer size of 256 which could
-easily overflow. In this entry `gets()` is used in a more complicated way:
+easily overflow. In this entry `gets(3)` is used in a more complicated way:
 first `m` is set to `*++p` in a for loop where `p` is argv. Later `m` is set to
-point to `h` which was of size 256. `gets()` is called as `m = gets(m)`) but
-trying to change it to use `fgets()` proved more a problem. Since the input must
+point to `h` which was of size 256. `gets(3)` is called as `m = gets(m)`) but
+trying to change it to use `fgets(3)` proved more a problem. Since the input must
 come from the command line Cody changed the buffer size to `ARG_MAX+1` which
 should be enough (again theoretically) especially since the command expects
 redirecting a dictionary file as part of the command line. This also makes it
-possible for longer strings to be read (in case the `gets()` was not used in a
+possible for longer strings to be read (in case the `gets(3)` was not used in a
 loop).
 
 Cody also added the [mkdict.sh](1992/gson/mkdict.sh) script that the author
@@ -1578,17 +1542,9 @@ Judges' remarks in the README.md file) this will not work with clang.
 Cody also provided the `runme.sh` script to demonstrate it as using make was
 problematic.
 
-Cody made it use `fgets()` instead of `gets()` to prevent annoying warnings
-getting in the way (in linux linking in a binary with `gets()` produces a
-warning that might get in the way with this entry and in macOS at runtime it
-prints a warning which often is interspersed with the output of the program
-which can be confusing).
+Cody made it use `fgets()` instead of `gets()`.
 
-Cody later improved the `fgets()` change to look more like the original i.e. it
-now uses a redefined `gets()`. This did require modifying the line number with
-`#line 1` under the macro `gets()`.
-
-Still this cannot work with clang due to different compiler messages. See
+NOTE: this entry cannot work with clang due to different compiler messages. See
 [bugs.md](/bugs.md) for details.
 
 
@@ -1718,12 +1674,7 @@ compile time. See the README.md for details.
 
 ## [1993/schnitzi](1993/schnitzi/schnitzi.c) ([README.md](1993/schnitzi/README.md]))
 
-Cody made this use `fgets()` not `gets()` to make it safer and to prevent an
-annoying warning with compiling and/or linking and/or runtime, the latter of
-which is unfortunately interspersed with the output of the program itself.
-
-Cody later improved the fix to use `gets()` via a macro so that it looks like
-the original code.
+Cody made this use `fgets(3)` not `gets(3)`.
 
 
 ## [1993/vanb](1993/vanb/vanb.c) ([README.md](1993/vanb/README.md]))
@@ -1808,12 +1759,10 @@ Cody also fixed it for clang under linux which objected to incompatible pointer
 type (because `time(2)` takes a `time_t *` which in some systems is a `long *`
 but what was being passed to it is an `int`).
 
-Cody also changed the entry to use `fgets()` instead of `gets()` to make it safe
-for lines greater than 231 in length and to prevent a warning at linking or at
-runtime, the latter of which can be interspersed with output of the program.
-Note that this now prints a newline after the output but this seems like a
-worthy compromise for preventing the interspersed output in macOS and at the
-same time it's safer (fixing it to not have the extra newline is more
+Cody also changed the entry to use `fgets(3)` instead of `gets(3)`. This one has
+a minor annoyance in that it now prints a newline after the output but this
+seems like a worthy compromise for preventing the interspersed output in macOS
+and at the same time it's safer (fixing it to not have the extra newline is more
 problematic than it's worth and in macOS another line of output would be shown
 without the change anyway and the difference is that now it's just a blank line
 rather than an annoying warning).
@@ -2257,13 +2206,8 @@ commands that we recommended.
 
 ## [2000/anderson](2000/anderson/anderson.c) ([README.md](2000/anderson/README.md]))
 
-Cody changed this entry to use `fgets()` instead of `gets()` to make it safer
-and to prevent annoying warnings from showing up at compiling, linking and/or
-runtime, the latter interspersed with the output of the program. This involved
+Cody changed this entry to use `fgets(3)` instead of `gets(3)`. This involved
 changing the `K` arg to `gets(3)` to `&K` in `fgets(3)`.
-
-Cody later improved the fix to use `gets()` by redefining `gets()` so that the
-code looks like before.
 
 Cody also added the [try.sh](2000/anderson/try.sh) script.
 
