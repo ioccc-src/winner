@@ -41,7 +41,7 @@ include ../../var.mk
 CSILENCE= -Wno-char-subscripts -Wno-error -Wno-implicit-function-declaration \
 	-Wno-int-conversion -Wno-logical-op-parentheses -Wno-pedantic \
 	-Wno-return-type -Wno-unknown-escape-sequence -Wno-unused-value \
-	-Wno-deprecated-non-prototype
+	-Wno-deprecated-non-prototype -Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -139,6 +139,10 @@ ${PROG}: ${PROG}.c
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
 
 # data files
 #

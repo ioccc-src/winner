@@ -28,9 +28,11 @@ bugs.md](/bugs.md#1991-buzzard).
 
 ## Alternate code:
 
-This version changes the keys `f` for forward, `l` for left and `r` for right to
-`k` for forward, `l` for right and `h` for left, which is more natural for those
-who use vi(m). Also one can just hit `q` followed by enter to quit the maze.
+This version changes the keys `f` for forward, `l` for left and `r` for right by
+default to `k` for forward, `l` for right and `h` for left, which is more
+natural for those who use vi(m). Also one can just hit `q` followed by enter to
+quit the maze. It is problematic to reconfigure the keys except by modifying the
+code directly so the keys are not made a `-D` at the compiler.
 
 
 ### Alternate build:
