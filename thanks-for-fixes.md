@@ -2517,7 +2517,14 @@ sound devices in macOS).
 ## [2001/ctk](2001/ctk/ctk.c) ([README.md](2001/ctk/README.md]))
 
 The ANSI escape codes were no longer valid but Yusuke provided a patch to fix
-the ANSI escape codes. Cody tested this for macOS and it works fine.
+the ANSI escape codes. This works with both linux and macOS.
+
+Cody fixed this so that it should always restore terminal sanity (echo enabled
+etc.) after exiting even if you don't press 'q', if you crash or if you kill the
+program prematurely.
+
+Cody also added the [alt code](2001/ctk/README.md#alternate-code) that adds
+vi(m) movement keys.
 
 
 ## [2001/dgbeards](2001/dgbeards/dgbeards.c) ([README.md](2001/dgbeards/README.md]))

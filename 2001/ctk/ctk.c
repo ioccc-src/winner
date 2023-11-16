@@ -22,4 +22,4 @@ SIG_IGN);printf("\e[0q\ecScore: %u\n",s);system("stty echo -cbreak");}int main
 int)0x756E696C||C==(int)0x6C696E75);srand(getpid());system("stty -echo cbreak"
 );h(0);u(14);for(;;)switch(getchar()){case 113:return 0;case 91:case 98:c(44,k
 =-1);case 32:case 110:c(46,k=0);case 93:case 109:c(47,k=1);c(49,h(0));c(50,h(1
-));c(51,h(2));c(52,h(3));}}
+));c(51,h(2));c(52,h(3));}e();}
