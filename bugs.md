@@ -302,7 +302,7 @@ NOTE: this does NOT apply to entries under the INABIAF status (though they're
 not mutually exclusive in some cases).
 
 
-## STATUS: uses gets() - change to fgets() if possible (in some cases getline() works)
+## STATUS: uses gets() - change to fgets() if possible
 
 NOTE: we're still locating entries and working on fixes with this status so we're not yet
 ready for help. We will remove this when we are.
@@ -347,6 +347,9 @@ _NOTE_: this status is _NOT necessarily mutually exclusive_ with the _INABIAF_
 (it's not a bug it's a feature) status. The reason for this is due to warnings
 during compiling, linking and/or runtime, sometimes causing confusing output (as
 noted above).
+
+Sometimes `getline(3)` will work but note that this function also stores the
+newline just like `fgets(3)`.
 
 
 ## STATUS: missing file(s) - please provide them
@@ -1427,8 +1430,6 @@ to /dev/null (`2>/dev/null`).
 ## 1996 jonth
 
 ### STATUS: INABIAF - please **DO NOT** fix
-
-### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1996/jonth/jonth.c](1996/jonth/jonth.c)
 ### Information: [1996/jonth/README.md](1996/jonth/README.md)
 
@@ -1926,7 +1927,7 @@ Although it is independent of endianness both systems need the same character
 set. In other words both have to be ASCII or EBCDIC - not one of each.
 
 
-## 2001 ollinger
+## 2001 schweikh
 
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -1937,6 +1938,23 @@ The glob pattern must match the whole string. See the author's comments for
 details and a workaround.
 
 There's also no way to escape meta characters.
+
+
+## 2001 westley
+
+
+### STATUS: uses gets() - change to fgets() if possible
+### Source code: [2001/westley/westley.c](2001/westley/westley.c)
+### Information: [2001/westley/README.md](2001/westley/README.md)
+
+This function uses `gets(3)` but it would be ideal if it used `fgets(3)`. This
+one is rather complicated and will be looked at later but you are welcome to try
+and fix this if you wish.
+
+### STATUS: missing files - please provide them
+
+The author referred to a file `card.gif` but this file is missing. Do you have
+it? Please provide it!
 
 
 # 2002

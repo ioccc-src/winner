@@ -145,9 +145,9 @@ ${PROG}: ${PROG}.c
 
 
 ${PROG}.ten: ${PROG}.ten.c
-	@echo "WARNING: ${PROG}.ten.c must be compiled as 32-bit to use with the entry itself;"
-	@echo "this is because the program works on 32-bit binaries. If you cannot use -m32 this"
-	@echo "will NOT work!"
+	@echo "WARNING: ${PROG}.ten.c must be compiled as a 32-bit ELF binary to use with"
+	@echo "the entry itself; this is because the program works on 32-bit ELF binaries."
+	@echo "If you cannot use -m32 this will NOT work!"
 	@echo
 	@echo "If you want to use it where this is not possible e.g. with a Mac, say to"
 	@echo "use by itself, try:"
@@ -165,9 +165,9 @@ ${PROG}.ten.64: ${PROG}.ten.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 ${PROG}.bed: ${PROG}.bed.c
-	@echo "WARNING: ${PROG}.bed.c must be compiled as 32-bit to use with the entry itself;"
-	@echo "this is because the program works on 32-bit binaries. If you cannot use -m32 this"
-	@echo "will NOT work!"
+	@echo "WARNING: ${PROG}.bed.c must be compiled as a 32-bit ELF binary to use with"
+	@echo "the entry itself; this is because the program works on 32-bit ELF binaries."
+	@echo "If you cannot use -m32 this will NOT work!"
 	@echo
 	@echo "If you want to use it where this is not possible e.g. with a Mac, say to"
 	@echo "use by itself, try:"

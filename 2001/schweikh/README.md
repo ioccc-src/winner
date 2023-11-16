@@ -41,9 +41,7 @@ That's not a bug, that's a feature.
 ### Try:
 
 ```sh
-./schweikh foo 'f??'; echo $?
-./schweikh 'best short program' '??st*o**p?*'; echo $?
-./schweikh bar 'f??'; echo $?
+./try.sh
 ```
 
 
@@ -64,7 +62,7 @@ the whole string, so you may want to use `*` at the beginning and end of the
 pattern if you are looking for something in the middle.
 
 You can use it for your shell scripting needs similar to a silent grep
-(and without stdout redirected to `/dev/null`):
+(and without `stdout` redirected to `/dev/null`):
 
 ```sh
 if prog "${VARIABLE}" '<glob>'; then
@@ -83,15 +81,15 @@ All obfuscation is obviously in the recursive `m()` function, an 86
 character glob pattern evaluator, returning nonzero for a match:
 
 * Just a single complex return expression.
-* Nested ternary operator `?:` to save on if/else verbosity.
-* Short circuiting `&&` and `||` to save even more on if/else verbosity.
+* Nested ternary operator `?:` to save on `if`/`else` verbosity.
+* Short circuiting `&&` and `||` to save even more on `if`/`else` verbosity.
 * Subtraction instead of an equality operator in `*t - 42`.
 * ASCII codes for `*` and `?`.
 * Careful use of blanks even though this year's rules have extended
   that resource limit.
 * The source is a complete preprocessed C program. Because it communicates
-  with the world out there by means of argv and the exit status, there
-  is no need for stdio bloat. An asm guru could surely squeeze this
+  with the world out there by means of `argv` and the exit status, there
+  is no need for `stdio.h` bloat. An asm guru could surely squeeze this
   program in less than a screenful.
 * `indent(1)` is probably not too helpful.
 
@@ -101,7 +99,7 @@ backtracking. I could tell you how it works but then I would have to
 inputs, it will be quite helpful and instructive. Handling of `?` is
 straightforward; for `*` start out with `*foo` and `foo*` against `foo`.
 How does it deal with sequences of adjacent `*`? How could this be
-improved? If all else fails, recode the `?:` operators with if/else and
+improved? If all else fails, recode the `?:` operators with `if`/`else` and
 try again. For extra credit implement character classes like `[a-z]`.
 
 

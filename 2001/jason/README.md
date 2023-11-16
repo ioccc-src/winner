@@ -12,13 +12,6 @@ make
 ```
 
 
-### Try:
-
-```sh
-echo "Do or do not. There is no try."
-```
-
-
 ## Judges' remarks:
 
 You are in a maze of twisty little passages, all alike.
@@ -32,6 +25,11 @@ expect that from something this small.
 
 Of particular interest:  Go ahead, run it through the preprocessor.  You
 *still* won't see the words that are used in the game.
+
+If you run it through a beautifier you might cause a crash as most of the
+whitespace is significant. Also, if you attempt to change one character
+identifiers to longer names expect problems. Even swapping the `Y` and `Z` can
+cause problems. Go ahead, try it! :-)
 
 
 ## Author's remarks:
@@ -54,7 +52,7 @@ out by typing "`get lamp`", then use the direction words "`left`",
 "`right`", "`forward`", and "`back`" to explore the caves.  Note that
 these words can refer to different passages depending on which way
 you're facing.  "`back`" always takes you back the way you came.
-Type "quit" to quit.
+Type "`quit`" to quit.
 
 The maze is randomly generated each time you play.  The algorithm
 ensures that you start at least 6 hops away from the exit.  All
@@ -81,7 +79,7 @@ Why I think this program is obfuscated:
 * Where are all the messages?  The game is downright chatty for
   only having two string literals (`"%d \n"` and `"Y\n : ! ,.?>"`).
 
-* There is exactly one loop in the program, a for loop, and it is
+* There is exactly one loop in the program, a `for` loop, and it is
   clearly the product of a deranged mind.  Running the
   preprocessor only makes it worse.
 
@@ -117,6 +115,9 @@ the game entertaining, see if you can find
 ```
 
 in the source code.)
+
+
+
 
 
 

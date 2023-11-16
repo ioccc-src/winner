@@ -2517,7 +2517,15 @@ sound devices in macOS).
 ## [2001/ctk](2001/ctk/ctk.c) ([README.md](2001/ctk/README.md]))
 
 The ANSI escape codes were no longer valid but Yusuke provided a patch to fix
-the ANSI escape codes. Cody tested this for macOS and it works fine.
+the ANSI escape codes. This works with both linux and macOS.
+
+Cody fixed this so that it should always restore terminal sanity (echo enabled
+etc.) after exiting even if you don't press 'q', if you crash or if you kill the
+program prematurely. This was done by adding an explicit call to `e()` at the
+end of `main()`.
+
+Cody also added the [alt code](2001/ctk/README.md#alternate-code) that adds
+vi(m) movement keys.
 
 
 ## [2001/dgbeards](2001/dgbeards/dgbeards.c) ([README.md](2001/dgbeards/README.md]))
@@ -2528,8 +2536,7 @@ that the idea of crashing on losing (see the README.md for details on why that
 might be) too good to get rid of so he kept that in.
 
 He also points out that there is a way to get the computer to automatically lose
-very quickly and he also points out that there is a flaw in the alternate
-version that the author did not note. Do you know what these are?
+very quickly. Do you know what it is?
 
 
 ## [2001/herrmann1](2001/herrmann1/herrmann1.c) ([README.md](2001/herrmann1/README.md]))
@@ -2586,6 +2593,8 @@ Cody fixed to not crash if not enough args, exiting 1 instead.
 Cody fixed this to not crash if not enough args as this was not documented by
 the author. The other problems are documented so were not fixed. See
 README.md for details.
+
+Cody also added the [try.sh](2001/schweikh/try.sh) script.
 
 
 ## [2001/westley](2001/westley/westley.c) ([README.md](2001/westley/README.md]))

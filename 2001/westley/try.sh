@@ -46,7 +46,7 @@ printf "1\n4\n5" | ./westley 2>/dev/null
 echo
 # SC2028 (info): echo may not expand escape sequences. Use printf.
 # shellcheck disable=SC2028
-echo "printf \"1\n\4\n5\" | ./westley 2>/dev/null"
+echo "printf \"1\n4\n5\" | ./westley 2>/dev/null"
 printf "1\n4\n5" | ./westley 2>/dev/null
 
 echo

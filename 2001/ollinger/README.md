@@ -5,30 +5,10 @@ make
 ```
 
 
-### Bugs and (Mis)features:
-
-The current status of this entry is:
-
-```
-STATUS: known bug - please help us fix
-```
-
-For more detailed information see [2001 ollinger in bugs.md](/bugs.md#2001-ollinger).
-
-
 ## To use:
 
 ```sh
 ./ollinger integer
-```
-
-This program will very likely crash or do something else without an arg.
-
-This is supposed to happen.  As is written in the
-[The Jargon File](http://catb.org/jargon/html/F/feature.html):
-
-```
-That's not a bug, that's a feature.
 ```
 
 
@@ -49,6 +29,7 @@ Do get lost in the programs line of thought!  :-)
 
 ## Author's remarks:
 
+
 ### What's this?
 
 What do you see? On the left, you will see an enumeration of all successive
@@ -58,12 +39,14 @@ primes. The big diagonals from right to left are used to erase composed numbers.
 When no diagonal crosses a number, then the left cell take value 1 and the
 number is prime.
 
-The parallel version of this algorithm works in real time n. This C
+The parallel version of this algorithm works in real time `n`. This C
 sequential version is slower as it works in `O(n*log n)`. But you have some
 nice picture instead... the cost is a constant number of operation for each
 character printed on the screen.
 
+
 ### Why did I write this ?
+
 
 Let's just quote the [FAQ](/faq.md):
 
@@ -107,6 +90,7 @@ Unbeaten for 12 years and counting...
 I think this is enough motivation for trying to submit a program which uses
 some complex state machine/table to generate small primes and print them.
 
+
 ### The way it works
 
 This program simply prints the space-time diagram of some particular
@@ -116,7 +100,7 @@ It is an optimization of an old automaton for recognizing primes designed
 by [Fischer](http://richardallenfischer.com) in 1965.
 
 The table of the automaton is encoded into the string `e` and consists of
-345 transitions of the kind ff(left,middle,right)`. This encoding into `e`
+345 transitions of the kind `ff(left,middle,right)`. This encoding into `e`
 is obfuscated to reduce its size, restrict it to characters 32 to 127 and
 guarantee a constant time.
 
