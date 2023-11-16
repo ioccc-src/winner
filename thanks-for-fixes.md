@@ -2587,6 +2587,8 @@ Cody fixed this to not crash if not enough args as this was not documented by
 the author. The other problems are documented so were not fixed. See
 README.md for details.
 
+Cody also added the [try.sh](2001/schweikh/try.sh) script.
+
 
 ## [2001/westley](2001/westley/westley.c) ([README.md](2001/westley/README.md]))
 
