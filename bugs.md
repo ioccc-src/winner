@@ -1940,6 +1940,23 @@ details and a workaround.
 There's also no way to escape meta characters.
 
 
+## 2001 westley
+
+
+### STATUS: uses gets() - change to fgets() if possible
+### Source code: [2001/westley/westley.c](2001/westley/westley.c)
+### Information: [2001/westley/README.md](2001/westley/README.md)
+
+This function uses `gets(3)` but it would be ideal if it used `fgets(3)`. This
+one is rather complicated and will be looked at later but you are welcome to try
+and fix this if you wish.
+
+### STATUS: missing files - please provide them
+
+The author referred to a file `card.gif` but this file is missing. Do you have
+it? Please provide it!
+
+
 # 2002
 
 There was no IOCCC in 2002.

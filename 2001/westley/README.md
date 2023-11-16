@@ -4,18 +4,36 @@
 make
 ```
 
+There are two additional programs based on the author's remarks and the original
+version, provided as alternate code as it might be less portable. See [sorted
+code](#sorted-code), [punch card code](#punch-card-code) and [alternate
+code](#alternate-code) below.
+
+
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: uses gets() - change to fgets() if possible
+STATUS: missing files - please provide them
+```
+
+For more detailed information see [2001 westley in bugs.md](/bugs.md#2001-westley).
+
+
+
 
 ## To use:
 
 ```sh
-./westley
+./westley 2>/dev/null
 # enter some input, terminate with EOF
 
-echo foo | ./westley
+echo foo | ./westley 2>/dev/null
 
-./westley < westley.c
+./westley < westley.c 2>/dev/null
 ```
-
 
 ### Try:
 
@@ -24,38 +42,47 @@ echo foo | ./westley
 ```
 
 
-## Alternate code:
+## Sorted code:
 
-An alternate version of this entry, [westley.alt.c](westley.alt.c), is provided.
-This alternate code might be less portable.
+The author stated that one can sort (ignoring leading blanks i.e. `sort -b`) the
+code by line and it will always sort the order of the input.
 
-To compile this alternate version:
+This is compiled by default; use `westley.sort` as you would `westley` above.
 
-```sh
-make alt
-```
 
-Use `westley.alt` as you would `westley` above.
-
-### Sorted code:
-
-The author stated that one can sort (with ignoring leading blanks i.e. `sort
--b`) the code by line and it will always sort the order of the input.
-
-Use `westley.sort` as you would `westley` above.
-
-### Punch card code:
+## Punch card code:
 
 The author also stated that if you just sort the code you'll get the with
 `sort`) version that just prints out the punch card. The
 [westley.punch.c](westley.punch.c) code is specifically so that Westley can punch
 everyone in the face! :-) This is also compiled by default.
 
-To use, try:
+
+### Punch card try:
 
 ```sh
 echo 'Brian Westley does it again!' | ./westley.punch 2>/dev/null
 ```
+
+
+## Alternate code:
+
+An alternate version of this entry, [westley.alt.c](westley.alt.c), is provided.
+This alternate code might be less portable.
+
+
+### Alternate build:
+
+
+```sh
+make alt
+```
+
+
+### Alternate use:
+
+Use `westley.alt` as you would `westley` above.
+
 
 
 ## Judges' remarks:
@@ -66,11 +93,11 @@ order of the lines.  Does it produce the exact same output?
 By changing the order of the source, figure out in how many different
 ways this program can transform input to output.
 
-This assortment obfuscated lines takes position-independent code
-to a new level!  :-)
+This assortment of obfuscated lines takes [position-independent
+code](https://en.wikipedia.org/wiki/Position-independent_code) to a new level! :-)
 
 We find it amazing that with just 28 lines of code (not counting comments and
-blank lines) there are `28!` or ``304,888,344,611,713,860,501,504,000,000``
+blank lines) there are `28!` or `304,888,344,611,713,860,501,504,000,000`
 versions of the program, all valid C!
 
 
@@ -116,7 +143,7 @@ main(){if (test(0,1)) printf("T"); else printf("F");}
 This program will print out `T` if the `#define` statement
 falls between the declaration of `test()` and its use in
 `main()`, otherwise it will print out `F`.  Furthermore,
-you can use the same call to test() repeatedly in
+you can use the same call to `test()` repeatedly in
 different lines to return different values:
 
 ```c
@@ -184,7 +211,7 @@ produce the version that just reverses the line order, and
 the routines in the code are in a sensible order.
 
 This program should work on EBCDIC computers.  It assumes
-that the `time_t` ptr param to `time()` will work with an `int`
+that the `time_t` ptr param to `time(3)` will work with an `int`
 ptr, and that "passing through" a `char[][]` array as a simple
 `char *` is OK.  Your compiler MUST understand trigraphs, or it
 will miss the trigraph backslash before the double quote in
@@ -201,9 +228,9 @@ comment), there are technically `28!` different programs, or
 all legal C.
 
 ```
-\* except in Florida voting machines
+* except in Florida voting machines
 
-\*\* all cards must be face down, nine-edge first, of course.
+** all cards must be face down, nine-edge first, of course.
 ```
 
 

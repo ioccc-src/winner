@@ -145,10 +145,6 @@ westley2: westley2.c
 westley3: westley3.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
-${PROG}.sort: ${PROG}.sort.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
-
-
 # alternative executable
 #
 alt: data ${ALT_TARGET}
@@ -156,6 +152,20 @@ alt: data ${ALT_TARGET}
 
 ${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+${PROG}.sort.c: ${PROG}
+	${SORT} -b ${PROG}.c > $@
+
+${PROG}.sort: ${PROG}.sort.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+${PROG}.punch.c: ${PROG}
+	${SORT} ${PROG}.c > $@
+
+${PROG}.punch: ${PROG}.punch.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+
 
 # data files
 #
