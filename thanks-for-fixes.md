@@ -146,7 +146,7 @@ they were not fixed as the problems were documented by the author or us.
 
 Of course it can be argued that by fixing these things it makes it more user
 friendly for modern enjoyment but even so it's very often the wrong way to go
-about it. If the author does not mention it t hen it can be considered a bug
+about it. If the author does not mention it then it can be considered a bug
 that can be fixed.
 
 See the [bugs.md](/bugs.md) for more information regarding this situation and
