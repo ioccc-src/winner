@@ -9,13 +9,18 @@ make
 
 ```sh
 ./westley
+# enter some input, terminate with EOF
+
+echo foo | ./westley
+
+./westley < westley.c
 ```
 
 
 ### Try:
 
 ```sh
-./westley.sh
+./try.sh
 ```
 
 
@@ -43,7 +48,7 @@ Use `westley.sort` as you would `westley` above.
 
 The author also stated that if you just sort the code you'll get the with
 `sort`) version that just prints out the punch card. The
-[westley.punch.c](westley.punch.c) code specifically so that Westley can punch
+[westley.punch.c](westley.punch.c) code is specifically so that Westley can punch
 everyone in the face! :-) This is also compiled by default.
 
 To use, try:
