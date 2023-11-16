@@ -121,7 +121,7 @@ ALT_TARGET= ${PROG}.alt
 # build the entry
 #################
 #
-all: data ${TARGET} whereami whereami.alt
+all: data ${TARGET}
 	@${TRUE}
 
 .PHONY: all alt data everything diff_orig_prog diff_prog_orig \
@@ -133,21 +133,15 @@ ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 	@echo "NOTE: your terminal must be at least 80 columns wide for this to work right"
 
-whereami: whereami.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS} -lcurses
-
 # alternative executable
 #
-alt: data ${ALT_TARGET} whereami.alt
+alt: data ${ALT_TARGET}
 	@${TRUE}
 
 ${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 	@echo "NOTE: your terminal must be at least 80 columns wide for this to work right"
 
-
-whereami.alt: whereami.alt.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS} -lcurses
 
 # data files
 #
