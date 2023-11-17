@@ -2503,6 +2503,8 @@ He also fixed it to check the number of args.
 
 ## [2001/coupard](2001/coupard/coupard.c) ([README.md](2001/coupard/README.md]))
 
+Cody added a value to `return` in `main()` to make it more portable.
+
 Cody fixed this to compile with clang in linux. The problem was C99 does not
 support implicit int:
 
@@ -2516,11 +2518,11 @@ void e(n,h){
 
 ```
 
-The easiest fix is to just disable the warning which is what was done.
-Originally the code was changed to use `int` but to make it more like the
-original this was undone.
+This was not really worth a thanks per se but it was originally done by adding
+`int`. The better solution is to disable the warning which is what was done
+later on to make it more like the original.
 
-Yusuke for providing a proper command line for macOS (to do with sound; see his
+Yusuke provided a proper command line for macOS (to do with sound; see his
 [/2013/endoh3/README.md](2013/endoh3/README.md) entry where he also refers to
 sound devices in macOS).
 
