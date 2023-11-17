@@ -2380,8 +2380,7 @@ binary. But again see [bugs.md](/bugs.md) here.
 These also had to be done:
 
 - when `open()`ing the file the file descriptor had to be saved so it could be
-closed prior to executing the program. This is the `f` variable which is of type
-`l`, a `#define` for `int *`.
+closed prior to executing the program. This is the `f` variable which an `int`.
 - `munmap()` also had to be called prior to executing the program. This involved
 a new `off_t N` which was added in the `mmap()` call which was then used in
 the `munmap()` call.

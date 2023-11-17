@@ -31,7 +31,7 @@ l an(d,                         sl){ c \
 r=V(014                         )&63,an##i(d,sl); }
 #define add(Ev,Gv) Ev(){ i=((a-=16)+C(r,4))/4,(\
 Gv?Ev()    :0)   ; } Ev##n(){ a=C(r,5),Ev(); }
-l f;
+int f;
 Tr(L,r, C(r,3)&&C(r,3)<=d?(l)(((int)B)+d+C(r,4)-C(r,3)):(((int)B)^d)>>24&&--\
 r,(l)d) Tr(Run,a,(ss=strcmp((F*)B+C((V(12)>>16),4)+C(--r,0),A(.strtab))?ss:(F\
 *)B+C(r ,4),C(r,1)-2),0) add(Sca ,V(-~i)-P+2) add(ru,strcmp(ss+V(i),A(main)))
