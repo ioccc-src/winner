@@ -2579,9 +2579,8 @@ compile with clang by changing the args of main to be `int` and `char **`,
 respectively, and changing specific references to the `argv` arg, casting to
 `long` (was `int` but the 64-bit fix requires `long`) which was its old type.
 
-The original file, used for demonstration purposes, as well as if you want to
-see if your system works with the original code, is the alternate version. See
-the README.md for details.
+Cody also added the [try.sh](2001/herrmann2/try.sh) script which might be more
+useful than any other place as the command to try is quite long with C code.
 
 For some reason the original code was missing (presumingly because it had been
 added to `.gitignore` by accident) but Cody restored it from the archive.

@@ -15,13 +15,8 @@ make
 ### Try:
 
 ```sh
-./herrmann2 < herrmann2.ioccc
-./herrmann2 < herrmann2.cup
+./try.sh
 ```
-
-Try running each command a few times and notice the different output. Can you
-figure out why each is different?
-
 
 If you use vi(m) you can see a pattern in [herrmann2.cup](herrmann2.cup) and
 [herrmann2.ioccc][(herrmann2.ioccc]) by say:
@@ -51,34 +46,6 @@ and in [herrmann2.ioccc](herrmann2.ioccc) try:
 /n
 ```
 
-### Also try:
-
-```sh
-./herrmann2 \
-'char*d,A[9876];e;b;*ad,a,c;  tw,ndr,T; wri; ;*h; _,ar  ;on;'\
-' ;l ;i(V)man,n    {-!har  ;   =Aadre(0,&e,o||n -- +,o4,=9,l=b=8,'\
-'!( te-*Aim)|(0~l),srand  (l),,!A,d=,b))&&+((A + te-A(&(*)=+ +95>'\
-'e?(*& c_*r=5,r+e-r +_:2-19<-+?|(d==d),!n ?*d| *( (char**)+V+), ('\
-'  +0,*d-7 ) -r+8)c:7:+++7+! r: and%9- 85! ()-(r+o):(+w,_+ A*(=er'\
-'i+(o)+b)),!write,(=_((-b+*h)(1,A+b,!!((((-+, a >T^l,( o-95=+))w?'\
-'++  &&r:b<<2+a +w) ((!main(n*n,V) , +-) ),l)),w= +T-->o +o+;{ &!'\
-'a;}return _+= ' < herrmann2.ioccc > herrmann2.orig.c && \
-diff herrmann2.alt.c herrmann2.orig.c && echo "output matches with original code"
-```
-
-
-## Alternate code:
-
-If you wish to use the original version that does not work for all platforms
-(and will not even compile with some versions of clang), you can make use of the
-[herrmann2.alt.c](herrmann2.alt.c) by running:
-
-```sh
-make alt
-```
-
-Use `herrmann2.alt` as you would `herrmann2` above.
-
 
 ## Judges' remarks:
 
@@ -90,8 +57,8 @@ if you concentrate on your focus you will find illumination!
 
 You probably know those "magic eye" 3D pictures - pictures looking
 like random noise, but when you look "through" the paper, you
-either get a three dimensional picture or a head-ache. With this
-program, you can create your own 3D pictures in ascii art. And
+either get a three dimensional picture or a headache. With this
+program, you can create your own 3D pictures in ASCII art. And
 yes, the program itself is such a 3D picture.
 
 
@@ -176,6 +143,7 @@ program length.
 big as possible, but small enough to be viewed without problems
 on normal-sized terminals.
 
+
 ### Why this program should win
 
 - The layout is of a completely new kind. And it describes what
@@ -203,12 +171,12 @@ stuff doing mostly nothing.)
 obfuscated: It's (almost) only one big expression, with deep
 nesting of `()` and `?:`, and full of unnecessary operations which
 do not really help making it readable. And it contains a lot of
-"magic numbers". (My favourite is the "7" in line 15 (each
+"magic numbers". (My favourite is the `7` in line 15 (each
 one). Which is the other digit I could have put there instead,
 and what other changes to the program would have been necessary?
 Without violating the constraints of course.)
 
-- The fact that the main loop of the program calls `main`
+- The fact that the main loop of the program calls `main()`
 recursively is nothing new. New however is that this program
 only needs a logarithmic recursion depth! (Find out how this
 works.)
@@ -225,7 +193,7 @@ and let the result inspire you. ;-)
 
 - I fear that gcc is the only compiler for which this program
 works. Due to the severe restrictions, I was forced to use
-declarations of int variables, functions and parameters without
+declarations of `int` variables, functions and parameters without
 specifying their type. The biggest problem was to put `int
 main(int c, char ** v){` into the program. After some time, I
 became convinced that this is impossible. Finally, at least I
