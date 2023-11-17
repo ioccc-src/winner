@@ -2493,6 +2493,8 @@ letter word that would match the format and because it's pain that clang forces
 this. :-) This fix makes a point of the author's notes on portability no longer
 valid, btw.
 
+Cody also added the [try.sh](2001/cheong/try.sh) script.
+
 He also fixed it to check the number of args.
 
 
