@@ -24,7 +24,7 @@ high (200x100) with a tiny font.
 
 ## Judges' remarks:
 
-Do get lost in the programs line of thought!  :-)
+Do get lost in the program's line of thought!  :-)
 
 
 ## Author's remarks:
