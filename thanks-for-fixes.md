@@ -375,7 +375,7 @@ then compare it to [sicherman.c](1985/sicherman/sicherman.c) for some good old
 C-fashioned fun (alternatively, see below explanation)!
 
 Later on Cody improved the fix so that it looks much more like the [original
-entry](1985/sicherman/sicherman.c). He did this one more time and it's about as
+entry](1985/sicherman/sicherman.c). He did this two more times and it's about as
 close to the original as one can get without causing a compilation error.
 
 To get this to all work the following changes were made. If you really want to
@@ -387,27 +387,37 @@ make diff_orig_prog
 
 and then read the following:
 
-- The `C` macro was changed from `/b/` (which is `/*/`) to `/**/`. It could not
-be changed to use the token paste C preprocessor operator for reasons that will
-be explained below. No other macro had to be changed.
+- The `C` macro, `#define C /b/`  was changed to `c`, so that in the function
+`subr()` we could assign to `C` (which there is a `char *`).
 - The code:
 
+
 	    C="Lint says "argument Manual isn't used."  What's that
-		mean?"; while (write((read(C_C('"'-'/*"'/*"*/))?__:__-_+
+	    mean?"; while (write((read(C_C('"'-'/*"'/*"*/))?__:__-_+
+	    '\b'b'\b'|((_-52)%('\b'b'\b'+C_C_('\t'b'\n'))+1),1),&_,1));
 
     had to be changed to:
 
-	    "Lint says argument Manual isn't used."  "What's that\
+	    C="Lint says \"argument Manual isn't used.\" What's that\
 	    mean?"; while (write((read(('"'-'/*"'/*"*/))?__:__-_+
+	    '\b'b'\b'|((_-52)%('\b'b'\b'+C_C_('\t'b'\n'))+1),1),&_,1));
 
-    because C cannot be assigned to (see above) and because the string is broken
-    up where it has symbols that are not strings.
-- In that function, `subr()`, although `C` could stay in the arg list, since it
-translates to `/**/` it cannot have a type. Nothing else had to change in the
-function except that the variables previously only in `main()`, `_` and `__`,
-had to be at the top of the file (in addition to the ones in `main()`).
-- The args to `main()` had to be commented out along with the code `up.) (In the
-C Manual)`.
+    because of the missing `"` at the end of the line and the macro `C_C`
+    (defined as `_|_`)  had to be expanded. Can you figure out why the macro had
+    to be expanded and yet it still works?
+
+    The `\"` had to be done to keep the `"`s there though the string could be
+    broken up into multiple `"` pairs instead. Notice how the last line of code
+    in that function is the same as before!
+
+    Notice how in that function `subr()`, `C` could still stay the same in the
+    arg list (of `subr()`) since it is still a `char *C`! Since the `_` and `__`
+    were added at file scope (in addition to where it already was in `main()`),
+    the references to those variables could stay in the function.
+
+- The code in main `up.) (In the C Manual)` had to be commented out though
+another option would have been to close the comment earlier, opened a new one,
+and added `int C;` instead.
 - The code in `main()` is the significant change as the macros had to be
 replaced for actual code so that instead of having the while loop condition as:
 
@@ -416,15 +426,17 @@ replaced for actual code so that instead of having the while loop condition as:
 
     we have it as:
 
-	    while (read(0,&__,1) & write((_=(_=~' '&__,/*/)),
-	    _C_,1)) _=/*/-('\b'b'\b'>=_|_>'\t'b'\n'))?__:__-_+
-	    '\b'b'\b'|((_-52)%('\b'b'\b'+~' '&'\t'b'\n')+1),1),
-	    &_,1))/*_=C-V+subr(&V)*/;
+	    while (read(0,&__,1) & write((_=(_=C_C_(__),-
+	    ('\b'b'\b'>=C_C>'\t'b'\n'))?__:__-_+'\b'b'\b'|
+	    ((_-52)%('\b'b'\b'+~' '&'\t'b'\n')+1),1),&_,1))_=0;
 
-- Finally, the function `subr()` cannot be called in the body of the `while()`
-loop as calling it will result in incorrect output, once you even get it to
-compile. See above where the loop has a body but the modification only has it
-commented out.
+    Note how numerous of the macros can still be used but some cannot.
+
+- Finally, the function `subr()` cannot, as the above shows, be called in the
+body of the `while()` loop as calling it will result in incorrect output, once
+you even get it to compile (involving a cast, for instance, amongst other ways).
+Note though that we can still assign to the `_` but we can't assign by calling
+the function.
 
 
 ## [1986/hague](1986/hague/hague.c) ([README.md](1986/hague/README.md]))
