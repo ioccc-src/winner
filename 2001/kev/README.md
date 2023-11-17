@@ -4,6 +4,9 @@
 make
 ```
 
+There is another version which lets you use the arrow keys rather than the more
+awkward `,` and `.` keys. See [alternate code](#alternate-code) below.
+
 
 ### Bugs and (Mis)features:
 
@@ -26,37 +29,90 @@ For more detailed information see [2001 kev in bugs.md](/bugs.md#2001-kev).
 
 NOTE: each player's paddle is at the bottom and the opponent at the top.
 
-If you need to change the speed you can reconfigure it like (say
-for over a network and not the same host):
-
-```sh
-make clobber SPEED=50 all # default value which is very fast
-```
-
-There is an alternate version which lets you use the arrow keys to control your
-paddle. See below Alternate code.
-
 
 ### Try:
 
 ```sh
-./kev\
-./kev localhost
+./kev		    # in one terminal
+
+./kev localhost	    # in another terminal on the same host
 ```
+
+If you need to change the speed you can reconfigure it like (say
+for over a network and not the same host):
+
+```sh
+make clobber CDEFINE="-DSPEED=50" all # original default value which is very fast
+```
+
+If you wish to change the port you can do so like:
+
+```sh
+make clobber CDEFINE="-DPORT=3773" all
+```
+
+Of course if you want a port < 1024 you'll need to be root so don't do that.
+
+And if you know what you're doing you can redefine the call to the `socket(2)`
+syscall with the `l_` macro. Of course you can do more than one at the same
+time. For instance to change the speed and port:
+
+```sh
+make clobber CDEFINE="-DSPEED=512 -DPORT=3773" all
+```
+
+If you have `xterm` try on one system:
+
+```sh
+xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev &
+```
+
+and then the other, the client system:
+
+```sh
+xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev localhost&
+```
+
+This might look nicer than just the terminal itself.
 
 
 ## Alternate code:
 
-To use:
+This version allows you to use arrow keys on the keyboard rather than the more
+awkward `,` and `.` keys to move your paddle.
+
+
+### Alternate build:
 
 ```sh
 make alt
 ```
 
+You can reconfigure the macros described above in the same way.
+
+
+### Alternate use:
+
 Use `kev.alt` as you would `kev`.
+
 
 What happens if you use both, one in one terminal and the other in another
 terminal?
+
+
+### Alternate try:
+
+If you have `xterm` try on one system:
+
+```sh
+xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev.alt &
+```
+
+and then the other, the client system:
+
+```sh
+xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev.alt localhost&
+```
 
 
 ## Judges' remarks:
@@ -72,13 +128,14 @@ box.
 
 ## Author's remarks:
 
+
 **NETWORK PONG!**
 
 ### REQUIREMENTS
 
 * TCP sockets
 * curses
-* `usleep()`
+* `usleep(3)`
 
 ### DESCRIPTION
 
@@ -88,6 +145,7 @@ communicate over the net, and `ncurses` for display.  It supports variable
 terminal sizes (though both players must have the same terminal size) and game
 speeds.  Each player has a paddle to hit the ball, and you get points for
 getting the ball past your opponent's paddle.  It's pretty fun!  :)
+
 
 ### RUNNING
 
@@ -105,8 +163,8 @@ the name of the machine running the server, e.g.
 ```
 
 Make sure that the terminals on both ends are the same size.  Also, the TCP port
-number (5455) specified in the [Makefile](Makefile) mustn't be blocked by a
-firewall.
+number (by default 5455) specified in the [Makefile](Makefile) mustn't be
+blocked by a firewall.
 
 Here's a good quick example to see it in action on your own
 machine, assuming you have `Xwindows`:
@@ -115,6 +173,7 @@ machine, assuming you have `Xwindows`:
 xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev &
 xterm -geometry 80x40 -fg green -bg black -fn 9x15bold -e ./kev localhost&
 ```
+
 
 ### PLAYING
 
@@ -130,9 +189,9 @@ missed the ball.
 
 You can control the speed of the ball by the motion of your paddle
 when the ball hits it.  If your paddle is still, then the ball
-just bounces normally off it.  If your paddle is moving in the
+just bounces normally off it. If your paddle is moving in the
 same direction as the ball, then the ball's speed in that
-direction will increase.  If your paddle is moving in the opposite
+direction will increase. If your paddle is moving in the opposite
 direction to the ball, then the ball's speed in that direction
 will decrease (or if the ball is going slowly enough, it'll turn
 around).
@@ -145,12 +204,13 @@ might need to be root anyway), in `Xwindows` try `xset r rate 250
 can reset it later).
 
 Look below in the Building section for info on how to speed up or
-slow down the game (useful if your increase or decrease the
+slow down the game (useful if you increase or decrease the
 terminal size).
+
 
 ### BUILDING
 
-Just run `make`to use the Makefile as above.  The `SPEED` variable in the
+Just run `make` to use the Makefile as above.  The `SPEED` variable in the
 Makefile controls the speed of the game (defaults to `50`).  This speed is the
 delay between frames in milliseconds.  Thus a value of 0 will make the game go
 as fast as your network can handle, and values less than 50 are useful for
@@ -165,7 +225,8 @@ dial-up.
 The TCP port to use for network communications is specified by the
 `PORT` variable in the Makefile.  If the default of `5455` is
 blocked for whatever reason, you can change it to something else.
-Of course if you use a `port < 1024`, you'll need to be root.
+Of course if you use a port < 1024, you'll need to be root.
+
 
 ### OBFUSCATION
 
@@ -183,6 +244,7 @@ columns wide, which is 1:10.)
 Finally, the number of "non-whitespace characters" (as defined by
 the rules) in the file is exactly 2048, which I think is rather
 unexpectedly cool.  :)
+
 
 ### BUGS
 

@@ -2588,11 +2588,18 @@ added to `.gitignore` by accident) but Cody restored it from the archive.
 
 ## [2001/kev](2001/kev/kev.c) ([README.md](2001/kev/README.md]))
 
-Cody slowed down the ball just a tad as it went too fast for the speed at which
-the paddles move even when holding down the movement keys.
+Cody slowed down the ball just a tad (it was already a `-D` macro that was used
+in the code) as it went too fast for the speed at which the paddles move even
+when holding down the movement keys (but see below).
 
-Cody also provided an alternate version which lets you use the arrow keys on
-your keyboard instead of the more awkward '`,`' and '`.`'.
+Cody also provided an [alternate version](2001/kev/kev.alt.c) which lets you use
+the arrow keys on your keyboard instead of the more awkward '`,`' and '`.`'.
+
+He updated both versions to have `#ifndef..#endif` pairs for the macros so one
+can more easily configure different settings without having to specify all of
+them. The speed, `SPEED`, will be set to 50 if it's not defined at the compiler
+line as 50 is what it used to be set to. This way it's more to the original but
+without having to sacrifice playability by running `make`.
 
 
 ## [2001/ollinger](2001/ollinger/ollinger.c) ([README.md](2001/ollinger/README.md))
