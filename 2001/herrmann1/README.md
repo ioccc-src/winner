@@ -20,15 +20,12 @@ For more detailed information see [2001 herrmann1 in bugs.md](/bugs.md#2001-herr
 ## To use:
 
 ```sh
-    ./herrmann1.sh 'prg=file'
+./herrmann1.sh 'prg=file'
 ```
 
 NOTE: this entry seems to rely on older versions of gcc for the compilation
 stage and as such if you wish to see that part like it was designed you will
 need an older compiler perhaps gcc 2.95.
-
-NOTE: some files are missing and are not found in the archive either. See
-[bugs.md](/bugs.md) for more details.
 
 
 ### Try:
@@ -56,7 +53,7 @@ on.
 ## Author's remarks:
 
 Many cool things have been done with the preprocessor,
-e.g. calculation of prime numbers or the tower of Hanoi. However,
+e.g. calculation of prime numbers or the Tower of Hanoi. However,
 up to now, no one proved that the preprocessor is Turing complete,
 and I wondered why. Well, the answer is simply that the
 preprocessor is _not_ Turing complete, at least not if the program
@@ -86,7 +83,9 @@ example that you can solve NP hard problems in polynomial time!
 Turing machine running over the tape and doing its work in your
 terminal!
 
+
 ### How to use it
+
 
 #### For the impatient
 
@@ -176,12 +175,12 @@ Some explanations:
 - The tape alphabet is always O and I.
 - The states can be anything starting with "st". "start" and
 "stop" are the start and stop states, respectively.
-- to define a state, use two lines: one for each letter on the
+- To define a state, use two lines: one for each letter on the
 tape. You may omit one of the lines if the Turing machine will
 never enter the state reading that letter. (In the example, the
-line defining st2_I has been left out.)
+line defining `st2_I` has been left out.)
 - The order of the lines is irrelevant.
-- You may use c-style comments. (Would you have guessed it?)
+- You may use C-style comments. (Would you have guessed it?)
 
 Now, the program can be used with
 
@@ -191,8 +190,8 @@ Now, the program can be used with
 
 But what happens if no tape is provided? Up to now, the Turing
 machine would start on an empty tape (that is, a tape filled with
-O's). For many programs, this doesn't make much sense (as is
-the case for "plus1.turing"). So you might want to provide a
+`O`s). For many programs, this doesn't make much sense (as is
+the case for `plus1.turing`). So you might want to provide a
 default tape by adding a line like
 
 ```c
@@ -200,6 +199,7 @@ default tape by adding a line like
 ```
 
 to your program.
+
 
 ### Debugging
 
@@ -230,12 +230,13 @@ Tape:
 ```
 
 and the return code will be 1. As you can see, the Turing machine
-moved over the O's, but when it arrived at the `I` (still in state
+moved over the `O`s, but when it arrived at the `I` (still in state
 start), the error occurred.
 
 Note that other kinds of errors can cause compilation to fail.
 If this happens, the build script will write the error message of
 gcc into a file called `error` and then exit.
+
 
 ### What the build script does
 
@@ -264,7 +265,7 @@ with a `-D` before. I had a slight technical problem doing this
 (especially with the spaces that can appear within the tape
 argument). That made the build script a bit longer.
 
-- It would be enough to pass the defines in the first
+- It would be enough to pass the `#define`s in the first
 preprocessing. The program then "remembers" them. However, it
 doesn't matter if they are passed in all pre-processes. (This
 doesn't sound very impressive, but it has required some extra
@@ -279,6 +280,7 @@ the error message. (I can't let gcc output all its messages
 directly, because the warnings would clobber the animation. I
 could have made the compile script output the error file in case
 of an error, but I didn't want to make it yet longer.)
+
 
 ### Some technical details / obfuscations
 
@@ -334,6 +336,7 @@ to use many variables more than once.
 "modern art of programming" - a mixture of program-like
 indenting and modern art. There are even some comments...
 
+
 ### Compatibility
 
 - It works with many versions of gcc. I tested it with versions
@@ -349,12 +352,12 @@ inside comments (Well, _I_ like some well-placed `/*/*/`.) as
 well as some suggestions where to place some more parentheses
 (as if I didn't know the operator precedence).
 
-- Different versions of cc all produced only rubbish. Apparently,
+- Different versions of `cc` all produced only rubbish. Apparently,
 the preprocessors didn't really work. (I don't feel guilty
 there, either. Even with very simple programs, they produced
 mysterious output.)
 
-- For Mac-Users: It works with the C compiler of Codewarrior (an
+- For Mac-Users: It works with the C compiler of CodeWarrior (an
 old version). This compiler even leaves out all that unnecessary
 white space, so that no clean-up is needed. (It would be useful
 to write a kind of script which does the equivalent to the build

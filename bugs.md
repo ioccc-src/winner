@@ -1887,11 +1887,6 @@ This program deliberately crashes if it loses (which is what it aims to do).
 The author referred to the file `herrmann1.turing` but it does not exist not even
 in the archive. Do you have a copy? Please provide it!
 
-### STATUS: missing files - please provide them
-
-The author also referred to the file `times2.turing` but this is also missing in
-the archive. Do you have a copy? Please provide it!
-
 
 ### STATUS: known bug - please help us fix
 

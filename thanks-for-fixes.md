@@ -2556,6 +2556,9 @@ itself by itself which just showed the usage string and exited. The [script
 herrmann1.sh](2001/herrmann1/herrmann1.sh) is used to compile the program but
 it's also how you invoke the program.
 
+Cody provided the file [plus1.turing](2001/herrmann1/plus1.turing) based on the
+author's remarks.
+
 He also fixed the [script herrmann1.sh](2001/herrmann1/herrmann1.sh) for
 shellcheck. In particular there were quite a few:
 
