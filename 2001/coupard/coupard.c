@@ -39,4 +39,4 @@ int main(){
  for(;i<8476;j[p]=k>=0?j<*o?k-2:(p[j+1]=k<<4):0,j+=k>=0?1+(j>=*o):0,
  l=-k*(k<0),i++);e(21,4);x(hour)e(22,1);x(min)e(23,1);e(25,0);x(sec)e(24,0);
 
- return;}
+ return 0;}

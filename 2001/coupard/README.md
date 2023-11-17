@@ -14,15 +14,16 @@ make
 
 ### Try:
 
+If you have access to `/dev/audio` or `/dev/sound/dsp`:
+
 ```sh
 ./coupard > /dev/audio
 ./coupard > /dev/sound/dsp
 ```
 
-If you're using macOS then you won't have these devices. If however you install
-[sox](https://en.wikipedia.org/wiki/SoX) from
-[MacPorts](https://www.macports.org) or [Homebrew](https://brew.sh) you can do
-something like:
+If you do not, first install [sox](https://en.wikipedia.org/wiki/SoX). If you
+use macOS you might install it from [MacPorts](https://www.macports.org) or
+[Homebrew](https://brew.sh). Then you can try:
 
 ```sh
 ./coupard | sox -q -traw -r8000 -b8 -e unsigned-integer - -tcoreaudio
@@ -68,33 +69,36 @@ To listen to what the program says directly, invoke
 
 The program then speaks out something like
 
-  "The time is HH hours MM minutes SS seconds"
+> The time is HH hours MM minutes SS seconds
 
 in military time (24 hours). Of course, you need to have permissions
 to write to `/dev/audio`, have your sound card enabled, the volume up,
 the speakers connected ... :-)
 
 If you want to convert the audio output of the program into another audio
-format, you can pipe it to [sox](https://en.wikipedia.org/wiki/SoX) for example
-(`sox` is the Swiss army knife of Unix audio tools): the command:
+format, you can pipe it to [SoX](https://en.wikipedia.org/wiki/SoX) for example
+(`sox` is the Swiss army knife of Unix audio tools). The command:
 
 ```sh
 ./coupard | sox -c1 -r8000 -tub - -c2 -r44100 -twav test.wav
 ```
 
 converts the output of the program into a 44.1KHz stereo .WAV
-file and saves it into "test.wav".
+file and saves it into `test.wav`.
 
 The output format of the program is 8KHz, unsigned 8-bit samples.
 
 NOTE: the program's return code is meaningless.
 
+
 ### Audio quality
 
 The quality of the sound produced by the program is cross between a
-yogurt-pot-and-string telephone and a bad gramophone, i.e. the S/N ratio is very
-low and the signal's top frequency is very low as well.  This is because the
-audio is stored internally at a sampling rate of 4KHz (the [Nyquist
+[yogurt-pot-and-string
+telephone](https://en.wikipedia.org/wiki/Tin_can_telephone) and a bad
+[gramophone](https://en.wikipedia.org/wiki/Phonograph), i.e. the S/N ratio is
+very low and the signal's top frequency is very low as well.  This is because
+the audio is stored internally at a sampling rate of 4KHz (the [Nyquist
 frequency](https://en.wikipedia.org/wiki/Nyquist_frequency) is only 2KHz) with
 only 4-bit samples (adding 24db of quantization noise to an already poor
 signal).
@@ -103,12 +107,13 @@ In short, you might have to listen twice to understand what the
 program is saying. 2048 bytes including the sound generation program
 doesn't leave much room for audio quality ;-)
 
+
 ### Speech generation
 
 Only 9 phonemes are used to generate the speech. Beside the limited
 number of words the program has to generate (66 words), the low sound
 quality is actually exploited to take liberties with certain
-consonants (for example, "s" and "f" sound very much the same at 4KHz,
+consonants (for example, `s` and `f` sound very much the same at 4KHz,
 so they can be merged into one phoneme). Because the
 [psychoacoustic](https://en.wikipedia.org/wiki/Psychoacoustics)
 context around those phonemes is just sufficient, the words can be
@@ -118,6 +123,7 @@ pronounced quite wrongly.
 Internally, a table is used to generate most of the words, and
 composite words such as "thirty-five" are made up by the C code
 externally.
+
 
 ### Data compression
 
@@ -138,6 +144,7 @@ pairs of printable ASCII characters: the raw data is compressed to
 characters, which leaves just enough room for the decompressor with a
 hard-coded Huffman tree, and the code that plays the phonemes in the
 right order.
+
 
 ### Note on compiler warnings and lint
 
