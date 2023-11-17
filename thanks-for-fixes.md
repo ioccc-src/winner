@@ -426,15 +426,16 @@ replaced for actual code so that instead of having the while loop condition as:
 
     we have it as:
 
-	while (read(0,&__,1) & write((_=(_=~' '&__,/*/)),
-	_C_,1)) _=/*/-('\b'b'\b'>=_|_>'\t'b'\n'))?__:__-_+
-	'\b'b'\b'|((_-52)%('\b'b'\b'+~' '&'\t'b'\n')+1),1),
-	&_,1))_=0/*C-*V+subr(&V)*/;
+	    while (read(0,&__,1) & write((_=(_=C_C_(__),-
+	    ('\b'b'\b'>=C_C>'\t'b'\n'))?__:__-_+'\b'b'\b'|
+	    ((_-52)%('\b'b'\b'+~' '&'\t'b'\n')+1),1),&_,1))_=0;
+
+    Note how numerous of the macros can still be used but some cannot.
 
 - Finally, the function `subr()` cannot, as the above shows, be called in the
 body of the `while()` loop as calling it will result in incorrect output, once
 you even get it to compile (involving a cast, for instance, amongst other ways).
-Note though that we can still assign to the `\_` but we can't assign by calling
+Note though that we can still assign to the `_` but we can't assign by calling
 the function.
 
 
