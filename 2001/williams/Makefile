@@ -68,7 +68,7 @@ CINCLUDE= -I ${X11_INCDIR} -I ${X11_INCDIR}/X11
 
 # Optimization
 #
-OPT= -O3
+OPT= -ggdb3
 
 # Default flags for ANSI C compilation
 #
