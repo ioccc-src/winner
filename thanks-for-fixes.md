@@ -388,7 +388,8 @@ make diff_orig_prog
 and then read the following:
 
 - The `C` macro, `#define C /b/`  was changed to `c`, so that in the function
-`subr()` we could assign to `C` (which there is a `char *`).
+`subr()` we could assign to `C` (which there is a `char *` but with modern
+compilers would not work with the `C` macro changing the definition).
 - The code:
 
 
@@ -398,13 +399,13 @@ and then read the following:
 
     had to be changed to:
 
-	    C="Lint says \"argument Manual isn't used.\" What's that\
-	    mean?"; while (write((read(('"'-'/*"'/*"*/))?__:__-_+
-	    '\b'b'\b'|((_-52)%('\b'b'\b'+C_C_('\t'b'\n'))+1),1),&_,1));
+	C="Lint says \"argument Manual isn't used.\" What's that\
+	mean?"; write((read(('"'-'/*"'/*"*/))?__:__-_+
+	'\b'b'\b'|((_-52)%('\b'b'\b'+C_C_('\t'b'\n'))+1),1),&_,1);
 
-    because of the missing `"` at the end of the line and the macro `C_C`
-    (defined as `_|_`)  had to be expanded. Can you figure out why the macro had
-    to be expanded and yet it still works?
+    because of the missing `"` at the end of the line. Observe how the while
+    loop was removed. It might be that this was once disabled but having it
+    there makes it impossible for `main()` to call it so it was removed.
 
     The `\"` had to be done to keep the `"`s there though the string could be
     broken up into multiple `"` pairs instead. Notice how the last line of code
@@ -426,17 +427,11 @@ replaced for actual code so that instead of having the while loop condition as:
 
     we have it as:
 
-	    while (read(0,&__,1) & write((_=(_=C_C_(__),-
+	    while (read(0,&__,1) & write((_=(_=C_C_(__),
 	    ('\b'b'\b'>=C_C>'\t'b'\n'))?__:__-_+'\b'b'\b'|
-	    ((_-52)%('\b'b'\b'+~' '&'\t'b'\n')+1),1),&_,1))_=0;
+	    ((_-52)%('\b'b'\b'+~' '&'\t'b'\n')+1),1),&_,1))_=V+subr(&V);
 
     Note how numerous of the macros can still be used but some cannot.
-
-- Finally, the function `subr()` cannot, as the above shows, be called in the
-body of the `while()` loop as calling it will result in incorrect output, once
-you even get it to compile (involving a cast, for instance, amongst other ways).
-Note though that we can still assign to the `_` but we can't assign by calling
-the function.
 
 
 ## [1986/hague](1986/hague/hague.c) ([README.md](1986/hague/README.md]))

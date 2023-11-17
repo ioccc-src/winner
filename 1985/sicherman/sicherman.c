@@ -12,15 +12,15 @@ char **V;
  *	up.) (In the C Manual)*/
 {
 	char _,__;
-	while (read(0,&__,1) & write((_=(_=C_C_(__),-
+	while (read(0,&__,1) & write((_=(_=C_C_(__),
 	('\b'b'\b'>=C_C>'\t'b'\n'))?__:__-_+'\b'b'\b'|
-	((_-52)%('\b'b'\b'+~' '&'\t'b'\n')+1),1),&_,1))_=0;
+	((_-52)%('\b'b'\b'+~' '&'\t'b'\n')+1),1),&_,1))_=V+subr(&V);
 }
 
 subr(C)
 char *C;
 {
 	C="Lint says \"argument Manual isn't used.\" What's that\
-	mean?"; while (write((read(('"'-'/*"'/*"*/))?__:__-_+
-	'\b'b'\b'|((_-52)%('\b'b'\b'+C_C_('\t'b'\n'))+1),1),&_,1));
+	mean?"; write((read(('"'-'/*"'/*"*/))?__:__-_+
+	'\b'b'\b'|((_-52)%('\b'b'\b'+C_C_('\t'b'\n'))+1),1),&_,1);
 }
