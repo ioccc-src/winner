@@ -138,6 +138,7 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
+# alternative executable for Windows
 alt2: ${PROG}.alt2
 	@${TRUE}
 

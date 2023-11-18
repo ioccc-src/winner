@@ -1,6 +1,24 @@
 #include <stdio.h>
 #include <fcntl.h>
 #include <io.h>
+#ifndef XX
+#define XX 1024
+#elif XX < 1
+#undef XX
+#define XX 1024
+#endif
+#ifndef YY
+#define YY 768
+#elif YY < 1
+#undef YY
+#define YY 768
+#endif
+#ifndef AA
+#define AA 3
+#elif AA < 1
+#define AA 3
+#endif
+
 X=XX; Y=YY; A=AA;
 
 J=0;K=-10;L=-7;M=1296;N=36;O=255;P=9;_=1<<15;E;S;C;D;F(b){E="1""111886:6:??AAF"

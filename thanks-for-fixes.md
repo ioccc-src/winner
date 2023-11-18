@@ -2689,13 +2689,13 @@ this.
 Cody added three different [alternate
 versions](2004/gavare/README.md#alternate-code):
 
-- [gavare.alt.c](2004/gavare/gavare.alt.c): allows you to change the image size
+- [gavare.alt.c](2004/gavare/gavare.alt.c) allows you to change the image size
 and anti-alias setting at compile time.
-- [gavare.alt2.c](2004/gavare/gavare.alt2.c): like
+- [gavare.alt2.c](2004/gavare/gavare.alt2.c) is like
 [gavare.alt.c](2004/gavare/gavare.alt.c) but it should work for Windows as well
 (it sets binary mode on `stdout`).
-- [gavare.r3.c](2004/gavare/gavare.r3.c): the author's unobfuscated version that
-was used during development, found on their [website about the
+- [gavare.r3.c](2004/gavare/gavare.r3.c) is the author's unobfuscated version
+that was used during development, found on their [website about the
 entry](https://gavare.se/ioccc/ioccc_gavare.c.html).
 
 

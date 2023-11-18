@@ -4,14 +4,12 @@
 #undef XX
 #define XX 1024
 #endif
-
 #ifndef YY
 #define YY 768
 #elif YY < 1
 #undef YY
 #define YY 768
 #endif
-
 #ifndef AA
 #define AA 3
 #elif AA < 1

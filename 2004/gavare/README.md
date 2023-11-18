@@ -31,8 +31,8 @@ entry](https://gavare.se/ioccc/ioccc_gavare.c.html) an unobfuscated version that
 was used during development, which we have included in the file
 [gavare.r3.c](gavare.r3.c).
 
-Finally, there's an untested version for Windows,
-[gavare.alt2.c](gavare.alt2.c), that sets binary mode on `stdout`.
+Finally, there's a version, [gavare.alt2.c](gavare.alt2.c) that sets binary mode
+on `stdout` which theoretically should work in Windows.
 
 
 ### Alternate build:
