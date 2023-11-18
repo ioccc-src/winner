@@ -11,7 +11,7 @@
 #define y fclose
 #define end static
 
-t(signed)char U;t(struct) b(O,);
+t()char U;t(struct) b(O,);
 
 t(						    U*)
 H;						    t(O
@@ -29,8 +29,8 @@ isspace(g); } H D(H s){H p,r;if(!s)G 0;for(p=(H)s;*p &&
 	  { m(D(d)); l(f++, q); Z(*d && !P(*d
 	)) d++; Z(*d && P(*d)) d++; } G b(,0);}
      void k() { static U b(c,;) ?R(c):(c='\n'); }
-    i main (i Q,         	    char**ll){static o
-   X;i t,j;				    switch (Q
+    i main (i Q,         	     U**l){static o
+   X;i t,j;				   switch (Q
  ){ case				       1: { H
  *p, I						 [] ={
 "aH"						   " "
@@ -60,7 +60,7 @@ isspace(g); } H D(H s){H p,r;if(!s)G 0;for(p=(H)s;*p &&
     t = (w == 200) ?		     10:getchar();
    switch(t) {				   case 0xa:
  case EOF:				       if(w--
- ){R(1[ll					 ][0])
+ ){R(1[l					 ][0])
 ;for(i						   =0,
 p=e;i						    <=w
 ;i+=						    6){
@@ -79,7 +79,7 @@ p++						    =0;
 		}if((++w%6)==0)p++;}e(
 	    0)}case 3:{O*u,*q,*x;U s[0400];
 	  i i;FILE*F; j:j=1;if(!(X=calloc(6<<
-	6,sizeof(O*)))) e(1) if(!(F=fopen(j[ll],
+	6,sizeof(O*)))) e(1) if(!(F=fopen(j[l],
      "r")))e(1)Z(fgets(s,j<<8,F))(*s)&&h(X,s+j,*s
     );j=b(i,=)&0xff;		     i:u=0;x=X[i];
    Z(x){q=Y(*(				   o)x)=Y(u)
@@ -100,7 +100,7 @@ end						    i i
 	  x<X				    +255);*x=m;
 	    }		
 		    }default:if(!(t
-		=*2[ll]++))break;case 0
+		=*2[l]++))break;case 0
 	    :{H p;i i,c,n;O *a;u:c=n=0;Z(c<
 	  10){c++b(;,n:n++)}if(n<='&'){c-=(n%
 	7);goto n;}else n++;a=*(X+t);Z(a){p=(H)
@@ -109,10 +109,10 @@ end						    i i
    break;R(32+				   (i&1)*3);
  }}R(10);a				       =a->l;
  }if(Q<2					 )goto
-D;if(*						   ll[2
+D;if(*						   l[2
 ]){R(						    10)
 ;main						    (4,
-ll);						    }}}
+l);						    }}}
 Z(Q						    ++<
 1){						    X+=
  t;						    if

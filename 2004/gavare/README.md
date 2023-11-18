@@ -4,6 +4,9 @@
 make
 ```
 
+There are three alternate versions; see [alternate code](#alternate-code) below
+for more details.
+
 
 ## To use:
 
@@ -18,27 +21,61 @@ make
 ./gavare > ioccc_ray.ppm
 ```
 
-
 ## Alternate code:
 
-The author provided [on their web page for the
-entry](https://gavare.se/ioccc/ioccc_gavare.c.html) an unobfuscated version that was used
-during development, which we have included in the file
-[gavare.r3.c](gavare.r3.c). To compile, try:
+The alt code, [gavare.alt.c](gavare.alt.c), allows you to change the size of the
+image as well as the anti-alias setting, when compiling.
 
+The author also provided [on their web page for the
+entry](https://gavare.se/ioccc/ioccc_gavare.c.html) an unobfuscated version that
+was used during development, which we have included in the file
+[gavare.r3.c](gavare.r3.c).
+
+Finally, there's a version, [gavare.alt2.c](gavare.alt2.c) that sets binary mode
+on `stdout` which theoretically should work in Windows.
+
+
+### Alternate build:
+
+To build the configurable and unobfuscated versions:
 
 ```sh
 make alt
 ```
 
-Use `gavare.r3` as you would `gavare` above.
+To change the default size from 1024x768 try:
+
+```sh
+make clobber CDEFINE="-DXX=640 -DYY=480" alt
+```
+
+You might also wish to change the anti-alias setting:
+
+```sh
+make clobber CDEFINE="-DAA=2" alt
+```
+
+This is not possible with the author's version but it is with the Windows
+version (see below).
+
+As the Windows version will not compile on most viewers' systems we do not build
+it with `make alt`; instead try:
+
+```sh
+make alt2
+```
+
+
+### Alternate use:
+
+Use `gavare.alt`, `gavare.r3` or `gavare.alt2` as you would `gavare` above.
 
 
 ## Judges' remarks:
 
 For users of systems that distinguish between text and binary mode
 (you know who you are), add a library call that specifies binary mode
-for stdout as the first statement of `main()`,
+for `stdout` as the first statement of `main()`,
 or use `freopen("ioccc_ray.ppm", "wb", stdout);` and do not use redirection.
 
 A freely distributable command-line version of Microsoft Visual C
@@ -55,15 +92,17 @@ It is possible to write some kinds of programs in C without using reserved
 words.  For very short and trivial programs, it usually isn't very hard to
 write a variant using no reserved words, but with this program I want to
 show that also non-trivial programs can be written this way.  This IOCCC
-entry contains no reserved words (I don't count 'main' as a reserved word,
+entry contains no reserved words (I don't count `main` as a reserved word,
 although the compiler gives it special meaning) and no preprocessor
 directives.
 
-The program is a small ray-tracer. The first line of the source code may
-be modified if you want the resulting image to be of some other resolution
-than the predefined. The `A` value is an anti-alias factor. Setting it to
-`1` disables the anti-aliasing feature (this makes the output look bad), but
-setting it too high makes the trace take a lot more time to complete.
+The program is a small
+[ray-tracer](https://en.wikipedia.org/wiki/Ray_tracing_(graphics)). The first
+line of the source code may be modified if you want the resulting image to be of
+some other resolution than the predefined. The `A` value is an anti-alias
+factor. Setting it to `1` disables the anti-aliasing feature which makes the
+output look bad, but setting it too high makes the trace take a lot more time
+to complete.
 
 The ppm image can then be viewed using an image viewer of your own choice.
 (Running the ray-tracer may take several minutes, even on fast machines,
@@ -74,6 +113,7 @@ example, the word `int` is a reserved word and therefore all variable
 declarations are implicit.  There will no doubt be _lots_ of warnings,
 no matter which compiler is used.  Still, the source code should be word-
 length-independent and endianness-independent.
+
 
 ### Humor
 

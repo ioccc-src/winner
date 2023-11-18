@@ -15,13 +15,6 @@ NOTE: you need to input a number first. See judges' remarks below for
 information on how to play.
 
 
-### Try:
-
-```sh
-echo "Do or do not. There is no try."
-```
-
-
 ## Judges' remarks:
 
 This is a [draw poker](https://en.wikipedia.org/wiki/Draw_poker) program.  You
@@ -53,15 +46,15 @@ Straight            4 times your bet
 Jacks or Better     1 times your bet
 ```
 
-The program allows you to go into debt.  However I'm sure you would
-never control-C kill the program just because you got behind, right?
-On the other hand the program never willingly exits, so you have
-to leave even when you are ahead.  :-)
+The program allows you to go into debt.  However I'm sure you would never
+control-C to kill the program just because you got behind, right?  On the other
+hand the program never willingly exits, so you have to leave even when you are
+ahead.  :-)
 
 Can you figure out a winning betting "strategy"?  Then can you modify
 the program so this "strategy" no longer works?
 
-Notice the clever use of `setjmp()` and `longjmp()` calls.  Can you keep track
+Notice the clever use of `setjmp(3)` and `longjmp(3)` calls.  Can you keep track
 of what state is being saved and restored?
 
 NOTE: the author talks about how it is a single statement. This might not be

@@ -2649,9 +2649,10 @@ described in the README.md, based on the author's remarks.
 
 ## [2004/arachnid](2004/arachnid/arachnid.c) ([README.md](2004/arachnid/README.md]))
 
-Cody added an alternate version which allows those like himself used to `h`,
-`j`, `k` and `l` movement keys to not get lost. Non rogue players, vi users and
-Dvorak typists are invited to get lost (or use the original version)! :-)
+Cody added an [alternate version](2004/arachnid/README.md#alternate-code) which
+allows those like himself used to `h`, `j`, `k` and `l` movement keys to not get
+lost. Non rogue players, vi users and Dvorak typists are invited to get lost (or
+use the original version)! :-)
 
 
 ## [2004/burley](2004/burley/burley.c) ([README.md](2004/burley/README.md]))
@@ -2681,6 +2682,21 @@ nowadays).
 
 Finally the optimiser cannot be enabled so the compiler flags were changed for
 this.
+
+
+## [2004/gavare](2004/gavare/gavare.c) ([README.md](2004/gavare/README.md]))
+
+Cody added three different [alternate
+versions](2004/gavare/README.md#alternate-code):
+
+- [gavare.alt.c](2004/gavare/gavare.alt.c) allows you to change the image size
+and anti-alias setting at compile time.
+- [gavare.alt2.c](2004/gavare/gavare.alt2.c) is like
+[gavare.alt.c](2004/gavare/gavare.alt.c) but it should work for Windows as well
+(it sets binary mode on `stdout`).
+- [gavare.r3.c](2004/gavare/gavare.r3.c) is the author's unobfuscated version
+that was used during development, found on their [website about the
+entry](https://gavare.se/ioccc/ioccc_gavare.c.html).
 
 
 ## [2004/gavin](2004/gavin/gavin.c) ([README.md](2004/gavin/README.md]))
@@ -2722,17 +2738,19 @@ and various other problems.
 
 ## [2004/kopczynski](2004/kopczynski/kopczynski.c) ([README.md](2004/kopczynski/README.md]))
 
-Cody reported that this entry cannot be optimised by the compiler if it's to
-work. He also added the file [kopczynski-a](kopczynski-a) to demonstrate what
-happens when art more like a letter is fed to the program.
+Cody reported that this entry cannot be optimised by the compiler as otherwise
+it will not work.
+
+Cody also added the [try.sh](2004/kopczynski/try.sh) script and various data
+files: [kopczynski-a](kopczynski-a) to demonstrate what happens when art more
+like a letter is fed to the program and the `kopczynski*-rev` files which are
+the data files reversed with `rev(1)`. One had to be modified additionally to
+get it to work, that being `kopczynski-10-rev`.
 
 
 ## [2004/newbern](2004/newbern/newbern.c) ([README.md](2004/newbern/README.md]))
 
-Cody and Landon individually fixed this to work with clang. Cody then turned the
-second arg to main, which clang requires to be a `char **`, to be not the same
-name as a function defined earlier in the code and to use that variable which
-`main()` used.
+Cody and Landon individually fixed this to work with clang.
 
 
 ## [2004/vik2](2004/vik2/vik2.c) ([README.md](2004/vik2/README.md))

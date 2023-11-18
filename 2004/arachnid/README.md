@@ -4,6 +4,10 @@
 make
 ```
 
+There is an alt version for rogue players, vi(m) users and Dvorak typist (i.e.
+those who need `hljk` for moving left, right, down and up. See [alternate
+code](#alternate-code) below.
+
 
 ## To use:
 
@@ -31,11 +35,17 @@ invited to get lost (or use the alt version)!
 
 ## Alternate code:
 
-To use:
+If you don't like the `wasd` movement keys you can try the vi(m) movement keys
+instead.
+
+
+### Alternate build:
 
 ```sh
 make alt
 ```
+
+### Alternate use:
 
 Use `arachnid.alt` as you would `arachnid` above.
 
@@ -65,6 +75,7 @@ that recognises exits to input mazes itself forms the exit to the default maze.
 Another maze, [arachnid.txt](arachnid.txt) has also been provided. This maze is
 255x255, about the largest maze supported, for the particularly insane maze
 explorers out there.
+
 
 ### Usage
 

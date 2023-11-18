@@ -28,7 +28,8 @@ data file.
 
 ## Author's remarks:
 
-This is a configurable banner-like program.
+This is a configurable `banner(1)`-like program.
+
 
 ### Examples:
 
@@ -45,12 +46,14 @@ This is a configurable banner-like program.
 ./newbern data_file a_string
 ```
 
+
 ### Extra functionality
 
 The program can also act as a Morse encoder, unarguably.
 
 It also has double-super-secret encryption capabilities.
 Decryption is left as an exercise for the reader.
+
 
 ### Portability
 

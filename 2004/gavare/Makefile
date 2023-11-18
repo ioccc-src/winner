@@ -58,7 +58,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE=
+CDEFINE= -DXX=1024 -DYY=768 -DAA=3
 
 # Include files that are needed to compile
 #
@@ -114,8 +114,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ= ${PROG}.r3.o
-ALT_TARGET= ${PROG}.r3
+ALT_OBJ= ${PROG}.r3.o ${PROG}.alt.o
+ALT_TARGET= ${PROG}.r3 ${PROG}.alt
 
 
 #################
@@ -137,6 +137,16 @@ ${PROG}: ${PROG}.c
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+# alternative executable for Windows
+alt2: ${PROG}.alt2
+	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+${PROG}.alt2: ${PROG}.alt2.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # data files
 #
