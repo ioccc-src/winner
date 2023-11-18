@@ -2745,10 +2745,7 @@ happens when art more like a letter is fed to the program.
 
 ## [2004/newbern](2004/newbern/newbern.c) ([README.md](2004/newbern/README.md]))
 
-Cody and Landon individually fixed this to work with clang. Cody then turned the
-second arg to main, which clang requires to be a `char **`, to be not the same
-name as a function defined earlier in the code and to use that variable which
-`main()` used.
+Cody and Landon individually fixed this to work with clang.
 
 
 ## [2004/vik2](2004/vik2/vik2.c) ([README.md](2004/vik2/README.md))
