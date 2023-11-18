@@ -8,26 +8,50 @@ make
 ## To use:
 
 ```sh
-./anonymous
+./anonymous 'foo' > bar.pgm
 ```
+
+Now open the output using your favourite
+[pgm](https://en.wikipedia.org/wiki/Netpbm#PGM_example) viewer. If you don't
+have a `pgm` viewer then we suggest the [netpbm
+toolkit](https://netpbm.sourceforge.net) to convert the image to a graphics
+format that you can view. Most graphical web browsers can display PNG or JPEG
+images.
 
 
 ### Try:
 
 ```sh
 ./anonymous "ash nazg durhbatuluhk, ash nazg gimbatul, \
-    ash nazg thrakatuluhk, agh burzhumh-ishi krimpatul." >anonymous.pgm
+    ash nazg thrakatuluhk, agh burzhumh-ishi krimpatul." >ring.pgm
+
+./anonymous "My Precious. Yes, my Precious." > precious.pgm
 ```
+
+NOTE: technically the text is supposed to be in all lower case but the above
+still works for demonstration purposes.
 
 
 ## Judges' remarks:
 
-Then view the output using your favourite
-[pgm](https://en.wikipedia.org/wiki/Netpbm#PGM_example) viewer.  If you don't
-have a `pgm` viewer then we suggest the [netpbm
-toolkit](https://netpbm.sourceforge.net) to convert the image to a graphics
-format that you can view. Most graphical web browsers can display PNG or JPEG
-images.
+Did you know that in the first edition of The Hobbit Gollum was willing to give
+up the ring? It was not the Ruling Ring, the One Ring, the Ring of Power or
+anything like that: it was simply a literary device that could make one
+invisible. When Bilbo won the famous riddle game Gollum went to fetch the Ring -
+not to kill and eat Bilbo but to give it to him! But Bilbo had already found it
+just like in the later editions. Gollum profusely apologised and begged for
+forgiveness. Bilbo told him never mind because he would have had it anyway. But
+he'd let him off on one condition: that he show him the way out. It was at this
+point that Bilbo slipped the ring on and Gollum saw him vanish and understood
+that he already found it. But there was no call of thief and no hatred of Bilbo.
+
+If you want to read the first edition they reprinted it some years back: `The
+Hobbit Facsimile First Edition`. The details are also discussed in History of
+Middle-earth [HoMe] VI, [The Return of the
+Shadow](https://tolkiengateway.net/wiki/The_Return_of_the_Shadow), part one of
+the history of The Lord of the Rings of a twelve volume set - as well as in [The
+History of the
+Hobbit](https://tolkiengateway.net/wiki/The_History_of_The_Hobbit).
 
 p.s. Frodo lives!
 
@@ -83,11 +107,11 @@ in lower case.
 
 The following command thus writes a rendering of the [Ring
 inscription](https://www.glyphweb.com/arda/r/ringinscription.html) to
-the file `anonymous.pgm`:
+the file `ring.pgm`:
 
 ```sh
 ./anonymous "ash nazg durhbatuluhk, ash nazg gimbatul, \
-    ash nazg thrakatuluhk, agh burzhumh-ishi krimpatul." >anonymous.pgm
+    ash nazg thrakatuluhk, agh burzhumh-ishi krimpatul." >ring.pgm
 ```
 
 The source code assumes the ASCII character set; also, due to space
