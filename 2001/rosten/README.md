@@ -5,6 +5,18 @@ make
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: missing files - please provide them
+```
+
+For more detailed information see [2001 rosten in bugs.md](/bugs.md#2001-rosten).
+
+
+
 ## To use:
 
 ```sh
@@ -39,9 +51,11 @@ cursor) in the wrong way.  :-)
 
 ## Author's remarks:
 
+
 ### NAME
 
 `rosten` - make the mouse act as if it has been greased
+
 
 ### SYNOPSIS
 
@@ -66,7 +80,7 @@ It only takes one optional option: the greasiness factor. This is the
 number that the speed is divided by on each iteration. The default is
 1.03. A setting of 1 - no friction - is fun as is 0.99.
 
-Being an X program, it recognised the `DISPLAY` variable.
+Being an X program, it recognises the `DISPLAY` variable.
 
 
 ### PORTABILITY
@@ -148,9 +162,7 @@ problems with its own include files, but none with my program.
 ### ERRORS
 
 The DEC compiler of this version: `DEC C V5.6-079 on Digital UNIX V4.0 (Rev.
-878)`
-
-can't compile the code. It thinks that preprocessor lines can not have
+878)` can't compile the code. It thinks that preprocessor lines can not have
 whitespace preceding the `#`. Moving the preprocessor directives to the
 beginning of the line wrecks the layout but makes it compile.
 

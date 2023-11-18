@@ -5,6 +5,15 @@
 #include <netdb.h>
 #include <sys/time.h>
 
+#ifndef PORT
+#define PORT 5455
+#endif
+#ifndef SPEED
+#define SPEED 50
+#endif
+#ifndef l_
+#define l_ socket(il.sin_family=AF_INET,SOCK_STREAM,0)
+#endif
 #define o0(M,W) mvprintw(W,M?M-1:M,"%s%s ",M?" ":"",_)
 #define O0(M,W) M##M=(M+=W##M)-W##M
 #define l1(M,W) M.tv_##W##sec

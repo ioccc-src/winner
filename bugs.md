@@ -1423,8 +1423,8 @@ index a5745bc7f4fa28b834c004f4cf19633e40ad9165..5e5e5334f33f9dbd95c70eddece3189d
    { a       =  0; y     (                  a       [     b  ]
 ```
 
-But since it does not for the time being it is advisable to just redirect stderr
-to /dev/null (`2>/dev/null`).
+But since it does not for the time being it is advisable to just redirect
+`stderr` to `/dev/null` (`2>/dev/null`).
 
 
 ## 1996 jonth
@@ -1855,7 +1855,7 @@ If you have a fix for 64-bit systems this is welcome as an alternate version, as
 stated above. You might like to look at the otccelf version but note that it (at
 least in 64-bit linux and macOS) has compilation errors.
 
-### Aside: why were there changes if INABIAF ?
+### Aside: why were there changes made if INABIAF ?
 
 This is a good question. The reason is we believe it better to fix some obvious
 problems: there were some bugs that would very possibly prevent it from working
@@ -1887,10 +1887,6 @@ This program deliberately crashes if it loses (which is what it aims to do).
 The author referred to the file `herrmann1.turing` but it does not exist not even
 in the archive. Do you have a copy? Please provide it!
 
-### STATUS: missing files - please provide them
-
-The author also referred to the file `times2.turing` but this is also missing in
-the archive. Do you have a copy? Please provide it!
 
 ### STATUS: known bug - please help us fix
 
@@ -1927,6 +1923,17 @@ Although it is independent of endianness both systems need the same character
 set. In other words both have to be ASCII or EBCDIC - not one of each.
 
 
+## 2001 rosten
+
+
+### STATUS: missing files - please provide them
+### Source code: [2001/rosten/rosten.c](2001/rosten/rosten.c)
+### Information: [2001/rosten/README.md](2001/rosten/README.md)
+
+The author stated that there is a cat man page for this program in case one
+wanted to install it as a tool but this is missing.
+
+
 ## 2001 schweikh
 
 
@@ -1943,6 +1950,7 @@ There's also no way to escape meta characters.
 ## 2001 westley
 
 
+### STATUS: missing files - please provide them
 ### STATUS: uses gets() - change to fgets() if possible
 ### Source code: [2001/westley/westley.c](2001/westley/westley.c)
 ### Information: [2001/westley/README.md](2001/westley/README.md)
@@ -1955,6 +1963,69 @@ and fix this if you wish.
 
 The author referred to a file `card.gif` but this file is missing. Do you have
 it? Please provide it!
+
+
+## 2001 williams
+
+
+### STATUS: known bug - please help us fix
+### Source code: [2001/williams/williams.c](2001/williams/williams.c)
+### Information: [2001/williams/README.md](2001/williams/README.md)
+
+There seem to be a couple bugs at least in this entry. The first one is that
+when it does reach a certain point it crashes. This is in the function `J()` (or
+one it calls?). But sometimes it seems to not get that far, just showing lines
+moving back and forth. This is also in `J()`. It is not confirmed but it might
+be that the lines are drawn by `XDrawString()`, the last part in `J()`.
+
+`J()` has a `for` loop identified by `for` and also a couple `while` loops,
+identified by `R`.
+
+Since the game never ends properly the score is not printed either.
+
+It appears that the crash happens in more than one place. For instance it has
+happened at 
+
+```c
+XCheckMaskEvent(d, 4,&e)
+```
+
+but it's also happened at
+
+```c
+else XDrawPoint(d    ,w,g,(l.s+=l.a)>>9,    h=(l.c+=l.b)>>9)
+```
+
+In both cases the pointer `d` was corrupted:
+
+```
+(lldb) p d
+(Display *) 0x0000000000000001
+```
+
+It is believed that it also happened at 
+
+```c
+XDrawString(d,w,g,W/3,H/2,m,B);
+```
+
+in `J()` and for the same reason.
+
+The loop seems to be stuck in the call to `usleep(3)` like:
+
+```c
+usleep(p*200);
+```
+
+which happens to be in a `while()` loop.
+
+There is a way to get the code to crash. If you don't do anything until
+everything is destroyed (where you'd lose the game if it ended) and then you
+start to shoot your missiles repeatedly it will eventually crash. It appears not
+to be the case (though this was not tried as many times) if you start shooting
+when the missiles come down. The fact you can shoot after it starts that
+sleeping in a loop does suggest that it's not stuck only showing those lines and
+sleeping.
 
 
 # 2002

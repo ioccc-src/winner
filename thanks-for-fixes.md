@@ -2493,6 +2493,8 @@ letter word that would match the format and because it's pain that clang forces
 this. :-) This fix makes a point of the author's notes on portability no longer
 valid, btw.
 
+Cody also added the [try.sh](2001/cheong/try.sh) script.
+
 He also fixed it to check the number of args.
 
 
@@ -2554,6 +2556,9 @@ itself by itself which just showed the usage string and exited. The [script
 herrmann1.sh](2001/herrmann1/herrmann1.sh) is used to compile the program but
 it's also how you invoke the program.
 
+Cody provided the file [plus1.turing](2001/herrmann1/plus1.turing) based on the
+author's remarks.
+
 He also fixed the [script herrmann1.sh](2001/herrmann1/herrmann1.sh) for
 shellcheck. In particular there were quite a few:
 
@@ -2574,9 +2579,8 @@ compile with clang by changing the args of main to be `int` and `char **`,
 respectively, and changing specific references to the `argv` arg, casting to
 `long` (was `int` but the 64-bit fix requires `long`) which was its old type.
 
-The original file, used for demonstration purposes, as well as if you want to
-see if your system works with the original code, is the alternate version. See
-the README.md for details.
+Cody also added the [try.sh](2001/herrmann2/try.sh) script which might be more
+useful than any other place as the command to try is quite long with C code.
 
 For some reason the original code was missing (presumingly because it had been
 added to `.gitignore` by accident) but Cody restored it from the archive.
@@ -2584,11 +2588,18 @@ added to `.gitignore` by accident) but Cody restored it from the archive.
 
 ## [2001/kev](2001/kev/kev.c) ([README.md](2001/kev/README.md]))
 
-Cody slowed down the ball just a tad as it went too fast for the speed at which
-the paddles move even when holding down the movement keys.
+Cody slowed down the ball just a tad (it was already a `-D` macro that was used
+in the code) as it went too fast for the speed at which the paddles move even
+when holding down the movement keys (but see below).
 
-Cody also provided an alternate version which lets you use the arrow keys on
-your keyboard instead of the more awkward '`,`' and '`.`'.
+Cody also provided an [alternate version](2001/kev/kev.alt.c) which lets you use
+the arrow keys on your keyboard instead of the more awkward '`,`' and '`.`'.
+
+He updated both versions to have `#ifndef..#endif` pairs for the macros so one
+can more easily configure different settings without having to specify all of
+them. The speed, `SPEED`, will be set to 50 if it's not defined at the compiler
+line as 50 is what it used to be set to. This way it's more to the original but
+without having to sacrifice playability by running `make`.
 
 
 ## [2001/ollinger](2001/ollinger/ollinger.c) ([README.md](2001/ollinger/README.md))

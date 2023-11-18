@@ -53,8 +53,9 @@ You can use it by typing:
 
 or by giving the C source to its standard input.
 
-`args` are given to the `main` function of `bellard.c` (`argv[0]` is
+`args` are given to the `main()` function of `bellard.c` (`argv[0]` is
 [bellard.c](bellard.c)).
+
 
 ### Examples:
 
@@ -80,21 +81,23 @@ An alternate syntax is to use it as a script interpreter: you can
 put `#!/usr/local/bin/otcc` at the beginning of your C source if
 you installed `otcc` at this place.
 
+
 ### Supported C language subset (read joint example [bellard.otccex.c](bellard.otccex.c) to have an introduction to `OTCC` dialect)
+
 
 #### Expressions:
 
-* binary operators, by decreasing priority order: `*` `/` `%`,
+* binary operators, in decreasing precedence order: `*` `/` `%`,
   `+` `-`, `>>` `<<`, `<` `<=` `>` `>=`, `==` `!=`, `&`,
   `^`, `|`, `=`, `&&`, `||`.
 
 * `&&` and `||` have the same semantics as in C: left to right
-  evaluation and early exit.
+  evaluation and early exit (short-circuited).
 
 * Parenthesis are supported.
 
 * Unary operators: `&`, `*` (pointer indirection), `-`
-  (negation), `+`, `!`, `~`, post fixed `++` and `--`.
+  (negation), `+`, `!`, `~`, postfix `++` and `--`.
 
 * Pointer indirection (`*`) only works with explicit cast to
   `char *`, `int *` or `int (*)()` (function pointer).
@@ -118,7 +121,7 @@ you installed `otcc` at this place.
   uses the libc dynamic linker to resolve undefined symbols.
 
 - Instructions: blocks (`{` `}`) are supported as in C. `if` and
-  `else` can be used for tests. The `while` and `for` C looks are supported.
+  `else` can be used for tests. The `while` and `for` C loops are supported.
   `break` can be used to exit loops. `return` is used for the return value of a
   function.
 
@@ -143,12 +146,14 @@ you installed `otcc` at this place.
 - Memory: the code, data, and symbol sizes are limited to 100KB
   (it can be changed in the source code).
 
+
 ### Obfuscation:
 
 No special effort was needed because obfuscation is almost
-unavoidable for such a program :-) Defines must be used to
+unavoidable for such a program :-) `#define`s must be used to
 compress the code, and integrated i386 code generator leads to non
 obvious code.
+
 
 ### Portability:
 
@@ -162,7 +167,7 @@ such support is currently integrated.
 It was successfully compiled with gcc version 2.95.2. You get some
 warnings because old K&R prototypes are used, some casts are implicit
 and some functions are used before being defined. `OTCC` uses the
-dynamic linker to resolve symbols with `dlsym()`, so `-ldl` must
+dynamic linker to resolve symbols with `dlsym(3)`, so `-ldl` must
 be used when you compile and link it.
 
 
