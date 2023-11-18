@@ -113,8 +113,8 @@ OBJ= ${PROG}.o
 DATA= samefile.1
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################

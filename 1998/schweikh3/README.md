@@ -13,15 +13,8 @@ the same size (on systems where `sizeof (char *) == 4`, or `4096` when
 31.
 ```
 
-so we changed the constant to be `SZ` defined in the Makefile. To change the
-value you can do something like:
-
-```sh
-make clobber CDEFINE="-DM0=sizeof -DM1=long -DM2=void \
-	-DM3=realloc -DM4=calloc -DM5=free -DSZ=55555" all
-```
-
-or whatever you wish to redefine it to.
+An alternate version allows one to fix this; see [alternate
+code](#alternate-code) below.
 
 
 ## To use:
@@ -46,6 +39,26 @@ If you're in this winning entry's directory:
 ```
 
 Notice that the tool finds some files that are duplicates.
+
+
+## Alternate code:
+
+If you run into the problem that the author described (above) you can redefine
+the size as described; this was done with the `SZ` macro defined in the Makefile
+which if (in the code) is unset will be set to the default, 32767.
+
+
+### Alternate build:
+
+If you wish to change the size to say, 55555:
+
+
+```sh
+make clobber CDEFINE="-DSZ=55555" alt
+```
+
+or whatever you wish to redefine it to. See [alternate code](#alternate-code)
+below.
 
 
 ## Judges' remarks:
