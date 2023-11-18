@@ -41,7 +41,8 @@ include ../../var.mk
 CSILENCE= -Wno-comment -Wno-deprecated-non-prototype -Wno-main -Wno-pedantic \
 	-Wno-return-type -Wno-strict-prototypes -Wno-unused-parameter -Wno-implicit-int \
 	-Wno-implicit-function-declaration -Wno-unused-value -Wno-multichar \
-	-Wno-uninitialized -Wno-unused-but-set-parameter
+	-Wno-uninitialized -Wno-unused-but-set-parameter -Wno-parentheses \
+	-Wno-int-conversion
 
 # Common C compiler warning flags
 #
@@ -136,7 +137,10 @@ ${PROG}: ${PROG}.c
 
 # alternative executable
 #
-alt: ${PROG}.alt.c
+alt: data ${ALT_TARGET}
+	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} -traditional-cpp $< -o $@ ${LDFLAGS}
 
 # data files
