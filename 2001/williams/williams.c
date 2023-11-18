@@ -52,7 +52,7 @@ A]; }Ne(l,30); Y==1){ E;K; } else    c=l.t=0;} Y==1&&h<H    -75&&!N(p*77)){ do{ 
                              dC(B++)); R Z|dL()){ Z&&!N(p)&&(Z--
                             ,nL(1+!N(p),N(W<<9), 0,N(W<<9),H<<9,1
                            ,0)); usleep(p*200); XCheckMaskEvent(d,
-                          4,&e)&&A&&--S&&nL(4,a[N(A)]<<9,H-10<<9,e.
+                          4,&e)&&A&&--S&&nL(4,a[N(7)]<<9,H-10<<9,e.
                          xbutton.x<<9,e.xbutton.y<<9,5,0);}S+=A*100;
                              B=sprintf(m,Q,v,S); XDrawString(d,w
                                      ,g,W/3,H/2,m,B); } }
