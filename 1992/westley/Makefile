@@ -83,7 +83,7 @@ CC= cc
 
 # Compiler add-ons or replacements for clang only
 #
-ifeq ($(CC),clang)
+ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
 #
 CSILENCE+= -Wno-poison-system-directories -Wno-int-conversion
 #
@@ -93,7 +93,7 @@ endif
 
 # Specific add-ons or replacements for gcc only
 #
-ifeq ($(CC),gcc)
+ifeq "$(findstring $(GCC),${CC})" "$(GCC)"
 #
 #CSILENCE+=
 #

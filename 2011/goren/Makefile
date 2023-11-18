@@ -84,7 +84,7 @@ CC= cc
 
 # Compiler add-ons or replacements for clang only
 #
-ifeq ($(CC),clang)
+ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
 #
 CSILENCE+= -Wno-array-bounds-pointer-arithmetic -Wno-comma -Wno-format-nonliteral \
 	-Wno-implicit-int-conversion -Wno-missing-prototypes \
@@ -97,7 +97,7 @@ endif
 
 # Specific add-ons or replacements for gcc only
 #
-ifeq ($(CC),gcc)
+ifeq "$(findstring $(GCC),${CC})" "$(GCC)"
 #
 #CSILENCE+=
 #

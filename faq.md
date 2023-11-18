@@ -883,11 +883,14 @@ While we know that use of `-Weverything` is generally not recommended
 by `clang` C compiler developers, we do use the `-Weverything`
 option in a certain case in IOCCC winner `Makefile`s.
 
-The use of `-Weverything` is limited to when one forces `CC=clang`. Users with
-clang compilers are not required to set `CC=clang` but when they do,
-`-Weverything` is enabled with all of its challenges, pedantic warnings, and
-sometimes warnings about things that do not matter, some of which are frankly
-frivolous and often downright dubious.
+The use of `-Weverything` is limited to when one forces `CC=clang` or more
+generally if the string 'clang' is in `$(CC)`. If `$(CC)` contains 'gcc' the
+'gcc' specific options are run instead.
+
+Users with clang compilers are not required to set `CC=clang` or equivalent but
+when they do, `-Weverything` is enabled with all of its challenges, pedantic
+warnings, and sometimes warnings about things that do not matter, some of which
+are frankly frivolous and often downright dubious.
 
 To enable this feature:
 

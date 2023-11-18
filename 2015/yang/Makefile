@@ -82,7 +82,7 @@ CC= cc
 
 # Compiler add-ons or replacements for clang only
 #
-ifeq ($(CC),clang)
+ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
 #
 CSILENCE+= -Wno-c99-compat -Wno-comma -Wno-double-promotion -Wno-float-conversion \
 	-Wno-implicit-float-conversion -Wno-missing-prototypes \
@@ -96,7 +96,7 @@ endif
 
 # Specific add-ons or replacements for gcc only
 #
-ifeq ($(CC),gcc)
+ifeq "$(findstring $(GCC),${CC})" "$(GCC)"
 #
 #CSILENCE+=
 #
