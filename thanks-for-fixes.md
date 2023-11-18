@@ -375,63 +375,83 @@ then compare it to [sicherman.c](1985/sicherman/sicherman.c) for some good old
 C-fashioned fun (alternatively, see below explanation)!
 
 Later on Cody improved the fix so that it looks much more like the [original
-entry](1985/sicherman/sicherman.c). He did this two more times and it's about as
-close to the original as one can get without causing a compilation error.
+entry](1985/sicherman/sicherman.c). He did this several more times and it's
+as close to the original as one can get without causing compiler errors.
 
 To get this to all work the following changes were made. If you really want to
-understand this you can do the following from the directory:
+understand this Cody provides the following. First run the following command
+from the directory:
 
 ```sh
 make diff_orig_prog
 ```
 
-and then read the following:
+and then read the following (you might also wish to look at the code in an
+editor with syntax highlighting):
 
-- The `C` macro, `#define C /b/`  was changed to `c`, so that in the function
-`subr()` we could assign to `C` (which there is a `char *` but with modern
-compilers would not work with the `C` macro changing the definition).
+- Because of the macros `C` and `V` in the original code, the args to `main()`
+were actually not what they appear: the only arg that existed in `main()` was
+`Manual`. Thus it now looks like:
+
+	```c
+	main(
+	/*	C program. (If you don't
+	 *	understand it look it
+	 *	up.) (In the C*/ Manual)
+	{
+	```
+
 - The code:
 
-
-	    C="Lint says "argument Manual isn't used."  What's that
-	    mean?"; while (write((read(C_C('"'-'/*"'/*"*/))?__:__-_+
-	    '\b'b'\b'|((_-52)%('\b'b'\b'+C_C_('\t'b'\n'))+1),1),&_,1));
+	```c
+	C="Lint says "argument Manual isn't used."  What's that
+	mean?"; while (write((read(C_C('"'-'/*"'/*"*/))?__:__-_+
+	'\b'b'\b'|((_-52)%('\b'b'\b'+C_C_('\t'b'\n'))+1),1),&_,1));
+	```
 
     had to be changed to:
 
-	C="Lint says \"argument Manual isn't used.\" What's that\
-	mean?"; write((read(('"'-'/*"'/*"*/))?__:__-_+
-	'\b'b'\b'|((_-52)%('\b'b'\b'+C_C_('\t'b'\n'))+1),1),&_,1);
+	```c
+	c="Lint says \"argument Manual isn't used.\" What's that\
+	mean?"; while (write((read(('"'-'/*"'))?__:__-_+
+	'\b'b'\b'|((_-52)%('\b'b'\b'+C_C_('\t'b'\n'))+1),1),&_,1));
+	```
 
-    because of the missing `"` at the end of the line. Observe how the while
-    loop was removed. It might be that this was once disabled but having it
-    there makes it impossible for `main()` to call it so it was removed.
+    because of the missing `"` at the end of the line and because `_|_` is not a
+    function call.
 
     The `\"` had to be done to keep the `"`s there though the string could be
-    broken up into multiple `"` pairs instead. Notice how the last line of code
-    in that function is the same as before!
+    broken up into multiple `"` pairs instead; that seemed less authentic,
+    however. Notice how the last line of code in that function is the same as
+    before and actually that there aren't that many changes in the function at
+    all!
 
-    Notice how in that function `subr()`, `C` could still stay the same in the
-    arg list (of `subr()`) since it is still a `char *C`! Since the `_` and `__`
-    were added at file scope (in addition to where it already was in `main()`),
-    the references to those variables could stay in the function.
+    Notice also that the parameter `C` had to be changed to `c` due to the macro.
 
-- The code in main `up.) (In the C Manual)` had to be commented out though
-another option would have been to close the comment earlier, opened a new one,
-and added `int C;` instead.
-- The code in `main()` is the significant change as the macros had to be
-replaced for actual code so that instead of having the while loop condition as:
+    The `char`s `_` and `__` were made file scope so the `subr()` could actually
+    compile but this does not affect the ones in `main()`. Why is this? You tell
+    us!
 
+- The code in `main()` is where there are significant changes, changing from:
+
+	    ```c
 	    while (read(0,&__,1) & write((_=(_=C_C_(__),C)),
 	    _C_,1)) _=C-V+subr(&V);
+	    ```
 
-    we have it as:
+	to:
 
+	    ```c
 	    while (read(0,&__,1) & write((_=(_=C_C_(__),
-	    ('\b'b'\b'>=C_C>'\t'b'\n'))?__:__-_+'\b'b'\b'|
-	    ((_-52)%('\b'b'\b'+~' '&'\t'b'\n')+1),1),&_,1))_=V+subr(&V);
+	    V))?__:__-_+'\b'b'\b'|((_-52)%('\b'b'\b'+~
+	    ' '&'\t'b'\n')+1),1),&_,1))_=C-V+subr(&V));
+	    ```
 
-    Note how numerous of the macros can still be used but some cannot.
+    Note how numerous of the macros can still be used but some cannot be. Can
+    you figure out why? Why too is it that the `subr()` function is called but
+    it appears that some of the code in that function is also in `main()` in the
+    `while` condition? What happens if you remove it from `main()`? What happens
+    if you remove it from `subr()` or don't even bother calling `subr()`?
 
 
 ## [1986/hague](1986/hague/hague.c) ([README.md](1986/hague/README.md]))
