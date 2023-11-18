@@ -1,4 +1,5 @@
 #include  <stdio.h>
+#define   gets(x) fgets((x),100,stdin)
 #define   l "=================================================="
 #define   m "                                                  "
 int       _(
@@ -6,7 +7,7 @@ float     x,
 float     y){
 return    x>=0&&x<50&&y>=0&&y<20;}
 int main  (){
-char      a[2][20][51],c[9][4][51][51],d[100];
+char      a[2][20][51],c[9][4][100][100],d[100];
 int       e,f,g,h=0,i,j=0,k,b=0,n[9],o[9],p[9],x[9],y[9],q[9],r,s,t;
 float     u[9],v[9],w[9],z[9];
 printf    ("i%s\033Yppppppppppppppppppp1G0",l);

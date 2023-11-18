@@ -1818,7 +1818,7 @@ original buffer size. Cody explains this in the at [1994/schnitzi in
 bugs.md](/bugs.md#1994-schnitzi).
 
 The purpose for these versions it both demonstrate how the magic works behind it
-and to help others, should they wish to, get the code to work with `fgets(3)`, with
+and to help others, should they wish, get the code to work with `fgets(3)`, with
 or without an increase in buffer size. See [1994/schnitzi in
 bugs.md](/bugs.md#1994-schnitzi) where Cody also explains the magic for more
 details. Later on, if nobody takes up the task, Cody might resume it, but for
@@ -2751,6 +2751,15 @@ get it to work, that being `kopczynski-10-rev`.
 ## [2004/newbern](2004/newbern/newbern.c) ([README.md](2004/newbern/README.md]))
 
 Cody and Landon individually fixed this to work with clang.
+
+
+## [2004/schnitzi](2004/schnitzi/schnitzi.c) ([README.md](2004/schnitzi/README.md]))
+
+Cody made this use `fgets(3)`.
+
+He also changed the time factor in the data files as the animations went too
+fast in modern systems, especially the scrolling text of
+[schnitzi.inp1](schnitzi.inp1).
 
 
 ## [2004/vik2](2004/vik2/vik2.c) ([README.md](2004/vik2/README.md))

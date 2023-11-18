@@ -8,35 +8,19 @@ make
 ## To use:
 
 ```sh
-./schnitzi
+./schnitzi <foo | vi -n
 ```
 
 
 ### Try:
 
 ```sh
-./schnitzi <schnitzi.inp0 2>/dev/null| vi
-./schnitzi <schnitzi.inp1 2>/dev/null| vi
+./try.sh
 ```
 
-For others, create an output file and use your system
-pasteboard/selection/cut buffer to "input" the output into vi:
-
-```sh
-./schnitzi <schnitzi.inp0 >schnitzi.out0
-./schnitzi <schnitzi.inp1 >schnitzi.out1
-```
 
 NOTE: if you're one of those who don't know how to exit `vi` :-) don't worry as
 it will exit for you.
-
-NOTE: this entry will make vi(m) swap files in the current working directory.
-You might wish to clean them up. We could say how but lest there is another file
-that matches the glob we won't. In any event vi swap files start with a dot
-followed by the file name followed by another dot followed by `s` and two more
-letters like. If no file is opened it will not have the file name but just be
-e.g. `.swp`. When a second letter has no remaining availabilities it goes to
-another one e.g. `u`.
 
 
 ## Judges' remarks:
@@ -64,9 +48,10 @@ string contains cursor navigation commands, you can go back and
 overwrite things that were already inserted earlier in string,
 anywhere on the screen.  Can you see where this is going?
 
+
 ### ANIMATION!
 
-The program takes input from stdin which defines the animated
+The program takes input from `stdin` which defines the animated
 elements (sprites) that appear on the screen.  For each sprite,
 you can specify exactly when and how long it will appear, and which
 direction it is moving.  Also, the sprite can oscillate between
@@ -75,16 +60,17 @@ Forgive me, animators, if I'm mangling the terminology.  Sprites
 which appear later in the input file will be drawn in front of
 sprites which appear earlier.
 
-The output, to stdout, is a string which, when pasted into vi, will
-perform the animation defined in the input. (The vi editor is a
-common (and ancient) editor that should be available on most Unix,
-Linux, Solaris, and Mac OS X machines; you can get it on Windows
-by installing Cygwin, which is how I do it.)
+The output, written to `stdout`, is a string which, when pasted into vi, will
+perform the animation defined in the input. (The vi editor is a common (and
+ancient) editor that should be available on most Unix, Linux, Solaris, and macOS
+systems; you can get it on Windows by installing Cygwin, which is how I do
+it.)
+
 
 ### THE INPUT
 
 It's easiest to place the input in a file, so you can redirect it
-to stdin when running the program.  What follows is a detailed
+to `stdin` when running the program.  What follows is a detailed
 description of the input file format.
 
 The first line is specified thusly:
@@ -93,12 +79,12 @@ The first line is specified thusly:
 [duration] [timefactor]
 ```
 
-The first parameter, duration, defines how long the animation will run.  The
+The first parameter, `duration`, defines how long the animation will run.  The
 second, `timefactor`, is used as sort of a fudge factor for machines that run
 too fast to see the animation.  A `timefactor` of 0 means, "run the animation as
 fast as you can".  On a pretty fast machine, I've had to set it as high as 2000
 to get the animation to slow down sufficiently.  Note that the higher the
-`timefactor`, the longer the output string that you'll have to copy- and-paste,
+`timefactor`, the longer the output string that you'll have to copy and paste,
 as extra characters are necessary to "waste time" between frames.
 
 Following the first line parameters, you may have up to nine
@@ -139,6 +125,7 @@ Input is terminated by end of file.  Duh.
 Two samples input files are included; one a nice pastoral park
 scene, the other a bit of scrolling text.
 
+
 ### RUNNING THE ANIMATION
 
 Try one of these methods to get the animation to run:
@@ -163,6 +150,7 @@ On a Windows machine running vi via Cygwin, "Edit|Paste"
 is a right-click menu option on the top window bar.
 
 3.  Memorize the output, and type it into vi really really fast.
+
 
 ### A FINAL NOTE
 
