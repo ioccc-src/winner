@@ -2061,7 +2061,6 @@ done in modern systems) to be `_int`.
 
 
 ## [1998/dlowe](1998/dlowe/dlowe.c) ([README.md](1998/dlowe/README.md]))
-## [1998/dlowe](1998/dlowe/dlowe.c) ([README.md](1998/dlowe/README.md]))
 
 Cody made the program more portable by changing the void return type of `main()`
 to be `int` (in both versions).
@@ -2199,6 +2198,10 @@ README.md.
 
 
 ## [1998/schweikh3](1998/schweikh3/schweikh3.c) ([README.md](1998/schweikh3/README.md]))
+
+Cody added the [alternate code](1998/schweikh3/README.md#alternate-code) which allows one
+to reconfigure the size constant in the rare case that the author wrote about
+occurs.
 
 Cody added the [try.sh](1998/schweikh3/try.sh) script to make it easier to try
 the commands that we suggested. One command was not added, that of the to use
