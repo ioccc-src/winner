@@ -2738,9 +2738,14 @@ and various other problems.
 
 ## [2004/kopczynski](2004/kopczynski/kopczynski.c) ([README.md](2004/kopczynski/README.md]))
 
-Cody reported that this entry cannot be optimised by the compiler if it's to
-work. He also added the file [kopczynski-a](kopczynski-a) to demonstrate what
-happens when art more like a letter is fed to the program.
+Cody reported that this entry cannot be optimised by the compiler as otherwise
+it will not work.
+
+Cody also added the [try.sh](2004/kopczynski/try.sh) script and various data
+files: [kopczynski-a](kopczynski-a) to demonstrate what happens when art more
+like a letter is fed to the program and the `kopczynski*-rev` files which are
+the data files reversed with `rev(1)`. One had to be modified additionally to
+get it to work, that being `kopczynski-10-rev`.
 
 
 ## [2004/newbern](2004/newbern/newbern.c) ([README.md](2004/newbern/README.md]))

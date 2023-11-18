@@ -40,11 +40,15 @@ why?
 The judges modified the program to print its result.  The original
 program returned the result as an exit code:
 
+### Alternate build:
+
+
 ```sh
 make alt
 ```
 
-Then try:
+
+### Alternate try:
 
 ```sh
 ./kopczynski.alt < kopczynski-10
@@ -61,7 +65,7 @@ we have seen in years!
 
 Compile and run without arguments.  As input, give it an ASCII graphics
 figure 8, 9, 10, or 11 made of pound signs and spaces, of any size,
-shape, or orientation (that's right, an upside down 9 is still 9 :-).
+shape, or orientation (that's right, an upside down 9 is still 9 :-) ).
 There is one restriction: the only line not containing "#" characters
 must be the last.
 
@@ -92,7 +96,7 @@ just `$?`).)
 
 **NOTE: The judges altered the primary version to output a number.**
 
-On the input, give numbers formed as a sequences of empty spaces and #
+On the input, give numbers formed as a sequences of empty spaces and `#`
 signs (you can also use dots instead of spaces), ending with an empty
 line. (No number has an empty line in it.) The program should return
 the number from 8 to 11 that it thinks it is.
@@ -121,7 +125,7 @@ lines).
 
 1. This program works by calculating the [Euler
 characteristics](https://en.wikipedia.org/wiki/Euler_characteristic) of input,
-plus 9. It is the number of digits (i.e. separated #-regions) minus the number
+plus 9. It is the number of digits (i.e. separated `#`-regions) minus the number
 of holes in them. It turns out that this algorithm works correctly for all
 numbers from 8 to 11.
 
@@ -178,10 +182,13 @@ routine also sets `n=8` in an obfuscated and concise way.
 
 6. Since we always return the number from 8 to 11, we can calculate modulo 4.
 Instead of `16 {-1,0,+1}` values, we use a 15-character string which agrees
-modulo 4 to the array in (`4`). (`NUL` fits very well as the 16th character, so
+modulo 4 to the array in (`4`). (`'\0'` fits very well as the 16th character, so
 we use 15-character string.)
 
-7. Since the rule found in (3) did not produce any funny messages, I changed it until it did. (The `#` character to find vertexes is in the top right corner, not the top left one.) The following messages will also work instead of `has dirtiest IF`:
+7. Since the rule found in (3) did not produce any funny messages, I changed it
+until it did. (The `#` character to find vertexes is in the top right corner,
+not the top left one.) The following messages will also work instead of `has
+dirtiest IF`:
 
 ```
 HighlandYachter
