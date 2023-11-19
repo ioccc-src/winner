@@ -149,6 +149,7 @@ sh: ${PROG}.c
 	${RM} -f ${PROG}.o
 	${CC} ${CFLAGS}  -DB=_start '-Dputchar(a)=' $< -c
 	${RM} -f $@
+	@echo "NOTE: this entry will not work with any platform other than x86/linux."
 	${LD} -static -o $@ ${PROG}.o
 
 vi: sh
