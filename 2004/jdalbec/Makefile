@@ -58,7 +58,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE=
+CDEFINE= -DAg=11
 
 # Include files that are needed to compile
 #
@@ -113,8 +113,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -140,6 +140,14 @@ ${PROG}: ${PROG}.c
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	@${RM} -f ${PROG}2.alt.c $@
+	-${CC} ${CSILENCE} -E ${PROG}.alt.c > ${PROG}2.alt.c
+	@${RM} -f ${PROG}3.alt.c
+	${SED} -e 's/ (/(/g' < ${PROG}2.alt.c > ${PROG}3.alt.c
+	${CC} ${CFLAGS} ${PROG}3.alt.c -o $@ ${LDFLAGS}
+
 
 # data files
 #

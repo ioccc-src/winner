@@ -4,6 +4,20 @@
 make
 ```
 
+There is an alternate version that allows one to control the number of numbers
+to print on a line. See [alternate code](#alternate-code) below.
+
+
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2004 jdalbec in bugs.md](/bugs.md#2004-jdalbec).
+
 
 ## To use:
 
@@ -15,10 +29,50 @@ make
 ### Try:
 
 ```sh
-./jdalbec 1
-./jdalbec 11
-./jdalbec 1 1
+./try.sh
+```
 
+## Alternate code:
+
+This version lets you control how many numbers to show on a line before adding a
+newline as it can be harder to see when there are a lot of numbers. For lines
+that don't end up having too many line breaks it also makes it easier to see
+which line it is on.
+
+
+### Alternate build:
+
+```sh
+make alt
+```
+
+The macro `Ag` ([silver](https://en.wikipedia.org/wiki/Silver)) controls how
+many number of lines to print on a line. Set at default to 11 protons, salt, if
+you wish to make it silver, 47 (a prime) protons, do:
+
+
+```sh
+make clobber CDEFINE="-DAg=47" alt
+```
+
+though it might be odd to have 47 numbers on a line as it would defeat the
+purpose. :-) Or if you prefer some prime, golden irony:
+
+
+```sh
+make clobber CDEFINE="-DAg=79" alt
+```
+
+
+### Alternate use:
+
+Use `jdalbec.alt` as you would `jdalbec` above.
+
+
+### Alternate try:
+
+```sh
+./try.alt.sh
 ```
 
 
@@ -113,14 +167,15 @@ line 3 because the compiler doesn't recognize `??=` as a trigraph
 step on Mac OS X 10.1.5 generates lots of errors in "smart
 mode" because the "smart" preprocessor expects a valid C
 program as input.  The preprocessor then falls back to "basic
-mode" and preprocesses `jdalbec.c` successfully without warnings,
+mode" and preprocesses [jdalbec.c](jdalbec.c) successfully without warnings,
 even when I give it the `-Wall -pedantic` options.  It inserts
 a lot of extra spaces into the preprocessed output which is
-why I had to add the `ed` step to the build file so that my
+why I had to add the `ed(1)` step to the build file so that my
 macro `#defines` would work.  The compile step gives the usual
 messages with `-Wall -pedantic`.  The link step generates a
 warning about a name conflict between my `BC()` and a `BC()` from
 curses in the main system library.
+
 
 ### <strike>BUGS</strike> FEATURES:
 
@@ -156,6 +211,7 @@ Although there are no comments, the program still manages to
 be self-documenting in an obscure fashion (periodic table of
 the (non-primordial) elements, "OBFUSCATED C").
 
+
 ### Obfuscation
 
 The program is obfuscated:
@@ -170,7 +226,7 @@ highly unstable) for `abort()`.) By overloading symbols (For example, `B` is a
 type, a structure, a structure member, a macro parameter, and a variable.).
 - By standard tricks like writing `'\0'` as `1["3"]` or `2["22"]`.
 - By using ternary operators to avoid `else`.
-- By using the Sb function to create sub-buffers from either end.
+- By using the `Sb()` function to create sub-buffers from either end.
 - By naming everything after chemical elements or pairs of elements.
 - Because it says so in the source. ;)
 

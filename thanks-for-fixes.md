@@ -2754,6 +2754,14 @@ jdalbec.c:65:5: error: expected ';' before 'B'
 
 and various other problems.
 
+Cody also added [alt code](2004/jdalbec/README.md#alternate-code) which allows
+one to control how many numbers after the `:` to print before printing a
+newline, so that one can see the output a bit better (though for lines that have
+a lot of numbers this will be harder to see).
+
+Finally Cody added [try.sh](2004/jdalbec/try.sh) and
+[try.alt.sh](2004/jdalbec/try.alt.sh) to demonstrate both versions.
+
 
 ## [2004/kopczynski](2004/kopczynski/kopczynski.c) ([README.md](2004/kopczynski/README.md]))
 
