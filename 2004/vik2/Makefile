@@ -198,7 +198,8 @@ diff_alt_orig:
 #
 # may be too strong to not try and compile the original
 # vik2 source code.  Therefore we offer this special
-# Makefile rule for those who do not wish curtail their curiosity.
+# Makefile rule for those who do not wish to curtail (or cattail :-) )
+# their curiosity.
 #
 cat-killing-curiosity: vik2.possible.cat.death.c
 	@echo 'Curiosity killed the cat ...'
@@ -207,7 +208,7 @@ cat-killing-curiosity: vik2.possible.cat.death.c
 	    ${PROG}.possible.cat.death.c > ${PROG}.possible.cat.death_1.c
 	${RM} -f ${PROG}.possible.cat.death_2.c
 	${CC} -E ${PROG}.possible.cat.death_1.c > ${PROG}.possible.cat.death_2.c
-	${CC} ${CFLAGS} ${PROG}.possible.cat.death_2.c -o $@
+	${CC} ${CFLAGS} ${PROG}.possible.cat.death_2.c -o $@ 2>/dev/null
 	@echo '... but satisfaction brought it back.  :-)'
 
 
