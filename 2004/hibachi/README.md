@@ -46,7 +46,7 @@ so the file does not exist here.
 `Hibachi` is a simple, small, and (probably) very secure web server.
 
 There is a `hibachi.tgz` file that unpacks several support
-files and a sub-directory tree containing the documentation and
+files and a subdirectory tree containing the documentation and
 examples. It can be viewed by:
 
 ```sh
@@ -54,9 +54,10 @@ tar -zxf hibachi.tgz
 lynx hibachi/localhost/index.html
 ```
 
-Or once `Hibachi` is running, use a web browser, preferably one that
+Or once `Hibachi` is running, use a web browser (preferably one that
 supports images and JavaScript, to view the documentation and try
-some of the CGI examples, visit: http://localhost:8008/.
+some of the CGI examples) to visit: `http://localhost:8008/`.
+
 
 ### Building
 
@@ -120,14 +121,13 @@ kill %1
 *  Supports [Common Gateway Interface
 (CGI)](https://en.wikipedia.org/wiki/Common_Gateway_Interface) scripts and programs.
 
-*  Supports multiple index.* file types:
+*  Supports multiple `index.*` file extensions and types:
 
 	index.htm, index.html, index.php, index.pl, index.sh, index.rb, index.py
 
 *  Supports subset of [RFC 2616](https://datatracker.ietf.org/doc/html/rfc2616)
-[HTTP](https://en.wikipedia.org/wiki/HTTP)/1.1 methods:
-
-	`GET`, `HEAD`, and `POST`
+[HTTP/1.1](https://en.wikipedia.org/wiki/HTTP) methods: `GET`, `HEAD`, and
+`POST`.
 
 *  Simple & straight forward configuration using environment variables.
 
@@ -147,14 +147,14 @@ snooping](https://cwe.mitre.org/data/definitions/23.html).
 
 *  CGI script execution managed through Unix file permissions.
 
-*  ~155 lines of source,
-  1940 bytes long by IOCCC 2004 rules,
-  ~6KB compiled & stripped for FreeBSD.
+*  ~155 lines of source, 1940 bytes long by IOCCC 2004 rules, ~6KB compiled &
+stripped for FreeBSD.
 
 *  Superior & smaller than
 [micro_httpd](http://www.acme.com/software/micro_httpd/) from <http://www.acme.com/>.
 
 *  And has a really cool tongue-in-cheek animated logo too.
+
 
 ### Comments
 
