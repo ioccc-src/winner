@@ -21,23 +21,9 @@ make
 ```
 
 
-## Alternate code:
-
-An alternate version of this entry, [hoyle.alt.c](hoyle.alt.c), is provided.
-This alternate code has a missing newline and used a non-standard tab stop size.
-
-To compile this alternate version:
-
-```sh
-make alt
-```
-
-Use `hoyle.alt.c` as you would `hoyle` above.
-
-
 ## Judges' remarks:
 
-This obfuscation functions at several levels.  Note the clever
+The obfuscation functions at several levels.  Note the clever
 use of use of `#define`s.  The `#define do(if,else)`, for example,
 is delightful.  The code itself contains a bunch of curves
 designed to throw you off axis.  :-)
@@ -46,19 +32,22 @@ designed to throw you off axis.  :-)
 ## Author's remarks:
 
 This application graphs polynomials on a standard Cartesian coordinate system.
-Polynomials of the form `ax^0 + bx^1 + cx^2 +` ... are graphed by passing the
+Polynomials of the form `ax^0 + bx^1 + cx^2 + ...` are graphed by passing the
 coefficients `a`, `b`, `c`, etc. as double precision arguments.  It allows up to
 8 parameters (thus up to `x^7`).
 
+
 ### Points of note:
 
-- the [x axis](https://mathworld.wolfram.com/x-Axis.html) goes from `-32` to `+31`
+- the [x axis](https://mathworld.wolfram.com/x-Axis.html) goes from `-32` to
+`+31`.
 - the [y axis](https://mathworld.wolfram.com/y-Axis.html) auto scales!
-- up to 8 [coefficients](https://en.wikipedia.org/wiki/Coefficient) may be passed in
+- up to 8 [coefficients](https://en.wikipedia.org/wiki/Coefficient) may be
+passed in.
 - the graph will determine direction and use slashes and
   dashes rather than simple block `X`s.
 
-For example, ta graph `y = x^2`:
+For example, to graph `y = x^2`:
 
 ```sh
 ./hoyle 0 0 1
