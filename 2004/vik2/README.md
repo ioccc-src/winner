@@ -12,13 +12,6 @@ make
 ```
 
 
-### Try:
-
-```sh
-echo "Do or do not. There is no try."
-```
-
-
 ## Judges' remarks:
 
 The fun thing about [CPP](https://en.wikipedia.org/wiki/C_preprocessor) abuses
@@ -51,6 +44,7 @@ program was doing the right thing...
 Since it takes a very long time to compile the program, there is a
 symbol that can be defined to shorten the compile time and avoid
 compiler errors.
+
 
 ### Features
 
@@ -87,7 +81,7 @@ The ALU has six instructions:
 Internally the [ALU](https://en.wikipedia.org/wiki/Arithmetic_logic_unit)
 implements a one bit adder with a carry in and carry out. This adder is the core
 of the ALU. The `ADD` instruction uses the one bit adder to create the 11-bit
-adder. The SUB instruction is implemented by adding `~Y` to `X` and then add 1.
+adder. The `SUB` instruction is implemented by adding `~Y` to `X` and then add 1.
 Finally the `TST` instruction calculates `X-Y` and checks the result and the
 [CARRY bit](https://en.wikipedia.org/wiki/Carry_flag) in the `SR`
 [register](https://en.wikipedia.org/wiki/Processor_register) to set the `EQ` and
@@ -114,7 +108,7 @@ The choice of application may be a bit unfortunate since we've already
 seen a winning entry calculating [prime
 numbers](https://en.wikipedia.org/wiki/Prime_number) in the
 [pre-processor](https://en.wikipedia.org/wiki/C_preprocessor).
-There is a big difference though. The 1988 applin entry uses pre-
+There is a big difference though. The [1988/applin](/1988/applin/README.md) entry uses pre-
 processor arithmetic (in a very nice way though). This program only
 defines and undefines symbols in a well defined ;) way and doesn't do
 any pre-processor arithmetics.
@@ -122,11 +116,12 @@ any pre-processor arithmetics.
 The reason why I chose to do a [prime
 number](https://en.wikipedia.org/wiki/Prime_number) application is that the
 algorithm can be written to do a lot of calculations without a lot of nesting
-(`gnu cpp` allows only 200 nested includes).
+(GNU `cpp` allows only 200 nested includes).
+
 
 ### Build and Run
 
-First, do a first pre-processing of the initial definitions. The FNAME
+First, do a first pre-processing of the initial definitions. The `FNAME`
 symbol must be defined to the name of the output file. If you want to
 speed up the compilation, define the `STOP` symbol to anything from `_3` to
 `_10`. (The default value is `_10` which will make the compilation take some
@@ -157,16 +152,18 @@ Then run the program to reveal all prime numbers up to 32 (if you used
 ./vik2
 ```
 
+
 ### Verification
 
 I wasn't able to compile the full program which calculates [prime
-numbers](https://en.wikipedia.org/wiki/Prime_number) up to 1024 using `gnu cpp`
+numbers](https://en.wikipedia.org/wiki/Prime_number) up to 1024 using GNU `cpp`
 (or any other [pre-processor](https://en.wikipedia.org/wiki/C_preprocessor)) so
 I had to write my own. Knowing how the program works it was quite easy to reduce
 the compilation time from several hours to about one second. I also added some
 statistics to my home made pre-processor and I found that calculating prime
 numbers up to 1024 makes the program include itself over 6.8 million times (see
 the statistics table below).
+
 
 ### Obfuscation
 
@@ -191,22 +188,24 @@ The program has 1029 lines which makes it the longest entry (so far).
 
 Even though the pre-processed and indented output is easier to read, it
 is quite hard to find the code in it. The size of the pre-processed file
-is several Mb when using `gnu cpp`.
+is several Mb when using GNU `cpp`.
+
 
 ### Limitations
 
 In order to fit the program within the space limits, I had to define the
 `#define`, `#endif`, and some other directives as single character symbols.
 This does not compile on all
-[pre-processors](https://en.wikipedia.org/wiki/C_preprocessor) but using `gnu
-cpp` as a first compilation step solves this.
+[pre-processors](https://en.wikipedia.org/wiki/C_preprocessor) but using GNU
+`cpp` as a first compilation step solves this.
+
 
 ### Statistics
 
 The table below contains some interesting statistics about the compilation of
 the program. The intermediate file size is the size of the output file of the
-cpp [pre-processor](https://en.wikipedia.org/wiki/C_preprocessor). The time
-taken to pre-process the program were measured using gnu cpp on my 2.0MHz P4
+`cpp` [pre-processor](https://en.wikipedia.org/wiki/C_preprocessor). The times
+taken to pre-process the program were measured using GNU `cpp` on my 2.0MHz P4
 with 512Mb ram and a lot of disk.
 
 ```
