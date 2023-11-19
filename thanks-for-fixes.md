@@ -2789,6 +2789,11 @@ fast in modern systems, especially the scrolling text of
 [schnitzi.inp1](schnitzi.inp1).
 
 
+## [2004/sds](2004/sds/sds.c) ([README.md](2004/sds/README.md))
+
+Cody added the [try.sh](2004/sds/try.sh) script.
+
+
 ## [2004/vik2](2004/vik2/vik2.c) ([README.md](2004/vik2/README.md))
 
 Cody fixed this to compile in Linux. Although it compiled cleanly in macOS (and

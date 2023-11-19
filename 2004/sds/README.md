@@ -26,27 +26,12 @@ For more detailed information see [2004 sds in bugs.md](/bugs.md#2004-sds).
 ### Try:
 
 ```sh
-./sds < sds.c > encoder.c
-make encoder
-./encoder README.md <sds.c >sds_msg.c
-make sds_msg
-./sds_msg < sds.c > sds2_msg.c
-diff sds2_msg.c encoder.c
-```
-
-Also try:
-
-```sh
-echo 'Hello, World!' > message
-./encoder message < README.md > remarks.md
-diff remarks.md README.md # notice how similar they are
-
-# and then observe:
-./sds < remarks.md
+./try.sh
 ```
 
 The generated code will very likely crash or do something else if not given a
-proper command line. This is not a bug but a feature.
+proper command line, like a file that can be opened with `fopen(3)`. This is not
+a bug but a feature.
 
 This is supposed to happen.  As is written in the
 [The Jargon File](http://catb.org/jargon/html/F/feature.html):
@@ -71,21 +56,20 @@ been done to a message for us to hide one in the remarks.  :)
 
 ## Author's remarks:
 
-Stenography is the term for the family of techniques used for
-hiding information within other information.  Today, it has many real
-world uses, particularly for digital watermarking.
+[Steganography](https://en.wikipedia.org/wiki/Steganography) is the term for the
+family of techniques used for hiding information within other information.
+Today, it has many real world uses, particularly for digital watermarking.
 
-This program uses a stenographic technique to hide information in
-any text file.  The specific technique used is aimed at writers of
-obfuscated programs for the IOCCC, as the hidden information is
-encoded in the whitespace in the source file.  As we know, there are
-up to an additional 2048 characters of whitespace available to
-entrants to the IOCCC, so it turns out that this is an ideal place to
-hide things.
+This program uses a steganographic technique to hide information in any text
+file.  The specific technique used is aimed at writers of obfuscated programs
+for the IOCCC, as the hidden information is encoded in the whitespace in the
+source file.  As we know, there are up to an additional 2048 characters of
+whitespace available to entrants to the IOCCC, so it turns out that this is an
+ideal place to hide things.
 
-The program as provided is the stenographic decoder.  Rather than
+The program as provided is the steganographic decoder.  Rather than
 provide a separate encoding program, you should not be surprised to
-learn that I opted to stenographically hide the encoder inside the
+learn that I opted to steganographically hide the encoder inside the
 decoder.
 
 Try it out.  Compile the program, then type
@@ -100,7 +84,7 @@ You should see the encoder program displayed.  Now save it, like:
 sds < sds.c > encoder.c
 ```
 
-Then compile encoder.c.  You now have the complete system ready.
+Then compile `encoder.c`.  You now have the complete system ready.
 
 The encoder expects to get a filename as an argument.  This filename
 is the name of the file containing the information to be hidden.  It
@@ -126,6 +110,7 @@ but it is possible in certain circumstances for whitespace to be
 changed inside strings where it should be left alone.  Plain text
 files are good candidates for hiding information in, but the added
 spacing may render the text somewhat difficult to read.
+
 
 ### Obfuscation
 
