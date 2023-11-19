@@ -150,7 +150,7 @@ error-stty:
 	@echo "No stty command here. Please manually specify size in the Makefile." >&2 ; false
 
 has-stty:
-	which stty >/dev/null || $(MAKE) error-stty
+	which stty >/dev/null || ${MAKE} error-stty
 
 fullscreen: has-stty
 	${MAKE} ${PROG} \
@@ -190,7 +190,7 @@ alt: data ${ALT_TARGET}
 	@${TRUE}
 
 ${PROG}.alt:
-	$(MAKE) `${UNAME}`.alt
+	${MAKE} `${UNAME}`.alt
 
 Darwin.alt: ${PROG}.alt.c
 	${RM} -f $@
@@ -325,11 +325,11 @@ waste:
 	@echo $@
 
 haste:
-	$(MAKE) waste
+	${MAKE} waste
 
 maker: haste
 	@echo 'Participate in a maker faire'
-	$(MAKE) love
+	${MAKE} love
 
 easter_egg: maker
 	@echo "You are expected to often misunderstand this $${RANDOM} magic, Eggy!"

@@ -429,11 +429,11 @@ waste:
 	@echo $@
 
 haste:
-	$(MAKE) waste
+	${MAKE} waste
 
 maker: haste
 	@echo 'Participate in a maker faire'
-	$(MAKE) love
+	${MAKE} love
 
 easter_egg: maker
 	@echo "You are expected to often misunderstand this $${RANDOM} magic, Eggy!"

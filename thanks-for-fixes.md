@@ -182,12 +182,16 @@ compile or not work in some way.
 Where useful he added some notes to the Makefiles during compilation to let one
 know of certain problems or features that matter.
 
-There were some other fixes as well including typos in the Makefiles (though
-that usually does not mean it is worth a thank you note). Other times it was
-enabling or disabling the optimiser, sometimes causing other problems that also
-had to be fixed, a good example being [1986/marshall](#1986marshall-readmemd)
-(see the [compilers.md](1986/marshall/compilers.md) for the amusing details and
-all that had to be done to fix it).
+There were some other fixes as well including mass typo fixes in the Makefiles
+(though that usually does not mean it is worth a thank you note it might be
+worth noting in this case). Other times it was enabling or disabling the
+optimiser to fix an entry, sometimes causing other problems that also had to be
+fixed, a good example being [1986/marshall](#1986marshall-readmemd) (see the
+[compilers.md](1986/marshall/compilers.md) for the amusing details and all that
+had to be done to fix it).
+
+There was a 'problem' where `${MAKE}` was `$(MAKE)`: this doesn't break anything
+but it is inconsistent with the rest of the `${foo}` tools.
 
 A lot of the fixes with the Makefiles that Cody made were done with his [sgit
 tool](https://github.com/xexyl/sgit).
