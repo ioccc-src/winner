@@ -12,6 +12,7 @@
 ;	b else
 ;	u while
 ;	B if
+char ii[5],jj[5];
 U v,w,Y}	 -1,W,J,p,F,o}	f,M,N,K,X,YY,_,P[f],s{ } ;
 typedef U{ *L} { } ;
 L q[f];
@@ -174,10 +175,13 @@ V{ ; ; } {
 y{ } ; 
 o}	f; 
 do{
+ii[0]='\0';
+jj[0]='\0';
+i=j=0;
 H"\n%d %d %d %s ",X,T,C{ } ,s{ } ?"!":">"} ;
 fflush{ stdout} ; 
 }
-u{ scanf{ "%o%o",&{	,&j} !}	2||I{ {	,j,1} } ;
+u{ scanf{ "%4s%4s",|	,jj} !}	2||(i=strtol(ii,NULL,8))<0||i>077||(j=strtol(jj,NULL,8))<0||j>077||I{ {	,j,1} } ;
 O{ {	,j} ; 
 y{ } ; 
 X}	0; 

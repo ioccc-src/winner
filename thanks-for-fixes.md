@@ -14,6 +14,7 @@ Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson) who is
 responsible for most of the improvements and fixes including many **EXTREMELY
 HARD bug fixes** like
 [1988/phillipps](/thanks-for-fixes.md#1988phillipps-readmemd),
+[1992/vern](/thanks-for-fixes.md#1992vern-readmemd),
 [2001/anonymous](/thanks-for-fixes.md#2001anonymous-readmemd) and
 [2004/burley](/thanks-for-fixes.md#2004burley-readmemd), making entries like
 [1985/sicherman](/thanks-for-fixes.md#1985sicherman-readmemd) and
@@ -27,7 +28,7 @@ entries to macOS (some being **EXTREMELY HARD** like
 [1998/schweikh1](/thanks-for-fixes.md#1998schweikh1-readmemd)), fixing code like
 [2001/herrmann2](/thanks-for-fixes.md#2001herrmann2-readmemd) to work in both
 32-bit/64-bit which *can be* **EXTREMELY HARD**, providing alternate code
-where useful/necessary, fixing where possible/removing dead links,
+where useful/necessary, fixing possible/removing dead links,
 typo/consistency fixes, improving **ALL _Makefiles_** and writing
 [sgit](https://github.com/xexyl/sgit) that we installed locally to easily run
 `sed` on files in the repo to help build the website. **THANK YOU VERY MUCH**
@@ -1595,6 +1596,20 @@ participates in the IOCCC, that it must be our fault! :-)
 
 Cody also added the [try.sh](1992/nathan/try.sh) script that runs a few commands
 that we suggested as well as one he provided.
+
+
+## [1992/vern](1992/vern/vern.c) ([README.md](1992/vern/README.md]))
+
+Cody fixed an infinite loop if one were to input numbers < `0` or > `077`. The
+problem was that it tried to use `scanf(3)` with the format specifier `"%o %o"` in a
+loop, reading again if `scanf(3)` did not return 2 (that was not a problem in
+that `scanf(2)` will not return until the number of specifiers have been
+processed or some error occurs) or a function it called returned non-zero.
+
+Instead the fix involves the `scanf(3)` specifiers being `"%4s %4s" on two
+new char arrays (always cleared in the beginning of the loop) and then using
+`strtol(3)` with a base of `8` (as it's octal), checking for `< 0 || > 077` on
+both numbers (using `"%o %o"` does not solve the problem).
 
 
 ## [1992/westley](1992/westley/westley.c) ([README.md](1992/westley/README.md]))

@@ -946,22 +946,6 @@ it can 'rub your nose in defeat', as the author puts it. You will have to exit
 it yourself through ctrl-c or killing it in some other fashion.
 
 
-### STATUS: known bug - please help us fix
-
-If one enters a number out of range, that is < 00 or > 77, the program will
-enter an infinite loop, flooding the screen.
-
-You are welcome to try and fix this (mis)feature. It might help if you run the
-intermediate step in compilation like so:
-
-```sh
-sed <vern.c 's/{ /(/g;s/} /)/g;s/;       /#define /' | \
-    sed 's/}      /=/g;s/{        /i/g' >vern.tmp.c
-```
-
-and look at `vern.tmp.c` instead, to give you an idea of what is going on.
-
-
 ## 1992 westley
 
 ### STATUS: INABIAF - please **DO NOT** fix
