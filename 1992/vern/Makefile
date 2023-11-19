@@ -40,7 +40,8 @@ include ../../var.mk
 #
 CSILENCE= -Wno-bitwise-conditional-parentheses -Wno-dangling-else -Wno-error \
 	-Wno-implicit-function-declaration -Wno-parentheses -Wno-pedantic \
-	-Wno-return-type -Wno-shift-op-parentheses -Wno-deprecated-non-prototype
+	-Wno-return-type -Wno-shift-op-parentheses -Wno-deprecated-non-prototype \
+	-Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -137,7 +138,7 @@ ${PROG}: ${PROG}.tmp.c
 ${PROG}.tmp.c: ${PROG}.c
 	${RM} -f $@
 	${SED} <${PROG}.c 's/{ /(/g;s/} /)/g;s/;	/#define /' | \
-	    ${SED} 's/}	/=/g;s/{	/i/g' >$@
+	    ${SED} 's/}	/=/g;s/{	/i/g;s/|	/ii/g' >$@
 
 # alternative executable
 #
