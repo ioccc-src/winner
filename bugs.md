@@ -2131,6 +2131,12 @@ The current ([Makefile](2004/gavin/Makefile) was modified to try and
 fit into the current IOCCC build environment.
 
 
+### STATUS: INABIAF - please **DO NOT** fix
+
+See [known features in the README.md](2004/gavin/README.md#known-features) for
+things that are not bugs but documented (mis)features.
+
+
 ## 2004 jdalbec
 
 ### STATUS: INABIAF - please **DO NOT** fix
