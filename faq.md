@@ -563,37 +563,13 @@ are much more strict in what they accept as a valid program), or the entry
 depended on operation system and library features that where common back then
 but are different/missing today.
 
-Please see the [bugs.md](/bugs.md) file for details about known problems with IOCCC winners.  In some cases you may be dealing with a problematic entry.  In a few fun cases, the IOCCC does not compile by design! 
+Please see the [bugs.md](/bugs.md) file for details about known problems with IOCCC winners.  In some cases you may be dealing with a problematic entry.  In a few fun cases, the IOCCC does not compile by design!
 
-E.g., it is highly unlikely that you'll be able to execute
-[1984/mullender](years.html#1984/mullender) on a computer you're using to read
-this FAQ. However for that entry [Cody Boone
-Ferguson](/winners.html#Cody_Boone_Ferguson) added alternative code so that you
-can enjoy this entry. Try:
+If you have a fix that makes a minimal impact to the entry, then please consider submitting that change in the form of a pull request.  Please
+see the FAQ <a href="#pullrequst">How do I report a bug in an IOCCC
+winner?</a> for details.
 
-```sh
-make alt
-./mullender.alt [microseconds]
-./mullender.alt2 [microseconds]
-```
-
-The microseconds defaults to 10000 but has a minimum value of 1000. The
-`mullender.alt2` is like the first alt except that it will start over once the
-program times out.
-
-See also [Yusuke Endoh](/winners.html#Yusuke_Endoh)'s entry
-[2015/endoh3](/2015/endoh3/README.md) which lets one compile it and run
-it. Another entry that you can enjoy it under is [Christopher
-Mill](/winners.html#Christopher_Mills)'s entry
-[2018/mills](/2018/mills/README.md) which is a PDP-7 emulator as well as a
-PDP-11/40 emulator.
-
-Others are not so easy though we're working on this and over time have added
-alternative code and/or fixed them. Most entries do now work and the others we
-are working on (slowly as other things are also being done and this is on free
-time).
-
-In some cases we replaced the original code (not the `.orig.c` file!) with code
+In some cases alterinive code has been added that does compile on some or most systems.  Check the writeup for the entry for "alt" code and possible ways to compile and run that code.  In some cases we replaced the original code (but not the `.orig.c` file!) with code
 that works for modern systems but one can view the original code in the
 `.orig.c` files (sometimes the original code is also in the directory as a
 `winner.alt.c` or `prog.alt.c`).
