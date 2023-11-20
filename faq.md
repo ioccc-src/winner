@@ -596,6 +596,9 @@ Other entries like [2001/herrmann2](/thanks-for-fixes.md#2001herrmann2-readmemd)
 now work with 32-bit AND 64-bit systems.
 
 Please see the [bugs.md](/bugs.md) file for the problematic entry in question to see if the problem is known, and if a fix is wanted, consider trying to port the code to a 64-bit system and submitting a pull request with that change.  Pull requests that fix such code while trying to minimize the impact of any changes and preserving the spirit of the orignal code are very welcome!
+Please
+see the FAQ <a href="#pullrequst">How do I report a bug in an IOCCC
+winner?</a> for details.
 
 
 ### <a name="faq3_3"></a>FAQ 3.3: Why do some IOCCC winners fail to compile under macOS?
@@ -608,6 +611,9 @@ That being said many (if not most) of these entries have been fixed and some
 others will be looked at, when found.
 
 In some cases the [bugs.md](/bugs.md) file may note a known macOS problem with an entry.  Should you manage to port the entry, and assuming your changes also attempt to preserve the orignal intent of the IOCCC entry, we would encourage you to submit a pull request with your ported code.
+Please
+see the FAQ <a href="#pullrequst">How do I report a bug in an IOCCC
+winner?</a> for details.
 
 
 ### <a name="faq3_4"></a>FAQ 3.4: Why does clang or gcc fail to compile an IOCCC winner?
@@ -627,6 +633,9 @@ be alternate code added at some point but as above this depends on free time and
 other things that have to be done plus remembering to do it.
 
 See if the problem is mentioned in [bugs.md](/bugs.md).  If you have a change that fixes the problem (even if it just a change to the `Makefile`) that doesn't negatively impact the entry too much, consider submitting that change in the form of a pull request.
+Please
+see the FAQ <a href="#pullrequst">How do I report a bug in an IOCCC
+winner?</a> for details.
 
 
 ### <a name="faq3_5"></a>FAQ 3.5: What is this cb tool that is mentioned in the IOCCC?
