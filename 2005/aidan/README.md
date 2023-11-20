@@ -4,6 +4,9 @@
 make
 ```
 
+There is an alternate version based on the author's remarks. See [alternate
+code](#alternate-code).
+
 
 ## To use:
 
@@ -11,6 +14,7 @@ make
 ./aidan < puzzle
 
 ./aidan seed
+
 ```
 
 where `seed` is a number.
@@ -19,9 +23,32 @@ where `seed` is a number.
 ### Try:
 
 ```sh
-./aidan < insane1.sudoku
+./try.sh
+```
 
-./aidan 42
+
+## Alternate code:
+
+This code is formatted differently and is not the approach used by the author
+which is slower, inelegant and not as obscure, as the author put it.
+
+
+### Alternate build:
+
+```sh
+make alt
+```
+
+
+### Alternate use:
+
+Use `aidan.alt` as you would `aidan` above.
+
+
+### Alternate try:
+
+```sh
+./try.alt.sh
 ```
 
 
@@ -30,15 +57,12 @@ where `seed` is a number.
 Are you puzzled about puzzles?  This entry might puzzle you
 more while it puzzles out some puzzles: all in a puzzling way!
 
-`Goto` the source and notice the lack of functions.  Jump
+`goto` the source and notice the lack of functions.  Jump
 to the `switch` statement.  And if you think you can puzzle
 it out better, try solving [insane1.sudoku](insane1.sudoku) all by yourself!
 
-NOTE: some of the files listed below by the author were either removed or
-renamed. The removed file in question was a tarball but the files were extracted
-into the directory instead. These files were added to the list.  We also removed
-the README.md which was at one point named `sudoku-sf.txt`. The author submitted
-the program as `sudoku-sf.c` which was renamed and changed in their comments.
+NOTE: the tarball named by the author was removed after the files were extracted
+into the directory instead. These files were added to the list.
 
 
 ## Author's remarks:
@@ -47,9 +71,9 @@ This program can solve a type of logic puzzle known as a
 [Sudoku](https://en.wikipedia.org/wiki/Sudoku), and also
 generate new ones.
 
+
 ### Contents
 
-* build file: build.txt - you don't need this
 * program file: [aidan.c](aidan.c) - sudoku solver and generator
 * test suite: [test-su.perl](test-su.perl) - optional test script (written for Perl5)
 * sudoku file: [blank.sudoku](blank.sudoku)
@@ -65,6 +89,7 @@ generate new ones.
 Yes, the test suite really is 5 times larger than the actual program. You
 **did** say this was a parody of the software development process...
 
+
 ### IMPORTANT
 
 [test.perl](test-su.perl) expects the `sudoku-sf` executable to be
@@ -72,6 +97,7 @@ Yes, the test suite really is 5 times larger than the actual program. You
 new name.
 
 > Judges' note: this was done.
+
 
 ### Legal blurb
 
@@ -82,13 +108,14 @@ Go find some unpopular multinational to sue instead.
 This program is not copyrighted and is entirely my work. Distribute or modify
 it as you wish, though please give me credit.
 
+
 ### What is a sudoku?
 
 (If you know, feel free to skip this section. Get more details from [the
 wikipedia entry](http://en.wikipedia.org/wiki/Sudoku))
 
 A sudoku is a type of logic puzzle. You are given a grid of 9x9 boxes, some
-of which contain digits. This is divided into nine 3x3 boxes, e.g. (from the
+of which contain digits. This is divided into a 3x3 set up, e.g. (from the
 Wikipedia article - fairly easy):
 
 ```
@@ -136,24 +163,25 @@ Oh, and if you think that example sudoku is too easy, try this one (which my
 program generated):
 
 ```
-        --- insane1.sudoku --
-        . . 4 | . . . | . 5 6
-        5 . . | . 7 2 | . . .
-        . . 1 | . . . | 8 . .
-        ------+-------+------
-        . . . | . . . | . . .
-        . . . | 6 9 3 | . . 5
-        . . . | . . . | 7 3 4
-        ------+-------+------
-        . 5 . | 2 . 1 | 4 . 8
-        3 . . | . . . | . . .
-        . . . | . . . | . 6 1
+--- insane1.sudoku --
+. . 4 | . . . | . 5 6
+5 . . | . 7 2 | . . .
+. . 1 | . . . | 8 . .
+------+-------+------
+. . . | . . . | . . .
+. . . | 6 9 3 | . . 5
+. . . | . . . | 7 3 4
+------+-------+------
+. 5 . | 2 . 1 | 4 . 8
+3 . . | . . . | . . .
+. . . | . . . | . 6 1
 ```
 
 Be warned - it's evil! (I certainly haven't been able to solve it by hand. The
 brute-force program given above, `sudoku-bfi.c` ([aidan.alt.c](aidan.alt.c)),
 also has trouble - it took 66 seconds to solve it - but probably for different
 reasons. That's the worst performance I've had from brute-force so far!)
+
 
 ### Usage
 
@@ -181,6 +209,7 @@ somewhat slow (should take under a minute on a fairly modern PC - try
 appending `-n 0` if you're in a hurry). I wrote it mostly for my own benefit,
 really.
 
+
 #### Solving
 
 ```sh
@@ -188,18 +217,19 @@ really.
 ```
 
 Input should be the numbers of each row in turn. Empty spaces can be
-represented as a full stop (.) or zero (0). Other characters are ignored, so you
-can cut-and-paste either example sudoku from above into a file and feed that
+represented as a full stop (`.`) or zero (`0`). Other characters are ignored, so you
+can cut-and-paste either example sudoku puzzle from above into a file and feed that
 in. The program has coped with every input I've thrown at it so far, including
 an [empty grid](blank.sudoku).
 
 Output consists of the problem, then the solution, then a message of
 success/failure.
 
-`./aidan` (capital `U`), may also be useful, or perhaps not. It only took
+`./aidan U` may also be useful, or perhaps not. It only took
 an extra 15 bytes of (very simple) code to add, so it doesn't really matter to
 me. (It's the same as the normal mode for most input you're likely to feed it,
 though slightly slower. See if you can figure out what it does.)
+
 
 #### Generating
 
@@ -211,6 +241,7 @@ Output is a blank grid, then the solution, then the problem. There's no
 control over the difficulty. Sorry. However, all generated sudokus should have
 exactly one solution - if one doesn't, that's a bug.
 
+
 ### Speed
 
 Fast enough. Solving and generating are practically instant on my 1Ghz Duron.
@@ -220,6 +251,7 @@ More precisely - 400 random sudokus are generated and solved in about 45 seconds
 in tests on my PC (1Ghz Duron, gcc 3.4.1, `-O2` optimisation - takes about 60
 seconds with no optimisation). If that isn't fast enough, what on Earth are you
 doing with it?
+
 
 ### Bugs
 
@@ -237,6 +269,7 @@ generate a sudoku as a bug - just a minor quirk. The fix is slightly awkward
 and would make the program slightly longer, so I haven't bothered - it's not
 important.
 
+
 ### Missing Features
 
 * No control over the difficulty of generated sudokus - they vary from easy to
@@ -249,15 +282,16 @@ hurry.
 but I don't feel like learning curses just for this. Besides, I spent enough
 of the time swearing as it is.
 
-* If you mistype a sudoku (e.g. from a paper/magazine) - and you will - it\
+* If you mistype a sudoku (e.g. from a paper/magazine) - and you will - it
 can't help you figure out where the mistake is, sadly.
+
 
 ### Portability
 
-Dependant on ASCII, requires that an int is at least 15 bits and a long at
+Dependant on ASCII, requires that an `int` is at least 15 bits and a `long` at
 least 32. (No, that isn't a typo - I did say 15, not 16).
 
-Also requires that cpp can properly handle something like:
+Also requires that `cpp` can properly handle something like:
 
 ```c
 #define foo(x,y) x y
@@ -269,16 +303,18 @@ though it usually does). Unfortunately, I didn't discover this issue until too
 late. (It was mentioned in the notes for people modifying GCC in the "beware
 of obscure compiler limitations" section, so I'm figuring it's quite unusual.)
 
+
 ### Compiler warnings
 
 Some when compiled with `gcc -Wall -Wextra -ansi -pedantic`:
 
-* The left-hand operand of a comma has no effect in two places
+* The left-hand operand of a comma has no effect in two places.
 * Parentheses are suggested around a `+` in an operand of `&` in the `i` macro
 definition.
 
 Borland C also spots some code in expressions which has no effect, and some
 uses of `=` where you'd expect a comparison operator.
+
 
 ### Obfuscation
 

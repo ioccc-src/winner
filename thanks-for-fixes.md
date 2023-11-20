@@ -15,8 +15,9 @@ responsible for most of the improvements and fixes including many **EXTREMELY
 HARD bug fixes** like
 [1988/phillipps](/thanks-for-fixes.md#1988phillipps-readmemd),
 [1992/vern](/thanks-for-fixes.md#1992vern-readmemd),
-[2001/anonymous](/thanks-for-fixes.md#2001anonymous-readmemd) and
-[2004/burley](/thanks-for-fixes.md#2004burley-readmemd), making entries like
+[2001/anonymous](/thanks-for-fixes.md#2001anonymous-readmemd),
+[2004/burley](/thanks-for-fixes.md#2004burley-readmemd) and
+[2005/giljade](/thanks-for-fixes.md#2005giljade-readmemd), making entries like
 [1985/sicherman](/thanks-for-fixes.md#1985sicherman-readmemd) and
 [1986/wall](/thanks-for-fixes.md#1986wall-readmemd) not need `-traditional-cpp`
 (all **EXTREMELY HARD**), fixing entries to work with clang (some being
@@ -2727,6 +2728,10 @@ provided, found under the [img/](2004/gavin/img/) directory. Note that the
 done this way to prevent extraction from the entry directory overwriting the
 files and causing `make clobber` to wipe some of them out.
 
+Cody provided the [alt code](2004/gavin/README.md#alternate-code) for those who
+want to use QEMU. The most important part of this is the macro `K` has to be
+defined as `1`, not `0`.
+
 
 ## [2004/jdalbec](2004/jdalbec/jdalbec.c) ([README.md](2004/jdalbec/README.md))
 
@@ -2861,6 +2866,17 @@ Cody fixed the test script, described by the author in their remarks, to refer
 to the proper compiled program (it's hardcoded). This had never been done and it
 broke the script.
 
+He also added the [alt code](2005/aidan/README.md#alternate-code) based on the
+author's remarks which is a different approach than the one used and which 'is
+slower (particularly in worst-case or nearly so scenarios), inelegant, and not a
+good starting place for sudoku generation.'
+
+The [try.sh](2005/aidan/try.sh) and [try.alt.sh](2005/aidan/try.alt.sh)
+correspond to the entry and alt code respectively.
+
+Cody added the `make test` and `make test-n0` rules for easier use of the test
+suite.
+
 
 ## [2005/anon](2005/anon/anon.c) ([README.md](2005/anon/README.md]))
 
@@ -2894,18 +2910,49 @@ as it caused a compilation error in some of the generated code but served no
 purpose, didn't affect the output of the puzzle and since the 'string' is
 already in the code there is no problem omitting it.
 
-`main()` was also changed to be in the old format:
+The most complicated fix was for, as might be expected, `clang`: it (at least
+some systems?) has `-Werror` by default so the program was changed to use `make`
+and then `rm -f` on the output of the compiled binary instead. This change might
+also not have been necessary if using different flags to `cc` but this is less
+portable and caused other problems.  This was a complicated fix as it's in the
+comments but in a funny way; the final result to get the test feature to work
+is:
 
-```diff
--(B[h]=N-B,N= N+6);}main(int Z,char**Y ){char*U=Z ;
-+(B[h]=N-B,N= N+6);}main(Z,Y )char**Y;{char*U=Z ;
+```c
+;; /*echo/Line/%d;sed/-n/-e/ %d,%dp/%s/|sed*/
+/*-e/'s,intZ,int/ Z,g'>c.c;make/c;/ rm/-f/c*/
+;;
 ```
 
-Finally because clang has `-Werror` by default the program was changed to use
-`make` and then `rm -f` on the output of the compiler instead. This change might
-also not have been necessary if using different flags to `cc` but this felt
-cleaner, somehow.
+changed from:
 
+```c
+;; /*echo/Line/%d;sed/-n/-e/ %d,%dp/%s>*/
+/*c.c;cc/c.c /-c*/;;
+```
+
+or as a diff:
+
+
+```diff
+-(t(m),(0));; /*echo/Line/%d;sed/-n/-e/ %d,%dp/%s>*/
+-/*c.c;cc/c.c /-c*/;;char*A=0,*_,*R,*Q, D[9999],*r,l
+-[9999],T=42, M,V=32;long*E,k[9999],B[1 <<+21],*N=B+
++(t(m),(0));; /*echo/Line/%d;sed/-n/-e/ %d,%dp/%s/|sed*/
++/*-e/'s,intZ,int/ Z,g'>c.c;make/c;/ rm/-f/c*/
++;;char*A=0,*_,*R,*Q, D[9999],*r,l[9999],T=42, M,V=32;int *E,k[9999],B[1 <<+21],*N=B+
+```
+
+Cody also added the [try.sh](2005/giljade/try.sh) script which also lets one see
+the beauty of the entry without having to use vi(m), should they be afraid of
+getting stuck in it (and for ease of use). :-)
+
+Finally, to improve upon the test-suite provided by the program, Cody added the
+`make test` rule which only shows lines matching `'^Line'` but writing to a
+temporary file the compilation including the 'Line' lines. After that is done it
+uses `grep -c` on the file to show that there are indeed as many versions the
+program generates as the author states, 180.  If it does not find 180 it is an
+error; otherwise it is success. It uses [test.sh](2005/giljade/test.sh).
 
 
 ## [2005/jetro](2005/jetro/jetro.c) ([README.md](2005/jetro/README.md))

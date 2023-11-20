@@ -132,6 +132,12 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
+test: test-su.perl
+	${PERL} $<
+
+test-n0: test-su.perl
+	${PERL} $< -n 0
+
 # alternative executable
 #
 alt: data ${ALT_TARGET}
