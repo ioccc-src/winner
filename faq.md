@@ -566,8 +566,8 @@ but are different/missing today.
 Please see the [bugs.md](/bugs.md) file for details about known problems with IOCCC winners.  In some cases you may be dealing with a problematic entry.  In a few fun cases, the IOCCC does not compile by design!
 
 If you have a fix that makes a minimal impact to the entry, then please consider submitting that change in the form of a pull request.  Please
-see the FAQ <a href="#pullrequst">How do I report a bug in an IOCCC
-winner?</a> for details.
+see the FAQ 5.1 <a href="#pullrequst">"How do I report a bug in an IOCCC
+winner"</a> for details.
 
 In some cases alterinive code has been added that does compile on some or most systems.  Check the writeup for the entry for "alt" code and possible ways to compile and run that code.  In some cases we replaced the original code (but not the `.orig.c` file!) with code
 that works for modern systems but one can view the original code in the
@@ -597,8 +597,8 @@ now work with 32-bit AND 64-bit systems.
 
 Please see the [bugs.md](/bugs.md) file for the problematic entry in question to see if the problem is known, and if a fix is wanted, consider trying to port the code to a 64-bit system and submitting a pull request with that change.  Pull requests that fix such code while trying to minimize the impact of any changes and preserving the spirit of the orignal code are very welcome!
 Please
-see the FAQ <a href="#pullrequst">How do I report a bug in an IOCCC
-winner?</a> for details.
+see the FAQ 5.1 <a href="#pullrequst">"How do I report a bug in an IOCCC
+winner"</a> for details.
 
 
 ### <a name="faq3_3"></a>FAQ 3.3: Why do some IOCCC winners fail to compile under macOS?
@@ -612,8 +612,8 @@ others will be looked at, when found.
 
 In some cases the [bugs.md](/bugs.md) file may note a known macOS problem with an entry.  Should you manage to port the entry, and assuming your changes also attempt to preserve the orignal intent of the IOCCC entry, we would encourage you to submit a pull request with your ported code.
 Please
-see the FAQ <a href="#pullrequst">How do I report a bug in an IOCCC
-winner?</a> for details.
+see the FAQ 5.1 <a href="#pullrequst">"How do I report a bug in an IOCCC
+winner"</a> for details.
 
 
 ### <a name="faq3_4"></a>FAQ 3.4: Why does clang or gcc fail to compile an IOCCC winner?
@@ -634,8 +634,8 @@ other things that have to be done plus remembering to do it.
 
 See if the problem is mentioned in [bugs.md](/bugs.md).  If you have a change that fixes the problem (even if it just a change to the `Makefile`) that doesn't negatively impact the entry too much, consider submitting that change in the form of a pull request.
 Please
-see the FAQ <a href="#pullrequst">How do I report a bug in an IOCCC
-winner?</a> for details.
+see the FAQ 5.1 <a href="#pullrequst">"How do I report a bug in an IOCCC
+winner"</a> for details.
 
 
 ### <a name="faq3_5"></a>FAQ 3.5: What is this cb tool that is mentioned in the IOCCC?
@@ -1179,8 +1179,8 @@ It also possible that you may have discovered a bug in an IOCCC
 winner.  If so, you are invited to try an fix the IOCCC winner and
 submit that fix by way of a [GitHub pull
 request](https://github.com/ioccc-src/temp-test-ioccc/pulls).  Please
-see the FAQ <a href="#pullrequst">How do I report a bug in an IOCCC
-winner?</a> for details.
+see the FAQ 5.1 <a href="#pullrequst">"How do I report a bug in an IOCCC
+winner"</a> for details.
 
 
 ### <a name="faq5_1"></a><a name="pullrequst"></a>FAQ 5.1: How do I report a bug in an IOCCC winner?
