@@ -122,8 +122,8 @@ OBJ= ${PROG}.o
 DATA= boot.b lilo.conf prim gavin.md
 TARGET= ${PROG} kernel sh vi fs.tar
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt kernel.alt sh.alt vi.alt fs.alt.tar
 
 
 #################
@@ -164,6 +164,27 @@ fs.tar: sh vi gavin.c README.md prim
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} -UK -DK=1 $< -o $@ ${LDFLAGS}
+
+kernel.alt: ${PROG}.alt
+	${RM} -f kernel
+	./${PROG}.alt > kernel
+
+sh.alt: ${PROG}.alt.c
+	${RM} -f ${PROG}.alt.o
+	${CC} ${CFLAGS}  -DB=_start '-Dputchar(a)=' $< -c
+	@echo "NOTE: this entry will not work with any platform other than x86/linux."
+	${LD} -static -o sh ${PROG}.alt.o
+
+vi.alt: sh.alt
+	${RM} -f vi
+	${CP} $< vi
+
+fs.alt.tar: sh.alt vi.alt gavin.alt.c README.md prim
+	${RM} -f $@
+	${TAR} -cvf fs.tar sh vi gavin.alt.c README.md prim
 
 # data files
 #

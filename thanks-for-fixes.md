@@ -2728,6 +2728,10 @@ provided, found under the [img/](2004/gavin/img/) directory. Note that the
 done this way to prevent extraction from the entry directory overwriting the
 files and causing `make clobber` to wipe some of them out.
 
+Cody provided the [alt code](2004/gavin/README.md#alternate-code) for those who
+want to use QEMU. The most important part of this is the macro `K` has to be
+defined as `1`, not `0`.
+
 
 ## [2004/jdalbec](2004/jdalbec/jdalbec.c) ([README.md](2004/jdalbec/README.md))
 

@@ -1,6 +1,8 @@
 fs/
 fs.tar
 gavin
+gavin.alt.o
+gavin.alt
 gavin.o
 img/gavin.c
 img/prim

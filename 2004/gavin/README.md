@@ -5,6 +5,11 @@ make
 ```
 
 
+There is an alternate version for those who wish to use QEMU rather than having
+to reboot and rely on having a floppy drive (if you even remember what those are
+:-) ) etc. See [alternate code](#alternate-code) below.
+
+
 ### Bugs and (Mis)features:
 
 The current status of this entry is:
@@ -73,6 +78,26 @@ vi README.md
 Press and hold any key.
 
 
+## Alternate code:
+
+This version's main difference is that the macro `K` is redefined to `1` so that
+you can use it with `QEMU`.
+
+
+### Alternate build:
+
+```sh
+make alt
+```
+
+### Alternate use:
+
+The use is mostly the same as `gavin` except that one initially executes `gavin.alt`
+(which `make alt` will do) and one will have to use `QEMU` instead. The files
+generated are the same names. See [to use](#to-use) and [try](#try) above as
+well as the judges' remarks below plus [gavin.md](gavin.md).
+
+
 ## Judges' remarks:
 
 Over the years, we've seen a program that immediately dumps core if executed on
@@ -86,12 +111,13 @@ future contests.
 If you do not want to mess with a floppy and you use GRUB, see
 [gavin.md](gavin.md).
 
-You can put additional text files in `fs.tar` for browsing with vi.  If you do
-not want to bother rebooting your computer at all, see <http://bellard.org> for
-QEMU ([Fabrice Bellard](/winners.html#Fabrice_Bellard) is an IOCCC 2001 winner),
-but your experience will be limited; replace `-DK=0` with `-DK=1` in the
-[Makefile](Makefile), and you will have to move the mouse to trigger the initial
-screen update.
+You can put additional text files in `fs.tar` for browsing with vi.
+
+If you do not want to bother rebooting your computer at all, see
+<http://bellard.org> for QEMU ([Fabrice Bellard](/winners.html#Fabrice_Bellard)
+is an IOCCC 2001 winner), but your experience will be limited; use the
+[alternate code](#alternate-code) instead. You'll have to move the mouse to
+trigger the initial screen update.
 
 The judges were able to write a few more programs to run in this OS.
 What are the limitations for such programs?
