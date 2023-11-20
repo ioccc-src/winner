@@ -1201,10 +1201,10 @@ winner?</a> for details.
 ### <a name="faq5_1"></a><a name="pullrequst"></a>FAQ 5.1: How do I report a bug in an IOCCC winner?
 
 We do not 'maintain' the contest winners as such. The code is made available on an 'AS
-IS' basis. If you have a FIX for an entry, we suggest that you try and email it
-to the authors and to submit your fixes in a [GitHub pull
-request](https://github.com/ioccc-src/temp-test-ioccc/pulls) (with ONE PULL
-REQUEST *PER* FIX, please!).
+IS' basis. If you have a FIX for an entry, we suggest that you submit your fixes in a [GitHub pull
+request](https://github.com/ioccc-src/temp-test-ioccc/pulls) as we welcome pull requests that have a minimal impact on the entry while improving the portbility, functionality, and/or addressing known problems.
+
+If you do submit a pull request, we ask that each pull request address just one IOCCC winner at a time.
 
 Note that just because you have a fix does not mean it'll be accepted. This
 might be because the author objects or it doesn't fit in some way or another. Of
