@@ -142,22 +142,22 @@ main(int a, P b)
 									  ||
 										      R(0) && (
 											       W(a, getchar())
-											       case ('i',
+											       case ('k',
 												     0 < Z(15),
 												     -w * l)
-											       case ('j',
+											       case ('h',
 												     0 < X(15),
 									 -1)
-											       case ('k',
+											       case ('j',
 												     Z(15) < h - 1,
 												     w * l)
 											       case ('l',
 												     X(15) < w - 1,
 									  1)
-											       case ('n',
+											       case ('J',
 												     Y(15) < l - 1,
 									  w)
-											       case ('o',
+											       case ('K',
 												     0 < Y(15), -w
 									   )
 											       R(a) == 'q' && !

@@ -2880,11 +2880,16 @@ suite.
 
 ## [2005/anon](2005/anon/anon.c) ([README.md](2005/anon/README.md]))
 
-The author stated that if `stty` does not work right on your system you can
-compile it differently so that the program does not use `stty`.  Cody set this
-up so that one need not update the [Makefile](Makefile). There's a fun command
-that Cody provided, to try, to see a feature that the author implemented. See
-the README.md for details.
+Cody fixed a problem where in some systems (like macOS) the `stty sane` would
+not work and end up causing a bus error. Instead of `stty sane` it uses `stty
+echo` which is what it was trying to accomplish.
+
+The author noted that one can define `NO_STTY` to not use `stty(1)` at all
+(either to prevent having to hit enter or to turn echo off/on) which is
+explained in the README.md.
+
+Cody added the [alt code](2005/anon/README.md#alternate-code) with vi(m) like
+movements.
 
 
 ## [2005/giljade](2005/giljade/giljade.c) ([README.md](2005/giljade/README.md]))

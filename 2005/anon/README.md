@@ -4,8 +4,15 @@
 make
 ```
 
-NOTE: if your shell does not support `stty` then see the alternate version
-described in the section below.
+NOTE: there is an alternate version for vi(m) like movements. See [alternate
+version](#alternate-code) below. If your terminal has problems with the
+`stty(1)` commands try:
+
+```sh
+make anon-no_stty
+```
+
+This will compile [anon.c](anon.c) as `anon` to not use `stty(1)`.
 
 
 ### Bugs and (Mis)features:
@@ -33,17 +40,6 @@ For more detailed information see [2005 anon in bugs.md](/bugs.md#2005-anon).
 ./anon 3 3 3
 ```
 
-
-### Alternate version:
-
-To use this version:
-
-```sh
-make alt
-```
-
-Use `anon.alt` as you would `anon`.
-
 After a very large number of moves this program will deliberately force itself
 to destroy its runtime stack. This is the author's way to prevent you from being
 frustrated (which might happen as it likes to create unsolvable puzzles just to
@@ -56,21 +52,53 @@ This is supposed to happen.  As is written in the
 That's not a bug, that's a feature.
 ```
 
-If you want to see this in action you can easily do this with the alt version:
+If you want to see this in action you can easily do this:
 
 ```sh
-yes 'please crash on me :-)' | ./anon.alt 4 4
+yes 'please crash on me :-)' | ./anon 4 4
 ```
 
 What happens if you specify a larger board? For instance:
 
 ```sh
-yes 'please crash on me :-)' | ./anon.alt 10 10 10
+yes 'please crash on me :-)' | ./anon 10 10 10
 ```
 
 If you specify more than three args the program might also crash or do
 something strange. This might also happen if you specify excessively large board
 dimensions. Try `100 100 100` for instance and see what happens!
+
+
+## Alternate version:
+
+The alternate version uses `vi(m)` like movement keys.
+
+
+### Alternate build:
+
+```sh
+make alt
+```
+
+To compile the version without `stty(1)`:
+
+```sh
+make alt-no_stty
+```
+
+
+### Alternate use:
+
+Use `anon.alt` as you would `anon` with the change in movements:
+
+```
+k | Move empty spot up
+h | Move empty spot left
+j | Move empty spot down
+l | Move empty spot right
+J | Move empty spot forwards
+K | Move empty spot backwards
+```
 
 
 ## Judges' remarks:
@@ -152,7 +180,7 @@ o | Move empty spot backwards
 ```
 
 **NOTE:** as a measure of alleviating counter-productivity due to addiction to
-this game, particularly for those hardcore gamers who insist on solving a\
+this game, particularly for those hardcore gamers who insist on solving a
 10x10x10 puzzle during work hours, and also to give an upper bound to user
 frustration when the program generates an unsolvable puzzle (which it does
 roughly half the time, just to hook you), the program will, after a very large
@@ -160,10 +188,11 @@ number of moves (which is system-specific) terminate itself by forcefully
 destroying its own runtime stack. This will result in a core dump and/or an
 abnormal termination message; but this is a feature, not a bug! :-)
 
+
 ### COMPILE NOTES
 
 This program complies with ANSI/C99. It uses ANSI terminal control sequences,
-and so requires a terminal that understands ANSI sequences, such as vt100 or
+and so requires a terminal that understands ANSI sequences, such as VT100 or
 xterm.
 
 Some compilers may emit lots of warnings about how things ought to be
@@ -181,6 +210,7 @@ recursion, among other things. :-)
 
 See spoilers below for more notes about portability.
 
+
 ### ABOUT THE CODE
 
 Clearly, the author is very, very confused. Although he has broken up the file
@@ -191,17 +221,17 @@ something is clearly very, very wrong.
 
 In fact, the closer you look at this code, the more you realize something is
 horribly wrong with it. For example, why is it that the first statement in
-`main()` is a `return`? What do all those nested `do`-loops do? (pun intended) Why
-is the first statement inside the first `do`-loop a mere integer literal? Why
+`main()` is a `return`? What do all those nested `do` loops do (pun intended)? Why
+is the first statement inside the first `do` loop a mere integer literal? Why
 are there such strange statements, like that empty string on line 65, or that
 isolated `||` on line 68?
 
 But wait... why aren't any statements terminated by semicolons? Why is there
 only ONE semicolon in the entire program?! Why is the author opening nested
 blocks by such strange things as `||` and `(`, and closing them by `||` and `))`? The
-`for`-loop isn't a `for`-loop! The `do`-loop isn't a `do`-loop! Or... are they? Well,
-the `for`-loop is defined in terms of a `while`-loop. But wait, the `while` loop is
-defined in terms of the `do`-loop. And the `do`-loop is defined in terms of ...
+`for` loop isn't a `for` loop! The `do` loop isn't a `do` loop! Or... are they? Well,
+the `for` loop is defined in terms of a `while` loop. But wait, the `while` loop is
+defined in terms of the `do` loop. And the `do` loop is defined in terms of ...
 Huh???
 
 And that `switch` statement toward the end of the program... wait a minute,
@@ -217,7 +247,7 @@ expert, it is probably easier to understand the program in its original form.
 (And even then.) But that's just so, so wrong...
 
 The entire program consists of a single expression, returned from `main()`.
-There are no `if`-statements, no `for`-loops or any looping or control constructs
+There are no `if` statements, no `for` loops or any looping or control constructs
 besides the `return`, in spite of the misleading appearance of the original
 source. :) Yes I know, this has been attempted before, using `?:` and the bad
 old comma operator. BUT this program does NOT use the `?:` operator, and there
@@ -255,58 +285,19 @@ on the following architectures:
 It probably will also compile and work on many (all?) other \*nix platforms as
 well. How does it achieve this incredible feat?
 
+
 ### SPOILER
 
-.
-
-.
-
-.
-
-.
-
-.
-
-.
-
-.
-
-.
-
-.
-
-.
-
-.
-
-(Read the following only if you give up figuring it out :-) )
-
-.
-
-.
-
-.
-
-.
-
-.
-
-.
-
-.
-
-.
-
-.
+Read the following only if you give up figuring it out :-) 
 
 #### The Evil Hack
 
 The program (ab)uses an implicit assumption underlying practically all
 architectures, and that is that parameters to C functions are implicit local
 variables allocated on the runtime stack. This runtime stack is a contiguous
-section of memory, and therefore, after N recursive calls of `main()` to itself,
-there is enough room on the stack to store whatever the program desires, so
-long as it does not exceed the maximum stack size.
+section of memory, and therefore, after `N` recursive calls of `main()` to
+itself, there is enough room on the stack to store whatever the program desires,
+so long as it does not exceed the maximum stack size.
 
 (Theoretically, the runtime stack doesn't **have** to be contiguous... but all
 current architectures that are worth consideration make this assumption. I
@@ -316,32 +307,32 @@ theoretically it shouldn't even work in the first place.) :-)
 There are two types of architectures the program must handle: those that
 allocate the stack top-down, and those that allocate the stack bottom-up. The
 program correctly detects this at runtime, and adjusts itself accordingly.
-:-) (It is a simple matter of testing if the address of argc in a recursive
+:-) (It is a simple matter of testing if the address of `argc` in a recursive
 call is greater or less than in the parent call.)
 
-To avoid having to handle issues of int sizes, memory alignment, what exactly
-is on the stack between successive locations of argc, etc., the program
-(ab)uses the fact that argc must necessarily be allocated on an aligned
+To avoid having to handle issues of `int` sizes, memory alignment, what exactly
+is on the stack between successive locations of `argc`, etc., the program
+(ab)uses the fact that `argc` must necessarily be allocated on an aligned
 address, and therefore, the range of memory between two `argc`s is aligned, and
-therefore safe to use as an array of longs.[\*] The program also compares the
+therefore safe to use as an array of `long`s.[\*] The program also compares the
 pointers as `long*` pointers, so that it will not have to deal with mapping
 bytes to larger types. The initial memory allocation is done by recursively
 calling `main()` until there is enough space on the stack (the exact number of
 recursive calls is, of course, architecture-dependent).
 
-[\*] long was chosen instead of int, in order to skirt around pointer-size
+[\*] `long` was chosen instead of `int`, in order to skirt around pointer-size
 issues on architectures like ia64. It really can be made anything large enough
-to hold both ints and pointers. `:-)`
+to hold both `int`s and pointers. `:-)`
 
-After the stack is deemed to have grown deep enough to be a sufficiently long
-array (pun intended), the program begins its real code. It uses argc to keep
+After the stack is deemed to have grown deep enough to be a sufficiently `long`
+array (pun intended), the program begins its real code. It uses `argc` to keep
 track of what it's supposed to be doing (since `main()` is the only function),
 and `argv` to point to the base of this array (which is computed differently
 based on how the architecture allocates the stack). Since this fills up the
 only two variables in the program, everything else is stored in the `MASS` [\*\*]
 array.
 
-[\*\*] for "Memory Allocated by Stack Smashing" `:-)`
+[\*\*] for "Memory Allocated by Stack Smashing" :-)
 
 Note that from this point on, all bets are off as to what the contents of the
 runtime stack are below the current recursive call to `main()`. We are
@@ -351,6 +342,7 @@ That's why I had to call `exit()` even though it meant I can no longer claim the
 program doesn't need the comma operator. :-) (I was going to skirt around the
 issue by indirectly calling `exit()`, such as via `bsearch()` or `raise()`, but I
 was getting too close to the size limit.)
+
 
 #### Some notes about the macros
 
@@ -374,7 +366,7 @@ a pointer to the top-level `argc`, to compute the location of the top-level
 `argv`. This is done before the rest of the `MASS` is used, since otherwise they
 may be overwritten.
 
-`do(x,y)` has nothing to do with `do`-loops. :-) It defines a "state" in `main()`,
+`do(x,y)` has nothing to do with `do` loops. :-) It defines a "state" in `main()`,
 essentially, what to do when `main()` is called with `argc` containing a
 particular value. (This is why the user must never run the program with more
 than 3 arguments. :-) The state number is `x`, and `y` is the code. The program's
@@ -389,7 +381,7 @@ allocation. It's the only state that needs to return a value from the boolean
 expression, since once the `MASS` is initialized any return value can simply be
 stored in a well-known location in the `MASS`.
 
-`if(p,q,r,s)` is, in fact, an if-statement. `:-)` It is equivalent to:
+`if(p,q,r,s)` is, in fact, an `if` statement. :-) It is equivalent to:
 
 ```c
 if (p) { q; r } else {s}
@@ -401,7 +393,7 @@ expressions. Keep in mind that all statements are assumed to evaluate to
 false. The proof that this macro in fact implements an `if-then-else` construct
 is left as an exercise for the reader.
 
-`while(x,y,z)` is actually a `while`-loop after all. :-) It implements the loop
+`while(x,y,z)` is actually a `while` loop after all. :-) It implements the loop
 using, of course, recursive calls to `main()`. However, this macro doesn't
 actually run a `while` loop; it implements the loop in the state numbered `x`. It
 is used for defining a `while` loop, which can then be called from another state
@@ -409,7 +401,7 @@ using `f(x)`. (The reason we can't directly implement a `while` loop inside
 another state ought to be clear: we can't recursively call `main()` to enter
 into the middle of a state.)
 
-However, it _is_ possible to implement a `for`-loop directly inside a state! The
+However, it _is_ possible to implement a `for` loop directly inside a state! The
 `for(s,i,x,y,z,Z)` macro does exactly this. Well, actually, technically speaking
 this macro can only be used as the last thing in a state, because it secretly
 closes the current state and opens a new one behind the programmer's back.
@@ -434,7 +426,7 @@ other_code;
 ```
 
 Note the "wrong" indentation in the former: the author prefers to write it
-that way, since the analogy to the usual `for`-loop is clearer. This is why it's
+that way, since the analogy to the usual `for` loop is clearer. This is why it's
 easier to understand the pre-CPP code, since after CPP, the macro reshuffles
 `some_code` after `other_code` so that it can close the current state and define
 the one containing the loop body. (Have I told you that the author of this
@@ -445,7 +437,7 @@ indentation.)
 In spite of all appearances, `switch()` really is just a shorthand macro for
 reducing code size. The evil choice of macro name is just to instill more
 confusion into the would-be decipherer of this entry. :-) After all, `case()`
-really _is_ the equivalent of a case statement, implemented using `&&`, and
+really _is_ the equivalent of a `case` statement, implemented using `&&`, and
 conveniently encapsulating code common to the cases in the only `switch`
 statement in the program, which is the code that decides what to do with a
 key press. What could be more fun than to define such a case in terms of a
@@ -458,25 +450,25 @@ program, and what the various state numbers are meant to do:
 #### MASS usage map
 
 ```
-        0  | Function return value
-        1  | Function argument 1\
-        2  | Function argument 2\
-        3  | Function argument 3\
-        4  | Scratch register 1\
-        5  | Scratch register 2\
-        6  | Scratch register 3\
-        7  | Scratch register 4\
-        8  | Value of original argv :-)\
-        9  | Value of original argc :-)\
-        11 | Zero register (always set to 0)\
-        12 | Width of board\
-        13 | Length of board\
-        14 | Height of board\
-        15 | Current position of hole\
-        16 | Random seed for rand_r()\
-        18 | Scratch register used by state 18 :-)\
-        31 | field width for printing tiles\
-        32 | Start of board data\
+0  | Function return value
+1  | Function argument 1
+2  | Function argument 2
+3  | Function argument 3
+4  | Scratch register 1
+5  | Scratch register 2
+6  | Scratch register 3
+7  | Scratch register 4
+8  | Value of original argv :-)
+9  | Value of original argc :-)
+11 | Zero register (always set to 0)
+12 | Width of board
+13 | Length of board
+14 | Height of board
+15 | Current position of hole
+16 | Random seed for rand_r(3)
+18 | Scratch register used by state 18 :-)
+31 | field width for printing tiles
+32 | Start of board data
 ```
 
 (**CAVEAT:** not all of these mappings ended up in the final version of the
@@ -492,22 +484,22 @@ to be on all tested architectures.)
 #### State number assignments
 
 ```
-        1  | showhelp\
-        2  | showhelp\
-        3  | is 2D: start init\
-        4  | is 3D: start init\
-        5  | find allocation type\
-        6  | MASS init, bottom-up\
-        7  | MASS init, top-down\
-        8  | main program\
-        9  | generate() outer loop\
-        13 | render()\
-        14 | render() loop\
-        15 | exit(0)\
-        16 | pick a tile that hasn't occurred yet\
-        17 | inner loop of 16.\
-        18 | main loop\
-        19 | checkwin() loop\
+1  | showhelp
+2  | showhelp
+3  | is 2D: start init
+4  | is 3D: start init
+5  | find allocation type
+6  | MASS init, bottom-up
+7  | MASS init, top-down
+8  | main program
+9  | generate() outer loop
+13 | render()
+14 | render() loop
+15 | exit(0)
+16 | pick a tile that hasn't occurred yet
+17 | inner loop of 16.
+18 | main loop
+19 | checkwin() loop
 ```
 
 Note that some of the manually-implemented states (those not implemented by
