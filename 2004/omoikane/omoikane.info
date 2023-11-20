@@ -6,7 +6,7 @@ insert a human-readable checksum string in the text itself!  ^_^
 
 0. Usage                                                                   `
 
-   rinia <infile> <layout> <outfile>
+   ./rinia <infile> <layout> <outfile>
 
    All three arguments may reference the same file.  All files is
    assumed to be of ASCII character set.
@@ -60,7 +60,7 @@ insert a human-readable checksum string in the text itself!  ^_^
 
 3. Output                                                                  m
 
-   If Rinia finds a usuable checksum, she will say "OK." and write to
+   If Rinia finds a usable checksum, she will say "OK." and write to
    the specified output file.  Otherwise the exit message is "fail"
    and nothing is written.
 

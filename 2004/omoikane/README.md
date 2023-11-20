@@ -34,22 +34,24 @@ Comments refer to it as such.
 
 ## Author's remarks:
 
-**Rinia (1/14/04)**
+### `Rinia` (1/14/04)
 
 `Rinia` is a tool for embedding CRCs in text files.  No need to assign
-strange file names or package .SFVs with your files!  Rinia will
+strange file names or package .SFVs with your files!  `Rinia` will
 insert a human-readable checksum string in the text itself!  `^_^`
 
-### Usage                                                                   `
+
+### Usage
 
 ```sh
-rinia <infile> <layout> <outfile>
+./omoikane <infile> <layout> <outfile>
 ```
 
 All three arguments may reference the same file.  All files is
 assumed to be of ASCII character set.
 
-### Input                                                                   %
+
+### Input
 
 Any file larger than 8 bytes is valid.  Upper limit on file size is
 limited by memory.
@@ -57,7 +59,8 @@ limited by memory.
 If input file can't be loaded for any reason, `Rinia` will say "bad
 input" and exit immediately.
 
-### Layout                                                                  _
+
+### Layout
 
 The layout file contains a map of where `Rinia` can patch.  The
 content consists of marker characters (where `Rinia` is allowed to
@@ -100,6 +103,7 @@ checksum, and has the lowest frequency.
 If layout file can't be used for any reason, `Rinia` will say "bad
 layout" and exit immediately.
 
+
 ### Output                                                                  m
 
 If `Rinia` finds a usable checksum, she will say "OK." and write to
@@ -130,6 +134,7 @@ checksum is at line 17).  Out of 25 runs, the shortest was 2
 seconds while the longest took 5 minutes.  Average was about a
 minute.  Checksum for this file (`b7a81524`) took about 4 minutes.
 
+
 ### Algorithm
 
 Inserting a checksum in the file you are computing the checksum of
@@ -137,7 +142,7 @@ isn't quite trivial, since changing the file content would change
 the final checksum value.
 
 To insert the checksum, `Rinia` first assumes a random final
-checksum, insert that string, then modify other parts to compensate
+checksum, inserts that string, then modifies other parts to compensate
 for the change in content.
 
 The compensation bytes are very easy to compute for binary files
@@ -147,9 +152,10 @@ try out all character combinations.  This is done in a hierarchical
 fashion, computing only smallest partial checksum after each
 change.
 
-For computers few years ago, this is probably still too slow to be
+For computers a few years old, this is probably still too slow to be
 acceptable... but at the speed the IOCCC judges run the contest
 these days, I am sure you have enough patience for it `_^`
+
 
 ### Source code
 
@@ -164,10 +170,6 @@ Code is formatted to the shape of "`Rinia`" from the anime/game
 `Rinia` is the slow but hardworking android.  On some jobs she does
 very well, on others she would spend lots of time and effort but
 still fail...
-
-NOTE: the text above is also included as an info file but in original format, so
-that the checksum would match. The above was formatted in markdown for GitHub
-and the IOCCC website.
 
 
 ## Copyright and CC BY-SA 4.0 License:

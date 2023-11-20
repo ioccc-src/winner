@@ -12,6 +12,7 @@ The current status of this entry is:
 ```
 STATUS: compiled executable crashes - please help us fix
 STATUS: doesn't work with some platforms - please help us fix
+STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2004 gavin in bugs.md](/bugs.md#2004-gavin).
@@ -26,7 +27,9 @@ For more detailed information see [2004 gavin in bugs.md](/bugs.md#2004-gavin).
 
 ### Try:
 
-To enjoy the results (on a Linux/x86 machine):
+To enjoy the results (on a Linux/x86 machine) with a floppy drive (remember
+those? We do!):
+
 
 ```sh
 su
@@ -72,28 +75,28 @@ Press and hold any key.
 
 ## Judges' remarks:
 
-Over the years, we've seen a program that dumps core if executed on a "wrong"
-architecture immediately ([1984/mullender](/1984/mullender/mullender.c)), or
-after a while ([2001/bellard](/2001/bellard/bellard.c)). This entry will happily
-compile and execute on most any architecture - the trick is that the result, to
-be useful, must be produced (and can only be enjoyed) on a particular
-architecture.  We have not decided yet whether to disallow this for future
-contests.
+Over the years, we've seen a program that immediately dumps core if executed on
+the "wrong" architectures ([1984/mullender](1984/mullender/README.md)) and a
+program that dumps core after a while ([2001/bellard](/2001/bellard/bellard.c)).
+This entry will happily compile and execute on most any architecture - the trick
+is that the result, to be useful, must be produced (and can only be enjoyed) on
+a particular architecture.  We have not decided yet whether to disallow this for
+future contests.
 
-If you do not want to mess with a floppy and you use GRUB, see below
-in the author's notes.
+If you do not want to mess with a floppy and you use GRUB, see
+[gavin.md](gavin.md).
 
 You can put additional text files in `fs.tar` for browsing with vi.  If you do
 not want to bother rebooting your computer at all, see <http://bellard.org> for
 QEMU ([Fabrice Bellard](/winners.html#Fabrice_Bellard) is an IOCCC 2001 winner),
-but your experience will be limited (replace `-DK=0` with `-DK=1` in the
+but your experience will be limited; replace `-DK=0` with `-DK=1` in the
 [Makefile](Makefile), and you will have to move the mouse to trigger the initial
-screen update).
+screen update.
 
 The judges were able to write a few more programs to run in this OS.
 What are the limitations for such programs?
 
-What you can do and what you cannot do in such programs?
+What can you do and what can you not do in such programs?
 
 The program called `prim`, written by the judges, computes and prints prime
 numbers.
@@ -101,28 +104,26 @@ numbers.
 
 ## Author's remarks:
 
-This is a 32-bit multitasking operating system for x86 computers,
-with GUI and filesystem, support for loading and executing user
-applications in elf binary format, with PS/2 mouse and keyboard drivers,
-and vesa graphics.  And a command shell.  And an application -
-a simple text-file viewer.
+This is a 32-bit multitasking operating system for x86 computers, with GUI and
+filesystem, support for loading and executing user applications in ELF binary
+format, with PS/2 mouse and keyboard drivers, and VESA graphics.  And a command
+shell.  And an application - a simple text-file viewer.
 
-The OS has ended up as a traditional monolith with one entry point
-for syscalls, with apps treated as cooperative-multitasking tasks
-that can be sent different messages (e.g. 'initialize', 'key hit',
-'render to buffer') through their main entry point, and which will
-return control to the OS having performed the necessary work.
-Applications are are passed a pointer to their task structure,
-which is partially defined by the OS, and partially for
-the application's own use.
+The OS has ended up as a traditional monolith with one entry point for syscalls,
+with apps treated as cooperative-multitasking tasks that can be sent different
+messages (e.g. 'initialize', 'key hit', 'render to buffer') through their main
+entry point, and which will return control to the OS after having performed the
+necessary work.  Applications are passed a pointer to their task structure,
+which is partially defined by the OS, and partially for the application's own
+use.
 
 The program compiles into a tool to build a kernel image,
 so having built the program, the [Makefile](Makefile) will run it,
-piping the output into a file called `kernel`.
+redirecting the output into a file called `kernel`.
 The Makefile will then proceed to build a root filesystem image.
 This involves rebuilding the program with different compiler flags,
-then building a tar file containing the resulting programs
-(the filesystem format supported by the OS is the tar-file format).
+then building a tarball containing the resulting programs
+(the filesystem format supported by the OS is the tarball format).
 
 For further usage information see [gavin.md](gavin.md).
 
@@ -140,8 +141,9 @@ The file system is kinda optimistic about matching names, so,
 for example if you type the command `shell` into a command-line
 it will execute the program `sh` - close enough a match for it.
 
-The ELF binaries are not loaded at the correct address, and their entry point
-must be the start address of the text segment.
+The [ELF binaries](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format)
+are not loaded at the correct address, and their entry point must be the start
+address of the [text segment](https://en.wikipedia.org/wiki/Code_segment).
 
 The keyboard driver can cope with the basic alpha-numeric keys,
 but gets confused by fancy things like `shift` or `backspace`.
