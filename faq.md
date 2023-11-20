@@ -496,9 +496,8 @@ POSIX-conforming.
 By tradition, we do not say how many judging rounds we have in a given IOCCC.
 
 We often report when the IOCCC judges start the 1st round, and
-when usually when the IOCCC judges start near final judging rounds, and
-sometimes the final judging round, so you may guess that we have at
-least 3 rounds.  :-)  The actual number of rounds is certainly more than 3.
+when usually report when the IOCCC judges start near final judging rounds, and
+sometimes we also report when we enter what we believe is the final judging round, so you may guess that we have at least 3 rounds.  :-)  The actual number of rounds is certainly more than 3.
 
 
 ## <a name="faq3"></a>Section 3: Compiling and running IOCCC winners
