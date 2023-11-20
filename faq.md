@@ -650,6 +650,8 @@ At the same time some entries are not designed to work with clang. There might
 be alternate code added at some point but as above this depends on free time and
 other things that have to be done plus remembering to do it.
 
+See if the problem is mentioned in [bugs.md](/bugs.md).  If you have a change that fixes the problem (even if it just a change to the `Makefile`) that doesn't negatively impact the entry too much, consider submitting that change in the form of a pull request.
+
 
 ### <a name="faq3_5"></a>FAQ 3.5: What is this cb tool that is mentioned in the IOCCC?
 
