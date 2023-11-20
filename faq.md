@@ -1240,9 +1240,9 @@ not an issue and note that some issues are simply missing files, dead URL(s) or
 something like that.
 
 
-### c<a name="faq6_2"></a>FAQ 6.2: May I mirror the IOCCC web site?
+### <a name="faq6_2"></a>FAQ 6.2: May I mirror the IOCCC web site?
 
-We are not accepting mirror requests at this time, sorry.
+We are not accepting mirror requests at this time, sorry.  However you are free to fork the [IOCCC winner repo](https://github.com/ioccc-src/winner).  We do ask that your fork keep up to date with the latest changes when possible.
 
 
 ### <a name="faq6_3"></a>FAQ 6.3: May I use parts of the IOCCC in an article, book, newsletter, or instructional material?
