@@ -563,7 +563,7 @@ are much more strict in what they accept as a valid program), or the entry
 depended on operation system and library features that where common back then
 but are different/missing today.
 
-Please see the[bugs.md](/bugs.md) file for details about known problems with IOCCC winners.  In some cases you may be dealing with a problematic entry.  In a few fun cases, the IOCCC does not compile by design! 
+Please see the [bugs.md](/bugs.md) file for details about known problems with IOCCC winners.  In some cases you may be dealing with a problematic entry.  In a few fun cases, the IOCCC does not compile by design! 
 
 E.g., it is highly unlikely that you'll be able to execute
 [1984/mullender](years.html#1984/mullender) on a computer you're using to read
@@ -618,6 +618,8 @@ entries should be an alternate version.
 
 Other entries like [2001/herrmann2](/thanks-for-fixes.md#2001herrmann2-readmemd)
 now work with 32-bit AND 64-bit systems.
+
+Please see the [bugs.md](/bugs.md) file for the problematic entry in question to see if the problem is known, and if a fix is wanted, consider trying to port the code to a 64-bit system and submitting a pull request with that change.  Pull requests that fix such code while trying to minimize the impact of any changes and preserving the spirit of the orignal code are very welcome!
 
 
 ### <a name="faq3_3"></a>FAQ 3.3: Why do some IOCCC winners fail to compile under macOS?
