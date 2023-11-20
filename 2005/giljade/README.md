@@ -4,17 +4,6 @@
 make
 ```
 
-NOTE: if you do not have access to a compiler that lets you have alternative arg
-types to `main()` the self-test feature will fail. If your compiler does not
-have this defect you can use the Alternate code described below. The reason to
-have it as the alternate version is that there is more to the entry that can
-still be enjoyed with compilers with the `main()` args defect including the
-primary purpose of the entry, a puzzle.
-
-Hopefully this will be resolved in time where there is no need for an alternate
-version but it's a complicated one. See also the [bugs.md](/bugs.md) file for
-more information.
-
 
 ### Bugs and (Mis)features:
 
@@ -45,7 +34,7 @@ Open an xterm with 78 lines.
 vi out
 ```
 
-Press ^F (control F) repeatedly.
+Press `^F` (control F) repeatedly.
 
 
 ### Self-test feature to try:
@@ -58,9 +47,10 @@ Press ^F (control F) repeatedly.
 
 ## Judges' remarks:
 
-This entry takes editorial in how it deals with its output.  After using
-vi to look at the source, use vi to look at its output.   We especially
-recommend it on a 78 column xterm while leaning on Control-F.
+This entry takes editorial in how it deals with its output.  After using `vi(1)`
+(or `vim(1)`) to look at the source, use `vi(1)` (or `vim(1)`) to look at its
+output.   We especially recommend it on a 78 column xterm while leaning on
+Control-F.
 
 If you really understand expressions, then understand this:
 
@@ -76,9 +66,10 @@ s=s^(b=s&s-1^s)
 ### So what do we have here ?
 
 Just run the executable with no command line args and look at the output. In
-order to properly enjoy it you will need two good old programs: xterm and vi.
-Do the following: open an xterm with precisely 78 lines, and use the tiny font
-size for best results. Then vi (vim will also do) the output. Type `^F`
+order to properly enjoy it you will need two good old programs: `xterm(1)` and
+`vi(1)` (or `vim(1)`).
+Do the following: open an `xterm(1)` with precisely 78 lines, and use the tiny font
+size for best results. Then `vi(1)` (`vim(1)` will also do) the output. Type `^F`
 repeatedly or hold it down and enjoy the show ...
 
 The program solves (very very fast) a sliding block puzzle. There are many
@@ -100,7 +91,7 @@ Actually, This program is smarter than merely printing ITSELF in 180 different
 layouts. It is self-improving, in that the programs it prints have three
 advantages over the original:
 
-1. Their layout is more precise (Notice the annoying \ at the 10'th line of
+1. Their layout is more precise (Notice the annoying `\` at the 10'th line of
 the original program which is actually a 'layout bug').
 
 2. Their binary output does not rely on the source file being in the same
@@ -108,7 +99,7 @@ directory, and will not dump core if it doesn't (like the original does).  :)
 
 3. They have much more comments (Not very helpful ones though).
 
-In addition as we all know bugs can creep on us in the most unexpected of
+In addition as we all know bugs can creep up on us in the most unexpected of
 places, and checking that indeed the output is composed of 180 legal C
 programs by hand can be quite tedious, hence the program also include a self-
 test mode. Just run it with the output file as command line argument. It will
@@ -124,7 +115,8 @@ but this can easily be done. Try it and diff the output of any of the 180
 results with the original output. Of course all 180 programs also include the
 self-test mode.
 
-### Why I think this program is obfuscated.
+
+### Why I think this program is obfuscated
 
 * Because it says so, and twice is better than once!
 * All the usual suspects i.e. `?:`, `&&`, `||`, `,` used to compress code
@@ -134,7 +126,7 @@ variable names, etc...
 the algorithm that is used to generate possible moves is extremely efficient.
 
     In fact it can compute several moves in parallel on one processor! Moreover
-    Only the most efficient bitwise logical operations, shift,and subtraction by
+    only the most efficient bitwise logical operations, shift,and subtraction by
     one is used. No inefficient conditional tests and jumps are needed in that
     part of the program.
 * The single expression I'm most proud of, and would have submitted to the
@@ -154,9 +146,10 @@ interesting.
 when returning to it now I had to sweat quite a lot to understand the f\*\*\*ing
 mess I've made.
 
+
 ### Known Bugs/problems/warnings/portability issues
 
-Some `CPP`s issue a warning about empty macro parameters.
+Some `cpp`s issue a warning about empty macro parameters.
 
 `-pedantic` informs me that 'ISO C' does not allow extra ; outside of a
 function, and to this I say to ISO what ???
@@ -166,7 +159,7 @@ and remove some unnecessary expressions, and to this I say: if I listen to you
 where is my freedom to obfuscate in style?
 
 As mentioned earlier if you try to run the original program without its source
-nearby it will dump core.
+in the working directory it will dump core.
 
 The program relies heavily on the ASCII coding system (have I seen this
 comment before ?). It also implicitly assumes that `sizeof(int) = sizeof(FILE
@@ -190,6 +183,7 @@ program.
 
 Use the program to solve for board size different than `4*5`. That's a bit more
 tricky.
+
 
 ### Hint for the challenges
 

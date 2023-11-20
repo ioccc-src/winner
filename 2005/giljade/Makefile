@@ -119,8 +119,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ= ${PROG}.alt.o
-ALT_TARGET= ${PROG}.alt
+ALT_OBJ=
+ALT_TARGET=
 
 
 #################
@@ -136,17 +136,15 @@ all: data ${TARGET}
 	sandwich supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: this version cannot successfully run the self-test. Use make alt"
-	@echo "for a version which will work. See README.md for why it is this way."
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+test: ${PROG} test.sh
+	./test.sh
 
 # alternative executable
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
-
-${PROG}.alt: ${PROG}.alt.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # data files
 #
@@ -212,7 +210,7 @@ clean:
 	fi
 
 clobber: clean
-	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -f ${TARGET} ${ALT_TARGET} out
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
