@@ -631,6 +631,8 @@ actually clang, even `/usr/bin/gcc`.
 That being said many (if not most) of these entries have been fixed and some
 others will be looked at, when found.
 
+In some cases the [bugs.md](/bugs.md) file may note a known macOS problem with an entry.  Should you manage to port the entry, and assuming your changes also attempt to preserve the orignal intent of the IOCCC entry, we would encourage you to submit a pull request with your ported code.
+
 
 ### <a name="faq3_4"></a>FAQ 3.4: Why does clang or gcc fail to compile an IOCCC winner?
 
