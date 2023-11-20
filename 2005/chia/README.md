@@ -12,13 +12,6 @@ make
 ```
 
 
-### Try:
-
-```sh
-echo "Do or do not. There is no try."
-```
-
-
 ## Judges' remarks:
 
 Have you had your morning cup of Java?  You might want a
