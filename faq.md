@@ -563,6 +563,8 @@ are much more strict in what they accept as a valid program), or the entry
 depended on operation system and library features that where common back then
 but are different/missing today.
 
+Please see the[bugs.md](/bugs.md) file for details about known problems with IOCCC winners.  In some cases you may be dealing with a problematic entry.  In a few fun cases, the IOCCC does not compile by design! 
+
 E.g., it is highly unlikely that you'll be able to execute
 [1984/mullender](years.html#1984/mullender) on a computer you're using to read
 this FAQ. However for that entry [Cody Boone
