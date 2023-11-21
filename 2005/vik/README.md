@@ -39,6 +39,7 @@ through user configured [maps](https://en.wikipedia.org/wiki/Map). User defined
 worlds support up to 26 different wall textures that can even be animated. One
 example of a user defined world is submitted with the entry.
 
+
 ### Features
 
 This program is a complete 3D engine with
@@ -47,21 +48,27 @@ This program is a complete 3D engine with
 * Up to 26 different bitmap textures in a maze.
 * Support for animated bitmap textures.
 * Uses default bitmaps in case the configured bitmaps can't be found.
-* A default map in case no one is specified.
+* A default map in case none is specified.
 * Configurable window size.
 * Navigation using cursor keys (rotate left and right, move forward and
 backward).
 
+
 ### Build and Run
 
-Compile the source code and link [x
+Compile the source code and link in [X
 libraries](https://en.wikipedia.org/wiki/Xlib) if necessary. The program takes
 three options which have to be typed in a specific order as described below.
 
+```sh
+./vik [-w <width>] [mapfile]
 ```
-        Usage: ./vik [-w <width>] [mapfile]
-        width   - Specifies the width of the window
-        mapfile - Filename containing a map
+
+where:
+
+```
+width   - Specifies the width of the window
+mapfile - Filename containing a map
 ```
 
 #### Examples
@@ -91,30 +98,32 @@ located in the current directory.
 
 Use the cursor keys to navigate through the labyrinth.
 
+
 ### Creating mazes
 
-A maze consist of a map file and texture bitmap files. The map file is an
+A maze consists of a map file and texture bitmap files. The map file is an
 ASCII text file where lower case letters represent walls. The letter tells the
 engine what bitmap texture file to use. The `*` character lets the engine know
 where to position the user. The example below shows how a map file can look:
 
 ```
-       aaaaaaaaaaaaa
-       a           a
-       a      *    a
-       a    bbbb   cccccccc
-       c                  c
-       cccccccccccccccccccc
-
+aaaaaaaaaaaaa
+a           a
+a      *    a
+a    bbbb   cccccccc
+c                  c
+cccccccccccccccccccc
 ```
 
-The engine loads the map, and creates walls. When a character `a`-`z` is found,
-the engine will load the corresponding texture bitmap. The bitmap file must be
-named `*.bmp` where `*` is substituted with the letter of the wall in the map.
+The engine loads the map, and creates walls. When a character in the range `a-z`
+is found, the engine will load the corresponding texture bitmap. The bitmap file
+must be named `*.bmp` where `*` is substituted with the letter of the wall in
+the map (note that only `a`, `b` and `c` exist).
 
 So to load the map above, the files `a.bmp`, `b.bmp`, and `c.bmp` should be
 located in the same directory as the engine executable (or rather in the
 current directory).
+
 
 ### Obfuscation
 
@@ -123,15 +132,17 @@ The program is obfuscated in several ways:
 * Bad use of variables.
 * Use of the `?` operator.
 * Recursive calls to `main()`.
-* Bad use of for variables and the comma operator.
+* Bad use of `for` loops and the comma operator.
 * To make the final obfuscated touch I ran indent which really made the program
 unreadable (I guess that is not really the intent with indent ;) )
+
 
 ### Compiler warnings
 
 There are no compiler warnings when compiling with `-ansi` but there are quite
 a few warnings from `lclint`. Mainly because the program is very optimized for
 code size.
+
 
 ### Limitations
 
