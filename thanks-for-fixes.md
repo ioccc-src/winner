@@ -3023,6 +3023,12 @@ how https is set up, in which case just enjoy it for what it was. But there
 might be some command line that will let it work that way.
 
 
+## [2005/timwi](2005/timwi/timwi.c) ([README.md](2005/timwi/README.md]))
+
+Cody added [try.sh](2005/timwi/try.sh). It only has one command as he doesn't
+want to knacker his brain any more than it might or might not already be.
+
+
 ## [2005/toledo](2005/toledo/toledo.c) ([README.md](2005/toledo/README.md))
 
 Cody fixed this to compile with some versions of clang which have an additional

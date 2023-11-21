@@ -28,11 +28,9 @@ simple 3-character fix will make it slightly less so.
 
 Quite a few BF programs found on the Net expect byte-based memory, quite a few
 exceed the capacity of this interpreter, but there are many that work. Some
-small [quines][] work, some don't.
+small [quines](https://en.wikipedia.org/wiki/Quine_(computing)) work, some don't.
 
 Why?
-
-[quines]: https://en.wikipedia.org/wiki/Quine_(computing)
 
 
 ## Author's remarks:
@@ -45,6 +43,7 @@ separated by whitespace (this will be the input to the BF program), then a `:`
 (colon), then the BF program itself.
 
 You must not pass any command-line arguments.
+
 
 ### Features
 
@@ -60,20 +59,22 @@ Use this to obfuscate your BF programs!
 
 * Ignores all whitespace (newlines, spaces and tabs) in the input program.
 
+
 ### Limitations
 
-Since the program, naturally, uses ints, the calculations must not exceed the
-range of an int. (But then again, you can use the integer overflow to further
+Since the program, naturally, uses `int`s, the calculations must not exceed the
+range of an `int`. (But then again, you can use the integer overflow to further
 obfuscate your BF programs in creative ways!)
 
 You are limited to 3125 input integers and 3125 instructions. If you exceed
 one of these limits, the behaviour is undefined.
 
+
 ### Obfuscations
 
 Some of the superficial obfuscations are pretty obvious: I'm using `#define`s to
 make everything look nice and lineal, and the program is merely a recursive
-`main` function with only a single `return` statement which uses nested ternary
+`main()` function with only a single `return` statement which uses nested ternary
 operators to make even the pre-processed code unreadable.
 
 However, the more subtle obfuscations relate to the way the program works.
