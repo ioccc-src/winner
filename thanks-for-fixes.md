@@ -3023,6 +3023,19 @@ how https is set up, in which case just enjoy it for what it was. But there
 might be some command line that will let it work that way.
 
 
+## [2005/sykes](2005/sykes/sykes.c) ([README.md](2005/sykes/README.md]))
+
+Cody added the [try.sh](2005/sykes/try.sh) script which runs in a loop with a
+menu of things one might wish to try, asking if they wish to continue when done.
+
+Cody added the script [test.sh](2005/sykes/test.sh) and the make rule `test` to
+run the test suite. The program will enter an infinite loop after it runs so you
+have to hit ctrl-c to end it which the script tells you.
+
+The scripts note every time that one will have to send ctrl-c or whatever their
+interrupt is set to in order to exit the program.
+
+
 ## [2005/timwi](2005/timwi/timwi.c) ([README.md](2005/timwi/README.md]))
 
 Cody added [try.sh](2005/timwi/try.sh). It only has one command as he doesn't
