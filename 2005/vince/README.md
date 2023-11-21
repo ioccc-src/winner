@@ -14,21 +14,20 @@ make
 ./vince
 ```
 
-Under macOS run from within an console tab (whether xterm, the default or
-another) while the X11 server is running.
 
+## Try:
 
-### Try:
-
-```sh
-echo "Do or do not. There is no try."
-```
+When running this in the program's window try hitting space a few times and see
+what happens!
 
 
 ## Alternate code:
 
 The [vince.alt.c](vince.alt.c) code of the submission will run on SGI IRIX and
-also has the recursive CPP macro (which sneaked in accidentally) removed.
+also has the recursive `CPP` macro (which sneaked in accidentally) removed.
+
+
+### Alternate build:
 
 To compile this alternate version:
 
@@ -36,7 +35,14 @@ To compile this alternate version:
 make alt
 ```
 
+### Alternate use:
+
 Use `vince.alt` as you would `vince` above.
+
+
+### Alternate try:
+
+Try it just like `vince` as above.
 
 
 ## Judges' remarks:
@@ -53,6 +59,7 @@ Challenge: Try modifying the texture to something of your own design.
 
 ## Author's remarks:
 
+
 ### ABUSE OF RULES
 
 * The executable needs to read in its own source code in order to run. As
@@ -64,6 +71,7 @@ able to find it...
 * The program abuses severely the whitespace and `{ } ;` exceptions in the
 file size limits.
 
+
 ### Requirements
 
 * OpenGL. It works (slowly) with Mesa.
@@ -73,6 +81,7 @@ file size limits.
 * The original source needs to be in the same directory as the executable,
 and the source's name should be the same as the executable but with `.c` on the
 end.
+
 
 ### Background
 
@@ -84,6 +93,7 @@ So to one up them, I decided to use OpenGL. It's standard, and most Unix-like
 systems these days have either accelerated graphics or else software
 rendering.
 
+
 ### Obfuscation
 
 It was a challenge getting the source code below the 2k limit. OpenGL has way
@@ -94,17 +104,22 @@ size to fit under the limit while still having some semblance of a demo.
 
 There are some interesting abuses scattered about.
 
+
 ### Usage
 
 Try hitting the space bar when the program is running.
 
+
 ### For Fun
 
+
 Try modifying the texture to your own custom design...
+
 
 ### Thanks
 
 Many thanks to John Clemens for testing this on various machines for me.
+
 
 ### Errors you can get
 
@@ -112,8 +127,8 @@ Many thanks to John Clemens for testing this on various machines for me.
 - 1 =
 [X](https://en.wikipedia.org/wiki/X_Window_System_protocols_and_architecture)
 problem.
-- 2 = Can't open [glx](https://en.wikipedia.org/wiki/GLX).
-- 3 = Can't open 16bpp visual.
+- 2 = can't open [GLX](https://en.wikipedia.org/wiki/GLX).
+- 3 = can't open 16bpp visual.
 - 4 = can't open source file.
 
 

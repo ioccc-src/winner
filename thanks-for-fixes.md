@@ -3032,6 +3032,20 @@ another function that takes 4 args and which is what used to be `main()`.
 The alternate versions were also fixed.
 
 
+## [2005/vince](2005/vince/vince.c) ([README.md](2005/vince/README.md))
+
+Cody fixed this in the case that the program is compiled or linked/copies to
+another file name: the code constructed the source code file name in a clever
+and more obscure way by copying to the buffer `*argv` and then using `strcat(3)`
+to concatenate to it `.c`. But this assumes that the executable is the same name
+as the source file which isn't always be true. The author even stated: 'as long
+as the source is in the same directory as the executable it should be able to
+find it' but the source code file name is not always the same as the executable
+with the appropriate extension so this might be called a bug fix as well though
+if one runs it from another directory, specifying the directory, it'll not catch
+it.
+
+
 ## [2006/birken](2006/birken/birken.c) ([README.md](2006/birken/README.md]))
 
 Cody fixed a segfault in macOS with this entry. The problem was a missing `+1`

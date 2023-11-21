@@ -58,8 +58,8 @@ void Q()
 glXQueryExtension L , N , N ) ) E (2); v=glXChooseVisual            L ,
 DefaultScreen (y ) , b  ) ; s.colormap = XCreateColormap            L ,
 RootWindow (y,v -> screen), v -> visual, AllocNone ); if            (!(
-r= glXCreateContext L, v, N, 1) ) ) E (3) ; strcpy(f, *A            ) ;  
-s.event_mask=KeyPressMask; strcat(f,".c"); F=fopen(f,"r"            ) ; 
+r= glXCreateContext L, v, N, 1) ) ) E (3) ; strcpy(f, __FILE__      ) ;  
+s.event_mask=KeyPressMask; ; F = fopen(f, "r"                       ) ; 
 w= XCreateWindow L, RootWindow( y, v -> screen ), M , M,            0,v
 ->depth,InputOutput, v->visual , CWColormap|CWEventMask,            &s)
 ;glXMakeCurrent L , w , r ); H GL_DEPTH_TEST ); if ( ! F            )E(
