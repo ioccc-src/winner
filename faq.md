@@ -1217,11 +1217,11 @@ If you do submit a pull request, we ask that each pull request address just one 
 Note that just because you have a fix does not mean it'll be accepted. This
 might be because the author objects or it doesn't fit in some way or another. Of
 course if the entry does not work we'll certainly be more inclined to accept the
-fix. If it is accepted we'll be happy to credit you in the entry's _README.md_
-file. If you're a previous winner we will happily link to your entries; if
-you're not we can link to your website if you wish.
+fix. If it is accepted we'll be happy to credit you in the
+[thanks](/thanks-for-fixes.md) file. If you're a previous winner we will happily
+link to your entries; if you're not we can link to your website if you wish.
 
-More generally please see the file [how-to-bugfix.md](/how-to-bugfix.md). Note
+More generally please see the file [how-to-help.md](/how-to-help.md). Note
 that this file is not a tutorial on how to fix X, Y and Z problems but rather
 what to do to get the fix in.
 
