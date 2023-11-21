@@ -5,6 +5,17 @@ make
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2005 sykes in bugs.md](/bugs.md#2005-sykes).
+
+
 ## To use:
 
 ```sh
@@ -240,13 +251,14 @@ mode. Otherwise some PET specific features are skipped during normal
 [emulation](https://en.wikipedia.org/wiki/Emulator).
 
 The main processing all happens in a heroic expression containing no
-less than 64 ternary operators (after `cpp`) starting on line 56. This
-decodes the
+less than 64 ternary operators (after `cpp`) starting on [line
+56](https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/sykes/sykes.c#L56).
+This decodes the
 [6502](https://en.wikipedia.org/wiki/MOS_Technology_6502#Technical_description)
 instructions according to a table and executes them.
 
-The addressing mode is decoded in a similar expression starting on line
-53.
+The addressing mode is decoded in a similar expression starting on [line
+53](https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/sykes/sykes.c#L53).
 
 
 ### Bugs

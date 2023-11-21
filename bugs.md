@@ -2224,6 +2224,38 @@ bug but it's worth pointing out as it won't work on as many websites as it used
 to including the [IOCCC website](https://www.ioccc.org) itself.
 
 
+## 2005 sykes
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2005/sykes/sykes.c](2005/sykes/sykes.c)
+### Information: [2005/sykes/README.md](2005/sykes/README.md)
+
+The author stated the below points of interest.
+
+The machine emulated is an older 40 column one so 80 column programs will not
+show up correctly.
+
+There is no emulation of [PET](https://en.wikipedia.org/wiki/Commodore_PET)
+graphics characters.
+
+The parameter controls the speed of the 60Hz "jiffy clock", and not the
+processor speed. This means many games may run too fast to be usable -
+it really depends on the speed of your machine.
+
+Although the PET [emulator](https://en.wikipedia.org/wiki/Emulator) can do `LOAD`
+and `SAVE`, it cannot `VERIFY` or `OPEN` and `CLOSE` files.
+
+The [PET](https://en.wikipedia.org/wiki/Commodore_PET) hardware
+[emulation](https://en.wikipedia.org/wiki/Emulator) is not at all complete -
+features such as the hardware timers are completely missing. Some programs will
+not run correctly.
+
+The
+[6502](https://en.wikipedia.org/wiki/MOS_Technology_6502#Technical_description)
+[emulation](https://en.wikipedia.org/wiki/Emulator) does not include the seldom
+used decimal mode, or any of the "undocumented" instructions.
+
+
 # 2006
 
 
