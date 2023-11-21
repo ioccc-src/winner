@@ -2,7 +2,7 @@
 
 This entry requires SDL to be installed.
 
-See the [faq](/faq.md) for information on how to install it if you haven't
+See the [FAQ](/faq.md) for information on how to install it if you haven't
 already.
 
 If you have SDL installed:
@@ -16,13 +16,6 @@ make
 
 ```sh
 ./jetro
-```
-
-
-### Try:
-
-```sh
-echo "Do or do not. There is no try."
 ```
 
 
@@ -42,7 +35,7 @@ To compile the entry you need SDL library, which is used only for audio
 output. To run the entry make sure you have audio output available. The entry
 plays 22KHz 16 bit mono music with a small softsynth. When the music plays,
 you can stop the application by pressing enter, as the code will just wait
-with one call to getchar() before it quits.
+with one call to `getchar()` before it quits.
 
 
 ## Copyright and CC BY-SA 4.0 License:

@@ -131,14 +131,19 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
-${PROG}.alt: ${PROG}.c
-	${CC} ${CFLAGS} -DNO_STTY $< -o $@ ${LDFLAGS}
-
+no_stty: ${PROG}.c
+	${CC} ${CFLAGS} -DNO_STTY $< -o ${PROG} ${LDFLAGS}
 
 # alternative executable
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS}  $< -o $@ ${LDFLAGS}
+
+alt-no_stty: ${PROG}.alt.c
+	${CC} ${CFLAGS} -DNO_STTY  $< -o ${PROG}.alt ${LDFLAGS}
 
 # data files
 #
