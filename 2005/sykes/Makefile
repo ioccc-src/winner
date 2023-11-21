@@ -137,6 +137,9 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
+test: ${PROG} test.sh
+	-./test.sh
+
 # alternative executable
 #
 alt: data ${ALT_TARGET}

@@ -5,6 +5,17 @@ make
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2005 sykes in bugs.md](/bugs.md#2005-sykes).
+
+
 ## To use:
 
 ```sh
@@ -15,18 +26,8 @@ make
 ### Try:
 
 ```sh
-./sykes pet.rom
-# type in the following for an old Easter egg:
-WAIT 6502,12
+./try.sh
 ```
-
-Also try:
-
-```
-./sykes chess
-```
-
-for some good [chess](https://en.wikipedia.org/wiki/Chess) fun.
 
 
 ## Judges' remarks:
@@ -57,7 +58,7 @@ dd bs=2k count=1 if=/dev/zero of=nullfill.bin
 ```
 
 For your convenience, we have added the above mentioned files to this entry directory.
-They are used to form the `pet.rom` file.
+They were used to form the `pet.rom` file.
 
 
 ## Author's remarks:
@@ -70,6 +71,7 @@ processor](https://en.wikipedia.org/wiki/MOS_Technology_6502#Technical_descripti
 This is the second version of the same entry, but this one takes care to
 not include any possibly copyrighted items in the info files, to be sure
 to not infringe the rules.
+
 
 ### Test
 
@@ -84,6 +86,7 @@ Compile the program, then test the
 A basic test is done for each instruction and addressing mode, all tests
 should pass. At the end of the tests, it loops forever - break out with
 control-C.
+
 
 ### PET EMULATION
 
@@ -180,8 +183,8 @@ WAIT 6502,12
 The program is basically a
 [6502](https://en.wikipedia.org/wiki/MOS_Technology_6502#Technical_description)
 [emulator](https://en.wikipedia.org/wiki/Emulator), and it does NOT need the
-[commodore](https://en.wikipedia.org/wiki/Commodore_PET)
-[rom](https://en.wikipedia.org/wiki/ROM_image) to work.
+[Commodore](https://en.wikipedia.org/wiki/Commodore_PET)
+[ROM](https://en.wikipedia.org/wiki/ROM_image) to work.
 
 Supplied as a demonstration is a
 compiled-for-[6502](https://en.wikipedia.org/wiki/MOS_Technology_6502#Technical_description)
@@ -222,9 +225,10 @@ In
 the screen understands normal
 [ASCII](https://en.wikipedia.org/wiki/ASCII#Character_set).
 
-Lastly, the before [emulation](https://en.wikipedia.org/wiki/Emulator) starts,
-the low byte from a `time()` call is placed at address 0 - this can be used as a
+Lastly, before [emulation](https://en.wikipedia.org/wiki/Emulator) starts,
+the low byte from a `time(3)` call is placed at address 0 - this can be used as a
 random seed.
+
 
 ### Technical description
 
@@ -241,19 +245,21 @@ the [PET](https://en.wikipedia.org/wiki/Commodore_PET) hardware for it to work.
 If the supplied file is exactly 16384 bytes, the
 [emulator](https://en.wikipedia.org/wiki/Emulator) assumes it is a
 [PET](https://en.wikipedia.org/wiki/Commodore_PET)
-[rom](https://en.wikipedia.org/wiki/ROM_image), and goes into PET emulation
+[ROM](https://en.wikipedia.org/wiki/ROM_image), and goes into PET emulation
 mode. Otherwise some PET specific features are skipped during normal
 [6502](https://en.wikipedia.org/wiki/MOS_Technology_6502#Technical_description)
 [emulation](https://en.wikipedia.org/wiki/Emulator).
 
 The main processing all happens in a heroic expression containing no
-less than 64 ternary operators (after `cpp`) starting on line 56. This
-decodes the
+less than 64 ternary operators (after `cpp`) starting on [line
+56](https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/sykes/sykes.c#L56).
+This decodes the
 [6502](https://en.wikipedia.org/wiki/MOS_Technology_6502#Technical_description)
 instructions according to a table and executes them.
 
-The addressing mode is decoded in a similar expression starting on line
-53.
+The addressing mode is decoded in a similar expression starting on [line
+53](https://github.com/ioccc-src/temp-test-ioccc/blob/master/2005/sykes/sykes.c#L53).
+
 
 ### Bugs
 
@@ -268,8 +274,8 @@ The parameter controls the speed of the 60Hz "jiffy clock", and not the
 processor speed. This means many games may run too fast to be usable -
 it really depends on the speed of your machine.
 
-Although the PET [emulator](https://en.wikipedia.org/wiki/Emulator) can do LOAD
-and SAVE, it cannot VERIFY or OPEN and CLOSE files.
+Although the PET [emulator](https://en.wikipedia.org/wiki/Emulator) can do `LOAD`
+and `SAVE`, it cannot `VERIFY` or `OPEN` and `CLOSE` files.
 
 The [PET](https://en.wikipedia.org/wiki/Commodore_PET) hardware
 [emulation](https://en.wikipedia.org/wiki/Emulator) is not at all complete -
@@ -281,6 +287,7 @@ The
 [emulation](https://en.wikipedia.org/wiki/Emulator) does not include the seldom
 used decimal mode, or any of the "undocumented" instructions.
 
+
 ### IMPORTANT NOTE
 
 I think it is great fun to run the
@@ -288,10 +295,11 @@ I think it is great fun to run the
 [emulation](https://en.wikipedia.org/wiki/Emulator) and mess around with
 [Microsoft](https://en.wikipedia.org/wiki/Microsoft)
 [BASIC](https://en.wikipedia.org/wiki/BASIC). However, this obviously needs the
-[rom](https://en.wikipedia.org/wiki/ROM_image) file to work. My
+[ROM](https://en.wikipedia.org/wiki/ROM_image) file to work. My
 program is original and completely free of any copyright, but, of
 course, the `pet.rom` is not my work. So I ask the user to download it
 from the Internet.  This is to avoid directly infringing any copyright.
+
 
 ### Finally
 
