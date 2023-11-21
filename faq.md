@@ -34,9 +34,10 @@
 
 ## Section  4 - [Changes made to IOCCC winners](#faq4)
 - [4.0  - Why are some winning author remarks incongruent with the winning IOCCC code?](#faq4_0)
-- [4.1  - Why were some calls to the libc function gets changed to use fgets?](#faq4_1)
+- [4.1  - Why were some calls to the libc function `gets(3)` changed to use `fgets(3)`?](#faq4_1)
 - [4.2  - What was changed in an IOCCC winner source code?](#faq4_2)
-- [4.3  - Why do author remarks sometimes not match the source?](#faq4_3)
+- [4.3  - Why do author remarks sometimes not match the source / why are there
+other inconsistencies with the original entry?](#faq4_3)
 - [4.4  - What is the meaning of the file ending in .orig.c in IOCCC winners?](#faq4_4)
 
 ## Section  5 - [Updating or correcting IOCCC web site content](#faq5)
@@ -988,7 +989,7 @@ version like `winner.alt.c` or `prog.alt.c`. In fact it is advisable to look at
 the original code when reading the author's (and sometimes authors') remarks.
 
 
-### <a name="faq4_1"></a>FAQ 4.1: Why were some calls to the libc function gets changed to use fgets?
+### <a name="faq4_1"></a>FAQ 4.1: Why were some calls to the libc function `gets(3)` changed to use `fgets(3)`?
 
 Some may wonder: "Doesn't this tamper with the entry too much?"
 
@@ -1015,7 +1016,6 @@ those have mainly not been touched except one that has had the buffer size
 increased (which could be done for others that are not possible to change to
 `fgets()` though this has not been done).
 
-
 Some entries can be made to look almost identical to the original entry. For
 instance the fix to [1988/reddy](1988/reddy/README.md) required only a single
 `#define` be added.
@@ -1023,10 +1023,20 @@ instance the fix to [1988/reddy](1988/reddy/README.md) required only a single
 In the future we, the judges, would prefer that entries use `fgets()` to prevent
 these problems.
 
-NOTE: due to 'compatibility reasons' `fgets()` stores the newline and `gets()`
-does not. We're not sure how this is compatibility but either way it can cause a
+An annoying fact is that for '"compatibility" reasons' `fgets()` retains the
+newline and `gets()` does not.  As the v7 man page used to say:
+
+```
+BUGS
+
+The fgets(3) function retains the newline while gets(3) does not, all in the
+name of backward compatibility.
+```
+
+We're not sure how this is compatibility but either way it can cause a
 problem and it is this that has complicated most of the fixes though again some
 can look almost identical.
+
 
 
 ### <a name="faq4_2"></a>FAQ 4.2: What was changed in an IOCCC winner source code?
@@ -1126,12 +1136,25 @@ Obviously if you want to view the alt code or the orig code you can just open
 the files as described above.
 
 
-### <a name="faq4_3"></a>FAQ 4.3: Why do author remarks sometimes not match the source?
+### <a name="faq4_3"></a> FAQ 4.3  - Why do author remarks sometimes not match the source / why are there other inconsistencies with the original entry?
 
-This is very likely to happen when an entry was fixed for modern systems. When
-you look at the remarks of the author you should look at the `prog.orig.c` or
-the `winner.orig.c` file. You might also find value in the above `diff` make
-rules.
+If the entry has been fixed for modern systems and this fix required
+modification to the code then invariably there will be entries where the remarks
+of the author or authors are inconsistent with the original code, the size of
+the code might be against rule 2 and other kinds of inconsistencies might also
+be there.
+
+This is why we recommend that when you read the remarks, sometimes the judges'
+remarks and always the author's or authors' remarks, we recommend that you look
+at the original code. When the entry source code is called `prog.c` the original
+code is in `prog.orig.c`; otherwise it is `winner.orig.c`. For instance one of
+Landon's all time favourite entries is
+[1984/mullender](1984/mullender/README.md) and the original code is in
+[mullender.orig.c](1984/mullender/mullender.orig.c). In some cases, such as
+`1984/mullender`, the original code is the same as the code as no changes were
+made (there is an alt version for systems that are not VAX-11/PDP-11, however).
+
+See also [FAQ 4.2: What was changed in an IOCCC winner source code?](#faq4_2)
 
 
 ### <a name="faq4_4"></a>FAQ 4.4: What is the meaning of the file ending in .orig.c in IOCCC winners?

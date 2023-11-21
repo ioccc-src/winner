@@ -64,10 +64,28 @@ We are pleased to note the many contributions, **made since 2021 Jan 01**,
 on a winner by winner basis.
 
 
+## Note about fixes and inconsistencies with the original code and remarks
+
+Invariably when an entry is fixed and it is not made an alt version (sometimes
+it is worth an alt version and other times not - it all depends on what was
+done) some inconsistencies will be introduced of the original code, the remarks
+of the author(s) and the size restrictions of the contest for that year (and in
+some cases it might end up being against other rules).
+
+See [FAQ 4.3  - Why do author remarks sometimes not match the source / why are
+there other inconsistencies with the original entry?](/faq.md#faq4_3) for this
+specifically and also [FAQ 4.2: What was changed in an IOCCC winner source
+code?](/faq.mdfaq4_2).
+
+
 ## Notes about changing `gets()` to `fgets()` in some entries:
 
-Although this is discussed in the [FAQ](/faq.md) we want to say here simply that
-the problem with `gets()` is that in some systems a warning can be interspersed
+Although the 'why' is discussed in the [FAQ 4.1: Why were some calls to the libc
+function `gets(3)` changed to use `fgets(3)`?](/faq.md#faq4_1) we want to give
+more details here as it pertains to the fixes and  updates made in numerous
+entries below (note that some of the information in that FAQ entry are below).
+
+The problem with `gets()` is that in some systems a warning can be interspersed
 with the output which can be confusing, to say nothing of the annoyance of it
 (which can be fixed via `2>/dev/null` - and this is done with some entries in
 the to use/try sections - but which makes it more burdensome to run as there are
@@ -76,11 +94,16 @@ a lot of entries that use it still).
 A good example was [1990/tbr](/thanks-for-fixes.md#1990tbr-readmemd) where one
 would see:
 
-```sh
+```
 $ warning: this program uses gets(), which is unsafe.
+# cursor here, what to do?
 ```
 
-whereas without the warning it's much easier to see that it's a prompt.
+whereas without the warning it's much easier to see that it's a prompt:
+
+```
+$
+```
 
 Another great example is:
 
@@ -114,8 +137,8 @@ fixes in that entry.
 In any case some of the entries have been updated this way for the reasons
 described above and in the [FAQ](/faq.md).
 
-Where possible `gets` has been redefined to be `fgets` with the appropriate arg.
-This is not always possible but if often is.
+Where possible `gets(3)` has been redefined to be `fgets(3)` with the
+appropriate arg.  This is not always possible but if often it is.
 
 See also [bugs.md](/bugs.md) for a further discussion on the matter.
 
