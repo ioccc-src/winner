@@ -57,7 +57,7 @@ void Q()
 ,N ) ) E( 2 ) ; v =  glXChooseVisual L , DefaultScreen (y              ),b
 ); s. colormap = XCreateColormap L , u = RootWindow ( y ,              v->
 screen),v->visual, AllocNone ); if ( !(r=glXCreateContext              L,v
-,N , 1 ) ) ) E ( 3 ) ; strcpy (f , * A) ; strcat (f, ".c"              ) ;
+,N , 1 ) ) ) E ( 3 ) ; strcpy (f , __FILE__);  ;
 F =  fopen ( f ,  "r" ) ; s . event_mask = KeyPressMask ;              w =
 XCreateWindow L,u, 0,0,640, 480,0,v -> depth, InputOutput              , v
 -> visual , CWBorderPixel  | CWColormap  | CWEventMask ,&              s);
@@ -72,9 +72,9 @@ GL_PROJECTION ) ; gluPerspective ( 60 , 1.333 , 1 ,  100)    	       ; J
 GL_MODELVIEW); u=glGenLists(1); glNewList (u,GL_COMPILE);	       H X
 ); while(a!=81)a=G; G;G;for(x=0;x<6;x++){glBegin(GL_QUADS              ) ;
 R(); glNormal3f(c,m,n); T(1,1); V T(1,0); V T(0,0); V T(0              ,1)
-; V glEnd(); } glEndList(); XMapWindow L, w) ; c=0; for(;              ; ) 
+; V glEnd(); } glEndList(); XMapWindow L, w) ; c=0; for(;              ; )
 { if (XPending L)){ XNextEvent L, &e); if ((XLookupKeysym              ( (
-XKeyEvent *)&e,0))&1<<5){ h=10; i[c] =!i[c]; c++; c&=3; }             else 
+XKeyEvent *)&e,0))&1<<5){ h=10; i[c] =!i[c]; c++; c&=3; }             els
 E(0) } glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT            ) ;
 glLoadIdentity (); gluLookAt ( -2 ,0 ,5 ,0,0 ,0,0 ,0 ,1 )          ; H
 GL_LIGHTING); H GL_LIGHT0 ); U GL_POSITION, i + 4 ); U O)        ; U
