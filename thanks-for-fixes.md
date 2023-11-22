@@ -2915,6 +2915,12 @@ Cody added the [alt code](2005/anon/README.md#alternate-code) with vi(m) like
 movements.
 
 
+## [2005/boutines](2005/boutines/boutines.c) ([README.md](2005/boutines/README.md]))
+
+Cody added the [input.txt](2005/boutines/input.txt) data file based on suggested
+input from the author, adapting it to a command to try out.
+
+
 ## [2005/giljade](2005/giljade/giljade.c) ([README.md](2005/giljade/README.md]))
 
 After Landon fixed the entry to compile with clang Cody noticed this does not
