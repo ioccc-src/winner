@@ -2307,14 +2307,18 @@ used decimal mode, or any of the "undocumented" instructions.
 
 ## 2006 monge
 
-### STATUS: known bug - please help us fix
+### STATUS: doesn't work with some platforms - please help us fix
 ### Source code: [2006/monge/monge.c](2006/monge/monge.c)
 ### Information: [2006/monge/README.md](2006/monge/README.md)
 
-Incorrect formulas will ungracefully crash the program.
+This program requires being able to read, write and execute memory. With the
+Apple silicon chips this is not allowed. Fixing this might be quite challenging
+but you are welcome to try and fix it.
 
-Fixing the (Mis)feature is likely to be a difficult challenge.
-You are welcome to try and fix it if you can!
+
+### STATUS: INABIAF - please **DO NOT** fix
+
+Incorrect formulas will ungracefully crash the program.
 
 
 ## 2006 toledo2
