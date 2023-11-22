@@ -2989,6 +2989,12 @@ Cody added explicit linking of libm (`-lm`) for systems like linux that seem to
 not do it implicitly (like macOS does).
 
 
+
+## [2005/klausler](2005/klausler/klausler.c) ([README.md](2005/klausler/README.md))
+
+Cody added the [try.sh](2005/klausler/try.sh) script.
+
+
 ## [2005/mikeash](2005/mikeash/mikeash.c) ([README.md](2005/mikeash/README.md))
 
 Cody fixed this to work in linux. The problem was an unknown escape sequence,
