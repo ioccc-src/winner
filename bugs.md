@@ -2263,10 +2263,11 @@ for running itself.
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) notes that, though
 probably obvious, this entry will not work with https. He added an alt version
 that scans for https in case someone wants to set up a pipeline or other
-workaround (perhaps with stunnel) but the problem otherwise is a secure
-connection has to first be set up in order to give http commands. This is not a
-bug but it's worth pointing out as it won't work on as many websites as it used
-to including the [IOCCC website](https://www.ioccc.org) itself.
+workaround (perhaps with stunnel) or even add additional code to it to make it
+work with https but the problem otherwise is a secure connection has to first be
+set up in order to give http commands. This is not a bug but it's worth pointing
+out as it won't work on as many websites as it used to including the [IOCCC
+website](https://www.ioccc.org) itself.
 
 
 ## 2005 sykes

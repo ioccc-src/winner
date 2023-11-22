@@ -3035,7 +3035,8 @@ needed but part of the entry) would work with compilers that have by default
 
 Cody also added the alt code which does scan for https. Futile, maybe, based on
 how https is set up, in which case just enjoy it for what it was. But there
-might be some command line that will let it work that way.
+might be some command line that will let it work that way or perhaps someone
+wants to add the necessary code.
 
 
 ## [2005/persano](2005/persano/persano.c) ([README.md](2005/persano/README.md]))
