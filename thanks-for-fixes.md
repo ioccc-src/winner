@@ -3025,6 +3025,32 @@ might be some command line that will let it work that way.
 
 ## [2005/sykes](2005/sykes/sykes.c) ([README.md](2005/sykes/README.md]))
 
+Cody added the saved (with the `SAVE` command) BASIC program `PET` which was:
+
+```basic
+10 PRINT "2005'S IOCCC BEST EMULATOR"
+20 PRINT "BY STEPHEN SYKES!"
+```
+
+followed by the commands:
+
+```
+SAVE "PET"
+
+READY.
+NEW
+
+READY.
+LOAD "PET"
+
+READY.
+RUN
+2005'S IOCCC BEST EMULATOR
+BY STEPHEN SYKES!
+```
+
+to both save and test run it.
+
 Cody added the [try.sh](2005/sykes/try.sh) script which runs in a loop with a
 menu of things one might wish to try, asking if they wish to continue when done.
 
@@ -3039,7 +3065,8 @@ interrupt is set to in order to exit the program.
 ## [2005/timwi](2005/timwi/timwi.c) ([README.md](2005/timwi/README.md]))
 
 Cody added [try.sh](2005/timwi/try.sh). It only has one command as he doesn't
-want to knacker his brain any more than it might or might not already be.
+want to knacker his brain any more than it might or might not already be :-) and
+he doesn't want to damage anyone else's brain either. :-)
 
 
 ## [2005/toledo](2005/toledo/toledo.c) ([README.md](2005/toledo/README.md))

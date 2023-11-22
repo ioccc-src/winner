@@ -134,15 +134,15 @@ The default is 4.
 The control keys are as follows:
 
 ```
-        ^A HOME
-        ^L CLR
-        ^R RVS
-        ^E OFF
-        ^Y INST
-        ^X STOP (break)
-        ^F cursor forward
-        ^B cursor back
-        ^N cursor down
+^A HOME
+^L CLR
+^R RVS
+^E OFF
+^Y INST
+^X STOP (break)
+^F cursor forward
+^B cursor back
+^N cursor down
 ```
 
 Supplied also is a short demo program written in
@@ -171,6 +171,7 @@ RUN
 ```
 
 You also might try typing this to see an ancient [Easter egg][]:
+
 
 ```
 WAIT 6502,12
