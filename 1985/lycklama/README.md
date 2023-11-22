@@ -18,9 +18,9 @@ see below and the [original code](#original-code) section.
 ### Try:
 
 This alternate version, which we recommend you you try first, prior to the
-original, so that you can see what it does in modern systems, slows down the
-output which will provide more fun output. It is slowed down by the `usleep(3)`
-library call with a configurable time to sleep. The default is 500 but you can
+original, so that you can see what it did back in 1985, slows down the output
+which will provide more fun output. It is slowed down by the `usleep(3)` library
+call with a configurable time to sleep. The default is 500 but you can
 reconfigure it like:
 
 

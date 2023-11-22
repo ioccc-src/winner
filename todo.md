@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Thu 16 Nov 2023 11:20:54 UTC**
+*Last updated: Wed 22 Nov 2023 13:02:04 UTC*
 
 This document is primarily for [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) as he (that is I :-) ) wanted a way
@@ -152,3 +152,8 @@ that it might be that `S` will work in all cases (currently?) though one has two
 values so the second would could be changed to `SS` (which is convenient as it's
 for SDL). This is low priority but it would be nice to have done as it would
 make it consistent and easy to remember.
+
+- With the entries that we recommend the alt code first when it comes to it
+going too fast we should say not what it looks like in modern systems but rather
+what it LOOKED LIKE AT THE TIME. At Wed 22 Nov 2023 13:02:04 UTC the only entry
+that has had this done is [1985/lycklama](1985/lycklama/README.md).
