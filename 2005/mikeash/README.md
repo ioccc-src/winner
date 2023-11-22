@@ -5,22 +5,33 @@ make
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2005 mikeash in bugs.md](/bugs.md#2005-mikeash).
+
+
 ## To use:
 
 ```sh
 ./mikeash
 ```
 
+NOTE: the author stated that they tested this under i386 machines but this works
+under 64-bit (x86_64, arm64) machines too.
+
 
 ### Try:
 
 ```sh
-./mikeash < mikeash.c
-./mikeash < mikeash.c | diff - mikeash.c
+./try.sh
 ```
 
-NOTE: the author stated that they tested this under i386 machines but this works
-under 64-bit (x86_64, arm64) machines too.
 
 
 ## Judges' remarks:
@@ -46,7 +57,7 @@ interpreter for an extremely limited and highly broken subset of [Common
 Lisp](https://en.wikipedia.org/wiki/Common_Lisp).
 
 It requires C99 because of `C99`'s ability to declare variables in the
-initializer of a for loop. Unfortunately, C99 mode typically warns about
+initializer of a `for` loop. Unfortunately, C99 mode typically warns about
 implicitly declared functions, and preprocessor directives prevent the program
 from being valid [Common Lisp](https://en.wikipedia.org/wiki/Common_Lisp). As a
 result, several warnings will be printed about implicit declarations of
@@ -70,9 +81,10 @@ used:
 echo '(format t "~s" (* (+ 2 2 ) (- 5 (/ 9 3 ))))' | ./mikeash
 ```
 
-This evaluates the expression `(2+2) * (5 - 9/3)` giving the correct
-result, 8.  Note that due to the highly ad-hoc nature of the tokenizer,
-the spaces before the closing parentheses are mandatory.
+This evaluates the expression `(2+2) * (5 - 9/3)` giving the correct result,
+`8"` (with the same issue of no newline after the `"`).  Note that due to the
+highly ad-hoc nature of the tokenizer, the spaces before the closing parentheses
+are mandatory.
 
 The program can also be run in an interactive mode, by simply executing
 `./mikeash` and then typing lisp expressions, but this is difficult due to the
@@ -104,8 +116,8 @@ constants such as `#\x`.
 * The `char-upcase` function will give strange results if passed something
 other than a lowercase character.
 
-* The format function takes exactly three parameters. The first parameter is
-ignored; output always goes to stdout. The second parameter must have exactly
+* The `format` function takes exactly three parameters. The first parameter is
+ignored; output always goes to `stdout`. The second parameter must have exactly
 one `~s` format specifier in it, and no other format specifiers are permitted.
 
 * The arithmetic functions take exactly two parameters.
@@ -126,13 +138,16 @@ diff mikeash.c mikeash2.c
 
 The program can also be run from an implementation of [common
 lisp](https://en.wikipedia.org/wiki/Common_Lisp). To do
-this, run the [common lisp compiler and then type the following command:
+this, run the common lisp compiler and then type the following command:
 
 ```
 (load "mikeash.c")
 ```
 
 The source code of [mikeash.c](mikeash.c) will be printed.
+
+
+### Obfuscation
 
 `Lispob` is obfuscated in several ways. First, it's actually two programs
 in one, which actually share a small amount of code. Running a C code

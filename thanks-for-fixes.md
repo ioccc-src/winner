@@ -3017,6 +3017,15 @@ updated in both the string and the code to be `'n'`.
 The array size of `c` was updated by 1 out of caution just in case as the array
 is used to store at least part of the string.
 
+It might be worth noting that the author stated that the reason for the `\N` is
+due to LISP having different escape sequences. The code was modified so that
+feeding the program itself will print itself, showing no difference, which is
+what is supposed to happen. It is not known, however, if having to change the
+`\N` to `\n` ended up breaking any LISP. The other examples given by the author
+also show correct output though.
+
+Cody also added the [try.sh](2005/mikeash/try.sh) script.
+
 
 ## [2005/mynx](2005/mynx/mynx.c) ([README.md](2005/mynx/README.md]))
 
