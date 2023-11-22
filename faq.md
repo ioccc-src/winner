@@ -31,6 +31,8 @@
 - [3.9  - How do I compile an IOCCC winner that requires (n)curses?](#faq3_9)
 - [3.10 - How do I compile and use on macOS, an IOCCC winner that requires sound?](#faq3_10)
 - [3.11 - Why do Makefiles use -Weverything with clang?](#faq3_11)
+- [3.12 - How do I find out how to send interrupt/EOF etc. for entries that
+require it?](#faq3_12)
 
 ## Section  4 - [Changes made to IOCCC winners](#faq4)
 - [4.0  - Why are some winning author remarks incongruent with the winning IOCCC code?](#faq4_0)
@@ -972,6 +974,39 @@ git diff d2a42f42e8f477f29e9d5ed09ce2bb349eaf7397..eb9e69fde657acc8c85a618a8a99a
 As you can see, using `clang` has some additional problems to work out but if
 you can get your entry to work well in `clang` it might very well be considered
 better than other entries.
+
+
+### <a name="faq3_12"></a>FAQ 3.12: How do I find out how to send interrupt/EOF etc. for entries that require it?
+
+For some entries one needs to send interrupt or EOF or some other signal/other
+special characters. There are typical defaults like (where `^` = ctrl):
+
+- `^D` for EOF (`eof`)
+- `^C` for interrupt (`intr`)
+- `^U` for kill (`kill`)
+
+and various others. But if you don't know this you can find out through the
+`stty(1)` command with the `-a` option. For instance with macOS you might see:
+
+```sh
+$ stty -a
+speed 9600 baud; rows 40; columns 155;
+intr = ^C; quit = ^\; erase = ^?; kill = ^U; eof = ^D; [..snip..]
+```
+
+If you know the name you can use `grep` to find the correct line and if your
+implementation of `grep(1)` has the `-o` option you can filter it. For instance
+to find what the `intr` is set to:
+
+```sh
+$ stty -a |grep -o 'intr = ^[[:alpha:]]'
+intr = ^C
+```
+
+... assuming of course that it's a ctrl combination :-) If for some strange
+reason it's not you might have to do something else including just piping it to
+just `grep intr` or whatever.
+
 
 
 ## <a name="faq4"></a>Section 4: Changes made to IOCCC winners
