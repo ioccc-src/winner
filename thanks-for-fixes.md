@@ -3023,6 +3023,14 @@ how https is set up, in which case just enjoy it for what it was. But there
 might be some command line that will let it work that way.
 
 
+## [2005/persano](2005/persano/persano.c) ([README.md](2005/persano/README.md]))
+
+Cody added the (untested) [alternate
+code](2005/persano/README.md#alternate-code) which should work for Windows as it
+sets binary mode on `stdout`. It is untested as Cody has no Windows system to
+test it on.
+
+
 ## [2005/sykes](2005/sykes/sykes.c) ([README.md](2005/sykes/README.md]))
 
 Cody added the saved (with the `SAVE` command) BASIC program `PET` which was:
