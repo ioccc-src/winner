@@ -4,6 +4,9 @@
 make
 ```
 
+There is an alternate version that scans for (_ONLY_ scans) the string `https`
+as a starting point. See [alternate code](#alternate-code) below.
+
 
 ### Bugs and (Mis)features:
 
@@ -30,31 +33,38 @@ the issue of https.
 
 ```sh
 ./mynx http://www.textfiles.com
+
+./mynx manual.html
 ```
-
-
-Some have pointed out that this will not work for https initially
-for two reasons. For a starting point see the alternate code section below.
 
 
 ## Alternate code:
 
-As noted this will not work for https. This is because it does not scan for
-https but also a secure connection needs to be set up before http commands can
-be sent. One would also have to specify a port in the URL. Fortunately or
-unfortunately many more websites use https nowadays so this entry will not work
-as well as it used to.  If one were to try and connect to `https://www.ioccc.org`
-with this entry they'll just get a 301 error.
+Obviously this will not work with `https` as it only scans for `http` in the URL
+(if not specified it tries to open it as a local file). But even if it scanned
+for `https` one would need to do more work as it would have to set up a secure
+connection before http commands could be sent.  Fortunately or unfortunately
+many more websites use https so this entry will not work as well as it  used to.
+If one were to try and connect to <https://ioccc.org> with this entry they'll
+just get a 301 error.
 
-In case someone can come up with a clever pipeline or some other hack or
-workaround (perhaps [stunnel](https://www.stunnel.org)),
+The alternate code is a starting point that scans for `https` too (note you have
+to specify the port in this case) but that is all it does. It will not work with
+https websites as it does not set up a secure connection. But should anyone wish
+to either come up with a pipeline (or some other command line) that allows it to
+work with https or to update the code to support https they may. Otherwise you
+must just appreciate the entry for what it once was.
 
-To compile:
+
+### Alternate build:
 
 
 ```sh
 make alt
 ```
+
+
+### Alternate use:
 
 Use `mynx.alt` as you would `mynx`. You'd have to specify a port at the end of
 the URL like:
@@ -84,13 +94,13 @@ it inspired me to try my hand at writing the client side complement.
 A typical build command would be:
 
 ```sh
-cc -omynx mynx.c
+cc -o mynx mynx.c
 ```
 
 While some others like to be a little different:
 
 ```sh
-cc -omynx mynx.c -lnsl -lsocket
+cc -o mynx mynx.c -lnsl -lsocket
 ```
 
 I even managed to figure out a basic configure script, given last year's
@@ -111,14 +121,14 @@ After which, the rest of the documentation can be read by saying:
 Manifest:
 
 ```
-    mynx.c
-    makefile                pre-built generic Unix
-    README.TXT
-    manual.html
-    makefile.in             makefile template
-    entities.txt            ISO 8859-1 entites
-    configure.in            configure script description
-    configure               pre-built configure script
+mynx.c
+makefile                pre-built generic Unix
+README.md
+manual.html
+makefile.in             makefile template
+entities.txt            ISO 8859-1 entites
+configure.in            configure script description
+configure               pre-built configure script
 ```
 
 

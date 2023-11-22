@@ -2209,6 +2209,51 @@ does not exist.
 This entry requires that `sed` and `make` are in the path.
 
 
+## 2005 mikeash
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2005/mikeash/mikeash.c](2005/mikeash/mikeash.c)
+### Information: [2005/mikeash/README.md](2005/mikeash/README.md)
+
+The author states:
+
+* The only built-in functions are `defvar`, `format`, `substitute`,
+`char-upcase`, `+`, `-`, `*`, and `/`.
+
+* Only one variable is available. This variable is called `q`, although any
+symbol name starting with the letter `q` will be mapped to this variable.
+
+* Only the first letter of a function name is significant. For example,
+`format`, `f`, `farm`, and various other words starting with `f` will all map to
+the `format` function.
+
+* The `defvar` function completely ignores its first parameter. It will always
+store the result of evaluating its second parameter in `q`. Unlike in [Common
+Lisp](https://en.wikipedia.org/wiki/Common_Lisp), multiple invocations of
+`defvar` on the same variable will overwrite old values.
+
+* Character constants are limited to `#\Newline` and single-character
+constants such as `#\x`.
+
+* The `char-upcase` function will give strange results if passed something
+other than a lowercase character.
+
+* The `format` function takes exactly three parameters. The first parameter is
+ignored; output always goes to `stdout`. The second parameter must have exactly
+one `~s` format specifier in it, and no other format specifiers are permitted.
+
+* The arithmetic functions take exactly two parameters.
+
+* All tokens must be separated from a following `)` by whitespace.
+
+* A lot of other things. Notably, the language which this program interprets is
+nowhere near
+[Turing-complete](https://en.wikipedia.org/wiki/Turing_completeness).
+
+Basically, the [LISP][] interpreter is good for some basic math operations, and
+for running itself.
+
+
 ## 2005 mynx
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -2218,10 +2263,11 @@ This entry requires that `sed` and `make` are in the path.
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) notes that, though
 probably obvious, this entry will not work with https. He added an alt version
 that scans for https in case someone wants to set up a pipeline or other
-workaround (perhaps with stunnel) but the problem otherwise is a secure
-connection has to first be set up in order to give http commands. This is not a
-bug but it's worth pointing out as it won't work on as many websites as it used
-to including the [IOCCC website](https://www.ioccc.org) itself.
+workaround (perhaps with stunnel) or even add additional code to it to make it
+work with https but the problem otherwise is a secure connection has to first be
+set up in order to give http commands. This is not a bug but it's worth pointing
+out as it won't work on as many websites as it used to including the [IOCCC
+website](https://www.ioccc.org) itself.
 
 
 ## 2005 sykes
@@ -2261,14 +2307,18 @@ used decimal mode, or any of the "undocumented" instructions.
 
 ## 2006 monge
 
-### STATUS: known bug - please help us fix
+### STATUS: doesn't work with some platforms - please help us fix
 ### Source code: [2006/monge/monge.c](2006/monge/monge.c)
 ### Information: [2006/monge/README.md](2006/monge/README.md)
 
-Incorrect formulas will ungracefully crash the program.
+This program requires being able to read, write and execute memory. With the
+Apple silicon chips this is not allowed. Fixing this might be quite challenging
+but you are welcome to try and fix it.
 
-Fixing the (Mis)feature is likely to be a difficult challenge.
-You are welcome to try and fix it if you can!
+
+### STATUS: INABIAF - please **DO NOT** fix
+
+Incorrect formulas will ungracefully crash the program.
 
 
 ## 2006 toledo2

@@ -15,7 +15,7 @@ make
 ### Try:
 
 ```sh
-./klausler peter klausler | head
+./try.sh
 ```
 
 
@@ -33,7 +33,7 @@ Rules might have to be changed!
 ## Author's remarks:
 
 A useful tool to help one appear extra smart and witty when
-[IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat)ing, or even
+[IRCing](https://en.wikipedia.org/wiki/Internet_Relay_Chat), or even to
 just be highly annoying.
 
 Finds best anagrams for word or phrase given as program arguments. Use only

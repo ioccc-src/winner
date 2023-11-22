@@ -2915,6 +2915,12 @@ Cody added the [alt code](2005/anon/README.md#alternate-code) with vi(m) like
 movements.
 
 
+## [2005/boutines](2005/boutines/boutines.c) ([README.md](2005/boutines/README.md]))
+
+Cody added the [input.txt](2005/boutines/input.txt) data file based on suggested
+input from the author, adapting it to a command to try out.
+
+
 ## [2005/giljade](2005/giljade/giljade.c) ([README.md](2005/giljade/README.md]))
 
 After Landon fixed the entry to compile with clang Cody noticed this does not
@@ -2989,6 +2995,12 @@ Cody added explicit linking of libm (`-lm`) for systems like linux that seem to
 not do it implicitly (like macOS does).
 
 
+
+## [2005/klausler](2005/klausler/klausler.c) ([README.md](2005/klausler/README.md))
+
+Cody added the [try.sh](2005/klausler/try.sh) script.
+
+
 ## [2005/mikeash](2005/mikeash/mikeash.c) ([README.md](2005/mikeash/README.md))
 
 Cody fixed this to work in linux. The problem was an unknown escape sequence,
@@ -3011,6 +3023,15 @@ updated in both the string and the code to be `'n'`.
 The array size of `c` was updated by 1 out of caution just in case as the array
 is used to store at least part of the string.
 
+It might be worth noting that the author stated that the reason for the `\N` is
+due to LISP having different escape sequences. The code was modified so that
+feeding the program itself will print itself, showing no difference, which is
+what is supposed to happen. It is not known, however, if having to change the
+`\N` to `\n` ended up breaking any LISP. The other examples given by the author
+also show correct output though.
+
+Cody also added the [try.sh](2005/mikeash/try.sh) script.
+
 
 ## [2005/mynx](2005/mynx/mynx.c) ([README.md](2005/mynx/README.md]))
 
@@ -3020,7 +3041,16 @@ needed but part of the entry) would work with compilers that have by default
 
 Cody also added the alt code which does scan for https. Futile, maybe, based on
 how https is set up, in which case just enjoy it for what it was. But there
-might be some command line that will let it work that way.
+might be some command line that will let it work that way or perhaps someone
+wants to add the necessary code.
+
+
+## [2005/persano](2005/persano/persano.c) ([README.md](2005/persano/README.md]))
+
+Cody added the (untested) [alternate
+code](2005/persano/README.md#alternate-code) which should work for Windows as it
+sets binary mode on `stdout`. It is untested as Cody has no Windows system to
+test it on.
 
 
 ## [2005/sykes](2005/sykes/sykes.c) ([README.md](2005/sykes/README.md]))

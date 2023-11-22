@@ -20,11 +20,18 @@ ruby -e '20.times{puts "#{rand} #{rand}"}' | ./boutines > test.svg
 
 ### Try:
 
-After running the above, use [ImageMagick](https://imagemagick.org/index.php)'s
-`convert` tool to convert the image to a png file:
+
+```sh
+./boutines < input.txt > result.svg
+```
+
+After running the above commands, use [ImageMagick](https://imagemagick.org/index.php)'s
+`convert` tool to convert the images to a png file:
 
 ```sh
 convert test.svg test.png
+
+convert result.svg result.png
 ```
 
 and then open it with your preferred graphics viewer or editor.
@@ -47,13 +54,17 @@ their name suggests"?
 
 _In memory of my father Pierre Boutines-Vignard._
 
+
 ### Walk-through
 
 My program works as follows:
 
+
 #### Input
 
-A list of 2D points in the unit square.
+A list of 2D points in the [unit
+square](https://en.wikipedia.org/wiki/Unit_square).
+
 
 #### Output
 
@@ -63,7 +74,7 @@ an [SVG](https://www.w3.org/TR/SVG11/expanded-toc.html) stream.
 This will possibly save a compressed SVG file and may be useful:
 
 ```sh
-./boutines | gzip > result.svgz
+./boutines | gzip > result.svg.gz
 ```
 
 Input consists of a list of floating points values separated by whitespaces
@@ -72,17 +83,18 @@ whitespace then the other coordinate (pointing downwards in the resulting
 graph) and a newline will just go fine:
 
 ```
-    0  0
-    0  1
-    1  0
-    1  1
-   .5 .5
+0  0
+0  1
+1  0
+1  1
+.5 .5
 ```
 
 Strictly speaking, you have to provide a **set** of points. If there are
 duplicates in the list, there is no guarantee on the one to be shown (in
 addition their labels will overlap) in the resulting colored [Voronoi
 diagram](https://en.wikipedia.org/wiki/Voronoi_diagram).
+
 
 ### Caution
 
@@ -113,8 +125,10 @@ for most devices (including many inkjet printers). If you ever miss precision
 on a particular dataset or peripheral, you may want to dive in and let `U` be
 the next power of `__LINE__`.
 
-NOTE: bad inputs will be sanctioned by the production of the 42nd Mersenne
-prime (ie. 2^25964951 -1); memory will be kept.
+NOTE: bad inputs will be sanctioned by the production of the 42nd [Mersenne
+prime](https://en.wikipedia.org/wiki/Mersenne_prime) (i.e. 2^25964951 -1);
+memory will be kept.
+
 
 ### Why I think this code is Obfuscated ?
 
@@ -129,7 +143,9 @@ complicated output statements.
 
 Be sure to check the antepenultimate line of code.
 
+
 ### Missing Features
+
 
 #### Color control
 
@@ -137,25 +153,29 @@ Cell colors are chosen randomly (with a questionable rejection scheme). It
 might have been useful to input them along with sites coordinates, turning the
 application into a puzzling graphics engine.
 
+
 #### Site labelling
 
 The points are implicitly numbered in the order they were entered
 (starting at one). This can be overridden however, via a simple XSL
 transformation.
 
+
 #### Site radius
 
-The site radius is hardwired in the code, I still wonder why I did not
+The site radius is hardcoded in the code, I still wonder why I did not
 design it as a function of the underlying cell's area (which can be averaged
 for free) or at least a command line parameter. Same with the char set, the
 viewport and potentially every
 [SVG](https://www.w3.org/TR/SVG11/expanded-toc.html) property.
+
 
 ### See Also
 
 - [Voronoi at Wikipedia](http://en.wikipedia.org/wiki/Voronoi_diagram),
 - [An Excerpt from The Algorithm Design Manual](http://www2.toki.or.id/book/AlgDesignManual/BOOK/BOOK4/NODE187.HTM),
 - [Voronoi and Art](http://www.snibbe.com/scott/bf)
+
 
 ### Example Output
 

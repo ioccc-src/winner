@@ -12,7 +12,8 @@ make
 The current status of this entry is:
 
 ```
-STATUS: known bug - please help us fix
+STATUS: doesn't work with some platforms - please help us fix
+STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2006 monge in bugs.md](/bugs.md#2006-monge).
@@ -63,11 +64,13 @@ effort to work on both `i386` and `x86_64`. Portable it is! :)
 
 0. Compile using the Makefile, or just run:
 
-        gcc monge.c -o monge -O3 `sdl-config --libs --cflags`
+```sh
+gcc monge.c -o monge -O3 `sdl-config --libs --cflags`
+```
 
 1. Run:
 
-```
+```sh
 ./monge "z = 0" "z = z*z + c; Abs2(z) < 4"
 ```
 
@@ -113,7 +116,7 @@ Operation | Description
 `Im`        | Extract the imaginary part, i.e.: `Im(a+b*i) is b+0*i`.
 `Exp`       | Calculates the complex exponential, i.e. `Exp(a+b*i)` is
 	    |  `e^a*(cos(b)+sin(b)*i)`
-Ln	    | Calculates the principal value of the natural logarithm, i.e.
+`Ln`	    | Calculates the principal value of the natural logarithm, i.e.
 	      `Ln(a+b*i)` is `ln(a*a+b*b)/2` + `atan(b/a)*i`
 
 Here are a few examples of fractals you can draw:
@@ -174,6 +177,7 @@ friend of mine was able to make it work under macOS too.
 If you want you can change the window width and height, or the default
 number of iterations (that one can be tweaked at runtime, anyway) by
 changing the definitions of `W`, `H` and `I` at the beginning of the code.
+
 
 ### Caveats (I just a selected few of them!)
 
