@@ -15,18 +15,27 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-while true; do
+mode=0
+# menu - show menu and prompt for input
+menu()
+{
     echo "(0) Run demo" 1>&2
     echo "(1) Show Easter egg" 1>&2
     echo "(2) Play chess" 1>&2
     echo "(3) Run test-suite" 1>&2
     echo "(4) Run pet.rom with -1" 1>&2
+    echo "(5) Run IOCCC best emulator" 1>&2
+    echo "(Q) Quit" 1>&2
 
     echo "NOTE: you have to hit ctrl-c or whatever your interrupt combination is to" 1>&2
     echo "exit the program to continue here." 1>&2
 
-    read -rp "Make your selection (0 - 4 or any other key to exit): " mode
+    read -rp "Make your selection: " mode
+}
+while true; do
 
+    # print menu and get item to run
+    menu
     echo 1>&2
 
     case "${mode}" in
@@ -45,13 +54,16 @@ while true; do
 	4)  # -1
 	    ./sykes pet.rom -1
 	    ;;
-	*)
+	5)  # best emulator of IOCCC 2005
+	    printf "LOAD \"PET\"\nRUN\n" | ./sykes pet.rom 6
+	    ;;
+	q|Q)
 	    exit 0
+	    ;;
+	*)  continue
+	    ;;
     esac
-    read -r -n 1 -p "Do you want to continue? " ans
 
-    if [[ "$ans" != "y" && "$ans" != "Y" ]]; then
-	break;
-    fi
+    # this echo is for a quirk when pressing ctrl-c and showing the menu again
     echo 1>&2
 done

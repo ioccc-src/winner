@@ -114,7 +114,7 @@ PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 ROM_DATA= basic-2-c000.901465-01.bin basic-2-d000.901465-02.bin edit-2-n.901447-24.bin \
-	nullfill.bin kernal-2.901465-03.bin
+	nullfill.bin kernel-2.901465-03.bin
 DATA= ${ROM_DATA} 6502test DEMO chess
 TARGET= pet.rom ${PROG}
 #
