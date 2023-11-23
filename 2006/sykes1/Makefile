@@ -112,8 +112,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG} ${PROG}.html
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt ${PROG}.alt.html
 
 
 # This entry wants to use -funroll-loops
@@ -144,6 +144,13 @@ ${PROG}.html: ${PROG}.c
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+${PROG}.alt.html: ${PROG}.alt.c
+	${RM} -f ${PROG}.alt.html
+	cp ${PROG}.alt.c ${PROG}.alt.html
 
 # data files
 #

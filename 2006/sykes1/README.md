@@ -32,21 +32,21 @@ maximum:
 time ./sykes1 19186
 ```
 
-This was done on a CentOS 7 server with `Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz`
-with 16 cores (via HyperThreading):
+This was done on a Rocky Linux 9.2 server with `Intel(R) Core(TM) i9-9900K CPU @
+3.60GHz` with 16 cores (via HyperThreading):
 
 ```
-real	7m48.287s
-user	7m48.223s
-sys	0m0.004s
+real	6m35.524s
+user	6m35.159s
+sys	0m0.002s
 ```
 
-and done with macOS Ventura with the Max M1 chip:
+and done with macOS Sonoma with the Max M1 chip:
 
 ```
-real	8m26.466s
-user	8m23.134s
-sys	0m2.981s
+real	7m10.786s
+user	7m8.322s
+sys	0m0.110s
 ```
 
 
@@ -75,12 +75,16 @@ puzzles in wikipedia](http://en.wikipedia.org/wiki/Bedlam_cube).
 Some instructions on how to make your own cube are in the included file
 [bedlam-cubes.pdf](bedlam-cubes.pdf).
 
-Finally, you can watch it being solved
-[here](https://www.youtube.com/watch?v=a8s1AcYMLBc).
+Finally, you can watch it being solved:
+
+![Bedlam Cube being solved](solving-bedlam-cube.mp4)
+
+...taken from <https://www.youtube.com/watch?v=a8s1AcYMLBc>.
 
 Actually the cube is very hard to do by hand by just trying to fit it
 together.  I have not known anyone to solve it in this way - you would
 need to be very lucky indeed to stumble across a solution.
+
 
 ### Instructions
 
@@ -119,6 +123,7 @@ If you have a fast machine you might try the last solution:
 
 On my machine this takes about half an hour to run.
 
+
 ### Implementation
 
 The implementation is an optimized recursive algorithm that tries to fit
@@ -137,22 +142,22 @@ For instance the first piece is `186` - this is `010111010` in binary.
 Written out like this you can see that it is the cross shaped piece:
 
 ```
-        010
-        111
-        010
+010
+111
+010
 ```
 
 The other pieces are defined similarly. Most of the rest require more
 than one layer, such as piece 3 (`1426`):
 
 ```
-        000
-        000
-        010
+000
+000
+010
 
-        110
-        010
-        010
+110
+010
+010
 ```
 
 Imagine the two layers on top of each other, and you should see this
@@ -170,6 +175,7 @@ shape:
          |    |/
          +----+
 ```
+
 
 ### Making your own shapes
 
