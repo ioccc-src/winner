@@ -8,6 +8,8 @@ make
 ## To use:
 
 ```sh
+# IMPORTANT for macOS: run under Terminal.app
+
 ./prog
 ```
 
@@ -15,6 +17,7 @@ make
 ### Try:
 
 ```sh
+# IMPORTANT for macOS: run under Terminal.app
 
 # Try resizing the terminal window before the first click.
 
@@ -53,6 +56,13 @@ encounter any problems?
 
 The submission was in violation of the "2053" size rule by one character, likely
 a late typo. It was easy to fix.
+
+
+### for macOS:
+
+We observe that this entry may not work under macOS using iTerm2.
+Users on macOS might want to run this entry run under the macOS Terminal,
+which is located in `/System/Applications/Utilities/Terminal.app`.
 
 
 ## Author's remarks:
