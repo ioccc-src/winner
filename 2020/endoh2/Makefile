@@ -111,7 +111,7 @@ ENTRY= endoh2
 PROG= prog
 #
 OBJ= ${PROG}.o
-DATA= bear.txt hello.txt spoiler.zip yoda.txt
+DATA= bear.txt hello.txt yoda.txt
 TARGET= ${PROG}
 #
 ALT_OBJ=
