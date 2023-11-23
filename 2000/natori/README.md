@@ -18,8 +18,13 @@ version](#alternate-code) below.
 
 ### Try:
 
-Try modifying the code so that it will show another Moon phase based on input
-or else just by the code itself. Bonus points if you can make it show all!
+
+```sh
+./try.sh
+```
+
+Also try modifying the code so that it will show another Moon phase based on
+input or else just by the code itself. Bonus points if you can make it show all~
 
 
 ## Alternate code:

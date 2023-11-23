@@ -2333,6 +2333,9 @@ segfault when run or not compile at all (gcc and clang respectively).
 
 Cody also provided alternate code that supports the southern hemisphere.
 
+Cody also provided the [try.sh](2000/natori/try.sh) script that shows the Moon
+phase in artistic ways.
+
 Later on Cody restored the `#include`s in the source code which had been changed
 by us to make it a one-liner again but this was an error as it was not a
 one-liner but rather a small program. At the same point Cody made the code
@@ -3188,6 +3191,17 @@ program in some systems he added `-include ...` to the Makefile as well.
 
 Cody fixed it so that if the file cannot be opened it exits rather than trying
 to read from the file.
+
+
+## [2006/sykes1](2006/sykes1/sykes1.c) ([README.md](2006/sykes1/README.md]))
+
+Cody provided the [alt code](2006/sykes1/README.md#alternate-code) based on the
+author's remarks and the [try.sh](2006/sykes1/try.sh) script.
+
+Cody also provided the [bedlam-cubes.pdf](2006/sykes1/bedlam-cubes.pdf) file,
+obtained from the Internet Wayback Machine, as the file was no longer available.
+The video was also no longer available but Cody found an alternative and added
+it to the repo as well.
 
 
 ## [2006/toledo2](2006/toledo2/toledo2.c) ([README.md](2006/toledo2/README.md]))
