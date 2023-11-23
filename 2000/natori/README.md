@@ -55,11 +55,11 @@ versions? Or are there any?
 Here is a nice compact program that changes with the phase of the Moon.
 Can you figure out how it does it?
 
-The ANSI-C committee, among their multiple misdeeds, broke perfectly
-fun C programs by making it intractable for them to declare their
-own non-traditional prototype for `main()`.  We have had to uglify this
-program in order to try and prevent C compilers form failing to
-compile due to the unusual arg types of the `main()` function.
+The ANSI-C committee, among their multiple misdeeds, broke perfectly fun C
+programs by making it intractable for them to declare their own non-traditional
+prototype for `main()`.  We have had to uglify this program in order to prevent
+C compilers from failing to compile it due to (the now changed) unusual arg
+types of the `main()` function.
 
 
 ## Author's remarks:
