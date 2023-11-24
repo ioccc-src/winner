@@ -5,6 +5,19 @@ make
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2006 borsanyi in bugs.md](/bugs.md#2006-borsanyi).
+
+
+
+
 ## To use:
 
 ```sh
@@ -27,7 +40,7 @@ yourself!  :-)
 
 The resulting GIF file is likely to puzzle optical character
 recognition tools.  The amount of imagination necessary to
-recognise the @ character will certainly challenge a few
+recognise the `@` character will certainly challenge a few
 anti-CAPTCHA tools.
 
 
@@ -50,6 +63,7 @@ line. To avoid complications with patent issues the [LZW
 compression](https://en.wikipedia.org/wiki/Lempel-Ziv-Welch) feature is not
 used. A typical email address is stored in less than 1-2 kilobytes.
 
+
 ### Usage:
 
 ```sh
@@ -63,7 +77,9 @@ the characters: `a-z_A-Z0-9@.-`.
 
 The program is (like email addresses are) case insensitive.
 
+
 ### Obfuscation:
+
 
 Multicore support is a must in present-day applications. This
 entry supports up to 25 cores.  The odd names in the bottom
@@ -73,6 +89,7 @@ small, in fact, everything is a macro. Are you familiar with
 the GIF format? Studying this program will give you a (very)
 little insight.
 
+
 ### Questions:
 
 After analyzing the source code, try to answer these questions:
@@ -81,9 +98,10 @@ After analyzing the source code, try to answer these questions:
 2. Can you alter the look of the output characters?
 3. What limits the number of input characters to 42?
 
+
 ### Portability:
 
-The program uses posix threads (using the linker flag `-lpthread`).
+The program uses POSIX threads (using the linker flag `-lpthread`).
 The program accepts email addresses not longer than 42 bytes
 composed from letters, digits, and the `@._-` symbols. An address
 not obeying these rules will cause undefined behaviour.  The

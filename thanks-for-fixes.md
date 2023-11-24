@@ -2952,6 +2952,8 @@ it.
 Cody fixed a segfault in macOS with this entry. The problem was a missing `+1`
 for strlen() with malloc(). This prevented it from working.
 
+Cody also added the [try.sh](2006/birken/try.sh) script.
+
 
 ## [2006/borsanyi](2006/borsanyi/borsanyi.c) ([README.md](2006/borsanyi/README.md]))
 
@@ -2964,15 +2966,24 @@ implicitly linked in.
 Cody fixed this so that it will not crash without an arg after it was suggested
 this should be fixed.
 
+Cody also added the [try.sh](2006/hamre/try.sh) script.
+
 
 ## [2006/monge](2006/monge/monge.c) ([README.md](2006/monge/README.md]))
 
-Cody pointed out that without SDL1 (**not** SDL2) this will not link because two
-functions that are used were removed from SDL2. Since SDL1 is still available
-and since changing the code to use SDL2 would be more complicated he decided to
-change the Makefile to use `sdl-config` not `sdl2-config`. Nevertheless he
-points out that the entry requires x86/x86_64 CPUs. Without it it might very
-well segfault (for instance it segfaulted on his MacBook Pro with the M1 chip).
+Cody added the [alternate code](2006/monge/README.md#alternate-code) that lets
+one resize the image and redefine the number of iterations.
+
+Cody also fixed the Makefile to use `sdl-config` (which is what the author
+stated too though that was noticed later), not `sdl2-config` as two functions
+that are used were removed from SDL2, thus making it not link. Since SDL2 is
+still available and since changing the code to use SDL2 is much more complicated
+and also makes the entry less like the original it was simply made to link in
+SDL1.
+
+Nevertheless this entry does require x86/x86_64 CPUS. This is a documented
+feature but one which we will accept fixes to. See [2006/monge in
+bugs.md](/bugs.md#2006-monge).
 
 
 ## [2006/night](2006/night/night.c) ([README.md](2006/night/README.md]))
@@ -2987,9 +2998,9 @@ Cody fixed this entry to work with clang which has a defect with the args to
 `main()`: it requires specific types: `int` and `char **` for the first and
 latter args.
 
-The [alternate version](2006/sloane/sloane.alt.c), which allows one to see what
-is going on in modern systems, and which we recommend one use _first_, was
-provided by Cody.
+Cody also provided the [alternate version](2006/sloane/sloane.alt.c), which
+allows one to see what is going on in modern systems, and which we recommend one
+use _first_.
 
 Curiously, although clang requires the types of args to be strictly correct,
 some versions do allow only one arg. This was done at first because it's not
@@ -3006,7 +3017,7 @@ Cody also made sure that the Makefile links in `libm` as not all systems do this
 by default.
 
 Since the author suggested that the lack of certain `#include`s might break the
-program in some systems he added `-include ...` to the Makefile as well.
+program in some systems he also added `-include ...` to the Makefile as well.
 
 
 ## [2006/stewart](2006/stewart/stewart.c) ([README.md](2006/stewart/README.md]))
@@ -3024,6 +3035,16 @@ Cody also provided the [bedlam-cubes.pdf](2006/sykes1/bedlam-cubes.pdf) file,
 obtained from the Internet Wayback Machine, as the file was no longer available.
 The video was also no longer available but Cody found an alternative and added
 it to the repo as well.
+
+
+## [2006/sykes2](2006/sykes2/sykes2.c) ([README.md](2006/sykes2/README.md]))
+
+Cody, out of an abundance of caution for `clang`'s defects, made `main()` have
+to args instead of 1 as some versions report that `main()` must have 0, 2 or 3
+args, even though at least one of those versions allows 1 arg only.
+
+Cody also added the [try.sh](2006/sykes2/try.sh) script for easier use of the
+entry to show the clock update in real time.
 
 
 ## [2006/toledo2](2006/toledo2/toledo2.c) ([README.md](2006/toledo2/README.md]))

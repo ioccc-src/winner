@@ -35,7 +35,7 @@ be expected, and some dump core?
 ## Author's remarks:
 
 Can you place a knight on a chess board and make it
-to visit the 64 squares without repeating them?
+visit the 64 squares without repeating them?
 
 If not, this program does it, just run it with an argument
 giving initial position.

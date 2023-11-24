@@ -5,6 +5,17 @@ make
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: uses gets() - change to fgets() if possible
+```
+
+For more detailed information see [2006 birken in bugs.md](/bugs.md#2006-birken).
+
+
 ## To use:
 
 ```sh
@@ -15,10 +26,7 @@ make
 ### Try:
 
 ```sh
-./birken < counter.tofu
-./birken < adder.tofu
-./birken < buffer.tofu
-./birken < computer.tofu
+./try.sh
 ```
 
 etc.
@@ -30,22 +38,22 @@ Q: EDAMAME?
 
 A: Electronic Design Automation - Mechanical Abstract Machine Emulator
 
-What is TUFO?  It's not a veggy friendly food, nor it is Verilog or
-VHDL.  It is not even Pascal!
+What is TOFU?  It's not a veggie friendly food, nor it is
+[Verilog](https://en.wikipedia.org/wiki/Verilog) or
+[VHDL](https://en.wikipedia.org/wiki/VHDL)  It is not even
+[Pascal](https://en.wikipedia.org/wiki/Pascal_(programming_language))!
 
-NOTE: On some systems, file(1) claims one of the .tofu files is Pascal
+NOTE: On some systems, `file(1)` claims one of the `.tofu` files is Pascal
 source. :-)
 
 It may not be the most readable hardware description language, but it is
-one of the easiest 55 page long manual to learn.  :-)
+one of the easiest 55 page long manuals to learn.  :-)
 
 For a small but non-trivial design, try implementing a
 [Linear Feedback Shift Register](http://en.wikipedia.org/wiki/LFSR)
 
-And for those who are still confused:
-
-> <http://en.wikipedia.org/wiki/Edamame>
-> <http://en.wikipedia.org/wiki/Tofu>
+And for those who are still confused, see <http://en.wikipedia.org/wiki/Edamame>
+and <http://en.wikipedia.org/wiki/Tofu>.
 
 
 ## Author's remarks:
@@ -64,7 +72,7 @@ The primary obfuscation is the data structure chosen for parsing the
 input file and for executing the simulation.  Oh man...  coding that
 data structure gave me such a bad headache.  But, I figure, who needs
 more than a pair anyway?  Subtle obfuscations abound.  Bonus points go
-out the one who discovers the hidden program within the source.
+out to the one who discovers the hidden program within the source.
 
 Note that the shape of the source is a wave, not a waveform.
 

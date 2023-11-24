@@ -5,6 +5,19 @@ make
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2006 sykes1 in bugs.md](/bugs.md#2006-sykes1).
+
+
+
+
 ## To use:
 
 ```sh
@@ -215,6 +228,7 @@ In the ASCII output care must be taken with drawing the edges of each
 this is taken care of by color, which is graded from the back to the
 front to ensure edge visibility.
 
+
 ### Notes
 
 The whole program has just one function - `main()` - which is recursively
@@ -240,6 +254,7 @@ requirements.
 
 The program is known to compile and run under gcc and Intel cc, as well
 as PellesC on Windows.
+
 
 ### Bugs
 

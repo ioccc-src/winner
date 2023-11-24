@@ -15,7 +15,7 @@ make
 ### Try:
 
 ```sh
-./hamre '-1+4/3*(2+1/(3/2*(7/2-7/3+1/6)))/2'
+./try.sh
 ```
 
 
@@ -37,10 +37,10 @@ numbers](https://en.wikipedia.org/wiki/Rational_number). Believe it or not, that
 is a useful tool to have around, and I haven't found a useful version, much less
 an obfuscated one.
 
-It is rather feature complete as [rational calculators go. The
+It is rather feature complete as rational calculators go. The
 supported operators are: `+`, `-` (binary and unary), `*`, `/` and `()`. Run it
 by supplying an expression as the first argument, and the normalized
-result will be written to stdout.
+result will be written to `stdout`.
 
 ```sh
 ./hamre '-1+4/3*(2+1/(3/2*(7/2-7/3+1/6)))/2'

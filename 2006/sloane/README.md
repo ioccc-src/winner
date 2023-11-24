@@ -20,7 +20,7 @@ see the [original code](#original-code) section.
 This alternate version, which we recommend that you use in order to see what is
 happening with modern systems, and to not flash too quickly, which can be
 problematic for some people, can be configured to different speeds by way of the
-value used in `usleep()`. The default is `-DS=65000` but you can easily change
+value used in `usleep()`. The default is `-DS=75000` but you can easily change
 it. To do so try:
 
 ```sh
@@ -73,13 +73,13 @@ at first blush, this looks like a self-reproducing program.
 ## Author's remarks:
 
 This program doesn't require any special build options, other than that it
-uses `sin()` and `cos()` and hence requires the math library.
+uses `sin(3)` and `cos(3)` and hence requires the math library.
 
 You will almost certainly get a compiler warning because I declared a bunch
-of global ints without types.  The code looks better this way, though, I
+of global `int`s without types.  The code looks better this way, though, I
 think.  There are also no `#include`s, so there may be warnings for
-undeclared references to `printf()`, etc.  There's a chance that my failure to
-include `math.h` or declare `sin()` or `cos()` will make the
+undeclared references to `printf(3)`, etc.  There's a chance that my failure to
+include `math.h` or declare `sin(3)` or `cos(3)` will make the
 [donut](https://en.wikipedia.org/wiki/Doughnut) not render
 properly -- it's worked on every system I've tried so far though.
 
@@ -98,6 +98,7 @@ escape codes for clearing the screen and moving the cursor back to the top-left.
 
 The donut isn't raytraced.  It's much simpler than that.
 
+
 ### How is it obfuscated?
 
 There are three main pieces to this program: the donut, the checkerboard, and
@@ -108,6 +109,7 @@ into the smallest I could make it by any means necessary.
 
 The logo can actually be compressed much better (ironically, by doing
 something simpler), but I didn't discover this until well after submitting.
+
 
 ### Puzzles
 

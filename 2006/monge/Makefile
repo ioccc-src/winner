@@ -42,7 +42,7 @@ CSILENCE= -Wno-bitwise-op-parentheses -Wno-conditional-type-mismatch \
 	-Wno-declaration-after-statement -Wno-dollar-in-identifier-extension \
 	-Wno-error -Wno-implicit-function-declaration \
 	-Wno-incompatible-pointer-types -Wno-int-conversion -Wno-parentheses \
-	-Wno-return-type -Wno-strict-prototypes
+	-Wno-return-type -Wno-strict-prototypes -Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -119,8 +119,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -142,6 +142,9 @@ ${PROG}: ${PROG}.c
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # data files
 #
