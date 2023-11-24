@@ -2991,9 +2991,9 @@ Cody fixed this entry to work with clang which has a defect with the args to
 `main()`: it requires specific types: `int` and `char **` for the first and
 latter args.
 
-The [alternate version](2006/sloane/sloane.alt.c), which allows one to see what
-is going on in modern systems, and which we recommend one use _first_, was
-provided by Cody.
+Cody also provided the [alternate version](2006/sloane/sloane.alt.c), which
+allows one to see what is going on in modern systems, and which we recommend one
+use _first_.
 
 Curiously, although clang requires the types of args to be strictly correct,
 some versions do allow only one arg. This was done at first because it's not
@@ -3010,7 +3010,7 @@ Cody also made sure that the Makefile links in `libm` as not all systems do this
 by default.
 
 Since the author suggested that the lack of certain `#include`s might break the
-program in some systems he added `-include ...` to the Makefile as well.
+program in some systems he also added `-include ...` to the Makefile as well.
 
 
 ## [2006/stewart](2006/stewart/stewart.c) ([README.md](2006/stewart/README.md]))
