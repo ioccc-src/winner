@@ -2305,6 +2305,17 @@ used decimal mode, or any of the "undocumented" instructions.
 # 2006
 
 
+## 2006 borsanyi
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2006/borsanyi/borsanyi.c](2006/borsanyi/borsanyi.c)
+### Information: [2006/borsanyi/README.md](2006/borsanyi/README.md)
+
+The string specified must be <= 42 characters and may only consist of the
+characters in the regex `a-z_A-Z0-9@.-`. Breaking these constraints will end up
+with possibly corrupt GIF files.
+
+
 ## 2006 monge
 
 ### STATUS: doesn't work with some platforms - please help us fix
