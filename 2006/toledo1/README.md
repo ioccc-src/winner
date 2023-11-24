@@ -17,9 +17,7 @@ where `[0-9][0-9]` is a two digit number.
 ### Try:
 
 ```sh
-./toledo1 00
-./toledo1 30
-./toledo1 99
+./try.sh
 ```
 
 
@@ -49,7 +47,7 @@ giving initial position.
 ```
 
 It will print move order. The algorithm is so simple that you can read
-it on the source code.  At the first glance it can appear checkered.
+it in the source code.  At the first glance it can appear checkered.
 Nevertheless, don't be dismayed, jar, jar.  :-)
 
 

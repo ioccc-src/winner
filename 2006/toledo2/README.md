@@ -29,8 +29,7 @@ For more detailed information see [2006 toledo2 in bugs.md](/bugs.md#2006-toledo
 
 To end execution press `ctrl-z`. As mentioned in the author's remarks and in the
 below section, it is supposed to crash on termination though some noted this
-does not seem to happen in macOS. He asks ironically: 'if it's supposed to crash
-and it does not crash is it actually a bug or is it a feature? :-)'
+does not seem to happen in macOS or linux in 2023.
 
 
 ### Try:
@@ -67,7 +66,7 @@ make alt
 ### Alternate use:
 
 The author noted that for PC/DOS you will have to add `ANSI.SYS` to your
-`CONFIG.SYS` but this is also not something we can test.
+`CONFIG.SYS` but this is also something we can't test.
 
 Use `toledeo2.alt` as you would `toledo2` above.
 
@@ -86,11 +85,9 @@ of this size, it allows importing files from the host file
 system (one by one, so you'll have to be patient).
 
 Remember the good old days and play (or let your kids play)
-[Adventure](https://rickadams.org/adventure/) (in the directory `ADVENTUR`
-within the `KAYPROII.ZIP`
-file referred in the author's remarks); walking in a maze of
-twisty little passages all alike is easier than understanding
-the code!
+[Adventure](https://rickadams.org/adventure/) (in the directory `ADVENTUR`);
+walking in a maze of twisty little passages all alike is easier than
+understanding the code!
 
 
 ## Author's remarks:
@@ -101,7 +98,7 @@ and a disk controller, just like at the start of the personal computers
 revolution (circa 1975).
 
 It needs an initial memory image to do something usable, so along with it you
-will find two files ([C.BASIC](C.BASIC) and [C.BIOS](C.BIOS)). Rename
+will find two files: ([C.BASIC](C.BASIC) and [C.BIOS](C.BIOS)). Rename
 [C.BASIC](C.BASIC) to `C` (NOTE from the judges: running `make` will do this for
 you), run the emulator, and et voila! you have the public domain Palo Alto [Tiny
 BASIC](https://en.wikipedia.org/wiki/Tiny_BASIC) (by Li-Chen Wang), published in
@@ -136,21 +133,17 @@ All good programmers started learning
 [BASIC](https://en.wikipedia.org/wiki/BASIC), now, what about a
 [CP/M](https://en.wikipedia.org/wiki/CP/M) emulator?
 
-Download the following file (not included because of possible
-copyright and blah, blah):
 
-> <http://www.retroarchive.org/cpm/os/KAYPROII.ZIP>
-
-Extract `CPM64.COM` from the `SOURCE` directory, and copy it to
-files named `A` and `B` (these will be the disk drives). Now rename
-the provided [C.BIOS](C.BIOS) to `C` and run the emulator.
+Copy `CPM64.COM` from the `SOURCE` directory to files named `A` and `B` (these
+will be the disk drives). Now rename the provided [C.BIOS](C.BIOS) to `C` and
+run the emulator.
 
 Now you have a running [CP/M](https://en.wikipedia.org/wiki/CP/M) system!, with
 two files on A: drive, `HALT.COM` to stop the emulator (so it closes drives) and
 `IMPORT.COM` to introduce new files.
 
 To get a complete [CP/M](https://en.wikipedia.org/wiki/CP/M) system, you will need the following files
-from the `KAYPROII.ZIP` (in the `SOURCE` directory):
+from the `SOURCE` directory:
 
         ASM.COM  DDT.COM   DUMP.COM   ED.COM   LOAD.COM
         PIP.COM  STAT.COM  SUBMIT.COM XSUB.COM
@@ -181,25 +174,29 @@ from <http://www.retroarchive.org>:
 Some programs require installation to configure the terminal,
 locate ANSI or VT-100.
 
+
 ### What is an 8080?
 
 It is simply the little brother of the
 [Z80](https://en.wikipedia.org/wiki/Zilog_Z80); it has no extended
 registers (`AF'`, `BC'`, `DE'`, `HL'`, `IX` or `IY`), no relative jumps,
-and every instruction beginning with `CB`, `DD`, `ED` or `FD` doesn't
-exist.
+and no instruction beginning with `CB`, `DD`, `ED` or `FD` exists.
 
 The flags are only `S` (Sign, bit 7), `Z` (Zero, bit 6), `P` (Parity,
 bit 2) and `C` (Carry, bit 0).
 
+
 ### Porting it
 
-It is easy if your platform has getch/kbhit and
+It is easy if your platform has `getch()`/`kbhit()` and
 ANSI terminal:
 
-        read    -->  Z=kbhit()?getch():0
-        write   -->  putchar(7[o])
-        system  -->  nothing
+```
+read    -->  Z=kbhit()?getch():0
+write   -->  putchar(7[o])
+system  -->  nothing
+```
+
 
 Notice that you'll have to do `#include <conio.h>` as well.
 
@@ -221,43 +218,46 @@ it was not required.
 
 ### How it works (SPOILER)
 
-The `l` array contains the 64K memory; it is initialized with a
-boot image loaded from the `C` file. The program counter is the
-`c` pointer and registers are in `o[]`. The main loop reads every
-opcode and separates them in one of three common forms. A lot
-of ternary operators selects the instruction.
+The `l` array contains the 64K memory; it is initialized with a boot image
+loaded from the `C` file. The [program
+counter](https://en.wikipedia.org/wiki/Program_counter) is the `c` pointer and
+[registers](https://en.wikipedia.org/wiki/Processor_register) are in `o[]`. The
+main loop reads every [opcode](https://en.wikipedia.org/wiki/Opcode) and
+separates them in one of three common forms. A lot of ternary operators selects
+the instruction.
 
 ```
-        o[0] = B register   o[1] = C register
-        o[2] = D register   o[3] = E register
-        o[4] = H register   o[5] = L register
-        o[6] = Flags        o[7] = A or accumulator
+o[0] = B register   o[1] = C register
+o[2] = D register   o[3] = E register
+o[4] = H register   o[5] = L register
+o[6] = Flags        o[7] = A or accumulator
 ```
 
 The following instructions do peripheral operation:
 
 ```
-        76           Quits emulator
-        DB 00        Reads key pressed status
-        DB 01        Reads key
-        DB 02        Reads byte from file (Carry=EOF)
-        D3 xx        Writes byte from acc. to console
-        ED ED 02     Reads sector
-        ED ED 03     Writes sector
+76           Quits emulator
+DB 00        Reads key pressed status
+DB 01        Reads key
+DB 02        Reads byte from file (Carry=EOF)
+D3 xx        Writes byte from acc. to console
+ED ED 02     Reads sector
+ED ED 03     Writes sector
 ```
 
 Memory addresses:
 
 ```
-        FBFA = Low source/target direction
-        FBFB - High source/target direction
-        FBFC - Sector
-        FBFD - Low cylinder
-        FBFE - High cylinder
-        FBFF - Drive.
+FBFA = Low source/target direction
+FBFB - High source/target direction
+FBFC - Sector
+FBFD - Low cylinder
+FBFE - High cylinder
+FBFF - Drive.
 ```
 
 The BIOS is tailor made for this emulator, and helps to simplify it.
+
 
 ### Other notes
 
@@ -274,7 +274,7 @@ The BIOS is tailor made for this emulator, and helps to simplify it.
 - Also I discovered that braces are very useful
   for commenting.
 - Why bother with prototypes? Every good C
-  programmer can develop its C programs using
+  programmer can develop their C programs using
   only one function.
 
 
