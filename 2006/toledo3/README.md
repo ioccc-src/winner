@@ -4,6 +4,11 @@
 make
 ```
 
+The author provided two alternate versions, one which adds a status bar and
+another that makes it text only. The author also provided a version that they
+tested with Windows.  See [alternate code](#alternate-code) below.
+
+
 
 ## To use:
 
@@ -19,13 +24,17 @@ make
 ```
 
 
-### Alternate versions:
+### Alternate code:
 
 The author provided two additional versions, [toledo3-sbar.c](toledo3-sbar.c)
 and [toledo3-txt.c](toledo3-txt.c). Respectively these create a status bar and
 make the game text only. These are built by default.
 
 Use `toledo3-sbar` and `toledo3-txt` as you would `toledo3` above.
+
+The author also provided a version that was [tested for some compilers in
+Windows](layer.c). As we have no Windows system to test with you will have to
+figure out how to compile it but it did work at one time in some set ups.
 
 
 ## Judges' remarks:
@@ -60,6 +69,7 @@ chess moves are allowed, except minor promotions on human side.
 
 The game will continue up to its logical conclusion, you make
 a mistake and the computer surpasses you. ;)
+
 
 ### WHAT ABOUT THE ENGINE
 
@@ -101,10 +111,11 @@ gcc -O3 -fexpensive-optimizations prog.c -o prog -lX11
 
 4. It will not update the window while it is "thinking"
 
-5. The space character has many useful applications, specially
+5. The space character has many useful applications, especially
    when it comes to the character limit (8).
 
 6. I still don't understand what to do after semicolons. :P
+
 
 ### CHALLENGES
 
@@ -113,6 +124,7 @@ graphical interface.  Can you do it?
 
 Can the evaluation function be enhanced to make the program
 play stronger?
+
 
 ### UPGRADES
 
