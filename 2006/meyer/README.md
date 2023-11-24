@@ -8,14 +8,14 @@ make
 ## To use:
 
 ```sh
-./meyer
+./meyer [SEED]
 ```
 
 
 ### Try:
 
 ```sh
-./meyer
+./meyer [SEED]
 ```
 
 For your first input try:
@@ -24,8 +24,13 @@ For your first input try:
 a 0 1
 ```
 
+where `a` is the row (`a`-`i`), `0` is the column (`0`-`8`) and `1` is the
+number (`1`-`9`).
+
 NOTE: if you do not input three different 'words' it will block. You can input
 more text to fulfil the program's requirements.
+
+NOTE: if your move is invalid it will prompt you again but not show the board.
 
 
 ## Judges' remarks:
@@ -65,13 +70,13 @@ it is obvious, that object-oriented code isn't '`WYWIWID`' ('what
 you write is what it does'). It may be tempting to think that
 
 ```
-        Object o;
+Object o;
 ```
 
 might do something similar as
 
 ```c
-        struct not_an_object o;
+struct not_an_object o;
 ```
 
 But this program reveals that it doesn't. Even worse, this program only
@@ -86,13 +91,12 @@ include:
 - virtual method tables (all the virtual method tables have been combined to a
 single [vtable](https://en.wikipedia.org/wiki/Virtual_method_table)).
 - runtime method binding.
--
-[inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming))
-and
-[polymorphism](https://en.wikipedia.org/wiki/Polymorphism_(computer_science)).
+- [inheritance](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming))
+and [polymorphism](https://en.wikipedia.org/wiki/Polymorphism_(computer_science)).
 
 It is left as an exercise to the reader to find a corresponding
 implementation in a popular object-oriented programming language.
+
 
 ### Starting the game
 
