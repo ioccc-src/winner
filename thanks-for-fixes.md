@@ -3047,6 +3047,11 @@ Cody also added the [try.sh](2006/sykes2/try.sh) script for easier use of the
 entry to show the clock update in real time.
 
 
+## [2006/toledo1](2006/toledo1/toledo1.c) ([README.md](2006/toledo1/README.md]))
+
+Cody added the [try.sh](2006/toledo1/try.sh) script.
+
+
 ## [2006/toledo2](2006/toledo2/toledo2.c) ([README.md](2006/toledo2/README.md]))
 
 Cody fixed a segfault in this program which was making it fail to work under
