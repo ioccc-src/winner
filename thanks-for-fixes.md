@@ -2971,12 +2971,19 @@ Cody also added the [try.sh](2006/hamre/try.sh) script.
 
 ## [2006/monge](2006/monge/monge.c) ([README.md](2006/monge/README.md]))
 
-Cody pointed out that without SDL1 (**not** SDL2) this will not link because two
-functions that are used were removed from SDL2. Since SDL1 is still available
-and since changing the code to use SDL2 would be more complicated he decided to
-change the Makefile to use `sdl-config` not `sdl2-config`. Nevertheless he
-points out that the entry requires x86/x86_64 CPUs. Without it it might very
-well segfault (for instance it segfaulted on his MacBook Pro with the M1 chip).
+Cody added the [alternate code](2006/monge/README.md#alternate-code) that lets
+one resize the image and redefine the number of iterations.
+
+Cody also fixed the Makefile to use `sdl-config` (which is what the author
+stated too though that was noticed later), not `sdl2-config` as two functions
+that are used were removed from SDL2, thus making it not link. Since SDL2 is
+still available and since changing the code to use SDL2 is much more complicated
+and also makes the entry less like the original it was simply made to link in
+SDL1.
+
+Nevertheless this entry does require x86/x86_64 CPUS. This is a documented
+feature but one which we will accept fixes to. See [2006/monge in
+bugs.md](/bugs.md#2006-monge).
 
 
 ## [2006/night](2006/night/night.c) ([README.md](2006/night/README.md]))

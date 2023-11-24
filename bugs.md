@@ -2339,9 +2339,17 @@ with possibly corrupt GIF files.
 ### Source code: [2006/monge/monge.c](2006/monge/monge.c)
 ### Information: [2006/monge/README.md](2006/monge/README.md)
 
-This program requires being able to read, write and execute memory. With the
+This program requires x86 (with an x87 FPU) or x86_64 machine and it requires
+the SDL1 library.
+
+This program also requires being able to read, write and execute memory. With the
 Apple silicon chips this is not allowed. Fixing this might be quite challenging
 but you are welcome to try and fix it.
+
+If you do fix this it might be good to fix the alternate code as well or else
+provide it as an additional alt version. Fixing this is very likely to be very
+challenging and in some systems it will not be possible to fix but you are
+welcome to try and fix it if you wish to!
 
 
 ### STATUS: INABIAF - please **DO NOT** fix

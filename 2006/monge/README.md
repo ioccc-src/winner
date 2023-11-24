@@ -6,6 +6,9 @@ Make sure you have the SDL1 (not SDL2!) development environment installed.
 make
 ```
 
+There is alternate code that lets you redefine the width and height and number
+of iterations to use. See [alternate code](#alternate-code) below.
+
 
 ### Bugs and (Mis)features:
 
@@ -40,6 +43,49 @@ This is supposed to happen.  As is written in the
 ```
 That's not a bug, that's a feature.
 ```
+
+
+## Alternate code:
+
+This alternate code lets you specify the width and height of the image as well
+as the number of iterations to perform.
+
+
+### Alternate build:
+
+
+To use the default values, the same as [monge.c](monge.c), just do:
+
+
+```sh
+make alt
+```
+
+But if you wish to actually make use of it you will want to redefine one or more
+of the variables `W`, `H` and `I`. The defaults are (respectively) 400, 300 and
+\128. If you wish to change the image size to 500x500 but keep the iterations
+the same then do:
+
+```sh
+make clobber CDEFINE="-DW=500 -DH=500" alt
+```
+
+If you wish to keep the dimensions the same but change the iterations to 512:
+
+```sh
+make clobber CDEFINE="-DI=512" alt
+```
+
+If you specify a value less than 1 for any of these it sets it back to the
+default. The value 1 was selected arbitrarily and such a small number as 1 will
+not do anything useful but as long as it's at least 1 it'll not be redefined.
+Does not try taking care of overflows but such large values would be impractical
+anyway.
+
+
+### Alternate use:
+
+Use `monge.alt` exactly as you would `monge` above.
 
 
 ## Judges' remarks:
@@ -81,6 +127,7 @@ needed.
 
 4. Enjoy, unless you're more interested in trying to understand how it works. :)
 
+
 ### Introduction
 
 This is a fractal generator that supports custom formulas and real time zoom.
@@ -103,68 +150,81 @@ as you like (as understood by the C function `isspace()`).
 
 Supported operations and functions are:
 
+```
 Operation | Description
 :-------- | :----------
-`+,-,*,/`   | Arithmetic operations, priority of `*`,`/` over `+,-` is
-	      respected.
+ +,-,*,/    | Arithmetic operations, priority of  * , /  over  +,-  is
+	    | respected.
 	    |
-`<,>`       | Compares the real parts of two complex numbers (the imaginary part
+ <,>        | Compares the real parts of two complex numbers (the imaginary part
 	    | is ignored). Any number of conditions is allowed, the iteration
 	    | will just stop as soon as one of them fails.
-`Abs2`      | Calculates the squared norm, i.e.: `Abs2(a+b*i)` is `(a*a+b*b)+0*i`.
-`Re`        | Extract the real part, i.e.: `Re(a+b*i)` is `a+0*i`.
-`Im`        | Extract the imaginary part, i.e.: `Im(a+b*i) is b+0*i`.
-`Exp`       | Calculates the complex exponential, i.e. `Exp(a+b*i)` is
-	    |  `e^a*(cos(b)+sin(b)*i)`
-`Ln`	    | Calculates the principal value of the natural logarithm, i.e.
-	      `Ln(a+b*i)` is `ln(a*a+b*b)/2` + `atan(b/a)*i`
+ Abs2       | Calculates the squared norm, i.e.: Abs2(a+b*i) is (a*a+b*b)+0*i.
+ Re         | Extract the real part, i.e.: Re(a+b*i) is a+0*i.
+ Im         | Extract the imaginary part, i.e.: Im(a+b*i) is b+0*i.
+ Exp        | Calculates the complex exponential, i.e. Exp(a+b*i) is
+	    |   e^a*(cos(b)+sin(b)*i).
+ Ln 	    | Calculates the principal value of the natural logarithm, i.e.
+	       Ln(a+b*i) is ln(a*a+b*b)/2 + atan(b/a)*i.
+```
 
 Here are a few examples of fractals you can draw:
 
 - Mandelbrot:
 
-        ./monge "z=1" "z=z*z+c; Abs2(z)<4"
+```sh
+./monge "z=1" "z=z*z+c; Abs2(z)<4"
+```
 
 - Mandelbrot (return time variation):
 
-        ./monge "z=c" "z=z*z+c; Abs2(z-c)>0.0001"
+```sh
+./monge "z=c" "z=z*z+c; Abs2(z-c)>0.0001"
+```
 
 - Julia, for `c=0.31+i*0.5`:
 
-        ./monge "z=c; c=0.31+i*0.5" "z=z*z+c; Abs2(z)<4"
+```sh
+./monge "z=c; c=0.31+i*0.5" "z=z*z+c; Abs2(z)<4"
+```
 
 - Julia (return time variation), `for c=0.31+i*0.5`:
 
-        ./monge "z=c; c=0.31+i*0.5" "z=z*z+c; Abs2(z-c)>0.0001"
+```sh
+./monge "z=c; c=0.31+i*0.5" "z=z*z+c; Abs2(z-c)>0.0001"
+```
 
 - Newton, for `x^3-1`:
 
-        ./monge "z=c" "p=z; z=0.6666*z+0.3333/(z*z); Abs2(p-z) > 0.001"
+```sh
+./monge "z=c" "p=z; z=0.6666*z+0.3333/(z*z); Abs2(p-z) > 0.001"
+```
 
 - Newton-Mandelbrot:
 
-```
+```sh
 ./monge "z=0" "p=z; z=z-(z*z*z + (c-1)*z - c)/(3*z*z+c-1); Abs2(p-z) > 0.001"
 ```
 
 - Phoenix, Mandelbrot version:
 
-```
+```sh
 ./monge "z=0; q=0" "t=z; z=z*z+Re(c)+Im(c)*q; q=t; Abs2(z)<4"
 ```
 
 - Phoenix, Julia version for `c=0.56667-i*0.5`:
 
-```
+```sh
 ./monge "z=c; c=0.56667-i*0.5; q=0" "t=z; z=z*z+Re(c)+Im(c)*q; q=t; Abs2(z)<4"
 ```
+
 
 ### Compilation and portability
 
 This program will only work on x86 (with an x87 FPU) or x86_64 machines,
 but it requires the SDL library.
 
-Another system requirement is the `mmap()` function (as `#define`d at the
+Another system requirement is the `mmap(2)` function (as `#define`d at the
 beginning of the program). If it is not available the macro `M(a)` will have to
 be replaced with a system dependent function that allocates readable, writable
 *AND* executable memory (it will not be possible to make this program run on
@@ -186,17 +246,18 @@ changing the definitions of `W`, `H` and `I` at the beginning of the code.
 - Many SDL identifiers are hardcoded as number, this is safe up to ABI
   incompatibility.
 - Better optimization could be done treating known real numbers as just one
-  double, instead of adding a 0 imaginary part to treat them as complex
+  `double`, instead of adding a 0 imaginary part to treat them as complex
   numbers.
 - There should be some way to switch from Mandelbrot to Julia with chosen
   parameter.
+
 
 ### Spoiler
 
 Sure, I don't want to deprive you of the pleasure of digging
 into the infernal mess created by my corrupted mind (writing
 this remark I noticed that I was ending sentences with ';' instead
-that with '.', and I worried for my sanity), but just in case...
+of with '.', and I worried for my sanity), but just in case...
 
 I used many obfuscation techniques, including a few ones that
 are different from the tricks used in most common IOCCC program
