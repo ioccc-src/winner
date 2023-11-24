@@ -2395,10 +2395,13 @@ it is an `arm64` CPU - the Apple silicon chip). This fix, BTW, is a mix of a fix
 by [Yusuke Endoh](/winners.html#Yusuke_Endoh) and Cody's. Nevertheless there are
 two features that are not bugs.
 
-By design this program is supposed to crash on termination.
+By design this program is supposed to crash on termination. This actually no
+longer does seems to happen but we don't need this to be added even if it might
+be called a bug :-)
 
 You must type in caps (except in strings) and this program is indeed
 case-sensitive.
+
 
 ### STATUS: missing files - please provide them
 

@@ -25,7 +25,7 @@ There are other text files you may wish to try:
 
 ```sh
 ./grothe 65000000 10000000 1344 < arabian.txt
-./grothe 65000000 10000000 1344 < olympic.txt
+./grothe 65000000 10000000 1344 < olympics.txt
 ./grothe 65000000 10000000 1344 < test.txt
 ```
 
@@ -36,7 +36,8 @@ Most of the time, interference is annoying.  This entry is the
 exception that proves the rule.  What is a bug to some is a
 feature to this entry.  :-)
 
-## Selected Author's Comments:
+
+## Author's remarks:
 
 The program draws patterns on the screen that can be picked up by a
 [shortwave radio](https://en.wikipedia.org/wiki/Shortwave_radio).  It emulates
@@ -47,9 +48,9 @@ To be able to run the program you need to determine the following
 parameters:
 
 ```
-    carrier_freq     - base frequency used to host music
-    pixelclock       - refresh rate of the monitor
-    horizontal_total - total scan along the horizontal axis
+carrier_freq     - base frequency used to host music
+pixelclock       - refresh rate of the monitor
+horizontal_total - total scan along the horizontal axis
 ```
 
 If you have `xvidtune` installed you can get the `pixelclock` and
@@ -73,33 +74,35 @@ The core idea of using a machine to play music on AM radio goes all the
 way back to the [Altair computers](https://en.wikipedia.org/wiki/Altair_8800)
 and [Timex Sinclair ZX-81](https://en.wikipedia.org/wiki/ZX81)s.
 
+
 ### Several example songs
 
-Olympic Fanfare - from `antang@phakt.usc.edu` - Tony:
+Olympics Fanfare - from `antang@phakt.usc.edu` - Tony:
 
 ```
-        4-9-91231,2222-321123123-9-91231,2222-32112321
+4-9-91231,2222-321123123-9-91231,2222-32112321
 ```
 
 Twinkle Twinkle Little Star - from `fsufunkyb@aol.com` - Ben Schmidt:
 
 ```
-        1199##9-6633221-9966332-9966332-1199#9-6633221-
+1199##9-6633221-9966332-9966332-1199#9-6633221-
 ```
 
 Generic Arabian Tune - from `rdippold@qualcomm.com` - Ron "Asbestos" Dippold:
 
 ```
-        453,54,4569564459,9#95458,8987453 54
+453,54,4569564459,9#95458,8987453 54
 ```
 
 Others can be found by doing a search for "touch tone phone songs".
 
+
 ### Obfuscations
 
-- Some numbers expressed in Octal, some in hex and some in decimal
-	"A foolish consistency is the hobgoblin of little minds" - Ralph Waldo
-	Emerson.
+- Some numbers expressed in Octal, some in hex and some in decimal:
+"A foolish consistency is the hobgoblin of little minds" - Ralph Waldo
+Emerson.
 
 - Funky scoping, looking at the nanosleep section and `XsetWindowAttributes`
 declares local variables.
@@ -133,7 +136,7 @@ AM](https://web.archive.org/web/20070612152538if_/http://silcnet.org/priikone/pr
 for a bit more information on the program (search for `Tempest-AM Radio Signal
 Transmitter`).
 
-The paper\
+The paper
 [Soft Tempest: Hidden Data Transmission Using Electromagnetic
 Emanations](https://www.cl.cam.ac.uk/~mgk25/ih98-tempest.pdf) by Markus G.
 Kuhn's and Ross J. Anderson's.
