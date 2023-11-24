@@ -3030,8 +3030,12 @@ it to the repo as well.
 
 ## [2006/sykes2](2006/sykes2/sykes2.c) ([README.md](2006/sykes2/README.md]))
 
-Cody added the [try.sh](2006/sykes2/try.sh) script for easier use of the entry
-to show the clock update in real time.
+Cody, out of an abundance of caution for `clang`'s defects, made `main()` have
+to args instead of 1 as some versions report that `main()` must have 0, 2 or 3
+args, even though at least one of those versions allows 1 arg only.
+
+Cody also added the [try.sh](2006/sykes2/try.sh) script for easier use of the
+entry to show the clock update in real time.
 
 
 ## [2006/toledo2](2006/toledo2/toledo2.c) ([README.md](2006/toledo2/README.md]))
