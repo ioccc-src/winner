@@ -2964,6 +2964,8 @@ implicitly linked in.
 Cody fixed this so that it will not crash without an arg after it was suggested
 this should be fixed.
 
+Cody also added the [try.sh](2006/hamre/try.sh) script.
+
 
 ## [2006/monge](2006/monge/monge.c) ([README.md](2006/monge/README.md]))
 
