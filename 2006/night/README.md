@@ -4,6 +4,9 @@
 make
 ```
 
+There is an alternate version that supports arrow keys. See the [alternate
+code](#alternate-code) section below.
+
 
 ## To use:
 
@@ -11,25 +14,22 @@ make
 ./night
 ```
 
-There is an alternate version that supports arrow keys. See the alternate code
-section below.
-
-
-### Try:
-
-```sh
-echo "Do or do not. There is no try."
-```
-
 
 ## Alternate code:
 
-To compile:
+This version allows you to use arrow keys instead of the more awkward `wasd`
+keys.
+
+
+### Alternate build:
 
 
 ```sh
 make alt
 ```
+
+
+### Alternate use:
 
 Use `night.alt` as you would `night` above.
 
@@ -41,21 +41,15 @@ algorithm](https://towardsdatascience.com/introduction-to-genetic-algorithms-inc
 involved.  Somewhere.  But what does it do?  Well, it might take you a while to
 navigate the results, let alone the code.
 
-### Cheating
-
-There is a nice way to cheat. If you don't want to figure it out you can look at
-[Yusuke Endoh](/winners.html#Yusuke_Endoh)'s analysis of this entry at
-(translation from Japanese so it's not perfect)
-<https://mame-github-io.translate.goog/ioccc-ja-spoilers/2006/night.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp>.
-
 
 ## Author's remarks:
 
 Don't worry; this is not a self-reproducing program, as you might at
 first guess from the layout. I would never be so foolhardy as to
-submit an entry on an over-used theme!
+submit an entry on an overused theme!
 
 Oh, wait a second... it is a maze-generating program. Oops!
+
 
 ### What it does:
 
@@ -86,6 +80,7 @@ Finally, in the world of DNA, the medium is truly the message. There's
 a short message encoded in here that will only appear when you
 complete the optimal maze in the required 64 moves.
 
+
 ### Issues:
 
 These depend on your compiler, and they were all intentionally
@@ -94,12 +89,13 @@ added for obfuscation purposes. No, really!
 My compiler warns of nulls in a string literal, and the redefinition
 of the macro `T`.
 
-On one compiler, compilation took about two minutes.
+With one compiler, compilation took about two minutes.
 
 `sizeof(unsigned short)` must be 2, and `sizeof(unsigned long)` must be 4.
 
 `CLOCKS_PER_SEC` is assumed to be `1000000`. If it's a lot less than that,
 expect delays.
+
 
 ### Algorithmic obfuscation:
 
@@ -113,6 +109,7 @@ The recursive function `CGAC()` replaces a nested for loop in a handy way.
 The maze-solving function `TGA()` returns no solution both if no solution
 exists, and if the search space grows too large, with a single test.
 
+
 ### Stylistic obfuscation:
 
 Four-letter alphabets are confusing. I don't know how
@@ -124,11 +121,11 @@ Who needs `!=` when you've got `^`?
 
 Who needs `if` when you've got `while`?
 
-For that matter, who needs fixed-iteration-count for and while when
-you can just duplicate code with the preprocessor? Duplication by this
-macro causes one particular graphics line to be replicated 512
-times. On my system the preprocessed code is over 80KB in length,
-hindering the preprocessor's ability to deobfuscate.
+For that matter, who needs fixed-iteration-count `for` and `while` when you can
+just duplicate code with the preprocessor? Duplication by this macro causes one
+particular graphics line to be replicated 512 times. On my system the
+preprocessed code is over 80KB in length, hindering the preprocessor's ability
+to deobfuscate.
 
 Keypad support was removed to save space. To restore, modify the
 following two macros to:
