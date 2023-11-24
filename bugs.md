@@ -2352,9 +2352,34 @@ challenging and in some systems it will not be possible to fix but you are
 welcome to try and fix it if you wish to!
 
 
+
+
 ### STATUS: INABIAF - please **DO NOT** fix
 
 Incorrect formulas will ungracefully crash the program.
+
+
+## 2006 sykes1
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2006/sykes1/sykes1.c](2006/sykes1/sykes1.c)
+### Information: [2006/sykes1/README.md](2006/sykes1/README.md)
+
+The author stated:
+
+```
+If you pick a number higher than 19186, the program will return a
+solution but it will be a rotation of one of the first 19186.  This is
+because the cross shaped piece fits 48 ways in the 4x4 cube, but only
+2 of those ways are unique - you can rotate one of those to make any
+of the other 46.  The algorithm used always places the cross piece
+first, so the first two placings of that piece result in the 19186
+unique solutions.
+
+If you pick a number higher than 460464 (24x19186) the program will
+return without outputting a solution.  If you can wait that long.
+```
+
 
 
 ## 2006 toledo2
