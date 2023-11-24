@@ -3026,6 +3026,12 @@ The video was also no longer available but Cody found an alternative and added
 it to the repo as well.
 
 
+## [2006/sykes2](2006/sykes2/sykes2.c) ([README.md](2006/sykes2/README.md]))
+
+Cody added the [try.sh](2006/sykes2/try.sh) script for easier use of the entry
+to show the clock update in real time.
+
+
 ## [2006/toledo2](2006/toledo2/toledo2.c) ([README.md](2006/toledo2/README.md]))
 
 Cody fixed a segfault in this program which was making it fail to work under

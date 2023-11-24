@@ -15,7 +15,7 @@ make
 ### Try:
 
 ```sh
-./sykes2.sh
+./try.sh
 ```
 
 This will repeatedly remake the program and run it then sleep for one second for
