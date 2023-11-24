@@ -3,240 +3,7 @@
 .. and thanks for all the fish.  :-)
 
 
-## Thank you honor roll
-
-There are a number of people who have contributed to several thousand changes,
-fixes and important improvements and one who has literally (or numerically :-) )
-contributed thousands, that we wish to thank.
-
-We call out the extensive contributions of [Cody Boone
-Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson) who is
-responsible for most of the improvements and fixes including many **EXTREMELY
-HARD bug fixes** like
-[1988/phillipps](/thanks-for-fixes.md#1988phillipps-readmemd),
-[1992/vern](/thanks-for-fixes.md#1992vern-readmemd),
-[2001/anonymous](/thanks-for-fixes.md#2001anonymous-readmemd),
-[2004/burley](/thanks-for-fixes.md#2004burley-readmemd) and
-[2005/giljade](/thanks-for-fixes.md#2005giljade-readmemd), making entries like
-[1985/sicherman](/thanks-for-fixes.md#1985sicherman-readmemd) and
-[1986/wall](/thanks-for-fixes.md#1986wall-readmemd) not need `-traditional-cpp`
-(all **EXTREMELY HARD**), fixing entries to work with clang (some being
-**EXTREMELY HARD** like
-[1991/dds](/thanks-for-fixes.md#1991dds-readmemd)) or as much as possible (like
-[1989/westley](/thanks-for-fixes.md#1989westley-readmemd), a true masterpiece
-that is **INCREDIBLY HARD, _MUCH, MUCH MORE SO_ than any other fix!**), porting
-entries to macOS (some being **EXTREMELY HARD** like
-[1998/schweikh1](/thanks-for-fixes.md#1998schweikh1-readmemd)), fixing code like
-[2001/herrmann2](/thanks-for-fixes.md#2001herrmann2-readmemd) to work in both
-32-bit/64-bit which *can be* **EXTREMELY HARD**, providing alternate code
-where useful/necessary, fixing possible/removing dead links,
-typo/consistency fixes, improving **ALL _Makefiles_** and writing
-[sgit](https://github.com/xexyl/sgit) that we installed locally to easily run
-`sed` on files in the repo to help build the website. **THANK YOU VERY MUCH**
-for your extensive efforts in helping improve the IOCCC presentation of past
-IOCCC winners and fixing almost all past entries for modern systems!
-
-[Yusuke Endoh](https://www.ioccc.org/winners.html#Yusuke_Endoh) supplied a
-number of important bug fixes to a number of past IOCCC winners. Some of those
-fixes were **EXTREMELY TECHNICALLY CHALLENGING** such as
-[1989/robison](/thanks-for-fixes.md#1989robison-readmemd),
-[1990/cmills](https://github.com/ioccc-src/temp-test-ioccc/blob/master/thanks-for-fixes.md#1990cmills-readmemd),
-[1992/lush](/thanks-for-fixes.md#1992lush-readmemd) and
-[2001/ctk](/thanks-for-fixes.md#2001ctk-readmemd). **THANK YOU VERY MUCH** for
-your help!
-
-A good number of the [past winners of the
-IOCCC](https://www.ioccc.org/winners.html) tested, identified and helped correct
-and/or improve the write-ups of fellow IOCCC winners for the year that they won.
-The list of those past winners is too long to mention: nevertheless the [IOCCC
-judges](https://www.ioccc.org/judges.html) **VERY MUCH APPRECIATE** those who
-helped improve the presentation of their fellow IOCCC winners.
-
-
-## Thank you list since 2021 Jan 01
-
-To avoid having to change numerous "_README.md_" files to add thank you notes,
-we centralize them below.
-
-The [IOCCC judges](https://www.ioccc.org/judges.html) wish to recognize the many
-important contributions to the IOCCC presentation of past IOCCC winners.
-We are pleased to note the many contributions, **made since 2021 Jan 01**,
-on a winner by winner basis.
-
-
-## Note about fixes and inconsistencies with the original code and remarks
-
-Invariably when an entry is fixed and it is not made an alt version (sometimes
-it is worth an alt version and other times not - it all depends on what was
-done) some inconsistencies will be introduced of the original code, the remarks
-of the author(s) and the size restrictions of the contest for that year (and in
-some cases it might end up being against other rules).
-
-See [FAQ 4.3  - Why do author remarks sometimes not match the source / why are
-there other inconsistencies with the original entry?](/faq.md#faq4_3) for this
-specifically and also [FAQ 4.2: What was changed in an IOCCC winner source
-code?](/faq.mdfaq4_2).
-
-
-## Notes about changing `gets()` to `fgets()` in some entries:
-
-Although the 'why' is discussed in the [FAQ 4.1: Why were some calls to the libc
-function `gets(3)` changed to use `fgets(3)`?](/faq.md#faq4_1) we want to give
-more details here as it pertains to the fixes and  updates made in numerous
-entries below (note that some of the information in that FAQ entry are below).
-
-The problem with `gets()` is that in some systems a warning can be interspersed
-with the output which can be confusing, to say nothing of the annoyance of it
-(which can be fixed via `2>/dev/null` - and this is done with some entries in
-the to use/try sections - but which makes it more burdensome to run as there are
-a lot of entries that use it still).
-
-A good example was [1990/tbr](/thanks-for-fixes.md#1990tbr-readmemd) where one
-would see:
-
-```
-$ warning: this program uses gets(), which is unsafe.
-# cursor here, what to do?
-```
-
-whereas without the warning it's much easier to see that it's a prompt:
-
-```
-$
-```
-
-Another great example is:
-
-```sh
-$ cd 1990/cmills
-$ ./cmills
-Shuffle...
-warning: this program uses gets(), which is unsafe.
-Total $1000.  Wager?
-```
-
-In some entries this change is not possible, in one-liners it might make them
-too long (though it's also been possible to do it in some cases) and in some
-entries it's more complicated than others because of the annoying fact that for
-'"compatibility" reasons' `fgets()` retains the newline and `gets()` does not.
-As the v7 man page used to say:
-
-```
-BUGS
-
-The fgets(3) function retains the newline while gets(3) does not, all in the
-name of backward compatibility.
-```
-
-Some entries like [1992/adrian](1992/adrian/README.md) were more complicated in
-other ways due to the code generating other output and because of how it works
-it would generate code that could not be compiled, simply because of spaces
-being added; nevertheless Cody did make this fix along with a number of other
-fixes in that entry.
-
-In any case some of the entries have been updated this way for the reasons
-described above and in the [FAQ](/faq.md).
-
-Where possible `gets(3)` has been redefined to be `fgets(3)` with the
-appropriate arg.  This is not always possible but if often it is.
-
-See also [bugs.md](/bugs.md) for a further discussion on the matter.
-
-
-## A note about bugs versus (mis)features:
-
-Over time, when working on making fixes for compilers, different platforms
-and other such things, the definition of a feature versus a bug has changed,
-sometimes even for just specific entries, and this has happened a number of
-times as well, back and forth.
-
-The main definition of a feature that is most common is that if the judges or
-the author (or authors) note that it crashes without the right number of args,
-then this is, although technically a bug, considered a feature for the contest.
-In general if something is documented then it is a feature and not a bug.
-
-A counterexample is [1990/theorem](#1990theorem-readmemd) which is considered
-such a beautiful program that along with a change to `fgets(3)` it had arg
-checks added. There are some other examples for reasons like this, a good one
-being [1998/schnitzi](#1993schnitzi-readmemd), also because it's such a
-beautiful program (other fixes were made as well which is shown below also).
-Both of these entries were fixed by Cody.
-
-But there are some others that are more questionable and border on tampering
-with the entry especially as some of them were documented by the author. These
-happened over time where sometimes we, the judges, changed the status to
-bug/(mis)-feature and when verifying the consistency, Cody fixed them as they
-only took a few seconds to fix; others he changed back to feature status and
-they were not fixed as the problems were documented by the author or us.
-
-Of course it can be argued that by fixing these things it makes it more user
-friendly for modern enjoyment but even so it's very often the wrong way to go
-about it. If the author does not mention it then it can be considered a bug
-that can be fixed.
-
-See the [bugs.md](/bugs.md) for more information regarding this situation and
-for many entries with a variety types of bugs that you can look at fixing too,
-if you wish to help! You will be thanked in this file should you do so. Fixing
-does not have to be just code: it can be a Makefile fix or something else
-entirely, even typos (in data files: usually not good idea in code even in
-comments though it happened once). An example that has happened several times is
-that if the optimiser is enabled the program might crash, sometimes in one
-platform and not others but other times in multiple platforms. This counts as a
-fix too, which you will see below should you look at the very long list of
-fixes, including the next section!
-
-
-## Makefile fixes and improvements
-
-Cody made a variety of changes in all Makefiles, sometimes to get an entry to
-work, all noted below, but he also **improved them all** in at least one or two
-ways.
-
-For instance he changed the `LIBS` variable to `LDFLAGS` as that is the standard
-variable. This simplifies compiling without having to modify the Makefile which
-can be useful if something changes or if someone is trying to fix an entry but
-forgets to change the Makefile or even if they don't want to make a change due
-to a temporary test. These would of course depend on the compiler invocation but
-since `LDFLAGS` is standard it is more likely to be used by default so no need
-to check the Makefiles.
-
-Sometimes there were bad characters or rules that caused the entry to fail to
-compile or not work in some way.
-
-Where useful he added some notes to the Makefiles during compilation to let one
-know of certain problems or features that matter.
-
-There were some other fixes as well including mass typo fixes in the Makefiles
-(though that usually does not mean it is worth a thank you note it might be
-worth noting in this case). Other times it was enabling or disabling the
-optimiser to fix an entry, sometimes causing other problems that also had to be
-fixed, a good example being [1986/marshall](#1986marshall-readmemd) (see the
-[compilers.md](1986/marshall/compilers.md) for the amusing details and all that
-had to be done to fix it).
-
-There was a 'problem' where `${MAKE}` was `$(MAKE)`: this doesn't break anything
-but it is inconsistent with the rest of the `${foo}` tools.
-
-A lot of the fixes with the Makefiles that Cody made were done with his [sgit
-tool](https://github.com/xexyl/sgit).
-
-
-## Typo fixes and consistency improvements
-
-Cody, being the IOCCC's resident corrections officer :-) (and a fine one at
-that, we think :-) ), made many, many typ0 (... :-) ) fixes throughout the
-README.md files, scripts, other data files, Makefiles (see above) etc.
-
-He also updated the formatting of the README.md files (after renaming the old
-files to README.md) to proper markdown.
-
-Where possible he made the presentation of the entries much more consistent
-across the entries of all the years as well as other files. This is not possible
-for everything (the remarks of authors, for instance, cannot be and should not
-be made consistent but adding markdown where necessary in the remarks is).
-
-A lot of these fixes were done with his [sgit
-tool](https://github.com/xexyl/sgit) as well but many were done manually too.
+# 1984
 
 
 ## [1984/anonymous](1984/anonymous/anonymous.c) ([README.md](1984/anonymous/README.md))
@@ -339,6 +106,9 @@ header file `a.out.h` that is not available in all modern systems, Cody found a
 copy of it as to what it should have been at the time, in the fabulous [Unix
 History
 Repo](https://github.com/dspinellis/unix-history-repo/tree/Research-Release).
+
+
+# 1985
 
 
 ## [1985/applin](1985/applin/applin.c) ([README.md](1985/applin/README.md]))
@@ -483,6 +253,9 @@ were actually not what they appear: the only arg that existed in `main()` was
     if you remove it from `subr()` or don't even bother calling `subr()`?
 
 
+# 1986
+
+
 ## [1986/hague](1986/hague/hague.c) ([README.md](1986/hague/README.md]))
 
 Cody made this use `fgets()`.
@@ -616,6 +389,9 @@ Some of the changes required:
 
 
 
+# 1987
+
+
 ## [1987/heckbert](1987/heckbert/heckbert.c) ([README.md](1987/heckbert/README.md))
 
 Cody made this look more like the original entry by restoring the `#define` of
@@ -690,6 +466,9 @@ look more symmetrical now.
 
 Cody also added to the Makefile `-include stdio.h` in the nowadays very
 unlikely(?) but nevertheless suggested case that `putchar()` is not available.
+
+
+# 1988
 
 
 ## [1988/dale](1988/dale/dale.c) ([README.md](1988/dale/README.md]))
@@ -836,6 +615,10 @@ strictly necessary but nonetheless more correct, even if not warned against.
 
 Cody added the [try.sh](1988/westley/try.sh) script to show the magic of the
 entry as seeing the code with the result at once is far more beautiful.
+
+
+
+# 1989
 
 
 ## [1989/fubar](1989/fubar/fubar.c) ([README.md](1989/fubar/README.md]))
@@ -1021,6 +804,9 @@ The `compile.sh` script allows one to specify the compiler with the `CC`
 environmental variable; see the README.md for details.
 
 
+# 1990
+
+
 ## [1990/baruch](1990/baruch/baruch.c) ([README.md](1990/baruch/README.md]))
 
 Cody added an [alternate version](1990/baruch/baruch.alt.c) which allows Turbo-C
@@ -1192,6 +978,9 @@ and to not crash if no arg is specified.
 
 The alt code did NOT have arg checks added as it is actually a copy of the
 original code.
+
+
+# 1991
 
 
 ## [1991/ant](1991/ant/ant.c) ([README.md](1991/ant/README.md]))
@@ -1433,6 +1222,9 @@ version that supposedly (:-) ) always wins.
 
 Cody also fixed the make clobber rule where a file was left lying about when it
 should have been removed.
+
+
+# 1992
 
 
 ## [1992/adrian](1992/adrian/adrian.c) ([README.md](1992/adrian/README.md]))
@@ -1684,6 +1476,9 @@ args (2). And not that we need the help or anything for this :-) but we
 encourage you to try the original without two args :-)
 
 
+# 1993
+
+
 ## [1993/cmills](1993/cmills/cmills.c) ([README.md](1993/cmills/README.md]))
 
 Yusuke suggested that with modern systems this goes too fast so he added a call
@@ -1782,6 +1577,9 @@ but fixed to work with clang as well.
 
 NOTE: the `N1` and `N2` are provided as notes in the README.md file describing
 this code. Other code is also described there.
+
+
+# 1994
 
 
 ## [1994/dodsond2](1994/dodsond2/dodsond2.c) ([README.md](1994/dodsond2/README.md))
@@ -1898,6 +1696,9 @@ automate the spoiler commands to make it easier to see the game in action from
 start to finish.
 
 
+# 1995
+
+
 ## [1995/cdua](1995/cdua/cdua.c) ([README.md](1995/cdua/README.md]))
 
 Cody fixed this so that it would work with macOS. Once it could compile it
@@ -1958,6 +1759,9 @@ Cody added the authors' [spoiler as a C file](1995/vanschnitz/spoiler.c) as in
 2023 we have decided that in most cases all the code should be available for the
 wider audience, without having to extract it. The exception is when the files
 are created by the entry or the entry decrypts the text or whatever else.
+
+
+# 1996
 
 
 ## [1996/august](1996/august/august.c) ([README.md](1996/august/README.md]))
@@ -2068,6 +1872,9 @@ clocks, both with the fixed version and the original (alt) version.
 
 Also, to fix any potential problem with displaying in GitHub the scripts
 provided by the author, Cody added '.sh'.
+
+
+# 1998
 
 
 ## [1998/banks](1998/banks/banks.c) ([README.md](1998/banks/README.md]))
@@ -2285,6 +2092,9 @@ Cody also added the [try.sh](1998/tomtorfs/try.sh) script to try out a few
 commands that we recommended.
 
 
+# 2000
+
+
 ## [2000/anderson](2000/anderson/anderson.c) ([README.md](2000/anderson/README.md]))
 
 Cody changed this entry to use `fgets(3)` instead of `gets(3)`. This involved
@@ -2420,6 +2230,9 @@ the main code and the alt code respectively.
 
 And although the scripts do `chmod +x` on the source code (see the README.md for
 details) the source code is now executable by default.
+
+
+# 2001
 
 
 ## [2001/anonymous](2001/anonymous/anonymous.c) ([README.md](2001/anonymous/README.md]))
@@ -2693,6 +2506,9 @@ thought would be fun.  He also provided the sort and punch card versions,
 described in the README.md, based on the author's remarks.
 
 
+# 2004
+
+
 ## [2004/arachnid](2004/arachnid/arachnid.c) ([README.md](2004/arachnid/README.md]))
 
 Cody added an [alternate version](2004/arachnid/README.md#alternate-code) which
@@ -2884,6 +2700,9 @@ Cody also made it so that the `FNAME` is (for the entry file itself and
 `vik2_1.c`: it shouldn't be done for
 [vik2.possible.cat.death.c](2004/vik2/vik2.possible.cat.death.c)!) `__FILE__`
 just to make it a bit easier to compile.
+
+
+# 2005
 
 
 ## [2005/aidan](2005/aidan/aidan.c) ([README.md](2005/aidan/README.md]))
@@ -3125,6 +2944,9 @@ if one runs it from another directory, specifying the directory, it'll not catch
 it.
 
 
+# 2006
+
+
 ## [2006/birken](2006/birken/birken.c) ([README.md](2006/birken/README.md]))
 
 Cody fixed a segfault in macOS with this entry. The problem was a missing `+1`
@@ -3225,6 +3047,9 @@ so some `int`s were changed to `long`s. The display problem might or might not
 have been a problem in linux with the old `int`s but this is no longer known.
 
 
+# 2011
+
+
 ## [2011/goren](2011/goren/goren.c) ([README.md](2011/goren/README.md]))
 
 Cody fixed this for macOS.  Before the fix it segfaulted. It worked fine under
@@ -3252,6 +3077,9 @@ try.
 Cody, though he feels slightly sick :-), added a version for Windows based on
 the author's comments (along with looking up the function for the right header
 file). To build try the alt rule of the Makefile.
+
+
+# 2012
 
 
 ## [2012/blakely](2012/blakely/blakely.c) ([README.md](2012/blakely/README.md))
@@ -3313,6 +3141,9 @@ this for the few who might use Windows.
 
 We're not sure whether we want to thank Cody or not for this :-) and he's not
 sure if he wants to be thanked either :-) but we appreciate it nonetheless.
+
+
+# 2013
 
 
 ## [2013/birken](2013/birken/birken.c) ([README.md](2013/birken/README.md]))
@@ -3472,6 +3303,9 @@ Cody added explicit linking of libm (`-lm`) as not all systems do this
 implicitly (linux doesn't seem to but macOS does).
 
 
+# 2014
+
+
 ## [2014/deak](2014/deak/prog.c) ([README.md](2014/deak/README.md))
 
 Cody fixed the code that the author provided which would be what the program
@@ -3535,6 +3369,9 @@ theoretically work for Microsoft Windows compilers (if anything works in Windows
 that would break it we do not know.
 
 
+# 2015
+
+
 ## [2015/endoh3](2015/endoh3/prog.c) ([README.md](2015/endoh3/README.md]))
 
 Cody fixed this to compile with linux which was having a problem with duplicate
@@ -3561,6 +3398,9 @@ He also added explicit linking of libm (`-lm`) for systems that do not do this
 (linux seems to not but macOS does).
 
 
+# 2018
+
+
 ## [2018/bellard](2018/bellard/prog.c) ([README.md](2018/bellard/README.md))
 
 Cody added explicit linking of libm (`-lm`) for systems that do not do this
@@ -3583,6 +3423,9 @@ that's probably true: let's just say that for the IOCCC I'm (Cody) a weasel! :-)
 
 Cody added explicit linking of libm (`-lm`) for systems that do not do this
 (linux doesn't seem to but macOS does).
+
+
+# 2019
 
 
 ## [2019/burton](2019/burton/prog.c) ([README.md](2019/burton/README.md]))
@@ -3646,6 +3489,9 @@ debugging it since it works with `-O0`.
 
 He also added the script [try.sh](2019/karns/try.sh) to showcase the entry a
 bit more easily.
+
+
+# 2020
 
 
 ## [2020/endoh2](2020/endoh2/prog.c) ([README.md](2020/endoh2/README.md))
@@ -3732,3 +3578,121 @@ the user has installed the appropriate library with
 Cody added [alternate code](2020/tsoj/README.md#alternate-code) that will feel
 more at home for vi users. One might still end up cursing (see the README.md
 file) but probably a lot less :-)
+
+
+
+# Miscellaneous thanks
+
+
+## Thank you list since 2021 Jan 01
+
+To avoid having to change numerous "_README.md_" files to add thank you notes,
+we centralize them below.
+
+The [IOCCC judges](https://www.ioccc.org/judges.html) wish to recognize the many
+important contributions to the IOCCC presentation of past IOCCC winners.
+We are pleased to note the many contributions, **made since 2021 Jan 01**,
+on a winner by winner basis.
+
+
+## Makefile fixes and improvements
+
+Cody made a variety of changes in all Makefiles, sometimes to get an entry to
+work, all noted below, but he also **improved them all** in at least one or two
+ways.
+
+For instance he changed the `LIBS` variable to `LDFLAGS` as that is the standard
+variable. This simplifies compiling without having to modify the Makefile which
+can be useful if something changes or if someone is trying to fix an entry but
+forgets to change the Makefile or even if they don't want to make a change due
+to a temporary test. These would of course depend on the compiler invocation but
+since `LDFLAGS` is standard it is more likely to be used by default so no need
+to check the Makefiles.
+
+Sometimes there were bad characters or rules that caused the entry to fail to
+compile or not work in some way.
+
+Where useful he added some notes to the Makefiles during compilation to let one
+know of certain problems or features that matter.
+
+There were some other fixes as well including mass typo fixes in the Makefiles
+(though that usually does not mean it is worth a thank you note it might be
+worth noting in this case). Other times it was enabling or disabling the
+optimiser to fix an entry, sometimes causing other problems that also had to be
+fixed, a good example being [1986/marshall](#1986marshall-readmemd) (see the
+[compilers.md](1986/marshall/compilers.md) for the amusing details and all that
+had to be done to fix it).
+
+There was a 'problem' where `${MAKE}` was `$(MAKE)`: this doesn't break anything
+but it is inconsistent with the rest of the `${foo}` tools.
+
+A lot of the fixes with the Makefiles that Cody made were done with his [sgit
+tool](https://github.com/xexyl/sgit).
+
+
+## Typo fixes and consistency improvements
+
+Cody, being the IOCCC's resident corrections officer :-) (and a fine one at
+that, we think :-) ), made many, many typ0 (... :-) ) fixes throughout the
+README.md files, scripts, other data files, Makefiles (see above) etc.
+
+He also updated the formatting of the README.md files (after renaming the old
+files to README.md) to proper markdown.
+
+Where possible he made the presentation of the entries much more consistent
+across the entries of all the years as well as other files. This is not possible
+for everything (the remarks of authors, for instance, cannot be and should not
+be made consistent but adding markdown where necessary in the remarks is).
+
+A lot of these fixes were done with his [sgit
+tool](https://github.com/xexyl/sgit) as well but many were done manually too.
+
+
+## Thank you honor roll
+
+There are a number of people who have contributed to several thousand changes,
+fixes and important improvements and one who has literally (or numerically :-) )
+contributed thousands, that we wish to thank.
+
+We call out the extensive contributions of [Cody Boone
+Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson) who is
+responsible for most of the improvements and fixes including many **EXTREMELY
+HARD bug fixes** like
+[1988/phillipps](/thanks-for-fixes.md#1988phillipps-readmemd),
+[1992/vern](/thanks-for-fixes.md#1992vern-readmemd),
+[2001/anonymous](/thanks-for-fixes.md#2001anonymous-readmemd),
+[2004/burley](/thanks-for-fixes.md#2004burley-readmemd) and
+[2005/giljade](/thanks-for-fixes.md#2005giljade-readmemd), making entries like
+[1985/sicherman](/thanks-for-fixes.md#1985sicherman-readmemd) and
+[1986/wall](/thanks-for-fixes.md#1986wall-readmemd) not need `-traditional-cpp`
+(all **EXTREMELY HARD**), fixing entries to work with clang (some being
+**EXTREMELY HARD** like
+[1991/dds](/thanks-for-fixes.md#1991dds-readmemd)) or as much as possible (like
+[1989/westley](/thanks-for-fixes.md#1989westley-readmemd), a true masterpiece
+that is **INCREDIBLY HARD, _MUCH, MUCH MORE SO_ than any other fix!**), porting
+entries to macOS (some being **EXTREMELY HARD** like
+[1998/schweikh1](/thanks-for-fixes.md#1998schweikh1-readmemd)), fixing code like
+[2001/herrmann2](/thanks-for-fixes.md#2001herrmann2-readmemd) to work in both
+32-bit/64-bit which *can be* **EXTREMELY HARD**, providing alternate code
+where useful/necessary, fixing possible/removing dead links,
+typo/consistency fixes, improving **ALL _Makefiles_** and writing
+[sgit](https://github.com/xexyl/sgit) that we installed locally to easily run
+`sed` on files in the repo to help build the website. **THANK YOU VERY MUCH**
+for your extensive efforts in helping improve the IOCCC presentation of past
+IOCCC winners and fixing almost all past entries for modern systems!
+
+[Yusuke Endoh](https://www.ioccc.org/winners.html#Yusuke_Endoh) supplied a
+number of important bug fixes to a number of past IOCCC winners. Some of those
+fixes were **EXTREMELY TECHNICALLY CHALLENGING** such as
+[1989/robison](/thanks-for-fixes.md#1989robison-readmemd),
+[1990/cmills](https://github.com/ioccc-src/temp-test-ioccc/blob/master/thanks-for-fixes.md#1990cmills-readmemd),
+[1992/lush](/thanks-for-fixes.md#1992lush-readmemd) and
+[2001/ctk](/thanks-for-fixes.md#2001ctk-readmemd). **THANK YOU VERY MUCH** for
+your help!
+
+A good number of the [past winners of the
+IOCCC](https://www.ioccc.org/winners.html) tested, identified and helped correct
+and/or improve the write-ups of fellow IOCCC winners for the year that they won.
+The list of those past winners is too long to mention: nevertheless the [IOCCC
+judges](https://www.ioccc.org/judges.html) **VERY MUCH APPRECIATE** those who
+helped improve the presentation of their fellow IOCCC winners.
