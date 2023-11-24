@@ -2952,6 +2952,8 @@ it.
 Cody fixed a segfault in macOS with this entry. The problem was a missing `+1`
 for strlen() with malloc(). This prevented it from working.
 
+Cody also added the [try.sh](2006/birken/try.sh) script.
+
 
 ## [2006/borsanyi](2006/borsanyi/borsanyi.c) ([README.md](2006/borsanyi/README.md]))
 

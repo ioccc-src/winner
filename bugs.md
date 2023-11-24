@@ -2305,6 +2305,23 @@ used decimal mode, or any of the "undocumented" instructions.
 # 2006
 
 
+## 2006 birken
+
+### STATUS: uses gets() - change to fgets() if possible
+### Source code: [2006/birken/birken.c](2006/birken/birken.c)
+### Information: [2006/birken/README.md](2006/birken/README.md)
+
+This entry uses `gets(3)` which is unsafe and provides annoying warnings, most
+obnoxious in macOS as it shows it at runtime (redirecting `stderr` to
+`/dev/null` will silence it). The following diff will almost work but it crashes
+with at least `computer.tofu` input file:
+
+```diff
+12a13
+#define gets(c) fgets((c),PI,stdin)&&(((c)[strlen((c))-1]='\0'),c!=NULL)
+```
+
+
 ## 2006 borsanyi
 
 ### STATUS: INABIAF - please **DO NOT** fix
