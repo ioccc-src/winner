@@ -1808,6 +1808,13 @@ particular to make it easier to see the program do what it does in systems that
 are too fast ... if there is such a thing anyway :-) ). See the README.md for
 details on this.
 
+Out of an abundance of caution with clang, Cody also added a second arg to
+`main()` as some versions of clang whine about the number of args on top of the
+type of args. In particular some versions supposedly only allow 0, 2 or 3 args.
+It actually appears to allow 1 but if you specify 4 it says 0, 2 or 3 and it is
+an error but it's entirely possible that they will eventually make the defect
+function as the error message claims.
+
 
 ## [1995/dodsond1](1995/dodsond1/dodsond1.c) ([README.md](1995/dodsond1/README.md]))
 
