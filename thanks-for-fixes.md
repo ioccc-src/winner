@@ -1780,6 +1780,13 @@ more like the original entry this was done in the Makefile.
 Note that the alt code does not use `fgets(3)` but rather `gets(3)`.
 
 
+## [1994/weisberg](1994/weisberg/weisberg.c) ([README.md](1994/weisberg/README.md]))
+
+Cody changed the Makefile to make this program more user friendly and easier to
+use with other tools as well by making the program output not a space after each
+number but rather a newline.
+
+
 ## [1994/westley](1994/westley/westley.c) ([README.md](1994/westley/README.md]))
 
 Cody converted the spoiler compiler options (provided by the author) to be
