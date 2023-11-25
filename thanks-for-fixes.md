@@ -3623,10 +3623,10 @@ file) but probably a lot less :-)
 
 
 
-# <a name"general_thanks"></a>General thanks
+# <a name="general_thanks"></a>General thanks
 
 
-## <a name"readme_and_thanks"></a>README and thanks
+## <a name="readme_and_thanks"></a>README and thanks
 
 To avoid having to change numerous "_README.md_" files to add thank you notes,
 we centralize them below.
@@ -3637,7 +3637,7 @@ We are pleased to note the many contributions, **made since 2021 Jan 01**,
 on a winner by winner basis.
 
 
-## <a name"makefile_improvements"></a>Makefile improvements
+## <a name="makefile_improvements"></a>Makefile improvements
 
 Cody made a variety of changes in all Makefiles, sometimes to get an entry to
 work, all noted below, but he also **improved them all** in at least one or two
@@ -3672,7 +3672,7 @@ A lot of the fixes with the Makefiles that Cody made were done with his [sgit
 tool](https://github.com/xexyl/sgit).
 
 
-## <a name"consistency_improvements"></a>Consistency improvements
+## <a name="consistency_improvements"></a>Consistency improvements
 
 Cody, being the IOCCC's resident corrections officer :-) (and a fine one at
 that, we think :-) ), made many, many typ0 (... :-) ) fixes throughout the
@@ -3690,7 +3690,7 @@ A lot of these fixes were done with his [sgit
 tool](https://github.com/xexyl/sgit) as well but many were done manually too.
 
 
-## <a name"thank_you_honor_roll"></a>Thank you honor roll
+## <a name="thank_you_honor_roll"></a>Thank you honor roll
 
 There are a number of people who have contributed to several thousand changes,
 fixes and important improvements and one who has literally (or numerically :-) )
