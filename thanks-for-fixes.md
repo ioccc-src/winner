@@ -178,10 +178,17 @@ returning to the shell. The original version does not have this change.
 
 ## [1985/august](1985/august/august.c) ([README.md](1985/august/README.md))
 
-Cody added the script [primes.sh](1985/august/primes.sh) which allows one to
-check the output for the first N prime numbers of the output, where N is either
-the default or user specified. The inspiration was the previous 'try' command he
-gave to have fun with finding primes that might seem unusual in a way.
+Cody, out of abundance of caution, added a second arg to `main()` because some
+versions of clang object to the number of args of `main()`, saying that it must
+be 0, 2 or 3. The version this has been observed in does not actually object to
+1 arg but it is entirely possible that this changes so a second arg (that's not
+needed and is unused) has been added just in case.
+
+Cody also added the script [primes.sh](1985/august/primes.sh) which allows one
+to check the output for the first N prime numbers of the output, where N is
+either the default or user specified. The inspiration was the previous 'try'
+command he gave to have fun with finding primes that might seem unusual in a
+way.
 
 
 ## [1985/lycklama](1985/lycklama/lycklama.c) ([README.md](1985/lycklama/README.md]))
