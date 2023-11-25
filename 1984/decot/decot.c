@@ -5,17 +5,14 @@
 
 extern double floor(double);
 double (x1, y1) b;
-/*char x {sizeof(
-     double(%s,%D)(*)()) */
-int
-k['a'] = {sizeof(
-    int(*)())
+char x {sizeof(
+     double(%s,%D)(*)())
 ,};
 struct tag{int x0,*xO;};
 
-int dup, signal;
-*main(int i) {
+*main() {
 {
+  int i=1,signal, dup;
   for(signal=0;*k *= * __FILE__ *i;) do {
    (printf(&*"'\",x);	/*\n\\", (*((int(*)())&floor))(i)));
 	goto _0;
