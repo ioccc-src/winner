@@ -250,11 +250,13 @@ were actually not what they appear: the only arg that existed in `main()` was
 
 - The macros `C` and `V` were changed to lower case. This is because it felt
 like the `C=" ..`' part in `subr()` would be better to be upper case as it talks
-about the language. Also in the second alternate version (the first being the
+about the language. Also in the second [alternate
+version](1985/sicherman/sicherman.alt2.c) (the first being the
 original code) which is in case a new version of clang ever objects to only one
 arg in `main()` (which is not out of the realm of possibility), `main()` can
 have `C` as `argc` to `main()` so it would read like it once did: `C manual`
-albeit with a `,` separating the two. The second alternate version is compiled
+albeit with a `,` separating the two. The [second
+alternate](1985/sicherman/sicherman.alt2.c) version is compiled
 in case the first does not. Originally the macros were kept the same and the
 `C` in `subr()` was `c`. It feels better (in some ways) to make it so that the
 `C` for the language is upper case though, and since it actually translated to
