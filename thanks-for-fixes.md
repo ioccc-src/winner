@@ -1687,7 +1687,7 @@ had more arrows it would).
 
 Cody added an alt version that allows one to cheat by specifying how many arrows
 to start with (this was for fun but it turned out a good way to debug the above
-infinite loop too).
+infinite loop too which hanged the program).
 
 As in some places it would properly say that you have '1 arrow' or else, if you
 have any other number of arrows (including 0), it would say 'arrows', Cody fixed
