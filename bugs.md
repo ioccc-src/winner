@@ -2480,7 +2480,9 @@ memory protections with the arm64 processor.
 workarounds but at this time he could not get it to work. He offers some earlier
 debugging sessions below as well as a resource from the author as well as some
 resources on Apple's website should anyone wish to take a crack at it. He might
-address it later.
+address it later but a starting point might be in
+[richards.alt.c](2011/richards/richards.alt.c).
+
 
 ### Debugging
 
