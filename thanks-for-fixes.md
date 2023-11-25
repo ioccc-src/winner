@@ -2750,6 +2750,10 @@ Finally Cody added [try.sh](2004/jdalbec/try.sh) and
 Cody reported that this entry cannot be optimised by the compiler as otherwise
 it will not work.
 
+Cody, out of an abundance of caution for clang, added a second arg to `main()`
+as some versions complain about the number of args and although they accept 1 it
+is entirely possible it will eventually be that they don't.
+
 Cody also added the [try.sh](2004/kopczynski/try.sh) script and various data
 files: [kopczynski-a](kopczynski-a) to demonstrate what happens when art more
 like a letter is fed to the program and the `kopczynski*-rev` files which are
