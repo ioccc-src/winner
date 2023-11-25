@@ -4,12 +4,48 @@
 make all
 ```
 
+There are three alt versions which demonstrate a problem that the code documents
+(as an obfuscation technique) and what the judges document so you can see what
+it looks like. See [alternate code](#alternate-code) below for more details.
+
 
 ## To use:
 
 ```sh
 ./cdupont
 ```
+
+
+## Alternate code:
+
+These three versions show what will happen if certain things are done that were
+warned against: if you remove a comment and more so an unused `goto` label or if
+you beautify it. The [cdupont.alt.c](cdupont.alt.c) is the one with both the
+unused `goto` label and comments removed, the [cdupont.alt2.c](cdupont.alt2.c)
+is the version that has these things removed and is also beautified and the
+[cdupont.alt3.c](cdupont.alt3.c) is just beautified. This required changing the
+`s` macro to be `__FILE__` as otherwise it would read in the original code which
+doesn't have the modifications.
+
+
+### Alternate build:
+
+
+```sh
+make alt
+```
+
+
+### Alternate try:
+
+
+```sh
+./cdupont.alt
+./cdupont.alt2
+./cdupont.alt3
+```
+
+Enjoy! :-)
 
 
 ## Judges' remarks:
