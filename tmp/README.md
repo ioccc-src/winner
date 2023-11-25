@@ -8,7 +8,7 @@ This documentation is here to help define terms, files under `tmp/`
 and the format of those files.
 
 *NOTE*: The `terms` section may be moved to another file
-later on, after the contents
+later on, after the contents of this directory are removed.
 
 
 ## terms
