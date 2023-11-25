@@ -15,21 +15,19 @@ make
 ### Try:
 
 ```sh
-./konno qwerty
-./konno ioccc
-./konno "the quick brown fox jumps over the lazy dog"
+./try.sh
 ```
 
 
 ## Judges' remarks:
 
-This tiny program outputs what looks like a tiny keyboard.\
-OK, so the letters are missing. But that is no problem because\
+This tiny program outputs what looks like a tiny keyboard.
+OK, so the letters are missing. But that is no problem because
 this program identifies the lower case letters that were pressed!
 
 It is one of those minimal keyboards without all of those
 confusing symbols keys.  No shift for SHOUTING CAPS
-but at least it does not have that useless caps lock key!
+but at least it does not have that useless CAPS LOCK key!
 
 We recommend that you completely deconstruct / figure out
 how this program works and does what it does.  Can you
