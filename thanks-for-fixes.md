@@ -1467,6 +1467,12 @@ line lengths match the original code, at least as best as possible (if not
 perfectly), including start and end columns, often (if not all) with the same
 start and end character.
 
+Cody made `main()` have two args, not one, as some versions of clang have a
+defect with the number of args to `main()` though when it comes to 1 arg it is
+only in an error message if say 4 args are used. This is out of an abundance of
+caution as it's quite possible that clang or the ANSI C committee end up further
+changing this.
+
 Yusuke also noted that there is a bug in the program where right after starting
 it moves towards the right but if you click the mouse it goes back.
 

@@ -11,7 +11,7 @@
 #	  define	     R			    BlackPixel(d,D)
 #	   define	     S			    r.xvisibility
 
-	      int main(a)int a;{Window s[53];int w,u,i,c,y,l=0
+	  int main(a,b)int a;char**b;{Window s[53];int w,u,i,c,y,l=0
 	  ,q,e=32,t,k,j=~0,z=(a+1)/2,x=a&1,v=z&1;XEvent r;Display*
 	d=XOpenDisplay("");s[0]=A(d,DefaultRootWindow(d),200,200,(x&
        v?330:120)*z,215*z,2,R,R);I(N(c=0),_);for(;c<(x?32:52);c++){s[
