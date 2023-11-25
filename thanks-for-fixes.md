@@ -3226,6 +3226,11 @@ and now it does work with 64-bit systems as well as 32-bit systems.
 Cody added the following words of wisdom: 'this is not a pipe'.
 
 
+## [2011/hou](2011/hou/hou.c) ([README.md](2011/hou/README.md]))
+
+Cody added the [try.sh](2011/hou/try.sh) script.
+
+
 ## [2011/konno](2011/konno/konno.c) ([README.md](2011/konno/README.md]))
 
 Cody fixed the program to not crash if no arg was specified as this was not a
