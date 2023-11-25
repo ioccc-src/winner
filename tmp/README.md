@@ -385,6 +385,12 @@ After doing a `make clobber` this tool updates, if needed,
 form [path_list.found.txt](path_list.found.txt).
 
 
+## [old-ioccc.css](old-ioccc.css)
+
+The previous version of `/ioccc.css`, now `tmp/old-ioccc.css` to make
+room for the new IOCCC css being developed.
+
+
 ### [manifest.numbers](manifest.numbers)
 
 
