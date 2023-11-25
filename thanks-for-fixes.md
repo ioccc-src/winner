@@ -2172,6 +2172,10 @@ interesting historical explanation and further details and fun, see the
 [historical remarks](1998/schweikh2/README.md#historical-remarks) in the
 README.md.
 
+Cody also added an `int` after `register` in `main()` in case clang decides to
+have a problem with that in the future which is not entirely out of the
+question.
+
 
 ## [1998/schweikh3](1998/schweikh3/schweikh3.c) ([README.md](1998/schweikh3/README.md]))
 
