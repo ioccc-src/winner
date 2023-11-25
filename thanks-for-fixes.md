@@ -1,6 +1,15 @@
 # Thanks for all the fixes
 
-.. and thanks for all the fish.  :-)
+
+## .. and thanks for all the fish. :-)
+
+To avoid having to change numerous "_README.md_" files to add thank you notes,
+we centralize them below.
+
+The [IOCCC judges](https://www.ioccc.org/judges.html) wish to recognize the many
+important contributions to the IOCCC presentation of past IOCCC winners.
+We are pleased to note the many contributions, **made since 2021 Jan 01**,
+on a winner by winner basis.
 
 
 ## IOCCC thank you table of contents
@@ -13,7 +22,6 @@
 - [2012 winners](#2012)	|	[2013 winners](#2013)	|	[2014 winners](#2014)	|	[2015 winners](#2015)
 - [2018 winners](#2018)	|	[2019 winners](#2019)	|	[2020 winners](#2020)
 - [General thanks](#general_thanks)
-- [README and thanks](#readme_and_thanks)
 - [Makefile improvements](#makefile_improvements)
 - [Consistency improvements](#consistency_improvements)
 - [Thank you honor roll](#thank_you_honor_roll)
@@ -3624,17 +3632,6 @@ file) but probably a lot less :-)
 
 
 # <a name="general_thanks"></a>General thanks
-
-
-## <a name="readme_and_thanks"></a>README and thanks
-
-To avoid having to change numerous "_README.md_" files to add thank you notes,
-we centralize them below.
-
-The [IOCCC judges](https://www.ioccc.org/judges.html) wish to recognize the many
-important contributions to the IOCCC presentation of past IOCCC winners.
-We are pleased to note the many contributions, **made since 2021 Jan 01**,
-on a winner by winner basis.
 
 
 ## <a name="makefile_improvements"></a>Makefile improvements
