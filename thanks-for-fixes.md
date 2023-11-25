@@ -1278,10 +1278,10 @@ original entry Cody left the message before ending curses in and printed another
 message of the same kind after `endwin()` was called with the exception that he
 added a newline at the end of the screen to be more user friendly.
 
-Cody also added two alt versions, one to remove the maximum number of moves you
-may make and another to let you configure the maximum number of moves, even if
-that is making it harder to win. Naturally the above fix was applied to these
-versions too.
+Cody also added [two alt versions](1991/rince/README.md#alternate-code), one to
+remove the maximum number of moves you may make and another to let you configure
+the maximum number of moves, even if that is making it harder to win. Naturally
+the above fix was applied to these versions too.
 
 
 ## [1991/westley](1991/westley/westley.c) ([README.md](1991/westley/README.md]))
