@@ -1979,6 +1979,9 @@ clocks, both with the fixed version and the original (alt) version.
 Also, to fix any potential problem with displaying in GitHub the scripts
 provided by the author, Cody added '.sh'.
 
+Later Cody made the entry look more like the original, removing the `argc` in
+`main()` (K&R style functions).
+
 
 # <a name="1998"></a>1998
 
