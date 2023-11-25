@@ -4,7 +4,7 @@ char*lie;
 
 	not; int rested,   get, out;
 
-	main(ly, die) char ly, **die ;{
+	main(ly, die) int ly; char **die ;{
 
 	    signed char lotte,
 
