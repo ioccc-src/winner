@@ -1855,7 +1855,7 @@ by the author, putting it in [spoiler1.md](1995/leo/spoiler1.md).
 
 Cody fixed this so that it will compile with versions of clang that has a defect
 which only allows `main()` to have 0, 2 or 3 args. This is done by a new
-function (`pain()` as it's annoying that clang is this way :-) ) that main()
+function (`pain()` as it's annoying that clang is this way :-) ) that `main()`
 calls which has the four args.
 
 
