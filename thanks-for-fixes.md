@@ -1038,6 +1038,9 @@ was changed to just `1`.  Since it's instructional to see the differences he has
 provided an alternate version, [westley.alt.c](1990/westley/westley.alt.c), which
 is the original code.
 
+He also changed the `argc` to be an `int`, not a `char`, even though it might
+often be the same (for the purpose of `clang`?).
+
 He also fixed the code to not enter an infinite loop if arg is a number not > 0
 and to not crash if no arg is specified.
 
