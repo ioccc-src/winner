@@ -1491,6 +1491,11 @@ NOTE: this entry cannot work with clang due to different compiler messages. See
 [bugs.md](/bugs.md) for details.
 
 
+## [1992/marangon](1992/marangon/marangon.c) ([README.md](1992/marangon/README.md))
+
+Cody made this more portable by changing the `void main()` to be `int main()`.
+
+
 ## [1992/nathan](1992/nathan/nathan.c) ([README.md](1992/nathan/README.md))
 
 Cody added the original file back as it was deemed that the export restrictions
