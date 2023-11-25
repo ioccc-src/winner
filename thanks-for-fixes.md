@@ -3,7 +3,23 @@
 .. and thanks for all the fish.  :-)
 
 
-# 1984
+## IOCCC thank you table of contents
+
+- [1984 winners](#1984)	|	[1985 winners](#1985)	|	[1986 winners](#1986)	|	[1987 winners](#1987)
+- [1988 winners](#1988)	|	[1989 winners](#1989)	|	[1990 winners](#1990)	|	[1991 winners](#1991)
+- [1992 winners](#1992)	|	[1993 winners](#1993)	|	[1994 winners](#1994)	|	[1995 winners](#1995)
+- [1996 winners](#1996)	|	[1998 winners](#1998)	|	[2000 winners](#2000)	|	[2001 winners](#2001)
+- [2004 winners](#2004)	|	[2005 winners](#2005)	|	[2006 winners](#2006)	|	[2011 winners](#2011)
+- [2012 winners](#2012)	|	[2013 winners](#2013)	|	[2014 winners](#2014)	|	[2015 winners](#2015)
+- [2018 winners](#2018)	|	[2019 winners](#2019)	|	[2020 winners](#2020)
+- [General thanks](#general_thanks)
+- [README and thanks](#readme_and_thanks)
+- [Makefile improvements](#makefile_improvements)
+- [Consistency improvements](#consistency_improvements)
+- [Thank you honor roll](#thank_you_honor_roll)
+
+
+# <a name="1984"></a>1984
 
 
 ## [1984/anonymous](1984/anonymous/anonymous.c) ([README.md](1984/anonymous/README.md))
@@ -108,7 +124,7 @@ History
 Repo](https://github.com/dspinellis/unix-history-repo/tree/Research-Release).
 
 
-# 1985
+# <a name="1985"></a>1985
 
 
 ## [1985/applin](1985/applin/applin.c) ([README.md](1985/applin/README.md]))
@@ -253,7 +269,7 @@ were actually not what they appear: the only arg that existed in `main()` was
     if you remove it from `subr()` or don't even bother calling `subr()`?
 
 
-# 1986
+# <a name="1986"></a>1986
 
 
 ## [1986/hague](1986/hague/hague.c) ([README.md](1986/hague/README.md]))
@@ -389,7 +405,7 @@ Some of the changes required:
 
 
 
-# 1987
+# <a name="1987"></a>1987
 
 
 ## [1987/heckbert](1987/heckbert/heckbert.c) ([README.md](1987/heckbert/README.md))
@@ -468,7 +484,7 @@ Cody also added to the Makefile `-include stdio.h` in the nowadays very
 unlikely(?) but nevertheless suggested case that `putchar()` is not available.
 
 
-# 1988
+# <a name="1988"></a>1988
 
 
 ## [1988/dale](1988/dale/dale.c) ([README.md](1988/dale/README.md]))
@@ -618,7 +634,7 @@ entry as seeing the code with the result at once is far more beautiful.
 
 
 
-# 1989
+# <a name="1989"></a>1989
 
 
 ## [1989/fubar](1989/fubar/fubar.c) ([README.md](1989/fubar/README.md]))
@@ -804,7 +820,7 @@ The `compile.sh` script allows one to specify the compiler with the `CC`
 environmental variable; see the README.md for details.
 
 
-# 1990
+# <a name="1990"></a>1990
 
 
 ## [1990/baruch](1990/baruch/baruch.c) ([README.md](1990/baruch/README.md]))
@@ -980,7 +996,7 @@ The alt code did NOT have arg checks added as it is actually a copy of the
 original code.
 
 
-# 1991
+# <a name="1991"></a>1991
 
 
 ## [1991/ant](1991/ant/ant.c) ([README.md](1991/ant/README.md]))
@@ -1224,7 +1240,7 @@ Cody also fixed the make clobber rule where a file was left lying about when it
 should have been removed.
 
 
-# 1992
+# <a name="1992"></a>1992
 
 
 ## [1992/adrian](1992/adrian/adrian.c) ([README.md](1992/adrian/README.md]))
@@ -1476,7 +1492,7 @@ args (2). And not that we need the help or anything for this :-) but we
 encourage you to try the original without two args :-)
 
 
-# 1993
+# <a name="1993"></a>1993
 
 
 ## [1993/cmills](1993/cmills/cmills.c) ([README.md](1993/cmills/README.md]))
@@ -1579,7 +1595,7 @@ NOTE: the `N1` and `N2` are provided as notes in the README.md file describing
 this code. Other code is also described there.
 
 
-# 1994
+# <a name="1994"></a>1994
 
 
 ## [1994/dodsond2](1994/dodsond2/dodsond2.c) ([README.md](1994/dodsond2/README.md))
@@ -1696,7 +1712,7 @@ automate the spoiler commands to make it easier to see the game in action from
 start to finish.
 
 
-# 1995
+# <a name="1995"></a>1995
 
 
 ## [1995/cdua](1995/cdua/cdua.c) ([README.md](1995/cdua/README.md]))
@@ -1761,7 +1777,7 @@ wider audience, without having to extract it. The exception is when the files
 are created by the entry or the entry decrypts the text or whatever else.
 
 
-# 1996
+# <a name="1996"></a>1996
 
 
 ## [1996/august](1996/august/august.c) ([README.md](1996/august/README.md]))
@@ -1874,7 +1890,7 @@ Also, to fix any potential problem with displaying in GitHub the scripts
 provided by the author, Cody added '.sh'.
 
 
-# 1998
+# <a name="1998"></a>1998
 
 
 ## [1998/banks](1998/banks/banks.c) ([README.md](1998/banks/README.md]))
@@ -2092,7 +2108,7 @@ Cody also added the [try.sh](1998/tomtorfs/try.sh) script to try out a few
 commands that we recommended.
 
 
-# 2000
+# <a name="2000"></a>2000
 
 
 ## [2000/anderson](2000/anderson/anderson.c) ([README.md](2000/anderson/README.md]))
@@ -2232,7 +2248,7 @@ And although the scripts do `chmod +x` on the source code (see the README.md for
 details) the source code is now executable by default.
 
 
-# 2001
+# <a name="2001"></a>2001
 
 
 ## [2001/anonymous](2001/anonymous/anonymous.c) ([README.md](2001/anonymous/README.md]))
@@ -2506,7 +2522,7 @@ thought would be fun.  He also provided the sort and punch card versions,
 described in the README.md, based on the author's remarks.
 
 
-# 2004
+# <a name="2004"></a>2004
 
 
 ## [2004/arachnid](2004/arachnid/arachnid.c) ([README.md](2004/arachnid/README.md]))
@@ -2702,7 +2718,7 @@ Cody also made it so that the `FNAME` is (for the entry file itself and
 just to make it a bit easier to compile.
 
 
-# 2005
+# <a name="2005"></a>2005
 
 
 ## [2005/aidan](2005/aidan/aidan.c) ([README.md](2005/aidan/README.md]))
@@ -2944,7 +2960,7 @@ if one runs it from another directory, specifying the directory, it'll not catch
 it.
 
 
-# 2006
+# <a name="2006"></a>2006
 
 
 ## [2006/birken](2006/birken/birken.c) ([README.md](2006/birken/README.md]))
@@ -3073,7 +3089,7 @@ so some `int`s were changed to `long`s. The display problem might or might not
 have been a problem in linux with the old `int`s but this is no longer known.
 
 
-# 2011
+# <a name="2011"></a>2011
 
 
 ## [2011/goren](2011/goren/goren.c) ([README.md](2011/goren/README.md]))
@@ -3105,7 +3121,7 @@ the author's comments (along with looking up the function for the right header
 file). To build try the alt rule of the Makefile.
 
 
-# 2012
+# <a name="2012"></a>2012
 
 
 ## [2012/blakely](2012/blakely/blakely.c) ([README.md](2012/blakely/README.md))
@@ -3169,7 +3185,7 @@ We're not sure whether we want to thank Cody or not for this :-) and he's not
 sure if he wants to be thanked either :-) but we appreciate it nonetheless.
 
 
-# 2013
+# <a name="2013"></a>2013
 
 
 ## [2013/birken](2013/birken/birken.c) ([README.md](2013/birken/README.md]))
@@ -3329,7 +3345,7 @@ Cody added explicit linking of libm (`-lm`) as not all systems do this
 implicitly (linux doesn't seem to but macOS does).
 
 
-# 2014
+# <a name="2014"></a>2014
 
 
 ## [2014/deak](2014/deak/prog.c) ([README.md](2014/deak/README.md))
@@ -3395,7 +3411,7 @@ theoretically work for Microsoft Windows compilers (if anything works in Windows
 that would break it we do not know.
 
 
-# 2015
+# <a name="2015"></a>2015
 
 
 ## [2015/endoh3](2015/endoh3/prog.c) ([README.md](2015/endoh3/README.md]))
@@ -3424,7 +3440,7 @@ He also added explicit linking of libm (`-lm`) for systems that do not do this
 (linux seems to not but macOS does).
 
 
-# 2018
+# <a name="2018"></a>2018
 
 
 ## [2018/bellard](2018/bellard/prog.c) ([README.md](2018/bellard/README.md))
@@ -3451,7 +3467,7 @@ Cody added explicit linking of libm (`-lm`) for systems that do not do this
 (linux doesn't seem to but macOS does).
 
 
-# 2019
+# <a name="2019"></a>2019
 
 
 ## [2019/burton](2019/burton/prog.c) ([README.md](2019/burton/README.md]))
@@ -3517,7 +3533,7 @@ He also added the script [try.sh](2019/karns/try.sh) to showcase the entry a
 bit more easily.
 
 
-# 2020
+# <a name="2020"></a>2020
 
 
 ## [2020/endoh2](2020/endoh2/prog.c) ([README.md](2020/endoh2/README.md))
@@ -3607,10 +3623,10 @@ file) but probably a lot less :-)
 
 
 
-# Miscellaneous thanks
+# <a name"general_thanks"></a>General thanks
 
 
-## Thank you list since 2021 Jan 01
+## <a name"readme_and_thanks"></a>README and thanks
 
 To avoid having to change numerous "_README.md_" files to add thank you notes,
 we centralize them below.
@@ -3621,7 +3637,7 @@ We are pleased to note the many contributions, **made since 2021 Jan 01**,
 on a winner by winner basis.
 
 
-## Makefile fixes and improvements
+## <a name"makefile_improvements"></a>Makefile improvements
 
 Cody made a variety of changes in all Makefiles, sometimes to get an entry to
 work, all noted below, but he also **improved them all** in at least one or two
@@ -3656,7 +3672,7 @@ A lot of the fixes with the Makefiles that Cody made were done with his [sgit
 tool](https://github.com/xexyl/sgit).
 
 
-## Typo fixes and consistency improvements
+## <a name"consistency_improvements"></a>Consistency improvements
 
 Cody, being the IOCCC's resident corrections officer :-) (and a fine one at
 that, we think :-) ), made many, many typ0 (... :-) ) fixes throughout the
@@ -3674,7 +3690,7 @@ A lot of these fixes were done with his [sgit
 tool](https://github.com/xexyl/sgit) as well but many were done manually too.
 
 
-## Thank you honor roll
+## <a name"thank_you_honor_roll"></a>Thank you honor roll
 
 There are a number of people who have contributed to several thousand changes,
 fixes and important improvements and one who has literally (or numerically :-) )
