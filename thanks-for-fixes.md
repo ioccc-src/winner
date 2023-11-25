@@ -2062,6 +2062,13 @@ final code that is compiled. The code is now what it essentially becomes when
 processed completely. The intermediate steps can now be performed to see how it
 expands but it can still compile and be used.
 
+Cody also added a second arg to `main()` out of an abundance of caution as some
+versions of clang whine about the number of args to `main()`. These versions
+claim that only 0, 2 or 3 are allowed but it does allow 1 anyway. It is quite
+possible though that this will change so it is fixed in case this happens. As it
+is mostly just through the C pre-processor Cody added a new macro to do
+translate to the rest of `main()`'s args. 
+
 Cody also added the [try.sh](1998/fanf/try.sh) script to show the output of some
 of the expressions that we selected.
 
