@@ -8,7 +8,8 @@ char _,__;
 main(
 /*	C program. (If you don't
  *	understand it look it
- *	up.) (In the C*/Manual)
+ *	up.) (In the */C, Manual)
+char **Manual;
 {
 	char _,__;
 	while (read(0,&__,1) & write((_=(_=C_C_(__),

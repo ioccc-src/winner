@@ -132,16 +132,15 @@ all: data ${TARGET}
 	clean clobber install love haste waste maker easter_egg \
 	sandwich supernova deep_magic magic charon pluto
 
-${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+${PROG}: ${PROG}.c ${PROG}.alt2.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS} || \
+	    ${CC} ${CFLAGS} ${PROG}.alt2.c -o $@ ${LDFLAGS}
 
 # alternative executable
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-${PROG}.alt: ${PROG}.alt.c
-	${CC} ${CFLAGS} -traditional-cpp $< -o $@ ${LDFLAGS}
 
 # data files
 #

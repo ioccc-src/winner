@@ -56,7 +56,7 @@ Scovell](https://web.archive.org/web/20070120220721/https://thomasscovell.com/ta
 ## [1984/decot](1984/decot/decot.c) ([README.md](1984/decot/README.md]))
 
 Cody fixed this to not require `-traditional-cpp` which some compilers like
-clang do not support. Fixing `-traditional-cpp` is, as noted earlier, very
+clang do not support. Fixing `-traditional-cpp` is, as noted later on, very
 complicated, but we encourage you to look at the alternate code (which is the
 original code with a minor modification made by the judges) and the fixed
 code, to see what had to be done.
@@ -215,7 +215,7 @@ the default).
 ## [1985/sicherman](1985/sicherman/sicherman.c) ([README.md](1985/sicherman/README.md]))
 
 Cody fixed this _very twisted entry_ to not require `-traditional-cpp`.  Fixing
-`-traditional-cpp` is, as noted earlier, very complicated, but Cody would like
+`-traditional-cpp` is, as noted later on, very complicated, but Cody would like
 to refer you to the original file
 [sicherman.orig.c](1985/sicherman/sicherman.orig.c) and he suggests that you
 then compare it to [sicherman.c](1985/sicherman/sicherman.c) for some good old
@@ -248,6 +248,19 @@ were actually not what they appear: the only arg that existed in `main()` was
 	{
 	```
 
+- The macros `C` and `V` were changed to lower case. This is because it felt
+like the `C=" ..`' part in `subr()` would be better to be upper case as it talks
+about the language. Also in the second alternate version (the first being the
+original code) which is in case a new version of clang ever objects to only one
+arg in `main()` (which is not out of the realm of possibility), `main()` can
+have `C` as `argc` to `main()` so it would read like it once did: `C manual`
+albeit with a `,` separating the two. The second alternate version is compiled
+in case the first does not. Originally the macros were kept the same and the
+`C` in `subr()` was `c`. It feels better (in some ways) to make it so that the
+`C` for the language is upper case though, and since it actually translated to
+`/**/` it can just be `c`, not `C`. The `V` was changed to `v` to be the same
+case as `c`.
+
 - The code:
 
 	```c
@@ -259,7 +272,7 @@ were actually not what they appear: the only arg that existed in `main()` was
     had to be changed to:
 
 	```c
-	c="Lint says \"argument Manual isn't used.\" What's that\
+	C="Lint says \"argument Manual isn't used.\" What's that\
 	mean?"; while (write((read(('"'-'/*"'))?__:__-_+
 	'\b'b'\b'|((_-52)%('\b'b'\b'+C_C_('\t'b'\n'))+1),1),&_,1));
 	```
@@ -273,11 +286,12 @@ were actually not what they appear: the only arg that existed in `main()` was
     before and actually that there aren't that many changes in the function at
     all!
 
-    Notice also that the parameter `C` had to be changed to `c` due to the macro.
+    Notice also that the parameter `C` remained the same due to the macro `C`
+    rename to `c`.
 
-    The `char`s `_` and `__` were made file scope so the `subr()` could actually
-    compile but this does not affect the ones in `main()`. Why is this? You tell
-    us!
+    The `char`s `_` and `__` in `main()` were copied to file scope so that
+    `subr()` could actually compile but this does not affect the ones in
+    `main()`. Why is this? You tell us!
 
 - The code in `main()` is where there are significant changes, changing from:
 
@@ -291,14 +305,15 @@ were actually not what they appear: the only arg that existed in `main()` was
 	    ```c
 	    while (read(0,&__,1) & write((_=(_=C_C_(__),
 	    V))?__:__-_+'\b'b'\b'|((_-52)%('\b'b'\b'+~
-	    ' '&'\t'b'\n')+1),1),&_,1))_=C-V+subr(&V));
+	    ' '&'\t'b'\n')+1),1),&_,1))_=c-v+subr(&v));
 	    ```
 
-    Note how numerous of the macros can still be used but some cannot be. Can
-    you figure out why? Why too is it that the `subr()` function is called but
-    it appears that some of the code in that function is also in `main()` in the
-    `while` condition? What happens if you remove it from `main()`? What happens
-    if you remove it from `subr()` or don't even bother calling `subr()`?
+    Note how numerous of the macros (though two changed in case) can still be
+    used but some cannot be. Can you figure out why? Why too is it that the
+    `subr()` function is called but it appears that some of the code in that
+    function is also in `main()` in the `while` condition? What happens if you
+    remove it from `main()`? What happens if you remove it from `subr()` or
+    don't even bother calling `subr()`?
 
 
 # <a name="1986"></a>1986
@@ -523,7 +538,7 @@ unlikely(?) but nevertheless suggested case that `putchar()` is not available.
 
 Cody fixed this twisted entry (as we called it :-) ) for modern compilers,
 including making it no longer require `-traditional-cpp`. Fixing
-`-traditional-cpp` is, as noted earlier, very complicated, but we encourage you
+`-traditional-cpp` is, as noted later on, very complicated, but we encourage you
 to compare the fix from the original entry. There was another problem to resolve
 as well, however.
 
