@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Wed 22 Nov 2023 13:02:04 UTC*
+*Last updated: Sat 25 Nov 2023 19:01:07 UTC*
 
 This document is primarily for [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) as he (that is I :-) ) wanted a way
@@ -157,3 +157,6 @@ make it consistent and easy to remember.
 going too fast we should say not what it looks like in modern systems but rather
 what it LOOKED LIKE AT THE TIME. At Wed 22 Nov 2023 13:02:04 UTC the only entry
 that has had this done is [1985/lycklama](1985/lycklama/README.md).
+
+- Check 2001/westley for making `main()` have two args. Easy to make it have two
+args but harder to make it function right.
