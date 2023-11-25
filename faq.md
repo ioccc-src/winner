@@ -6,10 +6,11 @@
 - [0.2  - Why do some IOCCC winners receive the Grand Prize or Best of Show award?](#faq0_2)
 
 ## Section  1 - [Submitting entries to a new IOCCC](#faq1)
-- [1.0  - What types of entries have been over-submitted to the IOCCC?](#faq1_0)
-- [1.1  - What should I put in my entry's Makefile?](#faq1_1)
-- [1.2  - May I use a different source or compiled filename than prog.c or prog?](#faq1_2)
-- [1.3  - What platform should I assume for my entry?](#faq1_3)
+- [1.0  - How do I submit my entry to the IOCCC?](#faq1_0)
+- [1.1  - What types of entries have been over-submitted to the IOCCC?](#faq1_1)
+- [1.2  - What should I put in my entry's Makefile?](#faq1_2)
+- [1.3  - May I use a different source or compiled filename than prog.c or prog?](#faq1_3)
+- [1.4  - What platform should I assume for my entry?](#faq1_4)
 
 ## Section  2 - [IOCCC Judging process](#faq2)
 - [2.0  - How many entries do the judges receive for a given IOCCC?](#faq2_0)
@@ -205,7 +206,78 @@ more other entries that came in close behind.
 ## <a name="faq1"></a>Section 1: Submitting entries to a new IOCCC
 
 
-### <a name="faq1_0"></a>FAQ 1.0: What types of entries have been over-submitted to the IOCCC?
+### <a name="faq1_0"></a><a name="submit"></a>FAQ 1.0: How do I submit my entry to the IOCCC?
+
+0) check to see of the IOCCC is open
+
+Check the [status.json](https://www.ioccc.org/status.json) URL and
+check the [IOCCC news](https://www.ioccc.org/index.html#news) to
+see of the IOCCC is open.
+
+You may only submit your entries to the IOCCC when the IOCCC is **OPEN**.
+
+1) register for the IOCCC
+
+```
+XXX - instructions TBD - XXX
+```
+
+2) obtain the latest mkiocccentry toolkit
+
+If you do not have an mkiocccentry tool directory:
+
+```sh
+cd some_directory
+git clone git@github.com:ioccc-src/mkiocccentry.git
+cd mkiocccentry
+```
+
+If you already have an mkiocccentry tool directory:
+
+```sh
+cd mkiocccentry
+git fetch
+git rebase
+```
+
+3) Make the mkiocccentry toolkit
+
+```sh
+make clobber all
+```
+
+4) run the mkiocccentry tool to form your entry tarball
+
+```sh
+./mkiocccentry work_dir prog.c Makefile remarks.md [file ...]
+```
+
+where:
+
+```
+work_dir	directory where the entry directory and tarball are formed
+prog.c		path to the C source for your entry
+
+
+Makefile	Makefile to build (make all) and cleanup (make clean & make clobber)
+
+remarks.md	Remarks about your entry in markdown format
+		NOTE: See the [markdown syntax[(https://www.markdownguide.org/basic-syntax) guide.
+
+[file ...]	extra data files to include with your entry
+```
+
+NOTE: It is *NOT* necessary to install the tools to use them as you can run
+the tools from the top of the _mkiocccentry repo_ directory just fine.
+
+5) upload your entry to the IOCCC submit server
+
+```
+XXX - instructions TBD - XXX
+```
+
+
+### <a name="faq1_1"></a>FAQ 1.1: What types of entries have been over-submitted to the IOCCC?
 
 There are types of entries that show up over and over again.  The
 IOCCC judges, and we suspect the public that enjoy viewing the
@@ -343,7 +415,7 @@ on an 'overused theme' and why the judges should not simply toss it out as being
 boring.
 
 
-### <a name="faq1_1"></a>FAQ 1.1: What should I put in my entry's Makefile?
+### <a name="faq1_2"></a>FAQ 1.2: What should I put in my entry's Makefile?
 
 We recommend starting with the [sample
 Makefile](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example)
@@ -370,7 +442,7 @@ make compatible](https://www.gnu.org/software/make/) `make(1)`
 command that is compatible with GNU Make version 3.81.
 
 
-### <a name="faq1_2"></a>FAQ 1.2: May I use a different source or compiled filename than prog.c or prog?
+### <a name="faq1_3"></a>FAQ 1.3: May I use a different source or compiled filename than prog.c or prog?
 
 While your entry's source filename, as submitted, must be `prog.c`, your entry's `Makefile`
 may copy `prog.c` to a different filename as part of the compiling/building process.  For example:
@@ -402,7 +474,7 @@ different_name: prog
 ```
 
 
-### <a name="faq1_3"></a>FAQ 1.3: What platform should I assume for my entry?
+### <a name="faq1_4"></a>FAQ 1.4: What platform should I assume for my entry?
 
 Your entry must compile with GCC and run under at least one flavor of UNIX (e.g.
 Linux or Solaris). To improve chances to win, it should work under both BSD and
