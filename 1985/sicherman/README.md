@@ -6,6 +6,11 @@ make all
 
 NOTE: there is an [alternate version](#alternate-code) for those who have an old
 enough compiler or have a compiler that supports the option `-traditional-cpp`.
+There is also an alternate version that is meant to work in the case that your
+version of clang fails to compile it due to the wrong number of args to `main()`
+should that ever happen (a compiler error of some versions of clang if `main()`
+has four args is that `main()` can only have 0, 2 or 3 args but it does
+currently accept 1 arg to `main()` nonetheless).
 
 
 ## To use:
