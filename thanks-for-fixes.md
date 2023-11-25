@@ -1834,15 +1834,15 @@ problem was a missing `int` for the `f` variable. He felt it was even more
 important that it works because the layout does indeed look to him like a rat is
 dropping core :-), something that the judges suggested.
 
-Cody also improved the script [garry.test.sh](1995/garry/garry.test.sh) to make
-sure the program is compiled before trying to use it and he also added the
-[garry.alt.test.sh](1995/garry/garry.alt.test.sh) script to use the alt version,
+Cody also renamed `garry.test.sh` to [try.sh](1995/garrytry.sh) and improved it
+to to make sure the program is compiled before trying to use it and he also
+added the [try.alt.sh](1995/garry/try.alt.sh) script to use the alt version,
 though the alt version is not as important as alt code in other entries.
 
 The reason the alt script was added rather than using an environmental variable
 to specify which one to use is to make it easier on the user as typing
-`GARRY=garry.alt ./garry.test.sh` is not as simple (even though simple) as just
-running `./garry.alt.test.sh`.
+`GARRY=garry.alt ./try.sh` is not as simple (even though simple) as just
+running `./try.alt.sh`.
 
 
 ## [1995/leo](1995/leo/leo.c) ([README.md](1995/leo/README.md]))

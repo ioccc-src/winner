@@ -15,9 +15,7 @@ make all
 ### Try:
 
 ```sh
-./garry.test.sh
-
-./garry < README.md
+./try.sh
 ```
 
 
@@ -46,9 +44,7 @@ make alt
 ### Alternate try:
 
 ```sh
-GARRY=garry.alt ./garry.test.sh
-
-./garry.alt < README.md
+./try.alt.sh
 ```
 
 
