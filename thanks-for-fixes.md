@@ -2024,9 +2024,9 @@ Cody changed a `int *` used for `fopen(3)` to be a `FILE *` to be more correct
 and prevent any possible problems in some systems (which has happened).
 
 Cody also made the fixed version look more like the original version by using
-the old style of `main()` args so that it read `i,love_unix` more naturally, and
-by changing the typedef `lint` (to `int` - see the code for why this has to be
-done in modern systems) to be `_int`.
+the old style of `main()` args so that it reads `i,love_unix` more naturally,
+and by changing the typedef `lint` (to `int` - see the code for why this has to
+be done in modern systems) to be `_int`.
 
 
 ## [1998/dlowe](1998/dlowe/dlowe.c) ([README.md](1998/dlowe/README.md]))
