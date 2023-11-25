@@ -23,7 +23,7 @@ char r[]="C#S3K+[;G'W7OB/_? ? « ( !IOCCC! ´ ³Ën £0 0 e÷|ÅtÑ%Ä ° 2u"
 [48][3]={ { { 2} } } ; void**V,*D,*F[32][48];
 void*Q(void**O){ return*O?(*O=Q(*O)):O; } U(
 O){return E+=(O/=2)-1?U((A=A/2^57525273+(A&
-1^O&1)*9583591<<5,O)),0:O,16; } main(O){ A
+1^O&1)*9583591<<5,O)),0:O,16; } main(O,S)char**S;{ A
 =O?time(D):953351751; z I=0; I<26; ++I){z
 N=I/2; N<30+I/2; ++N){ z M=0; M<3; ++M){
 p Z=O)z; (B=I+Z*!!M) <26&&N+Z*(M!=2)-B/

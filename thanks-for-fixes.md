@@ -1996,6 +1996,16 @@ they do have page up and page down but this gives a default for those who don't
 have them like with Macs.
 
 
+## [1998/bas1](1998/bas1/bas1.c) ([README.md](1998/bas1/README.md]))
+
+Cody, out of an abundance of caution, added a second arg to `main()` as some
+versions of clang whine about the number of args on top of what type they are
+In particular some versions claim that they only allow 0, 2 or 3 args. It
+appears that they do allow 1 but for instance 4 is not allowed. However as it's
+quite possible they will 'fix' this defect it would be better to have this not
+be a problem at such a time.
+
+
 ## [1998/bas2](1998/bas2/bas2.c) ([README.md](1998/bas2/README.md]))
 
 Cody added the [try.sh](1998/bas2/try.sh) script which runs some default actions
