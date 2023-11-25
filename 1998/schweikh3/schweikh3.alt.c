@@ -77,7 +77,7 @@ i-3; w             =e+s+1; l=q+N*   (j-1)-      j*(j-1   )/ 2 ;            do{ *
  2; } } M5(q);     } Z M2 P(t*p     ){ H p){ P(p _ R);   H  p _            c>1){ M1 i=0
          ; f*l=    p _ l;           for (;      i< p _   c; ++i            ){ A[i
          ]= l _    n; l=l           _ x; }      C (p _   s, p _    c); }   P (p _ 
-         L) ; }    }  int           main V      { t*r=   0; I F    ; for   (; ; )
+         L) ; }    }  int           main (M7,M6)I*M6;      { t*r=   0; I F    ; for   (; ; )
 { H!(F U 1024))    )X H !           fgets(      F,1024   ,stdin) )break;   *(F+(y
 =strlen(F))-1)=    0; H!(          F=M3(F,      y)))X H   stat(F,&S)==0    &&S_ISREG(S.
  st_mode)&&S O     )r=J(r          ,F ); }      H r)P(r    ); u 0; }/*     Obfuscated C

@@ -2183,6 +2183,11 @@ Cody added the [alternate code](1998/schweikh3/README.md#alternate-code) which a
 to reconfigure the size constant in the rare case that the author wrote about
 occurs.
 
+Cody made `main()` have two args out of an abundance of caution as some versions
+of clang say that `main()` can only have 0, 2 or 3 args. These versions accept 1
+arg but it is entirely possible that they fix this so this should prevent it
+from breaking if that happens.
+
 Cody added the [try.sh](1998/schweikh3/try.sh) script to make it easier to try
 the commands that we suggested. One command was not added, that of the to use
 command.
