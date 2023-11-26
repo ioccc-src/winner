@@ -3224,6 +3224,11 @@ the number of args as well.
 Cody also added the [try.sh](2011/borsanyi/try.sh) script.
 
 
+## [2011/dlowe](2011/dlowe/dlowe.c) ([README.md](2011/dlowe/README.md]))
+
+Cody added the [try.sh](2011/dlowe/try.sh) script.
+
+
 ## [2011/goren](2011/goren/goren.c) ([README.md](2011/goren/README.md]))
 
 Cody fixed this for macOS.  Before the fix it segfaulted. It worked fine under
@@ -3263,9 +3268,9 @@ not be worth.
 
 ## [2011/vik](2011/vik/vik.c) ([README.md](2011/vik/README.md]))
 
-Cody, though he feels slightly sick :-), added a version for Windows based on
-the author's comments (along with looking up the function for the right header
-file). To build try the alt rule of the Makefile.
+Cody added an [alternate version](2011/vik/README.md#alternate-code) for Windows
+based on the author's comments (along with looking up the function for the right
+header files). To build try the alt rule of the Makefile.
 
 
 ## [2011/zucker](2011/zucker/zucker.c) ([README.md](2011/zucker/README.md]))

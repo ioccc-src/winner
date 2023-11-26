@@ -11,7 +11,7 @@ The current status of this entry is:
 
 ```
 STATUS: missing or dead link - please provide them
-STATUS: known bug - please help us fix
+STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2011 dlowe in bugs.md](/bugs.md#2011-dlowe).
@@ -37,22 +37,11 @@ Then to use `trained.net`:
 Try these pre-trained networks:
 
 ```sh
-./dlowe dlowe.c < dlowe-aux-data/ioccc-winlose-trained.net
-./dlowe dlowe < dlowe-aux-data/ioccc-winlose-trained.net
-
-./dlowe xor-0/00 < dlowe-aux-data/xor-trained.net
-./dlowe xor-0/11 < dlowe-aux-data/xor-trained.net
-./dlowe xor-1/01 < dlowe-aux-data/xor-trained.net
-./dlowe xor-1/10 < dlowe-aux-data/xor-trained.net
-
-./dlowe README.md < dlowe-aux-data/english-trained.net
-
-./dlowe dlowe-aux-data.tar.bz2 < dlowe-aux-data/png-trained.net
+./try.sh
 ```
 
-You can run `./try.sh` to do the same thing.
-
-NOTE: The `dlowe-aux-data/` directory was created by:
+NOTE: The `dlowe-aux-data/` directory, which [try.sh](try.sh) refers to, was
+created by:
 
 
 ```sh
@@ -65,10 +54,6 @@ tar -jxf dlowe-aux-data.tar.bz2
 This entry is a ghoulish example of a brain (dead?) neural network classifier.
 It comes with a set of corpora for you to try.
 
-NOTE: the author's website, http://www.pootpoot.net, no longer exists (as the
-same) and the Internet Wayback Machine did not load scripts. Do you know if the
-domain changed? Please provide us with the proper URL or if you know if it was
-shut down for ever, please let us know that. Thank you!
 
 ### `ioccc-winlose-trained.net`
 
@@ -120,6 +105,9 @@ test is interesting:
 ./dlowe dlowe.c < dlowe-aux-data/ioccc-winlose-trained.net
 ```
 
+NOTE: this is done in [try.sh](try.sh).
+
+
 The match of [dlowe.c](dlowe.c) to the lose/win trailed network was:
 
 ```
@@ -130,6 +118,7 @@ NOTE: The non-artificially intelligent decisions of the IOCCC judges include ran
 quirks and their non-linear judgment calls not found in the ioccc trained network.
 Just because C code is or isn't scored highly by this network does not
 mean it will win or lose a future IOCCC.  On the other hand ... it just might!
+
 
 #### other data sets to try
 
@@ -183,6 +172,7 @@ This is an [artificially
 intelligent](https://en.wikipedia.org/wiki/Artificial_intelligence) judging tool
 to help the IOCCC judges.  Here's to shorter, more frequent contests!
 
+
 ### Description
 
 This is a multilayer [perceptron](https://en.wikipedia.org/wiki/Perceptron) (a
@@ -196,20 +186,22 @@ neuron.
 
 The neurons' activation function is the logistic function `1 / (1 + e ^ -x)`.
 
+
 ### Classifying
 
 ```sh
 ./dlowe file [file ...] < trained.net
 ```
 
-To classify files, one specifies a trained network (on stdin) and one or more
+To classify files, one specifies a trained network (on `stdin`) and one or more
 files to classify. The program will output one line per successfully-classified
-file to stderr, with the filename and the classification: a number between 0
+file to `stderr`, with the filename and the classification: a number between 0
 and 1.
 
 The interpretation of the classification number depends on how the network was
 trained, but it's geared toward interpretation as a *probability* or a
 *confidence*.
+
 
 ### Training
 
@@ -220,19 +212,20 @@ trained, but it's geared toward interpretation as a *probability* or a
 
 **NOTE**: The directory args **must end in a** `/` for them to work.
 
-To train a network, one specifies a starting network (on stdin), two or more
+To train a network, one specifies a starting network (on `stdin`), two or more
 corpora (directories containing training data), and the number of training
-iterations to run. The program will write some progress data to stderr and,
-when it's done, will serialize the updated network to stdout.
+iterations to run. The program will write some progress data to `stderr` and,
+when it's done, will serialize the updated network to `stdout`.
 
 If no input network is given, a random new network will be generated as a
-starting point (i.e. provide an empty stdin).
+starting point (i.e. provide an empty `stdin`).
 
-The first corpus will be assigned a target value of 1. The last will be
-assigned a target value of 0. Intervening directories (if any) will be assigned
+The first corpus will be assigned a target value of `1`. The last will be
+assigned a target value of `0`. Intervening directories (if any) will be assigned
 intermediate target values.
 
 The learning rate is hard-coded as `0.3`. No momentum factor is used.
+
 
 #### png corpora
 
@@ -243,6 +236,7 @@ filetype:png](https://www.google.com/search?tbm=isch&sxsrf=APwXEddqIU34dxhpFdjEa
 The [png-0](dlowe-aux-data/png-0) corpus was obtained by manually scraping the first results from an
 <https://images.google.com> search for "[obfuscate
 filetype:gif](https://www.google.com/search?tbm=isch&ved=2ahUKEwiowo7fltf-AhXSOUQIHbJBDp8Q2-cCegQIABAA&oq=obfuscate+filetype:gif&gs_lcp=CgNpbWcQAzoECCMQJzoHCAAQigUQQzoFCAAQgARQ6AxY6AxgpBJoAHAAeACAAUeIAcsBkgEBM5gBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=0UpRZOiVINLzkPIPsoO5-Ak&bih=952&biw=1727&q=obfuscate&tbs=ift:gif)".
+
 
 ##### Results:
 
@@ -255,6 +249,7 @@ filetype:gif](https://www.google.com/search?tbm=isch&ved=2ahUKEwiowo7fltf-AhXSOU
 
 produced a network with about 87% accuracy
 
+
 #### English corpora
 
 The [english-1](dlowe-aux-data/english-1) corpus was obtained by manually scraping the first results from
@@ -264,6 +259,7 @@ filetype:txt](https://www.google.com/search?q=paris+filetype%3Atxt&lr=lang_en&tb
 The [english-0](dlowe-aux-data/english-0) corpus was obtained by manually scraping the first results from
 a <https://www.google.com/webhp?lr=lang_fr> search for "[paris
 filetype:txt](https://www.google.com/search?q=paris+filetype%3Atxt&lr=lang_fr&tbs=lr%3Alang_1fr&sxsrf=APwXEddcsQ-gMhrqSUJo6omWFUl7jQMASg%3A1683049870736&source=hp&ei=jk1RZLevK_fKkPIPjbWN-AU&iflsig=AOEireoAAAAAZFFbnvExHGkcavB5H8F0xsLAWN2KfYFK&ved=0ahUKEwi3rrutmdf-AhV3JUQIHY1aA18Q4dUDCAo&uact=5&oq=paris+filetype%3Atxt&gs_lcp=Cgdnd3Mtd2l6EANQAFgAYLMDaABwAHgAgAE-iAE-kgEBMZgBAKABAqABAQ&sclient=gws-wiz)".
+
 
 ##### Results:
 
@@ -277,7 +273,8 @@ French"
 
 produced a network with 100% accuracy.
 
-#### xor corpora
+
+### xor corpora
 
 The [xor-1](dlowe-aux-data/xor-1) corpus consists of two files containing `01`
 and `10` respectively.
@@ -285,10 +282,12 @@ and `10` respectively.
 The [xor-0](dlowe-aux-data/xor-0) corpus consists of two files containing `00`
 and `11` respectively.
 
+
 ##### Results:
 
 Using these corpora as a training set takes about 8000 iterations to learn xor
 to within a tolerance of `<0.01`.
+
 
 ### Limitations
 
@@ -323,6 +322,7 @@ library (untested, but they do exist).
 
 Backpropagation doesn't always converge: if you play with this long enough,
 you'll eventually have a training session that completely fails to converge.
+
 
 ### Obfuscation
 
