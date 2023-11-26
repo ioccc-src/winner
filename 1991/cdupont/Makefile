@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-unused-label -Wno-strict-prototypes
+CSILENCE= -Wno-unused-label -Wno-strict-prototypes -Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -111,8 +111,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ= ${PROG}.alt.o ${PROG}.alt2.o ${PROG}.alt3.o
-ALT_TARGET= ${PROG}.alt ${PROG}.alt2 ${PROG}.alt3
+ALT_OBJ= ${PROG}.alt.o ${PROG}.alt2.o
+ALT_TARGET= ${PROG}.alt ${PROG}.alt2
 
 
 #################
