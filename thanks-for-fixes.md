@@ -3215,6 +3215,15 @@ have been a problem in linux with the old `int`s but this is no longer known.
 # <a name="2011"></a>2011
 
 
+## [2011/borsanyi](2011/borsanyi/borsanyi.c) ([README.md](2011/borsanyi/README.md]))
+
+Cody, out of an abundance of caution, added a second arg to `main()` as some
+versions of clang complain about not only the type of each arg to `main()` but
+the number of args as well.
+
+Cody also added the [try.sh](2011/borsanyi/try.sh) script.
+
+
 ## [2011/goren](2011/goren/goren.c) ([README.md](2011/goren/README.md]))
 
 Cody fixed this for macOS.  Before the fix it segfaulted. It worked fine under

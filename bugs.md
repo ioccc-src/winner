@@ -2437,6 +2437,31 @@ There was no IOCCC in 2010.
 
 ## 2011 dlowe
 
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2011/borsanyi/borsanyi.c](2011/borsanyi/borsanyi.c)
+### Information: [2011/borsanyi/README.md](2011/borsanyi/README.md)
+
+For a great amount of data points the program will crash, depending on your
+available stack space.
+
+Giving too few (distinct) points can also cause a crash or division by zero.
+
+The program expects plain numbers separated by whitespace.
+
+This program assumes ASCII.
+
+If you give the program any arg it might flood the screen.
+
+It requires both syscalls `fork(2)` and `wait(2)`.
+
+Giving any arg to the program is likely to flood your screen.
+
+Rounding errors might cause an omission in the highest bin. There might be empty
+bins at the edges.
+
+
+## 2011 dlowe
+
 ### STATUS: missing or dead link - please provide them
 ### Source code: [2011/dlowe/dlowe.c](2011/dlowe/dlowe.c)
 ### Information: [2011/dlowe/README.md](2011/dlowe/README.md)
@@ -2460,6 +2485,7 @@ tends to result in empty output.
 * Will crash and die horribly if it runs out of memory.
 
 If you want to try and fix this (mis)feature, you are welcome to try.
+
 
 
 ## 2011 richards

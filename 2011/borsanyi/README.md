@@ -4,6 +4,16 @@
 make
 ```
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2011 borsanyi in bugs.md](/bugs.md#2011-borsanyi).
+
 
 ## To use:
 
@@ -15,9 +25,7 @@ make
 ### Try:
 
 ```sh
-./borsanyi < data.1
-./borsanyi < data.2
-./borsanyi < data.3
+./try.sh
 ```
 
 
@@ -27,7 +35,8 @@ This is a nice quick [histogram](https://en.wikipedia.org/wiki/Histogram)
 plotter.  A useful utility when you need to look at the distribution of some
 data.
 
-Here are some challenges:
+
+### Challenges:
 
 You can modify the number of histogram
 [bins](https://en.wikipedia.org/wiki/Data_binning) and the scaling of the
@@ -38,7 +47,7 @@ histogram bins is missing. The source contains no arrays and it does not
 use `malloc(3)` or `alloca(3)`. How does it build the histogram?
 
 While the input does not need to be sorted, the histogram output is sorted.
-How does it put the data into buckets?  Why does it `fork()` 22 times?
+How does it put the data into buckets?  Why does it `fork(2)` 22 times?
 
 
 ## Author's remarks:
@@ -48,6 +57,7 @@ there are some data around and you need a quick glance at the
 histogram. I am all too often logged in to a remote machine with
 slow X connection, and a terminal-based program would be of
 great help.
+
 
 ### Limitations
 
@@ -61,6 +71,7 @@ great help.
 * Do not give any arguments to the program.
 * Could rounding errors cause the omission of the highest bin? There might be
   empty bins at the edges.
+
 
 ### Obfuscation
 
