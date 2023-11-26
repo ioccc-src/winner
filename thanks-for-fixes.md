@@ -1096,19 +1096,6 @@ him): `k` for forward, `h` for left and `l` for right. This version also has a
 more useful way to exit, just entering `q` followed by enter.
 
 
-## [1991/cdupont](1991/cdupont/cdupont.c) ([README.md](1991/cdupont/README.md]))
-
-Cody provided [two alternate](1991/cdupont/README.md#alternate-code) versions to
-see what would happen if certain things were done that were warned against: [one
-that has an unused `goto` label and a comment
-removed](1991/cdupont/cdupont.alt.c) and [another that was
-beautified](1991/cdupont/cdupont.alt2.c).
-
-This required changing the `s` macro to be `__FILE__` (which is more reliable
-anyway) as otherwise it would read in the original code and not demonstrate the
-problem.
-
-
 ## [1991/davidguy](1991/davidguy/davidguy.c) ([README.md](1991/davidguy/README.md]))
 
 As some systems like macOS can be particular about not declaring functions Cody
