@@ -57,7 +57,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE= -Ds=\"cdupont.c\" -Dt=\"r\"
+CDEFINE= -Ds=__FILE__ -Dt=\"r\"
 
 # Include files that are needed to compile
 #
@@ -111,8 +111,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o ${PROG}.alt2.o ${PROG}.alt3.o
+ALT_TARGET= ${PROG}.alt ${PROG}.alt2 ${PROG}.alt3
 
 
 #################
