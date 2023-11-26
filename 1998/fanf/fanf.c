@@ -1,6 +1,7 @@
 
  #define i int
  #define n struct n
+ #define T , char **C) { return (
  #define x ){ return (
  #define A ->
  #define N n*
@@ -56,7 +57,7 @@ i j k c ? O U r u U U X : y b k y d k y
  #define b(b) ( ( b a d
  #define E(E) b ( M E u X )
 
-main k i ) ! (
+main ( i c T 
 
  #define I b ( m I u X )
  #define J b ( m J u X )

@@ -60,7 +60,7 @@ ARCH=
 #
 CDEFINE= -Dc='n*n>x?p:((m=*(b+1)),N))' \
 	-DN='((b=t+1),x+=2,x>e?exit(0):o' \
-	-Dp='(a-t<o?*(a++)=x:47),printf("%d ",x),N)'
+	-Dp='(a-t<o?*(a++)=x:47),printf("%d\n",x),N)'
 
 # Include files that are needed to compile
 #

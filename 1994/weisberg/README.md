@@ -4,6 +4,9 @@
 make all
 ```
 
+There is an alternate version that uses more memory. See [alternate
+code](#alternate-code) below.
+
 
 ## To use:
 
@@ -12,14 +15,30 @@ make all
 ```
 
 
+### Try:
+
+```sh
+./weisberg | head -n 15
+```
+
+
 ## Alternate code:
 
 If you liked what you saw from the above program, and happen to
-have some 512 Megabytes of virtual memory lying around with to do,
-you could try:
+have some 512 Megabytes of virtual memory lying around with to do
+something with you might try this version.
+
+
+### Alternate build:
 
 ```sh
-make weisberg.alt
+make alt
+```
+
+
+### Alternate use:
+
+```sh
 ./weisberg.alt
 ```
 

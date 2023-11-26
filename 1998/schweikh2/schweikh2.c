@@ -9,7 +9,7 @@ static volatile sig_atomic_t One;
 in??/
 t
 #line 10 ONE(O(1,1,2,6,0,6))
-main (register zero, char **ONE)
+main (register int zero, char **ONE)
 %:
 <% switch (sizeof __FILE__ < zero) case 1: return One /= zero;
 { auto one = zero = atoi (ONE<:zero-1:>);

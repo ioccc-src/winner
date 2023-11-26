@@ -1780,6 +1780,13 @@ more like the original entry this was done in the Makefile.
 Note that the alt code does not use `fgets(3)` but rather `gets(3)`.
 
 
+## [1994/weisberg](1994/weisberg/weisberg.c) ([README.md](1994/weisberg/README.md]))
+
+Cody changed the Makefile to make this program more user friendly and easier to
+use with other tools as well by making the program output not a space after each
+number but rather a newline.
+
+
 ## [1994/westley](1994/westley/westley.c) ([README.md](1994/westley/README.md]))
 
 Cody converted the spoiler compiler options (provided by the author) to be
@@ -1801,6 +1808,13 @@ particular to make it easier to see the program do what it does in systems that
 are too fast ... if there is such a thing anyway :-) ). See the README.md for
 details on this.
 
+Out of an abundance of caution with clang, Cody also added a second arg to
+`main()` as some versions of clang whine about the number of args on top of the
+type of args. In particular some versions supposedly only allow 0, 2 or 3 args.
+It actually appears to allow 1 but if you specify 4 it says 0, 2 or 3 and it is
+an error but it's entirely possible that they will eventually make the defect
+function as the error message claims.
+
 
 ## [1995/dodsond1](1995/dodsond1/dodsond1.c) ([README.md](1995/dodsond1/README.md]))
 
@@ -1820,15 +1834,15 @@ problem was a missing `int` for the `f` variable. He felt it was even more
 important that it works because the layout does indeed look to him like a rat is
 dropping core :-), something that the judges suggested.
 
-Cody also improved the script [garry.test.sh](1995/garry/garry.test.sh) to make
-sure the program is compiled before trying to use it and he also added the
-[garry.alt.test.sh](1995/garry/garry.alt.test.sh) script to use the alt version,
+Cody also renamed `garry.test.sh` to [try.sh](1995/garrytry.sh) and improved it
+to to make sure the program is compiled before trying to use it and he also
+added the [try.alt.sh](1995/garry/try.alt.sh) script to use the alt version,
 though the alt version is not as important as alt code in other entries.
 
 The reason the alt script was added rather than using an environmental variable
 to specify which one to use is to make it easier on the user as typing
-`GARRY=garry.alt ./garry.test.sh` is not as simple (even though simple) as just
-running `./garry.alt.test.sh`.
+`GARRY=garry.alt ./try.sh` is not as simple (even though simple) as just
+running `./try.alt.sh`.
 
 
 ## [1995/leo](1995/leo/leo.c) ([README.md](1995/leo/README.md]))
@@ -1841,7 +1855,7 @@ by the author, putting it in [spoiler1.md](1995/leo/spoiler1.md).
 
 Cody fixed this so that it will compile with versions of clang that has a defect
 which only allows `main()` to have 0, 2 or 3 args. This is done by a new
-function (`pain()` as it's annoying that clang is this way :-) ) that main()
+function (`pain()` as it's annoying that clang is this way :-) ) that `main()`
 calls which has the four args.
 
 
@@ -1965,6 +1979,9 @@ clocks, both with the fixed version and the original (alt) version.
 Also, to fix any potential problem with displaying in GitHub the scripts
 provided by the author, Cody added '.sh'.
 
+Later Cody made the entry look more like the original, removing the `argc` in
+`main()` (K&R style functions).
+
 
 # <a name="1998"></a>1998
 
@@ -1977,6 +1994,16 @@ who do not have a page up or page down key and added the
 can use if they wish to modify the controls. One can certainly do this even if
 they do have page up and page down but this gives a default for those who don't
 have them like with Macs.
+
+
+## [1998/bas1](1998/bas1/bas1.c) ([README.md](1998/bas1/README.md]))
+
+Cody, out of an abundance of caution, added a second arg to `main()` as some
+versions of clang whine about the number of args on top of what type they are
+In particular some versions claim that they only allow 0, 2 or 3 args. It
+appears that they do allow 1 but for instance 4 is not allowed. However as it's
+quite possible they will 'fix' this defect it would be better to have this not
+be a problem at such a time.
 
 
 ## [1998/bas2](1998/bas2/bas2.c) ([README.md](1998/bas2/README.md]))
@@ -1997,9 +2024,9 @@ Cody changed a `int *` used for `fopen(3)` to be a `FILE *` to be more correct
 and prevent any possible problems in some systems (which has happened).
 
 Cody also made the fixed version look more like the original version by using
-the old style of `main()` args so that it read `i,love_unix` more naturally, and
-by changing the typedef `lint` (to `int` - see the code for why this has to be
-done in modern systems) to be `_int`.
+the old style of `main()` args so that it reads `i,love_unix` more naturally,
+and by changing the typedef `lint` (to `int` - see the code for why this has to
+be done in modern systems) to be `_int`.
 
 
 ## [1998/dlowe](1998/dlowe/dlowe.c) ([README.md](1998/dlowe/README.md]))
@@ -2034,6 +2061,13 @@ Cody fixed this to compile. The problem was the intermediate steps to get to the
 final code that is compiled. The code is now what it essentially becomes when
 processed completely. The intermediate steps can now be performed to see how it
 expands but it can still compile and be used.
+
+Cody also added a second arg to `main()` out of an abundance of caution as some
+versions of clang whine about the number of args to `main()`. These versions
+claim that only 0, 2 or 3 are allowed but it does allow 1 anyway. It is quite
+possible though that this will change so it is fixed in case this happens. As it
+is mostly just through the C pre-processor Cody added a new macro to do
+translate to the rest of `main()`'s args. 
 
 Cody also added the [try.sh](1998/fanf/try.sh) script to show the output of some
 of the expressions that we selected.
@@ -2138,12 +2172,21 @@ interesting historical explanation and further details and fun, see the
 [historical remarks](1998/schweikh2/README.md#historical-remarks) in the
 README.md.
 
+Cody also added an `int` after `register` in `main()` in case clang decides to
+have a problem with that in the future which is not entirely out of the
+question.
+
 
 ## [1998/schweikh3](1998/schweikh3/schweikh3.c) ([README.md](1998/schweikh3/README.md]))
 
 Cody added the [alternate code](1998/schweikh3/README.md#alternate-code) which allows one
 to reconfigure the size constant in the rare case that the author wrote about
 occurs.
+
+Cody made `main()` have two args out of an abundance of caution as some versions
+of clang say that `main()` can only have 0, 2 or 3 args. These versions accept 1
+arg but it is entirely possible that they fix this so this should prevent it
+from breaking if that happens.
 
 Cody added the [try.sh](1998/schweikh3/try.sh) script to make it easier to try
 the commands that we suggested. One command was not added, that of the to use
@@ -2706,6 +2749,10 @@ Finally Cody added [try.sh](2004/jdalbec/try.sh) and
 
 Cody reported that this entry cannot be optimised by the compiler as otherwise
 it will not work.
+
+Cody, out of an abundance of caution for clang, added a second arg to `main()`
+as some versions complain about the number of args and although they accept 1 it
+is entirely possible it will eventually be that they don't.
 
 Cody also added the [try.sh](2004/kopczynski/try.sh) script and various data
 files: [kopczynski-a](kopczynski-a) to demonstrate what happens when art more
