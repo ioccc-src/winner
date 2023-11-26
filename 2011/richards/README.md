@@ -48,7 +48,7 @@ This is an implementation of the classic UNIX
 [dc](https://en.wikipedia.org/wiki/Dc_(computer_program)) command, the
 [reverse Polish](https://en.wikipedia.org/wiki/Reverse_Polish_notation)
 calculator. Actually it's a pretty bad implementation, since it only implements
-32-bit integers (well, sizeof(int)-sized integers). It only implements the
+32-bit integers (well, `sizeof(int)`-sized integers). It only implements the
 commands `+`, `-`, `*`, `/`, `p` (only for numbers), register stacks, macros and
 comparisons. Wow, you'd think I could've done better in 2K of code.
 
@@ -64,7 +64,7 @@ stack grows down and integers are at least 32-bit.
 
 You will probably get warnings while compiling the code. In particular:
 
-* If your system requires the inclusion of alloca.h to use alloca, use the
+* If your system requires the inclusion of `alloca.h` to use alloca, use the
   compile flag `-DAH`.
 
 * If your system cannot use `mmap()`, use the compile flag `-DNM`.
@@ -76,7 +76,7 @@ You will probably get warnings while compiling the code. In particular:
 
 * GCC likes to complain about `while (a = b)` (assignments as a condition).
 
-* I don't return from `main()`, even though it's declared to return int.
+* I don't return from `main()`, even though it's declared to return `int`.
 
 Platforms on which all known/tested optimization levels work with no additional
 flags:

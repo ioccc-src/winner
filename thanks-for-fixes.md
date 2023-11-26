@@ -3234,7 +3234,9 @@ least with the silicon chip (Intel has not been tested) and it is quite possibly
 an inherent problem in macOS to do with executing code in in memory/JIT and in
 particular with the silicon chip. See [bugs.md](/bugs.md) for more details and a
 document from Apple about how it might be fixed if anyone is brave enough to
-try.
+try. If they do they might want to look also at
+[richards.alt.c](2011/richards/richards.alt.c), for whatever it might or might
+not be worth.
 
 
 ## [2011/vik](2011/vik/vik.c) ([README.md](2011/vik/README.md]))
