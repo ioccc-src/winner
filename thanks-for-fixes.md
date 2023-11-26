@@ -3268,6 +3268,17 @@ the author's comments (along with looking up the function for the right header
 file). To build try the alt rule of the Makefile.
 
 
+## [2011/zucker](2011/zucker/zucker.c) ([README.md](2011/zucker/README.md]))
+
+Cody added [alt code](2011/zucker/README.md#alternate-code) that should work on
+Windows, based on the author's remarks that if the system distinguishes binary
+and text then `stdout` needs to be set to binary mode.
+
+Cody also added the PDF file
+[sphere-tracing.pdf](2011/zucker/sphere-tracing.pdf) in case the link eventually
+dies.
+
+
 # <a name="2012"></a>2012
 
 
