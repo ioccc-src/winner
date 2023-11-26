@@ -48,7 +48,7 @@ I (;y<6;++y)
 I(x=0;x<6;++x)
 mvwaddch(r,X(y),Y(x),z[x][y]+'0'); Q(0);
 }
-void main()
+int main()
 {
 char *ST();
 i a=0,b=0,c,q,t,s,x,sc=0;
