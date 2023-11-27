@@ -15,7 +15,7 @@ echo "some text" | ./goren
 ### Try:
 
 ```sh
-echo "Hello, world!" | ./goren
+./try.sh
 ```
 
 
@@ -23,7 +23,7 @@ echo "Hello, world!" | ./goren
 
 In the words of [René François Ghislain Magritte Magritte](http://en.wikipedia.org/wiki/Rene_Magritte):
 
-![This is not a pipe](http://upload.wikimedia.org/wikipedia/en/b/b9/MagrittePipe.jpg "Ceci n'est pas une pipe")
+![This is not a pipe](MagrittePipe.jpg "Ceci n'est pas une pipe")
 
 One may ask the surrealist question:
 
@@ -65,31 +65,31 @@ stuffing data.
 
 One thing I tried to achieve is condition free programming.  Many
 have noted that conditions make the code harder to read and understand.
-A good example would be:
-
-[Brent Burley's 2004 IOCCC winner](/2004/burley/burley.c).
+A good example would be: [Brent Burley's 2004 IOCCC
+winner](/2004/burley/README.md).
 
 That entry omits conditional statements such as `if` and `while`.
 His achievement in improving clarity by omitting conditions is
 impressive, but I think it can be taken further, in two ways.
 
-First, conditional operators, such as `?:`, `&&` and `||`, can be thrown
-away.  Second, using `setjmp` and `longjmp`, which are unfortunately
-not in common use, might make it difficult for a novice programmer
-to understand the code without referring to the man page.
+First, conditional operators, such as `?:`, `&&` and `||`, can be thrown away.
+Second, using `setjmp(3)` and `longjmp(3)`, which are unfortunately not in
+common use, might make it difficult for a novice programmer to understand the
+code without referring to the man page.
 
 By removing these, the code is 100% condition free, and every
 function runs its instructions in perfect order. Naturally, this
-makes the program flow trivial to understand.  This can be verified
+makes the program flow trivial to understand. This can be verified
 by disassembling the compiled code and looking for conditional jumps
 (when compiled with gcc on x86, there are none).
+
 
 ### Compatibility:
 
 The program should compile with any C compiler, but was tested
 mostly with gcc on Linux.
 
-It doesn't support 64 bits (due to integer-pointer casts, and a >>31).
+It doesn't support 64 bits (due to integer-pointer casts, and `a >>31`).
 It does work on 64-bit Linux, because all functions are below 4GB.
 
 
