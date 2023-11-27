@@ -3259,6 +3259,14 @@ try. If they do they might want to look also at
 not be worth.
 
 
+## [2011/toledo](2011/toledo/toledo.c) ([README.md](2011/toledo/README.md]))
+
+Cody added two [alternate versions](2011/toledo/README.md#alternate-code): one that
+lets one reconfigure the controls and also the size of the game and another
+version that should work in Windows, based on the author's remarks and support
+file, `layer.c`.
+
+
 ## [2011/vik](2011/vik/vik.c) ([README.md](2011/vik/README.md]))
 
 Cody added an [alternate version](2011/vik/README.md#alternate-code) for Windows
