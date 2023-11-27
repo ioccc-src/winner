@@ -3224,7 +3224,9 @@ for 64-bit so it was then tested as a 32-bit binary (linux) and 64-bit binary
 (linux, macOS) and both work. It was fixed by changing some `int`s to `long`s
 and now it does work with 64-bit systems as well as 32-bit systems.
 
-Cody added the following words of wisdom: 'this is not a pipe'.
+Cody also added the [try.sh](2011/goren/try.sh) script.
+
+Cody added the following words of wisdom: '"this" is not a pipe but "!" is'.
 
 
 ## [2011/hou](2011/hou/hou.c) ([README.md](2011/hou/README.md]))
