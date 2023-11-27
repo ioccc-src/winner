@@ -2471,7 +2471,8 @@ instead being something else entirely. The Internet Wayback Machine, although it
 archived it, did not load scripts. Do you know if the domain was moved? Do you
 have an archive or mirror? Please provide us it! Thank you.
 
-### STATUS: known bug - please help us fix
+
+### STATUS: INABIAF - please **DO NOT** fix
 
 The author states the following:
 
