@@ -3198,8 +3198,17 @@ lets it work in both linux and macOS. The problem was that it relied on 32-bits
 so some `int`s were changed to `long`s. The display problem might or might not
 have been a problem in linux with the old `int`s but this is no longer known.
 
+Cody also added the code that _should_ work for Windows,
+[toledo3.alt.c](2006/toledo3/toledo3.alt.c), based on the author's remarks.
+We're not able to test this.
+
 
 # <a name="2011"></a>2011
+
+
+## [2011/akari](2011/akari/akari.c) ([README.md](2011/akari/README.md]))
+
+Cody added the [try.sh](2011/akari/try.sh) script.
 
 
 ## [2011/borsanyi](2011/borsanyi/borsanyi.c) ([README.md](2011/borsanyi/README.md]))
@@ -3253,6 +3262,14 @@ document from Apple about how it might be fixed if anyone is brave enough to
 try. If they do they might want to look also at
 [richards.alt.c](2011/richards/richards.alt.c), for whatever it might or might
 not be worth.
+
+
+## [2011/toledo](2011/toledo/toledo.c) ([README.md](2011/toledo/README.md]))
+
+Cody added two [alternate versions](2011/toledo/README.md#alternate-code): one that
+lets one reconfigure the controls and also the size of the game and another
+version that should work in Windows, based on the author's remarks and support
+file, `layer.c`.
 
 
 ## [2011/vik](2011/vik/vik.c) ([README.md](2011/vik/README.md]))

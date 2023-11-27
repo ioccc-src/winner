@@ -1,8 +1,14 @@
 ## To build:
 
+If you have X11 installed:
+
 ```sh
 make
 ```
+
+There are two alternate versions, [one that lets you reconfigure the
+controls and size](toledo.alt.c) and [another that should work for
+Windows](toledo.alt2.c). See [Alternate code](#alternate-code) below.
 
 
 ## To use:
@@ -11,25 +17,58 @@ make
 ./toledo
 ```
 
-NOTE: This requires X11 to run or modifications to use [layer.c](layer.c) on
-Windows (see below).
+
+## Alternate code:
+
+The first alt version, [toledo.alt.c](toledo.alt.c), allows you to reconfigure
+the controls and the dimensions more easily.
+
+The second version, [toledo.alt2.c](toledo.alt2.c), should work for Windows but
+does not allow you to reconfigure the keys or dimensions.
 
 
-### Try:
+### Alternate build:
+
+For the one that lets you reconfigure the keys you will want to look at the
+included header file, [keysym.h](keysym.h), to find the correct macros. Once you
+have the right names you can define the macros `A`, `B`, `C`, `D` and/or `E`. It
+will use the default for any you do not specify. For instance, to swap what `A`
+and `B` are (see below for defaults of all keys):
+
 
 ```sh
-echo "Do or do not. There is no try."
+make clobber CDEFINE="-DA=XK_Left:XK_a -DB=XK_Up:XK_w" alt
 ```
+
+but you can specify something completely else and you can pick and choose which
+controls you wish to redefine. You might also wish to change the dimensions of
+the game, `M` and `N` which have an arbitrarily selected lower limit as well as
+the default values.
+
+Here are the defaults:
+
+```c
+#define A XK_Up:XK_w
+#define B XK_Left:XK_a
+#define C XK_Right:XK_d
+#define D XK_Down:XK_s
+#define E XK_BackSpace:XK_Tab
+#define M 512
+#define N 288
+```
+
+Observe that each of the controls are a pair in the form of `player2:player1`.
 
 
 ## Judges' remarks:
 
 This two player game uses X11. The control keys can be configured by
-modifying the `A`, `B`, `C` and `D` macros at compilation.
+modifying the `A`, `B`, `C`, `D` and `E` macros at compilation.
 
 After a quick splash screen the objective should be clear.  There
 are Red, Green and Cyan tanks. A larger window can be made by altering
-the source early on, right before the code gets hard to follow.
+the source early on, right before the code gets hard to follow, or using the
+[alternate version](#alternate-code).
 
 Like Oscar's previous winning X11 program for the 19th IOCCC, if
 you remove both the X11 include files and replace them with
@@ -37,8 +76,9 @@ you remove both the X11 include files and replace them with
 ```c
 #include "layer.c"
 ```
-\
+
 you ought to be able to compile and run this program on Windows.
+NOTE: this is what [toledo.alt2.c](toledo.alt2.c) is for.
 
 
 ## Author's remarks:
@@ -58,26 +98,29 @@ and run it without arguments.
 
 You will see briefly a tank spinning before each level.
 
-Left  half  of  the  window shows the red player view and right
-half shows the green player view, the background will change to
+The Left half of the window shows the red player view and the right
+half shows the green player view; the background will change to
 blue when the view goes inactive.
 
-The  objective  is to chase and destroy the other player's tank,
-there  is  also  an  aqua tank for testing your aim and getting
+The objective is to chase and destroy the other player's tank.
+There is also an aqua tank for testing your aim and getting
 extra points.
 
-> Caveat: You can shoot only 3 bullets at a time.
-> Trick: You can fire faster if they explode on anything.
-> Believe it or not, it has strategy!
+
+Caveat: You can shoot only 3 bullets at a time.
+\
+Trick: You can fire faster if they explode on anything.
+\
+Believe it or not, it has strategy!
 
 When only one tank remains on the field, the level will advance.
 Don't forget to destroy the aqua tank.
 
-The  <strike>battle</strike>playground  is  surrounded by mountains  and each level is
+The <strike>battle</strike>playground is surrounded by mountains and each level is
 filled with random obstacles (pyramids and cubes).
 
-The  bars  show players energy and score, each bar shows energy
-and  indicates  current  player view (wider on the left), right
+The bars show players energy and score; each bar shows energy
+and indicates the current player view (wider on the left). The right
 part grows with every point.
 
 Keys for player 1 (lowercase):
@@ -96,17 +139,20 @@ Keys for player 2:
 * Left arrow  - Turn left
 * Right arrow - Turn right
 
-> Note: Numeric keys don't work.
+
+Note: Numeric keys don't work.
 
 If you don't like the keys assignment, you can change it in the
-Makefile.
+Makefile or use the [alternate version](#alternate-code).
+
 
 ### PARENTAL ADVISORY WARNING:
 
-This  game  is  highly  violent, when the tank explodes you can
+This game is highly violent: when the tank explodes you can
 see the little stick man blowing in parts.
 
 Not really, just kidding :D
+
 
 ### PLATFORMS TESTED:
 
@@ -114,6 +160,7 @@ Not really, just kidding :D
 * Fedora Core 8 x86-64, X11R6 1280x1024 32-bits color.
 * Fedora Core 11 x86-64, X11R6 1024x768 32-bits color.
 * Fedora Core 14 x86-64, X11R6 1024x768 32-bits color.
+
 
 ### COMPLETE FEATURE SET:
 
@@ -127,7 +174,8 @@ Not really, just kidding :D
 * There is an infinite number of levels.
 * Always different levels.
 * Animated intro.
-* It has color!.
+* It has color!
+
 
 ### FEATURES THAT PROGRAMMERS WILL FIND APPEALING:
 
@@ -140,9 +188,9 @@ Not really, just kidding :D
   x86-64 512 MB).
 * It is written in the only true C: K&R, and no, that doesn't mean
   Katherine & Rose.
-* Vectorial scalable graphics, do you want a bigger viewport? Change variables M
-  `&` `N`.
-* Half of the program is formatted as 3D cube. View with tabs at 8 columns and a\
+* Vectorial scalable graphics: do you want a bigger viewport? Change variables
+  `M` and `N` (see the [alternate code](#alternate-code)).
+* Half of the program is formatted as 3D cube. View with tabs at 8 columns and a
   square font.
 * The other half of the program is unprintable source code, so no typing from
   paper, you have to write a converter of tabs and form-feeds to its C escaped
@@ -151,6 +199,7 @@ Not really, just kidding :D
 * This program is highly ecological, it sleeps when it is not doing anything.
 * Virtual world with its own physics laws.
 * When closing the window it will show an X11 error :P
+
 
 ### OBFUSCATION TRICKS:
 
@@ -185,6 +234,7 @@ Not really, just kidding :D
 
 ```
 
+
 ### THE HISTORY OF THIS PROGRAM:
 
 When I started working on this program, I figured that it would
@@ -203,7 +253,7 @@ the user.
 
 And finally, the third "Thing" was growing and growing, and
 growing, eating bytes for lunch...  after endless rounds of
-crunching I obtained three-hundred seventy-eight  bytes  of
+crunching I obtained three-hundred seventy-eight bytes of
 artwork and guess what? It doesn't fit.
 
 So I had to integrate a decompressor based on the space, tabulators and other
@@ -228,6 +278,7 @@ program is smaller and obfuscated what is needed so the reformatting doesn't
 exceeded the character limits. The crunched vectors were generated by another
 special program and the tank that surrounds this text was generated by yet
 another program.
+
 
 *Have fun!*
 

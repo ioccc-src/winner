@@ -15,30 +15,6 @@ make
 ### Try:
 
 ```sh
-./akari < example.ppm > odd_output.ppm
-./akari - - even < example.ppm > even_output.ppm
-./akari example.ppm odd_output.ppm
-
-make akari2
-cat akari2.c
-
-./akari2 < akari2.c
-./akari2 rot13 < akari2.c
-
-make akari3
-cat akari3.c
-
-./akari3
-
-make akari4
-cat akari4.c
-
-./akari4
-```
-
-You can automate the above by running:
-
-```sh
 ./try.sh
 ```
 
@@ -58,7 +34,7 @@ properly**_.
 `PPM` files with the header `P6 <width> <height> 255` are accepted.
 
 * [ASCII art](https://en.wikipedia.org/wiki/ASCII_art) (with [end of
-lines](https://en.wikipedia.org/wiki/Newline) in LF bytes only, _**not** CRLF_!)
+lines](https://en.wikipedia.org/wiki/Newline) in LF bytes only, _**not** CR-LF_!)
 
 Anything that is not parsable as `PGM` or `PPM` will be downsampled as ASCII art.
 
@@ -68,14 +44,15 @@ Anything that is not parsable as `PGM` or `PPM` will be downsampled as ASCII art
 `Akari` is an image downsampling utility.  She accepts up to 3 arguments:
 
 The first argument is the input image.  If it's `-` or unspecified, `Akari`
-will read from stdin.
+will read from `stdin`.
 
 The second argument is the output image.  If it's `-` or unspecified,
-`Akari` will write to stdout.
+`Akari` will write to `stdout`.
 
 The third argument, if specified, causes `Akari` to keep even pixels on even
 [scanlines](https://en.wikipedia.org/wiki/Scan_line). By default `Akari` will
 keep odd pixels on odd [scanlines](https://en.wikipedia.org/wiki/Scan_line).
+
 
 ### Examples:
 
@@ -110,8 +87,8 @@ natural to try:
 ```
 
 `akari2.c` is also a valid C program, and accepts up to 1 argument.
-By default, this second program reads text from stdin and writes
-expanded output to stdout.  If the extra argument is specified, the
+By default, this second program reads text from `stdin` and writes
+expanded output to `stdout`.  If the extra argument is specified, the
 output text will also pass through a rot13 filter.
 
 ```sh
@@ -142,7 +119,7 @@ We must go deeper:
 
 `akari3.c` and `akari4.c` are still (mostly valid) C programs.
 `gcc -Wall` will output a few warnings, but still produce output
-executables.  The output executables each print a message to stdout.
+executables.  The output executables each print a message to `stdout`.
 
 It takes quite a bit of skill and obfuscation to interleave a
 C program 4 levels deep, it's much easier to interleave something like

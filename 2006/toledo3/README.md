@@ -24,17 +24,26 @@ tested with Windows.  See [alternate code](#alternate-code) below.
 ```
 
 
-### Alternate code:
+## Alternate code:
 
 The author provided two additional versions, [toledo3-sbar.c](toledo3-sbar.c)
 and [toledo3-txt.c](toledo3-txt.c). Respectively these create a status bar and
-make the game text only. These are built by default.
+make the game text only.
+
+
+### Alternate build:
+
+With the exception of the Windows version, these are built by default. To build
+the Windows version, [toledo3.alt.c](toledo3.alt.c), you will have to figure out
+how to compile Windows code.
+
+
+### Alternate use:
 
 Use `toledo3-sbar` and `toledo3-txt` as you would `toledo3` above.
 
-The author also provided a version that was [tested for some compilers in
-Windows](layer.c). As we have no Windows system to test with you will have to
-figure out how to compile it but it did work at one time in some set ups.
+As for the Windows version, `toledo3.alt`, we presume you can open it like any
+other application.
 
 
 ## Judges' remarks:

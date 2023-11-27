@@ -4,6 +4,9 @@
 make
 ```
 
+There is an alternate version that should work for Windows. See [alternate
+code](#alternate-code) below.
+
 
 ### Bugs and (Mis)features:
 
@@ -22,20 +25,6 @@ For more detailed information see [2011 vik in bugs.md](/bugs.md#2011-vik).
 ./vik file.mod > audio_file.raw
 ```
 
-An alternate version for Windows is available. See the Alternate code section
-below.
-
-The author stated that the program will crash if no argument is passed tot he
-program though we note that your computer might also [halt and catch
-fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
-
-This is supposed to happen.  As is written in the
-[The Jargon File](http://catb.org/jargon/html/F/feature.html):
-
-```
-That's not a bug, that's a feature.
-```
-
 
 ### Try:
 
@@ -47,10 +36,10 @@ That's not a bug, that's a feature.
 Alternatively, you can use:
 
 ```sh
-./vik file.mod > file.raw; ./raw2wav file.raw > file.wav\
+./vik file.mod > file.raw; ./raw2wav file.raw > file.wav
 ```
 
-It is possible to download a number of Mod files from [The Mod
+It is possible to download a number of music module files from [The Mod
 Archive](http://modarchive.org).
 
 
@@ -62,6 +51,8 @@ Assuming that `make` is similar enough try:
 make alt
 
 ```
+
+### Alternate use:
 
 Use `vik.alt` as you would `vik` above.
 
@@ -75,13 +66,13 @@ Also it abuses the C compiler and/or assembler with a partially
 initialized 32MB array. Can you tell what that partial
 initialization for?
 
-Does it take your system a long time to compile?  You may want to do try:
+Does it take your system a long time to compile?  You may want to do:
 
 ```sh
 cc -S vik.c
 ```
 
-and to examine the resulting assembly file vik.s.  On some platforms
+and examine the resulting assembly file `vik.s`.  On some platforms
 the assembly file is about 128MB in size!
 
 NOTE: The [randowan.mod](randowan.mod) and [mad_world.mod](mad_world.mod) files were
@@ -102,6 +93,7 @@ Amiga](https://en.wikipedia.org/wiki/Amiga)
 A MOD file contains a set of samples, a number of patterns indicating how and
 when the samples are to be played, a list of what patterns to play in what
 order, and a number of effects.
+
 
 ### Features
 
@@ -128,6 +120,7 @@ program supports most of them, including:
 Due to size constraints tremolo and vibrato is not supported. Also, to
 avoid infinite long songs, the position jump feature is ignored.
 
+
 ### Songs
 
 With his permission, the package includes two songs composed by Henrik
@@ -147,19 +140,21 @@ gcc -o vik vik.c
 
 ### Usage
 
-### Convert MOD file to raw 44.1kHz stereo audio file
+
+#### Convert MOD file to raw 44.1kHz stereo audio file
 
 ```sh
 ./vik mad_world.mod > audio_file.raw
 ```
 
-### Listen to the MOD file (streaming to mplayer)
+#### Listen to the MOD file (streaming to mplayer)
 
 ```sh
 ./vik randowan.mod | mplayer -demuxer rawaudio -
 ```
 
-(Don't forget the last `-` as it makes mplayer read from stdin.)
+(Don't forget the last `-` as it makes mplayer read from `stdin`.)
+
 
 ### Obfuscation
 
@@ -183,12 +178,14 @@ machine](https://en.wikipedia.org/wiki/Finite-state_machine) and all the
 are conditional and the program uses the `?:` operator (sigh) mainly to save
 space, but also to leverage the comma operator and precedence more efficiently.
 
+
 [magic]: https://en.wikipedia.org/wiki/Magic_(programming)#Variants
+
 
 ### Portability
 
 The program is portable to most platforms. The only system dependency is
-that the program relies on writing binary data to stdout.
+that the program relies on writing binary data to `stdout`.
 
 Microsoft compilers adds a carriage return to newlines, and to compile
 the program with this platform, the following line can be added after
@@ -197,6 +194,9 @@ the main declaration in order for the program to run correctly:
 ```c
 _setmode(_fileno(stdout), 0x8000);
 ```
+
+NOTE: this is what the [alternate version](#alternate-code) is for.
+
 
 ### Limitations
 

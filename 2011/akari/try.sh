@@ -24,18 +24,44 @@ clear
 ./akari - - even < example.ppm > even_output.ppm
 ./akari example.ppm odd_output.ppm
 
-make akari2 || exit 1
+make akari2 >/dev/null|| exit 1
+read -r -n 1 -p "Press any key to cat akari2.c: "
 cat akari2.c
+echo 1>&2
 
+read -r -n 1 -p "Press any key to run: ./akari2 < akari2.c: "
 ./akari2 < akari2.c
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./akari2 rot13 < akari2.c: "
 ./akari2 rot13 < akari2.c
 
-make akari3 || exit 1
+make akari3 >/dev/null|| exit 1
+
+read -r -n 1 -p "Press any key to cat akari3.c: "
 cat akari3.c
+echo 1>&2
 
+read -r -n 1 -p "Press any key to run: ./akari3: "
 ./akari3
+echo 1>&2
 
-make akari4 || exit 1
+make akari4 >/dev/null|| exit 1
+
+read -r -n 1 -p "Press any key to cat akari4.c: "
 cat akari4.c
 
+read -r -n 1 -p "Press any key to run: ./akari4: "
 ./akari4
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./akari2 rot13 < akari.c | ./akari > rot13.c; cat rot13.c: "
+./akari2 rot13 < akari.c | ./akari > rot13.c; cat rot13.c
+
+
+read -r -n 1 -p "Press any key to run: ./akari2 < akari.c > expanded_output.txt: "
+./akari2 < akari.c > expanded_output.txt
+read -r -n 1 -p "Press any key to run: ./akari2 rot13 < akari.c > expanded_and_rot13_output.txt: "
+./akari2 rot13 < akari.c > expanded_and_rot13_output.txt
+read -r -n 1 -p "Press any key to cat expanded_and_rot13_output.txt: "
+cat expanded_and_rot13_output.txt
