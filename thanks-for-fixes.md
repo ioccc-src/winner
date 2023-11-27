@@ -3198,6 +3198,10 @@ lets it work in both linux and macOS. The problem was that it relied on 32-bits
 so some `int`s were changed to `long`s. The display problem might or might not
 have been a problem in linux with the old `int`s but this is no longer known.
 
+Cody also added the code that _should_ work for Windows,
+[toledo3.alt.c](2006/toledo3/toledo3.alt.c), based on the author's remarks.
+We're not able to test this.
+
 
 # <a name="2011"></a>2011
 
