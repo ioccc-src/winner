@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Sat 25 Nov 2023 19:01:07 UTC*
+*Last updated: Tue 28 Nov 2023 18:20:54 UTC*
 
 This document is primarily for [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) as he (that is I :-) ) wanted a way
@@ -160,3 +160,8 @@ that has had this done is [1985/lycklama](1985/lycklama/README.md).
 
 - Check 2001/westley for making `main()` have two args. Easy to make it have two
 args but harder to make it function right.
+
+- Check for video links in README.md files and see if the videos can be
+embedded into the README.md files themselves. An entry that the video file is
+downloaded already is 2006/sykes1. There are others that I need to look at once
+the rest of the entries are done, assuming that it's possible.
