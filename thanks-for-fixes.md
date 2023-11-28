@@ -3238,6 +3238,18 @@ Cody also added the [try.sh](2011/goren/try.sh) script.
 Cody added the following words of wisdom: '"this" is not a pipe but "!" is'.
 
 
+## [2011/hamaji](2011/hamaji/hamaji.c) ([README.md](2011/hamaji/README.md]))
+
+Cody added the [try.sh](2011/hamaji/try.sh) script and the `.nono` files
+[conway-game-of-life.nono](2011/hamaji/conway-game-of-life.nono),
+[multi-solutions.nono](2011/hamaji/multi-solutions.nono),
+[no-solution.nono](2011/hamaji/no-solution.nono),
+[plus.nono](2011/hamaji/plus.nono) and [smiley.nono](2011/hamaji/smiley.nono).
+The latter two `.nono` files were taken from
+<https://web.archive.org/web/20130218055139/http://codegolf.com/paint-by-numbers>
+and the others were from the authors' remarks.
+
+
 ## [2011/hou](2011/hou/hou.c) ([README.md](2011/hou/README.md]))
 
 Cody added the [try.sh](2011/hou/try.sh) script.

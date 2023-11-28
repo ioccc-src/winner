@@ -15,22 +15,23 @@ make
 ### Try:
 
 ```sh
-./hamaji < dragon.nono
-./hamaji < random.nono
-./hamaji < soccer.nono
-./hamaji < codegolf.nono
-./hamaji < face.nono
-./hamaji < penguin.nono
-./hamaji < samurai.nono
+./try.sh
+```
+
+If you have perl installed you should be able to reproduce
+[dragon.nono](dragon.nono) like:
+
+```sh
+perl c2nono.pl hamaji.c | ./hamaji
 ```
 
 
 ## Judges' remarks:
 
-This program solves "Nonogram", which also known as "Paint by Numbers":
-<http://en.wikipedia.org/wiki/Nonogram>.
+This program solves [Nonograms](http://en.wikipedia.org/wiki/Nonogram) which is
+also known as "Paint by Numbers".
 
-This entry roar as the Year of the Dragon: A year considered
+This entry roars as the Year of the Dragon: A year considered
 some to be good luck.  Well it was certainly true that the
 IOCCC was lucky to get such a fine submission!
 
@@ -39,8 +40,7 @@ paint by C.  Try your hand at solving a few of the other `.nono`
 files and then compare your solution with this program!
 
 NOTE: NONOGRAM (r) is a registered Trademark and is used with permission. See
-<https://web.archive.org/web/20110128130704/http://nonogram.com/> for more
-information.
+<https://nonogram.com> for more information.
 
 
 ## Author's remarks:
@@ -52,26 +52,26 @@ For example, for a simple problem which shows a glider of [Conway's
 Game of Life](http://en.wikipedia.org/wiki/Conway's_Game_of_Life):
 
 ```
-       1
-       .
-      112
+   1
+   .
+  112
 
-    1  X
-    1   X
-    3 XXX
+1  X
+1   X
+3 XXX
 
 ```
 
 the input should be
 
 ```
-    1
-    1
-    3
-    -
-    1
-    1.1
-    2
+1
+1
+3
+-
+1
+1.1
+2
 ```
 
 The width and the height of an input puzzle should be less than or
@@ -82,9 +82,9 @@ This means the problem is indeed broken. For example, this happens for
 an input like
 
 ```
-    2
-    -
-    2
+2
+-
+2
 ```
 
 When this solver cannot find a solution, it prints "`failed`". This
@@ -93,29 +93,29 @@ solver cannot solve the input problem. Here is an example input of the
 former:
 
 ```
-    1
-    1
-    -
-    1
-    1
+1
+1
+-
+1
+1
 ```
 
 There are two solutions:
 
 ```
-      11
+  11
 
-    1 X
-    1  X
+1 X
+1  X
 ```
 
 and
 
 ```
-      11
+  11
 
-    1  X
-    1 X
+1  X
+1 X
 ```
 
 ### Detail
@@ -138,13 +138,13 @@ work for big problems.
 
 See: <http://ccl.northwestern.edu/netlogo/models/community/Nonogram>.
 
-By its definition, the latter works for all human-solvable
-problems. The issue of the latter approach is this kind of programs
+By its definition, the latter method works for all human-solvable
+problems. The issue of the latter approach is this kind of program
 tends to be lengthy. This approach still requires some
 [recursions](https://en.wikipedia.org/wiki/Recursion). The
 most difficult problems which are considered human-solvable may
-require some "guesses". For this kind of problems, we need to assume a
-cell is a space or a box, go ahead some steps with simple methods,
+require some "guesses". For these kinds of problems, we need to assume a
+cell is a space or a box, go ahead some steps with simple methods and
 mark the tried cell as a box (or a space if we assumed the tried cell
 is a box) if a contradiction is found.
 
@@ -154,6 +154,7 @@ to the combinations of simple methods (no advanced reasoning with guess). My
 solver also runs a non-recursive guess for each undetermined cells. So, my
 program should be able to solve most human-solvable problems (assuming humans
 cannot execute deeper recursions).
+
 
 ### Obfuscation
 
@@ -175,6 +176,7 @@ characters are just wasted for numbers around the picture.
 The three requirements (dragon, speed, and size) naturally ended up
 with the well obfuscated code.
 
+
 ### Portability
 
 This program uses two C99 features. One line comments and `long long`.
@@ -187,11 +189,11 @@ cc -ansi -pedantic -std=c99 hamaji.c
 I checked my program with gcc-4.6.2 on linux, llvm-gcc-4.2 on Mac, and
 clang-3.0 on Mac.
 
-Note that the behavior of `scanf()` differs on linux and mac, but this
+Note that the behavior of `scanf(3)` differs on linux and mac, but this
 program supports both semantics.
 
 This program should not depend on `sizeof(int)`, `sizeof(void*)`, ASCII,
-memory layout, undefined evaluation order (e.g., `a[i++]=i`), etc.\
+memory layout, undefined evaluation order (e.g., `a[i++]=i`), etc.
 This program won't work if the size of `long long` literal is less than 8.
 By grepping the source code of gcc
 
@@ -200,6 +202,7 @@ grep LONG_LONG_TYPE_SIZE gcc/config/*/*
 ```
 
 I found long long may be 32bit integers only on AVR.
+
 
 ### A few more things
 
