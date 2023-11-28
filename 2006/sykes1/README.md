@@ -89,9 +89,12 @@ Some instructions on how to make your own cube are in the included file
 [bedlam-cubes.pdf](bedlam-cubes.pdf).
 
 Finally, you can watch it being solved:
-
-<video src="solving-bedlam-cube.mp4" data-canonical-src="solving-bedlam-cube.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px; min-height: 200px"></video>
-
+<tbody class="d-block">
+    <tr class="d-block">
+    <video src="solving-bedlam-cube.mp4" data-canonical-src="solving-bedlam-cube.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px; min-height: 200px"></video>
+      </td>
+    </tr>
+</tbody>
 ...taken from <https://www.youtube.com/watch?v=a8s1AcYMLBc>.
 
 Actually the cube is very hard to do by hand by just trying to fit it
