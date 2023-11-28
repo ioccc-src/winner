@@ -5,6 +5,17 @@ make
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2011 fredriksson in bugs.md](/bugs.md#2011-fredriksson).
+
+
 ## To use:
 
 ```sh
@@ -15,13 +26,12 @@ make
 ### Try:
 
 ```sh
-./fredriksson -k1 -i POOT < /etc/group
-ulimit -s unlimited
-./fredriksson -k2 -t -n bofuskate < /usr/share/dict/words
+./try.sh
 ```
 
 NOTE: you need to be allowed to change your stack size or else the last command
-will likely cause the program to dump core.
+in the script would likely cause the program to dump core, which is why the
+script checks the exit code of `ulimit` first.
 
 
 ## Judges' remarks:
@@ -36,9 +46,11 @@ program and calls it. As an exercise, try writing the compressor.
 
 ## Author's remarks:
 
+
 ### Approximate grep
 
 Implements a variant of `grep`.
+
 
 ### Usage
 
@@ -69,8 +81,8 @@ This version of `grep` recognizes two more options, not present in normal
 	"`obfuscated`" matches "`obfuscation`"
 	with one deletion and two mismatches. Likewise, "`obfuscate`" and
 	"`oversimplify`" match with 7 [edit
-	operations](https://en.wikipedia.org/wiki/Edit_distance#Formal_definition_and_properties). The default is `-k0`
-	(i.e. exact match).
+	operations](https://en.wikipedia.org/wiki/Edit_distance#Formal_definition_and_properties).
+	The default is `-k0` (i.e. exact match).
 
 * `-t`	Add local transpositions to the set of allowed
 	[edit-operations](https://en.wikipedia.org/wiki/Edit_distance#Formal_definition_and_properties).
@@ -82,7 +94,8 @@ Of course, one could construct a standard
 [regexp](https://www.regular-expressions.info) that matches the same
 patterns, but the problem is that such a regexp grows exponentially in
 size when the number of allowed [edit
-operations](https://en.wikipedia.org/wiki/Edit_distance#Formal_definition_and_properties) is increased.
+operations](https://en.wikipedia.org/wiki/Edit_distance#Formal_definition_and_properties)
+is increased.
 
 This version does not recognize all regular expressions, but the
 following are allowed:
@@ -104,10 +117,12 @@ otherwise this is not needed. Note that the syntax differs from standard
 (?) grep a bit, i.e. in plain grep you can use `]` and `-` in bracket
 expressions by putting `]` as the first character, and putting `-` last.
 
+
 ### Other uses
 
 * You can use this in place of [cat](https://en.wikipedia.org/wiki/Cat_(Unix)).
 Just say
+
 
 ```sh
 ./fredriksson -k3 cat < file
@@ -118,6 +133,7 @@ Just say
 ```sh
 ./fredriksson -nk3 cat < file
 ```
+
 
 ### Other features
 
@@ -132,6 +148,7 @@ Just say
   liners in IOCCC entries, just adjust your stack size to a suitable
   threshold, and search for "`ioccc`", with option `-vk5`.
 
+
 ### Limitations and remarks
 
 * Using warning options (such as `-Wall`) when building gives a lot of warning,
@@ -142,7 +159,7 @@ Just say
   Please ignore them all, since they just try to tell you that the source
   is obfuscated.
 
-* Only standard input is handled. And _only_ if stdin comes from a file,
+* Only standard input is handled. And _only_ if `stdin` comes from a file,
   i.e. pipes may or may not work. If you want to count only (`-c` option),
   then this shouldn't be an issue.
 
@@ -157,7 +174,7 @@ Just say
 * Depending on the file, it might require a lot of stack space. If the
   program segfaults (because of this), say
 
-		ulimit -s unlimited
+	ulimit -s unlimited
 
   cross your fingers, hope it is enough, and try again.
 
@@ -199,26 +216,26 @@ Just say
   corresponding binary after running it, but this feature was removed
   from the submitted entry.)
 
-* The code demonstrates several useful programming paradigms, such as
+* The code demonstrates several useful programming paradigms, such as:
 	- recursion to remove all loops
 	- subroutines (`main()` contains several logical subroutines,
 	  selected by the first argument)
 	- function pointers
 
-* Algorithmically, it incorporates the following
-	- (inverse) Burrows-Wheeler transform (used also e.g. in bzip2)
+* Algorithmically, it incorporates the following:
+	- (inverse) Burrows-Wheeler transform (used also e.g. in `bzip2(1)`)
 	- data compression (really expansion :-), run-length-encoding,
 	  unary coding (this is why it is expansion rather than compression)
 	- approximate string matching
 	- dynamic programming to compute the edit distance
 	- parallel computation in sequential computers (by packing
-	  several objects into a single long, to speed up the dynamic
+	  several objects into a single `long`, to speed up the dynamic
 	  programming)
 	- self extracting, compiling and running code
 
 * As a C program, it demonstrates that
 	- a C subset without reserved words is complete enough,
-	  (excluding data type specific things (`int`, `char`, `void` ...))
+	  excluding data type specific things (`int`, `char`, `void` ...)
 	- only letters are needed (i.e. the digits `0-9` are not)
 	- only one statement is enough to code any program (plus
 	  variable definitions)
@@ -255,18 +272,18 @@ Just say
 
   One reason for this is that the code builds (some of the) constant
   values from string literal `"\b"`, except that the backspace `\b` is not
-  escaped like that; the source uses the raw ascii value (010 octal) instead.
+  escaped like that; the source uses the raw ASCII value (`010` octal) instead.
   Thus when viewing with cat or something, that backspace erases the leading
   quotation mark. Makes it appear uncompilable, and it is: if you copy-paste
   the cat output from terminal to some editor, save it, the result would not
   compile.
 
-  Some other constants are built from ASCII values of chars.
+  Some other constants are built from ASCII values of `char`s.
 
   Besides of making the code hard to read, all this makes it also quite large.
 
-* Running it through GNU indent or bcpp (C beautifiers) does not beautify
-  it a bit. In fact, indent makes it only worse (at least with the default
+* Running it through GNU `indent(1)` or `bcpp(1)` (C beautifiers) does not beautify
+  it a bit. In fact, `indent` makes it only worse (at least with the default
   options). Running it through the preprocessor does basically nothing,
   since no `#define`s are used.
 
@@ -276,7 +293,7 @@ Just say
   program exceeds the 2048 limit. However, whitespace is whitespace and
   the rules did not specify that these must be in between the statements.
   A character is a whitespace if `isspace()` returns non-zero value. Even
-  if deleting even one of those chars breaks the program! (This does not
+  if deleting even one of those chars it breaks the program! (This does not
   apply to the generated source `ag.c`.)
 
 

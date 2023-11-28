@@ -3231,6 +3231,11 @@ Cody added the video file [boing-ball.mp4](2011/eastman) which is the demo the
 author referred to.
 
 
+## [2011/fredriksson](2011/fredriksson/fredriksson.c) ([README.md](2011/fredriksson/README.md]))
+
+Cody added the [try.sh](2011/fredriksson/try.sh) script.
+
+
 ## [2011/goren](2011/goren/goren.c) ([README.md](2011/goren/README.md]))
 
 Cody fixed this for macOS.  Before the fix it segfaulted. It worked fine under
