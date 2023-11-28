@@ -28,7 +28,7 @@ NOTE: to restore your cursor in your shell, try `reset`.
 This round program will generate a classic spherical result!
 
 You will need a terminal capable of displaying coloured ANSI
-characters (for example an xterm or a Terminal.app window).
+characters (for example an xterm or a Terminal.app window in macOS).
 
 You might also want to turn off any scrollback history. The program will
 size itself to the initial geometry of your terminal.
@@ -41,7 +41,7 @@ large for hi-res graphics!
 
 This program uses ANSI graphics to recreate the classic Boing Ball demo from
 the Commodore Amiga.  See <https://www.youtube.com/watch?v=-ga41edXw3A> if you
-aren't familiar with it.  Back in its day, this demo inspired lust and awe in
+aren't familiar with it. Back in its day, this demo inspired lust and awe in
 geeks around the world.
 
 The graphics are
@@ -61,10 +61,12 @@ To compile:
 cc -lm eastman.c
 ```
 
+
 ### Portability
 
 It should be completely portable.  I've tested with gcc on Mac OS X 10.7 (Lion)
 and Fedora 10.  I would expect it to work in any Unix-like environment.
+
 
 ### Obfuscation
 
@@ -75,22 +77,22 @@ evaluations, is a single expression involving 41 operators.
 
 Variables are named alphabetically in the order they are declared.
 
-The third argument to `ioctl()` should really be a `struct winsize`, and I should
-then look up the `ws_row` and `ws_col` fields, but that makes it way too obvious
-what I'm doing there.  Since a `struct winsize` just contains four unsigned shorts, I
-replaced it with an array.  And since all the values will be much less than
-`32767`, I further simplified the type to just `short[]`.
+The third argument to `ioctl(2)` should really be a `struct winsize`, and I
+should then look up the `ws_row` and `ws_col` fields, but that makes it way too
+obvious what I'm doing there.  Since a `struct winsize` just contains four
+`unsigned short`s, I replaced it with an array.  And since all the values will
+be much less than `32767`, I further simplified the type to just `short[]`.
 
 A wonderful thing about ANSI graphics is that it produces nearly unintelligible
-code.  Consider the printf spec to print a single space in a desired color:
+code.  Consider the `printf(3)` spec to print a single space in a desired color:
 `"\x1B[%dm `.  I could have done something to further obfuscate it, but it's
 already indistinguishable from line noise, so why bother?
 
 There are lots of other minor obfuscations to make the code less obvious.  For
 example, I could have written the outer loop as `while(1)`, but why write a 1
-when I can calculate it from the return value of `usleep()` instead? And I could
-have written `usleep(80000)`, but `usleep(79383)` just looks so much better.
-And so on.
+when I can calculate it from the return value of `usleep(3)` instead? And I
+could have written `usleep(80000)`, but `usleep(79383)` just looks so much
+better.  And so on.
 
 
 ## Copyright and CC BY-SA 4.0 License:

@@ -3211,6 +3211,11 @@ We're not able to test this.
 Cody added the [try.sh](2011/akari/try.sh) script.
 
 
+## [2011/blakely](2011/blakely/blakely.c) ([README.md](2011/blakely/README.md]))
+
+Cody added the [try.sh](2011/blakely/try.sh) script.
+
+
 ## [2011/borsanyi](2011/borsanyi/borsanyi.c) ([README.md](2011/borsanyi/README.md]))
 
 Cody, out of an abundance of caution, added a second arg to `main()` as some
@@ -3225,6 +3230,17 @@ Cody also added the [try.sh](2011/borsanyi/try.sh) script.
 Cody added the [try.sh](2011/dlowe/try.sh) script.
 
 
+## [2011/eastman](2011/eastman/eastman.c) ([README.md](2011/eastman/README.md]))
+
+Cody added the video file [boing-ball.mp4](2011/eastman) which is the demo the
+author referred to.
+
+
+## [2011/fredriksson](2011/fredriksson/fredriksson.c) ([README.md](2011/fredriksson/README.md]))
+
+Cody added the [try.sh](2011/fredriksson/try.sh) script.
+
+
 ## [2011/goren](2011/goren/goren.c) ([README.md](2011/goren/README.md]))
 
 Cody fixed this for macOS.  Before the fix it segfaulted. It worked fine under
@@ -3236,6 +3252,18 @@ and now it does work with 64-bit systems as well as 32-bit systems.
 Cody also added the [try.sh](2011/goren/try.sh) script.
 
 Cody added the following words of wisdom: '"this" is not a pipe but "!" is'.
+
+
+## [2011/hamaji](2011/hamaji/hamaji.c) ([README.md](2011/hamaji/README.md]))
+
+Cody added the [try.sh](2011/hamaji/try.sh) script and the `.nono` files
+[conway-game-of-life.nono](2011/hamaji/conway-game-of-life.nono),
+[multi-solutions.nono](2011/hamaji/multi-solutions.nono),
+[no-solution.nono](2011/hamaji/no-solution.nono),
+[plus.nono](2011/hamaji/plus.nono) and [smiley.nono](2011/hamaji/smiley.nono).
+The latter two `.nono` files were taken from
+<https://web.archive.org/web/20130218055139/http://codegolf.com/paint-by-numbers>
+and the others were from the authors' remarks.
 
 
 ## [2011/hou](2011/hou/hou.c) ([README.md](2011/hou/README.md]))

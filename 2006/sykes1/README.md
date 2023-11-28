@@ -88,11 +88,7 @@ puzzles in wikipedia](http://en.wikipedia.org/wiki/Bedlam_cube).
 Some instructions on how to make your own cube are in the included file
 [bedlam-cubes.pdf](bedlam-cubes.pdf).
 
-Finally, you can watch it being solved:
-
-![Bedlam Cube being solved](solving-bedlam-cube.mp4)
-
-...taken from <https://www.youtube.com/watch?v=a8s1AcYMLBc>.
+Finally, you can watch it being solved at <https://www.youtube.com/watch?v=a8s1AcYMLBc>.
 
 Actually the cube is very hard to do by hand by just trying to fit it
 together.  I have not known anyone to solve it in this way - you would

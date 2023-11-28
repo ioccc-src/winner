@@ -2488,6 +2488,17 @@ tends to result in empty output.
 If you want to try and fix this (mis)feature, you are welcome to try.
 
 
+## 2011 fredriksson
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2011/fredriksson/fredriksson.c](2011/fredriksson/fredriksson.c)
+### Information: [2011/fredriksson/README.md](2011/fredriksson/README.md)
+
+The author stated that there are a number of features and limitations. As the
+list is rather long see [other
+features](2011/fredriksson/README.md#other-features) and [limitations and
+remarks](2011/fredriksson/README.md#limitations-and-remarks) instead.
+
 
 ## 2011 richards
 
