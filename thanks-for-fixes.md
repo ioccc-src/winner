@@ -3211,6 +3211,11 @@ We're not able to test this.
 Cody added the [try.sh](2011/akari/try.sh) script.
 
 
+## [2011/blakely](2011/blakely/blakely.c) ([README.md](2011/blakely/README.md]))
+
+Cody added the [try.sh](2011/blakely/try.sh) script.
+
+
 ## [2011/borsanyi](2011/borsanyi/borsanyi.c) ([README.md](2011/borsanyi/README.md]))
 
 Cody, out of an abundance of caution, added a second arg to `main()` as some

@@ -17,11 +17,17 @@ Zoom out and make your terminal window 53 or more lines deep.
 ### Try:
 
 ```sh
-./blakely < 3.dat | head -100
-./blakely - < 3.dat | head -40
-./blakely < evolve_to_3.dat | head -55
+./try.sh
+```
+
+For those who have a lot of time, try:
+
+```sh
 ./blakely < t0_3.dat
 ```
+
+though one might or might not need to kill it, depending on your boredom
+threshold.
 
 
 ## Judges' remarks:
@@ -31,7 +37,7 @@ This program plays [Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 if given its own source as input, and allows to check if your garden
 is a [Garden of Eden](http://en.wikipedia.org/wiki/Garden_of_Eden_%28cellular_automaton%29), all in one source.
 
-If you have enough time to spare, put the plan of your garden in a text file,\
+If you have enough time to spare, put the plan of your garden in a text file,
 and run:
 
 ```sh
@@ -41,9 +47,10 @@ and run:
 
 ## Author's remarks:
 
-This program uses a well-known algorithm in order to display pi to
-fifteen decimal places. The source-layout itself demonstrates the importance of
-using the correct amount of whitespace in code and the clear superiority of spaces over tabs.
+This program uses a well-known algorithm in order to display pi to fifteen
+decimal places. The source-layout itself demonstrates the importance of using
+the correct amount of whitespace in code and the clear superiority of spaces
+over tabs.
 
 In order to see the main feature of the code, type:
 
@@ -55,6 +62,7 @@ and wait for about four seconds before using Ctrl-C (or whatever) to end the pro
 results are best viewed in a terminal window at least 60 characters
 high and wide. Alternatively, redirect the output to a separate file
 (killing when necessary).
+
 
 ### Overview
 
@@ -69,8 +77,8 @@ other feature of the program which can be demonstrated as follows:
 ```
 
 The program will first display the grid given in [3.dat](3.dat), and then three
-more grids (taking a few minutes to display the last). Waiting for any more grids will
-take a substantial amount of time. The final grid has been put into
+more grids (taking a few minutes to display the last). Waiting for any more
+grids will take a substantial amount of time. The final grid has been put into
 [evolve_to_3.dat](evolve_to_3.dat), and if you type
 
 ```sh
@@ -79,7 +87,7 @@ take a substantial amount of time. The final grid has been put into
 
 then the 3 will reappear after three time steps.
 
-As should now be clear, this use of program will attempt to evolve a given setup
+As should now be clear, this use of the program will attempt to evolve a given setup
 backwards in time according to the Life rules. The resulting grid is clearly not
 necessarily unique. The program will evolve backwards given *any* single command
 line option.
@@ -90,6 +98,7 @@ will stop if it is unable to find a grid that will evolve to the
 current layout correctly. This can be seen with the sample grid
 [t0_3.dat](t0_3.dat), which evolves backwards by only two time-steps.
 
+
 ### Input file format
 
 The input files must encode a square grid, where a space is a dead cell, and any
@@ -98,6 +107,7 @@ length, and end with a single newline character `\n` (ASCII 10), including the
 last line. When designing grids, it may help to type full-stops (dots) in place
 of spaces, and do a global replace afterwards. Any deviation from this format
 will cause errors in the output.
+
 
 ### Limitations
 
@@ -115,6 +125,7 @@ segfault), but changing the two `9802`s to `MAX_SIZE*MAX_SIZE+1` will
 solve this, although some reformatting of the code might have to be done to allow
 larger numbers.
 
+
 ### Compiler warnings/assumptions
 
 When compiled with the `-Wall -pedantic -ansi` options of gcc, some warnings
@@ -127,6 +138,7 @@ Since the program calculates ASCII character values for display, an ASCII based
 system is required to run it. Also, as mentioned above, any system that uses
 anything other than a plain `\n` to end a line will cause problems when reading
 in files.
+
 
 ### Obfuscation
 
@@ -151,7 +163,8 @@ Other obfuscations used are:
 - Needlessly recursive functions.
 - Use of bitwise-operations.
 - Storing a variable whose value could easily be found from another.
-- Use of `goto`s to emulate a for loop.
+- Use of `goto`s to emulate a `for` loop.
+
 
 ### Algorithm
 
@@ -177,20 +190,22 @@ Since this uses brute-force, it can be very slow. (In fact, the
 various obfuscations have, at least for the gcc compiler,
 caused a substantial slowdown.)
 
+
 ### Program layout
 
-The "calculation" of pi was chosen purely because algorithms to find
-pi are numerous, but the [Game of
-Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) is rarely (if ever?) used for
-this purpose. Also, separate digits made determining the layout somewhat easier.
+The "calculation" of pi was chosen purely because algorithms to find pi are
+numerous, but the [Game of
+Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) is rarely (if
+ever?) used for this purpose. Also, separate digits made determining the layout
+somewhat easier.
 
-Deriving the layout was the most complicated part of the program. As is clear from
-the final layout featuring pi, the grid was divided into sixteen squares,
-and layouts that would evolve to each of the nine digits required were
-found. (This used the three-by-five digit-layout embedded in, at first, a
-nine-by-nine grid, then in larger grids, until fifteen-by-fifteen was
-reached.) The fifteen-by-fifteen grids give enough blank cells around
-them that the digits will not collide when evolving.
+Deriving the layout was the most complicated part of the program. As is clear
+from the final layout featuring pi, the grid was divided into sixteen squares,
+and layouts that would evolve to each of the nine digits required were found.
+(This used the three-by-five digit-layout embedded in, at first, a nine-by-nine
+grid, then in larger grids, until fifteen-by-fifteen was reached.) The
+fifteen-by-fifteen grids give enough blank cells around them that the digits
+will not collide when evolving.
 
 However, this did not allow for sufficient characters to fit the code
 into. Therefore it was necessary to add some regions that would quickly die off
@@ -198,14 +213,14 @@ without expanding to collide with the digits' evolution.
 Groups of cells such as singletons, pairs, and larger groups like
 
 ```
-    * * * * * * * * * *
-     *****************
-    * * * * * * * * * *
+* * * * * * * * * *
+ *****************
+* * * * * * * * * *
 ```
 
 were useful in this regard.
 
-Other problems were given by keywords which need to be all in one
+Other problems were keywords which need to be all in one
 string, keywords requiring space after them, and
 multi-character tokens. Some of these problems were dealt with by
 using the `#define`s and `#include`s given in the build-script, as there
