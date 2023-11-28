@@ -90,7 +90,7 @@ Some instructions on how to make your own cube are in the included file
 
 Finally, you can watch it being solved:
 
-![Bedlam Cube being solved](solving-bedlam-cube.mp4)
+<video src="solving-bedlam-cube.mp4" data-canonical-src="solving-bedlam-cube.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px; min-height: 200px"></video>
 
 ...taken from <https://www.youtube.com/watch?v=a8s1AcYMLBc>.
 
