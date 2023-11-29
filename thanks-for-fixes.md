@@ -3386,6 +3386,8 @@ this for the few who might use Windows.
 We're not sure whether we want to thank Cody or not for this :-) and he's not
 sure if he wants to be thanked either :-) but we appreciate it nonetheless.
 
+Cody also added the [try.sh](2012/vik/try.sh) script.
+
 
 ## [2012/zeitak](2012/zeitak/zeitak.c) ([README.md](2012/zeitak/README.md]))
 

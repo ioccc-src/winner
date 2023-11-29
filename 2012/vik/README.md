@@ -6,6 +6,9 @@ make
 
 This entry requires [Zlib](https://www.zlib.net).
 
+There is an alternate version which might work for Windows. See [Alternate
+code](#alternate-code) section below.
+
 
 ### Bugs and (Mis)features:
 
@@ -50,39 +53,27 @@ To extract the embedded PNG:
 ./vik d encodedimg.png > restored.png
 ```
 
-There is an alternate version which might work for Windows. See Alternate code
-section below.
-
-The author stated that the program will crash if no argument is passed to the
-program or if invalid arguments or images of mismatching sizes or unsupported
-pixel formats though we note that your computer might also [halt and catch
-fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
-
-This is supposed to happen.  As is written in the
-[The Jargon File](http://catb.org/jargon/html/F/feature.html):
-
-```
-That's not a bug, that's a feature.
-```
-
 
 ### Try:
 
 ```sh
-./vik e ioccc.png chocolate.png > chocolate-in-ioccc.png
-./vik e chocolate.png ioccc.png > ioccc-in-chocolate.png
-./vik d chocolate-in-ioccc.png > restored-chocolate.png
-./vik d ioccc-in-chocolate.png > restored-ioccc.png
+./try.sh
 ```
 
 
 ## Alternate code:
 
-For those few who might use Windows, To compile:
+For those few who might use Windows this alternate code might work.
+
+
+### Alternate build:
 
 ```sh
 make alt
 ```
+
+
+### Alternate use:
 
 Use `vik.alt` as you would `vik` above.
 
@@ -113,6 +104,7 @@ one image into another, the width and height needs to be the same.
 
 The program only updates the `IDAT` and `IHDR` chunks of the source image. Any
 additional chunks are copied into the resulting image.
+
 
 ### Bonus Extractor:
 
@@ -146,15 +138,16 @@ or helper methods that can be confusing, I placed all functionality in the
 gives the benefit that all invocations of the function have the same parameters,
 `argv` and `argc`. This really helps readability, as a programmer doesn't need
 to remember several variable or function names. I also tried to reduce the
-number of keywords, and the program only has four for-loops followed by a single
-return statement. There is a little bit of use of the ternary (`?:`) operator,
+number of keywords, and the program only has four `for` loops followed by a single
+`return` statement. There is a little bit of use of the ternary (`?:`) operator,
 but this is really there to keep the program as simple as possible.
+
 
 ### Portability
 
 The program is portable to most platforms that have [zlib](https://www.zlib.net)
 available. The only system dependency is that the program relies on writing
-binary data to stdout.
+binary data to `stdout`.
 
 By default, Microsoft compilers adds carriage returns to new lines, and to
 compile the program on this platform, the following line can be added after
@@ -164,6 +157,9 @@ correctly:
 ```c
 _setmode(_fileno(stdout), 0x8000);
 ```
+
+NOTE: this is what the [Alternate code](#alternate-code) does.
+
 
 ### Limitations
 
