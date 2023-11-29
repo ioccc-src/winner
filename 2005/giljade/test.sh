@@ -44,13 +44,13 @@ elif [[ "$(grep -c '[^-]error' out.count)" -ne 0 ]]; then
     echo "FAIL: Error compiling one or more versions!" 1>&2
     echo "Try the following command to find out what problems occurred:" 1>&2
     echo 1>&2
-    echo "	grep -C5 -E '[^-]error' out.count" 1>&2
+    echo "	grep -C10 -E '[^-]error' out.count" 1>&2
     echo 1>&2
     echo "and feel free to report or fix it and make a GitHub pull request." 1>&2
     EXIT_CODE=2
 else
     # all good: every version could be compiled
-    echo "Found and compiled all 180 versions!" 1>&2
+    echo "Found and successfully compiled all 180 versions!" 1>&2
     # set EXIT_CODE to 0 even though it should be already
     EXIT_CODE=0
 fi
