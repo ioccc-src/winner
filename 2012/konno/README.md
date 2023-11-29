@@ -4,6 +4,9 @@
 make
 ```
 
+There is an unobfuscated version of this entry. See [Alternate
+code](#alternate-code) below.
+
 
 ## To use:
 
@@ -17,7 +20,7 @@ NOTE: N is an integer from 0 to 255.
 ### Try:
 
 ```sh
-./konno 30
+./try.sh
 ```
 
 
@@ -26,11 +29,16 @@ NOTE: N is an integer from 0 to 255.
 An alternate version of this entry, [konno.alt.c](konno.alt.c), is provided.
 This alternate code is an unobfuscated version of the winning code.
 
-To compile this alternate version:
+
+### Alternate build:
+
 
 ```sh
 make alt
 ```
+
+
+### Alternate use:
 
 Use `konno.alt` as you would `konno` above.
 
@@ -47,7 +55,9 @@ For extra credit, what are the minimal changes to convert it to
 
 ### Remarks
 
-This program outputs [elementary cellular automaton](http://mathworld.wolfram.com/ElementaryCellularAutomaton.html) patterns.
+This program outputs [elementary cellular
+automaton](http://mathworld.wolfram.com/ElementaryCellularAutomaton.html)
+patterns.
 
 Try:
 
@@ -60,6 +70,7 @@ Try:
 ```
 
 There are 256 (from 0 through 255) possible rules.
+
 
 ### Obfuscation
 
@@ -76,6 +87,7 @@ is an interesting operation. This isn't equal to
 ```
 
 operation. What is the operation doing?
+
 
 ### Limitation
 
