@@ -3372,6 +3372,11 @@ The fifth script, [try.sh](2012/kang/try.sh), runs a sequence of commands to
 show different languages and numbers.
 
 
+## [2012/konno](2012/konno/konno.c) ([README.md](2012/konno/README.md]))
+
+Cody added the [try.sh](2012/konno/try.sh) script.
+
+
 ## [2012/vik](2012/vik/vik.c) ([README.md](2012/vik/README.md]))
 
 Based on the author's description it should be able to get this entry to work
@@ -3380,6 +3385,17 @@ this for the few who might use Windows.
 
 We're not sure whether we want to thank Cody or not for this :-) and he's not
 sure if he wants to be thanked either :-) but we appreciate it nonetheless.
+
+Cody also added the [try.sh](2012/vik/try.sh) script.
+
+
+## [2012/zeitak](2012/zeitak/zeitak.c) ([README.md](2012/zeitak/README.md]))
+
+Cody added the `make test` rule and the [test.sh](2012/zeitak/test.sh) along
+with a number of files that will be correctly be flagged as incorrect (including
+a text file to show that it's not that it parses C but rather just matching
+pairs though that should be obvious) and also some that are correct including
+1984/anonymous (as the author explicitly mentioned it).
 
 
 # <a name="2013"></a>2013

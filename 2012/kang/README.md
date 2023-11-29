@@ -5,7 +5,7 @@ make
 ```
 
 There is alternate code which fixes some German at the expense of other German.
-See [Alternate code](#alternate-code) below.
+See [Alternate code](#alternate-code) below for the (fun) rationale here.
 
 
 ## To use:
@@ -35,8 +35,8 @@ This alternate code fixes the program that would throw off those who know German
 where the sound of 'V' is 'F' and so the program had the letter be 'F'. A
 problem, however, with changing it is that it breaks other words including in
 German. Thus there is the alternate version instead which fixes a problem for
-Germans that causes other problems for Germans so if you're German you'll just
-have to deal with it :-) It is, however, good as you can appreciate the entry
+Germans that causes problems for Germans so if you're German you'll just have to
+deal with it :-) It is, however, good as you might be able appreciate the entry
 even more.
 
 
@@ -107,10 +107,10 @@ It accepts a variety of spelt numbers:
 * It correctly handles `zero`.
 * Hyphen does not make a difference: `forty-two` and `forty two` are same.
   So does period or comma.
-* Cases do not make a difference either: `TWO`, `Two`, `two` are same.
-* `one` and `a` are interchangeable: `one hundred` and `a hundred` are same.
+* Cases do not make a difference either: `TWO`, `Two`, `two` are the same.
+* `one` and `a` are interchangeable: `one hundred` and `a hundred` are the same.
 * `and` is optional: `one hundred twenty-three` and `one hundred and twenty-three`
-  are same.
+  are the same.
 * It supports every non-negative integer less than 10<sup>15</sup>-1. It uses
   the small scale (i.e. American): `billion` is 10<sup>9</sup> and `trillion` is
   10<sup>12</sup>.
@@ -121,13 +121,14 @@ It does *not* accept some spelt numbers, which I found mostly irrelevant:
 * A bare `hundred`, `thousand` etc. do not work.
 * `one million million` does not work. Get used to `one trillion`!
 
+
 ### Requirements
 
 This program is quite portable, only requiring the following:
 
 * The signature `int main(int, int)` should be accepted by the linker. (Original
   version only).
-* `char` should be at least 8 bits long (as dictated by the standard), `int`
+* `char` should be at least 1 byte long (as dictated by the standard), `int`
   should be at least 32 bits long, `long long` should be at least 64 bits long.
 * Both the compiler and execution environment should use an ASCII-compatible
   character set and two's complement representation.
@@ -136,16 +137,18 @@ This program is quite portable, only requiring the following:
 
 [trustingtrust]: http://cm.bell-labs.com/who/ken/trust.html
 
-The design of the program explicitly allows for `EOF` which does not equal to -1
-(it has to be negative per the standard) and both signed and unsigned `char`,
-for example. Furthermore it is endian-independent.
+The design of the program explicitly allows for `EOF` even if it does not equal
+`-1` (it has to be negative per the standard but not necessarily `-1`) and both
+`signed char` and `unsigned char`, for example. Furthermore it is
+endian-independent.
+
 
 ### Obfuscations (SPOILERS!)
 
 Many obfuscations used are typical for standard IOCCC entries:
 
-* Two arguments from `main` function are reused as normal variables.
-* Every conditional has been replaced with `?:` ternary operator and `||`
+* Two arguments from `main()` function are reused as normal variables.
+* Every conditional has been replaced with the `?:` ternary operator and `||`
   short-circuiting operator.
 * It has exactly three nested `for` loops and nothing else.
 * Common two's complement tricks: `~-a` instead of `a-1`,
@@ -161,9 +164,9 @@ Many obfuscations used are typical for standard IOCCC entries:
 Other obfuscations are more subtle:
 
 * The string `"1+DIY/.K430x9G(kC["` is 18 bytes long, but actually 19 bytes
-  including the final null character are used.
+  including the final NUL character are used.
 * It internally represents numbers as hexadecimal. When the input is `two
-  hundred and three`, it actually writes 0x203 as hexadecimal.
+  hundred and three`, it actually writes `0x203` as hexadecimal.
 * Some variables (notably, `n`) have dual uses.
 * The magic number [42][hhgg] makes an appearance.
 * It has a long long numb-`main`-er within it!
@@ -174,24 +177,24 @@ But the most important obfuscation is the clever construction of lookup table.
 The program uses 11 different characters required for recognizing 22 lexemes:
 
 ```
-	zero        one         tw-         th(i)r-     fo(u)r-     fi-         six-
-	seven-      eigh-       nin-        ten         eleven      twelve
-	hundred(s)  thousand(s) million(s)  billion(s)  trillion(s)
-	a           and         -teen       -ty
+zero        one         tw-         th(i)r-     fo(u)r-     fi-         six-
+seven-      eigh-       nin-        ten         eleven      twelve
+hundred(s)  thousand(s) million(s)  billion(s)  trillion(s)
+a           and         -teen       -ty
 ```
 
 So that they are internally represented as like:
 
 ```
-	r        n        tw-      tr-      fr-      f-       s-
-	sn-      g-       nn-      tn       ln       twl
-	nr(s)    tsan(s)  lln(s)   blln(s)  trlln(s)
-	a        an       -tn      -ty
+r        n        tw-      tr-      fr-      f-       s-
+sn-      g-       nn-      tn       ln       twl
+nr(s)    tsan(s)  lln(s)   blln(s)  trlln(s)
+a        an       -tn      -ty
 ```
 
 The stemmer recognizes the longest matching prefix, so every lexeme can be
 recognized by at most three characters (e.g. `trl` instead of `trlln`). This is
-also handy for ignoring plurals. But that would make that the table does not fit
+also handy for ignoring plurals. But that would make it so that the table does not fit
 in the printable byte---11<sup>2</sup> is already almost 2<sup>7</sup>!
 
 The trick is to use octal; three characters (`a`, `b` and `g`) are interpreted
@@ -213,7 +216,7 @@ More spoilers can be found at <https://gist.github.com/lifthrasiir/3909337>
 ### Acknowledgement
 
 The cleaner (size-optimized) version of this program was originally published
-in my website in July 2011. Sun Park and others have reviewed it and let me
+in my website in July 2011. Sun Park and others have reviewed it and made me
 aware of possible improvements. I'd also like to thank Seo Sanghyeon for
 proof-reading remarks.
 
