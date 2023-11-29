@@ -4,6 +4,9 @@
 make
 ```
 
+There is an alternate version that is slightly deobfuscated. See [alternate
+code](#alternate-code) below.
+
 
 ## To use:
 
@@ -18,8 +21,7 @@ try [incorrect.c](incorrect.c) and the program itself.
 ### Try:
 
 ```sh
-./zeitak < zeitak.c
-./zeitak < incorrect.c
+make test
 ```
 
 NOTE: it prints an error and exits on the first nesting error so it will not
@@ -28,16 +30,18 @@ detect multiple issues!
 
 ## Alternate code:
 
-An alternate version of this entry, [zeitak.alt.c](zeitak.alt.c), is provided.
-The file [zeitak.alt.c](zeitak.alt.c) provides a version that has been slightly
-deobfuscated.  You may find reading that file helpful in your attempt
-to understand this extremely subtle entry.
+This version, [zeitak.alt.c](zeitak.alt.c), is a version that has been slightly
+deobfuscated.  You may find reading it helpful in your attempt to understand
+this extremely subtle entry.
 
-To compile this alternate version:
+
+### Alternate build:
 
 ```sh
 make alt
 ```
+
+### Alternate use:
 
 Use `zeitak.alt` as you would `zeitak` above.
 
@@ -55,7 +59,9 @@ just to understand 18 key characters of this code.
 
 ## Author's remarks:
 
+
 ### Nesting Errors Detector
+
 
 #### What does it do
 
@@ -69,7 +75,8 @@ If an error is detected, an error message will be printed. If the problem
 is a superfluous closing bracket, it will even print a few characters
 around it's position.
 
-* Make sure you view the source with 4 spaces tab width.
+\* Make sure you view the source with 4 spaces tab width.
+
 
 #### Features
 
@@ -99,7 +106,7 @@ even more limited source, that is:
 
 * Without any digits.
 * Without any character constants.
-* Without using functions from headers other than stdio.
+* Without using functions from headers other than `stdio`.
 * Without any control-flow keywords (not even the `?:` operator).
 * Without any arithmetic or logic operators!
 
@@ -107,7 +114,8 @@ So, what's left? Parenthesis, and lots of them, as looking at the source will
 reveal immediately. The main obfuscation is building the whole algorithm using
 only function calls, typecasts, array lookups and pointer operators.
 
-##### Additional obfuscations include:
+
+#### Additional obfuscations include:
 
 * Extensive reuse of identifiers: Macros share names with variables, inner
   curly braces scopes contain variables with names identical to those in the
@@ -117,16 +125,16 @@ only function calls, typecasts, array lookups and pointer operators.
 * Mostly one-letter identifiers.
 * Complex recursion: A function might call itself once, twice, or not at all.
 
+
 #### Compilation/Portability/Running Notes
 
 * The program requires `char` to be one byte and pointers to be
   at least two bytes long.
 
 * The program was tested on the following platforms:
-
-- Ubuntu 9.04 32-bit with GCC
-- Windows 7 32-bit with GCC
-- Windows 7 32-bit with OpenWatcom
+    - Ubuntu 9.04 32-bit with GCC
+    - Windows 7 32-bit with GCC
+    - Windows 7 32-bit with OpenWatcom
 
 
 ## Copyright and CC BY-SA 4.0 License:

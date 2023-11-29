@@ -113,7 +113,7 @@ ENTRY= zeitak
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA= incorrect.c
+DATA= incorrect.paren.c incorrect.brace.c incorrect.bracket.c
 TARGET= ${PROG}
 #
 ALT_OBJ= ${PROG}.alt.o
@@ -134,6 +134,10 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+test: test.sh
+	./$< || exit 1
+
 
 # alternative executable
 #
