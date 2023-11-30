@@ -3,7 +3,6 @@
 ## Section  0 - [History of the IOCCC](#faq0)
 - [0.0  - How did the IOCCC get started?](#faq0_0)
 - [0.1  - Why are some years missing IOCCC winners?](#faq0_1)
-- [0.2  - Why do some IOCCC winners receive the Grand Prize or Best of Show award?](#faq0_2)
 
 ## Section  1 - [Submitting entries to a new IOCCC](#faq1)
 - [1.0  - How do I submit my entry to the IOCCC?](#faq1_0)
@@ -18,6 +17,8 @@
 - [2.2  - Why don't you publish non-winners?](#faq2_2)
 - [2.3  - How much time does it take to judge the contest?](#faq2_3)
 - [2.4  - How many judging rounds do you have?](#faq2_4)
+- [2.5  - Why do some IOCCC winners receive the Grand Prize or Best of Show award?](#faq2_5)
+- [2.6  - How are IOCCC winners announced?](#faq2_6)
 
 ## Section  3 - [Compiling and running IOCCC winners](#faq3)
 - [3.0  - What Makefile are available to build or clean up IOCCC winners?](#faq3_0)
@@ -150,79 +151,30 @@ The pause during the 2021-2023 period was due to the IOCCC judges developing too
 make is much more likely for the IOCCC to be held in a yearly basis later on.
 
 
-### <a name="faq0_2"></a>FAQ 0.2: Why do some IOCCC winners receive the Grand Prize or Best of Show award?
-
-In some years, the IOCCC judges discover a truly amazing IOCCC winner that
-stands out among all of the other IOCCC entries received that year.
-For such an IOCCC winner, the IOCCC judges award a "Grand Prize"
-or "Best of Show award.
-
-In 1984-1987, the grand prize winners are:
-
-- [1984/mullender](years.html#1984_mullender)
-
-- [1985/shapiro](years.html#1985_shapiro)
-
-- [1986/wall](years.html#1986_wall)
-
-- [1987/lievaart](years.html#1987_lievaart)
-
-Starting from 1988, the entry we liked the most in that year is called
-"Best of Show". Here are the "Best of Show" entries:
-
-- [1988/applin](years.html#1988_applin)
-
-- [1989/jar.2](years.html#1989_jar.2)
-
-- [1990/theorem](years.html#1990_theorem)
-
-- [1991/brnstnd](years.html#1991_brnstnd)
-
-- [1992/vern](years.html#1992_vern)
-
-- [1996/august](years.html#1996_august)
-
-- [1998/banks](years.html#1998_banks)
-
-- [2000/jarijyrki](years.html#2000_jarijyrki)
-
-- [2020/carlini](years.html#2020_carlini)
-
-
-In 1993, 1994 and 1995 the judges were unable to select a clear overall
-winner. So to give a nod to the entry that had the highest approval ranking
-from the judges, they used the following awards:
-
-- [1993/rince](years.html#1993_rince) - Most Well Rounded
-
-- [1994/shapiro](years.html#1994_shapiro) - Most Well Rounded
-
-- [1995/leo](years.html#1995_leo) - Best Use of Obfuscation
-
-These could be considered the 'best entry' for those years with 1 or
-more other entries that came in close behind.
-
-
 ## <a name="faq1"></a>Section 1: Submitting entries to a new IOCCC
 
 
 ### <a name="faq1_0"></a><a name="submit"></a>FAQ 1.0: How do I submit my entry to the IOCCC?
 
-0) check to see of the IOCCC is open
+0. Verify that for submissions.
 
-Check the [status.json](https://www.ioccc.org/status.json) URL and
-check the [IOCCC news](https://www.ioccc.org/index.html#news) to
+Check the [status.json](status.json) URL and
+check the [IOCCC news](news.html#news) to
 see of the IOCCC is open.
 
-You may only submit your entries to the IOCCC when the IOCCC is **OPEN**.
+You may only register for the IOCCC
+and you may only submit your entries to the IOCCC when the IOCCC is **OPEN**.
 
-1) register for the IOCCC
+1. Register for the IOCCC
 
 ```
 XXX - instructions TBD - XXX
 ```
+Once you have been registered, you will receive an email message for how to
+prepare your entries for submission, and how to upload the compressed tarballs
+to our submission portal.
 
-2) obtain the latest mkiocccentry toolkit
+2. Obtain the latest mkiocccentry toolkit
 
 If you do not have an mkiocccentry tool directory:
 
@@ -240,13 +192,13 @@ git fetch
 git rebase
 ```
 
-3) Make the mkiocccentry toolkit
+3. Make the mkiocccentry toolkit
 
 ```sh
 make clobber all
 ```
 
-4) run the mkiocccentry tool to form your entry tarball
+4. Run the mkiocccentry tool to form your entry tarball
 
 ```sh
 ./mkiocccentry work_dir prog.c Makefile remarks.md [file ...]
@@ -270,7 +222,7 @@ remarks.md	Remarks about your entry in markdown format
 NOTE: It is *NOT* necessary to install the tools to use them as you can run
 the tools from the top of the _mkiocccentry repo_ directory just fine.
 
-5) upload your entry to the IOCCC submit server
+5. upload your entry to the IOCCC submit server
 
 ```
 XXX - instructions TBD - XXX
@@ -573,6 +525,70 @@ By tradition, we do not say how many judging rounds we have in a given IOCCC.
 We often report when the IOCCC judges start the 1st round, and
 when usually report when the IOCCC judges start near final judging rounds, and
 sometimes we also report when we enter what we believe is the final judging round, so you may guess that we have at least 3 rounds.  :-)  The actual number of rounds is certainly more than 3.
+
+
+### <a name="faq2_5"></a>FAQ 2.5: Why do some IOCCC winners receive the Grand Prize or Best of Show award?
+
+In some years, the IOCCC judges discover a truly amazing IOCCC winner that
+stands out among all of the other IOCCC entries received that year.
+For such an IOCCC winner, the IOCCC judges award a "Grand Prize"
+or "Best of Show award.
+
+In 1984-1987, the grand prize winners are:
+
+- [1984/mullender](years.html#1984_mullender)
+
+- [1985/shapiro](years.html#1985_shapiro)
+
+- [1986/wall](years.html#1986_wall)
+
+- [1987/lievaart](years.html#1987_lievaart)
+
+Starting from 1988, the entry we liked the most in that year is called
+"Best of Show". Here are the "Best of Show" entries:
+
+- [1988/applin](years.html#1988_applin)
+
+- [1989/jar.2](years.html#1989_jar.2)
+
+- [1990/theorem](years.html#1990_theorem)
+
+- [1991/brnstnd](years.html#1991_brnstnd)
+
+- [1992/vern](years.html#1992_vern)
+
+- [1996/august](years.html#1996_august)
+
+- [1998/banks](years.html#1998_banks)
+
+- [2000/jarijyrki](years.html#2000_jarijyrki)
+
+- [2020/carlini](years.html#2020_carlini)
+
+
+In 1993, 1994 and 1995 the judges were unable to select a clear overall
+winner. So to give a nod to the entry that had the highest approval ranking
+from the judges, they used the following awards:
+
+- [1993/rince](years.html#1993_rince) - Most Well Rounded
+
+- [1994/shapiro](years.html#1994_shapiro) - Most Well Rounded
+
+- [1995/leo](years.html#1995_leo) - Best Use of Obfuscation
+
+These could be considered the 'best entry' for those years with 1 or
+more other entries that came in close behind.
+
+
+### <a name="faq2_6"></a>FAQ 2.6: How are IOCCC winners announced?
+
+Once the [IOCCC](https://www.ioccc.org/index.html#enter) closes, the judges
+will select the [winning entries](https://www.ioccc.org/years.html) announce them
+on the [@IOCCC mastodon feed](https://fosstodon.org/@ioccc), notify the winners
+via email using their previously registered email address, and upload the
+winning code to the [winner repo](https://github.com/ioccc-src/winner)
+which in turn will cause them to be displayed on the [IOCCC winning entries
+page](https://www.ioccc.org/years.html).
 
 
 ## <a name="faq3"></a>Section 3: Compiling and running IOCCC winners
