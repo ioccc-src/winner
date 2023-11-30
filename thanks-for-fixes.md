@@ -3349,6 +3349,11 @@ Cody fixed a typo in the ruby script
 Cody restored the original code from the archive.
 
 
+## [2012/hamano](2012/hamano/hamano.c) ([README.md](2012/hamano/README.md]))
+
+Cody added the [try.sh](2012/hamano/try.sh) script.
+
+
 ## [2012/hou](2012/hou/hou.c) ([README.md](2012/hou/README.md]))
 
 Cody added the [try.sh](2012/hou/try.sh) script and restored the original [hint
