@@ -7,6 +7,18 @@ make tromp32		# On a 32-bit machine
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2012 tromp in bugs.md](/bugs.md#2012-tromp).
+
+
+
 ## To use:
 
 ```sh
@@ -27,9 +39,7 @@ cat binary-prog.Blc data | ./tromp
 ### Try:
 
 ```sh
-(cat hilbert.Blc; echo -n 1234) | ./tromp
-(cat oddindices.Blc; echo; cat primes.blc | ./tromp -b) | ./tromp
-cat primes.blc | ./tromp -b | ./primes.pl
+./try.sh
 ```
 
 
@@ -73,11 +83,11 @@ with [De Bruijn notation](https://en.wikipedia.org/wiki/De_Bruijn_notation) `\ \
 
 In the closely related
 [BLC8](https://tromp.github.io/cl/Binary_lambda_calculus.html#BLC8:_byte_sized_I.2FO)
-language, IO is byte oriented, translating between a stream of bytes and a list
+language, I/O is byte oriented, translating between a stream of bytes and a list
 of length-8 lists of [booleans](https://en.wikipedia.org/wiki/Boolean_algebra).
 
 The submission implements the universal machine in the most concise manner conceivable.
-It lacks `#defines` and `#includes`, and compiles to a (stripped) executable of
+It lacks `#define`s and `#include`s, and compiles to a (stripped) executable of
 under 6K in size.
 
 Without arguments, it runs in byte mode, using standard input and output.
@@ -95,13 +105,14 @@ The program uses the following exit codes:
 
 The size of the term space is fixed at compile time with `-DA`.
 
+
 ### A half byte `cat`
 
 The shortest (closed) lambda calculus term is `\x x (\ 1` in [De Bruijn
 notation](https://en.wikipedia.org/wiki/De_Bruijn_notation)) which is the
 identity function. When its encoding `0010` is fed into the universal machine,
-it will simply copy the input to the output.  (well, not that simply, since each
-byte is smashed to bits and rebuilt from scratch) Voila: a half byte cat:
+it will simply copy the input to the output (well, not that simply, since each
+byte is smashed to bits and rebuilt from scratch). Voila: a half byte cat:
 
 ```sh
 $ echo " Hello, world" | ./tromp
@@ -118,7 +129,6 @@ Hello, world
 ```
 
 
-
 ### Bad programs
 
 If the input doesn't start with a valid program, that is,
@@ -129,14 +139,13 @@ it will crash in some way. E.g. the following might dump core:
 echo -n "U" | ./tromp
 ```
 
-Furthermore, the interpreter requires the initial encoded lambda term to be closed,
-that is, variable `n` can only appear within at least `n` enclosing lambdas.
-For instance the term `\ 5` is not closed, causing the interpreter to crash when
-looking into a null-pointer environment:
+Furthermore, the interpreter requires the initial encoded lambda term to be
+closed, that is, variable `n` can only appear within at least `n` enclosing
+lambdas.  For instance, here the term `\ 5` is not closed, causing the
+interpreter to crash when looking into a null-pointer environment:
 
 ```sh
 echo ">Hello, world" | ./tromp
-
 ```
 
 will likely dump core.
@@ -199,7 +208,8 @@ Ni hao
 
 ### A prime number sieve
 
-Even shorter than the self-interpreter is this prime number sieve in 167 bits (under 21 bytes):
+Even shorter than the self-interpreter is this prime number sieve in 167 bits
+(under 21 bytes):
 
 ```
     000100011001100101000110100
@@ -329,10 +339,12 @@ Hello World!
 
 Curiously, the interpreter `bf.Blc` is the exact same size as `hw.bf`.
 
+
 ### A BLC assembler
 
 Writing BLC programs can be made slightly less painful with this parser that
 translates single-letter-variable lambda calculus into BLC:
+
 
 ```sh
 $ echo "\f\x f (f (f x))" > three
@@ -356,7 +368,7 @@ cat parse.Blc reverse | ./tromp > reverse.blc
 
 and change it to BLC8 with
 
-```
+```sh
 $ cat deflate.Blc reverse.blc | ./tromp > rev.Blc
 $ wc rev.Blc
     0 1 9 rev.Blc
@@ -438,6 +450,7 @@ out all multiples of the first prime, 2.
 Since my computer reaches swap hell before line 40, we can't see the next bit arriving,
 at least not in this symbolic reduction.
 
+
 ### Performance
 
 Performance is quite decent, and amazingly good for such a tiny implementation,
@@ -476,9 +489,10 @@ How does the program reach exit code 0?
 
 And how do any of those BLC programs work?
 
+
 ### Portability
 
-The program freely (without casting) converts between int and `int *`, causing
+The program freely (without casting) converts between `int` and `int *`, causing
 many warnings;
 
 ```
@@ -496,21 +510,26 @@ many warnings;
 Avoiding these would make the program substantially longer,
 and detract from its single minded focus on conciseness.
 
-It implicitly declares functions `read()`, `write()`, `exit()` and `calloc()`, the latter two incompatibly.
-32 bit and 64 bit executables are separate [Makefile](Makefile) targets, involving a change
-from `int` to `long` and from a hardcoded sizeof of 4 to 8.
+It implicitly declares functions `read(2)`, `write(2)`, `exit(3)` and
+`calloc(3)`, the latter two incompatibly.  32 bit and 64 bit executables are
+separate [Makefile](Makefile) targets, involving a change from `int` to `long`
+and from a hardcoded sizeof of 4 to 8.
 
-The program has been tested to work correctly on Linux/Solaris/MacOSX both in 32 and 64 bits.
+The program has been tested to work correctly on Linux/Solaris/MacOSX both in 32
+and 64 bits.
+
 
 ### How the program works
 
 See the file [how.md](how.md).
+
 
 ### Acknowledgements
 
 Christopher Hendrie, Bertram Felgenhauer, Alex Stangl, Seong-hoon Kang,
 and [Yusuke Endoh](/winners.html#Yusuke_Endoh) have contributed ideas and
 suggestions for improvement.
+
 
 ### References
 

@@ -2728,6 +2728,74 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
 # 2012
 
 
+## 2012 deckmyn
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2012/deckmyn/deckmyn.c](2012/deckmyn/deckmyn.c)
+### Information: [2012/deckmyn/README.md](2012/deckmyn/README.md)
+
+The author stated:
+
+```
+The memory locations of `argv` are used for various purposes. Therefore, the
+program name (default `deckmyn`) must be *at least 4 characters long*, including
+possibly the path. This, along with the ending `'\0'`, gives a minimum 5 bytes of
+useful memory space. Otherwise, the program may attempt to write outside the
+string.
+
+The code is quite sensitive. Errors in the input can lead to strange results.
+The code does not read beyond the end of the music input, but that is about the
+only error checking available. Any input that is not according to the rules in
+the deckmyn.md, may cause errors.
+
+The program has no special hardware limitations or requirements, other than 8bit
+`char` (`signed` or `unsigned`) and two's complement negatives.
+
+The limitations of using `char` as counters for e.g. the number of music staves
+are minor. 127 staves to a page is rather a lot.
+
+The file layout must be exactly the same as deckmyn.c though, only the locations
+of space (`" "`) may differ.
+
+Every element in the music is given by a string of *exactly* 3 characters. Any
+violation of this will result in the rest of the music being interpreted in some
+randomly wrong way. Notice that in a file, the newline is also a character!
+Therefore, when preparing music in a file, care should be taken that the last
+musical element of a line is only 2 characters!
+```
+
+
+
+The manual referred to is [here](2012/deckmyn/deckmyn.md).
+
+
+## 2012 tromp
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2012/tromp/tromp.c](2012/tromp/tromp.c)
+### Information: [2012/tromp/README.md](2012/tromp/README.md)
+
+The author stated:
+
+```
+If the input doesn't start with a valid program, that is,
+if the interpreter reaches end-of-file during program parsing,
+it will crash in some way. E.g. the following might dump core:
+
+    echo -n "U" | ./tromp
+
+Furthermore, the interpreter requires the initial encoded lambda term to be closed,
+that is, variable n can only appear within at least 'n' enclosing lambdas.
+For instance, here the term '\ 5' is not closed, causing the interpreter to crash when
+looking into a null-pointer environment:
+
+    echo ">Hello, world" | ./tromp
+
+will likely dump core.
+
+```
+
+
 ## 2012 vik
 
 ### STATUS: INABIAF - please **DO NOT** fix

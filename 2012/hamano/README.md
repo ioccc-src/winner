@@ -15,23 +15,21 @@ make
 ### Try:
 
 ```sh
-./hamano < README.md > hint.pdf
+./try.sh
 ```
 
-You can read `hint.pdf` with a PDF reader like `acroread hint.pdf` or `evince
-hint.pdf`. With macOS you can do `open hint.pdf` which by default will open
-`Preview.app`. You may of course use your pdf view to open the file directly
-instead.
+The script will generate a number of PDF files and it will suggest you look at
+them as well. You can read `hint.pdf` with a PDF reader like `acroread hint.pdf`
+or `evince hint.pdf`. With macOS you can do `open hint.pdf` which by default
+will open `Preview.app`. You may of course use your pdf viewer to open the file
+directly instead.
 
+One of the PDF files generated is this README.md file as a PDF, obfuscated, and
+the PDF file will then be compiled as C (itself!) and executed so that it shows
+README.md!
 
-To deobfuscate:
-
-```sh
-cc -xc hint.pdf -o hint
-./hint
-```
-
-Of course, You can also obfuscate C code:
+Another PDF file generated is obfuscated C code. Once this is done it will
+compile the PDF as if it was C and then run it like:
 
 ```sh
 echo 'int main(){puts("Hello World!");}' | ./hamano > hello.pdf
@@ -53,7 +51,8 @@ is the font?), and the submitted entry created PDF files that left Ghostscript
 confused.
 
 The results can be viewed with Acrobat Reader,
-[evince](http://en.wikipedia.org/wiki/Evince) and Apple's Preview.
+[evince](http://en.wikipedia.org/wiki/Evince) and Apple's
+[Preview](https://en.wikipedia.org/wiki/Preview_(macOS)).
 
 The updated version can also be viewed using Ghostscript.
 
@@ -63,7 +62,9 @@ you might draw is too elementary.  :-)
 
 So what do those flags really mean?
 
-The [Dancing men algorithm][1] might be useful.
+The [Dancing men
+algorithm](http://en.wikipedia.org/wiki/The_Adventure_of_the_Dancing_Men) might
+be useful.
 
 Don't forget to take a look at the generated PDF. Perhaps you might even want
 to compile the output with a C compiler.  When you run it, what does it

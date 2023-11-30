@@ -10,7 +10,7 @@ continuations (see the 3rd reference for details).
 
 The term space holds [lambda
 calculus](https://en.wikipedia.org/wiki/Lambda_calculus) terms in the following
-format. 0 denotes some form of IO; the only four occurrences are at:
+format. 0 denotes some form of I/O; the only four occurrences are at:
 
 ```
   C=13: recognizes end of a byte
@@ -19,10 +19,10 @@ format. 0 denotes some form of IO; the only four occurrences are at:
   C=end: input list, expanded lazily
 ```
 
-`1` denotes a variable, with next entry its de [Bruijn
+`1` denotes a variable, with the next entry its [de Bruijn
 index](https://en.wikipedia.org/wiki/De_Bruijn_index).
 
-`2` denotes application with next entry the size of the term being applied.
+`2` denotes application with the next entry the size of the term being applied.
 
 `3` denotes lambda abstraction.
 
@@ -31,11 +31,11 @@ A closure consists of the following items:
 
 0. pointer to the next closure (as part of an environment), or next record on
 free list.
-1. reference count
-2. pointer to environment
-3. lambda term (index in term space)
+1. reference count.
+2. pointer to environment.
+3. lambda term (index in term space).
 
-Here's what each variable do:
+Here's what each variable does:
 
 ```
 L	Lambda term space

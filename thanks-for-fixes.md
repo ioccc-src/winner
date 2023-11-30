@@ -3327,6 +3327,11 @@ Cody added explicit linking of libm (`-lm`) as not all systems do this
 implicitly (linux doesn't seem to but macOS does).
 
 
+## [2012/deckmyn](2012/deckmyn/deckmyn.c) ([README.md](2012/deckmyn/README.md]))
+
+Cody added the [try.sh](2012/deckmyn/try.sh) script.
+
+
 ## [2012/endoh1](2012/endoh1/endoh1.c) ([README.md](2012/endoh1/README.md))
 
 Cody added explicit linking of libm (`-lm`) as not all systems do this
@@ -3342,6 +3347,11 @@ Cody fixed a typo in the ruby script
 ## [2012/grothe](2012/grothe/grothe.c) ([README.md](2012/grothe/README.md))
 
 Cody restored the original code from the archive.
+
+
+## [2012/hamano](2012/hamano/hamano.c) ([README.md](2012/hamano/README.md]))
+
+Cody added the [try.sh](2012/hamano/try.sh) script.
 
 
 ## [2012/hou](2012/hou/hou.c) ([README.md](2012/hou/README.md]))
@@ -3384,6 +3394,11 @@ show different languages and numbers.
 ## [2012/konno](2012/konno/konno.c) ([README.md](2012/konno/README.md]))
 
 Cody added the [try.sh](2012/konno/try.sh) script.
+
+
+## [2012/tromp](2012/tromp/tromp.c) ([README.md](2012/tromp/README.md))
+
+Cody added the [try.sh](2012/tromp/try.sh) script.
 
 
 ## [2012/vik](2012/vik/vik.c) ([README.md](2012/vik/README.md]))
