@@ -3859,6 +3859,14 @@ compile or not work in some way.
 Where useful he added some notes to the Makefiles during compilation to let one
 know of certain problems or features that matter.
 
+Also, rather than check `$(CC)` for exact matches of `gcc` or `clang` it now is
+that if `$(CC)` contains `gcc` or contains `clang` then the specific actions
+related to the specific compiler will be done. This is useful because it's not
+guaranteed that the compiler names for `gcc` or `clang` will be exactly that; in
+macOS for instance it can happen that they are in fact different names
+especially if one installs them from something like
+[MacPorts](https://www.macports.org) or possibly [Homebrew](https://brew.sh).
+
 There were some other fixes as well including mass typo fixes in the Makefiles
 (though that usually does not mean it is worth a thank you note it might be
 worth noting in this case). Other times it was enabling or disabling the
