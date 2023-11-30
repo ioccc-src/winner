@@ -1,15 +1,15 @@
 # FAQ Table of Contents
 
-## Section  0 - [History of the IOCCC](#faq0)
-- [0.0  - How did the IOCCC get started?](#faq0_0)
-- [0.1  - Why are some years missing IOCCC winners?](#faq0_1)
+## Section  0 - [Submitting entries to a new IOCCC](#faq0)
+- [0.0  - How do I submit my entry to the IOCCC?](#faq0_0)
+- [0.1  - What types of entries have been over-submitted to the IOCCC?](#faq0_1)
+- [0.2  - What should I put in my entry's Makefile?](#faq0_2)
+- [0.3  - May I use a different source or compiled filename than prog.c or prog?](#faq0_3)
+- [0.4  - What platform should I assume for my entry?](#faq0_4)
 
-## Section  1 - [Submitting entries to a new IOCCC](#faq1)
-- [1.0  - How do I submit my entry to the IOCCC?](#faq1_0)
-- [1.1  - What types of entries have been over-submitted to the IOCCC?](#faq1_1)
-- [1.2  - What should I put in my entry's Makefile?](#faq1_2)
-- [1.3  - May I use a different source or compiled filename than prog.c or prog?](#faq1_3)
-- [1.4  - What platform should I assume for my entry?](#faq1_4)
+## Section  1 - [History of the IOCCC](#faq1)
+- [1.0  - How did the IOCCC get started?](#faq1_0)
+- [1.1  - Why are some years missing IOCCC winners?](#faq1_1)
 
 ## Section  2 - [IOCCC Judging process](#faq2)
 - [2.0  - How many entries do the judges receive for a given IOCCC?](#faq2_0)
@@ -33,8 +33,7 @@
 - [3.9  - How do I compile an IOCCC winner that requires (n)curses?](#faq3_9)
 - [3.10 - How do I compile and use on macOS, an IOCCC winner that requires sound?](#faq3_10)
 - [3.11 - Why do Makefiles use -Weverything with clang?](#faq3_11)
-- [3.12 - How do I find out how to send interrupt/EOF etc. for entries that
-require it?](#faq3_12)
+- [3.12 - How do I find out how to send interrupt/EOF etc. for entries that require it?](#faq3_12)
 
 ## Section  4 - [Changes made to IOCCC winners](#faq4)
 - [4.0  - Why are some winning author remarks incongruent with the winning IOCCC code?](#faq4_0)
@@ -59,102 +58,10 @@ other inconsistencies with the original entry?](#faq4_3)
 # The IOCCC FAQ
 
 
-## <a name="faq0"></a>Section 0: History of the IOCCC
+## <a name="faq0"></a>Section 0: Submitting entries to a new IOCCC
 
 
-### <a name="faq0_0"></a>FAQ 0.0: How did the IOCCC get started?
-
-One day (1984 March 23 to be exact), Larry Bassel and I (Landon Curt
-Noll) were working for National Semiconductor's Genix porting group, we
-were both in our offices trying to fix some very broken code.
-
-Larry had been trying to fix a bug in the classic Bourne shell (C code #defined
-to death to sort of look like Algol) and I had been working on the finger
-program from early BSD (a bug ridden finger implementation to be sure).
-
-We happened to both wander (at the same time) out to the hallway
-in Building 7C to clear our heads.
-
-We began to compare notes: '_You won't believe the code I am trying to fix_'.
-
-And: '_Well you cannot imagine the brain damage level of the code I'm trying to
-fix'_.
-
-As well as: '_It's more than bad code, the author really had to try to make it
-this bad!_
-
-After a few minutes we wandered back into my office where I posted a
-[flame to
-net.lang.c](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=789%40nsc.UUCP&rnum=3&filter=0")
-inviting people to try and out obfuscate the UN\*X source code we had just been working on.
-
-BTW: I (Landon Curt Noll) had to post this [typo
-correction](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=795%40nsc.UUCP&rnum=10&filter=0).
-Thus began the tradition of putting typos in the contest rules and guidelines
-... to make them more obfuscated of course! :-)
-
-BTW: This posting was made back in the days when AT&amp;T was the evil giant.
-Now, Microsoft makes AT&amp;T look mild and kind in comparison. :-( (IMHO) ).
-
-BTW: See the story about the '[Bill Gates](/1993/mills/README.md)' award. :-)
-
-OK, back to the story.
-
-We (Larry and I) received a number of entries by email.
-When we began to receive messages from outside of the US, Larry and I
-decided to include International in the name.
-
-The
-[1st IOCCC winners](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=837%40nsc.UUCP&rnum=2&filter=0)
-were posted on 17 April 1984.
-
-There were 4 winners in 1984:
-
-1. [(dis)honorable mention](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=842%40nsc.UUCP&rnum=8&filter=0)
-2.  [3rd place](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=843%40nsc.UUCP&rnum=7&filter=0)
-3. [2nd place](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=844%40nsc.UUCP&rnum=6&filter=0)
-4. [1st place](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=845%40nsc.UUCP&rnum=5&filter=0)
-
-BTW: The (dis)honorable mention wished to remain anonymous.
-While many have asked who it was, we have continued to follow the
-author's wish to remain anonymous.
-
-A few years ago, we asked the author if they still wanted to remain anonymous.
-They said: '_Yes, I want to keep my anonymity.  But you can tell them that I am well known for my connection to the
-C language_'. It was not until 2001 that another [anonymous
-entry](/years.html#2001_anonymous) received an award.
-
-BTW: The [1984 winner](/years.html#1984_mullender) remains one of my (Landon Curt Noll) all time favorites.
-
-The name used in the posting of the [1st IOCCC
-winner](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=837%40nsc.UUCP&rnum=2&filter=0)
-posting was **I**nternational **O**bfuscated **C** **C**ode **C**ontest or
-**IOCCC** for short.
-
-The posting said '_1st annual_', so in 1985 we held the [2nd IOCCC contest](/years.html#1985)
-and the tradition continues as the longest running contest on the Internet.
-
-P.S. Part of the inspiration for making the IOCCC a contest goes to the
-[Bulwer-Lytton fiction contest](http://www.bulwer-lytton.com/).
-
-P^2.S. See the [overall README](/all/README) for more details.
-
-
-### <a name="faq0_1"></a>FAQ 0.1: Why are some years missing IOCCC winners?
-
-Some years, such as 1997, 1999, 2002-2003, 2007-2010, 2016-2017, 2021-2023, no IOCCC was held.
-
-While we try to hold the IOCCC every year, sometime the other demands on the IOCCC judges
-so not permit us to hold a new IOCCC.
-
-The pause during the 2021-2023 period was due to the IOCCC judges developing tools to
-make is much more likely for the IOCCC to be held in a yearly basis later on.
-
-
-## <a name="faq1"></a>Section 1: Submitting entries to a new IOCCC
-
-
-### <a name="faq1_0"></a><a name="submit"></a>FAQ 1.0: How do I submit my entry to the IOCCC?
+### <a name="faq0_0"></a><a name="submit"></a>FAQ 0.0: How do I submit my entry to the IOCCC?
 
 0. Verify that for submissions.
 
@@ -229,7 +136,7 @@ XXX - instructions TBD - XXX
 ```
 
 
-### <a name="faq1_1"></a>FAQ 1.1: What types of entries have been over-submitted to the IOCCC?
+### <a name="faq0_1"></a>FAQ 0.1: What types of entries have been over-submitted to the IOCCC?
 
 There are types of entries that show up over and over again.  The
 IOCCC judges, and we suspect the public that enjoy viewing the
@@ -367,7 +274,7 @@ on an 'overused theme' and why the judges should not simply toss it out as being
 boring.
 
 
-### <a name="faq1_2"></a>FAQ 1.2: What should I put in my entry's Makefile?
+### <a name="faq0_2"></a>FAQ 0.2: What should I put in my entry's Makefile?
 
 We recommend starting with the [sample
 Makefile](https://github.com/ioccc-src/mkiocccentry/blob/master/Makefile.example)
@@ -394,7 +301,7 @@ make compatible](https://www.gnu.org/software/make/) `make(1)`
 command that is compatible with GNU Make version 3.81.
 
 
-### <a name="faq1_3"></a>FAQ 1.3: May I use a different source or compiled filename than prog.c or prog?
+### <a name="faq0_3"></a>FAQ 0.3: May I use a different source or compiled filename than prog.c or prog?
 
 While your entry's source filename, as submitted, must be `prog.c`, your entry's `Makefile`
 may copy `prog.c` to a different filename as part of the compiling/building process.  For example:
@@ -426,7 +333,7 @@ different_name: prog
 ```
 
 
-### <a name="faq1_4"></a>FAQ 1.4: What platform should I assume for my entry?
+### <a name="faq0_4"></a>FAQ 0.4: What platform should I assume for my entry?
 
 Your entry must compile with GCC and run under at least one flavor of UNIX (e.g.
 Linux or Solaris). To improve chances to win, it should work under both BSD and
@@ -435,6 +342,98 @@ If it can compile and run on Windows and/or Mac  (see
 [2000/thadgavin](/years.html#2000_thadgavin) for one example, amongst others),
 even better. Being able to compile with other compilers like clang is also a
 good thing.
+
+
+## <a name="faq1"></a>Section 1: History of the IOCCC
+
+
+### <a name="faq1_0"></a>FAQ 1.0: How did the IOCCC get started?
+
+One day (1984 March 23 to be exact), Larry Bassel and I (Landon Curt
+Noll) were working for National Semiconductor's Genix porting group, we
+were both in our offices trying to fix some very broken code.
+
+Larry had been trying to fix a bug in the classic Bourne shell (C code #defined
+to death to sort of look like Algol) and I had been working on the finger
+program from early BSD (a bug ridden finger implementation to be sure).
+
+We happened to both wander (at the same time) out to the hallway
+in Building 7C to clear our heads.
+
+We began to compare notes: '_You won't believe the code I am trying to fix_'.
+
+And: '_Well you cannot imagine the brain damage level of the code I'm trying to
+fix'_.
+
+As well as: '_It's more than bad code, the author really had to try to make it
+this bad!_
+
+After a few minutes we wandered back into my office where I posted a
+[flame to
+net.lang.c](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=789%40nsc.UUCP&rnum=3&filter=0")
+inviting people to try and out obfuscate the UN\*X source code we had just been working on.
+
+BTW: I (Landon Curt Noll) had to post this [typo
+correction](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=795%40nsc.UUCP&rnum=10&filter=0).
+Thus began the tradition of putting typos in the contest rules and guidelines
+... to make them more obfuscated of course! :-)
+
+BTW: This posting was made back in the days when AT&amp;T was the evil giant.
+Now, Microsoft makes AT&amp;T look mild and kind in comparison. :-( (IMHO) ).
+
+BTW: See the story about the '[Bill Gates](/1993/mills/README.md)' award. :-)
+
+OK, back to the story.
+
+We (Larry and I) received a number of entries by email.
+When we began to receive messages from outside of the US, Larry and I
+decided to include International in the name.
+
+The
+[1st IOCCC winners](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=837%40nsc.UUCP&rnum=2&filter=0)
+were posted on 17 April 1984.
+
+There were 4 winners in 1984:
+
+1. [(dis)honorable mention](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=842%40nsc.UUCP&rnum=8&filter=0)
+2.  [3rd place](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=843%40nsc.UUCP&rnum=7&filter=0)
+3. [2nd place](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=844%40nsc.UUCP&rnum=6&filter=0)
+4. [1st place](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=845%40nsc.UUCP&rnum=5&filter=0)
+
+BTW: The (dis)honorable mention wished to remain anonymous.
+While many have asked who it was, we have continued to follow the
+author's wish to remain anonymous.
+
+A few years ago, we asked the author if they still wanted to remain anonymous.
+They said: '_Yes, I want to keep my anonymity.  But you can tell them that I am well known for my connection to the
+C language_'. It was not until 2001 that another [anonymous
+entry](/years.html#2001_anonymous) received an award.
+
+BTW: The [1984 winner](/years.html#1984_mullender) remains one of my (Landon Curt Noll) all time favorites.
+
+The name used in the posting of the [1st IOCCC
+winner](http://groups.google.com/groups?q=Obfuscated&hl=en&lr=&ie=UTF-8&as_drrb=b&as_mind=1&as_minm=1&as_miny=1983&as_maxd=18&as_maxm=4&as_maxy=1984&selm=837%40nsc.UUCP&rnum=2&filter=0)
+posting was **I**nternational **O**bfuscated **C** **C**ode **C**ontest or
+**IOCCC** for short.
+
+The posting said '_1st annual_', so in 1985 we held the [2nd IOCCC contest](/years.html#1985)
+and the tradition continues as the longest running contest on the Internet.
+
+P.S. Part of the inspiration for making the IOCCC a contest goes to the
+[Bulwer-Lytton fiction contest](http://www.bulwer-lytton.com/).
+
+P^2.S. See the [overall README](/all/README) for more details.
+
+
+### <a name="faq1_1"></a>FAQ 1.1: Why are some years missing IOCCC winners?
+
+Some years, such as 1997, 1999, 2002-2003, 2007-2010, 2016-2017, 2021-2023, no IOCCC was held.
+
+While we try to hold the IOCCC every year, sometime the other demands on the IOCCC judges
+so not permit us to hold a new IOCCC.
+
+The pause during the 2021-2023 period was due to the IOCCC judges developing tools to
+make is much more likely for the IOCCC to be held in a yearly basis later on.
 
 
 ## <a name="faq2"></a>Section 2: IOCCC Judging process
@@ -1333,7 +1332,8 @@ winner"</a> for details.
 
 We do not 'maintain' the contest winners as such. The code is made available on an 'AS
 IS' basis. If you have a FIX for an entry, we suggest that you submit your fixes in a [GitHub pull
-request](https://github.com/ioccc-src/temp-test-ioccc/pulls) as we welcome pull requests that have a minimal impact on the entry while improving the portbility, functionality, and/or addressing known problems.
+request](https://github.com/ioccc-src/temp-test-ioccc/pulls) as we welcome pull requests that have a
+minimal impact on the entry while improving the portability, functionality, and/or addressing known problems.
 
 If you do submit a pull request, we ask that each pull request address just one IOCCC winner at a time.
 
