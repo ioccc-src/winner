@@ -34,6 +34,7 @@
 - [3.10 - How do I compile and use on macOS, an IOCCC winner that requires sound?](#faq3_10)
 - [3.11 - Why do Makefiles use -Weverything with clang?](#faq3_11)
 - [3.12 - How do I find out how to send interrupt/EOF etc. for entries that require it?](#faq3_12)
+- [3.13 - Why does an IOCCC winner fail to compile or or fail run?](#faq3_13)
 
 ## Section  4 - [Changes made to IOCCC winners](#faq4)
 - [4.0  - Why are some winning author remarks incongruent with the winning IOCCC code?](#faq4_0)
@@ -43,9 +44,12 @@
 other inconsistencies with the original entry?](#faq4_3)
 - [4.4  - What is the meaning of the file ending in .orig.c in IOCCC winners?](#faq4_4)
 
-## Section  5 - [Updating or correcting IOCCC web site content](#faq5)
-- [5.0  - Why does an IOCCC winner fail to compile or or fail run?](#faq5_0)
+## Section  5 - [Helping the IOCCC](#faq5)
+- [5.0  - How may I help the IOCCC?](#faq5_0)
 - [5.1  - How do I report a bug in an IOCCC winner?](#faq5_1)
+- [5.2  - How may I submit a fix to an IOCCC winner?](#faq5_2)
+- [5.3  - How may I report an IOCCC web site problem?](#faq5_3)
+- [5.4  - How may I submit a fix to an IOCCC web site?](#faq5_4)
 
 ## Section  6 - [Miscellaneous IOCCC](#faq6)
 - [6.0  - How did an entry breaks the size rule 2, win the IOCCC?](#faq6_0)
@@ -1095,6 +1099,44 @@ reason it's not you might have to do something else including just piping it to
 just `grep intr` or whatever.
 
 
+### <a name="faq3_13"></a>FAQ 3.13: Why does an IOCCC winner fail to compile or or fail run?
+
+What may have worked years ago may not work well or work at all today.
+Please note that the IOCCC judges do **NOT** support IOCCC winners.
+Nevertheless, there may be a number of reasons why an IOCCC winner
+may fail to compile or run well or fail to run on your system.
+
+In some cases the American National Standards Institute's ANSI C
+committee has damaged the C standard to the point where perfectly
+valid C programs no longer compile with modern compilers.  As such
+some old IOCCC winners cannot no longer be compiled with modern compilers.
+
+In some cases programs that may have worked on an old computer system
+longer work on modern computers.  Some IOCCC winners do not work well,
+or no longer work on modern computers or modern operating systems.
+Some IOCCC winners fail to compile under clang, or gcc.
+Some IOCCC winners require operating system services that
+may not be present on your system.
+
+In some cases the IOCCC winner simply has bugs or (Mis)features.
+
+If you are having problems compiling or running an IOCCC winner,
+we recommend that you look in [bugs.md](/bugs.md) to see if
+there is a known bugs or (Mis)feature.  In some cases what you
+may think is a bug is actually an feature that was intentionally
+written by the authors.  In some cases the problem is well
+known and we are looking for someone to attempt to fix it.
+
+In some cases there is an alternate version of the IOCCC winner
+that you may wish to try.
+
+It also possible that you may have discovered a bug in an IOCCC
+winner.  If so, you are invited to try an fix the IOCCC winner and
+submit that fix by way of a [GitHub pull
+request](https://github.com/ioccc-src/temp-test-ioccc/pulls).
+Please see [FAQ 5.2](#faq5_2) for how to submit a fix to an IOCCC winner.
+
+
 
 ## <a name="faq4"></a>Section 4: Changes made to IOCCC winners
 
@@ -1289,43 +1331,25 @@ we can find.
 ## <a name="faq5"></a>Section 5: Updating or correcting IOCCC web site content
 
 
-### <a name="faq5_0"></a>FAQ 5.0: Why does an IOCCC winner fail to compile or or fail run?
+### <a name="faq5_0"></a><a name="how_to_help"></a>FAQ 5.0: How may I help the IOCCC?
 
-What may have worked years ago may not work well or work at all today.
-Please note that the IOCCC judges do **NOT** support IOCCC winners.
-Nevertheless, there may be a number of reasons why an IOCCC winner
-may fail to compile or run well or fail to run on your system.
+### We welcome your help in fixing IOCCC winners
 
-In some cases the American National Standards Institute's ANSI C
-committee has damaged the C standard to the point where perfectly
-valid C programs no longer compile with modern compilers.  As such
-some old IOCCC winners cannot no longer be compiled with modern compilers.
+The [known bugs](bugs.md) file, order by IOCCC years, contains a
+list of known bugs & (mis)features.  If you are looking for an IOCCC winner
+to try and fix, this file is a good place to start.
 
-In some cases programs that may have worked on an old computer system
-longer work on modern computers.  Some IOCCC winners do not work well,
-or no longer work on modern computers or modern operating systems.
-Some IOCCC winners fail to compile under clang, or gcc.
-Some IOCCC winners require operating system services that
-may not be present on your system.
+See [FAQ 5.2](#faq5_2) for information on how to submit a fix to
+an IOCCC winner.  Before you consider trying to fix an IOCCC winner,
+please check the [known bugs](bugs.md) file for the IOCCC winner
+in question.  Note that in several cases what you may have discovered,
+while a (mis)feature is not considered a bug and should **not be fixed**.
+In cases where the bug is known, the entry's [known bugs](bugs.md) file
+section may offer you important fixing clues.
 
-In some cases the IOCCC winner simply has bugs or (Mis)features.
+### We welcome your help on fixing the IOCCC web site
 
-If you are having problems compiling or running an IOCCC winner,
-we recommend that you look in [bugs.md](/bugs.md) to see if
-there is a known bugs or (Mis)feature.  In some cases what you
-may think is a bug is actually an feature that was intentionally
-written by the authors.  In some cases the problem is well
-known and we are looking for someone to attempt to fix it.
-
-In some cases there is an alternate version of the IOCCC winner
-that you may wish to try.
-
-It also possible that you may have discovered a bug in an IOCCC
-winner.  If so, you are invited to try an fix the IOCCC winner and
-submit that fix by way of a [GitHub pull
-request](https://github.com/ioccc-src/temp-test-ioccc/pulls).  Please
-see the FAQ 5.1 <a href="#pullrequst">"How do I report a bug in an IOCCC
-winner"</a> for details.
+XXX
 
 
 ### <a name="faq5_1"></a><a name="pullrequst"></a>FAQ 5.1: How do I report a bug in an IOCCC winner?
@@ -1344,9 +1368,118 @@ fix. If it is accepted we'll be happy to credit you in the
 [thanks](/thanks-for-fixes.md) file. If you're a previous winner we will happily
 link to your entries; if you're not we can link to your website if you wish.
 
-More generally please see the file [how-to-help.md](/how-to-help.md). Note
-that this file is not a tutorial on how to fix X, Y and Z problems but rather
-what to do to get the fix in.
+See [FAQ 5.2](#faq5_2) for information on how to submit a fix to an IOCCC entry.
+
+
+### <a name="faq5_2"></a><a name="fix_a_winner"></a>FAQ 5.2: How may I submit a fix to an IOCCC winner?
+
+If you see a problem with an IOCCC entry, first check the [known bugs](bugs.md)
+file.  In some cases what you might think of as a bug is instead a known
+feature.  In some cases the bug is known, but no fix has ever been submitted.
+In other cases you may have found a new problem.
+
+If you do have a fix, and the [known bugs](bugs.md) file **does not recommend
+against fixing it**, then please consider opening a [GitHub pull
+request](https://github.com/ioccc-src/winner/pulls) against the master
+[branch](https://github.com/ioccc-src/winner/branches) of the [ioccc-src/winner
+repo](https://github.com/ioccc-src/winner) repo.
+
+BTW: A **problem** is not limited to the code itself.  Fixing typos in files
+such as "_README.md_" files, fixing issues in a "_Makefile_", or otherwise
+correcting an IOCCC winner is **VERY MUCH WELCOME**!  Please use the same
+[GitHub pull request](https://github.com/ioccc-src/winner/pulls) process against
+the master [branch](https://github.com/ioccc-src/winner/branches) of the
+[ioccc-src/winner repo](https://github.com/ioccc-src/winner) repo.
+
+NOTE: some of the issues in the [bugs.md](/bugs.md) file includes just missing
+files and we welcome these too!
+
+**Please also help us fix typos and / or otherwise improve the write-up** of how
+IOCCC winning entries are presented!
+
+In any event we will happily add you to the
+[thanks-for-fixes.md](/thanks-for-fixes.md) file for your help!
+
+And of course, an IOCCC winner may update their own entries
+(metadata as well as source code and any extra files) by opening a
+[GitHub pull request](https://github.com/ioccc-src/winner/pulls)
+against the master [branch](https://github.com/ioccc-src/winner/branches)
+of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner) repo.
+
+Note that we're much more inclined to accept an author's fixes but the judges
+have the final say in the matter.
+
+
+### <a name="faq5_3"></a>FAQ 5.3: How may I report an IOCCC web site problem?
+
+If you discover a problem with the IOCCC web site that is related
+to a particular IOCCC winner, please see [FAQ 5.1](#faq5_1) for
+information about reporting a bug in an IOCCC winner, and see [FAQ
+5.2](#faq5_2) for information on how to submit a fix to an IOCCC winner.
+
+If you discover a problem with the IOCCC web site (such as a broken
+link) that is **not related to a particular IOCCC winner**, the
+best way you can help is to submit a fix to the IOCCC web site.
+See [FAQ 5.4](#faq5_4) for information on submitting fixes to the
+IOCCC web site.
+
+If you do not have a IOCCC web site fix, and just wish to report a
+general IOCCC web site problem, we ask that you first look at the
+[IOCCC issues](https://github.com/ioccc-src/winner/issues) to see
+if the problem has already been reported.  If it has been reported,
+feel free to add a comment to the issue.  If you do not find an it
+has been reported, then fee free to open a [new IOCCC
+issue](//github.com/ioccc-src/winner/issues).
+
+
+### <a name="faq5_4"></a><a name="fix_web_site"></a>FAQ 5.4: How may I submit a fix to an IOCCC web site?
+
+For IOCCC web site problems that relate to a particular IOCCC winner, please
+see [FAQ 5.2](#faq5_2) for information on how submit a fix to an IOCCC winner.
+
+You may open a [GitHub pull request](https://github.com/ioccc-src/winner/pulls)
+against the master [branch](https://github.com/ioccc-src/winner/branches)
+of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner) repo
+to submit a fix.
+
+#### Some HTML files should NOT be directly modified
+
+Most HTML files on the [IOCCC web site](https://www.ioccc.org)
+are built from [markdown](https://daringfireball.net/projects/markdown/) files.
+If you see lines containing:
+
+```
+!!! DO NOT MODIFY THIS FILE - This file is generated by a tool !!!
+!!! DO NOT MODIFY THIS FILE - This file is generated by a tool !!!
+!!! DO NOT MODIFY THIS FILE - This file is generated by a tool !!!
+```
+
+This means that the file is generated by a tool from the
+[build-ioccc](https://github.com/ioccc-src/build-ioccc) repo
+using files found in the
+[ioccc-src/winner repo](https://github.com/ioccc-src/winner) repo.
+
+You will find a HTML comment of the form indicating which tool
+was used to generate the contents:
+
+```
+file: __some_file_path__ created by: __something__ version: __something__
+```
+
+Along with HTML comments of the form indicating which files were
+used by the tool to generate the HTML file;
+
+```
+content source: __some_file_path__
+content source: __another_file_path__
+...
+```
+
+Those **content source:** comment lines will give you a clue to the content that
+is used by the tool to generate the **DO NOT MODIFY THIS FILE** HTML file.
+
+When in doubt, consider opening up an [IOCCC issue](https://github.com/ioccc-src/winner/issues).
+See [FAQ 5.3](#faq5_3) for information on opening up an IOCCC issue.
 
 
 ## <a name="faq6"></a>Section 6: Miscellaneous IOCCC
