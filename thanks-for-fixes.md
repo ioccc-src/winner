@@ -3344,6 +3344,15 @@ Cody fixed a typo in the ruby script
 Cody restored the original code from the archive.
 
 
+## [2012/hou](2012/hou/hou.c) ([README.md](2012/hou/README.md]))
+
+Cody added the [try.sh](2012/hou/try.sh) script and restored the original [hint
+markdown file](2012/hou/hint.md) as the changes made when converting to a GitHub
+README.md made the generated html not look correct; it did not have a title, a
+stylesheet etc. due to the fact that there is no `#` header (which specified
+title and stylesheet) and other formatting changes.
+
+
 ## [2012/kang](2012/kang/kang.c) ([README.md](2012/kang/README.md]))
 
 Cody added alt code that fixes a problem where in German 'v' sounds like 'f'
