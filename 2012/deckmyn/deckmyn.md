@@ -1,5 +1,6 @@
 # USER MANUAL 
 
+
 ## Calling the program
 
 ```sh
@@ -31,14 +32,14 @@ Therefore, when preparing music in a file, care should be taken that the last
 musical element of a line is only 2 characters!
 
 1. Basic notes:
-    A single note is input by a letter `[A-Ga-g]` followed by a duration
-    [1,2,4,8] and possibly a dot [`.`]. The notes cover 2 octaves, from `C`
-    (lowest) to `b` (highest). The possible durations are 1 (whole note), 2
-    (half note), 4 (quaver), 8 (semi-quaver). So a dotted quaver `A` followed by
-    a semi quaver `G` is input as `"A4.G8 "`.
+    A single note is input by a letter (in the range `[A-Ga-g]`) followed by a
+    duration (1, 2, 4 or 8) and possibly a dot (`.`). The notes cover 2 octaves,
+    from `C` (lowest) to `b` (highest). The possible durations are 1 (whole
+    note), 2 (half note), 4 (quaver), 8 (semi-quaver). So a dotted quaver `A`
+    followed by a semi quaver `G` is input as `"A4.G8 "`.
 
 2. Rests:
-    A rest is given by the letter [`r`] followed by a duration [1,2,4,8]. 
+    A rest is given by the letter `r` followed by a duration (1, 2, 4 or 8).
 
 3. Bar lines:
     There are three possible bar line types: single (`":  "`), double (`":: "`)
@@ -54,7 +55,7 @@ musical element of a line is only 2 characters!
 
 5. Space (formatting):
     To manually change the spacing of the music, you can add space between
-    different musical elements. This is given by a `[s]` followed by the amount
+    different musical elements. This is given by an `s` followed by the amount
     of space. `"s3 "` is the space taken by one note.  This length is given in 1
     character. However, to get a value larger than 9, you can just continue
     along the ASCII table. So `"sz "` gives you quite a lot of space on a staff.
@@ -78,6 +79,7 @@ musical element of a line is only 2 characters!
     The clef (`G` or `F`) can only be changed at the beginning of the music
     input. If the music starts with `"KF "`, the music will be written in a bass
     clef. `"K"` followed by any other letter will just default to a standard G clef.
+
 
 ## Examples
 

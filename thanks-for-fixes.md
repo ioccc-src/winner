@@ -3327,6 +3327,11 @@ Cody added explicit linking of libm (`-lm`) as not all systems do this
 implicitly (linux doesn't seem to but macOS does).
 
 
+## [2012/deckmyn](2012/deckmyn/deckmyn.c) ([README.md](2012/deckmyn/README.md]))
+
+Cody added the [try.sh](2012/deckmyn/try.sh) script.
+
+
 ## [2012/endoh1](2012/endoh1/endoh1.c) ([README.md](2012/endoh1/README.md))
 
 Cody added explicit linking of libm (`-lm`) as not all systems do this
