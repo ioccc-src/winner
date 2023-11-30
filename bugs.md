@@ -2769,6 +2769,33 @@ musical element of a line is only 2 characters!
 The manual referred to is [here](2012/deckmyn/deckmyn.md).
 
 
+## 2012 tromp
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2012/tromp/tromp.c](2012/tromp/tromp.c)
+### Information: [2012/tromp/README.md](2012/tromp/README.md)
+
+The author stated:
+
+```
+If the input doesn't start with a valid program, that is,
+if the interpreter reaches end-of-file during program parsing,
+it will crash in some way. E.g. the following might dump core:
+
+    echo -n "U" | ./tromp
+
+Furthermore, the interpreter requires the initial encoded lambda term to be closed,
+that is, variable n can only appear within at least 'n' enclosing lambdas.
+For instance, here the term '\ 5' is not closed, causing the interpreter to crash when
+looking into a null-pointer environment:
+
+    echo ">Hello, world" | ./tromp
+
+will likely dump core.
+
+```
+
+
 ## 2012 vik
 
 ### STATUS: INABIAF - please **DO NOT** fix

@@ -3391,6 +3391,11 @@ show different languages and numbers.
 Cody added the [try.sh](2012/konno/try.sh) script.
 
 
+## [2012/tromp](2012/tromp/tromp.c) ([README.md](2012/tromp/README.md))
+
+Cody added the [try.sh](2012/tromp/try.sh) script.
+
+
 ## [2012/vik](2012/vik/vik.c) ([README.md](2012/vik/README.md]))
 
 Based on the author's description it should be able to get this entry to work
