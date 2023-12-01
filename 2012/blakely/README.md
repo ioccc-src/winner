@@ -5,6 +5,17 @@ make
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2012 blakely in bugs.md](/bugs.md#2012-blakely).
+
+
 ## To use:
 
 ```sh
@@ -46,7 +57,7 @@ This program renders a generic
 [GIF](https://en.wikipedia.org/wiki/GIF) form.  The expression in spatial
 variables `x` and `y` is specified on the command-line with the required
 resolution, and an animated GIF showing a fly-around of the resulting surface is
-output to stdout.
+output to `stdout`.
 
 ### Usage
 
@@ -77,7 +88,7 @@ x		    - x coordinate value
 y		    - y coordinate value
 ```
 
-NB all arithmetic is done in double precision, so `23/` is two-thirds, rather
+NB: all arithmetic is done in double precision, so `23/` is two-thirds, rather
 than 0.
 
 The surface plotted corresponds to `-1 <= x,y <= 1` and for best results, the
@@ -85,6 +96,7 @@ generated `z` value should lie between `-1` and `1`.
 
 If there is a division by zero, square-root of a negative number, or similar
 operation, then the results are undefined.
+
 
 ### Examples
 
@@ -103,6 +115,7 @@ processor](https://en.wikipedia.org/wiki/Intel_Core#Core_i7).
 ./blakely xx*yy*1++d5*ct/ 64 > ripple.gif
 ```
 
+
 ### Algorithm
 
 A generic root-finding algorithm to find the point of intersection between a ray
@@ -110,6 +123,7 @@ and the surface is done using a simple forward search from the eye.  In order to
 make the rendering realistic, both the value of the expression, and its
 derivative with respect to `x` and `y` must be tracked.  This is done using an
 obvious stack-based approach.
+
 
 ### Obfuscations
 
@@ -120,6 +134,7 @@ and wonderful ways, making use of
 [XOR](https://en.wikipedia.org/wiki/Exclusive_or), return values from
 `putchar()`, and odd expressions.  The layout is in the form of `X Y Z`.
 
+
 ### Limitations
 
 ASCII is assumed since many bytes for the
@@ -127,6 +142,7 @@ ASCII is assumed since many bytes for the
 given in the source code.  On compilation a few warnings about parentheses come
 up when using gcc 4.6.3, and one about no return value from `main()` (who uses
 exit codes anyway?), but clang 3.1 emits no warnings.
+
 
 ### Questions
 

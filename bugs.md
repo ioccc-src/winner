@@ -2728,6 +2728,20 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
 # 2012
 
 
+## 2012 blakely
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2012/blakely/blakely.c](2012/blakely/blakely.c)
+### Information: [2012/blakely/README.md](2012/blakely/README.md)
+
+The author stated:
+
+```
+If there is a division by zero, square-root of a negative number, or similar
+operation, then the results are undefined.
+```
+
+
 ## 2012 deckmyn
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -2767,6 +2781,21 @@ musical element of a line is only 2 characters!
 
 
 The manual referred to is [here](2012/deckmyn/deckmyn.md).
+
+
+## 2012 dlowe
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2012/dlowe/dlowe.c](2012/dlowe/dlowe.c)
+### Information: [2012/dlowe/README.md](2012/dlowe/README.md)
+
+The author stated:
+
+* Flicker, especially at high speeds, and in spite of "double-buffering" (X11
+  doesn't make it possible to lock drawing to the display refresh rate.)
+* Cannot be run outside of the directory containing the data files (`splash.d`,
+  `dead.d` and `sprites.d`).
+* Cannot build or run without X11 (or an X11 compatibility layer).
 
 
 ## 2012 tromp

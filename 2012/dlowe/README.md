@@ -4,10 +4,17 @@
 make
 ```
 
-NOTE: this entry requires `X11/Xlib.h` header file and the X11 library to
-compile. macOS users running Mountain Lion and later will need to download and
-install [XQuartz](https://www.xquartz.org) in order to compile and run this
-entry.
+
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2012 dlowe in bugs.md](/bugs.md#2012-dlowe).
+
 
 
 ## To use:
@@ -59,6 +66,7 @@ see how far you can make it!
 
 Press `q` any time to quit.
 
+
 ### Features
 
 * casual gameplay
@@ -66,13 +74,15 @@ Press `q` any time to quit.
 * progressive difficulty
 * animated splash screens
 
+
 ### Limitations
 
 * Flicker, especially at high speeds, and in spite of "double-buffering" (X11
   doesn't make it possible to lock drawing to the display refresh rate.)
-* Cannot be run outside of the directory containing the data files (splash.d,
-  dead.d and sprites.d).
+* Cannot be run outside of the directory containing the data files (`splash.d`,
+  `dead.d` and `sprites.d`).
 * Cannot build or run without X11 (or an X11 compatibility layer).
+
 
 ### Wish List
 
@@ -92,7 +102,7 @@ Press `q` any time to quit.
 The code is formatted into a 14-cell shape which will evolve into a glider in
 19 generations.
 
-Lots of globals, including a global struct whose members have the same names
+Lots of globals, including a global `struct` whose members have the same names
 as global variables.
 
 Global variables getting reused in different contexts.

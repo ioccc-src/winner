@@ -4,6 +4,11 @@
 make
 ```
 
+There is an alternate version that will read from the compiled file itself, in
+case you don't have a `/dev/urandom` file. There is also a version that should
+theoretically work with Windows which distinguishes binary and text. See
+[alternate code](#alternate-code) below. 
+
 
 ## To use:
 
@@ -14,21 +19,65 @@ perl output.c > data.c
 
 cat key.c data.c > output.c
 
-gcc output.c -o output
+cc output.c -o output
 ./output > regenerated.bin
 ```
+
+NOTE: if your OS does not have `/dev/urandom` then you should specify a seed
+file or use the [alternate version](#alternate-code) which reads in the compiled
+binary itself.
 
 
 ### Try:
 
 ```sh
-echo "A quick brown fox jumps over the lazy dog" | ./nyaruko > output.c
-perl output.c > data.c
-cc -o data data.c
-./data
-cc -o output output.c
-./output
+./try.sh
 ```
+
+The script [try.sh](try.sh) will check if you have perl before trying to use the
+perl parts of the script.
+
+
+## Alternate code:
+
+The alternate version will, if no file is specified, read in the compiled binary
+itself rather than trying to open `/dev/urandom`, which is the default for the
+original entry. This is useful if your system does not have a `/dev/urandom`
+file and you do not want to specify an extra file. The second alternate version
+is like the first except it also should theoretically work with Windows, setting
+binary mode on `stdin` and `stdout`.
+
+
+### Alternate build:
+
+For the first version:
+
+
+```sh
+make alt
+```
+
+For the second version:
+
+```sh
+make alt2
+```
+
+
+### Alternate use:
+
+Use `nyaruko.alt` or `nyaruko.alt2` as you would `nyaruko` above.
+
+
+### Alternate try:
+
+For the first alternate version:
+
+```sh
+./try.alt.sh
+```
+
+We have no way to test the second version, sorry (tm Canada :-) )!
 
 
 ## Judges' remarks:
@@ -41,8 +90,8 @@ The judges have nothing to add that has not already been written about in the
 
 ### Usage
 
-`Nyaruko` is a binary to text filter.  Given some input on stdin,
-`Nyaruko` will produce C code that reproduces this input on stdout:
+`Nyaruko` is a binary to text filter.  Given some input on `stdin`,
+`Nyaruko` will produce C code that reproduces this input on `stdout`:
 
 ```sh
 ./nyaruko < original.bin > output.c
@@ -54,20 +103,20 @@ Output is encrypted, but both key and data are included in the output.
 To separate the key from the data, run these commands:
 
 ```sh
-    bash output.c > key.c
-    perl output.c > data.c
+bash output.c > key.c
+perl output.c > data.c
 ```
 
 The key-less `data.c` still compiles, but produces a different message
-on stdout instead of the original input.  This message is a hint to
+on `stdout` instead of the original input.  This message is a hint to
 why the code is formatted the way it is.
 
 To combine the key and data, concatenate them together in either
 order:
 
 ```sh
-    cat key.c data.c > output.c
-    cat data.c key.c > output.c
+cat key.c data.c > output.c
+cat data.c key.c > output.c
 ```
 
 By default, `Nyaruko` generates a unique random key for every message,
@@ -78,10 +127,13 @@ argument, `Nyaruko` will seed using that file instead of `/dev/urandom`:
 ./nyaruko seed.txt < input.bin > output.c
 ```
 
-This makes the output key deterministic, allowing the same key to be
-shared across different files.  On operating systems that do not have
-`/dev/urandom`, users should always specify this extra seed argument to
-avoid deterministic keys.
+This makes the output key deterministic, allowing the same key to be shared
+across different files.  On operating systems that do not have `/dev/urandom`,
+users should always specify this extra seed argument to avoid indeterministic
+keys, or else use the alternate version which will by default read the compiled
+alternate version itself, which might or might not be deterministic, depending
+on where and how it's used.
+
 
 ### Features
 
@@ -109,7 +161,9 @@ Code layout is meant to resemble
 [Nyaruko](https://en.wikipedia.org/wiki/Nyarlathotep), also known as
 `Nyarlathotep`, the Crawling Chaos.  The most obvious thing to do with chaos is
 to make a random number generator, and the most obvious thing to do with a
-random number generator is to make one-time-pads for encryption.
+random number generator is to make
+[one-time-pads](https://en.wikipedia.org/wiki/One-time_pad) for encryption.
+
 
 ### Compatibility
 
@@ -135,8 +189,9 @@ combinations:
 * gcc 4.3.5 on JSLinux
 * tcc 0.9.25 on JSLinux
 
-Note that on MingW, stdin and stdout are not opened in binary mode by
+Note that on MingW, `stdin` and `stdout` are not opened in binary mode by
 default, this means `Nyaruko` may not faithfully encode files on MingW.
+
 
 ### Extra files
 

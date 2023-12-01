@@ -3330,6 +3330,8 @@ dies.
 [Cody](#cody) added explicit linking of libm (`-lm`) as not all systems do this
 implicitly (Linux doesn't seem to but macOS does).
 
+Cody also added the [try.sh](2012/blakely/try.sh) script.
+
 
 ## [2012/deckmyn](2012/deckmyn/deckmyn.c) ([README.md](2012/deckmyn/README.md]))
 
@@ -3398,6 +3400,21 @@ show different languages and numbers.
 ## [2012/konno](2012/konno/konno.c) ([README.md](2012/konno/README.md]))
 
 [Cody](#cody) added the [try.sh](2012/konno/try.sh) script.
+
+
+## [2012/omoikane](2012/omoikane/omoikane.c) ([README.md](2012/omoikane/README.md]))
+
+[Cody](#cody) added the [try.sh](2012/omoikane/try.sh) script.
+
+Cody also added the [alternate code](2012/omoikane/README.md#alternate-code)
+which will, if no arg is specified, read in the program itself, rather than
+`/dev/urandom`. This is mostly useful for those without a `/dev/urandom` device
+file (the default for the entry). The second alternate version is like the first
+except that it also sets binary mode on `stdin` and `stdout` which should
+theoretically make it work in Windows.
+
+Cody also added the [try.alt.sh](2012/omoikane/try.alt.sh) script that is like
+the `try.sh` script but which uses the (first version of the) alt code instead.
 
 
 ## [2012/tromp](2012/tromp/tromp.c) ([README.md](2012/tromp/README.md))
