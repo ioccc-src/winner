@@ -2783,6 +2783,21 @@ musical element of a line is only 2 characters!
 The manual referred to is [here](2012/deckmyn/deckmyn.md).
 
 
+## 2012 dlowe
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2012/dlowe/dlowe.c](2012/dlowe/dlowe.c)
+### Information: [2012/dlowe/README.md](2012/dlowe/README.md)
+
+The author stated:
+
+* Flicker, especially at high speeds, and in spite of "double-buffering" (X11
+  doesn't make it possible to lock drawing to the display refresh rate.)
+* Cannot be run outside of the directory containing the data files (`splash.d`,
+  `dead.d` and `sprites.d`).
+* Cannot build or run without X11 (or an X11 compatibility layer).
+
+
 ## 2012 tromp
 
 ### STATUS: INABIAF - please **DO NOT** fix
