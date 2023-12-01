@@ -3330,6 +3330,8 @@ dies.
 [Cody](#cody) added explicit linking of libm (`-lm`) as not all systems do this
 implicitly (Linux doesn't seem to but macOS does).
 
+Cody also added the [try.sh](2012/blakely/try.sh) script.
+
 
 ## [2012/deckmyn](2012/deckmyn/deckmyn.c) ([README.md](2012/deckmyn/README.md]))
 

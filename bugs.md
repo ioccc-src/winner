@@ -2728,6 +2728,20 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
 # 2012
 
 
+## 2012 blakely
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2012/blakely/blakely.c](2012/blakely/blakely.c)
+### Information: [2012/blakely/README.md](2012/blakely/README.md)
+
+The author stated:
+
+```
+If there is a division by zero, square-root of a negative number, or similar
+operation, then the results are undefined.
+```
+
+
 ## 2012 deckmyn
 
 ### STATUS: INABIAF - please **DO NOT** fix
