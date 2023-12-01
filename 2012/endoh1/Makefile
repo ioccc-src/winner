@@ -57,7 +57,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE= -DG="$G" -DP="$P" -DV="$V"
+CDEFINE= -DG="$G" -DP="$P" -DV="$V" -DS=12321
 
 # Include files that are needed to compile
 #
@@ -154,8 +154,18 @@ ${PROG}_color: ${PROG}_color.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
+alt2: ${ALT_TARGET}2 ${PROG}_color.alt
+	@${TRUE}
+
 ${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+${PROG}.alt2: ${PROG}.alt2.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+${PROG}_color.alt: ${PROG}_color.alt.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
 
 # data files
 #
@@ -221,7 +231,7 @@ clean:
 	fi
 
 clobber: clean
-	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -f ${TARGET} ${ALT_TARGET} ${ALT_TARGET}2 ${PROG}_color.alt
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

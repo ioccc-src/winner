@@ -4,6 +4,10 @@
 make
 ```
 
+There is a deobfuscated version of this entry. There are two other versions, one
+black and white and one coloured, as well that let you slow or speed up the
+display. See [alternate code](#alternate-code) below for more details.
+
 
 ## To use:
 
@@ -28,24 +32,73 @@ this by default.
 
 ## Alternate code:
 
-An alternate version of this entry, `endoh1.alt.c`, is provided.
-This alternate code is a de-obfuscated version of `endoh1.c`.
+The file [endoh1.alt.c](endoh1.alt.c) is deobfuscated.
+The file [endoh1_color.alt.c](endoh1_color.alt.c) is like
+[endoh1_color.c](endoh1_color.c) except that you can control how long to sleep
+between writes. The file [endoh1.alt2.c](endoh1.alt2.c) is like
+[endoh1.c](endoh1.c) except you can control how long to sleep between writes.
 
-To compile this alternate version:
+
+### Alternate build:
+
 
 ```sh
-make alt
+make alt alt2
 ```
 
-Use `endoh1.alt` as you would `endoh1` above.
+
+### Alternate use:
+
+Use `endoh1.alt`, `endoh1.alt2` and `endoh1_color.alt` as you would `endoh1`
+above.
+
+
+### Alternate try:
+
+WARNING: if you're sensitive to flashing colours do make sure you don't decrease
+the value too much.
+
+Try slowing down the display by increasing the sleep time from `12321` to
+`50000`:
+
+```sh
+make clobber CDEFINE="-DS=50000" alt2
+```
+
+Now try using both `endoh1.alt2` and `endoh1_color.alt` as you would `endoh1` above.
+
+Also try speeding up the display by decreasing the sleep time from `12321` to
+`9999`:
+
+```sh
+make clobber CDEFINE="-DS=9999" alt2
+```
+
+Try using both `endoh1.alt2` and `endoh1_color.alt` as you would `endoh1` above.
+
+You might also wish to try redefining the macros `G`, `P` and/or `V`. For
+instance:
+
+
+```sh
+make clobber CDEFINE="-DG=5 -DP=5 -DV=5" alt2
+```
+
+You might try even:
+
+```sh
+make clobber CDEFINE="-DG=I" alt2
+```
+
+See the author's remarks for details on these macros.
 
 
 ## Judges' remarks:
 
 Let's play [Jeopardy!](https://en.wikipedia.org/wiki/Jeopardy!)
 
-*   A: An obfuscated program that deals with complex numbers and produces animated ASCII graphics.
-*   Q: What is a Mandelbrot simulator?
+A: An obfuscated program that deals with complex numbers and produces animated ASCII graphics.
+Q: What is a Mandelbrot simulator?
 
 Bzzzt!
 
@@ -53,7 +106,8 @@ Such heavily squeezed fluid simulation (this is parsed uniquely
 as fluids are not squeezable) has a few quirks that the judges were
 happy to experiment with.
 
-One configuration file was inspired by an [XKCD what if? entry](http://whatif.xkcd.com/6/).
+One configuration file was inspired by an [XKCD what if?
+entry](https://web.archive.org/web/20230711134609/https://whatif.xkcd.com/6/).
 
 
 ## Author's remarks:
@@ -103,7 +157,7 @@ cc endoh1.c -DG=1 -DP=4 -DV=8 -D_BSD_SOURCE -o endoh1 -lm
 
 ```
 
-This program is a fluid simulator using [Smoothed-particle hydrodynamics
+This program is a fluid simulator using the [Smoothed-particle hydrodynamics
 (SPH)](http://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics) method.
 
 The SPH particles represent the fluid flow.  Particles have information about
@@ -111,8 +165,8 @@ the position, density, and velocity.  In every simulation step, they are
 changed by pressure force, viscosity force, and external force (i.e., gravity).
 
 This program reads a text from standard input, and uses it as an initial
-configuration of the particles.  The character `#` represents "wall particle" (a
-particle with fixed position), and any other non-space characters represent
+configuration of the particles.  The character `#` represents a "wall particle" (a
+particle with a fixed position), and any other non-space characters represent
 free particles.
 
 The compilation options `-DG=1 -DP=4 -DV=8` represent, respectively, the factor
@@ -122,10 +176,11 @@ different fluid behavior.
 [Marching square](http://en.wikipedia.org/wiki/Marching_squares)-like algorithm
 is used to render the particles.
 
+
 ### Portability
 
 The program requires a C99 compiler; it uses `complex` types and one-line
-comments.  It also uses `usleep`, which may require `-D_BSD_SOURCE` or so
+comments.  It also uses `usleep(3)`, which may require `-D_BSD_SOURCE` or so
 to build with no warning.  Under these conditions, it should be portable.
 At least, recent compilers with `-std=c99 -Wall -W -Wextra -pedantic` say
 nothing.
@@ -144,16 +199,17 @@ and gcc-4.5.3 and clang-3.1 on Cygwin.  On Cygwin, gcc and clang complain about
 a usage of `I` (complex's imaginary unit), but I bet this is cygwin's issue;
 it is surely a C99 feature.
 
+
 ### Obfuscation w/ Spoiler
 
 First of all, the source code itself serves as an initial configuration.
 Preprocessing directives (such as `#include`)'s `#` serve as walls.
 
 This program uses `double complex` to represent any 2D vector.  But, note that
-`x-axis` and `y-axis` is swapped (real axis = y-axis, imaginary axis = x-axis).
-The purpose of swapping is not only obfuscation, but also short coding: for
-example, to add gravity to total force, `force += G` suffices, rather than
-`force += G*I`.
+the `x-axis` and `y-axis` are swapped (real axis = y-axis, imaginary axis =
+x-axis).  The purpose of swapping is not only obfuscation, but also short
+coding: for example, to add gravity to total force, `force += G` suffices,
+rather than `force += G*I`.
 
 (Incidentally, you can exert horizontal gravity by using for instance `-DG=I`)
 
@@ -163,9 +219,10 @@ position, wall-flag, density, force, and velocity, in turn.
 You can use `G`, `P`, and `V` as a guide to find the calculation code of
 gravity, pressure, and viscosity forces.
 
-Though some assignments may look meaningless, it is actually meaningful; it
-extracts "integer part of real part" from a complex value by assigning (and
+Though some assignments may look meaningless, they are actually meaningful; they
+extract "integer part of real part" from a complex value by assigning (and
 casting) it to an integer-type variable.
+
 
 ### Notes about Additional Files
 
