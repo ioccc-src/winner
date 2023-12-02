@@ -1,12 +1,14 @@
-## To build:
 
 ```sh
 make
 ```
 
-There is a deobfuscated version of this entry. There are two other versions, one
-black and white and one coloured, as well that let you slow or speed up the
-display. See [alternate code](#alternate-code) below for more details.
+There are two alt versions that let you control the compile time variables that
+control the fluid behaviour and the added variable to speed up or slow down the
+fluid: one for the original black and white and the colour one added by the
+author at the request of the judges. Another version is the deobfuscated version
+provided by the author as well.  See [alternate code](#alternate-code) below for
+more details.
 
 
 ## To use:
@@ -32,40 +34,70 @@ this by default.
 
 ## Alternate code:
 
-The file [endoh1.alt.c](endoh1.alt.c) is deobfuscated.
-The file [endoh1_color.alt.c](endoh1_color.alt.c) is like
-[endoh1_color.c](endoh1_color.c) except that you can control how long to sleep
-between writes. The file [endoh1.alt2.c](endoh1.alt2.c) is like
-[endoh1.c](endoh1.c) except you can control how long to sleep between writes.
+The files [endoh1.alt.c](endoh1.alt.c) and
+[endoh1_color.alt.c](endoh1_color.alt.c) correspond to [endoh1.c](endoh1.c) and
+[endoh1_color.c](endoh1_color.c) but which allow you to speed up or slow down
+the fluid and change the behaviour of the fluid. The file
+[endoh1.alt2.c](endoh1.alt.c) is deobfuscated and was provided by the author.
 
 
 ### Alternate build:
 
+For the default values, try:
 
 ```sh
 make alt alt2
 ```
 
+The `alt2` is only necessary if you wish to compile the deobfuscated version but
+it is equivalent in function to the original entry, [endoh1.c](endoh1.c).
+
+If you wish to change the speed you should do:
+
+```sh
+make clobber CDEFINE="-DS=N" alt
+```
+
+where `N` is number or the letter `I`.
+
+WARNING: if you're sensitive to flashing colours or any flashing at all do make
+sure you don't decrease the value of `S`, the sleep time passed to `usleep(3)`,
+too much.
+
+If however you wish to change the gravity factor, pressure factor and/or
+viscosity factor, you should redefine the values `G`, `P` and/or `V` macros,
+respectively, with the same caveat about numbers for `S` above. For instance if
+you wish to change the viscosity and pressure factors but leave the other macros
+alone:
+
+```sh
+make clobber CDEFINE="-DV=X -DP=Y" alt
+```
+
+where `X` and `Y` are numbers or the letter `I` and which are, respectively, the
+viscosity and pressure factors.
+
+There is no restriction on what the number is because doing so prevents the
+macros from being defined to `I` which would prevent the author's remarks about
+it from being done.
+
 
 ### Alternate use:
 
-Use `endoh1.alt`, `endoh1.alt2` and `endoh1_color.alt` as you would `endoh1`
-above.
+Use `endoh1.alt`, `endoh1_color.alt` and `endoh1.alt2` as you would `endoh1`
+and `endoh1_color` above.
 
 
 ### Alternate try:
-
-WARNING: if you're sensitive to flashing colours do make sure you don't decrease
-the value too much.
 
 Try slowing down the display by increasing the sleep time from `12321` to
 `50000`:
 
 ```sh
-make clobber CDEFINE="-DS=50000" alt2
+make clobber CDEFINE="-DS=50000" alt
 ```
 
-Now try using both `endoh1.alt2` and `endoh1_color.alt` as you would `endoh1` above.
+Now try using both `endoh1.alt` and `endoh1_color.alt` as you would `endoh1` above.
 
 Also try speeding up the display by decreasing the sleep time from `12321` to
 `9999`:
@@ -74,20 +106,29 @@ Also try speeding up the display by decreasing the sleep time from `12321` to
 make clobber CDEFINE="-DS=9999" alt2
 ```
 
-Try using both `endoh1.alt2` and `endoh1_color.alt` as you would `endoh1` above.
+WARNING: again, be careful with too low a value if you're sensitive to flashing
+colours or anything at all.
+
+Now try using both `endoh1.alt` and `endoh1_color.alt` as you would `endoh1` above.
 
 You might also wish to try redefining the macros `G`, `P` and/or `V`. For
 instance:
 
 
 ```sh
-make clobber CDEFINE="-DG=5 -DP=5 -DV=5" alt2
+make clobber CDEFINE="-DG=5 -DP=5 -DV=5" alt
 ```
 
 You might try even:
 
 ```sh
-make clobber CDEFINE="-DG=I" alt2
+make clobber CDEFINE="-DG=I" alt
+```
+
+and even:
+
+```sh
+make clobber CDEFINE="-DG=I -DV=I" alt
 ```
 
 See the author's remarks for details on these macros.
