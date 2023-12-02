@@ -4,11 +4,11 @@ make
 ```
 
 There are two alt versions that let you control the compile time variables that
-control the fluid behaviour and the added variable to speed up or slow down the
-fluid: one for the original black and white and the colour one added by the
-author at the request of the judges. Another version is the deobfuscated version
-provided by the author as well.  See [alternate code](#alternate-code) below for
-more details.
+control the fluid behaviour and the added variables to speed up or slow down the
+fluid as well as setting a timeout (if not 0): one for the original black and
+white and the colour one added by the author at the request of the judges.
+Another version is the deobfuscated version provided by the author as well.  See
+[alternate code](#alternate-code) below for more details.
 
 
 ## To use:
@@ -52,6 +52,10 @@ make alt alt2
 The `alt2` is only necessary if you wish to compile the deobfuscated version but
 it is equivalent in function to the original entry, [endoh1.c](endoh1.c).
 
+In the `alt` versions a default time of 10 seconds is set as an alarm so that
+one can more easily go through the list of files to see them all in succession
+for fun. That is controlled by the variable `A`; 0 disables it.
+
 If you wish to change the speed you should do:
 
 ```sh
@@ -81,14 +85,13 @@ There is no restriction on what the number is because doing so prevents the
 macros from being defined to `I` which would prevent the author's remarks about
 it from being done.
 
+If you want to disable the alarm time, set `A` to 0:
 
-### Alternate use:
+```sh
+make clobber CDEFINE="-DA=0" alt
+```
 
-Use `endoh1.alt`, `endoh1_color.alt` and `endoh1.alt2` as you would `endoh1`
-and `endoh1_color` above.
-
-
-### Alternate try:
+It cannot be < 0 or > 60 (arbitrarily selected).
 
 Try slowing down the display by increasing the sleep time from `12321` to
 `50000`:
@@ -125,13 +128,25 @@ You might try even:
 make clobber CDEFINE="-DG=I" alt
 ```
 
-and even:
+See the author's remarks for details on these macros.
+
+
+### Alternate use:
+
+Use `endoh1.alt`, `endoh1_color.alt` and `endoh1.alt2` as you would `endoh1`
+and `endoh1_color` above.
+
+
+### Alternate try:
+
+To see two different ways run on the source file and each of the text files,
+try:
 
 ```sh
-make clobber CDEFINE="-DG=I -DV=I" alt
+./try.alt.sh
 ```
 
-See the author's remarks for details on these macros.
+The second run of each will be with the gravity factor set to `I`.
 
 
 ## Judges' remarks:
