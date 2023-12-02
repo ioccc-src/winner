@@ -115,8 +115,8 @@ DATA= column.txt column2.txt column3.txt corners.txt dripping-pan.txt \
 	funnel3.txt leidenfrost.txt logo.txt pour-out.txt tanada.txt
 TARGET= ${PROG} ${PROG}_color
 #
-ALT_OBJ= ${PROG}.alt.o
-ALT_TARGET= ${PROG}.alt
+ALT_OBJ= ${PROG}.alt.o ${PROG}_color.alt.o
+ALT_TARGET= ${PROG}.alt ${PROG}_color.alt
 
 # The factor of gravity
 #
@@ -151,19 +151,21 @@ ${PROG}_color: ${PROG}_color.c
 
 # alternative executable
 #
-alt: data ${ALT_TARGET}
-	@${TRUE}
-
-alt2: ${ALT_TARGET}2 ${PROG}_color.alt
+alt: data ${ALT_TARGET} ${PROG}.alt2
 	@${TRUE}
 
 ${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
-${PROG}.alt2: ${PROG}.alt2.c
+# this does NOT correspond to endoh1.alt2.c but rather endoh1.alt.c: it is NOT
+# deobfuscated.
+${PROG}_color.alt: ${PROG}_color.alt.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
-${PROG}_color.alt: ${PROG}_color.alt.c
+alt2: ${PROG}.alt2
+	@${TRUE}
+
+${PROG}.alt2: ${PROG}.alt2.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 
@@ -231,7 +233,7 @@ clean:
 	fi
 
 clobber: clean
-	${RM} -f ${TARGET} ${ALT_TARGET} ${ALT_TARGET}2 ${PROG}_color.alt
+	${RM} -f ${TARGET} ${ALT_TARGET} ${ALT_TARGET}2 ${PROG}_color.alt ${PROG}.alt2
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

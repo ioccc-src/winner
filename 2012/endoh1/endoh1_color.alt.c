@@ -9,20 +9,11 @@
 #  endif
 #  ifndef              G
 #  define              G 1
-#  elif                G < 1
-#  undef               G
-#  define              G 1
 #  endif
 #  ifndef              P
 #  define              P 4
-#  elif                P < 1
-#  undef               P
-#  define              P 4
 #  endif
 #  ifndef              V
-#  define              V 8
-#  elif                V < 1
-#  undef               V
 #  define              V 8
 #  endif
 
