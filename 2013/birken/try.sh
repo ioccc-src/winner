@@ -9,7 +9,7 @@ if [[ -z "$CC" ]]; then
     CC="cc"
 fi
 
-make CC="$CC" everything >/dev/null || exit 1
+make clobber CC="$CC" everything >/dev/null || exit 1
 
 # clear screen after compilation so that only the entry is shown
 clear
@@ -19,6 +19,13 @@ if [[ -z "$BIRKEN" ]]; then
 fi
 
 trap 'reset; exit' 0 1 2 3 15
+
+PERL="$(type -P perl)"
+
+if [[ -n "$PERL" ]]; then
+    read -r -n 1 -p "Press any key to try a random run: "
+    perl -e 'map{map{print int(rand()*8);}(0..16);print chr(10);}(0..30);' | tr '[0-4]' ' '| ./birken.alt
+fi
 
 for i in *.txt; do
     NAME="$(echo "$i" | awk '{ print toupper(substr($1,1,1)) substr($1,2)}'|sed -e 's/\.txt//g' \
