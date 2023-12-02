@@ -3343,6 +3343,12 @@ Cody also added the [try.sh](2012/blakely/try.sh) script.
 [Cody](#cody) added explicit linking of libm (`-lm`) as not all systems do this
 implicitly (Linux doesn't seem to but macOS does).
 
+Cody also added two [alt versions](2012/endoh1/README.md#alternate-code) that
+let one control how fast to display (how long to sleep in between writes) the
+fluid, one an alt of the colour version (that Yusuke added at the request of the
+judges) and an alt of the original. The [endoh1.alt.c](2012/endoh1/endoh1.alt.c)
+was provided by Yusuke as a de-obfuscated version.
+
 
 ## [2012/endoh2](2012/endoh2/endoh2.c) ([README.md](2012/endoh2/README.md))
 
