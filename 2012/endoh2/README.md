@@ -27,7 +27,7 @@ gcc -o e e.c
 ### Try:
 
 ```sh
-./everything.sh
+./try.sh
 ```
 
 
@@ -50,7 +50,7 @@ program and [pi](https://en.wikipedia.org/wiki/Pi) or
 [e](https://en.wikipedia.org/wiki/E_(mathematical_constant))) computation.  I
 know you're tired of them.
 
-But have you ever seen **all-in-one**?
+But have you ever seen them **all-in-one**?
 
 ### What it is
 
@@ -72,7 +72,7 @@ rather than pi.
 ### Obfuscation
 
 This program itself is in the shape of a
-[spigot](https://en.wikipedia.org/wiki/Tap_(valve)).  This is derived from
+[spigot](https://en.wikipedia.org/wiki/Tap_(valve)).  This is derived as an
 analogy with [spigot algorithm](https://en.wikipedia.org/wiki/Spigot_algorithm)
 which infinitely computes the value of a mathematical constant such as
 [pi](https://en.wikipedia.org/wiki/Pi) or
@@ -103,18 +103,23 @@ directives](https://en.wikipedia.org/wiki/C_preprocessor).  In my program,
 These design requirements made my program well-obfuscated
 willy-nilly.
 
+
 ### Portability
 
 I expect it to work in any major environment and C compiler.  To build with no
-warning, it requires two C99 features: string literal more than 509 characters
-and not requiring a return in `main()` function.  In fact, recent compilers with
-`-std=c99 -Wall -W -Wextra -pedantic` would say nothing.
+warning, it requires two C99 features: allow string literal to be more than 509
+characters and not requiring a return in `main()`.  In fact, recent compilers
+with `-std=c99 -Wall -W -Wextra -pedantic` would say nothing.
 
-    gcc -std=c99 -Wall -W -Wextra -pedantic spigot.c
-    clang -std=c99 -Wall -W -Wextra -pedantic spigot.c
+
+```sh
+gcc -std=c99 -Wall -W -Wextra -pedantic spigot.c
+clang -std=c99 -Wall -W -Wextra -pedantic spigot.c
+```
 
 I've tested with gcc-4.6.3 and clang-3.0 on Linux (Ubuntu 12.04)
 and gcc-4.5.3 and clang-3.1 on Cygwin.
+
 
 ### Synopsis
 

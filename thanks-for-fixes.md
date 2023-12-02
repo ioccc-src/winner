@@ -3363,7 +3363,10 @@ de-obfuscated version.
 
 ## [2012/endoh2](2012/endoh2/endoh2.c) ([README.md](2012/endoh2/README.md))
 
-[Cody](#cody) fixed a typo in the ruby script
+[Cody](#cody) added the [try.sh](2012/endoh2/try.sh) script that runs
+everything, filtered through less.
+
+Cody also fixed a typo in the ruby script
 [find-font-table.rb](2012/endoh2/find-font-table.rb).
 
 
