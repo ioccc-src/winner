@@ -3617,9 +3617,7 @@ this broke `make` which Cody also fixed.
 
 ## [2013/misaka](2013/misaka/misaka.c) ([README.md)[2013/misaka/README.md))
 
-As there are a lot of commands to try, [Cody](#cody) added the
-[try.sh](2013/misaka/try.sh) script to do this, sleeping for approximately 1
-second between commands.
+[Cody](#cody) added the [try.sh](2013/misaka/try.sh) script.
 
 
 ## [2013/morgan1](2013/morgan1/morgan1.c) ([README.md](2013/morgan1/README.md))
