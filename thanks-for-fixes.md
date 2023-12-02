@@ -3615,6 +3615,16 @@ Further, after the file 2013/hou/doc/example.markdown was moved to
 this broke `make` which Cody also fixed.
 
 
+## [2013/mills](2013/mills/mills.c) ([README.md)[2013/mills/README.md))
+
+[Cody](#cody) fixed this so that the server would not refuse the connection
+after the first call to `close(2)`. The problem was that because the backlog to
+`listen(2)` was 1 once the connection closed the server was essentially 'dead'.
+The backlog was changed to 10 and this solves the problem. It is not known if
+this was specific to macOS but it was not specific to a browser as Safari and
+Firefox both had the problem.
+
+
 ## [2013/misaka](2013/misaka/misaka.c) ([README.md)[2013/misaka/README.md))
 
 [Cody](#cody) added the [try.sh](2013/misaka/try.sh) script.
