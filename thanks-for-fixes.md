@@ -3481,11 +3481,12 @@ the same) so that as long as it runs to completion the terminal will be sane and
 the cursor will be visible. Using `atexit(3)` will not work if the program is
 killed and signals are ugly so this was not done.
 
-Cody also added the [try.sh](2013/birken/try.sh) script and the alternate
-version (that has the above fix) which allows one to control how fast the
-painting is done, based on the author's recommendations, except that Cody made
-it configurable at compile time just like he did with other entries that use
-`usleep(3)`.
+Cody also added the alt version that lets one control how fast the painting is
+done, based on the author's recommendations, except that Cody made it
+configurable at compile time.
+
+Cody also added the [try.sh](2013/birken/try.sh) script for the entry and the
+[try.alt.sh](2013/birken/try.alt.sh) script for the alt code.
 
 
 ## [2013/cable3](2013/cable3/cable3.c) ([README.md](2013/cable3/README.md]))

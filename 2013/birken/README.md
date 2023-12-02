@@ -26,7 +26,7 @@ the value used in `usleep(3)`. The default is `-DZ=13500`.
 To see the program run on each text file, try:
 
 ```sh
-./try.sh
+./try.alt.sh
 ```
 
 If you have perl installed it will also try a random run.
@@ -81,7 +81,7 @@ Use `birken` as you would `birken.alt` above.
 To use the demo script with the original code, try:
 
 ```sh
-BIRKEN=birken ./try.sh
+./try.sh
 ```
 
 PLEASE be careful if you are sensitive to flashing colours!

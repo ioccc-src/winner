@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.sh - demonstrate IOCCC winner 2013/birken
+# try.sh - demonstrate IOCCC winner 2013/birken alt code
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
 # this way allows us to have the user specify a different compiler in an easy
@@ -14,13 +14,14 @@ make clobber CC="$CC" everything >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
+
 trap 'reset; exit' 0 1 2 3 15
 
 PERL="$(type -P perl)"
 
 if [[ -n "$PERL" ]]; then
     read -r -n 1 -p "Press any key to try a random run: "
-    perl -e 'map{map{print int(rand()*8);}(0..16);print chr(10);}(0..30);' | tr '[0-4]' ' '| ./birken
+    perl -e 'map{map{print int(rand()*8);}(0..16);print chr(10);}(0..30);' | tr '[0-4]' ' '| ./birken.alt
 fi
 
 for i in *.txt; do
@@ -29,7 +30,7 @@ for i in *.txt; do
 	-e 's/Cheepcheep/Cheep Cheep/g' -e 's/Happyface/Happy Face/g' -e 's/Paranaplant/Piranha Plant/g' \
 	-e 's/Koopaparatroopa/Koopa Paratroopa/g')"
     read -r -n1 -p "Press any key to try $NAME: "
-    ./birken < "$i"
+    ./birken.alt < "$i"
     echo
 done
 clear
