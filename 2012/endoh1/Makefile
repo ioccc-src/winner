@@ -57,7 +57,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE= -DG="$G" -DP="$P" -DV="$V" -DS=12321
+CDEFINE= -DG="$G" -DP="$P" -DV="$V" -DS=12321 -DA=10
 
 # Include files that are needed to compile
 #
@@ -151,7 +151,7 @@ ${PROG}_color: ${PROG}_color.c
 
 # alternative executable
 #
-alt: data ${ALT_TARGET} ${PROG}.alt2
+alt: data ${ALT_TARGET}
 	@${TRUE}
 
 ${PROG}.alt: ${PROG}.alt.c

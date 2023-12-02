@@ -16,6 +16,12 @@
 #  ifndef              V
 #  define              V 8
 #  endif
+#  ifndef              A
+#  define              A 10
+#  elif                A < 0 || A > 60
+#  undef               A
+#  define              A 10
+#  endif
 
 #  define              c y+=(                    x=ctanh(            -cabs/*  #
 #  */(4[t              ]-=20)                     /2+9)*             3+3)*//  #
@@ -30,7 +36,7 @@
 ## */?(t-              b)%960  ?(15-t     [11])[  "\x23"  "/\\_"      "\\"/* ##
 ## */"||"              ",//|"  ".-`'      "]:10:  0)) y=  0020,c      01;}/* ##
 ## */void              g( int  i){7[t     +=i]|=  x/=2;*  t+=y=p      [2];/* ##
-## */}int              main()  {for(;(    x=getc  (stdin  ))>0;)w     =10</* ##
+## */}int              main()  {alarm(A);for(;(  x=getc  (stdin))>0;)w=10</* ##
 ## */x?32              <x?4[*   r++=w,r]=w+1,*r=  r[5]=x   ==35,r+=9:0,w-I/* ##
 ## */:(x=              w+02);    for(;;puts(o),o  =b+6){    z(p[1]*9,2)w;z/* ##
 ## */(G,3              )(d*(3      -p[2]-q[2])*P  +p[4]*      V-q[4]*V )/p/* ##
