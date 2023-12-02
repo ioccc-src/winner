@@ -3628,6 +3628,11 @@ Firefox both had the problem.
 implicitly (Linux doesn't seem to but macOS does).
 
 
+## [2013/robison](2013/robison/robison.c) ([README.md](2013/robison/README.md))
+
+[Cody](#cody) added the [try.sh](2013/robison/try.sh) script.
+
+
 # <a name="2014"></a>2014
 
 

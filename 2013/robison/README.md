@@ -9,14 +9,16 @@ make
 
 ```sh
 ./robison
+# enter an expression
+
+echo expression | ./robison
 ```
 
 
 ### Try:
 
 ```sh
-echo '1*2*3*4*5*6*7*8*9%1000' | ./robison
-echo '100000000000000000000*(20*(1+(99477941840441*50)))/31664812345028528' | ./robison
+./try.sh
 ```
 
 
