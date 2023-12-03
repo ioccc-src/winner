@@ -15,11 +15,7 @@ make
 ### Try:
 
 ```sh
-./cable1 obama republican democrat
-./cable1 nixon republican democrat
-./cable1 bush republican democrat
-./cable1 kennedy republican democrat
-./cable1 lincoln republican democrat
+./try.sh
 ```
 
 
@@ -69,7 +65,7 @@ A PC guy as expected.  What about that other Steve?
 Humm .. maybe there is a hidden reason he is leaving the late Micro$oft? :-)
 Why late? Because:
 
-![tweet about M$ being dead](https://twitter.com/landonnoll/status/401582967123742720)
+![tweet about M$ being dead](dead-ms-tweet.jpg)
 
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 An important 2023 update about twitter:
@@ -102,6 +98,7 @@ case, and prints out their political affiliation.
 Use `republican` as the 2nd command-line argument, and `democrat` as the 3rd (or
 equivalent strings of your choice).
 
+
 ### Why is this entry obfuscated/interesting?
 
 The program looks up the name supplied on the command line against a list of
@@ -116,6 +113,7 @@ table?
 - But, for Franklin D Roosevelt, use: `./cable1 fdr republican democrat`.
 
 - This program needs a little endian CPU to work properly.
+
 
 ### Compiler warnings
 
