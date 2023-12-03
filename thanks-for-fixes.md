@@ -3495,6 +3495,11 @@ Cody also added the [try.sh](2013/birken/try.sh) script for the entry and the
 joke Easter egg in it based on the judges' remarks.
 
 
+## [2013/cable2](2013/cable2/cable2.c) ([README.md](2013/cable2/README.md]))
+
+[Cody](#cody) added the [try.sh](2013/cable2/try.sh) script.
+
+
 ## [2013/cable3](2013/cable3/cable3.c) ([README.md](2013/cable3/README.md]))
 
 [Cody](#cody) fixed this to compile with modern systems. The problems were that
