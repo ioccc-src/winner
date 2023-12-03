@@ -3574,15 +3574,6 @@ program rather than the file specified. It does not try and detect if the file
 exists or can be read as that will be handled by the shell/program.
 
 
-## [2013/endoh4](2013/endoh4/endoh4.c) ([README.md](2013/endoh4/README.md))
-
-[Cody](#cody) added the [run.sh](2013/endoh4/run.sh) script which temporarily turns off
-the cursor as suggested by the author, with the addition that if no file is
-specified it will feed the source code [endoh4.c](2013/endoh4/endoh4.c) to the
-program rather than the file specified. It does not try and detect if the file
-exists or can be read as that will be handled by the shell/program.
-
-
 ## [2013/hou](2013/hou/hou.c) ([README.md](2013/hou/README.md))
 
 [Cody](#cody) fixed the Makefile so that this would work properly. Before this the use of
@@ -3635,6 +3626,11 @@ Firefox both had the problem.
 
 [Cody](#cody) added explicit linking of libm (`-lm`) as not all systems do this
 implicitly (Linux doesn't seem to but macOS does).
+
+
+## [2013/robison](2013/robison/robison.c) ([README.md](2013/robison/README.md))
+
+[Cody](#cody) added the [try.sh](2013/robison/try.sh) script.
 
 
 # <a name="2014"></a>2014
