@@ -27,21 +27,6 @@ make understanding
 Also try:
 
 ```sh
-seq 1 12 | ./horizontal_cat - - -
-
-./long_cat
-./long_faat_cat
-./long_fat_cat
-./loong_cat
-./loooong_cat
-./loooooooong_cat
-
-seq -f '%.0f  ' 45 | ./horizontal_cat - misaka.c
-```
-
-Alternately you can just try:
-
-```sh
 ./try.sh
 ```
 
@@ -57,6 +42,7 @@ NOTE: Use - for standard input.  For example:
 There is more to cat than [mere cats](http://cheezburger.com/1680494336).  Be
 they tall, fat, long or squat, this source code is sure to amuse.
 
+
 #### Slight diversion
 
 While one of the judges was reviewing this entry on the stern of the
@@ -66,7 +52,7 @@ in the middle of the Atlantic Ocean waiting for the
 the judge was struck by a
 [flying fish](http://en.wikipedia.org/wiki/Flying_fish).
 While the result of the impact was that the
-[Port](http://en.wikipedia.org/wiki/Port_wine) from Portugal was lost, but the
+[Port](http://en.wikipedia.org/wiki/Port_wine) from Portugal was lost, the
 [Grog](https://web.archive.org/web/20130702003043/http://www.travelforpassion.com/grog-factory-cape-verde-santo-antao-cape-verde-1602-photo)
 from Cape Verde and the laptop containing this entry was saved.
 
@@ -92,7 +78,8 @@ cc misaka2.c -o vertical_cat
 ./vertical_cat [files...] > [output]
 ```
 
-Where `[files...]` are a list of text file names.  Use `-` to read from stdin.
+Where `[files...]` is a list of text file names.  Use `-` to read from `stdin`.
+
 
 ### Details
 
@@ -118,13 +105,14 @@ original text alignments are preserved.
 
 If `-` is specified as a file name, `horizontal_cat` will read from `stdin`.
 Unlike `cat`, `horizontal_cat` loads all input to memory first.  Thus you
-can specify `-` multiple times to get stdin multiplied horizontally.  For
+can specify `-` multiple times to get `stdin` multiplied horizontally.  For
 example, if you have `seq(1)` in your shell, you can add line numbers to both
 sides of [misaka.c](misaka.c) like this:
 
 ```sh
 seq -f '  %.0f  ' 45 | ./horizontal_cat - misaka.c -
 ```
+
 
 ### Vertical cat
 
@@ -150,6 +138,7 @@ gcc misaka2.c -o vertical_cat
 ```sh
 ./vertical_cat - -
 ```
+
 
 ### Long cat
 
@@ -214,6 +203,7 @@ MISAKA
 MISAKA MISAKA
 ```
 
+
 ### Return value
 
 `horizontal_cat` and `vertical_cat` will exit with zero status on success.
@@ -223,6 +213,7 @@ report the offending file name to `stdout`, and exit with nonzero status.
 
 If `horizontal_cat` and `vertical_cat` ran out of memory, they will exit
 with nonzero status without outputting anything.
+
 
 ### Compatibility
 
@@ -241,6 +232,7 @@ with nonzero status without outputting anything.
 
 `Misaka` requires a C99 compiler due to the use of single line comments.
 `Misaka` does not depend on any other C99 features.
+
 
 ### Obfuscation
 
@@ -263,13 +255,16 @@ Other features to look for:
 `gcc -Wall` should provide a hint to where the mode switch happens, it
 does not output any irrelevant other warnings (verified on 4.6.3).
 
+
 ### Extra files
 
 Extra files included in my submission are informational only, they are not
 needed for the program to work.
 
-* [bf.pl](bf.pl) - a brainfuck interpreter, in case you don't have one handy.
+* [bf.pl](bf.pl) - a perl brainfuck interpreter, in case you don't have one
+handy.
 * [spoiler.html](spoiler.html) - making of this program.
+
 
 ### About `Misaka`
 
@@ -277,7 +272,7 @@ The name, layout, and functionality of `Misaka` is inspired by a particular
 stackable figure:
 
 * [Google images](http://google.co.jp/search?q=%E3%83%9F%E3%82%B5%E3%82%AB%E7%9B%9B%E3%82%8A&tbm=isch)
-* [Kotobukiya](http://main.kotobukiya.co.jp/figure/tsubucole_tmi_misakamori/)
+* [Kotobukiya](https://web.archive.org/web/20140325175014/http://main.kotobukiya.co.jp/figure/tsubucole_tmi_misakamori/)
 
 
 ## Copyright and CC BY-SA 4.0 License:

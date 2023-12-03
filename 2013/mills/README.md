@@ -5,6 +5,17 @@ make
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2013 mills in bugs.md](/bugs.md#2013-mills).
+
+
 ## To use:
 
 ```sh
@@ -57,6 +68,7 @@ n=1,setsockopt(s,SOL_SOCKET,SO_REUSEADDR,&n,sizeof n),
 at an appropriate spot in the code (an exercise left to the reader).  However,
 as this limitation is documented, it is not technically a bug.
 
+
 ### Details of Operation
 
 The program wears many hats (not literally).  It is
@@ -73,7 +85,7 @@ displayed initially at a lower resolution and allowed to be progressively
 refined as time goes on.  The ray tracer is integrally tied to the PNG encoder,
 casting rays in the Adam7 order.  The web server uses PNG primarily because of
 PNG's ability to return data progressively, and not as you might think it being
-because the PNG standard is so obfuscated as to require both little- and
+because the PNG standard is so obfuscated as to require both little and
 big-endian encodings at different spec layers.
 
 Since ray-tracing was an obvious choice to return to a web server, I needed
@@ -83,7 +95,7 @@ inspiration (as I often do) from the IOCCC remarks file which says
 >  At least one judge prefers to maintain the use of the leap-second
 >  as part of the world's time standard.
 
-Then it was obvious; The code should display the time.  It is believed (but
+Then it was obvious; the code should display the time.  It is believed (but
 not confirmed) that the code will, in fact, display leap seconds correctly.
 
 To display the time, of course we would need a font.  This font is encoded
@@ -91,6 +103,7 @@ as a string, using only the C whitespace characters.  Clearly, the judges
 intended this use of whitespace for data compression, since their tool
 doesn't count whitespace in strings differently than whitespace outside of
 them.
+
 
 ### User-modifiable Features
 
@@ -107,6 +120,7 @@ list above (three times the number of lights).
 * `-DEY=x,y,z` defines the position of the viewer (the eye point) for the scene.
 The eye is looking at the origin `(0, 0, 0)`.
 
+
 ### Other Build Flags
 
 The original program bound the server to `INADDR_ANY` to allow everyone to
@@ -117,7 +131,7 @@ of innumerable post-ship late feature additions, I have modified the
 spherical symmetry of the source code.  In addition, I have altered the word
 `sin_port` to the more family-friendly version `win_port` (via
 `-Dwin_port="sin_addr.s_addr=htonl(2130706433),R.sin_port"`) to protect against
-curious impressionable youth trying to learn about sockets on Internet.
+curious impressionable youth trying to learn about sockets on the Internet.
 
 
 ## Copyright and CC BY-SA 4.0 License:

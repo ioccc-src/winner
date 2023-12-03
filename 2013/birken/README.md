@@ -4,18 +4,16 @@
 make alt
 ```
 
+To see why we recommend the alternate version instead of the original version,
+see the [original code](#original-code) section.
+
 
 ## To use:
 
-To see why we recommend the alternate version instead of the original version,
-see the [original code](#original-code) section.
 
 ```sh
 ./birken.alt < 17_columns_wide_paint_by_numbers_file
 ```
-
-To see why we recommend the alternate version instead of the original version,
-see the [original code](#original-code) section.
 
 
 ### Try:
@@ -23,7 +21,15 @@ see the [original code](#original-code) section.
 This alternate version, which we recommend that you use in order to see what is
 happening with modern systems, and to not flash colours too quickly, which can
 be problematic for some people, can be configured to different speeds by way of
-the value used in `usleep()`. The default is `-DZ=15000`.
+the value used in `usleep(3)`. The default is `-DZ=13500`.
+
+To see the program run on each text file, try:
+
+```sh
+./try.alt.sh
+```
+
+If you have perl installed it will also try a random run.
 
 Finding the 'right' default value was a fine line; the default, 15000
 microseconds (0.015 seconds), will take quite a while to finish but it allows
@@ -35,12 +41,9 @@ compile time. If you wish to speed it up by 100% you can instead do:
 
 ```sh
 make clobber CDEFINE=-DZ=7500 alt
-./birken.alt < ioccc.txt
-
-perl -e 'map{map{print int(rand()*8);}(0..16);print chr(10);}(0..30);' | tr '[0-4]' ' '| ./birken.alt
-
-./try.sh
 ```
+
+and then try `birken.alt` as above.
 
 If you wish to speed that up 200% you can use instead `-DZ=3750`. Doing this you
 might find the right value to your liking; use ctrl-c to terminate the program
@@ -56,19 +59,29 @@ to make it sane again (running to completion will do that for you).
 
 ## Original code:
 
-Should you wish to see the original without having to mess with the compiler
-line, try:
+The original code will run faster with modern systems which is likely to make it
+hard to see the art of the entry but you may do so if you wish.
+
+
+### Original build:
 
 
 ```sh
-make clobber all
+make all
 ```
 
-Use `birken` as you would `birken.alt` above. To use the demo script with the
-original code, try:
+
+### Original use:
+
+Use `birken` as you would `birken.alt` above.
+
+
+### Original try:
+
+To use the demo script with the original code, try:
 
 ```sh
-BIRKEN=birken ./try.sh
+./try.sh
 ```
 
 PLEASE be careful if you are sensitive to flashing colours!
@@ -101,10 +114,12 @@ This document is best viewed as an HTML file in a browser that supports animated
 
 See the files: `*.txt`, `*.png` and `*.gif`.
 
+
 ### Abstract
 
 By rotating, positioning and dropping a predetermined sequence of pieces, this
 program exploits the mechanics of Tetris to generate arbitrary images.
+
 
 ### Algorithm Overview
 
@@ -142,6 +157,7 @@ opposite order (a row of 3 red squares above a row of 5 red squares), a platform
 would not be necessary.
 
 ![](platform1.gif)
+
 
 ### Single Square Emitters
 
@@ -188,7 +204,7 @@ leave holes in the upper row.
 The minimal number of rows required above the protruding square is 3 and as
 shown repeatedly above, such patterns do exist.  20 squares is the minimal width
 required to fit a 16 pixel wide sprite.  But, `20 * 3 + 1 = 61`, which is not
-divisible by 4 and hence not constructible out of
+evenly divisible by 4 and hence not constructible out of
 [tetriminos](https://en.wikipedia.org/wiki/Tetromino).  However, a width of 21
 yields `21 * 3 + 1 = 64`, which can be built with 16 tetriminos.  That width
 actually enables the algorithm to render sprites up to 17 pixels wide.
@@ -209,6 +225,7 @@ tetriminos.  As the images below show, those patterns do exist.
 ![](pen7.gif)
 
 ![](pen8.gif)
+
 
 ### Platforms
 
@@ -242,6 +259,7 @@ Also, of the 19 possible ways to start constructing a platform on top of a `T`
 [tetrimino](https://en.wikipedia.org/wiki/Tetromino), only the 10 patterns shown
 above exist.
 
+
 ### Program Input
 
 The input sprite is represented textually.  Digit characters `0` to `7`
@@ -265,6 +283,7 @@ fed into standard input.  Several examples take advantage of the
 Instead of using character `0`, internal regions marked as transparent are
 effectively rendered as black.
 
+
 ### Program Output
 
 The program conceptually uses [Tetris](https://en.wikipedia.org/wiki/Tetris) as
@@ -275,6 +294,7 @@ rotating, positioning and dropping
 [tetriminos](https://en.wikipedia.org/wiki/Tetromino). This process is visually
 represented using ANSI escape sequences.
 
+
 ### ANSImation
 
 The rate at which the program plays
@@ -283,7 +303,8 @@ rate in which the terminal application receives and displays the [ANSI
 escape](https://en.wikipedia.org/wiki/ANSI_escape_code) sequences.
 
 To slow down the output programmatically, introduce a delay immediately after the
-call to `fflush()` (N.B: see [birken.alt.c](birken.alt.c)).
+call to `fflush(3)` (N.B: see [birken.alt.c](birken.alt.c)).
+
 
 ### IOCCC Size Tool Bug
 
@@ -310,6 +331,7 @@ $ ./iocccsize -i < birken.c
 Although this bug provides an easy means of circumventing contest rule 2, as
 demonstrated from the size value, this entry is not necessarily striving for a
 'worst abuse of the rules' award.
+
 
 ### Obfuscations
 
@@ -378,6 +400,7 @@ with `Z`, necessitating a second list of 3-bit color values.  Pairs of color
 values (6 bits) fit comfortably into a character that is offset by `#`.  The
 result is a string of length 19.
 
+
 ### Obfuscations
 
 The program is full of subtle obfuscations:
@@ -406,6 +429,7 @@ and 7 as longer.
 * The file size of [birken.c](birken.c) is a prime number.  Deleting the first
 line also produces a prime-sized program.  These properties do not qualify the
 program as a prime number generator.
+
 
 ### Beyond Obfuscation
 
@@ -437,18 +461,20 @@ single emitted square.
 
 The details of these enhancements are left as an exercise to the reader.
 
+
 ### Example Files
 
-The following example files were created by the program author.  They can be freely used and distributed.
+The following example files were created by the program author.  They can be
+freely used and distributed.
 
-* [format.txt](format.txt) - The layout of the program
-* [helloworld.txt](helloworld.txt) - Hello World, Tetris-style
-* [hilbert.txt](hilbert.txt) - A graphic based on the Hilbert curve
-* [ioccc.txt](ioccc.txt) - IOCCC
-* [landon.txt](landon.txt) - Portrait of a man with glasses
-* [leo.txt](leo.txt) - Portrait of a man without glasses
-* [rhino.txt](rhino.txt) - A purple rhinoceros
-* [simon.txt](simon.txt) - Portrait of a man without hair
+* [format.txt](format.txt) - The layout of the program.
+* [helloworld.txt](helloworld.txt) - Hello World, Tetris-style.
+* [hilbert.txt](hilbert.txt) - A graphic based on the Hilbert curve.
+* [ioccc.txt](ioccc.txt) - IOCCC.
+* [landon.txt](landon.txt) - Portrait of a man with glasses.
+* [leo.txt](leo.txt) - Portrait of a man without glasses.
+* [rhino.txt](rhino.txt) - A purple rhinoceros.
+* [simon.txt](simon.txt) - Portrait of a man without hair.
 
 The following files are based on graphics from non-free, copyrighted video
 games.  The use of a limited number of textual representations of the graphics
@@ -460,62 +486,63 @@ origin of each file is detailed below (character, game, company, year).
 * [belmont.txt](belmont.txt) - [Simon
 Belmont](https://en.wikipedia.org/wiki/Simon_Belmont),
 [Castlevania](https://en.wikipedia.org/wiki/Castlevania_(1986_video_game)),
-[Konami](https://en.wikipedia.org/wiki/Konami), 1986
+[Konami](https://en.wikipedia.org/wiki/Konami), 1986.
 
 * [bloober.txt](bloober.txt) - Bloober, [Super Mario
 Brothers](https://www.mariowiki.com/Super_Mario_Bros.),
-[Nintendo](https://en.wikipedia.org/wiki/Nintendo), 1985
+[Nintendo](https://en.wikipedia.org/wiki/Nintendo), 1985.
 
 * [bomberman.txt](bomberman.txt) -
 [Bomberman](https://en.wikipedia.org/wiki/Bomberman), Bomberman,
-[Hudson](https://en.wikipedia.org/wiki/Hudson_Soft), 1983
+[Hudson](https://en.wikipedia.org/wiki/Hudson_Soft), 1983.
 
 * [boo.txt](boo.txt) - [Boo](https://www.mariowiki.com/Boo), [Super Mario
-Brothers 3](https://www.mariowiki.com/Super_Mario_Bros._3), Nintendo, 1988
+Brothers 3](https://www.mariowiki.com/Super_Mario_Bros._3), Nintendo, 1988.
 
 * [bub.txt](bub.txt) - [Bub](https://bubblebobble.fandom.com/wiki/Bub), [Bubble
-Bobble](https://en.wikipedia.org/wiki/Bubble_Bobble), Taito, 1986
+Bobble](https://en.wikipedia.org/wiki/Bubble_Bobble), Taito, 1986.
 
 * [cheepcheep.txt](cheepcheep.txt) - [Cheep
-Cheep](https://www.mariowiki.com/Cheep_Cheep), Super Mario Brothers, Nintendo, 1985
+Cheep](https://www.mariowiki.com/Cheep_Cheep), Super Mario Brothers, Nintendo,
+1985.
 
 * [gurin.txt](gurin.txt) - Gurin, [Binary
-Land](https://en.wikipedia.org/wiki/Binary_Land), Hudson, 1983
+Land](https://en.wikipedia.org/wiki/Binary_Land), Hudson, 1983.
 
 * [koopaparatroopa.txt](koopaparatroopa.txt) - [Koopa
 Paratroopa](https://www.mariowiki.com/Koopa_Paratroopa), Super Mario Brothers,
-Nintendo, 1985
+Nintendo, 1985.
 
 * [lakitu.txt](lakitu.txt) - [Lakitu](https://www.mariowiki.com/Lakitu), Super
-Mario Brothers, Nintendo, 1985
+Mario Brothers, Nintendo, 1985.
 
 * [mario.txt](mario.txt) - [Fire Mario](https://www.mariowiki.com/Fire_Mario),
-Super Mario Brothers, Nintendo, 1985
+Super Mario Brothers, Nintendo, 1985.
 
 * [mspacman.txt](mspacman.txt) - [Ms.
 Pac-Man](https://pacman.fandom.com/wiki/Ms._Pac-Man) and Ghost, Ms. Pac-Man,
-[Midway](https://en.wikipedia.org/wiki/Midway_Games), 1982
+[Midway](https://en.wikipedia.org/wiki/Midway_Games), 1982.
 
 * [paranaplant.txt](paranaplant.txt) - [Piranha
 Plant](https://www.mariowiki.com/Piranha_Plant), Super Mario Brothers, Nintendo,
-1985
+1985.
 
 * [samus.txt](samus.txt) - [Samus
 Aran](https://metroid.fandom.com/wiki/Samus_Aran),
 [Metroid](https://metroid.fandom.com/wiki/Metroid_(game)), Nintendo/[Intelligent
-Systems](https://en.wikipedia.org/wiki/Intelligent_Systems), 1986
+Systems](https://en.wikipedia.org/wiki/Intelligent_Systems), 1986.
 
 * [toad.txt](toad.txt) - [Toad](https://www.mariowiki.com/Toad), Super Mario
-Brothers 2, Nintendo, 1987
+Brothers 2, Nintendo, 1987.
 
 The origin of the remaining files are described below:
 
 * [happyface.txt](happyface.txt) - Based on a
 [smiley](https://en.wikipedia.org/wiki/Smiley); original trademark of smiley
-[Smiley Company](https://en.wikipedia.org/wiki/The_Smiley_Company)
+[Smiley Company](https://en.wikipedia.org/wiki/The_Smiley_Company).
 
 * [snoo.txt](snoo.txt) - 8-bit version of [Snoo](https://www.reddit.com/r/Snoo/),
-[Reddit](https://www.reddit.com)'s alien mascot
+[Reddit](https://www.reddit.com)'s alien mascot.
 
 
 ## Copyright and CC BY-SA 4.0 License:

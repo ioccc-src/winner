@@ -3481,13 +3481,12 @@ the same) so that as long as it runs to completion the terminal will be sane and
 the cursor will be visible. Using `atexit(3)` will not work if the program is
 killed and signals are ugly so this was not done.
 
-Cody also added the [try.sh](2013/birken/try.sh) script and the
-alternate version (that has the above fix) which allows one to control how fast the painting is done,
-based on the author's recommendations, except that Cody made it configurable at
-compile time just like he did with other entries that use `usleep(3)`. The
-alternate version and the original version were swapped in the `To build`, `To
-run` and `Try` sections, with what is normally `Alternate code` being `Original
-code`.
+Cody also added the alt version that lets one control how fast the painting is
+done, based on the author's recommendations, except that Cody made it
+configurable at compile time.
+
+Cody also added the [try.sh](2013/birken/try.sh) script for the entry and the
+[try.alt.sh](2013/birken/try.alt.sh) script for the alt code.
 
 
 ## [2013/cable3](2013/cable3/cable3.c) ([README.md](2013/cable3/README.md]))
@@ -3617,11 +3616,19 @@ Further, after the file 2013/hou/doc/example.markdown was moved to
 this broke `make` which Cody also fixed.
 
 
+## [2013/mills](2013/mills/mills.c) ([README.md)[2013/mills/README.md))
+
+[Cody](#cody) fixed this so that the server would not refuse the connection
+after the first call to `close(2)`. The problem was that because the backlog to
+`listen(2)` was 1 once the connection closed the server was essentially 'dead'.
+The backlog was changed to 10 and this solves the problem. It is not known if
+this was specific to macOS but it was not specific to a browser as Safari and
+Firefox both had the problem.
+
+
 ## [2013/misaka](2013/misaka/misaka.c) ([README.md)[2013/misaka/README.md))
 
-As there are a lot of commands to try, [Cody](#cody) added the
-[try.sh](2013/misaka/try.sh) script to do this, sleeping for approximately 1
-second between commands.
+[Cody](#cody) added the [try.sh](2013/misaka/try.sh) script.
 
 
 ## [2013/morgan1](2013/morgan1/morgan1.c) ([README.md](2013/morgan1/README.md))
