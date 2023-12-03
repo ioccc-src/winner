@@ -85,7 +85,7 @@ statement in [hou.c](hou.c):
 ```
 
 The regex engine is also algorithmically efficient. To illustrate the point,
-[ansi.txt](ansi.txt) contains a pathological expression [2] that guarantees a
+[ansi.txt](ansi.txt) contains a pathological expression [^2] that guarantees a
 hang for the competing Perl engine while matching itself. Try to compare these
 two engines:
 
@@ -119,10 +119,10 @@ beautification and preprocessing.
 The second layer of obfuscation comes from the need to squeeze a reasonably
 powerful regex engine into the remaining area that isn't occupied by excessive
 keywords and useless constants. To achieve this, the regex compiler is written
-using the same threaded virtual machine [1] that parses the regex. Due to
+using the same threaded virtual machine [^1] that parses the regex. Due to
 compiler limitations, the generated VM code also ends up obscured by a large
 amount of spaghetti branches and virtual thread creations. Finally, the VM in
-[1] is extended to track multiple expression matches for the actual formatting.
+[^1] is extended to track multiple expression matches for the actual formatting.
 
 As an extra tweak, the text message actually does something useful. Remove the
 "Make a contract with me" catch line and the program would cease to function.
@@ -130,9 +130,9 @@ As an extra tweak, the text message actually does something useful. Remove the
 
 ### References
 
-[1][Russ Cox, Regular Expression Matching: the Virtual Machine Approach](http://swtch.com/~rsc/regexp/regexp2.html)
+[^1]: [Russ Cox, Regular Expression Matching: the Virtual Machine Approach](http://swtch.com/~rsc/regexp/regexp2.html)
 
-[2][Regular Expression Matching Can Be Simple And Fast (but is slow in Java, Perl, PHP, Python, Ruby, ...)](http://swtch.com/~rsc/regexp/regexp1.html)
+[^2]: [Regular Expression Matching Can Be Simple And Fast (but is slow in Java, Perl, PHP, Python, Ruby, ...)](http://swtch.com/~rsc/regexp/regexp1.html)
 
 
 ## Copyright and CC BY-SA 4.0 License:
