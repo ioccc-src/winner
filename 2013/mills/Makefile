@@ -58,7 +58,7 @@ ARCH=
 # Defines that are needed to compile
 #
 CDEFINE= -DLT=0,-9,70,130,50,30,-60,40,30 -DNL=9 -DEY=0,-22,37 \
-	-Dwin_port="sin_addr.s_addr=htonl(2130706433),R.sin_port"
+	-Dwin_port="sin_addr.s_addr=htonl(2130706433),R.sin_port" -Dl=10
 
 # Include files that are needed to compile
 #
