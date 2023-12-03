@@ -25,6 +25,21 @@ echo 1>&2
 ./long_cat
 echo 1>&2
 
+rm -f long_cat.txt same_as_long_cat.txt
+read -r -n 1 -p "Press any key to run: ./long_cat > long_cat.txt: "
+echo 1>&2
+./long_cat > long_cat.txt
+echo 1>&2
+read -r -n 1 -p "Press any key to run: ./same_as_long_cat > same_as_long_cat.txt: "
+echo 1>&2
+./same_as_long_cat > same_as_long_cat.txt
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: diff -s long_cat.txt same_as_long_cat.txt: "
+echo 1>&2
+diff -s long_cat.txt same_as_long_cat.txt
+echo 1>&2
+
 read -r -n 1 -p "Press any key to run: ./long_faat_cat: "
 echo 1>&2
 ./long_faat_cat
