@@ -20,13 +20,6 @@ For the graphical version (X11):
 ```
 
 
-### Try:
-
-```sh
-echo "Do or do not. There is no try."
-```
-
-
 ## Judges' remarks:
 
 The judges enjoyed playing the game almost to completion; if we remember
@@ -41,7 +34,9 @@ This program is a domino game. The goal is to place dominoes on the 8x8 grid.
 Each domino is made of 6 squares of the colour red or green. To place a domino,
 at least one of its side shall match the other side of another domino.
 
+
 ### How to play
+
 
 ### Start of the game
 
@@ -49,14 +44,17 @@ At the start of the game, the first domino is placed randomly on the grid. You
 get another domino to place by selecting one empty position in the stack on the
 right. You can have up to 8 dominoes pending at any time.
 
+
 ### Moving in the stack
 
-Use `Up` and `Down` key to move the cursor in the stack. Press `Enter` to either
+Use `Up` and `Down` key to move the cursor in the stack. Press `Enter` to
+either:
 
 * Reveal a new domino if the position was empty.
 * Select the domino to try to place it if the position was not empty.
 
 The currently selected domino is indicated on the top right.
+
 
 ### Placing a domino
 
@@ -66,38 +64,42 @@ to place the domino.
 
 To go back to selection mode, press `Enter` on an occupied position.
 
-The domino can be placed in an empty position if all its neighbour have matching
-sides and the domino has at least one neighbour.
+The domino can be placed in an empty position if all its neighbours have
+matching sides and the domino has at least one neighbour.
+
 
 ### Scoring
 
 First, depending on the number of dominoes pending in the stack, a bonus is
-accorded :
+accorded:
 
-* 1 domino in the stack : 8 points.
-* 2 dominoes in the stack : 4 points.
-* 3 or 4 dominoes in the stack : 2 points.
-* 5 or more dominoes in the stack : 0 points.
+* 1 domino in the stack: 8 points.
+* 2 dominoes in the stack: 4 points.
+* 3 or 4 dominoes in the stack: 2 points.
+* 5 or more dominoes in the stack: 0 points.
 
 Then the bonus is multiplied by the number of matching neighbours the placed domino
 has (1, 2, 3 or 4). This is added to the score.
 
 Finally, the total score is divided by the number of dominoes placed (1 - 64).
 
-The 3 numbers on display represent : the total score, the fill count and the
+The 3 numbers on display represent: the total score, the fill count and the
 final score (total score divided by fill count).
+
 
 ### End of the game
 
-The game is finished when no more dominos can be placed and you either :
+The game is finished when no more dominoes can be placed and if one of the
+following occurs:
 
-* Completely filled the grid.
-* Have 8 pending dominoes in the stack.
-* No more domino can be revealed in the stack (more than 56 dominoes placed on
-  the grid).
+* You have completely filled the grid.
+* You have 8 pending dominoes in the stack.
+* No more dominoes can be revealed in the stack (more than 56 dominoes placed on
+the grid).
 
 **Note**: There is no real end of game detection implemented in the program,
 simply press `q` when you have finished...
+
 
 ### Strategy
 
@@ -109,19 +111,22 @@ simply press `q` when you have finished...
   placement. If the corner of a domino does not match another corner diagonally,
   the move is valid but will prevent some future moves.
 
+
 ### Limitations
 
 * ASCII character set is assumed.
 * Requires both ncurses and X11 at compilation and runtime, but selection could
   be done at compilation with some extra code (mainly empty stubs).
 
+
 ### Obfuscation
 
-* 1 letter identifier, reused when possible.
-* 1 algorithm, 2 different kind of display (ncurses and X11) mixed.
+* 1 letter identifiers, reused when possible.
+* 1 algorithm, 2 different kinds of display (ncurses and X11) mixed.
 * No parameters to functions, all variables are global and shared.
 * Some variables are not initialized if they have a known value at the time of
   use.
+
 
 ### Compilation warnings
 
