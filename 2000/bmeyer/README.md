@@ -215,7 +215,7 @@ In short --- running it through the preprocessor and the
 pretty-printer will give you something that looks slightly less
 like line noise and slightly more like a C program, but unless you
 are a true wizard, it is unlikely to gain you any insights into
-what is actually going on....\[0\]
+what is actually going on....[^0]
 
 
 ### Bugs, Assumptions and TODO
@@ -269,7 +269,7 @@ ordering. For each pixel, an expected value is calculated by creating a least
 squares predictor of order 12 based on all of the previously encoded/decoded
 pixels. However, the contribution of each pixel is weighted according to its
 [Manhattan-distance](https://en.wikipedia.org/wiki/Taxicab_geometry) from the
-current pixel, `D`. That weight used is `pow(0.8,D)`. \[1\] \[2\] \[3\]
+current pixel, `D`. That weight used is `pow(0.8,D)`. [^1] [^2] [^3]
 
 In a similar way, the prediction *errors* for all previous pixels
 are combined --- a weighted average (with weight `pow(0.7,D)`) of
@@ -293,27 +293,27 @@ arithmetic decoder provides the information which half the actual
 value is in.  In both cases, the interval borders are adjusted
 accordingly, the arithmetic coder/decoder updated, and the
 interval halving repeated until the precise value has been
-en/decoded\[4\].
+en/decoded[^4].
 
 
-[0] Yes, this could be seen as a challenge....
-[1] Actually, the weight is `pow(0.8,D)/s`, where `s` is the sigma
+[^0]: Yes, this could be seen as a challenge....
+[^1]: Actually, the weight is `pow(0.8,D)/s`, where `s` is the sigma
     used for encoding/decoding the particular previous pixel. Dividing
     by `s` is a rather arbitrary action justified only by the
     improvement in results.  Mathematically, I can only justify
     dividing by `s^2`, or not dividing at all....
-[2] Obviously, these least squares predictors are not calculated
+[^2]: Obviously, these least squares predictors are not calculated
     from scratch for each pixel. Some clever reuse of earlier
     results allows `O(1)` calculation, rather than the
     `O(previous_rows*columns)` this description would suggest.
-[3] As anyone who has ever tried local least squares knows from
+[^3]: As anyone who has ever tried local least squares knows from
     bitter experience, there is a lot of numerical instability
     associated with them. So `glicbawls` adds a bias towards an
     averaging predictor to the equation system the least squares
     predictor is calculated from.  The weight that is given to
     this bias is constantly adjusted throughout coding/decoding,
     thus justifying the 'a' in `glicbawls`.
-[4] In the case of near-lossless coding, the interval is not
+[^4]: In the case of near-lossless coding, the interval is not
     necessarily *halved*, but rather split at a convenient point
     (the split points are chosen in such a way as to minimise the
     expected number of bits needed for coding). Also, the
