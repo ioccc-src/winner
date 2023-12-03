@@ -3489,6 +3489,12 @@ Cody also added the [try.sh](2013/birken/try.sh) script for the entry and the
 [try.alt.sh](2013/birken/try.alt.sh) script for the alt code.
 
 
+## [2013/cable1](2013/cable1/cable1.c) ([README.md](2013/cable1/README.md]))
+
+[Cody](#cody) added the [try.sh](2013/cable1/try.sh) script which also has an
+joke Easter egg in it based on the judges' remarks.
+
+
 ## [2013/cable3](2013/cable3/cable3.c) ([README.md](2013/cable3/README.md]))
 
 [Cody](#cody) fixed this to compile with modern systems. The problems were that
