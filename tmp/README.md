@@ -1,8 +1,21 @@
 # tmp
 
-The purpose of the `tmp` directory is to hold temporary files.
-The files in the `tmp` directory will go away leaving behind
-an empty `tmp` directory.
+The tools under this directory are an alpha release.
+The [build-ioccc repo](https://github.com/ioccc-src/build-ioccc/tree/master)
+will hold the beta and formal release of tools that will
+maintain the [official IOCCC web site](https://www.ioccc.org).
+
+Currently these tools maintain the [experimental web site](https://ioccc-src.github.io/temp-test-ioccc/)
+by default, via the  [temp-test-ioccc GitHub repo](https://github.com/ioccc-src/temp-test-ioccc).
+These tools will redefault to using the temp-test-ioccc repo and the experimental web site
+until the [official IOCCC web site](https://www.ioccc.org), via the
+[IOCCC winner repo](https://github.com/ioccc-src/winner) is ready for the mass pull request/merge.
+
+**IMPORTANT**: The purpose of the `tmp` directory is to hold temporary files.
+The files in the `tmp` directory will go away leaving behind an empty `tmp` directory.
+
+
+## purpose
 
 This documentation is here to help define terms, files under `tmp/`
 and the format of those files.
@@ -573,7 +586,8 @@ to generate data for the old winners directory tree.
 This is a temporary location for potential tools that are used to
 build and maintain the www.ioccc.org web site.
 
-Eventually a separate build-ioccc repo will hold these tools.
+Eventually a separate [build-ioccc repo](https://github.com/ioccc-src/build-ioccc/tree/master)
+will hold these tools.
 
 
 ### [run_all.sh](run_all.sh)
