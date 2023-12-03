@@ -2840,6 +2840,26 @@ fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
 
 # 2013
 
+## 2013 cable2
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2013/cable2/cable2.c](2013/cable2/cable2.c)
+### Information: [2013/cable2/README.md](2013/cable2/README.md)
+
+The author stated:
+
+- The width of input images must be a multiple of 4.
+- Input images can be 8-bit greyscale, 24-bit color or 32-bit color only. 8-bit
+color and 16-bit color are not supported. If you use the "color" command-line
+feature, do not use a greyscale input file!
+- Normal Windows BMP files are stored "upside-down", i.e. the bottom line in the
+image is written first. Some (old) graphics programs actually write BMP files
+"top-to-bottom" and the program does not support such files.
+- Using anti-aliased brush strokes to draw your letters is fine; however,
+antialiasing interferes with color detection in "color" mode.
+- Only runs on little endian machines (since the BMP format is little endian,
+and endianness conversion would make the source too large for IOCCC rule 2).
+
 
 ## 2013 cable3
 
@@ -2880,6 +2900,20 @@ something funny (or will it? :-) ) and when will it just do nothing?
 
 This program will not terminate on its own; you must kill `hou` (but not Qiming
 Hou :-) ) yourself. This should not be fixed.
+
+
+## 2013 mills
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2013/mills/mills.c](2013/mills/mills.c)
+### Information: [2013/mills/README.md](2013/mills/README.md)
+
+The author reminds us that if you kill the program you will have to wait a short
+bit of time before you can start it again if you want it to be able to bind to
+the socket (which obviously you do). The source is out the scope of this
+document but the author does mention the well known (at least to those of us who
+have experience with socket programming :-) ) fix. However as the author pointed
+it out as a known limitation it is not a bug but a feature.
 
 
 # 2014

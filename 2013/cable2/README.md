@@ -5,6 +5,19 @@ make
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2013 cable2 in bugs.md](/bugs.md#2013-cable2).
+
+
+
+
 ## To use:
 
 ```sh
@@ -14,44 +27,10 @@ make
 
 ### Try:
 
-Here is an OCR example that shows all 94 supported ASCII characters:
+For different OCR examples:
 
 ```sh
-./cable2 ascii.bmp
-```
-
-Here is an example of colored ASCII:
-
-```sh
-./cable2 multi_color.bmp color
-```
-
-Here is an example using different character sizes and different
-positions in the same file:
-
-```sh
-./cable2 mixed_sizes.bmp
-```
-
-How about about hand-written C code:
-
-```sh
-./cable2 hello_world.bmp | gcc -xc -o hello -
-./hello
-```
-
-Sometimes typeset text will work, if the typeset has characters that
-are enough to the supported handwritten shapes.  For example
-Menlo, 160 pt:
-
-```sh
-./cable2 typeset.bmp
-```
-
-And as an added IOCCC bonus: :-)
-
-```sh
-./cable2 bonus.bmp
+./try.sh
 ```
 
 
@@ -73,6 +52,7 @@ Magic!
 BMP files created by most paint programs should work. The author recommends
 Paint.NET.
 
+
 ### Features
 
 - Every printable ASCII character is recognized (94 characters plus space), plus
@@ -90,6 +70,7 @@ with a stroke width of around 9 pixels, and separated from adjacent characters.
 colors for different text characters.
 - If "color" is specified as the second command line parameter, the program's
 output will also be in color, on ANSI/VTxxx terminals.
+
 
 ### Why is this entry obfuscated/interesting?
 
@@ -117,6 +98,7 @@ sequences? Clue: the weird macro `P` does the interesting part of it, but how?
 do this? Clue: the string to print is defined in the macro `$`, but how can a
 string defined in that way ever get printed?
 
+
 ### Other notes
 
 - The novel character recognition algorithm used has not been previously
@@ -125,10 +107,10 @@ this entry win the IOCCC, it will be the first time (to the author's knowledge)
 that the IOCCC has been used for peer review/publication of original research.
 - OCR in general is a hard problem. Here, we only recognise one possible form
 for each character. You can see what the supported character shapes look like by
-looking at the examples in ascii.bmp. If you copy the shape of the character
-forms you find in there, recognition accuracy should be very good (95%+). A more
-"useful" version would extend the character stroke table to support multiple
-different commonly-used forms for each character.
+looking at the examples in [ascii.bmp](ascii.bmp). If you copy the shape of the
+character forms you find in there, recognition accuracy should be very good
+(95%+). A more "useful" version would extend the character stroke table to
+support multiple different commonly-used forms for each character.
 - Despite being the largest possible IOCCC entry at 4096 bytes, it is also
 probably the smallest general-purpose OCR program ever written (including the
 character stroke data), maybe by several orders of magnitude.
@@ -136,6 +118,7 @@ character stroke data), maybe by several orders of magnitude.
 McCaughan - thank you!) to squeeze the character stroke table (containing around
 2000 strokes for the whole ASCII character set) into a string constant of just
 472 characters.
+
 
 ### Bugs/features
 
@@ -146,10 +129,11 @@ feature, do not use a greyscale input file!
 - Normal Windows BMP files are stored "upside-down", i.e. the bottom line in the
 image is written first. Some (old) graphics programs actually write BMP files
 "top-to-bottom" and the program does not support such files.
-- Using antialiased brush strokes to draw your letters is fine; however,
+- Using anti-aliased brush strokes to draw your letters is fine; however,
 antialiasing interferes with color detection in "color" mode.
 - Only runs on little endian machines (since the BMP format is little endian,
 and endianness conversion would make the source too large for IOCCC rule 2).
+
 
 ### Compiler warnings
 
