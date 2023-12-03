@@ -51,13 +51,6 @@ of the invocations above:
 This program does not terminate by itself: you must kill `hou` (but not Qiming
 Hou :-) ) in order to end the program.
 
-This is supposed to happen.  As is written in the
-[The Jargon File](http://catb.org/jargon/html/F/feature.html):
-
-```
-That's not a bug, that's a feature.
-```
-
 
 ## Judges' remarks:
 
@@ -69,7 +62,7 @@ program.
 This program will loop infinitely while progressively refining a
 [raytraced](https://en.wikipedia.org/wiki/Ray_tracing_(graphics)) image.
 
-NOTE: the author refers to `a.c`, placed in a gzipped file `a.c.gz`. We do not
+NOTE: the author refers to [a.c](a.c), placed in a gzipped file `a.c.gz`. We do not
 include it but it can be generated like:
 
 ```sh
@@ -100,6 +93,7 @@ after you're satisfied with the image quality.
 
 To save time and energy for the judges, rendered images for all provided scenes
 are provided as attached files.
+
 
 ### Features
 
@@ -134,6 +128,7 @@ the progress every 16 samples and resumes where it's left off when restarted.
 Also, each scene/parameter combination gets a different saved session so you
 don't have to worry about conflicts.
 
+
 ### Abuse of the rules
 
 * [hou.c](hou.c) uses compression to get around the size limit. The compression
@@ -142,24 +137,26 @@ shows up in `grep` "size limit"). Please see the [Self-imposed
 restrictions](self-imposed-restrictions) section below for more details.
 * `hou` does not terminate (as suggested by the second line of rule 6).
 
+
 ### Self-imposed restrictions
 
-* The building process does not involve any OS tool beyond cc and make. No gzip
-compression! `a.c.gz` doesn't fit in 2053 bytes, anyway.
-* Neither [hou.c](hou.c) nor `a.c` (the *real* decompressed source) uses
+* The building process does not involve any OS tool beyond `cc(1)` and
+`make(1)`. No `gzip(1)` compression! `a.c.gz` doesn't fit in 2053 bytes, anyway.
+* Neither [hou.c](hou.c) nor [a.c](a.c) (the *real* decompressed source) uses
 `#define` (or `cc -D`) at all.
 * The source code is not required at runtime.
-* `a.c` does not drop optional features to reduce size. There are pure
+* [a.c](a.c) does not drop optional features to reduce size. There are pure
 optimization code that can be dropped without affecting the converged output
 (only affecting the ray tracing speed / convergence rate). All files are
 properly `fopen()`ed with `"rb"` / `"wb"` for Windows compatibility. The PPM
 header has a comment line for non-standard-compliant viewers (specifically, my
 old HDRShop 1.0). And there is a nice text message saying "please wait...".
-Despite the messy look, `a.c` and [hou.c](hou.c) compile warning-free
-([hou.c](hou.c) even wastes 18 bytes on `#include<stdio.h>` just for putchar).
-`a.c` compiles mostly clean in the C99/ANSI modes of clang and gcc (with `-Wall
+Despite the messy look, [a.c](a.c) and [hou.c](hou.c) compile warning-free
+([hou.c](hou.c) even wastes 18 bytes on `#include<stdio.h>` just for `putchar(3)`).
+[a.c](a.c) compiles mostly clean in the C99/ANSI modes of clang and gcc (with `-Wall
 --pedantic`). The only warning generated is a pedantic one: `"string constant
 too long"`.
+
 
 ### Comments and why obfuscated
 
@@ -173,35 +170,35 @@ internal states.
 the code, but they leave the text clear in the *result*. This entry takes it
 further and obfuscates the output image as well. Can you find the text in the
 image? Hint: look up.
-* `a.c` leaves all shaders in plain text, but the plain text shader code can't
+* [a.c](a.c) leaves all shaders in plain text, but the plain text shader code can't
 be taken for its face value; the arithmetic rules subtly diverge from our common
 sense.
-* `a.c` is less portable than [hou.c](hou.c) itself. [hou.c](hou.c) only depends
+* [a.c](a.c) is less portable than [hou.c](hou.c) itself. [hou.c](hou.c) only depends
 on ASCII and should run just fine on 16-bit, small memory, or
-floating-point-incapable machines. `a.c`, while still reasonably portable, is
-quite memory consuming, requires IEEE754-compliant double, and assumes int to be
-32-bit.
-
-* Though technically endian-dependent, `a.c` remains portable providing that one
+floating-point-incapable machines. [a.c](a.c), while still reasonably portable, is
+quite memory consuming, requires IEEE754-compliant `double`, and assumes `int` to be
+32-bits.
+* Though technically endian-dependent, [a.c](a.c) remains portable providing that one
 doesn't copy saved sessions across different endianness.
+
 
 ### Spoiler
 
 ```
-     3225  3225  3225  9  9    3225  3225
-     1     1  1  1  1  1  1    1     1  1\
-     4225  1226  1  1  1  1    1222  1226\
-        1  1     1  1  1  1    1     1 1\
-     4226  1     4226  8  4222 4226  1  1
+ 3225  3225  3225  9  9    3225  3225
+ 1     1  1  1  1  1  1    1     1  1
+ 4225  1226  1  1  1  1    1222  1226
+    1  1     1  1  1  1    1     1 1
+ 4226  1     4226  8  4222 4226  1  1
 ```
 
-The program consists of a recursive-descent interpreter, a 3DDDA (3D Discrete
-Differential Analysis) ray tracer, a PSSMLT (Primary Sample Space Metropolis
+The program consists of a recursive-descent interpreter, a `3DDDA` (3D Discrete
+Differential Analysis) ray tracer, a `PSSMLT` (Primary Sample Space Metropolis
 Light Transport) light path sampler, all squeezed into the size limit using a
-PPM compressor (Prediction by Partial Matching, and yes, the output format is
+`PPM` compressor (Prediction by Partial Matching, and yes, the output format is
 chosen for the pun..).
 
-PSSMLT uses the Metropolis-Hasting algorithm to sample a 32D unit hypercube.
+`PSSMLT` uses the Metropolis-Hasting algorithm to sample a 32D unit hypercube.
 Each point in the hypercube is interpreted as a sequence of random numbers, and
 is sent to a path tracer to generate a light path. The point's
 Metropolis-Hasting energy is then defined as the corresponding path's
@@ -216,8 +213,8 @@ path stratification is added to balance the attention each pixel receives. The
 Metropolis-Hasting process completely avoids the tell-tale pixel sampling loop
 required in most other image generation methods.
 
-The 3DDDA tracer is chosen for scalability: its performance doesn't get much
-worse as scene complexity increases. Another benefit is that with the DDA code
+The `3DDDA` tracer is chosen for scalability: its performance doesn't get much
+worse as scene complexity increases. Another benefit is that with the `DDA` code
 in place one can naturally use hierarchical grids as an acceleration structure.
 The downside, of course, is that the setup involves quite a few divisions, which
 naturally turns into divisions-by-zero. Fortunately, the IEEE754 standard has a
@@ -226,25 +223,25 @@ specific way to take advantage of this. The shader interpreter component is
 relatively straightforward, just an expression evaluator stripped to the bare
 minimum -- it doesn't even support numerical constants natively. A final little
 bit is a just-good-enough PRNG (Pseudo Random Number Generator) to replace the
-low precision Windows rand() and the non-C99 Unix drand48(). An overnight
+low precision Windows `rand()` and the non-C99 Unix `drand48(3)`. An overnight
 session would run through its short period many times, but that doesn't
-necessarily map to the same set of paths in PSSMLT. After all,
+necessarily map to the same set of paths in `PSSMLT`. After all,
 Metropolis-Hasting used an even worse PRNG in their 1953 paper.
 
-The PPM compressor uses statically weighted fixed order contexts with an
+The `PPM` compressor uses statically weighted fixed order contexts with an
 arithmetic encoder tweaked for [iocccsize.c](../iocccsize.c). The encoder emits octet-space pairs
 where each octet encodes ~6.5 bits of information and each space encodes 2 bits
 (thanks to the generous definition of "space" in [iocccsize.c](../iocccsize.c)). The compressor
 actively shuffles the variable names around until the compressed string happens
-to contain enough `{}; ` to pass the final [iocccsize.c](../iocccsize.c) test.
+to contain enough `{}; `s to pass the final [iocccsize.c](../iocccsize.c) test.
 There are a few other tweaks:
 
-* The PPM model uses mostly whitespace characters for weights.
+* The `PPM` model uses mostly whitespace characters for weights.
 
 * The encoder never emits `'"'` and `'\\'`.
 
 * The decoder uses an O(n^2) algorithm to avoid the gigabytes-sized hash table
-frequently found in other PPM implementations.
+frequently found in other `PPM` implementations.
 
 
 ## Copyright and CC BY-SA 4.0 License:

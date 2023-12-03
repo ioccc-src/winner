@@ -3576,9 +3576,9 @@ exists or can be read as that will be handled by the shell/program.
 
 ## [2013/hou](2013/hou/hou.c) ([README.md](2013/hou/README.md))
 
-[Cody](#cody) fixed the Makefile so that this would work properly. Before this the use of
-the program just did what the judges' remarks said as far as how it might
-violate rule 2: the program is really just a decompressor to generate the
+[Cody](#cody) fixed the Makefile so that this would work properly. Before this
+the use of the program just did what the judges' remarks said as far as how it
+might violate rule 2: the program is really just a decompressor to generate the
 real source of the program. So the source of the entry has to be compiled and
 then run, and the output has to be compiled to be `hou`. This allows the real
 program to be used. Thus the Makefile rule looks like:
@@ -3602,7 +3602,7 @@ The `LDFLAGS` were updated to have `-lm` as the author suggested it uses the
 `math.h` library which not all systems link in by default (Linux for instance
 does not).
 
-Further, after the file 2013/hou/doc/example.markdown was moved to
+Further, after the file `2013/hou/doc/example.markdown` was moved to
 [2013/hou/doc/example.md](2013/hou/doc/example.md) to match the rest of the repo
 this broke `make` which Cody also fixed.
 
