@@ -93,7 +93,7 @@ one cycle of the torus and `q` times around the other. `p` and `q` should be
 [coprime](https://en.wikipedia.org/wiki/Coprime_integers); otherwise, the
 resulting curve will _not_ be a knot (that is, imagining the resulting curve as
 a loop of rubber, there will be a way to bend, twist and stretch it, without
-cutting it [1], until it ends up looking just like a circle embedded in R3 [2]).
+cutting it [^1], until it ends up looking just like a circle embedded in R3 [^2]).
 
 Sample usage:
 
@@ -125,7 +125,7 @@ displaying animated GIFs, such as almost any graphical HTTP browser.
 
 Due to code size constraints, full [LZW
 compression](https://en.wikipedia.org/wiki/LZ77_and_LZ78#LZW) was not
-implemented [3]. In fact, the output images are even somewhat expanded, thanks
+implemented [^3]. In fact, the output images are even somewhat expanded, thanks
 to GIF overhead.
 
 The GIF format supports only a limited number of bits per pixel, so the
@@ -141,7 +141,7 @@ The only major portability issue should be reliance on ASCII.
 
 It should also be mentioned that the program won't work on systems that
 distinguish between text and binary streams; however, since hardly
-anyone uses such systems in this day and age, this is a minor issue. [4]
+anyone uses such systems in this day and age, this is a minor issue. [^4]
 
 
 ### EXERCISES FOR THE READER
@@ -157,16 +157,16 @@ smoother by increasing the number of polygons.
 
 ### FOOTNOTES
 
-[1] You can call such a transformation an "ambient isotopy" if you want to
+[^1]: You can call such a transformation an "ambient isotopy" if you want to
 impress people at parties.
 
-[2] Also known as the "unknot", which sounds slightly less impressive than
+[^2]: Also known as the "unknot", which sounds slightly less impressive than
 "ambient isotopy".
 
-[3] Unfortunately (for the author), the convenient excuse that LZW compression
+[^3]: Unfortunately (for the author), the convenient excuse that LZW compression
 was not implemented in order to avoid the Unisys patent can no longer be used.
 
-[4] ;)
+[^4]: ;)
 
 
 ## Copyright and CC BY-SA 4.0 License:
