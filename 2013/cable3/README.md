@@ -69,6 +69,7 @@ Update: This entry now has its own website:
 
 ## Author's remarks:
 
+
 ### A tiny but highly functional PC emulator/virtual machine
 
 The author hereby presents, for the delectation (?) of the judges, a portable PC
@@ -99,6 +100,7 @@ If you like living on the edge you can try building the emulator on a big endian
 machine, and you will get an emulation of a big endian 8086, a rather bizarre
 and somewhat useless beast. For everyone else, please run the emulator on a
 little endian machine.
+
 
 ### RULE 2 ABUSE DISCLAIMER
 
@@ -145,6 +147,7 @@ occasionally go overboard with nasty nested indexes to give things like this:
 - This entry might result in an adjustment to the IOCCC size tool for the 2014
 competition (see above).
 
+
 ### Compiling on different platforms
 
 This entry has been tested on Windows (compiled with MS Visual Studio 2010 and
@@ -167,6 +170,7 @@ KB=(kb=H(8),kbhit())&&(r[1190]=getch(),H(7))
 ```
 
 NOTE: this is done in the [Alternate code](#alternate-code).
+
 
 ### POSIX portability note
 
@@ -204,7 +208,7 @@ See the [runme](runme) script.
 ## To use the emulator - floppy mode only
 
 The simplest use of the emulator is with a single floppy boot disk image, like
-the fd.img provided, which is a FreeDOS boot disk.
+the `fd.img` provided, which is a FreeDOS boot disk.
 
 Before running the emulator on a Unix-type system, `stty` needs to be used to
 put the keyboard into raw mode (and afterwards it needs to be put back to
@@ -240,9 +244,10 @@ an easy way to copy files and programs to and from the disk image. Or, you can
 install programs from regular floppy disk images (see [Floppy disk
 support](#floppy-disk-support) below).
 
+
 ### Keyboard emulation
 
-The emulator simulates an XT-style keyboard controlled by an Intel 8042 chip on
+The emulator emulates an XT-style keyboard controlled by an Intel 8042 chip on
 I/O port 0x60, generating IRQ1 and then interrupt 9 on each key press. This is
 harder than it sounds because a real 8042 returns scan codes rather than the
 ASCII characters which the C standard I/O functions return. Rather than make the
@@ -257,8 +262,8 @@ example, with non-QWERTY e.g. international keyboards.
 Most of the time you can just type normally, but there are special sequences to
 get `Alt+xxx` and `Fxxx`.
 
-To send an `Alt+XXX` key combination, press (`^A` or `Ctrl+A`) then the key, so for example to
-type `Alt+F`, press (`^A` / `Ctrl+A`) then `F`.
+To send an `Alt+XXX` key combination, press (`^A` or `Ctrl+A`) then the key, so
+for example to type `Alt+F`, press (`^A` / `Ctrl+A`) then `F`.
 
 To send an `Fxx` key, press `^F` / `Ctrl+F` then a number key. For example, to
 get the `F4` key, press `^F` / `Ctrl+F` then `4`. To get `F10`, press `^F` /
@@ -267,6 +272,7 @@ get the `F4` key, press `^F` / `Ctrl+F` then `4`. To get `F10`, press `^F` /
 To send a `Page Down` key, press `^F` / `Ctrl+F` then `O` (letter O, not digit
 zero). To send a `Page Up` key, press `^F` / `Ctrl+F` then `E`. Other key
 combinations are left for the discovery of the user.
+
 
 ### Text mode support
 
@@ -295,6 +301,7 @@ state which confuses the emulator, resulting in subsequent text output being
 invisible. If this happens, just use the DOS `CLS` command to clear the screen
 and all will be well again.
 
+
 ### Graphics mode support
 
 [Hercules 720x348 monochrome graphics
@@ -314,12 +321,14 @@ little odd but you will get used to it).
 On Unices, SDL will automatically output graphics via X11 if the DISPLAY
 environment variable is set up.
 
+
 ### Dual graphics card support
 
 Some applications (e.g. AutoCAD) support a PC configuration with a CGA card and
 a Hercules card, for simultaneous text and graphics output on different
 displays. The emulator simulates this configuration, too, using separate windows
 for the (terminal) text and (SDL) graphics displays.
+
 
 ### BIOS
 
@@ -333,6 +342,7 @@ clock and so on, much as a "real" PC BIOS does, and also a small
 timer-controlled video driver to convert video memory formatting into ANSI
 escape sequences when the emulator is in text mode.
 
+
 ### CPU and memory emulation
 
 Memory map is largely as per a real PC, with interrupt vector table at `0:0`,
@@ -343,22 +353,23 @@ memory-mapped (at `F000:0`), which enables considerable optimisation of the
 emulator's instruction execution unit by permitting the unification of memory
 and register operations, while remaining invisible to the running software.
 
-CPU supports the full 8086/186 instruction set. Due to the complexities of the
-8086's arbitrary-length instruction decoding and flags, 8086 instructions are
-first converted to a simpler intermediate format before being executed. This
+The CPU supports the full 8086/186 instruction set. Due to the complexities of
+the 8086's arbitrary-length instruction decoding and flags, 8086 instructions
+are first converted to a simpler intermediate format before being executed. This
 conversion, along with instruction lengths and how each instruction modifies the
 flags, is assisted by some lookup tables which form part of the BIOS binary.
 
-The CPU also implements some "special" two-byte opcodes to help the emulator talk with the outside world. These are:
+The CPU also implements some "special" two-byte opcodes to help the emulator
+talk with the outside world. These are:
 
 
-- `0F 00` - output character in register AL to terminal.
+- `0F 00` - output character in register `AL` to terminal.
 - `0F 01` - write real-time clock data (as returned by `localtime()`) to memory
 location `ES:BX`.
-- `0F 02` - read AX bytes from disk at offset `512*(16*SI+BP)` into memory
+- `0F 02` - read `AX` bytes from disk at offset `512*(16*SI+BP)` into memory
 location `ES:BX`. Disk is specified in `DL` (`0` = hard disk, `1` = floppy
 disk).
-- `0F 03` - write AX bytes at memory location `ES:BX` to disk at offset
+- `0F 03` - write `AX` bytes at memory location `ES:BX` to disk at offset
 `512*(16*SI+BP)`. Disk is specified in `DL` as per `0F 02`.
 
 Emulator exit is triggered if `CS:IP == 0:0` (which would be nonsensical in real
@@ -366,6 +377,7 @@ software since this is where the interrupt vector table lives). The supplied
 `fd.img` disk includes a small program `QUITEMU.COM` which contains a single
 `JMP 0:0` instruction, to allow the user to easily quit the emulator without
 shutting down the terminal.
+
 
 ### Floppy disk support
 
@@ -377,6 +389,7 @@ If you want to install your own software from floppy images (downloaded from
 e.g. [Vetusware](https://vetusware.com)), the easiest way to "change disks" is
 to copy each disk image in turn over the floppy image file you specify on the
 command line. Don't forget to put your original boot disk back at the end!
+
 
 ### Hard disk support
 
@@ -397,15 +410,18 @@ Note that unlike a real PC, the emulator cannot boot from a hard disk (image).
 Therefore, you will always need to use a bootable floppy image, even if after
 boot everything runs from the HD.
 
+
 ### Mouse
 
 No mouse is emulated.
+
 
 ### Real-time clock
 
 Reading the [RTC](https://en.wikipedia.org/wiki/Real-time_clock) (both time and
 date) is emulated via the standard BIOS clock interface, pulling the time/date
 from the host computer. Setting the time or date is not supported.
+
 
 ### Timers
 
@@ -419,9 +435,11 @@ On a real PC, IRQ 0 and interrupt 8 are fired every 55ms. The emulator tries to
 do the same but again, the delay period is not calibrated so you get what you
 get.
 
+
 ### PC speaker
 
 Beeps only, through the console.
+
 
 ### Software supported
 
