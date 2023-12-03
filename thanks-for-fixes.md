@@ -3372,7 +3372,14 @@ Cody also fixed a typo in the ruby script
 
 ## [2012/grothe](2012/grothe/grothe.c) ([README.md](2012/grothe/README.md))
 
-[Cody](#cody) restored the original code from the archive.
+[Cody](#cody) added the [try.sh](2012/grothe/try.sh) script.
+
+Cody also changed `argv` to be not `const char **` but `char **`, mostly out of an
+abundance of caution in case clang, which already imposes restrictions on the
+types of args to `main()` including to do with `char **`, decides to further
+restrict them.
+
+Cody also restored the original code from the archive.
 
 
 ## [2012/hamano](2012/hamano/hamano.c) ([README.md](2012/hamano/README.md]))
