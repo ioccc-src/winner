@@ -19,33 +19,23 @@ For more detailed information see [2013 dlowe in bugs.md](/bugs.md#2013-dlowe).
 ## To use:
 
 ```sh
-./dlowe [numbers...]
+./dlowe [word...]
 ```
+
+where `[word...]` is one or more words including numbers or otherwise.
 
 
 ### Try:
 
 ```sh
-./dlowe 0 1 2 3 4 5 6 7
-./dlowe 16 32 64 128
-./dlowe 16 32 64 128 256
-./dlowe 16 32 64 128 256 512
-./dlowe 0
-
-echo "sparkline of file sizes: $(wc -c * | awk '{print $1}' | xargs ./dlowe)" # or ./sflen.sh
-```
-
-Alternatively, for the lazy or those short on time, try:
-
-```sh
-./demo.sh
+./try.sh
 ```
 
 What is different about the above if you do something like:
 
 ```sh
-echo 'IOCCC 2013' > ioccc.txt
-./demo.sh
+echo 'IOCCC winning entry 2013/dlowe' > ioccc.txt
+./try.sh
 rm -f ioccc.txt
 ```
 
@@ -54,31 +44,14 @@ rm -f ioccc.txt
 To make it simpler to see try showing just the different line like:
 
 ```sh
-./demo.sh | tail -n 2 > 1.txt
-echo 'IOCCC 2013' > ioccc.txt
-./demo.sh | tail -n 2 > 2.txt
-rm -f ioccc.txt
-diff 1.txt 2.txt
-rm 1.txt 2.txt
+./diff.sh
 ```
-
-This program will possibly crash or draw something funny with 0 args. Then
-again it might not. :-)
-
-This is supposed to happen.  As is written in the
-[The Jargon File](http://catb.org/jargon/html/F/feature.html):
-
-```
-That's not a bug, that's a feature.
-```
-
-Ask yourself the following questions: when will it crash, when will it draw
-something funny (or will it ? :-) ) and when will it do nothing?
 
 
 ## Judges' remarks:
 
-We liked how this entry used Unicode, specifically UTF-8, in a somewhat obfuscated way.
+We liked how this entry used Unicode, specifically UTF-8, in a somewhat
+obfuscated way.
 
 Also, why doesn't it crash but instead produces a correct output when called
 with one argument or when all arguments are equal?
@@ -140,13 +113,14 @@ $ echo "sparkline of file lengths: $(wc -c * | awk '{print $1}' | xargs ./sparkl
 sparkline of file sizes: ▁▁▁▃▃▂▁▂▁▁▉
 ```
 
-NOTE: this has been provided in [sflen.sh](sflen.sh) so you can try:
+NOTE: this has been provided in [slflen.sh](slflen.sh) so you can try:
 
 ```sh
-./sflen.sh
+./slflen.sh
 ```
 
-instead.
+instead (which [try.sh](try.sh) also uses).
+
 
 ### Description
 
@@ -164,13 +138,15 @@ sense of the shape of your data.
   used.
 * Produces a few harmless compiler warnings.
 
+
 ### Obfuscation
 
 The code is very terse. I was torn between submitting this version, and a
-one-line version compressed using a couple more -D flags.
+one-line version compressed using a couple more `-D` flags.
 
 Hand-rolled UTF-8 sequence, magic numbers (what's that 7 for?), meaningless
 variable names, reused variables, and so on.
+
 
 ### Acknowledgements
 
