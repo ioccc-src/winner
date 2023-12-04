@@ -8,17 +8,6 @@ An alternate version that should compile in Windows/MS Visual Studio is
 available. See the [Alternate code](#alternate-code) section below.
 
 
-### Bugs and (Mis)features:
-
-The current status of this entry is:
-
-```
-STATUS: missing files - please provide them
-```
-
-For more detailed information see [2013 cable3 in bugs.md](/bugs.md#2013-cable3).
-
-
 ## To use:
 
 ```sh
@@ -32,7 +21,19 @@ For more detailed information see [2013 cable3 in bugs.md](/bugs.md#2013-cable3)
 ./runme
 ```
 
-NOTE: to quit the program type `QUITEMU`.
+NOTE: to quit the program type `QUITEMU`. You might have to be at the top level
+directory of the drive, `A:` or `C:`.
+
+To send an `Alt+XXX` key combination, press (`^A` / `Ctrl+A`) then the key, so
+for example to type `Alt+F`, press (`^A` / `Ctrl+A`) then `F`.
+
+To send an `Fxx` key, press `^F` / `Ctrl+F` then a number key. For example, to
+get the `F4` key, press `^F` / `Ctrl+F` then `4`. To get `F10`, press `^F` /
+`Ctrl+F` then `0`.
+
+To send a `Page Down` key, press `^F` / `Ctrl+F` then `O` (letter O, not digit
+zero). To send a `Page Up` key, press `^F` / `Ctrl+F` then `E`. Other key
+combinations are left for the discovery of the user.
 
 
 ## Alternate code:
@@ -262,7 +263,7 @@ example, with non-QWERTY e.g. international keyboards.
 Most of the time you can just type normally, but there are special sequences to
 get `Alt+xxx` and `Fxxx`.
 
-To send an `Alt+XXX` key combination, press (`^A` or `Ctrl+A`) then the key, so
+To send an `Alt+XXX` key combination, press (`^A` / `Ctrl+A`) then the key, so
 for example to type `Alt+F`, press (`^A` / `Ctrl+A`) then `F`.
 
 To send an `Fxx` key, press `^F` / `Ctrl+F` then a number key. For example, to
