@@ -227,7 +227,7 @@ indent.c: ${PROG}.c
 	    echo "${INDENT} < $< > $@"; \
 	    ${INDENT} < $< > $@; \
 	else \
-	    echo "no indent tool found, ident $< yourself, sorry"; \
+	    echo "no indent tool found, indent $< yourself, sorry"; \
 	    echo "exit 17"; \
 	    exit 17; \
 	fi
