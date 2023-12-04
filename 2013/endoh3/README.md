@@ -4,6 +4,16 @@
 make
 ```
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2013 endoh3 in bugs.md](/bugs.md#2013-endoh3).
+
 
 ## To use:
 
@@ -23,6 +33,8 @@ The simplest way is to create a .wav file and have your system play that.
 echo 'CDEFGABc' | ./endoh3 | ruby wavify.rb > cde.wav
 ```
 
+Observe how you will need ruby installed.
+
 There are also some other musical samples, twinkle.abc and menuet.abc.
 
 
@@ -32,6 +44,7 @@ This program can toot out a tune that is small enough to posted to most social
 media platforms that have small message length limits.
 
 This endoh3ram can toot out a tune that is small enough.
+
 
 ### A modern day (2023) note about the award 'Most tweetable 1-liner' and twitter:
 
@@ -101,6 +114,7 @@ program:
 tree](https://en.wikipedia.org/wiki/Stern-Brocot_tree).
 - How does it generate a wave?  Hint: it generates a saw wave.
 
+
 ### Limitation
 
 The following features are supported:
@@ -125,6 +139,7 @@ The following features are *NOT* supported:
 - Any meta fields: `T:title` `L:1/4`
 - Bar line, repeat, ties and slurs, and everything else.
 
+
 ### Known Bugs
 
 You can *NOT* write a note length immediately followed by a note `E`,
@@ -133,6 +148,7 @@ such as `C2E2`.
 Can you figure out why?
 
 A workaround is inserting a whitespace: `C2 E2`.
+
 
 ### Portability
 
@@ -151,6 +167,7 @@ But I do not attach it to protect you from W\*\*\*\*r.
 
 For the same reason, do not post a score that contains only `z1092`.
 You know, it is ["the famous song"](http://en.wikipedia.org/wiki/4%E2%80%B233%E2%80%B3).
+
 
 ### Spoiler
 
@@ -203,15 +220,15 @@ Finally, the following code generates a saw wave:
 for(c = 0; c < len; c++) putchar(a = n * D);
 ```
 
-where `D` is a frequency and `a` is a variable whose type is char.  By assigning
-float to char variable, the implicit type conversion is performed from float to
-char (modulo 256).
+where `D` is a frequency and `a` is a variable whose type is `char`.  By
+assigning `float` to `char` variable, the implicit type conversion is performed
+from `float` to `char` (modulo 256).
 
 (Strictly speaking, this behavior is undefined according to 6.3.1.4 in C99; you
 can replace it with `(long)(n*D)` if you are pedantic.)
 
 All that was left was to combine and condense the components.  The key is
-squashing them into just one for-loop.
+squashing them into just one `for`-loop.
 
 
 ## Copyright and CC BY-SA 4.0 License:

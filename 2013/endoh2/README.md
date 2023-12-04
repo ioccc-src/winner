@@ -32,7 +32,7 @@ Next look at `jpeg.jpg` in an image viewer program.
 
 ## Judges' remarks:
 
-\
+
 This is a program which, when fed its own source, generates a program that
 almost is its whitespace inverse, which, in its order, generates a JPEG file
 (speaking of file size abuse, that is about 16.4 times larger than a PBM file
@@ -53,6 +53,7 @@ straightforward bitmap comparison.
     * Discrete cosine transform
     * JPEG Huffman encoding (cheating)
 
+
 ### Notes
 
 I picked JPEG instead of PNG, GIF, or BMP
@@ -66,6 +67,7 @@ contains fragments of the main program *as a comment* which `iocccsize -i` does
 year.
 
 I think the program will work on any major platforms and compilers.
+
 
 ### Legal
 

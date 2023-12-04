@@ -65,10 +65,12 @@ This simple spec involves many details.
 
 (Note that this program does not use `math.h`.)
 
+
 ### Portability
 
 I think it conforms with both C89 and C99.  I confirmed that it worked on gcc,
 clang, and tcc.  It should not be warned with `-pedantic` and `-Wextra`.
+
 
 ### Tips
 
