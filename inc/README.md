@@ -35,7 +35,7 @@ The canonical way that HTML content is built uses, by default, files of the form
 The command line of a [build-ioccc repo](https://github.com/ioccc-src/build-ioccc/tree/master)
 tool, and perhaps modified via [exception file](/inc.exception.md) file may change
 to using a different filename, such as using `body.graybg.html` instead of the default `body.default.html`.
-In some cases the [exception file](/inc.exception.md) may disable forming HTML content altogether.
+In some cases the [HTML config file](/inc/html.cfg) may disable forming HTML content altogether.
 
 The following is the canonical order for building HTML content from a winner `README.md` file:
 
@@ -50,7 +50,9 @@ The following is the canonical order for building HTML content from a winner `RE
 8. before-rightcolumn.default.html
 9. before-content.default.html
 
-At this point, page content such as that produced by the `pandoc` tool is inserted.
+At this point, page content such as that produced sources such as authot JSON and
+markdown converyerd by the `pandoc` tool is inserted.
+
 This is followed by canonical order for the end of the HTML content:
 
 10. after-content.default.html
@@ -64,10 +66,8 @@ In some cases, the above canonical order may be skipped.
 Files of the form will **NOT** exist, instead the tool will skip using such a file:
 
 ```
-*.devnull.html
+*.none.html
 ```
-
-
 
 
 ## Use CAUTION when modifying inc files
