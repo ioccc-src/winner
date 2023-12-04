@@ -3721,6 +3721,16 @@ theoretically work for Microsoft Windows compilers (if anything works in Windows
 that would break it we do not know.
 
 
+## [2014/wiedijk](2014/wiedijk/prog.c) ([README.md](2014/wiedijk/README.md))
+
+[Cody](#cody) added the [try.sh](2014/wiedijk/try.sh) script which is based on
+the command to try in the 'try' section but improved so one can more easily
+specify what ident tool they want to use and also change which sed to use,
+should they want to. It also checks that both of these two tools exist and are
+executable and it pipes it through less as it's longer than a page worth of
+output.
+
+
 # <a name="2015"></a>2015
 
 
