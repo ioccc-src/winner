@@ -11,13 +11,6 @@ make
 ./prog
 ```
 
-
-### Try:
-
-```sh
-echo "Do or do not. There is no try."
-```
-
 HINT: Try pressing the left and right arrow keys as needed.
 Also try pressing space/enter to select options.
 Pressing Q or Escape may end the fun before you are ready. :-)
@@ -32,10 +25,10 @@ Look at some of the C pre-processor macros in the source code.
 Ask yourself why C source is being passed as arguments to some
 of those macros.
 
-Now you may observe, while it is running, that some C source code
-is being written to a file and then compiled.  And yet that compiled
-code is somehow executed from main.  But how?  How is main able to
-call code that was written and compiled just in time for execution?
+Now you may observe, while it is running, that some C source code is being
+written to a file and then compiled.  And yet that compiled code is somehow
+executed from `main()`.  But how?  How is `main()` able to call code that was
+written and compiled just in time for execution?
 
 
 ## Author's remarks:
@@ -62,11 +55,12 @@ Armed with your right-facing curly brace, you charge into battle.
 (Use left and right arrow keys and space/enter to select options. Press Q or
 Escape to quit.)
 
+
 ### KNOWN COMPILER WARNINGS
 
 Unfortunately, it became very difficult to get this entry to fit within the
-size requirements. It's currently at 2052 according to iocccsize, and 3994
-according to wc -c.
+size requirements. It's currently at 2052 according to
+[iocccsize](../iocccsize.c), and 3994 according to `wc -c`.
 
 The current size is a third to a half of the original size before compression.
 
@@ -74,7 +68,7 @@ Due to this, it does LOTS of things that subtly annoy compilers!
 
 * (10) data argument not used by format string
 
-  This occurs because some of the fprintf invocations don't use all their
+  This occurs because some of the `fprintf(3)` invocations don't use all their
   parameters. The program should still work fine!
 
 * (1) using the result of an assignment as a condition without parentheses
@@ -89,12 +83,13 @@ Due to this, it does LOTS of things that subtly annoy compilers!
 
 * (1) control may reach end of non-void function
 
-  Turns out that sometimes, a return statement is too much. This will never
+  Turns out that sometimes, a `return` statement is too much. This will never
   actually occur, but some C compilers think they know more about my program
   than I do! :P
 
 * (?) Under some systems, `-fPIC` is irrelevant for shared libraries. If so,
   you should remove it from the Makefile.
+
 
 ## OBFUSCATION? WHAT OBFUSCATION? THIS IS A PERFECTLY NORMAL C PROGRAM!
 
@@ -108,13 +103,13 @@ as would be cool.
 
 Essentially, it generates C code at runtime, dumps it to a file, and then runs
 a C compiler on that file, telling the C compiler to generate a shared library.
-Then it loads the shared library with dlopen, and...
+Then it loads the shared library with `dlopen(3)`, and...
 
 Ignores the result?
 
 That can't be right.
 
-Well, it is. Instead of using dlsym like a normal programmer, I mark one of the
+Well, it is. Instead of using `dlsym(3)` like a normal programmer, I mark one of the
 generated functions with `__attribute__((constructor))`. This means that it
 gets called immediately on load, so it can make its functions available.
 
@@ -126,6 +121,7 @@ then casts to pointers and accesses! It uses this to make certain functions
 available to the main program, so the main program's generated code will then
 enter itself where it's needed.
 
+
 # THE NOT-SO-COOL PART
 
 There are also lots of `#defines`.
@@ -133,16 +129,17 @@ There are also lots of `#defines`.
 No, these are not obfuscation. These are compression.
 
 There is a little bit of obfuscation gained from using the stringification
-operator. (I can never remember what it's actually called, but it's the #
+operator. (I can never remember what it's actually called, but it's the `#`
 operator in a preprocessor macro) - this allows me to pass C code in arguments
 to the macros, meaning that it gets interpreted as C code instead of a string
-by the iocccsize tool, so it gets counted as smaller! :D
+by the [iocccsize](../iocccsize.c) tool, so it gets counted as smaller! :D
 
 # A SLIGHTLY COOL PART
 
 As part of the JIT compiling, the program hides the fact that it needs ncurses:
 it just links ncurses with one of the generated shared libraries, and then can
 access the contents of the ncurses library!
+
 
 # WAIT WHAT
 
@@ -162,10 +159,12 @@ one!
 (There's an obvious way around this but I'm not going to spell it out for you.
 That'd be too easy!)
 
+
 ### MISCELLANEOUS STUFF
 
 Do note that there are some other miscellaneous obfuscations, but they should
 be easy to understand once you figure out the ones above.
+
 
 ### TROUBLESHOOTING GUIDE
 
@@ -183,7 +182,7 @@ Some things to check
 
   (I had to do this under Cygwin.)
 * Does your system need `-fPIC` (or other arcane invocations) to compile a
-  shared library? If so, make sure that you include it in the -DCC argument in
+  shared library? If so, make sure that you include it in the `-DCC` argument in
   the build script.
 * Does your system have a vague dislike for `-fPIC`? (Like Cygwin.) You might
   need to remove it from the build script.
@@ -218,11 +217,11 @@ I ran out of time to test it on more systems.
   Station 13. I didn't, however, look at the minigame at all during the
   development of this entry.
 
-* What's the length of this REMARKS file according to the iocccsize tool?
+* What's the length of this README file according to the
+[iocccsize](../iocccsize.c) tool?
 
-  `$ ./iocccsize -i <REMARKS.MD`
-
-  `5092`
+  $ ./iocccsize -i < README.md
+  6057
 
 
 ## Copyright and CC BY-SA 4.0 License:
