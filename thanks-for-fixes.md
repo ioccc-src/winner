@@ -3695,6 +3695,17 @@ it is a file with spoilers.
 [SDL2](https://www.libsdl.org) but SDL1 so there were linking errors.
 
 
+## [2014/sinon](2014/sinon/prog.c) ([README.md](2014/sinon/README.md))
+
+[Cody](#cody) fixed the code so that the game can play automatically like it
+once did. The problem is that it expects a certain file name which was
+`sinon.c`. The code now refers to `prog.c`.
+
+Cody also added the [try.sh](2014/sinon/try.sh) script which is an improvement
+over what was once suggested in that when it's over it will ask you if you wish
+to try again, say because of a jam (see the README.md file for details).
+
+
 ## [2014/skeggs](2014/skeggs/prog.c) ([README.md](2014/skeggs/README.md))
 
 [Cody](#cody) fixed the Makefile to compile this entry in modern systems. The problem was
