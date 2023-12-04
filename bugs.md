@@ -2907,6 +2907,27 @@ section](2013/endoh1/README.md#spoiler).
 --
 
 
+## 2013 endoh3
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2013/endoh3/endoh3.c](2013/endoh3/endoh3.c)
+### Information: [2013/endoh3/README.md](2013/endoh3/README.md)
+
+From the author:
+
+--
+
+You can *NOT* write a note length immediately followed by a note `E`,
+such as `C2E2`.
+
+Can you figure out why?
+
+A workaround is inserting a whitespace: `C2 E2`.
+
+--
+
+
+
 ## 2013 hou
 
 ### STATUS: INABIAF - please **DO NOT** fix
