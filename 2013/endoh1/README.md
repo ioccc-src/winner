@@ -4,6 +4,16 @@
 make
 ```
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2013 endoh1 in bugs.md](/bugs.md#2013-endoh1).
+
 
 ## To use:
 
@@ -15,13 +25,14 @@ make
 ### Try:
 
 ```sh
-./endoh1 hello.lazy
-./hello
-echo Hello | ./echo\
-./tac < endoh1.c
+./try.sh
 ```
 
-Be patient with the last one.
+You might also enjoy running:
+
+```sh
+cc -E endoh1.c | less
+```
 
 
 ## Judges' remarks:
@@ -51,16 +62,17 @@ Yes, of course.
 This is a tool *for C programmers* to play the [SKI combinator calculus][1],
 especially, [Lazy K][2].
 
-This program will shine when it is used as a library.  For example, `hello.lazy`
-is a "Hello world" program written in Lazy K.
+This program will shine when it is used as a library.  For example,
+[hello.lazy](hello.lazy) is a "Hello world" program written in Lazy K.
 
 ```sh
 $ lazy hello.lazy
 Hello, world!
 ```
 
-where `lazy` is [a reference implementation of Lazy K][3].
-At the same time, `hello.lazy` is *a valid C program* that uses `endoh1.c` as a library.
+where `lazy` is [a reference implementation of Lazy K][3].  At the same time,
+[hello.lazy](hello.lazy) is *a valid C program* that uses [endoh1.c](endoh1.c)
+as a library.
 
 ```sh
 $ gcc -o hello -xc hello.lazy
@@ -79,6 +91,7 @@ The usage is simple: you just have to wrap Lazy K program with `#include
 [3]: https://github.com/irori/lazyk
 [4]: http://en.wikipedia.org/wiki/Polyglot_%28computing%29
 
+
 ### Obfuscation
 
 ... is inherent in SKI combinator calculus :-)
@@ -86,13 +99,14 @@ The usage is simple: you just have to wrap Lazy K program with `#include
 In addition, it uses various hacks to parse SKI code as C,
 and to satisfy IOCCC's size rule.
 
-* Abuse of function pointers
-* Code duplication by macros
-* Short coding
+* Abuse of function pointers.
+* Code duplication by macros.
+* Short coding.
 
 These led to the good obfuscation.
 
 See [Spoiler section](#spoiler) in detail, if you need.
+
 
 ### Limitation
 
@@ -108,6 +122,7 @@ In addition, there are some limitations (and workarounds) mentioned in [Spoiler
 section](#spoiler).
 
 But I think it would only matter when you run the attached programs.
+
 
 ### Portability
 
@@ -152,6 +167,7 @@ evaluates it.
 This program uses a very simple "term rewriting" approach for evaluating SKI
 combinator calculus.  The rewriting rules are shown in the shape of the code.
 
+
 #### Abuse of function pointers
 
 Consider a sequence of function applications in C:
@@ -178,12 +194,11 @@ But you can increase the number by tweaking the definition of macro `p`.
 Next, we need to encode "closures".  A closure is a function together with an
 environment which is a reference to non-local variable.
 
-In this case, we need something that:
+In this case, we need something that meets all of the following criteria:
 
-* is callable itself,
-* internally possesses a reference to another closure as a non-local variable,
-and
-* applies the internal closure to an argument when it is called.
+* Is callable itself.
+* Internally possesses a reference to another closure as a non-local variable.
+* Applies the internal closure to an argument when it is called.
 
 However, no type in C is callable and has a reference at the same time.
 (It is feasible by dynamic code generation, but it is far from portable.)
@@ -208,11 +223,13 @@ But you can increase this number by tweaking the definition of macro `A` `B` `C`
 and `D`.  (Note that closures are allotted only when parsing; after the
 evaluation starts, "out of closure" cannot occur.)
 
+
 #### Short cording
 
 This margin is too narrow to contain a detailed explanation.  Instead, I just
 ask you one question.  Can you tell what `v
-s[]={0,0,s+6,s+2,s+4,s,s+3,s+5,s+1};` is?  I found this by using SMT solver.
+s[]={0,0,s+6,s+2,s+4,s,s+3,s+5,s+1};` is?  I found this by using an [SMT
+solver](https://en.wikipedia.org/wiki/Satisfiability_modulo_theories).
 
 
 ## Copyright and CC BY-SA 4.0 License:
