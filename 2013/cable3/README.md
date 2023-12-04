@@ -224,7 +224,7 @@ stty cooked echo
 ## To use the emulator - floppy + HD mode
 
 Easiest to start with is to try a ready-made 40MB hard disk image containing a
-whole bunch of software: <http://bitly.com/1bU8URK>
+whole bunch of software which is in the included file `hd.img`.
 
 For the more adventurous, you can start off with (for example) a blank 40MB
 image file called hd.img made using e.g. Makefile. Then use:

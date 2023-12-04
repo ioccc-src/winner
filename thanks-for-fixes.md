@@ -3530,7 +3530,9 @@ this will not link in Unix systems (including macOS).
 
 Finally Cody provided the [bios.asm](2013/cable3/bios.asm) that the author
 referred to, found at the [GitHub repo for the
-entry](https://github.com/adriancable/8086tiny/tree/master).
+entry](https://github.com/adriancable/8086tiny/tree/master), and the 'ready-made
+40MB hard disk image containing a whole bunch of software' in `hd.img` that the
+author linked to at `https://bitly.com/1bU8URK`.
 
 
 ## [2013/dlowe](2013/dlowe/dlowe.c) ([README.md](2013/dlowe/README.md))
