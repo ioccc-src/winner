@@ -44,22 +44,23 @@ The following is the canonical order for building HTML content from a winner `RE
 2. body.default.html
 3. before-row.default.html
 4. page-top.default.html
-5. before-row.default.html
-6. before-leftcolumn.default.html
-7. sidenav.default.html
-8. before-rightcolumn.default.html
-9. before-content.default.html
+5. topnav.default.html
+6. before-row.default.html
+7. before-leftcolumn.default.html
+8. sidenav.default.html
+9. before-rightcolumn.default.html
+10. before-content.default.html
 
 At this point, page content such as that produced sources such as authot JSON and
 markdown converyerd by the `pandoc` tool is inserted.
 
 This is followed by canonical order for the end of the HTML content:
 
-10. after-content.default.html
-11. after-rightcolumn.default.html
-12. after-row.default.html
-13. page-bottom.default.html
-14. bottom.default.html
+11. after-content.default.html
+12. after-rightcolumn.default.html
+13. after-row.default.html
+14. page-bottom.default.html
+15. bottom.default.html
 
 In some cases, the above canonical order may be skipped.
 
