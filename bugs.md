@@ -2861,21 +2861,6 @@ antialiasing interferes with color detection in "color" mode.
 and endianness conversion would make the source too large for IOCCC rule 2).
 
 
-## 2013 cable3
-
-### STATUS: missing files - please provide them
-### Source code: [2013/cable3/cable3.c](2013/cable3/cable3.c)
-### Information: [2013/cable3/README.md](2013/cable3/README.md)
-
-Many fixes and improvements were made by Cody but he observed that the author
-referred to a file that is nowhere to be found: not in the directory or the
-archive.
-
-The file is `hd.img`.
-
-Do you have it? Please provide it!
-
-
 ## 2013 dlowe
 
 ### STATUS: INABIAF - please **DO NOT** fix
