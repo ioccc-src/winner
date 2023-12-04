@@ -19,10 +19,10 @@ For more detailed information see [2013 dlowe in bugs.md](/bugs.md#2013-dlowe).
 ## To use:
 
 ```sh
-./dlowe [word...]
+./dlowe [number...]
 ```
 
-where `[word...]` is one or more words including numbers or otherwise.
+where `[number...]` is one or more number, space separated.
 
 
 ### Try:
