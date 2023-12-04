@@ -2876,6 +2876,12 @@ exercise to see if you understand the code.
 You can try and answer the questions, too: when will it crash? When will it draw
 something funny (or will it? :-) ) and when will it just do nothing?
 
+The author also stated:
+
+* Produces bogus graphs when given > about 5000 arguments.
+* Only works if your terminal is UTF-8 and your font supports the 8 glyphs
+  used.
+
 
 ## 2013 hou
 
