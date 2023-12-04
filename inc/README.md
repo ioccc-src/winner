@@ -32,11 +32,6 @@ The canonical way that HTML content is built uses, by default, files of the form
 *.default.html
 ```
 
-The command line of a [build-ioccc repo](https://github.com/ioccc-src/build-ioccc/tree/master)
-tool, and perhaps modified via [exception file](/inc.exception.md) file may change
-to using a different filename, such as using `body.graybg.html` instead of the default `body.default.html`.
-In some cases the [HTML config file](/inc/html.cfg) may disable forming HTML content altogether.
-
 The following is the canonical order for building HTML content from a winner `README.md` file:
 
 0. top.default.html
@@ -62,13 +57,21 @@ This is followed by canonical order for the end of the HTML content:
 14. page-bottom.default.html
 15. bottom.default.html
 
-In some cases, the above canonical order may be skipped.
+The command line of a [build-ioccc repo](https://github.com/ioccc-src/build-ioccc/tree/master)
+tool, and perhaps modified via [md2html config file](/inc/md2html.cfg) file may change
+to using a different filename for a given phase.  For example when forming the HTML
+from `2020/ferguson2/chocolate-cake.md`, a different "topnav" navigation bar is needed. So instead of the usual top navigation bar that normally directs people to the previous entry for the year, or go up to the year page, or to the next entry for the year, a top navigation bar to just go up to the entry's main page is needed.  So the line for `2020/ferguson2/chocolate-cake.md` would reference `topnav.up2index.html` instead of using the  `topnav.default.html` default. 
 
-Files of the form will **NOT** exist, instead the tool will skip using such a file:
+In some cases the [md2html config file](/inc/md2html.cfg) may disable forming HTML content from a givrn markdown file altogether.  
+
+In above mentioned canonical order, a phase  may be skipped by an entry in the [md2html config file](/inc/md2html.cfg) by referring a
+phaee file ending in ".none.html".  Files of the form will **NOT** exist, instead the tool will skip using such a file:
 
 ```
 *.none.html
 ```
+
+See comments in the [md2html config file](/inc/md2html.cfg) file for details on the syntax of this configuration file.
 
 
 ## Use CAUTION when modifying inc files
@@ -92,8 +95,7 @@ on the [experimental web site](https://ioccc-src.github.io/temp-test-ioccc/).
 ... contain default content used to form IOCCC HTML / IOCCC web pages.
 
 Instead of editing the default HTML files in order to fix a special web page,
-consider making a copy of the default file and modifying the [use.md](/inc/use.md)
-file to refer to the copy instead.  That way your special case situation will
+consider making a copy of the default file and modifying the [md2html config file](/inc/md2html.cfg) to refer to the copy instead.  That way your special case situation will
 not impact **MOST** of the HTML content.
 
 
