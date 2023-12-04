@@ -3692,7 +3692,7 @@ it is a file with spoilers.
 ## [2014/maffiodo1](2014/maffiodo1/prog.c) ([README.md](2014/maffiodo1/README.md]))
 
 [Cody](#cody) fixed the build for this entry: it does not require
-[SDL2[(https://www.libsdl.org) but SDL1 so there were linking errors.
+[SDL2](https://www.libsdl.org) but SDL1 so there were linking errors.
 
 
 ## [2014/skeggs](2014/skeggs/prog.c) ([README.md](2014/skeggs/README.md))
