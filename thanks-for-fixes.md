@@ -3560,6 +3560,11 @@ He also added the [diff.sh](2013/dlowe/diff.sh) script which is based on some
 commands to try that he suggested to see how different lengths look.
 
 
+## [2013/endoh1](2013/endoh1/endoh1.c) ([README.md](2013/endoh1/README.md))
+
+[Cody](#cody) added the [try.sh](2013/endoh1/try.sh) script.
+
+
 ## [2013/endoh2](2013/endoh2/endoh2.c) ([README.md](2013/endoh2/README.md))
 
 [Cody](#cody) fixed the Makefile `check` rule so that it `checks` :-) that both

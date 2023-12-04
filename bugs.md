@@ -2883,6 +2883,30 @@ The author also stated:
   used.
 
 
+## 2013 endoh1
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2013/endoh1/endoh1.c](2013/endoh1/endoh1.c)
+### Information: [2013/endoh1/README.md](2013/endoh1/README.md)
+
+From the author:
+
+--
+
+This program supports only "Combinator-calculus style notation" of Lazy K.
+"Unlambda style" and "Iota and Jot" style are not supported.
+
+Also, it requires a space between identifiers.  In short, use `(S K)` instead of
+`(SK)`, "\`sk", `**i*i*i*ii*i*i*ii`, or `11111100011100`.
+
+Huge memory may be required to compile the program (about 300 MB on my machine).
+
+In addition, there are some limitations (and workarounds) mentioned in [Spoiler
+section](2013/endoh1/README.md#spoiler).
+
+--
+
+
 ## 2013 hou
 
 ### STATUS: INABIAF - please **DO NOT** fix
