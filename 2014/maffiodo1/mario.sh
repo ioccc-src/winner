@@ -23,4 +23,6 @@ if [[ -z "$COLS" ]]; then
 	COLS="640"
 fi
 
+# ^---------^ SC2002 (style): Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead.
+# shellcheck disable=SC2002
 cat mario.level | ./prog "$COLS" "$ROWS" 800 300 128 144 mario.rgba mario8.wav 10343679 && telnet telehack.com 23

@@ -23,4 +23,6 @@ if [[ -z "$COLS" ]]; then
 	COLS="640"
 fi
 
+# ^---------^ SC2002 (style): Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead.
+# shellcheck disable=SC2002
 cat giana.level | ./prog "$COLS" "$ROWS" 1000 300 192 168 giana.rgba giana8.wav 5459393
