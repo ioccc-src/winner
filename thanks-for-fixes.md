@@ -3688,18 +3688,21 @@ that was fixed and it also has `#include <stdio.h>` for `putchar(3)`. The
 
 ## [2014/endoh1](2014/endoh1/prog.c) ([README.md](2014/endoh1/README.md]))
 
-[Cody](#cody) added the [rake.sh](2014/endoh1/rake.sh) script and `make rake` rule that
-runs the script. This script will check that `rake` is installed and if it is
-not it will report this and then check that `gem` is installed. It checks that
-`gem` is installed in this case because `gem` is how you install `rake`. If
-`gem` is not installed it tells you to get it along with how to install `gem`.
-Then it tells you how to install `rake`. If `rake` fails to run then it tells
-you to install a specific gem and then to try again. Finally if `rake` succeeds
-it will verify that `prog` is executable and if it is it will run it.
+[Cody](#cody) added the [rake.sh](2014/endoh1/rake.sh) script and `make rake`
+rule that runs the script. This script will check that `rake` is installed and
+if it is not it will report this and then check that `gem` is installed. It
+checks that `gem` is installed in this case because `gem` is how you install
+`rake`. If `gem` is not installed it tells you to get it along with how to
+install `gem`.  Then it tells you how to install `rake`. If `rake` fails to run
+then it tells you to install a specific gem and then to try again. Finally if
+`rake` succeeds it will verify that `prog` is executable and if it is it will
+run it.
+
+Cody also added the [try.sh](2014/endoh1/try.sh) script.
 
 **_Barely_** worth noting but done nonetheless, Cody renamed the `read_me.md`
 file to [spoilers.md](2014/endoh1/spoilers.md) to be clearer in its purpose as
-it is a file with spoilers.
+it is a file with spoilers (and too close to README.md?).
 
 
 ## [2014/maffiodo1](2014/maffiodo1/prog.c) ([README.md](2014/maffiodo1/README.md]))

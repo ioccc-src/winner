@@ -15,25 +15,18 @@ make
 ### Try:
 
 ```sh
-./prog > main.c
-
-make main
-./main Hello
+./try.sh
 ```
 
-Also try:
-
-```sh
-make rake
-```
-
-which will run the [rake.sh](rake.sh) script and then `prog` if all is built
-okay. If `rake` is not installed then it will check that `gem` is installed. If
-`gem` is not installed it will tell you where to get it and then tell you how to
-install `rake`. Otherwise, if `rake` is installed it will try running `rake `
-and if that fails to run it will tell you to run a `gem` command as either root
-or via sudo and then to try running `make rake` or `./rake.sh` again. If `rake`
-succeeds it will run `./prog` which can be used to build `main.c`.
+The script will ask you if you wish to run `make rake` but this is not necessary
+to fully enjoy the entry. `make rake` will run the [rake.sh](rake.sh) script and
+then `prog` if all is built okay. If `rake` is not installed then it will check
+that `gem` is installed. If `gem` is not installed it will tell you where to get
+it and then tell you how to install `rake`. Otherwise, if `rake` is installed it
+will try running `rake ` and if that fails to run it will tell you to run a
+`gem` command as either root or via sudo and then to try running `make rake` or
+`./rake.sh` again. If `rake` succeeds it will run `./prog` which can be used to
+build `main.c`.
 
 What is the difference between running `./prog` and `main`?
 
@@ -64,9 +57,11 @@ more than 1000 words.
 
 ## Author's remarks:
 
+
 ### Remarks
 
-You may want to use a large display with a very small-font terminal.
+You may want to use a large display with a very small terminal font.
+
 
 ### Spoiler
 

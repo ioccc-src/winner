@@ -7,8 +7,8 @@ requires a bit stream, Reed-Solomon codes, BCH codes, data relocation, big (and
 irregular!) numerical tables, human-oriented pattern arrangement (difficult to
 implement by a small program), etc.
 
-On the other hand, a quine has a big restriction:
-it needs to have two copies of the program!
+On the other hand, a quine has a big restriction: it needs to have two copies of
+the program!
 
 Do you think that it is possible to write QR code encoder in C within *1kB*?
 
@@ -18,7 +18,9 @@ Do you think that it is possible to write QR code encoder in C within *1kB*?
 It is known that we can mitigate the quine restriction by `eval`.
 For example, this is a quine written in Ruby:
 
-    eval s="print 'eval s='; p s"
+```ruby
+eval s="print 'eval s='; p s"
+```
 
 Note that `print` appears just once in the program.
 
@@ -29,8 +31,10 @@ char s[]="<main code>int main() { <VM code> }";
 int main() { <VM code>; }
 ```
 
-* `<VM code>` : An own VM implementation (written in C) that executes the main code
-* `<main code>` : An object code of quine and QR code encoder (written in the assembly language of the VM)
+* `<VM code>` : An own VM implementation (written in C) that executes the main
+code.
+* `<main code>` : An object code of quine and QR code encoder (written in the
+assembly language of the VM).
 
 `<main code>` (about 1100 bytes) appears once and `<VM code>` (about 450 bytes)
 appears twice.  So the whole code is about 1100 + 450 * 2 = 2000 bytes.  Hooray!
@@ -45,7 +49,7 @@ code>` and `<VM code>`.
 * 21 integer registers access
   * read, write, inc-and-read, dec-and-read
 * Binary operations
-  * add, sub, mul, div, mod, xor, less than, equal, rshift
+  * add, sub, mul, div, mod, xor, less than, equal, right shift
 * Stack operation
   * push (an immediate value)
 * Heap access
@@ -55,10 +59,11 @@ code>` and `<VM code>`.
 * Misc.
   * putchar, exit
 
-The instructions have variable length, but many of them are represented as one
-printable character.  (See `machine.rb` and `assemble.rb` in detail.) The
-mapping between instructions and characters is also carefully designed to
-minimize `<VM code>`, which makes the resulted program non-human-readable.
+The instructions have variable lengths, but many of them are represented as one
+printable character.  (See [machine.rb](machine.rb) and
+[assemble.rb](assemble.rb) in detail.) The mapping between instructions and
+characters is also carefully designed to minimize `<VM code>`, which makes the
+resulted program non-human-readable.
 
 
 ## How did I create the main code?
@@ -126,30 +131,34 @@ $ rake
 
 I checked that the following QR code readers can read the output of my program.
 
-* Linux: [ZBar bar code reader][1]
+* Linux: [ZBar bar code reader][1].
 
-### 2023 note from the judges:
 
-The author also tested an Android app called Barcode Scanner] which used to be
+### A note from the judges in 2023:
+
+The author also tested an Android app called Barcode Scanner which used to be
 found at
 `https://play.google.com/store/apps/details?id=com.google.zxing.client.android`
 but it appears to no longer exist.
 
 [1]: http://zbar.sourceforge.net/
 
-You can use `tool.rb` to convert the output to a png file.
+You can use [tool.rb](tool.rb) to convert the output to a png file.
 
-    $ ./main Hello | ruby tool.rb > hello.png
+```sh
+./main Hello | ruby tool.rb > hello.png
 
-    $ zbarimg -q hello.png
-    QR-Code:Hello
+$ zbarimg -q hello.png
+QR-Code:Hello
 
-    $ ruby tool.rb prog.c
-    $ ruby tool.rb prog.c | ruby tool.rb
+$ ruby tool.rb prog.c
+$ ruby tool.rb prog.c | ruby tool.rb
+```
+
 
 ## Limitations
 
 * QR code error correction level is fixed to L (Low).
-* It supports only byte mode (not numeric, alphanumeric, kanji mode...)
+* It supports only byte mode (not numeric, alphanumeric, kanji mode...).
 * The mask pattern is fixed to 4.
 * The mask is not applied to the remained bits.
