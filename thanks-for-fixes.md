@@ -3716,6 +3716,11 @@ it is a file with spoilers (and too close to README.md?).
 [SDL2](https://www.libsdl.org) but SDL1 so there were linking errors.
 
 
+## [2014/morgan](2014/morgan/prog.c) ([README.md](2014/morgan/README.md))
+
+[Cody](#cody) added the [try.sh](2014/morgan/try.sh) script.
+
+
 ## [2014/sinon](2014/sinon/prog.c) ([README.md](2014/sinon/README.md))
 
 [Cody](#cody) fixed the code so that the game can play automatically like it
