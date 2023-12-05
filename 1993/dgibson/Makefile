@@ -211,6 +211,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f life.d data.name
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \

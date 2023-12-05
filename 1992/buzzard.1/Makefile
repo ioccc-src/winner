@@ -235,6 +235,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f babble.cppcb babble
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \

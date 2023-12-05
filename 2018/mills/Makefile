@@ -259,6 +259,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f builddisk.bsd builddisk.v6 v0 rk05.bsd.fs rk05.v6.fs
 	${RM} -f empty.fs.bz2 empty.fs v6.fs v6.img.bz2 v0.img v6.tape
 	@-if [ -e sandwich ]; then \

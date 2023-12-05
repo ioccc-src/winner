@@ -255,6 +255,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f anonymous.ten.bak ten.od ten.od.bak ten.txt ten.bak.txt
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \

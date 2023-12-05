@@ -202,6 +202,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f ioccc.html ioccc.json output.html
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \

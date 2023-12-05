@@ -203,6 +203,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f output.gif golem.gif smily.gif invisible.gif
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \

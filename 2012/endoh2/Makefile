@@ -361,6 +361,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f ${ALT_C}
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \

@@ -310,6 +310,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f merlyn merlyn.c nextmove nextmove.c
 	${RM} -f merlyn.alt merlyn.alt.c nextmove.alt nextmove.alt.c
 	${RM} -f ttt_game ttt_game.c ttt_old.c ttt_new.c nextmove

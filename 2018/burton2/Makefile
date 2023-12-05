@@ -238,6 +238,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f fixed_iocccsize tac keywords iocccsize manpage
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \

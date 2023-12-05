@@ -226,6 +226,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f sorter.c sorter
 	${RM} -f fibonacci.c fibonacci
 	${RM} -f theorem_bkp.c theorem_bkp

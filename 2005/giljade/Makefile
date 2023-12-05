@@ -210,7 +210,8 @@ clean:
 	fi
 
 clobber: clean
-	${RM} -f ${TARGET} ${ALT_TARGET} out
+	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM out
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

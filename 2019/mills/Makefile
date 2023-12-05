@@ -387,6 +387,7 @@ cpclean:
 
 clobber: clean cpclean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f ${INPUTS}
 	${RM} -f ${OUTPUTS}
 	@-if [ -e sandwich ]; then \

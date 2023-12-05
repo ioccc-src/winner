@@ -233,7 +233,8 @@ clean:
 	fi
 
 clobber: clean
-	${RM} -f ${TARGET} ${ALT_TARGET} ${ALT_TARGET}2 ${PROG}_color.alt ${PROG}.alt2
+	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM ${ALT_TARGET}2 ${PROG}_color.alt ${PROG}.alt2
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

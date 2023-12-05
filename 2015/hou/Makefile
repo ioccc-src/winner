@@ -209,6 +209,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f prebuild
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \

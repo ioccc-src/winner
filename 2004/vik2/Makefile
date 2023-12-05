@@ -230,6 +230,7 @@ vik2_clobber: vik2_clean
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f ${PROG}.possible.cat.death_1.c ${PROG}.possible.cat.death_2.c cat-killing-curiosity
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \

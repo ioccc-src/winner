@@ -211,6 +211,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f jonth.tmp.c
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \

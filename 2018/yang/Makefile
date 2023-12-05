@@ -322,6 +322,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f generated*.c msg*
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \

@@ -226,7 +226,8 @@ clean:
 	fi
 
 clobber: clean
-	${RM} -f ${TARGET} ${ALT_TARGET} zsmall.c
+	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM zsmall.c
 	${RM} -f large.c
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \

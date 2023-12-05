@@ -230,6 +230,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f adbasename adbasename.c adecho adecho.c adgrep adhead
 	${RM} -f adhead.c adrian adsleep adsleep.c adwc adwc.c
 	${RM} -f ad.alt.temp adwc.alt.c

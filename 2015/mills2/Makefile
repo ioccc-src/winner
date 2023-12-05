@@ -202,6 +202,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f ioccc.Z test1 test1.Z test2 test2.Z
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \

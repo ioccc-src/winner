@@ -212,6 +212,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f am am.safe
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \

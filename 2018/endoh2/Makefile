@@ -225,6 +225,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f ${PROG}_next.c ${PROG}_next
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \

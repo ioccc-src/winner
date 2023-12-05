@@ -213,6 +213,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f output.c key.c data.c regenerated.bin
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \

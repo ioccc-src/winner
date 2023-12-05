@@ -221,6 +221,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f main.c treacle.c
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \

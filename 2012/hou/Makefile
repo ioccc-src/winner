@@ -207,6 +207,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f remarks.htm
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \

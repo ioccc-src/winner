@@ -208,6 +208,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f poikola.aux poikola.log poikola.synctex.gz
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \

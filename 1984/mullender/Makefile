@@ -213,6 +213,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -rf *.dSYM
 	${RM} -f core
 	${RM} -f gentab
 	@-if [ -e sandwich ]; then \
