@@ -113,7 +113,7 @@ PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 DATA= lavabus.pgm lenna.glic michael.pgm
-TARGET= ${PROG}
+TARGET= ${PROG} glicbawls
 #
 ALT_OBJ=
 ALT_TARGET=
@@ -133,8 +133,10 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+glicbawls: ${PROG}
 	${RM} -f glicbawls
-	${CP} -f $@ glicbawls
+	${CP} -f ${PROG} glicbawls
 
 # alternative executable
 #
