@@ -8,15 +8,18 @@ make
 ## To use:
 
 ```sh
-cp -f sinon.c run.c; ./hecate.sh
+cp -f prog.c run.c; ./hecate.sh
 ```
 
 
 ### Try:
 
 ```sh
-cp -f sinon.c run.c; ./hecate.sh; ./glock.sh; sleep 3; ./glock.sh; sleep 1; ./hecate.sh
+./try.sh
 ```
+
+This script will ask you if you wish to try again after each run. Type in any
+character other than `y` or `Y` to exit at this point.
 
 
 ## Judges' remarks:
@@ -37,7 +40,7 @@ To start, compile and run the program.  To resume, compile and run the
 output repeatedly until you have won/lost the game.  For example:
 
 ```sh
-cp sinon.c run.c
+cp prog.c run.c
 gcc -O0 run.c -o run && ./run | tee run.c
 gcc -O2 run.c -o run && ./run | tee run.c
 ...
@@ -74,6 +77,7 @@ need to be more precise.  This is effectively playing the game on
 "hard" mode.  It is worth trying this mode even if you have the right
 compilers.
 
+
 ### Compatibility
 
 Sinon has been tested and verified to work on these platforms:
@@ -100,11 +104,13 @@ Sinon has a demo mode that plays the game automatically.  Make sure
 that there are no files named "run" and "run.c" in current directory
 (they will be overwritten) and run:
 
-    perl sinon.c | bash
+```sh
+perl prog.c | bash
+```
 
-File size and CRC32 of sinon.c are embedded in line 7.
+File size and CRC32 of [prog.c](prog.c) are embedded in line 7.
 
-Process for making Sinon is included in spoiler.html.
+Process for making Sinon is included in [spoiler.html](spoiler.html).
 
 Layout of this code is based on Asada Shino, also known as "Sinon",
 from Sword Art Online.
