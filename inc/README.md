@@ -83,18 +83,10 @@ main page is needed.   A line the [md2html config file](/inc/md2html.cfg) file
 that refers to `2020/ferguson1/chocolate-cake.md` may specify use
 of `topnav.up2index.html` instead of using the `topnav.default.html` default.
 
-In some cases the [md2html config file](/inc/md2html.cfg) may disable forming HTML content from a givrn markdown file altogether.
+The HTML phase may be skipped resulting in no HTML output during a given phase.
+Furthermore, forming HTML content from a given markdown file altogether.
 
-In above mentioned canonical order, a phase  may be skipped by an
-entry in the [md2html config file](/inc/md2html.cfg) by referring
-a phase file ending in ".none.html".  Files of the form will **NOT**
-exist, instead the tool will skip using such a file:
-
-```
-*.none.html
-```
-
-See comments in the [md2html config file](/inc/md2html.cfg) file for details on the syntax of this configuration file.
+See comments in the [md2html config file](/inc/md2html.cfg) file for details.
 
 
 ## Use CAUTION when modifying inc files
