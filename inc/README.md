@@ -13,8 +13,8 @@ will use files in this directory.
 ##  Why the name inc?
 
 We use inc because "include" would be misleading for both C and because
-the contents of HTML files under [inc](/inc) is not really included
-by the web server nor the browser.  Content of HTML files is
+the contents of HTML files under [inc](/inc) are not really included
+by the web server or the browser.  Content of HTML files is
 processed by tools in the [build-ioccc repo](https://github.com/ioccc-src/build-ioccc/tree/master).
 Processing can include substitution of strings of the form _%%CURDS%%_ with some command
 line supplied value by the tool in question.
@@ -24,7 +24,7 @@ line supplied value by the tool in question.
 
 Files under the [inc](/inc) directory contain HTML fragments that the
 [build-ioccc repo](https://github.com/ioccc-src/build-ioccc/tree/master)
-tools use to form HTML content for the official IOCCC web site](https://www.ioccc.org).
+tools use to form HTML content for the [official IOCCC web site](https://www.ioccc.org).
 
 The canonical way that HTML content is built uses, by default, files of the form:
 
