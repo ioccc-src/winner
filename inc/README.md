@@ -32,40 +32,63 @@ The canonical way that HTML content is built uses, by default, files of the form
 *.default.html
 ```
 
-The following is the canonical order for building HTML content from a winner `README.md` file:
 
-0. top.default.html
-1. head.default.html
-2. body.default.html
-3. before-row.default.html
-4. page-top.default.html
-5. topnav.default.html
-6. before-row.default.html
-7. before-leftcolumn.default.html
-8. sidenav.default.html
-9. before-rightcolumn.default.html
-10. before-content.default.html
+### HTML phases
 
-At this point, page content such as that produced sources such as authot JSON and
-markdown converyerd by the `pandoc` tool is inserted.
+The following HTML phase files are used to build HTML content:
 
-This is followed by canonical order for the end of the HTML content:
+0. inc/top.default.html
+1. inc/head.default.html
+2. inc/body.default.html
+3. inc/header.default.html
+4. inc/topnav.default.html
+5. inc/begin-row.default.html
+6. inc/begin-leftcolumn.default.html
+7. inc/sidenav.default.html
+8. inc/end-leftcolumn.default.html
+9. inc/begin-rightcolumn.default.html
+10. inc/before-content.default.html
 
-11. after-content.default.html
-12. after-rightcolumn.default.html
-13. after-row.default.html
-14. page-bottom.default.html
-15. bottom.default.html
+Phases 11-19 are reserved for future use.
+
+20. <<insert before pandoc tool output>>
+21. <<insert pandoc tool output>>
+22. <<insert after pandoc tool output>>
+
+Phases 23-29 are reserved for future use.
+
+30. inc/after-content.default.html
+31. inc/end-rightcolumn.default.html
+32. inc/end-row.default.html
+33. inc/footer.default.html
+34. inc/bottom.default.html
+
+Phases 35-39 are reserved for future use.
+
+In the above HTML phases, except HTML phases 20-29, symbols of the form %%TOKEN%% are substituted.
+
+
+### Tool command line
 
 The command line of a [build-ioccc repo](https://github.com/ioccc-src/build-ioccc/tree/master)
 tool, and perhaps modified via [md2html config file](/inc/md2html.cfg) file may change
-to using a different filename for a given phase.  For example when forming the HTML
-from `2020/ferguson2/chocolate-cake.md`, a different "topnav" navigation bar is needed. So instead of the usual top navigation bar that normally directs people to the previous entry for the year, or go up to the year page, or to the next entry for the year, a top navigation bar to just go up to the entry's main page is needed.  So the line for `2020/ferguson2/chocolate-cake.md` would reference `topnav.up2index.html` instead of using the  `topnav.default.html` default. 
+to using a different filename for a given phase.
 
-In some cases the [md2html config file](/inc/md2html.cfg) may disable forming HTML content from a givrn markdown file altogether.  
+For example when forming the HTML from `2020/ferguson2/chocolate-cake.md`,
+a different "topnav" navigation bar is needed.  So instead of the
+usual top navigation bar that normally directs people to the previous
+entry for the year, or go up to the year page, or to the next entry
+for the year, a top navigation bar to just go up to the entry's
+main page is needed.   A line the [md2html config file](/inc/md2html.cfg) file
+that refers to `2020/ferguson1/chocolate-cake.md` may specify use
+of `topnav.up2index.html` instead of using the `topnav.default.html` default.
 
-In above mentioned canonical order, a phase  may be skipped by an entry in the [md2html config file](/inc/md2html.cfg) by referring a
-phaee file ending in ".none.html".  Files of the form will **NOT** exist, instead the tool will skip using such a file:
+In some cases the [md2html config file](/inc/md2html.cfg) may disable forming HTML content from a givrn markdown file altogether.
+
+In above mentioned canonical order, a phase  may be skipped by an
+entry in the [md2html config file](/inc/md2html.cfg) by referring
+a phase file ending in ".none.html".  Files of the form will **NOT**
+exist, instead the tool will skip using such a file:
 
 ```
 *.none.html
