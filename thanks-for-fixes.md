@@ -3658,6 +3658,16 @@ implicitly (Linux doesn't seem to but macOS does).
 # <a name="2014"></a>2014
 
 
+## [2014/birken](2014/birken/prog.c) ([README.md](2014/birken/README.md))
+
+[Cody](#cody) provided the [alternate
+code](2014/birken/README.md#alternate-code) that lets one redefine the port to
+bind to in case there is a firewall issue or there is some other reason to not
+have the default port. Remember that ports < 1024 are privileged. It also lets
+you redefine the timing constant `STARDATE` (see the author's remarks for more
+details).
+
+
 ## [2014/deak](2014/deak/prog.c) ([README.md](2014/deak/README.md))
 
 [Cody](#cody) fixed the code that the author provided which would be what the program
