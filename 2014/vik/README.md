@@ -4,6 +4,10 @@
 make
 ```
 
+There is an alternate version that will theoretically work with Windows
+compilers (if anything in Windows works :-) ). See the [Alternate
+code](#alternate-code) section below.
+
 
 ### Bugs and (Mis)features:
 
@@ -22,10 +26,6 @@ For more detailed information see [2014 vik in bugs.md](/bugs.md#2014-vik).
 ./prog > foo.c
 ```
 
-There is an alternate version that will theoretically work with Windows
-compilers (if anything in Windows works :-) ). See the [Alternate
-code](#alternate-code) section below.
-
 
 ### Try:
 
@@ -39,12 +39,18 @@ echo 'No. I want chocolate!' | ./prog | mplayer -demuxer rawaudio -
 ## Alternate code:
 
 The alternate code, [prog.alt.c](prog.alt.c), is based on the author's
-instructions on how to get it to work with Windows. This has not been tested but
-in order to use it you can do:
+instructions on how to get it to work with Windows.
+
+
+### Alternate build:
+
 
 ```sh
 make alt
 ```
+
+
+### Alternate use:
 
 Use `prog.alt` as you would `prog` above as well as below.
 
@@ -70,15 +76,16 @@ might help? :-)
 
 ## Author's remarks:
 
+
 ### Remarks
 
-This program converts ascii text to Morse audio file and vice versa. As far as
+This program converts ASCII text to Morse audio file and vice versa. As far as
 I can tell, there are at least six chocolate references in this program.
 
 This program can convert text to Morse to a raw 44.1kHz stereo audio file.
-Via streaming to mplayer, you can listen to the Morse audio.
+Via streaming to `mplayer(1)`, you can listen to the Morse audio.
 
-Don't forget the last '`-`' as it makes mplayer read from stdin.
+Don't forget the last '`-`' as it makes `mplayer(1)` read from `stdin`.
 
 
 ## Convert audio file with Morse signals to text
@@ -92,20 +99,22 @@ or alternatively pass a .wav file as input.
 The preferred input format 44.1kHz stereo, but it does a decent job on mono
 input and different frequencies as well.
 
+
 ### Portability
 
 The program is portable to most platforms. The only system dependency is that
-the program relies on writing binary data to stdout.
+the program relies on writing binary data to `stdout`.
 
 Microsoft compilers add a carriage return to newlines, and to compile the
-program with this platform, the following line can be added after the main
-declaration in order for the program to run correctly:
+program with this platform, the following line can be added to `main()` before
+any code in order for the program to run correctly:
 
 ```c
 _setmode(_fileno(stdout), 0x8000);
 ```
 
 NOTE: see the [alternate code](prog.alt.c) for this.
+
 
 ### Known Issues
 
