@@ -1,30 +1,59 @@
 ## To build:
 
-This entry requires SDL to be installed. See the [faq.md](/faq.md) if you don't
-know how to do this for your system.
+This entry requires SDL to be installed. See [FAQ 3.8](/faq.md#faq3_8) if you
+don't know how to do this for your system.
+
 
 ```sh
 make
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2014 maffiodo1 in bugs.md](/bugs.md#2014-maffiodo1).
+
+
+
 ## To use:
 
 ```sh
-cat mario.level | ./prog 320 200 800 300 128 144 mario.rgba mario8.wav 10343679
+cat game.level | ./prog 320 200 800 300 128 144 game.rgba game.wav 10343679
 ```
+
+The parameters to the program are:
+
+1. Window width.
+2. Window height.
+3. Level width.
+4. Level height.
+5. Sprites image width.
+6. Sprites image height.
+7. Filename of the sprites image (raw RGBA image).
+8. Filename of the music (WAVE 8000 Hz 8bit Mono).
+9. Sky color. This number depends on the system where you run the program. See
+note on macOS.
+
 
 
 ### Try:
 
 ```sh
-cat giana.level | ./prog 320 200 1000 300 192 168 giana.rgba giana8.wav 5459393
+./giana.sh
 
-cat mario.level | ./prog 320 200 800 300 128 144 mario.rgba mario8.wav 10343679 && telnet telehack.com 23
+./mario.sh
 
 ```
 
-If you end up telnetting to the server you can try:
+If you end up telnetting to the server (feature of [mario.sh](mario.sh)) you can
+try:
+
 
 ```
 ls # show files including games
@@ -33,18 +62,14 @@ advent.gam # you know what this is! :-)
 starwars # animated Star Wars 'film'
 ```
 
-NOTE: the author stated that the sky colour is incorrect in some versions of
-macOS, offering a workaround. Others tested this out in the most recent macOS
-version and this does not seem to be a problem any more. As he played (and beat)
-the entire series many times years ago he can confirm that the sky is more or
-less correct though it's possible that because he's practically blind he might
-have missed something :-) He guesses that the problem might have been the
-version of `SDL1` but he does not know this either way.
+If you wish to change the width and height, defaulting at 640 x 480, say to
+800 x 800, try:
 
-Others notes ironically that the author stated that in Super Mario Bros one cannot
-go through walls but there are known glitches where you can in some areas (as he
-recalls this also applied to the arcade version, Mario Bros, but he cannot
-confirm this now) :-)
+```sh
+ROWS=800 COLS=800 ./mario.sh
+
+ROWS=800 COLS=800 ./giana.sh
+```
 
 
 ## Judges' remarks:
@@ -60,9 +85,9 @@ the code. In `vim` you can do:
 ```
 
 in command mode to see this effect. You don't need to modify your `.vimrc` file!
-You can also use `expand` as described below if your terminal has enough rows
-and you don't want to move about in the code. The vim command should immediately
-take effect.
+You can also use `expand` as described below by the author if your terminal has
+enough rows and you don't want to move about in the code. The vim command should
+immediately take effect.
 
 
 ## Author's remarks:
@@ -95,7 +120,7 @@ for free!
 
 In my two tests I tried to create one level of [Super Mario
 Bros](http://en.wikipedia.org/wiki/Super_Mario_Bros.) and one of [The Great
-Giana The Sisters](http://en.wikipedia.org/wiki/The_Great_Giana_Sisters).
+Giana Sisters](http://en.wikipedia.org/wiki/The_Great_Giana_Sisters).
 
 Both games are classic [platform
 games](https://en.wikipedia.org/wiki/Platform_game) and both share the same
@@ -109,8 +134,9 @@ character more or different powers or abilities!
 - There are walls, floors and ceilings. The character can move and jump over
 these type of obstacles but cannot walk through them.
 
-- There are enemies and; if the character collides with an enemy, the character
+- There are enemies and if the character collides with an enemy, the character
 dies or loses its powers.
+
 
 ###  Running under macOS
 
@@ -124,17 +150,19 @@ last parameter of the program:
 
 * GIANA LAST PARAMETER: `3243070463`
 
+
 ### Regarding how to compile
 
 The code requires `SDL1`.
 
-The build process will generate some warnings  (60~ on clang) about:
+The build process will generate some warnings (~60 with clang) about:
 
 - `incompatible pointer types`: because all pointers are declared to `int` or
 `char`, to save bytes.
 - `type specifier missing, defaults to 'int'`: because I need to save bytes.
 - `using the result of an assignment as a condition without parentheses`:
 because `while(c=getchar())` is not evil.
+
 
 ### How it works
 
@@ -193,6 +221,7 @@ Position          | Description
 
 All the others sprites can be used as you want, depending on the game you want
 to create.
+
 
 ## Levels
 
@@ -259,7 +288,7 @@ Each row has six columns:
 * `DESTROY` (`64`)
 
 	    When the player hits the object (e.g. the classic Mario coin) the
-	    object disappears but the engine does not counts the points, so,
+	    object disappears but the engine does not count the points, so,
 	    from the player point of view, this object is useless.
 
 * `DESTROYUP` (`128`)
@@ -271,6 +300,7 @@ If `CLASSFLAGS` is `0` the object only has an aesthetic function.
 
 The last row of the level descriptor must have all its columns set equal to
 `-1`.
+
 
 ### Limitations
 
@@ -306,12 +336,12 @@ only demonstrates the operation of the program. From my point of view this is a
 tribute to the legendary game [Super Mario
 Bros](http://en.wikipedia.org/wiki/Super_Mario_Bros.)!
 
-[The Great Giana The
+[The Great Giana
 Sisters](http://en.wikipedia.org/wiki/The_Great_Giana_Sisters) is the game
 created by [Time Warp
 Productions](https://www.ign.com/games/producer/time-warp-productions) and my
 justification for the sprites for Mario are the same for this game. Long live
-[The Great Giana The
+[The Great Giana
 Sisters](http://en.wikipedia.org/wiki/The_Great_Giana_Sisters) !! :)
 
 

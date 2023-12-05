@@ -2955,6 +2955,39 @@ it out as a known limitation it is not a bug but a feature.
 # 2014
 
 
+## 2014 maffiodo1
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2014/maffiodo1/prog.c](2014/maffiodo1/prog.c)
+### Information: [2014/maffiodo1/README.md](2014/maffiodo1/README.md)
+
+The author noted that in macOS the colours might be wrong. They gave a solution.
+However Cody didn't see any problem with it and he beat the series many times.
+Of course the game here is small and he's practically blind and it's been a
+while since he last played so it might be wrong. Nevertheless the author does
+give a way to reconfigure the colours.
+
+The author noted that the character cannot go through walls and the impression
+is that this is how it was believed but Cody ironically pointed out that there
+are known glitches where in some places you actually could go through walls.
+This might even have applied to the arcade version, Mario Bros, though that can
+no longer be confirmed by Cody. The point here is that in this game you cannot
+go through walls but it's not a bug.
+
+On the other hand, the author also stated:
+
+--
+
+When the `Super character` becomes bigger (`ZOOM` flag), the character can
+collide with blocks and get stuck inside them. This is a KNOWN BUG. When your
+player become bigger, stay away from blocks!
+
+
+--
+
+but since it's documented it's considered a feature, not a bug to fix.
+
+
 ## 2014 vik
 
 ### STATUS: known bug - please help us fix

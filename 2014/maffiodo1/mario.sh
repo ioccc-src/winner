@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#
+# mario.sh - demonstrate IOCCC winner 2014/maffiodo1 Super Mario Bros.
+#
+
+# make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
+# this way allows us to have the user specify a different compiler in an easy
+# way.
+if [[ -z "$CC" ]]; then
+    CC="cc"
+fi
+
+make CC="$CC" all >/dev/null || exit 1
+
+# clear screen after compilation so that only the entry is shown
+clear
+
+# see if the user wants to override width and height
+if [[ -z "$ROWS" ]]; then
+	ROWS="480"
+fi
+if [[ -z "$COLS" ]]; then
+	COLS="640"
+fi
+
+cat mario.level | ./prog "$COLS" "$ROWS" 800 300 128 144 mario.rgba mario8.wav 10343679 && telnet telehack.com 23
