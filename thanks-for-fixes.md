@@ -3722,6 +3722,13 @@ Great Giana Sisters](http://en.wikipedia.org/wiki/The_Great_Giana_Sisters), but
 which let one configure the width and height of the game.
 
 
+## [2014/maffiodo2](2014/maffiodo2/prog.c) ([README.md](2014/maffiodo2/README.md]))
+
+[Cody](#cody) added the [try.sh](2014/maffiodo2/try.sh) script and the
+[alternate code](2014/maffiodo2/README.md#alternate-code) provided by the
+author.
+
+
 ## [2014/morgan](2014/morgan/prog.c) ([README.md](2014/morgan/README.md))
 
 [Cody](#cody) added the [try.sh](2014/morgan/try.sh) script.

@@ -2988,6 +2988,15 @@ player become bigger, stay away from blocks!
 but since it's documented it's considered a feature, not a bug to fix.
 
 
+## 2014 maffiodo2
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2014/maffiodo2/prog.c](2014/maffiodo2/prog.c)
+### Information: [2014/maffiodo2/README.md](2014/maffiodo2/README.md)
+
+This program will very likely crash if no arg is given.
+
+
 ## 2014 vik
 
 ### STATUS: known bug - please help us fix

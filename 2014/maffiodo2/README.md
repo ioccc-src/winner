@@ -4,6 +4,21 @@
 make
 ```
 
+There is a 121 byte version provided by the author. See [Alternate
+code](#alternate-code) below.
+
+
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2014 maffiodo2 in bugs.md](/bugs.md#2014-maffiodo2).
+
+
 
 ## To use:
 
@@ -15,7 +30,28 @@ make
 ### Try:
 
 ```sh
-cat image.rgb | ./prog '  .,:;!$#@'
+./try.sh
+```
+
+
+## Alternate code:
+
+This shorter version is provided by the author. It has a fixed ramp and so not
+as fun but it's 121 bytes instead of 140.
+
+
+### Alternate build:
+
+
+```sh
+make alt
+```
+
+
+### Alternate use:
+
+```sh
+cat image.rgb | ./prog.alt
 ```
 
 
@@ -34,14 +70,15 @@ get?  And how many people will really understand the tweet?
 ### Remarks
 
 This program convert an image to an ASCII ART. The program reads a raw RGB image
-from **stdin** and print the ASCII ART to **stdout**.
+from `stdin` and print the ASCII ART to `stdout`.
 
 The build process will raise some warnings about:
 
 - declaration specifier missing, defaulting to 'int'
 - implicitly declaring library function
 
-The program crash if run without parameters.
+The program will crash if run without parameters.
+
 
 ### Screen size
 
@@ -60,13 +97,17 @@ Type this:
 cat image.rgb | ./prog "  .:;Y0"
 ```
 
-You can use your own image. Convert the image to a raw RGB image, using imagemagick it's very simple:
+You can use your own image. Convert the image to a raw RGB image. Using
+ImageMagick it's very simple:
 
 ```sh
 convert -geometry 80x source.jpg image.rgb
 ```
 
-This program require one parameter, or crash. The parameter of the program is the *convertion ramp*. You can use different ramps or create your own (for ex. using some letters of your name).
+This program require one parameter or it will crash. The parameter of the
+program is the *conversion ramp*. You can use different ramps or create your own
+(for example using some letters of your name).
+
 These are some ramps you can try:
 
 ```sh
@@ -74,7 +115,6 @@ These are some ramps you can try:
 ./prog "  .:;Y0"
 ./prog " .:-=+*#%@"
 ./prog "   .,:!-iots&8%#@$"
-./prog "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,"^`'. "
 ```
 
 ### 121 byte version
@@ -85,7 +125,7 @@ An alternative version of this program is only 121bytes long:
 d=80,e,j;g(){j+=getchar();}main(){for(;;){j=0;g();if(j<0)break;g(g());putchar(" .:#@"[j/3*5>>8]);if(!(++e%d))puts("");}}
 ```
 
-This alternative version have a **fixed ramp**. It's smaller but it's not so fun to use...
+This alternative version has a **fixed ramp**. It's smaller but it's not so fun to use...
 
 
 ## Copyright and CC BY-SA 4.0 License:
