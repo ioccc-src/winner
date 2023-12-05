@@ -3705,6 +3705,11 @@ file to [spoilers.md](2014/endoh1/spoilers.md) to be clearer in its purpose as
 it is a file with spoilers (and too close to README.md?).
 
 
+## [2014/endoh2](2014/endoh2/prog.c) ([README.md](2014/endoh2/README.md]))
+
+[Cody](#cody) added the [try.sh](2014/endoh2/try.sh) script.
+
+
 ## [2014/maffiodo1](2014/maffiodo1/prog.c) ([README.md](2014/maffiodo1/README.md]))
 
 [Cody](#cody) fixed the build for this entry: it does not require
