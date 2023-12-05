@@ -28,7 +28,7 @@ rm -f try.sh.txt
 echo "$ ./primenum 101 < try.sh | ./primenum n > try.sh.txt" 1>&2
 ./primenum 101 < try.sh | ./primenum n > try.sh.txt
 echo "$ diff try.sh try.sh.txt"
-read -r -n 1 -p "Press any key to see diff (through less): " 1>&2
-diff try.sh try.sh.txt|less
+read -r -n 1 -p "Press any key to see diff (space = next page, q = quit): " 1>&2
+diff try.sh try.sh.txt|less -EXF
 
-
+rm -f try.sh.txt
