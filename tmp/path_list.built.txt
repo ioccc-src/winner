@@ -429,6 +429,7 @@
 1995/leo/1995_leo.tar.bz2
 1995/leo/index.html
 1995/leo/inventory.html
+1995/leo/spoiler1.html
 1995/makarios/.winner.json
 1995/makarios/1995_makarios.tar.bz2
 1995/makarios/index.html
@@ -538,6 +539,7 @@
 1998/schweikh1/1998_schweikh1.tar.bz2
 1998/schweikh1/index.html
 1998/schweikh1/inventory.html
+1998/schweikh1/macos.html
 1998/schweikh2/.winner.json
 1998/schweikh2/1998_schweikh2.tar.bz2
 1998/schweikh2/index.html
@@ -930,6 +932,7 @@
 2012/hamano/inventory.html
 2012/hou/.winner.json
 2012/hou/2012_hou.tar.bz2
+2012/hou/hint.html
 2012/hou/index.html
 2012/hou/inventory.html
 2012/kang/.winner.json
