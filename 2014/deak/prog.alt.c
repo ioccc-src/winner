@@ -1,6 +1,18 @@
 #include <stdio.h>
-double                                 _[]={-2
-,1,-1.3                ,1.3,  0,         0,0,0
+#ifndef X1
+#define X1 -2
+#endif
+#ifndef X2
+#define X2 1
+#endif
+#ifndef Y1
+#define Y1 -1.3
+#endif
+#ifndef Y2
+#define Y2 1.3
+#endif
+double                                 _[]={X1
+,X2,Y1                ,Y2,  0,           0,0,0
 ,0               ,0,50, 80,     0,0,0     ,255
 ,               8,0};    int      main       (
 	       int j) {if (j==  1 ){ if(

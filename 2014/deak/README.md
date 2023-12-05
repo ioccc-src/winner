@@ -5,7 +5,9 @@ make
 ```
 
 There is an alternate version that the author provided but fixed in 2023 to
-compile. See [alternate code](#alternate-code) below.
+compile with modern systems and to allow one to reconfigure the constants `X1`,
+`X2`, `Y1` and `Y2` (which were magic numbers). See [Alternate
+code](#alternate-code) below.
 
 
 ## To use:
@@ -29,16 +31,30 @@ various regions of the fractal.
 
 The alternate code is included as [prog.alt.c](prog.alt.c) so you can more
 easily see the difference in what it might look like if the C was more
-recognisable. To use, try:
+recognisable and also to let you reconfigure the coordinates.
+
+
+### Alternate build:
 
 ```sh
 make alt
 ```
 
-Use `prog.alt` as you would `prog`.
+If you wish to redefine the coordinates you can do so by defining `X1`, `X2`,
+`Y1` and/or `Y2`, which default to: `-2`, `1`, `-1.3` and `1.3` respectively.
+For instance:
 
-Bonus: the author explains how to configure the program but can you figure out
-how to do it in the alternate code?
+
+```sh
+make clobber CDEFINE="-DX1=-3 -DX2=2 -DY1=-2.3 -DY2=2.3" alt
+```
+
+You may pick and choose which ones to redefine.
+
+
+### Alternate use:
+
+Use `prog.alt` as you would `prog`.
 
 
 ## Judges' remarks:
@@ -51,19 +67,21 @@ We liked the use of unary notation facilitated by variadic macros.
 
 ## Author's remarks:
 
+
 ### Portability
 
 The application was written on a standard Ubuntu 14.04 and tested with
-gcc 4.9.1 and clang 3.5 on 64 bit system (though this should not matter).
+gcc 4.9.1 and clang 3.5 on a 64 bit system (though this should not matter).
 The application makes no assumption regarding any system specific settings,
 and it only needs a console to run. The provided Makefile is just to have
 an easy compilation. I don't see any problems porting it to different
 compiler/system as long as it supports the C99 standard.
 
+
 ### The application
 
 The purpose of the application is mainly to illustrate the weird possibilities
-of the C preprocessor, than to be a full featured console mode Mandelbrot
+of the C preprocessor, rather than to be a full featured console mode Mandelbrot
 drawer. There are tools much better suited for drawing fractals.
 
 The usage of recognizable elements from the C programming language in the
@@ -97,6 +115,7 @@ is to modify the source code at the indicated location: the line
 `/* <-- Configure here: X1, X2, Y1, Y2 */` is intentionally not obfuscated so
 that the adventurous programmer can manually modify the coordinates of the
 fractal to be drawn on the screen.
+
 
 ### Compiler warnings
 

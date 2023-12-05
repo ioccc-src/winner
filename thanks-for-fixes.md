@@ -3670,17 +3670,20 @@ details).
 
 ## [2014/deak](2014/deak/prog.c) ([README.md](2014/deak/README.md))
 
-[Cody](#cody) fixed the code that the author provided which would be what the program
-would look like if, as the author put it:
+[Cody](#cody) added [alt code](2014/deak/README.md#alternate-code) that lets one
+reconfigure the coordinates but instead of being a modified version of the entry
+it is the version the author provided which would be what the program would look
+like if, as the author put it:
 
 > The usage of recognizable elements from the C programming language in the
-application source code is intentionally kept to a bare minimum. If this phrase
-would not be true, the application would be the following:
+application source code is intentionally kept to a bare minimum.
 
-It did not compile because a value was left off the `return` statement.
+.. was not true.
 
-Cody added this as alternate code just for fun and so one can more easily see
-the difference to really appreciate the obfuscation.
+This alt version did not originally compile because a value was left off the
+`return` statement (this might have been fixed in the README.md file too) so
+that was fixed and it also has `#include <stdio.h>` for `putchar(3)`. The
+`#ifndef..#define..#endif` was not part of the original alt code, of course.
 
 
 ## [2014/endoh1](2014/endoh1/prog.c) ([README.md](2014/endoh1/README.md]))
