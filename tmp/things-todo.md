@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Tue 28 Nov 2023 18:20:54 UTC*
+*Last updated: Wed 06 Dec 2023 13:24:33 UTC*
 
 This document is primarily for [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) as he (that is I :-) ) wanted a way
@@ -165,3 +165,7 @@ args but harder to make it function right.
 embedded into the README.md files themselves. An entry that the video file is
 downloaded already is 2006/sykes1. There are others that I need to look at once
 the rest of the entries are done, assuming that it's possible.
+
+- Although I will have to do this when another issue is opened up I am aware of
+some issues in 2020/ferguson1/.winner.json. I do not want to forget this,
+however, so I am noting it here.
