@@ -79,7 +79,7 @@
 1985,shapiro,Makefile,30,null,null,makefile,true,github,Makefile,null
 1985,shapiro,shapiro.alt.c,40,null,alt,c,true,github,alternative source,c
 1985,shapiro,shapiro.orig.c,50,null,orig,c,true,github,original source,c
-1985,shapiro,try.alt.sh,100,null,null,shellscript,TRUE,github,how to run alternative code,sh
+1985,shapiro,try.alt.sh,100,null,null,shellscript,true,github,how to run alternative code,sh
 1985,shapiro,1985_shapiro.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1985,shapiro,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 1985,sicherman,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -568,19 +568,19 @@
 1991,brnstnd,Makefile,30,null,null,makefile,true,github,Makefile,null
 1991,brnstnd,brnstnd.orig.c,50,null,orig,c,true,github,original source,c
 1991,brnstnd,sorta.README.html,100,md2html,null,html,true,browser,SORTA language infomation,html
-1991,brnstnd,sorta.i2+2,150,null,null,sorta,true,github,SORTA source ,i2+2
-1991,brnstnd,sorta.iarg0,150,null,null,sorta,true,github,SORTA source ,iarg0
-1991,brnstnd,sorta.icalc,150,null,null,sorta,true,github,SORTA source ,icalc
-1991,brnstnd,sorta.idup,150,null,null,sorta,true,github,SORTA source ,idup
-1991,brnstnd,sorta.iecho,150,null,null,sorta,true,github,SORTA source ,iecho
-1991,brnstnd,sorta.ifact1,150,null,null,sorta,true,github,SORTA source ,ifact1
-1991,brnstnd,sorta.ifact2,150,null,null,sorta,true,github,SORTA source ,ifact2
-1991,brnstnd,sorta.ifact3,150,null,null,sorta,true,github,SORTA source ,ifact3
-1991,brnstnd,sorta.iio,150,null,null,sorta,true,github,SORTA source ,iio
-1991,brnstnd,sorta.irot13,150,null,null,sorta,true,github,SORTA source ,irot13
-1991,brnstnd,sorta.isleep,150,null,null,sorta,true,github,SORTA source ,isleep
-1991,brnstnd,sorta.itailrec,150,null,null,sorta,true,github,SORTA source ,itailrec
-1991,brnstnd,sorta.iwhosort,150,null,null,sorta,true,github,SORTA source ,iwhosort
+1991,brnstnd,sorta.i2+2,150,null,null,sorta,true,github,SORTA source,i2+2
+1991,brnstnd,sorta.iarg0,150,null,null,sorta,true,github,SORTA source,iarg0
+1991,brnstnd,sorta.icalc,150,null,null,sorta,true,github,SORTA source,icalc
+1991,brnstnd,sorta.idup,150,null,null,sorta,true,github,SORTA source,idup
+1991,brnstnd,sorta.iecho,150,null,null,sorta,true,github,SORTA source,iecho
+1991,brnstnd,sorta.ifact1,150,null,null,sorta,true,github,SORTA source,ifact1
+1991,brnstnd,sorta.ifact2,150,null,null,sorta,true,github,SORTA source,ifact2
+1991,brnstnd,sorta.ifact3,150,null,null,sorta,true,github,SORTA source,ifact3
+1991,brnstnd,sorta.iio,150,null,null,sorta,true,github,SORTA source,iio
+1991,brnstnd,sorta.irot13,150,null,null,sorta,true,github,SORTA source,irot13
+1991,brnstnd,sorta.isleep,150,null,null,sorta,true,github,SORTA source,isleep
+1991,brnstnd,sorta.itailrec,150,null,null,sorta,true,github,SORTA source,itailrec
+1991,brnstnd,sorta.iwhosort,150,null,null,sorta,true,github,SORTA source,iwhosort
 1991,brnstnd,1991_brnstnd.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1991,brnstnd,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 1991,buzzard,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -1058,7 +1058,7 @@
 1995,dodsond1,dodsond1.c,20,null,main,c,true,github,winning source,c
 1995,dodsond1,Makefile,30,null,null,makefile,true,github,Makefile,null
 1995,dodsond1,dodsond1.orig.c,50,null,orig,c,true,github,original source,c
-1995,dodsond1,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+1995,dodsond1,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1995,dodsond1,try.this.txt,100,null,null,text,true,github,sample input,txt
 1995,dodsond1,1995_dodsond1.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1995,dodsond1,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
@@ -1080,7 +1080,7 @@
 1995,esde,esde.orig.c,50,null,orig,c,true,github,original source,c
 1995,esde,esde.data,100,null,null,text,true,github,example file argument,data
 1995,esde,esde.data2,100,null,null,text,true,github,example file argument,data2
-1995,esde,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+1995,esde,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1995,esde,1995_esde.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1995,esde,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 1995,garry,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -1092,7 +1092,7 @@
 1995,garry,garry.alt.c,40,null,alt,c,true,github,alternative source,c
 1995,garry,garry.orig.c,50,null,orig,c,true,github,original source,c
 1995,garry,garry.data,100,null,null,text,true,github,example input,data
-1995,garry,try.alt.sh,100,null,null,shellscript,TRUE,github,how to run alternative code,sh
+1995,garry,try.alt.sh,100,null,null,shellscript,true,github,how to run alternative code,sh
 1995,garry,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1995,garry,garry.fmt.c,150,null,null,c,true,github,defocused source code,c
 1995,garry,1995_garry.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
@@ -1202,7 +1202,7 @@
 1996,gandalf,gandalf.c,20,null,main,c,true,github,winning source,c
 1996,gandalf,Makefile,30,null,null,makefile,true,github,Makefile,null
 1996,gandalf,gandalf.orig.c,50,null,orig,c,true,github,original source,c
-1996,gandalf,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+1996,gandalf,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1996,gandalf,1996_gandalf.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1996,gandalf,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 1996,huffman,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -1212,7 +1212,7 @@
 1996,huffman,huffman.c,20,null,main,c,true,github,winning source,c
 1996,huffman,Makefile,30,null,null,makefile,true,github,Makefile,null
 1996,huffman,huffman.orig.c,50,null,orig,c,true,github,original source,c
-1996,huffman,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+1996,huffman,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1996,huffman,1996_huffman.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1996,huffman,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 1996,jonth,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -1254,7 +1254,7 @@
 1996,schweikh2,schweikh2.orig.c,50,null,orig,c,true,github,original source,c
 1996,schweikh2,hunni.c,100,null,null,c,true,github,original slightly obfuscated source,c
 1996,schweikh2,hunni.pl,100,null,null,perl,true,github,perl script to obfuscate c,pl
-1996,schweikh2,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+1996,schweikh2,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1996,schweikh2,1996_schweikh2.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1996,schweikh2,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 1996,schweikh3,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -1278,8 +1278,8 @@
 1996,westley,clock1.sh,100,null,null,shellscript,true,github,how to run,sh
 1996,westley,clock2.sh,100,null,null,shellscript,true,github,how to run,sh
 1996,westley,clock3.sh,100,null,null,shellscript,true,github,how to run,sh
-1996,westley,try.alt.sh,100,null,null,shellscript,TRUE,github,how to run alternative code,sh
-1996,westley,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+1996,westley,try.alt.sh,100,null,null,shellscript,true,github,how to run alternative code,sh
+1996,westley,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1996,westley,1996_westley.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1996,westley,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 1998,banks,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -1314,7 +1314,7 @@
 1998,bas2,bas2.c,20,null,main,c,true,github,winning source,c
 1998,bas2,Makefile,30,null,null,makefile,true,github,Makefile,null
 1998,bas2,bas2.orig.c,50,null,orig,c,true,github,original source,c
-1998,bas2,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+1998,bas2,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1998,bas2,1998_bas2.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1998,bas2,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 1998,chaos,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -1350,7 +1350,7 @@
 1998,dlowe,dlowe.orig.c,50,null,orig,c,true,github,original source,c
 1998,dlowe,pootify.cgi.sh,100,null,null,shellscript,true,github,pootify CGI,sh
 1998,dlowe,pootify.sh,100,null,null,shellscript,true,github,pootify tool,sh
-1998,dlowe,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+1998,dlowe,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1998,dlowe,1998_dlowe.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1998,dlowe,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 1998,dloweneil,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -1372,7 +1372,7 @@
 1998,dorssel,Makefile,30,null,null,makefile,true,github,Makefile,null
 1998,dorssel,dorssel.orig.c,50,null,orig,c,true,github,original source,c
 1998,dorssel,dorssel.html,100,md2html,null,html,true,browser,author description of entry,html
-1998,dorssel,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+1998,dorssel,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1998,dorssel,1998_dorssel.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1998,dorssel,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 1998,fanf,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -1382,7 +1382,7 @@
 1998,fanf,fanf.c,20,null,main,c,true,github,winning source,c
 1998,fanf,Makefile,30,null,null,makefile,true,github,Makefile,null
 1998,fanf,fanf.orig.c,50,null,orig,c,true,github,original source,c
-1998,fanf,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+1998,fanf,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1998,fanf,fanf.lambda,150,null,null,text,true,github,lambda expressions,lambda
 1998,fanf,1998_fanf.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1998,fanf,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
@@ -1439,7 +1439,7 @@
 1998,tomtorfs,tomtorfs.c,20,null,main,c,true,github,winning source,c
 1998,tomtorfs,Makefile,30,null,null,makefile,true,github,Makefile,null
 1998,tomtorfs,tomtorfs.orig.c,50,null,orig,c,true,github,original source,c
-1998,tomtorfs,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+1998,tomtorfs,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1998,tomtorfs,crc.txt,150,null,null,text,true,github,painless guide to CRC algorithms,txt
 1998,tomtorfs,1998_tomtorfs.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1998,tomtorfs,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
@@ -1450,7 +1450,7 @@
 2000,anderson,anderson.c,20,null,main,c,true,github,winning source,c
 2000,anderson,Makefile,30,null,null,makefile,true,github,Makefile,null
 2000,anderson,anderson.orig.c,50,null,orig,c,true,github,original source,c
-2000,anderson,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2000,anderson,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2000,anderson,2000_anderson.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2000,anderson,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2000,bellard,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -1471,7 +1471,7 @@
 2000,bmeyer,bmeyer.orig.c,50,null,orig,c,true,github,original source,c
 2000,bmeyer,lavabus.pgm,100,null,null,image,true,browser,Kilauea volcano bus trapped in lava,pgm
 2000,bmeyer,michael.pgm,100,null,null,image,true,browser,author’s Godchild and Nephew,pgm
-2000,bmeyer,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2000,bmeyer,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2000,bmeyer,lenna.glic,150,null,null,binary,true,browser,P10 scan of 1972 Playboy centerfold,glic
 2000,bmeyer,2000_bmeyer.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2000,bmeyer,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
@@ -1491,7 +1491,7 @@
 2000,dhyang,dhyang.c,20,null,main,c,true,github,winning source,c
 2000,dhyang,Makefile,30,null,null,makefile,true,github,Makefile,null
 2000,dhyang,dhyang.orig.c,50,null,orig,c,true,github,original source,c
-2000,dhyang,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2000,dhyang,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2000,dhyang,2000_dhyang.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2000,dhyang,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2000,dlowe,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -1521,7 +1521,7 @@
 2000,natori,Makefile,30,null,null,makefile,true,github,Makefile,null
 2000,natori,natori.alt.c,40,null,alt,c,true,github,alternative source,c
 2000,natori,natori.orig.c,50,null,orig,c,true,github,original source,c
-2000,natori,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2000,natori,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2000,natori,2000_natori.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2000,natori,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2000,primenum,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -1531,7 +1531,7 @@
 2000,primenum,primenum.c,20,null,main,c,true,github,winning source,c
 2000,primenum,Makefile,30,null,null,makefile,true,github,Makefile,null
 2000,primenum,primenum.orig.c,50,null,orig,c,true,github,original source,c
-2000,primenum,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2000,primenum,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2000,primenum,2000_primenum.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2000,primenum,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2000,rince,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -1541,7 +1541,7 @@
 2000,rince,rince.c,20,null,main,c,true,github,winning source,c
 2000,rince,Makefile,30,null,null,makefile,true,github,Makefile,null
 2000,rince,rince.orig.c,50,null,orig,c,true,github,original source,c
-2000,rince,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2000,rince,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2000,rince,dmy2jd.c,150,null,null,c,true,github,supplementary program source,c
 2000,rince,2000_rince.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2000,rince,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
@@ -1582,8 +1582,8 @@
 2000,tomx,Makefile,30,null,null,makefile,true,github,Makefile,null
 2000,tomx,tomx.alt.c,40,null,alt,c,true,github,alternative source,c
 2000,tomx,tomx.orig.c,50,null,orig,c,true,github,original source,c
-2000,tomx,try.alt.sh,100,null,null,shellscript,TRUE,github,how to run alternative code,sh
-2000,tomx,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2000,tomx,try.alt.sh,100,null,null,shellscript,true,github,how to run alternative code,sh
+2000,tomx,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2000,tomx,mkentry.c,150,null,null,c,true,github,IOCCC mkentry source from 1998,c
 2000,tomx,2000_tomx.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2000,tomx,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
@@ -1617,7 +1617,7 @@
 2001,cheong,cheong.c,20,null,main,c,true,github,winning source,c
 2001,cheong,Makefile,30,null,null,makefile,true,github,Makefile,null
 2001,cheong,cheong.orig.c,50,null,orig,c,true,github,original source,c
-2001,cheong,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2001,cheong,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2001,cheong,2001_cheong.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2001,cheong,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2001,coupard,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -1671,7 +1671,7 @@
 2001,herrmann2,herrmann2.orig.c,50,null,orig,c,true,github,original source,c
 2001,herrmann2,herrmann2.cup,100,null,null,text,true,github,sample input,cup
 2001,herrmann2,herrmann2.ioccc,100,null,null,text,true,github,sample input,ioccc
-2001,herrmann2,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2001,herrmann2,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2001,herrmann2,2001_herrmann2.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2001,herrmann2,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2001,jason,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -1718,7 +1718,7 @@
 2001,schweikh,schweikh.c,20,null,main,c,true,github,winning source,c
 2001,schweikh,Makefile,30,null,null,makefile,true,github,Makefile,null
 2001,schweikh,schweikh.orig.c,50,null,orig,c,true,github,original source,c
-2001,schweikh,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2001,schweikh,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2001,schweikh,2001_schweikh.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2001,schweikh,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2001,westley,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -1729,7 +1729,7 @@
 2001,westley,Makefile,30,null,null,makefile,true,github,Makefile,null
 2001,westley,westley.alt.c,40,null,alt,c,true,github,alternative source,c
 2001,westley,westley.orig.c,50,null,orig,c,true,github,original source,c
-2001,westley,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2001,westley,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2001,westley,westley.punch.c,100,null,null,c,true,github,Punch card code,c
 2001,westley,westley.sort.c,100,null,null,c,true,github,Sorted code,c
 2001,westley,2001_westley.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
@@ -1822,8 +1822,8 @@
 2004,hibachi,src/localhost/test/php/sendform.html,null,null,null,html,false,browser,PHP example page support file,html
 2004,hibachi,src/localhost/test/php/sendform.php,null,null,null,php,false,github,PHP example page support file,php
 2004,hibachi,src/localhost/test/php/sendform.php.in,null,null,null,php,false,github,PHP example page support file,in
-2004,hibachi,src/localhost/test/ruby/LUHN.rb,null,null,null,ruby,false,github,ruby example page support file ,rb
-2004,hibachi,src/localhost/test/ruby/index_rb.in,null,null,null,ruby,false,github,ruby example page support file ,in
+2004,hibachi,src/localhost/test/ruby/LUHN.rb,null,null,null,ruby,false,github,ruby example page support file,rb
+2004,hibachi,src/localhost/test/ruby/index_rb.in,null,null,null,ruby,false,github,ruby example page support file,in
 2004,hibachi,src/localhost/test/shell/dump.sh,null,null,null,shellscript,false,github,POSIX shell page support file,sh
 2004,hibachi,src/localhost/test/shell/test1.sh,null,null,null,shellscript,false,github,POSIX shell page support file,sh
 2004,hibachi,src/localhost/test/shell/test2.sh,null,null,null,shellscript,false,github,POSIX shell page support file,sh
@@ -1865,8 +1865,8 @@
 2004,jdalbec,Makefile,30,null,null,makefile,true,github,Makefile,null
 2004,jdalbec,jdalbec.alt.c,40,null,alt,c,true,github,alternative source,c
 2004,jdalbec,jdalbec.orig.c,50,null,orig,c,true,github,original source,c
-2004,jdalbec,try.alt.sh,100,null,null,shellscript,TRUE,github,how to run alternative code,sh
-2004,jdalbec,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2004,jdalbec,try.alt.sh,100,null,null,shellscript,true,github,how to run alternative code,sh
+2004,jdalbec,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2004,jdalbec,2004_jdalbec.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2004,jdalbec,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2004,kopczynski,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -1891,7 +1891,7 @@
 2004,kopczynski,kopczynski-9-rev,100,null,null,text,true,github,reverse character to recognize,null
 2004,kopczynski,kopczynski-a,100,null,null,text,true,github,character to recognize,null
 2004,kopczynski,kopczynski-a-rev,100,null,null,text,true,github,reverse character to recognize,null
-2004,kopczynski,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2004,kopczynski,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2004,kopczynski,2004_kopczynski.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2004,kopczynski,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2004,newbern,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -1923,7 +1923,7 @@
 2004,schnitzi,schnitzi.orig.c,50,null,orig,c,true,github,original source,c
 2004,schnitzi,schnitzi.inp0,100,null,null,text,true,github,example input,inp0
 2004,schnitzi,schnitzi.inp1,100,null,null,text,true,github,example input,inp1
-2004,schnitzi,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2004,schnitzi,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2004,schnitzi,2004_schnitzi.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2004,schnitzi,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2004,sds,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -1933,7 +1933,7 @@
 2004,sds,sds.c,20,null,main,c,true,github,winning source,c
 2004,sds,Makefile,30,null,null,makefile,true,github,Makefile,null
 2004,sds,sds.orig.c,50,null,orig,c,true,github,original source,c
-2004,sds,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2004,sds,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2004,sds,2004_sds.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2004,sds,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2004,vik1,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -1971,8 +1971,8 @@
 2005,aidan,insane4.sudoku,100,null,null,text,true,github,insane sudoku puzzle,sudoku
 2005,aidan,insane5.sudoku,100,null,null,text,true,github,insane sudoku puzzle,sudoku
 2005,aidan,tough1.sudoku,100,null,null,text,true,github,tough sudoku puzzle,sudoku
-2005,aidan,try.alt.sh,100,null,null,shellscript,TRUE,github,how to run alternative code,sh
-2005,aidan,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2005,aidan,try.alt.sh,100,null,null,shellscript,true,github,how to run alternative code,sh
+2005,aidan,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2005,aidan,wp.sudoku,100,null,null,text,true,github,Wikipedia sudoku puzzle,sudoku
 2005,aidan,test-su.perl,150,null,null,perl,true,github,test suite,perl
 2005,aidan,2005_aidan.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
@@ -2016,7 +2016,7 @@
 2005,giljade,Makefile,30,null,null,makefile,true,github,Makefile,null
 2005,giljade,giljade.orig.c,50,null,orig,c,true,github,original source,c
 2005,giljade,test.sh,100,null,null,shellscript,true,github,test tool,sh
-2005,giljade,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2005,giljade,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2005,giljade,2005_giljade.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2005,giljade,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2005,jetro,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -2035,7 +2035,7 @@
 2005,klausler,klausler.c,20,null,main,c,true,github,winning source,c
 2005,klausler,Makefile,30,null,null,makefile,true,github,Makefile,null
 2005,klausler,klausler.orig.c,50,null,orig,c,true,github,original source,c
-2005,klausler,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2005,klausler,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2005,klausler,2005_klausler.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2005,klausler,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2005,mikeash,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -2045,7 +2045,7 @@
 2005,mikeash,mikeash.c,20,null,main,c,true,github,winning source,c
 2005,mikeash,Makefile,30,null,null,makefile,true,github,Makefile,null
 2005,mikeash,mikeash.orig.c,50,null,orig,c,true,github,original source,c
-2005,mikeash,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2005,mikeash,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2005,mikeash,2005_mikeash.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2005,mikeash,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2005,mynx,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -2091,7 +2091,7 @@
 2005,sykes,Makefile,30,null,null,makefile,true,github,Makefile,null
 2005,sykes,sykes.orig.c,50,null,orig,c,true,github,original source,c
 2005,sykes,test.sh,100,null,null,shellscript,true,github,test tool,sh
-2005,sykes,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2005,sykes,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2005,sykes,2005_sykes.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2005,sykes,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2005,timwi,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -2101,7 +2101,7 @@
 2005,timwi,timwi.c,20,null,main,c,true,github,winning source,c
 2005,timwi,Makefile,30,null,null,makefile,true,github,Makefile,null
 2005,timwi,timwi.orig.c,50,null,orig,c,true,github,original source,c
-2005,timwi,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2005,timwi,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2005,timwi,2005_timwi.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2005,timwi,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2005,toledo,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -2146,7 +2146,7 @@
 2006,birken,Makefile,30,null,null,makefile,true,github,Makefile,null
 2006,birken,birken.orig.c,50,null,orig,c,true,github,original source,c
 2006,birken,info.pdf,100,null,null,pdf,true,browser,about the TOFO circuit simulator,pdf
-2006,birken,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2006,birken,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2006,birken,adder.tofu,150,null,null,text,true,github,TOFU circuit,tofu
 2006,birken,buffer.tofu,150,null,null,text,true,github,TOFU circuit,tofu
 2006,birken,computer.tofu,150,null,null,text,true,github,TOFU circuit,tofu
@@ -2191,7 +2191,7 @@
 2006,hamre,hamre.c,20,null,main,c,true,github,winning source,c
 2006,hamre,Makefile,30,null,null,makefile,true,github,Makefile,null
 2006,hamre,hamre.orig.c,50,null,orig,c,true,github,original source,c
-2006,hamre,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2006,hamre,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2006,hamre,2006_hamre.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2006,hamre,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2006,meyer,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -2292,7 +2292,7 @@
 2006,sykes1,sykes1.orig.c,50,null,orig,c,true,github,original source,c
 2006,sykes1,bedlam-cubes.pdf,100,null,null,pdf,true,browser,instructions on how to make your own cube,pdf
 2006,sykes1,solving-bedlam-cube.mp4,100,null,null,html,true,browser,spoiler movie showing the solution,mp4
-2006,sykes1,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2006,sykes1,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2006,sykes1,2006_sykes1.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2006,sykes1,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2006,sykes2,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -2302,7 +2302,7 @@
 2006,sykes2,sykes2.c,20,null,main,c,true,github,winning source,c
 2006,sykes2,Makefile,30,null,null,makefile,true,github,Makefile,null
 2006,sykes2,sykes2.orig.c,50,null,orig,c,true,github,original source,c
-2006,sykes2,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2006,sykes2,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2006,sykes2,2006_sykes2.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2006,sykes2,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2006,toledo1,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -2312,7 +2312,7 @@
 2006,toledo1,toledo1.c,20,null,main,c,true,github,winning source,c
 2006,toledo1,Makefile,30,null,null,makefile,true,github,Makefile,null
 2006,toledo1,toledo1.orig.c,50,null,orig,c,true,github,original source,c
-2006,toledo1,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2006,toledo1,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2006,toledo1,2006_toledo1.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2006,toledo1,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2006,toledo2,A,null,null,null,binary,false,download,binary support file,null
@@ -2598,7 +2598,7 @@
 2011,blakely,3.dat,100,null,null,text,true,github,input data,dat
 2011,blakely,evolve_to_3.dat,100,null,null,text,true,github,input data,dat
 2011,blakely,t0_3.dat,100,null,null,text,true,github,input data,dat
-2011,blakely,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2011,blakely,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2011,blakely,2011_blakely.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2011,blakely,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2011,borsanyi,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -2608,7 +2608,7 @@
 2011,borsanyi,borsanyi.c,20,null,main,c,true,github,winning source,c
 2011,borsanyi,Makefile,30,null,null,makefile,true,github,Makefile,null
 2011,borsanyi,borsanyi.orig.c,50,null,orig,c,true,github,original source,c
-2011,borsanyi,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2011,borsanyi,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2011,borsanyi,data.1,150,null,null,text,true,github,sample input,1
 2011,borsanyi,data.2,150,null,null,text,true,github,sample input,2
 2011,borsanyi,data.3,150,null,null,text,true,github,sample input,3
@@ -2689,7 +2689,7 @@
 2011,fredriksson,fredriksson.c,20,null,main,c,true,github,winning source,c
 2011,fredriksson,Makefile,30,null,null,makefile,true,github,Makefile,null
 2011,fredriksson,fredriksson.orig.c,50,null,orig,c,true,github,original source,c
-2011,fredriksson,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2011,fredriksson,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2011,fredriksson,2011_fredriksson.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2011,fredriksson,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2011,goren,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -2700,7 +2700,7 @@
 2011,goren,Makefile,30,null,null,makefile,true,github,Makefile,null
 2011,goren,goren.orig.c,50,null,orig,c,true,github,original source,c
 2011,goren,MagrittePipe.jpg,100,null,null,image,true,browser,this is not a pipe,jpg
-2011,goren,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2011,goren,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2011,goren,2011_goren.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2011,goren,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2011,hamaji,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -2710,7 +2710,7 @@
 2011,hamaji,hamaji.c,20,null,main,c,true,github,winning source,c
 2011,hamaji,Makefile,30,null,null,makefile,true,github,Makefile,null
 2011,hamaji,hamaji.orig.c,50,null,orig,c,true,github,original source,c
-2011,hamaji,c2nono.pl,100,null,null,perl,true,github,reproduce dragon.nono from ,pl
+2011,hamaji,c2nono.pl,100,null,null,perl,true,github,reproduce dragon.nono,pl
 2011,hamaji,codegolf.nono,100,null,null,text,true,github,nonogram input data,nono
 2011,hamaji,conway-game-of-life.nono,100,null,null,text,true,github,nonogram input data,nono
 2011,hamaji,dragon.nono,100,null,null,text,true,github,nonogram input data,nono
@@ -2723,7 +2723,7 @@
 2011,hamaji,samurai.nono,100,null,null,text,true,github,nonogram input data,nono
 2011,hamaji,smiley.nono,100,null,null,text,true,github,nonogram input data,nono
 2011,hamaji,soccer.nono,100,null,null,text,true,github,nonogram input data,nono
-2011,hamaji,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2011,hamaji,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2011,hamaji,2011_hamaji.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2011,hamaji,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2011,hou,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -2733,7 +2733,7 @@
 2011,hou,hou.c,20,null,main,c,true,github,winning source,c
 2011,hou,Makefile,30,null,null,makefile,true,github,Makefile,null
 2011,hou,hou.orig.c,50,null,orig,c,true,github,original source,c
-2011,hou,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2011,hou,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2011,hou,2011_hou.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2011,hou,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2011,konno,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -2743,7 +2743,7 @@
 2011,konno,konno.c,20,null,main,c,true,github,winning source,c
 2011,konno,Makefile,30,null,null,makefile,true,github,Makefile,null
 2011,konno,konno.orig.c,50,null,orig,c,true,github,original source,c
-2011,konno,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2011,konno,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2011,konno,2011_konno.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2011,konno,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2011,richards,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -2800,7 +2800,7 @@
 2012,blakely,blakely.c,20,null,main,c,true,github,winning source,c
 2012,blakely,Makefile,30,null,null,makefile,true,github,Makefile,null
 2012,blakely,blakely.orig.c,50,null,orig,c,true,github,original source,c
-2012,blakely,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2012,blakely,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2012,blakely,2012_blakely.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2012,blakely,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2012,deckmyn,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -2814,7 +2814,7 @@
 2012,deckmyn,deckmyn.html,100,md2html,null,html,true,browser,user manual,html
 2012,deckmyn,example_beethoven,100,null,null,text,true,github,music notation,null
 2012,deckmyn,example_greensleeves,100,null,null,text,true,github,music notation,null
-2012,deckmyn,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2012,deckmyn,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2012,deckmyn,2012_deckmyn.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2012,deckmyn,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2012,dlowe,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -2856,7 +2856,7 @@
 2012,endoh1,logo.txt,100,null,null,text,true,github,fluid initial state as text,txt
 2012,endoh1,pour-out.txt,100,null,null,text,true,github,fluid initial state as text,txt
 2012,endoh1,tanada.txt,100,null,null,text,true,github,fluid initial state as text,txt
-2012,endoh1,try.alt.sh,100,null,null,shellscript,TRUE,github,how to run alternative code,sh
+2012,endoh1,try.alt.sh,100,null,null,shellscript,true,github,how to run alternative code,sh
 2012,endoh1,endoh1_color.c,150,null,null,c,true,github,alternative source using terminal 256 colors,c
 2012,endoh1,2012_endoh1.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2012,endoh1,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
@@ -2884,7 +2884,7 @@
 2012,grothe,Makefile,30,null,null,makefile,true,github,Makefile,null
 2012,grothe,grothe.orig.c,50,null,orig,c,true,github,original source,c
 2012,grothe,cookie_recipe.txt,100,null,null,binary,true,github,cookie recipe,txt
-2012,grothe,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2012,grothe,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2012,grothe,2012_grothe.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2012,grothe,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2012,hamano,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -2894,7 +2894,7 @@
 2012,hamano,hamano.c,20,null,main,c,true,github,winning source,c
 2012,hamano,Makefile,30,null,null,makefile,true,github,Makefile,null
 2012,hamano,hamano.orig.c,50,null,orig,c,true,github,original source,c
-2012,hamano,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2012,hamano,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2012,hamano,2012_hamano.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2012,hamano,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2012,hou,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -2911,7 +2911,7 @@
 2012,hou,html.txt,100,null,null,text,true,github,sample input,txt
 2012,hou,markdown.txt,100,null,null,text,true,github,sample input,txt
 2012,hou,patho.pl,100,null,null,perl,true,github,perl program - takes a long time to process ansi.txt,pl
-2012,hou,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2012,hou,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2012,hou,header.htm,150,null,null,html,true,browser,HTML header,htm
 2012,hou,perl-notes.txt,150,null,null,text,true,github,notes about patho.pl,txt
 2012,hou,2012_hou.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
@@ -2939,7 +2939,7 @@
 2012,konno,Makefile,30,null,null,makefile,true,github,Makefile,null
 2012,konno,konno.alt.c,40,null,alt,c,true,github,alternative source,c
 2012,konno,konno.orig.c,50,null,orig,c,true,github,original source,c
-2012,konno,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2012,konno,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2012,konno,2012_konno.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2012,konno,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2012,omoikane,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -2951,8 +2951,8 @@
 2012,omoikane,nyaruko.alt.c,40,null,alt,c,true,github,alternative source,c
 2012,omoikane,nyaruko.orig.c,50,null,orig,c,true,github,original source,c
 2012,omoikane,nyaruko.c,100,null,null,c,true,github,source to generate random data,c
-2012,omoikane,try.alt.sh,100,null,null,shellscript,TRUE,github,how to run alternative code,sh
-2012,omoikane,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2012,omoikane,try.alt.sh,100,null,null,shellscript,true,github,how to run alternative code,sh
+2012,omoikane,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2012,omoikane,spoiler.html,200,null,null,html,true,browser,SPOILER WARNING,html
 2012,omoikane,2012_omoikane.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2012,omoikane,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
@@ -2975,8 +2975,8 @@
 2012,tromp,Makefile,30,null,null,makefile,true,github,Makefile,null
 2012,tromp,tromp.orig.c,50,null,orig,c,true,github,original source,c
 2012,tromp,how.html,100,md2html,null,html,true,browser,author supplied spoiler,html
-2012,tromp,primes.pl,100,null,null,perl,true,github,post process tromp output to print primes ,pl
-2012,tromp,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2012,tromp,primes.pl,100,null,null,perl,true,github,post process tromp output to print primes,pl
+2012,tromp,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2012,tromp,hw.bf,150,null,null,bf,true,github,bf source code,bf
 2012,tromp,2012_tromp.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2012,tromp,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
@@ -2990,7 +2990,7 @@
 2012,vik,vik.orig.c,50,null,orig,c,true,github,original source,c
 2012,vik,chocolate.png,100,null,null,image,true,browser,encoding image,png
 2012,vik,ioccc.png,100,null,null,image,true,browser,encoding image,png
-2012,vik,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2012,vik,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2012,vik,2012_vik.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2012,vik,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2012,zeitak,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -3031,8 +3031,8 @@
 2013,birken,platform0.gif,null,null,null,image,false,browser,stages of 5 red squares above a row of 3 red squares,gif
 2013,birken,platform1.gif,null,null,null,image,false,browser,stages of 5 red squares above a row of 3 red squares,gif
 2013,birken,platform2.gif,null,null,null,image,false,browser,stages of 5 red squares above a row of 3 red squares,gif
-2013,birken,triple0.gif,null,null,null,image,false,browser,stages of constructed of rectangular regions ,gif
-2013,birken,triple1.gif,null,null,null,image,false,browser,stages of constructed of rectangular regions ,gif
+2013,birken,triple0.gif,null,null,null,image,false,browser,stages of constructed of rectangular regions,gif
+2013,birken,triple1.gif,null,null,null,image,false,browser,stages of constructed of rectangular regions,gif
 2013,birken,.winner.json,null,jwinner,null,json,false,github,description of winner in JSON,json
 2013,birken,index.html,10,readme2index,null,html,true,browser,click here first,html
 2013,birken,birken.c,20,null,main,c,true,github,winning source,c
@@ -3066,7 +3066,7 @@
 2013,birken,simon.txt,100,null,null,text,true,github,sprites in this textual format,txt
 2013,birken,snoo.txt,100,null,null,text,true,github,sprites in this textual format,txt
 2013,birken,toad.txt,100,null,null,text,true,github,sprites in this textual format,txt
-2013,birken,try.alt.sh,100,null,null,shellscript,TRUE,github,how to run alternative code,sh
+2013,birken,try.alt.sh,100,null,null,shellscript,true,github,how to run alternative code,sh
 2013,birken,try.sh,100,null,null,shellscript,true,github,demo script with the original code,sh
 2013,birken,2013_birken.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2013,birken,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
@@ -3078,7 +3078,7 @@
 2013,cable1,Makefile,30,null,null,makefile,true,github,Makefile,null
 2013,cable1,cable1.orig.c,50,null,orig,c,true,github,original source,c
 2013,cable1,dead-ms-tweet.jpg,100,null,null,image,true,browser,tweet image,jpg
-2013,cable1,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2013,cable1,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2013,cable1,2013_cable1.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2013,cable1,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2013,cable2,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -3088,7 +3088,7 @@
 2013,cable2,cable2.c,20,null,main,c,true,github,winning source,c
 2013,cable2,Makefile,30,null,null,makefile,true,github,Makefile,null
 2013,cable2,cable2.orig.c,50,null,orig,c,true,github,original source,c
-2013,cable2,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2013,cable2,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2013,cable2,ascii.bmp,120,null,null,image,true,browser,PC bitmap image,bmp
 2013,cable2,bonus.bmp,120,null,null,image,true,browser,PC bitmap image,bmp
 2013,cable2,hello_world.bmp,120,null,null,image,true,browser,PC bitmap image,bmp
@@ -3139,7 +3139,7 @@
 2013,endoh1,endoh1.c,20,null,main,c,true,github,winning source,c
 2013,endoh1,Makefile,30,null,null,makefile,true,github,Makefile,null
 2013,endoh1,endoh1.orig.c,50,null,orig,c,true,github,original source,c
-2013,endoh1,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2013,endoh1,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2013,endoh1,echo.lazy,150,null,null,c,true,github,lazy input,lazy
 2013,endoh1,hello.lazy,150,null,null,c,true,github,lazy input,lazy
 2013,endoh1,rot13.ed,150,null,null,text,true,github,ed script,ed
@@ -3394,7 +3394,7 @@
 2013,robison,robison.c,20,null,main,c,true,github,winning source,c
 2013,robison,Makefile,30,null,null,makefile,true,github,Makefile,null
 2013,robison,robison.orig.c,50,null,orig,c,true,github,original source,c
-2013,robison,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2013,robison,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2013,robison,2013_robison.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2013,robison,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2014,birken,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -3403,6 +3403,7 @@
 2014,birken,index.html,10,readme2index,null,html,true,browser,click here first,html
 2014,birken,prog.c,20,null,main,c,true,github,winning source,c
 2014,birken,Makefile,30,null,null,makefile,true,github,Makefile,null
+2014,birken,prog.alt.c,40,null,null,c,true,github,alternative source,c
 2014,birken,prog.orig.c,50,null,orig,c,true,github,original source,c
 2014,birken,2014_birken.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2014,birken,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
@@ -3428,6 +3429,7 @@
 2014,endoh1,rake.sh,100,null,null,shellscript,true,github,make rake script,sh
 2014,endoh1,read_me.html,100,md2html,null,html,true,browser,about the Q(uine)R code generator,html
 2014,endoh1,spoilers.html,100,md2html,null,html,true,browser,spoilers about Q(uine)R code generator,html
+2014,endoh1,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2014,endoh1,alpha.rb,150,null,null,ruby,true,github,support program for Rakefile,rb
 2014,endoh1,assemble.rb,150,null,null,ruby,true,github,support program for Rakefile,rb
 2014,endoh1,ast-def.rb,150,null,null,ruby,true,github,support program for Rakefile,rb
@@ -3451,6 +3453,7 @@
 2014,endoh2,prog.c,20,null,main,c,true,github,winning source,c
 2014,endoh2,Makefile,30,null,null,makefile,true,github,Makefile,null
 2014,endoh2,prog.orig.c,50,null,orig,c,true,github,original source,c
+2014,endoh2,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2014,endoh2,2014_endoh2.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2014,endoh2,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2014,maffiodo1,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -3462,6 +3465,8 @@
 2014,maffiodo1,prog.c,20,null,main,c,true,github,winning source,c
 2014,maffiodo1,Makefile,30,null,null,makefile,true,github,Makefile,null
 2014,maffiodo1,prog.orig.c,50,null,orig,c,true,github,original source,c
+2014,maffiodo1,giana.sh,100,null,null,shellscript,true,github,demonstrate with The Great Giana Sisters,sh
+2014,maffiodo1,mario.sh,100,null,null,shellscript,true,github,demonstrate with Super Mario Brothers,sh
 2014,maffiodo1,screenshot-giana.png,100,null,null,image,true,browser,gameplay screenshot,png
 2014,maffiodo1,screenshot-mario.png,100,null,null,image,true,browser,gameplay screenshot,png
 2014,maffiodo1,giana8.wav,150,null,null,wav,true,browser,sound file for game,wav
@@ -3477,7 +3482,9 @@
 2014,maffiodo2,index.html,10,readme2index,null,html,true,browser,click here first,html
 2014,maffiodo2,prog.c,20,null,main,c,true,github,winning source,c
 2014,maffiodo2,Makefile,30,null,null,makefile,true,github,Makefile,null
+2014,maffiodo2,prog.alt.c,40,null,null,c,true,github,alternative source,c
 2014,maffiodo2,prog.orig.c,50,null,orig,c,true,github,original source,c
+2014,maffiodo2,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2014,maffiodo2,2014_maffiodo2.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2014,maffiodo2,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2014,morgan,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -3487,6 +3494,7 @@
 2014,morgan,prog.c,20,null,main,c,true,github,winning source,c
 2014,morgan,Makefile,30,null,null,makefile,true,github,Makefile,null
 2014,morgan,prog.orig.c,50,null,orig,c,true,github,original source,c
+2014,morgan,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2014,morgan,2014_morgan.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2014,morgan,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2014,sinon,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -3498,7 +3506,7 @@
 2014,sinon,prog.orig.c,50,null,orig,c,true,github,original source,c
 2014,sinon,glock.sh,100,null,null,shellscript,true,github,how to run,sh
 2014,sinon,hecate.sh,100,null,null,shellscript,true,github,how to run,sh
-2014,sinon,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2014,sinon,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2014,sinon,spoiler.html,200,null,null,html,true,browser,SPOILER WARNING,html
 2014,sinon,2014_sinon.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2014,sinon,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
@@ -3528,7 +3536,7 @@
 2014,wiedijk,prog.c,20,null,main,c,true,github,winning source,c
 2014,wiedijk,Makefile,30,null,null,makefile,true,github,Makefile,null
 2014,wiedijk,prog.orig.c,50,null,orig,c,true,github,original source,c
-2014,wiedijk,try.sh,100,null,null,shellscript,TRUE,github,how to run,sh
+2014,wiedijk,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2014,wiedijk,2014_wiedijk.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2014,wiedijk,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2015,burton,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -3840,7 +3848,7 @@
 2018,endoh2,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2018,ferguson,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
 2018,ferguson,.gitignore,null,null,null,gitignore,false,github,list of files that should not be committed under git,gitignore
-2018,ferguson,hint.css,null,null,null,css,false,download,CSS for hint page ,css
+2018,ferguson,hint.css,null,null,null,css,false,download,CSS for hint page,css
 2018,ferguson,rpm.md,null,null,null,markdown,false,github,markdown source for rpm.html,md
 2018,ferguson,test-strings.txt,null,null,null,text,false,github,test.sh support file,txt
 2018,ferguson,.winner.json,null,jwinner,null,json,false,github,description of winner in JSON,json
@@ -4022,7 +4030,7 @@
 2019,duble,Makefile,30,null,null,makefile,true,github,Makefile,null
 2019,duble,prog.alt.c,40,null,alt,c,true,github,alternative source,c
 2019,duble,prog.orig.c,50,null,orig,c,true,github,original source,c
-2019,duble,check-os.sh,150,null,null,shellscript,true,github,check the operating system for compatibility ,sh
+2019,duble,check-os.sh,150,null,null,shellscript,true,github,check the operating system for compatibility,sh
 2019,duble,2019_duble.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2019,duble,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2019,endoh,README.md,null,null,null,markdown,false,github,markdown source for index.html,md

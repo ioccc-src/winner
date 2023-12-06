@@ -48,6 +48,96 @@ if [[ ! -s $TMP_CSV ]]; then
     exit 14
 fi
 
+# sanity check manifest CSV
+#
+
+# check for double whitespace
+#
+trap 'rm -f $TMP_CSV $TMP_CHECK; exit' 0 1 2 3 15
+TMP_CHECK="tmp.$$.double_space"
+rm -f "$TMP_CHECK"
+grep -E '[[:space:]][[:space:]]' "$TMP_CSV" > "$TMP_CHECK"
+if [[ -s $TMP_CHECK ]]; then
+    echo "$0: ERROR: found multiple consecutive whitespace in $MANIFEST_CSV" 1>&2
+    echo "$0: Warning: consecutive whitespace lines from $MANIFEST_CSV starts below" 1>&2
+    cat "$TMP_CHECK" 1>&2
+    echo "$0: Warning: consecutive whitespace lines from $MANIFEST_CSV ends above" 1>&2
+    exit 15
+fi
+
+# check for leading whitespace
+#
+rm -f "$TMP_CHECK"
+grep -E ',[[:space:]]|^[[:space:]]' "$TMP_CSV" > "$TMP_CHECK"
+if [[ -s $TMP_CHECK ]]; then
+    echo "$0: ERROR: found leading whitespace in $MANIFEST_CSV" 1>&2
+    echo "$0: Warning: leading whitespace lines from $MANIFEST_CSV starts below" 1>&2
+    cat "$TMP_CHECK" 1>&2
+    echo "$0: Warning: leading whitespace lines from $MANIFEST_CSV ends above" 1>&2
+    exit 16
+fi
+
+# check for trailing whitespace
+#
+rm -f "$TMP_CHECK"
+grep -E '[[:space:]],|[[:space:]]$' "$TMP_CSV" > "$TMP_CHECK"
+if [[ -s $TMP_CHECK ]]; then
+    echo "$0: ERROR: found trailing whitespace in $MANIFEST_CSV" 1>&2
+    echo "$0: Warning: trailing whitespace lines from $MANIFEST_CSV starts below" 1>&2
+    cat "$TMP_CHECK" 1>&2
+    echo "$0: Warning: trailing whitespace lines from $MANIFEST_CSV ends above" 1>&2
+    exit 17
+fi
+
+# check for duplicate year,dir,file_path
+#
+rm -f "$TMP_CHECK"
+sed -e 's/^\([^,]*,[^,]*,[^,]*\).*/\1/' "$TMP_CSV" | sort | uniq -d > "$TMP_CHECK"
+if [[ -s $TMP_CHECK ]]; then
+    echo "$0: ERROR: found duplicated year,dir,file_path in $MANIFEST_CSV" 1>&2
+    echo "$0: Warning: duplicated year,dir,file_path in $MANIFEST_CSV starts below" 1>&2
+    cat "$TMP_CHECK" 1>&2
+    echo "$0: Warning: duplicated year,dir,file_path in $MANIFEST_CSV ends above" 1>&2
+    exit 18
+fi
+
+# check for ,TRUE,
+#
+rm -f "$TMP_CHECK"
+grep ',TRUE.'  "$TMP_CSV" > "$TMP_CHECK"
+if [[ -s $TMP_CHECK ]]; then
+    echo "$0: ERROR: found ,TRUE, instead of ,true, in $MANIFEST_CSV" 1>&2
+    echo "$0: Warning: lines with ,TRUE, $MANIFEST_CSV starts below" 1>&2
+    cat "$TMP_CHECK" 1>&2
+    echo "$0: Warning: lines with ,TRUE, $MANIFEST_CSV ends above" 1>&2
+    exit 19
+fi
+
+# check for ,FALSE,
+#
+rm -f "$TMP_CHECK"
+grep ',FALSE.'  "$TMP_CSV" > "$TMP_CHECK"
+if [[ -s $TMP_CHECK ]]; then
+    echo "$0: ERROR: found ,FALSE, instead of ,false, in $MANIFEST_CSV" 1>&2
+    echo "$0: Warning: lines with ,FALSE, $MANIFEST_CSV starts below" 1>&2
+    cat "$TMP_CHECK" 1>&2
+    echo "$0: Warning: lines with ,FALSE, $MANIFEST_CSV ends above" 1>&2
+    exit 20
+fi
+
+# check for ,NULL,
+#
+rm -f "$TMP_CHECK"
+grep ',FALSE.'  "$TMP_CSV" > "$TMP_CHECK"
+if [[ -s $TMP_CHECK ]]; then
+    echo "$0: ERROR: found ,NULL, instead of ,null, in $MANIFEST_CSV" 1>&2
+    echo "$0: Warning: lines with ,NULL, $MANIFEST_CSV starts below" 1>&2
+    cat "$TMP_CHECK" 1>&2
+    echo "$0: Warning: lines with ,NULL, $MANIFEST_CSV ends above" 1>&2
+    exit 21
+fi
+rm -f "$TMP_CHECK"
+
 # fix manifest CSV
 #
 
@@ -57,7 +147,7 @@ sort -t, -k1,1 -k2d,2 -k4g,4 -k3d,3 -k5d,10 "$TMP_CSV" -o "$TMP_CSV"
 status="$?"
 if [[ $status -ne 0 ]]; then
     printf "$0: ERROR: sort -t, -k1,1 -k2d,2 -k4g,4 -k3d,3 -k5d,10 %s -o %s failed, error: %s\n" "$TMP_CSV" "$TMP_CSV" "$status" 1>&2
-    exit 15
+    exit 22
 fi
 
 # append newline if last line of manifest CSV file if not empty
@@ -78,7 +168,7 @@ if ! cmp -s "$TMP_CSV" "$MANIFEST_CSV"; then
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: mv -f -v $TMP_CSV $MANIFEST_CSV failed, error: $status" 1>&2
-	exit 16
+	exit 23
     fi
 
 else
@@ -88,7 +178,7 @@ else
     rm -f "$TMP_CSV"
     if [[ -e $TMP_CSV ]]; then
 	echo "$0: ERROR: TMP_CSV cannot be removed for cleanup: $TMP_CSV" 1>&2
-	exit 17
+	exit 24
     fi
 fi
 
@@ -100,7 +190,7 @@ sed -e '/^# -/d' "$MANIFEST_CSV" |
     sort -t, -k1,1 -k2d,2 -k4g,4 -k3d,3 -k5d,10 > "$TMP_CSV"
 if [[ ! -s $TMP_CSV ]]; then
     echo "$0: ERROR: sorted $MANIFEST_CSV is empty" 1>&2
-    exit 18
+    exit 25
 fi
 if ! cmp -s "$TMP_CSV" "$MANIFEST_CSV"; then
 
@@ -111,7 +201,7 @@ if ! cmp -s "$TMP_CSV" "$MANIFEST_CSV"; then
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: mv -f -v $TMP_CSV $MANIFEST_CSV failed, error: $status" 1>&2
-	exit 19
+	exit 26
     fi
 
 else
@@ -121,7 +211,7 @@ else
     rm -f "$TMP_CSV"
     if [[ -e $TMP_CSV ]]; then
 	echo "$0: ERROR: TMP_CSV cannot be removed for cleanup: $TMP_CSV" 1>&2
-	exit 20
+	exit 27
     fi
 fi
 
@@ -133,7 +223,7 @@ trap 'rm -f $TMP_FILE; exit' 0 1 2 3 15
 awk -F, '$1 !~ "^#" && $5 == "null" { print $1 "/" $2 "/" $3; }' "$MANIFEST_CSV" | sort -t/ > "$TMP_FILE"
 if [[ ! -s $TMP_FILE ]]; then
     echo "$0: ERROR: TMP_FILE, for required file list, is empty: $TMP_CSV" 1>&2
-    exit 21
+    exit 28
 fi
 if ! cmp -s "$TMP_FILE" "$REQUIRED_PATH_LIST"; then
 
@@ -144,7 +234,7 @@ if ! cmp -s "$TMP_FILE" "$REQUIRED_PATH_LIST"; then
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: mv -f -v $TMP_FILE $REQUIRED_PATH_LIST failed, error: $status" 1>&2
-	exit 22
+	exit 29
     fi
 
 else
@@ -154,7 +244,7 @@ else
     rm -f "$TMP_FILE"
     if [[ -e $TMP_CSV ]]; then
 	echo "$0: ERROR: TMP_FILE cannot be removed for cleanup: $TMP_FILE" 1>&2
-	exit 23
+	exit 30
     fi
 fi
 
@@ -166,7 +256,7 @@ trap 'rm -f $TMP_FILE; exit' 0 1 2 3 15
 awk -F, '$1 !~ "^#" && $5 != "null" { print $1 "/" $2 "/" $3; }' "$MANIFEST_CSV" | sort -t/ > "$TMP_FILE"
 if [[ ! -s $TMP_FILE ]]; then
     echo "$0: ERROR: TMP_FILE, for built file list, is empty: $TMP_CSV" 1>&2
-    exit 24
+    exit 31
 fi
 if ! cmp -s "$TMP_FILE" "$BUILT_PATH_LIST"; then
 
@@ -177,7 +267,7 @@ if ! cmp -s "$TMP_FILE" "$BUILT_PATH_LIST"; then
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: mv -f -v $TMP_FILE $BUILT_PATH_LIST failed, error: $status" 1>&2
-	exit 25
+	exit 32
     fi
 
 else
@@ -187,7 +277,7 @@ else
     rm -f "$TMP_FILE"
     if [[ -e $TMP_CSV ]]; then
 	echo "$0: ERROR: TMP_FILE cannot be removed for cleanup: $TMP_FILE" 1>&2
-	exit 26
+	exit 33
     fi
 fi
 
@@ -199,7 +289,7 @@ trap 'rm -f $TMP_FILE; exit' 0 1 2 3 15
 cat "$REQUIRED_PATH_LIST" "$BUILT_PATH_LIST" | sort -t/ > "$TMP_FILE"
 if [[ ! -s $TMP_FILE ]]; then
     echo "$0: ERROR: TMP_FILE, for manifest file list, is empty: $TMP_CSV" 1>&2
-    exit 27
+    exit 34
 fi
 if ! cmp -s "$TMP_FILE" "$MANIFEST_LIST"; then
 
@@ -210,7 +300,7 @@ if ! cmp -s "$TMP_FILE" "$MANIFEST_LIST"; then
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: mv -f -v $TMP_FILE $MANIFEST_LIST failed, error: $status" 1>&2
-	exit 28
+	exit 35
     fi
 
 else
@@ -220,7 +310,7 @@ else
     rm -f "$TMP_FILE"
     if [[ -e $TMP_CSV ]]; then
 	echo "$0: ERROR: TMP_FILE cannot be removed for cleanup: $TMP_FILE" 1>&2
-	exit 29
+	exit 35
     fi
 fi
 
@@ -234,11 +324,11 @@ for csv in author.csv author_wins.csv year_prize.csv; do
     #
     if [[ ! -f $csv ]]; then
 	echo "$0: ERROR: CSV is missing: $csv" 1>&2
-	exit 30
+	exit 37
     fi
     if [[ ! -s $csv ]]; then
 	echo "$0: ERROR: CSV is empty: $csv" 1>&2
-	exit 31
+	exit 38
     fi
 
     # setup temp CSV file
@@ -247,7 +337,7 @@ for csv in author.csv author_wins.csv year_prize.csv; do
     rm -f "$TMP_CSV"
     if [[ -e $TMP_CSV ]]; then
 	echo "$0: ERROR: TMP_CSV cannot be removed: $TMP_CSV" 1>&2
-	exit 32
+	exit 39
     fi
 
     # remove carriage returns in CSV file
@@ -257,11 +347,11 @@ for csv in author.csv author_wins.csv year_prize.csv; do
     status="$?"
     if [[ $status -ne 0 ]]; then
 	printf "$0: ERROR: TMP_CSV: tr -d '\\\015' < %s > %s failed, error: %s\n" "$csv" "$TMP_CSV" "$status" 1>&2
-	exit 33
+	exit 40
     fi
     if [[ ! -s $TMP_CSV ]]; then
 	printf "$0: ERROR: TMP_CSV: tr -d '\\\015' < %s > %s produced an empty file" "$csv" "$TMP_CSV" 1>&2
-	exit 34
+	exit 41
     fi
 
     # sort CSV file
@@ -270,7 +360,7 @@ for csv in author.csv author_wins.csv year_prize.csv; do
     status="$?"
     if [[ $status -ne 0 ]]; then
 	printf "$0: ERROR: sort -t, -k1d,1 -k2d,2 %s -o %s failed, error: %s\n" "$TMP_CSV" "$TMP_CSV" "$status" 1>&2
-	exit 35
+	exit 42
     fi
 
     # append newline if last line of CSV file if not empty
@@ -291,7 +381,7 @@ for csv in author.csv author_wins.csv year_prize.csv; do
 	status="$?"
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: mv -f -v $TMP_CSV $csv failed, error: $status" 1>&2
-	    exit 36
+	    exit 43
 	fi
 
     else
@@ -301,7 +391,7 @@ for csv in author.csv author_wins.csv year_prize.csv; do
 	rm -f "$TMP_CSV"
 	if [[ -e $TMP_CSV ]]; then
 	    echo "$0: ERROR: TMP_CSV cannot be removed for cleanup: $TMP_CSV" 1>&2
-	    exit 77
+	    exit 44
 	fi
     fi
 done

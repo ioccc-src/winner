@@ -3135,6 +3135,7 @@
 2014/birken/README.md
 2014/birken/index.html
 2014/birken/inventory.html
+2014/birken/prog.alt.c
 2014/birken/prog.c
 2014/birken/prog.orig.c
 2014/deak/.gitignore
@@ -3170,6 +3171,7 @@
 2014/endoh1/spoilers.md
 2014/endoh1/src.rb
 2014/endoh1/tool.rb
+2014/endoh1/try.sh
 2014/endoh1/vm.c
 2014/endoh2/.gitignore
 2014/endoh2/.winner.json
@@ -3179,17 +3181,20 @@
 2014/endoh2/inventory.html
 2014/endoh2/prog.c
 2014/endoh2/prog.orig.c
+2014/endoh2/try.sh
 2014/maffiodo1/.gitignore
 2014/maffiodo1/.winner.json
 2014/maffiodo1/Makefile
 2014/maffiodo1/README.md
 2014/maffiodo1/giana.level
 2014/maffiodo1/giana.rgba
+2014/maffiodo1/giana.sh
 2014/maffiodo1/giana8.wav
 2014/maffiodo1/index.html
 2014/maffiodo1/inventory.html
 2014/maffiodo1/mario.level
 2014/maffiodo1/mario.rgba
+2014/maffiodo1/mario.sh
 2014/maffiodo1/mario8.wav
 2014/maffiodo1/prog.c
 2014/maffiodo1/prog.orig.c
@@ -3202,8 +3207,10 @@
 2014/maffiodo2/image.rgb
 2014/maffiodo2/index.html
 2014/maffiodo2/inventory.html
+2014/maffiodo2/prog.alt.c
 2014/maffiodo2/prog.c
 2014/maffiodo2/prog.orig.c
+2014/maffiodo2/try.sh
 2014/morgan/.gitignore
 2014/morgan/.winner.json
 2014/morgan/Makefile
@@ -3212,6 +3219,7 @@
 2014/morgan/inventory.html
 2014/morgan/prog.c
 2014/morgan/prog.orig.c
+2014/morgan/try.sh
 2014/sinon/.gitignore
 2014/sinon/.winner.json
 2014/sinon/Makefile
