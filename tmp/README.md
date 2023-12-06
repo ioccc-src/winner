@@ -325,6 +325,11 @@ then [check_path_list.sh](check_path_list.sh) will exit non-zero and
 print information about problems.
 
 
+### [echo.sh](echo.sh)
+
+Tool that simply echos it arguments: used to test [run_all.sh](run_all.sh).
+
+
 ### [example.author.json](example.author.json)
 
 This is a JSON file containing an example `author/author_handle.json` for a
