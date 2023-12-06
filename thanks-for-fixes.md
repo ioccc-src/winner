@@ -3715,6 +3715,24 @@ it is a file with spoilers (and too close to README.md?).
 [Cody](#cody) fixed the build for this entry: it does not require
 [SDL2](https://www.libsdl.org) but SDL1 so there were linking errors.
 
+Cody also added the [mario.sh](2014/maffiodo1/mario.sh) and
+[giana.sh](2014/maffiodo1/giana.sh) scripts which play, respectively, [Super
+Mario Bros](http://en.wikipedia.org/wiki/Super_Mario_Bros.) and one of [The
+Great Giana Sisters](http://en.wikipedia.org/wiki/The_Great_Giana_Sisters), but
+which let one configure the width and height of the game.
+
+
+## [2014/maffiodo2](2014/maffiodo2/prog.c) ([README.md](2014/maffiodo2/README.md]))
+
+[Cody](#cody) added the [try.sh](2014/maffiodo2/try.sh) script and the
+[alternate code](2014/maffiodo2/README.md#alternate-code) provided by the
+author.
+
+
+## [2014/morgan](2014/morgan/prog.c) ([README.md](2014/morgan/README.md))
+
+[Cody](#cody) added the [try.sh](2014/morgan/try.sh) script.
+
 
 ## [2014/sinon](2014/sinon/prog.c) ([README.md](2014/sinon/README.md))
 
