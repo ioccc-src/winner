@@ -5,8 +5,9 @@ make all
 ```
 
 
-There is an [alternate version](#alternate-code) that allows you to cheat,
-giving you a configurable amount of arrows at the start of the game.
+There is an alternate version that allows you to heat, giving you configurable
+amount of arrows at the start of the game. See [Alternate
+code](#alternate-code).
 
 
 ### Bugs and (Mis)features:
@@ -30,6 +31,9 @@ For more detailed information see [1994 dodsond2 in bugs.md](/bugs.md#1994-dodso
 
 This version allows you to choose how many arrows to start with, instead of the
 default 0. If one tried specifying a value < 0 it will set it to 0.
+
+Fun fact: this version helped uncover and fix a bug that prevented the entry
+from working on some cases.
 
 ### Alternate build:
 
@@ -59,6 +63,7 @@ Each year people find new ways to squeeze more and more out of the
 contest rules.  Next year, entries that use compression utilities
 to get around the size limit will find themselves squeezed out of
 the contest!
+
 
 ### A historical note:
 
