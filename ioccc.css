@@ -574,10 +574,20 @@ ul.task-list li input[type="checkbox"] {
 }
 
 /* Change topnav link color on hover */
-.topnav a:hover {
+.topnav a:focus, .topnav a:hover {
   background-color: #ddd;
   color: blue;
   text-decoration: underline;
+}
+
+/* Change topnav link after visit */
+.topnav a:visited {
+  color: #cO80c0;
+}
+
+/* Change topnav link when active */
+.topnav a:active {
+  color: red;
 }
 
 /* No padding nor border around topnav images */
@@ -597,7 +607,6 @@ ul.task-list li input[type="checkbox"] {
 .sidenav a {
   float: left;
   display: block;
-  color: blue;
   text-align: left;
   padding: 14px 16px;
   text-decoration: none;
@@ -607,9 +616,18 @@ ul.task-list li input[type="checkbox"] {
 
 /* Change sidenav link color on hover */
 .sidenav a:hover {
-  color: blue;
   background-color: #ccc;
   text-decoration: underline;
+}
+
+/* Change sidenav link after visit */
+.sidenav a:visited {
+  color: purple;
+}
+
+/* Change sidenav link when active */
+.sidenav a:active {
+  color: red;
 }
 
 /* Two unequal columns =========================================================================== */
