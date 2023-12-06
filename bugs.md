@@ -3059,7 +3059,17 @@ If you want to try and fix this (mis)feature, you are welcome to try.
 
 # 2015
 
-There are no known bugs and (Mis)features for entries in 2015.
+
+## 2015 mills2
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2015/mills2/prog.c](2015/mills2/prog.c)
+### Information: [2015/mills2/README.md](2015/mills2/README.md)
+
+The program doesn't look at the header of files so if it's passed something hat
+is not compressed data it's likely to crash.
+
+The program depends on little endian systems.
 
 
 # 2016

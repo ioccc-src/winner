@@ -3813,6 +3813,11 @@ also involves good eye-hand coordination and playing games like this in the
 past).
 
 
+## [2015/mills2](2015/mills2/prog.c) ([README.md](2015/mills2/README.md))
+
+[Cody](#cody) added the [try.sh](2015/mills2/try.sh) script.
+
+
 ## [2015/muth](2015/muth/prog.c) ([README.md](2015/muth/README.md))
 
 [Cody](#cody) added the [try.sh](2015/muth/try.sh) script.
