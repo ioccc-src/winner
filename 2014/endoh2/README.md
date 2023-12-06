@@ -32,6 +32,7 @@ in the DNA code of the code? Perhaps there are 23 reasons? :-)
 
 ## Author's remarks:
 
+
 ### Remarks
 
 This chromosome program synthesizes a double helix.
@@ -39,14 +40,16 @@ The helix can also be compiled as a C program.
 
 Enjoy DNA programming!
 
-### For more information / backgroud reading:
+
+### For more information / background reading:
 
 * This program was inspired by Acme::DoubleHelix:
-  http://search.cpan.org/~xern/Acme-DoubleHelix-0.01/
+  <http://search.cpan.org/~xern/Acme-DoubleHelix-0.01/>
 
 * The synthesized helix just includes the original program at the head.
-  Do you see how `prog.c` determines whether it was invoked as a standalone program or included as a header file?
-  Note that it does not use any gcc extension such as `__INCLUDE_LEVEL__`.
+  Do you see how [prog.c](prog.c) determines whether it was invoked as a
+  standalone program or included as a header file? Note that it does not use any
+  gcc extension such as `__INCLUDE_LEVEL__`.
 
 * The synthesized helix of course follows the base-pairing rules for DNA:
   A is bonding only to T, and C is bonding only to G.
