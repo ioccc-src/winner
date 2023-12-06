@@ -15,13 +15,7 @@ make -B [MACHINE=your_machine.h] [TAPE=your_tape.h] [X=[0|1|2|3|4|5|6|7|8|9]] [V
 ### Try:
 
 ```sh
-make -B V=2 run
-
-strings prog | grep '(,)'
-
-make -B MACHINE=machine_times2.h TAPE=tape_five.h V=1 run
-
-make -B MACHINE=machine_chaos_5_2.h X=5 run
+./try.sh
 ```
 
 
@@ -51,21 +45,28 @@ even without conditionals and recursive file inclusion as some kind of a
 - make target `run` runs `./prog` and filters a little statistics out of the verbose output
 - `X` (defaults to 3) sets the maximum number of steps: *M*(`X`) ~ 8<sup>`X`</sup>
 
+
 ### Limitations
 
-If the machine does not halt after *M*(`X`) steps, you will see unexpanded macros in the output.
+If the machine does not halt after *M*(`X`) steps, you will see unexpanded
+macros in the output.
+
 
 ### Compiler warnings
 
-If `V=1` or `V=2` is used, you may see "`warning: string length is greater than the length '4095' ISO C99 compilers are required to support`".
+If `V=1` or `V=2` is used, you may see "`warning: string length is greater than
+the length '4095' ISO C99 compilers are required to support`".
+
 
 ### Programming
 
-Implementing your own Turing machine is easy. Take a look at the supplied header files for examples.
+Implementing your own Turing machine is easy. Take a look at the supplied header
+files for examples.
+
 
 #### Tape Symbols
 
-Every symbol used (except "`_`") must be explicitly declared using
+Every symbol used (except `_`) must be explicitly declared using
 
 ```c
 #define sym_SYMBOL(sym, _SYMBOL) sym
@@ -77,9 +78,11 @@ Example:
 #define sym_1(sym, _1) sym
 ```
 
+
 #### Tape
 
-The initial content of the tape must be defined in the tape header using a triple like:
+The initial content of the tape must be defined in the tape header using a
+triple like:
 
 ```c
 #define tape ((((,),...l2), l1), c, (r1, (r2..., (,))))
@@ -89,26 +92,32 @@ The initial content of the tape must be defined in the tape header using a tripl
 - `c` is the symbol at the current position
 - `r1`, `r2`, ... are the symbols to the right
 
-The empty pairs "`(,)`" represent the continuations of the tape, filled with underscore symbols ("`_`"). They are expanded on demand.
+The empty pairs `(,)` represent the continuations of the tape, filled with
+underscore symbols (`_`). They are expanded on demand.
+
 
 #### State Machine
 
 All transitions are defined in the machine header using the syntax
 
-	#define CURRENT_SCANNED (WRITE, MOVEMENT, NEXT)
+```
+#define CURRENT_SCANNED (WRITE, MOVEMENT, NEXT)
+```
 
 where
 
-- `CURRENT` is the current state
-- `SCANNED` is the symbol at the current position
-- the whitespace before the parentheses is significant
-- `WRITE` is the symbol to be written to the tape
-- `MOVEMENT` is "`L`" for left, "`R`" for right, or nothing
-- `NEXT` is the next state
+- `CURRENT` is the current state.
+- `SCANNED` is the symbol at the current position.
+- The whitespace before the parentheses is significant.
+- `WRITE` is the symbol to be written to the tape.
+- `MOVEMENT` is `L` for left, `R` for right; don't specify anything if you
+want no movement.
+- `NEXT` is the next state.
 
-There must be a state "`A`" defined, which becomes the initial state of the machine.
+There must be a state `A` defined, which becomes the initial state of the
+machine.
 
-To halt the machine, use the keyword "`break`" as in
+To halt the machine, use the keyword `break` as in
 
 ```c
 #define A_1 (2, break)
