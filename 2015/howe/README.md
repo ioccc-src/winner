@@ -4,6 +4,9 @@
 make
 ```
 
+There is an alternate version provided. See [Alternate code](#alternate-code)
+below.
+
 
 ## To use:
 
@@ -17,40 +20,25 @@ make
 ### Try:
 
 ```sh
-./prog prog.alt.c prog.c
-
-make test
-./prog -d ABXYEFCD.tmp ACDBECFD.tmp
-./prog ABXYEFCD.tmp ACDBECFD.tmp
-
-rm -f curds.tmp whey.tmp
-cp /usr/share/man/man1/cc.1 curds.tmp
-cp /usr/share/man/man1/cc.1 whey.tmp
-chmod 666 whey.tmp
-make makeholes
-./makeholes -n 1000 whey.tmp
-./prog curds.tmp whey.tmp
-./avgtime.sh 100 ./prog curds.tmp whey.tmp
-
-# Assuming curl(1) installed, grab a really HUGE text file.
-curl -L -o war-and-peace.txt http://www.gutenberg.org/ebooks/2600.txt.utf-8
-cp war-and-peace.txt nuked.tmp
-./makeholes -c'~' -n 1000 nuked.tmp
-./prog war-and-peace.txt nuked.tmp
-./avgtime.sh 100 ./prog war-and-peace.txt nuked.tmp
+./try.sh
 ```
 
 
 ## Alternate code:
 
-An alternate version of this entry, `prog.alt.c`, is provided.
-This alternate code does not use a 64 bit FNV hash.
+This alternate version does not use a 64-bit FNV hash. This was the original
+entry but was changed to be the alt version.
 
-To compile this alternate version:
+
+### Alternate build:
+
 
 ```sh
 make alt
 ```
+
+
+### Alternate use:
 
 Use `prog.alt` as you would `prog` above.
 
@@ -58,8 +46,8 @@ Use `prog.alt` as you would `prog` above.
 ## Judges' remarks:
 
 This is the best use of the FNV that we have seen in the IOCCC so far!
-The output, when used without -d, is compatible with POSIX diff and
-is suitable for use with patch.
+The output, when used without `-d`, is compatible with POSIX `diff(1)` and
+is suitable for use with `patch(1)`.
 
 We welcome back Canada to the list of nations from where winning
 entries have been submitted.
@@ -70,58 +58,64 @@ during a South Park P.T.A. Meeting?
 
    "We must stop dirty (C) language from getting to our children's ears!"
 
-   [Blame Canada](https://www.youtube.com/watch?v=bOR38552MJA):
+   [Blame Canada](https://www.youtube.com/watch?v=bOR38552MJA)
 
 Or should we teach our youth to understand the intricacies of this code?
 Ying Tong Iddle I Po!  We suggest you read the source for yourself, which
 might be easier than the academic papers it was inspired by.
 
-NOTE: Unlike the original entry source, prog.alt.c, prog.c uses a
+NOTE: Unlike the original entry source, [prog.alt.c](prog.alt.c),
+[prog.c](prog.c) uses a
 64 bit FNV hash and fixes a function call warning.
 
 
 ## Author's remarks:
 
+
 ### Features
 
 * "An O(NP) Sequence Comparison Algorithm" by Wu, Manber, Myers, Miller.
 
-* Output compatible with patch(1).
+* Output compatible with `patch(1)`.
 
 * Strokes one of the judge's ego (I couldn't email chocolate or curry).
 
+
 ### Description
 
-This is a functioning micro diff tool using an [O(NP) algorithm][Wu+89],
+This is a functioning micro `diff(1)` tool using an [O(NP) algorithm][Wu+89],
 compared to the older [O(ND) difference algorithm][Mye86] used by some versions
-of diff.  Its output is based on the default diff(1) output described by POSIX
-and [The Open Group Base Specifications][SUSV7].  The output is suitable for use
-with patch(1).
+of `diff(1)`.  Its output is based on the default `diff(1)` output described by POSIX
+and [the Open Group Base Specifications][SUSV7].  The output is suitable for use
+with `patch(1)`.
 
-The -d option simply writes the edit distance between file1 and file2.
+The `-d` option simply writes the edit distance between `file1` and `file2`.
+
 
 ### Observations
 
-The FNV1a hash is a little slow compared to the trivial hash GNU Diff uses.  I
-downloaded a plain text copy of "War And Peace" from Project Gutenberg, used
-``makeholes.c`` to make 1000 random changes, then profiled and timed the program
-verses GNU Diff.  The bottleneck appears to be in the file I/O and line hashing
-with an average +0.05s slower.  Using a huge file like "War And Peace" for
-testing offsets the diff(1) optimised file I/O.
+The FNV1a hash is a little slow compared to the trivial hash [GNU
+diff](https://www.gnu.org/software/diffutils/) uses. I downloaded a plain text
+copy of "War And Peace" from [Project Gutenberg](https://www.gutenberg.org),
+used [makeholes.c](makeholes.c) to make 1000 random changes, then profiled and
+timed the program verses GNU `diff(1)`.  The bottleneck appears to be in the
+file I/O and line hashing with an average +0.05s slower.  Using a huge file like
+"War And Peace" for testing offsets the `diff(1)` optimised file I/O.
 
 There is no hash collision checking, partly because FNV1a appears to generate
 very [few collisions][HshCmp] and an assumption that localised collisions within
 a region of edits are highly unlikely.
 
+
 ### Support Files
 
-* ``prog-test.sh``\
-Basic test program verifies known test edit distances and patch support.
+* [prog-test.sh](prog-test.sh)
+    Basic test program verifies known test edit distances and `patch(1)` support.
 
-* ``avgtime.sh``
+* [avgtime.sh](avgtime.sh)
 
-* ``makeholes.c``\
-Random edits (holes) made to a file in-place.
+* [makeholes.c](makeholes.c)
+    Random edits (holes) made to a file in-place.
 
 ### References
 
