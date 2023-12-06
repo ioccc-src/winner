@@ -607,6 +607,7 @@ ul.task-list li input[type="checkbox"] {
 .sidenav a {
   float: left;
   display: block;
+  color: blue;
   text-align: left;
   padding: 14px 16px;
   text-decoration: none;
@@ -785,7 +786,7 @@ ul.task-list li input[type="checkbox"] {
 }
 
 /*
- * When printing
+ * When printing:
  *
  * These values are produced by pandoc when converting markdown to HTML
  * when using the --standalone option.
@@ -805,5 +806,15 @@ ul.task-list li input[type="checkbox"] {
   }
   h2, h3, h4 {
     page-break-after: avoid;
+  }
+  /* IOCCC addition - print all as if they were not visited */
+  a:focus, a:hover, a:visited, a:active {
+    color: blue;
+  }
+  .topnav a, .topnav a:focus, .topnav a:hover, .topnav a:visited, .topnav a:active {
+    color: lightblue;
+  }
+  .sidenav a, .sidenav a:focus, .sidenav a:hover, .sidenav a:visited, .sidenav a:active {
+    color: blue;
   }
 }
