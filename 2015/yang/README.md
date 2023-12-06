@@ -8,34 +8,15 @@ make
 ## To use:
 
 ```sh
-echo Some text | ./prog\
+echo Some text | ./prog
 ```
 
 
 ### Try:
 
 ```sh
-echo IOCCC 2015 | ./prog | tee output.c
-make output
-./output
-
-echo IOCCC 2015 | ./prog_c11 | tee output.c
-make output
-./output
-
-echo IOCCC 2015 | ./prog_c++98 | tee output.c
-make output
-./output
+./try.sh
 ```
-
-### Also try:
-
-```sh
-./prog
-
-```
-
-Keep pressing enter to see more output. Send EOF to terminate.
 
 
 ## Judges' remarks:
@@ -54,7 +35,7 @@ so you need not worry about this.
 ## Author's remarks:
 
 `Fuuko` is a [sea star](https://en.wikipedia.org/wiki/Starfish) generator.  Feed
-her some input through `stdin` to get lots of sea star patterns in `stdout`.
+her some input through `stdin` to get lots of sea star patterns on `stdout`.
 
 ```sh
 cc -O3 -std=c90 fuuko.c -lm -o fuuko_c90
@@ -70,7 +51,7 @@ echo IOCCC | ./fuuko_c99 > output_c99.c
 ```
 
 Don't like [sea stars](https://en.wikipedia.org/wiki/Starfish)?  Use a C++98
-compiler to get [dango](https://en.wikipedia.org/wiki/Dango) instead.
+compiler to get a [dango](https://en.wikipedia.org/wiki/Dango) instead.
 
 ```sh
 g++ -O3 -std=c++98 fuuko.c -lm -o fuuko_cpp98
@@ -102,6 +83,7 @@ filled with pointer dereferences (C stars).
 Next time people ask you for a few pointers on C, you can run their
 question through `Fuuko` and give them pointers all day long.
 
+
 ### Compatibility
 
 `Fuuko` has been tested under these environments:
@@ -116,6 +98,7 @@ question through `Fuuko` and give them pointers all day long.
 - clang 3.5.0 on Linux
 - clang 3.4.1 on Linux
 - tcc 0.9.25 on JS/Linux (C99 only)
+
 
 ### Features
 

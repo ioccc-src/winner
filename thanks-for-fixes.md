@@ -3803,6 +3803,11 @@ simply typing `make back_to` or `make mullender`.
 (Linux doesn't seem to but macOS does).
 
 
+## [2015/muth](2015/muth/prog.c) ([README.md](2015/muth/README.md))
+
+[Cody](#cody) added the [try.sh](2015/muth/try.sh) script.
+
+
 ## [2015/yang](2015/yang/prog.c) ([README.md](2015/yang/README.md]))
 
 [Cody](#cody) fixed an unfortunate typo in the Makefile that was preventing some of the
@@ -3810,6 +3815,8 @@ files from compiling properly, trying instead to compile already compiled code.
 
 He also added explicit linking of libm (`-lm`) for systems that do not do this
 (Linux seems to not but macOS does).
+
+He also added the [try.sh](2015/yang/try.sh) script.
 
 
 # <a name="2018"></a>2018
