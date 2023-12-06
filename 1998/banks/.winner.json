@@ -50,6 +50,16 @@
 	    "winners_text" : "original source"
 	},
 	{
+	    "file_path" : "keysym.h",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "included header file"
+	},
+	{
 	    "file_path" : "bb.sc",
 	    "winners_rank" : 150,
 	    "created_by" : null,
@@ -122,7 +132,7 @@
 	{
 	    "file_path" : "inventory.html",
 	    "winners_rank" : 900,
-	    "created_by" : "winner2nventory",
+	    "created_by" : "winner2inventory",
 	    "prog" : null,
 	    "filetype" : "html",
 	    "winners_show" : true,

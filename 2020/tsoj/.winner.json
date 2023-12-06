@@ -41,7 +41,7 @@
 	},
 	{
 	    "file_path" : "prog.alt.c",
-	    "winners_rank" : 50,
+	    "winners_rank" : 40,
 	    "created_by" : null,
 	    "prog" : "alt",
 	    "filetype" : "c",
@@ -72,7 +72,7 @@
 	{
 	    "file_path" : "inventory.html",
 	    "winners_rank" : 900,
-	    "created_by" : "winner2nventory",
+	    "created_by" : "winner2inventory",
 	    "prog" : null,
 	    "filetype" : "html",
 	    "winners_show" : true,

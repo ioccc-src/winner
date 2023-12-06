@@ -40,6 +40,26 @@
 	    "winners_text" : "Makefile"
 	},
 	{
+	    "file_path" : "gavare.alt.c",
+	    "winners_rank" : 40,
+	    "created_by" : null,
+	    "prog" : "alt",
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "alternative source"
+	},
+	{
+	    "file_path" : "gavare.alt2.c",
+	    "winners_rank" : 40,
+	    "created_by" : null,
+	    "prog" : "alt",
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "alternative source"
+	},
+	{
 	    "file_path" : "gavare.orig.c",
 	    "winners_rank" : 50,
 	    "created_by" : null,
@@ -72,7 +92,7 @@
 	{
 	    "file_path" : "inventory.html",
 	    "winners_rank" : 900,
-	    "created_by" : "winner2nventory",
+	    "created_by" : "winner2inventory",
 	    "prog" : null,
 	    "filetype" : "html",
 	    "winners_show" : true,

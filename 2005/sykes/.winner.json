@@ -50,6 +50,26 @@
 	    "winners_text" : "original source"
 	},
 	{
+	    "file_path" : "test.sh",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test tool"
+	},
+	{
+	    "file_path" : "try.sh",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "how to run"
+	},
+	{
 	    "file_path" : "2005_sykes.tar.bz2",
 	    "winners_rank" : 300,
 	    "created_by" : "mkwinnertbz2",
@@ -62,7 +82,7 @@
 	{
 	    "file_path" : "inventory.html",
 	    "winners_rank" : 900,
-	    "created_by" : "winner2nventory",
+	    "created_by" : "winner2inventory",
 	    "prog" : null,
 	    "filetype" : "html",
 	    "winners_show" : true,
@@ -108,6 +128,16 @@
 	    "winners_show" : false,
 	    "display_via" : "download",
 	    "winners_text" : "demo for Commodore PET"
+	},
+	{
+	    "file_path" : "PET",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "binary",
+	    "winners_show" : false,
+	    "display_via" : "github",
+	    "winners_text" : "Commodore PET emulator"
 	},
 	{
 	    "file_path" : "README.md",
@@ -160,7 +190,7 @@
 	    "winners_text" : "editor for Commodore PET"
 	},
 	{
-	    "file_path" : "kernal-2.901465-03.bin",
+	    "file_path" : "kernel-2.901465-03.bin",
 	    "winners_rank" : null,
 	    "created_by" : null,
 	    "prog" : null,

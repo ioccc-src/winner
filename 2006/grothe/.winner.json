@@ -60,7 +60,7 @@
 	    "winners_text" : "sample input"
 	},
 	{
-	    "file_path" : "olympic.txt",
+	    "file_path" : "olympics.txt",
 	    "winners_rank" : 100,
 	    "created_by" : null,
 	    "prog" : null,
@@ -102,7 +102,7 @@
 	{
 	    "file_path" : "inventory.html",
 	    "winners_rank" : 900,
-	    "created_by" : "winner2nventory",
+	    "created_by" : "winner2inventory",
 	    "prog" : null,
 	    "filetype" : "html",
 	    "winners_show" : true,

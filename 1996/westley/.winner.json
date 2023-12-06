@@ -60,7 +60,7 @@
 	    "winners_text" : "original source"
 	},
 	{
-	    "file_path" : "clock1",
+	    "file_path" : "clock1.sh",
 	    "winners_rank" : 100,
 	    "created_by" : null,
 	    "prog" : null,
@@ -70,7 +70,7 @@
 	    "winners_text" : "how to run"
 	},
 	{
-	    "file_path" : "clock2",
+	    "file_path" : "clock2.sh",
 	    "winners_rank" : 100,
 	    "created_by" : null,
 	    "prog" : null,
@@ -80,7 +80,27 @@
 	    "winners_text" : "how to run"
 	},
 	{
-	    "file_path" : "clock3",
+	    "file_path" : "clock3.sh",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "how to run"
+	},
+	{
+	    "file_path" : "try.alt.sh",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "how to run alternative code"
+	},
+	{
+	    "file_path" : "try.sh",
 	    "winners_rank" : 100,
 	    "created_by" : null,
 	    "prog" : null,
@@ -102,7 +122,7 @@
 	{
 	    "file_path" : "inventory.html",
 	    "winners_rank" : 900,
-	    "created_by" : "winner2nventory",
+	    "created_by" : "winner2inventory",
 	    "prog" : null,
 	    "filetype" : "html",
 	    "winners_show" : true,

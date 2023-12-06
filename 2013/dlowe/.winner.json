@@ -50,14 +50,14 @@
 	    "winners_text" : "original source"
 	},
 	{
-	    "file_path" : "demo.sh",
+	    "file_path" : "diff.sh",
 	    "winners_rank" : 100,
 	    "created_by" : null,
 	    "prog" : null,
 	    "filetype" : "shellscript",
 	    "winners_show" : true,
 	    "display_via" : "github",
-	    "winners_text" : "run the demo"
+	    "winners_text" : "difference tool"
 	},
 	{
 	    "file_path" : "fun.c",
@@ -70,7 +70,7 @@
 	    "winners_text" : "compile and run for extra run"
 	},
 	{
-	    "file_path" : "sflen.sh",
+	    "file_path" : "slflen.sh",
 	    "winners_rank" : 100,
 	    "created_by" : null,
 	    "prog" : null,
@@ -78,6 +78,16 @@
 	    "winners_show" : true,
 	    "display_via" : "github",
 	    "winners_text" : "generate sparkline of file lengths"
+	},
+	{
+	    "file_path" : "try.sh",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "run the demo"
 	},
 	{
 	    "file_path" : "2013_dlowe.tar.bz2",
@@ -92,7 +102,7 @@
 	{
 	    "file_path" : "inventory.html",
 	    "winners_rank" : 900,
-	    "created_by" : "winner2nventory",
+	    "created_by" : "winner2inventory",
 	    "prog" : null,
 	    "filetype" : "html",
 	    "winners_show" : true,

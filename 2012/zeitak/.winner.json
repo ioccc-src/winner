@@ -40,6 +40,26 @@
 	    "winners_text" : "Makefile"
 	},
 	{
+	    "file_path" : "anonymous.alt.c",
+	    "winners_rank" : 40,
+	    "created_by" : null,
+	    "prog" : "alt",
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "alternative source"
+	},
+	{
+	    "file_path" : "anonymous.c",
+	    "winners_rank" : 40,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "1984/anonymous source"
+	},
+	{
 	    "file_path" : "zeitak.alt.c",
 	    "winners_rank" : 40,
 	    "created_by" : null,
@@ -60,14 +80,94 @@
 	    "winners_text" : "original source"
 	},
 	{
-	    "file_path" : "incorrect.c",
+	    "file_path" : "test.sh",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "test tool"
+	},
+	{
+	    "file_path" : "incorrect.1.quote.c",
 	    "winners_rank" : 150,
 	    "created_by" : null,
 	    "prog" : null,
 	    "filetype" : "c",
 	    "winners_show" : true,
 	    "display_via" : "github",
-	    "winners_text" : "example source with incorrect nesting"
+	    "winners_text" : "example source with incorrect quote"
+	},
+	{
+	    "file_path" : "incorrect.3.quotes.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "example source with incorrect quote"
+	},
+	{
+	    "file_path" : "incorrect.brace.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "example source with incorrect brace"
+	},
+	{
+	    "file_path" : "incorrect.bracket.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "example source with incorrect bracket"
+	},
+	{
+	    "file_path" : "incorrect.paren.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "example source with incorrect parenthesis"
+	},
+	{
+	    "file_path" : "incorrect.quote-esc.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "example source with incorrect quote escape"
+	},
+	{
+	    "file_path" : "incorrect.single.quote.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "example source with incorrect single quote"
+	},
+	{
+	    "file_path" : "incorrect.txt",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "example source with incorrect text"
 	},
 	{
 	    "file_path" : "2012_zeitak.tar.bz2",
@@ -82,7 +182,7 @@
 	{
 	    "file_path" : "inventory.html",
 	    "winners_rank" : 900,
-	    "created_by" : "winner2nventory",
+	    "created_by" : "winner2inventory",
 	    "prog" : null,
 	    "filetype" : "html",
 	    "winners_show" : true,

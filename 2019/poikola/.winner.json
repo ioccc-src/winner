@@ -56,7 +56,7 @@
 	    "prog" : null,
 	    "filetype" : "pdf",
 	    "winners_show" : true,
-	    "display_via" : "github",
+	    "display_via" : "browser",
 	    "winners_text" : "make docs output"
 	},
 	{
@@ -82,7 +82,7 @@
 	{
 	    "file_path" : "inventory.html",
 	    "winners_rank" : 900,
-	    "created_by" : "winner2nventory",
+	    "created_by" : "winner2inventory",
 	    "prog" : null,
 	    "filetype" : "html",
 	    "winners_show" : true,

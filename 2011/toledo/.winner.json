@@ -40,6 +40,26 @@
 	    "winners_text" : "Makefile"
 	},
 	{
+	    "file_path" : "toledo.alt.c",
+	    "winners_rank" : 40,
+	    "created_by" : null,
+	    "prog" : "alt",
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "alternative source"
+	},
+	{
+	    "file_path" : "toledo.alt2.c",
+	    "winners_rank" : 40,
+	    "created_by" : null,
+	    "prog" : "alt",
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "alternative source"
+	},
+	{
 	    "file_path" : "toledo.orig.c",
 	    "winners_rank" : 50,
 	    "created_by" : null,
@@ -48,6 +68,16 @@
 	    "winners_show" : true,
 	    "display_via" : "github",
 	    "winners_text" : "original source"
+	},
+	{
+	    "file_path" : "keysym.h",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "included header file"
 	},
 	{
 	    "file_path" : "layer.c",
@@ -72,7 +102,7 @@
 	{
 	    "file_path" : "inventory.html",
 	    "winners_rank" : 900,
-	    "created_by" : "winner2nventory",
+	    "created_by" : "winner2inventory",
 	    "prog" : null,
 	    "filetype" : "html",
 	    "winners_show" : true,

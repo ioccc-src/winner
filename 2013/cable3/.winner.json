@@ -162,7 +162,7 @@
 	{
 	    "file_path" : "inventory.html",
 	    "winners_rank" : 900,
-	    "created_by" : "winner2nventory",
+	    "created_by" : "winner2inventory",
 	    "prog" : null,
 	    "filetype" : "html",
 	    "winners_show" : true,
@@ -218,6 +218,16 @@
 	    "winners_show" : false,
 	    "display_via" : "download",
 	    "winners_text" : "DOS boot sector"
+	},
+	{
+	    "file_path" : "hd.img",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "binary",
+	    "winners_show" : false,
+	    "display_via" : "download",
+	    "winners_text" : "disk image"
 	}
     ]
 }

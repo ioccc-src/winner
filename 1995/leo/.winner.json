@@ -50,6 +50,16 @@
 	    "winners_text" : "original source"
 	},
 	{
+	    "file_path" : "spoiler1.html",
+	    "winners_rank" : 100,
+	    "created_by" : "md2html",
+	    "prog" : null,
+	    "filetype" : "html",
+	    "winners_show" : true,
+	    "display_via" : "browser",
+	    "winners_text" : "spoiler document"
+	},
+	{
 	    "file_path" : "1995_leo.tar.bz2",
 	    "winners_rank" : 300,
 	    "created_by" : "mkwinnertbz2",
@@ -62,7 +72,7 @@
 	{
 	    "file_path" : "inventory.html",
 	    "winners_rank" : 900,
-	    "created_by" : "winner2nventory",
+	    "created_by" : "winner2inventory",
 	    "prog" : null,
 	    "filetype" : "html",
 	    "winners_show" : true,
@@ -98,6 +108,16 @@
 	    "winners_show" : false,
 	    "display_via" : "github",
 	    "winners_text" : "markdown source for index.html"
+	},
+	{
+	    "file_path" : "spoiler1.md",
+	    "winners_rank" : null,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "markdown",
+	    "winners_show" : false,
+	    "display_via" : "github",
+	    "winners_text" : "spoiler document"
 	}
     ]
 }

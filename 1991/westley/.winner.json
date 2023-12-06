@@ -40,6 +40,16 @@
 	    "winners_text" : "Makefile"
 	},
 	{
+	    "file_path" : "westley.alt.c",
+	    "winners_rank" : 40,
+	    "created_by" : null,
+	    "prog" : "alt",
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "alternative source"
+	},
+	{
 	    "file_path" : "westley.orig.c",
 	    "winners_rank" : 50,
 	    "created_by" : null,
@@ -48,6 +58,16 @@
 	    "winners_show" : true,
 	    "display_via" : "github",
 	    "winners_text" : "original source"
+	},
+	{
+	    "file_path" : "ttt.alt.sh",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "how to run the alternative code"
 	},
 	{
 	    "file_path" : "ttt.sh",
@@ -72,7 +92,7 @@
 	{
 	    "file_path" : "inventory.html",
 	    "winners_rank" : 900,
-	    "created_by" : "winner2nventory",
+	    "created_by" : "winner2inventory",
 	    "prog" : null,
 	    "filetype" : "html",
 	    "winners_show" : true,

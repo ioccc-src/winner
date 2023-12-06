@@ -58,10 +58,20 @@
 	    "filetype" : "perl",
 	    "winners_show" : true,
 	    "display_via" : "github",
-	    "winners_text" : "reproduce dragon.nono from "
+	    "winners_text" : "reproduce dragon.nono"
 	},
 	{
 	    "file_path" : "codegolf.nono",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "nonogram input data"
+	},
+	{
+	    "file_path" : "conway-game-of-life.nono",
 	    "winners_rank" : 100,
 	    "created_by" : null,
 	    "prog" : null,
@@ -91,7 +101,37 @@
 	    "winners_text" : "nonogram input data"
 	},
 	{
+	    "file_path" : "multi-solutions.nono",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "nonogram input data"
+	},
+	{
+	    "file_path" : "no-solution.nono",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "nonogram input data"
+	},
+	{
 	    "file_path" : "penguin.nono",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "nonogram input data"
+	},
+	{
+	    "file_path" : "plus.nono",
 	    "winners_rank" : 100,
 	    "created_by" : null,
 	    "prog" : null,
@@ -121,6 +161,16 @@
 	    "winners_text" : "nonogram input data"
 	},
 	{
+	    "file_path" : "smiley.nono",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "nonogram input data"
+	},
+	{
 	    "file_path" : "soccer.nono",
 	    "winners_rank" : 100,
 	    "created_by" : null,
@@ -129,6 +179,16 @@
 	    "winners_show" : true,
 	    "display_via" : "github",
 	    "winners_text" : "nonogram input data"
+	},
+	{
+	    "file_path" : "try.sh",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "how to run"
 	},
 	{
 	    "file_path" : "2011_hamaji.tar.bz2",
@@ -143,7 +203,7 @@
 	{
 	    "file_path" : "inventory.html",
 	    "winners_rank" : 900,
-	    "created_by" : "winner2nventory",
+	    "created_by" : "winner2inventory",
 	    "prog" : null,
 	    "filetype" : "html",
 	    "winners_show" : true,

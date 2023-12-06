@@ -67,7 +67,7 @@
 	    "filetype" : "shellscript",
 	    "winners_show" : true,
 	    "display_via" : "github",
-	    "winners_text" : "check the operating system for compatibility "
+	    "winners_text" : "check the operating system for compatibility"
 	},
 	{
 	    "file_path" : "2019_duble.tar.bz2",
@@ -82,7 +82,7 @@
 	{
 	    "file_path" : "inventory.html",
 	    "winners_rank" : 900,
-	    "created_by" : "winner2nventory",
+	    "created_by" : "winner2inventory",
 	    "prog" : null,
 	    "filetype" : "html",
 	    "winners_show" : true,

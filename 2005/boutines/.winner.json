@@ -70,6 +70,16 @@
 	    "winners_text" : "equation limit for entry"
 	},
 	{
+	    "file_path" : "input.txt",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sample input"
+	},
+	{
 	    "file_path" : "2005_boutines.tar.bz2",
 	    "winners_rank" : 300,
 	    "created_by" : "mkwinnertbz2",
@@ -82,7 +92,7 @@
 	{
 	    "file_path" : "inventory.html",
 	    "winners_rank" : 900,
-	    "created_by" : "winner2nventory",
+	    "created_by" : "winner2inventory",
 	    "prog" : null,
 	    "filetype" : "html",
 	    "winners_show" : true,

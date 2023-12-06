@@ -50,6 +50,26 @@
 	    "winners_text" : "original source"
 	},
 	{
+	    "file_path" : "giana.sh",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "demonstrate with The Great Giana Sisters"
+	},
+	{
+	    "file_path" : "mario.sh",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "demonstrate with Super Mario Brothers"
+	},
+	{
 	    "file_path" : "screenshot-giana.png",
 	    "winners_rank" : 100,
 	    "created_by" : null,
@@ -122,7 +142,7 @@
 	{
 	    "file_path" : "inventory.html",
 	    "winners_rank" : 900,
-	    "created_by" : "winner2nventory",
+	    "created_by" : "winner2inventory",
 	    "prog" : null,
 	    "filetype" : "html",
 	    "winners_show" : true,

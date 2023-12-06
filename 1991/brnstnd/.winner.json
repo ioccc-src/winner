@@ -67,7 +67,7 @@
 	    "filetype" : "sorta",
 	    "winners_show" : true,
 	    "display_via" : "github",
-	    "winners_text" : "SORTA source "
+	    "winners_text" : "SORTA source"
 	},
 	{
 	    "file_path" : "sorta.iarg0",
@@ -77,7 +77,7 @@
 	    "filetype" : "sorta",
 	    "winners_show" : true,
 	    "display_via" : "github",
-	    "winners_text" : "SORTA source "
+	    "winners_text" : "SORTA source"
 	},
 	{
 	    "file_path" : "sorta.icalc",
@@ -87,7 +87,7 @@
 	    "filetype" : "sorta",
 	    "winners_show" : true,
 	    "display_via" : "github",
-	    "winners_text" : "SORTA source "
+	    "winners_text" : "SORTA source"
 	},
 	{
 	    "file_path" : "sorta.idup",
@@ -97,7 +97,7 @@
 	    "filetype" : "sorta",
 	    "winners_show" : true,
 	    "display_via" : "github",
-	    "winners_text" : "SORTA source "
+	    "winners_text" : "SORTA source"
 	},
 	{
 	    "file_path" : "sorta.iecho",
@@ -107,7 +107,7 @@
 	    "filetype" : "sorta",
 	    "winners_show" : true,
 	    "display_via" : "github",
-	    "winners_text" : "SORTA source "
+	    "winners_text" : "SORTA source"
 	},
 	{
 	    "file_path" : "sorta.ifact1",
@@ -117,7 +117,7 @@
 	    "filetype" : "sorta",
 	    "winners_show" : true,
 	    "display_via" : "github",
-	    "winners_text" : "SORTA source "
+	    "winners_text" : "SORTA source"
 	},
 	{
 	    "file_path" : "sorta.ifact2",
@@ -127,7 +127,7 @@
 	    "filetype" : "sorta",
 	    "winners_show" : true,
 	    "display_via" : "github",
-	    "winners_text" : "SORTA source "
+	    "winners_text" : "SORTA source"
 	},
 	{
 	    "file_path" : "sorta.ifact3",
@@ -137,7 +137,7 @@
 	    "filetype" : "sorta",
 	    "winners_show" : true,
 	    "display_via" : "github",
-	    "winners_text" : "SORTA source "
+	    "winners_text" : "SORTA source"
 	},
 	{
 	    "file_path" : "sorta.iio",
@@ -147,7 +147,7 @@
 	    "filetype" : "sorta",
 	    "winners_show" : true,
 	    "display_via" : "github",
-	    "winners_text" : "SORTA source "
+	    "winners_text" : "SORTA source"
 	},
 	{
 	    "file_path" : "sorta.irot13",
@@ -157,7 +157,7 @@
 	    "filetype" : "sorta",
 	    "winners_show" : true,
 	    "display_via" : "github",
-	    "winners_text" : "SORTA source "
+	    "winners_text" : "SORTA source"
 	},
 	{
 	    "file_path" : "sorta.isleep",
@@ -167,7 +167,7 @@
 	    "filetype" : "sorta",
 	    "winners_show" : true,
 	    "display_via" : "github",
-	    "winners_text" : "SORTA source "
+	    "winners_text" : "SORTA source"
 	},
 	{
 	    "file_path" : "sorta.itailrec",
@@ -177,7 +177,7 @@
 	    "filetype" : "sorta",
 	    "winners_show" : true,
 	    "display_via" : "github",
-	    "winners_text" : "SORTA source "
+	    "winners_text" : "SORTA source"
 	},
 	{
 	    "file_path" : "sorta.iwhosort",
@@ -187,7 +187,7 @@
 	    "filetype" : "sorta",
 	    "winners_show" : true,
 	    "display_via" : "github",
-	    "winners_text" : "SORTA source "
+	    "winners_text" : "SORTA source"
 	},
 	{
 	    "file_path" : "1991_brnstnd.tar.bz2",
@@ -202,7 +202,7 @@
 	{
 	    "file_path" : "inventory.html",
 	    "winners_rank" : 900,
-	    "created_by" : "winner2nventory",
+	    "created_by" : "winner2inventory",
 	    "prog" : null,
 	    "filetype" : "html",
 	    "winners_show" : true,

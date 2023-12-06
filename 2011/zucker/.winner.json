@@ -40,6 +40,16 @@
 	    "winners_text" : "Makefile"
 	},
 	{
+	    "file_path" : "zucker.alt.c",
+	    "winners_rank" : 40,
+	    "created_by" : null,
+	    "prog" : "alt",
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "alternative source"
+	},
+	{
 	    "file_path" : "zucker.orig.c",
 	    "winners_rank" : 50,
 	    "created_by" : null,
@@ -48,6 +58,16 @@
 	    "winners_show" : true,
 	    "display_via" : "github",
 	    "winners_text" : "original source"
+	},
+	{
+	    "file_path" : "sphere-tracing.pdf",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "pdf",
+	    "winners_show" : true,
+	    "display_via" : "browser",
+	    "winners_text" : "research paper on antialiased ray tracing"
 	},
 	{
 	    "file_path" : "2011_zucker.tar.bz2",
@@ -62,7 +82,7 @@
 	{
 	    "file_path" : "inventory.html",
 	    "winners_rank" : 900,
-	    "created_by" : "winner2nventory",
+	    "created_by" : "winner2inventory",
 	    "prog" : null,
 	    "filetype" : "html",
 	    "winners_show" : true,
