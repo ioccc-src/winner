@@ -1667,14 +1667,14 @@ this code. Other code is also described there.
 
 ## [1994/dodsond2](1994/dodsond2/dodsond2.c) ([README.md](1994/dodsond2/README.md))
 
-[Cody](#cody) fixed an infinite loop that could happen when you shoot an arrow and end up
-having no arrows, thus making one force quit the game. The problem was in a
-condition in the outer loop it would repeatedly get input (if `getchar()`
-returned `'\n'`),  only if one has more than one arrow, returning after that.
-But if there were 0 arrows left it did not return and so the loop started over,
-doing nothing. This fix also seems to have fixed a problem where if you shoot
-your last arrow it would not move you to the room you shoot into (whereas if you
-had more arrows it would).
+[Cody](#cody) fixed an infinite loop that could happen when you shoot an arrow
+and end up having no arrows, thus making one force quit the game. The problem
+was in a condition in the outer loop it would repeatedly get input (if
+`getchar()` returned `'\n'`),  only if one has more than one arrow, returning
+after that.  But if there were 0 arrows left it did not return and so the loop
+started over, doing nothing. This fix also seems to have fixed a problem where
+if you shoot your last arrow it would not move you to the room you shoot into
+(whereas if you had more arrows it would).
 
 Cody added an alt version that allows one to cheat by specifying how many arrows
 to start with (this was for fun but it turned out a good way to debug the above
@@ -2254,6 +2254,8 @@ He also added the [try.sh](2000/dhyang/try.sh) script.
 [Cody](#cody) fixed this to compile with more recent perl versions; the symbol that's now
 `PL_na` was once `na`. He notes that this entry crashes under macOS but it works
 under Linux after this change.
+
+Cody also added the [try.sh](2000/dlowe/try.sh) script.
 
 
 ## [2000/jarijyrki](2000/jarijyrki/jarijyrki.c) ([README.md](2000/jarijyrki/README.md]))
