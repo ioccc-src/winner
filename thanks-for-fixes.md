@@ -3803,6 +3803,30 @@ simply typing `make back_to` or `make mullender`.
 (Linux doesn't seem to but macOS does).
 
 
+## [2015/howe](2015/howe/prog.c) ([README.md](2015/howe/README.md))
+
+[Cody](#cody) added the [try.sh](2015/howe/try.sh) script, downloaded the War
+and Peace text file, fixed the [avgtime.sh](2015/howe/avgtime.sh) script (it
+resulted in standard input errors in piping to `bc(1)`) and added the
+[cc.1](2015/howe/cc.1) man page as not all systems have it (in fact it's
+`gcc(1)` from Rocky Linux).
+
+
+## [2015/mills1](2015/mills1/prog.c) ([README.md](2015/mills1/README.md))
+
+[Cody](#cody) added the [try.sh](2015/mills1/try.sh) script which changes the
+parameters to what we had in the judges' remarks to make it easier (he only died
+when he tried to mark a reminder complete on the other side of the screen at the
+same time and he almost survived that, scoring at that point over 90 - but this
+also involves good eye-hand coordination and playing games like this in the
+past).
+
+
+## [2015/mills2](2015/mills2/prog.c) ([README.md](2015/mills2/README.md))
+
+[Cody](#cody) added the [try.sh](2015/mills2/try.sh) script.
+
+
 ## [2015/muth](2015/muth/prog.c) ([README.md](2015/muth/README.md))
 
 [Cody](#cody) added the [try.sh](2015/muth/try.sh) script.

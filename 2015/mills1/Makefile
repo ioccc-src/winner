@@ -136,14 +136,14 @@ DA=100		# Acceleration due to gravity (scaled by 256).
 		# Smaller values make you glide slower.
 
 DI=-200		# Impulse velocity of a flap (scaled by 256).
-		# Make larger if you want an less intense tapping experience!
+		# Make larger if you want a less intense tapping experience!
 
 DB='"<o^="'	# Sprite for player when gliding.
-		# HINT: Try using various emoji.
+		# HINT: Try using various emojis.
 		# NOTE: The string MUST be enclosed inside double quotes.
 
 DF='"<ov="'	# Sprite for player when flapping.
-		# HINT: Try using various emoji.
+		# HINT: Try using various emojis.
 		# NOTE: The string MUST be enclosed inside double quotes.
 
 DG='"Tap to Flap!"'	# Instruction text.
