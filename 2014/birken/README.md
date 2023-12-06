@@ -4,6 +4,10 @@
 make
 ```
 
+There is alternate code that lets you redefine the port to bind to, in case
+there is a firewall issue, and also lets you redefine the timing constant,
+`STARDATE`. See [Alternate code](#alternate code) below.
+
 
 ## To use:
 
@@ -40,6 +44,37 @@ But there's more! Try opening in a browser the same address and then see what
 happens. This is explained by the authors when explaining their inspiration.
 
 
+## Alternate code:
+
+This version allows you to redefine the port to bind to, should 1701 be a
+problem for some reason, and it also allows you to change the timing as
+described by the author. See [configuration](#configuration) below.
+
+
+### Alternate build:
+
+To specify the port to say, 31337, try:
+
+```sh
+make clobber CDEFINE="-DNCC=31337" alt
+```
+
+To change the `STARDATE` timing constant, try:
+
+```sh
+make clobber CDEFINE="-DSTARDATE=5000000" alt
+```
+
+You can combine them both of course.
+
+
+### Alternate use:
+
+
+Use `prog.alt` as you would `prog` above. Remember that ports < 1024 are
+privileged ports that unprivileged users cannot use.
+
+
 ## Judges' remarks:
 
 Port 1701?  Well this is not the l2f registered TCP/1701 protocol.
@@ -59,7 +94,7 @@ obfuscation awaits the reader of the source!
 ### Abstract
 
 When launched in web server mode, this application appears to deliver nothing
-more than a static HTML page.  But, in actuality, it provides covert file
+more than a static HTML page.  But, in actuality, it allows covert file
 transfer over the Internet.  This is demonstrated by starting the application as
 a client-side downloader.  The hidden transmitted data cannot be reconstructed
 or even detected from the binary content of the traffic between the client and
@@ -96,9 +131,11 @@ approximately 1 baud.
 The client-side downloader will automatically terminate if the web server is
 bounced.
 
+
 ### HTML content
 
 Plug the URL into a browser to view a static HTML page containing ASCII artwork.
+
 
 ### Exploration
 
@@ -111,35 +148,50 @@ mentioned in the abstract, the data is not transmitted within the binary content
 communicated between the client and the server.  A full explanation of the
 protocol appears below, but feel free to explore before reading further.
 
+
 ### Inspiration
 
-The inspiration for this program comes from _Star Trek VI: The Undiscovered
-Country_, specifically the final confrontation between the _Enterprise_ and the
-enhanced prototype Klingon Bird of Prey. The definitive feature of the
-prototype was its ability to fire while cloaked. But, perhaps even more
-impressive was its ability to keep an open communication channel with the
-_Enterprise_ throughout the battle, enabling the antagonist Chang to taunt
-Captain Kirk with Shakespearian quotes while he slowly pelted his ship with
-torpedoes.  Normally, cloaked vessels must maintain silent running to avoid
-detection.
+The inspiration for this program comes from [Star Trek VI: The Undiscovered
+Country](https://memory-alpha.fandom.com/wiki/Star_Trek_VI:_The_Undiscovered_Country),
+specifically the final confrontation between the
+[Enterprise](https://memory-alpha.fandom.com/wiki/USS_Enterprise_(NCC-1701)) and
+the enhanced prototype [Klingon Bird of
+Prey](https://memory-alpha.fandom.com/wiki/Klingon_Bird-of-Prey). The definitive
+feature of the prototype was its ability to fire while cloaked. But, perhaps
+even more impressive was its ability to keep an open communication channel with
+the Enterprise throughout the battle, enabling the antagonist
+[Chang](https://memory-alpha.fandom.com/wiki/Chang_(General)) to taunt [Captain
+Kirk](https://memory-alpha.fandom.com/wiki/James_T._Kirk) with
+[Shakespearian](https://en.wikipedia.org/wiki/William_Shakespeare) quotes while
+he slowly pelted his ship with torpedoes.  Normally, cloaked vessels must
+maintain silent running to avoid detection.
 
 The battle is commemorated in the form of ASCII artwork depicting the ships
 faced head-to-head in the page delivered by the web server.  Plus, the program
 source code is formatted in the shape of a Klingon Bird of Prey.  The code
 itself includes a number of Star Trek references: the registry number of the
-_Enterprise_ (NCC-1701) is defined as a constant; variable names spell out Cpt.
-James T. Kirk and Odo (the Deep Space 9 character was played by René Auberjonois
-who also appeared as Colonel West in _Star Trek VI_); the `STARDATE` constant
-makes timing configurable; and, the constant `k` stands for Khan (in the final
-engagement in _Star Trek II: The Wrath of Khan_, the damaged _Enterprise_
-managed to disable the USS _Reliant_’s shield generator by accessing its prefix
-code: 16309).
+Enterprise (NCC-1701) is defined as a constant; variable names spell out Cpt.
+James T. Kirk and [Odo](https://memory-alpha.fandom.com/wiki/Odo) (the [Deep
+Space 9](https://memory-alpha.fandom.com/wiki/Star_Trek:_Deep_Space_Nine)
+character was played by René Auberjonois who also appeared as [Colonel
+West](https://memory-alpha.fandom.com/wiki/West) in [Star Trek
+VI](https://memory-alpha.fandom.com/wiki/Star_Trek_VI:_The_Undiscovered_Country));
+the `STARDATE` constant makes timing configurable; and, the constant `k` stands
+for [Khan](https://memory-alpha.fandom.com/wiki/Khan_Noonien_Singh) (in the
+final engagement in [Star Trek II: The Wrath of
+Khan](https://memory-alpha.fandom.com/wiki/Star_Trek_II:_The_Wrath_of_Khan), the
+damaged Enterprise managed to disable the USS
+[Reliant](https://memory-alpha.fandom.com/wiki/USS_Reliant_(NCC-1864))'s shield
+generator by accessing its prefix code: 16309).
+
 
 ### Secondary size limit
 
 As obligated by a program that employs 23rd century cloaking technology, when
-the source is fed as input to IOCCC size tool version 2014-09-23-v19, and the
-`-i` command line option is used, the value printed is 0.
+the source is fed as input to [IOCCC size tool version
+2014-09-23-v19](../iocccsize.c), and the `-i` command line option is used, the
+value printed is 0.
+
 
 ### Transmission protocol revealed
 
@@ -163,6 +215,7 @@ the assumption that the bit value does not affect transmission time.
 The server relies on the cookie to identify each client uniquely, enabling it to
 transfer the sequence independently to each client.
 
+
 ### Configuration
 
 As with all network communication, accurate transmission of data relies on the
@@ -173,6 +226,7 @@ value in the event of transmission errors.  Decrease the value to download
 faster and less reliably.
 
 The NCC constant is the web server port number.
+
 
 ### Obfuscations
 
@@ -186,6 +240,7 @@ referenced via pointers.
 * `O` and `l` were selected for their resemblance to `0` and `1` respectively.
 * Standard constants and ASCII characters were replaced with their respective
 numerical values.
+
 
 ### Compiler warnings
 

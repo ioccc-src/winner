@@ -3658,35 +3658,51 @@ implicitly (Linux doesn't seem to but macOS does).
 # <a name="2014"></a>2014
 
 
+## [2014/birken](2014/birken/prog.c) ([README.md](2014/birken/README.md))
+
+[Cody](#cody) provided the [alternate
+code](2014/birken/README.md#alternate-code) that lets one redefine the port to
+bind to in case there is a firewall issue or there is some other reason to not
+have the default port. Remember that ports < 1024 are privileged. It also lets
+you redefine the timing constant `STARDATE` (see the author's remarks for more
+details).
+
+
 ## [2014/deak](2014/deak/prog.c) ([README.md](2014/deak/README.md))
 
-[Cody](#cody) fixed the code that the author provided which would be what the program
-would look like if, as the author put it:
+[Cody](#cody) added [alt code](2014/deak/README.md#alternate-code) that lets one
+reconfigure the coordinates but instead of being a modified version of the entry
+it is the version the author provided which would be what the program would look
+like if, as the author put it:
 
 > The usage of recognizable elements from the C programming language in the
-application source code is intentionally kept to a bare minimum. If this phrase
-would not be true, the application would be the following:
+application source code is intentionally kept to a bare minimum.
 
-It did not compile because a value was left off the `return` statement.
+.. was not true.
 
-Cody added this as alternate code just for fun and so one can more easily see
-the difference to really appreciate the obfuscation.
+This alt version did not originally compile because a value was left off the
+`return` statement (this might have been fixed in the README.md file too) so
+that was fixed and it also has `#include <stdio.h>` for `putchar(3)`. The
+`#ifndef..#define..#endif` was not part of the original alt code, of course.
 
 
 ## [2014/endoh1](2014/endoh1/prog.c) ([README.md](2014/endoh1/README.md]))
 
-[Cody](#cody) added the [rake.sh](2014/endoh1/rake.sh) script and `make rake` rule that
-runs the script. This script will check that `rake` is installed and if it is
-not it will report this and then check that `gem` is installed. It checks that
-`gem` is installed in this case because `gem` is how you install `rake`. If
-`gem` is not installed it tells you to get it along with how to install `gem`.
-Then it tells you how to install `rake`. If `rake` fails to run then it tells
-you to install a specific gem and then to try again. Finally if `rake` succeeds
-it will verify that `prog` is executable and if it is it will run it.
+[Cody](#cody) added the [rake.sh](2014/endoh1/rake.sh) script and `make rake`
+rule that runs the script. This script will check that `rake` is installed and
+if it is not it will report this and then check that `gem` is installed. It
+checks that `gem` is installed in this case because `gem` is how you install
+`rake`. If `gem` is not installed it tells you to get it along with how to
+install `gem`.  Then it tells you how to install `rake`. If `rake` fails to run
+then it tells you to install a specific gem and then to try again. Finally if
+`rake` succeeds it will verify that `prog` is executable and if it is it will
+run it.
+
+Cody also added the [try.sh](2014/endoh1/try.sh) script.
 
 **_Barely_** worth noting but done nonetheless, Cody renamed the `read_me.md`
 file to [spoilers.md](2014/endoh1/spoilers.md) to be clearer in its purpose as
-it is a file with spoilers.
+it is a file with spoilers (and too close to README.md?).
 
 
 ## [2014/maffiodo1](2014/maffiodo1/prog.c) ([README.md](2014/maffiodo1/README.md]))

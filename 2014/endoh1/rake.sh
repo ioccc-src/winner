@@ -20,7 +20,7 @@ if ! type -P rake >/dev/null 2>&1; then
     else
 	echo "Please run the following command as root or via sudo:" 1>&2
 	echo ""
-	echo "	   gem install rake" 1>2
+	echo "	   gem install rake" 1>&2
 	echo "" 1>&2
 	echo "and then try running make rake or running $0 again" 1>&2
     fi
