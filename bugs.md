@@ -1565,19 +1565,60 @@ echo "7 P 6 d P P 8 p" | ./dlowe | tr 876 tpo
 ```
 
 which should print out `poot` but it doesn't, not in linux and not in macOS.
-This might in part be because `./dlowe` will show not a number with `876` but
-rather
-
-```sh
-$ echo "7 P 6 d P P 8 p" | ./dlowe
-7668
-```
 
 In linux it doesn't crash but it doesn't print anything out either.
 
 In macOS it crashes; it might appear to not crash in macOS but this is because
 of the pipeline. If you remove the `| tr 876 tpo` part of the command you will
 see that it does indeed crash!
+
+The reason for this not working is really strange.
+
+```sh
+$ echo "7 P 6 d P P 8 p" | ./dlowe     
+7668
+$ echo "7 P 6 d P P 8 p" | ./dlowe | grep 7
+$
+```
+
+Why? Is it writing to stdout? Let's try some other things:
+
+```sh
+$ echo 7668 | tr 876 tpo
+poot
+```
+
+Okay so we know that it SHOULD work. But we also know something funny is going on with stdout and the entry. Another experiment:
+
+```sh
+$ echo "7 P 6 d P P 8 p" | ./dlowe 1>&2 | grep 7
+7668
+```
+
+Okay so now it sees it, `grep`. But watch!
+
+```sh
+$ echo "7 P 6 d P P 8 p" | ./dlowe 2>foo 1>&1
+7668
+$ cat foo
+
+```
+
+.. so at this hour it does appear to be writing to stdout but yet somehow it doesn't? But watch:
+
+```sh
+$ echo "7 P 6 d P P 8 p" | ./dlowe 1>foo 1>&1
+$ cat foo
+$
+```
+
+Well this explains why the `tr` does not transliterate it to `poot` but why is
+this happening? Why can't it be redirected to another file even? 
+
+If it could be figured out why it's not writing to stdout and yet at the same
+time is writing to stdout one bug could be fixed. Maybe it's the perl messing
+with things but we don't know.
+
 
 Other commands do work, however, and give the appropriate output, such as:
 

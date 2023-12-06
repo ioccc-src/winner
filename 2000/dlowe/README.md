@@ -127,19 +127,19 @@ Floating point exception (core dumped) (or something to that effect)
 ### Examples:
 
 ```sh
-$ echo "12 13 14 15 16 + + + + f" | ./dlowe
+$ echo '12 13 14 15 16 + + + + f' | ./dlowe
 70
-$ echo "12 13 14 15 16 17 + - * / p" | ./dlowe
+$ echo '12 13 14 15 16 17 + - * / p' | ./dlowe
 -0.0515873015873016
-$ echo "+" | ./dlowe
+$ echo '+' | ./dlowe
 stack empty
-$ echo "999999999999999 1 + p" | ./dlowe
+$ echo '999999999999999 1 + p' | ./dlowe
 1e+15
-$ echo "99999999999999 1 + p" | ./dlowe
+$ echo '99999999999999 1 + p' | ./dlowe
 100000000000000
-$ echo "12.5 9 % 10 * 15 + f" | ./dlowe
+$ echo '12.5 9 % 10 * 15 + f' | ./dlowe
 50
-$ echo "7 P 6 d P P 8 p" | ./dlowe | tr 876 tpo
+$ echo '7 P 6 d P P 8 p' | ./dlowe | tr 876 tpo
 poot
 ```
 

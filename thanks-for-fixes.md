@@ -2255,6 +2255,8 @@ He also added the [try.sh](2000/dhyang/try.sh) script.
 `PL_na` was once `na`. He notes that this entry crashes under macOS but it works
 under Linux after this change.
 
+Cody also added the [try.sh](2000/dlowe/try.sh) script.
+
 
 ## [2000/jarijyrki](2000/jarijyrki/jarijyrki.c) ([README.md](2000/jarijyrki/README.md]))
 
