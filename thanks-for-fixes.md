@@ -3803,6 +3803,16 @@ simply typing `make back_to` or `make mullender`.
 (Linux doesn't seem to but macOS does).
 
 
+## [2015/mills1](2015/mills1/prog.c) ([README.md](2015/mills1/README.md))
+
+[Cody](#cody) added the [try.sh](2015/mills1/try.sh) script which changes the
+parameters to what we had in the judges' remarks to make it easier (he only died
+when he tried to mark a reminder complete on the other side of the screen at the
+same time and he almost survived that, scoring at that point over 90 - but this
+also involves good eye-hand coordination and playing games like this in the
+past).
+
+
 ## [2015/muth](2015/muth/prog.c) ([README.md](2015/muth/README.md))
 
 [Cody](#cody) added the [try.sh](2015/muth/try.sh) script.
