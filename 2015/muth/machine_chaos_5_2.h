@@ -1,7 +1,7 @@
 /*
- * chaos machine, http://www.drb.insel.de/~heiner/BB/mabu90.html
+ * chaos machine, https://web.archive.org/web/20131104160623/http://www.drb.insel.de/~heiner/BB/mabu90.html
  *
- * does not halt (http://www.drb.insel.de/~heiner/BB/TM4-proof.txt)
+ * does not halt (https://web.archive.org/web/20131104203330/http://www.drb.insel.de/~heiner/BB/TM4-proof.txt)
  */
 
 #define sym_1(sym, _1) sym
