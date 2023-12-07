@@ -4,6 +4,9 @@
 make
 ```
 
+There is an alternate version of this entry, discussed in the author's remarks.
+See [Alternate code](#alternate-code) below.
+
 
 ## To use:
 
@@ -15,36 +18,34 @@ echo Some text | ./prog
 ### Try:
 
 ```sh
-echo Hello, world | ./prog
-
-DRAFT=1 ./prog < prog.c
-
-./prog
-> [type]
-(...observe...)
-
-./prog < prog.c
+./try.sh
 ```
 
 
 ## Alternate code:
 
-An alternate version of this entry, prog.alt.c, is provided.  This alternate
-code is discussed below in the "prog.c vs prog.alt.c" section of the Author's
-comments below.
+This alternate code, provided by the author, is discussed in more detail by the
+author in the 'prog.c vs prog.alt.c' section of their remarks.
 
-To compile this alternate version:
 
-    make alt
+### Alternate build:
+
+```sh
+make alt
+```
+
+
+### Alternate use:
 
 Use `prog.alt` as you would `prog` above.
 
-### Selected Judges Remarks:
+
+### Judges' remarks:
 
 Beautiful penmanship! However, your fonts may vary.
 
-How does this entry compress the font it uses? What's the purpose of lrand48()?
-Why does the program dump core, when it does :) ?
+How does this entry compress the font it uses? What's the purpose of
+`lrand48(3)`?  Why does the program dump core, when it does :) ?
 
 
 ## Author's remarks:
@@ -54,12 +55,13 @@ Why does the program dump core, when it does :) ?
 This program **prints text in your terminal with an interesting
 hand-writing effect**.
 
-It uses the *braille patterns* range of the unicode standard: this
+It uses the *Braille patterns* range of the unicode standard: this
 allows to consider each terminal character as a tiny 2x4 bitmap.
 
 Turning the Braille code into something visual might be considered
 blasphemous. When I was fighting to make this program work, I started
 wondering if it was not the reason for its very erratic behaviour.
+
 
 ### prog.c vs prog.alt.c
 
@@ -71,30 +73,36 @@ with other compilers or optimization levels). These have been fixed in `prog.c`.
 After this fix, in order to remain rule-2-compliant, a variable name has also
 been shortened in this file.
 
+
 ### How to build
 
 If you have `clang`:
 
-    $ CC=clang make -e
+```sh
+CC=clang make -e
+```
 
 Otherwise (gcc):
 
-    $ make
+```sh
+make
+```
 
 (You will get a few warnings in this case.)
+
 
 ### How to use it
 
 You need a terminal configured to handle a *UTF-8* encoding and a font including
-*braille patterns*.
+*Braille patterns*.
 
 This is the default on most modern GNU/Linux operating systems.
 
 The default terminal application (gnome-terminal) or even a simple xterm should
 render things properly.
 
-I tested this on several Debian and Ubuntu systems, 32 and 64bits (no
-configuration was needed).
+I tested this on several Debian and Ubuntu systems, 32 and 64bits and no
+configuration was needed.
 
 I also tested it on FreeBSD 9.3 32bits (font and encoding configuration was
 needed in this case).
@@ -123,9 +131,9 @@ $ ./prog
 This entry is obfuscated in various ways:
 
 *   The structure is hidden by avoiding loops, `if` statements, ternary
-conditionals, and jump-related instructions. Instead, recursivity is heavily
+conditionals, and jump-related instructions. Instead, recursion is heavily
 used.
-*   Merging all functions into one added even more recursivity. ;)
+*   Merging all functions into one added even more recursion. ;)
 *   The provided code does not contain the same number of opening and closing
 parenthesis.
 *   Preprocessing the code inflates it and adds lots of indents. Removing some
@@ -144,8 +152,8 @@ On the other hand, the following may help:
 
 *   The code layout should help to identify which part of the code is
 obfuscated. ;)
-*   File 'codes.txt' shows how each character is drawn. This data is encoded in
-macro `O_o` at the top of the source file.
+*   File [codes.txt](codes.txt) shows how each character is drawn. This data is
+encoded in macro `O_o` at the top of the source file.
 
 
 ### Limitations:
@@ -160,22 +168,26 @@ a-z, A-Z, '.' ':' ',' ';' '!' and '?'.
 ```
 
 Uppercase and lowercase chars are rendered the same. The program also understand
-the space and the linefeed (\n).  Other chars are simply ignored (most of the
+the space and the linefeed (`\n`).  Other chars are simply ignored (most of the
 time ;)
+
 
 #### Stack size
 
-This limitation is due to the heavy use of recursivity. After having processed a
+This limitation is due to the heavy use of recursion. After having processed a
 large number of characters, the process may exceed the stack size and crash.
 (However I did not experience this myself. The top-level recursion might be
 removed by the compiler as part of its optimizations.)
+
 
 #### Line rendering
 
 The program does its best to avoid cutting words at the end of lines, but it
 could still happen in case of long words.
 
+
 ### Subtleties and extra features
+
 
 #### Handling more than text docs?
 
@@ -185,11 +197,12 @@ simple text documents.
 Thus, if you try for example:
 
 ```sh
-$ ./prog < prog.c\
+$ ./prog < prog.c
 ```
 
 You will not get something that looks like C code. (but you can still try, if
 you are curious. :)
+
 
 #### A 'draft' mode
 
@@ -201,6 +214,7 @@ $ echo 'testing the draft mode' | DRAFT=1 ./prog
 ```
 
 The program will run much faster but the rendering will be less precise.
+
 
 #### The subtle interactive mode
 

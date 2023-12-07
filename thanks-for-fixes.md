@@ -3786,6 +3786,11 @@ output.
 # <a name="2015"></a>2015
 
 
+## [2015/duble](2015/duble/prog.c) ([README.md](2015/duble/README.md]))
+
+[Cody](#cody) added the [try.sh](2015/duble/try.sh) script.
+
+
 ## [2015/endoh3](2015/endoh3/prog.c) ([README.md](2015/endoh3/README.md]))
 
 [Cody](#cody) fixed this to compile with Linux which was having a problem with duplicate
