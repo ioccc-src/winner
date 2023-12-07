@@ -4,10 +4,59 @@
 make all
 ```
 
+
+
+You may redefine all the keys and the time step with predefined macros. The
+author provided the following able:
+
+```
+Control         Description         Default Key
+-------  -------------------------  -----------
+ IT         Increase throttle      XK_Page_Up
+ DT         Decrease throttle      XK_Page_Down
+ FD         Move stick forward     XK_Up
+ BK         Move stick back        XK_Down
+ LT         Move stick left        XK_Left
+ RT         Move stick right       XK_Right
+ CS         Center stick           XK_Enter
+```
+
+There is another macro, `dt`, which is the time step. See some important points
+on this in the author's comments in the [Alternate Build
+Instructions](#alternate-build-instructions) section.
+
+If however you wish to change the above controls, see the header file
+[keysym.h](keysym.h) for the definitions of other characters that you might wish
+to use. The name of the macro in the header file is what you need to set the
+macros to, depending on what controls you wish to redefine. For instance, to set
+the throttle up and down to `u` and `d`:
+
+
+```sh
+make clobber IT=XK_u DT=XK_d all
+```
+
+because in the header file you can see that `XK_u` corresponds to `u` and `XK_d`
+corresponds to `d`:
+
+```c
+#define XK_d                             0x0064  /* U+0064 LATIN SMALL LETTER D */
+#define XK_u                             0x0075  /* U+0075 LATIN SMALL LETTER U */
+```
+
+Note that the [keysym.h](keysym.h) file is not complete from X11; it's just the
+more likely candidates (and some that are probably unlikely :-) ).
+
+The upper case letters would be `XK_U` and `XK_D` and you can search the header
+file for 'LATIN CAPITAL D', for example.
+
 For those who do not have a Page Up or Page Down key, see [alternate
-code](#alternate-code) below. The same method may be used if you wish to
-redefine other keys but the alt build sets a default for those without page up
-and page down.
+code](#alternate-code) below. The difference from the alt build and the original
+entry is that the page up and page down keys are defined to a default but they
+are hard coded as doing otherwise would necessarily complicate the build
+instructions. Since you can use the original entry to redefine these this is not
+a problem and is purely a convenience .. if only for those who are okay with the
+preselected alternative keys.
 
 
 ## To use:
@@ -33,62 +82,35 @@ you can regain control?
 If you do not have access to a page up or page down key, for instance you're
 using a Mac, you can use the alt code (though it actually uses the same code)
 that will redefine the keys to increase throttle and decrease throttle. This
-same method can be used with the original code but this is sets up a default for
-the missing keys of Macs.
+same method can be used with the original code but this sets up predefined keys
+in place of Page Up and Page Down.
 
-The keys were somewhat arbitrarily selected but it was decided to make them on
-the left side of the keyboard as one might have a harder time using the arrows
-at the same time as typing on the right side.
+The keys were somewhat arbitrarily selected but it was decided to make them both
+on the left side of a QWERTY keyboard as one might have a harder time using the
+arrows at the same time as typing on the right side.
 
 
 ### Alternate build:
 
 As the Makefile allows you to configure the keys to use you may redefine the
-keys. This can be done for both versions but if you don't have certain keys it's
-even more important. In the main program increasing throttle is by page up and
-decreasing throttle is page down. In the alt build it is `f` and `d`
-respectively as these are letters on the left side of the keyboard which is
-easier to use if one is using the right side for movement.
+keys but with the alt build you cannot, as described earlier, redefine the page
+up and page down replacement keys. If you want to do that you should use the
+original entry as described in the to build section above.
 
-To use the default changes:
+In the alt build it is `f` and `d` respectively as these are letters on the left
+side of the keyboard which is easier to use if one is using the right side for
+movement. These are hard coded, as noted.
+
+To use the default settings for the alternate build:
 
 ```sh
 make alt
 ```
 
-If however you wish to change these, see the header file [keysym.h](keysym.h)
-for the definitions of other characters that you might wish to use. The name of
-the macro in the header file is what you need to set the macros in the Makefile
-to, depending on what controls you wish to redefine.
+You may change the other keys as described in the build instructions, above, but
+this alt code can be seen as an alternative for those who don't have or don't
+want to use page up and page down.
 
-For instance if you want to use 'u' to increase throttle and 'd' to decrease
-throttle you would do:
-
-```sh
-make clobber CDEFINE="-UIT -UDT -DIT=XK_u -DDT=XK_d -DUP=XK_Up -DDN=XK_Down -DLT=XK_Left -DRT=XK_Right \
-	-DCS=XK_Return" alt
-```
-
-because in the header file you can see that `XK_u` corresponds to `u` and `XK_d`
-corresponds to `d`:
-
-```c
-#define XK_d                             0x0064  /* U+0064 LATIN SMALL LETTER D */
-#define XK_u                             0x0075  /* U+0075 LATIN SMALL LETTER U */
-```
-
-Note that you must specify all keys and other `-D` macros if you redefine any of
-them.
-
-The upper case letters would be `XK_U` and `XK_D` and you can search the header
-file for 'LATIN CAPITAL D', for example.
-
-See [alternate build instructions](#alternate-build-instructions) for the proper
-macro names. You may do the above for the entry itself as well, of course, if
-you do not like the defaults selected.
-
-Note that the [keysym.h](keysym.h) file is not complete from X11; it's just the
-more likely candidates (and some that are probably unlikely :-) ).
 
 
 ### Alternate use:
@@ -132,6 +154,7 @@ how fast you're going in knots.  The second is the heading
 indicator, or compass.  0 is north, 90 is east, 180 is south,
 270 is west.  The third instrument is the altimeter, which
 measures your height above ground level in feet.
+
 
 ### Features
 
@@ -241,8 +264,10 @@ to default values.  Use this section if you want to compile with
 different options.
 
 To map a key to a control, you must pass an option to the
-compiler in the format `-Dcontrol=key`.  The possible controls
-you can map are described in the table below:
+compiler in the format `-Dcontrol=key` or if you use the Makefile you can do
+`make control=key`.
+
+The possible controls you can map are described in the table below:
 
 ```
 Control         Description         Default Key
@@ -260,16 +285,14 @@ Values for the possible keys can be found in the X Windows
 header file `<X11/keysym.h>`.  This file is most likely a
 cross-reference to another header, `<X11/keysymdef.h>`.
 
-You must map all seven controls to keys at compile time, or the
-compilation will fail.
-
 For example, to map Center Stick to the space-bar, the compile
-option would be `-DCS=XK_space`.
+option would be `-DCS=XK_space` or `make CS=XK_space`.
 
 
 To set the time step size, you must pass the following option to
 the compiler: `-Ddt=duration`, where `dt` is literal, and where
-`duration` is the time in seconds you want the time step to be.
+`duration` is the time in seconds you want the time step to be. Alternatively,
+if you use the provided Makefile, you may just do `make dt=time`.
 
 Two things to keep in mind when selecting a time step.  Time
 steps that are too large (more than about `0.03`) will cause
