@@ -12,7 +12,7 @@ make alt
 To configure how many microseconds to sleep before updates try:
 
 ```sh
-make clobber CDEFINE="-DZ=200" alt
+make clobber SLEEP=200 alt
 ```
 
 NOTE: this entry requires `X11/Xlib.h` header file and the X11 library to
@@ -30,7 +30,6 @@ STATUS: known bug - please help us fix
 ```
 
 For more detailed information see [1993 cmills in bugs.md](/bugs.md#1993-cmills).
-
 
 
 ## To use:
