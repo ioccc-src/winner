@@ -137,6 +137,7 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
+# variable to control amount of time to sleep between writes for alt code.
 SLEEP=500
 
 ${PROG}.alt: ${PROG}.alt.c
