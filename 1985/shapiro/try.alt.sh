@@ -25,7 +25,8 @@ while ((i < 5)); do
     fi
 
     read -r -n 1 -p "Press any key to set to $C: "
-    make clobber CC="$CC" CDEFINE="-DC=$C" alt >/dev/null
+    echo 1>&2
+    make clobber CC="$CC" SIZE="$C" alt >/dev/null
     ./shapiro.alt
     ((i++))
 done
@@ -39,7 +40,7 @@ while :; do
     # ^-- SC2143 (style): Use grep -q instead of comparing output with [ -n .. ].
     # shellcheck disable=SC2143
     if [[ $(echo "$REPLY" | grep -E '\<[0-9]+\>') ]]; then
-	make clobber CC="$CC" CDEFINE="-DC=\"$REPLY\"" alt >/dev/null
+	make clobber CC="$CC" SIZE="$REPLY" alt >/dev/null
 	./shapiro.alt
     else
 	exit 0

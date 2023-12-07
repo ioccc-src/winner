@@ -58,7 +58,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE= -DC=39
+CDEFINE= -DC=${SIZE}
 
 # Include files that are needed to compile
 #
@@ -136,8 +136,11 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
+# variable to control size of maze for alt code
+SIZE=39
+
 ${PROG}.alt: ${PROG}.alt.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS} -DC=${SIZE} $< -o $@ ${LDFLAGS}
 
 # data files
 #
