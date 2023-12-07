@@ -56,9 +56,13 @@ CSTD= -std=gnu99
 #
 ARCH=
 
+# variables for the macros for easier redefining
+XX= 1024
+YY= 768
+AA= 3
 # Defines that are needed to compile
 #
-CDEFINE= -DXX=1024 -DYY=768 -DAA=3
+CDEFINE= -DXX=${XX} -DYY=${YY} -DAA=${AA}
 
 # Include files that are needed to compile
 #
