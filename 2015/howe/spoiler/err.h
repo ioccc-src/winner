@@ -1,5 +1,5 @@
 /*
- * Trival err.h
+ * Trivial err.h
  */
 
 #ifndef __err_h__
