@@ -55,10 +55,13 @@ CSTD= -std=gnu90
 #
 ARCH=
 
+# variable for size, primarily for alt code
+#
+SIZE=32767
 # Defines that are needed to compile
 #
 CDEFINE= -DM0=sizeof -DM1=long -DM2=void \
-	-DM3=realloc -DM4=calloc -DM5=free -DSZ=32767
+	-DM3=realloc -DM4=calloc -DM5=free -DSZ=${SIZE}
 
 # Include files that are needed to compile
 #
@@ -137,6 +140,11 @@ ${PROG}: ${PROG}.c
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${LN} -sf $@ samefile.alt
 
 # data files
 #
