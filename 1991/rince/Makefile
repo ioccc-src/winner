@@ -58,7 +58,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE= -DMAX_MOVES=484
+CDEFINE= -DMAX_MOVES=${MAXMOVES}
 
 # Include files that are needed to compile
 #
@@ -137,11 +137,13 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
+# variable to control max number of moves
+MAXMOVES=484
 ${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 ${PROG}2.alt: ${PROG}.alt2.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS} -DMAX_MOVES=${MAXMOVES} $< -o $@ ${LDFLAGS}
 
 # data files
 #
