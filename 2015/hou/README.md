@@ -22,7 +22,7 @@ echo "" | ./prog
 ## Judges' remarks:
 
 A good start for understanding this entry might be
-https://www.ietf.org/rfc/rfc1321.txt. How does it compute this using only a
+[rfc1321.txt](rfc1321.txt). How does it compute this using only a
 single looping construct? The original reference source code for this
 algorithm is about 355 lines of code, yet this entry is only 199 lines with
 one statement per line and it isn't using lots of macro expansion tricks like
