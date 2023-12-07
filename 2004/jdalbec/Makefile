@@ -56,9 +56,12 @@ CSTD= -ansi
 #
 ARCH=
 
+# variable for redefining macro Ag
+#
+Ag= 11
 # Defines that are needed to compile
 #
-CDEFINE= -DAg=11
+CDEFINE= -DAg=${Ag}
 
 # Include files that are needed to compile
 #
