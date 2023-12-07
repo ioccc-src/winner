@@ -20,8 +20,6 @@ STATUS: INABIAF - please **DO NOT** fix
 For more detailed information see [1993 rince in bugs.md](/bugs.md#1993-rince).
 
 
-
-
 ## To use:
 
 ```sh
@@ -61,7 +59,7 @@ changed).
 
 
 ```sh
-make CDEFINE="-DZ=18" clobber alt
+make SLEEP=18 clobber alt
 ```
 
 Replace 18 with whatever number you wish.
