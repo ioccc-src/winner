@@ -39,9 +39,9 @@ Also try changing the speed this game moves. For instance if you wish to change
 the `usleep(3)` value to `30000` from `20000`, try:
 
 ```sh
-make clobber CDEFINE="-DZ=30000" alt # make it slower
+make clobber SLEEP=30000 alt # make it slower
 
-make clobber CDEFINE="-DZ=10000" alt # make it faster
+make clobber SLEEP=10000 alt # make it faster
 ```
 
 Then use the same syntax as above and described by the author.
