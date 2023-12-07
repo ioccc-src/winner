@@ -37,8 +37,10 @@ You might also care to reconfigure the speed at which the programs run. The code
 calls `usleep(3)` with two default values, one for SDL and one for curses. The
 curses and SDL macros are defined respectively in the Makefile:
 
-```
--DZ=30 -DZS=150000
+```make
+SLEEP= 30
+SDL_SLEEP= 150000
+CDEFINE= -DZ=${SLEEP} -DZS=${SDL_SLEEP}
 ```
 
 which corresponds to how long the program sleeps (in microseconds) between
@@ -47,19 +49,20 @@ to the defaults as above so that you don't have to specify both just to
 configure one. To change the SDL one to something like `15000` you can do:
 
 ```sh
-make CDEFINE="-DZS=15000" clobber alt
+make SDL_SLEEP=15000 clobber alt
 ```
 
 and to change the curses one to `40`:
 
 ```sh
-make CDEFINE="-DZ=40" clobber alt
+make SLEEP=40 clobber alt
 ```
 
 Then use the program(s) in the same way.
 
 The different macros is because the curses version is already much slower and so
-it's better to not tie the two values together.
+it's better to not tie the two values together. You may of course combine them
+in one command.
 
 
 ## Original code:
