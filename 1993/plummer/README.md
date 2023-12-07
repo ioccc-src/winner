@@ -44,7 +44,7 @@ make alt
 If you wish to change the time to sleep (default `200`) you can do so like:
 
 ```sh
-make clobber CDEFINE="-DZ=50" alt
+make clobber SLEEP=50 alt
 ```
 
 
