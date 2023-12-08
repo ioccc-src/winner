@@ -1,7 +1,7 @@
 # FAQ Table of Contents
 
 ## Section  0 - [Submitting entries to a new IOCCC](#faq0)
-- [0.0  - How do I submit my entry to the IOCCC?](#faq0_0)
+- [0.0  - How may I submit to the IOCCC?](#faq0_0)
 - [0.1  - What types of entries have been over-submitted to the IOCCC?](#faq0_1)
 - [0.2  - What should I put in my entry's Makefile?](#faq0_2)
 - [0.3  - May I use a different source or compiled filename than prog.c or prog?](#faq0_3)
@@ -70,9 +70,11 @@ other inconsistencies with the original entry?](#faq4_3)
 ## <a name="faq0"></a>Section 0: Submitting entries to a new IOCCC
 
 
-### <a name="faq0_0"></a><a name="submit"></a>FAQ 0.0: How do I submit my entry to the IOCCC?
+### <a name="faq0_0"></a><a name="submif"></a>FAQ 0.0: How may I submit to the IOCCC?
 
-0. Verify that for submissions.
+To submit your code to the IOCCC, you **MUST** follow these steps:
+
+0. Verify that the IOCCC is open for submissions
 
 Check the [status.json](status.json) URL and
 check the [IOCCC news](news.html#news) to
@@ -81,16 +83,25 @@ see of the IOCCC is open.
 You may only register for the IOCCC
 and you may only submit your entries to the IOCCC when the IOCCC is **OPEN**.
 
-1. Register for the IOCCC
+1. Read the latest IOCCC rules and review the IOCCC guidelines
+
+Please read any pay close attention to the [official IOCCC rules](/rules.html).
+
+You are also **highly encouraged** to review the
+[official IOCCC guidelines](/guidelines.html) as they contain important
+suggestions, useful hints, and IOCCC humor.  :-)
+
+2. Register for the IOCCC
 
 ```
 XXX - instructions TBD - XXX
 ```
+
 Once you have been registered, you will receive an email message for how to
 prepare your entries for submission, and how to upload the compressed tarballs
 to our submission portal.
 
-2. Obtain the latest mkiocccentry toolkit
+3. Obtain the latest mkiocccentry toolkit
 
 If you do not have an mkiocccentry tool directory:
 
@@ -108,13 +119,13 @@ git fetch
 git rebase
 ```
 
-3. Make the mkiocccentry toolkit
+4. Make the mkiocccentry toolkit
 
 ```sh
 make clobber all
 ```
 
-4. Run the mkiocccentry tool to form your entry tarball
+5. Run the mkiocccentry tool to form your entry tarball
 
 ```sh
 ./mkiocccentry work_dir prog.c Makefile remarks.md [file ...]
@@ -138,7 +149,15 @@ remarks.md	Remarks about your entry in markdown format
 NOTE: It is *NOT* necessary to install the tools to use them as you can run
 the tools from the top of the _mkiocccentry repo_ directory just fine.
 
-5. upload your entry to the IOCCC submit server
+If `mkiocccentry` tool indicates that there is a problem with your entry,
+especially if it identifies a [rule 2](/rules.html#2) related problem,
+you are **strongly** encouraged to revise and correct your entry and
+then re-run the `mkiocccentry` tool.
+
+If you choose to risk of violating rules, be sure an explain your reason
+for doing so in your _remarks.md_ file.
+
+6. upload your entry to the IOCCC submit server
 
 ```
 XXX - instructions TBD - XXX
@@ -764,7 +783,7 @@ for 64-bit systems. Many were fixed to work with modern systems but some are
 supposed to only work with 32-bit systems so any updated version of these
 entries should be an alternate version.
 
-Other entries like [2001/herrmann2](/thanks-for-fixes.md#2001herrmann2-readmemd)
+Other entries like [2001/herrmann2](/thanks-for-help.md#2001_herrmann2)
 now work with 32-bit AND 64-bit systems.
 
 Please see the [bugs.md](/bugs.md) file for the problematic entry in question to see if the problem is known, and if a fix is wanted, consider trying to port the code to a 64-bit system and submitting a pull request with that change.  Pull requests that fix such code while trying to minimize the impact of any changes and preserving the spirit of the orignal code are very welcome!
@@ -1231,7 +1250,7 @@ version like `winner.alt.c` or `prog.alt.c`. In fact it is advisable to look at
 the original code when reading the author's (and sometimes authors') remarks.
 
 
-### <a name="faq4_1"></a>FAQ 4.1: Why were some calls to the libc function `gets(3)` changed to use `fgets(3)`?
+### <a name="faq4_1"></a><a name="gets"></a>FAQ 4.1: Why were some calls to the libc function `gets(3)` changed to use `fgets(3)`?
 
 Some may wonder: "Doesn't this tamper with the entry too much?"
 
@@ -1441,7 +1460,7 @@ Note that just because you have a fix does not mean it'll be accepted. This
 might be because the author objects or it doesn't fit in some way or another. Of
 course if the entry does not work we'll certainly be more inclined to accept the
 fix. If it is accepted we'll be happy to credit you in the
-[thanks](/thanks-for-fixes.md) file. If you're a previous winner we will happily
+[thanks](/thanks-for-help.md) file. If you're a previous winner we will happily
 link to your entries; if you're not we can link to your website if you wish.
 
 See [FAQ 5.2](#faq5_2) for information on how to submit a fix to an IOCCC entry.
@@ -1474,7 +1493,7 @@ files and we welcome these too!
 IOCCC winning entries are presented!
 
 In any event we will happily add you to the
-[thanks-for-fixes.md](/thanks-for-fixes.md) file for your help!
+[thanks](/thanks-for-help.md) file for your help!
 
 And of course, an IOCCC winner may update their own entries
 (metadata as well as source code and any extra files) by opening a
@@ -1558,7 +1577,7 @@ When in doubt, consider opening up an [IOCCC issue](https://github.com/ioccc-src
 See [FAQ 5.3](#faq5_3) for information on opening up an IOCCC issue.
 
 
-## <a name="faq5_5"></a>FAQ 5.5: How may I correct or update IOCCC author information?
+## <a name="faq5_5"></a><a name="fix_author"></a>FAQ 5.5: How may I correct or update IOCCC author information?
 
 Authors of IOCCC winning entries are kept in JSON files of the form:
 

@@ -44,7 +44,7 @@ make clobber alt
 ```
 
 Use `dale.alt` as you would `dale` above. To understand the differences in more
-detail, see [thanks-for-fixes.md](/thanks-for-fixes.md).
+detail, see [thanks-for-help.md](/thanks-for-help.md).
 
 
 ## Judges' remarks:
