@@ -22,7 +22,7 @@
 - [2.6  - How are IOCCC winners announced?](#faq2_6)
 
 ## Section  3 - [Compiling and running IOCCC winners](#faq3)
-- [3.0  - What Makefile are available to build or clean up IOCCC winners?](#faq3_0)
+- [3.0  - What Makefile rules are available to build or clean up IOCCC winners?](#faq3_0)
 - [3.1  - Why doesn't this IOCCC winner compile?](#faq3_1)
 - [3.2  - Why does a IOCCC winner fail on my 64-bit system?](#faq3_2)
 - [3.3  - Why do some IOCCC winners fail to compile under macOS?](#faq3_3)
@@ -62,6 +62,7 @@ other inconsistencies with the original entry?](#faq4_3)
 - [6.5  - What is an author handle?](#faq6_5)
 - [6.6  - What is a author_handle.json file and how are they used?](#faq6_6)
 - [6.7  - What is a winner_id?](#faq6_7)
+- [6.8 -  What is the purpose of the .top, .year and .path files?](#faq6_8)
 
 
 # The IOCCC FAQ
@@ -698,7 +699,7 @@ page](https://www.ioccc.org/years.html).
 ## <a name="faq3"></a>Section 3: Compiling and running IOCCC winners
 
 
-### <a name="faq3_0"></a>FAQ 3.0: What Makefile are available to build or clean up IOCCC winners?
+### <a name="faq3_0"></a>FAQ 3.0: What Makefile rules are available to build or clean up IOCCC winners?
 
 In general the best way to compile everything in an entry directory is to run:
 
@@ -2284,4 +2285,23 @@ The `winner_id` for that winning entry is:
 
 ```
 2020_ferguson2
+```
+
+
+### <a name="faq6_8"></a>FAQ 6.8: What is the purpose of the .top, .year and .path files?
+
+The [.top](/.top) file resides at the top directory.  This file contains the complete list
+of IOCCC years.
+
+Under each IOCCC year. one will find a `.year` file.  These files contain directory paths from the top directory,
+of the IOCCC winner directories for a given year.  For example, see the [1984/.year](/.1984/.year) file.
+
+Under each IOCCC winner directory, you will find a `.path` file.
+These files contain the directory path from the top directory.
+For example see [1984/anonymous/.path](/1984/anonymous/.path).
+
+The .top, .year and .path files are generated from the top level Makefile, by:
+
+```sh
+make genpath
 ```

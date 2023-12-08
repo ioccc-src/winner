@@ -37,34 +37,40 @@ SHELL= bash
 include var.mk
 
 
+#############
+# IOCCC years
+#############
+#
+YEARS=	1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 \
+	1994 1995 1996 1998 2000 2001 2004 2005 2006 2011 \
+	2012 2013 2014 2015 2018 2019 2020
+
+
 ###################
 # build all entries
 ###################
 #
 all:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
-        done
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
+	fi; \
+	done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 .PHONY: all alt data everything diff_orig_prog diff_prog_orig \
 	diff_alt_prog diff_prog_alt diff_orig_alt diff_alt_orig \
-	clean clobber install love haste waste maker easter_egg \
-	sandwich supernova deep_magic magic charon pluto
+	clean clobber install genpath love haste waste maker \
+	easter_egg sandwich supernova deep_magic magic charon pluto
 
 # alternative executable
 #
 alt:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
@@ -72,11 +78,9 @@ alt:
 #
 data:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
@@ -84,11 +88,9 @@ data:
 #
 everything:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
@@ -101,11 +103,9 @@ everything:
 #
 diff_orig_prog:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
@@ -113,11 +113,9 @@ diff_orig_prog:
 #
 diff_prog_orig:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
@@ -125,11 +123,9 @@ diff_prog_orig:
 #
 diff_alt_prog:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
@@ -137,11 +133,9 @@ diff_alt_prog:
 #
 diff_prog_alt:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
@@ -149,21 +143,17 @@ diff_prog_alt:
 #
 diff_orig_alt:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 diff_alt_orig:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
@@ -174,42 +164,52 @@ diff_alt_orig:
 #
 clean:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 clobber:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 install:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 indent.c:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
+	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
+
+genpath:
+	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
+	@${RM} -f .tmp.genpath
+	@-for i in ${YEARS}; do \
+	    echo "$$i" >> .tmp.genpath; \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
+        done
+	@-if ${CMP} -s .tmp.genpath .top; then \
+	    ${RM} -f .tmp.genpath; \
+	    echo ".top already up to date"; \
+	else \
+	    ${MV} -f .tmp.genpath .top; \
+	    ${CHMOD} 0444 .top; \
+	    echo "updated .top"; \
+	fi
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 
@@ -219,61 +219,49 @@ indent.c:
 #
 love:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 haste:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 waste:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 maker:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 easter_egg:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 sandwich:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
@@ -282,50 +270,40 @@ sandwich:
 #
 supernova:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 deep_magic:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 magic:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 charon:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
 pluto:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
-	@-for i in [12][0-9][0-9][0-9]; do \
-            if [ -f $$i/Makefile ]; then \
-                echo "cd $$i; make $@"; \
-                (cd $$i; make $@); \
-            fi; \
+	@-for i in ${YEARS}; do \
+	    echo "cd $$i; make $@"; \
+	    (cd $$i; make $@); \
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='

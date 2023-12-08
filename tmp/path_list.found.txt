@@ -1,4 +1,5 @@
 1984/anonymous/.gitignore
+1984/anonymous/.path
 1984/anonymous/.winner.json
 1984/anonymous/1984-anonymous-tattoo.jpg
 1984/anonymous/Makefile
@@ -9,6 +10,7 @@
 1984/anonymous/index.html
 1984/anonymous/inventory.html
 1984/decot/.gitignore
+1984/decot/.path
 1984/decot/.winner.json
 1984/decot/Makefile
 1984/decot/README.md
@@ -18,6 +20,7 @@
 1984/decot/index.html
 1984/decot/inventory.html
 1984/laman/.gitignore
+1984/laman/.path
 1984/laman/.winner.json
 1984/laman/Makefile
 1984/laman/README.md
@@ -26,6 +29,7 @@
 1984/laman/laman.c
 1984/laman/laman.orig.c
 1984/mullender/.gitignore
+1984/mullender/.path
 1984/mullender/.winner.json
 1984/mullender/Makefile
 1984/mullender/README.md
@@ -38,6 +42,7 @@
 1984/mullender/mullender.c
 1984/mullender/mullender.orig.c
 1985/applin/.gitignore
+1985/applin/.path
 1985/applin/.winner.json
 1985/applin/Makefile
 1985/applin/README.md
@@ -46,6 +51,7 @@
 1985/applin/index.html
 1985/applin/inventory.html
 1985/august/.gitignore
+1985/august/.path
 1985/august/.winner.json
 1985/august/Makefile
 1985/august/README.md
@@ -55,6 +61,7 @@
 1985/august/inventory.html
 1985/august/primes.sh
 1985/lycklama/.gitignore
+1985/lycklama/.path
 1985/lycklama/.winner.json
 1985/lycklama/Makefile
 1985/lycklama/README.md
@@ -64,6 +71,7 @@
 1985/lycklama/lycklama.c
 1985/lycklama/lycklama.orig.c
 1985/shapiro/.gitignore
+1985/shapiro/.path
 1985/shapiro/.winner.json
 1985/shapiro/Makefile
 1985/shapiro/README.md
@@ -74,6 +82,7 @@
 1985/shapiro/shapiro.orig.c
 1985/shapiro/try.alt.sh
 1985/sicherman/.gitignore
+1985/sicherman/.path
 1985/sicherman/.winner.json
 1985/sicherman/Makefile
 1985/sicherman/README.md
@@ -84,6 +93,7 @@
 1985/sicherman/sicherman.c
 1985/sicherman/sicherman.orig.c
 1986/applin/.gitignore
+1986/applin/.path
 1986/applin/.winner.json
 1986/applin/Makefile
 1986/applin/README.md
@@ -92,6 +102,7 @@
 1986/applin/index.html
 1986/applin/inventory.html
 1986/august/.gitignore
+1986/august/.path
 1986/august/.winner.json
 1986/august/Makefile
 1986/august/README.md
@@ -100,6 +111,7 @@
 1986/august/index.html
 1986/august/inventory.html
 1986/bright/.gitignore
+1986/bright/.path
 1986/bright/.winner.json
 1986/bright/Makefile
 1986/bright/README.md
@@ -108,6 +120,7 @@
 1986/bright/index.html
 1986/bright/inventory.html
 1986/hague/.gitignore
+1986/hague/.path
 1986/hague/.winner.json
 1986/hague/Makefile
 1986/hague/README.md
@@ -117,6 +130,7 @@
 1986/hague/index.html
 1986/hague/inventory.html
 1986/holloway/.gitignore
+1986/holloway/.path
 1986/holloway/.winner.json
 1986/holloway/Makefile
 1986/holloway/README.md
@@ -125,6 +139,7 @@
 1986/holloway/index.html
 1986/holloway/inventory.html
 1986/marshall/.gitignore
+1986/marshall/.path
 1986/marshall/.winner.json
 1986/marshall/Makefile
 1986/marshall/README.md
@@ -135,6 +150,7 @@
 1986/marshall/marshall.c
 1986/marshall/marshall.orig.c
 1986/pawka/.gitignore
+1986/pawka/.path
 1986/pawka/.winner.json
 1986/pawka/Makefile
 1986/pawka/README.md
@@ -143,6 +159,7 @@
 1986/pawka/pawka.c
 1986/pawka/pawka.orig.c
 1986/stein/.gitignore
+1986/stein/.path
 1986/stein/.winner.json
 1986/stein/Makefile
 1986/stein/README.md
@@ -151,6 +168,7 @@
 1986/stein/stein.c
 1986/stein/stein.orig.c
 1986/wall/.gitignore
+1986/wall/.path
 1986/wall/.winner.json
 1986/wall/Makefile
 1986/wall/README.md
@@ -160,6 +178,7 @@
 1986/wall/wall.c
 1986/wall/wall.orig.c
 1987/biggar/.gitignore
+1987/biggar/.path
 1987/biggar/.winner.json
 1987/biggar/Makefile
 1987/biggar/README.md
@@ -168,6 +187,7 @@
 1987/biggar/index.html
 1987/biggar/inventory.html
 1987/heckbert/.gitignore
+1987/heckbert/.path
 1987/heckbert/.winner.json
 1987/heckbert/Makefile
 1987/heckbert/README.md
@@ -176,6 +196,7 @@
 1987/heckbert/index.html
 1987/heckbert/inventory.html
 1987/hines/.gitignore
+1987/hines/.path
 1987/hines/.winner.json
 1987/hines/Makefile
 1987/hines/README.md
@@ -185,6 +206,7 @@
 1987/hines/index.html
 1987/hines/inventory.html
 1987/korn/.gitignore
+1987/korn/.path
 1987/korn/.winner.json
 1987/korn/Makefile
 1987/korn/README.md
@@ -193,6 +215,7 @@
 1987/korn/korn.c
 1987/korn/korn.orig.c
 1987/lievaart/.gitignore
+1987/lievaart/.path
 1987/lievaart/.winner.json
 1987/lievaart/Makefile
 1987/lievaart/README.md
@@ -204,6 +227,7 @@
 1987/lievaart/lievaart2.alt.c
 1987/lievaart/lievaart2.c
 1987/wall/.gitignore
+1987/wall/.path
 1987/wall/.winner.json
 1987/wall/Makefile
 1987/wall/README.md
@@ -212,6 +236,7 @@
 1987/wall/wall.c
 1987/wall/wall.orig.c
 1987/westley/.gitignore
+1987/westley/.path
 1987/westley/.winner.json
 1987/westley/Makefile
 1987/westley/README.md
@@ -221,6 +246,7 @@
 1987/westley/westley.c
 1987/westley/westley.orig.c
 1988/applin/.gitignore
+1988/applin/.path
 1988/applin/.winner.json
 1988/applin/Makefile
 1988/applin/README.md
@@ -230,6 +256,7 @@
 1988/applin/index.html
 1988/applin/inventory.html
 1988/dale/.gitignore
+1988/dale/.path
 1988/dale/.winner.json
 1988/dale/Makefile
 1988/dale/README.md
@@ -239,6 +266,7 @@
 1988/dale/index.html
 1988/dale/inventory.html
 1988/isaak/.gitignore
+1988/isaak/.path
 1988/isaak/.winner.json
 1988/isaak/Makefile
 1988/isaak/README.md
@@ -249,6 +277,7 @@
 1988/isaak/isaak.encode
 1988/isaak/isaak.orig.c
 1988/litmaath/.gitignore
+1988/litmaath/.path
 1988/litmaath/.winner.json
 1988/litmaath/Makefile
 1988/litmaath/README.md
@@ -258,6 +287,7 @@
 1988/litmaath/litmaath.c
 1988/litmaath/litmaath.orig.c
 1988/phillipps/.gitignore
+1988/phillipps/.path
 1988/phillipps/.winner.json
 1988/phillipps/Makefile
 1988/phillipps/README.md
@@ -266,6 +296,7 @@
 1988/phillipps/phillipps.c
 1988/phillipps/phillipps.orig.c
 1988/reddy/.gitignore
+1988/reddy/.path
 1988/reddy/.winner.json
 1988/reddy/Makefile
 1988/reddy/README.md
@@ -274,6 +305,7 @@
 1988/reddy/reddy.c
 1988/reddy/reddy.orig.c
 1988/robison/.gitignore
+1988/robison/.path
 1988/robison/.winner.json
 1988/robison/Makefile
 1988/robison/README.md
@@ -282,6 +314,7 @@
 1988/robison/robison.c
 1988/robison/robison.orig.c
 1988/spinellis/.gitignore
+1988/spinellis/.path
 1988/spinellis/.winner.json
 1988/spinellis/Makefile
 1988/spinellis/README.md
@@ -293,6 +326,7 @@
 1988/spinellis/spinellis.c
 1988/spinellis/spinellis.orig.c
 1988/westley/.gitignore
+1988/westley/.path
 1988/westley/.winner.json
 1988/westley/Makefile
 1988/westley/README.md
@@ -303,6 +337,7 @@
 1988/westley/westley.c
 1988/westley/westley.orig.c
 1989/fubar/.gitignore
+1989/fubar/.path
 1989/fubar/.winner.json
 1989/fubar/Makefile
 1989/fubar/README.md
@@ -312,6 +347,7 @@
 1989/fubar/index.html
 1989/fubar/inventory.html
 1989/jar.1/.gitignore
+1989/jar.1/.path
 1989/jar.1/.winner.json
 1989/jar.1/Makefile
 1989/jar.1/README.md
@@ -323,6 +359,7 @@
 1989/jar.1/jar.1.orig.c
 1989/jar.1/jar.1.sh
 1989/jar.2/.gitignore
+1989/jar.2/.path
 1989/jar.2/.winner.json
 1989/jar.2/Makefile
 1989/jar.2/README.md
@@ -335,6 +372,7 @@
 1989/jar.2/try.sh
 1989/jar.2/try.txt
 1989/ovdluhe/.gitignore
+1989/ovdluhe/.path
 1989/ovdluhe/.winner.json
 1989/ovdluhe/Makefile
 1989/ovdluhe/README.md
@@ -344,6 +382,7 @@
 1989/ovdluhe/ovdluhe.c
 1989/ovdluhe/ovdluhe.orig.c
 1989/paul/.gitignore
+1989/paul/.path
 1989/paul/.winner.json
 1989/paul/Makefile
 1989/paul/README.md
@@ -353,6 +392,7 @@
 1989/paul/paul.c
 1989/paul/paul.orig.c
 1989/robison/.gitignore
+1989/robison/.path
 1989/robison/.winner.json
 1989/robison/Makefile
 1989/robison/README.md
@@ -361,6 +401,7 @@
 1989/robison/robison.c
 1989/robison/robison.orig.c
 1989/roemer/.gitignore
+1989/roemer/.path
 1989/roemer/.winner.json
 1989/roemer/Makefile
 1989/roemer/README.md
@@ -369,6 +410,7 @@
 1989/roemer/roemer.c
 1989/roemer/roemer.orig.c
 1989/tromp/.gitignore
+1989/tromp/.path
 1989/tromp/.winner.json
 1989/tromp/Makefile
 1989/tromp/README.md
@@ -378,6 +420,7 @@
 1989/tromp/tromp.c
 1989/tromp/tromp.orig.c
 1989/vanb/.gitignore
+1989/vanb/.path
 1989/vanb/.winner.json
 1989/vanb/Makefile
 1989/vanb/README.md
@@ -386,6 +429,7 @@
 1989/vanb/vanb.c
 1989/vanb/vanb.orig.c
 1989/westley/.gitignore
+1989/westley/.path
 1989/westley/.winner.json
 1989/westley/Makefile
 1989/westley/README.md
@@ -396,6 +440,7 @@
 1989/westley/westley.c
 1989/westley/westley.orig.c
 1990/baruch/.gitignore
+1990/baruch/.path
 1990/baruch/.winner.json
 1990/baruch/Makefile
 1990/baruch/README.md
@@ -405,6 +450,7 @@
 1990/baruch/index.html
 1990/baruch/inventory.html
 1990/cmills/.gitignore
+1990/cmills/.path
 1990/cmills/.winner.json
 1990/cmills/Makefile
 1990/cmills/README.md
@@ -413,6 +459,7 @@
 1990/cmills/index.html
 1990/cmills/inventory.html
 1990/dds/.gitignore
+1990/dds/.path
 1990/dds/.winner.json
 1990/dds/LANDER.BAS
 1990/dds/Makefile
@@ -422,6 +469,7 @@
 1990/dds/index.html
 1990/dds/inventory.html
 1990/dg/.gitignore
+1990/dg/.path
 1990/dg/.winner.json
 1990/dg/Makefile
 1990/dg/README.md
@@ -430,6 +478,7 @@
 1990/dg/index.html
 1990/dg/inventory.html
 1990/jaw/.gitignore
+1990/jaw/.path
 1990/jaw/.winner.json
 1990/jaw/Makefile
 1990/jaw/README.md
@@ -441,6 +490,7 @@
 1990/jaw/shark.sh
 1990/jaw/try.sh
 1990/pjr/.gitignore
+1990/pjr/.path
 1990/pjr/.winner.json
 1990/pjr/Makefile
 1990/pjr/README.md
@@ -450,6 +500,7 @@
 1990/pjr/pjr.c
 1990/pjr/pjr.orig.c
 1990/scjones/.gitignore
+1990/scjones/.path
 1990/scjones/.winner.json
 1990/scjones/Makefile
 1990/scjones/README.md
@@ -458,6 +509,7 @@
 1990/scjones/scjones.c
 1990/scjones/scjones.orig.c
 1990/stig/.gitignore
+1990/stig/.path
 1990/stig/.winner.json
 1990/stig/Makefile
 1990/stig/README.md
@@ -467,6 +519,7 @@
 1990/stig/stig.orig.c
 1990/stig/stig.sh
 1990/tbr/.gitignore
+1990/tbr/.path
 1990/tbr/.winner.json
 1990/tbr/Makefile
 1990/tbr/README.md
@@ -476,6 +529,7 @@
 1990/tbr/tbr.c
 1990/tbr/tbr.orig.c
 1990/theorem/.gitignore
+1990/theorem/.path
 1990/theorem/.winner.json
 1990/theorem/Makefile
 1990/theorem/README.md
@@ -484,6 +538,7 @@
 1990/theorem/theorem.c
 1990/theorem/theorem.orig.c
 1990/westley/.gitignore
+1990/westley/.path
 1990/westley/.winner.json
 1990/westley/Makefile
 1990/westley/README.md
@@ -493,6 +548,7 @@
 1990/westley/westley.c
 1990/westley/westley.orig.c
 1991/ant/.gitignore
+1991/ant/.path
 1991/ant/.winner.json
 1991/ant/Makefile
 1991/ant/README.md
@@ -502,6 +558,7 @@
 1991/ant/index.html
 1991/ant/inventory.html
 1991/brnstnd/.gitignore
+1991/brnstnd/.path
 1991/brnstnd/.winner.json
 1991/brnstnd/Makefile
 1991/brnstnd/README.md
@@ -524,6 +581,7 @@
 1991/brnstnd/sorta.itailrec
 1991/brnstnd/sorta.iwhosort
 1991/buzzard/.gitignore
+1991/buzzard/.path
 1991/buzzard/.winner.json
 1991/buzzard/Makefile
 1991/buzzard/README.md
@@ -533,6 +591,7 @@
 1991/buzzard/index.html
 1991/buzzard/inventory.html
 1991/cdupont/.gitignore
+1991/cdupont/.path
 1991/cdupont/.winner.json
 1991/cdupont/Makefile
 1991/cdupont/README.md
@@ -541,6 +600,7 @@
 1991/cdupont/index.html
 1991/cdupont/inventory.html
 1991/davidguy/.gitignore
+1991/davidguy/.path
 1991/davidguy/.winner.json
 1991/davidguy/Makefile
 1991/davidguy/README.md
@@ -549,6 +609,7 @@
 1991/davidguy/index.html
 1991/davidguy/inventory.html
 1991/dds/.gitignore
+1991/dds/.path
 1991/dds/.winner.json
 1991/dds/LANDER.BAS
 1991/dds/Makefile
@@ -558,6 +619,7 @@
 1991/dds/index.html
 1991/dds/inventory.html
 1991/fine/.gitignore
+1991/fine/.path
 1991/fine/.winner.json
 1991/fine/Makefile
 1991/fine/README.md
@@ -567,6 +629,7 @@
 1991/fine/inventory.html
 1991/fine/try.sh
 1991/rince/.gitignore
+1991/rince/.path
 1991/rince/.winner.json
 1991/rince/Makefile
 1991/rince/README.md
@@ -577,6 +640,7 @@
 1991/rince/rince.c
 1991/rince/rince.orig.c
 1991/westley/.gitignore
+1991/westley/.path
 1991/westley/.winner.json
 1991/westley/Makefile
 1991/westley/README.md
@@ -588,6 +652,7 @@
 1991/westley/westley.c
 1991/westley/westley.orig.c
 1992/adrian/.gitignore
+1992/adrian/.path
 1992/adrian/.winner.json
 1992/adrian/Makefile
 1992/adrian/README.md
@@ -603,6 +668,7 @@
 1992/adrian/index.html
 1992/adrian/inventory.html
 1992/albert/.gitignore
+1992/albert/.path
 1992/albert/.winner.json
 1992/albert/Makefile
 1992/albert/README.md
@@ -612,6 +678,7 @@
 1992/albert/index.html
 1992/albert/inventory.html
 1992/ant/.gitignore
+1992/ant/.path
 1992/ant/.winner.json
 1992/ant/Makefile
 1992/ant/README.md
@@ -622,6 +689,7 @@
 1992/ant/index.html
 1992/ant/inventory.html
 1992/buzzard.1/.gitignore
+1992/buzzard.1/.path
 1992/buzzard.1/.winner.json
 1992/buzzard.1/Makefile
 1992/buzzard.1/README.md
@@ -631,6 +699,7 @@
 1992/buzzard.1/inventory.html
 1992/buzzard.1/try.sh
 1992/buzzard.2/.gitignore
+1992/buzzard.2/.path
 1992/buzzard.2/.winner.json
 1992/buzzard.2/Makefile
 1992/buzzard.2/README.md
@@ -651,6 +720,7 @@
 1992/buzzard.2/inventory.html
 1992/buzzard.2/third
 1992/gson/.gitignore
+1992/gson/.path
 1992/gson/.winner.json
 1992/gson/Makefile
 1992/gson/README.md
@@ -660,6 +730,7 @@
 1992/gson/inventory.html
 1992/gson/mkdict.sh
 1992/imc/.gitignore
+1992/imc/.path
 1992/imc/.winner.json
 1992/imc/Makefile
 1992/imc/README.md
@@ -668,6 +739,7 @@
 1992/imc/index.html
 1992/imc/inventory.html
 1992/kivinen/.gitignore
+1992/kivinen/.path
 1992/kivinen/.winner.json
 1992/kivinen/Makefile
 1992/kivinen/README.md
@@ -677,6 +749,7 @@
 1992/kivinen/kivinen.c
 1992/kivinen/kivinen.orig.c
 1992/lush/.gitignore
+1992/lush/.path
 1992/lush/.winner.json
 1992/lush/Makefile
 1992/lush/README.md
@@ -686,6 +759,7 @@
 1992/lush/lush.orig.c
 1992/lush/runme.sh
 1992/marangon/.gitignore
+1992/marangon/.path
 1992/marangon/.winner.json
 1992/marangon/Makefile
 1992/marangon/README.md
@@ -694,6 +768,7 @@
 1992/marangon/marangon.c
 1992/marangon/marangon.orig.c
 1992/nathan/.gitignore
+1992/nathan/.path
 1992/nathan/.winner.json
 1992/nathan/Makefile
 1992/nathan/README.md
@@ -703,6 +778,7 @@
 1992/nathan/nathan.orig.c
 1992/nathan/try.sh
 1992/vern/.gitignore
+1992/vern/.path
 1992/vern/.winner.json
 1992/vern/Makefile
 1992/vern/README.md
@@ -711,6 +787,7 @@
 1992/vern/vern.c
 1992/vern/vern.orig.c
 1992/westley/.gitignore
+1992/westley/.path
 1992/westley/.winner.json
 1992/westley/Makefile
 1992/westley/README.md
@@ -725,6 +802,7 @@
 1992/westley/whereami.c
 1992/westley/whereami.sh
 1993/ant/.gitignore
+1993/ant/.path
 1993/ant/.winner.json
 1993/ant/Makefile
 1993/ant/README.md
@@ -735,6 +813,7 @@
 1993/ant/index.html
 1993/ant/inventory.html
 1993/cmills/.gitignore
+1993/cmills/.path
 1993/cmills/.winner.json
 1993/cmills/Makefile
 1993/cmills/README.md
@@ -744,6 +823,7 @@
 1993/cmills/index.html
 1993/cmills/inventory.html
 1993/dgibson/.gitignore
+1993/dgibson/.path
 1993/dgibson/.winner.json
 1993/dgibson/Makefile
 1993/dgibson/README.md
@@ -758,6 +838,7 @@
 1993/dgibson/index.html
 1993/dgibson/inventory.html
 1993/ejb/.gitignore
+1993/ejb/.path
 1993/ejb/.winner.json
 1993/ejb/Makefile
 1993/ejb/README.md
@@ -768,6 +849,7 @@
 1993/ejb/inventory.html
 1993/ejb/patience.md
 1993/jonth/.gitignore
+1993/jonth/.path
 1993/jonth/.winner.json
 1993/jonth/Makefile
 1993/jonth/README.md
@@ -776,6 +858,7 @@
 1993/jonth/jonth.c
 1993/jonth/jonth.orig.c
 1993/leo/.gitignore
+1993/leo/.path
 1993/leo/.winner.json
 1993/leo/Makefile
 1993/leo/README.md
@@ -784,6 +867,7 @@
 1993/leo/leo.c
 1993/leo/leo.orig.c
 1993/lmfjyh/.gitignore
+1993/lmfjyh/.path
 1993/lmfjyh/.winner.json
 1993/lmfjyh/Makefile
 1993/lmfjyh/README.md
@@ -793,6 +877,7 @@
 1993/lmfjyh/lmfjyh.c
 1993/lmfjyh/lmfjyh.orig.c
 1993/plummer/.gitignore
+1993/plummer/.path
 1993/plummer/.winner.json
 1993/plummer/Makefile
 1993/plummer/README.md
@@ -802,6 +887,7 @@
 1993/plummer/plummer.c
 1993/plummer/plummer.orig.c
 1993/rince/.gitignore
+1993/rince/.path
 1993/rince/.winner.json
 1993/rince/Makefile
 1993/rince/README.md
@@ -817,6 +903,7 @@
 1993/rince/rince.data4
 1993/rince/rince.orig.c
 1993/schnitzi/.gitignore
+1993/schnitzi/.path
 1993/schnitzi/.winner.json
 1993/schnitzi/Makefile
 1993/schnitzi/README.md
@@ -826,6 +913,7 @@
 1993/schnitzi/schnitzi.info
 1993/schnitzi/schnitzi.orig.c
 1993/vanb/.gitignore
+1993/vanb/.path
 1993/vanb/.winner.json
 1993/vanb/Makefile
 1993/vanb/README.md
@@ -835,6 +923,7 @@
 1993/vanb/vanb.c
 1993/vanb/vanb.orig.c
 1994/dodsond1/.gitignore
+1994/dodsond1/.path
 1994/dodsond1/.winner.json
 1994/dodsond1/Makefile
 1994/dodsond1/README.md
@@ -843,6 +932,7 @@
 1994/dodsond1/index.html
 1994/dodsond1/inventory.html
 1994/dodsond2/.gitignore
+1994/dodsond2/.path
 1994/dodsond2/.winner.json
 1994/dodsond2/Makefile
 1994/dodsond2/README.md
@@ -853,6 +943,7 @@
 1994/dodsond2/index.html
 1994/dodsond2/inventory.html
 1994/horton/.gitignore
+1994/horton/.path
 1994/horton/.winner.json
 1994/horton/Makefile
 1994/horton/README.md
@@ -864,6 +955,7 @@
 1994/horton/index.html
 1994/horton/inventory.html
 1994/imc/.gitignore
+1994/imc/.path
 1994/imc/.winner.json
 1994/imc/Makefile
 1994/imc/README.md
@@ -872,6 +964,7 @@
 1994/imc/index.html
 1994/imc/inventory.html
 1994/ldb/.gitignore
+1994/ldb/.path
 1994/ldb/.winner.json
 1994/ldb/Makefile
 1994/ldb/README.md
@@ -880,6 +973,7 @@
 1994/ldb/ldb.c
 1994/ldb/ldb.orig.c
 1994/schnitzi/.gitignore
+1994/schnitzi/.path
 1994/schnitzi/.winner.json
 1994/schnitzi/Makefile
 1994/schnitzi/README.md
@@ -890,6 +984,7 @@
 1994/schnitzi/schnitzi.c
 1994/schnitzi/schnitzi.orig.c
 1994/shapiro/.gitignore
+1994/shapiro/.path
 1994/shapiro/.winner.json
 1994/shapiro/Makefile
 1994/shapiro/README.md
@@ -899,6 +994,7 @@
 1994/shapiro/shapiro.md
 1994/shapiro/shapiro.orig.c
 1994/smr/.gitignore
+1994/smr/.path
 1994/smr/.winner.json
 1994/smr/Makefile
 1994/smr/README.md
@@ -907,6 +1003,7 @@
 1994/smr/smr.c
 1994/smr/smr.orig.c
 1994/tvr/.gitignore
+1994/tvr/.path
 1994/tvr/.winner.json
 1994/tvr/Makefile
 1994/tvr/README.md
@@ -918,6 +1015,7 @@
 1994/tvr/tvr.color
 1994/tvr/tvr.orig.c
 1994/weisberg/.gitignore
+1994/weisberg/.path
 1994/weisberg/.winner.json
 1994/weisberg/Makefile
 1994/weisberg/README.md
@@ -926,6 +1024,7 @@
 1994/weisberg/weisberg.c
 1994/weisberg/weisberg.orig.c
 1994/westley/.gitignore
+1994/westley/.path
 1994/westley/.winner.json
 1994/westley/Makefile
 1994/westley/README.md
@@ -935,6 +1034,7 @@
 1994/westley/westley.c
 1994/westley/westley.orig.c
 1995/cdua/.gitignore
+1995/cdua/.path
 1995/cdua/.winner.json
 1995/cdua/Makefile
 1995/cdua/README.md
@@ -944,6 +1044,7 @@
 1995/cdua/index.html
 1995/cdua/inventory.html
 1995/dodsond1/.gitignore
+1995/dodsond1/.path
 1995/dodsond1/.winner.json
 1995/dodsond1/Makefile
 1995/dodsond1/README.md
@@ -954,6 +1055,7 @@
 1995/dodsond1/try.sh
 1995/dodsond1/try.this.txt
 1995/dodsond2/.gitignore
+1995/dodsond2/.path
 1995/dodsond2/.winner.json
 1995/dodsond2/Makefile
 1995/dodsond2/README.md
@@ -962,6 +1064,7 @@
 1995/dodsond2/index.html
 1995/dodsond2/inventory.html
 1995/esde/.gitignore
+1995/esde/.path
 1995/esde/.winner.json
 1995/esde/Makefile
 1995/esde/README.md
@@ -973,6 +1076,7 @@
 1995/esde/inventory.html
 1995/esde/try.sh
 1995/garry/.gitignore
+1995/garry/.path
 1995/garry/.winner.json
 1995/garry/Makefile
 1995/garry/README.md
@@ -986,6 +1090,7 @@
 1995/garry/try.alt.sh
 1995/garry/try.sh
 1995/heathbar/.gitignore
+1995/heathbar/.path
 1995/heathbar/.winner.json
 1995/heathbar/Makefile
 1995/heathbar/README.md
@@ -994,6 +1099,7 @@
 1995/heathbar/index.html
 1995/heathbar/inventory.html
 1995/leo/.gitignore
+1995/leo/.path
 1995/leo/.winner.json
 1995/leo/Makefile
 1995/leo/README.md
@@ -1003,6 +1109,7 @@
 1995/leo/leo.orig.c
 1995/leo/spoiler1.md
 1995/makarios/.gitignore
+1995/makarios/.path
 1995/makarios/.winner.json
 1995/makarios/Makefile
 1995/makarios/README.md
@@ -1011,6 +1118,7 @@
 1995/makarios/makarios.c
 1995/makarios/makarios.orig.c
 1995/savastio/.gitignore
+1995/savastio/.path
 1995/savastio/.winner.json
 1995/savastio/Makefile
 1995/savastio/README.md
@@ -1019,6 +1127,7 @@
 1995/savastio/savastio.c
 1995/savastio/savastio.orig.c
 1995/schnitzi/.gitignore
+1995/schnitzi/.path
 1995/schnitzi/.winner.json
 1995/schnitzi/Makefile
 1995/schnitzi/README.md
@@ -1027,6 +1136,7 @@
 1995/schnitzi/schnitzi.c
 1995/schnitzi/schnitzi.orig.c
 1995/spinellis/.gitignore
+1995/spinellis/.path
 1995/spinellis/.winner.json
 1995/spinellis/Makefile
 1995/spinellis/README.md
@@ -1035,6 +1145,7 @@
 1995/spinellis/spinellis.c
 1995/spinellis/spinellis.orig.c
 1995/vanschnitz/.gitignore
+1995/vanschnitz/.path
 1995/vanschnitz/.winner.json
 1995/vanschnitz/Makefile
 1995/vanschnitz/README.md
@@ -1044,6 +1155,7 @@
 1995/vanschnitz/vanschnitz.c
 1995/vanschnitz/vanschnitz.orig.c
 1996/august/.gitignore
+1996/august/.path
 1996/august/.winner.json
 1996/august/Makefile
 1996/august/README.md
@@ -1056,6 +1168,7 @@
 1996/august/test.oc
 1996/august/try.sh
 1996/dalbec/.gitignore
+1996/dalbec/.path
 1996/dalbec/.winner.json
 1996/dalbec/Makefile
 1996/dalbec/README.md
@@ -1064,6 +1177,7 @@
 1996/dalbec/index.html
 1996/dalbec/inventory.html
 1996/eldby/.gitignore
+1996/eldby/.path
 1996/eldby/.winner.json
 1996/eldby/Makefile
 1996/eldby/README.md
@@ -1073,6 +1187,7 @@
 1996/eldby/index.html
 1996/eldby/inventory.html
 1996/gandalf/.gitignore
+1996/gandalf/.path
 1996/gandalf/.winner.json
 1996/gandalf/Makefile
 1996/gandalf/README.md
@@ -1082,6 +1197,7 @@
 1996/gandalf/inventory.html
 1996/gandalf/try.sh
 1996/huffman/.gitignore
+1996/huffman/.path
 1996/huffman/.winner.json
 1996/huffman/Makefile
 1996/huffman/README.md
@@ -1091,6 +1207,7 @@
 1996/huffman/inventory.html
 1996/huffman/try.sh
 1996/jonth/.gitignore
+1996/jonth/.path
 1996/jonth/.winner.json
 1996/jonth/Makefile
 1996/jonth/README.md
@@ -1099,6 +1216,7 @@
 1996/jonth/jonth.c
 1996/jonth/jonth.orig.c
 1996/rcm/.gitignore
+1996/rcm/.path
 1996/rcm/.winner.json
 1996/rcm/Makefile
 1996/rcm/README.md
@@ -1109,6 +1227,7 @@
 1996/rcm/rfc1951.gz
 1996/rcm/rfc1952.gz
 1996/schweikh1/.gitignore
+1996/schweikh1/.path
 1996/schweikh1/.winner.json
 1996/schweikh1/Makefile
 1996/schweikh1/README.md
@@ -1118,6 +1237,7 @@
 1996/schweikh1/schweikh1.c
 1996/schweikh1/schweikh1.orig.c
 1996/schweikh2/.gitignore
+1996/schweikh2/.path
 1996/schweikh2/.winner.json
 1996/schweikh2/Makefile
 1996/schweikh2/README.md
@@ -1129,6 +1249,7 @@
 1996/schweikh2/schweikh2.orig.c
 1996/schweikh2/try.sh
 1996/schweikh3/.gitignore
+1996/schweikh3/.path
 1996/schweikh3/.winner.json
 1996/schweikh3/Makefile
 1996/schweikh3/README.md
@@ -1138,6 +1259,7 @@
 1996/schweikh3/schweikh3.info
 1996/schweikh3/schweikh3.orig.c
 1996/westley/.gitignore
+1996/westley/.path
 1996/westley/.winner.json
 1996/westley/Makefile
 1996/westley/README.md
@@ -1152,6 +1274,7 @@
 1996/westley/westley.c
 1996/westley/westley.orig.c
 1998/banks/.gitignore
+1998/banks/.path
 1998/banks/.winner.json
 1998/banks/Makefile
 1998/banks/README.md
@@ -1167,6 +1290,7 @@
 1998/banks/pyramids.sc
 1998/banks/river.sc
 1998/bas1/.gitignore
+1998/bas1/.path
 1998/bas1/.winner.json
 1998/bas1/Makefile
 1998/bas1/README.md
@@ -1175,6 +1299,7 @@
 1998/bas1/index.html
 1998/bas1/inventory.html
 1998/bas2/.gitignore
+1998/bas2/.path
 1998/bas2/.winner.json
 1998/bas2/Makefile
 1998/bas2/README.md
@@ -1184,6 +1309,7 @@
 1998/bas2/inventory.html
 1998/bas2/try.sh
 1998/chaos/.gitignore
+1998/chaos/.path
 1998/chaos/.winner.json
 1998/chaos/Makefile
 1998/chaos/README.md
@@ -1197,6 +1323,7 @@
 1998/chaos/pyramid.data
 1998/chaos/xwing.data
 1998/df/.gitignore
+1998/df/.path
 1998/df/.winner.json
 1998/df/Makefile
 1998/df/README.md
@@ -1205,6 +1332,7 @@
 1998/df/index.html
 1998/df/inventory.html
 1998/dlowe/.gitignore
+1998/dlowe/.path
 1998/dlowe/.winner.json
 1998/dlowe/Makefile
 1998/dlowe/README.md
@@ -1217,6 +1345,7 @@
 1998/dlowe/pootify.sh
 1998/dlowe/try.sh
 1998/dloweneil/.gitignore
+1998/dloweneil/.path
 1998/dloweneil/.winner.json
 1998/dloweneil/Makefile
 1998/dloweneil/README.md
@@ -1226,6 +1355,7 @@
 1998/dloweneil/index.html
 1998/dloweneil/inventory.html
 1998/dorssel/.gitignore
+1998/dorssel/.path
 1998/dorssel/.winner.json
 1998/dorssel/Makefile
 1998/dorssel/README.md
@@ -1236,6 +1366,7 @@
 1998/dorssel/inventory.html
 1998/dorssel/try.sh
 1998/fanf/.gitignore
+1998/fanf/.path
 1998/fanf/.winner.json
 1998/fanf/Makefile
 1998/fanf/README.md
@@ -1246,6 +1377,7 @@
 1998/fanf/inventory.html
 1998/fanf/try.sh
 1998/schnitzi/.gitignore
+1998/schnitzi/.path
 1998/schnitzi/.winner.json
 1998/schnitzi/Makefile
 1998/schnitzi/README.md
@@ -1255,6 +1387,7 @@
 1998/schnitzi/schnitzi.orig.c
 1998/schnitzi/try.sh
 1998/schweikh1/.gitignore
+1998/schweikh1/.path
 1998/schweikh1/.winner.json
 1998/schweikh1/Makefile
 1998/schweikh1/README.md
@@ -1267,6 +1400,7 @@
 1998/schweikh1/schweikh1.c
 1998/schweikh1/schweikh1.orig.c
 1998/schweikh2/.gitignore
+1998/schweikh2/.path
 1998/schweikh2/.winner.json
 1998/schweikh2/Makefile
 1998/schweikh2/README.md
@@ -1275,6 +1409,7 @@
 1998/schweikh2/schweikh2.c
 1998/schweikh2/schweikh2.orig.c
 1998/schweikh3/.gitignore
+1998/schweikh3/.path
 1998/schweikh3/.winner.json
 1998/schweikh3/Makefile
 1998/schweikh3/README.md
@@ -1287,6 +1422,7 @@
 1998/schweikh3/schweikh3.orig.c
 1998/schweikh3/try.sh
 1998/tomtorfs/.gitignore
+1998/tomtorfs/.path
 1998/tomtorfs/.winner.json
 1998/tomtorfs/Makefile
 1998/tomtorfs/README.md
@@ -1297,6 +1433,7 @@
 1998/tomtorfs/tomtorfs.orig.c
 1998/tomtorfs/try.sh
 2000/anderson/.gitignore
+2000/anderson/.path
 2000/anderson/.winner.json
 2000/anderson/Makefile
 2000/anderson/README.md
@@ -1306,6 +1443,7 @@
 2000/anderson/inventory.html
 2000/anderson/try.sh
 2000/bellard/.gitignore
+2000/bellard/.path
 2000/bellard/.winner.json
 2000/bellard/Makefile
 2000/bellard/README.md
@@ -1314,6 +1452,7 @@
 2000/bellard/index.html
 2000/bellard/inventory.html
 2000/bmeyer/.gitignore
+2000/bmeyer/.path
 2000/bmeyer/.winner.json
 2000/bmeyer/Makefile
 2000/bmeyer/README.md
@@ -1326,6 +1465,7 @@
 2000/bmeyer/michael.pgm
 2000/bmeyer/try.sh
 2000/briddlebane/.gitignore
+2000/briddlebane/.path
 2000/briddlebane/.winner.json
 2000/briddlebane/Makefile
 2000/briddlebane/README.md
@@ -1334,6 +1474,7 @@
 2000/briddlebane/index.html
 2000/briddlebane/inventory.html
 2000/dhyang/.gitignore
+2000/dhyang/.path
 2000/dhyang/.winner.json
 2000/dhyang/Makefile
 2000/dhyang/README.md
@@ -1343,6 +1484,7 @@
 2000/dhyang/inventory.html
 2000/dhyang/try.sh
 2000/dlowe/.gitignore
+2000/dlowe/.path
 2000/dlowe/.winner.json
 2000/dlowe/Makefile
 2000/dlowe/README.md
@@ -1350,7 +1492,9 @@
 2000/dlowe/dlowe.orig.c
 2000/dlowe/index.html
 2000/dlowe/inventory.html
+2000/dlowe/try.sh
 2000/jarijyrki/.gitignore
+2000/jarijyrki/.path
 2000/jarijyrki/.winner.json
 2000/jarijyrki/Makefile
 2000/jarijyrki/README.md
@@ -1360,6 +1504,7 @@
 2000/jarijyrki/jarijyrki.c
 2000/jarijyrki/jarijyrki.orig.c
 2000/natori/.gitignore
+2000/natori/.path
 2000/natori/.winner.json
 2000/natori/Makefile
 2000/natori/README.md
@@ -1370,6 +1515,7 @@
 2000/natori/natori.orig.c
 2000/natori/try.sh
 2000/primenum/.gitignore
+2000/primenum/.path
 2000/primenum/.winner.json
 2000/primenum/Makefile
 2000/primenum/README.md
@@ -1379,6 +1525,7 @@
 2000/primenum/primenum.orig.c
 2000/primenum/try.sh
 2000/rince/.gitignore
+2000/rince/.path
 2000/rince/.winner.json
 2000/rince/Makefile
 2000/rince/README.md
@@ -1389,6 +1536,7 @@
 2000/rince/rince.orig.c
 2000/rince/try.sh
 2000/robison/.gitignore
+2000/robison/.path
 2000/robison/.winner.json
 2000/robison/Makefile
 2000/robison/README.md
@@ -1397,6 +1545,7 @@
 2000/robison/robison.c
 2000/robison/robison.orig.c
 2000/schneiderwent/.gitignore
+2000/schneiderwent/.path
 2000/schneiderwent/.winner.json
 2000/schneiderwent/Makefile
 2000/schneiderwent/README.md
@@ -1406,6 +1555,7 @@
 2000/schneiderwent/schneiderwent.data
 2000/schneiderwent/schneiderwent.orig.c
 2000/thadgavin/.gitignore
+2000/thadgavin/.path
 2000/thadgavin/.winner.json
 2000/thadgavin/Makefile
 2000/thadgavin/README.md
@@ -1415,6 +1565,7 @@
 2000/thadgavin/thadgavin.c
 2000/thadgavin/thadgavin.orig.c
 2000/tomx/.gitignore
+2000/tomx/.path
 2000/tomx/.winner.json
 2000/tomx/Makefile
 2000/tomx/README.md
@@ -1427,6 +1578,7 @@
 2000/tomx/try.alt.sh
 2000/tomx/try.sh
 2001/anonymous/.gitignore
+2001/anonymous/.path
 2001/anonymous/.winner.json
 2001/anonymous/Makefile
 2001/anonymous/README.md
@@ -1438,6 +1590,7 @@
 2001/anonymous/inventory.html
 2001/anonymous/try.sh
 2001/bellard/.gitignore
+2001/bellard/.path
 2001/bellard/.winner.json
 2001/bellard/Makefile
 2001/bellard/README.md
@@ -1448,6 +1601,7 @@
 2001/bellard/inventory.html
 2001/bellard/otccelf.c
 2001/cheong/.gitignore
+2001/cheong/.path
 2001/cheong/.winner.json
 2001/cheong/Makefile
 2001/cheong/README.md
@@ -1457,6 +1611,7 @@
 2001/cheong/inventory.html
 2001/cheong/try.sh
 2001/coupard/.gitignore
+2001/coupard/.path
 2001/coupard/.winner.json
 2001/coupard/Makefile
 2001/coupard/README.md
@@ -1465,14 +1620,17 @@
 2001/coupard/index.html
 2001/coupard/inventory.html
 2001/ctk/.gitignore
+2001/ctk/.path
 2001/ctk/.winner.json
 2001/ctk/Makefile
 2001/ctk/README.md
+2001/ctk/ctk.alt.c
 2001/ctk/ctk.c
 2001/ctk/ctk.orig.c
 2001/ctk/index.html
 2001/ctk/inventory.html
 2001/dgbeards/.gitignore
+2001/dgbeards/.path
 2001/dgbeards/.winner.json
 2001/dgbeards/Makefile
 2001/dgbeards/README.md
@@ -1482,6 +1640,7 @@
 2001/dgbeards/index.html
 2001/dgbeards/inventory.html
 2001/herrmann1/.gitignore
+2001/herrmann1/.path
 2001/herrmann1/.winner.json
 2001/herrmann1/Makefile
 2001/herrmann1/README.md
@@ -1494,6 +1653,7 @@
 2001/herrmann1/inventory.html
 2001/herrmann1/plus1.turing
 2001/herrmann2/.gitignore
+2001/herrmann2/.path
 2001/herrmann2/.winner.json
 2001/herrmann2/Makefile
 2001/herrmann2/README.md
@@ -1506,6 +1666,7 @@
 2001/herrmann2/inventory.html
 2001/herrmann2/try.sh
 2001/jason/.gitignore
+2001/jason/.path
 2001/jason/.winner.json
 2001/jason/Makefile
 2001/jason/README.md
@@ -1514,6 +1675,7 @@
 2001/jason/jason.c
 2001/jason/jason.orig.c
 2001/kev/.gitignore
+2001/kev/.path
 2001/kev/.winner.json
 2001/kev/Makefile
 2001/kev/README.md
@@ -1523,6 +1685,7 @@
 2001/kev/kev.c
 2001/kev/kev.orig.c
 2001/ollinger/.gitignore
+2001/ollinger/.path
 2001/ollinger/.winner.json
 2001/ollinger/Makefile
 2001/ollinger/README.md
@@ -1531,6 +1694,7 @@
 2001/ollinger/ollinger.c
 2001/ollinger/ollinger.orig.c
 2001/rosten/.gitignore
+2001/rosten/.path
 2001/rosten/.winner.json
 2001/rosten/Makefile
 2001/rosten/README.md
@@ -1539,6 +1703,7 @@
 2001/rosten/rosten.c
 2001/rosten/rosten.orig.c
 2001/schweikh/.gitignore
+2001/schweikh/.path
 2001/schweikh/.winner.json
 2001/schweikh/Makefile
 2001/schweikh/README.md
@@ -1548,6 +1713,7 @@
 2001/schweikh/schweikh.orig.c
 2001/schweikh/try.sh
 2001/westley/.gitignore
+2001/westley/.path
 2001/westley/.winner.json
 2001/westley/Makefile
 2001/westley/README.md
@@ -1560,6 +1726,7 @@
 2001/westley/westley.punch.c
 2001/westley/westley.sort.c
 2001/williams/.gitignore
+2001/williams/.path
 2001/williams/.winner.json
 2001/williams/Makefile
 2001/williams/README.md
@@ -1568,6 +1735,7 @@
 2001/williams/williams.c
 2001/williams/williams.orig.c
 2004/anonymous/.gitignore
+2004/anonymous/.path
 2004/anonymous/.winner.json
 2004/anonymous/Makefile
 2004/anonymous/README.md
@@ -1576,6 +1744,7 @@
 2004/anonymous/index.html
 2004/anonymous/inventory.html
 2004/arachnid/.gitignore
+2004/arachnid/.path
 2004/arachnid/.winner.json
 2004/arachnid/Makefile
 2004/arachnid/README.md
@@ -1586,6 +1755,7 @@
 2004/arachnid/index.html
 2004/arachnid/inventory.html
 2004/burley/.gitignore
+2004/burley/.path
 2004/burley/.winner.json
 2004/burley/Makefile
 2004/burley/README.md
@@ -1594,6 +1764,7 @@
 2004/burley/index.html
 2004/burley/inventory.html
 2004/gavare/.gitignore
+2004/gavare/.path
 2004/gavare/.winner.json
 2004/gavare/Makefile
 2004/gavare/README.md
@@ -1605,6 +1776,7 @@
 2004/gavare/index.html
 2004/gavare/inventory.html
 2004/gavin/.gitignore
+2004/gavin/.path
 2004/gavin/.winner.json
 2004/gavin/Makefile
 2004/gavin/README.md
@@ -1620,6 +1792,7 @@
 2004/gavin/lilo.conf
 2004/gavin/prim
 2004/hibachi/.gitignore
+2004/hibachi/.path
 2004/hibachi/.winner.json
 2004/hibachi/Makefile
 2004/hibachi/README.md
@@ -1666,6 +1839,7 @@
 2004/hibachi/src/localhost/test/shell/test2.sh
 2004/hibachi/src/makefile.in
 2004/hoyle/.gitignore
+2004/hoyle/.path
 2004/hoyle/.winner.json
 2004/hoyle/Makefile
 2004/hoyle/README.md
@@ -1674,6 +1848,7 @@
 2004/hoyle/index.html
 2004/hoyle/inventory.html
 2004/jdalbec/.gitignore
+2004/jdalbec/.path
 2004/jdalbec/.winner.json
 2004/jdalbec/Makefile
 2004/jdalbec/README.md
@@ -1685,6 +1860,7 @@
 2004/jdalbec/try.alt.sh
 2004/jdalbec/try.sh
 2004/kopczynski/.gitignore
+2004/kopczynski/.path
 2004/kopczynski/.winner.json
 2004/kopczynski/Makefile
 2004/kopczynski/README.md
@@ -1709,6 +1885,7 @@
 2004/kopczynski/kopczynski.orig.c
 2004/kopczynski/try.sh
 2004/newbern/.gitignore
+2004/newbern/.path
 2004/newbern/.winner.json
 2004/newbern/Makefile
 2004/newbern/README.md
@@ -1718,6 +1895,7 @@
 2004/newbern/newbern.dat
 2004/newbern/newbern.orig.c
 2004/omoikane/.gitignore
+2004/omoikane/.path
 2004/omoikane/.winner.json
 2004/omoikane/Makefile
 2004/omoikane/README.md
@@ -1727,6 +1905,7 @@
 2004/omoikane/omoikane.info
 2004/omoikane/omoikane.orig.c
 2004/schnitzi/.gitignore
+2004/schnitzi/.path
 2004/schnitzi/.winner.json
 2004/schnitzi/Makefile
 2004/schnitzi/README.md
@@ -1738,6 +1917,7 @@
 2004/schnitzi/schnitzi.orig.c
 2004/schnitzi/try.sh
 2004/sds/.gitignore
+2004/sds/.path
 2004/sds/.winner.json
 2004/sds/Makefile
 2004/sds/README.md
@@ -1747,6 +1927,7 @@
 2004/sds/sds.orig.c
 2004/sds/try.sh
 2004/vik1/.gitignore
+2004/vik1/.path
 2004/vik1/.winner.json
 2004/vik1/Makefile
 2004/vik1/README.md
@@ -1755,6 +1936,7 @@
 2004/vik1/vik1.c
 2004/vik1/vik1.orig.c
 2004/vik2/.gitignore
+2004/vik2/.path
 2004/vik2/.winner.json
 2004/vik2/Makefile
 2004/vik2/README.md
@@ -1765,6 +1947,7 @@
 2004/vik2/vik2.possible.cat.death.c
 2004/vik2/vik2_1.c
 2005/aidan/.gitignore
+2005/aidan/.path
 2005/aidan/.winner.json
 2005/aidan/Makefile
 2005/aidan/README.md
@@ -1785,6 +1968,7 @@
 2005/aidan/try.sh
 2005/aidan/wp.sudoku
 2005/anon/.gitignore
+2005/anon/.path
 2005/anon/.winner.json
 2005/anon/Makefile
 2005/anon/README.md
@@ -1794,6 +1978,7 @@
 2005/anon/index.html
 2005/anon/inventory.html
 2005/boutines/.gitignore
+2005/boutines/.path
 2005/boutines/.winner.json
 2005/boutines/Makefile
 2005/boutines/README.md
@@ -1805,6 +1990,7 @@
 2005/boutines/input.txt
 2005/boutines/inventory.html
 2005/chia/.gitignore
+2005/chia/.path
 2005/chia/.winner.json
 2005/chia/Makefile
 2005/chia/README.md
@@ -1813,6 +1999,7 @@
 2005/chia/index.html
 2005/chia/inventory.html
 2005/giljade/.gitignore
+2005/giljade/.path
 2005/giljade/.winner.json
 2005/giljade/Makefile
 2005/giljade/README.md
@@ -1823,6 +2010,7 @@
 2005/giljade/test.sh
 2005/giljade/try.sh
 2005/jetro/.gitignore
+2005/jetro/.path
 2005/jetro/.winner.json
 2005/jetro/Makefile
 2005/jetro/README.md
@@ -1831,6 +2019,7 @@
 2005/jetro/jetro.c
 2005/jetro/jetro.orig.c
 2005/klausler/.gitignore
+2005/klausler/.path
 2005/klausler/.winner.json
 2005/klausler/Makefile
 2005/klausler/README.md
@@ -1840,6 +2029,7 @@
 2005/klausler/klausler.orig.c
 2005/klausler/try.sh
 2005/mikeash/.gitignore
+2005/mikeash/.path
 2005/mikeash/.winner.json
 2005/mikeash/Makefile
 2005/mikeash/README.md
@@ -1849,6 +2039,7 @@
 2005/mikeash/mikeash.orig.c
 2005/mikeash/try.sh
 2005/mynx/.gitignore
+2005/mynx/.path
 2005/mynx/.winner.json
 2005/mynx/Makefile
 2005/mynx/README.md
@@ -1864,6 +2055,7 @@
 2005/mynx/source/makefile.in
 2005/mynx/source/mynx.c
 2005/persano/.gitignore
+2005/persano/.path
 2005/persano/.winner.json
 2005/persano/Makefile
 2005/persano/README.md
@@ -1873,6 +2065,7 @@
 2005/persano/persano.c
 2005/persano/persano.orig.c
 2005/sykes/.gitignore
+2005/sykes/.path
 2005/sykes/.winner.json
 2005/sykes/6502test
 2005/sykes/DEMO
@@ -1892,6 +2085,7 @@
 2005/sykes/test.sh
 2005/sykes/try.sh
 2005/timwi/.gitignore
+2005/timwi/.path
 2005/timwi/.winner.json
 2005/timwi/Makefile
 2005/timwi/README.md
@@ -1901,6 +2095,7 @@
 2005/timwi/timwi.orig.c
 2005/timwi/try.sh
 2005/toledo/.gitignore
+2005/toledo/.path
 2005/toledo/.winner.json
 2005/toledo/Makefile
 2005/toledo/README.md
@@ -1911,6 +2106,7 @@
 2005/toledo/toledo2.c
 2005/toledo/toledo3.c
 2005/vik/.gitignore
+2005/vik/.path
 2005/vik/.winner.json
 2005/vik/Makefile
 2005/vik/README.md
@@ -1923,6 +2119,7 @@
 2005/vik/vik.c
 2005/vik/vik.orig.c
 2005/vince/.gitignore
+2005/vince/.path
 2005/vince/.winner.json
 2005/vince/Makefile
 2005/vince/README.md
@@ -1932,6 +2129,7 @@
 2005/vince/vince.c
 2005/vince/vince.orig.c
 2006/birken/.gitignore
+2006/birken/.path
 2006/birken/.winner.json
 2006/birken/Makefile
 2006/birken/README.md
@@ -1955,6 +2153,7 @@
 2006/birken/zuse.tofu
 2006/birken/zuse2.tofu
 2006/borsanyi/.gitignore
+2006/borsanyi/.path
 2006/borsanyi/.winner.json
 2006/borsanyi/Makefile
 2006/borsanyi/README.md
@@ -1963,6 +2162,7 @@
 2006/borsanyi/index.html
 2006/borsanyi/inventory.html
 2006/grothe/.gitignore
+2006/grothe/.path
 2006/grothe/.winner.json
 2006/grothe/Makefile
 2006/grothe/README.md
@@ -1975,6 +2175,7 @@
 2006/grothe/test.txt
 2006/grothe/twinkle.txt
 2006/hamre/.gitignore
+2006/hamre/.path
 2006/hamre/.winner.json
 2006/hamre/Makefile
 2006/hamre/README.md
@@ -1984,6 +2185,7 @@
 2006/hamre/inventory.html
 2006/hamre/try.sh
 2006/meyer/.gitignore
+2006/meyer/.path
 2006/meyer/.winner.json
 2006/meyer/Makefile
 2006/meyer/README.md
@@ -1992,6 +2194,7 @@
 2006/meyer/meyer.c
 2006/meyer/meyer.orig.c
 2006/monge/.gitignore
+2006/monge/.path
 2006/monge/.winner.json
 2006/monge/Makefile
 2006/monge/README.md
@@ -2001,6 +2204,7 @@
 2006/monge/monge.c
 2006/monge/monge.orig.c
 2006/night/.gitignore
+2006/night/.path
 2006/night/.winner.json
 2006/night/Makefile
 2006/night/README.md
@@ -2010,6 +2214,7 @@
 2006/night/night.c
 2006/night/night.orig.c
 2006/sloane/.gitignore
+2006/sloane/.path
 2006/sloane/.winner.json
 2006/sloane/Makefile
 2006/sloane/README.md
@@ -2019,6 +2224,7 @@
 2006/sloane/sloane.c
 2006/sloane/sloane.orig.c
 2006/stewart/.gitignore
+2006/stewart/.path
 2006/stewart/.winner.json
 2006/stewart/Makefile
 2006/stewart/README.md
@@ -2067,6 +2273,7 @@
 2006/stewart/tree4
 2006/stewart/triangle
 2006/sykes1/.gitignore
+2006/sykes1/.path
 2006/sykes1/.winner.json
 2006/sykes1/Makefile
 2006/sykes1/README.md
@@ -2079,6 +2286,7 @@
 2006/sykes1/sykes1.orig.c
 2006/sykes1/try.sh
 2006/sykes2/.gitignore
+2006/sykes2/.path
 2006/sykes2/.winner.json
 2006/sykes2/Makefile
 2006/sykes2/README.md
@@ -2088,6 +2296,7 @@
 2006/sykes2/sykes2.orig.c
 2006/sykes2/try.sh
 2006/toledo1/.gitignore
+2006/toledo1/.path
 2006/toledo1/.winner.json
 2006/toledo1/Makefile
 2006/toledo1/README.md
@@ -2097,6 +2306,7 @@
 2006/toledo1/toledo1.orig.c
 2006/toledo1/try.sh
 2006/toledo2/.gitignore
+2006/toledo2/.path
 2006/toledo2/.winner.json
 2006/toledo2/A
 2006/toledo2/ADVENTUR/ADV.COM
@@ -2345,6 +2555,7 @@
 2006/toledo2/toledo2.c
 2006/toledo2/toledo2.orig.c
 2006/toledo3/.gitignore
+2006/toledo3/.path
 2006/toledo3/.winner.json
 2006/toledo3/Makefile
 2006/toledo3/README.md
@@ -2357,6 +2568,7 @@
 2006/toledo3/toledo3.c
 2006/toledo3/toledo3.orig.c
 2011/akari/.gitignore
+2011/akari/.path
 2011/akari/.winner.json
 2011/akari/Makefile
 2011/akari/README.md
@@ -2367,6 +2579,7 @@
 2011/akari/inventory.html
 2011/akari/try.sh
 2011/blakely/.gitignore
+2011/blakely/.path
 2011/blakely/.winner.json
 2011/blakely/3.dat
 2011/blakely/Makefile
@@ -2379,6 +2592,7 @@
 2011/blakely/t0_3.dat
 2011/blakely/try.sh
 2011/borsanyi/.gitignore
+2011/borsanyi/.path
 2011/borsanyi/.winner.json
 2011/borsanyi/Makefile
 2011/borsanyi/README.md
@@ -2391,6 +2605,7 @@
 2011/borsanyi/inventory.html
 2011/borsanyi/try.sh
 2011/dlowe/.gitignore
+2011/dlowe/.path
 2011/dlowe/.winner.json
 2011/dlowe/Makefile
 2011/dlowe/README.md
@@ -2448,6 +2663,7 @@
 2011/dlowe/inventory.html
 2011/dlowe/try.sh
 2011/eastman/.gitignore
+2011/eastman/.path
 2011/eastman/.winner.json
 2011/eastman/Makefile
 2011/eastman/README.md
@@ -2457,6 +2673,7 @@
 2011/eastman/index.html
 2011/eastman/inventory.html
 2011/fredriksson/.gitignore
+2011/fredriksson/.path
 2011/fredriksson/.winner.json
 2011/fredriksson/Makefile
 2011/fredriksson/README.md
@@ -2466,6 +2683,7 @@
 2011/fredriksson/inventory.html
 2011/fredriksson/try.sh
 2011/goren/.gitignore
+2011/goren/.path
 2011/goren/.winner.json
 2011/goren/MagrittePipe.jpg
 2011/goren/Makefile
@@ -2476,6 +2694,7 @@
 2011/goren/inventory.html
 2011/goren/try.sh
 2011/hamaji/.gitignore
+2011/hamaji/.path
 2011/hamaji/.winner.json
 2011/hamaji/Makefile
 2011/hamaji/README.md
@@ -2498,6 +2717,7 @@
 2011/hamaji/soccer.nono
 2011/hamaji/try.sh
 2011/hou/.gitignore
+2011/hou/.path
 2011/hou/.winner.json
 2011/hou/Makefile
 2011/hou/README.md
@@ -2507,6 +2727,7 @@
 2011/hou/inventory.html
 2011/hou/try.sh
 2011/konno/.gitignore
+2011/konno/.path
 2011/konno/.winner.json
 2011/konno/Makefile
 2011/konno/README.md
@@ -2516,6 +2737,7 @@
 2011/konno/konno.orig.c
 2011/konno/try.sh
 2011/richards/.gitignore
+2011/richards/.path
 2011/richards/.winner.json
 2011/richards/Makefile
 2011/richards/README.md
@@ -2525,6 +2747,7 @@
 2011/richards/richards.c
 2011/richards/richards.orig.c
 2011/toledo/.gitignore
+2011/toledo/.path
 2011/toledo/.winner.json
 2011/toledo/Makefile
 2011/toledo/README.md
@@ -2537,6 +2760,7 @@
 2011/toledo/toledo.c
 2011/toledo/toledo.orig.c
 2011/vik/.gitignore
+2011/vik/.path
 2011/vik/.winner.json
 2011/vik/Makefile
 2011/vik/README.md
@@ -2549,6 +2773,7 @@
 2011/vik/vik.c
 2011/vik/vik.orig.c
 2011/zucker/.gitignore
+2011/zucker/.path
 2011/zucker/.winner.json
 2011/zucker/Makefile
 2011/zucker/README.md
@@ -2559,6 +2784,7 @@
 2011/zucker/zucker.c
 2011/zucker/zucker.orig.c
 2012/blakely/.gitignore
+2012/blakely/.path
 2012/blakely/.winner.json
 2012/blakely/Makefile
 2012/blakely/README.md
@@ -2568,6 +2794,7 @@
 2012/blakely/inventory.html
 2012/blakely/try.sh
 2012/deckmyn/.gitignore
+2012/deckmyn/.path
 2012/deckmyn/.winner.json
 2012/deckmyn/Makefile
 2012/deckmyn/README.md
@@ -2580,6 +2807,7 @@
 2012/deckmyn/inventory.html
 2012/deckmyn/try.sh
 2012/dlowe/.gitignore
+2012/dlowe/.path
 2012/dlowe/.winner.json
 2012/dlowe/Makefile
 2012/dlowe/README.md
@@ -2591,6 +2819,7 @@
 2012/dlowe/splash.d
 2012/dlowe/sprites.d
 2012/endoh1/.gitignore
+2012/endoh1/.path
 2012/endoh1/.winner.json
 2012/endoh1/Makefile
 2012/endoh1/README.md
@@ -2621,6 +2850,7 @@
 2012/endoh1/tanada.txt
 2012/endoh1/try.alt.sh
 2012/endoh2/.gitignore
+2012/endoh2/.path
 2012/endoh2/.winner.json
 2012/endoh2/Makefile
 2012/endoh2/README.md
@@ -2631,6 +2861,7 @@
 2012/endoh2/inventory.html
 2012/endoh2/try.sh
 2012/grothe/.gitignore
+2012/grothe/.path
 2012/grothe/.winner.json
 2012/grothe/Makefile
 2012/grothe/README.md
@@ -2646,6 +2877,7 @@
 2012/grothe/inventory.html
 2012/grothe/try.sh
 2012/hamano/.gitignore
+2012/hamano/.path
 2012/hamano/.winner.json
 2012/hamano/Makefile
 2012/hamano/README.md
@@ -2655,6 +2887,7 @@
 2012/hamano/inventory.html
 2012/hamano/try.sh
 2012/hou/.gitignore
+2012/hou/.path
 2012/hou/.winner.json
 2012/hou/Makefile
 2012/hou/README.md
@@ -2672,6 +2905,7 @@
 2012/hou/perl-notes.txt
 2012/hou/try.sh
 2012/kang/.gitignore
+2012/kang/.path
 2012/kang/.winner.json
 2012/kang/Makefile
 2012/kang/README.md
@@ -2686,6 +2920,7 @@
 2012/kang/kang.orig.c
 2012/kang/try.sh
 2012/konno/.gitignore
+2012/konno/.path
 2012/konno/.winner.json
 2012/konno/Makefile
 2012/konno/README.md
@@ -2696,6 +2931,7 @@
 2012/konno/konno.orig.c
 2012/konno/try.sh
 2012/omoikane/.gitignore
+2012/omoikane/.path
 2012/omoikane/.winner.json
 2012/omoikane/Makefile
 2012/omoikane/README.md
@@ -2709,6 +2945,7 @@
 2012/omoikane/try.alt.sh
 2012/omoikane/try.sh
 2012/tromp/.gitignore
+2012/tromp/.path
 2012/tromp/.winner.json
 2012/tromp/Makefile
 2012/tromp/README.md
@@ -2731,6 +2968,7 @@
 2012/tromp/uni.blc
 2012/tromp/uni8.Blc
 2012/vik/.gitignore
+2012/vik/.path
 2012/vik/.winner.json
 2012/vik/Makefile
 2012/vik/README.md
@@ -2743,6 +2981,7 @@
 2012/vik/vik.c
 2012/vik/vik.orig.c
 2012/zeitak/.gitignore
+2012/zeitak/.path
 2012/zeitak/.winner.json
 2012/zeitak/Makefile
 2012/zeitak/README.md
@@ -2763,6 +3002,7 @@
 2012/zeitak/zeitak.c
 2012/zeitak/zeitak.orig.c
 2013/birken/.gitignore
+2013/birken/.path
 2013/birken/.winner.json
 2013/birken/Makefile
 2013/birken/README.md
@@ -2818,6 +3058,7 @@
 2013/birken/try.alt.sh
 2013/birken/try.sh
 2013/cable1/.gitignore
+2013/cable1/.path
 2013/cable1/.winner.json
 2013/cable1/Makefile
 2013/cable1/README.md
@@ -2828,6 +3069,7 @@
 2013/cable1/inventory.html
 2013/cable1/try.sh
 2013/cable2/.gitignore
+2013/cable2/.path
 2013/cable2/.winner.json
 2013/cable2/Makefile
 2013/cable2/README.md
@@ -2843,6 +3085,7 @@
 2013/cable2/try.sh
 2013/cable2/typeset.bmp
 2013/cable3/.gitignore
+2013/cable3/.path
 2013/cable3/.winner.json
 2013/cable3/Makefile
 2013/cable3/README.md
@@ -2864,6 +3107,7 @@
 2013/cable3/screenshot_simcity.png
 2013/cable3/screenshot_win3_on_macosx.png
 2013/dlowe/.gitignore
+2013/dlowe/.path
 2013/dlowe/.winner.json
 2013/dlowe/Makefile
 2013/dlowe/README.md
@@ -2876,6 +3120,7 @@
 2013/dlowe/slflen.sh
 2013/dlowe/try.sh
 2013/endoh1/.gitignore
+2013/endoh1/.path
 2013/endoh1/.winner.json
 2013/endoh1/Makefile
 2013/endoh1/README.md
@@ -2889,6 +3134,7 @@
 2013/endoh1/tac.lazy
 2013/endoh1/try.sh
 2013/endoh2/.gitignore
+2013/endoh2/.path
 2013/endoh2/.winner.json
 2013/endoh2/Makefile
 2013/endoh2/README.md
@@ -2898,6 +3144,7 @@
 2013/endoh2/inventory.html
 2013/endoh2/ocr.rb
 2013/endoh3/.gitignore
+2013/endoh3/.path
 2013/endoh3/.winner.json
 2013/endoh3/Makefile
 2013/endoh3/README.md
@@ -2912,6 +3159,7 @@
 2013/endoh3/wavify.rb
 2013/endoh3/yankee.abc
 2013/endoh4/.gitignore
+2013/endoh4/.path
 2013/endoh4/.winner.json
 2013/endoh4/Makefile
 2013/endoh4/README.md
@@ -3069,6 +3317,7 @@
 2013/endoh4/solids/trapezohedron/t10-decagonal-trapezohedron.txt
 2013/endoh4/try.sh
 2013/hou/.gitignore
+2013/hou/.path
 2013/hou/.winner.json
 2013/hou/Makefile
 2013/hou/README.md
@@ -3086,6 +3335,7 @@
 2013/hou/otherroom.jpg
 2013/hou/otherroom.scene
 2013/mills/.gitignore
+2013/mills/.path
 2013/mills/.winner.json
 2013/mills/Makefile
 2013/mills/README.md
@@ -3094,6 +3344,7 @@
 2013/mills/mills.c
 2013/mills/mills.orig.c
 2013/misaka/.gitignore
+2013/misaka/.path
 2013/misaka/.winner.json
 2013/misaka/Makefile
 2013/misaka/README.md
@@ -3105,6 +3356,7 @@
 2013/misaka/spoiler.html
 2013/misaka/try.sh
 2013/morgan1/.gitignore
+2013/morgan1/.path
 2013/morgan1/.winner.json
 2013/morgan1/Makefile
 2013/morgan1/README.md
@@ -3113,6 +3365,7 @@
 2013/morgan1/morgan1.c
 2013/morgan1/morgan1.orig.c
 2013/morgan2/.gitignore
+2013/morgan2/.path
 2013/morgan2/.winner.json
 2013/morgan2/Makefile
 2013/morgan2/README.md
@@ -3121,6 +3374,7 @@
 2013/morgan2/morgan2.c
 2013/morgan2/morgan2.orig.c
 2013/robison/.gitignore
+2013/robison/.path
 2013/robison/.winner.json
 2013/robison/Makefile
 2013/robison/README.md
@@ -3130,6 +3384,7 @@
 2013/robison/robison.orig.c
 2013/robison/try.sh
 2014/birken/.gitignore
+2014/birken/.path
 2014/birken/.winner.json
 2014/birken/Makefile
 2014/birken/README.md
@@ -3139,6 +3394,7 @@
 2014/birken/prog.c
 2014/birken/prog.orig.c
 2014/deak/.gitignore
+2014/deak/.path
 2014/deak/.winner.json
 2014/deak/Makefile
 2014/deak/README.md
@@ -3148,6 +3404,7 @@
 2014/deak/prog.c
 2014/deak/prog.orig.c
 2014/endoh1/.gitignore
+2014/endoh1/.path
 2014/endoh1/.winner.json
 2014/endoh1/Makefile
 2014/endoh1/README.md
@@ -3174,6 +3431,7 @@
 2014/endoh1/try.sh
 2014/endoh1/vm.c
 2014/endoh2/.gitignore
+2014/endoh2/.path
 2014/endoh2/.winner.json
 2014/endoh2/Makefile
 2014/endoh2/README.md
@@ -3183,6 +3441,7 @@
 2014/endoh2/prog.orig.c
 2014/endoh2/try.sh
 2014/maffiodo1/.gitignore
+2014/maffiodo1/.path
 2014/maffiodo1/.winner.json
 2014/maffiodo1/Makefile
 2014/maffiodo1/README.md
@@ -3201,6 +3460,7 @@
 2014/maffiodo1/screenshot-giana.png
 2014/maffiodo1/screenshot-mario.png
 2014/maffiodo2/.gitignore
+2014/maffiodo2/.path
 2014/maffiodo2/.winner.json
 2014/maffiodo2/Makefile
 2014/maffiodo2/README.md
@@ -3212,6 +3472,7 @@
 2014/maffiodo2/prog.orig.c
 2014/maffiodo2/try.sh
 2014/morgan/.gitignore
+2014/morgan/.path
 2014/morgan/.winner.json
 2014/morgan/Makefile
 2014/morgan/README.md
@@ -3221,6 +3482,7 @@
 2014/morgan/prog.orig.c
 2014/morgan/try.sh
 2014/sinon/.gitignore
+2014/sinon/.path
 2014/sinon/.winner.json
 2014/sinon/Makefile
 2014/sinon/README.md
@@ -3233,6 +3495,7 @@
 2014/sinon/spoiler.html
 2014/sinon/try.sh
 2014/skeggs/.gitignore
+2014/skeggs/.path
 2014/skeggs/.winner.json
 2014/skeggs/Makefile
 2014/skeggs/README.md
@@ -3241,6 +3504,7 @@
 2014/skeggs/prog.c
 2014/skeggs/prog.orig.c
 2014/vik/.gitignore
+2014/vik/.path
 2014/vik/.winner.json
 2014/vik/Makefile
 2014/vik/README.md
@@ -3250,6 +3514,7 @@
 2014/vik/prog.c
 2014/vik/prog.orig.c
 2014/wiedijk/.gitignore
+2014/wiedijk/.path
 2014/wiedijk/.winner.json
 2014/wiedijk/Makefile
 2014/wiedijk/README.md
@@ -3259,6 +3524,7 @@
 2014/wiedijk/prog.orig.c
 2014/wiedijk/try.sh
 2015/burton/.gitignore
+2015/burton/.path
 2015/burton/.winner.json
 2015/burton/Makefile
 2015/burton/README.md
@@ -3277,6 +3543,7 @@
 2015/burton/test.out
 2015/burton/test32.out
 2015/dogon/.gitignore
+2015/dogon/.path
 2015/dogon/.winner.json
 2015/dogon/Makefile
 2015/dogon/README.md
@@ -3285,6 +3552,7 @@
 2015/dogon/prog.c
 2015/dogon/prog.orig.c
 2015/duble/.gitignore
+2015/duble/.path
 2015/duble/.winner.json
 2015/duble/Makefile
 2015/duble/README.md
@@ -3295,7 +3563,9 @@
 2015/duble/prog.alt.c
 2015/duble/prog.c
 2015/duble/prog.orig.c
+2015/duble/try.sh
 2015/endoh1/.gitignore
+2015/endoh1/.path
 2015/endoh1/.winner.json
 2015/endoh1/Makefile
 2015/endoh1/README.md
@@ -3307,6 +3577,7 @@
 2015/endoh1/prog.c
 2015/endoh1/prog.orig.c
 2015/endoh2/.gitignore
+2015/endoh2/.path
 2015/endoh2/.winner.json
 2015/endoh2/Makefile
 2015/endoh2/README.md
@@ -3315,6 +3586,7 @@
 2015/endoh2/prog.c
 2015/endoh2/prog.orig.c
 2015/endoh3/.gitignore
+2015/endoh3/.path
 2015/endoh3/.winner.json
 2015/endoh3/Makefile
 2015/endoh3/README.md
@@ -3325,6 +3597,7 @@
 2015/endoh3/prog.c
 2015/endoh3/prog.orig.c
 2015/endoh4/.gitignore
+2015/endoh4/.path
 2015/endoh4/.winner.json
 2015/endoh4/Makefile
 2015/endoh4/README.md
@@ -3334,6 +3607,7 @@
 2015/endoh4/prog.c
 2015/endoh4/prog.orig.c
 2015/hou/.gitignore
+2015/hou/.path
 2015/hou/.winner.json
 2015/hou/Makefile
 2015/hou/README.md
@@ -3341,11 +3615,14 @@
 2015/hou/inventory.html
 2015/hou/prog.c
 2015/hou/prog.orig.c
+2015/hou/rfc1321.txt
 2015/howe/.gitignore
+2015/howe/.path
 2015/howe/.winner.json
 2015/howe/Makefile
 2015/howe/README.md
 2015/howe/avgtime.sh
+2015/howe/cc.1
 2015/howe/index.html
 2015/howe/inventory.html
 2015/howe/makeholes.c
@@ -3356,7 +3633,10 @@
 2015/howe/spoiler/Makefile
 2015/howe/spoiler/err.h
 2015/howe/spoiler/prog.c
+2015/howe/try.sh
+2015/howe/war-and-peace.txt
 2015/mills1/.gitignore
+2015/mills1/.path
 2015/mills1/.winner.json
 2015/mills1/Makefile
 2015/mills1/README.md
@@ -3364,7 +3644,9 @@
 2015/mills1/inventory.html
 2015/mills1/prog.c
 2015/mills1/prog.orig.c
+2015/mills1/try.sh
 2015/mills2/.gitignore
+2015/mills2/.path
 2015/mills2/.winner.json
 2015/mills2/Makefile
 2015/mills2/README.md
@@ -3374,7 +3656,9 @@
 2015/mills2/ioccc_rules.txt.Z
 2015/mills2/prog.c
 2015/mills2/prog.orig.c
+2015/mills2/try.sh
 2015/muth/.gitignore
+2015/muth/.path
 2015/muth/.winner.json
 2015/muth/Makefile
 2015/muth/README.md
@@ -3397,7 +3681,9 @@
 2015/muth/tape_77_55.h
 2015/muth/tape_empty.h
 2015/muth/tape_five.h
+2015/muth/try.sh
 2015/schweikhardt/.gitignore
+2015/schweikhardt/.path
 2015/schweikhardt/.winner.json
 2015/schweikhardt/Makefile
 2015/schweikhardt/README.md
@@ -3406,6 +3692,7 @@
 2015/schweikhardt/prog.c
 2015/schweikhardt/prog.orig.c
 2015/yang/.gitignore
+2015/yang/.path
 2015/yang/.winner.json
 2015/yang/Makefile
 2015/yang/README.md
@@ -3414,7 +3701,9 @@
 2015/yang/prog.c
 2015/yang/prog.orig.c
 2015/yang/spoiler.html
+2015/yang/try.sh
 2018/algmyr/.gitignore
+2018/algmyr/.path
 2018/algmyr/.winner.json
 2018/algmyr/Makefile
 2018/algmyr/README.md
@@ -3424,6 +3713,7 @@
 2018/algmyr/prog.orig.c
 2018/algmyr/spoiler.png
 2018/anderson/.gitignore
+2018/anderson/.path
 2018/anderson/.winner.json
 2018/anderson/Makefile
 2018/anderson/README.md
@@ -3433,6 +3723,7 @@
 2018/anderson/prog.c
 2018/anderson/prog.orig.c
 2018/bellard/.gitignore
+2018/bellard/.path
 2018/bellard/.winner.json
 2018/bellard/Lenna.png
 2018/bellard/Makefile
@@ -3445,6 +3736,7 @@
 2018/bellard/prog.orig.c
 2018/bellard/vintage_cars.bin
 2018/burton1/.gitignore
+2018/burton1/.path
 2018/burton1/.winner.json
 2018/burton1/Makefile
 2018/burton1/README.md
@@ -3455,6 +3747,7 @@
 2018/burton1/prog.orig.c
 2018/burton1/scripthd
 2018/burton2/.gitignore
+2018/burton2/.path
 2018/burton2/.winner.json
 2018/burton2/Makefile
 2018/burton2/README.md
@@ -3513,6 +3806,7 @@
 2018/burton2/unob.sh
 2018/burton2/v7unix
 2018/ciura/.gitignore
+2018/ciura/.path
 2018/ciura/.winner.json
 2018/ciura/Makefile
 2018/ciura/README.md
@@ -3522,6 +3816,7 @@
 2018/ciura/prog.c
 2018/ciura/prog.orig.c
 2018/endoh1/.gitignore
+2018/endoh1/.path
 2018/endoh1/.winner.json
 2018/endoh1/Makefile
 2018/endoh1/README.md
@@ -3533,6 +3828,7 @@
 2018/endoh1/prog.orig.c
 2018/endoh1/smily.txt
 2018/endoh2/.gitignore
+2018/endoh2/.path
 2018/endoh2/.winner.json
 2018/endoh2/Makefile
 2018/endoh2/README.md
@@ -3542,6 +3838,7 @@
 2018/endoh2/prog.orig.c
 2018/endoh2/run.sh
 2018/ferguson/.gitignore
+2018/ferguson/.path
 2018/ferguson/.winner.json
 2018/ferguson/FILES
 2018/ferguson/Makefile
@@ -3559,6 +3856,7 @@
 2018/ferguson/weasel.man
 2018/ferguson/weasel.spec
 2018/giles/.gitignore
+2018/giles/.path
 2018/giles/.winner.json
 2018/giles/Makefile
 2018/giles/README.md
@@ -3570,6 +3868,7 @@
 2018/giles/sand.alt.txt
 2018/giles/sand.txt
 2018/hou/.gitignore
+2018/hou/.path
 2018/hou/.winner.json
 2018/hou/Makefile
 2018/hou/README.md
@@ -3579,6 +3878,7 @@
 2018/hou/prog.c
 2018/hou/prog.orig.c
 2018/mills/.gitignore
+2018/mills/.path
 2018/mills/.winner.json
 2018/mills/Makefile
 2018/mills/README.md
@@ -3591,6 +3891,7 @@
 2018/mills/v0.image.fs
 2018/mills/v6.tape.gz
 2018/poikola/.gitignore
+2018/poikola/.path
 2018/poikola/.winner.json
 2018/poikola/Makefile
 2018/poikola/README.md
@@ -3601,6 +3902,7 @@
 2018/poikola/prog.c
 2018/poikola/prog.orig.c
 2018/vokes/.gitignore
+2018/vokes/.path
 2018/vokes/.winner.json
 2018/vokes/Makefile
 2018/vokes/README.md
@@ -3613,6 +3915,7 @@
 2018/vokes/prog.c
 2018/vokes/prog.orig.c
 2018/yang/.gitignore
+2018/yang/.path
 2018/yang/.winner.json
 2018/yang/Makefile
 2018/yang/README.md
@@ -3622,6 +3925,7 @@
 2018/yang/prog.orig.c
 2018/yang/spoiler.html
 2019/adamovsky/.gitignore
+2019/adamovsky/.path
 2019/adamovsky/.winner.json
 2019/adamovsky/Makefile
 2019/adamovsky/README.md
@@ -3635,6 +3939,7 @@
 2019/adamovsky/sierpinski.unl
 2019/adamovsky/spam.unl
 2019/burton/.gitignore
+2019/burton/.path
 2019/burton/.winner.json
 2019/burton/256
 2019/burton/Makefile
@@ -3649,6 +3954,7 @@
 2019/burton/prog.clean.c
 2019/burton/prog.orig.c
 2019/ciura/.gitignore
+2019/ciura/.path
 2019/ciura/.winner.json
 2019/ciura/Makefile
 2019/ciura/README.md
@@ -3666,6 +3972,7 @@
 2019/ciura/ru.sh
 2019/ciura/wrapprog.py
 2019/diels-grabsch1/.gitignore
+2019/diels-grabsch1/.path
 2019/diels-grabsch1/.winner.json
 2019/diels-grabsch1/Makefile
 2019/diels-grabsch1/README.md
@@ -3675,6 +3982,7 @@
 2019/diels-grabsch1/prog.c
 2019/diels-grabsch1/prog.orig.c
 2019/diels-grabsch2/.gitignore
+2019/diels-grabsch2/.path
 2019/diels-grabsch2/.winner.json
 2019/diels-grabsch2/Makefile
 2019/diels-grabsch2/README.md
@@ -3683,6 +3991,7 @@
 2019/diels-grabsch2/prog.c
 2019/diels-grabsch2/prog.orig.c
 2019/dogon/.gitignore
+2019/dogon/.path
 2019/dogon/.winner.json
 2019/dogon/Makefile
 2019/dogon/README.md
@@ -3704,6 +4013,7 @@
 2019/dogon/prog.orig.c
 2019/dogon/unlimited-novelty.mc
 2019/duble/.gitignore
+2019/duble/.path
 2019/duble/.winner.json
 2019/duble/Makefile
 2019/duble/README.md
@@ -3714,6 +4024,7 @@
 2019/duble/prog.c
 2019/duble/prog.orig.c
 2019/endoh/.gitignore
+2019/endoh/.path
 2019/endoh/.winner.json
 2019/endoh/Makefile
 2019/endoh/README.md
@@ -3722,6 +4033,7 @@
 2019/endoh/prog.c
 2019/endoh/prog.orig.c
 2019/giles/.gitignore
+2019/giles/.path
 2019/giles/.winner.json
 2019/giles/BlockDiagram.png
 2019/giles/Makefile
@@ -3732,6 +4044,7 @@
 2019/giles/prog.c
 2019/giles/prog.orig.c
 2019/karns/.gitignore
+2019/karns/.path
 2019/karns/.winner.json
 2019/karns/Makefile
 2019/karns/README.md
@@ -3742,6 +4055,7 @@
 2019/karns/prog.orig.c
 2019/karns/try.sh
 2019/lynn/.gitignore
+2019/lynn/.path
 2019/lynn/.winner.json
 2019/lynn/Makefile
 2019/lynn/README.md
@@ -3757,6 +4071,7 @@
 2019/lynn/prog.orig.c
 2019/lynn/scc.hs
 2019/mills/.gitignore
+2019/mills/.path
 2019/mills/.winner.json
 2019/mills/Eugene_Onegin.cp11_1.188
 2019/mills/Eugene_Onegin.txt.gz
@@ -3773,16 +4088,17 @@
 2019/mills/prog.c
 2019/mills/prog.orig.c
 2019/poikola/.gitignore
+2019/poikola/.path
 2019/poikola/.winner.json
 2019/poikola/Makefile
 2019/poikola/README.md
 2019/poikola/index.html
 2019/poikola/inventory.html
-2019/poikola/poikola.pdf
 2019/poikola/poikola.tex
 2019/poikola/prog.c
 2019/poikola/prog.orig.c
 2019/yang/.gitignore
+2019/yang/.path
 2019/yang/.winner.json
 2019/yang/Makefile
 2019/yang/README.md
@@ -3794,6 +4110,7 @@
 2019/yang/spoiler.html
 2019/yang/violet.c
 2020/burton/.gitignore
+2020/burton/.path
 2020/burton/.winner.json
 2020/burton/Makefile
 2020/burton/README.md
@@ -3805,6 +4122,7 @@
 2020/burton/prog.c
 2020/burton/prog.orig.c
 2020/carlini/.gitignore
+2020/carlini/.path
 2020/carlini/.winner.json
 2020/carlini/Makefile
 2020/carlini/README.md
@@ -3813,6 +4131,7 @@
 2020/carlini/prog.c
 2020/carlini/prog.orig.c
 2020/endoh1/.gitignore
+2020/endoh1/.path
 2020/endoh1/.winner.json
 2020/endoh1/Makefile
 2020/endoh1/README.md
@@ -3829,6 +4148,7 @@
 2020/endoh1/prog.orig.c
 2020/endoh1/unwinnable.txt
 2020/endoh2/.gitignore
+2020/endoh2/.path
 2020/endoh2/.winner.json
 2020/endoh2/Makefile
 2020/endoh2/README.md
@@ -3846,6 +4166,7 @@
 2020/endoh2/spoiler/tmpl.txt
 2020/endoh2/yoda.txt
 2020/endoh3/.gitignore
+2020/endoh3/.path
 2020/endoh3/.winner.json
 2020/endoh3/Makefile
 2020/endoh3/README.md
@@ -3856,6 +4177,7 @@
 2020/endoh3/prog.orig.c
 2020/endoh3/run_clock.sh
 2020/ferguson1/.gitignore
+2020/ferguson1/.path
 2020/ferguson1/.winner.json
 2020/ferguson1/COMPILING.md
 2020/ferguson1/HACKING.md
@@ -3891,6 +4213,7 @@
 2020/ferguson1/troubleshooting.html
 2020/ferguson1/troubleshooting.md
 2020/ferguson2/.gitignore
+2020/ferguson2/.path
 2020/ferguson2/.winner.json
 2020/ferguson2/Makefile
 2020/ferguson2/README.md
@@ -3913,6 +4236,7 @@
 2020/ferguson2/recode.md
 2020/ferguson2/try.this.txt
 2020/giles/.gitignore
+2020/giles/.path
 2020/giles/.winner.json
 2020/giles/Makefile
 2020/giles/README.md
@@ -3923,6 +4247,7 @@
 2020/giles/prog.c
 2020/giles/prog.orig.c
 2020/kurdyukov1/.gitignore
+2020/kurdyukov1/.path
 2020/kurdyukov1/.winner.json
 2020/kurdyukov1/Makefile
 2020/kurdyukov1/README.md
@@ -3935,6 +4260,7 @@
 2020/kurdyukov1/prog.x86.asm
 2020/kurdyukov1/prog.x86_64.asm
 2020/kurdyukov2/.gitignore
+2020/kurdyukov2/.path
 2020/kurdyukov2/.winner.json
 2020/kurdyukov2/Makefile
 2020/kurdyukov2/README.md
@@ -3947,6 +4273,7 @@
 2020/kurdyukov2/prog.ppm.c
 2020/kurdyukov2/sample.jpg
 2020/kurdyukov3/.gitignore
+2020/kurdyukov3/.path
 2020/kurdyukov3/.winner.json
 2020/kurdyukov3/Makefile
 2020/kurdyukov3/README.md
@@ -3958,6 +4285,7 @@
 2020/kurdyukov3/prog.extra.c
 2020/kurdyukov3/prog.orig.c
 2020/kurdyukov4/.gitignore
+2020/kurdyukov4/.path
 2020/kurdyukov4/.winner.json
 2020/kurdyukov4/Eugene_Onegin.txt
 2020/kurdyukov4/Makefile
@@ -3969,6 +4297,7 @@
 2020/kurdyukov4/prog.orig.c
 2020/kurdyukov4/rand.c
 2020/otterness/.gitignore
+2020/otterness/.path
 2020/otterness/.winner.json
 2020/otterness/Makefile
 2020/otterness/README.md
@@ -3977,6 +4306,7 @@
 2020/otterness/prog.c
 2020/otterness/prog.orig.c
 2020/tsoj/.gitignore
+2020/tsoj/.path
 2020/tsoj/.winner.json
 2020/tsoj/Makefile
 2020/tsoj/README.md
@@ -3986,6 +4316,7 @@
 2020/tsoj/prog.c
 2020/tsoj/prog.orig.c
 2020/yang/.gitignore
+2020/yang/.path
 2020/yang/.winner.json
 2020/yang/Makefile
 2020/yang/README.md
