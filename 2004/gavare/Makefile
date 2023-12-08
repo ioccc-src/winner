@@ -56,10 +56,6 @@ CSTD= -std=gnu99
 #
 ARCH=
 
-# variables for the macros for easier redefining
-XX= 1024
-YY= 768
-AA= 3
 # Defines that are needed to compile
 #
 CDEFINE= -DXX=${XX} -DYY=${YY} -DAA=${AA}
@@ -145,6 +141,11 @@ alt: data ${ALT_TARGET}
 # alternative executable for Windows
 alt2: ${PROG}.alt2
 	@${TRUE}
+
+# Variables to control the size and anti-aliasing factor for alt code
+XX= 1024
+YY= 768
+AA= 3
 
 ${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}

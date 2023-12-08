@@ -56,7 +56,7 @@ CSTD= -std=gnu99
 #
 ARCH=
 
-# variables for redefining the time to sleep, primarily for alt code
+# Variable to control amount of time to sleep between updates for alt code.
 #
 SLEEP= 30
 SDL_SLEEP= 150000

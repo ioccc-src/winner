@@ -1979,12 +1979,17 @@ Later Cody made the entry look more like the original, removing the `argc` in
 
 ## <a name="1998_banks"></a>[1998/banks](/1998/banks/banks.c) ([README.md](/1998/banks/README.md]))
 
-[Cody](#cody) set up the Makefile to have an alt build (using the same code) for those
+[Cody](#cody) improved the Makefile to allow for easier redefining the control
+keys and time step that the author set up.
+
+Cody also set up the Makefile to have an alt build (using the same code) for those
 who do not have a page up or page down key and added the
 [keysym.h](/1998/banks/keysym.h) header file as a reference for other keys one
 can use if they wish to modify the controls. One can certainly do this even if
 they do have page up and page down but this gives a default for those who don't
-have them like with Macs.
+have them like with Macs. The alt build hard codes the page up and page down
+alternatives because not doing so would overly complicate both builds and since
+you can configure them all in both builds it shouldn't matter.
 
 
 ## <a name="1998_bas1"></a>[1998/bas1](/1998/bas1/bas1.c) ([README.md](/1998/bas1/README.md]))
@@ -2599,7 +2604,10 @@ added to `.gitignore` by accident) but Cody restored it from the archive.
 
 ## <a name="2001_kev"></a>[2001/kev](/2001/kev/kev.c) ([README.md](/2001/kev/README.md]))
 
-[Cody](#cody) slowed down the ball just a tad (it was already a `-D` macro that was used
+[Cody](#cody) improved the Makefile to allow one to more easily set up the port,
+speed and `socket(2)` call that the author had set up.
+
+Cody also slowed down the ball just a tad (it was already a `-D` macro that was used
 in the code) as it went too fast for the speed at which the paddles move even
 when holding down the movement keys (but see below).
 
@@ -2608,7 +2616,8 @@ the arrow keys on your keyboard instead of the more awkward '`,`' and '`.`'.
 
 He updated both versions to have `#ifndef..#endif` pairs for the macros so one
 can more easily configure different settings without having to specify all of
-them. The speed, `SPEED`, will be set to 50 if it's not defined at the compiler
+them (though this change became unnecessary with an improvement on how it was
+done). The speed, `SPEED`, will be set to 50 if it's not defined at the compiler
 line as 50 is what it used to be set to. This way it's more to the original but
 without having to sacrifice playability by running `make`.
 

@@ -143,7 +143,9 @@ jkb: ${PROG}
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-# variable to control how long to sleep in alt version
+
+# Variable to control amount of time to sleep between writes for alt code.
+#
 SLEEP= 17
 
 ${PROG}.alt: ${PROG}.alt.c

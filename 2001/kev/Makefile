@@ -57,7 +57,7 @@ CSTD= -std=gnu99
 #
 ARCH=
 
-# variables for the macros for easier redefining
+# Variables that control the port, speed and socket(2) call
 #
 PORT= 5455
 SPEED= 100

@@ -55,9 +55,6 @@ CSTD= -std=gnu90
 #
 ARCH=
 
-# variable for size, primarily for alt code
-#
-SIZE=32767
 # Defines that are needed to compile
 #
 CDEFINE= -DM0=sizeof -DM1=long -DM2=void \
@@ -141,6 +138,9 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
+# Variable to control size for alt code
+#
+SIZE=32767
 
 ${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}

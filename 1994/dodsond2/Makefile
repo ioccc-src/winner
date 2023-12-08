@@ -138,7 +138,8 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-# variable to allow overriding how many arrows to start with
+# Variable to set amount of arrows to start with for alt code
+#
 ARROWS= 3
 
 ${PROG}.alt: ${PROG}.alt.c

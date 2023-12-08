@@ -143,7 +143,7 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
-# variables to help redefine width, height or iterations in alt version
+# Variables to control width, height and iterations in alt code
 #
 WIDTH= 400
 HEIGHT= 300
