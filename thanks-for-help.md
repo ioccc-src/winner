@@ -3818,9 +3818,11 @@ they avoided.
 symbols of `main()`. The fix is through the compiler option `-fcommon` which
 will let it compile like it does with macOS.
 
-Cody also made it easier to enjoy the theme of [Back to the
+Cody also added the [try.sh](2015/endoh3/try.sh) script which makes use of the
+make rule he added (to enjoy the theme of the entry, [Back to the
 Future](https://en.wikipedia.org/wiki/Back_to_the_Future) using this entry by
-simply typing `make back_to` or `make mullender`.
+simply typing `make back_to` or `make mullender`) and then runs the famous
+[1984/mullender.c](/1984/mullender/mullender.c).
 
 
 ## [2015/hou](2015/hou/prog.c) ([README.md](2015/hou/README.md))
