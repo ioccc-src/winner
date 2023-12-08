@@ -20,10 +20,11 @@ request](https://github.com/ioccc-src/temp-test-ioccc/pulls) (with ONE PULL
 REQUEST *PER* FIX, please)!
 
 We will be **happy to credit anyone who submits successful [GitHub pull
-requests](https://github.com/ioccc-src/temp-test-ioccc/pulls)** in the [thanks
-file](thanks-for-fixes.md). If you're a previous winner we will add a link to your winning
-entries in the file (if you're not a previous winner we can add a link to your
-GitHub page or personal website if you have one, should you wish).
+requests](https://github.com/ioccc-src/temp-test-ioccc/pulls)** in the
+[thanks](/thanks-for-help.md) file. If you're a previous winner we will
+add a link to your winning entries in the file (if you're not a previous
+winner we can add a link to your GitHub page or personal website if you
+have one, should you wish).
 
 If you do fix an entry please feel free to delete the entry from this file!
 Otherwise if you wish to not worry about it we can do that to make sure the
@@ -632,13 +633,14 @@ also have `abba` which the original code does not!
 Now notice how the `avnz` in the first line got changed to `niam`, its ROT13
 value.  Notice also how some of these are in comments!
 
-`main()` is in there somewhere and that had to be changed to call `pain()` (see
-the [entry in the thanks file](/thanks-for-fixes.md#1989westley-readmemd) for
-details on how as this was not as straight forward as it is for other entries)
-as well. Now if you notice on that line you have in a comment `niam`. If you
-were to change that to `niap` (pain backwards) that function would end up as
-`pain()` in generated code! That's assuming that it's just the reversal version,
-of course but ver1 is the ROT13 version.
+`main()` is in there somewhere and that had to be changed to call
+`pain()` (see the [thanks](/thanks-for-help.md#1989_westley)
+file (see the _1989/westley_ section for details on how as this was
+not as straight forward as it is for other entries) as well. Now
+if you notice on that line you have in a comment `niam`. If you
+were to change that to `niap` (pain backwards) that function would
+end up as `pain()` in generated code! That's assuming that it's
+just the reversal version, of course but ver1 is the ROT13 version.
 
 These facts are bad enough but then you throw in the reverse of it without ROT13
 and then another version that has the reversal _and_ ROT13 then you can see it's
@@ -830,22 +832,21 @@ entry itself. Can you fix the actual entry? You are welcome to try and do so.
 
 ### STATUS: uses gets() - change to fgets() if possible
 ### Source code: [1992/gson/gson.c](1992/gson/gson.c)
-### Information: [1992/gson/README.md])1992/gson/README.md_
+### Information: [1992/gson/README.md])(1992/gson/README.md)
 
 Cody changed it so that the buffer size is `ARG_MAX+1` to try and get past the
 problem of `gets()` being used in a more complex way.
 
 It would be ideal if it were to use `fgets()` though. This will probably be
 looked at later but you're welcome to try and fix this too! A tip on how
-`gets()` is being used is in the [thanks-for-fixes.md](thanks-for-fixes.md)
-file.
+`gets()` is being used is in the [FAQ](/faq.md#gets) file.
 
 
 ## 1992 kivinen
 
 ### STATUS: known bug - please help us fix
 ### Source code: [1992/kivinen/kivinen.c](1992/kivinen/kivinen.c)
-### Information: [1992/kivinen/README.md])1992/kivinen/README.md_
+### Information: [1992/kivinen/README.md](1992/kivinen/README.md)
 
 When you start the program everything starts to move over to the right side and
 then ends.  [Yusuke Endoh](/winners.html#Yusuke_Endoh) pointed out that if you
@@ -1122,7 +1123,7 @@ pit room you will end up dying even though you didn't explicitly move there.
 ### Information: [1994/ldb/README.md](1994/ldb/README.md)
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed this to compile
-with modern systems (see the [thanks-for-fixes.md](thanks-for-fixes.md) file for
+with modern systems (see the [thanks](/thanks-for-help.md) file for
 what had to change) but the entry also used `gets()` which in some systems would
 print out a warning along with the output of the program. Naturally it could
 also overflow long lines.  Cody changed it to `fgets()` to prevent the display
@@ -1575,7 +1576,7 @@ see that it does indeed crash!
 The reason for this not working is really strange.
 
 ```sh
-$ echo "7 P 6 d P P 8 p" | ./dlowe     
+$ echo "7 P 6 d P P 8 p" | ./dlowe
 7668
 $ echo "7 P 6 d P P 8 p" | ./dlowe | grep 7
 $
@@ -1613,7 +1614,7 @@ $
 ```
 
 Well this explains why the `tr` does not transliterate it to `poot` but why is
-this happening? Why can't it be redirected to another file even? 
+this happening? Why can't it be redirected to another file even?
 
 If it could be figured out why it's not writing to stdout and yet at the same
 time is writing to stdout one bug could be fixed. Maybe it's the perl messing
@@ -1700,7 +1701,7 @@ To not get 'unimplemented' you can remove from the perl:
 
 
 ```perl
-sub AUTOLOAD { print"unimplemented\n"} 
+sub AUTOLOAD { print"unimplemented\n"}
 ```
 
 (Note that the author stated this was used for exception handling so another
@@ -1867,7 +1868,7 @@ explicitly stated that it requires i386 linux.
 
 There I found what should be a more portable version which is included as
 [otccelf.c](2001/bellard/otccelf.c) (after adding some `#include`s and the
-modification by Yusuke noted in the [thanks-for-fixes.md](/thanks-for-fixes.md)
+modification by Yusuke noted in the [thanks](/thanks-for-help.md)
 file) but it appears this *also* requires i386 linux; indeed looking at the code
 it hard codes paths that are i386 specific to linux.
 
@@ -2009,7 +2010,7 @@ identified by `R`.
 Since the game never ends properly the score is not printed either.
 
 It appears that the crash happens in more than one place. For instance it has
-happened at 
+happened at
 
 ```c
 XCheckMaskEvent(d, 4,&e)
@@ -2028,7 +2029,7 @@ In both cases the pointer `d` was corrupted:
 (Display *) 0x0000000000000001
 ```
 
-It is believed that it also happened at 
+It is believed that it also happened at
 
 ```c
 XDrawString(d,w,g,W/3,H/2,m,B);
@@ -3239,9 +3240,10 @@ There was no IOCCC in 2023.
 We hope this document was of use to you in determining which entries are known
 to have a problem, what entries are known to have features that are not bugs and
 so on. We also thank you for going through this document and, if you propose any
-[fixes](/thanks-for-fixes.md) via a [GitHub pull
+fixes via a [GitHub pull
 request](https://github.com/ioccc-src/temp-test-ioccc/pulls) or otherwise, we
 thank you as well for the help! We will happily add you to the
+[thanks](/thanks-for-help.md) file.
 
 There was no IOCCC in these years.
 
@@ -3256,8 +3258,8 @@ completed.
 
 We hope this document was of use to you in determining which entries are known
 to have a problem, what entries are known to have features that are not bugs and
-so on. We also thank you for going through this document and, if you propose any
-[fixes](/thanks-for-fixes.md) via a [GitHub pull
+so on. We also thank you for going through this  document and, if you propose any
+fixes] via a [GitHub pull
 request](https://github.com/ioccc-src/temp-test-ioccc/pulls) or otherwise, we
 thank you as well for the help! We will happily add you to the
-[thanks-for-fixes.md](/thanks-for-fixes.md) file as well.
+[thanks](/thanks-for-help.md) file as well.
