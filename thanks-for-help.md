@@ -3792,6 +3792,16 @@ output.
 # <a name="2015"></a>2015
 
 
+## [2015/dogon](2015/dogon/prog.c) ([README.md](2015/dogon/README.md]))
+
+[Cody](#cody) improved the Makefile so that one can easily change the dimensions
+at compilation time via `make(1)`.
+
+Cody also added alt code that is based on the author's remarks, suggesting that
+one change the value of `q` to a different number, in order to see a bug that
+they avoided.
+
+
 ## [2015/duble](2015/duble/prog.c) ([README.md](2015/duble/README.md]))
 
 [Cody](#cody) added the [try.sh](2015/duble/try.sh) script.
