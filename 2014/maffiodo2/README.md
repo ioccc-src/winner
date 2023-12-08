@@ -64,6 +64,14 @@ to social media that has a small size limit.
 Who will be the first to tweet this source?  How many re-tweets will such tweet
 get?  And how many people will really understand the tweet?
 
+Judges' 2023 update: Last year we would have referred to a
+[toot](https://en.wikipedia.org/wiki/Mastodon_\(social_network\)#Comparison_to_Twitter),
+as in a [Mastodon](https://fosstodon.org/@ioccc) *toot*.
+This year we might have mentioned the term
+[publish](https://www.itechpost.com/articles/115087/20221116/mastodon-officially-replaced-toot-publish.htm)
+although we remain fond of the
+[historic Mastodon term, toot](https://gizmodo.com/mastodon-toot-retired-twitter-tweet-equivalent-1849786221).
+
 
 ## Author's remarks:
 
