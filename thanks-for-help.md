@@ -3795,10 +3795,12 @@ output.
 # <a name="2015"></a>2015
 
 
-## <a name="2015_endoh3"></a>[2015/endoh3](/2015/endoh3/prog.c) ([README.md](/2015/endoh3/README.md]))
+## <a name="2015_duble"></a>[2015/endoh3](/2015/duble/prog.c) ([README.md](/2015/duble/README.md]))
 
 [Cody](#cody) added the [try.sh](/2015/duble/try.sh) script.
->>>>>>> xexyl-duble15-try
+
+
+## <a name="2015_endoh3"></a>[2015/endoh3](/2015/endoh3/prog.c) ([README.md](/2015/endoh3/README.md]))
 
 [Cody](#cody) fixed this to compile with Linux which was having a problem with duplicate
 symbols of `main()`. The fix is through the compiler option `-fcommon` which
@@ -3814,55 +3816,23 @@ simply typing `make back_to` or `make mullender`.
 [Cody](#cody) added explicit linking of libm (`-lm`) for systems that do not do this
 (Linux doesn't seem to but macOS does).
 
-<<<<<<< HEAD
 
 ## <a name="2015_howe"></a>[2015/howe](/2015/howe/prog.c) ([README.md](/2015/howe/README.md))
-
-[Cody](#cody) added the [try.sh](/2015/howe/try.sh) script, downloaded the War
-and Peace text file, fixed the [avgtime.sh](/2015/howe/avgtime.sh) script (it
-resulted in standard input errors in piping to `bc(/1)`) and added the
-[cc.1](/2015/howe/cc.1) man page as not all systems have it (in fact it's
-`gcc(/1)` from Rocky Linux).
-||||||| 6a936532
-
-## [2015/howe](2015/howe/prog.c) ([README.md](2015/howe/README.md))
 
 [Cody](#cody) added the [try.sh](2015/howe/try.sh) script, downloaded the War
 and Peace text file, fixed the [avgtime.sh](2015/howe/avgtime.sh) script (it
 resulted in standard input errors in piping to `bc(1)`) and added the
 [cc.1](2015/howe/cc.1) man page as not all systems have it (in fact it's
 `gcc(1)` from Rocky Linux).
-=======
+
 Cody also added the RFC 1321 text file, [rfc1321.txt](2015/hou/rfc1321.txt) to
 the directory, to make it so one need not download it, and which the README.md
 file now links to.
->>>>>>> xexyl-duble15-try
-
-
-<<<<<<< HEAD
-## <a name="2015_mills1"></a>[2015/mills1](/2015/mills1/prog.c) ([README.md](/2015/mills1/README.md))
-||||||| 6a936532
-## [2015/mills1](2015/mills1/prog.c) ([README.md](2015/mills1/README.md))
-=======
-## <a name="2015_howe"></a>[2015/howe](/2015/howe/prog.c) ([README.md](/2015/howe/README.md))
->>>>>>> xexyl-duble15-try
-
-<<<<<<< HEAD
-[Cody](#cody) added the [try.sh](/2015/mills1/try.sh) script which changes the
-||||||| 6a936532
-[Cody](#cody) added the [try.sh](2015/mills1/try.sh) script which changes the
-=======
-[Cody](#cody) added the [try.sh](/2015/howe/try.sh) script, downloaded the War
-and Peace text file, fixed the [avgtime.sh](/2015/howe/avgtime.sh) script (it
-resulted in standard input errors in piping to `bc(/1)`) and added the
-[cc.1](/2015/howe/cc.1) man page as not all systems have it (in fact it's
-`gcc(/1)` from Rocky Linux).
 
 
 ## <a name="2015_mills1"></a>[2015/mills1](/2015/mills1/prog.c) ([README.md](/2015/mills1/README.md))
 
 [Cody](#cody) added the [try.sh](/2015/mills1/try.sh) script which changes the
->>>>>>> xexyl-duble15-try
 parameters to what we had in the judges' remarks to make it easier (he only died
 when he tried to mark a reminder complete on the other side of the screen at the
 same time and he almost survived that, scoring at that point over 90 - but this
