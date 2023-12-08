@@ -67,8 +67,8 @@ make nathan
 to learn how to get a copy of the code.
 
 See the 1992/nathan.c file in the
-[../../archive/archive-1992.tar.bz2](archive/archive-1992.tar.bz2) tarball if
-you're interested in this file.
+[archive/historic/archive-1992.tar.bz2](/archive/historic/archive-1992.tar.bz2)
+tarball if you're interested in this file.
 
 
 ### Personal note from chongo:

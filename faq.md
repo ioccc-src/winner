@@ -485,14 +485,18 @@ web site.
 #### 2020 Dec 28 bzip2 compressed tarball archive
 
 Furthermore, a bzip2 compressed tarball containing the released
-IOCCC winner source code may be found under the [archive/](/archive) directory.
-The file [archive-all.tar.bz2](/archive/archive-all.tar.bz2) contains all years
-and the individual years are in the form `archive/archive-YYYY.tar.bz2`.
+IOCCC winner source code may be found under the
+[archive/historic](/archive/histroic) directory.  The file
+[archive-all.tar.bz2](/archive/historic/archive-all.tar.bz2) contains
+all years and the individual years are in the form
+_archive/historic/archive-YYYY.tar.bz2_.
 
 These files were obtained from the [Internet Wayback
-Machine](https://web.archive.org) from the [snapshot of the website on 2020 Dec
-28](https://web.archive.org/web/20201228005211/https://www.ioccc.org/).  See
-`archive/README.md` for details about these bzip2 compressed tarballs.
+Machine](https://web.archive.org) from the [snapshot of the website
+on 2020 Dec
+28](https://web.archive.org/web/20201228005211/https://www.ioccc.org/).
+See [archive/historic/README.md](/archive/historic/README.md) for
+details about these bzip2 compressed tarballs.
 
 **XXX**: Change the references to _temp-test-ioccc_ to _winners_
 when these fixes are merged.
