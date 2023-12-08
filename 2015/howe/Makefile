@@ -213,7 +213,7 @@ clean:
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
 	${RM} -rf *.dSYM
-	${RM} -f curds.tmp nuked.tmp war-and-peace.txt whey.tmp makeholes
+	${RM} -f curds.tmp nuked.tmp whey.tmp makeholes
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
