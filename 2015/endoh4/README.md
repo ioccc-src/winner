@@ -5,6 +5,10 @@ make
 ```
 
 
+There is an alt version which is the originally submitted entry. See [Alternate
+code](#alternate-code) below for details.
+
+
 ## To use:
 
 ```sh
@@ -15,28 +19,26 @@ make
 ### Try:
 
 ```sh
-./prog @ @ @ @ @ @
-
-./prog @ @ @ @ @ @ @ @ @ @ @ @
-
-./prog $(perl -e 'print "@ " x (2*3*5*7);')
-
-./prog $(< Makefile)
+./try.sh
 ```
 
 
 ## Alternate code:
 
-An alternate version of this entry, `prog.alt.c`, is provided.\
+An alternate version of this entry, [prog.alt.c](prog.alt.c), is provided.
 This alternate code does not contain improvements suggested by [Gil
-Dogon](/winners.html#Gil_Dogon); it is
-the author's original entry.
+Dogon](/winners.html#Gil_Dogon); it is the author's original entry.
 
-To compile this alternate version:
+
+### Alternate build:
+
 
 ```sh
 make alt
 ```
+
+
+### Alternate use:
 
 Use `prog.alt` as you would `prog` above.
 
@@ -67,7 +69,7 @@ gcc -o prog prog.c
 Inspired by [Animated Factorization
 Diagrams](http://www.datapointed.net/visualizations/math/factorization/animated-diagrams/).
 
-`prog.alt.c` is the original version that I submitted. [Gil
+[prog.alt.c](prog.alt.c) is the original version that I submitted. [Gil
 Dogon](/winners.html#Gil_Dogon) kindly improved it during the review.  Thank
 you!
 

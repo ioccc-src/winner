@@ -3825,6 +3825,11 @@ simply typing `make back_to` or `make mullender`) and then runs the famous
 [1984/mullender.c](/1984/mullender/mullender.c).
 
 
+## [2015/endoh4](2015/endoh4/prog.c) ([README.md](2015/endoh4/README.md]))
+
+[Cody](#cody) added the [try.sh](2015/endoh4/try.sh) script.
+
+
 ## [2015/hou](2015/hou/prog.c) ([README.md](2015/hou/README.md))
 
 [Cody](#cody) added explicit linking of libm (`-lm`) for systems that do not do this
