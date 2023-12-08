@@ -57,8 +57,8 @@ CSTD= -std=gnu90
 #
 ARCH=
 
-# variables that control the control keys
-
+# Variables that control the control keys and time step
+#
 IT= XK_Page_Up
 DT= XK_Page_Down
 UP= XK_Up
@@ -67,6 +67,7 @@ LT= XK_Left
 RT= XK_Right
 CS= XK_Return
 dt= 0.02
+
 # Defines that are needed to compile
 #
 CDEFINE= -DIT=${IT} -DDT=${DT} \

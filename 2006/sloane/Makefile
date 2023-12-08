@@ -57,9 +57,6 @@ CSTD= -std=gnu99
 #
 ARCH=
 
-# variable to simplify redefining sleep duration for alt code
-#
-SLEEP= 75000
 # Defines that are needed to compile
 #
 CDEFINE= -DS=${SLEEP}
@@ -143,6 +140,9 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
+# Variable to control amount of time to sleep between writes for alt code.
+#
+SLEEP= 75000
 ${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 

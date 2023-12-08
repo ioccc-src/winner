@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Thu 07 Dec 2023 19:12:36 UTC*
+*Last updated: Fri 08 Dec 2023 12:46:49 UTC*
 
 This document is primarily for [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) as he (that is I :-) ) wanted a way
@@ -192,9 +192,5 @@ too. The entries done as of 7 Dec 2023 are:
 	- 1991/rince
 	- 1985/shapiro
 	- 1985/lycklama
-    ... and at least one of them needs to have the thanks file updated as it
-    helps with the original entry itself. This one is 1998/banks but there might
-    be more (and there is at least one not done yet that this will apply I
-    believe).
-
-
+    ... and a couple or few involved updating the thanks file as it helps with
+    the entry itself. Ones not yet done might also have this need.

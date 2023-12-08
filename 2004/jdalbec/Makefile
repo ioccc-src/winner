@@ -56,9 +56,6 @@ CSTD= -ansi
 #
 ARCH=
 
-# variable for redefining macro Ag
-#
-Ag= 11
 # Defines that are needed to compile
 #
 CDEFINE= -DAg=${Ag}
@@ -143,6 +140,10 @@ ${PROG}: ${PROG}.c
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+# Variable to control how many numbers to print on a line for alt code
+#
+Ag= 11
 
 ${PROG}.alt: ${PROG}.alt.c
 	@${RM} -f ${PROG}2.alt.c $@
