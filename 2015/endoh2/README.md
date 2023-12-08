@@ -15,9 +15,7 @@ make
 ### Try:
 
 ```sh
-cat prog.c
-
-./prog | diff - prog.c
+./try.sh
 ```
 
 
@@ -42,14 +40,14 @@ more prog.c
 Where did those underscores come from?  Well [RTFS](http://acronyms.thefreedictionary.com/RTFS)!\*\*
 
 ** Read the Freaking Source (polite form)
-** Read The Freakin' Screen (polite form)
+** Read The Freaking Screen (polite form)
 
-If you are still puzzled, look at prog.c with your favorite text editor.
+If you are still puzzled, look at [prog.c](prog.c) with your favorite text editor.
 
 
 ## Author's remarks:
 
-**Follow this instruction literally!**
+**Follow these instructions literally!**
 
 ```sh
 cat prog.c
