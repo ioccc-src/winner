@@ -3835,6 +3835,9 @@ simply typing `make back_to` or `make mullender`) and then runs the famous
 [Cody](#cody) added explicit linking of libm (`-lm`) for systems that do not do this
 (Linux doesn't seem to but macOS does).
 
+Cody also added the [try.sh](2015/hou/try.sh) script and the large file `large`
+which the `try.sh` script uses.
+
 Cody also added the RFC 1321 text file, [rfc1321.txt](2015/hou/rfc1321.txt) to
 the directory, to make it so one need not download it, and which the README.md
 file now links to.
