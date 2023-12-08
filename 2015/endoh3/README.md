@@ -17,14 +17,12 @@ make
 To see the original [mullender](mullender.c) in action:
 
 ```sh
-cc -o prog prog.c mullender.c # or make mullender or make back_to
-./prog
-q
-^C # where ^C is ctrl-C, interrupt.
+./try.sh
 ```
 
-Observe what happens when you hit enter or another character! Send INTR to end
-the program.
+Observe what happens when you hit enter or another character! You might even try
+typing out, one character at a time, `1984/mullender`, and then see what it looks
+like at the end. Send INTR to end the program.
 
 More generally use:
 
@@ -34,7 +32,7 @@ cc -o prog prog.c foo.c
 ^C	# if necessary, where ^C is ctrl-C, interrrupt
 ```
 
-to run `prog` as whatever foo.c is in the joke PDP-11 emulator.
+to compile and run `prog` as whatever foo.c is in the joke PDP-11 emulator.
 
 
 ## Judges' remarks:
@@ -55,6 +53,7 @@ clue, see the end of the author's remarks.) If in doubt, use
 
 ## Author's remarks:
 
+
 ### Hint / Compatibility
 
 * A little-endian system is required due to an external factor.
@@ -64,6 +63,7 @@ the same reason.  But I believe it is reasonably portable.
 * This is a kind of emulator.  You may find its architecture name if you look at
 the source code from all angles..
 * Find `main()` function.
+
 
 ### Spoiler
 
@@ -79,6 +79,7 @@ clang -o prog prog.c mullender.c
 ```
 
 You can enjoy the legendary winner of the first IOCCC, again.
+
 
 ### Internal
 
@@ -103,6 +104,7 @@ needed for [mullender.c](mullender.c) to work:
   * 2: Auto-increment
   * 4: Auto-decrement deferred
   * 6: Index (incomplete)
+
 
 ### Limitations
 

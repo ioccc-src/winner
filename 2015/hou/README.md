@@ -5,10 +5,24 @@ make
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2015 hou in bugs.md](/bugs.md#2015-hou).
+
+
+
+
 ## To use:
 
 ```sh
-echo IOCCC | ./prog
+echo something | ./prog
+./prog < file
 ```
 
 
@@ -37,7 +51,7 @@ Some things that make you go, "huh?"
 
 How are those values magically returned?
 
-What happens with a large file? Something over 256K
+What happens with a large file? Something over 256K.
 
 ```sh
 ./prog < large_file
@@ -50,7 +64,7 @@ Where does that message come from?
 
 This looks like a normal C program.
 
-Almost everything is a double.
+Almost everything is a `double`.
 
 There are tell-tale signs like `pow(2,(?/12))` and `exp(-?*?)` (names redacted).
 You can also find a bunch of cosines and polynomial evaluations.
@@ -58,6 +72,7 @@ You can also find a bunch of cosines and polynomial evaluations.
 It looks like a ????? ???????????, right?
 
 Run and find out.
+
 
 ### Why obfuscated
 
@@ -72,10 +87,11 @@ isn't a single integer. Even `getchar()` and `EOF` are immediately converted.
 
 Since `bool` counts as an integer type too, there is no boolean either. No
 comparison, no `if`, no `?:`, no `||` `&&`. Everything is done in a single loop
-that terminates on printf. Straight up arithmetic.
+that terminates on `printf(3)`. Straight up arithmetic.
 
-`floor` and `ceil` are technically double-to-double functions, but they feel
-like cheating. Yes `cos`, no `floor`.
+`floor(3)` and `ceil(3)` are technically double-to-double functions, but they feel
+like cheating. Yes `cos(3)`, no `floor(3)`.
+
 
 ### Limitations
 

@@ -57,9 +57,14 @@ CSTD= -std=gnu11
 #
 ARCH=
 
+# Variables to control dimensions of the game
+#
+WIDTH= 1024
+HEIGHT= 800
+
 # Defines that are needed to compile
 #
-CDEFINE= -DW=1024 -Dp=800
+CDEFINE= -DW=${WIDTH} -Dp=${HEIGHT}
 
 # Include files that are needed to compile
 #
@@ -116,8 +121,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -139,6 +144,9 @@ ${PROG}: ${PROG}.c
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # data files
 #
