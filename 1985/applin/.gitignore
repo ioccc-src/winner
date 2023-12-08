@@ -1,3 +1,9 @@
+#
+# sort with: sort -d -u
 applin
 applin.orig
+*.dSYM
+indent
+indent.c
+indent.o
 prog.orig

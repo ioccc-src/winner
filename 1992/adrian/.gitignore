@@ -1,3 +1,5 @@
+#
+# sort with: sort -d -u
 adbasename
 adbasename.c
 adecho
@@ -6,9 +8,13 @@ adgrep
 adhead
 adhead.c
 adrian
+adrian.orig
 adsleep
 adsleep.c
 adwc
 adwc.c
-adrian.orig
+*.dSYM
+indent
+indent.c
+indent.o
 prog.orig

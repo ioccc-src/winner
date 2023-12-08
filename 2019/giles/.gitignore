@@ -1,3 +1,9 @@
-prog
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
 out.wav
+prog
 prog.orig

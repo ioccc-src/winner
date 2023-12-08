@@ -1,6 +1,12 @@
+#
+# sort with: sort -d -u
+README.poot.md
+*.dSYM
 dlowe
 dlowe.alt
-README.poot.md
 dlowe.orig
-prog.orig
+indent
+indent.c
+indent.o
 make.1
+prog.orig

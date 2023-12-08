@@ -1,5 +1,11 @@
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
 out.raw
 prog
 prog.alt
-spectrogram.png
 prog.orig
+spectrogram.png

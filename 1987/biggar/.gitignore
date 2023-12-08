@@ -1,3 +1,9 @@
+#
+# sort with: sort -d -u
 biggar
 biggar.orig
+*.dSYM
+indent
+indent.c
+indent.o
 prog.orig

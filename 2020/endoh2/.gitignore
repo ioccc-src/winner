@@ -1,2 +1,8 @@
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
 prog
 prog.orig

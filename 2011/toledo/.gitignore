@@ -1,5 +1,11 @@
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
+prog.orig
 toledo
 toledo.alt
 toledo.alt2
 toledo.orig
-prog.orig

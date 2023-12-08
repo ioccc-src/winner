@@ -1,6 +1,12 @@
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
 lievaart
-lievaart.alt
 lievaart2
 lievaart2.alt
+lievaart.alt
 lievaart.orig
 prog.orig

@@ -1,4 +1,10 @@
+#
+# sort with: sort -d -u
 cdua
 cdua.alt
 cdua.orig
+*.dSYM
+indent
+indent.c
+indent.o
 prog.orig

@@ -1,6 +1,12 @@
+#
+# sort with: sort -d -u
+*.dSYM
+err
+indent
+indent.c
+indent.o
 prog
 prog.orig
-err
 static_assert
 t.c
 thread_local

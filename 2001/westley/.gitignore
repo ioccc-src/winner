@@ -1,8 +1,14 @@
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
+prog.orig
 westley
-westley.alt
 westley2
 westley2.c
+westley.alt
+westley.orig
 westley.punch
 westley.sort
-westley.orig
-prog.orig

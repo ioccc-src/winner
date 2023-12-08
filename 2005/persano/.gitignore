@@ -1,4 +1,10 @@
-persano
+#
+# sort with: sort -d -u
+*.dSYM
 foo.gif
+indent
+indent.c
+indent.o
+persano
 persano.orig
 prog.orig

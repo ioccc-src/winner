@@ -1,11 +1,15 @@
+#
+# sort with: sort -d -u
 beethoven.pbm
 blank.pbm
+*.dSYM
 deckmyn
+deckmyn.orig
 example_greensleeves
 greensleeves.pbm
-sheetmusic.pbm
-sheetmusic.pbm
-sheetmusic.pbm
+indent
+indent.c
+indent.o
 output.pbm
-deckmyn.orig
 prog.orig
+sheetmusic.pbm

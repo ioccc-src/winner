@@ -1,4 +1,10 @@
+#
+# sort with: sort -d -u
 banks
 banks.alt
 banks.orig
+*.dSYM
+indent
+indent.c
+indent.o
 prog.orig

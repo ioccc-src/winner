@@ -1,10 +1,16 @@
+#
+# sort with: sort -d -u
 blakely
-output.gif
-paraboloid.gif
+blakely.orig
+*.dSYM
 empty.gif
 flat.gif
+indent
+indent.c
+indent.o
+output.gif
+paraboloid.gif
 pic.gif
+prog.orig
 ripple.gif
 saddle.gif
-blakely.orig
-prog.orig

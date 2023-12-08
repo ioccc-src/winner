@@ -1,5 +1,11 @@
+#
+# sort with: sort -d -u
 cathat
+*.dSYM
 gandalf
-hatcat
 gandalf.orig
+hatcat
+indent
+indent.c
+indent.o
 prog.orig

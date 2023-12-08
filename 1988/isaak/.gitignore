@@ -1,5 +1,11 @@
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
 isaak
 isaak.alt
-isaak.output
 isaak.orig
+isaak.output
 prog.orig

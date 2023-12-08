@@ -1,5 +1,11 @@
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
 mikeash
-mikeash.orig
 mikeash2
 mikeash2.c
+mikeash.orig
 prog.orig

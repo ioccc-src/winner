@@ -1,11 +1,17 @@
+#
+# sort with: sort -d -u
+4old_default.ppm
 a
 a.c
+*.dSYM
 hou
 hou.orig
 hou.tmp
 hou.tmp.c
-prog.orig
+indent
+indent.c
+indent.o
 luna.ppm
 old_default.ppm
-4old_default.ppm
 otherroom.ppm
+prog.orig

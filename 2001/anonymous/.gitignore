@@ -1,12 +1,18 @@
+#
+# sort with: sort -d -u
 anonymous
+anonymous.bed
+anonymous.bed.64
+anonymous.orig
 anonymous.ten
 anonymous.ten.32
+anonymous.ten.64
+*.dSYM
+indent
+indent.c
+indent.o
+prog.orig
 ten.bak.od
 ten.bak.txt
 ten.od
 ten.txt
-anonymous.ten.64
-anonymous.bed
-anonymous.bed.64
-anonymous.orig
-prog.orig

@@ -1,9 +1,15 @@
+#
+# sort with: sort -d -u
+configuration.txt
+*.dSYM
 endoh1
 endoh1.alt
 endoh1.alt2
 endoh1_color
-endoh1_color.alt2
 endoh1_color.alt
-configuration.txt
+endoh1_color.alt2
 endoh1.orig
+indent
+indent.c
+indent.o
 prog.orig

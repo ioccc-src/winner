@@ -1,4 +1,10 @@
+#
+# sort with: sort -d -u
 anderson
 anderson.alt
 anderson.orig
+*.dSYM
+indent
+indent.c
+indent.o
 prog.orig

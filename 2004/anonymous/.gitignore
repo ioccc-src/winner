@@ -1,6 +1,12 @@
+#
+# sort with: sort -d -u
 anonymous
-anonymous.pgm
-precious.pgm
-ring.pgm
 anonymous.orig
+anonymous.pgm
+*.dSYM
+indent
+indent.c
+indent.o
+precious.pgm
 prog.orig
+ring.pgm

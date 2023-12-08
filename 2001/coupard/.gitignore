@@ -1,4 +1,10 @@
+#
+# sort with: sort -d -u
 coupard
-test.wav
 coupard.orig
+*.dSYM
+indent
+indent.c
+indent.o
 prog.orig
+test.wav

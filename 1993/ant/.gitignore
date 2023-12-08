@@ -1,6 +1,11 @@
+#
+# sort with: sort -d -u
 ag
 ag.txt
 ant
-ant
 ant.orig
+*.dSYM
+indent
+indent.c
+indent.o
 prog.orig

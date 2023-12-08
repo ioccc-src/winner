@@ -1,7 +1,13 @@
+#
+# sort with: sort -d -u
 build
+*.dSYM
+hibachi.orig
+indent
+indent.c
+indent.o
+prog.orig
 src/config.log
 src/config.status
 src/hibachi
 src/makefile
-hibachi.orig
-prog.orig

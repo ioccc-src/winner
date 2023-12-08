@@ -1,5 +1,11 @@
+#
+# sort with: sort -d -u
+barfoof.c
+*.dSYM
+foobarf.c
+indent
+indent.c
+indent.o
 nathan
 nathan.orig
 prog.orig
-barfoof.c
-foobarf.c

@@ -1,6 +1,12 @@
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
+*.png
+prog.orig
 stewart
 stewart.html
-*.xbm
-*.png
 stewart.orig
-prog.orig
+*.xbm

@@ -1,4 +1,10 @@
-tbr
-tbr.orig
-tbr.alt
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
 prog.orig
+tbr
+tbr.alt
+tbr.orig

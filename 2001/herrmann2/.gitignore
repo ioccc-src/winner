@@ -1,7 +1,13 @@
-herrmann2
-herrmann2.orig
-prog.orig
-ioccc.out
-ioccc.out2
+#
+# sort with: sort -d -u
 cup.out
 cup.out2
+*.dSYM
+herrmann2
+herrmann2.orig
+indent
+indent.c
+indent.o
+ioccc.out
+ioccc.out2
+prog.orig

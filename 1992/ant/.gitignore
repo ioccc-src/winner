@@ -1,7 +1,13 @@
+#
+# sort with: sort -d -u
 am
 am.safe
 ant
-node.*
-leaf.*
 ant.orig
+*.dSYM
+indent
+indent.c
+indent.o
+leaf.*
+node.*
 prog.orig

@@ -1,4 +1,10 @@
+#
+# sort with: sort -d -u
 bas1
 bas1.orig
 bemazing
+*.dSYM
+indent
+indent.c
+indent.o
 prog.orig

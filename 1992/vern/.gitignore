@@ -1,4 +1,10 @@
-vern
-vern.tmp.c
-vern.orig
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
 prog.orig
+vern
+vern.orig
+vern.tmp.c

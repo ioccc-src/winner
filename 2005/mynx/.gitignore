@@ -1,6 +1,12 @@
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
 mynx
 mynx.alt
-source/config.*
-source/makefile
 mynx.orig
 prog.orig
+source/config.*
+source/makefile

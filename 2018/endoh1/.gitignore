@@ -1,7 +1,13 @@
+#
+# sort with: sort -d -u
+*.dSYM
 golem.gif
+indent
+indent.c
+indent.o
 invisible.gif
 output.gif
 prog
 prog.gif
-smily.gif
 prog.orig
+smily.gif

@@ -1,4 +1,10 @@
+#
+# sort with: sort -d -u
 buzzard.2
-first
 buzzard.2.orig
+*.dSYM
+first
+indent
+indent.c
+indent.o
 prog.orig

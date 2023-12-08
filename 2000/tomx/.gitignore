@@ -1,5 +1,11 @@
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
+mkentry
+prog.orig
 tomx
 tomx.alt
-mkentry
 tomx.orig
-prog.orig

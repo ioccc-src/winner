@@ -1,10 +1,16 @@
-theorem
+#
+# sort with: sort -d -u
+*.dSYM
 fibonacci
 fibonacci.c
+indent
+indent.c
+indent.o
 mariano
+prog.orig
 sorter
 sorter.c
+theorem
 theorem_bkp
 theorem_bkp.c
 theorem.orig
-prog.orig

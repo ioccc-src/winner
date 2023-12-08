@@ -1,5 +1,11 @@
+#
+# sort with: sort -d -u
+*.dSYM
 imc
+imc.orig
+indent
+indent.c
+indent.o
+prog.orig
 screen1.ras
 screen2.ras
-imc.orig
-prog.orig

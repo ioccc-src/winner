@@ -1,7 +1,13 @@
+#
+# sort with: sort -d -u
 applin
-large.c
-zsmall
-zsmall.c
 applin.alt
 applin.orig
+*.dSYM
+indent
+indent.c
+indent.o
+large.c
 prog.orig
+zsmall
+zsmall.c

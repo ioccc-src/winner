@@ -1,4 +1,10 @@
+#
+# sort with: sort -d -u
 albert
 albert.alt
 albert.orig
+*.dSYM
+indent
+indent.c
+indent.o
 prog.orig

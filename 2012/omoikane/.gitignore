@@ -1,13 +1,19 @@
+#
+# sort with: sort -d -u
+*.dSYM
 data
 data.c
+indent
+indent.c
+indent.o
 key
 key.c
 nyaruko
 nyaruko.alt
 nyaruko.alt2
+omoikane.orig
 output
 output.2
 output.c
-regenerated.bin
-omoikane.orig
 prog.orig
+regenerated.bin

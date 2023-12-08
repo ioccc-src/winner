@@ -1,4 +1,10 @@
+#
+# sort with: sort -d -u
+*.dSYM
 dlowe
-trailed.net
 dlowe.orig
+indent
+indent.c
+indent.o
 prog.orig
+trailed.net

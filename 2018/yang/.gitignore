@@ -1,14 +1,20 @@
+#
+# sort with: sort -d -u
+*.dSYM
 generated1.c
 generated2.c
 generated3.c
 generated4.c
 generated5.c
+indent
+indent.c
+indent.o
 left
 msg[0-9]
-prog
-right
-shift
-rotated_counterclockwise.txt
-rotated_clockwise.txt
 no_leading_space.txt
+prog
 prog.orig
+right
+rotated_clockwise.txt
+rotated_counterclockwise.txt
+shift

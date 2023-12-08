@@ -1,7 +1,13 @@
+#
+# sort with: sort -d -u
+*.dSYM
+fruits.ppm
+indent
+indent.c
+indent.o
+lena512.ppm
 lena.ppm
 prog
-small.jpg
-fruits.ppm
-lena512.ppm
-vintage_cars.ppm
 prog.orig
+small.jpg
+vintage_cars.ppm

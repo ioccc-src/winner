@@ -1,5 +1,11 @@
-dds
+#
+# sort with: sort -d -u
 a.c
 a.out
+*.dSYM
+dds
 dds.orig
+indent
+indent.c
+indent.o
 prog.orig

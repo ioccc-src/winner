@@ -1,6 +1,12 @@
+#
+# sort with: sort -d -u
 ant
 ant.alt
 ant.orig
+*.dSYM
 hill
+indent
+indent.c
+indent.o
 mole
 prog.orig

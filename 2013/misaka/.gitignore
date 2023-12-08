@@ -1,4 +1,10 @@
+#
+# sort with: sort -d -u
+*.dSYM
 horizontal_cat
+indent
+indent.c
+indent.o
 long_cat
 long_cat.txt
 long_faat_cat
@@ -15,8 +21,8 @@ misaka6.c
 misaka7.c
 misaka8.c
 misaka9.c
+misaka.orig
+prog.orig
 same_as_long_cat
 same_as_long_cat.txt
 vertical_cat
-misaka.orig
-prog.orig

@@ -1,10 +1,16 @@
+#
+# sort with: sort -d -u
 bar
 bar.c
+*.dSYM
 foo
 foo.c
+foo.md
 heckbert
+heckbert.orig
+indent
+indent.c
+indent.o
 ph
 ph.c
-heckbert.orig
 prog.orig
-foo.md

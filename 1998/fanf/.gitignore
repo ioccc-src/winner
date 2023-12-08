@@ -1,7 +1,13 @@
+#
+# sort with: sort -d -u
+*.dSYM
 fanf
-fanftmp1.c
-fanftmp1
-fanftmp2.c
-fanftmp2
 fanf.orig
+fanftmp1
+fanftmp1.c
+fanftmp2
+fanftmp2.c
+indent
+indent.c
+indent.o
 prog.orig

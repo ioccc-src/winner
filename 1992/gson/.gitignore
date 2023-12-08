@@ -1,5 +1,11 @@
-gson
+#
+# sort with: sort -d -u
 ag
-words
+*.dSYM
+gson
 gson.orig
+indent
+indent.c
+indent.o
 prog.orig
+words

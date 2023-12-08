@@ -1,5 +1,11 @@
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
 jarijyrki
+jarijyrki.orig
 myedits.info
 outfile.info
-jarijyrki.orig
 prog.orig

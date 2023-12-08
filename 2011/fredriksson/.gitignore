@@ -1,5 +1,11 @@
-fredriksson
+#
+# sort with: sort -d -u
 ag
 ag.c
+*.dSYM
+fredriksson
 fredriksson.orig
+indent
+indent.c
+indent.o
 prog.orig

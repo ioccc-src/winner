@@ -1,5 +1,11 @@
-hamaji
-hamaji.orig
-prog.orig
+#
+# sort with: sort -d -u
+*.dSYM
 dragon
 dragon2
+hamaji
+hamaji.orig
+indent
+indent.c
+indent.o
+prog.orig

@@ -1,4 +1,10 @@
+#
+# sort with: sort -d -u
 a.out
+*.dSYM
+indent
+indent.c
+indent.o
+prog.orig
 stein
 stein.orig
-prog.orig

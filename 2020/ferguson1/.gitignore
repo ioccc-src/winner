@@ -1,8 +1,14 @@
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
 play
 prog
 prog.alt
-snake
-snake-colours
-snake.alt
-termcaps
 prog.orig
+snake
+snake.alt
+snake-colours
+termcaps

@@ -1,5 +1,11 @@
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
+prog.orig
 shapiro
+shapiro.orig
 shapiro_t1
 shapiro_t2.c
-shapiro.orig
-prog.orig

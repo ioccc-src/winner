@@ -1,8 +1,14 @@
+#
+# sort with: sort -d -u
 1.txt
 2.txt
+*.dSYM
 dlowe
 dlowe.orig
 fun
+indent
+indent.c
+indent.o
 ioccc.txt
 prog.orig
 sparkl

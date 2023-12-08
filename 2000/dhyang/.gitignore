@@ -1,10 +1,16 @@
+#
+# sort with: sort -d -u
 aku
 aku.c
+*.dSYM
 dhyang
+dhyang.orig
+indent
+indent.c
+indent.o
+prog.orig
 saitou
 soku
 soku.c
 zan
 zan.c
-dhyang.orig
-prog.orig

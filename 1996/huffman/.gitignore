@@ -1,3 +1,9 @@
+#
+# sort with: sort -d -u
+*.dSYM
 huffman
 huffman.orig
+indent
+indent.c
+indent.o
 prog.orig

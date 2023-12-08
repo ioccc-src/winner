@@ -1,10 +1,14 @@
+#
+# sort with: sort -d -u
 august
 august.oc
-test.oo
-fac.oo
-parse.oo
-august.oc
-august.oo
 august.oo
 august.orig
+*.dSYM
+fac.oo
+indent
+indent.c
+indent.o
+parse.oo
 prog.orig
+test.oo

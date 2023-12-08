@@ -1,7 +1,13 @@
+#
+# sort with: sort -d -u
+*.dSYM
 fubar
+fubar.orig
+indent
+indent.c
+indent.o
 ouroboros
 ouroboros.c
+prog.orig
 x
 x1
-fubar.orig
-prog.orig

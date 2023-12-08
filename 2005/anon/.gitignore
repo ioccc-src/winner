@@ -1,4 +1,10 @@
+#
+# sort with: sort -d -u
 anon
 anon.alt
 anon.orig
+*.dSYM
+indent
+indent.c
+indent.o
 prog.orig

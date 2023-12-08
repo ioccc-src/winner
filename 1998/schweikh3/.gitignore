@@ -1,9 +1,15 @@
-schweikh3
-schweikh3.alt
+#
+# sort with: sort -d -u
+*.dSYM
 file1
 file2
 file3
 file4
-schweikh3.orig
-samefile
+indent
+indent.c
+indent.o
 prog.orig
+samefile
+schweikh3
+schweikh3.alt
+schweikh3.orig

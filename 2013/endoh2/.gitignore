@@ -1,6 +1,12 @@
+#
+# sort with: sort -d -u
+*.dSYM
 endoh2
+endoh2.orig
+indent
+indent.c
+indent.o
 jpeg
 jpeg.c
 jpeg.jpg
-endoh2.orig
 prog.orig

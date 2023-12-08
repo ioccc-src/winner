@@ -1,9 +1,15 @@
+#
+# sort with: sort -d -u
 cube.gif
-sykes1
-sykes1.html
-sykes1.orig
+*.dSYM
+indent
+indent.c
+indent.o
 prog.orig
-sykes1.out
-sykes1.alt.out
+sykes1
 sykes1.alt
 sykes1.alt.html
+sykes1.alt.out
+sykes1.html
+sykes1.orig
+sykes1.out

@@ -1,6 +1,12 @@
-prog
+#
+# sort with: sort -d -u
+*.dSYM
 dg1.Z
-ref.Z
-guidelines.txt.Z
 guidelines2.txt
+guidelines.txt.Z
+indent
+indent.c
+indent.o
+prog
 prog.orig
+ref.Z

@@ -1,6 +1,12 @@
+#
+# sort with: sort -d -u
+*.dSYM
+hello
+hello.c
+indent
+indent.c
+indent.o
+ioccc
+ioccc.c
 prog
 prog.orig
-hello.c
-hello
-ioccc.c
-ioccc

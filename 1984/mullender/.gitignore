@@ -1,7 +1,13 @@
+#
+# sort with: sort -d -u
+*.dSYM
+g.c
+gentab
+indent
+indent.c
+indent.o
 mullender
 mullender.alt
 mullender.alt2
-gentab
-g.c
 mullender.orig
 prog.orig

@@ -1,8 +1,14 @@
+#
+# sort with: sort -d -u
 atob
+*.dSYM
+indent
+indent.c
+indent.o
 jaw
-zcat
+jaw.orig
+prog.orig
 receive
 unshark
 unshark.c
-jaw.orig
-prog.orig
+zcat

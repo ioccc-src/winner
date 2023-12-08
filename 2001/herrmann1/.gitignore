@@ -1,6 +1,12 @@
-herrmann1
+#
+# sort with: sort -d -u
+*.dSYM
 error
+herrmann1
 herrmann1-1.c
 herrmann1-3.c
 herrmann1.orig
+indent
+indent.c
+indent.o
 prog.orig

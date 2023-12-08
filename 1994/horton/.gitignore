@@ -1,5 +1,11 @@
+#
+# sort with: sort -d -u
+*.dSYM
 gtface
 horton
 horton.alt
 horton.orig
+indent
+indent.c
+indent.o
 prog.orig

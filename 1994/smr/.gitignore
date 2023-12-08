@@ -1,4 +1,10 @@
-smr
-smr.out
-smr.orig
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
 prog.orig
+smr
+smr.orig
+smr.out

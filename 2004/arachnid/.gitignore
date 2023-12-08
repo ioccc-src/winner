@@ -1,4 +1,10 @@
+#
+# sort with: sort -d -u
 arachnid
 arachnid.alt
 arachnid.orig
+*.dSYM
+indent
+indent.c
+indent.o
 prog.orig

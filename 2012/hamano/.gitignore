@@ -1,9 +1,15 @@
+#
+# sort with: sort -d -u
+*.dSYM
 hamano
-hint
-hint.pdf
-hello.pdf
+hamano.orig
 hello2
 hello3
+hello.pdf
+hint
+hint.pdf
+indent
+indent.c
+indent.o
 output.pdf
-hamano.orig
 prog.orig

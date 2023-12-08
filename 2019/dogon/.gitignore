@@ -1,3 +1,9 @@
+#
+# sort with: sort -d -u
 apholife
+*.dSYM
+indent
+indent.c
+indent.o
 prog
 prog.orig

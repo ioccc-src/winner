@@ -1,6 +1,12 @@
+#
+# sort with: sort -d -u
+*.dSYM
 dloweneil
 dloweneil.alt
+dloweneil.orig
+indent
+indent.c
+indent.o
 pootris
 pootris.alt
-dloweneil.orig
 prog.orig

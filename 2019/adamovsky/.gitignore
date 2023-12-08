@@ -1,4 +1,10 @@
+#
+# sort with: sort -d -u
+*.dSYM
 identify.unl
+indent
+indent.c
+indent.o
 iocccsize_2018
 prog
 prog2

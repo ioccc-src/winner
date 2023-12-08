@@ -1,5 +1,11 @@
-vik
+#
+# sort with: sort -d -u
 audio_file.raw
+*.dSYM
+indent
+indent.c
+indent.o
+prog.orig
+vik
 vik.alt
 vik.orig
-prog.orig

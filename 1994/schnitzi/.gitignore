@@ -1,7 +1,13 @@
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
+prog.orig
 schnitzi
 schnitzi2
 schnitzi2.c
 schnitzi.alt
 schnitzi.alt2
 schnitzi.orig
-prog.orig

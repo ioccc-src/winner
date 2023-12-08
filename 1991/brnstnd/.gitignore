@@ -1,4 +1,10 @@
+#
+# sort with: sort -d -u
 brnstnd
 brnstnd.orig
+*.dSYM
+indent
+indent.c
+indent.o
 prog.orig
 sorta

@@ -1,3 +1,9 @@
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
+prog.orig
 schnitzi
 schnitzi.orig
-prog.orig

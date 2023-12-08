@@ -1,4 +1,10 @@
+#
+# sort with: sort -d -u
 borsanyi
-example.gif
 borsanyi.orig
+*.dSYM
+example.gif
+indent
+indent.c
+indent.o
 prog.orig

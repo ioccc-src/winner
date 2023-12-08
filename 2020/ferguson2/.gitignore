@@ -1,6 +1,12 @@
-prog
-recode
+#
+# sort with: sort -d -u
+cake.sh
 chocolate-cake.dat
 chocolate-cake.key
-cake.sh
+*.dSYM
+indent
+indent.c
+indent.o
+prog
 prog.orig
+recode

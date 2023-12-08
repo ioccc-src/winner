@@ -1,10 +1,16 @@
-prog
+#
+# sort with: sort -d -u
+*.dSYM
 fib
 fib.c
 hint
 hint.c
+indent
+indent.c
+indent.o
 lol
 lol.c
+prog
+prog.orig
 scc
 scc.c
-prog.orig

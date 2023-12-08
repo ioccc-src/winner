@@ -1,11 +1,17 @@
-mmm-chocolate.png
+#
+# sort with: sort -d -u
 chocolate-in-ioccc.png
+*.dSYM
 encodedimg.png
+indent
+indent.c
+indent.o
 ioccc-in-chocolate.png
+mmm-chocolate.png
+prog.orig
 restored-chocolate.png
 restored-ioccc.png
 restored.png
 vik
 vik.alt
 vik.orig
-prog.orig

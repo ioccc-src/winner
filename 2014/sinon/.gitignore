@@ -1,5 +1,11 @@
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
 prog
-sinon.c
 prog.orig
 run
 run.c
+sinon.c

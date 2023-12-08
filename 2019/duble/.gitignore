@@ -1,9 +1,15 @@
+#
+# sort with: sort -d -u
 Darwin
 Darwin.alt
 FreeBSD
 FreeBSD.alt
 Linux
 Linux.alt
+*.dSYM
+indent
+indent.c
+indent.o
 prog
 prog.alt
 prog.orig

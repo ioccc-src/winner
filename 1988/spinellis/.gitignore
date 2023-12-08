@@ -1,5 +1,11 @@
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
 prog.c
+prog.orig
 spinellis
 spinellis.alt
 spinellis.orig
-prog.orig

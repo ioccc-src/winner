@@ -1,4 +1,10 @@
+#
+# sort with: sort -d -u
+*.dSYM
 hague
 hague.alt
 hague.orig
+indent
+indent.c
+indent.o
 prog.orig

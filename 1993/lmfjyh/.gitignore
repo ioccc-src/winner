@@ -1,4 +1,10 @@
+#
+# sort with: sort -d -u
 "*
+*.dSYM
+indent
+indent.c
+indent.o
 lmfjyh
 lmfjyh.alt
 lmfjyh.orig

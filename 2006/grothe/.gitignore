@@ -1,3 +1,9 @@
+#
+# sort with: sort -d -u
+*.dSYM
 grothe
 grothe.orig
+indent
+indent.c
+indent.o
 prog.orig

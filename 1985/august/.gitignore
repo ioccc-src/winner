@@ -1,3 +1,9 @@
+#
+# sort with: sort -d -u
 august
 august.orig
+*.dSYM
+indent
+indent.c
+indent.o
 prog.orig

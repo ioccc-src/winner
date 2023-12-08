@@ -1,6 +1,12 @@
+#
+# sort with: sort -d -u
+*.dSYM
 echo
 endoh1
-hello
-tac
 endoh1.orig
+hello
+indent
+indent.c
+indent.o
 prog.orig
+tac

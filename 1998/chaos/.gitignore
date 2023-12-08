@@ -1,5 +1,11 @@
+#
+# sort with: sort -d -u
 chaos
 chaos_nohalf
 chaos_nohalf.c
 chaos.orig
+*.dSYM
+indent
+indent.c
+indent.o
 prog.orig

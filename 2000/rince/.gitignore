@@ -1,4 +1,10 @@
+#
+# sort with: sort -d -u
+*.dSYM
 dmy2jd
+indent
+indent.c
+indent.o
+prog.orig
 rince
 rince.orig
-prog.orig

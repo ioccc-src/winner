@@ -1,3 +1,9 @@
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
 prog
-tbfs
 prog.orig
+tbfs

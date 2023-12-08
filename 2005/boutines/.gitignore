@@ -1,6 +1,12 @@
+#
+# sort with: sort -d -u
 boutines
-test.svg
-test.png
 boutines.orig
+*.dSYM
+indent
+indent.c
+indent.o
 prog.orig
 result.svg
+test.png
+test.svg

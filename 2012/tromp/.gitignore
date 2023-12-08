@@ -1,5 +1,11 @@
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
+prog.orig
 tromp
 tromp32
 tromp64
 tromp.orig
-prog.orig

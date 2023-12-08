@@ -1,8 +1,14 @@
+#
+# sort with: sort -d -u
 a
 b
 c
 d
-prog
+*.dSYM
 e
+indent
+indent.c
+indent.o
 output.txt
+prog
 prog.orig

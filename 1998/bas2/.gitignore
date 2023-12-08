@@ -1,3 +1,9 @@
+#
+# sort with: sort -d -u
 bas2
 bas2.orig
+*.dSYM
+indent
+indent.c
+indent.o
 prog.orig

@@ -1,5 +1,11 @@
+#
+# sort with: sort -d -u
+correct
+*.dSYM
+indent
+indent.c
+indent.o
 prog
 prog.clean
-correct
-remarks
 prog.orig
+remarks

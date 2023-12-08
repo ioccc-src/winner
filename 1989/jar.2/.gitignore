@@ -1,3 +1,9 @@
+#
+# sort with: sort -d -u
+*.dSYM
+indent
+indent.c
+indent.o
 jar.2
 jar.2.orig
 prog.orig

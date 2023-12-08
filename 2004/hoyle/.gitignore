@@ -1,4 +1,10 @@
+#
+# sort with: sort -d -u
+*.dSYM
 hoyle
 hoyle.alt
 hoyle.orig
+indent
+indent.c
+indent.o
 prog.orig

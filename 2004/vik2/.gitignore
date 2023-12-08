@@ -1,6 +1,12 @@
+#
+# sort with: sort -d -u
 cat-killing-curiosity
+*.dSYM
+indent
+indent.c
+indent.o
+prog.orig
 vik2
+vik2.orig
 vik2.possible.cat.death_1.c
 vik2.possible.cat.death_2.c
-vik2.orig
-prog.orig

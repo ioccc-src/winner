@@ -1,4 +1,10 @@
+#
+# sort with: sort -d -u
 blakely
-garden.txt
 blakely.orig
+*.dSYM
+garden.txt
+indent
+indent.c
+indent.o
 prog.orig

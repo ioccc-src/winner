@@ -1,6 +1,12 @@
-giljade
-out
-c.c
+#
+# sort with: sort -d -u
 c
+c.c
+*.dSYM
+giljade
 giljade.orig
+indent
+indent.c
+indent.o
+out
 prog.orig

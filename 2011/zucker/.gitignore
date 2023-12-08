@@ -1,9 +1,15 @@
-image.ppm
-image.png
+#
+# sort with: sort -d -u
+*.dSYM
 hello.ppm
 image2.ppm
-ioccc2011.ppm
+image.png
+image.ppm
+indent
+indent.c
+indent.o
 ioccc2011.png
+ioccc2011.ppm
+prog.orig
 zucker
 zucker.orig
-prog.orig

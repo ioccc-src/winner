@@ -1,5 +1,11 @@
+#
+# sort with: sort -d -u
+*.dSYM
 data.name
 dgibson
-life.d 
 dgibson.orig
+indent
+indent.c
+indent.o
+life.d 
 prog.orig

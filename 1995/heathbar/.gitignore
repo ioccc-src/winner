@@ -1,3 +1,9 @@
+#
+# sort with: sort -d -u
+*.dSYM
 heathbar
 heathbar.orig
+indent
+indent.c
+indent.o
 prog.orig
