@@ -39,11 +39,21 @@ make SLEEP=0 clobber alt
 
 ## Original code:
 
-Should you wish to see the original without having to mess with the compiler
-line, try:
+Should you wish to see the original you may do so with the original code,
+[sloane.c](sloane.c).
+
+
+### Original build:
+
 
 ```sh
 make clobber all
+```
+
+
+### Original use:
+
+```sh
 ./sloane
 ```
 
@@ -54,14 +64,6 @@ above!
 NOTE: again as above, to see what is going on, we recommend that you instead use
 the alternate code which we described in the [To build](#to-build) and
 [try](#try) sections above.
-
-If however you wish to see the original, try:
-
-```sh
-make clobber all
-```
-
-Use `sloane` as you would `sloane.alt` above.
 
 
 ## Judges' Comments:
