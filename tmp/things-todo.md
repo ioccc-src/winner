@@ -111,7 +111,7 @@ for links about the todo items wrt the [FAQ](/faq.md).
 website. I (Cody) would be seriously surprised if I did not make a typo
 somewhere (or some places!) in the many thousands of changes I made in the
 README.md files, the [bugs.md](/bugs.md) files and maybe even the
-[thanks-for-fixes.md](/thanks-for-fixes.md) file plus others that might be
+[thanks-for-help.md](/thanks-for-help.md) file plus others that might be
 there.
     * In the case of author URLs sometimes the Internet Wayback Machine is
     helpful (and has helped) but in other cases it has not. Note that sometimes
