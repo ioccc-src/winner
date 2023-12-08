@@ -143,8 +143,14 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
+# variables to help redefine width, height or iterations in alt version
+#
+WIDTH= 400
+HEIGHT= 300
+ITERATIONS= 128
+
 ${PROG}.alt: ${PROG}.alt.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS} -DW=${WIDTH} -DH=${HEIGHT} -DI=${ITERATIONS} $< -o $@ ${LDFLAGS}
 
 # data files
 #

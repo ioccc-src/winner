@@ -52,7 +52,7 @@ you wish to make it silver, 47 (a prime) protons, do:
 
 
 ```sh
-make clobber CDEFINE="-DAg=47" alt
+make clobber Ag=47 alt
 ```
 
 though it might be odd to have 47 numbers on a line as it would defeat the
@@ -60,7 +60,7 @@ purpose. :-) Or if you prefer some prime, golden irony:
 
 
 ```sh
-make clobber CDEFINE="-DAg=79" alt
+make clobber Ag=79 alt
 ```
 
 

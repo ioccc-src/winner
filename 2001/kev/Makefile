@@ -57,9 +57,15 @@ CSTD= -std=gnu99
 #
 ARCH=
 
+# variables for the macros for easier redefining
+#
+PORT= 5455
+SPEED= 100
+L= "socket(il.sin_family=AF_INET,SOCK_STREAM,0)"
+
 # Defines that are needed to compile
 #
-CDEFINE= -DPORT=5455 -DSPEED=100 -Dl_="socket(il.sin_family=AF_INET,SOCK_STREAM,0)"
+CDEFINE= -DPORT=${PORT} -DSPEED=${SPEED} -Dl_=${L}
 
 # Include files that are needed to compile
 #

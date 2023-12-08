@@ -46,7 +46,7 @@ The default number of arrows in this version is 3 but if you want to change it,
 say to 5, try:
 
 ```sh
-make clobber CDEFINE="-DW=5" alt
+make clobber ARROWS=5 alt
 ```
 
 

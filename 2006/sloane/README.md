@@ -24,7 +24,7 @@ value used in `usleep()`. The default is `-DS=75000` but you can easily change
 it. To do so try:
 
 ```sh
-make CDEFINE="-DS=70000" clobber alt
+make clobber SLEEP=70000 clobber alt
 ./sloane.alt
 ```
 
@@ -32,7 +32,7 @@ If you wish to make it like the original, as if the below [Original
 code](#original-code) was being used, you can do:
 
 ```sh
-make CDEFINE="-DS=0" clobber alt
+make SLEEP=0 clobber alt
 ./sloane.alt
 ```
 

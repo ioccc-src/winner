@@ -20,9 +20,10 @@ that's fewer than the original program.
 
 The first alternate version, [rince.alt.c](rince.alt.c), disables a maximum move
 count so that anyone with enough patience and time can complete the puzzle,
-without having to worry about how many moves they make. The second version,
-[rince.alt2.c](rince.alt2.c), allows one to reconfigure at compilation the
-maximum number of moves, even if that is lowering the count.
+without having to worry about how many moves they make, assuming they don't get
+stuck. The second version, [rince.alt2.c](rince.alt2.c), allows one to
+reconfigure at compilation the maximum number of moves, even if that is lowering
+the count.
 
 The author set the maximum number of moves to 484.
 
@@ -39,11 +40,12 @@ restrictions in the number of movements and the second one, `rince.alt2`, has a
 configurable maximum number of moves allowed, defaulting to the entry's max,
 484.
 
-To reconfigure the maximum number of moves:
+To reconfigure the maximum number of moves to 700:
 
 ```sh
-make clobber CDEFINE+="-DMAX_MOVES=5" alt
+make clobber MAXMOVES=700 alt
 ```
+
 
 ### Alternate use:
 

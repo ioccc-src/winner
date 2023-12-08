@@ -58,7 +58,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE= -DZ=500
+CDEFINE= -DZ=${SLEEP}
 
 # Include files that are needed to compile
 #
@@ -136,6 +136,13 @@ ${PROG}: ${PROG}.c
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+# variable to control amount of time to sleep between writes for alt code.
+SLEEP=500
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} -DZ=${SLEEP} $< -o $@ ${LDFLAGS}
+
 
 # data files
 #

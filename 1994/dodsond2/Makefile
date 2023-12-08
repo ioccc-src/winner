@@ -58,7 +58,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE= -DW=3
+CDEFINE= -DW=${ARROWS}
 
 # Include files that are needed to compile
 #
@@ -138,8 +138,11 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
+# variable to allow overriding how many arrows to start with
+ARROWS= 3
+
 ${PROG}.alt: ${PROG}.alt.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS} -DW=${ARROWS} $< -o $@ ${LDFLAGS}
 
 # data files
 #

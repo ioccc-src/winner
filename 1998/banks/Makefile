@@ -57,11 +57,21 @@ CSTD= -std=gnu90
 #
 ARCH=
 
+# variables that control the control keys
+
+IT= XK_Page_Up
+DT= XK_Page_Down
+UP= XK_Up
+DN= XK_Down
+LT= XK_Left
+RT= XK_Right
+CS= XK_Return
+dt= 0.02
 # Defines that are needed to compile
 #
-CDEFINE= -DIT=XK_Page_Up -DDT=XK_Page_Down \
-	-DUP=XK_Up -DDN=XK_Down -DLT=XK_Left -DRT=XK_Right \
-	-DCS=XK_Return -Ddt=0.02
+CDEFINE= -DIT=${IT} -DDT=${DT} \
+	-DUP=${UP} -DDN=${DN} -DLT=${LT} -DRT=${RT} \
+	-DCS=${CS} -Ddt=${dt}
 
 # Include files that are needed to compile
 #
@@ -142,8 +152,7 @@ alt: data ${ALT_TARGET}
 	@${TRUE}
 
 ${PROG}.alt: ${PROG}.c
-	${CC} ${CFLAGS} -UIT -UDT -DIT=XK_f -DDT=XK_d -DUP=XK_Up -DDN=XK_Down -DLT=XK_Left -DRT=XK_Right \
-	-DCS=XK_Return -Ddt=0.02 $< -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS} -UIT -UDT -DIT=XK_f -DDT=XK_d $< -o $@ ${LDFLAGS}
 
 
 # data files

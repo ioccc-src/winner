@@ -54,11 +54,10 @@ If you wish to change the size to say, 55555:
 
 
 ```sh
-make clobber CDEFINE="-DSZ=55555" alt
+make clobber SIZE=55555 alt
 ```
 
-or whatever you wish to redefine it to. See [alternate code](#alternate-code)
-below.
+or whatever you wish to redefine it to.
 
 
 ## Judges' remarks:

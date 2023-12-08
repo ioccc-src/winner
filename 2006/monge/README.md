@@ -6,8 +6,8 @@ Make sure you have the SDL1 (not SDL2!) development environment installed.
 make
 ```
 
-There is alternate code that lets you redefine the width and height and number
-of iterations to use. See [alternate code](#alternate-code) below.
+There is alternate version that lets you redefine the width and height and number
+of iterations to use. See [Alternate code](#alternate-code) below.
 
 
 ### Bugs and (Mis)features:
@@ -67,13 +67,13 @@ of the variables `W`, `H` and `I`. The defaults are (respectively) 400, 300 and
 the same then do:
 
 ```sh
-make clobber CDEFINE="-DW=500 -DH=500" alt
+make clobber WIDTH=500 HEIGHT=500 alt
 ```
 
 If you wish to keep the dimensions the same but change the iterations to 512:
 
 ```sh
-make clobber CDEFINE="-DI=512" alt
+make clobber ITERATIONS=512 alt
 ```
 
 If you specify a value less than 1 for any of these it sets it back to the

@@ -42,23 +42,24 @@ If you need to change the speed you can reconfigure it like (say
 for over a network and not the same host):
 
 ```sh
-make clobber CDEFINE="-DSPEED=50" all # original default value which is very fast
+make clobber SPEED=50 all # original default value which is very fast
 ```
 
 If you wish to change the port you can do so like:
 
 ```sh
-make clobber CDEFINE="-DPORT=3773" all
+make clobber PORT=3773 all
 ```
 
 Of course if you want a port < 1024 you'll need to be root so don't do that.
 
 And if you know what you're doing you can redefine the call to the `socket(2)`
-syscall with the `l_` macro. Of course you can do more than one at the same
-time. For instance to change the speed and port:
+syscall with the `l_` macro, changing the `L` variable like one would `PORT`. Of
+course you can do more than one at the same time. For instance to change the
+speed and port:
 
 ```sh
-make clobber CDEFINE="-DSPEED=512 -DPORT=3773" all
+make clobber SPEED=512 PORT=3773 all
 ```
 
 If you have `xterm` try on one system:

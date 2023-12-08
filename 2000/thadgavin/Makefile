@@ -56,9 +56,13 @@ CSTD= -std=gnu99
 #
 ARCH=
 
+# variables for redefining the time to sleep, primarily for alt code
+#
+SLEEP= 30
+SDL_SLEEP= 150000
 # Defines that are needed to compile
 #
-CDEFINE= -DZ=30 -DZS=150000
+CDEFINE= -DZ=${SLEEP} -DZS=${SDL_SLEEP}
 
 # Include files that are needed to compile
 #

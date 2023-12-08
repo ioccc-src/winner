@@ -1,5 +1,5 @@
 /*
- * complex machine, http://www.drb.insel.de/~heiner/BB/mabu90.html
+ * complex machine, https://web.archive.org/web/20131104160623/http://www.drb.insel.de/~heiner/BB/mabu90.html
  */
 
 #define sym_1(sym, _1) sym

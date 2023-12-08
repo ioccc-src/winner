@@ -58,7 +58,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE= -DZ=17
+CDEFINE= -DZ=${SLEEP}
 
 # Include files that are needed to compile
 #
@@ -142,6 +142,24 @@ jkb: ${PROG}
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+# variable to control how long to sleep in alt version
+SLEEP= 17
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} -DZ=${SLEEP} $< -o $@ ${LDFLAGS}
+
+${PROG}.alt2: ${PROG}.alt2.c
+	${CC} ${CFLAGS} -DZ=${SLEEP} $< -o $@ ${LDFLAGS}
+
+jkb.alt: ${PROG}.alt
+	${RM} -f $@
+	${LN} $< $@
+
+jkb.alt2: ${PROG}.alt
+	${RM} -f $@
+	${LN} $< $@
+
 
 # data files
 #

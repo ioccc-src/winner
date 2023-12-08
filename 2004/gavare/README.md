@@ -46,17 +46,17 @@ make alt
 To change the default size from 1024x768 try:
 
 ```sh
-make clobber CDEFINE="-DXX=640 -DYY=480" alt
+make clobber XX=640 YY=480 alt
 ```
 
 You might also wish to change the anti-alias setting:
 
 ```sh
-make clobber CDEFINE="-DAA=2" alt
+make clobber AA=2 alt
 ```
 
-This is not possible with the author's version but it is with the Windows
-version (see below).
+This is not possible with the author's version but it is with the alt versions
+(Windows - see below - and otherwise).
 
 As the Windows version will not compile on most viewers' systems we do not build
 it with `make alt`; instead try:

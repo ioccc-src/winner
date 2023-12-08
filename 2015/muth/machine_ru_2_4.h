@@ -1,5 +1,5 @@
 /*
- * 2 state, 4 symbol current runner-up, http://www.logique.jussieu.fr/~michel/ha.html#tm24
+ * 2 state, 4 symbol current runner-up, https://web.archive.org/web/20150926094245/http://www.logique.jussieu.fr/~michel/ha.html#tm24
  *
  * halts after 7195 steps
  */

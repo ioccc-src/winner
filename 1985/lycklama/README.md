@@ -12,7 +12,7 @@ make alt
 ```
 
 To see why we recommend the alternate version instead of the original version,
-see below and the [original code](#original-code) section.
+see below and the [Original code](#original-code) section.
 
 
 ### Try:
@@ -25,7 +25,7 @@ reconfigure it like:
 
 
 ```sh
-make CDEFINE+="-DZ=700" clobber alt
+make SLEEP=700 clobber alt
 ```
 
 which would set it at 700. Then, whether you use the default value or not, try:

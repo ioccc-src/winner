@@ -5,7 +5,7 @@ make all
 ```
 
 There is alternate code which allows one to change the size of the maze. See
-[alternate code](#alternate-code) below.
+[Alternate code](#alternate-code) below.
 
 
 ### To run:
@@ -32,7 +32,7 @@ make alt
 If you wish to change the value you can do it like:
 
 ```sh
-make clobber CDEFINE="-DC=5" alt
+make clobber SIZE=5 alt
 ```
 
 Note that if it is not a number then obviously there will be a compilation
