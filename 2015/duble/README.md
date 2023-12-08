@@ -25,7 +25,7 @@ echo Some text | ./prog
 ## Alternate code:
 
 This alternate code, provided by the author, is discussed in more detail by the
-author in the 'prog.c vs prog.alt.c' section of their remarks.
+author in the '[prog.c](prog.c) vs [prog.alt.c](prog.alt.c)' section of their remarks.
 
 
 ### Alternate build:
@@ -63,13 +63,15 @@ blasphemous. When I was fighting to make this program work, I started
 wondering if it was not the reason for its very erratic behaviour.
 
 
-### prog.c vs prog.alt.c
+### [prog.c](prog.c) vs [prog.alt.c](prog.alt.c)
 
-The file `prog.alt.c` is the one I submitted.
+The file [prog.alt.c](prog.alt.c) is the one I submitted.
 
 [Gil Dogon](/winners.html#Gil_Dogon) noted a few unsafe statements (statements
 whose behaviour is undefined in the C standard and, as such, could cause issues
-with other compilers or optimization levels). These have been fixed in `prog.c`.
+with other compilers or optimization levels). These have been fixed in
+[prog.c](prog.c).
+
 After this fix, in order to remain rule-2-compliant, a variable name has also
 been shortened in this file.
 
@@ -107,6 +109,7 @@ configuration was needed.
 I also tested it on FreeBSD 9.3 32bits (font and encoding configuration was
 needed in this case).
 
+
 #### Basic mode:
 
 ```sh
@@ -117,6 +120,7 @@ $ ./prog < lorem-ipsum.txt
 [... rendering ...]
 ```
 
+
 #### Interactive mode:
 
 ```sh
@@ -125,6 +129,7 @@ $ ./prog
 [... rendering ...]
 >
 ```
+
 
 ### Obfuscation:
 
@@ -158,6 +163,7 @@ encoded in macro `O_o` at the top of the source file.
 
 ### Limitations:
 
+
 #### Charset
 
 In order to comply with the size rule, I encoded only a part of the visible ASCII
@@ -167,9 +173,9 @@ chars:
 a-z, A-Z, '.' ':' ',' ';' '!' and '?'.
 ```
 
-Uppercase and lowercase chars are rendered the same. The program also understand
-the space and the linefeed (`\n`).  Other chars are simply ignored (most of the
-time ;)
+Uppercase and lowercase chars are rendered the same. The program also
+understands space and linefeed (`\n`).  Other chars are simply ignored (most of
+the time ;)
 
 
 #### Stack size
@@ -206,7 +212,7 @@ you are curious. :)
 
 #### A 'draft' mode
 
-Defining an environment variable called DRAFT will enable the 'draft-mode'.
+Defining an environment variable called `DRAFT` will enable the 'draft-mode'.
 Try for example:
 
 ```sh
