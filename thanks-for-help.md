@@ -3147,12 +3147,13 @@ Curiously, although clang requires the types of args to be strictly correct,
 some versions do allow only one arg. This was done at first because it's not
 used but Cody discovered that later versions of clang have an additional defect
 where it does not allow only one arg so the second arg to `main()` was added
-back. This was an unfortunate problem for the alt code as he has been using Z
-for alt code `usleep()` (for sleep) but
-in this case unfortunately the original entry used `Z` in `main()` (though
-unused) so to make it more like the original Cody renamed the macro `Z` for
-`usleep()` to `S` instead which can stand for sleep and also it is kind of like
-a backwards `Z`. That way `Z` could be in `main()`.
+back.
+
+This was an unfortunate problem for the alt code as he has been using Z for alt
+code `usleep()` (for sleep) but in this case unfortunately the original entry
+used `Z` in `main()` (though unused) so to make it more like the original Cody
+renamed the macro `Z` for `usleep()` to `S` instead which can stand for sleep
+and also it is kind of like a backwards `Z`. That way `Z` could be in `main()`.
 
 Cody also made sure that the Makefile links in `libm` as not all systems do this
 by default.
@@ -3795,9 +3796,24 @@ output.
 # <a name="2015"></a>2015
 
 
+## <a name="2015_dogon"></a>[2015/endoh3](/2015/dogon/prog.c) ([README.md](/2015/dogon/README.md]))
+
+[Cody](#cody) improved the Makefile so that one can easily change the dimensions
+at compilation time via `make(1)`.
+
+Cody also added alt code that is based on the author's remarks, suggesting that
+one change the value of `q` to a different number, in order to see a bug that
+they avoided.
+
+
 ## <a name="2015_duble"></a>[2015/endoh3](/2015/duble/prog.c) ([README.md](/2015/duble/README.md]))
 
 [Cody](#cody) added the [try.sh](/2015/duble/try.sh) script.
+
+
+## <a name="2015_endoh2"></a>[2015/endoh2](/2015/endoh2/prog.c) ([README.md](/2015/endoh2/README.md]))
+
+[Cody](#cody) added the [try.sh](2015/endoh2/try.sh) script.
 
 
 ## <a name="2015_endoh3"></a>[2015/endoh3](/2015/endoh3/prog.c) ([README.md](/2015/endoh3/README.md]))
@@ -3806,9 +3822,16 @@ output.
 symbols of `main()`. The fix is through the compiler option `-fcommon` which
 will let it compile like it does with macOS.
 
-Cody also made it easier to enjoy the theme of [Back to the
+Cody also added the [try.sh](/2015/endoh3/try.sh) script which makes use of the
+make rule he added (to enjoy the theme of the entry, [Back to the
 Future](https://en.wikipedia.org/wiki/Back_to_the_Future) using this entry by
-simply typing `make back_to` or `make mullender`.
+simply typing `make back_to` or `make mullender`) and then runs the famous
+[1984/mullender.c](/1984/mullender/mullender.c).
+
+
+## <a name="2015_endoh4"></a>[2015/endoh4](/2015/endoh4/prog.c) ([README.md](/2015/endoh4/README.md]))
+
+[Cody](#cody) added the [try.sh](/2015/endoh4/try.sh) script.
 
 
 ## <a name="2015_hou"></a>[2015/hou](/2015/hou/prog.c) ([README.md](/2015/hou/README.md))
@@ -3816,18 +3839,21 @@ simply typing `make back_to` or `make mullender`.
 [Cody](#cody) added explicit linking of libm (`-lm`) for systems that do not do this
 (Linux doesn't seem to but macOS does).
 
+Cody also added the [try.sh](/2015/hou/try.sh) script and the large file `large`
+which the `try.sh` script uses.
+
+Cody also added the RFC 1321 text file, [rfc1321.txt](/2015/hou/rfc1321.txt) to
+the directory, to make it so one need not download it, and which the README.md
+file now links to.
+
 
 ## <a name="2015_howe"></a>[2015/howe](/2015/howe/prog.c) ([README.md](/2015/howe/README.md))
 
-[Cody](#cody) added the [try.sh](2015/howe/try.sh) script, downloaded the War
-and Peace text file, fixed the [avgtime.sh](2015/howe/avgtime.sh) script (it
+[Cody](#cody) added the [try.sh](/2015/howe/try.sh) script, downloaded the War
+and Peace text file, fixed the [avgtime.sh](/2015/howe/avgtime.sh) script (it
 resulted in standard input errors in piping to `bc(1)`) and added the
-[cc.1](2015/howe/cc.1) man page as not all systems have it (in fact it's
+[cc.1](/2015/howe/cc.1) man page as not all systems have it (in fact it's
 `gcc(1)` from Rocky Linux).
-
-Cody also added the RFC 1321 text file, [rfc1321.txt](2015/hou/rfc1321.txt) to
-the directory, to make it so one need not download it, and which the README.md
-file now links to.
 
 
 ## <a name="2015_mills1"></a>[2015/mills1](/2015/mills1/prog.c) ([README.md](/2015/mills1/README.md))
