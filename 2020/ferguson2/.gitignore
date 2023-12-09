@@ -8,5 +8,6 @@ indent
 indent.c
 indent.o
 prog
+prog.alt
 prog.orig
 recode
