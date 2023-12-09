@@ -1,0 +1,6 @@
+a=0xfeedface
+b=0xcafe
+a << 16 + b
+a=0xdeadbeef
+b=0xcafe
+a << 16 + b

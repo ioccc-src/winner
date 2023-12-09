@@ -20,7 +20,7 @@ td   J		jmp_buf
 c   *K		pointer to cmd line args
 td   L		char
 v    M(u64)	detect errors, save answer in dot, format result in decimal and hex
-c   *N		freebie null pointer
+c   *N		freebie NULL pointer
 td   O		unsigned char
 td   P		void
 td   Q		int
@@ -37,12 +37,12 @@ i64  a		derived: 32
 i64  b		derived: 1
 i64 _b(i64)	term: << >> >>>
 i64  c		derived: 10
-i64 _c(c*)	convert binary global j to ascii decimal
+i64 _c(c*)	convert binary global j to ASCII decimal
 i64  d		freebie: 0
-v   _d(i64)	accumulate converted ascii bytes into j in base passed in
+v   _d(i64)	accumulate converted ASCII bytes into j in base passed in
 i64  e		derived: 256
 i64  f		derived: 2
-i64 _f()	convert from ascii to binary: selects convert base (10,8,16), result in j
+i64 _f()	convert from ASCII to binary: selects convert base (10,8,16), result in j
 u64  g(u16)	byte swap 16-bits
 u64  h(u32)	byte swap 32-bits
 i64  i(u64)	select size and byte swap minimal bytes
@@ -54,7 +54,7 @@ jb   l		for parser error recovery
 c    m()	scans input for token, ignores whitespace
 c    n()	get next input character
 i64 *o		registers 
-u32  p(c*)	writes to stdout until null, newline appended intelligently
+u32  p(c*)	writes to stdout until NUL, newline appended intelligently
 v    q(**)	init
 i64  r(c)	writes c to stdout
 i64  s		derived: 8
