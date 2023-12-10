@@ -46,7 +46,7 @@ For instance:
 
 
 ```sh
-make clobber CDEFINE="-DX1=-3 -DX2=2 -DY1=-2.3 -DY2=2.3" alt
+make clobber X1=-3 X2=2 Y1=-2.3 Y2=2.3 alt
 ```
 
 You may pick and choose which ones to redefine.
