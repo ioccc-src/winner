@@ -1,9 +1,3 @@
-#ifndef Z
-#define Z 30
-#endif
-#ifndef ZS
-#define ZS 150000
-#endif
                       int
                    X=320      ,Y=200,
                  n=0,m,     x,y,   j=1024;
