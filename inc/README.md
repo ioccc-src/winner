@@ -51,9 +51,9 @@ The following HTML phase files are used to build HTML content:
 
 Phases 11-19 are reserved for future use.
 
-20. <<insert before pandoc tool output>>
-21. <<insert pandoc tool output>>
-22. <<insert after pandoc tool output>>
+20. ((insert before pandoc tool output))
+21. ((insert pandoc tool output))
+22. ((insert after pandoc tool output))
 
 Phases 23-29 are reserved for future use.
 
