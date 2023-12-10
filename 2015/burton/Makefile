@@ -63,7 +63,7 @@ CDEFINE=
 
 # Include files that are needed to compile
 #
-CINCLUDE=
+CINCLUDE= -include libgen.h
 
 # Optimization
 #
@@ -114,10 +114,10 @@ PROG= prog
 #
 OBJ= ${PROG}.o
 DATA=
-TARGET= ${PROG}
+TARGET= ${PROG} eprog
 #
 ALT_OBJ= ${PROG}.alt.o
-ALT_TARGET= ${PROG}.alt
+ALT_TARGET= ${PROG}.alt eprog.alt
 
 
 #################
@@ -134,6 +134,11 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${CP} -f $@ calc
+
+eprog: ${PROG}
+	${CP} -f ${PROG} $@
+	${CP} -f ${PROG} ecalc
 
 # alternative executable
 #
@@ -142,6 +147,12 @@ alt: data ${ALT_TARGET}
 
 ${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+eprog.alt: ${PROG}.alt
+	${CP} -f ${PROG}.alt $@
+	${CP} -f ${PROG}.alt ecalc.alt
+
+
 
 # data files
 #

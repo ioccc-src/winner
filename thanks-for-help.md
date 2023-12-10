@@ -3798,10 +3798,43 @@ output.
 
 ## <a name="2015_burton"></a>[2015/endoh3](/2015/burton/prog.c) ([README.md](/2015/burton/README.md]))
 
-[Cody](#cody) added the [try.sh](/2015/burton/try.sh) script. This involved
+
+[Cody](#cody) fixed the code so one can make use of the echo feature, where the
+first character of the filename starts with `e`. The only way it would work
+before that is if one did something like:
+
+```sh
+ln -sf prog eprog
+PATH=$PATH:. ; eprog '...'
+```
+
+since otherwise the first character would not be `e` but rather a dot
+(`./eprog`). This was done by adding to the Makefile `-include libgen.h` and
+adding to `main()` after the variable declaration (`V*A;`) the code:
+
+```c
+*K=basename(*K);
+```
+
+This was done for both the [prog.c](/2015/burton/prog.c) and
+[prog.alt.c](/2015/burton/prog.alt.c). The Makefile was also updated to build
+`eprog` and `eprog.alt` to make use of the feature more easily. Each is a new
+target (first in `TARGET` and second in `ALT_TARGET`) which have a prerequisite
+of `${PROG}` and `${PROG}.alt` respectively and which copies `prog` and
+`prog.alt` to `eprog` and `eprog.alt` respectively. With these changes now one
+can easily use the echo feature the author implemented.
+
+Cody also added the [try.sh](/2015/burton/try.sh) script. This involved
 adding a text file, [try.this.txt](/2015/burton/try.this.txt).
 
+Cody also added [calc.1](/2015/burton/calc.1) in place of `calc.man` to have
+proper formatting (in the style of `man(1)`). The `calc.man` was removed so as
+to not have to maintain two copies of the same text.
 
+Cody updated the Makefile to copy the `prog` to `calc` and `prog.alt` to
+`calc.alt`. `ecalc` and `ecalc.alt` also work. This is because the program is
+called `calc` and is in documentation including the man page. Thus one only need
+add a `./` to the commands in the man page/README.md.
 
 
 ## <a name="2015_dogon"></a>[2015/endoh3](/2015/dogon/prog.c) ([README.md](/2015/dogon/README.md]))

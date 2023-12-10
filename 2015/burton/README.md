@@ -223,7 +223,7 @@ If the program name begins with an `e`, it echoes `stdin` to `stdout`.
 This allows for a convenient test suite:
 
 ```sh
-ln -s prog eprog
+ln -sf prog eprog
 PATH=. eprog < test.in | diff - test.out
 ```
 
