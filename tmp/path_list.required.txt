@@ -2387,6 +2387,7 @@
 2014/deak/prog.alt.c
 2014/deak/prog.c
 2014/deak/prog.orig.c
+2014/deak/try.alt.sh
 2014/endoh1/.gitignore
 2014/endoh1/Makefile
 2014/endoh1/README.md
@@ -2475,7 +2476,6 @@
 2015/burton/Makefile
 2015/burton/README.md
 2015/burton/calc.1
-2015/burton/calc.man
 2015/burton/prog.alt.c
 2015/burton/prog.c
 2015/burton/prog.orig.c
