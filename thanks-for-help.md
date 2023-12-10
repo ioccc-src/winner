@@ -3884,6 +3884,11 @@ past).
 [Cody](#cody) added the [try.sh](/2015/muth/try.sh) script.
 
 
+## <a name="2015_schweikhardt"></a>[2015/endoh3](/2015/schweikhardt/prog.c) ([README.md](/2015/schweikhardt/README.md]))
+
+[Cody](#cody) added the [try.sh](2015/schweikhardt/try.sh) script.
+
+
 ## <a name="2015_yang"></a>[2015/yang](/2015/yang/prog.c) ([README.md](/2015/yang/README.md]))
 
 [Cody](#cody) fixed an unfortunate typo in the Makefile that was preventing some of the

@@ -5,6 +5,17 @@ make
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2015 schweikhardt in bugs.md](/bugs.md#2015-schweikhardt).
+
+
 ## To use:
 
 ```sh
@@ -17,7 +28,7 @@ where n is a base 16 number of any size.
 ### Try:
 
 ```sh
-./prog 19
+./try.sh
 ```
 
 
@@ -35,7 +46,8 @@ The code compiles without warnings on the systems that we tested!
 Even more, the code was 100% clean when we ran it against various
 static source checkers.
 
-This tool references a problem that David I. Bell once described
+This tool references a problem that [David I.
+Bell](http://members.tip.net.au/~dbell/) once described
 as having one of the largest "yummo quotients" in number theory:
 
 ```
@@ -44,11 +56,13 @@ yummo quotient = -----------------------------------
 		 complexity of the problem statement
 ```
 
-Erdős privately told one of the IOCCC judges:
+[Erdős](https://en.wikipedia.org/wiki/Paul_Erdős) privately told one of the IOCCC judges:
 
-"Solving the [Generalized Riemann hypothesis](https://en.wikipedia.org/wiki/Generalized_Riemann_hypothesis#Extended_Riemann_hypothesis_.28ERH.29)
-would be a good warmup exercise for someone to get ready
-to begin to work on the [Collatz conjecture](https://en.wikipedia.org/wiki/Collatz_conjecture)."
+> Solving the [Generalized Riemann
+hypothesis](https://en.wikipedia.org/wiki/Generalized_Riemann_hypothesis#Extended_Riemann_hypothesis_.28ERH.29)
+would be a good warm-up exercise for someone to get ready to begin to work on
+the [Collatz conjecture](https://en.wikipedia.org/wiki/Collatz_conjecture).
+
 
 You may explore this famous conjecture using this entry:
 
@@ -64,6 +78,8 @@ You may explore this famous conjecture using this entry:
 ./prog 302ab3d052fb87c06228d249581be0e4
 ```
 
+NOTE: [try.sh](try.sh) runs these for you, filtered through `less(1)`.
+
 When you first look at the source, the code looks fairly straightforward.
 But look again.  Like the Collatz conjecture, simplicity is deceptive!
 Oh, and the variable names?  They are not simple single letter variables,
@@ -78,6 +94,7 @@ code is magic number free.
 
 ## Author's remarks:
 
+
 ### The TL;DR version
 
 This is the cleanest program ever submitted. If for some input it enters
@@ -90,19 +107,24 @@ The program illustrates the bloat caused by adherence to too many rules,
 each of which may sound sane in isolation, but in their entirety lead to
 an obfuscated, hard to read and understand monster.
 
+
 ### What this program does.
 
 The program tests whether a given natural number satisfies the
 [Collatz Conjecture](https://en.wikipedia.org/wiki/Collatz_conjecture):
 
-Take any natural number `n`. If `n` is even, divide it by `2` to get `n/2`.
-If `n` is odd, multiply it by 3 and add 1 to obtain `3n + 1`.
-Repeat the process indefinitely.
+Take any natural number `n`. If `n` is even, divide it by `2` to get `n/2`.  If
+`n` is odd, multiply it by `3` and add `1` to obtain `3n + 1`.  Repeat the
+process indefinitely.
+
 The conjecture is that no matter what number you start with,
-you eventually reach 1.
+you eventually reach `1`.
 
 Paul Erdős said about the Collatz conjecture:
-"Mathematics may not be ready for such problems."
+
+
+> "Mathematics may not be ready for such problems."
+
 He also offered $500 for its solution.
 
 For example, the sequence of numbers for `n` = 6 is
@@ -113,14 +135,19 @@ Continuing past one leads to the *cycle* 1, 4, 2, 1, 4, 2, 1, ...
 Interesting factoid: if you allow *negative* start values, there are
 a few more cycles, each of different length:
 
->   −1, −2, −1
->
->   −5, −14, −7, −20, −10, −5
->
->   −17, −50, −25, −74, −37, −110, −55, −164, −82, −41, −122, −61, −182, −91, −272, −136, −68, −34, −17
+```
+−1, −2, −1
+
+−5, −14, −7, −20, −10, −5
+
+−17, −50, −25, −74, −37, −110, −55, −164,
+−82, −41, −122, −61, −182, −91, −272, −136,
+−68, −34, −17
+```
+
 
 The program computes the sequence for a given positive natural number
-and stops at 1. The number `n` is specified in hexadecimal (without 0x
+and stops at `1`. The number `n` is specified in hexadecimal (without `0x`
 prefix) as the first argument. The program prints the given number in
 zero-padded hex and each iteration along with a line count in decimal.
 The example above looks like this (compiled with 64 bit word size):
@@ -139,7 +166,7 @@ $ ./prog 6
 ```
 
 The size of `n` is only limited by the argument size limit of your
-shell/OS (the program implements arbitrary size bignums).
+shell/OS (the program implements arbitrary size `bignum`s).
 To query this on your POSIX system, run
 
 ```sh
@@ -172,13 +199,14 @@ For a given `n` the program behavior is one of the following 3:
 mathematicians have tested all `n < 4FFDD776055A0000` (~10<sup>18</sup>) so
 don't try anything less than that.
 2. The chosen `n` leads to a sequence with ever bigger numbers, so that
-eventually the bignum cannot be stored in memory. If this happens, the program
+eventually the `bignum` cannot be stored in memory. If this happens, the program
 outputs `laugh` (more likely) or `throw up` (less likely) and stops. You *might*
 have found a number for which the sequence *diverges*. If confirmed, this
 disproves the conjecture.
 3. The chosen `n` leads to a cycle not including 1 (i.e. runs forever, repeating
 the same sequence over and over). You have disproved the conjecture and should
 certainly submit a paper to the nearest mathematical journal.
+
 
 ### Design objectives
 
@@ -188,17 +216,18 @@ continuum, where trade-offs have to be made.
 
 1. No arbitrary limits on the input number. 64 bits might be enough
 for everybody, but is not enough for exploring new Collatz-territory.
-Thus bignums are required.
+Thus `bignums` are required.
 2. Ultra-portable. Must run on C89 systems and self-adapt to C99 and C11
 features like exact width types.
 3. Super-efficient. Must be able to run with the widest type as the
-base of the bignums. Make the user select the widest type supported
+base of the `bignums`. Make the user select the widest type supported
 by the implementation and then crunch away. If a non-standard
 128bit type is available, it should be usable.
 4. Pentagon level lint cleanliness and MISRA compliance.
 5. Easy to understand, self-documenting clear code. A joy for maintenance
 programmers. The epitome of best practice demonstration for all
 future textbooks on C.
+
 
 ### Program Obfuscation
 
@@ -213,6 +242,7 @@ In the following I address all the *tests* as specified by your honors in the
 * examine the algorithm
 * compile it (with flags to enable all warnings)
 * execute it
+
 
 ### Look at the original source
 
@@ -250,43 +280,47 @@ acid](https://en.wikipedia.org/wiki/Proteinogenic_amino_acid)):
 	glx	Glutamic acid or Glutamine
 	xle	Leucine or Isoleucine
     unk Unknown
-``
+```
 
 My own research results complete this list (not yet in Wikipedia due to
 the rule "[No original
 research](https://en.wikipedia.org/wiki/Wikipedia:No_original_research)"):
 
 ```
-	and	Androgynine
-	xor	Xenoricine
-	not	Notanamine
-	tla	Triletramine
+and	Androgynine
+xor	Xenoricine
+not	Notanamine
+tla	Triletramine
 ```
 
 Interestingly, the TLI are the perfect mnemonics for C language source.
-For example, `met` is "Main's Exit Type" (`int`), `ala` is "A Large
-Algebraic" (bignum), `ile` an "Incremented Local Entity" (index
-counter), `gly` means "Grow Larger memorY", `gln` is "Grown Larger Now"
-(after realloc), `not` is a "Not Overflowing Type" (recursive!), `unk`
-is the "UNit (Known as 1)", `trp` is the "Tabula Rasa Product" (zero),
-`phe` is "Print HEx" and so on.
+For example, `met` is "`main()'s Exit Type`" (`int`), `ala` is "`A Large
+Algebraic`" (`bignum`), `ile` an "`Incremented Local Entity`" (index
+counter), `gly` means "`Grow Larger memorY`", `gln` is "`Grown Larger Now`"
+(after `realloc(3)`), `not` is a "`Not Overflowing Type`" (recursive!), `unk`
+is the "`UNit (Known as 1)`", `trp` is the "`Tabula Rasa Product`" (zero),
+`phe` is "`Print HEx`" and so on.
+
 
 ### Convert ANSI trigraphs to ASCII
 
 Huh??!
 
-### C pre-process the source ignoring '#include' lines
+
+### C pre-process the source ignoring `#include` lines
 
 Wow, an identity operation (except for the `<stdint.h>` and `EOF + __STDC__`
 trivialities). Did you gain any insight through this?
 
+
 ### C pre-process the source ignoring '#define' and '#include' lines
 
 `#define`? Which `#define` directives? How many 4K source files do you
-see that neither use a single `#define` directive *nor* abuse the build
+see that don't use a single `#define` directive *or* abuse the build
 file? Even though the "no `#define`" rule I submitted myself to made it
-hard, I could use `__LINE__` and stdio macros `EOF`, `L_tmpnam`,
+hard, I could use `__LINE__` and `stdio.h` macros `EOF`, `L_tmpnam`,
 `BUFSIZ`, `FILENAME_MAX`, `TMP_MAX` to obfuscate at least something.
+
 
 ### Run it through a C beautifier
 
@@ -314,15 +348,15 @@ $ cat .indent.pro
     -Tala
 ```
 
-It looks like a perfect program should:
+It looks like a perfect program should have:
 
-  *  two and a half `#includes` of unsuspicious standard headers
+  *  two and a half `#include`s of non-suspicious standard headers
   *  followed by self protection against goofy implementations
   *  followed by a handful of `typedef`s
   *  and a pair of file scope objects by necessity
   *  prototypes! With parameter names! `static` for internal linkage even! This __must__ be a first in IOCCC history.
   *  function definitions, `main` last
-  *  everything is fully const-poisoned: automatics, statics, arguments, even `main`
+  *  everything is fully `const`-poisoned: automatics, statics, arguments, even `main`
   *  everything is fully curly braced, even single statements
   *  plenty of meaningful TLC (Three Letter Comments)
 
@@ -332,9 +366,10 @@ engineers). How many programs have *that* property? The check for
 `__STDC_VERSION__` was a bit tough to arrive at, since 199901L has too
 many bits set. But I realized that I only needed a number larger than
 199409 and less than 199901. 199680 has only 4 bits set and writing it
-as (256 + 128 + 4 + 2) * 512 minimizes the character count. That's what
+as `(256 + 128 + 4 + 2) * 512` minimizes the character count. That's what
 judges get when they don't like programs that are longer than they need
 to be.
+
 
 ### Examine the algorithm
 
@@ -361,14 +396,15 @@ if (non-NULL and nonempty argv[1]) {
 }
 ```
 
-Bignums are represented as the two member structs
+`Bignum`s are represented as the two member `struct`s:
 
 ```c
 typedef struct {
-     size_t places;   /* number of places in base 2<sup>8*sizeof(type)</sup> */
+     size_t places;   /* number of places in base 2 to the power of (8*sizeof(type)) */
      type  *number;   /* dynamically allocated memory for number */
 } bignum
 ```
+
 
 ### Compile it (with flags to enable all warnings)
 
@@ -381,18 +417,20 @@ analyzers at my program and make it find the slightest of issues.
 Is `clang -Wall -Wextra -Weverything -Dtyp=uint32_t prog.c` all you can
 do? Clang has implemented a new warning? Bring it on!
 
+
 ### Execute it
 
 May you win the jackpot!
 
-For least surprising results, the execution character set should be
-ASCII. The program computes four bits from every character in `argv[1]` and
-interprets them as a hex digit. On ASCII the characters a-f, A-F and 0-9
-are converted as expected.
+For least surprising results, the execution character set should be ASCII. The
+program computes four bits from every character in `argv[1]` and interprets them
+as a hex digit. In ASCII the characters `a-f`, `A-F` and `0-9` are converted as
+expected.
 
 This means however, that the program accepts __any string__, turns it
 into a starting number (which is output as the first line), and starts
 crunching. Nothing stops you from executing
+
 
 ```sh
 ./prog "$(cat prog.c)"            # Kind of quine?
@@ -402,9 +440,10 @@ crunching. Nothing stops you from executing
 
 In a certain way, the program is character set and encoding agnostic.
 
+
 ### Assumptions made
 
-* The `EOF` macro from `<stdio.h>` must expand to negative one since it is used
+* The `EOF` macro from `<stdio.h>` must expand to `-1` since it is used
 to decrement a pointer and do some other math.
 None of the tools catches this one. The program self-protects against unusual
 systems with `#if EOF + __STDC__` followed by `#error goofy!`. In the rare event
@@ -414,11 +453,13 @@ your system is goofy, replace all `EOF` tokens with `(-1)` and remove the
 
 While the program works best when bytes/characters are octets and the
 number of bits in a type is `sizeof(typ) << 3`, it will work correctly
-on 24bit or 36bit systems with 9 bits/byte, or systems where
+on 24-bit or 36-bit systems with 9 bits/byte, or systems where
 `sizeof(typ)` is 1 even for `int` and so on. On such systems, it will only
-use 8 * `sizeof(typ)` bits per place. It does not work when `CHAR_BIT <= 7`.
+use `8 * sizeof(typ)` bits per place. It does not work when `CHAR_BIT <= 7`.
+
 
 ### Results of various checkers
+
 
 ### cppcheck
 
@@ -451,12 +492,11 @@ No hits found.
 
 #### valgrind
 
-The open source dynamic checker [valgrind](http://valgrind.org/)
-runs an executable and verifies all memory accesses and (de)allocations for
-proper bounds and memory leaks.
-Since the program frees all memory in all possible execution paths, even when
-it must bail out,
-valgrind should be happy. An early version of my program however reported this:
+The open source dynamic checker [valgrind](http://valgrind.org/) runs an
+executable and verifies all memory accesses and (de)allocations for proper
+bounds and memory leaks.  Since the program frees all memory in all possible
+execution paths, even when it must bail out, valgrind should be happy. An early
+version of my program however reported this:
 
 ```
 valgrind --leak-check=full --show-leak-kinds=all ./prog 6
@@ -486,8 +526,8 @@ valgrind --leak-check=full --show-leak-kinds=all ./prog 6
 ==14615== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```
 
-From which I concluded that `printf` allocated a single 4K block for
-which no matching free existed. But how to free memory allocated deep
+From which I concluded that `printf(3)` allocated a single 4K block for
+which no matching `free(3)` existed. But how to free memory allocated deep
 down in the guts of the Standard I/O library? After some serious head
 scratching it hit me. The only chance I have is telling the system I no
 longer want to do I/O, maybe then it would free that buffer. A reading
@@ -527,6 +567,7 @@ valgrind --leak-check=full --show-leak-kinds=all ./prog 6
 ```
 
 A squeaky clean valgrind result!
+
 
 #### FlexeLint
 
@@ -568,7 +609,7 @@ rules](http://doc.hcc-embedded.com/display/CODING/MISRA+Rules) for C
 programming. I am proud to report that my program fulfills *almost all*
 rules. To assess the few exceptions, one has to understand that MISRA
 rules are geared towards embedded systems used in the automotive
-industry. That's why features like `malloc` and `printf` are right out.
+industry. That's why features like `malloc(3)` and `printf(3)` are right out.
 But that's too restrictive for an IOCCC hosted application, so I ignored
 these:
 
@@ -578,7 +619,7 @@ these:
  * 20.9 The input/output library stdio.h shall not be used in production code.
  * 20.11 The functions abort, exit, getenv, and system from the library stdlib.h shall not be used.
 
-I started out with enabling *all* messages using FlexeLint's `-w4`
+I started out with enabling *all* messages using `FlexeLint`'s `-w4`
 option and disabling all noise from system headers. Then I dealt with
 the remaining messages by addressing them or suppressing them in such a way
 that the set of suppressions was minimal. At the end of the day, this is
@@ -652,7 +693,7 @@ what remained:
 
 Which of the rules cause which obfuscation?
 
-MISRA 6.1, "The plain char type shall be used only for the storage and
+MISRA 6.1: "The plain `char` type shall be used only for the storage and
 use of character values." This forbids using character constants in
 expressions other than assignments to `char` objects. A consequence is
 that printing digits with `'0' + digit` is not allowed (even though
@@ -666,19 +707,19 @@ because of the "no magic numbers other than powers of two" rule. How is this
 an improvement over `printf("%c", '0' + tyr + 7 * (tyr / 10)`, MISRA?
 
 
-MISRA 6.3 "typedefs that indicate size and signedness should be used in
+MISRA 6.3: "`typedef`s that indicate size and signedness should be used in
 place of the basic types." Well, if you can't infer the size and
 signedness from `typedef int met`, you're not a real C programmer.
 
 
-MISRA 10.5, "If the bitwise operators `~` and `<<` are applied to an
+MISRA 10.5: "If the bitwise operators `~` and `<<` are applied to an
 operand of underlying type `unsigned char` or `unsigned short`, the
 result shall be immediately cast to the underlying type of the operand."
 Because the program must work for any unsigned type chosen for the `typ`
 macro, including the narrow types enumerated in the rule, a lot of
 redundant casting ensues. It gets worse with the next rule...
 
-MISRA 12.1, "Limited dependence should be placed on the C operator
+MISRA 12.1: "Limited dependence should be placed on the C operator
 precedence rules in expressions." This requires parentheses for almost
 all expressions involving more than one operator, especially those for which
 a cast is required, leading to hard to understand expressions such as
@@ -688,17 +729,17 @@ const ser glx = (ser)((asx > (ser)64u) ? (ser)((ser)asx + (ser)8u + (ser)1u) : (
 not.not[leu] = (and)((and)not.not[leu] | (and)(((and)glx % (and)16u) << (and)lys));
 ```
 
-MISRA 14.7, "A function shall have a single point of exit at the end of
+MISRA 14.7: "A function shall have a single point of exit at the end of
 the function." Sigh. Since I must use eloquent prototypes (8.1, 16.3,
 16.4) and static functions (8.10, 8.11), I can only use a few functions.
 Everything usually written with an early `return` now cause *another
-useless indent level*. The first three `if` statements in `main` cause a
+useless indent level*. The first three `if` statements in `main()` cause a
 silly 24 character indent. The maximum indent is forced to 8, which is way
 too high for a sane function.
 
-MISRA 16.10, "If a function returns error information, then that error
-information shall be tested." A cast to void would draw a lint warning, so
-I use the `printf` result in expressions,
+MISRA 16.10: "If a function returns error information, then that error
+information shall be tested." A cast to `void` would draw a lint warning, so
+I use the `printf(3)` result in expressions,
 
 ```c
 lys -= 4 * printf("%c", (met)tyr + 32 + 16 + ((8 + EOF) * ((met)tyr / (8 + 2))));
@@ -715,15 +756,15 @@ lys -= 4;
 ```
 
 
-MISRA 13.1, "Assignment operators shall not be used in expressions that
+MISRA 13.1: "Assignment operators shall not be used in expressions that
 yield a Boolean value." Forbids the idiomatic `if ((p = malloc(n)) ==
 NULL)` and requires separate statements, in other words, bloat.
 
 
-MISRA 16.7, "A pointer parameter in a function prototype should be
-declared as pointer to const if the pointer is not used to modify the
+MISRA 16.7: "A pointer parameter in a function prototype should be
+declared as pointer to `const` if the pointer is not used to modify the
 addressed object." in conjunction with lint's "Note 952: Parameter could
-be declared const" causes const-poisoning for all functions,
+be declared `const`" causes `const`-poisoning for all functions,
 
 ```c
 static void phe(const ala not);
@@ -733,10 +774,12 @@ met main(met val, const pro *const his[]);
 
 and quite a number of automatic variables.
 
+
 ### Why the "laugh" and "throw up" messages?
 
 The guidelines state "We like programs that: make us laugh and/or throw
 up :-) (humor really helps!)"
+
 
 ### If you have a 128 bit type
 
@@ -757,24 +800,25 @@ clang -Dtyp=uint64_t -o prog64 prog.c
 clang -std=c89 -Dtyp="unsigned long" -o prog89 prog.c
 ```
 
-This works because the program has no need for corresponding `SCN` or
-`PRI` macros to do the scanning and printing of variables of these
-types. With a 128 bit type the program can represent numbers up to
-340282366920938463463374607431768211457 (3.4 * 10<sup>39</sup>) as a
-single "place", enough to explore yet untested numbers for the rest of
-your life.
+This works because the program has no need for corresponding `SCN` or `PRI`
+macros to do the scanning and printing of variables of these types. With a 128
+bit type the program can represent numbers up to
+340282366920938463463374607431768211457 (`3.4 *
+1000000000000000000000000000000000000000`) as a single "place", enough to
+explore yet untested numbers for the rest of your life.
+
 
 ### How big a number can I test with 4 GB of RAM?
 
 The number of hex digits in the start number is limited by `ARG_MAX`,
 probably minus some overhead for the environment variables (use
-[`env`(1)](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/env.html)
-to trim your environment). In bits this leaves you with 2<sup>4 *
-ARG_MAX</sup>.
+[env(1)](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/env.html)
+to trim your environment). In bits this leaves you with `2 to the power of (4 *
+ARG_MAX)`.
 
-The algorithm requires two bignums in memory for addition.
+The algorithm requires two `bignum`s in memory for addition.
 If you hit a divergent number, this will cause out-of-memory ("laugh")
-somewhere near 2<sup>16,000,000,000</sup> (4GB/2 * 8bits/byte).
+somewhere near 2<sup>16,000,000,000</sup> (`4GB/2 * 8bits/byte`).
 Sadly, I don't have a test case :-)
 
 How long would it take to overflow the *Not Overflowing Type*? Lets
@@ -782,11 +826,11 @@ assume we're processing 2GB numbers. The program copies, shifts by one,
 adds and increments 2GB long bit strings, each time completely thrashing
 the data cache -- at *all* levels. We have a fast machine that can do an
 iteration in one second, on average. To make things easy, we round up
-3*n* + 1 to 4*n*, and assume we never need to divide by two (which is
+`3*n* + 1` to `4*n`, and assume we never need to divide by two (which is
 quite optimistic). Then each iteration shifts left by 2. This would take
 8 billion seconds, or about 250 years. If you want to get famous, you
 better *remove* some of the RAM, use an ancient box, or reduce available
-memory resources with the ulimit(1) built-in of your shell.
+memory resources with the `ulimit(1)` built-in of your shell.
 
 For all intents and purposes, the *Not Overflowing Type* keeps the promise!
 

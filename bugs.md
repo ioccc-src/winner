@@ -3061,6 +3061,37 @@ If you want to try and fix this (mis)feature, you are welcome to try.
 # 2015
 
 
+## 2015 hou
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2015/hou/prog.c](2015/hou/prog.c)
+### Information: [2015/hou/README.md](2015/hou/README.md)
+
+The author stated:
+
+--
+
+Hard requirements:
+
+* The platform must implement the `double` type as IEEE754-compliant 64-bit
+floating point numbers.  The 80-bit intermediate format used by x87 is
+considered as an violation of this. The code should print an error message on
+such platforms.
+
+* The program must start with the CPU / FPU in round-to-nearest mode.
+
+Soft requirements:
+
+* The compiler must respect `volatile`. The code is formatted to warn about
+that, though.
+
+* The printed result is only correct on little-endian machines. The program
+takes care to warn about this issue after printing an incorrect big-endian
+result. Error messages become garbled, though.
+
+--
+
+
 ## 2015 mills2
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3071,6 +3102,28 @@ The program doesn't look at the header of files so if it's passed something hat
 is not compressed data it's likely to crash.
 
 The program depends on little endian systems.
+
+
+## 2015 schweikhardt
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2015/schweikhardt/prog.c](2015/schweikhardt/prog.c)
+### Information: [2015/schweikhardt/README.md](2015/schweikhardt/README.md)
+
+The program assumes that `EOF` is `-1`. This can be fixed but at this time it is
+uncertain if it should be.
+
+The author also stated:
+
+--
+
+While the program works best when bytes/characters are octets and the
+number of bits in a type is `sizeof(typ) << 3`, it will work correctly
+on 24-bit or 36-bit systems with 9 bits/byte, or systems where
+`sizeof(typ)` is 1 even for `int` and so on. On such systems, it will only
+use `8 * sizeof(typ)` bits per place. It does not work when `CHAR_BIT <= 7`.
+
+--
 
 
 # 2016
