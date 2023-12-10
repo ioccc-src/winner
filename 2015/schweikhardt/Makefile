@@ -129,7 +129,7 @@ all: data ${TARGET}
 	sandwich supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS} -UEOF -DEOF=-1 $< -o $@ ${LDFLAGS}
 
 # alternative executable
 #

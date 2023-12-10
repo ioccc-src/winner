@@ -3919,7 +3919,12 @@ past).
 
 ## <a name="2015_schweikhardt"></a>[2015/endoh3](/2015/schweikhardt/prog.c) ([README.md](/2015/schweikhardt/README.md]))
 
-[Cody](#cody) added the [try.sh](2015/schweikhardt/try.sh) script.
+[Cody](#cody) fixed the build so that `EOF` will be `-1` as the program assumes
+this. It was decided by Cody to do `-UEOF -DEOF=-1` so as to not have to modify
+the code any with C preprocessor directives (the preferred way) or changing
+`EOF` to `-1`.
+
+Cody also added the [try.sh](2015/schweikhardt/try.sh) script.
 
 
 ## <a name="2015_yang"></a>[2015/yang](/2015/yang/prog.c) ([README.md](/2015/yang/README.md]))
