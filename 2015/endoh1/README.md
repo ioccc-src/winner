@@ -4,21 +4,18 @@
 make
 ```
 
+NOTE: this program requires the tool `tcpserver` to use. If you do not have this
+program see [FAQ 3.14 - How do I compile and install tcpserver for entries that
+require it](/faq.md#tcpserver).
+
 
 ## To use:
 
 ```sh
-./prog
+tcpserver -v 127.0.0.1 10333 ./prog ioccc.txt
 ```
 
-Connect to port http://localhost:10333 with your browser.
-
-
-### Try:
-
-```sh
-echo "Do or do not. There is no try."
-```
+Then connect to http://localhost:10333 with your browser.
 
 
 ## Judges' remarks:
@@ -41,6 +38,7 @@ machine](https://en.wikipedia.org/wiki/Enigma_machine)?  [Turing
 machine](https://en.wikipedia.org/wiki/Turing_machine)? [Turing
 test](https://en.wikipedia.org/wiki/Turing_test)? This program is also based on
 his work.
+
 
 ### Whirlwind tour
 
@@ -65,7 +63,7 @@ Show"](../../1991/brnstnd/brnstnd.c) ([README.md](../../1991/brnstnd/README.md))
 tcpserver -v 127.0.0.1 10333 ./prog ioccc.txt
 ```
 
-Finally, open `http://127.0.0.1:10333/` by a modern browser supporting HTML5.
+Finally, open `http://127.0.0.1:10333/` in a modern browser supporting HTML5.
 You can use the mouse cursor to place drops into the [Petri
 dish](https://en.wikipedia.org/wiki/Petri_dish) interactively.
 
@@ -75,15 +73,17 @@ dish](https://en.wikipedia.org/wiki/Petri_dish) interactively.
 This is a simulator of [reaction-diffusion
 systems](https://en.wikipedia.org/wiki/Reaction-diffusion_system).
 
-Reaction-diffusion systems, proposed by Alan Turing in [1], are mathematical
+Reaction-diffusion systems, proposed by Alan Turing in [^1], are mathematical
 models in which two chemical substances are transformed into each other (*local
 chemical reactions*) and spread out (*diffusion*).  Their interactions sometimes
 form non-trivial patterns, such as spots, spiral, dappling, and labyrinths.
 
 The systems are generally formulated as follows:
 
-    du/dt = F(u, v) + Du * laplacian(u)
-    dv/dt = G(u, v) + Dv * laplacian(v)
+```
+du/dt = F(u, v) + Du * laplacian(u)
+dv/dt = G(u, v) + Dv * laplacian(v)
+```
 
 The functions `F(u, v)` and `G(u, v)` represent reactions of each substance, and
 the parameters `Du` and `Dv` are diffusion coefficients.  By changing the
@@ -95,7 +95,8 @@ detail.
 
 This program simulates the systems.  The field consists of 128 x 128 cells.
 Each cell includes information of an amount of the two substances, and interacts
-with neighbor cells (in terms of von Neumann neighborhood) in each frame.
+with neighbor cells (in terms of [von Neumann
+neighborhood](https://en.wikipedia.org/wiki/Von_Neumann_neighborhood)) in each frame.
 
 
 ### Configuration
@@ -111,25 +112,32 @@ example, the following is [the Gray-Scott
 model](http://groups.csail.mit.edu/mac/projects/amorphous/GrayScott/) in TeX
 notation.
 
-    \frac{\partial u}{\partial t} = D_u \Delta u - u v^2 + F (1 - u)
-    \frac{\partial v}{\partial t} = D_v \Delta v + u v^2 - v (F + K)
+```
+\frac{\partial u}{\partial t} = D_u \Delta u - u v^2 + F (1 - u)
+\frac{\partial v}{\partial t} = D_v \Delta v + u v^2 - v (F + K)
+```
 
 You can specify this model as follows:
 
-    -Delta_u="Du*laplacian(u)-u*v*v+F*(1-u)" \
-    -Delta_v="Dv*laplacian(v)+u*v*v-v*(F+K)"
+```
+-Delta_u="Du*laplacian(u)-u*v*v+F*(1-u)" \
+-Delta_v="Dv*laplacian(v)+u*v*v-v*(F+K)"
+```
 
 `Du`, `Dv`, `F`, and `K` are parameters of that model.
 
+
 #### Initial pattern: `-DUV_BACKGROUND=<u0>,<v0> -DUV_DROP=<u1>,<v1>`
 
-The definitions specifies the initial amount of the two substances u and v.  All
-cells have `(u0, v0)` by default.
+The definitions specifies the initial amount of the two substances `u` and `v`.
+All cells have `(u0, v0)` by default.
 
 You can specify a pattern file when the executable is invoked (not
-compile-time).  The file should include a sequence of points, see `ioccc.txt`,
-`center.txt`, or `line.txt` as examples.  Each amount in cells near to the point
-included in the file, will be added by `(u1, v1)`.
+compile-time).  The file should include a sequence of points, see
+[ioccc.txt](ioccc.txt), [center.txt](center.txt), or [line.txt](line.txt) as
+examples.  Each amount in cells near to the point included in the file, will be
+added by `(u1, v1)`.
+
 
 #### Simulation speed: `-DTIMESTEP=ts -DSPEED=spd`
 
@@ -137,7 +145,8 @@ The definitions are for changing the simulation speed.
 
 `TIMESTEP` is a simulation time step.  The bigger, the faster but more unstable.
 
-`SPEED` is a frameskip parameter.  The bigger, the faster but more sluggish.
+`SPEED` is a frame skip parameter.  The bigger, the faster but more sluggish.
+
 
 #### Rendering color: `-DRGB=r:g:b`
 
@@ -147,7 +156,7 @@ This specifies a color used for rendering.
 ### Examples
 
 Some interesting parameters are included in `Makefile`.  Do one of the following
-command and open `http://127.0.0.1:10333`.
+commands and open `http://127.0.0.1:10333`.
 
 ```
 make gray-scott-1 && tcpserver -v 127.0.0.1 10333 ./gray-scott-1 ioccc.txt
@@ -163,19 +172,22 @@ make oregonator && tcpserver -v 127.0.0.1 10333 ./oregonator ioccc.txt
 
 These examples are created by drawing (and modifying) the pattern files of
 [Ready](https://github.com/GollyGang/ready), a cross-platform implementation of
-various reaction-diffusion systems [2].
+various reaction-diffusion systems [^2].
+
 
 ### Compatibility
+
 
 #### C part
 
 This program compiles clean with no warnings under `-std=c99 -Wall -Wextra
 -pedantic`.  Since it uses `long long` for 64bit integers, C99 is required.
 
+
 #### Browser part
 
 You must use a modern browser that supports the latest specification of
-WebSocket [3].  All the following browsers worked for me:
+WebSocket [^3].  All the following browsers worked for me:
 
 * Google Chrome 45
 * Mozilla Firefox 39
@@ -183,14 +195,20 @@ WebSocket [3].  All the following browsers worked for me:
 
 I think Safari 6 will work but I haven't tested.  (I have no recent macOS.)
 
+NOTE from the judges in 2023: recent versions of Safari also work.
+
+
 #### tcpserver alternatives
 
 I think you may use `inetd` and `xinetd` instead of `tcpserver`.  Here is an
-example of inetd configuration.
+example `inetd` configuration.
 
-    10333 stream tcp nowait nobody /path/to/prog /path/to/prog /path/to/initial-pattern.txt
+```
+10333 stream tcp nowait nobody /path/to/prog /path/to/prog /path/to/initial-pattern.txt
+```
 
 But note that I didn't test well.
+
 
 ### Internal
 
@@ -198,7 +216,7 @@ But note that I didn't test well.
 document.
 2. The browser tries to upgrade the connection to WebSocket.
 3. The C program accepts WebSocket upgrade.  This negotiation process requires
-SHA1 hash [4] and Base64 encoding [5].  The C program calculates them without
+SHA1 hash [^4] and Base64 encoding [^5].  The C program calculates them without
 the aid of any external libraries.
 4. The C program simulates the reaction-diffusion system, and then send the
 field data to the browser on each frame.
@@ -207,11 +225,11 @@ field data to the browser on each frame.
 
 ### References
 
-* [1] Turing, A. M., "The Chemical Basis of Morphogenesis", Philosophical Transactions of the Royal Society, 1952.
-* [2] The Ready Bunch, "Ready", A cross-platform implementation of various reaction-diffusion systems, since 2011, <https://github.com/GollyGang/ready>.
-* [3] Fette, I. and A. Melnikov, "The WebSocket Protocol", RFC 6455, DOI 10.17487/RFC6455, December 2011, <http://www.rfc-editor.org/info/rfc6455>.
-* [4] Eastlake 3rd, D. and P. Jones, "US Secure Hash Algorithm 1 (SHA1)", RFC 3174, DOI 10.17487/RFC3174, September 2001, <http://www.rfc-editor.org/info/rfc3174>.
-* [5] Josefsson, S., "The Base16, Base32, and Base64 Data Encodings", RFC 4648, DOI 10.17487/RFC4648, October 2006, <http://www.rfc-editor.org/info/rfc4648>.
+* [^1]: Turing, A. M., "The Chemical Basis of Morphogenesis", Philosophical Transactions of the Royal Society, 1952.
+* [^2]: The Ready Bunch, "Ready", A cross-platform implementation of various reaction-diffusion systems, since 2011, <https://github.com/GollyGang/ready>.
+* [^3]: Fette, I. and A. Melnikov, "The WebSocket Protocol", RFC 6455, DOI 10.17487/RFC6455, December 2011, <http://www.rfc-editor.org/info/rfc6455>.
+* [^4]: Eastlake 3rd, D. and P. Jones, "US Secure Hash Algorithm 1 (SHA1)", RFC 3174, DOI 10.17487/RFC3174, September 2001, <http://www.rfc-editor.org/info/rfc3174>.
+* [^5]: Josefsson, S., "The Base16, Base32, and Base64 Data Encodings", RFC 4648, DOI 10.17487/RFC4648, October 2006, <http://www.rfc-editor.org/info/rfc4648>.
 
 
 ## Copyright and CC BY-SA 4.0 License:

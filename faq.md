@@ -36,6 +36,7 @@
 - [3.11 - Why do Makefiles use -Weverything with clang?](#faq3_11)
 - [3.12 - How do I find out how to send interrupt/EOF etc. for entries that require it?](#faq3_12)
 - [3.13 - Why does an IOCCC winner fail to compile or or fail run?](#faq3_13)
+- [3.14 - How do I compile and install tcpserver for entries that require it?](#faq3_14)
 
 ## Section  4 - [Changes made to IOCCC winners](#faq4)
 - [4.0  - Why are some winning author remarks incongruent with the winning IOCCC code?](#faq4_0)
@@ -1238,6 +1239,28 @@ submit that fix by way of a [GitHub pull
 request](https://github.com/ioccc-src/temp-test-ioccc/pulls).
 Please see [FAQ 5.2](#faq5_2) for how to submit a fix to an IOCCC winner.
 
+
+### <a name="faq3_14"></a><a name="tcpserver"></a>FAQ 3.14 - How do I compile and install tcpserver for entries that require it?
+
+If your OS package manager does not have the package `tcpserver` you can
+download, making sure you're in a temporary directory, and compile the source
+like:
+
+```sh
+wget http://cr.yp.to/ucspi-tcp/ucspi-tcp-0.88.tar.gz
+tar ucspi-tcp-0.88.tar.gz
+cd ucspi-tcp-0.88
+make
+```
+
+Then as root or via `sudo(1)` enter:
+
+```sh
+make setup check
+```
+
+That will install it to `/usr/local/bin`. Now you should be able to use the
+entry in question.
 
 
 ## <a name="faq4"></a>Section 4: Changes made to IOCCC winners
