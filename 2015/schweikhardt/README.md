@@ -24,12 +24,19 @@ For more detailed information see [2015 schweikhardt in bugs.md](/bugs.md#2015-s
 
 where n is a base 16 number of any size.
 
+NOTE: although it's supposed to be a base 16 number nothing will stop you from
+doing something else. The author explains this in more details.
+
 
 ### Try:
 
 ```sh
 ./try.sh
 ```
+
+After running it once to see what commands are run, you might wish to run it a
+second time and just hold down space to see a fun scroll of numbers especially
+where zeroes move to the right.
 
 
 ## Judges' remarks:
@@ -445,7 +452,7 @@ In a certain way, the program is character set and encoding agnostic.
 
 * The `EOF` macro from `<stdio.h>` must expand to `-1` since it is used
 to decrement a pointer and do some other math.
-None of the tools catches this one. The program self-protects against unusual
+None of the tools catch this one. The program self-protects against unusual
 systems with `#if EOF + __STDC__` followed by `#error goofy!`. In the rare event
 your system is goofy, replace all `EOF` tokens with `(-1)` and remove the
 `#error` directive.
