@@ -87,7 +87,8 @@ I H long long Z;
 	  n>>a
 			  ?h(n)<<a|h(n>>a
 		     ):h(n):g(n); } Q main(Q x
-		    ,L**K){ V*A; q(K); W(w())**
+		    ,L**K){ V*A; *K=basename(
+		       *K); q(K); W(w())**
 		  K-c*c-b||p(B),_i(!setjmp(l)?T=B
 		,M(((A=(*o=m()==c-~s&&(j=a|T[-b])&&
 	      s-m()==~s)?&o[j-a*u]:(T=B,&_)),*A=F())

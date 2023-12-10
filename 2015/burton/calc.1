@@ -11,18 +11,20 @@ The result is printed on
 as both a decimal value and its hex equivalent.
 Results are presented as 32-bit values, displaying as 64-bits only if necessary.
 If the program name begins with
-.I e
+.B e
 the input is also copied to
 .BR stdout .
 .BR stdin
 is read if there are no arguments.
 .PP
 Constants may be decimal, octal or hex.
-There are 26 registers, initialized to zero, named A-Z; the most recent result is always remembered in the register 
-.IR .
+There are 26 registers, initialized to zero, named 
+.B A-Z\c
+; the most recent result is always remembered in the register 
+.BR .
 (dot).
 Assignments are silent; the character
-.IR $
+.I $
 will print a table of the non-zero registers.
 .PP
 All input is case-insensitive.
@@ -30,7 +32,7 @@ Semicolons and/or newlines separate statements.
 Whitespace is ignored, except newlines cannot occur within expressions.
 Comments are introduced with
 .I #
-and extend through the following newline.
+and extend through the end of the line.
 .PP
 Operator precedence is as found in Go:
 OR and XOR are treated as additive, SHIFTing and AND are multiplicative.
@@ -45,45 +47,48 @@ Supported operations in decreasing precedence:
 forced precedence
 .TQ
 .B \- + ! ~ ?
-unary plus/minus, not, compl, byteswap
+unary minus/plus, not, compl, byte-swap
 .TQ
 .B * / % & << >> >>>
-mul, div, mod, bitand, shift: left, right, unsigned right
+mul, div, mod, bitand, left shift, right shift, unsigned right shift
 .TQ
 .B + \- | ^
 add, sub, bitor, xor
 .TQ
 .B =
-assignment ([a-z] = expr)
+assignment (\c
+.I [a-z] = expr\c
+)
 .SH EXAMPLES
 .PP
-Display the decimal value of 0x42:
+Display the decimal value of
+.BR 0x42 :
 .sp
 .RS
 .ft B
-$ calc 0x42
+calc 0x42
 .br
-66	0x00000042
 .ft R
+66	0x00000042
 .RE
 .PP
 What is the mask value for 22 bits?
 .sp
 .RS
 .ft B
-$ calc '1<<22-1'
+calc '1<<22-1'
 .br
-4194303	    0x003fffff
 .ft R
+4194303	    0x003fffff
 .RE
 .PP
 What is the integer value of byte-swapped 0x11223344?
 .RS
 .ft B
-$ calc ?0x11223344
+calc ?0x11223344
 .br
-1144201745	0x44332211
 .ft R
+1144201745	0x44332211
 .RE
 .PP
 Some canned expressions:
