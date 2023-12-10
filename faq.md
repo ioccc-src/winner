@@ -884,7 +884,7 @@ Note that you can compile the code in your regular terminal prior to opening
 XQuartz, should you wish to.
 
 
-### <a name="faq3_8"></a>FAQ 3.8: How do I compile an IOCCC winner that requires SDL1 or SDL2?
+### <a name="faq3_8"></a><a name="SDL"></a>FAQ 3.8: How do I compile an IOCCC winner that requires SDL1 or SDL2?
 
 This depends on your operating system but below are instructions for Linux and
 macOS with alternative methods for macOS and different package managers with Linux.
