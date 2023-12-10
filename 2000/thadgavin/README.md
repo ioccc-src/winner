@@ -2,7 +2,7 @@
 
 If you don't have curses or SDL1 installed both modes will fail to compile. In
 that case see the [FAQ 3.8 - How do I compile an IOCCC winner that requires SDL1
-or SDL2?](/faq.md#faq_38) and [FAQ 3.9  - How do I compile an IOCCC winner that
+or SDL2?](/faq.md#SDL) and [FAQ 3.9  - How do I compile an IOCCC winner that
 requires (n)curses?](/faq.md#faq3_9) for more information.
 
 
@@ -35,18 +35,12 @@ have to kill it yourself.
 
 You might also care to reconfigure the speed at which the programs run. The code
 calls `usleep(3)` with two default values, one for SDL and one for curses. The
-curses and SDL macros are defined respectively in the Makefile:
+curses and SDL macros are defined in the Makefile in a way that makes it easy to
+redefine the values: `SLEEP` is how long the program sleeps (in microseconds)
+between output with curses and `SDL_SLEEP` is how long it sleeps (also in
+microseconds) for the SDL version.
 
-```make
-SLEEP= 30
-SDL_SLEEP= 150000
-CDEFINE= -DZ=${SLEEP} -DZS=${SDL_SLEEP}
-```
-
-which corresponds to how long the program sleeps (in microseconds) between
-output. In the code if either is undefined (`#ifndef..#endif`) they will be set
-to the defaults as above so that you don't have to specify both just to
-configure one. To change the SDL one to something like `15000` you can do:
+To change the SDL one to something like `15000` you can do:
 
 ```sh
 make SDL_SLEEP=15000 clobber alt
@@ -61,8 +55,8 @@ make SLEEP=40 clobber alt
 Then use the program(s) in the same way.
 
 The different macros is because the curses version is already much slower and so
-it's better to not tie the two values together. You may of course combine them
-in one command.
+it's better to not tie the two values together. You may of course redefine both
+in the same command.
 
 
 ## Original code:
