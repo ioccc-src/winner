@@ -137,6 +137,16 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
+# Variables to redefine the coordinates in the alt version
+#
+X1= -2
+X2= 1
+Y1= -1.3
+Y2= 1.3
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} -DX1=${X1} -DX2=${X2} -DY1=${Y1} -DY2=${Y2} $< -o $@ ${LDFLAGS}
+ 
 # data files
 #
 data: ${DATA}

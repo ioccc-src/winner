@@ -57,6 +57,12 @@ You may pick and choose which ones to redefine.
 Use `prog.alt` as you would `prog`.
 
 
+### Alternate try:
+
+```sh
+./try.alt.sh
+```
+
 ## Judges' remarks:
 
 We consider this entry a tribute to all "Abuse of the C preprocessor"
