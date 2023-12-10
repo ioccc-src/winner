@@ -188,7 +188,7 @@ all of those screen size contexts.
 
 ### cannot use the HTML iframe tag
 
-The _<_ iframr _>_ HTML tag does not work for our needs.
+The _<_ iframe _>_ HTML tag does not work for our needs.
 
 This tag wants one to specify the _width_ and _height_ in pixels.
 Use of a percentage is not officially supported even if some browsers
