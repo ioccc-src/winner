@@ -55,7 +55,7 @@ other inconsistencies with the original entry?](#faq4_3)
 - [5.5  - How may I correct or update IOCCC author information?](#faq5_5)
 
 ## Section  6 - [Miscellaneous IOCCC](#faq6)
-- [6.0  - How did an entry breaks the size rule 2, win the IOCCC?](#faq6_0)
+- [6.0  - How did an entry that breaks the size rule 2, win the IOCCC?](#faq6_0)
 - [6.1  - Is there a list of known bugs and (mis)features of IOCCC winners?](#faq6_1)
 - [6.2  - May I mirror the IOCCC web site?](#faq6_2)
 - [6.3  - May I use parts of the IOCCC in an article, book, newsletter, or instructional material?](#faq6_3)
@@ -78,8 +78,8 @@ To submit your code to the IOCCC, you **MUST** follow these steps:
 
 0. Verify that the IOCCC is open for submissions
 
-Check the [status.json](status.json) URL and
-check the [IOCCC news](news.html#news) to
+Check the [status.json](/status.json) URL and
+check the [IOCCC news](/news.html#news) to
 see of the IOCCC is open.
 
 You may only register for the IOCCC
@@ -177,52 +177,52 @@ __over-submitted__ types of entries, level of the competition from
 previous IOCCC winners make it more challenging to be successful.
 
 
-It is also important to note that the [guidelines](guidelines.html) say:
+It is also important to note that the [guidelines](/guidelines.html) say:
 
 > _We tend to dislike programs that: are similar to previous winners_
 
 
 #### maze generator
-- [1985/shapiro](years.html#1985_shapiro)
+- [1985/shapiro](/years.html#1985_shapiro)
 
-- [1991/buzzard](years.html#1991_buzzard)
+- [1991/buzzard](/years.html#1991_buzzard)
 
-- [1995/cdua](years.html#1995_cdua)
+- [1995/cdua](/years.html#1995_cdua)
 
 - [1995/dodsond2](years.html#1995_dodsond2)
 
-- [1998/bas1](years.html#1998_bas1)
+- [1998/bas1](/years.html#1998_bas1)
 
 
 #### tic-tac-toe/noughts and crosses/Xs and Os game
 
-- [1991/westley](years.html#1991_westley)
+- [1991/westley](/years.html#1991_westley)
 
-- [1996/jonth](years.html#1996_jonth)
+- [1996/jonth](/years.html#1996_jonth)
 
-- [2020/carlini](years.html#2020_carlini)
+- [2020/carlini](/years.html#2020_carlini)
 
 
 #### solitaire/Othello game
 
-- [1987/lievaart](years.html#1987_lievaart)
+- [1987/lievaart](/years.html#1987_lievaart)
 
-- [1994/dodsond1](years.html#1994_dodsond1)
+- [1994/dodsond1](/years.html#1994_dodsond1)
 
 
 #### generating small primes (below is the list of all prime related winners)
 
-- [1985/august](years.html#1985_august)
+- [1985/august](/years.html#1985_august)
 
-- [1988/applin](years.html#1988_applin)
+- [1988/applin](/years.html#1988_applin)
 
-- [1994/weisberg](years.html#1994_weisberg)
+- [1994/weisberg](/years.html#1994_weisberg)
 
-- [1995/makarios](years.html#1995_makarios)
+- [1995/makarios](/years.html#1995_makarios)
 
-- [1996/dalbec](years.html#1996_dalbec)
+- [1996/dalbec](/years.html#1996_dalbec)
 
-- [2000/bellard](years.html#2000_bellard)
+- [2000/bellard](/years.html#2000_bellard)
 
 _As you can see, just a list of primes (let alone small primes) does not cut it
 anymore._
@@ -230,63 +230,63 @@ anymore._
 
 #### self reproducing program
 
-- [1990/scjones](years.html#1990_scjones)
+- [1990/scjones](/years.html#1990_scjones)
 
-- [1994/smr](years.html#1994_smr) - _do not claim your program is the smallest one without seeing this!
+- [1994/smr](/years.html#1994_smr) - _do not claim your program is the smallest one without seeing this!
 
-- [2000/dhyang](years.html#2000_dhyang) - _unless you beat this one, your chances are slim_
+- [2000/dhyang](/years.html#2000_dhyang) - _unless you beat this one, your chances are slim_
 
 
 #### entries that just print "Hello, world!"
 
-- [1984/anonymous](years.html#1984_anonymous)
+- [1984/anonymous](/years.html#1984_anonymous)
 
-- [1985/applin](years.html#1985_applin)
+- [1985/applin](/years.html#1985_applin)
 
-- [1986/applin](years.html#1986_applin)
+- [1986/applin](/years.html#1986_applin)
 
-- [1986/holloway](years.html#1986_holloway)
+- [1986/holloway](/years.html#1986_holloway)
 
-- [1989/jar.1](years.html#1989_jar.1)
+- [1989/jar.1](/years.html#1989_jar.1)
 
-- [1992/lush](years.html#1992_lush)
+- [1992/lush](/years.html#1992_lush)
 
-- [2000/tomx](years.html#2000_tomx)
+- [2000/tomx](/years.html#2000_tomx)
 
 _**...it's so 20th century...**_
 
 
 #### entries that use some complex state machine/table to print something
 
-- [1988/isaak](years.html#1988_isaak)
+- [1988/isaak](/years.html#1988_isaak)
 
-- [1988/phillipps](years.html#1988_phillipps)
+- [1988/phillipps](/years.html#1988_phillipps)
 
-- [2018/ciura](years.html#2018_ciura)
+- [2018/ciura](/years.html#2018_ciura)
 
-- [2018/giles](years.html#2018_giles)
+- [2018/giles](/years.html#2018_giles)
 
 
 #### rot13
 
-- [1985/sicherman](years.html#1985_sicherman)
+- [1985/sicherman](/years.html#1985_sicherman)
 
-- [1989/westley](years.html#1989_westley)
+- [1989/westley](/years.html#1989_westley)
 
-- [1990/dg](years.html#1990_dg)
+- [1990/dg](/years.html#1990_dg)
 
-- [1991/fine](years.html#1991_fine)
+- [1991/fine](/years.html#1991_fine)
 
 
 #### **pi** or **e** computation
 
-- [1986/august](years.html#1986_august)
+- [1986/august](/years.html#1986_august)
 
-- [1988/robison](years.html#1988_robison)
+- [1988/robison](/years.html#1988_robison)
 
-- [1988/westley](years.html#1988_westley)
+- [1988/westley](/years.html#1988_westley)
 
-- [1989/roemer](years.html#1989_roemer)
+- [1989/roemer](/years.html#1989_roemer)
 
 
 #### Hints on overused themes
@@ -590,7 +590,7 @@ appreciate the opportunity for a fun read as well as a chuckle or two.
 - admitting that your entry is not very obfuscated (you see, the contest is
 called the **IOCCC**, not the **INVOCCC** :-) ); but even if you do not admit
 it, not very obfuscated entries have a minuscule chance to win (although
-[2000/tomx](years.html#2000_tomx) is a notable counterexample).
+[2000/tomx](/years.html#2000_tomx) is a notable counterexample).
 
 - mentioning your name or any identifying information in the remark section (or
 in the C code for that matter) - we like to be unbiased during the judging
@@ -642,45 +642,45 @@ or "Best of Show award.
 
 In 1984-1987, the grand prize winners are:
 
-- [1984/mullender](years.html#1984_mullender)
+- [1984/mullender](/years.html#1984_mullender)
 
-- [1985/shapiro](years.html#1985_shapiro)
+- [1985/shapiro](/years.html#1985_shapiro)
 
-- [1986/wall](years.html#1986_wall)
+- [1986/wall](/years.html#1986_wall)
 
-- [1987/lievaart](years.html#1987_lievaart)
+- [1987/lievaart](/years.html#1987_lievaart)
 
 Starting from 1988, the entry we liked the most in that year is called
 "Best of Show". Here are the "Best of Show" entries:
 
-- [1988/applin](years.html#1988_applin)
+- [1988/applin](/years.html#1988_applin)
 
-- [1989/jar.2](years.html#1989_jar.2)
+- [1989/jar.2](/years.html#1989_jar.2)
 
-- [1990/theorem](years.html#1990_theorem)
+- [1990/theorem](/years.html#1990_theorem)
 
-- [1991/brnstnd](years.html#1991_brnstnd)
+- [1991/brnstnd](/years.html#1991_brnstnd)
 
-- [1992/vern](years.html#1992_vern)
+- [1992/vern](/years.html#1992_vern)
 
-- [1996/august](years.html#1996_august)
+- [1996/august](/years.html#1996_august)
 
-- [1998/banks](years.html#1998_banks)
+- [1998/banks](/years.html#1998_banks)
 
-- [2000/jarijyrki](years.html#2000_jarijyrki)
+- [2000/jarijyrki](/years.html#2000_jarijyrki)
 
-- [2020/carlini](years.html#2020_carlini)
+- [2020/carlini](/years.html#2020_carlini)
 
 
 In 1993, 1994 and 1995 the judges were unable to select a clear overall
 winner. So to give a nod to the entry that had the highest approval ranking
 from the judges, they used the following awards:
 
-- [1993/rince](years.html#1993_rince) - Most Well Rounded
+- [1993/rince](/years.html#1993_rince) - Most Well Rounded
 
-- [1994/shapiro](years.html#1994_shapiro) - Most Well Rounded
+- [1994/shapiro](/years.html#1994_shapiro) - Most Well Rounded
 
-- [1995/leo](years.html#1995_leo) - Best Use of Obfuscation
+- [1995/leo](/years.html#1995_leo) - Best Use of Obfuscation
 
 These could be considered the 'best entry' for those years with 1 or
 more other entries that came in close behind.
@@ -778,7 +778,7 @@ Unfortunately some older entries are non-portable and require 32-bit support or
 32-bit binaries. A problem system here is macOS Catalina (10.15) as as of that
 version macOS no longer supports 32-bit binaries. If the entry acts on a certain
 type of binary, say ELF, then that will also be a problem depending on the
-entry. For example [2001/anonymous](2001/anonymous/README.md) requires 32-bit
+entry. For example [2001/anonymous](/2001/anonymous/README.md) requires 32-bit
 ELF binaries.
 
 There are numerous example entries that require 32-bit binaries. We have tried
@@ -853,7 +853,7 @@ will too but it won't reset the terminal).
 
 ### <a name="faq3_7"></a><a name="X11macos"></a>FAQ 3.7: How do I compile and use on macOS, an IOCCC winner that requires X11?
 
-As an example we will use [1993/jonth](1993/jonth/README.md) which works well
+As an example we will use [1993/jonth](/1993/jonth/README.md) which works well
 with macOS.
 
 First of all you will need to install the [most recent
@@ -1034,7 +1034,7 @@ and agree to the terms and conditions and proceed with the install.
 ### <a name="faq3_10"></a>FAQ 3.10: How do I compile and use on macOS, an IOCCC winner that requires sound?
 
 This might depend on the entry but in some cases like
-[2001/coupard](2001/coupard/coupard.c) one needs to do more work in order to get
+[2001/coupard](/2001/coupard/coupard.c) one needs to do more work in order to get
 it to work. In this case you should be able to use the Swiss Army Knife of sound
 processing programs, [SoX](https://sox.sourceforge.net). To install this easily
 you can use either MacPorts or Homebrew. See below for instructions for each.
@@ -1143,7 +1143,7 @@ another function instead of doing it all in `main()` (another reason was that
 some entries that recursively called `main()` caused a crash or otherwise broke
 the entry in modern systems). Some entries do not work in `clang` (or at least do
 not work completely) due to these defects, for instance
-[1989/westley](1989/westley/README.md); [Cody Boone
+[1989/westley](/1989/westley/README.md); [Cody Boone
 Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson) was able to
 get much of it to work and looking at that entry might be of value to your
 submissions, at least if you can figure the code out :-). To see the
@@ -1272,7 +1272,7 @@ It is very likely in this case that the code was fixed to work for modern
 systems as part of the reworking of the website. If you have this problem in
 some entries you should look at the original code as in `winner.orig.c` or
 `prog.orig.c`. `winner` is the directory name. For instance, one of Landon's
-favourite entries of all time is [1984/mullender](1984/mullender/README.md) and
+favourite entries of all time is [1984/mullender](/1984/mullender/README.md) and
 the winner there would be `mullender`. Sometimes the original is in an alt
 version like `winner.alt.c` or `prog.alt.c`. In fact it is advisable to look at
 the original code when reading the author's (and sometimes authors') remarks.
@@ -1286,7 +1286,7 @@ A fine line indeed has to be drawn here but it was decided that it is worth it
 because of alarming warnings that can be displayed, in some systems at runtime
 interspersed with the output of the program.
 
-For instance in macOS the entry [1990/tbr](1990/tbr/README.md) would output the
+For instance in macOS the entry [1990/tbr](/1990/tbr/README.md) would output the
 warning in such a way that caused confusing output for the entry, looking like:
 
 ```sh
@@ -1306,7 +1306,7 @@ increased (which could be done for others that are not possible to change to
 `fgets()` though this has not been done).
 
 Some entries can be made to look almost identical to the original entry. For
-instance the fix to [1988/reddy](1988/reddy/README.md) required only a single
+instance the fix to [1988/reddy](/1988/reddy/README.md) required only a single
 `#define` be added.
 
 In the future we, the judges, would prefer that entries use `fgets()` to prevent
@@ -1357,7 +1357,7 @@ The following `make` rules exist to make a difference:
     `entry.c` to `entry.orig.c`).
 
 For instance one of Landon's all time favourite entries is
-[1984/mullender](1984/mullender/README.md) so the file names would be:
+[1984/mullender](/1984/mullender/README.md) so the file names would be:
 `mullender.orig.c`, `mullender.alt.c` and `mullender.c`. For later years, it
 would be instead `prog.orig.c`, `prog.alt.c` and `prog.c`.
 
@@ -1370,13 +1370,13 @@ make: [Makefile:170: diff_orig_prog] Error 1 (ignored)
 at the end of the output but this is completely normal if there are differences.
 
 If the alt code is the same as the original, say with
-[1984/anonymous](1984/anonymous/README.md), then naturally there is no point in
+[1984/anonymous](/1984/anonymous/README.md), then naturally there is no point in
 running the rule and the same applies for all the other rules but this system
 allows for easily seeing the diffs.
 
 As some examples we'll first look at one that has really long lines which
 will make it harder to see what is different,
-[2001/anonymous](2001/anonymous/README.md). What you would do is `cd
+[2001/anonymous](/2001/anonymous/README.md). What you would do is `cd
 2001/anonymous` and then do:
 
 ```sh
@@ -1385,7 +1385,7 @@ make diff_orig_prog
 
 and then be really confused! :-)
 
-But for an entry like [1991/dds](1991/dds/README.md), you can see the
+But for an entry like [1991/dds](/1991/dds/README.md), you can see the
 differences much more easily. `1991/dds` is a good example where it's very
 simple to see what is different as it's just a couple lines.
 
@@ -1393,7 +1393,7 @@ You might be quite surprised how little some entries had to be changed and at
 the same time how much other entries had to be changed, often with quite complex
 differences! In some cases if the line is rather long, like the above mentioned
 one, it will be harder to see what changed but in other cases like
-[1984/decot](1984/decot/README.md) or [1986/wall](1986/wall/README.md) it's a
+[1984/decot](/1984/decot/README.md) or [1986/wall](/1986/wall/README.md) it's a
 lot easier.
 
 Well, at least it's easier see the differences on a line-by-line basis but maybe
@@ -1401,7 +1401,7 @@ not what actually changed, especially since it's easier to know what was fixed
 when you have compiler errors :-) (though there are, as noted, some examples
 where it's quite easy to see the differences).
 
-[1991/dds](1991/dds/README.md) is also a good example to see the alt difference
+[1991/dds](/1991/dds/README.md) is also a good example to see the alt difference
 very easily. To do that `cd 1991/dds` and then do:
 
 ```sh
@@ -1438,8 +1438,8 @@ remarks and always the author's or authors' remarks, we recommend that you look
 at the original code. When the entry source code is called `prog.c` the original
 code is in `prog.orig.c`; otherwise it is `winner.orig.c`. For instance one of
 Landon's all time favourite entries is
-[1984/mullender](1984/mullender/README.md) and the original code is in
-[mullender.orig.c](1984/mullender/mullender.orig.c). In some cases, such as
+[1984/mullender](/1984/mullender/README.md) and the original code is in
+[mullender.orig.c](/1984/mullender/mullender.orig.c). In some cases, such as
 `1984/mullender`, the original code is the same as the code as no changes were
 made (there is an alt version for systems that are not VAX-11/PDP-11, however).
 
@@ -1460,16 +1460,16 @@ we can find.
 
 ### We welcome your help in fixing IOCCC winners
 
-The [known bugs](bugs.md) file, order by IOCCC years, contains a
+The [known bugs](/bugs.md) file, order by IOCCC years, contains a
 list of known bugs & (mis)features.  If you are looking for an IOCCC winner
 to try and fix, this file is a good place to start.
 
 See [FAQ 5.2](#faq5_2) for information on how to submit a fix to
 an IOCCC winner.  Before you consider trying to fix an IOCCC winner,
-please check the [known bugs](bugs.md) file for the IOCCC winner
+please check the [known bugs](/bugs.md) file for the IOCCC winner
 in question.  Note that in several cases what you may have discovered,
 while a (mis)feature is not considered a bug and should **not be fixed**.
-In cases where the bug is known, the entry's [known bugs](bugs.md) file
+In cases where the bug is known, the entry's [known bugs](/bugs.md) file
 section may offer you important fixing clues.
 
 ### We welcome your help on fixing the IOCCC web site
@@ -1496,12 +1496,12 @@ See [FAQ 5.2](#faq5_2) for information on how to submit a fix to an IOCCC entry.
 
 ### <a name="faq5_2"></a><a name="fix_a_winner"></a>FAQ 5.2: How may I submit a fix to an IOCCC winner?
 
-If you see a problem with an IOCCC entry, first check the [known bugs](bugs.md)
+If you see a problem with an IOCCC entry, first check the [known bugs](/bugs.md)
 file.  In some cases what you might think of as a bug is instead a known
 feature.  In some cases the bug is known, but no fix has ever been submitted.
 In other cases you may have found a new problem.
 
-If you do have a fix, and the [known bugs](bugs.md) file **does not recommend
+If you do have a fix, and the [known bugs](/bugs.md) file **does not recommend
 against fixing it**, then please consider opening a [GitHub pull
 request](https://github.com/ioccc-src/winner/pulls) against the master
 [branch](https://github.com/ioccc-src/winner/branches) of the [ioccc-src/winner
@@ -1629,7 +1629,7 @@ of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner).
 ## <a name="faq6"></a>Section 6: Miscellaneous IOCCC
 
 
-### <a name="faq6_0"></a>FAQ 6.0: How did an entry breaks the size rule 2, win the IOCCC?
+### <a name="faq6_0"></a>FAQ 6.0: How did an entry that breaks the size rule 2, win the IOCCC?
 
 As entries have been fixed it is entirely possible that some of the entries no
 longer fit within the year's size restrictions. Invariably the length of columns
@@ -1703,7 +1703,7 @@ exaggeration](https://books.google.com/books?id=ms3tce7BgJsC&lpg=PA134&vq=%22the
 
 p.s. Here is an image of F. D. C. Willard:
 
-[F D C Willard](png/F.D.C.Willard.png)
+[F D C Willard](/png/F.D.C.Willard.png)
 
 
 ### <a name="faq6_5"></a><a name="author_handle"></a>FAQ 6.5: What is an author handle?
@@ -1786,7 +1786,7 @@ repo](https://github.com/ioccc-src/build-ioccc) use the content of
 these JSON files to generate the `index.html` files for each IOCCC
 winning entry.
 
-Moreover, should the [IOCCC judges](judges.html) need to
+Moreover, should the [IOCCC judges](/judges.html) need to
 contact an authors of a IOCCC winner, they will consult the contents
 of the author's JSON file for ways to contact them.
 
