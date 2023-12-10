@@ -4,6 +4,10 @@
 make
 ```
 
+The author provided alternate code that prints the output one character at a
+time to make it a bit more like the real thing in that it isn't dumped out all
+at once. See [Alternate code](#alternate-code) below.
+
 
 ## To use:
 
@@ -85,6 +89,50 @@ echo | ./recode -v
 ```
 
 do?
+
+
+## Alternate code:
+
+This version, [prog.alt.c](prog.alt.c), writes a character at a time, sleeping
+after each character, so that one can read it more easily (for longer output)
+and to make it a bit more like the real thing.
+
+
+### Alternate build:
+
+
+```sh
+make alt
+```
+
+The default time to sleep is 400000 microseconds but you can change this by
+doing:
+
+```sh
+make clobber SLEEP=600000 alt
+```
+
+to change it to 600000 microseconds. It guards against negative numbers.
+
+
+### Alternate use:
+
+Use `prog.alt` as you would `prog` above.
+
+
+### Alternate try:
+
+
+```sh
+# encipher input.txt with default settings:
+cat input.txt | ./prog.alt
+
+# decipher enciphered input.txt with default settings:
+cat input.txt | ./prog| ./prog.alt
+```
+
+Notice how only the last part should use the `prog.alt`. Why? Try it and find
+out! Can you figure out why this works this way?
 
 
 ## Judges' remarks:

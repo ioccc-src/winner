@@ -115,8 +115,8 @@ DATA= chocolate-cake.md enigma.1 input.txt obfuscation.key \
 	try.this.txt
 TARGET= ${PROG} recode
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################
@@ -142,6 +142,11 @@ recode: recode.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
+# Variable to control how long to sleep for alt code
+#
+SLEEP= 400000
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} -Dh=${SLEEP} $< -o $@ ${LDFLAGS}
 # data files
 #
 data: ${DATA}
