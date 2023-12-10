@@ -1335,6 +1335,7 @@
 2015/burton/2015_burton.tar.bz2
 2015/burton/index.html
 2015/burton/inventory.html
+2015/burton/road.to.obscurity.html
 2015/burton/spoilers.html
 2015/dogon/.path
 2015/dogon/.winner.json

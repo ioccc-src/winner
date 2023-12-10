@@ -3816,7 +3816,8 @@
 2015/burton/prog.alt.c
 2015/burton/prog.c
 2015/burton/prog.orig.c
-2015/burton/road.to.obscurity
+2015/burton/road.to.obscurity.html
+2015/burton/road.to.obscurity.md
 2015/burton/rule2.c
 2015/burton/spoilers.html
 2015/burton/spoilers.md
@@ -3824,6 +3825,8 @@
 2015/burton/test.in
 2015/burton/test.out
 2015/burton/test32.out
+2015/burton/try.sh
+2015/burton/try.this.txt
 2015/dogon/.gitignore
 2015/dogon/.path
 2015/dogon/.winner.json
@@ -3832,6 +3835,7 @@
 2015/dogon/README.md
 2015/dogon/index.html
 2015/dogon/inventory.html
+2015/dogon/prog.alt.c
 2015/dogon/prog.c
 2015/dogon/prog.orig.c
 2015/duble/.gitignore
@@ -3871,6 +3875,7 @@
 2015/endoh2/inventory.html
 2015/endoh2/prog.c
 2015/endoh2/prog.orig.c
+2015/endoh2/try.sh
 2015/endoh3/.gitignore
 2015/endoh3/.path
 2015/endoh3/.winner.json
@@ -3883,6 +3888,7 @@
 2015/endoh3/mullender.c
 2015/endoh3/prog.c
 2015/endoh3/prog.orig.c
+2015/endoh3/try.sh
 2015/endoh4/.gitignore
 2015/endoh4/.path
 2015/endoh4/.winner.json
@@ -3894,6 +3900,7 @@
 2015/endoh4/prog.alt.c
 2015/endoh4/prog.c
 2015/endoh4/prog.orig.c
+2015/endoh4/try.sh
 2015/hou/.gitignore
 2015/hou/.path
 2015/hou/.winner.json
@@ -3902,9 +3909,11 @@
 2015/hou/README.md
 2015/hou/index.html
 2015/hou/inventory.html
+2015/hou/large
 2015/hou/prog.c
 2015/hou/prog.orig.c
 2015/hou/rfc1321.txt
+2015/hou/try.sh
 2015/howe/.gitignore
 2015/howe/.path
 2015/howe/.winner.json
@@ -3985,6 +3994,7 @@
 2015/schweikhardt/inventory.html
 2015/schweikhardt/prog.c
 2015/schweikhardt/prog.orig.c
+2015/schweikhardt/try.sh
 2015/yang/.gitignore
 2015/yang/.path
 2015/yang/.winner.json
@@ -4565,6 +4575,7 @@
 2020/ferguson2/obfuscation.key
 2020/ferguson2/obfuscation.md
 2020/ferguson2/obfuscation.txt
+2020/ferguson2/prog.alt.c
 2020/ferguson2/prog.c
 2020/ferguson2/prog.orig.c
 2020/ferguson2/recode.1
