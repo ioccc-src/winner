@@ -3974,6 +3974,8 @@ that's probably true: let's just say that for the IOCCC I'm (Cody) a weasel! :-)
 [Cody](#cody) added explicit linking of libm (`-lm`) for systems that do not do this
 (Linux doesn't seem to but macOS does).
 
+Cody also added the [try.sh](/2018/hou/try.sh) script.
+
 
 ## <a name="2018_vokes"></a>[2018/vokes](/2018/vokes/prog.c) ([README.md](/2018/vokes/README.md))
 
