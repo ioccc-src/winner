@@ -3954,7 +3954,8 @@ He also added the [try.sh](/2015/yang/try.sh) script.
 [Cody](#cody), with irony well intended :-), fixed the [test.sh
 script](/2018/ferguson/test.sh) for portability, shellcheck, making it executable
 and other things, fixed dead links in the man page, updated the test-strings.txt
-file and other things as well.
+file and other things as well (like adding the [try.sh](/2018/ferguson/try.sh)
+and [try.alt.sh](/2018/ferguson/try.alt.sh) scripts).
 
 Landon notes that Cody will probably never finish changes in his entries and
 that's probably true: let's just say that for the IOCCC I'm (Cody) a weasel! :-)

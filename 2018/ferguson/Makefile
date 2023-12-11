@@ -109,7 +109,7 @@ PROG= prog
 #
 OBJ= ${PROG}.o
 CSRC= ${PROG}.o
-DATA= FILES hint.css rpm.md test-strings.txt weasel.1 weasel.man weasel.spec
+DATA= FILES hint.css rpm.md test-strings.txt weasel.1 weasel.spec
 TARGET= ${PROG} weasel
 #
 ALT_OBJ= ${PROG}.alt

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Make sure the program has been compiled
-make clobber all 1> /dev/null|| exit 1
+make everything 1> /dev/null|| exit 1
 
 while read -r f; do
     ./weasel "$@" "${f}" # full line because of quotes
