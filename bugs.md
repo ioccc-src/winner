@@ -3171,6 +3171,58 @@ Abort trap: 6
 
 but this is expected and the file `ioccc.html` will be generated properly.
 
+## 2018 vokes
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2018/vokes/vokes.c](2018/vokes/vokes.c)
+### Information: [2018/vokes/README.md](2018/vokes/README.md)
+
+The author wrote the following:
+
+- Despite appearances, it does not handle numbers in hex, or provide
+  a `curses(3)`-based interface.
+
+- The expected input format is zero or more lines of space-separated
+  integers. If other characters appear in the input, it will either
+  reject the input entirely and exit with a non-zero status, or skip
+  number(s) adjacent to the non-digit characters, depending on where the
+  characters appear. Tabs and multiple consecutive spaces are handled
+  correctly, however.
+
+- Individual lines of input longer than `0x3543 - 1` bytes will be
+  split and processed as if they were multiple lines of input, which can
+  produce incorrect results. This magic number's significance is
+  described earlier.
+
+- The algorithm expects its input to represent a fully connected graph.
+  While the output is otherwise topologically sorted, if there are nodes
+  completely unconnected to the rest of the graph (with or without
+  self-cycles), they will be output as soon as they are processed --
+  this means that, when there are disconnected nodes, reordering the
+  input lines can produce different output. Addressing this by adding
+  another pass is would put the program over the size limit.
+
+- While the node IDs don't need to be consecutive or start at 0, the
+  implementation doesn't have special handling for sparse graphs. If you
+  give it a graph with nodes numbered 0 and 2147483647, it will attempt
+  to allocate sufficient memory (potentially around 32 GB) for the
+  entire range of graph nodes, even if those are the only ones. If
+  memory allocation returns NULL, it will gracefully exit, otherwise it
+  will succeed, eventually, perhaps after a great deal of swapping.
+
+- Node IDs >= 2147483648 will cause the program to print an error
+  message and exit with a non-zero status. This shrinks the code that
+  detects overflowing the array size by a bit.
+
+- A very large group of nodes in a cycle can cause a stack overflow.
+  This typically takes over 100,000 nodes, and depends on the order the
+  nodes are visited. Addressing this would put the program over the size
+  limit.
+
+- The implementation depends on the characters `'0'`, `'1'`, ... `'9'` having
+  the values `48` through `57`, rather than using `isdigit(3)`. As noted above,
+  this program has nothing to do with a hand.
+
 
 # 2019
 

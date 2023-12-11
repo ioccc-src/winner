@@ -3967,6 +3967,12 @@ that's probably true: let's just say that for the IOCCC I'm (Cody) a weasel! :-)
 (Linux doesn't seem to but macOS does).
 
 
+## <a name="2018_vokes"></a>[2018/vokes](/2018/vokes/prog.c) ([README.md](/2018/vokes/README.md))
+
+[Cody](#cody) added the [try.sh](/2018/vokes/try.sh) script.
+
+
+
 # <a name="2019"></a>2019
 
 
