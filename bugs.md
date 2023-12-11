@@ -1263,9 +1263,15 @@ compiled!
 
 ## 1994 shapiro
 
-### STATUS: missing file - please provide it
+### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1994/shapiro/shapiro.c](1994/shapiro/shapiro.c)
 ### Information: [1994/shapiro/README.md](1994/shapiro/README.md)
+
+This program will likely crash if the source code file (by the name of the file
+that's compiled) cannot be opened in the directory it is run from.
+
+
+### STATUS: missing file - please provide it
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) noted that the
 README.md file refers to an alternative version of the code that is not
