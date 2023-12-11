@@ -37,6 +37,10 @@
 - [3.12 - How do I find out how to send interrupt/EOF etc. for entries that require it?](#faq3_12)
 - [3.13 - Why does an IOCCC winner fail to compile or or fail run?](#faq3_13)
 - [3.14 - How do I compile and install tcpserver for entries that require it?](#faq3_14)
+- [3.15 - How do I compile and install netpbm for entries that require it?](#faq3_15)
+- [3.16 - How do I compile and install libjpeg-turbo for entries that require it?](#faq3_16)
+- [3.16 - How do I compile and install ImageMagick for entries that require it?](#faq3_17)
+
 
 ## Section  4 - [Changes made to IOCCC winners](#faq4)
 - [4.0  - Why are some winning author remarks incongruent with the winning IOCCC code?](#faq4_0)
@@ -78,92 +82,90 @@ To submit your code to the IOCCC, you **MUST** follow these steps:
 
 0. Verify that the IOCCC is open for submissions
 
-Check the [status.json](/status.json) URL and
-check the [IOCCC news](/news.html#news) to
-see of the IOCCC is open.
+    Check the [status.json](/status.json) URL and
+    check the [IOCCC news](/news.html#news) to
+    see of the IOCCC is open.
 
-You may only register for the IOCCC
-and you may only submit your entries to the IOCCC when the IOCCC is **OPEN**.
+    You may only register for the IOCCC
+    and you may only submit your entries to the IOCCC when the IOCCC is **OPEN**.
 
 1. Read the latest IOCCC rules and review the IOCCC guidelines
 
-Please read any pay close attention to the [official IOCCC rules](/rules.html).
+    Please pay close attention to the [official IOCCC rules](/rules.html).
 
-You are also **highly encouraged** to review the
-[official IOCCC guidelines](/guidelines.html) as they contain important
-suggestions, useful hints, and IOCCC humor.  :-)
+    You are also **highly encouraged** to review the
+    [official IOCCC guidelines](/guidelines.html) as they contain important
+    suggestions, useful hints, and IOCCC humor.  :-)
 
 2. Register for the IOCCC
 
-```
-XXX - instructions TBD - XXX
-```
+    XXX - instructions TBD - XXX
 
-Once you have been registered, you will receive an email message for how to
-prepare your entries for submission, and how to upload the compressed tarballs
-to our submission portal.
+    Once you have been registered, you will receive an email message for how to
+    prepare your entries for submission, and how to upload the compressed tarballs
+    to our submission portal.
 
 3. Obtain the latest mkiocccentry toolkit
 
 If you do not have an mkiocccentry tool directory:
 
-```sh
-cd some_directory
-git clone git@github.com:ioccc-src/mkiocccentry.git
-cd mkiocccentry
-```
+    ```sh
+    cd some_directory
+    git clone git@github.com:ioccc-src/mkiocccentry.git
+    cd mkiocccentry
+    ```
 
-If you already have an mkiocccentry tool directory:
+    If you already have an mkiocccentry tool directory:
 
-```sh
-cd mkiocccentry
-git fetch
-git rebase
-```
+    ```sh
+    cd mkiocccentry
+    git fetch
+    git rebase
+    ```
 
 4. Make the mkiocccentry toolkit
 
-```sh
-make clobber all
-```
+    ```sh
+    make clobber all
+    ```
 
 5. Run the mkiocccentry tool to form your entry tarball
 
-```sh
-./mkiocccentry work_dir prog.c Makefile remarks.md [file ...]
-```
+    ```sh
+    ./mkiocccentry work_dir prog.c Makefile remarks.md [file ...]
+    ```
 
-where:
+    where:
 
-```
-work_dir	directory where the entry directory and tarball are formed
-prog.c		path to the C source for your entry
+    ```
+    work_dir	directory where the entry directory and tarball are formed
+    prog.c		path to the C source for your entry
 
 
-Makefile	Makefile to build (make all) and cleanup (make clean & make clobber)
+    Makefile	Makefile to build (make all) and cleanup (make clean & make clobber)
 
-remarks.md	Remarks about your entry in markdown format
-		NOTE: See the [markdown syntax[(https://www.markdownguide.org/basic-syntax) guide.
+    remarks.md	Remarks about your entry in markdown format
+		    NOTE: See the [markdown syntax[(https://www.markdownguide.org/basic-syntax) guide.
 
-[file ...]	extra data files to include with your entry
-```
+    [file ...]	extra data files to include with your entry
+    ```
 
-NOTE: It is *NOT* necessary to install the tools to use them as you can run
-the tools from the top of the _mkiocccentry repo_ directory just fine.
+    NOTE: It is *NOT* necessary to install the tools to use them as you can run
+    the tools from the top of the _mkiocccentry repo_ directory just fine.
 
-If `mkiocccentry` tool indicates that there is a problem with your entry,
-especially if it identifies a [rule 2](/rules.html#2) related problem,
-you are **strongly** encouraged to revise and correct your entry and
-then re-run the `mkiocccentry` tool.
+    If `mkiocccentry` tool indicates that there is a problem with your entry,
+    especially if it identifies a [rule 2](/rules.html#2) related problem,
+    you are **strongly** encouraged to revise and correct your entry and
+    then re-run the `mkiocccentry` tool.
 
-If you choose to risk of violating rules, be sure an explain your reason
-for doing so in your _remarks.md_ file.
+    If you choose to risk of violating rules, be sure an explain your reason
+    for doing so in your _remarks.md_ file.
 
 6. upload your entry to the IOCCC submit server
 
-```
-XXX - instructions TBD - XXX
-```
+    ```
+    XXX - instructions TBD - XXX
+    ```
 
 
 ### <a name="faq0_1"></a>FAQ 0.1: What types of entries have been over-submitted to the IOCCC?
@@ -1261,6 +1263,111 @@ make setup check
 
 That will install it to `/usr/local/bin`. Now you should be able to use the
 entry in question.
+
+
+### <a name="faq3_15"></a><a name="netpbm"></a>3.15 - How do I compile and install netpbm for entries that require it?
+
+This depends on your operating system for which we describe a couple below.
+
+#### Red Hat based linux
+
+Execute one of the following as root or via sudo:
+
+```sh
+dnf install netpbm-progs netpbm
+yum install netpbm-progs netpbm
+```
+
+#### macOS: MacPorts
+
+If you haven't already, install
+[MacPorts](https://www.macports.org/install.php). Then run:
+
+
+```sh
+sudo port install libnetpbm netpbm
+```
+
+
+#### macOS: Homebrew
+
+If you have not already done so, install [Homebrew](https://brew.sh).
+
+Then to install netpbm:
+
+```sh
+brew install netpbm
+```
+
+
+### <a name="faq3_16"></a><a name="libjpeg"></a>3.16 - How do I compile and install libjpeg-turbo for entries that require it?
+
+This depends on your operating system for which we describe a couple below.
+
+#### Red Hat based linux
+
+Execute one of the following as root or via sudo:
+
+```sh
+dnf install libjpeg-turbo-utils libjpeg-turbo-devel libjpeg-turbo
+yum install libjpeg-turbo-utils libjpeg-turbo-devel libjpeg-turbo
+```
+
+#### macOS: MacPorts
+
+If you haven't already, install
+[MacPorts](https://www.macports.org/install.php). Then run:
+
+
+```sh
+sudo port install libjpeg-turbo libjpeg-turbo-devel
+```
+
+
+#### macOS: Homebrew
+
+If you have not already done so, install [Homebrew](https://brew.sh).
+
+Then to install `libjpeg-turbo`:
+
+```sh
+brew install libjpeg-turbo
+```
+
+
+### <a name="faq3_17"></a><a name="imagemagick"></a>3.17 - How do I compile and install ImageMagick for entries that require it?
+
+This depends on your operating system for which we describe a couple below.
+
+#### Red Hat based linux
+
+Execute one of the following as root or via sudo:
+
+```sh
+dnf install ImageMagick 
+yum install ImageMagick 
+```
+
+#### macOS: MacPorts
+
+If you haven't already, install
+[MacPorts](https://www.macports.org/install.php). Then run:
+
+
+```sh
+sudo port install ImageMagick
+```
+
+
+#### macOS: Homebrew
+
+If you have not already done so, install [Homebrew](https://brew.sh).
+
+Then to install ImageMagick:
+
+```sh
+brew install ImageMagick
+```
 
 
 ## <a name="faq4"></a>Section 4: Changes made to IOCCC winners
