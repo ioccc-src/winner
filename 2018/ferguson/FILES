@@ -24,20 +24,7 @@ Makefile		    The Makefile that simplifies compilation as well as
 			    itself [1].
 
 
-weasel.man		    The local version of the man page; that is if it's
-			    not installed. You can still use 'man' on the
-			    'weasel.1' file but 'weasel.man' references
-			    different file paths from 'weasel.1'.
-
-
-weasel.1		    The system wide version of the man page for when
-			    (if) it's installed [2]. Note that the suggested
-			    invocation 'man -l ./weasel.man' can be replaced
-			    with 'man -l ./weasel.1' too but if the weasel
-			    package is installed 'man weasel.1' (note the
-			    missing '-l ./') would read the from the system
-			    man page.
-
+weasel.1		    The man page for weasel.
 
 
 README.md		    The source of the index.html file [3].

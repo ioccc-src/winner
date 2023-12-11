@@ -40,7 +40,7 @@ them with cool layout!
 For your enjoyment:
 
 1. Compile [dhyang.c](dhyang.c).
-2. Run `./dhyang` and pipe output to another `.c` file.
+2. Run `./dhyang` and redirect output to another `.c` file.
 3. Compile that file.
 4. Repeat steps 2 and 3 until eventually the output cycles.
 
@@ -53,7 +53,7 @@ terminal fonts to as close to square as possible.  I hate to do this
 but you know, size...
 
 [dhyang.c](dhyang.c) and all its output compiles with gcc if your OS uses ASCII
-character set.  No file is included and all functions assume default int return
+character set.  No file is included and all functions assume default `int` return
 type (a source of compile warnings).
 
 

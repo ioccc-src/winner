@@ -3949,12 +3949,20 @@ He also added the [try.sh](/2015/yang/try.sh) script.
 (Linux doesn't seem to but macOS does).
 
 
+## <a name="2018_ciura"></a>[2018/ciura](/2018/ciura/prog.c) ([README.md](/2018/ciura/README.md))
+
+[Cody](#cody) added the [try.sh](/2018/ciura/try.sh) script and the PDF file,
+[lexicon.pdf](/2018/ciura/lexicon.pdf), that was a dead link, restored from the
+Internet Wayback Machine.
+
+
 ## <a name="2018_ferguson"></a>[2018/ferguson](/2018/ferguson/prog.c) ([README.md](/2018/ferguson/README.md))
 
 [Cody](#cody), with irony well intended :-), fixed the [test.sh
 script](/2018/ferguson/test.sh) for portability, shellcheck, making it executable
 and other things, fixed dead links in the man page, updated the test-strings.txt
-file and other things as well.
+file and other things as well (like adding the [try.sh](/2018/ferguson/try.sh)
+and [try.alt.sh](/2018/ferguson/try.alt.sh) scripts).
 
 Landon notes that Cody will probably never finish changes in his entries and
 that's probably true: let's just say that for the IOCCC I'm (Cody) a weasel! :-)
@@ -3965,6 +3973,14 @@ that's probably true: let's just say that for the IOCCC I'm (Cody) a weasel! :-)
 
 [Cody](#cody) added explicit linking of libm (`-lm`) for systems that do not do this
 (Linux doesn't seem to but macOS does).
+
+Cody also added the [try.sh](/2018/hou/try.sh) script.
+
+
+## <a name="2018_vokes"></a>[2018/vokes](/2018/vokes/prog.c) ([README.md](/2018/vokes/README.md))
+
+[Cody](#cody) added the [try.sh](/2018/vokes/try.sh) script.
+
 
 
 # <a name="2019"></a>2019

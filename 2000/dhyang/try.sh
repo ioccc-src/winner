@@ -22,8 +22,9 @@ make saitou >/dev/null
 echo "$ ./saitou > aku.c" 1>&2
 ./saitou > aku.c
 
-echo "$ cat aku.c"
-cat aku.c
+read -r -n 1 -p "Press any key to run: cat aku.c (space = next page, q = quit): "
+echo 1>&2
+cat aku.c | less -EXF
 
 echo "$ make soku >/dev/null" 1>&2
 make soku >/dev/null
@@ -31,8 +32,9 @@ make soku >/dev/null
 echo "$ ./soku > soku.c" 1>&2
 ./soku > soku.c
 
-echo "$ cat soku.c" 1>&2
-cat soku.c
+read -r -n 1 -p "Press any key to run: cat soku.c (space = next page, q = quit): "
+echo 1>&2
+cat soku.c | less -EXF
 
 echo "$ make zan >/dev/null" 1>&2
 make zan >/dev/null
@@ -40,8 +42,9 @@ make zan >/dev/null
 echo "$ ./zan > zan.c" 1>&2
 ./zan > zan.c
 
-echo "$ cat zan.c" 1>&2
-cat zan.c
+read -r -n 1 -p "Press any key to run: cat zan.c (space = next page, q = quit): "
+echo 1>&2
+cat zan.c | less -EXF
 
 echo "$ make aku >/dev/null" 1>&2
 make aku >/dev/null

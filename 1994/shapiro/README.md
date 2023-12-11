@@ -11,6 +11,7 @@ The current status of this entry is:
 
 ```
 STATUS: missing file - please provide it
+STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [1994 shapiro in bugs.md](/bugs.md#1994-shapiro).
@@ -45,7 +46,7 @@ back to the foreground what happens.
 This entry has many different levels of obfuscation, and yet the
 source file is self documenting.  :-)
 
-From time to time, run ps and look at the new processes.
+From time to time, run `ps(1)` and look at the new processes.
 
 See [shapiro.md](shapiro.md) for more information in the internals of this program.
 The file [shapiro.alt.c](shapiro.alt.c) contains a non-obfuscated version of

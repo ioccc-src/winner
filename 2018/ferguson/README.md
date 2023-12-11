@@ -4,6 +4,9 @@
 make
 ```
 
+The author provided an alternate version which has a simpler keyboard for the
+monkey Eric. See [Alternate code](#alternate-code) below.
+
 
 ## To use:
 
@@ -15,20 +18,35 @@ make
 ### Try:
 
 ```sh
-./weasel words
-./weasel -mq words
-./weasel -q -r8 'EVOLUTION IS A PROVEN FACT'
-./weasel -m 'INTELLIGENT DESIGN'
-
-make test
+./try.sh
 ```
 
 
 ## Alternate code:
 
-The author provided an alternate version which has a simpler keyboard for the
-monkey Eric. See his comments under the 'keyboards' section, briefly referred to
-in the 'what it is' section.
+This version has a simpler keyboard (fewer characters). The author wrote more
+about this under the [keyboards](#keyboards) section, briefly referred to in the
+[what it is](#what) section.
+
+
+### Alternate build:
+
+
+```sh
+make alt
+```
+
+
+### Alternate use:
+
+Use `weasel.alt` as you would `weasel` above.
+
+
+### Alternate try:
+
+```sh
+./try.alt.sh
+```
 
 
 ## Judges' remarks:
@@ -50,7 +68,7 @@ while using more Cenozoic minded code migration, read rpm.md.
 If you find yourself in an evolutionary dead end, try:
 
 ```sh
-man ./weasel.man
+man ./weasel.1
 ```
 
 

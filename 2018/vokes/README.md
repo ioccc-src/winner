@@ -5,26 +5,37 @@ make
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2018 vokes in bugs.md](/bugs.md#2018-vokes).
+
+
+
 ## To use:
 
 ```sh
-./prog < example-1.txt
+./prog < file.txt
 ```
 
 
 ### Try:
 
 ```sh
-./prog < example-2.txt
-./prog < example-tab.txt
-./prog < ioccc.txt
+./try.sh
 ```
 
 
 ## Judges' remarks:
 
 What this program does is not witchcraft and there are no spectres, but you
-might have a meltdown trying to work it all out.
+might have a meltdown trying to work it all out (look at the source code to
+understand this better).
 
 This entry is designed to mislead in many ways. However, if you find yourself
 wanting to know the possibilities for navigating a graph, you will get the
@@ -32,6 +43,7 @@ answer you seek with no hocus pocus.
 
 
 ## Author's remarks:
+
 
 ### Introduction:
 
@@ -41,7 +53,7 @@ grouped into strongly connected components. Given a set of nodes
 representing targets and edges representing dependencies between them,
 it produces a build order with any dependency cycles gathered.
 
-For example, the following input (provided as `example-1.txt`):
+For example, the following input (provided as [example-1.txt](example-1.txt)):
 
 ```
 0 4 8
@@ -80,12 +92,14 @@ sorted order:
 4: 7
 ```
 
-It uses Tarjan's strongly connected components algorithm for the
-grouping and reverse-topological sorting, along with a bonus hidden
+It uses [Tarjan's strongly connected components
+algorithm](https://en.wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm)
+for the grouping and reverse-topological sorting, along with a bonus hidden
 implementation of counting sort, which sorts each group.
 
-For other details about the input format, see "Issues and
-Limitations".
+For other details about the input format, see [Issues and
+Limitations](#issues-and-limitations).
+
 
 ### Building:
 
@@ -104,7 +118,8 @@ Note: The program can also be built with `-std=c99` or `-std=c89`.
 If building with `-Weverything`, then `-Wno-strict-prototypes`
 may also be necessary -- the function pointer declarations for
 `_` and `B` may get warnings otherwise, for reasons described
-under "Obfuscations".
+next in [Obfuscations](#obfuscations).
+
 
 ### Obfuscations:
 
@@ -117,11 +132,11 @@ under "Obfuscations".
   of parameters, the argument count and types are unconstrained. `_` is
   set to different functions in several places, but it is always called
   with appropriate argument(s) for its possible current functions. This
-  is allowed by the standard -- The section on F,I,N,D,M,Y,C,L,U,E has
-  further details.
+  is allowed by the standard -- The section on
+  `F`,`I`,`N`,`D`,`M`,`Y`,`C`,`L`,`U`,`E` has further details.
 
-- It uses `_` in three different scopes: as a goto label (function
-  scope), as an enum name, and a `_` function pointer (which is required
+- It uses `_` in three different scopes: as a `goto` label (function
+  scope), as an `enum` name, and a `_` function pointer (which is required
   to have file scope, since it starts with `_`). There are also other
   `_`s: it appears in a string, obscured by a hexadecimal escape sequence
   (`\x5f`), and the cauldron is supported by a giant underscore.
@@ -133,47 +148,47 @@ under "Obfuscations".
   functions have their names reused for different things in other
   functions.
 
-- There is an enum early on that defines several single-letter
-  identifiers: F,I,N,D,M,Y,C,L,U,E. These are used for array offsets,
-  both individually and in combination. The first several values are
-  also a clue: ISO/IEC 9899:1999 chapter 6.7.5.3 verse 14 describes how
-  function declarators with an empty parameter list behave. (As does
-  3.5.4.3 for ANSI C, which explains the 0x3543 that appears soon
-  after.)
+- There is an enum early on that defines several single-letter identifiers:
+  `F`,`I`,`N`,`D`,`M`,`Y`,`C`,`L`,`U`,`E`. These are used for array offsets,
+  both individually and in combination. The first several values are also a
+  clue: ISO/IEC 9899:1999 chapter 6.7.5.3 verse 14 describes how function
+  declarators with an empty parameter list behave. (As does 3.5.4.3 for ANSI C,
+  which explains the `0x3543` that appears soon after.)
 
 - Several parts of the program's state are stashed in otherwise unused
   offsets of the node arrays. These locations are accessed in multiple
-  ways, such as using `I[p]` (where I == 7) as well as `p[F+L]` (6+1),
-  or `b[M-N]` (14-5) and `U[b]` (where U == 9).
+  ways, such as using `I[p]` (where `I == 7`) as well as `p[F+L]` (6+1),
+  or `b[M-N]` (14-5) and `U[b]` (where `U == 9`).
 
 - The other identifiers are misleading, punny, or both. `spectre` does
   not exploit CVE-2017-5753 or CVE-2017-5715, for example -- it just fits
   the witch theme. `cast` doesn't cast, `hex` has nothing to do with
   hexadecimal, `bubble` is not bubble sort, there is no undefined
-  behavior in `nasal_demons`, and `main` has absolutely nothing to do
+  behavior in `nasal_demons`, and `main()` has absolutely nothing to do
   with a hand.
 
 - For well-formed input, how the program determines when to exit is a
-  bit obscure. `main` ends with a `goto` leading back to an earlier `_`
+  bit obscure. `main()` ends with a `goto` leading back to an earlier `_`
   label, so it just loops forever, and `exit` only appears in code paths
   related to error-handling. It looks like `cast` calls `meltdown` with
   its second argument set to 0, which would call `exit`, but running in
-  gdb with a breakpoint on `cast` reveals that it isn't being called...
+  `gdb(1)` with a breakpoint on `cast` reveals that it isn't being called...
 
-- Instead of using `isdigit()`, the program checks the numeric value of
-  each `char`, and literals that would suggest comparing against e.g. '0'
+- Instead of using `isdigit(3)`, the program checks the numeric value of
+  each `char`, and literals that would suggest comparing against e.g. `'0'`
   are specified in octal in one place, and produced by arithmetic using
-  the enum elsewhere.
+  the `enum` elsewhere.
 
 - Common conventions are subverted: `i` is not a loop index, `argv` and
   `argc`'s names are swapped.
 
 - `NULL` does not appear in the program. Instead, `argc[argv]` (which is
-  required to be a null pointer) is saved and passed to where its value
+  required to be a NULL pointer) is saved and passed to where its value
   is needed.
 
 - Oh, and the program is squashed into the shape of a bubbling cauldron,
   on top of a giant underscore, so there's that.
+
 
 ### Issues and Limitations:
 
@@ -217,9 +232,9 @@ under "Obfuscations".
   nodes are visited. Addressing this would put the program over the size
   limit.
 
-- The implementation depends on the characters '0', '1', ... '9' having
-  the values 48 through 57, rather than using `isdigit()`. As noted
-  above, this program has nothing to do with a hand.
+- The implementation depends on the characters `'0'`, `'1'`, ... `'9'` having
+  the values `48` through `57`, rather than using `isdigit(3)`. As noted above,
+  this program has nothing to do with a hand.
 
 
 ## Copyright and CC BY-SA 4.0 License:
