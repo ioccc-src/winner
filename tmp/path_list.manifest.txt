@@ -4040,6 +4040,7 @@
 2018/bellard/index.html
 2018/bellard/inventory.html
 2018/bellard/lena512.bin
+2018/bellard/prog.alt.c
 2018/bellard/prog.c
 2018/bellard/prog.orig.c
 2018/bellard/vintage_cars.bin
@@ -4124,9 +4125,11 @@
 2018/ciura/README.md
 2018/ciura/index.html
 2018/ciura/inventory.html
+2018/ciura/lexicon.pdf
 2018/ciura/prog.alt.c
 2018/ciura/prog.c
 2018/ciura/prog.orig.c
+2018/ciura/try.sh
 2018/endoh1/.gitignore
 2018/endoh1/.path
 2018/endoh1/.winner.json
@@ -4168,8 +4171,9 @@
 2018/ferguson/rpm.md
 2018/ferguson/test-strings.txt
 2018/ferguson/test.sh
+2018/ferguson/try.alt.sh
+2018/ferguson/try.sh
 2018/ferguson/weasel.1
-2018/ferguson/weasel.man
 2018/ferguson/weasel.spec
 2018/giles/.gitignore
 2018/giles/.path
@@ -4195,6 +4199,7 @@
 2018/hou/inventory.html
 2018/hou/prog.c
 2018/hou/prog.orig.c
+2018/hou/try.sh
 2018/mills/.gitignore
 2018/mills/.path
 2018/mills/.winner.json
@@ -4235,6 +4240,7 @@
 2018/vokes/ioccc.txt
 2018/vokes/prog.c
 2018/vokes/prog.orig.c
+2018/vokes/try.sh
 2018/yang/.gitignore
 2018/yang/.path
 2018/yang/.winner.json

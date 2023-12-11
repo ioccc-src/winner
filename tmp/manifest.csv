@@ -4040,6 +4040,7 @@
 2018,bellard,index.html,10,readme2index,null,html,true,browser,click here first,html
 2018,bellard,prog.c,20,null,main,c,true,github,winning source,c
 2018,bellard,Makefile,30,null,null,makefile,true,github,Makefile,null
+2018,bellard,prog.alt.c,40,null,alt,c,true,github,alternative source,c
 2018,bellard,prog.orig.c,50,null,orig,c,true,github,original source,c
 2018,bellard,Lenna.png,100,null,null,image,true,browser,sample image data,png
 2018,bellard,2018_bellard.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
@@ -4126,6 +4127,8 @@
 2018,ciura,Makefile,30,null,null,makefile,true,github,Makefile,null
 2018,ciura,prog.alt.c,40,null,alt,c,true,github,alternative source,c
 2018,ciura,prog.orig.c,50,null,orig,c,true,github,original source,c
+2018,ciura,lexicon.pdf,100,null,null,pdf,true,browser,How to squeeze a lexicon paper,pdf
+2018,ciura,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2018,ciura,2018_ciura.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2018,ciura,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2018,endoh1,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -4167,7 +4170,8 @@
 2018,ferguson,FILES,100,null,null,text,true,github,information about various files,null
 2018,ferguson,rpm.html,100,md2html,null,html,true,browser,about forming the rpm,html
 2018,ferguson,test.sh,100,null,null,shellscript,true,github,run the test suite,sh
-2018,ferguson,weasel.man,100,null,null,man,true,github,weasel man page,man
+2018,ferguson,try.alt.sh,100,null,null,shellscript,true,github,how to run alternative code,sh
+2018,ferguson,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2018,ferguson,weasel.1,150,null,null,man,true,github,weasel program man page,1
 2018,ferguson,weasel.spec,150,null,null,spec,true,github,RPM spec file,spec
 2018,ferguson,2018_ferguson.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
@@ -4194,6 +4198,7 @@
 2018,hou,Makefile,30,null,null,makefile,true,github,Makefile,null
 2018,hou,prog.orig.c,50,null,orig,c,true,github,original source,c
 2018,hou,input.json,100,null,null,json,true,github,sample JSON data,json
+2018,hou,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2018,hou,2018_hou.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2018,hou,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2018,mills,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -4234,6 +4239,7 @@
 2018,vokes,example-2.txt,100,null,null,text,true,github,sample input,txt
 2018,vokes,example-tab.txt,100,null,null,text,true,github,sample input,txt
 2018,vokes,ioccc.txt,100,null,null,text,true,github,sample input,txt
+2018,vokes,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2018,vokes,2018_vokes.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2018,vokes,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2018,yang,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
