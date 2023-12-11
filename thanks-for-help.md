@@ -3949,6 +3949,13 @@ He also added the [try.sh](/2015/yang/try.sh) script.
 (Linux doesn't seem to but macOS does).
 
 
+## <a name="2018_ciura"></a>[2018/ciura](/2018/ciura/prog.c) ([README.md](/2018/ciura/README.md))
+
+[Cody](#cody) added the [try.sh](/2018/ciura/try.sh) script and the PDF file,
+[lexicon.pdf](/2018/ciura/lexicon.pdf), that was a dead link, restored from the
+Internet Wayback Machine.
+
+
 ## <a name="2018_ferguson"></a>[2018/ferguson](/2018/ferguson/prog.c) ([README.md](/2018/ferguson/README.md))
 
 [Cody](#cody), with irony well intended :-), fixed the [test.sh

@@ -4,6 +4,10 @@
 make
 ```
 
+There is an alternate version that lacks a useful bug fix. See [Alternate
+code](#alternate-code) and the author's remarks ([remarks section](#remarks))
+below for more details.
+
 
 ## To use:
 
@@ -22,31 +26,38 @@ make
 
 ## Alternate code:
 
-An alternate version of this entry, `prog.alt.c`, is provided.  As mentioned in
-the Author's remarks, the alternate version lacks a useful bug fix.
+An alternate version of this entry, [prog.alt.c](prog.alt.c), is provided.  As
+mentioned in the author's [remarks](#remarks), the alternate version lacks a
+useful bug fix.
 
-To compile this alternate version:
+
+### Alternate build:
+
 
 ```sh
 make alt
 ```
+
+
+### Alternate use:
 
 Use `prog.alt` as you would `prog` above.
 
 
 ## Judges' remarks:
 
-This text was processed by prog. You may get confused.
-We're not really sure: prog.c wasn't commented.
-Who has been thoroughly puzzled by prog? Also how obfuscated is prog?
-Having been written in C, how large of a vocabulary has it?
+This text was processed by `prog`. You may get confused.  We're not really sure:
+[prog.c](prog.c) wasn't commented.  Who has been thoroughly puzzled by `prog`?
+Also how obfuscated is `prog`?  Having been written in C, how large of a
+vocabulary has it?
 
 
 ## Author's remarks:
 
+
 ### The Program:
 
-"The Elements of Style" by prof. William Strunk, Jr. and E. B. White
+"The Elements of Style" by Prof. William Strunk, Jr. and E. B. White
 is well known for its dislike of the passive voice.  Direct, vigorous,
 active constructions were instead recommended by the authors.
 The development of this program has been driven by this tenet.
@@ -69,21 +80,23 @@ constructions are recognized:
 Sentences are never broken by periods that follow abbreviations and
 initials.  Both regular and irregular past participles are properly
 dealt with.  Note that some words are red herrings: even though their
-ending is -ed, they are not past participles.
+ending is `-ed`, they are not past participles.
+
 
 ### The Big String:
 
 Here is the purpose of every byte inside the `c[]` string:
 
-* 0-9:  highlighting passive constructions in the output.
-* 10-50:  classifying characters - called by `V(4)`.
-* 52:  outputting the newline character.
-* 51-187:  tokenizing text and detecting passive constructions - two type A
+* `0-9`:  highlighting passive constructions in the output.
+* `10-50`:  classifying characters - called by `V(4)`.
+* `52`:  outputting the newline character.
+* `51-187`:  tokenizing text and detecting passive constructions - two type A
 state machines, called by `V(2)` and `V(3)`.
-* 186-2786:  determining word categories (past participles, present simple and
+* `186-2786`:  determining word categories (past participles, present simple and
 past simple forms of "to be", other forms of "to be", adverbs, wh-words, and
 other words) and recognizing abbreviations - two type B state machines, called
 by `V(808)` and `V(205)`.
+
 
 ### The State Machines:
 
@@ -93,6 +106,7 @@ state machine so you can reject this entry while you reject this entry.
 Both types of state machines in the program are Mealy machines: we can
 think of their transitions as triples (`transition_label`,
 `next_state`, `output`).
+
 
 ### Type A:
 
@@ -155,11 +169,12 @@ And here are sample steps of scanning tokens with classes `to_be`,
 * `state` = 22, `transition_label` = 0 (`adverb`), `output` = `ignore`
 * `state` = 22, `transition_label` = 3 (`past_participle`), `output` = `passive_construction_end`
 
+
 ### Type B:
 
 Type B state machines are built by a variant of the algorithm described
 in the paper
-[How to squeeze a lexicon](http://sun.aei.polsl.pl/~mciura/publikacje/lexicon.pdf).
+[How to squeeze a lexicon (PDF)](lexicon.pdf).
 Their states are represented as interlaced sparse arrays of transitions.
 
 The `transition_label` is one of:
@@ -203,6 +218,7 @@ A type B state machine starts in a given `state` with `output`
 set to `ignore`.  It scans a word backwards, converting character by
 character to `transition_label`.  When it meets `word_start`, it
 returns, leaving the most recently stored `output` in `v`.
+
 It also returns when
 `c[186 + (state + transition_label)] != (unsigned char)(2 + transition_label + 28 * output)`,
 i.e. when the `transition_label` in the byte mismatches the
@@ -215,33 +231,34 @@ class is set up so that it never returns `ignore`.
 
 Below are sample steps of scanning the word "chiefly".
 
-* `state` = 623, `transition_label` = 26 ('y'), `output` = `other`
-* `state` = 602, `transition_label` = 13 ('l'), `output` = `adverb`
-* `state` = 594, `transition_label` = 7 ('f'), `output` = `other`
-* `state` = 549, `transition_label` = 6 ('e'), `output` = `ignore`
-* `state` = 543, `transition_label` = 10 ('i'), `output` = `adverb`
-* `state` = 0, `transition_label` = 9 ('h') mismatches the value stored
+* `state` = 623, `transition_label` = 26 (`'y'`), `output` = `other`
+* `state` = 602, `transition_label` = 13 (`'l'`), `output` = `adverb`
+* `state` = 594, `transition_label` = 7 (`'f'`), `output` = `other`
+* `state` = 549, `transition_label` = 6 (`'e'`), `output` = `ignore`
+* `state` = 543, `transition_label` = 10 (`'i'`), `output` = `adverb`
+* `state` = 0, `transition_label` = 9 (`'h'`) mismatches the value stored
 in the byte.  Return `adverb`.
 
 And here are sample steps of scanning the string "i.e.":
 
-* `state` = 19, `transition_label` = 1 ('.'), `output` = `ignore`
-* `state` = 24, `transition_label` = 6 ('e'), `output` = `ignore`
-* `state` = 3, `transition_label` = 1 ('.'), `output` = `ignore`
-* `state` = 2, `transition_label` = 10 ('i'), `output` = `ignore`
-* `state` = 1, `transition_label` = 0 ('\0'), `output` = `abbreviation`.
+* `state` = 19, `transition_label` = 1 (`'.'`), `output` = `ignore`
+* `state` = 24, `transition_label` = 6 (`'e'`), `output` = `ignore`
+* `state` = 3, `transition_label` = 1 (`'.'`), `output` = `ignore`
+* `state` = 2, `transition_label` = 10 (`'i'`), `output` = `ignore`
+* `state` = 1, `transition_label` = 0 (`'\0'`), `output` = `abbreviation`.
 Return `abbreviation`.
+
 
 ### Remarks:
 
-The judges found a bug in the handling of contractions: `prog.alt.c`
-outputs "foo wasn'**[t bazzed]**".  I fixed the bug in `prog.c`, making
+The judges found a bug in the handling of contractions: [prog.alt.c](prog.alt.c)
+outputs "foo wasn'**[t bazzed]**".  I fixed the bug in [prog.c](prog.c), making
 it output "foo **[wasn't bazzed]**" instead, and took the liberty to merge
 one statement into a `for` loop inside its `main()` function.
 
 The program uses a 9,437,187-byte buffer so it probably will not run
 on 16-bit and smaller machines without changing the size of array `C[]`
-and the expression `9<<20` inside the call to `read()`.
+and the expression `9<<20` inside the call to `read(2)`.
 
 I have tested it on:
 
