@@ -4,6 +4,9 @@
 make
 ```
 
+There is an alternate version that should work with Windows. See [Alternate
+code](#alternate-code) below.
+
 
 ## To use:
 
@@ -18,9 +21,35 @@ make
 eog lena.ppm # On Linux
 open -a Preview lena.ppm # On macOS
 
-pngtopnm < Lenna.png | pnmscale 0.25 | cjpeg -arithmetic -dct float -quality 14 > small.jpg
+pngtopam < Lenna.png | pnmscale 0.25 | cjpeg -arithmetic -dct float -quality 14 > small.jpg
 ```
-### NOTE: Lenna.png is from https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png
+
+NOTE: `pngtopam(1)` (or `pngtopnm(1)` for older versions) and `pnmscale` come from
+the netpbm project and `cjpeg(1)` comes from `libjpeg-turbo`. If you don't have
+these tools already see [FAQ 3.15 - How do I compile and install netpbm for
+entries that require it?](/faq.md#netpbm) and [FAQ 3.16 - How do I compile and
+install libjpeg-turbo for entries that require it?](/faq.md#libjpeg).
+
+NOTE: [Lenna.png](Lenna.png) is from
+<https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png>.
+
+
+## Alternate code:
+
+The [prog.alt.c](prog.alt.c) is based on the author's remarks and it should work
+for Windows.
+
+
+### Alternate build:
+
+```sh
+make alt
+```
+
+
+### Alternate use:
+
+Use `prog.alt` as you would `prog`.
 
 
 ## Judges' remarks:
@@ -67,7 +96,7 @@ as the algorithms already have a significant complexity.
 Although the program was optimized to decompress its built-in image,
 it accepts to decompress image files from its standard
 input. Examples:
-\
+
 ```sh
 ./prog d < lena512.bin > lena512.ppm
 ./prog d < fruits.bin > fruits.ppm
