@@ -109,35 +109,26 @@ To submit your code to the IOCCC, you **MUST** follow these steps:
 
 If you do not have an mkiocccentry tool directory:
 
-    ```sh
     cd some_directory
     git clone git@github.com:ioccc-src/mkiocccentry.git
     cd mkiocccentry
-    ```
 
     If you already have an mkiocccentry tool directory:
 
-    ```sh
     cd mkiocccentry
     git fetch
     git rebase
-    ```
 
 4. Make the mkiocccentry toolkit
 
-    ```sh
     make clobber all
-    ```
 
 5. Run the mkiocccentry tool to form your entry tarball
 
-    ```sh
     ./mkiocccentry work_dir prog.c Makefile remarks.md [file ...]
-    ```
 
     where:
 
-    ```
     work_dir	directory where the entry directory and tarball are formed
     prog.c		path to the C source for your entry
 
@@ -148,7 +139,6 @@ If you do not have an mkiocccentry tool directory:
 		    NOTE: See the [markdown syntax[(https://www.markdownguide.org/basic-syntax) guide.
 
     [file ...]	extra data files to include with your entry
-    ```
 
     NOTE: It is *NOT* necessary to install the tools to use them as you can run
     the tools from the top of the _mkiocccentry repo_ directory just fine.
@@ -163,9 +153,7 @@ If you do not have an mkiocccentry tool directory:
 
 6. upload your entry to the IOCCC submit server
 
-    ```
     XXX - instructions TBD - XXX
-    ```
 
 
 ### <a name="faq0_1"></a>FAQ 0.1: What types of entries have been over-submitted to the IOCCC?
