@@ -3948,6 +3948,9 @@ He also added the [try.sh](/2015/yang/try.sh) script.
 [Cody](#cody) added explicit linking of libm (`-lm`) for systems that do not do this
 (Linux doesn't seem to but macOS does).
 
+Cody also added [alt code](/2018/bellard/README.md#alternate-code) that should
+work for Windows, based on the author's remarks.
+
 
 ## <a name="2018_ciura"></a>[2018/ciura](/2018/ciura/prog.c) ([README.md](/2018/ciura/README.md))
 
