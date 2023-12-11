@@ -750,6 +750,9 @@ are much more strict in what they accept as a valid program), or the entry
 depended on operation system and library features that where common back then
 but are different/missing today.
 
+Please see the other FAQs in this section as they might offer helpful
+hints, especially in cases were something else needs to be installed.
+
 Please see the [bugs.md](/bugs.md) file for details about known problems with IOCCC winners.  In some cases you may be dealing with a problematic entry.  In a few fun cases, the IOCCC does not compile by design!
 
 If you have a fix that makes a minimal impact to the entry, then please consider submitting that change in the form of a pull request.  Please
@@ -880,14 +883,17 @@ XQuartz, should you wish to.
 This depends on your operating system but below are instructions for Linux and
 macOS with alternative methods for macOS and different package managers with Linux.
 
-#### Red Hat based linux
 
-Execute one of the following as root or via sudo:
+#### Red Hat based Linux
+
+Execute the following as root or via sudo:
 
 ```sh
 dnf install SDL2 SDL2-devel sdl12-compat sdl12-compat-devel
-yum install SDL2 SDL2-devel sdl12-compat sdl12-compat-devel
 ```
+
+Older RHEL distributions might have to use "yum" instead of "dnf"
+in the above command.
 
 In the past it was said that one might need to run `make` like:
 
@@ -905,7 +911,39 @@ but this might not be necessary in more modern days especially as we use
 `sdl-config` and `sdl2-config` which should find the proper paths.
 
 
-#### Debian based linux
+#### macOS
+
+If you're using macOS there are at least three ways to obtain it. You can
+use Homebrew or MacPorts.  If you do not wish to use either of those
+package managers, you can always try to install via the package website.
+For macOS we do recommend using Homebrew or MacPorts instead of using
+the package website.
+
+
+##### macOS via Homebrew
+
+If you have not already done so, install [Homebrew](https://brew.sh).
+
+Then to install SDL and SDL2, execute the following command:
+
+```sh
+brew install sdl2 sdl12-compat
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+
+##### macos via MacPorts
+
+If you haven't already, install
+[MacPorts](https://www.macports.org/install.php). Then run:
+
+
+```sh
+sudo port install libsdl libsdl2
+```
+
+
+#### Debian based Linux
 
 Execute the following as root or via sudo:
 
@@ -931,7 +969,7 @@ but this might not be necessary in more modern days especially as we use
 `sdl-config` and `sdl2-config` which should find the proper paths.
 
 
-#### Other linux distributions
+#### Other Linux distributions
 
 Use your package manager to install the appropriate packages. Try the search
 feature of the package manager to determine which packages you need to install.
@@ -939,34 +977,13 @@ Note that you might have to install both the library and the developmental
 packages: one for compiling and one for linking / running.
 
 
-#### macOS
+#### package website
 
-If you're using macOS there are at least three ways to obtain it. You can
-download it from the SDL website and install the package. That will not
-work well for the IOCCC but these will:
+Go to the [SDL website](https://www.libsdl.org) and follow their instructions
+for downloading, installing and using SDL.
 
+We recommend trying a method suitable for your environment first, if possible.
 
-##### MacPorts
-
-If you haven't already, install
-[MacPorts](https://www.macports.org/install.php). Then run:
-
-
-```sh
-sudo port install libsdl libsdl2
-```
-
-
-##### Homebrew
-
-If you have not already done so, install [Homebrew](https://brew.sh).
-
-Then to install SDL and SDL2, execute the following command:
-
-```sh
-brew install sdl2 sdl12-compat
-eval "$(/opt/homebrew/bin/brew shellenv)"
-```
 
 #### NOTE: there might be extra SDL packages required
 
@@ -981,33 +998,14 @@ fix it and make a new pull request.
 This depends on your operating system but below are instructions for Linux and
 macOS with alternative methods for macOS and different package managers with Linux.
 
-#### Red Hat based linux
 
-Execute one of the following as root or via sudo:
-
-```sh
-dnf install ncurses ncurses-devel
-yum install ncurses ncurses-devel
-```
-
-
-#### Debian based linux
+#### Red Hat based Linux
 
 Execute the following as root or via sudo:
 
 ```sh
-apt-get install libncurses5-dev libncursesw5-dev
+dnf install ncurses ncurses-devel
 ```
-
-and then try `make all` again.
-
-
-#### Other linux distributions
-
-Use your package manager to install the appropriate packages. Try the search
-feature of the package manager to determine which packages you need to install.
-Note that you might have to install both the library and the developmental
-packages: one for compiling and one for linking / running.
 
 
 #### macOS
@@ -1021,19 +1019,74 @@ xcode-select --install
 and agree to the terms and conditions and proceed with the install.
 
 
+##### macOS via Homebrew
+
+Not applicable, see above.
+
+
+##### macos via MacPorts
+
+Not applicable, see above.
+
+
+#### Debian based Linux
+
+Execute the following as root or via sudo:
+
+```sh
+apt install libncurses6
+```
+
+and then try `make all` again.
+
+
+#### Other Linux distributions
+
+Use your package manager to install the appropriate packages. Try the search
+feature of the package manager to determine which packages you need to install.
+Note that you might have to install both the library and the developmental
+packages: one for compiling and one for linking / running.
+
+
+#### package website
+
+Go to the [ncurses website](https://invisible-island.net/ncurses/) and follow their instructions
+for downloading, installing and using ncurses.
+
+We recommend trying a method suitable for your environment first, if possible.
+
+
 ### <a name="faq3_10"></a>FAQ 3.10: How do I compile and use on macOS, an IOCCC winner that requires sound?
+
+
+#### Red Hat based Linux
+
+Usually the README.md file will explain how to use it under RHEL so we do not
+include this here, at least for now.
+
+
+#### macOS
 
 This might depend on the entry but in some cases like
 [2001/coupard](/2001/coupard/coupard.c) one needs to do more work in order to get
 it to work. In this case you should be able to use the Swiss Army Knife of sound
 processing programs, [SoX](https://sox.sourceforge.net). To install this easily
-you can use either MacPorts or Homebrew. See below for instructions for each.
-
-Usually the README.md file will explain how to use it in linux so we do not
-include this here, at least for now.
+you can use either Homebrew. or MacPorts.
 
 
-#### MacPorts
+##### macOS via Homebrew
+
+If you have not already done so, install [Homebrew](https://brew.sh).
+
+Then to install SoX, execute the following command:
+
+```sh
+brew install sox
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+
+##### macos via MacPorts
 
 If you haven't already, install
 [MacPorts](https://www.macports.org/install.php). Then run:
@@ -1044,16 +1097,21 @@ sudo port install sox
 ```
 
 
-#### Homebrew
+#### Debian based Linux
 
-If you have not already done so, install [Homebrew](https://brew.sh).
+Usually the README.md file will explain how to use it under Debian so we do not
+include this here, at least for now.
 
-Then to install SoX, execute the following command:
 
-```sh
-brew install sox
-eval "$(/opt/homebrew/bin/brew shellenv)"
-```
+#### package website
+
+Not applicable, see above.
+
+
+#### Other Linux distributions
+
+Usually the README.md file will explain how to use it under Linux so we do not
+include this here, at least for now.
 
 
 ### <a name="faq3_11"></a>FAQ 3.10: Why do Makefiles use -Weverything with clang?
@@ -1113,7 +1171,7 @@ If you do try for a compile with `clang -Weverything`, keep on mind that while _
 compile environment might be warning free, a different clang version or a
 different build environment might still have warnings. For instance the warning
 set is different in macOS (which by default is `clang`: even when run as `gcc`!)
-than linux (due to versions and possibly other things)!
+than Linux (due to versions and possibly other things)!
 
 Given that your entry **MUST** work as documented, you may be safer to
 say that your entry keeps the number of warnings and `-Wno-foo` options while
@@ -1257,16 +1315,41 @@ entry in question.
 
 This depends on your operating system for which we describe a couple below.
 
-#### Red Hat based linux
 
-Execute one of the following as root or via sudo:
+#### Red Hat based Linux
+
+Execute the following as root or via sudo:
 
 ```sh
 dnf install netpbm-progs netpbm
-yum install netpbm-progs netpbm
 ```
 
-#### macOS: MacPorts
+Older RHEL distributions might have to use "yum" instead of "dnf"
+in the above command.
+
+
+#### macOS
+
+
+If you're using macOS there are at least three ways to obtain it. You can
+use Homebrew or MacPorts.  If you do not wish to use either of those
+package managers, you can always try to install via the package website.
+For macOS we do recommend using Homebrew or MacPorts instead of using
+the package website.
+
+
+##### macOS via Homebrew
+
+If you have not already done so, install [Homebrew](https://brew.sh).
+
+Then to install netpbm, execute the following command:
+
+```sh
+brew install netpbm
+```
+
+
+##### macos via MacPorts
 
 If you haven't already, install
 [MacPorts](https://www.macports.org/install.php). Then run:
@@ -1277,31 +1360,73 @@ sudo port install libnetpbm netpbm
 ```
 
 
-#### macOS: Homebrew
+#### Debian based Linux
 
-If you have not already done so, install [Homebrew](https://brew.sh).
-
-Then to install netpbm:
+Execute the following as root or via sudo:
 
 ```sh
-brew install netpbm
+apt install netpbm
 ```
+
+and then try `make all` again.
+
+
+#### Other Linux distributions
+
+Use your package manager to install the appropriate packages. Try the search
+feature of the package manager to determine which packages you need to install.
+Note that you might have to install both the library and the developmental
+packages: one for compiling and one for linking / running.
+
+
+#### package website
+
+Go to the [netpbm website](https://netpbm.sourceforge.net) and follow their instructions
+for downloading, installing and using netpbm.
+
+We recommend trying a method suitable for your environment first, if possible.
+
 
 
 ### <a name="faq3_16"></a><a name="libjpeg"></a>3.16 - How do I compile and install libjpeg-turbo for entries that require it?
 
 This depends on your operating system for which we describe a couple below.
 
-#### Red Hat based linux
 
-Execute one of the following as root or via sudo:
+#### Red Hat based Linux
+
+Execute the following as root or via sudo:
 
 ```sh
 dnf install libjpeg-turbo-utils libjpeg-turbo-devel libjpeg-turbo
-yum install libjpeg-turbo-utils libjpeg-turbo-devel libjpeg-turbo
 ```
 
-#### macOS: MacPorts
+Older RHEL distributions might have to use "yum" instead of "dnf"
+in the above command.
+
+
+#### macOS
+
+If you're using macOS there are at least three ways to obtain it. You can
+use Homebrew or MacPorts.  If you do not wish to use either of those
+package managers, you can always try to install via the package website.
+For macOS we do recommend using Homebrew or MacPorts instead of using
+the package website.
+
+
+
+##### macOS via Homebrew
+
+If you have not already done so, install [Homebrew](https://brew.sh).
+
+Then to install libjpeg-turbo, execute the following command:
+
+```sh
+brew install libjpeg-turbo
+```
+
+
+##### macos via MacPorts
 
 If you haven't already, install
 [MacPorts](https://www.macports.org/install.php). Then run:
@@ -1312,31 +1437,73 @@ sudo port install libjpeg-turbo libjpeg-turbo-devel
 ```
 
 
-#### macOS: Homebrew
 
-If you have not already done so, install [Homebrew](https://brew.sh).
+#### Debian based Linux
 
-Then to install `libjpeg-turbo`:
+Execute the following as root or via sudo:
 
 ```sh
-brew install libjpeg-turbo
+apt install libturbojpeg0 libturbojpeg0-dev
 ```
+
+and then try `make all` again.
+
+
+#### Other Linux distributions
+
+Use your package manager to install the appropriate packages. Try the search
+feature of the package manager to determine which packages you need to install.
+Note that you might have to install both the library and the developmental
+packages: one for compiling and one for linking / running.
+
+
+#### package website
+
+Go to the [libjpeg-turbo website](https://www.libjpeg-turbo.org) and follow their instructions
+for downloading, installing and using libjpeg-turbo.
+
+We recommend trying a method suitable for your environment first, if possible.
+
 
 
 ### <a name="faq3_17"></a><a name="imagemagick"></a>3.17 - How do I compile and install ImageMagick for entries that require it?
 
 This depends on your operating system for which we describe a couple below.
 
-#### Red Hat based linux
 
-Execute one of the following as root or via sudo:
+#### Red Hat based Linux
+
+Execute the following as root or via sudo:
 
 ```sh
-dnf install ImageMagick 
-yum install ImageMagick 
+dnf install ImageMagick
 ```
 
-#### macOS: MacPorts
+Older RHEL distributions might have to use "yum" instead of "dnf"
+in the above command.
+
+
+#### macOS
+
+If you're using macOS there are at least three ways to obtain it. You can
+use Homebrew or MacPorts.  If you do not wish to use either of those
+package managers, you can always try to install via the package website.
+For macOS we do recommend using Homebrew or MacPorts instead of using
+the package website.
+
+
+##### macOS via Homebrew
+
+If you have not already done so, install [Homebrew](https://brew.sh).
+
+Then to install ImageMagick, execute the following command:
+
+```sh
+brew install ImageMagick
+```
+
+
+##### macos via MacPorts
 
 If you haven't already, install
 [MacPorts](https://www.macports.org/install.php). Then run:
@@ -1347,15 +1514,32 @@ sudo port install ImageMagick
 ```
 
 
-#### macOS: Homebrew
+#### Debian based Linux
 
-If you have not already done so, install [Homebrew](https://brew.sh).
-
-Then to install ImageMagick:
+Execute the following as root or via sudo:
 
 ```sh
-brew install ImageMagick
+apt install imagemagick
 ```
+
+and then try `make all` again.
+
+
+#### Other Linux distributions
+
+Use your package manager to install the appropriate packages. Try the search
+feature of the package manager to determine which packages you need to install.
+Note that you might have to install both the library and the developmental
+packages: one for compiling and one for linking / running.
+
+
+#### package website
+
+Go to the [ImageMagick website](https://imagemagick.org) and follow their instructions
+for downloading, installing and using ImageMagick.
+
+We recommend trying a method suitable for your environment first, if possible.
+
 
 
 ## <a name="faq4"></a>Section 4: Changes made to IOCCC winners
