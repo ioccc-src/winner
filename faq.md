@@ -107,38 +107,38 @@ To submit your code to the IOCCC, you **MUST** follow these steps:
 
 3. Obtain the latest mkiocccentry toolkit
 
-If you do not have an mkiocccentry tool directory:
+    If you do not have an mkiocccentry tool directory:
 
-    cd some_directory
-    git clone git@github.com:ioccc-src/mkiocccentry.git
-    cd mkiocccentry
+	cd some_directory
+	git clone git@github.com:ioccc-src/mkiocccentry.git
+	cd mkiocccentry
 
     If you already have an mkiocccentry tool directory:
 
-    cd mkiocccentry
-    git fetch
-    git rebase
+	cd mkiocccentry
+	git fetch
+	git rebase
 
 4. Make the mkiocccentry toolkit
 
-    make clobber all
+	make clobber all
 
 5. Run the mkiocccentry tool to form your entry tarball
 
-    ./mkiocccentry work_dir prog.c Makefile remarks.md [file ...]
+        ./mkiocccentry work_dir prog.c Makefile remarks.md [file ...]
 
     where:
 
-    work_dir	directory where the entry directory and tarball are formed
-    prog.c		path to the C source for your entry
+	work_dir	directory where the entry directory and tarball are formed
+	prog.c		path to the C source for your entry
 
 
-    Makefile	Makefile to build (make all) and cleanup (make clean & make clobber)
+	Makefile	Makefile to build (make all) and cleanup (make clean & make clobber)
 
-    remarks.md	Remarks about your entry in markdown format
-		    NOTE: See the [markdown syntax[(https://www.markdownguide.org/basic-syntax) guide.
+	remarks.md	Remarks about your entry in markdown format
+			NOTE: See the [markdown syntax](https://www.markdownguide.org/basic-syntax) guide.
 
-    [file ...]	extra data files to include with your entry
+	[file ...]	extra data files to include with your entry
 
     NOTE: It is *NOT* necessary to install the tools to use them as you can run
     the tools from the top of the _mkiocccentry repo_ directory just fine.
@@ -148,10 +148,10 @@ If you do not have an mkiocccentry tool directory:
     you are **strongly** encouraged to revise and correct your entry and
     then re-run the `mkiocccentry` tool.
 
-    If you choose to risk of violating rules, be sure an explain your reason
+    If you choose to risk violating rules, be sure an explain your reason
     for doing so in your _remarks.md_ file.
 
-6. upload your entry to the IOCCC submit server
+6. Upload your entry to the IOCCC submit server
 
     XXX - instructions TBD - XXX
 
