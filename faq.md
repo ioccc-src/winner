@@ -151,7 +151,7 @@ To submit your code to the IOCCC, you **MUST** follow these steps:
     If you choose to risk violating rules, be sure an explain your reason
     for doing so in your _remarks.md_ file.
 
-6. upload your entry to the IOCCC submit server
+6. Upload your entry to the IOCCC submit server
 
     XXX - instructions TBD - XXX
 
