@@ -46,4 +46,4 @@ echo 1>&2
 make clobber alt >/dev/null || exit 1
 read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
 echo 1>&2
-./prog.alt
+./prog.alt | less -EXF
