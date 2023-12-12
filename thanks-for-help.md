@@ -3994,6 +3994,13 @@ Cody also added the [try.sh](/2018/hou/try.sh) script.
 [Cody](#cody) added the [try.sh](/2018/vokes/try.sh) script.
 
 
+## <a name="2018_yang"></a>[2018/yang](/2018/yang/prog.c) ([README.md](/2018/yang/README.md))
+
+[Cody](#cody) added the [try.sh](/2018/yang/try.sh) script. This script will ask
+if the user wants to see some of the spoilers and only show them if they type
+`y` or `Y`.
+
+
 
 # <a name="2019"></a>2019
 

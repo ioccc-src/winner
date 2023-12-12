@@ -7,25 +7,20 @@ make
 
 ## To use:
 
+The author suggested that after compilation one should look at the generated
+files. For instance:
+
 ```sh
-more generated1.c
-more generated2.c
-more generated3.c
+less generated1.c
+less generated2.c
+less generated3.c
 ```
 
 
 ### Try:
 
 ```sh
-./left < prog.c
-./right < prog.c
-./left < prog.c | ./left
-
-./shift < prog.c
-
-./msg0
-./msg1
-./msg2
+./try.sh
 ```
 
 
@@ -36,7 +31,8 @@ code so you don't have to stare at it sideways or even upside down. Rotating
 this program left and recompiling will reveal other tools including a right rotate
 and a shift program.
 
-Strange things happen when the world is upside down! It is entirely possible
+Strange things happen [when the world is upside
+down](https://en.wikipedia.org/wiki/Wacky_Wednesday_(book))! It is entirely possible
 that this remark is completely misleading.
 
 What exactly does the shift program do?
@@ -60,8 +56,8 @@ But what combinations will generate `./msg3`, `./msg4`, `./msg5`, `./msg6`,
 
 ### Tools' usage:
 
-Nuko is a text rotator: given some text in stdin, Nuko will write the
-same text to stdout, but rotated 90 degrees counterclockwise.
+`Nuko` is a text rotator: given some text in `stdin`, `Nuko` will write the
+same text to `stdout`, but rotated 90 degrees counterclockwise.
 
 ```sh
 cc prog.c -o left
@@ -80,12 +76,12 @@ cc r1.c -o right
 
 For variety, this second tool rotates clockwise instead of
 counterclockwise.  Also, it can handle files larger than 1024x1024,
-depending on how much memory you got.
+depending on how much memory you have.
 
 Of course we wouldn't stop with just two rotations, if we continue to
 rotate counterclockwise once more, we get another program.  This
-program outputs a single message to stdout, which is the name of the
-series that Nuko came from.
+program outputs a single message to `stdout`, which is the name of the
+series that `Nuko` came from.
 
 ```sh
 ./left < prog.c | ./left > r2.c
@@ -104,13 +100,14 @@ cc r3.c -o shift
 
 Where this might be useful, besides ruining the formatting of certain
 files, is that it completes the set of tools needed to solve the
-puzzle that is embedded in prog.c
+puzzle that is embedded in [prog.c](prog.c).
+
 
 ### Puzzle box:
 
-Notice how the edges of prog.c contain two notches.  By rotating
-prog.c and removing leading space, the code would be shifted one space
-toward one of those notches (and creating a new notch on the other
+Notice how the edges of [prog.c](prog.c) contain two notches.  By rotating
+[prog.c](prog.c) and removing leading space, the code would be shifted one space
+toward one of those notches (and create a new notch on the other
 side).  This shifted code behaves slightly different from the original
 program.  For example, here are two more messages that can be
 produced:
@@ -122,14 +119,15 @@ produced:
 
 In total, there are 9 embedded strings that can be produced via a
 sequence of rotates and shifts, one of which can be used to extract
-the 10th final string from prog.c.  The intent is to simulate those
+the 10th final string from [prog.c](prog.c).  The intent is to simulate those
 wooden puzzle boxes that can be opened by pushing and shifting various
 well-concealed seams.  Thus, finding the correct sequence of rotates
 and shifts is left as an exercise to the reader (but if you are really
-lazy, just read the Makefile).
+lazy, just read the [Makefile](Makefile)).
 
 Source code for all the tools needed to solve this puzzle are embedded
-in prog.c, all you need is a C compiler.
+in [prog.c](prog.c), all you need is a C compiler.
+
 
 ### Features
 
@@ -137,24 +135,26 @@ in prog.c, all you need is a C compiler.
 achieve.  Code still compiles even with one column of text shifted.  This
 required even more patience.
 
-- All rotated and shifted variants compiles without warnings.  This involves
-various tweaks to satisfy cases where compiler is overly protective, including
+- All rotated and shifted variants compile without warnings.  This involves
+various tweaks to satisfy cases where the compiler is overly protective, including
 but not limited to the "1125" at line 4 as opposed to "1025", to satisfy
 `-Waggresive-loop-optimizations`.
 
 - CRC32 of the code is embedded in the code itself.
 
-- Process for writing prog.c is available in spoiler.html
+- Process for writing [prog.c](prog.c) is available in
+[spoiler.html](spoiler.html).
+
 
 ### Compatibility:
 
-Nuko and the rotated tools accepts only ASCII files where each
+`Nuko` and the rotated tools accept only ASCII files where each
 character maps to exactly one byte.  Also, end-of-line sequence is
 assumed to be LF only, as opposed to CR-LF.  All control characters
 are treated like normal printable characters, so files containing tabs
 will look weird after rotation, for example.
 
-Nuko has been verified to work with these compiler / OS combinations:
+`Nuko` has been verified to work with these compiler / OS combinations:
 
 - gcc 4.8.4 on Linux
 - gcc 4.9.2 on Linux
@@ -166,7 +166,7 @@ Nuko has been verified to work with these compiler / OS combinations:
 - clang 5.0.1 on Cygwin
 - tcc 0.9.25 on JS/Linux
 
-Nuko compiles without warnings with all compilers above, even with
+`Nuko` compiles without warnings with all compilers above, even with
 `-Wall -Wextra -pedantic` for gcc and clang.
 
 

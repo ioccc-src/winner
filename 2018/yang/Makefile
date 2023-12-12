@@ -234,7 +234,7 @@ generated12.c: msg7
 spoiler_for_the_truly_impatient: i_just_want_to_see_the_final_message
 
 i_just_want_to_see_the_final_message: msg11.txt
-	@cat $<
+	@${CAT} $<
 
 msg11.txt: msg11 ${PROG}.c
 	@${RM} -f $@
