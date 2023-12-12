@@ -59,10 +59,19 @@ CSTD= -std=gnu11
 #
 ARCH=
 
+# Variables to help simplify defining the defines
+#
+FIRE= XK_BackSpace:XK_Tab
+FORWARD= XK_Up:XK_w
+BACKWARD= XK_Down:XK_s
+LEFT= XK_Left:XK_a
+RIGHT= XK_Right:XK_d
+WIDTH= 512
+HEIGHT= 288
 # Defines that are needed to compile
 #
-CDEFINE= -DA=XK_Up:XK_w -DB=XK_Left:XK_a -DC=XK_Right:XK_d -DD=XK_Down:XK_s \
-	-DE=XK_BackSpace:XK_Tab "-DQ=XFillRectangle(W,X,Y,"
+CDEFINE= -DA=${FORWARD} -DB=${LEFT} -DC=${RIGHT} -DD=${BACKWARD} \
+	-DE=${FIRE} "-DQ=XFillRectangle(W,X,Y," -DM=${WIDTH} -DN=${HEIGHT}
 
 # Include files that are needed to compile
 #

@@ -40,7 +40,7 @@ compile time. If you wish to speed it up by 100% you can instead do:
 
 
 ```sh
-make clobber CDEFINE=-DZ=7500 alt
+make clobber SLEEP=7500 alt
 ```
 
 and then try `birken.alt` as above.

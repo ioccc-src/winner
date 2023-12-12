@@ -3315,6 +3315,9 @@ lets one reconfigure the controls and also the size of the game and another
 version that should work in Windows, based on the author's remarks and support
 file, `layer.c`.
 
+The Makefile was also modified by Cody to make it simpler to redefine the
+controls, width and height.
+
 
 ## <a name="2011_vik"></a>[2011/vik](/2011/vik/vik.c) ([README.md](/2011/vik/README.md]))
 
@@ -3359,13 +3362,16 @@ Cody also added two [alt versions](/2012/endoh1/README.md#alternate-code) that
 let one control how fast the fluid moves (how long to sleep in between writes)
 and also the gravity factor, the pressure factor and the viscosity factor as
 well as an alarm that lets one run it in a loop without having to hit
-ctrl-c/intr in between (the alarm can be disabled, however). The two different
-versions is because there are two versions: the original and the colour version
-added by the author, [Yusuke](#yusuke), at the request of the judges.
+ctrl-c/intr in between (the alarm can be disabled, however). The Makefile allows
+one to easily do this with variable names rather than redefining `CDEFINE`.
 
-Cody also added the [try.alt.sh](/2012/endoh1/try.alt.sh) script compiles the alt
-code in two ways, one with setting the gravity factor to `I` and another with
-the default, and which is run on the source file and each of the text files
+The two different alt versions is because there are two versions: the original
+and the colour version added by the author, [Yusuke](#yusuke), at the request of
+the judges.
+
+Cody also added the [try.alt.sh](/2012/endoh1/try.alt.sh) script that compiles
+the alt code in two ways, one with setting the gravity factor to `I` and another
+with the default, and which is run on the source file and each of the text files
 supplied by the author. This code has an alarm set at 10 seconds so that one
 need not hit ctrl-c/intr in between .. say to make it more fluid :-)
 
@@ -3491,11 +3497,13 @@ pairs though that should be obvious) and also some that are correct including
 system("reset");` (via redefining `exit(3)` so that the column ending would be
 the same) so that as long as it runs to completion the terminal will be sane and
 the cursor will be visible. Using `atexit(3)` will not work if the program is
-killed and signals are ugly so this was not done.
+killed, signals are ugly and these would be messing with the entry too much so
+these were not done.
 
 Cody also added the alt version that lets one control how fast the painting is
 done, based on the author's recommendations, except that Cody made it
-configurable at compile time.
+configurable at compile time. The Makefile was modified in such a way as to make
+it very easy to redefine them at compile time.
 
 Cody also added the [try.sh](/2013/birken/try.sh) script for the entry and the
 [try.alt.sh](/2013/birken/try.alt.sh) script for the alt code.

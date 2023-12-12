@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Fri 08 Dec 2023 12:46:49 UTC*
+*Last updated: Tue 12 Dec 2023 14:00:37 UTC*
 
 This document is primarily for [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) as he (that is I :-) ) wanted a way
@@ -169,28 +169,3 @@ the rest of the entries are done, assuming that it's possible.
 - Although I will have to do this when another issue is opened up I am aware of
 some issues in 2020/ferguson1/.winner.json. I do not want to forget this,
 however, so I am noting it here.
-
-- Finish going through entries (Makefile and README.md files) that have the
-ability to redefine macros but only in an awkward way like `make clobber
-CDEFINE="-D.."`. To find entries that were done by me: `git grep -c 'CDEFINE'
-'*README.md'` but the `2000/thadgavin` is already done. The reference to
-`CDEFINE` might want to be removed but that can be decided when this is done
-too. The entries done as of 7 Dec 2023 are:
-	- 2006/sloane
-	- 2006/monge
-	- 2004/jdalbec
-	- 2004/gavare
-	- 2001/kev
-	- 2000/thadgavin
-	- 1998/schweikh3
-	- 1998/banks
-	- 1994/dodsond2
-	- 1993/rince
-	- 1993/plummer
-	- 1993/cmills
-	- 1992/kivinen
-	- 1991/rince
-	- 1985/shapiro
-	- 1985/lycklama
-    ... and a couple or few involved updating the thanks file as it helps with
-    the entry itself. Ones not yet done might also have this need.
