@@ -56,13 +56,13 @@ described by the author. See [configuration](#configuration) below.
 To specify the port to say, 31337, try:
 
 ```sh
-make clobber CDEFINE="-DNCC=31337" alt
+make clobber PORT=31337 alt
 ```
 
-To change the `STARDATE` timing constant, try:
+To change the timing constant, `STARDATE`, try:
 
 ```sh
-make clobber CDEFINE="-DSTARDATE=5000000" alt
+make clobber TIME=5000000 alt
 ```
 
 You can combine them both of course.

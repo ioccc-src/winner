@@ -139,6 +139,14 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
+# Variables to control port and timing constant in alt code
+#
+PORT= 1701
+TIME= 500000
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} -DNCC=${PORT} -DSTARDATE=${TIME} $< -o $@ ${LDFLAGS}
+
 # data files
 #
 data: ${DATA}

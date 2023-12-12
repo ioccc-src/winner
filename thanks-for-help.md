@@ -3677,7 +3677,8 @@ code](/2014/birken/README.md#alternate-code) that lets one redefine the port to
 bind to in case there is a firewall issue or there is some other reason to not
 have the default port. Remember that ports < 1024 are privileged. It also lets
 you redefine the timing constant `STARDATE` (see the author's remarks for more
-details).
+details on this macro). The Makefile was made to use variables so it's easier to
+redefine the port and timing constant.
 
 
 ## <a name="2014_deak"></a>[2014/deak](/2014/deak/prog.c) ([README.md](/2014/deak/README.md))
