@@ -3491,11 +3491,13 @@ pairs though that should be obvious) and also some that are correct including
 system("reset");` (via redefining `exit(3)` so that the column ending would be
 the same) so that as long as it runs to completion the terminal will be sane and
 the cursor will be visible. Using `atexit(3)` will not work if the program is
-killed and signals are ugly so this was not done.
+killed, signals are ugly and these would be messing with the entry too much so
+these were not done.
 
 Cody also added the alt version that lets one control how fast the painting is
 done, based on the author's recommendations, except that Cody made it
-configurable at compile time.
+configurable at compile time. The Makefile was modified in such a way as to make
+it very easy to redefine them at compile time.
 
 Cody also added the [try.sh](/2013/birken/try.sh) script for the entry and the
 [try.alt.sh](/2013/birken/try.alt.sh) script for the alt code.
