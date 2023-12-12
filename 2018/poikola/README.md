@@ -14,10 +14,11 @@ make
 
 ### Try:
 
-On terminal supports 24 bit color, has black background, and size at least 125x38, try:
+On a terminal that supports 24 bit color, has black background, and size at
+least 125x38, try:
 
 ```sh
-./prog
+./try.sh
 ```
 
 
@@ -54,16 +55,17 @@ make
 You can generate an A3 sized poster by _make docs_. This command creates a pdf
 file _poikola.pdf_.
 
-### What this entry does:
 
-#### Introduction:
+### Introduction:
+
 It was a starry night when my wife pointed her finger up and asked: "What is
 this star and may I have some Easter eggs?"
 
 So I had to sit down and solve those tricky questions with Nano and a C
 compiler.
 
-#### Little spoilers:
+
+### Little spoilers:
 
 Basically, the program draws animated ASCII art of the Big Dipper using Annie
 Jump Cannon's spectral classification system of stars and I think the colors of
@@ -74,7 +76,9 @@ some Easter eggs.
 
 The program has also at least three other functions, obvious and not so obvious.
 
-#### Technical jargon
+
+### Technical jargon
+
 This program has been tested on xterm and Konsole and also Linux virtual
 terminal. Color support in the terminal is not necessary, but the effect is
 better with it.
@@ -83,12 +87,14 @@ This entry has partial support for terminals with a white background but the
 best viewing experience is achieved when the terminal in use supports 24-bit
 colors, has a black background and the size is at least 125x38.
 
-Special note for Mac users: __Terminal__ does not work as expected; you might
-need xterm from XQuartz or some other working terminal. Thanks to [Dave
-Burton](/winners.html#Dave_Burton) for spotting this problem.
+Special note for Mac users: `Terminal.app` does not work as expected; you might
+need xterm from XQuartz (see [FAQ 3.7: How do I compile and use on macOS, an
+IOCCC winner that requires X11?](/faq.md#X11macos)) or some other working
+terminal. Thanks to [Dave Burton](/winners.html#Dave_Burton) for spotting this
+problem.
 
-The main reason for the header `unistd.h` is `getdelim()` but once I included it
-I also abused other functions and defines. This header is mutually exclusive
+The main reason for the header `unistd.h` is `getdelim(3)` but once I included it
+I also abused other functions and `#define`s. This header is mutually exclusive
 with _-std=c11_.
 
 The program was developed with little-endian machines; I tried to support
@@ -102,21 +108,32 @@ This program has been compiled with:
 4. Lego Mindstorms EV3 Intelligent Brick (Debian Jessie) with gcc and clang (in
 this case, compiling time with clang-3.5 12 seconds and with gcc 27 seconds)
 
+
+### Extra notes from the judges on the macOS Terminal.app problems:
+
+Depending on the settings of the terminal in Terminal.app the program might not
+show anything at all. In other cases it won't show all the colours right but
+mostly is okay. YMMV, as they say.
+
+
 ### Warnings and restrictions required by law:
+
 Please do not feed little babies chocolate.
 
-### Major spoilers:
-<div style="margin-bottom:61em;">&nbsp;</div>
 
-I incorporated the Fletcher 16 checksum algorithm into the source for security
-reasons; it might be challenging to make changes without breaking the main
-functionality of the code.
+### Major spoilers:
+
+I incorporated the [Fletcher 16 checksum
+algorithm](https://en.wikipedia.org/wiki/Fletcher%27s_checksum) into the source
+for security reasons; it might be challenging to make changes without breaking
+the main functionality of the code.
 
 The space after `#define p return` is necessary.
 
 The computus (method to determine the date of Easter) uses an algorithm
 described in the journal Nature in 1876. It should be valid for Gregorian
 calendars.
+
 
 ### Some obfuscation techniques used:
 
@@ -144,10 +161,22 @@ questions:
 ### Rot18 part
 
 Because the rot13 is too easy to decode with the plain eyes, I decided to use
-the Caesar cipher with the key 18.
+the [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher) with the key
+18:
 
     Lzw xajkl tsffwj ak wfugvwv mkafy AWWW 754 xdgslk gf dafw 47. Al ak hjaflwv
     gfdq gf dalldw-wfvasf esuzafwk.
+
+If you want to or must know and don't know how to decipher this, you might look
+at the [Caesar cipher decoder](https://www.dcode.fr/caesar-cipher). Find the
+text that says:
+
+```
+Manual decryption and parameters
+Shift/Key (number)
+```
+
+and enter 18 and then click the button that says: `DECRYPT (BRUTEFORCE)`.
 
 
 ## Copyright and CC BY-SA 4.0 License:

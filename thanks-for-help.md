@@ -4037,7 +4037,15 @@ supposed to segfault :-)
 
 ## <a name="2019_poikola"></a>[2019/poikola](/2019/poikola/prog.c) ([README.md[(/2019/poikola/README.md))
 
-[Cody](#cody) added a missing rule to the Makefile.
+[Cody](#cody) added the `docs` rule to the Makefile that forms a PDF file. The
+rule requires the tool `pdflatex`.
+
+Cody also added the [try.sh](/2019/poikola/try.sh) script.
+
+[Dave Burton](/winners.html#Dave_Burton), during the preview period, noticed a
+problem where the macOS `Terminal.app` does not work properly for this program.
+We added some additional notes on what might happen (it varies depending on
+configuration).
 
 
 ## <a name="2019_karns"></a>[2019/karns](/2019/karns/prog.c) ([README.md](/2019/karns/README.md]))
