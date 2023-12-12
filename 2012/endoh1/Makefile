@@ -57,7 +57,7 @@ ARCH=
 
 # Defines that are needed to compile
 #
-CDEFINE= -DG="$G" -DP="$P" -DV="$V" -DS=12321 -DA=10
+CDEFINE= -DG="${GRAVITY}" -DP="${PRESSURE}" -DV="${VISCOSITY}"
 
 # Include files that are needed to compile
 #
@@ -120,15 +120,15 @@ ALT_TARGET= ${PROG}.alt ${PROG}_color.alt
 
 # The factor of gravity
 #
-G=1
+GRAVITY=1
 
 # The factor of pressure
 #
-P=4
+PRESSURE=4
 
 # The factor of viscosity
 #
-V=8
+VISCOSITY=8
 
 
 #################
@@ -154,13 +154,18 @@ ${PROG}_color: ${PROG}_color.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
+# Variables that control the alarm(3) timer and how much to sleep for alt code
+#
+TIMER= 10
+SLEEP= 12321
+
 ${PROG}.alt: ${PROG}.alt.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS} -DS=${SLEEP} -DA=${TIMER} $< -o $@ ${LDFLAGS}
 
 # this does NOT correspond to endoh1.alt2.c but rather endoh1.alt.c: it is NOT
 # deobfuscated.
 ${PROG}_color.alt: ${PROG}_color.alt.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS} -DS=${SLEEP} -DA=${TIMER} $< -o $@ ${LDFLAGS}
 
 alt2: ${PROG}.alt2
 	@${TRUE}

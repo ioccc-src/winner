@@ -59,7 +59,7 @@ for fun. That is controlled by the variable `A`; 0 disables it.
 If you wish to change the speed you should do:
 
 ```sh
-make clobber CDEFINE="-DS=N" alt
+make clobber SLEEP=N alt
 ```
 
 where `N` is number or the letter `I`.
@@ -75,7 +75,7 @@ you wish to change the viscosity and pressure factors but leave the other macros
 alone:
 
 ```sh
-make clobber CDEFINE="-DV=X -DP=Y" alt
+make clobber VISCOSITY=X PRESSURE=Y alt
 ```
 
 where `X` and `Y` are numbers or the letter `I` and which are, respectively, the
@@ -88,7 +88,7 @@ it from being done.
 If you want to disable the alarm time, set `A` to 0:
 
 ```sh
-make clobber CDEFINE="-DA=0" alt
+make clobber TIMER=0 alt
 ```
 
 It cannot be < 0 or > 60 (arbitrarily selected).
@@ -97,7 +97,7 @@ Try slowing down the display by increasing the sleep time from `12321` to
 `50000`:
 
 ```sh
-make clobber CDEFINE="-DS=50000" alt
+make clobber SLEEP=50000 alt
 ```
 
 Now try using both `endoh1.alt` and `endoh1_color.alt` as you would `endoh1` above.
@@ -106,7 +106,7 @@ Also try speeding up the display by decreasing the sleep time from `12321` to
 `9999`:
 
 ```sh
-make clobber CDEFINE="-DS=9999" alt2
+make clobber SLEEP=9999 alt2
 ```
 
 WARNING: again, be careful with too low a value if you're sensitive to flashing
@@ -119,13 +119,13 @@ instance:
 
 
 ```sh
-make clobber CDEFINE="-DG=5 -DP=5 -DV=5" alt
+make clobber GRAVITY=5 PRESSURE=5 VISCOSITY=5 alt
 ```
 
 You might try even:
 
 ```sh
-make clobber CDEFINE="-DG=I" alt
+make clobber GRAVITY=I alt
 ```
 
 See the author's remarks for details on these macros.

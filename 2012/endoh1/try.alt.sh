@@ -13,11 +13,11 @@ fi
 
 # unlike other try.sh/try.alt.sh scripts this one has two compiled binaries: one
 # which sets the gravity factor to I and the other that does not.
-make clobber CC="$CC" CDEFINE="-DA=10 -DG=I -DS=39000" alt >/dev/null || exit 1
+make clobber CC="$CC" TIMER=10 GRAVITY=I SLEEP=39000 alt >/dev/null || exit 1
 # we have to move the endoh1_color.alt to endoh1_color.alt3, not alt2, because
 # we have to use make clobber which would wipe out endoh1_color.alt2.
 mv endoh1_color.alt endoh1_color.alt3
-make clobber CC="$CC" CDEFINE="-DA=10 -DS=39000" alt >/dev/null || exit 1
+make clobber CC="$CC" TIMER=10 SLEEP=39000 alt >/dev/null || exit 1
 read -r -n 1 -p "Press any key run run slower fluid on endoh1_color.alt.c: "
 mv endoh1_color.alt3 endoh1_color.alt2
 # clear screen before continuing

@@ -3359,13 +3359,16 @@ Cody also added two [alt versions](/2012/endoh1/README.md#alternate-code) that
 let one control how fast the fluid moves (how long to sleep in between writes)
 and also the gravity factor, the pressure factor and the viscosity factor as
 well as an alarm that lets one run it in a loop without having to hit
-ctrl-c/intr in between (the alarm can be disabled, however). The two different
-versions is because there are two versions: the original and the colour version
-added by the author, [Yusuke](#yusuke), at the request of the judges.
+ctrl-c/intr in between (the alarm can be disabled, however). The Makefile allows
+one to easily do this with variable names rather than redefining `CDEFINE`.
 
-Cody also added the [try.alt.sh](/2012/endoh1/try.alt.sh) script compiles the alt
-code in two ways, one with setting the gravity factor to `I` and another with
-the default, and which is run on the source file and each of the text files
+The two different alt versions is because there are two versions: the original
+and the colour version added by the author, [Yusuke](#yusuke), at the request of
+the judges.
+
+Cody also added the [try.alt.sh](/2012/endoh1/try.alt.sh) script that compiles
+the alt code in two ways, one with setting the gravity factor to `I` and another
+with the default, and which is run on the source file and each of the text files
 supplied by the author. This code has an alarm set at 10 seconds so that one
 need not hit ctrl-c/intr in between .. say to make it more fluid :-)
 
