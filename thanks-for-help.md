@@ -3315,6 +3315,9 @@ lets one reconfigure the controls and also the size of the game and another
 version that should work in Windows, based on the author's remarks and support
 file, `layer.c`.
 
+The Makefile was also modified by Cody to make it simpler to redefine the
+controls, width and height.
+
 
 ## <a name="2011_vik"></a>[2011/vik](/2011/vik/vik.c) ([README.md](/2011/vik/README.md]))
 

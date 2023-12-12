@@ -24,40 +24,42 @@ The first alt version, [toledo.alt.c](toledo.alt.c), allows you to reconfigure
 the controls and the dimensions more easily.
 
 The second version, [toledo.alt2.c](toledo.alt2.c), should work for Windows but
-does not allow you to reconfigure the keys or dimensions.
+does not allow you to reconfigure the keys or dimensions. This is because it
+cannot be tested by us.
 
 
 ### Alternate build:
 
 For the one that lets you reconfigure the keys you will want to look at the
 included header file, [keysym.h](keysym.h), to find the correct macros. Once you
-have the right names you can define the macros `A`, `B`, `C`, `D` and/or `E`. It
-will use the default for any you do not specify. For instance, to swap what `A`
-and `B` are (see below for defaults of all keys):
+have the right names you can define the macros `FIRE`, `FORWARD`, `BACKWARD`,
+`LEFT`, `RIGHT`, `WIDTH` and `HEIGHT`. Here are the defaults:
+
+```
+FIRE= XK_BackSpace:XK_Tab
+FORWARD= XK_Up:XK_w
+BACKWARD= XK_Down:XK_s
+LEFT= XK_Left:XK_a
+RIGHT= XK_Right:XK_d
+WIDTH= 512
+HEIGHT= 288
+```
+
+but you can change them about however you like, even with other keys. For
+instance to swap `LEFT` and `RIGHT`:
 
 
 ```sh
-make clobber CDEFINE="-DA=XK_Left:XK_a -DB=XK_Up:XK_w" alt
+make clobber LEFT=XK_Right:XK_d RIGHT=XK_Left:XK_a alt
 ```
 
 but you can specify something completely else and you can pick and choose which
 controls you wish to redefine. You might also wish to change the dimensions of
-the game, `M` and `N` which have an arbitrarily selected lower limit as well as
-the default values.
+the game, `WIDTH` and `HEIGHT` which have an arbitrarily selected lower limit as
+well as the default values.
 
-Here are the defaults:
-
-```c
-#define A XK_Up:XK_w
-#define B XK_Left:XK_a
-#define C XK_Right:XK_d
-#define D XK_Down:XK_s
-#define E XK_BackSpace:XK_Tab
-#define M 512
-#define N 288
-```
-
-Observe that each of the controls are a pair in the form of `player2:player1`.
+Observe that each of the controls are a pair in the form of `player2:player1`
+(yes, player 2 comes first!).
 
 
 ## Judges' remarks:
