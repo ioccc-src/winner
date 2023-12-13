@@ -3968,9 +3968,10 @@ work for Windows, based on the author's remarks.
 Internet Wayback Machine.
 
 
+
 ## <a name="2018_endoh2"></a>[2018/endoh2](/2018/endoh2/prog.c) ([README.md](/2018/endoh2/README.md))
 
-Cody fixed the [run.sh](/2018/endoh2/run.sh) script (had commands that didn't
+[Cody](#cody) fixed the [run.sh](/2018/endoh2/run.sh) script (had commands that didn't
 exist and also didn't work even after that was addressed) and added the
 [try.sh](/2018/endoh2/try.sh), [python.sh](/2018/endoh2/python.sh) and
 [python3.sh](/2018/endoh2/python3.sh) scripts. The `try.sh` script runs all
