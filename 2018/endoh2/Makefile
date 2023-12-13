@@ -148,22 +148,11 @@ alt: data ${ALT_TARGET}
 data: ${DATA}
 	@${TRUE}
 
-python: ${PROG}
-	${RM} -f ${PROG}_next.c
-	${CC} ${CFLAGS} ${PROG}.c -o ${PROG} ${LDFLAGS}
-	while :; do \
-	    ./${PROG} | tee ${PROG}_next.c; \
-	    ${CC} ${CFLAGS} ${PROG}_next.c -o ./${PROG} ${LDFLAGS}; \
-	    sleep 1; \
-	done
+python: 
+	./python.sh
 
-python3: ${PROG}
-	${RM} -f ${PROG}_next.c
-	${CC} ${CFLAGS} ${PROG}.c -o ${PROG} ${LDFLAGS}
-	while :; do \
-	    ./${PROG} | tee ${PROG}_next.c; \
-	    ${CC} ${CFLAGS} ${PROG}_next.c -o ./${PROG} ${LDFLAGS}; \
-	done
+python3:
+	./python3.sh
 
 # both all and alt
 #
