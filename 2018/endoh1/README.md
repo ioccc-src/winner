@@ -14,16 +14,17 @@ make
 
 ### Try:
 
+To see the input files and feed them to the program, redirecting to GIF files:
+
 ```sh
-./prog < golem.txt > golem.gif
-./prog < smily.txt > smily.gif
+./try.sh
 ```
 
 
 ## Judges' remarks:
 
-To get the best experience, use a GIF viewer that can handle animated gifs.
-On OS X you can use Safari using "open -a Safari smily.gif"
+To get the best experience, use a GIF viewer that can handle animated GIFs.
+With macOS you can use Safari using `open -a Safari smily.gif`.
 
 Some things to consider are that this 2.5KiB gem encodes a 96 character 8x8
 font (naively this could already take 6144 bytes) and a GIF encoder.  But
@@ -44,8 +45,9 @@ cc -o prog prog.c
 ./prog < invisible.txt > invisible.gif
 ```
 
-Open invisible.gif and then wait a minute.  You will see a hidden message.
-Can you tell the difference between letters that leaves the mark and ones that does not?
+Open `invisible.gif` with a GIF viewer that can show animated GIFs and then wait
+a minute.  You will see a hidden message.  Can you tell the difference between
+letters that leave the mark and ones that do not?
 
 Other examples:
 

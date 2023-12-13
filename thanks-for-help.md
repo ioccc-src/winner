@@ -3968,6 +3968,16 @@ work for Windows, based on the author's remarks.
 Internet Wayback Machine.
 
 
+## <a name="2018_endoh1"></a>[2018/endoh1](/2018/endoh1/prog.c) ([README.md](/2018/endoh1/README.md))
+
+[Cody](#cody) added the [try.sh](/2018/endoh1/try.sh) script which shows the
+input files one at a time and after each one is shown, it feeds it to the
+program, redirecting the output to the respective GIF file. It then will inform
+the user they should open it in a GIF viewer that can show animation in animated
+GIF files. It offers an example command for macOS like the judges did in their
+remarks. The input files offered includes the prog.c as the author,
+[Yusuke](#yusuke), suggested that it too has a secret.
+
 
 ## <a name="2018_endoh2"></a>[2018/endoh2](/2018/endoh2/prog.c) ([README.md](/2018/endoh2/README.md))
 
