@@ -3968,6 +3968,19 @@ work for Windows, based on the author's remarks.
 Internet Wayback Machine.
 
 
+
+## <a name="2018_endoh2"></a>[2018/endoh2](/2018/endoh2/prog.c) ([README.md](/2018/endoh2/README.md))
+
+[Cody](#cody) fixed the [run.sh](/2018/endoh2/run.sh) script (had commands that didn't
+exist and also didn't work even after that was addressed) and added the
+[try.sh](/2018/endoh2/try.sh), [python.sh](/2018/endoh2/python.sh) and
+[python3.sh](/2018/endoh2/python3.sh) scripts. The `try.sh` script runs all
+three of the other scripts but each allows one to send an interrupt in the loops
+and still continue to the next script (if one does it when not in a loop it will
+exit the script). The `make python` and `make python3` rules in the Makefile now
+run the respective scripts.
+
+
 ## <a name="2018_ferguson"></a>[2018/ferguson](/2018/ferguson/prog.c) ([README.md](/2018/ferguson/README.md))
 
 [Cody](#cody), with irony well intended :-), fixed the [test.sh
