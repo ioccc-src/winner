@@ -3171,6 +3171,25 @@ Abort trap: 6
 
 but this is expected and the file `ioccc.html` will be generated properly.
 
+
+## 2018 mills
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2018/mills/prog.c](2018/mills/prog.c)
+### Information: [2018/mills/README.md](2018/mills/README.md)
+
+The author stated that if you make a typo it can happen that the boot loader can
+crash and halt. If this is the case type ctrl-e to quit the emulator and try
+again.
+
+The author also stated that it is possible to corrupt the virtual disk. If you
+do this you should type `make clobber all` and try again.
+
+Cody caused a funny problem where it showed `ERROR` after each command. The
+solution was to hit ctrl-e and start again. He does not know if this is what was
+referred to by the author though he doesn't think he made a typo either.
+
+
 ## 2018 vokes
 
 ### STATUS: INABIAF - please **DO NOT** fix
