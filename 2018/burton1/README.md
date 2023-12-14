@@ -4,6 +4,9 @@
 make
 ```
 
+There is an alternate version of this entry. See [Alternate
+code](#alternate-code) below.
+
 
 ## To use:
 
@@ -15,8 +18,7 @@ make
 ### Try:
 
 ```sh
-./prog < prog
-./prog < prog.c
+./try.sh
 ```
 
 
@@ -24,13 +26,21 @@ make
 
 An alternate version of this entry, [prog.alt.c](prog.alt.c), is provided
 This alternate code was supposed to compile without warnings, however
-with modern compilers this is no longer the case.
+with modern compilers this is no longer the case so it will only cleanly compile
+with `-Wno-` options.
 
-To compile this alternate version:
+
+### Alternate build:
+
 
 ```sh
 make alt
 ```
+
+
+### Alternate use:
+
+Use `prog.alt` as you would `prog`.
 
 
 ## Judges' remarks:
@@ -40,9 +50,9 @@ One line, one array, one loop and one statement but it prints many bytes. It won
 
 ## Author's remarks:
 
-Feed this anything on stdin.
+Feed this anything on `stdin`.
 
-The [included script](scripthd) may be used as a driver program for this entry.
+The [included script.sh](scripthd.sh) may be used as a driver program for this entry.
 It adds several nice-to-have features, and allows salt-to-taste customizability.
 
 This code has been compiled and tested on:
@@ -51,21 +61,24 @@ This code has been compiled and tested on:
 * X86-Linux, gcc 4.1.2 and 4.8.4, -O0 and -O3
 * ARM-QEMU, gcc 4.8.4, -O0 and -O3
 * X86-FreeBSD 10.3, clang 3.4.1, -O0 and -O3
-* TCC 0.9.26 (x86-64) (used as a proxy for [2001/bellard](http://ioccc.org/years.html#2001_bellard))
+* TCC 0.9.26 (x86-64) (used as a proxy for [2001/bellard](/years.html#2001_bellard))
 * UNIX V7 pcc (Johnson's C compiler) on a [simulated PDP-11/45](http://simh.trailing-edge.com/)
   (see spoiler for further detail)
 
 <div style="margin-bottom:60em;margin-top:4em"><strong>Spoiler below; scroll down.</strong></div>
 
+
 ### SPOILER:
 
-This started life as a personal challenge: write the shortest hex dump utility in C.
+This started life as a personal challenge: write the shortest hex dump utility
+in C.
 
 The self-imposed ground rules in the hunt for shortest:
 
-- the code has to output correctly,
-- no extraneous newlines, the code must be portable,
-and without bypassing the solution using execve(2), or functions built upon it (system(3), popen(3), etc).
+- The code has to output correctly.
+- No extraneous newlines, the code must be portable,
+and without bypassing the solution using `execve(2)`, or functions built upon it
+(`system(3)`, `popen(3)`, etc).
 
 E.g:
 
@@ -155,8 +168,10 @@ $
 ```
 
 An obfuscated hex dump has been done before:
-[1986/bright/bright.c](http://ioccc.org/1986/bright/bright.c) is similar in function,
-but it uses more characters in just setting up its obfuscation than this entire solution!
+[1986/bright](/1986/bright/README.md) is similar in function,
+but it uses more characters in just setting up its obfuscation than this entire
+solution!
+
 
 ### BIGGER SPOILER:
 
@@ -165,12 +180,13 @@ replace the cryptic expression `4<(4^l>>5)?l:46` with `32>l|l>126?46:l`.
 Both take the same number of characters, but the former is a bit more interesting.
 Bonus question: how does the first expression work?
 
+
 ### BIGGEST SPOILER (and some history):
 
 Technically, `char o[0];` is illegal (SS 6.7.6.2) according to ISO (N1570).  And
 `char o[];` is a conditionally supported feature (SS 6.7.6.2, 6.10.8.3).
 However, it works in modern C implementations as an extension, including GCC,
-Clang and TCC, for X86 and ARM, on multiple operating systems (Linux, OSX,
+Clang and TCC, for X86 and ARM, on multiple operating systems (Linux, OSX/macOS,
 FreeBSD), so it is _functionally_ correct.  MicroSoft Visual C++ does not allow
 `char o[]` or `char o[0]`, and implements its close relative `char o[1]` such
 that writing more than a single char will cause a fault, which is _technically_
@@ -185,7 +201,8 @@ bytes following `O`, addressed via `o`, and this code only needs 17. This is
 _undefined_ behavior, but as shown, it is widely available.
 
 The [1979 Seventh Edition UNIX][1] (v7) system pre-dates the IOCCC by several years,
-and the source code to `sh`(1) was a [significant inspiration for this contest][2].
+and the source code to `sh`(1) was a [significant inspiration for this
+contest](/all/README.md).
 There are two C compilers present: `cc` written by Dennis Ritchie, and `pcc` written by Steven Johnson.
 The nested conditional expressions in 116 and smaller are too complex for `cc` ("Illegal conditional")
 but `pcc` handles them correctly, and neither compiler accepts `char o[]` or
@@ -194,9 +211,9 @@ not yet written for UNIX).
 
 [1]: http://minnie.tuhs.org/cgi-bin/utree.pl
 [2]: http://ioccc.org/all/README
-[3]: https://web.archive.org/web/20180521074522/http://www.computerworld.com.au/article/279011/a-z_programming_languages_bourne_shell_sh/?pp=4
+[2]: https://web.archive.org/web/20180521074522/http://www.computerworld.com.au/article/279011/a-z_programming_languages_bourne_shell_sh/?pp=4
 
-More significant is that v7 `printf`(3) does not report the number of characters
+More significant is that v7 `printf(3)` does not report the number of characters
 written, and therefore 111 compiles but does not work correctly; 113 is the
 shortest code that compiles and runs correctly in Ancient UNIX.
 
@@ -216,7 +233,7 @@ page 71, remarks:
 It is fascinating to explore the roots of C through the history of the operating
 system it was birthed within.  C is often criticized as a difficult, inscrutable
 language, but as this contest demonstrates, this is in parody.  _Shell-gol_ is
-one of those instances where someone [preferred a different language][3], and
+one of those instances where someone [preferred a different language][2], and
 (ab)used the preprocessor to re-mold C into something they found comfortable.
 Most of the rest of the system, especially in the kernel, are models of clarity
 and efficient expression.
@@ -245,6 +262,12 @@ Try:
 
 ```sh
 cat prog.c prog.alt.c
+```
+
+or
+
+```sh
+cmp -b prog.c prog.alt.c
 ```
 
 to compare the differences (`diff` is not helpful on a one-liner).

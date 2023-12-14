@@ -15,117 +15,114 @@ make
 ### Try:
 
 ```sh
-./prog -i < prog.c
-./prog -s < prog.c
-./prog -sk < prog.c
-```
-
-If you get stuck, try:
-
-```sh
-make test
+./try.sh
 ```
 
 If you get really stuck, try:
 
 ```sh
-man ./tac.man
+man ./tac.1
 ```
 
 
 ## Judges' remarks:
 
-They say size isn't everything, and in the case of IOCCC [iocccsize.c](https://www.ioccc.org/2018/iocccsize.c)
-that is saying something!  What is this program weighing and how much does it weigh?
+They say size isn't everything, and in the case of IOCCC
+[iocccsize.c](https://www.ioccc.org/2018/iocccsize.c) that is saying something!
+What is this program weighing and how much does it weigh?
 
 
 ## Author's remarks:
 
 ### tac - tokenize and count C and derivative languages:
 
-```
-tac computes C program size
-(obfuscated / otherwise)
-by splitting code as tokens small,
-ignoring space, then counting all.
+`tac` computes C program size\
+(obfuscated / otherwise)\
+by splitting code as tokens small,\
+ignoring space, then counting all.\
 
-It tries quite hard to act the same
-as counting tool of I-OCCC fame.
-Some bugs were fixed, it's faster too,
-and does more things, just add some glue!
+It tries quite hard to act the same\
+as counting tool of I-OCCC fame.\
+Some bugs were fixed, it's faster too,\
+and does more things, just add some glue!\
 
-It does far more than print the size:
-the token part's a better prize!
-With each upon on a single line,
-how many things can you design?
+It does far more than print the size:\
+the token part's a better prize!\
+With each upon on a single line,\
+how many things can you design?\
 
-Included is a keyword sorter,
-de-obfuscator, freq reporter.
-With code produced as little parts,
-just add your own creative arts.
+Included is a keyword sorter,\
+de-obfuscator, freq reporter.\
+With code produced as little parts,\
+just add your own creative arts.\
 
-But first you have to figure out
-the braces part, without a doubt!
-And then the code - it isn't easy:
-for as else?  That's rather cheesy!
+But first you have to figure out\
+the braces part, without a doubt!\
+And then the code - it isn't easy:\
+for as else?  That's rather cheesy!\
 
-The rest of it is standard fare:
-expressions strange, the globals bare,
-confusing symbols one and oh,
-and precedence you have to know.
+The rest of it is standard fare:\
+expressions strange, the globals bare,\
+confusing symbols one and oh,\
+and precedence you have to know.\
 
-The keyword list was made external,
-because of standards change eternal.
-Thus other languages can now,
-be counted just like C, somehow!
+The keyword list was made external,\
+because of standards change eternal.\
+Thus other languages can now,\
+be counted just like C, somehow!\
 
-I hope you find this code obscure
-enough to win, and thus procure
-a public place for all to see
-how badly I can butcher C!
-```
+I hope you find this code obscure\
+enough to win, and thus procure\
+a public place for all to see\
+how badly I can butcher C!\
+
 
 ### Said another way....
 
 `tac` is the inverse of `cat`(1): it un-concatenates its input into C tokens,
-writing the token stream to `stdout`.  There are options to suppress the token ids,
-summarize the token counts, and several options to allow it to be compatible
-with `iocccsize`.
+writing the token stream to `stdout`.  There are options to suppress the token
+ids, summarize the token counts, and several options to allow it to be
+compatible with `iocccsize`.
 
 The token-based output is quite useful in analyzing source code (see below),
 and the counter is more accurate than `iocccsize` (see below); but this can be
-fixed by using the -c compatibility flag, restoring the following problems as
+fixed by using the `-c` compatibility flag, restoring the following problems as
 in the official tool:
 
-* whitespace **within** a string is **not** counted;
-  this seems wrong, as these chars **are** significant
-* "`{;}`" is not counted within a double-quoted string
-* whitespace preceding a comment is char-counted, unless the comment starts a line
-* `-k` processes the reserved words within `//` comments(!), but not `/*`, changing the counts
+* Whitespace **within** a string is **not** counted;
+  this seems wrong, as these chars **are** significant.
+* "`{;}`" is not counted within a double-quoted string.
+* Whitespace preceding a comment is `char`-counted, unless the comment starts a
+line.
+* `-k` processes the reserved words within `//` comments(!), but not `/*`,
+changing the counts.
 
 The following bugs are always corrected:
 
-* treats `/*/` as a complete comment (`/*/int if for/*/` has three keywords)
+* Treats `/*/` as a complete comment (`/*/int if for/*/` has three keywords)
 * `-k` enables `//*` or within a line comment `/*` to initiate a comment block until following `*/`
 * `-k` processes double quote characters in `//` comments - thus a solitary
 quote consumes everything until the next quote
-* single quotes are not handled correctly (`'"'` starts a dquote in `iocccsize`)
+* Single quotes are not handled correctly (`'"'` starts a double quote in `iocccsize`)
 * `#ifndef` is omitted as a keyword (but `#ifdef` is allowed?)
 * `I` is not a reserved word.
 * `tac` correctly penetrates [23rd century cloaking technology][1]. ;-)
 
 There is one (known) remaining problem with detection:
 
-* comments between preprocessor hash and keyword are not replaced with whitespace;
+* Comments between preprocessor hash and keyword are not replaced with whitespace;
 the following counts #include as two tokens, `#` and `include` (not as a reserved word):
 
-		#/*this will not be counted*/include/*correctly*/<stdio.h>
+```c
+#/*this will not be counted*/include/*correctly*/<stdio.h>
+```
 
 Fixing this properly hampers backwards compatibility in counting.  This requires
 eliding comments during the translation phases (ISO 5.1.1.2, phase 3), and yet still
 counting words correctly absent `-k`.
 
-[1]: http://ioccc.org/2014/birken/hint.html "Best use of port 1701"
+[1]: /2014/birken/README.md "Best use of port 1701"
+
 
 ### Backwards Compatibility:
 
@@ -135,10 +132,11 @@ counting words correctly absent `-k`.
 find ~/src/obc -type f -name \*.c | wc
 ```
 
-The discrepancies found are documented and explained in the file "discrepancies".
+The discrepancies found are documented and explained in the file
+[discrepancies.md](discrepancies.md).
 
 ```sh
-find ~/src/obc -type f -a -name "*.c" | xargs ./spotcheck ./prog | ./spotdiff |
+find ~/src/obc -type f -a -name "*.c" | xargs ./spotcheck.sh ./prog | ./spotdiff.sh |
 	grep -v keep | diff -bw - discrep* | grep "[<>] cl "
 ```
 
@@ -159,17 +157,17 @@ designed to allow exhaustive, hand-counted values for comparison with the tool v
 These test cases were vital in debugging and regression testing, and provided a way to
 determine which tool was correct when there were differences.
 
-> A version of this tool in more clearly written C (tac.c)
+> A version of this tool in more clearly written C ([tac.c](tac.c))
 > is presented for the Judge's consideration as a more accurate replacement for `iocccsize`.
 > This obfuscated entry is derived from (and compatible with) that code,
 > but due to obfuscation, has had some significant, deep changes for the contest.
 > Nevertheless, the more clearly written code remains a spoiler for this entry.
 
 NB: `iocccsize` gets a different answer from `tac` on its own
-([iocccsize.c]([iocccsize.c](https://www.ioccc.org/2018/iocccsize.c)) source code;
+([iocccsize.c](/2018/iocccsize.c)) source code;
 `tac` gets the correct answer.  This is due to the aforementioned bugs within `iocccsize`,
 proved by fixing
-[iocccsize.c](https://www.ioccc.org/2018/iocccsize.c) with the included patch, so `iocccsize` reports
+[iocccsize.c](/2018/iocccsize.c) with the included patch, so `iocccsize` reports
 the correct answer for itself.
 
 ### But wait... There's More!
@@ -201,25 +199,27 @@ cat $* | ./prog -t | iskeyword | sort -k1nr
 This script was used to "optimize" the reserved word order so the most frequent IOCCC
 winning entry keywords are checked first.
 
-> An interesting aside: as might be expected, obfuscation has changed the frequency of
-> keyword distribution over time.  The top five for the decades:
->\
->       1980s       1990s       2000s       2010s
->         -----       -----       -----       -----
->         94 if       532 char    375 if      254 int
->         69 for      524 if      372 char    217 for
->         59 while    417 int     332 int     198 if
->         48 char     223 for     184 for     121 return
->         43 int      223 void    165 return  104 char
+An interesting aside: as might be expected, obfuscation has changed the frequency of
+keyword distribution over time.  The top five for the decades:
+
+```
+1980s       1990s       2000s       2010s
+-----       -----       -----       -----
+94 if       532 char    375 if      254 int
+69 for      524 if      372 char    217 for
+59 while    417 int     332 int     198 if
+48 char     223 for     184 for     121 return
+43 int      223 void    165 return  104 char
+```
 
 The keyword list is external to the program, and is easily changed, sorted, checked, verified.
 This allows such additional programs in concert with the tool's primary operation.
 
-A poor-man's de-obfuscator can be based upon the output of `tac -t` and a handful of
-simple rules (and another use of the external keyword file).
-A more refined version of this is included in the file `unob.sh`,
-but the simple code below is a serviceable obfuscated C de-obfuscator in a _scripting language_.
-It really is this easy with `tac`:
+A poor-man's de-obfuscator can be based upon the output of `tac -t` and a
+handful of simple rules (and another use of the external keyword file).  A more
+refined version of this is included in the file [unob.sh](unob.sh), but the
+simple code below is a serviceable obfuscated C de-obfuscator in a _scripting
+language_.  It really is this easy with `tac`:
 
 
 ```sh
@@ -277,22 +277,22 @@ sed 's/^# .*$//' | sed 's/^#//' |
 
 * Keywords follow the 2010s top five, without the `if`, for interesting flow control.
 * Sometimes a `for` can be an `else` - [inconceivable][3]!
-* I see the `getopt`.  But "[where's the beef?][4]"
-* No character constants, several int constants, and one string
+* I see the `getopt(3)`.  But "[where's the beef?][4]"
+* No character constants, several `int` constants, and one string
   (hint: which does not encode letters) -- how does this code parse code?
-> Interesting aside: how many is "several int constants"?
->
->        ./prog < prog.c 2>/dev/null | awk '$1~/260/{a[$2]++}END{for(i in a)print i,a[i]}'
->        ... | wc
->
-> Which numbers are most often used?
->
->        ... | sort -k2nr | sed 5q
+    - Interesting aside: how many is "several `int` constants"?
+
+        ./prog < prog.c 2>/dev/null | awk '$1~/260/{a[$2]++}END{for(i in a)print i,a[i]}'
+        ... | wc
+
+    Which numbers are most often used?
+
+        ... | sort -k2nr | sed 5q
 
 * The code describes its function by careful arrangement of variables up front...
 * ...coupled with a description of the typical IOCCC contestant, or at least the author
 * Why shouldn't trigraph parsing be written in trigraph?
-* Where [iocccsize.c](https://www.ioccc.org/2018/iocccsize.c) mocks, this code flaunts:
+* Where [iocccsize.c](/2018/iocccsize.c) mocks, this code flaunts:
   "_no matter how well you may think you understand this code, you don't, so don't mess with it. :-)_"
 * `O,0,l,1` are used to confusing effect, local names obscure global names.
 * Globals are used to pass information between routines: don't reorder "unrelated" statements....
@@ -304,6 +304,7 @@ sed 's/^# .*$//' | sed 's/^#//' |
 [3]: https://www.youtube.com/watch?v=OHVjs4aobqs "Inconceivable"
 [4]: https://www.youtube.com/watch?v=Ug75diEyiA0 "Where's the beef?"
 
+
 ### Rule 2:
 
 The keyword list is externalized as an include file.  This presents a useful
@@ -312,27 +313,28 @@ produced, but the tool can be rebuilt with any set of reserved words, just by
 using a different list.  For instance: removing all the secondary keywords;
 removing all the C11 keywords; trying just K&R C.  Since C++ and Java share the
 same operators as C, just change the keyword list and `tac` will correctly
-tokenize both of these; the tokens >>> and :: can be handled with a short
+tokenize both of these; the tokens `>>>` and `::` can be handled with a short
 post-filter ([tokenfix.sh](tokenfix.sh), included).
 
-I believe this entry may also satisfy the request for gratuitous use of all the C11 keywords?
-Whether this context satisfies "intended C language context" is a matter of interpretation. ;-)
-And `tac` is ready for the IOCCC++ contest.  And the IOJCC trashcan.
+I believe this entry may also satisfy the request for gratuitous use of all the
+C11 keywords?  Whether this context satisfies "intended C language context" is a
+matter of interpretation. ;-) And `tac` is ready for the IOCCC++ contest.  And
+the IOJCC trash can.
 
 The following reserved word files are included:
 
 
-	kandr   from my venerable 1978 18th printing "The C Programming Language"
-	v7unix  7th edition Unix source code, extracted from c00.c
-	kandr2  from my 1988 1st printing "The C Programming Language", 2e
-	ansi    ANS X3.159-1989
-	c99     ISO/IEC 9899:1999(E)
-	c11     ISO/IEC 9899:201x(E) N1570
-	c++98   http://en.cppreference.com/w/cpp/keyword
-	c++11   ISO/IEC 14882:2011(E) N3337 2012-01-16
-	c++14   ISO/IEC 14882:2014(E) N4296 2014-11-09
-	java8   http://docs.oracle.com/javase/specs/index.html
-	ioccc.kw.freq   c11 + additional words, sorted on frequency of occurrence in ioccc winners
+* [kandr](kandr)    from my venerable 1978 18th printing "The C Programming Language"
+* [v7unix](v7unix)  7th edition Unix source code, extracted from c00.c
+* [kandr2](kandr2)  from my 1988 1st printing "The C Programming Language", 2e
+* [ansi](ansi)	    ANSI X3.159-1989
+* [c99](c99)	    ISO/IEC 9899:1999(E)
+* [c11](c11)	    ISO/IEC 9899:201x(E) N1570
+* [c++98](c++98)    http://en.cppreference.com/w/cpp/keyword
+* [c++11](c++11)    ISO/IEC 14882:2011(E) N3337 2012-01-16
+* [c++14](c++14)    ISO/IEC 14882:2014(E) N4296 2014-11-09
+* [java8](java8)    <http://docs.oracle.com/javase/specs/index.html>
+* [ioccc.kw.freq](ioccc.kw.freq)    c11 + additional words, sorted on frequency of occurrence in IOCCC winners
 
 
 NB: The keyword file used in this code is derived from the list in [iocccsize.c](https://www.ioccc.org/2018/iocccsize.c),
@@ -354,11 +356,12 @@ This also allows the builder to configure the amount of help a utility should pr
 ([you want a manpage? Because that's how you get a manpage.][5]) -- a rather
 significant point of contention made moot.
 
-There is definitely abuse of the Rule2 counter, exploiting a "feature" of `iocccsize`:
-`iocccsize` does not Rule2 count {, } and ; when followed by whitespace -- even within a string!
-Thus: Freecode, a simple, uncounted, highly obfuscated encoding of a central part
-of this program.  (The reserved word list is not Freecoded, both because it is useful
-apart from the program, and because Freecode is not entirely free.*)
+There is definitely abuse of the Rule2 counter, exploiting a "feature" of
+`iocccsize`: `iocccsize` does not Rule2 count `{`, `}` and `;` when followed by
+whitespace -- even within a string!  Thus: Freecode, a simple, uncounted, highly
+obfuscated encoding of a central part of this program.  (The reserved word list
+is not Freecoded, both because it is useful apart from the program, and because
+Freecode is not entirely free.)
 
 * Some restrictions apply.  Not approved for all uses.  Some assembly required.
 
@@ -370,12 +373,12 @@ The code is ANSI compliant, but it does have a string longer than 509 characters
 It has been tested on OSX and Linux, Clang and GCC.
 
 The code uses trigraphs, ironically: it parses trigraphs with trigraph code.
-Because that's funny.  And it remains obscure after, so trigraphs are not used for obfuscation.
-Thus `-trigraphs -Wno-trigraphs` (which is also humorous).
+Because that's funny.  And it remains obscure after, so trigraphs are not used
+for obfuscation.  Thus `-trigraphs -Wno-trigraphs` (which is also humorous).
 
 It's obfuscated C.  Thus `-Wno-parentheses -Wno-empty-body -Wno-char-subscripts`.
 
-The code uses unsigned chars, but C strings are signed.  Thus `-Wno-pointer-sign`.
+The code uses `unsigned char`s, but C strings are `signed`.  Thus `-Wno-pointer-sign`.
 NB: This is *not* a portability concern, the one string holds only printable ASCII characters.
 
 Thus:
@@ -387,9 +390,9 @@ cc -ansi -Wall -trigraphs -Wno-trigraphs -Wno-parentheses -Wno-empty-body -Wno-c
 ### Coda:
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) was relentless in his pursuit of bugs.
-Thanks to his reports, the version of `unob.sh` is stronger,
-`tac` groks digraphs, `tokenfix` corrects for missing digraphs in `prog.c`,
-and the program `manpage` was added to the corpus.
+Thanks to his reports, the version of [unob.sh](unob.sh) is stronger,
+`tac` groks digraphs, [tokenfix.sh](tokenfix.sh) corrects for missing digraphs
+in [prog.c](prog.c), and the program [manpage.sh](manpage.sh) was added to the corpus.
 
 [manpage.sh](manpage.sh) is a useful program that turns ASCII versions of man
 pages (e.g. [tac.man](tac.man)) into real man pages.  It works for C and C-like
@@ -401,13 +404,16 @@ are not recognised when written as `-rs` in prose).
 Try:
 
 ```sh
-./manpage tac
+./manpage.sh tac
 
-./manpage -h
-./manpage -h | ./manpage
-./manpage -h | ./manpage -R | less
-./manpage -h | ./manpage -P | lpr
+./manpage.sh -h
+./manpage.sh -h | ./manpage.sh
+./manpage.sh -h | ./manpage.sh -R | less
+./manpage.sh -h | ./manpage.sh -P | lpr
 ```
+
+NOTE: in 2023 the `tac.man` was updated to proper man format and renamed
+[tac.1](tac.1).
 
 
 ## Copyright and CC BY-SA 4.0 License:

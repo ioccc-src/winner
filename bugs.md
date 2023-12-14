@@ -3151,8 +3151,19 @@ There was no IOCCC in 2017.
 ### Source code: [2018/algmyr/algmyr.c](2018/algmyr/algmyr.c)
 ### Information: [2018/algmyr/README.md](2018/algmyr/README.md)
 
-This entry is known to crash if a file cannot be opened. This is noted by the
-author and is easy enough to fix but need not be.
+The author wrote:
+
+* There is no error checking done when opening files, so expect segfaults if you
+provide the wrong path to a file.
+* This program is bound to misbehave if `int` is less than 32 bits.
+* Flags will only be interpreted correctly if they are the first argument. Reading
+a file named `-d` or `-h` is fully possible if it is not the first file
+provided, even though I am not sure why you would want to do that.
+* Providing invalid/unexpected arguments to the decode flag will result in odd
+behavior. Some erroneous arguments cause segfaults (negative number of channels,
+channel id outside valid range). One argument in particular causes an infinite
+loop printing whitespace.
+
 
 
 ## 2018 hou
@@ -3170,6 +3181,25 @@ Abort trap: 6
 ```
 
 but this is expected and the file `ioccc.html` will be generated properly.
+
+
+## 2018 mills
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2018/mills/prog.c](2018/mills/prog.c)
+### Information: [2018/mills/README.md](2018/mills/README.md)
+
+The author stated that if you make a typo it can happen that the boot loader can
+crash and halt. If this is the case type ctrl-e to quit the emulator and try
+again.
+
+The author also stated that it is possible to corrupt the virtual disk. If you
+do this you should type `make clobber all` and try again.
+
+Cody caused a funny problem where it showed `ERROR` after each command. The
+solution was to hit ctrl-e and start again. He does not know if this is what was
+referred to by the author though he doesn't think he made a typo either.
+
 
 ## 2018 vokes
 

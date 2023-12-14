@@ -108,4 +108,4 @@ tern && /^:/	{ newline(); show($0); --tern; --n; next }
 { show($0) }
 '
 
-pp $* | $PROG -t | ./tokenfix | awk "$script" # sed 's/""//g'
+pp $* | $PROG -t | ./tokenfix.sh | awk "$script" # sed 's/""//g'

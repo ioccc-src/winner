@@ -70,7 +70,7 @@
 	    "winners_text" : "field-by-field difference between iocccsize and ion"
 	},
 	{
-	    "file_path" : "freqcount",
+	    "file_path" : "freqcount.sh",
 	    "winners_rank" : 100,
 	    "created_by" : null,
 	    "prog" : null,
@@ -190,7 +190,7 @@
 	    "winners_text" : "turns ASCII versions of man into real man pages"
 	},
 	{
-	    "file_path" : "mkkeywords",
+	    "file_path" : "mkkeywords.sh",
 	    "winners_rank" : 150,
 	    "created_by" : null,
 	    "prog" : null,
@@ -500,7 +500,7 @@
 	    "winners_text" : "results without -k"
 	},
 	{
-	    "file_path" : "runtest",
+	    "file_path" : "runtest.sh",
 	    "winners_rank" : 200,
 	    "created_by" : null,
 	    "prog" : null,
@@ -510,7 +510,7 @@
 	    "winners_text" : "test suite"
 	},
 	{
-	    "file_path" : "spotcheck",
+	    "file_path" : "spotcheck.sh",
 	    "winners_rank" : 200,
 	    "created_by" : null,
 	    "prog" : null,
@@ -530,14 +530,14 @@
 	    "winners_text" : "reserved words for a given C standard"
 	},
 	{
-	    "file_path" : "spotdiff",
+	    "file_path" : "spotdiff.sh",
 	    "winners_rank" : 250,
 	    "created_by" : null,
 	    "prog" : null,
 	    "filetype" : "shellscript",
 	    "winners_show" : true,
 	    "display_via" : "github",
-	    "winners_text" : "summarize the results of spotcheck"
+	    "winners_text" : "summarize the results of spotcheck.sh"
 	},
 	{
 	    "file_path" : "2018_burton2.tar.bz2",

@@ -114,7 +114,7 @@ PROG= prog
 #
 OBJ= ${PROG}.o
 CSRC= ${PROG}.o
-DATA= READ_ME.txt manpage java8 kandr kandr2 v7unix
+DATA= author-README.txt manpage java8 kandr kandr2 v7unix
 TARGET= ${PROG}
 #
 ALT_OBJ=
@@ -124,9 +124,9 @@ EXTRA_DATA= ansi c++11 c++14 c++98 c11 c99 discrepancies.md \
     test01.c test02.c test03.c test04.c test05.c test06.c test07.c \
     test08.c test09.c test10.c test11.c test12.c test13.c test14.c \
     iocccbug01.c iocccbug02.c iocccbug03.c iocccbug04.c iocccbug05.c \
-    iocccbug06.c results results.k src.doc.txt patch tac.man author-README.txt \
+    iocccbug06.c results results.k src.doc.txt patch tac.1 author-README.txt \
     ioc_without_quote
-UTILITIES= unob.sh tokenfix spotcheck spotdiff freqcount
+UTILITIES= unob.sh tokenfix.sh spotcheck.sh spotdiff.sh freqcount.sh
 USAGE="\"prog [-tcksri] < file.c\ntokenize and count stdin\n\t-t\ttokens only\n\t-c\tcompatible counts\n\t-k\tkeep comments\n\t-s\tsuppress output\n\t-r\treserved words count as 1\n\t-i\tioccc count only\n\""
 
 # this tool requires -trigraphs
@@ -164,17 +164,17 @@ data: ${DATA} ${EXTRA_DATA}
 	@${TRUE}
 
 # keywords: c11
-keywords: ioccc.kw.freq mkkeywords
-	./mkkeywords $< > keywords
+keywords: ioccc.kw.freq mkkeywords.sh
+	./mkkeywords.sh $< > keywords
 
 fixed_iocccsize: fixed_iocccsize.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
-test: prog tac runtest fixed_iocccsize ${EXTRA_DATA}
-	-./runtest | diff - results
-	-opt=kcrs ./runtest | diff - results.k
-	-opt=rs prog=tac ./runtest | diff - results
-	-opt=rsk prog=tac ./runtest | diff - results.k
+test: prog tac runtest.sh fixed_iocccsize ${EXTRA_DATA}
+	-./runtest.sh | diff - results
+	-opt=kcrs ./runtest.sh | diff - results.k
+	-opt=rs prog=./tac ./runtest.sh | diff - results
+	-opt=rsk prog=tac ./runtest.sh | diff - results.k
 	./fixed_iocccsize -rs < prog.c
 	./tac -rs prog.c
 

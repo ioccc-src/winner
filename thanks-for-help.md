@@ -3952,6 +3952,17 @@ He also added the [try.sh](/2015/yang/try.sh) script.
 # <a name="2018"></a>2018
 
 
+## <a name="2018_anderson"></a>[2018/anderson](/2018/anderson/prog.c) ([README.md](/2018/anderson/README.md))
+
+[Cody](#cody) added the [try.sh](/2018/anderson/try.sh) script.
+
+
+## <a name="2018_algmyr"></a>[2018/algmyr](/2018/algmyr/prog.c) ([README.md](/2018/algmyr/README.md))
+
+
+[Cody](#cody) added the [try.sh](/2018/algmyr/try.sh) script.
+
+
 ## <a name="2018_bellard"></a>[2018/bellard](/2018/bellard/prog.c) ([README.md](/2018/bellard/README.md))
 
 [Cody](#cody) added explicit linking of libm (`-lm`) for systems that do not do this
@@ -3959,6 +3970,40 @@ He also added the [try.sh](/2015/yang/try.sh) script.
 
 Cody also added [alt code](/2018/bellard/README.md#alternate-code) that should
 work for Windows, based on the author's remarks.
+
+
+## <a name="2018_burton1"></a>[2018/burton1](/2018/burton1/prog.c) ([README.md](/2018/burton1/README.md))
+
+[Cody](#cody) fixed the `scripthd` script (referred to `prog` not `./prog`) and
+renamed it to [scripthd.sh](/2018/burton1/scripthd.sh) to help browsers and
+GitHub as far as downloading/displaying goes.
+
+Cody also added the [try.sh](/2018/burton1/try.sh) script which also uses
+`scripthd.sh` to show how it differs from `prog` itself.
+
+
+## <a name="2018_burton2"></a>[2018/burton2](/2018/burton2/prog.c) ([README.md](/2018/burton2/README.md))
+
+[Cody](#cody) fixed the `make test` rule: it tried to run `tac(1)` (in systems
+that have that command) rather than the entry itself which is called `tac` and
+the `runtest` script (which he renamed to `runtest.sh` for download/browser
+display purposes) was not executable.
+
+Cody also renamed `manpage` to `manpage.sh` for download/browser purposes and he
+did the same with `tokenfix` to `tokenfix.sh` as well as `spotcheck` to
+`spotcheck.sh`, `spotdiff` to `spotdiff.sh`, `freqcount` to `freqcount.sh` and
+`mkkeywords` to `mkkeywords.sh`.
+
+Cody also made the man page properly formatted for `man(1)` and renamed it the
+file `tac.1`.
+
+Cody also renamed `discrepancies` to `discrepancies.md` and made it markdown
+format.
+
+Cody added the [tokcount.sh](/2018/burton2/tokcount.sh) script which was
+included in the remarks of the author but not an included file.
+
+Finally Cody added the [try.sh](/2018/burton2/try.sh) script.
 
 
 ## <a name="2018_ciura"></a>[2018/ciura](/2018/ciura/prog.c) ([README.md](/2018/ciura/README.md))
