@@ -3952,6 +3952,12 @@ He also added the [try.sh](/2015/yang/try.sh) script.
 # <a name="2018"></a>2018
 
 
+## <a name="2018_algmyr"></a>[2018/algmyr](/2018/algmyr/prog.c) ([README.md](/2018/algmyr/README.md))
+
+
+[Cody](#cody) added the [try.sh](/2018/algmyr/try.sh) script.
+
+
 ## <a name="2018_bellard"></a>[2018/bellard](/2018/bellard/prog.c) ([README.md](/2018/bellard/README.md))
 
 [Cody](#cody) added explicit linking of libm (`-lm`) for systems that do not do this
