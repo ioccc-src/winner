@@ -5,6 +5,17 @@ make
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2018 mills in bugs.md](/bugs.md#2018-mills).
+
+
 ## To use:
 
 ```sh
@@ -18,13 +29,38 @@ make
 ./prog
 ```
 
-At the `>boot` prompt, type return
+At the `>boot` prompt, type return.
 
-At the `:` prompt, type `rk(0,0)rkunix`
+At the `:` prompt, type `rk(0,0)rkunix` and wait for it to initialise itself.
+Now try typing:
+
+```sh
+cat > prog.c
+main(){ printf("Hello, world!\n"); }
+^D
+cc prog.c
+a.out
+```
+
+where `^D` is EOF.
+
+Next try:
+
+```sh
+cc mullender.c
+a.out
+```
+
+... and enjoy the classic [1984/mullender](/1984/mullender/README.md) entry as
+it would have been in 1984 with a VAX-11/PDP-11! Once it reaches the end of the
+line, hit enter and see what happens again. When you're tired of it hit ctrl-c.
+
+But there is much more to this entry! See below.
 
 NOTE: To quit, press Control-E.
 
-### Selected Judges' Remarks:
+
+### Judges' remarks:
 
 Do small machines only need small programs?  This program weighs in at just
 3636 bytes, which is considerably lighter than the original machine it can replace.
@@ -57,14 +93,15 @@ program that replaces an even larger machine that can run BSD 2.9. To start this
 ./prog
 ```
 
-At the ">boot" prompt, type return
+At the `>boot` prompt, type return.
 
-At the ":" prompt, type "rk(0,0)rkunix"
+At the ":" prompt, type `rk(0,0)rkunix`.
 
 NOTE: To quit prog, press Control-E.
 
 This should now be very familiar and it is possible to compile and run one of
-the very first IOCCC entires "mullender.c".
+the very first IOCCC entries [mullender.c](/1984/mullender/mullender.c), as
+shown earlier.
 
 But wait, there is even more!  Try:
 
@@ -72,7 +109,7 @@ But wait, there is even more!  Try:
 ./v6
 ```
 
-At the "@" prompt, type `rkunix`. You might want to type `stty -lcase` as
+At the `@` prompt, type `rkunix`. You might want to type `stty -lcase` as
 otherwise the output will be in all caps.
 
 NOTE: To quit v6, press Control-E.
@@ -80,7 +117,9 @@ NOTE: To quit v6, press Control-E.
 
 ## Author's remarks:
 
->   *This IOCCC entry is dedicated to the late Dennis M. Ritchie*
+
+### *This IOCCC entry is dedicated to the late Dennis M. Ritchie*
+
 
 ### The Program:
 
@@ -92,7 +131,7 @@ system whose history is so entwined with.
 
 The program delivered here is both a full machine emulation of the original
 PDP-7 that Ken Thompson used to write the first version of UNIX and a full
-machine emulation of the PDP-11/40 used by subsequent UNIXes.  The `Makefile`
+machine emulation of the PDP-11/40 used by subsequent UNICES.  The `Makefile`
 can build versions that can run each of the following:
 
 1. UNIX v0 for the PDP-7 (circa 1969)
@@ -101,28 +140,33 @@ can build versions that can run each of the following:
 
 For reasons to be described in a bit, the last (BSD 2.9) is the default.
 
+
 ### Building and Running BSD 2.9:
 
 To run BSD 2.9, do `make` to build `prog` and then `./prog` to run it.
 
 You should see a prompt from the first-stage bootloader that looks like
 
-        >boot
+```
+>boot
+```
 
 Hit enter/return at this point and you will get to the second-stage boot loader
 that looks like
 
-        40Boot
-        :
+```
+40Boot
+:
+```
 
 The 40 in the prompt indicates that the bootloader has correctly determined
 that we are running on a PDP-11/40.
 
 At this point, type the rather cryptic command `rk(0,0)rkunix` -- this tells
-the system to look at the first partition on the first RK05 fixed disk, find
+the system to look at the first partition on the first `RK05` fixed disk, find
 the `rkunix` file and load it.  You should eventually see the following:
 
-``
+```
 >boot
 
 40Boot
@@ -154,16 +198,17 @@ Erase=^?, kill=^U, intr=^C
 Congratulations, you are running BSD UNIX 2.9 in single-user mode as root.
 
 On the other hand, if you did a typo somewhere, the boot loader has probably
-crashed and halted -- if so, type Control-E to quit the simulation and try
+crashed and halted -- if so, type Control-E to quit the emulator and try
 again.  If you did really badly, you might have corrupted the virtual disk.
 If so, consider a `make clean` to start from scratch.
 
-Assuming you managed to type 15 characters correctly, You should be at the
+Assuming you managed to type 15 characters correctly, you should be at the
 root prompt.  Most of the commands you are familiar with work here (this was
 only a quarter of a century ago -- how much could things have changed?).
 Let's try some:
 
-```
+
+```sh
 # ls
 .cshrc       .profile     boot         hkunix       mnt          tmp
 .login       2.9stamp     dev          lib          mullender.c  unix
@@ -177,7 +222,7 @@ Filesystem  Mounted on  kbytes    used    free  % used
 
 The program you've just run was the [winner of the first IOCCC contest from
 1984] [1]  (or was it 1894?), a personal favorite of mine.  It is rather
-tightly bound to running on either a PDP-11 or a VAX.  Now you have one.
+tightly bound to running on either a PDP-11 or a VAX-11.  Now you have one.
 
 Hitting Control-C will return you to the BSD UNIX prompt.  Hitting Control-D
 will log you out of the single-user session and get you back to the `:login:`
@@ -195,6 +240,7 @@ possible, but I didn't get around to it...  As the Judges can no doubt attest,
 "Mid 2017" creeps up on you quicker than you expect. :)
 
 Once you've had enough fun in BSD 2.9, type Control-E to exit the emulation.
+
 
 ### Building and Running Research UNIX v6:
 
@@ -225,7 +271,7 @@ You are now running a single-user session of v6 UNIX.  You might want to start
 with `stty -lcase` because otherwise everything will be IN ALL CAPS.
 
 Again, if you failed typing seven characters without making a mistake, you
-may need to use Control-E to quit the simulation.
+may need to use Control-E to quit the emulation.
 
 Assuming you're more careful than that, we can try a few commands:
 
@@ -283,12 +329,13 @@ This version of UNIX doesn't go into multi-user mode if you do a Control-D.
 Single-user mode was entered because the front-panel console switches were
 set to the magic number 0173030 (this can be changed with a recompile).
 
-Once you are done with Version 6, Type Control-E to exit the simulation.
+Once you are done with Version 6, Type Control-E to exit the emulation.
 
 Note that since both BSD 2.9 and UNIX v6 use the same PDP-11/40 emulation
 code, and they use the same name for the disk (`rk05.fs`), if you want to go
-back to the BSD simulation, you should either delete `rk05.fs` or do a
+back to the BSD emulation, you should either delete `rk05.fs` or do a
 `make clean` before you do a `make`.
+
 
 ### Building and Running UNIX v0:
 
@@ -404,7 +451,7 @@ Hello, World!
 The last command is invoking the compiler for an extremely early version of
 the [B programming language] [3], the predecessor to C.  Thompson missed the
 convenience of writing code in a high-level language -- Multics was written
-a version of PL/1 -- and wanted the same convenience on UNIX.  He preferred
+in a version of PL/1 -- and wanted the same convenience in UNIX.  He preferred
 BCPL (a typeless language) to PL/1.  As Dennis Ritchie [wrote] [6]:
 
 > B can be thought of as C without types; more accurately,
@@ -424,18 +471,18 @@ on the command line, concatenated together and assembled, producing a single
 remained the default name of the binary generated by the linker (and hence
 also by `cc`).
 
-This system is still has the familiarity of UNIX, with all the two and
-three letter commands, device files, shell redirection and the same core system
-calls (`read`, `write`, `open`, `close`, `creat`, `fork`, etc.).  There are a
-number of differences still:
+This system still has the familiarity of UNIX, with all the two and three letter
+commands, device files, shell redirection and the same core system calls
+(`read(2)`, `write(2)`, `open(2)`, `close(2)`, `creat(2)`, `fork(2)`, etc.).
+There are a number of differences still:
 
 * As noted, there are no file paths.
-* `read` and `write` do I/O on (18-bit) words.  Character I/O on files need
+* `read(2)` and `write(2)` do I/O on (18-bit) words.  Character I/O on files need
 to unpack those bytes, and of course deal with `NUL` characters.
-* `exec` was performed by the shell directly.  Arguments are passed as
+* `exec(2)` was performed by the shell directly.  Arguments are passed as
 four words (eight bytes), and space padded.  This matches the format for
-file names for `open` and `creat`.
-* `wait` does not yet exist.  A more complicated mechanism for sending and
+file names for `open(2)` and `creat(2)`.
+* `wait(2)` does not yet exist.  A more complicated mechanism for sending and
 receiving messages (`smes` and `rmes`) are used instead.
 * File permission bits are all different, since groups don't exist yet.
 * User programs are not allowed to run during disk I/O.  This is because the
@@ -452,7 +499,8 @@ addresses of useful kernel routines so that user code can call them
 directly).
 
 As usual, when you are done exploring UNIX v0, type Control-E to exit the
-simulator.
+emulator.
+
 
 ### About the Program:
 
@@ -461,15 +509,17 @@ The program came about when I was looking for something to honor the pending
 contest scheduling, I chose not to wait for the actual 50th anniversary).
 I had thought of writing self-hosting compilers for a stripped-down version of
 C, or maybe even a version of the B language...  At the same time, I was
-obsessed with the idea of allowing `mullender.c` from 1984 to run.  Although
+obsessed with the idea of allowing [mullender.c from
+1984](/1984/mullender/README.md) to run.  Although
 that was still a possibility on an interpreted version of B or a stripped-down
-version of C, it felt cheap, as it would be `mullender.c` only in spirit.
+version of C, it felt cheap, as it would be
+[mullender.c](/1984/mullender/mullender.c) only in spirit.
 
 It was during this time that I discovered that in 2016, members of the Unix
 Heritage Society got access to [printouts of assembly-language source for the
 original version of UNIX] [7].  With what was a [huge amount of work] [8],
 they scanned in the printouts, fixed up the OCR translations, built assembler
-and file system tools from scratch and made an accurate simulation of
+and file system tools from scratch and made an accurate emulation of
 Thompson's PDP-7 that allowed them to get the system up and running.  Although
 source for the entire kernel and about half of the user-space commands were
 present (including the runtime and libraries for the B compiler), the
@@ -490,14 +540,14 @@ I decided that implementing this PDP-7 would be possible as an IOCCC entry.
 
 The emulator emulates the full machine:
 
-* PDP-7 Central Processor
-* Core Memory Module Type 147 -- extends the core to 8,192 18-bit words
+* PDP-7 Central Processor.
+* Core Memory Module Type 147 -- extends the core to 8,192 18-bit words.
 * Extended Arithmetic Element Type 177 -- adds one's-complement multiplication,
-division and shifting
-* Real Time Clock
-* Teletype Model 33 KSR
-* Perforated Tape Reader Type 444
-* RB09 Fixed Disk Controller
+division and shifting.
+* Real Time Clock.
+* Teletype Model 33 KSR.
+* Perforated Tape Reader Type 444.
+* RB09 Fixed Disk Controller.
 
 The [PDP-7] [10] is an odd duck by modern computer standards:
 
@@ -512,7 +562,7 @@ address and the PC jumps to the location after it).
 instruction.
 * An instruction `LAW` that loads the instruction opcode into the
 accumulator.
-* Heavy use of "inline" operands.  For instance the `MUL` instruction expects
+* Heavy use of `inline` operands.  For instance the `MUL` instruction expects
 the second operand to be stored in memory after the instruction.  This
 pretty much requires the use of self-modifying code.
 * No immediates.  Almost all constants have to live in memory locations and
@@ -528,7 +578,7 @@ particularly annoying encoding of track and sector offsets in
 is needed to convert into and out of BCD, along with an equivalent amount
 of code in the UNIX kernel itself.
 
-The simulation handles everything I was able to discover about the PDP-7, even
+The emulation handles everything I was able to discover about the PDP-7, even
 things that the UNIX code itself doesn't use.  For instance, it correctly
 implements the "trap mode" feature (a primitive form of supervisor mode) even
 though the kernel does not enable it.  It also implements the microcoding of
@@ -536,7 +586,7 @@ the EAE instructions even though the UNIX environment uses only the standard
 encodings.  If you wanted to do a 11-bit multiply instead of an 18-bit one,
 it will probably work.
 
-The simulation starts by loading a boot program off of the virtualized paper
+The emulation starts by loading a boot program off of the virtualized paper
 tape, which is in a modified version of the RIM boot loader format.  The
 RIM format encodes each 18-bit word as three six-bit characters, using one bit
 to denote the final word (which is executed directly and is usually a `JMP` or
@@ -545,11 +595,12 @@ Both of these are controlled by compile-time flags.
 
 The emulator continues emulating instructions until it sees a `HLT` instruction
 which will cause it to exit.  Console I/O is emulated by setting the terminal
-into raw mode and polling via `read`.  Line-clock ticks (at 60 Hz) are done
-by polling `gettimeofday`.  Dynamic frequency code arranges to reduce the
-polling interval to a few polls per tick, so that simulation remains
+into raw mode and polling via `read(2)`.  Line-clock ticks (at 60 Hz) are done
+by polling `gettimeofday(2)`.  Dynamic frequency code arranges to reduce the
+polling interval to a few polls per tick, so that emulation remains
 responsive.  Since we use the real wall-clock time, this means that the
 emulated system will see time advance at the correct rate.
+
 
 ### Licencing Fun
 
@@ -561,16 +612,16 @@ this problem in two ways:
 
 First, I didn't submit the source code or binary image for v0 UNIX as part of
 my IOCCC entry.  I merely submitted a `Makefile` that can issue a `curl`
-command to fetch a prebuilt v0 disk image from the github repository.  I am
+command to fetch a pre-built v0 disk image from the GitHub repository.  I am
 hoping this is considered part of "Legal abuse of the rules" which is supposed
 to be "somewhat encouraged".  As per RULE 12, I am justifying said abuse here,
 in the remarks file.
 
 Secondly, the choice to run the UNIX v0 code is optional.  If you are worried
-about Nokia's lawyers running you to ground for running a 50-year old copy
+about Nokia's lawyers running you to the ground for running a 50-year old copy
 of a binary image for a machine that is almost completely non-existent, you
 can just not do so.  Delete the lines from the `Makefile` and sleep well.
-You still have two other UNIXes to play with.
+You still have two other UNICES to play with.
 
 What about the other two UNIX variants?  These are both covered by licences
 that allow me to use them.  Back in 2002, Caldera International released
@@ -579,8 +630,9 @@ BSD UNIX is based off of v7 UNIX, and of course has its own permissive
 BSD licence.  And in 2017, Nokia also released versions 8-10 under the
 condition that it will not assert copyright rights for non-commercial use.
 
-So the newer UNIXes are in the clear.  I doubt anyone actually cares about
+So the newer UNICES are in the clear.  I doubt anyone actually cares about
 version 0 either, but technically it's still under copyright.
+
 
 ### PDP-11/40
 
@@ -588,13 +640,13 @@ So if I have a PDP-7 emulator, how do I run operating systems that expect a
 PDP-11?  Simple...  *I emulate a PDP-11/40 on the PDP-7*.  I have written
 PDP-7 assembler code to emulate a PDP-11/40 with the following equipment:
 
-* PDP-11/40 (KD11-A)
-* EIS instruction set (KE11-E)
-* Memory management unit (KJ11-A)
-* Line time clock (KT11-D)
-* 124 Kwords of memory (244 Kbytes)
-* RK05 fixed disk drive (RK11)
-* Console TTY (DL11)
+* PDP-11/40 (KD11-A).
+* EIS instruction set (KE11-E).
+* Memory management unit (KJ11-A).
+* Line time clock (KT11-D).
+* 124 Kwords of memory (244 Kbytes).
+* RK05 fixed disk drive (RK11).
+* Console TTY (DL11).
 
 This required a few tweaks to the emulator.  The first problem is that the
 RK05 disk is about 2.5 MB, but the RB09 is only about 2 MB.  That's easily
@@ -602,7 +654,7 @@ solvable -- just add more tracks to the RB09.  UNIX v0 is unlikely to notice
 (although the number of tracks is a compile time parameter, and the `v0`
 build commands set it to the correct value).
 
-The second problem is that we are simulating a system that can have up to
+The second problem is that we are emulating a system that can have up to
 124K words of memory on a system with only 8K words total.  That meant I needed
 to virtualize the PDP-11/40's physical memory (and add a few more tracks to
 the disk to hold the virtualization).
@@ -625,8 +677,8 @@ The one remaining problem is building the disk images themselves.  Since the
 PDP-11's disk is 16-bit, but the PDP-7's is 18-bit (which the emulator stores
 in 32-bit `int`s), a conversion program is needed to unpack the binary disk
 images from 16 bits per word to 32.  This in turn needs to be done in the
-`Makefile` using standard POSIX tools, which aren't exactly good with binary.
-I had a weirdly clever way to do this with `od`, `awk` and `uudecode` that
+Makefile using standard POSIX tools, which aren't exactly good with binary.
+I had a weirdly clever way to do this with `od(1)`, `awk(1)` and `uudecode(1)` that
 I will leave as an exercise for the curious, but I decided it would be easier
 to do it with the PDP-7 emulator itself, feeding a simple program in on its
 boot tape.  This required an additional tweak to the emulator, since by default
@@ -655,6 +707,7 @@ window on the dawn of the UNIX era.  I feel that someone should complete the
 circle here by emulating a VAX 780 on the PDP-11 and run 4.2BSD on it, so that
 we can get the [original runtime environment used for the first IOCCC] [13].
 
+
 ### Compile-time Options:
 
 The following command flags control the compilation:
@@ -666,30 +719,32 @@ bootloader where to load the boot image.
 * `-DS=0`: Setting of the console data switches.  The PDP-7 emulation can
 read these with the microcoded `OAS` (OR switches into AC) instruction.
 By proxy, the PDP-11 emulation can read them via the `CSW` device.
-* `-DW=MAP_PRIVATE`: This sets the memory mapping for `mmap`.  Setting to
+* `-DW=MAP_PRIVATE`: This sets the memory mapping for `mmap(2)`.  Setting to
 `MAP_PRIVATE` makes the disk image be copy-on-write.  Setting it to
 `MAP_SHARED` makes the disk image be shareable.  Do the latter if you want
 to preserve the disk contents between sessions.
 * `-DT=`: List of initializers for the `termios` structure.  The v0 UNIX
 expects the terminal to be in half-duplex mode, echoing its input, with
-swapped CR and NL.  The PDP-11 UNIXes don't.
-* `-DX=5`: The ASCII code of the control character that causes the simulation
+swapped CR and NL.  The PDP-11 UNICES don't.
+* `-DX=5`: The ASCII code of the control character that causes the emulation
 to abort.  If set to 0, there is no abort code.
 * `-DY=128`: Controls console I/O parity.  If set to zero, the console is
 eight-bit clean.  If set to 128, the high bit is set on keyboard reads and
 masked off on printer output ("mark" parity).  UNIX v0 expects the latter.
 * `-DV=270`: The size of the disk, in tracks.  The UNIX v0 disk has 200
-tracks (each has 80 sectors of 64 18-bit words).  The PDP-11 UNIXes
+tracks (each has 80 sectors of 64 18-bit words).  The PDP-11 UNICES
 increase this to 270, to allow for the larger RK05 disk emulation
 (406 tracks of twelve 256-word sectors), plus the space for the 124K words
 of virtualized memory and the 8K words of emulator code.
 * `-DP="xxx"`: RIM bootstrap program paper tape image.  Be careful with the
-quoting here -- there is at least three levels going on.  In particular,
+quoting here -- there are at least three levels going on.  In particular,
 you will need to escape `$` as `$$` to protect it from `make`.
+
 
 ### What is the ASCII art supposed to be?
 
 The ASCII art represents a torn piece of [paper tape] [14].
+
 
 ### Acknowledgements
 
@@ -710,8 +765,8 @@ of UNIX, the C programming language, and the innumerable other innovations
 that we now take for granted as part of the modern software landscape.
 In particular, the [home page of the late Dennis Ritchie] [18] contained
 a trove of useful information on the evolution of UNIX and C and is
-recommended for perusal by others who share my peculiar retrocomputing
-affectations.
+recommended for perusal by others who share my peculiar retro computing
+passion.
 
 Finally, thanks to my spouse for putting up with the many hours I spent on this
 nonsense, and treating "I'm working on my IOCCC entry" as an acceptable answer
@@ -722,14 +777,14 @@ time...
 
 -------------------------------------------------------------------------------
 
-[1]:  http://ioccc.org/1984/mullender/mullender.c            "mullender.c"
+[1]:  https://www.ioccc.org/1984/mullender/mullender.c            "mullender.c"
 [2]:  http://minnie.tuhs.org/cgi-bin/utree.pl?file=2.9BSD    "2.9 BSD"
 [3]:  https://www.bell-labs.com/usr/dmr/www/kbman.html       "B Language"
 [4]:  https://www.bell-labs.com/usr/dmr/www/hist.html        "UNIX history"
 [5]:  https://www.bell-labs.com/usr/dmr/www/spacetravel.html "Space Travel"
 [6]:  https://www.bell-labs.com/usr/dmr/www/chist.html       "C History"
 [7]:  http://www.tuhs.org/Archive/Distributions/Research/McIlroy_v0/ "V0 Scans"
-[8]:  http://minnie.tuhs.org/Y5/wkt_hapop_paper.pdf          "UNIX v0"
+[8]:  https://web.archive.org/web/20180826162445/https://minnie.tuhs.org//Y5/wkt_hapop_paper.pdf          "UNIX v0"
 [9]:  https://github.com/DoctorWkt/pdp7-unix                 "PDP-7 UNIX"
 [10]: http://bitsavers.trailing-edge.com/pdf/dec/pdp7/F-75P_PDP7prelimUM_Dec64.pdf "PDP-7 Manual"
 [11]: https://en.wikipedia.org/wiki/Binary-coded_decimal     "BCD"
