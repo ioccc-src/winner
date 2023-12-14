@@ -1,6 +1,7 @@
 #
 # sort with: sort -d -u
 *.dSYM
+fixed_iocccsize
 indent
 indent.c
 indent.o
@@ -8,3 +9,4 @@ keywords
 manpage
 prog
 prog.orig
+tac

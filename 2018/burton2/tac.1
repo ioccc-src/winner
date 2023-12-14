@@ -1,0 +1,139 @@
+.TH tac 1 "01 April 2018" "tac" "IOCCC 2018"
+.SH NAME
+tac \- tokenize and count C-like program source code
+.SH SYNOPSIS
+\fBtac\fP [\-t] [\-c] [\-k] [\-r] [\-s] [\-i] [file]
+.SH DESCRIPTION
+\fBtac\fP reads C or C-like source code from \fBstdin\fP or file, breaking it into tokens (lexemes),
+counting these according to the rules of the IOCCC, and outputting the tokens,
+counts, or source code as directed by the command line options.
+The default output is the source code with comments removed on \fBstdout\fP,
+and the counts on \fBstderr\fP.
+The count format is a set of integer values in the following order:
+.RS
+.TP
+.B lines
+number of newlines
+.TQ
+.B words
+number of words
+.TQ
+.B chars
+number of characters
+.TQ
+.B ioccc
+number of IOCCC countable tokens; the IOCCC rule 2 value
+.TQ
+.B saved
+number of characters not counted due to rules and keywords
+.TQ
+.B kwcnt
+number of keywords
+.TQ
+.B kwlen
+number of characters saved by counting keyword length as 1
+.RE
+.PP
+For the following code:
+.sp
+.RS 4
+.nf
+#include <stdio.h>
+int main() {
+    /* example for loop */
+    for (int ac=1; ac<10; ++ac)
+	    printf("%d\n", ac);
+    return 0;
+}
+.fi
+.RE
+\fBtac\fP prints the code to \fBstdout\fP, and to \fBstderr\fP: '6 15 96 71 25 5 0'
+which means 6 lines, 15 words, 96 chars, 71 IOCCC counts, 25 chars saved,
+5 \fBkwcnt\fP, and no characters saved from \fBkwlen\fP. (By default, comments are not
+counted.)
+.SH OPTIONS
+The following options are supported:
+.TP
+.B \-t
+Output just the token stream.
+.TP
+.B \-c
+Correct the accounting bugs in \fBiocccsize(1)\fP, output the token id and the token.
+.TP
+.B \-k
+Keep the comments.
+.TP
+.B \-r
+Reserved words count as size 1.
+.TP
+.B \-s
+Suppress the source code, summarize counts only.
+.TP
+.B \-i
+Report only the official IOCCC rule 2 size: number of octets (implies \fB\-r\fP and \fB\-s\fP).
+.PP
+Counts are impacted by the \fB\-k\fP, \fB\-r\fP and \fB\-c\fP options.
+By default, the counts do not include comments, words are counted as in \fBwc(1)\fP, and reserved words count in full.
+Using the example code above, the options change the counts as follows:
+.PP
+.TP
+\fB\-r\fP
+6 15 96 53 25 5 18
+.TQ
+\fB\-k\fP
+7 20 120 89 31 5 0
+.TQ
+\fB\-c\fP
+7 36 98 71 27 5 0
+.PP
+The \fB\-c\fP option counts tokens instead of words, and is therefore more accurate for source code.
+Note the aberration for line count with \fB\-r\fP; it is as\-if the comment never existed.
+.PP
+The \fB\-c\fP and \fB\-t\fP options change the output, instead writing a stream of tokens to \fBstdout\fP, one token per line.
+The \fB\-t\fP option suppresses both the counts and the token ids, writing only the tokens.
+.SH EXAMPLES
+.PP
+Summarize the source code counts:
+.sp
+.RS
+.ft B
+tac -rs tac.c
+.ft R
+.RE
+.PP
+Count the 10 most frequently used unique tokens in the source code:
+.sp
+.RS
+.ft B
+tac -t tac.c 2>/dev/null | sort | uniq -c | sort -k1nr | sed 10q
+.ft R
+.RE
+.PP
+Count the unique constants in the source:
+.sp
+.RS
+.ft B
+tac -c tac.c 2>/dev/null | grep ^300 | sort | uniq -c | sort -k1nr | awk '{print $1,$3}'
+.ft R
+.RE
+.SH BUGS
+\fBtac\fP does not properly count preprocessor tokens with embedded space or comments as reserved words:
+.sp
+.RS
+.ft B
+echo '#/*comment*/include/*comment*/<stdio.h>' | tac -i
+.br
+echo '# include<stdio.h>' | tac -i
+.br
+echo '#include<stdio.h>' | tac -i
+.ft R
+.RE
+.sp
+report no reserved words on the first two inputs, and thus 17 as the IOCCC size, although 10 is the correct answer (as in the final example).
+.PP
+The original meaning of the \fB\-c\fP option was "become compatible with \fBiocccsize(1)\fP".
+Its meaning was flipped so the default behavior is now compatible.
+.SH SEE ALSO
+\fBiocccsize(1)\fP, \fBwc(1)\fP
+.br
+\<https://ioccc.org/2015/rules.txt\>

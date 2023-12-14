@@ -37,7 +37,7 @@ awk '/^[^$]/{l=length;m=m>l?m:l;a[l]=a[l]$1}
  * 
  * DO NOT EDIT the string kw; instead:
  *
- *	mkkeywords < my.list > my.keywords
+ *	mkkeywords.sh < my.list > my.keywords
  *	cc -DW=\"my.keywords\" -o tac tac.c
  */
 
