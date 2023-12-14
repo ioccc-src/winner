@@ -3952,6 +3952,11 @@ He also added the [try.sh](/2015/yang/try.sh) script.
 # <a name="2018"></a>2018
 
 
+## <a name="2018_anderson"></a>[2018/anderson](/2018/anderson/prog.c) ([README.md](/2018/anderson/README.md))
+
+[Cody](#cody) added the [try.sh](/2018/anderson/try.sh) script.
+
+
 ## <a name="2018_algmyr"></a>[2018/algmyr](/2018/algmyr/prog.c) ([README.md](/2018/algmyr/README.md))
 
 
