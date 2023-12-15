@@ -4154,10 +4154,11 @@ having tarballs for each individual entry as a convenience.
 
 ## <a name="2019_diels-grabsch2"></a>[2019/diels-grabsch2](/2019/diels-grabsch2/prog.c) ([README.md](/2019/diels-grabsch2/README.md]))
 
-[Cody](#cody) made the author's statement that the entry compiles cleanly true by fixing
-`warning: a function declaration without a prototype is deprecated in all
-versions of C` (in main()). Not strictly necessary but if he's making fixes he
-might as well.
+[Cody](#cody) added the [try.sh](/2019/diels-grabsch2/try.sh) script. This
+script will try and show the difference (i.e. the same output) between the
+program and the result of `sha512sum` or `shasum -a 512` if either of those
+tools can be found but otherwise it'll just run the program itself, showing its
+own sha512sum value.
 
 
 ## <a name="2019_dogon"></a>[2019/dogon](/2019/dogon/prog.c) ([README.md](/2019/dogon/README.md))
