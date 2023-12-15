@@ -130,15 +130,15 @@ This was fixed on 30 October 2023 after the bug status was changed from INABIAF
 
 ## <a name="1984_mullender"></a>[1984/mullender](/1984/mullender/mullender.c) ([README.md](/1984/mullender/README.md]))
 
-[Cody](#cody) provided an [alternate version](/1984/mullender/mullender.alt.c), an
-improved version of the judges, so that everyone can enjoy it with systems that
-are not VAX/PDP. We also refer you to the [FAQ](faq.md) as there are some
-winning entries that also let one enjoy it - with more to them of course!
-
-Cody further added the second alt version,
-[mullender.alt2.c](/1984/mullender/mullender.alt2.c) which is like the
-[1984/mullender/mullender.alt.c](/1984/mullender/mullender.alt.c) except that it
-starts over after it times out.
+[Cody](#cody) provided an [alternate version](/1984/mullender/mullender.alt.c),
+an improved version of the judges, so that everyone can enjoy it with systems
+that are not VAX/PDP. It moves at approximately the same speed as the original
+did. We also refer you to the [FAQ](faq.md) as there are some winning entries
+that also let one enjoy it (which through trial and error was how the right
+speed was discovered) - with more to them of course! The difference between the
+original is that it will start over after it times out but that might not happen
+with the original (might need you to press a key though this is not known for
+sure).
 
 Cody also added the [gentab.c](/1984/mullender/gentab.c) file, fixed to compile
 (and work, though see [bugs.md](#1984mullender-readmemd)) with modern systems
@@ -4065,6 +4065,19 @@ that's probably true: let's just say that for the IOCCC I'm (Cody) a weasel! :-)
 Cody also added the [try.sh](/2018/hou/try.sh) script.
 
 
+## <a name="2018_poikola"></a>[2018/poikola](/2018/poikola/prog.c) ([README.md[(/2018/poikola/README.md))
+
+[Cody](#cody) added the missing `docs` rule to the Makefile that forms a PDF
+file. The rule requires the tool `pdflatex`.
+
+Cody also added the [try.sh](/2018/poikola/try.sh) script.
+
+[Dave Burton](/winners.html#Dave_Burton), during the preview period, noticed a
+problem where the macOS `Terminal.app` does not work properly for this program.
+We added some additional notes on what might happen (it varies depending on
+configuration).
+
+
 ## <a name="2018_vokes"></a>[2018/vokes](/2018/vokes/prog.c) ([README.md](/2018/vokes/README.md))
 
 [Cody](#cody) added the [try.sh](/2018/vokes/try.sh) script.
@@ -4081,10 +4094,28 @@ if the user wants to see some of the spoilers and only show them if they type
 # <a name="2019"></a>2019
 
 
+## <a name="2019_adamovsky"></a>[2019/adamovsky](/2019/adamovsky/prog.c) ([README.md](/2019/adamovsky/README.md]))
+
+[Cody](#cody) added the [try.sh](/2019/adamovsky/try.sh) script and the Unlambda
+file [crash.unl](/2019/adamovsky/crash.unl) which is in the judges' remarks as
+to what can crash it - but it's not a bug, it's a feature.
+
+
 ## <a name="2019_burton"></a>[2019/burton](/2019/burton/prog.c) ([README.md](/2019/burton/README.md]))
 
 [Cody](#cody) fixed the Makefile which had a bad character, a '%' instead of a '$' which
 caused a rule to fail.
+
+Cody also added the [try.sh](/2019/burton/try.sh) script which shows a
+side-by-side comparison on several files of the entry and `wc(1)` as well as
+running `make test`.
+
+Cody also fixed the script [check.sh](/2019/burton/check.sh) (renamed from
+`check`) in case `x` is specified and is not executable and also made it satisfy
+ShellCheck. He also made ShellCheck not be a cow and/or (to use Bart Simpson's
+advice :-) ) 'not have a cow' about certain things (including one thing it was
+wrong about) in [cow.sh](/2019/burton/cow.sh) (which was renamed from `cow`)
+<strike>moo</strike>too.
 
 
 ## <a name="2019_ciura"></a>[2019/ciura](/2019/ciura/prog.c) ([README.md](/2019/ciura/README.md]))
@@ -4125,19 +4156,6 @@ As this is a backtrace quine having the optimiser enabled is not a good idea so
 [Cody](#cody) disabled it. For this same reason he also added the `-g` flag to the
 compilation as debugging symbols might just be useful for an entry that's
 supposed to segfault :-)
-
-
-## <a name="2019_poikola"></a>[2019/poikola](/2019/poikola/prog.c) ([README.md[(/2019/poikola/README.md))
-
-[Cody](#cody) added the `docs` rule to the Makefile that forms a PDF file. The
-rule requires the tool `pdflatex`.
-
-Cody also added the [try.sh](/2019/poikola/try.sh) script.
-
-[Dave Burton](/winners.html#Dave_Burton), during the preview period, noticed a
-problem where the macOS `Terminal.app` does not work properly for this program.
-We added some additional notes on what might happen (it varies depending on
-configuration).
 
 
 ## <a name="2019_karns"></a>[2019/karns](/2019/karns/prog.c) ([README.md](/2019/karns/README.md]))

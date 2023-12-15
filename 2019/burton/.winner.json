@@ -50,7 +50,7 @@
 	    "winners_text" : "original source"
 	},
 	{
-	    "file_path" : "check",
+	    "file_path" : "check.sh",
 	    "winners_rank" : 100,
 	    "created_by" : null,
 	    "prog" : null,
@@ -60,7 +60,7 @@
 	    "winners_text" : "test suite"
 	},
 	{
-	    "file_path" : "cow",
+	    "file_path" : "cow.sh",
 	    "winners_rank" : 100,
 	    "created_by" : null,
 	    "prog" : null,
