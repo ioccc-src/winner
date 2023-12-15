@@ -112,8 +112,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ= ${PROG}.alt.o ${PROG}.alt2.o
-ALT_TARGET= ${PROG}.alt ${PROG}.alt2
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################

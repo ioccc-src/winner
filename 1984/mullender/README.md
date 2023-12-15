@@ -26,16 +26,18 @@ For more detailed information see [1984 mullender in bugs.md](/bugs.md#1984-mull
 
 ```sh
 ./mullender.alt [microseconds]
-
-./mullender.alt2 [microseconds] # starts over after it times out
 ```
 
-The default microseconds is 10000 and it is also the lowest it can be as any
-lower doesn't work very well. This feature is so you can experiment with
-different speeds in between writes. It can be useful if your CPU is too slow or
-too fast (:-) ).
+Hit ctrl-c/intr to exit the program.
 
-The author stated that the original version also had a delay.
+The default microseconds is 190000 as this is approximately how long it slept in
+the original entry but it can be no lower than 5000 as any lower doesn't work
+very well. This feature is so you can experiment with different speeds in
+between writes. It can be useful if your CPU is too fast :-)
+
+The author stated that the original version also had a delay but the difference
+is it required one to hit enter for it to print another line; the alt code will
+start over once it times out or if one hits a key.
 
 Note that the microseconds is argc and it uses `atoi()` which does NOT check for
 overflow!
@@ -49,15 +51,11 @@ which is probably not as uncommon as you think :-).
 ```sh
 ./mullender.alt
 
-./mullender.alt 5000
+./mullender.alt 5000	# wait for 5000 microseconds and see what happens
 
-./mullender.alt 500
+./mullender.alt 20000	# wait for 20000 microseconds and see what happens
 
-./mullender.alt 20000
-
-./mullender.alt 100000
-
-./mullender.alt2 500	# wait for 500 microseconds and see what happens
+./mullender.alt 100000	# wait for 100000 microseconds and see what happens
 ```
 
 What happens if you hit enter after it reaches the end of the line? Why? What

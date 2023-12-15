@@ -130,15 +130,15 @@ This was fixed on 30 October 2023 after the bug status was changed from INABIAF
 
 ## <a name="1984_mullender"></a>[1984/mullender](/1984/mullender/mullender.c) ([README.md](/1984/mullender/README.md]))
 
-[Cody](#cody) provided an [alternate version](/1984/mullender/mullender.alt.c), an
-improved version of the judges, so that everyone can enjoy it with systems that
-are not VAX/PDP. We also refer you to the [FAQ](faq.md) as there are some
-winning entries that also let one enjoy it - with more to them of course!
-
-Cody further added the second alt version,
-[mullender.alt2.c](/1984/mullender/mullender.alt2.c) which is like the
-[1984/mullender/mullender.alt.c](/1984/mullender/mullender.alt.c) except that it
-starts over after it times out.
+[Cody](#cody) provided an [alternate version](/1984/mullender/mullender.alt.c),
+an improved version of the judges, so that everyone can enjoy it with systems
+that are not VAX/PDP. It moves at approximately the same speed as the original
+did. We also refer you to the [FAQ](faq.md) as there are some winning entries
+that also let one enjoy it (which through trial and error was how the right
+speed was discovered) - with more to them of course! The difference between the
+original is that it will start over after it times out but that might not happen
+with the original (might need you to press a key though this is not known for
+sure).
 
 Cody also added the [gentab.c](/1984/mullender/gentab.c) file, fixed to compile
 (and work, though see [bugs.md](#1984mullender-readmemd)) with modern systems
