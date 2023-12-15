@@ -3257,6 +3257,16 @@ The author wrote the following:
 # 2019
 
 
+## 2019 adamovsky
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2019/adamovsky/prog.c](/2019/adamovsky/prog.c)
+### Information: [2019/adamovsky/README.md](/2019/adamovsky/README.md)
+
+Certain input can crash this program. The file
+[crash.unl](/2019/adamovsky/crash.unl) is an example file.
+
+
 ## 2019 duble
 
 ### STATUS: INABIAF - please **DO NOT** fix

@@ -4094,6 +4094,13 @@ if the user wants to see some of the spoilers and only show them if they type
 # <a name="2019"></a>2019
 
 
+## <a name="2019_adamovsky"></a>[2019/adamovsky](/2019/adamovsky/prog.c) ([README.md](/2019/adamovsky/README.md]))
+
+[Cody](#cody) added the [try.sh](/2019/adamovsky/try.sh) script and the Unlambda
+file [crash.unl](/2019/adamovsky/crash.unl) which is in the judges' remarks as
+to what can crash it - but it's not a bug, it's a feature.
+
+
 ## <a name="2019_burton"></a>[2019/burton](/2019/burton/prog.c) ([README.md](/2019/burton/README.md]))
 
 [Cody](#cody) fixed the Makefile which had a bad character, a '%' instead of a '$' which
