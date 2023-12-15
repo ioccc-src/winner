@@ -4143,10 +4143,13 @@ bugs.md](/bugs.md#2019-ciura) for more details.
 
 ## <a name="2019_diels-grabsch1"></a>[2019/diels-grabsch1](/2019/diels-grabsch1/prog.c) ([README.md](/2019/diels-grabsch1/README.md]))
 
-[Cody](#cody) made the author's statement that the entry compiles cleanly true by fixing
-`warning: a function declaration without a prototype is deprecated in all
-versions of C ` (in main()). Not strictly necessary but if he's making fixes he
-might as well.
+[Cody](#cody) added the [try.sh](/2019/diels-grabsch1/try.sh) script.
+
+Cody also added the file [Shakespeare.txt](/2019/diels-grabsch1/Shakespeare.txt)
+from [2019/mills](/2019/mills/README.md) (after running `make`) so that one can
+not worry about having the entire winner tree (or at least the 2019 tree each
+winner in a subdirectory). This is more important as there is discussion of
+having tarballs for each individual entry as a convenience.
 
 
 ## <a name="2019_diels-grabsch2"></a>[2019/diels-grabsch2](/2019/diels-grabsch2/prog.c) ([README.md](/2019/diels-grabsch2/README.md]))
