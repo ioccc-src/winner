@@ -4065,6 +4065,19 @@ that's probably true: let's just say that for the IOCCC I'm (Cody) a weasel! :-)
 Cody also added the [try.sh](/2018/hou/try.sh) script.
 
 
+## <a name="2018_poikola"></a>[2018/poikola](/2018/poikola/prog.c) ([README.md[(/2018/poikola/README.md))
+
+[Cody](#cody) added the missing `docs` rule to the Makefile that forms a PDF
+file. The rule requires the tool `pdflatex`.
+
+Cody also added the [try.sh](/2018/poikola/try.sh) script.
+
+[Dave Burton](/winners.html#Dave_Burton), during the preview period, noticed a
+problem where the macOS `Terminal.app` does not work properly for this program.
+We added some additional notes on what might happen (it varies depending on
+configuration).
+
+
 ## <a name="2018_vokes"></a>[2018/vokes](/2018/vokes/prog.c) ([README.md](/2018/vokes/README.md))
 
 [Cody](#cody) added the [try.sh](/2018/vokes/try.sh) script.
@@ -4125,19 +4138,6 @@ As this is a backtrace quine having the optimiser enabled is not a good idea so
 [Cody](#cody) disabled it. For this same reason he also added the `-g` flag to the
 compilation as debugging symbols might just be useful for an entry that's
 supposed to segfault :-)
-
-
-## <a name="2019_poikola"></a>[2019/poikola](/2019/poikola/prog.c) ([README.md[(/2019/poikola/README.md))
-
-[Cody](#cody) added the `docs` rule to the Makefile that forms a PDF file. The
-rule requires the tool `pdflatex`.
-
-Cody also added the [try.sh](/2019/poikola/try.sh) script.
-
-[Dave Burton](/winners.html#Dave_Burton), during the preview period, noticed a
-problem where the macOS `Terminal.app` does not work properly for this program.
-We added some additional notes on what might happen (it varies depending on
-configuration).
 
 
 ## <a name="2019_karns"></a>[2019/karns](/2019/karns/prog.c) ([README.md](/2019/karns/README.md]))
