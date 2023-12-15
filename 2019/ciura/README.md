@@ -5,12 +5,16 @@ make
 ```
 
 
+There is an alternate version available. See [Alternate code](#alternate-code)
+below.
+
+
 ### Bugs and (Mis)features:
 
 The current status of this entry is:
 
 ```
-STATUS: known bug - please help us fix
+STATUS: INABIAF - please **DO NOT** fix
 ```
 
 For more detailed information see [2019 ciura in bugs.md](/bugs.md#2019-ciura).
@@ -26,32 +30,35 @@ For more detailed information see [2019 ciura in bugs.md](/bugs.md#2019-ciura).
 ### Try:
 
 ```sh
-./getwords.sh en | grep .. | ./prog aeiouvwxyz
+./try.sh
 
-./getwords.sh en | grep .. | ./prog aeiouhjklmnvwxyz
-
-./getwords.sh en | grep .. | ./prog mrjocktvquizphdbagsfewlynx
-
-./en.sh
-
-./fr.sh
-
-./ru.sh
 ```
 
 
 ## Alternate code:
 
-There is an alternate version of this code that flushes stdout after writing a newline.
-See the Author's remarks for more information.
+There is an alternate version of this code that flushes `stdout` after writing a
+newline.  See the Author's remarks for more information.
 
-To compile this alternate version:
+
+### Alternate build:
+
 
 ```sh
 make alt
 ```
 
+
+### Alternate use:
+
 Use `prog.alt` as you would `prog` above.
+
+
+### Alternate try:
+
+```sh
+./try.alt.sh
+```
 
 
 ## Judges' remarks:
@@ -105,20 +112,23 @@ This entry implements Algorithm X (_Exact cover via dancing links_)
 from Section 7.2.2.1 in fascicle 5C of _The Art of Computer
 Programming_ by Donald E. Knuth. As of June 2019, you can download an
 incomplete draft of the fascicle from [Knuth's
-website](https://www-cs-faculty.stanford.edu/~knuth/fasc5c.ps.gz).
+website](https://www-cs-faculty.stanford.edu/~knuth/fasc5c.ps.gz), converted to
+PDF as [fasc5c.pdf](fasc5c.pdf) for your convenience.
+
 
 ### Usage:
 
 `./prog LETTERS [N]`
 
 reads allowed words from standard input and writes perfect pangrams
-with at most _N_ words composed of _LETTERS_ to standard output, one
-per line. If _N_ is not given, the number of words in the pangrams is
-unlimited. The characters in _LETTERS_ must not repeat. The length of
-_LETTERS_ must not exceed 97 characters.
+with at most `N` words composed of `LETTERS` to standard output, one
+per line. If `N` is not given, the number of words in the pangrams is
+unlimited. The characters in `LETTERS` must not repeat. The length of
+`LETTERS` must not exceed 97 characters.
 
 The exit status is 0 if no error occurred, 1 if the input word list
 is too long, and 2 if the command-line arguments are missing.
+
 
 ### Helper scripts:
 
@@ -143,6 +153,7 @@ is too long, and 2 if the command-line arguments are missing.
 English, French, Italian, Polish, and Russian perfect pangrams, respectively.
 They require a UTF-8 locale.
 
+
 ### Miscellaneous remarks:
 
 I dare submit this entry to categories _algorithms_,
@@ -151,7 +162,7 @@ among the programs that won IOCCC in the past), and _obscure bugs_ (see
 the questions about Linux core dumps below).
 
 To a casual eye, this entry may look similar to
-[2005 klausler](https://www.ioccc.org/years.html#2005_klausler).
+[2005/klausler](/2005/klausler/README.md).
 However, `prog` is internationalized and way faster. On my machine,
 `./klausler abcdefghijklmnopqrstuvwxyz` printed only 3,965 perfect
 pangrams until I killed it after 144 hours running, while the
@@ -181,7 +192,7 @@ Why does `yes | ./prog y` hang on Linux? Change `static int` to
 `#define P 9<<23^1` to `#define P 9<<23` and recompile
 `prog`. Why does `yes | ./prog y` exit gracefully?
 
-Answer: Nf bs Whar 2019, guhf znavsrfg ohtf va `tyvop` 2.22--2.29:
+Answer: As of June 2019, thus manifest bugs in `glibc` 2.22--2.29:
 [1](https://sourceware.org/bugzilla/show_bug.cgi?id=20568) naq
 [2](https://sourceware.org/bugzilla/show_bug.cgi?id=20632).
 

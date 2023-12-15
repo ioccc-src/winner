@@ -8,4 +8,4 @@
 # whether or not they are in your view considered part of the alphabet for the
 # reason that so many words have them.
 
-LC_ALL=C ./getwords.sh de | LC_ALL=C grep .. | LC_ALL=de_DE.UTF-8 ./prog aäbcdefghijklmnoöpqrsßtuüvwxyz
+LC_ALL=C ./getwords.sh de | LC_ALL=C grep .. | LC_ALL=C ./prog.alt aäbcdefghijklmnoöpqrsßtuüvwxyz

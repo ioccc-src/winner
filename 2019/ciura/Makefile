@@ -112,8 +112,8 @@ OBJ= ${PROG}.o
 DATA= de.sh en.sh fr.sh getwords.sh it.sh pl.sh ru.sh wrapprog.py
 TARGET= ${PROG}
 #
-ALT_OBJ= ${PROG}.o
-ALT_TARGET= ${PROG}
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################

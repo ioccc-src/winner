@@ -3277,6 +3277,43 @@ The author pointed out that some implementations of `wc(1)` show different
 values but his implementation matches that of macOS and FreeBSD.
 
 
+## 2019 ciura
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2019/ciura/prog.c](2019/ciura/prog.c)
+### Information: [2019/ciura/README.md](2019/ciura/README.md)
+
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the scripts so
+that they can work but it might end up that the scripts don't show any output
+anyway as they use the full alphabet. To test that it works one can have a
+script like:
+
+```sh
+LC_ALL=C  aäbcdefghijklmnoöpqrsßtuüvwxyz | LC_ALL=C grep .. | LC_ALL=de_DE.UTF-8 ./prog aäbcdefghijklmnoöpqrsßtuüvwxyz
+```
+
+If you run this you should see:
+
+```
+aäbcdefghijklmnoöpqrsßtuüvwxyz
+```
+
+which shows it works. However as the de.sh script refers to all letters it can't
+find a perfect pangram. BTW, as far as the question of whether the umlaut
+letters or the Eszett are considered letters in the German alphabet, Cody noted
+in the de.sh/de.alt.sh scripts:
+
+```
+# Are the umlauts ä, ö, ü and Eszett (ß) letters in the German alphabet? There
+# is more than one opinion on the subject but a lot of words do have an umlaut
+# (or Umlaut in German). In some (probably all) systems this script outputs
+# nothing probably because it's very hard to form a perfect pangram in German,
+# if it's not impossible. Nevertheless, we do include the other characters
+# whether or not they are in your view considered part of the alphabet for the
+# reason that so many words have them.
+```
+
+
 ## 2019 duble
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -3314,22 +3351,6 @@ find . -name '.[A-Z]*' -delete
 
 though one might want to check that the program is not currently running. :-)
 
-
-## 2019 ciura
-
-### STATUS: known bug - please help us fix
-### Source code: [2019/ciura/prog.c](2019/ciura/prog.c)
-### Information: [2019/ciura/README.md](2019/ciura/README.md)
-
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) fixed the scripts so
-that the locale is correct (or at least correct for the commands to be run
-without error, notwithstanding English which isn't a problem) but he notes that
-under both macOS and fedora linux the alternative language scripts don't report
-anything. This happened before and after the fix to the scripts.
-
-Maybe it's the locale or maybe it's the dictionary files but it appears that
-they did work for some. If you can identify the problem we would appreciate the
-help!
 
 
 ## 2019 endoh
