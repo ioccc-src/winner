@@ -4106,6 +4106,17 @@ to what can crash it - but it's not a bug, it's a feature.
 [Cody](#cody) fixed the Makefile which had a bad character, a '%' instead of a '$' which
 caused a rule to fail.
 
+Cody also added the [try.sh](/2019/burton/try.sh) script which shows a
+side-by-side comparison on several files of the entry and `wc(1)` as well as
+running `make test`.
+
+Cody also fixed the script [check.sh](/2019/burton/check.sh) (renamed from
+`check`) in case `x` is specified and is not executable and also made it satisfy
+ShellCheck. He also made ShellCheck not be a cow and/or (to use Bart Simpson's
+advice :-) ) 'not have a cow' about certain things (including one thing it was
+wrong about) in [cow.sh](/2019/burton/cow.sh) (which was renamed from `cow`)
+<strike>moo</strike>too.
+
 
 ## <a name="2019_ciura"></a>[2019/ciura](/2019/ciura/prog.c) ([README.md](/2019/ciura/README.md]))
 

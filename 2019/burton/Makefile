@@ -139,12 +139,12 @@ remarks: README.md
 	${RM} -f $@
 	${CP} $? $@
 
-correct: newlines remarks 256 check
-	env out=${CAT} ${SHELL} ./check ${WC} > $@
+correct: newlines remarks 256 check.sh
+	env out=${CAT} ${SHELL} ./check.sh ${WC} > $@
 
-test: ${PROG} ${PROG}.clean correct check
-	-${SHELL} ./check ./${PROG}
-	-${SHELL} ./check ./${PROG}.clean
+test: ${PROG} ${PROG}.clean correct check.sh
+	-${SHELL} ./check.sh ./${PROG}
+	-${SHELL} ./check.sh ./${PROG}.clean
 
 # alternative executable
 #
