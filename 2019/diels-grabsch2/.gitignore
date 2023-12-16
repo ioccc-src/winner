@@ -6,3 +6,5 @@ indent.c
 indent.o
 prog
 prog.orig
+prog.txt
+sha512sum.txt

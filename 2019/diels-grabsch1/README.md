@@ -15,15 +15,7 @@ make
 ### Try:
 
 ```sh
-dd bs=1024 count=2048 < /dev/zero | compress > ref.Z
-dd bs=1024 count=2048 < /dev/zero | ./prog > dg1.Z
-cmp ref.Z dg1.Z
-
-cd ../mills ; make ; cd ../diels-grabsch1
-compress < ../mills/Shakespeare.txt > ref.Z
-./prog < ../mills/Shakespeare.txt > dg1.Z
-cmp ref.Z dg1.Z # Oops, the files differ
-zcat < dg1.Z | cmp - ../mills/Shakespeare.txt # Decompresses correctly. What is going on?
+./try.sh
 ```
 
 
@@ -34,9 +26,9 @@ to qualify for the Best Short Program award! That said, can you compress it down
 to a one-liner, still producing files in the UNIX compress format, albeit
 sacrificing the compression ratio?
 
-Can you explain why the zero file compresses identically by the entry and the
-standard compress tool, but the text file compresses differently? The judges
-know. :)
+Can you explain why the `/dev/zero` file compresses identically by the entry and
+the standard `compress(1)` tool (see [try.sh](try.sh)), but the text file
+compresses differently? The judges know. :)
 
 
 ## Author's remarks:
@@ -64,11 +56,14 @@ diff -s guidelines.txt guidelines2.txt
 
 Of course you can  also use [2015/mills2](/2015/mills2/mills2.c) instead of
 `zcat` to verify the output file. The achieved compression ratio roughly matches
-that  of the classic Unix compress tool. And the source code is  very
+that of the classic Unix `compress(1)` tool. And the source code is very
 compressed, too: It has exactly the same size as the  paragraph you are reading
 right now. And exactly the same shape. Nevertheless, it is portable C99 code
 that runs on 32-bit and 64-bit platforms. It compiles without warnings on both
 GCC and Clang even with `-Wextra and -Weverything`.
+
+> 2023 note: the above paragraph might not be true as far as number of bytes
+goes.
 
 
 ## Copyright and CC BY-SA 4.0 License:

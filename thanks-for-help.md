@@ -4120,26 +4120,45 @@ wrong about) in [cow.sh](/2019/burton/cow.sh) (which was renamed from `cow`)
 
 ## <a name="2019_ciura"></a>[2019/ciura](/2019/ciura/prog.c) ([README.md](/2019/ciura/README.md]))
 
-[Cody](#cody) fixed invalid bytes error in `tr` in the scripts. He notes that at least on
-his systems (macOS and fedora Linux) the alternative languages do not work.
-Perhaps that is the wrong locale or it's unable to come up with perfect pangrams
-but one will not get errors now (it did not work before the fixes either).
+[Cody](#cody) fixed an invalid bytes error in `tr` in the scripts. This does not
+mean that they will produce any output, though, as they provide expect all
+letters and that makes it harder to form perfect pangrams. On the subject of
+German umlauts and Eszett (ß) see the [entry in bugs.md](/bugs.md#2019-ciura).
+
+Cody also fixed the Makefile so that the alt code would be built when running
+`make alt`.
+
+Cody converted the PS file linked to by the author to a PDF
+([fasc5c.pdf](/2019/ciura/fasc5c.pdf)) and added it to the
+website.
+
+Cody also added the [try.sh](/2019/ciura/try.sh) and
+[try.alt.sh](/2019/ciura/try.alt.sh) scripts.
+
+Finally he added the scripts for the different languages that use the alt
+version but with the caveat that only English appears to work. See the [entry in
+bugs.md](/bugs.md#2019-ciura) for more details.
+
 
 
 ## <a name="2019_diels-grabsch1"></a>[2019/diels-grabsch1](/2019/diels-grabsch1/prog.c) ([README.md](/2019/diels-grabsch1/README.md]))
 
-[Cody](#cody) made the author's statement that the entry compiles cleanly true by fixing
-`warning: a function declaration without a prototype is deprecated in all
-versions of C ` (in main()). Not strictly necessary but if he's making fixes he
-might as well.
+[Cody](#cody) added the [try.sh](/2019/diels-grabsch1/try.sh) script.
+
+Cody also added the file [Shakespeare.txt](/2019/diels-grabsch1/Shakespeare.txt)
+from [2019/mills](/2019/mills/README.md) (after running `make`) so that one can
+not worry about having the entire winner tree (or at least the 2019 tree each
+winner in a subdirectory). This is more important as there is discussion of
+having tarballs for each individual entry as a convenience.
 
 
 ## <a name="2019_diels-grabsch2"></a>[2019/diels-grabsch2](/2019/diels-grabsch2/prog.c) ([README.md](/2019/diels-grabsch2/README.md]))
 
-[Cody](#cody) made the author's statement that the entry compiles cleanly true by fixing
-`warning: a function declaration without a prototype is deprecated in all
-versions of C` (in main()). Not strictly necessary but if he's making fixes he
-might as well.
+[Cody](#cody) added the [try.sh](/2019/diels-grabsch2/try.sh) script. This
+script will try and show the difference (i.e. the same output) between the
+program and the result of `sha512sum` or `shasum -a 512` if either of those
+tools can be found but otherwise it'll just run the program itself, showing its
+own sha512sum value.
 
 
 ## <a name="2019_dogon"></a>[2019/dogon](/2019/dogon/prog.c) ([README.md](/2019/dogon/README.md))

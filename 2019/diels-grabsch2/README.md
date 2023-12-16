@@ -15,7 +15,7 @@ make
 ### Try:
 
 ```sh
-sha512sum prog.c || shasum -a 512 prog.c
+./try.sh
 ```
 
 
@@ -52,11 +52,11 @@ No crypto was broken in the making of this program!
 
 The trick is that under the hood, this program is a quine!  That is, it is aware
 of its own source code in string representation.  But instead of printing that
-string, its SHA-512 hash is computed and printed.  So two major steps were
-needed to obfuscate this program:
+string (its own source), its SHA-512 hash is computed and printed.  So two major
+steps were needed to obfuscate this program:
 
-1. Hide the quine
-2. Hide the SHA-512 computation
+1. Hide the quine.
+2. Hide the SHA-512 computation.
 
 Note that both steps were achieved mostly algorithmically.  The code
 is otherwise as short and as clean as possible.  The implementation is
@@ -110,11 +110,11 @@ the cube roots of the first 80 primes.  So the round constants are
 calculated at runtime, which makes the program shorter and adds
 another layer of obfuscation.
 
-While this sounds like just iterating primes and executing pow(), this
+While this sounds like just iterating primes and executing `pow(3)`, this
 turned out to be harder than expected.  If we were computing SHA-256,
 it would have been as simple as that, because the round constants
 would have been 32-bit values.  However, SHA-512 needs the cube roots
-at 64-bit precision, while double has only 53-bit mantissa precision.
+at 64-bit precision, while `double` has only 53-bit mantissa precision.
 
 Using higher-precision floating point is no option here, because the
 program is meant to be portable C99.  And implementing arbitrary-precision
@@ -145,7 +145,7 @@ around 7, so we need to compute with 3 bits for the integral part and
 
 The reason for challenge 3 is that the cube of a 67-bit number is
 `3*67=201` bits, but fortunately we only need to check if it is close
-enough to the actual prime.  It won't be exactly e.g. `409.0000...`
+enough to the actual prime.  It won't be exactly `409.0000...`
 anyway, but must be accurate enough to distinguish the correct cube
 root from its neighbours, e.g. the same number with the 64th
 fractional digit increased.
@@ -167,8 +167,8 @@ That's it.
 
 Well, I could continue with details about the encoding of the internal
 state values into the string, how to avoid escaping issues, how to
-find short notations for various loops, how to get rid of if(), where
-the final "\";\n" is stored, how to eliminate intermediate values and
+find short notations for various loops, how to get rid of `if()`, where
+the final `"\";\n"` is stored, how to eliminate intermediate values and
 arrays by reordering of operations, and so on.  But those were all
 minor issues compared to the challenges described above.  What's
 documented here is all you need to know to write your own version of

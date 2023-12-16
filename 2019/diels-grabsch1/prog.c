@@ -1,5 +1,5 @@
 #include<stdio.h>
-int main(void){int a=0,b=a;long long c[178819],d=8,e=257,f,g,
+int main(){int a=0,b=a;long long c[178819],d=8,e=257,f,g,
 h,i=d-9;for(;a<178819;){c[a++]=i;}for(a*=53;a;a>>=8)putc\
 har(a);if((f=getchar())<0)return 0;for(;(g=getchar())>=0;
 ){h=i=g<<8^f;g+=f<<8;a=e<(512<<a%8|(a<7))||f>256?a:a>6?15
