@@ -1,13 +1,13 @@
 //  APOHLIFE : Annotated Partially Obfuscated 64-bit Hash Life program.
-//  This program assumes sizeof(long)==8 (64 bits) and little endianess.
+//  This program assumes sizeof(long)==8 (64 bits) and little endianness.
 //  Also unaligned (mod 8) long loads support.
 //  Xlib is evidently used . Should be runnable almost everywhere
 //  with gcc command such as:
 //  gcc -O3 -std=c99 apholife.c -lX11 -lm
 //
-//  If you want to understand Hashlife The clearest description  with diagrams of the recursion I found was in:
-//  https://jennyhasahat.github.io/hashlife.html
-//  You can  also read Tom Rokicki article appearing in DrDobbs
+//  If you want to understand Hashlife The clearest description with diagrams of the recursion I found was in:
+//  https://web.archive.org/web/20191224211844/https://jennyhasahat.github.io/hashlife.html
+//  You can also read Tom Rokicki article appearing in DrDobbs
 //  http://www.drdobbs.com/jvm/an-algorithm-for-compressing-space-and-t/184406478
 //  And of course look it up in wikipedia, etc ...
 //
@@ -22,7 +22,7 @@
 #define MAXLEV 1024 // Maximal level supported by our universe.
 #define W (32*40l)  // Display window size
 #define H (32*40l)
-#define HBITS 29    // This wil determine our memory usage (hash + cells)
+#define HBITS 29    // This will determine our memory usage (hash + cells)
 
 #define HSIZE (1ll<<HBITS)
 #define HMASK (HSIZE -1)
@@ -38,18 +38,18 @@ const unsigned  mh=0xf0f0f0f; // This is the mask for the lower nibble in every 
 // Crucially,  whenever we need to encode a quarter-leaf (4*4) such as a result here, we do it using lower 4
 // nibbles of an unsigned int, rather rhan a 16 bit short. Remember this when trying to understand all following code!
 // This routine makes heaviest and nicest use of bit twiddling hackers delight like stuff.
-// If you've read chapter 7.1.3 of Knuths 4A you should be OK with that...
+// If you've read chapter 7.1.3 of Knuth's 4A you should be OK with that...
 ulong q8x8(ulong in)
 {
   const ulong m4=0x1111111111111111; // We will work doing 16 ops at a time on the sixteen nibbles in a long.
-  for(int j=0;j<2-!g_step;j++){  //We Normaly count to 2 generations here except when g_step=0.
+  for(int j=0;j<2-!g_step;j++){  //We normally count to 2 generations here except when g_step=0.
     ulong res=0;
     for(int i=0;i<4;i++) {
       ulong o=in>>i & m4;
       o+= in*2>>i & m4;
       o+= in/2>>i & m4;
       o+=(o << 8)+(o >> 8); // And now we have in 'o' nibbles 16 sums each of a 3*3 neighborhood.
-      // This line, implementing Conways GOL rule, is left as an exercise for the reader. Muhahaha...
+      // This line, implementing Conway's GOL rule, is left as an exercise for the reader. Muhahaha...
       res |= (((o+m4 & m4*6 ^ 3*m4)+m4 >> 3) & (in >> i | o) & m4) << i;
     }
     in=res;
@@ -59,8 +59,8 @@ ulong q8x8(ulong in)
 
 //
 // We have the following tricky but efficient way to encode node and leaf data in the same array of longs in
-// an econmoical and aligned manner. We use 32bit indices into the array in lieu of pointers which occupy 64bit
-// nowdays. This results in almost factor of 2 compression of memory usage.
+// an economical and aligned manner. We use 32bit indices into the array in lieu of pointers which occupy 64bit
+// nowadays. This results in almost factor of 2 compression of memory usage.
 //
 // A node at ptr i will be encoded using three longs as follows:
 // g_lmem[i]  : Two upper quads ptrs (each 32 bits of course).
@@ -78,10 +78,10 @@ ulong q8x8(ulong in)
 ulong *g_lmem;
 unsigned *g_hash;
 //
-//  The following functions/Macros are heavily used in the hashlife algorithm which is essentialy all about
+//  The following functions/Macros are heavily used in the hashlife algorithm which is essentially all about
 //  splitting cells into four quadrants, and then creating new cells by joining four quadrants.
 //  We use the term cell to denote *both* leafs and nodes which are stored of course in the same hash.
-//  Quads are always stored in an array conviently called q, with an implicit assumption
+//  Quads are always stored in an array conveniently called q, with an implicit assumption
 //  that q is 2D with stride *Four*. I.e. to move vertically in q we need to add/sub 4 ...
 //  This way we naturally have a 4*4 array structure on a q[16] vector needed for hashlife recursion.
 //  We call the quads of each quad subquads. So we can say in q there are four quads and sixteen subquads.
@@ -90,8 +90,8 @@ unsigned *g_hash;
 #define QUADLOOP(x) {int j; for(int i=0;i<4;i++) {j=i+(i&2); x;} }  // j is quad index in q.
 
 // Get a quad (indexed by i) from a cell pointer.
-// The main complication here is the case of leaves that gets splitted to quarters-leaves differenty.
-// Notice that here is the single place we actualy assume little endianity, as it affects the expression
+// The main complication here is the case of leaves that gets split to quarters-leaves differently.
+// Notice that here is the single place we actually assume little endianness, as it affects the expression
 // to get two 32bit words out of each long.
 unsigned getquad(unsigned cell,int i){
  return g_lmem[cell+1]&8192 ? g_lmem[cell+(i&2)] >> i%2*32 : g_lmem[cell] >> i%2*4+16*(i&2)&mh ;
@@ -121,12 +121,12 @@ unsigned hget(unsigned* qi, int level)
 {
   ulong leaf,lh,ll;
   int lv=level>>2;
-  unsigned hind=0; // Wil be used to calculate hash function
+  unsigned hind=0; // Will be used to calculate hash function
   unsigned cell;
 
-  ulong *data=(ulong *)qi; // Here we seem to use little endianity but in fact we dont. as we store
+  ulong *data=(ulong *)qi; // Here we seem to use little endian but in fact we don't. As we store
                            // and compare the q unsigned array contents to the g_lmem long array.
-                           // What we do use is tha fact longs can be loaded and stored from *unaligned*
+                           // What we do use is the fact longs can be loaded and stored from *unaligned*
                            // addresses. So we break pointer punning.
   if(lv>0) {
     if(level&1) {
@@ -152,8 +152,8 @@ unsigned hget(unsigned* qi, int level)
 
   // The last condition above is to avoid a very rare and subtle bug that can happen, for example
   // when searching a leaf,  we might find a node instead whose lower data is identical to the leaf's bits
-  // *and* its hash is also similar/close. This is possible but the probablity is very low indeed.
-  // The probablity of encountering this bug is so low that the actual obfuscated entry has not got 
+  // *and* its hash is also similar/close. This is possible but the probability is very low indeed.
+  // The probability of encountering this bug is so low that the actual obfuscated entry has not got 
   // the fix above but the bug does not seem to happen on the supplied patterns.
 
   int res_step= lv+1;  // res_step is the maximal timestep we can get result for.
@@ -174,15 +174,15 @@ unsigned hget(unsigned* qi, int level)
 unsigned  g_ptr=2; // skip the 0 which is null ptr in the hash. Start from 2 in order to leave space
                    // at zero used by the getin leaf reading code.
 //
-// Finaly we reached the most intersting part of result calculation / hashlife recursion. 
-// After all the ground work we've layed before, it becomes surprsingly short, heck the
+// Finally we reached the most interesting part of result calculation / hashlife recursion. 
+// After all the ground work we've laid before, it becomes surprisingly short, heck the
 // comments are longer than the code !
 //
 unsigned calc_result(unsigned cell,ulong leaf,ulong lh,unsigned *qi,int level,int res_step)
 {
   if(!cell) {  // Create a new one ...
     g_lmem[cell=g_ptr]=leaf;
-    g_lmem[g_ptr+=2]=lh; // This will write some junk in case of leaf but we dont care
+    g_lmem[g_ptr+=2]=lh; // This will write some junk in case of leaf but we don't care
     g_ptr+= level>0;
   }
   if(!level) {
@@ -191,19 +191,19 @@ unsigned calc_result(unsigned cell,ulong leaf,ulong lh,unsigned *qi,int level,in
   else {
     int j;
     unsigned q[16];
-    // Finaly we have reached Hashlifes glorious recusion: make new node from four quadrants and calculate its result.
+    // Finally we have reached Hashlife's glorious recursion: make new node from four quadrants and calculate its result.
     // A neat obfuscation/compression trick here is that q can be updated in-place shrinking from 4*4 to 3*3 to 2*2,
     // all during the sub-steps in the hashlife recursion calculation. Its recommended looking at the link above for
     // some diagrams describing this recursion.
     // 'hr' flag will indicates half recursion. All it does is, that in the second sub-step the 4 recursive calls just join
     // cells to calculate middle cell, rather then calculate result forward in time.
     //
-    // This QUADLOOP wil create the 16 subquads data in q.
+    // This QUADLOOP will create the 16 subquads data in q.
     // Notice that rather conveniently 2*j here is just 0,2,8,10 which are indices of the quads we want inside the 4*4 q.
     QUADLOOP(mq(qi[j],q+2*j));
     unsigned hr = level>g_step-1;
 
-    // The whole recursion stuff just becomes the two innocently looking loops below, and hopefuly gcc is decent
+    // The whole recursion stuff just becomes the two innocently looking loops below, and hopefully gcc is decent
     // enough to unroll them under -O3 so its also rather efficient as well...
     for(int i=0;i<11;i++) if((i+1)&3)  q[i]=GQ(i,level-1,0); // Neatly do the first step. 9 recursive calls.
     QUADLOOP(q[j]=GQ(j, level-1, hr)); //Second step. four recursive calls, and QUADLOOP can be used....
@@ -215,7 +215,7 @@ unsigned calc_result(unsigned cell,ulong leaf,ulong lh,unsigned *qi,int level,in
   return cell;
 }
 
-// Create the empty space cells/empty universe. Must happen before getin.
+// Create the empty space cells/empty universe. Must happen before getin().
 void init_empty_space(int maxlev)
 {
   unsigned q[16];
@@ -230,13 +230,13 @@ void init_empty_space(int maxlev)
 }
 
 // We will use this variable to freeze the state whenever we run out of memory,
-// So as to avoind core dumps, etc ...
+// So as to avoid core dumps, etc ...
 int g_freeze=0;
 
 //
 // This will advance in time the given cell at the given level by current 2^g_step generations.
 // the trick here is first expanding enough so the time step will be just looking at the expanded result
-// and then shrinking back if neccessary.
+// and then shrinking back if necessary.
 //
 unsigned adv(unsigned cell,int *ilevel)
 {
@@ -261,7 +261,7 @@ unsigned adv(unsigned cell,int *ilevel)
     cell= GQ(0,++level,2); // Then join them to get expanded cell.
   } while (level < target);
 
-  cell=g_lmem[cell+1]>>32;  // Thats the expanded cell's result which does the actual timestep!
+  cell=g_lmem[cell+1]>>32;  // That's the expanded cell's result which does the actual timestep!
   //
   // Now we need to see if the result can be shrunk (i.e. is at a too high level).
   //
@@ -277,13 +277,13 @@ unsigned adv(unsigned cell,int *ilevel)
 
 #define MAXMOVES 500000
 unsigned g_cells[MAXMOVES]; // Will be use to hold input cells and then later to hold moves history
-double   g_gens[MAXMOVES]; // Will be use to hold gens history
+double   g_gens[MAXMOVES]; // Will be use to hold gen's history
 
 // We even have some minimal error handling here :)
 void error(char *s) {printf("%s\n",s);exit(1);}
 //
 //  This is our input routine, reading marocell (.mc) golly format.
-//  Its quite pedantic but hopefuly does not dump cores on bad input :)
+//  Its quite pedantic but hopefully does not dump cores on bad input :)
 //
 int getin(FILE *f,int *lv)
 {
@@ -321,7 +321,7 @@ int getin(FILE *f,int *lv)
   return cell;
 }
 
-// Thats our output image pixmap. We allocate it with some convenient bundaries.
+// That's our output image pixmap. We allocate it with some convenient boundaries.
 unsigned g_area[(16*16+H)*(16*8+W)+16*8];
 unsigned *g_out=g_area+16*8*(W+16*8);
 unsigned g_stride=W+16*8;
@@ -332,7 +332,7 @@ unsigned g_stride=W+16*8;
 double g_mx,g_my;
 int g_pscale;
 //
-// Output support : draw our cells/universe in the output array viewportr.
+// Output support : draw our cells/universe in the output array viewport.
 // Here we use the fact that the array has a padding of 8*16 pixles between lines and 8*16 lines before and after
 // so that  8x8 leaf drawing becomes simpler (and more importantly shorter!) as there is no clipping check needed...
 // sx and sy are just the coordinates of the top left of the cell. cx and cy are used to get the nice
@@ -340,8 +340,8 @@ int g_pscale;
 void draw(unsigned cell,int level,double sx, double sy,int cx,int cy)
 {
   double sz=ldexp(8,level);
-  // The if below checks for  empty space however we dont return if we
-  // are in small enough scale so as to draw the colored backgroud...
+  // The if below checks for  empty space however we don't return if we
+  // are in small enough scale so as to draw the colored background...
   if(cell<MAXLEV*3+2 && g_pscale > 6) return;
   double width2=ldexp(W,g_pscale-5);
   double height2=ldexp(H,g_pscale-5);
@@ -356,7 +356,7 @@ void draw(unsigned cell,int level,double sx, double sy,int cx,int cy)
   }
   if(level) {
     level--; sz*=0.5;
-    // Notice QUADLOOP macro is also usefull for this quadrants draw loop recursion.
+    // Notice QUADLOOP macro is also useful for this quadrants draw loop recursion.
     unsigned q[6];
     mq(cell,q);
     QUADLOOP(draw(q[j],level,sx+i%2*sz,sy+i/2*sz,cx*2+i%2,cy*2+i/2));
@@ -369,7 +369,7 @@ void draw(unsigned cell,int level,double sx, double sy,int cx,int cy)
     }
     // Generate color background pattern, another nice? coding riddle..
     cx^=cy; unsigned background=0x22<<(cx&8?8:cx&64?16:24);
-    // Leaf drawing here supports both positive zoom of upto 4 and negative ofcourse.
+    // Leaf drawing here supports both positive zoom of up to 4 and negative of course.
     ulong in=g_lmem[cell];
     for(int i=0;i<8<<z;i++) {
       for (int j=0;j<8<<z;j++) {

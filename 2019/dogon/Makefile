@@ -59,9 +59,13 @@ CSTD= -std=gnu17
 #
 ARCH=
 
+# Variable to simplify changing memory usage
+#
+MEMORY= 0x20000000
+
 # Defines that are needed to compile
 #
-CDEFINE= -DX=1280l -DY=1024l -DZ=0x20000000
+CDEFINE= -DX=1280l -DY=1024l -DZ=${MEMORY}
 
 # Include files that are needed to compile
 #
@@ -121,8 +125,8 @@ DATA= glider.mc gotts-dots.mc infinite.mc infinite_10cell.mc infinite_5x5.mc \
 	metapixel-parity64.mc mosquito5.mc unlimited-novelty.mc
 TARGET= ${PROG} apholife
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 
 #################

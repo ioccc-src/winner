@@ -3313,6 +3313,15 @@ in the de.sh/de.alt.sh scripts:
 # reason that so many words have them.
 ```
 
+## 2019 dogon
+
+### STATUS: uses gets() - change to fgets() if possible
+### Source code: [2019/dogon/prog.c](2019/dogon/prog.c)
+### Information: [2019/dogon/README.md](2019/dogon/README.md)
+
+The author does not it uses `gets()` and one will get warnings but it would be
+ideal if this was not the case.
+
 
 ## 2019 duble
 
