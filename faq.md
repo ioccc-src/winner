@@ -32,7 +32,7 @@
 - [3.7  - How do I compile and use on macOS, an IOCCC winner that requires X11?](#faq3_7)
 - [3.8  - How do I compile an IOCCC winner that requires SDL1 or SDL2?](#faq3_8)
 - [3.9  - How do I compile an IOCCC winner that requires (n)curses?](#faq3_9)
-- [3.10 - How do I compile and use on macOS, an IOCCC winner that requires sound?](#faq3_10)
+- [3.10 - How do I compile and use an IOCCC winner that requires sound?](#faq3_10)
 - [3.11 - Why do Makefiles use -Weverything with clang?](#faq3_11)
 - [3.12 - How do I find out how to send interrupt/EOF etc. for entries that require it?](#faq3_12)
 - [3.13 - Why does an IOCCC winner fail to compile or or fail run?](#faq3_13)
@@ -1056,23 +1056,23 @@ for downloading, installing and using ncurses.
 We recommend trying a method suitable for your environment first, if possible.
 
 
-### <a name="faq3_10"></a>FAQ 3.10: How do I compile and use on macOS, an IOCCC winner that requires sound?
+### <a name="faq3_10"></a>FAQ 3.10: How do I compile and use an IOCCC winner that requires sound?
 
+This might depend on the entry but most likely the Swiss Army Knife of sound
+processing programs, [SoX](https://sox.sourceforge.net), will work. How to
+install depends on your OS.
 
 #### Red Hat based Linux
 
-Usually the README.md file will explain how to use it under RHEL so we do not
-include this here, at least for now.
+As root or via sudo:
 
+```sh
+dnf install -y sox sox-devel
+```
 
 #### macOS
 
-This might depend on the entry but in some cases like
-[2001/coupard](/2001/coupard/coupard.c) one needs to do more work in order to get
-it to work. In this case you should be able to use the Swiss Army Knife of sound
-processing programs, [SoX](https://sox.sourceforge.net). To install this easily
-you can use either Homebrew. or MacPorts.
-
+For macOS there are two well known options.
 
 ##### macOS via Homebrew
 
@@ -1086,7 +1086,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
 
-##### macos via MacPorts
+##### macOS via MacPorts
 
 If you haven't already, install
 [MacPorts](https://www.macports.org/install.php). Then run:
