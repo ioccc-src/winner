@@ -36,6 +36,10 @@ elif [[ -n "$SHA512SUM" ]]; then
     ./prog > prog.txt
     echo 1>&2
 
+    echo "$ cat sha512sum.txt prog.txt" 1>&2
+    cat sha512sum.txt prog.txt
+    echo 1>&2
+
     echo "$ diff -s sha512sum.txt prog.txt" 1>&2
     diff -s sha512sum.txt prog.txt
     rm -f sha512sum prog.txt
@@ -54,6 +58,10 @@ elif [[ -n "$SHASUM" ]]; then
     "$SHASUM" -a 512 prog.c | cut -f 1 -d' ' > sha512sum.txt
     echo "$ ./prog > prog.txt" 1>&2
     ./prog > prog.txt
+    echo 1>&2
+
+    echo "$ cat sha512sum.txt prog.txt" 1>&2
+    cat sha512sum.txt prog.txt
     echo 1>&2
 
     echo "$ diff -s sha512sum.txt prog.txt" 1>&2
