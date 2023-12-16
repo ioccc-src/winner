@@ -46,7 +46,7 @@
 - [4.0  - Why are some winning author remarks incongruent with the winning IOCCC code?](#faq4_0)
 - [4.1  - Why were some calls to the libc function `gets(3)` changed to use `fgets(3)`?](#faq4_1)
 - [4.2  - What was changed in an IOCCC winner source code?](#faq4_2)
-- [4.3  - Why do author remarks sometimes not match the source / why are there
+- [4.3  - Why do author remarks sometimes not match the source and/or why are there
 other inconsistencies with the original entry?](#faq4_3)
 - [4.4  - What is the meaning of the file ending in .orig.c in IOCCC winners?](#faq4_4)
 
@@ -55,11 +55,12 @@ other inconsistencies with the original entry?](#faq4_3)
 - [5.1  - How do I report a bug in an IOCCC winner?](#faq5_1)
 - [5.2  - How may I submit a fix to an IOCCC winner?](#faq5_2)
 - [5.3  - How may I report an IOCCC web site problem?](#faq5_3)
-- [5.4  - How may I submit a fix to an IOCCC web site?](#faq5_4)
+- [5.4  - How may I submit a fix to the IOCCC web site?](#faq5_4)
 - [5.5  - How may I correct or update IOCCC author information?](#faq5_5)
+- [5.6  - I found a dead or invalid link. What should I do?](#faq5_6)
 
 ## Section  6 - [Miscellaneous IOCCC](#faq6)
-- [6.0  - How did an entry that breaks the size rule 2, win the IOCCC?](#faq6_0)
+- [6.0  - How did an entry that breaks the size rule 2 win the IOCCC?](#faq6_0)
 - [6.1  - Is there a list of known bugs and (mis)features of IOCCC winners?](#faq6_1)
 - [6.2  - May I mirror the IOCCC web site?](#faq6_2)
 - [6.3  - May I use parts of the IOCCC in an article, book, newsletter, or instructional material?](#faq6_3)
@@ -1704,7 +1705,7 @@ Obviously if you want to view the alt code or the orig code you can just open
 the files as described above.
 
 
-### <a name="faq4_3"></a> FAQ 4.3  - Why do author remarks sometimes not match the source / why are there other inconsistencies with the original entry?
+### <a name="faq4_3"></a> FAQ 4.3  - Why do author remarks sometimes not match the source and/or why are there other inconsistencies with the original entry?
 
 If the entry has been fixed for modern systems and this fix required
 modification to the code then invariably there will be entries where the remarks
@@ -1713,14 +1714,14 @@ the code might be against rule 2 and other kinds of inconsistencies might also
 be there.
 
 This is why we recommend that when you read the remarks, sometimes the judges'
-remarks and always the author's or authors' remarks, we recommend that you look
-at the original code. When the entry source code is called `prog.c` the original
-code is in `prog.orig.c`; otherwise it is `winner.orig.c`. For instance one of
-Landon's all time favourite entries is
-[1984/mullender](/1984/mullender/README.md) and the original code is in
-[mullender.orig.c](/1984/mullender/mullender.orig.c). In some cases, such as
-`1984/mullender`, the original code is the same as the code as no changes were
-made (there is an alt version for systems that are not VAX-11/PDP-11, however).
+remarks and always the author's or authors' remarks, you look at the original
+code. When the entry source code is called `prog.c` the original code is in
+`prog.orig.c`; otherwise it is `winner.orig.c`. For instance one of Landon's all
+time favourite entries is [1984/mullender](/1984/mullender/README.md) and the
+original code is in [mullender.orig.c](/1984/mullender/mullender.orig.c). In
+some cases, such as `1984/mullender`, the original code is the same as the code
+as no changes were made (there is an alt version for systems that are not
+VAX-11/PDP-11, however).
 
 See also [FAQ 4.2: What was changed in an IOCCC winner source code?](#faq4_2)
 
@@ -1819,11 +1820,11 @@ to a particular IOCCC winner, please see [FAQ 5.1](#faq5_1) for
 information about reporting a bug in an IOCCC winner, and see [FAQ
 5.2](#faq5_2) for information on how to submit a fix to an IOCCC winner.
 
-If you discover a problem with the IOCCC web site (such as a broken
-link) that is **not related to a particular IOCCC winner**, the
-best way you can help is to submit a fix to the IOCCC web site.
-See [FAQ 5.4](#faq5_4) for information on submitting fixes to the
-IOCCC web site.
+If you discover a problem with the IOCCC web site (such as a broken link, which
+may or may not be specific to a particular IOCCC winner) that is **not related
+to a particular IOCCC winner**, the best way you can help is to submit a fix to
+the IOCCC web site.  See [FAQ 5.4](#faq5_4) for information on submitting fixes
+to the IOCCC web site.
 
 If you do not have a IOCCC web site fix, and just wish to report a
 general IOCCC web site problem, we ask that you first look at the
@@ -1834,7 +1835,7 @@ has been reported, then fee free to open a [new IOCCC
 issue](//github.com/ioccc-src/winner/issues).
 
 
-### <a name="faq5_4"></a><a name="fix_web_site"></a>FAQ 5.4: How may I submit a fix to an IOCCC web site?
+### <a name="faq5_4"></a><a name="fix_web_site"></a>FAQ 5.4: How may I submit a fix to the IOCCC web site?
 
 For IOCCC web site problems that relate to a particular IOCCC winner, please
 see [FAQ 5.2](#faq5_2) for information on how submit a fix to an IOCCC winner.
@@ -1905,10 +1906,54 @@ against the master [branch](https://github.com/ioccc-src/winner/branches)
 of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner).
 
 
+## <a name="faq5_6"></a><a name="fix_link"></a>FAQ 5.6: I found a dead or invalid link. What should I do?
+
+If you just wish to report the issue, see [FAQ 5.3](#faq5_3).
+
+If however you wish to fix it you may open a GitHub pull request as described in
+[FAQ 5.4](#faq5_4). In the case of dead links or invalid links it doesn't matter
+if it's a specific winner or not; the procedure is the same: open a pull request
+to fix the problem.
+
+As far as how to find the updated link you can try using the [Internet Wayback
+Machine](https://web.archive.org) and see if you can find the last non 4xx non
+3xx page. Note, however, that just because it redirects, does not mean it's not
+valuable. Some links were changed to more recent URLs by doing this exact same
+thing. Other times you might find it with a web search. It isn't always the same
+process.
+
+If there is no alternative that you can find you might want to remove the link
+instead.
+
+Once the update is in place you can then open a pull request as described
+earlier.
+
+
+### What is an invalid link?
+
+A classic example is that of Stephen Sykes's domain which had expired and then
+bought again by a drug dispensary company. If you're more curious than that (or
+maybe want a laugh :-) ) see commit b4e480a7cf6ef5e3c072f00d59daf12a394faede. In
+any case obviously this had to be fixed and this is an example of an invalid
+link albeit an extreme one.
+
+
+### A general note about fixing links
+
+It should be noted that although many links have been fixed, many will not be
+fixed. Cody Boone Ferguson created a script that detected many dead links but
+it's not perfect and there are just too many to go through, especially as it is
+a very laborious task to copy and paste all the links into the Internet Wayback
+Machine and even more so because even if it appears okay it does not mean it
+is okay so every link would still have to be checked (an example of why this is
+is given above). It is more useful to fix links to pages/files in the IOCCC
+website itself.
+
+
 ## <a name="faq6"></a>Section 6: Miscellaneous IOCCC
 
 
-### <a name="faq6_0"></a>FAQ 6.0: How did an entry that breaks the size rule 2, win the IOCCC?
+### <a name="faq6_0"></a>FAQ 6.0: How did an entry that breaks the size rule 2 win the IOCCC?
 
 As entries have been fixed it is entirely possible that some of the entries no
 longer fit within the year's size restrictions. Invariably the length of columns
