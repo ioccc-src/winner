@@ -4168,6 +4168,16 @@ own sha512sum value.
 
 He also fixed the Makefile so that it compiles with clang in Linux.
 
+He also added the [try.sh](/2019/dogon/try.sh) script.
+
+He also made it possible to easily redefine the memory macro `Z` at compilation
+time by modifying the Makefile.
+
+He fixed a link in the spoiler source code. As a spoiler it felt more important
+that this was done (some typos were fixed as well but only some - the purpose
+was to only correct spelling and only some, not to change wording or anything
+else).
+
 
 ## <a name="2019_endoh"></a>[2019/endoh](/2019/endoh/prog.c) ([README.md](/2019/endoh/README.md]))
 
