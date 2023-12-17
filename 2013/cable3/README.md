@@ -38,12 +38,20 @@ combinations are left for the discovery of the user.
 
 ## Alternate code:
 
-An alternate version, which should compile in Windows, is provided. To use try:
+An alternate version, which should compile in Windows, is provided.
+
+
+### Alternate build:
+
+Assuming `make` is available and will function:
 
 
 ```sh
 make alt
 ```
+
+
+### Alternate use:
 
 Use `cable3.alt` as you would `cable3` above.
 

@@ -4,6 +4,11 @@
 make all
 ```
 
+
+The author provided a spoiler version as alt code. See [Alternate
+code](#alternate-code) below.
+
+
 ### Bugs and (Mis)features:
 
 The current status of this entry is:
@@ -35,10 +40,19 @@ Mode may be a value from 0 to 12.
 
 ## Alternate code:
 
-The author has provided us a spoiler version:
+The author provided us a spoiler version that might be of interest to some.
+
+
+### Alternate build:
 
 ```sh
 make tvr.alt
+```
+
+
+### Alternate use:
+
+```sh
 ./tvr.alt altmode screensize/2 < colormapfile
 ```
 

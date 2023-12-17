@@ -1853,10 +1853,11 @@ calls which has the four args.
 
 ## <a name="1995_vanschnitz"></a>[1995/vanschnitz](/1995/vanschnitz/vanschnitz.c) ([README.md](/1995/vanschnitz/README.md))
 
-[Cody](#cody) added the authors' [spoiler as a C file](/1995/vanschnitz/spoiler.c) as in
-2023 we have decided that in most cases all the code should be available for the
-wider audience, without having to extract it. The exception is when the files
-are created by the entry or the entry decrypts the text or whatever else.
+[Cody](#cody) added the authors' [spoiler as a C
+file](/1995/vanschnitz/vanschnitz.alt.c) as in 2023 we have decided that in most
+cases all the code should be available for the wider audience, without having to
+extract it. The exception is when the files are created by the entry or the
+entry decrypts the text or something like that.
 
 
 # <a name="1996"></a>1996
@@ -2032,7 +2033,7 @@ be done in modern systems) to be `_int`.
 to be `int` (in both versions).
 
 Cody added the scripts [try.sh](/1998/dlowe/try.sh),
-[pootify.sh](/1998/dlowe/pootify.sh) and
+[try.alt.sh](/1998/dlowe/try.alt.sh), [pootify.sh](/1998/dlowe/pootify.sh) and
 [pootify.cgi.sh](/1998/dlowe/pootify.cgi.sh) for a fun example use of the
 program, a local pootifier of web pages and a CGI pootifier. It should be noted
 that the CGI version might have an issue with modern systems; see [historical

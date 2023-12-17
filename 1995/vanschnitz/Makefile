@@ -39,7 +39,7 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-extra-tokens \
-	-Wno-overlength-strings -Wno-strict-prototypes
+	-Wno-overlength-strings -Wno-strict-prototypes -Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -112,8 +112,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 LEVEL= 5
 
@@ -137,6 +137,9 @@ ${PROG}: ${PROG}.c
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # data files
 #

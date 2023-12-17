@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # 
-# try.sh - try out 1998/dlowe pootifier
+# try.sh - try out 1998/dlowe pootifier alt code
 #
 
-make all || exit 1
+make everything || exit 1
 
 CAT="$(type -P cat)"
 MAN="$(type -P man)"
@@ -22,9 +22,15 @@ fi
 
 rm -f make.1
 read -r -n 1 -p "Press any key to pootify make(1): "
-"$MAN" make | "$COL" -b | ./dlowe > make.1
+"$MAN" make | "$COL" -b | ./dlowe.alt > make.1
 "$MAN" ./make.1
 
 read -r -n 1 -p "Press any key to pootify dlowe.c: "
 echo 1>&2
-./dlowe < dlowe.c
+./dlowe.alt < dlowe.c
+echo 1>&2
+
+read -r -n 1 -p "Press any key to pootify dlowe.alt.c: "
+echo 1>&2
+./dlowe.alt < dlowe.alt.c
+echo 1>&2

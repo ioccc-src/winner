@@ -45,6 +45,11 @@ Archive](http://modarchive.org).
 
 ## Alternate code:
 
+This version is based on the author's remarks and it should work for Windows.
+
+
+### Alternate build:
+
 Assuming that `make` is similar enough try:
 
 ```sh
