@@ -4,6 +4,9 @@
 make all
 ```
 
+There is an alternate version of this program. See [Alternate
+code](#alternate-code) below for details.
+
 
 ## To use:
 
@@ -47,15 +50,19 @@ Sorry, this is third!
 
 ## Alternate code:
 
-An alternate version of this entry, [buzzard.2.alt.c](buzzard.2.alt.c), is
-provided.  This alternate code does not contain a fix that the author notes
-below.
+This alternate version, [buzzard.2.alt.c](buzzard.2.alt.c), does not contain a
+fix that the author notes in their remarks.
+
+### Alternate build:
 
 To compile this alternate version:
 
 ```sh
 make alt
 ```
+
+
+### Alternate use:
 
 Use `buzzard.2.alt` as you would `buzzard.2` above.
 
