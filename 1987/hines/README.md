@@ -19,18 +19,6 @@ make all
 ```
 
 
-## Alternate code:
-
-An alternate version of this entry is in [hines.alt.c](hines.alt.c). With older
-compilers you can try the alt version:
-
-```sh
-make alt
-```
-
-Use `hines.alt` as you would `hines` above.
-
-
 ## Judges' remarks:
 
 This program was designed to maximize the bother function for
