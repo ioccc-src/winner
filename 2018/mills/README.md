@@ -4,12 +4,25 @@
 make
 ```
 
+If you wish to save state so that you can run the program and keep files changed
+(for instance you don't want to compile `mullender.c` again) you can compile it
+like:
+
+```sh
+make clobber SAVE=1 all
+```
+
+Make sure that if you do add a file (including by compiling code) that before
+you exit (ctrl-e) you type in `sync`! Otherwise the file might not exist or it
+will be corrupt if it does.
+
 
 ### Bugs and (Mis)features:
 
 The current status of this entry is:
 
 ```
+STATUS: known bug - please help us fix
 STATUS: INABIAF - please **DO NOT** fix
 ```
 

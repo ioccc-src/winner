@@ -3185,9 +3185,24 @@ but this is expected and the file `ioccc.html` will be generated properly.
 
 ## 2018 mills
 
-### STATUS: INABIAF - please **DO NOT** fix
+### STATUS: known bug - please help us fix
 ### Source code: [2018/mills/prog.c](2018/mills/prog.c)
 ### Information: [2018/mills/README.md](2018/mills/README.md)
+
+After exiting the program (with ctrl-e) if you try running it again you will
+likely see:
+
+```
+>bootT5pw
+         ]h_	8D3[]
+```
+
+where `[]` is the cursor. When this happens if you hit enter (this is necessary
+or else it'll happen again) and then exit again (ctrl-e) and run `prog` again
+it'll be okay.
+
+
+### STATUS: INABIAF - please **DO NOT** fix
 
 The author stated that if you make a typo it can happen that the boot loader can
 crash and halt. If this is the case type ctrl-e to quit the emulator and try
@@ -3198,7 +3213,11 @@ do this you should type `make clobber all` and try again.
 
 Cody caused a funny problem where it showed `ERROR` after each command. The
 solution was to hit ctrl-e and start again. He does not know if this is what was
-referred to by the author though he doesn't think he made a typo either.
+referred to by the author but there was likely no typo involved.
+
+Cody notes that if you are using the saved mode you must type `sync` prior to
+exiting the program or else the next time you run it the file will not exist (or
+in the case of compiled code it won't be executable).
 
 
 ## 2018 vokes
@@ -3380,6 +3399,21 @@ touched either.
 
 This program will not validate input so it might fail or get stuck if invoked
 erroneously.
+
+
+## 2019 yang
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2019/yang/prog.c](2019/yang/prog.c)
+### Information: [2019/yang/README.md](2019/yang/README.md)
+
+The author noted that if the program runs out of memory it is likely to crash.
+
+The author also stated that 'if input contains CR-LF end of line sequences,
+those `CR`s are silently dropped.  In fact, most control codes are silently
+ignored except line feeds (preserved) and tabs (expanded to 8 spaces).'
+
+
 
 
 # 2020

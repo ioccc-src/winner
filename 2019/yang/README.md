@@ -5,6 +5,17 @@ make
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2019 yang in bugs.md](/bugs.md#2019-yang).
+
+
 ## To use:
 
 ```sh
@@ -25,28 +36,7 @@ cat a b c d | ./prog
 ### Try:
 
 ```sh
-./prog prog.c a b c d e
-
-cat a
-
-cat b
-
-cat c
-
-cat d
-
-cat e
-
-cat a b c d e | ./prog
-
-cat a b c d e | ./prog | diff - prog.c
-
-./prog prog.c | ruby prog.c
-
-
-./prog violet.c | ruby prog.c
-
-./prog violet.c | ruby violet.c
+./try.sh
 ```
 
 
@@ -108,13 +98,13 @@ can simply use `cat` to unscramble the output text.
 cat output.txt
 ```
 
-It might seem like nothing was scrambled, but you can try passing the
-output through `strings(1)` and see that most of the original strings
-are gone.  What happened is that the original text has been shuffled
-with ANSI cursor positioning codes inserted such that characters are
-printed in random order.  This effect is more visible if there is a
-delay after each character is printed.  For convenience, a utility is
-included in the source to output characters slowly:
+It might seem like nothing was scrambled, but you can try passing the output
+through `strings(1)` and see that most of the original strings are gone.  What
+happened is that the original text has been shuffled with ANSI cursor
+positioning codes inserted in such a way that characters are printed in random
+order.  This effect is more visible if there is a delay after each character is
+printed.  For convenience, a utility is included in the source to output
+characters slowly:
 
 ```sh
 ./prog input.txt | ruby prog.c
@@ -146,14 +136,14 @@ For files that are larger than your terminal window, `cat` will not be
 sufficient for unscrambling because any scrolling causes the character
 positions to be misaligned.  But fear not, this utility also includes
 unscrambling functionality.  If no argument is specified, input will
-be read through stdin and unscrambled to stdout:
+be read through `stdin` and unscrambled to `stdout`:
 
 ```sh
 ./prog < scrambled.txt > unscrambled.txt
 ```
 
 Where this is useful is that if you scramble the input to multiple
-files and unscramble each output files individually, those output
+files and unscramble each output file individually, those output
 files can be printed on transparencies and distributed separately.
 
 ```sh
@@ -181,8 +171,8 @@ A simple text scrambling utility might not have required a screenful
 of code, but this particular one natively supports UTF-8.
 Specifically: individual UTF-8 byte sequences will not be split into
 broken ones, and the utility is aware of full-width versus half-width
-differences such that cursor is positioned correctly for most CJK
-input.  `sample_input.txt` demonstrates this feature with a mix of
+differences such that the cursor is positioned correctly for most CJK
+input.  [sample_input.txt](sample_input.txt) demonstrates this feature with a mix of
 Basic Latin and Japanese characters.
 
 Output cursor positions will most definitely be wrong for inputs
@@ -191,16 +181,18 @@ be possible to unscramble those text back to the original using this
 same utility, since the utility is self-consistent in how cursor
 positions are handled.
 
+
 ### Error handling
 
 If any file can not be opened for reading or writing, an error is
-printed to stderr, and the utility will exit with nonzero status.
+printed to `stderr`, and the utility will exit with nonzero status.
 
 If there isn't enough memory, the utility will likely crash.
 
-If input contains CR-LF end of line sequences, those CRs are silently
+If input contains CR-LF end of line sequences, those `CR`s are silently
 dropped.  In fact, most control codes are silently ignored except line
 feeds (preserved) and tabs (expanded to 8 spaces).
+
 
 ### Compatibility
 
@@ -212,13 +204,13 @@ Verified to work and compiles without warnings on these environments:
    * clang 5.0.1 on Cygwin
    * gcc 4.8.4 on Linux
 
+
 ### Full version
 
-I tried really hard to make `prog.c` fit in a 80x25 terminal without
-wrapping.  If I were not constrained by space, I would have made an
-ASCII art out of it.  `violet.c` is that program, and also comes with
-the minor benefit of supporting lines longer than a million columns
-depending on `sizeof(int)`.
+I tried really hard to make `prog.c` fit in a 80x25 terminal without wrapping.
+If I were not constrained by space, I would have made an ASCII art out of it.
+[violet.c](violet.c) is that program, and also comes with the minor benefit of
+supporting lines longer than a million columns depending on `sizeof(int)`.
 
 Violet is named after [Violet
 Evergarden](https://en.wikipedia.org/wiki/Violet_Evergarden) in the story with

@@ -9,6 +9,15 @@ e
 indent
 indent.c
 indent.o
+input.txt
+original.txt
 output.txt
+output1.txt
+output2.txt
 prog
 prog.orig
+scrambled.txt
+scrambled1.txt
+scrambled2.txt
+scrambled3.txt
+unscrambled.txt
