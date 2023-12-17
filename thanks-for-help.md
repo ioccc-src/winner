@@ -1853,10 +1853,11 @@ calls which has the four args.
 
 ## <a name="1995_vanschnitz"></a>[1995/vanschnitz](/1995/vanschnitz/vanschnitz.c) ([README.md](/1995/vanschnitz/README.md))
 
-[Cody](#cody) added the authors' [spoiler as a C file](/1995/vanschnitz/spoiler.c) as in
-2023 we have decided that in most cases all the code should be available for the
-wider audience, without having to extract it. The exception is when the files
-are created by the entry or the entry decrypts the text or whatever else.
+[Cody](#cody) added the authors' [spoiler as a C
+file](/1995/vanschnitz/vanschnitz.alt.c) as in 2023 we have decided that in most
+cases all the code should be available for the wider audience, without having to
+extract it. The exception is when the files are created by the entry or the
+entry decrypts the text or something like that.
 
 
 # <a name="1996"></a>1996

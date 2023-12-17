@@ -4,6 +4,9 @@
 make all
 ```
 
+The authors provided a spoiler version, originally uuencoded but uudecoded by us
+in 2023. See [Alternate code](#alternate-code) below.
+
 
 ### Bugs and (Mis)features:
 
@@ -34,9 +37,21 @@ make clobber all LEVEL=6
 ## Alternate code:
 
 The authors provided a spoiler version of the program. Originally uuencoded we
-have decoded it for the wider audience in [spoiler.c](spoiler.c). The
+have decoded it for the wider audience in [vanschnitz.alt.c](vanschnitz.alt.c). The
 `uuencode`d blob is still available in their remarks below. They encourage you
 to first try and figure out the program without the spoiler.
+
+
+### Alternate build:
+
+```sh
+make alt
+```
+
+
+### Alternate use:
+
+Use `vanschnitz.alt` as you would `vanschnitz` above.
 
 
 ## Judges' remarks:
