@@ -5,7 +5,8 @@ make all
 ```
 
 NOTE: this version is a fixed version for modern C compilers. See the [Alternate
-code](#alternate-code) section below for how to use the original.
+code](#alternate-code) section below for how to use the original and why one
+might wish to do so.
 
 
 ### Try:
@@ -21,6 +22,30 @@ Also try:
 ```
 
 to show the code with followed by the result so you can truly see the magic.
+
+
+## Alternate code:
+
+This version is the original which might not work as you expect nowadays.
+
+
+### Alternate build:
+
+```sh
+make alt
+```
+
+
+### Alternate use:
+
+To see if your compiler has the problem described in the Judges' remarks below,
+try:
+
+```sh
+./westley.alt
+```
+
+Does it show the same output as `westley`?
 
 
 ## Judges' remarks:
@@ -50,17 +75,6 @@ You might enjoy looking at the output of:
 cc -E westley.alt.c
 ```
 
-
-## Alternate code:
-
-To see if your compiler has the problem described above try:
-
-```sh
-make alt
-./westley.alt
-```
-
-Does it show the same output as `westley`?
 
 
 ## Author's remarks:

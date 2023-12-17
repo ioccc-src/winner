@@ -676,11 +676,12 @@ was fixed by Misha Dynin, based on the judges' remarks, so that this would work
 with modern C compilers. We encourage you to try the alternate version to see
 what happens with current compilers! See the README.md files for details.
 
-[Cody](#cody) changed the `int`s to be `float` as that's what they are printed as: not
-strictly necessary but nonetheless more correct, even if not warned against.
-
-Cody added the [try.sh](/1988/westley/try.sh) script to show the magic of the
+[Cody](#cody) added the [try.sh](/1988/westley/try.sh) script to show the magic of the
 entry as seeing the code with the result at once is far more beautiful.
+
+Cody also changed the `int`s to be `float` as that's what they are printed as:
+not strictly necessary but nonetheless more correct, even if not warned against.
+
 
 
 
