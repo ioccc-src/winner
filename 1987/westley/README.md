@@ -12,18 +12,6 @@ make all
 ```
 
 
-## Alternate code:
-
-If you have an older compiler you can try compiling the original source code
-which is true symmetry:
-
-```sh
-make alt
-```
-
-Use `westley.alt` as you would `westley` above.
-
-
 ## Judges' remarks:
 
 `putchar()` must exist in the C library and not just as a macro.
