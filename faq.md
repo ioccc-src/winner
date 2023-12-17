@@ -1921,12 +1921,12 @@ Machine](https://web.archive.org) and see if you can find the last non 4xx non
 valuable.  Other times you might find it with a web search.
 
 Some links were changed to more recent URLs by doing this exact
-same thing.  Some links, while they real a valid web page, no longer
+same thing.  Some links, while they were a valid web page, no longer
 reach the intended web page (for example when the domain is sold
 and the new domain owner's content no longer provides the content
-that was originally intended.  And while the content of the web
+that was originally intended .. and while the content of the web
 page may be humorous to some, the original content may have literally
-gone "up in smoke".
+gone "up in smoke").
 
 In cases where the original content is lost, try searching for it on
 the [Internet Wayback Machine](https://web.archive.org).  When searching
