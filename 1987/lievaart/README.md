@@ -4,9 +4,6 @@
 make all
 ```
 
-There is [Alternate code](#alternate-code) available for if you have an old
-enough compiler.
-
 
 ## To use:
 
@@ -24,17 +21,6 @@ To see what it would have looked like without the size restrictions:
 ./lievaart2
 # enter a level and start playing as described below
 ```
-
-
-## Alternate code:
-
-If you have an old enough compiler you might wish to try using it. To use:
-
-```sh
-make alt
-```
-
-Use `./lievaart.alt` as you would `./lievaart` above.
 
 
 ## Judges' remarks:

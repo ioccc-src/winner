@@ -38,7 +38,8 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-deprecated-non-prototype
+CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-deprecated-non-prototype \
+	  -Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -111,8 +112,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG}
 #
-ALT_OBJ= ${PROG}.alt.o
-ALT_TARGET= ${PROG}.alt
+ALT_OBJ=
+ALT_TARGET=
 
 
 #################
@@ -134,10 +135,6 @@ ${PROG}: ${PROG}.c
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
-
-${PROG}.alt: ${PROG}.alt.c
-	@echo "NOTE: The original source might not compile using modern compilers."
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # data files
 #
