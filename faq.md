@@ -57,7 +57,7 @@ other inconsistencies with the original entry?](#faq4_3)
 - [5.3  - How may I report an IOCCC web site problem?](#faq5_3)
 - [5.4  - How may I submit a fix to the IOCCC web site?](#faq5_4)
 - [5.5  - How may I correct or update IOCCC author information?](#faq5_5)
-- [5.6  - I found a dead or invalid link. What should I do?](#faq5_6)
+- [5.6  - What should I do if I find a broken or wrong web link?](#faq5_6)
 
 ## Section  6 - [Miscellaneous IOCCC](#faq6)
 - [6.0  - How did an entry that breaks the size rule 2 win the IOCCC?](#faq6_0)
@@ -1906,11 +1906,11 @@ against the master [branch](https://github.com/ioccc-src/winner/branches)
 of the [ioccc-src/winner repo](https://github.com/ioccc-src/winner).
 
 
-## <a name="faq5_6"></a><a name="fix_link"></a>FAQ 5.6: I found a dead or invalid link. What should I do?
+## <a name="faq5_6"></a><a name="fix_link"></a>FAQ 5.6: What should I do if I find a broken or wrong web link?
 
-If you just wish to report the issue, see [FAQ 5.3](#faq5_3).
-
-If however you wish to fix it you may open a GitHub pull request as described in
+We would appreciate if you try to fix the broken (the link goes nowhere) or wrong
+(the link goes to something that clearly is not the original intent) web link.
+If wish to fix such links, you may open a GitHub pull request as described in
 [FAQ 5.4](#faq5_4). In the case of dead links or invalid links it doesn't matter
 if it's a specific winner or not; the procedure is the same: open a pull request
 to fix the problem.
@@ -1918,36 +1918,39 @@ to fix the problem.
 As far as how to find the updated link you can try using the [Internet Wayback
 Machine](https://web.archive.org) and see if you can find the last non 4xx non
 3xx page. Note, however, that just because it redirects, does not mean it's not
-valuable. Some links were changed to more recent URLs by doing this exact same
-thing. Other times you might find it with a web search. It isn't always the same
-process.
+valuable.  Other times you might find it with a web search.
+
+Some links were changed to more recent URLs by doing this exact
+same thing.  Some links, while they real a valid web page, no longer
+reach the intended web page (for example when the domain is sold
+and the new domain owner's content no longer provides the content
+that was originally intended.  And while the content of the web
+page may be humorous to some, the original content may have literally
+gone "up in smoke".
+
+In cases where the original content is lost, try searching for it on
+the [Internet Wayback Machine](https://web.archive.org).  When searching
+look back for dates that are around the year of given IOCCC contest.
+If you do find the original content in Internet archive history,
+please consider submitting a change to replace the link accordingly.
 
 If there is no alternative that you can find you might want to remove the link
-instead.
+instead by replacing the link with just phrase of text.  For example,
+if the text in some `README.md` file was:
 
-Once the update is in place you can then open a pull request as described
-earlier.
+```
+See the [author's description of the program](https://example.com) for more information.
+```
 
+Assuming that the author's description cannot be found in the
+[Internet Wayback Machine](https://web.archive.org) archive, then
+replace that text with:
 
-### What is an invalid link?
+```
+See the **author's description of the program** (sorry the content is no longer available) for more information.
+```
 
-A classic example is that of Stephen Sykes's domain which had expired and then
-bought again by a drug dispensary company. If you're more curious than that (or
-maybe want a laugh :-) ) see commit b4e480a7cf6ef5e3c072f00d59daf12a394faede. In
-any case obviously this had to be fixed and this is an example of an invalid
-link albeit an extreme one.
-
-
-### A general note about fixing links
-
-It should be noted that although many links have been fixed, many will not be
-fixed. Cody Boone Ferguson created a script that detected many dead links but
-it's not perfect and there are just too many to go through, especially as it is
-a very laborious task to copy and paste all the links into the Internet Wayback
-Machine and even more so because even if it appears okay it does not mean it
-is okay so every link would still have to be checked (an example of why this is
-is given above). It is more useful to fix links to pages/files in the IOCCC
-website itself.
+If you just wish to report the bad link issue, see [FAQ 5.3](#faq5_3).
 
 
 ## <a name="faq6"></a>Section 6: Miscellaneous IOCCC

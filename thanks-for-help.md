@@ -4399,6 +4399,16 @@ typo/consistency fixes, improving **ALL _Makefiles_** and writing
 for your extensive efforts in helping improve the IOCCC presentation of past
 IOCCC winners and fixing almost all past entries for modern systems!
 
+Cody Boone Ferguson also used one of his own tools to detect many
+dead links.  While the tool was not perfect it went a long way
+to uncover a good number of bad, broken or otherwise invalid links.
+It was a very laborious task to copy and paste problematic links
+into the Internet Wayback Machine in an effort to try and find
+otherwise lost content.  A good number of links that now refer to
+something in the [Internet Wayback Machine](https://web.archive.org)
+archive replaced bad, broken, or otherwise invalid links thanks to
+Cody's efforts!
+
 
 ### <a name="yusuke"></a>Yusuke
 
