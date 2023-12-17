@@ -3747,9 +3747,10 @@ which let one configure the width and height of the game.
 
 ## <a name="2014_maffiodo2"></a>[2014/maffiodo2](/2014/maffiodo2/prog.c) ([README.md](/2014/maffiodo2/README.md]))
 
-[Cody](#cody) added the [try.sh](/2014/maffiodo2/try.sh) script and the
-[alternate code](/2014/maffiodo2/README.md#alternate-code) provided by the
-author.
+[Cody](#cody) added the [try.sh](/2014/maffiodo2/try.sh) script.
+
+He also added the [alternate code](/2014/maffiodo2/README.md#alternate-code)
+provided by the author.
 
 
 ## <a name="2014_morgan"></a>[2014/morgan](/2014/morgan/prog.c) ([README.md](/2014/morgan/README.md))
