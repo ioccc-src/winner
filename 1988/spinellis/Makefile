@@ -38,11 +38,11 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE= -Wno-empty-translation-unit
+CSILENCE= -Wno-everything
 
 # Common C compiler warning flags
 #
-CWARN= -Wall -Wextra -pedantic ${CSILENCE}
+CWARN= ${CSILENCE}
 
 # Compiler standard
 #
@@ -83,9 +83,9 @@ CC= cc
 #
 ifeq "$(findstring $(CLANG),${CC})" "$(CLANG)"
 #
-CSILENCE+= -Wno-empty-translation-unit -Wno-poison-system-directories
+CSILENCE+=
 #
-CWARN+= -Weverything
+CWARN+=
 #
 endif
 
@@ -93,9 +93,9 @@ endif
 #
 ifeq "$(findstring $(GCC),${CC})" "$(GCC)"
 #
-#CSILENCE+=
+CSILENCE+= -w
 #
-#CWARN+=
+CWARN+=
 #
 endif
 
@@ -128,11 +128,31 @@ all: data ${TARGET}
 	sandwich supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c input.txt
-	@echo "NOTE: this entry will not compile with some compilers like clang."
-	@echo "NOTE: use make alt for clang."
-	@echo Now run the following command:
-	${RM} -f $@
-	@echo ${CC} ${CFLAGS} $< -o $@ ${LDFLAGS} '<' input.txt '&&' ./${PROG}
+	@${RM} -f $@
+	@echo
+	@echo "Hello, world!  To compile this IOCCC winner, we need you to take change."
+	@echo
+	@echo "IMPORTANT NOTE:"
+	@echo
+	@echo "	This entry is likely to NOT compile with some compilers like clang, NOR will it likely"
+	@echo "	to compile under macOS.  For those situations, try this instead:"
+	@echo
+	@echo "	make clobber alt"
+	@echo
+	@echo "For non-macOS hosts with a true gcc compiler, manually run the following command:"
+	@echo
+	@echo ${GCC} ${CFLAGS} ${PROG}.c -o $@ ${LDFLAGS}
+	@echo
+	@echo "Next copy and paste (on a non-macOS host) the folowwing as input to the above command:"
+	@echo
+	@${CAT} input.txt
+	@echo
+	@echo "After pasing the above, end input by providing an EOF (usually control-D)."
+	@echo
+	@echo "Finally run the program you have just compiled:"
+	@echo
+	@echo "./$@"
+	@echo
 
 # alternative executable
 #
@@ -140,9 +160,25 @@ alt: data ${ALT_TARGET}
 	@${TRUE}
 
 ${PROG}.alt: ${PROG}.alt.c input.txt
-	${CC} ${CFLAGS} -Wno-implicit-function-declaration $< -o $@ ${LDFLAGS}
-	@echo Now run the following command:
-	@echo ./${PROG}.alt '<' input.txt '&&' ./${PROG}.alt
+	@${RM} -f $@ runme
+	${CC} ${CFLAGS} ${PROG}.alt.c -o $@ ${LDFLAGS}
+	@echo
+	@echo "Hello, world!  To compile this IOCCC winner, we need you to take change."
+	@echo
+	@echo "Run the following command:"
+	@echo
+	@echo "./$@"
+	@echo
+	@echo "Next copy and paste the folowwing as input to the above command:"
+	@echo
+	@${CAT} input.txt
+	@echo
+	@echo "After pasing the above, end input by providing an EOF (usually control-D)."
+	@echo
+	@echo "Finally run the this progrqm:"
+	@echo
+	@echo "./runme"
+	@echo
 
 # data files
 #
@@ -202,7 +238,6 @@ diff_alt_orig:
 #
 clean:
 	${RM} -f ${OBJ} ${ALT_OBJ}
-	${RM} -f prog.c prog.o
 	@-if [ -f indent.c ]; then \
 	    echo ${RM} -f indent.c; \
 	    ${RM} -f indent.c; \
@@ -215,7 +250,7 @@ clobber: clean
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
 	fi
-	${RM} -f prog
+	${RM} -f runme
 
 install:
 	@echo "Dr. Spock says that is not logical!"

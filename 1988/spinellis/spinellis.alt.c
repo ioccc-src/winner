@@ -1,1 +1,1 @@
-int main(void){system("rm -f spinellis.alt; cc -x c - -o spinellis.alt");return 0;}
+int main(void){system("cc -x c -Wno-everything - -o runme");return 0;}
