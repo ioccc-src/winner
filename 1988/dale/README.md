@@ -34,19 +34,6 @@ behaviour?
 ```
 
 
-## Alternate code:
-
-If you have an old enough compiler you can try the original version in
-[dale.alt.c](dale.alt.c). To use:
-
-```sh
-make clobber alt
-```
-
-Use `dale.alt` as you would `dale` above. To understand the differences in more
-detail, see [thanks-for-help.md](/thanks-for-help.md).
-
-
 ## Judges' remarks:
 
 This entry has a very twisted flow of control via recursion, iteration
