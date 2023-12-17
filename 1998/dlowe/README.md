@@ -4,6 +4,9 @@
 make all
 ```
 
+There is an alternate version available. See [Alternate code](#alternate-code)
+below for more details.
+
 
 ## To use:
 
@@ -42,15 +45,32 @@ Also try:
 
 ## Alternate code:
 
-NOTE: The original entry was just a text based pootifier.  To build
-that version try:
+The original entry was just a text based pootifier. This alternate version is
+that program.
+
+
+### Alternate build:
 
 ```sh
 make alt
+```
+
+
+### Alternate use:
+
+
+```
 ./dlowe.alt < anyfile > pootfile
 ```
 
 What's the difference between this and `dlowe`?
+
+
+### Alternate try:
+
+```sh
+./try.alt.sh
+```
 
 
 ## Judges' remarks:
