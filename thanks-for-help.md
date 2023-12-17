@@ -4212,6 +4212,14 @@ He also added the script [try.sh](/2019/karns/try.sh) to showcase the entry a
 bit more easily.
 
 
+## <a name="2019_yang"></a>[2019/yang](/2019/yang/prog.c) ([README.md](/2019/yang/README.md]))
+
+[Cody](#cody) added the [try.sh](/2019/yang/try.sh) script which also involved
+slightly updating the [sample_input.txt](/2019/yang/sample_input.txt) file
+(removed trailing newlines as it resulted in `diff` showing differences when it
+shouldn't) and adding the [ioccc.txt](/2019/yang/ioccc.txt) file.
+
+
 # <a name="2020"></a>2020
 
 

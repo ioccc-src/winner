@@ -3401,6 +3401,21 @@ This program will not validate input so it might fail or get stuck if invoked
 erroneously.
 
 
+## 2019 yang
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2019/yang/prog.c](2019/yang/prog.c)
+### Information: [2019/yang/README.md](2019/yang/README.md)
+
+The author noted that if the program runs out of memory it is likely to crash.
+
+The author also stated that 'if input contains CR-LF end of line sequences,
+those `CR`s are silently dropped.  In fact, most control codes are silently
+ignored except line feeds (preserved) and tabs (expanded to 8 spaces).'
+
+
+
+
 # 2020
 
 
