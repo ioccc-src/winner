@@ -4370,7 +4370,7 @@ judges](https://www.ioccc.org/judges.html) **VERY MUCH APPRECIATE** those who
 helped improve the presentation of their fellow IOCCC winners.
 
 
-### <a name="cody"></a>Cody
+### <a name="cody"></a>Cody Boone Ferguson
 
 We call out the extensive contributions of [Cody Boone
 Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson) who is
@@ -4406,11 +4406,11 @@ It was a very laborious task to copy and paste problematic links
 into the Internet Wayback Machine in an effort to try and find
 otherwise lost content.  A good number of links that now refer to
 something in the [Internet Wayback Machine](https://web.archive.org)
-archive replaced bad, broken, or otherwise invalid links thanks to
+archive replaced bad, broken, or otherwise invalid links are thanks to
 Cody's efforts!
 
 
-### <a name="yusuke"></a>Yusuke
+### <a name="yusuke"></a>Yusuke Endoh
 
 [Yusuke Endoh](https://www.ioccc.org/winners.html#Yusuke_Endoh) supplied a
 number of important bug fixes to a number of past IOCCC winners. Some of those
