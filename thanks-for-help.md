@@ -4383,11 +4383,11 @@ HARD bug fixes** like [1988/phillipps](/thanks-for-help.md#1988_phillipps),
 [2005/giljade](/thanks-for-help.md#2005_giljade), making entries like
 [1985/sicherman](/thanks-for-help.md#1985_sicherman) and
 [1986/wall](/thanks-for-help.md#1986_wall) not need `-traditional-cpp` (all
-**EXTREMELY HARD**), fixing entries to work with clang (some being **EXTREMELY
-HARD** like [1991/dds](/thanks-for-help.md#1991_dds) or as much as possible
-(like [1989/westley](/thanks-for-help.md#1989_westley), a true masterpiece that
-is **INCREDIBLY HARD, _MUCH, MUCH MORE SO_ than any other fix!**), porting
-entries to macOS (some being **EXTREMELY HARD** like
+**EXTREMELY HARD**), fixing entries to work with clang (some **EXTREMELY
+HARD** like [1991/dds](/thanks-for-help.md#1991_dds)) or as much as possible
+([1989/westley](/thanks-for-help.md#1989_westley), a true masterpiece that
+is **INCREDIBLY HARD, *MUCH MORE SO* than any other fix!**), porting
+entries to macOS (some **EXTREMELY HARD** like
 [1998/schweikh1](/thanks-for-help.md#1998_schweikh1), fixing code like
 [2001/herrmann2](/thanks-for-help.md#2001_herrmann2) to work in both
 32-bit/64-bit which *can be* **EXTREMELY HARD**, providing alternate code where
@@ -4403,7 +4403,8 @@ into the Internet Wayback Machine in an effort to try and find
 otherwise lost content.  A good number of links that now refer to
 something in the [Internet Wayback Machine](https://web.archive.org)
 replace bad, broken, or otherwise invalid links are thanks to
-Cody's efforts!
+Cody's efforts! Another tool he wrote detected inconsistent award titles
+in the README files and CSV file (that he generated from the SQL file).
 
 **THANK YOU VERY MUCH** for your extensive efforts in helping improve the IOCCC
 presentation of past IOCCC winners and fixing almost all past entries for modern
