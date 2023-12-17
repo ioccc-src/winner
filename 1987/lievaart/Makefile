@@ -114,8 +114,8 @@ OBJ= ${PROG}.o ${PROG}2.o
 DATA=
 TARGET= ${PROG} ${PROG}2
 #
-ALT_OBJ= ${PROG}.alt.o ${PROG}2.alt.o
-ALT_TARGET= ${PROG}.alt ${PROG}2.alt
+ALT_OBJ=
+ALT_TARGET=
 
 
 #################
@@ -140,14 +140,6 @@ ${PROG}2: ${PROG}2.c
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
-
-${PROG}.alt: ${PROG}.alt.c
-	@echo "NOTE: The original source might not compile using modern compilers."
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
-
-${PROG}2.alt: ${PROG}2.alt.c
-	@echo "NOTE: The original source might not compile using modern compilers."
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # data files
 #
