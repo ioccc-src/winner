@@ -4066,6 +4066,18 @@ that's probably true: let's just say that for the IOCCC I'm (Cody) a weasel! :-)
 Cody also added the [try.sh](/2018/hou/try.sh) script.
 
 
+## <a name="2018_mills"></a>[2018/mills](/2018/mills/prog.c) ([README.md](/2018/mills/README.md))
+
+[Cody](#cody), based on the author's remarks, made it possible to save state
+between runs of the program so that one can resume where they left off. It
+should be noted that there is a bug in the entry (irrespective of save state
+option) where running `./prog` twice in a row involves having to hit (the second
+run) enter and then exit and then start the program again. Also if you do add a
+file you should run `sync` prior to exiting or else the file might not exist or
+it might be corrupt. See [2018/mills in bugs.md](/bugs.md#2018-mills) for more
+details on the bug.
+
+
 ## <a name="2018_poikola"></a>[2018/poikola](/2018/poikola/prog.c) ([README.md[(/2018/poikola/README.md))
 
 [Cody](#cody) added the missing `docs` rule to the Makefile that forms a PDF
