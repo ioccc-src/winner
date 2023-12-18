@@ -4194,6 +4194,19 @@ was to only correct spelling and only some, not to change wording or anything
 else).
 
 
+## <a name="2019_duble"></a>[2019/duble](/2019/duble/prog.c) ([README.md](/2019/duble/README.md]))
+
+[Cody](#cody) made the `make fullscreen` more portable by not relying on
+`stty(1)` and `sed(1)` but rather it just uses `tput(1)`. He also made it so
+that if `tput(1)` is not found it tells the user an easier way to compile the full
+screen size rather than having to modify the Makefile. This done with a script,
+[fullscreen.sh](/2019/duble/fullscreen.sh), to simplify the Makefile and provide
+an easy way to tell the user how to compile it, assuming that the environmental
+variables `LINES` and `COLUMNS` are set. But even if they're not set it explains
+how to easily compile the program to a specific size. Note that `LINES` and
+`COLUMNS` is not available to scripts so it can't make use of them that way.
+
+
 ## <a name="2019_endoh"></a>[2019/endoh](/2019/endoh/prog.c) ([README.md](/2019/endoh/README.md]))
 
 As this is a backtrace quine having the optimiser enabled is not a good idea so
