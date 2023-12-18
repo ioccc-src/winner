@@ -39,7 +39,6 @@
 1984,mullender,index.html,10,readme2index,null,html,true,browser,click here first,html
 1984,mullender,mullender.c,20,null,main,c,true,github,winning source,c
 1984,mullender,Makefile,30,null,null,makefile,true,github,Makefile,null
-1984,mullender,mullender.alt2.c,40,null,alt,c,true,github,alternate alternative source,c
 1984,mullender,mullender.alt.c,40,null,alt,c,true,github,alternative source,c
 1984,mullender,mullender.orig.c,50,null,orig,c,true,github,original source,c
 1984,mullender,a.out.h,150,null,null,c,true,github,head file for system who lack it,h
@@ -224,7 +223,6 @@
 1987,hines,index.html,10,readme2index,null,html,true,browser,click here first,html
 1987,hines,hines.c,20,null,main,c,true,github,winning source,c
 1987,hines,Makefile,30,null,null,makefile,true,github,Makefile,null
-1987,hines,hines.alt.c,40,null,alt,c,true,github,alternative source,c
 1987,hines,hines.orig.c,50,null,orig,c,true,github,original source,c
 1987,hines,1987_hines.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1987,hines,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
@@ -245,8 +243,6 @@
 1987,lievaart,index.html,10,readme2index,null,html,true,browser,click here first,html
 1987,lievaart,lievaart.c,20,null,main,c,true,github,winning source,c
 1987,lievaart,Makefile,30,null,null,makefile,true,github,Makefile,null
-1987,lievaart,lievaart2.alt.c,40,null,alt,c,true,github,alternative source,c
-1987,lievaart,lievaart.alt.c,40,null,alt,c,true,github,alternative source,c
 1987,lievaart,lievaart.orig.c,50,null,orig,c,true,github,original source,c
 1987,lievaart,lievaart2.c,150,null,null,c,true,github,source without size restriction,c
 1987,lievaart,1987_lievaart.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
@@ -268,7 +264,6 @@
 1987,westley,index.html,10,readme2index,null,html,true,browser,click here first,html
 1987,westley,westley.c,20,null,main,c,true,github,winning source,c
 1987,westley,Makefile,30,null,null,makefile,true,github,Makefile,null
-1987,westley,westley.alt.c,40,null,alt,c,true,github,alternative source,c
 1987,westley,westley.orig.c,50,null,orig,c,true,github,original source,c
 1987,westley,1987_westley.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1987,westley,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
@@ -290,7 +285,6 @@
 1988,dale,index.html,10,readme2index,null,html,true,browser,click here first,html
 1988,dale,dale.c,20,null,main,c,true,github,winning source,c
 1988,dale,Makefile,30,null,null,makefile,true,github,Makefile,null
-1988,dale,dale.alt.c,40,null,alt,c,true,github,alternative source,c
 1988,dale,dale.orig.c,50,null,orig,c,true,github,original source,c
 1988,dale,1988_dale.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1988,dale,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
@@ -1270,8 +1264,8 @@
 1995,vanschnitz,index.html,10,readme2index,null,html,true,browser,click here first,html
 1995,vanschnitz,vanschnitz.c,20,null,main,c,true,github,winning source,c
 1995,vanschnitz,Makefile,30,null,null,makefile,true,github,Makefile,null
+1995,vanschnitz,vanschnitz.alt.c,40,null,alt,c,true,github,alternative source,c
 1995,vanschnitz,vanschnitz.orig.c,50,null,orig,c,true,github,original source,c
-1995,vanschnitz,spoiler.c,200,null,null,c,true,github,SPOILER WARNING,c
 1995,vanschnitz,1995_vanschnitz.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1995,vanschnitz,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 1996,august,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -1478,6 +1472,7 @@
 1998,dlowe,dlowe.orig.c,50,null,orig,c,true,github,original source,c
 1998,dlowe,pootify.cgi.sh,100,null,null,shellscript,true,github,pootify CGI,sh
 1998,dlowe,pootify.sh,100,null,null,shellscript,true,github,pootify tool,sh
+1998,dlowe,try.alt.sh,100,null,null,shellscript,true,github,how to run alternative code,sh
 1998,dlowe,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1998,dlowe,1998_dlowe.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1998,dlowe,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
@@ -4016,6 +4011,7 @@
 2018,algmyr,prog.c,20,null,main,c,true,github,winning source,c
 2018,algmyr,Makefile,30,null,null,makefile,true,github,Makefile,null
 2018,algmyr,prog.orig.c,50,null,orig,c,true,github,original source,c
+2018,algmyr,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2018,algmyr,spoiler.png,200,null,null,image,true,browser,SPOILER WARNING,png
 2018,algmyr,2018_algmyr.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2018,algmyr,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
@@ -4028,6 +4024,7 @@
 2018,anderson,Makefile,30,null,null,makefile,true,github,Makefile,null
 2018,anderson,prog.alt.c,40,null,alt,c,true,github,alternative source,c
 2018,anderson,prog.orig.c,50,null,orig,c,true,github,original source,c
+2018,anderson,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2018,anderson,2018_anderson.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2018,anderson,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2018,bellard,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -4054,7 +4051,8 @@
 2018,burton1,Makefile,30,null,null,makefile,true,github,Makefile,null
 2018,burton1,prog.alt.c,40,null,alt,c,true,github,alternative source,c
 2018,burton1,prog.orig.c,50,null,orig,c,true,github,original source,c
-2018,burton1,scripthd,100,null,null,shellscript,true,github,driver program - adds several nice-to-have features,null
+2018,burton1,scripthd.sh,100,null,null,shellscript,true,github,driver program - adds several nice-to-have features,sh
+2018,burton1,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2018,burton1,2018_burton1.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2018,burton1,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2018,burton2,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -4066,10 +4064,11 @@
 2018,burton2,prog.c,20,null,main,c,true,github,winning source,c
 2018,burton2,Makefile,30,null,null,makefile,true,github,Makefile,null
 2018,burton2,prog.orig.c,50,null,orig,c,true,github,original source,c
-2018,burton2,READ_ME.txt,100,null,null,text,true,github,author supplied README,txt
 2018,burton2,discrepancies.html,100,md2html,null,html,true,browser,field-by-field difference between iocccsize and ion,html
-2018,burton2,freqcount,100,null,null,shellscript,true,github,frequency count utility,null
-2018,burton2,tac.man,100,null,null,man,true,github,tokenize and count man page,man
+2018,burton2,freqcount.sh,100,null,null,shellscript,true,github,frequency count utility,sh
+2018,burton2,tac.1,100,null,null,man,true,github,tokenize and count man page,1
+2018,burton2,tokcount.sh,100,null,null,shellscript,true,github,count the tokens produced by prog -t,sh
+2018,burton2,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2018,burton2,fixed_iocccsize.c,120,null,null,c,true,github,iocccsize with patch applied,c
 2018,burton2,iocccbug01.c,150,null,null,c,true,github,test cases demonstrating problems with iocccsize,c
 2018,burton2,iocccbug02.c,150,null,null,c,true,github,test cases demonstrating problems with iocccsize,c
@@ -4080,7 +4079,7 @@
 2018,burton2,ioccc.kw.freq,150,null,null,text,true,github,iocccsize keywords: sorted by 201x frequency,freq
 2018,burton2,ioc_without_quote,150,null,null,c,true,github,test suite data,null
 2018,burton2,manpage.sh,150,null,null,shellscript,true,github,turns ASCII versions of man into real man pages,sh
-2018,burton2,mkkeywords,150,null,null,shellscript,true,github,reads a file from variations produces string for prog.c,null
+2018,burton2,mkkeywords.sh,150,null,null,shellscript,true,github,reads a file from variations produces string for prog.c,sh
 2018,burton2,results.k,150,null,null,text,true,github,results with -k,k
 2018,burton2,tac.c,150,null,null,c,true,github,tokenize and count C-like languages,c
 2018,burton2,test01.c,150,null,null,c,true,github,test case source code,c
@@ -4111,10 +4110,10 @@
 2018,burton2,kandr2,200,null,null,text,true,github,reserved words for a given C standard,null
 2018,burton2,patch,200,null,null,patch,true,github,patch to fix iocccsize source,null
 2018,burton2,results,200,null,null,text,true,github,results without -k,null
-2018,burton2,runtest,200,null,null,shellscript,true,github,test suite,null
-2018,burton2,spotcheck,200,null,null,shellscript,true,github,script to test a lot of files vs iocccsize,null
+2018,burton2,runtest.sh,200,null,null,shellscript,true,github,test suite,sh
+2018,burton2,spotcheck.sh,200,null,null,shellscript,true,github,script to test a lot of files vs iocccsize,sh
 2018,burton2,v7unix,200,null,null,text,true,github,reserved words for a given C standard,null
-2018,burton2,spotdiff,250,null,null,shellscript,true,github,summarize the results of spotcheck,null
+2018,burton2,spotdiff.sh,250,null,null,shellscript,true,github,summarize the results of spotcheck,sh
 2018,burton2,2018_burton2.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2018,burton2,src.doc.txt,300,null,null,text,true,github,SPOILER WARNING hints about the source,txt
 2018,burton2,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
@@ -4142,6 +4141,7 @@
 2018,endoh1,golem.txt,100,null,null,text,true,github,input data,txt
 2018,endoh1,invisible.txt,100,null,null,text,true,github,input data,txt
 2018,endoh1,smily.txt,100,null,null,text,true,github,input data,txt
+2018,endoh1,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2018,endoh1,2018_endoh1.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2018,endoh1,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2018,endoh2,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -4153,6 +4153,9 @@
 2018,endoh2,Makefile,30,null,null,makefile,true,github,Makefile,null
 2018,endoh2,prog.orig.c,50,null,orig,c,true,github,original source,c
 2018,endoh2,run.sh,100,null,null,shellscript,true,github,how to run,sh
+2018,endoh2,try.sh,100,null,null,shellscript,true,github,how to run,sh
+2018,endoh2,python3.sh,150,null,null,shellscript,true,github,python3 rule script,sh
+2018,endoh2,python.sh,150,null,null,shellscript,true,github,python rule script,sh
 2018,endoh2,2018_endoh2.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2018,endoh2,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2018,ferguson,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -4223,6 +4226,7 @@
 2018,poikola,prog.c,20,null,main,c,true,github,winning source,c
 2018,poikola,Makefile,30,null,null,makefile,true,github,Makefile,null
 2018,poikola,prog.orig.c,50,null,orig,c,true,github,original source,c
+2018,poikola,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2018,poikola,poikola.tex,150,null,null,tex,true,github,supplied documentation,tex
 2018,poikola,prog-doc.c,150,null,null,c,true,github,minor change to winning source,c
 2018,poikola,2018_poikola.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
@@ -4250,6 +4254,7 @@
 2018,yang,prog.c,20,null,main,c,true,github,winning source,c
 2018,yang,Makefile,30,null,null,makefile,true,github,Makefile,null
 2018,yang,prog.orig.c,50,null,orig,c,true,github,original source,c
+2018,yang,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2018,yang,spoiler.html,200,null,null,html,true,browser,SPOILER WARNING,html
 2018,yang,2018_yang.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2018,yang,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
@@ -4261,7 +4266,9 @@
 2019,adamovsky,prog.c,20,null,main,c,true,github,winning source,c
 2019,adamovsky,Makefile,30,null,null,makefile,true,github,Makefile,null
 2019,adamovsky,prog.orig.c,50,null,orig,c,true,github,original source,c
+2019,adamovsky,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2019,adamovsky,advent.unl,200,null,null,text,true,github,unlambda script,unl
+2019,adamovsky,crash.unl,200,null,null,text,true,github,unlambda script,unl
 2019,adamovsky,iocccsize_2018.c,200,null,null,c,true,github,2018 iocccsize source,c
 2019,adamovsky,progSpoiler.c,200,null,null,c,true,github,SPOILER WARNING,c
 2019,adamovsky,sierpinski.unl,200,null,null,text,true,github,unlambda code,unl
@@ -4278,9 +4285,10 @@
 2019,burton,prog.c,20,null,main,c,true,github,winning source,c
 2019,burton,Makefile,30,null,null,makefile,true,github,Makefile,null
 2019,burton,prog.orig.c,50,null,orig,c,true,github,original source,c
-2019,burton,check,100,null,null,shellscript,true,github,test suite,null
-2019,burton,cow,100,null,null,shellscript,true,github,an alternate implementation with a useful interface,null
+2019,burton,check.sh,100,null,null,shellscript,true,github,test suite,sh
+2019,burton,cow.sh,100,null,null,shellscript,true,github,an alternate implementation with a useful interface,sh
 2019,burton,on.one.liners,100,null,null,text,true,github,on writing an IOCCC one-liner,liners
+2019,burton,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2019,burton,prog.clean.c,200,null,null,c,true,github,version of source without compilation warnings,c
 2019,burton,2019_burton.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2019,burton,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
@@ -4293,7 +4301,14 @@
 2019,ciura,Makefile,30,null,null,makefile,true,github,Makefile,null
 2019,ciura,prog.alt.c,40,null,alt,c,true,github,alternative source,c
 2019,ciura,prog.orig.c,50,null,orig,c,true,github,original source,c
+2019,ciura,de.alt.sh,100,null,null,shellscript,true,github,how to run alternative code in Germain,sh
+2019,ciura,en.alt.sh,100,null,null,shellscript,true,github,how to run alternative code in English,sh
 2019,ciura,getwords.sh,100,null,null,shellscript,true,github,how to run,sh
+2019,ciura,it.alt.sh,100,null,null,shellscript,true,github,how to run alternative code in Italian,sh
+2019,ciura,pl.alt.sh,100,null,null,shellscript,true,github,how to run alternative code in Polish,sh
+2019,ciura,ru.alt.sh,100,null,null,shellscript,true,github,how to run alternative code in Russian,sh
+2019,ciura,try.alt.sh,100,null,null,shellscript,true,github,how to run alternative code,sh
+2019,ciura,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2019,ciura,wrapprog.py,100,null,null,python,true,github,merge pangrams before passing them to prog,py
 2019,ciura,de.sh,150,null,null,shellscript,true,github,run with German data,sh
 2019,ciura,en.sh,150,null,null,shellscript,true,github,run with English data,sh
@@ -4301,6 +4316,7 @@
 2019,ciura,it.sh,150,null,null,shellscript,true,github,run with Italian data,sh
 2019,ciura,pl.sh,150,null,null,shellscript,true,github,run with Polish data,sh
 2019,ciura,ru.sh,150,null,null,shellscript,true,github,run with Russian data,sh
+2019,ciura,fasc5c.pdf,200,null,null,pdf,true,browser,The Art of Computer Programming vol 4 draft,pdf
 2019,ciura,2019_ciura.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2019,ciura,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2019,diels-grabsch1,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -4312,6 +4328,8 @@
 2019,diels-grabsch1,Makefile,30,null,null,makefile,true,github,Makefile,null
 2019,diels-grabsch1,prog.orig.c,50,null,orig,c,true,github,original source,c
 2019,diels-grabsch1,guidelines.txt,100,null,null,text,true,github,input data from 2018 IOCCC guidelines,txt
+2019,diels-grabsch1,try.sh,100,null,null,shellscript,true,github,how to run,sh
+2019,diels-grabsch1,Shakespeare.txt,200,null,null,text,false,github,Coriolanus by Shakespeare,txt
 2019,diels-grabsch1,2019_diels-grabsch1.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2019,diels-grabsch1,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2019,diels-grabsch2,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -4322,6 +4340,7 @@
 2019,diels-grabsch2,prog.c,20,null,main,c,true,github,winning source,c
 2019,diels-grabsch2,Makefile,30,null,null,makefile,true,github,Makefile,null
 2019,diels-grabsch2,prog.orig.c,50,null,orig,c,true,github,original source,c
+2019,diels-grabsch2,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2019,diels-grabsch2,2019_diels-grabsch2.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2019,diels-grabsch2,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2019,dogon,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -4343,6 +4362,7 @@
 2019,dogon,metacatacryst.mc,100,null,null,text,true,github,Golly macrocell input file,mc
 2019,dogon,metapixel-parity64.mc,100,null,null,text,true,github,Golly macrocell input file,mc
 2019,dogon,mosquito5.mc,100,null,null,text,true,github,Golly macrocell input file,mc
+2019,dogon,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2019,dogon,unlimited-novelty.mc,100,null,null,text,true,github,Golly macrocell input file,mc
 2019,dogon,apholife.c,150,null,null,c,true,github,partially obfuscated source,c
 2019,dogon,2019_dogon.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
@@ -4447,7 +4467,9 @@
 2019,yang,prog.c,20,null,main,c,true,github,winning source,c
 2019,yang,Makefile,30,null,null,makefile,true,github,Makefile,null
 2019,yang,prog.orig.c,50,null,orig,c,true,github,original source,c
+2019,yang,ioccc.txt,100,null,null,text,true,github,sample input,txt
 2019,yang,sample_input.txt,100,null,null,text,true,github,sample input,txt
+2019,yang,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2019,yang,violet.c,150,null,null,c,true,github,source formatter as ASCII Violet Evergarden,c
 2019,yang,spoiler.html,200,null,null,html,true,browser,SPOILER WARNING,html
 2019,yang,2019_yang.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
