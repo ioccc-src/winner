@@ -580,6 +580,25 @@ entries where the "created_by" (5th) field is non-null.  See
 This file is formed by the [fix_csv.sh](fix_csv.sh) tool.
 
 
+### [sample_getopt.sh](sample_getopt.sh)
+
+This is a demo of the 3 phase parse of command line options and
+arguments for that a markdown to HTML tool that uses the `inc/md2html.cfg`
+configuration file.
+
+Try:
+
+```sh
+./sample_getopt.sh -v 3 foo
+```
+
+This tool performs a somewhat complicated 3 phase getopt parse of
+simulated command line options and arguments that a tool converting
+markdown to HTML and using the `inc/md2html.cfg` configuration file
+would perform.  The tool does not actually use the  `inc/md2html.cfg`,
+it just simulates the complex 3 phase getopt parsing procedure.
+
+
 ### [sql/winners.sql](sql/winners.sql)
 
 This is a SQL file, extracted from another SQL file that was used in the past
@@ -612,6 +631,7 @@ Examples:
 ### [template-top.html](template-top.html)
 
 An HTML template for what goes into the top of constructed HTML pages.
+
 
 Constructed HTML pages will be as follows:
 
