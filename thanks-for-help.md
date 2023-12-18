@@ -4214,6 +4214,12 @@ As this is a backtrace quine having the optimiser enabled is not a good idea so
 compilation as debugging symbols might just be useful for an entry that's
 supposed to segfault :-)
 
+Cody also added the simple [ascii.c](/2019/endoh/ascii.c) that (while it has an
+arg) prints out the character of the ASCII value (uses `isascii(3)` first). This
+combined with the [try.sh](/2019/endoh/try.sh) script that he added allows one
+to easily reconstruct the source code through GDB by the fact it's a backtrace
+quine.
+
 
 ## <a name="2019_karns"></a>[2019/karns](/2019/karns/prog.c) ([README.md](/2019/karns/README.md]))
 

@@ -1,6 +1,7 @@
 #
 # sort with: sort -d -u
 *.dSYM
+ascii
 indent
 indent.c
 indent.o
