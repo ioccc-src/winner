@@ -6,7 +6,6 @@ indent.c
 indent.o
 prog.c
 prog.orig
-runme
 spinellis
 spinellis.alt
 spinellis.orig

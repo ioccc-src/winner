@@ -111,7 +111,7 @@ PROG= prog
 OBJ= ${PROG}.o
 CSRC= ${PROG}.o
 DATA=
-TARGET= ${PROG}
+TARGET= ${PROG} ascii
 #
 ALT_OBJ=
 ALT_TARGET=
@@ -131,6 +131,9 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} -g $< -o $@ ${LDFLAGS}
+
+ascii: ascii.c
+	${CC} $< -o $@
 
 # alternative executable
 #

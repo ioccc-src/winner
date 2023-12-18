@@ -1,35 +1,58 @@
 ## To build:
 
 ```sh
-make all
+make clobber all
 ```
 
+and follow the instructions this will give you.
 
-### Try:
+If your compiler will not read from `/dev/tty` see the [Alternate
+code](#alternate-code) section below.
+
+
+### To use:
 
 ```sh
-rm -f spinellis ; cc spinellis.c -o spinellis < input.txt && ./spinellis
+./spinellis
 ```
 
-and try:
+Type in or copy paste some C code, perhaps from [input.txt](input.txt), and send
+EOF (typically ctrl-d).
+
+Now run again:
 
 ```sh
-rm -f spinellis ; cc spinellis.c -o spinellis < input2.txt && ./spinellis
+./spinellis
 ```
 
 
 ## Alternate code:
 
-For clang try the alt code like:
+For clang or compilers that won't read from `/dev/tty`, we provide this version.
+
+
+### Alternate build:
 
 ```sh
-cc spinellis.alt.c -o spinellis.alt < input.txt && ./spinellis.alt
+make clobber alt
 ```
 
-and try:
+and follow the instructions.
+
+
+### Alternate use:
 
 ```sh
-cc spinellis.alt.c -o spinellis.alt < input2.txt && ./spinellis.alt
+./spinellis.alt
+```
+
+Type in or copy paste some C code, perhaps from [input.txt](input.txt), and send
+EOF (typically ctrl-d).
+
+Now run again:
+
+```sh
+./spinellis.alt
 ```
 
 

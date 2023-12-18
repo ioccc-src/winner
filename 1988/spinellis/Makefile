@@ -130,20 +130,21 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c input.txt
 	@${RM} -f $@
 	@echo
-	@echo "Hello, world!  To compile this IOCCC winner, we need you to take change."
+	@echo "Hello, world!  To compile this IOCCC winner, we need you to take charge."
 	@echo
-	@echo "IMPORTANT NOTE:"
+	@echo "IMPORTANT NOTE: this entry is likely to NOT compile with some compilers"
+	@echo "like clang, NOR will it likely compile under macOS. In particular the"
+	@echo "the compiler must accept reading in input from /dev/tty. Where this is"
+	@echo "not possible, try this instead: "
 	@echo
-	@echo "	This entry is likely to NOT compile with some compilers like clang, NOR will it likely"
-	@echo "	to compile under macOS.  For those situations, try this instead:"
+	@echo "    make clobber alt"
 	@echo
-	@echo "	make clobber alt"
+	@echo "For hosts with a true gcc compiler, manually run the following command:"
 	@echo
-	@echo "For non-macOS hosts with a true gcc compiler, manually run the following command:"
+	@echo "    ${GCC} ${CFLAGS} ${PROG}.c -o $@ ${LDFLAGS}"
 	@echo
-	@echo ${GCC} ${CFLAGS} ${PROG}.c -o $@ ${LDFLAGS}
-	@echo
-	@echo "Next copy and paste (on a non-macOS host) the folowwing as input to the above command:"
+	@echo "Next copy and paste (on a non-macOS host/host with true gcc)"
+	@echo "the folowwing as input to the above command:"
 	@echo
 	@${CAT} input.txt
 	@echo
@@ -151,7 +152,9 @@ ${PROG}: ${PROG}.c input.txt
 	@echo
 	@echo "Finally run the program you have just compiled:"
 	@echo
-	@echo "./$@"
+	@echo "    ./$@"
+	@echo
+	@echo "Of course you may provide other C code if you wish, even typing it manually."
 	@echo
 
 # alternative executable
@@ -163,11 +166,11 @@ ${PROG}.alt: ${PROG}.alt.c input.txt
 	@${RM} -f $@ runme
 	${CC} ${CFLAGS} ${PROG}.alt.c -o $@ ${LDFLAGS}
 	@echo
-	@echo "Hello, world!  To compile this IOCCC winner, we need you to take change."
+	@echo "Hello, world!  To compile this IOCCC winner, we need you to take charge."
 	@echo
 	@echo "Run the following command:"
 	@echo
-	@echo "./$@"
+	@echo "   ./$@"
 	@echo
 	@echo "Next copy and paste the folowwing as input to the above command:"
 	@echo
@@ -175,9 +178,11 @@ ${PROG}.alt: ${PROG}.alt.c input.txt
 	@echo
 	@echo "After pasing the above, end input by providing an EOF (usually control-D)."
 	@echo
-	@echo "Finally run the this progrqm:"
+	@echo "Finally run the program you have just compiled:"
 	@echo
-	@echo "./runme"
+	@echo "    ./$@"
+	@echo
+	@echo "Of course you may provide other C code if you wish, even typing it manually."
 	@echo
 
 # data files

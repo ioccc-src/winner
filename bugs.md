@@ -3348,9 +3348,16 @@ ideal if this was not the case.
 ### Source code: [2019/duble/prog.c](2019/duble/prog.c)
 ### Information: [2019/duble/README.md](2019/duble/README.md)
 
-This program will very likely leave sockets lying about in the current working
-directory. For instance [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson)
-showed us this:
+There are two things to be aware of with this entry.
+
+If the file being used (to draw) is deleted it might lock any session still in
+use. These will have to be killed from another shell session or by closing the
+terminal tab. This will also happen if the file cannot be opened in the
+beginning.
+
+This program will also very likely leave sockets lying about in the current
+working directory. For instance [Cody Boone
+Ferguson](/winners.html#Cody_Boone_Ferguson) showed us this:
 
 ```sh
 $ ls -al |grep '^s'
@@ -3365,20 +3372,20 @@ This is NOT a bug and you'll have to (at least at this time?) delete the files
 manually. You shouldn't have to worry about these being added to git: it seems
 to ignore sockets (it did at least in macOS).
 
-NOTE: to get a list of files with this glob try:
+He provides the following tips on this situation. A simpler way to find sockets
+in the directory:
 
 ```sh
-ls -al |awk '{print $NF}' | grep -E '^\.[A-Z]+'
+file .*|grep socket|cut -f1 -d:
 ```
 
 To delete them you can do:
 
 ```sh
-find . -name '.[A-Z]*' -delete
+find . -exec file '{}' \;|grep socket|cut -f 1 -d: | xargs rm -f
 ```
 
 though one might want to check that the program is not currently running. :-)
-
 
 
 ## 2019 endoh

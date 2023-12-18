@@ -146,16 +146,8 @@ ${PROG}:
 check-os: check-os.sh
 	${SHELL} ./check-os.sh ${LINES} ${COLUMNS}
 
-error-stty:
-	@echo "No stty command here. Please manually specify size in the Makefile." >&2 ; false
-
-has-stty:
-	which stty >/dev/null || ${MAKE} error-stty
-
-fullscreen: has-stty
-	${MAKE} ${PROG} \
-	LINES=`stty size | sed -s 's/ .*$$//'` \
-	COLUMNS=`stty size | sed -s 's/^.* //'`
+fullscreen: fullscreen.sh
+	./$<
 
 Darwin: ${PROG}.c
 	${RM} -f $@

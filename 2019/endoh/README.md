@@ -25,9 +25,23 @@ For more detailed information see [2019 endoh in bugs.md](/bugs.md#2019-endoh).
 
 ### Try:
 
+If you have `gdb(1)` installed:
+
+```sh
+./try.sh
+```
+
+Note that in macOS installing `gdb(1)` takes multiple steps - it's not just a
+matter of installing `gdb(1)` and that's that. The [try.sh](try.sh) script has
+only been tested with linux.
+
+You might also wish to try:
+
 ```sh
 gdb ./prog || lldb ./prog
 ```
+
+and then type in `r` (to run program) and then `bt` (for backtrace).
 
 
 ## Judges' remarks:
@@ -37,6 +51,7 @@ ascii` when debugging it to reveal its purpose.
 
 
 ## Author's remarks:
+
 
 ### backtrace quine:
 
