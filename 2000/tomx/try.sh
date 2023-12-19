@@ -15,11 +15,6 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-if [[ ! -f "tomx" || ! -e "tomx" ]]; then
-    echo "Compiling tomx.c:" 1>&2
-    make all || exit 1
-fi
-
 echo "Running tomx:" 1>&2
 echo "$ ./tomx" 1>&2
 ./tomx
