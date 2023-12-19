@@ -3492,6 +3492,18 @@ not encountered this myself).
 - The program contains some unused code and data.
 
 
+## 2019 lynn
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2019/lynn/prog.c](2019/lynn/prog.c)
+### Information: [2019/lynn/README.md](2019/lynn/README.md)
+
+The author wrote that there are a number of differences from what one might
+expect. Rather than duplicate the information we refer you to the author's
+remarks in the sections [Syntax](/2019/lynn/README.md#syntax) and
+[Caveats](/2019/lynn/README.md#caveats).
+
+
 ## 2019 poikola
 
 ### STATUS: INABIAF - please **DO NOT** fix
