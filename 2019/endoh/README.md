@@ -4,8 +4,8 @@
 make
 ```
 
-NOTE: we FORCE disable the optimiser and FORCE enable `-g` as this is a
-BACKTRACE QUINE and NEEDS debugging symbols.
+NOTE: the use of the C compiler optimiser was disabled and `-g` was enabled for
+this entry because it is SUPPOSED to crash and it needs debugging symbols.
 
 
 ### Bugs and (Mis)features:

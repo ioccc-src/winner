@@ -65,7 +65,7 @@ CINCLUDE=
 
 # Optimization
 #
-# We MUST DISABLE THE OPTIMISER AND ENABLE -g because the entry is A BACKTRACE
+# We disable the optimiser and we enable -g because the entry is A BACKTRACE
 # QUINE and NEEDS debugging symbols.
 OPT= -O0 -g
 
@@ -132,10 +132,10 @@ all: data ${TARGET}
 	sandwich supernova deep_magic magic charon pluto
 
 # We FORCE the use of -O0 -g even if someone overrides it because this entry is
-# a BACKTRACE QUINE and NEEDS DEBUGGING SYMBOLS.
+# a BACKTRACE QUINE and NEEDS debugging symbols.
 #
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} -g $< -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS} -O0 -g $< -o $@ ${LDFLAGS}
 
 ascii: ascii.c
 	${CC} $< -o $@
