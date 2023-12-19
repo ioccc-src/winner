@@ -4,6 +4,21 @@
 make
 ```
 
+NOTE: we disable the optimiser because this program has problems with it
+enabled.
+
+
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2019 karns in bugs.md](/bugs.md#2019-karns).
+
+
 
 ## To use:
 
@@ -11,22 +26,25 @@ make
 ./prog < textfile_that_fits_on_the_screen
 ```
 
+You might want to type:
+
+```sh
+reset
+```
+
+after running the program to restore the terminal to its previous state.
+
 
 ### Try:
 
 ```sh
-./prog < README.md
-
-./prog < prog.c
-
-./prog < maze
+./try.sh
 ```
 
-The last two can be done in a sequence, first showing the respective files at
-the terminal, like:
+If you have more time you might want to try:
 
 ```sh
-./try.sh
+./prog < README.md
 ```
 
 
@@ -37,10 +55,10 @@ not, YMMV -- teach you how to find your way in a maze. The algorithm is
 well-known but the drawing is amazing!
 
 Before running, make sure that your terminal can accommodate the whole file.
-Before running "make test", make it about 120x40 to be safe, ensuring that you
-see the @ sign as well as the exclamation mark.
+Before running `make test`, make it about 120x40 to be safe, ensuring that you
+see the `@` sign as well as the exclamation mark.
 
-...Oh, and the first M in YMMV stands for "mazing".
+...Oh, and the first `M` in YMMV stands for "mazing".
 
 A puzzle for the reader: Can you change the program to consider a diagonal
 movement as one step?
@@ -50,14 +68,16 @@ movement as one step?
 
 ### The Program:
 
-This program is pretty simple! It performs a breadth first search on the
-specified graph. The graph can be any ascii text file  that has an 'at'
-character, which is going to be the starting location, and a '!' character
+This program is pretty simple! It performs a [breadth first
+search](https://en.wikipedia.org/wiki/Breadth-first_search) on the
+specified graph. The graph can be any ASCII text file that has an 'at' (`@`)
+character, which is going to be the starting location, and a `!` character
 which will be the destination.
 
 The nodes on this graph that are spaces are connected with any directly
 adjacent nodes that are also spaces. Nodes that aren't spaces are not
 connected with anything.
+
 
 ### Compiling and Running:
 
@@ -67,7 +87,7 @@ This program usually compiles under both GCC and clang. Build with:
 $(CC) -std=c99 -o tbfs prog.c
 ```
 
-where $(CC) is cc, gcc, clang, or some other c compiler.
+where `$(CC)` is cc, gcc, clang, or some other C compiler.
 
 You can then run it with:
 
