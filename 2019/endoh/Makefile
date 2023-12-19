@@ -65,7 +65,9 @@ CINCLUDE=
 
 # Optimization
 #
-OPT=
+# We MUST DISABLE THE OPTIMISER AND ENABLE -g because the entry is A BACKTRACE
+# QUINE and NEEDS debugging symbols.
+OPT= -O0 -g
 
 # Default flags for ANSI C compilation
 #
@@ -129,6 +131,9 @@ all: data ${TARGET}
 	clean clobber install love haste waste maker easter_egg \
 	sandwich supernova deep_magic magic charon pluto
 
+# We FORCE the use of -O0 -g even if someone overrides it because this entry is
+# a BACKTRACE QUINE and NEEDS DEBUGGING SYMBOLS.
+#
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} -g $< -o $@ ${LDFLAGS}
 
