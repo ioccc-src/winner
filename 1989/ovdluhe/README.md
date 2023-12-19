@@ -22,11 +22,7 @@ by chance or is killed.
 ### Try:
 
 ```sh
-./ovdluhe < ./ovdluhe.c
-./ovdluhe < ./ovdluhe.c
-
-./ovdluhe < README.md
-./ovdluhe < README.md
+./try.sh ; sleep 2 ; ./try.sh
 ```
 
 
