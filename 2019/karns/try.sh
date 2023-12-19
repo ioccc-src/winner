@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 #
-# Demo of IOCCC 26 (2019) 'Most in need of whitespace' entry by Joshua Karns.
-#
-# Doesn't run the program on README.md as it's longer and slower.
+# try.sh - demonstrate IOCCC winner 2019/karns
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
