@@ -69,8 +69,9 @@ CDEFINE=
 CINCLUDE= -include stdio.h -include string.h -include unistd.h -include stdlib.h
 
 # Optimization
+# We DISABLE the optimiser because having it enabled BREAKS the program.
 #
-OPT=
+OPT= -O0
 
 # Default flags for ANSI C compilation
 #
@@ -135,8 +136,10 @@ all: data ${TARGET}
 	clean clobber install love haste waste maker easter_egg \
 	sandwich supernova deep_magic magic charon pluto
 
+# NOTE: We FORCE the use of -O0 even if someone overrides it because this entry
+# will not work with it enabled.
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS} -O0 $< -o $@ ${LDFLAGS}
 
 test: ${PROG} test.sh
 	./test.sh

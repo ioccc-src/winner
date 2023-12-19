@@ -4,6 +4,9 @@
 make
 ```
 
+NOTE: We FORCE the use of -O0 even if someone overrides it because this entry
+will not work with it enabled.
+
 
 ### Bugs and (Mis)features:
 
