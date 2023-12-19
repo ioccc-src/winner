@@ -35,48 +35,42 @@ fi
 
 # safety check that DICT is not empty and is a readable file
 #
-if [[ -z "$DICT" || ! -f "$DICT" || ! -r "$DICT" ]]; then
-    echo "No dictionary file found, try specifying one like:" 1>&2
+if [[ -n "$DICT" && -f "$DICT" && -r "$DICT" ]]; then
+    echo "$ ./ag free software foundation < $DICT" 1>&2
+    read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
     echo 1>&2
-    echo "  DICT=dict ./try.sh" 1>&2
+    ./ag free software foundation < "$DICT" 2>/dev/null | less -rEXF
+
+    echo "$ ./ag obfuscated c contest < $DICT" 1>&2
+    read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
     echo 1>&2
-    exit 1
+    ./ag obfuscated c contest < "$DICT" 2>/dev/null | less -rEXF
+
+    echo "$ ./ag unix international	< $DICT" 1>&2
+    read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
+    echo 1>&2
+    ./ag unix international	< "$DICT" 2>/dev/null | less -rEXF
+
+    echo "$ ./ag george bush < $DICT" 1>&2
+    read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
+    echo 1>&2
+    ./ag george bush < "$DICT" 2>/dev/null | less -rEXF
+
+    echo "$ ./ag bill clinton < $DICT" 1>&2
+    read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
+    echo 1>&2
+    ./ag bill clinton < "$DICT" 2>/dev/null | less -rEXF
+
+    echo "$ ./ag ross perot	< $DICT" 1>&2
+    read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
+    echo 1>&2
+    ./ag ross perot	< "$DICT" 2>/dev/null | less -rEXF
+
+    echo "$ ./ag paul e tsongas < $DICT" 1>&2
+    read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
+    echo 1>&2
+    ./ag paul e tsongas < "$DICT" 2>/dev/null | less -rEXF
 fi
-
-echo "$ ./ag free software foundation < $DICT" 1>&2
-read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
-echo 1>&2
-./ag free software foundation < "$DICT" 2>/dev/null | less -rEXF
-
-echo "$ ./ag obfuscated c contest < $DICT" 1>&2
-read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
-echo 1>&2
-./ag obfuscated c contest < "$DICT" 2>/dev/null | less -rEXF
-
-echo "$ ./ag unix international	< $DICT" 1>&2
-read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
-echo 1>&2
-./ag unix international	< "$DICT" 2>/dev/null | less -rEXF
-
-echo "$ ./ag george bush < $DICT" 1>&2
-read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
-echo 1>&2
-./ag george bush < "$DICT" 2>/dev/null | less -rEXF
-
-echo "$ ./ag bill clinton < $DICT" 1>&2
-read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
-echo 1>&2
-./ag bill clinton < "$DICT" 2>/dev/null | less -rEXF
-
-echo "$ ./ag ross perot	< $DICT" 1>&2
-read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
-echo 1>&2
-./ag ross perot	< "$DICT" 2>/dev/null | less -rEXF
-
-echo "$ ./ag paul e tsongas < $DICT" 1>&2
-read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
-echo 1>&2
-./ag paul e tsongas < "$DICT" 2>/dev/null | less -rEXF
 
 # now try making our own dictionary with mkdict.sh:
 #
