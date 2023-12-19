@@ -42,7 +42,7 @@ CSILENCE= -Wno-bitwise-op-parentheses -Wno-char-subscripts \
 	-Wno-deprecated-declarations -Wno-empty-body -Wno-error \
 	-Wno-implicit-function-declaration -Wno-parentheses -Wno-pedantic \
 	-Wno-return-type -Wno-unused-parameter -Wno-unused-value \
-	-Wno-deprecated-non-prototype
+	-Wno-deprecated-non-prototype -Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -69,7 +69,9 @@ CINCLUDE=
 
 # Optimization
 #
-OPT=
+# We DISABLE the optimiser because having it enabled will cause a crash in some
+# invocations in some systems.
+OPT= -O0
 
 # Default flags for ANSI C compilation
 #
@@ -133,8 +135,11 @@ all: data ${TARGET}
 	clean clobber install love haste waste maker easter_egg \
 	sandwich supernova deep_magic magic charon pluto
 
+# We DISABLE THE OPTIMISER because when it's enabled in some conditions it
+# crashes.
+#
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS} -O0 $< -o $@ ${LDFLAGS}
 
 ag: ${PROG}
 	${RM} -f $@

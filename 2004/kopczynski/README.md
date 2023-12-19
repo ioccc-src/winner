@@ -4,6 +4,9 @@
 make
 ```
 
+NOTE: We FORCE the use of -O0 even if someone overrides it because this entry
+will not work with it enabled.
+
 
 ## To use:
 
@@ -15,21 +18,8 @@ make
 ### Try:
 
 ```sh
-./kopczynski < kopczynski-8a
-./kopczynski < kopczynski-8b
-./kopczynski < kopczynski-8c
-./kopczynski < kopczynski-9
-./kopczynski < kopczynski-10
-./kopczynski < kopczynski-11
+./try
 ```
-
-Also try:
-
-```sh
-./kopczynski < kopczynski-a
-```
-
-What happens?
 
 What happens if you feed the program source to the program? Can you figure out
 why?
@@ -38,7 +28,9 @@ why?
 ## Alternate code:
 
 The judges modified the program to print its result.  The original
-program returned the result as an exit code:
+program returned the result as an exit code which is what the alternate version
+does.
+
 
 ### Alternate build:
 

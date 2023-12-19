@@ -302,6 +302,9 @@ crashes.
 NOTE: this does NOT apply to entries under the INABIAF status (though they're
 not mutually exclusive in some cases).
 
+REMINDER: if you're debugging a crash it will be very helpful to have `-O0 -g`
+or if you can `-ggdb3` when compiling as that will help with debugging symbols.
+
 
 ## STATUS: uses gets() - change to fgets() if possible
 
@@ -667,6 +670,60 @@ Enjoy! :-)
 # 1990
 
 
+## 1990 jaw
+
+### STATUS: known bug - please help us fix
+### Source code: [1990/jaw/jaw.c](1990/jaw/jaw.c)
+### Information: [1990/jaw/README.md](1990/jaw/README.md)
+
+[Cody Boone Ferguson](https://www.ioccc.org/winners.html#Cody_Boone_Ferguson)
+fixed some issues in this program and [Yusuke
+Endoh](https://www.ioccc.org/winners.html#Yusuke_Endoh) provided the `btoa`
+script but it appears there is a bug in this entry. The judges wrote that to
+test the entry one can do:
+
+```sh
+echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
+```
+
+which should apply the identity transformation to a minimal holoalphabetic
+sentence.
+
+But doing this shows instead:
+
+```sh
+echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw
+a얖?)V...?????777??hC??h??-?	)SSSSXXX????r?L=???*?-???ppp,,,?R
+?j
+111-)))? '..F@E
+               ???b111?
+..F..F.?n,,,,,L@E$
+```
+
+Notice how there's no newline at the end: that final `$` is the prompt.
+
+If one does, however:
+
+```sh
+echo "Quartz glyph jocks vend, fix, BMW." | compress | ./btoa | ./jaw | ./jaw
+```
+
+they will get just
+
+```
+oops
+```
+
+which seems to be an error message (one of the fixes was to make it not use
+`perror(3)` - this fixed something else though it's no longer known what).
+
+The script [shark.sh](/1990/jaw/shark.sh) has some issues too in that due to
+path not having `.` (this and maybe some other things were fixed) and `tar` not
+wanting to accept reading from `stdin` (this in particular) even with the right
+options used, seemingly, it has to write to disk the tarball which seems to
+defeat the purpose. This would ideally be fixed.
+
+
 ## 1990 theorem
 
 ### STATUS: INABIAF - please **DO NOT** fix
@@ -839,7 +896,18 @@ problem of `gets()` being used in a more complex way.
 
 It would be ideal if it were to use `fgets()` though. This will probably be
 looked at later but you're welcome to try and fix this too! A tip on how
-`gets()` is being used is in the [FAQ](/faq.md#gets) file.
+`gets()` is being used from Cody:
+
+Previously it had a buffer size of 256 which could easily overflow. In this
+entry `gets(3)` is used in a more complicated way: first `m` is set to `*++p` in
+a for loop where `p` is argv. Later `m` is set to point to `h` which was of size
+256. `gets(3)` is called as `m = gets(m)`) but trying to change it to use
+`fgets(3)` proved more a problem. Since the input must come from the command
+line Cody changed the buffer size to `ARG_MAX+1` which should be enough (again
+theoretically) especially since the command expects redirecting a dictionary
+file as part of the command line. This also makes it possible for longer strings
+to be read (in case the `gets(3)` was not used in a loop).
+
 
 
 ## 1992 kivinen

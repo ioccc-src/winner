@@ -4,6 +4,10 @@
 make all
 ```
 
+NOTE: we DISABLE the optimiser because having it enabled causes some invocations
+to crash in some systems.
+
+
 ### Bugs and (Mis)features:
 
 The current status of this entry is:
@@ -127,13 +131,14 @@ Instead, it tries to achieve both its speed and its obscurity through a
 careful choice of algorithms.  Some of the finer points of those
 algorithms are outlined in the spoiler below.
 
+
 ### How it works:
 
 Here follows a description of some of the data structures and
 algorithms used by AG.  It is by no means complete, but it may help
 you get an idea about the general principles.
 
---
+---
 
 Internally, AG represents words and sentences as arrays of 32
 4-bit integer elements.  Each element represents the number of

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo "Running shark.sh:"
-./shark.sh shark.sh README.md jaw.c try.sh > receive || exit 1
+./shark.sh atob shark.sh README.md jaw.c try.sh > receive || exit 1
 echo "Done."
 
 

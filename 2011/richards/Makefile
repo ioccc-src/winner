@@ -66,7 +66,7 @@ CINCLUDE= -include stdlib.h -include string.h -include stdio.h -include ctype.h 
 
 # Optimization
 #
-OPT=
+OPT= -O3
 
 # Default flags for ANSI C compilation
 #

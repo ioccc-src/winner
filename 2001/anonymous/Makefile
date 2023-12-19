@@ -71,7 +71,7 @@ CINCLUDE=
 
 # Optimization
 #
-OPT=
+OPT= -O3
 
 # Default flags for ANSI C compilation
 #
