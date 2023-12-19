@@ -4,6 +4,9 @@
 make
 ```
 
+NOTE: we FORCE disable the optimiser and FORCE enable `-g` as this is a
+BACKTRACE QUINE and NEEDS debugging symbols.
+
 
 ### Bugs and (Mis)features:
 
