@@ -302,6 +302,9 @@ crashes.
 NOTE: this does NOT apply to entries under the INABIAF status (though they're
 not mutually exclusive in some cases).
 
+REMINDER: if you're debugging a crash it will be very helpful to have `-O0 -g`
+or if you can `-ggdb3` when compiling as that will help with debugging symbols.
+
 
 ## STATUS: uses gets() - change to fgets() if possible
 
