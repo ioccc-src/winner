@@ -4,6 +4,10 @@
 make all
 ```
 
+
+NOTE: we FORCE disable the optimiser due to a funny problem with different
+compilers and systems. See below and [compilers.md](compilers.md) for details.
+
 There is an [alternate version](#alternate-code). The reason is a funny problem:
 in modern systems, depending on the platform, compiler and the optimiser, it
 would work with one compiler with the optimiser but it would not work with the

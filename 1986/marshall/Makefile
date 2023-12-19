@@ -69,7 +69,9 @@ CINCLUDE=
 
 # Optimization
 #
-OPT=
+# We DISABLE the optimiser due to funny problems in different compilers and
+# systems. See compilers.md for more details on this problem.
+OPT= -O0
 
 # Default flags for ANSI C compilation
 #
@@ -132,8 +134,10 @@ all: data ${TARGET}
 	clean clobber install love haste waste maker easter_egg \
 	sandwich supernova deep_magic magic charon pluto
 
+# We FORCE disable the optimiser due to funny problems in different compilers
+# and systems. See compilers.md for details.
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS} -O0 $< -o $@ ${LDFLAGS}
 
 # alternative executable
 #
