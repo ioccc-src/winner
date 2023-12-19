@@ -2665,16 +2665,16 @@ For clang the problem was that `main()` had one arg, a `char *` and this is not
 allowed in any version of clang. In some versions it is allowed if the arg is an
 `int` but never if it's anything else. To get it to work took numerous changes.
 
-First the inclusion of `setjmp.h` was necessary. Without this `longjmp()`
-implicitly returned int which was used for the purpose of binary expression but
+First the inclusion of `setjmp.h` was necessary. Without this `longjmp(3)`
+implicitly returned `int` which was used for the purpose of binary expression but
 this no longer worked.
 
 But by including `setjmp.h` it naturally made the binary expressions invalid (as
-it returns void which no longer is allowed in binary expressions) so the comma
+it returns `void` which is not allowed in binary expressions) so the comma
 operator with `0` (`,0`) had to be used (`,1` was tried first but this did not
 work right).
 
-`longjmp()` was being called with one arg which was an element
+`longjmp(3)` was being called with one arg which was an element
 of an `int[4][1000]` which had to be changed to a `jmp_buf p[4]` (this due to
 the prototype being included).
 
