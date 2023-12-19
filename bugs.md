@@ -893,7 +893,18 @@ problem of `gets()` being used in a more complex way.
 
 It would be ideal if it were to use `fgets()` though. This will probably be
 looked at later but you're welcome to try and fix this too! A tip on how
-`gets()` is being used is in the [FAQ](/faq.md#gets) file.
+`gets()` is being used from Cody:
+
+Previously it had a buffer size of 256 which could easily overflow. In this
+entry `gets(3)` is used in a more complicated way: first `m` is set to `*++p` in
+a for loop where `p` is argv. Later `m` is set to point to `h` which was of size
+256. `gets(3)` is called as `m = gets(m)`) but trying to change it to use
+`fgets(3)` proved more a problem. Since the input must come from the command
+line Cody changed the buffer size to `ARG_MAX+1` which should be enough (again
+theoretically) especially since the command expects redirecting a dictionary
+file as part of the command line. This also makes it possible for longer strings
+to be read (in case the `gets(3)` was not used in a loop).
+
 
 
 ## 1992 kivinen
