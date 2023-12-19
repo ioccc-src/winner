@@ -14,8 +14,8 @@ bz,lv=60,*x,*y,m,t;S(d,v,f,a,b)l*v;{l c=0,*n=v+100,bw=d<u-1?a:-9000,w,z,i,zb,q=
 :t==q?50:0;return w;}H(z,0){if(GZ(v,z,f,100)){c++;w= -S(d+1,n,q,-b,-bw);if(w>bw
 ){zb=z;bw=w;if(w>=b||w>=8003)Y w;}}}if(!c){bz=0;C;Y-S(d+1,n,q,-b,-bw);}bz=zb;Y
 d>=u-1?bw+(c<<3):bw;}main(){R(;t<1100;t+=100)R(m=0;m<100;m++)V[t+m]=m<11||m>88
-||(m+1)%10<2?3:0;V[44]=V[55]=1;V[45]=V[54]=2;x:*A='\0';I("Level:");s(A);if((u
-=atoi(A))>10||u<0||!isdigit(*A))goto x;e(lv>0){do{I("You:");s(A);m=atoi(A);*A='\0';
+||(m+1)%10<2?3:0;V[44]=V[55]=1;V[45]=V[54]=2;x:*A='\0';I("Level:");s(A);if((!
+isdigit(*A)||(u=atoi(A))>10||u<0))goto x;e(lv>0){do{I("You:");s(A);m=atoi(A);*A='\0';
 }e(!GZ(V,m,2,0)&&m!=99);if(m!=99)lv--;if(lv<15&&u<10)u+=2;I("Wait\n")
 ;I("Value:%d\n",S(0,V,1,-9000,9000));I("move: %d\n",(lv-=GZ(V,bz,1,0),bz));}}GZ
 (v,z,f,o)l*v;{l*j,q=3-f,g=0,i,h,*k=v+z;if(*k==0)R(i=7;i>=0;i--){j=k+(h=r[i]);e(
