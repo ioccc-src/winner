@@ -744,6 +744,12 @@ and over again, flooding the screen. The problem is that there was a `for` loop
 that by necessity had to not have an increment stage but only in the `if` path
 (in the loop itself) did the pointer get updated.
 
+Cody also provided the [try.sh](/1989/ovdluhe/try.sh) script which runs the
+program four times on three files to show the different output. It doesn't run
+the program on each file four times in a row but rather does it on each file
+and starts over, doing it four times, to help with hopefully allowing different
+output.
+
 Cody also provided an [alternate version](/1989/ovdluhe/ovdluhe.alt.c) based on the
 author's remarks. See the README.md for details. The fix described above was
 fixed in this version too, after it was discovered and fixed.
