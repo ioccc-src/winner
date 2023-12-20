@@ -64,13 +64,13 @@ decoder.
 Try it out.  Compile the program, then type
 
 ```sh
-sds < sds.c
+./sds < sds.c
 ```
 
 You should see the encoder program displayed.  Now save it, like:
 
 ```sh
-sds < sds.c > encoder.c
+./sds < sds.c > encoder.c
 ```
 
 Then compile `encoder.c`.  You now have the complete system ready.
