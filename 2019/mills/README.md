@@ -5,6 +5,18 @@ make
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2019 mills in bugs.md](/bugs.md#2019-mills).
+
+
+
 ## To use:
 
 ```sh
@@ -17,17 +29,7 @@ make cpclean
 ### Try:
 
 ```sh
-make test-64bit
-
-less IOCCC-Rules-Guidelines.output.txt
-
-less IOCCC-hints.output.txt
-
-less Eugene_Onegin.output.txt
-
-./prog < IOCCC-Rules-Guidelines.cp98_0.175 |head -n 100
-
-./prog < Shakespeare.cp04_1.633 | head -n 100
+./try.sh
 ```
 
 However, as the binary model files used to produce the output are in an
@@ -51,25 +53,25 @@ You decide. :-)
 ### Welcome to OMLET! &#x1f373;:
 
 OMLET is the _Obfuscated Machine Learning Environment Toolkit_, a
-micro-framework for experimenting with [recurrent neural networks][1].  OMLET
-lets you build, train and evaluate [deep neural networks][2].  Why invest
-hours reading documentation and megabytes of disk space on a full-featured DNN
-framework like [TensorFlow][3] or [Torch][4] when you can have full RNN
-functionality in less than 4 KB!
+micro-framework for experimenting with [recurrent neural networks][1] (RNN).
+OMLET lets you build, train and evaluate [deep neural networks][2] (DNN).  Why
+invest hours reading documentation and megabytes of disk space on a
+full-featured DNN framework like [TensorFlow][3] or [Torch][4] when you can have
+full RNN functionality in less than 4 KB!
 
 OMLET has the following features:
 
-+ User-programmable network configurations and hyperparameters
++ User-programmable network configurations and hyperparameters.
 + Support for various types of recurrent and feed-forward neural networks
-including vanilla RNNs, LSTMs and GRUs of depths of up to 99 layers
-+ No limit on parameter size (except for those imposed by the system)
-+ Training and inference modes, with periodic checkpointing
+including vanilla RNNs, LSTMs and GRUs of depths of up to 99 layers.
++ No limit on parameter size (except for those imposed by the system).
++ Training and inference modes, with periodic checkpointing.
 + Advanced [Adam][42] optimizer with [weight decay][43] for simplified
-training
-+ Hyperparamer support for batch sizing, learning rate schedule, weight
-decay and gradient clipping
-+ Easily extensible (requires some expertise in the C programming language)
-+ Friendly markdown documentation
+training.
++ Hyperparameters support for batch sizing, learning rate schedule, weight
+decay and gradient clipping.
++ Easily extensible (requires some expertise in the C programming language).
++ Friendly markdown documentation.
 
 OMLET is based on [Andrej Karpathy's][40] [character-level language model][41]
 as described in his blog post [_The Unreasonable Effectiveness of Recurrent
@@ -84,12 +86,12 @@ training, but you can have even more fun by downloading some larger datasets:
 
 OMLET has three operating modes:
 
-  + _Training_, which trains a network from scratch
-  + _Continuation_, which trains starting from an existing checkpoint
-  + _Inference_, which uses an existing trained network to make predictions
+  + _Training_, which trains a network from scratch.
+  + _Continuation_, which trains starting from an existing checkpoint.
+  + _Inference_, which uses an existing trained network to make predictions.
 
 For your first OMLET experiment, we will try training a simple single-level
-RNN to write some [Shakespere][5] plays.  Start by typing
+RNN to write some [Shakespeare][5] plays.  Start by typing
 
 ```sh
 make
@@ -230,7 +232,7 @@ T1:0% 1.885619
 ```
 
 Validation cycles are used to test the network to see if it has learned to
-generalize -- how well performs on data it hasn't seen before (as opposed to
+generalize -- how well it performs on data it hasn't seen before (as opposed to
 the training data that the network will see many times as it trains).  Progress
 on the validation set is also displayed with a validation progress report that
 looks like
@@ -286,6 +288,7 @@ will want to delete all the checkpoint files because the format depends on
 both the network and the input -- using the wrong checkpoint is likely to
 cause a crash.
 
+
 ### Experimenting with different networks
 
 The default network for OMLET (the one you get if you type `make` with the
@@ -305,7 +308,7 @@ where
   * `h'` is the previous value of `h`
   * `Wxh`, `Whh`, and `Why` are *weight matrices*
   * `Bh` and `By` are *bias vectors*.
-  * `tanh` is the [hyperbolic tangent function][9]
+  * `tanh(3)` is the [hyperbolic tangent function][9]
 
 The `W`'s and `B`'s are the trainable parameters of the network, and the
 process of training is optimizing the values of these parameters to minimize
@@ -325,7 +328,7 @@ OMLET will create an [ADALINE][10] network that does
 y = Wxy * x + By
 ```
 
-This simple [linear][11] [feed-forward network][12].  You can run it with
+This is a simple [linear][11] [feed-forward network][12].  You can run it with
 
 ```sh
 ./lin1 Shakespeare.txt
@@ -369,15 +372,17 @@ It is able to guess at what character is likely to follow the current one
 (by doing a [linear regression][13]), but it lacks any history beyond that to
 guide it.
 
-You might be wondering about the role of the `tanh` function in the RNN.
-`tanh` acts as an [activation function][14] which adds [nonlinearity][15]
+You might be wondering about the role of the `tanh(3)` function in the RNN.
+`tanh(3)` acts as an [activation function][14] which adds [nonlinearity][15]
 to the network and allows it to solve complicated problems.  Without
 nonlinearity, all of the linear functions would fold together into a single
 matrix-vector multiply and you'd effectively regress to the linear network
 above.  Alas, even adding a nonlinearity to the feed-forward network
 (creating a [perceptron][16]) does not improve the performance because we
 still lack the history provided by the hidden state vector (although if you
-want to try it yourself, you can do so with `make per1`).
+want to try it yourself, you can do so with `make per1` - note that's not `perl`
+the language but `per` with the digit 1).
+
 
 ### Going deeper:
 
@@ -392,17 +397,21 @@ y = Why * h2 + By
 
 with `RNN(h, x)` defined as above.  Each RNN module has its own set of
 parameters and its own hidden state vector.  This will improve the network's
-performance, at the cost of a much larger parameter space
+performance, at the cost of a much larger parameter space.
 
-> **IMPORTANT NOTE**: Since OMLET uses the system stack for network storage,
-> larger networks may cause OMLET to crash (typically with a message like
-> `Segmentation fault`) unless the system stack size is first increased.
-> The exact command for doing so depends on your shell and your system's
-> hard limits.  On `sh`/`ksh`/`bash` shells, you can view the hard limit
-> with `ulimit -Hs` and set it with `ulimit -s 65532` (replacing `65532`
-> with the actual hard limit).  On `csh`/`tcsh` shells, you can view
-> the hard limit with `limit -h stacksize` and set it with
-> `limit stacksize 65532` (replacing `65532` with the actual hard limit).
+---
+
+**IMPORTANT NOTE**: Since OMLET uses the system stack for network storage,
+larger networks may cause OMLET to crash (typically with a message like
+`Segmentation fault`) unless the system stack size is first increased.
+The exact command for doing so depends on your shell and your system's
+hard limits.  On `sh`/`ksh`/`bash` shells, you can view the hard limit
+with `ulimit -Hs` and set it with `ulimit -s 65532` (replacing `65532`
+with the actual hard limit).  On `csh`/`tcsh` shells, you can view
+the hard limit with `limit -h stacksize` and set it with
+`limit stacksize 65532` (replacing `65532` with the actual hard limit).
+
+---
 
 You can try the deeper network by doing
 
@@ -418,14 +427,15 @@ make rnn2
 
 The additional depth should allow the network to make better predictions (it
 can represent more complicated history), but it may take a long time to train
--- both because the network (being larger) now requires more time to train and
+\-\- both because the network (being larger) now requires more time to train and
 because of the [vanishing and exploding gradient problem][17], which might
 keep it from ever reaching its potential.
+
 
 ### LSTMs and GRUs
 
 RNNs are particularly hard to train because they are trained using
-[bankpropagation through time][18].  The RNN is trained by effectively
+[backpropagation through time][18].  The RNN is trained by effectively
 converting it into a non-recurrent network by making many copies of it
 and propagating the hidden state through the copies.  During training,
 the backpropagation through many clones of the network amplifies the
@@ -478,7 +488,7 @@ Where
   * `Wxf`, `Whf`, `Wxi`, `Whi`, `Wxo`, `Who`, `Wxc`, and `Whc` are trainable
     parameter matrices
   * `Bf`, `Bi`, `Bo`, and `Bc` are trainable bias vectors
-  * `tanh` is the hyperbolic tangent function
+  * `tanh(3)` is the hyperbolic tangent function
   * `sigmoid` is the [logistic function][21]
 
 There are several LSTM variants (see [C. Olah's blog post][20] for more
@@ -502,7 +512,7 @@ a `-DNW='...'` command which consists of a series of comma-separated
 assignments.  For example, the simple one-layer RNN could be defined like
 
 ```make
--DNW=` x  = I(n), hp = I(128),                  \
+-DNW=' x  = I(n), hp = I(128),                  \
        h  = C(hp, T(A(L(128, x), L(128, hp)))), \
        y  = L(n, h)'
 ```
@@ -527,7 +537,7 @@ takes two parameters -- the output vector size (which must match the size of
 has its own `W` (weight) and `B` (bias) training parameters.  Both `x` and
 `hp` are sent through `L` and the result passed through the `A` function,
 which does vector addition.  That result is passed through `T` which does
-element-wise `tanh` activation.
+element-wise `tanh(3)` activation.
 
 Next, we wrap the whole thing with the `C` function.  `C` connects `hp`
 with `h`, causing the new value of `h` to be passed to the `hp` vector on
@@ -595,6 +605,7 @@ Note: even if you don't use `MD` in your network, you should still define
 `BK` by adding `-DBK='y=x'` to the command line, otherwise you will get a
 compile-time error.
 
+
 ### Hyperparameters
 
 OMLET has a large number of training and inference parameters which can be
@@ -606,7 +617,7 @@ The list of hyperparameters follows:
     safer but more boring choices.  A high temperature takes more risks but
     makes more mistakes.  Default is 1.0, which uses the computed
     probabilities.
-  * 'N': Batch size.  This is the number of times the RNN is unrolled, so it
+  * `N`: Batch size.  This is the number of times the RNN is unrolled, so it
     controls how far back in the past the RNN can see.  The default is 50.
     Larger batch sizes update the weights less frequently and allow the RNN to
     see farther back in time, but at a cost of proportionally more memory.
@@ -668,7 +679,7 @@ The list of hyperparameters follows:
  [31]: https://cs.stanford.edu/people/karpathy/char-rnn/warpeace_input.txt
  [32]: https://github.com/ryanmcdermott/trump-speeches
 
- [40]: https://cs.stanford.edu/people/karpathy/
+ [40]: https://karpathy.ai
  [41]: https://github.com/karpathy/char-rnn
  [42]: https://arxiv.org/abs/1412.6980
  [43]: https://www.fast.ai/2018/07/02/adam-weight-decay/

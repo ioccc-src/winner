@@ -3504,6 +3504,34 @@ remarks in the sections [Syntax](/2019/lynn/README.md#syntax) and
 [Caveats](/2019/lynn/README.md#caveats).
 
 
+## 2019 mills
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2019/mills/prog.c](2019/mills/prog.c)
+### Information: [2019/mills/README.md](2019/mills/README.md)
+
+The author wrote that if you decide to change networks or use a different input
+file you should delete all the checkpoint files because the format depends on
+both the network and the input -- using the wrong checkpoint is likely to cause
+a crash.
+
+The author also wrote:
+
+---
+
+**IMPORTANT NOTE**: Since OMLET uses the system stack for network storage,
+larger networks may cause OMLET to crash (typically with a message like
+`Segmentation fault`) unless the system stack size is first increased.
+The exact command for doing so depends on your shell and your system's
+hard limits.  On `sh`/`ksh`/`bash` shells, you can view the hard limit
+with `ulimit -Hs` and set it with `ulimit -s 65532` (replacing `65532`
+with the actual hard limit).  On `csh`/`tcsh` shells, you can view
+the hard limit with `limit -h stacksize` and set it with
+`limit stacksize 65532` (replacing `65532` with the actual hard limit).
+
+---
+
+
 ## 2019 poikola
 
 ### STATUS: INABIAF - please **DO NOT** fix
