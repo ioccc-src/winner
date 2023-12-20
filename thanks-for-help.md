@@ -4243,6 +4243,7 @@ Cody also added the [example-1.txt](/2019/lynn/example-1.txt) and
 entry existing.
 
 
+
 ## <a name="2019_yang"></a>[2019/yang](/2019/yang/prog.c) ([README.md](/2019/yang/README.md]))
 
 [Cody](#cody) added the [try.sh](/2019/yang/try.sh) script which also involved
@@ -4381,7 +4382,12 @@ fixed, a good example being [1986/marshall](#1986marshall-readmemd) (see the
 had to be done to fix it).
 
 There was a 'problem' where `${MAKE}` was `$(MAKE)`: this doesn't break anything
-but it is inconsistent with the rest of the `${foo}` tools.
+but it is inconsistent with the rest of the `${foo}` tools even if by tradition
+it is `$(MAKE)`.
+
+Cody also added missing variables like `BASH` and `PDFLATEX` to the
+[var.mk](/var.mk) file and removed another that was deemed problematic or
+undesired.
 
 A lot of the fixes with the Makefiles that Cody made were done with his [sgit
 tool](https://github.com/xexyl/sgit).

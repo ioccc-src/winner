@@ -145,6 +145,7 @@ PATCH= patch
 PATHCHK= pathchk
 PAX= pax
 PERL= perl
+PDFLATEX= pdflatex
 PICO= pico
 PR= pr
 PRINTENV= printenv

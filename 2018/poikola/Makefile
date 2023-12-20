@@ -146,7 +146,7 @@ data: ${DATA}
 	@${TRUE}
 
 docs: ${DOCS}
-	pdflatex ${DOCS}
+	${PDFLATEX} ${DOCS}
 
 
 # both all and alt
