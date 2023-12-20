@@ -51,10 +51,11 @@ under a free license.
 
 This program has also been successfully compiled on Windows, with both the [Tiny
 C Compiler](https://bellard.org/tcc/) and Microsoft's C/C++ compiler. However,
-the latter reports warnings about loss of information when converting floats,
+the latter reports warnings about loss of information when converting `float`s,
 and that `void (*)()` and `void (*)(void)` are not the same thing.
 
 Interesting fact: The size of the program from `./iocccsize -i` is 2019.
+
 
 #### How to use:
 
@@ -98,6 +99,7 @@ print `Bad input file` or `Wave file must be 16 bits,1-2 channels.` depending on
 what it thinks the problem is. If the output file cannot be opened, the program
 will print `Can't open output file`.
 
+
 ### Assumptions:
 
 1. The code is compiled using the C99 or C11 standard.
@@ -106,6 +108,7 @@ will print `Can't open output file`.
 represents the number zero.
 4. `int16_t` and `int32_t` are 2's-complement, `sizeof(int16_t) == 2` and
 `sizeof(int32_t) == 4`.
+
 
 ### Obfuscations
 
@@ -143,8 +146,8 @@ to decipher it.
 `#define`s are used to abbreviate the code, which has a side effect of making it
 very slightly harder to read.
 
-* `k` is just a general-purpose replacement for 16.
-* `i` is the number of delay-lines to allocate and use (currently 24).
+* `k` is just a general-purpose replacement for `16`.
+* `i` is the number of delay-lines to allocate and use (currently `24`).
 * `q` is an abbreviation for multiplying two elements of `w[]` together.
 * `u()` is used to display percentages with proper rounding.
 * `j()` imposes an upper limit on a floating-point value, and then negates it.
@@ -186,7 +189,7 @@ As many values as possible have been crammed into arrays. `float w[]` contains:
 
 All of the strings are concatenated together and "encrypted" by breaking the
 string into 4-byte chunks (by casting it to an `int32_t*`), and then XORing the
-sequence of ints with a known numeric sequence. The "decryption" is not done
+sequence of `int`s with a known numeric sequence. The "decryption" is not done
 in-place, to avoid writing over the string constant.
 
 `int32_t *c` is a pointer that points into `f[]`, except that it is often

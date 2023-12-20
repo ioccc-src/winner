@@ -3466,6 +3466,44 @@ As a backtrace quine this entry is **SUPPOSED to segfault** so this should not b
 touched either.
 
 
+## 2019 karns
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2019/karns/prog.c](2019/karns/prog.c)
+### Information: [2019/karns/README.md](2019/karns/README.md)
+
+The author stated the following:
+
+---
+
+- The program must be ran in a terminal that supports ANSI escape codes for
+moving the cursor and changing colors.
+- Segfaults happen sometimes.
+- I don't know what memory management there is, if any.
+- The program will not compile by an ANSI C compiler: it uses for loops, and
+it uses C++ style comments. It should compile cleanly using a C99 standard.
+- Breadth first search is slow (and very slow on certain maps), but my A star
+version of this program is too big.
+- Lots of extra whitespace may be needed if you want to feed in an arbitrary
+file.
+- It fails to compile on GCC sometimes (according to a friend of mine, I've
+not encountered this myself).
+- The program could be obfuscated much further.
+- The program contains some unused code and data.
+
+
+## 2019 lynn
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2019/lynn/prog.c](2019/lynn/prog.c)
+### Information: [2019/lynn/README.md](2019/lynn/README.md)
+
+The author wrote that there are a number of differences from what one might
+expect. Rather than duplicate the information we refer you to the author's
+remarks in the sections [Syntax](/2019/lynn/README.md#syntax) and
+[Caveats](/2019/lynn/README.md#caveats).
+
+
 ## 2019 poikola
 
 ### STATUS: INABIAF - please **DO NOT** fix

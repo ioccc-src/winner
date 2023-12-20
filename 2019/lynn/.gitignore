@@ -3,6 +3,9 @@
 *.dSYM
 fib
 fib.c
+ghcfib
+ghcfib.hi
+ghcfib.o
 hint
 hint.c
 indent

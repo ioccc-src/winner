@@ -4233,6 +4233,16 @@ He also added the script [try.sh](/2019/karns/try.sh) to showcase the entry a
 bit more easily.
 
 
+## <a name="2019_lynn"></a>[2019/lynn](/2019/lynn/prog.c) ([README.md](/2019/lynn/README.md]))
+
+[Cody](#cody) added the [try.sh](/2019/lynn/try.sh) script.
+
+Cody also added the [example-1.txt](/2019/lynn/example-1.txt) and
+[example-2.txt](/2019/lynn/example-2.txt) text files from
+[2018/vokes](/2018/vokes/README.md) so that the entry does not rely on any other
+entry existing.
+
+
 ## <a name="2019_yang"></a>[2019/yang](/2019/yang/prog.c) ([README.md](/2019/yang/README.md]))
 
 [Cody](#cody) added the [try.sh](/2019/yang/try.sh) script which also involved
