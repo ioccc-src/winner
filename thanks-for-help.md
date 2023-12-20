@@ -4243,6 +4243,25 @@ Cody also added the [example-1.txt](/2019/lynn/example-1.txt) and
 entry existing.
 
 
+## <a name="2019_poikola"></a>[2019/poikola](/2019/poikola/prog.c) ([README.md[(/2019/poikola/README.md))
+
+[Cody](#cody) added the missing `docs` rule to the Makefile that forms a PDF
+file. The rule requires the tool
+[pdflatex](https://tug.org/applications/pdftex/index.html).
+
+Cody also added the [alternate code](/2019/poikola/README.md#alternate-code).
+
+Cody also added the [try.sh](/2019/poikola/try.sh) and
+[try.alt.sh](/2019/poikola/try.alt.sh) scripts.
+
+Cody also disabled the optimiser because the author stated that for clang the
+levels [0123s] work okay but with GCC (6) they only said level 0 works,
+suggesting that with some versions of GCC it might not be correct with levels !=
+0 and since 0 works with clang that's okay. Similarly, the same for C standards
+tested: `gnu17` was not tested but `gnu11` was so the standard was set to
+`gnu11`.
+
+
 ## <a name="2019_yang"></a>[2019/yang](/2019/yang/prog.c) ([README.md](/2019/yang/README.md]))
 
 [Cody](#cody) added the [try.sh](/2019/yang/try.sh) script which also involved
@@ -4381,7 +4400,12 @@ fixed, a good example being [1986/marshall](#1986marshall-readmemd) (see the
 had to be done to fix it).
 
 There was a 'problem' where `${MAKE}` was `$(MAKE)`: this doesn't break anything
-but it is inconsistent with the rest of the `${foo}` tools.
+but it is inconsistent with the rest of the `${foo}` tools even if by tradition
+it is `$(MAKE)`.
+
+Cody also added missing variables like `BASH` and `PDFLATEX` to the
+[var.mk](/var.mk) file and removed another that was deemed problematic or
+undesired.
 
 A lot of the fixes with the Makefiles that Cody made were done with his [sgit
 tool](https://github.com/xexyl/sgit).

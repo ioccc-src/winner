@@ -4,6 +4,14 @@
 make
 ```
 
+There is an alternate version of this program which changes the way the output
+is displayed. See [Alternate code](#alternate-code) below.
+
+NOTE: we disable the optimiser because the author stated that for GCC optimiser
+level 0 gave correct output. With clang [0123s] works which suggests that [123s]
+might or might not work with GCC. Likewise, we do similar for the standard,
+forcing `-std=gnu11`.
+
 
 ### Bugs and (Mis)features:
 
@@ -26,7 +34,16 @@ sleep 86400; make clobber prog
 
 sleep 86400; make clobber prog
 ./prog 512 ./prog
+
 ```
+
+If you wish for some documentation:
+
+```sh
+make docs
+```
+
+This will create the file `poikola.pdf` for your enjoyment.
 
 
 ### Try:
@@ -34,21 +51,35 @@ sleep 86400; make clobber prog
 If you don't have a few days, try:
 
 ```sh
-TZ=UTC24 make clobber prog
-./prog 512 ./prog
-
-TZ=UTC48 make clobber prog
-./prog 512 ./prog
+./try.sh
 ```
 
-This program will not validate input so it might fail or get stuck if invoked
-erroneously.
+As the [bugs.md](/bugs.md#2019-poikola) says, this program will not validate
+input so it might get stuck or fail if invoked erroneously.
 
-This is supposed to happen.  As is written in the
-[The Jargon File](http://catb.org/jargon/html/F/feature.html):
 
+## Alternate code:
+
+This version prints a newline after each number for parsing in other ways than
+what can be done with the original entry.
+
+
+### Alternate build:
+
+```sh
+make alt
 ```
-That's not a bug, that's a feature.
+
+
+### Alternate use:
+
+Use `prog.alt` as you would `prog` above.
+
+
+### Alternate try:
+
+```sh
+./try.alt.sh
 ```
 
 
@@ -57,9 +88,12 @@ That's not a bug, that's a feature.
 Do you have the time to see what this program does?  Think again, come back and
 try again.
 
-Note that 2 can be said to be the least odd prime because it is the greatest
-even prime.  Moreover 2 can be also said to be the greatest odd prime because it
-is the least even prime.
+Note that [2](https://t5k.org/curios/page.php/2.html) can be said to be the
+least [odd](https://en.wikipedia.org/wiki/Parity_(mathematics))
+[prime](https://en.wikipedia.org/wiki/Prime_number) because it is the greatest
+[even](https://en.wikipedia.org/wiki/Parity_(mathematics)) prime.  Moreover `2`
+can be also said to be the greatest odd prime because it is the least even
+prime.
 
 The source code layout and some of the variable names honors the ski jumping
 accomplishments of [Matti
@@ -67,6 +101,7 @@ Nyk&auml;nen](https://en.wikipedia.org/wiki/Matti_Nyk%C3%A4nen).
 
 
 ## Author's remarks:
+
 
 ### How to build:
 
@@ -86,11 +121,13 @@ e.g.:
 clang -O1 -o prog prog.c
 ```
 
+
 ### Poster:
 
 You can generate an A3 sized poster by `make docs`. This command creates a pdf
 file `poikola.pdf`. This requires the
 [pdfTeX](https://en.wikipedia.org/wiki/PdfTeX) tool.
+
 
 ### What this entry does:
 
@@ -111,19 +148,20 @@ jumper](https://en.wikipedia.org/wiki/Matti_Nyk%C3%A4nen) and [amateur
 philosopher](http://telefinn.blogspot.com/2011/11/matti-nykanen-quotes.html),
 who passed away on fourth of February 2019.
 
+
 ### Oh boys:
 
 So, I followed the rules given by [Gandalf the
 White](https://www.glyphweb.com/arda/g/gandalf.html) and the [Judges of
-IOCCC](/judges.html).
+the IOCCC](/judges.html).
 
 Output of `iocccsize`, using the [2019 version of
 iocccsize](https://www.ioccc.org/2019/iocccsize.c), is carefully selected.  For
 the sake of clarity, I used single letter variables in the code. I also avoided
 unnecessary use of functions.  Like a
-[tripundra](https://en.wikipedia.org/wiki/Tripundra), this program has three levels.
-In order to reveal all of them, you have to compile this program on three
-consecutive days.
+[tripundra](https://en.wikipedia.org/wiki/Tripundra), this program has three
+levels.  In order to reveal all of them, you have to compile this program on
+three consecutive days.
 
 As this is a contest for obfuscated code, the program does not perform
 unnecessary checks, but either fails or gets stuck if invoked erroneously. The
@@ -142,6 +180,7 @@ input in any way.  These same parameters should be given in calculating a
 numbers](https://en.wikipedia.org/wiki/Prime_number). *Please note that maximum
 file size is one gigabyte*!
 
+
 ### Obfuscation:
 
 *Matti Nyk&auml;nen*: Every time I jump, and I get that feeling of _bon voyage_,
@@ -150,10 +189,11 @@ the feeling that I've been here before.
 *Matti Nyk&auml;nen*: When you are about to jump, you are all alone and have to
 make your own decisions. Up there, it's all _up yours_.
 
-This code has some jumping too. I used some `goto`s instead of `longjmp()`. Some
+This code has some jumping too. I used some `goto`s instead of `longjmp(3)`. Some
 Finnish [ski jumping](https://en.wikipedia.org/wiki/Ski_jumping) sites are used
 as labels, however, there is `lahti` instead of <tt style="font-family: Monaco,
 Courier New, monospace;font-size: 12px;">salpausselk&auml;</tt>.
+
 
 ### SHA-3-512 Compatibility chart ###
 
@@ -167,10 +207,12 @@ and iso9899:2011 (argument of `-std=`).
 GCC-6: For optimization level 0, correct output using the C standards
 c11, c99, gnu11, gnu1x, gnu89, gnu90, gnu99, iso9899:1999 and iso9899:2011.
 
+
 ### Missing a prime
 
 For obvious reason, the [oddest
 prime](https://mathworld.wolfram.com/OddPrime.html) is missing from output.
+
 
 ### Observations
 
@@ -178,6 +220,7 @@ prime](https://mathworld.wolfram.com/OddPrime.html) is missing from output.
 achieve exactly the same output from different optimization levels and
 compilers. Small change in code can produce really unexpected results, i.e. the
 compiler can skip a few expressions or statements without obvious reason.
+
 
 ### Major spoilers
 
@@ -193,7 +236,7 @@ that `(23*m/9+(m<3?y--:y-2)+d+4+y/4-y/100+y/400)%7` is one character shorter. In
 my solution, `m<3?y--:y-2` is used directly, instead of assigning a value to
 `d`.
 
-Q is pronounced in Finnish exactly like "kuu", a word for
+`Q` is pronounced in Finnish exactly like `kuu`, a word for
 [month](https://en.wikipedia.org/wiki/Month) or the
 [Moon](https://en.wikipedia.org/wiki/Moon). So, `Q = k` is intended.
 
@@ -207,22 +250,23 @@ code from my high school C-programming course. Originally, I wrote it over 20
 years ago. My teacher said that it is (too) complicated to use bits stored in
 arrays, so I did it.
 
+
 ### Other stuff
 
 [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson): I really like that you enjoyed my
 previous entry. I hope that you will like this entry too.  Because I did not
 want to give too many clues to [the Judges](/judges.html), I tried to write this
-entry in a different way than [Most Stellar](/2018/poikola/prog.c), but in this
+entry in a different way than [Most Stellar](/2018/poikola/README.md), but in this
 code there is at least one recycled thing from it. By the way, the answers to
-the questions I posed: `(1)` 255. `(2)` Try to compare binary representations of
-those floats and binary representation of the string "`25th IOCCC!`". `(3)` I
+the questions I posed: (1) 255. (2) Try to compare binary representations of
+those `float`s and binary representation of the string "`25th IOCCC!`". (3) I
 don't know. I used standard [trigonometric
 functions](https://en.wikipedia.org/wiki/Trigonometric_functions) from
 [math.h](https://en.wikipedia.org/wiki/C_mathematical_functions#Overview_of_functions)
 for rotating the [Big Dipper](https://en.wikipedia.org/wiki/Big_Dipper) and
 later replaced those functions with my own implementations.  But there was a bug
 in my code and the effect was more beautiful than intended.  I did not even
-debug this bug and now it works as a feature. `(4)` It is not possible. If you
+debug this bug and now it works as a feature. (4) It is not possible. If you
 change a single bit, the [Fletcher's 16
 checksum](https://en.wikipedia.org/wiki/Fletcher%27s_checksum#Fletcher-16) does
 not match anymore and `goto` jumps to the end of the code.

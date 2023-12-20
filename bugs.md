@@ -3513,6 +3513,7 @@ remarks in the sections [Syntax](/2019/lynn/README.md#syntax) and
 This program will not validate input so it might fail or get stuck if invoked
 erroneously.
 
+Also, the maximum file size is 1GB.
 
 ## 2019 yang
 
