@@ -4278,6 +4278,19 @@ shouldn't) and adding the [ioccc.txt](/2019/yang/ioccc.txt) file.
 # <a name="2020"></a>2020
 
 
+## <a name="2020_burton"></a>[2020/burton](/2020/burton/prog.c) ([README.md](/2020/burton/README.md))
+
+[Cody](#cody) fixed the script [check_be.sh](/2020/burton/check_be.sh): it
+assumed that `prog_be` was in `PATH` which is unlikely so it was changed to
+`./prog_be`.
+
+Cody also improved the `make test` rule (which uses `check_be.sh` and the Little
+Endian counterpart) so that it shows that the files are identical rather than
+showing nothing at all.
+
+Cody also added the [try.sh](/2020/burton/try.sh) script.
+
+
 ## <a name="2020_endoh2"></a>[2020/endoh2](/2020/endoh2/prog.c) ([README.md](/2020/endoh2/README.md))
 
 [Cody](#cody) copied the files from the spoiler.zip file that was password protected with
