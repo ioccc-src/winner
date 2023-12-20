@@ -29,17 +29,6 @@ For more detailed information see [2004 sds in bugs.md](/bugs.md#2004-sds).
 ./try.sh
 ```
 
-The generated code will very likely crash or do something else if not given a
-proper command line, like a file that can be opened with `fopen(3)`. This is not
-a bug but a feature.
-
-This is supposed to happen.  As is written in the
-[The Jargon File](http://catb.org/jargon/html/F/feature.html):
-
-```
-That's not a bug, that's a feature.
-```
-
 
 ## Judges' remarks:
 
