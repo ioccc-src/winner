@@ -4291,6 +4291,14 @@ showing nothing at all.
 Cody also added the [try.sh](/2020/burton/try.sh) script.
 
 
+## <a name="2020_carlini"></a>[2020/carlini](/2020/carlini/prog.c) ([README.md](/2020/carlini/README.md))
+
+[Cody](#cody) added the [try.sh](/2020/carlini/try.sh) script which although at
+first glance might not appear to have a point, it actually does, namely showing
+how you can automate play and then reminding you to actually play for real, with
+a friend, whether that's real or imagined.
+
+
 ## <a name="2020_endoh2"></a>[2020/endoh2](/2020/endoh2/prog.c) ([README.md](/2020/endoh2/README.md))
 
 [Cody](#cody) copied the files from the spoiler.zip file that was password protected with
