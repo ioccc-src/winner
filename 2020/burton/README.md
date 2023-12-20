@@ -26,25 +26,22 @@ For more detailed information see [2020 burton in bugs.md](/bugs.md#2020-burton)
 ### Try:
 
 ```sh
-./prog 128
-
-./prog_le 128
-./prog_be 128
-
-./prog 170
-
-./prog 85
-
-./prog 128 128
-./prog 128 128 128
-./prog 128 128 128 128
+./try.sh
 ```
 
 
 ## Alternate code:
 
-By default, this code compiles for Little Endian machines.
-An alternate version is also compiled for Big Endian machines.
+By default, the program works for Little Endian machines. This alternate build
+is for Big Endian machines (that works whether you have LE or BE).
+
+
+### Alternate build:
+
+Running `make` builds the alternate code by default.
+
+
+### Alternate use:
 
 Use `prog_be` as you would `prog` above.
 
@@ -80,11 +77,13 @@ make test
 Invoke this with a single non-negative integer less than 256, and a useful
 transformation occurs.
 
+
 ### Rule 2-ish:
 
 Exporting the constants `B`,`I`,`T`,`S` to the [Makefile](Makefile) allows the
 code to be compiled for either LE (little-endian) or BE (big-endian)
 machines(!!), so they are truly configuration parameters, not logic.
+
 
 ### Notes:
 
@@ -94,16 +93,17 @@ display strange results with more than one argument.
 Small, non-negative integers only.  Useful range is `0 .. 511`, sorta, for LE; `0
 .. 255` for BE.  Bonus points if you can explain why the limits work this way.
 
-ASCII character set, 64-bit long longs are required.
+ASCII character set, 64-bit `long long`s are required.
 
 v,a,r,i,a,b,l,e,s\_NAME the operation.
 
 No loops, no branches?!?
 
+
 #### Compilation:
 
 Compiles cleanly under `clang -Wall -Weverything -pedantic`, but you need to add
-`--include stdio.h --include stdlib.h` for the `printf`(3) and `atoi`(3).
+`--include stdio.h --include stdlib.h` for the `printf(3)` and `atoi(3)`.
 
 On a little-endian machine:
 

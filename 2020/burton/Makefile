@@ -152,8 +152,8 @@ ${PROG}_be: ${PROG}.c
 	${CC} ${CFLAGS} -DB=${_B} -DI=${_I} -DT=${_T} -DS=${_S} $< -o $@ ${LDFLAGS}
 
 test: check_le.sh check_be.sh prog_le prog_be correct
-	./check_le.sh ./prog_le | ${DIFF} -bw - correct
-	./check_be.sh ./prog_be | ${DIFF} -bw - correct
+	./check_le.sh ./prog_le | ${DIFF} -sbw - correct
+	./check_be.sh ./prog_be | ${DIFF} -sbw - correct
 
 # alternative executable
 #
