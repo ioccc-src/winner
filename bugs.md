@@ -3575,6 +3575,25 @@ It will also show funny output with more than one arg. This should not be fixed
 either. But can you figure out why this happens?
 
 
+## 2020 carlini
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2020/carlini/prog.c](2020/carlini/prog.c)
+### Information: [2020/carlini/README.md](2020/carlini/README.md)
+
+The author stated that bad things happen if the entered move is outside of the
+range [1..9]. We observed a crash but we also observed a tie and other things
+besides (say with the input `-1`, `-`, `-10` and others).
+
+If a player makes a move over their opponent's place they will automatically
+lose.
+
+If a player tries to play a move they already played they will forfeit their
+move.
+
+If you have audible bells enabled the program will beep at every turn.
+
+
 ## 2020 ferguson1
 
 ### STATUS: INABIAF - please **DO NOT** fix
