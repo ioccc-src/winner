@@ -350,6 +350,8 @@
 1988,spinellis,Makefile,30,null,null,makefile,true,github,Makefile,null
 1988,spinellis,spinellis.alt.c,40,null,alt,c,true,github,alternative source,c
 1988,spinellis,spinellis.orig.c,50,null,orig,c,true,github,original source,c
+1988,spinellis,try.alt.sh,100,null,null,shellscript,true,github,how to run alternative code,sh
+1988,spinellis,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1988,spinellis,input2.txt,150,null,null,text,true,github,example input,txt
 1988,spinellis,input.txt,150,null,null,text,true,github,example input,txt
 1988,spinellis,1988_spinellis.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
@@ -413,6 +415,7 @@
 1989,ovdluhe,Makefile,30,null,null,makefile,true,github,Makefile,null
 1989,ovdluhe,ovdluhe.alt.c,40,null,alt,c,true,github,alternative source,c
 1989,ovdluhe,ovdluhe.orig.c,50,null,orig,c,true,github,original source,c
+1989,ovdluhe,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1989,ovdluhe,1989_ovdluhe.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1989,ovdluhe,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 1989,paul,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -794,6 +797,7 @@
 1992,gson,gson.c,20,null,main,c,true,github,winning source,c
 1992,gson,Makefile,30,null,null,makefile,true,github,Makefile,null
 1992,gson,gson.orig.c,50,null,orig,c,true,github,original source,c
+1992,gson,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1992,gson,mkdict.sh,150,null,null,shellscript,true,github,tool to make the dictionary,sh
 1992,gson,1992_gson.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1992,gson,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
@@ -3405,12 +3409,12 @@
 2013,endoh3,endoh3.c,20,null,main,c,true,github,winning source,c
 2013,endoh3,Makefile,30,null,null,makefile,true,github,Makefile,null
 2013,endoh3,endoh3.orig.c,50,null,orig,c,true,github,original source,c
+2013,endoh3,flea-waltz.abc,100,null,null,text,true,github,sample input,abc
+2013,endoh3,menuet.abc,100,null,null,text,true,github,sample input,abc
+2013,endoh3,test.abc,100,null,null,text,true,github,sample input,abc
+2013,endoh3,twinkle.abc,100,null,null,text,true,github,sample input,abc
 2013,endoh3,wavify.rb,100,null,null,ruby,true,github,post process output to form a WAV sound file,rb
-2013,endoh3,flea-waltz.abc,150,null,null,text,true,github,sample input,abc
-2013,endoh3,menuet.abc,150,null,null,text,true,github,sample input,abc
-2013,endoh3,test.abc,150,null,null,text,true,github,sample input,abc
-2013,endoh3,twinkle.abc,150,null,null,text,true,github,sample input,abc
-2013,endoh3,yankee.abc,150,null,null,text,true,github,sample input,abc
+2013,endoh3,yankee.abc,100,null,null,text,true,github,sample input,abc
 2013,endoh3,2013_endoh3.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2013,endoh3,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2013,endoh4,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -3585,11 +3589,11 @@
 2013,hou,Makefile,30,null,null,makefile,true,github,Makefile,null
 2013,hou,hou.orig.c,50,null,orig,c,true,github,original source,c
 2013,hou,doc/example.html,100,md2html,null,html,true,browser,detailed information about entry,html
+2013,hou,old_default.scene,100,null,null,text,true,github,sample input,scene
+2013,hou,otherroom.scene,100,null,null,text,true,github,sample input,scene
 2013,hou,luna.jpg,150,null,null,image,true,browser,sample image data,jpg
 2013,hou,old_default.jpg,150,null,null,image,true,browser,sample image data,jpg
-2013,hou,old_default.scene,150,null,null,text,true,github,sample input,scene
 2013,hou,otherroom.jpg,150,null,null,image,true,browser,sample image data,jpg
-2013,hou,otherroom.scene,150,null,null,text,true,github,sample input,scene
 2013,hou,2013_hou.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2013,hou,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2013,mills,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -4377,6 +4381,7 @@
 2019,duble,prog.alt.c,40,null,alt,c,true,github,alternative source,c
 2019,duble,prog.orig.c,50,null,orig,c,true,github,original source,c
 2019,duble,check-os.sh,150,null,null,shellscript,true,github,check the operating system for compatibility,sh
+2019,duble,fullscreen.sh,150,null,null,shellscript,true,github,determine full screen size for make fullscreen,sh
 2019,duble,2019_duble.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2019,duble,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2019,endoh,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -4387,6 +4392,8 @@
 2019,endoh,prog.c,20,null,main,c,true,github,winning source,c
 2019,endoh,Makefile,30,null,null,makefile,true,github,Makefile,null
 2019,endoh,prog.orig.c,50,null,orig,c,true,github,original source,c
+2019,endoh,try.sh,100,null,null,shellscript,true,github,how to run,sh
+2019,endoh,ascii.c,150,null,null,c,true,github,shows character value of ASCII,c
 2019,endoh,2019_endoh.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2019,endoh,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2019,giles,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -4421,6 +4428,9 @@
 2019,lynn,prog.c,20,null,main,c,true,github,winning source,c
 2019,lynn,Makefile,30,null,null,makefile,true,github,Makefile,null
 2019,lynn,prog.orig.c,50,null,orig,c,true,github,original source,c
+2019,lynn,example-1.txt,100,null,null,text,true,github,sample input,txt
+2019,lynn,example-2.txt,100,null,null,text,true,github,sample input,txt
+2019,lynn,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2019,lynn,fib.hs,200,null,null,text,true,github,compiler macros,hs
 2019,lynn,ghcfib.hs,200,null,null,text,true,github,compiler macros,hs
 2019,lynn,ghclol.hs,200,null,null,text,true,github,compiler macros,hs
@@ -4446,6 +4456,7 @@
 2019,mills,prog.c,20,null,main,c,true,github,winning source,c
 2019,mills,Makefile,30,null,null,makefile,true,github,Makefile,null
 2019,mills,prog.orig.c,50,null,orig,c,true,github,original source,c
+2019,mills,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2019,mills,2019_mills.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2019,mills,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2019,poikola,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -4455,8 +4466,11 @@
 2019,poikola,index.html,10,readme2index,null,html,true,browser,click here first,html
 2019,poikola,prog.c,20,null,main,c,true,github,winning source,c
 2019,poikola,Makefile,30,null,null,makefile,true,github,Makefile,null
+2019,poikola,prog.alt.c,40,null,alt,c,true,github,alternative source,c
 2019,poikola,prog.orig.c,50,null,orig,c,true,github,original source,c
 2019,poikola,poikola.tex,100,null,null,tex,true,github,supplied documentation,tex
+2019,poikola,try.alt.sh,100,null,null,shellscript,true,github,how to run alternative code,sh
+2019,poikola,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2019,poikola,2019_poikola.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2019,poikola,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2019,yang,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -4482,6 +4496,7 @@
 2020,burton,prog.c,20,null,main,c,true,github,winning source,c
 2020,burton,Makefile,30,null,null,makefile,true,github,Makefile,null
 2020,burton,prog.orig.c,50,null,orig,c,true,github,original source,c
+2020,burton,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2020,burton,check_be.sh,150,null,null,shellscript,true,github,test suite support file,sh
 2020,burton,check_le.sh,150,null,null,shellscript,true,github,test suite support file,sh
 2020,burton,correct,150,null,null,text,true,github,test suite comparison data,null
@@ -4601,15 +4616,15 @@
 2020,ferguson2,Makefile,30,null,null,makefile,true,github,Makefile,null
 2020,ferguson2,prog.alt.c,40,null,alt,c,true,github,alternative source,c
 2020,ferguson2,prog.orig.c,50,null,orig,c,true,github,original source,c
+2020,ferguson2,input.txt,100,null,null,text,true,github,sample input,txt
+2020,ferguson2,obfuscation.txt,100,null,null,text,true,github,sample input,txt
 2020,ferguson2,recode.c,100,null,null,c,true,github,Enigma machine simulato source code,c
+2020,ferguson2,try.this.txt,100,null,null,text,true,github,sample input,txt
 2020,ferguson2,chocolate-cake.html,150,null,null,html,true,browser,chocolate cake recipe,html
 2020,ferguson2,enigma.1,150,null,null,man,true,github,Enigma simulator man page,1
-2020,ferguson2,input.txt,150,null,null,text,true,github,sample input,txt
 2020,ferguson2,obfuscation.key,150,null,null,text,true,github,key to decipher or encipher obfuscation.txt,key
-2020,ferguson2,obfuscation.txt,150,null,null,text,true,github,sample input,txt
 2020,ferguson2,recode.1,150,null,null,man,true,github,configuration tool man page,1
 2020,ferguson2,recode.html,150,null,null,html,true,browser,recode configurator documentation,html
-2020,ferguson2,try.this.txt,150,null,null,text,true,github,sample input,txt
 2020,ferguson2,2020_ferguson2.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2020,ferguson2,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2020,giles,README.md,null,null,null,markdown,false,github,markdown source for index.html,md

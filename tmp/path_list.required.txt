@@ -187,6 +187,8 @@
 1988/spinellis/spinellis.alt.c
 1988/spinellis/spinellis.c
 1988/spinellis/spinellis.orig.c
+1988/spinellis/try.alt.sh
+1988/spinellis/try.sh
 1988/westley/.gitignore
 1988/westley/Makefile
 1988/westley/README.md
@@ -223,6 +225,7 @@
 1989/ovdluhe/ovdluhe.alt.c
 1989/ovdluhe/ovdluhe.c
 1989/ovdluhe/ovdluhe.orig.c
+1989/ovdluhe/try.sh
 1989/paul/.gitignore
 1989/paul/Makefile
 1989/paul/README.md
@@ -443,6 +446,7 @@
 1992/gson/gson.c
 1992/gson/gson.orig.c
 1992/gson/mkdict.sh
+1992/gson/try.sh
 1992/imc/.gitignore
 1992/imc/Makefile
 1992/imc/README.md
@@ -2859,14 +2863,17 @@
 2019/duble/Makefile
 2019/duble/README.md
 2019/duble/check-os.sh
+2019/duble/fullscreen.sh
 2019/duble/prog.alt.c
 2019/duble/prog.c
 2019/duble/prog.orig.c
 2019/endoh/.gitignore
 2019/endoh/Makefile
 2019/endoh/README.md
+2019/endoh/ascii.c
 2019/endoh/prog.c
 2019/endoh/prog.orig.c
+2019/endoh/try.sh
 2019/giles/.gitignore
 2019/giles/BlockDiagram.png
 2019/giles/Makefile
@@ -2884,6 +2891,8 @@
 2019/lynn/.gitignore
 2019/lynn/Makefile
 2019/lynn/README.md
+2019/lynn/example-1.txt
+2019/lynn/example-2.txt
 2019/lynn/fib.hs
 2019/lynn/ghcfib.hs
 2019/lynn/ghclol.hs
@@ -2893,6 +2902,7 @@
 2019/lynn/prog.c
 2019/lynn/prog.orig.c
 2019/lynn/scc.hs
+2019/lynn/try.sh
 2019/mills/.gitignore
 2019/mills/Eugene_Onegin.cp11_1.188
 2019/mills/Eugene_Onegin.txt.gz
@@ -2906,12 +2916,16 @@
 2019/mills/Shakespeare.txt.gz
 2019/mills/prog.c
 2019/mills/prog.orig.c
+2019/mills/try.sh
 2019/poikola/.gitignore
 2019/poikola/Makefile
 2019/poikola/README.md
 2019/poikola/poikola.tex
+2019/poikola/prog.alt.c
 2019/poikola/prog.c
 2019/poikola/prog.orig.c
+2019/poikola/try.alt.sh
+2019/poikola/try.sh
 2019/yang/.gitignore
 2019/yang/Makefile
 2019/yang/README.md
@@ -2930,6 +2944,7 @@
 2020/burton/correct
 2020/burton/prog.c
 2020/burton/prog.orig.c
+2020/burton/try.sh
 2020/carlini/.gitignore
 2020/carlini/Makefile
 2020/carlini/README.md
