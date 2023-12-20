@@ -47,7 +47,8 @@ CWARN= -Wall -Wextra -pedantic ${CSILENCE}
 
 # Compiler standard
 #
-CSTD= -std=gnu17
+# The author did not test gnu17 but did gnu11 so we set to gnu11.
+CSTD= -std=gnu11
 
 # Compiler bit architecture
 #
@@ -66,7 +67,10 @@ CINCLUDE=
 
 # Optimization
 #
-OPT= -O3
+# We disable the optimiser because the author stated that for GCC optimiser
+# level 0 gave correct output. With clang [0123s] works which suggests that
+# [123s] might or might not work with GCC.
+OPT= -O0
 
 # Default flags for ANSI C compilation
 #
@@ -116,8 +120,8 @@ CSRC= ${PROG}.o
 DATA= poikola.tex
 TARGET= ${PROG}
 #
-ALT_OBJ=
-ALT_TARGET=
+ALT_OBJ= ${PROG}.alt.o
+ALT_TARGET= ${PROG}.alt
 
 DOCS= poikola.tex
 #################
@@ -132,13 +136,26 @@ all: data ${TARGET}
 	clean clobber install love haste waste maker easter_egg \
 	sandwich supernova deep_magic magic charon pluto
 
+# We disable the optimiser because the author stated that for GCC optimiser
+# level 0 gave correct output. With clang [0123s] works which suggests that
+# [123s] might or might not work with GCC. The author also stated that they did
+# not test gnu17 but for clang and GCC gnu11 does so we also set the standard to
+# gnu11.
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS} -O0 -std=gnu11 $< -o $@ ${LDFLAGS}
 
 # alternative executable
 #
 alt: data ${ALT_TARGET}
 	@${TRUE}
+
+# We disable the optimiser because the author stated that for GCC optimiser
+# level 0 gave correct output. With clang [0123s] works which suggests that
+# [123s] might or might not work with GCC. The author also stated that they did
+# not test gnu17 but for clang and GCC gnu11 does so we also set the standard to
+# gnu11.
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} -O0 -std=gnu11 $< -o $@ ${LDFLAGS}
 
 # data files
 #
