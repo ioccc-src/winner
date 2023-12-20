@@ -4410,7 +4410,7 @@ it is `$(MAKE)`.
 
 Cody also added missing variables like `BASH` and `PDFLATEX` to the
 [var.mk](/var.mk) file and removed another that was deemed problematic or
-undesired.
+undesired. Other variable names had typos in them.
 
 A lot of the fixes with the Makefiles that Cody made were done with his [sgit
 tool](https://github.com/xexyl/sgit).
