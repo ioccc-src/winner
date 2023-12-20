@@ -4243,6 +4243,11 @@ Cody also added the [example-1.txt](/2019/lynn/example-1.txt) and
 entry existing.
 
 
+## <a name="2019_mills"></a>[2019/mills](/2019/mills/prog.c) ([README.md](/2019/mills/README.md]))
+
+[Cody](#cody) added the [try.sh](/2019/mills/try.sh) script.
+
+
 ## <a name="2019_poikola"></a>[2019/poikola](/2019/poikola/prog.c) ([README.md[(/2019/poikola/README.md))
 
 [Cody](#cody) added the missing `docs` rule to the Makefile that forms a PDF
