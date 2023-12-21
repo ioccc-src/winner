@@ -4306,8 +4306,11 @@ a friend, whether that's real or imagined.
 
 ## <a name="2020_endoh2"></a>[2020/endoh2](/2020/endoh2/prog.c) ([README.md](/2020/endoh2/README.md))
 
-[Cody](#cody) copied the files from the spoiler.zip file that was password protected with
-a password that was no longer known from his preview of 2020.
+[Cody](#cody) copied the files from the spoiler.zip file (from his copy during
+the preview period) that was password protected with a password that was no
+longer known.
+
+He also added the [try.sh](/2020/endoh2/try.sh) script.
 
 
 ## <a name="2020_endoh3"></a>[2020/endoh3](/2020/endoh3/prog.c) ([README.md](/2020/endoh3/README.md))
