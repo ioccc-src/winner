@@ -4368,6 +4368,11 @@ and I encourage you to do so as the cake is quite picky!
 [Cody](#cody), with intentional irony here :-), fixed formatting, links and typos in
 various files.
 
+He also added the [try.sh](/2020/ferguson2/try.sh) script.
+
+He also added the [alt code](/2020/ferguson2/README.md#alternate-code) and the
+[try.alt.sh](/2020/ferguson2/try.alt.sh) script.
+
 He also fixed some issues that occurred when files were renamed to `.md` from
 `.markdown`.
 

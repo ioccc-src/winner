@@ -25,14 +25,15 @@ at once. See [Alternate code](#alternate-code) below.
 # recode prompts for settings; pass to Enigma machine:
 ./recode | ./prog - 2>/dev/null
 
-# recode reads from input file, prompts for settings; pass to Enigma machine:
+# recode reads from input file, prompts for settings; passed to Enigma machine:
 ./recode -finput | ./prog - 2>/dev/null
 
-# recode reads config from string or file; pass to Enigma machine after
+# recode reads config from string or file; passed to Enigma machine after
 # prompting for input:
 ./recode -R<string|file> | ./prog - 2>/dev/null
 
-# write config to output file; pass to Enigma machine after prompting for input:
+# write config to output file; passed to Enigma machine after prompting for
+# input:
 ./recode -o<config> | ./prog - 2>/dev/null
 
 # pseudo-randomly select settings
@@ -40,44 +41,16 @@ at once. See [Alternate code](#alternate-code) below.
 
 # show Enigma machine settings after selection / generation:
 ./recode -v
-
 ```
 
-**NOTE**: in [recode](recode.c) no spaces between options and option arguments are allowed.
+**NOTE**: in [recode](recode.c) no spaces between options and option arguments
+are allowed.
 
 
 ### Try:
 
 ```sh
-# IOCCC obfuscated!
-echo IOCCC | ./prog
-
-# IOCCC obfuscated and de-obfuscated!:
-echo IOCCC | ./prog | ./prog
-
-# more input fun:
-./prog - < try.this.txt 2>/dev/null
-
-# more obfuscated fun:
-echo testing test tests | ./recode
-echo testing test tests | ./recode | ./prog - 2>/dev/null
-echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode
-echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode | ./prog - 2>/dev/null
-
-# even more obfuscated fun saving and reading from files:
-#
-# initial clean up:
-rm -f conf input output output2
-# encrypt "testing test tests" with randomised settings saved in conf, saving
-# original string to input and original output to output:
-echo testing test tests | tee input | ./recode -r -oconf | ./prog - 2>/dev/null >output
-# configure Enigma machine from conf file and read from output file, thus decrypting:
-./recode -Rconf -foutput | ./prog - 2>/dev/null > output2
-# make sure input and output2 are the same:
-diff -s input output2
-# final clean up
-rm -f conf input output output2
-
+./try.sh
 ```
 
 What does:
@@ -124,11 +97,7 @@ Use `prog.alt` as you would `prog` above.
 
 
 ```sh
-# encipher input.txt with default settings:
-cat input.txt | ./prog.alt
-
-# decipher enciphered input.txt with default settings:
-cat input.txt | ./prog| ./prog.alt
+./try.alt.sh
 ```
 
 Notice how only the last part should use the `prog.alt`. Why? Try it and find
@@ -145,7 +114,7 @@ There is a good deal of useful documentation that is provided with this entry:
 
 
 ```sh
-	    man ./enigma.1
+man ./enigma.1
 ```
 
 

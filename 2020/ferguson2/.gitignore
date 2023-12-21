@@ -3,6 +3,7 @@
 cake.sh
 chocolate-cake.dat
 chocolate-cake.key
+config
 *.dSYM
 indent
 indent.c
