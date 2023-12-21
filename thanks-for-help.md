@@ -4337,13 +4337,14 @@ quick.
 
 Cody also reported (during the preview period of 2020) for some systems (at some
 point?) like macOS the use of `make clock` would not work due possibly to a
-timing issue so [Yusuke](#yusuke) changed it to compile the [clock.c](/2020/endoh3/clock.c)
-file directly (this might have been fixed in the Makefile later on but it
-doesn't hurt to keep it in and this way it isn't a problem in any system). How
-Cody remembers this minor detail more than three years ago is something that
-many people might wonder but he also once told us that if someone moves
-something of his even a millimetre from where it was he knows it so he might be
-called unusual (and he argues, with pride, eccentric :-) ) :-)
+timing issue so [Yusuke](#yusuke) changed it to compile the
+[clock.c](/2020/endoh3/clock.c) file directly (this might have been fixed in the
+Makefile later on but it doesn't hurt to keep it in and this way it isn't a
+problem in any system). How Cody remembers this minor detail more than three
+years ago is something that many people might wonder but he also once told us
+that if someone moves something of his even a millimetre from where it was he
+knows it so he might be called unusual (and he argues, with pride, eccentric :-)
+) :-)
 
 
 ## <a name="2020_ferguson2"></a>[2020/ferguson2](/2020/ferguson1/prog.c) ([README.md](/2020/ferguson1/README.md))
