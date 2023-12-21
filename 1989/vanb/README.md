@@ -8,8 +8,7 @@ make all
 ### Try:
 
 ```sh
-./vanb the rug gary lent
-./vanb unix is better than os/2
+./try.sh
 ```
 
 
