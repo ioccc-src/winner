@@ -229,7 +229,7 @@ function play()
 
     while true; do
 	menu
-	read -rp "Make your selection (0 - 7 or any other key to exit): " mode
+	read -rp "Make your selection (0 - 16 or any other key to exit): " mode
 
 	case "${mode}" in
 	    0)  # Drawing mode 0
