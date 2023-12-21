@@ -274,7 +274,7 @@ technique causes some beautifiers problems too.
 
 - Another use of the `Z` macro is this curious line:
 
-		    static char s[]=Z(; +<>^v);
+		    static  const char*s  =Z(	; +<>^v);
 
     There are a number of curious parts. First is the Z() part makes it look
     like a function call. Of course that wouldn't work as such because an array
@@ -285,7 +285,7 @@ technique causes some beautifiers problems too.
     A very minor factor is that the character 'v' is there and it's (`v`) also
     used as a macro (well, define) 'might' be of something to some people. Or
     programs maybe?  For instance using in vim `*` on the `v` in that array and
-    it takes you other instances of `v`: as in `\<v\>`: which happens to be
+    it takes you to other instances of `v`: as in `\<v\>`: which happens to be
     something else entirely.  That itself however might or might not be
     significant for this instance!
 
@@ -301,9 +301,9 @@ technique causes some beautifiers problems too.
 		    E(Z(YOU WIN!));
 
     Which happens to be in the same function the above char array is defined. Also
-it's more like a string than anything but yet it's not visibly a string.
+    it's more like a string than anything but yet it's not visibly a string.
 
-    Some beautifiers don't like this.
+    Some beautifiers didn't like this at all.
 
 - There's an `#undef` following an `if` in a way to draw attention from what to
 do if the if is true.
@@ -353,14 +353,14 @@ converted this:
 
 - Makes use of the different namespaces to have variables and labels be the
 same identifier. For example in main() there's a variable that also have the
-same name label for `goto` (there used to be two pairs in main()).
+same name label for `goto` (there used to be two pairs in `main()`).
 
 - And on that note: makes use of the ugly `goto` in numerous places. This
-includes simulating a while() loop, breaking out of that 'loop', breaking out of
-two loops (a for() in the 'while()'), re-entering (as in starting over) a for()
-loop and for dealing with errors.
+includes simulating a `while()` loop, breaking out of that 'loop', breaking out of
+two loops (a `for()` in the `'while()'`), re-entering (as in starting over) a
+`for()` loop and for dealing with errors.
 
-- Why do I check for `Q || P` and then goto x only to then check for `!Q && !D`
+- Why do I check for `Q || P` and then `goto x` only to then check for `!Q && !D`
 to then `goto x`? Do I need to check `Q` at all? In fact I do but at a quick glance
 it might be easy to miss.
 
@@ -397,7 +397,7 @@ this in two parts: the negative offsets and then the confusing names.
     That's not the only place negative offsets occur! Observe the ternary operators
     there too.
 
-    I'll go back to the F() macro and in particular what follows one of them:
+    I'll go back to the `F()` macro and in particular what follows one of them:
 
 		    g d g = f((a)((*y-2)*(y[-2]-2)),g);
 
@@ -412,30 +412,29 @@ this in two parts: the negative offsets and then the confusing names.
 
 		    (*y-2) * (y[-2]-2])
 
-    ...about? An offset of -2 and subtract -2 from that. Multiply that by the `*y`
-    (which is `j[3]`) - 2.
+    ...about? An offset of `-2` and subtract `-2` from that. Multiply that by the `*y`
+    (which is `j[3]`) `- 2`.
 
     But why is there a `g d g =` when the other lines only have the variable (or
-    location) and a d? (Excepting the one that doesn't refer to `d`.)
+    location) and a `d`? (Excepting the one that doesn't refer to `d`.)
 
 - On the confusing names etc.: the `getmaxyx()` function gets the maximum Y, X
-dimensions. Now in the first call in main() I have the code and tests following:
+dimensions. Now in the first call in `main()` I have the code and tests following:
 
 		    getmaxyx(v, *y, y[-2]);
 		    --*y; --y[-2];
 		    if (y[-2] < 9 || *y < 9)
 			    return E(Z(term too small));
 
-    Clearly the max x must be stored in `*y` and the max y must be stored in ..
-    `y[-2]`. After all anyone knows that the coordinates are in the order (X,Y)!
+    Clearly the `max x` must be stored in `*y` and the `max y` must be stored in ..
+    `y[-2]`. After all anyone knows that the coordinates are in the order `(X,Y)`!
     In fact the output of my entry and my documentation demonstrates this
-    clearly: X before Y! It's so true in fact that the documentation for curses
-    more than once states that it's actually (Y,X)! But the fact I don't even
+    clearly: `X` before `Y`! It's so true in fact that the documentation for curses
+    more than once states that it's actually `(Y,X)`! But the fact I don't even
     refer to a `x` is possibly confusing even without the negative offset.
 
     Of course I don't have to use negative offsets at all! I could use positive
-    offsets for every time I use negative offsets. But where's the fun in that?
-    :)
+    offsets for every time I use negative offsets. But where's the fun in that? :)
 
     BTW: Some of these are not in the table of expressions in the
     [HACKING.html][] ([HACKING.md][] on GitHub) file.  Also there might be some
@@ -446,10 +445,10 @@ dimensions. Now in the first call in main() I have the code and tests following:
     itself! Instead of misleading comments it's misleading statements in the
     file that explains what some of the things are for!
 
-- Misleading variable names for coordinates. In other words the Y coordinate is
-called X and the X coordinate is called Y.  This adds to the already confusing
+- Misleading variable names for coordinates. In other words the `Y` coordinate is
+called `X` and the `X` coordinate is called `Y`.  This adds to the already confusing
 array references but it also adds to the confusion of the order of the curses
-functions coordinates: it appears that yes X does come first because the
+functions coordinates: it _appears_ that yes `X` does come first because the
 function calls that take coordinates suggest it - but in actuality it's just
 that the names are deliberately swapped. Of course that's after you determine
 that the variables `X` and `Y` are only the snake head but at that point you
@@ -459,8 +458,8 @@ easily be read as `Y` and I have a lot of fun with `V` which I will get to next
 coordinates? I thought of this and I think it's more confusing to have something
 that is associated to what it is but incorrectly rather than something unrelated
 entirely: the mind constructs things from what it has seen, what it experiences,
-what it knows, and since X and Y are used for coordinates the natural response
-of the brain is to assume Y is what is really X and X is what is really Y.
+what it knows, and since `X` and `Y` are used for coordinates the natural response
+of the brain is to assume `Y` is what is really `X` and `X` is what is really `Y`.
 
 
 - More confusion with variable names: If you notice the `int *U, *V` they are
@@ -473,10 +472,10 @@ also part of the compound literal: that is they point into it:
     used in.
 
     There's another reason for moving it further down: if you look at the bug
-    drawing function (which comes before main()) you will see that there I set
+    drawing function (which comes before `main()`) you will see that there I set
     the bug location to refer to the `y` 'array'. I do blank out the old
     location at `*U, *V` but then assign the new location differently. Then in
-    main() I draw it at `*U, *V` and also check for the bug being eaten there
+    `main()` I draw it at `*U, *V` and also check for the bug being eaten there
     too.
 
 

@@ -3601,7 +3601,7 @@ If you have audible bells enabled the program will beep at every turn.
 ### Information: [2020/ferguson1/README.md](2020/ferguson1/README.md)
 
 There are some things that might appear to be bugs but are actually features or
-things that are misinterpreted as bugs. See his
+things that are misinterpreted as bugs. See the
 [bugs.md](2020/ferguson1/bugs.md) and
 [troubleshooting.md](2020/ferguson1/troubleshooting.md) files for details.
 

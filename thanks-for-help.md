@@ -4359,7 +4359,8 @@ layered chocolate fudge cake recipe](/2020/ferguson1/chocolate-cake.md) :-)
 
 Yes the irony here is as rich as the chocolate cake: the question is do you know
 how rich it is? If not and you like chocolate I (that is Cody :-) ) highly
-recommend you give it a go! :-)
+recommend you give it a go! :-) You're welcome to ask me questions if you wish
+and I encourage you to do so as the cake is quite picky!
 
 
 ## <a name="2020_ferguson2"></a>[2020/ferguson2](/2020/ferguson2/prog.c) ([README.md](/2020/ferguson2/README.md))
@@ -4373,6 +4374,12 @@ He also fixed some issues that occurred when files were renamed to `.md` from
 Most importantly he also added some corrections to the vital [Double
 layered chocolate fudge cake recipe](/2020/ferguson2/chocolate-cake.md),
 enciphered though it is :-)
+
+Yes the irony here is as rich as the chocolate cake: the question is do you know
+how rich it is? If not and you like chocolate I (that is Cody :-) ) highly
+recommend you give it a go! :-) You're welcome to ask me questions if you wish
+and I encourage you to do so as the cake is quite picky!
+
 
 
 ## <a name="2020_kurdyukov2"></a>[2020/kurdyukov2](/2020/kurdyukov2/prog.c) ([README.md](/2020/kurdyukov2/README.md))

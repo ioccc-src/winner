@@ -3,7 +3,7 @@
 Here's a delicious double-layered chocolate fudge cake that is
 something of my mum's speciality. It's complicated and I should warn that nobody
 has seemed to get it down as well as she has but it's well worth the effort if
-you love chocolate. My late stepmum who only liked white chocolate loved this
+you love chocolate. My late stepmum who only liked white 'chocolate' loved this
 cake!
 
 ![picture of the Double-layered chocolate fudge cake](cake.jpg)
@@ -69,21 +69,23 @@ recipe notes because they're really important!**
     note the amount is by ounce not squares as listed. See the measurements link
     if there's any doubt.
 
-*   Pay careful attention to **COOK FOR ONLY THE INDICATED TIME**.
+*   Pay careful attention to **COOK FOR ONLY THE INDICATED TIME**. Note that if
+    your oven cooks a bit hotter you might have to adjust the timing a bit. This
+    is likely the case if the cake comes out a little bit dry.
 
-*   **REMOVE THE CAKE FROM THE PANS 2 MINUTES AFTER REMOVING FROM OVEN**. Then allow
-    to fully cool on racks. The important point is that they don't overcook.
+*   **REMOVE THE CAKE FROM THE PANS 2 MINUTES AFTER REMOVING FROM OVEN** and
+    then allow to **FULLY COOL *ON RACKS*!** The important point is that they
+    don't overcook.
 
 *   When the recipe was first written they sold powdered sugar in a box; now
     it's confectionery sugar in a bag. My mum experimented with the amount and
     found that 4 cups seems about right.
 
-*   She uses **WHOLE MILK** for this recipe; she doesn't know if it really matters
-    but given that she and I both prefer skim milk except for here and in
-    chocolate milk I would recommend whole milk for this recipe too. In any case
-    it turns out great **IF YOU FOLLOW *EVERYTHING* TO A T!**
+*   Use **WHOLE MILK**. It's just better for something like this and skim milk
+    or low fat milk is completely untested.
 
-*   Use only **PURE VANILLA EXTRACT**! Do **NOT USE imitation vanilla!**
+*   Use only **PURE VANILLA EXTRACT**! Do **NOT USE imitation vanilla!** Not
+    following this rule will lead to a worse outcome.
 
 
 ## Cake Ingredients
@@ -161,7 +163,11 @@ bowl can sit in.
 
 *   Use **WHOLE MILK.**
 
-*   Use **ONLY PURE VANILLA EXTRACT**! **DO NOT USE IMITATION VANILLA!**
+*   Use **ONLY PURE VANILLA EXTRACT**! **DO NOT USE IMITATION VANILLA!** Not
+    following this rule will lead to a worse outcome. As I recall the icing was
+    quite a bit worse (but still good) the times we had imitation vanilla. Just
+    don't do it.
+
 
 
 ## Icing Directions
@@ -181,7 +187,7 @@ bowl can sit in.
 
 [picture]: cake.jpg
 [http://www.onlineconversion.com/cooking.htm]: http://www.onlineconversion.com/cooking.htm
-[IOCCC and chocolate]: http://www.gomc.com/firstpage/200103068.pdf
+[IOCCC and chocolate]: ioccc-and-chocolate.pdf
 [International Original Chocolate Cake Contest tweet]: https://web.archive.org/web/20200805053007/https://twitter.com/ilyakurdyukov/status/1290520266087571458
 [fellow IOCCC winner Ilya Kurdyukov GitHub]: https://github.com/ilyakurdyukov
 [GitHub]: https://github.com/ilyakurdyukov
