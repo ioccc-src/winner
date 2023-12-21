@@ -5,8 +5,8 @@ make
 ```
 
 
-There is an [alternate version](#alternate-code) which has controls that will
-make much more sense to those familiar with vi.
+There is an alternate version which has controls that will make much more sense
+to those familiar with vi. See [Alternate code](#alternate-code) below.
 
 
 ## To use:
@@ -59,15 +59,13 @@ reverse indentation style.
 
 ## Author's remarks:
 
-#### Controls
-- Movement:\
-`w` (forwards), `a` (left), `s` (backwards), `d` (right)
-- Fire:\
-`space`
-- Quit:\
-`q`
-- Pause:\
-`p`, then use any other key to resume
+### Controls
+
+- Movement: `w` (forwards), `a` (left), `s` (backwards), `d` (right)
+- Fire: space
+- Quit: `q`
+- Pause: `p`, then use any other key to resume
+
 
 ```
    /\
@@ -78,20 +76,26 @@ reverse indentation style.
 ```
 
 
-#### Compile and run
-###### Linux
+### Compile and run
+
+#### Linux
 ```
 cc -std=c99 -O3 prog.c -o prog
 ./prog
 ```
 
-###### Windows
-The only way I found to make it work is to use [MSYS2](https://www.msys2.org). When using the MSYS2 shell you can install gcc via pacman.
+#### Windows
+
+The only way I found to make it work is to use [MSYS2](https://www.msys2.org).
+When using the MSYS2 shell you can install gcc via pacman.
+
 ```
 cc -std=c99 -O3 prog.c -o prog
 ./prog.exe
 ```
+
 #### Warnings
+
 - `-Wno-missing-prototypes`
 - `-Wno-shorten-64-to-32`
 - `-Wno-sign-conversion`
@@ -106,24 +110,37 @@ cc -std=c99 -O3 prog.c -o prog
 - `-Wno-empty-body`
 - `-Wno-misleading-indentation`
 - `-Wno-maybe-uninitialized`
-- You may experience a mild [motion aftereffect](https://en.wikipedia.org/wiki/Motion_aftereffect) when playing for too long
-#### High score
-Score will be shown in the top left corner.\
-My best was **156**. If you beat that I'll send you the image of a very expensive chocolate.
-#### Features
-- Procedural star generation
-- Very space-efficient for-loops
-- No use of `!=` or `==`
-- Smooth rendering even on slow terminals
-- Advanced ascii-art
-- Cutting edge physics engine and collision detection
-- Probably not many segfaults
-- Every letter in the English alphabet has a variable or function named after it
-- Not a virus
-- Runs on my machine
-#### Tips
-- Adjust your terminal size for different experiences
-- Run this program in a virtual console to immerse yourself in the game
+- You may experience a mild [motion
+aftereffect](https://en.wikipedia.org/wiki/Motion_aftereffect) when playing for
+too long.
+
+
+### High score
+
+Score will be shown in the top left corner.
+My best was **156**. If you beat that I'll send you the image of a very
+expensive chocolate.
+
+
+### Features
+
+- Procedural star generation.
+- Very space-efficient `for` loops.
+- No use of `!=` or `==`.
+- Smooth rendering even on slow terminals.
+- Advanced ASCII art.
+- Cutting edge physics engine and collision detection.
+- Probably not many segfaults.
+- Every letter in the English alphabet has a variable or function named after
+  it.
+- Not a virus.
+- Runs on my machine.
+
+
+### Tips
+
+- Adjust your terminal size for different experiences.
+- Run this program in a virtual console to immerse yourself in the game.
 
 
 ## Copyright and CC BY-SA 4.0 License:
