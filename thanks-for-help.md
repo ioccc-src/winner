@@ -4426,6 +4426,21 @@ README.md. Naturally he's one of the ones who can read text even if it's even
 more jumbled but we know of others too.
 
 
+## <a name="2020_kurdyukov4"></a>[2020/kurdyukov4](/2020/kurdyukov4/prog.c) ([README.md](/2020/kurdyukov4/README.md))
+
+[Cody](#cody) added the [try.sh](/2020/kurdyukov4/try.sh) script.
+
+Cody also added from [2019/mills](/2019/mills/README.md) the text file
+[Shakespeare.txt](/2020/kurdyukov4/Shakespeare.txt) as we are considering to
+have each entry have a tarball with the entry by itself.
+
+Also, to explain the confusing to most people award, Cody gave a quick
+translation of `lámatyávë`, which comes from History of Middle-earth [HoMe],
+volume X, Morgoth's Ring, which he also has (and which is part of the 12 volume
+set by the late Christopher Tolkien, son and literary executor and heir to
+J.R.R. Tolkien).
+
+
 ## <a name="2020_tsoj"></a>[2020/tsoj](/2020/tsoj/prog.c) ([README.md](/2020/tsoj/README.md))
 
 [Cody](#cody) added [alternate code](/2020/tsoj/README.md#alternate-code) that will feel
