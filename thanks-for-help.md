@@ -4137,6 +4137,10 @@ advice :-) ) 'not have a cow' about certain things (including one thing it was
 wrong about) in [cow.sh](/2019/burton/cow.sh) (which was renamed from `cow`)
 <strike>moo</strike>too.
 
+Cody also renamed the file `on.one.liners` to
+[on.one.liners.txt](/2019/burton/on.one.liners.txt) to help with
+browsers/GitHub.
+
 
 ## <a name="2019_ciura"></a>[2019/ciura](/2019/ciura/prog.c) ([README.md](/2019/ciura/README.md]))
 

@@ -38,6 +38,9 @@ A tiny, but punctually correct way of POSIX counting for text files. This one
 line, one word, 127 character beauty continues to expand the number of classic
 unix utilities available as winning entries.
 
+You might find the author's [commentary on one liners](on.one.liners.txt)
+interesting.
+
 
 ## Author's remarks:
 
