@@ -3617,6 +3617,32 @@ exactly 16 bits per sample, but it allows any sample rate and any number of
 audio channels.
 
 
+## 2020 otterness
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2020/otterness/prog.c](2020/otterness/prog.c)
+### Information: [2020/otterness/README.md](2020/otterness/README.md)
+
+The author listed the following limitations:
+
+1. The program does not support MIDI files over 4 MB (specifically, it will
+not take input files larger than `2^22 - 1` bytes).  This is unlikely to be a
+big limitation in practice, since even lengthy MIDIs are rarely over a
+couple hundred KB.
+
+2. Not all MIDIs set (or *correctly* set) their timing information, which will
+lead to the tempo of the drum beat not matching the track.  This will be
+especially true for "live performance" .mid files.
+
+3. There may be some types of MIDI messages that the program is unable to
+correctly parse, but I have rarely seen this in practice.  The largest
+cause of program failures, in my experience, has been Limitation 2.
+
+See also the [Program error
+codes](/2020/otterness/README.md#program-error-codes) written by the author
+which lists some other conditions which should be considered features, not bugs.
+
+
 # 2021
 
 There was no IOCCC in 2021.
@@ -3631,25 +3657,6 @@ There was no IOCCC in 2022.
 
 There was no IOCCC in 2023.
 
-
-# Final words
-
-We hope this document was of use to you in determining which entries are known
-to have a problem, what entries are known to have features that are not bugs and
-so on. We also thank you for going through this document and, if you propose any
-fixes via a [GitHub pull
-request](https://github.com/ioccc-src/temp-test-ioccc/pulls) or otherwise, we
-thank you as well for the help! We will happily add you to the
-[thanks](/thanks-for-help.md) file.
-
-There was no IOCCC in these years.
-
-# 2023
-
-Probably there will be no IOCCC in 2023 but we do hope to at least run the
-IOCCCMOCK contest this year. This depends entirely on the work in this repo
-and the [mkiocccentry](https://github.com/ioccc-src/mkiocccentry) being
-completed.
 
 # Final words
 
