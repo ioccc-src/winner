@@ -4411,7 +4411,9 @@ use the program to play the WAV files (and in one case `stdout`).
 
 ## <a name="2020_kurdyukov2"></a>[2020/kurdyukov2](/2020/kurdyukov2/prog.c) ([README.md](/2020/kurdyukov2/README.md))
 
-[Cody](#cody) added `-L`/`-I` paths to the Makefile to let this compile more easily if
+[Cody](#cody) added the [try.sh](/2020/kurdyukov2/try.sh) script.
+
+Cody also added `-L`/`-I` paths to the Makefile to let this compile more easily if
 the user has installed the appropriate library with
 [MacPorts](https://www.macports.org) (with the default MacPorts prefix
 `/opt/local`).

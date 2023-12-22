@@ -19,29 +19,27 @@ make
 ./prog 1000 selfie.jpg output.jpg
 # Admire your portrait in cubist style
 
-(echo P6 1024 1024 255; dd if=/dev/urandom bs=3M count=1) > random.ppm
-# Look at random.ppm. Do you see any patterns?
-./prog_ppm 1000 random.ppm output.ppm
-# See which patterns the program has found
-
-for i in 0001 0002 0004 0008 0016 0032 0064 0128 0256 0512 1024 2048 4096 8192 ; do ./prog $i sample.jpg out$i.jpg; done
-# Then flip through the out*.jpg pictures and see when you start recognizing the image.
-``
+./try.sh
+```
 
 
 ## Judges' remarks:
 
-This entry has reminded us of a winning entry back in the early 90s. Can you guess which one?
+This entry has reminded us of a winning entry back in the early 90s. Can you
+guess which one?
 
-For a given image, try graphing the execution time relative to the number of rectangles.
-What is the complexity? Is it obvious from the source code?
+For a given image, try graphing the execution time relative to the number of
+rectangles.  What is the complexity? Is it obvious from the source code?
 
 
 ## Author's remarks:
 
+
 ### Usage
 
-This program divides the image into a specified number of rectangles. This process is content aware, so algorithm tries to match most of the information. However, it doesn't find the best theoretically possible layout.
+This program divides the image into a specified number of rectangles. This
+process is content aware, so the algorithm tries to match most of the information.
+However, it doesn't find the best theoretically possible layout.
 
 ```sh
 ./prog 1000 input.jpg output.jpg
@@ -54,7 +52,7 @@ You can build three versions, depending on the image format.
 Default is JPEG version; if you have the `libjpeg` development package installed
 in your system, then `make` without arguments should do the right thing.
 
-If you want to use `libjpeg` compiled from sources, then use `LIBS` define to
+If you want to use `libjpeg` compiled from sources, then use the `LIBJPEG` define to
 specify the path to includes and the library.  For example using
 [libjpeg source](https://mac-dev-env.patrickbougie.com/libjpeg/) version 9c:
 
@@ -68,7 +66,8 @@ Use this command to build a PNG version (you need `libpng`):
 make prog_png LIBPNG="-lpng"
 ```
 
-And the PPM version (no additional dependencies, can read raw/ASCII PPM, writes raw PPM):
+And the PPM version (no additional dependencies, can read raw/ASCII PPM, writes
+raw PPM):
 
 ```
 make prog_ppm
@@ -76,7 +75,8 @@ make prog_ppm
 
 ### Building on macOS with MacPorts:
 
-- Thanks to [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) for this information!
+Thanks to [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) for this
+information!
 
 First, make sure you have the compiler tools installed e.g. by:
 
@@ -90,12 +90,13 @@ Make sure you install [MacPorts](https://www.macports.org/install.php). Then do:
 sudo port install jpeg libpng ImageMagick
 ```
 
-The program itself doesn't need ImageMagick, install it only if you plan to make GIFs from the results using `makegif.sh`.
+The program itself doesn't need ImageMagick, install it only if you plan to make
+GIFs from the results using `makegif.sh`.
 
 After that’s installed you need to run make with these options:
 
 ```sh
-make LIBS="-I/opt/local/include -L/opt/local/lib"
+make LDFLAGS="-I/opt/local/include -L/opt/local/lib"
 ```
 
 ### Building on macOS with HomeBrew
@@ -121,11 +122,12 @@ You are now ready to compile this entry:
 make clobber all
 ```
 
+
 ### Notes
 
 Made this thing while experimenting with the idea of representing an image with
 rectangles (lossy compression). It's not very good in that sense, but the
-results look funny, like a kind of cubism pixelart.
+results look funny, like a kind of cubism pixel art.
 
 Do not use values above 50000, it'll be slow.
 
