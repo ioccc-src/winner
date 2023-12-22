@@ -3606,6 +3606,17 @@ things that are misinterpreted as bugs. See the
 [troubleshooting.md](2020/ferguson1/troubleshooting.md) files for details.
 
 
+## 2020 giles
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2020/giles/prog.c](2020/giles/prog.c)
+### Information: [2020/giles/README.md](2020/giles/README.md)
+
+The author noted that the program only supports WAV files that have
+exactly 16 bits per sample, but it allows any sample rate and any number of
+audio channels.
+
+
 # 2021
 
 There was no IOCCC in 2021.

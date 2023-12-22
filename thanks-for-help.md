@@ -4347,7 +4347,7 @@ knows it so he might be called unusual (and he argues, with pride, eccentric :-)
 ) :-)
 
 
-## <a name="2020_ferguson2"></a>[2020/ferguson2](/2020/ferguson1/prog.c) ([README.md](/2020/ferguson1/README.md))
+## <a name="2020_ferguson1"></a>[2020/ferguson1](/2020/ferguson1/prog.c) ([README.md](/2020/ferguson1/README.md))
 
 [Cody](#cody), with intentional irony here :-), fixed formatting, links and typos in
 various files.
@@ -4390,6 +4390,24 @@ recommend you give it a go! :-) You're welcome to ask me questions if you wish
 and I encourage you to do so as the cake is quite picky!
 
 
+## <a name="2020_giles"></a>[2020/giles](/2020/giles/prog.c) ([README.md](/2020/giles/README.md))
+
+[Cody](#cody) added the [try.sh](/2020/giles/try.sh) script. This script does
+the conversion of `pi.wav` (showing the digits) and also converts the number for
+`jenny.wav` and a number Cody 'came up with': one that resembles `IOCCC 28`:
+`10666-28`. The `6` is the closest to `C` in his head even though it's not
+perfect.
+
+If `play(1)` from SoX is not installed the script checks for `aplay(1)`. If
+neither are installed it warns the user about this, linking to the FAQ about it,
+and tells them they will have to play the WAV files manually. Otherwise it'll
+use the program to play the WAV files (and in one case `stdout`).
+
+
+## <a name="2020_kurdyukov1"></a>[2020/kurdyukov1](/2020/kurdyukov1/prog.c) ([README.md](/2020/kurdyukov1/README.md))
+
+[Cody](#cody) added the [try.sh](/2020/kurdyukov1/try.sh) script.
+
 
 ## <a name="2020_kurdyukov2"></a>[2020/kurdyukov2](/2020/kurdyukov2/prog.c) ([README.md](/2020/kurdyukov2/README.md))
 
@@ -4397,6 +4415,30 @@ and I encourage you to do so as the cake is quite picky!
 the user has installed the appropriate library with
 [MacPorts](https://www.macports.org) (with the default MacPorts prefix
 `/opt/local`).
+
+
+## <a name="2020_kurdyukov3"></a>[2020/kurdyukov3](/2020/kurdyukov3/prog.c) ([README.md](/2020/kurdyukov3/README.md))
+
+[Cody](#cody) added the [try.sh](/2020/kurdyukov3/try.sh) script.
+
+He also added a link that has much more details about this phenomenon to the
+README.md. Naturally he's one of the ones who can read text even if it's even
+more jumbled but we know of others too.
+
+
+## <a name="2020_kurdyukov4"></a>[2020/kurdyukov4](/2020/kurdyukov4/prog.c) ([README.md](/2020/kurdyukov4/README.md))
+
+[Cody](#cody) added the [try.sh](/2020/kurdyukov4/try.sh) script.
+
+Cody also added from [2019/mills](/2019/mills/README.md) the text file
+[Shakespeare.txt](/2020/kurdyukov4/Shakespeare.txt) as we are considering to
+have each entry have a tarball with the entry by itself.
+
+Also, to explain the confusing to most people award, Cody gave a quick
+translation of `lámatyávë`, which comes from History of Middle-earth [HoMe],
+volume X, Morgoth's Ring, which he also has (and which is part of the 12 volume
+set by the late Christopher Tolkien, son and literary executor and heir to
+J.R.R. Tolkien).
 
 
 ## <a name="2020_tsoj"></a>[2020/tsoj](/2020/tsoj/prog.c) ([README.md](/2020/tsoj/README.md))
