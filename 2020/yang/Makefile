@@ -133,6 +133,10 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
+cppp: cppp.cc
+	${C_PLUSPLUS} -std=c++11 $< -o $@ ${LDFLAGS}
+
+
 # alternative executable
 #
 alt: data ${ALT_TARGET}

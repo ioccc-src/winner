@@ -15,22 +15,18 @@ make
 ### Try:
 
 ```sh
-echo "International Obfuscated C Code Contest 2020" | ./prog 23209 > code.c
-
-# compile without a PIN
-cc code.c -o decode
-# yes, you must compile with -DPIN=<number>
-
-# compile with the wrong pin
-cc -DPIN=555 code.c -o wrongcoded	 # wait for it ...
-./wrongcoded | hexdump -C
-# Use the wrong PIN: You're gonna have a bad time.
-
-# compile with a PIN
-cc -DPIN=23209 code.c -o decoded	# wait for it ...
-./decoded
-# weeeeeeeeeeeeee! You are having a good time!
+./try.sh
 ```
+
+
+The author provided the file [cppp.cc](cppp.cc) which can preprocess the
+generated output to make them more acceptable to typical compilers. To build:
+
+```sh
+make cppp
+```
+
+See the author's remarks for more details.
 
 
 ## Judges' remarks:
@@ -65,22 +61,22 @@ where [PIN] is an integer in the range of 1..65535
 ```
 
 When run with an encoding PIN (first command line argument), Mile will
-read bytes from stdin and generate C code on stdout.  Example:
+read bytes from `stdin` and generate C code on `stdout`.  Example:
 
 ```sh
 echo "Hello, world!" | ./prog 56789 > encoded.c
 ```
 
-This generated code will reproduce the same input bytes on stdout when
+This generated code will reproduce the same input bytes on `stdout` when
 executed, if it was compiled with the same encoding PIN.
 
 ```sh
-gcc -DPIN=56789 encode.c -o decoded
+gcc -DPIN=56789 encoded.c -o decoded
 ```
 
 The generated code reconstructs all data at compile time by seeding a
 random number generator with the given PIN to reproduce the input bytes,
-and simply does one fwrite() call at run time to print those bytes.  Not
+and simply does one `fwrite(3)` call at run time to print those bytes.  Not
 specifying a PIN is a compile time error.  Specify the wrong PIN and
 output code will still compile, but will likely produce garbage instead of
 the input bytes.  If the original input was empty then any PIN works, but
@@ -99,6 +95,7 @@ with that by producing C code filled with at least 98% preprocessor lines
 for any input.  Now you too can enjoy long compile times with minimal
 effort.
 
+
 ### Features
 
 + Output is randomized using system clock, so if you wait a second between
@@ -114,6 +111,7 @@ effort.
   Abilities Average in the Next Life?!".  Mile is known to be able to talk
   to nanomachines directly, which is exactly what programming in
   preprocessor feels like.
+
 
 ### Compatibility
 
