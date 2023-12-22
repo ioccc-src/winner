@@ -15,14 +15,16 @@ make
 ### Try:
 
 ```sh
-./prog
-
-./prog hello.txt
-
-./prog yoda.txt
-
-./prog bear.txt
+./try.sh
 ```
+
+What happens if you do
+
+```sh
+./prog prog.c
+```
+
+?
 
 
 ## Judges' remarks:

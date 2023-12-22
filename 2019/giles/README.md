@@ -21,6 +21,11 @@ play out.wav
 ```
 
 
+NOTE: `play` comes from SoX, the Swiss Army Knife of sound processing programs.
+If you don't have this installed, see [FAQ 3.10: How do I compile and use an
+IOCCC winner that requires sound](/faq.md#faq3_10).
+
+
 ## Judges' remarks:
 
 Do you need to pretend enjoying a more spacious living environment than you

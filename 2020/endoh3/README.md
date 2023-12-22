@@ -4,6 +4,9 @@
 make
 ```
 
+An alternate version of this program exists. See [Alternate
+code](#alternate-code) below.
+
 
 ## To use:
 
@@ -22,23 +25,30 @@ make
 
 ## Alternate code:
 
-An alternate version of this entry, `prog.alt.c`, is provided.  This alternate code uses Unicode letters.
+An alternate version of this entry, [prog.alt.c](prog.alt.c), is provided.  This
+alternate code uses Unicode letters.
 
-To compile this alternate version:
+
+### Alternate build:
 
 ```sh
 make alt
 ```
+
+
+### Alternate use:
 
 Use `prog.alt` as you would `prog` above.
 
 
 ## Judges' remarks:
 
-You may be tempted to use a mirror. Resist the temptation! Try figuring out how the clock hands are drawn.
-Can you change the program to make it draw a familiar (non-mirrored) clock face? Can you add the second hand?
+You may be tempted to use a mirror. Resist the temptation! Try figuring out how
+the clock hands are drawn.  Can you change the program to make it draw a
+familiar (non-mirrored) clock face? Can you add the second hand?
 
-When using the `run_clock` shell script, your perception of time might depend on what time it is.
+When using the [run_clock.sh](run_clock.sh) shell script, your perception of
+time might depend on what time it is.
 
 
 ## Author's remarks:
