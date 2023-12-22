@@ -4347,7 +4347,7 @@ knows it so he might be called unusual (and he argues, with pride, eccentric :-)
 ) :-)
 
 
-## <a name="2020_ferguson2"></a>[2020/ferguson2](/2020/ferguson1/prog.c) ([README.md](/2020/ferguson1/README.md))
+## <a name="2020_ferguson1"></a>[2020/ferguson1](/2020/ferguson1/prog.c) ([README.md](/2020/ferguson1/README.md))
 
 [Cody](#cody), with intentional irony here :-), fixed formatting, links and typos in
 various files.
