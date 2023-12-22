@@ -4404,6 +4404,11 @@ and tells them they will have to play the WAV files manually. Otherwise it'll
 use the program to play the WAV files (and in one case `stdout`).
 
 
+## <a name="2020_kurdyukov1"></a>[2020/kurdyukov1](/2020/kurdyukov1/prog.c) ([README.md](/2020/kurdyukov1/README.md))
+
+[Cody](#cody) added the [try.sh](/2020/kurdyukov1/try.sh) script.
+
+
 ## <a name="2020_kurdyukov2"></a>[2020/kurdyukov2](/2020/kurdyukov2/prog.c) ([README.md](/2020/kurdyukov2/README.md))
 
 [Cody](#cody) added `-L`/`-I` paths to the Makefile to let this compile more easily if
