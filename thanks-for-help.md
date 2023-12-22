@@ -4417,6 +4417,15 @@ the user has installed the appropriate library with
 `/opt/local`).
 
 
+## <a name="2020_kurdyukov3"></a>[2020/kurdyukov3](/2020/kurdyukov3/prog.c) ([README.md](/2020/kurdyukov3/README.md))
+
+[Cody](#cody) added the [try.sh](/2020/kurdyukov3/try.sh) script.
+
+He also added a link that has much more details about this phenomenon to the
+README.md. Naturally he's one of the ones who can read text even if it's even
+more jumbled but we know of others too.
+
+
 ## <a name="2020_tsoj"></a>[2020/tsoj](/2020/tsoj/prog.c) ([README.md](/2020/tsoj/README.md))
 
 [Cody](#cody) added [alternate code](/2020/tsoj/README.md#alternate-code) that will feel
