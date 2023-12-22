@@ -4390,6 +4390,19 @@ recommend you give it a go! :-) You're welcome to ask me questions if you wish
 and I encourage you to do so as the cake is quite picky!
 
 
+## <a name="2020_giles"></a>[2020/giles](/2020/giles/prog.c) ([README.md](/2020/giles/README.md))
+
+[Cody](#cody) added the [try.sh](/2020/giles/try.sh) script. This script does
+the conversion of `pi.wav` (showing the digits) and also converts the number for
+`jenny.wav` and a number Cody 'came up with': one that resembles `IOCCC 28`:
+`10666-28`. The `6` is the closest to `C` in his head even though it's not
+perfect.
+
+If `play(1)` from SoX is not installed the script checks for `aplay(1)`. If
+neither are installed it warns the user about this, linking to the FAQ about it,
+and tells them they will have to play the WAV files manually. Otherwise it'll
+use the program to play the WAV files (and in one case `stdout`).
+
 
 ## <a name="2020_kurdyukov2"></a>[2020/kurdyukov2](/2020/kurdyukov2/prog.c) ([README.md](/2020/kurdyukov2/README.md))
 
