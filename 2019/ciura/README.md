@@ -31,7 +31,6 @@ For more detailed information see [2019 ciura in bugs.md](/bugs.md#2019-ciura).
 
 ```sh
 ./try.sh
-
 ```
 
 
@@ -42,7 +41,6 @@ newline.  See the Author's remarks for more information.
 
 
 ### Alternate build:
-
 
 ```sh
 make alt

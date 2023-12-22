@@ -4459,6 +4459,15 @@ more at home for vi users. One might still end up cursing (see the README.md
 file) but probably a lot less :-)
 
 
+## <a name="2020_yang"></a>[2020/yang](/2020/yang/prog.c) ([README.md](/2020/yang/README.md))
+
+[Cody](#cody) added the [try.sh](/2020/yang/try.sh) script.
+
+Cody also added a make rule (`make cppp`) for the author's provided C++ code
+that can preprocess the generated output to make them more acceptable to typical
+compilers. See the README.md for more details.
+
+
 
 # <a name="general_thanks"></a>General thanks
 
