@@ -6,7 +6,7 @@ ext="${image##*.}"
 dir="gif"
 [ $# -lt 3 ] && [ "$ext" = "png" -o "$ext" = "ppm" ] && prog="./prog_$ext"
 [ -f "$image" ] || {
-	echo "Usage: makegif.sh image.jpg output.gif ./prog"
+	echo "Usage: $0 image.jpg output.gif ./prog"
 	echo "Dependencies: ImageMagick, bc (basic calculator)"
 	echo "Note: don't use large images (dimensions above 1000), ImageMagick may fail."
 	echo "Uses \"gif\" directory for temporary files."
