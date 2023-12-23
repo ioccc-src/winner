@@ -15,7 +15,7 @@ make all
 ### Try:
 
 ```sh
-./august | head -n 10
+./try.sh
 ```
 
 If you have the `primes(6)` tool (sometimes part of [BSD
@@ -26,6 +26,10 @@ what of the output in the first `N` (say `15` or `25`) lines are primes:
 ./primes.sh # 15
 ./primes.sh 25
 ```
+
+Note that `try.sh` will run this script anyway, telling you where to get
+`primes(6)` if you don't have it installed, but it will only run with the
+default value of 15, rather than trying several different values.
 
 
 ## Judges' remarks:

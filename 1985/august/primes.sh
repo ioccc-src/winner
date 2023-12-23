@@ -18,8 +18,11 @@ if [[ -n "$PRIMES" ]]; then
     while read -r n; do primes "$n" $((n + 1)); done < <((./august | head -n "$COUNT" ))
 else
     echo "primes not installed" 1>&2
+    echo 1>&2
     echo "See the following GitHub repo:" 1>&2
-    echo "" 1>&2
-    echo "	https://github.com/vattam/BSDGames"
+    echo 1>&2
+    echo "	https://github.com/vattam/BSDGames" 1>&2
+    echo 1>&2
+    echo "and after installing try again."
     exit 1
 fi

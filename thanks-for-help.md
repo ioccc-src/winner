@@ -191,6 +191,10 @@ either the default or user specified. The inspiration was the previous 'try'
 command he gave to have fun with finding primes that might seem unusual in a
 way.
 
+Cody also added the [try.sh](/1985/august/try.sh) script (which calls
+`primes.sh` whether `primes(6)` is installed or not but it only does it once
+with the default value).
+
 
 ## <a name="1985_lycklama"></a>[1985/lycklama](/1985/lycklama/lycklama.c) ([README.md](/1985/lycklama/README.md]))
 
