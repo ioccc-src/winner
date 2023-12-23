@@ -79,19 +79,19 @@ while getopts :hVv:s:dni: flag; do
     esac
 done
 
-#
+
 # remove the options
 #
 shift $(( OPTIND - 1 ));
-#
+
 # verify arg count
 #
 if [[ $# -gt 1 ]]; then
-    echo "$0: ERROR: expected 0 or 1 args, found: $#" 1>&2
+    echo "$0: ERROR: expected no more than 1 arg, found: $#" 1>&2
     echo "$USAGE" 1>&2
     exit 3
 fi
-#
+
 # parse args
 #
 if [[ $# -gt 0 ]]; then
@@ -114,6 +114,7 @@ if [[ ! -r $STATUS_JSON_FILE ]]; then
 fi
 
 # check that if -s ($STATUS_FLAG) used that the status ($STATUS) is either 'open' or 'closed'
+#
 if [[ -n "$STATUS_FLAG" ]]; then
     if [[ "$STATUS" != "open" && "$STATUS" != "closed" ]]; then
 	echo "$0: ERROR: status must be 'open' or 'closed'" 1>&2
@@ -122,6 +123,7 @@ if [[ -n "$STATUS_FLAG" ]]; then
 fi
 
 # check format of IOCCC_status_version if set (-i used, $UPDATE_IOCCC_STATUS_VERSION)
+#
 if [[ -n "$UPDATE_IOCCC_STATUS_VERSION" ]]; then
     echo "$IOCCC_STATUS_VERSION" | grep -qE '^[0-9]+\.[0-9]+ [0-9]{4}-[0-9]{2}-[0-9]{2}$'
     if [[ "${PIPESTATUS[1]}" -ne 0 ]]; then
