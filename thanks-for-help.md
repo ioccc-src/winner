@@ -334,6 +334,12 @@ Cody also added the [try.sh](/1985/sicherman/try.sh) script.
 # <a name="1986"></a>1986
 
 
+## <a name="1986_applin"></a>[1986/applin](/1986/applin/applin.c) ([README.md](/1986/applin/README.md]))
+
+[Cody](#cody) made the C file executable so one does not have to do `sh
+./applin.c` or `./applin`; they can do either `./applin.c` or `./applin`.
+
+
 ## <a name="1986_hague"></a>[1986/hague](/1986/hague/hague.c) ([README.md](/1986/hague/README.md]))
 
 [Cody](#cody) made this use `fgets()`.

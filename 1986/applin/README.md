@@ -15,9 +15,7 @@ make all
 ### Try:
 
 ```sh
-sh applin.c
-
-./applin
+./applin.c
 ```
 
 
