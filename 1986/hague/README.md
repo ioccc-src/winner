@@ -16,17 +16,12 @@ make all
 ### Try:
 
 ```sh
-./hague 2>/dev/null
-IOCCC
-International Obfuscated C Code Contest
-Jim Hague
+./try.sh
 ```
 
-Also try:
-
-```sh
-echo IOCCC | ./hague 2>/dev/null
-```
+Note that you can run the program without feeding it anything and then type in a
+message and line by line it will show the right output. Notice also how certain
+characters will print a `?`.
 
 
 ## Judges' remarks:

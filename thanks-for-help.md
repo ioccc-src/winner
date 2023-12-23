@@ -349,6 +349,9 @@ Cody also added the [try.sh](/1985/sicherman/try.sh) script.
 
 [Cody](#cody) made this use `fgets()`.
 
+Cody also added the [try.sh](1986/hague/try.sh) script which also feeds to the
+program the added `input.txt` file.
+
 
 ## <a name="1986_holloway"></a>[1986/holloway](/1986/holloway/holloway.c) ([README.md](/1986/holloway/README.md]))
 
