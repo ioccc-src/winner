@@ -2708,16 +2708,17 @@ entry](https://gavare.se/ioccc/ioccc_gavare.c.html).
 
 ## <a name="2004_gavin"></a>[2004/gavin](/2004/gavin/gavin.c) ([README.md](/2004/gavin/README.md]))
 
-[Yusuke](#yusuke) provided the `kernel` and `fs.tar` files which can be used if you cannot
-normally use this entry. Instead of generating the files just use the files
-provided, found under the [img/](/2004/gavin/img/) directory. Note that the
-`img/fs.tar` extracts into `fs/` so you will have to fix the tarball; this is
-done this way to prevent extraction from the entry directory overwriting the
+[Cody](#cody) provided the [alt code](/2004/gavin/README.md#alternate-code) for
+those who want to use QEMU. The most important part of this is the macro `K` has
+to be defined as `1`, not `0`.
+
+[Yusuke](#yusuke) provided the `kernel` and `fs.tar` files which can be used if
+you cannot normally use this entry. Instead of generating the files just use the
+files provided, found under the [img/](/2004/gavin/img/) directory. Note that
+the `img/fs.tar` extracts into `fs/` so you will have to fix the tarball; this
+is done this way to prevent extraction from the entry directory overwriting the
 files and causing `make clobber` to wipe some of them out.
 
-Cody provided the [alt code](/2004/gavin/README.md#alternate-code) for those who
-want to use QEMU. The most important part of this is the macro `K` has to be
-defined as `1`, not `0`.
 
 
 ## <a name="2004_jdalbec"></a>[2004/jdalbec](/2004/jdalbec/jdalbec.c) ([README.md](/2004/jdalbec/README.md))
