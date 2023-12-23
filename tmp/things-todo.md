@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Sat 23 Dec 2023 13:22:40 UTC*
+*Last updated: Sat 23 Dec 2023 13:28:11 UTC*
 
 This document is primarily for [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) as he (that is I :-) ) wanted a way
@@ -23,9 +23,10 @@ in macOS but this is almost certainly because of the version of perl installed.
 Another one crashes in macOS but this is almost certainly because of
 `mmap(2)`/JIT code with the Apple silicon chip etc.
 
-- Typo fix ALL markdown files. For the README.md files years 1984-1989 have been
-done (along with the format fixes) except that YYYY/README.md files have not
-been completed. See below item for details on that.
+- Typo fix ALL markdown files. For the README.md files the entries have all been
+done (along with format fixes) but the YYYY/README.md files have not been
+completed. See below item for details on that (several items in this file refer
+to those).
 
 - Go through all year README.md files: that is 1984/README.md, 1985/README.md and
 so on. As of **Mon 16 Oct 11:22:52 UTC 2023** the following years have had a
