@@ -206,6 +206,8 @@ changed the `#o` lines to `#define`. Also `unistd.h` had to be `#include`d.
 [Yusuke](#yusuke) provided some useful information that amounts to an alternate version
 that Cody added. See the README.md for details.
 
+Cody also provided the [try.alt.sh](/1985/lycklama/try.alt.sh) script.
+
 
 ## <a name="1985_shapiro"></a>[1985/shapiro](/1985/shapiro/shapiro.c) ([README.md](/1985/shapiro/README.md]))
 

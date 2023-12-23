@@ -31,18 +31,7 @@ make SLEEP=700 clobber alt
 which would set it at 700. Then, whether you use the default value or not, try:
 
 ```sh
-./lycklama.alt < lycklama.c
-
-# notice the difference between the above and this one:
-./lycklama.alt < lycklama.alt.c
-
-# also try:
-./lycklama.alt < lycklama.orig.c
-
-./lycklama.alt < README.md
-
-./lycklama.alt < Makefile
-
+./try.alt.sh
 ```
 
 
