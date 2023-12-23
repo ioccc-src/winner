@@ -141,6 +141,8 @@ ${PROG}: ${PROG}.c ${PROG}.alt2.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
+${PROG}.alt: ${PROG}.alt.c
+	${CC} ${CFLAGS} -traditional-cpp $< -o $@ ${LDFLAGS}
 
 # data files
 #

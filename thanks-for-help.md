@@ -304,18 +304,18 @@ case as `c`.
 
 - The code in `main()` is where there are significant changes, changing from:
 
-	    ```c
-	    while (read(0,&__,1) & write((_=(_=C_C_(__),C)),
-	    _C_,1)) _=C-V+subr(&V);
-	    ```
+	```c
+	while (read(0,&__,1) & write((_=(_=C_C_(__),C)),
+	_C_,1)) _=C-V+subr(&V);
+	```
 
-	to:
+    to:
 
-	    ```c
-	    while (read(0,&__,1) & write((_=(_=C_C_(__),
-	    V))?__:__-_+'\b'b'\b'|((_-52)%('\b'b'\b'+~
-	    ' '&'\t'b'\n')+1),1),&_,1))_=c-v+subr(&v));
-	    ```
+	```c
+	while (read(0,&__,1) & write((_=(_=C_C_(__),
+	V))?__:__-_+'\b'b'\b'|((_-52)%('\b'b'\b'+~
+	' '&'\t'b'\n')+1),1),&_,1))_=c-v+subr(&v));
+	```
 
     Note how numerous of the macros (though two changed in case) can still be
     used but some cannot be. Can you figure out why? Why too is it that the
@@ -323,6 +323,12 @@ case as `c`.
     function is also in `main()` in the `while` condition? What happens if you
     remove it from `main()`? What happens if you remove it from `subr()` or
     don't even bother calling `subr()`?
+
+Additional code was added in case the fix cannot be compiled by some compilers
+should they object to `main()` having only one arg. This version will
+automatically be compiled if the entry fails to compile for some reason.
+
+Cody also added the [try.sh](/1985/sicherman/try.sh) script.
 
 
 # <a name="1986"></a>1986
