@@ -15,9 +15,7 @@ make all
 ### Try:
 
 ```sh
-./bright bright.c
-
-./bright bright
+./try.sh
 ```
 
 

@@ -340,6 +340,11 @@ Cody also added the [try.sh](/1985/sicherman/try.sh) script.
 ./applin.c` or `./applin`; they can do either `./applin.c` or `./applin`.
 
 
+## <a name="1986_bright"></a>[1986/bright](/1986/bright/bright.c) ([README.md](/1986/bright/README.md]))
+
+[Cody](#cody) added the [try.sh](1986/bright/try.sh) script.
+
+
 ## <a name="1986_hague"></a>[1986/hague](/1986/hague/hague.c) ([README.md](/1986/hague/README.md]))
 
 [Cody](#cody) made this use `fgets()`.
