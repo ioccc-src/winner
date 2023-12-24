@@ -59,6 +59,7 @@
 1985/august/index.html
 1985/august/inventory.html
 1985/august/primes.sh
+1985/august/try.sh
 1985/lycklama/.gitignore
 1985/lycklama/.path
 1985/lycklama/.winner.json
@@ -69,6 +70,7 @@
 1985/lycklama/lycklama.alt.c
 1985/lycklama/lycklama.c
 1985/lycklama/lycklama.orig.c
+1985/lycklama/try.alt.sh
 1985/shapiro/.gitignore
 1985/shapiro/.path
 1985/shapiro/.winner.json
@@ -91,6 +93,7 @@
 1985/sicherman/sicherman.alt2.c
 1985/sicherman/sicherman.c
 1985/sicherman/sicherman.orig.c
+1985/sicherman/try.sh
 1986/applin/.gitignore
 1986/applin/.path
 1986/applin/.winner.json
@@ -118,16 +121,18 @@
 1986/bright/bright.orig.c
 1986/bright/index.html
 1986/bright/inventory.html
+1986/bright/try.sh
 1986/hague/.gitignore
 1986/hague/.path
 1986/hague/.winner.json
 1986/hague/Makefile
 1986/hague/README.md
-1986/hague/hague.alt.c
 1986/hague/hague.c
 1986/hague/hague.orig.c
 1986/hague/index.html
+1986/hague/input.txt
 1986/hague/inventory.html
+1986/hague/try.sh
 1986/holloway/.gitignore
 1986/holloway/.path
 1986/holloway/.winner.json
@@ -423,6 +428,7 @@
 1989/vanb/README.md
 1989/vanb/index.html
 1989/vanb/inventory.html
+1989/vanb/try.sh
 1989/vanb/vanb.c
 1989/vanb/vanb.orig.c
 1989/westley/.gitignore
@@ -3975,7 +3981,7 @@
 2019/burton/index.html
 2019/burton/inventory.html
 2019/burton/newlines
-2019/burton/on.one.liners
+2019/burton/on.one.liners.txt
 2019/burton/prog.c
 2019/burton/prog.clean.c
 2019/burton/prog.orig.c
@@ -4182,6 +4188,7 @@
 2020/carlini/inventory.html
 2020/carlini/prog.c
 2020/carlini/prog.orig.c
+2020/carlini/try.sh
 2020/endoh1/.gitignore
 2020/endoh1/.path
 2020/endoh1/.winner.json
@@ -4216,6 +4223,7 @@
 2020/endoh2/spoiler/prog.c
 2020/endoh2/spoiler/spoiler.md
 2020/endoh2/spoiler/tmpl.txt
+2020/endoh2/try.sh
 2020/endoh2/yoda.txt
 2020/endoh3/.gitignore
 2020/endoh3/.path
@@ -4235,18 +4243,16 @@
 2020/ferguson1/HACKING.md
 2020/ferguson1/Makefile
 2020/ferguson1/README.md
-2020/ferguson1/bugs.html
 2020/ferguson1/bugs.md
 2020/ferguson1/cake.jpg
 2020/ferguson1/cannibalism.log.md
-2020/ferguson1/chocolate-cake.html
 2020/ferguson1/chocolate-cake.md
 2020/ferguson1/crazy.log.md
-2020/ferguson1/gameplay.html
 2020/ferguson1/gameplay.md
 2020/ferguson1/halfwidth_vs_fullwidth.png
 2020/ferguson1/index.html
 2020/ferguson1/inventory.html
+2020/ferguson1/ioccc-and-chocolate.pdf
 2020/ferguson1/ioccc-cake.jpg
 2020/ferguson1/play.sh
 2020/ferguson1/prog.2.c
@@ -4257,12 +4263,9 @@
 2020/ferguson1/prog.orig.c
 2020/ferguson1/snake-colours.sh
 2020/ferguson1/snake.1
-2020/ferguson1/spoilers.html
 2020/ferguson1/spoilers.md
 2020/ferguson1/termcaps.c
-2020/ferguson1/terminals.html
 2020/ferguson1/terminals.md
-2020/ferguson1/troubleshooting.html
 2020/ferguson1/troubleshooting.md
 2020/ferguson2/.gitignore
 2020/ferguson2/.path
@@ -4270,12 +4273,12 @@
 2020/ferguson2/Makefile
 2020/ferguson2/README.md
 2020/ferguson2/cake.jpg
-2020/ferguson2/chocolate-cake.html
 2020/ferguson2/chocolate-cake.md
 2020/ferguson2/enigma.1
 2020/ferguson2/index.html
 2020/ferguson2/input.txt
 2020/ferguson2/inventory.html
+2020/ferguson2/ioccc-and-chocolate.pdf
 2020/ferguson2/ioccc-cake.jpg
 2020/ferguson2/obfuscation.key
 2020/ferguson2/obfuscation.md
@@ -4285,8 +4288,9 @@
 2020/ferguson2/prog.orig.c
 2020/ferguson2/recode.1
 2020/ferguson2/recode.c
-2020/ferguson2/recode.html
 2020/ferguson2/recode.md
+2020/ferguson2/try.alt.sh
+2020/ferguson2/try.sh
 2020/ferguson2/try.this.txt
 2020/giles/.gitignore
 2020/giles/.path
@@ -4299,6 +4303,7 @@
 2020/giles/pi.wav
 2020/giles/prog.c
 2020/giles/prog.orig.c
+2020/giles/try.sh
 2020/kurdyukov1/.gitignore
 2020/kurdyukov1/.path
 2020/kurdyukov1/.winner.json
@@ -4312,6 +4317,7 @@
 2020/kurdyukov1/prog.orig.c
 2020/kurdyukov1/prog.x86.asm
 2020/kurdyukov1/prog.x86_64.asm
+2020/kurdyukov1/try.sh
 2020/kurdyukov2/.gitignore
 2020/kurdyukov2/.path
 2020/kurdyukov2/.winner.json
@@ -4325,6 +4331,7 @@
 2020/kurdyukov2/prog.png.c
 2020/kurdyukov2/prog.ppm.c
 2020/kurdyukov2/sample.jpg
+2020/kurdyukov2/try.sh
 2020/kurdyukov3/.gitignore
 2020/kurdyukov3/.path
 2020/kurdyukov3/.winner.json
@@ -4337,6 +4344,7 @@
 2020/kurdyukov3/prog.c
 2020/kurdyukov3/prog.extra.c
 2020/kurdyukov3/prog.orig.c
+2020/kurdyukov3/try.sh
 2020/kurdyukov4/.gitignore
 2020/kurdyukov4/.path
 2020/kurdyukov4/.winner.json
@@ -4349,11 +4357,14 @@
 2020/kurdyukov4/prog.c
 2020/kurdyukov4/prog.orig.c
 2020/kurdyukov4/rand.c
+2020/kurdyukov4/try.sh
 2020/otterness/.gitignore
 2020/otterness/.path
 2020/otterness/.winner.json
 2020/otterness/Makefile
 2020/otterness/README.md
+2020/otterness/cvikl.mid
+2020/otterness/entertainer.mid
 2020/otterness/index.html
 2020/otterness/inventory.html
 2020/otterness/prog.c
@@ -4379,3 +4390,4 @@
 2020/yang/prog.c
 2020/yang/prog.orig.c
 2020/yang/spoiler.html
+2020/yang/try.sh

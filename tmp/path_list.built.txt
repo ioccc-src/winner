@@ -1579,16 +1579,10 @@
 2020/ferguson1/2020_ferguson1.tar.bz2
 2020/ferguson1/COMPILING.html
 2020/ferguson1/HACKING.html
-2020/ferguson1/bugs.html
 2020/ferguson1/cannibalism.log.html
-2020/ferguson1/chocolate-cake.html
 2020/ferguson1/crazy.log.html
-2020/ferguson1/gameplay.html
 2020/ferguson1/index.html
 2020/ferguson1/inventory.html
-2020/ferguson1/spoilers.html
-2020/ferguson1/terminals.html
-2020/ferguson1/troubleshooting.html
 2020/ferguson2/.path
 2020/ferguson2/.winner.json
 2020/ferguson2/2020_ferguson2.tar.bz2

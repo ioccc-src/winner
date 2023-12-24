@@ -64,6 +64,7 @@
 1985,august,Makefile,30,null,null,makefile,true,github,Makefile,null
 1985,august,august.orig.c,50,null,orig,c,true,github,original source,c
 1985,august,primes.sh,100,null,null,shellscript,true,github,how to run if you have the primes utility,sh
+1985,august,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1985,august,1985_august.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1985,august,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 1985,lycklama,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -75,6 +76,7 @@
 1985,lycklama,Makefile,30,null,null,makefile,true,github,Makefile,null
 1985,lycklama,lycklama.alt.c,40,null,alt,c,true,github,alternative source,c
 1985,lycklama,lycklama.orig.c,50,null,orig,c,true,github,original source,c
+1985,lycklama,try.alt.sh,100,null,null,shellscript,true,github,how to run alternative code,sh
 1985,lycklama,1985_lycklama.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1985,lycklama,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 1985,shapiro,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -99,6 +101,7 @@
 1985,sicherman,sicherman.alt2.c,40,null,alt,c,true,github,alternate alternative source,c
 1985,sicherman,sicherman.alt.c,40,null,alt,c,true,github,alternative source,c
 1985,sicherman,sicherman.orig.c,50,null,orig,c,true,github,original source,c
+1985,sicherman,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1985,sicherman,1985_sicherman.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1985,sicherman,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 1986,applin,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -129,6 +132,7 @@
 1986,bright,bright.c,20,null,main,c,true,github,winning source,c
 1986,bright,Makefile,30,null,null,makefile,true,github,Makefile,null
 1986,bright,bright.orig.c,50,null,orig,c,true,github,original source,c
+1986,bright,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1986,bright,1986_bright.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1986,bright,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 1986,hague,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -138,8 +142,9 @@
 1986,hague,index.html,10,readme2index,null,html,true,browser,click here first,html
 1986,hague,hague.c,20,null,main,c,true,github,winning source,c
 1986,hague,Makefile,30,null,null,makefile,true,github,Makefile,null
-1986,hague,hague.alt.c,40,null,alt,c,true,github,alternative source,c
 1986,hague,hague.orig.c,50,null,orig,c,true,github,original source,c
+1986,hague,input.txt,100,null,null,text,true,github,sample input,txt
+1986,hague,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1986,hague,1986_hague.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1986,hague,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 1986,holloway,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -468,6 +473,7 @@
 1989,vanb,vanb.c,20,null,main,c,true,github,winning source,c
 1989,vanb,Makefile,30,null,null,makefile,true,github,Makefile,null
 1989,vanb,vanb.orig.c,50,null,orig,c,true,github,original source,c
+1989,vanb,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1989,vanb,1989_vanb.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1989,vanb,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 1989,westley,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -4291,7 +4297,7 @@
 2019,burton,prog.orig.c,50,null,orig,c,true,github,original source,c
 2019,burton,check.sh,100,null,null,shellscript,true,github,test suite,sh
 2019,burton,cow.sh,100,null,null,shellscript,true,github,an alternate implementation with a useful interface,sh
-2019,burton,on.one.liners,100,null,null,text,true,github,on writing an IOCCC one-liner,liners
+2019,burton,on.one.liners.txt,100,null,null,text,true,github,on writing an IOCCC one-liner,txt
 2019,burton,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2019,burton,prog.clean.c,200,null,null,c,true,github,version of source without compilation warnings,c
 2019,burton,2019_burton.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
@@ -4510,6 +4516,7 @@
 2020,carlini,prog.c,20,null,main,c,true,github,winning source,c
 2020,carlini,Makefile,30,null,null,makefile,true,github,Makefile,null
 2020,carlini,prog.orig.c,50,null,orig,c,true,github,original source,c
+2020,carlini,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2020,carlini,2020_carlini.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2020,carlini,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2020,endoh1,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -4540,6 +4547,7 @@
 2020,endoh2,prog.orig.c,50,null,orig,c,true,github,original source,c
 2020,endoh2,bear.txt,100,null,null,text,true,github,sample input,txt
 2020,endoh2,hello.txt,100,null,null,text,true,github,sample input,txt
+2020,endoh2,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2020,endoh2,yoda.txt,100,null,null,text,true,github,sample input,txt
 2020,endoh2,spoiler/code.c,200,null,null,c,true,github,SPOILER WARNING - main logic for the program,c
 2020,endoh2,spoiler/gen.rb,200,null,null,ruby,true,github,SPOILER WARNING - compose items and prog.c,rb
@@ -4589,17 +4597,12 @@
 2020,ferguson1,crazy.log.html,100,md2html,null,html,true,browser,about some screen dumps,html
 2020,ferguson1,play.sh,100,null,null,shellscript,true,github,how to run,sh
 2020,ferguson1,snake-colours.sh,100,null,null,shellscript,true,github,script to reset - preset colors,sh
-2020,ferguson1,bugs.html,150,md2html,null,html,true,browser,bugs and mis-features,html
-2020,ferguson1,chocolate-cake.html,150,md2html,null,html,true,browser,chocolate cake recipe,html
-2020,ferguson1,gameplay.html,150,md2html,null,html,true,browser,how to play,html
+2020,ferguson1,ioccc-and-chocolate.pdf,150,null,null,pdf,true,browser,IOCCC publications,pdf
 2020,ferguson1,prog.2.c,150,null,null,c,true,github,source with more digraphs,c
 2020,ferguson1,prog.3.c,150,null,null,c,true,github,source with a more artistic layout,c
 2020,ferguson1,prog.3-j.c,150,null,null,c,true,github,source with artistic layout and shorter j macro,c
 2020,ferguson1,snake.1,150,null,null,man,true,github,snake game man page,1
 2020,ferguson1,termcaps.c,150,null,null,c,true,github,terminal capability test source code,c
-2020,ferguson1,terminals.html,150,md2html,null,html,true,browser,terminal capability documentation,html
-2020,ferguson1,troubleshooting.html,150,md2html,null,html,true,browser,troubleshooting,html
-2020,ferguson1,spoilers.html,200,md2html,null,html,true,browser,SPOILER WARNING,html
 2020,ferguson1,2020_ferguson1.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2020,ferguson1,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2020,ferguson2,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -4619,12 +4622,13 @@
 2020,ferguson2,input.txt,100,null,null,text,true,github,sample input,txt
 2020,ferguson2,obfuscation.txt,100,null,null,text,true,github,sample input,txt
 2020,ferguson2,recode.c,100,null,null,c,true,github,Enigma machine simulato source code,c
+2020,ferguson2,try.alt.sh,100,null,null,shellscript,true,github,how to run alternative code,sh
+2020,ferguson2,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2020,ferguson2,try.this.txt,100,null,null,text,true,github,sample input,txt
-2020,ferguson2,chocolate-cake.html,150,null,null,html,true,browser,chocolate cake recipe,html
 2020,ferguson2,enigma.1,150,null,null,man,true,github,Enigma simulator man page,1
+2020,ferguson2,ioccc-and-chocolate.pdf,150,null,null,pdf,true,browser,IOCCC publications,pdf
 2020,ferguson2,obfuscation.key,150,null,null,text,true,github,key to decipher or encipher obfuscation.txt,key
 2020,ferguson2,recode.1,150,null,null,man,true,github,configuration tool man page,1
-2020,ferguson2,recode.html,150,null,null,html,true,browser,recode configurator documentation,html
 2020,ferguson2,2020_ferguson2.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2020,ferguson2,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2020,giles,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -4636,6 +4640,7 @@
 2020,giles,prog.c,20,null,main,c,true,github,winning source,c
 2020,giles,Makefile,30,null,null,makefile,true,github,Makefile,null
 2020,giles,prog.orig.c,50,null,orig,c,true,github,original source,c
+2020,giles,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2020,giles,pi.wav,150,null,null,wav,true,browser,touch tone for leading decimal digits of pi,wav
 2020,giles,2020_giles.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2020,giles,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
@@ -4648,6 +4653,7 @@
 2020,kurdyukov1,Makefile,30,null,null,makefile,true,github,Makefile,null
 2020,kurdyukov1,prog.alt.c,40,null,alt,c,true,github,alternative source,c
 2020,kurdyukov1,prog.orig.c,50,null,orig,c,true,github,original source,c
+2020,kurdyukov1,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2020,kurdyukov1,prog.extra.c,150,null,null,c,true,github,variant of winning source with sine function,c
 2020,kurdyukov1,prog.x86_64.asm,200,null,null,asm,true,github,assembly source code,asm
 2020,kurdyukov1,prog.x86.asm,200,null,null,asm,true,github,assembly source code,asm
@@ -4661,6 +4667,7 @@
 2020,kurdyukov2,prog.c,20,null,main,c,true,github,winning source,c
 2020,kurdyukov2,Makefile,30,null,null,makefile,true,github,Makefile,null
 2020,kurdyukov2,prog.orig.c,50,null,orig,c,true,github,original source,c
+2020,kurdyukov2,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2020,kurdyukov2,makegif.sh,150,null,null,shellscript,true,github,utility to form GIFs from the results,sh
 2020,kurdyukov2,prog.png.c,150,null,null,c,true,github,build a PNG version,c
 2020,kurdyukov2,prog.ppm.c,150,null,null,c,true,github,build a PPM version,c
@@ -4678,6 +4685,7 @@
 2020,kurdyukov3,prog.orig.c,50,null,orig,c,true,github,original source,c
 2020,kurdyukov3,input.txt,100,null,null,text,true,github,sample input,txt
 2020,kurdyukov3,prog.extra.c,100,null,null,c,true,github,alternative source with extra functionality,c
+2020,kurdyukov3,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2020,kurdyukov3,2020_kurdyukov3.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2020,kurdyukov3,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2020,kurdyukov4,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -4691,6 +4699,7 @@
 2020,kurdyukov4,Eugene_Onegin.txt,100,null,null,text,true,github,Eugene Onegin poetry,txt
 2020,kurdyukov4,Shakespeare.txt,100,null,null,text,true,github,Shakespeare text,txt
 2020,kurdyukov4,rand.c,100,null,null,c,true,github,randomize a file,c
+2020,kurdyukov4,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2020,kurdyukov4,2020_kurdyukov4.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2020,kurdyukov4,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2020,otterness,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -4701,6 +4710,8 @@
 2020,otterness,prog.c,20,null,main,c,true,github,winning source,c
 2020,otterness,Makefile,30,null,null,makefile,true,github,Makefile,null
 2020,otterness,prog.orig.c,50,null,orig,c,true,github,original source,c
+2020,otterness,cvikl.mid,150,null,null,midi,true,browser,sample input sound,
+2020,otterness,entertainer.mid,159,null,null,midi,true,browser,sample input sound,
 2020,otterness,2020_otterness.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2020,otterness,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 2020,tsoj,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -4722,6 +4733,7 @@
 2020,yang,prog.c,20,null,main,c,true,github,winning source,c
 2020,yang,Makefile,30,null,null,makefile,true,github,Makefile,null
 2020,yang,prog.orig.c,50,null,orig,c,true,github,original source,c
+2020,yang,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2020,yang,cppp.cc,150,null,null,c,true,github,encode large file C Pre-PreProcessor source,cc
 2020,yang,spoiler.html,200,null,null,html,true,browser,SPOILER WARNING,html
 2020,yang,2020_yang.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
