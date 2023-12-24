@@ -326,9 +326,14 @@ case as `c`.
 
 Additional code was added in case the fix cannot be compiled by some compilers
 should they object to `main()` having only one arg. This version will
-automatically be compiled if the entry fails to compile for some reason.
+automatically be compiled if the entry fails to compile for some reason but one
+can compile it manually as `make alt` in which case it'll be compiled as
+`sicherman.alt` (if it's done because [sicherman.c](/1985/sicherman/sicherman.c)
+fails to compile it will be built as `sicherman` as part of the `sicherman`
+rule).
 
-Cody also added the [try.sh](/1985/sicherman/try.sh) script.
+Cody also added the [try.sh](/1985/sicherman/try.sh) and
+[try.alt.sh](/1985/sicherman/try.alt.sh) scripts.
 
 
 # <a name="1986"></a>1986
