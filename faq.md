@@ -358,7 +358,7 @@ different_name: prog
 
 Your entry must compile with GCC and run under at least one flavor of UNIX (e.g.
 Linux or Solaris). To improve chances to win, it should work under both BSD and
-SysV style UNIX (think **stty cbreak**), and should not depend on endianness.
+SysV style UNIX (think **stty cbreak**), and should not depend on "Endianness".
 If it can compile and run on Windows and/or Mac  (see
 [2000/thadgavin](/years.html#2000_thadgavin) for one example, amongst others),
 even better. Being able to compile with other compilers like clang is also a
@@ -499,18 +499,8 @@ when these fixes are merged.
 On 2022 Dec 29, the [IOCCC winner repo](https://github.com/ioccc-src/winner),
 from which the [official IOCCC web site of 2022 Dec
 29](https://web.archive.org/web/20221231001721/https://www.ioccc.org/) was
-generated, was forked into a temporary repo where it is currently undergoing
-changes with several thousand changes and important improvements already such
-as:
-
---
-
-***XXX**: change the above text to read:
-
-... where it underwent several thousand changes and important improvements such
-as:
-
---
+generated, was forked into a temporary repo where it underwent several thousand
+changes and important improvements such as:
 
 * Moving IOCCC winners into their own separate directories
 * Fixing lots and lots of typos
@@ -524,7 +514,7 @@ work on modern systems
 * Setting up to generate the top level winners.html file via a tool
 * etc.
 
-#### 20yy mm dd pull request
+#### 20yy mm dd the great pull request merge
 
 On 20yy mm dd, the temporary repo was merged back into the [IOCCC winner
 repo](https://github.com/ioccc-src/winner) resulting in substantial improvements
@@ -757,10 +747,9 @@ hints, especially in cases were something else needs to be installed.
 Please see the [bugs.md](/bugs.md) file for details about known problems with IOCCC winners.  In some cases you may be dealing with a problematic entry.  In a few fun cases, the IOCCC does not compile by design!
 
 If you have a fix that makes a minimal impact to the entry, then please consider submitting that change in the form of a pull request.  Please
-see the FAQ 5.1 <a href="#pullrequst">"How do I report a bug in an IOCCC
-winner"</a> for details.
+see FAQ 5.2 <a href="#fix_a_winner">"How may I submit a fix to an IOCCC winner"</a> for details.
 
-In some cases alterinive code has been added that does compile on some or most systems.  Check the writeup for the entry for "alt" code and possible ways to compile and run that code.  In some cases we replaced the original code (but not the `.orig.c` file!) with code
+In some cases alternative code has been added that does compile on some or most systems.  Check the write up for the entry for "alt" code and possible ways to compile and run that code.  In some cases we replaced the original code (but not the `.orig.c` file!) with code
 that works for modern systems but one can view the original code in the
 `.orig.c` files (sometimes the original code is also in the directory as a
 `winner.alt.c` or `prog.alt.c`).
@@ -786,10 +775,9 @@ entries should be an alternate version.
 Other entries like [2001/herrmann2](/thanks-for-help.md#2001_herrmann2)
 now work with 32-bit AND 64-bit systems.
 
-Please see the [bugs.md](/bugs.md) file for the problematic entry in question to see if the problem is known, and if a fix is wanted, consider trying to port the code to a 64-bit system and submitting a pull request with that change.  Pull requests that fix such code while trying to minimize the impact of any changes and preserving the spirit of the orignal code are very welcome!
+Please see the [bugs.md](/bugs.md) file for the problematic entry in question to see if the problem is known, and if a fix is wanted, consider trying to port the code to a 64-bit system and submitting a pull request with that change.  Pull requests that fix such code while trying to minimize the impact of any changes and preserving the spirit of the original code are very welcome!
 Please
-see the FAQ 5.1 <a href="#pullrequst">"How do I report a bug in an IOCCC
-winner"</a> for details.
+see FAQ 5.2 <a href="#fix_a_winner">"How may I submit a fix to an IOCCC winner"</a> for details.
 
 
 ### <a name="faq3_3"></a>FAQ 3.3: Why do some IOCCC winners fail to compile under macOS?
@@ -801,10 +789,9 @@ actually clang, even `/usr/bin/gcc`.
 That being said many (if not most) of these entries have been fixed and some
 others will be looked at, when found.
 
-In some cases the [bugs.md](/bugs.md) file may note a known macOS problem with an entry.  Should you manage to port the entry, and assuming your changes also attempt to preserve the orignal intent of the IOCCC entry, we would encourage you to submit a pull request with your ported code.
+In some cases the [bugs.md](/bugs.md) file may note a known macOS problem with an entry.  Should you manage to port the entry, and assuming your changes also attempt to preserve the original intent of the IOCCC entry, we would encourage you to submit a pull request with your ported code.
 Please
-see the FAQ 5.1 <a href="#pullrequst">"How do I report a bug in an IOCCC
-winner"</a> for details.
+see FAQ 5.2 <a href="#fix_a_winner">"How may I submit a fix to an IOCCC winner"</a> for details.
 
 
 ### <a name="faq3_4"></a>FAQ 3.4: Why does clang or gcc fail to compile an IOCCC winner?
@@ -825,8 +812,7 @@ other things that have to be done plus remembering to do it.
 
 See if the problem is mentioned in [bugs.md](/bugs.md).  If you have a change that fixes the problem (even if it just a change to the `Makefile`) that doesn't negatively impact the entry too much, consider submitting that change in the form of a pull request.
 Please
-see the FAQ 5.1 <a href="#pullrequst">"How do I report a bug in an IOCCC
-winner"</a> for details.
+see FAQ 5.2 <a href="#fix_a_winner">"How may I submit a fix to an IOCCC winner"</a> for details.
 
 
 ### <a name="faq3_5"></a>FAQ 3.5: What is this cb tool that is mentioned in the IOCCC?
@@ -1159,7 +1145,7 @@ statements.  Sometimes there is a technical or pedantic issue that
 `-Weverything` warns about that would merit a change to your C code; often,
 however, it is not even possible to fix let alone is it worth it. Of course
 if you're running out of bytes due to rule 2[ab] one might not have much choice.
-This is something that obfuscators simply sometimes have to deal with!
+This is something that obfuscation authors simply sometimes have to deal with!
 
 If you try to minimize the number of `-Wno-foo` options needed with
 `-Weverything`, please mention this in your remarks about the entry, as the
@@ -1593,7 +1579,7 @@ In the future we, the judges, would prefer that entries use `fgets()` to prevent
 these problems.
 
 An annoying fact is that for '"compatibility" reasons' `fgets()` retains the
-newline and `gets()` does not.  As the v7 man page used to say:
+newline and `gets()` does not.  As the Unix version 7 man page used to say:
 
 ```
 BUGS
@@ -1755,7 +1741,7 @@ section may offer you important fixing clues.
 ### We welcome your help on fixing the IOCCC web site
 
 
-### <a name="faq5_1"></a><a name="pullrequst"></a>FAQ 5.1: How do I report a bug in an IOCCC winner?
+### <a name="faq5_1"></a>a name="report_bug"></a>FAQ 5.1: How do I report a bug in an IOCCC winner?
 
 We do not 'maintain' the contest winners as such. The code is made available on an 'AS
 IS' basis. If you have a FIX for an entry, we suggest that you submit your fixes in a [GitHub pull
@@ -1813,7 +1799,7 @@ Note that we're much more inclined to accept an author's fixes but the judges
 have the final say in the matter.
 
 
-### <a name="faq5_3"></a>FAQ 5.3: How may I report an IOCCC web site problem?
+### <a name="faq5_3"></a><a name="report_web_problem"></a>FAQ 5.3: How may I report an IOCCC web site problem?
 
 If you discover a problem with the IOCCC web site that is related
 to a particular IOCCC winner, please see [FAQ 5.1](#faq5_1) for
