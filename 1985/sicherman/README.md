@@ -4,14 +4,9 @@
 make all
 ```
 
-There is an alternate version for those with an old enough compiler or one that
-accepts `-traditional-cpp`. The second alt version will be compiled in the case
-that you have a compiler that does not support 1 arg only in `main()`. For
-instance clang has a number of defects and some versions say that `main()` can
-only have 0, 2 or 3 args. The versions that have this that we know about do
-support 1 arg but in case this is ever changed the
-[sicherman.alt2.c](sicherman.alt2.c) is provided. See [Alternate
-code](#alternate-code) below for details on the alt code, the original entry.
+There is another version that will be compiled in case the first fails. This
+should happen automatically. See [Alternate code](#alternate-code) below for
+more details on it.
 
 
 ## To use:
@@ -20,33 +15,39 @@ code](#alternate-code) below for details on the alt code, the original entry.
 ./sicherman < file
 
 echo foo | ./sicherman
+
+./sicherman
+# type or paste some text, making sure to hit enter after each line typed
 ```
 
 
 ### Try:
 
 ```sh
-./sicherman  < sicherman.c
-
-echo IOCCC | ./sicherman
-
-./sicherman < sicherman.c | ./sicherman
+./try.sh
 ```
 
 
 ## Alternate code:
 
-The [sicherman.alt.c](sicherman.alt.c) is the original entry and requires either
-an old enough compiler or a compiler that supports `-traditional-cpp`. If you have such
-a compiler you can try this version.
+The [sicherman.alt.c](sicherman.alt.c) is a slight change in the fixed version
+(fixed so it does not require `-traditional-cpp`) in that it has two args to
+`main()` as some compilers object to certain number of args in `main()`. This
+will be built in the case of the [sicherman.c](sicherman.c) failing to compile.
+In this case it'll be compiled to `sicherman` to simplify it for the larger
+audience.
 
 
 ### Alternate build:
 
+Although this will be built if the original fails to compile you can do it
+manually like:
+
 ```sh
 make alt
-
 ```
+
+In this case it will be built as `sicherman.alt`.
 
 
 ### Alternate use:
@@ -59,7 +60,7 @@ make alt
 ### Alternate try:
 
 ```sh
-./sicherman.alt < README.md | ./sicherman.alt
+./try.alt.sh
 ```
 
 
