@@ -399,6 +399,14 @@ for entertainment!
 `-D` needed to compile the entry.
 
 
+## <a name="1986_stein"></a>[1986/stein](/1986/stein/stein.c) ([README.md](/1986/stein/README.md]))
+
+[Cody](#cody) restored the original entry which was a single line. The code
+being longer (in 1986 a one liner could be longer) was split to three lines to
+avoid problems with news and mail but as it was the 'Best one liner' it is now
+one line.
+
+
 ## <a name="1986_wall"></a>[1986/wall](/1986/wall/wall.c) ([README.md](/1986/wall/README.md]))
 
 [Cody](#cody) fixed this so that it does not require `-traditional-cpp`. This took a fair
