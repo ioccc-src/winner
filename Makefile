@@ -149,6 +149,7 @@ diff_orig_alt:
         done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
+# diff alt and orig
 diff_alt_orig:
 	@echo '=-=-=-=-= IOCCC begin make $@ =-=-=-=-='
 	@-for i in ${YEARS}; do \

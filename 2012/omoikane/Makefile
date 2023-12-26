@@ -194,6 +194,7 @@ diff_orig_alt: ${PROG}.orig.c
 	    ${DIFF} -u ${PROG}.orig.c ${PROG}.alt.c; \
 	fi
 
+# diff alt and orig
 diff_alt_orig:
 	@-if [[ -e ${PROG}.alt.c ]]; then \
 	    ${DIFF} -u ${PROG}.alt.c ${PROG}.orig.c; \

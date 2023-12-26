@@ -184,6 +184,7 @@ diff_orig_alt:
 	done
 	@echo '=-=-= ${YEAR} complete make $@ =-=-='
 
+# diff alt and orig
 diff_alt_orig:
 	@echo '=-=-= ${YEAR} begin make $@ =-=-='
 	@echo
