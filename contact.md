@@ -3,7 +3,7 @@
 If you are trying to:
 
 * Fix a winning IOCCC entry - (see [FAQ 5.2](/faq.md#fix_a_winner))
-* Update winning author information - (see [FAQ 5.5)(/faq.md#fix_author))
+* Update winning author information - (see [FAQ 5.5](/faq.md#fix_author))
 * Correct a web site problem - (see [FAQ 5.4](/faw.md#fix_web_site) or [FAQ 5.6](/faq.md#fix_link))
 
 Instead of sending us Email, **Please** consider using the [GitHub
