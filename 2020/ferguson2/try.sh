@@ -60,29 +60,48 @@ echo 1>&2
 ./prog - < try.this.txt 2>/dev/null
 echo 1>&2
 
+# even more input fun:
+read -r -n 1 -p "Press any key to show key.txt: "
+echo 1>&2
+echo "$ cat key.txt" 1>&2
+cat key.txt
+echo 1>&2
+read -r -n 1 -p "Press any key to encrypt IOCCC with code of key.txt: "
+echo 1>&2
+echo "$ echo IOCCC | ./recode -v -Rkey.txt | ./prog - 2>/dev/null" 1>&2
+echo IOCCC | ./recode -v -Rkey.txt | ./prog - 2>/dev/null
+echo 1>&2
+
+# now decrypt IOCCC with settings of key.txt by piping it back to recode -> prog
+read -r -n 1 -p "Press any key to encrypt and then decrypt IOCCC with code of key.txt: "
+echo 1>&2
+echo "$ echo IOCCC | ./recode -v -Rkey.txt | ./prog - 2>/dev/null | ./recode -Rkey.txt | ./prog - 2>/dev/null" 1>&2
+echo IOCCC | ./recode -v -Rkey.txt | ./prog - 2>/dev/null | ./recode -Rkey.txt | ./prog - 2>/dev/null
+echo 1>&2
+
 # more obfuscated fun:
 read -r -n 1 -p "Press any key to send 'testing test tests' to recode: "
 echo 1>&2
-echo "$ echo testing test tests | ./recode" 1>&2
-echo testing test tests | ./recode
+echo "$ echo testing test tests | ./recode -v" 1>&2
+echo testing test tests | ./recode -v
 echo 1>&2
 
 read -r -n 1 -p "Press any key to send 'testing test tests' to recode -> prog: "
 echo 1>&2
-echo "$ echo testing test tests | ./recode | ./prog - 2>/dev/null" 1>&2
-echo testing test tests | ./recode | ./prog - 2>/dev/null
+echo "$ echo testing test tests | ./recode -v | ./prog - 2>/dev/null" 1>&2
+echo testing test tests | ./recode -v | ./prog - 2>/dev/null
 echo 1>&2
 
 read -r -n 1 -p "Press any key to send 'testing test tests' to recode -> prog -> recode: "
 echo 1>&2
-echo "$ echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode" 1>&2
-echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode
+echo "$ echo testing test tests | ./recode -v | ./prog - 2>/dev/null | ./recode" 1>&2
+echo testing test tests | ./recode -v | ./prog - 2>/dev/null | ./recode
 echo 1>&2
 
 read -r -n 1 -p "Press any key to send 'testing test tests' to recode -> prog -> recode -> prog: "
 echo 1>&2
-echo "$ echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode | ./prog - 2>/dev/null" 1>&2
-echo testing test tests | ./recode | ./prog - 2>/dev/null | ./recode | ./prog - 2>/dev/null
+echo "$ echo testing test tests | ./recode -v | ./prog - 2>/dev/null | ./recode -v | ./prog - 2>/dev/null" 1>&2
+echo testing test tests | ./recode -v | ./prog - 2>/dev/null | ./recode -v | ./prog - 2>/dev/null
 echo 1>&2
 
 # even more obfuscated fun saving and reading from files:
@@ -93,8 +112,8 @@ rm -f conf input output output2
 # original string to input and original output to output:
 read -r -n 1 -p "Press any key to save settings and output, then encrypt: "
 echo 1>&2
-echo "$ echo testing test tests | tee input | ./recode -r -oconf | ./prog - 2>/dev/null >output" 1>&2
-echo testing test tests | tee input | ./recode -r -oconf | ./prog - 2>/dev/null >output
+echo "$ echo testing test tests | tee input | ./recode -v -r -oconf | ./prog - 2>/dev/null >output" 1>&2
+echo testing test tests | tee input | ./recode -v -r -oconf | ./prog - 2>/dev/null >output
 read -r -n 1 -p "Press any key to show input file: "
 echo 1>&2
 cat input
@@ -106,8 +125,8 @@ echo 1>&2
 # configure Enigma machine from conf file and read from output file, thus decrypting:
 read -r -n 1 -p "Press any key to decrypt the output from the above command: "
 echo 1>&2
-echo "$ ./recode -Rconf -foutput | ./prog - 2>/dev/null > output2" 1>&2
-./recode -Rconf -foutput | ./prog - 2>/dev/null > output2
+echo "$ ./recode -v -Rconf -foutput | ./prog - 2>/dev/null > output2" 1>&2
+./recode -v -Rconf -foutput | ./prog - 2>/dev/null > output2
 read -r -n 1 -p "Press any key to show output2: "
 echo 1>&2
 cat output2
