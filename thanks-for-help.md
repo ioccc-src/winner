@@ -4413,6 +4413,11 @@ He also added the [try.sh](/2020/ferguson2/try.sh) script.
 He also added the [alt code](/2020/ferguson2/README.md#alternate-code) and the
 [try.alt.sh](/2020/ferguson2/try.alt.sh) script.
 
+The try scripts involved the addition of a text file,
+[key.txt](/2020/ferguson2/key.txt) which has the key of the file the judges
+added in [try.this.txt](/2020/ferguson2/try.this.txt) which itself was based on
+something the author (Cody :-) ) submitted in the first place.
+
 He also fixed some issues that occurred when files were renamed to `.md` from
 `.markdown`.
 
