@@ -40,6 +40,7 @@ co-judge.   Landon and Leo together selected Jeremy Horn and Peter
 Seebach.  The four judges (<https://www.ioccc.org/judges.html>) together worked
 thru-out the 1998 IOCCC season.
 
+
 ### 2023 note about judges:
 
 The number of judges now is only 2, Landon Curt Noll and Leonid A. Broukhis.
@@ -116,19 +117,22 @@ us a line.  We enjoy seeing who, where and how the contest is used.
 You must include the words 'ioccc question' in the subject of your email
 message when sending email to the judges.
 
-If you have problems with any of the entries, AND YOU HAVE A FIX, please
-email the fix (patch file or the entire changed file) to the above address.
-
 The next IOCCC is planned to start towards the end of 1999.  Watch
 <https://www.ioccc.org>
 
 for news of the next contest.
 
-=-=
+**IMPORTANT NOTE**: The email addresses found above are for historical
+purposes only, and should not be used today.  See
+[contact.html](/contact.html) for up to date contact details
+as well as details on how to provide fixes to any of the entries.
+See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
 
-Copyright (c) Landon Curt Noll, Jeremy Horn, Peter Seebach
-and Leonid A. Broukhis, 1999.
-All Rights Reserved.  Permission for personal, educational or non-profit
-use is granted provided this this copyright and notice are included in its
-entirety and remains unaltered.  All other uses must receive prior permission
-from the contest judges.
+
+# Copyright and License
+
+Copyright (c) 1999,2023, Landon Curt Noll, Jeremy Horn, Peter Seebach and Leonid A. Broukhis. All Rights Reserved.
+This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
+4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
+If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](/contact.html).

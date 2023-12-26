@@ -1,4 +1,4 @@
-# [1985](/years.html#1985) marked the second year of the International Obfuscated C Code Contest.
+# 1985 marked the second year of the International Obfuscated C Code Contest
 
 Look at the `README.md` file for the given winning entry for information on how
 to compile it and how to run the winning program.  Look at the winning source
@@ -13,10 +13,11 @@ avoid another 1984 style winner ([1984/mullender](../1984/mullender)).
 was invited to help in the judging.  Awards were given to 5 classes of programs
 since we were unable to select only the best 4.
 
-=-=
 
-Copyright (c) 1985, Landon Curt Noll & Larry Bassel.
-All Rights Reserved.  Permission for personal, educational or non-profit use is
-granted provided this this copyright and notice are included in its entirety
-and remains unaltered.  All other uses must receive prior permission in writing
-from both Landon Curt Noll and Larry Bassel.
+# Copyright and License
+
+Copyright (c) 1985,2023, Landon Curt Noll and Larry Bassel. All Rights Reserved.
+This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
+4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
+If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
+(but does not require) that you [send us a note about your use](/contact.html).

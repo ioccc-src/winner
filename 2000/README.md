@@ -73,6 +73,10 @@ It was decided that the 15th contest would be the year 2000 contest
 (the year the judging completed) rather than year 1999 (the initial
 scheduled start of the contest).  That is why there is no 1999 contest.
 
+**NOTE**: The above has been mentioned in an Amici Curiae for the
+DeCSS case.  See [BRIEF OF AMICI CURIAE N SUPPORT OF APPELLANTS AND
+REVERSAL ..](https://web.archive.org/web/20231021211330/http://cryptome.org/mpaa-v-2600-bac.htm).
+
 
 ## Final Comments
 
@@ -84,29 +88,17 @@ Send such email to:
 questions@ioccc.org
 ```
 
-If you use, distribute or publish these entries in some way, please drop
-us a line.  We enjoy seeing who, where and how the contest is used.
+**IMPORTANT NOTE**: The email addresses found above are for historical
+purposes only, and should not be used today.  See
+[contact.html](/contact.html) for up to date contact details
+as well as details on how to provide fixes to any of the entries.
+See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
 
-You must include the words 'ioccc question' in the subject of your email
-message when sending email to the judges.
 
-If you have problems with any of the entries, AND YOU HAVE A FIX, please
-email the fix (patch file or the entire changed file) to the above address.
+# Copyright and License
 
-The next IOCCC is planned to start towards early spring 2001. Watch: <https://www.ioccc.org/>
-
-for news of the next contest.
-
-=-=
-
-p.s. The above has been mentioned in an Amici Curiae for the DeCSS case.  See
-<http://cryptome.org/mpaa-v-2600-bac.htm> and search on the word ioccc (twice).
-
-=-=
-
-Copyright (C) Landon Curt Noll, Simon Cooper, Peter Seebach
-and Leonid A. Broukhis, 2000.
-All Rights Reserved.  Permission for personal, educational or non-profit
-use is granted provided this copyright and notice are included in its
-entirety and remains unaltered.  All other uses must receive prior permission
-from the contest judges.
+Copyright (c) 2000,2023, Landon Curt Noll, Peter Seebach and Leonid A. Broukhis. All Rights Reserved.
+This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
+4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
+If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](/contact.html).

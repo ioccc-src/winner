@@ -1,11 +1,5 @@
 # 2018 marked the "The Twenty Fifth International Obfuscated C Code Contest"
 
-Copyright (C) 2018, Landon Curt Noll, Simon Cooper, and Leonid A.
-Broukhis. All Rights Reserved. Permission for personal, educational
-or non-profit use is granted provided this copyright and notice are
-included in its entirety and remains unaltered.  All other uses
-must receive prior permission from the contest judges.
-
 
 ## Standard IOCCC stuff
 
@@ -93,21 +87,15 @@ the idea was limited in scope.
 
 ## Final Comments
 
-Please feel free to send us comments and suggestions about the
-competition, this README or anything else that you would like to see in
-future contests.
+**IMPORTANT NOTE**: See [contact.html](/contact.html) for up to date contact details
+as well as details on how to provide fixes to any of the entries.
+See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
 
-If you use, distribute or publish these entries in some way, please drop
-us a line.  We enjoy seeing who, where and how the contest is used.
 
-If you have problems with any of the entries, AND YOU HAVE A FIX, please
-send us the fix (patch file or the entire changed file).
+# Copyright and License
 
-For the latest information on how to contact the IOCCC Judges please visit
-
->	<https://www.ioccc.org/contact.html>
-
-For news of the next contest watch:
-
->	<https://www.ioccc.org/>
-
+Copyright (C) 2018,2023, Landon Curt Noll and Leonid A. Broukhis. All Rights Reserved.
+This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
+4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
+If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](/contact.html).

@@ -1,4 +1,4 @@
-# [2005](/years.html#2005) marked the "The Eighteenth International Obfuscated C Code Contest"
+# 2005 marked the "The Eighteenth International Obfuscated C Code Contest"
 
 
 ## Standard IOCCC stuff
@@ -86,32 +86,15 @@ them for the next IOCCC.
 
 ## Final Comments
 
-Please feel free to send us comments and suggestions about the competition, this
-[README.md](README.md) or anything else that you would like to see in future
-contests.
-
-If you use, distribute or publish these entries in some way, please drop
-us a line.  We enjoy seeing who, where and how the contest is used.
-
-If you have problems with any of the entries, AND YOU HAVE A FIX, please
-send us the fix please submit your fixes fix as a [GitHub pull
-request](https://github.com/ioccc-src/temp-test-ioccc/pulls).
-
-We will be happy to credit those who submit successful [GitHub pull
-requests](https://github.com/ioccc-src/temp-test-ioccc/pulls) in the entry's
-`README.md`.
+**IMPORTANT NOTE**: See [contact.html](/contact.html) for up to date contact details
+as well as details on how to provide fixes to any of the entries.
+See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
 
 
-For the latest information on how to contact the [IOCCC
-Judges](https://www.ioccc.org/judges.html) please visit
-<https://www.ioccc.org/contact.html>.
+# Copyright and License
 
-For news of the next contest watch <https://www.ioccc.org/>.
-
-=-=
-
-Copyright (C) 2005, Landon Curt Noll, Simon Cooper, and Leonid A.
-Broukhis. All Rights Reserved. Permission for personal, educational
-or non-profit use is granted provided this copyright and notice are
-included in its entirety and remains unaltered.  All other uses
-must receive prior permission from the contest judges.
+Copyright (c) 2005,2023, Landon Curt Noll and Leonid A. Broukhis. All Rights Reserved.
+This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
+4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
+If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](/contact.html).

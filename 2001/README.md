@@ -3,10 +3,6 @@
 
 ## Standard IOCCC stuff
 
-
-Standard IOCCC stuff
---------------------
-
 Look at the README.md file for the given winning entry for information
 on how to compile it and how to run the winning program.
 Look at the winning source and try to figure how it does what it does!
@@ -73,22 +69,17 @@ Send such email to:
 questions@ioccc.org
 ```
 
-If you use, distribute or publish these entries in some way, please drop
-us a line.  We enjoy seeing who, where and how the contest is used.
+**IMPORTANT NOTE**: The email addresses found above are for historical
+purposes only, and should not be used today.  See
+[contact.html](/contact.html) for up to date contact details
+as well as details on how to provide fixes to any of the entries.
+See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
 
-You must include the words 'ioccc question' in the subject of your email
-message when sending email to the judges.
 
-If you have problems with any of the entries, AND YOU HAVE A FIX, please
-email the fix (patch file or the entire changed file) to the above address.
+# Copyright and License
 
-Watch <https://www.ioccc.org/> for news of the next contest.
-
-=-=
-
-Copyright (C) Landon Curt Noll, Simon Cooper, Peter Seebach
-and Leonid A. Broukhis, 2001-2002.
-All Rights Reserved.  Permission for personal, educational or non-profit
-use is granted provided this copyright and notice are included in its
-entirety and remains unaltered.  All other uses must receive prior permission
-from the contest judges.
+Copyright (c) 2001,2002,2023, Landon Curt Noll, Peter Seebach and Leonid A. Broukhis, All Rights Reserved.
+This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
+4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
+If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](/contact.html).

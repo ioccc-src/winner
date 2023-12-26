@@ -22,10 +22,11 @@ Edition](https://www.amazon.com/Portable-Software-Mark-R-Horton/dp/0138680507).
 The first announcement of winners at the Summer 87 USENIX was helped by a small
 fly that danced all over the foils.
 
-=-=
 
-Copyright (c) 1987, Landon Curt Noll & Larry Bassel.
-All Rights Reserved.  Permission for personal, educational or non-profit use is
-granted provided this this copyright and notice are included in its entirety
-and remains unaltered.  All other uses must receive prior permission in writing
-from both Landon Curt Noll and Larry Bassel.
+# Copyright and License
+
+Copyright (c) 1987,2023, Landon Curt Noll and Larry Bassel. All Rights Reserved.
+This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
+4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
+If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](/contact.html).

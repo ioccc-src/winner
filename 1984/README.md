@@ -1,7 +1,7 @@
-# First Obfuscated C Code Contest
+# In 1984 the first annual Obfuscated C Code Contest was held
 
 In [1984](/years.html#1984), the first contest was held.  The name of the
-contest was simply "`Obfuscated C Code Contest`".
+contest was simply "`First annual Obfuscated C Code Contest`".
 
 Look at the `README.md`file for the given winning entry for information on how
 to compile it and how to run the winning program.  Look at the winning
@@ -15,10 +15,11 @@ were posted to [net.lang.c](https://groups.google.com/g/net.lang.c) and
 was announced in a [net.lang.c
 post](https://groups.google.com/g/net.lang.c/c/lx-TAuEyeRI/m/HdOOnNx6LC0J).
 
-=-=
 
-Copyright (c) 1984, Landon Curt Noll.
-All Rights Reserved.  Permission for personal, educational or non-profit use is
-granted provided this this copyright and notice are included in its entirety
-and remains unaltered.  All other uses must receive prior permission in writing
-from both Landon Curt Noll and Larry Bassel.
+# Copyright and License
+
+Copyright (c) 1984,2023, Landon Curt Noll. All Rights Reserved.
+This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
+4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
+If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](/contact.html).

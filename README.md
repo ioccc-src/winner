@@ -17,16 +17,22 @@ temp-test-ioccc GitHub repo.
 XXX - The text from the top down to the _What follows is the actual README.md file_
 line will be removed when this web site becomes official - XXX
 
-## What follows is the actual README.md file
+## What follows is the actual README.md file - Remove from top down to this line - XXX
 # About the IOCCC winner GitHub repository
 
-The [IOCCC winners GitHub repository](https://github.com/ioccc-src/winner) are the
+The [official IOCCC winners GitHub repository](https://github.com/ioccc-src/winner) are the
 official winners of the **International Obfuscated C Code Contest (IOCCC)**, the
 Internet's oldest ongoing contest.
 
-For information about the IOCCC, see the [goals of the
-contest](https://www.ioccc.org/index.html#goals).
+**IMPORTANT NOTE**: See [contact.html](/contact.html) for up to date contact details
+as well as details on how to provide fixes to any of the entries.
+See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
 
-We, the [IOCCC Judges](https://www.ioccc.org/judges.html), recommend that you view
-this information via the [Official IOCCC web
-site](https://www.ioccc.org/index.html).
+
+# Copyright and License
+
+Copyright (C) 2020,2023, Landon Curt Noll. All Rights Reserved.
+This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
+4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
+If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](/contact.html).

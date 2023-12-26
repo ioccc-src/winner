@@ -1,9 +1,7 @@
-2016 marked the "The Twenty Sixth International Obfuscated C Code Contest"
-==========================================================================
+# 2016 marked the "The Twenty Sixth International Obfuscated C Code Contest"
 
 
-Standard IOCCC stuff
---------------------
+## Standard IOCCC stuff
 
 Look at the README.md file for the given winning entry for information
 on how to compile it and how to run the winning program.
@@ -25,8 +23,7 @@ lacking, you may need to compile using clang or gcc instead of your local
 compiler.
 
 
-Remarks on some of the winners
-------------------------------
+## Remarks on some of the winners
 
 This year's winners are impressive!
 
@@ -51,8 +48,7 @@ without blatantly reusing their code.
 ...We'll stop spouting spoilers now. Have fun exploring all the entries!
 
 
-Remarks on some of submissions that did not win
------------------------------------------------
+## Remarks on some of submissions that did not win
 
 Some entries tried to get around the size limit by submitting a data
 file that was really C code and then blindly including code in prog.c.
@@ -72,31 +68,17 @@ Some entries seemed to have a good idea, but the implementation of
 the idea was limited in scope.
 
 
-Final Comments
---------------
+## Final Comments
 
-Please feel free to send us comments and suggestions about the
-competition, this README or anything else that you would like to see in
-future contests.
+**IMPORTANT NOTE**: See [contact.html](/contact.html) for up to date contact details
+as well as details on how to provide fixes to any of the entries.
+See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
 
-If you use, distribute or publish these entries in some way, please drop
-us a line.  We enjoy seeing who, where and how the contest is used.
 
-If you have problems with any of the entries, AND YOU HAVE A FIX, please
-send us the fix (patch file or the entire changed file).
+# Copyright and License
 
-For the latest information on how to contact the IOCCC Judges please visit
-
->	<https://www.ioccc.org/contact.html>
-
-For news of the next contest watch:
-
->	<https://www.ioccc.org/>
-
-=-=
-
-Copyright (C) 2019, Landon Curt Noll, Simon Cooper, and Leonid A.
-Broukhis. All Rights Reserved. Permission for personal, educational
-or non-profit use is granted provided this copyright and notice are
-included in its entirety and remains unaltered.  All other uses
-must receive prior permission from the contest judges.
+Copyright (c) 2019,2023, Landon Curt Noll and Leonid A. Broukhis. All Rights Reserved.
+This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
+4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
+If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](/contact.html).

@@ -63,10 +63,11 @@ judges@toad.com
 If you use, distribute or publish these entries in some way, please drop
 us a line.  We enjoy seeing who, where and how the contest is used.
 
-If you have problems with any of the entries, AND IF YOU HAVE A FIX, please
-submit a [GitHub pull
-request](https://github.com/ioccc-src/temp-test-ioccc/pulls) (with ONE PULL
-REQUEST *PER* FIX, please).
+**IMPORTANT NOTE**: The email addresses found above are for historical
+purposes only, and should not be used today.  See
+[contact.html](/contact.html) for up to date contact details
+as well as details on how to provide fixes to any of the entries.
+See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
 
 
 ## Credits
@@ -77,6 +78,7 @@ appreciated the opportunity to serve as official taste testers.  And as
 usual, the food was excellent.  The official menus of the 1995
 Obfuscated C Contest dinners were:
 
+
 ### Session One:
 
 Antipasti: Crudites, olive selection, pickles, cheese selection
@@ -85,6 +87,7 @@ Salad: artichoke, red bell peppers, Italian onions, cucumbers
        and Greek olives with mustard vinaigrette
 Main Course: Pizzas, with a variety of toppings
 Dessert: Chocolate torte
+
 
 ### Session Two:
 
@@ -106,6 +109,7 @@ Main Course: Broiled salmon with lemon pepper mayonnaise, chard, mixture
 Bread: Cheese bread with herbs
 Dessert: Chocolate cheesecake (Courtesy of Elizabeth Watson)
 
+
 ### Session Four:
 
 Antipasti: Crudites, olive selection, roasted red peppers, cheese selection
@@ -116,6 +120,7 @@ Main Course: Surf and Turf--Grilled steaks of salmon and New York steak
 	wild rice
 Dessert: Chocolate mousse
 
+
 ### Session Five:
 
 Antipasti: Crudites, olive selection, pickles
@@ -124,6 +129,7 @@ Main Course: Linguini with a cream sauce of shiitake mushrooms and smoked
 salmon
 Bread: Garlic bread
 Dessert: Flour-less chocolate torte
+
 
 ### Session Six:
 
@@ -136,10 +142,11 @@ Main Course: Cracked Dungeness crab with lemon mayonnaise, broccoli,
 	mixture of white and brown rice
 Dessert: Key lime pie
 
-=-=
 
-Copyright (c) 1995, Landon Curt Noll, Larry Bassel & Sriram Srinivasan.
-All Rights Reserved.  Permission for personal, educational or non-profit use is
-granted provided this this copyright and notice are included in its entirety
-and remains unaltered.  All other uses must receive prior permission in writing
-from Landon Curt Noll, Larry Bassel and Sriram Srinivasan.
+# Copyright and License
+
+Copyright (c) 1995,2023, Landon Curt Noll, Larry Bassel, Sriram Srinivasan. All Rights Reserved.
+This work is licensed under a [Creative Commons CC BY-SA 4.0 DEED Attribution-ShareAlike
+4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.
+If you do use this work in some form, the [IOCCC judges](/judges.html) would appreciate
+(but does not require) if you were to [send us a note about your use](/contact.html).
