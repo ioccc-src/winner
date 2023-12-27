@@ -57,7 +57,6 @@ exactly what it says nonetheless.
 
 ## Author's remarks:
 
-
 ### Letter Mixer
 
 Compile and try this:

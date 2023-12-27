@@ -32,7 +32,6 @@ entry but was changed to be the alt version.
 
 ### Alternate build:
 
-
 ```sh
 make alt
 ```
@@ -70,7 +69,6 @@ NOTE: Unlike the original entry source, [prog.alt.c](prog.alt.c),
 
 
 ## Author's remarks:
-
 
 ### Features
 

@@ -16,8 +16,6 @@ STATUS: INABIAF - please **DO NOT** fix
 For more detailed information see [2020 giles in bugs.md](/bugs.md#2020-giles).
 
 
-
-
 ## To use:
 
 ```sh

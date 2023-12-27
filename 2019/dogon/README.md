@@ -62,7 +62,6 @@ In the interest of saving lives, this entry was not fuzzed.
 
 ## Author's remarks:
 
-
 ### What is it?
 
 Just run with no arguments on an X11-compatible system using one of the supplied

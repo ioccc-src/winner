@@ -58,7 +58,6 @@ make alt
 
 ### Alternate use:
 
-
 ```
 ./dlowe.alt < anyfile > pootfile
 ```

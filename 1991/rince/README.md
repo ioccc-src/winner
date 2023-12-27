@@ -30,7 +30,6 @@ The author set the maximum number of moves to 484.
 
 ### Alternate build:
 
-
 ```sh
 make alt
 ```

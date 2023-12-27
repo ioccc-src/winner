@@ -15,7 +15,7 @@ make
 ```
 
 
-## Try:
+### Try:
 
 When running this in the program's window try hitting space a few times and see
 what happens!
@@ -34,6 +34,7 @@ To compile this alternate version:
 ```sh
 make alt
 ```
+
 
 ### Alternate use:
 
@@ -58,7 +59,6 @@ Challenge: Try modifying the texture to something of your own design.
 
 
 ## Author's remarks:
-
 
 ### ABUSE OF RULES
 

@@ -41,6 +41,7 @@ this extremely subtle entry.
 make alt
 ```
 
+
 ### Alternate use:
 
 Use `zeitak.alt` as you would `zeitak` above.
@@ -58,7 +59,6 @@ just to understand 18 key characters of this code.
 
 
 ## Author's remarks:
-
 
 ### Nesting Errors Detector
 

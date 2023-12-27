@@ -129,7 +129,6 @@ box.
 
 ## Author's remarks:
 
-
 **NETWORK PONG!**
 
 ### REQUIREMENTS

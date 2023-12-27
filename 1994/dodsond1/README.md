@@ -11,7 +11,8 @@ make all
 ./dodsond1
 ```
 
-## Try:
+
+### Try:
 
 At the prompt, try entering `E3`.
 

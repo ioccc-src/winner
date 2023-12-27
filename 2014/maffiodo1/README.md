@@ -20,7 +20,6 @@ STATUS: INABIAF - please **DO NOT** fix
 For more detailed information see [2014 maffiodo1 in bugs.md](/bugs.md#2014-maffiodo1).
 
 
-
 ## To use:
 
 ```sh
@@ -39,7 +38,6 @@ The parameters to the program are:
 8. Filename of the music (WAVE 8000 Hz 8bit Mono).
 9. Sky color. This number depends on the system where you run the program. See
 note on macOS.
-
 
 
 ### Try:

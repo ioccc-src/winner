@@ -16,8 +16,6 @@ STATUS: INABIAF - please **DO NOT** fix
 For more detailed information see [2015 hou in bugs.md](/bugs.md#2015-hou).
 
 
-
-
 ## To use:
 
 ```sh

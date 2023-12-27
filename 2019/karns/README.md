@@ -19,7 +19,6 @@ STATUS: INABIAF - please **DO NOT** fix
 For more detailed information see [2019 karns in bugs.md](/bugs.md#2019-karns).
 
 
-
 ## To use:
 
 ```sh

@@ -58,7 +58,6 @@ must just appreciate the entry for what it once was.
 
 ### Alternate build:
 
-
 ```sh
 make alt
 ```

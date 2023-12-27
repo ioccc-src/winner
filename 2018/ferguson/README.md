@@ -31,7 +31,6 @@ about this under the [keyboards](#keyboards) section, briefly referred to in the
 
 ### Alternate build:
 
-
 ```sh
 make alt
 ```

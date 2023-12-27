@@ -73,7 +73,7 @@ But there is much more to this entry! See below.
 NOTE: To quit, press Control-E.
 
 
-### Judges' remarks:
+## Judges' remarks:
 
 Do small machines only need small programs?  This program weighs in at just
 3636 bytes, which is considerably lighter than the original machine it can replace.
@@ -129,7 +129,6 @@ NOTE: To quit v6, press Control-E.
 
 
 ## Author's remarks:
-
 
 ### *This IOCCC entry is dedicated to the late Dennis M. Ritchie*
 

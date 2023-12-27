@@ -29,7 +29,6 @@ cause problems for some systems where `exit(3)` returns a void.  The file
 declared argc to be a `long` which was fixed.
 
 
-
 ## Author's remarks:
 
 ### Portability

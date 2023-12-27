@@ -29,7 +29,6 @@ Do get lost in the program's line of thought!  :-)
 
 ## Author's remarks:
 
-
 ### What's this?
 
 What do you see? On the left, you will see an enumeration of all successive

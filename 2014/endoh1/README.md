@@ -57,7 +57,6 @@ more than 1000 words.
 
 ## Author's remarks:
 
-
 ### Remarks
 
 You may want to use a large display with a very small terminal font.

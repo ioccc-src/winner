@@ -58,7 +58,6 @@ program needs now is a [flight simulator](1998/banks/README.md)!
 
 ## Author's remarks:
 
-
 ### 1. OVERVIEW
 
 This program is an X-Windows based spreadsheet program.  The main functions it

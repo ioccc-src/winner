@@ -32,6 +32,7 @@ For more detailed information see [2004 jdalbec in bugs.md](/bugs.md#2004-jdalbe
 ./try.sh
 ```
 
+
 ## Alternate code:
 
 This version lets you control how many numbers to show on a line before adding a

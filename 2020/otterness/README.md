@@ -46,7 +46,6 @@ While doing that, you can be audibly *entertained* by a sample of its output.
 
 ## Author's remarks:
 
-
 ### MIDI "boots and cats"
 
 This program seeks to automatically "improve" standard MIDI files (.mid) by

@@ -16,8 +16,6 @@ STATUS: INABIAF - please **DO NOT** fix
 For more detailed information see [2013 cable2 in bugs.md](/bugs.md#2013-cable2).
 
 
-
-
 ## To use:
 
 ```sh

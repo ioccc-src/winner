@@ -137,7 +137,6 @@ and now it works with both clang and gcc.
 
 ## Author's remarks:
 
-
 ### What this program does
 
 My entry is a `yarng`, which stands for, you guessed it, yet another

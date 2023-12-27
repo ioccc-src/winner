@@ -30,7 +30,6 @@ if you don't have a Mac as it has some interesting details about the entry.
 
 ### Alternate build:
 
-
 ```sh
 make alt
 ```
@@ -39,6 +38,7 @@ make alt
 ### Alternate build:
 
 Use `schweikh1.alt` as you would `schweikh1` above.
+
 
 ### Alternate try:
 

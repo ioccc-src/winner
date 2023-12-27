@@ -70,7 +70,6 @@ You can combine them both of course.
 
 ### Alternate use:
 
-
 Use `prog.alt` as you would `prog` above. Remember that ports < 1024 are
 privileged ports that unprivileged users cannot use.
 

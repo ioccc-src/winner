@@ -16,7 +16,6 @@ STATUS: INABIAF - please **DO NOT** fix
 For more detailed information see [2019 mills in bugs.md](/bugs.md#2019-mills).
 
 
-
 ## To use:
 
 ```sh

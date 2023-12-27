@@ -32,7 +32,6 @@ Dogon](/winners.html#Gil_Dogon); it is the author's original entry.
 
 ### Alternate build:
 
-
 ```sh
 make alt
 ```

@@ -26,7 +26,6 @@ Enter an expression on standard input.  To try some we have selected:
 
 ## Judges' remarks:
 
-
 ### Historical aside:
 
 At a time the code in [fanf.c](fanf.c) was that of [fanf.orig.c](fanf.orig.c)

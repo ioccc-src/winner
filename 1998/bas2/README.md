@@ -13,7 +13,7 @@ echo text | ./bas2
 ```
 
 
-## Try:
+### Try:
 
 ```sh
 ./try.sh
@@ -23,7 +23,6 @@ echo text | ./bas2
 
 
 ## Judges' remarks:
-
 
 ### Questions to ponder:
 

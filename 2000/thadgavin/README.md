@@ -22,6 +22,7 @@ We recommend that you use the alternate code in modern systems. See the
 
 You can press 'q' at any time to exit.
 
+
 ### Try:
 
 If you have SDL1 installed:
@@ -77,11 +78,13 @@ problem there.
 make all
 ```
 
+
 ### Original use:
 
 ```sh
 ./thadgavin
 ```
+
 
 ### Original try:
 
@@ -101,7 +104,6 @@ less than dazzling. We could not test this entry in DOS mode.
 
 
 ## Authors' remarks:
-
 
 ### To use under DOS:
 

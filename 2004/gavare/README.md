@@ -21,6 +21,7 @@ for more details.
 ./gavare > ioccc_ray.ppm
 ```
 
+
 ## Alternate code:
 
 The alt code, [gavare.alt.c](gavare.alt.c), allows you to change the size of the

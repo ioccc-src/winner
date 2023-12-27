@@ -32,7 +32,6 @@ with `-Wno-` options.
 
 ### Alternate build:
 
-
 ```sh
 make alt
 ```

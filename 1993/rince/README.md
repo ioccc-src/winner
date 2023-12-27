@@ -31,7 +31,7 @@ where:
 `[cabbage]` is a CABBAGE description file  (default: `rince.c`)
 
 
-## Alternate code
+## Alternate code:
 
 Some people may want to slow down the game by increasing the
 value 17 in the lines:
@@ -56,7 +56,6 @@ changed).
 
 
 ### Alternate build:
-
 
 ```sh
 make SLEEP=18 clobber alt

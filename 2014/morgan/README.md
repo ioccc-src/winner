@@ -83,6 +83,7 @@ prog.c:23:72: warning: signed and unsigned type in conditional expression [-Wsig
 prog.c:12:11: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
 ```
 
+
 ## Copyright and CC BY-SA 4.0 License:
 
 This file is Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.

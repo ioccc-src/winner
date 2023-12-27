@@ -55,7 +55,6 @@ ascii` when debugging it to reveal its purpose.
 
 ## Author's remarks:
 
-
 ### backtrace quine:
 
 Compile prog.c with no optimization.

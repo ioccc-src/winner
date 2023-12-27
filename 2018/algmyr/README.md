@@ -50,7 +50,6 @@ sound sample?
 
 ## Author's remarks:
 
-
 ### What is this?
 
 To put it brief, this entry is akin to a sound based cat. It takes characters as

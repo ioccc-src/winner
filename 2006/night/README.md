@@ -23,7 +23,6 @@ keys.
 
 ### Alternate build:
 
-
 ```sh
 make alt
 ```
