@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Sat 23 Dec 2023 13:28:11 UTC*
+*Last updated: Wed 27 Dec 2023 16:38:05 UTC*
 
 This document is primarily for [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) as he (that is I :-) ) wanted a way
@@ -99,3 +99,8 @@ the rest of the entries are done, assuming that it's possible.
 - Although I will have to do this when another issue is opened up I am aware of
 some issues in 2020/ferguson1/.winner.json. I do not want to forget this,
 however, so I am noting it here.
+
+- Verify that all entries that should have (or could be benefited by) a try
+script do in fact have one. Also verify (mostly in earlier years) consistency in
+the way it is displayed and interactivity. The later years are probably done
+better.
