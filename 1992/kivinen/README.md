@@ -6,11 +6,12 @@ If your machine support the X Window System, Version 11:
 make alt
 ```
 
-We recommend the alt version first as the original goes too fast on modern
-systems. See [original code](#original-code) for the original should you wish to
-see what we mean.
+We recommend the alt version first as the so you can see more what it looked
+like back in 1992, with modern systems. See [original code](#original-code) for
+the original should you wish to see what we mean.
 
 You can reconfigure the value to `usleep(3)`; see [try](#try) section below.
+
 
 ### Bugs and (Mis)features:
 
