@@ -148,7 +148,7 @@ alt: data ${ALT_TARGET}
 data: ${DATA}
 	@${TRUE}
 
-python: 
+python:
 	./python.sh
 
 python3:
