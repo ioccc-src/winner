@@ -37,8 +37,8 @@ If you have an old enough compiler try and to see how C has changed over the yea
 make alt
 ```
 
-### Alternate use:
 
+### Alternate use:
 
 ```sh
 ./westley.alt <number>

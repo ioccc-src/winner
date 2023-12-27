@@ -24,7 +24,6 @@ To see some other fun uses:
 
 ## Judges' remarks:
 
-
 ### WARNING:
 
 The judges make no claim as to the strength or security

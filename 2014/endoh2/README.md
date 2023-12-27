@@ -32,7 +32,6 @@ in the DNA code of the code? Perhaps there are 23 reasons? :-)
 
 ## Author's remarks:
 
-
 ### Remarks
 
 This chromosome program synthesizes a double helix.

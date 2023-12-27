@@ -20,7 +20,6 @@ ruby -e '20.times{puts "#{rand} #{rand}"}' | ./boutines > test.svg
 
 ### Try:
 
-
 ```sh
 ./boutines < input.txt > result.svg
 ```

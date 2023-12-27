@@ -45,7 +45,6 @@ it successfully fooled half of the judges, including me.
 
 ## Author's remarks:
 
-
 ### Description
 
 For 15 years, IOCCC winners have obfuscated programs using esoteric,

@@ -33,7 +33,6 @@ useful bug fix.
 
 ### Alternate build:
 
-
 ```sh
 make alt
 ```
@@ -53,7 +52,6 @@ vocabulary has it?
 
 
 ## Author's remarks:
-
 
 ### The Program:
 

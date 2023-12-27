@@ -14,9 +14,7 @@ make all
 `A`, `B`, `C` and `D` are numeric arguments.
 
 
-
 ### Try:
-
 
 ```sh
 ./horton 3 2 1 0
@@ -28,6 +26,7 @@ Also try:
 ./gtface  < gtface.data
 ```
 
+
 ## Alternate code:
 
 This confuses cb greatly. See [horton.alt.c](horton.alt.c) for an unobfuscated/enhanced
@@ -36,14 +35,12 @@ version.
 
 ### Alternate build:
 
-
 ```sh
 make alt
 ```
 
 
 ### Alternate use:
-
 
 ```sh
 ./horton.alt A B C D

@@ -16,7 +16,6 @@ STATUS: INABIAF - please **DO NOT** fix
 For more detailed information see [2018 vokes in bugs.md](/bugs.md#2018-vokes).
 
 
-
 ## To use:
 
 ```sh
@@ -43,7 +42,6 @@ answer you seek with no hocus pocus.
 
 
 ## Author's remarks:
-
 
 ### Introduction:
 

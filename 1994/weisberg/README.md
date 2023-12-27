@@ -55,7 +55,6 @@ it was read on `stdin` instead of via `cc -E`.
 
 ## Author's remarks:
 
-
 ### Description
 
 The following short program implements the "Yet Another" algorithm for

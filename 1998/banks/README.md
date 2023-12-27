@@ -69,7 +69,7 @@ See the author's remarks in [scenery](#scenery) for more details on the scenery
 files.
 
 
-## Try:
+### Try:
 
 For a fun time after running the above command, hold down the up arrow and left
 arrow for about 10 seconds and see what happens. Or, if you wish to really use
@@ -110,7 +110,6 @@ make alt
 You may change the other keys as described in the build instructions, above, but
 this alt code can be seen as an alternative for those who don't have or don't
 want to use page up and page down.
-
 
 
 ### Alternate use:

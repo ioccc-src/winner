@@ -34,7 +34,6 @@ well.
 
 ### Alternate build:
 
-
 ```sh
 make alt
 ```
@@ -64,7 +63,6 @@ This program prints out the string:
 
 
 ## Author's remarks:
-
 
 It is simple to make the program print other strings.  Each
 alphabetical character from a to z is printed out as its

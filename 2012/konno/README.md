@@ -32,7 +32,6 @@ This alternate code is an unobfuscated version of the winning code.
 
 ### Alternate build:
 
-
 ```sh
 make alt
 ```

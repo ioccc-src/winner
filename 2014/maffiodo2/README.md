@@ -19,7 +19,6 @@ STATUS: INABIAF - please **DO NOT** fix
 For more detailed information see [2014 maffiodo2 in bugs.md](/bugs.md#2014-maffiodo2).
 
 
-
 ## To use:
 
 ```sh
@@ -41,7 +40,6 @@ as fun but it's 121 bytes instead of 140.
 
 
 ### Alternate build:
-
 
 ```sh
 make alt

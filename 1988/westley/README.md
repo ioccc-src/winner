@@ -76,7 +76,6 @@ cc -E westley.alt.c
 ```
 
 
-
 ## Author's remarks:
 
 No remarks were provided by the author.

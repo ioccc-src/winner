@@ -46,7 +46,6 @@ program and calls it. As an exercise, try writing the compressor.
 
 ## Author's remarks:
 
-
 ### Approximate grep
 
 Implements a variant of `grep`.

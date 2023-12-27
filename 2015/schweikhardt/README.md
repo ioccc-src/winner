@@ -101,7 +101,6 @@ code is magic number free.
 
 ## Author's remarks:
 
-
 ### The TL;DR version
 
 This is the cleanest program ever submitted. If for some input it enters

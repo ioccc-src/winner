@@ -25,7 +25,6 @@ where:
 
 ## Judges' remarks:
 
-
 We have provided the shell script [dgibson.sh](dgibson.sh) to make it easier
 to run this entry.  Run this shell script several times to
 see what happens.

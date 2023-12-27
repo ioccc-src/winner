@@ -53,7 +53,6 @@ clue, see the end of the author's remarks.) If in doubt, use
 
 ## Author's remarks:
 
-
 ### Hint / Compatibility
 
 * A little-endian system is required due to an external factor.

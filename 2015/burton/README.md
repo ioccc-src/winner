@@ -41,6 +41,7 @@ Finally, if you wish to read the man page:
 man ./calc.1
 ```
 
+
 ## Alternate code:
 
 An alternate version of this entry, [prog.alt.c](prog.alt.c), is provided.
@@ -50,10 +51,10 @@ author's remarks below.
 
 ### Alternate build:
 
-
 ```sh
 make alt
 ```
+
 
 ### Alternate use:
 
@@ -72,7 +73,6 @@ process.
 
 
 ## Author's remarks:
-
 
 ### calc - an integer expression calculator that outputs in both hex and decimal
 

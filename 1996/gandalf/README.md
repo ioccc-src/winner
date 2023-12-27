@@ -37,7 +37,6 @@ BTW: it is perilous to 'try' the patience of
 [Gandalf](https://www.glyphweb.com/arda/g/gandalf.html). Go ahead, 'try' it! :-)
 
 
-
 ## Judges' remarks:
 
 For misleading C pre-processor output, try:

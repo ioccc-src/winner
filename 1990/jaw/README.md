@@ -60,7 +60,6 @@ directory it is run from.
 
 ## Authors' remarks:
 
-
 ### ABSTRACT
 
 #### Minimal, Universal File Bundling (or, Functional Obfuscation in a Self-Decoding Unix Shell Archive)

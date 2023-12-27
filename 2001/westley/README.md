@@ -22,8 +22,6 @@ STATUS: missing files - please provide them
 For more detailed information see [2001 westley in bugs.md](/bugs.md#2001-westley).
 
 
-
-
 ## To use:
 
 ```sh
@@ -34,6 +32,7 @@ echo foo | ./westley 2>/dev/null
 
 ./westley < westley.c 2>/dev/null
 ```
+
 
 ### Try:
 
@@ -73,7 +72,6 @@ This alternate code might be less portable.
 
 ### Alternate build:
 
-
 ```sh
 make alt
 ```
@@ -82,7 +80,6 @@ make alt
 ### Alternate use:
 
 Use `westley.alt` as you would `westley` above.
-
 
 
 ## Judges' remarks:

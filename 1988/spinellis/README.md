@@ -10,7 +10,7 @@ If your compiler will not read from `/dev/tty` see the [Alternate
 code](#alternate-code) section below.
 
 
-### To use:
+## To use:
 
 ```sh
 ./spinellis

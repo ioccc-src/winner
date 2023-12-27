@@ -10,7 +10,6 @@ see the [original code](#original-code) section.
 
 ## To use:
 
-
 ```sh
 ./birken.alt < 17_columns_wide_paint_by_numbers_file
 ```
@@ -64,7 +63,6 @@ hard to see the art of the entry but you may do so if you wish.
 
 
 ### Original build:
-
 
 ```sh
 make all

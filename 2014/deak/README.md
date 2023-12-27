@@ -63,6 +63,7 @@ Use `prog.alt` as you would `prog`.
 ./try.alt.sh
 ```
 
+
 ## Judges' remarks:
 
 We consider this entry a tribute to all "Abuse of the C preprocessor"
@@ -72,7 +73,6 @@ We liked the use of unary notation facilitated by variadic macros.
 
 
 ## Author's remarks:
-
 
 ### Portability
 

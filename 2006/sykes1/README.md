@@ -16,8 +16,6 @@ STATUS: INABIAF - please **DO NOT** fix
 For more detailed information see [2006 sykes1 in bugs.md](/bugs.md#2006-sykes1).
 
 
-
-
 ## To use:
 
 ```sh

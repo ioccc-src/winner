@@ -46,7 +46,6 @@ rest was unchanged.
 
 ### Alternate build:
 
-
 ```sh
 make alt
 ```

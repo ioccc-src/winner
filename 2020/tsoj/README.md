@@ -37,6 +37,7 @@ where instead of `w`, `a`, `s` and `d`, you can use `k`, `h`, `j` and `l`.
 make alt
 ```
 
+
 ### Alternate use:
 
 ```sh

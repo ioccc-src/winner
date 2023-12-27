@@ -23,10 +23,10 @@ This alternate version adds to the movement keys `l` for right, `h` for left and
 
 ### Alternate build:
 
-
 ```sh
 make alt
 ```
+
 
 ### Alternate use:
 

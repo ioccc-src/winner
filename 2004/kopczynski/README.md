@@ -34,7 +34,6 @@ does.
 
 ### Alternate build:
 
-
 ```sh
 make alt
 ```

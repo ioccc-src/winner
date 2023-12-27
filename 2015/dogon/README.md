@@ -108,7 +108,6 @@ number function keys such as F30 or F31?  :-)
 
 ## Author's remarks:
 
-
 ### What is it?
 
 Just run `./prog` with no arguments on an X11-compatible system. The scenery, though

@@ -33,7 +33,6 @@ under 64-bit (x86_64, arm64) machines too.
 ```
 
 
-
 ## Judges' remarks:
 
 Having problems speaking code?  Do you [LISP][]?  Parenthetically

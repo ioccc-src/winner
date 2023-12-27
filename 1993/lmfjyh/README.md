@@ -23,7 +23,6 @@ us](https://www.collinsdictionary.com/dictionary/english/everyone) with gcc >=
 2.3.3. See [Alternate code](#alternate-code) section below for more details.
 
 
-
 ### Bugs and (Mis)features:
 
 The current status of this entry is:
@@ -52,10 +51,10 @@ compilers. We'd like to say there's something special about it but there isn't.
 
 ### Alternate build:
 
-
 ```sh
 make alt
 ```
+
 
 ### Alternate use:
 

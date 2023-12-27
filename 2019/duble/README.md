@@ -115,7 +115,6 @@ or `l` (they toggle).
 
 ## Author's remarks:
 
-
 ### Introduction:
 
 This program is a **graphics editor**, running in the terminal.

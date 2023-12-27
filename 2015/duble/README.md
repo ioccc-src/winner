@@ -40,7 +40,7 @@ make alt
 Use `prog.alt` as you would `prog` above.
 
 
-### Judges' remarks:
+## Judges' remarks:
 
 Beautiful penmanship! However, your fonts may vary.
 

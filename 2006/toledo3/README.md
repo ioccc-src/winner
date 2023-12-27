@@ -9,7 +9,6 @@ another that makes it text only. The author also provided a version that they
 tested with Windows.  See [alternate code](#alternate-code) below.
 
 
-
 ## To use:
 
 ```sh

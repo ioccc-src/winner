@@ -68,7 +68,6 @@ Now can you appreciate the award title a bit better?
 
 ## Author's remarks:
 
-
 ### Building:
 
 ```sh

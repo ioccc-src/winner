@@ -16,7 +16,6 @@ STATUS: missing files - please provide them
 For more detailed information see [2001 rosten in bugs.md](/bugs.md#2001-rosten).
 
 
-
 ## To use:
 
 ```sh
@@ -50,7 +49,6 @@ cursor) in the wrong way.  :-)
 
 
 ## Author's remarks:
-
 
 ### NAME
 

@@ -26,7 +26,6 @@ author a patent he applied for.  :-)
 
 ## Author's remarks:
 
-
 ### TITLE OF INVENTION
 
 Highly Compressed Program for Playing Hygienic Checkers

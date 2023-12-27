@@ -16,7 +16,6 @@ STATUS: INABIAF - please **DO NOT** fix
 For more detailed information see [1993 schnitzi in bugs.md](/bugs.md#1993-schnitzi).
 
 
-
 ## To use:
 
 ```sh

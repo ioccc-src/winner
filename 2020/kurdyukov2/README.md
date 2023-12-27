@@ -34,7 +34,6 @@ rectangles.  What is the complexity? Is it obvious from the source code?
 
 ## Author's remarks:
 
-
 ### Usage
 
 This program divides the image into a specified number of rectangles. This

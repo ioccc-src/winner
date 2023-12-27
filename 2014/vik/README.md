@@ -44,7 +44,6 @@ instructions on how to get it to work with Windows.
 
 ### Alternate build:
 
-
 ```sh
 make alt
 ```
@@ -75,7 +74,6 @@ might help? :-)
 
 
 ## Author's remarks:
-
 
 ### Remarks
 

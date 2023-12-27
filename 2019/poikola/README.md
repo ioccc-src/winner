@@ -102,7 +102,6 @@ Nyk&auml;nen](https://en.wikipedia.org/wiki/Matti_Nyk%C3%A4nen).
 
 ## Author's remarks:
 
-
 ### How to build:
 
 ```sh

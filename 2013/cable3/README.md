@@ -78,7 +78,6 @@ Update: This entry now has its own website:
 
 ## Author's remarks:
 
-
 ### A tiny but highly functional PC emulator/virtual machine
 
 The author hereby presents, for the delectation (?) of the judges, a portable PC

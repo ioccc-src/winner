@@ -7,6 +7,7 @@ make all
 There is an [alternate version](#alternate-code) that is supposed to win all the
 time.
 
+
 ### Bugs and (Mis)features:
 
 The current status of this entry is:
@@ -19,7 +20,6 @@ For more detailed information see [1991 westley in bugs.md](/bugs.md#1991-westle
 
 
 ## To use:
-
 
 NOTE: we have provided a script to perform the below procedure which we include
 for the interested. See the [try](#try) section if you just want to play.
@@ -124,10 +124,10 @@ can lose if you cheat. That's supposed to happen. Can you win any other time?
 
 ### Alternate build:
 
-
 ```sh
 make alt
 ```
+
 
 ### Alternate use:
 

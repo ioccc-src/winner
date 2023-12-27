@@ -7,6 +7,7 @@ make all
 There is an [alternate version](#alternate-code) that lets you slow down the
 output of the program for modern systems.
 
+
 ## To use:
 
 ```sh
@@ -17,7 +18,6 @@ where:
 
 - number is a number    (try 21701)
 - arg is any argument
-
 
 
 ### Try:
@@ -36,7 +36,6 @@ via `usleep(3)`, defaulting at 200.
 
 ### Alternate build:
 
-
 ```sh
 make alt
 ```
@@ -49,7 +48,6 @@ make clobber SLEEP=50 alt
 
 
 ### Alternate use:
-
 
 Use `plummer.alt` as you would `plummer`.
 

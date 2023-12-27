@@ -73,7 +73,6 @@ and to make it a bit more like the real thing.
 
 ### Alternate build:
 
-
 ```sh
 make alt
 ```
@@ -94,7 +93,6 @@ Use `prog.alt` as you would `prog` above.
 
 
 ### Alternate try:
-
 
 ```sh
 ./try.alt.sh

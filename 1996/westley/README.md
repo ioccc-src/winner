@@ -18,7 +18,6 @@ alt version.
 ```
 
 
-
 ### Try:
 
 ```sh
@@ -32,8 +31,8 @@ The original version had a display problem in modern systems which somewhat
 affected the usability of the program. This alternate code, the original, is
 provided, to show the differences.
 
-### Alternate build:
 
+### Alternate build:
 
 ```sh
 make alt

@@ -26,6 +26,7 @@ bugs.md](/bugs.md#1991-buzzard).
 ./buzzard
 ```
 
+
 ## Alternate code:
 
 This version changes the keys `f` for forward, `l` for left and `r` for right by
@@ -57,7 +58,6 @@ You are invited to try to cheat, ... if you can figure out how!  :-)
 
 
 ## Author's remarks:
-
 
 ### How to play
 
