@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Thu 28 Dec 2023 14:56:35 UTC*
+*Last updated: Thu 28 Dec 2023 16:33:21 UTC*
 
 This document is primarily for [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) as he (that is I :-) ) wanted a way
@@ -59,7 +59,9 @@ the rest of the entries are done, assuming that it's possible.
 
 - Although I will have to do this when another issue is opened up I am aware of
 some issues in 2020/ferguson1/.winner.json. I do not want to forget this,
-however, so I am noting it here.
+however, so I am noting it here. A reference to a file in 2020/ferguson2 is in
+1992/buzzard.2. This type of thing will have to be checked for all entries in
+the new issue.
 
 - Verify that all entries that should have (or could be benefited by) a try
 script do in fact have one. Also verify (mostly in earlier years) consistency in
