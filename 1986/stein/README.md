@@ -19,7 +19,7 @@ into 3 lines.  Join all lines into a single line to recreate
 the original file.
 
 
-The 015 in the above printf command produces a control-N.
+The `\015` in the above `printf(1)` command produces a control-N.
 
 One some machines, a control-M control-N arg is needed
 to get the command to output cleanly:

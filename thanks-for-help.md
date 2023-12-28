@@ -406,6 +406,9 @@ being longer (in 1986 a one liner could be longer) was split to three lines to
 avoid problems with news and mail but as it was the 'Best one liner' it is now
 one line.
 
+Cody also added the [stein.sh](/1986/stein/stein.sh) script which runs the two
+commands that we suggest in order to get it to show clean output.
+
 
 ## <a name="1986_wall"></a>[1986/wall](/1986/wall/wall.c) ([README.md](/1986/wall/README.md]))
 
