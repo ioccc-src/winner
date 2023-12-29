@@ -98,9 +98,9 @@
 1985,sicherman,index.html,10,readme2index,null,html,true,browser,click here first,html
 1985,sicherman,sicherman.c,20,null,main,c,true,github,winning source,c
 1985,sicherman,Makefile,30,null,null,makefile,true,github,Makefile,null
-1985,sicherman,sicherman.alt2.c,40,null,alt,c,true,github,alternate alternative source,c
 1985,sicherman,sicherman.alt.c,40,null,alt,c,true,github,alternative source,c
 1985,sicherman,sicherman.orig.c,50,null,orig,c,true,github,original source,c
+1985,sicherman,try.alt.sh,100,null,null,shellscript,true,github,how to run alternative code,sh
 1985,sicherman,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1985,sicherman,1985_sicherman.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1985,sicherman,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
@@ -188,6 +188,7 @@
 1986,stein,stein.c,20,null,main,c,true,github,winning source,c
 1986,stein,Makefile,30,null,null,makefile,true,github,Makefile,null
 1986,stein,stein.orig.c,50,null,orig,c,true,github,original source,c
+1986,stein,stein.sh,100,null,null,shellscript,true,github,demonstrate this IOCCC winner,sh
 1986,stein,1986_stein.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1986,stein,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
 1986,wall,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -4627,6 +4628,7 @@
 2020,ferguson2,try.this.txt,100,null,null,text,true,github,sample input,txt
 2020,ferguson2,enigma.1,150,null,null,man,true,github,Enigma simulator man page,1
 2020,ferguson2,ioccc-and-chocolate.pdf,150,null,null,pdf,true,browser,IOCCC publications,pdf
+2020,ferguson2,key.txt,150,null,null,text,true,github,key to decipher or encipher IOCCC,key
 2020,ferguson2,obfuscation.key,150,null,null,text,true,github,key to decipher or encipher obfuscation.txt,key
 2020,ferguson2,recode.1,150,null,null,man,true,github,configuration tool man page,1
 2020,ferguson2,2020_ferguson2.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2

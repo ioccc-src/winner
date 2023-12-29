@@ -54,9 +54,9 @@
 1985/sicherman/Makefile
 1985/sicherman/README.md
 1985/sicherman/sicherman.alt.c
-1985/sicherman/sicherman.alt2.c
 1985/sicherman/sicherman.c
 1985/sicherman/sicherman.orig.c
+1985/sicherman/try.alt.sh
 1985/sicherman/try.sh
 1986/applin/.gitignore
 1986/applin/Makefile
@@ -103,6 +103,7 @@
 1986/stein/README.md
 1986/stein/stein.c
 1986/stein/stein.orig.c
+1986/stein/stein.sh
 1986/wall/.gitignore
 1986/wall/Makefile
 1986/wall/README.md
@@ -3028,6 +3029,7 @@
 2020/ferguson2/input.txt
 2020/ferguson2/ioccc-and-chocolate.pdf
 2020/ferguson2/ioccc-cake.jpg
+2020/ferguson2/key.txt
 2020/ferguson2/obfuscation.key
 2020/ferguson2/obfuscation.md
 2020/ferguson2/obfuscation.txt
