@@ -12,30 +12,6 @@ make all
 ```
 
 
-## Alternate code:
-
-If you have an old compiler or a compiler that supports `-traditional-cpp` you
-might enjoy looking at the original source in [wall.alt.c](wall.alt.c).
-
-
-### Alternate build:
-
-```sh
-# if you have an old enough compiler:
-make alt
-
-# or if you have gcc:
-make CC=gcc alt
-
-# or if you have a compiler that supports -traditional-cpp that's not gcc:
-make CFLAGS+="-traditional-cpp" alt
-```
-
-NOTE: gcc in macOS is actually clang even the binary `/usr/bin/gcc`.
-
-Use `./wall.alt` as you would `./wall`.
-
-
 ## Judges' remarks:
 
 The original version did not have a ';' character in the first line.

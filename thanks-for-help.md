@@ -419,16 +419,13 @@ code](/1986/wall/wall.orig.c) to see how different C was in 1986, as well as
 below.
 
 [Yusuke](#yusuke) originally patched this to use `strdup()` on two strings and this let it
-work with gcc but it still required `-traditional-cpp`. The [alternate
-code](/1986/wall/wall.alt.c) is the version patched by Yusuke should you wish to
-try it with a compiler that has the `-traditional-cpp`. See the README.md file
-for details.
+work with gcc but it still required `-traditional-cpp`.
 
 If you'd like to see the difference between the version that requires
 `-traditional-cpp` and the fixed version, try:
 
 ```sh
-cd 1986/wall ; make diff_alt_prog
+cd 1986/wall ; make diff_orig_prog
 ```
 
 Some of the changes required:
@@ -495,6 +492,9 @@ Some of the changes required:
 
 	    :system(ccc(";kkt -oa, dijszdijs QQ"));return
 
+- And of course as noted two strings had to be `strdup()`d.
+
+There might have been other changes as well.
 
 
 # <a name="1987"></a>1987
