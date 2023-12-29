@@ -4,7 +4,6 @@
 make all
 ```
 
-
 NOTE: we FORCE disable the optimiser due to a funny problem with different
 compilers and systems. See below and [compilers.md](compilers.md) for details.
 
@@ -17,7 +16,7 @@ might work but the other one would not. We describe this in more detail in
 if nothing else.
 
 
-### Try:
+## To use:
 
 ```sh
 ./marshall
@@ -42,7 +41,7 @@ make alt
 ```
 
 
-### Alternate try:
+### Alternate use:
 
 ```sh
 ./marshall.alt
