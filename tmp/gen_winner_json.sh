@@ -3,7 +3,7 @@
 # gen_winner_json.sh - generate .winner.json and inventory.html for a winner
 #
 # XXX - This is a temporary utility that will be replaced when
-#	the .winner.json files are built
+#	the .winner.json files are built.
 #
 # Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
 #

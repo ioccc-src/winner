@@ -4,7 +4,7 @@
 # directories under a year
 #
 # XXX - This is a temporary utility that will be replaced when
-#	the .winner.json files are built
+#	the .winner.json files are built.
 #
 # Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
 #
@@ -137,7 +137,7 @@ if [[ $status -ne 0 ]]; then
     exit 11
 fi
 
-# find files under 4 character dirs
+# find files under 4 character dirs that aren't .DS_Store or *.dSYM with a depth of at least 2
 #
 TMPFILE="tmp/tmp.path_list.found.txt.$$"
 trap 'rm -f $TMPFILE; exit' 0 1 2 3 15
