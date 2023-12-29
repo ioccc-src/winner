@@ -153,7 +153,7 @@ if [[ ! -e $WINNER_DIR_TXT ]]; then
     exit 4
 fi
 if [[ ! -f $WINNER_DIR_TXT ]]; then
-    echo  "$0: ERROR: WINNER_DIR_TXT is not a file: $WINNER_DIR_TXT" 1>&2
+    echo  "$0: ERROR: WINNER_DIR_TXT is not a regular file: $WINNER_DIR_TXT" 1>&2
     exit 4
 fi
 if [[ ! -r $WINNER_DIR_TXT ]]; then

@@ -6,7 +6,7 @@
 # tmp/author_handle.txt and tmp/author.csv and tmp/author-wins.csv.
 #
 # XXX - This is a temporary utility that will be replaced when
-#	the .winner.json files are built
+#	the .winner.json files are built.
 #
 # Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
 #
@@ -92,7 +92,7 @@ while getopts :hv:Vt: flag; do
 	  echo 1>&2
 	  echo "$USAGE" 1>&2
 	  ;;
-       *) echo "$0: ERROR: -t optarg must be of the form tool=path" 1>&2
+       *) echo "$0: ERROR: -t optarg must be of the form -t tool=path" 1>&2
 	  echo 1>&2
 	  echo "$USAGE" 1>&2
 	  exit 3
@@ -143,7 +143,7 @@ if [[ ! -r $AUTHOR_CSV ]]; then
 fi
 export AUTHOR_WINS="$3"
 if [[ ! -r $AUTHOR_WINS ]]; then
-    echo "$0: ERROR: author-wins.csv.txt not a readable file: $AUTHOR_WINS"
+    echo "$0: ERROR: author-wins.csv not a readable file: $AUTHOR_WINS"
     exit 4
 fi
 export AUTHOR_DIR="$4"
@@ -170,7 +170,7 @@ if [[ ! -e $JSTRENCODE ]]; then
     exit 6
 fi
 if [[ ! -f $JSTRENCODE ]]; then
-    echo "$0: ERROR: jstrencode is not a file: $JSTRENCODE" 1>&2
+    echo "$0: ERROR: jstrencode is not a regular file: $JSTRENCODE" 1>&2
     exit 6
 fi
 if [[ ! -x $JSTRENCODE ]]; then
@@ -182,7 +182,7 @@ if [[ ! -e $LOCATION ]]; then
     exit 6
 fi
 if [[ ! -f $LOCATION ]]; then
-    echo "$0: ERROR: location is not a file: $LOCATION" 1>&2
+    echo "$0: ERROR: location is not a regular file: $LOCATION" 1>&2
     exit 6
 fi
 if [[ ! -x $LOCATION ]]; then
