@@ -4629,7 +4629,7 @@ macOS (some **EXTREMELY HARD** like
 32-bit/64-bit which *can be* **EXTREMELY HARD**, providing alternate code where
 useful/necessary, improving **ALL _Makefiles_**, writing scripts to
 greatly simplify running many of the entries and writing
-[sgit](https://github.com/xexyl/sgit) that we installed locally to easily run
+[sgit](https://github.com/xexyl/sgit) to easily run
 `sed` on files in the repo to help build the website.
 
 Cody Boone Ferguson also used one of his own tools to detect many dead links.
