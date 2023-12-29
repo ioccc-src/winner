@@ -4527,7 +4527,7 @@ compilers. See the README.md for more details.
 ## <a name="makefile_improvements"></a>Makefile improvements
 
 [Cody](#cody) made a variety of changes in all Makefiles, sometimes to get an entry to
-work, all noted below, but he also **improved them all** in at least one or two
+work, all noted above, but he also **improved them all** in at least one or two
 ways.
 
 For instance he changed the `LIBS` variable to `LDFLAGS` as that is the standard
