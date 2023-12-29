@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Wed 27 Dec 2023 16:38:05 UTC*
+*Last updated: Thu 28 Dec 2023 14:56:35 UTC*
 
 This document is primarily for [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) as he (that is I :-) ) wanted a way
@@ -13,15 +13,6 @@ done (many times it's thought that a task was done only to find out it wasn't).
 It is hoped that this will be referenced and updated as this is an easy way to
 keep track of things that have been done already and what hasn't been done (in
 this file the case is mostly _NOT_ been done).
-
-- Resolve as many of the issues in [bugs.md](/bugs.md) with the exception of the
-INABIAF ones. This is likely not possible for all (one in particular comes to
-mind that abuses a bug in a now very old gcc version - this obviously cannot be
-fixed but I added an alt version that does what it used to do so it's fine) but
-many certainly can be - and actually most have been - fixed. Another one crashes
-in macOS but this is almost certainly because of the version of perl installed.
-Another one crashes in macOS but this is almost certainly because of
-`mmap(2)`/JIT code with the Apple silicon chip etc.
 
 - Typo fix ALL markdown files. For the README.md files the entries have all been
 done (along with format fixes) but the YYYY/README.md files have not been
@@ -52,36 +43,6 @@ run) or else they'll have to be put above the compilation.
 - Check the [GitHub issue #3 comment
 1615962832](https://github.com/ioccc-src/temp-test-ioccc/issues/3#issuecomment-1615962832)
 for links about the todo items wrt the [FAQ](/faq.md).
-
-- Check for dead links of all kinds: not only author URLs but file URLs on the
-website. I (Cody) would be seriously surprised if I did not make a typo
-somewhere (or some places!) in the many thousands of changes I made in the
-README.md files, the [bugs.md](/bugs.md) files and maybe even the
-[thanks-for-help.md](/thanks-for-help.md) file plus others that might be
-there.
-    * In the case of author URLs sometimes the Internet Wayback Machine is
-    helpful (and has helped) but in other cases it has not. Note that sometimes
-    the Internet Wayback Machine helped find more recent URLs so this should be
-    attempted first before adding the last archive link.
-    * Remember to update the author JSON files if it's an author URL!
-    * For URLs that cannot be located at all remove them entirely but add them
-    to [bugs.md](/bugs.md) as a missing link to the respective entry. See that file for the
-    correct status to add. Remember that each type of issue per entry in the
-    [bugs.md](/bugs.md) file should have its own status.
-    * If it's a link in the repo then there's no need (in almost all cases if
-    not all cases) to have the Internet Wayback Machine: instead just update the
-    link to point to the right location.
-    * Do we need to update the links that point to GitHub raw content? I'm not
-    sure.
-
-
-- For the YYYY/README.md files where it refers to emailing the judges fixes
-instead change it to make pull requests. See the
-[1995/README.md](1995/README.md) file for example.
-
-- Check the YYYY/README.md files for other things besides the GitHub pull
-requests rather than emailing judges. This can be done on the final pass of the
-files.
 
 - With the entries that we recommend the alt code first when it comes to it
 going too fast we should say not what it looks like in modern systems but rather
