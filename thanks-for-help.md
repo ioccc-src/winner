@@ -4628,8 +4628,7 @@ macOS (some **EXTREMELY HARD** like
 [2001/herrmann2](/thanks-for-help.md#2001_herrmann2) to work in both
 32-bit/64-bit which *can be* **EXTREMELY HARD**, providing alternate code where
 useful/necessary, improving **ALL _Makefiles_**, writing scripts to
-greatly simplify running many of the entries that have more complicated
-uses/things to try to easily use and demonstrate them and writing
+greatly simplify running many of the entries and writing
 [sgit](https://github.com/xexyl/sgit) that we installed locally to easily run
 `sed` on files in the repo to help build the website.
 
