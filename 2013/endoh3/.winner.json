@@ -50,6 +50,46 @@
 	    "winners_text" : "original source"
 	},
 	{
+	    "file_path" : "flea-waltz.abc",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sample input"
+	},
+	{
+	    "file_path" : "menuet.abc",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sample input"
+	},
+	{
+	    "file_path" : "test.abc",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sample input"
+	},
+	{
+	    "file_path" : "twinkle.abc",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "sample input"
+	},
+	{
 	    "file_path" : "wavify.rb",
 	    "winners_rank" : 100,
 	    "created_by" : null,
@@ -60,48 +100,8 @@
 	    "winners_text" : "post process output to form a WAV sound file"
 	},
 	{
-	    "file_path" : "flea-waltz.abc",
-	    "winners_rank" : 150,
-	    "created_by" : null,
-	    "prog" : null,
-	    "filetype" : "text",
-	    "winners_show" : true,
-	    "display_via" : "github",
-	    "winners_text" : "sample input"
-	},
-	{
-	    "file_path" : "menuet.abc",
-	    "winners_rank" : 150,
-	    "created_by" : null,
-	    "prog" : null,
-	    "filetype" : "text",
-	    "winners_show" : true,
-	    "display_via" : "github",
-	    "winners_text" : "sample input"
-	},
-	{
-	    "file_path" : "test.abc",
-	    "winners_rank" : 150,
-	    "created_by" : null,
-	    "prog" : null,
-	    "filetype" : "text",
-	    "winners_show" : true,
-	    "display_via" : "github",
-	    "winners_text" : "sample input"
-	},
-	{
-	    "file_path" : "twinkle.abc",
-	    "winners_rank" : 150,
-	    "created_by" : null,
-	    "prog" : null,
-	    "filetype" : "text",
-	    "winners_show" : true,
-	    "display_via" : "github",
-	    "winners_text" : "sample input"
-	},
-	{
 	    "file_path" : "yankee.abc",
-	    "winners_rank" : 150,
+	    "winners_rank" : 100,
 	    "created_by" : null,
 	    "prog" : null,
 	    "filetype" : "text",
@@ -138,6 +138,16 @@
 	    "winners_show" : false,
 	    "display_via" : "github",
 	    "winners_text" : "list of files that should not be committed under git"
+	},
+	{
+	    "file_path" : ".path",
+	    "winners_rank" : null,
+	    "created_by" : "genpath",
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : false,
+	    "display_via" : null,
+	    "winners_text" : "directory path from top directory"
 	},
 	{
 	    "file_path" : ".winner.json",

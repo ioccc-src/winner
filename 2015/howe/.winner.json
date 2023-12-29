@@ -90,6 +90,26 @@
 	    "winners_text" : "how to run"
 	},
 	{
+	    "file_path" : "try.sh",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "how to run"
+	},
+	{
+	    "file_path" : "cc.1",
+	    "winners_rank" : 159,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "man",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "gcc man page"
+	},
+	{
 	    "file_path" : "spoiler/Makefile",
 	    "winners_rank" : 200,
 	    "created_by" : null,
@@ -120,6 +140,16 @@
 	    "winners_text" : "SPOILER WARNING"
 	},
 	{
+	    "file_path" : "war-and-peace.txt",
+	    "winners_rank" : 250,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "War and Peace translated to English"
+	},
+	{
 	    "file_path" : "2015_howe.tar.bz2",
 	    "winners_rank" : 300,
 	    "created_by" : "mkwinnertbz2",
@@ -148,6 +178,16 @@
 	    "winners_show" : false,
 	    "display_via" : "github",
 	    "winners_text" : "list of files that should not be committed under git"
+	},
+	{
+	    "file_path" : ".path",
+	    "winners_rank" : null,
+	    "created_by" : "genpath",
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : false,
+	    "display_via" : null,
+	    "winners_text" : "directory path from top directory"
 	},
 	{
 	    "file_path" : ".winner.json",

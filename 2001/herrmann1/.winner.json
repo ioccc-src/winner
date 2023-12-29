@@ -120,6 +120,16 @@
 	    "winners_text" : "list of files that should not be committed under git"
 	},
 	{
+	    "file_path" : ".path",
+	    "winners_rank" : null,
+	    "created_by" : "genpath",
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : false,
+	    "display_via" : null,
+	    "winners_text" : "directory path from top directory"
+	},
+	{
 	    "file_path" : ".winner.json",
 	    "winners_rank" : null,
 	    "created_by" : "jwinner",

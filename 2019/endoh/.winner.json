@@ -50,6 +50,26 @@
 	    "winners_text" : "original source"
 	},
 	{
+	    "file_path" : "try.sh",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "how to run"
+	},
+	{
+	    "file_path" : "ascii.c",
+	    "winners_rank" : 150,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "shows character value of ASCII"
+	},
+	{
 	    "file_path" : "2019_endoh.tar.bz2",
 	    "winners_rank" : 300,
 	    "created_by" : "mkwinnertbz2",
@@ -78,6 +98,16 @@
 	    "winners_show" : false,
 	    "display_via" : "github",
 	    "winners_text" : "list of files that should not be committed under git"
+	},
+	{
+	    "file_path" : ".path",
+	    "winners_rank" : null,
+	    "created_by" : "genpath",
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : false,
+	    "display_via" : null,
+	    "winners_text" : "directory path from top directory"
 	},
 	{
 	    "file_path" : ".winner.json",

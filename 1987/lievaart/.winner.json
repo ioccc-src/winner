@@ -40,26 +40,6 @@
 	    "winners_text" : "Makefile"
 	},
 	{
-	    "file_path" : "lievaart.alt.c",
-	    "winners_rank" : 40,
-	    "created_by" : null,
-	    "prog" : "alt",
-	    "filetype" : "c",
-	    "winners_show" : true,
-	    "display_via" : "github",
-	    "winners_text" : "alternative source"
-	},
-	{
-	    "file_path" : "lievaart2.alt.c",
-	    "winners_rank" : 40,
-	    "created_by" : null,
-	    "prog" : "alt",
-	    "filetype" : "c",
-	    "winners_show" : true,
-	    "display_via" : "github",
-	    "winners_text" : "alternative source"
-	},
-	{
 	    "file_path" : "lievaart.orig.c",
 	    "winners_rank" : 50,
 	    "created_by" : null,
@@ -108,6 +88,16 @@
 	    "winners_show" : false,
 	    "display_via" : "github",
 	    "winners_text" : "list of files that should not be committed under git"
+	},
+	{
+	    "file_path" : ".path",
+	    "winners_rank" : null,
+	    "created_by" : "genpath",
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : false,
+	    "display_via" : null,
+	    "winners_text" : "directory path from top directory"
 	},
 	{
 	    "file_path" : ".winner.json",

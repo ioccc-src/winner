@@ -50,6 +50,16 @@
 	    "winners_text" : "alternative source"
 	},
 	{
+	    "file_path" : "westley.alt.orig.c",
+	    "winners_rank" : 50,
+	    "created_by" : null,
+	    "prog" : "orig",
+	    "filetype" : "c",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "original source"
+	},
+	{
 	    "file_path" : "westley.orig.c",
 	    "winners_rank" : 50,
 	    "created_by" : null,
@@ -130,6 +140,16 @@
 	    "winners_text" : "list of files that should not be committed under git"
 	},
 	{
+	    "file_path" : ".path",
+	    "winners_rank" : null,
+	    "created_by" : "genpath",
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : false,
+	    "display_via" : null,
+	    "winners_text" : "directory path from top directory"
+	},
+	{
 	    "file_path" : ".winner.json",
 	    "winners_rank" : null,
 	    "created_by" : "jwinner",
@@ -148,16 +168,6 @@
 	    "winners_show" : false,
 	    "display_via" : "github",
 	    "winners_text" : "markdown source for index.html"
-	},
-	{
-	    "file_path" : "westley.alt.orig.c",
-	    "winners_rank" : null,
-	    "created_by" : null,
-	    "prog" : null,
-	    "filetype" : "c",
-	    "winners_show" : false,
-	    "display_via" : "github",
-	    "winners_text" : "alternate original source"
 	}
     ]
 }

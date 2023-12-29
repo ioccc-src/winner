@@ -50,16 +50,6 @@
 	    "winners_text" : "original source"
 	},
 	{
-	    "file_path" : "READ_ME.txt",
-	    "winners_rank" : 100,
-	    "created_by" : null,
-	    "prog" : null,
-	    "filetype" : "text",
-	    "winners_show" : true,
-	    "display_via" : "github",
-	    "winners_text" : "author supplied README"
-	},
-	{
 	    "file_path" : "discrepancies.html",
 	    "winners_rank" : 100,
 	    "created_by" : "md2html",
@@ -80,7 +70,7 @@
 	    "winners_text" : "frequency count utility"
 	},
 	{
-	    "file_path" : "tac.man",
+	    "file_path" : "tac.1",
 	    "winners_rank" : 100,
 	    "created_by" : null,
 	    "prog" : null,
@@ -88,6 +78,26 @@
 	    "winners_show" : true,
 	    "display_via" : "github",
 	    "winners_text" : "tokenize and count man page"
+	},
+	{
+	    "file_path" : "tokcount.sh",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "count the tokens produced by prog -t"
+	},
+	{
+	    "file_path" : "try.sh",
+	    "winners_rank" : 100,
+	    "created_by" : null,
+	    "prog" : null,
+	    "filetype" : "shellscript",
+	    "winners_show" : true,
+	    "display_via" : "github",
+	    "winners_text" : "how to run"
 	},
 	{
 	    "file_path" : "fixed_iocccsize.c",
@@ -537,7 +547,7 @@
 	    "filetype" : "shellscript",
 	    "winners_show" : true,
 	    "display_via" : "github",
-	    "winners_text" : "summarize the results of spotcheck.sh"
+	    "winners_text" : "summarize the results of spotcheck"
 	},
 	{
 	    "file_path" : "2018_burton2.tar.bz2",
@@ -578,6 +588,16 @@
 	    "winners_show" : false,
 	    "display_via" : "github",
 	    "winners_text" : "list of files that should not be committed under git"
+	},
+	{
+	    "file_path" : ".path",
+	    "winners_rank" : null,
+	    "created_by" : "genpath",
+	    "prog" : null,
+	    "filetype" : "text",
+	    "winners_show" : false,
+	    "display_via" : null,
+	    "winners_text" : "directory path from top directory"
 	},
 	{
 	    "file_path" : ".winner.json",
