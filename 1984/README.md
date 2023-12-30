@@ -16,6 +16,13 @@ was announced in a [net.lang.c
 post](https://groups.google.com/g/net.lang.c/c/lx-TAuEyeRI/m/HdOOnNx6LC0J).
 
 
+## Final Comments
+
+**IMPORTANT NOTE**: See [contact.html](/contact.html) for up to date contact details
+as well as details on how to provide fixes to any of the entries.
+See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
+
+
 # Copyright and License
 
 Copyright (c) 1984,2023, Landon Curt Noll. All Rights Reserved.

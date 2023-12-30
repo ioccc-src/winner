@@ -22,6 +22,13 @@ The package was posted to the comp.sources.unix newsgroup.  They are
 also available on a wide number of USENET archive sites.
 
 
+## Final Comments
+
+**IMPORTANT NOTE**: See [contact.html](/contact.html) for up to date contact details
+as well as details on how to provide fixes to any of the entries.
+See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
+
+
 # Copyright and License
 
 Copyright (c) 1988,2023, Landon Curt Noll and Larry Bassel. All Rights Reserved.

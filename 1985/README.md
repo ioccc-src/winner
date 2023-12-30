@@ -14,6 +14,13 @@ was invited to help in the judging.  Awards were given to 5 classes of programs
 since we were unable to select only the best 4.
 
 
+## Final Comments
+
+**IMPORTANT NOTE**: See [contact.html](/contact.html) for up to date contact details
+as well as details on how to provide fixes to any of the entries.
+See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
+
+
 # Copyright and License
 
 Copyright (c) 1985,2023, Landon Curt Noll and Larry Bassel. All Rights Reserved.

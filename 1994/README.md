@@ -115,6 +115,9 @@ If you use, distribute or publish these entries in some way, please drop
 us a line.  We enjoy seeing who, where and how the contest is used.
 as well as details on how to provide fixes to any of the entries.
 
+
+## Final Comments
+
 **IMPORTANT NOTE**: The email addresses found above are for historical
 purposes only, and should not be used today.  See
 [contact.html](/contact.html) for up to date contact details

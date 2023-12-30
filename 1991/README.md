@@ -84,6 +84,9 @@ Send such email to:
 judges@toad.com
 ```
 
+
+## Final Comments
+
 **IMPORTANT NOTE**: The email addresses found above are for historical
 purposes only, and should not be used today.  See
 [contact.html](/contact.html) for up to date contact details

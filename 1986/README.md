@@ -26,6 +26,13 @@ announcement of the winners at the Summer USENIX BOF (Birds of a Feather)
 started this year.  A notice was posted to net.announce.
 
 
+## Final Comments
+
+**IMPORTANT NOTE**: See [contact.html](/contact.html) for up to date contact details
+as well as details on how to provide fixes to any of the entries.
+See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
+
+
 # Copyright and License
 
 Copyright (c) 1986,2023, Landon Curt Noll and Larry Bassel. All Rights Reserved.
