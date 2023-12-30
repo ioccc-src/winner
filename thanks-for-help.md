@@ -1089,10 +1089,10 @@ He also changed the Makefile to use `bash` not `zsh` as not all systems have
 
 ## <a name="1990_westley"></a>[1990/westley](/1990/westley/westley.c) ([README.md](/1990/westley/README.md]))
 
-[Cody](#cody) fixed this for modern systems. It had `1s` in places for a short int which
-was changed to just `1`.  Since it's instructional to see the differences he has
-provided an alternate version, [westley.alt.c](/1990/westley/westley.alt.c), which
-is the original code.
+[Cody](#cody) fixed this for modern systems. It had `1s` in places for a `short
+int` which was changed to just `1`.  Since it's instructional to see the
+differences he has provided an alternate version,
+[westley.alt.c](/1990/westley/westley.alt.c), which is the original code.
 
 He also changed the `argc` to be an `int`, not a `char`, even though it might
 often be the same (for the purpose of `clang`?).
@@ -4528,9 +4528,11 @@ compilers. See the README.md for more details.
 
 [Cody](#cody) made a variety of changes in all Makefiles, sometimes to get an entry to
 work, all noted above, but he also **improved them all** in at least one or two
-ways.
+ways. Some changes made are below but he also fixed the top level Makefile `all`
+rule which had a stray 'fi;` without an `if` which prevented running `make all`
+from working right.
 
-For instance he changed the `LIBS` variable to `LDFLAGS` as that is the standard
+Cody changed the `LIBS` variable to `LDFLAGS` as that is the standard
 variable. This simplifies compiling without having to modify the Makefile which
 can be useful if something changes or if someone is trying to fix an entry but
 forgets to change the Makefile or even if they don't want to make a change due
