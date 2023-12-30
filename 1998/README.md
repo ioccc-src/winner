@@ -122,6 +122,9 @@ The next IOCCC is planned to start towards the end of 1999.  Watch
 
 for news of the next contest.
 
+
+## Final Comments
+
 **IMPORTANT NOTE**: The email addresses found above are for historical
 purposes only, and should not be used today.  See
 [contact.html](/contact.html) for up to date contact details

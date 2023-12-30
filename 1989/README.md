@@ -28,6 +28,13 @@ archive sites such as uunet.  The 1989 winners will be published in the
 Journal](https://www.vintage-computer.com/publications.php?microsystemsjournal).
 
 
+## Final Comments
+
+**IMPORTANT NOTE**: See [contact.html](/contact.html) for up to date contact details
+as well as details on how to provide fixes to any of the entries.
+See also [the IOCCC FAQ](/faq.html) for addition information on the IOCCC.
+
+
 # Copyright and License
 
 Copyright (c) 1989,2023, Landon Curt Noll and Larry Bassel. All Rights Reserved.
