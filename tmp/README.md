@@ -580,23 +580,29 @@ entries where the "created_by" (5th) field is non-null.  See
 This file is formed by the [fix_csv.sh](fix_csv.sh) tool.
 
 
-### [sample_getopt.sh](sample_getopt.sh)
+### [readme2index.sh](readme2index.sh)
 
-This is a demo of the 3 phase parse of command line options and
-arguments for that a markdown to HTML tool that uses the `inc/md2html.cfg`
-configuration file.
+This tool is a prototype of the tool that will generate an `index.html`
+from a `README.md` file in the winner directory.  This tool perfomed
+multi-phase getopt parse model as documented in the `inc/md2html.cfg`
+configuration file.  The `inc/md2html.cfg` configuration file is
+scanned for a "yyyy/dir/README.md" match.
 
 Try:
 
 ```sh
-./sample_getopt.sh -v 3 foo
+./readme2index.sh -v 1 2020/ferguson1
+./readme2index.sh -v 3 2020/ferguson1
+./readme2index.sh -v 5 2020/ferguson1
+./readme2index.sh -v 7 2020/ferguson1
 ```
 
-This tool performs a somewhat complicated 3 phase getopt parse of
-simulated command line options and arguments that a tool converting
-markdown to HTML and using the `inc/md2html.cfg` configuration file
-would perform.  The tool does not actually use the  `inc/md2html.cfg`,
-it just simulates the complex 3 phase getopt parsing procedure.
+This tool was based on the (now removed) "sample_getopt.sh" getopt
+command line parse demo.
+
+As of the time this text was written, the `README.md` file was
+not (yet) generated.  And while some _inc/something.sh_ are
+exexuted, those scripts are just executable stub demos.
 
 
 ### [sql/winners.sql](sql/winners.sql)
