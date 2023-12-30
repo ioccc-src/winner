@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Thu 28 Dec 2023 16:33:21 UTC*
+*Last updated: Sat 30 Dec 2023 17:37:08 UTC*
 
 This document is primarily for [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) as he (that is I :-) ) wanted a way
@@ -67,3 +67,8 @@ the new issue.
 script do in fact have one. Also verify (mostly in earlier years) consistency in
 the way it is displayed and interactivity. The later years are probably done
 better.
+
+- Make it so that in the case of main versions failing to compile if there is an
+alt version have it compile it (as the main binary) instead. See
+<https://github.com/ioccc-src/temp-test-ioccc/pull/1793> for the example of what
+I did with 1985/sicherman.
