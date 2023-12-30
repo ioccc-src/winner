@@ -26,16 +26,18 @@
 #
 # Share and enjoy! :-)
 
-# firewall - bash must be version 4.2 or later
+# firewall - must be bash with a version 4.2 or later
 #
 # We must declare arrays with -ag or -Ag
 #
-if [[ ${BASH_VERSINFO[0]} -lt 4 || ${BASH_VERSINFO[0]} -eq 4 && ${BASH_VERSINFO[1]} -lt 2 ]]; then
+if [[ -z ${BASH_VERSINFO[0]} || ${BASH_VERSINFO[0]} -lt 4 || ${BASH_VERSINFO[0]} -eq 4 && ${BASH_VERSINFO[1]} -lt 2 ]]; then
     echo "$0: ERROR: bash version must be >= 4.2: $BASH_VERSION" 1>&2
     exit 4
 fi
 
 # setup bash file matching
+#
+# Requires bash with a version 4.2 or later
 #
 shopt -s nullglob	# enable expanded to nothing rather than remaining unexpanded
 shopt -u failglob	# disable error message if no matches are found
@@ -46,6 +48,8 @@ shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
 
 # other required bash options
+#
+# Requires bash with a version 4.2 or later
 #
 shopt -s lastpipe	# run last command of a pipeline not executed in the background in the current shell environment
 
@@ -62,7 +66,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 	-V		print version string and exit
 
 	-n		go thru the actions, but do not update any files (def: do the action)
-	-N		do not process file, just ignore the file (def: process the file)
+	-N		do not process file, just parse arguments and ignore the file (def: process the file)
 
 	-d topdir	set topdir (def: if 'git rev-parse --is-inside-work-tree' is true, then
 					 topdir is output of 'git rev-parse --show-toplevel')
@@ -132,7 +136,7 @@ function global_variable_setup
 
     # setup
     #
-    export VERSION="0.1 2023-12-10"
+    export VERSION="0.2 2023-12-29"
     NAME=$(basename "$0")
     export NAME
     #
