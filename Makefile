@@ -55,7 +55,6 @@ all:
 	@-for i in ${YEARS}; do \
 	    echo "cd $$i; make $@"; \
 	    (cd $$i; make $@); \
-	fi; \
 	done
 	@echo '=-=-=-=-= IOCCC complete make $@ =-=-=-=-='
 
