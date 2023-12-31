@@ -77,36 +77,43 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 
 	-H phase=name	use 'phase.name.html' file for HTML phase named 'phase' (def: use 'phase.default.html')
 	-H phase=.	ignore processing for HTML phase 'phase' (def: process HTML phase)
-			NOTE: The 'phase' string may not contain = (equal), nor / (slash).
-			NOTE: The 'phase.name.html' file is assumed under the 'topdir/inc' directory.
+			NOTE: The 'phase' string may not contain an = (equal), a / (slash), a single-quote, nor a double-quote.
+			NOTE: The 'name' string may not contain an = (equal), a single-quote, nor a double-quote.
+			NOTE: The 'phase.name.html' file is assumed to be under the 'topdir/inc' directory.
 
 	-b tool		run 'before tool' during HTML phase number 20 (def: do not output before pandoc wrapper tool)
 	-b .		skip HTML phase number 20 (def: do nothing during HTML phase number 20)
 	-B optstr	run 'before tool' with options found in 'optstr' (def: do not add any options to 'before tool')
+			NOTE: The 'optstr' may not contain a single-quote, nor a double-quote.
 
 	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use inc/pandoc_wapper.sh)
 	-p .		skip HTML phase number 21 (def: do nothing during HTML phase number 21)
-			NOTE: -p tool will be passed as a leading options to other tools (-b, -a, -o).
+			NOTE: -p tool will be passed as leading options to other tools (-b, -a, -o).
 	-P optstr	run 'pandoc wrapper tool' with options found in 'optstr' (def: use only the default options)
-			NOTE: -P optstr will be passed as a leading options to other tools (-b, -a, -o).
+			NOTE: The 'optstr' may not contain a single-quote, nor a double-quote.
+			NOTE: -P optstr will be passed as leading options to other tools (-b, -a, -o).
 
 	-a tool		run 'after tool' during HTML phase number 20 (def: do not output after pandoc wrapper tool)
 	-a .		skip HTML phase number 22 (def: do nothing during HTML phase number 22)
 	-A optstr	run 'after tool' with options found in 'optstr' (def: do not add any options to 'after tool')
+			NOTE: The 'optstr' may not contain a single-quote, nor a double-quote.
 
 	-s token=value	substitute %%token%% with value except in HTML phase numbers 20-29 (def: do not substitute any tokens)
-			NOTE: The 'token' string may not contain ; (semicolon), nor = (equal), nor % (percent).
-			NOTE: The 'value' string may not contain ; (semicolon).
+			NOTE: The 'token' string may not contain a ; (semicolon), a = (equal), nor a % (percent).
+			NOTE: The 'value' string may not contain a ; (semicolon).
+			NOTE: A later -s token=value will override an earlier -s token=value for the same 'token'.
+			NOTE: Multiple -s token=value are cumulative for the unique set of 'token's.
 	-S		failure to replace a %%token%% is not an error (def: exit non-zero for non-substituted tokens)
 
 	-o tool		Use output tool, 'tool', to generate option lines (def: do not)
 	-o .		disable use of 'output tool' (def: do not use an 'output tool')
 			NOTE: -o may only be used in command_options and md2html.cfg cfg_options (getopt phases 0 and 2)
 	-O tool=optstr	run the 'token replace' named 'tool' with options found in 'optstr' (def: do not add any options)
-			NOTE: The 'tool' string may not contain = (equal), nor double-quote, nor single-quote.
+			NOTE: Neither 'tool' nor 'optstr' may not contain an = (equal), a single-quote, nor a double-quote.
+			NOTE: A later -O tool=optstr will override all earlier -O tool=optstr for the same 'tool'.
 			NOTE: -O may only be used in command_options and md2html.cfg cfg_options (getopt phases 0 and 2)
 
-	-e string	output string, followed by newline, to stderr (def: do not)
+	-e string	output 'string', followed by newline, to stderr (def: do not)
 	-E exitcode	force exit with exitcode (def: exit based on success or failure of the action)
 
 	yyyy/dir	path from topdir to winner directory: must contain README.md and .path
@@ -247,7 +254,6 @@ function print_usage
 function parse_command_line
 {
     local flag		# getopts found flag
-    local NAME_VALUE	# name=value string
     local NAME		# name from name=value
     local VALUE		# value from name=value
 
@@ -292,33 +298,70 @@ function parse_command_line
 	    MD2HTML_CFG="$OPTARG"
 	    ;;
 	H) # parse: -H phase=name
-	    NAME_VALUE="$OPTARG"
-	    case "$NAME_VALUE" in
+	    case "$OPTARG" in
 	    *=*) # parse name=value
-		NAME=${NAME_VALUE%%=*}
-		VALUE=${NAME_VALUE#*=}
+		NAME=${OPTARG%%=*}
+		VALUE=${OPTARG#*=}
 		;;
-	    *) echo "$0: ERROR: -H option not in phase=name form" 1>&2
+	    *) echo "$0: ERROR: -H phase=name not in -H phase=name form" 1>&2
 		echo 1>&2
 		print_usage 1>&2
 		exit 3
 		;;
 	    esac
-	    # name cannot contain a =
-	    if [[ $NAME == *'='* ]]; then
-		echo "$0: ERROR: -H name=value, name cannot contain a = character: $NAME_VALUE" 1>&2
+	    #
+	    case "$NAME" in
+	    *=*)
+		echo "$0: ERROR: in -H phase=name, the phase may not contain a = character: $NAME" 1>&2
 		echo 1>&2
 		print_usage 1>&2
 		exit 3
-	    fi
-	    # name cannot contain a /
-	    if [[ $NAME == *'/'* ]]; then
-		echo "$0: ERROR: -H name=value, name cannot contain a / character: $NAME_VALUE" 1>&2
+		;;
+	    */*)
+		echo "$0: ERROR: in -H phase=name, the phase may not contain a / character: $NAME" 1>&2
 		echo 1>&2
 		print_usage 1>&2
 		exit 3
-	    fi
+		;;
+	    *"'"*)
+		echo "$0: ERROR: in -H phase=name, the phase may not contain a single-quote character: $NAME" 1>&2
+		echo 1>&2
+		print_usage 1>&2
+		exit 3
+		;;
+	    *'"'*)
+		echo "$0: ERROR: in -H phase=name, the phase may not contain a double-quote character: $NAME" 1>&2
+		echo 1>&2
+		print_usage 1>&2
+		exit 3
+		;;
+	    *) ;;
+	    esac
+	    #
+	    case "$VALUE" in
+	    *=*)
+		echo "$0: ERROR: in -H phase=name, the name may not contain a = character: $VALUE" 1>&2
+		echo 1>&2
+		print_usage 1>&2
+		exit 3
+		;;
+	    *"'"*)
+		echo "$0: ERROR: in -H phase=name, the name may not contain a single-quote character: $VALUE" 1>&2
+		echo 1>&2
+		print_usage 1>&2
+		exit 3
+		;;
+	    *'"'*)
+		echo "$0: ERROR: in -H phase=name, the name may not contain a double-quote character: $VALUE" 1>&2
+		echo 1>&2
+		print_usage 1>&2
+		exit 3
+		;;
+	    *) ;;
+	    esac
+	    #
 	    # name must be a known phase name
+	    #
 	    if [[ -z ${HTML_PHASE_NAME[$NAME]} ]]; then
 		echo "$0: ERROR: -H name=value, name is unknown" 1>&2
 		for n in "${PHASE_NAME[@]}"; do
@@ -328,6 +371,7 @@ function parse_command_line
 		print_usage 1>&2
 		exit 3
 	    fi
+	    #
 	    # treat VALUE of . as an HTML PHASE name unset
 	    #
 	    if [[ $VALUE == . ]]; then
@@ -347,7 +391,23 @@ function parse_command_line
 		BEFORE_TOOL="$OPTARG"
 	    fi
 	    ;;
-	B) BEFORE_TOOL_OPTSTR="$OPTARG"
+	B) # parse -B optstr
+	    case "$OPTARG" in
+	    *"'"*)
+		echo "$0: ERROR: in -B optstr, the optstr may not contain a single-quote character: $OPTARG" 1>&2
+		echo 1>&2
+		print_usage 1>&2
+		exit 3
+		;;
+	    *'"'*)
+		echo "$0: ERROR: in -B optstr, the optstr may not contain a double-quote character: $OPTARG" 1>&2
+		echo 1>&2
+		print_usage 1>&2
+		exit 3
+		;;
+	    *) ;;
+	    esac
+	    BEFORE_TOOL_OPTSTR="$OPTARG"
 	    ;;
 	p) # parse -p tool
 	    if [[ $OPTARG == . ]]; then
@@ -358,7 +418,23 @@ function parse_command_line
 		PANDOC_WRAPPER="$OPTARG"
 	    fi
 	    ;;
-	P) PANDOC_WRAPPER_OPTSTR="$OPTARG"
+	P) # parse -P optstr
+	    case "$OPTARG" in
+	    *"'"*)
+		echo "$0: ERROR: in -P optstr, the optstr may not contain a single-quote character: $OPTARG" 1>&2
+		echo 1>&2
+		print_usage 1>&2
+		exit 3
+		;;
+	    *'"'*)
+		echo "$0: ERROR: in -P optstr, the optstr may not contain a double-quote character: $OPTARG" 1>&2
+		echo 1>&2
+		print_usage 1>&2
+		exit 3
+		;;
+	    *) ;;
+	    esac
+	    PANDOC_WRAPPER_OPTSTR="$OPTARG"
 	    ;;
 	a) # parse: -a tool
 	    if [[ $OPTARG == . ]]; then
@@ -369,53 +445,74 @@ function parse_command_line
 		AFTER_TOOL="$OPTARG"
 	    fi
 	    ;;
-	A) AFTER_TOOL_OPTSTR="$OPTARG"
+	A) # parse -A optstr
+	    case "$OPTARG" in
+	    *"'"*)
+		echo "$0: ERROR: in -A optstr, the optstr may not contain a single-quote character: $OPTARG" 1>&2
+		echo 1>&2
+		print_usage 1>&2
+		exit 3
+		;;
+	    *'"'*)
+		echo "$0: ERROR: in -A optstr, the optstr may not contain a double-quote character: $OPTARG" 1>&2
+		echo 1>&2
+		print_usage 1>&2
+		exit 3
+		;;
+	    *) ;;
+	    esac
+	    AFTER_TOOL_OPTSTR="$OPTARG"
 	    ;;
 	s) # parse: -s token=value
-	    NAME_VALUE="$OPTARG"
-	    case "$NAME_VALUE" in
+	    case "$OPTARG" in
 	    *=*) # parse name=value
-		NAME=${NAME_VALUE%%=*}
-		VALUE=${NAME_VALUE#*=}
+		NAME=${OPTARG%%=*}
+		VALUE=${OPTARG#*=}
 		;;
-	    *) echo "$0: ERROR: -H option not in phase=name form" 1>&2
+	    *) echo "$0: ERROR: -s token=value not in -s token=value form" 1>&2
 		echo 1>&2
 		print_usage 1>&2
 		exit 3
 		;;
 	    esac
-	    # token cannot contain a ;
-	    if [[ $NAME == *';'* ]]; then
-		echo "$0: ERROR: -H name=value, token cannot contain a ; character: $NAME_VALUE" 1>&2
+	    #
+	    case "$NAME" in
+	    *\;*)
+		echo "$0: ERROR: in -s token=value, the token may not contain a ; (semicolon) character: $NAME" 1>&2
 		echo 1>&2
 		print_usage 1>&2
 		exit 3
-	    fi
-	    # token cannot contain a =
-	    if [[ $NAME == *'='* ]]; then
-		echo "$0: ERROR: -H name=value, token cannot contain a = character: $NAME_VALUE" 1>&2
+		;;
+	    *=*)
+		echo "$0: ERROR: in -s token=value, the token may not contain a = (equal) character: $NAME" 1>&2
 		echo 1>&2
 		print_usage 1>&2
 		exit 3
-	    fi
-	    # token cannot contain a %
-	    if [[ $NAME == *'%'* ]]; then
-		echo "$0: ERROR: -H name=value, token cannot contain a % character: $NAME_VALUE" 1>&2
+		;;
+	    *%*)
+		echo "$0: ERROR: in -s token=value, the token may not contain a % (percent) character: $NAME" 1>&2
 		echo 1>&2
 		print_usage 1>&2
 		exit 3
-	    fi
-	    # value cannot contain a ;
-	    if [[ $VALUE == *';'* ]]; then
-		echo "$0: ERROR: -H name=value, value cannot contain a ; character: $NAME_VALUE" 1>&2
+		;;
+	    *) ;;
+	    esac
+	    #
+	    case "$VALUE" in
+	    *\;*)
+		echo "$0: ERROR: in -s token=value, the value may not contain a ; (semicolon) character: $NAME" 1>&2
 		echo 1>&2
 		print_usage 1>&2
 		exit 3
-	    fi
+		;;
+	    *) ;;
+	    esac
+	    #
 	    # set %%token%% value
+	    #
 	    TOKEN[$NAME]="$VALUE"
 	    ;;
-	S) CAP_S_FLAG="true"
+	S) CAP_S_FLAG="-S"
 	    ;;
 	o) # -o only in getopt phase 0 and 1
 	    if [[ $GETOPT_PHASE -ne 0 && $GETOPT_PHASE -ne 2 ]]; then
@@ -427,7 +524,8 @@ function parse_command_line
 	    #
 	    OUTPUT_TOOL+=("$OPTARG")
 	    ;;
-	O) # -O only in getopt phase 0 and 1
+	O) # parse -O tool=optstr
+	    # -O only in getopt phase 0 and 1
 	    if [[ $GETOPT_PHASE -ne 0 && $GETOPT_PHASE -ne 2 ]]; then
 		echo "$0: ERROR: -o may only be used during getopt phase 0 and 2, current getopt phase: $GETOPT_PHASE" 1>&2
 		echo 1>&2
@@ -435,41 +533,64 @@ function parse_command_line
 		exit 3
 	    fi
 	    #
-	    # parse: -O tool=optstr
-	    NAME_VALUE="$OPTARG"
-	    case "$NAME_VALUE" in
+	    case "$OPTARG" in
 	    *=*) # parse name=value
-		NAME=${NAME_VALUE%%=*}
-		VALUE=${NAME_VALUE#*=}
+		NAME=${OPTARG%%=*}
+		VALUE=${OPTARG#*=}
 		;;
-	    *) echo "$0: ERROR: -H option not in phase=name form" 1>&2
+	    *) echo "$0: ERROR: -O tool=optstr not in -O tool=optstr form" 1>&2
 		echo 1>&2
 		print_usage 1>&2
 		exit 3
 		;;
 	    esac
-	    # token cannot contain a =
-	    if [[ $NAME == *'='* ]]; then
-		echo "$0: ERROR: -H name=value, token cannot contain a = character: $NAME_VALUE" 1>&2
+	    #
+	    case "$NAME" in
+	    *=*)
+		echo "$0: ERROR: in -O tool=optstr, the tool may not contain a = character: $NAME" 1>&2
 		echo 1>&2
 		print_usage 1>&2
 		exit 3
-	    fi
-	    # token cannot contain a double-quote
-	    if [[ $NAME == *'"'* ]]; then
-		echo "$0: ERROR: -H name=value, token cannot contain a double-quote character: $NAME_VALUE" 1>&2
+		;;
+	    *"'"*)
+		echo "$0: ERROR: in -O tool=optstr, the tool may not contain a single-quote character: $NAME" 1>&2
 		echo 1>&2
 		print_usage 1>&2
 		exit 3
-	    fi
-	    # token cannot contain a single-quote
-	    if [[ $NAME == *'"'* ]]; then
-		echo "$0: ERROR: -H name=value, token cannot contain a single-quote character: $NAME_VALUE" 1>&2
+		;;
+	    *'"'*)
+		echo "$0: ERROR: in -O tool=optstr, the tool may not contain a double-quote character: $NAME" 1>&2
 		echo 1>&2
 		print_usage 1>&2
 		exit 3
-	    fi
+		;;
+	    *) ;;
+	    esac
+	    #
+	    case "$VALUE" in
+	    *=*)
+		echo "$0: ERROR: in -O tool=optstr, the optstr may not contain a = character: $VALUE" 1>&2
+		echo 1>&2
+		print_usage 1>&2
+		exit 3
+		;;
+	    *"'"*)
+		echo "$0: ERROR: in -O tool=optstr, the optstr may not contain a single-quote character: $VALUE" 1>&2
+		echo 1>&2
+		print_usage 1>&2
+		exit 3
+		;;
+	    *'"'*)
+		echo "$0: ERROR: in -O tool=optstr, the optstr may not contain a double-quote character: $VALUE" 1>&2
+		echo 1>&2
+		print_usage 1>&2
+		exit 3
+		;;
+	    *) ;;
+	    esac
+	    #
 	    # set tool optstr value
+	    #
 	    OUTPUT_TOOL_OPTSTR[$NAME]="$VALUE"
 	    ;;
 	e) echo "$OPTARG" 1>&2
@@ -821,7 +942,8 @@ for n in "${!OUTPUT_TOOL[@]}"; do
     # SC2046 (warning): Quote this to prevent word splitting.
     # SC2086 (info): Double quote to prevent globbing and word splitting.
     # shellcheck disable=SC2046,SC2086
-    OUTPUT_TOOL_OUTPUT=$("$VALUE" -p "${PANDOC_WRAPPER}" -P "${PANDOC_WRAPPER_OPTSTR}" ${OUTPUT_TOOL_OPTSTR[$VALUE]} \
+    OUTPUT_TOOL_OUTPUT=$("$VALUE" -p "${PANDOC_WRAPPER}" -P "${PANDOC_WRAPPER_OPTSTR}" \
+			 ${OUTPUT_TOOL_OPTSTR[$VALUE]} \
 			 -- "${WINNER_PATH}")
     if [[ $V_FLAG -ge 7 ]]; then
 	echo "$0: debug[7]: phase ${GETOPT_PHASE} output tool output: $OUTPUT_TOOL_OUTPUT" 1>&2
@@ -968,7 +1090,8 @@ for n in "${!OUTPUT_TOOL[@]}"; do
     # SC2046 (warning): Quote this to prevent word splitting.
     # SC2086 (info): Double quote to prevent globbing and word splitting.
     # shellcheck disable=SC2046,SC2086
-    OUTPUT_TOOL_OUTPUT=$("$VALUE" -p "${PANDOC_WRAPPER}" -P "${PANDOC_WRAPPER_OPTSTR}" ${OUTPUT_TOOL_OPTSTR[$VALUE]} \
+    OUTPUT_TOOL_OUTPUT=$("$VALUE" -p "${PANDOC_WRAPPER}" -P "${PANDOC_WRAPPER_OPTSTR}" \
+			 ${OUTPUT_TOOL_OPTSTR[$VALUE]} \
 			 -- "${WINNER_PATH}")
     if [[ $V_FLAG -ge 7 ]]; then
 	echo "$0: debug[7]: phase ${GETOPT_PHASE} output tool output: $OUTPUT_TOOL_OUTPUT" 1>&2
