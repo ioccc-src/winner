@@ -84,9 +84,11 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 	-b .		skip HTML phase number 20 (def: do nothing during HTML phase number 20)
 	-B optstr	run 'before tool' with options found in 'optstr' (def: do not add any options to 'before tool')
 
-	-p tool		run 'pandoc wrapper tool' (not path to pandoc itself) during HTML phase number 21 (def: use inc/pandoc_wapper.sh)
+	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use inc/pandoc_wapper.sh)
 	-p .		skip HTML phase number 21 (def: do nothing during HTML phase number 21)
-	-P optstr	run 'pandoc wrapper tool' with options found in 'optstr' (def: use only the 'pandoc wrapper tool' default options)
+			NOTE: -p tool will be passed as a leading options to other tools (-b, -a, -o).
+	-P optstr	run 'pandoc wrapper tool' with options found in 'optstr' (def: use only the default options)
+			NOTE: -P optstr will be passed as a leading options to other tools (-b, -a, -o).
 
 	-a tool		run 'after tool' during HTML phase number 20 (def: do not output after pandoc wrapper tool)
 	-a .		skip HTML phase number 22 (def: do nothing during HTML phase number 22)
@@ -819,7 +821,8 @@ for n in "${!OUTPUT_TOOL[@]}"; do
     # SC2046 (warning): Quote this to prevent word splitting.
     # SC2086 (info): Double quote to prevent globbing and word splitting.
     # shellcheck disable=SC2046,SC2086
-    OUTPUT_TOOL_OUTPUT=$("$VALUE" ${OUTPUT_TOOL_OPTSTR[$VALUE]} -- "${WINNER_PATH}")
+    OUTPUT_TOOL_OUTPUT=$("$VALUE" -p "${PANDOC_WRAPPER}" -P "${PANDOC_WRAPPER_OPTSTR}" ${OUTPUT_TOOL_OPTSTR[$VALUE]} \
+			 -- "${WINNER_PATH}")
     if [[ $V_FLAG -ge 7 ]]; then
 	echo "$0: debug[7]: phase ${GETOPT_PHASE} output tool output: $OUTPUT_TOOL_OUTPUT" 1>&2
     fi
@@ -965,7 +968,8 @@ for n in "${!OUTPUT_TOOL[@]}"; do
     # SC2046 (warning): Quote this to prevent word splitting.
     # SC2086 (info): Double quote to prevent globbing and word splitting.
     # shellcheck disable=SC2046,SC2086
-    OUTPUT_TOOL_OUTPUT=$("$VALUE" ${OUTPUT_TOOL_OPTSTR[$VALUE]} -- "${WINNER_PATH}")
+    OUTPUT_TOOL_OUTPUT=$("$VALUE" -p "${PANDOC_WRAPPER}" -P "${PANDOC_WRAPPER_OPTSTR}" ${OUTPUT_TOOL_OPTSTR[$VALUE]} \
+			 -- "${WINNER_PATH}")
     if [[ $V_FLAG -ge 7 ]]; then
 	echo "$0: debug[7]: phase ${GETOPT_PHASE} output tool output: $OUTPUT_TOOL_OUTPUT" 1>&2
     fi
