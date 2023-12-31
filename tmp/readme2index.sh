@@ -88,10 +88,10 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 
 	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use inc/pandoc_wapper.sh)
 	-p .		skip HTML phase number 21 (def: do nothing during HTML phase number 21)
-			NOTE: -p tool will be passed as leading options to other tools (-b, -a, -o).
+			NOTE: The '-p tool' will be passed as leading options on the -b tool and -a tool command lines.
 	-P optstr	run 'pandoc wrapper tool' with options found in 'optstr' (def: use only the default options)
 			NOTE: The 'optstr' may not contain a single-quote, nor a double-quote.
-			NOTE: -P optstr will be passed as leading options to other tools (-b, -a, -o).
+			NOTE: The '-P optstr' will be passed as leading options on the -b tool and -a tool command lines.
 
 	-a tool		run 'after tool' during HTML phase number 20 (def: do not output after pandoc wrapper tool)
 	-a .		skip HTML phase number 22 (def: do nothing during HTML phase number 22)
@@ -101,8 +101,8 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 	-s token=value	substitute %%token%% with value except in HTML phase numbers 20-29 (def: do not substitute any tokens)
 			NOTE: The 'token' string may not contain a ; (semicolon), a = (equal), nor a % (percent).
 			NOTE: The 'value' string may not contain a ; (semicolon).
-			NOTE: A later -s token=value will override an earlier -s token=value for the same 'token'.
-			NOTE: Multiple -s token=value are cumulative for the unique set of 'token's.
+			NOTE: A later '-s token=value' will override an earlier '-s token=value' for the same 'token'.
+			NOTE: Multiple '-s token=value' are cumulative for the unique set of 'token's.
 	-S		failure to replace a %%token%% is not an error (def: exit non-zero for non-substituted tokens)
 
 	-o tool		Use output tool, 'tool', to generate option lines (def: do not)
@@ -110,7 +110,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 			NOTE: -o may only be used in command_options and md2html.cfg cfg_options (getopt phases 0 and 2)
 	-O tool=optstr	run the 'token replace' named 'tool' with options found in 'optstr' (def: do not add any options)
 			NOTE: Neither 'tool' nor 'optstr' may not contain an = (equal), a single-quote, nor a double-quote.
-			NOTE: A later -O tool=optstr will override all earlier -O tool=optstr for the same 'tool'.
+			NOTE: A later '-O tool=optstr' will override all earlier '-O tool=optstr' for the same 'tool'.
 			NOTE: -O may only be used in command_options and md2html.cfg cfg_options (getopt phases 0 and 2)
 
 	-e string	output 'string', followed by newline, to stderr (def: do not)
@@ -937,14 +937,13 @@ for n in "${!OUTPUT_TOOL[@]}"; do
     #
     VALUE="${OUTPUT_TOOL[$n]}"
     if [[  $V_FLAG -ge 7 ]]; then
-	echo "$0: debug[7]: phase ${GETOPT_PHASE} about to call output tool: $VALUE ${OUTPUT_TOOL_OPTSTR[$VALUE]}" 1>&2
+	echo "$0: debug[7]: phase ${GETOPT_PHASE} about to call output tool:" \
+	     "$VALUE ${OUTPUT_TOOL_OPTSTR[$VALUE]} -- ${WINNER_PATH}" 1>&2
     fi
     # SC2046 (warning): Quote this to prevent word splitting.
     # SC2086 (info): Double quote to prevent globbing and word splitting.
     # shellcheck disable=SC2046,SC2086
-    OUTPUT_TOOL_OUTPUT=$("$VALUE" -p "${PANDOC_WRAPPER}" -P "${PANDOC_WRAPPER_OPTSTR}" \
-			 ${OUTPUT_TOOL_OPTSTR[$VALUE]} \
-			 -- "${WINNER_PATH}")
+    OUTPUT_TOOL_OUTPUT=$("$VALUE" ${OUTPUT_TOOL_OPTSTR[$VALUE]} -- "${WINNER_PATH}")
     if [[ $V_FLAG -ge 7 ]]; then
 	echo "$0: debug[7]: phase ${GETOPT_PHASE} output tool output: $OUTPUT_TOOL_OUTPUT" 1>&2
     fi
@@ -1085,14 +1084,13 @@ for n in "${!OUTPUT_TOOL[@]}"; do
     #
     VALUE="${OUTPUT_TOOL[$n]}"
     if [[  $V_FLAG -ge 7 ]]; then
-	echo "$0: debug[7]: phase ${GETOPT_PHASE} about to call output tool: $VALUE ${OUTPUT_TOOL_OPTSTR[$VALUE]}" 1>&2
+	echo "$0: debug[7]: phase ${GETOPT_PHASE} about to call output tool:" \
+	     "$VALUE ${OUTPUT_TOOL_OPTSTR[$VALUE]} -- ${WINNER_PATH}" 1>&2
     fi
     # SC2046 (warning): Quote this to prevent word splitting.
     # SC2086 (info): Double quote to prevent globbing and word splitting.
     # shellcheck disable=SC2046,SC2086
-    OUTPUT_TOOL_OUTPUT=$("$VALUE" -p "${PANDOC_WRAPPER}" -P "${PANDOC_WRAPPER_OPTSTR}" \
-			 ${OUTPUT_TOOL_OPTSTR[$VALUE]} \
-			 -- "${WINNER_PATH}")
+    OUTPUT_TOOL_OUTPUT=$("$VALUE" ${OUTPUT_TOOL_OPTSTR[$VALUE]} -- "${WINNER_PATH}")
     if [[ $V_FLAG -ge 7 ]]; then
 	echo "$0: debug[7]: phase ${GETOPT_PHASE} output tool output: $OUTPUT_TOOL_OUTPUT" 1>&2
     fi
