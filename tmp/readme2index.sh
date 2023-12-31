@@ -55,6 +55,8 @@ shopt -s lastpipe	# run last command of a pipeline not executed in the backgroun
 
 # set usage message
 #
+export PANDOC_WRAPPER="inc/pandoc_wapper.sh"
+export PANDOC_WRAPPER_OPTSTR="-f markdown -t html --fail-if-warnings=true"
 export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 	[-d topdir] [-c md2html.cfg] [-H phase=name ..]
 	[-b tool] [-B optstr] [-p tool] [-P optstr] [-a tool] [-A optstr]
@@ -86,10 +88,10 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 	-B optstr	run 'before tool' with options found in 'optstr' (def: do not add any options to 'before tool')
 			NOTE: The 'optstr' may not contain a single-quote, nor a double-quote.
 
-	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use inc/pandoc_wapper.sh)
+	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use $PANDOC_WRAPPER)
 	-p .		skip HTML phase number 21 (def: do nothing during HTML phase number 21)
 			NOTE: The '-p tool' will be passed as leading options on the -b tool and -a tool command lines.
-	-P optstr	run 'pandoc wrapper tool' with options found in 'optstr' (def: use only the default options)
+	-P optstr	run 'pandoc wrapper tool' with options found in 'optstr' (def: $PANDOC_WRAPPER_OPTSTR)
 			NOTE: The 'optstr' may not contain a single-quote, nor a double-quote.
 			NOTE: The '-P optstr' will be passed as leading options on the -b tool and -a tool command lines.
 
@@ -145,7 +147,7 @@ function global_variable_setup
 
     # setup
     #
-    export VERSION="0.2 2023-12-29"
+    export VERSION="0.3 2023-12-31"
     NAME=$(basename "$0")
     export NAME
     #
@@ -158,8 +160,8 @@ function global_variable_setup
     export MD2HTML_CFG=
     export BEFORE_TOOL=
     export BEFORE_TOOL_OPTSTR=
-    export PANDOC_WRAPPER="inc/pandoc_wapper.sh"
-    export PANDOC_WRAPPER_OPTSTR=
+    # PANDOC_WRAPPER set above
+    # PANDOC_WRAPPER_OPTSTR set above
     export AFTER_TOOL=
     export AFTER_TOOL_OPTSTR=
     unset TOKEN
