@@ -54,20 +54,6 @@ shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
 
-# determine path to topdir if we are in a git repo
-#
-GIT_TOOL=$(type -P git)
-export GIT_TOOL
-if [[ -z "$GIT_TOOL" ]]; then
-    echo "$0: FATAL: git tool is not installed or not in PATH" 1>&2
-    exit 100
-fi
-"$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
-status="$?"
-if [[ $status -eq 0 ]]; then
-    TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
-fi
-
 # set variables referenced in the usage message
 #
 export VERSION="1.2 2023-12-31"
