@@ -198,7 +198,6 @@
 1986,wall,index.html,10,readme2index,null,html,true,browser,click here first,html
 1986,wall,wall.c,20,null,main,c,true,github,winning source,c
 1986,wall,Makefile,30,null,null,makefile,true,github,Makefile,null
-1986,wall,wall.alt.c,40,null,alt,c,true,github,alternative source,c
 1986,wall,wall.orig.c,50,null,orig,c,true,github,original source,c
 1986,wall,1986_wall.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1986,wall,inventory.html,900,winner2inventory,null,html,true,browser,full inventory of all winner files,html
