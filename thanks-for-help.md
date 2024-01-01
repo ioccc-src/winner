@@ -4524,13 +4524,14 @@ compilers. See the README.md for more details.
 # <a name="general_thanks"></a>General thanks
 
 
-## <a name="makefile_improvements"></a>Makefile improvements
+## <a name="makefile_improvements"></a>Makefiles fixes and improvements
 
-[Cody](#cody) made a variety of changes in all Makefiles, sometimes to get an entry to
-work, all noted above, but he also **improved them all** in at least one or two
-ways. Some changes made are below but he also fixed the top level Makefile `all`
-rule which had a stray 'fi;` without an `if` which prevented running `make all`
-from working right.
+[Cody](#cody) fixed the top level Makefile `all` rule which had a stray `fi;`
+without an `if` so the rule failed entirely.
+
+Cody also made a variety of other changes in all the Makefiles, sometimes to get
+an entry to work, all noted above, but he also **improved them all** in at least
+one or two ways. Some of the changes made are below.
 
 Cody changed the `LIBS` variable to `LDFLAGS` as that is the standard
 variable. This simplifies compiling without having to modify the Makefile which
@@ -4544,14 +4545,15 @@ Sometimes there were bad characters or rules that caused the entry to fail to
 compile or not work in some way.
 
 Where useful he added some notes to the Makefiles during compilation to let one
-know of certain problems or features that matter.
+know of certain problems or features that matter for instance having to disable
+the optimiser or enabling (in one case) `-g`.
 
 Also, rather than check `$(CC)` for exact matches of `gcc` or `clang` it now is
 that if `$(CC)` contains `gcc` or contains `clang` then the specific actions
-related to the specific compiler will be done. This is useful because it's not
-guaranteed that the compiler names for `gcc` or `clang` will be exactly that; in
-macOS for instance it can happen that they are in fact different names
-especially if one installs them from something like
+related to the specific compiler will be done (priority is gcc then clang). This
+is useful because it's not guaranteed that the compiler names for `gcc` or
+`clang` will be exactly that; in macOS for instance it can happen that they are
+in fact different names especially if one installs them from something like
 [MacPorts](https://www.macports.org) or possibly [Homebrew](https://brew.sh).
 
 There were some other fixes as well including mass typo fixes in the Makefiles
@@ -4570,8 +4572,10 @@ Cody also added missing variables like `BASH` and `PDFLATEX` to the
 [var.mk](/var.mk) file and removed another that was deemed problematic or
 undesired. Other variable names had typos in them.
 
-A lot of the fixes with the Makefiles that Cody made were done with his [sgit
-tool](https://github.com/xexyl/sgit).
+A comment was missing for the `diff_alt_orig` rule in all the Makefiles and
+this, along with many other fixes and changes to the Makefiles were made by
+Cody's [sgit tool](https://github.com/xexyl/sgit) but many other changes he did
+manually.
 
 
 ## <a name="consistency_improvements"></a>Consistency improvements
