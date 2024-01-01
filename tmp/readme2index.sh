@@ -777,16 +777,16 @@ fi
 # verify that we have a inc subdirectory
 #
 export INC="$TOPDIR/inc"
-if [[ ! -d $TOPDIR/inc ]]; then
-    echo "$0: ERROR: inc is not a directory under topdir: $TOPDIR/inc" 1>&2
+if [[ ! -d $INC ]]; then
+    echo "$0: ERROR: inc is not a directory under topdir: $INC" 1>&2
     exit 15
 fi
 
 # verify that we have an author subdirectory
 #
-export INC="$TOPDIR/inc"
-if [[ ! -d $TOPDIR/inc ]]; then
-    echo "$0: ERROR: inc is not a directory under topdir: $TOPDIR/inc" 1>&2
+export AUTHOR_DIR="$TOPDIR/author"
+if [[ ! -d $AUTHOR_DIR ]]; then
+    echo "$0: ERROR: author is not a directory under topdir: $AUTHOR_DIR" 1>&2
     exit 16
 fi
 
