@@ -53,25 +53,44 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 #
 shopt -s lastpipe	# run last command of a pipeline not executed in the background in the current shell environment
 
-# set usage message
+# set variables referenced in the usage message
 #
+export VERSION="0.4 2023-12-31"
+NAME=$(basename "$0")
+export NAME
+export V_FLAG=0
+GIT_TOOL=$(type -P git)
+export GIT_TOOL
+if [[ -z "$GIT_TOOL" ]]; then
+    echo "$0: FATAL: git tool is not installed or not in PATH" 1>&2
+    exit 10
+fi
+"$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
+status="$?"
+if [[ $status -eq 0 ]]; then
+    TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
+fi
 export PANDOC_WRAPPER="inc/pandoc_wapper.sh"
 export PANDOC_WRAPPER_OPTSTR="-f markdown -t html --fail-if-warnings=true"
+export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc"
+
+# set usage message
+#
 export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 	[-d topdir] [-c md2html.cfg] [-H phase=name ..]
 	[-b tool] [-B optstr] [-p tool] [-P optstr] [-a tool] [-A optstr]
 	[-s token=value ..] [-S] [-o tool ..] [-O tool=optstr ..]
-	[-e string ..] [-E exitcode] yyyy/dir
+	[-u repo_url] [-e string ..] [-E exitcode]
+	yyyy/dir
 
 	-h		print help message and exit
-	-v level	set verbosity level (def level: 0)
+	-v level	set verbosity level (def level: $V_FLAG)
 	-V		print version string and exit
 
 	-n		go thru the actions, but do not update any files (def: do the action)
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
 
-	-d topdir	set topdir (def: if 'git rev-parse --is-inside-work-tree' is true, then
-					 topdir is output of 'git rev-parse --show-toplevel')
+	-d topdir	set topdir (def: $TOPDIR)
 			NOTE: -d may only be used in command_options (getopt phase 0)
 
 	-c md2html.cfg	Use md2html.cfg as the configuration file (def: use topdir/inc/md2html.cfg)
@@ -115,10 +134,13 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 			NOTE: A later '-O tool=optstr' will override all earlier '-O tool=optstr' for the same 'tool'.
 			NOTE: -O may only be used in command_options and md2html.cfg cfg_options (getopt phases 0 and 2)
 
+	-u repo_url	URL of the final target repo from where HTML files will be viewed (def: $REPO_URL)
+			NOTE: The '-u repo_url' will be passed as leading options on the -b tool and -a tool command lines.
+
 	-e string	output 'string', followed by newline, to stderr (def: do not)
 	-E exitcode	force exit with exitcode (def: exit based on success or failure of the action)
 
-	yyyy/dir	path from topdir to winner directory: must contain README.md and .path
+	yyyy/dir	path from topdir to winner directory: must contain the files: README.md, .path and .winner.json
 
 Exit codes:
      0	       all OK
@@ -128,8 +150,8 @@ Exit codes:
      5	       yyyy/dir is not a winner directory
      6	       tool not found or not executable (before, pandoc wrapper, after, output tools)
      7	       HTML phase file not found or not readable
- >= 10 < 200   internal error
- >= 200	       tool error
+ >= 10 < 100   internal error
+ >= 100	       tool error
 
 $NAME version: $VERSION"
 
@@ -147,21 +169,18 @@ function global_variable_setup
 
     # setup
     #
-    export VERSION="0.3 2023-12-31"
-    NAME=$(basename "$0")
-    export NAME
-    #
-    export V_FLAG=0
-    export NOOP=0
-    export DO_NOT_PROCESS=0
+    # VERSION set above the export USAGE line
+    # NAME set above the export USAGE line
+    # V_FLAG set above the export USAGE line
+    export NOOP=
+    export DO_NOT_PROCESS=
     export TOPDIR=
-    export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc"
-    export REPO_NAME="temp-test-ioccc"
+    # REPO_URL set above the export USAGE line
     export MD2HTML_CFG=
     export BEFORE_TOOL=
     export BEFORE_TOOL_OPTSTR=
-    # PANDOC_WRAPPER set above
-    # PANDOC_WRAPPER_OPTSTR set above
+    # PANDOC_WRAPPER set above the export USAGE line
+    # PANDOC_WRAPPER_OPTSTR set above the export USAGE line
     export AFTER_TOOL=
     export AFTER_TOOL_OPTSTR=
     unset TOKEN
@@ -265,7 +284,7 @@ function parse_command_line
 
     # parse command line
     #
-    while getopts :hv:VnNd:c:H:b:B:p:P:a:A:s:So:O:e:E: flag; do
+    while getopts :hv:VnNd:c:H:b:B:p:P:a:A:s:So:Ou::e:E: flag; do
       case "$flag" in
 	h) print_usage 1>&2
 	    exit 2
@@ -275,9 +294,9 @@ function parse_command_line
 	V) echo "$VERSION"
 	    exit 2
 	    ;;
-	n) NOOP="true"
+	n) NOOP="-n"
 	    ;;
-	N) DO_NOT_PROCESS="true"
+	N) DO_NOT_PROCESS="-N"
 	    ;;
 	d) # -d only in getopt phase 0
 	    if [[ $GETOPT_PHASE -ne 0 ]]; then
@@ -595,6 +614,8 @@ function parse_command_line
 	    #
 	    OUTPUT_TOOL_OPTSTR[$NAME]="$VALUE"
 	    ;;
+	u) REPO_URL="$OPTARG"
+	    ;;
 	e) echo "$OPTARG" 1>&2
 	    ;;
 	E) exit "$OPTARG"
@@ -740,6 +761,8 @@ fi
 
 # verify that we have a topdir directory
 #
+REPO_NAME=$(basename "$REPO_URL")
+export REPO_NAME
 if [[ -z $TOPDIR ]]; then
     echo "$0: ERROR: cannot find top of git repo directory" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
@@ -751,12 +774,36 @@ if [[ ! -d $TOPDIR ]]; then
     exit 14
 fi
 
-# verify that we have in inc directory
+# verify that we have a inc subdirectory
 #
 export INC="$TOPDIR/inc"
 if [[ ! -d $TOPDIR/inc ]]; then
-    echo "$0: ERROR: inc is not a directory under TOPDIR/inc: $TOPDIR/inc" 1>&2
+    echo "$0: ERROR: inc is not a directory under topdir: $TOPDIR/inc" 1>&2
     exit 15
+fi
+
+# verify that we have an author subdirectory
+#
+export INC="$TOPDIR/inc"
+if [[ ! -d $TOPDIR/inc ]]; then
+    echo "$0: ERROR: inc is not a directory under topdir: $TOPDIR/inc" 1>&2
+    exit 16
+fi
+
+# verify that we have a readable .top file
+#
+export TOP="$TOPDIR/.top"
+if [[ ! -e $TOP ]]; then
+    echo "$0: ERROR: topdir/.top does not exist: $TOP" 1>&2
+    exit 17
+fi
+if [[ ! -f $TOP ]]; then
+    echo "$0: ERROR: topdir/.top is not a file: $TOP" 1>&2
+    exit 18
+fi
+if [[ ! -r $TOP ]]; then
+    echo "$0: ERROR: topdir/.top is not a readable file: $TOP" 1>&2
+    exit 19
 fi
 
 # verify we have a readable md2html.cfg file
@@ -766,26 +813,26 @@ if [[ -z $MD2HTML_CFG ]]; then
 fi
 if [[ ! -e $MD2HTML_CFG ]]; then
     echo "$0: ERROR: md2html.cfg does not exist: $MD2HTML_CFG" 1>&2
-    exit 16
+    exit 20
 fi
 if [[ ! -f $MD2HTML_CFG ]]; then
     echo "$0: ERROR: md2html.cfg is not a file: $MD2HTML_CFG" 1>&2
-    exit 17
+    exit 21
 fi
 if [[ ! -r $MD2HTML_CFG ]]; then
     echo "$0: ERROR: md2html.cfg is not a readable file: $MD2HTML_CFG" 1>&2
-    exit 18
+    exit 22
 fi
 
 # cd to topdir
 #
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to non-existent path: $TOPDIR" 1>&2
-    exit 19
+    exit 23
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to a non-directory: $TOPDIR" 1>&2
-    exit 20
+    exit 24
 fi
 export CD_FAILED
 if [[ $V_FLAG -ge 5 ]]; then
@@ -794,7 +841,7 @@ fi
 cd "$TOPDIR" || CD_FAILED="true"
 if [[ -n $CD_FAILED ]]; then
     echo "$0: ERROR: cd $TOPDIR failed" 1>&2
-    exit 21
+    exit 25
 fi
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
@@ -804,11 +851,12 @@ fi
 #
 # WINNER_PATH must be in yyyy/dir form
 # yyyy must be a directory
-# yyyy must be a writible directory
+# yyyy must be a writable directory
 # yyyy/.year must be a non-empty file
 # yyyy/dir must be a directory
 # yyyy/dir/.path must be a non-empty file
 # WINNER_PATH must match the contents of yyyy/dir/.path
+# yyyy/dir/.winner.json must be a non-empty file
 #
 if [[ ! -d $WINNER_PATH ]]; then
     echo "$0: ERROR: arg is not a directory: $WINNER_PATH" 1>&2
@@ -855,6 +903,19 @@ if [[ $WINNER_PATH != "$DOT_PATH_CONTENT" ]]; then
     echo "$0: ERROR: arg: $WINNER_PATH does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
     exit 5
 fi
+export WINNER_JSON="$YEAR_DIR/$WINNER_DIR/.winner.json"
+if [[ ! -e $WINNER_JSON ]]; then
+    echo "$0: ERROR: .winner.json does not exist: $WINNER_JSON" 1>&2
+    exit 5
+fi
+if [[ ! -f $WINNER_JSON ]]; then
+    echo "$0: ERROR: .winner.json is not a file: $WINNER_JSON" 1>&2
+    exit 5
+fi
+if [[ ! -r $WINNER_JSON ]]; then
+    echo "$0: ERROR: .winner.json is not a readable file: $WINNER_JSON" 1>&2
+    exit 5
+fi
 
 # setup README_PATH and INDEX_PATH based on YEAR_DIR and WINNER_DIR
 #
@@ -877,14 +938,21 @@ if [[ ! -s $README_PATH ]]; then
 fi
 #
 export INDEX_PATH="$YEAR_DIR/$WINNER_DIR/index.html"
+
+# parameter debugging
 #
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
     echo "$0: debug[3]: WINNER_DIR=$WINNER_DIR" 1>&2
     echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
     echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
+    echo "$0: debug[3]: WINNER_JSON=$WINNER_JSON" 1>&2
     echo "$0: debug[3]: README_PATH=$README_PATH" 1>&2
     echo "$0: debug[3]: INDEX_PATH=$INDEX_PATH" 1>&2
+    echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
+    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+    echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
+    echo "$0: debug[3]: NOOP=$NOOP" 1>&2
 fi
 #
 if [[ $V_FLAG -ge 3 ]]; then
@@ -1005,7 +1073,7 @@ match_md2html "$MD2HTML_CFG" "$README_PATH"
 status="$?"
 if [[ $status -ne 0 ]]; then
     echo "$0: ERROR: README_PATH: $README_PATH does not match any lines in: $MD2HTML_CFG" 1>&2
-    exit 22
+    exit 26
 fi
 
 # set new options from match md2html.cfg for README_PATH
