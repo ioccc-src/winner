@@ -3658,6 +3658,12 @@ There was no IOCCC in 2022.
 There was no IOCCC in 2023.
 
 
+# 2024
+
+We hope to run the IOCCCMOCK this year, 2024, and hopefully the next IOCCC, but
+for now we wish everyone a happy new year!
+
+
 # Final words
 
 We hope this document was of use to you in determining which entries are known
