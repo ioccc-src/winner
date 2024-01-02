@@ -64,7 +64,7 @@ GIT_TOOL=$(type -P git)
 export GIT_TOOL
 if [[ -z "$GIT_TOOL" ]]; then
     echo "$0: FATAL: git tool is not installed or not in PATH" 1>&2
-    exit 100
+    exit 200
 fi
 "$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
 status="$?"
@@ -110,8 +110,8 @@ Exit codes:
      4         bash version is < 4.2
      5	       yyyy/dir is not a winner directory
      6         pandoc tool not found or not executable
- >= 10 < 100   ((not used))
- >= 100	       internal error
+ >= 10 < 200   ((not used))
+ >= 200	       internal error
 
 $NAME version: $VERSION"
 
@@ -410,12 +410,12 @@ export REPO_NAME
 if [[ -z $TOPDIR ]]; then
     echo "$0: ERROR: cannot find top of git repo directory" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
-    exit 101
+    exit 201
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
-    exit 102
+    exit 202
 fi
 
 # verify that we have an author subdirectory
@@ -423,7 +423,7 @@ fi
 export AUTHOR_PATH="$TOPDIR/author"
 if [[ ! -d $AUTHOR_PATH ]]; then
     echo "$0: ERROR: author is not a directory under topdir: $AUTHOR_PATH" 1>&2
-    exit 103
+    exit 203
 fi
 export AUTHOR_DIR="author"
 
@@ -431,11 +431,11 @@ export AUTHOR_DIR="author"
 #
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to non-existent path: $TOPDIR" 1>&2
-    exit 104
+    exit 204
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to a non-directory: $TOPDIR" 1>&2
-    exit 105
+    exit 205
 fi
 export CD_FAILED
 if [[ $V_FLAG -ge 5 ]]; then
@@ -444,7 +444,7 @@ fi
 cd "$TOPDIR" || CD_FAILED="true"
 if [[ -n $CD_FAILED ]]; then
     echo "$0: ERROR: cd $TOPDIR failed" 1>&2
-    exit 106
+    exit 206
 fi
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
@@ -569,7 +569,7 @@ AUTHOR_HANDLE_SET=$(output_author_handles "$WINNER_JSON")
 status="$?"
 if [[ $status -ne 0 || -z $AUTHOR_HANDLE_SET ]]; then
     echo "$0: ERROR: unable to obtain any author handles from: $WINNER_JSON" 1>&2
-    exit 107
+    exit 207
 fi
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: author handles found in $WINNER_JSON start below" 1>&2
@@ -589,15 +589,15 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     #
     if [[ ! -e $AUTHOR_HANDLE_JSON ]]; then
 	echo "$0: ERROR: for author handle: $author_handle author JSON file not found: $AUTHOR_HANDLE_JSON" 1>&2
-	exit 108
+	exit 208
     fi
     if [[ ! -f $WINNER_JSON ]]; then
 	echo "$0: ERROR: for author handle: $author_handle author JSON is not a file: $AUTHOR_HANDLE_JSON" 1>&2
-	exit 109
+	exit 209
     fi
     if [[ ! -r $WINNER_JSON ]]; then
 	echo "$0: ERROR: for author handle: $author_handle author JSON is not a readable file: $AUTHOR_HANDLE_JSON" 1>&2
-	exit 110
+	exit 210
     fi
     if [[ $V_FLAG -ge 5 ]]; then
 	echo "$0: debug[5]: for author handle: $author_handle found a readable author JSON file: $AUTHOR_HANDLE_JSON" 1>&2
@@ -609,7 +609,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     status="$?"
     if [[ $status -ne 0 || -z $WINNER_ID_FOUND ]]; then
 	echo "$0: ERROR: winner id: $WINNER_ID not found in author JSON file: $AUTHOR_HANDLE_JSON, status: $status" 1>&2
-	exit 111
+	exit 211
     fi
     if [[ $V_FLAG -ge 7 ]]; then
 	echo "$0: debug[7]: readable author JSON file: $AUTHOR_HANDLE_JSON mentions winner id: $WINNER_ID" 1>&2
@@ -621,7 +621,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     status="$?"
     if [[ $status -ne 0 || -z $FULL_NAME ]]; then
 	echo "$0: ERROR: author JSON file: $AUTHOR_HANDLE_JSON as no FULL NAME, status: $status" 1>&2
-	exit 112
+	exit 212
     fi
     if [[ $V_FLAG -ge 7 ]]; then
 	echo "$0: debug[7]: author JSON file: $AUTHOR_HANDLE_JSON Full Name: $FULL_NAME" 1>&2
@@ -633,7 +633,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     status="$?"
     if [[ $status -ne 0 || -z $LOCATION_CODE ]]; then
 	echo "$0: ERROR: author JSON file: $AUTHOR_HANDLE_JSON as no Location Code, status: $status" 1>&2
-	exit 113
+	exit 213
     fi
     if [[ $V_FLAG -ge 7 ]]; then
 	echo "$0: debug[7]: author JSON file: $AUTHOR_HANDLE_JSON Location Code: $LOCATION_CODE" 1>&2
@@ -651,12 +651,12 @@ if [[ -z $NOOP ]]; then
     rm -f "$TMP_FILE"
     if [[ -e $TMP_FILE ]]; then
 	echo "$0: ERROR: cannot remove temporary markdown file: $TMP_FILE" 1>&2
-	exit 114
+	exit 214
     fi
     :> "$TMP_FILE"
     if [[ ! -e $TMP_FILE ]]; then
 	echo "$0: ERROR: cannot create temporary markdown file: $TMP_FILE" 1>&2
-	exit 115
+	exit 215
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary markdown file is not used: $TMP_FILE" 1>&2
@@ -695,7 +695,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     status="$?"
     if [[ $status -ne 0 || -z $FULL_NAME ]]; then
 	echo "$0: ERROR: author JSON file: $AUTHOR_HANDLE_JSON as no FULL NAME, status: $status" 1>&2
-	exit 116
+	exit 216
     fi
 
     # obtain the Location Code from the author handle JSON file
@@ -704,7 +704,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     status="$?"
     if [[ $status -ne 0 || -z $LOCATION_CODE ]]; then
 	echo "$0: ERROR: author JSON file: $AUTHOR_HANDLE_JSON as no Location Code, status: $status" 1>&2
-	exit 117
+	exit 217
     fi
 
     # write this author's information
@@ -748,7 +748,7 @@ if [[ -z $NOOP ]]; then
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: pandoc failed, error: $status" 1>&2
-	exit 118
+	exit 218
     fi
 elif [[ $V_FLAG -ge 1 ]]; then
     echo  "$0: debug[1]: -n disabled execution of: $PANDOC_WRAPPER -P \"$PANDOC_WRAPPER_OPTSTR\" $TMP_FILE -" 1>&2

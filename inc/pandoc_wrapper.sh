@@ -65,7 +65,7 @@ GIT_TOOL=$(type -P git)
 export GIT_TOOL
 if [[ -z "$GIT_TOOL" ]]; then
     echo "$0: FATAL: git tool is not installed or not in PATH" 1>&2
-    exit 100
+    exit 200
 fi
 "$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
 status="$?"
@@ -116,8 +116,8 @@ Exit codes:
      4         bash version is < 4.2
      5         file.md file not found or not readable file
      6         pandoc tool not found or not executable
- >= 10 < 100   ((not used))
- >= 100	       internal error
+ >= 10 < 200   ((not used))
+ >= 200	       internal error
 
 $NAME version: $VERSION"
 
@@ -219,23 +219,23 @@ export REPO_NAME
 if [[ -z $TOPDIR ]]; then
     echo "$0: ERROR: cannot find top of git repo directory" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
-    exit 101
+    exit 201
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
     echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
-    exit 102
+    exit 202
 fi
 
 # cd to topdir
 #
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to non-existent path: $TOPDIR" 1>&2
-    exit 104
+    exit 204
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to a non-directory: $TOPDIR" 1>&2
-    exit 105
+    exit 205
 fi
 export CD_FAILED
 if [[ $V_FLAG -ge 5 ]]; then
@@ -244,7 +244,7 @@ fi
 cd "$TOPDIR" || CD_FAILED="true"
 if [[ -n $CD_FAILED ]]; then
     echo "$0: ERROR: cd $TOPDIR failed" 1>&2
-    exit 106
+    exit 206
 fi
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
