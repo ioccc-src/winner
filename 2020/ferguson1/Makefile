@@ -114,11 +114,11 @@ ENTRY= ferguson1
 PROG= prog
 #
 OBJ= ${PROG}.o
-DATA= COMPILING.md HACKING.md bugs.html bugs.md cake.jpg cannibalism.log.md \
-	chocolate-cake.html chocolate-cake.md crazy.log.md gameplay.html gameplay.md \
+DATA= COMPILING.md HACKING.md bugs.md cake.jpg cannibalism.log.md \
+	chocolate-cake.md crazy.log.md gameplay.md \
 	halfwidth_vs_fullwidth.png ioccc-cake.jpg play.sh prog.2.c prog.3-j.c \
-	prog.3.c snake-colours.sh snake.1 spoilers.html spoilers.md \
-	termcaps.c terminals.html terminals.md troubleshooting.html troubleshooting.md
+	prog.3.c snake-colours.sh snake.1  spoilers.md \
+	termcaps.c terminals.md troubleshooting.md
 TARGET= ${PROG} termcaps play snake-colours
 #
 ALT_OBJ= ${PROG}.alt.o
@@ -139,6 +139,7 @@ all: data ${TARGET}
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	@${TOUCH} sandwich
 
 # termcaps - test utility for terminal capabilities, size etc.
 termcaps: termcaps.c
