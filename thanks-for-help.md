@@ -22,7 +22,7 @@ on a winner by winner basis.
 - [2012 winners](#2012)	|	[2013 winners](#2013)	|	[2014 winners](#2014)	|	[2015 winners](#2015)
 - [2018 winners](#2018)	|	[2019 winners](#2019)	|	[2020 winners](#2020)
 - [General thanks](#general_thanks)
-- [Makefile improvements](#makefile_improvements)
+- [Makefiles fixes and improvements](#makefiles_fixes_improvements)
 - [Consistency improvements](#consistency_improvements)
 - [Thank you honor roll](#thank_you_honor_roll)
 - [Did we neglect to credit you?](#neglect)
@@ -4524,7 +4524,7 @@ compilers. See the README.md for more details.
 # <a name="general_thanks"></a>General thanks
 
 
-## <a name="makefile_improvements"></a>Makefiles fixes and improvements
+## <a name="makefiles_fixes_improvements"></a>Makefiles fixes and improvements
 
 [Cody](#cody) fixed the top level Makefile `all` rule which had a stray `fi;`
 without an `if` so the rule failed entirely.
