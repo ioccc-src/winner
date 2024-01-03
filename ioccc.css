@@ -537,6 +537,30 @@ ul.task-list li input[type="checkbox"] {
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 
+/*
+ * IOCCC classes
+ */
+
+/* Left - class for placing things on the left side */
+.Left {
+  float: left;
+}
+
+/* Right - class for placing things on the left side */
+.Right {
+  float: right;
+}
+
+/* Disabled - class for making something as if the feature has been disabled */
+.Disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  color: currentColor;
+  display: inline-block;	/* For IE11/MS Edge bug */
+  pointer-events: none;
+  text-decoration: none;
+}
+
 /* Header ======================================================================================== */
 
 /* Style the header */
@@ -547,10 +571,10 @@ ul.task-list li input[type="checkbox"] {
 
 /* Header headings */
 .header h1 {
-  font-size: 3em;
+  font-size: 2.5em;
 }
 .header h2 {
-  font-size: 2.5em;
+  font-size: 2em;
 }
 .header h3 {
   font-size: 1.5em;
@@ -564,9 +588,8 @@ ul.task-list li input[type="checkbox"] {
   background-color: #333;
 }
 
-/* Style the topnav links */
-.topnav a {
-  float: left;
+/* Style the topnav links and paragraph text */
+.topnav a, p {
   display: block;
   color: lightblue;
   padding: 14px 16px;
@@ -691,17 +714,16 @@ ul.task-list li input[type="checkbox"] {
 
 /* Responsive Web Design ========================================================================== */
 
-/* Default: screen is > 800 pixels wide */
+/* Default: screen is > 968 pixels wide (> 984 w/padding) */
 
 /*
- * When the screen is >= 401 pixels AND <= 800 pixels wide
+ * When the screen is > 761 pixels (> 777 w/padding) AND <= 968 pixels wide (<= 984 w/padding)
  *
- * Make the two columns stack on top of each other instead of next to each other,
- * and adjust the defaults for a somewhat smaller screen.
+ * Use two columns but with slightly smaller header font sizes.
  */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 968px) {
   body {
-    font-size: 0.9em;
+    font-size: 1em;
   }
   .header {
     padding: 0;
@@ -709,13 +731,54 @@ ul.task-list li input[type="checkbox"] {
     text-align: center;
   }
   .header h1 {
-    font-size: 1.75em;
+    font-size: 2em;
   }
   .header h2 {
-    font-size: 1.5em;
+    font-size: 1.75em;
   }
   .header h3 {
+    font-size: 1.5em;
+  }
+  .leftcolumn, .rightcolumn, .footer {
+    padding: 2px;
+  }
+  .sidenav a {
+    padding: 5px;
+  }
+  .rightcolumn h1 {
+    font-size: 1.75em;
+  }
+  .rightcolumn h2 {
+    font-size: 1.5em;
+  }
+  .rightcolumn h3 {
     font-size: 1.25em;
+  }
+}
+
+/*
+ * When the screen is > 500 pixels (> 515 w/padding) AND <= 761 pixels wide (<= 777 w/padding)
+ *
+ * Make the two columns stack on top of each other instead of next to each other,
+ * and adjust the defaults for a somewhat smaller screen.
+ */
+@media screen and (max-width: 761px) {
+  body {
+    font-size: 1em;
+  }
+  .header {
+    padding: 0;
+    border: 0;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 1.5em;
+  }
+  .header h2 {
+    font-size: 1.25em;
+  }
+  .header h3 {
+    font-size: 1em;
   }
   .leftcolumn, .rightcolumn, .footer {
     width: 100%;
@@ -725,10 +788,10 @@ ul.task-list li input[type="checkbox"] {
     padding: 5px;
   }
   .rightcolumn h1 {
-    font-size: 1.5em;
+    font-size: 1.25em;
   }
   .rightcolumn h2 {
-    font-size: 1.25em;
+    font-size: 1.1em;
   }
   .rightcolumn h3 {
     font-size: 1em;
@@ -736,14 +799,14 @@ ul.task-list li input[type="checkbox"] {
 }
 
 /*
- * When the screen is <= 400 pixels wide:
+ * When the screen is <= 500 pixels wide: (<= 515 w/padding)
  *
  * Make the navigation links stack on top of each other instead of next to each other,
  * and adjust the defaults for a small screen.
  */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   body {
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
   .header {
     padding: 0;
@@ -751,13 +814,13 @@ ul.task-list li input[type="checkbox"] {
     text-align: center;
   }
   .header h1 {
-    font-size: 1.5em;
-  }
-  .header h2 {
     font-size: 1.25em;
   }
-  .header h3 {
+  .header h2 {
     font-size: 1em;
+  }
+  .header h3 {
+    font-size: 0.9em;
   }
   .header img {
     visibility: none;
@@ -775,13 +838,13 @@ ul.task-list li input[type="checkbox"] {
     display: none;
   }
   .rightcolumn h1 {
-    font-size: 1.5em;
-  }
-  .rightcolumn h2 {
     font-size: 1.25em;
   }
-  .rightcolumn h3 {
+  .rightcolumn h2 {
     font-size: 1em;
+  }
+  .rightcolumn h3 {
+    font-size: 0.9em;
   }
 }
 
