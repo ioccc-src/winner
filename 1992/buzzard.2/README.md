@@ -56,8 +56,6 @@ fix that the author notes in their remarks.
 
 ### Alternate build:
 
-To compile this alternate version:
-
 ```sh
 make alt
 ```
@@ -108,7 +106,7 @@ integers (as parsed by `"%d"`).  Invalid input behaves unpredictably,
 but gives no warning messages.  A sample program, `demo1.1st`, is
 included, but it only works on ASCII systems.
 
-Do not expect to be able to do anything interesting with first.
+Do not expect to be able to do anything interesting with `first`.
 
 To do something interesting, you need to feed first the file
 [third](third) first.  In unix, you can do
@@ -124,7 +122,7 @@ minutes on an 8086 PC); `THIRD` will prompt you when it is finished.  The file
 part.
 
 For more information on what you can do once you've piped [third](third) into
-first, type 'help' and consult
+first, type `help` and consult
 [FORTH](https://en.wikipedia.org/wiki/Forth_(programming_language)) manuals for
 further reference.  Six sample THIRD programs are included in the files
 demo[1-6].th.  [buzzard.2.README.md](buzzard.2.README.md) has more information.
