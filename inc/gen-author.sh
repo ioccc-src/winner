@@ -2,9 +2,9 @@
 #
 # gen-author.sh - output winning author(s) related HTML
 #
-# This tool is intended to be used as a 'before tool' during HTML phase number 20.
+# This tool is intended to be used as a "before tool" during HTML phase number 20.
 #
-# This tool is intended to be invoked by a tool such as 'readme2index.sh"
+# This tool is intended to be invoked by a tool such as "readme2index.sh"
 # and as such, the leading options will include "-p pandoc_wrapper" and -P "optstr",
 # the final arg will be in yyyy/dir form, and will be called from
 # the topdir directory under which the yyyy/dir winner directory must be found.
@@ -553,15 +553,6 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
 fi
 
-# If -N, time to exit
-#
-if [[ -n $DO_NOT_PROCESS ]]; then
-    if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: arguments parsed, -N given, exit 0" 1>&2
-    fi
-    exit 0
-fi
-
 # Set AUTHOR_HANDLE_SET with author handles from .winner.json
 #
 export AUTHOR_HANDLE_SET
@@ -639,6 +630,15 @@ for author_handle in $AUTHOR_HANDLE_SET; do
 	echo "$0: debug[7]: author JSON file: $AUTHOR_HANDLE_JSON Location Code: $LOCATION_CODE" 1>&2
     fi
 done
+
+# If -N, time to exit
+#
+if [[ -n $DO_NOT_PROCESS ]]; then
+    if [[ $V_FLAG -ge 1 ]]; then
+	echo "$0: debug[1]: arguments parsed, -N given, exit 0" 1>&2
+    fi
+    exit 0
+fi
 
 # create a temporary markdown for pandoc to process
 #

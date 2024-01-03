@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 #
-# subst.default.sh - print default substitutions
+# subst.winner-index.sh - print substitutions for a winner index.html
 #
 # This tool is used in conjunction with the inc/md2html.cfg configuration
-# file, and the tools that use that use that configuration file
-# such as "readme2index.sh".
+# file, and "readme2index.sh" to build an index.html file for a winner.
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
@@ -297,13 +296,21 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     exit 0
 fi
 
-# output DOCROOT_URL_SLASH substitution
+# output TITLE substitution
 #
-echo "-s DOCROOT_URL_SLASH='$DOCROOT_URL_SLASH'"
+echo "-s TITIE='$YEAR_DIR/$WINNER_DIR'"
 
-# output HEADER_1 substitution
+# output DESCRIPTION substitution
 #
-echo "-s HEADER_1='The International Obfuscated C Code Contest'"
+echo "-s DESCRIPTION='$YEAR_DIR IOCCC winner $WINNER_DIR'"
+
+# output KEYWORDS substitution
+#
+echo "-s KEYWORDS='IOCCC, $YEAR_DIR, IOCCC $YEAR_DIR, IOCCC winner, $WINNER_DIR'"
+
+# output HEADER_2 substitution
+#
+echo "-s HEADER_2='$YEAR_DIR/$WINNER_DIR'"
 
 # All Done!!! -- Jessica Noll, Age 2
 #

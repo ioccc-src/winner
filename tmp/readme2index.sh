@@ -150,8 +150,8 @@ Exit codes:
      5	       yyyy/dir is not a winner directory
      6	       tool not found or not executable (before, pandoc wrapper, after, output tools)
      7	       HTML phase file not found or not readable
- >= 10 < 100   internal error
- >= 100	       tool error
+ >= 10 < 200   internal error
+ >= 200	       tool error
 
 $NAME version: $VERSION"
 
@@ -159,7 +159,7 @@ $NAME version: $VERSION"
 # command line parsing functions #
 ##################################
 
-# setup global variables
+# global_variable_setup - setup global variables
 #
 # Call this once at the start of the shell script.
 #
@@ -210,9 +210,9 @@ function global_variable_setup
     #
     unset PHASE_NAME
     declare -ag PHASE_NAME
-    PHASE_NAME=(top head body header topnav begin-row begin-leftcolumn sidenav end-leftcolumn
-		end-leftcolumn begin-rightcolumn before-content before-content after-content
-		end-row footer bottom)
+    PHASE_NAME=(top head body header topnav begin-row begin-leftcolumn
+	        sidenav end-leftcolumn end-leftcolumn begin-rightcolumn before-content
+		after-content end-rightcolumn end-row footer bottom)
     unset HTML_PHASE_NAME
     declare -Ag HTML_PHASE_NAME
     for n in "${PHASE_NAME[@]}"; do
@@ -224,7 +224,7 @@ function global_variable_setup
     export GETOPT_PHASE=0
 }
 
-# print the usage message, exit code and version information
+# print_usage - print the usage message, exit code and version information
 #
 # Call this to print the usage message, by default to stdout.
 # However one might usually want to do:
@@ -238,7 +238,7 @@ function print_usage
     echo "$USAGE"
 }
 
-# parse command line arguments
+# parse_command_line - parse command line arguments
 #
 # You MUST call this function at least once AND after calling global_variable_setup.
 # You may call this function again, after setting a new command line args. For example:
@@ -643,7 +643,7 @@ function parse_command_line
 # md2html.cfg related functions #
 #################################
 
-# first file_glob match for md2html.cfg file
+# match_md2html - first file_glob match for md2html.cfg file
 #
 # usage:
 #	match_md2html md2html_path file_path
@@ -715,6 +715,133 @@ function match_md2html
 	echo "$0: debug[7]: file_path: $FILE_PATH no match found" 1>&2
     fi
     return 1
+}
+
+################################
+# HTML phase related functions #
+################################
+
+# append_html_phase - append a sed modified HTML phase file to a growing temporary HTML file
+#
+# usage:
+#	append_html_phase phase_number name_of_phase starting_exit_code sed_script tmp_phase_file tmp_append
+#
+#	phase_number	    - HTML phase number (see inc/md2readme.cfg)
+#	name_of_phase	    - Name of HTML phase (see inc/md2readme.cfg and the HTML_PHASE_NAME array)
+#	starting_exit_code  - On error, exit starting at this exit code
+#	sed_script	    - file contain sed commands
+#	tmp_phase_file	    - temp file used to write sed script results
+#	tmp_append	    - growing temporary HTML file to append tmp_phase onto
+#
+# returns:
+#	0  ==> ALL is OK
+#	>0 ==> fatal ERROR, exit with this code
+#
+function append_html_phase
+{
+    local PHASE_NUMBER;		# HTML phase number
+    local NAME_OF_PHASE;	# Name of HTML phase
+    local STARTING_EXIT_CODE;	# On error, return exit code starting at this exit code
+    local SED_SCRIPT;		# file contain sed commands
+    local TMP_PHASE_FILE;	# temp file used to write sed script results
+    local TMP_APPEND;		# growing temporary HTML file to append tmp_phase onto
+
+    # parse args
+    #
+    if [[ $# -ne 6 ]]; then
+	echo "$0: ERROR: in append_html_phase, expected 6 args, found $#" 1>&2
+	# We have to return non-zero but we don't have the args to know STARTING_EXIT_CODE.
+	# We might as well use 7 since that is an HTML phase exit code
+	return 7
+    fi
+    PHASE_NUMBER="$1"
+    NAME_OF_PHASE="$2"
+    STARTING_EXIT_CODE="$3"
+    SED_SCRIPT="$4"
+    TMP_PHASE_FILE="$5"
+    TMP_APPEND="$6"
+    #
+    if [[ $V_FLAG -ge 7 ]]; then
+	echo "$0: debug[7]: starting: append_html_phase $PHASE_NUMBER $NAME_OF_PHASE $STARTING_EXIT_CODE" \
+	     "$SED_SCRIPT $TMP_PHASE_FILE $TMP_APPEND" 1>&2
+    fi
+
+    # HTML phase setup
+    #
+    PHASE_FILE="$INC/$NAME_OF_PHASE.${HTML_PHASE_NAME[$NAME_OF_PHASE]}.html"
+    #
+    # we validated all HTML phase names previously: so only a readable file check is needed
+    #
+    if [[ ! -r "$PHASE_FILE" ]]; then
+	echo "$0: ERROR: cannot read HTML phase $PHASE_NUMBER ($NAME_OF_PHASE) file: $PHASE_FILE" 1>&2
+	return "$STARTING_EXIT_CODE";
+    fi
+
+    # output, with sed modification, HTML phase file
+    #
+    if [[ -z $NOOP ]]; then
+	sed -f "$SED_SCRIPT" "$PHASE_FILE" > "$TMP_PHASE_FILE"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: sed error on HTML phase $PHASE_NUMBER ($NAME_OF_PHASE) file: $PHASE_FILE," \
+		 "error code: $status" 1>&2
+	    return $(( STARTING_EXIT_CODE+1 ))
+	fi
+    elif [[ $V_FLAG -ge 7 ]]; then
+	echo "$0: debug[7]: because of -n, disabled: sed -f $SED_SCRIPT $PHASE_FILE > $TMP_PHASE_FILE" 1>&2
+    fi
+
+
+    # verify that no %%symbol%%'s were missed
+    #
+    if [[ -z $NOOP ]]; then
+	if grep -F -q '%%' "$TMP_PHASE_FILE" 2>/dev/null; then
+
+	    # warn about the problem
+	    #
+	    echo "$0: WARNING: %% symbols found in HTML phase $PHASE_NUMBER ($NAME_OF_PHASE)" \
+		 "starts below: $TMP_PHASE_FILE" 1>&2
+	    grep -F '%%' "$TMP_PHASE_FILE" 1>&2
+	    echo "$0: WARNING: %% symbols found in HTML phase $PHASE_NUMBER ($NAME_OF_PHASE)" \
+		 "ends above: $TMP_PHASE_FILE" 1>&2
+
+	    # -S means just warn
+	    #
+	    if [[ -n $CAP_S_FLAG ]]; then
+		echo "$0: WARNING: -S and %% symbols found in HTML phase $PHASE_NUMBER ($NAME_OF_PHASE)" \
+			 "file: $TMP_PHASE_FILE" 1>&2
+	    else
+		echo "$0: ERROR: %% symbols found in HTML phase $PHASE_NUMBER ($NAME_OF_PHASE)" \
+			 "file: $TMP_PHASE_FILE" 1>&2
+		return $(( STARTING_EXIT_CODE+2 ))
+	    fi
+	elif [[ $V_FLAG -ge 7 ]]; then
+	    echo "$0: debug[7]: no %%'s found in: $TMP_PHASE_FILE" 1>&2
+	fi
+    elif [[ $V_FLAG -ge 7 ]]; then
+	echo "$0: debug[7]: because of -n, disabled: grep -F -q '%%' $TMP_PHASE_FILE 2>/dev/null" 1>&2
+    fi
+
+    # append HTML phase file to temporary index HTML file
+    #
+    if [[ -z $NOOP ]]; then
+	cat "$TMP_PHASE_FILE" >> "$TMP_APPEND"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: cat $TMP_PHASE_FILE >> $TMP_APPEND for HTML phase $PHASE_NUMBER ($NAME_OF_PHASE)," \
+		 "error code: $status" 1>&2
+	    return $(( STARTING_EXIT_CODE+3 ))
+	fi
+    elif [[ $V_FLAG -ge 7 ]]; then
+	echo "$0: debug[7]: because of -n, disabled: cat $TMP_PHASE_FILE >> $TMP_APPEND" 1>&2
+    fi
+
+    # report progress if verbose
+    #
+    if [[ $V_FLAG -ge 5 ]]; then
+	echo "$0: debug[5]: successfully completed HTML phase $PHASE_NUMBER ($NAME_OF_PHASE)" 1>&2
+    fi
+    return 0
 }
 
 ###################################
@@ -1014,8 +1141,10 @@ for n in "${!OUTPUT_TOOL[@]}"; do
     # SC2086 (info): Double quote to prevent globbing and word splitting.
     # shellcheck disable=SC2046,SC2086
     OUTPUT_TOOL_OUTPUT=$("$VALUE" ${OUTPUT_TOOL_OPTSTR[$VALUE]} -- "${WINNER_PATH}")
-    if [[ $V_FLAG -ge 7 ]]; then
-	echo "$0: debug[7]: phase ${GETOPT_PHASE} output tool output: $OUTPUT_TOOL_OUTPUT" 1>&2
+    if [[ $V_FLAG -ge 5 ]]; then
+	echo "$0: debug[5]: phase ${GETOPT_PHASE} $VALUE output starts below" 1>&2
+	echo "$OUTPUT_TOOL_OUTPUT" 1>&2
+	echo "$0: debug[5]: phase ${GETOPT_PHASE} $VALUE output ends above" 1>&2
     fi
 
     # process command line arguments from output tool
@@ -1026,7 +1155,7 @@ for n in "${!OUTPUT_TOOL[@]}"; do
 	#
 	# SC2086 (info): Double quote to prevent globbing and word splitting.
 	# shellcheck disable=SC2086
-	parse_command_line $OUTPUT_TOOL_OUTPUT
+	eval parse_command_line $OUTPUT_TOOL_OUTPUT
 
 	# parse output tool arguments
 	#
@@ -1072,7 +1201,7 @@ fi
 match_md2html "$MD2HTML_CFG" "$README_PATH"
 status="$?"
 if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: README_PATH: $README_PATH does not match any lines in: $MD2HTML_CFG" 1>&2
+    echo "$0: ERROR: README_PATH: $README_PATH does not match any lines in: $MD2HTML_CFG, error code: $status" 1>&2
     exit 26
 fi
 
@@ -1161,8 +1290,10 @@ for n in "${!OUTPUT_TOOL[@]}"; do
     # SC2086 (info): Double quote to prevent globbing and word splitting.
     # shellcheck disable=SC2046,SC2086
     OUTPUT_TOOL_OUTPUT=$("$VALUE" ${OUTPUT_TOOL_OPTSTR[$VALUE]} -- "${WINNER_PATH}")
-    if [[ $V_FLAG -ge 7 ]]; then
-	echo "$0: debug[7]: phase ${GETOPT_PHASE} output tool output: $OUTPUT_TOOL_OUTPUT" 1>&2
+    if [[ $V_FLAG -ge 5 ]]; then
+	echo "$0: debug[5]: phase ${GETOPT_PHASE} $VALUE output starts below" 1>&2
+	echo "$OUTPUT_TOOL_OUTPUT" 1>&2
+	echo "$0: debug[5]: phase ${GETOPT_PHASE} $VALUE output ends above" 1>&2
     fi
 
     # process command line arguments from output tool
@@ -1173,7 +1304,7 @@ for n in "${!OUTPUT_TOOL[@]}"; do
 	#
 	# SC2086 (info): Double quote to prevent globbing and word splitting.
 	# shellcheck disable=SC2086
-	parse_command_line $OUTPUT_TOOL_OUTPUT
+	eval parse_command_line $OUTPUT_TOOL_OUTPUT
 
 	# parse output tool arguments
 	#
@@ -1317,12 +1448,504 @@ fi
 #
 if [[ $V_FLAG -ge 5 ]]; then
     for n in "${!TOKEN[@]}"; do
-	VALUE="${TOKEN[$n]}"
-	echo "$0: debug[5]: -s token replacement: sed -e s;%%$n%%;$VALUE;g" 1>&2
+	echo "$0: debug[5]: -s token replacement: sed -e s;%%$n%%;${TOKEN[$n]};g" 1>&2
     done
 fi
 
-# XXX - write more code here - XXX #
+# If -N, time to exit
 #
-echo "$0: Notice: if $0 was complete, $README_PATH would be used to form $INDEX_PATH" 1>&2
+if [[ -n $DO_NOT_PROCESS ]]; then
+    if [[ $V_FLAG -ge 1 ]]; then
+	echo "$0: debug[1]: arguments parsed, -N given, exit 0" 1>&2
+    fi
+    exit 0
+fi
+
+##########################
+# HTML pre-0 phase setup #
+##########################
+
+# create a temporary sed script
+#
+TMP_SED_SCRIPT=".$NAME.$$.sed"
+if [[ $V_FLAG -ge 3 ]]; then
+    echo  "$0: debug[3]: temporary sed script: $TMP_SED_SCRIPT" 1>&2
+fi
+if [[ -z $NOOP ]]; then
+
+    # form the temp file
+    #
+    trap 'rm -f $TMP_SED_SCRIPT; exit' 0 1 2 3 15
+    rm -f "$TMP_SED_SCRIPT"
+    if [[ -e $TMP_SED_SCRIPT ]]; then
+	echo "$0: ERROR: cannot remove temporary sed script: $TMP_SED_SCRIPT" 1>&2
+	exit 27
+    fi
+    :> "$TMP_SED_SCRIPT"
+    if [[ ! -e $TMP_SED_SCRIPT ]]; then
+	echo "$0: ERROR: cannot create temporary sed script: $TMP_SED_SCRIPT" 1>&2
+	exit 28
+    fi
+
+    # load the sed script with sed commands from any "-s token=value"
+    #
+    for n in "${!TOKEN[@]}"; do
+	echo "s;%%$n%%;${TOKEN[$n]};g" >> "$TMP_SED_SCRIPT"
+    done
+    if [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: temporary sed script starts below: $TMP_SED_SCRIPT" 1>&2
+	echo "$TMP_SED_SCRIPT" 1>&2
+	echo "$0: debug[3]: temporary sed script ends above: $TMP_SED_SCRIPT" 1>&2
+    fi
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: because of -n, temporary sed script is not formed: $TMP_SED_SCRIPT" 1>&2
+    echo "$0: debug[3]: the temporary sed script that would have been written starts below: $TMP_SED_SCRIPT" 1>&2
+    for n in "${!TOKEN[@]}"; do
+	echo "s;%%$n%%;${TOKEN[$n]};g" 1>&2
+    done
+    echo "$0: debug[3]: the temporary sed script that would have been written ends above: $TMP_SED_SCRIPT" 1>&2
+fi
+
+# create a temporary HTML phase file
+#
+# NOTE: This file, when we are finished building it, will be come the final index.html file.
+#
+TMP_PHASE=".$NAME.$$.html-phase.html"
+if [[ $V_FLAG -ge 3 ]]; then
+    echo  "$0: debug[3]: temporary HTML file: $TMP_PHASE" 1>&2
+fi
+if [[ -z $NOOP ]]; then
+
+    # form the temp file
+    #
+    trap 'rm -f $TMP_SED_SCRIPT $TMP_PHASE; exit' 0 1 2 3 15
+    rm -f "$TMP_PHASE"
+    if [[ -e $TMP_PHASE ]]; then
+	echo "$0: ERROR: cannot remove temporary HTML file: $TMP_PHASE" 1>&2
+	exit 27
+    fi
+    :> "$TMP_PHASE"
+    if [[ ! -e $TMP_PHASE ]]; then
+	echo "$0: ERROR: cannot create temporary HTML file: $TMP_PHASE" 1>&2
+	exit 28
+    fi
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: because of -n, temporary HTML file is not formed: $TMP_PHASE" 1>&2
+fi
+
+# create a temporary index HTML file
+#
+# NOTE: This file, when we are finished building it, will be come the final index.html file.
+#
+TMP_INDEX_HTML=".$NAME.$$.index.html"
+if [[ $V_FLAG -ge 3 ]]; then
+    echo  "$0: debug[3]: temporary index HTML file: $TMP_INDEX_HTML" 1>&2
+fi
+if [[ -z $NOOP ]]; then
+
+    # form the temp file
+    #
+    trap 'rm -f $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML; exit' 0 1 2 3 15
+    rm -f "$TMP_INDEX_HTML"
+    if [[ -e $TMP_INDEX_HTML ]]; then
+	echo "$0: ERROR: cannot remove temporary index HTML file: $TMP_INDEX_HTML" 1>&2
+	exit 29
+    fi
+    :> "$TMP_INDEX_HTML"
+    if [[ ! -e $TMP_INDEX_HTML ]]; then
+
+	exit 30
+    fi
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: because of -n, temporary index HTML file is not formed: $TMP_INDEX_HTML" 1>&2
+fi
+
+#######################################
+# HTML phase 0: inc/top.__name__.html #
+#######################################
+
+# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+#
+export CUR_PHASE_NUM=0
+export CUR_PHASE_NAME="top"
+export BASE_EXIT_CODE=40	# possible: exit 40 or exit 41 or exit 42 or exit 43 or exit 44
+#
+append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: append_html_phase" \
+	 "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+	 "error code: $status" 1>&2
+    exit "$status"
+fi
+
+# Special output to indicate which tool was used
+#
+if [[ -z $NOOP ]]; then
+    echo "<!-- This file was formed by the tool: $NAME -->" >> "$TMP_INDEX_HTML"
+fi
+
+########################################
+# HTML phase 1: inc/head.__name__.html #
+########################################
+
+# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+#
+CUR_PHASE_NUM=1
+CUR_PHASE_NAME="head"
+BASE_EXIT_CODE=45	# possible: exit 45 or exit 46 or exit 47 or exit 48 or exit 49
+#
+append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: append_html_phase" \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+	 "error code: $status" 1>&2
+    exit "$status"
+fi
+
+########################################
+# HTML phase 2: inc/body.__name__.html #
+########################################
+
+# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+#
+CUR_PHASE_NUM=2
+CUR_PHASE_NAME="body"
+BASE_EXIT_CODE=50	# possible: exit 50 or exit 51 or exit 52 or exit 53 or exit 54
+#
+append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: append_html_phase" \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+	 "error code: $status" 1>&2
+    exit "$status"
+fi
+
+##########################################
+# HTML phase 3: inc/header.__name__.html #
+##########################################
+
+# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+#
+CUR_PHASE_NUM=3
+CUR_PHASE_NAME="header"
+BASE_EXIT_CODE=55	# possible: exit 55 or exit 56 or exit 57 or exit 58 or exit 59
+#
+append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: append_html_phase" \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+	 "error code: $status" 1>&2
+    exit "$status"
+fi
+
+##########################################
+# HTML phase 4: inc/topnav.__name__.html #
+##########################################
+
+# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+#
+CUR_PHASE_NUM=4
+CUR_PHASE_NAME="topnav"
+BASE_EXIT_CODE=60	# possible: exit 60 or exit 61 or exit 62 or exit 63 or exit 64
+#
+append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: append_html_phase" \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+	 "error code: $status" 1>&2
+    exit "$status"
+fi
+
+#############################################
+# HTML phase 5: inc/begin-row.__name__.html #
+#############################################
+
+# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+#
+CUR_PHASE_NUM=5
+CUR_PHASE_NAME="begin-row"
+BASE_EXIT_CODE=65	# possible: exit 65 or exit 66 or exit 67 or exit 68 or exit 69
+#
+append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: append_html_phase" \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+	 "error code: $status" 1>&2
+    exit "$status"
+fi
+
+####################################################
+# HTML phase 6: inc/begin-leftcolumn.__name__.html #
+####################################################
+
+# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+#
+CUR_PHASE_NUM=6
+CUR_PHASE_NAME="begin-leftcolumn"
+BASE_EXIT_CODE=70	# possible: exit 70 or exit 71 or exit 72 or exit 73 or exit 74
+#
+append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: append_html_phase" \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+	 "error code: $status" 1>&2
+    exit "$status"
+fi
+
+###########################################
+# HTML phase 7: inc/sidenav.__name__.html #
+###########################################
+
+# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+#
+CUR_PHASE_NUM=7
+CUR_PHASE_NAME="sidenav"
+BASE_EXIT_CODE=75	# possible: exit 75 or exit 76 or exit 77 or exit 78 or exit 79
+#
+append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: append_html_phase" \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+	 "error code: $status" 1>&2
+    exit "$status"
+fi
+
+##################################################
+# HTML phase 8: inc/end-leftcolumn.__name__.html #
+##################################################
+
+# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+#
+CUR_PHASE_NUM=8
+CUR_PHASE_NAME="end-leftcolumn"
+BASE_EXIT_CODE=80	# possible: exit 80 or exit 81 or exit 82 or exit 83 or exit 84
+#
+append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: append_html_phase" \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+	 "error code: $status" 1>&2
+    exit "$status"
+fi
+
+#####################################################
+# HTML phase 9: inc/begin-rightcolumn.__name__.html #
+#####################################################
+
+# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+#
+CUR_PHASE_NUM=9
+CUR_PHASE_NAME="begin-rightcolumn"
+BASE_EXIT_CODE=85	# possible: exit 85 or exit 86 or exit 87 or exit 88 or exit 89
+#
+append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: append_html_phase" \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+	 "error code: $status" 1>&2
+    exit "$status"
+fi
+
+###################################################
+# HTML phase 10: inc/before-content.__name__.html #
+###################################################
+
+# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+#
+CUR_PHASE_NUM=10
+CUR_PHASE_NAME="before-content"
+BASE_EXIT_CODE=90	# possible: exit 90 or exit 91 or exit 92 or exit 93 or exit 94
+#
+append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: append_html_phase" \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+	 "error code: $status" 1>&2
+    exit "$status"
+fi
+
+##############################
+# HTML phase 20: before tool #
+##############################
+
+# XXX - add code for before tool here - XXX
+
+######################################
+# HTML phase 21: pandoc wrapper tool #
+######################################
+
+# XXX - add code for pandoc wrapper tool here - XXX
+
+#############################
+# HTML phase 22: after tool #
+#############################
+
+# XXX - add code for after tool here - XXX
+
+##################################################
+# HTML phase 30: inc/after-content.__name__.html #
+##################################################
+
+# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+#
+CUR_PHASE_NUM=30
+CUR_PHASE_NAME="after-content"
+BASE_EXIT_CODE=110	# possible: exit 110 or exit 111 or exit 112 or exit 113 or exit 114
+#
+append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: append_html_phase" \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+	 "error code: $status" 1>&2
+    exit "$status"
+fi
+
+####################################################
+# HTML phase 31: inc/end-rightcolumn.__name__.html #
+####################################################
+
+# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+#
+CUR_PHASE_NUM=31
+CUR_PHASE_NAME="end-rightcolumn"
+BASE_EXIT_CODE=115	# possible: exit 115 or exit 116 or exit 117 or exit 118 or exit 119
+#
+append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: append_html_phase" \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+	 "error code: $status" 1>&2
+    exit "$status"
+fi
+
+############################################
+# HTML phase 32: inc/end-row.__name__.html #
+############################################
+
+# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+#
+CUR_PHASE_NUM=32
+CUR_PHASE_NAME="end-row"
+BASE_EXIT_CODE=120	# possible: exit 120 or exit 121 or exit 122 or exit 123 or exit 124
+#
+append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: append_html_phase" \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+	 "error code: $status" 1>&2
+    exit "$status"
+fi
+
+###########################################
+# HTML phase 33: inc/footer.__name__.html #
+###########################################
+
+# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+#
+CUR_PHASE_NUM=33
+CUR_PHASE_NAME="footer"
+BASE_EXIT_CODE=125	# possible: exit 125 or exit 126 or exit 127 or exit 128 or exit 129
+#
+append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: append_html_phase" \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+	 "error code: $status" 1>&2
+    exit "$status"
+fi
+
+###########################################
+# HTML phase 34: inc/bottom.__name__.html #
+###########################################
+
+# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+#
+CUR_PHASE_NUM=34
+CUR_PHASE_NAME="bottom"
+BASE_EXIT_CODE=130	# possible: exit 130 or exit 131 or exit 132 or exit 133 or exit 134
+#
+append_html_phase "$CUR_PHASE_NUM" "$CUR_PHASE_NAME" "$BASE_EXIT_CODE" "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
+status="$?"
+if [[ $status -ne 0 ]]; then
+    echo "$0: ERROR: append_html_phase" \
+         "$CUR_PHASE_NUM $CUR_PHASE_NAME $BASE_EXIT_CODE $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML," \
+	 "error code: $status" 1>&2
+    exit "$status"
+fi
+
+################################
+# finalize the index.html file #
+################################
+
+# sanity check - temporary index HTML file must be a readable file
+#
+if [[ -z $NOOP ]]; then
+    if [[ ! -e $TMP_INDEX_HTML ]]; then
+	echo "$0: ERROR: after HTML phase $CUR_PHASE_NUM ($CUR_PHASE_NAME)," \
+	     "temporary index HTML file is missing: $TMP_INDEX_HTML" 1>&2
+	exit 135
+    fi
+    if [[ ! -f $TMP_INDEX_HTML ]]; then
+	echo "$0: ERROR: after HTML phase $CUR_PHASE_NUM ($CUR_PHASE_NAME)," \
+	     "temporary index HTML file is not a file: $TMP_INDEX_HTML" 1>&2
+	exit 136
+    fi
+    if [[ ! -r $TMP_INDEX_HTML ]]; then
+	echo "$0: ERROR: after HTML phase $CUR_PHASE_NUM ($CUR_PHASE_NAME)," \
+	     "temporary index HTML file is not a readable file: $TMP_INDEX_HTML" 1>&2
+	exit 137
+    fi
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: because of -n, disabled readable file check of: $TMP_PHASE_FILE 2>/dev/null" 1>&2
+fi
+
+# move temporary index HTML in place
+#
+if [[ -z $NOOP ]]; then
+    mv -f -- "$TMP_INDEX_HTML" "$INDEX_PATH"
+    status="$?"
+    if [[ status -ne 0 ]]; then
+	echo "$0: ERROR: mv -f -- $TMP_INDEX_HTML $INDEX_PATH filed, error code: $status" 1>&2
+	exit 138
+    fi
+    if [[ ! -s $INDEX_PATH ]]; then
+	echo "$0: ERROR: not a non-empty index HTML file: $INDEX_PATH" 1>&2
+	exit 139
+    fi
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: because of -n, disabled: mv -f -- $TMP_INDEX_HTML $INDEX_PATH" 1>&2
+fi
+
+# file cleanup
+#
+if [[ -z $NOOP ]]; then
+    rm -f -- "$TMP_SED_SCRIPT" "$TMP_PHASE" "$TMP_INDEX_HTML"
+elif [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: because of -n, disabled: rm -f -- $TMP_SED_SCRIPT $TMP_PHASE $TMP_INDEX_HTML" 1>&2
+fi
+
+# All Done!!! -- Jessica Noll, Age 2
+#
+if [[ -z $NOOP ]]; then
+    if [[ $V_FLAG -ge 1 ]]; then
+	echo "$0: debug[1]: All Done!!! -- Jessica Noll, Age 2, formed index HTML file: $INDEX_PATH" 1>&2
+    fi
+elif [[ $V_FLAG -ge 1 ]]; then
+    echo "$0: debug[3]: because of -n, skipped forming index HTML file: $INDEX_PATH" 1>&2
+fi
 exit 0
