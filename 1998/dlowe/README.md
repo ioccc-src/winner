@@ -112,18 +112,18 @@ else
 fi
 ```
 
-could be used to pootify web pages. It was noticed in 2023, however, that
-`lynx(1)` does not work well and `links(1)` does not have the same security
-protections that `lynx(1)` does. Thus it might be unwise to use as a CGI script.
+can be used to pootify web pages. This has been added as
+[pootify.cgi.sh](pootify.cgi.sh) which forbids `file://` based URLs and which
+uses `lynx(1)` with the option referred to above. This will not, of course,
+render it as html but rather show the modified html. Nevertheless, this has
+**NOT** been tested as a CGI script with a webserver to display a pootified web
+page.
 
-The [pootify.sh](pootify.sh) script has been added which is a modification to
-the above which can be used to render html files locally with the added bonus
-that one can use `file://` URLs. If one uses it as a CGI script (whether
-modifying it to use `lynx(1)` or not) they might want to uncomment the check in
-the script for `file://` based URLs. It has not been tested as a CGI script with
-lynx(1) so it's maybe possible that it would work this way.
-
-You can use this script, however, to download and generate html files that you
+The [pootify.sh](pootify.sh) script has also been added which is a modification
+to the above script which can be used to render html files locally with the
+added bonus that one can use `file://` URLs. If one wants a CGI script they
+should use the above one instead. You can use the script
+[pootify.sh](pootify.sh), however, to download and generate html files that you
 can look at locally in a browser or pipe through `less(1)`. For instance:
 
 ```sh
@@ -133,12 +133,8 @@ can look at locally in a browser or pipe through `less(1)`. For instance:
 ```
 
 where the first one would show the text as rendered but without links, images
-etc. and the second one would write the html to ms.html so that you could open
+etc. and the second one would write the html to `ms.html` so that you could open
 it in a browser.
-
-If one does use it as a CGI script you'll want to check out
-[pootify.cgi.sh](pootify.cgi.sh) which forbids `file://` based URLs and which
-uses `lynx(1)` with the option referred to above.
 
 For an old example of it working as a CGI script see:
 

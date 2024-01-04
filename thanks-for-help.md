@@ -2082,8 +2082,7 @@ to be `int` (in both versions).
 Cody added the scripts [try.sh](/1998/dlowe/try.sh),
 [try.alt.sh](/1998/dlowe/try.alt.sh), [pootify.sh](/1998/dlowe/pootify.sh) and
 [pootify.cgi.sh](/1998/dlowe/pootify.cgi.sh) for a fun example use of the
-program, a local pootifier of web pages and a CGI pootifier. It should be noted
-that the CGI version might have an issue with modern systems; see [historical
+program, a local pootifier of web pages and a CGI pootifier. See [historical
 remarks](/1998/dlowe/README.md#historical-remarks) for more details on the
 pootify scripts.
 
