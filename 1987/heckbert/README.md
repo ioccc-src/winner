@@ -20,15 +20,7 @@ where col is the number of columns to fold at and file is the file to fold.
 ### Try:
 
 ```sh
-./heckbert 40 < heckbert.c > ph.c; make ph
-./ph 21 < heckbert.c > bar.c; make bar
-
-```
-
-Ask yourself what happens to `foo.md` if you try:
-
-```sh
-./ph 40 < README.md > foo.md
+./try.sh
 ```
 
 
