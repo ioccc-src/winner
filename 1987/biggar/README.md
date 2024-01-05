@@ -9,13 +9,15 @@ make all
 
 ```sh
 some_command | ./biggar | od -c
+
+./biggar < file | od -c
 ```
 
 
 ### Try:
 
 ```sh
-./biggar < biggar.c | od -c
+./try.sh
 ```
 
 

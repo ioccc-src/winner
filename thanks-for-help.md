@@ -500,6 +500,11 @@ There might have been other changes as well.
 # <a name="1987"></a>1987
 
 
+## <a name="1987_biggar"></a>[1987/biggar](/1987/biggar/biggar.c) ([README.md](/1987/biggar/README.md))
+
+[Cody](#cody) added the [try.sh](1987/biggar/try.sh) script.
+
+
 ## <a name="1987_heckbert"></a>[1987/heckbert](/1987/heckbert/heckbert.c) ([README.md](/1987/heckbert/README.md))
 
 [Cody](#cody) made this look more like the original entry by restoring the `#define` of
