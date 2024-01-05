@@ -510,6 +510,9 @@ There might have been other changes as well.
 [Cody](#cody) made this look more like the original entry by restoring the `#define` of
 `define`. It's not used but it now looks closer to the original.
 
+Cody also added the [try.sh](1987/heckbert/try.sh) script which shows how the
+program works but also how the folded code can recreate the original.
+
 Also because `index(3)` is deprecated and in some systems requires the inclusion
 of `strings.h` and because it's identical in use to `strchr(3)` (and we noted
 that for System V we had to do this) Cody added to the Makefile
