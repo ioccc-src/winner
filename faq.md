@@ -11,6 +11,7 @@
 - [1.0  - How did the IOCCC get started?](#faq1_0)
 - [1.1  - Why are some years missing IOCCC winners?](#faq1_1)
 - [1.2  - What is the history of the IOCCC web site?](#faq1_2)
+- [1.3  - How has the IOCCC size limit rule changed over the years?](#faq1_3)
 
 ## Section  2 - [IOCCC Judging process](#faq2)
 - [2.0  - How many entries do the judges receive for a given IOCCC?](#faq2_0)
@@ -77,7 +78,7 @@ other inconsistencies with the original entry?](#faq4_3)
 ## <a name="faq0"></a>Section 0: Submitting entries to a new IOCCC
 
 
-### <a name="faq0_0"></a><a name="submif"></a>FAQ 0.0: How may I submit to the IOCCC?
+### <a name="faq0_0"></a><a name="submit"></a>FAQ 0.0: How may I submit to the IOCCC?
 
 To submit your code to the IOCCC, you **MUST** follow these steps:
 
@@ -522,6 +523,58 @@ to the [official IOCCC web site](https://www.ioccc.org).
 
 **XXX**: Fill in the date when the pull request happens including the
 size of the pull request and/or number of changes that went into the pull request.
+
+
+### <a name="faq1_3"></a><a name="size_rule"></a>FAQ 1.How has the IOCCC size limit rule changed over the years?
+
+The IOCCC size rule has changed over the years.
+
+In later years, Rule 2 was split into two parts.
+Simplified the two parts of Rule 2 were:
+
+* Rule 2a: Overall size limit of "prog.c"
+* Rule 2b: Size of "prog.c", w/o counting certain types of characters
+
+#### IOCCC 1984-1985
+
+NOTE: The size rule was actually rule 1.
+
+* Rule 2a: 512
+* Rule 2b: n/a
+
+#### IOCCC 1986-1987
+
+NOTE: The size rule was actually rule 1.
+
+* Rule 2a: 1024
+* Rule 2b: n/a
+
+#### IOCCC 1988-1991
+
+NOTE: The size rule was actually rule 1.
+
+* Rule 2a: 1536
+* Rule 2b: n/a
+
+### IOCCC 1992-2000
+
+* Rule 2a: 3217
+* Rule 2b: 1536
+
+### IOCCC: 2001-2012
+
+* Rule 2a: 4096
+* Rule 2b: 2048
+
+### IOCCC 2013-2020
+
+* Rule 2a: 4096
+* Rule 2b: 2053
+
+### IOCCC 2024-date
+
+* Rule 2a: 4993
+* Rule 2b: 2503
 
 
 ## <a name="faq2"></a>Section 2: IOCCC Judging process
