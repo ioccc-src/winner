@@ -34,3 +34,4 @@ echo 1>&2
 read -r -n 1 -p "Press any key to run: ./sicherman < sicherman.c | ./sicherman | diff -s - sicherman.c: "
 echo 1>&2
 ./sicherman < sicherman.c | ./sicherman | diff -s - sicherman.c
+echo "Now explain any differences." 1>&2
