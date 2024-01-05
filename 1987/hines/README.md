@@ -15,7 +15,7 @@ make all
 ### Try:
 
 ```sh
-./hines hines.c
+./try.sh
 ```
 
 

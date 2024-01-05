@@ -519,6 +519,14 @@ that for System V we had to do this) Cody added to the Makefile
 `-Dindex=strchr`.
 
 
+## <a name="1987_hines"></a>[1987/hines](/1987/hines/hines.c) ([README.md](/1987/hines/README.md))
+
+[Cody](#cody) added the [try.sh](1987/hines/try.sh) script and the C file
+[goto.c](1987/hines/goto.c) and the text file [goto.txt](1987/hines/goto.txt)
+for demonstration purposes. Notice that the program is case sensitive which
+running the program on the text file demonstrates.
+
+
 ## <a name="1987_lievaart"></a>[1987/lievaart](/1987/lievaart/lievaart.c) ([README.md](/1987/lievaart/README.md))
 
 [Cody](#cody) added back the documented checks for invalid input which no longer worked

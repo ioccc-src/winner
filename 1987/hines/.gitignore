@@ -1,6 +1,7 @@
 #
 # sort with: sort -d -u
 *.dSYM
+goto
 hines
 hines.alt
 hines.orig
