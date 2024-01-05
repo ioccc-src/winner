@@ -525,7 +525,7 @@ to the [official IOCCC web site](https://www.ioccc.org).
 size of the pull request and/or number of changes that went into the pull request.
 
 
-### <a name="faq1_3"></a><a name="size_rule"></a>FAQ 1.How has the IOCCC size limit rule changed over the years?
+### <a name="faq1_3"></a><a name="size_rule"></a>FAQ 1.3 How has the IOCCC size limit rule changed over the years?
 
 The IOCCC size rule has changed over the years.
 
