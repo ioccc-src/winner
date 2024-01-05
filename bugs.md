@@ -2518,14 +2518,10 @@ be called a bug :-)
 You must type in caps (except in strings) and this program is indeed
 case-sensitive.
 
-
-### STATUS: missing files - please provide them
-
-A file is missing from the archive linked to by the author so we have not been
-able to add it. Cody tried a few of the other zip files at the website linked to
-but no luck. Do you have the proper file? The file is `IMPORT.COM`. If you do
-please provide a link or make a pull request, adding it to the repo, after
-testing it to make sure it works in the program.
+[Oscar Toledo G.](/winners.html#Oscar_Toledo) went back over the program
+and modified the fread/fwrite section to use the variable FILE *e instead of
+int y, making it to work on x86_64 Mac. Also, he added a note to clarify from
+where appears the `IMPORT.COM` and `HALT.COM` files.
 
 
 # 2007
