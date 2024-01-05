@@ -529,8 +529,7 @@ size of the pull request and/or number of changes that went into the pull reques
 
 The IOCCC size rule has changed over the years.
 
-In later years, Rule 2 was split into two parts.
-Simplified the two parts of Rule 2 were:
+In later years, Rule 2 was split into two parts.  These two parts of Rule 2 are:
 
 * Rule 2a: Overall size limit of "prog.c"
 * Rule 2b: Size of "prog.c", w/o counting certain types of characters
