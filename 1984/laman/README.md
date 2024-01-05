@@ -18,6 +18,8 @@ The program accepts ONE POSITIVE number.  Seeing is believing, so try things
 like:
 
 ```sh
+./try.sh
+
 ./laman 4
 ./laman 9
 ./laman 16
