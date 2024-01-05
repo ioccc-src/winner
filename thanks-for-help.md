@@ -121,9 +121,10 @@ cd 1984/decot ; make diff_orig_prog
 
 ## <a name="1984_laman"></a>[1984/laman](/1984/laman/laman.c) ([README.md](/1984/laman/README.md]))
 
-[Cody](#cody) fixed this to not crash when no arg is specified. Note that if the arg is
-not a positive number it will not do anything useful or anything at all.
+[Cody](#cody) added the [try.sh](1984/laman/try.sh) script.
 
+Cody also fixed this to not crash when no arg is specified. Note that if the arg
+is not a positive number it will not do anything useful or anything at all.
 This was fixed on 30 October 2023 after the bug status was changed from INABIAF
 (it's not a bug it's a feature) to bug.
 
