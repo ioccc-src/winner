@@ -838,8 +838,8 @@ function append_html_phase
 
     # report progress if verbose
     #
-    if [[ $V_FLAG -ge 5 ]]; then
-	echo "$0: debug[5]: successfully completed HTML phase $PHASE_NUMBER ($NAME_OF_PHASE)" 1>&2
+    if [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: successfully completed HTML phase $PHASE_NUMBER ($NAME_OF_PHASE)" 1>&2
     fi
     return 0
 }
@@ -1779,19 +1779,121 @@ fi
 # HTML phase 20: before tool #
 ##############################
 
-# XXX - add code for before tool here - XXX
+# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+#
+CUR_PHASE_NUM=20
+CUR_PHASE_NAME="before-tool"
+#
+if [[ -n $BEFORE_TOOL ]]; then
+    if [[ -z $NOOP ]]; then
+
+	# append before tool output
+	#
+	if [[ $V_FLAG -ge 5 ]]; then
+	    echo "$0: debug[6]: about to execute:"\
+		 "$BEFORE_TOOL $BEFORE_TOOL_OPTSTR $YEAR_DIR/$WINNER_DIR >> $TMP_INDEX_HTML" 1>&2
+	fi
+	# SC2086 (info): Double quote to prevent globbing and word splitting.
+	# shellcheck disable=SC2086
+	eval "$BEFORE_TOOL" $BEFORE_TOOL_OPTSTR "$YEAR_DIR/$WINNER_DIR" >> "$TMP_INDEX_HTML"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: before tool:" \
+		 "$BEFORE_TOOL $BEFORE_TOOL_OPTSTR $YEAR_DIR/$WINNER_DIR failed," \
+		 "error code: $status" 1>&2
+	    exit 95
+	fi
+
+    elif [[ $V_FLAG -ge 5 ]]; then
+	echo "$0: debug[5]: because of -n, disabled use of before tool: $BEFORE_TOOL" 1>&2
+    fi
+elif [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5]: because of -b ., use of before tool was disabled" 1>&2
+fi
+#
+if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: successfully completed HTML phase $CUR_PHASE_NUM ($CUR_PHASE_NAME)" 1>&2
+fi
 
 ######################################
 # HTML phase 21: pandoc wrapper tool #
 ######################################
 
-# XXX - add code for pandoc wrapper tool here - XXX
+# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+#
+CUR_PHASE_NUM=21
+CUR_PHASE_NAME="pandoc-wrapper-tool"
+#
+if [[ -n $PANDOC_WRAPPER_TOOL ]]; then
+    if [[ -z $NOOP ]]; then
+
+	# append pandoc wrapper tool output
+	#
+	if [[ $V_FLAG -ge 5 ]]; then
+	    echo "$0: debug[6]: about to execute:"\
+		 "$PANDOC_WRAPPER_TOOL $PANDOC_WRAPPER_TOOL_OPTSTR $YEAR_DIR/$WINNER_DIR >> $TMP_INDEX_HTML" 1>&2
+	fi
+	# SC2086 (info): Double quote to prevent globbing and word splitting.
+	# shellcheck disable=SC2086
+	eval "$PANDOC_WRAPPER_TOOL" $PANDOC_WRAPPER_TOOL_OPTSTR "$YEAR_DIR/$WINNER_DIR" >> "$TMP_INDEX_HTML"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: pandoc wrapper tool:" \
+		 "$PANDOC_WRAPPER_TOOL $PANDOC_WRAPPER_TOOL_OPTSTR $YEAR_DIR/$WINNER_DIR failed," \
+	         "error code: $status" 1>&2
+	    exit 100
+	fi
+
+    elif [[ $V_FLAG -ge 5 ]]; then
+	echo "$0: debug[5]: because of -n, disabled use of pandoc wrapper tool: $PANDOC_WRAPPER_TOOL" 1>&2
+    fi
+elif [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5]: because of -b ., use of pandoc wrapper tool was disabled" 1>&2
+fi
+#
+if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: successfully completed HTML phase $CUR_PHASE_NUM ($CUR_PHASE_NAME)" 1>&2
+fi
 
 #############################
 # HTML phase 22: after tool #
 #############################
 
-# XXX - add code for after tool here - XXX
+# NOTE: See inc/md2html.cfg for details on HTML phase numbers, HTML phase names, and HTML phase files
+#
+CUR_PHASE_NUM=22
+CUR_PHASE_NAME="after-tool"
+#
+if [[ -n $AFTER_TOOL ]]; then
+    if [[ -z $NOOP ]]; then
+
+	# append after tool output
+	#
+	if [[ $V_FLAG -ge 5 ]]; then
+	    echo "$0: debug[6]: about to execute:"\
+		 "$AFTER_TOOL $AFTER_TOOL_OPTSTR $YEAR_DIR/$WINNER_DIR >> $TMP_INDEX_HTML" 1>&2
+	fi
+	# SC2086 (info): Double quote to prevent globbing and word splitting.
+	# shellcheck disable=SC2086
+	eval "$AFTER_TOOL" $AFTER_TOOL_OPTSTR "$YEAR_DIR/$WINNER_DIR" >> "$TMP_INDEX_HTML"
+	status="$?"
+	if [[ $status -ne 0 ]]; then
+	    echo "$0: ERROR: after tool:" \
+		 "$AFTER_TOOL $AFTER_TOOL_OPTSTR $YEAR_DIR/$WINNER_DIR failed," \
+		 "error code: $status" 1>&2
+	    exit 105
+	fi
+
+    elif [[ $V_FLAG -ge 5 ]]; then
+	echo "$0: debug[5]: because of -n, disabled use of after tool: $AFTER_TOOL" 1>&2
+    fi
+elif [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5]: because of -b ., use of after tool was disabled" 1>&2
+fi
+#
+if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: successfully completed HTML phase $CUR_PHASE_NUM ($CUR_PHASE_NAME)" 1>&2
+fi
 
 ##################################################
 # HTML phase 30: inc/after-content.__name__.html #
