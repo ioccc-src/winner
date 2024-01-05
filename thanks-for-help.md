@@ -576,6 +576,8 @@ size constraints of the contest).
 
 [Cody](#cody) made this use `fgets(3)`.
 
+Cody also added the [try.sh](1987/wall/try.sh) script.
+
 
 ## <a name="1987_westley"></a>[1987/westley](/1987/westley/westley.c) ([README.md](/1987/westley/README.md]))
 

@@ -19,22 +19,11 @@ make all
 ### Try:
 
 ```sh
-./wall | bc | ./wall
+./try.sh
 ```
 
-and input the following:
-
-```
-x*x
-c^2
-m*m
-
-# can you figure out what this does?
-500
-
-```
-
-You may also wish to try:
+You may of course run the commands manually and enter text as you wish. For
+instance you might try one or both of:
 
 ```sh
 ./wall | bc
@@ -49,6 +38,9 @@ x*x
 2^x
 quit # for the cat version
 ```
+
+which the script does through a pipeline except that here you can enter more
+text if you wish, line by line.
 
 
 ## Judges' remarks:
