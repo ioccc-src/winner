@@ -3273,6 +3273,13 @@ Cody also added the (untested) alt code that is based on the author's remarks to
 port this to systems that have the non-standard `kbhit()` and `getch()` (not the
 one from curses) which is typically (always?) in `conio.h`.
 
+The author, [Oscar Toledo G.](/winners.html#Oscar_Toledo), later went back over
+the program and modified the `fread(3)`/`fwrite(3)` section to use the variable
+`FILE *e` (that Cody changed) instead of `int y`, making it to work on x86_64
+(perhaps Cody's fix was for arm64 only?). Also, he added a note to clarify from
+where appears the `IMPORT.COM` and `HALT.COM` files.
+
+
 
 ## <a name="2006_toledo3"></a>[2006/toledo3](/2006/toledo3/toledo3.c) ([README.md](/2006/toledo3/README.md]))
 

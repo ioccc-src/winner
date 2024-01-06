@@ -2512,16 +2512,11 @@ by [Yusuke Endoh](/winners.html#Yusuke_Endoh) and Cody's. Nevertheless there are
 two features that are not bugs.
 
 By design this program is supposed to crash on termination. This actually no
-longer does seems to happen but we don't need this to be added even if it might
+longer seems to happen but we don't need this to be added even if it might
 be called a bug :-)
 
 You must type in caps (except in strings) and this program is indeed
 case-sensitive.
-
-[Oscar Toledo G.](/winners.html#Oscar_Toledo) went back over the program
-and modified the fread/fwrite section to use the variable FILE *e instead of
-int y, making it to work on x86_64 Mac. Also, he added a note to clarify from
-where appears the `IMPORT.COM` and `HALT.COM` files.
 
 
 # 2007
