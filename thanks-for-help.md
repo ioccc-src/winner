@@ -675,6 +675,8 @@ macro in place it's just no longer used.
 See the README.md file for details on the original code, provided as an alt
 version in case you have an older compiler or wish to try `-traditional-cpp`.
 
+Cody also provided the [try.sh](/1988/dale/try.sh) script.
+
 
 ## <a name="1988_isaak"></a>[1988/isaak](/1988/isaak/isaak.c) ([README.md](/1988/isaak/README.md]))
 

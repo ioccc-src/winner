@@ -19,19 +19,20 @@ For more detailed information see [1988 dale in bugs.md](/bugs.md#1988-dale).
 ### Try:
 
 ```sh
-./dale hello world
-./dale these files are in this directory: *
+./try.sh
 ```
 
-What do the following commands do and why do they do it? Why do they differ in
-format from the above command? Finally how can you get the more likely desired
-behaviour?
-
+Observe that three of the commands in the script are:
 
 ```sh
+./dale these files are in this directory: *
 ./dale $(printf "the following files exist in this directory:\n%s\n" *)
 ./dale "$(printf "the following files exist in this directory:\n%s\n" *)"
 ```
+
+As the script asks what do the last two do and why do they do it? Why do they
+differ in format from the first command? Finally how can you get the more likely
+desired behaviour?
 
 
 ## Judges' remarks:
