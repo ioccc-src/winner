@@ -1793,7 +1793,7 @@ section may offer you important fixing clues.
 ### We welcome your help on fixing the IOCCC web site
 
 
-### <a name="faq5_1"></a>a name="report_bug"></a>FAQ 5.1: How do I report a bug in an IOCCC winner?
+### <a name="faq5_1"></a><a name="report_bug"></a>FAQ 5.1: How do I report a bug in an IOCCC winner?
 
 We do not 'maintain' the contest winners as such. The code is made available on an 'AS
 IS' basis. If you have a FIX for an entry, we suggest that you submit your fixes in a [GitHub pull
