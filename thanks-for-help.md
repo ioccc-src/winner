@@ -3628,6 +3628,8 @@ the source code defining `KB` to what the author suggested,
 `(kb=H(8),kbhit())&&(r[1190]=getch(),H(7))`. It need hardly be mentioned that
 this will not link in Unix systems (including macOS).
 
+Clang required a `-Wno-` option as well.
+
 Finally Cody provided the [bios.asm](/2013/cable3/bios.asm) that the author
 referred to, found at the [GitHub repo for the
 entry](https://github.com/adriancable/8086tiny/tree/master), and the 'ready-made
