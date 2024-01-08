@@ -71,7 +71,7 @@ HEIGHT= 288
 # Defines that are needed to compile
 #
 CDEFINE= -DA=${FORWARD} -DB=${LEFT} -DC=${RIGHT} -DD=${BACKWARD} \
-	-DE=${FIRE} "-DQ=XFillRectangle(W,X,Y," -DM=${WIDTH} -DN=${HEIGHT}
+	-DE=${FIRE} "-DQ=XFillRectangle(W,X,Y,"
 
 # Include files that are needed to compile
 #
@@ -155,7 +155,7 @@ alt: data ${ALT_TARGET}
 	@${TRUE}
 
 ${PROG}.alt: ${PROG}.alt.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS}  -DM=${WIDTH} -DN=${HEIGHT} $< -o $@ ${LDFLAGS}
 
 # data files
 #
