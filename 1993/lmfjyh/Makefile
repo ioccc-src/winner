@@ -136,8 +136,9 @@ ${PROG}: ${PROG}.c
 	${CP} lmfjyh.c \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
 	${CC} ${CFLAGS} \
 	    \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c -o $@ ${LDFLAGS} || \
-	    ${RM} -f \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
+	   ${RM} -f \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
 	${RM} -f \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
+	${CC} ${CFLAGS} ${PROG}.alt.c -o $@ ${LDFLAGS}
 
 # alternative executable
 #

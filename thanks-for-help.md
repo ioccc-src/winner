@@ -1668,9 +1668,12 @@ files for functions.
 
 ## <a name="1993_lmfjyh"></a>[1993/lmfjyh](/1993/lmfjyh/lmfjyh.c) ([README.md](/1993/lmfjyh/README.md]))
 
-[Cody](#cody) added an [alternate version](/1993/lmfjyh/lmfjyh.alt.c) which does what the
-program did with gcc < 2.3.3. See the README.md file for details and for why
-this was made the alternate version, not the actual entry.
+[Cody](#cody) added an [alternate
+version](/1993/lmfjyh/README.md#alternate-code) which does what the program did
+with gcc < 2.3.3. See the README.md file for details and for why this was made
+the alternate version, not the actual entry. This alternate version will compile
+automatically in the very likely case (if you don't have gcc < 2.3.3) that the
+entry fails to compile.
 
 
 ## <a name="1993_plummer"></a>[1993/plummer](/1993/plummer/plummer.c) ([README.md](/1993/plummer/README.md]))

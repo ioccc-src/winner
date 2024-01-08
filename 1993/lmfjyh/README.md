@@ -22,6 +22,10 @@ alternate version for [those of
 us](https://www.collinsdictionary.com/dictionary/english/everyone) with gcc >=
 2.3.3. See [Alternate code](#alternate-code) section below for more details.
 
+However, there is an another version that will be compiled in case this fails.
+This should happen automatically. See [Alternate code](#alternate-code) below
+for more details on it.
+
 
 ### Bugs and (Mis)features:
 
@@ -47,9 +51,13 @@ If you have gcc < 2.3.3 (i.e. the entry can compile):
 
 This version does what the code did but in a way that will work with modern
 compilers. We'd like to say there's something special about it but there isn't.
+Nonetheless it will be compiled in case the original entry fails to compile
+(which will happen unless you have gcc < 2.3.3.
 
 
 ### Alternate build:
+
+Should you wish to build this version manually:
 
 ```sh
 make alt
@@ -59,7 +67,8 @@ make alt
 ### Alternate use:
 
 Use `lmfjyh.alt` as you would `lmfjyh` above. Note that other code could also be
-done with this bug; see the author's remarks for more details.
+done with the bug that the entry abuses but that would have to be manually
+programmed for this version; see the author's remarks for more details.
 
 
 ## Judges' remarks:
