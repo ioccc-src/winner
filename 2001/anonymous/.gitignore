@@ -2,11 +2,11 @@
 # sort with: sort -d -u
 anonymous
 anonymous.bed
-anonymous.bed.64
+anonymous.bed.alt
 anonymous.orig
 anonymous.ten
 anonymous.ten.32
-anonymous.ten.64
+anonymous.ten.alt
 *.dSYM
 indent
 indent.c
