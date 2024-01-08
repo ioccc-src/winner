@@ -4,6 +4,15 @@
 make
 ```
 
+The programs that this program is supposed to act on,
+[anonymous.ten.c](anonymous.ten.c) and [anonymous.bed.c](anonymous.bed.c),
+compiled with `make`, MUST be compiled as 32-bit ELF binaries. In the case that
+this fails these programs will be compiled as 64-bit binaries as alternate code,
+`anonymous.ten.alt` and `anonymous.bed.alt`, ELF or otherwise. However trying to
+use the entry on these files will fail. See [Alternate code](#alternate-code)
+below for information on how to compile these programs as 64-bit binaries (or
+whatever your system will compile them as).
+
 
 ### Bugs and (Mis)features:
 
@@ -32,19 +41,8 @@ For more detailed information see [2001 anonymous in bugs.md](/bugs.md#2001-anon
 ```
 
 NOTE: if the 32-bit version cannot be compiled the script will at least compile
-[anonymous.ten](anonymous.ten.c) as a 64-bit program and run it directly. If it
-can be compiled but it's not an ELF binary the program is likely to crash.
-
-For fun and so that there's another program that is a bit different (it uses a `char
-*[]` array for example) that this program will still work on:
-
-```sh
-make anonymous.bed # if able to compile as 32-bit (-m32) ELF binary
-./anonymous anonymous.bed
-
-make anonymous.bed.64 # if unable to compile as a 32-bit (-m32) ELF binary
-./anonymous.bed.64
-```
+[anonymous.ten](anonymous.ten.c) as a 64-bit program (or whatever your system is
+set to) and run it directly.
 
 What happens if the x86 program has already been modified by this program? The
 judges' remarks below might give you a hint!
@@ -53,20 +51,30 @@ What happens if you try it on another file like [anonymous.c](anonymous.c)? Can
 you recompile it okay? What if you run it on `anonymous` itself? Can you run the
 program successfully after it without recompiling?
 
-If you do not specify a 32-bit ELF binary as the arg of this program it will
-very likely crash or do something terribly wrong like slaughtering all the
+
+## Alternate code:
+
+In the case you you wish to manually compile the extra programs as 64-bit code
+you may do so. Using the entry on these binaries will very likely crash the
+program or do something terribly wrong like slaughtering all the
 [elves](https://www.glyphweb.com/arda/e/elves.html) of
 [Imladris](https://www.glyphweb.com/arda/i/imladris.php)! :-) so please don't do
 that :-(
 
-If the program cannot be run (for instance under macOS as an ELF file) then
-the program will fail to execute it and might not even touch it.
 
-These are supposed to happen.  As is written in the
-[The Jargon File](http://catb.org/jargon/html/F/feature.html):
+### Alternate build:
 
+```sh
+make alt
 ```
-That's not a bug, that's a feature.
+
+
+### Alternate use:
+
+```sh
+./anonymous.ten.alt
+
+./anonymous.bed.alt
 ```
 
 
@@ -81,7 +89,7 @@ modification might not be entirely correct for that reason though it does appear
 to be correct.
 
 It appears that the corruption happens only if the modification fails in the
-middle of doing so so that might be why it's not yet been observed.
+middle of doing so so that might be why it hasn't been observed.
 
 
 ## Judges' remarks:

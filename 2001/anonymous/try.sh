@@ -41,9 +41,14 @@ if [[ -f "$TARGET" ]]; then
     diff -s ten.txt ten.bak.txt
 else
     echo "cannot compile anonymous.ten.c as 32-bit, sorry."
-    echo "will run 64-bit version directly."
-    make anonymous.ten.64
-    sleep 3
-    echo "$ ./$TARGET.64"
-    ./"$TARGET".64
+    echo "will run alt versions directly."
+    make alt || exit 1
+    read -r -n 1 -p "Press any key to run: ./anonymous.ten.alt (space = next page, q = quit): "
+    echo 1>&2
+    ./anonymous.ten.alt | less -rEXF
+    echo 1>&2
+
+    read -r -n 1 -p "Press any key to run: ./anonymous.bed.alt (space = next page, q = quit): "
+    echo 1>&2
+    ./anonymous.bed.alt | less -rEXF
 fi

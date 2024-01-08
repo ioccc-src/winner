@@ -118,10 +118,10 @@ PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
 DATA=
-TARGET= ${PROG} ${PROG}.ten ${PROG}.ten.64 ${PROG}.bed ${PROG}.bed.64
+TARGET= ${PROG} ${PROG}.ten ${PROG}.ten.alt ${PROG}.bed ${PROG}.bed.alt
 #
-ALT_OBJ= ${PROG}.ten.64.o ${PROG}.bed.64.o
-ALT_TARGET= ${PROG}.ten.64 ${PROG}.bed.64
+ALT_OBJ= ${PROG}.ten.alt.o ${PROG}.bed.alt.o
+ALT_TARGET= ${PROG}.ten.alt ${PROG}.bed.alt
 
 
 #################
@@ -147,42 +147,56 @@ ${PROG}: ${PROG}.c
 ${PROG}.ten: ${PROG}.ten.c
 	@echo "WARNING: ${PROG}.ten.c must be compiled as a 32-bit ELF binary to use with"
 	@echo "the entry itself; this is because the program works on 32-bit ELF binaries."
-	@echo "If you cannot use -m32 this will NOT work!"
+	@echo "If you cannot use -m32 or it cannot compile for some other reason this will"
+	@echo "NOT work!"
 	@echo
-	@echo "If you want to use it where this is not possible e.g. with a Mac, say to"
-	@echo "use by itself, try:"
+	@echo "If you want to use this program where this is not possible e.g. with a Mac,"
+	@echo "say to use by itself, try:"
 	@echo
-	@echo "	    make anonymous.ten.64"
+	@echo "	    make anonymous.ten.alt"
 	@echo
-	@echo "but running ${PROG} on the resulting binary will crash."
+	@echo "but running ${PROG} on the resulting binary will crash. The build of"
+	@echo "anonymous.ten.alt is done automatically in case anonymous.ten fails to"
+	@echo "compile. Nevertheless again the entry will not work with it."
 	@echo
-	${CC} ${CFLAGS} -m32 $< -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS} -m32 $< -o $@ ${LDFLAGS} || ${MAKE} ${PROG}.ten.alt
 
-${PROG}.ten.64: ${PROG}.ten.c
-	@echo "WARNING: the file created by this rule will NOT work with the entry itself;"
-	@echo "this is because it works ONLY on 32-bit ELF binaries! This however at least"
-	@echo "lets you see the supplementary program in action."
+${PROG}.ten.alt: ${PROG}.ten.c
+	@echo
+	@echo "-=-=-=-="
+	@echo "WARNING: the file created by this rule, ${PROG}.ten.alt, will NOT work with"
+	@echo "the entry itself; this is because it works ONLY on 32-bit ELF binaries! This"
+	@echo "however at least lets you see the supplementary program in action:"
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	@echo "-=-=-=-="
+	@echo
 
 ${PROG}.bed: ${PROG}.bed.c
 	@echo "WARNING: ${PROG}.bed.c must be compiled as a 32-bit ELF binary to use with"
 	@echo "the entry itself; this is because the program works on 32-bit ELF binaries."
-	@echo "If you cannot use -m32 this will NOT work!"
+	@echo "If you cannot use -m32 or it cannot compile for some other reason this will"
+	@echo "NOT work!"
 	@echo
-	@echo "If you want to use it where this is not possible e.g. with a Mac, say to"
-	@echo "use by itself, try:"
+	@echo "If you want to use this program where this is not possible e.g. with a Mac,"
+	@echo "say to use by itself, try:"
 	@echo
-	@echo "	    make anonymous.bed.64"
+	@echo "	    make anonymous.bed.alt"
 	@echo
-	@echo "but running ${PROG} on the resulting binary will crash."
+	@echo "but running ${PROG} on the resulting binary will crash. The build of"
+	@echo "anonymous.bed.alt is done automatically in case anonymous.bed fails to"
+	@echo "compile. Nevertheless again the entry will not work with it."
 	@echo
-	${CC} ${CFLAGS} -m32 $< -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS} -m32 $< -o $@ ${LDFLAGS} || ${MAKE} ${PROG}.bed.alt
 
-${PROG}.bed.64: ${PROG}.bed.c
-	@echo "WARNING: the file created by this rule will NOT work with the entry itself;"
-	@echo "this is because it works ONLY on 32-bit ELF binaries! This however at least"
-	@echo "lets you see the supplementary program in action."
+${PROG}.bed.alt: ${PROG}.bed.c
+	@echo
+	@echo "-=-=-=-="
+	@echo "WARNING: the file created by this rule, ${PROG}.bed.alt, will NOT work with"
+	@echo "the entry itself; this is because it works ONLY on 32-bit ELF binaries! This"
+	@echo "however at least lets you see the supplementary program in action:"
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	@echo "-=-=-=-="
+	@echo
 
 
 # alternative executable

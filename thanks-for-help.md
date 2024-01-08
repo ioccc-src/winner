@@ -2483,7 +2483,7 @@ main (char *ck, char **k)
 to:
 
 ```c
-int main (int cka, char **k) { char *ck = (char *)cka; /* ... */ }
+main (int cka, char **k) { char *ck = (char *)cka; /* ... */ }
 ```
 
 The following change was also made to be more portable, in case the constants
