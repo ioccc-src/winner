@@ -1,13 +1,18 @@
 ## To build:
 
-We recommend you try the alt version first as with modern systems the original
-goes too fast. See the [original code](#original-code) section below to run the
-original.
-
+We recommend you try the alt version first so you can get a better idea of what
+this entry was like back in 1993. See the [original code](#original-code)
+section below to run the original.
 
 ```sh
 make alt
 ```
+
+NOTE: this entry requires the `X11/Xlib.h` header file and the X11 library to
+compile. If you're under macOS and do not know how to install and use X11
+programs see [FAQ 3.7  - How do I compile and use on macOS, an IOCCC winner that
+requires X11?](/faq.md#faq3_7).
+
 
 To configure how many microseconds to sleep before updates try:
 
@@ -15,10 +20,6 @@ To configure how many microseconds to sleep before updates try:
 make clobber SLEEP=200 alt
 ```
 
-NOTE: this entry requires `X11/Xlib.h` header file and the X11 library to
-compile. macOS users running Mountain Lion and later will need to download and
-install [XQuartz](https://www.xquartz.org) in order to compile and run this
-entry.
 
 
 ### Bugs and (Mis)features:
@@ -43,6 +44,9 @@ export DISPLAY
 where:
 
 `speed` is update speed from 1 to 9 (default is 9).
+
+
+NOTE: in most cases `DISPLAY` should already be set.
 
 
 ## Original code:
