@@ -40,16 +40,6 @@
 	    "winners_text" : "Makefile"
 	},
 	{
-	    "file_path" : "wall.alt.c",
-	    "winners_rank" : 40,
-	    "created_by" : null,
-	    "prog" : "alt",
-	    "filetype" : "c",
-	    "winners_show" : true,
-	    "display_via" : "github",
-	    "winners_text" : "alternative source"
-	},
-	{
 	    "file_path" : "wall.orig.c",
 	    "winners_rank" : 50,
 	    "created_by" : null,
@@ -68,16 +58,6 @@
 	    "winners_show" : true,
 	    "display_via" : "download",
 	    "winners_text" : "download winning source"
-	},
-	{
-	    "file_path" : "inventory.html",
-	    "winners_rank" : 900,
-	    "created_by" : "winner2inventory",
-	    "prog" : null,
-	    "filetype" : "html",
-	    "winners_show" : true,
-	    "display_via" : "browser",
-	    "winners_text" : "full inventory of all winner files"
 	},
 	{
 	    "file_path" : ".gitignore",

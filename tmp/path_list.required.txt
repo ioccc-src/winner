@@ -16,6 +16,7 @@
 1984/laman/README.md
 1984/laman/laman.c
 1984/laman/laman.orig.c
+1984/laman/try.sh
 1984/mullender/.gitignore
 1984/mullender/Makefile
 1984/mullender/README.md
@@ -114,16 +115,21 @@
 1987/biggar/README.md
 1987/biggar/biggar.c
 1987/biggar/biggar.orig.c
+1987/biggar/try.sh
 1987/heckbert/.gitignore
 1987/heckbert/Makefile
 1987/heckbert/README.md
 1987/heckbert/heckbert.c
 1987/heckbert/heckbert.orig.c
+1987/heckbert/try.sh
 1987/hines/.gitignore
 1987/hines/Makefile
 1987/hines/README.md
+1987/hines/goto.c
+1987/hines/goto.txt
 1987/hines/hines.c
 1987/hines/hines.orig.c
+1987/hines/try.sh
 1987/korn/.gitignore
 1987/korn/Makefile
 1987/korn/README.md
@@ -138,6 +144,7 @@
 1987/wall/.gitignore
 1987/wall/Makefile
 1987/wall/README.md
+1987/wall/try.sh
 1987/wall/wall.c
 1987/wall/wall.orig.c
 1987/westley/.gitignore
@@ -156,6 +163,7 @@
 1988/dale/README.md
 1988/dale/dale.c
 1988/dale/dale.orig.c
+1988/dale/try.sh
 1988/isaak/.gitignore
 1988/isaak/Makefile
 1988/isaak/README.md
@@ -435,7 +443,7 @@
 1992/buzzard.2/buzzard.2.README.md
 1992/buzzard.2/buzzard.2.alt.c
 1992/buzzard.2/buzzard.2.c
-1992/buzzard.2/buzzard.2.design
+1992/buzzard.2/buzzard.2.design.md
 1992/buzzard.2/buzzard.2.orig.c
 1992/buzzard.2/demo1.1st
 1992/buzzard.2/demo1.th

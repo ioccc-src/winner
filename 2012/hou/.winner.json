@@ -150,16 +150,6 @@
 	    "winners_text" : "download winning source"
 	},
 	{
-	    "file_path" : "inventory.html",
-	    "winners_rank" : 900,
-	    "created_by" : "winner2inventory",
-	    "prog" : null,
-	    "filetype" : "html",
-	    "winners_show" : true,
-	    "display_via" : "browser",
-	    "winners_text" : "full inventory of all winner files"
-	},
-	{
 	    "file_path" : ".gitignore",
 	    "winners_rank" : null,
 	    "created_by" : null,
