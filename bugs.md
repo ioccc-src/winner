@@ -2506,17 +2506,6 @@ return without outputting a solution.  If you can wait that long.
 ## 2006 toledo2
  
 
-### STATUS: missing file - please provide it
-### Source code: [2006/toledo2/toledo2.c](2006/toledo2/toledo2.c)
-### Information: [2006/toledo2/README.md](2006/toledo2/README.md)
-
-A file is missing from the archive linked to by the author so we have not been
-able to add it. Cody tried a few of the other zip files at the website linked to
-but no luck. Do you have the proper file? The file is `IMPORT.COM`. If you do
-please provide a link or make a pull request, adding it to the repo, after
-testing it to make sure it works in the program.
-
-
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2006/toledo2/toledo2.c](2006/toledo2/toledo2.c)
 ### Information: [2006/toledo2/README.md](2006/toledo2/README.md)
