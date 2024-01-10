@@ -2504,6 +2504,18 @@ return without outputting a solution.  If you can wait that long.
 
 
 ## 2006 toledo2
+ 
+
+### STATUS: missing file - please provide it
+### Source code: [2006/toledo2/toledo2.c](2006/toledo2/toledo2.c)
+### Information: [2006/toledo2/README.md](2006/toledo2/README.md)
+
+A file is missing from the archive linked to by the author so we have not been
+able to add it. Cody tried a few of the other zip files at the website linked to
+but no luck. Do you have the proper file? The file is `IMPORT.COM`. If you do
+please provide a link or make a pull request, adding it to the repo, after
+testing it to make sure it works in the program.
+
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2006/toledo2/toledo2.c](2006/toledo2/toledo2.c)
@@ -2514,7 +2526,8 @@ not crash in macOS (it appeared to work fine in fedora linux on an `x86_64`
 architecture but he does not know if it crashed in macOS Ventura due to the fact
 it is an `arm64` CPU - the Apple silicon chip). This fix, BTW, is a mix of a fix
 by [Yusuke Endoh](/winners.html#Yusuke_Endoh) and Cody's. Nevertheless there are
-two features that are not bugs.
+two features that are not bugs. Later the author made some slight changes to
+make it not crash in x86_64 macOS.
 
 By design this program is supposed to crash on termination. This actually no
 longer seems to happen but we don't need this to be added even if it might
