@@ -4,6 +4,10 @@
 make alt
 ```
 
+We recommend the alt version so that you can see what this looked like back in 2006.
+If you wish to see the original faster version see [original
+code](#original-code) below.
+
 
 ## To use:
 
@@ -11,16 +15,13 @@ make alt
 ./slone.alt
 ```
 
-To see why we recommend the alternate version instead of the original version,
-see the [original code](#original-code) section.
-
 
 ### Try:
 
-This alternate version, which we recommend that you use in order to see what is
+The alternate version, which we recommend that you use in order to see what is
 happening with modern systems, and to not flash too quickly, which can be
 problematic for some people, can be configured to different speeds by way of the
-value used in `usleep()`. The default is `-DS=75000` but you can easily change
+value used in `usleep()`. The default is `75000` but you can easily change
 it. To do so try:
 
 ```sh

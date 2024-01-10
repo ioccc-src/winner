@@ -1,17 +1,17 @@
 ## To build:
 
-If you don't have curses or SDL1 installed both modes will fail to compile. In
-that case see the [FAQ 3.8 - How do I compile an IOCCC winner that requires SDL1
-or SDL2?](/faq.md#SDL) and [FAQ 3.9  - How do I compile an IOCCC winner that
-requires (n)curses?](/faq.md#faq3_9) for more information.
-
-
 ```sh
 make alt
 ```
 
-We recommend that you use the alternate code in modern systems. See the
-[original code](#original-code) section for more details on why this is.
+NOTE: if you don't have curses or SDL1 installed both modes will fail to compile. In
+that case see the [FAQ 3.8 - How do I compile an IOCCC winner that requires SDL1
+or SDL2?](/faq.md#SDL) and [FAQ 3.9  - How do I compile an IOCCC winner that
+requires (n)curses?](/faq.md#faq3_9) for more information.
+
+We recommend that you use the alternate code so you can see what this entry
+looked like back in 2000 (with a configurable speed). See the
+[original code](#original-code) section for the original entry.
 
 
 ## To use:
@@ -34,7 +34,7 @@ If you have SDL1 installed:
 Whereas the curses version has an early exit the SDL version does not. You will
 have to kill it yourself.
 
-You might also care to reconfigure the speed at which the programs run. The code
+You might also wish to reconfigure the speed at which the programs run. The code
 calls `usleep(3)` with two default values, one for SDL and one for curses. The
 curses and SDL macros are defined in the Makefile in a way that makes it easy to
 redefine the values: `SLEEP` is how long the program sleeps (in microseconds)
@@ -67,9 +67,10 @@ what is going on then please use the alternate code as described above. If you
 wish to see the original entry see below.
 
 NOTE: in curses mode you might want to type `reset` after execution of this
-program as the program does not call `endwin()`. Using `reset` will clear the
-screen. The alt code, as noted above, allows one to quit early so this is not a
-problem there.
+program if your terminal is messed up after exiting the program (send intr,
+typically ctrl-c) as the program does not call `endwin()`. Using `reset` will
+clear the screen. The alt code, as noted above, allows one to quit early so this
+is not a problem there.
 
 
 ### Original build:

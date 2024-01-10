@@ -4,6 +4,10 @@
 make alt
 ```
 
+We recommend that you use the alt version to see what the entry looked like back
+in 1996. For the original version see the [original code](#original-code)
+section.
+
 
 ## To use:
 
@@ -11,8 +15,7 @@ make alt
 ./eldby.alt
 ```
 
-To see why we recommend the alternate version instead of the original version,
-see the [original code](#original-code) section.
+To quit send intr (typically ctrl-c).
 
 NOTE: to reset the sanity of your terminal after this program ends try `reset`.
 
@@ -22,26 +25,22 @@ NOTE: to reset the sanity of your terminal after this program ends try `reset`.
 This alternate version, which we recommend that you use in order to see what is
 happening with modern systems, and to not flash too quickly, which can be
 problematic for some people, can be configured to different speeds by way of the
-value used in `usleep()`. The default is `-DZ=35000` but you can easily change
+value used in `usleep()`. The default is `35000` but you can easily change
 it. To do so try:
 
 ```sh
-make CFLAGS+="-DZ=20000" clobber alt
+make SLEEP=20000 clobber alt
 ./eldby.alt
 ```
 
 
 ## Original code:
 
-Besides the fact that modern systems make it impossible to see what this program
-does the rapid movement can be a problem for some people. It is for these
-reasons that we recommend you first try the alternate version as described
-above.
+This version is the original which has no sleep time in between updates.
 
 
 ### Original build:
 
-If however you wish to see the original version in modern systems, try:
 
 ```sh
 make all
