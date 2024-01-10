@@ -1,17 +1,18 @@
 ## To build:
 
-We recommend that you try this alternate version first. For reasons why this is
-see the [original code](#original-code) section below.
+We recommend that you try the alternate version first so you can see what this
+entry looked like back in 1995 (with a configurable speed).  See the [original
+code](#original-code) section below for the original entry.
 
 ```sh
 make alt
 ```
 
-This alternate version uses `usleep(3)` with `Z` (defined in the Makefile,
+The alternate version uses `usleep(3)` with `SLEEP` (defined in the Makefile,
 default `3000`) microseconds to make it easier to see the maze being solved in
-real time. You can redefine `Z` to reconfigure it in case it's going too slow,
-too fast :-) or you're doing some strange experiment like making it 100000
-(which is actually fun :-) ).
+real time. You can redefine `SLEEP` at compile time to reconfigure it in case
+it's going too slow, too fast :-) or you're doing some strange experiment like
+making it 100000 (which is actually fun :-) ).
 
 
 ### Bugs and (Mis)features:
@@ -34,10 +35,9 @@ For more detailed information see [1995 cdua in bugs.md](/bugs.md#1995-cdua).
 
 ### Try:
 
-To use 1500 for `Z` do:
 
 ```sh
-make CFLAGS="-DZ=1500" clobber alt
+make SLEEP=1500 clobber alt
 
 ./cdua.alt # press enter and watch it go much faster!
 ```
@@ -45,12 +45,12 @@ make CFLAGS="-DZ=1500" clobber alt
 You might also like to try:
 
 ```sh
-make CFLAGS="-DZ=65000" clobber alt
+make SLEEP=65000 clobber alt
 
 ./cdua.alt # press enter and watch it go much slower!
 ```
 
-Do you see anything strange in this version when `Z` is a high value like
+Do you see anything strange in this version when `SLEEP` is a high value like
 `65000`? What happens if you use `100000`? Is this strange output still there?
 Why?
 
