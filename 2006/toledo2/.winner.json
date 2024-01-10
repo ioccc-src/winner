@@ -1080,16 +1080,6 @@
 	    "winners_text" : "MS-DOS command file"
 	},
 	{
-	    "file_path" : "KAYPROII.ZIP",
-	    "winners_rank" : null,
-	    "created_by" : null,
-	    "prog" : null,
-	    "filetype" : "zip",
-	    "winners_show" : false,
-	    "display_via" : "download",
-	    "winners_text" : "adventure game in zip form"
-	},
-	{
 	    "file_path" : "KERMIT/ATEST.DOC",
 	    "winners_rank" : null,
 	    "created_by" : null,
