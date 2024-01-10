@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Sat 30 Dec 2023 17:37:08 UTC*
+*Last updated: Wed 10 Jan 2024 18:02:07 UTC*
 
 This document is primarily for [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) as he (that is I :-) ) wanted a way
@@ -43,11 +43,6 @@ run) or else they'll have to be put above the compilation.
 - Check the [GitHub issue #3 comment
 1615962832](https://github.com/ioccc-src/temp-test-ioccc/issues/3#issuecomment-1615962832)
 for links about the todo items wrt the [FAQ](/faq.md).
-
-- With the entries that we recommend the alt code first when it comes to it
-going too fast we should say not what it looks like in modern systems but rather
-what it LOOKED LIKE AT THE TIME. At Wed 22 Nov 2023 13:02:04 UTC the only entry
-that has had this done is [1985/lycklama](1985/lycklama/README.md).
 
 - Check 2001/westley for making `main()` have two args. Easy to make it have two
 args but harder to make it function right.

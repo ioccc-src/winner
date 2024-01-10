@@ -4,8 +4,9 @@
 make alt
 ```
 
-To see why we recommend the alternate version instead of the original version,
-see the [original code](#original-code) section.
+We recommend that you use the alt version first to see what this entry looked
+like back in 2013 (with a configurable speed). If you wish to use the original
+version see the [original code](#original-code) section below.
 
 
 ## To use:
@@ -14,13 +15,18 @@ see the [original code](#original-code) section.
 ./birken.alt < 17_columns_wide_paint_by_numbers_file
 ```
 
+NOTE: if your terminal is messed up after running this (perhaps from exiting
+before it finishes) try using `reset` to restore the terminal. This will clear
+the screen.
+
 
 ### Try:
 
 This alternate version, which we recommend that you use in order to see what is
 happening with modern systems, and to not flash colours too quickly, which can
 be problematic for some people, can be configured to different speeds by way of
-the value used in `usleep(3)`. The default is `-DZ=13500`.
+the value used in `usleep(3)`. The default is `13500` but you can reconfigure
+it should you wish (see below).
 
 To see the program run on each text file, try:
 
@@ -44,10 +50,10 @@ make clobber SLEEP=7500 alt
 
 and then try `birken.alt` as above.
 
-If you wish to speed that up 200% you can use instead `-DZ=3750`. Doing this you
-might find the right value to your liking; use ctrl-c to terminate the program
-early but note that the terminal is likely to be messed up. Try:
-
+If you wish to speed that up 200% (300% total) you can use instead try
+`SLEEP=3750`. Doing this you might find the right value to your liking; use
+ctrl-c to terminate the program early but note that the terminal is likely to be
+messed up. In that case try:
 
 ```sh
 reset

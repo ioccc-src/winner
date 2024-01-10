@@ -3583,7 +3583,7 @@ these were not done.
 Cody also added the alt version that lets one control how fast the painting is
 done, based on the author's recommendations, except that Cody made it
 configurable at compile time. The Makefile was modified in such a way as to make
-it very easy to redefine them at compile time.
+it very easy to redefine it at compile time.
 
 Cody also added the [try.sh](/2013/birken/try.sh) script for the entry and the
 [try.alt.sh](/2013/birken/try.alt.sh) script for the alt code.
