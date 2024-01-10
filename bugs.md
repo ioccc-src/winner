@@ -771,31 +771,9 @@ when you're cheating it ends up winning! Can you figure that out as well?
 
 ## 1992 adrian
 
-### STATUS: known bug - please help us fix
-### Source code: [1992/adrian/westley.c](1992/westley/westley.c)
-### Information: [1992/adrian/README.md](1992/westley/README.md)
-
-The author states that:
-
-```
-If the input contains errors, then an error message along
-with the number of the offending line will be printed to stderr.  The
-number of rules for each state is limited to 17.  If more than 17 rules
-are present, you get the error 'too_many_rules', and the state that was
-being processed is printed.  Error 'no_destination' occurs if you specify a
-set of characters, but no destination state, and error 'too_many_states'
-occurs if your automaton has more than 257 states.
-```
-
-but only `no_destination` appears to occur. It is possible that this is invalid
-test cases but it's also possible it simply is a bug.
-
-You are welcome to try and fix these problem(s).
-
-
 ### STATUS: INABIAF - please **DO NOT** fix
-### Source code: [1992/adrian/westley.c](1992/westley/westley.c)
-### Information: [1992/adrian/README.md](1992/westley/README.md)
+### Source code: [1992/adrian/adrian.c](1992/adrian/adrian.c)
+### Information: [1992/adrian/README.md](1992/adrian/README.md)
 
 The author stated that if the file cannot be opened then it will print a system
 error but this is not the case unless it's showing a fault. However this was
@@ -823,8 +801,8 @@ have to remove the outer `()` pair.
 
 
 ### STATUS: known bug - please help us fix
-### Source code: [1992/albert/westley.c](1992/westley/westley.c)
-### Information: [1992/albert/README.md](1992/westley/README.md)
+### Source code: [1992/albert/albert.c](1992/albert/albert.c)
+### Information: [1992/albert/README.md](1992/albert/README.md)
 
 Leo Broukhis, before he was an IOCCC judge, sent the IOCCC judges an email:
 
