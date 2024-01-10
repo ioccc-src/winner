@@ -6,11 +6,9 @@ If your machine support the X Window System, Version 11:
 make alt
 ```
 
-We recommend the alt version first as the so you can see more what it looked
-like back in 1992, with modern systems. See [original code](#original-code) for
-the original should you wish to see what we mean.
-
-You can reconfigure the value to `usleep(3)`; see [try](#try) section below.
+We recommend that you try the alt version first so you can get a better idea of
+what this looked like back in 1992. See [original code](#original-code) for the
+original should you wish to see what we mean.
 
 
 ### Bugs and (Mis)features:
@@ -24,7 +22,7 @@ STATUS: known bug - please help us fix
 For more detailed information see [1992 kivinen in bugs.md](/bugs.md#1992-kivinen).
 
 
-### Try:
+## To use:
 
 ```sh
 ./kivinen.alt
@@ -36,8 +34,12 @@ For more detailed information see [1992 kivinen in bugs.md](/bugs.md#1992-kivine
 
 See also the author's remarks for other variations.
 
-Also try changing the speed this game moves. For instance if you wish to change
-the `usleep(3)` value to `30000` from `20000`, try:
+
+## Try:
+
+Also try changing the speed that the game moves. For instance if you wish to
+change the `usleep(3)` value to `30000` from `20000`, try:
+
 
 ```sh
 make clobber SLEEP=30000 alt # make it slower
