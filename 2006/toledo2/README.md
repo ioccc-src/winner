@@ -15,6 +15,7 @@ The current status of this entry is:
 
 ```
 STATUS: INABIAF - please **DO NOT** fix
+STATUS: missing file - please provide it
 ```
 
 For more detailed information see [2006 toledo2 in bugs.md](/bugs.md#2006-toledo2).
@@ -132,11 +133,13 @@ All good programmers started learning
 [BASIC](https://en.wikipedia.org/wiki/BASIC), now, what about a
 [CP/M](https://en.wikipedia.org/wiki/CP/M) emulator?
 
-The KAYPROII.ZIP files comes originally from [http://www.retroarchive.org/cpm/os/KAYPROII.ZIP](http://www.retroarchive.org/cpm/os/KAYPROII.ZIP)
+The extracted files in the various subdirectories originally came from
+[http://www.retroarchive.org/cpm/os/KAYPROII.ZIP](http://www.retroarchive.org/cpm/os/KAYPROII.ZIP)
+but we do not provide the zip file here.
 
-Copy [CPM64.COM](CPM64.COM) to files named `A` and `B` (these
-will be the disk drives). Now rename the provided [C.BIOS](C.BIOS) to `C` and
-run the emulator. Make sure to change the permissions to 666 with CHMOD.
+Copy `CPM64.COM` to files named `A` and `B` (these
+will be the disk drives). Now rename the provided `C.BIOS` to `C` and
+run the emulator.
 
 Now you have a running [CP/M](https://en.wikipedia.org/wiki/CP/M) system!, with
 two files on A: drive, `HALT.COM` to stop the emulator (so it closes drives) and
@@ -146,15 +149,8 @@ by the provided C.BIOS.
 To get a complete [CP/M](https://en.wikipedia.org/wiki/CP/M) system, you will need the following files
 from the `SOURCE` directory:
 
-* [ASM.COM](ASM.COM)
-* [DDT.COM](DDT.COM)
-* [DUMP.COM](DUMP.COM)
-* [ED.COM](ED.COM)
-* [LOAD.COM](LOAD.COM)
-* [PIP.COM](PIP.COM)
-* [STAT.COM](STAT.COM)
-* [SUBMIT.COM](SUBMIT.COM)
-* [XSUB.COM](XSUB.COM)
+        ASM.COM  DDT.COM   DUMP.COM   ED.COM   LOAD.COM
+        PIP.COM  STAT.COM  SUBMIT.COM XSUB.COM
 
 To import them, you must run the emulator with an argument, by
 example:
