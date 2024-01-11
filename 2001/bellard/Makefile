@@ -137,7 +137,7 @@ ${PROG}: ${PROG}.c
 	@echo "WARNING: ${PROG}.c must be compiled as a 32-bit binary and it must be used"
 	@echo "in i386 linux. If either of these cannot be done this entry will NOT work!"
 	@echo "=-=-=-=-="
-	${CC} ${CFLAGS} -m32 $< -o $@ ${LDFLAGS} || :
+	${CC} ${CFLAGS} -m32 $< -o $@ ${LDFLAGS}
 
 ${PROG}.otccex: ${PROG}.otccex.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
