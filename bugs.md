@@ -773,28 +773,6 @@ when you're cheating it ends up winning! Can you figure that out as well?
 ## 1992 adrian
 
 
-### STATUS: known bug - please help us fix
-### Source code: [1992/adrian/adrian.c](1992/adrian/adrian.c)
-### Information: [1992/adrian/README.md](1992/adrian/README.md)
-
-The author states that:
-
-```
-If the input contains errors, then an error message along
-with the number of the offending line will be printed to stderr.  The
-number of rules for each state is limited to 17.  If more than 17 rules
-are present, you get the error 'too_many_rules', and the state that was
-being processed is printed.  Error 'no_destination' occurs if you specify a
-set of characters, but no destination state, and error 'too_many_states'
-occurs if your automaton has more than 257 states.
-```
-
-but only `no_destination` appears to occur. It is possible that this is invalid
-test cases but it's also possible it simply is a bug.
-
-You are welcome to try and fix these problem(s).
-
-
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [1992/adrian/adrian.c](1992/adrian/adrian.c)
 ### Information: [1992/adrian/README.md](1992/adrian/README.md)
@@ -2549,7 +2527,7 @@ There was no IOCCC in 2010.
 # 2011
 
 
-## 2011 dlowe
+## 2011 borsanyi
 
 ### STATUS: INABIAF - please **DO NOT** fix
 ### Source code: [2011/borsanyi/borsanyi.c](2011/borsanyi/borsanyi.c)
