@@ -10,7 +10,7 @@ if(m && q=='T' && o=='T'){m=0;(void)fread(tt,11,1,stdin);(void)printf("T %9d\n",
 cc ouroboros.c -o x 
 #define zxc ;{/*
 cat ./ouroboros.c | ./x $1 > x1
-if [ $? -ne 0 ]; then
+if [[ $? -ne 0 ]]; then
 exit
 fi
 mv x1 ./ouroboros.c

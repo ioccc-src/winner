@@ -758,6 +758,9 @@ not strictly necessary but nonetheless more correct, even if not warned against.
 `$PATH`) to files referred to in the code. The path problem was also fixed in
 [fubar.sh](/1989/fubar/fubar.sh).
 
+Cody also 'modernised' the script to use `bash` and fixed for ShellCheck. The
+`if [ .. ]` was changed in the C code as well as the script.
+
 
 ## <a name="1989_jar.1"></a>[1989/jar.1](/1989/jar.1/jar.1.c) ([README.md](/1989/jar.1/README.md]))
 
