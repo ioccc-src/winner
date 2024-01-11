@@ -14,7 +14,8 @@ COLS="$(tput cols)"
 if [[ "$COLS" != 80 ]]; then
     echo "WARNING: without a terminal with 80 columns, 8 character tabs and wraparound" 1>&2
     echo "this will not look that great. We have detected that you do not have your terminal" 1>&2
-    read -r -p "Do you still wish to continue (Y/N)? "
+    echo -n "at 80 columns. Do you still wish to continue (Y/N)? "
+    read -r -p ""
     if [[ "$REPLY" != "y" && "$REPLY" != "Y" ]]; then
 	exit 1
     fi
