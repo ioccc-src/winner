@@ -38,7 +38,7 @@ include ../../var.mk
 
 # Common C compiler warnings to silence
 #
-CSILENCE=
+CSILENCE= -Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -130,8 +130,14 @@ all: data ${TARGET}
 ${PROG}: ${PROG}.c
 	@echo "NOTE: This will not compile when using modern compilers because"
 	@echo "it relies on a compiler bug which was fixed in gcc 2.3.3 (a very"
-	@echo "long time ago now). Try make alt for a version that works with gcc"
-	@echo ">=2.3.3."
+	@echo "long time ago now). We will build the alt version as $@ in the very"
+	@echo "likely case this fails to compile. If however you wish to manually"
+	@echo "compile the alt version you should do:"
+	@echo
+	@echo "    make alt"
+	@echo
+	@echo "and then run ${ALT_TARGET}."
+	@echo
 	${RM} -f \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
 	${CP} lmfjyh.c \"\;main\(\)\{puts\(\"Hello\ World!\"\)\;\}char\*C=\".c
 	${CC} ${CFLAGS} \

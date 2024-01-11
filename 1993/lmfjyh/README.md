@@ -22,9 +22,9 @@ alternate version for [those of
 us](https://www.collinsdictionary.com/dictionary/english/everyone) with gcc >=
 2.3.3. See [Alternate code](#alternate-code) section below for more details.
 
-However, there is an another version that will be compiled in case this fails.
-This should happen automatically. See [Alternate code](#alternate-code) below
-for more details on it.
+However, there is an another version that will be compiled in the extremely
+likely case this fails.  This should happen automatically. See [Alternate
+code](#alternate-code) below for more details on it.
 
 
 ### Bugs and (Mis)features:

@@ -1672,8 +1672,12 @@ files for functions.
 version](/1993/lmfjyh/README.md#alternate-code) which does what the program did
 with gcc < 2.3.3. See the README.md file for details and for why this was made
 the alternate version, not the actual entry. This alternate version will compile
-automatically in the very likely case (if you don't have gcc < 2.3.3) that the
-entry fails to compile.
+automatically (as `lmfjyh` itself) in the very likely case (if you don't have
+gcc < 2.3.3) that the entry fails to compile.
+
+Cody also made the Makefile delete the very unsafe filename that is compiled (or
+would be compiled if gcc < 2.3.3) whether or not compilation succeeds (which is
+highly unlikely).
 
 
 ## <a name="1993_plummer"></a>[1993/plummer](/1993/plummer/plummer.c) ([README.md](/1993/plummer/README.md]))
