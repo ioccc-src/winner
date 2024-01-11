@@ -5,9 +5,12 @@ make all
 ```
 
 NOTE: the purpose of this entry is to escape the dungeon via the compiler line
-where you get messages as compiler errors. Depending on the compiler line you
+where you **get messages as compiler errors**. Depending on the compiler line you
 will get different error messages and one compiler line will make you win the
 game!
+
+NOTE: your terminal should be set to 80 columns, 8 character tabs, and
+wraparound.
 
 
 ## To use:
@@ -25,9 +28,6 @@ cc -Describe -Door westley.c
 cc -Describe -Drain westley.c
 ```
 
-NOTE: your terminal should be set to 80 columns, 8 character tabs, and
-wraparound.
-
 
 ## Judges' remarks:
 
@@ -38,7 +38,7 @@ For spoilers see the end of the notes from the author below.
 To use:
 
 ```sh
-./spoiler.sh
+./try.sh
 ```
 
 
