@@ -108,7 +108,7 @@ ENTRY= grothe
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA= arabian.txt olympic.txt twinkle.txt test.txt
+DATA= arabian.txt olympics.txt twinkle.txt test.txt
 TARGET= ${PROG}
 #
 ALT_OBJ=
