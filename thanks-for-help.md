@@ -1853,7 +1853,7 @@ number but rather a newline.
 ## <a name="1994_westley"></a>[1994/westley](/1994/westley/westley.c) ([README.md](/1994/westley/README.md]))
 
 [Cody](#cody) converted the spoiler compiler options (provided by the author) to be
-compiler commands and added a script [spoiler.sh](/1994/westley/spoiler.sh) to
+compiler commands and added a script [try.sh](/1994/westley/try.sh) to
 automate the spoiler commands to make it easier to see the game in action from
 start to finish.
 

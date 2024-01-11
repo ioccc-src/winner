@@ -128,9 +128,11 @@ all: data ${TARGET}
 	sandwich supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
+	@echo "=-=-=-=-="
 	@echo "NOTE: this entry has different compiler errors based on compilation line."
 	@echo "The purpose is to find the right error message to win the game!"
 	@echo "NOTE: your terminal should be set to 80 columns, 8 character tabs, and wraparound."
+	@echo "=-=-=-=-="
 	-${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # alternative executable
