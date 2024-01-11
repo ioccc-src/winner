@@ -110,7 +110,7 @@ PROG= prog
 #
 OBJ= ${PROG}.o ${PROG}.clean.o
 CSRC= ${${PROG}}.o
-DATA= on.one.liners
+DATA= on.one.liners.txt
 TARGET= ${PROG} ${PROG}.clean correct remarks
 #
 ALT_OBJ=
