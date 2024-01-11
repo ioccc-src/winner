@@ -89,6 +89,12 @@ Remember the good old days and play (or let your kids play)
 walking in a maze of twisty little passages all alike is easier than
 understanding the code!
 
+**NOTE**: The `KAYPROII.ZIP` file originally came from
+[http://www.retroarchive.org/cpm/os/KAYPROII.ZIP](http://www.retroarchive.org/cpm/os/KAYPROII.ZIP).
+For your convenience, we have included `KAYPROII.ZIP` in this entry.
+Both the `make all` and the `make alt` unzip that file, and the `make clobber`
+removes those files extracted from the `KAYPROII.ZIP`.
+
 
 ## Author's remarks:
 
@@ -132,10 +138,6 @@ normal at this point.
 All good programmers started learning
 [BASIC](https://en.wikipedia.org/wiki/BASIC), now, what about a
 [CP/M](https://en.wikipedia.org/wiki/CP/M) emulator?
-
-The extracted files in the various subdirectories originally came from
-[http://www.retroarchive.org/cpm/os/KAYPROII.ZIP](http://www.retroarchive.org/cpm/os/KAYPROII.ZIP)
-but we do not provide the zip file here.
 
 Copy `CPM64.COM` to files named `A` and `B` (these
 will be the disk drives). Now rename the provided `C.BIOS` to `C` and

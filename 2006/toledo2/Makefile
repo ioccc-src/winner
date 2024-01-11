@@ -113,7 +113,10 @@ ENTRY= toledo2
 PROG= ${ENTRY}
 #
 OBJ= ${PROG}.o
-DATA= C.BASIC C.BIOS
+ZIP_DATA= KAYPROII.ZIP
+SUBDIR_SET= ADVENTUR BASICS DBASEII GAMES KERMIT MASTER MFDISK MODEM7 \
+	PRO8 SOURCE THE-WORD TINKER WS33-1 WS33-2 WS33-KPR WS33
+DATA= C.BASIC C.BIOS ${ZIP_DATA}
 TARGET= ${PROG} C
 #
 ALT_OBJ= ${PROG}.alt.o
@@ -149,9 +152,10 @@ ${PROG}.alt: ${PROG}.alt.c
 
 # data files
 #
-data: ${DATA}
-	@${TRUE}
-
+data ${SUBDIR_SET}: ${DATA}
+	${RM} -rf ${SUBDIR_SET}
+	${UNZIP} ${ZIP_DATA} 
+	
 # both all and alt
 #
 everything: all alt
@@ -215,6 +219,7 @@ clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
 	${RM} -rf *.dSYM
 	${RM} -f C
+	${RM} -rf ${SUBDIR_SET}
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \
