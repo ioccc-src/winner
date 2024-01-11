@@ -140,8 +140,11 @@ ${PROG}: ${PROG}.c
 alt: data ${ALT_TARGET}
 	@${TRUE}
 
+# Variable to simplify reconfiguring P
+#
+P= '(A<<AP)'
 ${PROG}.alt: ${PROG}.alt.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS} -DP=${P} $< -o $@ ${LDFLAGS}
 
 # data files
 #

@@ -819,9 +819,11 @@ the program on each file four times in a row but rather does it on each file
 and starts over, doing it four times, to help with hopefully allowing different
 output.
 
-Cody also provided an [alternate version](/1989/ovdluhe/ovdluhe.alt.c) based on the
-author's remarks. See the README.md for details. The fix described above was
-fixed in this version too, after it was discovered and fixed.
+Cody also provided an [alternate version](/1989/ovdluhe/ovdluhe.alt.c) based on
+the author's remarks and the [try.alt.sh](/1989/ovdluhe/try.alt.sh) script that
+uses the alt code, allowing one to configure the alt build. See the README.md
+for details. The fix described above was fixed in this version too, after it was
+discovered and fixed.
 
 
 ## <a name="1989_paul"></a>[1989/paul](/1989/paul/paul.c) ([README.md](/1989/paul/README.md]))
