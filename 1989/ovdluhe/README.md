@@ -35,11 +35,12 @@ it's a `#define` it's easy to set up.
 ### Alternate build:
 
 ```sh
-make CFLAGS="-DP=9" clobber alt
+make P=9 clobber alt
 ```
 
 You do not have to define `P` but if you do you can replace the value with
-whatever you wish, as long as it's an int.
+whatever you wish, as long as it's an int (or evaluates to an int like the
+default `(A<<AP)` does).
 
 
 ### Alternate use:
@@ -47,6 +48,16 @@ whatever you wish, as long as it's an int.
 ```sh
 ./ovdluhe.alt
 ```
+
+### Alternate try:
+
+```sh
+./try.alt.sh
+
+P=5 ./try.alt.sh
+```
+
+NOTE: if you specify too high a value for `P` the program might fail.
 
 
 ## Judges' remarks:
