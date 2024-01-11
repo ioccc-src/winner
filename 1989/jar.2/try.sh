@@ -19,7 +19,8 @@ fi
 
 for f in $FILES; do 
     if [[ -e "$f" && -r "$f" ]]; then
-	echo "$ ./jar.2 < $f" 1>&2
+	read -r -n 1 -p "Press any key to run: ./jar.2 < $f: "
+	echo 1>&2
 	./jar.2 < "$f"
     fi
 done
