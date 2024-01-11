@@ -26,14 +26,17 @@ For more detailed information see [1989 fubar in bugs.md](/bugs.md#1989-fubar).
 ### Try:
 
 ```sh
-./fubar 2
+./try.sh # run on 1 - 7 
+
+./fubar.sh 2 # run via script
+./fubar 2 # run directly
 ```
 
 
 ## Judges' remarks:
 
 Run this with a single digit argument (or wait a long time and risk an infinite
-loop as described above).
+loop as described in the [bugs.md](/bugs.md#1989-fubar) file).
 
 The blank line at the beginning of the source is mandatory.
 Do you know why?
