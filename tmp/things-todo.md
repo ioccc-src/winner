@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Wed 10 Jan 2024 18:02:07 UTC*
+*Last updated: Thu 11 Jan 2024 16:42:28 UTC*
 
 This document is primarily for [Cody Boone
 Ferguson](/winners.html#Cody_Boone_Ferguson) as he (that is I :-) ) wanted a way
@@ -26,20 +26,6 @@ namely to do with email addresses that no longer exist. At this point it is not
 determined if this will be done with the typo pass (what should be the final
 pass) or not but it's very possible that it can be just to speed things along.
 
-- Check all Makefiles for notes / warnings on compilation and see if they can be
-copied to _after_ the compilation as they're more likely to be seen this way. In
-some cases this will have to be done in the Makefile via `|| :` (that might be
-good to have in the Makefiles anyway so that additional rules / targets are
-run) or else they'll have to be put above the compilation.
-    * Make compilation of targets use `|| :` in the Makefiles to allow
-    additional targets to compile and/or let warnings/notes be printed. An
-    important use of this is that some entries won't compile with clang due to
-    defects (though as I'm updating this on 12 July 2023 all but one in some
-    versions of clang have been fixed if we consider in some cases alt versions)
-    * Update on 06 July 2023: note that in some cases the `|| :` _**CANNOT**_ be
-    added to the rule because the following rules require that the previous
-    rules run successfully.
-
 - Check the [GitHub issue #3 comment
 1615962832](https://github.com/ioccc-src/temp-test-ioccc/issues/3#issuecomment-1615962832)
 for links about the todo items wrt the [FAQ](/faq.md).
@@ -62,8 +48,3 @@ the new issue.
 script do in fact have one. Also verify (mostly in earlier years) consistency in
 the way it is displayed and interactivity. The later years are probably done
 better.
-
-- Make it so that in the case of main versions failing to compile if there is an
-alt version have it compile it (as the main binary) instead. See
-<https://github.com/ioccc-src/temp-test-ioccc/pull/1793> for the example of what
-I did with 1985/sicherman.

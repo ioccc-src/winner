@@ -17,6 +17,6 @@ clear
 
 echo "$ cat westley.c" 1>&2
 cat westley.c
-sleep 1
-echo "$ ./westley" 1>&2
+read -r -n 1 -p "Press any key to run: ./westley: "
+echo 1>&2
 ./westley
