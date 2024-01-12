@@ -1024,6 +1024,8 @@ but later Cody added it back to make it more like the original).
 The second problem was suggested by the judges at the time of judging, to do
 with if the C preprocessor botches single quotes in cpp expansion.
 
+Cody also added the [try.sh](/1990/dg/try.sh) script.
+
 
 ## <a name="1990_jaw"></a>[1990/jaw](/1990/jaw/jaw.c) ([README.md](/1990/jaw/README.md]))
 
