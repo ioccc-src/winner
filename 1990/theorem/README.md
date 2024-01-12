@@ -36,20 +36,10 @@ y1 - initial value  (y(x1) == y1)
 ### Try:
 
 ```sh
-./theorem y 0 1 0.1 1
+./try.sh
 ```
 
-If the two args passed to `fibonacci` and `theorem_bkp` add to 0 it will
-print 0 over and over again in an infinite loop. In this case it should not be
-fixed (another condition where this occurred was fixed in 2023 as it affected
-usability of the program).
 
-This is supposed to happen.  As is written in the
-[The Jargon File](http://catb.org/jargon/html/F/feature.html):
-
-```
-That's not a bug, that's a feature.
-```
 
 
 ## Judges' remarks:
@@ -112,6 +102,11 @@ make fibonacci
 ./fibonacci 1 1
 ./fibonacci 2 1
 ```
+
+NOTE: if the two args passed to `fibonacci` and `theorem_bkp` add to 0 it will
+print 0 over and over again in an infinite loop. In this case it should not be
+fixed (another condition where this occurred was fixed in 2023 as it affected
+usability of the program).
 
 Program available on 9 track and cartridge cassette.  Neither [Ginsu
 knife](https://ginsu.com) nor [Swiss army

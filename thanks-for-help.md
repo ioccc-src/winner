@@ -1111,6 +1111,9 @@ with clang in Linux but which was defaulting to an error. This way was the
 simplest way to deal with the problem in question due to the way the entry
 works.
 
+Cody also added the [try.sh](/1990/theorem/try.sh) script which shows the
+original program and some of the programs it generates.
+
 [Yusuke](#yusuke) pointed out that `atof` nowadays needs `#include <stdlib.h>` which was
 used in order to get this to work initially (prior to this output was there but
 incomplete).
