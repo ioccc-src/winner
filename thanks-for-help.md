@@ -810,8 +810,8 @@ script.
 
 [Cody](#cody) fixed an infinite loop where the program would print the same thing over
 and over again, flooding the screen. The problem is that there was a `for` loop
-that by necessity had to not have an increment stage but only in the `if` path
-(in the loop itself) did the pointer get updated.
+that by necessity had to not have an increment stage but the pointer only got
+updated in the `if` path (in the loop itself).
 
 Cody also provided the [try.sh](/1989/ovdluhe/try.sh) script which runs the
 program four times on three files to show the different output. It doesn't run
