@@ -4,7 +4,8 @@
 make all
 ```
 
-There is [alternate code](#alternate-code) for those using Turbo-C or MSC.
+There is an alternate version for those using Turbo-C or MSC. See [alternate
+code](#alternate-code) below for details.
 
 
 ## To use:

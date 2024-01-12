@@ -961,11 +961,13 @@ environmental variable; see the README.md for details.
 
 ## <a name="1990_baruch"></a>[1990/baruch](/1990/baruch/baruch.c) ([README.md](/1990/baruch/README.md]))
 
-[Cody](#cody) added an [alternate version](/1990/baruch/baruch.alt.c) which allows Turbo-C
+[Cody](#cody) added the [try.sh](/1990/baruch/try.sh) script.
+
+Cody also added an [alternate version](/1990/baruch/baruch.alt.c) which allows Turbo-C
 and MSC to compile this code, based on the authors' remarks, except that Cody
 did not change the `" #Q"` string as that showed worse looking output
 instead of improved output though he has no way to test the compilers in
-question. YMMV.
+question (i.e. it was only tested in the original entry). YMMV.
 
 Although this is appreciated we agree with him that <strike>no one</strike>
 [very few](https://en.wikipedia.org/wiki/0)
