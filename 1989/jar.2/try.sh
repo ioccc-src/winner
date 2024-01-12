@@ -19,8 +19,13 @@ fi
 
 for f in $FILES; do 
     if [[ -e "$f" && -r "$f" ]]; then
+	read -r -n 1 -p "Press any key to run: cat $f: "
+	echo 1>&2
+	cat "$f"
+	echo 1>&2
 	read -r -n 1 -p "Press any key to run: ./jar.2 < $f: "
 	echo 1>&2
 	./jar.2 < "$f"
+	echo 1>&2
     fi
 done

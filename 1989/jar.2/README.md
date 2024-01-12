@@ -22,8 +22,6 @@ NOTE: this entry will likely segfault on invalid input.
 ```sh
 ./try.sh
 
-cat chocolate_cake.lisp ; ./jar.2 < chocolate_cake.lisp
-
 ./try.sh chocolate_cake.lisp
 
 ./try.sh try.txt
