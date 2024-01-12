@@ -727,6 +727,16 @@ options used, seemingly, it has to write to disk the tarball which seems to
 defeat the purpose. This would ideally be fixed.
 
 
+## 1990 tbr
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [1990/tbr/tbr.c](1990/tbr/tbr.c)
+### Information: [1990/tbr/README.md](1990/tbr/README.md)
+
+The authors provided a list of features in the
+[BUGS](/1990/tbr/README.md#bugs) section in their remarks.
+
+
 ## 1990 theorem
 
 ### STATUS: INABIAF - please **DO NOT** fix

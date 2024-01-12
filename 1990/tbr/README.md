@@ -4,7 +4,19 @@
 make all
 ```
 
-There is an [alternate version](#alternate-code) to this program.
+The authors provided another version of this program. See the [alternate
+version](#alternate-code) section below.
+
+
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [1990 tbr in bugs.md](/bugs.md#1990-tbr).
 
 
 ### A note about the fixes of this entry in 2023:
@@ -21,7 +33,7 @@ $ warning: this program uses gets(), which is unsafe.
 which kind of hid the prompt. Thus the entry was changed to use `fgets(3)` which
 is referred to later in this file.
 
-Also `exit(3)` returns void but the entry was using it in a binary expression so
+Also `exit(3)` returns `void` but the entry was using it in a binary expression so
 this entry would not compile in modern systems. This fix is also referred to
 below, in the [alternate version](#alternate-code) section.
 
@@ -58,13 +70,6 @@ vi tbr.c
 What happens if you try using `cd -` to return to previous directory? What about
 `cd` with no args?
 
-This is supposed to happen.  As is written in the
-[The Jargon File](http://catb.org/jargon/html/F/feature.html):
-
-```
-That's not a bug, that's a feature.
-```
-
 The authors include a section called [BUGS](#bugs) that, because they were
 documented, are not considered bugs as such in the context of the contest.
 
@@ -87,7 +92,7 @@ r(o,0)D o)D*f):4,wait(0):(o?dup2(*f,0)D*f)D o):*i?1 D
 e(x){x<0?write(2,"?\n$ "-x/4,2),x+1||(exit(1),0):5;}
 ```
 
-and in the [alternate source](tbr.alt.c). It has the `exit()` returns void fix
+and in the [alternate source](tbr.alt.c). It has the `exit()` returns `void` fix
 as well as the `gets()` to `fgets()` fix applied to it to make it functionally
 equivalent like the authors intended.
 
