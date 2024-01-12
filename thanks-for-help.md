@@ -1056,6 +1056,9 @@ something else and is recommended by the author as well.
 [Yusuke](#yusuke) suggested `-ansi` to get the entry to compile due to trigraphs and [Cody](#cody)
 suggested `-trigraphs`. Both work but we used Yusuke's idea.
 
+Cody added the [try.sh](/1990/scjones/try.sh) script to show exactly what the
+entry does.
+
 
 ## <a name="1990_tbr"></a>[1990/tbr](/1990/tbr/tbr.c) ([README.md](/1990/tbr/README.md]))
 

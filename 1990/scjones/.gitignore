@@ -7,3 +7,4 @@ indent.o
 prog.orig
 scjones
 scjones.orig
+scjones.tmp.c
