@@ -849,6 +849,8 @@ cd 1989/robison ; make diff_orig_prog
 
 (It adds the C token pasting operator `##` instead of `/**/`.)
 
+Cody also added the [try.sh](/1989/robison/try.sh) script.
+
 
 ## <a name="1989_tromp"></a>[1989/tromp](/1989/tromp/tromp.c) ([README.md](/1989/tromp/README.md]))
 

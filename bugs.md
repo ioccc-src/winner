@@ -543,6 +543,9 @@ If you want to try and fix this (mis)feature, you are welcome to try.
 This program will very likely crash or break into tiny bits :-) if you feed it
 numbers with non-binary digits.
 
+There are also other cases where this can happen for instance using unsupported
+operators like `/`. To see what operators are supported check the source code.
+
 
 ## 1989 westley
 
