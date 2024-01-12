@@ -23,6 +23,3 @@ echo 1>&2
 read -r -n 1 -p "Press any key to run: ./vanb unix is better than os/2 (space = next page, q = quit): "
 echo 1>&2
 ./vanb unix is better than os/2 | less -rEXF
-
-
-
