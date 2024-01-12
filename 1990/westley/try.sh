@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.sh - demonstrate IOCCC winner 1989/vanb
+# try.sh - demonstrate IOCCC winner 1990/westley
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
@@ -15,11 +15,22 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-read -r -n 1 -p "Press any key to run: ./vanb the rug gary lent (space = next page, q = quit): "
+read -r -n 1 -p "Press any key to run: ./westley 1: "
 echo 1>&2
-./vanb the rug gary lent | less -rEXF
+./westley 1
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: ./vanb unix is better than os/2 (space = next page, q = quit): "
+read -r -n 1 -p "Press any key to run: ./westley 2: "
 echo 1>&2
-./vanb unix is better than os/2 | less -rEXF
+./westley 2
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./westley 3: "
+echo 1>&2
+./westley 3
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./westley 5: "
+echo 1>&2
+./westley 5
+echo 1>&2

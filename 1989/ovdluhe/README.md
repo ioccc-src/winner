@@ -15,7 +15,7 @@ Run the program this way:
 ./ovdluhe < textfile
 ```
 
-The program stops when it reaches the end of the template buffer\
+The program stops when it reaches the end of the template buffer
 by chance or is killed.
 
 
@@ -39,8 +39,9 @@ make P=9 clobber alt
 ```
 
 You do not have to define `P` but if you do you can replace the value with
-whatever you wish, as long as it's an int (or evaluates to an int like the
-default `(A<<AP)` does).
+whatever you wish, as long as it's a positive `int` (or evaluates to a positive
+`int` like the default `(A<<AP)` does). Too high a value will likely cause the
+program to fail and a negative value will cause a compilation error.
 
 
 ### Alternate use:
@@ -57,7 +58,8 @@ default `(A<<AP)` does).
 P=5 ./try.alt.sh
 ```
 
-NOTE: if you specify too high a value for `P` the program might fail.
+NOTE: if you specify too high a value for `P` the program might fail. If you
+specify a value < 0 it will fail to compile.
 
 
 ## Judges' remarks:

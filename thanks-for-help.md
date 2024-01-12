@@ -810,8 +810,8 @@ script.
 
 [Cody](#cody) fixed an infinite loop where the program would print the same thing over
 and over again, flooding the screen. The problem is that there was a `for` loop
-that by necessity had to not have an increment stage but only in the `if` path
-(in the loop itself) did the pointer get updated.
+that by necessity had to not have an increment stage but the pointer only got
+updated in the `if` path (in the loop itself).
 
 Cody also provided the [try.sh](/1989/ovdluhe/try.sh) script which runs the
 program four times on three files to show the different output. It doesn't run
@@ -848,6 +848,8 @@ cd 1989/robison ; make diff_orig_prog
 ```
 
 (It adds the C token pasting operator `##` instead of `/**/`.)
+
+Cody also added the [try.sh](/1989/robison/try.sh) script.
 
 
 ## <a name="1989_tromp"></a>[1989/tromp](/1989/tromp/tromp.c) ([README.md](/1989/tromp/README.md]))
@@ -959,11 +961,13 @@ environmental variable; see the README.md for details.
 
 ## <a name="1990_baruch"></a>[1990/baruch](/1990/baruch/baruch.c) ([README.md](/1990/baruch/README.md]))
 
-[Cody](#cody) added an [alternate version](/1990/baruch/baruch.alt.c) which allows Turbo-C
+[Cody](#cody) added the [try.sh](/1990/baruch/try.sh) script.
+
+Cody also added an [alternate version](/1990/baruch/baruch.alt.c) which allows Turbo-C
 and MSC to compile this code, based on the authors' remarks, except that Cody
 did not change the `" #Q"` string as that showed worse looking output
 instead of improved output though he has no way to test the compilers in
-question. YMMV.
+question (i.e. it was only tested in the original entry). YMMV.
 
 Although this is appreciated we agree with him that <strike>no one</strike>
 [very few](https://en.wikipedia.org/wiki/0)
@@ -1020,6 +1024,8 @@ but later Cody added it back to make it more like the original).
 The second problem was suggested by the judges at the time of judging, to do
 with if the C preprocessor botches single quotes in cpp expansion.
 
+Cody also added the [try.sh](/1990/dg/try.sh) script.
+
 
 ## <a name="1990_jaw"></a>[1990/jaw](/1990/jaw/jaw.c) ([README.md](/1990/jaw/README.md]))
 
@@ -1049,6 +1055,9 @@ something else and is recommended by the author as well.
 
 [Yusuke](#yusuke) suggested `-ansi` to get the entry to compile due to trigraphs and [Cody](#cody)
 suggested `-trigraphs`. Both work but we used Yusuke's idea.
+
+Cody added the [try.sh](/1990/scjones/try.sh) script to show exactly what the
+entry does.
 
 
 ## <a name="1990_tbr"></a>[1990/tbr](/1990/tbr/tbr.c) ([README.md](/1990/tbr/README.md]))
@@ -1102,6 +1111,9 @@ with clang in Linux but which was defaulting to an error. This way was the
 simplest way to deal with the problem in question due to the way the entry
 works.
 
+Cody also added the [try.sh](/1990/theorem/try.sh) script which shows the
+original program and some of the programs it generates.
+
 [Yusuke](#yusuke) pointed out that `atof` nowadays needs `#include <stdlib.h>` which was
 used in order to get this to work initially (prior to this output was there but
 incomplete).
@@ -1128,6 +1140,8 @@ often be the same (for the purpose of `clang`?).
 
 He also fixed the code to not enter an infinite loop if arg is a number not > 0
 and to not crash if no arg is specified.
+
+Cody also added the [try.sh](/1990/westley/try.sh) script.
 
 The alt code did NOT have arg checks added as it is actually a copy of the
 original code.

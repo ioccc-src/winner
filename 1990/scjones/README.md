@@ -12,6 +12,13 @@ make all
 ```
 
 
+## Try:
+
+```sh
+./try.sh
+```
+
+
 ## Judges' remarks:
 
 The addition of trigraphs has made it easier to make programs hard to read.  It

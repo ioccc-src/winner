@@ -15,7 +15,7 @@ echo foo bar | ./dg
 ### Try:
 
 ```sh
-echo "to C or not to C" | ./dg
+./try.sh
 ```
 
 

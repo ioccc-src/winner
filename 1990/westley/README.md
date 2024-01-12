@@ -17,10 +17,7 @@ The number should be greater than 0.
 ### Try:
 
 ```sh
-./westley 1
-./westley 2
-./westley 3
-./westley 5
+./try.sh
 ```
 
 

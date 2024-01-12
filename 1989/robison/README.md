@@ -29,27 +29,17 @@ For more detailed information see [1989 robison in bugs.md](/bugs.md#1989-robiso
 ```sh
 ./robison
 11x10
+# enter other expressions
 
-echo 1x10x111 | ./robison
-
-echo 1+1+10 | ./robison
-
-echo 100 - 1 | ./robison
-
-echo -100 x 100 + 1 | ./robison
+./try.sh
 
 echo 100 / 100 | ./robison # <-- what happens here ?
 ```
 
-NOTE: This program will very likely crash or break into tiny bits
-:-) if you feed it numbers with non-binary digits.
-
-This is supposed to happen.  As is written in the
-[The Jargon File](http://catb.org/jargon/html/F/feature.html):
-
-```
-That's not a bug, that's a feature.
-```
+NOTE: This program will very likely crash or break into tiny bits :-) if you
+feed it numbers with non-binary digits. This, as you might notice if you try one
+of the above commands, can happen with other input as well. If you wish to
+understand why this happens check the source code.
 
 
 ## Judges' remarks:

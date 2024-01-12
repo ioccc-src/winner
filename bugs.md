@@ -543,6 +543,9 @@ If you want to try and fix this (mis)feature, you are welcome to try.
 This program will very likely crash or break into tiny bits :-) if you feed it
 numbers with non-binary digits.
 
+There are also other cases where this can happen for instance using unsupported
+operators like `/`. To see what operators are supported check the source code.
+
 
 ## 1989 westley
 
@@ -722,6 +725,16 @@ path not having `.` (this and maybe some other things were fixed) and `tar` not
 wanting to accept reading from `stdin` (this in particular) even with the right
 options used, seemingly, it has to write to disk the tarball which seems to
 defeat the purpose. This would ideally be fixed.
+
+
+## 1990 tbr
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [1990/tbr/tbr.c](1990/tbr/tbr.c)
+### Information: [1990/tbr/README.md](1990/tbr/README.md)
+
+The authors provided a list of features in the
+[BUGS](/1990/tbr/README.md#bugs) section in their remarks.
 
 
 ## 1990 theorem
