@@ -7,21 +7,19 @@ make clobber all
 ```
 
 There is an alternate version with a slight difference that you may wish to try.
-See [Alternate code](#alternate-code) below.
+See the [Alternate code](#alternate-code) section below for more details.
 
 
 ## To use:
 
-NOTE: this will run the program itself:
-
 ```sh
-make clobber all
+./jar.1
 ```
 
 
 ## Alternate code:
 
-This code, which prints something slightly different, is provided as well.
+This alternate code, which prints something slightly different, is provided as well.
 
 
 ### Alternate build:
@@ -35,11 +33,9 @@ make clobber alt
 
 ### Alternate use:
 
-Alternatively, you can run it directly:
-
 
 ```sh
-./jar.1.alt.sh
+./jar.1.alt
 ```
 
 
@@ -53,7 +49,7 @@ cc -c -o /dev/tty jar.1.c
 ```
 
 As a last resort the `jar.1.sh` script provided simulates
-writing the raw binary the .o file to the terminal.
+writing the raw binary of the .o file to the terminal.
 
 Abuse of the rules winners usually result in a change of the rules.
 Starting in 1990, compiling entries must result an regular file
@@ -78,10 +74,10 @@ strings utility before writing to standard output instead of
 `/dev/tty`.
 
 As a historical note, the Makefile does echo the original command
-to standard output, the original shell command that did write raw
+to standard output, the original shell command that once wrote raw
 binary to the `/dev/tty` special file.
 
-The use piping raw binary thru stings makes the original 1989 output
+The use of piping raw binary thru stings makes the original 1989 output
 more apparent, as was the case when using dumb CRT terminals (some
 do dumb that they couldn't even process simple ANSI escape sequences)
 were more common.
