@@ -1141,6 +1141,8 @@ often be the same (for the purpose of `clang`?).
 He also fixed the code to not enter an infinite loop if arg is a number not > 0
 and to not crash if no arg is specified.
 
+Cody also added the [try.sh](/1990/westley/try.sh) script.
+
 The alt code did NOT have arg checks added as it is actually a copy of the
 original code.
 
