@@ -1,6 +1,24 @@
 #!/usr/bin/env bash
+#
+# try.sh - demonstrate IOCCC winner 1990/jaw
+#
 
-echo "Running shark.sh:"
+# make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
+# this way allows us to have the user specify a different compiler in an easy
+# way.
+if [[ -z "$CC" ]]; then
+    CC="cc"
+fi
+
+make CC="$CC" all >/dev/null || exit 1
+
+# clear screen after compilation so that only the entry is shown
+clear
+
+
+echo "$ ./shark.sh atob shark.sh README.md jaw.c try.sh > receive"
+read -r -n 1 -p "Press any key to continue: "
+echo 1>&2
 ./shark.sh atob shark.sh README.md jaw.c try.sh > receive || exit 1
 echo "Done."
 
@@ -15,11 +33,13 @@ mkdir -p test || exit 0
 cd test || exit
 chmod +x ../receive
 # run the script
-echo "Attempting to extract files:"
-../receive
-
+read -r -n 1 -p "Press any key to run ../receive (extract files): "
 echo 1>&2
-echo "$ ls -al" 1>&2
+../receive
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ls -al: "
+echo 1>&2
 ls -al
 
 echo 1>&2
