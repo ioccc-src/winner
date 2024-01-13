@@ -1542,7 +1542,8 @@ operator so that it could be used in binary expressions.
 
 It was observed that on modern systems this goes much too quick. [Yusuke](#yusuke) created
 a patch that calls `usleep(3)` but [Cody](#cody) thought the value was too slow so he
-made it a macro in the Makefile `Z`, defaulting at 15000. This was made an [alt
+made it a macro in the Makefile `Z` (which can be redefined with `make
+SLEEP=...`), defaulting at 15000. This was made an [alt
 version](/1992/kivinen/kivinen.alt.c) and it is recommended one use the alt
 version first. See the README.md file to see how to reconfigure it.
 

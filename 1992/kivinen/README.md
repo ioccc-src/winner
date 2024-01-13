@@ -78,8 +78,8 @@ NOTE: Some systems do not need (or have) `-lsocket -lresolv -lnsl`.
 Such systems should compile using `-lX11`.
 
 NOTE: The original winning source [kivinen.orig.c](kivinen.orig.c) assumed that
-exit returned a value which cause problems for some systems where exit returns
-void.  The file [kivinen.c](kivinen.c) avoids this problem.
+`exit(3)` returned a value which cause problems for some systems where `exit(3)` returns
+`void`.  The file [kivinen.c](kivinen.c) avoids this problem.
 
 
 ## Author's remarks:
