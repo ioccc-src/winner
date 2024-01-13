@@ -14,16 +14,30 @@ make CC="$CC" all >/dev/null || exit 1
 #
 clear
 
-echo "$ ./buzzard.1 0 10" 1>&2
+read -r -n 1 -p "Press any key to run: ./buzzard.1 0 10: "
+echo 1>&2
 ./buzzard.1 0 10
-echo "$ ./buzzard.1 56 720" 1>&2
-./buzzard.1 56 720
-echo "$ ./buzzard.1 1 521" 1>&2
-./buzzard.1 1 521
+echo 1>&2
 
-echo "$ ./buzzard.1 '1+1' 111" 1>&2
+read -r -n 1 -p "Press any key to run: ./buzzard.1 56 720: "
+echo 1>&2
+./buzzard.1 56 720
+
+read -r -n 1 -p "Press any key to run: ./buzzard.1 1 521: "
+echo 1>&2
+./buzzard.1 1 521
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./buzzard.1 '1+1' 111: "
+echo 1>&2
 ./buzzard.1 '1+1' 111
-echo "$ ./buzzard.1 '1+1' 11" 1>&2
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./buzzard.1 '1+1' 11: "
+echo 1>&2
 ./buzzard.1 '1+1' 11
-echo "$ ./buzzard.1 '1+1' 1" 1>&2
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./buzzard.1 '1+1' 1: "
+echo 1>&2
 ./buzzard.1 '1+1' 1

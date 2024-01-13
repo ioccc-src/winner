@@ -1500,7 +1500,7 @@ necessary to include `time.h` so Cody did this as well.
 
 ## <a name="1992_buzzard.1"></a>[1992/buzzard.1](/1992/buzzard.1/buzzard.1.c) ([README.md](/1992/buzzard.1/README.md))
 
-[Cody](#cody) added a check for the right number of args, exiting 1 if not enough (/2)
+[Cody](#cody) added a check for the right number of args, exiting 1 if not enough (2)
 used. This was not originally done but at a time it was changed to be considered
 a bug so it was fixed at that point as it only took a few seconds and had to be
 verified that it was consistent with the [bugs.md](/bugs.md) file.
