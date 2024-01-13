@@ -8,11 +8,10 @@ make all
 ### Try:
 
 ```sh
-./brnstnd < sorta.i2+2
-./brnstnd < sorta.iwhosort
-```
+./try.sh
 
-See also the other `sorta.*` files.
+./sorta < sorta.itailrec
+```
 
 
 ## Judges' remarks:

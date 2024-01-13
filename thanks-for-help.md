@@ -1177,6 +1177,9 @@ invalid operands to binary expressions were resolved with the comma operator.
 Later on, Cody added back the macro `#define D define` to make it look ever so
 slightly more like the original, even though it's unused.
 
+Cody also added the [try.sh](/1991/brnstnd/try.sh) script and
+[try.txt](/1991/brnstnd/try.txt) which the script uses.
+
 
 ## <a name="1991_buzzard"></a>[1991/buzzard](/1991/buzzard/buzzard.c) ([README.md](/1991/buzzard/README.md]))
 
