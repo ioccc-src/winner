@@ -673,6 +673,75 @@ Enjoy! :-)
 # 1990
 
 
+## 1990 baruch
+
+### STATUS: known bug - please help us fix
+### Source code: [1990/baruch/baruch.c](1990/baruch/baruch.c)
+### Information: [1990/baruch/README.md](1990/baruch/README.md)
+
+A point worth considering is that as the number passed into the program gets
+bigger the number of lines of output gets substantially larger and it takes much
+more time and resources to run as well. For instance:
+
+```sh
+$ for n in $(seq 1 18); do echo "$n"; echo "$n" | time "./baruch" | wc -l | sed -E -e 's/[[:space:]]//g'; done
+1
+3
+./baruch  0.00s user 0.00s system 5% cpu 0.115 total
+2
+1
+./baruch  0.00s user 0.00s system 64% cpu 0.004 total
+3
+1
+./baruch  0.00s user 0.00s system 60% cpu 0.003 total
+4
+11
+./baruch  0.00s user 0.00s system 64% cpu 0.003 total
+5
+61
+./baruch  0.00s user 0.00s system 66% cpu 0.003 total
+6
+29
+./baruch  0.00s user 0.00s system 61% cpu 0.003 total
+7
+321
+./baruch  0.00s user 0.00s system 69% cpu 0.002 total
+8
+829
+./baruch  0.00s user 0.00s system 76% cpu 0.003 total
+9
+3521
+./baruch  0.00s user 0.00s system 87% cpu 0.005 total
+10
+7965
+./baruch  0.01s user 0.00s system 95% cpu 0.014 total
+11
+32161
+./baruch  0.05s user 0.00s system 98% cpu 0.053 total
+12
+184601
+./baruch  0.29s user 0.00s system 99% cpu 0.294 total
+13
+1031969
+./baruch  1.78s user 0.00s system 99% cpu 1.794 total
+14
+5483941
+./baruch  11.26s user 0.02s system 99% cpu 11.311 total
+15
+36466945
+./baruch  79.20s user 0.15s system 99% cpu 1:19.72 total
+16
+251132705
+./baruch  592.89s user 0.77s system 99% cpu 9:55.34 total
+17
+1724671873
+./baruch  4535.71s user 5.25s system 99% cpu 1:15:49.76 total
+18
+12655721857
+./baruch  37496.97s user 58.50s system 99% cpu 10:27:48.29 total
+```
+
+
 ## 1990 jaw
 
 ### STATUS: known bug - please help us fix
