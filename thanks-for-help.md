@@ -1185,7 +1185,7 @@ Cody also added the [try.sh](/1991/brnstnd/try.sh) script and
 
 [Cody](#cody) fixed this so that the coordinates being specified would not crash the
 program. This happened because the function that calls `atoi(3)` took an arg
-without any type specified and as an implicit int it was not a `char *` which
+without any type specified and as an implicit `int` it was not a `char *` which
 crashed the program in modern systems.
 
 Cody also made the file name in the code (which is the default maze file) not
@@ -1195,7 +1195,8 @@ Finally Cody added the [alternate
 version](/1991/buzzard/README.md#alternate-code) which will possibly feel more at
 home with those familiar with vi(m) (it certainly does feel more at home with
 him): `k` for forward, `h` for left and `l` for right. This version also has a
-more useful way to exit, just entering `q` followed by enter.
+more useful way to exit, just entering `q` followed by enter, rather than
+completing or killing the program.
 
 
 ## <a name="1991_davidguy"></a>[1991/davidguy](/1991/davidguy/davidguy.c) ([README.md](/1991/davidguy/README.md]))
