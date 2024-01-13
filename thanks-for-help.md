@@ -1604,7 +1604,7 @@ loop, reading again if `scanf(3)` did not return 2 (that was not a problem in
 that `scanf(/2)` will not return until the number of specifiers have been
 processed or some error occurs) or a function it called returned non-zero.
 
-Instead the fix involves the `scanf(3)` specifiers being `"%4s %4s" on two
+Instead the fix involves the `scanf(3)` specifiers being `"%4s %4s"` on two
 new char arrays (always cleared in the beginning of the loop) and then using
 `strtol(3)` with a base of `8` (as it's octal), checking for `< 0 || > 077` on
 both numbers (using `"%o %o"` does not solve the problem).
@@ -1650,7 +1650,7 @@ Cody also added an arg check because the program and the
 [nuked](https://en.wikipedia.org/wiki/Nuclear_weapon) the [entire
 world](https://en.wikipedia.org/wiki/Earth) or just the
 [USA](https://en.wikipedia.org/wiki/United_States), respectively, without enough
-args (/2). And not that we need the help or anything for this :-) but we
+args (2). And not that we need the help or anything for this :-) but we
 encourage you to try the original without two args :-)
 
 
