@@ -1531,9 +1531,11 @@ details if you're interested in trying to understand it (or fix?).
 
 ## <a name="1992_imc"></a>[1992/imc](/1992/imc/imc.c) ([README.md](/1992/imc/README.md]))
 
+[Cody](#cody) provided the [try.sh](/1992/imc/try.sh) script.
+
 The original code, [imc.orig.c](/1992/imc/imc.orig.c), assumed that `exit(3)`
 returned a value but this will cause problems where `exit(3)` returns void. The
-source code was modified to avoid this problem but like [Cody](#cody) did with other fixes
+source code was modified to avoid this problem but like Cody did with other fixes
 he made this more like the original by redefining `exit` to use the comma
 operator so that it could be used in binary expressions.
 
