@@ -13,14 +13,31 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-echo "$ ./nathan obfuscate < nathan.c > foobarf.c" 1>&2
+read -r -n 1 -p "Press any key to run: ./nathan obfuscate < nathan.c > foobarf.c: "
+echo 1>&2
 ./nathan obfuscate < nathan.c > foobarf.c
+echo 1>&2
 
-echo "$ ./nathan - obfuscate < foobarf.c > barfoof.c" 1>&2
+read -r -n 1 -p "Press any key to show foobarf.c (space = next page, q = quit): "
+echo 1>&2
+less -rEXF foobarf.c
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./nathan - obfuscate < foobarf.c > barfoof.c: "
+echo 1>&2
 ./nathan - obfuscate < foobarf.c > barfoof.c
+echo 1>&2
 
-echo "$ diff nathan.c barfoof.c" 1>&2
+read -r -n 1 -p "Press any key to show barfoof.c (space = next page, q = quit): "
+echo 1>&2
+less -rEXF barfoof.c
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: diff -s nathan.c barfoof.c: "
+echo 1>&2
 diff -s nathan.c barfoof.c
+echo 1>&2
 
-echo "$ echo 'IOCCC 1992 winner nathan' | ./nathan" 1>&2
+read -r -n 1 -p "Press any key to run: echo 'IOCCC 1992 winner nathan' | ./nathan: "
+echo 1>&2
 echo 'IOCCC 1992 winner nathan' | ./nathan
