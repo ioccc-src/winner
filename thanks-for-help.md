@@ -1568,13 +1568,13 @@ it moves towards the right but if you click the mouse it goes back.
 [Yusuke](#yusuke) supplied a patch which makes this work with gcc. Due to how it works (see
 Judges' remarks in the README.md file) this will not work with clang.
 
-[Cody](#cody) also provided the `runme.sh` script to demonstrate it as using make was
-problematic.
+[Cody](#cody) also provided the [lush.sh](/1992/lush/lush.sh) script to
+demonstrate it as using make was problematic.
 
 Cody made it use `fgets()` instead of `gets()`.
 
-NOTE: this entry cannot work with clang due to different compiler messages. See
-[bugs.md](/bugs.md) for details.
+NOTE: this entry cannot work with clang due to different compiler messages (it
+will compile fine but it won't work). See [bugs.md](/bugs.md) for details.
 
 
 ## <a name="1992_marangon"></a>[1992/marangon](/1992/marangon/marangon.c) ([README.md](/1992/marangon/README.md))

@@ -995,7 +995,8 @@ If you want to try and fix this (mis)feature, you are welcome to try.
 ### Information: [1992/lush/README.md](1992/lush/README.md)
 
 We used a patch from [Yusuke Endoh](/winners.html#Yusuke_Endoh) to get this to
-work but it only works with gcc. Cody removed the warnings of `gets()`.
+work but it only works with gcc. Cody removed the warnings of `gets()` and
+provided a script to run the entry properly.
 
 Unfortunately due to the way the entry works and the fact that other compilers
 like clang have different warnings and errors this simply does not work with
@@ -1068,6 +1069,7 @@ Hello World.
 ```
 
 Can you help us?
+
 
 ## 1992 vern
 
