@@ -14,57 +14,35 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen to remove any compiler message to make the entry stand out more
 clear
 
-echo -n "Green terra <-> "
-echo "Green terra" | ./fine
+fine()
+{
+    if [[ "$#" != 1 ]]; then
+	echo "$0: expected 1 arg, got $#" 1>&2
+	return
+    fi
 
-echo -n "Vex <-> "
-echo "Vex" | ./fine
+    read -r -n 1 -p "Press any key to run: echo $1 | ./fine: "
+    echo 1>&2
+    echo -n "$1 <-> "
+    echo "$1" | ./fine
+    echo 1>&2
+}
 
-echo -n "Tang <-> "
-echo "Tang" | ./fine
-
-echo -n "Vend onyx <-> "
-echo "Vend onyx" | ./fine
-
-echo -n "Cheryl be flashy <-> "
-echo "Cheryl be flashy" | ./fine
-
-echo -n "Rail <-> "
-echo "Rail" | ./fine
-
-echo -n "Clerk <-> "
-echo "Clerk" | ./fine
-
-echo -n "Ones <-> "
-echo "Ones" | ./fine
-
-echo -n "Fur <-> "
-echo "Fur" | ./fine
-
-echo -n "Er <-> "
-echo "Er" | ./fine
-
-echo -n "IV <-> "
-echo "IV" | ./fine
-
-echo -n "NYC <-> "
-echo "NYC" | ./fine
-
-echo -n "Fubar <-> "
-echo "Fubar" | ./fine
-
-echo -n "DQ <-> "
-echo "DQ" | ./fine
-
-echo -n "Off <-> "
-echo "Off" | ./fine
-
-echo -n "Ire <-> "
-echo "Ire" | ./fine
-
-echo -n "PEP <-> "
-echo "PEP" | ./fine
-
-
-echo -n "The rug gary lenT <-> "
-echo "The rug gary lenT" | ./fine
+fine "Green terra"
+fine "Vex"
+fine "Tang"
+fine "Vend onyx"
+fine "Cheryl be flashy"
+fine "Rail"
+fine "Clerk"
+fine "Ones"
+fine "Fur"
+fine "Er"
+fine "IV"
+fine "NYC"
+fine "Fubar"
+fine "DQ"
+fine "Off"
+fine "Ire"
+fine "PEP"
+fine "The rug gary lenT"
