@@ -1505,7 +1505,7 @@ return void.
 [Cody](#cody) fixed the Makefile so that the program will actually work with it (or at
 least the rule to clobber files and link `am` to `ant`). The issue was that the
 variables in the Makefile could not be evaluated in the same way as it's not as
-feature-rich as other implementations of `make`. Thus the use of `${RM}` and
+feature-rich as other implementations of `make(1)`. Thus the use of `${RM}` and
 `${CP}` were in the respective rules changed to `rm` and `cp`, for two examples.
 A new rule had to be added as well. The variable situation might be because they
 are obtained from the root variable Makefile `var.mk` via `include` which the
@@ -1516,7 +1516,10 @@ Cody also fixed another problem, unrelated, in the Makefile with the `.PHONY`
 rule where a line was not ended with a `\` but should have been.
 
 The author stated that in some systems like DOS with Turbo C, it might be
-necessary to include `time.h` so Cody did this as well.
+necessary to include `time.h` so Cody did this as well as this exists in other
+systems too.
+
+Cody also added the [try.sh](/1992/ant/try.sh) script.
 
 
 ## <a name="1992_buzzard.1"></a>[1992/buzzard.1](/1992/buzzard.1/buzzard.1.c) ([README.md](/1992/buzzard.1/README.md))
