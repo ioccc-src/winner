@@ -690,6 +690,7 @@
 1992,adrian,adrian.grep.5,100,null,null,agrep,true,github,agrep script,5
 1992,adrian,adrian.grep.from,100,null,null,agrep,true,github,agrep script,from
 1992,adrian,adrian.grep.try,100,null,null,agrep,true,github,agrep script,try
+1992,adrian,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1992,adrian,1992_adrian.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1992,albert,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
 1992,albert,.gitignore,null,null,null,gitignore,false,github,list of files that should not be committed under git,gitignore
@@ -700,6 +701,8 @@
 1992,albert,Makefile,30,null,null,makefile,true,github,Makefile,null
 1992,albert,albert.alt.c,40,null,alt,c,true,github,alternative source,c
 1992,albert,albert.orig.c,50,null,orig,c,true,github,original source,c
+1992,albert,try.alt.sh,100,null,null,shellscript,true,github,how to run alternative code,sh
+1992,albert,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1992,albert,1992_albert.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1992,ant,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
 1992,ant,.gitignore,null,null,null,gitignore,false,github,list of files that should not be committed under git,gitignore
@@ -709,6 +712,7 @@
 1992,ant,ant.c,20,null,main,c,true,github,winning source,c
 1992,ant,Makefile,30,null,null,makefile,true,github,Makefile,null
 1992,ant,ant.orig.c,50,null,orig,c,true,github,original source,c
+1992,ant,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1992,ant,ant.README,150,null,null,text,true,github,am man page,README
 1992,ant,ant.test.mk,150,null,null,makefile,true,github,how to compile,mk
 1992,ant,1992_ant.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
@@ -734,6 +738,8 @@
 1992,buzzard.2,buzzard.2.orig.c,50,null,orig,c,true,github,original source,c
 1992,buzzard.2,buzzard.2.README.html,100,md2html,null,html,true,browser,author description of files,html
 1992,buzzard.2,buzzard.2.design.md,100,null,null,markdown,false,github,about the FORTH language,md
+1992,buzzard.2,try.alt.sh,100,null,null,shellscript,true,github,how to run alternative code,sh
+1992,buzzard.2,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1992,buzzard.2,demo1.1st,150,null,null,FORTH,true,github,FORTH source,1st
 1992,buzzard.2,demo1.th,150,null,null,FORTH,true,github,FORTH source,th
 1992,buzzard.2,demo2.th,150,null,null,FORTH,true,github,FORTH source,th
@@ -837,6 +843,8 @@
 1993,ant,Makefile,30,null,null,makefile,true,github,Makefile,null
 1993,ant,ant.orig.c,50,null,orig,c,true,github,original source,c
 1993,ant,ant.txt,100,null,null,text,true,github,ag man page,txt
+1993,ant,try.sh,100,null,null,shellscript,true,github,how to run,sh
+1993,ant,ants.txt,150,null,null,text,true,github,lots of ASCII ants,txt
 1993,ant,ant.test.mk,150,null,null,makefile,true,github,test suite,mk
 1993,ant,1993_ant.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1993,cmills,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -858,6 +866,7 @@
 1993,dgibson,Makefile,30,null,null,makefile,true,github,Makefile,null
 1993,dgibson,dgibson.orig.c,50,null,orig,c,true,github,original source,c
 1993,dgibson,dgibson.sh,100,null,null,shellscript,true,github,how to run,sh
+1993,dgibson,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1993,dgibson,dgibson.data1,150,null,null,text,true,github,life cell layout,data1
 1993,dgibson,dgibson.data2,150,null,null,text,true,github,life cell layout,data2
 1993,dgibson,dgibson.data3,150,null,null,text,true,github,life cell layout,data3
@@ -876,6 +885,7 @@
 1993,ejb,ejb.orig.c,50,null,orig,c,true,github,original source,c
 1993,ejb,hanoi.html,100,md2html,null,html,true,browser,about the Towers of Hanoi puzzle,html
 1993,ejb,patience.html,100,md2html,null,html,true,browser,about the Patience puzzle,html
+1993,ejb,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1993,ejb,1993_ejb.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1993,jonth,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
 1993,jonth,.gitignore,null,null,null,gitignore,false,github,list of files that should not be committed under git,gitignore
@@ -951,6 +961,7 @@
 1993,vanb,Makefile,30,null,null,makefile,true,github,Makefile,null
 1993,vanb,vanb.alt.c,40,null,alt,c,true,github,alternative source,c
 1993,vanb,vanb.orig.c,50,null,orig,c,true,github,original source,c
+1993,vanb,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1993,vanb,1993_vanb.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1994,dodsond1,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
 1994,dodsond1,.gitignore,null,null,null,gitignore,false,github,list of files that should not be committed under git,gitignore
