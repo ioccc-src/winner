@@ -9,8 +9,7 @@ fi
 
 # run/compile it
 rm -f ouroboros.c x1 x
-ex - <<EOF
-r fubar.c
+ex fubar.c <<EOF
 8,9j
 w ouroboros.c
 EOF

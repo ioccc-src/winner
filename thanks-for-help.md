@@ -758,6 +758,27 @@ not strictly necessary but nonetheless more correct, even if not warned against.
 `$PATH`) to files referred to in the code. The path problem was also fixed in
 [fubar.sh](/1989/fubar/fubar.sh).
 
+A strange problem occurred where if one made modifications to the C file it
+might end up failing to work even after changing it back. This was resolved by:
+
+```diff
+--- i/1989/fubar/fubar.sh
++++ w/1989/fubar/fubar.sh
+@@ -7,13 +7,12 @@ if [[ $# -ne 1 ]]; then
+     exit 1
+ fi
+ 
+ # run/compile it
+ rm -f ouroboros.c x1 x
+-ex - <<EOF
+-r fubar.c
++ex fubar.c <<EOF
+ 8,9j
+ w ouroboros.c
+ EOF
+ chmod +x ouroboros.c
+```
+
 Cody also 'modernised' the script to use `bash` and fixed for ShellCheck. The
 `if [ .. ]` was changed in the C code as well as the script.
 
