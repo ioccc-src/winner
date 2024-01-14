@@ -18,6 +18,14 @@ level   a value from -128 to 127
 ```
 
 
+## Try:
+
+
+```sh
+./try.sh
+```
+
+
 ## Judges' remarks:
 
 A negative argument plays the patience puzzle.  An argument

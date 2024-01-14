@@ -9,24 +9,18 @@ make all
 
 ```sh
 ./ant Makefile
+
+./ant Makefile rule
 ```
 
-where `Makefile` is a Makefile to use.
+where `Makefile` is a Makefile to use and `rule` is an optional rule to use.
 
 
 ### Try:
 
-First build the tool itself with our Makefile:
 
 ```sh
-./ant Makefile am
-```
-
-Now use `am` to do some things:
-
-```sh
-./am Makefile am_clobber	# clobber everything except am
-./am ant.test.mk		# run the test Makefile with am
+./try.sh
 ```
 
 

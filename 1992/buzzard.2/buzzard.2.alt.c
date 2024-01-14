@@ -17,7 +17,7 @@ a(x)
 r(x)
 {
    switch(x++[m]){
-	z 5:	for(w=scanf("%s",s)<1?exit(0):L;strcmp(s,&w[&m[1]][s]);w=m[w]);
+	z 5:	for(w=scanf("%s",s)<1?exit(0),0:L;strcmp(s,&w[&m[1]][s]);w=m[w]);
 		w-1 ? r(w+2) : (c 2,c atoi(s))
 	z 12:	I=1[m]--[m]
 	z 15:	f=S[-f]

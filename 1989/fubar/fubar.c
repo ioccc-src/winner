@@ -9,12 +9,12 @@
 if(m && q=='T' && o=='T'){m=0;(void)fread(tt,11,1,stdin);(void)printf("T %9d\n",atoi(tt)*QQ);}else {q=o;(void)putchar(o);}}exit(0);}
 cc ouroboros.c -o x 
 #define zxc ;{/*
-cat ./ouroboros.c | ./x $1 > x1
+cat ouroboros.c | ./x $1 > x1
 if [[ $? -ne 0 ]]; then
 exit
 fi
-mv x1 ./ouroboros.c
-chmod +x ./ouroboros.c
+mv x1 ouroboros.c
+chmod +x ouroboros.c
 exec ./ouroboros.c $1
 exit
 */

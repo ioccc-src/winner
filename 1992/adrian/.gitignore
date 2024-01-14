@@ -13,8 +13,10 @@ adsleep
 adsleep.c
 adwc
 adwc.c
+adwc.adwc.txt
 *.dSYM
 indent
 indent.c
 indent.o
 prog.orig
+wc.adwc.txt

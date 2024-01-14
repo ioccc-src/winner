@@ -758,6 +758,27 @@ not strictly necessary but nonetheless more correct, even if not warned against.
 `$PATH`) to files referred to in the code. The path problem was also fixed in
 [fubar.sh](/1989/fubar/fubar.sh).
 
+A strange problem occurred where if one made modifications to the C file it
+might end up failing to work even after changing it back. This was resolved by:
+
+```diff
+--- i/1989/fubar/fubar.sh
++++ w/1989/fubar/fubar.sh
+@@ -7,13 +7,12 @@ if [[ $# -ne 1 ]]; then
+     exit 1
+ fi
+ 
+ # run/compile it
+ rm -f ouroboros.c x1 x
+-ex - <<EOF
+-r fubar.c
++ex fubar.c <<EOF
+ 8,9j
+ w ouroboros.c
+ EOF
+ chmod +x ouroboros.c
+```
+
 Cody also 'modernised' the script to use `bash` and fixed for ShellCheck. The
 `if [ .. ]` was changed in the C code as well as the script.
 
@@ -1406,7 +1427,7 @@ from (`__FILE__`), not	`adgrep.c`, as the latter does not exist: `adgrep` is
 simply a link to `adrian` as `adgrep` is what the program was submitted as but
 the winner is `adrian.c`.
 
-Not fixing the above problem would have also cause the program to crash if no
+Not fixing the above problem would have also caused the program to crash if no
 arg was specified as the file doesn't exist. In making the above fix, at first
 the change to check for a `NULL` file was added. Then it was noticed that the
 problem is that `adgrep.c` was an incorrect reference that never existed and it
@@ -1468,6 +1489,11 @@ one must keep the `Y[strlen(Y)-1]='\0';` part and keep it there.
 These fixes are complex changes due to the way the program and Makefile generate
 the additional tools.
 
+Cody finally added the [try.sh](/1992/adrian/try.sh) script that shows the entry
+and some of the tools this entry generates. Unlike other scripts, it does not
+clear the screen after compilation so that one can see how the other files are
+generated.
+
 
 ## <a name="1992_albert"></a>[1992/albert](/1992/albert/albert.c) ([README.md](/1992/albert/README.md]))
 
@@ -1475,8 +1501,12 @@ the additional tools.
 applied to the code, provided as the alt code as that version is not obfuscated.
 Thus Cody's fix applies to the original entry. The problems were that `malloc.h`
 is not the correct header file now (at least in some systems?) and a non-void
-(implicit int) function returning without a value. That function was changed to
-return void.
+(implicit `int`) function returning without a value. That function was changed to
+return `void`.
+
+Cody also added the [try.sh](/1992/albert/try.sh) and
+[try.alt.sh](/1992/albert/try.alt.sh) scripts that correspond to the entry and
+the alt code.
 
 
 ## <a name="1992_ant"></a>[1992/ant](/1992/ant/ant.c) ([README.md](/1992/ant/README.md]))
@@ -1484,7 +1514,7 @@ return void.
 [Cody](#cody) fixed the Makefile so that the program will actually work with it (or at
 least the rule to clobber files and link `am` to `ant`). The issue was that the
 variables in the Makefile could not be evaluated in the same way as it's not as
-feature-rich as other implementations of `make`. Thus the use of `${RM}` and
+feature-rich as other implementations of `make(1)`. Thus the use of `${RM}` and
 `${CP}` were in the respective rules changed to `rm` and `cp`, for two examples.
 A new rule had to be added as well. The variable situation might be because they
 are obtained from the root variable Makefile `var.mk` via `include` which the
@@ -1495,7 +1525,10 @@ Cody also fixed another problem, unrelated, in the Makefile with the `.PHONY`
 rule where a line was not ended with a `\` but should have been.
 
 The author stated that in some systems like DOS with Turbo C, it might be
-necessary to include `time.h` so Cody did this as well.
+necessary to include `time.h` so Cody did this as well as this exists in other
+systems too.
+
+Cody also added the [try.sh](/1992/ant/try.sh) script.
 
 
 ## <a name="1992_buzzard.1"></a>[1992/buzzard.1](/1992/buzzard.1/buzzard.1.c) ([README.md](/1992/buzzard.1/README.md))
@@ -1505,8 +1538,18 @@ used. This was not originally done but at a time it was changed to be considered
 a bug so it was fixed at that point as it only took a few seconds and had to be
 verified that it was consistent with the [bugs.md](/bugs.md) file.
 
-He also added the [try.sh](/1991/buzzard.1/try.sh) script to try out some
-commands that we suggested and some additional ones that provide for some fun.
+He also added the [try.sh](/1992/buzzard.1/try.sh) script to try out some
+commands that we suggested and some additional ones that he provide for some fun.
+
+
+## <a name="1992_buzzard.2"></a>[1992/buzzard.2](/1992/buzzard.2/buzzard.2.c) ([README.md](/1992/buzzard.2/README.md))
+
+[Cody](#cody) fixed the alt code to compile. The problem was it assumed that
+`exit(3)` returns a value, not `void`. This was fixed with a `,0`.
+
+Cody also added the [try.sh](/1992/buzzard.2/try.sh) and
+[try.alt.sh](/1992/buzzard.2/try.alt.sh) scripts that correspond to the entry
+and its alt code.
 
 
 ## <a name="1992_gson"></a>[1992/gson](/1992/gson/gson.c) ([README.md](/1992/gson/README.md]))
@@ -1660,6 +1703,12 @@ encourage you to try the original without two args :-)
 # <a name="1993"></a>1993
 
 
+## <a name="1993_ant"></a>[1993/ant](/1993/ant/ant.c) ([README.md](/1993/ant/README.md]))
+
+[Cody](#cody) added the [try.sh](/1993/ant/try.sh) script and a data file,
+[ants.txt](/1993/ant/ants.txt), full of ants for the script.
+
+
 ## <a name="1993_cmills"></a>[1993/cmills](/1993/cmills/cmills.c) ([README.md](/1993/cmills/README.md]))
 
 [Yusuke](#yusuke) suggested that with modern systems this goes too fast so he added a call
@@ -1670,7 +1719,16 @@ first.
 
 ## <a name="1993_dgibson"></a>[1993/dgibson](/1993/dgibson/dgibson.c) ([README.md](/1993/dgibson/README.md]))
 
-[Cody](#cody) fixed the script to work which assumed that `.` is in the path.
+[Cody](#cody) fixed the [dgibson.sh](/1993/dgibson/dgibson.sh) script to work
+which assumed that `.` is in the path.
+
+Cody also added the [try.sh](/1993/dgibson/try.sh) script which runs the above
+mentioned script on all the data files.
+
+
+## <a name="1993_ejb"></a>[1993/ejb](/1993/ejb/ejb.c) ([README.md](/1993/ejb/README.md]))
+
+[Cody](#cody) added the [try.sh](/1993/ejb/try.sh) script.
 
 
 ## <a name="1993_jonth"></a>[1993/jonth](/1993/jonth/jonth.c) ([README.md](/1993/jonth/README.md]))
@@ -1765,6 +1823,8 @@ but fixed to work with clang as well.
 
 NOTE: the `N1` and `N2` are provided as notes in the README.md file describing
 this code. Other code is also described there.
+
+Cody also added the [try.sh](/1993/vanb/try.sh) script.
 
 
 # <a name="1994"></a>1994

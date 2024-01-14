@@ -20,7 +20,7 @@ For more detailed information see [1992 adrian in bugs.md](/bugs.md#1992-adrian)
 ### Try:
 
 ```sh
-./adrian adrian.grep.try < README.md
+./try.sh
 ```
 
 For the slow minded, try:
@@ -28,9 +28,6 @@ For the slow minded, try:
 ```sh
 ./adsleep 32767
 ```
-
-NOTE: if you do not specify an arg some of the programs such as `adsleep` it
-will very likely segfault do something funny. This is supposed to happen.
 
 
 ## Judges' remarks:
@@ -160,11 +157,11 @@ Running:
 
 will perform a function similar to that of the unix `from` command.
 
-If no filename is specified on the command line, then `__FILE__` is used
-as the specification for the automaton.  (Originally `"adgrep.c"` the file was renamed
-to `adrian.c` by the judges but for more portability the arg was changed to
-`__FILE__`.)  In this case, the program will search for
-matches to the regular expression:
+If no filename is specified on the command line, then `__FILE__` is used as the
+specification for the automaton. (Originally this was `"adgrep.c"` but the file
+was renamed to `adrian.c` by the judges and for more portability the arg was
+changed to `__FILE__`.)  In this case, the program will search for matches to
+the regular expression:
 
 ```
 ^.[^|C][^w[Q]*(Q|[w[]c).*|^.[C|]$
@@ -219,7 +216,7 @@ you can search for matches to
 
 By some freak happenstance, lines of `adrian.c` which match this regular
 expression form a unix `head(1)` command.  It prints the first ten lines of
-the file specified on the command line or adrian.c if no file is
+the file specified on the command line or `adrian.c` if no file is
 specified (again this was changed to `__FILE__`).
 
 By setting the first line to

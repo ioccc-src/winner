@@ -29,7 +29,7 @@ For more detailed information see [1992 albert in bugs.md](/bugs.md#1992-albert)
 ### Try:
 
 ```sh
-./albert 1234567890123456789
+./try.sh
 ```
 
 
@@ -73,6 +73,12 @@ make alt
 
 Use `albert.alt` as you would `albert` above.
 
+
+### Alternate try:
+
+```sh
+./try.alt.sh
+```
 
 ## Judges' remarks:
 

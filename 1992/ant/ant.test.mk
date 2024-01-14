@@ -57,7 +57,7 @@ TEXT_2	= test macro split \
 	three lines
 TEXT_3	= test dollar macro '$$'
 TEXT_4	= test dollar again "$$(TEXT_1)"
-TEXT_5	=	imbeded macro '$(TEXT_1)'
+TEXT_5	=	embedded macro '$(TEXT_1)'
 
 redefine : r1 r2 r3 r4 r5 
 
@@ -161,7 +161,7 @@ leaf.5 :
 
 #  Command lines split across lines.
 split.cmd:
-	echo Try spliting command \
+	echo Try splitting command \
 		lines across more \
 	than one line.
 
