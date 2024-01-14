@@ -29,9 +29,7 @@ hexadecimal and decimal numbers.
 ### Try:
 
 ```sh
-./vanb '1+1'
-
-./vanb '4+4'
+./try.sh
 ```
 
 What happens if you use something other than valid digits?
@@ -63,6 +61,7 @@ The program does no error checking - erroneous expressions will
 produce spurious results. Note that unary `-` is an operator. Thus,
 decimal `-46` would be entered as `-d46` and not `d-46`.
 
+
 ### What Makes This Program Special:
 
 0. Of course, the fact that the program takes input and produces output in
@@ -85,6 +84,7 @@ format a program which has no explicit control structures (other than `?:`s).
 
 6. Many simple tasks are done many times. I tried to do these differently each
 time, to make the program harder to understand.
+
 
 ### How It Works:
 

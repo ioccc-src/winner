@@ -1809,6 +1809,8 @@ but fixed to work with clang as well.
 NOTE: the `N1` and `N2` are provided as notes in the README.md file describing
 this code. Other code is also described there.
 
+Cody also added the [try.sh](/1993/vanb/try.sh) script.
+
 
 # <a name="1994"></a>1994
 
