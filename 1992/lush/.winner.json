@@ -50,7 +50,7 @@
 	    "winners_text" : "original source"
 	},
 	{
-	    "file_path" : "runme.sh",
+	    "file_path" : "lush.sh",
 	    "winners_rank" : 100,
 	    "created_by" : null,
 	    "prog" : null,
