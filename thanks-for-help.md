@@ -1703,6 +1703,12 @@ encourage you to try the original without two args :-)
 # <a name="1993"></a>1993
 
 
+## <a name="1993_ant"></a>[1993/ant](/1993/ant/ant.c) ([README.md](/1993/ant/README.md]))
+
+[Cody](#cody) added the [try.sh](/1993/ant/try.sh) script and a data file,
+[ants.txt](/1993/ant/ants.txt), full of ants for the script.
+
+
 ## <a name="1993_cmills"></a>[1993/cmills](/1993/cmills/cmills.c) ([README.md](/1993/cmills/README.md]))
 
 [Yusuke](#yusuke) suggested that with modern systems this goes too fast so he added a call

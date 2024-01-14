@@ -25,10 +25,8 @@ For more detailed information see [1993 ant in bugs.md](/bugs.md#1993-ant).
 
 ### Try:
 
-You may also want to try the author's test suite:
-
 ```sh
-make -f ant.test.mk
+./try.sh
 ```
 
 
