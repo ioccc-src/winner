@@ -1716,6 +1716,11 @@ first.
 [Cody](#cody) fixed the script to work which assumed that `.` is in the path.
 
 
+## <a name="1993_ejb"></a>[1993/ejb](/1993/ejb/ejb.c) ([README.md](/1993/ejb/README.md]))
+
+[Cody](#cody) added the [try.sh](/1993/ejb/try.sh) script.
+
+
 ## <a name="1993_jonth"></a>[1993/jonth](/1993/jonth/jonth.c) ([README.md](/1993/jonth/README.md]))
 
 Both [Cody](#cody) and [Yusuke](#yusuke) fixed this so that it will work with modern systems. Yusuke
