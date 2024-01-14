@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# dgibson.sh - run the dgibson entry
+# dgibson.sh - run the IOCCC winner 1993/dgibson
 #
 # usage:
 #	dgibson.sh [data_file]
@@ -45,7 +45,15 @@ fi
 # build a new copy of the program
 #
 rm -f dgibson
-make dgibson
+# make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
+# this way allows us to have the user specify a different compiler in an easy
+# way.
+if [[ -z "$CC" ]]; then
+    CC="cc"
+fi
+
+make CC="$CC" all >/dev/null || exit 1
+
 
 # form the next generation
 #

@@ -19,7 +19,7 @@ where:
 ### Try:
 
 ```sh
-./dgibson.sh dgibson.data3
+./try.sh
 ```
 
 
@@ -38,7 +38,8 @@ There are a number of data files available:
 - [dgibson.data5](dgibson.data5)
 
 For [dgibson.data5](dgibson.data5) you will need a large screen, lots of virtual
-memory and lots of time!
+memory and lots of time! The [try.sh](try.sh) script will run
+[dgibson.sh](dgibson.sh) on all the data files.
 
 Good luck trying to use a debugger on this entry!  Life is not
 always pretty.

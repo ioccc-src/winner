@@ -1713,7 +1713,11 @@ first.
 
 ## <a name="1993_dgibson"></a>[1993/dgibson](/1993/dgibson/dgibson.c) ([README.md](/1993/dgibson/README.md]))
 
-[Cody](#cody) fixed the script to work which assumed that `.` is in the path.
+[Cody](#cody) fixed the [dgibson.sh](/1993/dgibson/dgibson.sh) script to work
+which assumed that `.` is in the path.
+
+Cody also added the [try.sh](/1993/dgibson/try.sh) script which runs the above
+mentioned script on all the data files.
 
 
 ## <a name="1993_ejb"></a>[1993/ejb](/1993/ejb/ejb.c) ([README.md](/1993/ejb/README.md]))
