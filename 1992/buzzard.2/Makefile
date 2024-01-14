@@ -114,7 +114,7 @@ DATA=
 TARGET= ${PROG} first
 #
 ALT_OBJ= ${PROG}.alt.o
-ALT_TARGET= ${PROG}.alt
+ALT_TARGET= ${PROG}.alt first.alt
 
 
 #################
@@ -143,6 +143,10 @@ alt: data ${ALT_TARGET}
 
 ${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+first.alt: ${PROG}.alt
+	${RM} -f $@
+	${LN} $< $@
 
 # data files
 #

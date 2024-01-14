@@ -10,8 +10,8 @@ code](#alternate-code) below for details.
 
 ## To use:
 
-First, you must make sure that first is made first (even though `make all`
-should do it :-) ):
+First, you must make sure that `first` is made first (even though `make all`
+should make first first :-) ):
 
 ```sh
 make first
@@ -48,6 +48,13 @@ Sorry, this is third!
 ```
 
 
+## Try:
+
+```sh
+./try.sh
+```
+
+
 ## Alternate code:
 
 This alternate version, [buzzard.2.alt.c](buzzard.2.alt.c), does not contain a
@@ -65,6 +72,12 @@ make alt
 
 Use `buzzard.2.alt` as you would `buzzard.2` above.
 
+
+### Alternate try:
+
+```sh
+./try.alt.sh
+```
 
 ## Judges' remarks:
 
@@ -99,8 +112,8 @@ further down.
 `first` expects you to first enter the names of the 13 primitives,
 separated by whitespace--it doesn't care what you name them, but
 if all the names aren't unique, you won't be able to use some of
-them.  After this you may type any sequence of valid first input.
-Valid first input is defined as any sequence of whitespace-delimited
+them.  After this you may type any sequence of valid `first` input.
+Valid `first` input is defined as any sequence of whitespace-delimited
 tokens which consist of primitives, new words you've defined, and
 integers (as parsed by `"%d"`).  Invalid input behaves unpredictably,
 but gives no warning messages.  A sample program, `demo1.1st`, is
@@ -108,7 +121,7 @@ included, but it only works on ASCII systems.
 
 Do not expect to be able to do anything interesting with `first`.
 
-To do something interesting, you need to feed first the file
+To do something interesting, you need to feed `first` the file
 [third](third) first.  In unix, you can do
 
 ```sh
@@ -159,7 +172,7 @@ Other related obfuscations are still present.  The top of the stack is cached in
 a variable, which increases performance massively if the compiler can figure out
 to keep it in a register; it also obfuscates the code.  (Unfortunately, the top
 of stack is a global variable and neither gcc nor most bundled compilers seem to
-register allocate it.)
+`register` allocate it.)
 
 More significant are the design obfuscations.  `m[0]` is the "dictionary
 pointer", used when compiling words, and `m[1]` is the return stack index.  Both
@@ -205,15 +218,14 @@ are primitives in
 [FORTH](https://en.wikipedia.org/wiki/Forth_(programming_language)) (like swap)
 take a significant amount of time in THIRD.
 
-When you get the `Ok.` message from third, try out some sample
-[FORTH](https://en.wikipedia.org/wiki/Forth_(programming_language)) code (first
-has no way of knowing if keyboard input is waiting, so it can't actually prompt
+When you get the `Ok.` message from `third`, try out some sample
+[FORTH](https://en.wikipedia.org/wiki/Forth_(programming_language)) code
+(`first` has no way of knowing if keyboard input is waiting, so it can't actually prompt
 you in a normal way.  It only prints `'Ok.'` after you define a word).
 
 
 ```sh
 2 3 + . cr
-
 ```
 
 (which adds 2 and 3, and print the result and a newline.)

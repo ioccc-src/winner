@@ -1530,6 +1530,16 @@ He also added the [try.sh](/1991/buzzard.1/try.sh) script to try out some
 commands that we suggested and some additional ones that provide for some fun.
 
 
+## <a name="1992_buzzard.2"></a>[1992/buzzard.2](/1992/buzzard.2/buzzard.2.c) ([README.md](/1992/buzzard.2/README.md))
+
+[Cody](#cody) fixed the alt code to compile. The problem was it assumed that
+`exit(3)` returns a value, not `void`. This was fixed with a `,0`.
+
+Cody also added the [try.sh](/1992/buzzard.2/try.sh) and
+[try.alt.sh](/1992/buzzard.2/try.alt.sh) scripts that correspond to the entry
+and its alt code.
+
+
 ## <a name="1992_gson"></a>[1992/gson](/1992/gson/gson.c) ([README.md](/1992/gson/README.md]))
 
 [Cody](#cody) fixed a crash that prevented this entry from working in some cases in some

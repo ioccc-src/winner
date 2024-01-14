@@ -1,7 +1,7 @@
 : help key  ( flush the carriage return form the input buffer )
 
 " The following are the standard known words; words marked with (*) are
-immediate words, which cannot be used from command mode, but only in
+immediate words, which cannot be used in command mode, but only in
 word definitions.  Words marked by (**) declare new words, so are always
 followed by the new word.
 
