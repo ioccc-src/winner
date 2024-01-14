@@ -356,6 +356,7 @@
 1989,fubar,Makefile,30,null,null,makefile,true,github,Makefile,null
 1989,fubar,fubar.orig.c,50,null,orig,c,true,github,original source,c
 1989,fubar,fubar.sh,100,null,null,shellscript,true,github,how to run fubar,sh
+1989,fubar,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1989,fubar,1989_fubar.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1989,jar.1,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
 1989,jar.1,.gitignore,null,null,null,gitignore,false,github,list of files that should not be committed under git,gitignore
@@ -391,6 +392,7 @@
 1989,ovdluhe,Makefile,30,null,null,makefile,true,github,Makefile,null
 1989,ovdluhe,ovdluhe.alt.c,40,null,alt,c,true,github,alternative source,c
 1989,ovdluhe,ovdluhe.orig.c,50,null,orig,c,true,github,original source,c
+1989,ovdluhe,try.alt.sh,100,null,null,shellscript,true,github,how to run alternative code,sh
 1989,ovdluhe,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1989,ovdluhe,1989_ovdluhe.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1989,paul,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
@@ -411,6 +413,7 @@
 1989,robison,robison.c,20,null,main,c,true,github,winning source,c
 1989,robison,Makefile,30,null,null,makefile,true,github,Makefile,null
 1989,robison,robison.orig.c,50,null,orig,c,true,github,original source,c
+1989,robison,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1989,robison,1989_robison.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1989,roemer,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
 1989,roemer,.gitignore,null,null,null,gitignore,false,github,list of files that should not be committed under git,gitignore
@@ -461,6 +464,7 @@
 1990,baruch,Makefile,30,null,null,makefile,true,github,Makefile,null
 1990,baruch,baruch.alt.c,40,null,alt,c,true,github,alternative source,c
 1990,baruch,baruch.orig.c,50,null,orig,c,true,github,original source,c
+1990,baruch,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1990,baruch,1990_baruch.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1990,cmills,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
 1990,cmills,.gitignore,null,null,null,gitignore,false,github,list of files that should not be committed under git,gitignore
@@ -489,6 +493,7 @@
 1990,dg,dg.c,20,null,main,c,true,github,winning source,c
 1990,dg,Makefile,30,null,null,makefile,true,github,Makefile,null
 1990,dg,dg.orig.c,50,null,orig,c,true,github,original source,c
+1990,dg,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1990,dg,1990_dg.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1990,jaw,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
 1990,jaw,.gitignore,null,null,null,gitignore,false,github,list of files that should not be committed under git,gitignore
@@ -520,6 +525,7 @@
 1990,scjones,scjones.c,20,null,main,c,true,github,winning source,c
 1990,scjones,Makefile,30,null,null,makefile,true,github,Makefile,null
 1990,scjones,scjones.orig.c,50,null,orig,c,true,github,original source,c
+1990,scjones,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1990,scjones,1990_scjones.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1990,stig,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
 1990,stig,.gitignore,null,null,null,gitignore,false,github,list of files that should not be committed under git,gitignore
@@ -549,6 +555,7 @@
 1990,theorem,theorem.c,20,null,main,c,true,github,winning source,c
 1990,theorem,Makefile,30,null,null,makefile,true,github,Makefile,null
 1990,theorem,theorem.orig.c,50,null,orig,c,true,github,original source,c
+1990,theorem,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1990,theorem,1990_theorem.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1990,westley,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
 1990,westley,.gitignore,null,null,null,gitignore,false,github,list of files that should not be committed under git,gitignore
@@ -559,6 +566,7 @@
 1990,westley,Makefile,30,null,null,makefile,true,github,Makefile,null
 1990,westley,westley.alt.c,40,null,alt,c,true,github,alternative source,c
 1990,westley,westley.orig.c,50,null,orig,c,true,github,original source,c
+1990,westley,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1990,westley,1990_westley.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1991,ant,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
 1991,ant,.gitignore,null,null,null,gitignore,false,github,list of files that should not be committed under git,gitignore
@@ -580,6 +588,8 @@
 1991,brnstnd,Makefile,30,null,null,makefile,true,github,Makefile,null
 1991,brnstnd,brnstnd.orig.c,50,null,orig,c,true,github,original source,c
 1991,brnstnd,sorta.README.html,100,md2html,null,html,true,browser,SORTA language infomation,html
+1991,brnstnd,try.sh,100,null,null,shellscript,true,github,how to run,sh
+1991,brnstnd,try.txt,100,null,null,text,true,github,input data for try.sh,txt
 1991,brnstnd,sorta.i2+2,150,null,null,sorta,true,github,SORTA source,i2+2
 1991,brnstnd,sorta.iarg0,150,null,null,sorta,true,github,SORTA source,iarg0
 1991,brnstnd,sorta.icalc,150,null,null,sorta,true,github,SORTA source,icalc
@@ -753,6 +763,7 @@
 1992,imc,imc.c,20,null,main,c,true,github,winning source,c
 1992,imc,Makefile,30,null,null,makefile,true,github,Makefile,null
 1992,imc,imc.orig.c,50,null,orig,c,true,github,original source,c
+1992,imc,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1992,imc,1992_imc.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1992,kivinen,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
 1992,kivinen,.gitignore,null,null,null,gitignore,false,github,list of files that should not be committed under git,gitignore
@@ -772,7 +783,7 @@
 1992,lush,lush.c,20,null,main,c,true,github,winning source,c
 1992,lush,Makefile,30,null,null,makefile,true,github,Makefile,null
 1992,lush,lush.orig.c,50,null,orig,c,true,github,original source,c
-1992,lush,runme.sh,100,null,null,shellscript,true,github,how to run,sh
+1992,lush,lush.sh,100,null,null,shellscript,true,github,how to run,sh
 1992,lush,1992_lush.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1992,marangon,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
 1992,marangon,.gitignore,null,null,null,gitignore,false,github,list of files that should not be committed under git,gitignore
@@ -1051,7 +1062,7 @@
 1994,westley,westley.c,20,null,main,c,true,github,winning source,c
 1994,westley,Makefile,30,null,null,makefile,true,github,Makefile,null
 1994,westley,westley.orig.c,50,null,orig,c,true,github,original source,c
-1994,westley,spoiler.sh,200,null,null,shellscript,true,github,SPOILER WARNING,sh
+1994,westley,try.sh,100,null,null,shellscript,true,github,how to run,sh
 1994,westley,1994_westley.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 1995,cdua,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
 1995,cdua,.gitignore,null,null,null,gitignore,false,github,list of files that should not be committed under git,gitignore
@@ -2331,227 +2342,10 @@
 2006,toledo1,try.sh,100,null,null,shellscript,true,github,how to run,sh
 2006,toledo1,2006_toledo1.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2006,toledo2,A,null,null,null,binary,false,download,binary support file,null
-2006,toledo2,ADVENTUR/ADV.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,ADVENTUR/ADVI.DAT,null,null,null,binary,false,download,binary support file,DAT
-2006,toledo2,ADVENTUR/ADVI.PTR,null,null,null,binary,false,download,pointer image file,PTR
-2006,toledo2,ADVENTUR/ADVT.DAT,null,null,null,binary,false,download,binary support file,DAT
-2006,toledo2,ADVENTUR/ADVT.PTR,null,null,null,binary,false,download,pointer image file,PTR
-2006,toledo2,ADVENTUR/DECODE.DAT,null,null,null,binary,false,download,binary support file,DAT
-2006,toledo2,ASM.COM,null,null,null,binary,false,download,MS-DOS command file,COM
 2006,toledo2,B,null,null,null,binary,false,download,binary support file,null
-2006,toledo2,BASICS/ALIENS.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,BASICS/CATCHUM.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,BASICS/CATCHUM.DAT,null,null,null,binary,false,download,binary support file,DAT
-2006,toledo2,BASICS/LADDER.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,BASICS/LADDER.DAT,null,null,null,binary,false,download,binary support file,DAT
-2006,toledo2,BASICS/MBASIC.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,BASICS/OBASIC.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,BASICS/PIP.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,BAUD.COM,null,null,null,binary,false,download,MS-DOS command file,COM
 2006,toledo2,C.BASIC,null,null,null,binary,false,download,compiled BASIC file,BASIC
 2006,toledo2,C.BIOS,null,null,null,binary,false,download,basic input output system,BIOS
-2006,toledo2,CONFIG.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,COPY.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,CPM64.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,DBASEII/APPEND.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,DBASEII/DBASEAPP.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,DBASEII/DBASEBRO.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,DBASEII/DBASE.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,DBASEII/DBASEJOI.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,DBASEII/DBASEMAI.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,DBASEII/DBASEMOD.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,DBASEII/DBASEMSC.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,DBASEII/DBASEMSG.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,DBASEII/DBASERPG.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,DBASEII/DBASESRT.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,DBASEII/DBASETTL.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,DBASEII/DBASEUPD.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,DBASEII/EQUAL85.DBF,null,null,null,binary,false,download,dBASE database file,DBF
-2006,toledo2,DBASEII/FORMAT.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,DBASEII/INDX.NDX,null,null,null,binary,false,download,dBASE index file,NDX
-2006,toledo2,DBASEII/JOIN.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,DBASEII/LEAST85.DBF,null,null,null,binary,false,download,dBASE database file,DBF
-2006,toledo2,DBASEII/MAIN.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,DBASEII/MISC.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,DBASEII/MODIFY.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,DBASEII/PIP.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,DBASEII/PRINTE.CMD,null,null,null,binary,false,download,command script,CMD
-2006,toledo2,DBASEII/RPG.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,DBASEII/SORT.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,DBASEII/STAT.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,DBASEII/SYSGEN.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,DBASEII/TOTAL.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,DBASEII/UPDATE.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,DBASEII/XDIR.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,DDT.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,DUMP.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,ED.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,FORMAT.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,GAMES/ALIENS.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,GAMES/ASM.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,GAMES/BAUD.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,GAMES/CATCHUM.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,GAMES/CATCHUM.DAT,null,null,null,binary,false,download,binary support file,DAT
-2006,toledo2,GAMES/CONFIG.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,GAMES/COPY.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,GAMES/D.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,GAMES/DDT.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,GAMES/DUMP.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,GAMES/ED.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,GAMES/INITDISK.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,GAMES/LADDER.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,GAMES/LADDER.DAT,null,null,null,binary,false,download,binary support file,DAT
-2006,toledo2,GAMES/LOAD.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,GAMES/MOVCPM.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,GAMES/PIP.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,GAMES/SETDISK.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,GAMES/STAT.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,GAMES/SUBMIT.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,GAMES/SYSGEN.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,GAMES/TERM.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,GAMES/XSUB.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,INITDISK.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,KERMIT/ATEST.DOC,null,null,null,binary,false,download,MS Word document,DOC
-2006,toledo2,KERMIT/B,null,null,null,binary,false,download,kermit support file,null
-2006,toledo2,KERMIT/BAUD.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,KERMIT/CONFIG.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,KERMIT/FORMAT.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,KERMIT/KAYKER.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,KERMIT/KAYVT52.KEY,null,null,null,binary,false,download,application license key,KEY
-2006,toledo2,KERMIT/PIP.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,KERMIT/PRINT.TST,null,null,null,binary,false,download,test file,TST
-2006,toledo2,KERMIT/VT52.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,KERMIT/VT52.DOC,null,null,null,binary,false,download,MS Word document,DOC
-2006,toledo2,KERMIT/WINSTALL.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,KERMIT/WS.INS,null,null,null,binary,false,download,installer script,INS
-2006,toledo2,KERMIT/WSMSGS.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,KERMIT/WSOVLY1.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,KERMIT/WSU.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,KERMIT/XDIR.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,LOAD.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MASTER/CPMADR.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MASTER/CPMKAYPR.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MASTER/DU2.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MASTER/FILTER.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MASTER/FILTER.DOC,null,null,null,binary,false,download,MS Word document,DOC
-2006,toledo2,MASTER/FILTER.FIL,null,null,null,binary,false,download,database table created by ACL,FIL
-2006,toledo2,MASTER/FORMAT.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MASTER/IMAGE,null,null,null,binary,false,download,floppy image data,null
-2006,toledo2,MASTER/INITDISK.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MASTER/MAGE.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MASTER/MAGE.DOC,null,null,null,binary,false,download,MS Word document,DOC
-2006,toledo2,MASTER/MBASIC.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MASTER/MDM712.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MASTER/MDM712.DOC,null,null,null,binary,false,download,MS Word document,DOC
-2006,toledo2,MASTER/MDM712KP.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MASTER/PIP.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MASTER/SETDISK.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MASTER/SYSGEN.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MASTER/WASH.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MASTER/XDIR.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MFDISK/MFDISK10.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MFDISK/MFDISK2.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MFDISK/MFDISK4.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MFDISK/MFDISK.INF,null,null,null,binary,false,download,define which files installed with a program or update,INF
-2006,toledo2,MODEM7/CPMADR.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MODEM7/DU2.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MODEM7/FORMAT.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MODEM7/INITDISK.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MODEM7/MBASIC.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MODEM7/MDM712.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MODEM7/MDM712.DOC,null,null,null,binary,false,download,MS Word document,DOC
-2006,toledo2,MODEM7/MDM712KP.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MODEM7/PIP.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MODEM7/SETDISK.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MODEM7/SYSGEN.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MODEM7/WASH.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MODEM7/XDIR.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,MOVCPM.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,PIP.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,PRO8/8DISKTST.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,PRO8/AUTOLOAD.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,PRO8/AUTOLOAD.Z80,null,null,null,binary,false,download,Split ZIP archive,Z80
-2006,toledo2,PRO8/CONFIG83.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,PRO8/CPY.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,PRO8/CRC.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,PRO8/CRC.DOC,null,null,null,binary,false,download,MS Word document,DOC
-2006,toledo2,PRO8/CRCKLIST.CRC,null,null,null,binary,false,download,CRC check list,CRC
-2006,toledo2,PRO8/D.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,PRO8/DISKTEST.DOC,null,null,null,binary,false,download,MS Word document,DOC
-2006,toledo2,PRO8/PRO8.ROM,null,null,null,binary,false,download,data for ROM storage,ROM
-2006,toledo2,PRO8/RCONFIG.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,PRO8/RDISK.DOC,null,null,null,binary,false,download,MS Word document,DOC
-2006,toledo2,PRO8/RF.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,PRO8/SYS.COM,null,null,null,binary,false,download,MS-DOS command file,COM
 2006,toledo2,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
-2006,toledo2,SETDISK.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,SOURCE/ASM.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,SOURCE/BAUD.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,SOURCE/CONFIG.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,SOURCE/COPY.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,SOURCE/CPM64.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,SOURCE/CPMWORK.009,null,null,null,binary,false,download,empty file,9
-2006,toledo2,SOURCE/DDT.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,SOURCE/DUMP.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,SOURCE/ED.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,SOURCE/FORMAT.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,SOURCE/INITDISK.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,SOURCE/LOAD.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,SOURCE/MOVCPM.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,SOURCE/PIP.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,SOURCE/SETDISK.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,SOURCE/STAT.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,SOURCE/SUBMIT.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,SOURCE/SYSGEN.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,SOURCE/WASH.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,SOURCE/XDIR.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,SOURCE/XSUB.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,STAT.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,SUBMIT.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,SYSGEN.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,THE-WORD/DICTSORT.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,THE-WORD/FIND.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,THE-WORD/LOOKUP.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,THE-WORD/MAINDICT.CMP,null,null,null,binary,false,download,connection manager,CMP
-2006,toledo2,THE-WORD/MARK.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,THE-WORD/REVIEW.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,THE-WORD/SPELL.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,THE-WORD/WC.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,THE-WORD/WORDFREQ.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,TINKER/CONFIG.MAC,null,null,null,binary,false,download,macro command set,MAC
-2006,toledo2,TINKER/COPY.MAC,null,null,null,binary,false,download,macro command set,MAC
-2006,toledo2,TINKER/FORMAT.MAC,null,null,null,binary,false,download,macro command set,MAC
-2006,toledo2,TINKER/FORVR.MAC,null,null,null,binary,false,download,macro command set,MAC
-2006,toledo2,TINKER/KBIOS.HEX,null,null,null,binary,false,download,hexadecimal source for programming logic devices,HEX
-2006,toledo2,TINKER/KBIOS.MAC,null,null,null,binary,false,download,macro command set,MAC
-2006,toledo2,TINKER/KBIOS.PRN,null,null,null,binary,false,download,print to file data,PRN
-2006,toledo2,TINKER/KPRS2.MAC,null,null,null,binary,false,download,macro command set,MAC
-2006,toledo2,WASH.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,WS33-1/PIP.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,WS33-1/WINSTALL.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,WS33-1/WS.INS,null,null,null,binary,false,download,installer script,INS
-2006,toledo2,WS33-2/PIP.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,WS33-2/PRINT.TST,null,null,null,binary,false,download,test file,TST
-2006,toledo2,WS33-2/TYPEME,null,null,null,binary,false,download,Micropro documentation,null
-2006,toledo2,WS33-2/WSMSGS.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,WS33-2/WSOVLY1.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,WS33-2/WSU.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,WS33-KPR/PIP.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,WS33-KPR/PRINT.TST,null,null,null,binary,false,download,test file,TST
-2006,toledo2,WS33-KPR/WINSTALL.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,WS33-KPR/WS.INS,null,null,null,binary,false,download,installer script,INS
-2006,toledo2,WS33-KPR/WSMSGS.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,WS33-KPR/WSOVLY1.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,WS33-KPR/WSU.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,WS33/MAILMRGE.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,WS33/PIP.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,WS33/WINSTALL.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,WS33/WS.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,WS33/WS.INS,null,null,null,binary,false,download,installer script,INS
-2006,toledo2,WS33/WSMSGS.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,WS33/WSOVLY1.OVR,null,null,null,binary,false,download,overlay manager,OVR
-2006,toledo2,XDIR.COM,null,null,null,binary,false,download,MS-DOS command file,COM
-2006,toledo2,XSUB.COM,null,null,null,binary,false,download,MS-DOS command file,COM
 2006,toledo2,.gitignore,null,null,null,gitignore,false,github,list of files that should not be committed under git,gitignore
 2006,toledo2,.path,null,genpath,null,text,false,null,directory path from top directory,path
 2006,toledo2,.winner.json,null,jwinner,null,json,false,github,description of winner in JSON,json
@@ -2560,23 +2354,7 @@
 2006,toledo2,Makefile,30,null,null,makefile,true,github,Makefile,null
 2006,toledo2,toledo2.alt.c,40,null,alt,c,true,github,alternative source,c
 2006,toledo2,toledo2.orig.c,50,null,orig,c,true,github,original source,c
-2006,toledo2,PRO8/READ.ME,100,null,null,text,true,github,README about booting,ME
-2006,toledo2,BASICS/BLKJK.BAS,150,null,null,basic,true,github,BASIC source code,BAS
-2006,toledo2,BASICS/CHASE.BAS,150,null,null,basic,true,github,BASIC source code,BAS
-2006,toledo2,BASICS/HORSE.BAS,150,null,null,basic,true,github,BASIC source code,BAS
-2006,toledo2,BASICS/ROCKET.BAS,150,null,null,basic,true,github,BASIC source code,BAS
-2006,toledo2,BASICS/STRTRK.BAS,150,null,null,basic,true,github,BASIC source code,BAS
-2006,toledo2,BASICS/TRADE.BAS,150,null,null,basic,true,github,BASIC source code,BAS
-2006,toledo2,BASICS/WUMP.BAS,150,null,null,basic,true,github,BASIC source code,BAS
-2006,toledo2,DBASEII/MISSING.TXT,150,null,null,text,false,github,text support file,TXT
-2006,toledo2,THE-WORD/HOMONYMS.TXT,150,null,null,text,true,github,list of homonyms,TXT
-2006,toledo2,CONFIG.ASM,200,null,null,asm,true,github,assembly source code,ASM
-2006,toledo2,GAMES/DUMP.ASM,200,null,null,asm,true,github,assembly source code,ASM
-2006,toledo2,KBIOS.ASM,200,null,null,asm,true,github,assembly source code,ASM
-2006,toledo2,KPRS2.ASM,200,null,null,asm,true,github,assembly source code,ASM
-2006,toledo2,SOURCE/CONFIG.ASM,200,null,null,asm,true,github,assembly source code,ASM
-2006,toledo2,SOURCE/KBIOS.ASM,200,null,null,asm,true,github,assembly source code,ASM
-2006,toledo2,SOURCE/KPRS2.ASM,200,null,null,asm,true,github,assembly source code,ASM
+2006,toledo2,KAYPROII.ZIP,200,null,null,zip,true,github,zip file of CPM related files,ZIP
 2006,toledo2,2006_toledo2.tar.bz2,300,mkwinnertbz2,null,tbz2,true,download,download winning source,bz2
 2006,toledo3,README.md,null,null,null,markdown,false,github,markdown source for index.html,md
 2006,toledo3,.gitignore,null,null,null,gitignore,false,github,list of files that should not be committed under git,gitignore
