@@ -1526,8 +1526,8 @@ used. This was not originally done but at a time it was changed to be considered
 a bug so it was fixed at that point as it only took a few seconds and had to be
 verified that it was consistent with the [bugs.md](/bugs.md) file.
 
-He also added the [try.sh](/1991/buzzard.1/try.sh) script to try out some
-commands that we suggested and some additional ones that provide for some fun.
+He also added the [try.sh](/1992/buzzard.1/try.sh) script to try out some
+commands that we suggested and some additional ones that he provide for some fun.
 
 
 ## <a name="1992_buzzard.2"></a>[1992/buzzard.2](/1992/buzzard.2/buzzard.2.c) ([README.md](/1992/buzzard.2/README.md))
