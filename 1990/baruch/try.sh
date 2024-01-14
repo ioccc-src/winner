@@ -20,6 +20,11 @@ echo 1>&2
 echo 5 | ./baruch | less -rEXF
 echo 1>&2
 
+read -r -n 1 -p "Press any key to run: echo 8 | ./baruch (space = next page, q = quit): "
+echo 1>&2
+echo 8 | ./baruch | less -rEXF
+echo 1>&2
+
 read -r -n 1 -p "Press any key to run: echo 2 | ./baruch: "
 echo 1>&2
 echo 2 | ./baruch

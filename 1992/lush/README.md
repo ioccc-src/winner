@@ -19,7 +19,7 @@ For more detailed information see [1992 lush in bugs.md](/bugs.md#1992-lush).
 ## To use:
 
 ```sh
-./runme.sh
+./lush.sh
 ```
 
 

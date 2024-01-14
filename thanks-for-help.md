@@ -1177,12 +1177,15 @@ invalid operands to binary expressions were resolved with the comma operator.
 Later on, Cody added back the macro `#define D define` to make it look ever so
 slightly more like the original, even though it's unused.
 
+Cody also added the [try.sh](/1991/brnstnd/try.sh) script and
+[try.txt](/1991/brnstnd/try.txt) which the script uses.
+
 
 ## <a name="1991_buzzard"></a>[1991/buzzard](/1991/buzzard/buzzard.c) ([README.md](/1991/buzzard/README.md]))
 
 [Cody](#cody) fixed this so that the coordinates being specified would not crash the
 program. This happened because the function that calls `atoi(3)` took an arg
-without any type specified and as an implicit int it was not a `char *` which
+without any type specified and as an implicit `int` it was not a `char *` which
 crashed the program in modern systems.
 
 Cody also made the file name in the code (which is the default maze file) not
@@ -1192,7 +1195,8 @@ Finally Cody added the [alternate
 version](/1991/buzzard/README.md#alternate-code) which will possibly feel more at
 home with those familiar with vi(m) (it certainly does feel more at home with
 him): `k` for forward, `h` for left and `l` for right. This version also has a
-more useful way to exit, just entering `q` followed by enter.
+more useful way to exit, just entering `q` followed by enter, rather than
+completing or killing the program.
 
 
 ## <a name="1991_davidguy"></a>[1991/davidguy](/1991/davidguy/davidguy.c) ([README.md](/1991/davidguy/README.md]))
@@ -1496,7 +1500,7 @@ necessary to include `time.h` so Cody did this as well.
 
 ## <a name="1992_buzzard.1"></a>[1992/buzzard.1](/1992/buzzard.1/buzzard.1.c) ([README.md](/1992/buzzard.1/README.md))
 
-[Cody](#cody) added a check for the right number of args, exiting 1 if not enough (/2)
+[Cody](#cody) added a check for the right number of args, exiting 1 if not enough (2)
 used. This was not originally done but at a time it was changed to be considered
 a bug so it was fixed at that point as it only took a few seconds and had to be
 verified that it was consistent with the [bugs.md](/bugs.md) file.
@@ -1527,9 +1531,11 @@ details if you're interested in trying to understand it (or fix?).
 
 ## <a name="1992_imc"></a>[1992/imc](/1992/imc/imc.c) ([README.md](/1992/imc/README.md]))
 
+[Cody](#cody) provided the [try.sh](/1992/imc/try.sh) script.
+
 The original code, [imc.orig.c](/1992/imc/imc.orig.c), assumed that `exit(3)`
 returned a value but this will cause problems where `exit(3)` returns void. The
-source code was modified to avoid this problem but like [Cody](#cody) did with other fixes
+source code was modified to avoid this problem but like Cody did with other fixes
 he made this more like the original by redefining `exit` to use the comma
 operator so that it could be used in binary expressions.
 
@@ -1538,7 +1544,8 @@ operator so that it could be used in binary expressions.
 
 It was observed that on modern systems this goes much too quick. [Yusuke](#yusuke) created
 a patch that calls `usleep(3)` but [Cody](#cody) thought the value was too slow so he
-made it a macro in the Makefile `Z`, defaulting at 15000. This was made an [alt
+made it a macro in the Makefile `Z` (which can be redefined with `make
+SLEEP=...`), defaulting at 15000. This was made an [alt
 version](/1992/kivinen/kivinen.alt.c) and it is recommended one use the alt
 version first. See the README.md file to see how to reconfigure it.
 
@@ -1564,13 +1571,13 @@ it moves towards the right but if you click the mouse it goes back.
 [Yusuke](#yusuke) supplied a patch which makes this work with gcc. Due to how it works (see
 Judges' remarks in the README.md file) this will not work with clang.
 
-[Cody](#cody) also provided the `runme.sh` script to demonstrate it as using make was
-problematic.
+[Cody](#cody) also provided the [lush.sh](/1992/lush/lush.sh) script to
+demonstrate it as using make was problematic.
 
 Cody made it use `fgets()` instead of `gets()`.
 
-NOTE: this entry cannot work with clang due to different compiler messages. See
-[bugs.md](/bugs.md) for details.
+NOTE: this entry cannot work with clang due to different compiler messages (it
+will compile fine but it won't work). See [bugs.md](/bugs.md) for details.
 
 
 ## <a name="1992_marangon"></a>[1992/marangon](/1992/marangon/marangon.c) ([README.md](/1992/marangon/README.md))
@@ -1600,7 +1607,7 @@ loop, reading again if `scanf(3)` did not return 2 (that was not a problem in
 that `scanf(/2)` will not return until the number of specifiers have been
 processed or some error occurs) or a function it called returned non-zero.
 
-Instead the fix involves the `scanf(3)` specifiers being `"%4s %4s" on two
+Instead the fix involves the `scanf(3)` specifiers being `"%4s %4s"` on two
 new char arrays (always cleared in the beginning of the loop) and then using
 `strtol(3)` with a base of `8` (as it's octal), checking for `< 0 || > 077` on
 both numbers (using `"%o %o"` does not solve the problem).
@@ -1646,7 +1653,7 @@ Cody also added an arg check because the program and the
 [nuked](https://en.wikipedia.org/wiki/Nuclear_weapon) the [entire
 world](https://en.wikipedia.org/wiki/Earth) or just the
 [USA](https://en.wikipedia.org/wiki/United_States), respectively, without enough
-args (/2). And not that we need the help or anything for this :-) but we
+args (2). And not that we need the help or anything for this :-) but we
 encourage you to try the original without two args :-)
 
 

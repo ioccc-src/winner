@@ -8,6 +8,18 @@ There is an alternate version for those using Turbo-C or MSC. See [alternate
 code](#alternate-code) below for details.
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [1990 baruch in bugs.md](/bugs.md#1990-baruch).
+
+
+
 ## To use:
 
 ```sh

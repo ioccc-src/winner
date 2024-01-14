@@ -15,6 +15,15 @@ make all
 ```
 
 
+## Try:
+
+To see a number of options and configurations:
+
+```sh
+./try.sh
+```
+
+
 ## Judges' remarks:
 
 The program is more interesting to run on workstations that can make use of a
