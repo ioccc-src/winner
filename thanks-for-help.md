@@ -1496,8 +1496,12 @@ the additional tools.
 applied to the code, provided as the alt code as that version is not obfuscated.
 Thus Cody's fix applies to the original entry. The problems were that `malloc.h`
 is not the correct header file now (at least in some systems?) and a non-void
-(implicit int) function returning without a value. That function was changed to
-return void.
+(implicit `int`) function returning without a value. That function was changed to
+return `void`.
+
+Cody also added the [try.sh](/1992/albert/try.sh) and
+[try.alt.sh](/1992/albert/try.alt.sh) scripts that correspond to the entry and
+the alt code.
 
 
 ## <a name="1992_ant"></a>[1992/ant](/1992/ant/ant.c) ([README.md](/1992/ant/README.md]))
