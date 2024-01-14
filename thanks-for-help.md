@@ -1427,7 +1427,7 @@ from (`__FILE__`), not	`adgrep.c`, as the latter does not exist: `adgrep` is
 simply a link to `adrian` as `adgrep` is what the program was submitted as but
 the winner is `adrian.c`.
 
-Not fixing the above problem would have also cause the program to crash if no
+Not fixing the above problem would have also caused the program to crash if no
 arg was specified as the file doesn't exist. In making the above fix, at first
 the change to check for a `NULL` file was added. Then it was noticed that the
 problem is that `adgrep.c` was an incorrect reference that never existed and it
@@ -1488,6 +1488,11 @@ one must keep the `Y[strlen(Y)-1]='\0';` part and keep it there.
 
 These fixes are complex changes due to the way the program and Makefile generate
 the additional tools.
+
+Cody finally added the [try.sh](/1992/adrian/try.sh) script that shows the entry
+and some of the tools this entry generates. Unlike other scripts, it does not
+clear the screen after compilation so that one can see how the other files are
+generated.
 
 
 ## <a name="1992_albert"></a>[1992/albert](/1992/albert/albert.c) ([README.md](/1992/albert/README.md]))
