@@ -111,7 +111,7 @@ $NAME version: $VERSION"
 #
 export NOOP=
 export DO_NOT_PROCESS=
-export DOCROOT_URL_SLASH="/"
+export DOCROOT_URL_SLASH="/temp-test-ioccc/"
 
 # parse command line
 #
