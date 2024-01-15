@@ -25,7 +25,7 @@ For more detailed information see [2013 dlowe in bugs.md](/bugs.md#2013-dlowe).
 where `[number...]` is one or more number, space separated.
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

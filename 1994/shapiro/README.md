@@ -24,7 +24,7 @@ For more detailed information see [1994 shapiro in bugs.md](/bugs.md#1994-shapir
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./shapiro

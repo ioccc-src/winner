@@ -17,7 +17,7 @@ To compile on a 16 bit machine, change 300000 to 30000.
 where col is the number of columns to fold at and file is the file to fold.
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

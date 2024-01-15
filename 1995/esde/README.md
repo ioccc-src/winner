@@ -14,7 +14,7 @@ make all
 where data-file contains lines of < 255 chars in length.
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

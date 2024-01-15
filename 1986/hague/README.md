@@ -13,7 +13,7 @@ make all
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

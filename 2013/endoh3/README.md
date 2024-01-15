@@ -23,7 +23,7 @@ For more detailed information see [2013 endoh3 in bugs.md](/bugs.md#2013-endoh3)
 ```
 
 
-### Try:
+## Try:
 
 Trying this out will depend on how your system can play sounds. The author's
 remarks include some options for different operating systems.

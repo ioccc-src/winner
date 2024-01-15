@@ -40,7 +40,7 @@ The parameters to the program are:
 note on macOS.
 
 
-### Try:
+## Try:
 
 ```sh
 ./giana.sh

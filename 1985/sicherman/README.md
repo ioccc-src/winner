@@ -21,7 +21,7 @@ echo foo | ./sicherman
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

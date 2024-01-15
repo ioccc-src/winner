@@ -17,7 +17,7 @@ code](#alternate-code) below.
 NOTE: N is an integer from 0 to 255.
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

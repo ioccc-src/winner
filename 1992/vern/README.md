@@ -23,7 +23,7 @@ For more detailed information see [1992 vern in bugs.md](/bugs.md#1992-vern).
 ```
 
 
-### Try:
+## Try:
 
 You might start off by giving the following input:
 

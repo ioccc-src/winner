@@ -15,7 +15,7 @@ code](#alternate-code) below.
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./run_clock

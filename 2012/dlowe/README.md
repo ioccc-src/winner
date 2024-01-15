@@ -23,7 +23,7 @@ For more detailed information see [2012 dlowe in bugs.md](/bugs.md#2012-dlowe).
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./dlowe

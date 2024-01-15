@@ -28,7 +28,7 @@ echo 7 | ./baruch
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 echo 2 | ./baruch

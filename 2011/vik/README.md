@@ -26,7 +26,7 @@ For more detailed information see [2011 vik in bugs.md](/bugs.md#2011-vik).
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./vik randowan.mod | mplayer -demuxer rawaudio -

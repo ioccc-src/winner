@@ -26,7 +26,7 @@ For more detailed information see [2019 duble in bugs.md](/bugs.md#2019-duble).
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./prog /tmp/drawing

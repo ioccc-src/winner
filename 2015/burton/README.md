@@ -20,7 +20,7 @@ or:
 Type in expressions on standard input.
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

@@ -12,7 +12,7 @@ make
 ```
 
 
-### Try:
+## Try:
 
 For some fun every time you log in try running this from your `.bashrc` or
 equivalent file!

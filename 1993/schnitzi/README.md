@@ -30,7 +30,7 @@ where
 Certain input will cause the program to fail as described in the bugs.md file.
 
 
-### Try:
+## Try:
 
 ```sh
 ./schnitzi schnitzi.info

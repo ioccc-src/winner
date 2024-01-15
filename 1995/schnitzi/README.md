@@ -12,7 +12,7 @@ make all
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./schnitzi 24

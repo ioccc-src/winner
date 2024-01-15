@@ -15,7 +15,7 @@ code](#alternate-code) below.
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 eog lena.ppm # On Linux

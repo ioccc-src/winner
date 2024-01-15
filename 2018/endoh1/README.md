@@ -12,7 +12,7 @@ make
 ```
 
 
-### Try:
+## Try:
 
 To see the input files and feed them to the program, redirecting to GIF files:
 

@@ -30,7 +30,7 @@ For more detailed information see [2004 gavin in bugs.md](/bugs.md#2004-gavin).
 ```
 
 
-### Try:
+## Try:
 
 To enjoy the results (on a Linux/x86 machine) with a floppy drive (remember
 those? We do!):

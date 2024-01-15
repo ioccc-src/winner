@@ -23,7 +23,7 @@ For more detailed information see [2013 mills in bugs.md](/bugs.md#2013-mills).
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./mills &

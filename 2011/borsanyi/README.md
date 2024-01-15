@@ -23,7 +23,7 @@ For more detailed information see [2011 borsanyi in bugs.md](/bugs.md#2011-borsa
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

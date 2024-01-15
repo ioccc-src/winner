@@ -12,7 +12,7 @@ echo foo bar | ./dg
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

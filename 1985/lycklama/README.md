@@ -15,7 +15,7 @@ To see why we recommend the alternate version instead of the original version,
 see below and the [Original code](#original-code) section.
 
 
-### Try:
+## Try:
 
 This alternate version, which we recommend you you try first, prior to the
 original, slows down the output so that you can see what it looked like back in 1985.

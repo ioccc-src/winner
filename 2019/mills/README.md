@@ -25,7 +25,7 @@ make cpclean
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

@@ -12,7 +12,7 @@ make
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./hoyle 10 0.5

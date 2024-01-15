@@ -12,7 +12,7 @@ make all
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./smr > smr.out ; diff -s smr.out smr.c

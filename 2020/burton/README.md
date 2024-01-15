@@ -23,7 +23,7 @@ For more detailed information see [2020 burton in bugs.md](/bugs.md#2020-burton)
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

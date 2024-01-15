@@ -52,7 +52,7 @@ or ctrl-c (or kill it from another terminal :-) ). But why does it not work with
 just `exit` or `logout`? Hint: see the authors' remarks.
 
 
-### Try:
+## Try:
 
 ```sh
 ./tbr

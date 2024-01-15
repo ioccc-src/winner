@@ -35,7 +35,7 @@ cat binary-prog.Blc data | ./tromp
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

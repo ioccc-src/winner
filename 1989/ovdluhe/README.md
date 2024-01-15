@@ -19,7 +19,7 @@ The program stops when it reaches the end of the template buffer
 by chance or is killed.
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh ; sleep 2 ; ./try.sh

@@ -23,7 +23,7 @@ For more detailed information see [2005 sykes in bugs.md](/bugs.md#2005-sykes).
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

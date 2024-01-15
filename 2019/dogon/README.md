@@ -23,7 +23,7 @@ For more detailed information see [2019 dogon in bugs.md](/bugs.md#2019-dogon).
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

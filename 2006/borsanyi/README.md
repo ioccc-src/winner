@@ -23,7 +23,7 @@ For more detailed information see [2006 borsanyi in bugs.md](/bugs.md#2006-borsa
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./borsanyi ioccc@example.com > example.gif

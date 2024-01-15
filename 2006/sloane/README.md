@@ -16,7 +16,7 @@ code](#original-code) below.
 ```
 
 
-### Try:
+## Try:
 
 The alternate version, which we recommend that you use in order to see what is
 happening with modern systems, and to not flash too quickly, which can be

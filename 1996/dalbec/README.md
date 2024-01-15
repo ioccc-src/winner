@@ -12,7 +12,7 @@ make all
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./dalbec 3 | head -n 29

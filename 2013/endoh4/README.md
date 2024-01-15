@@ -17,7 +17,7 @@ as recommended by the author. If no file is specified in `run.sh` command line
 it will feed to the program [endoh4.c](endoh4.c).
 
 
-### Try:
+## Try:
 
 ```sh
 ./run.sh cube.txt

@@ -22,7 +22,7 @@ The program accepts up to 4 parameters:
 3. The goal value or 0/0 [default: 42]
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

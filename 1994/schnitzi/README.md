@@ -28,7 +28,7 @@ For more detailed information see [1994 schnitzi in bugs.md](/bugs.md#1994-schni
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./schnitzi < /etc/motd 2>/dev/null

@@ -14,7 +14,7 @@ make all
 where `ip_address` in an IP address of an X server.
 
 
-### Try:
+## Try:
 
 ```sh
 ./davidguy 127.0.0.1:0.0

@@ -15,7 +15,7 @@ binary mode from text mode. See [alternate code](#alternate-code) below.
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./zucker "Hello\!\!\!" > hello.ppm

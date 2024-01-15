@@ -12,7 +12,7 @@ make
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./ollinger 1000 | cut -c -200

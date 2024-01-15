@@ -17,7 +17,7 @@ make all
 NOTE: this entry will likely segfault on invalid input.
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

@@ -32,7 +32,7 @@ For more detailed information see [2001 anonymous in bugs.md](/bugs.md#2001-anon
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

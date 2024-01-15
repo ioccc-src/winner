@@ -12,7 +12,7 @@ cd build; ./hibachi-start.sh &
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 cd build; ./hibachi-start.sh &

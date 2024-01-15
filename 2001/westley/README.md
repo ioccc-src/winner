@@ -34,7 +34,7 @@ echo foo | ./westley 2>/dev/null
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

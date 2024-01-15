@@ -26,7 +26,7 @@ where `exp` is an octal expression. See below for how it can also have
 hexadecimal and decimal numbers.
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

@@ -16,7 +16,7 @@ to those familiar with vi. See [Alternate code](#alternate-code) below.
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 # Make your terminal as large as possible, possibly reduce your font size

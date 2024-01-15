@@ -13,7 +13,7 @@ make all
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 echo 42 | ./savastio

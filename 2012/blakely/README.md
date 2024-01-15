@@ -23,7 +23,7 @@ For more detailed information see [2012 blakely in bugs.md](/bugs.md#2012-blakel
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./blakely "xx*yy*+" 64 > paraboloid.gif

@@ -15,7 +15,7 @@ this entry because of the system resources it requires.
 ```
 
 
-### Try:
+## Try:
 
 Enter an expression on standard input.  To try some we have selected:
 

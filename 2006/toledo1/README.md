@@ -14,7 +14,7 @@ make
 where `[0-9][0-9]` is a two digit number.
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

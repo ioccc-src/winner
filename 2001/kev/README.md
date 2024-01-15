@@ -30,7 +30,7 @@ For more detailed information see [2001 kev in bugs.md](/bugs.md#2001-kev).
 NOTE: each player's paddle is at the bottom and the opponent at the top.
 
 
-### Try:
+## Try:
 
 ```sh
 ./kev		    # in one terminal

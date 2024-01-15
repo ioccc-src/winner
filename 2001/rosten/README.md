@@ -28,7 +28,7 @@ program.  Use at your own risk.
 NOTE: number is floating point.
 
 
-### Try:
+## Try:
 
 ```sh
 ./rosten 1.03

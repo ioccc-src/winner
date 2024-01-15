@@ -28,7 +28,7 @@ NOTE: although it's supposed to be a base 16 number nothing will stop you from
 doing something else. The author explains this in more details.
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

@@ -16,7 +16,7 @@ make
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./prog ioccc.txt

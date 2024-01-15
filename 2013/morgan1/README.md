@@ -12,7 +12,7 @@ echo "2013/10/03" | ./morgan1
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 echo "1985/10/28" | ./morgan1

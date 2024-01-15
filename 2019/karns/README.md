@@ -34,7 +34,7 @@ reset
 after running the program to restore the terminal to its previous state.
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

@@ -26,7 +26,7 @@ echo n | ./primenum n
 NOTE: `n` is an integer.
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

@@ -26,7 +26,7 @@ For more detailed information see [1995 vanschnitz in bugs.md](/bugs.md#1995-van
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 make clobber all LEVEL=6

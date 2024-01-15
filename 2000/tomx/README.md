@@ -15,7 +15,7 @@ There is an alternate version that compiles [mkentry.c](mkentry.c). See
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

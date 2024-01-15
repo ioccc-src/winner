@@ -30,7 +30,7 @@ find dir -type f -print | ./samefile
 Maybe you will not need to buy another 10 GB disk to store them.  :-)
 
 
-### Try:
+## Try:
 
 If you're in this winning entry's directory:
 

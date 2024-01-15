@@ -39,7 +39,7 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-format-security \
-	-Wno-deprecated-non-prototype
+	-Wno-deprecated-non-prototype -Wno-implicit-int
 
 # Common C compiler warning flags
 #
@@ -130,7 +130,6 @@ all: data ${TARGET}
 	sandwich supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	@echo "NOTE: this program will likely crash or do something else without enough args."
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
 # alternative executable
@@ -140,7 +139,7 @@ alt: data ${ALT_TARGET}
 
 # Variable to control amount of time to sleep between writes for alt code.
 #
-SLEEP= 200
+SLEEP= 1000
 
 ${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} -DZ=${SLEEP} $< -o $@ ${LDFLAGS}

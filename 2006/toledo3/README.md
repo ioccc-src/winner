@@ -16,7 +16,7 @@ tested with Windows.  See [alternate code](#alternate-code) below.
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./toledo3 1

@@ -15,7 +15,7 @@ for more details.
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./gavare > ioccc_ray.ppm

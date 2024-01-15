@@ -26,7 +26,7 @@ For more detailed information see [1992 albert in bugs.md](/bugs.md#1992-albert)
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

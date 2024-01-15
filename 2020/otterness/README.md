@@ -23,7 +23,7 @@ For more detailed information see [2020 otterness in bugs.md](/bugs.md#2020-otte
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./prog < cvikl.mid > output.mid

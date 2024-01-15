@@ -26,7 +26,7 @@ For more detailed information see [2019 endoh in bugs.md](/bugs.md#2019-endoh).
 ```
 
 
-### Try:
+## Try:
 
 If you have `gdb(1)` installed:
 

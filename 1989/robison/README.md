@@ -24,7 +24,7 @@ For more detailed information see [1989 robison in bugs.md](/bugs.md#1989-robiso
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./robison

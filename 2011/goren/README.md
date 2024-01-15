@@ -12,7 +12,7 @@ echo "some text" | ./goren
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

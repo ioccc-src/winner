@@ -23,7 +23,7 @@ For more detailed information see [2019 lynn in bugs.md](/bugs.md#2019-lynn).
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

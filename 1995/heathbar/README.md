@@ -14,7 +14,7 @@ make all
 where num is a non-negative number.
 
 
-### Try:
+## Try:
 
 ```sh
 ./heathbar 4253 2281

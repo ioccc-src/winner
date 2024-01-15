@@ -1,17 +1,33 @@
 ## To build:
 
 ```sh
-make all
+make alt
 ```
 
-There is an [alternate version](#alternate-code) that lets you slow down the
-output of the program for modern systems.
+We recommend that you try the alternate version first to get a better idea of
+what this entry looked like back in 1993. The alternate version sleeps (via
+`usleep(3)`) in between writes, defaulting at 1000 microseconds (but
+reconfigurable). If you wish to see the original entry then see [original
+code](#original-code) below.
+
+If you wish to speed the entry up, say to 500 microseconds between writes, try:
+
+```sh
+make clobber SLEEP=500 alt
+```
+
+Alternatively if you wish to slow it down, say to 1500 microseconds between
+writes, try:
+
+```sh
+make clobber SLEEP=1500 alt
+```
 
 
 ## To use:
 
 ```sh
-./plummer number arg
+./plummer.alt number arg
 ```
 
 where:
@@ -19,43 +35,67 @@ where:
 - number is a number    (try 21701)
 - arg is any argument
 
+Wait until you're bored enough to send intr/ctrl-c to exit or until the
+[Vogons](https://hitchhikers.fandom.com/wiki/Vogon) build that [hyperspace
+bypass](https://hitchhikers.fandom.com/wiki/Bypass).
 
-### Try:
+
+## Try:
 
 ```sh
-./plummer 01234567890876543210 xxx
+./try.alt.sh
 
+./try.alt.sh 21701
+
+SLEEP=500 ./try.alt.sh
+
+SLEEP=900 ./try.alt.sh 789789789789789
+
+./try.alt.sh 789789789
+
+SLEEP=400 ./try.alt.sh 42424242424242
+
+SLEEP=1000 ./try.alt.sh xyzzyzzyx
+
+SLEEP=1200 ./try.alt.sh xyzzyzzyx 5555
 ```
 
 
-## Alternate code:
+## Original code:
 
-This version sleeps in between writes for a compiled in constant microseconds
-via `usleep(3)`, defaulting at 200.
+This version, the original, does not sleep in between writes, and is thus much
+faster (depending on the `SLEEP` parameter specified in the build of `alt`, of
+course).
 
 
-### Alternate build:
-
-```sh
-make alt
-```
-
-If you wish to change the time to sleep (default `200`) you can do so like:
+### Original build:
 
 ```sh
-make clobber SLEEP=50 alt
+make all
 ```
 
 
-### Alternate use:
+### Original use:
 
-Use `plummer.alt` as you would `plummer`.
+Use `plummer` as you would `plummer.alt` above.
 
 
-### Alternate try:
+### Original try:
 
 ```sh
-./plummer.alt xyzzyzzyx 5555
+./try.sh
+
+./try.sh 21701
+
+./try.sh 789789789789789
+
+./try.sh 789789789
+
+./try.sh 42424242424242
+
+./try.sh xyzzyzzyx
+
+./try.sh xyzzyzzyx 5555
 ```
 
 

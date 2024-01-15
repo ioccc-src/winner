@@ -8,7 +8,7 @@ There is an alternate version with a trace routine that the author had commented
 out. See [alternate code](#alternate-code) below for more details.
 
 
-### Try:
+## Try:
 
 ```sh
 ./paul

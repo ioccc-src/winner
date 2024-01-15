@@ -26,7 +26,7 @@ For more detailed information see [2014 maffiodo2 in bugs.md](/bugs.md#2014-maff
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

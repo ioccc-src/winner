@@ -17,7 +17,7 @@ STATUS: INABIAF - please **DO NOT** fix
 For more detailed information see [1992 adrian in bugs.md](/bugs.md#1992-adrian).
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

@@ -12,7 +12,7 @@ cp -f prog.c run.c; ./hecate.sh
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

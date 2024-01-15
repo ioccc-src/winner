@@ -15,7 +15,7 @@ available. See the [Alternate code](#alternate-code) section below.
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./runme

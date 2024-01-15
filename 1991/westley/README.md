@@ -49,7 +49,7 @@ make nextmove
 ```
 
 
-### Try:
+## Try:
 
 We have provided the shell script, [ttt](ttt.sh), to make it easier to play the
 game:

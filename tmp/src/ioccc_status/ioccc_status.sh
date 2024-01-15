@@ -17,9 +17,19 @@
 # If the -i status_ver option is used the IOCCC_status_version field will be
 # updated.
 #
-export IOCCC_STATUS_SCRIPT_VERSION="0.0.2-0 2023-10-04" # major.minor.release-patch YYYY-MM-DD
+# The -N option is a dry-run: it will just show what would have been changed
+# without the option.
+#
+# The -S option lets one set the path to sed(1).
+#
+# The -G option lets one set the path to grep(1).
+#
+export IOCCC_STATUS_SCRIPT_VERSION="0.0.3-0 2024-01-15" # major.minor.release-patch YYYY-MM-DD
 
-USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-s status] [-d] [-n] [-i status_ver] status.json
+SED="$(type -P sed)"
+GREP="$(type -P grep)"
+
+USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-s status] [-d] [-n] [-i status_ver] [-N] [-S] [-G] status.json
 
     -h			    print help and exit
     -V			    print version and exit
@@ -34,6 +44,10 @@ USAGE="usage: $(basename "$0") [-h] [-V] [-v level] [-s status] [-d] [-n] [-i st
 
 				NOTE: version must match the regexp: ^[0-9]+\.[0-9]+ [0-9]{4}-[0-9]{2}-[0-9]{2}$
 
+    -N			    set dry-run mode: just show what would be changed (def: make changes)
+    -S sed		    set path to sed(1) (def: $SED)
+    -G grep		    set path to grep(1) (def: $GREP)
+
     status.json		    the file to update
 
 status version: $IOCCC_STATUS_SCRIPT_VERSION"
@@ -46,10 +60,13 @@ export VERBOSITY=0
 export STATUS_JSON_FILE=""
 export STATUS_FLAG=""
 export STATUS="closed" # default closed
+export DRY_RUN_MODE=""
+export SED # already found default
+export GREP # already found default
 
 # parse args
 #
-while getopts :hVv:s:dni: flag; do
+while getopts :hVv:s:dni:NS:G: flag; do
     case "$flag" in
     h)	echo "$USAGE" 1>&2
 	exit 2
@@ -68,6 +85,12 @@ while getopts :hVv:s:dni: flag; do
 	;;
     i)  UPDATE_IOCCC_STATUS_VERSION="-i"
 	IOCCC_STATUS_VERSION="$OPTARG"
+	;;
+    N)	DRY_RUN_MODE="-N"
+	;;
+    S)	SED="$OPTARG"
+	;;
+    G)	GREP="$OPTARG"
 	;;
     :)	echo "$0: ERROR: option -$OPTARG requires an argument" 1>&2
 	echo 1>&2
@@ -113,6 +136,17 @@ if [[ ! -r $STATUS_JSON_FILE ]]; then
     exit 1
 fi
 
+# check that $SED is an executable file
+if [[ ! -x "$SED" ]]; then
+    echo "$0: sed not an executable file: $SED" 1>&2
+    exit 3
+fi
+# check that $GREP is an executable file
+if [[ ! -x "$GREP" ]]; then
+    echo "$0: grep not an executable file: $GREP" 1>&2
+    exit 3
+fi
+
 # check that if -s ($STATUS_FLAG) used that the status ($STATUS) is either 'open' or 'closed'
 #
 if [[ -n "$STATUS_FLAG" ]]; then
@@ -125,61 +159,81 @@ fi
 # check format of IOCCC_status_version if set (-i used, $UPDATE_IOCCC_STATUS_VERSION)
 #
 if [[ -n "$UPDATE_IOCCC_STATUS_VERSION" ]]; then
-    echo "$IOCCC_STATUS_VERSION" | grep -qE '^[0-9]+\.[0-9]+ [0-9]{4}-[0-9]{2}-[0-9]{2}$'
+    echo "$IOCCC_STATUS_VERSION" | "$GREP" -qE '^[0-9]+\.[0-9]+ [0-9]{4}-[0-9]{2}-[0-9]{2}$'
     if [[ "${PIPESTATUS[1]}" -ne 0 ]]; then
 	echo "$0: ERROR: IOCCC_status_version must match the regexp: '^[0-9]+\.[0-9]+ [0-9]{4}-[0-9]{2}-[0-9]{2}$'" 1>&2
 	exit 3
     fi
 fi
 
-if [[ "$VERBOSITY" -gt 1 ]]; then
+# get date for options that update the date
+DATE="$(date)"
+# if verbosity is >= 1 or dry-run specified show what would/will be updated
+if [[ "$VERBOSITY" -ge 1 ]]; then
     echo "$0: status.json file: $STATUS_JSON_FILE" 1>&2
     if [[ -n "$STATUS_FLAG" ]]; then
 	echo "$0: will update contest status to: \"$STATUS\"" 1>&2
     fi
     if [[ -n "$UPDATE_DATE" ]]; then
-	echo "$0: will update status_date to: $(date)" 1>&2
+	echo "$0: will update status_date to: \"$DATE\"" 1>&2
     fi
     if [[ -n "$UPDATE_NEWS" ]]; then
-	echo "$0: will update latest_news to: $(date)" 1>&2
+	echo "$0: will update latest_news to: \"$DATE\"" 1>&2
     fi
     if [[ -n "$UPDATE_IOCCC_STATUS_VERSION" ]]; then
-	echo "$0: will update IOCCC_status_version to: $IOCCC_STATUS_VERSION" 1>&2
+	echo "$0: will update IOCCC_status_version to: \"$IOCCC_STATUS_VERSION\"" 1>&2
     fi
+elif [[ -n "$DRY_RUN_MODE" ]]; then
+    echo "$0: status.json file: $STATUS_JSON_FILE" 1>&2
+    if [[ -n "$STATUS_FLAG" ]]; then
+	echo "$0: would update contest status to: \"$STATUS\"" 1>&2
+    fi
+    if [[ -n "$UPDATE_DATE" ]]; then
+	echo "$0: would update status_date to: \"$DATE\"" 1>&2
+    fi
+    if [[ -n "$UPDATE_NEWS" ]]; then
+	echo "$0: would update latest_news to: \"$DATE\"" 1>&2
+    fi
+    if [[ -n "$UPDATE_IOCCC_STATUS_VERSION" ]]; then
+	echo "$0: would update IOCCC_status_version to: \"$IOCCC_STATUS_VERSION\"" 1>&2
+    fi
+
+    # nothing to do, exit success
+    exit 0
 fi
 
-# first status_date if requested
+# first status_date if requested and not dry-run
 if [[ -n "$UPDATE_DATE" ]]; then
-    sed -i'' "s|\"status_date\" : \".*[^\"]\"|\"status_date\" : \"$(date)\"|g" "$STATUS_JSON_FILE"
+    "$SED" -i'' "s|\"status_date\" : \".*[^\"]\"|\"status_date\" : \"$DATE\"|g" "$STATUS_JSON_FILE"
 
-    if [[ "$VERBOSITY" -ge 1 ]]; then
-	echo "$0: updated status_date to: $(date)" 1>&2
+    if [[ "$VERBOSITY" -gt 1 ]]; then
+	echo "$0: updated status_date to: \"$DATE\"" 1>&2
     fi
 fi
 
 # then update latest_news date if requested
 if [[ -n "$UPDATE_NEWS" ]]; then
-    sed -i'' "s|\"latest_news\" : \".*[^\"]\"|\"latest_news\" : \"$(date)\"|g" "$STATUS_JSON_FILE"
+    "$SED" -i'' "s|\"latest_news\" : \".*[^\"]\"|\"latest_news\" : \"$DATE\"|g" "$STATUS_JSON_FILE"
 
-    if [[ "$VERBOSITY" -ge 1 ]]; then
-	echo "$0: updated latest_news to: $(date)" 1>&2
+    if [[ "$VERBOSITY" -gt 1 ]]; then
+	echo "$0: updated latest_news to: \"$DATE\"" 1>&2
     fi
 fi
 
 # then update IOCCC_STATUS_VERSION if requested
 if [[ -n "$UPDATE_IOCCC_STATUS_VERSION" ]]; then
-    sed -i'' "s|\"IOCCC_status_version\" : \".*[^\"]\"|\"IOCCC_status_version\" : \"$IOCCC_STATUS_VERSION\"|g" "$STATUS_JSON_FILE"
+    "$SED" -i'' "s|\"IOCCC_status_version\" : \".*[^\"]\"|\"IOCCC_status_version\" : \"$IOCCC_STATUS_VERSION\"|g" "$STATUS_JSON_FILE"
 
-    if [[ "$VERBOSITY" -ge 1 ]]; then
+    if [[ "$VERBOSITY" -gt 1 ]]; then
 	echo "$0: updated IOCCC_status_version to: \"$IOCCC_STATUS_VERSION\"" 1>&2
     fi
 fi
 
 # finally if we need to change the status of the contest do so
 if [[ -n "$STATUS_FLAG" ]]; then
-    sed -i'' "s|\"contest\" : \".*[^\"]\"|\"contest\" : \"$STATUS\"|g" "$STATUS_JSON_FILE"
+    "$SED" -i'' "s|\"contest\" : \".*[^\"]\"|\"contest\" : \"$STATUS\"|g" "$STATUS_JSON_FILE"
 
-    if [[ "$VERBOSITY" -ge 1 ]]; then
+    if [[ "$VERBOSITY" -gt 1 ]]; then
 	echo "$0: updated contest status to: \"$STATUS\"" 1>&2
     fi
 fi

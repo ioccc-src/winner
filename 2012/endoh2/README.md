@@ -24,7 +24,7 @@ gcc -o e e.c
 ...
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

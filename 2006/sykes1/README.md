@@ -25,7 +25,7 @@ For more detailed information see [2006 sykes1 in bugs.md](/bugs.md#2006-sykes1)
 Next point your browser to the file: `sykes1.html`.
 
 
-### Try:
+## Try:
 
 ```sh
 ./sykes1 10

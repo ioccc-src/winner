@@ -12,7 +12,7 @@ make all
 ```
 
 
-### Try:
+## Try:
 
 To find the day that Easter falls on in the current year:
 
