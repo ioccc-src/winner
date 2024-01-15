@@ -433,6 +433,28 @@ a:active {
   color: red;
 }
 
+/* IOCCC classes ================================================================================= */
+
+/* Left - class for placing things on the left side */
+.Left {
+  float: left;
+}
+
+/* Right - class for placing things on the left side */
+.Right {
+  float: right;
+}
+
+/* Disabled - class for making something as if the feature has been disabled */
+.Disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  color: inherit;
+  display: inline-block;	/* For IE11/MS Edge bug */
+  pointer-events: none;
+  text-decoration: none;
+}
+
 /* Header ======================================================================================== */
 
 /* Style the header */
