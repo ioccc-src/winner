@@ -5,9 +5,9 @@ make all
 ```
 
 
-There is an alternate version that allows you to heat, giving you configurable
-amount of arrows at the start of the game. See [Alternate
-code](#alternate-code).
+There is an alternate version that allows you to cheat, giving you configurable
+amount of arrows at the start of the game. See the [Alternate
+code](#alternate-code) section below.
 
 
 ### Bugs and (Mis)features:
@@ -34,7 +34,7 @@ This version allows you to choose how many arrows to start with, instead of the
 default 0. If one tried specifying a value < 0 it will set it to 0.
 
 Fun fact: this version helped uncover and fix a bug that prevented the entry
-from working on some cases.
+from working in some cases.
 
 
 ### Alternate build:
