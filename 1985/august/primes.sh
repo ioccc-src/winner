@@ -15,7 +15,7 @@ if [[ "$#" -ge 1 ]]; then
 fi
 
 if [[ -n "$PRIMES" ]]; then
-    while read -r n; do primes "$n" $((n + 1)); done < <((./august | head -n "$COUNT" ))
+    while read -r n; do primes "$n" $((n + 1)); done < <((./august | head -n "$COUNT" |sed '/^$/d'))
 else
     echo "primes not installed" 1>&2
     echo 1>&2
