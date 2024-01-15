@@ -1,7 +1,16 @@
 #!/usr/bin/env bash
+#
+# primes.sh - feed primes(1) IOCCC winner 1985/august
+#
 
+# make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
+# this way allows us to have the user specify a different compiler in an easy
+# way.
+if [[ -z "$CC" ]]; then
+    CC="cc"
+fi
 
-make everything || exit 1
+make CC="$CC" all >/dev/null || exit 1
 
 PRIMES=$(type -P primes)
 
@@ -15,7 +24,7 @@ if [[ "$#" -ge 1 ]]; then
 fi
 
 if [[ -n "$PRIMES" ]]; then
-    while read -r n; do primes "$n" $((n + 1)); done < <((./august | head -n "$COUNT" |sed '/^$/d'))
+    while read -r n; do primes "$n" $((n + 1)); done < <((./august | head -n "$COUNT" | sed '/^$/d'))
 else
     echo "primes not installed" 1>&2
     echo 1>&2
@@ -23,6 +32,6 @@ else
     echo 1>&2
     echo "	https://github.com/vattam/BSDGames" 1>&2
     echo 1>&2
-    echo "and after installing try again."
+    echo "and after installing it try running this again."
     exit 1
 fi
