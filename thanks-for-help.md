@@ -1870,7 +1870,7 @@ that already existed, how many you had and how many were stolen.
 ## <a name="1994_horton"></a>[1994/horton](/1994/horton/horton.c) ([README.md](/1994/horton/README.md))
 
 [Cody](#cody) fixed this to check that four args were specified. With the use of the C
-pre-processor macro and inclusion of stdlib.h in the Makefile the layout of the
+pre-processor macro and inclusion of `stdlib.h` in the Makefile the layout of the
 source is exactly the same column width and no additional lines were added. This
 was done during one of the times where this was changed to bug status, for
 better or worse.
@@ -1886,7 +1886,7 @@ was that `srand()` returns void but it was used in a `||` expression. Thus the
 comma operator was needed.
 
 Cody also fixed it for clang under Linux which objected to incompatible pointer
-type (because `time(/2)` takes a `time_t *` which in some systems is a `long *`
+type (because `time(2)` takes a `time_t *` which in some systems is a `long *`
 but what was being passed to it is an `int`).
 
 Cody also changed the entry to use `fgets(3)` instead of `gets(3)`. This one has
@@ -1932,6 +1932,11 @@ For an interesting problem that occurred here and what was done to solve it,
 check the [bugs.md](bugs.md) file.
 
 
+## <a name="1994_smr"></a>[1994/smr](/1994/smr/smr.c) ([README.md](/1994/smr/README.md]))
+
+[Cody](#cody) added the [try.sh](/1994/smr/try.sh) script.
+
+
 ## <a name="1994_tvr"></a>[1994/tvr](/1994/tvr/tvr.c) ([README.md](/1994/tvr/README.md]))
 
 [Cody](#cody) made this use `fgets(3)` instead of `gets(3)`. In this case the newline had
@@ -1947,6 +1952,13 @@ Note that the alt code does not use `fgets(3)` but rather `gets(3)`.
 [Cody](#cody) changed the Makefile to make this program more user friendly and easier to
 use with other tools as well by making the program output not a space after each
 number but rather a newline.
+
+Cody also added the scripts [try.sh](/1994/weisberg/try.sh) and
+[primes.sh](/1994/weisberg/primes.sh). The `primes.sh` script is used by
+`try.sh` and if both `primes(1)` and `rev(1)` are installed it will reverse the
+lines of the `weisberg`, feeding it to `primes(1)`, showing those that are
+primes. It only does the reversed output because the program actually prints
+primes.
 
 
 ## <a name="1994_westley"></a>[1994/westley](/1994/westley/westley.c) ([README.md](/1994/westley/README.md]))

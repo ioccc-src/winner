@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-#
-# primes.sh - feed primes(1) IOCCC winner 1985/august
+# 
+# primes.sh - feed primes(1) IOCCC winner 1994/weisberg
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
@@ -23,8 +23,11 @@ if [[ "$#" -ge 1 ]]; then
     fi
 fi
 
-if [[ -n "$PRIMES" ]]; then
-    while read -r n; do primes "$n" $((n + 1)); done < <((./august | head -n "$COUNT" | sed '/^$/d'))
+REV="$(type -P rev)"
+if [[ -n "$PRIMES" && -n "$REV" ]]; then
+    read -r -n 1 -p "Press any key to find primes in ./weisberg | head -n $COUNT, reversed: "
+    echo 1>&2
+    while read -r n; do primes "$n" $((n + 1)); done < <((./weisberg | head -n "$COUNT" | "$REV" ))
 else
     echo "primes not installed" 1>&2
     echo 1>&2
