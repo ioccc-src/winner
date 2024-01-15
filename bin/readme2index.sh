@@ -2,7 +2,7 @@
 #
 # readme2index - convert README.md into index.html
 #
-# Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2023,2024 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -55,7 +55,7 @@ shopt -s lastpipe	# run last command of a pipeline not executed in the backgroun
 
 # set variables referenced in the usage message
 #
-export VERSION="0.4 2023-12-31"
+export VERSION="1.0 2024-01-14"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -70,9 +70,10 @@ status="$?"
 if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
-export PANDOC_WRAPPER="inc/pandoc_wapper.sh"
+export PANDOC_WRAPPER="bin/pandoc_wrapper.sh"
 export PANDOC_WRAPPER_OPTSTR="-f markdown -t html --fail-if-warnings=true"
 export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc"
+export TOP_URL="https://ioccc-src.github.io/temp-test-ioccc"
 
 # set usage message
 #
@@ -80,7 +81,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 	[-d topdir] [-c md2html.cfg] [-H phase=name ..]
 	[-b tool] [-B optstr] [-p tool] [-P optstr] [-a tool] [-A optstr]
 	[-s token=value ..] [-S] [-o tool ..] [-O tool=optstr ..]
-	[-u repo_url] [-e string ..] [-E exitcode]
+	[-u repo_url] [-U top_url] [-e string ..] [-E exitcode]
 	yyyy/dir
 
 	-h		print help message and exit
@@ -134,8 +135,10 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 			NOTE: A later '-O tool=optstr' will override all earlier '-O tool=optstr' for the same 'tool'.
 			NOTE: -O may only be used in command_options and md2html.cfg cfg_options (getopt phases 0 and 2)
 
-	-u repo_url	URL of the final target repo from where HTML files will be viewed (def: $REPO_URL)
-			NOTE: The '-u repo_url' will be passed as leading options on the -b tool and -a tool command lines.
+	-u repo_url	Base level URL of target git repo (def: $REPO_URL)
+			NOTE: The '-u repo_url' is passed as leading options on -o tool, -b tool, and -a tool command lines.
+	-U top_url	Top level URL of web site where HTML files will be viewed (def: $TOP_URL)
+			NOTE: The '-U top_url' is passed as leading options on -o tool, -b tool, and -a tool command lines.
 
 	-e string	output 'string', followed by newline, to stderr (def: do not)
 	-E exitcode	force exit with exitcode (def: exit based on success or failure of the action)
@@ -181,6 +184,8 @@ function global_variable_setup
     export BEFORE_TOOL_OPTSTR=
     # PANDOC_WRAPPER set above the export USAGE line
     # PANDOC_WRAPPER_OPTSTR set above the export USAGE line
+    # REPO_URL set above the export USAGE line
+    # TOP_URL set above the export USAGE line
     export AFTER_TOOL=
     export AFTER_TOOL_OPTSTR=
     unset TOKEN
@@ -255,7 +260,7 @@ function print_usage
 #	# perform the actions as needed
 #
 #	# set new command like options and parse them
-#	set -- -s token0=value0 -o inc/foo.sh -O inc/foo.sh="-v 3" -s token1=vaulue1
+#	set -- -s token0=value0 -o bin/foo.sh -O bin/foo.sh="-v 3" -s token1=vaulue1
 #	parse_command_line
 #
 #	# do whatever you need to do in terms of validating the resulting effect on
@@ -264,7 +269,7 @@ function print_usage
 #	# perform the actions as needed
 #
 #	# set new command like options and parse them
-#	set -- -s token2=value2 -o inc/bar.sh -O inc/bar.sh="-v 1" -s token4=vaulue4
+#	set -- -s token2=value2 -o bin/bar.sh -O bin/bar.sh="-v 1" -s token4=vaulue4
 #	parse_command_line
 #
 #	# do whatever you need to do in terms of validating the resulting effect on
@@ -284,7 +289,7 @@ function parse_command_line
 
     # parse command line
     #
-    while getopts :hv:VnNd:c:H:b:B:p:P:a:A:s:So:Ou::e:E: flag; do
+    while getopts :hv:VnNd:c:H:b:B:p:P:a:A:s:So:Ou:U:e:E: flag; do
       case "$flag" in
 	h) print_usage 1>&2
 	    exit 2
@@ -616,6 +621,8 @@ function parse_command_line
 	    ;;
 	u) REPO_URL="$OPTARG"
 	    ;;
+	U) TOP_URL="$OPTARG"
+	    ;;
 	e) echo "$OPTARG" 1>&2
 	    ;;
 	E) exit "$OPTARG"
@@ -768,7 +775,7 @@ function append_html_phase
 
     # HTML phase setup
     #
-    PHASE_FILE="$INC/$NAME_OF_PHASE.${HTML_PHASE_NAME[$NAME_OF_PHASE]}.html"
+    PHASE_FILE="$INC_DIR/$NAME_OF_PHASE.${HTML_PHASE_NAME[$NAME_OF_PHASE]}.html"
     #
     # we validated all HTML phase names previously: so only a readable file check is needed
     #
@@ -903,11 +910,12 @@ fi
 
 # verify that we have a inc subdirectory
 #
-export INC="$TOPDIR/inc"
-if [[ ! -d $INC ]]; then
-    echo "$0: ERROR: inc is not a directory under topdir: $INC" 1>&2
+export INC_PATH="$TOPDIR/inc"
+if [[ ! -d $INC_PATH ]]; then
+    echo "$0: ERROR: inc is not a directory under topdir: $INC_PATH" 1>&2
     exit 15
 fi
+export INC_DIR="inc"
 
 # verify that we have an author subdirectory
 #
@@ -936,7 +944,7 @@ fi
 # verify we have a readable md2html.cfg file
 #
 if [[ -z $MD2HTML_CFG ]]; then
-    MD2HTML_CFG="$INC/md2html.cfg"
+    MD2HTML_CFG="$INC_DIR/md2html.cfg"
 fi
 if [[ ! -e $MD2HTML_CFG ]]; then
     echo "$0: ERROR: md2html.cfg does not exist: $MD2HTML_CFG" 1>&2
@@ -1078,6 +1086,7 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: INDEX_PATH=$INDEX_PATH" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+    echo "$0: debug[3]: TOP_URL=$TOP_URL" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
 fi
@@ -1351,7 +1360,7 @@ fi
 # validate HTML phase names
 #
 for n in "${PHASE_NAME[@]}"; do
-    HTML_PHASE_FILE="$INC/$n.${HTML_PHASE_NAME[$n]}.html"
+    HTML_PHASE_FILE="$INC_DIR/$n.${HTML_PHASE_NAME[$n]}.html"
     if [[ $V_FLAG -ge 9 ]]; then
 	echo "$0: debug[9]: HTML phase $n: ${HTML_PHASE_NAME[$n]} file: $HTML_PHASE_FILE" 1>&2
     fi
@@ -1396,25 +1405,25 @@ fi
 
 # validate pandoc wrapper tool
 #
-if [[ -n $PANDOC_WRAPPER_TOOL ]]; then
+if [[ -n $PANDOC_WRAPPER ]]; then
     if [[ $V_FLAG -ge 5 ]]; then
-	if [[ -n $PANDOC_WRAPPER_TOOL ]]; then
-	    echo "$0: debug[5]: -p pandoc wrapper tool: $PANDOC_WRAPPER_TOOL" 1>&2
+	if [[ -n $PANDOC_WRAPPER ]]; then
+	    echo "$0: debug[5]: -p pandoc wrapper tool: $PANDOC_WRAPPER" 1>&2
 	fi
-	if [[ -n $PANDOC_WRAPPER_TOOL_OPTSTR ]]; then
-	    echo "$0: debug[5]: -P pandoc wrapper tool options: $PANDOC_WRAPPER_TOOL_OPTSTR" 1>&2
+	if [[ -n $PANDOC_WRAPPER_OPTSTR ]]; then
+	    echo "$0: debug[5]: -P pandoc wrapper tool options: $PANDOC_WRAPPER_OPTSTR" 1>&2
 	fi
     fi
-    if [[ ! -e "$PANDOC_WRAPPER_TOOL" ]]; then
-	echo "$0: ERROR: -p pandoc wrapper tool not found: $PANDOC_WRAPPER_TOOL" 1>&2
+    if [[ ! -e "$PANDOC_WRAPPER" ]]; then
+	echo "$0: ERROR: -p pandoc wrapper tool not found: $PANDOC_WRAPPER" 1>&2
 	exit 6
     fi
-    if [[ ! -f "$PANDOC_WRAPPER_TOOL" ]]; then
-	echo "$0: ERROR: -p pandoc wrapper tool not a file: $PANDOC_WRAPPER_TOOL" 1>&2
+    if [[ ! -f "$PANDOC_WRAPPER" ]]; then
+	echo "$0: ERROR: -p pandoc wrapper tool not a file: $PANDOC_WRAPPER" 1>&2
 	exit 6
     fi
-    if [[ ! -x "$PANDOC_WRAPPER_TOOL" ]]; then
-	echo "$0: ERROR: -p pandoc wrapper tool not an executable file: $PANDOC_WRAPPER_TOOL" 1>&2
+    if [[ ! -x "$PANDOC_WRAPPER" ]]; then
+	echo "$0: ERROR: -p pandoc wrapper tool not an executable file: $PANDOC_WRAPPER" 1>&2
 	exit 6
     fi
 fi
@@ -1582,7 +1591,11 @@ fi
 # Special output to indicate which tool was used
 #
 if [[ -z $NOOP ]]; then
-    echo "<!-- This file was formed by the tool: $NAME -->" >> "$TMP_INDEX_HTML"
+    {
+	echo "<!-- -->"
+	echo "<!-- This file was formed by the tool: bin/$NAME version: $VERSION -->"
+	echo "<!-- -->"
+    } >> "$TMP_INDEX_HTML"
 fi
 
 ########################################
@@ -1791,15 +1804,15 @@ if [[ -n $BEFORE_TOOL ]]; then
 	#
 	if [[ $V_FLAG -ge 5 ]]; then
 	    echo "$0: debug[6]: about to execute:"\
-		 "$BEFORE_TOOL $BEFORE_TOOL_OPTSTR $YEAR_DIR/$WINNER_DIR >> $TMP_INDEX_HTML" 1>&2
+		 "$BEFORE_TOOL -u $REPO_URL -U $TOP_URL $BEFORE_TOOL_OPTSTR -- $YEAR_DIR/$WINNER_DIR >> $TMP_INDEX_HTML" 1>&2
 	fi
 	# SC2086 (info): Double quote to prevent globbing and word splitting.
 	# shellcheck disable=SC2086
-	eval "$BEFORE_TOOL" $BEFORE_TOOL_OPTSTR "$YEAR_DIR/$WINNER_DIR" >> "$TMP_INDEX_HTML"
+	eval "$BEFORE_TOOL" -u "$REPO_URL" -U "$TOP_URL" $BEFORE_TOOL_OPTSTR -- "$YEAR_DIR/$WINNER_DIR" >> "$TMP_INDEX_HTML"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: before tool:" \
-		 "$BEFORE_TOOL $BEFORE_TOOL_OPTSTR $YEAR_DIR/$WINNER_DIR failed," \
+		 "$BEFORE_TOOL -u $REPO_URL -U $TOP_URL $BEFORE_TOOL_OPTSTR -- $YEAR_DIR/$WINNER_DIR failed," \
 		 "error code: $status" 1>&2
 	    exit 95
 	fi
@@ -1824,31 +1837,29 @@ fi
 CUR_PHASE_NUM=21
 CUR_PHASE_NAME="pandoc-wrapper-tool"
 #
-if [[ -n $PANDOC_WRAPPER_TOOL ]]; then
+if [[ -n $PANDOC_WRAPPER ]]; then
     if [[ -z $NOOP ]]; then
 
 	# append pandoc wrapper tool output
 	#
 	if [[ $V_FLAG -ge 5 ]]; then
 	    echo "$0: debug[6]: about to execute:"\
-		 "$PANDOC_WRAPPER_TOOL $PANDOC_WRAPPER_TOOL_OPTSTR $YEAR_DIR/$WINNER_DIR >> $TMP_INDEX_HTML" 1>&2
+		 "$PANDOC_WRAPPER -u $REPO_URL -U $TOP_URL-P $PANDOC_WRAPPER_OPTSTR -- $README_PATH - >> $TMP_INDEX_HTML" 1>&2
 	fi
-	# SC2086 (info): Double quote to prevent globbing and word splitting.
-	# shellcheck disable=SC2086
-	eval "$PANDOC_WRAPPER_TOOL" $PANDOC_WRAPPER_TOOL_OPTSTR "$YEAR_DIR/$WINNER_DIR" >> "$TMP_INDEX_HTML"
+	"$PANDOC_WRAPPER" -u "$REPO_URL" -U "$TOP_URL" -P "$PANDOC_WRAPPER_OPTSTR" -- "$README_PATH" - >> "$TMP_INDEX_HTML"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: pandoc wrapper tool:" \
-		 "$PANDOC_WRAPPER_TOOL $PANDOC_WRAPPER_TOOL_OPTSTR $YEAR_DIR/$WINNER_DIR failed," \
+		 "$PANDOC_WRAPPER -u $REPO_URL -U $TOP_URL-P $PANDOC_WRAPPER_OPTSTR -- $README_PATH - failed," \
 	         "error code: $status" 1>&2
 	    exit 100
 	fi
 
     elif [[ $V_FLAG -ge 5 ]]; then
-	echo "$0: debug[5]: because of -n, disabled use of pandoc wrapper tool: $PANDOC_WRAPPER_TOOL" 1>&2
+	echo "$0: debug[5]: because of -n, disabled use of pandoc wrapper tool: $PANDOC_WRAPPER" 1>&2
     fi
 elif [[ $V_FLAG -ge 5 ]]; then
-    echo "$0: debug[5]: because of -b ., use of pandoc wrapper tool was disabled" 1>&2
+    echo "$0: debug[5]: because of -p ., use of pandoc wrapper tool was disabled" 1>&2
 fi
 #
 if [[ $V_FLAG -ge 3 ]]; then
@@ -1871,15 +1882,15 @@ if [[ -n $AFTER_TOOL ]]; then
 	#
 	if [[ $V_FLAG -ge 5 ]]; then
 	    echo "$0: debug[6]: about to execute:"\
-		 "$AFTER_TOOL $AFTER_TOOL_OPTSTR $YEAR_DIR/$WINNER_DIR >> $TMP_INDEX_HTML" 1>&2
+		 "$AFTER_TOOL -u $REPO_URL -U $TOP_URL $AFTER_TOOL_OPTSTR -- $YEAR_DIR/$WINNER_DIR >> $TMP_INDEX_HTML" 1>&2
 	fi
 	# SC2086 (info): Double quote to prevent globbing and word splitting.
 	# shellcheck disable=SC2086
-	eval "$AFTER_TOOL" $AFTER_TOOL_OPTSTR "$YEAR_DIR/$WINNER_DIR" >> "$TMP_INDEX_HTML"
+	eval "$AFTER_TOOL" -u "$REPO_URL" -U "$TOP_URL" $AFTER_TOOL_OPTSTR -- "$YEAR_DIR/$WINNER_DIR" >> "$TMP_INDEX_HTML"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: after tool:" \
-		 "$AFTER_TOOL $AFTER_TOOL_OPTSTR $YEAR_DIR/$WINNER_DIR failed," \
+		 "$AFTER_TOOL -u $REPO_URL -U $TOP_URL $AFTER_TOOL_OPTSTR -- $YEAR_DIR/$WINNER_DIR failed," \
 		 "error code: $status" 1>&2
 	    exit 105
 	fi
@@ -1888,7 +1899,7 @@ if [[ -n $AFTER_TOOL ]]; then
 	echo "$0: debug[5]: because of -n, disabled use of after tool: $AFTER_TOOL" 1>&2
     fi
 elif [[ $V_FLAG -ge 5 ]]; then
-    echo "$0: debug[5]: because of -b ., use of after tool was disabled" 1>&2
+    echo "$0: debug[5]: because of -a ., use of after tool was disabled" 1>&2
 fi
 #
 if [[ $V_FLAG -ge 3 ]]; then

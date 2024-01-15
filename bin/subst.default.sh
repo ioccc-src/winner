@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 #
-# subst.winner-index.sh - print substitutions for a winner index.html
+# subst.default.sh - print default substitutions
 #
 # This tool is used in conjunction with the inc/md2html.cfg configuration
-# file, and "readme2index.sh" to build an index.html file for a winner.
+# file, and the tools that use that use that configuration file
+# such as "readme2index.sh".
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
@@ -52,7 +53,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0 2024-01-02"
+export VERSION="1.1 2024-01-14"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -67,12 +68,14 @@ status="$?"
 if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
+export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc"
+export TOP_URL="https://ioccc-src.github.io/temp-test-ioccc"
 
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 			[-d topdir] [-p tool] [-P optstr]
-			[-e string ..] [-E exitcode]
+			[-u repo_url] [-U top_url] [-e string ..] [-E exitcode]
 			yyyy/dir
 
 	-h		print help message and exit
@@ -83,6 +86,9 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 
 	-n		go thru the actions, but do not update any files (def: do the action)
 	-N		do not process file, just parse arguments and ignore the file (def: process the file)
+
+	-u repo_url	Base level URL of target git repo (def: $REPO_URL)
+	-U top_url	Top level URL of web site where HTML files will be viewed (def: $TOP_URL)
 
 	-e string	output string, followed by newline, to stderr (def: do not)
 	-E exitcode	force exit with exitcode (def: exit based on success or failure of the action)
@@ -109,7 +115,7 @@ export DOCROOT_URL_SLASH="/"
 
 # parse command line
 #
-while getopts :hv:Vd:nNe:E: flag; do
+while getopts :hv:Vd:nNu:U:e:E: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -124,6 +130,10 @@ while getopts :hv:Vd:nNe:E: flag; do
     n) NOOP="-n"
 	;;
     N) DO_NOT_PROCESS="-N"
+	;;
+    u) REPO_URL="$OPTARG"
+	;;
+    U) TOP_URL="$OPTARG"
 	;;
     e) echo "$OPTARG" 1>&2
 	;;
@@ -168,6 +178,21 @@ if [[ $V_FLAG -ge 1 ]]; then
     echo "$0: debug[1]: WINNER_PATH=$WINNER_PATH" 1>&2
 fi
 
+# verify that we have a topdir directory
+#
+REPO_NAME=$(basename "$REPO_URL")
+export REPO_NAME
+if [[ -z $TOPDIR ]]; then
+    echo "$0: ERROR: cannot find top of git repo directory" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    exit 201
+fi
+if [[ ! -d $TOPDIR ]]; then
+    echo "$0: ERROR: TOPDIR is not a directory: $TOPDIR" 1>&2
+    echo "$0: Notice: if needed: $GIT_TOOL clone $REPO_URL; cd $REPO_NAME" 1>&2
+    exit 202
+fi
+
 # verify that we have an author subdirectory
 #
 export AUTHOR_PATH="$TOPDIR/author"
@@ -177,15 +202,33 @@ if [[ ! -d $AUTHOR_PATH ]]; then
 fi
 export AUTHOR_DIR="author"
 
+# verify that we have an inc subdirectory
+#
+export INC_PATH="$TOPDIR/inc"
+if [[ ! -d $INC_PATH ]]; then
+    echo "$0: ERROR: inc is not a directory under topdir: $INC_PATH" 1>&2
+    exit 204
+fi
+export INC_DIR="inc"
+
+# verify that we have an bin subdirectory
+#
+export BIN_PATH="$TOPDIR/bin"
+if [[ ! -d $BIN_PATH ]]; then
+    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
+    exit 205
+fi
+export BIN_DIR="bin"
+
 # cd to topdir
 #
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to non-existent path: $TOPDIR" 1>&2
-    exit 204
+    exit 206
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to a non-directory: $TOPDIR" 1>&2
-    exit 205
+    exit 207
 fi
 export CD_FAILED
 if [[ $V_FLAG -ge 5 ]]; then
@@ -194,7 +237,7 @@ fi
 cd "$TOPDIR" || CD_FAILED="true"
 if [[ -n $CD_FAILED ]]; then
     echo "$0: ERROR: cd $TOPDIR failed" 1>&2
-    exit 206
+    exit 208
 fi
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
@@ -281,8 +324,15 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
     echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
     echo "$0: debug[3]: WINNER_JSON=$WINNER_JSON" 1>&2
+    echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
+    echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+    echo "$0: debug[3]: TOP_URL=$TOP_URL" 1>&2
     echo "$0: debug[3]: AUTHOR_PATH=$AUTHOR_PATH" 1>&2
     echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
+    echo "$0: debug[3]: INC_PATH=$INC_PATH" 1>&2
+    echo "$0: debug[3]: INC_DIR=$INC_DIR" 1>&2
+    echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
+    echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
 fi
@@ -296,21 +346,9 @@ if [[ -n $DO_NOT_PROCESS ]]; then
     exit 0
 fi
 
-# output TITLE substitution
+# output HEADER_1 substitution
 #
-echo "-s TITIE='$YEAR_DIR/$WINNER_DIR'"
-
-# output DESCRIPTION substitution
-#
-echo "-s DESCRIPTION='$YEAR_DIR IOCCC winner $WINNER_DIR'"
-
-# output KEYWORDS substitution
-#
-echo "-s KEYWORDS='IOCCC, $YEAR_DIR, IOCCC $YEAR_DIR, IOCCC winner, $WINNER_DIR'"
-
-# output HEADER_2 substitution
-#
-echo "-s HEADER_2='$YEAR_DIR/$WINNER_DIR'"
+echo "-s HEADER_1='The International Obfuscated C Code Contest'"
 
 # All Done!!! -- Jessica Noll, Age 2
 #

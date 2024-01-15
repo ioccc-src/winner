@@ -4,9 +4,8 @@
 #
 # This tool is intended to be used as a "before tool" during HTML phase number 20.
 #
-# This tool is intended to be invoked by a tool such as "readme2index.sh"
-# and as such, the leading options will include "-p pandoc_wrapper" and -P "optstr",
-# the final arg will be in yyyy/dir form, and will be called from
+# This tool is intended to be invoked by a tool such as "readme2index.sh".
+# The final arg will be in yyyy/dir form, and will be called from
 # the topdir directory under which the yyyy/dir winner directory must be found.
 #
 # Copyright (c) 2023,2024 by Landon Curt Noll.  All Rights Reserved.
@@ -56,7 +55,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2 2024-01-04"
+export VERSION="1.3 2024-01-14"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -71,15 +70,17 @@ status="$?"
 if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
-export PANDOC_WRAPPER="inc/pandoc_wrapper.sh"
+export PANDOC_WRAPPER="bin/pandoc_wrapper.sh"
 export PANDOC_WRAPPER_OPTSTR="-f markdown -t html --fail-if-warnings=true"
 export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc"
+export TOP_URL="https://ioccc-src.github.io/temp-test-ioccc"
+export DOCROOT_URL_SLASH="../../"
 
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 			[-d topdir] [-p tool] [-P optstr]
-			[-u repo_url] [-e string ..] [-E exitcode]
+			[-u repo_url] [-U top_url] [-e string ..] [-E exitcode]
 			yyyy/dir
 
 	-h		print help message and exit
@@ -95,7 +96,8 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 	-P pandoc_opts	run 'pandoc wrapper tool' with options found in 'optstr' (def: $PANDOC_WRAPPER_OPTSTR)
 			NOTE: The 'optstr' may not contain a single-quote, nor a double-quote.
 
-	-u repo_url	URL of the final target repo from where HTML files will be viewed (def: $REPO_URL)
+	-u repo_url	Base level URL of target git repo (def: $REPO_URL)
+	-U top_url	Top level URL of web site where HTML files will be viewed (def: $TOP_URL)
 
 	-e string	output string, followed by newline, to stderr (def: do not)
 	-E exitcode	force exit with exitcode (def: exit based on success or failure of the action)
@@ -322,7 +324,7 @@ function output_location_code
 
 # parse command line
 #
-while getopts :hv:Vd:nNp:P:u:e:E: flag; do
+while getopts :hv:Vd:nNp:P:u:U:e:E: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -359,6 +361,8 @@ while getopts :hv:Vd:nNp:P:u:e:E: flag; do
 	PANDOC_WRAPPER_OPTSTR="$OPTARG"
 	;;
     u) REPO_URL="$OPTARG"
+	;;
+    U) TOP_URL="$OPTARG"
 	;;
     e) echo "$OPTARG" 1>&2
 	;;
@@ -427,15 +431,33 @@ if [[ ! -d $AUTHOR_PATH ]]; then
 fi
 export AUTHOR_DIR="author"
 
+# verify that we have an inc subdirectory
+#
+export INC_PATH="$TOPDIR/inc"
+if [[ ! -d $INC_PATH ]]; then
+    echo "$0: ERROR: inc is not a directory under topdir: $INC_PATH" 1>&2
+    exit 204
+fi
+export INC_DIR="inc"
+
+# verify that we have an bin subdirectory
+#
+export BIN_PATH="$TOPDIR/bin"
+if [[ ! -d $BIN_PATH ]]; then
+    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
+    exit 205
+fi
+export BIN_DIR="bin"
+
 # cd to topdir
 #
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to non-existent path: $TOPDIR" 1>&2
-    exit 204
+    exit 206
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to a non-directory: $TOPDIR" 1>&2
-    exit 205
+    exit 207
 fi
 export CD_FAILED
 if [[ $V_FLAG -ge 5 ]]; then
@@ -444,7 +466,7 @@ fi
 cd "$TOPDIR" || CD_FAILED="true"
 if [[ -n $CD_FAILED ]]; then
     echo "$0: ERROR: cd $TOPDIR failed" 1>&2
-    exit 206
+    exit 208
 fi
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
@@ -545,8 +567,13 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: WINNER_JSON=$WINNER_JSON" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+    echo "$0: debug[3]: TOP_URL=$TOP_URL" 1>&2
     echo "$0: debug[3]: AUTHOR_PATH=$AUTHOR_PATH" 1>&2
     echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
+    echo "$0: debug[3]: INC_PATH=$INC_PATH" 1>&2
+    echo "$0: debug[3]: INC_DIR=$INC_DIR" 1>&2
+    echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
+    echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
     echo "$0: debug[3]: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
     echo "$0: debug[3]: PANDOC_WRAPPER_OPTSTR=$PANDOC_WRAPPER_OPTSTR" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
@@ -560,7 +587,7 @@ AUTHOR_HANDLE_SET=$(output_author_handles "$WINNER_JSON")
 status="$?"
 if [[ $status -ne 0 || -z $AUTHOR_HANDLE_SET ]]; then
     echo "$0: ERROR: unable to obtain any author handles from: $WINNER_JSON" 1>&2
-    exit 207
+    exit 209
 fi
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: author handles found in $WINNER_JSON start below" 1>&2
@@ -580,15 +607,15 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     #
     if [[ ! -e $AUTHOR_HANDLE_JSON ]]; then
 	echo "$0: ERROR: for author handle: $author_handle author JSON file not found: $AUTHOR_HANDLE_JSON" 1>&2
-	exit 208
+	exit 210
     fi
     if [[ ! -f $WINNER_JSON ]]; then
 	echo "$0: ERROR: for author handle: $author_handle author JSON is not a file: $AUTHOR_HANDLE_JSON" 1>&2
-	exit 209
+	exit 211
     fi
     if [[ ! -r $WINNER_JSON ]]; then
 	echo "$0: ERROR: for author handle: $author_handle author JSON is not a readable file: $AUTHOR_HANDLE_JSON" 1>&2
-	exit 210
+	exit 212
     fi
     if [[ $V_FLAG -ge 5 ]]; then
 	echo "$0: debug[5]: for author handle: $author_handle found a readable author JSON file: $AUTHOR_HANDLE_JSON" 1>&2
@@ -600,7 +627,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     status="$?"
     if [[ $status -ne 0 || -z $WINNER_ID_FOUND ]]; then
 	echo "$0: ERROR: winner id: $WINNER_ID not found in author JSON file: $AUTHOR_HANDLE_JSON, status: $status" 1>&2
-	exit 211
+	exit 213
     fi
     if [[ $V_FLAG -ge 7 ]]; then
 	echo "$0: debug[7]: readable author JSON file: $AUTHOR_HANDLE_JSON mentions winner id: $WINNER_ID" 1>&2
@@ -612,7 +639,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     status="$?"
     if [[ $status -ne 0 || -z $FULL_NAME ]]; then
 	echo "$0: ERROR: author JSON file: $AUTHOR_HANDLE_JSON as no FULL NAME, status: $status" 1>&2
-	exit 212
+	exit 214
     fi
     if [[ $V_FLAG -ge 7 ]]; then
 	echo "$0: debug[7]: author JSON file: $AUTHOR_HANDLE_JSON Full Name: $FULL_NAME" 1>&2
@@ -624,7 +651,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     status="$?"
     if [[ $status -ne 0 || -z $LOCATION_CODE ]]; then
 	echo "$0: ERROR: author JSON file: $AUTHOR_HANDLE_JSON as no Location Code, status: $status" 1>&2
-	exit 213
+	exit 215
     fi
     if [[ $V_FLAG -ge 7 ]]; then
 	echo "$0: debug[7]: author JSON file: $AUTHOR_HANDLE_JSON Location Code: $LOCATION_CODE" 1>&2
@@ -651,12 +678,12 @@ if [[ -z $NOOP ]]; then
     rm -f "$TMP_FILE"
     if [[ -e $TMP_FILE ]]; then
 	echo "$0: ERROR: cannot remove temporary markdown file: $TMP_FILE" 1>&2
-	exit 214
+	exit 216
     fi
     :> "$TMP_FILE"
     if [[ ! -e $TMP_FILE ]]; then
 	echo "$0: ERROR: cannot create temporary markdown file: $TMP_FILE" 1>&2
-	exit 215
+	exit 217
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary markdown file is not used: $TMP_FILE" 1>&2
@@ -694,7 +721,7 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     status="$?"
     if [[ $status -ne 0 || -z $FULL_NAME ]]; then
 	echo "$0: ERROR: author JSON file: $AUTHOR_HANDLE_JSON as no FULL NAME, status: $status" 1>&2
-	exit 216
+	exit 218
     fi
 
     # obtain the Location Code from the author handle JSON file
@@ -703,18 +730,18 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     status="$?"
     if [[ $status -ne 0 || -z $LOCATION_CODE ]]; then
 	echo "$0: ERROR: author JSON file: $AUTHOR_HANDLE_JSON as no Location Code, status: $status" 1>&2
-	exit 217
+	exit 219
     fi
 
     # write this author's information
     #
     {
-	echo "Name: [$FULL_NAME](/winners.html#$author_handle)<br>"
+	echo "Name: [$FULL_NAME](${DOCROOT_URL_SLASH}winners.html#$author_handle)<br>"
 	if [[ $LOCATION_CODE == null ]]; then
-	    echo "Location: [unknown](/location.html#$LOCATION_CODE)"
+	    echo "Location: [unknown](${DOCROOT_URL_SLASH}location.html#$LOCATION_CODE)"
 	else
 
-	    echo "Location: [$LOCATION_CODE](/location.html#$LOCATION_CODE)"
+	    echo "Location: [$LOCATION_CODE](${DOCROOT_URL_SLASH}location.html#$LOCATION_CODE)"
 	fi
 	echo
     } | if [[ -z $NOOP ]]; then
@@ -729,7 +756,7 @@ done
 # convert temporary markdown file into HTML
 #
 if [[ -z $NOOP ]]; then
-    echo "<!-- START: this line starts content generated by: inc/$NAME -->"
+    echo "<!-- START: this line starts content generated by: bin/$NAME -->"
     echo
     if [[ $V_FLAG -ge 1 ]]; then
 	echo  "$0: debug[1]: about to execute: $PANDOC_WRAPPER -P \"$PANDOC_WRAPPER_OPTSTR\" $TMP_FILE -" 1>&2
@@ -738,10 +765,10 @@ if [[ -z $NOOP ]]; then
     status="$?"
     if [[ $status -ne 0 ]]; then
 	echo "$0: ERROR: pandoc failed, error: $status" 1>&2
-	exit 218
+	exit 220
     fi
     echo
-    echo "<!-- END: next line ends content generated by: inc/$NAME -->"
+    echo "<!-- END: next line ends content generated by: bin/$NAME -->"
 elif [[ $V_FLAG -ge 1 ]]; then
     echo  "$0: debug[1]: -n disabled execution of: $PANDOC_WRAPPER -P \"$PANDOC_WRAPPER_OPTSTR\" $TMP_FILE -" 1>&2
 fi

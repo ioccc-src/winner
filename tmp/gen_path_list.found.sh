@@ -32,7 +32,7 @@
 
 # setup
 #
-export VERSION="1.0 2023-10-26"
+export VERSION="1.1 2024-01-14"
 NAME=$(basename "$0"); export NAME
 TOPDIR=".."
 #
@@ -141,7 +141,7 @@ fi
 #
 TMPFILE="tmp/tmp.path_list.found.txt.$$"
 trap 'rm -f $TMPFILE; exit' 0 1 2 3 15
-find -- ???? -mindepth 2 ! -name .DS_Store -type f -print | sort -t/ > "$TMPFILE"
+find -- ???? -mindepth 2 ! -name .DS_Store ! -name '.*.swp' -type f -print | sort -t/ > "$TMPFILE"
 if [[ ! -s $TMPFILE ]]; then
     echo "$0: ERROR: TMPFILE: $TMPFILE is empty" 1>&2
     exit 12

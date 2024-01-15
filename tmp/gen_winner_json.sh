@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 #
-# gen_winner_json.sh - generate .winner.json and inventory.html for a winner
+# gen_winner_json.sh - generate .winner.json for a winner
 #
 # XXX - This is a temporary utility that will be replaced when
 #	the .winner.json files are built.
 #
-# Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2023,2024 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -31,12 +31,10 @@
 
 # setup
 #
-export VERSION="1.0.2 2023-11-06"
+export VERSION="1.1 2024-01-14"
 NAME=$(basename "$0"); export NAME
 export DOT_WINNER_JSON_BASENAME=".winner.json"
-export DOT_INVENTORY_MD_BASENAME=".inventory.md"
-export INVENTORY_HTML_BASENAME="inventory.html"
-export WINNER_JSON_FORMAT_VERSION="0.5 2023-11-04"
+export WINNER_JSON_FORMAT_VERSION="1.0 2024-01-14"
 export NO_COMMENT="mandatory comment: because comments were removed from the original JSON spec"
 export AUTHOR_WINS_CSV="author_wins.csv"
 export YEAR_PRIZE_CSV="year_prize.csv"
@@ -145,26 +143,13 @@ esac
 export FULL_WINNER_PATH="$TOPDIR/$WINNER_PATH"
 export WINNER_ID="${YEAR}_${WINNER}"
 
-# form full INVENTORY_HTML_URL
-#
 export URL_PATH="https://$DOMAIN$DOCPATH/$YEAR/$WINNER"
-export INVENTORY_HTML_URL="$URL_PATH/$INVENTORY_HTML_BASENAME"
-export GITHUB_URL_PATH="$GITHUB_REPO/$YEAR/$WINNER"
-export GITHUB_URL="$GITHUB_URL_PATH/$INVENTORY_HTML_BASENAME"
-
-# form Nu Html Checker doc url string
-#
-VALIDATOR_ENCODED_URL=$(echo "$INVENTORY_HTML_URL" | sed -e 's;/;%2F;g' -e 's;:;%3A;')
-export VALIDATOR_ENCODED_URL
 
 # setup temporary files
 #
 export WINNER_JSON_PATH="$FULL_WINNER_PATH/$DOT_WINNER_JSON_BASENAME"
 export TMP_DOT_WINNER_JSON="$FULL_WINNER_PATH/tmp.$$.$DOT_WINNER_JSON_BASENAME"
-export TMP_DOT_INVENTORY_MD="$FULL_WINNER_PATH/tmp.$$.$DOT_INVENTORY_MD_BASENAME"
-export INVENTORY_HTML_PATH="$FULL_WINNER_PATH/$INVENTORY_HTML_BASENAME"
-export TMP_INVENTORY_HTML="$FULL_WINNER_PATH/tmp.$$.$INVENTORY_HTML_BASENAME"
-trap 'rm -f $TMP_DOT_WINNER_JSON $TMP_DOT_INVENTORY_MD $TMP_INVENTORY_HTML' 0 1 2 3 15
+trap 'rm -f $TMP_DOT_WINNER_JSON' 0 1 2 3 15
 
 # print running info if verbose
 #
@@ -177,8 +162,6 @@ if [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: AUTHOR_WINS_CSV=$AUTHOR_WINS_CSV" 1>&2
     echo "$0: debug[5]: YEAR_PRIZE_CSV=$YEAR_PRIZE_CSV" 1>&2
     echo "$0: debug[5]: MANIFEST_CSV=$MANIFEST_CSV" 1>&2
-    echo "$0: debug[5]: GITHUB_URL_PATH=$GITHUB_URL_PATH" 1>&2
-    echo "$0: debug[5]: GITHUB_URL=$GITHUB_URL" 1>&2
     echo "$0: debug[5]: DOMAIN=$DOMAIN" 1>&2
     echo "$0: debug[5]: DOCPATH=$DOCPATH" 1>&2
     echo "$0: debug[5]: GITHUB_REPO=$GITHUB_REPO" 1>&2
@@ -190,16 +173,9 @@ if [[ $V_FLAG -ge 5 ]]; then
     echo "$0: debug[5]: WINNER=$WINNER" 1>&2
     echo "$0: debug[5]: WINNER_PATH=$WINNER_PATH" 1>&2
     echo "$0: debug[5]: URL_PATH=$URL_PATH" 1>&2
-    echo "$0: debug[5]: DOT_INVENTORY_MD_BASENAME=$DOT_INVENTORY_MD_BASENAME" 1>&2
-    echo "$0: debug[5]: INVENTORY_HTML_BASENAME=$INVENTORY_HTML_BASENAME" 1>&2
-    echo "$0: debug[5]: INVENTORY_HTML_URL=$INVENTORY_HTML_URL" 1>&2
-    echo "$0: debug[5]: VALIDATOR_ENCODED_URL=$VALIDATOR_ENCODED_URL" 1>&2
     echo "$0: debug[5]: DOT_WINNER_JSON_BASENAME=$DOT_WINNER_JSON_BASENAME" 1>&2
     echo "$0: debug[5]: WINNER_JSON_PATH=$WINNER_JSON_PATH" 1>&2
     echo "$0: debug[5]: TMP_DOT_WINNER_JSON=$TMP_DOT_WINNER_JSON" 1>&2
-    echo "$0: debug[5]: INVENTORY_HTML_PATH=$INVENTORY_HTML_PATH" 1>&2
-    echo "$0: debug[5]: TMP_DOT_INVENTORY_MD=$TMP_DOT_INVENTORY_MD" 1>&2
-    echo "$0: debug[5]: TMP_INVENTORY_HTML=$TMP_INVENTORY_HTML" 1>&2
 fi
 
 # make is easier to process CSV files
@@ -314,142 +290,64 @@ fi
 # collect inventory
 #
 NUMBER_RANKED_MANIFEST_SET=$(grep -E "^$YEAR,$WINNER,[^,][^,]*,[0-9]" "$MANIFEST_CSV" | sort -t, -k4n)
-declare -a FILE_PATH WINNERS_RANK CREATED_BY PROG FILETYPE WINNER_SHOW DISPLAY_VIA WINNER_TEXT
+declare -a FILE_PATH INVENTORY_ORDER OK_TO_EDIT DISPLAY_AS DISPLAY_VIA_GITHUB WINNER_TEXT
 #
-# process inventory with a numerical winners_rank
+# process inventory with a numerical inventory_order
 #
-while IFS=, read -r year dir file_path winners_rank created_by prog filetype winners_show display_via winners_text extra; do
+while IFS=, read -r year dir file_path inventory_order OK_to_edit display_as display_via_github winners_text extra; do
 
         # firewall - year dir much match
 	#
 	if [[ $YEAR != "$year" ]]; then
-	    echo "$0: ERROR:  ^$YEAR,$WINNER winners_rank: $winners_rank YEAR: $YEAR != $year" 1>&2
+	    echo "$0: ERROR:  ^$YEAR,$WINNER inventory_order: $inventory_order YEAR: $YEAR != $year" 1>&2
 	    exit 30
 	fi
 	if [[ $WINNER != "$dir" ]]; then
-	    echo "$0: ERROR:  ^$YEAR,$WINNER winners_rank: $winners_rank WINNER: $WINNER != $dir" 1>&2
+	    echo "$0: ERROR:  ^$YEAR,$WINNER inventory_order: $inventory_order WINNER: $WINNER != $dir" 1>&2
 	    exit 31
 	fi
 	if [[ $V_FLAG -ge 7 ]]; then
-	    echo "$0: debug[7]: found: year: $year dir: $dir winners_rank: $winners_rank file_path: $file_path" 1>&2
-	    echo "$0: debug[7]:  also: prog: $prog filetype: $filetype winners_show: $winners_show" 1>&2
-	    echo "$0: debug[7]:   and: display_via: $display_via winners_text: $winners_text extra: $extra" 1>&2
+	    echo "$0: debug[7]: found: year: $year dir: $dir inventory_order: $inventory_order file_path: $file_path" 1>&2
+	    echo "$0: debug[7]:  also: display_as: $display_as display_via_github: $display_via_github" 1>&2
+	    echo "$0: debug[7]:   and: winners_text: $winners_text extra: $extra" 1>&2
 	fi
 
 	# firewall - nothing except extra should be empty
 	#
 	if [[ -z $file_path ]]; then
-	    echo "$0: ERROR: ^$YEAR,$WINNER winners_rank: $winners_rank empty file_path" 1>&2
+	    echo "$0: ERROR: ^$YEAR,$WINNER inventory_order: $inventory_order empty file_path" 1>&2
 	    exit 32
 	fi
-	if [[ -z $winners_rank ]]; then
-	    echo "$0: ERROR: ^$YEAR,$WINNER winners_rank: $winners_rank empty winners_rank" 1>&2
+	if [[ -z $inventory_order ]]; then
+	    echo "$0: ERROR: ^$YEAR,$WINNER inventory_order: $inventory_order empty inventory_order" 1>&2
 	    exit 33
 	fi
-	if [[ -z $created_by ]]; then
-	    echo "$0: ERROR: ^$YEAR,$WINNER winners_rank: $winners_rank empty created_by" 1>&2
+	if [[ -z $OK_to_edit ]]; then
+	    echo "$0: ERROR: ^$YEAR,$WINNER inventory_order: $inventory_order empty OK_to_edit" 1>&2
 	    exit 34
 	fi
-	if [[ -z $prog ]]; then
-	    echo "$0: ERROR: ^$YEAR,$WINNER winners_rank: $winners_rank empty prog" 1>&2
-	    exit 35
-	fi
-	if [[ -z $filetype ]]; then
-	    echo "$0: ERROR: ^$YEAR,$WINNER winners_rank: $winners_rank empty filetype" 1>&2
-	    exit 36
-	fi
-	if [[ -z $winners_show ]]; then
-	    echo "$0: ERROR: ^$YEAR,$WINNER winners_rank: $winners_rank empty winners_show" 1>&2
+	if [[ -z $display_as ]]; then
+	    echo "$0: ERROR: ^$YEAR,$WINNER inventory_order: $inventory_order empty display_as" 1>&2
 	    exit 37
 	fi
-	if [[ -z $display_via ]]; then
-	    echo "$0: ERROR: ^$YEAR,$WINNER winners_rank: $winners_rank empty display_via" 1>&2
+	if [[ -z $display_via_github ]]; then
+	    echo "$0: ERROR: ^$YEAR,$WINNER inventory_order: $inventory_order empty display_via_github" 1>&2
 	    exit 38
 	fi
 	if [[ -z $winners_text ]]; then
-	    echo "$0: ERROR: ^$YEAR,$WINNER winners_rank: $winners_rank empty winners_text" 1>&2
+	    echo "$0: ERROR: ^$YEAR,$WINNER inventory_order: $inventory_order empty winners_text" 1>&2
 	    exit 39
 	fi
 
 	# save inventory information
 	#
 	FILE_PATH+=( "$file_path" )
-	WINNERS_RANK+=( "$winners_rank" )
-	CREATED_BY+=( "$created_by" )
-	PROG+=( "$prog" )
-	FILETYPE+=( "$filetype" )
-	WINNER_SHOW+=( "$winners_show" )
-	DISPLAY_VIA+=( "$display_via" )
+	INVENTORY_ORDER+=( "$inventory_order" )
+	OK_TO_EDIT+=( "$OK_to_edit" )
+	DISPLAY_AS+=( "$display_as" )
+	DISPLAY_VIA_GITHUB+=( "$display_via_github" )
 	WINNER_TEXT+=( "$winners_text" )
 done <<< "$NUMBER_RANKED_MANIFEST_SET"
-#
-# process inventory with a null winners_rank
-#
-NULL_RANKED_MANIFEST_SET=$(grep -E "^$YEAR,$WINNER,[^,][^,]*,null," "$MANIFEST_CSV" | sort)
-while IFS=, read -r year dir file_path winners_rank created_by prog filetype winners_show display_via winners_text extra; do
-
-        # firewall - year dir much match
-	#
-	if [[ $YEAR != "$year" ]]; then
-	    echo "$0: ERROR:  ^$YEAR,$WINNER winners_rank: $winners_rank YEAR: $YEAR != $year" 1>&2
-	    exit 40
-	fi
-	if [[ $WINNER != "$dir" ]]; then
-	    echo "$0: ERROR:  ^$YEAR,$WINNER winners_rank: $winners_rank WINNER: $WINNER != $dir" 1>&2
-	    exit 41
-	fi
-	if [[ $V_FLAG -ge 7 ]]; then
-	    echo "$0: debug[7]: found: year: $year dir: $dir winners_rank: $winners_rank file_path: $file_path" 1>&2
-	    echo "$0: debug[7]:  also: prog: $prog filetype: $filetype winners_show: $winners_show" 1>&2
-	    echo "$0: debug[7]:   and: display_via: $display_via winners_text: $winners_text extra: $extra" 1>&2
-	fi
-
-	# firewall - nothing except extra should be empty
-	#
-	if [[ -z $file_path ]]; then
-	    echo "$0: ERROR: ^$YEAR,$WINNER winners_rank: $winners_rank empty file_path" 1>&2
-	    exit 42
-	fi
-	if [[ -z $winners_rank ]]; then
-	    echo "$0: ERROR: ^$YEAR,$WINNER winners_rank: $winners_rank empty winners_rank" 1>&2
-	    exit 43
-	fi
-	if [[ -z $created_by ]]; then
-	    echo "$0: ERROR: ^$YEAR,$WINNER winners_rank: $winners_rank empty created_by" 1>&2
-	    exit 44
-	fi
-	if [[ -z $prog ]]; then
-	    echo "$0: ERROR: ^$YEAR,$WINNER winners_rank: $winners_rank empty prog" 1>&2
-	    exit 45
-	fi
-	if [[ -z $filetype ]]; then
-	    echo "$0: ERROR: ^$YEAR,$WINNER winners_rank: $winners_rank empty filetype" 1>&2
-	    exit 46
-	fi
-	if [[ -z $winners_show ]]; then
-	    echo "$0: ERROR: ^$YEAR,$WINNER winners_rank: $winners_rank empty winners_show" 1>&2
-	    exit 47
-	fi
-	if [[ -z $display_via ]]; then
-	    echo "$0: ERROR: ^$YEAR,$WINNER winners_rank: $winners_rank empty display_via" 1>&2
-	    exit 48
-	fi
-	if [[ -z $winners_text ]]; then
-	    echo "$0: ERROR: ^$YEAR,$WINNER winners_rank: $winners_rank empty winners_text" 1>&2
-	    exit 49
-	fi
-
-	# save inventory information
-	#
-	FILE_PATH+=( "$file_path" )
-	WINNERS_RANK+=( "$winners_rank" )
-	CREATED_BY+=( "$created_by" )
-	PROG+=( "$prog" )
-	FILETYPE+=( "$filetype" )
-	WINNER_SHOW+=( "$winners_show" )
-	DISPLAY_VIA+=( "$display_via" )
-	WINNER_TEXT+=( "$winners_text" )
-done <<< "$NULL_RANKED_MANIFEST_SET"
 export FILE_COUNT=${#FILE_PATH[@]}
 if [[ $FILE_COUNT -le 0 ]]; then
     echo "$0: ERROR: cannot find files in manifest $MANIFEST_CSV for $WINNER_ID" 1>&2
@@ -500,90 +398,33 @@ EOF
 #
 # write each file in the manifest of .winners.json
 #
-for i in "${!WINNERS_RANK[@]}"; do
+for i in "${!INVENTORY_ORDER[@]}"; do
 
     #
     # write start and file_path of a given file in manifest of .winners.json
+    # write inventory_order of a given file in manifest of .winners.json
+    # write OK_to_edit of a given file in manifest of .winners.json
+    # write display_as of a given file in manifest of .winners.json
+    # write display_via_github of a given file in manifest of .winners.json
+    # write winners_text of a given file in manifest of .winners.json
     #
     cat >> "$TMP_DOT_WINNER_JSON" << EOF
 	{
 	    "file_path" : "${FILE_PATH[$i]}",
-EOF
-
-    #
-    # write winners_rank of a given file in manifest of .winners.json
-    #
-    if [[ ${WINNERS_RANK[$i]} == null ]]; then
-	cat >> "$TMP_DOT_WINNER_JSON" << EOF
-	    "winners_rank" : null,
-EOF
-    else
-	cat >> "$TMP_DOT_WINNER_JSON" << EOF
-	    "winners_rank" : ${WINNERS_RANK[$i]},
-EOF
-    fi
-
-    #
-    # write created_by of a given file in manifest of .winners.json
-    #
-    if [[ ${CREATED_BY[$i]} == null ]]; then
-	cat >> "$TMP_DOT_WINNER_JSON" << EOF
-	    "created_by" : null,
-EOF
-    else
-	cat >> "$TMP_DOT_WINNER_JSON" << EOF
-	    "created_by" : "${CREATED_BY[$i]}",
-EOF
-    fi
-
-    #
-    # write prog of a given file in manifest of .winners.json
-    #
-    if [[ ${PROG[$i]} == null ]]; then
-	cat >> "$TMP_DOT_WINNER_JSON" << EOF
-	    "prog" : null,
-EOF
-    else
-	cat >> "$TMP_DOT_WINNER_JSON" << EOF
-	    "prog" : "${PROG[$i]}",
-EOF
-    fi
-
-    #
-    # write filetype and winners_show of a given file in manifest of .winners.json
-    #
-    cat >> "$TMP_DOT_WINNER_JSON" << EOF
-	    "filetype" : "${FILETYPE[$i]}",
-	    "winners_show" : ${WINNER_SHOW[$i]},
-EOF
-
-    #
-    # write display_via of a given file in manifest of .winners.json
-    #
-    if [[ ${DISPLAY_VIA[$i]} == null ]]; then
-	cat >> "$TMP_DOT_WINNER_JSON" << EOF
-	    "display_via" : null,
-EOF
-    else
-	cat >> "$TMP_DOT_WINNER_JSON" << EOF
-	    "display_via" : "${DISPLAY_VIA[$i]}",
-EOF
-    fi
-
-    #
-    # write winners_text of a given file in manifest of .winners.json
-    #
-    cat >> "$TMP_DOT_WINNER_JSON" << EOF
+	    "inventory_order" : ${INVENTORY_ORDER[$i]},
+	    "OK_to_edit" : ${OK_TO_EDIT[$i]},
+	    "display_as" : "${DISPLAY_AS[$i]}",
+	    "display_via_github" : ${DISPLAY_VIA_GITHUB[$i]},
 	    "winners_text" : "${WINNER_TEXT[$i]}"
 EOF
 
     # stupid JSON syntax does not allow a trailing comma
     if [[ $i -lt "$FILE_COUNT_LESS_1" ]]; then
-    cat >> "$TMP_DOT_WINNER_JSON" << EOF
+	cat >> "$TMP_DOT_WINNER_JSON" << EOF
 	},
 EOF
     else
-    cat >> "$TMP_DOT_WINNER_JSON" << EOF
+	cat >> "$TMP_DOT_WINNER_JSON" << EOF
 	}
 EOF
     fi
@@ -600,100 +441,6 @@ if [[ $V_FLAG -ge 7 ]]; then
     echo "$0: debug[7]: start of TMP_DOT_WINNER_JSON below: $TMP_DOT_WINNER_JSON" 1>&2
 cat "$TMP_DOT_WINNER_JSON" 1>&2
     echo "$0: debug[7]: end of TMP_DOT_WINNER_JSON above: $TMP_DOT_WINNER_JSON" 1>&2
-fi
-
-# write .inventory.md
-#
-# write header of .inventory.md
-#
-cat > "$TMP_DOT_INVENTORY_MD" << EOF
-
-[///]:  # (!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!)
-
-[//]:   # (DO NOT MODIFY THIS FILE - This file was generated by: $NAME version: $VERSION)
-
-[////]: # (!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!)
-
-| About the file | Link to file |
-| :------------- | :----------- |
-EOF
-
-# add inventory links to .inventory.md
-#
-for i in "${!WINNERS_RANK[@]}"; do
-
-    # case: display via browser or download via browser
-    #
-    case ${DISPLAY_VIA[$i]} in
-    github)	USE_URL="$GITHUB_URL_PATH/${FILE_PATH[$i]}" ;;
-    browser)	USE_URL="$URL_PATH/${FILE_PATH[$i]}" ;;
-    download)	USE_URL="$URL_PATH/${FILE_PATH[$i]}" ;;
-    null)	USE_URL="$URL_PATH/${FILE_PATH[$i]}" ;;
-    *)		USE_URL="$GITHUB_URL_PATH/${FILE_PATH[$i]}" ;;
-    esac
-    export USE_URL
-
-    # print inventory item
-    #
-    cat >> "$TMP_DOT_INVENTORY_MD" << EOF
-| ${WINNER_TEXT[$i]} | [${FILE_PATH[$i]}]($USE_URL) |
-EOF
-done
-
-# write trailing part of .inventory.md
-#
-cat >> "$TMP_DOT_INVENTORY_MD" << EOF
-
-#### Nu HTML check
-
-For web site admin: [Check HTML](https://validator.w3.org/nu/?doc=$VALIDATOR_ENCODED_URL)
-EOF
-if [[ $V_FLAG -ge 7 ]]; then
-    echo "$0: debug[7]: start of TMP_DOT_INVENTORY_MD below: $TMP_DOT_INVENTORY_MD" 1>&2
-    cat "$TMP_DOT_INVENTORY_MD" 1>&2
-    echo "$0: debug[7]: end of TMP_DOT_INVENTORY_MD above: $TMP_DOT_INVENTORY_MD" 1>&2
-fi
-
-# convert .inventory.md to inventory.html
-#
-if [[ $V_FLAG -ge 5 ]]; then
-    echo "$0: debug[5]:" \
-	"$PANDOC" -f markdown -t html -o "$TMP_INVENTORY_HTML" \
-	    --fail-if-warnings=true --metadata title="File inventory of $YEAR/$WINNER" --standalone \
-	    --metadata maxwidth="48em" \
-	    "$TMP_DOT_INVENTORY_MD"
-fi
-"$PANDOC" -f markdown -t html -o "$TMP_INVENTORY_HTML" \
-    --fail-if-warnings=true --metadata title="$YEAR/$WINNER Inventory" --standalone \
-    --metadata maxwidth="48em" \
-    "$TMP_DOT_INVENTORY_MD"
-status="$?"
-if [[ $status -ne 0 ]]; then
-    echo "$0: ERROR: pandoc: $PANDOC failed, exit code: $status" 1>&2
-    exit 51
-fi
-if [[ ! -s "$TMP_INVENTORY_HTML" ]]; then
-    echo "$0: ERROR: pandoc: $PANDOC produced an empty file: $TMP_INVENTORY_HTML" 1>&2
-    exit 52
-fi
-rm -f "$TMP_DOT_INVENTORY_MD"
-
-# inject DO NOT EDIT comments below the 1st DOCTYPE line in inventory.html
-#
-# XXX - We believe there is a way, via pandoc, to do this - XXX
-# XXX - For now, we will use perl, but later lets use pandoc - XXX
-#
-HTML_DOCTYPE='<!DOCTYPE html>\n'
-HTML_COM_1='<!-- -->\n'
-HTML_COM_2='<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->\n'
-HTML_COM_3='<!-- !!! DO NOT MODIFY THIS FILE - This file is generated by a tool !!! -->\n'
-HTML_COM_4='<!-- file: created by: '"$NAME"' version: '"$VERSION"' -->\n'
-HTML_COM="$HTML_COM_1$HTML_COM_2$HTML_COM_3$HTML_COM_3$HTML_COM_3$HTML_COM_2$HTML_COM_1$HTML_COM_4$HTML_COM_1"
-perl -0777 -p -i -e "s/$HTML_DOCTYPE/$HTML_DOCTYPE$HTML_COM/" "$TMP_INVENTORY_HTML"
-if [[ $V_FLAG -ge 7 ]]; then
-    echo "$0: debug[7]: start of INVENTORY_HTML_PATH below: $TMP_INVENTORY_HTML" 1>&2
-    cat "$TMP_INVENTORY_HTML" 1>&2
-    echo "$0: debug[7]: end of INVENTORY_HTML_PATH above: $TMP_INVENTORY_HTML" 1>&2
 fi
 
 # update .winner.json if needed
@@ -725,38 +472,6 @@ else
     if [[ -e $TMP_DOT_WINNER_JSON ]]; then
 	echo "$0: ERROR: TMP_DOT_WINNER_JSON cannot be removed for cleanup: $TMP_DOT_WINNER_JSON" 1>&2
 	exit 101
-    fi
-fi
-
-# update inventory.html if needed
-#
-if ! cmp -s "$TMP_INVENTORY_HTML" "$INVENTORY_HTML_PATH"; then
-
-    # replace index.html file
-    #
-    if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: updating $INVENTORY_HTML_PATH"
-    fi
-    if [[ $V_FLAG -ge 3 ]]; then
-	mv -f -v "$TMP_INVENTORY_HTML" "$INVENTORY_HTML_PATH"
-	status="$?"
-    else
-	mv -f "$TMP_INVENTORY_HTML" "$INVENTORY_HTML_PATH"
-	status="$?"
-    fi
-    if [[ $status -ne 0 ]]; then
-	echo "$0: ERROR: mv -f -v $TMP_INVENTORY_HTML $INVENTORY_HTML_PATH failed, error: $status" 1>&2
-	exit 102
-    fi
-
-else
-
-    # index.html is OK, remove the tmp file
-    #
-    rm -f "$TMP_INVENTORY_HTML"
-    if [[ -e $TMP_INVENTORY_HTML ]]; then
-	echo "$0: ERROR: TMP_INVENTORY_HTML cannot be removed for cleanup: $TMP_INVENTORY_HTML" 1>&2
-	exit 103
     fi
 fi
 

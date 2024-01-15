@@ -9,7 +9,7 @@
 # the final arg will be in yyyy/dir form, and will be called from
 # the topdir directory under which the yyyy/dir winner directory must be found.
 #
-# Copyright (c) 2023 by Landon Curt Noll.  All Rights Reserved.
+# Copyright (c) 2023,2024 by Landon Curt Noll.  All Rights Reserved.
 #
 # Permission to use, copy, modify, and distribute this software and
 # its documentation for any purpose and without fee is hereby granted,
@@ -56,7 +56,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.2 2023-12-31"
+export VERSION="1.3 2024-01-14"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -77,14 +77,16 @@ if [[ -z $PANDOC_TOOL ]]; then
     PANDOC_TOOL="/opt/homebrew/bin/pandoc"
 fi
 export PANDOC_ARGS="-f markdown -t html --fail-if-warnings=true"
-export PANDOC_WRAPPER="inc/pandoc_wapper.sh"
+export PANDOC_WRAPPER="bin/pandoc_wapper.sh"
 export PANDOC_WRAPPER_OPTSTR="-f markdown -t html --fail-if-warnings=true"
 export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc"
+export TOP_URL="https://ioccc-src.github.io/temp-test-ioccc"
 
 # set usage message
 #
 export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
-			[-d topdir] [-p pandoc_tool] [-P pandoc_opts] [-e string ..] [-E exitcode]
+			[-d topdir] [-p pandoc_tool] [-P pandoc_opts]
+			[-u repo_url] [-U top_url] [-e string ..] [-E exitcode]
 			file.md output.html
 
 	-h		print help message and exit
@@ -98,6 +100,9 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 
 	-p pandoc_tool	path to the pandoc tool (not the wrapper) (def: $PANDOC_TOOL)
 	-P pandoc_opts	options given to the pandoc tool (def: $PANDOC_ARGS)
+
+	-u repo_url	Base level URL of target git repo (def: $REPO_URL)
+	-U top_url	Top level URL of web site where HTML files will be viewed (def: $TOP_URL)
 
 	-e string	output string, followed by newline, to stderr (def: do not)
 	-E exitcode	force exit with exitcode (def: exit based on success or failure of the action)
@@ -128,7 +133,7 @@ export DO_NOT_PROCESS=
 
 # parse command line
 #
-while getopts :hv:Vd:nNp:P:e:E: flag; do
+while getopts :hv:Vd:nNp:P:u:U:e:E: flag; do
   case "$flag" in
     h) echo "$USAGE" 1>&2
 	exit 2
@@ -147,6 +152,10 @@ while getopts :hv:Vd:nNp:P:e:E: flag; do
     p) PANDOC_TOOL="$OPTARG"
 	;;
     P) PANDOC_ARGS="$OPTARG"
+	;;
+    u) REPO_URL="$OPTARG"
+	;;
+    U) TOP_URL="$OPTARG"
 	;;
     e) echo "$OPTARG" 1>&2
 	;;
@@ -227,15 +236,42 @@ if [[ ! -d $TOPDIR ]]; then
     exit 202
 fi
 
+# verify that we have an author subdirectory
+#
+export AUTHOR_PATH="$TOPDIR/author"
+if [[ ! -d $AUTHOR_PATH ]]; then
+    echo "$0: ERROR: author is not a directory under topdir: $AUTHOR_PATH" 1>&2
+    exit 203
+fi
+export AUTHOR_DIR="author"
+
+# verify that we have an inc subdirectory
+#
+export INC_PATH="$TOPDIR/inc"
+if [[ ! -d $INC_PATH ]]; then
+    echo "$0: ERROR: inc is not a directory under topdir: $INC_PATH" 1>&2
+    exit 204
+fi
+export INC_DIR="inc"
+
+# verify that we have an bin subdirectory
+#
+export BIN_PATH="$TOPDIR/bin"
+if [[ ! -d $BIN_PATH ]]; then
+    echo "$0: ERROR: bin is not a directory under topdir: $BIN_PATH" 1>&2
+    exit 205
+fi
+export BIN_DIR="bin"
+
 # cd to topdir
 #
 if [[ ! -e $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to non-existent path: $TOPDIR" 1>&2
-    exit 204
+    exit 206
 fi
 if [[ ! -d $TOPDIR ]]; then
     echo "$0: ERROR: cannot cd to a non-directory: $TOPDIR" 1>&2
-    exit 205
+    exit 207
 fi
 export CD_FAILED
 if [[ $V_FLAG -ge 5 ]]; then
@@ -244,7 +280,7 @@ fi
 cd "$TOPDIR" || CD_FAILED="true"
 if [[ -n $CD_FAILED ]]; then
     echo "$0: ERROR: cd $TOPDIR failed" 1>&2
-    exit 206
+    exit 208
 fi
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
@@ -253,8 +289,16 @@ fi
 # parameter debugging
 #
 if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: NAME=$NAME" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
+    echo "$0: debug[3]: TOP_URL=$TOP_URL" 1>&2
+    echo "$0: debug[3]: AUTHOR_PATH=$AUTHOR_PATH" 1>&2
+    echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
+    echo "$0: debug[3]: INC_PATH=$INC_PATH" 1>&2
+    echo "$0: debug[3]: INC_DIR=$INC_DIR" 1>&2
+    echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
+    echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
 fi

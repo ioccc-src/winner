@@ -408,7 +408,7 @@ blockquote {
   margin: 1em 0 1em 1.7em;
   padding-left: 1em;
   border-left: 2px solid #e6e6e6;
-  color: #606060;
+  color: inherit;
 }
 
 a {
@@ -555,7 +555,7 @@ ul.task-list li input[type="checkbox"] {
 .Disabled {
   cursor: not-allowed;
   opacity: 0.5;
-  color: currentColor;
+  color: inherit;
   display: inline-block;	/* For IE11/MS Edge bug */
   pointer-events: none;
   text-decoration: none;
@@ -680,6 +680,9 @@ ul.task-list li input[type="checkbox"] {
   width: 80%;
   padding-left: 10px;
   padding-bottom: 10px;
+}
+.rightcolumn p, code, pre, h1, h2, h3, h4, h5, h6 {
+  color: black;
 }
 
 /* Right column headings */
