@@ -1,7 +1,7 @@
 # bin
 
 The directory holds [bin](README.md) directory
-holds tools that builds files, such as HTML content, for the
+holds tools that build files, such as HTML content, for the
 [official IOCCC web site](https://www.ioccc.org).
 
 For HTML content, the [bin](README.md) directory tools
@@ -21,6 +21,11 @@ Output winning author(s) Related HTML.
 ### [gen-inventory.sh](gen-inventory.sh)
 
 Output the inventory in HTML form for a winner index.html page.
+
+
+### [ioccc-status.sh](ioccc-status)
+
+Updates the [status.json](/status.json) file.
 
 
 ### [manifest.winner.json.awk](manifest.winner.json.awk)
