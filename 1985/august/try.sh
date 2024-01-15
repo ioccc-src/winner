@@ -16,7 +16,6 @@ make CC="$CC" all >/dev/null || exit 1
 clear
 
 REV="$(type -P rev)"
-PRIMES=$(type -P primes)
 
 read -r -n 1 -p "Press any key to run: ./august | head -n 11: "
 echo 1>&2
