@@ -74,7 +74,7 @@ export PANDOC_WRAPPER="bin/pandoc_wrapper.sh"
 export PANDOC_WRAPPER_OPTSTR="-f markdown -t html --fail-if-warnings=true"
 export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc"
 export TOP_URL="https://ioccc-src.github.io/temp-test-ioccc"
-export DOCROOT_URL_SLASH="../../"
+export DOCROOT_URL_SLASH="/"
 
 # set usage message
 #
