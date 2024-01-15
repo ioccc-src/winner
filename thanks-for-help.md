@@ -1932,6 +1932,11 @@ For an interesting problem that occurred here and what was done to solve it,
 check the [bugs.md](bugs.md) file.
 
 
+## <a name="1994_smr"></a>[1994/smr](/1994/smr/smr.c) ([README.md](/1994/smr/README.md]))
+
+[Cody](#cody) added the [try.sh](/1994/smr/try.sh) script.
+
+
 ## <a name="1994_tvr"></a>[1994/tvr](/1994/tvr/tvr.c) ([README.md](/1994/tvr/README.md]))
 
 [Cody](#cody) made this use `fgets(3)` instead of `gets(3)`. In this case the newline had

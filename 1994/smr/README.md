@@ -15,7 +15,7 @@ make all
 ## Try:
 
 ```sh
-./smr > smr.out ; diff -s smr.out smr.c
+./try.sh
 ```
 
 
