@@ -12,7 +12,7 @@ make
 ```
 
 
-### Try:
+## Try:
 
 To see the original [mullender](mullender.c) in action:
 

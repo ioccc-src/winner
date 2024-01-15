@@ -17,7 +17,7 @@ code](#alternate-code) below.
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 # IMPORTANT for macOS: run under Terminal.app

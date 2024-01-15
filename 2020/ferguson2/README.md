@@ -47,7 +47,7 @@ at once. See [Alternate code](#alternate-code) below.
 are allowed.
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

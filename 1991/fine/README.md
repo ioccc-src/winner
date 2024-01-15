@@ -12,7 +12,7 @@ echo text | ./fine
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

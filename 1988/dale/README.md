@@ -16,7 +16,7 @@ STATUS: INABIAF - please **DO NOT** fix
 For more detailed information see [1988 dale in bugs.md](/bugs.md#1988-dale).
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

@@ -10,7 +10,7 @@ the source of the alt code), of [applin.c](applin.c), can be found in
 program.  See the [Alternate code](#alternate-code) section below for details.
 
 
-### Try:
+## Try:
 
 ```sh
 ./applin

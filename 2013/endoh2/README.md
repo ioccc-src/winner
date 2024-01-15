@@ -21,7 +21,7 @@ you have both and if either is not found it will report it and tell you where to
 download one or both before exiting.
 
 
-### Try:
+## Try:
 
 ```sh
 cat jpeg.c

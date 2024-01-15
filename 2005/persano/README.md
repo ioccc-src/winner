@@ -15,7 +15,7 @@ setting binary mode on `stdout`. See [alternate code](#alternate-code) below.
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./persano 3 16 > knot3-16.gif

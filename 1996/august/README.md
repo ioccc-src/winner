@@ -31,7 +31,7 @@ very short amount of time, then you may need to fix your compiler or use gcc.
 The above should print a `!` followed by a newline.
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

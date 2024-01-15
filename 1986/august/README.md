@@ -16,7 +16,7 @@ STATUS: INABIAF - please **DO NOT** fix
 For more detailed information see [1986 august in bugs.md](/bugs.md#1986-august).
 
 
-### Try:
+## Try:
 
 ```sh
 ./august

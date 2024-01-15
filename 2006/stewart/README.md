@@ -27,7 +27,7 @@ NOTE: you cannot specify a different width from height; it's one number.
 NOTE: `convert(1)` belongs to [ImageMagick](https://imagemagick.org/index.php).
 
 
-### Try:
+## Try:
 
 ```sh
 ./stewart 400 1000000 maze > maze.xbm

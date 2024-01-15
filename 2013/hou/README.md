@@ -27,7 +27,7 @@ image viewer ready.  Refresh the image every time the output refreshes, all
 effects should be more or less recognizable when you see 16.
 
 
-### Try:
+## Try:
 
 ```sh
 ./hou BIG

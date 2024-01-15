@@ -12,7 +12,7 @@ make
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./grothe 65000000 10000000 1344 < twinkle.txt

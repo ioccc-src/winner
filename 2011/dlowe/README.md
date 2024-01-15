@@ -32,7 +32,7 @@ Then to use `trained.net`:
 ```
 
 
-### Try:
+## Try:
 
 Try these pre-trained networks:
 

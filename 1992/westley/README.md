@@ -37,7 +37,7 @@ prohibitive if it cannot be compiled and linked (it uses curses); instead one
 should just use the `westley` and `westley.alt` programs directly.
 
 
-### Try:
+## Try:
 
 ```sh
 ./whereami 47 -122	# NOTE: - means west of meridian

@@ -12,7 +12,7 @@ make
 ```
 
 
-### Try:
+## Try:
 
 On a terminal that supports 24 bit color, has black background, and size at
 least 125x38, try:

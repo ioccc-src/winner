@@ -31,7 +31,7 @@ frequency)](https://en.wikipedia.org/wiki/Dual-tone_multi-frequency_signaling)
 will be converted to the DTMF sound!
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

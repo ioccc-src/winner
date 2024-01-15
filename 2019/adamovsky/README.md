@@ -23,7 +23,7 @@ For more detailed information see [2019 adamovsky in bugs.md](/bugs.md#2019-adam
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

@@ -12,7 +12,7 @@ make all
 ```
 
 
-### Try:
+## Try:
 
 The program accepts ONE POSITIVE number.  Seeing is believing, so try things
 like:

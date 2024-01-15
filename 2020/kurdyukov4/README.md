@@ -12,7 +12,7 @@ make
 ```
 
 
-### Try:
+## Try:
 
 When running this, ask yourself why it gets progressively slower when the
 context length decreases:

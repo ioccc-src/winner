@@ -12,7 +12,7 @@ make
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./toledo a

@@ -12,7 +12,7 @@ echo Some text | ./prog
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

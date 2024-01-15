@@ -18,7 +18,7 @@ or
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./yarng 5

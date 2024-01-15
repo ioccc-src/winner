@@ -14,7 +14,7 @@ Zoom out and make your terminal window 53 or more lines deep.
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

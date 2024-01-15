@@ -30,7 +30,7 @@ echo x y z | ./sort
 where `n` and `x`, `y` and `z` are numbers.
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

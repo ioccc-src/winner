@@ -16,7 +16,7 @@ STATUS: known bug - please help us fix
 For more detailed information see [1989 westley in bugs.md](/bugs.md#1989-westley).
 
 
-### Try:
+## Try:
 
 Try compiling and running the 4 resulting programs like:
 

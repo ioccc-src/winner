@@ -33,7 +33,7 @@ cat a b c d | ./prog
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

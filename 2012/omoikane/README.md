@@ -28,7 +28,7 @@ file or use the [alternate version](#alternate-code) which reads in the compiled
 binary itself.
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

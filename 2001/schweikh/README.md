@@ -38,7 +38,7 @@ That's not a bug, that's a feature.
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

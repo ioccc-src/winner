@@ -15,7 +15,7 @@ make
 ```
 
 
-### Try:
+## Try:
 
 When running this in the program's window try hitting space a few times and see
 what happens!

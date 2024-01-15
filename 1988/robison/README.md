@@ -5,7 +5,7 @@ make all
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./robison 80 10

@@ -15,7 +15,7 @@ There is an alternate version provided. See the [Alternate
 code](#alternate-code) section below.
 
 
-### Try:
+## Try:
 
 ```sh
 ./litmaath eschew obfuscation

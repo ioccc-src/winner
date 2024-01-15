@@ -25,7 +25,7 @@ some_command | ./ldb
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./ldb < /etc/passwd

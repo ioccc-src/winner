@@ -26,7 +26,7 @@ NOTE: the author stated that they tested this under i386 machines but this works
 under 64-bit (x86_64, arm64) machines too.
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

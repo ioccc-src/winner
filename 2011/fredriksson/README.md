@@ -23,7 +23,7 @@ For more detailed information see [2011 fredriksson in bugs.md](/bugs.md#2011-fr
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

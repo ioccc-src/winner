@@ -18,7 +18,7 @@ there is a firewall issue, and also lets you redefine the timing constant,
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./prog < README.md

@@ -69,7 +69,7 @@ See the author's remarks in [scenery](#scenery) for more details on the scenery
 files.
 
 
-### Try:
+## Try:
 
 For a fun time after running the above command, hold down the up arrow and left
 arrow for about 10 seconds and see what happens. Or, if you wish to really use

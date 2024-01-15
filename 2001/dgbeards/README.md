@@ -48,7 +48,7 @@ make alt
 ```
 
 
-### Try:
+## Try:
 
 See if you can figure out how to make the computer always lose ('win' :-) ).
 It's a very simple thing to do. Read the author's remarks for clues.

@@ -28,7 +28,7 @@ stage and as such if you wish to see that part like it was designed you will
 need an older compiler perhaps gcc 2.95.
 
 
-### Try:
+## Try:
 
 ```sh
 ./herrmann1.sh 'prg=herrmann1.times2'

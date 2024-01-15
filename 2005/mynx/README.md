@@ -29,7 +29,7 @@ You can specify a port by appending to the domain `:port`. See notes below on
 the issue of https.
 
 
-### Try:
+## Try:
 
 ```sh
 ./mynx http://www.textfiles.com

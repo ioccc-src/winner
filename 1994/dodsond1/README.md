@@ -12,7 +12,7 @@ make all
 ```
 
 
-### Try:
+## Try:
 
 At the prompt, try entering `E3`.
 

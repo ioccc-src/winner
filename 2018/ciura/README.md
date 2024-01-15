@@ -16,7 +16,7 @@ below for more details.
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./prog < Makefile

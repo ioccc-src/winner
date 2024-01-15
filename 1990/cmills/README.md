@@ -12,7 +12,7 @@ make all
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./cmills 5000

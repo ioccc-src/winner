@@ -54,7 +54,7 @@ To extract the embedded PNG:
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

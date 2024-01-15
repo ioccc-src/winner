@@ -23,7 +23,7 @@ For more detailed information see [1989 fubar in bugs.md](/bugs.md#1989-fubar).
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh # run on 1 - 7 

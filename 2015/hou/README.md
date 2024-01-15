@@ -24,7 +24,7 @@ echo something | ./prog
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 echo "" | ./prog

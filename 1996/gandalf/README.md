@@ -23,7 +23,7 @@ For more detailed information see [1996 gandalf in bugs.md](/bugs.md#1996-gandal
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

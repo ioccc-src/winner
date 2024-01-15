@@ -26,7 +26,7 @@ STATUS: missing or dead link - please provide them
 For more detailed information see [1998 dlowe in bugs.md](/bugs.md#1998-dlowe).
 
 
-### Try:
+## Try:
 
 ```sh
 ./dlowe < README.md

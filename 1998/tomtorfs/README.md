@@ -23,7 +23,7 @@ xor       : value to xor the final CRC with (hexadecimal)
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

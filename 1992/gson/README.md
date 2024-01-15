@@ -26,7 +26,7 @@ For more detailed information see [1992 gson in bugs.md](/bugs.md#1992-gson).
 ```
 
 
-### Try:
+## Try:
 
 Determine where your system dictionary is located.  You may find
 it located in one of the following places:

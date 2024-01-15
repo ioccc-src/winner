@@ -15,7 +15,7 @@ code](#alternate-code) below.
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./weisberg | head -n 15

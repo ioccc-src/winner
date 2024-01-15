@@ -26,7 +26,7 @@ For more detailed information see [2004 jdalbec in bugs.md](/bugs.md#2004-jdalbe
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

@@ -46,7 +46,7 @@ make docs
 This will create the file `poikola.pdf` for your enjoyment.
 
 
-### Try:
+## Try:
 
 If you don't have a few days, try:
 

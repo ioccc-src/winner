@@ -47,7 +47,7 @@ That's not a bug, that's a feature.
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./jonth host1:0 host2:0

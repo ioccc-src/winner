@@ -15,7 +15,7 @@ echo "full spelling of an English cardinal numeral less than a quadrillion" | ./
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh # try various languages

@@ -36,7 +36,7 @@ For more detailed information see [2018 mills in bugs.md](/bugs.md#2018-mills).
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./prog

@@ -16,7 +16,7 @@ make all
 where `Makefile` is a Makefile to use and `rule` is an optional rule to use.
 
 
-### Try:
+## Try:
 
 
 ```sh

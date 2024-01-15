@@ -9,7 +9,7 @@ code](#alternate-code) section below for how to use the original and why one
 might wish to do so.
 
 
-### Try:
+## Try:
 
 ```sh
 ./westley

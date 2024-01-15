@@ -12,7 +12,7 @@ make all
 ```
 
 
-### Try:
+## Try:
 
 For more information try:
 

@@ -18,7 +18,7 @@ where `file.c` is the file to be checked for nesting errors. For example, you ma
 try [incorrect.c](incorrect.c) and the program itself.
 
 
-### Try:
+## Try:
 
 ```sh
 make test

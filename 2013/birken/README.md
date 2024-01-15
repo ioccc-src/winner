@@ -20,7 +20,7 @@ before it finishes) try using `reset` to restore the terminal. This will clear
 the screen.
 
 
-### Try:
+## Try:
 
 This alternate version, which we recommend that you use in order to see what is
 happening with modern systems, and to not flash colours too quickly, which can

@@ -29,7 +29,7 @@ cat prog.c | ./prog           # Print garbage: might mess up your terminal
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

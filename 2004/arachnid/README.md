@@ -16,7 +16,7 @@ code](#alternate-code) below.
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./arachnid arachnid.info

@@ -23,7 +23,7 @@ looked like back in 2000 (with a configurable speed). See the
 You can press 'q' at any time to exit.
 
 
-### Try:
+## Try:
 
 If you have SDL1 installed:
 

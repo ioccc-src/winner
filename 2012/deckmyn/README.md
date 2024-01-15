@@ -23,7 +23,7 @@ For more detailed information see [2012 deckmyn in bugs.md](/bugs.md#2012-deckmy
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

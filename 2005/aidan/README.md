@@ -20,7 +20,7 @@ code](#alternate-code).
 where `seed` is a number.
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

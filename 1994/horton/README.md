@@ -14,7 +14,7 @@ make all
 `A`, `B`, `C` and `D` are numeric arguments.
 
 
-### Try:
+## Try:
 
 ```sh
 ./horton 3 2 1 0

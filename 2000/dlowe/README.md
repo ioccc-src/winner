@@ -32,7 +32,7 @@ For more detailed information see [2000 dlowe in bugs.md](/bugs.md#2000-dlowe).
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 echo "13 14 15 16 17 + - * / p" | ./dlowe

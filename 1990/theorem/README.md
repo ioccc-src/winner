@@ -33,7 +33,7 @@ y1 - initial value  (y(x1) == y1)
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

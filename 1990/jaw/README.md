@@ -5,7 +5,7 @@ make all
 ```
 
 
-### Try:
+## Try:
 
 To test the official C entry, one might try:
 

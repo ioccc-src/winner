@@ -25,7 +25,7 @@ For more detailed information see [2018 hou in bugs.md](/bugs.md#2018-hou).
 View `output.html` in a browser.
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

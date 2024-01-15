@@ -31,7 +31,7 @@ below section, it is supposed to crash on termination though some noted this
 does not seem to happen in macOS or linux in 2023.
 
 
-### Try:
+## Try:
 
 ```sh
 ./toledo2

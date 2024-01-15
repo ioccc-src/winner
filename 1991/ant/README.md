@@ -18,7 +18,7 @@ NOTE: the file must already exist and not specifying any arg will make the
 program exit without doing anything.
 
 
-### Try:
+## Try:
 
 ```sh
 make hill

@@ -33,7 +33,7 @@ For more detailed information see [2005 anon in bugs.md](/bugs.md#2005-anon).
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./anon 4 4

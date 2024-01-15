@@ -14,7 +14,7 @@ make all
 where `[NUMBER]` is an optional number. Default is 5.
 
 
-### Try:
+## Try:
 
 ```sh
 ./imc 3

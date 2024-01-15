@@ -22,7 +22,7 @@ more shared files with their proper numbers):
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./grothe -grothe.c 1+grothe.c.1 2+grothe.c.2

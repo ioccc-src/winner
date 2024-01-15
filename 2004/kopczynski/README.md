@@ -15,7 +15,7 @@ will not work with it enabled.
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try

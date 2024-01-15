@@ -23,7 +23,7 @@ echo 'Huffman Decoding' | ./huffman
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

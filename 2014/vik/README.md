@@ -27,7 +27,7 @@ For more detailed information see [2014 vik in bugs.md](/bugs.md#2014-vik).
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 echo 'Want to hear me beep?' | ./prog > audio_file.raw

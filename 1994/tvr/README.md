@@ -28,7 +28,7 @@ For more detailed information see [1994 tvr in bugs.md](/bugs.md#1994-tvr).
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./tvr 0 128 < tvr.color		(for color displays)

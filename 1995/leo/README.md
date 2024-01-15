@@ -14,7 +14,7 @@ make all
 See the author's information below on these details.
 
 
-### Try:
+## Try:
 
 ```sh
 ./leo 1 | cat - /dev/tty | gs -

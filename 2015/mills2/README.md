@@ -23,7 +23,7 @@ For more detailed information see [2015 mills2 in bugs.md](/bugs.md#2015-mills2)
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

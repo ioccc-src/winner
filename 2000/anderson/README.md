@@ -12,7 +12,7 @@ echo something | ./anderson
 ```
 
 
-### Try:
+## Try:
 
 ```sh
 ./try.sh

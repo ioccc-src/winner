@@ -12,7 +12,7 @@ make
 ```
 
 
-### Try:
+## Try:
 
 If you have access to `/dev/audio` or `/dev/sound/dsp`:
 
