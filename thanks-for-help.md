@@ -1772,8 +1772,14 @@ highly unlikely).
 [Cody](#cody) added check for two args.
 
 Cody also added an [alternate version](/1993/plummer/plummer.alt.c) which uses
-`usleep()` so you can see what is happening with faster systems. This version
-also checks for two args. See the README.md files for details.
+`usleep(3)` so you can see what is happening with faster systems. This version
+also checks for two args and it is the one we recommend one try first. See the
+README.md files for details.
+
+Cody also added the [try.sh](/1993/plummer/try.sh) and
+[try.alt.sh](/1993/plummer/try.alt.sh) scripts that correspond to the original
+entry and the alt version, both allowing one to change the args (and in the case
+of the alt one allowing one to change the amount to sleep).
 
 
 ## <a name="1993_rince"></a>[1993/rince](/1993/rince/rince.c) ([README.md](/1993/rince/README.md]))
