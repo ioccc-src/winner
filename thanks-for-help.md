@@ -1948,6 +1948,13 @@ Note that the alt code does not use `fgets(3)` but rather `gets(3)`.
 use with other tools as well by making the program output not a space after each
 number but rather a newline.
 
+Cody also added the scripts [try.sh](/1994/weisberg/try.sh) and
+[primes.sh](/1994/weisberg/primes.sh). The `primes.sh` script is used by
+`try.sh` and if both `primes(1)` and `rev(1)` are installed it will reverse the
+lines of the `weisberg`, feeding it to `primes(1)`, showing those that are
+primes. It only does the reversed output because the program actually prints
+primes.
+
 
 ## <a name="1994_westley"></a>[1994/westley](/1994/westley/westley.c) ([README.md](/1994/westley/README.md]))
 

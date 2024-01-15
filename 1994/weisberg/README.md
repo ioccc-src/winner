@@ -5,7 +5,7 @@ make all
 ```
 
 There is an alternate version that uses more memory. See [alternate
-code](#alternate-code) below.
+code](#alternate-code) below for more details.
 
 
 ## To use:
@@ -18,8 +18,17 @@ code](#alternate-code) below.
 ## Try:
 
 ```sh
-./weisberg | head -n 15
+./try.sh
 ```
+
+If you have `primes(1)` installed you might also wish to try:
+
+```sh
+./primes.sh number
+```
+
+where `number` is a positive number, defaulting to 15. The [try.sh](try.sh)
+script will also do this.
 
 
 ## Alternate code:
