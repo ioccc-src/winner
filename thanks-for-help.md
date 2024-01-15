@@ -1870,7 +1870,7 @@ that already existed, how many you had and how many were stolen.
 ## <a name="1994_horton"></a>[1994/horton](/1994/horton/horton.c) ([README.md](/1994/horton/README.md))
 
 [Cody](#cody) fixed this to check that four args were specified. With the use of the C
-pre-processor macro and inclusion of stdlib.h in the Makefile the layout of the
+pre-processor macro and inclusion of `stdlib.h` in the Makefile the layout of the
 source is exactly the same column width and no additional lines were added. This
 was done during one of the times where this was changed to bug status, for
 better or worse.
@@ -1886,7 +1886,7 @@ was that `srand()` returns void but it was used in a `||` expression. Thus the
 comma operator was needed.
 
 Cody also fixed it for clang under Linux which objected to incompatible pointer
-type (because `time(/2)` takes a `time_t *` which in some systems is a `long *`
+type (because `time(2)` takes a `time_t *` which in some systems is a `long *`
 but what was being passed to it is an `int`).
 
 Cody also changed the entry to use `fgets(3)` instead of `gets(3)`. This one has
