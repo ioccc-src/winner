@@ -28,11 +28,7 @@ some_command | ./ldb
 ## Try:
 
 ```sh
-./ldb < /etc/passwd
-
-printf "The International Obfuscated C Code Contest\n
-	Best One-liner\n
-	by Laurion Burchall" | ./ldb
+./try.sh
 ```
 
 
