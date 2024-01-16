@@ -1872,11 +1872,22 @@ that already existed, how many you had and how many were stolen.
 [Cody](#cody) fixed this to check that four args were specified. With the use of the C
 pre-processor macro and inclusion of `stdlib.h` in the Makefile the layout of the
 source is exactly the same column width and no additional lines were added. This
-was done during one of the times where this was changed to bug status, for
+was done during one of the times where this was changed to bug to fix status, for
 better or worse.
 
 Cody also fixed the Makefile which was causing alt code to be compiled when it
 shouldn't be.
+
+Cody also added the scripts [try.sh](/1994/horton/try.sh) and
+[try.alt.sh](/1994/horton/try.alt.sh).
+
+Finally he added the article (written by the entry's author) cited in the
+remarks: the full [USENIX Association Newsletter ;login: September / October
+1992 Vol. 17, No. 5](/1994/horton/login_sept92.pdf) and the pages cited as a
+shorter PDF file,
+[login_sept92-pp28-31.pdf](/1994/horton/login_sept92-pp28-31.pdf). The full
+newsletter was found on the Internet Wayback Machine and the article was
+extracted as a PDF in the macOS `Preview.app` (`File -> Print` feature).
 
 
 ## <a name="1994_ldb"></a>[1994/ldb](/1994/ldb/ldb.c) ([README.md](/1994/ldb/README.md]))
