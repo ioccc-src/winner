@@ -1890,6 +1890,16 @@ newsletter was found on the Internet Wayback Machine and the article was
 extracted as a PDF in the macOS `Preview.app` (`File -> Print` feature).
 
 
+## <a name="1994_imc"></a>[1994/imc](/1994/imc/imc.c) ([README.md](/1994/imc/README.md]))
+
+[Cody](#cody) added the [try.sh](/1994/imc/try.sh) script.
+
+Cody also added inclusion of `unistd.h` for `getpid(2)`. While strictly speaking
+this was not necessary (in multiple systems) it can sometimes be a problem and
+as it was noticed it was changed (the only case this was done except in the
+entries that actually did not work because of missing or incorrect prototypes).
+
+
 ## <a name="1994_ldb"></a>[1994/ldb](/1994/ldb/ldb.c) ([README.md](/1994/ldb/README.md]))
 
 [Cody](#cody) fixed this so it would compile and work with modern compilers. The problem

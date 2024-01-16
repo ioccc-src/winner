@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<unistd.h>
 #define f (sizeof(int))
 
 int i,j,k,l,m,*t,*u,*v;
