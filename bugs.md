@@ -1459,12 +1459,6 @@ You are welcome to try and fix it and open a pull request, providing that it
 doesn't break something else.
 
 
-### STATUS: uses gets() - change to fgets() if possible
-
-Although the entry itself was changed to use `fgets(3)` the alt code was not. It
-would be better if both used `fgets(3)`.
-
-
 # 1995
 
 

@@ -1963,9 +1963,8 @@ check the [bugs.md](bugs.md) file.
 [Cody](#cody) made this use `fgets(3)` instead of `gets(3)`. In this case the newline had
 to be terminated but it was a pretty straightforward fix. `gets()` was defined
 to use `fgets()` and the inclusion of `stdio.h` had to be added but to make it
-more like the original entry this was done in the Makefile.
-
-Note that the alt code does not use `fgets(3)` but rather `gets(3)`.
+more like the original entry this was done in the Makefile. The alt code was
+also changed to use `fgets(3)`.
 
 
 ## <a name="1994_weisberg"></a>[1994/weisberg](/1994/weisberg/weisberg.c) ([README.md](/1994/weisberg/README.md]))

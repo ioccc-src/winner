@@ -1,5 +1,6 @@
 #include <X11/Xlib.h>
 #define M     typedef
+#define gets(B) fgets((B),C-(B)+256,stdin),(B[strlen(B)-1]='\0'),1
 #define N(	 a)=r=(a)+j
 #define S f(; G; )D[B[H=i[--G]]=F+=F<p]++
 #define	f for
@@ -60,7 +61,7 @@ K ()
 _
 I (d F)
 {
-  F || gets (F = B);
+  F || (gets (B),F=B);
   y = atoi (F);
 }
 _
