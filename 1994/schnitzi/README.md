@@ -31,12 +31,7 @@ For more detailed information see [1994 schnitzi in bugs.md](/bugs.md#1994-schni
 ## Try:
 
 ```sh
-./schnitzi < /etc/motd 2>/dev/null
-./schnitzi < /etc/passwd 2>/dev/null
-
-./schnitzi < schnitzi.c > schnitzi2.c 2>/dev/null
-make schnitzi2
-./schnitzi2 < README.md
+./try.sh
 ```
 
 
@@ -65,6 +60,13 @@ Use `schnitzi.alt` and `schnitzi.alt2` as you would `schnitzi` above except that
 feeding the source code to it will not work right.
 
 
+### Alternate try:
+
+```sh
+./try.alt.sh
+```
+
+
 ## Judges' remarks:
 
 Try:
@@ -76,6 +78,9 @@ Try:
 Compare the output of the program with its source.  Sure the output
 is different, but there is more than meets the `diff`'s eye.  Can you
 find out why?
+
+You might also wish to redirect the output to another file,
+compile it and compare how it works to the original code.
 
 
 ## Author's remarks:
@@ -92,14 +97,14 @@ line; for instance, for the file 'info', the program
 would be run as follows:
 
 ```sh
-schnitzi < info
+./schnitzi < info
 ```
 
 The program generates interesting results when its source file is
 used as input:
 
 ```sh
-schnitzi < schnitzi.c
+./schnitzi < schnitzi.c
 ```
 
 The result of this command is a program which does the exact same

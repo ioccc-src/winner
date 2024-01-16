@@ -1935,10 +1935,14 @@ bugs.md](/bugs.md#1994-schnitzi).
 
 The purpose for these versions it both demonstrate how the magic works behind it
 and to help others, should they wish, get the code to work with `fgets(3)`, with
-or without an increase in buffer size. See [1994/schnitzi in
+or without an increase in buffer size. Note that without this feeding longer
+files, say the README.md file, will crash the program. See [1994/schnitzi in
 bugs.md](/bugs.md#1994-schnitzi) where Cody also explains the magic for more
 details. Later on, if nobody takes up the task, Cody might resume it, but for
 now there is more important work to do so that the next contest can run.
+
+Cody also added the [try.sh](/1994/schnitzi/try.sh) and
+[try.alt.sh](/1994/schnitzi/try.alt.sh) scripts.
 
 
 ## <a name="1994_shapiro"></a>[1994/shapiro](/1994/shapiro/shapiro.c) ([README.md](/1994/shapiro/README.md]))
