@@ -1960,7 +1960,15 @@ check the [bugs.md](bugs.md) file.
 
 ## <a name="1994_tvr"></a>[1994/tvr](/1994/tvr/tvr.c) ([README.md](/1994/tvr/README.md]))
 
-[Cody](#cody) made this use `fgets(3)` instead of `gets(3)`. In this case the newline had
+[Cody](#cody) added the try scripts, four total, colour and black and white
+pairs for the original entry and the alt code. These scripts are
+[try.color.sh](/1994/tvr/try.color.sh), [try.bw.sh](/1994/tvr/try.bw.sh),
+[try.alt.color.sh](/1994/tvr/try.alt.color.sh) and
+[try.alt.bw.sh](/1994/tvr/try.alt.bw.sh), respectively. The scripts go through
+each mode allowed with two sizes, 128 and 256, allowing one to quit or skip each
+(given that there are a lot of invocations this seemed like a good idea).
+
+Cody also made this use `fgets(3)` instead of `gets(3)`. In this case the newline had
 to be terminated but it was a pretty straightforward fix. `gets()` was defined
 to use `fgets()` and the inclusion of `stdio.h` had to be added but to make it
 more like the original entry this was done in the Makefile. The alt code was

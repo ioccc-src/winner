@@ -26,15 +26,15 @@ For more detailed information see [1994 tvr in bugs.md](/bugs.md#1994-tvr).
 ./tvr mode screensize/2 < colormapfile
 ```
 
+Mode may be a value from 0 to 12.
+
 
 ## Try:
 
 ```sh
-./tvr 0 128 < tvr.color		(for color displays)
-./tvr 0 128 < tvr.bw		(for Black & White displays)
+./try.color.sh			# for colour displays
+./try.bw.sh			# for Black & White displays
 ```
-
-Mode may be a value from 0 to 12.
 
 
 ## Alternate code:
@@ -57,6 +57,14 @@ make alt
 
 where `altmode` `1` - `4` correspond to mode `0` - `3` in the original entry and
 `altmode 0` calculates Mandelbrot/Julian sets correctly.
+
+
+## Alternate try:
+
+```sh
+./try.alt.color.sh			# for colour displays
+./try.alt.bw.sh			# for Black & White displays
+```
 
 
 ## Judges' remarks:
