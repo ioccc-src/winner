@@ -17,13 +17,7 @@ make all
 ## Try:
 
 ```sh
-./horton 3 2 1 0
-```
-
-Also try:
-
-```sh
-./gtface  < gtface.data
+./try.sh
 ```
 
 
@@ -46,14 +40,25 @@ make alt
 ./horton.alt A B C D
 ```
 
-Where A, B, C and D are like with `horton`.
+Where A, B, C and D are numbers like with `horton`.
+
+
+### Alternate try:
+
+```sh
+./try.alt.sh
+```
 
 
 ## Judges' remarks:
 
 Try to figure out how this program prints, for a given slope, the
 right character.  And for extra credit, try to figure out which
-character is at the bottom on this hint file.  :-)
+character is at the bottom of this hint file.  :-)
+
+You might be interested in the author's article that they cite towards the end
+of their remarks, included as PDF files for your convenience, the full
+newsletter and a PDF file of just the pages cited.
 
 
 ## Author's remarks:
@@ -61,6 +66,7 @@ character is at the bottom on this hint file.  :-)
 Run it with any 4 numeric arguments, e.g. `./horton 3 2 1 0`.  Play with the
 numbers to get a pleasing result, or use it for your high school algebra
 class.
+
 
 ### SPOILER:
 
@@ -79,10 +85,10 @@ make gtface
 ./gtface < gtface.data
 ```
 
-For more information, see
+For more information, see my article
 
-Using GraphTab; USENIX ;login:
-Sept/Oct 1992; Pages 28-31
+[Using GraphTab; USENIX ;login: Sept/Oct 1992](login_sept92.pdf), [pages
+28-31](login_sept92-pp28-31.pdf).
 
 ```
 

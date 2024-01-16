@@ -15,7 +15,6 @@ The current status of this entry is:
 
 ```
 STATUS: known bug - please help us fix
-STATUS: uses gets() - change to fgets() if possible
 ```
 
 For more detailed information see [1994 tvr in bugs.md](/bugs.md#1994-tvr).
@@ -46,7 +45,7 @@ The author provided us a spoiler version that might be of interest to some.
 ### Alternate build:
 
 ```sh
-make tvr.alt
+make alt
 ```
 
 

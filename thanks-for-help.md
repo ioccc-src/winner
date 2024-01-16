@@ -1872,11 +1872,32 @@ that already existed, how many you had and how many were stolen.
 [Cody](#cody) fixed this to check that four args were specified. With the use of the C
 pre-processor macro and inclusion of `stdlib.h` in the Makefile the layout of the
 source is exactly the same column width and no additional lines were added. This
-was done during one of the times where this was changed to bug status, for
+was done during one of the times where this was changed to bug to fix status, for
 better or worse.
 
 Cody also fixed the Makefile which was causing alt code to be compiled when it
 shouldn't be.
+
+Cody also added the scripts [try.sh](/1994/horton/try.sh) and
+[try.alt.sh](/1994/horton/try.alt.sh).
+
+Finally he added the article (written by the entry's author) cited in the
+remarks: the full [USENIX Association Newsletter ;login: September / October
+1992 Vol. 17, No. 5](/1994/horton/login_sept92.pdf) and the pages cited as a
+shorter PDF file,
+[login_sept92-pp28-31.pdf](/1994/horton/login_sept92-pp28-31.pdf). The full
+newsletter was found on the Internet Wayback Machine and the article was
+extracted as a PDF in the macOS `Preview.app` (`File -> Print` feature).
+
+
+## <a name="1994_imc"></a>[1994/imc](/1994/imc/imc.c) ([README.md](/1994/imc/README.md]))
+
+[Cody](#cody) added the [try.sh](/1994/imc/try.sh) script.
+
+Cody also added inclusion of `unistd.h` for `getpid(2)`. While strictly speaking
+this was not necessary (in multiple systems) it can sometimes be a problem and
+as it was noticed it was changed (the only case this was done except in the
+entries that actually did not work because of missing or incorrect prototypes).
 
 
 ## <a name="1994_ldb"></a>[1994/ldb](/1994/ldb/ldb.c) ([README.md](/1994/ldb/README.md]))
@@ -1942,9 +1963,8 @@ check the [bugs.md](bugs.md) file.
 [Cody](#cody) made this use `fgets(3)` instead of `gets(3)`. In this case the newline had
 to be terminated but it was a pretty straightforward fix. `gets()` was defined
 to use `fgets()` and the inclusion of `stdio.h` had to be added but to make it
-more like the original entry this was done in the Makefile.
-
-Note that the alt code does not use `fgets(3)` but rather `gets(3)`.
+more like the original entry this was done in the Makefile. The alt code was
+also changed to use `fgets(3)`.
 
 
 ## <a name="1994_weisberg"></a>[1994/weisberg](/1994/weisberg/weisberg.c) ([README.md](/1994/weisberg/README.md]))

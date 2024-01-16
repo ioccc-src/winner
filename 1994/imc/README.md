@@ -17,12 +17,7 @@ where `[NUMBER]` is an optional number. Default is 5.
 ## Try:
 
 ```sh
-./imc 3
-./imc 3
-./imc 4
-./imc 4
-./imc 6
-./imc 13
+./try.sh
 ```
 
 
