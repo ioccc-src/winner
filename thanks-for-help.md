@@ -1903,7 +1903,7 @@ entries that actually did not work because of missing or incorrect prototypes).
 ## <a name="1994_ldb"></a>[1994/ldb](/1994/ldb/ldb.c) ([README.md](/1994/ldb/README.md]))
 
 [Cody](#cody) fixed this so it would compile and work with modern compilers. The problem
-was that `srand()` returns void but it was used in a `||` expression. Thus the
+was that `srand()` returns `void` but it was used in a `||` expression. Thus the
 comma operator was needed.
 
 Cody also fixed it for clang under Linux which objected to incompatible pointer
@@ -1913,14 +1913,15 @@ but what was being passed to it is an `int`).
 Cody also changed the entry to use `fgets(3)` instead of `gets(3)`. This one has
 a minor annoyance in that it now prints a newline after the output but this
 seems like a worthy compromise for preventing the interspersed output in macOS
-and at the same time it's safer (fixing it to not have the extra newline is more
-problematic than it's worth and in macOS another line of output would be shown
-without the change anyway and the difference is that now it's just a blank line
-rather than an annoying warning).
+and at the same time it's safer and allows for parsing file with longer lines.
+Fixing it it to not have the extra newline is more problematic than it's worth,
+in macOS another line of output would be shown without the change anyway -
+unless `2>/dev/null` - and the difference is that now it's just a blank line
+rather than an annoying warning. A subtlety about this fix: if a line is greater
+than 231 in length if the program chooses that line it might print the first 231
+characters or it might print (up to) the next 231 characters and so on.
 
-A subtlety about this fix: if a line is greater than 231 in length if the
-program chooses that line it might print the first 231 characters or it might
-print (up to) the next 231 characters and so on.
+Cody also added the [try.sh](/1994/ldb/try.sh) script.
 
 
 ## <a name="1994_schnitzi"></a>[1994/schnitzi](/1994/schnitzi/schnitzi.c) ([README.md](/1994/schnitzi/README.md]))
@@ -1935,10 +1936,14 @@ bugs.md](/bugs.md#1994-schnitzi).
 
 The purpose for these versions it both demonstrate how the magic works behind it
 and to help others, should they wish, get the code to work with `fgets(3)`, with
-or without an increase in buffer size. See [1994/schnitzi in
+or without an increase in buffer size. Note that without this feeding longer
+files, say the README.md file, will crash the program. See [1994/schnitzi in
 bugs.md](/bugs.md#1994-schnitzi) where Cody also explains the magic for more
 details. Later on, if nobody takes up the task, Cody might resume it, but for
 now there is more important work to do so that the next contest can run.
+
+Cody also added the [try.sh](/1994/schnitzi/try.sh) and
+[try.alt.sh](/1994/schnitzi/try.alt.sh) scripts.
 
 
 ## <a name="1994_shapiro"></a>[1994/shapiro](/1994/shapiro/shapiro.c) ([README.md](/1994/shapiro/README.md]))

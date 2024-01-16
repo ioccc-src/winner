@@ -17,8 +17,12 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-echo "$ cat try.this.txt"
+read -r -n 1 -p "Press any key to show try.this.txt: "
+echo 1>&2
 cat try.this.txt
+echo 1>&2
 
-echo "$ ./dodsond1 < try.this.txt"
+read -r -n 1 -p "Press any key to run: ./dodsond1 < try.this.txt: "
+echo 1>&2
 ./dodsond1 < try.this.txt
+echo 1>&2

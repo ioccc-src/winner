@@ -15,13 +15,27 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-echo "$ ./esde esde.data Johanson"
+read -r -n 1 -p "Press any key to show esde.data: "
+echo 1>&2
+cat esde.data
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./esde esde.data Johanson: "
+echo 1>&2
 ./esde esde.data Johanson
-echo
+echo 1>&2
 
-echo "$ ./esde esde.data2 read"
+read -r -n 1 -p "Press any key to show esde.data2: "
+echo 1>&2
+cat esde.data2
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./esde esde.data2 read: "
+echo 1>&2
 ./esde esde.data2 read
-echo
+echo 1>&2
 
-echo "$ ./esde README.md date"
+read -r -n 1 -p "Press any key to run: ./esde README.md date: "
+echo 1>&2
 ./esde README.md date
+echo 1>&2
