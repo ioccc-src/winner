@@ -23,6 +23,8 @@ For more detailed information see [1994 shapiro in bugs.md](/bugs.md#1994-shapir
 ./shapiro &
 ```
 
+Now find the clock in the same terminal window (or console if at the console).
+
 
 ## Try:
 
@@ -37,8 +39,8 @@ fg
 ./shapiro_t1
 ```
 
-Notice what you see in the output of `ps`! Observe too that after you bring it
-back to the foreground what happens.
+Notice what you see in the output of `ps`! Observe too what happens after you
+bring it back to the foreground.
 
 
 ## Judges' remarks:
