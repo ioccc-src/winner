@@ -209,8 +209,7 @@ but `pcc` handles them correctly, and neither compiler accepts `char o[]` or
 not yet written for UNIX).
 
 [1]: http://minnie.tuhs.org/cgi-bin/utree.pl
-[2]: http://ioccc.org/all/README
-[3]: https://web.archive.org/web/20180521074522/http://www.computerworld.com.au/article/279011/a-z_programming_languages_bourne_shell_sh/?pp=4
+[2]: https://web.archive.org/web/20180521074522/http://www.computerworld.com.au/article/279011/a-z_programming_languages_bourne_shell_sh/?pp=4
 
 More significant is that v7 `printf(3)` does not report the number of characters
 written, and therefore 111 compiles but does not work correctly; 113 is the
