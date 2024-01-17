@@ -50,6 +50,38 @@
 	    "winners_text" : "original source"
 	},
 	{
+	    "file_path" : "try.alt.bw.sh",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "winners_text" : "demonstrate alt code in black and white mode"
+	},
+	{
+	    "file_path" : "try.alt.color.sh",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "winners_text" : "demonstrate alt code in colour mode"
+	},
+	{
+	    "file_path" : "try.bw.sh",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "winners_text" : "demonstrate code in black and white mode"
+	},
+	{
+	    "file_path" : "try.color.sh",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "winners_text" : "demonstrate alt code in colour mode"
+	},
+	{
 	    "file_path" : "tvr.bw",
 	    "inventory_order" : 150,
 	    "OK_to_edit" : true,

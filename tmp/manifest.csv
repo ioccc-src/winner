@@ -920,6 +920,8 @@
 1993,plummer,Makefile,30,true,makefile,true,winner Makefile
 1993,plummer,plummer.alt.c,40,true,c,true,alternative source
 1993,plummer,plummer.orig.c,50,false,c,true,original source
+1993,plummer,try.alt.sh,100,true,shellscript,true,how to run alternative code
+1993,plummer,try.sh,100,true,shellscript,true,how to run
 1993,plummer,1993_plummer.tar.bz2,300,false,tbz2,false,download winning source
 1993,plummer,README.md,4294967295,true,markdown,true,markdown source for index.html
 1993,plummer,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -989,6 +991,9 @@
 1994,horton,horton.alt.c,40,true,c,true,alternative source
 1994,horton,horton.orig.c,50,false,c,true,original source
 1994,horton,gtface.c,100,true,c,true,gtface source code
+1994,horton,try.alt.sh,100,true,shellscript,true,how to run alternative code
+1994,horton,try.sh,100,true,shellscript,true,how to run
+1994,horton,login_sept92-pp28-31.pdf,125,true,pdf,false,login article on graphics for dumb terminals
 1994,horton,gtface.data,150,true,text,true,data for gtfsace
 1994,horton,1994_horton.tar.bz2,300,false,tbz2,false,download winning source
 1994,horton,README.md,4294967295,true,markdown,true,markdown source for index.html
@@ -999,6 +1004,7 @@
 1994,imc,imc.c,20,true,c,true,winning source
 1994,imc,Makefile,30,true,makefile,true,winner Makefile
 1994,imc,imc.orig.c,50,false,c,true,original source
+1994,imc,try.sh,100,true,shellscript,true,how to run
 1994,imc,1994_imc.tar.bz2,300,false,tbz2,false,download winning source
 1994,imc,README.md,4294967295,true,markdown,true,markdown source for index.html
 1994,imc,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -1008,6 +1014,7 @@
 1994,ldb,ldb.c,20,true,c,true,winning source
 1994,ldb,Makefile,30,true,makefile,true,winner Makefile
 1994,ldb,ldb.orig.c,50,false,c,true,original source
+1994,ldb,try.sh,100,true,shellscript,true,how to run
 1994,ldb,1994_ldb.tar.bz2,300,false,tbz2,false,download winning source
 1994,ldb,README.md,4294967295,true,markdown,true,markdown source for index.html
 1994,ldb,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -1019,6 +1026,9 @@
 1994,schnitzi,schnitzi.alt2.c,40,true,c,true,alternate alternative source
 1994,schnitzi,schnitzi.alt.c,40,true,c,true,alternative source
 1994,schnitzi,schnitzi.orig.c,50,true,c,true,original source
+1994,schnitzi,try.alt.sh,100,true,shellscript,true,how to run alternative code
+1994,schnitzi,try.sh,100,true,shellscript,true,how to run
+1994,schnitzi,try.txt,100,true,text,true,input data for try.sh
 1994,schnitzi,1994_schnitzi.tar.bz2,300,false,tbz2,false,download winning source
 1994,schnitzi,README.md,4294967295,true,markdown,true,markdown source for index.html
 1994,schnitzi,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -1039,6 +1049,7 @@
 1994,smr,smr.c,20,true,c,true,winning source
 1994,smr,Makefile,30,true,makefile,true,winner Makefile
 1994,smr,smr.orig.c,50,true,c,true,original source
+1994,smr,try.sh,100,true,shellscript,true,how to run
 1994,smr,1994_smr.tar.bz2,300,false,tbz2,false,download winning source
 1994,smr,README.md,4294967295,true,markdown,true,markdown source for index.html
 1994,smr,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -1049,6 +1060,10 @@
 1994,tvr,Makefile,30,true,makefile,true,winner Makefile
 1994,tvr,tvr.alt.c,40,true,c,true,alternative source
 1994,tvr,tvr.orig.c,50,true,c,true,original source
+1994,tvr,try.alt.bw.sh,100,true,shellscript,true,demonstrate alt code in black and white mode
+1994,tvr,try.alt.color.sh,100,true,shellscript,true,demonstrate alt code in colour mode
+1994,tvr,try.bw.sh,100,true,shellscript,true,demonstrate code in black and white mode
+1994,tvr,try.color.sh,100,true,shellscript,true,demonstrate alt code in colour mode
 1994,tvr,tvr.bw,150,true,text,true,black and white
 1994,tvr,tvr.color,150,true,text,true,RGB values
 1994,tvr,1994_tvr.tar.bz2,300,false,tbz2,false,download winning source
@@ -1060,6 +1075,8 @@
 1994,weisberg,weisberg.c,20,true,c,true,winning source
 1994,weisberg,Makefile,30,true,makefile,true,winner Makefile
 1994,weisberg,weisberg.orig.c,50,true,c,true,original source
+1994,weisberg,primes.sh,100,true,shellscript,true,feed primes to the program
+1994,weisberg,try.sh,100,true,shellscript,true,how to run
 1994,weisberg,1994_weisberg.tar.bz2,300,false,tbz2,false,download winning source
 1994,weisberg,README.md,4294967295,true,markdown,true,markdown source for index.html
 1994,weisberg,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git

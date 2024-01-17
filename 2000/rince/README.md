@@ -86,7 +86,7 @@ Julian day number (given as a fractional component). E.g.:
 ```
 
 A Julian day is defined to be the number of days since January 1st in the year
-`-4712 (4713BC)`, starting at 12 noon GMT.[^1] To aid conversion from our time
+`-4712 (4713BC)`, starting at 12 noon GMT.[^1][^2] To aid conversion from our time
 (GMT) to Julian day there is a supplementary program named:
 [dmy2jd.c](dmy2jd.c). Run it with `day_float month year` as arguments. See below
 for an example.
@@ -367,7 +367,6 @@ Jean Meeus. Published by Willmann-Bell Inc.
 
 [^2]: Astronomical algorithms (1st ed): pages 285-299.
 Jean Meeus. Published by Willmann-Bell Inc.
-
 
 ## Copyright and CC BY-SA 4.0 License:
 

@@ -834,6 +834,8 @@
 1993/plummer/plummer.alt.c
 1993/plummer/plummer.c
 1993/plummer/plummer.orig.c
+1993/plummer/try.alt.sh
+1993/plummer/try.sh
 1993/rince/.gitignore
 1993/rince/.path
 1993/rince/.winner.json
@@ -897,6 +899,9 @@
 1994/horton/horton.c
 1994/horton/horton.orig.c
 1994/horton/index.html
+1994/horton/login_sept92-pp28-31.pdf
+1994/horton/try.alt.sh
+1994/horton/try.sh
 1994/imc/.gitignore
 1994/imc/.path
 1994/imc/.winner.json
@@ -905,6 +910,7 @@
 1994/imc/imc.c
 1994/imc/imc.orig.c
 1994/imc/index.html
+1994/imc/try.sh
 1994/ldb/.gitignore
 1994/ldb/.path
 1994/ldb/.winner.json
@@ -913,6 +919,7 @@
 1994/ldb/index.html
 1994/ldb/ldb.c
 1994/ldb/ldb.orig.c
+1994/ldb/try.sh
 1994/schnitzi/.gitignore
 1994/schnitzi/.path
 1994/schnitzi/.winner.json
@@ -923,6 +930,9 @@
 1994/schnitzi/schnitzi.alt2.c
 1994/schnitzi/schnitzi.c
 1994/schnitzi/schnitzi.orig.c
+1994/schnitzi/try.alt.sh
+1994/schnitzi/try.sh
+1994/schnitzi/try.txt
 1994/shapiro/.gitignore
 1994/shapiro/.path
 1994/shapiro/.winner.json
@@ -940,12 +950,17 @@
 1994/smr/index.html
 1994/smr/smr.c
 1994/smr/smr.orig.c
+1994/smr/try.sh
 1994/tvr/.gitignore
 1994/tvr/.path
 1994/tvr/.winner.json
 1994/tvr/Makefile
 1994/tvr/README.md
 1994/tvr/index.html
+1994/tvr/try.alt.bw.sh
+1994/tvr/try.alt.color.sh
+1994/tvr/try.bw.sh
+1994/tvr/try.color.sh
 1994/tvr/tvr.alt.c
 1994/tvr/tvr.bw
 1994/tvr/tvr.c
@@ -957,6 +972,8 @@
 1994/weisberg/Makefile
 1994/weisberg/README.md
 1994/weisberg/index.html
+1994/weisberg/primes.sh
+1994/weisberg/try.sh
 1994/weisberg/weisberg.c
 1994/weisberg/weisberg.orig.c
 1994/westley/.gitignore

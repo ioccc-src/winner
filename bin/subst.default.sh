@@ -53,7 +53,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1 2024-01-14"
+export VERSION="1.1.1 2024-01-16"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -73,8 +73,7 @@ export TOP_URL="https://ioccc-src.github.io/temp-test-ioccc"
 
 # set usage message
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
-			[-d topdir] [-p tool] [-P optstr]
+export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 			[-u repo_url] [-U top_url] [-e string ..] [-E exitcode]
 			yyyy/dir
 

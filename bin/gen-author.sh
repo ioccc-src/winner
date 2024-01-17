@@ -55,7 +55,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3 2024-01-14"
+export VERSION="1.3.1 2024-01-16"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -78,9 +78,8 @@ export DOCROOT_URL_SLASH="/temp-test-ioccc/"
 
 # set usage message
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
-			[-d topdir] [-p tool] [-P optstr]
-			[-u repo_url] [-U top_url] [-e string ..] [-E exitcode]
+export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
+			[-p tool] [-P optstr] [-u repo_url] [-U top_url] [-e string ..] [-E exitcode]
 			yyyy/dir
 
 	-h		print help message and exit
@@ -94,7 +93,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 
 	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use $PANDOC_WRAPPER)
 	-P pandoc_opts	run 'pandoc wrapper tool' with options found in 'optstr' (def: $PANDOC_WRAPPER_OPTSTR)
-			NOTE: The 'optstr' may not contain a single-quote, nor a double-quote.
+			NOTE: The 'pandoc_opts' may not contain a single-quote, nor a double-quote.
 
 	-u repo_url	Base level URL of target git repo (def: $REPO_URL)
 	-U top_url	Top level URL of web site where HTML files will be viewed (def: $TOP_URL)
@@ -698,7 +697,6 @@ fi
     else
 	echo '<a name="author">**Author:**</a>'
     fi
-    echo
 } | if [[ -z $NOOP ]]; then
     cat >> "$TMP_FILE"
 elif [[ $V_FLAG -ge 3 ]]; then
@@ -736,14 +734,12 @@ for author_handle in $AUTHOR_HANDLE_SET; do
     # write this author's information
     #
     {
-	echo "Name: [$FULL_NAME](${DOCROOT_URL_SLASH}winners.html#$author_handle)<br>"
+	echo "<br><br>Name: [$FULL_NAME](${DOCROOT_URL_SLASH}winners.html#$author_handle)<br>"
 	if [[ $LOCATION_CODE == null ]]; then
 	    echo "Location: [unknown](${DOCROOT_URL_SLASH}location.html#$LOCATION_CODE)"
 	else
-
 	    echo "Location: [$LOCATION_CODE](${DOCROOT_URL_SLASH}location.html#$LOCATION_CODE)"
 	fi
-	echo
     } | if [[ -z $NOOP ]]; then
 	cat >> "$TMP_FILE"
     elif [[ $V_FLAG -ge 3 ]]; then

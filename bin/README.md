@@ -13,6 +13,11 @@ as well as various JSON files and other content from the
 ## bin tools
 
 
+### [all_run.sh](all_run.sh)
+
+Run a command on all winning entries.
+
+
 ### [gen-author.sh](gen-author.sh)
 
 Output winning author(s) Related HTML.

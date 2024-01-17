@@ -242,9 +242,9 @@ the following expression
 where argument 1 is a pointer to a temporary variable followed by a NUL byte.
 
 This works because if the current count is 0 mod 256, then `"%1$hhn"` will write
-zero to argument 1 and then "%1$s" will never emit any text. If, on the other
+zero to argument 1 and then "%1\$s" will never emit any text. If, on the other
 hand, the count is not 0 mod 256, a length-1 string will be written to argument
-1, and then `"%1$s"` will increment the count by one. By repeating this 256
+1, and then `"%1\$s"` will increment the count by one. By repeating this 256
 times we're eventually going to reach 0 mod 256.
 
 Checking if there has been an invalid move is achieved similarly.

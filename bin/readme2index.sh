@@ -55,7 +55,7 @@ shopt -s lastpipe	# run last command of a pipeline not executed in the backgroun
 
 # set variables referenced in the usage message
 #
-export VERSION="1.0 2024-01-14"
+export VERSION="1.1 2024-01-16"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -77,8 +77,8 @@ export TOP_URL="https://ioccc-src.github.io/temp-test-ioccc"
 
 # set usage message
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
-	[-d topdir] [-c md2html.cfg] [-H phase=name ..]
+export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
+	[-c md2html.cfg] [-H phase=name ..]
 	[-b tool] [-B optstr] [-p tool] [-P optstr] [-a tool] [-A optstr]
 	[-s token=value ..] [-S] [-o tool ..] [-O tool=optstr ..]
 	[-u repo_url] [-U top_url] [-e string ..] [-E exitcode]
@@ -88,11 +88,11 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 	-v level	set verbosity level (def level: $V_FLAG)
 	-V		print version string and exit
 
-	-n		go thru the actions, but do not update any files (def: do the action)
-	-N		do not process file, just parse arguments and ignore the file (def: process the file)
-
 	-d topdir	set topdir (def: $TOPDIR)
 			NOTE: -d may only be used in command_options (getopt phase 0)
+
+	-n		go thru the actions, but do not update any files (def: do the action)
+	-N		do not process file, just parse arguments and ignore the file (def: process the file)
 
 	-c md2html.cfg	Use md2html.cfg as the configuration file (def: use topdir/inc/md2html.cfg)
 			NOTE: -c may only be used in command_options (getopt phase 0)
@@ -2030,16 +2030,36 @@ fi
 # move temporary index HTML in place
 #
 if [[ -z $NOOP ]]; then
-    mv -f -- "$TMP_INDEX_HTML" "$INDEX_PATH"
-    status="$?"
-    if [[ status -ne 0 ]]; then
-	echo "$0: ERROR: mv -f -- $TMP_INDEX_HTML $INDEX_PATH filed, error code: $status" 1>&2
-	exit 138
+
+    # compare files
+    #
+    if cmp -s "$TMP_INDEX_HTML" "$INDEX_PATH"; then
+
+	# case: file did not change
+	#
+	if [[ $V_FLAG -ge 5 ]]; then
+	    echo "$0: debug[5]: file did not change: $INDEX_PATH" 1>&2
+	fi
+
+    else
+
+	# case: index.html changed, update the file
+	#
+	if [[ $V_FLAG -ge 5 ]]; then
+	    echo "$0: debug[5]: mv -f -- $TMP_INDEX_HTML $INDEX_PATH" 1>&2
+	fi
+	mv -f -- "$TMP_INDEX_HTML" "$INDEX_PATH"
+	status="$?"
+	if [[ status -ne 0 ]]; then
+	    echo "$0: ERROR: mv -f -- $TMP_INDEX_HTML $INDEX_PATH filed, error code: $status" 1>&2
+	    exit 138
+	fi
+	if [[ ! -s $INDEX_PATH ]]; then
+	    echo "$0: ERROR: not a non-empty index HTML file: $INDEX_PATH" 1>&2
+	    exit 139
+	fi
     fi
-    if [[ ! -s $INDEX_PATH ]]; then
-	echo "$0: ERROR: not a non-empty index HTML file: $INDEX_PATH" 1>&2
-	exit 139
-    fi
+
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, disabled: mv -f -- $TMP_INDEX_HTML $INDEX_PATH" 1>&2
 fi

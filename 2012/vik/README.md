@@ -111,9 +111,9 @@ additional chunks are copied into the resulting image.
 For some reason the chocolate image seems to have some special properties.
 Apart from being quite big and a little bit noisy, it appears that when embedded
 into another image and extracted, the bitmap data is also a valid
-[brain$#@$](https://en.wikipedia.org/wiki/Brainfuck) program. It is of course
+[brain\$#@\$](https://en.wikipedia.org/wiki/Brainfuck) program. It is of course
 possible to get the bitmap data from the extracted image, and run it through any
-of the previous winning brain$#@$ interpreters, but I thought it would be easier
+of the previous winning brain\$#@\$ interpreters, but I thought it would be easier
 to include an interpreter in the program to avoid the hassle:
 
 ```sh
@@ -122,7 +122,7 @@ to include an interpreter in the program to avoid the hassle:
 ```
 
 It is of course also possible to embed a
-[brain$#@$](https://en.wikipedia.org/wiki/Brainfuck) program as a text file
+[brain\$#@\$](https://en.wikipedia.org/wiki/Brainfuck) program as a text file
 (as explained above) and decode it, e.g.:
 
 ```sh
@@ -172,7 +172,7 @@ program to crash.
 
 Since a lot of care was taken to keep the code simple, it turned out to be
 quite easy to extend functionality. I did include a small
-[brain$#@$](https://en.wikipedia.org/wiki/Brainfuck) after I
+[brain\$#@\$](https://en.wikipedia.org/wiki/Brainfuck) after I
 realized that the chocolate image had some interesting properties.
 
 But there is more functionality I added that didn't fit within the size
@@ -181,9 +181,9 @@ format source code based on a PNG image. So the format of the program is
 actually done by the program itself.
 
 And to be honest, the chocolate image did not have a
-[brain$#@$](https://en.wikipedia.org/wiki/Brainfuck) program
+[brain\$#@\$](https://en.wikipedia.org/wiki/Brainfuck) program
 embedded to begin with. I added functionality to the program to embed a
-brain$#@$ into a PNG image and used it to create the image provided with
+brain\$#@\$ into a PNG image and used it to create the image provided with
 the entry.
 
 I also added a method to analyze PNG images, to print the size and format,

@@ -56,7 +56,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3 2024-01-14"
+export VERSION="1.3.1 2024-01-16"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -84,9 +84,8 @@ export TOP_URL="https://ioccc-src.github.io/temp-test-ioccc"
 
 # set usage message
 #
-export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
-			[-d topdir] [-p pandoc_tool] [-P pandoc_opts]
-			[-u repo_url] [-U top_url] [-e string ..] [-E exitcode]
+export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
+			[-p pandoc_tool] [-P pandoc_opts] [-u repo_url] [-U top_url] [-e string ..] [-E exitcode]
 			file.md output.html
 
 	-h		print help message and exit
@@ -100,6 +99,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-n] [-N]
 
 	-p pandoc_tool	path to the pandoc tool (not the wrapper) (def: $PANDOC_TOOL)
 	-P pandoc_opts	options given to the pandoc tool (def: $PANDOC_ARGS)
+			NOTE: The 'pandoc_opts' may not contain a single-quote, nor a double-quote.
 
 	-u repo_url	Base level URL of target git repo (def: $REPO_URL)
 	-U top_url	Top level URL of web site where HTML files will be viewed (def: $TOP_URL)
