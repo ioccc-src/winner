@@ -87,8 +87,7 @@ make gtface
 
 For more information, see my article
 
-[Using GraphTab; USENIX ;login: Sept/Oct 1992](login_sept92.pdf), [pages
-28-31](login_sept92-pp28-31.pdf).
+[Using GraphTab; USENIX ;login: Sept/Oct 1992, pages 28-31](login_sept92-pp28-31.pdf).
 
 ```
 
