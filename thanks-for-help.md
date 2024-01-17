@@ -2052,6 +2052,11 @@ to specify which one to use is to make it easier on the user as typing
 running `./try.alt.sh`.
 
 
+## <a name="1995_heathbar"></a>[1995/heathbar](/1995/heathbar/heathbar.c) ([README.md](/1995/heathbar/README.md]))
+
+[Cody](#cody) added the [try.sh](/1995/heathbar/try.sh) script.
+
+
 ## <a name="1995_leo"></a>[1995/leo](/1995/leo/leo.c) ([README.md](/1995/leo/README.md]))
 
 At our change in how to deal with spoilers, [Cody](#cody) uudecoded the spoiler provided

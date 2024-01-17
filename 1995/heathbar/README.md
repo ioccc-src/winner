@@ -17,7 +17,7 @@ where num is a non-negative number.
 ## Try:
 
 ```sh
-./heathbar 4253 2281
+./try.sh
 ```
 
 
