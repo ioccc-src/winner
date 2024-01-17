@@ -2071,6 +2071,11 @@ function (`pain()` as it's annoying that clang is this way :-) ) that `main()`
 calls which has the four args.
 
 
+## <a name="1995_savastio"></a>[1995/savastio](/1995/savastio/savastio.c) ([README.md](/1995/savastio/README.md]))
+
+[Cody](#cody) added the [try.sh](/1995/savastio/try.sh) script.
+
+
 ## <a name="1995_vanschnitz"></a>[1995/vanschnitz](/1995/vanschnitz/vanschnitz.c) ([README.md](/1995/vanschnitz/README.md))
 
 [Cody](#cody) added the authors' [spoiler as a C

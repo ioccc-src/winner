@@ -5,18 +5,32 @@ make all
 ```
 
 
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [1995 savastio in bugs.md](/bugs.md#1995-savastio).
+
+
 ## To use:
 
 ```sh
 ./savastio
-# enter a number such as 100
+# enter a POSITIVE number such as 100
 ```
+
+NOTE: if you specify a negative number it will get stuck, showing no output. But
+what happens if you give a non-number?
 
 
 ## Try:
 
 ```sh
-echo 42 | ./savastio
+./try.sh
 ```
 
 
