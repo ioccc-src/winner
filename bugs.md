@@ -1479,6 +1479,16 @@ supposed to be printed again and one is supposed to press a key as at that point
 it calls `getchar()` via the pointer `m`. So this is a feature not a bug.
 
 
+## 1995 savastio
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [1995/savastio/savastio.c](1995/savastio/savastio.c)
+### Information: [1995/savastio/README.md](1995/savastio/README.md)
+
+This program expects a POSITIVE number. If you specify a negative number it will
+not show any output, stuck in a loop.
+
+
 ## 1995 vanschnitz
 
 ### STATUS: missing file - please provide it

@@ -2052,6 +2052,11 @@ to specify which one to use is to make it easier on the user as typing
 running `./try.alt.sh`.
 
 
+## <a name="1995_heathbar"></a>[1995/heathbar](/1995/heathbar/heathbar.c) ([README.md](/1995/heathbar/README.md]))
+
+[Cody](#cody) added the [try.sh](/1995/heathbar/try.sh) script.
+
+
 ## <a name="1995_leo"></a>[1995/leo](/1995/leo/leo.c) ([README.md](/1995/leo/README.md]))
 
 At our change in how to deal with spoilers, [Cody](#cody) uudecoded the spoiler provided
@@ -2064,6 +2069,11 @@ by the author, putting it in [spoiler1.md](/1995/leo/spoiler1.md).
 which only allows `main()` to have 0, 2 or 3 args. This is done by a new
 function (`pain()` as it's annoying that clang is this way :-) ) that `main()`
 calls which has the four args.
+
+
+## <a name="1995_savastio"></a>[1995/savastio](/1995/savastio/savastio.c) ([README.md](/1995/savastio/README.md]))
+
+[Cody](#cody) added the [try.sh](/1995/savastio/try.sh) script.
 
 
 ## <a name="1995_vanschnitz"></a>[1995/vanschnitz](/1995/vanschnitz/vanschnitz.c) ([README.md](/1995/vanschnitz/README.md))

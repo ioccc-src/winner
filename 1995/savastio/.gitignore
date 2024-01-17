@@ -1,6 +1,8 @@
 #
 # sort with: sort -d -u
 *.dSYM
+bar.txt
+foo.txt
 indent
 indent.c
 indent.o
