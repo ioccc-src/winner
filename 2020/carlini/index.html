@@ -267,11 +267,11 @@ configurations, for both players.</p>
 <p>where argument 1 is a pointer to a temporary variable followed by a
 NUL byte.</p>
 <p>This works because if the current count is 0 mod 256, then
-<code>"%1$hhn"</code> will write zero to argument 1 and then “%1$s” will
-never emit any text. If, on the other hand, the count is not 0 mod 256,
-a length-1 string will be written to argument 1, and then
-<code>"%1\$s"</code> will increment the count by one. By repeating this
-256 times we’re eventually going to reach 0 mod 256.</p>
+<code>"%1$hhn"</code> will write zero to argument 1 and then
+<code>"%1$s"</code> will never emit any text. If, on the other hand, the
+count is not 0 mod 256, a length-1 string will be written to argument 1,
+and then <code>"%1$s"</code> will increment the count by one. By
+repeating this 256 times we’re eventually going to reach 0 mod 256.</p>
 <p>Checking if there has been an invalid move is achieved similarly.</p>
 <p>In order to decide what to print out, we have to cast the “in-memory”
 array of bits to Xs and Os to print out. This is actually rather
