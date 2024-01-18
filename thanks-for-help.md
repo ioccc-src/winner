@@ -2087,6 +2087,8 @@ cases all the code should be available for the wider audience, without having to
 extract it. The exception is when the files are created by the entry or the
 entry decrypts the text or something like that.
 
+Cody also added the [try.sh](/1995/vanschnitz/try.sh) script.
+
 
 # <a name="1996"></a>1996
 
