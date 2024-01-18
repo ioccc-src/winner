@@ -19,12 +19,23 @@ echo "$ EXAMPLEON=\"\33\133\61\73\67\155\"; EXAMPLEOFF=\"\33\133\155\"; DOLLAR=\
 EXAMPLEON="\33\133\61\73\67\155"
 EXAMPLEOFF="\33\133\155"
 DOLLAR="$"
+echo "$ export EXAMPLEON EXAMPLEOFF DOLLAR" 1>&2
 export EXAMPLEON EXAMPLEOFF DOLLAR
-
-read -r -n 1 -p "Press any key to run: ./garry.alt < garry.data | less (q = quit, space = next page): "
-
-./garry.alt <garry.data | less -r -X
+echo 1>&2
+echo "As you continue with the script, consider why the above was necessary." 1>&2
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: ./garry.alt < README.md | less (q = quit, space = next page): "
-./garry.alt < README.md | less -X
+read -r -n 1 -p "Press any key to show garry.data (space = next page, q = quit): "
+echo 1>&2
+less -rEXF garry.data
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./garry.alt < garry.data | less (space = next page, q = quit): "
+echo 1>&2
+./garry.alt <garry.data | less -rEXF
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./garry.alt < README.md | less (space = next page, q = quit): "
+echo 1>&2
+./garry.alt < README.md | less -rEXF
+echo 1>&2
