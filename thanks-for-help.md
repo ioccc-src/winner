@@ -2099,8 +2099,8 @@ Cody also added the [try.sh](/1995/vanschnitz/try.sh) script.
 also fixed an infinite loop in the try commands. The problem with the infinite
 loop is that the file `august.oc` had to have lines starting with `#` removed
 and it was not being done. After this is done with say `sed(/1)` (like `sed -i''
-'/^#/d' august.oc` which has been added to both the remarks and the try.sh
-script as described below) the code can proceed. This problem existed in macOS.
+'/^#/d' august.oc` which has been added to both the remarks and the `try.sh`
+script noted below) the code can proceed. This problem existed in macOS.
 
 Cody also added the [try.sh](/1996/august/try.sh) script that runs all the
 commands given in the try section to simplify it as there are quite a lot of
