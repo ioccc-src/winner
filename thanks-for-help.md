@@ -2074,6 +2074,11 @@ calls which has the four args.
 [Cody](#cody) added the [try.sh](/1995/savastio/try.sh) script.
 
 
+## <a name="1995_schnitzi"></a>[1995/schnitzi](/1995/schnitzi/schnitzi.c) ([README.md](/1995/schnitzi/README.md]))
+
+[Cody](#cody) added the [try.sh](/1995/schnitzi/try.sh) script.
+
+
 ## <a name="1995_vanschnitz"></a>[1995/vanschnitz](/1995/vanschnitz/vanschnitz.c) ([README.md](/1995/vanschnitz/README.md))
 
 [Cody](#cody) added the authors' [spoiler as a C

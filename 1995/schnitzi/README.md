@@ -15,9 +15,7 @@ make all
 ## Try:
 
 ```sh
-./schnitzi 24
-./schnitzi 18
-./schnitzi 30
+./try.sh
 ```
 
 WARNING: the author warns to not use too high a number! If you wish to ignore
