@@ -3,6 +3,7 @@
 *.dSYM
 garry
 garry.alt
+garry.fmt
 garry.orig
 indent
 indent.c
