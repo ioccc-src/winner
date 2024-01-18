@@ -45,11 +45,16 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-echo "$ echo 'seeing or feeling is believing' | ./huffman" 1>&2
+read -r -n 1 -p "Press any key to run: echo 'seeing or feeling is believing' | ./huffman: "
+echo 1>&2
 echo 'seeing or feeling is believing' | ./huffman 2>/dev/null
+echo 1>&2
 
-echo "$ echo 'CC OR NOT CC' | ./huffman" 1>&2
+read -r -n 1 -p "Press any key to run: echo 'CC OR NOT CC' | ./huffman: "
+echo 1>&2
 echo 'CC OR NOT CC' | ./huffman 2>/dev/null
+echo 1>&2
 
-echo "$ $ echo 'CC OR NOT CC' | ./huffman | ./huffman" 1>&2
+read -r -n 1 -p "Press any key to run: echo 'CC OR NOT CC' | ./huffman | ./huffman: "
+echo 1>&2
 echo 'CC OR NOT CC' | ./huffman 2>/dev/null | ./huffman 2>/dev/null
