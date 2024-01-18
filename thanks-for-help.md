@@ -2074,6 +2074,11 @@ calls which has the four args.
 [Cody](#cody) added the [try.sh](/1995/savastio/try.sh) script.
 
 
+## <a name="1995_schnitzi"></a>[1995/schnitzi](/1995/schnitzi/schnitzi.c) ([README.md](/1995/schnitzi/README.md]))
+
+[Cody](#cody) added the [try.sh](/1995/schnitzi/try.sh) script.
+
+
 ## <a name="1995_vanschnitz"></a>[1995/vanschnitz](/1995/vanschnitz/vanschnitz.c) ([README.md](/1995/vanschnitz/README.md))
 
 [Cody](#cody) added the authors' [spoiler as a C
@@ -2081,6 +2086,8 @@ file](/1995/vanschnitz/vanschnitz.alt.c) as in 2023 we have decided that in most
 cases all the code should be available for the wider audience, without having to
 extract it. The exception is when the files are created by the entry or the
 entry decrypts the text or something like that.
+
+Cody also added the [try.sh](/1995/vanschnitz/try.sh) script.
 
 
 # <a name="1996"></a>1996
@@ -2092,8 +2099,8 @@ entry decrypts the text or something like that.
 also fixed an infinite loop in the try commands. The problem with the infinite
 loop is that the file `august.oc` had to have lines starting with `#` removed
 and it was not being done. After this is done with say `sed(/1)` (like `sed -i''
-'/^#/d' august.oc` which has been added to both the remarks and the try.sh
-script as described below) the code can proceed. This problem existed in macOS.
+'/^#/d' august.oc` which has been added to both the remarks and the `try.sh`
+script noted below) the code can proceed. This problem existed in macOS.
 
 Cody also added the [try.sh](/1996/august/try.sh) script that runs all the
 commands given in the try section to simplify it as there are quite a lot of
@@ -2115,6 +2122,8 @@ Cody also made the recommended change of the author to make it so that each
 number is printed on a line by itself rather than having a long string of
 numbers on the same line. This was not put in an alternate version but perhaps
 it should be.
+
+Cody also added the [try.sh](/1996/dalbec/try.sh) script.
 
 
 ## <a name="1996_eldby"></a>[1996/eldby](/1996/eldby/eldby.c) ([README.md](/1996/eldby/README.md]))

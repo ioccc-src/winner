@@ -41,7 +41,7 @@ The above should print a `!` followed by a newline.
 ## Judges' remarks:
 
 This entry can feed on itself.  If you C pre-process the source,
-you compile the interpreter:
+you can compile the interpreter:
 
 ```sh
 make august.oc

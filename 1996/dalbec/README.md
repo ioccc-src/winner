@@ -15,7 +15,7 @@ make all
 ## Try:
 
 ```sh
-./dalbec 3 | head -n 29
+./try.sh
 ```
 
 Why does the output end with 121?
