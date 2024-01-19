@@ -2889,7 +2889,11 @@ without having to sacrifice playability by running `make`.
 
 ## <a name="2001_ollinger"></a>[2001/ollinger](/2001/ollinger/ollinger.c) ([README.md](/2001/ollinger/README.md))
 
-[Cody](#cody) fixed to not crash if not enough args, exiting 1 instead.
+[Cody](#cody) added the [try.sh](/2001/ollinger/try.sh) script.
+
+Cody also fixed it to not crash if not enough args, exiting 1 instead. This was
+done at a time where it was said to be a bug that should be fixed, for better or
+worse.
 
 
 ## <a name="2001_schweikh"></a>[2001/schweikh](/2001/schweikh/schweikh.c) ([README.md](/2001/schweikh/README.md]))
