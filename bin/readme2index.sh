@@ -1148,8 +1148,8 @@ for n in "${!OUTPUT_TOOL[@]}"; do
 	     "$VALUE ${OUTPUT_TOOL_OPTSTR[$VALUE]} -- ${WINNER_PATH}" 1>&2
     fi
     # SC2046 (warning): Quote this to prevent word splitting.
-    # SC2086 (info): Double quote to prevent globbing and word splitting.
     # https://www.shellcheck.net/wiki/SC2046
+    # SC2086 (info): Double quote to prevent globbing and word splitting.
     # https://www.shellcheck.net/wiki/SC2086
     # shellcheck disable=SC2046,SC2086
     OUTPUT_TOOL_OUTPUT=$("$VALUE" ${OUTPUT_TOOL_OPTSTR[$VALUE]} -- "${WINNER_PATH}")
@@ -1301,8 +1301,8 @@ for n in "${!OUTPUT_TOOL[@]}"; do
 	     "$VALUE ${OUTPUT_TOOL_OPTSTR[$VALUE]} -- ${WINNER_PATH}" 1>&2
     fi
     # SC2046 (warning): Quote this to prevent word splitting.
-    # SC2086 (info): Double quote to prevent globbing and word splitting.
     # https://www.shellcheck.net/wiki/SC2046
+    # SC2086 (info): Double quote to prevent globbing and word splitting.
     # https://www.shellcheck.net/wiki/SC2086
     # shellcheck disable=SC2046,SC2086
     OUTPUT_TOOL_OUTPUT=$("$VALUE" ${OUTPUT_TOOL_OPTSTR[$VALUE]} -- "${WINNER_PATH}")
