@@ -2849,6 +2849,8 @@ SC2248 (style): Prefer double quoting even when variables don't contain special 
 
 errors/warnings.
 
+Cody also added the [try.sh](/2001/herrmann1/try.sh) script.
+
 
 ## <a name="2001_herrmann2"></a>[2001/herrmann2](/2001/herrmann2/herrmann2.c) ([README.md](/2001/herrmann2/README.md]))
 
