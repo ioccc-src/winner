@@ -2192,6 +2192,13 @@ suggested that one try the longer version too but it will run in an infinite
 loop so having it in a script is less desired).
 
 
+## <a name="1996_schweikh3"></a>[1996/schweikh3](/1996/schweikh3/schweikh3.c) ([README.md](/1996/schweikh3/README.md]))
+
+[Cody](#cody) updated the Makefile so that if it fails to compile it will try he
+method suggested for SunOS rather than having to update the Makefile manually or
+running a more complicated command: now one can just run `make`.
+
+
 ## <a name="1996_westley"></a>[1996/westley](/1996/westley/westley.c) ([README.md](/1996/westley/README.md]))
 
 [Cody](#cody) fixed a segfault in this entry as well as it displaying environmental
