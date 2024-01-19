@@ -2570,6 +2570,11 @@ on it to assign to the `int`s, much like with `1987/lievaart`. The strings are
 `char[5]` and the `%` specifier is `%4s` which is enough for the game.
 
 
+## <a name="2000_schneiderwent"></a>[2000/schneiderwent](/2000/schneiderwent/schneiderwent.c) ([README.md](/2000/schneiderwent/README.md]))
+
+[Cody](#cody) added the [try.sh](/2000/schneiderwent/try.sh) script.
+
+
 ## <a name="2000_thadgavin"></a>[2000/thadgavin](/2000/thadgavin/thadgavin.c) ([README.md](/2000/thadgavin/README.md]))
 
 [Cody](#cody) fixed the code and added an appropriate make rule so that the
