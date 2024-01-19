@@ -14,10 +14,11 @@ make all
 
 ## Try:
 
-To find the day that Easter falls on in the current year:
+To find the day that Easter falls on in the current year and to show all Easter
+dates from 1582 to 2199:
 
 ```sh
-./schweikh1 |grep $(date +%Y)
+./try.sh
 ```
 
 
