@@ -45,33 +45,42 @@ if [[ "$COLUMNS" -lt 81 ]]; then
 fi
 
 
-read -r -n 1 -p "Press any key to start: "
-echo "$ ./glicbawls < michael.pgm > michael.glic" 1>&2
+read -r -n 1 -p "Press any key to run: ./glicbawls < michael.pgm > michael.glic: "
+echo 1>&2
 ./glicbawls < michael.pgm > michael.glic
 echo "Now compare the michael.pgm to the screen output." 1>&2
+echo 1>&2
 
-read -r -n 1 -p "Press any key to continue: "
 echo "$ ./glicbawls < michael.pgm 2>/dev/null | ./glicbawls > new.pgm" 1>&2
+read -r -n 1 -p "Press any key to continue: "
+echo 1>&2
 ./glicbawls < michael.pgm 2>/dev/null | ./glicbawls > new.pgm
+echo 1>&2
 
 echo "Now compare the michael.pgm to the screen output." 1>&2
 
 read -r -n 1 -p "Press any key to continue: "
+echo 1>&2
 echo "Now compare the new.pgm file to the michael.pgm file."
 
 read -r -n 1 -p "Press any key to continue: "
+echo 1>&2
 
-read -r -n -p 1 "Press any key to trying and use your screen width on lava bus pic: "
+read -r -n 1 -p "Press any key to try and use your screen width on lava bus pic: "
+echo 1>&2
 
-echo "$ ./glicbawls $COLUMNS < lavabus.pgm > lavabus.glic" 1>&2
+read -r -n 1 -p "Press any key to run: ./glicbawls $COLUMNS < lavabus.pgm > lavabus.glic: "
+echo 1>&2
 ./glicbawls "$COLUMNS" < lavabus.pgm > lavabus.glic
+echo 1>&2
 
-read -r -n 1 -p "Press any key to continue: "
-
-echo "$ ./glicbawls -2 "$COLUMNS" < lavabus.pgm > lavabus.glic2"
+read -r -n 1 -p "Press any key to run: ./glicbawls -2 "$COLUMNS" < lavabus.pgm > lavabus.glic2: "
+echo 1>&2
 ./glicbawls -2 "$COLUMNS" < lavabus.pgm > lavabus.glic2
+echo 1>&2
 
 read -r -n 1 -p "Press any key to decompress the smaller glic-file: "
+echo 1>&2
 echo "$ ./glicbawls -2 150 < lavabus.glic2 > new.pgm" 1>&2
 ./glicbawls -2 150 < lavabus.glic2 > new.pgm
 
