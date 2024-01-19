@@ -2259,6 +2259,10 @@ as well as allowing one to pass in different file names or strings.
 [Cody](#cody) added a call to `endwin()` to restore terminal sanity (echo etc.) when
 exiting the program (in both versions).
 
+Cody also added the [try.sh](/1998/chaos/try.sh) script that runs the program on
+all the data files, giving instructions on how to rotate and zoom in and out,
+prior to each run.
+
 
 ## <a name="1998_df"></a>[1998/df](/1998/df/df.c) ([README.md](/1998/df/README.md]))
 
