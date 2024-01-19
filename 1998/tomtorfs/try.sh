@@ -17,19 +17,32 @@ clear
 
 rm -f file.A file.B file.C
 
-echo "$ echo abscond conferrable > file.A" 1>&2
+read -r -n 1 -p "Press any key to run: echo \"abscond conferrable\" > file.A: "
+echo 1>&2
 echo "abscond conferrable" > file.A
-echo "$ ./tomtorfs file.A 32 04C11DB7 1 FFFFFFFF FFFFFFFF" 1>&2
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./tomtorfs file.A 32 04C11DB7 1 FFFFFFFF FFFFFFFF: "
+echo 1>&2
 ./tomtorfs file.A 32 04C11DB7 1 FFFFFFFF FFFFFFFF
+echo 1>&2
 
-echo "$ echo adorn condolence > file.B" 1>&2
+read -r -n 1 -p "Press any key to run: echo \"adorn condolence\" > file.B: "
+echo 1>&2
 echo "adorn condolence" > file.B
-echo "$ ./tomtorfs file.B 32 04C11DB7 1 FFFFFFFF FFFFFFFF" 1>&2
-./tomtorfs file.B 32 04C11DB7 1 FFFFFFFF FFFFFFFF
 
-echo "$ echo adorn condolence too > file.C" 1>&2
+read -r -n 1 -p "Press any key to run: ./tomtorfs file.B 32 04C11DB7 1 FFFFFFFF FFFFFFFF: "
+echo 1>&2
+./tomtorfs file.B 32 04C11DB7 1 FFFFFFFF FFFFFFFF
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: echo \"adorn condolence too\" > file.C: "
+echo 1>&2
 echo "adorn condolence too" > file.C
-echo "$ ./tomtorfs file.C 32 04C11DB7 1 FFFFFFFF FFFFFFFF" 1>&2
+echo 1>&2
+read -r -n 1 -p "Press any key to run: ./tomtorfs file.C 32 04C11DB7 1 FFFFFFFF FFFFFFFF: "
+echo 1>&2
 ./tomtorfs file.C 32 04C11DB7 1 FFFFFFFF FFFFFFFF
+echo 1>&2
 
 rm -f file.A file.B file.C
