@@ -695,6 +695,7 @@ function match_md2html
     NO_MATCH_FOUND=1
     sed -e 's/#.*//' -e 's/[[:space:]]*$//' -e '/^$/d' < "$MD2HTML_PATH" | while read -r FILE_GLOB CFG_OPTIONS; do
 	# SC2053 (warning): Quote the right-hand side of == in [[ ]] to prevent glob matching.
+	# https://www.shellcheck.net/wiki/SC2053
 	# shellcheck disable=SC2053
 	if [[ $FILE_PATH == $FILE_GLOB ]]; then
 	    if [[ $V_FLAG -ge 5 ]]; then
@@ -1148,6 +1149,8 @@ for n in "${!OUTPUT_TOOL[@]}"; do
     fi
     # SC2046 (warning): Quote this to prevent word splitting.
     # SC2086 (info): Double quote to prevent globbing and word splitting.
+    # https://www.shellcheck.net/wiki/SC2046
+    # https://www.shellcheck.net/wiki/SC2086
     # shellcheck disable=SC2046,SC2086
     OUTPUT_TOOL_OUTPUT=$("$VALUE" ${OUTPUT_TOOL_OPTSTR[$VALUE]} -- "${WINNER_PATH}")
     if [[ $V_FLAG -ge 5 ]]; then
@@ -1163,6 +1166,7 @@ for n in "${!OUTPUT_TOOL[@]}"; do
 	# parse output tool options
 	#
 	# SC2086 (info): Double quote to prevent globbing and word splitting.
+	# https://www.shellcheck.net/wiki/SC2086
 	# shellcheck disable=SC2086
 	eval parse_command_line $OUTPUT_TOOL_OUTPUT
 
@@ -1217,6 +1221,7 @@ fi
 # set new options from match md2html.cfg for README_PATH
 #
 # SC2086 (info): Double quote to prevent globbing and word splitting.
+# https://www.shellcheck.net/wiki/SC2086
 # shellcheck disable=SC2086
 set -- $MATCH_OPTIONS
 
@@ -1297,6 +1302,8 @@ for n in "${!OUTPUT_TOOL[@]}"; do
     fi
     # SC2046 (warning): Quote this to prevent word splitting.
     # SC2086 (info): Double quote to prevent globbing and word splitting.
+    # https://www.shellcheck.net/wiki/SC2046
+    # https://www.shellcheck.net/wiki/SC2086
     # shellcheck disable=SC2046,SC2086
     OUTPUT_TOOL_OUTPUT=$("$VALUE" ${OUTPUT_TOOL_OPTSTR[$VALUE]} -- "${WINNER_PATH}")
     if [[ $V_FLAG -ge 5 ]]; then
@@ -1312,6 +1319,7 @@ for n in "${!OUTPUT_TOOL[@]}"; do
 	# parse output tool options
 	#
 	# SC2086 (info): Double quote to prevent globbing and word splitting.
+	# https://www.shellcheck.net/wiki/SC2086
 	# shellcheck disable=SC2086
 	eval parse_command_line $OUTPUT_TOOL_OUTPUT
 
@@ -1807,6 +1815,7 @@ if [[ -n $BEFORE_TOOL ]]; then
 		 "$BEFORE_TOOL -u $REPO_URL -U $TOP_URL $BEFORE_TOOL_OPTSTR -- $YEAR_DIR/$WINNER_DIR >> $TMP_INDEX_HTML" 1>&2
 	fi
 	# SC2086 (info): Double quote to prevent globbing and word splitting.
+	# https://www.shellcheck.net/wiki/SC2086
 	# shellcheck disable=SC2086
 	eval "$BEFORE_TOOL" -u "$REPO_URL" -U "$TOP_URL" $BEFORE_TOOL_OPTSTR -- "$YEAR_DIR/$WINNER_DIR" >> "$TMP_INDEX_HTML"
 	status="$?"
@@ -1885,6 +1894,7 @@ if [[ -n $AFTER_TOOL ]]; then
 		 "$AFTER_TOOL -u $REPO_URL -U $TOP_URL $AFTER_TOOL_OPTSTR -- $YEAR_DIR/$WINNER_DIR >> $TMP_INDEX_HTML" 1>&2
 	fi
 	# SC2086 (info): Double quote to prevent globbing and word splitting.
+	# https://www.shellcheck.net/wiki/SC2086
 	# shellcheck disable=SC2086
 	eval "$AFTER_TOOL" -u "$REPO_URL" -U "$TOP_URL" $AFTER_TOOL_OPTSTR -- "$YEAR_DIR/$WINNER_DIR" >> "$TMP_INDEX_HTML"
 	status="$?"

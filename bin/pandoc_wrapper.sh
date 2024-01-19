@@ -319,6 +319,7 @@ if [[ -z $NOOP ]]; then
 	echo "$0: debug[1]: will execute pandoc as: $PANDOC_TOOL -o $HTML_OUTPUT $PANDOC_ARGS $MARKDOWN_INPUT" 1>&2
     fi
     # SC2086 (info): Double quote to prevent globbing and word splitting.
+    # https://www.shellcheck.net/wiki/SC2086
     # shellcheck disable=SC2086
     "$PANDOC_TOOL" -o "$HTML_OUTPUT" $PANDOC_ARGS "$MARKDOWN_INPUT"
     status="$?"
@@ -327,6 +328,7 @@ else
 	echo "$0: debug[3]: will execute pandoc as: $PANDOC_TOOL $PANDOC_ARGS -o /dev/null $MARKDOWN_INPUT" 1>&2
     fi
     # SC2086 (info): Double quote to prevent globbing and word splitting.
+    # https://www.shellcheck.net/wiki/SC2086
     # shellcheck disable=SC2086
     "$PANDOC_TOOL" $PANDOC_ARGS -o /dev/null "$MARKDOWN_INPUT"
     status="$?"
