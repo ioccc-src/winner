@@ -128,12 +128,8 @@ rince in bugs.md</a>.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./rince</span> number number2</span></code></pre></div>
 <p>If <code>DISPLAY</code> is not set the program will very likely crash
 or do something different.</p>
-<p>This is supposed to happen. As is written in the <a
-href="http://catb.org/jargon/html/F/feature.html">The Jargon
-File</a>:</p>
-<pre><code>That&#39;s not a bug, that&#39;s a feature.</code></pre>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.sh</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.sh</span></span></code></pre></div>
 <p>This will run the program several times with different parameters to
 show different types of things. See the author’s remarks for more
 details.</p>
@@ -145,7 +141,7 @@ through visual observation.</p>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="how-to-use-it">How to use it</h3>
 <p>The simplest way to run it is with no arguments. Just type:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./rince</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./rince</span></span></code></pre></div>
 <p>You will need to have access to X windows, although it doesn’t
 require desperately high resolution and there are no known limitations
 on colour depth.</p>
@@ -155,12 +151,12 @@ program has a built in time machine. Indeed the program knows the speed
 of light, which is used to ensure that we see the “live” pictures.
 Simply specify the fraction of a day to skip forward for each screen
 refresh. I suggest:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./rince</span> 0.01</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./rince</span> 0.01</span></code></pre></div>
 <p>To display the output (still guessing?) for a given date, specify two
 arguments. The first argument is as before and the second argument is a
 Julian day number (given as a fractional component). E.g.:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./rince</span> 0 2441193.6</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./rince</span> 0.01 2441193.6</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./rince</span> 0 2441193.6</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./rince</span> 0.01 2441193.6</span></code></pre></div>
 <p>A Julian day is defined to be the number of days since January 1st in
 the year <code>-4712 (4713BC)</code>, starting at 12 noon GMT.<a
 href="#fn1" class="footnote-ref" id="fnref1"
@@ -240,14 +236,14 @@ Here he could see for himself that somehow, a planet could
 orbit the sun, and not leave a moon behind!</code></pre>
 <p>Thus we can plot Galileo’s discoveries using the following three
 plots:</p>
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./rince</span> 0 <span class="va">$(</span><span class="ex">./dmy2jd</span>  7.8 1 1610<span class="va">)</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./rince</span> 0 <span class="va">$(</span><span class="ex">./dmy2jd</span>  8.8 1 1610<span class="va">)</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./rince</span> 0 <span class="va">$(</span><span class="ex">./dmy2jd</span> 10.8 1 1610<span class="va">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./rince</span> 0 <span class="va">$(</span><span class="ex">./dmy2jd</span>  7.8 1 1610<span class="va">)</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./rince</span> 0 <span class="va">$(</span><span class="ex">./dmy2jd</span>  8.8 1 1610<span class="va">)</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./rince</span> 0 <span class="va">$(</span><span class="ex">./dmy2jd</span> 10.8 1 1610<span class="va">)</span></span></code></pre></div>
 <p>However we can go one better by seeing what Galileo would have seen
 if it wasn’t cloudy on the 9th. Try:</p>
-<div class="sourceCode" id="cb13"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./rince</span> 0 <span class="va">$(</span><span class="ex">./dmy2jd</span> 9.85 1 1610<span class="va">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./rince</span> 0 <span class="va">$(</span><span class="ex">./dmy2jd</span> 9.85 1 1610<span class="va">)</span></span></code></pre></div>
 <p>to see what he was missing out on. I wonder what he’d have made of
 that!</p>
 <p>Galileo discovered the fourth moon a few days later.</p>

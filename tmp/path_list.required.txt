@@ -834,6 +834,7 @@
 1995/heathbar/README.md
 1995/heathbar/heathbar.c
 1995/heathbar/heathbar.orig.c
+1995/heathbar/try.sh
 1995/leo/.gitignore
 1995/leo/.winner.json
 1995/leo/Makefile
@@ -853,12 +854,14 @@
 1995/savastio/README.md
 1995/savastio/savastio.c
 1995/savastio/savastio.orig.c
+1995/savastio/try.sh
 1995/schnitzi/.gitignore
 1995/schnitzi/.winner.json
 1995/schnitzi/Makefile
 1995/schnitzi/README.md
 1995/schnitzi/schnitzi.c
 1995/schnitzi/schnitzi.orig.c
+1995/schnitzi/try.sh
 1995/spinellis/.gitignore
 1995/spinellis/.winner.json
 1995/spinellis/Makefile
@@ -869,6 +872,7 @@
 1995/vanschnitz/.winner.json
 1995/vanschnitz/Makefile
 1995/vanschnitz/README.md
+1995/vanschnitz/try.sh
 1995/vanschnitz/vanschnitz.alt.c
 1995/vanschnitz/vanschnitz.c
 1995/vanschnitz/vanschnitz.orig.c
@@ -888,6 +892,7 @@
 1996/dalbec/README.md
 1996/dalbec/dalbec.c
 1996/dalbec/dalbec.orig.c
+1996/dalbec/try.sh
 1996/eldby/.gitignore
 1996/eldby/.winner.json
 1996/eldby/Makefile

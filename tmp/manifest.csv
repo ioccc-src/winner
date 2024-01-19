@@ -1152,6 +1152,7 @@
 1995,heathbar,heathbar.c,20,true,c,true,winning source
 1995,heathbar,Makefile,30,true,makefile,true,winner Makefile
 1995,heathbar,heathbar.orig.c,50,false,c,true,original source
+1995,heathbar,try.sh,100,true,shellscript,true,how to run
 1995,heathbar,1995_heathbar.tar.bz2,300,false,tbz2,false,download winning source
 1995,heathbar,README.md,4294967295,true,markdown,true,markdown source for index.html
 1995,heathbar,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -1181,6 +1182,7 @@
 1995,savastio,savastio.c,20,true,c,true,winning source
 1995,savastio,Makefile,30,true,makefile,true,winner Makefile
 1995,savastio,savastio.orig.c,50,true,c,true,original source
+1995,savastio,try.sh,100,true,shellscript,true,how to run
 1995,savastio,1995_savastio.tar.bz2,300,false,tbz2,false,download winning source
 1995,savastio,README.md,4294967295,true,markdown,true,markdown source for index.html
 1995,savastio,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -1190,6 +1192,7 @@
 1995,schnitzi,schnitzi.c,20,true,c,true,winning source
 1995,schnitzi,Makefile,30,true,makefile,true,winner Makefile
 1995,schnitzi,schnitzi.orig.c,50,true,c,true,original source
+1995,schnitzi,try.sh,100,true,shellscript,true,how to run
 1995,schnitzi,1995_schnitzi.tar.bz2,300,false,tbz2,false,download winning source
 1995,schnitzi,README.md,4294967295,true,markdown,true,markdown source for index.html
 1995,schnitzi,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -1209,6 +1212,7 @@
 1995,vanschnitz,Makefile,30,true,makefile,true,winner Makefile
 1995,vanschnitz,vanschnitz.alt.c,40,true,c,true,alternative source
 1995,vanschnitz,vanschnitz.orig.c,50,true,c,true,original source
+1995,vanschnitz,try.sh,100,true,shellscript,true,how to run
 1995,vanschnitz,1995_vanschnitz.tar.bz2,300,false,tbz2,false,download winning source
 1995,vanschnitz,README.md,4294967295,true,markdown,true,markdown source for index.html
 1995,vanschnitz,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -1231,6 +1235,7 @@
 1996,dalbec,dalbec.c,20,true,c,true,winning source
 1996,dalbec,Makefile,30,true,makefile,true,winner Makefile
 1996,dalbec,dalbec.orig.c,50,false,c,true,original source
+1996,dalbec,try.sh,100,true,shellscript,true,how to run
 1996,dalbec,1996_dalbec.tar.bz2,300,false,tbz2,false,download winning source
 1996,dalbec,README.md,4294967295,true,markdown,true,markdown source for index.html
 1996,dalbec,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git

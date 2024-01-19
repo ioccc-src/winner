@@ -175,16 +175,16 @@ resulting image.</p>
 properties. Apart from being quite big and a little bit noisy, it
 appears that when embedded into another image and extracted, the bitmap
 data is also a valid <a
-href="https://en.wikipedia.org/wiki/Brainfuck">brain$#@$</a> program. It
+href="https://en.wikipedia.org/wiki/Brainfuck">brainfuck</a> program. It
 is of course possible to get the bitmap data from the extracted image,
-and run it through any of the previous winning brain$#@$ interpreters,
+and run it through any of the previous winning brainfuck interpreters,
 but I thought it would be easier to include an interpreter in the
 program to avoid the hassle:</p>
 <div class="sourceCode" id="cb10"><pre
 class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./vik</span> e ioccc.png chocolate.png <span class="op">&gt;</span> encodedimg.png</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./vik</span> b encodedimg.png</span></code></pre></div>
 <p>It is of course also possible to embed a <a
-href="https://en.wikipedia.org/wiki/Brainfuck">brain$#@$</a> program as
+href="https://en.wikipedia.org/wiki/Brainfuck">brainfuck</a> program as
 a text file (as explained above) and decode it, e.g.:</p>
 <div class="sourceCode" id="cb11"><pre
 class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./vik</span> e ioccc.png .+<span class="pp">[</span><span class="ss">.+</span><span class="pp">]</span> <span class="op">&gt;</span> encodedimg.png</span>
@@ -221,16 +221,16 @@ will cause the program to crash.</p>
 <h3 id="extendability">Extendability</h3>
 <p>Since a lot of care was taken to keep the code simple, it turned out
 to be quite easy to extend functionality. I did include a small <a
-href="https://en.wikipedia.org/wiki/Brainfuck">brain$#@$</a> after I
+href="https://en.wikipedia.org/wiki/Brainfuck">brainfuck</a> after I
 realized that the chocolate image had some interesting properties.</p>
 <p>But there is more functionality I added that didn’t fit within the
 size limits and could not remain included. For example, I added a method
 to format source code based on a PNG image. So the format of the program
 is actually done by the program itself.</p>
 <p>And to be honest, the chocolate image did not have a <a
-href="https://en.wikipedia.org/wiki/Brainfuck">brain$#@$</a> program
+href="https://en.wikipedia.org/wiki/Brainfuck">brainfuck</a> program
 embedded to begin with. I added functionality to the program to embed a
-brain$#@$ into a PNG image and used it to create the image provided with
+brainfuck into a PNG image and used it to create the image provided with
 the entry.</p>
 <p>I also added a method to analyze PNG images, to print the size and
 format, as well as the scan line filters.</p>
