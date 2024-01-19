@@ -19,6 +19,8 @@ echo text | ./bas2
 ./try.sh
 
 ./try.sh "foo bar" "baz" "IOCCC 1998/bas2" README.md
+
+./try.sh try.sh "bas2.c" bas2.orig.c
 ```
 
 
