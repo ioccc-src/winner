@@ -16,38 +16,40 @@ make CC="$CC" all >/dev/null || exit 1
 clear
 
 
-echo "$ make saitou >/dev/null" 1>&2
-make saitou >/dev/null
-
-echo "$ ./saitou > aku.c" 1>&2
-./saitou > aku.c
-
-read -r -n 1 -p "Press any key to run: cat aku.c (space = next page, q = quit): "
+read -r -n 1 -p "Press any key to run: make saitou >/dev/null || exit 1: "
 echo 1>&2
-cat aku.c | less -EXF
-
-echo "$ make soku >/dev/null" 1>&2
-make soku >/dev/null
-
-echo "$ ./soku > soku.c" 1>&2
-./soku > soku.c
-
-read -r -n 1 -p "Press any key to run: cat soku.c (space = next page, q = quit): "
+make saitou >/dev/null || exit 1
 echo 1>&2
-cat soku.c | less -EXF
 
-echo "$ make zan >/dev/null" 1>&2
-make zan >/dev/null
-
-echo "$ ./zan > zan.c" 1>&2
-./zan > zan.c
-
-read -r -n 1 -p "Press any key to run: cat zan.c (space = next page, q = quit): "
+read -r -n 1 -p "Press any key to run: ./saitou | tee aku.c (space = next page, q = quit): "
 echo 1>&2
-cat zan.c | less -EXF
+./saitou | tee aku.c | less -rEXF
 
-echo "$ make aku >/dev/null" 1>&2
-make aku >/dev/null
+read -r -n 1 -p "Press any key to run: make soku >/dev/null || exit 1: "
+echo 1>&2
+make soku >/dev/null || exit 1
+echo 1>&2
 
-echo "$ ./aku | diff - aku.c" 1>&2
-./aku | diff - aku.c
+read -r -n 1 -p "Press any key to run: ./soku | tee soku.c (space = next page, q = quit): "
+echo 1>&2
+./soku | tee soku.c | less -rEXF
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: make zan >/dev/null || exit 1: "
+echo 1>&2
+make zan >/dev/null || exit 1
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./zan | tee zan.c (space = next page, q = quit): "
+echo 1>&2
+./zan | tee zan.c | less -rEXF
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: make aku >/dev/null || exit 1: "
+echo 1>&2
+make aku >/dev/null || exit 1
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./aku | diff -s - aku.c: "
+echo 1>&2
+./aku | diff -s - aku.c
