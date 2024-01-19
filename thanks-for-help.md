@@ -2428,6 +2428,8 @@ Cody also added an `int` after `register` in `main()` in case clang decides to
 have a problem with that in the future which is not entirely out of the
 question.
 
+Cody also added the [try.sh](/1998/schweikh2/try.sh) script.
+
 
 ## <a name="1998_schweikh3"></a>[1998/schweikh3](/1998/schweikh3/schweikh3.c) ([README.md](/1998/schweikh3/README.md]))
 
