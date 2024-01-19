@@ -15,7 +15,8 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-echo "$ echo '((\a(\b(\c(d)))) e' | ./fanf" 1>&2
+read -r -n 1 -p "Press any key to run: echo '((\a(\b(\c(d)))) e)' | ./fanf: "
+echo 1>&2
 echo '((\a(\b(\c(d)))) e)' | ./fanf
 echo 1>&2
 
@@ -25,6 +26,8 @@ echo "$ echo '
     (g x) (f x)
   ) K K z
 )'|./fanf" 1>&2
+read -r -n 1 -p "Press any key to continue: "
+echo 1>&2
 echo '
 (\f\g\x
   (
@@ -35,6 +38,8 @@ echo 1>&2
 
 
 echo "$ echo '(\f(\f\g\x( (f((\a(g(b))) e)) (g x) ) K K z))' | ./fanf" 1>&2
+read -r -n 1 -p "Press any key to continue: "
+echo 1>&2
 echo '(\f(\f\g\x( (f((\a(g(b))) e)) (g x) ) K K z))' | ./fanf
 echo 1>&2
 
@@ -45,6 +50,8 @@ echo "$ echo '
    (* n (f (- n 1)))
   )
 )' | ./fanf" 1>&2
+read -r -n 1 -p "Press any key to continue: "
+echo 1>&2
 
 echo '(Y\f\n
   ((= n 0)
@@ -52,3 +59,5 @@ echo '(Y\f\n
    (* n (f (- n 1)))
   )
 )' | ./fanf
+
+exit 0
