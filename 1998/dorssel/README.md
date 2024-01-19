@@ -21,12 +21,6 @@ echo text | ./dorssel
 ./try.sh
 ```
 
-Also try:
-
-```sh
-./dorssel < dorssel.md
-```
-
 
 ## Judges' remarks:
 
