@@ -1,3 +1,3 @@
-pain(int n, char **ia, char **aa, char **ma){int i=ia, a=aa, m=ma; while(i=++n)
-for(a=0;a<i?a=a*8+i%8,i/=8,m=a==i|a/8==i,1:(n-++m||printf("%o\n",n))&&n%m;);}
-main(int n, char **ia, char **aa) { return pain(n, ia, aa, 0); }
+pain(n,i,a,p){while(i=++n)
+for(a=0;a<i?a=a*8+i%8,i/=8,p=a==i|a/8==i,1:(n-++p||printf("%o\n",n))&&n%p;);}
+main(n,i,a/*,m*/)char**i,**a;{return pain(n,i,a,0);}

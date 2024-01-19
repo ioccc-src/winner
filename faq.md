@@ -886,17 +886,19 @@ will too but it won't reset the terminal).
 ### <a name="faq3_7"></a><a name="X11macos"></a><a name="X11"></a>FAQ 3.7: How do I run an IOCCC winner that requires X11?
 
 
-#### <a name="X11_general"></a>Generically, to compile and run an IOCCC winner that requires X11:
+#### <a name="X11_general"></a>Generally, to compile and run an IOCCC winner that requires X11:
 
-In order to have the X11 related include files and X11 libraries in order to compile the IOCCC winner,
-you will need to install Xorg and related packages including development related packages. In particular:
+You must have the X11 related include files and X11 libraries in order to
+compile the IOCCC winner. In order to do this you will need to install Xorg and
+related packages including development related packages. If you have macOS see
+further down for different instructions. Otherwise: in particular you must:
 
-* Install the Xorg server
-* Configure the Xorg server for your graphics environment
-* Install a X11 terminal application
-* Start the Xorg server
-* Launch the X11 terminal application
-* Run the IOCCC winner in the X11 terminal application
+* Install the Xorg server.
+* Configure the Xorg server for your graphics environment.
+* Install a X11 terminal application.
+* Start the Xorg server.
+* Launch the X11 terminal application.
+* Run the IOCCC winner in the X11 terminal application.
 
 By X11 terminal application we suggest one of:
 
@@ -904,42 +906,49 @@ By X11 terminal application we suggest one of:
 * [KDE](https://kde.org) terminal application
 * `xterm(`) terminal application
 
-See the below for various system related hints that may be of help.
+See below for various system related hints that may be of help.
 
 
 #### <a name="Xorg_deprecated"></a>X.org server has been deprecated
 
-The Red Hat RHEL9.0 release notes state that [X.org Server is now deprecated](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/9.0_release_notes/deprecated_functionality#deprecated-functionality_graphics-infrastructures).
+The Red Hat RHEL9.0 release notes state that [X.org Server is now
+deprecated](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/9.0_release_notes/deprecated_functionality#deprecated-functionality_graphics-infrastructures).
 
-According to this [Linux for Devices tutorial on XOrg](https://www.linuxfordevices.com/tutorials/linux/install-xorg-on-linux)
-as of 2023 Mar 25::
+According to this [Linux for Devices tutorial on
+XOrg](https://www.linuxfordevices.com/tutorials/linux/install-xorg-on-linux) as
+of 2023 Mar 25:
 
-```
-Recently, RHEL developers categorized Xorg was put in the ‘deprecated’
-software, as its development has mostly halted. Subsequent updates
-will completely replace it with Wayland, a more modern windowing
-system.. Although Wayland is not fully developed yet, many applications
-do not support it properly yet and screen sharing might not work
-sometime, but it is the future. Fedora, also developed by RHEL, has
-switched to a Wayland session as it’s default windowing system (And
-it works flawlessly on my Laptop).
-```
+
+> Recently, RHEL developers categorized [Xorg was put in the ‘deprecated’
+software](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/9.0_release_notes/deprecated_functionality),
+as its development has mostly halted. Subsequent updates will completely replace
+it with Wayland, a more modern windowing system.. Although Wayland is not fully
+developed yet, many applications do not support it properly yet and screen
+sharing might not work sometime, but it is the future. Fedora, also developed by
+RHEL, has switched to a Wayland session as it’s default windowing system (And it
+works flawlessly on my Laptop).
 
 See the [Wayland](https://wayland.freedesktop.org) web site for more details.
 
-**IMPORTANT NOTE**: We do **NOT** know if IOCCC winners will run under **Wayland**.
-Some IOCCC winners that use X11 might be OK while other IOCCC winners that use X11 in an unusual way might fail
-under **Wayland**.
+**IMPORTANT NOTE**: We do **NOT** know if IOCCC winners will run under
+**Wayland**.  Some IOCCC winners that use X11 might be OK while other IOCCC
+winners that use X11 in an unusual way might fail under **Wayland**.
 
-See the [Wayland FAQ](https://wayland.freedesktop.org/faq.html) for more information.
 
-If your system uses **Wayland** and not X11, you might give the IOCCC winners that use X11 a try.
-They might work.
+See the [Wayland FAQ](https://wayland.freedesktop.org/faq.html) for more
+information.
 
-**IMPORTANT NOTE**: The [IOCCC judges [do not support support IOCCC winners](#no_support).
+If your system uses **Wayland** and not X11, you might give the IOCCC winners
+that use X11 a try.  They might work but again we do not know.
+
+**IMPORTANT NOTE**: The [IOCCC judges](/judges.html) [do not support IOCCC winners](#no_support).
 So if an IOCCC winner that uses X11 fails under **Wayland**, and you wish to
 provide a fix to the IOCCC winner so that it will run under **Wayland**,
 then consider [submitting a fix](#fix_a_winner) so that it will run under **Wayland**.
+
+Basically: if you discover an entry does not work in Wayland you are welcome to
+provide **alternate code** that works for Wayland. We will happily credit you in
+the [thanks-for-help.md](/thanks-for-help.md) file.
 
 
 #### Red Hat based Linux
@@ -956,7 +965,8 @@ See also:
 
 * [How to Configure X11 in Linux](https://www.wikihow.com/Configure-X11-in-Linux)
 
-**IMPORTANT NOTE**: The [X.org server has been deprecated](#Xorg_deprecated).  See the above note for details.
+**IMPORTANT NOTE**: The [X.org server has been deprecated](#Xorg_deprecated).
+See the above note for details.
 
 
 #### macOS
@@ -973,7 +983,7 @@ with macOS 14.2.1 (macOS Sonoma).
 First of all you will need to install the [most recent
 XQuartz](https://www.xquartz.org), preferably on an [Apple supported version of
 macOS, preferably the most recent version](https://support.apple.com/macos).
-Then open the "XQuartz" application (usually located in
+After it is installed, open the "XQuartz" application (usually located in
 `/Applications/Utilities/XQuartz.app`) by typing at the command line:
 
 ```sh
@@ -996,30 +1006,35 @@ And then run the program as directed by the `README.md` file. For example with
 <img alt="running 1993/jonth in macOS" src="png/xquartz-1993-jonth.png">
 
 Note that you can compile the code in your regular terminal prior to opening
-XQuartz, should you wish to.
+XQuartz, should you wish to. You can even run it from that terminal and it
+should open XQuartz.
 
-**IMPORTANT NOTE**: The [X.org server has been deprecated](#Xorg_deprecated).  See the above note for details.
+**IMPORTANT NOTE**: The [X.org server has been deprecated](#Xorg_deprecated).
+See the above note for details.
 
 
 #### Debian based Linux
 
 First, see the above note on [installing and starting Xorg](#X11_general).
 
-According to the [Debian Xorg wiki](https://wiki.debian.org/Xorg), installing X11 requires:
+According to the [Debian Xorg wiki](https://wiki.debian.org/Xorg), installing
+X11 requires:
 
 ```sh
 sudo apt install xorg
 ```
 
-**IMPORTANT NOTE**: The [X.org server has been deprecated](#Xorg_deprecated).  See the above note for details.
+**IMPORTANT NOTE**: The [X.org server has been deprecated](#Xorg_deprecated).
+See the above note for details.
 
 
 #### Other Linux distributions
 
 First, see the above note on [installing and starting Xorg](#X11_general).
 
-For general documentation on installing  X11, this [ServerGUI for Ubuntu](https://help.ubuntu.com/community/ServerGUI),
-and in particular, this may be helpful:
+For general documentation on installing  X11, this [ServerGUI for
+Ubuntu](https://help.ubuntu.com/community/ServerGUI), and in particular, these
+may be helpful:
 
 * [X11 Client Installation](https://help.ubuntu.com/community/ServerGUI#X11_Client_Installation)
 * [X11 Server Installation](https://help.ubuntu.com/community/ServerGUI#X11_Server_Installation)
@@ -1041,7 +1056,8 @@ For systems that have the `yum(1)` command:
 sudo yum install --skip-broken --best --exclude xorgxrdp --exclude xorgxrdp-glamor '*xorg*' 'libx*' 'libX*' 'fontconfig*'
 ```
 
-**IMPORTANT NOTE**: The [X.org server has been deprecated](#Xorg_deprecated).  See the above note for details.
+**IMPORTANT NOTE**: The [X.org server has been deprecated](#Xorg_deprecated).
+See the above note for details.
 
 
 #### package website
@@ -1050,7 +1066,8 @@ First, see the above note on [installing and starting Xorg](#X11_general).
 
 See the [X.org](https://x.org/wiki/) foundation web site.
 
-**IMPORTANT NOTE**: The [X.org server has been deprecated](#Xorg_deprecated).  See the above note for details.
+**IMPORTANT NOTE**: The [X.org server has been deprecated](#Xorg_deprecated).
+See the above note for details.
 
 
 ### <a name="faq3_8"></a><a name="SDL"></a>FAQ 3.8: How do I compile an IOCCC winner that requires SDL1 or SDL2?

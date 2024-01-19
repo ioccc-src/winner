@@ -2096,15 +2096,17 @@ Cody also added the [try.sh](/1995/vanschnitz/try.sh) script.
 ## <a name="1996_august"></a>[1996/august](/1996/august/august.c) ([README.md](/1996/august/README.md]))
 
 [Cody](#cody) fixed a segfault in this program that prevented it from working right and
-also fixed an infinite loop in the try commands. The problem with the infinite
-loop is that the file `august.oc` had to have lines starting with `#` removed
-and it was not being done. After this is done with say `sed(/1)` (like `sed -i''
-'/^#/d' august.oc` which has been added to both the remarks and the `try.sh`
-script noted below) the code can proceed. This problem existed in macOS.
+also fixed an infinite loop in the try commands.
+
+The problem with the infinite loop is that the file `august.oc` had to have
+lines starting with `#` removed and it was not being done. After this is done
+with say `sed(/1)` (like `sed -i'' '/^#/d' august.oc` which has been added to
+both the remarks and the `try.sh` script noted below) the code can proceed. This
+problem existed in macOS.
 
 Cody also added the [try.sh](/1996/august/try.sh) script that runs all the
-commands given in the try section to simplify it as there are quite a lot of
-commands.
+commands that were given by the judges in the try section, with the fix above
+applied.
 
 
 ## <a name="1996_dalbec"></a>[1996/dalbec](/1996/dalbec/dalbec.c) ([README.md](/1996/dalbec/README.md]))
@@ -2164,16 +2166,22 @@ the function in the pointer assignment.
 NOTE: if there is no X server running this program will still crash.
 
 
+## <a name="1996_rcm"></a>[1996/rcm](/1996/rcm/rcm.c) ([README.md](/1996/rcm/README.md]))
+
+[Cody](#cody) added the [try.sh](/1996/rcm/try.sh) script.
+
+
 ## <a name="1996_schweikh1"></a>[1996/schweikh1](/1996/schweikh1/schweikh1.c) ([README.md](/1996/schweikh1/README.md]))
+
+[Cody](#cody) added the [try.sh](/1996/schweikh1/try.sh) script.
 
 The author stated that `-I/usr/include` is needed by gcc in Solaris because
 `errno.h` has two identical extern declarations of `errno`. That leads to an
 error due to the redefinition of `main` but the `-I` option makes sure the
 working `/usr/include/rrno.h` is found first, which shouldn't cause any problems
 on other systems (the other file is
-`gcc-lib/sparc-sun-solaris2.5/2.7.2/include/errno.h`). Thus Cody added this to
+`gcc-lib/sparc-sun-solaris2.5/2.7.2/include/errno.h`). Thus Cody also added this to
 the Makefile despite the fact that very few probably use Solaris nowadays.
-
 
 
 ## <a name="1996_schweikh2"></a>[1996/schweikh2](/1996/schweikh2/schweikh2.c) ([README.md](/1996/schweikh2/README.md]))
@@ -2182,6 +2190,13 @@ the Makefile despite the fact that very few probably use Solaris nowadays.
 along with a shorter version of something the author suggested one try (it is
 suggested that one try the longer version too but it will run in an infinite
 loop so having it in a script is less desired).
+
+
+## <a name="1996_schweikh3"></a>[1996/schweikh3](/1996/schweikh3/schweikh3.c) ([README.md](/1996/schweikh3/README.md]))
+
+[Cody](#cody) updated the Makefile so that if it fails to compile it will try he
+method suggested for SunOS rather than having to update the Makefile manually or
+running a more complicated command: now one can just run `make`.
 
 
 ## <a name="1996_westley"></a>[1996/westley](/1996/westley/westley.c) ([README.md](/1996/westley/README.md]))
@@ -2198,14 +2213,11 @@ when reading the author's comments. To see how to use the original, see the
 README.md file.
 
 Cody also added the two scripts, [try.sh](/1996/westley/try.sh) and
-[try.alt.sh](/1996/westley/try.alt.sh) to show automate showing the different
+[try.alt.sh](/1996/westley/try.alt.sh) to automate showing the different
 clocks, both with the fixed version and the original (alt) version.
 
 Also, to fix any potential problem with displaying in GitHub the scripts
-provided by the author, Cody added '.sh'.
-
-Later Cody made the entry look more like the original, removing the `argc` in
-`main()` (K&R style functions).
+provided by the author, Cody added '.sh' to the `clock[1-3].sh` scripts.
 
 
 # <a name="1998"></a>1998
@@ -2247,16 +2259,24 @@ as well as allowing one to pass in different file names or strings.
 [Cody](#cody) added a call to `endwin()` to restore terminal sanity (echo etc.) when
 exiting the program (in both versions).
 
+Cody also added the [try.sh](/1998/chaos/try.sh) script that runs the program on
+all the data files, giving instructions on how to rotate and zoom in and out,
+prior to each run.
+
 
 ## <a name="1998_df"></a>[1998/df](/1998/df/df.c) ([README.md](/1998/df/README.md]))
 
 [Cody](#cody) changed a `int *` used for `fopen(3)` to be a `FILE *` to be more correct
 and prevent any possible problems in some systems (which has happened).
 
-Cody also made the fixed version look more like the original version by using
+Cody also made the fixed version to look more like the original version by using
 the old style of `main()` args so that it reads `i,love_unix` more naturally,
-and by changing the typedef `lint` (to `int` - see the code for why this has to
-be done in modern systems) to be `_int`.
+and by changing the `typedef int lint` to be `typedef int _int`. See the code
+for why this has to be done this way.
+
+Cody also added the [try.sh](/1998/df/try.sh) script which runs the program in a
+loop until one hits `q` (or `Q`) or sends intr/ctrl-c. He also proposed there's
+a way to cheat very easily. Can you figure out how?
 
 
 ## <a name="1998_dlowe"></a>[1998/dlowe](/1998/dlowe/dlowe.c) ([README.md](/1998/dlowe/README.md]))
@@ -2408,6 +2428,8 @@ Cody also added an `int` after `register` in `main()` in case clang decides to
 have a problem with that in the future which is not entirely out of the
 question.
 
+Cody also added the [try.sh](/1998/schweikh2/try.sh) script.
+
 
 ## <a name="1998_schweikh3"></a>[1998/schweikh3](/1998/schweikh3/schweikh3.c) ([README.md](/1998/schweikh3/README.md]))
 
@@ -2546,6 +2568,11 @@ Black position and direction: illegal
 This was fixed by having the `scanf(3)` read in a string and then use `atoi(3)`
 on it to assign to the `int`s, much like with `1987/lievaart`. The strings are
 `char[5]` and the `%` specifier is `%4s` which is enough for the game.
+
+
+## <a name="2000_schneiderwent"></a>[2000/schneiderwent](/2000/schneiderwent/schneiderwent.c) ([README.md](/2000/schneiderwent/README.md]))
+
+[Cody](#cody) added the [try.sh](/2000/schneiderwent/try.sh) script.
 
 
 ## <a name="2000_thadgavin"></a>[2000/thadgavin](/2000/thadgavin/thadgavin.c) ([README.md](/2000/thadgavin/README.md]))
@@ -2821,6 +2848,8 @@ SC2248 (style): Prefer double quoting even when variables don't contain special 
 ```
 
 errors/warnings.
+
+Cody also added the [try.sh](/2001/herrmann1/try.sh) script.
 
 
 ## <a name="2001_herrmann2"></a>[2001/herrmann2](/2001/herrmann2/herrmann2.c) ([README.md](/2001/herrmann2/README.md]))

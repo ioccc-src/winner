@@ -4,10 +4,12 @@
 make all
 ```
 
+If you do not have a page up or page down key you might wish to see the
+[Alternate code](#alternate-code) section below. You may redefine all the keys
+and the time step with predefined macros, however, so one lacking page up / page
+down does not strictly need the alternate code; it jut gives those controls a
+default value. The author provided the following table:
 
-
-You may redefine all the keys and the time step with predefined macros. The
-author provided the following able:
 
 ```
 Control         Description         Default Key
@@ -94,12 +96,13 @@ arrows at the same time as typing on the right side.
 
 As the Makefile allows you to configure the keys to use you may redefine the
 keys but with the alt build you cannot, as described earlier, redefine the page
-up and page down replacement keys. If you want to do that you should use the
-original entry as described in the to build section above.
+up and page down replacement keys. The other controls you may redefine; this is
+just a convenience build. If you want to redefine the page up / page down keys
+you should use the original entry as described in the to build section above.
 
-In the alt build it is `f` and `d` respectively as these are letters on the left
-side of the keyboard which is easier to use if one is using the right side for
-movement. These are hard coded, as noted.
+In the alt build it is `f` (for page up) and `d` (for page down) as these are
+letters on the left side of the keyboard which is easier to use if one is using
+the right side for movement. These are hard coded, as noted.
 
 To use the default settings for the alternate build:
 
@@ -114,7 +117,7 @@ want to use page up and page down.
 
 ### Alternate use:
 
-Use `banks.alt` as you would `banks` but for use the different keys as
+Use `banks.alt` as you would `banks` but use the different keys as
 configured at compilation.
 
 

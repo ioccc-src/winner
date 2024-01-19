@@ -129,7 +129,8 @@ all: data ${TARGET}
 	sandwich supernova deep_magic magic charon pluto
 
 ${PROG}: ${PROG}.c
-	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS} || \
+	    ${CC} ${CFLAGS} -I. '-Ddifftime(a,b)=(double)(b-a)' $< -o $@ ${LDFLAGS}
 
 # alternative executable
 #

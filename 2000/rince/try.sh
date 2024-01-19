@@ -15,26 +15,42 @@ make CC="$CC" everything >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-echo "$ ./rince" 1>&2
+read -r -n 1 -p "Press any key to run: ./rince: "
+echo 1>&2
 ./rince
+echo 1>&2
 
-echo "$ ./rince 0.001 $(./dmy2jd 7.8 1 1610)" 1>&2
+read -r -n 1 -p "Press any key to run: ./rince 0.001 $(./dmy2jd 7.8 1 1610): "
+echo 1>&2
 ./rince 0.001 $(./dmy2jd 7.8 1 1610)
+echo 1>&2
 
-echo "$ ./rince 0.01" 1>&2
+read -r -n 1 -p "Press any key to run: ./rince 0.01: "
+echo 1>&2
 ./rince 0.01
+echo 1>&2
 
-echo "$ ./rince 0 2441193.6" 1>&2
+read -r -n 1 -p "Press any key to run: ./rince 0 2441193.6: "
+echo 1>&2
 ./rince 0 2441193.6
+echo 1>&2
 
-echo "$ ./rince 0.01 2441193.6" 1>&2
+read -r -n 1 -p "Press any key to run: ./rince 0.01 2441193.6: "
+echo 1>&2
 ./rince 0.01 2441193.6
+echo 1>&2
 
-echo "$ ./rince 0 $(./dmy2jd 7.8 1 1610)" 1>&2
+read -r -n 1 -p "Press any key to run: ./rince 0 $(./dmy2jd 7.8 1 1610): "
+echo 1>&2
 ./rince 0 $(./dmy2jd 7.8 1 1610)
+echo 1>&2
 
-echo "$ ./rince 0 $(./dmy2jd 8.8 1 1610)" 1>&2
+read -r -n 1 -p "Press any key to run: ./rince 0 $(./dmy2jd 8.8 1 1610): "
+echo 1>&2
 ./rince 0 $(./dmy2jd 8.8 1 1610)
+echo 1>&2
 
-echo "$ ./rince 0 $(./dmy2jd 10.8 1 1610)" 1>&2
+read -r -n 1 -p "Press any key to run: ./rince 0 $(./dmy2jd 10.8 1 1610): "
+echo 1>&2
 ./rince 0 $(./dmy2jd 10.8 1 1610)
+echo 1>&2

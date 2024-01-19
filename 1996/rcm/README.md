@@ -8,8 +8,10 @@ make all
 ## To use:
 
 ```sh
-./rcm < rfc1951.gz
+./rcm < file.gz
 ```
+
+where `file.gz` is some gzipped file.
 
 
 ## Try:
@@ -17,7 +19,7 @@ make all
 For more information try:
 
 ```sh
-./rcm < rfc1952.gz
+./try.sh
 ```
 
 
@@ -28,6 +30,9 @@ For a good no-op try:
 ```sh
 gzip -c < rcm.c | ./rcm
 ```
+
+NOTE: this is done in the [try.sh](try.sh) script as well, along with some other
+commands including a way to do the above command but with more steps.
 
 
 ## Author's remarks:

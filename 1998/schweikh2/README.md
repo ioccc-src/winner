@@ -21,13 +21,14 @@ or
 ## Try:
 
 ```sh
-./yarng 5
+./try.sh
 
 ./yarng
 # watch what it does
 ```
 
-What is the difference there?
+What is the difference between what is in the script and running `yarng` without
+an arg?
 
 
 ## Judges' remarks:

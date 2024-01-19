@@ -6,4 +6,7 @@ indent.c
 indent.o
 prog.orig
 rcm
+rcm.cp2.c
+rcm.cp.c
+rcm.cp.c.gz
 rcm.orig

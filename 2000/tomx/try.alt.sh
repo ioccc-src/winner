@@ -16,21 +16,33 @@ make CC="$CC" alt >/dev/null || exit 1
 clear
 
 echo "Using tomx.alt.c to compile mkentry.c directly:" 1>&2
-echo "$ chmod +x tomx.alt.c" 1>&2
+read -r -n 1 -p "Press any key to run: chmod +x tomx.alt.c: "
+echo 1>&2
 chmod +x tomx.alt.c
-echo "$ rm -f mkentry" 1>&2
-rm -f mkentry
-echo "$ ./tomx.alt.c" 1>&2
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: rm -vf mkentry: "
+echo 1>&2
+rm -vf mkentry
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./tomx.alt.c: "
+echo 1>&2
 ./tomx.alt.c
 echo 1>&2
 
 echo "Using tomx.alt.c as a Makefile to compile mkentry.c:" 1>&2
-echo "$ rm -f mkentry"
-rm mkentry
-echo "$ make -f tomx.alt.c" 1>&2
+read -r -n 1 -p "Press any key to run: rm -vf mkentry: "
+echo 1>&2
+rm -vf mkentry
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: make -f tomx.alt.c: "
+echo 1>&2
 make -f tomx.alt.c
 echo 1>&2
 
-echo "Running mkentry via tomx.alt:" 1>&2
-echo "$ ./tomx.alt" 1>&2
+read -r -n 1 -p "Press any key to run: ./tomx.alt: "
+echo 1>&2
 ./tomx.alt
+echo 1>&2

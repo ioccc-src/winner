@@ -15,16 +15,17 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-read -r -n 1 -p "Press any key to to run ./schweikh2: " 1>&2
-./schweikh2
+read -r -n 1 -p "Press any key to to run ./schweikh2 (space = next page, q = quit): " 1>&2
+echo >&2
+./schweikh2 | less -rEXF
 echo >&2
 
 read -r -n 1 -p "Press any key to run: ./schweikh2 15 1 0 0/0 | head -n 15: " 1>&2
+echo >&2
 ./schweikh2 15 1 0 0/0 | head -n 15
 echo >&2
 
-read -r -n 1 -p "Press any key one more time: " 1>&2
-i=0
-while ((i++<15)); do
-    grep -v '#' schweikh2.c
-done
+read -r -n 1 -p "Press any key to run grep -v '#' schweikh2.c (space = next page, q = quit): "
+echo 1>&2
+grep -v '#' schweikh2.c | less -rEXF
+echo 1>&2

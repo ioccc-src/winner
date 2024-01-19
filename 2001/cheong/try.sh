@@ -15,21 +15,33 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-echo "$ ./cheong 1024" 1>&2
+read -r -n 1 -p "Press any key to run: ./cheong 1024: "
+echo 1>&2
 ./cheong 1024
+echo 1>&2
 
-echo "$ ./cheong 0512" 1>&2
+read -r -n 1 -p "Press any key to run: ./cheong 0512: "
+echo 1>&2
 ./cheong 0512
+echo 1>&2
 
-echo "$ ./cheong 12345678901234567890" 1>&2
+read -r -n 1 -p "Press any key to run: ./cheong 12345678901234567890: "
+echo 1>&2
 ./cheong 12345678901234567890
+echo 1>&2
 
-echo "$ ./cheong 05305265226926441255040573044986873789" 1>&2
+read -r -n 1 -p "Press any key to run: ./cheong 05305265226926441255040573044986873789: "
+echo 1>&2
 ./cheong 05305265226926441255040573044986873789
+echo 1>&2
 
-echo "$ ./cheong 1234567890" 1>&2
+read -r -n 1 -p "Press any key to run: ./cheong 1234567890: "
+echo 1>&2
 ./cheong 1234567890
+echo 1>&2
 
-echo "$ ./cheong 0200000000000000000000000000" 1>&2
+read -r -n 1 -p "Press any key to run: ./cheong 0200000000000000000000000000: "
+echo 1>&2
 ./cheong 0200000000000000000000000000
+echo 1>&2
 

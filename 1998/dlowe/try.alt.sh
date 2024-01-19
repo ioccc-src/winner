@@ -5,18 +5,18 @@
 
 make everything || exit 1
 
-CAT="$(type -P cat)"
-MAN="$(type -P man)"
-COL="$(type -P col)"
+[[ -z "$CAT" ]] && CAT="$(type -P cat)"
+[[ -z "$MAN" ]] && MAN="$(type -P man)"
+[[ -z "$COL" ]] && COL="$(type -P col)"
 
 if [[ -z "$CAT" || ! -e "$CAT" ]]; then
-    echo "$0: no cat found" 1>&2
+    echo "$0: no cat '$CAT' found" 1>&2
     exit 1
 elif [[ -z "$COL" || ! -e "$COL" ]]; then
-    echo "$0: col not found" 1>&2
+    echo "$0: col '$COL' not found" 1>&2
     exit 1
 elif [[ -z "$MAN" || ! -e "$MAN" ]]; then
-    echo "$0: can't execute man" 1>&2
+    echo "$0: can't execute '$MAN'" 1>&2
     exit 1
 fi
 

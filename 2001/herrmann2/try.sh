@@ -28,7 +28,8 @@ echo "$ ./herrmann2 \
 '++  &&r:b<<2+a +w) ((!main(n*n,V) , +-) ),l)),w= +T-->o +o+;{ &!'\
 'a;}return _+= ' < herrmann2.ioccc > herrmann2.orig.c && \
 echo && diff -s herrmann2.alt.c herrmann2.orig.c" 1>&2
-
+read -r -n 1 -p "Press any key to continue: "
+echo 1>&2
 ./herrmann2 \
 'char*d,A[9876];e;b;*ad,a,c;  tw,ndr,T; wri; ;*h; _,ar  ;on;'\
 ' ;l ;i(V)man,n    {-!har  ;   =Aadre(0,&e,o||n -- +,o4,=9,l=b=8,'\
@@ -39,26 +40,31 @@ echo && diff -s herrmann2.alt.c herrmann2.orig.c" 1>&2
 '++  &&r:b<<2+a +w) ((!main(n*n,V) , +-) ),l)),w= +T-->o +o+;{ &!'\
 'a;}return _+= ' < herrmann2.ioccc > herrmann2.orig.c && \
 echo && diff -s herrmann2.alt.c herrmann2.orig.c
-
 echo 1>&2
+
 echo "./herrmann2 "234 84 045 5 6765 7487 65190 84 656 254 12 43931 818 0 6542 \
 341 45 567 76967 7244 606 976567 895 81898 095 68678 1843 4650547 \
 565980691 389 04974" < herrmann2.ioccc" 1>&2
-
+read -r -n 1 -p "Press any key to continue: "
+echo 1>&2
 ./herrmann2 "234 84 045 5 6765 7487 65190 84 656 254 12 43931 818 0 6542 \
 341 45 567 76967 7244 606 976567 895 81898 095 68678 1843 4650547 \
 565980691 389 04974" < herrmann2.ioccc
 echo 1>&2
 
-rm -f ioccc.out ioccc.out2
+read -r -n 1 -p "Press any key to run: rm -vf ioccc.out ioccc.out2: "
+echo 1>&2
+rm -vf ioccc.out ioccc.out2
+
 read -r -n 1 -p "Press any key to test the output a couple times on herrmann2.ioccc: "
 echo "$ ./herrmann2 < herrmann2.ioccc" 1>&2
 ./herrmann2 < herrmann2.ioccc | tee ioccc.out
 sleep 2
 echo "$ ./herrmann2 < herrmann2.ioccc" 1>&2
 ./herrmann2 < herrmann2.ioccc | tee ioccc.out2
-echo "$ diff ioccc.out ioccc.out2" 1>&2
-diff ioccc.out ioccc.out2
+read -r -n 1 -p "Press any key to run: diff -s ioccc.out ioccc.out2: "
+echo 1>&2
+diff -s ioccc.out ioccc.out2
 rm -f ioccc.out ioccc.out2
 echo 1>&2
 
@@ -68,7 +74,9 @@ echo "$ ./herrmann2 < herrmann2.cup" 1>&2
 sleep 2
 echo "$ ./herrmann2 < herrmann2.cup" 1>&2
 ./herrmann2 < herrmann2.cup | tee cup.out2
-echo "$ diff cup.out cup.out2" 1>&2
-diff cup.out cup.out2
+read -r -n 1 -p "Press any key to run: diff -s cup.out cup.out2: "
+echo 1>&2
+diff -s cup.out cup.out2
+echo 1>&2
 
 rm -f cup.out cup.out2

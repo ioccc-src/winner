@@ -21,6 +21,21 @@ make chaos_nohalf
 ```
 
 
+## Try:
+
+
+```sh
+./try.sh
+```
+
+This script will run the program on each data file. To quit the program hit `q`.
+If not all files have been used it will go to the next one; otherwise the script
+will be finished. To end the script early send intr/ctrl-c.
+
+The script will give you instructions on how to use the program and things to
+try each time it is run, as a helpful reminder.
+
+
 ## Judge's Comments:
 
 This is the author's first IOCCC entry.  We thought the entry was

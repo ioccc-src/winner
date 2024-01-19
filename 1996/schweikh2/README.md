@@ -41,8 +41,8 @@ while :; do grep -v '#' schweikh2.c; done
 ```
 
 (and we do too) which works with `sh`, `bash`, `ksh` and `zsh` as well. Press
-ctrl-c to stop it. Observe how the [try.sh](try.sh) script does this a number of
-times.
+ctrl-c to stop it. Observe how the [try.sh](try.sh) script does this once to
+make it easier to see what is happening.
 
 
 ## Judges' remarks:

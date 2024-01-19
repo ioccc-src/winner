@@ -31,13 +31,7 @@ need an older compiler perhaps gcc 2.95.
 ## Try:
 
 ```sh
-./herrmann1.sh 'prg=herrmann1.times2'
-```
-
--or-
-
-```sh
-./herrmann1.sh 'prg=herrmann1.gcd'
+./try.sh
 ```
 
 

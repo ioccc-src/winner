@@ -11,7 +11,9 @@ below for more details.
 ## To use:
 
 ```sh
-./dlowe < anyfile > pootfile
+./dlowe < file > pootfile
+
+./dlowe < file
 ```
 
 
@@ -42,6 +44,8 @@ Also try:
 ./try.sh
 ```
 
+Did you spot the Easter egg there?
+
 
 ## Alternate code:
 
@@ -59,7 +63,7 @@ make alt
 ### Alternate use:
 
 ```
-./dlowe.alt < anyfile > pootfile
+./dlowe.alt < file > pootfile
 ```
 
 What's the difference between this and `dlowe`?
@@ -70,6 +74,9 @@ What's the difference between this and `dlowe`?
 ```sh
 ./try.alt.sh
 ```
+
+Did you spot the Easter egg there?
+
 
 
 ## Judges' remarks:

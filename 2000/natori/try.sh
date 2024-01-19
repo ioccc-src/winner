@@ -19,12 +19,15 @@ NATORI="natori"
 moon()
 {
     read -r -n 1 -p "Press any key to randomly show the northern/southern hemisphere Moon: "
+    echo 1>&2
     for ((i=0;i<=10;i++)); do
 	RAND=$((RANDOM % 1000))
 	if [[ "$RAND" -le 500 ]]; then
 	    ./"$NATORI"
+	    echo 1>&2
 	else
 	    ./"$NATORI".alt
+	    echo 1>&2
 	fi
     done
 
@@ -32,6 +35,7 @@ moon()
     RAND=$((RANDOM % 1000))
     if [[ "$RAND" -gt 500 ]]; then
 	read -r -n 1 -p "Press any key to alternate between the northern/southern hemisphere Moon: "
+	echo 1>&2
 	./"$NATORI"
 	./"$NATORI".alt
 	./"$NATORI"
@@ -40,6 +44,7 @@ moon()
 	./"$NATORI".alt
     else
 	read -r -n 1 -p "Press any key to alternate between the southern/northern hemisphere Moon: "
+	echo 1>&2
 	./"$NATORI".alt
 	./"$NATORI"
 	./"$NATORI".alt
@@ -54,6 +59,7 @@ moon()
 
     if [[ "$RAND" -le 499 ]]; then
 	read -r -n 1 -p "Press any key to alternate between the northern/southern hemisphere Moon: "
+	echo 1>&2
 	./"$NATORI"
 	./"$NATORI".alt
 	./"$NATORI"
@@ -62,6 +68,7 @@ moon()
 	./"$NATORI".alt
     else
 	read -r -n 1 -p "Press any key to alternate between the southern/northern hemisphere Moon: "
+	echo 1>&2
 	./"$NATORI".alt
 	./"$NATORI"
 	./"$NATORI".alt
@@ -77,12 +84,14 @@ moon()
     RAND=$((RANDOM % 1000))
     if [[ "$RAND" -gt 500 ]]; then
 	read -r -n 1 -p "Press any key to alternate between the northern/southern hemisphere Moon: "
+	echo 1>&2
 	( ./"$NATORI"; ./"$NATORI.alt" ; ./"$NATORI" ; ./"$NATORI.alt"; \
-	    ./"$NATORI"; ./"$NATORI.alt" ) | less
+	    ./"$NATORI"; ./"$NATORI.alt" ) | less -rEXF
     else
 	read -r -n 1 -p "Press any key to alternate between the southern/northern hemisphere Moon: "
+	echo 1>&2
 	( ./"$NATORI.alt"; ./"$NATORI" ; ./"$NATORI.alt" ; ./"$NATORI"; \
-	    ./"$NATORI.alt"; ./"$NATORI" ) | less
+	    ./"$NATORI.alt"; ./"$NATORI" ) | less -rEXF
     fi
 
     echo 1>&2
@@ -91,12 +100,14 @@ moon()
     echo 1>&2
     if [[ "$RAND" -gt 500 ]]; then
 	read -r -n 1 -p "Press any key to alternate between the northern/southern hemisphere Moon: "
+	echo 1>&2
 	( ./"$NATORI"; ./"$NATORI.alt" ; ./"$NATORI" ; ./"$NATORI.alt"; \
-	    ./"$NATORI"; ./"$NATORI.alt" ) | less
+	    ./"$NATORI"; ./"$NATORI.alt" ) | less -rEXF
     else
 	read -r -n 1 -p "Press any key to alternate between the southern/northern hemisphere Moon: "
+	echo 1>&2
 	( ./"$NATORI.alt"; ./"$NATORI" ; ./"$NATORI.alt" ; ./"$NATORI"; \
-	    ./"$NATORI.alt"; ./"$NATORI" ) | less
+	    ./"$NATORI.alt"; ./"$NATORI" ) | less -rEXF
     fi
     echo 1>&2
 
@@ -107,12 +118,14 @@ moon()
     echo 1>&2
     if [[ "$RAND" -le 499 ]]; then
 	read -r -n 1 -p "Press any key to alternate between the northern/southern hemisphere Moon: "
+	echo 1>&2
 	( ./"$NATORI"; ./"$NATORI.alt" ; ./"$NATORI" ; ./"$NATORI.alt"; \
-	    ./"$NATORI"; ./"$NATORI.alt" ) | less
+	    ./"$NATORI"; ./"$NATORI.alt" ) | less -rEXF
     else
 	read -r -n 1 -p "Press any key to alternate between the southern/northern hemisphere Moon: "
+	echo 1>&2
 	( ./"$NATORI.alt"; ./"$NATORI" ; ./"$NATORI.alt" ; ./"$NATORI"; \
-	    ./"$NATORI.alt"; ./"$NATORI" ) | less
+	    ./"$NATORI.alt"; ./"$NATORI" ) | less -rEXF
     fi
 
     echo 1>&2
@@ -121,12 +134,14 @@ moon()
     echo 1>&2
     if [[ "$RAND" -le 499 ]]; then
 	read -r -n 1 -p "Press any key to alternate between the northern/southern hemisphere Moon: "
+	echo 1>&2
 	( ./"$NATORI"; ./"$NATORI.alt" ; ./"$NATORI" ; ./"$NATORI.alt"; \
-	    ./"$NATORI"; ./"$NATORI.alt" ) | less
+	    ./"$NATORI"; ./"$NATORI.alt" ) | less -rEXF
     else
 	read -r -n 1 -p "Press any key to alternate between the southern/northern hemisphere Moon: "
+	echo 1>&2
 	( ./"$NATORI.alt"; ./"$NATORI" ; ./"$NATORI.alt" ; ./"$NATORI"; \
-	    ./"$NATORI.alt"; ./"$NATORI" ) | less
+	    ./"$NATORI.alt"; ./"$NATORI" ) | less -rEXF
     fi
     echo 1>&2
 }

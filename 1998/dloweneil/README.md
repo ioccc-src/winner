@@ -27,8 +27,8 @@ For more detailed information see [1998 dloweneil in bugs.md](/bugs.md#1998-dlow
 ./pootris [X size of board] [Y size of board]
 ```
 
-Pressing `a` moves the current letter position counterclockwise around the
-border of the playing field.
+Pressing `a` moves the current letter position counterclockwise/anticlockwise
+(a)round the border of the playing field.
 
 Pressing `s` moves the current letter one position clockwise around the border
 of the playing field.
@@ -39,7 +39,7 @@ Pressing `d` drops the current letter onto the board.
 ## Alternate code:
 
 This version has it so that where in addition to `a` moving you
-anticlockwise/counterclockwise `h` does as well; and in addition to `s` moving
+counterclockwise/anticlockwise `h` does as well; and in addition to `s` moving
 clockwise `l` does as well. Instead of using `d` to drop the letter you can do
 `j` or space. Finally to quit this version you can press `q`.
 

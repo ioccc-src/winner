@@ -15,11 +15,17 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-echo "$ ./schweikh foo 'f??'; echo \$?" 1>&2
+read -r -n 1 -p "Press any key to run: ./schweikh foo 'f??'; echo \$?: "
+echo 1>&2
 ./schweikh foo 'f??'; echo $?
+echo 1>&2
 
-echo "$ ./schweikh 'best short program' '??st*o**p?*'; echo \$?" 1>&2
+read -r -n 1 -p "Press any key to run: ./schweikh 'best short program' '??st*o**p?*'; echo \$?: "
+echo 1>&2
 ./schweikh 'best short program' '??st*o**p?*'; echo $?
+echo 1>&2
 
-echo "$ ./schweikh bar 'f??'; echo \$?" 1>&2
+read -r -n 1 -p "Press any key to run: ./schweikh bar 'f??'; echo \$?: "
+echo 1>&2
 ./schweikh bar 'f??'; echo $?
+echo 1>&2

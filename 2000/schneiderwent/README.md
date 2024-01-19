@@ -21,6 +21,13 @@ make
 
 What's the difference?
 
+If you have a long while to spare (and you're bored enough that you could watch
+paint dry :-) ) you might also try:
+
+```sh
+./try.sh
+```
+
 
 ## Judges' remarks:
 
