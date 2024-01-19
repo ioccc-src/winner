@@ -2166,6 +2166,11 @@ the function in the pointer assignment.
 NOTE: if there is no X server running this program will still crash.
 
 
+## <a name="1996_rcm"></a>[1996/rcm](/1996/rcm/rcm.c) ([README.md](/1996/rcm/README.md]))
+
+[Cody](#cody) added the [try.sh](/1996/rcm/try.sh) script.
+
+
 ## <a name="1996_schweikh1"></a>[1996/schweikh1](/1996/schweikh1/schweikh1.c) ([README.md](/1996/schweikh1/README.md]))
 
 The author stated that `-I/usr/include` is needed by gcc in Solaris because
