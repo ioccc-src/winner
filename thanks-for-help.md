@@ -35,9 +35,9 @@ on a winner by winner basis.
 
 [Cody](#cody) fixed this to work for macOS.
 
-The problem was to do with the way that the `read(/2)` function was redefined.
+The problem was to do with the way that the `read(2)` function was redefined.
 With macOS the second arg needs to be a `void *` and this also necessitated some
-casts to `int` (on the second arg) in the call to `write(/2)` (in `read()`).
+casts to `int` (on the second arg) in the call to `write(2)` (in `read()`).
 
 Later Cody corrected the mistake where the `"hello, world!"` string was on one
 line rather than two lines which the author told us (Landon) that they liked.
@@ -788,7 +788,7 @@ Cody also added the [try.sh](/1989/fubar/try.sh) script.
 ## <a name="1989_jar.1"></a>[1989/jar.1](/1989/jar.1/jar.1.c) ([README.md](/1989/jar.1/README.md]))
 
 To prevent annoying output to `/dev/tty` we changed the code to simulate the
-output via `strings(/1)` but [Cody](#cody) removed the ill-famed `useless use of cat` to
+output via `strings(1)` but [Cody](#cody) removed the ill-famed `useless use of cat` to
 shut [ShellCheck](https://github.com/koalaman/shellcheck) up.
 Why is it ill-famed? Because there is no such thing as a
 useless cat, that's why! For instance, the fact they even exist is proof that
@@ -1435,14 +1435,14 @@ was never fixed in any of the files, not the code or the documentation, and thus
 was entirely incorrect code. A fun fact is that one can do:
 
 ```c
-W= fopen(wc>= 2 ? V[1] : __FILE__,"rt");if(!W)exit(/1);
+W= fopen(wc>= 2 ? V[1] : __FILE__,"rt");if(!W)exit(1);
 ```
 
 but one _CANNOT_ do:
 
 ```c
-W= fopen(wc>= 2 ? V[1] : __FILE__,"rt");if(!W)exit(/1);
-if (W==NULL)exit(/1);
+W= fopen(wc>= 2 ? V[1] : __FILE__,"rt");if(!W)exit(1);
+if (W==NULL)exit(1);
 ```
 
 because `adwc.c` will be empty! The difference is it is on a newline, the check.
@@ -1647,7 +1647,7 @@ that we suggested as well as one he provided.
 [Cody](#cody) fixed an infinite loop if one were to input numbers < `0` or > `077`. The
 problem was that it tried to use `scanf(3)` with the format specifier `"%o %o"` in a
 loop, reading again if `scanf(3)` did not return 2 (that was not a problem in
-that `scanf(/2)` will not return until the number of specifiers have been
+that `scanf(2)` will not return until the number of specifiers have been
 processed or some error occurs) or a function it called returned non-zero.
 
 Instead the fix involves the `scanf(3)` specifiers being `"%4s %4s"` on two
@@ -1785,7 +1785,7 @@ of the alt one allowing one to change the amount to sleep).
 ## <a name="1993_rince"></a>[1993/rince](/1993/rince/rince.c) ([README.md](/1993/rince/README.md]))
 
 [Yusuke](#yusuke) supplied a patch to get this to work in modern systems. This fix also
-applies the compatibility issue of `select(/2)` described in the README.md file.
+applies the compatibility issue of `select(2)` described in the README.md file.
 
 [Cody](#cody) added a call to `endwin()` to help with terminal sanity after the program
 ends.
@@ -2100,7 +2100,7 @@ also fixed an infinite loop in the try commands.
 
 The problem with the infinite loop is that the file `august.oc` had to have
 lines starting with `#` removed and it was not being done. After this is done
-with say `sed(/1)` (like `sed -i'' '/^#/d' august.oc` which has been added to
+with say `sed(1)` (like `sed -i'' '/^#/d' august.oc` which has been added to
 both the remarks and the `try.sh` script noted below) the code can proceed. This
 problem existed in macOS.
 
@@ -2343,7 +2343,7 @@ doesn't crash. At this point since the author stated it has no `while`,
 doing:
 
 ```c
-((V[1]&&((atoi(V[1])>0&&atoi(V[1])<27))||(exit(/1),1)));
+((V[1]&&((atoi(V[1])>0&&atoi(V[1])<27))||(exit(1),1)));
 ```
 
 Cody also added the [try.sh](/1998/schnitzi/try.sh) script to help users try the
@@ -3030,7 +3030,7 @@ is entirely possible it will eventually be that they don't.
 Cody also added the [try.sh](/2004/kopczynski/try.sh) script and various data
 files: [kopczynski-a](kopczynski-a) to demonstrate what happens when art more
 like a letter is fed to the program and the `kopczynski*-rev` files which are
-the data files reversed with `rev(/1)`. One had to be modified additionally to
+the data files reversed with `rev(1)`. One had to be modified additionally to
 get it to work, that being `kopczynski-10-rev`.
 
 
@@ -3141,7 +3141,7 @@ suite.
 not work and end up causing a bus error. Instead of `stty sane` it uses `stty
 echo` which is what it was trying to accomplish.
 
-The author noted that one can define `NO_STTY` to not use `stty(/1)` at all
+The author noted that one can define `NO_STTY` to not use `stty(1)` at all
 (either to prevent having to hit enter or to turn echo off/on) which is
 explained in the README.md.
 
@@ -3931,8 +3931,8 @@ this broke `make` which Cody also fixed.
 ## <a name="2013_mills"></a>[2013/mills](/2013/mills/mills.c) ([README.md)[2013/mills/README.md))
 
 [Cody](#cody) fixed this so that the server would not refuse the connection
-after the first call to `close(/2)`. The problem was that because the backlog to
-`listen(/2)` was 1 once the connection closed the server was essentially 'dead'.
+after the first call to `close(2)`. The problem was that because the backlog to
+`listen(2)` was 1 once the connection closed the server was essentially 'dead'.
 The backlog was changed to 10 and this solves the problem. It is not known if
 this was specific to macOS but it was not specific to a browser as Safari and
 Firefox both had the problem.
