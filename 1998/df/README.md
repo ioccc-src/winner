@@ -11,6 +11,19 @@ make all
 ./df
 ```
 
+
+## Try:
+
+```sh
+./try.sh
+```
+
+This will run the program in a loop until you exit (`q` when prompted or
+ctrl-c/intr).
+
+Can you figure out a very simple pipeline to cheat?
+
+
 ## Judges' remarks;
 
 Everyone talks about how data hiding can produce clearer code; I am
@@ -33,6 +46,7 @@ Extra credit questions:
 - Where are the words stored?
 - How many words does this entry use?
 - Can you add more words to the program and still make it work?
+- Are there any misspelt words? If yes what are they?
 
 
 ## Author's remarks:

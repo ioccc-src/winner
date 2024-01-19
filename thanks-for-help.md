@@ -2269,10 +2269,14 @@ prior to each run.
 [Cody](#cody) changed a `int *` used for `fopen(3)` to be a `FILE *` to be more correct
 and prevent any possible problems in some systems (which has happened).
 
-Cody also made the fixed version look more like the original version by using
+Cody also made the fixed version to look more like the original version by using
 the old style of `main()` args so that it reads `i,love_unix` more naturally,
-and by changing the typedef `lint` (to `int` - see the code for why this has to
-be done in modern systems) to be `_int`.
+and by changing the `typedef int lint` to be `typedef int _int`. See the code
+for why this has to be done this way.
+
+Cody also added the [try.sh](/1998/df/try.sh) script which runs the program in a
+loop until one hits `q` (or `Q`) or sends intr/ctrl-c. He also proposed there's
+a way to cheat very easily. Can you figure out how?
 
 
 ## <a name="1998_dlowe"></a>[1998/dlowe](/1998/dlowe/dlowe.c) ([README.md](/1998/dlowe/README.md]))
