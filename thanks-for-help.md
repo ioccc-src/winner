@@ -2923,6 +2923,11 @@ described in the README.md, based on the author's remarks.
 # <a name="2004"></a>2004
 
 
+## <a name="2004_anonymous"></a>[2004/anonymous](/2004/anonymous/anonymous.c) ([README.md](/2004/anonymous/README.md]))
+
+[Cody](#cody) added the [try.sh](/2004/anonymous/try.sh) script.
+
+
 ## <a name="2004_arachnid"></a>[2004/arachnid](/2004/arachnid/arachnid.c) ([README.md](/2004/arachnid/README.md]))
 
 [Cody](#cody) added an [alternate version](/2004/arachnid/README.md#alternate-code) which
