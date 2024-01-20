@@ -2994,6 +2994,14 @@ is done this way to prevent extraction from the entry directory overwriting the
 files and causing `make clobber` to wipe some of them out.
 
 
+## <a name="2004_hibachi"></a>[2004/hibachi](/2004/hibachi/hibachi.c) ([README.md](/2004/hibachi/README.md]))
+
+[Cody](#cody) fixed a bunch of links in the index.html provided with the entry
+(web server) that no longer exist or have changed in some other way (`https`
+instead of `http` for instance). In most cases a new link or change to https was
+all that was necessary but at least one or two URLs required the Internet
+Wayback Machine.
+
 
 ## <a name="2004_jdalbec"></a>[2004/jdalbec](/2004/jdalbec/jdalbec.c) ([README.md](/2004/jdalbec/README.md))
 

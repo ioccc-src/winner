@@ -58,14 +58,14 @@ else
 	echo "<tr><td>[ BAD ] DOCUMENT_ROOT</td></tr>"
 fi
 
-# Test for existance only, since the location changes.
+# Test for existence only, since the location changes.
 if [ X"$SCRIPT_FILENAME" = X ]; then
 	echo "<tr><td>[ BAD ] SCRIPT_FILENAME</td></tr>"
 else
 	echo "<tr><td>[ OK  ] SCRIPT_FILENAME</td></tr>"
 fi
 
-# Test for existance only, since the default value might change.
+# Test for existence only, since the default value might change.
 if [ X"$SERVER_PORT" = X ]; then
 	echo "<tr><td>[ BAD ] SERVER_PORT</td></tr>"
 else

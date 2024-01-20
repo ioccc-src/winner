@@ -11,18 +11,11 @@ make
 cd build; ./hibachi-start.sh &
 ```
 
-
-## Try:
-
-```sh
-cd build; ./hibachi-start.sh &
-```
-
 Then use your web browser to visit `http://localhost:8008/`. When you're
 finished make sure to kill `hibachi`.
 
-NOTE: you must be in the `build` directory when running `hibachi` for this to
-work.
+NOTE: you must be in the `build` directory when running `hibachi-start.sh` for
+this to work right.
 
 
 ## Judges' remarks:
@@ -45,9 +38,9 @@ so the file does not exist here.
 
 `Hibachi` is a simple, small, and (probably) very secure web server.
 
-There is a `hibachi.tgz` file that unpacks several support
-files and a subdirectory tree containing the documentation and
-examples. It can be viewed by:
+There is a `hibachi.tgz` file (NOTE: this file was removed by the judges after
+extraction) that unpacks several support files and a subdirectory tree
+containing the documentation and examples. It can be viewed by:
 
 ```sh
 tar -zxf hibachi.tgz
