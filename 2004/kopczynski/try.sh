@@ -16,9 +16,12 @@ make CC="$CC" all >/dev/null || exit 1
 clear
 
 for f in kopczynski-{8{a,b,c},a,9{,-rev},10{,-rev},11{,-rev}}; do
-    echo "$ cat $f" 1>&2
+    read -r -n 1 -p "Press any key to run: cat $f: "
+    echo 1>&2
     cat "$f"
-    read -r -n 1 -p "Press any key to continue: "
+    echo 1>&2
+    read -r -n 1 -p "Press any key to run: ./kopczynski < $f: "
+    echo 1>&2
     ./kopczynski < "$f"
-    echo "" 1>&2
+    echo 1>&2
 done
