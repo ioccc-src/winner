@@ -2247,6 +2247,9 @@ appears that they do allow 1 but for instance 4 is not allowed. However as it's
 quite possible they will 'fix' this defect it would be better to have this not
 be a problem at such a time.
 
+Cody also added the [bas1.sh](/1998/bas1/bas1.sh) script to simplify running the
+program.
+
 
 ## <a name="1998_bas2"></a>[1998/bas2](/1998/bas2/bas2.c) ([README.md](/1998/bas2/README.md]))
 
