@@ -16,12 +16,19 @@ make
 
 ```sh
 ./vik1
+
 ./vik1 a
+
 ./vik1 d2
+
 ./vik1 ad3
 ```
 
+
 Can you figure out how to cheat?
+
+Also see the author's remarks below for more details on the different
+modes/options.
 
 
 ## Judges' remarks:
