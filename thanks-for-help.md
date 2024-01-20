@@ -2930,6 +2930,11 @@ allows those like himself used to `h`, `j`, `k` and `l` movement keys to not get
 lost. Non rogue players, vi users and Dvorak typists are invited to get lost (or
 use the original version)! :-)
 
+Cody also renamed the `arachnid.info` file to
+[arachnid.txt](/2004/arachnid/arachnid.txt) as it's not really an informative
+file but a maze file. The extension `.maz` was not chosen to help with (some?)
+browsers knowing what to do with it.
+
 
 ## <a name="2004_burley"></a>[2004/burley](/2004/burley/burley.c) ([README.md](/2004/burley/README.md]))
 
