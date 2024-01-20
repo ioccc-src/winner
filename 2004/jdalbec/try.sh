@@ -16,27 +16,21 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-echo "$ ./jdalbec 11 | head" 1>&2
+read -r -n 1 -p "Press any key to run: ./jdalbec 11 | head: "
+echo 1>&2
 ./jdalbec 11 | head
 echo 1>&2
-read -r -n 1 -p "Press any key to continue: "
+read -r -n 1 -p "Press any key to run: ./jdalbec 47 | head | grep ':': "
 echo 1>&2
-echo "$ ./jdalbec 47 | grep : | head | grep :" 1>&2
-./jdalbec 47 | head | grep :
+./jdalbec 47 | head | grep ':'
 echo 1>&2
 
-read -r -n 1 -p "Press any key to continue: "
+read -r -n 1 -p "Press any key to run: ./jdalbec 1 | head: "
 echo 1>&2
-echo "$ ./jdalbec 1 | head" 1>&2
 ./jdalbec 1 | head
 echo 1>&2
 
-read -r -n 1 -p "Press any key to continue: "
+read -r -n 1 -p "Press any key to run: ./jdalbec 1 1 | head: "
 echo 1>&2
-echo "$ ./jdalbec 11 | head" 1>&2
-./jdalbec 11 | head
-echo 1>&2
-
-read -r -n 1 -p "Press any key to continue: "
-echo "$ ./jdalbec 1 1 | head" 1>&2
 ./jdalbec 1 1 | head
+echo 1>&2
