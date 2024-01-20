@@ -19,7 +19,7 @@ code](#alternate-code) below.
 ## Try:
 
 ```sh
-./arachnid arachnid.info
+./arachnid arachnid.txt
 ```
 
 and then try:

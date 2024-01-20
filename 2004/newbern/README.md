@@ -15,8 +15,7 @@ make
 ## Try:
 
 ```sh
-./newbern newbern.dat "IOCCC 2004"
-echo SOS | ./newbern
+./try.sh
 ```
 
 

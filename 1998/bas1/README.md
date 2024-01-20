@@ -7,22 +7,8 @@ make all
 
 ## To use:
 
-If `lpr` on your system can print PostScript:
-
 ```sh
-./bemazing | gunzip | lpr
-```
-
-else, while in X Window System,
-
-```sh
-./bemazing | gunzip | gv -
-```
-
-or:
-
-```sh
-./bemazing | gunzip | gs -sDEVICE=pgmraw -sOutputFile='|xv -' -
+./bas1.sh
 ```
 
 

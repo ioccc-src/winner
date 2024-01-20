@@ -22,6 +22,9 @@ version](#alternate-code) below.
 ./try.sh
 ```
 
+Try running this on different days, say a few days apart, and each time run it
+several times in a row (or several times in a day).
+
 Also try modifying the code so that it will show another Moon phase based on
 input or else just by the code itself. Bonus points if you can make it show all~
 
@@ -47,11 +50,23 @@ make alt
 ./natori.alt
 ```
 
+Try running this on different days, say a few days apart, and each time run it
+several times in a row (or several times in a day).
+
 What happens if you run it in the northern hemisphere? Are there any
 differences?
 
 Can you identify any Moon phases that result in the same output of both
 versions? Or are there any?
+
+
+### Alternate try:
+
+```sh
+./try.alt.sh
+```
+
+Like with [try.sh](try.sh), try using this multiple times.
 
 
 ## Judges' remarks:

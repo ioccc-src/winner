@@ -2,6 +2,8 @@
 # sort with: sort -d -u
 *.dSYM
 hoyle
+hoyle1.txt
+hoyle2.txt
 hoyle.alt
 hoyle.orig
 indent

@@ -2247,6 +2247,9 @@ appears that they do allow 1 but for instance 4 is not allowed. However as it's
 quite possible they will 'fix' this defect it would be better to have this not
 be a problem at such a time.
 
+Cody also added the [bas1.sh](/1998/bas1/bas1.sh) script to simplify running the
+program.
+
 
 ## <a name="1998_bas2"></a>[1998/bas2](/1998/bas2/bas2.c) ([README.md](/1998/bas2/README.md]))
 
@@ -2534,8 +2537,12 @@ segfault when run or not compile at all (gcc and clang respectively).
 
 Cody also provided alternate code that supports the southern hemisphere.
 
-Cody also provided the [try.sh](/2000/natori/try.sh) script that shows the Moon
-phase in artistic ways.
+Cody also provided the [try.sh](/2000/natori/try.sh) and
+[try.alt.sh](/2000/natori/try.alt.sh) scripts that show the Moon phase in
+artistic ways. It is recommended one try both a number of times in a row on
+different days (that is run `./try.sh` several times in a row a few days apart,
+until you see all the Moon phases, and run `./try.alt.sh` a few times in a row a
+few days apart, until you see all the Moon phases).
 
 Later on Cody restored the `#include`s in the source code which had been changed
 by us to make it a one-liner again but this was an error as it was not a
@@ -2923,6 +2930,11 @@ allows those like himself used to `h`, `j`, `k` and `l` movement keys to not get
 lost. Non rogue players, vi users and Dvorak typists are invited to get lost (or
 use the original version)! :-)
 
+Cody also renamed the `arachnid.info` file to
+[arachnid.txt](/2004/arachnid/arachnid.txt) as it's not really an informative
+file but a maze file. The extension `.maz` was not chosen to help with (some?)
+browsers knowing what to do with it.
+
 
 ## <a name="2004_burley"></a>[2004/burley](/2004/burley/burley.c) ([README.md](/2004/burley/README.md]))
 
@@ -2982,6 +2994,19 @@ is done this way to prevent extraction from the entry directory overwriting the
 files and causing `make clobber` to wipe some of them out.
 
 
+## <a name="2004_hibachi"></a>[2004/hibachi](/2004/hibachi/hibachi.c) ([README.md](/2004/hibachi/README.md]))
+
+[Cody](#cody) fixed a bunch of links in the index.html provided with the entry
+(web server) that no longer exist or have changed in some other way (`https`
+instead of `http` for instance). In most cases a new link or change to https was
+all that was necessary but at least one or two URLs required the Internet
+Wayback Machine.
+
+
+## <a name="2004_hoyle"></a>[2004/hoyle](/2004/hoyle/hoyle.c) ([README.md](/2004/hoyle/README.md]))
+
+[Cody](#cody) added the [try.sh](/2004/hoyle/try.sh) script.
+
 
 ## <a name="2004_jdalbec"></a>[2004/jdalbec](/2004/jdalbec/jdalbec.c) ([README.md](/2004/jdalbec/README.md))
 
@@ -3037,6 +3062,10 @@ get it to work, that being `kopczynski-10-rev`.
 ## <a name="2004_newbern"></a>[2004/newbern](/2004/newbern/newbern.c) ([README.md](/2004/newbern/README.md]))
 
 [Cody](#cody) and Landon individually fixed this to work with clang.
+
+Cody also added the [try.sh](/2004/newbern/try.sh) script (with a hidden feature
+that the author referred to and was documented by [Yusuke](#yusuke) though Cody
+chose the word `IOCCC` instead of `AAA`).
 
 
 ## <a name="2004_schnitzi"></a>[2004/schnitzi](/2004/schnitzi/schnitzi.c) ([README.md](/2004/schnitzi/README.md]))
