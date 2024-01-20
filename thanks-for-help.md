@@ -3081,6 +3081,8 @@ He also changed the time factor in the data files as the animations went too
 fast in modern systems, especially the scrolling text of
 [schnitzi.inp1](schnitzi.inp1).
 
+Cody also added the [try.sh](/2004/schnitzi/try.sh) script.
+
 
 ## <a name="2004_sds"></a>[2004/sds](/2004/sds/sds.c) ([README.md](/2004/sds/README.md))
 
