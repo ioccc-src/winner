@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# pandoc_wrapper.sh - wrapper tool to run pandoc
+# pandoc-wrapper.sh - wrapper tool to run pandoc
 #
 # This tool is intended to be used as a 'pandoc wrapper tool' during HTML phase number 21.
 #
@@ -56,7 +56,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.3.1 2024-01-16"
+export VERSION="1.3.2 2024-01-19"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0

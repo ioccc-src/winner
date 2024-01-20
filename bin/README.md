@@ -13,7 +13,7 @@ as well as various JSON files and other content from the
 ## bin tools
 
 
-### [all_run.sh](all_run.sh)
+### [all-run.sh](all-run.sh)
 
 Run a command on all winning entries.
 
@@ -38,7 +38,7 @@ Updates the [status.json](/status.json) file.
 Output manifest table from a winner .winner.json file.
 
 
-### [pandoc_wrapper.sh](pandoc_wrapper.sh)
+### [pandoc-wrapper.sh](pandoc-wrapper.sh)
 
 Wrapper tool to run pandoc.
 

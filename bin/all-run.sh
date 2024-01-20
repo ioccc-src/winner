@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# all_run.sh - run a command for all winners
+# all-run.sh - run a command for all winners
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
@@ -49,7 +49,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1 2024-01-16"
+export VERSION="1.1.1 2024-01-19"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -64,7 +64,7 @@ status="$?"
 if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
-export PANDOC_WRAPPER="bin/pandoc_wrapper.sh"
+export PANDOC_WRAPPER="bin/pandoc-wrapper.sh"
 export PANDOC_WRAPPER_OPTSTR="-f markdown -t html --fail-if-warnings=true"
 export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc"
 export TOP_URL="https://ioccc-src.github.io/temp-test-ioccc"

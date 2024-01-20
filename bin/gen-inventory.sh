@@ -70,7 +70,7 @@ status="$?"
 if [[ $status -eq 0 ]]; then
     TOPDIR=$("$GIT_TOOL" rev-parse --show-toplevel)
 fi
-export PANDOC_WRAPPER="bin/pandoc_wrapper.sh"
+export PANDOC_WRAPPER="bin/pandoc-wrapper.sh"
 export PANDOC_WRAPPER_OPTSTR="-f markdown -t html --fail-if-warnings=true"
 export REPO_URL="https://github.com/ioccc-src/temp-test-ioccc"
 export TOP_URL="https://ioccc-src.github.io/temp-test-ioccc"
