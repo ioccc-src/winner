@@ -11,20 +11,33 @@ for more details.
 ## To use:
 
 ```sh
-./gavare
-```
-
-
-## Try:
-
-```sh
 ./gavare > ioccc_ray.ppm
 ```
+
+Open `ioccc_ray.ppm` with a viewer capable of viewing PPM files. Alternatively,
+if you have ImageMagick installed, you can convert it to a jpeg:
+
+```sh
+convert ioccc_ray.ppm ioccc_ray.jpg
+```
+
+and then view `ioccc_ray.jpg` in a graphics viewer, editor or web browser.
+
+
+### Try:
+
+If you have `xv(1)` you can do:
+
+```sh
+./gavare | xv -
+```
+
+to not worry about writing it to a file and just viewing the image it creates.
 
 
 ## Alternate code:
 
-The alt code, [gavare.alt.c](gavare.alt.c), allows you to change the size of the
+The alt code [gavare.alt.c](gavare.alt.c) allows you to change the size of the
 image as well as the anti-alias setting, when compiling.
 
 The author also provided [on their web page for the
@@ -32,7 +45,7 @@ entry](https://gavare.se/ioccc/ioccc_gavare.c.html) an unobfuscated version that
 was used during development, which we have included in the file
 [gavare.r3.c](gavare.r3.c).
 
-Finally, there's a version, [gavare.alt2.c](gavare.alt2.c) that sets binary mode
+Finally, the file [gavare.alt2.c](gavare.alt2.c) sets binary mode
 on `stdout` which theoretically should work in Windows.
 
 
@@ -55,6 +68,9 @@ You might also wish to change the anti-alias setting:
 ```sh
 make clobber AA=2 alt
 ```
+
+You may of course combine the above two commands and give any combination you
+wish.
 
 This is not possible with the author's version but it is with the alt versions
 (Windows - see below - and otherwise).
@@ -97,7 +113,7 @@ entry contains no reserved words (I don't count `main` as a reserved word,
 although the compiler gives it special meaning) and no preprocessor
 directives.
 
-The program is a small
+This program is a small
 [ray-tracer](https://en.wikipedia.org/wiki/Ray_tracing_(graphics)). The first
 line of the source code may be modified if you want the resulting image to be of
 some other resolution than the predefined. The `A` value is an anti-alias
