@@ -2534,8 +2534,12 @@ segfault when run or not compile at all (gcc and clang respectively).
 
 Cody also provided alternate code that supports the southern hemisphere.
 
-Cody also provided the [try.sh](/2000/natori/try.sh) script that shows the Moon
-phase in artistic ways.
+Cody also provided the [try.sh](/2000/natori/try.sh) and
+[try.alt.sh](/2000/natori/try.alt.sh) scripts that show the Moon phase in
+artistic ways. It is recommended one try both a number of times in a row on
+different days (that is run `./try.sh` several times in a row a few days apart,
+until you see all the Moon phases, and run `./try.alt.sh` a few times in a row a
+few days apart, until you see all the Moon phases).
 
 Later on Cody restored the `#include`s in the source code which had been changed
 by us to make it a one-liner again but this was an error as it was not a

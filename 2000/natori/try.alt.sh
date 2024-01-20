@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.sh - demonstrate IOCCC winner 2000/natori
+# try.alt.sh - demonstrate IOCCC winner 2000/natori alt code
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
@@ -23,10 +23,10 @@ moon()
     for ((i=0;i<=10;i++)); do
 	RAND=$((RANDOM % 1000))
 	if [[ "$RAND" -le 500 ]]; then
-	    ./"$NATORI"
+	    ./"$NATORI".alt
 	    echo 1>&2
 	else
-	    ./"$NATORI".alt
+	    ./"$NATORI"
 	    echo 1>&2
 	fi
     done
@@ -34,15 +34,6 @@ moon()
     echo 1>&2
     RAND=$((RANDOM % 1000))
     if [[ "$RAND" -gt 500 ]]; then
-	read -r -n 1 -p "Press any key to alternate between the northern/southern hemisphere Moon: "
-	echo 1>&2
-	./"$NATORI"
-	./"$NATORI".alt
-	./"$NATORI"
-	./"$NATORI".alt
-	./"$NATORI"
-	./"$NATORI".alt
-    else
 	read -r -n 1 -p "Press any key to alternate between the southern/northern hemisphere Moon: "
 	echo 1>&2
 	./"$NATORI".alt
@@ -51,6 +42,15 @@ moon()
 	./"$NATORI"
 	./"$NATORI".alt
 	./"$NATORI"
+    else
+	read -r -n 1 -p "Press any key to alternate between the northern/southern hemisphere Moon: "
+	echo 1>&2
+	./"$NATORI"
+	./"$NATORI".alt
+	./"$NATORI"
+	./"$NATORI".alt
+	./"$NATORI"
+	./"$NATORI".alt
     fi
 
     echo 1>&2
@@ -58,15 +58,6 @@ moon()
     echo 1>&2
 
     if [[ "$RAND" -le 499 ]]; then
-	read -r -n 1 -p "Press any key to alternate between the northern/southern hemisphere Moon: "
-	echo 1>&2
-	./"$NATORI"
-	./"$NATORI".alt
-	./"$NATORI"
-	./"$NATORI".alt
-	./"$NATORI"
-	./"$NATORI".alt
-    else
 	read -r -n 1 -p "Press any key to alternate between the southern/northern hemisphere Moon: "
 	echo 1>&2
 	./"$NATORI".alt
@@ -75,6 +66,15 @@ moon()
 	./"$NATORI"
 	./"$NATORI".alt
 	./"$NATORI"
+    else
+	read -r -n 1 -p "Press any key to alternate between the northern/southern hemisphere Moon: "
+	echo 1>&2
+	./"$NATORI"
+	./"$NATORI".alt
+	./"$NATORI"
+	./"$NATORI".alt
+	./"$NATORI"
+	./"$NATORI".alt
     fi
 
     echo 1>&2
@@ -83,15 +83,15 @@ moon()
     echo 1>&2
     RAND=$((RANDOM % 1000))
     if [[ "$RAND" -gt 500 ]]; then
-	read -r -n 1 -p "Press any key to alternate between the northern/southern hemisphere Moon: "
-	echo 1>&2
-	( ./"$NATORI"; ./"$NATORI.alt" ; ./"$NATORI" ; ./"$NATORI.alt"; \
-	    ./"$NATORI"; ./"$NATORI.alt" ) | less -rEXF
-    else
 	read -r -n 1 -p "Press any key to alternate between the southern/northern hemisphere Moon: "
 	echo 1>&2
 	( ./"$NATORI.alt"; ./"$NATORI" ; ./"$NATORI.alt" ; ./"$NATORI"; \
 	    ./"$NATORI.alt"; ./"$NATORI" ) | less -rEXF
+    else
+	read -r -n 1 -p "Press any key to alternate between the northern/southern hemisphere Moon: "
+	echo 1>&2
+	( ./"$NATORI"; ./"$NATORI.alt" ; ./"$NATORI" ; ./"$NATORI.alt"; \
+	    ./"$NATORI"; ./"$NATORI.alt" ) | less -rEXF
     fi
 
     echo 1>&2
@@ -99,15 +99,15 @@ moon()
     echo "We now recommend that you try holding enter down." 1>&2
     echo 1>&2
     if [[ "$RAND" -gt 500 ]]; then
-	read -r -n 1 -p "Press any key to alternate between the northern/southern hemisphere Moon: "
-	echo 1>&2
-	( ./"$NATORI"; ./"$NATORI.alt" ; ./"$NATORI" ; ./"$NATORI.alt"; \
-	    ./"$NATORI"; ./"$NATORI.alt" ) | less -rEXF
-    else
 	read -r -n 1 -p "Press any key to alternate between the southern/northern hemisphere Moon: "
 	echo 1>&2
 	( ./"$NATORI.alt"; ./"$NATORI" ; ./"$NATORI.alt" ; ./"$NATORI"; \
 	    ./"$NATORI.alt"; ./"$NATORI" ) | less -rEXF
+    else
+	read -r -n 1 -p "Press any key to alternate between the northern/southern hemisphere Moon: "
+	echo 1>&2
+	( ./"$NATORI"; ./"$NATORI.alt" ; ./"$NATORI" ; ./"$NATORI.alt"; \
+	    ./"$NATORI"; ./"$NATORI.alt" ) | less -rEXF
     fi
     echo 1>&2
 
@@ -117,15 +117,15 @@ moon()
     echo "We recommend that you try holding space down." 1>&2
     echo 1>&2
     if [[ "$RAND" -le 499 ]]; then
-	read -r -n 1 -p "Press any key to alternate between the northern/southern hemisphere Moon: "
-	echo 1>&2
-	( ./"$NATORI"; ./"$NATORI.alt" ; ./"$NATORI" ; ./"$NATORI.alt"; \
-	    ./"$NATORI"; ./"$NATORI.alt" ) | less -rEXF
-    else
 	read -r -n 1 -p "Press any key to alternate between the southern/northern hemisphere Moon: "
 	echo 1>&2
 	( ./"$NATORI.alt"; ./"$NATORI" ; ./"$NATORI.alt" ; ./"$NATORI"; \
 	    ./"$NATORI.alt"; ./"$NATORI" ) | less -rEXF
+    else
+	read -r -n 1 -p "Press any key to alternate between the northern/southern hemisphere Moon: "
+	echo 1>&2
+	( ./"$NATORI"; ./"$NATORI.alt" ; ./"$NATORI" ; ./"$NATORI.alt"; \
+	    ./"$NATORI"; ./"$NATORI.alt" ) | less -rEXF
     fi
 
     echo 1>&2
@@ -133,28 +133,29 @@ moon()
     echo "We now recommend that you try holding enter down." 1>&2
     echo 1>&2
     if [[ "$RAND" -le 499 ]]; then
-	read -r -n 1 -p "Press any key to alternate between the northern/southern hemisphere Moon: "
-	echo 1>&2
-	( ./"$NATORI"; ./"$NATORI.alt" ; ./"$NATORI" ; ./"$NATORI.alt"; \
-	    ./"$NATORI"; ./"$NATORI.alt" ) | less -rEXF
-    else
 	read -r -n 1 -p "Press any key to alternate between the southern/northern hemisphere Moon: "
 	echo 1>&2
 	( ./"$NATORI.alt"; ./"$NATORI" ; ./"$NATORI.alt" ; ./"$NATORI"; \
 	    ./"$NATORI.alt"; ./"$NATORI" ) | less -rEXF
+    else
+	read -r -n 1 -p "Press any key to alternate between the northern/southern hemisphere Moon: "
+	echo 1>&2
+	( ./"$NATORI"; ./"$NATORI.alt" ; ./"$NATORI" ; ./"$NATORI.alt"; \
+	    ./"$NATORI"; ./"$NATORI.alt" ) | less -rEXF
     fi
     echo 1>&2
 
-    # Finally, for the try.sh (original entry, northern hemisphere), force
-    # starting with northern hemisphere.
+    # Finally, for the try.alt.sh (alt code, southern hemisphere), force
+    # starting with southern hemisphere.
     echo "Will now use less(1): 'q' = quit, space = next page, enter = next line." 1>&2
     echo "We now recommend that you try holding enter down." 1>&2
-    read -r -n 1 -p "Press any key to alternate between the northern/southern hemisphere Moon: "
+    read -r -n 1 -p "Press any key to alternate between the southern/northern hemisphere Moon: "
     echo 1>&2
-    ( ./"$NATORI"; ./"$NATORI.alt" ; ./"$NATORI" ; ./"$NATORI.alt"; \
-	./"$NATORI"; ./"$NATORI.alt" ) | less -rEXF
+    ( ./"$NATORI.alt"; ./"$NATORI" ; ./"$NATORI.alt" ; ./"$NATORI"; \
+	./"$NATORI.alt"; ./"$NATORI" ) | less -rEXF
 
     echo 1>&2
+
 }
 
 # show the Moon phase in artistic ways!
