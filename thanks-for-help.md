@@ -3063,6 +3063,10 @@ get it to work, that being `kopczynski-10-rev`.
 
 [Cody](#cody) and Landon individually fixed this to work with clang.
 
+Cody also added the [try.sh](/2004/newbern/try.sh) script (with a hidden feature
+that the author referred to and was documented by [Yusuke](#yusuke) though Cody
+chose the word `IOCCC` instead of `AAA`).
+
 
 ## <a name="2004_schnitzi"></a>[2004/schnitzi](/2004/schnitzi/schnitzi.c) ([README.md](/2004/schnitzi/README.md]))
 
