@@ -3068,6 +3068,11 @@ that the author referred to and was documented by [Yusuke](#yusuke) though Cody
 chose the word `IOCCC` instead of `AAA`).
 
 
+## <a name="2004_omoikane"></a>[2004/omoikane](/2004/omoikane/omoikane.c) ([README.md](/2004/omoikane/README.md]))
+
+[Cody](#cody) added the [try.sh](/2004/omoikane/try.sh) script.
+
+
 ## <a name="2004_schnitzi"></a>[2004/schnitzi](/2004/schnitzi/schnitzi.c) ([README.md](/2004/schnitzi/README.md]))
 
 [Cody](#cody) made this use `fgets(3)`.

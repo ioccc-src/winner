@@ -15,7 +15,7 @@ make
 ## Try:
 
 ```
-./omoikane omoikane.info omoikane.info omoikane.output
+./try.sh
 ```
 
 
