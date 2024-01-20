@@ -15,9 +15,7 @@ make
 ## Try:
 
 ```sh
-./hoyle 10 0.5
-./hoyle 1 1 1 1
-./hoyle 2 0 1 0 -0.001
+./try.sh
 ```
 
 
@@ -37,7 +35,7 @@ coefficients `a`, `b`, `c`, etc. as double precision arguments.  It allows up to
 8 parameters (thus up to `x^7`).
 
 
-### Points of note:
+### Points of interest:
 
 - the [x axis](https://mathworld.wolfram.com/x-Axis.html) goes from `-32` to
 `+31`.
@@ -45,7 +43,7 @@ coefficients `a`, `b`, `c`, etc. as double precision arguments.  It allows up to
 - up to 8 [coefficients](https://en.wikipedia.org/wiki/Coefficient) may be
 passed in.
 - the graph will determine direction and use slashes and
-  dashes rather than simple block `X`s.
+  dashes rather than a simple block of `X`s.
 
 For example, to graph `y = x^2`:
 

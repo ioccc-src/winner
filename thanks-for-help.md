@@ -3003,6 +3003,11 @@ all that was necessary but at least one or two URLs required the Internet
 Wayback Machine.
 
 
+## <a name="2004_hoyle"></a>[2004/hoyle](/2004/hoyle/hoyle.c) ([README.md](/2004/hoyle/README.md]))
+
+[Cody](#cody) added the [try.sh](/2004/hoyle/try.sh) script.
+
+
 ## <a name="2004_jdalbec"></a>[2004/jdalbec](/2004/jdalbec/jdalbec.c) ([README.md](/2004/jdalbec/README.md))
 
 [Cody](#cody) fixed this to compile with gcc (it worked with clang). The problem was the
