@@ -3201,9 +3201,9 @@ Cody also added the [try.sh](/2005/boutines/try.sh) script.
 
 ## <a name="2005_giljade"></a>[2005/giljade](/2005/giljade/giljade.c) ([README.md](/2005/giljade/README.md]))
 
-After Landon fixed the entry to compile with clang Cody noticed this does not
-work at all in modern systems (see below). He fixed this to work and then he
-later fixed the self-test feature.
+After Landon fixed the entry to compile with clang [Cody](#cody) noticed this
+does not work at all in modern systems (see below). He fixed this to work and
+then he later fixed the self-test feature.
 
 The problem that was showing up is that with either optimising or if anything
 but 32-bit (as in `-m32`) was used it would not work (at least in 64-bit
