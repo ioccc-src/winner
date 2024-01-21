@@ -8,5 +8,7 @@ indent
 indent.c
 indent.o
 precious.pgm
+precious.jpg
 prog.orig
 ring.pgm
+ring.jpg

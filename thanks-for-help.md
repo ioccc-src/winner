@@ -2923,6 +2923,11 @@ described in the README.md, based on the author's remarks.
 # <a name="2004"></a>2004
 
 
+## <a name="2004_anonymous"></a>[2004/anonymous](/2004/anonymous/anonymous.c) ([README.md](/2004/anonymous/README.md]))
+
+[Cody](#cody) added the [try.sh](/2004/anonymous/try.sh) script.
+
+
 ## <a name="2004_arachnid"></a>[2004/arachnid](/2004/arachnid/arachnid.c) ([README.md](/2004/arachnid/README.md]))
 
 [Cody](#cody) added an [alternate version](/2004/arachnid/README.md#alternate-code) which
@@ -3068,6 +3073,11 @@ that the author referred to and was documented by [Yusuke](#yusuke) though Cody
 chose the word `IOCCC` instead of `AAA`).
 
 
+## <a name="2004_omoikane"></a>[2004/omoikane](/2004/omoikane/omoikane.c) ([README.md](/2004/omoikane/README.md]))
+
+[Cody](#cody) added the [try.sh](/2004/omoikane/try.sh) script.
+
+
 ## <a name="2004_schnitzi"></a>[2004/schnitzi](/2004/schnitzi/schnitzi.c) ([README.md](/2004/schnitzi/README.md]))
 
 [Cody](#cody) made this use `fgets(3)`.
@@ -3075,6 +3085,8 @@ chose the word `IOCCC` instead of `AAA`).
 He also changed the time factor in the data files as the animations went too
 fast in modern systems, especially the scrolling text of
 [schnitzi.inp1](schnitzi.inp1).
+
+Cody also added the [try.sh](/2004/schnitzi/try.sh) script.
 
 
 ## <a name="2004_sds"></a>[2004/sds](/2004/sds/sds.c) ([README.md](/2004/sds/README.md))

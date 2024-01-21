@@ -22,14 +22,11 @@ images.
 ## Try:
 
 ```sh
-./anonymous "ash nazg durhbatuluhk, ash nazg gimbatul, \
-    ash nazg thrakatuluhk, agh burzhumh-ishi krimpatul." >ring.pgm
-
-./anonymous "My Precious. Yes, my Precious." > precious.pgm
+./try.sh
 ```
 
-NOTE: technically the text is supposed to be in all lower case but the above
-still works for demonstration purposes.
+NOTE: technically the text is supposed to be in all lower case but the script
+does use some upper case letters for demonstration purposes.
 
 
 ## Judges' remarks:
@@ -55,13 +52,14 @@ Hobbit](https://tolkiengateway.net/wiki/The_History_of_The_Hobbit).
 
 p.s. Frodo lives!
 
+
 ### An important aside :-)
 
 BTW: if you haven't read [The Lord of the
 Rings](https://en.wikipedia.org/wiki/The_Lord_of_the_Rings) what are you waiting for? :-)
 You'll find out the source of the text above though you'll see that there are
 some circumflexes missing! That's okay though due to I/O of the entry and in
-earlier drafts sometimes the û with an umlaut had no umlaut but H after the `u`
+earlier drafts sometimes the û had no diacritic but H after the `u` in
 it. The real text is:
 
 > Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk, agh
