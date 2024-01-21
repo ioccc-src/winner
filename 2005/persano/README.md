@@ -18,10 +18,10 @@ setting binary mode on `stdout`. See [alternate code](#alternate-code) below.
 ## Try:
 
 ```sh
-./persano 3 16 > knot3-16.gif
+./try.sh
 ```
 
-Open the [GIF](https://en.wikipedia.org/wiki/GIF) file with a viewer capable of
+Open the [GIF](https://en.wikipedia.org/wiki/GIF) files with a viewer capable of
 displaying animated GIFs and watch closely at the bottom of the picture (you may
 need to use [gifsicle](https://www.lcdf.org/gifsicle/) - a great tool to
 manipulate animated GIFs - to slow down the animation and to compress the GIFs

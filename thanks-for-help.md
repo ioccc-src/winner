@@ -3330,6 +3330,8 @@ code](/2005/persano/README.md#alternate-code) which should work for Windows as i
 sets binary mode on `stdout`. It is untested as Cody has no Windows system to
 test it on.
 
+Cody also added the [try.sh](/2005/persano/try.sh) script.
+
 
 ## <a name="2005_sykes"></a>[2005/sykes](/2005/sykes/sykes.c) ([README.md](/2005/sykes/README.md]))
 
