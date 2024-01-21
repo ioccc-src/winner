@@ -26,7 +26,7 @@ else
     ARG="$2"
 fi
 
-make CC="$CC" SLEEP="$SLEEP" all >/dev/null || exit 1
+make CC="$CC" all >/dev/null || exit 1
 
 # clear screen after compilation so that only the entry is shown
 clear

@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 #
 # try.sh - demonstrate IOCCC winner 1995/garry
 #
@@ -15,8 +15,14 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-
-echo "$ EXAMPLEON=\"\33\133\61\73\67\155\"; EXAMPLEOFF=\"\33\133\155\"; DOLLAR=\"$\"" 1>&2
+# This warning from ShellCheck is incorrect:
+#
+#   SC2028 (info): echo may not expand escape sequences. Use printf.
+#
+# because we don't want them to be expanded. This does show correct output.
+#
+# shellcheck disable=SC2028
+echo "$ EXAMPLEON=\"\\33\133\61\73\67\155\"; EXAMPLEOFF=\"\33\133\155\"; DOLLAR=\"$\"" 1>&2
 EXAMPLEON="\33\133\61\73\67\155"
 EXAMPLEOFF="\33\133\155"
 DOLLAR="$"
