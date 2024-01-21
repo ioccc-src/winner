@@ -3161,16 +3161,17 @@ just to make it a bit easier to compile.
 ## <a name="2005_aidan"></a>[2005/aidan](/2005/aidan/aidan.c) ([README.md](/2005/aidan/README.md]))
 
 [Cody](#cody) fixed the test script, described by the author in their remarks, to refer
-to the proper compiled program (it's hardcoded). This had never been done and it
-broke the script.
+to the proper compiled program (it's hardcoded). This had never been done and so
+the script did not even work (at least modernly?).
 
 He also added the [alt code](/2005/aidan/README.md#alternate-code) based on the
-author's remarks which is a different approach than the one used and which 'is
-slower (particularly in worst-case or nearly so scenarios), inelegant, and not a
-good starting place for sudoku generation.'
+author's remarks which is a different approach than the one used and which
+(according to the author) 'is slower (particularly in worst-case or nearly so
+scenarios), inelegant, and not a good starting place for sudoku generation.'
 
-The [try.sh](/2005/aidan/try.sh) and [try.alt.sh](/2005/aidan/try.alt.sh)
-correspond to the entry and alt code respectively.
+Cody added the [try.sh](/2005/aidan/try.sh) and
+[try.alt.sh](/2005/aidan/try.alt.sh) scripts that correspond to the entry and
+alt code respectively.
 
 Cody added the `make test` and `make test-n0` rules for easier use of the test
 suite.
