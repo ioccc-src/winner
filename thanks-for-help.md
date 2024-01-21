@@ -3196,6 +3196,8 @@ movements.
 [Cody](#cody) added the [input.txt](/2005/boutines/input.txt) data file based on suggested
 input from the author, adapting it to a command to try out.
 
+Cody also added the [try.sh](/2005/boutines/try.sh) script.
+
 
 ## <a name="2005_giljade"></a>[2005/giljade](/2005/giljade/giljade.c) ([README.md](/2005/giljade/README.md]))
 

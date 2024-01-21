@@ -7,37 +7,38 @@ make
 
 ## To use:
 
-You will need an [SVG](https://www.w3.org/TR/SVG11/expanded-toc.html) viewer.
+You will need an [SVG](https://www.w3.org/TR/SVG11/expanded-toc.html) viewer or
+a converter like [ImageMagick](https://imagemagick.org/index.php)'s `convert`.
+
 Look here to find some [SVG Viewer
 Implementations](https://www.w3.org/Graphics/SVG/WG/wiki/Implementations).
 
-The following will create an `SVG` file:
-
 ```sh
-ruby -e '20.times{puts "#{rand} #{rand}"}' | ./boutines > test.svg
+./boutines < input > output.svg
 ```
 
 
 ## Try:
 
 ```sh
-./boutines < input.txt > result.svg
+./try.sh
 ```
 
-After running the above commands, use [ImageMagick](https://imagemagick.org/index.php)'s
-`convert` tool to convert the images to a png file:
+If `ruby` is installed [try.sh](try.sh) will generate an SVG file by:
 
 ```sh
-convert test.svg test.png
-
-convert result.svg result.png
+ruby -e '20.times{puts "#{rand} #{rand}"}' | ./boutines > test.svg
 ```
 
-and then open it with your preferred graphics viewer or editor.
+It will also create an SVG file with the file [input.txt](input.txt).
+
+The script will check if `convert` is available and if so it will try converting
+the SVG file(s) to PNG file(s) which you should be able to view in most any
+graphics viewer, editor or web browser.
 
 If you have a program that opens
 [SVG](https://www.w3.org/TR/SVG11/expanded-toc.html) files then you could open
-the `test.svg` file directly. An example program is
+the `test.svg` and `result.svg` files directly. An example program is
 [Inkscape](https://inkscape.org). See the
 [list](https://www.w3.org/Graphics/SVG/WG/wiki/Implementations) cited above for
 others.
