@@ -1,6 +1,22 @@
 #!/usr/bin/env bash
 #
-# all-run.sh - run a command for all winners
+# quick-readme2index.sh - quickly determine if readme2index.sh needs to be run
+#
+# If yyyy/dir/.winner.json exists and was modified newer than
+# yyyy/dir/index.html or of yyyy/dir/index.html does not exist,
+# then readme2index.sh will be run using the yyyy/dir option.
+#
+# If yyyy/dir/.winner.json does not exist, then an error will thrown.
+#
+# If yyyy/dir/.winner.json exists and was modified same or older than
+# yyyy/dir/index.html, then nothing will happen.
+#
+# This tool has only has command line options also found in all-run.sh,
+# which is a subset of the command line options available to readme2index.sh.
+#
+# If  `index.html` is not a non-empty file, or of either `.winner.json`
+# and/or `README.md` is newer than `index.html`, only then `readme2index.sh`
+# is executed.
 #
 # Copyright (c) 2024 by Landon Curt Noll.  All Rights Reserved.
 #
@@ -34,6 +50,14 @@ if [[ -z ${BASH_VERSINFO[0]} || ${BASH_VERSINFO[0]} -lt 4 || ${BASH_VERSINFO[0]}
     echo "$0: ERROR: bash version must be >= 4.2: $BASH_VERSION" 1>&2
     exit 4
 fi
+# firewall - must be bash with a version 4.2 or later
+#
+# We must declare arrays with -ag or -Ag
+#
+if [[ -z ${BASH_VERSINFO[0]} || ${BASH_VERSINFO[0]} -lt 4 || ${BASH_VERSINFO[0]} -eq 4 && ${BASH_VERSINFO[1]} -lt 2 ]]; then
+    echo "$0: ERROR: bash version must be >= 4.2: $BASH_VERSION" 1>&2
+    exit 4
+fi
 
 # setup bash file matching
 #
@@ -49,7 +73,7 @@ shopt -s globstar	# enable ** to match all files and zero or more directories an
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1.2 2024-01-20"
+export VERSION="1.0 2024-01-20"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -74,6 +98,7 @@ export NOOP=
 export DO_NOT_PROCESS=
 export EXIT_CODE="0"
 #
+export V_FLAG_FOUND=
 export P_FLAG_FOUND=
 export CAP_P_FLAG_FOUND=
 export U_FLAG_FOUND=
@@ -113,14 +138,14 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 
 Exit codes:
      0         all OK
-     1	       some execution of tool exited non-zero
+     1	       readme2index.sh exited non-zero
      2         -h and help string printed or -V and version string printed
      3         command line error
      4         bash version is < 4.2
-     5	       tool is not an executable
-     6	       topdir is not in proper form
-     7	       topdir/YYYY is not in proper form
-     8	       topdir/YYYY/dir is not in proper form
+     5	       readme2index.sh tool executable not found
+     6	       topdir, topdir/YYYY, or topdir/YYYY/dir  is not in proper form
+     7	       missing non-empty readable .winner.json file
+     8	       missing non-empty readable README.md file
  >= 10 < 200   internal error
  >= 200	       ((not used))
 
@@ -134,6 +159,7 @@ while getopts :hv:Vd:nNp:P:u:U: flag; do
 	exit 2
 	;;
     v) V_FLAG="$OPTARG"
+       V_FLAG_FOUND="-v"
 	;;
     V) echo "$VERSION"
 	exit 2
@@ -189,8 +215,8 @@ while getopts :hv:Vd:nNp:P:u:U: flag; do
   esac
 done
 #
-if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: debug level: $V_FLAG" 1>&2
+if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: debug level: $V_FLAG" 1>&2
 fi
 #
 # remove the options
@@ -203,21 +229,23 @@ fi
 #
 # verify arg count and parse args
 #
-export TOOL TOOL_OPTIONS
+export TOOL_OPTIONS
+export WINNER_PATH
 case "$#" in
 0) echo "$0: ERROR: expected 1 or more args, found: $#" 1>&2
    echo "$USAGE" 1>&2
    exit 3
    ;;
-1) TOOL="$1"
+1) WINNER_PATH="$1"
+   shift
    ;;
-*) TOOL="$1"
+*) WINNER_PATH="$1"
    shift
    TOOL_OPTIONS="$*"
    ;;
 esac
 
-# clear options we will add to tools
+# clear options we will add to the tool
 #
 export OPTSTR=
 
@@ -326,25 +354,102 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: now in directory: $(/bin/pwd)" 1>&2
 fi
 
-# verify we have a non-empty readable .top file
+# verify that WINNER_PATH is a winner directory
 #
-TOP_FILE=".top"
-if [[ ! -e $TOP_FILE ]]; then
-    echo  "$0: ERROR: .top does not exist: $TOP_FILE" 1>&2
+# WINNER_PATH must be in yyyy/dir form
+# yyyy must be a directory
+# yyyy must be a writable directory
+# yyyy/.year must be a non-empty file
+# yyyy/dir must be a directory
+# yyyy/dir/.path must be a non-empty file
+# WINNER_PATH must match the contents of yyyy/dir/.path
+# yyyy/dir/.winner.json must be a non-empty file
+#
+if [[ ! -d $WINNER_PATH ]]; then
+    echo "$0: ERROR: arg is not a directory: $WINNER_PATH" 1>&2
     exit 6
 fi
-if [[ ! -f $TOP_FILE ]]; then
-    echo  "$0: ERROR: .top is not a regular file: $TOP_FILE" 1>&2
+if [[ ! -w $WINNER_PATH ]]; then
+    echo "$0: ERROR: arg is not a writable directory: $WINNER_PATH" 1>&2
     exit 6
 fi
-if [[ ! -r $TOP_FILE ]]; then
-    echo  "$0: ERROR: .top is not an readable file: $TOP_FILE" 1>&2
+export YEAR_DIR=${WINNER_PATH%%/*}
+if [[ -z $YEAR_DIR ]]; then
+    echo "$0: ERROR: arg not in yyyy/dir form: $WINNER_PATH" 1>&2
     exit 6
 fi
-if [[ ! -s $TOP_FILE ]]; then
-    echo  "$0: ERROR: .top is not a non-empty readable file: $TOP_FILE" 1>&2
+export WINNER_DIR=${WINNER_PATH#*/}
+if [[ -z $WINNER_DIR ]]; then
+    echo "$0: ERROR: arg: $WINNER_PATH not in $YEAR_DIR/dir form: $WINNER_PATH" 1>&2
     exit 6
 fi
+if [[ $WINNER_DIR = */* ]]; then
+    echo "$0: ERROR: dir from arg: $WINNER_PATH contains a /: $WINNER_DIR" 1>&2
+    exit 6
+fi
+if [[ ! -d $YEAR_DIR ]]; then
+    echo "$0: ERROR: yyyy from arg: $WINNER_PATH is not a directory: $YEAR_DIR" 1>&2
+    exit 6
+fi
+export WINNER_ID="${YEAR_DIR}_${WINNER_DIR}"
+export DOT_YEAR="$YEAR_DIR/.year"
+if [[ ! -s $DOT_YEAR ]]; then
+    echo "$0: ERROR: not a non-empty file: $DOT_YEAR" 1>&2
+    exit 6
+fi
+if [[ ! -d $YEAR_DIR/$WINNER_DIR ]]; then
+    echo "$0: ERROR: yyyy/dir from arg: $WINNER_PATH is not a directory: $YEAR_DIR/$WINNER_DIR" 1>&2
+    exit 6
+fi
+export DOT_PATH="$YEAR_DIR/$WINNER_DIR/.path"
+if [[ ! -s $DOT_PATH ]]; then
+    echo "$0: ERROR: not a non-empty file: $DOT_PATH" 1>&2
+    exit 6
+fi
+DOT_PATH_CONTENT=$(< "$DOT_PATH")
+if [[ $WINNER_PATH != "$DOT_PATH_CONTENT" ]]; then
+    echo "$0: ERROR: arg: $WINNER_PATH does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
+    exit 6
+fi
+export WINNER_JSON="$YEAR_DIR/$WINNER_DIR/.winner.json"
+if [[ ! -e $WINNER_JSON ]]; then
+    echo "$0: ERROR: .winner.json does not exist: $WINNER_JSON" 1>&2
+    exit 7
+fi
+if [[ ! -f $WINNER_JSON ]]; then
+    echo "$0: ERROR: .winner.json is not a file: $WINNER_JSON" 1>&2
+    exit 7
+fi
+if [[ ! -r $WINNER_JSON ]]; then
+    echo "$0: ERROR: .winner.json is not a readable file: $WINNER_JSON" 1>&2
+    exit 7
+fi
+if [[ ! -s $WINNER_JSON ]]; then
+    echo "$0: ERROR: .winner.json is not a non-empty readable file: $WINNER_JSON" 1>&2
+    exit 7
+fi
+export README_MD="$YEAR_DIR/$WINNER_DIR/README.md"
+if [[ ! -e $README_MD ]]; then
+    echo "$0: ERROR: README.md does not exist: $README_MD" 1>&2
+    exit 8
+fi
+if [[ ! -f $README_MD ]]; then
+    echo "$0: ERROR: README.md is not a file: $README_MD" 1>&2
+    exit 8
+fi
+if [[ ! -r $README_MD ]]; then
+    echo "$0: ERROR: README.md is not a readable file: $README_MD" 1>&2
+    exit 8
+fi
+if [[ ! -s $README_MD ]]; then
+    echo "$0: ERROR: README.md is not a non-empty readable file: $README_MD" 1>&2
+    exit 8
+fi
+export INDEX_HTML="$YEAR_DIR/$WINNER_DIR/index.html"
+
+# determine our readme2index.sh tool path
+#
+export TOOL="$BIN_DIR/readme2index.sh"
 
 # verify tool is executable
 #
@@ -361,208 +466,73 @@ if [[ ! -x $TOOL ]]; then
     exit 5
 fi
 
-# print running info if verbose
+# parameter debugging
 #
 if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: NAME=$NAME" 1>&2
+    echo "$0: debug[3]: YEAR_DIR=$YEAR_DIR" 1>&2
+    echo "$0: debug[3]: WINNER_DIR=$WINNER_DIR" 1>&2
+    echo "$0: debug[3]: WINNER_ID=$WINNER_ID" 1>&2
+    echo "$0: debug[3]: DOT_YEAR=$DOT_YEAR" 1>&2
+    echo "$0: debug[3]: DOT_PATH=$DOT_PATH" 1>&2
+    echo "$0: debug[3]: WINNER_JSON=$WINNER_JSON" 1>&2
     echo "$0: debug[3]: REPO_URL=$REPO_URL" 1>&2
     echo "$0: debug[3]: REPO_NAME=$REPO_NAME" 1>&2
     echo "$0: debug[3]: TOP_URL=$TOP_URL" 1>&2
-    echo "$0: debug[3]: TOP_FILE=$TOP_FILE" 1>&2
     echo "$0: debug[3]: AUTHOR_PATH=$AUTHOR_PATH" 1>&2
     echo "$0: debug[3]: AUTHOR_DIR=$AUTHOR_DIR" 1>&2
     echo "$0: debug[3]: INC_PATH=$INC_PATH" 1>&2
     echo "$0: debug[3]: INC_DIR=$INC_DIR" 1>&2
     echo "$0: debug[3]: BIN_PATH=$BIN_PATH" 1>&2
     echo "$0: debug[3]: BIN_DIR=$BIN_DIR" 1>&2
+    echo "$0: debug[3]: PANDOC_WRAPPER=$PANDOC_WRAPPER" 1>&2
+    echo "$0: debug[3]: PANDOC_WRAPPER_OPTSTR=$PANDOC_WRAPPER_OPTSTR" 1>&2
+    echo "$0: debug[3]: WINNER_JSON=$WINNER_JSON" 1>&2
+    echo "$0: debug[3]: README_MD=$README_MD" 1>&2
+    echo "$0: debug[3]: INDEX_HTML=$INDEX_HTML" 1>&2
+    echo "$0: debug[3]: TOOL=$TOOL" 1>&2
     echo "$0: debug[3]: OPTSTR=$OPTSTR" 1>&2
+    echo "$0: debug[3]: TOOL_OPTIONS=$TOOL_OPTIONS" 1>&2
     echo "$0: debug[3]: DO_NOT_PROCESS=$DO_NOT_PROCESS" 1>&2
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
 fi
 
-# process each year
+# determine if we need to run the tool
 #
-export YYYY
-for YYYY in $(< "$TOP_FILE"); do
+# If the non-empty index.html is newer than the .winner.json file,
+#
+if [[ $V_FLAG -ge 5 ]]; then
+    ls -lRt "$INDEX_HTML" "$WINNER_JSON" "$README_MD" 2>/dev/null
+fi
+if [[ -s $INDEX_HTML && $INDEX_HTML -nt $WINNER_JSON && $INDEX_HTML -nt $README_MD ]]; then
+    if [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: does not need to be updated: $INDEX_HTML" 1>&2
+    fi
+    exit 0
+fi
 
-    # debug YYYY
+# run the tool
+#
+if [[ -z $NOOP ]]; then
+
+    # run the tool
     #
-    if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: starting to process year: $YYYY" 1>&2
+    if [[ $V_FLAG -ge 3 ]]; then
+	echo "$0: debug[3]: about to run: $TOOL $OPTSTR $TOOL_OPTIONS \"$WINNER_PATH\"" 1>&2
+    fi
+    eval "$TOOL" "$OPTSTR" "$TOOL_OPTIONS" '"'"$WINNER_PATH"'"'
+    status="$?"
+    if [[ $status -ne 0 ]]; then
+	echo "$0: ERROR: tool: $TOOL failed, error: $status" 1>&2
+	exit 1
     fi
 
-    # verify that YYYY is a readable directory
-    #
-    if [[ ! -e $YYYY ]]; then
-	echo  "$0: ERROR: YYYY does not exist: $YYYY" 1>&2
-	EXIT_CODE="7"  # exit 7
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-    fi
-    if [[ ! -d $YYYY ]]; then
-	echo  "$0: ERROR: YYYY is not a directory: $YYYY" 1>&2
-	EXIT_CODE="7"  # exit 7
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-    fi
-    if [[ ! -r $YYYY ]]; then
-	echo  "$0: ERROR: YYYY is not an readable directory: $YYYY" 1>&2
-	EXIT_CODE="7"  # exit 7
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-    fi
-
-    # verify that YYYY has a non-empty readable .year file
-    #
-    export YEAR_FILE="$YYYY/.year"
-    if [[ ! -e $YEAR_FILE ]]; then
-	echo  "$0: ERROR: YYYY/.year does not exist: $YEAR_FILE" 1>&2
-	EXIT_CODE="7"  # exit 7
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-    fi
-    if [[ ! -f $YEAR_FILE ]]; then
-	echo  "$0: ERROR: YYYY/.year is not a regular file: $YEAR_FILE" 1>&2
-	EXIT_CODE="7"  # exit 7
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-    fi
-    if [[ ! -r $YEAR_FILE ]]; then
-	echo  "$0: ERROR: YYYY/.year is not an readable file: $YEAR_FILE" 1>&2
-	EXIT_CODE="7"  # exit 7
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-    fi
-    if [[ ! -s $YEAR_FILE ]]; then
-	echo  "$0: ERROR: YYYY/.year is not a non-empty readable file: $YEAR_FILE" 1>&2
-	EXIT_CODE="7"  # exit 7
-	echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-    fi
-
-    # process each winner under YYYY
-    #
-    export WINNER_PATH
-    for WINNER_PATH in $(< "$YEAR_FILE"); do
-
-	# debug YYYY
-	#
-	if [[ $V_FLAG -ge 3 ]]; then
-	    echo "$0: debug[3]: starting to process year/dir: $WINNER_PATH" 1>&2
-	fi
-
-	# parse WINNER_PATH
-	#
-	if [[ ! -d $WINNER_PATH ]]; then
-	    echo "$0: ERROR: WINNER_PATH is not a directory: $WINNER_PATH" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	fi
-	if [[ ! -w $WINNER_PATH ]]; then
-	    echo "$0: ERROR: WINNER_PATH is not a writable directory: $WINNER_PATH" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	fi
-	export YEAR_DIR=${WINNER_PATH%%/*}
-	if [[ -z $YEAR_DIR ]]; then
-	    echo "$0: ERROR: WINNER_PATH not in yyyy/dir form: $WINNER_PATH" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	fi
-	export WINNER_DIR=${WINNER_PATH#*/}
-	if [[ -z $WINNER_DIR ]]; then
-	    echo "$0: ERROR: WINNER_PATH not in $YEAR_DIR/dir form: $WINNER_PATH" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	fi
-	if [[ $WINNER_DIR = */* ]]; then
-	    echo "$0: ERROR: WINNER_PATH: $WINNER_PATH dir contains a /: $WINNER_DIR" 1>&2
-	    EXIT_CODE="7"  # exit 7
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	fi
-
-	# verify that WINNER_PATH is a writable directory
-	#
-	if [[ ! -e $WINNER_PATH ]]; then
-	    echo  "$0: ERROR: WINNER_PATH does not exist: $WINNER_PATH" 1>&2
-	    EXIT_CODE="8"  # exit 8
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	fi
-	if [[ ! -d $WINNER_PATH ]]; then
-	    echo  "$0: ERROR: WINNER_PATH is not a directory: $WINNER_PATH" 1>&2
-	    EXIT_CODE="8"  # exit 8
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	fi
-	if [[ ! -w $WINNER_PATH ]]; then
-	    echo  "$0: ERROR: WINNER_PATH is not an writable directory: $WINNER_PATH" 1>&2
-	    EXIT_CODE="8"  # exit 8
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	fi
-
-	# verify YYYY/dir/.path
-	#
-	export DOT_PATH="$WINNER_PATH/.path"
-	if [[ ! -s $DOT_PATH ]]; then
-	    echo "$0: ERROR: not a non-empty file: $DOT_PATH" 1>&2
-	    EXIT_CODE="8"  # exit 8
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	fi
-	DOT_PATH_CONTENT=$(< "$DOT_PATH")
-	if [[ $WINNER_PATH != "$DOT_PATH_CONTENT" ]]; then
-	    echo "$0: ERROR: arg: $WINNER_PATH does not match $DOT_PATH contents: $DOT_PATH_CONTENT" 1>&2
-	    EXIT_CODE="8"  # exit 8
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	fi
-	export WINNER_JSON="$WINNER_PATH/.winner.json"
-	if [[ ! -e $WINNER_JSON ]]; then
-	    echo "$0: ERROR: .winner.json does not exist: $WINNER_JSON" 1>&2
-	    EXIT_CODE="8"  # exit 8
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	fi
-	if [[ ! -f $WINNER_JSON ]]; then
-	    echo "$0: ERROR: .winner.json is not a file: $WINNER_JSON" 1>&2
-	    EXIT_CODE="8"  # exit 8
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	fi
-	if [[ ! -r $WINNER_JSON ]]; then
-	    echo "$0: ERROR: .winner.json is not a readable file: $WINNER_JSON" 1>&2
-	    EXIT_CODE="8"  # exit 8
-	    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-	fi
-
-	# run the tool
-	#
-	if [[ -z $DO_NOT_PROCESS ]]; then
-
-	    # run the tool
-	    #
-	    if [[ -z $NOOP ]]; then
-		if [[ $V_FLAG -ge 5 ]]; then
-		    echo "$0: debug[5]: about to run: $TOOL $OPTSTR $TOOL_OPTIONS \"$WINNER_PATH\"" 1>&2
-		fi
-		eval "$TOOL" "$OPTSTR" "$TOOL_OPTIONS" '"'"$WINNER_PATH"'"'
-		status="$?"
-		if [[ $status -ne 0 ]]; then
-		    echo "$0: ERROR: tool: $TOOL failed, error: $status" 1>&2
-		    EXIT_CODE="1"  # exit 1
-		    echo "$0: Warning: EXIT_CODE set to: $EXIT_CODE" 1>&2
-		fi
-
-	    # report disabled by -n
-	    #
-	    elif [[ $V_FLAG -ge 5 ]]; then
-		echo "$0: debug[5]: because of -n, did not run: $TOOL $OPTSTR $TOOL_OPTIONS \"$WINNER_PATH\"" 1>&2
-	    fi
-
-	# report disabled by -N
-	#
-	else
-	    if [[ $V_FLAG -ge 5 ]]; then
-		echo "$0: debug[5]: arguments parsed, -N given, not running tool" 1>&2
-	    fi
-	fi
-    done
-done
+# report disabled by -n
+#
+elif [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5]: because of -n, did not run: $TOOL $OPTSTR $TOOL_OPTIONS \"$WINNER_PATH\"" 1>&2
+fi
 
 # All Done!!! -- Jessica Noll, Age 2
 #
-if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: about to exit $EXIT_CODE" 1>&2
-fi
-if [[ $EXIT_CODE -ne 0 ]]; then
-    echo "$0: Warning: about to exit non-zero: $EXIT_CODE" 1>&2
-fi
-exit "$EXIT_CODE"
+exit 0

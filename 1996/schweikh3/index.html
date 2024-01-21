@@ -10,7 +10,7 @@
 <!-- -->
 <!-- END: this line ends content from: inc/top.default.html -->
 <!-- -->
-<!-- This file was formed by the tool: bin/readme2index.sh version: 1.1 2024-01-16 -->
+<!-- This file was formed by the tool: bin/readme2index.sh version: 1.1.1 2024-01-20 -->
 <!-- -->
 <!-- START: this line starts content from: inc/head.default.html -->
 
@@ -133,11 +133,6 @@ output from various systems.</p>
 <p>But still it is a useful utility. To use try:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./schweikh3</span></span></code></pre></div>
 <p>and thanks for the virtual memories! :-)</p>
-<p>NOTE: On some systems such as SunOS, one may need to compile
-with:</p>
-<pre class="make"><code>    ${CC} ${CFLAGS} \
-      -I. -D_POSIX_SOURCE &#39;-Ddifftime(a,b)=(double)(b-a)&#39; \
-      schweikh3.c -o schweikh3</code></pre>
 <h2 id="authors-remarks">Author’s remarks:</h2>
 <h3 id="why-i-think-my-entry-is-obfuscated">Why I think my entry is
 obfuscated</h3>
@@ -157,22 +152,22 @@ COBOL, F77, awk etc.</p>
 <p>You have to select maximum ANSI C conformance of your compiler. The
 source fails to compile under a C++ compiler due to the `new’ identifier
 which is a C++ reserved word:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> g++ schweikh3.c</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">schweikh3.c:9:</span> parse error before <span class="kw">`</span><span class="ex">new</span><span class="st">&#39;</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="st">schweikh3.c:16: parse error before `new&#39;</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">schweikh3.c:46:</span> parse error before <span class="kw">`</span>void<span class="st">&#39;</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="st">schweikh3.c:65: parse error before `Lisp&#39;</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ex">schweikh3.c:68:</span> parse error before <span class="kw">`;</span><span class="st">&#39;</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="st">[...]</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="st">schweikh3.c:91: confused by earlier errors, bailing out</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> g++ schweikh3.c</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">schweikh3.c:9:</span> parse error before <span class="kw">`</span><span class="ex">new</span><span class="st">&#39;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">schweikh3.c:16: parse error before `new&#39;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">schweikh3.c:46:</span> parse error before <span class="kw">`</span>void<span class="st">&#39;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="st">schweikh3.c:65: parse error before `Lisp&#39;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">schweikh3.c:68:</span> parse error before <span class="kw">`;</span><span class="st">&#39;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="st">[...]</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="st">schweikh3.c:91: confused by earlier errors, bailing out</span></span></code></pre></div>
 <p>The source fails to compile on compilers that recognize the inline
 keyword by default, e.g. gcc:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gcc schweikh3.c</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">schweikh3.c:46:</span> parse error before <span class="kw">`</span><span class="ex">void</span><span class="st">&#39;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="st">schweikh3.c: In function `main&#39;</span><span class="ex">:</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">schweikh3.c:91:</span> parse error before <span class="kw">`</span>inline<span class="st">&#39;</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="st">schweikh3.c: At top level:</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="st">schweikh3.c:97: parse error before `void&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> gcc schweikh3.c</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">schweikh3.c:46:</span> parse error before <span class="kw">`</span><span class="ex">void</span><span class="st">&#39;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="st">schweikh3.c: In function `main&#39;</span><span class="ex">:</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">schweikh3.c:91:</span> parse error before <span class="kw">`</span>inline<span class="st">&#39;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="st">schweikh3.c: At top level:</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="st">schweikh3.c:97: parse error before `void&#39;</span></span></code></pre></div>
 <p>The <code>-ansi</code> option to gcc fixes this.</p>
 <p>The source fails to compile on obsolete systems with obsolete memory
 models due to the identifier <code>far</code> (to be honest: this is

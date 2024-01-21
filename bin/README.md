@@ -17,6 +17,18 @@ as well as various JSON files and other content from the
 
 Run a command on all winning entries.
 
+For example:
+
+```sh
+bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1
+```
+
+Or for example:
+
+```sh
+bin/all-run.sh -v 3 bin/readme2index.sh -v 1
+```
+
 
 ### [gen-author.sh](gen-author.sh)
 
@@ -41,6 +53,37 @@ Output manifest table from a winner .winner.json file.
 ### [pandoc-wrapper.sh](pandoc-wrapper.sh)
 
 Wrapper tool to run pandoc.
+
+
+### [quick-readme2index.sh](quick-readme2index.sh)
+
+Runs [readme2index.sh](readme2index.sh) if the winner directory
+does not have a non-empty `index.hmtl` file, or if either
+`.winner.json` or `README.md` is newer than the `index.hmtl` file.
+
+This is useful when only a few winners have been
+modified (resulting in an updated `.winner.json` file)
+or if the `README.md` of a few winners have been changed.
+
+While the [readme2index.sh](readme2index.sh) take a few
+seconds to run, when applied to 300+ winners,
+the extra time can add up.
+
+If only a few `index.hmtl` files need updating, then
+this command will only briefly pause while the
+slightly longer [readme2index.sh](readme2index.sh) is run:
+
+```sh
+bin/all-run.sh -v 3 bin/quick-readme2index.sh -v 1
+```
+
+**NOTE**: This command assumes that the relative
+modification times for `index.hmtl`, .winner.json`,
+and `README.md` are correct.  If in doubt, use:
+
+```sh
+bin/all-run.sh -v 3 bin/readme2index.sh -v 1
+```
 
 
 ### [readme2index.sh](readme2index.sh)

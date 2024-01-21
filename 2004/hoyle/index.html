@@ -10,7 +10,7 @@
 <!-- -->
 <!-- END: this line ends content from: inc/top.default.html -->
 <!-- -->
-<!-- This file was formed by the tool: bin/readme2index.sh version: 1.1 2024-01-16 -->
+<!-- This file was formed by the tool: bin/readme2index.sh version: 1.1.1 2024-01-20 -->
 <!-- -->
 <!-- START: this line starts content from: inc/head.default.html -->
 
@@ -122,9 +122,7 @@ href="/temp-test-ioccc/location.html#US">US</a></p>
 <h2 id="to-use">To use:</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./hoyle</span> point ...</span></code></pre></div>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./hoyle</span> 10 0.5</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./hoyle</span> 1 1 1 1</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./hoyle</span> 2 0 1 0 <span class="at">-0.001</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.sh</span></span></code></pre></div>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The obfuscation functions at several levels. Note the clever use of
 use of <code>#define</code>s. The <code>#define do(if,else)</code>, for
@@ -137,7 +135,7 @@ coordinate system. Polynomials of the form
 coefficients <code>a</code>, <code>b</code>, <code>c</code>, etc. as
 double precision arguments. It allows up to 8 parameters (thus up to
 <code>x^7</code>).</p>
-<h3 id="points-of-note">Points of note:</h3>
+<h3 id="points-of-interest">Points of interest:</h3>
 <ul>
 <li>the <a href="https://mathworld.wolfram.com/x-Axis.html">x axis</a>
 goes from <code>-32</code> to <code>+31</code>.</li>
@@ -147,7 +145,7 @@ auto scales!</li>
 href="https://en.wikipedia.org/wiki/Coefficient">coefficients</a> may be
 passed in.</li>
 <li>the graph will determine direction and use slashes and dashes rather
-than simple block <code>X</code>s.</li>
+than a simple block of <code>X</code>s.</li>
 </ul>
 <p>For example, to graph <code>y = x^2</code>:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./hoyle</span> 0 0 1</span></code></pre></div>

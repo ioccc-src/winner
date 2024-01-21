@@ -10,7 +10,7 @@
 <!-- -->
 <!-- END: this line ends content from: inc/top.default.html -->
 <!-- -->
-<!-- This file was formed by the tool: bin/readme2index.sh version: 1.1 2024-01-16 -->
+<!-- This file was formed by the tool: bin/readme2index.sh version: 1.1.1 2024-01-20 -->
 <!-- -->
 <!-- START: this line starts content from: inc/head.default.html -->
 
@@ -126,8 +126,6 @@ href="/temp-test-ioccc/location.html#null">unknown</a></p>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> text <span class="kw">|</span> <span class="ex">./dorssel</span></span></code></pre></div>
 <h2 id="try">Try:</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.sh</span></span></code></pre></div>
-<p>Also try:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./dorssel</span> <span class="op">&lt;</span> dorssel.md</span></code></pre></div>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>How does the program decide which way to convert?</p>
 <p>What obsolescent feature are we talking about? (No, it’s not a C
@@ -148,8 +146,8 @@ by one without altering the behavior ?</p></li>
 <h3 id="extra-credit">Extra credit:</h3>
 <p>Try doing what the last part of the last command in <a
 href="try.sh">try.sh</a> suggests. As in, do the following:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;. -..- . .-. -.-. .. ... .</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="st">-.-. .... .- -. --. .  - .... .  .--. .-. --- --. .-. .- --  ... ---  .. -  -.. --- . ...  -. --- -  ... .... --- ..- -&quot;</span> <span class="kw">|</span> <span class="ex">./dorssel</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;. -..- . .-. -.-. .. ... .</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="st">-.-. .... .- -. --. .  - .... .  .--. .-. --- --. .-. .- --  ... ---  .. -  -.. --- . ...  -. --- -  ... .... --- ..- -&quot;</span> <span class="kw">|</span> <span class="ex">./dorssel</span></span></code></pre></div>
 <p>and make the necessary adjustments.</p>
 <p>You might also want to read the <a href="dorssel.md">dorssel.md</a>
 file.</p>
@@ -182,22 +180,22 @@ ASCII. As far as I can tell, the program is conforming and does not
 invoke undefined behavior.</p>
 <h3 id="hints">Hints</h3>
 <p>Try:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./dorssel</span> <span class="op">&lt;</span> dorssel.c <span class="kw">|</span> <span class="ex">./dorssel</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./dorssel</span> <span class="op">&lt;</span> dorssel.c <span class="kw">|</span> <span class="ex">./dorssel</span></span></code></pre></div>
 <p>to see what variables, numbers, and functions are used. (Does a
 better job than most C beautifiers).</p>
 <ul>
 <li>Filter your text twice (as in the previous sample) to obtain a
 version of your text that can be reversibly Morsified, i.e.</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./dorssel</span> <span class="op">&lt;</span> dorssel.c <span class="kw">|</span> <span class="ex">./dorssel</span> <span class="kw">|</span> <span class="ex">./dorssel</span> <span class="kw">|</span> <span class="ex">./dorssel</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./dorssel</span> <span class="op">&lt;</span> dorssel.c <span class="kw">|</span> <span class="ex">./dorssel</span> <span class="kw">|</span> <span class="ex">./dorssel</span> <span class="kw">|</span> <span class="ex">./dorssel</span></span></code></pre></div>
 <p>is the same as</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./dorssel</span> <span class="op">&lt;</span> dorssel.c <span class="kw">|</span> <span class="ex">./dorssel</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./dorssel</span> <span class="op">&lt;</span> dorssel.c <span class="kw">|</span> <span class="ex">./dorssel</span></span></code></pre></div>
 <ul>
 <li>The file <a href="dorssel.md">dorssel.md</a> contains all the
 information needed to understand this program. For an obfuscated
 spoiler, try</li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./dorssel</span> <span class="op">&lt;</span> dorssel.md</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./dorssel</span> <span class="op">&lt;</span> dorssel.md</span></code></pre></div>
 <h2 id="copyright-and-cc-by-sa-4.0-license">Copyright and CC BY-SA 4.0
 License:</h2>
 <p>This file is Copyright (c) 2023 by Landon Curt Noll. All Rights

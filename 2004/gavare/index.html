@@ -10,7 +10,7 @@
 <!-- -->
 <!-- END: this line ends content from: inc/top.default.html -->
 <!-- -->
-<!-- This file was formed by the tool: bin/readme2index.sh version: 1.1 2024-01-16 -->
+<!-- This file was formed by the tool: bin/readme2index.sh version: 1.1.1 2024-01-20 -->
 <!-- -->
 <!-- START: this line starts content from: inc/head.default.html -->
 
@@ -121,11 +121,20 @@ Location: <a href="/temp-test-ioccc/location.html#SE">SE</a></p>
 <p>There are three alternate versions; see <a
 href="#alternate-code">alternate code</a> below for more details.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./gavare</span></span></code></pre></div>
-<h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./gavare</span> <span class="op">&gt;</span> ioccc_ray.ppm</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./gavare</span> <span class="op">&gt;</span> ioccc_ray.ppm</span></code></pre></div>
+<p>Open <code>ioccc_ray.ppm</code> with a viewer capable of viewing PPM
+files. Alternatively, if you have ImageMagick installed, you can convert
+it to a jpeg:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">convert</span> ioccc_ray.ppm ioccc_ray.jpg</span></code></pre></div>
+<p>and then view <code>ioccc_ray.jpg</code> in a graphics viewer, editor
+or web browser.</p>
+<h3 id="try">Try:</h3>
+<p>If you have <code>xv(1)</code> you can do:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./gavare</span> <span class="kw">|</span> <span class="ex">xv</span> <span class="at">-</span></span></code></pre></div>
+<p>to not worry about writing it to a file and just viewing the image it
+creates.</p>
 <h2 id="alternate-code">Alternate code:</h2>
-<p>The alt code, <a href="gavare.alt.c">gavare.alt.c</a>, allows you to
+<p>The alt code <a href="gavare.alt.c">gavare.alt.c</a> allows you to
 change the size of the image as well as the anti-alias setting, when
 compiling.</p>
 <p>The author also provided <a
@@ -133,21 +142,23 @@ href="https://gavare.se/ioccc/ioccc_gavare.c.html">on their web page for
 the entry</a> an unobfuscated version that was used during development,
 which we have included in the file <a
 href="gavare.r3.c">gavare.r3.c</a>.</p>
-<p>Finally, there’s a version, <a href="gavare.alt2.c">gavare.alt2.c</a>
-that sets binary mode on <code>stdout</code> which theoretically should
-work in Windows.</p>
+<p>Finally, the file <a href="gavare.alt2.c">gavare.alt2.c</a> sets
+binary mode on <code>stdout</code> which theoretically should work in
+Windows.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <p>To build the configurable and unobfuscated versions:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> alt</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> alt</span></code></pre></div>
 <p>To change the default size from 1024x768 try:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber XX=640 YY=480 alt</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber XX=640 YY=480 alt</span></code></pre></div>
 <p>You might also wish to change the anti-alias setting:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber AA=2 alt</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber AA=2 alt</span></code></pre></div>
+<p>You may of course combine the above two commands and give any
+combination you wish.</p>
 <p>This is not possible with the author’s version but it is with the alt
 versions (Windows - see below - and otherwise).</p>
 <p>As the Windows version will not compile on most viewers’ systems we
 do not build it with <code>make alt</code>; instead try:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> alt2</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> alt2</span></code></pre></div>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>gavare.alt</code>, <code>gavare.r3</code> or
 <code>gavare.alt2</code> as you would <code>gavare</code> above.</p>
@@ -170,7 +181,7 @@ program I want to show that also non-trivial programs can be written
 this way. This IOCCC entry contains no reserved words (I don’t count
 <code>main</code> as a reserved word, although the compiler gives it
 special meaning) and no preprocessor directives.</p>
-<p>The program is a small <a
+<p>This program is a small <a
 href="https://en.wikipedia.org/wiki/Ray_tracing_(graphics)">ray-tracer</a>.
 The first line of the source code may be modified if you want the
 resulting image to be of some other resolution than the predefined. The

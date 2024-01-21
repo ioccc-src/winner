@@ -55,7 +55,7 @@ shopt -s lastpipe	# run last command of a pipeline not executed in the backgroun
 
 # set variables referenced in the usage message
 #
-export VERSION="1.1 2024-01-16"
+export VERSION="1.1.1 2024-01-20"
 NAME=$(basename "$0")
 export NAME
 export V_FLAG=0
@@ -127,7 +127,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 			NOTE: Multiple '-s token=value' are cumulative for the unique set of 'token's.
 	-S		failure to replace a %%token%% is not an error (def: exit non-zero for non-substituted tokens)
 
-	-o tool		Use output tool, 'tool', to generate option lines (def: do not)
+	-o tool		Use 'output tool' to generate option lines (def: do not)
 	-o .		disable use of 'output tool' (def: do not use an 'output tool')
 			NOTE: -o may only be used in command_options and md2html.cfg cfg_options (getopt phases 0 and 2)
 	-O tool=optstr	run the 'token replace' named 'tool' with options found in 'optstr' (def: do not add any options)
@@ -183,9 +183,13 @@ function global_variable_setup
     export BEFORE_TOOL=
     export BEFORE_TOOL_OPTSTR=
     # PANDOC_WRAPPER set above the export USAGE line
+    export P_FLAG_FOUND=
     # PANDOC_WRAPPER_OPTSTR set above the export USAGE line
+    export CAP_P_FLAG_FOUND=
     # REPO_URL set above the export USAGE line
+    export U_FLAG_FOUND=
     # TOP_URL set above the export USAGE line
+    export CAP_U_FLAG_FOUND=
     export AFTER_TOOL=
     export AFTER_TOOL_OPTSTR=
     unset TOKEN
@@ -443,6 +447,7 @@ function parse_command_line
 		# change pandoc wrapper tool
 		PANDOC_WRAPPER="$OPTARG"
 	    fi
+	    P_FLAG_FOUND="-p"
 	    ;;
 	P) # parse -P optstr
 	    case "$OPTARG" in
@@ -461,6 +466,7 @@ function parse_command_line
 	    *) ;;
 	    esac
 	    PANDOC_WRAPPER_OPTSTR="$OPTARG"
+	    CAP_P_FLAG_FOUND="-P"
 	    ;;
 	a) # parse: -a tool
 	    if [[ $OPTARG == . ]]; then
@@ -620,8 +626,10 @@ function parse_command_line
 	    OUTPUT_TOOL_OPTSTR[$NAME]="$VALUE"
 	    ;;
 	u) REPO_URL="$OPTARG"
+	    U_FLAG_FOUND="-u"
 	    ;;
 	U) TOP_URL="$OPTARG"
+	    CAP_U_FLAG_FOUND="-U"
 	    ;;
 	e) echo "$OPTARG" 1>&2
 	    ;;
@@ -644,6 +652,168 @@ function parse_command_line
 	    ;;
       esac
     done
+
+    # clear options we will add to tools
+    #
+    export B_OPTSTR=
+    export P_OPTSTR=
+    export A_OPTSTR=
+    export O_OPTSTR=
+
+    # add '-p tool' options to tool arguments
+    #
+    if [[ -n $P_FLAG_FOUND && -n $PANDOC_WRAPPER ]]; then
+
+	# add '-p tool' to '-b before tool'
+	#
+	if [[ -z $B_OPTSTR ]]; then
+	    B_OPTSTR="-p \"$PANDOC_WRAPPER\""
+	else
+	    B_OPTSTR="$B_OPTSTR -p \"$PANDOC_WRAPPER\""
+	fi
+
+	# we do not add '-p tool' to 'pandoc wrapper tool'
+	# instead we simply execute $PANDOC_WRAPPER\
+
+	# add '-p tool' to '-a after tool'
+	#
+	if [[ -z $A_OPTSTR ]]; then
+	    A_OPTSTR="-p \"$PANDOC_WRAPPER\""
+	else
+	    A_OPTSTR="$A_OPTSTR -p \"$PANDOC_WRAPPER\""
+	fi
+    fi
+
+    # add '-P optstr' options to tool arguments
+    #
+    if [[ -n $CAP_P_FLAG_FOUND && -n $PANDOC_WRAPPER_OPTSTR ]]; then
+
+	# add '-P optstr' to '-b before tool'
+	#
+	if [[ -z $B_OPTSTR ]]; then
+	    B_OPTSTR="-P \"$PANDOC_WRAPPER_OPTSTR\""
+	else
+	    B_OPTSTR="$B_OPTSTR -P \"$PANDOC_WRAPPER_OPTSTR\""
+	fi
+
+	# add '-P optstr' to '-a after tool'
+	#
+	if [[ -z $A_OPTSTR ]]; then
+	    A_OPTSTR="-P \"$PANDOC_WRAPPER_OPTSTR\""
+	else
+	    A_OPTSTR="$A_OPTSTR -P \"$PANDOC_WRAPPER_OPTSTR\""
+	fi
+    fi
+
+    # add '-u repo_url' options to tool arguments
+    #
+    if [[ -n $U_FLAG_FOUND && -n $REPO_URL ]]; then
+
+	# add '-u repo_url' to '-b before tool'
+	#
+	if [[ -z $B_OPTSTR ]]; then
+	    B_OPTSTR="-u \"$REPO_URL\""
+	else
+	    B_OPTSTR="$B_OPTSTR -u \"$REPO_URL\""
+	fi
+
+	# add '-u repo_url' to '-p pandoc wrapper tool'
+	#
+	if [[ -z $P_OPTSTR ]]; then
+	    P_OPTSTR="-u \"$REPO_URL\""
+	else
+	    P_OPTSTR="$P_OPTSTR -u \"$REPO_URL\""
+	fi
+
+	# add '-u repo_url' to '-a after tool'
+	#
+	if [[ -z $A_OPTSTR ]]; then
+	    A_OPTSTR="-u \"$REPO_URL\""
+	else
+	    A_OPTSTR="$A_OPTSTR -u \"$REPO_URL\""
+	fi
+
+	# add '-u repo_url' to '-o output tool'
+	#
+	if [[ -z $O_OPTSTR ]]; then
+	    O_OPTSTR="-u \"$REPO_URL\""
+	else
+	    O_OPTSTR="$O_OPTSTR -u \"$REPO_URL\""
+	fi
+    fi
+
+    # add '-U top_url' options to tool arguments
+    #
+    if [[ -n $CAP_U_FLAG_FOUND && -n $TOP_URL ]]; then
+
+	# add '-U top_url' to '-b before tool'
+	#
+	if [[ -z $B_OPTSTR ]]; then
+	    B_OPTSTR="-U \"$TOP_URL\""
+	else
+	    B_OPTSTR="$B_OPTSTR -U \"$TOP_URL\""
+	fi
+
+	# add '-U top_url' to '-p pandoc wrapper tool'
+	#
+	if [[ -z $P_OPTSTR ]]; then
+	    P_OPTSTR="-U \"$TOP_URL\""
+	else
+	    P_OPTSTR="$P_OPTSTR -U \"$TOP_URL\""
+	fi
+
+	# add '-U top_url' to '-a after tool'
+	#
+	if [[ -z $A_OPTSTR ]]; then
+	    A_OPTSTR="-U \"$TOP_URL\""
+	else
+	    A_OPTSTR="$A_OPTSTR -U \"$TOP_URL\""
+	fi
+
+	# add '-U top_url' to '-o output tool'
+	#
+	if [[ -z $O_OPTSTR ]]; then
+	    # SC2089 (warning): Quotes/backslashes will be treated literally. Use an array.
+	    # https://www.shellcheck.net/wiki/SC2089
+	    # shellcheck disable=SC2089
+	    O_OPTSTR="-U \"$TOP_URL\""
+	else
+	    O_OPTSTR="$O_OPTSTR -U \"$TOP_URL\""
+	fi
+    fi
+
+    # always add '-B optstr' to '-b before tool'
+    #
+    if [[ -n $BEFORE_TOOL_OPTSTR ]]; then
+	if [[ -z $B_OPTSTR ]]; then
+	    B_OPTSTR="$BEFORE_TOOL_OPTSTR"
+	else
+	    B_OPTSTR="$B_OPTSTR \"$BEFORE_TOOL_OPTSTR\""
+	fi
+    fi
+
+    # always add '-P optstr' to '-p pandoc wrapper tool'
+    #
+    if [[ -n $PANDOC_WRAPPER_OPTSTR ]]; then
+	if [[ -z $P_OPTSTR ]]; then
+	    # SC2089 (warning): Quotes/backslashes will be treated literally. Use an array.
+	    # https://www.shellcheck.net/wiki/SC2089
+	    # shellcheck disable=SC2089
+	    P_OPTSTR="-P \"$PANDOC_WRAPPER_OPTSTR\""
+	else
+	    P_OPTSTR="$P_OPTSTR -P \"$PANDOC_WRAPPER_OPTSTR\""
+	fi
+    fi
+
+    # always add '-A optstr' to '-a after tool'
+    #
+    if [[ -n $AFTER_TOOL_OPTSTR ]]; then
+	if [[ -z $A_OPTSTR ]]; then
+	    A_OPTSTR="$AFTER_TOOL_OPTSTR"
+	else
+	    A_OPTSTR="$A_OPTSTR $AFTER_TOOL_OPTSTR"
+	fi
+    fi
 }
 
 #################################
@@ -872,11 +1042,11 @@ parse_command_line "$@"
 
 # parse the command line arguments
 #
-if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: debug level: $V_FLAG" 1>&2
-fi
 if [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: after parse_command_line of getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
+    echo "$0: debug[3]: debug level: $V_FLAG" 1>&2
+fi
+if [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5]: after parse_command_line of getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
 fi
 #
 shift $(( OPTIND - 1 ));
@@ -890,8 +1060,8 @@ if [[ $# -ne 1 ]]; then
 fi
 #
 export WINNER_PATH="$1"
-if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: WINNER_PATH=$WINNER_PATH" 1>&2
+if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: WINNER_PATH=$WINNER_PATH" 1>&2
 fi
 
 # verify that we have a topdir directory
@@ -1092,8 +1262,8 @@ if [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: NOOP=$NOOP" 1>&2
 fi
 #
-if [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: end getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
+if [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5]: end getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
 fi
 
 ##################
@@ -1104,8 +1274,8 @@ fi
 #
 GETOPT_PHASE=1
 #
-if [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: begin getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
+if [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5]: begin getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
 fi
 
 # run output tools and parse output as more options
@@ -1145,14 +1315,14 @@ for n in "${!OUTPUT_TOOL[@]}"; do
     VALUE="${OUTPUT_TOOL[$n]}"
     if [[  $V_FLAG -ge 7 ]]; then
 	echo "$0: debug[7]: phase ${GETOPT_PHASE} about to call output tool:" \
-	     "$VALUE ${OUTPUT_TOOL_OPTSTR[$VALUE]} -- ${WINNER_PATH}" 1>&2
+	     "$VALUE $O_OPTSTR ${OUTPUT_TOOL_OPTSTR[$VALUE]} -- ${WINNER_PATH}" 1>&2
     fi
     # SC2046 (warning): Quote this to prevent word splitting.
     # https://www.shellcheck.net/wiki/SC2046
     # SC2086 (info): Double quote to prevent globbing and word splitting.
     # https://www.shellcheck.net/wiki/SC2086
     # shellcheck disable=SC2046,SC2086
-    OUTPUT_TOOL_OUTPUT=$("$VALUE" ${OUTPUT_TOOL_OPTSTR[$VALUE]} -- "${WINNER_PATH}")
+    OUTPUT_TOOL_OUTPUT=$(eval "$VALUE" $O_OPTSTR ${OUTPUT_TOOL_OPTSTR[$VALUE]} -- "${WINNER_PATH}")
     if [[ $V_FLAG -ge 5 ]]; then
 	echo "$0: debug[5]: phase ${GETOPT_PHASE} $VALUE output starts below" 1>&2
 	echo "$OUTPUT_TOOL_OUTPUT" 1>&2
@@ -1193,8 +1363,8 @@ declare -ag OUTPUT_TOOL
 unset OUTPUT_TOOL_OPTSTR
 declare -Ag OUTPUT_TOOL_OPTSTR
 #
-if [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: end getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
+if [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5]: end getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
 fi
 
 ##################
@@ -1205,8 +1375,8 @@ fi
 #
 GETOPT_PHASE=2
 #
-if [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: begin getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
+if [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5]: begin getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
 fi
 
 # find the first match md2html.cfg for README_PATH
@@ -1231,8 +1401,8 @@ parse_command_line "$@"
 
 # parse the command line arguments
 #
-if [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: after phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
+if [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5]: after phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
 fi
 #
 shift $(( OPTIND - 1 ));
@@ -1245,8 +1415,8 @@ if [[ $# -ne 0 ]]; then
     exit 3
 fi
 #
-if [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: end getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
+if [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5]: end getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
 fi
 
 ##################
@@ -1257,8 +1427,8 @@ fi
 #
 GETOPT_PHASE=3
 #
-if [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: begin getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
+if [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5]: begin getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
 fi
 
 # run output tools and parse output as more options
@@ -1305,7 +1475,7 @@ for n in "${!OUTPUT_TOOL[@]}"; do
     # SC2086 (info): Double quote to prevent globbing and word splitting.
     # https://www.shellcheck.net/wiki/SC2086
     # shellcheck disable=SC2046,SC2086
-    OUTPUT_TOOL_OUTPUT=$("$VALUE" ${OUTPUT_TOOL_OPTSTR[$VALUE]} -- "${WINNER_PATH}")
+    OUTPUT_TOOL_OUTPUT=$(eval "$VALUE" $O_OPTSTR ${OUTPUT_TOOL_OPTSTR[$VALUE]} -- "${WINNER_PATH}")
     if [[ $V_FLAG -ge 5 ]]; then
 	echo "$0: debug[5]: phase ${GETOPT_PHASE} $VALUE output starts below" 1>&2
 	echo "$OUTPUT_TOOL_OUTPUT" 1>&2
@@ -1346,8 +1516,8 @@ declare -ag OUTPUT_TOOL
 unset OUTPUT_TOOL_OPTSTR
 declare -Ag OUTPUT_TOOL_OPTSTR
 #
-if [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: end getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
+if [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5]: end getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
 fi
 
 ############################################
@@ -1358,11 +1528,11 @@ fi
 #
 GETOPT_PHASE=4
 #
-if [[ $V_FLAG -ge 3 ]]; then
-    echo "$0: debug[3]: begin getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
+if [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5]: begin getopt phase ${GETOPT_PHASE} debug level: $V_FLAG" 1>&2
 fi
-if [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[1]: finished all getopt parsing" 1>&2
+if [[ $V_FLAG -ge 3 ]]; then
+    echo "$0: debug[3]: finished all getopt parsing" 1>&2
 fi
 
 # validate HTML phase names
@@ -1463,9 +1633,9 @@ fi
 
 # report TOKEN sed patterns
 #
-if [[ $V_FLAG -ge 5 ]]; then
+if [[ $V_FLAG -ge 7 ]]; then
     for n in "${!TOKEN[@]}"; do
-	echo "$0: debug[5]: -s token replacement: sed -e s;%%$n%%;${TOKEN[$n]};g" 1>&2
+	echo "$0: debug[7]: -s token replacement: sed -e s;%%$n%%;${TOKEN[$n]};g" 1>&2
     done
 fi
 
@@ -1509,10 +1679,10 @@ if [[ -z $NOOP ]]; then
     for n in "${!TOKEN[@]}"; do
 	echo "s;%%$n%%;${TOKEN[$n]};g" >> "$TMP_SED_SCRIPT"
     done
-    if [[ $V_FLAG -ge 3 ]]; then
-	echo "$0: debug[3]: temporary sed script starts below: $TMP_SED_SCRIPT" 1>&2
-	echo "$TMP_SED_SCRIPT" 1>&2
-	echo "$0: debug[3]: temporary sed script ends above: $TMP_SED_SCRIPT" 1>&2
+    if [[ $V_FLAG -ge 5 ]]; then
+	echo "$0: debug[5]: temporary sed script starts below: $TMP_SED_SCRIPT" 1>&2
+	cat "$TMP_SED_SCRIPT" 1>&2
+	echo "$0: debug[5]: temporary sed script ends above: $TMP_SED_SCRIPT" 1>&2
     fi
 elif [[ $V_FLAG -ge 3 ]]; then
     echo "$0: debug[3]: because of -n, temporary sed script is not formed: $TMP_SED_SCRIPT" 1>&2
@@ -1805,23 +1975,27 @@ fi
 CUR_PHASE_NUM=20
 CUR_PHASE_NAME="before-tool"
 #
+if [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5]: B_OPTSTR: $B_OPTSTR" 1>&2
+fi
+#
 if [[ -n $BEFORE_TOOL ]]; then
     if [[ -z $NOOP ]]; then
 
 	# append before tool output
 	#
 	if [[ $V_FLAG -ge 5 ]]; then
-	    echo "$0: debug[6]: about to execute:"\
-		 "$BEFORE_TOOL -u $REPO_URL -U $TOP_URL $BEFORE_TOOL_OPTSTR -- $YEAR_DIR/$WINNER_DIR >> $TMP_INDEX_HTML" 1>&2
+	    echo "$0: debug[5]: about to execute:" \
+		 "$BEFORE_TOOL $B_OPTSTR -- $YEAR_DIR/$WINNER_DIR >> $TMP_INDEX_HTML" 1>&2
 	fi
 	# SC2086 (info): Double quote to prevent globbing and word splitting.
 	# https://www.shellcheck.net/wiki/SC2086
 	# shellcheck disable=SC2086
-	eval "$BEFORE_TOOL" -u "$REPO_URL" -U "$TOP_URL" $BEFORE_TOOL_OPTSTR -- "$YEAR_DIR/$WINNER_DIR" >> "$TMP_INDEX_HTML"
+	eval "$BEFORE_TOOL" $B_OPTSTR -- "$YEAR_DIR/$WINNER_DIR" >> "$TMP_INDEX_HTML"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: before tool:" \
-		 "$BEFORE_TOOL -u $REPO_URL -U $TOP_URL $BEFORE_TOOL_OPTSTR -- $YEAR_DIR/$WINNER_DIR failed," \
+		 "$BEFORE_TOOL $B_OPTSTR -- $YEAR_DIR/$WINNER_DIR failed," \
 		 "error code: $status" 1>&2
 	    exit 95
 	fi
@@ -1846,20 +2020,27 @@ fi
 CUR_PHASE_NUM=21
 CUR_PHASE_NAME="pandoc-wrapper-tool"
 #
+if [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5]: P_OPTSTR: $P_OPTSTR" 1>&2
+fi
+#
 if [[ -n $PANDOC_WRAPPER ]]; then
     if [[ -z $NOOP ]]; then
 
 	# append pandoc wrapper tool output
 	#
 	if [[ $V_FLAG -ge 5 ]]; then
-	    echo "$0: debug[6]: about to execute:"\
-		 "$PANDOC_WRAPPER -u $REPO_URL -U $TOP_URL-P $PANDOC_WRAPPER_OPTSTR -- $README_PATH - >> $TMP_INDEX_HTML" 1>&2
+	    echo "$0: debug[5]: about to execute:" \
+		 "$PANDOC_WRAPPER $P_OPTSTR -- $README_PATH - >> $TMP_INDEX_HTML" 1>&2
 	fi
-	"$PANDOC_WRAPPER" -u "$REPO_URL" -U "$TOP_URL" -P "$PANDOC_WRAPPER_OPTSTR" -- "$README_PATH" - >> "$TMP_INDEX_HTML"
+	# SC2086 (info): Double quote to prevent globbing and word splitting.
+	# https://www.shellcheck.net/wiki/SC2086
+	# shellcheck disable=SC2086
+	eval "$PANDOC_WRAPPER" $P_OPTSTR -- "$README_PATH" - >> "$TMP_INDEX_HTML"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: pandoc wrapper tool:" \
-		 "$PANDOC_WRAPPER -u $REPO_URL -U $TOP_URL-P $PANDOC_WRAPPER_OPTSTR -- $README_PATH - failed," \
+		 "$PANDOC_WRAPPER $P_OPTSTR -- $README_PATH - failed," \
 	         "error code: $status" 1>&2
 	    exit 100
 	fi
@@ -1884,23 +2065,27 @@ fi
 CUR_PHASE_NUM=22
 CUR_PHASE_NAME="after-tool"
 #
+if [[ $V_FLAG -ge 5 ]]; then
+    echo "$0: debug[5]: A_OPTSTR: $A_OPTSTR" 1>&2
+fi
+#
 if [[ -n $AFTER_TOOL ]]; then
     if [[ -z $NOOP ]]; then
 
 	# append after tool output
 	#
 	if [[ $V_FLAG -ge 5 ]]; then
-	    echo "$0: debug[6]: about to execute:"\
-		 "$AFTER_TOOL -u $REPO_URL -U $TOP_URL $AFTER_TOOL_OPTSTR -- $YEAR_DIR/$WINNER_DIR >> $TMP_INDEX_HTML" 1>&2
+	    echo "$0: debug[5]: about to execute:" \
+		 "$AFTER_TOOL $A_OPTSTR $AFTER_TOOL_OPTSTR -- $YEAR_DIR/$WINNER_DIR >> $TMP_INDEX_HTML" 1>&2
 	fi
 	# SC2086 (info): Double quote to prevent globbing and word splitting.
 	# https://www.shellcheck.net/wiki/SC2086
 	# shellcheck disable=SC2086
-	eval "$AFTER_TOOL" -u "$REPO_URL" -U "$TOP_URL" $AFTER_TOOL_OPTSTR -- "$YEAR_DIR/$WINNER_DIR" >> "$TMP_INDEX_HTML"
+	eval "$AFTER_TOOL" $A_OPTSTR $AFTER_TOOL_OPTSTR -- "$YEAR_DIR/$WINNER_DIR" >> "$TMP_INDEX_HTML"
 	status="$?"
 	if [[ $status -ne 0 ]]; then
 	    echo "$0: ERROR: after tool:" \
-		 "$AFTER_TOOL -u $REPO_URL -U $TOP_URL $AFTER_TOOL_OPTSTR -- $YEAR_DIR/$WINNER_DIR failed," \
+		 "$AFTER_TOOL $A_OPTSTR $AFTER_TOOL_OPTSTR -- $YEAR_DIR/$WINNER_DIR failed," \
 		 "error code: $status" 1>&2
 	    exit 105
 	fi
@@ -2058,11 +2243,18 @@ if [[ -z $NOOP ]]; then
 	if [[ $V_FLAG -ge 5 ]]; then
 	    echo "$0: debug[5]: mv -f -- $TMP_INDEX_HTML $INDEX_PATH" 1>&2
 	fi
-	mv -f -- "$TMP_INDEX_HTML" "$INDEX_PATH"
-	status="$?"
+	if [[ $V_FLAG -ge 3 ]]; then
+	    mv -f -v -- "$TMP_INDEX_HTML" "$INDEX_PATH"
+	    status="$?"
+	else
+	    mv -f -- "$TMP_INDEX_HTML" "$INDEX_PATH"
+	    status="$?"
+	fi
 	if [[ status -ne 0 ]]; then
 	    echo "$0: ERROR: mv -f -- $TMP_INDEX_HTML $INDEX_PATH filed, error code: $status" 1>&2
 	    exit 138
+	elif [[ $V_FLAG -ge 1 ]]; then
+	    echo "$0: debug[3]: built index HTML file: $INDEX_PATH" 1>&2
 	fi
 	if [[ ! -s $INDEX_PATH ]]; then
 	    echo "$0: ERROR: not a non-empty index HTML file: $INDEX_PATH" 1>&2
@@ -2084,11 +2276,9 @@ fi
 
 # All Done!!! -- Jessica Noll, Age 2
 #
-if [[ -z $NOOP ]]; then
+if [[ -n $NOOP ]]; then
     if [[ $V_FLAG -ge 1 ]]; then
-	echo "$0: debug[1]: All Done!!! -- Jessica Noll, Age 2, formed index HTML file: $INDEX_PATH" 1>&2
+	echo "$0: debug[3]: because of -n, skipped forming index HTML file: $INDEX_PATH" 1>&2
     fi
-elif [[ $V_FLAG -ge 1 ]]; then
-    echo "$0: debug[3]: because of -n, skipped forming index HTML file: $INDEX_PATH" 1>&2
 fi
 exit 0
