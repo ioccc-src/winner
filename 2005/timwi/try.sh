@@ -21,6 +21,8 @@ clear
 echo "$ (echo \"20 : ,-->+.>+.<<[>[>>+>+<<<-]>[>>+>+<<<-]>"; \
     echo "[<+>-]>[<<<+>>>-]>[-]<<<<.<-]\") | ./timwi" 1>&2
 
+read -r -n 1 -p "Press any key to continue: "
+echo 1>&2
 (echo "20 : ,-->+.>+.<<[>[>>+>+<<<-]>[>>+>+<<<-]>"; echo "[<+>-]>[<<<+>>>-]>[-]<<<<.<-]") | ./timwi
 echo 1>&2
 echo "Now please go take better care of your brain. You only get one." 1>&2
