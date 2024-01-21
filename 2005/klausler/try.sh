@@ -15,35 +15,62 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-echo "$ ./klausler peter klausler | head -n 10" 1>&2
+read -r -n 1 -p "Press any key to run: ./klausler peter klausler | head -n 10: "
+echo 1>&2
 ./klausler peter klausler | head -n 10
+echo 1>&2
 
-echo "$ ./klausler abc def ghi jkl mno | head -n 10" 1>&2
+read -r -n 1 -p "Press any key to run: ./klausler abc def ghi jkl mno | head -n 10: "
+echo 1>&2
 ./klausler abc def ghi jkl mno | head -n 10
+echo 1>&2
 
-echo "$ ./klausler foo bar baz | head -n 10" 1>&2
+read -r -n 1 -p "Press any key to run: ./klausler foo bar baz | head -n 10: "
+echo 1>&2
 ./klausler foo bar baz | head -n 10
+echo 1>&2
 
-echo "$ ./klausler zebra elephant bear fox | head -n 10" 1>&2
+read -r -n 1 -p "Press any key to run: ./klausler zebra elephant bear fox | head -n 10: "
+echo 1>&2
 ./klausler zebra elephant bear fox | head -n 10
+echo 1>&2
 
-echo "$ ./klausler the lion king | head -n 10" 1>&2
+read -r -n 1 -p "Press any key to run: ./klausler the lion king | head -n 10: "
+echo 1>&2
 ./klausler the lion king | head -n 10
+echo 1>&2
 
-echo "$ ./klausler fire breathing dragon | head -n 10" 1>&2
+read -r -n 1 -p "Press any key to run: ./klausler fire breathing dragon | head -n 10: "
+echo 1>&2
 ./klausler fire breathing dragon | head -n 10
+echo 1>&2
 
-echo "$ ./klausler lord of the rings | head -n 10" 1>&2
+read -r -n 1 -p "Press any key to run: ./klausler lord of the rings | head -n 10: "
+echo 1>&2
 ./klausler lord of the rings | head -n 10
+echo 1>&2
 
-echo "$ ./klausler fawlty towers | head -n 10" 1>&2
+read -r -n 1 -p "Press any key to run: ./klausler fawlty towers | head -n 10: "
+echo 1>&2
 ./klausler fawlty towers | head -n 10
+echo 1>&2
 
-echo "$ ./klausler carriown fowl | head -n 10" 1>&2
-./klausler carriown fowl | head -n 10
+read -r -n 1 -p "Press any key to run: ./klausler carrion fowl | head -n 10: "
+echo 1>&2
+./klausler carrion fowl | head -n 10
+echo 1>&2
 
-echo "$ ./klausler werewolf vampire dragon | head -n 10" 1>&2
+read -r -n 1 -p "Press any key to run: ./klausler werewolf vampire dragon | head -n 10: "
+echo 1>&2
 ./klausler werewolf vampire dragon | head -n 10
+echo 1>&2
 
-echo "$ ./klausler werewolf vampire | head -n 10" 1>&2
+read -r -n 1 -p "Press any key to run: ./klausler werewolf vampire elf dragon | head -n 10: "
+echo 1>&2
+./klausler werewolf vampire elf dragon | head -n 10
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./klausler werewolf vampire | head -n 10: "
+echo 1>&2
 ./klausler werewolf vampire | head -n 10
+echo 1>&2

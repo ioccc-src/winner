@@ -24,6 +24,9 @@ EXIT_CODE=0
 # delete temporary files first to make sure that they're clean
 rm -f out out.count
 
+echo "This may take a while: please be patient." 1>&2
+echo 1>&2
+
 # redirect stdout to 'out' so that we can run the test suite of giljade
 ./"$GILJADE" > out
 # here we want to show only the lines matching the regexp '^Line' but write

@@ -37,6 +37,7 @@ For more detailed information see [2005 anon in bugs.md](/bugs.md#2005-anon).
 
 ```sh
 ./anon 4 4
+
 ./anon 3 3 3
 ```
 
@@ -44,13 +45,6 @@ After a very large number of moves this program will deliberately force itself
 to destroy its runtime stack. This is the author's way to prevent you from being
 frustrated (which might happen as it likes to create unsolvable puzzles just to
 hook you) and spending too much time playing. :-)
-
-This is supposed to happen.  As is written in the
-[The Jargon File](http://catb.org/jargon/html/F/feature.html):
-
-```
-That's not a bug, that's a feature.
-```
 
 If you want to see this in action you can easily do this:
 

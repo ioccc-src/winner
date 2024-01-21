@@ -3161,16 +3161,17 @@ just to make it a bit easier to compile.
 ## <a name="2005_aidan"></a>[2005/aidan](/2005/aidan/aidan.c) ([README.md](/2005/aidan/README.md]))
 
 [Cody](#cody) fixed the test script, described by the author in their remarks, to refer
-to the proper compiled program (it's hardcoded). This had never been done and it
-broke the script.
+to the proper compiled program (it's hardcoded). This had never been done and so
+the script did not even work (at least modernly?).
 
 He also added the [alt code](/2005/aidan/README.md#alternate-code) based on the
-author's remarks which is a different approach than the one used and which 'is
-slower (particularly in worst-case or nearly so scenarios), inelegant, and not a
-good starting place for sudoku generation.'
+author's remarks which is a different approach than the one used and which
+(according to the author) 'is slower (particularly in worst-case or nearly so
+scenarios), inelegant, and not a good starting place for sudoku generation.'
 
-The [try.sh](/2005/aidan/try.sh) and [try.alt.sh](/2005/aidan/try.alt.sh)
-correspond to the entry and alt code respectively.
+Cody added the [try.sh](/2005/aidan/try.sh) and
+[try.alt.sh](/2005/aidan/try.alt.sh) scripts that correspond to the entry and
+alt code respectively.
 
 Cody added the `make test` and `make test-n0` rules for easier use of the test
 suite.
@@ -3195,12 +3196,14 @@ movements.
 [Cody](#cody) added the [input.txt](/2005/boutines/input.txt) data file based on suggested
 input from the author, adapting it to a command to try out.
 
+Cody also added the [try.sh](/2005/boutines/try.sh) script.
+
 
 ## <a name="2005_giljade"></a>[2005/giljade](/2005/giljade/giljade.c) ([README.md](/2005/giljade/README.md]))
 
-After Landon fixed the entry to compile with clang Cody noticed this does not
-work at all in modern systems (see below). He fixed this to work and then he
-later fixed the self-test feature.
+After Landon fixed the entry to compile with clang [Cody](#cody) noticed this
+does not work at all in modern systems (see below). He fixed this to work and
+then he later fixed the self-test feature.
 
 The problem that was showing up is that with either optimising or if anything
 but 32-bit (as in `-m32`) was used it would not work (at least in 64-bit
@@ -3326,6 +3329,8 @@ wants to add the necessary code.
 code](/2005/persano/README.md#alternate-code) which should work for Windows as it
 sets binary mode on `stdout`. It is untested as Cody has no Windows system to
 test it on.
+
+Cody also added the [try.sh](/2005/persano/try.sh) script.
 
 
 ## <a name="2005_sykes"></a>[2005/sykes](/2005/sykes/sykes.c) ([README.md](/2005/sykes/README.md]))
