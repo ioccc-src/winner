@@ -12,9 +12,7 @@ fi
 
 # let user change the sleep duration if they wish
 #
-if [[ -z "$SLEEP" ]]; then
-    SLEEP=1000
-fi
+[[ -z "$SLEEP" ]] && SLEEP=1000
 
 # let user change the number if they wish to
 #
