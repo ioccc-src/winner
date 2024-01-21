@@ -32,6 +32,14 @@ echo "Why do they differ in the format from the above command? Finally how can y
 echo "get the more likely desired behaviour?" 1>&2
 echo 1>&2
 echo 1>&2
+# This warning from ShellCheck is incorrect:
+#
+#   SC2028 (info): echo may not expand escape sequences. Use printf.
+#
+# because we deliberately have \\n to show that there will be a newline printed
+# WITH printf(1). Thus this does show correct output.
+#
+# shellcheck disable=SC2028
 echo "$ ./dale \$(printf "the following files exist in this directory:\\n%s\\n" *)"
 read -r -n 1 -p "Press any key to continue: "
 echo 1>&2
@@ -40,6 +48,14 @@ echo 1>&2
 ./dale $(printf "the following files exist in this directory:\n%s\n" *)
 echo 1>&2
 
+# This warning from ShellCheck is incorrect:
+#
+#   SC2028 (info): echo may not expand escape sequences. Use printf.
+#
+# because we deliberately have \\n to show that there will be a newline printed
+# WITH printf(1). Thus this does show correct output.
+#
+# shellcheck disable=SC2028
 echo "$ ./dale \"\$(printf \"the following files exist in this directory:\\n%s\\n\" *)\""
 read -r -n 1 -p "Press any key to continue: "
 echo 1>&2
