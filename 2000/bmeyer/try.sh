@@ -19,13 +19,22 @@ clear
 # be determined: we just use a default value.
 #
 # try getting the columns the simple way first: tput cols
-COLUMNS="$(tput cols)"
-# ^--^ SC2181 (style): Check exit code directly with e.g. 'if ! mycmd;', not indirectly with $?.
+COLUMNS="$(tputs cols)"
+# In this case we might be able to get away with resolving this ShellCheck
+# warning:
+#
+#   SC2181 (style): Check exit code directly with e.g. 'if ! mycmd;', not indirectly with $?.
+#
+# but we want to assign the value to COLUMNS and at the same time make sure tput
+# worked. Thus we disable this warning.
+#
 # shellcheck disable=SC2181
 if [[ "$?" -ne 0 ]]; then
     # if tput failed for any reason try stty(1) with awk(1):
     # Disable this warning of shellcheck as it's wrong: awk needs single quotes.
-    # ^-----------^ SC2016 (info): Expressions don't expand in single quotes, use double quotes for that.
+    #
+    #	SC2016 (info): Expressions don't expand in single quotes, use double quotes for that.
+    #
     # shellcheck disable=SC2016
     COLUMNS="$(stty size|awk '{print $NF}')"
     
@@ -74,7 +83,7 @@ echo 1>&2
 ./glicbawls "$COLUMNS" < lavabus.pgm > lavabus.glic
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: ./glicbawls -2 "$COLUMNS" < lavabus.pgm > lavabus.glic2: "
+read -r -n 1 -p "Press any key to run: ./glicbawls -2 $COLUMNS < lavabus.pgm > lavabus.glic2: "
 echo 1>&2
 ./glicbawls -2 "$COLUMNS" < lavabus.pgm > lavabus.glic2
 echo 1>&2
