@@ -17,30 +17,48 @@ clear
 
 
 read -r -n 1 -p "Press any key to run: ./toledo1 00: "
+echo 1>&2
 ./toledo1 00
+echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./toledo1 30: "
+echo 1>&2
 ./toledo1 30
+echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./toledo1 99: "
+echo 1>&2
 ./toledo1 99
+echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./toledo1 42: "
+echo 1>&2
 ./toledo1 42
+echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./toledo1 11 # start is A8: "
+echo 1>&2
 ./toledo1 11       # start is A8
+echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./toledo1 18 # start is H8: "
+echo 1>&2
 ./toledo1 18       # start is H8
+echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./toledo1 81 # start is A1: "
+echo 1>&2
 ./toledo1 81       # start is A1
+echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./toledo1 88 # start is H1: "
+echo 1>&2
 ./toledo1 88       # start is H1
+echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./toledo1 44 # start is D5: "
+echo 1>&2
 ./toledo1 44       # start is D5
+echo 1>&2
 
 echo "What happened with the last ones?" 1>&2
