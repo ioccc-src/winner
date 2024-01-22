@@ -26,8 +26,13 @@ For more detailed information see [2006 borsanyi in bugs.md](/bugs.md#2006-borsa
 ## Try:
 
 ```sh
-./borsanyi ioccc@example.com > example.gif
+./try.sh
 ```
+
+We recommend you input for the filename `example.gif` and for the string
+`ioccc@example.com`. The script will not overwrite files. It runs the program in
+a loop until you answer that you do not wish to make another.
+
 
 
 ## Judges' remarks:

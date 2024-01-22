@@ -3414,8 +3414,10 @@ Cody also added the [try.sh](/2006/birken/try.sh) script.
 
 ## <a name="2006_borsanyi"></a>[2006/borsanyi](/2006/borsanyi/borsanyi.c) ([README.md](/2006/borsanyi/README.md]))
 
-[Cody](#cody) fixed the Makefile under some systems where the `lpthread` was not
+[Cody](#cody) fixed the Makefile to work in systems where the `lpthread` is not
 implicitly linked in.
+
+Cody also added the [try.sh](/2006/borsanyi/try.sh) script.
 
 
 ## <a name="2006_grothe"></a>[2006/grothe](/2006/grothe/grothe.c) ([README.md](/2006/grothe/README.md))
