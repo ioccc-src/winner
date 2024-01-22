@@ -3436,6 +3436,9 @@ Cody also added the [try.sh](/2006/hamre/try.sh) script.
 [Cody](#cody) added the [alternate code](/2006/monge/README.md#alternate-code) that lets
 one resize the image and redefine the number of iterations.
 
+Cody also added the [try.sh](/2006/monge/try.sh) and
+[try.alt.sh](/2006/monge/try.alt.sh) scripts.
+
 Cody also fixed the Makefile to use `sdl-config` (which is what the author
 stated too though that was noticed later), not `sdl2-config` as two functions
 that are used were removed from [SDL2](https://www.libsdl.org),
