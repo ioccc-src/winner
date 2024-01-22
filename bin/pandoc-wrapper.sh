@@ -318,6 +318,9 @@ if [[ -z $NOOP ]]; then
     if [[ $V_FLAG -ge 1 ]]; then
 	echo "$0: debug[1]: will execute pandoc as: $PANDOC_TOOL -o $HTML_OUTPUT $PANDOC_ARGS $MARKDOWN_INPUT" 1>&2
     fi
+    # The pandoc args $PANDOC_ARGS does contain things that must be
+    # globbed and split (SC2086) for the pandoc tool.
+    #
     # SC2086 (info): Double quote to prevent globbing and word splitting.
     # https://www.shellcheck.net/wiki/SC2086
     # shellcheck disable=SC2086
@@ -327,6 +330,9 @@ else
     if [[ $V_FLAG -ge 1 ]]; then
 	echo "$0: debug[3]: will execute pandoc as: $PANDOC_TOOL $PANDOC_ARGS -o /dev/null $MARKDOWN_INPUT" 1>&2
     fi
+    # The pandoc args $PANDOC_ARGS does contain things that must be
+    # globbed and split (SC2086) for the pandoc tool.
+    #
     # SC2086 (info): Double quote to prevent globbing and word splitting.
     # https://www.shellcheck.net/wiki/SC2086
     # shellcheck disable=SC2086
