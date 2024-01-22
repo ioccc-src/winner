@@ -298,3 +298,142 @@ content with JavaScript disabled.
 The IOCCC will **NOT MANDATE USE OF JavaScript** to view [official IOCCC web site](https://www.ioccc.org).
 
 For this reason, we cannot use JavaScript include HTML content.
+
+
+# terms
+
+The following terms apply to tools, JSON files, and the directory structure
+of this repo.
+
+
+## `author`
+
+An individual who was an `author` of at least one winning IOCCC entry.
+
+Some authors have submitted more than one IOCCC entry that won.  Some winning
+IOCCC entries have more than one author.
+
+
+## `author_handle`
+
+An `author_handle` is string that refers to a given author and is unique to the
+IOCCC.  Each author has exactly one `author_handle`.
+
+For each `author_handle`, there will be a JSON file of the form:
+
+```
+author/author_handle.json
+```
+
+Because the `author_handle` is used to form a JSON filename, the string must be
+lower case POSIX safe string.  Furthermore, the `author_handle` must be an ASCII
+string that matches this regexp:
+
+```re
+^[0-9a-z][0-9a-z_]*$
+```
+
+Default `author_handle`'s do not have multiple consecutive `_` (underscore)
+characters.  Nevertheless, multiple consecutive `_` (underscore) characters are
+allowed. Contest submitters who wish to override the `author_handle` may do so.
+
+The `author_handle` is derived from the name of the author.  While there is a
+algorithm that maps the name of the author (which can contain any UTF-8
+characters) into a default `author_handle` string, those who submit an entry to
+the IOCCC are free to choose a different `author_handle` string if they so
+desire.
+
+An `author` who has won a previous IOCCC is encouraged to reuse their
+`author_handle` so that new winning entries can be associated with the same
+author.
+
+For an anonymous `author`, their handle is one of these forms:
+
+```
+Anonymous_year
+```
+
+or:
+
+```
+Anonymous_year.digits
+```
+
+
+The latter form is in case there are more than one anonymous author in a given
+year.
+
+NOTE: even if the directory name is not `anonymous` the above rules apply as in
+in the case of [2005/anon](/2005/anon/anon.c).
+
+Anonymous `author_handle`'s match this regexp:
+
+```re
+Anonymous_[0-9][0-9][0-9][0-9][.0-9]*$
+```
+
+
+## `winner`
+
+An IOCCC entry that won an award for given IOCCC.
+
+A `winner` has one more more `author`s.
+
+Each `winner` is contained under its own directory.  The parent of the winner directory
+is the year's directory.
+
+While in most cases a `winner` consists of files under a `winner` directory,
+there are a few cases where a `winner` directory contains subdirectories.
+
+Use of subdirectories under a `winner` directory is discouraged and
+may be limited to previous `winner`s that used them.
+
+
+## `year`
+
+A `year` is a 4 character string.  Most years are 4-digit strings that
+represent the year.  Some special `year` strings are possible, such as _`mock`_.
+Non-numeric `year` strings are lower case.
+
+A `year` string matches this regexp:
+
+```re
+[0-9a-z][0-9a-z][0-9a-z][0-9a-z]
+```
+
+The `year` directories reside directly below the top level directory.
+
+
+## `.year`
+
+Each `year` will have a file directory under it named:
+
+```
+.year
+```
+
+The contents of the `.year` file is the year string of the directory. For
+instance, [2020/.year](/2020/.year) has the string: `2020`.
+
+
+## `dir`
+
+A `dir` is a POSIX safe string that holds an winner.
+
+A `dir` is a string that matches this regexp:
+
+```re
+^[a-z][0-9a-z.-]*$
+```
+
+Each `winner` is under its own individual directory.  This directory
+is directly under a `year` directory.
+
+
+### `winner_id`
+
+A string that identifies the winning entry.  The string is of the form:
+
+```
+year_dir
+```
