@@ -17,17 +17,18 @@ clear
 
 
 
-echo "$ ./hamre '-1*42/3*(42*42*42)/42'" 1>&2
+read -r -n 1 -p "Press any key to run: ./hamre '-1*42/3*(42*42*42)/42': "
+echo 1>&2
 ./hamre '-1*42/3*(42*42*42)/42'
 echo 1>&2
 
-read -r -n 1 -p "Press any key to continue: "
-echo "$ ./hamre '-1+4/3*(2+1/(3/2*(7/2-7/3+1/6)))/2'" 1>&2
+read -r -n 1 -p "Press any key to run: ./hamre '-1+4/3*(2+1/(3/2*(7/2-7/3+1/6)))/2': "
+echo 1>&2
 ./hamre '-1+4/3*(2+1/(3/2*(7/2-7/3+1/6)))/2'
 echo 1>&2
 
-read -r -n 1 -p "Press any key to continue: "
-echo "$ ./hamre '1/0' 1>&2" 1>&2
+read -r -n 1 -p "Press any key to run: ./hamre '1/0': "
+echo 1>&2
 ./hamre '1/0' 1>&2
 echo 1>&2
 echo "...why did you not get an answer?" 1>&2
@@ -37,21 +38,33 @@ LIFE=12
 UNIVERSE=15
 EVERYTHING=15
 read -r -n 1 -p "Press any key to continue: "
+echo 1>&2
 echo "For the next two notice how similar they are: why do they give different answers?" 1>&2
 
 echo "$ LIFE=12; UNIVERSE=15; EVERYTHING=15; ./hamre \"\$LIFE/\$UNIVERSE/\$EVERYTHING\"" 1>&2
+read -r -n 1 -p "Press any key to continue: "
+echo 1>&2
 ./hamre "$LIFE/$UNIVERSE/$EVERYTHING"
+echo 1>&2
 
 echo "$ LIFE=12; UNIVERSE=15; EVERYTHING=15; ./hamre \"\$LIFE / \$UNIVERSE / \$EVERYTHING\"" 1>&2
+read -r -n 1 -p "Press any key to continue: "
+echo 1>&2
 ./hamre "$LIFE / $UNIVERSE / $EVERYTHING"
 
 echo 1>&2
 read -r -n 1 -p "Press any key to continue: "
+echo 1>&2
 echo "And why do these next two give different answers?" 1>&2
 echo "$ LIFE=12; UNIVERSE=15; EVERYTHING=15; ./hamre \"\$LIFE + \$UNIVERSE + \$EVERYTHING\"" 1>&2
+read -r -n 1 -p "Press any key to continue: "
+echo 1>&2
 ./hamre "$LIFE + $UNIVERSE + $EVERYTHING"
 echo "$ LIFE=12; UNIVERSE=15; EVERYTHING=15; ./hamre \"\$LIFE+\$UNIVERSE+\$EVERYTHING\"" 1>&2
+read -r -n 1 -p "Press any key to continue: "
+echo 1>&2
 ./hamre "$LIFE+$UNIVERSE+$EVERYTHING"
+echo 1>&2
 
 echo "As it turns out, \$LIFE+\$UNIVERSE+\$EVERYTHING == 42/1 == 42!" 1>&2
 

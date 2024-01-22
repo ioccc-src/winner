@@ -24,7 +24,7 @@
 #
 # The -G option lets one set the path to grep(1).
 #
-export IOCCC_STATUS_SCRIPT_VERSION="0.0.3-0 2024-01-15" # major.minor.release-patch YYYY-MM-DD
+export IOCCC_STATUS_SCRIPT_VERSION="0.0.5-0 2024-01-22" # major.minor.release-patch YYYY-MM-DD
 
 SED="$(type -P sed)"
 GREP="$(type -P grep)"
@@ -109,8 +109,9 @@ shift $(( OPTIND - 1 ));
 
 # verify arg count
 #
-if [[ $# -gt 1 ]]; then
-    echo "$0: ERROR: expected no more than 1 arg, found: $#" 1>&2
+if [[ $# != 1 ]]; then
+    echo "$0: ERROR: expected exactly one arg, got: $#" 1>&2
+    echo 1>&2
     echo "$USAGE" 1>&2
     exit 3
 fi
@@ -128,11 +129,15 @@ if [[ ! -e $STATUS_JSON_FILE ]]; then
     exit 1
 fi
 if [[ ! -f $STATUS_JSON_FILE ]]; then
-    echo "$0: ERROR: status.json not a file: $STATUS_JSON_FILE" 1>&2
+    echo "$0: ERROR: status.json not a regular file: $STATUS_JSON_FILE" 1>&2
     exit 1
 fi
 if [[ ! -r $STATUS_JSON_FILE ]]; then
     echo "$0: ERROR: status.json not a readable file: $STATUS_JSON_FILE" 1>&2
+    exit 1
+fi
+if [[ ! -w $STATUS_JSON_FILE ]]; then
+    echo "$0: ERROR: status.json is not a writable file: $STATUS_JSON_FILE" 1>&2
     exit 1
 fi
 
@@ -237,3 +242,4 @@ if [[ -n "$STATUS_FLAG" ]]; then
 	echo "$0: updated contest status to: \"$STATUS\"" 1>&2
     fi
 fi
+exit 0

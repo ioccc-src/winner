@@ -23,47 +23,54 @@ try()
 	SYKES1="$1"
     fi
 
-    echo "$ diff -s $SYKES1.c $SYKES1.html" 1>&2
+    read -r -n 1 -p "Press any key to see $SYKES1.c (space = next page, q = quit): "
+    echo 1>&2
+    less -rEXF "$SYKES1.c"
+    echo 1>&2
+
+    read -r -n 1 -p "Press any key to run: diff -s $SYKES1.c $SYKES1.html: "
+    echo 1>&2
     diff -s "$SYKES1".c "$SYKES1".html
     echo 1>&2
 
-    echo "$ ./$SYKES1 | less" 1>&2
-    read -r -n 1 -p "Press any key to continue (use 'q' to quit pager, space to scroll a page down): "
-    ./"$SYKES1" | less
+    read -r -n 1 -p "Press any key to run: ./$SYKES1 (space = next page, q = quit): "
+    echo 1>&2
+    ./"$SYKES1" | less -rEXF
     echo 1>&2
 
-    echo "$ ./$SYKES1 5 | less" 1>&2
-    read -r -n 1 -p "Press any key to continue (use 'q' to quit pager, space to scroll a page down): "
-    ./"$SYKES1" 5 | less
+    read -r -n 1 -p "Press any key to run: ./$SYKES1 5 (space = next page, q = quit): "
+    echo 1>&2
+    ./"$SYKES1" 5 | less -rEXF
     echo 1>&2
 
-    echo "$ ./$SYKES1 -1 | less" 1>&2
-    read -r -n 1 -p "Press any key to continue ('q' to quit pager, space to scroll a page down): "
-    ./"$SYKES1" -1 | less
+    read -r -n 1 -p "Press any key to run: ./$SYKES1 -1 (space = next page, q = quit): "
+    echo 1>&2
+    ./"$SYKES1" -1 | less -rEXF
     echo 1>&2
     echo "What happened and why did it happen?" 1>&2
     echo 1>&2
 }
 
-read -r -n 1 -p "Press any key to see the entry: "
 try sykes1
 echo 1>&2
 
 read -r -n 1 -p "Press any key to see the alt version: "
+echo 1>&2
 try sykes1.alt
 echo 1>&2
 
 # clean up output files first
 rm -f sykes1.out sykes1.alt.out
-read -r -n 1 -p "Press any key to look at output differences of the two: "
+read -r -n 1 -p "Press any key to run: ./sykes1 > sykes1.out: "
+echo 1>&2
+./sykes1 > sykes1.out
+echo 1>&2
+read -r -n 1 -p "Press any key to run: ./sykes1.alt > sykes1.alt.out: "
+echo 1>&2
+./sykes1.alt > sykes1.alt.out
 echo 1>&2
 
-echo "$ ./sykes1 > sykes1.out" 1>&2
-./sykes1 > sykes1.out
-echo "$ ./sykes1.alt > sykes1.alt.out" 1>&2
-./sykes1.alt > sykes1.alt.out
-
-echo "$ diff sykes1.out sykes1.alt.out | less" 1>&2
-read -r -n 1 -p "Press any key to continue (use 'q' to quit pager, space to scroll down a page): "
-diff sykes1.out sykes1.alt.out | less
+read -r -n 1 -p "Press any key to run: diff sykes1.out sykes1.alt.out (space = next page, q = quit): "
+echo 1>&2
+diff sykes1.out sykes1.alt.out | less -rEXF
 rm -f sykes1.out sykes1.alt.out

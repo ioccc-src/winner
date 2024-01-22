@@ -28,21 +28,15 @@ For more detailed information see [2006 monge in bugs.md](/bugs.md#2006-monge).
 ./monge expression ...
 ```
 
+Incorrect formulas will ungracefully crash the program.
+
 
 ## Try:
 
 ```sh
-./monge "z = 0" "z = z*z*z + c; Abs2(z) < 4"
+./try.sh
 ```
 
-Incorrect formulas will ungracefully crash the program.
-
-This is supposed to happen.  As is written in the
-[The Jargon File](http://catb.org/jargon/html/F/feature.html):
-
-```
-That's not a bug, that's a feature.
-```
 
 
 ## Alternate code:
@@ -78,13 +72,20 @@ make clobber ITERATIONS=512 alt
 If you specify a value less than 1 for any of these it sets it back to the
 default. The value 1 was selected arbitrarily and such a small number as 1 will
 not do anything useful but as long as it's at least 1 it'll not be redefined.
-Does not try taking care of overflows but such large values would be impractical
+It does not try taking care of overflows but such large values would be impractical
 anyway.
 
 
 ### Alternate use:
 
 Use `monge.alt` exactly as you would `monge` above.
+
+
+### Alternate try:
+
+```sh
+./try.alt.sh
+```
 
 
 ## Judges' remarks:

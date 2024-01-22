@@ -3,7 +3,7 @@
 borsanyi
 borsanyi.orig
 *.dSYM
-example.gif
+*.gif
 indent
 indent.c
 indent.o
