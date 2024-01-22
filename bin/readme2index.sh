@@ -773,6 +773,9 @@ function parse_command_line
 	# add '-U top_url' to '-o output tool'
 	#
 	if [[ -z $O_OPTSTR ]]; then
+	    # We need to use \"-s (SC2089) because we will later evaluate this
+	    # value into command line options.
+	    #
 	    # SC2089 (warning): Quotes/backslashes will be treated literally. Use an array.
 	    # https://www.shellcheck.net/wiki/SC2089
 	    # shellcheck disable=SC2089
@@ -796,6 +799,9 @@ function parse_command_line
     #
     if [[ -n $PANDOC_WRAPPER_OPTSTR ]]; then
 	if [[ -z $P_OPTSTR ]]; then
+	    # We need to use \"-s (SC2089) because we will later evaluate this
+	    # value into command line options.
+	    #
 	    # SC2089 (warning): Quotes/backslashes will be treated literally. Use an array.
 	    # https://www.shellcheck.net/wiki/SC2089
 	    # shellcheck disable=SC2089
@@ -864,6 +870,8 @@ function match_md2html
     #
     NO_MATCH_FOUND=1
     sed -e 's/#.*//' -e 's/[[:space:]]*$//' -e '/^$/d' < "$MD2HTML_PATH" | while read -r FILE_GLOB CFG_OPTIONS; do
+	# The $FILE_GLOB is a glob by design and thus we do not want to quote (SC2053) it.
+	#
 	# SC2053 (warning): Quote the right-hand side of == in [[ ]] to prevent glob matching.
 	# https://www.shellcheck.net/wiki/SC2053
 	# shellcheck disable=SC2053
@@ -1317,6 +1325,10 @@ for n in "${!OUTPUT_TOOL[@]}"; do
 	echo "$0: debug[7]: phase ${GETOPT_PHASE} about to call output tool:" \
 	     "$VALUE $O_OPTSTR ${OUTPUT_TOOL_OPTSTR[$VALUE]} -- ${WINNER_PATH}" 1>&2
     fi
+    # We are evaluating the next line on purpose as $O_OPTSTR and ${OUTPUT_TOOL_OPTSTR[$VALUE]}
+    # may contain multiple command options, we cannot simply double quote them (SC2086).
+    # We need to let eval do its work split (SC2046) the values.
+    #
     # SC2046 (warning): Quote this to prevent word splitting.
     # https://www.shellcheck.net/wiki/SC2046
     # SC2086 (info): Double quote to prevent globbing and word splitting.
@@ -1333,7 +1345,8 @@ for n in "${!OUTPUT_TOOL[@]}"; do
     #
     if [[ -n $OUTPUT_TOOL_OUTPUT ]]; then
 
-	# parse output tool options
+	# parse output tool options by evaluating by globbing and splitting (SC2086)
+	# the $OUTPUT_TOOL_OUTPUT value.
 	#
 	# SC2086 (info): Double quote to prevent globbing and word splitting.
 	# https://www.shellcheck.net/wiki/SC2086
@@ -1389,6 +1402,9 @@ if [[ $status -ne 0 ]]; then
 fi
 
 # set new options from match md2html.cfg for README_PATH
+#
+# We intend for eval to do its work, globbing and splitting (SC2086)
+# the $MATCH_OPTIONS value.
 #
 # SC2086 (info): Double quote to prevent globbing and word splitting.
 # https://www.shellcheck.net/wiki/SC2086
@@ -1470,6 +1486,10 @@ for n in "${!OUTPUT_TOOL[@]}"; do
 	echo "$0: debug[7]: phase ${GETOPT_PHASE} about to call output tool:" \
 	     "$VALUE ${OUTPUT_TOOL_OPTSTR[$VALUE]} -- ${WINNER_PATH}" 1>&2
     fi
+    # We are evaluating the next line on purpose as $O_OPTSTR and ${OUTPUT_TOOL_OPTSTR[$VALUE]}
+    # may contain multiple command options, we cannot simply double quote them (SC2086).
+    # We need to let eval do its work split (SC2046) the values.
+    #
     # SC2046 (warning): Quote this to prevent word splitting.
     # https://www.shellcheck.net/wiki/SC2046
     # SC2086 (info): Double quote to prevent globbing and word splitting.
@@ -1486,7 +1506,8 @@ for n in "${!OUTPUT_TOOL[@]}"; do
     #
     if [[ -n $OUTPUT_TOOL_OUTPUT ]]; then
 
-	# parse output tool options
+	# parse output tool options by evaluating by globbing and splitting (SC2086)
+	# the $OUTPUT_TOOL_OUTPUT value.
 	#
 	# SC2086 (info): Double quote to prevent globbing and word splitting.
 	# https://www.shellcheck.net/wiki/SC2086
@@ -1988,6 +2009,9 @@ if [[ -n $BEFORE_TOOL ]]; then
 	    echo "$0: debug[5]: about to execute:" \
 		 "$BEFORE_TOOL $B_OPTSTR -- $YEAR_DIR/$WINNER_DIR >> $TMP_INDEX_HTML" 1>&2
 	fi
+	# We need to eval $B_OPTSTR because it does contain things that
+	# need to be globbed and split (SC2086).
+	#
 	# SC2086 (info): Double quote to prevent globbing and word splitting.
 	# https://www.shellcheck.net/wiki/SC2086
 	# shellcheck disable=SC2086
@@ -2033,6 +2057,9 @@ if [[ -n $PANDOC_WRAPPER ]]; then
 	    echo "$0: debug[5]: about to execute:" \
 		 "$PANDOC_WRAPPER $P_OPTSTR -- $README_PATH - >> $TMP_INDEX_HTML" 1>&2
 	fi
+	# We need to eval $P_OPTSTR because it does contain things that
+	# need to be globbed and split (SC2086).
+	#
 	# SC2086 (info): Double quote to prevent globbing and word splitting.
 	# https://www.shellcheck.net/wiki/SC2086
 	# shellcheck disable=SC2086
@@ -2078,6 +2105,9 @@ if [[ -n $AFTER_TOOL ]]; then
 	    echo "$0: debug[5]: about to execute:" \
 		 "$AFTER_TOOL $A_OPTSTR $AFTER_TOOL_OPTSTR -- $YEAR_DIR/$WINNER_DIR >> $TMP_INDEX_HTML" 1>&2
 	fi
+	# We need to eval $A_OPTSTR because it does contain things that
+	# need to be globbed and split (SC2086).
+	#
 	# SC2086 (info): Double quote to prevent globbing and word splitting.
 	# https://www.shellcheck.net/wiki/SC2086
 	# shellcheck disable=SC2086
