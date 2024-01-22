@@ -110,7 +110,7 @@ shift $(( OPTIND - 1 ));
 # verify arg count
 #
 if [[ $# != 1 ]]; then
-    echo "$0: ERROR: expected no more than 1 arg, found: $#" 1>&2
+    echo "$0: ERROR: expected exactly one arg, got: $#" 1>&2
     echo 1>&2
     echo "$USAGE" 1>&2
     exit 3
