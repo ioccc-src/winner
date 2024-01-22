@@ -1,0 +1,150 @@
+.\" section 1 man page for ioccc-status.sh
+.\"
+.\" This man page was first written by Cody Boone Ferguson for the IOCCC
+.\" in 2024.
+.\"
+.\" "Share and Enjoy!"
+.\"     --  Sirius Cybernetics Corporation Complaints Division, JSON spec department. :-)
+.\"
+.TH ioccc-status.sh 1 "22 January 2024" "ioccc-status.sh" "IOCCC website tools"
+.SH NAME
+.B ioccc-status.sh
+\- update the
+.B status.json
+file
+.SH SYNOPSIS
+.B ioccc-status.sh
+.RB [\| \-h \|]
+.RB [\| \-V \|]
+.RB [\| \-v
+.IR level \|]
+.RB [\| \-s
+.IR status \|]
+.RB [\| \-d \|]
+.RB [\| \-n \|]
+.RB [\| \-i
+.IR status_ver \|]
+.RB [\| \-N \|]
+.RB [\| \-S
+.IR sed \|]
+.RB [\| -G
+.IR grep \|]
+.IR status.json
+.SH DESCRIPTION
+.B ioccc-status.sh
+will update the IOCCC
+.B status.json
+file that shows the contest status (\fI"open"\fP or \fI"closed"\fP), the status date (when the
+.B status
+was last updated), the news date (when the
+.B news
+was last updated) and/or the
+.B status version\c
+, unless the dry\-mode (\c
+.BR \-N )
+option is specified. If dry\-mode is used then it will only show what would have changed.
+.SH OPTIONS
+.TP
+.B \-h
+Print help and exit.
+.TP
+.B \-V
+Print version and exit.
+.TP
+.BI \-v\  level
+Set verbosity level to
+.I level
+(def: 0). If level is 1 or higher it will show what file will be touched and what values will be updated, based on the options specified, assuming dry mode is not set and an option to update the file is used.
+.TP
+.BI \-s\  status
+Set
+.I status
+to \fB"open"\fP or \fB"closed"\fP. Any other value is an error.
+.TP
+.B \-d
+Update status date to the value of the shell command
+.BR date .
+.TP
+.B \-n
+Update latest news date to the value of the shell command
+.BR date .
+.TP
+.BI \-i\  status_version
+Update the status version. The version must match the regexp: '\fB^[0\-9]+\\\.[0\-9]+ [0\-9]{4}\-[0\-9]{2}\-[0\-9]{2}$\fP' and if it does not it is an error.
+.TP
+.BI \-S\  sed
+Set path to
+.BR sed (1).
+The default is from the command \fBtype -P sed\fP.
+.TP
+.BI \-G\  grep
+Set path to
+.BR grep (1).
+The default is from the command \fBtype -P grep\fP.
+.SH EXIT STATUS
+.TP
+0
+dry\-mode used or successfully updated the
+.B status.json
+file (or no update requested)
+.TQ
+1
+status.json file does not exist or is not a regular readable and writable file
+.TQ
+2
+help mode exit or print version mode exit
+.TQ
+3
+invalid command line (including
+.BR sed (1)
+or
+.BR grep (1)
+not being regular executable files)
+.SH NOTES
+.PP
+.B ioccc\-status.sh
+was written by
+.B Cody Boone Ferguson
+in 2023 to update/maintain the
+.B status.json
+file suggested to the IOCCC judges by \fBToni Mikkola (@Virtaava@home.social)\fP.
+.SH BUGS
+.PP
+A human wrote it? :\-)
+.PP
+Nevertheless, if you feel there is an issue with this tool you may open an issue at the GitHub issues page.
+.SH EXAMPLES
+.PP
+Run script to get help:
+.sp
+.RS
+.ft B
+ ./ioccc-status.sh
+
+ ./ioccc-status.sh \-h
+.ft R
+.RE
+.PP
+Dry\-mode run of updating the latest news date:
+.sp
+.RS
+.ft B
+ ./ioccc-status.sh \-n \-N ../status.json
+.ft R
+.RE
+.PP
+Update the latest news date:
+.sp
+.RS
+.ft B
+ ./ioccc-status.sh \-n ../status.json
+.ft R
+.RE
+.PP
+Set contest status to open with a new status version of \fB0.3 2024\-01\-22\fP:
+.sp
+.RS
+.ft B
+ ./ioccc-status.sh -s open -i '0.3 2024-01-22' ../status.json
+.ft R
+.RE
