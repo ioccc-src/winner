@@ -14,20 +14,14 @@ make
 
 ## Try:
 
+Put on your "electronic ears" and then try:
+
 ```sh
-./grothe 65000000 10000000 1344 < twinkle.txt
+./try.sh
 ```
 
-... and then put on your "electronic ears".  You may find using
+You may find using
 a tunable scanning electronic ear helps.
-
-There are other text files you may wish to try:
-
-```sh
-./grothe 65000000 10000000 1344 < arabian.txt
-./grothe 65000000 10000000 1344 < olympics.txt
-./grothe 65000000 10000000 1344 < test.txt
-```
 
 
 ## Judges' remarks:

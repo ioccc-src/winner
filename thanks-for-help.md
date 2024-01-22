@@ -3418,6 +3418,11 @@ Cody also added the [try.sh](/2006/birken/try.sh) script.
 implicitly linked in.
 
 
+## <a name="2006_grothe"></a>[2006/grothe](/2006/grothe/grothe.c) ([README.md](/2006/grothe/README.md))
+
+[Cody](#cody) added the [try.sh](/2006/grothe/try.sh) script.
+
+
 ## <a name="2006_hamre"></a>[2006/hamre](/2006/hamre/hamre.c) ([README.md](/2006/hamre/README.md))
 
 [Cody](#cody) fixed this so that it will not crash without an arg after it was suggested
