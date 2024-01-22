@@ -515,7 +515,7 @@ work on modern systems
 * Setting up to generate the top level winners.html file via a tool
 * etc.
 
-#### 20yy mm dd the great pull request merge
+#### 20yy mm dd the great fork merge
 
 On 20yy mm dd, the temporary repo was merged back into the [IOCCC winner
 repo](https://github.com/ioccc-src/winner) resulting in substantial improvements
@@ -523,6 +523,7 @@ to the [official IOCCC web site](https://www.ioccc.org).
 
 **XXX**: Fill in the date when the pull request happens including the
 size of the pull request and/or number of changes that went into the pull request.
+We call this the **great fork merge**.
 
 
 ### <a name="faq1_3"></a><a name="size_rule"></a>FAQ 1.3: How has the IOCCC size limit rule changed over the years?
