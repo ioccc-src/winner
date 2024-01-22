@@ -30,17 +30,18 @@ NOTE: `convert(1)` belongs to [ImageMagick](https://imagemagick.org/index.php).
 ## Try:
 
 ```sh
-./stewart 400 1000000 maze > maze.xbm
-convert maze.xbm maze.png
-
-./stewart 1024 1000000 gasket > gasket.xbm
-convert gasket.xbm gasket.png
-
-./stewart 1024 1500000 dragon3 > dragon3.xbm
-convert dragon3.xbm dragon3.png
+./try.sh
 ```
 
-Now open the images in your favourite graphics viewer or a web browser.
+After running the program on a few files it will ask you if you wish to run it
+on the remaining files.
+
+The script will try converting the xbm files created by the program to png
+files. If it does it will list those that exist in the directory, at the end of
+the script. If you do not have `convert(1)` it will warn you once. In that case
+you'll have to open the xbm files in a graphics viewer capable of viewing xbm
+images. In any case choose your favourite graphics viewer to look at the images
+created.
 
 
 ## Judges' remarks:

@@ -3488,8 +3488,11 @@ program in some systems he also added `-include ...` to the Makefile as well.
 
 ## <a name="2006_stewart"></a>[2006/stewart](/2006/stewart/stewart.c) ([README.md](/2006/stewart/README.md]))
 
-[Cody](#cody) fixed it so that if the file cannot be opened it exits rather than trying
-to read from the file.
+[Cody](#cody) added the [try.sh](/2006/stewart/try.sh) script.
+
+Cody also fixed it so that if the file cannot be opened it exits rather than trying
+to read from the file. This was done at a time when it was considered to be a
+bug to fix.
 
 
 ## <a name="2006_sykes1"></a>[2006/sykes1](/2006/sykes1/sykes1.c) ([README.md](/2006/sykes1/README.md]))
