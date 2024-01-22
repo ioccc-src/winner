@@ -3498,7 +3498,9 @@ bug to fix.
 ## <a name="2006_sykes1"></a>[2006/sykes1](/2006/sykes1/sykes1.c) ([README.md](/2006/sykes1/README.md]))
 
 [Cody](#cody) provided the [alt code](/2006/sykes1/README.md#alternate-code) based on the
-author's remarks and the [try.sh](/2006/sykes1/try.sh) script.
+author's remarks.
+
+Cody also added the [try.sh](/2006/sykes1/try.sh) script.
 
 Cody also provided the [bedlam-cubes.pdf](/2006/sykes1/bedlam-cubes.pdf) file,
 obtained from the Internet Wayback Machine, as the file was no longer available.

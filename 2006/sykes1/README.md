@@ -4,6 +4,10 @@
 make
 ```
 
+There is an alt version based on the author's remarks. The [try.sh](try.sh)
+script will compile and use both but if you wish to see the alternate version
+specifically see the [Alternate code](#alternate-code) section below.
+
 
 ### Bugs and (Mis)features:
 
@@ -33,6 +37,15 @@ Next point your browser to the file: `sykes1.html`.
 
 Refresh your browser.
 
+You might also try:
+
+```sh
+./try.sh
+```
+
+This will run both the original entry and the alt code to show some differences.
+
+
 ### Also try:
 
 If you have all day :-) and wish to find out how fast your machine can solve the
@@ -61,6 +74,33 @@ sys	0m0.110s
 ```
 
 
+## Alternate code:
+
+This alternate code is based on the author's remarks.
+
+
+### Alternate build:
+
+```sh
+make alt
+```
+
+
+### Alternate use:
+
+Use `sykes1.alt` as you would `sykes1` above.
+
+
+### Alternate try:
+
+The [try.sh](try.sh) script will use both versions to show some differences. You
+can do so like:
+
+```sh
+./try.sh
+```
+
+
 ## Judges' remarks:
 
 Read the [sykes1.html](sykes1.html) page source.
@@ -86,7 +126,8 @@ puzzles in wikipedia](http://en.wikipedia.org/wiki/Bedlam_cube).
 Some instructions on how to make your own cube are in the included file
 [bedlam-cubes.pdf](bedlam-cubes.pdf).
 
-Finally, you can watch it being solved at <https://www.youtube.com/watch?v=a8s1AcYMLBc>.
+Finally, you can watch it being solved with the video file here,
+[solving-bedlam-cube.mp4](solving-bedlam-cube.mp4).
 
 Actually the cube is very hard to do by hand by just trying to fit it
 together.  I have not known anyone to solve it in this way - you would
