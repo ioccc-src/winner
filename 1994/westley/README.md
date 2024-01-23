@@ -1,16 +1,16 @@
 ## To build:
 
 ```sh
-make all
+make alt
 ```
 
-NOTE: the purpose of this entry is to escape the dungeon via the compiler line
-where you **get messages as compiler errors**. Depending on the compiler line you
-will get different error messages and one compiler line will make you win the
-game!
-
-NOTE: your terminal should be set to 80 columns, 8 character tabs, and
-wraparound.
+We recommend that you try the alternate version first as the original entry
+requires (for good display) 80 columns and 8 character tabs with wraparound. The
+alt code is the same as the original except that the original code used
+`#include`s of files that do not exist to generate the messages (as compiler
+errors) whereas the alt code uses `printf(3)`. The purpose of the game is to
+escape the dungeon. For the original entry see [Original code](#original-code)
+below.
 
 
 ## To use:
@@ -18,14 +18,64 @@ wraparound.
 There is no running as such. See below.
 
 
-## Try:
+### Try:
 
-But for something more interesting try compiling it with
+For something more interesting try compiling it with
+different cc arguments and then run the program each time.  For example:
+
+```sh
+cc -Describe -Door westley.alt.c && ./a.out
+cc -Describe -Drain westley.alt.c && ./a.out
+```
+
+To see the game from start to finish, try:
+
+```sh
+./try.alt.sh
+```
+
+
+## Original code:
+
+NOTE: the purpose of this entry is to escape the dungeon via the compiler line
+where you **get messages as compiler errors**. Depending on the compiler line you
+will get different error messages and one compiler line will make you win the
+game!
+
+NOTE: your terminal should be set to 80 columns, 8 character tabs, and
+wraparound. The alternate code does not have this limitation and it is for this
+reason that we recommend you try it first.
+
+
+### Original build:
+
+```sh
+make all
+```
+
+Depending on the compilation line you will get different messages (as errors)
+which let you play the game.
+
+
+## Original use:
+
+There is no running as such. See below.
+
+
+## Original try:
+
+For something more interesting try compiling it with
 different cc arguments.  For example:
 
 ```sh
 cc -Describe -Door westley.c
 cc -Describe -Drain westley.c
+```
+
+To see the game from start to complete, try:
+
+```sh
+./try.sh
 ```
 
 

@@ -2001,6 +2001,10 @@ compiler commands and added a script [try.sh](/1994/westley/try.sh) to
 automate the spoiler commands to make it easier to see the game in action from
 start to finish.
 
+Cody also added the alternate version that will look fine on terminals not set
+to 80 columns and the [try.alt.sh](/1994/westley/try.alt.sh) script to automate
+the play along the lines of the [try.sh](/1994/westley/try.sh) script.
+
 
 # <a name="1995"></a>1995
 
