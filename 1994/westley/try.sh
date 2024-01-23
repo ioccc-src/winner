@@ -23,8 +23,6 @@ fi
 
 clear
 
-
-
 "${CC}" -Describe -Door westley.c
 "${CC}" -Describe -Drain westley.c
 "${CC}" -Describe -Dwarf westley.c

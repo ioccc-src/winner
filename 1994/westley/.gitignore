@@ -1,9 +1,11 @@
 #
 # sort with: sort -d -u
+a.out
 *.dSYM
 indent
 indent.c
 indent.o
 prog.orig
 westley
+westley.alt
 westley.orig
