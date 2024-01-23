@@ -65,56 +65,56 @@ else
     fi
 fi
 
-read -r -n 1 -p "Press any key to show New York: "
+read -r -n 1 -p "Press any key to show New York (41,-74): "
 echo 1>&2
 ./"$WESTLEY_ALT" 41 -74
 echo 1>&2
 
-read -r -n 1 -p "Press any key to show London: "
+read -r -n 1 -p "Press any key to show London (52,0): "
 echo 1>&2
 ./"$WESTLEY" 52 0
 echo 1>&2
 
-read -r -n 1 -p "Press any key to show Moscow: "
+read -r -n 1 -p "Press any key to show Moscow (56,38): "
 echo 1>&2
 ./"$WESTLEY" 56 38
 echo 1>&2
 
-read -r -n 1 -p "Press any key to show New Delhi: "
+read -r -n 1 -p "Press any key to show New Delhi (29,77): "
 echo 1>&2
 ./"$WESTLEY" 29 77
 echo 1>&2
 
-read -r -n 1 -p "Press any key to show Sydney: "
+read -r -n 1 -p "Press any key to show Sydney (-34,151): "
 echo 1>&2
 ./"$WESTLEY" -34 151
 echo 1>&2
 
-read -r -n 1 -p "Press any key to show Los Angeles: "
+read -r -n 1 -p "Press any key to show Los Angeles (34,-118): "
 echo 1>&2
 ./"$WESTLEY_ALT" 34 -118
 echo 1>&2
 
-read -r -n 1 -p "Press any key to show Paris: "
+read -r -n 1 -p "Press any key to show Paris (45,2): "
 echo 1>&2
 ./"$WESTLEY" 45 2
 echo 1>&2
 
-read -r -n 1 -p "Press any key to show Rio de Janeiro: "
+read -r -n 1 -p "Press any key to show Rio de Janeiro (-23,-43): "
 echo 1>&2
 ./"$WESTLEY" -23 -43
 echo 1>&2
 
-read -r -n 1 -p "Press any key to show Beijing: "
+read -r -n 1 -p "Press any key to show Beijing (40,116): "
 echo 1>&2
 ./"$WESTLEY" 40 116
 echo 1>&2
 
-read -r -n 1 -p "Press any key to show Tokyo: "
+read -r -n 1 -p "Press any key to show Tokyo (36,140): "
 echo 1>&2
 ./"$WESTLEY" 36 140
 echo 1>&2
 
-read -r -n 1 -p "Press any key to show approximate judging location: "
+read -r -n 1 -p "Press any key to show approximate judging location (37,-122): "
 echo 1>&2
 ./"$WESTLEY_ALT" 37 -122
