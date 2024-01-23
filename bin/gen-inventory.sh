@@ -45,13 +45,13 @@ fi
 #
 # Requires bash with a version 4.2 or later
 #
-shopt -s nullglob	# enable expanded to nothing rather than remaining unexpanded
+shopt -s nullglob	# enable expand to nothing rather than remaining unexpanded
 shopt -u failglob	# disable error message if no matches are found
-shopt -u dotglob	# disable matching files starting with .
-shopt -s globskipdots	# enable never matching . nor ..
+shopt -u dotglob	# disable matching files starting with '.'
+shopt -s globskipdots	# enable never matching '.' nor '..'
 shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
-shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
+shopt -s globstar	# enable '**' to match all files and zero or more directories and subdirectories
 
 # set variables referenced in the usage message
 #
@@ -62,7 +62,7 @@ export V_FLAG=0
 GIT_TOOL=$(type -P git)
 export GIT_TOOL
 if [[ -z "$GIT_TOOL" ]]; then
-    echo "$0: FATAL: git tool is not installed or not in PATH" 1>&2
+    echo "$0: FATAL: git tool is not installed or is not in PATH" 1>&2
     exit 200
 fi
 "$GIT_TOOL" rev-parse --is-inside-work-tree >/dev/null 2>&1
@@ -238,7 +238,7 @@ if [[ ! -d $INC_PATH ]]; then
 fi
 export INC_DIR="inc"
 
-# verify that we have an bin subdirectory
+# verify that we have a bin subdirectory
 #
 export BIN_PATH="$TOPDIR/bin"
 if [[ ! -d $BIN_PATH ]]; then
@@ -333,7 +333,7 @@ if [[ ! -e $WINNER_JSON ]]; then
     exit 5
 fi
 if [[ ! -f $WINNER_JSON ]]; then
-    echo "$0: ERROR: .winner.json is not a file: $WINNER_JSON" 1>&2
+    echo "$0: ERROR: .winner.json is not a regular file: $WINNER_JSON" 1>&2
     exit 5
 fi
 if [[ ! -r $WINNER_JSON ]]; then
@@ -345,7 +345,7 @@ if [[ ! -e $PANDOC_WRAPPER ]]; then
     exit 6
 fi
 if [[ ! -f $PANDOC_WRAPPER ]]; then
-    echo "$0: ERROR: pandoc wrapper tool is not a file: $PANDOC_WRAPPER" 1>&2
+    echo "$0: ERROR: pandoc wrapper tool is not a regular file: $PANDOC_WRAPPER" 1>&2
     exit 6
 fi
 if [[ ! -x $PANDOC_WRAPPER ]]; then
@@ -361,7 +361,7 @@ if [[ ! -e $MANIFEST_WINNER_JSON_AWK ]]; then
     exit 6
 fi
 if [[ ! -f $MANIFEST_WINNER_JSON_AWK ]]; then
-    echo "$0: ERROR: bin/manifest.winner.json.awk is not a file: $MANIFEST_WINNER_JSON_AWK" 1>&2
+    echo "$0: ERROR: bin/manifest.winner.json.awk is not a regular file: $MANIFEST_WINNER_JSON_AWK" 1>&2
     exit 6
 fi
 if [[ ! -r $MANIFEST_WINNER_JSON_AWK ]]; then
