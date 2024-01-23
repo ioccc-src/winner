@@ -1284,6 +1284,7 @@
 1996,rcm,rcm.c,20,true,c,true,winning source
 1996,rcm,Makefile,30,true,makefile,true,winner Makefile
 1996,rcm,rcm.orig.c,50,true,c,true,original source
+1996,rcm,try.sh,100,true,shellscript,true,how to run
 1996,rcm,1996_rcm.tar.bz2,300,false,tbz2,false,download winning source
 1996,rcm,README.md,4294967295,true,markdown,true,markdown source for index.html
 1996,rcm,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -1296,6 +1297,7 @@
 1996,schweikh1,Makefile,30,true,makefile,true,winner Makefile
 1996,schweikh1,schweikh1.orig.c,50,true,c,true,original source
 1996,schweikh1,errno.h,100,true,c,true,declare errno as an extern int
+1996,schweikh1,try.sh,100,true,shellscript,true,how to run
 1996,schweikh1,1996_schweikh1.tar.bz2,300,false,tbz2,false,download winning source
 1996,schweikh1,README.md,4294967295,true,markdown,true,markdown source for index.html
 1996,schweikh1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -1358,6 +1360,7 @@
 1998,bas1,bas1.c,20,true,c,true,winning source
 1998,bas1,Makefile,30,true,makefile,true,winner Makefile
 1998,bas1,bas1.orig.c,50,false,c,true,original source
+1998,bas1,bas1.sh,100,true,shellscript,true,how to run bas1
 1998,bas1,1998_bas1.tar.bz2,300,false,tbz2,false,download winning source
 1998,bas1,README.md,4294967295,true,markdown,true,markdown source for index.html
 1998,bas1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -1377,6 +1380,7 @@
 1998,chaos,chaos.c,20,true,c,true,winning source
 1998,chaos,Makefile,30,true,makefile,true,winner Makefile
 1998,chaos,chaos.orig.c,50,false,c,true,original source
+1998,chaos,try.sh,100,true,shellscript,true,how to run
 1998,chaos,cube.data,150,true,text,true,data file
 1998,chaos,desk.data,150,true,text,true,data file
 1998,chaos,ioccc.data,150,true,text,true,data file
@@ -1391,6 +1395,7 @@
 1998,df,df.c,20,true,c,true,winning source
 1998,df,Makefile,30,true,makefile,true,winner Makefile
 1998,df,df.orig.c,50,false,c,true,original source
+1998,df,try.sh,100,true,shellscript,true,how to run
 1998,df,1998_df.tar.bz2,300,false,tbz2,false,download winning source
 1998,df,README.md,4294967295,true,markdown,true,markdown source for index.html
 1998,df,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -1471,6 +1476,7 @@
 1998,schweikh2,schweikh2.c,20,true,c,true,winning source
 1998,schweikh2,Makefile,30,true,makefile,true,winner Makefile
 1998,schweikh2,schweikh2.orig.c,50,true,c,true,original source
+1998,schweikh2,try.sh,100,true,shellscript,true,how to run
 1998,schweikh2,1998_schweikh2.tar.bz2,300,false,tbz2,false,download winning source
 1998,schweikh2,README.md,4294967295,true,markdown,true,markdown source for index.html
 1998,schweikh2,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -1576,6 +1582,7 @@
 2000,natori,Makefile,30,true,makefile,true,winner Makefile
 2000,natori,natori.alt.c,40,true,c,true,alternative source
 2000,natori,natori.orig.c,50,false,c,true,original source
+2000,natori,try.alt.sh,100,true,shellscript,true,how to run alternative code
 2000,natori,try.sh,100,true,shellscript,true,how to run
 2000,natori,2000_natori.tar.bz2,300,false,tbz2,false,download winning source
 2000,natori,README.md,4294967295,true,markdown,true,markdown source for index.html
@@ -1616,6 +1623,7 @@
 2000,schneiderwent,schneiderwent.c,20,true,c,true,winning source
 2000,schneiderwent,Makefile,30,true,makefile,true,winner Makefile
 2000,schneiderwent,schneiderwent.orig.c,50,true,c,true,original source
+2000,schneiderwent,try.sh,100,true,shellscript,true,how to run
 2000,schneiderwent,schneiderwent.data,150,true,binary,true,table lookups values
 2000,schneiderwent,2000_schneiderwent.tar.bz2,300,false,tbz2,false,download winning source
 2000,schneiderwent,README.md,4294967295,true,markdown,true,markdown source for index.html
@@ -1715,6 +1723,7 @@
 2001,herrmann1,herrmann1.sh,100,true,shellscript,true,how to run
 2001,herrmann1,herrmann1.times2,100,true,c,true,turning program as c defines
 2001,herrmann1,plus1.turing,100,true,c,true,turning program as c defines
+2001,herrmann1,try.sh,100,true,shellscript,true,how to run
 2001,herrmann1,2001_herrmann1.tar.bz2,300,false,tbz2,false,download winning source
 2001,herrmann1,README.md,4294967295,true,markdown,true,markdown source for index.html
 2001,herrmann1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -1756,6 +1765,7 @@
 2001,ollinger,ollinger.c,20,true,c,true,winning source
 2001,ollinger,Makefile,30,true,makefile,true,winner Makefile
 2001,ollinger,ollinger.orig.c,50,false,c,true,original source
+2001,ollinger,try.sh,100,true,shellscript,true,how to run
 2001,ollinger,2001_ollinger.tar.bz2,300,false,tbz2,false,download winning source
 2001,ollinger,README.md,4294967295,true,markdown,true,markdown source for index.html
 2001,ollinger,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -1806,6 +1816,7 @@
 2004,anonymous,anonymous.c,20,true,c,true,winning source
 2004,anonymous,Makefile,30,true,makefile,true,winner Makefile
 2004,anonymous,anonymous.orig.c,50,false,c,true,original source
+2004,anonymous,try.sh,100,true,shellscript,true,how to run
 2004,anonymous,2004_anonymous.tar.bz2,300,false,tbz2,false,download winning source
 2004,anonymous,README.md,4294967295,true,markdown,true,markdown source for index.html
 2004,anonymous,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -1911,6 +1922,7 @@
 2004,hoyle,hoyle.c,20,true,c,true,winning source
 2004,hoyle,Makefile,30,true,makefile,true,winner Makefile
 2004,hoyle,hoyle.orig.c,50,false,c,true,original source
+2004,hoyle,try.sh,100,true,shellscript,true,how to run
 2004,hoyle,2004_hoyle.tar.bz2,300,false,tbz2,false,download winning source
 2004,hoyle,README.md,4294967295,true,markdown,true,markdown source for index.html
 2004,hoyle,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -1958,6 +1970,7 @@
 2004,newbern,Makefile,30,true,makefile,true,winner Makefile
 2004,newbern,newbern.orig.c,50,false,c,true,original source
 2004,newbern,newbern.dat,100,true,text,true,sample input
+2004,newbern,try.sh,100,true,shellscript,true,how to run
 2004,newbern,2004_newbern.tar.bz2,300,false,tbz2,false,download winning source
 2004,newbern,README.md,4294967295,true,markdown,true,markdown source for index.html
 2004,newbern,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -1968,6 +1981,7 @@
 2004,omoikane,Makefile,30,true,makefile,true,winner Makefile
 2004,omoikane,omoikane.orig.c,50,false,c,true,original source
 2004,omoikane,omoikane.info,100,true,text,true,information about Rinia
+2004,omoikane,try.sh,100,true,shellscript,true,how to run
 2004,omoikane,2004_omoikane.tar.bz2,300,false,tbz2,false,download winning source
 2004,omoikane,README.md,4294967295,true,markdown,true,markdown source for index.html
 2004,omoikane,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -2053,6 +2067,7 @@
 2005,boutines,Voronoi.png,100,true,image,false,output example
 2005,boutines,eqn.png,100,true,image,false,equation limit for entry
 2005,boutines,input.txt,100,true,text,true,sample input
+2005,boutines,try.sh,100,true,shellscript,true,how to run
 2005,boutines,2005_boutines.tar.bz2,300,false,tbz2,false,download winning source
 2005,boutines,README.md,4294967295,true,markdown,true,markdown source for index.html
 2005,boutines,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -2128,6 +2143,7 @@
 2005,persano,Makefile,30,true,makefile,true,winner Makefile
 2005,persano,persano.alt.c,40,true,c,true,alternative source
 2005,persano,persano.orig.c,50,false,c,true,original source
+2005,persano,try.sh,100,true,shellscript,true,how to run
 2005,persano,2005_persano.tar.bz2,300,false,tbz2,false,download winning source
 2005,persano,README.md,4294967295,true,markdown,true,markdown source for index.html
 2005,persano,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -2225,6 +2241,7 @@
 2006,borsanyi,borsanyi.c,20,true,c,true,winning source
 2006,borsanyi,Makefile,30,true,makefile,true,winner Makefile
 2006,borsanyi,borsanyi.orig.c,50,false,c,true,original source
+2006,borsanyi,try.sh,100,true,shellscript,true,how to run
 2006,borsanyi,2006_borsanyi.tar.bz2,300,false,tbz2,false,download winning source
 2006,borsanyi,README.md,4294967295,true,markdown,true,markdown source for index.html
 2006,borsanyi,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -2237,6 +2254,7 @@
 2006,grothe,arabian.txt,100,true,text,true,sample input
 2006,grothe,olympics.txt,100,true,text,true,sample input
 2006,grothe,test.txt,100,true,text,true,sample input
+2006,grothe,try.sh,100,true,shellscript,true,how to run
 2006,grothe,twinkle.txt,100,true,text,true,sample input
 2006,grothe,2006_grothe.tar.bz2,300,false,tbz2,false,download winning source
 2006,grothe,README.md,4294967295,true,markdown,true,markdown source for index.html
@@ -2267,6 +2285,8 @@
 2006,monge,Makefile,30,true,makefile,true,winner Makefile
 2006,monge,monge.alt.c,40,true,c,true,alternative source
 2006,monge,monge.orig.c,50,false,c,true,original source
+2006,monge,try.alt.sh,100,true,shellscript,true,how to run alternative code
+2006,monge,try.sh,100,true,shellscript,true,how to run
 2006,monge,2006_monge.tar.bz2,300,false,tbz2,false,download winning source
 2006,monge,README.md,4294967295,true,markdown,true,markdown source for index.html
 2006,monge,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -2297,6 +2317,7 @@
 2006,stewart,Makefile,30,true,makefile,true,winner Makefile
 2006,stewart,stewart.orig.c,50,true,c,true,original source
 2006,stewart,build,100,true,shellscript,true,how to compile
+2006,stewart,try.sh,100,true,shell,true,how to run
 2006,stewart,altar,150,true,text,true,sample input
 2006,stewart,box,150,true,text,true,sample input
 2006,stewart,box2,150,true,text,true,sample input

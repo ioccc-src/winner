@@ -928,6 +928,7 @@
 1996/rcm/rcm.orig.c
 1996/rcm/rfc1951.gz
 1996/rcm/rfc1952.gz
+1996/rcm/try.sh
 1996/schweikh1/.gitignore
 1996/schweikh1/.winner.json
 1996/schweikh1/Makefile
@@ -935,6 +936,7 @@
 1996/schweikh1/errno.h
 1996/schweikh1/schweikh1.c
 1996/schweikh1/schweikh1.orig.c
+1996/schweikh1/try.sh
 1996/schweikh2/.gitignore
 1996/schweikh2/.winner.json
 1996/schweikh2/Makefile
@@ -982,6 +984,7 @@
 1998/bas1/README.md
 1998/bas1/bas1.c
 1998/bas1/bas1.orig.c
+1998/bas1/bas1.sh
 1998/bas2/.gitignore
 1998/bas2/.winner.json
 1998/bas2/Makefile
@@ -999,6 +1002,7 @@
 1998/chaos/desk.data
 1998/chaos/ioccc.data
 1998/chaos/pyramid.data
+1998/chaos/try.sh
 1998/chaos/xwing.data
 1998/df/.gitignore
 1998/df/.winner.json
@@ -1006,6 +1010,7 @@
 1998/df/README.md
 1998/df/df.c
 1998/df/df.orig.c
+1998/df/try.sh
 1998/dlowe/.gitignore
 1998/dlowe/.winner.json
 1998/dlowe/Makefile
@@ -1063,6 +1068,7 @@
 1998/schweikh2/README.md
 1998/schweikh2/schweikh2.c
 1998/schweikh2/schweikh2.orig.c
+1998/schweikh2/try.sh
 1998/schweikh3/.gitignore
 1998/schweikh3/.winner.json
 1998/schweikh3/Makefile
@@ -1138,6 +1144,7 @@
 2000/natori/natori.alt.c
 2000/natori/natori.c
 2000/natori/natori.orig.c
+2000/natori/try.alt.sh
 2000/natori/try.sh
 2000/primenum/.gitignore
 2000/primenum/.winner.json
@@ -1167,6 +1174,7 @@
 2000/schneiderwent/schneiderwent.c
 2000/schneiderwent/schneiderwent.data
 2000/schneiderwent/schneiderwent.orig.c
+2000/schneiderwent/try.sh
 2000/thadgavin/.gitignore
 2000/thadgavin/.winner.json
 2000/thadgavin/Makefile
@@ -1238,6 +1246,7 @@
 2001/herrmann1/herrmann1.sh
 2001/herrmann1/herrmann1.times2
 2001/herrmann1/plus1.turing
+2001/herrmann1/try.sh
 2001/herrmann2/.gitignore
 2001/herrmann2/.winner.json
 2001/herrmann2/Makefile
@@ -1267,6 +1276,7 @@
 2001/ollinger/README.md
 2001/ollinger/ollinger.c
 2001/ollinger/ollinger.orig.c
+2001/ollinger/try.sh
 2001/rosten/.gitignore
 2001/rosten/.winner.json
 2001/rosten/Makefile
@@ -1302,6 +1312,7 @@
 2004/anonymous/README.md
 2004/anonymous/anonymous.c
 2004/anonymous/anonymous.orig.c
+2004/anonymous/try.sh
 2004/arachnid/.gitignore
 2004/arachnid/.winner.json
 2004/arachnid/Makefile
@@ -1388,6 +1399,7 @@
 2004/hoyle/README.md
 2004/hoyle/hoyle.c
 2004/hoyle/hoyle.orig.c
+2004/hoyle/try.sh
 2004/jdalbec/.gitignore
 2004/jdalbec/.winner.json
 2004/jdalbec/Makefile
@@ -1426,6 +1438,7 @@
 2004/newbern/newbern.c
 2004/newbern/newbern.dat
 2004/newbern/newbern.orig.c
+2004/newbern/try.sh
 2004/omoikane/.gitignore
 2004/omoikane/.winner.json
 2004/omoikane/Makefile
@@ -1433,6 +1446,7 @@
 2004/omoikane/omoikane.c
 2004/omoikane/omoikane.info
 2004/omoikane/omoikane.orig.c
+2004/omoikane/try.sh
 2004/schnitzi/.gitignore
 2004/schnitzi/.winner.json
 2004/schnitzi/Makefile
@@ -1497,6 +1511,7 @@
 2005/boutines/boutines.orig.c
 2005/boutines/eqn.png
 2005/boutines/input.txt
+2005/boutines/try.sh
 2005/chia/.gitignore
 2005/chia/.winner.json
 2005/chia/Makefile
@@ -1551,6 +1566,7 @@
 2005/persano/persano.alt.c
 2005/persano/persano.c
 2005/persano/persano.orig.c
+2005/persano/try.sh
 2005/sykes/.gitignore
 2005/sykes/.winner.json
 2005/sykes/6502test
@@ -1627,6 +1643,7 @@
 2006/borsanyi/README.md
 2006/borsanyi/borsanyi.c
 2006/borsanyi/borsanyi.orig.c
+2006/borsanyi/try.sh
 2006/grothe/.gitignore
 2006/grothe/.winner.json
 2006/grothe/Makefile
@@ -1636,6 +1653,7 @@
 2006/grothe/grothe.orig.c
 2006/grothe/olympics.txt
 2006/grothe/test.txt
+2006/grothe/try.sh
 2006/grothe/twinkle.txt
 2006/hamre/.gitignore
 2006/hamre/.winner.json
@@ -1657,6 +1675,8 @@
 2006/monge/monge.alt.c
 2006/monge/monge.c
 2006/monge/monge.orig.c
+2006/monge/try.alt.sh
+2006/monge/try.sh
 2006/night/.gitignore
 2006/night/.winner.json
 2006/night/Makefile
@@ -1717,6 +1737,7 @@
 2006/stewart/tree3
 2006/stewart/tree4
 2006/stewart/triangle
+2006/stewart/try.sh
 2006/sykes1/.gitignore
 2006/sykes1/.winner.json
 2006/sykes1/Makefile
