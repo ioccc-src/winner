@@ -74,6 +74,14 @@
 	    "winners_text" : "turning program as c defines"
 	},
 	{
+	    "file_path" : "try.sh",
+	    "inventory_order" : 100,
+	    "OK_to_edit" : true,
+	    "display_as" : "shellscript",
+	    "display_via_github" : true,
+	    "winners_text" : "how to run"
+	},
+	{
 	    "file_path" : "2001_herrmann1.tar.bz2",
 	    "inventory_order" : 300,
 	    "OK_to_edit" : false,

@@ -121,13 +121,9 @@ Location: <a href="/temp-test-ioccc/location.html#US">US</a></p>
 <h2 id="to-use">To use:</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./grothe</span> carrier_freq pixelclock horizontal_total <span class="op">&lt;</span> some_input.txt</span></code></pre></div>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./grothe</span> 65000000 10000000 1344 <span class="op">&lt;</span> twinkle.txt</span></code></pre></div>
-<p>… and then put on your “electronic ears”. You may find using a
-tunable scanning electronic ear helps.</p>
-<p>There are other text files you may wish to try:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./grothe</span> 65000000 10000000 1344 <span class="op">&lt;</span> arabian.txt</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./grothe</span> 65000000 10000000 1344 <span class="op">&lt;</span> olympics.txt</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./grothe</span> 65000000 10000000 1344 <span class="op">&lt;</span> test.txt</span></code></pre></div>
+<p>Put on your “electronic ears” and then try:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.sh</span></span></code></pre></div>
+<p>You may find using a tunable scanning electronic ear helps.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Most of the time, interference is annoying. This entry is the
 exception that proves the rule. What is a bug to some is a feature to
@@ -146,9 +142,9 @@ horizontal_total - total scan along the horizontal axis</code></pre>
 <p>If you have <code>xvidtune</code> installed you can get the
 <code>pixelclock</code> and <code>horizontal_total</code> with the
 following command</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xvidtune</span> <span class="at">-show</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n</span> 1 <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{ print &quot;pixelclock &quot; $2 * 1000000 &quot; horizontal_total = &quot; $6 }&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xvidtune</span> <span class="at">-show</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n</span> 1 <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{ print &quot;pixelclock &quot; $2 * 1000000 &quot; horizontal_total = &quot; $6 }&#39;</span></span></code></pre></div>
 <p>Example from my laptops:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./grothe</span> 65000000 10000000 1344 <span class="op">&lt;</span> twinkle.txt</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./grothe</span> 65000000 10000000 1344 <span class="op">&lt;</span> twinkle.txt</span></code></pre></div>
 <p>Even if the user gets a setting off, the sound will usually be able
 to be heard on <a
 href="https://en.wikipedia.org/wiki/AM_broadcasting">AM</a> at a
@@ -244,6 +240,9 @@ href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/grothe/olymp
 <li><a
 href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/grothe/test.txt">test.txt</a>
 - sample input</li>
+<li><a
+href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/grothe/try.sh">try.sh</a>
+- how to run</li>
 <li><a
 href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/grothe/twinkle.txt">twinkle.txt</a>
 - sample input</li>
