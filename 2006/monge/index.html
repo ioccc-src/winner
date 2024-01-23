@@ -132,37 +132,35 @@ STATUS: INABIAF - please **DO NOT** fix</code></pre>
 monge in bugs.md</a>.</p>
 <h2 id="to-use">To use:</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./monge</span> expression ...</span></code></pre></div>
-<h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./monge</span> <span class="st">&quot;z = 0&quot;</span> <span class="st">&quot;z = z*z*z + c; Abs2(z) &lt; 4&quot;</span></span></code></pre></div>
 <p>Incorrect formulas will ungracefully crash the program.</p>
-<p>This is supposed to happen. As is written in the <a
-href="http://catb.org/jargon/html/F/feature.html">The Jargon
-File</a>:</p>
-<pre><code>That&#39;s not a bug, that&#39;s a feature.</code></pre>
+<h2 id="try">Try:</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.sh</span></span></code></pre></div>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This alternate code lets you specify the width and height of the
 image as well as the number of iterations to perform.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <p>To use the default values, the same as <a href="monge.c">monge.c</a>,
 just do:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> alt</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> alt</span></code></pre></div>
 <p>But if you wish to actually make use of it you will want to redefine
 one or more of the variables <code>W</code>, <code>H</code> and
 <code>I</code>. The defaults are (respectively) 400, 300 and \128. If
 you wish to change the image size to 500x500 but keep the iterations the
 same then do:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber WIDTH=500 HEIGHT=500 alt</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber WIDTH=500 HEIGHT=500 alt</span></code></pre></div>
 <p>If you wish to keep the dimensions the same but change the iterations
 to 512:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber ITERATIONS=512 alt</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber ITERATIONS=512 alt</span></code></pre></div>
 <p>If you specify a value less than 1 for any of these it sets it back
 to the default. The value 1 was selected arbitrarily and such a small
 number as 1 will not do anything useful but as long as it’s at least 1
-it’ll not be redefined. Does not try taking care of overflows but such
-large values would be impractical anyway.</p>
+it’ll not be redefined. It does not try taking care of overflows but
+such large values would be impractical anyway.</p>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>monge.alt</code> exactly as you would <code>monge</code>
 above.</p>
+<h3 id="alternate-try">Alternate try:</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.alt.sh</span></span></code></pre></div>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>For those who are familiar with the previous <a
 href="/winners.html">IOCCC winners</a>, this program is best described
@@ -359,6 +357,12 @@ href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/monge/monge.
 <li><a
 href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/monge/monge.orig.c">monge.orig.c</a>
 - original source</li>
+<li><a
+href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/monge/try.alt.sh">try.alt.sh</a>
+- how to run alternative code</li>
+<li><a
+href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2006/monge/try.sh">try.sh</a>
+- how to run</li>
 <li><a href="2006_monge.tar.bz2">2006_monge.tar.bz2</a> - download
 winning source</li>
 </ul>
