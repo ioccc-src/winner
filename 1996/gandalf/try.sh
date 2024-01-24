@@ -18,6 +18,21 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
+if [[ "$#" -gt 0 ]]; then
+    if [[ "${1@L}" = "gandalf" ]]; then
+	echo "It is perilous to try the patience of Gandalf!" 1>&2
+	read -r -p "Are you sure you wish to do this (Y/N)? "
+	echo 1>&2
+	if [[ "$REPLY" != "y" && "$REPLY" != "Y" ]]; then
+	    echo "Wise move, will not try Gandalf's patience!" 1>&2
+	    exit 0
+	else
+	    echo "Fool of a ${USER@u}!" 1>&2
+	    echo 1>&2
+	fi
+    fi
+fi
+
 # remove temporary files to show later
 rm -f hatcat.txt cathat.txt hatcat2.txt cathat2.txt hatcat3.txt cathat3.txt
 
