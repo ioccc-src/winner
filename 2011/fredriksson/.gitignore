@@ -5,6 +5,7 @@ ag.c
 *.dSYM
 fredriksson
 fredriksson.orig
+fredriksson.txt
 indent
 indent.c
 indent.o

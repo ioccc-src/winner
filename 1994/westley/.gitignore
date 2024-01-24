@@ -1,6 +1,5 @@
 #
 # sort with: sort -d -u
-a.out
 *.dSYM
 indent
 indent.c

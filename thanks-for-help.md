@@ -3609,7 +3609,7 @@ and now it does work with 64-bit systems as well as 32-bit systems.
 
 Cody also added the [try.sh](/2011/goren/try.sh) script.
 
-Cody added the following words of wisdom: '"this" is not a pipe but "!" is'.
+Cody added the following words of wisdom: `'"this" is not a pipe but "!" is'`.
 
 
 ## <a name="2011_hamaji"></a>[2011/hamaji](/2011/hamaji/hamaji.c) ([README.md](/2011/hamaji/README.md]))
@@ -3643,11 +3643,17 @@ Cody also added the [try.sh](/2011/konno/try.sh) script.
 however that as of this time this entry does not work properly with macOS at
 least with the silicon chip (Intel has not been tested) and it is quite possibly
 an inherent problem in macOS to do with executing code in in memory/JIT and in
-particular with the silicon chip. See [bugs.md](/bugs.md) for more details and a
+particular with the silicon chip. See [2011/richards in
+bugs.md](/bugs.md#2011-richards) for more details and a
 document from Apple about how it might be fixed if anyone is brave enough to
 try. If they do they might want to look also at
 [richards.alt.c](/2011/richards/richards.alt.c), for whatever it might or might
-not be worth.
+not be worth, as it is a possible starting point that Cody added.
+
+Cody also added the [try.sh](/2011/richards/try.sh) and the
+[try.alt.sh](/2011/richards/try.alt.sh) scripts. The `try.alt.sh` script will be
+helpful to test any fixes for Apple silicon chips (see [2011/richards in
+bugs.md](/bugs.md#2011-richards) for more details).
 
 
 ## <a name="2011_toledo"></a>[2011/toledo](/2011/toledo/toledo.c) ([README.md](/2011/toledo/README.md]))
@@ -3670,13 +3676,15 @@ header files). To build try the alt rule of the Makefile.
 
 ## <a name="2011_zucker"></a>[2011/zucker](/2011/zucker/zucker.c) ([README.md](/2011/zucker/README.md]))
 
-[Cody](#cody) added [alt code](/2011/zucker/README.md#alternate-code) that should work on
+[Cody](#cody) added the [try.sh](/2011/zucker/try.sh) script.
+
+Cody also added [alt code](/2011/zucker/README.md#alternate-code) that should work on
 Windows, based on the author's remarks that if the system distinguishes binary
 and text then `stdout` needs to be set to binary mode.
 
 Cody also added the PDF file
-[sphere-tracing.pdf](/2011/zucker/sphere-tracing.pdf) in case the link eventually
-dies.
+[sphere-tracing.pdf](/2011/zucker/sphere-tracing.pdf) in case the link
+eventually dies.
 
 
 # <a name="2012"></a>2012

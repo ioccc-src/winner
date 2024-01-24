@@ -11,10 +11,13 @@ make
 ./eastman
 ```
 
+NOTE: to restore your cursor in your shell, try `reset`.
+
 
 ## Try:
 
-Quit the program.  Resize your terminal window.  Run it again.
+Run the program. Quit it (ctrl-c/intr). Resize your terminal window. Run it
+again. Try doing this a number of times with different sizes each time.
 
 ```sh
 ./eastman

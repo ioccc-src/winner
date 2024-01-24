@@ -17,60 +17,65 @@ clear
 
 read -r -n 1 -p "Press any key to run: ./hamaji < dragon.nono (q = quit, space = next page): "
 echo 1>&2
-./hamaji < dragon.nono | less -X
+./hamaji < dragon.nono | less -rEXF
 echo 1>&2
 
 rm -f dragon dragon2
-echo "Checking if you have perl installed..."
 PERL="$(type -P perl)"
-if [[ -n "$PERL" ]]; then
+if [[ -n "$PERL" && -f "$PERL" && -x "$PERL" ]]; then
     echo "Perl installed, will generate output of ./hamaji < dragon.nono."
-    read -r -n 1 -p "Press any key to run: $PERL c2nono.pl hamaji.c | ./hamaji > dragon: "
     echo 1>&2
-    "$PERL" c2nono.pl hamaji.c | ./hamaji > dragon
-    read -r -n 1 -p "Press any key to run: ./hamaji < dragon.nono > dragon2: "
+    echo "$ $PERL c2nono.pl hamaji.c | ./hamaji | tee dragon"
+    read -r -n 1 -p "Press any key to continue (space =  next page, q = quit): "
+    "$PERL" c2nono.pl hamaji.c | ./hamaji | tee dragon | less -rEXF
     echo 1>&2
-    ./hamaji < dragon.nono > dragon2
+    echo "$ ./hamaji < dragon.nono | tee dragon2" 1>&2
+    read -r -n 1 -p "Press any key to run: ./hamaji < dragon.nono | tee dragon2 (space = next page, q = quit): "
+    echo 1>&2
+    ./hamaji < dragon.nono | tee dragon2 | less -rEXF
     read -r -n 1 -p "Press any key to run: diff -s dragon dragon2: "
     echo 1>&2
     diff -s dragon dragon2
+else
+    echo "Perl not found, will not run other steps." 1>&2
 fi
 rm -f dragon dragon2
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: ./hamaji < random.nono: "
+read -r -n 1 -p "Press any key to run: ./hamaji < random.nono (space = next page, q = quit): "
 echo 1>&2
-./hamaji < random.nono
-echo 1>&2
-
-read -r -n 1 -p "Press any key to run: ./hamaji < soccer.nono: "
-echo 1>&2
-./hamaji < soccer.nono
+./hamaji < random.nono | less -rEXF
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: ./hamaji < codegolf.nono: "
+read -r -n 1 -p "Press any key to run: ./hamaji < soccer.nono (space = next page, q = quit): "
 echo 1>&2
-./hamaji < codegolf.nono
-echo 1>&2
-
-read -r -n 1 -p "Press any key to run: ./hamaji < face.nono: "
-echo 1>&2
-./hamaji < face.nono
+./hamaji < soccer.nono | less -rEXF
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: ./hamaji < penguin.nono: "
+read -r -n 1 -p "Press any key to run: ./hamaji < codegolf.nono (space = next page, q = quit): "
 echo 1>&2
-./hamaji < penguin.nono
+./hamaji < codegolf.nono | less -rEXF
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./hamaji < face.nono (space = next page, q = quit): "
+echo 1>&2
+./hamaji < face.nono | less -rEXF
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./hamaji < penguin.nono (space = next page, q = quit): "
+echo 1>&2
+./hamaji < penguin.nono | less -rEXF
 echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./hamaji < samurai.nono (q = quit, space = next page): "
 echo 1>&2
-./hamaji < samurai.nono | less -X
+./hamaji < samurai.nono | less -rEXF
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: ./hamaji < conway-game-of-life.nono: "
+echo "$ ./hamaji < conway-game-of-life.nono" 1>&2
+read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
 echo 1>&2
-./hamaji < conway-game-of-life.nono
+./hamaji < conway-game-of-life.nono | less -rEXF
 echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./hamaji < no-solution.nono (no solution): "
@@ -83,13 +88,13 @@ echo 1>&2
 ./hamaji < multi-solutions.nono
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: ./hamaji < plus.nono: "
+read -r -n 1 -p "Press any key to run: ./hamaji < plus.nono (space = next page, q = quit): "
 echo 1>&2
-./hamaji < plus.nono
+./hamaji < plus.nono | less -rEXF
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: ./hamaji < smiley.nono: "
+read -r -n 1 -p "Press any key to run: ./hamaji < smiley.nono (space = next page, q = quit): "
 echo 1>&2
-./hamaji < smiley.nono
+./hamaji < smiley.nono | less -rEXF
 
 exit 0
