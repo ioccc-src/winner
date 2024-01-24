@@ -4,7 +4,6 @@
 make
 ```
 
-
 ### Bugs and (Mis)features:
 
 The current status of this entry is:
@@ -19,7 +18,7 @@ For more detailed information see [2011 richards in bugs.md](/bugs.md#2011-richa
 ## To use:
 
 ```sh
-./richards
+./try.sh
 ```
 
 

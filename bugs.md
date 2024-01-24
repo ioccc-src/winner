@@ -2868,6 +2868,13 @@ f *lib2[] = { T, ld, lp, lx, l1 } ;
 This can be fixed easily enough however but it doesn't appear to matter in this
 case.
 
+
+### Testing fixes
+
+It might be helpful to use the [try.alt.sh](/2011/richards/try.alt.sh) script to
+test that it does not crash.
+
+
 ### Resources
 
 #### More from the author

@@ -3643,11 +3643,17 @@ Cody also added the [try.sh](/2011/konno/try.sh) script.
 however that as of this time this entry does not work properly with macOS at
 least with the silicon chip (Intel has not been tested) and it is quite possibly
 an inherent problem in macOS to do with executing code in in memory/JIT and in
-particular with the silicon chip. See [bugs.md](/bugs.md) for more details and a
+particular with the silicon chip. See [2011/richards in
+bugs.md](/bugs.md#2011-richards) for more details and a
 document from Apple about how it might be fixed if anyone is brave enough to
 try. If they do they might want to look also at
 [richards.alt.c](/2011/richards/richards.alt.c), for whatever it might or might
-not be worth.
+not be worth, as it is a possible starting point that Cody added.
+
+Cody also added the [try.sh](/2011/richards/try.sh) and the
+[try.alt.sh](/2011/richards/try.alt.sh) scripts. The `try.alt.sh` script will be
+helpful to test any fixes for Apple silicon chips (see [2011/richards in
+bugs.md](/bugs.md#2011-richards) for more details).
 
 
 ## <a name="2011_toledo"></a>[2011/toledo](/2011/toledo/toledo.c) ([README.md](/2011/toledo/README.md]))
