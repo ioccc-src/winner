@@ -14,15 +14,17 @@ binary mode from text mode. See [alternate code](#alternate-code) below.
 ./zucker > image.ppm
 ```
 
+Now open `image.ppm` with your image viewer of choice.
+
 
 ## Try:
 
 ```sh
-./zucker "Hello\!\!\!" > hello.ppm
-./zucker faster\! -preview > image2.ppm
+./try.sh
 ```
 
-Display the PPM image with your favorite image viewer.
+After running `try.sh`, open the PPM images `ioccc.ppm`, `hello.ppm` and
+`image2.ppm` with your image viewer of choice.
 
 
 ## Alternate code:
