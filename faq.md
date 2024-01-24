@@ -29,7 +29,7 @@
 - [3.3  - Why do some IOCCC winners fail to compile under macOS?](#faq3_3)
 - [3.4  - Why does clang or gcc fail to compile an IOCCC winner?](#faq3_4)
 - [3.5  - What is this cb tool that is mentioned in the IOCCC?](#faq3_5)
-- [3.6  - An IOCCC winner missed by my terminal application, how do I fix this?](#faq3_6)
+- [3.6  - An IOCCC winner messed up my terminal application, how do I fix this?](#faq3_6)
 - [3.7  - How do I run an IOCCC winner that requires X11?](#faq3_7)
 - [3.8  - How do I compile an IOCCC winner that requires SDL1 or SDL2?](#faq3_8)
 - [3.9  - How do I compile an IOCCC winner that requires (n)curses?](#faq3_9)
@@ -876,7 +876,7 @@ judging the IOCCC. A Unix man page for `cb`
 [still exists](https://www.ibm.com/docs/en/aix/7.3?topic=c-cb-command).
 
 
-### <a name="faq3_6"></a>FAQ 3.6: An IOCCC winner missed by my terminal application, how do I fix this?
+### <a name="faq3_6"></a>FAQ 3.6: An IOCCC winner messed up my terminal application, how do I fix this?
 
 The simplest way to do this is to type `reset`. If echo was disabled you can get
 usually away with `stty echo`. Sometimes you can also get away with `stty sane`.
