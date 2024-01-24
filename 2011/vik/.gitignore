@@ -1,6 +1,7 @@
 #
 # sort with: sort -d -u
 audio_file.raw
+
 *.dSYM
 indent
 indent.c
@@ -9,3 +10,4 @@ prog.orig
 vik
 vik.alt
 vik.orig
+*.wav

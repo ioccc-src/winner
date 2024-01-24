@@ -25,21 +25,35 @@ For more detailed information see [2011 vik in bugs.md](/bugs.md#2011-vik).
 ./vik file.mod > audio_file.raw
 ```
 
+If you have `mplayer(1)`:
 
-## Try:
 
 ```sh
-./vik randowan.mod | mplayer -demuxer rawaudio -
-./vik mad_world.mod | mplayer -demuxer rawaudio -
+./vik file.mod | mplayer -demuxer rawaudio -
 ```
 
-Alternatively, you can use:
+Alternatively, you can convert the file to a WAV:
 
 ```sh
 ./vik file.mod > file.raw; ./raw2wav file.raw > file.wav
 ```
 
-It is possible to download a number of music module files from [The Mod
+and then play `file.wav` with a program that can play WAV files.
+
+
+## Try:
+
+```sh
+./try.sh
+```
+
+The script checks that you have `mplayer(1)` installed and if it is it will pipe
+`vik` to `mplayer`. In this case it will also use `raw2wav` to convert the file
+to a WAV file. If `mplayer(1)` cannot be found it will just use `raw2wav`. This
+way even if one has an `mplayer(1)` that fails or is for some reason not what is
+expected they can at least play the WAV file manually.
+
+It is also possible to download a number of music module files from [The Mod
 Archive](http://modarchive.org).
 
 
@@ -54,7 +68,6 @@ Assuming that `make` is similar enough try:
 
 ```sh
 make alt
-
 ```
 
 
