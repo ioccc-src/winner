@@ -3609,7 +3609,7 @@ and now it does work with 64-bit systems as well as 32-bit systems.
 
 Cody also added the [try.sh](/2011/goren/try.sh) script.
 
-Cody added the following words of wisdom: '"this" is not a pipe but "!" is'.
+Cody added the following words of wisdom: `'"this" is not a pipe but "!" is'`.
 
 
 ## <a name="2011_hamaji"></a>[2011/hamaji](/2011/hamaji/hamaji.c) ([README.md](/2011/hamaji/README.md]))
