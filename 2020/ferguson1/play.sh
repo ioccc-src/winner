@@ -51,8 +51,8 @@ DFLT[2]="-DHEAD=COLOR_RED"	# Head foreground: red	    (HEAD)
 DFLT[3]="-DHB=COLOR_BLACK"	# Head background: black    (HB)
 DFLT[4]="-DBODY=COLOR_GREEN"	# Body foreground: green    (BODY)
 DFLT[5]="-DBS=COLOR_BLACK"	# Body background: black    (BS)
-DFLT[6]="-DBG=COLOR_WHITE"	#  Bug foreground: white    (BG)
-DFLT[7]="-DBB=COLOR_BLACK"	#  Bug background: black    (BB)
+DFLT[6]="-DBG=COLOR_WHITE"	# Bug foreground: white    (BG)
+DFLT[7]="-DBB=COLOR_BLACK"	# Bug background: black    (BB)
 COLOURS[0]="-DWALL=COLOR_"
 COLOURS[1]="-DWB=COLOR_"
 COLOURS[2]="-DHEAD=COLOR_"
@@ -86,9 +86,9 @@ function configure_colours()
 	show_colours "${i}"
 	x="${?}"
 	if [[ "${x}" != 255 ]]; then
-	    COLOURS[$j]="${COLOURS[$j]}${COLOUR[$x]}"
+	    COLOURS[j]="${COLOURS[$j]}${COLOUR[$x]}"
 	else
-	    COLOURS[$j]=${DFLT[$j]}
+	    COLOURS[j]=${DFLT[$j]}
 	fi
 	j=$j+1
     done
