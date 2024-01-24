@@ -5,27 +5,44 @@ make alt
 ```
 
 We recommend that you try the alternate version first as the original entry
-requires (for good display) 80 columns and 8 character tabs with wraparound. The
-alt code is the same as the original except that the original code used
-`#include`s of files that do not exist to generate the messages (as compiler
-errors) whereas the alt code uses `printf(3)`. The purpose of the game is to
-escape the dungeon. For the original entry see [Original code](#original-code)
-below.
+requires (for better display) 80 columns and 8 character tabs with wraparound.
+
+The alt code uses the same logic as the original code except that the original
+code used `#include`s of files that do not exist to generate the messages (as
+compiler errors) whereas the alt code uses `printf(3)`. For the original entry
+see [Original code](#original-code) below.
 
 
 ## To use:
 
-There is no running as such. See below.
+
+```sh
+./westley.alt
+```
+
+The purpose of the game is to escape the dungeon. Depending on the compiler line
+you will get a different message when you run the program. One compiler line
+will make you win the game (escape the dungeon) and others will show something
+else.
+
+_This is independent of the previous (if there are any previous) compiler
+invocations_ specified. That means with the right compiler invocation you can
+'win' the game on the first go.
+
+There are a variety of different `-D` flags you give to `cc` that change the
+message you get. You might wish to look at the [source code](westley.alt.c) to
+get a better idea or see below in the [Try](#try) section for running the game
+from start to finish.
 
 
 ### Try:
 
-For something more interesting try compiling it with
-different cc arguments and then run the program each time.  For example:
+For something more interesting try compiling it with different `cc -D` arguments
+and then run the program each time.  For example:
 
 ```sh
-cc -Describe -Door westley.alt.c && ./a.out
-cc -Describe -Drain westley.alt.c && ./a.out
+cc -Describe -Door westley.alt.c -o westley.alt && ./westley.alt
+cc -Describe -Drain westley.alt.c -o westley.alt && ./westley.alt
 ```
 
 To see the game from start to finish, try:
@@ -37,8 +54,8 @@ To see the game from start to finish, try:
 
 ## Original code:
 
-NOTE: the purpose of this entry is to escape the dungeon via the compiler line
-where you **get messages as compiler errors**. Depending on the compiler line you
+The purpose of the game is to escape the dungeon **via the compiler line
+where you get _messages as compiler errors_**. Depending on the compiler line you
 will get different error messages and one compiler line will make you win the
 game!
 
@@ -53,19 +70,31 @@ reason that we recommend you try it first.
 make all
 ```
 
-Depending on the compilation line you will get different messages (as errors)
-which let you play the game.
+There are a variety of different `-D` flags you can give to `cc` that change the
+message you get. You might wish to look at the [source code](westley.c) to get a
+better idea or see below in the [Original try](#original-try) section for
+running the game from start to finish.
 
 
 ## Original use:
 
-There is no running as such. See below.
+There is no running of this program directly as it is supposed to fail to
+compile: the purpose of the game is to escape the dungeon but depending on the
+compiler line you will get a different message (**as compiler errors** due to
+`#include` files not existing). One compiler line will make you win the game
+(escape the dungeon) and others will show something else.
+
+_This is independent of the previous (if there are any previous) compiler
+invocations_ specified. That means with the right compiler invocation you can
+'win' the game on the first go. But unlike the [alternate code](westley.alt.c),
+you do not run this program as it will not compile: instead it will be compiler
+error messages; there is no running the program.
 
 
 ## Original try:
 
-For something more interesting try compiling it with
-different cc arguments.  For example:
+For something more interesting try compiling it with different `cc -D`
+arguments:
 
 ```sh
 cc -Describe -Door westley.c

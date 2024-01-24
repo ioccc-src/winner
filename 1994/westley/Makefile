@@ -131,7 +131,14 @@ ${PROG}: ${PROG}.c
 	@echo "=-=-=-=-="
 	@echo "NOTE: this entry has different compiler errors based on compilation line."
 	@echo "The purpose is to find the right error message to win the game!"
+	@echo
 	@echo "NOTE: your terminal should be set to 80 columns, 8 character tabs, and wraparound."
+	@echo "If you wish to avoid these restrictions try the alternate code with:"
+	@echo
+	@echo "	    make alt"
+	@echo
+	@echo "for the default messages and the specific cc -D options for the rest of the game."
+	@echo "See the README.md for details or the try.sh and try.alt.sh scripts."
 	@echo "=-=-=-=-="
 	-${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
