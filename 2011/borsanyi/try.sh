@@ -16,13 +16,16 @@ make CC="$CC" all >/dev/null || exit 1
 clear
 
 
-read -r -n 1 -p "Press any key to run: ./borsanyi < data.1: "
-./borsanyi < data.1
+read -r -n 1 -p "Press any key to run: ./borsanyi < data.1 (space = next page, q = quit): "
+echo 1>&2
+./borsanyi < data.1 | less -rEXF
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: ./borsanyi < data.2: "
-./borsanyi < data.2
+read -r -n 1 -p "Press any key to run: ./borsanyi < data.2 (space = next page, q = quit): "
+echo 1>&2
+./borsanyi < data.2 | less -rEXF
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: ./borsanyi < data.3: "
-./borsanyi < data.3
+read -r -n 1 -p "Press any key to run: ./borsanyi < data.3 (space = next page, q = quit): "
+echo 1>&2
+./borsanyi < data.3 | less -rEXF
