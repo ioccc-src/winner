@@ -3669,7 +3669,9 @@ controls, width and height.
 
 ## <a name="2011_vik"></a>[2011/vik](/2011/vik/vik.c) ([README.md](/2011/vik/README.md]))
 
-[Cody](#cody) added an [alternate version](/2011/vik/README.md#alternate-code) for Windows
+[Cody](#cody) added the [try.sh](/2011/vik/try.sh) script.
+
+Cody also added an [alternate version](/2011/vik/README.md#alternate-code) for Windows
 based on the author's comments (along with looking up the function for the right
 header files). To build try the alt rule of the Makefile.
 
