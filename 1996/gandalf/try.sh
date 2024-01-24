@@ -28,6 +28,7 @@ if [[ "$#" -gt 0 ]]; then
 	    exit 0
 	else
 	    echo "Fool of a ${USER@u}!" 1>&2
+	    echo "Oh well, never mind that, moving on ..." 1>&2
 	    echo 1>&2
 	fi
     fi
