@@ -1,15 +1,12 @@
 #
 # sort with: sort -d -u
-beethoven.pbm
-blank.pbm
 *.dSYM
 deckmyn
 deckmyn.orig
 example_greensleeves
-greensleeves.pbm
 indent
 indent.c
 indent.o
-output.pbm
+*.pbm
+*.png
 prog.orig
-sheetmusic.pbm

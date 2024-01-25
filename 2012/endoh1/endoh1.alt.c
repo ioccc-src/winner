@@ -3,7 +3,7 @@
 #  include<complex.h>  //||||                     ,____.              IOCCC-  #
 #  ifndef	       S
 #  define              S 12321
-#  elif                S < 1
+#  elif                S < 0
 #  undef               S
 #  define              S 12321
 #  endif

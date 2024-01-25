@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.sh - demonstrate IOCCC winner 1986/bright
+# try.sh - demonstrate IOCCC winner 2012/endoh1 with colour
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
@@ -15,12 +15,10 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
+if [[ "$#" -ne 1 ]]; then
+    echo "usage: $0 file" 1>&2
+    exit 1
+fi
 
-read -r -n 1 -p "Press any key to run: ./bright bright.c (space = next page, q = quit): "
-echo 1>&2
-./bright bright.c | less -rEXF
-echo 1>&2
-
-read -r -n 1 -p "Press any key to run: ./bright bright | tail -n 15: "
-echo 1>&2
-./bright bright | tail -n 15
+read -r -n 1 -p "Press any key to run: ./endoh1_color < $1 (ctrl-c/intr to end program): "
+./endoh1_color < "$1"

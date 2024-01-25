@@ -6,30 +6,35 @@ make
 There are two alt versions that let you control the compile time variables that
 control the fluid behaviour and the added variables to speed up or slow down the
 fluid as well as setting a timeout (if not 0): one for the original black and
-white and the colour one added by the author at the request of the judges.
-Another version is the deobfuscated version provided by the author as well.  See
-[alternate code](#alternate-code) below for more details.
+white and one for the colour one added by the author (at the request of the
+judges at the time of the contest).  Another version is the deobfuscated version
+provided by the author as well.  See the [Alternate code](#alternate-code)
+section below for more details.
 
 
 ## To use:
 
 ```sh
-./endoh1 < configuration.txt
+./endoh1 < file
 ```
+
+WARNING: if you're sensitive to/don't like flashing colours/text or just want to
+see what this looks like not going so fast then you might wish to try the
+[Alternate code](#alternate-code) instead.
 
 
 ## Try:
 
 ```sh
-./endoh1 < endoh1.c
+./try.bw.sh endoh1.c
+./try.sh endoh1.c
 
-./endoh1 < pour-out.txt
+./try.bw.sh pour-out.txt
+./try.sh pour-out.txt
 
-./endoh1 < fountain.txt
+./try.bw.sh fountain.txt
+./try.sh fountain.txt
 ```
-
-Also try using `endoh1_color` as you would `endoh1` above. `make` will compile
-this by default.
 
 
 ## Alternate code:
@@ -46,46 +51,19 @@ the fluid and change the behaviour of the fluid. The file
 For the default values, try:
 
 ```sh
-make alt alt2
+make alt
 ```
-
-The `alt2` is only necessary if you wish to compile the deobfuscated version but
-it is equivalent in function to the original entry, [endoh1.c](endoh1.c).
 
 In the `alt` versions a default time of 10 seconds is set as an alarm so that
-one can more easily go through the list of files to see them all in succession
-for fun. That is controlled by the variable `A`; 0 disables it.
-
-If you wish to change the speed you should do:
-
-```sh
-make clobber SLEEP=N alt
-```
-
-where `N` is number or the letter `I`.
-
-WARNING: if you're sensitive to flashing colours or any flashing at all do make
-sure you don't decrease the value of `S`, the sleep time passed to `usleep(3)`,
-too much.
-
-If however you wish to change the gravity factor, pressure factor and/or
-viscosity factor, you should redefine the values `G`, `P` and/or `V` macros,
-respectively, with the same caveat about numbers for `S` above. For instance if
-you wish to change the viscosity and pressure factors but leave the other macros
-alone:
+one can more easily go through the list of files to see them all in succession,
+for fun. That is controlled by the variable `TIMER` at compilation.
+For instance if you wish to change the value to 5:
 
 ```sh
-make clobber VISCOSITY=X PRESSURE=Y alt
+make clobber TIMER=5 alt
 ```
 
-where `X` and `Y` are numbers or the letter `I` and which are, respectively, the
-viscosity and pressure factors.
-
-There is no restriction on what the number is because doing so prevents the
-macros from being defined to `I` which would prevent the author's remarks about
-it from being done.
-
-If you want to disable the alarm time, set `A` to 0:
+If you want to disable the alarm time, set it to 0:
 
 ```sh
 make clobber TIMER=0 alt
@@ -93,26 +71,41 @@ make clobber TIMER=0 alt
 
 It cannot be < 0 or > 60 (arbitrarily selected).
 
-Try slowing down the display by increasing the sleep time from `12321` to
-`50000`:
+The `SLEEP` variable is to delay the time between updates to make it easier to
+see and to not flash too quickly. The code protects against a value < 0 and
+defaults to 12321 but you can change it to. For instance to slow it down you
+could increase the sleep time from `12321` to `50000`:
 
 ```sh
 make clobber SLEEP=50000 alt
 ```
 
-Now try using both `endoh1.alt` and `endoh1_color.alt` as you would `endoh1` above.
 
-Also try speeding up the display by decreasing the sleep time from `12321` to
+If you wish to speed it up you might decrease the sleep time from `12321` to
 `9999`:
 
 ```sh
-make clobber SLEEP=9999 alt2
+make clobber SLEEP=9999 alt
 ```
 
-WARNING: again, be careful with too low a value if you're sensitive to flashing
-colours or anything at all.
+WARNING: the lower the value the faster it will flash so be careful if you're
+sensitive to this.
 
-Now try using both `endoh1.alt` and `endoh1_color.alt` as you would `endoh1` above.
+
+If you wish to change the gravity factor, pressure factor and/or
+viscosity factor, you should redefine the values `GRAVITY`, `PRESSURE` and/or
+`VISCOSITY` macros, respectively. For instance if you wish to change the
+viscosity and pressure factors but leave the other values alone:
+
+```sh
+make clobber VISCOSITY=X PRESSURE=Y alt
+```
+
+where `X` and `Y` are numbers or the letter `I` and which are, respectively, the
+viscosity and pressure factors. There is no attempt to check the value or type
+because doing so prevents the macros from being defined to `I` which would
+prevent the author's remarks about it from being done.
+
 
 You might also wish to try redefining the macros `G`, `P` and/or `V`. For
 instance:
@@ -128,7 +121,13 @@ You might try even:
 make clobber GRAVITY=I alt
 ```
 
-See the author's remarks for details on these macros.
+See the author's remarks for details on these macros where:
+
+```
+G = GRAVITY
+P = PRESSURE
+V = VISCOSITY
+```
 
 
 ### Alternate use:
@@ -147,6 +146,12 @@ try:
 ```
 
 The second run of each will be with the gravity factor set to `I`.
+
+To see the same thing but in the original uncoloured version, try:
+
+```sh
+./try.alt.bw.sh
+```
 
 
 ## Judges' remarks:
