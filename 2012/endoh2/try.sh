@@ -17,11 +17,17 @@ clear
 
 run()
 {
-    local program="$1"
-    echo "" 1>&2
-    read -r -n 1 -p "Press any key to run: ./${program} (space = next page, q = quit): "
-    "./${program}" | less -K -E -X
+    if [[ "$#" -eq 0 ]]; then
+	echo "$0: run() expects at least 1 arg, got: $#" 1>&2
+	return
+    fi
+
+    echo 1>&2
+    read -r -n 1 -p "Press any key to run: ./$1 (space = next page, q = quit): "
+    echo 1>&2
+    ./"$1" | less -rKEXF
 }
+
 run pi
 run 314
 run 3141
