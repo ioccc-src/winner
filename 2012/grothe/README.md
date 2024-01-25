@@ -25,11 +25,7 @@ more shared files with their proper numbers):
 ## Try:
 
 ```sh
-./grothe -grothe.c 1+grothe.c.1 2+grothe.c.2
-
-./grothe -cookie_recipe.txt 1-/dev/urandom 2-/dev/urandom 1+cookie_piece1.dat 2+cookie_piece2.dat 3+cookie_piece3.dat 4+cookie_piece4.dat
-
-./grothe 1-cookie_piece1.dat 2-cookie_piece2.dat 4-cookie_piece4.dat 4+cookie_recipe_restore.txt
+./try.sh
 ```
 
 

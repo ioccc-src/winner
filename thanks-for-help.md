@@ -3759,6 +3759,13 @@ restrict them.
 
 Cody also restored the original code from the archive.
 
+And although the URL works for now (via redirect), Cody changed the website
+linked to in the recipe file to the domain that the old one currently redirects
+to, in case the other domain ends up expiring or stops redirecting to the more
+recent domain. For historical purposes the old link was
+`http://recipes.stevex.net/` but it redirects to `https://www.mealsteps.com`
+which the recipe file now links to.
+
 
 ## <a name="2012_hamano"></a>[2012/hamano](/2012/hamano/hamano.c) ([README.md](/2012/hamano/README.md]))
 
