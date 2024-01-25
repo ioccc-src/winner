@@ -3,14 +3,8 @@
 blakely
 blakely.orig
 *.dSYM
-empty.gif
-flat.gif
+*.gif
 indent
 indent.c
 indent.o
-output.gif
-paraboloid.gif
-pic.gif
 prog.orig
-ripple.gif
-saddle.gif
