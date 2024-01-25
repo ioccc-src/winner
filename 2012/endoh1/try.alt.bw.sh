@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# try.alt.sh - demonstrate IOCCC winner 2012/endoh1 alt code with colour
+# try.alt.bw.sh - demonstrate IOCCC winner 2012/endoh1 alt code w/o colour
 #
 
 # make sure CC is set so that when we do make CC="$CC" it isn't empty. Doing it
@@ -42,33 +42,33 @@ echo "$ make clobber CC=$CC TIMER=$TIMER SLEEP=$SLEEP GRAVITY=I VISCOSITY=$VISCO
 read -r -n 1 -p "Press any key to continue: "
 echo 1>&2
 make clobber CC="$CC" TIMER="$TIMER" SLEEP="$SLEEP" GRAVITY=I VISCOSITY="$VISCOSITY" PRESSURE="$PRESSURE" alt >/dev/null || exit 1
-# we have to move the endoh1_color.alt to endoh1_color.alt3, not alt2, because
-# we have to use make clobber which would wipe out endoh1_color.alt2.
-read -r -n 1 -p "Press any key to move endoh1_color.alt to endoh1_color.alt3: "
+# we have to move the endoh1.alt to endoh1.alt3, not alt2, because
+# we have to use make clobber which would wipe out endoh1.alt2.
+read -r -n 1 -p "Press any key to move endoh1.alt to endoh1.alt3: "
 echo 1>&2
-mv -v endoh1_color.alt endoh1_color.alt3
+mv -v endoh1.alt endoh1.alt3
 echo 1>&2
 echo "$ make clobber CC=$CC TIMER=$TIMER SLEEP=$SLEEP GRAVITY=$GRAVITY VISCOSITY=$VISCOSITY PRESSURE=$PRESSURE alt" 1>&2
 read -r -n 1 -p "Press any key to continue: "
 echo 1>&2
 make clobber CC="$CC" TIMER="$TIMER" SLEEP="$SLEEP" GRAVITY="$GRAVITY" VISCOSITY="$VISCOSITY" PRESSURE="$PRESSURE" alt >/dev/null || exit 1
-read -r -n 1 -p "Press any key to move endoh1_color.alt3 to endoh1_color.alt2: "
+read -r -n 1 -p "Press any key to move endoh1.alt3 to endoh1.alt2: "
 echo 1>&2
-mv -v endoh1_color.alt3 endoh1_color.alt2
+mv -v endoh1.alt3 endoh1.alt2
 # clear screen before continuing
 clear
 
 # now that we have both binaries we can run each one on the data files, first
 # the source file.
-read -r -n 1 -p "Press any key to run: ./endoh1_color.alt < endoh1_color.alt.c 2>/dev/null: "
+read -r -n 1 -p "Press any key to run: ./endoh1.alt < endoh1.alt.c 2>/dev/null: "
 echo 1>&2
-./endoh1_color.alt < endoh1_color.alt.c 2>/dev/null
+./endoh1.alt < endoh1.alt.c 2>/dev/null
 echo 1>&2
 # reset terminal sanity
 reset
-read -r -n 1 -p "Press any key to run: ./endoh1_color.alt2 < endoh1_color.alt.c 2>/dev/null: "
+read -r -n 1 -p "Press any key to run: ./endoh1.alt2 < endoh1.alt.c 2>/dev/null: "
 echo 1>&2
-./endoh1_color.alt2 < endoh1_color.alt.c 2>/dev/null
+./endoh1.alt2 < endoh1.alt.c 2>/dev/null
 # reset terminal sanity
 reset
 
@@ -81,11 +81,11 @@ for i in clock.txt column.txt column2.txt column3.txt corners.txt \
 
     # to make it more 'fluid' :-) we only prompt once per file even though the
     # second command is a different file in that the gravity factor is set to I.
-    read -r -n 1 -p "Press any key to run: ./endoh1_color.alt < $i: "
+    read -r -n 1 -p "Press any key to run: ./endoh1.alt < $i: "
     clear
-    ./endoh1_color.alt < "$i" 2>/dev/null
+    ./endoh1.alt < "$i" 2>/dev/null
     clear
-    ./endoh1_color.alt2 < "$i" 2>/dev/null
+    ./endoh1.alt2 < "$i" 2>/dev/null
     # reset terminal sanity
     reset
 done

@@ -115,8 +115,8 @@ DATA= column.txt column2.txt column3.txt corners.txt dripping-pan.txt \
 	funnel3.txt leidenfrost.txt logo.txt pour-out.txt tanada.txt
 TARGET= ${PROG} ${PROG}_color
 #
-ALT_OBJ= ${PROG}.alt.o ${PROG}_color.alt.o
-ALT_TARGET= ${PROG}.alt ${PROG}_color.alt
+ALT_OBJ= ${PROG}.alt.o ${PROG}_color.alt.o ${PROG}.alt2.o
+ALT_TARGET= ${PROG}.alt ${PROG}_color.alt ${PROG}.alt2
 
 # The factor of gravity
 #
@@ -167,9 +167,7 @@ ${PROG}.alt: ${PROG}.alt.c
 ${PROG}_color.alt: ${PROG}_color.alt.c
 	${CC} ${CFLAGS} -DS=${SLEEP} -DA=${TIMER} $< -o $@ ${LDFLAGS}
 
-alt2: ${PROG}.alt2
-	@${TRUE}
-
+# deobfuscated version:
 ${PROG}.alt2: ${PROG}.alt2.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
 
