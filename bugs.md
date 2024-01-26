@@ -3019,10 +3019,10 @@ will likely dump core.
 ### Information: [2012/vik/README.md](2012/vik/README.md)
 
 The author stated that the program will crash if no argument is passed to the
-program or if invalid arguments or images of mismatching sizes or unsupported
-pixel formats though we note that your computer might also [halt and catch
+program or if invalid arguments (e.g. file does not exist) or images of
+mismatching sizes or unsupported pixel formats though we note that your computer
+might also [halt and catch
 fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)) :-)
-
 
 
 # 2013

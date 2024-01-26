@@ -3838,14 +3838,11 @@ Cody also added the [try.sh](/2012/omoikane/try.sh) and
 
 ## <a name="2012_vik"></a>[2012/vik](/2012/vik/vik.c) ([README.md](/2012/vik/README.md]))
 
+[Cody](#cody) added the [try.sh](/2012/vik/try.sh) script.
+
 Based on the author's description it should be able to get this entry to work
-for Windows. With his instructions Cody added the alternate version that does
-this for the few who might use Windows.
-
-We're not sure whether we want to thank Cody or not for this :-) and he's not
-sure if he wants to be thanked either :-) but we appreciate it nonetheless.
-
-Cody also added the [try.sh](/2012/vik/try.sh) script.
+for Windows. With his instructions Cody also added the alternate version that
+does this for the few who might use Windows.
 
 
 ## <a name="2012_zeitak"></a>[2012/zeitak](/2012/zeitak/zeitak.c) ([README.md](/2012/zeitak/README.md]))
