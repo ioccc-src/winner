@@ -3769,7 +3769,9 @@ which the recipe file now links to.
 
 ## <a name="2012_hamano"></a>[2012/hamano](/2012/hamano/hamano.c) ([README.md](/2012/hamano/README.md]))
 
-[Cody](#cody) added the [try.sh](/2012/hamano/try.sh) script.
+[Cody](#cody) added the [try.sh](/2012/hamano/try.sh) script and the helper
+Makefile rules `hint.pdf`, `hint`, `hello.pdf` and `hello` to simplify the
+procedure for both `hint.pdf` and `hello.pdf` as well as compiling them as C. 
 
 
 ## <a name="2012_hou"></a>[2012/hou](/2012/hou/hou.c) ([README.md](/2012/hou/README.md]))

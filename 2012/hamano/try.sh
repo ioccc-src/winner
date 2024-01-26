@@ -15,37 +15,47 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-read -r -n 1 -p "Press any key to obfuscate README.md, writing to hint.pdf: "
-echo 1>&2
-echo "$ ./hamano < README.md > hint.pdf" 1>&2
-./hamano < README.md > hint.pdf
+# delete hint.pdf
+rm -f hint.pdf
 
-echo "Now try opening it in a pdf viewer before proceeding." 1>&2
-read -r -n 1 -p "Press any key to continue: "
-
+echo "Will obfuscate README.md like:" 1>&2
 echo 1>&2
-echo "$ ${CC} -xc hint.pdf -o hint" 1>&2
-${CC} -xc hint.pdf -o hint
+echo "    ./hamano < README.md > hint.pdf" 1>&2
 echo 1>&2
-read -r -n 1 -p "Press any key to run: ./hint | less (space = next page, q = quit): "
-./hint | less
-
+echo "and then compile it as C like:" 1>&2
+echo 1>&2
+echo "    ${CC} -xc hint.pdf -o hint" 1>&2
+echo 1>&2
+read -r -n 1 -p "Press any key to run: make hint: "
+echo 1>&2
+make hint
+echo 1>&2
+echo "Now try opening hint.pdf in a pdf viewer before proceeding." 1>&2
+echo 1>&2
+read -r -n 1 -p "Press any key to run: ./hint (space = next page, q = quit): "
+echo 1>&2
+./hint | less -rEXFK
 echo 1>&2
 
 echo "Will obfuscate the following code: " 1>&2
 echo 1>&2
-echo "	    int main(){puts("Hello World!");}"
+echo "    int main(){puts("Hello World!");}"
 echo 1>&2
-echo "writing to hello.pdf" 1>&2
-echo 'int main(){puts("Hello World!");}' | ./hamano > hello.pdf
+echo "writing it to hello.pdf via:" 1>&2
 echo 1>&2
-echo "Now open hello.pdf in a pdf viewer before continuing." 1>&2
+echo "     echo 'int main(){puts("Hello World!");}' | ./hamano > hello.pdf"
 echo 1>&2
-read -r -n 1 -p "Press any key to continue to deobfuscate and compile hello.pdf: "
+echo "and then execute the following commands:" 1>&2
 echo 1>&2
-echo "$ ${CC} -Wno-implicit-function-declaration -xc hello.pdf -o hello2" 1>&2
-${CC} -Wno-implicit-function-declaration -xc hello.pdf -o hello2
-echo "$ ./hello2 | ${CC} -Wno-implicit-function-declaration -xc - -o ./hello3" 1>&2
-./hello2 | ${CC} -Wno-implicit-function-declaration -xc - -o ./hello3
-echo "$ ./hello3" 1>&2
-./hello3
+echo "    ${CC} -xc hello.pdf -o hello" 1>&2
+echo "    ./hello | ${CC} -xc - -o hello2" 1>&2
+echo 1>&2
+read -r -n 1 -p "Press any key to run: make hello: "
+echo 1>&2
+make hello
+echo 1>&2
+echo "Now open hello.pdf in a pdf viewer to see the obfuscated source." 1>&2
+echo 1>&2
+read -r -n 1 -p "Press any key to run: ./hello2: "
+echo 1>&2
+./hello2

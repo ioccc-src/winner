@@ -40,7 +40,7 @@ include ../../var.mk
 #
 CSILENCE= -Wno-bitwise-op-parentheses -Wno-empty-body -Wno-format \
 	-Wno-format-security -Wno-gnu-zero-variadic-macro-arguments -Wno-main \
-	-Wno-parentheses
+	-Wno-parentheses -Wno-implicit-function-declaration -Wno-strict-prototypes
 
 # Common C compiler warning flags
 #
@@ -129,10 +129,47 @@ all: data ${TARGET}
 .PHONY: all alt data everything diff_orig_prog diff_prog_orig \
 	diff_alt_prog diff_prog_alt diff_orig_alt diff_alt_orig \
 	clean clobber install love haste waste maker easter_egg \
-	sandwich supernova deep_magic magic charon pluto
+	sandwich supernova deep_magic magic charon pluto hint hint.pdf \
+	hello hello.pdf
+
 
 ${PROG}: ${PROG}.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+# hint.pdf rules to simplify use of 2012/hamano
+#
+
+# This rule generates the hint.pdf file which is the README.md obfuscated as a
+# PDF that is NOT part of the repo:
+hint.pdf: ${PROG} README.md
+	./${PROG} < README.md > hint.pdf
+	@echo
+
+# This rule, hint, depends on the hint.pdf rule. That rule generates the
+# hint.pdf file (NOT part of the repo) which is an obfuscated (as a PDF) version
+# of the README.md. This rule, in turn, COMPILES THAT PDF FILE AS C CODE!
+hint: hint.pdf
+	${CC} ${CFLAGS} -xc $< -o $@
+
+
+# hello.pdf rules to simplify use of 2012/hamano
+#
+
+# This rule generates the hello.pdf file which is a simple 'Hello World!'
+# program obfuscated as a PDF:
+hello.pdf:
+	echo 'int main(){puts("Hello World!");}' | ./${PROG} > hello.pdf
+
+# This rule, hello, depends on the hello.pdf rule. That rule generates the
+# hello.pdf file (NOT part of the repo) which is an obfuscated (as a PDF) version
+# of a simple 'Hello World!' program. This rule, in turn, COMPILES THAT PDF FILE
+# AS C CODE to hello and then pipes it to cc to compile it to hello2 which when
+# run will print 'Hello World!'.
+hello: hello.pdf
+	@echo
+	${CC} ${CFLAGS} -xc hello.pdf -o $@
+	@echo
+	./hello | ${CC} ${CFLAGS} -xc - -o hello2 
 
 # alternative executable
 #
@@ -204,7 +241,7 @@ clean:
 	fi
 
 clobber: clean
-	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -f ${TARGET} ${ALT_TARGET} hint.pdf hello.pdf hello hello2
 	${RM} -rf *.dSYM
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
