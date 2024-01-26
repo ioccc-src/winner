@@ -18,7 +18,7 @@ available. See the [Alternate code](#alternate-code) section below.
 ## Try:
 
 ```sh
-./runme
+./cable3.sh
 ```
 
 NOTE: to quit the program type `QUITEMU`. You might have to be at the top level
@@ -211,7 +211,7 @@ stty cbreak raw -echo min 0
 stty cooked echo
 ```
 
-See the [runme](runme) script.
+See the [cable3.sh](cable3.sh) script.
 
 ## To use the emulator - floppy mode only
 
@@ -221,7 +221,7 @@ the `fd.img` provided, which is a FreeDOS boot disk.
 Before running the emulator on a Unix-type system, `stty` needs to be used to
 put the keyboard into raw mode (and afterwards it needs to be put back to
 cooked). So, run the emulator using something like this script (provided as
-[runme](runme)):
+[cable3.sh](cable3.sh)):
 
 ```sh
 stty cbreak raw -echo min 0

@@ -3903,9 +3903,11 @@ Later on in an updated macOS (problem discovered in macOS Sonoma) the entry
 failed to compile again also due to `localtime()` so he removed the prototype
 entirely to solve the problem.
 
-Cody also slightly improved the `runme` script to not assume that the program has
-been compiled by running `make clobber all || exit 1` and he also made it pass
-`shellcheck` (using `[[ .. ]]` over `[ .. ]`).
+Cody also slightly improved the `runme` script (renamed to
+[cable3.sh](/2013/cable3/cable3.sh) for consistency with other entries that have
+wrapper scripts) to not assume that the program has been compiled by running
+`make clobber all || exit 1` and he also made it pass `shellcheck` (using `[[ ..
+]]` over `[ .. ]`).
 
 As well, based on the author's remarks, Cody added the [alternate
 code](/2013/cable3/cable3.alt.c) which should be compilable for Windows/MS Visual
