@@ -36,8 +36,9 @@ where the sound of 'V' is 'F' and so the program had the letter be 'F'. A
 problem, however, with changing it is that it breaks other words including in
 German. Thus there is the alternate version instead which fixes a problem for
 Germans that causes problems for Germans so if you're German you'll just have to
-deal with it :-) It is, however, good as you might be able appreciate the entry
-even more.
+deal with it :-) It also breaks other words too and this happens only for one
+letter change. With this one should hopefully be able to really appreciate the
+subtlety of this entry even more.
 
 
 ### Alternate build:
@@ -50,7 +51,10 @@ make alt
 ### Alternate use:
 
 ```sh
+echo "full spelling of an English cardinal numeral less than a quadrillion" | ./kang.alt
+
 echo vier | ./kang.alt
+
 echo uno | ./kang.alt
 ```
 
@@ -58,14 +62,17 @@ echo uno | ./kang.alt
 ### Alternate try:
 
 ```sh
-./de.alt.sh # German 0 through 13 both with and without umlaut
+./try.alt.sh # try various languages
+
 ./en.alt.sh # English 0 through 13
+
+./de.alt.sh # German 0 through 13 with both umlauts and without (additional 'e')
 ```
 
 What does it get right? What does it get wrong? How does it compare to the
 original entry without the change of `f` to `v`?
 
-Finally why does it get what it gets wrong wrong? 
+Finally why does it get wrong what it gets wrong? 
 
 
 ## Judges' remarks:

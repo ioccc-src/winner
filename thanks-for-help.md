@@ -3797,7 +3797,7 @@ about it. Using both, however, allows one to experience different capabilities
 and also enjoy or appreciate the entry even more, given how simple the
 difference is.
 
-Cody also added five scripts: [en.sh](/2012/kang/en.sh),
+Cody also added six scripts: [en.sh](/2012/kang/en.sh),
 [de.sh](/2012/kang/de.sh), [en.alt.sh](/2012/kang/en.alt.sh) and
 [de.alt.sh](/2012/de.alt.sh) which count from 0 through 13 in English and German
 using the original entry and the alt version respectively.
@@ -3807,8 +3807,10 @@ In the German scripts it uses the umlaut and also does it without the umlaut
 either version but the `.alt.sh` versions default to the `alt` version whereas
 the other defaults to the submitted entry. See the README.md for details.
 
-The fifth script, [try.sh](/2012/kang/try.sh), runs a sequence of commands to
-show different languages and numbers.
+The fifth and sixth scripts, [try.sh](/2012/kang/try.sh) and
+[try.alt.sh](/2012/kang/try.alt.sh), run a sequence of commands to
+show different languages and numbers with the submitted and alternate version
+respectively. Notice how a single letter changes so much!
 
 
 ## <a name="2012_konno"></a>[2012/konno](/2012/konno/konno.c) ([README.md](/2012/konno/README.md]))
