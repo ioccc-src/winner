@@ -28,15 +28,28 @@ One of the PDF files generated is this README.md file as a PDF, obfuscated, and
 the PDF file will then be compiled as C (itself!) and executed so that it shows
 README.md!
 
-Another PDF file generated is obfuscated C code. Once this is done it will
-compile the PDF as if it was C and then run it like:
+That procedure looks like:
+
+```sh
+./hamano < README.md > hint.pdf
+cc -xc hint.pdf -o hint
+./hint
+```
+
+Another PDF generated is an obfuscated `Hello World!` program (obfuscated inside
+the PDF). Once this is done it will compile the PDF as if it was C (itself!). It
+will look like:
 
 ```sh
 echo 'int main(){puts("Hello World!");}' | ./hamano > hello.pdf
-cc -Wno-implicit-function-declaration -xc hello.pdf -o hello2
-./hello2 | gcc -Wno-implicit-function-declaration -xc - -o ./hello3
-./hello3
+cc -xc hello.pdf -o hello
+./hello | cc -Wno-implicit-function-declaration -xc - -o ./hello2
+
+./hello2
 ```
+
+although the `CFLAGS` will be what is in the Makefile as it uses the helper
+rules `hint.pdf`, `hint`, `hello.pdf` and `hello` to do this.
 
 
 ## Judges' remarks:

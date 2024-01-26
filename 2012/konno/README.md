@@ -14,14 +14,18 @@ code](#alternate-code) below.
 ./konno N
 ```
 
-NOTE: N is an integer from 0 to 255.
-
 
 ## Try:
 
 ```sh
 ./try.sh
+
+# you can also specify numbers to try before the random and preselected ones:
+./try.sh 111 222 333 444 555 666 777 888 999
 ```
+
+Try running [try.sh](try.sh) a number of times as the first part randomly
+selects ten numbers to try.
 
 
 ## Alternate code:

@@ -3769,7 +3769,9 @@ which the recipe file now links to.
 
 ## <a name="2012_hamano"></a>[2012/hamano](/2012/hamano/hamano.c) ([README.md](/2012/hamano/README.md]))
 
-[Cody](#cody) added the [try.sh](/2012/hamano/try.sh) script.
+[Cody](#cody) added the [try.sh](/2012/hamano/try.sh) script and the helper
+Makefile rules `hint.pdf`, `hint`, `hello.pdf` and `hello` to simplify the
+procedure for both `hint.pdf` and `hello.pdf` as well as compiling them as C. 
 
 
 ## <a name="2012_hou"></a>[2012/hou](/2012/hou/hou.c) ([README.md](/2012/hou/README.md]))
@@ -3795,7 +3797,7 @@ about it. Using both, however, allows one to experience different capabilities
 and also enjoy or appreciate the entry even more, given how simple the
 difference is.
 
-Cody also added five scripts: [en.sh](/2012/kang/en.sh),
+Cody also added six scripts: [en.sh](/2012/kang/en.sh),
 [de.sh](/2012/kang/de.sh), [en.alt.sh](/2012/kang/en.alt.sh) and
 [de.alt.sh](/2012/de.alt.sh) which count from 0 through 13 in English and German
 using the original entry and the alt version respectively.
@@ -3805,8 +3807,10 @@ In the German scripts it uses the umlaut and also does it without the umlaut
 either version but the `.alt.sh` versions default to the `alt` version whereas
 the other defaults to the submitted entry. See the README.md for details.
 
-The fifth script, [try.sh](/2012/kang/try.sh), runs a sequence of commands to
-show different languages and numbers.
+The fifth and sixth scripts, [try.sh](/2012/kang/try.sh) and
+[try.alt.sh](/2012/kang/try.alt.sh), run a sequence of commands to
+show different languages and numbers with the submitted and alternate version
+respectively. Notice how a single letter changes so much!
 
 
 ## <a name="2012_konno"></a>[2012/konno](/2012/konno/konno.c) ([README.md](/2012/konno/README.md]))
@@ -3816,17 +3820,15 @@ show different languages and numbers.
 
 ## <a name="2012_omoikane"></a>[2012/omoikane](/2012/omoikane/omoikane.c) ([README.md](/2012/omoikane/README.md]))
 
-[Cody](#cody) added the [try.sh](/2012/omoikane/try.sh) script.
-
-Cody also added the [alternate code](/2012/omoikane/README.md#alternate-code)
+[Cody](#cody) added the [alternate versions](/2012/omoikane/README.md#alternate-code)
 which will, if no arg is specified, read in the program itself, rather than
 `/dev/urandom`. This is mostly useful for those without a `/dev/urandom` device
 file (the default for the entry). The second alternate version is like the first
 except that it also sets binary mode on `stdin` and `stdout` which should
 theoretically make it work in Windows.
 
-Cody also added the [try.alt.sh](/2012/omoikane/try.alt.sh) script that is like
-the `try.sh` script but which uses the (first version of the) alt code instead.
+Cody also added the [try.sh](/2012/omoikane/try.sh) and
+[try.alt.sh](/2012/omoikane/try.alt.sh) scripts.
 
 
 ## <a name="2012_tromp"></a>[2012/tromp](/2012/tromp/tromp.c) ([README.md](/2012/tromp/README.md))
@@ -3836,14 +3838,11 @@ the `try.sh` script but which uses the (first version of the) alt code instead.
 
 ## <a name="2012_vik"></a>[2012/vik](/2012/vik/vik.c) ([README.md](/2012/vik/README.md]))
 
+[Cody](#cody) added the [try.sh](/2012/vik/try.sh) script.
+
 Based on the author's description it should be able to get this entry to work
-for Windows. With his instructions Cody added the alternate version that does
-this for the few who might use Windows.
-
-We're not sure whether we want to thank Cody or not for this :-) and he's not
-sure if he wants to be thanked either :-) but we appreciate it nonetheless.
-
-Cody also added the [try.sh](/2012/vik/try.sh) script.
+for Windows. With his instructions Cody also added the alternate version that
+does this for the few who might use Windows.
 
 
 ## <a name="2012_zeitak"></a>[2012/zeitak](/2012/zeitak/zeitak.c) ([README.md](/2012/zeitak/README.md]))
@@ -3904,9 +3903,11 @@ Later on in an updated macOS (problem discovered in macOS Sonoma) the entry
 failed to compile again also due to `localtime()` so he removed the prototype
 entirely to solve the problem.
 
-Cody also slightly improved the `runme` script to not assume that the program has
-been compiled by running `make clobber all || exit 1` and he also made it pass
-`shellcheck` (using `[[ .. ]]` over `[ .. ]`).
+Cody also slightly improved the `runme` script (renamed to
+[cable3.sh](/2013/cable3/cable3.sh) for consistency with other entries that have
+wrapper scripts) to not assume that the program has been compiled by running
+`make clobber all || exit 1` and he also made it pass `shellcheck` (using `[[ ..
+]]` over `[ .. ]`).
 
 As well, based on the author's remarks, Cody added the [alternate
 code](/2013/cable3/cable3.alt.c) which should be compilable for Windows/MS Visual

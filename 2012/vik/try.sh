@@ -15,18 +15,6 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-read -r -n 1 -p "Press any key to embed chocolate in chocolate-in-ioccc.png: "
-echo 1>&2
-echo "$ ./vik e chocolate-in-ioccc.png \"Mmm... chocolate.\" > mmm-chocolate.png" 1>&2
-./vik e chocolate-in-ioccc.png "Mmm... chocolate." > mmm-chocolate.png
-echo 1>&2
-
-read -r -n 1 -p "Press any key to extract chocolate from mmm-chocolate.png: "
-echo 1>&2
-echo "$ ./vik d mmm-chocolate.png" 1>&2
-./vik d mmm-chocolate.png
-echo 1>&2
-
 read -r -n 1 -p "Press any key to embed chocolate.png in ioccc.png: "
 echo 1>&2
 echo "$ ./vik e ioccc.png chocolate.png > chocolate-in-ioccc.png" 1>&2
@@ -37,6 +25,18 @@ read -r -n 1 -p "Press any key to embed ioccc.png in chocolate.png: "
 echo 1>&2
 echo "$ ./vik e chocolate.png ioccc.png > ioccc-in-chocolate.png"
 ./vik e chocolate.png ioccc.png > ioccc-in-chocolate.png
+echo 1>&2
+
+read -r -n 1 -p "Press any key to embed chocolate in chocolate-in-ioccc.png: "
+echo 1>&2
+echo "$ ./vik e chocolate-in-ioccc.png \"Mmm... chocolate.\" > mmm-chocolate.png" 1>&2
+./vik e chocolate-in-ioccc.png "Mmm... chocolate." > mmm-chocolate.png
+echo 1>&2
+
+read -r -n 1 -p "Press any key to extract chocolate from mmm-chocolate.png: "
+echo 1>&2
+echo "$ ./vik d mmm-chocolate.png" 1>&2
+./vik d mmm-chocolate.png
 echo 1>&2
 
 read -r -n 1 -p "Press any key to embed a brainfuck program as a text file and decode it: "

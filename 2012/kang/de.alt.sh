@@ -37,7 +37,8 @@ done
 j=0
 for i in Null eins zwei drei vier fünf fuenf sechs sieben acht neun zehn elf zwoelf zwölf dreizehn ; \
 do
-    echo -n "$i (${NUMBERS[$j]}): "
-	echo "$i"|"./$KANG"
-	((j++))
+    read -r -n 1 -p "Press any key to run: echo $i | ./$KANG # ${NUMBERS[$j]}: "
+    echo 1>&2
+    echo "$i" | "./$KANG"
+    ((j++))
 done
