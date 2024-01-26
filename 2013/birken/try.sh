@@ -20,6 +20,7 @@ PERL="$(type -P perl)"
 
 if [[ -n "$PERL" ]]; then
     read -r -n 1 -p "Press any key to try a random run: "
+    echo 1>&2
     perl -e 'map{map{print int(rand()*8);}(0..16);print chr(10);}(0..30);' | tr '[0-4]' ' '| ./birken
 fi
 
@@ -29,7 +30,8 @@ for i in *.txt; do
 	-e 's/Cheepcheep/Cheep Cheep/g' -e 's/Happyface/Happy Face/g' -e 's/Paranaplant/Piranha Plant/g' \
 	-e 's/Koopaparatroopa/Koopa Paratroopa/g')"
     read -r -n1 -p "Press any key to try $NAME: "
+    echo 1>&2
     ./birken < "$i"
-    echo
+    echo 1>&2
 done
 clear
