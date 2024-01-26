@@ -15,5 +15,7 @@ make CC="$CC" all >/dev/null || exit 1
 
 ln -sf dlowe sparkl
 ls -1 *
+echo 1>&2
 echo -n "sparkline length of above files: "
 wc -c ./* | awk '{print $1}' | xargs ./sparkl
+echo 1>&2
