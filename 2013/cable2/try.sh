@@ -37,7 +37,8 @@ read -r -n 1 -p "Press any key to extract and compile C code by OCR: "
 echo 1>&2
 echo "$ ./cable2 hello_world.bmp | gcc -xc -o hello -" 1>&2
 ./cable2 hello_world.bmp | gcc -xc -o hello -
-echo "$ ./hello" 1>&2
+read -r -n 1 -p "Press any key to run: ./hello: "
+echo 1>&2
 ./hello
 echo 1>&2
 
@@ -45,7 +46,8 @@ echo "Sometimes typeset text will work if the typeset has characters that are" 1
 echo "enough to support the handwritten shapes." 1>&2
 read -r -n 1 -p "Press any key to try Menlo 160pt text: "
 echo 1>&2
-echo "$ ./cable2 typeset.bmp" 1>&2
+read -r -n 1 -p "Press any key to run: ./cable2 typeset.bmp: "
+echo 1>&2
 ./cable2 typeset.bmp
 echo 1>&2
 
