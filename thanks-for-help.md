@@ -4052,6 +4052,8 @@ Firefox both had the problem.
 [Cody](#cody) added explicit linking of libm (`-lm`) as not all systems do this
 implicitly (Linux doesn't seem to but macOS does).
 
+Cody also added the [try.sh](/2013/morgan1/try.sh) script.
+
 
 ## <a name="2013_robison"></a>[2013/robison](/2013/robison/robison.c) ([README.md](/2013/robison/README.md))
 

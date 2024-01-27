@@ -8,20 +8,17 @@ make
 ## To use:
 
 ```sh
-echo "2013/10/03" | ./morgan1
+echo "YYYY/MM/DD" | ./morgan1
 ```
+
+where `YYYY` is the four digit year, `MM` is the two digit month and `DD` is two
+digit day of the month.
 
 
 ## Try:
 
 ```sh
-echo "1985/10/28" | ./morgan1
-
-echo "1996/12/31" | ./morgan1
-
-echo "1986/03/31" | ./morgan1 # Comet Halley (look for 'Ha')
-
-echo "1997/04/01" | ./morgan1 # Comet Hale-Bopp (look for 'Hb')
+./try.sh
 ```
 
 Try pressing the arrow keys when your focus is in the window.
