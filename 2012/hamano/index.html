@@ -133,12 +133,21 @@ the file directly instead.</p>
 <p>One of the PDF files generated is this README.md file as a PDF,
 obfuscated, and the PDF file will then be compiled as C (itself!) and
 executed so that it shows README.md!</p>
-<p>Another PDF file generated is obfuscated C code. Once this is done it
-will compile the PDF as if it was C and then run it like:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&#39;int main(){puts(&quot;Hello World!&quot;);}&#39;</span> <span class="kw">|</span> <span class="ex">./hamano</span> <span class="op">&gt;</span> hello.pdf</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cc</span> <span class="at">-Wno-implicit-function-declaration</span> <span class="at">-xc</span> hello.pdf <span class="at">-o</span> hello2</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./hello2</span> <span class="kw">|</span> <span class="fu">gcc</span> <span class="at">-Wno-implicit-function-declaration</span> <span class="at">-xc</span> <span class="at">-</span> <span class="at">-o</span> ./hello3</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">./hello3</span></span></code></pre></div>
+<p>That procedure looks like:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./hamano</span> <span class="op">&lt;</span> README.md <span class="op">&gt;</span> hint.pdf</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cc</span> <span class="at">-xc</span> hint.pdf <span class="at">-o</span> hint</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./hint</span></span></code></pre></div>
+<p>Another PDF generated is an obfuscated <code>Hello World!</code>
+program (obfuscated inside the PDF). Once this is done it will compile
+the PDF as if it was C (itself!). It will look like:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&#39;int main(){puts(&quot;Hello World!&quot;);}&#39;</span> <span class="kw">|</span> <span class="ex">./hamano</span> <span class="op">&gt;</span> hello.pdf</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cc</span> <span class="at">-xc</span> hello.pdf <span class="at">-o</span> hello</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./hello</span> <span class="kw">|</span> <span class="fu">cc</span> <span class="at">-Wno-implicit-function-declaration</span> <span class="at">-xc</span> <span class="at">-</span> <span class="at">-o</span> ./hello2</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">./hello2</span></span></code></pre></div>
+<p>although the <code>CFLAGS</code> will be what is in the Makefile as
+it uses the helper rules <code>hint.pdf</code>, <code>hint</code>,
+<code>hello.pdf</code> and <code>hello</code> to do this.</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>This entry treads into a new territory for IOCCC - generating PDF
 files.</p>

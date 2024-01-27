@@ -124,7 +124,7 @@ section below.</p>
 <h2 id="to-use">To use:</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./cable3</span> bios-image-file floppy-image-file <span class="pp">[</span><span class="ss">harddisk</span><span class="pp">-</span><span class="ss">image</span><span class="pp">-</span><span class="ss">file</span><span class="pp">]</span></span></code></pre></div>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./runme</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./cable3.sh</span></span></code></pre></div>
 <p>NOTE: to quit the program type <code>QUITEMU</code>. You might have
 to be at the top level directory of the drive, <code>A:</code> or
 <code>C:</code>.</p>
@@ -292,7 +292,7 @@ shell script that looks something like:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stty</span> cbreak raw <span class="at">-echo</span> min 0</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./cable3</span> bios floppy.img harddisk.img</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stty</span> cooked echo</span></code></pre></div>
-<p>See the <a href="runme">runme</a> script.</p>
+<p>See the <a href="cable3.sh">cable3.sh</a> script.</p>
 <h2 id="to-use-the-emulator---floppy-mode-only">To use the emulator -
 floppy mode only</h2>
 <p>The simplest use of the emulator is with a single floppy boot disk
@@ -301,7 +301,7 @@ disk.</p>
 <p>Before running the emulator on a Unix-type system, <code>stty</code>
 needs to be used to put the keyboard into raw mode (and afterwards it
 needs to be put back to cooked). So, run the emulator using something
-like this script (provided as <a href="runme">runme</a>):</p>
+like this script (provided as <a href="cable3.sh">cable3.sh</a>):</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stty</span> cbreak raw <span class="at">-echo</span> min 0</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./cable3</span> bios fd.img</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stty</span> cooked echo</span></code></pre></div>
@@ -569,7 +569,7 @@ href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/cable3/cable
 href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/cable3/cable3.orig.c">cable3.orig.c</a>
 - original source</li>
 <li><a
-href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/cable3/runme">runme</a>
+href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2013/cable3/cable3.sh">cable3.sh</a>
 - how to run</li>
 <li><a href="screenshot_autocad.png">screenshot_autocad.png</a> -
 Screenshots of some applications running on macOS</li>
