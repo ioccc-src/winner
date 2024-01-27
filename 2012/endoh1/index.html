@@ -120,21 +120,26 @@ Location: <a href="/temp-test-ioccc/location.html#JP">JP</a></p>
 <p>There are two alt versions that let you control the compile time
 variables that control the fluid behaviour and the added variables to
 speed up or slow down the fluid as well as setting a timeout (if not 0):
-one for the original black and white and the colour one added by the
-author at the request of the judges. Another version is the deobfuscated
-version provided by the author as well. See <a
-href="#alternate-code">alternate code</a> below for more details.</p>
+one for the original black and white and one for the colour one added by
+the author (at the request of the judges at the time of the contest).
+Another version is the deobfuscated version provided by the author as
+well. See the <a href="#alternate-code">Alternate code</a> section below
+for more details.</p>
 <h2 id="to-use">To use:</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh1</span> <span class="op">&lt;</span> configuration.txt</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh1</span> <span class="op">&lt;</span> file</span></code></pre></div>
+<p>WARNING: if you’re sensitive to/don’t like flashing colours/text or
+just want to see what this looks like not going so fast then you might
+wish to try the <a href="#alternate-code">Alternate code</a>
+instead.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh1</span> <span class="op">&lt;</span> endoh1.c</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh1</span> <span class="op">&lt;</span> pour-out.txt</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh1</span> <span class="op">&lt;</span> fountain.txt</span></code></pre></div>
-<p>Also try using <code>endoh1_color</code> as you would
-<code>endoh1</code> above. <code>make</code> will compile this by
-default.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.bw.sh</span> endoh1.c</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.sh</span> endoh1.c</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.bw.sh</span> pour-out.txt</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.sh</span> pour-out.txt</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.bw.sh</span> fountain.txt</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.sh</span> fountain.txt</span></code></pre></div>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>The files <a href="endoh1.alt.c">endoh1.alt.c</a> and <a
 href="endoh1_color.alt.c">endoh1_color.alt.c</a> correspond to <a
@@ -145,50 +150,38 @@ or slow down the fluid and change the behaviour of the fluid. The file
 provided by the author.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <p>For the default values, try:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> alt alt2</span></code></pre></div>
-<p>The <code>alt2</code> is only necessary if you wish to compile the
-deobfuscated version but it is equivalent in function to the original
-entry, <a href="endoh1.c">endoh1.c</a>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> alt</span></code></pre></div>
 <p>In the <code>alt</code> versions a default time of 10 seconds is set
 as an alarm so that one can more easily go through the list of files to
-see them all in succession for fun. That is controlled by the variable
-<code>A</code>; 0 disables it.</p>
-<p>If you wish to change the speed you should do:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber SLEEP=N alt</span></code></pre></div>
-<p>where <code>N</code> is number or the letter <code>I</code>.</p>
-<p>WARNING: if you’re sensitive to flashing colours or any flashing at
-all do make sure you don’t decrease the value of <code>S</code>, the
-sleep time passed to <code>usleep(3)</code>, too much.</p>
-<p>If however you wish to change the gravity factor, pressure factor
-and/or viscosity factor, you should redefine the values <code>G</code>,
-<code>P</code> and/or <code>V</code> macros, respectively, with the same
-caveat about numbers for <code>S</code> above. For instance if you wish
-to change the viscosity and pressure factors but leave the other macros
-alone:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber VISCOSITY=X PRESSURE=Y alt</span></code></pre></div>
+see them all in succession, for fun. That is controlled by the variable
+<code>TIMER</code> at compilation. For instance if you wish to change
+the value to 5:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber TIMER=5 alt</span></code></pre></div>
+<p>If you want to disable the alarm time, set it to 0:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber TIMER=0 alt</span></code></pre></div>
+<p>It cannot be &lt; 0 or &gt; 60 (arbitrarily selected).</p>
+<p>The <code>SLEEP</code> variable is to delay the time between updates
+to make it easier to see and to not flash too quickly. The code protects
+against a value &lt; 0 and defaults to 12321 but you can change it to.
+For instance to slow it down you could increase the sleep time from
+<code>12321</code> to <code>50000</code>:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber SLEEP=50000 alt</span></code></pre></div>
+<p>If you wish to speed it up you might decrease the sleep time from
+<code>12321</code> to <code>9999</code>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber SLEEP=9999 alt</span></code></pre></div>
+<p>WARNING: the lower the value the faster it will flash so be careful
+if you’re sensitive to this.</p>
+<p>If you wish to change the gravity factor, pressure factor and/or
+viscosity factor, you should redefine the values <code>GRAVITY</code>,
+<code>PRESSURE</code> and/or <code>VISCOSITY</code> macros,
+respectively. For instance if you wish to change the viscosity and
+pressure factors but leave the other values alone:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber VISCOSITY=X PRESSURE=Y alt</span></code></pre></div>
 <p>where <code>X</code> and <code>Y</code> are numbers or the letter
 <code>I</code> and which are, respectively, the viscosity and pressure
-factors.</p>
-<p>There is no restriction on what the number is because doing so
+factors. There is no attempt to check the value or type because doing so
 prevents the macros from being defined to <code>I</code> which would
 prevent the author’s remarks about it from being done.</p>
-<p>If you want to disable the alarm time, set <code>A</code> to 0:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber TIMER=0 alt</span></code></pre></div>
-<p>It cannot be &lt; 0 or &gt; 60 (arbitrarily selected).</p>
-<p>Try slowing down the display by increasing the sleep time from
-<code>12321</code> to <code>50000</code>:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber SLEEP=50000 alt</span></code></pre></div>
-<p>Now try using both <code>endoh1.alt</code> and
-<code>endoh1_color.alt</code> as you would <code>endoh1</code>
-above.</p>
-<p>Also try speeding up the display by decreasing the sleep time from
-<code>12321</code> to <code>9999</code>:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber SLEEP=9999 alt2</span></code></pre></div>
-<p>WARNING: again, be careful with too low a value if you’re sensitive
-to flashing colours or anything at all.</p>
-<p>Now try using both <code>endoh1.alt</code> and
-<code>endoh1_color.alt</code> as you would <code>endoh1</code>
-above.</p>
 <p>You might also wish to try redefining the macros <code>G</code>,
 <code>P</code> and/or <code>V</code>. For instance:</p>
 <div class="sourceCode" id="cb10"><pre
@@ -196,7 +189,10 @@ class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#
 <p>You might try even:</p>
 <div class="sourceCode" id="cb11"><pre
 class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clobber GRAVITY=I alt</span></code></pre></div>
-<p>See the author’s remarks for details on these macros.</p>
+<p>See the author’s remarks for details on these macros where:</p>
+<pre><code>G = GRAVITY
+P = PRESSURE
+V = VISCOSITY</code></pre>
 <h3 id="alternate-use">Alternate use:</h3>
 <p>Use <code>endoh1.alt</code>, <code>endoh1_color.alt</code> and
 <code>endoh1.alt2</code> as you would <code>endoh1</code> and
@@ -204,10 +200,14 @@ class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#
 <h3 id="alternate-try">Alternate try:</h3>
 <p>To see two different ways run on the source file and each of the text
 files, try:</p>
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.alt.sh</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.alt.sh</span></span></code></pre></div>
 <p>The second run of each will be with the gravity factor set to
 <code>I</code>.</p>
+<p>To see the same thing but in the original uncoloured version,
+try:</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.alt.bw.sh</span></span></code></pre></div>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>Let’s play <a
 href="https://en.wikipedia.org/wiki/Jeopardy!">Jeopardy!</a></p>
@@ -224,13 +224,13 @@ what if? entry</a>.</p>
 <h3 id="synopsis">Synopsis</h3>
 <p><strong>DO NOT FORGET</strong> <code>-DG=1 -DP=4 -DV=8</code> and
 make your terminal window larger than 80 x 25.</p>
-<div class="sourceCode" id="cb13"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cc</span> endoh1.c <span class="at">-DG</span><span class="op">=</span>1 <span class="at">-DP</span><span class="op">=</span>4 <span class="at">-DV</span><span class="op">=</span>8 <span class="at">-D_BSD_SOURCE</span> <span class="at">-o</span> endoh1 <span class="at">-lm</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh1</span> <span class="op">&lt;</span> endoh1.c</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh1</span> <span class="op">&lt;</span> logo.txt</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh1</span> <span class="op">&lt;</span> column.txt</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh1</span> <span class="op">&lt;</span> pour-out.txt</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh1</span> <span class="op">&lt;</span> tanada.txt</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cc</span> endoh1.c <span class="at">-DG</span><span class="op">=</span>1 <span class="at">-DP</span><span class="op">=</span>4 <span class="at">-DV</span><span class="op">=</span>8 <span class="at">-D_BSD_SOURCE</span> <span class="at">-o</span> endoh1 <span class="at">-lm</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh1</span> <span class="op">&lt;</span> endoh1.c</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh1</span> <span class="op">&lt;</span> logo.txt</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh1</span> <span class="op">&lt;</span> column.txt</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh1</span> <span class="op">&lt;</span> pour-out.txt</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="ex">./endoh1</span> <span class="op">&lt;</span> tanada.txt</span></code></pre></div>
 <h3 id="what-it-is">What it is</h3>
 <pre><code>    ,___. ,.       ,.    ,.   ,___. ,.              ,.       ,.
     |/--&#39; ||       `&#39;    ||   |/--&#39; `&#39;              ||       |\_.
@@ -281,10 +281,10 @@ may require <code>-D_BSD_SOURCE</code> or so to build with no warning.
 Under these conditions, it should be portable. At least, recent
 compilers with <code>-std=c99 -Wall -W -Wextra -pedantic</code> say
 nothing.</p>
-<div class="sourceCode" id="cb15"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="at">-DG</span><span class="op">=</span>1 <span class="at">-DP</span><span class="op">=</span>4 <span class="at">-DV</span><span class="op">=</span>8 <span class="at">-D_BSD_SOURCE</span> <span class="at">-std</span><span class="op">=</span>c99 <span class="at">-Wall</span> <span class="at">-W</span> <span class="at">-Wextra</span> <span class="at">-pedantic</span> endoh1.c</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">clang</span> <span class="at">-DG</span><span class="op">=</span>1 <span class="at">-DP</span><span class="op">=</span>4 <span class="at">-DV</span><span class="op">=</span>8 <span class="at">-D_BSD_SOURCE</span> <span class="at">-std</span><span class="op">=</span>c99 <span class="at">-Wall</span> <span class="at">-W</span> <span class="at">-Wextra</span> <span class="at">-pedantic</span> endoh1.c</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="at">-DG</span><span class="op">=</span>1 <span class="at">-DP</span><span class="op">=</span>4 <span class="at">-DV</span><span class="op">=</span>8 <span class="at">-D_BSD_SOURCE</span> <span class="at">-std</span><span class="op">=</span>c99 <span class="at">-Wall</span> <span class="at">-W</span> <span class="at">-Wextra</span> <span class="at">-pedantic</span> endoh1.c</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">clang</span> <span class="at">-DG</span><span class="op">=</span>1 <span class="at">-DP</span><span class="op">=</span>4 <span class="at">-DV</span><span class="op">=</span>8 <span class="at">-D_BSD_SOURCE</span> <span class="at">-std</span><span class="op">=</span>c99 <span class="at">-Wall</span> <span class="at">-W</span> <span class="at">-Wextra</span> <span class="at">-pedantic</span> endoh1.c</span></code></pre></div>
 <p>I expect it to work in any Unix-like environment. VTxxx/ANSI
 sequences are used to clear screen and move cursor to home.</p>
 <p>I’ve tested with gcc-4.6.3 and clang-3.0 on Linux (Ubuntu 12.04) and
@@ -420,8 +420,17 @@ href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/pour-
 href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/tanada.txt">tanada.txt</a>
 - fluid initial state as text</li>
 <li><a
+href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/try.alt.bw.sh">try.alt.bw.sh</a>
+- how to run alternate code in black and white</li>
+<li><a
 href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/try.alt.sh">try.alt.sh</a>
 - how to run alternative code</li>
+<li><a
+href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/try.bw.sh">try.bw.sh</a>
+- try.alt.bw.sh</li>
+<li><a
+href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/try.sh">try.sh</a>
+- how to run in color</li>
 <li><a
 href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/endoh1/endoh1_color.c">endoh1_color.c</a>
 - alternative source using terminal 256 colors</li>

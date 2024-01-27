@@ -138,20 +138,28 @@ know German where the sound of ‘V’ is ‘F’ and so the program had the
 letter be ‘F’. A problem, however, with changing it is that it breaks
 other words including in German. Thus there is the alternate version
 instead which fixes a problem for Germans that causes problems for
-Germans so if you’re German you’ll just have to deal with it :-) It is,
-however, good as you might be able appreciate the entry even more.</p>
+Germans so if you’re German you’ll just have to deal with it :-) It also
+breaks other words too and this happens only for one letter change. With
+this one should hopefully be able to really appreciate the subtlety of
+this entry even more.</p>
 <h3 id="alternate-build">Alternate build:</h3>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> alt</span></code></pre></div>
 <h3 id="alternate-use">Alternate use:</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> vier <span class="kw">|</span> <span class="ex">./kang.alt</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> uno <span class="kw">|</span> <span class="ex">./kang.alt</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;full spelling of an English cardinal numeral less than a quadrillion&quot;</span> <span class="kw">|</span> <span class="ex">./kang.alt</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> vier <span class="kw">|</span> <span class="ex">./kang.alt</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> uno <span class="kw">|</span> <span class="ex">./kang.alt</span></span></code></pre></div>
 <h3 id="alternate-try">Alternate try:</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./de.alt.sh</span> <span class="co"># German 0 through 13 both with and without umlaut</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./en.alt.sh</span> <span class="co"># English 0 through 13</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.alt.sh</span> <span class="co"># try various languages</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./en.alt.sh</span> <span class="co"># English 0 through 13</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">./de.alt.sh</span> <span class="co"># German 0 through 13 with both umlauts and without (additional &#39;e&#39;)</span></span></code></pre></div>
 <p>What does it get right? What does it get wrong? How does it compare
 to the original entry without the change of <code>f</code> to
 <code>v</code>?</p>
-<p>Finally why does it get what it gets wrong wrong?</p>
+<p>Finally why does it get wrong what it gets wrong?</p>
 <h2 id="judges-remarks">Judges’ remarks:</h2>
 <p>The judges were able to appreciate the Indo-European language family
 relation by making this entry successfully recognize <em>some</em>
@@ -330,6 +338,9 @@ href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/en.alt.
 <li><a
 href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/en.sh">en.sh</a>
 - English words for 1 through 13</li>
+<li><a
+href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/try.alt.sh">try.alt.sh</a>
+- how to run alternate code</li>
 <li><a
 href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2012/kang/try.sh">try.sh</a>
 - how to run</li>

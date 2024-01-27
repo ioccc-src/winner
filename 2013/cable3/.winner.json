@@ -50,7 +50,7 @@
 	    "winners_text" : "original source"
 	},
 	{
-	    "file_path" : "runme",
+	    "file_path" : "cable3.sh",
 	    "inventory_order" : 100,
 	    "OK_to_edit" : true,
 	    "display_as" : "shellscript",

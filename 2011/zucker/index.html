@@ -123,10 +123,12 @@ distinguishes binary mode from text mode. See <a
 href="#alternate-code">alternate code</a> below.</p>
 <h2 id="to-use">To use:</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./zucker</span> <span class="op">&gt;</span> image.ppm</span></code></pre></div>
+<p>Now open <code>image.ppm</code> with your image viewer of choice.</p>
 <h2 id="try">Try:</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./zucker</span> <span class="st">&quot;Hello\!\!\!&quot;</span> <span class="op">&gt;</span> hello.ppm</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./zucker</span> faster<span class="dt">\!</span> <span class="at">-preview</span> <span class="op">&gt;</span> image2.ppm</span></code></pre></div>
-<p>Display the PPM image with your favorite image viewer.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./try.sh</span></span></code></pre></div>
+<p>After running <code>try.sh</code>, open the PPM images
+<code>ioccc.ppm</code>, <code>hello.ppm</code> and
+<code>image2.ppm</code> with your image viewer of choice.</p>
 <h2 id="alternate-code">Alternate code:</h2>
 <p>This version uses the Windows functions <code>_setmode()</code> and
 <code>_fileno()</code> to set binary mode on <code>stdout</code> which
@@ -304,6 +306,9 @@ href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/zucker/zucke
 - original source</li>
 <li><a href="sphere-tracing.pdf">sphere-tracing.pdf</a> - research paper
 on antialiased ray tracing</li>
+<li><a
+href="https://github.com/ioccc-src/temp-test-ioccc/blob/master/2011/zucker/try.sh">try.sh</a>
+- how to run</li>
 <li><a href="2011_zucker.tar.bz2">2011_zucker.tar.bz2</a> - download
 winning source</li>
 </ul>
