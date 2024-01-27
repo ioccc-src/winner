@@ -4,23 +4,45 @@
 make
 ```
 
+If you wish to change the size (see the [Author's remarks](#authors-remarks)
+below) you can do so with the `SIZE` variable. For instance you can do:
+
+
+```sh
+make clobber SIZE=50,50 all
+```
+
+but you can also do this directly with the [endoh4.sh](endoh4.sh) script as
+described below.
+
+
+### Bugs and (Mis)features:
+
+The current status of this entry is:
+
+```
+STATUS: INABIAF - please **DO NOT** fix
+```
+
+For more detailed information see [2013 endoh4 in bugs.md](/bugs.md#2013-endoh4).
+
 
 ## To use:
 
 ```sh
 ./endoh4 < file
-./run.sh file
+./endoh4.sh file
 ```
 
 The second form is preferable as it will temporarily make the cursor invisible
-as recommended by the author. If no file is specified in `run.sh` command line
-it will feed to the program [endoh4.c](endoh4.c).
+as recommended by the author. If no file is specified in the `./endoh4.sh` command
+line it will feed to the program [endoh4.c](endoh4.c).
 
 
 ## Try:
 
 ```sh
-./run.sh cube.txt
+./endoh4.sh cube.txt
 ```
 
 Hit ctrl-c to end the program.
@@ -30,14 +52,31 @@ The author recommends the use of xterm.
 For an example, if you are a football/soccer fan, try:
 
 ```sh
-./run.sh solids/archimedian-solid/a11-truncated-icosahedron.txt
+./endoh4.sh solids/archimedian-solid/a11-truncated-icosahedron.txt
 ```
+
+You can provide more than one file:
+
+```sh
+./endoh4.sh solids/archimedian-solid/a11-truncated-icosahedron.txt cube.txt
+```
+
+Hit ctrl-c/intr to go to the next file.
+
+If you wish to change the size to `50,50` without passing any arg:
+
+
+```sh
+SIZE=50,50 ./endoh4.sh
+```
+
+Not specifying a file feeds [endoh4.c](endoh4.c) to the program.
 
 
 ## Judges' remarks:
 
 This program is formatted as the net for a tetrahedron (hint: try feeding the
-program it's own source code like `./run.sh`).  When it runs there is an
+program it's own source code like `./endoh4.sh`).  When it runs there is an
 animation for the computation to work out the convex hull.
 
 
@@ -69,7 +108,7 @@ This simple spec involves many details.
 ### Portability
 
 I think it conforms with both C89 and C99.  I confirmed that it worked on gcc,
-clang, and tcc.  It should not be warned with `-pedantic` and `-Wextra`.
+clang, and tcc.  It should not trigger warnings with `-pedantic` and `-Wextra`.
 
 
 ### Tips
@@ -85,7 +124,7 @@ tput cnorm
 or
 
 ```sh
-./run.sh cube.txt
+./endoh4.sh cube.txt
 ```
 
 ### Bonuses
@@ -100,7 +139,7 @@ The shape of this code is the geometric net of a regular tetrahedron.
 So, try:
 
 ```sh
-./endoh4 < endoh4.c # or ./run.sh
+./endoh4 < endoh4.c # or ./endoh4.sh
 ```
 
 The [solids/](solids/) directory includes various solid data:

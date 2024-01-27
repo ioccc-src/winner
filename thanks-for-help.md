@@ -3987,11 +3987,16 @@ arg type and count to `main()`) added a second (unused) arg to `main()`.
 
 ## <a name="2013_endoh4"></a>[2013/endoh4](/2013/endoh4/endoh4.c) ([README.md](/2013/endoh4/README.md))
 
-[Cody](#cody) added the [try.sh](/2013/endoh4/try.sh) script which temporarily
+[Cody](#cody) added the [endoh4.sh](/2013/endoh4/endoh4.sh) script which temporarily
 turns off the cursor as suggested by the author, with the addition that if no
 file is specified it will feed the source code [endoh4.c](/2013/endoh4/endoh4.c)
 to the program rather than the file specified. It does not try and detect if the
-file exists or can be read as that will be handled by the shell/program.
+file exists or can be read as that will be handled by the shell/program. One may
+pass more than one file to the script.
+
+Cody also made it easier to redefine the size at compilation time (see the
+author's remarks for more details on what this means). The `endoh4.sh` script
+allows one to redefine it as well.
 
 
 ## <a name="2013_hou"></a>[2013/hou](/2013/hou/hou.c) ([README.md](/2013/hou/README.md))
