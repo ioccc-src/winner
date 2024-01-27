@@ -3977,6 +3977,14 @@ not found.
 The entry can still be enjoyed if you do not have these tools, however.
 
 
+## <a name="2013_endoh3"></a>[2013/endoh3](/2013/endoh3/endoh3.c) ([README.md](/2013/endoh3/README.md))
+
+[Cody](#cody) added the [try.sh](/2013/endoh3/try.sh) script.
+
+Cody also (out of an abundance of caution for `clang(1)` which is strict with
+arg type and count to `main()`) added a second (unused) arg to `main()`.
+
+
 ## <a name="2013_endoh4"></a>[2013/endoh4](/2013/endoh4/endoh4.c) ([README.md](/2013/endoh4/README.md))
 
 [Cody](#cody) added the [try.sh](/2013/endoh4/try.sh) script which temporarily

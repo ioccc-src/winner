@@ -22,21 +22,32 @@ For more detailed information see [2013 endoh3 in bugs.md](/bugs.md#2013-endoh3)
 ./endoh3
 ```
 
+This program plays sound. See [FAQ 3.10 - How do I compile and use an IOCCC
+winner that requires sound?](/faq.md#faq3_10) if you do not know how to set your
+system up for this or if you want to verify that everything is oky.
+
 
 ## Try:
 
-Trying this out will depend on how your system can play sounds. The author's
-remarks include some options for different operating systems.
-
-The simplest way is to create a .wav file and have your system play that.
-
 ```sh
-echo 'CDEFGABc' | ./endoh3 | ruby wavify.rb > cde.wav
+./try.sh
+
+./try.sh ABC
+
+./try.sh test.abc yankee.abc
+
+./try.sh *.abc
 ```
 
-Observe how you will need ruby installed.
+The script will check for SoX first and next `padsp` from `PulseAudio` and
+finally if neither are found if you have `ruby(1)` installed it'll use the
+included ruby script to convert it to a WAV file for you to play.
 
-There are also some other musical samples, twinkle.abc and menuet.abc.
+If no args are passed to the script it will play [twinkle.abc](twinkle.abc) and
+the string `ABC`. Otherwise while there's a remaining arg if it's a file it will
+run the program on the file. If it's not a file it'll run it as a string.
+
+The `*.abc` files are provided as music samples.
 
 
 ## Judges' remarks:
