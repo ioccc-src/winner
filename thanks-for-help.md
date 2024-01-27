@@ -4031,6 +4031,8 @@ Further, after the file `2013/hou/doc/example.markdown` was moved to
 [2013/hou/doc/example.md](/2013/hou/doc/example.md) to match the rest of the repo
 this broke `make` which Cody also fixed.
 
+Cody also added the [try.sh](/2013/hou/try.sh) script.
+
 
 ## <a name="2013_mills"></a>[2013/mills](/2013/mills/mills.c) ([README.md)[2013/mills/README.md))
 

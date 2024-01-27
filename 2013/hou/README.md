@@ -30,17 +30,14 @@ effects should be more or less recognizable when you see 16.
 ## Try:
 
 ```sh
-./hou BIG
-./hou old_default.scene BIG
-./hou otherroom.scene
-./hou otherroom.scene NAIVE
+./try.sh
 ```
 
-Try opening the file and then let the program run a while and every so often
-reopen the file, to see how it changes. The author suggests that you leave the
-program running overnight to see what happens. If however you do not have all
-night :-) then the following JPEG files should show you what happens with some
-of the invocations above:
+Try opening the file noted by the program then let the program run a while and
+every so often reopen the file, to see how it changes. The author suggests that
+you leave the program running overnight to see what happens. If however you do
+not have all night :-) then the following JPEG files should show you what
+happens with some of the invocations above:
 
 ![./hou BIG - Luna](luna.jpg)
 
