@@ -784,7 +784,9 @@
 1994/westley/.winner.json
 1994/westley/Makefile
 1994/westley/README.md
+1994/westley/try.alt.sh
 1994/westley/try.sh
+1994/westley/westley.alt.c
 1994/westley/westley.c
 1994/westley/westley.orig.c
 1995/cdua/.gitignore
@@ -1930,6 +1932,8 @@
 2011/richards/richards.alt.c
 2011/richards/richards.c
 2011/richards/richards.orig.c
+2011/richards/try.alt.sh
+2011/richards/try.sh
 2011/toledo/.gitignore
 2011/toledo/.winner.json
 2011/toledo/Makefile
@@ -1947,6 +1951,7 @@
 2011/vik/mad_world.mod
 2011/vik/randowan.mod
 2011/vik/raw2wav
+2011/vik/try.sh
 2011/vik/vik.alt.c
 2011/vik/vik.c
 2011/vik/vik.orig.c
@@ -1955,6 +1960,7 @@
 2011/zucker/Makefile
 2011/zucker/README.md
 2011/zucker/sphere-tracing.pdf
+2011/zucker/try.sh
 2011/zucker/zucker.alt.c
 2011/zucker/zucker.c
 2011/zucker/zucker.orig.c
@@ -2011,7 +2017,10 @@
 2012/endoh1/logo.txt
 2012/endoh1/pour-out.txt
 2012/endoh1/tanada.txt
+2012/endoh1/try.alt.bw.sh
 2012/endoh1/try.alt.sh
+2012/endoh1/try.bw.sh
+2012/endoh1/try.sh
 2012/endoh2/.gitignore
 2012/endoh2/.winner.json
 2012/endoh2/Makefile
@@ -2066,6 +2075,7 @@
 2012/kang/kang.alt.c
 2012/kang/kang.c
 2012/kang/kang.orig.c
+2012/kang/try.alt.sh
 2012/kang/try.sh
 2012/konno/.gitignore
 2012/konno/.winner.json
@@ -2217,9 +2227,9 @@
 2013/cable3/cable3.alt.c
 2013/cable3/cable3.c
 2013/cable3/cable3.orig.c
+2013/cable3/cable3.sh
 2013/cable3/fd.img
 2013/cable3/hd.img
-2013/cable3/runme
 2013/cable3/sc-ioccc.terminal
 2013/cable3/screenshot_autocad.png
 2013/cable3/screenshot_flightsim4.png

@@ -1085,7 +1085,9 @@
 1994,westley,index.html,10,false,html,false,winner home page
 1994,westley,westley.c,20,true,c,true,winning source
 1994,westley,Makefile,30,true,makefile,true,winner Makefile
+1994,westley,westley.alt.c,40,true,c,true,alternative source
 1994,westley,westley.orig.c,50,true,c,true,original source
+1994,westley,try.alt.sh,100,true,shellscript,true,how to run alternative code
 1994,westley,try.sh,100,true,shellscript,true,how to run
 1994,westley,1994_westley.tar.bz2,300,false,tbz2,false,download winning source
 1994,westley,README.md,4294967295,true,markdown,true,markdown source for index.html
@@ -2597,6 +2599,8 @@
 2011,richards,Makefile,30,true,makefile,true,winner Makefile
 2011,richards,richards.alt.c,40,true,c,true,alternative source
 2011,richards,richards.orig.c,50,true,c,true,original source
+2011,richards,try.alt.sh,100,true,shellscript,true,how to run alternative code
+2011,richards,try.sh,100,true,shellscript,true,how to run
 2011,richards,2011_richards.tar.bz2,300,false,tbz2,false,download winning source
 2011,richards,README.md,4294967295,true,markdown,true,markdown source for index.html
 2011,richards,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -2623,6 +2627,7 @@
 2011,vik,mad_world.mod,100,true,mod,false,4-channel Protracker module sound data
 2011,vik,randowan.mod,100,true,mod,false,4-channel Protracker module sound data
 2011,vik,raw2wav,100,true,perl,true,convert raw format to wav format
+2011,vik,try.sh,100,true,shellscript,true,how to run
 2011,vik,2011_vik.tar.bz2,300,false,tbz2,false,download winning source
 2011,vik,README.md,4294967295,true,markdown,true,markdown source for index.html
 2011,vik,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -2634,6 +2639,7 @@
 2011,zucker,zucker.alt.c,40,true,c,true,alternative source
 2011,zucker,zucker.orig.c,50,true,c,true,original source
 2011,zucker,sphere-tracing.pdf,100,true,pdf,false,research paper on antialiased ray tracing
+2011,zucker,try.sh,100,true,shellscript,true,how to run
 2011,zucker,2011_zucker.tar.bz2,300,false,tbz2,false,download winning source
 2011,zucker,README.md,4294967295,true,markdown,true,markdown source for index.html
 2011,zucker,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -2699,7 +2705,10 @@
 2012,endoh1,logo.txt,100,true,text,true,fluid initial state as text
 2012,endoh1,pour-out.txt,100,true,text,true,fluid initial state as text
 2012,endoh1,tanada.txt,100,true,text,true,fluid initial state as text
+2012,endoh1,try.alt.bw.sh,100,true,shellscript,true,how to run alternate code in black and white
 2012,endoh1,try.alt.sh,100,true,shellscript,true,how to run alternative code
+2012,endoh1,try.bw.sh,100,true,shellscript,true,try.alt.bw.sh
+2012,endoh1,try.sh,100,true,shell script,true,how to run in color
 2012,endoh1,endoh1_color.c,150,true,c,true,alternative source using terminal 256 colors
 2012,endoh1,2012_endoh1.tar.bz2,300,false,tbz2,false,download winning source
 2012,endoh1,README.md,4294967295,true,markdown,true,markdown source for index.html
@@ -2771,6 +2780,7 @@
 2012,kang,de.sh,100,true,shellscript,true,German words for 0 through 13
 2012,kang,en.alt.sh,100,true,shellscript,true,English words for 1 through 13 for alt
 2012,kang,en.sh,100,true,shellscript,true,English words for 1 through 13
+2012,kang,try.alt.sh,100,true,shellscript,true,how to run alternate code
 2012,kang,try.sh,100,true,shellscript,true,how to run
 2012,kang,2012_kang.tar.bz2,300,false,tbz2,false,download winning source
 2012,kang,README.md,4294967295,true,markdown,true,markdown source for index.html
@@ -2948,7 +2958,7 @@
 2013,cable3,Makefile,30,true,makefile,true,winner Makefile
 2013,cable3,cable3.alt.c,40,true,c,true,alternative source
 2013,cable3,cable3.orig.c,50,false,c,true,original source
-2013,cable3,runme,100,true,shellscript,true,how to run
+2013,cable3,cable3.sh,100,true,shellscript,true,how to run
 2013,cable3,screenshot_autocad.png,100,true,image,false,Screenshots of some applications running on macOS
 2013,cable3,screenshot_flightsim4.png,100,true,image,false,Screenshots of some applications running on macOS
 2013,cable3,screenshot_lotus123.png,100,true,image,false,Screenshots of some applications running on macOS
