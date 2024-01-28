@@ -23,6 +23,12 @@ if [[ -z "$COLS" ]]; then
 	COLS="640"
 fi
 
-# ^---------^ SC2002 (style): Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead.
+# We disable the useless cat warning of ShellCheck because the to use
+# instructions have it and for such a long command line it's easier to deal
+# with. Besides that it is dubious to claim there is such a thing as useless
+# cat.
+#
+# SC2002 (style): Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead.
+# https://www.shellcheck.net/wiki/SC2002
 # shellcheck disable=SC2002
 cat mario.level | ./prog "$COLS" "$ROWS" 800 300 128 144 mario.rgba mario8.wav 10343679 && telnet telehack.com 23
