@@ -15,31 +15,35 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-
-echo "$ cp -f prog morgan" 1>&2
+read -r -n 1 -p "Press any key to run: cp -f prog morgan: "
+echo 1>&2
 cp -f prog morgan
-echo "$ ls" 1>&2
-ls
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: rm -vf prog: "
+echo 1>&2
+rm -vf prog
+echo 1>&2
+read -r -n 1 -p "Press any key to run: ./morgan prog: "
+echo 1>&2
+./morgan prog
+echo 1>&2
+
+read -r -n 1 -p "Press any key to compare prog and morgan: "
+echo 1>&2
+diff -s prog morgan
+echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./morgan all install: "
 echo 1>&2
 ./morgan all install
 echo 1>&2
-echo "$ ls" 1>&2
-ls
+
+read -r -n 1 -p "Press any key to run: ./morgan love haste waste supernova: "
+echo 1>&2
+./morgan love haste waste supernova
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: ./prog love haste waste supernova: "
+read -r -n 1 -p "Press any key to run: ./morgan magic: "
 echo 1>&2
-./prog love haste waste supernova
-echo 1>&2
-echo "$ ls" 1>&2
-ls
-echo 1>&2
-
-read -r -n 1 -p "Press any key to run: ./prog magic: "
-echo 1>&2
-./prog magic
-echo 1>&2
-echo "$ ls" 1>&2
-ls
+./morgan magic
