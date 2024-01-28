@@ -4151,9 +4151,15 @@ provided by the author.
 once did. The problem is that it expects a certain file name which was
 `sinon.c`. The code now refers to `prog.c`.
 
-Cody also added the [try.sh](/2014/sinon/try.sh) script which is an improvement
-over what was once suggested in that when it's over it will ask you if you wish
-to try again, say because of a jam (see the README.md file for details).
+Cody also fixed the scripts [glock.sh](/2014/sinon/glock.sh) and
+[hecate.sh](/2014/sinon/hecate.sh) which did not work after running either once
+as they compile `run.c` and then do `./run | tee run.c` which overwrites it with
+output that is not code.
+
+Cody also added the [try.sh](/2014/sinon/try.sh) script that will first (if perl
+is installed) run the demo mode and then after that it will run the above noted
+scripts in a loop until the user says they do not want to try again (or they
+kill it). This is done this way in case it jams (see README.md for details).
 
 
 ## <a name="2014_skeggs"></a>[2014/skeggs](/2014/skeggs/prog.c) ([README.md](/2014/skeggs/README.md))
