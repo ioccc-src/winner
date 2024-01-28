@@ -111,7 +111,7 @@ PROG= prog
 #
 OBJ= ${PROG}.o
 CSRC= ${PROG}.o
-DATA= scripthd
+DATA= scripthd.sh
 TARGET= ${PROG}
 #
 ALT_OBJ= ${PROG}.alt.o
@@ -206,7 +206,7 @@ clean:
 	fi
 
 clobber: clean
-	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -f ${TARGET} ${ALT_TARGET} scripthd
 	${RM} -rf *.dSYM
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
