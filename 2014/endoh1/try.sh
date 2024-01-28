@@ -17,7 +17,7 @@ clear
 
 read -r -n 1 -p "Press any key to show prog.c (space = next page, q = quit): "
 echo 1>&2
-less -EXF prog.c
+less -rEXFK prog.c
 echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./prog: "
