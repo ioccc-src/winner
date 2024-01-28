@@ -4,6 +4,8 @@
 indent
 indent.c
 indent.o
+output
+output.c
 prog
 prog_c11
 prog_c90

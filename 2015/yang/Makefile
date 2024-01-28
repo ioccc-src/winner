@@ -230,7 +230,7 @@ clean:
 	fi
 
 clobber: clean
-	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -f ${TARGET} ${ALT_TARGET} output output.c
 	${RM} -rf *.dSYM
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
