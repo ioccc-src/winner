@@ -10,6 +10,7 @@ indent.c
 indent.o
 prog.orig
 samefile
+samefile.alt
 schweikh3
 schweikh3.alt
 schweikh3.orig
