@@ -27,7 +27,7 @@ echo something | ./prog
 ## Try:
 
 ```sh
-echo "" | ./prog
+./try.sh
 ```
 
 

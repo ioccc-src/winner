@@ -3199,17 +3199,50 @@ This program will very likely crash if no arg is given.
 ### Source code: [2014/vik/prog.c](2014/vik/prog.c)
 ### Information: [2014/vik/README.md](2014/vik/README.md)
 
-[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) discovered a bug that
-shows itself in some cases (it works in others) when working on his winning
-[2020 Enigma machine](2020/ferguson2/prog.c) ('Most enigmatic') entry. See his
-[README.md](2020/ferguson2/README.md) for details (search for `vik` in the
-file).
+[Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) discovered a bug to do
+with translating sound to text that shows itself in some cases (it works in
+others) when working on his winning [2020 Enigma machine](2020/ferguson2/prog.c)
+('Most enigmatic') entry. See his [README.md](2020/ferguson2/README.md) for
+details (search for `vik` in the file). This one might be more of a limitation
+but this is not known.
 
 He provides a tip in testing the problem: it might help to use his Enigma
 machine to find problems as it will allow you to verify what is correct and what
-is not. Again see his README.md for details!
+is not. Again see his README.md for details. However it is also possible to not
+rely on the entry as the below shows. One should be able to do:
 
-If you want to try and fix this (mis)feature, you are welcome to try.
+
+```sh
+echo 'No. I want chocolate!' | ./prog > chocolate.raw
+
+./prog e < chocolate.raw
+```
+
+and get:
+
+```
+No. I want some chocolate!
+```
+
+but instead we get:
+
+```
+IT FHOCOLITE!
+```
+
+which is very wrong. If however one does:
+
+```
+echo IOCCC | ./prog > ioccc.raw
+
+./prog e < ioccc.raw
+```
+
+they will properly get:
+
+```
+IOCCC
+```
 
 
 # 2015

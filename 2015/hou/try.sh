@@ -16,30 +16,47 @@ make CC="$CC" all >/dev/null || exit 1
 clear
 
 
-echo "$ echo IOCCC | ./prog" 1>&2
+read -r -n 1 -p "Press any key to run: echo IOCCC | ./prog: "
+echo 1>&2
 echo IOCCC | ./prog
 echo 1>&2
 
-echo "$ ./prog < rfc1321.txt" 1>&2
-./prog < rfc1321.txt
+read -r -n 1 -p "Press any key to run: head -n 13 rfc1321.txt (space = next page, q = quit): "
+echo 1>&2
+head rfc1321.txt -n 13 | less -rEXFK
 echo 1>&2
 
-echo "$ echo \"\" | ./prog" 1>&2
+read -r -n 1 -p "Press any key to run: ./prog < rfc1321.txt: "
+echo 1>&2
+./prog < rfc1321.txt | less -rEXFK
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: echo \"\" | ./prog: "
+echo 1>&2
 echo "" | ./prog
 echo 1>&2
 
-echo "For the next two, observe the magical values: "
-read -r -n 1 -p "Press any key to continue: "
+read -r -n 1 -p "Press any key to show prog.c (space = next page, q = quit): "
 echo 1>&2
-echo "$ ./prog < prog.c | cut -c-5" 1>&2
+less -rEXFK prog.c
+echo 1>&2
+
+echo "For the next two, observe the magical values."
+echo 1>&2
+read -r -n 1 -p "Press any key to run: ./prog < prog.c | cut -c-5: "
+echo 1>&2
 ./prog < prog.c | cut -c-5
 
-echo "$ ./prog < Makefile | cut -c-4" 1>&2
+read -r -n 1 -p "Press any key to run: ./prog < Makefile | cut -c-4: "
+echo 1>&2
 ./prog < Makefile | cut -c-4
 echo 1>&2
 
-echo "$ wc -c large" 1>&2
+read -r -n 1 -p "Press any key to run: wc -c large: "
+echo 1>&2
 wc -c large
+echo 1>&2
 
-echo "$ ./prog < large" 1>&2
+read -r -n 1 -p "Press any key to run: ./prog < large: "
+echo 1>&2
 ./prog < large

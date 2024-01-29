@@ -19,15 +19,14 @@ clear
 echo "$ make -B V=2 run" 1>&2
 read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
 echo 1>&2
-make CC="${CC}" -B V=2 run | less -EXF
+read -r -n 1 -p "Press any key to run: make CC=${CC} -B V=2 run (space = next page, q = quit): "
 echo 1>&2
+make CC="${CC}" -B V=2 run | less -rEXFK
 echo 1>&2
 
-echo "$ strings prog | grep '(,)'" 1>&2
-read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
+read -r -n 1 -p "Press any key to run: strings prog | grep '(,)' (space = next page, q = quit): "
 echo 1>&2
 strings prog | grep '(,)' | less -EXF
-echo 1>&2
 echo 1>&2
 
 for h in machine*.h; do
@@ -37,9 +36,8 @@ for h in machine*.h; do
 	if [[ "$REPLY" == "q" || "$REPLY" == "Q" ]]; then
 	    exit 0
 	fi
-	echo 1>&2
-	make -B MACHINE="$h" TAPE="$t" V=1 run
-	echo 1>&2
+
+	make CC="${CC}" -B MACHINE="$h" TAPE="$t" V=1 run
 	echo 1>&2
     done
 done

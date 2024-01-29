@@ -21,6 +21,10 @@ echo Some text | ./prog
 ./try.sh
 ```
 
+As the script says if you want to move to the next command at any point
+(lorem-ipsum.txt takes a while to print in particular) you may do so by hitting
+ctrl-c/sending intr.
+
 
 ## Alternate code:
 

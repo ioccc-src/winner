@@ -13,24 +13,22 @@ fi
 # clear screen so that only the entry is shown
 clear
 
-read -r -n 1 -p "Press any key to run: less -EXF prog.c (space = next page, q = quit): "
+read -r -n 1 -p "Press any key to run: less -rEXFK prog.c (space = next page, q = quit): "
 echo 1>&2
 less -EXF prog.c
 echo 1>&2
 
-echo "$ make future" 1>&2
+read -r -n 1 -p "Press any key to: make future: "
+echo 1>&2
 make future || exit 1
-
 echo 1>&2
 echo 1>&2
 
 echo "Will go back to the future and run 1984/mullender through prog. To quit" 1>&2
-echo "the program hit ctrl-c/intr." 1>&2
+echo "the program hit ctrl-c/intr. We suggest you try hitting enter or another" 1>&2
+echo "key when the output reaches the end of the line." 1>&2
 echo 1>&2
-echo "You might want to try hitting enter or another key when the output reaches" 1>&2
-echo "the end of the line." 1>&2
 echo 1>&2
-read -r -n 1 -p "Press any key to continue: "
+read -r -n 1 -p "Press any key to run: ./prog: "
 echo 1>&2
-echo "$ ./prog" 1>&2
 ./prog

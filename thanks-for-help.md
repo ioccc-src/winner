@@ -4182,7 +4182,11 @@ clean`) removes those files and so that they are ignored by `.gitignore`.
 
 ## <a name="2014_vik"></a>[2014/vik](/2014/vik/prog.c) ([README.md](/2014/vik/README.md))
 
-[Cody](#cody) added an alternate version that is based on the author's remarks that will
+[Cody](#cody) added the [try.sh](/2014/vik/try.sh) script. Cody notes that there
+is a bug that will show itself as one of the features does not work right. The
+translation of the raw audio to text is buggy in some cases.
+
+Cody also added an alternate version that is based on the author's remarks that will
 theoretically work for Microsoft Windows compilers (if anything works in Windows
 :-) ). We have no way of testing this and if anything has changed since 2014
 that would break it we do not know.
@@ -4225,9 +4229,9 @@ This was done for both the [prog.c](/2015/burton/prog.c) and
 [prog.alt.c](/2015/burton/prog.alt.c). The Makefile was also updated to build
 `eprog` and `eprog.alt` to make use of the feature more easily. Each is a new
 target (first in `TARGET` and second in `ALT_TARGET`) which have a prerequisite
-of `${PROG}` and `${PROG}.alt` respectively and which copies `prog` and
-`prog.alt` to `eprog` and `eprog.alt` respectively. With these changes now one
-can easily use the echo feature the author implemented.
+of `${PROG}` and `${PROG}.alt` respectively both of which also copy the `prog`
+(`prog` or `eprog`) to the respective `eprog` (`eprog` or `eprog.alt`).  With
+these changes now one can easily use the echo feature the author implemented.
 
 Cody also added the [try.sh](/2015/burton/try.sh) script. This involved
 adding a text file, [try.this.txt](/2015/burton/try.this.txt).
