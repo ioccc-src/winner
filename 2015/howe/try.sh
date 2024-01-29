@@ -16,22 +16,78 @@ make CC="$CC" all >/dev/null || exit 1
 clear
 
 
+read -r -n 1 -p "Press any key to run: ./prog prog.alt.c prog.c: "
+echo 1>&2
 ./prog prog.alt.c prog.c
+echo 1>&2
 
-make test
+read -r -n 1 -p "Press any key to run: make test (space = next page, q = quit): "
+echo 1>&2
+make test | less -rEXFK
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./prog -d ABXYEFCD.tmp ACDBECFD.tmp: "
+echo 1>&2
 ./prog -d ABXYEFCD.tmp ACDBECFD.tmp
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./prog ABXYEFCD.tmp ACDBECFD.tmp: "
+echo 1>&2
 ./prog ABXYEFCD.tmp ACDBECFD.tmp
+echo 1>&2
 
 rm -f curds.tmp whey.tmp
-cp -f cc.1 curds.tmp
-cp -f cc.1 whey.tmp
-chmod 666 whey.tmp
-make makeholes
-./makeholes -n 1000 whey.tmp
-./prog curds.tmp whey.tmp
-./avgtime.sh 100 ./prog curds.tmp whey.tmp
+read -r -n 1 -p "Press any key to run: cp -vf cc.1 curds.tmp: "
+echo 1>&2
+cp -vf cc.1 curds.tmp
+echo 1>&2
+read -r -n 1 -p "Press any key to run: cp -vf cc.1 whey.tmp: "
+echo 1>&2
+cp -vf cc.1 whey.tmp
 
-cp -f war-and-peace.txt nuked.tmp
+read -r -n 1 -p "Press any key to run: chmod -v 666 whey.tmp: "
+echo 1>&2
+chmod -v 666 whey.tmp
+echo 1>&2
+
+if [[ ! -x makeholes ]]; then
+    read -r -n 1 -p "Press any key to run: make makeholes: "
+    echo 1>&2
+    make makeholes
+    echo 1>&2
+fi
+
+read -r -n 1 -p "Press any key to run: ./makeholes -n 1000 whey.tmp: "
+echo 1>&2
+./makeholes -n 1000 whey.tmp
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./prog curds.tmp whey.tmp (space = next page, q = quit): "
+echo 1>&2
+./prog curds.tmp whey.tmp | less -rEXFK
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./avgtime.sh 100 ./prog curds.tmp whey.tmp: "
+echo 1>&2
+./avgtime.sh 100 ./prog curds.tmp whey.tmp
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: cp -vf war-and-peace.txt nuked.tmp: "
+echo 1>&2
+cp -vf war-and-peace.txt nuked.tmp
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./makeholes -c'~' -n 1000 nuked.tmp: "
+echo 1>&2
 ./makeholes -c'~' -n 1000 nuked.tmp
-./prog war-and-peace.txt nuked.tmp
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./prog war-and-peace.txt nuked.tmp (space = next page, q = quit): "
+echo 1>&2
+./prog war-and-peace.txt nuked.tmp | less -rEXFK
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./avgtime.sh 100 ./prog war-and-peace.txt nuked.tmp: "
+echo 1>&2
 ./avgtime.sh 100 ./prog war-and-peace.txt nuked.tmp
+echo 1>&2
