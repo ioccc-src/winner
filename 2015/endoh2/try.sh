@@ -15,20 +15,28 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-echo "$ cat prog.c" 1>&2
+read -r -n 1 -p "Press any key to run: cat prog.c: "
+echo 1>&2
 cat prog.c
 echo 1>&2
 
-echo "$ ./prog | diff -s - prog.c"
-./prog | diff -s - prog.c
+read -r -n 1 -p "Press any key to run: ./prog: "
+echo 1>&2
+./prog
 echo 1>&2
 
-echo "$ less -EXF prog.c" 1>&2
-read -r -n 1 -p "Press any key to continue: "
+read -r -n 1 -p "Press any key to run: less -rEXFK prog.c: "
+echo 1>&2
 less -EXF prog.c
 echo 1>&2
 
-echo "$ wc -c prog.c" 1>&2
+read -r -n 1 -p "Press any key to run: ./prog | diff -s - prog.c: "
+echo 1>&2
+./prog | diff -s - prog.c
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: wc -c prog.c: "
+echo 1>&2
 wc -c prog.c
 echo 1>&2
 echo "Can you figure out the inconsistencies?" 1>&2
