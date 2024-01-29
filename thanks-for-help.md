@@ -4229,9 +4229,9 @@ This was done for both the [prog.c](/2015/burton/prog.c) and
 [prog.alt.c](/2015/burton/prog.alt.c). The Makefile was also updated to build
 `eprog` and `eprog.alt` to make use of the feature more easily. Each is a new
 target (first in `TARGET` and second in `ALT_TARGET`) which have a prerequisite
-of `${PROG}` and `${PROG}.alt` respectively and which copies `prog` and
-`prog.alt` to `eprog` and `eprog.alt` respectively. With these changes now one
-can easily use the echo feature the author implemented.
+of `${PROG}` and `${PROG}.alt` respectively both of which also copy the `prog`
+(`prog` or `eprog`) to the respective `eprog` (`eprog` or `eprog.alt`).  With
+these changes now one can easily use the echo feature the author implemented.
 
 Cody also added the [try.sh](/2015/burton/try.sh) script. This involved
 adding a text file, [try.this.txt](/2015/burton/try.this.txt).
