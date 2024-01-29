@@ -23,16 +23,16 @@ For more detailed information see [2014 vik in bugs.md](/bugs.md#2014-vik).
 ## To use:
 
 ```sh
-./prog > foo.c
+echo foo | ./prog > audio_file.raw
+
+echo foo | ./prog | mplayer -demuxer rawaudio -
 ```
 
 
 ## Try:
 
 ```sh
-echo 'Want to hear me beep?' | ./prog > audio_file.raw
-
-echo 'No. I want chocolate!' | ./prog | mplayer -demuxer rawaudio -
+./try.sh
 ```
 
 

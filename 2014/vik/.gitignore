@@ -8,4 +8,4 @@ indent.o
 prog
 prog.alt
 prog.orig
-prog.raw
+*.raw
