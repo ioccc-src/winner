@@ -26,13 +26,13 @@ echo 1>&2
 echo 1>&2
 
 rm -f long_cat.txt same_as_long_cat.txt
-read -r -n 1 -p "Press any key to run: ./long_cat > long_cat.txt: "
+read -r -n 1 -p "Press any key to run: ./long_cat | tee long_cat.txt: "
 echo 1>&2
-./long_cat > long_cat.txt
+./long_cat | tee long_cat.txt
 echo 1>&2
-read -r -n 1 -p "Press any key to run: ./same_as_long_cat > same_as_long_cat.txt: "
+read -r -n 1 -p "Press any key to run: ./same_as_long_cat | tee same_as_long_cat.txt: "
 echo 1>&2
-./same_as_long_cat > same_as_long_cat.txt
+./same_as_long_cat | tee same_as_long_cat.txt
 echo 1>&2
 
 read -r -n 1 -p "Press any key to run: diff -s long_cat.txt same_as_long_cat.txt: "
@@ -65,8 +65,8 @@ echo 1>&2
 ./loooooooong_cat | less -EX
 echo 1>&2
 
-echo "Press any key to run: seq -f '%.0f  ' 45 | ./horizontal_cat - misaka.c"
-read -r -n 1 -p "(space = next page, q = quit): "
+echo "$ seq -f '%.0f  ' 45 | ./horizontal_cat - misaka.c"
+read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
 echo 1>&2
-seq -f '%.0f  ' 45 | ./horizontal_cat - misaka.c | less -EX
+seq -f '%.0f  ' 45 | ./horizontal_cat - misaka.c | less -rEXFK
 echo 1>&2

@@ -39,7 +39,7 @@ include ../../var.mk
 # Common C compiler warnings to silence
 #
 CSILENCE= -Wno-error -Wno-implicit-function-declaration -Wno-implicit-int \
-	-Wno-main -Wno-deprecated-non-prototype
+	-Wno-main -Wno-deprecated-non-prototype -Wno-unused-parameter
 
 # Common C compiler warning flags
 #
@@ -204,7 +204,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -rf *.dSYM
+	${RM} -rf *.dSYM *.wav
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \
 	    echo 'ate sandwich'; \

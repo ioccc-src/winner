@@ -3114,6 +3114,15 @@ A workaround is inserting a whitespace: `C2 E2`.
 --
 
 
+## 2013 endoh4
+
+### STATUS: INABIAF - please **DO NOT** fix
+### Source code: [2013/endoh4/endoh4.c](2013/endoh4/endoh4.c)
+### Information: [2013/endoh4/README.md](2013/endoh4/README.md)
+
+Invalid input files will very likely crash the program.
+
+
 
 ## 2013 hou
 

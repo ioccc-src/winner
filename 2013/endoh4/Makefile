@@ -55,9 +55,13 @@ CSTD= -std=gnu11
 #
 ARCH=
 
+# Variable to simplify redefining size
+#
+SIZE= 70,23
+
 # Defines that are needed to compile
 #
-CDEFINE=
+CDEFINE= -DS=${SIZE}
 
 # Include files that are needed to compile
 #

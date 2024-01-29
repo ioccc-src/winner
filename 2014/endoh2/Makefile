@@ -201,7 +201,7 @@ clean:
 	fi
 
 clobber: clean
-	${RM} -f ${TARGET} ${ALT_TARGET}
+	${RM} -f ${TARGET} ${ALT_TARGET} ioccc ioccc.c hello hello.c
 	${RM} -rf *.dSYM
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \

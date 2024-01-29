@@ -24,7 +24,7 @@ download one or both before exiting.
 ## Try:
 
 ```sh
-cat jpeg.c
+less jpeg.c
 ```
 
 Next look at `jpeg.jpg` in an image viewer program.

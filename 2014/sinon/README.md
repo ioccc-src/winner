@@ -8,7 +8,9 @@ make
 ## To use:
 
 ```sh
-cp -f prog.c run.c; ./hecate.sh
+./hecate.sh
+
+./glock.sh
 ```
 
 
@@ -33,7 +35,7 @@ or unspecified behavior?
 
 ### Summary
 
-Sinon is a game of timing, the goal is to eliminate all enemies in
+`Sinon` is a game of timing, the goal is to eliminate all enemies in
 under one minute.
 
 To start, compile and run the program.  To resume, compile and run the
@@ -48,7 +50,7 @@ gcc -O2 run.c -o run && ./run | tee run.c
 
 ### Details
 
-Sinon is played by compiling and running the output repeatedly.  Two
+`Sinon` is played by compiling and running the output repeatedly.  Two
 factors determine what actions are taken:
 
 + Time since last compilation.
@@ -58,7 +60,7 @@ If you fire too quickly, the weapon will jam.  If you fire too slowly,
 you will not be able to eliminate all the enemies in time.  Thus the
 primary objective of the game is to time your compilations just right.
 
-Sinon has two weapons that are selected based on compiler optimization
+`Sinon` has two weapons that are selected based on compiler optimization
 level:
 
 + "gcc -O2" or "clang -O2" will fire Hecate II, a powerful rifle that
@@ -80,7 +82,7 @@ compilers.
 
 ### Compatibility
 
-Sinon has been tested and verified to work on these platforms:
+`Sinon` has been tested and verified to work on these platforms:
 
 + gcc 4.4.3 on Linux.
 + gcc 4.4.5 on Linux.
@@ -93,14 +95,14 @@ Sinon has been tested and verified to work on these platforms:
 + tcc 0.9.25 on JS/Linux (no optimization, so only "hard" mode is
   available).
 
-Sinon is intended to be played in a 80x25 terminal.
+`Sinon` is intended to be played in a 80x25 terminal.
 
 ### Miscellaneous features
 
-Sinon might be the first game that uses compiler optimization level as
+`Sinon` might be the first game that uses compiler optimization level as
 a primary input.
 
-Sinon has a demo mode that plays the game automatically.  Make sure
+`Sinon` has a demo mode that plays the game automatically.  Make sure
 that there are no files named "run" and "run.c" in current directory
 (they will be overwritten) and run:
 
@@ -110,9 +112,9 @@ perl prog.c | bash
 
 File size and CRC32 of [prog.c](prog.c) are embedded in line 7.
 
-Process for making Sinon is included in [spoiler.html](spoiler.html).
+Process for making `Sinon` is included in [spoiler.html](spoiler.html).
 
-Layout of this code is based on Asada Shino, also known as "Sinon",
+Layout of this code is based on Asada Shino, also known as "`Sinon`",
 from Sword Art Online.
 
 

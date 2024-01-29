@@ -15,19 +15,26 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-read -r -n 1 -p "Press any key to run: echo Hello | ./prog: "
+read -r -n 1 -p "Press any key to run: echo Hello | ./prog (space = next page, q = quit): "
 echo 1>&2
-echo Hello | ./prog
+echo Hello | ./prog | less -rEXFK
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: echo IOCCC | ./prog: "
+read -r -n 1 -p "Press any key to run: echo IOCCC | ./prog (space = next page, q = quit): "
 echo 1>&2
-echo IOCCC | ./prog
+echo IOCCC | ./prog | less -rEXFK
 echo 1>&2
 
 read -r -n 1 -p "Press any key to run: echo Hello | ./prog > hello.c: "
 echo 1>&2
 echo Hello | ./prog > hello.c
+echo 1>&2
+
+# we don't use tee(1) above as it makes the message longer and it's not strictly
+# necessary
+read -r -n 1 -p "Press any key to show hello.c (space = next page, q = quit): "
+echo 1>&2
+less -rEXFK hello.c
 echo 1>&2
 
 read -r -n 1 -p "Press any key to compile hello.c: "

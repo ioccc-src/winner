@@ -7,3 +7,4 @@ indent
 indent.c
 indent.o
 prog.orig
+*.wav

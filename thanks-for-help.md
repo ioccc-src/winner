@@ -3977,13 +3977,26 @@ not found.
 The entry can still be enjoyed if you do not have these tools, however.
 
 
+## <a name="2013_endoh3"></a>[2013/endoh3](/2013/endoh3/endoh3.c) ([README.md](/2013/endoh3/README.md))
+
+[Cody](#cody) added the [try.sh](/2013/endoh3/try.sh) script.
+
+Cody also (out of an abundance of caution for `clang(1)` which is strict with
+arg type and count to `main()`) added a second (unused) arg to `main()`.
+
+
 ## <a name="2013_endoh4"></a>[2013/endoh4](/2013/endoh4/endoh4.c) ([README.md](/2013/endoh4/README.md))
 
-[Cody](#cody) added the [try.sh](/2013/endoh4/try.sh) script which temporarily
+[Cody](#cody) added the [endoh4.sh](/2013/endoh4/endoh4.sh) script which temporarily
 turns off the cursor as suggested by the author, with the addition that if no
 file is specified it will feed the source code [endoh4.c](/2013/endoh4/endoh4.c)
 to the program rather than the file specified. It does not try and detect if the
-file exists or can be read as that will be handled by the shell/program.
+file exists or can be read as that will be handled by the shell/program. One may
+pass more than one file to the script.
+
+Cody also made it easier to redefine the size at compilation time (see the
+author's remarks for more details on what this means). The `endoh4.sh` script
+allows one to redefine it as well.
 
 
 ## <a name="2013_hou"></a>[2013/hou](/2013/hou/hou.c) ([README.md](/2013/hou/README.md))
@@ -4018,6 +4031,8 @@ Further, after the file `2013/hou/doc/example.markdown` was moved to
 [2013/hou/doc/example.md](/2013/hou/doc/example.md) to match the rest of the repo
 this broke `make` which Cody also fixed.
 
+Cody also added the [try.sh](/2013/hou/try.sh) script.
+
 
 ## <a name="2013_mills"></a>[2013/mills](/2013/mills/mills.c) ([README.md)[2013/mills/README.md))
 
@@ -4038,6 +4053,8 @@ Firefox both had the problem.
 
 [Cody](#cody) added explicit linking of libm (`-lm`) as not all systems do this
 implicitly (Linux doesn't seem to but macOS does).
+
+Cody also added the [try.sh](/2013/morgan1/try.sh) script.
 
 
 ## <a name="2013_robison"></a>[2013/robison](/2013/robison/robison.c) ([README.md](/2013/robison/README.md))
@@ -4134,9 +4151,15 @@ provided by the author.
 once did. The problem is that it expects a certain file name which was
 `sinon.c`. The code now refers to `prog.c`.
 
-Cody also added the [try.sh](/2014/sinon/try.sh) script which is an improvement
-over what was once suggested in that when it's over it will ask you if you wish
-to try again, say because of a jam (see the README.md file for details).
+Cody also fixed the scripts [glock.sh](/2014/sinon/glock.sh) and
+[hecate.sh](/2014/sinon/hecate.sh) which did not work after running either once
+as they compile `run.c` and then do `./run | tee run.c` which overwrites it with
+output that is not code.
+
+Cody also added the [try.sh](/2014/sinon/try.sh) script that will first (if perl
+is installed) run the demo mode and then after that it will run the above noted
+scripts in a loop until the user says they do not want to try again (or they
+kill it). This is done this way in case it jams (see README.md for details).
 
 
 ## <a name="2014_skeggs"></a>[2014/skeggs](/2014/skeggs/prog.c) ([README.md](/2014/skeggs/README.md))
