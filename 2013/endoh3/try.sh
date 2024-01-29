@@ -32,43 +32,22 @@ endoh3()
     fi
     if [[ -f "$1" && -r "$1" ]]; then
 	if [[ -n "$SOX" ]]; then
-	    echo "$ cat $1 | ./endoh3 | $SOX -q -traw -r8000 -b8 -e unsigned-integer - -tcoreaudio" 1>&2
+	    echo "$ ./endoh3 < $1 | $SOX -q -traw -r8000 -b8 -e unsigned-integer - -tcoreaudio" 1>&2
 	    read -r -n 1 -p "Press any key to continue: "
 	    echo 1>&2
-	    # The author suggested the form below and it simplifies the command
-	    # as well so we disable the supposed useless cat (there are no
-	    # useless cats).
-	    #
-	    # SC2002 (style): Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead.
-	    # https://www.shellcheck.net/wiki/SC2002
-	    # shellcheck disable=SC2002
-	    cat "$1" | ./endoh3 | "$SOX" -q -traw -r8000 -b8 -e unsigned-integer - -tcoreaudio
+	    ./endoh3 < "$1" | "$SOX" -q -traw -r8000 -b8 -e unsigned-integer - -tcoreaudio
 	    echo 1>&2
 	elif [[ -n "$PADSP" ]]; then
-	    echo "$ cat $1 | ./endoh3 | $PADSP tee /dev/dsp > /dev/null" 1>&2
+	    echo "$ ./endoh3 < $1 | $PADSP tee /dev/dsp > /dev/null" 1>&2
 	    read -r -n 1 -p "Press any key to continue: "
 	    echo 1>&2
-	    # The author suggested the form below and it simplifies the command
-	    # as well so we disable the supposed useless cat (there are no
-	    # useless cats).
-	    #
-	    # SC2002 (style): Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead.
-	    # https://www.shellcheck.net/wiki/SC2002
-	    # shellcheck disable=SC2002
-	    cat "$1" | ./endoh3 | "$PADSP" tee /dev/dsp > /dev/null
+	    ./endoh3 < "$1" | "$PADSP" tee /dev/dsp > /dev/null
 	    echo 1>&2
 	elif [[ -n "$RUBY" ]]; then
-	    echo "$ cat $1 | ./endoh3 | $RUBY wavify.rb > $1.wav" 1>&2
+	    echo "$ ./endoh3 < $1 | $RUBY wavify.rb > $1.wav" 1>&2
 	    read -r -n 1 -p "Press any key to continue: "
 	    echo 1>&2
-	    # The author suggested the form below and it simplifies the command
-	    # as well so we disable the supposed useless cat (there are no
-	    # useless cats).
-	    #
-	    # SC2002 (style): Useless cat. Consider 'cmd < file | ..' or 'cmd file | ..' instead.
-	    # https://www.shellcheck.net/wiki/SC2002
-	    # shellcheck disable=SC2002
-	    cat "$1" | ./endoh3 | "$RUBY" wavify.rb > "$1".wav
+	    ./endoh3 < "$1" | "$RUBY" wavify.rb > "$1".wav
 	    echo "Now try playing $1.wav in a program that plays WAV files." 1>&2
 	    echo 1>&2
 	else
