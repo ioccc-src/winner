@@ -1,38 +1,33 @@
-#	Double-layered Chocolate Fudge Cake
+# Double-layered Chocolate Fudge Cake
 
 Here's a delicious double-layered chocolate fudge cake that is
 something of my mum's speciality. It's complicated and I should warn that nobody
 has seemed to get it down as well as she has but it's well worth the effort if
 you love chocolate. My late stepmum who only liked white 'chocolate' loved this
-cake!
+cake! This picture below has my feeble attempt at drawing the letters `IOCCC` on
+it so it's not as pretty as usual (it usually has more style on the top of the
+cake too) but you should get the idea:
 
 ![picture of the Double-layered chocolate fudge cake](cake.jpg)
 
 There are two sets of ingredients and instructions; the cake and the icing. In
-addition there are some notes to pay attention to; some will be repeated because
-they're really important for the quality of the cake.
+addition there are some **VERY IMPORTANT NOTES** to pay attention to; some will
+be repeated because they're **VITALLY IMPORTANT** for the quality of the cake.
+That cannot be overstated.
 
 Below I have included the ingredients separately but I include them within the
 instructions as well and in bold. Also in bold are some of the special notes.
 
 Finally note that depending on where you are in the world this might not work in
-the warmer months of the year for the icing in particular. Oh and here's an
-amusing fact about the [IOCCC and chocolate][]. Did I say 'the IOCCC'? I actually
-meant **'an IOCCC'**: it stands also for **'International Office of Cocoa, Chocolate
-and Sugar Confectionery'**. Perfect.
-
-See also the [International Original Chocolate Cake Contest tweet][] from
-[fellow IOCCC winner Ilya Kurdyukov][] ([GitHub][]) as well as the
-[IOCCC cake source image][] of the picture in the tweet (which he painted over
-my photo of the cake with GIMP).
+the warmer months of the year and for the icing in particular.
 
 
 ## Measurements
 
-This was originally from an American cookery book so the measurements are in the
-US standards. A nice resource (that has much more than just cooking) is
-[http://www.onlineconversion.com/cooking.htm][]. This will particularly matter
-for cups, teaspoons, tablespoons and ounces.
+This was originally taken from an American magazine for women so the
+measurements are in the US standards. A nice resource (that has much more than
+just cooking) is <http://www.onlineconversion.com/cooking.htm>. This will
+particularly matter for cups, teaspoons, tablespoons and ounces.
 
 
 ## Baker's chocolate
@@ -41,17 +36,18 @@ Baker's chocolate is a brand name and the product in question is unsweetened
 chocolate bars used for baking. According to a [chocolates FAQ][] it might be
 called different things:
 
-	Bitter chocolate contains no sugar and is often called 'unsweetened' or
-	'baking' chocolate. In some countries it's called 100% cacao since it's
-	composed only of ground up cocoa beans, and nothing else.
+> Bitter chocolate contains no sugar and is often called 'unsweetened' or
+'baking' chocolate. In some countries it's called 100% cacao since it's composed
+only of ground up cocoa beans, and nothing else.
 
 The FAQ suggests that you might have to look for a baking supply shop but I
 cannot offer any specific advice other than it's unsweetened chocolate bars for
 baking. The FAQ talks about what looks like substitutes but I have no idea what
 that would turn out as; I somehow suspect it wouldn't be good.
 
-Either way please **still pay attention to the notes on the chocolate in the recipe and
-recipe notes because they're really important!**
+Either way **PLEASE STILL PAY ATTENTION TO ALL THE NOTES on the chocolate IN THE RECIPE and
+RECIPE NOTES because they're really important!**
+
 
 ## Special notes for the cake
 
@@ -69,9 +65,9 @@ recipe notes because they're really important!**
     note the amount is by ounce not squares as listed. See the measurements link
     if there's any doubt.
 
-*   Pay careful attention to **COOK FOR ONLY THE INDICATED TIME**. Note that if
-    your oven cooks a bit hotter you might have to adjust the timing a bit. This
-    is likely the case if the cake comes out a little bit dry.
+*   Pay careful attention to the **COOK FOR ONLY THE INDICATED TIME** part. Note
+    that if your oven cooks a bit hotter you might have to adjust the timing a
+    bit.  This is likely the case if the cake comes out a little bit dry.
 
 *   **REMOVE THE CAKE FROM THE PANS 2 MINUTES AFTER REMOVING FROM OVEN** and
     then allow to **FULLY COOL *ON RACKS*!** The important point is that they
@@ -81,10 +77,10 @@ recipe notes because they're really important!**
     it's confectionery sugar in a bag. My mum experimented with the amount and
     found that 4 cups seems about right.
 
-*   Use **WHOLE MILK**. It's just better for something like this and skim milk
-    or low fat milk is completely untested.
+*   Use **WHOLE MILK**. Don't try skim milk or whatever per cent of fat milk you
+    have.
 
-*   Use only **PURE VANILLA EXTRACT**! Do **NOT USE imitation vanilla!** Not
+*   Use only **_PURE_ VANILLA EXTRACT**! Do **NOT USE imitation vanilla!** Not
     following this rule will lead to a worse outcome.
 
 
@@ -152,11 +148,11 @@ bowl can sit in.
 
 **PAY CLOSE ATTENTION TO THESE:**
 
-*   **Make sure** that the melted chocolate and margarine does not get solid.
+*   **MAKE SURE** that the melted chocolate and **MARGARINE** does not get solid.
 
 *   For step #4 put **8 to 10 ICE CUBES** in a pan or big bowl (that's big
-    enough that another bowl can fit in it). Add an inch of water and then set
-    the bowl with the icing in the pan or bowl of ice water. **DO NOT LET THE
+    enough that another bowl can fit in it). **ADD AN INCH OF WATER** and **set
+    THE BOWL WITH THE ICING IN THE PAN OR BOWL** of ice water. **DO NOT LET THE
     ICING GET WET!**
 
 *   **DO NOT LET ICING GET TOO THICK.**
@@ -185,13 +181,7 @@ bowl can sit in.
     thick BUT not too thick. **Make _SURE_ ICING DOES _NOT_ GET WET!** The idea is to
     **MAKE THE BOWL IT'S IN COLD *but not let the icing get wet***.
 
-[picture]: cake.jpg
-[http://www.onlineconversion.com/cooking.htm]: http://www.onlineconversion.com/cooking.htm
 [IOCCC and chocolate]: ioccc-and-chocolate.pdf
-[International Original Chocolate Cake Contest tweet]: https://web.archive.org/web/20200805053007/https://twitter.com/ilyakurdyukov/status/1290520266087571458
-[fellow IOCCC winner Ilya Kurdyukov GitHub]: https://github.com/ilyakurdyukov
-[GitHub]: https://github.com/ilyakurdyukov
-[IOCCC cake source image]: ioccc-cake.jpg
 [chocolates FAQ]: https://www.davidlebovitz.com/chocolate-faqs/
 
 -----------------------------------------------------------------------------------------------------
