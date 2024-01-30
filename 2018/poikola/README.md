@@ -95,7 +95,7 @@ problem.
 
 The main reason for the header `unistd.h` is `getdelim(3)` but once I included it
 I also abused other functions and `#define`s. This header is mutually exclusive
-with _-std=c11_.
+with `-std=c11`.
 
 The program was developed with little-endian machines; I tried to support
 big-endian too, but this support is somewhat limited.
