@@ -3353,7 +3353,7 @@ loop printing whitespace.
 ### Source code: [2018/hou/prog.c](2018/hou/prog.c)
 ### Information: [2018/hou/README.md](2018/hou/README.md)
 
-When you run it you will see something like:
+When you run it on a JSON file you will see something like:
 
 ```sh
 $ ./prog < ioccc.json > ioccc.html
@@ -3361,7 +3361,12 @@ Assertion failed: (rulez), function C, file prog.c, line 124.
 Abort trap: 6
 ```
 
-but this is expected and the file `ioccc.html` will be generated properly.
+(from say running `./try.sh) but this is expected and the file `ioccc.html` will
+be generated properly.
+
+Some JSON files might cause the program to continue to run and seemingly
+infinitely increase the size of the output file. This can happen if you try
+fixing the syntax error in the generated `ioccc.json` file.
 
 
 ## 2018 mills

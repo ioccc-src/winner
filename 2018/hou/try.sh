@@ -17,25 +17,26 @@ clear
 
 read -r -n 1 -p "Press any key to run: grep -e '[-?+*/^&|.<>=]' prog.c (space = next page, q = quit): "
 echo 1>&2
-grep -e '[-?+*/^&|.<>=]' prog.c | less -EXF
+grep -e '[-?+*/^&|.<>=]' prog.c | less -rEXFK
 echo 1>&2
 
-# ^-- SC2140 (warning): Word is of the form "A"B"C" (B indicated). Did you mean "ABC" or "A\"B\"C"?
-# ^-- SC1083 (warning): This { is literal. Check expression (missing ;/\n?) or quote it.
-# ^-- SC1083 (warning): This } is literal. Check expression (missing ;/\n?) or quote it.
-# ^-- SC2140 (warning): Word is of the form "A"B"C" (B indicated). Did you mean "ABC" or "A\"B\"C"?
-# shellcheck disable=SC2140
-# shellcheck disable=SC1083
-echo "(cd ..; ls -lS -- */prog.c) | \
-awk 'BEGIN { print "["; } { print "{\"winner\":\"",\$9,"\", \"size\":",\$5,"},"} END { print "]"}' \
-> ioccc.json"
+# remove temp files
+rm -f ioccc.html ioccc.json
+
+echo "$ (cd ..; ls -lS -- */prog.c) | \
+awk 'BEGIN { print \"[\"; } { print \"{\"winner\":\"\",\$9,\"\", \"size\":\",\$5,\"},\"} END { print \"]\"}' \
+| tee ioccc.json"
+read -r -n 1 -p "Press any key to continue: "
+echo 1>&2
 
 (cd ..; ls -lS -- */prog.c) | \
 awk 'BEGIN { print "["; } { print "{\"winner\":\"",$9,"\", \"size\":",$5,"},"} END { print "]"}' \
-> ioccc.json
+| tee ioccc.json
+
+echo "NOTE: for the next step you should get an assertion failure" 1>&2
+read -r -n 1 -p "Press any key to run: ./prog < ioccc.json > ioccc.html: "
+echo 1>&2
 ./prog < ioccc.json > ioccc.html
 
 echo 1>&2
 echo "Now open ioccc.html in your browser." 1>&2
-
-exit 0

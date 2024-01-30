@@ -20,10 +20,15 @@ make
 
 ```sh
 ./prog ioccc.txt
+
 ./prog prog.c
+
 ./prog sand.txt
+
 ./prog sand.alt.txt
 ```
+
+NOTE: these invocations will take quite some time to finish.
 
 
 ## Judges' remarks:

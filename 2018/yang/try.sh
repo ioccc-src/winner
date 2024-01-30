@@ -17,41 +17,49 @@ clear
 
 read -r -n 1 -p "Press any key to run: ./left < prog.c (space = next page, q = quit): "
 echo 1>&2
-./left < prog.c | less -EXF
+./left < prog.c | less -rEXFK
 echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./right < prog.c (space = next page, q = quit): "
 echo 1>&2
-./right < prog.c | less -EXF
+./right < prog.c | less -rEXFK
 echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./left < prog.c | ./left (space = next page, q = quit): "
 echo 1>&2
-./left < prog.c | ./left | less -EXF
+./left < prog.c | ./left | less -rEXFK
 echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./shift < prog.c (space = next page, q = quit): "
 echo 1>&2
-./shift < prog.c | less -EXF
+./shift < prog.c | less -rEXFK
 echo 1>&2
 
-echo "$ echo IOCCC | ./left" 1>&2
+read -r -n 1 -p "Press any key to run: echo IOCCC | ./left: "
+echo 1>&2
 echo IOCCC | ./left
 echo 1>&2
-echo "$ echo IOCCC | ./right" 1>&2
+read -r -n 1 -p "Press any key to run: echo IOCCC | ./right: "
+echo 1>&2
 echo IOCCC | ./right
 echo 1>&2
-echo "$ echo IOCCC | ./shift" 1>&2
+read -r -n 1 -p "Press any key to run: echo IOCCC | ./shift: "
+echo 1>&2
 echo IOCCC | ./shift
 echo 1>&2
 
-echo "$ ./msg0" 1>&2
+read -r -n 1 -p "Press any key to run: ./msg0: "
+echo 1>&2
 ./msg0
+echo 1>&2
 
-echo "$ ./msg1" 1>&2
+read -r -n 1 -p "Press any key to run: ./msg1: "
+echo 1>&2
 ./msg1
+echo 1>&2
 
-echo "$ ./msg2" 1>&2
+read -r -n 1 -p "Press any key to run: ./msg2: "
+echo 1>&2
 ./msg2
 
 read -r -p "Do you wish to see some of the spoilers (Y/N)? "
@@ -62,6 +70,14 @@ if [[ "$REPLY" == "Y" || "$REPLY" == "y" ]]; then
     echo "$ make i_give_up_show_me_the_spoilers"
     make i_give_up_show_me_the_spoilers
     echo 1>&2
-    for i in 0 1 2 3 4 5 6 7 8 10; do ./msg"$i"; done
+    for i in 0 1 2 3 4 5 6 7 8; do
+	read -r -n 1 -p "Press any key to run: ./msg$i: "
+	echo 1>&2
+	./msg"$i"
+    done
+    echo 1>&2
+
+    read -r -n 1 -p "Press any key to run: ./msg9 < prog.c: "
+    echo 1>&2
     ./msg9 < prog.c
 fi

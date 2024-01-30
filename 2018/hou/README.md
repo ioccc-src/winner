@@ -31,9 +31,13 @@ View `output.html` in a browser.
 ./try.sh
 ```
 
-As the script says, open `output.html` in a browser.
+The script will generate a JSON file called `ioccc.json`, showing it via
+`tee(1)` and then run the program on that. Can you find any problem with the
+JSON file? What happens if you try and fix it?
 
-What's not right with the output?  How can one fix it?
+As the script says, open `ioccc.html` in a browser.
+
+Is anything wrong with the output? How can you fix it if so?
 
 
 ## Judges' remarks:

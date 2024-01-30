@@ -15,11 +15,12 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-
-clear
-read -r -n 1 -p "Press any key to show code (space = next page, q = quit): "
+read -r -n 1 -p "Press any key to show prog.c (space = next page, q = quit): "
 echo 1>&2
-less -EXF prog.c
-read -r -n 1 -p "Press any key to run program: "
+less -rEXFK prog.c
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: ./prog: "
 echo 1>&2
 ./prog
+echo 1>&2
