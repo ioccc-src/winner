@@ -4737,6 +4737,10 @@ What was wrong? A typo in the shebang which had `/usr/bin/end` instead of
 `/usr/bin/env`. Anyone who knows Cody would know that he'd zoom in on that quite
 quick.
 
+Also if `clock` did not exist and one tried to run the script it would make an
+invalid `clock.c` which meant it could not compile so it now runs `make clock`
+first.
+
 Cody also reported (during the preview period of 2020) for some systems (at some
 point?) like macOS the use of `make clock` would not work due possibly to a
 timing issue so [Yusuke](#yusuke) changed it to compile the
@@ -4747,6 +4751,10 @@ years ago is something that many people might wonder but he also once told us
 that if someone moves something of his even a millimetre from where it was he
 knows it so he might be called unusual (and he argues, with pride, eccentric :-)
 ) :-)
+
+Cody also added the [run_clock.alt.sh](/2020/endoh3/run_clock.alt.sh) script
+which is analogous to the [run_clock.sh](/2020/endoh3/run_clock.sh) but for the
+alt code provided by the author, Yusuke.
 
 
 ## <a name="2020_ferguson1"></a>[2020/ferguson1](/2020/ferguson1/prog.c) ([README.md](/2020/ferguson1/README.md))

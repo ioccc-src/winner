@@ -41,6 +41,14 @@ make alt
 Use `prog.alt` as you would `prog` above.
 
 
+### Alternate try:
+
+```sh
+./run_clock.alt
+# And watch closely for 15-20 seconds
+```
+
+
 ## Judges' remarks:
 
 You may be tempted to use a mirror. Resist the temptation! Try figuring out how
