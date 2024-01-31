@@ -80,4 +80,9 @@ if [[ "$REPLY" == "Y" || "$REPLY" == "y" ]]; then
     read -r -n 1 -p "Press any key to run: ./msg9 < prog.c: "
     echo 1>&2
     ./msg9 < prog.c
+
+    make generated1 1>/dev/null || exit 1
+    read -r -n 1 -p "Press any key to run: echo IOCCC | ./generated1: "
+    echo 1>&2
+    echo IOCCC | ./generated1
 fi

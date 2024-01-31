@@ -1,16 +1,12 @@
 #
 # sort with: sort -d -u
 *.dSYM
-generated1.c
-generated2.c
-generated3.c
-generated4.c
-generated5.c
+generated*
 indent
 indent.c
 indent.o
 left
-msg[0-9]
+msg*
 no_leading_space.txt
 prog
 prog.orig
