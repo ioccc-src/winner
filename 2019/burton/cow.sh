@@ -14,8 +14,8 @@ do if test -r "$name"; then
 	# (or, to use Bart Simpson's advice, make it 'not have a cow.sh'), as we
 	# actually need this to happen:
 	#
-	#   ^-- SC2086 (info): Double quote to prevent globbing and word splitting.
-	#
+	# SC2086 (info): Double quote to prevent globbing and word splitting.
+	# https://www.shellcheck.net/wiki/SC2086
 	# shellcheck disable=SC2086
 	set -- $s
 	((a += $1))
