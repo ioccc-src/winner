@@ -4364,11 +4364,13 @@ He also added the [try.sh](/2015/yang/try.sh) script.
 
 ## <a name="2018_bellard"></a>[2018/bellard](/2018/bellard/prog.c) ([README.md](/2018/bellard/README.md))
 
-[Cody](#cody), out of abundance of caution, added a second arg to `main()`
-because some versions of clang object to the number of args of `main()`, saying
-that it must be 0, 2 or 3. The version this has been observed in does not
-actually object to 1 arg but it is entirely possible that this changes so a
-second arg (that's not needed and is unused) has been added just in case.
+[Cody](#cody) added the [try.sh](/2018/bellard/try.sh) script.
+
+Cody also, out of abundance of caution, added a second arg to `main()` because
+some versions of clang object to the number of args of `main()`, saying that it
+must be 0, 2 or 3. The version this has been observed in does not actually
+object to 1 arg but it is entirely possible that this changes so a second arg
+(that's not needed and is unused) has been added just in case.
 
 Cody also added explicit linking of libm (`-lm`) for systems that do not do this
 (Linux doesn't seem to but macOS does).
