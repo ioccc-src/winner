@@ -27,9 +27,9 @@ echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./prog < README.md (space = next page, q = quit): "
 echo 1>&2
-./prog < README.md | less -EXF
+./prog < README.md | less -rEXFK
 echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./prog < Makefile (space = next page, q = quit): "
 echo 1>&2
-./prog < Makefile | less -EXF
+./prog < Makefile | less -rEXFK
