@@ -9,3 +9,4 @@ prog
 prog.alt
 prog.orig
 spectrogram.png
+*.wav

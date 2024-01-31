@@ -1249,7 +1249,7 @@ for downloading, installing and using ncurses.
 We recommend trying a method suitable for your environment first, if possible.
 
 
-### <a name="faq3_10"></a>FAQ 3.10: How do I compile and use an IOCCC winner that requires sound?
+### <a name="faq3_10"></a><a name="sox"></a>FAQ 3.10: How do I compile and use an IOCCC winner that requires sound?
 
 This might depend on the entry but most likely the Swiss Army Knife of sound
 processing programs, [SoX](https://sox.sourceforge.net), will work. How to
