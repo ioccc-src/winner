@@ -20,13 +20,12 @@ make clobber CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-echo "$ ./prog 512 ./prog" 1>&2
-read -r -n 1 -p "Press any key to continue: "
+read -r -n 1 -p "Press any key to run: ./prog 512 ./prog: "
 echo 1>&2
 ./prog 512 ./prog
 echo 1>&2
 
-echo "$ TZ=UTC24 make CC="$CC" clobber prog" 1>&2
+echo "$ TZ=UTC24 make CC=$CC clobber prog" 1>&2
 TZ=UTC24 make CC="$CC" clobber prog || exit 1
 read -r -n 1 -p "Press any key to run: ./prog 512 ./prog: "
 echo 1>&2

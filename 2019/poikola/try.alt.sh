@@ -19,22 +19,21 @@ make clobber CC="$CC" alt >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-echo "$ ./prog.alt 512 ./prog.alt" 1>&2
-read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
+read -r -n 1 -p "Press any key to run: ./prog.alt 512 ./prog.alt (space = next page, q = quit): "
 echo 1>&2
-./prog.alt 512 ./prog.alt | less -rEXF
+./prog.alt 512 ./prog.alt | less -rEXFK
 echo 1>&2
 
 echo "$ TZ=UTC24 make CC="$CC" clobber prog.alt" 1>&2
 TZ=UTC24 make CC="$CC" clobber prog.alt || exit 1
 read -r -n 1 -p "Press any key to run: ./prog.alt 512 ./prog.alt (space = next page, q = quit): "
 echo 1>&2
-./prog.alt 512 ./prog.alt | less -rEXF
+./prog.alt 512 ./prog.alt | less -rEXFK
 echo 1>&2
 
 echo "$ TZ=UTC48 make CC="$CC" clobber prog.alt" 1>&2
 TZ=UTC48 make CC="$CC" clobber prog.alt || exit 1
-read -r -n 1 -p "Press any key to run: ./prog.alt 512 ./prog.alt (space = next page, q = quit): "
+read -r -n 1 -p "Press any key to run: ./prog.alt 512 ./prog.alt: "
 echo 1>&2
-./prog.alt 512 ./prog.alt | less -rEXF
+./prog.alt 512 ./prog.alt
 echo 1>&2
