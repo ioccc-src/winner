@@ -4623,6 +4623,11 @@ to easily reconstruct the source code through GDB by the fact it's a backtrace
 quine.
 
 
+## <a name="2019_giles"></a>[2019/giles](/2019/giles/prog.c) ([README.md](/2019/giles/README.md]))
+
+[Cody](#cody) added the [try.sh](/2019/giles/try.sh) script.
+
+
 ## <a name="2019_karns"></a>[2019/karns](/2019/karns/prog.c) ([README.md](/2019/karns/README.md]))
 
 [Cody](#cody) reported that with `-O` level > 0 this program segfaults (sometimes?). He's
