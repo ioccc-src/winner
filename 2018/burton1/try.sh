@@ -13,27 +13,27 @@ fi
 make CC="$CC" everything >/dev/null || exit 1
 
 for i in prog scripthd.sh; do
-    echo "$ ./$i < prog.c" 1>&2
+    read -r -n 1 -p "Press any key to run: ./$i < prog.c: "
+    echo 1>&2
     ./"$i" < prog.c
     echo 1>&2
 
     read -r -n 1 -p "Press any key to run: ./$i < prog (space = next page, q = quit): "
     echo 1>&2
-    ./"$i" < prog | less -EXF
+    ./"$i" < prog | less -rEXFK
     echo 1>&2
 
     read -r -n 1 -p "Press any key to run: ./$i < scripthd.sh (space = next page, q = quit): "
     echo 1>&2
-    ./"$i" < scripthd.sh | less -EXF
+    ./"$i" < scripthd.sh | less -rEXFK
     echo 1>&2
-
 
     read -r -n 1 -p "Press any key to run: head $0 | ./$i: "
     echo 1>&2
     head "$0" | ./"$i"
     echo 1>&2
 
-    read -r -n 1 -p "Press any key to run: tail -n 15 Makefile | ./$i: "
+    read -r -n 1 -p "Press any key to run: tail -n 15 Makefile | ./$i (space = next page, q = quit): "
     echo 1>&2
-    tail -n 15 Makefile | ./"$i"
+    tail -n 15 Makefile | ./"$i" | less -rEXFK
 done
