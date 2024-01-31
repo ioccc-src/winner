@@ -19,7 +19,23 @@ monkey Eric. See [Alternate code](#alternate-code) below.
 
 ```sh
 ./try.sh
+
+# For those who believe in '"intelligent" design' or want to see how easy it is
+# to prove evolution is a proven fact:
+./id.sh
+
+# For those who want to see if Eric the monkey can type the word 'words' before
+# falling asleep or giving up:
+./monkey-words.sh
 ```
+
+NOTE: the [try.sh](try.sh) script will run the other two scripts but if the
+first one, [id.sh](id.sh) is terminated early in the try script, the second one,
+[monkey-words.sh](monkey-words.sh) will not be run.
+
+You can reconfigure certain values. These are described by the author in more
+detail in the [S, M and N Constants](#constants) section. The script above will
+make use of some of these.
 
 
 ## Alternate code:
@@ -45,7 +61,32 @@ Use `weasel.alt` as you would `weasel` above.
 
 ```sh
 ./try.alt.sh
+
+# For those who believe in '"intelligent" design' or want to see how easy it is
+# to prove evolution is a proven fact:
+./id.alt.sh
+
+# For those who want to see if Eric the monkey can type the word 'words' before
+# falling asleep or giving up:
+./monkey-words.alt.sh
 ```
+
+NOTE: the [try.alt.sh](try.alt.sh) script will run the other two scripts but if the
+first one, [id.alt.sh](id.alt.sh) is terminated early in the try script, the second one,
+[monkey-words.alt.sh](monkey-words.alt.sh) will not be run.
+
+You can reconfigure certain values. These are described by the author in more
+detail in the [S, M and N Constants](#constants) section. The script above will
+make use of some of these.
+
+
+```sh
+./try.alt.sh
+```
+
+You can reconfigure certain values. These are described by the author in more
+detail in the [S, M and N Constants](#constants) section. The script above will
+make use of some of these.
 
 
 ## Judges' remarks:
@@ -131,9 +172,10 @@ don't need this unless there is something specific you're after.
 **[Obfuscation](#obfuscation):** Some of the techniques that might not be used.
 
 **[How to build](#build):** Here I describe briefly
-[the constants that can be redefined](#constants) `S` and `N`: the
+[the constants that can be redefined](#constants) `S`, `M` and `N`: the
 maximum size of the chromosome (target string; the maximum length is `S - 1`
-but it must be >= the default 38) and the number of offspring, respectively. I
+but it must be >= the default 38), the number of maximum attempts before giving
+up and the number of offspring, respectively. I
 also give [example compiler invocations](#compiling), [portability
 notes](#portability), an [more portability notes](#bugs) and a [note on
 rpm.md](#rpm).
@@ -865,21 +907,24 @@ be made clear in the comments! :)*
 
 ## **5. <a name="build">How to build</a>**
 
-### <a name="constants">S and N Constants</a>
+### <a name="constants">S, M and N Constants</a>
 
 Skip to [Compilation](#compiling).
 
-These two `#define`d constants can be redefined at compilation to modify the
+There are three `#define`d constants that can be redefined at compilation to modify the
 behaviour of the program in a number of ways (see the
 **[Compilation](#compiling)** subsection for example invocations). Both are
-capped to be no greater than `SIZE_MAX - 1`. This is handled by the C
-preprocessor.
+capped to be no greater than `SIZE_MAX - 1` or whatever `M` (which can't be
+lower than 100) is set to (maximum attempts before giving up). This is handled
+by the C preprocessor.
 
-`S`
 
-This determines the maximum size of the target string but it **must be at least
-38**; this is because `38 >= 29` and because `strlen("METHINKS IT IS LIKE
-A WEASEL") == 28` (which is the default target string - it would hardly be an
+* `S`
+
+The macro `S` (or `MAX_SIZE` in the Makefile) is the maximum size of the target
+string but it **must be at least 38** (which is protected against in the code);
+this is because `38 >= 29` and because `strlen("METHINKS IT IS LIKE A WEASEL")
+== 28` (which is the default target string - it would hardly be an
 implementation of the Weasel program otherwise).
 
 There is obviously a reason `38` is the chosen size but the only hints I
@@ -888,14 +933,43 @@ referenced there (it's *not the only Easter egg* but it's the only Easter egg I
 won't spoil; yes this ironically and amusingly means I've left a rotten egg
 somewhere!).
 
-`N`
+The Makefile simplifies how to reconfigure this value with the variable
+`MAX_SIZE`:
 
-This is the number of offspring per generation. Anything less than 4 will be set
-to 3 (that's not a typo!) and this is part of an Easter egg.
+```sh
+make clobber MAX_SIZE=55 all
+```
 
-Be aware that depending on the size of `S` and `N` (individually and
-together) the program will use varying amounts of memory and the larger the
-values the more memory it'll require.
+The next macro that can be reconfigured, `M` (or `MAX_ATTEMPTS` in the
+Makefile), is the maximum attempts before giving up. This was added as another
+feature in 2024 but it was not made an alt version because there already is an
+alt version. This macro allows for seeing what happens when reaching the maximum
+number attempts without waiting for a very long time.
+
+The Makefile simplifies how to reconfigure this value with the variable
+`MAX_ATTEMPTS`:
+
+```sh
+make clobber MAX_ATTEMPTS=100 all
+```
+
+The final macro, `N` (or `OFFSPRING` in the Makefile), is the number of offspring
+per generation.
+
+Anything less than 4 will be set to 3 (that's not a typo!) and this is part of
+an Easter egg.
+
+Be aware that depending on the size of `S` (`MAX_SIZE`) and `N` (`OFFSPRING`)
+both individually and together the program will use varying amounts of memory
+and the larger the values the more memory it'll require.
+
+The Makefile simplifies how to reconfigure this value with the variable
+`OFFSPRING`:
+
+```sh
+make clobber OFFSPRING=55 all
+```
+
 
 ### <a name="compiling">Compilation</a>
 
@@ -907,23 +981,33 @@ The following options **must always be passed to the compiler:**
 -DQ='typedef' -D'g(o)'='goto o;' -D'w(x)'="x:" -D'H(main)'='r(main)'
 ```
 
-If you want to increase the number of offspring to `50` and the size of the
-chromosome to `75` you would pass to the compiler:
+which running `make` will always do.
+
+
+If you want to increase the number of offspring to `50` (`N`) and the size of the
+chromosome to `75` (`S`) you would do:
 
 ```sh
--DQ='typedef' -D'g(o)'='goto o;' -D'w(x)'="x:" -D'H(main)'='r(main)' -DN=50 -DS=75
+make clobber OFFSPRING=50 MAX_SIZE=75 everything
 ```
 
 If you wanted to change `N` to `3`:
 
 ```sh
--DQ='typedef' -D'g(o)'='goto o;' -D'w(x)'="x:" -D'H(main)'='r(main)' -DN=3
+make clobber OFFSPRING=3 everything
 ```
 
 Remember that it cannot be less than `3`; *more correctly if it's less than
-4 it's redefined to 3* so you could have passed in `-DN=2` and have the same
-result. Remember too that `S` cannot be less than `38`. Both `S` and
-`N` are capped at `SIZE_MAX - 1`.
+4 it's redefined to 3* so you could have passed in `-DN=2` (or `MAX_SIZE=2`) and have the same
+result. Remember too that `S` (`MAX_SIZE`) cannot be less than `38`. Both `S` and
+`N` are capped at `SIZE_MAX - 1` or whatever `M` (`MAX_ATTEMPTS`) is set to.
+
+If you wanted to change the maximum number attempts to 100 you could do:
+
+```sh
+make clobber MAX_ATTEMPTS=100 everything
+```
+
 
 ### <a name="portability">Portability</a>
 

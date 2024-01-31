@@ -15,38 +15,49 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-read -r -n 1 -p "Press any key to run: ./weasel words (space = next page, q = quit): "
+read -r -n 1 -p "Press any key to run: ./weasel words (space = next page, q = quit, G = end): "
 echo 1>&2
-time ./weasel words | less -EXF
+time ./weasel words | less -rEXFK
 
 read -r -n 1 -p "Press any key to see how long it'll take Eric the monkey to type his name: "
 echo 1>&2
 time ./weasel -mq Eric
 echo 1>&2
 
-read -r -n 1 -p "Press any key to run: make test: "
+read -r -p "Do you want to run make test (Y/N)? "
+if [[ "$REPLY" = "Y" || "$REPLY" = "y" ]]; then
+    make test
+fi
+
+read -r  -p "Do you wish to see the undocumented Easter egg (Y/N)? "
+if [[ "$REPLY" = "Y" || "$REPLY" = "y" ]]; then
+    make -B OFFSPRING=97 everything 1>/dev/null || exit 1
+    read -r -n 1 -p "Press any key to show Easter egg (./weasel): "
+    echo 1>&2
+    ./weasel
+    echo 1>&2
+fi
+
 echo 1>&2
-make test
+read -r -n 1 -p "Press any key to change max attempts to 100: "
+echo 1>&2
+echo "$ make -B MAX_ATTEMPTS=100 everything >/dev/null || exit 1" 1>&2
+echo 1>&2
+make -B MAX_ATTEMPTS=100 everything >/dev/null || exit 1
+read -r -n 1 -p "Press any key to see what happens when the maximum attempts are reached: "
+echo 1>&2
+./weasel -m 'Eric the Monkey'
 
-read -r -p "Do you wish to try and prove 'intelligent design' (Y/N)? "
-if [[ "$REPLY" == "Y" || "$REPLY" == "y" ]]; then
-    echo "$ ./weasel -m 'INTELLIGENT DESIGN'" 1>&2
-    echo "Press any key to continue. Send ctrl-c when convinced that intelligent" 1>&2
-    read -r -n 1 -p "design is not real or you're tired of waiting: "
-    echo 1>&2
-    time ./weasel -m 'INTELLIGENT DESIGN'
-    echo 1>&2
-else
-    echo "$ ./weasel -q -r8 'EVOLUTION IS A PROVEN FACT'" 1>&2
-    time ./weasel -q -r8 'EVOLUTION IS A PROVEN FACT'
-fi
+# recompile with default max attempts for the next steps
+make -B everything >/dev/null || exit 1
 
-read -r -n 1 -p "Do you want to see how long it might take the monkey Eric to type 'words'? (Y/N)? "
-if [[ "$REPLY" == "Y" || "$REPLY" == "y" ]]; then
-    echo 1>&2
-    echo "Will not display until Eric succeeds or too many generations. Hit ctrl-c" 1>&2
-    echo "to stop him early." 1>&2
-    read -r -n 1 -p "Press any key to continue: "
-    echo 1>&2
-    time ./weasel -mq words
-fi
+# obviously '"intelligent" design' is false but who wants to try and prove
+# otherwise? Or if they know better how long will it take to show that evolution
+# is a proven fact?
+./id.sh
+
+# If the user did not try and prove '"intelligent" design' or they waited a
+# long time (though saving them some time by limiting it to 900000 attempts) I
+# ask: can Eric the monkey type the word 'words' before falling asleep or
+# getting too hungry to continue?
+./monkey-words.sh

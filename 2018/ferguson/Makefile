@@ -55,9 +55,26 @@ CSTD= -std=gnu17
 #
 ARCH=
 
+# Variables to help simplify configuring the build
+#
+
+# Maximum size of the target string defaults at 38. See README.md for why this
+# is.
+#
+MAX_SIZE= 38
+
+# Number of offspring per generation defaults at 25.
+#
+OFFSPRING= 25
+
+# Max attempts defaults at SIZE_MAX - 1 but one can change it to see what
+# happens when the maximum is reached.
+MAX_ATTEMPTS= SIZE_MAX-1
+
 # Defines that are needed to compile
 #
-CDEFINE= -DQ='typedef' -D'g(o)'='goto o;' -D'w(x)'="x:" -D'H(main)'='r(main)'
+CDEFINE= -DQ='typedef' -D'g(o)'='goto o;' -D'w(x)'="x:" -D'H(main)'='r(main)' -DM=${MAX_ATTEMPTS} \
+	-DS=${MAX_SIZE} -DN=${OFFSPRING}
 
 # Include files that are needed to compile
 #
@@ -135,7 +152,7 @@ weasel: ${PROG}
 	${CP} -f $< $@
 
 test: ${PROG} test.sh
-	./test.sh
+	@./test.sh
 
 # alternative executable
 #
