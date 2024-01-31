@@ -29,7 +29,7 @@ if [[ -z "$CC" ]]; then
     CC="cc"
 fi
 
-make CC="$CC" alt >/dev/null || exit 1
+make CC="$CC" everything >/dev/null || exit 1
 
 # clear screen after compilation so that only the entry is shown
 clear
@@ -137,7 +137,6 @@ echo 1>&2
 # make sure input and output2 are the same:
 read -r -n 1 -p "Press any key to compare input and output2: "
 echo 1>&2
-diff -s input output2
 diff -s input output2
 # final clean up
 rm -f conf input output output2

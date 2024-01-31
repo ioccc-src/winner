@@ -19,54 +19,68 @@ SHA512SUM="$(type -P sha512sum)"
 SHASUM="$(type -P shasum)"
 
 if [[ -z "$SHA512SUM" && -z "$SHASUM" ]]; then
-    echo "$ ./prog" 1>&2
+    read -r -n 1 -p "Press any key to run: ./prog: "
+    echo 1>&2
     ./prog
+    echo 1>&2
 elif [[ -n "$SHA512SUM" ]]; then
-    echo "$ $SHA512SUM prog.c" 1>&2
+    read -r -n 1 -p "Press any key to run: $SHA512SUM prog.c: "
+    echo 1>&2
     "$SHA512SUM" prog.c
     echo 1>&2
 
-    echo "$ ./prog" 1>&2
+    read -r -n 1 -p "Press any key to run: ./prog: "
+    echo 1>&2
     ./prog
     echo 1>&2
 
-    echo "$ $SHA512SUM prog.c | cut -f 1 -d' ' > sha512sum.txt" 1>&2
-    "$SHA512SUM" prog.c | cut -f 1 -d' ' > sha512sum.txt
-    echo "$ ./prog > prog.txt" 1>&2
-    ./prog > prog.txt
+    read -r -n 1 -p "Press any key to run: $SHA512SUM prog.c | cut -f 1 -d' ' | tee sha512sum.txt: "
+    echo 1>&2
+    "$SHA512SUM" prog.c | cut -f 1 -d' ' | tee sha512sum.txt
+    read -r -n 1 -p "Press any key to run: ./prog | tee prog.txt: "
+    echo 1>&2
+    ./prog | tee prog.txt
     echo 1>&2
 
-    echo "$ cat sha512sum.txt prog.txt" 1>&2
+    read -r -n 1 -p "Press any key to run: cat sha512sum.txt prog.txt: "
+    echo 1>&2
     cat sha512sum.txt prog.txt
     echo 1>&2
 
-    echo "$ diff -s sha512sum.txt prog.txt" 1>&2
+    read -r -n 1 -p "Press any key to run: diff -s sha512sum.txt prog.txt: "
+    echo 1>&2
     diff -s sha512sum.txt prog.txt
     rm -f sha512sum prog.txt
 
 elif [[ -n "$SHASUM" ]]; then
     # Be extra careful and don't use 'else'
-    echo "$ $SHASUM -a 512 prog.c" 1>&2
+    read -r -n 1 -p "Press any key to run: $SHASUM -a 512 prog.c: "
+    echo 1>&2
     "$SHASUM" -a 512 prog.c
     echo 1>&2
 
-    echo "$ ./prog" 1>&2
+    read -r -n 1 -p "Press any key to run: ./prog: "
+    echo 1>&2
     ./prog
     echo 1>&2
 
-    echo "$ $SHASUM -a 512 prog.c | cut -f 1 -d' ' > sha512sum.txt" 1>&2
-    "$SHASUM" -a 512 prog.c | cut -f 1 -d' ' > sha512sum.txt
-    echo "$ ./prog > prog.txt" 1>&2
-    ./prog > prog.txt
+    read -r -n 1 -p "Press any key to run: $SHASUM -a 512 prog.c | cut -f 1 -d' ' | tee sha512sum.txt: "
+    echo 1>&2
+    "$SHASUM" -a 512 prog.c | cut -f 1 -d' ' | tee sha512sum.txt
     echo 1>&2
 
-    echo "$ cat sha512sum.txt prog.txt" 1>&2
+    read -r -n 1 -p "Press any key to run: ./prog | tee prog.txt: "
+    echo 1>&2
+    ./prog | tee prog.txt
+    echo 1>&2
+
+    read -r -n 1 -p "Press any key to run: cat sha512sum.txt prog.txt: "
+    echo 1>&2
     cat sha512sum.txt prog.txt
     echo 1>&2
 
-    echo "$ diff -s sha512sum.txt prog.txt" 1>&2
+    read -r -n 1 -p "Press any key to run: diff -s sha512sum.txt prog.txt: "
+    echo 1>&2
     diff -s sha512sum.txt prog.txt
     rm -f sha512sum prog.txt
-
-
 fi

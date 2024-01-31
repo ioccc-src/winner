@@ -7,7 +7,12 @@
     Q unsigned d; Q char E; Q int k;
     Q long u; Q size_t t; Q const char U;
     #define L toupper
+    #ifndef M
     #define M SIZE_MAX-1
+    #elif M < 100
+    #undef M
+    #define M SIZE_MAX-1
+    #endif
     #ifndef S
     #define S 38
     #elif S < 38

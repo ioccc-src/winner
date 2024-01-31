@@ -4352,7 +4352,8 @@ He also added the [try.sh](/2015/yang/try.sh) script.
 
 ## <a name="2018_anderson"></a>[2018/anderson](/2018/anderson/prog.c) ([README.md](/2018/anderson/README.md))
 
-[Cody](#cody) added the [try.sh](/2018/anderson/try.sh) script.
+[Cody](#cody) added the [try.sh](/2018/anderson/try.sh) and
+[try.alt.sh](/2018/anderson/try.alt.sh) scripts.
 
 
 ## <a name="2018_algmyr"></a>[2018/algmyr](/2018/algmyr/prog.c) ([README.md](/2018/algmyr/README.md))
@@ -4363,11 +4364,13 @@ He also added the [try.sh](/2015/yang/try.sh) script.
 
 ## <a name="2018_bellard"></a>[2018/bellard](/2018/bellard/prog.c) ([README.md](/2018/bellard/README.md))
 
-[Cody](#cody), out of abundance of caution, added a second arg to `main()`
-because some versions of clang object to the number of args of `main()`, saying
-that it must be 0, 2 or 3. The version this has been observed in does not
-actually object to 1 arg but it is entirely possible that this changes so a
-second arg (that's not needed and is unused) has been added just in case.
+[Cody](#cody) added the [try.sh](/2018/bellard/try.sh) script.
+
+Cody also, out of abundance of caution, added a second arg to `main()` because
+some versions of clang object to the number of args of `main()`, saying that it
+must be 0, 2 or 3. The version this has been observed in does not actually
+object to 1 arg but it is entirely possible that this changes so a second arg
+(that's not needed and is unused) has been added just in case.
 
 Cody also added explicit linking of libm (`-lm`) for systems that do not do this
 (Linux doesn't seem to but macOS does).
@@ -4620,6 +4623,11 @@ to easily reconstruct the source code through GDB by the fact it's a backtrace
 quine.
 
 
+## <a name="2019_giles"></a>[2019/giles](/2019/giles/prog.c) ([README.md](/2019/giles/README.md]))
+
+[Cody](#cody) added the [try.sh](/2019/giles/try.sh) script.
+
+
 ## <a name="2019_karns"></a>[2019/karns](/2019/karns/prog.c) ([README.md](/2019/karns/README.md]))
 
 [Cody](#cody) reported that with `-O` level > 0 this program segfaults (sometimes?). He's
@@ -4729,6 +4737,10 @@ What was wrong? A typo in the shebang which had `/usr/bin/end` instead of
 `/usr/bin/env`. Anyone who knows Cody would know that he'd zoom in on that quite
 quick.
 
+Also if `clock` did not exist and one tried to run the script it would make an
+invalid `clock.c` which meant it could not compile so it now runs `make clock`
+first.
+
 Cody also reported (during the preview period of 2020) for some systems (at some
 point?) like macOS the use of `make clock` would not work due possibly to a
 timing issue so [Yusuke](#yusuke) changed it to compile the
@@ -4739,6 +4751,10 @@ years ago is something that many people might wonder but he also once told us
 that if someone moves something of his even a millimetre from where it was he
 knows it so he might be called unusual (and he argues, with pride, eccentric :-)
 ) :-)
+
+Cody also added the [run_clock.alt.sh](/2020/endoh3/run_clock.alt.sh) script
+which is analogous to the [run_clock.sh](/2020/endoh3/run_clock.sh) but for the
+alt code provided by the author, Yusuke.
 
 
 ## <a name="2020_ferguson1"></a>[2020/ferguson1](/2020/ferguson1/prog.c) ([README.md](/2020/ferguson1/README.md))

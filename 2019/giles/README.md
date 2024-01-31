@@ -15,15 +15,13 @@ make
 ## Try:
 
 ```sh
-play MonodyVocals.wav
-./prog MonodyVocals.wav
-play out.wav
+./try.sh
 ```
 
 
-NOTE: `play` comes from SoX, the Swiss Army Knife of sound processing programs.
-If you don't have this installed, see [FAQ 3.10: How do I compile and use an
-IOCCC winner that requires sound](/faq.md#faq3_10).
+NOTE: `play`, which [try.sh](try.sh) uses, comes from SoX, the Swiss Army Knife
+of sound processing programs.  If you don't have this installed, see [FAQ 3.10:
+How do I compile and use an IOCCC winner that requires sound](/faq.md#faq3_10).
 
 
 ## Judges' remarks:

@@ -113,8 +113,8 @@ OBJ= ${PROG}.o
 DATA=
 TARGET= ${PROG} clock
 #
-ALT_OBJ= ${PROG}.alt.o
-ALT_TARGET= ${PROG}.alt
+ALT_OBJ= ${PROG}.alt.o clock.alt.o
+ALT_TARGET= ${PROG}.alt clock.alt
 
 
 #################
@@ -145,6 +145,14 @@ alt: data ${ALT_TARGET}
 
 ${PROG}.alt: ${PROG}.alt.c
 	${CC} ${CFLAGS} $< -o $@ ${LDFLAGS}
+
+clock.alt: clock.alt.c
+
+clock.alt.c: ${PROG}.alt.c
+	@${RM} -f $@
+	${CP} -f $< $@
+
+
 
 # data files
 #

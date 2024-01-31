@@ -15,7 +15,8 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
-echo "$ make test" 1>&2
+read -r -n 1 -p "Press any key to run: make test: "
+echo 1>&2
 make test
 echo 1>&2
 
@@ -75,3 +76,4 @@ echo 1>&2
 read -r -n 1 -p "Press any key to run: ./prog 1; ./prog_be 1: "
 echo 1>&2
 ./prog 1; ./prog_be 1
+echo 1>&2

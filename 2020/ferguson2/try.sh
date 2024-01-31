@@ -138,6 +138,5 @@ echo 1>&2
 read -r -n 1 -p "Press any key to compare input and output2: "
 echo 1>&2
 diff -s input output2
-diff -s input output2
 # final clean up
 rm -f conf input output output2

@@ -35,9 +35,12 @@ echo 1>&2
 "$GDB" -q -x prog.c ./prog | cat | grep : | cut -f 2 -d: | xargs ./ascii | less -rEXF
 echo 1>&2
 
+echo "$ $GDB -q -x prog.c ./prog | cat | grep : | cut -f 2 -d: | xargs ./ascii > prog2.c" 1>&2
 read -r -n 1 -p "Press any key to compare reconstructed code with original: "
 echo 1>&2
-echo "$ "$GDB" -q -x prog.c ./prog | cat | grep : | cut -f 2 -d: | xargs ./ascii > prog2.c" 1>&2
 "$GDB" -q -x prog.c ./prog | cat | grep : | cut -f 2 -d: | xargs ./ascii > prog2.c
-echo "$ diff -s prog.c prog2.c" 1>&2
+echo 1>&2
+
+read -r -n 1 -p "Press any key to run: diff -s prog.c prog2.c: "
+echo 1>&2
 diff -s prog.c prog2.c

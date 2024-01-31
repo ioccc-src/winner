@@ -16,8 +16,9 @@ make CC="$CC" all >/dev/null || exit 1
 clear
 
 # display prog.c to the user
-echo "$ cat prog.c"
-cat prog.c
+read -r -n 1 -p "Press any key to show prog.c (space = next page, q = quit): "
+echo 1>&2
+less -rEXFK prog.c
 
 # run the program on its own source code
 read -r -n 1 -p "Press any key to run: ./prog < prog.c: "
@@ -28,7 +29,9 @@ echo 1>&2
 reset
 
 # display maze
-echo "$ cat maze"
+read -r -n 1 -p "Press any key to run: cat maze: "
+echo 1>&2
+# Role swap: cat in maze instead of mice
 cat maze
 
 # run the program on maze

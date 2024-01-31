@@ -17,27 +17,27 @@ clear
 
 read -r -n 1 -p "Press any key to show prog.c (space = next page, q = quit): "
 echo 1>&2
-less -EXF prog.c
+less -rEXFK prog.c
 echo "$ ./prog < prog.c > prog.gif" 1>&2
 ./prog < prog.c > prog.gif
 echo 1>&2
 
 read -r -n 1 -p "Press any key to show golem.txt (space = next page, q = quit): "
 echo 1>&2
-less -EXF golem.txt
+less -rEXFK golem.txt
 echo "$ ./prog < golem.txt > golem.gif" 1>&2
 ./prog < golem.txt > golem.gif
 echo 1>&2
 
 read -r -n 1 -p "Press any key to show smily.txt (space = next page, q = quit): "
 echo 1>&2
-less -EXF smily.txt
+less -rEXFK smily.txt
 echo "$ ./prog < smily.txt > smily.gif" 1>&2
 ./prog < smily.txt > smily.gif
 echo 1>&2
 
 read -r -n 1 -p "Press any key to show invisible.txt (space = next page, q = quit): "
-less -EXF invisible.txt
+less -rEXFK invisible.txt
 echo "$ ./prog < invisible.txt > invisible.gif" 1>&2
 ./prog < invisible.txt > invisible.gif
 echo 1>&2

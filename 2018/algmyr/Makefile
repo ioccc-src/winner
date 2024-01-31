@@ -207,7 +207,7 @@ clean:
 
 clobber: clean
 	${RM} -f ${TARGET} ${ALT_TARGET}
-	${RM} -rf *.dSYM
+	${RM} -rf *.dSYM *.wav
 	${RM} -f out.raw
 	@-if [ -e sandwich ]; then \
 	    ${RM} -f sandwich; \

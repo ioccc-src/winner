@@ -43,5 +43,7 @@ for i in glider.mc infinite_5x5.mc mosquito5.mc message.mc; do
     if [[ "$REPLY" == "q" || "$REPLY" == "Q" ]]; then
 	exit 0
     fi
+    read -r -n 1 -p "Press any key to run: ./prog < $i: "
+    echo 1>&2
     ./prog < "$i" 2>/dev/null
 done

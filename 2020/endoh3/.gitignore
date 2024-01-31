@@ -1,6 +1,8 @@
 #
 # sort with: sort -d -u
 clock
+clock.alt
+clock.alt.c
 clock.c
 *.dSYM
 indent

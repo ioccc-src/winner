@@ -16,15 +16,21 @@ make CC="$CC" all >/dev/null || exit 1
 clear
 
 
-echo "$ ./prog -i < prog.c" 1>&2
+read -r -n 1 -p "Press any key to run: ./prog -i < prog.c: "
+echo 1>&2
 ./prog -i < prog.c
+echo 1>&2
 
-echo "$ ./prog -s < prog.c" 1>&2
+read -r -n 1 -p "Press any key to run: ./prog -s < prog.c: "
+echo 1>&2
 ./prog -s < prog.c
+echo 1>&2
 
-echo "$ ./prog -sk < prog.c" 1>&2
+read -r -n 1 -p "Press any key to run: ./prog -sk < prog.c: "
+echo 1>&2
 ./prog -sk < prog.c
+echo 1>&2
 
 read -r -n 1 -p "Press any key to run: make test (space = next page, q = quit): "
 echo 1>&2
-make test | less -EXF
+make test | less -rEXFK

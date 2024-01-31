@@ -6,7 +6,7 @@ make
 
 To use this entry requires, in some invocations, a sound processing program.
 This can be ALSA or SoX but we recommend the latter. See [FAQ 3.10 - How do I
-compile and use an IOCCC winner that requires sound?](/faq.md#faq3_10).
+compile and use an IOCCC winner that requires sound?](/faq.md#sox).
 
 
 ### Bugs and (Mis)features:
@@ -23,9 +23,9 @@ For more detailed information see [2018 algmyr in bugs.md](/bugs.md#2018-algmyr)
 ## To use:
 
 ```sh
-cat prog.c | ./prog           # Print garbage: might mess up your terminal
+./prog < prog.c			# Print garbage: might mess up your terminal
 ./prog <file1> <file2> > out.raw
-./prog -d 2 0 out.raw         # Decode the first (0th) channel out of two
+./prog -d 2 0 out.raw		# Decode the first (0th) channel out of two
 ```
 
 
