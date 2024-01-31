@@ -15,19 +15,17 @@ make CC="$CC" all >/dev/null || exit 1
 # clear screen after compilation so that only the entry is shown
 clear
 
+read -r -n 1 -p "Press any key to run: ./prog spam.unl | head -n 100 (space = next page, q =quit): "
 echo 1>&2
-echo "$ ./prog spam.unl | head -n 100 | less -EXF" 1>&2
-read -r -n 1 -p "Press any key to continue: "
-echo 1>&2
-./prog spam.unl | head -n 100 | less -EXF
+./prog spam.unl | head -n 100 | less -rEXFK
 echo 1>&2
 
-echo "$ ./prog sierpinski.unl | head -n 200 | less -EXF" 1>&2
-read -r -n 1 -p "Press any key to continue: "
+read -r -n 1 -p "Press any key to run: ./prog sierpinski.unl | head -n 200 (space = next page, q = quit): "
 echo 1>&2
-./prog sierpinski.unl | head -n 200 | less -EXF
+./prog sierpinski.unl | head -n 200 | less -rEXFK
 
-echo "$ make identify" 1>&2
+read -r -n 1 -p "Press any key to run: make identify: "
+echo 1>&2
 make identify
 echo 1>&2
 
