@@ -19,6 +19,7 @@ make
 ./prog 1000 selfie.jpg output.jpg
 # Admire your portrait in cubist style
 
+# Also try:
 ./try.sh
 ```
 
@@ -98,7 +99,7 @@ After that’s installed you need to run make with these options:
 make LDFLAGS="-I/opt/local/include -L/opt/local/lib"
 ```
 
-### Building on macOS with HomeBrew
+### Building on macOS with Homebrew
 
 First, make sure you have the compiler tools installed e.g. by:
 
@@ -106,7 +107,7 @@ First, make sure you have the compiler tools installed e.g. by:
 sudo xcode-select --install
 ```
 
-Make sure you install [HomeBrew](https://brew.sh).
+Make sure you install [Homebrew](https://brew.sh).
 
 Then:
 
@@ -139,8 +140,10 @@ You can use this command to make a GIF from output images (uses ImageMagick).
 For instance after running the command suggested by the judges:
 
 ```sh
-convert -delay 10 -dither none -loop 0 $(ls out*.jpg | sort -V) $(ls out*.jpg | sort -rV) +map out.gif
+convert -delay 10 -dither none -loop 0 $(find . -maxdepth 1 -type f -name '*jpg' | sort -V) $(find . -maxdepth 1 -type f -name '*jpg' | sort -rV) +map out.gif
 ```
+
+NOTE: the above is done in the [try.sh](try.sh) script.
 
 Also provided `makegif.sh` to aid with GIF creation.
 

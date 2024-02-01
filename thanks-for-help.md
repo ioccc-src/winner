@@ -4833,6 +4833,12 @@ the user has installed the appropriate library with
 [MacPorts](https://www.macports.org) (with the default MacPorts prefix
 `/opt/local`).
 
+Cody also fixed the script [makegif.sh](2020/kurdyukov2/makegif.sh) in a variety
+of ways: shellcheck(1), make sure the program is compiled first (allowing one to
+specify which compiler to use with `CC=foo ./makegif.sh ...`), checking that
+`convert(1)` is found and that it worked properly (linking to the proper FAQ
+entry if not installed or it fails).
+
 
 ## <a name="2020_kurdyukov3"></a>[2020/kurdyukov3](/2020/kurdyukov3/prog.c) ([README.md](/2020/kurdyukov3/README.md))
 

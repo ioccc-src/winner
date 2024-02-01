@@ -27,6 +27,8 @@ convert_error()
     echo 1>&2
 }
 
+# remove ppm files that we create
+rm -f random.ppm output.ppm
 echo "$ (echo P6 1024 1024 255; dd if=/dev/urandom bs=3M count=1) > random.ppm" 1>&2
 (echo P6 1024 1024 255; dd if=/dev/urandom bs=3M count=1) > random.ppm
 echo "Look at random.ppm. Do you see any patterns?" 1>&2
@@ -54,8 +56,13 @@ if [[ -n "$CONVERT" ]]; then
     echo 1>&2
     read -r -n 1 -p "Press any key to create GIF: "
     echo 1>&2
-    echo "$ $CONVERT -delay 10 -dither none -loop 0 $(ls out*.jpg | sort -V) $(ls out*.jpg | sort -rV) +map out.gif" 1>&2
-    "$CONVERT" -delay 10 -dither none -loop 0 $(ls out*.jpg | sort -V) $(ls out*.jpg | sort -rV) +map out.gif
+    echo "$ $CONVERT -delay 10 -dither none -loop 0 $(find . -maxdepth 1 -type f -name '*jpg' | sort -V) $(find . -maxdepth 1 -type f -name '*jpg' | sort -rV) +map out.gif" 1>&2
+    # We want word splitting here so disable shellcheck warning SC2046.
+    #
+    # SC2046 (warning): Quote this to prevent word splitting.
+    # https://www.shellcheck.net/wiki/SC2046
+    # shellcheck disable=SC2046
+    "$CONVERT" -delay 10 -dither none -loop 0 $(find . -maxdepth 1 -type f -name '*jpg' | sort -V) $(find . -maxdepth 1 -type f -name '*jpg' | sort -rV) +map out.gif
     if [[ ! -f out.gif ]]; then
 	convert_error
     else
@@ -63,6 +70,11 @@ if [[ -n "$CONVERT" ]]; then
 	echo "Now look at out.gif with a graphics viewer that can show animated GIFs." 1>&2
 	echo "Warning: includes flashing colours." 1>&2
     fi
+
+    read -r -n 1 -p "Press any key to run: ./makegif.sh sample.jpg kurdyukov2.gif ./prog: "
+    echo 1>&2
+    ./makegif.sh sample.jpg kurdyukov2.gif ./prog
+    echo 1>&2
 else
     echo 1>&2
     echo "Could not fine convert(1) from ImageMagick." 1>&2
