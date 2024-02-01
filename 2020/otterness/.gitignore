@@ -1,8 +1,12 @@
 #
-# sort with: sort -d -u
+# Don't sort because of the exclusion of *.mid with the exception
+# of the cvikl.mid and the entertainer.mid.
 *.dSYM
 indent
 indent.c
 indent.o
 prog
 prog.orig
+*.mid
+!cvikl.mid
+!entertainer.mid
