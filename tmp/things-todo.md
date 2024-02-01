@@ -1,5 +1,5 @@
 # A todo list of known things to check and/or do
-*Last updated: Wed 31 Jan 2024 12:22:09 UTC*
+*Last updated: Thu 01 Feb 2024 16:10:23 UTC*
 
 This document is for [Cody Boone Ferguson](/winners.html#Cody_Boone_Ferguson) as
 he (that is I :-) ) wanted a way to keep track of things in a way that did not
@@ -36,13 +36,10 @@ embedded into the README.md files themselves. An entry that the video file is
 downloaded already is 2006/sykes1. There are others that I need to look at once
 the rest of the entries are done, assuming that it's possible.
 
-- Verify that all entries that should have (or could be benefited by) a try
-script do in fact have one. Also verify (mostly in earlier years) consistency in
-the way it is displayed and interactivity. The later years are probably done
-better. As of *Wed 31 Jan 2024 12:22:09 UTC* almost all of this is done: just
-some of 2018 and then all of 2019 and 2020 have to be checked. It is very likely
-that before the day is over 2018 will be done and possibly part of 2019 will be
-done but this is currently unknown. The shellcheck updates is another issue
-entirely.
+- Verify that all entries that have a try or try.alt script actually refer to it
+in the README.md try and alternate try sections.
 
 - Test and fix as and if necessary 2018/ferguson/weasel.spec.
+
+- Update formatting in 2020/ferguson[12]/chocolate-cake.md specifically with
+bold versus bold and italic in important points.
