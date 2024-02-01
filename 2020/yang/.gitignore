@@ -1,7 +1,7 @@
 #
-# sort with: sort -d -u
-cppp
+# sort with: ../../bin/sgi
 *.dSYM
+cppp
 indent
 indent.c
 indent.o

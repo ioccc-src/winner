@@ -1,10 +1,10 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 ag
 ag.txt
 ant
 ant.orig
-*.dSYM
 indent
 indent.c
 indent.o

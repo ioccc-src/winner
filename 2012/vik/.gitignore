@@ -1,7 +1,7 @@
 #
-# sort with: sort -d -u
-chocolate-in-ioccc.png
+# sort with: ../../bin/sgi
 *.dSYM
+chocolate-in-ioccc.png
 encodedimg.png
 indent
 indent.c

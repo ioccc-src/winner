@@ -1,7 +1,7 @@
 #
-# sort with: sort -d -u
-build
+# sort with: ../../bin/sgi
 *.dSYM
+build
 hibachi.orig
 indent
 indent.c

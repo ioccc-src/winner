@@ -1,10 +1,10 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 august
 august.oc
 august.oo
 august.orig
-*.dSYM
 fac.oo
 indent
 indent.c

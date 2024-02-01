@@ -1,5 +1,6 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 adbasename
 adbasename.c
 adecho
@@ -12,9 +13,8 @@ adrian.orig
 adsleep
 adsleep.c
 adwc
-adwc.c
 adwc.adwc.txt
-*.dSYM
+adwc.c
 indent
 indent.c
 indent.o

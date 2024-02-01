@@ -91,6 +91,33 @@ bin/all-run.sh -v 3 bin/readme2index.sh -v 1
 Convert README.md into index.html.
 
 
+### [sgi](sgi)
+
+Sort .gitignore content from stdin to stdout.
+
+We sort with lines starting with # first.
+We sort with lines starting with * second.
+We sort with lines that do not start with [#!*] third.
+We sort with lines starting with ! fourth.
+
+
+### [sort.gitignore](sort.gitignore)
+
+Sort a .gitignore in a winner directory.
+
+Usage:
+
+```sh
+bin/sort.gitignore -v 1 YYYY/dir
+```
+
+Suggested usage:
+
+```sh
+bin/all-run.sh bin/sort.gitignore -v 1
+```
+
+
 ### [subst.default.sh](subst.default.sh)
 
 Print default substitutions.

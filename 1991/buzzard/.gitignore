@@ -1,9 +1,9 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 buzzard
 buzzard.alt
 buzzard.orig
-*.dSYM
 indent
 indent.c
 indent.o

@@ -1,5 +1,6 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 ADVENTUR/
 BASICS/
 C
@@ -17,7 +18,6 @@ WS33/
 WS33-1/
 WS33-2/
 WS33-KPR/
-*.dSYM
 indent
 indent.c
 indent.o

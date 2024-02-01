@@ -1,7 +1,7 @@
 #
-# sort with: sort -d -u
-ag
+# sort with: ../../bin/sgi
 *.dSYM
+ag
 gson
 gson.orig
 indent

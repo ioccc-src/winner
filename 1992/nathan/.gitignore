@@ -1,7 +1,7 @@
 #
-# sort with: sort -d -u
-barfoof.c
+# sort with: ../../bin/sgi
 *.dSYM
+barfoof.c
 foobarf.c
 indent
 indent.c

@@ -1,5 +1,6 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 anonymous
 anonymous.bed
 anonymous.bed.alt
@@ -7,7 +8,6 @@ anonymous.orig
 anonymous.ten
 anonymous.ten.32
 anonymous.ten.alt
-*.dSYM
 indent
 indent.c
 indent.o

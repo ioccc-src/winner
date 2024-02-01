@@ -1,10 +1,10 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 babble
 babble.cppcb
 buzzard.1
 buzzard.1.orig
-*.dSYM
 indent
 indent.c
 indent.o

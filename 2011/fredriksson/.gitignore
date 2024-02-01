@@ -1,8 +1,8 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 ag
 ag.c
-*.dSYM
 fredriksson
 fredriksson.orig
 fredriksson.txt

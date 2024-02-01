@@ -1,7 +1,7 @@
 #
-# sort with: sort -d -u
-configuration.txt
+# sort with: ../../bin/sgi
 *.dSYM
+configuration.txt
 endoh1
 endoh1.alt
 endoh1.alt2

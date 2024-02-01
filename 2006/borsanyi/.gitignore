@@ -1,9 +1,9 @@
 #
-# sort with: sort -d -u
-borsanyi
-borsanyi.orig
+# sort with: ../../bin/sgi
 *.dSYM
 *.gif
+borsanyi
+borsanyi.orig
 indent
 indent.c
 indent.o

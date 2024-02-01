@@ -1,4 +1,4 @@
 #
-# sort with: sort -d -u
+# sort with: ../bin/sgi
 mkentry
 mkentty.o

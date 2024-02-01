@@ -1,8 +1,8 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 cable2
 cable2.orig
-*.dSYM
 hello
 indent
 indent.c

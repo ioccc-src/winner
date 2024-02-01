@@ -1,7 +1,7 @@
 #
-# sort with: sort -d -u
-README.poot.md
+# sort with: ../../bin/sgi
 *.dSYM
+README.poot.md
 dlowe
 dlowe.alt
 dlowe.orig

@@ -1,7 +1,7 @@
 #
-# sort with: sort -d -u
-HI
+# sort with: ../../bin/sgi
 *.dSYM
+HI
 indent
 indent.c
 indent.o

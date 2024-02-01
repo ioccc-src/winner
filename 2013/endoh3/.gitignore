@@ -1,10 +1,10 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
 *.dSYM
+*.wav
 endoh3
 endoh3.orig
 indent
 indent.c
 indent.o
 prog.orig
-*.wav

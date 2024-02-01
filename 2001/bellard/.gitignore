@@ -1,9 +1,9 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 bellard
 bellard.orig
 bellard.otccex
-*.dSYM
 indent
 indent.c
 indent.o

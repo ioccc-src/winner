@@ -1,7 +1,7 @@
 #
-# sort with: sort -d -u
-cat-killing-curiosity
+# sort with: ../../bin/sgi
 *.dSYM
+cat-killing-curiosity
 indent
 indent.c
 indent.o

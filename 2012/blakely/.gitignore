@@ -1,9 +1,9 @@
 #
-# sort with: sort -d -u
-blakely
-blakely.orig
+# sort with: ../../bin/sgi
 *.dSYM
 *.gif
+blakely
+blakely.orig
 indent
 indent.c
 indent.o

@@ -1,10 +1,10 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 chaos
 chaos_nohalf
 chaos_nohalf.c
 chaos.orig
-*.dSYM
 indent
 indent.c
 indent.o

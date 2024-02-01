@@ -1,8 +1,9 @@
-#
-# sort with: sort -d -u
-audio_file.raw
 
+#
+# sort with: ../../bin/sgi
 *.dSYM
+*.wav
+audio_file.raw
 indent
 indent.c
 indent.o
@@ -10,4 +11,3 @@ prog.orig
 vik
 vik.alt
 vik.orig
-*.wav

@@ -1,10 +1,10 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 cake.sh
 chocolate-cake.dat
 chocolate-cake.key
 config
-*.dSYM
 indent
 indent.c
 indent.o

@@ -1,5 +1,5 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
 *.dSYM
 dmy2jd
 indent

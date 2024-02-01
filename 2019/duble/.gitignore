@@ -1,12 +1,12 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 Darwin
 Darwin.alt
 FreeBSD
 FreeBSD.alt
 Linux
 Linux.alt
-*.dSYM
 indent
 indent.c
 indent.o

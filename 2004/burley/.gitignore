@@ -1,8 +1,8 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 burley
 burley.orig
-*.dSYM
 indent
 indent.c
 indent.o

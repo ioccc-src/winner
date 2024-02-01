@@ -1,9 +1,9 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 cdua
 cdua.alt
 cdua.orig
-*.dSYM
 indent
 indent.c
 indent.o

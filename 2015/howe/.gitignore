@@ -1,6 +1,7 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
 *.dSYM
+*.tmp
 indent
 indent.c
 indent.o
@@ -8,5 +9,4 @@ makeholes
 prog
 prog.alt
 prog.orig
-*.tmp
 war-and-peace.txt

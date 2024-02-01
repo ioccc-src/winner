@@ -1,9 +1,9 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 4old_default.ppm
 a
 a.c
-*.dSYM
 hou
 hou.orig
 hou.tmp

@@ -1,12 +1,12 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
 *.dSYM
+*.pbm
+*.png
 deckmyn
 deckmyn.orig
 example_greensleeves
 indent
 indent.c
 indent.o
-*.pbm
-*.png
 prog.orig

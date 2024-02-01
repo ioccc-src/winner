@@ -1,8 +1,8 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 builddisk.bsd
 builddisk.v6
-*.dSYM
 empty.fs.bz2
 indent
 indent.c

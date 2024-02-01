@@ -1,9 +1,9 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 ant
 ant.alt
 ant.orig
-*.dSYM
 hill
 indent
 indent.c

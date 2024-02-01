@@ -1,9 +1,9 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 bas1
 bas1.orig
 bemazing
-*.dSYM
 indent
 indent.c
 indent.o

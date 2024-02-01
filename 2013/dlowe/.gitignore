@@ -1,8 +1,8 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
 1.txt
-2.txt
 *.dSYM
+2.txt
 dlowe
 dlowe.orig
 fun

@@ -1,5 +1,5 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
 *.dSYM
 fitzhugh-nagumo-1
 fitzhugh-nagumo-2

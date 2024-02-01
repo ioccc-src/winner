@@ -1,8 +1,8 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 bmeyer
 bmeyer.orig
-*.dSYM
 glicbawls
 indent
 indent.c

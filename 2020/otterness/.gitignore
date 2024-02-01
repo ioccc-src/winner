@@ -1,12 +1,11 @@
 #
-# Don't sort because of the exclusion of *.mid with the exception
-# of the cvikl.mid and the entertainer.mid.
+# sort with: ../../bin/sgi
 *.dSYM
+*.mid
 indent
 indent.c
 indent.o
 prog
 prog.orig
-*.mid
 !cvikl.mid
 !entertainer.mid

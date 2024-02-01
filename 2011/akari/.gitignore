@@ -1,5 +1,6 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 akari
 akari2 
 akari2.c
@@ -8,7 +9,6 @@ akari3.c
 akari4
 akari4.c
 akari.orig
-*.dSYM
 even_output.ppm
 expanded_and_rot13_output.txt
 expanded_output.txt

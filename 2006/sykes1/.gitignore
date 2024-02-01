@@ -1,7 +1,7 @@
 #
-# sort with: sort -d -u
-cube.gif
+# sort with: ../../bin/sgi
 *.dSYM
+cube.gif
 indent
 indent.c
 indent.o

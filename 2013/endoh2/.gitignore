@@ -1,5 +1,5 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
 *.dSYM
 endoh2
 endoh2.orig

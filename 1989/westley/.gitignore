@@ -1,5 +1,6 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 alt.ver0
 alt.ver0.c
 alt.ver1
@@ -8,7 +9,6 @@ alt.ver2
 alt.ver2.c
 alt.ver3
 alt.ver3.c
-*.dSYM
 indent
 indent.c
 indent.o

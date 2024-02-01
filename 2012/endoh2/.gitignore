@@ -1,5 +1,6 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 271
 2718
 27182
@@ -36,7 +37,6 @@
 31415.c
 3141.c
 314.c
-*.dSYM
 e
 e.c
 endoh2

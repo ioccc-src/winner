@@ -1,23 +1,23 @@
 #
-# sort with: sort -d -u
+# sort with: ../../bin/sgi
+*.dSYM
 a
 b
 c
 d
-*.dSYM
 e
 indent
 indent.c
 indent.o
 input.txt
 original.txt
-output.txt
 output1.txt
 output2.txt
+output.txt
 prog
 prog.orig
-scrambled.txt
 scrambled1.txt
 scrambled2.txt
 scrambled3.txt
+scrambled.txt
 unscrambled.txt
