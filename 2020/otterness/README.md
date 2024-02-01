@@ -26,12 +26,11 @@ For more detailed information see [2020 otterness in bugs.md](/bugs.md#2020-otte
 ## Try:
 
 ```sh
-./prog < cvikl.mid > output.mid
-# Play output.mid with your favorite player
-
-./prog < entertainer.mid > output2.mid
-# Play output2.mid with your favorite player
+./try.sh
 ```
+
+Now play `output.mid` and `output2.mid` in an audio player that can play MIDI
+files.
 
 
 ## Judges' remarks:

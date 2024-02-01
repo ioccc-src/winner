@@ -4872,6 +4872,8 @@ J.R.R. Tolkien).
 that one need not download them and to make sure they can always be obtained
 even if the domain or link goes dead.
 
+Cody also added the [try.sh](/2020/otterness/try.sh) script.
+
 
 ## <a name="2020_tsoj"></a>[2020/tsoj](/2020/tsoj/prog.c) ([README.md](/2020/tsoj/README.md))
 
