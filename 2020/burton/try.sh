@@ -70,6 +70,7 @@ echo 1>&2
 read -r -n 1 -p "Press any key to run: ./prog 128 128 128 128: "
 echo 1>&2
 ./prog 128 128 128 128
+echo 1>&2
 echo "Why did that print strange output?"
 echo 1>&2
 

@@ -23,27 +23,29 @@ if [[ -z "$PLAY" ]]; then
     
     if [[ -z "$PLAY" ]]; then
 	echo "Note: cannot find play(1) or aplay(1). Will not play sounds for you. Try installing" 1>&2
-	echo "SoX. See FAQ 3.10: How do I compile and use an IOCCC winner that requires sound?" 1>&2
+	echo "SoX. You will have to play the WAV output manually, sorry." 1>&2
 	echo 1>&2
-	echo "You will have to play the WAV output manually, sorry." 1>&2
+	echo "Tip: see https://github.com/ioccc-src/temp-test-ioccc/blob/master/faq.md#sox." 1>&2
 	echo 1>&2
     fi
 fi
 
-read -r -n 1 -p "Press any key to convert pi.wav to its digits: "
+read -r -n 1 -p "Press any key to convert pi.wav to its digits (./prog < pi.wav): "
 echo 1>&2
-echo "$ ./prog < pi.wav" 1>&2
 ./prog < pi.wav
 if [[ -n "$PLAY" ]]; then
     read -r -n 1 -p "Press any key to play pi.wav with $PLAY: "
     echo 1>&2
-    echo "$ $PLAY pi.wav" 1>&2
     "$PLAY" pi.wav
+else
+    echo "Please play pi.wav in an audio player that can play WAV files." 1>&2
+    echo 1>&2
+    echo "Tip: see https://github.com/ioccc-src/temp-test-ioccc/blob/master/faq.md#sox." 1>&2
+    echo 1>&2
 fi
 
-read -r -n 1 -p "Press any key convert 867-5309: "
+read -r -n 1 -p "Press any key convert 867-5309 (./prog 867-5309 > jenny.wav): "
 echo 1>&2
-echo "$ ./prog 867-5309 > jenny.wav" 1>&2
 ./prog 867-5309 > jenny.wav
 if [[ -n "$PLAY" ]]; then
     read -r -n 1 -p "Press any key to play jenny.wav with $PLAY: "
@@ -51,18 +53,20 @@ if [[ -n "$PLAY" ]]; then
     echo "$ $PLAY jenny.wav" 1>&2
     "$PLAY" jenny.wav
     echo 1>&2
-    read -r -n 1 -p "Press any key to play 10666-28 ('IOCCC-28'): "
+    read -r -n 1 -p "Press any key to play 10666-28 ('IOCCC-28') (./prog 10666-28 | $PLAY -): "
     echo 1>&2
-    echo "$ ./prog 10666-28 | $PLAY -"
     ./prog 10666-28 | "$PLAY" -
 else
     echo 1>&2
-    echo "Now try playing jenny.wav with an audio player that can play WAV files."
+    echo "Please play jenny.wav with an audio player that can play WAV files."
+    echo 1>&2
+    echo "Tip: see https://github.com/ioccc-src/temp-test-ioccc/blob/master/faq.md#sox." 1>&2
     echo 1>&2
     read -r -n 1 -p "Press any key to convert 10666-28 ('IOCCC-28'): "
     echo 1>&2
     echo "$ ./prog 10666-28 > ioccc28.wav"
     ./prog 10666-28 > ioccc28.wav
     echo 1>&2
-    echo "Now try playing ioccc28.wav with an audio player that can play WAV files."
+    echo "Please play ioccc28.wav with an audio player that can play WAV files." 1>&2
+    echo 1>&2
 fi

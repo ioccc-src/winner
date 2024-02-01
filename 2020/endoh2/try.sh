@@ -24,7 +24,6 @@ read -r -n 1 -p "Press any key to show hello.txt: "
 echo 1>&2
 cat hello.txt
 echo 1>&2
-
 read -r -n 1 -p "Press any key to run: ./prog hello.txt: "
 echo 1>&2
 ./prog hello.txt
@@ -34,7 +33,6 @@ read -r -n 1 -p "Press any key to show yoda.txt: "
 echo 1>&2
 cat yoda.txt
 echo 1>&2
-
 read -r -n 1 -p "Press any key to run: ./prog yoda.txt: "
 echo 1>&2
 ./prog yoda.txt
