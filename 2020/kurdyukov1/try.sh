@@ -26,6 +26,11 @@ echo 1>&2
 echo IOCCC | ./prog
 echo 1>&2
 
+read -r -n 1 -p "Press any key to show prog.c (space = next page, q = quit): "
+echo 1>&2
+less -rEXFK prog.c
+echo 1>&2
+
 read -r -n 1 -p "Press any key to run: ./prog < prog.c: "
 echo 1>&2
 ./prog < prog.c
@@ -44,22 +49,28 @@ echo 1>&2
 read -r -n 1 -p "Press any key to run: ./prog < prog.x86_64.asm: "
 echo 1>&2
 ./prog < prog.x86_64.asm
+echo 1>&2
 
-rm -f md5.txt prog.md5.txt
+# remove output files first
+rm -vf md5.txt prog.md5.txt
+
 if [[ -n "$MD5SUM" ]]; then
-    if [[ "$(basename $MD5SUM)" == "openssl" ]]; then
-	echo "$ $MD5SUM md5 prog.c | cut -f 2 -d' ' > md5.txt" 1>&2
-	"$MD5SUM" md5 prog.c | cut -f 2 -d' ' > md5.txt
-	echo "$ ./prog < prog.c > prog.md5.txt" 1>&2
-	./prog < prog.c > prog.md5.txt
+    if [[ "$(basename "$MD5SUM")" == "openssl" ]]; then
+	read -r -n 1 -p "Press any key to run: $MD5SUM md5 prog.c | cut -f 2 -d' ' | tee md5.txt: "
+	"$MD5SUM" md5 prog.c | cut -f 2 -d' ' | tee md5.txt
+	read -r -n 1 -p "Press any key to run: ./prog < prog.c | tee prog.md5.txt: "
+	./prog < prog.c | tee prog.md5.txt
     else
-	echo "$ $MD5SUM prog.c | cut -f1 -d' ' > md5.txt" 1>&2
-	"$MD5SUM" prog.c | cut -f1 -d' ' > md5.txt
-	echo "$ ./prog < prog.c > prog.md5.txt" 1>&2
+	read -r -n 1 -p "Press any key to run: $MD5SUM prog.c | cut -f1 -d' ' | tee md5.txt: "
+	"$MD5SUM" prog.c | cut -f1 -d' ' | tee md5.txt
+	read -r -n 1 -p "Press any key to run: ./prog < prog.c > prog.md5.txt: "
+	echo 1>&2
 	./prog < prog.c > prog.md5.txt
     fi
-    read -r -n 1 -p "Press any key to compare the two files md5.txt and prog.md5.txt: "
+    echo 1>&2
+    read -r -n 1 -p "Press any key to run: diff -s md5.txt prog.md5.txt: "
     echo 1>&2
     diff -s md5.txt prog.md5.txt
+    echo 1>&2
 fi
-rm -f md5.txt prog.md5.txt
+rm -vf md5.txt prog.md5.txt

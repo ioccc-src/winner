@@ -1,6 +1,9 @@
 #
 # sort with: sort -d -u
 *.dSYM
+*.jpg
+*.gif
+*.ppm
 indent
 indent.c
 indent.o
