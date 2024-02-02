@@ -18,7 +18,7 @@ will not work with it enabled.
 ## Try:
 
 ```sh
-./try
+./try.sh
 ```
 
 What happens if you feed the program source to the program? Can you figure out
