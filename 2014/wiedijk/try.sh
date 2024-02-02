@@ -18,11 +18,11 @@ clear
 
 # Make sure that indent(1) and sed(1) are installed but let user override them
 # as well say for using a different beautifier. We assume less(1) is installed.
-
 if [[ -z "$INDENT" ]]; then
     INDENT="$(type -P indent)"
 else
     INDENT="$(type -P "$INDENT")"
+    [[ ! -f "$INDENT" || ! -x "$INDENT" ]] && INDENT="$(type -P indent)"
 fi
 if [[ ! -x "$INDENT" ]]; then
     echo "$0: cannot find indent, sorry." 1>&2
@@ -33,14 +33,15 @@ if [[ -z "$SED" ]]; then
     SED="$(type -P sed)"
 else
     SED="$(type -P "$SED")"
+    [[ ! -f "$SED" || ! -x "$SED" ]] && SED="$(type -P sed)"
 fi
 if [[ ! -x "$SED" ]]; then
     echo "$0: cannot find sed, sorry." 1>&2
     exit 2
 fi
 
-echo "$ cc -E prog.c | "$INDENT" |
-    "$SED" '1,/5.*prog/d' | less -EXF"
+echo "$ $CC -E prog.c | $INDENT |
+    $SED '1,/5.*prog/d'"
 read -r -n 1 -p "Press any key to continue (space = next page, q = quit): "
 echo 1>&2
-cc -E prog.c | "$INDENT" | "$SED" '1,/5.*prog/d' | less -EXF
+"$CC" -E prog.c | "$INDENT" | "$SED" '1,/5.*prog/d' | less -EXF
