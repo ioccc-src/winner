@@ -29,15 +29,8 @@ For more detailed information see [2005 giljade in bugs.md](/bugs.md#2005-giljad
 ## Try:
 
 ```sh
-./giljade > out
+./try.sh
 ```
-Open an xterm with 78 lines.
-
-```sh
-vi out
-```
-
-Press `^F` (control F) repeatedly.
 
 
 ### Self-test feature to try:
@@ -46,6 +39,8 @@ Press `^F` (control F) repeatedly.
 ./giljade > out
 ./giljade out
 ```
+
+NOTE: [try.sh](try.sh) will ask you if you wish to do this.
 
 
 ## Judges' remarks:
