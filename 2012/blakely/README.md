@@ -26,11 +26,7 @@ For more detailed information see [2012 blakely in bugs.md](/bugs.md#2012-blakel
 ## Try:
 
 ```sh
-./blakely "xx*yy*+" 64 > paraboloid.gif
-
-./blakely 9 32 > empty.gif
-
-time ./blakely 0 250 > flat.gif
+./try.sh
 ```
 
 
