@@ -2045,7 +2045,7 @@ problem was a missing `int` for the `f` variable. He felt it was even more
 important that it works because the layout does indeed look to him like a rat is
 dropping core :-), something that the judges suggested.
 
-Cody also renamed `garry.test.sh` to [try.sh](/1995/garrytry.sh) and improved it
+Cody also renamed `garry.test.sh` to [try.sh](/1995/garry/try.sh) and improved it
 to to make sure the program is compiled before trying to use it as well as
 adding a few enhancements. For the alt version he also added the
 [try.alt.sh](/1995/garry/try.alt.sh) script to use the alt version, though the
@@ -2918,7 +2918,7 @@ Cody also added the [try.sh](/2001/schweikh/try.sh) script.
 
 ## <a name="2001_westley"></a>[2001/westley](/2001/westley/westley.c) ([README.md](/2001/westley/README.md]))
 
-[Cody](#cody) added the script [try.sh](try.sh) to automate a heap of commands
+[Cody](#cody) added the script [try.sh](2001/westley/try.sh) to automate a heap of commands
 that we, the IOCCC judges, suggested, as well as some additional ones that he
 thought would be fun.  He also provided the sort and punch card versions,
 described in the README.md, based on the author's remarks.
