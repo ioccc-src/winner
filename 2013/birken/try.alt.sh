@@ -22,7 +22,7 @@ PERL="$(type -P perl)"
 if [[ -n "$PERL" ]]; then
     read -r -n 1 -p "Press any key to try a random run: "
     echo 1>&2
-    perl -e 'map{map{print int(rand()*8);}(0..16);print chr(10);}(0..30);' | tr '[0-4]' ' '| ./birken.alt
+    perl -e 'map{map{print int(rand()*8);}(0..16);print chr(10);}(0..30);' | tr '0-4' ' '| ./birken.alt
 fi
 
 for i in *.txt; do
