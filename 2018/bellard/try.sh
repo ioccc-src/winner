@@ -47,4 +47,5 @@ else
 	echo "Cannot find cjpeg. Try installing libjpeg-turbo." 1>&2
 	echo "See https://github.com/ioccc-src/temp-test-ioccc/blob/master/faq.md#libjpeg." 1>&2
 	echo 1>&2
+    fi
 fi
