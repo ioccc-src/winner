@@ -66,7 +66,7 @@ fi
 shopt -s nullglob	# enable expanded to nothing rather than remaining unexpanded
 shopt -u failglob	# disable error message if no matches are found
 shopt -u dotglob	# disable matching files starting with .
-shopt -s globskipdots	# enable never matching . nor ..
+shopt -s globskipdots	# enable never matching . or ..
 shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
@@ -126,7 +126,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 			NOTE: The '-p tool' is passed as leading options on tool command lines.
 	-P pandoc_opts	run 'pandoc wrapper tool' with options found in 'optstr' (def: $PANDOC_WRAPPER_OPTSTR)
 			NOTE: The '-P pandoc_opts' is passed as leading options on tool command lines.
-			NOTE: The 'pandoc_opts' may not contain a single-quote, nor a double-quote.
+			NOTE: The 'pandoc_opts' may not contain a single-quote or a double-quote.
 
 	-u repo_url	Base level URL of target git repo (def: $REPO_URL)
 			NOTE: The '-u repo_url' is passed as leading options on tool command lines.

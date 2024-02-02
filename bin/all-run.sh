@@ -101,7 +101,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 			NOTE: The '-p tool' is passed as leading options on tool command lines.
 	-P pandoc_opts	run 'pandoc wrapper tool' with options found in 'optstr' (def: $PANDOC_WRAPPER_OPTSTR)
 			NOTE: The '-P pandoc_opts' is passed as leading options on tool command lines.
-			NOTE: The 'pandoc_opts' may not contain a single-quote, nor a double-quote.
+			NOTE: The 'pandoc_opts' may not contain a single-quote or a double-quote.
 
 	-u repo_url	Base level URL of target git repo (def: $REPO_URL)
 			NOTE: The '-u repo_url' is passed as leading options on tool command lines.

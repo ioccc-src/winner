@@ -42,7 +42,7 @@ fi
 shopt -s nullglob	# enable expanded to nothing rather than remaining unexpanded
 shopt -u failglob	# disable error message if no matches are found
 shopt -u dotglob	# disable matching files starting with .
-shopt -s globskipdots	# enable never matching . nor ..
+shopt -s globskipdots	# enable never matching . or ..
 shopt -u nocaseglob	# disable strict case matching
 shopt -u extglob	# enable extended globbing patterns
 shopt -s globstar	# enable ** to match all files and zero or more directories and subdirectories
@@ -99,29 +99,29 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 
 	-H phase=name	use 'phase.name.html' file for HTML phase named 'phase' (def: use 'phase.default.html')
 	-H phase=.	ignore processing for HTML phase 'phase' (def: process HTML phase)
-			NOTE: The 'phase' string may not contain an = (equal), a / (slash), a single-quote, nor a double-quote.
-			NOTE: The 'name' string may not contain an = (equal), a single-quote, nor a double-quote.
+			NOTE: The 'phase' string may not contain an = (equal), a / (slash), a single-quote, or a double-quote.
+			NOTE: The 'name' string may not contain an = (equal), a single-quote, or a double-quote.
 			NOTE: The 'phase.name.html' file is assumed to be under the 'topdir/inc' directory.
 
 	-b tool		run 'before tool' during HTML phase number 20 (def: do not output before pandoc wrapper tool)
 	-b .		skip HTML phase number 20 (def: do nothing during HTML phase number 20)
 	-B optstr	run 'before tool' with options found in 'optstr' (def: do not add any options to 'before tool')
-			NOTE: The 'optstr' may not contain a single-quote, nor a double-quote.
+			NOTE: The 'optstr' may not contain a single-quote or a double-quote.
 
 	-p tool		run 'pandoc wrapper tool' (not pandoc path) during HTML phase number 21 (def: use $PANDOC_WRAPPER)
 	-p .		skip HTML phase number 21 (def: do nothing during HTML phase number 21)
 			NOTE: The '-p tool' will be passed as leading options on the -b tool and -a tool command lines.
 	-P optstr	run 'pandoc wrapper tool' with options found in 'optstr' (def: $PANDOC_WRAPPER_OPTSTR)
-			NOTE: The 'optstr' may not contain a single-quote, nor a double-quote.
+			NOTE: The 'optstr' may not contain a single-quote or a double-quote.
 			NOTE: The '-P optstr' will be passed as leading options on the -b tool and -a tool command lines.
 
 	-a tool		run 'after tool' during HTML phase number 20 (def: do not output after pandoc wrapper tool)
 	-a .		skip HTML phase number 22 (def: do nothing during HTML phase number 22)
 	-A optstr	run 'after tool' with options found in 'optstr' (def: do not add any options to 'after tool')
-			NOTE: The 'optstr' may not contain a single-quote, nor a double-quote.
+			NOTE: The 'optstr' may not contain a single-quote or a double-quote.
 
 	-s token=value	substitute %%token%% with value except in HTML phase numbers 20-29 (def: do not substitute any tokens)
-			NOTE: The 'token' string may not contain a ; (semicolon), a = (equal), nor a % (percent).
+			NOTE: The 'token' string may not contain a ; (semicolon), a = (equal) or a % (percent).
 			NOTE: The 'value' string may not contain a ; (semicolon).
 			NOTE: A later '-s token=value' will override an earlier '-s token=value' for the same 'token'.
 			NOTE: Multiple '-s token=value' are cumulative for the unique set of 'token's.
@@ -131,7 +131,7 @@ export USAGE="usage: $0 [-h] [-v level] [-V] [-d topdir] [-n] [-N]
 	-o .		disable use of 'output tool' (def: do not use an 'output tool')
 			NOTE: -o may only be used in command_options and md2html.cfg cfg_options (getopt phases 0 and 2)
 	-O tool=optstr	run the 'token replace' named 'tool' with options found in 'optstr' (def: do not add any options)
-			NOTE: Neither 'tool' nor 'optstr' may not contain an = (equal), a single-quote, nor a double-quote.
+			NOTE: Neither 'tool' nor 'optstr' may not contain an = (equal), a single-quote or a double-quote.
 			NOTE: A later '-O tool=optstr' will override all earlier '-O tool=optstr' for the same 'tool'.
 			NOTE: -O may only be used in command_options and md2html.cfg cfg_options (getopt phases 0 and 2)
 
