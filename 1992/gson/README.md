@@ -28,8 +28,13 @@ For more detailed information see [1992 gson in bugs.md](/bugs.md#1992-gson).
 
 ## Try:
 
-Determine where your system dictionary is located.  You may find
-it located in one of the following places:
+```sh
+./try.sh
+```
+
+This script will determine (or try and determine) where your system dictionary
+is located and assuming that it can find one it'll use that. It checks the
+following locations though the last one is more ironic:
 
 ```
 /usr/share/dict/words
@@ -38,7 +43,7 @@ it located in one of the following places:
 /dev/null			# <-- for machines with nothing to say
 ```
 
-Then using the proper dictionary:
+Then using the proper dictionary file it does:
 
 ```sh
 ./ag free software foundation	< /usr/share/dict/words
@@ -49,6 +54,14 @@ Then using the proper dictionary:
 ./ag ross perot			< /usr/share/dict/words
 ./ag paul e tsongas		< /usr/share/dict/words
 ```
+
+where `/usr/share/dict/words` is the dictionary file.
+
+Then it uses the [mkdict.sh](mkdict.sh) script to create a dictionary file out
+of the files [README.md](README.md), [try.sh](try.sh) (itself) and
+[Makefile](Makefile) and it repeats the same commands as above. In the case no
+dictionary file can be found in the first step it only runs the commands once
+with the created dictionary file.
 
 
 ## Judges' remarks:
