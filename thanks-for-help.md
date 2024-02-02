@@ -4417,7 +4417,8 @@ Finally Cody added the [try.sh](/2018/burton2/try.sh) script.
 
 ## <a name="2018_ciura"></a>[2018/ciura](/2018/ciura/prog.c) ([README.md](/2018/ciura/README.md))
 
-[Cody](#cody) added the [try.sh](/2018/ciura/try.sh) script and the PDF file,
+[Cody](#cody) added the [try.sh](/2018/ciura/try.sh) and
+[try.alt.sh](/2018/ciura/try.alt.sh) scripts and the PDF file,
 [lexicon.pdf](/2018/ciura/lexicon.pdf), that was a dead link, restored from the
 Internet Wayback Machine.
 
