@@ -15,11 +15,7 @@ make
 ## Try:
 
 ```sh
-echo Hello | ./prog
-
-echo Hello | ./prog > hello.c
-make hello
-./hello
+./try.sh
 ```
 
 
