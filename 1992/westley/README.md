@@ -23,10 +23,7 @@ If lost:
 
 
 ```sh
-./whereami lat long
-
-# or, if you don't have curses installed:
-./westley lat long
+./whereami.sh lat long
 ```
 
 Where `lat` and `long` correspond to your latitude and longitude.
@@ -40,12 +37,7 @@ should just use the `westley` and `westley.alt` programs directly.
 ## Try:
 
 ```sh
-./whereami 47 -122	# NOTE: - means west of meridian
-./whereami 47 122
-
-# or if you don't have curses installed:
-./westley 47 -122
-./westley 47 122
+./try.sh
 ```
 
 
@@ -64,13 +56,21 @@ make alt
 ### Alternate use:
 
 ```sh
-./whereami.alt lat long
+./whereami.alt.sh lat long
 
-# or if you don't have curses installed:
-./westley.alt lat long
 ```
 
 NOTE: this alternative version also needs a terminal with at least 80 columns.
+
+
+### Alternate try:
+
+The [try.sh](try.sh) script uses both the original entry and the alternate code
+so one can try the same script for both:
+
+```sh
+./try.sh
+```
 
 
 ## Judges' remarks:
