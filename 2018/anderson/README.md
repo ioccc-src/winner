@@ -41,6 +41,13 @@ make alt
 Use `prog.alt` as you would `prog` above.
 
 
+### Alternate try:
+
+```sh
+./try.alt.sh
+```
+
+
 ## Judges' remarks:
 
 With this entry, you won't need to turn your monitor [upside
