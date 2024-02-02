@@ -2872,7 +2872,7 @@ case.
 ### Testing fixes
 
 It might be helpful to use the [try.alt.sh](/2011/richards/try.alt.sh) script to
-test that it does not crash.
+test that it does not crash and functions properly.
 
 
 ### Resources
