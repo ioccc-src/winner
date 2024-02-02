@@ -31,11 +31,8 @@ echo 7 | ./baruch
 ## Try:
 
 ```sh
-echo 2 | ./baruch
-echo 3 | ./baruch
+./try.sh
 ```
-
-Why is there no output?
 
 
 ## Alternate code:

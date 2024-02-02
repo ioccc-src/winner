@@ -18,15 +18,14 @@ For more detailed information see [2011 richards in bugs.md](/bugs.md#2011-richa
 ## To use:
 
 ```sh
-./try.sh
+echo expression | ./richards
 ```
 
 
 ## Try:
 
 ```sh
-echo '10 9 8 7 6 5 4 3 2 1*p*p*p*p*p*p*p*p*p' | ./richards
-echo '64 256 128 p/p*p' | ./richards
+./try.sh
 ```
 
 

@@ -19,8 +19,7 @@ below for more details.
 ## Try:
 
 ```sh
-./prog < Makefile
-./prog < README.md
+./try.sh
 ```
 
 
@@ -41,6 +40,16 @@ make alt
 ### Alternate use:
 
 Use `prog.alt` as you would `prog` above.
+
+
+### Alternate try:
+
+```sh
+./try.alt.sh
+```
+
+Do you spot the fix by running both [try.sh](try.sh) and
+[try.alt.sh](try.alt.sh)?
 
 
 ## Judges' remarks:
