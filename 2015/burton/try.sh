@@ -62,5 +62,5 @@ echo 1>&2
 
 read -r -n 1 -p "Press any key to run: ./calc ?0x11223344 # byte-swapped value of 0x11223344: "
 echo 1>&2
-./calc ?0x11223344
+./calc '?0x11223344'
 echo 1>&2
