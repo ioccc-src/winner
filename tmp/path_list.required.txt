@@ -233,8 +233,6 @@
 1988/spinellis/spinellis.alt.c
 1988/spinellis/spinellis.c
 1988/spinellis/spinellis.orig.c
-1988/spinellis/try.alt.sh
-1988/spinellis/try.sh
 1988/westley/.gitignore
 1988/westley/.winner.json
 1988/westley/Makefile
@@ -2274,6 +2272,7 @@
 2013/endoh3/flea-waltz.abc
 2013/endoh3/menuet.abc
 2013/endoh3/test.abc
+2013/endoh3/try.sh
 2013/endoh3/twinkle.abc
 2013/endoh3/wavify.rb
 2013/endoh3/yankee.abc
@@ -2284,6 +2283,7 @@
 2013/endoh4/cube.txt
 2013/endoh4/endoh4.c
 2013/endoh4/endoh4.orig.c
+2013/endoh4/endoh4.sh
 2013/endoh4/solids/antiprism/a04-square-antiprism.txt
 2013/endoh4/solids/antiprism/a05-pentagonal-antiprism.txt
 2013/endoh4/solids/antiprism/a06-hexagonal-antiprism.txt
@@ -2431,7 +2431,6 @@
 2013/endoh4/solids/trapezohedron/t06-hexagonal-trapezohedron.txt
 2013/endoh4/solids/trapezohedron/t08-octagonal-trapezohedron.txt
 2013/endoh4/solids/trapezohedron/t10-decagonal-trapezohedron.txt
-2013/endoh4/try.sh
 2013/hou/.gitignore
 2013/hou/.winner.json
 2013/hou/Makefile
@@ -2447,6 +2446,7 @@
 2013/hou/old_default.scene
 2013/hou/otherroom.jpg
 2013/hou/otherroom.scene
+2013/hou/try.sh
 2013/mills/.gitignore
 2013/mills/.winner.json
 2013/mills/Makefile
@@ -2468,6 +2468,7 @@
 2013/morgan1/README.md
 2013/morgan1/morgan1.c
 2013/morgan1/morgan1.orig.c
+2013/morgan1/try.sh
 2013/morgan2/.gitignore
 2013/morgan2/.winner.json
 2013/morgan2/Makefile
@@ -2582,6 +2583,7 @@
 2014/vik/prog.alt.c
 2014/vik/prog.c
 2014/vik/prog.orig.c
+2014/vik/try.sh
 2014/wiedijk/.gitignore
 2014/wiedijk/.winner.json
 2014/wiedijk/Makefile
@@ -2749,6 +2751,7 @@
 2018/anderson/prog.alt.c
 2018/anderson/prog.c
 2018/anderson/prog.orig.c
+2018/anderson/try.alt.sh
 2018/anderson/try.sh
 2018/bellard/.gitignore
 2018/bellard/.winner.json
@@ -2760,6 +2763,7 @@
 2018/bellard/prog.alt.c
 2018/bellard/prog.c
 2018/bellard/prog.orig.c
+2018/bellard/try.sh
 2018/bellard/vintage_cars.bin
 2018/burton1/.gitignore
 2018/burton1/.winner.json
@@ -2835,6 +2839,7 @@
 2018/ciura/prog.alt.c
 2018/ciura/prog.c
 2018/ciura/prog.orig.c
+2018/ciura/try.alt.sh
 2018/ciura/try.sh
 2018/endoh1/.gitignore
 2018/endoh1/.winner.json
@@ -2862,6 +2867,10 @@
 2018/ferguson/Makefile
 2018/ferguson/README.md
 2018/ferguson/hint.css
+2018/ferguson/id.alt.sh
+2018/ferguson/id.sh
+2018/ferguson/monkey-words.alt.sh
+2018/ferguson/monkey-words.sh
 2018/ferguson/prog.alt.c
 2018/ferguson/prog.c
 2018/ferguson/prog.orig.c
@@ -2962,6 +2971,7 @@
 2019/ciura/en.alt.sh
 2019/ciura/en.sh
 2019/ciura/fasc5c.pdf
+2019/ciura/fr.alt.sh
 2019/ciura/fr.sh
 2019/ciura/getwords.sh
 2019/ciura/it.alt.sh
@@ -3037,6 +3047,7 @@
 2019/giles/README.md
 2019/giles/prog.c
 2019/giles/prog.orig.c
+2019/giles/try.sh
 2019/karns/.gitignore
 2019/karns/.winner.json
 2019/karns/Makefile
@@ -3151,6 +3162,7 @@
 2020/endoh3/prog.alt.c
 2020/endoh3/prog.c
 2020/endoh3/prog.orig.c
+2020/endoh3/run_clock.alt.sh
 2020/endoh3/run_clock.sh
 2020/ferguson1/.gitignore
 2020/ferguson1/.winner.json
@@ -3165,7 +3177,6 @@
 2020/ferguson1/crazy.log.md
 2020/ferguson1/gameplay.md
 2020/ferguson1/halfwidth_vs_fullwidth.png
-2020/ferguson1/ioccc-and-chocolate.pdf
 2020/ferguson1/ioccc-cake.jpg
 2020/ferguson1/play.sh
 2020/ferguson1/prog.2.c
@@ -3188,7 +3199,6 @@
 2020/ferguson2/chocolate-cake.md
 2020/ferguson2/enigma.1
 2020/ferguson2/input.txt
-2020/ferguson2/ioccc-and-chocolate.pdf
 2020/ferguson2/ioccc-cake.jpg
 2020/ferguson2/key.txt
 2020/ferguson2/obfuscation.key
@@ -3262,6 +3272,7 @@
 2020/otterness/entertainer.mid
 2020/otterness/prog.c
 2020/otterness/prog.orig.c
+2020/otterness/try.sh
 2020/tsoj/.gitignore
 2020/tsoj/.winner.json
 2020/tsoj/Makefile

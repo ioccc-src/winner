@@ -327,8 +327,6 @@
 1988,spinellis,Makefile,30,true,makefile,true,winner Makefile
 1988,spinellis,spinellis.alt.c,40,true,c,true,alternative source
 1988,spinellis,spinellis.orig.c,50,true,c,true,original source
-1988,spinellis,try.alt.sh,100,true,shellscript,true,how to run alternative code
-1988,spinellis,try.sh,100,true,shellscript,true,how to run
 1988,spinellis,input2.txt,150,true,text,true,example input
 1988,spinellis,input.txt,150,true,text,true,example input
 1988,spinellis,1988_spinellis.tar.bz2,300,false,tbz2,false,download winning source
@@ -3019,6 +3017,7 @@
 2013,endoh3,flea-waltz.abc,100,true,text,true,sample input
 2013,endoh3,menuet.abc,100,true,text,true,sample input
 2013,endoh3,test.abc,100,true,text,true,sample input
+2013,endoh3,try.sh,100,true,shellscript,true,how to run
 2013,endoh3,twinkle.abc,100,true,text,true,sample input
 2013,endoh3,wavify.rb,100,true,ruby,true,post process output to form a WAV sound file
 2013,endoh3,yankee.abc,100,true,text,true,sample input
@@ -3032,7 +3031,7 @@
 2013,endoh4,Makefile,30,true,makefile,true,winner Makefile
 2013,endoh4,endoh4.orig.c,50,false,c,true,original source
 2013,endoh4,cube.txt,100,true,text,true,3D object coordinates
-2013,endoh4,try.sh,100,true,shellscript,true,how to run
+2013,endoh4,endoh4.sh,100,true,shellscript,true,how to run
 2013,endoh4,solids/antiprism/a04-square-antiprism.txt,200,true,text,true,3D object coordinates
 2013,endoh4,solids/antiprism/a05-pentagonal-antiprism.txt,200,true,text,true,3D object coordinates
 2013,endoh4,solids/antiprism/a06-hexagonal-antiprism.txt,200,true,text,true,3D object coordinates
@@ -3192,6 +3191,7 @@
 2013,hou,doc/example.html,100,false,html,false,detailed information about entry
 2013,hou,old_default.scene,100,true,text,true,sample input
 2013,hou,otherroom.scene,100,true,text,true,sample input
+2013,hou,try.sh,100,true,shellscript,true,how to run
 2013,hou,luna.jpg,150,true,image,false,sample image data
 2013,hou,old_default.jpg,150,true,image,false,sample image data
 2013,hou,otherroom.jpg,150,true,image,false,sample image data
@@ -3229,6 +3229,7 @@
 2013,morgan1,morgan1.c,20,true,c,true,winning source
 2013,morgan1,Makefile,30,true,makefile,true,winner Makefile
 2013,morgan1,morgan1.orig.c,50,false,c,true,original source
+2013,morgan1,try.sh,100,true,shelllscript,true,how to run
 2013,morgan1,2013_morgan1.tar.bz2,300,false,tbz2,false,download winning source
 2013,morgan1,README.md,4294967295,true,markdown,true,markdown source for index.html
 2013,morgan1,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -3381,6 +3382,7 @@
 2014,vik,Makefile,30,true,makefile,true,winner Makefile
 2014,vik,prog.alt.c,40,true,c,true,alternative source
 2014,vik,prog.orig.c,50,false,c,true,original source
+2014,vik,try.sh,100,true,shellscript,true,how to run
 2014,vik,2014_vik.tar.bz2,300,false,tbz2,false,download winning source
 2014,vik,README.md,4294967295,true,markdown,true,markdown source for index.html
 2014,vik,.gitignore,4294967295,true,gitignore,true,list of files that should not be committed under git
@@ -3601,6 +3603,7 @@
 2018,anderson,Makefile,30,true,makefile,true,winner Makefile
 2018,anderson,prog.alt.c,40,true,c,true,alternative source
 2018,anderson,prog.orig.c,50,false,c,true,original source
+2018,anderson,try.alt.sh,100,true,shellscript,true,how to run alternate code
 2018,anderson,try.sh,100,true,shellscript,true,how to run
 2018,anderson,2018_anderson.tar.bz2,300,false,tbz2,false,download winning source
 2018,anderson,README.md,4294967295,true,markdown,true,markdown source for index.html
@@ -3613,6 +3616,7 @@
 2018,bellard,prog.alt.c,40,true,c,true,alternative source
 2018,bellard,prog.orig.c,50,false,c,true,original source
 2018,bellard,Lenna.png,100,true,image,false,sample image data
+2018,bellard,try.sh,100,true,shellscript,true,how to run
 2018,bellard,2018_bellard.tar.bz2,300,false,tbz2,false,download winning source
 2018,bellard,README.md,4294967295,true,markdown,true,markdown source for index.html
 2018,bellard,fruits.bin,4294967295,true,binary,false,binary support file
@@ -3700,6 +3704,7 @@
 2018,ciura,prog.alt.c,40,true,c,true,alternative source
 2018,ciura,prog.orig.c,50,false,c,true,original source
 2018,ciura,lexicon.pdf,100,true,pdf,false,How to squeeze a lexicon paper
+2018,ciura,try.alt.sh,100,true,shellscript,true,how to run alternate code
 2018,ciura,try.sh,100,true,shellscript,true,how to run
 2018,ciura,2018_ciura.tar.bz2,300,false,tbz2,false,download winning source
 2018,ciura,README.md,4294967295,true,markdown,true,markdown source for index.html
@@ -3738,6 +3743,10 @@
 2018,ferguson,prog.alt.c,40,true,c,true,alternative source
 2018,ferguson,prog.orig.c,50,false,c,true,original source
 2018,ferguson,FILES,100,true,text,true,information about various files
+2018,ferguson,id.alt.sh,100,true,shellscript,true,how to run
+2018,ferguson,id.sh,100,true,shellscript,true,how to run
+2018,ferguson,monkey-words.alt.sh,100,true,shell script,true,how to run
+2018,ferguson,monkey-words.sh,100,true,shellscript,true,how to run
 2018,ferguson,rpm.html,100,false,html,false,about forming the rpm
 2018,ferguson,test.sh,100,true,shellscript,true,run the test suite
 2018,ferguson,try.alt.sh,100,true,shellscript,true,how to run alternative code
@@ -3873,6 +3882,7 @@
 2019,ciura,wrapprog.py,100,true,python,true,merge pangrams before passing them to prog
 2019,ciura,de.sh,150,true,shellscript,true,run with German data
 2019,ciura,en.sh,150,true,shellscript,true,run with English data
+2019,ciura,fr.alt.sh,150,true,shellscript,true,how to run alternative code in French
 2019,ciura,fr.sh,150,true,shellscript,true,run with French data
 2019,ciura,it.sh,150,true,shellscript,true,run with Italian data
 2019,ciura,pl.sh,150,true,shellscript,true,run with Polish data
@@ -3956,6 +3966,7 @@
 2019,giles,Makefile,30,true,makefile,true,winner Makefile
 2019,giles,prog.orig.c,50,false,c,true,original source
 2019,giles,BlockDiagram.png,100,true,image,false,reverb algorithm block-diagram of internal structure
+2019,giles,try.sh,100,true,shellscript,true,how to run
 2019,giles,MonodyVocals.wav,150,true,wav,false,Monody by TheFatRat featuring Laura Brehm
 2019,giles,2019_giles.tar.bz2,300,false,tbz2,false,download winning source
 2019,giles,README.md,4294967295,true,markdown,true,markdown source for index.html
@@ -4101,6 +4112,7 @@
 2020,endoh3,Makefile,30,true,makefile,true,winner Makefile
 2020,endoh3,prog.alt.c,40,true,c,true,alternative source
 2020,endoh3,prog.orig.c,50,false,c,true,original source
+2020,endoh3,run_clock.alt.sh,100,true,shellscript,true,how to run alternate code
 2020,endoh3,run_clock.sh,100,true,shellscript,true,how to run
 2020,endoh3,2020_endoh3.tar.bz2,300,false,tbz2,false,download winning source
 2020,endoh3,README.md,4294967295,true,markdown,true,markdown source for index.html
@@ -4118,7 +4130,6 @@
 2020,ferguson1,crazy.log.html,100,false,html,false,about some screen dumps
 2020,ferguson1,play.sh,100,true,shellscript,true,how to run
 2020,ferguson1,snake-colours.sh,100,true,shellscript,true,script to reset - preset colors
-2020,ferguson1,ioccc-and-chocolate.pdf,150,true,pdf,false,IOCCC publications
 2020,ferguson1,prog.2.c,150,true,c,true,source with more digraphs
 2020,ferguson1,prog.3.c,150,true,c,true,source with a more artistic layout
 2020,ferguson1,prog.3-j.c,150,true,c,true,source with artistic layout and shorter j macro
@@ -4154,7 +4165,6 @@
 2020,ferguson2,try.sh,100,true,shellscript,true,how to run
 2020,ferguson2,try.this.txt,100,true,text,true,sample input
 2020,ferguson2,enigma.1,150,true,man,true,Enigma simulator man page
-2020,ferguson2,ioccc-and-chocolate.pdf,150,true,pdf,false,IOCCC publications
 2020,ferguson2,key.txt,150,true,text,true,key to decipher or encipher IOCCC
 2020,ferguson2,obfuscation.key,150,true,text,true,key to decipher or encipher obfuscation.txt
 2020,ferguson2,recode.1,150,true,man,true,configuration tool man page
@@ -4238,6 +4248,7 @@
 2020,otterness,prog.c,20,true,c,true,winning source
 2020,otterness,Makefile,30,true,makefile,true,winner Makefile
 2020,otterness,prog.orig.c,50,false,c,true,original source
+2020,otterness,try.sh,100,true,shellscript,true,how to run
 2020,otterness,cvikl.mid,150,true,midi,false,sample input sound
 2020,otterness,entertainer.mid,159,true,midi,false,sample input sound
 2020,otterness,2020_otterness.tar.bz2,300,false,tbz2,false,download winning source
